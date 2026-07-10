@@ -1,0 +1,119 @@
+{
+  "triggers": [
+    {
+      "id": "pir_mmwave_sensor_motion_detected",
+      "highlight": true,
+      "title": {
+        "en": "Motion detected",
+        "fr": "Mouvement détecté",
+        "nl": "Beweging gedetecteerd",
+        "de": "Bewegung erkannt"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Motion detected",
+        "fr": "Mouvement détecté",
+        "nl": "Beweging gedetecteerd",
+        "de": "Bewegung erkannt"
+      }
+    },
+    {
+      "id": "pir_mmwave_sensor_motion_cleared",
+      "title": {
+        "en": "Motion cleared",
+        "fr": "Mouvement terminé",
+        "nl": "Beweging voorbij",
+        "de": "Bewegung beendet"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Motion cleared",
+        "fr": "Mouvement terminé",
+        "nl": "Beweging voorbij",
+        "de": "Bewegung beendet"
+      }
+    },
+    {
+      "id": "pir_mmwave_sensor_presence_detected",
+      "title": {
+        "en": "Presence detected",
+        "fr": "Présence détectée",
+        "nl": "Aanwezigheid gedetecteerd",
+        "de": "Anwesenheit erkannt"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Presence detected",
+        "fr": "Présence détectée",
+        "nl": "Aanwezigheid gedetecteerd",
+        "de": "Anwesenheit erkannt"
+      }
+    },
+    {
+      "id": "pir_mmwave_sensor_presence_cleared",
+      "title": {
+        "en": "Presence cleared",
+        "fr": "Présence disparue",
+        "nl": "Aanwezigheid verdwenen",
+        "de": "Anwesenheit beendet"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Presence cleared",
+        "fr": "Présence disparue",
+        "nl": "Aanwezigheid verdwenen",
+        "de": "Anwesenheit beendet"
+      }
+    },
+    {
+      "id": "pir_mmwave_sensor_tamper_detected",
+      "title": {
+        "en": "Tamper alarm triggered",
+        "fr": "Alarme anti-sabotage déclenchée",
+        "nl": "Sabotage alarm geactiveerd",
+        "de": "Manipulationsalarm ausgelöst"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Tamper alarm triggered",
+        "fr": "Alarme anti-sabotage déclenchée",
+        "nl": "Sabotage alarm geactiveerd",
+        "de": "Manipulationsalarm ausgelöst"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "id": "pir_mmwave_sensor_has_motion",
+      "title": {
+        "en": "Motion !{{is|is not}} detected",
+        "fr": "Mouvement !{{est|n'est pas}} détecté",
+        "nl": "Beweging !{{is|is niet}} gedetecteerd",
+        "de": "Bewegung !{{ist|ist nicht}} erkannt"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Motion !{{is|is not}} detected",
+        "fr": "Mouvement !{{est|n'est pas}} détecté",
+        "nl": "Beweging !{{is|is niet}} gedetecteerd",
+        "de": "Bewegung !{{ist|ist nicht}} erkannt"
+      }
+    },
+    {
+      "id": "pir_mmwave_sensor_has_presence",
+      "title": {
+        "en": "Presence !{{is|is not}} detected",
+        "fr": "Présence !{{est|n'est pas}} détectée",
+        "nl": "Aanwezigheid !{{is|is niet}} gedetecteerd",
+        "de": "Anwesenheit !{{ist|ist nicht}} erkannt"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Presence !{{is|is not}} detected",
+        "fr": "Présence !{{est|n'est pas}} détectée",
+        "nl": "Aanwezigheid !{{is|is niet}} gedetecteerd",
+        "de": "Anwesenheit !{{ist|ist nicht}} erkannt"
+      }
+    }
+  ]
+}

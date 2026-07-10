@@ -1,0 +1,152 @@
+{
+  "id": "condition_all_met",
+  "title": {
+    "en": "All conditions met"
+  },
+  "hint": {
+    "en": "Checks if multiple conditions are all satisfied (AND logic)"
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "capabilities=onoff|dim"
+    },
+    {
+      "name": "condition_1_cap",
+      "type": "text",
+      "title": {
+        "en": "Condition 1 - Capability"
+      },
+      "placeholder": {
+        "en": "measure_temperature"
+      }
+    },
+    {
+      "name": "condition_1_op",
+      "type": "dropdown",
+      "title": {
+        "en": "Condition 1 - Operator"
+      },
+      "values": [
+        {
+          "id": "==",
+          "title": {
+            "en": "equals"
+          }
+        },
+        {
+          "id": "!=",
+          "title": {
+            "en": "not equals"
+          }
+        },
+        {
+          "id": ">",
+          "title": {
+            "en": "greater than"
+          }
+        },
+        {
+          "id": "<",
+          "title": {
+            "en": "less than"
+          }
+        },
+        {
+          "id": ">=",
+          "title": {
+            "en": "greater or equal"
+          }
+        },
+        {
+          "id": "<=",
+          "title": {
+            "en": "less or equal"
+          }
+        }
+      ]
+    },
+    {
+      "name": "condition_1_val",
+      "type": "text",
+      "title": {
+        "en": "Condition 1 - Value"
+      }
+    },
+    {
+      "name": "condition_2_cap",
+      "type": "text",
+      "title": {
+        "en": "Condition 2 - Capability"
+      },
+      "placeholder": {
+        "en": "measure_humidity"
+      }
+    },
+    {
+      "name": "condition_2_op",
+      "type": "dropdown",
+      "title": {
+        "en": "Condition 2 - Operator"
+      },
+      "values": [
+        {
+          "id": "==",
+          "title": {
+            "en": "equals"
+          }
+        },
+        {
+          "id": "!=",
+          "title": {
+            "en": "not equals"
+          }
+        },
+        {
+          "id": ">",
+          "title": {
+            "en": "greater than"
+          }
+        },
+        {
+          "id": "<",
+          "title": {
+            "en": "less than"
+          }
+        },
+        {
+          "id": ">=",
+          "title": {
+            "en": "greater or equal"
+          }
+        },
+        {
+          "id": "<=",
+          "title": {
+            "en": "less or equal"
+          }
+        }
+      ]
+    },
+    {
+      "name": "condition_2_val",
+      "type": "text",
+      "title": {
+        "en": "Condition 2 - Value"
+      }
+    }
+  ],
+  "tokens": [
+    {
+      "name": "all_met",
+      "type": "boolean",
+      "title": {
+        "en": "All conditions met"
+      }
+    }
+  ],
+  "titleFormatted": {
+    "en": "All conditions met [[device]] [[condition_1_cap]] [[condition_1_op]] [[condition_1_val]] [[condition_2_cap]] [[condition_2_op]] [[condition_2_val]]"
+  }
+}

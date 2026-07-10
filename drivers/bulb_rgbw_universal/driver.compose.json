@@ -1,0 +1,188 @@
+{
+  "id": "bulb_rgbw_universal",
+  "name": {
+    "en": "Bulb Rgbw Universal",
+    "nl": "Bulb Rgbw Universal",
+    "fr": "Bulb Rgbw Universal"
+  },
+  "class": "other",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "measure_temperature",
+    "measure_humidity",
+    "measure_luminance",
+    "alarm_motion",
+    "alarm_contact",
+    "alarm_water",
+    "measure_battery",
+    "measure_power",
+    "measure_voltage",
+    "measure_current",
+    "meter_power",
+    "light_hue",
+    "light_saturation",
+    "light_temperature",
+    "light_mode",
+    "windowcoverings_set",
+    "windowcoverings_state",
+    "target_temperature",
+    "thermostat_mode",
+    "tuya_dp_value",
+    "tuya_dp_string",
+    "tuya_dp_raw",
+    "tuya_cluster_event",
+    "button.1"
+  ],
+  "capabilitiesOptions": {
+    "tuya_dp_value": {
+      "title": {
+        "en": "Last DP Value (Numeric)"
+      }
+    },
+    "tuya_dp_string": {
+      "title": {
+        "en": "Last DP String"
+      }
+    },
+    "tuya_dp_raw": {
+      "title": {
+        "en": "Last Raw DP (Hex)"
+      }
+    },
+    "tuya_cluster_event": {
+      "title": {
+        "en": "Last Cluster Event"
+      }
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "energy": {
+    "mains": true,
+    "batteries": [
+      "CR2450"
+    ]
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_tz3000_inejxewm",
+      "_tz3000_hhbizuqb",
+      "_tz3000_i5gv74od",
+      "_tyzb01_freedyfyq",
+      "_tz3210_sroezl0k"
+    ],
+    "productId": [
+      "TS0505B",
+      "TS0504B",
+      "TS0503B"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          61184
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "/drivers/universal_zigbee/assets/learnmode.svg",
+      "instruction": {
+        "en": "Press the pairing button on your Zigbee device until it enters pairing mode.",
+        "fr": "Appuyez sur le bouton d'appairage de votre appareil Zigbee jusqu'Ã ce qu'il passe en mode appairage."
+      }
+    }
+  },
+  "images": {
+    "large": "/drivers/universal_zigbee/assets/images/large.png",
+    "small": "/drivers/universal_zigbee/assets/images/small.png"
+  },
+  "flow": {
+    "triggers": [],
+    "conditions": [],
+    "actions": []
+  },
+  "settings": [
+    {
+      "id": "enable_natural_light",
+      "type": "checkbox",
+      "label": {
+        "en": "Enable Natural Light (Solar Sync)",
+        "fr": "Activer la LumiÃ¨re Naturelle (Synchro Solaire)"
+      },
+      "value": false,
+      "hint": {
+        "en": "Automatically adjust color temperature based on time of day",
+        "fr": "Ajuste automatiquement la tempÃ©rature de couleur au fil de la journÃ©e"
+      }
+    },
+    {
+      "id": "enable_radio_sensing",
+      "type": "checkbox",
+      "label": {
+        "en": "Enable Radio Presence Sensing",
+        "fr": "Activer la DÃ©tection de PrÃ©sence Radio"
+      },
+      "value": false,
+      "hint": {
+        "en": "Infer presence from Zigbee signal fluctuations (BETA)",
+        "fr": "DÃ©duit la prÃ©sence des fluctuations du signal Zigbee (BETA)"
+      }
+    },
+    {
+      "id": "radio_sensitivity",
+      "type": "number",
+      "label": {
+        "en": "Radio Presence Sensitivity",
+        "fr": "SensibilitÃ© PrÃ©sence Radio"
+      },
+      "value": 15,
+      "min": 5,
+      "max": 50,
+      "hint": {
+        "en": "LQI variance threshold (higher = less sensitive)",
+        "fr": "Seuil de variance LQI (plus haut = moins sensible)"
+      }
+    },
+    {
+      "id": "enable_circadian_lighting",
+      "type": "checkbox",
+      "label": {
+        "en": "Circadian Lighting (Adaptive CT)",
+        "fr": "Ã‰clairage Circadien (CT Adaptatif)"
+      },
+      "value": false,
+      "hint": {
+        "en": "Automatically adjust color temperature based on time of day",
+        "fr": "Ajuste automatiquement la tempÃ©rature de couleur au cours de la journÃ©e"
+      }
+    },
+    {
+      "id": "enable_night_mode",
+      "type": "checkbox",
+      "label": {
+        "en": "Night Mode (Auto-Dim)",
+        "fr": "Mode Nuit (Auto-Dim)"
+      },
+      "value": false,
+      "hint": {
+        "en": "Automatically dim light when turned on at night",
+        "fr": "Baisse l'intensitÃ© lors de l'allumage nocturne"
+      }
+    }
+  ],
+  "version": "1.0.0"
+}

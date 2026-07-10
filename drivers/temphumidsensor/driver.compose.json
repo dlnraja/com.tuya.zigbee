@@ -1,0 +1,126 @@
+{
+  "name": {
+    "en": "TUYATEC Temperature & Humidity Sensor",
+    "fr": "Capteur de Température et Humidité TUYATEC",
+    "nl": "Temp/Vocht Sensor",
+    "de": "Temp/Feuchte Sensor"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "measure_temperature",
+    "measure_humidity",
+    "measure_battery",
+    "button.1"
+  ],
+  "energy": {
+    "batteries": [
+      "CR2032",
+      "AAA"
+    ]
+  },
+  "zigbee": {
+    "productId": [
+      "TY0201",
+      "SNTZ003",
+      "CK-TLSR8656-SS5-01(7014)",
+      "ZG-227Z",
+      "RH3052",
+      "TS0201"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          1026,
+          1029,
+          61184
+        ]
+      }
+    },
+    "manufacturerName": [
+      "TUYATEC-1UXX9CCI",
+      "TUYATEC-HAOIUWZY",
+      "TUYATEC-RIUJ5XZS",
+      "TUYATEC-V3UXBUXY",
+      "_tz3000_jnhu1llv",
+      "tuyatec-g3gl6cgy",
+      "tuyatec-bfq2i2sy",
+      "tuyatec-abkehqus",
+      "_TZ3000_i8jfiezr",
+      "_TZ3000_bguser20",
+      "_TZ3000_8ybe88nf",
+      "_TZ3000_fie1dpkm",
+      "_TZ3000_f2bw0b6k",
+      "tuyatec-1uxx9cci",
+      "tuyatec-haoiuwzy",
+      "tuyatec-riuj5xzs",
+      "tuyatec-v3uxbuxy",
+      "TUYATEC-G3GL6CGY",
+      "TUYATEC-BFQ2I2SY",
+      "TUYATEC-ABKEHQUS"
+    ]
+  },
+  "images": {
+    "small": "/drivers/temphumidsensor/assets/images/small.png",
+    "large": "/drivers/temphumidsensor/assets/images/large.png",
+    "xlarge": "/drivers/temphumidsensor/assets/images/xlarge.png"
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "settings": [
+    {
+      "id": "sensor_precision",
+      "type": "dropdown",
+      "label": {
+        "en": "Decimal Precision",
+        "fr": "Précision"
+      },
+      "value": "1",
+      "hint": {
+        "en": "Decimals for temperature/humidity values"
+      },
+      "values": [
+        {
+          "id": "1",
+          "label": {
+            "en": "1 decimal (20.5°C)"
+          }
+        },
+        {
+          "id": "2",
+          "label": {
+            "en": "2 decimals (20.53°C)"
+          }
+        }
+      ]
+    }
+  ],
+  "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "fr": "Vérifier MàJ OTA",
+        "nl": "Controleer op OTA-updates"
+      }
+    }
+  ],
+  "id": "temphumidsensor",
+  "version": "1.0.0",
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  }
+}

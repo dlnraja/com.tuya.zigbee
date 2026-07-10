@@ -1,0 +1,92 @@
+{
+  "id": "FingerBot",
+  "name": {
+    "en": "Finger Bot",
+    "fr": "Robot à doigt",
+    "nl": "Vingerbot",
+    "de": "Fingerbot",
+    "es": "Robot de dedo"
+  },
+  "class": "button",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "capabilities": [
+    "onoff",
+    "button.push",
+    "finger_bot_mode",
+    "measure_battery",
+    "button.1"
+  ],
+  "images": {
+    "large": "/{{driverAssetsPath}}/images/large.png",
+    "small": "/{{driverAssetsPath}}/images/small.png"
+  },
+  "energy": {
+    "batteries": [
+      "CR2"
+    ]
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3210_pwj6vuj9",
+      "_TZ3210_d3m9v8p6"
+    ],
+    "productId": [
+      "TS0001",
+      "TS0001_fingerbot",
+      "TS0003",
+      "TS011F",
+      "TS0011",
+      "TS000F"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6,
+          61184
+        ],
+        "bindings": [
+          10
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "{{driverAssetsPath}}/icon.svg",
+      "instruction": {
+        "en": "Press the setup button inside the Finger Bot for approx 10 seconds to enter pairing mode."
+      }
+    }
+  },
+  "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "fr": "Vérifier MàJ OTA",
+        "nl": "Controleer op OTA-updates"
+      }
+    }
+  ],
+  "version": "1.0.0",
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    },
+    "button.push": {
+      "setable": false,
+      "maintenanceAction": true,
+      "getable": false
+    }
+  }
+}

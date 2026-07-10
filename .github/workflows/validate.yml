@@ -1,0 +1,133 @@
+# TITAN Protocol v2 — Validate Homey App
+# Restored and improved 2026-06-16
+name: 🔍 Validate Homey App
+
+on:
+  schedule:
+    - cron: '0 12 * * *'  # Daily 12:00 UTC
+  pull_request:
+    branches: [master, main, stable-v5]
+    paths:
+      - '**.js'
+      - '**.json'
+      - 'drivers/**'
+      - 'lib/**'
+      - '.github/**'
+      - 'package*.json'
+      - 'scripts/**'
+  workflow_dispatch:
+    inputs:
+      level:
+        description: "Validation level"
+        required: false
+        type: choice
+        options: [debug, publish, verified]
+        default: publish
+
+permissions:
+  contents: read
+  pull-requests: read
+
+concurrency:
+  group: validate-${{ github.ref }}
+  cancel-in-progress: true
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  validate:
+    name: 🔍 Validate
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: 📥 Checkout
+        uses: actions/checkout@v5
+
+      - name: 📦 Setup Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+          cache: npm
+
+      - name: 📦 Install dependencies
+        run: npm ci --prefer-offline --no-audit || npm install
+
+      - name: 🛡️ GitHub Actions & YAML Policy Gate
+        run: npm run check:yaml
+
+      - name: 🗣️ Google Assistant / Alexa Voice-Safety Gate
+        run: npm run check:voice
+
+      - name: ⏱️ Homey Timer Context Guard
+        run: npm run check:timer-context
+
+      - name: 📦 Get App Info
+        id: info
+        run: |
+          VERSION=$(node -p "require('./app.json').version")
+          NAME=$(node -p "require('./app.json').name.en")
+          DRIVERS=$(ls -d drivers/*/ 2>/dev/null | wc -l)
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "name=$NAME" >> $GITHUB_OUTPUT
+          echo "drivers=$DRIVERS" >> $GITHUB_OUTPUT
+          echo "📦 $NAME v$VERSION - $DRIVERS drivers"
+
+      - name: 🔨 Build app
+        run: npx homey app build
+
+      - name: 🧹 Sanitize generated manifest after build
+        run: |
+          node scripts/maintenance/fix-large-images.js
+          node scripts/maintenance/optimize-build-images.cjs
+          node scripts/maintenance/sanitize-manifest.cjs app.json .homeybuild/app.json
+
+      - name: 🔍 JS Syntax Check
+        run: |
+          FAIL=0
+          for f in $(find lib drivers -name "*.js" 2>/dev/null); do
+            if ! node -c "$f" 2>/dev/null; then
+              echo "❌ Syntax error: $f"
+              FAIL=1
+            fi
+          done
+          [ $FAIL -eq 0 ] && echo "✅ All JS files pass syntax check" || exit 1
+
+      - name: 🔍 Fingerprint Collision Check
+        run: |
+          node .github/scripts/fp-collision-check.js --baseline .github/fingerprint-collision-baseline.json
+
+      - name: 🖼️ Driver Images Pre-Check
+        run: |
+          MISS=0
+          for d in drivers/*/; do
+            DR=$(basename "$d")
+            for S in small large xlarge; do
+              [ ! -f "$d/assets/images/$S.png" ] && { echo "::error::$DR missing $S.png"; MISS=$((MISS+1)); }
+            done
+          done
+          [ $MISS -gt 0 ] && echo "::warning::$MISS missing driver images"
+          echo "✅ $MISS missing image(s)"
+
+      - name: 🔍 Validate (npx)
+        run: npx homey app validate --level ${{ inputs.level || 'publish' }}
+
+      - name: 🧹 Sanitize generated manifest after validation
+        run: node scripts/maintenance/sanitize-manifest.cjs app.json .homeybuild/app.json
+
+      - name: ✅ Summary
+        if: success()
+        run: |
+          echo "## ✅ ${{ steps.info.outputs.name }} v${{ steps.info.outputs.version }}" >> $GITHUB_STEP_SUMMARY
+          echo "| Metric | Value |" >> $GITHUB_STEP_SUMMARY
+          echo "|--------|-------|" >> $GITHUB_STEP_SUMMARY
+          echo "| Validation Level | ${{ inputs.level || 'publish' }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Drivers | ${{ steps.info.outputs.drivers }} |" >> $GITHUB_STEP_SUMMARY
+
+      - name: ❌ Failed
+        if: failure()
+        run: |
+          echo "## ❌ Validation Failed" >> $GITHUB_STEP_SUMMARY
+          echo "Run \`npx homey app validate --level publish\` locally for details." >> $GITHUB_STEP_SUMMARY

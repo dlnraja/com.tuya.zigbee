@@ -1,0 +1,84 @@
+{
+  "id": "lcdtemphumidluxsensor",
+  "name": {
+    "en": "LCD Temperature, Humidity and Luminance Sensor"
+  },
+  "class": "sensor",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "capabilities": [
+    "measure_luminance",
+    "measure_temperature",
+    "measure_humidity",
+    "measure_battery",
+    "button.1"
+  ],
+  "energy": {
+    "batteries": [
+      "AAA",
+      "AAA"
+    ]
+  },
+  "images": {
+    "large": "/{{driverAssetsPath}}/images/large.png",
+    "small": "/{{driverAssetsPath}}/images/small.png"
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_tz3000_g8fjhjt5",
+      "_tz3000_8jtgjy0k"
+    ],
+    "productId": [
+      "TS0201",
+      "TS0222",
+      "TS0601",
+      "Excellux"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          1024,
+          57346
+        ],
+        "bindings": [
+          1,
+          1024,
+          57346
+        ]
+      },
+      "2": {
+        "clusters": [
+          1026,
+          1029
+        ],
+        "bindings": [
+          1026,
+          1029
+        ]
+      }
+    },
+    "learnmode": {
+      "instruction": {
+        "en": "Press the reset button on the top of the unit for 10 seconds."
+      }
+    }
+  },
+  "version": "1.0.0",
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  }
+}

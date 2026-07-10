@@ -1,0 +1,107 @@
+{
+  "id": "dimmer_1_gang_tuya",
+  "name": {
+    "en": "1 Gang Dimmer Module"
+  },
+  "class": "light",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "capabilities": [
+    "onoff",
+    "dim",
+    "measure_battery",
+    "button.1"
+  ],
+  "capabilitiesOptions": {
+    "dim": {
+      "opts": {
+        "duration": true
+      }
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    },
+    "measure_battery": {
+      "title": {
+        "en": "Battery",
+        "fr": "Batterie",
+        "nl": "Batterij",
+        "de": "Batterie"
+      }
+    }
+  },
+  "images": {
+    "large": "/{{driverAssetsPath}}/images/large.png",
+    "small": "/{{driverAssetsPath}}/images/small.png"
+  },
+  "energy": {
+    "approximation": {
+      "usageOn": 0,
+      "usageOff": 0
+    },
+    "batteries": [
+      "CR2032"
+    ]
+  },
+  "zigbee": {
+    "productId": [
+      "TS110F",
+      "TS110E",
+      "TS0052",
+      "TS0601",
+      "TS0505B",
+      "TS0215A",
+      "TS0002",
+      "TS0003",
+      "TS0012",
+      "TS0013",
+      "TS0001",
+      "TS0726"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          4,
+          5,
+          6,
+          8,
+          61184
+        ],
+        "bindings": [
+          6,
+          8,
+          25,
+          10
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "{{driverAssetsPath}}/icon.svg",
+      "instruction": {
+        "en": "Press the reset switch rapidly 10 times until the unit make a continously beep sound to enter pairing mode."
+      }
+    },
+    "manufacturerName": [
+      "_hybrid_dimmer_1_gang_tuya_needs_device_assignment",
+      "_HYBRID_DIMMER_1_GANG_TUYA_NEEDS_DEVICE_ASSIGNMENT"
+    ]
+  },
+  "version": "1.0.0",
+  "metadata": {
+    "driver": {
+      "catchall": true,
+      "reason": "Fallback for unmatched devices with PIDs: TS110F, TS110E, TS0052, TS0601, TS0505B, TS0215A, TS0002, TS0003, TS0012, TS0013, TS0001, TS0726"
+    }
+  }
+}

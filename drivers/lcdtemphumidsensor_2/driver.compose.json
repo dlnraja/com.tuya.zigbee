@@ -1,0 +1,71 @@
+{
+  "id": "lcdtemphumidsensor2",
+  "name": {
+    "en": "LCD Temperature & Humidity Sensor"
+  },
+  "class": "sensor",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "capabilities": [
+    "measure_temperature",
+    "measure_humidity",
+    "measure_battery",
+    "button.1"
+  ],
+  "energy": {
+    "batteries": [
+      "CR2450"
+    ]
+  },
+  "images": {
+    "large": "/{{driverAssetsPath}}/images/large.png",
+    "small": "/{{driverAssetsPath}}/images/small.png"
+  },
+  "zigbee": {
+    "productId": [
+      "TS0601",
+      "TS0201",
+      "Excellux"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          1026,
+          1029
+        ],
+        "bindings": [
+          1,
+          1026,
+          1029
+        ]
+      }
+    },
+    "learnmode": {
+      "instruction": {
+        "en": "Open the backside of the unit and press the button inside for 5 seconds."
+      }
+    },
+    "manufacturerName": [
+      "_hybrid_lcdtemphumidsensor_2_needs_device_assignment",
+      "_HYBRID_LCDTEMPHUMIDSENSOR_2_NEEDS_DEVICE_ASSIGNMENT"
+    ]
+  },
+  "version": "1.0.0",
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  }
+}

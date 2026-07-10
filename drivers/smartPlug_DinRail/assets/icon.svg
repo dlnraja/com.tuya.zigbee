@@ -1,0 +1,11 @@
+<svg width="960" height="960" viewBox="0 0 960 960" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- DIN rail module body -->
+  <rect x="180" y="240" width="600" height="480" rx="40" stroke="black" stroke-width="40" fill="none"/>
+  <!-- DIN rail clip top -->
+  <rect x="260" y="200" width="440" height="60" rx="12" stroke="black" stroke-width="28" fill="none"/>
+  <!-- Status indicator LED -->
+  <circle cx="480" cy="480" r="60" stroke="black" stroke-width="36" fill="none"/>
+  <!-- Power symbol -->
+  <path d="M480 410V480" stroke="black" stroke-width="36" stroke-linecap="round"/>
+  <path d="M420 460C435 430 455 415 480 415C505 415 525 430 540 460" stroke="black" stroke-width="36" stroke-linecap="round" fill="none"/>
+</svg>

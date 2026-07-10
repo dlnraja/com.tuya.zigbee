@@ -1,0 +1,96 @@
+{
+  "triggers": [
+    {
+      "id": "smart_garden_irrigation_control_turned_on",
+      "title": {
+        "en": "Turned on",
+        "fr": "Allume"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Turned on",
+        "fr": "Allume"
+      }
+    },
+    {
+      "id": "smart_garden_irrigation_control_turned_off",
+      "title": {
+        "en": "Turned off",
+        "fr": "Eteint"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Turned off",
+        "fr": "Eteint"
+      }
+    },
+    {
+      "id": "smart_garden_irrigation_control_battery_low",
+      "title": {
+        "en": "Battery low",
+        "fr": "Batterie faible",
+        "nl": "Batterij laag",
+        "de": "Batterie schwach"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Battery low",
+        "fr": "Batterie faible",
+        "nl": "Batterij laag",
+        "de": "Batterie schwach"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "id": "smart_garden_irrigation_control_is_on",
+      "title": {
+        "en": "Is turned !{{on|off}}",
+        "fr": "Est !{{allume|eteint}}"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Is turned !{{on|off}}",
+        "fr": "Est !{{allume|eteint}}"
+      }
+    }
+  ],
+  "actions": [
+    {
+      "id": "smart_garden_irrigation_control_turn_on",
+      "title": {
+        "en": "Turn on",
+        "fr": "Allumer"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn on",
+        "fr": "Allumer"
+      }
+    },
+    {
+      "id": "smart_garden_irrigation_control_turn_off",
+      "title": {
+        "en": "Turn off",
+        "fr": "Eteindre"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn off",
+        "fr": "Eteindre"
+      }
+    },
+    {
+      "id": "smart_garden_irrigation_control_toggle",
+      "title": {
+        "en": "Toggle",
+        "fr": "Basculer"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Toggle",
+        "fr": "Basculer"
+      }
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="960" height="960" viewBox="0 0 960 960" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- PCB board -->
+  <rect x="120" y="200" width="720" height="560" rx="20" stroke="black" stroke-width="30" fill="none"/>
+  <!-- Relay housing -->
+  <rect x="250" y="300" width="300" height="250" rx="20" stroke="black" stroke-width="30" fill="none"/>
+  <!-- Relay coil symbol -->
+  <rect x="320" y="350" width="160" height="80" rx="10" fill="black"/>
+  <!-- Relay contacts -->
+  <line x1="300" y1="500" x2="400" y2="500" stroke="black" stroke-width="25" stroke-linecap="round"/>
+  <line x1="400" y1="500" x2="450" y2="470" stroke="black" stroke-width="25" stroke-linecap="round"/>
+  <!-- Terminal block -->
+  <rect x="620" y="280" width="150" height="300" rx="15" stroke="black" stroke-width="25" fill="none"/>
+  <!-- Terminal screws -->
+  <circle cx="695" cy="340" r="20" fill="black"/>
+  <circle cx="695" cy="430" r="20" fill="black"/>
+  <circle cx="695" cy="520" r="20" fill="black"/>
+  <!-- Status LED -->
+  <circle cx="400" cy="680" r="25" stroke="black" stroke-width="15" fill="none"/>
+  <circle cx="400" cy="680" r="8" fill="black"/>
+  <!-- Connection pins -->
+  <rect x="180" y="700" width="30" height="80" rx="5" fill="black"/>
+  <rect x="250" y="700" width="30" height="80" rx="5" fill="black"/>
+  <rect x="320" y="700" width="30" height="80" rx="5" fill="black"/>
+</svg>

@@ -1,0 +1,80 @@
+{
+  "id": "wallcurtainswitch",
+  "name": {
+    "en": "Wall mounted Curtain Switch",
+    "fr": "Interrupteur mural pour rideaux",
+    "nl": "Wandgordijnschakelaar",
+    "de": "Wandmontierter Vorhangschalter",
+    "es": "Interruptor de cortina de pared"
+  },
+  "class": "curtain",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "capabilities": [
+    "windowcoverings_set",
+    "windowcoverings_state",
+    "button.1"
+  ],
+  "images": {
+    "large": "/drivers/wall_curtain_switch/assets/images/large.png",
+    "small": "/drivers/wall_curtain_switch/assets/images/small.png",
+    "xlarge": "/drivers/wall_curtain_switch/assets/images/xlarge.png"
+  },
+  "energy": {
+    "approximation": {
+      "usageOn": 0,
+      "usageOff": 0
+    }
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "HOBEIAN",
+      "hobeian"
+    ],
+    "productId": [
+      "TS130F"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          4,
+          5,
+          258
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "{{driverAssetsPath}}/icon.svg",
+      "instruction": {
+        "en": "Power on/off 5 times to enter pairing mode (the LED should blink / device starts beeping) or press the Pause-button 5sec until Open-button blinks."
+      }
+    }
+  },
+  "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "fr": "Vérifier MàJ OTA",
+        "nl": "Controleer op OTA-updates"
+      }
+    }
+  ],
+  "version": "1.0.0",
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  }
+}

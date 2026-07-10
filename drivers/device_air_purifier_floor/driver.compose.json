@@ -1,0 +1,115 @@
+{
+  "name": {
+    "en": "Device Air Purifier Floor",
+    "nl": "luchtzuiveraar voor op de vloer",
+    "fr": "Purificateur d'air sur pied",
+    "de": "Boden--Luftreiniger",
+    "es": "Purificador de aire de suelo"
+  },
+  "class": "thermostat",
+  "capabilities": [
+    "target_temperature",
+    "measure_temperature",
+    "measure_temperature.floor",
+    "thermostat_mode",
+    "onoff",
+    "dim",
+    "measure_pm25",
+    "child_lock",
+    "button.1"
+  ],
+  "capabilitiesOptions": {
+    "target_temperature": {
+      "min": 5,
+      "max": 45,
+      "step": 0.5
+    },
+    "measure_temperature.floor": {
+      "title": {
+        "en": "Floor Temperature",
+        "fr": "TempÃ©rature Sol"
+      }
+    },
+    "thermostat_mode": {
+      "values": [
+        {
+          "id": "auto",
+          "title": {
+            "en": "Schedule"
+          }
+        },
+        {
+          "id": "heat",
+          "title": {
+            "en": "Manual"
+          }
+        },
+        {
+          "id": "off",
+          "title": {
+            "en": "Off"
+          }
+        }
+      ]
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  },
+  "zigbee": {
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          61184
+        ]
+      }
+    },
+    "manufacturerName": [
+      "_hybrid_device_air_purifier_floor_needs_device_assignment",
+      "_HYBRID_DEVICE_AIR_PURIFIER_FLOOR_NEEDS_DEVICE_ASSIGNMENT"
+    ]
+  },
+  "images": {
+    "small": "/drivers/floor_heating_thermostat/assets/images/small.png",
+    "large": "/drivers/floor_heating_thermostat/assets/images/large.png"
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "energy": {
+    "approximation": {
+      "usageConstant": 2
+    }
+  },
+  "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "fr": "VÃ©rifier MÃJ OTA",
+        "nl": "Controleer op OTA-updates"
+      }
+    }
+  ],
+  "flow": {
+    "triggers": [],
+    "conditions": [],
+    "actions": []
+  },
+  "settings": [],
+  "id": "device_air_purifier_floor",
+  "version": "1.0.0"
+}

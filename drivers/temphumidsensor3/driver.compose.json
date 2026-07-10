@@ -1,0 +1,74 @@
+{
+  "id": "temphumidsensor3",
+  "name": {
+    "en": "Temperature & Humidity Sensor",
+    "it": "Sensore di temperatura ed umidità"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "measure_battery",
+    "measure_humidity",
+    "measure_temperature",
+    "button.1"
+  ],
+  "energy": {
+    "batteries": [
+      "AAA",
+      "AAA"
+    ]
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "images": {
+    "small": "/{{driverAssetsPath}}/images/small.png",
+    "large": "/{{driverAssetsPath}}/images/large.png"
+  },
+  "zigbee": {
+    "productId": [
+      "SNTZ003"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          1026,
+          1029
+        ],
+        "bindings": [
+          1,
+          1026,
+          1029
+        ]
+      }
+    },
+    "learnmode": {
+      "instruction": {
+        "en": "Press and hold the button inside the battery compartment for aprox 5 seconds until the LED blinks rapidly.",
+        "it": "Tenere premuto il pulsante all'interno del vano batteria per cicrca 5 secondi finchè il LED non lampeggia rapidamente."
+      }
+    },
+    "manufacturerName": [
+      "_TZE200_A8SDABTG",
+      "_TZE204_a8sdabtg",
+      "_TZE200_qoy0ekbd",
+      "_TZE204_qoy0ekbd"
+    ]
+  },
+  "version": "1.0.0",
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  }
+}

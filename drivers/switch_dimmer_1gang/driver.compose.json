@@ -1,0 +1,297 @@
+{
+  "name": {
+    "en": "Switch Touch Dimmer (1 Gang)",
+    "nl": "Switch Touch Dimmer (1 Gang)",
+    "fr": "Variateur tactile (1 bouton)",
+    "de": "Touch-Dimmer (1-Kanal)"
+  },
+  "class": "light",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "button.1"
+  ],
+  "capabilitiesOptions": {
+    "onoff": {
+      "setOnDim": false
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    },
+    "measure_battery": {
+      "title": {
+        "en": "Battery",
+        "fr": "Batterie",
+        "nl": "Batterij",
+        "de": "Batterie"
+      }
+    }
+  },
+  "energy": {
+    "approximation": {
+      "usageConstant": 5
+    },
+    "batteries": [
+      "CR2032"
+    ]
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "images": {
+    "small": "/drivers/switch_dimmer_1gang/assets/images/small.png",
+    "large": "/drivers/switch_dimmer_1gang/assets/images/large.png",
+    "xlarge": "/drivers/switch_dimmer_1gang/assets/images/xlarge.png"
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_TZE204_3Z6HCA0Q",
+      "_TZE284_4AR89TR1"
+    ],
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          4,
+          5,
+          61184
+        ]
+      }
+    },
+    "learnmode": {
+      "instruction": {
+        "en": "Toggle the switch to start pairing.\n\nIf pairing does not automatically start, try resetting the device by holding the button for 10 seconds until the LED flashes rapidly.",
+        "nl": "Schakel de schakelaar om te beginnen met koppelen.\n\nAls het koppelen niet automatisch start, probeer het apparaat te resetten door de knop 10 seconden ingedrukt te houden totdat de LED snel knippert."
+      }
+    }
+  },
+  "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "Dimmer Settings",
+        "nl": "Dimmer Instellingen"
+      },
+      "children": [
+        {
+          "id": "min_brightness",
+          "type": "number",
+          "label": {
+            "en": "Minimum Brightness (%)",
+            "nl": "Minimale Helderheid (%)"
+          },
+          "hint": {
+            "en": "Set the minimum brightness level (1-100)",
+            "nl": "Stel het minimale helderheidsniveau in (1-100)"
+          },
+          "value": 1,
+          "min": 1,
+          "max": 100,
+          "units": {
+            "en": "%",
+            "nl": "%"
+          }
+        },
+        {
+          "id": "power_on_behavior",
+          "type": "dropdown",
+          "label": {
+            "en": "Power-on Behavior",
+            "nl": "Inschakelen Gedrag"
+          },
+          "hint": {
+            "en": "Select the behavior when power is restored",
+            "nl": "Selecteer het gedrag wanneer de stroom wordt hersteld"
+          },
+          "value": "2",
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "Off",
+                "nl": "Uit"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "On",
+                "nl": "Aan"
+              }
+            },
+            {
+              "id": "2",
+              "label": {
+                "en": "Last State",
+                "nl": "Laatste Status"
+              }
+            }
+          ]
+        },
+        {
+          "id": "light_type",
+          "type": "dropdown",
+          "label": {
+            "en": "Light Type",
+            "nl": "Lichttype"
+          },
+          "hint": {
+            "en": "Select the type of light connected",
+            "nl": "Selecteer het type aangesloten lamp"
+          },
+          "value": "0",
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "LED",
+                "nl": "LED"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "Incandescent",
+                "nl": "Gloeilamp"
+              }
+            },
+            {
+              "id": "2",
+              "label": {
+                "en": "Halogen",
+                "nl": "Halogeen"
+              }
+            }
+          ]
+        },
+        {
+          "id": "max_brightness",
+          "type": "number",
+          "label": {
+            "en": "Maximum Brightness (%)",
+            "fr": "Luminosité Maximale (%)"
+          },
+          "hint": {
+            "en": "Maximum brightness level (1-100)",
+            "fr": "Niveau de luminosité maximum (1-100)"
+          },
+          "value": 100,
+          "min": 1,
+          "max": 100,
+          "units": {
+            "en": "%",
+            "fr": "%"
+          }
+        },
+        {
+          "id": "dimmer_transition_time",
+          "type": "number",
+          "label": {
+            "en": "Transition Time (x100ms, 0=instant)",
+            "fr": "Durée de Transition (x100ms, 0=instantané)"
+          },
+          "hint": {
+            "en": "Smooth transition when changing brightness",
+            "fr": "Transition fluide lors du changement de luminosité"
+          },
+          "value": 0,
+          "min": 0,
+          "max": 50,
+          "step": 1
+        },
+        {
+          "id": "smart_dimmer_mode",
+          "type": "dropdown",
+          "label": {
+            "en": "Dimmer Mode",
+            "fr": "Mode Variateur"
+          },
+          "hint": {
+            "en": "Leading edge for LED/inductive, trailing edge for resistive",
+            "fr": "Front montant pour LED/inductif, front descendant pour résistif"
+          },
+          "value": "auto",
+          "values": [
+            {
+              "id": "auto",
+              "label": {
+                "en": "Auto",
+                "fr": "Automatique"
+              }
+            },
+            {
+              "id": "leading_edge",
+              "label": {
+                "en": "Leading Edge",
+                "fr": "Front Montant"
+              }
+            },
+            {
+              "id": "trailing_edge",
+              "label": {
+                "en": "Trailing Edge",
+                "fr": "Front Descendant"
+              }
+            }
+          ]
+        },
+        {
+          "id": "dimmer_step_size",
+          "type": "number",
+          "label": {
+            "en": "Dimmer Step Size (%)",
+            "fr": "Taille du Pas du Variateur (%)"
+          },
+          "value": 1,
+          "min": 1,
+          "max": 25,
+          "step": 1,
+          "hint": {
+            "en": "Step size when adjusting brightness",
+            "fr": "Taille du pas lors de l'ajustement"
+          }
+        },
+        {
+          "id": "standby_power_threshold",
+          "type": "number",
+          "label": {
+            "en": "Standby Power Threshold (W, 0=disabled)",
+            "fr": "Seuil Puissance Veille (W, 0=désactivé)"
+          },
+          "value": 0,
+          "min": 0,
+          "max": 20,
+          "step": 0.1,
+          "hint": {
+            "en": "Power above which flow card triggers",
+            "fr": "Puissance au-dessus duquel la carte flow se déclenche"
+          }
+        }
+      ]
+    }
+  ],
+  "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "fr": "Vérifier MàJ OTA",
+        "nl": "Controleer op OTA-updates"
+      }
+    }
+  ],
+  "id": "switch_dimmer_1gang",
+  "version": "1.0.0"
+}

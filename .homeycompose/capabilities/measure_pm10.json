@@ -1,0 +1,17 @@
+{
+  "type": "number",
+  "title": {
+    "en": "PM10",
+    "nl": "PM10",
+    "de": "PM10",
+    "fr": "PM10"
+  },
+  "units": {
+    "en": "µg/m³"
+  },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "decimals": 0,
+  "insights": true
+}

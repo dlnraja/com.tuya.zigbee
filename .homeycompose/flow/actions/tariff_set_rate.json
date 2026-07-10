@@ -1,0 +1,113 @@
+{
+  "id": "tariff_set_rate",
+  "title": {
+    "en": "Set tariff rate"
+  },
+  "hint": {
+    "en": "Change the active energy tariff at runtime"
+  },
+  "args": [
+    {
+      "name": "preset",
+      "type": "dropdown",
+      "title": {
+        "en": "Tariff preset"
+      },
+      "values": [
+        {
+          "id": "custom",
+          "title": {
+            "en": "Custom rate"
+          }
+        },
+        {
+          "id": "FLAT",
+          "title": {
+            "en": "Flat Rate"
+          }
+        },
+        {
+          "id": "TOU_DAY_NIGHT",
+          "title": {
+            "en": "Day/Night"
+          }
+        },
+        {
+          "id": "TOU_PEAK_SHOULDER_OFFPEAK",
+          "title": {
+            "en": "Peak/Shoulder/Off-Peak"
+          }
+        },
+        {
+          "id": "UK_ECONOMY_7",
+          "title": {
+            "en": "UK Economy 7"
+          }
+        }
+      ]
+    },
+    {
+      "name": "custom_rate_kwh",
+      "type": "number",
+      "title": {
+        "en": "Custom rate (per kWh)"
+      },
+      "min": 0,
+      "max": 5,
+      "step": 0.01,
+      "value": 0.25
+    },
+    {
+      "name": "daily_charge",
+      "type": "number",
+      "title": {
+        "en": "Daily fixed charge"
+      },
+      "min": 0,
+      "max": 10,
+      "step": 0.01,
+      "value": 0
+    },
+    {
+      "name": "tax_rate",
+      "type": "number",
+      "title": {
+        "en": "Tax rate (e.g. 0.20 for 20%)"
+      },
+      "min": 0,
+      "max": 1,
+      "step": 0.01,
+      "value": 0
+    },
+    {
+      "name": "currency",
+      "type": "dropdown",
+      "title": {
+        "en": "Currency"
+      },
+      "values": [
+        {
+          "id": "EUR",
+          "title": {
+            "en": "EUR"
+          }
+        },
+        {
+          "id": "GBP",
+          "title": {
+            "en": "GBP"
+          }
+        },
+        {
+          "id": "USD",
+          "title": {
+            "en": "USD"
+          }
+        }
+      ]
+    }
+  ],
+  "titleFormatted": {
+    "en": "Set tariff rate [[preset]] [[custom_rate_kwh]] [[daily_charge]] [[tax_rate]] [[currency]]"
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "name": {
+    "en": "Fingerprint Smart Lock",
+    "fr": "Serrure Empreinte Digitale",
+    "nl": "Vingerafdruk Slim Slot",
+    "de": "Fingerabdruck Smartlock",
+    "it": "Serratura Impronta Digitale",
+    "sv": "Fingeravtryckslås",
+    "no": "Fingeravtrykkslås",
+    "es": "Cerradura Huella Digital",
+    "da": "Fingeraftrykslås"
+  },
+  "class": "lock",
+  "capabilities": [
+    "locked",
+    "alarm_tamper",
+    "measure_battery",
+    "button.1"
+  ],
+  "energy": {
+    "batteries": [
+      "AA",
+      "AA",
+      "AA",
+      "AA"
+    ]
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_tze200_bse1xpui",
+      "_tze200_bwerwhpr",
+      "_tze200_vu0jdqnm",
+      "_tze200_xyhhcx94",
+      "_tze204_bwerwhpr",
+      "_tze204_pvvbommb",
+      "_tze204_vu0jdqnm",
+      "_tze204_xyhhcx94",
+      "_TZ3000_vd43bbfq"
+    ],
+    "productId": [
+      "TS0601_lock",
+      "TS0601"
+    ],
+    "learnmode": {
+      "instruction": {
+        "en": "Follow the lock's pairing instructions (usually hold * + # for 5 seconds)",
+        "fr": "Suivez les instructions d'appairage de la serrure"
+      }
+    },
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          61184
+        ]
+      }
+    }
+  },
+  "images": {
+    "small": "/drivers/fingerprint_lock/assets/images/small.png",
+    "large": "/drivers/fingerprint_lock/assets/images/large.png",
+    "xlarge": "/drivers/fingerprint_lock/assets/images/xlarge.png"
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "fr": "Vérifier MàJ OTA",
+        "nl": "Controleer op OTA-updates"
+      }
+    }
+  ],
+  "id": "fingerprint_lock",
+  "version": "1.0.0",
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  }
+}

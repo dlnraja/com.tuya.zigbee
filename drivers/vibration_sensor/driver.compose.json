@@ -1,0 +1,117 @@
+{
+  "name": {
+    "en": "Vibration Sensor",
+    "fr": "Capteur de Vibration",
+    "nl": "Trillingssensor",
+    "de": "Vibrationssensor"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "alarm_vibration",
+    "measure_temperature",
+    "measure_battery",
+    "alarm_tamper",
+    "button.1"
+  ],
+  "energy": {
+    "batteries": [
+      "CR2032",
+      "CR2450"
+    ]
+  },
+  "subDevices": [],
+  "zigbee": {
+    "manufacturerName": [
+      "_TYZB01_3ZV6OLEO",
+      "_TYZB01_821SIATI",
+      "_TYZB01_GEIGPSY4",
+      "_TYZB01_J9XXAHCL",
+      "_TYZB01_KULDUHBJ",
+      "_TZ3000_A4OUV4QS",
+      "_TZ3000_BMFW11GS",
+      "_TZ3000_BMFW9YKL",
+      "_TZ3000_C0EPQJ4N",
+      "_TZ3000_D9MXCG6G",
+      "_TZ3000_EZ2W5NZP",
+      "_TZ3000_FBJNWZKO",
+      "_TZ3000_FKXMYWJV",
+      "_TZ3000_KY0FQ4HO",
+      "_TZ3000_LQPT3MVR",
+      "_TZ3000_LZDJJFSS",
+      "_TZ3000_RCFWRSLT",
+      "_TZ3000_WQWDOQIB",
+      "_TZE200_CSCPPKXZ",
+      "_TZE200_GNPN9HXB",
+      "_TZE200_JFW0A4AA",
+      "_TZE200_VQ5U79U3",
+      "_TZE200_WZK0X7FQ",
+      "_TZE204_CSCPPKXZ",
+      "_TZE284_CSCPPKXZ",
+      "_TZE200_kccdzaeo",
+      "_TZE200_s7rsrtbg",
+      "_TZE200_tmszbtzq",
+      "_TZE200_bfmfhxra",
+      "_TZE200_ahpcyzth",
+      "_TZE200_kijxnb8q",
+      "_tz3210_vbfp8eyv",
+      "_TZE200_khzbklyh",
+      "_TZE200_df04ghrb",
+      "_TZE200_toeldckg",
+      "_TZE200_cqtamhh5",
+      "_TZE200_xlnzk169",
+      "_TZE200_llvwkkde"
+    ],
+    "productId": [
+      "TS0209",
+      "TS0210",
+      "ZG-102ZM",
+      "TS0601",
+      "ZG-103ZL",
+      "ZG-103Z",
+      "TS011F",
+      "CK-BL702-MWS-01(7016)"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6
+        ]
+      }
+    }
+  },
+  "images": {
+    "small": "/drivers/vibration_sensor/assets/images/small.png",
+    "large": "/drivers/vibration_sensor/assets/images/large.png",
+    "xlarge": "/drivers/vibration_sensor/assets/images/xlarge.png"
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "fr": "Vérifier MàJ OTA",
+        "nl": "Controleer op OTA-updates"
+      }
+    }
+  ],
+  "id": "vibration_sensor",
+  "version": "1.0.0",
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  }
+}

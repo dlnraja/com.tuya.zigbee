@@ -1,0 +1,104 @@
+{
+  "name": {
+    "en": "Fan Speed Controller",
+    "fr": "Contrôleur Ventilateur",
+    "nl": "Ventilator Controller",
+    "de": "Lüfterregler",
+    "it": "Controller Ventilatore",
+    "sv": "Fläktkontroll",
+    "no": "Viftekontroller",
+    "es": "Controlador Ventilador",
+    "da": "Blæserkontrol"
+  },
+  "class": "fan",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "button.1"
+  ],
+  "capabilitiesOptions": {
+    "dim": {
+      "title": {
+        "en": "Fan Speed",
+        "fr": "Vitesse"
+      },
+      "min": 0,
+      "max": 1,
+      "step": 0.25
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_9HV6KPDS",
+      "_TZ3000_CPYISD3C",
+      "_TZ3000_HK7BCQHU",
+      "_TZ3000_HK7WDZRV",
+      "_TZ3210_LZQQ3U4R",
+      "_TZ3210_X1MDZM6O",
+      "_TZE200_A5ZYJDPN",
+      "_TZE200_FVLDKU9H",
+      "_TZE200_KDS0PRMV",
+      "_TZE204_2JNOY8DJ",
+      "_TZE204_A5ZYJDPN",
+      "_TZE204_FVLDKU9H",
+      "_TZE204_KDS0PRMV",
+      "_TZE204_LAWXY9E2"
+    ],
+    "productId": [
+      "TS0601_fanctrl",
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          61184
+        ]
+      }
+    },
+    "learnmode": {
+      "instruction": {
+        "en": "Press and hold the power button for 5 seconds until LED blinks",
+        "fr": "Maintenez le bouton power pendant 5 secondes"
+      }
+    }
+  },
+  "images": {
+    "small": "/drivers/fan_controller/assets/images/small.png",
+    "large": "/drivers/fan_controller/assets/images/large.png",
+    "xlarge": "/drivers/fan_controller/assets/images/xlarge.png"
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "energy": {
+    "approximation": {
+      "usageOn": 50,
+      "usageOff": 1
+    }
+  },
+  "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "fr": "Vérifier MàJ OTA",
+        "nl": "Controleer op OTA-updates"
+      }
+    }
+  ],
+  "id": "fan_controller",
+  "version": "1.0.0"
+}

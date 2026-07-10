@@ -1,0 +1,19 @@
+{
+  "type": "boolean",
+  "title": {
+    "en": "Frost Protection",
+    "fr": "Protection Antigel",
+    "nl": "Vorstbeveiliging",
+    "de": "Frostschutz"
+  },
+  "desc": {
+    "en": "Keeps heating at minimum to prevent freezing",
+    "fr": "Maintient le chauffage au minimum pour éviter le gel",
+    "nl": "Houdt verwarming op minimum om bevriezing te voorkomen",
+    "de": "Hält Heizung auf Minimum um Einfrieren zu verhindern"
+  },
+  "getable": true,
+  "setable": true,
+  "uiComponent": "toggle",
+  "insights": false
+}

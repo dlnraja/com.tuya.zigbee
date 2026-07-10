@@ -1,0 +1,866 @@
+[
+  {
+    "driver": "air_purifier_curtain",
+    "capability": "onoff"
+  },
+  {
+    "driver": "air_purifier_dimmer",
+    "capability": "onoff"
+  },
+  {
+    "driver": "air_purifier_soil",
+    "capability": "onoff"
+  },
+  {
+    "driver": "blaster_remote",
+    "capability": "onoff"
+  },
+  {
+    "driver": "bulb_rgbw_universal",
+    "capability": "onoff"
+  },
+  {
+    "driver": "button_wireless_1",
+    "capability": "button.1"
+  },
+  {
+    "driver": "button_wireless_2",
+    "capability": "button.1"
+  },
+  {
+    "driver": "button_wireless_2",
+    "capability": "button.2"
+  },
+  {
+    "driver": "button_wireless_3",
+    "capability": "button.1"
+  },
+  {
+    "driver": "button_wireless_3",
+    "capability": "button.2"
+  },
+  {
+    "driver": "button_wireless_3",
+    "capability": "button.3"
+  },
+  {
+    "driver": "button_wireless_4",
+    "capability": "button.1"
+  },
+  {
+    "driver": "button_wireless_4",
+    "capability": "button.2"
+  },
+  {
+    "driver": "button_wireless_4",
+    "capability": "button.3"
+  },
+  {
+    "driver": "button_wireless_4",
+    "capability": "button.4"
+  },
+  {
+    "driver": "button_wireless_6",
+    "capability": "button.1"
+  },
+  {
+    "driver": "button_wireless_6",
+    "capability": "button.2"
+  },
+  {
+    "driver": "button_wireless_6",
+    "capability": "button.3"
+  },
+  {
+    "driver": "button_wireless_6",
+    "capability": "button.4"
+  },
+  {
+    "driver": "button_wireless_6",
+    "capability": "button.5"
+  },
+  {
+    "driver": "button_wireless_6",
+    "capability": "button.6"
+  },
+  {
+    "driver": "button_wireless_8",
+    "capability": "button.1"
+  },
+  {
+    "driver": "button_wireless_8",
+    "capability": "button.2"
+  },
+  {
+    "driver": "button_wireless_8",
+    "capability": "button.3"
+  },
+  {
+    "driver": "button_wireless_8",
+    "capability": "button.4"
+  },
+  {
+    "driver": "button_wireless_8",
+    "capability": "button.5"
+  },
+  {
+    "driver": "button_wireless_8",
+    "capability": "button.6"
+  },
+  {
+    "driver": "button_wireless_8",
+    "capability": "button.7"
+  },
+  {
+    "driver": "button_wireless_8",
+    "capability": "button.8"
+  },
+  {
+    "driver": "button_wireless_scene",
+    "capability": "button.1"
+  },
+  {
+    "driver": "button_wireless_scene",
+    "capability": "button.2"
+  },
+  {
+    "driver": "button_wireless_smart",
+    "capability": "button.1"
+  },
+  {
+    "driver": "button_wireless_usb",
+    "capability": "button.1"
+  },
+  {
+    "driver": "button_wireless_usb",
+    "capability": "button.2"
+  },
+  {
+    "driver": "button_wireless_valve",
+    "capability": "button.1"
+  },
+  {
+    "driver": "button_wireless_valve",
+    "capability": "button.2"
+  },
+  {
+    "driver": "button_wireless_valve",
+    "capability": "onoff"
+  },
+  {
+    "driver": "button_wireless_wall",
+    "capability": "button.1"
+  },
+  {
+    "driver": "button_wireless_wall",
+    "capability": "button.2"
+  },
+  {
+    "driver": "button_wireless_wall",
+    "capability": "onoff"
+  },
+  {
+    "driver": "ceiling_fan",
+    "capability": "onoff"
+  },
+  {
+    "driver": "climate_sensor_dimmer",
+    "capability": "onoff"
+  },
+  {
+    "driver": "climate_sensor_presence",
+    "capability": "onoff"
+  },
+  {
+    "driver": "climate_sensor_presence",
+    "capability": "onoff.gang2"
+  },
+  {
+    "driver": "climate_sensor_presence",
+    "capability": "onoff.gang3"
+  },
+  {
+    "driver": "climate_sensor_presence",
+    "capability": "button.toggle_1"
+  },
+  {
+    "driver": "climate_sensor_presence",
+    "capability": "button.toggle_2"
+  },
+  {
+    "driver": "climate_sensor_presence",
+    "capability": "button.toggle_3"
+  },
+  {
+    "driver": "climate_sensor_presence",
+    "capability": "button.identify"
+  },
+  {
+    "driver": "climate_sensor_smart",
+    "capability": "onoff.gang1"
+  },
+  {
+    "driver": "climate_sensor_smart",
+    "capability": "onoff.gang2"
+  },
+  {
+    "driver": "climate_sensor_smart",
+    "capability": "onoff.gang3"
+  },
+  {
+    "driver": "climate_sensor_smart",
+    "capability": "onoff.gang4"
+  },
+  {
+    "driver": "contact_sensor_curtain",
+    "capability": "button"
+  },
+  {
+    "driver": "contact_sensor_dimmer",
+    "capability": "onoff"
+  },
+  {
+    "driver": "device_air_purifier",
+    "capability": "onoff"
+  },
+  {
+    "driver": "device_air_purifier_din",
+    "capability": "onoff"
+  },
+  {
+    "driver": "device_air_purifier_led",
+    "capability": "onoff"
+  },
+  {
+    "driver": "device_air_purifier_quality",
+    "capability": "onoff"
+  },
+  {
+    "driver": "device_air_purifier_smart",
+    "capability": "onoff"
+  },
+  {
+    "driver": "device_air_purifier_smoke",
+    "capability": "onoff"
+  },
+  {
+    "driver": "device_air_purifier_soil",
+    "capability": "onoff"
+  },
+  {
+    "driver": "device_air_purifier_thermostat",
+    "capability": "onoff"
+  },
+  {
+    "driver": "device_generic_diy_universal",
+    "capability": "onoff"
+  },
+  {
+    "driver": "device_generic_tuya",
+    "capability": "onoff"
+  },
+  {
+    "driver": "device_radiator_valve_thermostat",
+    "capability": "onoff"
+  },
+  {
+    "driver": "dimmer_air_purifier",
+    "capability": "onoff"
+  },
+  {
+    "driver": "dimmer_bulb_dimmable",
+    "capability": "onoff"
+  },
+  {
+    "driver": "dimmer_wall_switch",
+    "capability": "onoff"
+  },
+  {
+    "driver": "dimmer_wall_switch",
+    "capability": "onoff.gang2"
+  },
+  {
+    "driver": "dimmer_wall_switch",
+    "capability": "button.toggle_1"
+  },
+  {
+    "driver": "dimmer_wall_switch",
+    "capability": "button.toggle_2"
+  },
+  {
+    "driver": "dimmer_wall_switch",
+    "capability": "button.identify"
+  },
+  {
+    "driver": "dimmer_wall_water",
+    "capability": "onoff"
+  },
+  {
+    "driver": "diy_custom_zigbee",
+    "capability": "onoff"
+  },
+  {
+    "driver": "doublepowerpoint",
+    "capability": "onoff"
+  },
+  {
+    "driver": "doublepowerpoint2",
+    "capability": "onoff"
+  },
+  {
+    "driver": "gateway_zigbee_bridge",
+    "capability": "onoff"
+  },
+  {
+    "driver": "handheld_remote_4_buttons",
+    "capability": "button"
+  },
+  {
+    "driver": "hvac_air_conditioner",
+    "capability": "onoff"
+  },
+  {
+    "driver": "hvac_dehumidifier",
+    "capability": "onoff"
+  },
+  {
+    "driver": "ir_blaster",
+    "capability": "button.mute"
+  },
+  {
+    "driver": "ir_blaster",
+    "capability": "button.source"
+  },
+  {
+    "driver": "ir_blaster",
+    "capability": "button.menu"
+  },
+  {
+    "driver": "ir_blaster",
+    "capability": "button.enter"
+  },
+  {
+    "driver": "ir_remote",
+    "capability": "button.ir_test"
+  },
+  {
+    "driver": "led_controller_cct",
+    "capability": "onoff"
+  },
+  {
+    "driver": "led_controller_rgb",
+    "capability": "onoff"
+  },
+  {
+    "driver": "led_strip",
+    "capability": "onoff"
+  },
+  {
+    "driver": "led_strip_advanced",
+    "capability": "onoff"
+  },
+  {
+    "driver": "led_strip_rgbw",
+    "capability": "onoff"
+  },
+  {
+    "driver": "light_bulb_dimmable_tunable",
+    "capability": "onoff"
+  },
+  {
+    "driver": "light_bulb_tunable_white",
+    "capability": "onoff"
+  },
+  {
+    "driver": "outdoorsmart2socket",
+    "capability": "onoff"
+  },
+  {
+    "driver": "outdoorplug",
+    "capability": "onoff"
+  },
+  {
+    "driver": "plug",
+    "capability": "onoff"
+  },
+  {
+    "driver": "pool_pump",
+    "capability": "onoff"
+  },
+  {
+    "driver": "radiator_wifi_tuya",
+    "capability": "onoff"
+  },
+  {
+    "driver": "relay_board_1_channel",
+    "capability": "onoff"
+  },
+  {
+    "driver": "relay_board_2_channel",
+    "capability": "onoff"
+  },
+  {
+    "driver": "relay_board_4_channel",
+    "capability": "onoff"
+  },
+  {
+    "driver": "smart_remote_4_buttons",
+    "capability": "button.1"
+  },
+  {
+    "driver": "smart_remote_4_buttons",
+    "capability": "button.2"
+  },
+  {
+    "driver": "smart_remote_4_buttons",
+    "capability": "button.3"
+  },
+  {
+    "driver": "smart_remote_4_buttons",
+    "capability": "button.4"
+  },
+  {
+    "driver": "remote_button_wireless",
+    "capability": "button.1"
+  },
+  {
+    "driver": "remote_button_wireless",
+    "capability": "button.2"
+  },
+  {
+    "driver": "remote_button_wireless",
+    "capability": "button.3"
+  },
+  {
+    "driver": "remote_button_wireless_handheld",
+    "capability": "button.1"
+  },
+  {
+    "driver": "remote_button_wireless_handheld",
+    "capability": "button.2"
+  },
+  {
+    "driver": "remote_button_wireless_handheld",
+    "capability": "button.3"
+  },
+  {
+    "driver": "remote_button_wireless_handheld",
+    "capability": "button.4"
+  },
+  {
+    "driver": "remote_button_wireless_scene",
+    "capability": "button.1"
+  },
+  {
+    "driver": "remote_button_wireless_scene",
+    "capability": "button.2"
+  },
+  {
+    "driver": "remote_button_wireless_smart",
+    "capability": "button.1"
+  },
+  {
+    "driver": "remote_button_wireless_usb",
+    "capability": "button.1"
+  },
+  {
+    "driver": "remote_button_wireless_usb",
+    "capability": "button.2"
+  },
+  {
+    "driver": "remote_button_wireless_valve",
+    "capability": "button.1"
+  },
+  {
+    "driver": "remote_button_wireless_valve",
+    "capability": "button.2"
+  },
+  {
+    "driver": "remote_button_wireless_valve",
+    "capability": "onoff"
+  },
+  {
+    "driver": "remote_button_wireless_wall",
+    "capability": "button.1"
+  },
+  {
+    "driver": "scene_switch_1",
+    "capability": "button.1"
+  },
+  {
+    "driver": "scene_switch_2",
+    "capability": "button.1"
+  },
+  {
+    "driver": "scene_switch_2",
+    "capability": "button.2"
+  },
+  {
+    "driver": "scene_switch_3",
+    "capability": "button.1"
+  },
+  {
+    "driver": "scene_switch_3",
+    "capability": "button.2"
+  },
+  {
+    "driver": "scene_switch_3",
+    "capability": "button.3"
+  },
+  {
+    "driver": "scene_switch_4",
+    "capability": "button.1"
+  },
+  {
+    "driver": "scene_switch_4",
+    "capability": "button.2"
+  },
+  {
+    "driver": "scene_switch_4",
+    "capability": "button.3"
+  },
+  {
+    "driver": "scene_switch_4",
+    "capability": "button.4"
+  },
+  {
+    "driver": "scene_switch_6",
+    "capability": "button.1"
+  },
+  {
+    "driver": "scene_switch_6",
+    "capability": "button.2"
+  },
+  {
+    "driver": "scene_switch_6",
+    "capability": "button.3"
+  },
+  {
+    "driver": "scene_switch_6",
+    "capability": "button.4"
+  },
+  {
+    "driver": "scene_switch_6",
+    "capability": "button.5"
+  },
+  {
+    "driver": "scene_switch_6",
+    "capability": "button.6"
+  },
+  {
+    "driver": "scene_switch_wall",
+    "capability": "button.1"
+  },
+  {
+    "driver": "scene_switch_wall",
+    "capability": "button.2"
+  },
+  {
+    "driver": "sensor_climate_smart",
+    "capability": "onoff.gang1"
+  },
+  {
+    "driver": "sensor_climate_smart",
+    "capability": "onoff.gang2"
+  },
+  {
+    "driver": "sensor_climate_smart",
+    "capability": "onoff.gang3"
+  },
+  {
+    "driver": "sensor_climate_smart",
+    "capability": "onoff.gang4"
+  },
+  {
+    "driver": "smartplug",
+    "capability": "onoff"
+  },
+  {
+    "driver": "smartplug_2_socket",
+    "capability": "onoff"
+  },
+  {
+    "driver": "smartplugDinRail",
+    "capability": "onoff"
+  },
+  {
+    "driver": "smart_heater",
+    "capability": "onoff"
+  },
+  {
+    "driver": "smart_heater_controller",
+    "capability": "onoff"
+  },
+  {
+    "driver": "smart_knob",
+    "capability": "button"
+  },
+  {
+    "driver": "smart_knob_rotary",
+    "capability": "button.rotate_left"
+  },
+  {
+    "driver": "smart_knob_rotary",
+    "capability": "button.rotate_right"
+  },
+  {
+    "driver": "smart_knob_rotary",
+    "capability": "button.press"
+  },
+  {
+    "driver": "smart_rcbo",
+    "capability": "onoff"
+  },
+  {
+    "driver": "smart_remote_1_button_2",
+    "capability": "button.1"
+  },
+  {
+    "driver": "smart_remote_4_buttons",
+    "capability": "button.1"
+  },
+  {
+    "driver": "smart_remote_4_buttons",
+    "capability": "button.2"
+  },
+  {
+    "driver": "smart_remote_4_buttons",
+    "capability": "button.3"
+  },
+  {
+    "driver": "smart_remote_4_buttons",
+    "capability": "button.4"
+  },
+  {
+    "driver": "smart_scene_panel",
+    "capability": "onoff.gang1"
+  },
+  {
+    "driver": "smart_scene_panel",
+    "capability": "onoff.gang2"
+  },
+  {
+    "driver": "smart_scene_panel",
+    "capability": "onoff.gang3"
+  },
+  {
+    "driver": "smart_scene_panel",
+    "capability": "onoff.gang4"
+  },
+  {
+    "driver": "smart_switch",
+    "capability": "onoff"
+  },
+  {
+    "driver": "socket_power_strip",
+    "capability": "onoff"
+  },
+  {
+    "driver": "socket_power_strip_four",
+    "capability": "onoff"
+  },
+  {
+    "driver": "socket_power_strip_four_three",
+    "capability": "onoff"
+  },
+  {
+    "driver": "socket_power_strip_four_two",
+    "capability": "onoff"
+  },
+  {
+    "driver": "switch_temp_sensor",
+    "capability": "onoff"
+  },
+  {
+    "driver": "thermostat_4ch",
+    "capability": "onoff"
+  },
+  {
+    "driver": "thermostat_tuya_dp",
+    "capability": "onoff"
+  },
+  {
+    "driver": "universal_zigbee",
+    "capability": "onoff"
+  },
+  {
+    "driver": "valvecontroller",
+    "capability": "onoff"
+  },
+  {
+    "driver": "wall_remote_1_gang",
+    "capability": "button.1"
+  },
+  {
+    "driver": "wall_remote_2_gang",
+    "capability": "button.1"
+  },
+  {
+    "driver": "wall_remote_2_gang",
+    "capability": "button.2"
+  },
+  {
+    "driver": "wall_remote_3_gang",
+    "capability": "button.1"
+  },
+  {
+    "driver": "wall_remote_3_gang",
+    "capability": "button.2"
+  },
+  {
+    "driver": "wall_remote_3_gang",
+    "capability": "button.3"
+  },
+  {
+    "driver": "wall_remote_4_gang",
+    "capability": "button.1"
+  },
+  {
+    "driver": "wall_remote_4_gang",
+    "capability": "button.2"
+  },
+  {
+    "driver": "wall_remote_4_gang",
+    "capability": "button.3"
+  },
+  {
+    "driver": "wall_remote_4_gang",
+    "capability": "button.4"
+  },
+  {
+    "driver": "wall_remote_4_gang_3",
+    "capability": "button.1"
+  },
+  {
+    "driver": "wall_remote_4_gang_3",
+    "capability": "button.2"
+  },
+  {
+    "driver": "wall_remote_4_gang_3",
+    "capability": "button.3"
+  },
+  {
+    "driver": "wall_remote_4_gang_3",
+    "capability": "button.4"
+  },
+  {
+    "driver": "wall_remote_6_gang",
+    "capability": "button.1"
+  },
+  {
+    "driver": "wall_remote_6_gang",
+    "capability": "button.2"
+  },
+  {
+    "driver": "wall_remote_6_gang",
+    "capability": "button.3"
+  },
+  {
+    "driver": "wall_remote_6_gang",
+    "capability": "button.4"
+  },
+  {
+    "driver": "wall_remote_6_gang",
+    "capability": "button.5"
+  },
+  {
+    "driver": "wall_remote_6_gang",
+    "capability": "button.6"
+  },
+  {
+    "driver": "wall_socket",
+    "capability": "onoff"
+  },
+  {
+    "driver": "wifi_air_purifier",
+    "capability": "onoff"
+  },
+  {
+    "driver": "wifi_dehumidifier",
+    "capability": "onoff"
+  },
+  {
+    "driver": "wifi_fan",
+    "capability": "onoff"
+  },
+  {
+    "driver": "wifi_generic",
+    "capability": "onoff"
+  },
+  {
+    "driver": "wifi_heater",
+    "capability": "onoff"
+  },
+  {
+    "driver": "wifi_humidifier",
+    "capability": "onoff"
+  },
+  {
+    "driver": "wifi_ir_remote",
+    "capability": "onoff"
+  },
+  {
+    "driver": "wifi_pet_feeder",
+    "capability": "onoff"
+  },
+  {
+    "driver": "wifi_plug",
+    "capability": "onoff"
+  },
+  {
+    "driver": "wifi_power_strip",
+    "capability": "onoff"
+  },
+  {
+    "driver": "wifi_robot_vacuum",
+    "capability": "onoff"
+  },
+  {
+    "driver": "wifi_siren",
+    "capability": "onoff"
+  },
+  {
+    "driver": "wifi_switch",
+    "capability": "onoff"
+  },
+  {
+    "driver": "wifi_switch_2gang",
+    "capability": "onoff"
+  },
+  {
+    "driver": "wifi_switch_2gang",
+    "capability": "onoff.gang2"
+  },
+  {
+    "driver": "wifi_switch_3gang",
+    "capability": "onoff"
+  },
+  {
+    "driver": "wifi_switch_3gang",
+    "capability": "onoff.gang2"
+  },
+  {
+    "driver": "wifi_switch_3gang",
+    "capability": "onoff.gang3"
+  },
+  {
+    "driver": "wifi_switch_4gang",
+    "capability": "onoff"
+  },
+  {
+    "driver": "wifi_switch_4gang",
+    "capability": "onoff.gang2"
+  },
+  {
+    "driver": "wifi_switch_4gang",
+    "capability": "onoff.gang3"
+  },
+  {
+    "driver": "wifi_switch_4gang",
+    "capability": "onoff.gang4"
+  },
+  {
+    "driver": "wifi_thermostat",
+    "capability": "onoff"
+  }
+]

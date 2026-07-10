@@ -1,0 +1,155 @@
+{
+  "triggers": [
+    {
+      "id": "switch_wireless_onoff_true",
+      "title": {
+        "en": "Turned on"
+      },
+      "tokens": [
+        {
+          "name": "timestamp",
+          "type": "string",
+          "title": "Timestamp"
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Turned on"
+      }
+    },
+    {
+      "id": "switch_wireless_onoff_false",
+      "title": {
+        "en": "Turned off",
+        "fr": "Éteint",
+        "nl": "Uitgezet",
+        "de": "Ausgeschaltet"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Turned off",
+        "fr": "Éteint",
+        "nl": "Uitgezet",
+        "de": "Ausgeschaltet"
+      }
+    },
+    {
+      "id": "switch_wireless_button_pressed",
+      "title": {
+        "en": "Button pressed",
+        "fr": "Bouton appuyé"
+      },
+      "tokens": [
+        {
+          "name": "press_type",
+          "type": "string",
+          "title": {
+            "en": "Press type"
+          },
+          "example": "single"
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Button pressed",
+        "fr": "Bouton appuyé"
+      }
+    },
+    {
+      "id": "switch_wireless_single_press",
+      "title": {
+        "en": "Single press",
+        "fr": "Appui simple"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Single press",
+        "fr": "Appui simple"
+      }
+    },
+    {
+      "id": "switch_wireless_double_press",
+      "title": {
+        "en": "Double press",
+        "fr": "Double appui"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Double press",
+        "fr": "Double appui"
+      }
+    },
+    {
+      "id": "switch_wireless_long_press",
+      "title": {
+        "en": "Long press",
+        "fr": "Appui long"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Long press",
+        "fr": "Appui long"
+      }
+    },
+    {
+      "id": "switch_wireless_battery_low",
+      "title": {
+        "en": "Battery low",
+        "fr": "Batterie faible",
+        "nl": "Batterij laag",
+        "de": "Batterie schwach"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Battery low",
+        "fr": "Batterie faible",
+        "nl": "Batterij laag",
+        "de": "Batterie schwach"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "id": "switch_wireless_is_on",
+      "title": {
+        "en": "Is !{{on|off}}"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Is !{{on|off}}"
+      }
+    }
+  ],
+  "actions": [
+    {
+      "id": "switch_wireless_turn_on",
+      "title": {
+        "en": "Turn on"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn on"
+      }
+    },
+    {
+      "id": "switch_wireless_turn_off",
+      "title": {
+        "en": "Turn off"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn off"
+      }
+    },
+    {
+      "id": "switch_wireless_toggle",
+      "title": {
+        "en": "Toggle"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Toggle"
+      }
+    }
+  ]
+}

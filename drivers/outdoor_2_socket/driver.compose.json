@@ -1,0 +1,91 @@
+{
+  "id": "outdoorsmart2socket",
+  "name": {
+    "en": "Outdoor Smart Socket"
+  },
+  "class": "socket",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "capabilities": [
+    "onoff",
+    "meter_power",
+    "measure_power",
+    "measure_current",
+    "measure_voltage",
+    "button.1"
+  ],
+  "images": {
+    "large": "/{{driverAssetsPath}}/images/large.png",
+    "small": "/{{driverAssetsPath}}/images/small.png"
+  },
+  "zigbee": {
+    "productId": [
+      "TS0601",
+      "TS011F"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6,
+          1794,
+          2820,
+          57344,
+          57345
+        ],
+        "bindings": [
+          10,
+          25
+        ]
+      },
+      "2": {
+        "clusters": [
+          6
+        ],
+        "bindings": [
+          6
+        ]
+      }
+    },
+    "devices": {
+      "secondSocket": {
+        "class": "socket",
+        "name": {
+          "en": "Outdoor Smart Socket #2"
+        },
+        "capabilities": [
+          "onoff"
+        ],
+        "settings": []
+      }
+    },
+    "learnmode": {
+      "instruction": {
+        "en": "Press and hold down on/off switch for aprox 5 seconds until the WiFi icon blinks rapidly."
+      }
+    },
+    "manufacturerName": [
+      "_hybrid_outdoor_2_socket_needs_device_assignment",
+      "_HYBRID_OUTDOOR_2_SOCKET_NEEDS_DEVICE_ASSIGNMENT"
+    ]
+  },
+  "version": "1.0.0",
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  }
+}

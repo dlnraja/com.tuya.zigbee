@@ -1,0 +1,203 @@
+{
+  "id": "wall_switch_5_gang_tuya",
+  "name": {
+    "en": "5 Gang Wall Switch"
+  },
+  "class": "socket",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "capabilities": [
+    "onoff",
+    "measure_battery",
+    "button.1",
+    "button.2",
+    "button.3",
+    "button.4",
+    "button.5"
+  ],
+  "images": {
+    "large": "/{{driverAssetsPath}}/images/large.png",
+    "small": "/{{driverAssetsPath}}/images/small.png"
+  },
+  "energy": {
+    "approximation": {
+      "usageOn": 0,
+      "usageOff": 0
+    },
+    "batteries": [
+      "CR2032"
+    ]
+  },
+  "zigbee": {
+    "productId": [
+      "TS0011",
+      "TS0001_power",
+      "TS0001_switch",
+      "TS0001_switch_module",
+      "TS000F",
+      "ZBMINI",
+      "ZBMINIL2",
+      "BASICZBR3",
+      "S31ZB",
+      "S26R2ZB",
+      "01MINIZB",
+      "ZBMINIR2",
+      "ZBM5-1C-120",
+      "ZBMINIR",
+      "ZBMINIL2-R2",
+      "ZBMINIR2-R2",
+      "ZG-302Z1",
+      "TS0101",
+      "TS4100",
+      "ZBM5-2C-120",
+      "ZBM5-3C-120",
+      "TS0726",
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          4,
+          5,
+          61184
+        ],
+        "bindings": [
+          25,
+          10
+        ]
+      }
+    },
+    "devices": {
+      "secondGang": {
+        "class": "socket",
+        "capabilities": [
+          "onoff"
+        ],
+        "name": {
+          "en": "5 Gang Wall Switch - Second Gang"
+        },
+        "energy": {
+          "approximation": {
+            "usageOn": 0,
+            "usageOff": 0
+          }
+        }
+      },
+      "thirdGang": {
+        "class": "socket",
+        "capabilities": [
+          "onoff"
+        ],
+        "name": {
+          "en": "5 Gang Wall Switch - Third Gang"
+        },
+        "energy": {
+          "approximation": {
+            "usageOn": 0,
+            "usageOff": 0
+          }
+        }
+      },
+      "fourthGang": {
+        "class": "socket",
+        "capabilities": [
+          "onoff"
+        ],
+        "name": {
+          "en": "5 Gang Wall Switch - Fourth Gang"
+        },
+        "energy": {
+          "approximation": {
+            "usageOn": 0,
+            "usageOff": 0
+          }
+        }
+      },
+      "fifthGang": {
+        "class": "socket",
+        "capabilities": [
+          "onoff"
+        ],
+        "name": {
+          "en": "5 Gang Wall Switch - Fifth Gang"
+        },
+        "energy": {
+          "approximation": {
+            "usageOn": 0,
+            "usageOff": 0
+          }
+        }
+      }
+    },
+    "learnmode": {
+      "image": "{{driverAssetsPath}}/icon.svg",
+      "instruction": {
+        "en": "Five tiles will be created, one for each channel of the device. Switch the unit on and off five times and hold for 5 seconds to enter pairing mode (the LED should flash red and blue)."
+      }
+    },
+    "manufacturerName": [
+      "_TZE200_placeholder"
+    ]
+  },
+  "version": "1.0.0",
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    },
+    "measure_battery": {
+      "title": {
+        "en": "Battery",
+        "fr": "Batterie",
+        "nl": "Batterij",
+        "de": "Batterie"
+      }
+    },
+    "button.2": {
+      "title": {
+        "en": "Button 2",
+        "fr": "Bouton 2"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    },
+    "button.3": {
+      "title": {
+        "en": "Button 3",
+        "fr": "Bouton 3"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    },
+    "button.4": {
+      "title": {
+        "en": "Button 4",
+        "fr": "Bouton 4"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    },
+    "button.5": {
+      "title": {
+        "en": "Button 5",
+        "fr": "Bouton 5"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  }
+}

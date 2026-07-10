@@ -1,0 +1,308 @@
+{
+  "name": {
+    "en": "Device Air Purifier Soil",
+    "nl": "luchtzuiveraar voor de bodem",
+    "fr": "Purificateur d'air de sol",
+    "de": "-Luftreiniger fÃ¼r den Boden",
+    "es": "Purificador de aire de suelo"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "measure_humidity.soil",
+    "measure_temperature",
+    "measure_humidity",
+    "measure_luminance",
+    "measure_battery",
+    "alarm_water",
+    "measure_ec",
+    "measure_conductivity",
+    "onoff",
+    "dim",
+    "measure_pm25",
+    "button.1"
+  ],
+  "capabilitiesOptions": {
+    "measure_humidity.soil": {
+      "title": {
+        "en": "Soil Moisture",
+        "fr": "HumiditÃ© du Sol",
+        "nl": "Bodemvochtigheid",
+        "de": "Bodenfeuchtigkeit"
+      }
+    },
+    "measure_humidity": {
+      "title": {
+        "en": "Air Humidity",
+        "fr": "HumiditÃ© de l'Air",
+        "nl": "Luchtvochtigheid",
+        "de": "Luftfeuchtigkeit"
+      }
+    },
+    "alarm_water": {
+      "title": {
+        "en": "Water Shortage",
+        "fr": "Manque d'Eau",
+        "nl": "Watertekort",
+        "de": "Wassermangel"
+      }
+    },
+    "measure_ec": {
+      "title": {
+        "en": "Fertilizer (EC)",
+        "fr": "Engrais (EC)",
+        "nl": "Bemesting (EC)",
+        "de": "DÃ¼nger (EC)"
+      }
+    },
+    "measure_conductivity": {
+      "title": {
+        "en": "Soil Fertility (EC)",
+        "fr": "FertilitÃ© du Sol (EC)",
+        "nl": "Bodemvruchtbaarheid (EC)",
+        "de": "Bodenfruchtbarkeit (EC)"
+      }
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  },
+  "energy": {
+    "batteries": [
+      "CR2450"
+    ],
+    "mains": true
+  },
+  "subDevices": [],
+  "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": " Calibration (v5.5.330 Hobeian)",
+        "fr": " Calibration (v5.5.330 Hobeian)"
+      },
+      "children": [
+        {
+          "id": "temperature_calibration",
+          "type": "number",
+          "label": {
+            "en": "Temperature Offset (Â°C)",
+            "fr": "DÃ©calage TempÃ©rature (Â°C)"
+          },
+          "value": 0,
+          "min": -30,
+          "max": 30,
+          "step": 0.1,
+          "hint": {
+            "en": "Offset to adjust temperature readings (-30 to +30)",
+            "fr": "DÃ©calage pour ajuster les lectures de tempÃ©rature (-30 Ã +30)"
+          }
+        },
+        {
+          "id": "humidity_calibration",
+          "type": "number",
+          "label": {
+            "en": "Air Humidity Offset (%)",
+            "fr": "DÃ©calage HumiditÃ© Air (%)"
+          },
+          "value": 0,
+          "min": -30,
+          "max": 30,
+          "step": 1,
+          "hint": {
+            "en": "Offset to adjust air humidity readings (-30 to +30)",
+            "fr": "DÃ©calage pour ajuster les lectures d'humiditÃ© de l'air (-30 Ã +30)"
+          }
+        },
+        {
+          "id": "moisture_calibration",
+          "type": "number",
+          "label": {
+            "en": "Soil Moisture Offset (%)",
+            "fr": "DÃ©calage HumiditÃ© Sol (%)"
+          },
+          "value": 0,
+          "min": -30,
+          "max": 30,
+          "step": 1,
+          "hint": {
+            "en": "Offset to adjust soil moisture readings (-30 to +30)",
+            "fr": "DÃ©calage pour ajuster les lectures d'humiditÃ© du sol (-30 Ã +30)"
+          }
+        },
+        {
+          "id": "sensor_precision",
+          "type": "dropdown",
+          "label": {
+            "en": "Decimal Precision",
+            "fr": "PrÃ©cision"
+          },
+          "value": "1",
+          "hint": {
+            "en": "Decimals for temperature/humidity values"
+          },
+          "values": [
+            {
+              "id": "1",
+              "label": {
+                "en": "1 decimal (20.5Â°C)"
+              }
+            },
+            {
+              "id": "2",
+              "label": {
+                "en": "2 decimals (20.53Â°C)"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": " Alerts (v5.5.330 Hobeian)",
+        "fr": " Alertes (v5.5.330 Hobeian)"
+      },
+      "children": [
+        {
+          "id": "soil_warning_threshold",
+          "type": "number",
+          "label": {
+            "en": "Soil Dryness Threshold (%)",
+            "fr": "Seuil SÃ©cheresse Sol (%)"
+          },
+          "value": 30,
+          "min": 0,
+          "max": 100,
+          "step": 5,
+          "hint": {
+            "en": "Moisture percentage below which water shortage alarm triggers (0-100%)",
+            "fr": "Pourcentage d'humiditÃ© en dessous duquel l'alarme manque d'eau se dÃ©clenche (0-100%)"
+          }
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": " Settings (v5.5.330 Hobeian)",
+        "fr": " ParamÃ¨tres (v5.5.330 Hobeian)"
+      },
+      "children": [
+        {
+          "id": "temperature_unit",
+          "type": "dropdown",
+          "label": {
+            "en": "Temperature Unit",
+            "fr": "UnitÃ© de TempÃ©rature"
+          },
+          "value": "celsius",
+          "values": [
+            {
+              "id": "celsius",
+              "label": {
+                "en": "Celsius (Â°C)",
+                "fr": "Celsius (Â°C)"
+              }
+            },
+            {
+              "id": "fahrenheit",
+              "label": {
+                "en": "Fahrenheit (Â°F)",
+                "fr": "Fahrenheit (Â°F)"
+              }
+            }
+          ],
+          "hint": {
+            "en": "Temperature unit for display",
+            "fr": "UnitÃ© de tempÃ©rature pour l'affichage"
+          }
+        }
+      ]
+    },
+    {
+      "id": "enable_radio_sensing",
+      "type": "checkbox",
+      "label": {
+        "en": "Enable Radio Presence Sensing",
+        "fr": "Activer la DÃ©tection de PrÃ©sence Radio"
+      },
+      "value": false,
+      "hint": {
+        "en": "Infer presence from Zigbee signal fluctuations (BETA)",
+        "fr": "DÃ©duit la prÃ©sence des fluctuations du signal Zigbee (BETA)"
+      }
+    },
+    {
+      "id": "radio_sensitivity",
+      "type": "number",
+      "label": {
+        "en": "Radio Presence Sensitivity",
+        "fr": "SensibilitÃ© PrÃ©sence Radio"
+      },
+      "value": 15,
+      "min": 5,
+      "max": 50,
+      "hint": {
+        "en": "LQI variance threshold (higher = less sensitive)",
+        "fr": "Seuil de variance LQI (plus haut = moins sensible)"
+      }
+    }
+  ],
+  "images": {
+    "small": "/drivers/soil_sensor/assets/images/small.png",
+    "large": "/drivers/soil_sensor/assets/images/large.png"
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "fr": "VÃ©rifier MÃJ OTA",
+        "nl": "Controleer op OTA-updates"
+      }
+    }
+  ],
+  "flow": {
+    "triggers": [],
+    "conditions": [],
+    "actions": []
+  },
+  "id": "device_air_purifier_soil",
+  "version": "1.0.0",
+  "metadata": {
+    "driver": {
+      "catchall": true,
+      "reason": "Fallback for unmatched devices with PIDs: TS0601, TS0001"
+    }
+  },
+  "zigbee": {
+    "productId": [
+      "TS0601",
+      "TS0001"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0
+        ]
+      }
+    },
+    "manufacturerName": [
+      "_GENERIC_DEVICE_AIR_PURIFIER_SOIL",
+      "_generic_device_air_purifier_soil"
+    ]
+  }
+}

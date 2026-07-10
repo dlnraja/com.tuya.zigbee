@@ -1,0 +1,30 @@
+{
+  "id": "boiler_switch_energy_temperature_above",
+  "title": {
+    "en": "Boiler temperature is above [[threshold]] C",
+    "fr": "La temperature chaudiere est au-dessus de [[threshold]] C"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "capabilities=measure_temperature"
+    },
+    {
+      "name": "threshold",
+      "type": "number",
+      "title": {
+        "en": "Threshold",
+        "fr": "Seuil"
+      },
+      "min": -40,
+      "max": 150,
+      "step": 0.5,
+      "value": 50
+    }
+  ],
+  "titleFormatted": {
+    "en": "Boiler temperature is above [[threshold]] C [[device]]",
+    "fr": "La temperature chaudiere est au-dessus de [[threshold]] C [[device]]"
+  }
+}

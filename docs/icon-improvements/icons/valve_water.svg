@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="960" height="960" viewBox="0 0 960 960" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Pipe horizontal -->
+  <rect x="100" y="420" width="760" height="120" rx="20" stroke="black" stroke-width="30" fill="none"/>
+  <!-- Valve body -->
+  <rect x="380" y="320" width="200" height="320" rx="30" stroke="black" stroke-width="35" fill="none"/>
+  <!-- Valve handle (perpendicular = closed) -->
+  <rect x="430" y="150" width="100" height="200" rx="15" fill="black"/>
+  <!-- Handle cross-bar -->
+  <rect x="380" y="180" width="200" height="40" rx="10" fill="black"/>
+  <!-- Flow arrows (showing blocked) -->
+  <path d="M200 480 L320 480" stroke="black" stroke-width="20" stroke-linecap="round"/>
+  <path d="M270 450 L310 480 L270 510" stroke="black" stroke-width="20" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M640 480 L760 480" stroke="black" stroke-width="20" stroke-linecap="round"/>
+  <path d="M690 450 L730 480 L690 510" stroke="black" stroke-width="20" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Water drop (leak indicator) -->
+  <path d="M480 750 C480 750 460 780 460 795 C460 810 470 820 480 820 C490 820 500 810 500 795 C500 780 480 750 480 750 Z"
+        fill="black"/>
+</svg>

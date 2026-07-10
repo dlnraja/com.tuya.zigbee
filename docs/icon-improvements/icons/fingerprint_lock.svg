@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="960" height="960" viewBox="0 0 960 960" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Lock body -->
+  <rect x="250" y="380" width="460" height="400" rx="40" stroke="black" stroke-width="40" fill="none"/>
+  <!-- Lock shackle -->
+  <path d="M320 380V300C320 210 390 150 480 150C570 150 640 210 640 300V380"
+        stroke="black" stroke-width="40" fill="none" stroke-linecap="round"/>
+  <!-- Fingerprint scanner area -->
+  <rect x="370" y="430" width="220" height="300" rx="30" stroke="black" stroke-width="25" fill="none"/>
+  <!-- Fingerprint ridges -->
+  <path d="M420 480 C420 460 440 450 460 450 C480 450 500 460 500 480" stroke="black" stroke-width="15" fill="none"/>
+  <path d="M430 520 C430 500 450 490 470 490 C490 490 510 500 510 520" stroke="black" stroke-width="15" fill="none"/>
+  <path d="M440 560 C440 540 460 530 480 530 C500 530 520 540 520 560" stroke="black" stroke-width="15" fill="none"/>
+  <path d="M450 600 C450 580 470 570 490 570 C510 570 530 580 530 600" stroke="black" stroke-width="15" fill="none"/>
+  <path d="M440 640 C440 620 460 610 480 610 C500 610 520 620 520 640" stroke="black" stroke-width="15" fill="none"/>
+  <path d="M430 680 C430 660 450 650 470 650 C490 650 510 660 510 680" stroke="black" stroke-width="15" fill="none"/>
+</svg>

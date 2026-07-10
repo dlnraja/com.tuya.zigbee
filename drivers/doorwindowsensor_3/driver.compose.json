@@ -1,0 +1,77 @@
+{
+  "id": "doorwindowsensor_3",
+  "name": {
+    "en": "Door & Window Sensor"
+  },
+  "class": "sensor",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "capabilities": [
+    "alarm_contact",
+    "measure_battery",
+    "button.1"
+  ],
+  "energy": {
+    "batteries": [
+      "AAA",
+      "AAA"
+    ]
+  },
+  "images": {
+    "large": "/{{driverAssetsPath}}/images/large.png",
+    "small": "/{{driverAssetsPath}}/images/small.png"
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_pjb1ua0m",
+      "_tz3000_n2egfsli",
+      "_TZ3000_T3VVHRMH",
+      "_TZ3000_oxslv1c9",
+      "_TZ3000_jowhpxop"
+    ],
+    "productId": [
+      "TS0203"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          1280
+        ],
+        "bindings": [
+          1,
+          1280
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "{{driverAssetsPath}}/learn.svg",
+      "instruction": {
+        "en": "Insert a pin into the single hole on the side of the device and press it gently for aprox 10 seconds until the LED blinks rapidly."
+      }
+    }
+  },
+  "version": "1.0.0",
+  "metadata": {
+    "driver": {
+      "catchall": true,
+      "reason": "Fallback for unmatched devices with PIDs: TS0203"
+    }
+  },
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  }
+}

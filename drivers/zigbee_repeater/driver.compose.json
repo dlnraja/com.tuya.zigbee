@@ -1,0 +1,79 @@
+{
+  "name": {
+    "en": "Zigbee Signal Repeater",
+    "fr": "Répéteur de signal Zigbee",
+    "nl": "Zigbee signaalversterker",
+    "de": "Zigbee-Signalverstärker",
+    "es": "Repetidor de señal Zigbee"
+  },
+  "class": "other",
+  "capabilities": [
+    "button.1"
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "_tz3000_1mxvlhmq",
+      "_tz3000_gdc3biaj",
+      "_tz3000_hopvlupy",
+      "_tz3000_m0vaazwu",
+      "_tz3000_rku4cnct",
+      "_TZ3000_m0vaazab"
+    ],
+    "productId": [
+      "TS0207"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3
+        ]
+      }
+    },
+    "learnmode": {
+      "instruction": {
+        "en": "Plug in the USB repeater and hold button 5s."
+      }
+    }
+  },
+  "icon": "/drivers/zigbee_repeater/assets/icon.svg",
+  "images": {
+    "small": "/drivers/zigbee_repeater/assets/images/small.png",
+    "large": "/drivers/zigbee_repeater/assets/images/large.png",
+    "xlarge": "/drivers/zigbee_repeater/assets/images/xlarge.png"
+  },
+  "energy": {
+    "approximation": {
+      "usageConstant": 1
+    }
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "fr": "Vérifier MàJ OTA",
+        "nl": "Controleer op OTA-updates"
+      }
+    }
+  ],
+  "id": "zigbee_repeater",
+  "version": "1.0.0",
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  }
+}

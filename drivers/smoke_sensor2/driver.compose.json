@@ -1,0 +1,104 @@
+{
+  "id": "smoke_sensor2",
+  "name": {
+    "en": "Smoke Sensor"
+  },
+  "class": "sensor",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "capabilities": [
+    "measure_battery",
+    "alarm_smoke",
+    "alarm_tamper",
+    "button.1"
+  ],
+  "energy": {
+    "batteries": [
+      "AAA",
+      "AAA"
+    ]
+  },
+  "images": {
+    "large": "/{{driverAssetsPath}}/images/large.png",
+    "small": "/{{driverAssetsPath}}/images/small.png"
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_tyzb01_0aps0h1r",
+      "_tyzb01_o7m83470",
+      "_tyzb01_tob46aoq",
+      "_tz3000_0fkmfxwg",
+      "_tz3000_4fqstsnh",
+      "_tz3000_qtcwwgth",
+      "_tz3000_rcvvxjge",
+      "_tz3000_tkk7wwml",
+      "_tz3000_xn3y7xxy",
+      "_tz3000_ysvspchy",
+      "_tz3210_hqunee3s",
+      "_tze200_m8iikwas",
+      "_tze200_ux8dlkev",
+      "_tze200_vafd6gkz",
+      "_tze204_kgaxpvxr",
+      "_tze204_lhx6wprc",
+      "_tze204_vafd6gkz",
+      "_tze284_n4ttsck2",
+      "_tz3000_ytf0x5wm",
+      "_tz3000_akwixq9i",
+      "_tz3000_hiqrjkxx",
+      "_TYZB01_dsjszp0x"
+    ],
+    "productId": [
+      "TS0205",
+      "PG-S11Z",
+      "YG400A",
+      "SA12IZL",
+      "SD8SC_00.00.03.12TC",
+      "GS361A-H04",
+      "HS1SA",
+      "HS3SA",
+      "SMSZB-120",
+      "lumi.sensor_smoke",
+      "JTYJ-GD-01LM/BW",
+      "SSSQS01LM",
+      "NAS-SD02B0",
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          4,
+          5,
+          61184
+        ],
+        "bindings": [
+          4,
+          5,
+          61184
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "{{driverAssetsPath}}/icon.svg",
+      "instruction": {
+        "en": "Press the RESET pinhole on the side of the unit for 5 seconds until LED blinks."
+      }
+    }
+  },
+  "version": "1.0.0",
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  }
+}

@@ -1,0 +1,127 @@
+{
+  "triggers": [
+    {
+      "id": "wall_thermostat_turned_on",
+      "title": {
+        "en": "Turned on",
+        "fr": "Allume"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Turned on",
+        "fr": "Allume"
+      }
+    },
+    {
+      "id": "wall_thermostat_turned_off",
+      "title": {
+        "en": "Turned off",
+        "fr": "Eteint"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Turned off",
+        "fr": "Eteint"
+      }
+    },
+    {
+      "id": "wall_thermostat_temperature_changed",
+      "title": {
+        "en": "Temperature changed",
+        "fr": "Temperature changee"
+      },
+      "args": [],
+      "tokens": [
+        {
+          "name": "temperature",
+          "type": "number",
+          "title": {
+            "en": "Temperature",
+            "fr": "Temperature"
+          },
+          "example": 21.5
+        }
+      ],
+      "titleFormatted": {
+        "en": "Temperature changed",
+        "fr": "Temperature changee"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "id": "wall_thermostat_is_on",
+      "title": {
+        "en": "Is turned !{{on|off}}",
+        "fr": "Est !{{allume|eteint}}"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Is turned !{{on|off}}",
+        "fr": "Est !{{allume|eteint}}"
+      }
+    }
+  ],
+  "actions": [
+    {
+      "id": "wall_thermostat_turn_on",
+      "title": {
+        "en": "Turn on",
+        "fr": "Allumer"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn on",
+        "fr": "Allumer"
+      }
+    },
+    {
+      "id": "wall_thermostat_turn_off",
+      "title": {
+        "en": "Turn off",
+        "fr": "Eteindre"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn off",
+        "fr": "Eteindre"
+      }
+    },
+    {
+      "id": "wall_thermostat_toggle",
+      "title": {
+        "en": "Toggle",
+        "fr": "Basculer"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Toggle",
+        "fr": "Basculer"
+      }
+    },
+    {
+      "id": "wall_thermostat_enable_child_lock",
+      "title": {
+        "en": "Enable child lock",
+        "fr": "Activer verrouillage enfant"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Enable child lock",
+        "fr": "Activer verrouillage enfant"
+      }
+    },
+    {
+      "id": "wall_thermostat_disable_child_lock",
+      "title": {
+        "en": "Disable child lock",
+        "fr": "Desactiver verrouillage enfant"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Disable child lock",
+        "fr": "Desactiver verrouillage enfant"
+      }
+    }
+  ]
+}

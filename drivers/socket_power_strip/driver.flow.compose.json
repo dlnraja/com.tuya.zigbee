@@ -1,0 +1,80 @@
+{
+  "triggers": [
+    {
+      "id": "socket_power_strip_turned_on",
+      "title": {
+        "en": "Turned on",
+        "fr": "Allume"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Turned on",
+        "fr": "Allume"
+      }
+    },
+    {
+      "id": "socket_power_strip_turned_off",
+      "title": {
+        "en": "Turned off",
+        "fr": "Eteint"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Turned off",
+        "fr": "Eteint"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "id": "socket_power_strip_is_on",
+      "title": {
+        "en": "Is turned !{{on|off}}",
+        "fr": "Est !{{allume|eteint}}"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Is turned !{{on|off}}",
+        "fr": "Est !{{allume|eteint}}"
+      }
+    }
+  ],
+  "actions": [
+    {
+      "id": "socket_power_strip_turn_on",
+      "title": {
+        "en": "Turn on",
+        "fr": "Allumer"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn on",
+        "fr": "Allumer"
+      }
+    },
+    {
+      "id": "socket_power_strip_turn_off",
+      "title": {
+        "en": "Turn off",
+        "fr": "Eteindre"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn off",
+        "fr": "Eteindre"
+      }
+    },
+    {
+      "id": "socket_power_strip_toggle",
+      "title": {
+        "en": "Toggle",
+        "fr": "Basculer"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Toggle",
+        "fr": "Basculer"
+      }
+    }
+  ]
+}

@@ -1,0 +1,1253 @@
+{
+  "timestamp": "2026-05-26T15:38:25.637Z",
+  "total": 630,
+  "byClassification": {
+    "FALSE_POSITIVE": 475,
+    "TS0601_INHERENT": 143,
+    "REAL_CONFLICT": 12
+  },
+  "realConflicts": [
+    {
+      "id": "_TYZB01_QEZUIN6K|TS110E",
+      "drivers": [
+        "bulb_dimmable",
+        "dimmer_1_gang"
+      ],
+      "classification": "REAL_CONFLICT"
+    },
+    {
+      "id": "_TYZB01_QEZUIN6K|TS110F",
+      "drivers": [
+        "bulb_dimmable",
+        "dimmer_1_gang"
+      ],
+      "classification": "REAL_CONFLICT"
+    },
+    {
+      "id": "_TYZB01_QEZUIN6K|TS0052",
+      "drivers": [
+        "bulb_dimmable",
+        "dimmer_1_gang"
+      ],
+      "classification": "REAL_CONFLICT"
+    },
+    {
+      "id": "_TYZB01_V8GTIAED|TS110E",
+      "drivers": [
+        "bulb_dimmable",
+        "dimmer_2_gang"
+      ],
+      "classification": "REAL_CONFLICT"
+    },
+    {
+      "id": "_TYZB01_V8GTIAED|TS110F",
+      "drivers": [
+        "bulb_dimmable",
+        "dimmer_2_gang"
+      ],
+      "classification": "REAL_CONFLICT"
+    },
+    {
+      "id": "_TZB210_RKGNGB5O|TS1101",
+      "drivers": [
+        "bulb_dimmable_dimmer",
+        "dimmer_wall_1gang"
+      ],
+      "classification": "REAL_CONFLICT"
+    },
+    {
+      "id": "_TZB210_RKGNGB5O|TS110E",
+      "drivers": [
+        "bulb_dimmable_dimmer",
+        "dimmer_wall_1gang"
+      ],
+      "classification": "REAL_CONFLICT"
+    },
+    {
+      "id": "_TZB210_RKGNGB5O|TS110F",
+      "drivers": [
+        "bulb_dimmable_dimmer",
+        "dimmer_wall_1gang"
+      ],
+      "classification": "REAL_CONFLICT"
+    },
+    {
+      "id": "_TZB210_RKGNGB5O|TS0052",
+      "drivers": [
+        "bulb_dimmable_dimmer",
+        "dimmer_wall_1gang"
+      ],
+      "classification": "REAL_CONFLICT"
+    },
+    {
+      "id": "_TZE200_E3OITDYU|TS1101",
+      "drivers": [
+        "dimmer_dual_channel",
+        "dimmer_wall_1gang"
+      ],
+      "classification": "REAL_CONFLICT"
+    },
+    {
+      "id": "_TZE204_BXOO2SWD|TS1101",
+      "drivers": [
+        "dimmer_dual_channel",
+        "dimmer_wall_1gang"
+      ],
+      "classification": "REAL_CONFLICT"
+    },
+    {
+      "id": "_TZE204_ZENJ4LXV|TS1101",
+      "drivers": [
+        "dimmer_dual_channel",
+        "dimmer_wall_1gang"
+      ],
+      "classification": "REAL_CONFLICT"
+    }
+  ],
+  "ts0601Inherent": [
+    {
+      "id": "_TZ3000_8GS8H2E4|TS0601",
+      "drivers": [
+        "air_quality_comprehensive",
+        "plug_smart"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZE200_COWVFNI3|TS0601",
+      "drivers": [
+        "curtain_motor_shutter",
+        "switch_1gang"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZE200_RUFDTFYV|TS0601",
+      "drivers": [
+        "device_floor_heating",
+        "device_radiator_valve"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZE200_E3OITDYU|TS0601",
+      "drivers": [
+        "dimmer_dual_channel",
+        "dimmer_wall_1gang"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZE204_BXOO2SWD|TS0601",
+      "drivers": [
+        "dimmer_dual_channel",
+        "dimmer_wall_1gang"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZE204_ZENJ4LXV|TS0601",
+      "drivers": [
+        "dimmer_dual_channel",
+        "dimmer_wall_1gang"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZ3000_KDI2O9M6|TS0601",
+      "drivers": [
+        "dimmer_wall_1gang",
+        "plug_smart"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZE200_IP2AKL4W|TS0601",
+      "drivers": [
+        "dimmer_wall_1gang",
+        "soil_sensor"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZE200_VUCANKJX|TS0601",
+      "drivers": [
+        "dimmer_wall_1gang",
+        "soil_sensor"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZE204_9QHUZGO0|TS0601",
+      "drivers": [
+        "dimmer_wall_1gang",
+        "soil_sensor"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZE200_A0SYESF5|TS0601",
+      "drivers": [
+        "dimmer_wall_1gang",
+        "wall_dimmer_tuya"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZ3000_ESTFRMUP|TS0601",
+      "drivers": [
+        "dimmer_wall_1gang",
+        "switch_1gang"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZE200_BKKMQMYO|TS0601",
+      "drivers": [
+        "din_rail_meter",
+        "power_meter"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZE200_EAAC7DKW|TS0601",
+      "drivers": [
+        "din_rail_meter",
+        "power_meter"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZE200_LSANAE15|TS0601",
+      "drivers": [
+        "din_rail_meter",
+        "power_meter"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZE200_SHKXSGIS|TS0601",
+      "drivers": [
+        "din_rail_meter",
+        "wall_switch_4_gang_tuya"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZE200_VES1YCWX|TS0601",
+      "drivers": [
+        "din_rail_meter",
+        "power_meter"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZE204_AC0FHFIQ|TS0601",
+      "drivers": [
+        "din_rail_meter",
+        "power_meter"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZE204_LSANAE15|TS0601",
+      "drivers": [
+        "din_rail_meter",
+        "power_meter"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZE204_VES1YCWX|TS0601",
+      "drivers": [
+        "din_rail_meter",
+        "power_meter"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZE200_AQNAZJ70|TS0601",
+      "drivers": [
+        "din_rail_switch",
+        "wall_switch_4_gang_tuya"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZE200_EWXHG6O9|TS0601",
+      "drivers": [
+        "din_rail_switch",
+        "power_meter"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZE200_FSB6ZW01|TS0601",
+      "drivers": [
+        "din_rail_switch",
+        "power_meter"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZE200_RHBLGY0Z|TS0601",
+      "drivers": [
+        "din_rail_switch",
+        "power_meter"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZE204_RHBLGY0Z|TS0601",
+      "drivers": [
+        "din_rail_switch",
+        "power_meter"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZE200_BYZDAYIE|TS0601",
+      "drivers": [
+        "din_rail_switch",
+        "power_meter"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZE200_AOCLFNXZ|TS0601",
+      "drivers": [
+        "floor_heating_thermostat",
+        "wall_thermostat"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZE200_2EKUZ3DZ|TS0601",
+      "drivers": [
+        "floor_heating_thermostat",
+        "wall_thermostat"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZE204_AOCLFNXZ|TS0601",
+      "drivers": [
+        "floor_heating_thermostat",
+        "wall_thermostat"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZE200_YOJQA8XN|TS0601",
+      "drivers": [
+        "gas_detector",
+        "gas_sensor"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZE204_CHBYV06X|TS0601",
+      "drivers": [
+        "gas_detector",
+        "gas_sensor"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZE200_R32CTEZX|TS0601",
+      "drivers": [
+        "hvac_controller",
+        "water_valve_smart"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZE204_R32CTEZX|TS0601",
+      "drivers": [
+        "hvac_controller",
+        "water_valve_smart"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZE200_KA8L86IU|TS0601",
+      "drivers": [
+        "motion_sensor",
+        "soil_sensor"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZE200_WUKB7RHC|TS0601",
+      "drivers": [
+        "motion_sensor_radar_mmwave",
+        "radar_sensor"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZE200_XPQ2RZHQ|TS0601",
+      "drivers": [
+        "motion_sensor_radar_mmwave",
+        "radar_sensor"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZE204_XSM7L9XA|TS0601",
+      "drivers": [
+        "motion_sensor_radar_mmwave",
+        "radar_sensor"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZE200_DQ1MFJUG|TS0601",
+      "drivers": [
+        "pet_feeder",
+        "smoke_detector_advanced"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZ3000_8A833YLS|TS0601",
+      "drivers": [
+        "plug_energy_monitor",
+        "plug_smart"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZ3000_8BXRZYXZ|TS0601",
+      "drivers": [
+        "plug_energy_monitor",
+        "vibration_sensor"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZ3000_8NYAANZB|TS0601",
+      "drivers": [
+        "plug_energy_monitor",
+        "plug_smart"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZ3000_BEP7CCEW|TS0601",
+      "drivers": [
+        "plug_energy_monitor",
+        "plug_smart"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZ3000_DLUG3KBC|TS0601",
+      "drivers": [
+        "plug_energy_monitor",
+        "plug_smart"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZ3000_GAZJNGJL|TS0601",
+      "drivers": [
+        "plug_energy_monitor",
+        "plug_smart"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZ3000_GDYJFVGM|TS0601",
+      "drivers": [
+        "plug_energy_monitor",
+        "plug_smart"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZ3000_HYFVRAR3|TS0601",
+      "drivers": [
+        "plug_energy_monitor",
+        "plug_smart"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZ3000_IN5S3WN1|TS0601",
+      "drivers": [
+        "plug_energy_monitor",
+        "plug_smart"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZ3000_IY2C3N6P|TS0601",
+      "drivers": [
+        "plug_energy_monitor",
+        "plug_smart"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZ3000_KY0FQ4HO|TS0601",
+      "drivers": [
+        "plug_energy_monitor",
+        "vibration_sensor"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZ3000_NZKQCVVS|TS0601",
+      "drivers": [
+        "plug_energy_monitor",
+        "plug_smart"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZ3000_O1JZCXOU|TS0601",
+      "drivers": [
+        "plug_energy_monitor",
+        "plug_smart"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZ3000_RGPQQMBJ|TS0601",
+      "drivers": [
+        "plug_energy_monitor",
+        "plug_smart"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZ3000_RK2YZT0U|TS0601",
+      "drivers": [
+        "plug_energy_monitor",
+        "plug_smart"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZ3000_RQBJEPE8|TS0601",
+      "drivers": [
+        "plug_energy_monitor",
+        "plug_smart"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZ3000_RTCRRVIA|TS0601",
+      "drivers": [
+        "plug_energy_monitor",
+        "plug_smart"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZ3000_SGB0XHWN|TS0601",
+      "drivers": [
+        "plug_energy_monitor",
+        "plug_smart"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZ3000_TYPDPDPG|TS0601",
+      "drivers": [
+        "plug_energy_monitor",
+        "usb_outlet_advanced"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZ3000_UWKJA6Z1|TS0601",
+      "drivers": [
+        "plug_energy_monitor",
+        "plug_smart"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZ3000_V1PDXUQQ|TS0601",
+      "drivers": [
+        "plug_energy_monitor",
+        "plug_smart"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZ3000_WBLOEFBF|TS0601",
+      "drivers": [
+        "plug_energy_monitor",
+        "plug_smart"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZ3000_WW6DRJA5|TS0601",
+      "drivers": [
+        "plug_energy_monitor",
+        "plug_smart"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZ3000_WXTP7C5Y|TS0601",
+      "drivers": [
+        "plug_energy_monitor",
+        "plug_smart"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZ3000_YSIOG9XI|TS0601",
+      "drivers": [
+        "plug_energy_monitor",
+        "plug_smart"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZ3210_5CT6E7YE|TS0601",
+      "drivers": [
+        "plug_energy_monitor",
+        "plug_smart"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZ3210_DDIGCA5N|TS0601",
+      "drivers": [
+        "plug_energy_monitor",
+        "plug_smart"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZ3210_JLF1NEPW|TS0601",
+      "drivers": [
+        "plug_energy_monitor",
+        "plug_smart"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZ3210_PH1JOC22|TS0601",
+      "drivers": [
+        "plug_energy_monitor",
+        "plug_smart"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZ3210_RWMITWJ4|TS0601",
+      "drivers": [
+        "plug_energy_monitor",
+        "plug_smart"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZE200_RKS0SGB7|TS0601",
+      "drivers": [
+        "plug_energy_monitor",
+        "power_meter"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZE204_Q9XTY0AD|TS0601",
+      "drivers": [
+        "plug_energy_monitor",
+        "power_meter"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZ3000_2XLVLNVP|TS0601",
+      "drivers": [
+        "plug_smart",
+        "usb_outlet_advanced"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZE200_V9HKZ2YN|TS0601",
+      "drivers": [
+        "power_clamp_meter",
+        "power_meter"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZE204_V9HKZ2YN|TS0601",
+      "drivers": [
+        "power_clamp_meter",
+        "power_meter"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZE200_9MAHTQTG|TS0601",
+      "drivers": [
+        "radiator_valve",
+        "wall_switch_6_gang_tuya"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZE200_PY4CM3HE|TS0601",
+      "drivers": [
+        "radiator_valve",
+        "thermostatic_radiator_valve"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZE200_SUR6Q7KO|TS0601",
+      "drivers": [
+        "radiator_valve",
+        "thermostatic_radiator_valve"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZ3000_ABAPLIMJ|TS0601",
+      "drivers": [
+        "rain_sensor",
+        "water_leak_sensor"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZ3000_AWVMKAYH|TS0601",
+      "drivers": [
+        "rain_sensor",
+        "water_leak_sensor"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZ3210_P68KMS0L|TS0601",
+      "drivers": [
+        "rain_sensor",
+        "water_leak_sensor"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZ3210_TGVTVDOC|TS0601",
+      "drivers": [
+        "rain_sensor",
+        "water_leak_sensor"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZE200_KLY8GJLZ|TS0601",
+      "drivers": [
+        "smart_lcd_thermostat",
+        "thermostatic_radiator_valve"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZE200_VZEKYI4C|TS0601",
+      "drivers": [
+        "smoke_detector_advanced",
+        "smoke_sensor2"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZE200_YH7AOAHI|TS0601",
+      "drivers": [
+        "smoke_detector_advanced",
+        "smoke_sensor2"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZE204_NTCY3XU1|TS0601",
+      "drivers": [
+        "smoke_detector_advanced",
+        "smoke_sensor2"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZE200_MYD45WEU|TS0601",
+      "drivers": [
+        "soilsensor",
+        "soil_sensor"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZE200_GA1MAEOF|TS0601",
+      "drivers": [
+        "soilsensor",
+        "soil_sensor"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZE284_AAO3YZHS|TS0601",
+      "drivers": [
+        "soilsensor",
+        "soil_sensor"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZE284_SGABHWA6|TS0601",
+      "drivers": [
+        "soilsensor_2",
+        "soil_sensor"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZE284_G2E6CPNW|TS0601",
+      "drivers": [
+        "soilsensor_2",
+        "soil_sensor"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZ3000_BIAKWRAG|TS0601",
+      "drivers": [
+        "switch_1gang",
+        "switch_2gang"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZE200_NKJINTBL|TS0601",
+      "drivers": [
+        "switch_1gang",
+        "switch_2gang"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZE200_JI1GN7RW|TS0601",
+      "drivers": [
+        "switch_1gang",
+        "switch_2gang"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZE200_3T91NB6K|TS0601",
+      "drivers": [
+        "switch_1gang",
+        "switch_2gang"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZE204_WVOVWE9H|TS0601",
+      "drivers": [
+        "switch_1gang",
+        "switch_2gang"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZE200_WVOVWE9H|TS0601",
+      "drivers": [
+        "switch_1gang",
+        "switch_2gang"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZE204_3T91NB6K|TS0601",
+      "drivers": [
+        "switch_1gang",
+        "switch_2gang"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZE200_NH9M9EMK|TS0601",
+      "drivers": [
+        "switch_1gang",
+        "switch_2gang"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZE200_KYFQMMYL|TS0601",
+      "drivers": [
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZE200_2HF7X9N3|TS0601",
+      "drivers": [
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZE204_ATPWQGML|TS0601",
+      "drivers": [
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZE200_BYNNCZCB|TS0601",
+      "drivers": [
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZE200_ATPWQGML|TS0601",
+      "drivers": [
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZ3000_AAIFMPUQ|TS0601",
+      "drivers": [
+        "switch_1gang",
+        "switch_2gang"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZ3000_IRRMJCGI|TS0601",
+      "drivers": [
+        "switch_1gang",
+        "switch_2gang"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZ3000_HUVXRX4I|TS0601",
+      "drivers": [
+        "switch_1gang",
+        "switch_2gang"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZ3000_FISB3AJO|TS0601",
+      "drivers": [
+        "switch_1gang",
+        "switch_2gang"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZ3000_5GEY1OHX|TS0601",
+      "drivers": [
+        "switch_1gang",
+        "switch_2gang"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZ3000_MTNPT6WS|TS0601",
+      "drivers": [
+        "switch_1gang",
+        "switch_2gang"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZ3000_MUFWV0RY|TS0601",
+      "drivers": [
+        "switch_1gang",
+        "switch_2gang"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZ3000_54HJN4VS|TS0601",
+      "drivers": [
+        "switch_1gang",
+        "switch_2gang"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZ3000_AA5T61RH|TS0601",
+      "drivers": [
+        "switch_1gang",
+        "switch_2gang"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZ3000_IN5QXHTT|TS0601",
+      "drivers": [
+        "switch_1gang",
+        "switch_2gang"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZ3000_OGPLA3LH|TS0601",
+      "drivers": [
+        "switch_1gang",
+        "switch_2gang"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZ3000_I9W5MEHZ|TS0601",
+      "drivers": [
+        "switch_1gang",
+        "switch_2gang"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZ3000_V4L4B0LP|TS0601",
+      "drivers": [
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZ3000_OK0GGPK7|TS0601",
+      "drivers": [
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZ3000_DYZKBCIP|TS0601",
+      "drivers": [
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZ3000_OUWFC1QJ|TS0601",
+      "drivers": [
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZ3000_EQSAIR32|TS0601",
+      "drivers": [
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZ3000_4O16JDCA|TS0601",
+      "drivers": [
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZ3000_ODZOIOVU|TS0601",
+      "drivers": [
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZ3000_HBIC3KA3|TS0601",
+      "drivers": [
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZ3000_LVHY15IX|TS0601",
+      "drivers": [
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZ3000_MHHXXJRS|TS0601",
+      "drivers": [
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZ3000_PF7SWKQP|TS0601",
+      "drivers": [
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZ3000_JU82PU2B|TS0601",
+      "drivers": [
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZ3000_VSASBZKF|TS0601",
+      "drivers": [
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZ3000_NNWEHHST|TS0601",
+      "drivers": [
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZ3000_MW1PQQQT|TS0601",
+      "drivers": [
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZ3000_LTT60ASA|TS0601",
+      "drivers": [
+        "switch_1gang",
+        "switch_4gang"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZ3000_MMKBPTMX|TS0601",
+      "drivers": [
+        "switch_1gang",
+        "switch_4gang"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZ3000_LIYGXTCQ|TS0601",
+      "drivers": [
+        "switch_1gang",
+        "switch_4gang"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZ3002_9VCEKKP1|TS0601",
+      "drivers": [
+        "switch_1gang",
+        "switch_4gang"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZ3000_M4AH6BCZ|TS0601",
+      "drivers": [
+        "switch_1gang",
+        "switch_4gang"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZ3000_WSSPGTCD|TS0601",
+      "drivers": [
+        "switch_1gang",
+        "switch_4gang"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZ3000_S678WAZD|TS0601",
+      "drivers": [
+        "switch_1gang",
+        "switch_4gang"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZ3002_SAL078G8|TS0601",
+      "drivers": [
+        "switch_1gang",
+        "switch_4gang"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZ3002_SFH0JTZ0|TS0601",
+      "drivers": [
+        "switch_1gang",
+        "switch_4gang"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZ3000_CVIS4QMW|TS0601",
+      "drivers": [
+        "switch_1gang",
+        "switch_wall_6gang"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZ3000_ETUFNLTX|TS0601",
+      "drivers": [
+        "switch_1gang",
+        "switch_4gang"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZE200_3P5YDOS3|TS0601",
+      "drivers": [
+        "switch_dimmer_1gang",
+        "wall_dimmer_tuya"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZE200_QQ9MPFHW|TS0601",
+      "drivers": [
+        "thermostat_tuya_dp",
+        "water_leak_sensor_tuya"
+      ],
+      "classification": "TS0601_INHERENT"
+    },
+    {
+      "id": "_TZE200_R731ZLXK|TS0601",
+      "drivers": [
+        "thermostat_tuya_dp",
+        "wall_switch_6_gang_tuya"
+      ],
+      "classification": "TS0601_INHERENT"
+    }
+  ]
+}

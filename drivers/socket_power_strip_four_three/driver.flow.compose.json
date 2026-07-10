@@ -1,0 +1,112 @@
+{
+  "triggers": [
+    {
+      "id": "socket_power_strip_four_three_turned_on",
+      "title": {
+        "en": "Turned on",
+        "fr": "Allume"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Turned on",
+        "fr": "Allume"
+      }
+    },
+    {
+      "id": "socket_power_strip_four_three_turned_off",
+      "title": {
+        "en": "Turned off",
+        "fr": "Eteint"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Turned off",
+        "fr": "Eteint"
+      }
+    },
+    {
+      "id": "socket_power_strip_four_three_physical_on",
+      "title": {
+        "en": "Physical ON",
+        "fr": "Physique ON",
+        "nl": "Fysiek AAN",
+        "de": "Physisch EIN"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Physical ON",
+        "fr": "Physique ON",
+        "nl": "Fysiek AAN",
+        "de": "Physisch EIN"
+      }
+    },
+    {
+      "id": "socket_power_strip_four_three_physical_off",
+      "title": {
+        "en": "Physical OFF",
+        "fr": "Physique OFF",
+        "nl": "Fysiek UIT",
+        "de": "Physisch AUS"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Physical OFF",
+        "fr": "Physique OFF",
+        "nl": "Fysiek UIT",
+        "de": "Physisch AUS"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "id": "socket_power_strip_four_three_is_on",
+      "title": {
+        "en": "Is turned !{{on|off}}",
+        "fr": "Est !{{allume|eteint}}"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Is turned !{{on|off}}",
+        "fr": "Est !{{allume|eteint}}"
+      }
+    }
+  ],
+  "actions": [
+    {
+      "id": "socket_power_strip_four_three_turn_on",
+      "title": {
+        "en": "Turn on",
+        "fr": "Allumer"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn on",
+        "fr": "Allumer"
+      }
+    },
+    {
+      "id": "socket_power_strip_four_three_turn_off",
+      "title": {
+        "en": "Turn off",
+        "fr": "Eteindre"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn off",
+        "fr": "Eteindre"
+      }
+    },
+    {
+      "id": "socket_power_strip_four_three_toggle",
+      "title": {
+        "en": "Toggle",
+        "fr": "Basculer"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Toggle",
+        "fr": "Basculer"
+      }
+    }
+  ]
+}

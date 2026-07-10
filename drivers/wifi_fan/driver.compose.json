@@ -1,0 +1,163 @@
+{
+  "name": {
+    "en": "WiFi Fan (Tuya Local)",
+    "fr": "Ventilateur WiFi (Tuya Local)",
+    "nl": "WiFi Ventilator (Tuya Lokaal)",
+    "de": "WiFi Ventilator (Tuya Lokal)",
+    "es": "Ventilador WiFi (Tuya Local)"
+  },
+  "class": "fan",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "button.1"
+  ],
+  "pair": [
+    {
+      "id": "configure",
+      "navigation": {
+        "next": "list_devices"
+      }
+    },
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "prev": "configure"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ],
+  "repair": [
+    {
+      "id": "configure"
+    }
+  ],
+  "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "Tuya Local"
+      },
+      "children": [
+        {
+          "id": "device_id",
+          "type": "text",
+          "label": {
+            "en": "Device ID"
+          },
+          "value": ""
+        },
+        {
+          "id": "local_key",
+          "type": "text",
+          "label": {
+            "en": "Local Key"
+          },
+          "value": ""
+        },
+        {
+          "id": "ip",
+          "type": "text",
+          "label": {
+            "en": "IP"
+          },
+          "value": ""
+        },
+        {
+          "id": "protocol_version",
+          "type": "dropdown",
+          "label": {
+            "en": "Protocol"
+          },
+          "value": "3.3",
+          "values": [
+            {
+              "id": "3.1",
+              "label": {
+                "en": "3.1"
+              }
+            },
+            {
+              "id": "3.3",
+              "label": {
+                "en": "3.3"
+              }
+            },
+            {
+              "id": "3.4",
+              "label": {
+                "en": "3.4"
+              }
+            },
+            {
+              "id": "3.5",
+              "label": {
+                "en": "3.5"
+              }
+            }
+          ]
+        },
+        {
+          "id": "fan_speed_min",
+          "type": "number",
+          "label": {
+            "en": "Fan speed DP minimum"
+          },
+          "hint": {
+            "en": "Raw DP value for 0% speed. Keep 0 for percentage-based fans; use 1 for fans that expect 1-6."
+          },
+          "value": 0
+        },
+        {
+          "id": "fan_speed_max",
+          "type": "number",
+          "label": {
+            "en": "Fan speed DP maximum"
+          },
+          "hint": {
+            "en": "Raw DP value for 100% speed. Keep 100 for percentage-based fans; use 6 for fans that expect 1-6."
+          },
+          "value": 100
+        }
+      ]
+    }
+  ],
+  "images": {
+    "small": "/drivers/wifi_fan/assets/images/small.png",
+    "large": "/drivers/wifi_fan/assets/images/large.png",
+    "xlarge": "/drivers/wifi_fan/assets/images/xlarge.png"
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "lan"
+  ],
+  "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "fr": "Vérifier MàJ OTA",
+        "nl": "Controleer op OTA-updates"
+      }
+    }
+  ],
+  "id": "wifi_fan",
+  "version": "1.0.0",
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  }
+}

@@ -1,0 +1,1211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Driver Dashboard</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, monospace;
+    background: #0a0e17; color: #c9d1d9; padding: 20px; line-height: 1.6;
+  }
+  h1 { color: #58a6ff; margin-bottom: 5px; font-size: 1.8em; }
+  h2 { color: #79c0ff; margin: 24px 0 12px; border-bottom: 1px solid #30363d; padding-bottom: 6px; font-size: 1.3em; }
+  h3 { color: #8b949e; margin: 15px 0 8px; font-size: 1.1em; }
+  .subtitle { color: #8b949e; margin-bottom: 20px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin: 16px 0; }
+  .grid-sm { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin: 16px 0; }
+  .card {
+    background: #161b22; border: 1px solid #30363d; border-radius: 8px;
+    padding: 16px; transition: border-color 0.2s;
+  }
+  .card:hover { border-color: #58a6ff; }
+  .card-title { color: #58a6ff; font-weight: 600; margin-bottom: 8px; font-size: 0.95em; }
+  .metric { font-size: 2em; font-weight: 700; color: #f0f6fc; }
+  .metric-sm { font-size: 1.3em; font-weight: 600; color: #f0f6fc; }
+  .metric-label { font-size: 0.85em; color: #8b949e; }
+  table { width: 100%; border-collapse: collapse; margin: 10px 0; }
+  th, td { text-align: left; padding: 6px 10px; border-bottom: 1px solid #30363d; font-size: 0.88em; }
+  th { color: #79c0ff; font-weight: 600; }
+  .bar { height: 14px; background: #30363d; border-radius: 3px; overflow: hidden; margin: 2px 0; }
+  .bar-lg { height: 20px; background: #30363d; border-radius: 4px; overflow: hidden; margin: 4px 0; }
+  .bar-fill { height: 100%; border-radius: 3px; transition: width 0.3s; }
+  .tag { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 0.75em; margin: 2px; }
+  .tag-green { background: #238636; color: #fff; }
+  .tag-blue { background: #1f6feb; color: #fff; }
+  .tag-yellow { background: #9e6a03; color: #fff; }
+  .tag-red { background: #da3633; color: #fff; }
+  .tag-gray { background: #30363d; color: #c9d1d9; }
+  .tag-purple { background: #6e40c9; color: #fff; }
+  .health-badge {
+    display: inline-block; padding: 2px 8px; border-radius: 10px;
+    font-size: 0.8em; font-weight: 600; color: #fff;
+  }
+  .health-good { background: #238636; }
+  .health-mid { background: #9e6a03; }
+  .health-bad { background: #da3633; }
+  .section { margin-bottom: 30px; }
+  .summary-bar { display: flex; gap: 20px; margin: 16px 0; flex-wrap: wrap; }
+  .summary-item { padding: 10px 16px; border-radius: 8px; background: #161b22; border: 1px solid #30363d; }
+  .summary-item .num { font-size: 1.8em; font-weight: 700; }
+  .summary-item .label { font-size: 0.85em; color: #8b949e; }
+  .filter-controls { margin: 12px 0; display: flex; gap: 8px; flex-wrap: wrap; }
+  .filter-btn {
+    padding: 4px 12px; border-radius: 6px; border: 1px solid #30363d;
+    background: #161b22; color: #c9d1d9; cursor: pointer; font-size: 0.85em;
+  }
+  .filter-btn.active { border-color: #58a6ff; color: #58a6ff; }
+  .filter-btn:hover { border-color: #58a6ff; }
+  pre {
+    background: #161b22; padding: 12px; border-radius: 6px;
+    border: 1px solid #30363d; font-size: 0.85em; overflow-x: auto;
+  }
+  .nav-links { margin: 12px 0; display: flex; gap: 12px; flex-wrap: wrap; }
+  .nav-links a { color: #58a6ff; text-decoration: none; font-size: 0.9em; }
+  .nav-links a:hover { text-decoration: underline; }
+  .treemap { display: flex; flex-wrap: wrap; gap: 2px; margin: 16px 0; }
+  .treemap-cell {
+    border-radius: 6px; padding: 10px; text-align: center;
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+    min-height: 60px; transition: transform 0.15s; cursor: default; overflow: hidden;
+  }
+  .treemap-cell:hover { transform: scale(1.03); z-index: 2; }
+  .treemap-num { font-size: 1.6em; font-weight: 700; color: #fff; }
+  .treemap-label { font-size: 0.75em; color: rgba(255,255,255,0.8); margin-top: 2px; }
+  .sparkline { display: flex; align-items: flex-end; gap: 1px; height: 30px; margin: 8px 0; }
+  .spark-bar { flex: 1; background: #58a6ff; border-radius: 1px; min-width: 3px; }
+  .error-list { max-height: 400px; overflow-y: auto; }
+  .error-item {
+    padding: 6px 10px; margin: 3px 0; border-left: 3px solid #30363d;
+    background: #161b22; border-radius: 0 4px 4px 0; font-size: 0.88em;
+  }
+  .module-path { font-family: monospace; color: #58a6ff; font-size: 0.88em; }
+  .tooltip { position: relative; }
+  .tooltip:hover::after {
+    content: attr(data-tip); position: absolute; bottom: 100%; left: 50%; transform: translateX(-50%);
+    background: #161b22; border: 1px solid #30363d; padding: 4px 8px;
+    border-radius: 4px; font-size: 0.75em; white-space: nowrap; z-index: 10;
+  }
+  @media (max-width: 800px) {
+    .grid { grid-template-columns: 1fr; }
+    .grid-sm { grid-template-columns: 1fr 1fr; }
+  }
+  
+</style>
+</head>
+<body>
+
+<h1>Driver Dashboard</h1>
+<p class="subtitle">Universal Tuya Zigbee v9.0.39 - Driver Metrics &amp; Health | 2026-06-18 09:33:50</p>
+
+<div class="nav-links"><a href="master-dashboard.html">Master Dashboard</a> | <a href="coverage-dashboard.html">Coverage</a> | <span style="color:#f0f6fc;font-weight:600">Drivers</span> | <a href="dependency-dashboard.html">Dependencies</a> | <a href="error-dashboard.html">Errors</a> | <a href="performance-dashboard.html">Performance</a></div>
+
+
+    <div style="display:flex;align-items:center;gap:16px;margin-bottom:16px">
+      <span class="health-badge health-good">91%</span>
+      <span style="color:#8b949e">Project Health Score</span>
+      <span class="tag tag-green">429 drivers - comprehensive coverage</span> <span class="tag tag-green">4 277 flow cards</span> <span class="tag tag-green">100% image coverage</span>
+      <span class="tag tag-yellow">30 drivers have compose but no flow cards</span>
+    </div>
+  
+<div class="section">
+<h2>Overview</h2>
+
+    <div class="grid">
+      <div class="card">
+  <div class="card-title">Drivers</div>
+  <div class="metric" style="color:#f0f6fc">429</div>
+  <div class="metric-label">110 Zigbee + 32 WiFi</div>
+</div>
+      <div class="card">
+  <div class="card-title">Fingerprints</div>
+  <div class="metric" style="color:#f0f6fc">2</div>
+  <div class="metric-label">0 unique manufacturers</div>
+</div>
+      <div class="card">
+  <div class="card-title">Flow Cards</div>
+  <div class="metric" style="color:#f0f6fc">4 277</div>
+  <div class="metric-label">T: 2538 | C: 574 | A: 1165</div>
+</div>
+      <div class="card">
+  <div class="card-title">Lines of Code</div>
+  <div class="metric" style="color:#f0f6fc">166 997</div>
+  <div class="metric-label">533 files in lib/</div>
+</div>
+      <div class="card">
+  <div class="card-title">Capabilities</div>
+  <div class="metric" style="color:#f0f6fc">192</div>
+  <div class="metric-label">Unique capability types</div>
+</div>
+      <div class="card">
+  <div class="card-title">Clusters</div>
+  <div class="metric" style="color:#f0f6fc">15</div>
+  <div class="metric-label">Distinct ZCL clusters used</div>
+</div>
+    </div>
+  
+</div>
+<div class="section">
+<h2>Driver Health</h2>
+
+    <div class="grid">
+      <div class="card">
+        <div class="card-title">File Completeness</div>
+        <div style="margin:6px 0">
+          <div style="display:flex;justify-content:space-between;font-size:0.85em"><span>device.js</span><span>429/429 (100.0%)</span></div>
+          <div class="bar-lg"><div class="bar-fill" style="width:100%;background:linear-gradient(90deg,#3fb950,#3fb950cc)"></div></div>
+        </div>
+        <div style="margin:6px 0">
+          <div style="display:flex;justify-content:space-between;font-size:0.85em"><span>driver.js</span><span>429/429 (100.0%)</span></div>
+          <div class="bar-lg"><div class="bar-fill" style="width:100%;background:linear-gradient(90deg,#3fb950,#3fb950cc)"></div></div>
+        </div>
+        <div style="margin:6px 0">
+          <div style="display:flex;justify-content:space-between;font-size:0.85em"><span>compose.json</span><span>429/429 (100.0%)</span></div>
+          <div class="bar-lg"><div class="bar-fill" style="width:100%;background:linear-gradient(90deg,#58a6ff,#58a6ffcc)"></div></div>
+        </div>
+        <div style="margin:6px 0">
+          <div style="display:flex;justify-content:space-between;font-size:0.85em"><span>flow.compose</span><span>419/429 (97.7%)</span></div>
+          <div class="bar-lg"><div class="bar-fill" style="width:97.66899766899768%;background:linear-gradient(90deg,#d29922,#d29922cc)"></div></div>
+        </div>
+        <div style="margin:6px 0">
+          <div style="display:flex;justify-content:space-between;font-size:0.85em"><span>assets/images</span><span>429/429 (100.0%)</span></div>
+          <div class="bar-lg"><div class="bar-fill" style="width:100%;background:linear-gradient(90deg,#58a6ff,#58a6ffcc)"></div></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title">Protocol Distribution</div>
+        <div style="margin:8px 0">
+          <div style="display:flex;justify-content:space-between;font-size:0.85em"><span>Zigbee</span><span>110 (25.6%)</span></div>
+          <div class="bar-lg"><div class="bar-fill" style="width:25.64102564102564%;background:linear-gradient(90deg,#3fb950,#3fb950cc)"></div></div>
+        </div>
+        <div style="margin:8px 0">
+          <div style="display:flex;justify-content:space-between;font-size:0.85em"><span>WiFi</span><span>32 (7.5%)</span></div>
+          <div class="bar-lg"><div class="bar-fill" style="width:7.459207459207459%;background:linear-gradient(90deg,#58a6ff,#58a6ffcc)"></div></div>
+        </div>
+        
+        <div style="margin:8px 0">
+          <div style="display:flex;justify-content:space-between;font-size:0.85em"><span>Unknown</span><span>287</span></div>
+          <div class="bar-lg"><div class="bar-fill" style="width:66.8997668997669%;background:linear-gradient(90deg,#d29922,#d29922cc)"></div></div>
+        </div>
+      </div>
+    </div>
+  
+</div>
+<div class="section">
+<h2>Driver Categories (22 categories)</h2>
+
+    <div class="grid-sm">
+      
+      <div class="card" style="text-align:center">
+        <div style="font-size:1.8em;font-weight:700;color:#58a6ff">83</div>
+        <div style="font-size:0.85em;color:#8b949e">Sensors</div>
+        <div style="font-size:0.75em;color:#8b949e">1 569 FP</div>
+      </div>
+      <div class="card" style="text-align:center">
+        <div style="font-size:1.8em;font-weight:700;color:#3fb950">70</div>
+        <div style="font-size:0.85em;color:#8b949e">Switches &amp; Relays</div>
+        <div style="font-size:0.75em;color:#8b949e">797 FP</div>
+      </div>
+      <div class="card" style="text-align:center">
+        <div style="font-size:1.8em;font-weight:700;color:#f85149">40</div>
+        <div style="font-size:0.85em;color:#8b949e">Buttons &amp; Remotes</div>
+        <div style="font-size:0.75em;color:#8b949e">353 FP</div>
+      </div>
+      <div class="card" style="text-align:center">
+        <div style="font-size:1.8em;font-weight:700;color:#f0883e">39</div>
+        <div style="font-size:0.85em;color:#8b949e">Lights &amp; Bulbs</div>
+        <div style="font-size:0.75em;color:#8b949e">219 FP</div>
+      </div>
+      <div class="card" style="text-align:center">
+        <div style="font-size:1.8em;font-weight:700;color:#6e7681">35</div>
+        <div style="font-size:0.85em;color:#8b949e">Uncategorized</div>
+        <div style="font-size:0.75em;color:#8b949e">82 FP</div>
+      </div>
+      <div class="card" style="text-align:center">
+        <div style="font-size:1.8em;font-weight:700;color:#d29922">29</div>
+        <div style="font-size:0.85em;color:#8b949e">Dimmers</div>
+        <div style="font-size:0.75em;color:#8b949e">356 FP</div>
+      </div>
+      <div class="card" style="text-align:center">
+        <div style="font-size:1.8em;font-weight:700;color:#3fb950">26</div>
+        <div style="font-size:0.85em;color:#8b949e">Air Quality &amp; Purifier</div>
+        <div style="font-size:0.75em;color:#8b949e">56 FP</div>
+      </div>
+      <div class="card" style="text-align:center">
+        <div style="font-size:1.8em;font-weight:700;color:#3fb950">25</div>
+        <div style="font-size:0.85em;color:#8b949e">Plugs &amp; Outlets</div>
+        <div style="font-size:0.75em;color:#8b949e">90 FP</div>
+      </div>
+      <div class="card" style="text-align:center">
+        <div style="font-size:1.8em;font-weight:700;color:#ff7b72">16</div>
+        <div style="font-size:0.85em;color:#8b949e">Climate &amp; HVAC</div>
+        <div style="font-size:0.75em;color:#8b949e">174 FP</div>
+      </div>
+      <div class="card" style="text-align:center">
+        <div style="font-size:1.8em;font-weight:700;color:#8b949e">10</div>
+        <div style="font-size:0.85em;color:#8b949e">Generic / Universal</div>
+        <div style="font-size:0.75em;color:#8b949e">405 FP</div>
+      </div>
+      <div class="card" style="text-align:center">
+        <div style="font-size:1.8em;font-weight:700;color:#bc8cff">9</div>
+        <div style="font-size:0.85em;color:#8b949e">Covers &amp; Blinds</div>
+        <div style="font-size:0.75em;color:#8b949e">105 FP</div>
+      </div>
+      <div class="card" style="text-align:center">
+        <div style="font-size:1.8em;font-weight:700;color:#79c0ff">9</div>
+        <div style="font-size:0.85em;color:#8b949e">Valves</div>
+        <div style="font-size:0.75em;color:#8b949e">175 FP</div>
+      </div>
+      <div class="card" style="text-align:center">
+        <div style="font-size:1.8em;font-weight:700;color:#58a6ff">8</div>
+        <div style="font-size:0.85em;color:#8b949e">Energy Meters</div>
+        <div style="font-size:0.75em;color:#8b949e">46 FP</div>
+      </div>
+      <div class="card" style="text-align:center">
+        <div style="font-size:1.8em;font-weight:700;color:#58a6ff">7</div>
+        <div style="font-size:0.85em;color:#8b949e">Leak Sensors</div>
+        <div style="font-size:0.75em;color:#8b949e">40 FP</div>
+      </div>
+      <div class="card" style="text-align:center">
+        <div style="font-size:1.8em;font-weight:700;color:#58a6ff">5</div>
+        <div style="font-size:0.85em;color:#8b949e">Door Controllers</div>
+        <div style="font-size:0.75em;color:#8b949e">15 FP</div>
+      </div>
+      <div class="card" style="text-align:center">
+        <div style="font-size:1.8em;font-weight:700;color:#79c0ff">4</div>
+        <div style="font-size:0.85em;color:#8b949e">Fans</div>
+        <div style="font-size:0.75em;color:#8b949e">16 FP</div>
+      </div>
+      <div class="card" style="text-align:center">
+        <div style="font-size:1.8em;font-weight:700;color:#f85149">4</div>
+        <div style="font-size:0.85em;color:#8b949e">Sirens &amp; Alarms</div>
+        <div style="font-size:0.75em;color:#8b949e">25 FP</div>
+      </div>
+      <div class="card" style="text-align:center">
+        <div style="font-size:1.8em;font-weight:700;color:#d29922">3</div>
+        <div style="font-size:0.85em;color:#8b949e">Locks</div>
+        <div style="font-size:0.75em;color:#8b949e">20 FP</div>
+      </div>
+      <div class="card" style="text-align:center">
+        <div style="font-size:1.8em;font-weight:700;color:#8b949e">3</div>
+        <div style="font-size:0.85em;color:#8b949e">Gateways &amp; Bridges</div>
+        <div style="font-size:0.75em;color:#8b949e">16 FP</div>
+      </div>
+      <div class="card" style="text-align:center">
+        <div style="font-size:1.8em;font-weight:700;color:#f85149">2</div>
+        <div style="font-size:0.85em;color:#8b949e">Safety (Smoke/CO/Gas)</div>
+        <div style="font-size:0.75em;color:#8b949e">18 FP</div>
+      </div>
+      <div class="card" style="text-align:center">
+        <div style="font-size:1.8em;font-weight:700;color:#f0883e">1</div>
+        <div style="font-size:0.85em;color:#8b949e">IR Blasters</div>
+        <div style="font-size:0.75em;color:#8b949e">31 FP</div>
+      </div>
+      <div class="card" style="text-align:center">
+        <div style="font-size:1.8em;font-weight:700;color:#bc8cff">1</div>
+        <div style="font-size:0.85em;color:#8b949e">Presence Sensors</div>
+        <div style="font-size:0.75em;color:#8b949e">0 FP</div>
+      </div>
+    </div>
+  
+</div>
+<div class="section">
+<h2>Base Class Distribution</h2>
+<div style="">
+<table>
+<thead><tr><th>Base Class</th><th>Drivers</th><th>Coverage</th></tr></thead>
+<tbody>
+<tr><td><span class="module-path">PhysicalButtonMixin</span></td><td>72</td><td><div class="bar" style="width:200px"><div class="bar-fill" style="width:16.783216783216783%;background:#bc8cff"></div></div></td></tr>
+<tr><td><span class="module-path">ZigBeeDevice</span></td><td>59</td><td><div class="bar" style="width:200px"><div class="bar-fill" style="width:13.752913752913754%;background:#bc8cff"></div></div></td></tr>
+<tr><td><span class="module-path">UnifiedSensorBase</span></td><td>55</td><td><div class="bar" style="width:200px"><div class="bar-fill" style="width:12.82051282051282%;background:#bc8cff"></div></div></td></tr>
+<tr><td><span class="module-path">ButtonDevice</span></td><td>37</td><td><div class="bar" style="width:200px"><div class="bar-fill" style="width:8.624708624708624%;background:#bc8cff"></div></div></td></tr>
+<tr><td><span class="module-path">TuyaSpecificClusterDevice</span></td><td>33</td><td><div class="bar" style="width:200px"><div class="bar-fill" style="width:7.6923076923076925%;background:#bc8cff"></div></div></td></tr>
+<tr><td><span class="module-path">TuyaLocalDevice</span></td><td>27</td><td><div class="bar" style="width:200px"><div class="bar-fill" style="width:6.293706293706294%;background:#bc8cff"></div></div></td></tr>
+<tr><td><span class="module-path">UnifiedSwitchBase</span></td><td>16</td><td><div class="bar" style="width:200px"><div class="bar-fill" style="width:3.7296037296037294%;background:#bc8cff"></div></div></td></tr>
+<tr><td><span class="module-path">TuyaZigbeeDevice</span></td><td>15</td><td><div class="bar" style="width:200px"><div class="bar-fill" style="width:3.4965034965034967%;background:#bc8cff"></div></div></td></tr>
+<tr><td><span class="module-path">TuyaZigBeeLightDevice</span></td><td>15</td><td><div class="bar" style="width:200px"><div class="bar-fill" style="width:3.4965034965034967%;background:#bc8cff"></div></div></td></tr>
+<tr><td><span class="module-path">UnifiedLightBase</span></td><td>13</td><td><div class="bar" style="width:200px"><div class="bar-fill" style="width:3.0303030303030303%;background:#bc8cff"></div></div></td></tr>
+<tr><td><span class="module-path">UnifiedPlugBase</span></td><td>12</td><td><div class="bar" style="width:200px"><div class="bar-fill" style="width:2.797202797202797%;background:#bc8cff"></div></div></td></tr>
+<tr><td><span class="module-path">UnifiedThermostatBase</span></td><td>11</td><td><div class="bar" style="width:200px"><div class="bar-fill" style="width:2.564102564102564%;background:#bc8cff"></div></div></td></tr>
+<tr><td><span class="module-path">E</span></td><td>11</td><td><div class="bar" style="width:200px"><div class="bar-fill" style="width:2.564102564102564%;background:#bc8cff"></div></div></td></tr>
+<tr><td><span class="module-path">EweLinkLocalDevice</span></td><td>10</td><td><div class="bar" style="width:200px"><div class="bar-fill" style="width:2.331002331002331%;background:#bc8cff"></div></div></td></tr>
+<tr><td><span class="module-path">BaseUnifiedDevice</span></td><td>5</td><td><div class="bar" style="width:200px"><div class="bar-fill" style="width:1.1655011655011656%;background:#bc8cff"></div></div></td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section">
+<h2>Top Capabilities (by driver usage)</h2>
+<div style="max-height:400px;overflow-y:auto">
+<table>
+<thead><tr><th>Capability</th><th>Drivers Using</th></tr></thead>
+<tbody>
+<tr><td><span class="module-path">onoff</span></td><td>245</td></tr>
+<tr><td><span class="module-path">alarm_battery</span></td><td>212</td></tr>
+<tr><td><span class="module-path">measure_battery</span></td><td>211</td></tr>
+<tr><td><span class="module-path">measure_temperature</span></td><td>110</td></tr>
+<tr><td><span class="module-path">dim</span></td><td>98</td></tr>
+<tr><td><span class="module-path">measure_humidity</span></td><td>92</td></tr>
+<tr><td><span class="module-path">measure_power</span></td><td>88</td></tr>
+<tr><td><span class="module-path">meter_power</span></td><td>74</td></tr>
+<tr><td><span class="module-path">measure_voltage</span></td><td>67</td></tr>
+<tr><td><span class="module-path">measure_current</span></td><td>67</td></tr>
+<tr><td><span class="module-path">measure_luminance</span></td><td>54</td></tr>
+<tr><td><span class="module-path">alarm_motion</span></td><td>45</td></tr>
+<tr><td><span class="module-path">alarm_contact</span></td><td>42</td></tr>
+<tr><td><span class="module-path">button.1</span></td><td>42</td></tr>
+<tr><td><span class="module-path">alarm_tamper</span></td><td>41</td></tr>
+<tr><td><span class="module-path">measure_pm25</span></td><td>37</td></tr>
+<tr><td><span class="module-path">target_temperature</span></td><td>35</td></tr>
+<tr><td><span class="module-path">button.2</span></td><td>33</td></tr>
+<tr><td><span class="module-path">alarm_generic</span></td><td>30</td></tr>
+<tr><td><span class="module-path">thermostat_mode</span></td><td>29</td></tr>
+<tr><td><span class="module-path">alarm_water</span></td><td>27</td></tr>
+<tr><td><span class="module-path">light_hue</span></td><td>26</td></tr>
+<tr><td><span class="module-path">light_saturation</span></td><td>26</td></tr>
+<tr><td><span class="module-path">light_mode</span></td><td>26</td></tr>
+<tr><td><span class="module-path">light_temperature</span></td><td>25</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section">
+<h2>Library Module Hotspots (Top 20 by LOC)</h2>
+<div style="">
+<table>
+<thead><tr><th>Module</th><th>Lines</th><th>Size</th></tr></thead>
+<tbody>
+<tr><td><span class="module-path">lib/devices/BaseUnifiedDevice.js</span></td><td>4 611</td><td>186.1 KB</td></tr>
+<tr><td><span class="module-path">lib/devices/UnifiedSensorBase.js</span></td><td>4 482</td><td>195.3 KB</td></tr>
+<tr><td><span class="module-path">lib/tuya/TuyaEF00Manager.js</span></td><td>3 037</td><td>118.8 KB</td></tr>
+<tr><td><span class="module-path">lib/devices/TuyaUnifiedDevice.js</span></td><td>1 865</td><td>78.9 KB</td></tr>
+<tr><td><span class="module-path">lib/mixins/PhysicalButtonMixin.js</span></td><td>1 528</td><td>65.6 KB</td></tr>
+<tr><td><span class="module-path">lib/tuya/TuyaTimeSyncFormats.js</span></td><td>1 527</td><td>72.6 KB</td></tr>
+<tr><td><span class="module-path">lib/battery/BatteryHealthIntelligence.js</span></td><td>1 500</td><td>61.8 KB</td></tr>
+<tr><td><span class="module-path">lib/tuya/TuyaZigbeeDevice.js</span></td><td>1 500</td><td>50.9 KB</td></tr>
+<tr><td><span class="module-path">lib/tuya/TuyaDataPointsZ2M.js</span></td><td>1 482</td><td>41.8 KB</td></tr>
+<tr><td><span class="module-path">lib/battery/UnifiedBatteryHandler.js</span></td><td>1 447</td><td>66.0 KB</td></tr>
+<tr><td><span class="module-path">lib/devices/UnifiedSwitchBase.js</span></td><td>1 355</td><td>52.6 KB</td></tr>
+<tr><td><span class="module-path">lib/devices/ButtonDevice.js</span></td><td>1 323</td><td>52.7 KB</td></tr>
+<tr><td><span class="module-path">lib/tuya/UniversalTuyaParser.js</span></td><td>1 322</td><td>47.3 KB</td></tr>
+<tr><td><span class="module-path">lib/utils/DriverMappingLoader.js</span></td><td>1 286</td><td>43.0 KB</td></tr>
+<tr><td><span class="module-path">lib/tuya/TuyaUnifiedParser.js</span></td><td>1 267</td><td>69.4 KB</td></tr>
+<tr><td><span class="module-path">lib/managers/SmartDriverAdaptation.js</span></td><td>1 202</td><td>47.4 KB</td></tr>
+<tr><td><span class="module-path">lib/mixins/DeviceEnhancementsMixin.js</span></td><td>1 155</td><td>48.9 KB</td></tr>
+<tr><td><span class="module-path">lib/intelligent/IntelligentDeviceAdapter.js</span></td><td>1 115</td><td>38.8 KB</td></tr>
+<tr><td><span class="module-path">lib/devices/UnifiedPlugBase.js</span></td><td>1 032</td><td>41.5 KB</td></tr>
+<tr><td><span class="module-path">lib/ManufacturerVariationManager.js</span></td><td>969</td><td>42.6 KB</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section">
+<h2>Library by Directory</h2>
+
+    <div class="grid-sm">
+      
+      <div class="card">
+        <div class="card-title">lib/tuya/</div>
+        <div class="metric-sm">27 710 lines</div>
+        <div class="metric-label">61 files</div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:16.59311245112188%;background:#58a6ff"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">lib/devices/</div>
+        <div class="metric-sm">21 177 lines</div>
+        <div class="metric-label">25 files</div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:12.681066126936413%;background:#58a6ff"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">lib/utils/</div>
+        <div class="metric-sm">15 272 lines</div>
+        <div class="metric-label">65 files</div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:9.145074462415492%;background:#58a6ff"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">lib/managers/</div>
+        <div class="metric-sm">8 210 lines</div>
+        <div class="metric-label">25 files</div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:4.916255980646359%;background:#58a6ff"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">lib/battery/</div>
+        <div class="metric-sm">6 082 lines</div>
+        <div class="metric-label">13 files</div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:3.641981592483697%;background:#58a6ff"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">lib/zigbee/</div>
+        <div class="metric-sm">5 837 lines</div>
+        <div class="metric-label">24 files</div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:3.495272370162338%;background:#58a6ff"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">lib/mixins/</div>
+        <div class="metric-sm">5 829 lines</div>
+        <div class="metric-label">19 files</div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:3.4904818649436815%;background:#58a6ff"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">lib/helpers/</div>
+        <div class="metric-sm">5 823 lines</div>
+        <div class="metric-label">21 files</div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:3.486888986029689%;background:#58a6ff"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">lib/dynamic/</div>
+        <div class="metric-sm">5 476 lines</div>
+        <div class="metric-label">15 files</div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:3.279100822170458%;background:#58a6ff"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">lib/features/</div>
+        <div class="metric-sm">4 895 lines</div>
+        <div class="metric-label">19 files</div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:2.931190380665521%;background:#58a6ff"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">lib/protocol/</div>
+        <div class="metric-sm">3 975 lines</div>
+        <div class="metric-label">11 files</div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:2.3802822805200092%;background:#58a6ff"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">lib/clusters/</div>
+        <div class="metric-sm">3 941 lines</div>
+        <div class="metric-label">28 files</div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:2.3599226333407186%;background:#58a6ff"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">lib/diagnostics/</div>
+        <div class="metric-sm">3 359 lines</div>
+        <div class="metric-label">8 files</div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:2.011413378683449%;background:#58a6ff"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">lib/tuya-local/</div>
+        <div class="metric-sm">3 224 lines</div>
+        <div class="metric-label">14 files</div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:1.930573603118619%;background:#58a6ff"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">lib/flow/</div>
+        <div class="metric-sm">2 462 lines</div>
+        <div class="metric-label">7 files</div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:1.4742779810415756%;background:#58a6ff"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">lib/presence/</div>
+        <div class="metric-sm">2 273 lines</div>
+        <div class="metric-label">7 files</div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:1.361102295250813%;background:#58a6ff"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">lib/registry/</div>
+        <div class="metric-sm">2 114 lines</div>
+        <div class="metric-label">11 files</div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:1.2658910040300124%;background:#58a6ff"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">lib/performance/</div>
+        <div class="metric-sm">2 079 lines</div>
+        <div class="metric-label">9 files</div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:1.2449325436983898%;background:#58a6ff"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">lib/adapters/</div>
+        <div class="metric-sm">1 894 lines</div>
+        <div class="metric-label">6 files</div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:1.1341521105169554%;background:#58a6ff"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">lib/ota/</div>
+        <div class="metric-sm">1 755 lines</div>
+        <div class="metric-label">4 files</div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:1.0509170823427967%;background:#58a6ff"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">lib/pairing/</div>
+        <div class="metric-sm">1 656 lines</div>
+        <div class="metric-label">11 files</div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:0.9916345802619209%;background:#58a6ff"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">lib/smart/</div>
+        <div class="metric-sm">1 652 lines</div>
+        <div class="metric-label">6 files</div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:0.9892393276525926%;background:#58a6ff"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">lib/temporal/</div>
+        <div class="metric-sm">1 510 lines</div>
+        <div class="metric-label">4 files</div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:0.9042078600214375%;background:#58a6ff"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">lib/ux/</div>
+        <div class="metric-sm">1 247 lines</div>
+        <div class="metric-label">5 files</div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:0.7467200009581011%;background:#58a6ff"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">lib/intelligent/</div>
+        <div class="metric-sm">1 115 lines</div>
+        <div class="metric-label">1 files</div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:0.6676766648502668%;background:#58a6ff"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">lib/cache/</div>
+        <div class="metric-sm">1 048 lines</div>
+        <div class="metric-label">4 files</div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:0.6275561836440176%;background:#58a6ff"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">lib/security/</div>
+        <div class="metric-sm">1 026 lines</div>
+        <div class="metric-label">5 files</div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:0.6143822942927119%;background:#58a6ff"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">lib/ManufacturerVariationManager.js/</div>
+        <div class="metric-sm">969 lines</div>
+        <div class="metric-label">1 files</div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:0.5802499446097834%;background:#58a6ff"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">lib/health/</div>
+        <div class="metric-sm">946 lines</div>
+        <div class="metric-label">3 files</div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:0.5664772421061456%;background:#58a6ff"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">lib/converters/</div>
+        <div class="metric-sm">899 lines</div>
+        <div class="metric-label">3 files</div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:0.5383330239465379%;background:#58a6ff"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">lib/UniversalDataHandler.js/</div>
+        <div class="metric-sm">866 lines</div>
+        <div class="metric-label">1 files</div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:0.5185721899195794%;background:#58a6ff"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">lib/detectors/</div>
+        <div class="metric-sm">843 lines</div>
+        <div class="metric-label">3 files</div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:0.5047994874159416%;background:#58a6ff"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">lib/ZigbeeClusterManager.js/</div>
+        <div class="metric-sm">799 lines</div>
+        <div class="metric-label">1 files</div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:0.47845170871333015%;background:#58a6ff"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">lib/IntelligentDeviceLearner.js/</div>
+        <div class="metric-sm">697 lines</div>
+        <div class="metric-label">1 files</div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:0.4173727671754582%;background:#58a6ff"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">lib/discovery/</div>
+        <div class="metric-sm">668 lines</div>
+        <div class="metric-label">3 files</div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:0.400007185757828%;background:#58a6ff"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">lib/interpreters/</div>
+        <div class="metric-sm">654 lines</div>
+        <div class="metric-label">1 files</div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:0.3916238016251789%;background:#58a6ff"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">lib/configs/</div>
+        <div class="metric-sm">647 lines</div>
+        <div class="metric-label">1 files</div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:0.3874321095588544%;background:#58a6ff"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">lib/BatteryManagerV4.js/</div>
+        <div class="metric-sm">643 lines</div>
+        <div class="metric-label">1 files</div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:0.38503685694952605%;background:#58a6ff"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">lib/tuya-engine/</div>
+        <div class="metric-sm">627 lines</div>
+        <div class="metric-label">11 files</div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:0.37545584651221275%;background:#58a6ff"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">lib/IntelligentSensorInference.js/</div>
+        <div class="metric-sm">617 lines</div>
+        <div class="metric-label">1 files</div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:0.369467714988892%;background:#58a6ff"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">lib/ProductValueValidator.js/</div>
+        <div class="metric-sm">616 lines</div>
+        <div class="metric-label">1 files</div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:0.3688689018365599%;background:#58a6ff"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">lib/TuyaZigBeeLightDevice.js/</div>
+        <div class="metric-sm">615 lines</div>
+        <div class="metric-label">1 files</div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:0.36827008868422784%;background:#58a6ff"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">lib/analytics/</div>
+        <div class="metric-sm">569 lines</div>
+        <div class="metric-label">3 files</div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:0.34072468367695224%;background:#58a6ff"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">lib/testing/</div>
+        <div class="metric-sm">554 lines</div>
+        <div class="metric-label">2 files</div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:0.3317424863919711%;background:#58a6ff"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">lib/templates/</div>
+        <div class="metric-sm">523 lines</div>
+        <div class="metric-label">2 files</div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:0.3131792786696767%;background:#58a6ff"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">lib/util/</div>
+        <div class="metric-sm">486 lines</div>
+        <div class="metric-label">2 files</div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:0.29102319203338983%;background:#58a6ff"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">lib/ProtocolAutoOptimizer.js/</div>
+        <div class="metric-sm">481 lines</div>
+        <div class="metric-label">1 files</div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:0.28802912627172944%;background:#58a6ff"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">lib/data/</div>
+        <div class="metric-sm">469 lines</div>
+        <div class="metric-label">2 files</div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:0.2808433684437445%;background:#58a6ff"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">lib/sensors/</div>
+        <div class="metric-sm">452 lines</div>
+        <div class="metric-label">2 files</div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:0.2706635448540992%;background:#58a6ff"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">lib/TuyaDataPoints.js/</div>
+        <div class="metric-sm">432 lines</div>
+        <div class="metric-label">1 files</div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:0.2586872818074576%;background:#58a6ff"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">lib/validation/</div>
+        <div class="metric-sm">432 lines</div>
+        <div class="metric-label">2 files</div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:0.2586872818074576%;background:#58a6ff"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">lib/UniversalZigbeeDevice.js/</div>
+        <div class="metric-sm">430 lines</div>
+        <div class="metric-label">1 files</div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:0.25748965550279346%;background:#58a6ff"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">lib/UniversalZigbeeProtocol.js/</div>
+        <div class="metric-sm">427 lines</div>
+        <div class="metric-label">1 files</div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:0.25569321604579726%;background:#58a6ff"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">lib/emergency/</div>
+        <div class="metric-sm">401 lines</div>
+        <div class="metric-label">1 files</div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:0.2401240740851632%;background:#58a6ff"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">lib/groups/</div>
+        <div class="metric-sm">393 lines</div>
+        <div class="metric-label">2 files</div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:0.23533356886650658%;background:#58a6ff"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">lib/errors/</div>
+        <div class="metric-sm">391 lines</div>
+        <div class="metric-label">2 files</div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:0.23413594256184242%;background:#58a6ff"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">lib/Util.js/</div>
+        <div class="metric-sm">390 lines</div>
+        <div class="metric-label">1 files</div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:0.23353712940951035%;background:#58a6ff"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">lib/smartadapt/</div>
+        <div class="metric-sm">380 lines</div>
+        <div class="metric-label">1 files</div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:0.22754899788618954%;background:#58a6ff"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">lib/ir/</div>
+        <div class="metric-sm">374 lines</div>
+        <div class="metric-label">1 files</div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:0.22395611897219708%;background:#58a6ff"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">lib/lighting/</div>
+        <div class="metric-sm">323 lines</div>
+        <div class="metric-label">2 files</div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:0.19341664820326113%;background:#58a6ff"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">lib/SDK3BestPractices.js/</div>
+        <div class="metric-sm">318 lines</div>
+        <div class="metric-label">1 files</div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:0.19042258244160076%;background:#58a6ff"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">lib/IASAlarmFallback.js/</div>
+        <div class="metric-sm">306 lines</div>
+        <div class="metric-label">1 files</div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:0.18323682461361582%;background:#58a6ff"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">lib/xiaomi/</div>
+        <div class="metric-sm">306 lines</div>
+        <div class="metric-label">2 files</div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:0.18323682461361582%;background:#58a6ff"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">lib/TuyaHelpers.js/</div>
+        <div class="metric-sm">304 lines</div>
+        <div class="metric-label">1 files</div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:0.18203919830895166%;background:#58a6ff"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">lib/quirks/</div>
+        <div class="metric-sm">289 lines</div>
+        <div class="metric-label">1 files</div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:0.1730570010239705%;background:#58a6ff"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">lib/drivers/</div>
+        <div class="metric-sm">280 lines</div>
+        <div class="metric-label">2 files</div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:0.1676676826529818%;background:#58a6ff"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">lib/constants/</div>
+        <div class="metric-sm">272 lines</div>
+        <div class="metric-label">3 files</div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:0.16287717743432517%;background:#58a6ff"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">lib/TuyaUniversalBridge.js/</div>
+        <div class="metric-sm">255 lines</div>
+        <div class="metric-label">1 files</div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:0.15269735384467986%;background:#58a6ff"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">lib/green_power.js/</div>
+        <div class="metric-sm">253 lines</div>
+        <div class="metric-label">1 files</div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:0.15149972754001567%;background:#58a6ff"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">lib/ZigbeeTimeSync.js/</div>
+        <div class="metric-sm">252 lines</div>
+        <div class="metric-label">1 files</div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:0.1509009143876836%;background:#58a6ff"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">lib/DeviceFingerprintDB.js/</div>
+        <div class="metric-sm">241 lines</div>
+        <div class="metric-label">1 files</div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:0.14431396971203075%;background:#58a6ff"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">lib/TuyaRtcDetector.js/</div>
+        <div class="metric-sm">236 lines</div>
+        <div class="metric-label">1 files</div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:0.14131990395037036%;background:#58a6ff"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">lib/filter/</div>
+        <div class="metric-sm">231 lines</div>
+        <div class="metric-label">1 files</div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:0.13832583818870997%;background:#58a6ff"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">lib/ewelink-local/</div>
+        <div class="metric-sm">227 lines</div>
+        <div class="metric-label">4 files</div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:0.13593058557938165%;background:#58a6ff"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">lib/session/</div>
+        <div class="metric-sm">182 lines</div>
+        <div class="metric-label">1 files</div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:0.10898399372443818%;background:#58a6ff"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">lib/TuyaSpecificCluster.js/</div>
+        <div class="metric-sm">167 lines</div>
+        <div class="metric-label">1 files</div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:0.100001796439457%;background:#58a6ff"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">lib/FlowCardHelper.js/</div>
+        <div class="metric-sm">150 lines</div>
+        <div class="metric-label">1 files</div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:0.08982197284981168%;background:#58a6ff"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">lib/TuyaSpecificClusterDevice.js/</div>
+        <div class="metric-sm">150 lines</div>
+        <div class="metric-label">1 files</div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:0.08982197284981168%;background:#58a6ff"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">lib/TuyaColorControlCluster.js/</div>
+        <div class="metric-sm">109 lines</div>
+        <div class="metric-label">1 files</div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:0.06527063360419648%;background:#58a6ff"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">lib/index.js/</div>
+        <div class="metric-sm">86 lines</div>
+        <div class="metric-label">1 files</div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:0.05149793110055869%;background:#58a6ff"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">lib/GlobalTimeSyncEngine.js/</div>
+        <div class="metric-sm">80 lines</div>
+        <div class="metric-label">1 files</div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:0.047905052186566224%;background:#58a6ff"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">lib/shims/</div>
+        <div class="metric-sm">72 lines</div>
+        <div class="metric-label">1 files</div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:0.0431145469679096%;background:#58a6ff"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">lib/TuyaTimeManager.js/</div>
+        <div class="metric-sm">72 lines</div>
+        <div class="metric-label">1 files</div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:0.0431145469679096%;background:#58a6ff"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">lib/TuyaTimeDebugProbe.js/</div>
+        <div class="metric-sm">66 lines</div>
+        <div class="metric-label">1 files</div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:0.03952166805391713%;background:#58a6ff"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">lib/TuyaEpochDetector.js/</div>
+        <div class="metric-sm">64 lines</div>
+        <div class="metric-label">1 files</div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:0.03832404174925298%;background:#58a6ff"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">lib/DiagnosticEngine.js/</div>
+        <div class="metric-sm">56 lines</div>
+        <div class="metric-label">1 files</div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:0.033533536530596354%;background:#58a6ff"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">lib/TuyaWindowCoveringCluster.js/</div>
+        <div class="metric-sm">55 lines</div>
+        <div class="metric-label">1 files</div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:0.03293472337826428%;background:#58a6ff"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">lib/OnOffBoundCluster.js/</div>
+        <div class="metric-sm">50 lines</div>
+        <div class="metric-label">1 files</div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:0.029940657616603892%;background:#58a6ff"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">lib/TuyaOnOffCluster.js/</div>
+        <div class="metric-sm">42 lines</div>
+        <div class="metric-label">1 files</div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:0.025150152397947267%;background:#58a6ff"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">lib/IASZoneEnroller.js/</div>
+        <div class="metric-sm">36 lines</div>
+        <div class="metric-label">1 files</div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:0.0215572734839548%;background:#58a6ff"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">lib/TuyaDeviceClassifier.js/</div>
+        <div class="metric-sm">36 lines</div>
+        <div class="metric-label">1 files</div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:0.0215572734839548%;background:#58a6ff"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">lib/tuya-camera/</div>
+        <div class="metric-sm">34 lines</div>
+        <div class="metric-label">1 files</div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:0.020359647179290646%;background:#58a6ff"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">lib/suppress-punycode.js/</div>
+        <div class="metric-sm">28 lines</div>
+        <div class="metric-label">1 files</div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:0.016766768265298177%;background:#58a6ff"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">lib/BatteryManagerV3.js/</div>
+        <div class="metric-sm">21 lines</div>
+        <div class="metric-label">1 files</div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:0.012575076198973634%;background:#58a6ff"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">lib/BaseDriver.js/</div>
+        <div class="metric-sm">14 lines</div>
+        <div class="metric-label">1 files</div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:0.008383384132649089%;background:#58a6ff"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">lib/version.js/</div>
+        <div class="metric-sm">3 lines</div>
+        <div class="metric-label">1 files</div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:0.0017964394569962335%;background:#58a6ff"></div></div>
+      </div>
+    </div>
+  
+</div>
+<div class="section">
+<h2>Recent Changes (Last 30 Commits)</h2>
+
+      <div style="max-height:400px;overflow-y:auto">
+        
+        <div style="padding:6px 0;border-left:2px solid #30363d;padding-left:12px;margin-left:8px">
+          <span style="color:#58a6ff;font-family:monospace">adfd565c4</span>
+          <span style="color:#8b949e;font-size:0.85em;margin-left:8px">2026-06-17 11:11:12 +0200|feat: add CrashPrevention utilities and update CORE_RULES.md</span>
+          <div style="color:#c9d1d9"></div>
+        </div>
+        <div style="padding:6px 0;border-left:2px solid #30363d;padding-left:12px;margin-left:8px">
+          <span style="color:#58a6ff;font-family:monospace">933caf9da</span>
+          <span style="color:#8b949e;font-size:0.85em;margin-left:8px">2026-06-16 11:25:40 +0200|fix: forum issues #2091 #5472 + protection scripts + flow card integrity</span>
+          <div style="color:#c9d1d9"></div>
+        </div>
+        <div style="padding:6px 0;border-left:2px solid #30363d;padding-left:12px;margin-left:8px">
+          <span style="color:#58a6ff;font-family:monospace">0eb0ad79b</span>
+          <span style="color:#8b949e;font-size:0.85em;margin-left:8px">2026-06-16 08:23:15 +0000|v9.0.39: 420 drivers, 2403 FPs [skip ci]</span>
+          <div style="color:#c9d1d9"></div>
+        </div>
+        <div style="padding:6px 0;border-left:2px solid #30363d;padding-left:12px;margin-left:8px">
+          <span style="color:#58a6ff;font-family:monospace">a2053b25f</span>
+          <span style="color:#8b949e;font-size:0.85em;margin-left:8px">2026-06-16 08:17:56 +0000|Changelog sync v9.0.37: updated README with latest release notes [skip ci]</span>
+          <div style="color:#c9d1d9"></div>
+        </div>
+        <div style="padding:6px 0;border-left:2px solid #30363d;padding-left:12px;margin-left:8px">
+          <span style="color:#58a6ff;font-family:monospace">45eae3fd6</span>
+          <span style="color:#8b949e;font-size:0.85em;margin-left:8px">2026-06-16 10:16:14 +0200|chore: bump version to v9.0.38, update changelog</span>
+          <div style="color:#c9d1d9"></div>
+        </div>
+        <div style="padding:6px 0;border-left:2px solid #30363d;padding-left:12px;margin-left:8px">
+          <span style="color:#58a6ff;font-family:monospace">4e655fb87</span>
+          <span style="color:#8b949e;font-size:0.85em;margin-left:8px">2026-06-16 10:13:10 +0200|feat: virtual presence detection + battery health intelligence</span>
+          <div style="color:#c9d1d9"></div>
+        </div>
+        <div style="padding:6px 0;border-left:2px solid #30363d;padding-left:12px;margin-left:8px">
+          <span style="color:#58a6ff;font-family:monospace">e650d834d</span>
+          <span style="color:#8b949e;font-size:0.85em;margin-left:8px">2026-06-16 09:10:53 +0200|@ v9.0.36: 419 drivers, 7 new hybrid drivers, pipeline hardening</span>
+          <div style="color:#c9d1d9"></div>
+        </div>
+        <div style="padding:6px 0;border-left:2px solid #30363d;padding-left:12px;margin-left:8px">
+          <span style="color:#58a6ff;font-family:monospace">cea05eebf</span>
+          <span style="color:#8b949e;font-size:0.85em;margin-left:8px">2026-06-16 05:44:46 +0000|v9.0.37: 412 drivers, 2398 FPs [skip ci]</span>
+          <div style="color:#c9d1d9"></div>
+        </div>
+        <div style="padding:6px 0;border-left:2px solid #30363d;padding-left:12px;margin-left:8px">
+          <span style="color:#58a6ff;font-family:monospace">53688db3d</span>
+          <span style="color:#8b949e;font-size:0.85em;margin-left:8px">2026-06-16 07:37:02 +0200|fix: comprehensive button evolution + stable-v5 port + regression fixes</span>
+          <div style="color:#c9d1d9"></div>
+        </div>
+        <div style="padding:6px 0;border-left:2px solid #30363d;padding-left:12px;margin-left:8px">
+          <span style="color:#58a6ff;font-family:monospace">e8b70d180</span>
+          <span style="color:#8b949e;font-size:0.85em;margin-left:8px">2026-06-16 05:11:09 +0000|v9.0.36: 412 drivers, 2400 FPs [skip ci]</span>
+          <div style="color:#c9d1d9"></div>
+        </div>
+        <div style="padding:6px 0;border-left:2px solid #30363d;padding-left:12px;margin-left:8px">
+          <span style="color:#58a6ff;font-family:monospace">0f07471db</span>
+          <span style="color:#8b949e;font-size:0.85em;margin-left:8px">2026-06-16 05:05:16 +0000|Changelog sync v9.0.35: updated README with latest release notes [skip ci]</span>
+          <div style="color:#c9d1d9"></div>
+        </div>
+        <div style="padding:6px 0;border-left:2px solid #30363d;padding-left:12px;margin-left:8px">
+          <span style="color:#58a6ff;font-family:monospace">ee5dd956d</span>
+          <span style="color:#8b949e;font-size:0.85em;margin-left:8px">2026-06-16 07:00:23 +0200|fix: comprehensive quality sweep - 607 files, zero violations</span>
+          <div style="color:#c9d1d9"></div>
+        </div>
+        <div style="padding:6px 0;border-left:2px solid #30363d;padding-left:12px;margin-left:8px">
+          <span style="color:#58a6ff;font-family:monospace">59d3e3fe9</span>
+          <span style="color:#8b949e;font-size:0.85em;margin-left:8px">2026-06-15 14:40:08 +0000|Changelog sync v9.0.35: updated README with latest release notes [skip ci]</span>
+          <div style="color:#c9d1d9"></div>
+        </div>
+        <div style="padding:6px 0;border-left:2px solid #30363d;padding-left:12px;margin-left:8px">
+          <span style="color:#58a6ff;font-family:monospace">8e7f38ff3</span>
+          <span style="color:#8b949e;font-size:0.85em;margin-left:8px">2026-06-15 12:22:56 +0000|Diagnostics update 2026-06-15 [skip ci]</span>
+          <div style="color:#c9d1d9"></div>
+        </div>
+        <div style="padding:6px 0;border-left:2px solid #30363d;padding-left:12px;margin-left:8px">
+          <span style="color:#58a6ff;font-family:monospace">14add3c50</span>
+          <span style="color:#8b949e;font-size:0.85em;margin-left:8px">2026-06-15 11:43:12 +0000|chore: GitHub auto-manage state update [skip ci]</span>
+          <div style="color:#c9d1d9"></div>
+        </div>
+        <div style="padding:6px 0;border-left:2px solid #30363d;padding-left:12px;margin-left:8px">
+          <span style="color:#58a6ff;font-family:monospace">f584838ce</span>
+          <span style="color:#8b949e;font-size:0.85em;margin-left:8px">2026-06-15 10:18:51 +0000|IMAP health 2026-06-15 [skip ci]</span>
+          <div style="color:#c9d1d9"></div>
+        </div>
+        <div style="padding:6px 0;border-left:2px solid #30363d;padding-left:12px;margin-left:8px">
+          <span style="color:#58a6ff;font-family:monospace">0179f4843</span>
+          <span style="color:#8b949e;font-size:0.85em;margin-left:8px">2026-06-15 08:22:20 +0000|v9.0.35: 412 drivers, 2365 FPs [skip ci]</span>
+          <div style="color:#c9d1d9"></div>
+        </div>
+        <div style="padding:6px 0;border-left:2px solid #30363d;padding-left:12px;margin-left:8px">
+          <span style="color:#58a6ff;font-family:monospace">2c415f6c4</span>
+          <span style="color:#8b949e;font-size:0.85em;margin-left:8px">2026-06-15 10:16:05 +0200|fix: GitHub issues #388 #383 #420 #417 + fingerprint additions</span>
+          <div style="color:#c9d1d9"></div>
+        </div>
+        <div style="padding:6px 0;border-left:2px solid #30363d;padding-left:12px;margin-left:8px">
+          <span style="color:#58a6ff;font-family:monospace">98ccc95ff</span>
+          <span style="color:#8b949e;font-size:0.85em;margin-left:8px">2026-06-15 06:09:18 +0000|Enrichment v9.0.34: 2362 FPs cross-referenced Z2M/ZHA, 1 file(s) [skip ci]</span>
+          <div style="color:#c9d1d9"></div>
+        </div>
+        <div style="padding:6px 0;border-left:2px solid #30363d;padding-left:12px;margin-left:8px">
+          <span style="color:#58a6ff;font-family:monospace">2cd83db1f</span>
+          <span style="color:#8b949e;font-size:0.85em;margin-left:8px">2026-06-15 05:48:15 +0000|API discovery v9.0.34 2026-06: 0 IoT/Zigbee endpoints found [skip ci]</span>
+          <div style="color:#c9d1d9"></div>
+        </div>
+        <div style="padding:6px 0;border-left:2px solid #30363d;padding-left:12px;margin-left:8px">
+          <span style="color:#58a6ff;font-family:monospace">93b730bd5</span>
+          <span style="color:#8b949e;font-size:0.85em;margin-left:8px">2026-06-15 04:41:33 +0000|sync: enrich from Z2M/ZHA/deCONZ external sources [skip ci]</span>
+          <div style="color:#c9d1d9"></div>
+        </div>
+        <div style="padding:6px 0;border-left:2px solid #30363d;padding-left:12px;margin-left:8px">
+          <span style="color:#58a6ff;font-family:monospace">c7684931f</span>
+          <span style="color:#8b949e;font-size:0.85em;margin-left:8px">2026-06-15 03:01:44 +0000|v9.0.34: 412 drivers, 2362 FPs [skip ci]</span>
+          <div style="color:#c9d1d9"></div>
+        </div>
+        <div style="padding:6px 0;border-left:2px solid #30363d;padding-left:12px;margin-left:8px">
+          <span style="color:#58a6ff;font-family:monospace">bc73e3a1f</span>
+          <span style="color:#8b949e;font-size:0.85em;margin-left:8px">2026-06-15 04:54:59 +0200|fix: forum posts processed - 8 device routing fixes + 4 fingerprint additions</span>
+          <div style="color:#c9d1d9"></div>
+        </div>
+        <div style="padding:6px 0;border-left:2px solid #30363d;padding-left:12px;margin-left:8px">
+          <span style="color:#58a6ff;font-family:monospace">18a115094</span>
+          <span style="color:#8b949e;font-size:0.85em;margin-left:8px">2026-06-15 00:12:29 +0000|v9.0.33: 412 drivers, 2366 FPs [skip ci]</span>
+          <div style="color:#c9d1d9"></div>
+        </div>
+        <div style="padding:6px 0;border-left:2px solid #30363d;padding-left:12px;margin-left:8px">
+          <span style="color:#58a6ff;font-family:monospace">8089a09a6</span>
+          <span style="color:#8b949e;font-size:0.85em;margin-left:8px">2026-06-15 02:03:27 +0200|fix: diagnostic-report.js orphaned counting now recognizes manufacturerName+productId</span>
+          <div style="color:#c9d1d9"></div>
+        </div>
+        <div style="padding:6px 0;border-left:2px solid #30363d;padding-left:12px;margin-left:8px">
+          <span style="color:#58a6ff;font-family:monospace">72e8ff3ef</span>
+          <span style="color:#8b949e;font-size:0.85em;margin-left:8px">2026-06-14 22:57:11 +0000|Resolved issues + patterns update [skip ci]</span>
+          <div style="color:#c9d1d9"></div>
+        </div>
+        <div style="padding:6px 0;border-left:2px solid #30363d;padding-left:12px;margin-left:8px">
+          <span style="color:#58a6ff;font-family:monospace">ee3a53c2a</span>
+          <span style="color:#8b949e;font-size:0.85em;margin-left:8px">2026-06-14 21:25:56 +0000|v9.0.32: 412 drivers, 2366 FPs [skip ci]</span>
+          <div style="color:#c9d1d9"></div>
+        </div>
+        <div style="padding:6px 0;border-left:2px solid #30363d;padding-left:12px;margin-left:8px">
+          <span style="color:#58a6ff;font-family:monospace">f1c22b0a5</span>
+          <span style="color:#8b949e;font-size:0.85em;margin-left:8px">2026-06-14 23:19:24 +0200|fix: fix last empty manufacturerName array (button_wireless_fingerbot)</span>
+          <div style="color:#c9d1d9"></div>
+        </div>
+        <div style="padding:6px 0;border-left:2px solid #30363d;padding-left:12px;margin-left:8px">
+          <span style="color:#58a6ff;font-family:monospace">40dcf9452</span>
+          <span style="color:#8b949e;font-size:0.85em;margin-left:8px">2026-06-14 23:16:49 +0200|fix: fix 74 remaining empty manufacturerName arrays (AggregateError root cause)</span>
+          <div style="color:#c9d1d9"></div>
+        </div>
+        <div style="padding:6px 0;border-left:2px solid #30363d;padding-left:12px;margin-left:8px">
+          <span style="color:#58a6ff;font-family:monospace">c9a324883</span>
+          <span style="color:#8b949e;font-size:0.85em;margin-left:8px">2026-06-14 18:54:33 +0000|v9.0.31: 412 drivers, 2366 FPs [skip ci]</span>
+          <div style="color:#c9d1d9"></div>
+        </div>
+      </div>
+    
+</div>
+<div class="section">
+<h2>Driver Issues (72 drivers)</h2>
+<div style="max-height:500px;overflow-y:auto">
+<table>
+<thead><tr><th>Driver</th><th>Issues</th><th>Category</th></tr></thead>
+<tbody>
+<tr><td>bulb_dimmable_dimmer</td><td><span class="tag tag-red">NO_FINGERPRINTS</span></td><td><span class="tag tag-gray">dimmers</span></td></tr>
+<tr><td>bulb_rgb_led</td><td><span class="tag tag-red">NO_FINGERPRINTS</span></td><td><span class="tag tag-gray">lights</span></td></tr>
+<tr><td>curtain_module</td><td><span class="tag tag-red">NO_FINGERPRINTS</span></td><td><span class="tag tag-gray">covers</span></td></tr>
+<tr><td>device_air_purifier_radiator</td><td><span class="tag tag-red">NO_FINGERPRINTS</span></td><td><span class="tag tag-gray">air_quality</span></td></tr>
+<tr><td>device_generic_diy_universal</td><td><span class="tag tag-red">NO_FINGERPRINTS</span></td><td><span class="tag tag-gray">generic</span></td></tr>
+<tr><td>device_plug_energy</td><td><span class="tag tag-red">NO_FINGERPRINTS</span></td><td><span class="tag tag-gray">plugs</span></td></tr>
+<tr><td>dimmable_recessed_led</td><td><span class="tag tag-red">NO_FINGERPRINTS</span></td><td><span class="tag tag-gray">dimmers</span></td></tr>
+<tr><td>dimmer_1_gang</td><td><span class="tag tag-red">NO_FINGERPRINTS</span></td><td><span class="tag tag-gray">dimmers</span></td></tr>
+<tr><td>doorwindowsensor_3</td><td><span class="tag tag-red">NO_FINGERPRINTS</span></td><td><span class="tag tag-gray">sensors</span></td></tr>
+<tr><td>outdoor_plug</td><td><span class="tag tag-red">NO_FINGERPRINTS</span></td><td><span class="tag tag-gray">plugs</span></td></tr>
+<tr><td>presence_detector</td><td><span class="tag tag-red">NO_FINGERPRINTS</span></td><td><span class="tag tag-gray">presence</span></td></tr>
+<tr><td>radiator_wifi_tuya</td><td><span class="tag tag-red">NO_FINGERPRINTS</span></td><td><span class="tag tag-gray">other</span></td></tr>
+<tr><td>relay_board_4_channel</td><td><span class="tag tag-red">NO_FINGERPRINTS</span></td><td><span class="tag tag-gray">switches</span></td></tr>
+<tr><td>remote_button_wireless_plug</td><td><span class="tag tag-red">NO_FINGERPRINTS</span></td><td><span class="tag tag-gray">plugs</span></td></tr>
+<tr><td>scene_switch_wall</td><td><span class="tag tag-red">NO_FINGERPRINTS</span></td><td><span class="tag tag-gray">switches</span></td></tr>
+<tr><td>smartplug</td><td><span class="tag tag-red">NO_FINGERPRINTS</span></td><td><span class="tag tag-gray">plugs</span></td></tr>
+<tr><td>smartPlug_DinRail</td><td><span class="tag tag-red">NO_FINGERPRINTS</span></td><td><span class="tag tag-gray">plugs</span></td></tr>
+<tr><td>sr_zs_switch</td><td><span class="tag tag-red">NO_FINGERPRINTS</span></td><td><span class="tag tag-gray">switches</span></td></tr>
+<tr><td>switch_usb_dongle</td><td><span class="tag tag-red">NO_FINGERPRINTS</span></td><td><span class="tag tag-gray">switches</span></td></tr>
+<tr><td>tuya_dummy_device</td><td><span class="tag tag-red">NO_FINGERPRINTS</span></td><td><span class="tag tag-gray">generic</span></td></tr>
+<tr><td>universal_fallback</td><td><span class="tag tag-red">NO_FINGERPRINTS</span></td><td><span class="tag tag-gray">generic</span></td></tr>
+<tr><td>valvecontroller</td><td><span class="tag tag-red">NO_FINGERPRINTS</span></td><td><span class="tag tag-gray">valves</span></td></tr>
+<tr><td>wifi_air_purifier</td><td><span class="tag tag-red">NO_FINGERPRINTS</span></td><td><span class="tag tag-gray">air_quality</span></td></tr>
+<tr><td>wifi_air_quality</td><td><span class="tag tag-red">NO_FINGERPRINTS</span></td><td><span class="tag tag-gray">air_quality</span></td></tr>
+<tr><td>wifi_camera</td><td><span class="tag tag-red">NO_FINGERPRINTS</span></td><td><span class="tag tag-gray">other</span></td></tr>
+<tr><td>wifi_cover</td><td><span class="tag tag-red">NO_FINGERPRINTS</span></td><td><span class="tag tag-gray">covers</span></td></tr>
+<tr><td>wifi_dehumidifier</td><td><span class="tag tag-red">NO_FINGERPRINTS</span></td><td><span class="tag tag-gray">air_quality</span></td></tr>
+<tr><td>wifi_dimmer</td><td><span class="tag tag-red">NO_FINGERPRINTS</span></td><td><span class="tag tag-gray">dimmers</span></td></tr>
+<tr><td>wifi_doorbell</td><td><span class="tag tag-red">NO_FINGERPRINTS</span></td><td><span class="tag tag-gray">other</span></td></tr>
+<tr><td>wifi_door_lock</td><td><span class="tag tag-red">NO_FINGERPRINTS</span></td><td><span class="tag tag-gray">locks</span></td></tr>
+<tr><td>wifi_ewelink_bulb</td><td><span class="tag tag-red">NO_FINGERPRINTS</span></td><td><span class="tag tag-gray">lights</span></td></tr>
+<tr><td>wifi_ewelink_dimmer</td><td><span class="tag tag-red">NO_FINGERPRINTS</span></td><td><span class="tag tag-gray">dimmers</span></td></tr>
+<tr><td>wifi_ewelink_fan</td><td><span class="tag tag-red">NO_FINGERPRINTS</span></td><td><span class="tag tag-gray">fans</span></td></tr>
+<tr><td>wifi_ewelink_led</td><td><span class="tag tag-red">NO_FINGERPRINTS</span></td><td><span class="tag tag-gray">lights</span></td></tr>
+<tr><td>wifi_ewelink_plug</td><td><span class="tag tag-red">NO_FINGERPRINTS</span></td><td><span class="tag tag-gray">plugs</span></td></tr>
+<tr><td>wifi_ewelink_pow</td><td><span class="tag tag-red">NO_FINGERPRINTS</span></td><td><span class="tag tag-gray">other</span></td></tr>
+<tr><td>wifi_ewelink_switch</td><td><span class="tag tag-red">NO_FINGERPRINTS</span></td><td><span class="tag tag-gray">switches</span></td></tr>
+<tr><td>wifi_ewelink_switch_2ch</td><td><span class="tag tag-red">NO_FINGERPRINTS</span></td><td><span class="tag tag-gray">switches</span></td></tr>
+<tr><td>wifi_ewelink_switch_4ch</td><td><span class="tag tag-red">NO_FINGERPRINTS</span></td><td><span class="tag tag-gray">switches</span></td></tr>
+<tr><td>wifi_ewelink_th</td><td><span class="tag tag-red">NO_FINGERPRINTS</span></td><td><span class="tag tag-gray">other</span></td></tr>
+<tr><td>wifi_fan</td><td><span class="tag tag-red">NO_FINGERPRINTS</span></td><td><span class="tag tag-gray">fans</span></td></tr>
+<tr><td>wifi_garage_door</td><td><span class="tag tag-red">NO_FINGERPRINTS</span></td><td><span class="tag tag-gray">doors</span></td></tr>
+<tr><td>wifi_generic</td><td><span class="tag tag-red">NO_FINGERPRINTS</span></td><td><span class="tag tag-gray">generic</span></td></tr>
+<tr><td>wifi_heater</td><td><span class="tag tag-red">NO_FINGERPRINTS</span></td><td><span class="tag tag-gray">other</span></td></tr>
+<tr><td>wifi_humidifier</td><td><span class="tag tag-red">NO_FINGERPRINTS</span></td><td><span class="tag tag-gray">air_quality</span></td></tr>
+<tr><td>wifi_ir_remote</td><td><span class="tag tag-red">NO_FINGERPRINTS</span></td><td><span class="tag tag-gray">buttons</span></td></tr>
+<tr><td>wifi_led_strip</td><td><span class="tag tag-red">NO_FINGERPRINTS</span></td><td><span class="tag tag-gray">lights</span></td></tr>
+<tr><td>wifi_light</td><td><span class="tag tag-red">NO_FINGERPRINTS</span></td><td><span class="tag tag-gray">lights</span></td></tr>
+<tr><td>wifi_pet_feeder</td><td><span class="tag tag-red">NO_FINGERPRINTS</span></td><td><span class="tag tag-gray">other</span></td></tr>
+<tr><td>wifi_plug</td><td><span class="tag tag-red">NO_FINGERPRINTS</span></td><td><span class="tag tag-gray">plugs</span></td></tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<pre>
+Generated: 2026-06-18 09:33:50
+Universal Tuya Zigbee - Dashboard Suite
+</pre>
+</body>
+</html>

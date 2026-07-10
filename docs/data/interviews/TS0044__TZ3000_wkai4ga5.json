@@ -1,0 +1,29 @@
+{
+  "id": "INT-011",
+  "deviceName": "4-Button Scene Switch",
+  "manufacturerName": "_TZ3000_wkai4ga5",
+  "productId": "TS0044",
+  "source": "Forum Page 41",
+  "user": "Eftychis_Georgilas",
+  "diagnosticId": "63cacdf6-10d0-4873-8fd8-7b75affd4786",
+  "status": "fixed",
+  "priority": "high",
+  "driver": "button_wireless_4",
+  "symptoms": [
+    "Buttons don't respond with physical press",
+    "Virtual buttons work",
+    "Pairs as wireless controller instead of scene switch",
+    "Battery not showing"
+  ],
+  "rootCause": "Fingerprint collision - ID in 8+ drivers",
+  "collisionDrivers": [
+    "water_leak_sensor", "switch_3gang", "switch_2gang", "switch_4gang",
+    "switch_1gang", "scene_switch_4", "motion_sensor", "contact_sensor",
+    "climate_sensor", "button_wireless_4"
+  ],
+  "fix": {
+    "applied": true,
+    "version": "5.5.419",
+    "description": "Added to button_wireless_4 device.js with proper handling"
+  }
+}

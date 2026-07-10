@@ -1,0 +1,57 @@
+{
+  "triggers": [
+    {
+      "id": "wifi_cover_opened",
+      "title": {
+        "en": "Opened"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Opened"
+      }
+    },
+    {
+      "id": "wifi_cover_closed",
+      "title": {
+        "en": "Closed"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Closed"
+      }
+    }
+  ],
+  "conditions": [],
+  "actions": [
+    {
+      "id": "wifi_cover_open",
+      "title": {
+        "en": "Open"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Open"
+      }
+    },
+    {
+      "id": "wifi_cover_close",
+      "title": {
+        "en": "Close"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Close"
+      }
+    },
+    {
+      "id": "wifi_cover_stop",
+      "title": {
+        "en": "Stop"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Stop"
+      }
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "id": "tuya_dp_type_is",
+  "title": {
+    "en": "DP type is...",
+    "fr": "Type DP est..."
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "capabilities=tuya_dp_value|onoff"
+    },
+    {
+      "name": "dp",
+      "type": "number",
+      "title": {
+        "en": "DP Number"
+      },
+      "min": 1,
+      "max": 255
+    },
+    {
+      "name": "dp_type",
+      "type": "dropdown",
+      "title": {
+        "en": "Expected Type"
+      },
+      "values": [
+        {
+          "id": "raw",
+          "title": {
+            "en": "Raw"
+          }
+        },
+        {
+          "id": "bool",
+          "title": {
+            "en": "Bool"
+          }
+        },
+        {
+          "id": "value",
+          "title": {
+            "en": "Value"
+          }
+        },
+        {
+          "id": "string",
+          "title": {
+            "en": "String"
+          }
+        },
+        {
+          "id": "enum",
+          "title": {
+            "en": "Enum"
+          }
+        },
+        {
+          "id": "bitmap",
+          "title": {
+            "en": "Bitmap"
+          }
+        }
+      ]
+    }
+  ],
+  "titleFormatted": {
+    "en": "DP type is... [[device]] [[dp]] [[dp_type]]",
+    "fr": "Type DP est... [[device]] [[dp]] [[dp_type]]"
+  }
+}

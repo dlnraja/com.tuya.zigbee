@@ -1,0 +1,102 @@
+{
+  "triggers": [
+    {
+      "id": "water_detector_alarm_water_true",
+      "title": {
+        "en": "Water leak detected",
+        "fr": "Fuite d'eau détectée",
+        "nl": "Waterlekkage gedetecteerd",
+        "de": "Wasserleck erkannt"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Water leak detected",
+        "fr": "Fuite d'eau détectée",
+        "nl": "Waterlekkage gedetecteerd",
+        "de": "Wasserleck erkannt"
+      }
+    },
+    {
+      "id": "water_detector_alarm_water_false",
+      "title": {
+        "en": "Water leak cleared",
+        "fr": "Fuite d'eau résolue",
+        "nl": "Waterlekkage opgelost",
+        "de": "Wasserleck behoben"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Water leak cleared",
+        "fr": "Fuite d'eau résolue",
+        "nl": "Waterlekkage opgelost",
+        "de": "Wasserleck behoben"
+      }
+    },
+    {
+      "id": "water_detector_alarm_contact_true",
+      "title": {
+        "en": "Contact detected",
+        "fr": "Contact détecté",
+        "nl": "Contact gedetecteerd",
+        "de": "Kontakt erkannt"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Contact detected",
+        "fr": "Contact détecté",
+        "nl": "Contact gedetecteerd",
+        "de": "Kontakt erkannt"
+      }
+    },
+    {
+      "id": "water_detector_alarm_contact_false",
+      "title": {
+        "en": "Contact cleared",
+        "fr": "Contact libéré",
+        "nl": "Contact vrijgegeven",
+        "de": "Kontakt freigegeben"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Contact cleared",
+        "fr": "Contact libéré",
+        "nl": "Contact vrijgegeven",
+        "de": "Kontakt freigegeben"
+      }
+    },
+    {
+      "id": "water_detector_battery_low",
+      "title": {
+        "en": "Battery low",
+        "fr": "Batterie faible",
+        "nl": "Batterij laag",
+        "de": "Batterie schwach"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Battery low",
+        "fr": "Batterie faible",
+        "nl": "Batterij laag",
+        "de": "Batterie schwach"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "id": "water_detector_alarm_water_active",
+      "title": {
+        "en": "Water leak !{{is|is not}} detected",
+        "fr": "Fuite d'eau !{{est|n'est pas}} détectée",
+        "nl": "Waterlekkage !{{is|is niet}} gedetecteerd",
+        "de": "Wasserleck !{{wird|wird nicht}} erkannt"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Water leak !{{is|is not}} detected",
+        "fr": "Fuite d'eau !{{est|n'est pas}} détectée",
+        "nl": "Waterlekkage !{{is|is niet}} gedetecteerd",
+        "de": "Wasserleck !{{wird|wird nicht}} erkannt"
+      }
+    }
+  ]
+}

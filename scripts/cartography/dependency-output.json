@@ -1,0 +1,5205 @@
+{
+  "stats": {
+    "totalFiles": 1870,
+    "totalRequireStatements": 2502,
+    "uniqueInternalModules": 406,
+    "uniqueExternalModules": 20,
+    "mostRequired": {
+      "lib/adapters/ZclToHomeyMap.js": 4,
+      "lib/adapters/Z2MConverterAdapter.js": 3,
+      "lib/adapters/ZHAQuirkAdapter.js": 2,
+      "lib/utils/CaseInsensitiveMatcher.js": 53,
+      "lib/adapters/ExternalDeviceAdapter.js": 1,
+      "lib/adapters/SecurityManager.js": 1,
+      "lib/utils/MathUtils.js": 1,
+      "lib/utils/tuyaUtils.js": 163,
+      "lib/constants/ZigbeeConstants.js": 28,
+      "lib/analytics/AnalyticsSystem.js": 1,
+      "lib/battery/BatteryProfileDatabase.js": 2,
+      "lib/battery/BatteryCalculator.js": 6,
+      "lib/managers/PowerSourceDetector.js": 2,
+      "lib/battery/BatterySystem.js": 1,
+      "lib/battery/BatteryManager.js": 2,
+      "lib/battery/BatteryManagerV3.js": 1,
+      "lib/battery/BatteryHybridManager.js": 1,
+      "lib/battery/UnifiedBatteryHandler.js": 5,
+      "lib/battery/BatteryHelper.js": 1,
+      "lib/battery/BatteryIconDetector.js": 1,
+      "lib/battery/BatteryMonitoringMixin.js": 1,
+      "lib/battery/BatteryMonitoringSystem.js": 1,
+      "lib/BatteryManagerV4.js": 2,
+      "lib/cache/SmartCache.js": 3,
+      "lib/cache/NetworkCache.js": 1,
+      "lib/cache/FingerprintCache.js": 1,
+      "lib/clusters/TuyaBoundCluster.js": 3,
+      "lib/clusters/TuyaSpecificCluster.js": 11,
+      "lib/clusters/TuyaE000Cluster.js": 3,
+      "lib/clusters/TuyaE000BoundCluster.js": 10,
+      "lib/clusters/TuyaE001Cluster.js": 2,
+      "lib/clusters/TuyaE001BoundCluster.js": 2,
+      "lib/clusters/TuyaE002Cluster.js": 2,
+      "lib/clusters/TuyaE002BoundCluster.js": 2,
+      "lib/clusters/TuyaE003Cluster.js": 2,
+      "lib/clusters/TuyaE003BoundCluster.js": 2,
+      "lib/clusters/TuyaOnOffExtCluster.js": 1,
+      "lib/clusters/ZosungIRControlCluster.js": 5,
+      "lib/clusters/ZosungIRControlBoundCluster.js": 3,
+      "lib/clusters/ZosungIRTransmitCluster.js": 5,
+      "lib/clusters/ZosungIRTransmitBoundCluster.js": 3,
+      "lib/clusters/OnOffBoundCluster.js": 10,
+      "lib/clusters/LevelControlBoundCluster.js": 4,
+      "lib/clusters/ScenesBoundCluster.js": 2,
+      "lib/clusters/IasAceCluster.js": 2,
+      "lib/clusters/UniversalClusterBinder.js": 1,
+      "lib/clusters/UnknownClusterHandler.js": 7,
+      "lib/clusters/RawClusterFallback.js": 2,
+      "lib/clusters/CustomClusterManager.js": 2,
+      "lib/utils/UnknownDPLogger.js": 7,
+      "lib/utils/TuyaPressTypeMap.js": 15,
+      "lib/tuya/EnrichedDPMappings.js": 2,
+      "lib/utils/data/index.js": 1,
+      "lib/converters/TuyaDeviceDefinitions.js": 1,
+      "lib/tuya/TuyaZigbeeDevice.js": 32,
+      "lib/tuya/dpMapper.js": 1,
+      "lib/tuya/TuyaCommandSender.js": 1,
+      "lib/tuya/TuyaDPFlowCardManager.js": 1,
+      "lib/helpers/ManufacturerNameHelper.js": 16,
+      "lib/utils/ZigbeeRetry.js": 1,
+      "lib/constants/REPORTING_CONFIGS.js": 2,
+      "lib/utils/clusterUtils.js": 1,
+      "lib/DiagnosticEngine.js": 1,
+      "lib/utils/battery-reporting-manager.js": 1,
+      "lib/managers/PowerManager.js": 2,
+      "lib/zigbee/ZigbeeHelpers.js": 2,
+      "lib/zigbee/ZigbeeTimeout.js": 2,
+      "lib/utils/ReportingConfig.js": 2,
+      "lib/managers/IASZoneManager.js": 7,
+      "lib/managers/MultiEndpointManager.js": 2,
+      "lib/tuya/TuyaEF00Manager.js": 4,
+      "lib/tuya/TS0601_EMERGENCY_FIX.js": 1,
+      "lib/protocol/IntelligentProtocolRouter.js": 2,
+      "lib/tuya/TuyaSyncManager.js": 2,
+      "lib/zigbee/MultiEndpointCommandListener.js": 2,
+      "lib/managers/DynamicCapabilityManager.js": 2,
+      "lib/managers/UniversalVariantManager.js": 2,
+      "lib/flow/FlowTriggerHelpers.js": 2,
+      "lib/protocol/HardwareDetectionShim.js": 2,
+      "lib/utils/TitleSanitizer.js": 2,
+      "lib/helpers/powerUtils.js": 1,
+      "lib/managers/IntelligentDataManager.js": 2,
+      "lib/managers/AutonomousMigrationManager.js": 2,
+      "lib/helpers/CapabilityCleanup.js": 1,
+      "lib/SDK3BestPractices.js": 1,
+      "lib/mixins/PeriodicAutoEnricherMixin.js": 2,
+      "lib/helpers/UniversalDriverInit.js": 1,
+      "lib/managers/CapabilityFallbackManager.js": 1,
+      "lib/constants/DeviceConstants.js": 1,
+      "lib/utils/LifecycleCleanup.js": 1,
+      "lib/utils/UniversalThrottleManager.js": 4,
+      "lib/pairing/index.js": 2,
+      "lib/tuya/GlobalTimeSyncEngine.js": 3,
+      "lib/protocol/HybridProtocolArbitrator.js": 1,
+      "lib/UniversalZigbeeProtocol.js": 1,
+      "lib/intelligent/IntelligentDeviceAdapter.js": 1,
+      "lib/zigbee/ZigbeeProtocolPatchManager.js": 2,
+      "lib/tuya/DataRecoveryManager.js": 3,
+      "lib/zigbee/ZigbeeDataQuery.js": 3,
+      "lib/helpers/BatteryRouter.js": 1,
+      "lib/managers/IASZoneEnhanced.js": 3,
+      "lib/utils/AdaptiveDataParser.js": 4,
+      "lib/diagnostics/DeviceDiagnostics.js": 1,
+      "lib/registry/index.js": 1,
+      "lib/tuya/TuyaDPDataLogger.js": 1,
+      "lib/managers/SmartDriverAdaptation.js": 4,
+      "lib/managers/DriverMigrationManager.js": 3,
+      "lib/dynamic/index.js": 8,
+      "lib/ManufacturerVariationManager.js": 7,
+      "lib/devices/UnifiedSwitchBase.js": 45,
+      "lib/mixins/VirtualButtonMixin.js": 75,
+      "lib/mixins/PhysicalButtonMixin.js": 75,
+      "lib/devices/BaseUnifiedDevice.js": 8,
+      "lib/devices/BaseTuyaDPDevice.js": 1,
+      "lib/devices/TuyaUnifiedDevice.js": 6,
+      "lib/devices/ButtonDevice.js": 37,
+      "lib/devices/PlugDevice.js": 1,
+      "lib/devices/SensorDevice.js": 1,
+      "lib/devices/SwitchDevice.js": 1,
+      "lib/devices/WallTouchDevice.js": 1,
+      "lib/devices/UnifiedSensorBase.js": 61,
+      "lib/devices/UnifiedPlugBase.js": 34,
+      "lib/devices/UnifiedLightBase.js": 24,
+      "lib/devices/UnifiedCoverBase.js": 7,
+      "lib/devices/UnifiedThermostatBase.js": 17,
+      "lib/devices/DeviceTypeManager.js": 2,
+      "lib/utils/AppVersion.js": 8,
+      "lib/IntelligentDeviceLearner.js": 1,
+      "lib/helpers/PowerSourceIntelligence.js": 1,
+      "lib/managers/SmartDivisorManager.js": 32,
+      "lib/tuya/UniversalDPSender.js": 1,
+      "lib/ProtocolAutoOptimizer.js": 5,
+      "lib/green_power.js": 4,
+      "lib/tuya/TuyaUnifiedParser.js": 4,
+      "lib/ProductValueValidator.js": 3,
+      "lib/utils/UniversalDataHandler.js": 1,
+      "lib/helpers/DeviceDataHelper.js": 22,
+      "lib/tuya/TuyaDataQuery.js": 3,
+      "lib/tuya/TuyaTimeSync.js": 8,
+      "lib/managers/IEEEAdvancedEnrollment.js": 4,
+      "lib/sensors/IntelligentDPAutoDiscovery.js": 4,
+      "lib/battery/index.js": 2,
+      "lib/clusters/TuyaOnOffCluster.js": 2,
+      "lib/utils/RetryWithBackoff.js": 2,
+      "lib/discovery/SmartDiscovery.js": 1,
+      "lib/utils/manufacturerResolver.js": 2,
+      "data/manufacturers.json": 1,
+      "lib/dynamic/DynamicCapabilityManager.js": 2,
+      "lib/dynamic/DynamicFlowCardManager.js": 2,
+      "lib/dynamic/DynamicEnergyManager.js": 2,
+      "lib/dynamic/SmartFlowManager.js": 2,
+      "lib/dynamic/VirtualTelemetryCompensationEngine.js": 2,
+      "lib/dynamic/DPAdaptationEngine.js": 2,
+      "lib/dynamic/DPAutoMapper.js": 2,
+      "lib/dynamic/AutoAdaptiveDevice.js": 1,
+      "lib/tuya/TuyaSpecificDevice.js": 2,
+      "lib/tuya/DeviceFingerprintDB.js": 2,
+      "lib/ewelink-local/EweLinkCrypto.js": 1,
+      "lib/ewelink-local/EweLinkLANClient.js": 1,
+      "lib/flow/FlowCardManager.js": 2,
+      "lib/flow/AdvancedFlowCardManager.js": 1,
+      "lib/utils/DriverMappingLoader.js": 7,
+      "lib/helpers/ManufacturerCatalog.js": 1,
+      "lib/utils/safe-auto-migrate.js": 2,
+      "lib/IASZoneEnroller.js": 2,
+      "lib/utils/Logger.js": 2,
+      "lib/tuya/tuya-universal-mapping.js": 1,
+      "lib/security/index.js": 1,
+      "lib/tuya/index.js": 1,
+      "lib/flow/index.js": 1,
+      "lib/devices/index.js": 1,
+      "lib/managers/index.js": 1,
+      "lib/clusters/index.js": 1,
+      "lib/protocol/HybridProtocolManager.js": 1,
+      "lib/utils/index.js": 1,
+      "lib/helpers/PairingHelper.js": 1,
+      "lib/helpers/RobustInitializer.js": 1,
+      "lib/helpers/FallbackSystem.js": 1,
+      "lib/detectors/BseedDetector.js": 1,
+      "lib/detectors/EnergyCapabilityDetector.js": 1,
+      "lib/detectors/MotionAwarePresenceDetector.js": 1,
+      "lib/zigbee/index.js": 1,
+      "lib/ota/index.js": 1,
+      "lib/xiaomi/index.js": 1,
+      "lib/lighting/index.js": 1,
+      "lib/quirks/QuirksDatabase.js": 3,
+      "lib/IASAlarmFallback.js": 2,
+      "lib/UniversalDataHandler.js": 1,
+      "lib/ZigbeeClusterManager.js": 2,
+      "lib/lighting/ColorEffectManager.js": 1,
+      "lib/helpers/ColorConverter.js": 1,
+      "lib/managers/IEEEAddressManager.js": 5,
+      "lib/managers/EnergyManager.js": 1,
+      "lib/managers/SmartEnergyManager.js": 3,
+      "lib/managers/SmartBatteryManager.js": 3,
+      "lib/helpers/device_helpers.js": 3,
+      "lib/utils/driver-preference.js": 3,
+      "lib/utils/driver-switcher.js": 1,
+      "lib/utils/battery-reader.js": 2,
+      "lib/utils/safe-guards.js": 1,
+      "lib/utils/migration-queue.js": 5,
+      "lib/utils/cluster-configurator.js": 1,
+      "lib/utils/data-collector.js": 1,
+      "lib/utils/energy-kpi.js": 2,
+      "lib/diagnostics/DiagnosticLogger.js": 3,
+      "lib/tuya/TuyaEF00Parser.js": 2,
+      "lib/managers/VirtualEnergyEstimator.js": 1,
+      "lib/IntelligentSensorInference.js": 13,
+      "lib/ota/OTARepository.js": 2,
+      "lib/ota/OTAUpdateManager.js": 2,
+      "lib/ota/TuyaXiaomiOTAProvider.js": 1,
+      "lib/pairing/TuyaTimeSyncEngine.js": 3,
+      "lib/pairing/DynamicEndpointDiscovery.js": 3,
+      "lib/pairing/UniversalPairingManager.js": 1,
+      "lib/pairing/TwoPhaseEnrichment.js": 1,
+      "lib/pairing/EventDeduplicator.js": 2,
+      "lib/pairing/AntiFallbackGeneric.js": 1,
+      "lib/pairing/PermissiveMatchingEngine.js": 1,
+      "lib/pairing/EnrichmentScheduler.js": 1,
+      "lib/Util.js": 2,
+      "lib/performance/PerformanceOptimizer.js": 2,
+      "lib/tuya/TuyaProtocolManager.js": 2,
+      "lib/tuya/TuyaDPParser.js": 6,
+      "lib/protocol/KnownProtocolsDatabase.js": 1,
+      "lib/protocol/ZigbeeProtocolComplete.js": 1,
+      "lib/registry/DeviceProfileRegistry.js": 1,
+      "lib/registry/profiles/switches.js": 1,
+      "lib/registry/profiles/covers.js": 1,
+      "lib/registry/profiles/sensors.js": 1,
+      "lib/registry/profiles/buttons.js": 1,
+      "lib/registry/profiles/thermostats.js": 1,
+      "lib/registry/profiles/plugs.js": 1,
+      "lib/registry/profiles/lights.js": 1,
+      "lib/smart/ClusterModel.js": 4,
+      "lib/smart/SmartCoordinator.js": 1,
+      "lib/smart/SmartClusterEngine.js": 1,
+      "lib/smart/ClusterScoring.js": 2,
+      "lib/smart/ClusterStorage.js": 2,
+      "lib/session/SessionManager.js": 2,
+      "lib/health/HealthMonitor.js": 2,
+      "lib/filter/SanityFilter.js": 2,
+      "lib/BaseDriver.js": 1,
+      "lib/tuya/TuyaClusterWrapper.js": 2,
+      "data/fingerprints.json": 1,
+      "lib/tuya/TuyaTimeSyncFormats.js": 5,
+      "lib/tuya/LocalWiFiTuyaBridge.js": 1,
+      "lib/tuya/TuyaMultiGangManager.js": 1,
+      "lib/tuya/TuyaDataPointsComplete.js": 1,
+      "lib/tuya/TuyaDPMapper.js": 1,
+      "lib/tuya/TuyaDPDatabase.js": 2,
+      "lib/tuya/TuyaDataPointEngine.js": 2,
+      "lib/tuya/TuyaManufacturerCluster.js": 1,
+      "lib/tuya/TuyaSpecificCluster.js": 4,
+      "lib/tuya/TuyaTimeSyncManager.js": 1,
+      "lib/tuya/UniversalTimeSync.js": 1,
+      "lib/tuya/TuyaAdapter.js": 1,
+      "lib/tuya/TuyaProfiles.js": 2,
+      "lib/tuya/LocalTuyaInspired.js": 2,
+      "lib/tuya/LocalTuyaEntityHandler.js": 2,
+      "lib/tuya/TuyaDataPointsJohan.js": 3,
+      "lib/tuya/TuyaHelpersJohan.js": 1,
+      "lib/tuya/TuyaDataPointsZ2M.js": 2,
+      "lib/zigbee/zigbee-cluster-map.js": 3,
+      "lib/tuya-engine/VirtualBidirectionalSync.js": 1,
+      "lib/mixins/SonoffSensorMixin.js": 9,
+      "lib/sensors/IntelligentPresenceInference.js": 5,
+      "lib/tuya/TuyaSensorDatabase.js": 1,
+      "lib/diagnostics/DiagnosticLogsCollector.js": 2,
+      "lib/dynamic/SmartDoorlockHandler.js": 1,
+      "lib/dynamic/SmartBiorhythmHandler.js": 1,
+      "lib/dynamic/UniversalSmartFeaturesHandler.js": 1,
+      "lib/TuyaUniversalBridge.js": 2,
+      "lib/tuya-local/TuyaCloudAPI.js": 4,
+      "lib/tuya-engine/converters/battery.js": 1,
+      "lib/tuya-engine/converters/illuminance.js": 1,
+      "lib/tuya-engine/converters/temperature.js": 1,
+      "lib/tuya-engine/converters/humidity.js": 1,
+      "lib/tuya-engine/converters/onoff.js": 1,
+      "lib/tuya-engine/converters/dim.js": 1,
+      "lib/tuya-engine/fingerprints.json": 1,
+      "lib/tuya-engine/profiles.json": 1,
+      "lib/tuya-engine/converters/index.js": 1,
+      "traits": 1,
+      "lib/tuya-local/TuyaLocalClient.js": 2,
+      "lib/tuya-local/TuyaSmartLifeAuth.js": 2,
+      "lib/tuya-local/TuyaDeviceDiscovery.js": 1,
+      "lib/tuya-local/TuyaZigbeeBridge.js": 1,
+      "lib/tuya-local/TuyaCloudMQTT.js": 1,
+      "lib/tuya-local/TuyaShadowPulsar.js": 2,
+      "lib/TuyaColorControlCluster.js": 1,
+      "lib/util.js": 4,
+      "lib/zigbee/IntelligentFrameAnalyzer.js": 1,
+      "lib/managers/AdaptiveLightingManager.js": 1,
+      "lib/zigbee/ManufacturerFeatureMapper.js": 1,
+      "lib/zigbee/SmartGestureEngine.js": 1,
+      "lib/managers/VirtualEnergyManager.js": 1,
+      "lib/managers/UniversalFlowCardManager.js": 1,
+      "lib/zigbee/ExoticQuirkEngine.js": 1,
+      "lib/util/color.js": 1,
+      "../../locales/${language}.json": 1,
+      "app.json": 4,
+      "lib/utils/data/DataConverter.js": 6,
+      "lib/utils/data/TuyaProtocolParser.js": 3,
+      "lib/utils/data/SemanticConverter.js": 3,
+      "lib/utils/data/ZCLProtocolParser.js": 2,
+      "lib/utils/data/TypedDataReader.js": 2,
+      "lib/utils/data/DPMappingEngine.js": 2,
+      "lib/utils/PromiseUtils.js": 1,
+      "lib/utils/ClusterDPDatabase.js": 1,
+      "ZigbeeTimeout": 1,
+      "lib/utils/log-buffer.js": 1,
+      "lib/xiaomi/XiaomiSpecialHandler.js": 1,
+      "lib/zigbee/ZigbeeHelper.js": 1,
+      "lib/zigbee/ZigbeeDebug.js": 1,
+      "lib/zigbee/ZigbeeHealthMonitor.js": 1,
+      "lib/zigbee/ZigbeeErrorCodes.js": 2,
+      "lib/zigbee/ZigbeeCommandManager.js": 1,
+      "lib/zigbee/GreenPowerCluster.js": 2,
+      "lib/zigbee/GreenPowerManager.js": 1,
+      "lib/zigbee/ZigpyIntegration.js": 1,
+      "lib/zigbee/MatterCompatibilityLayer.js": 1,
+      "lib/zigbee/registerClusters.js": 2,
+      "lib/clusters/TuyaColorControlCluster.js": 1,
+      "lib/clusters/TuyaWindowCoveringCluster.js": 1,
+      "lib/tuya/TuyaSpecificClusterDevice.js": 15,
+      "lib/data/SensorConfigs.js": 9,
+      "lib/helpers/IntelligentDPAutoDiscovery.js": 8,
+      "lib/tuya/TuyaGatewayEmulator.js": 2,
+      "lib/TuyaSpecificCluster.js": 27,
+      "lib/TuyaSpecificClusterDevice.js": 24,
+      "lib/mixins/SonoffEwelinkMixin.js": 11,
+      "lib/drivers/BaseZigBeeDriver.js": 20,
+      "lib/UniversalZigbeeDevice.js": 2,
+      "lib/FlowCardHelper.js": 10,
+      "lib/mixins/SonoffEnergyMixin.js": 6,
+      "lib/mixins/SonoffTRVZBMixin.js": 5,
+      "lib/ZigbeeTimeSync.js": 30,
+      "lib/TuyaWindowCoveringCluster.js": 2,
+      "lib/configs/IntelligentDeviceConfig.js": 5,
+      "lib/TuyaZigBeeLightDevice.js": 15,
+      "lib/TuyaHelpers.js": 8,
+      "lib/TuyaDataPoints.js": 7,
+      "lib/TuyaOnOffCluster.js": 13,
+      "lib/mixins/CapabilityManagerMixin.js": 1,
+      "drivers/ir_blaster/irBlasterInit.js": 1,
+      "lib/ir/IRCodeLibrary.js": 2,
+      "drivers/outdoor_2_socket/device.js": 1,
+      "drivers/outdoor_2_socket/device.secondSocket.js": 1,
+      "drivers/presence_sensor_radar/configs.js": 1,
+      "lib/tuya-local/TuyaLocalDevice.js": 50,
+      "lib/TuyaTimeManager.js": 4,
+      "lib/TuyaDeviceClassifier.js": 4,
+      "lib/TuyaEpochDetector.js": 4,
+      "lib/TuyaTimeDebugProbe.js": 4,
+      "lib/TuyaRtcDetector.js": 4,
+      "lib/helpers/IntelligentPresenceInference.js": 2,
+      "drivers/sensor_illuminance_presence/configs.js": 1,
+      "drivers/thermostatic_radiator_valve/helpers.js": 1,
+      "lib/mixins/TuyaThermostatEnhancedMixin.js": 1,
+      "drivers/universal_fallback/fallback_config.js": 1,
+      "lib/mixins/PowerSwitchFeaturesMixin.js": 1,
+      "drivers/wall_switch_1_gang_tuya/helpers.js": 1,
+      "drivers/wall_thermostat/helpers.js": 1,
+      "lib/tuya-local/TuyaLocalDriver.js": 30,
+      "lib/tuya-camera/TuyaCameraClient.js": 1,
+      "lib/ewelink-local/EweLinkLocalDevice.js": 21,
+      "lib/ewelink-local/EweLinkLocalDriver.js": 21,
+      "scripts/lib/drivers.js": 10,
+      "scripts/lib/logger.js": 3,
+      "scripts/automation/url-cache-manager.js": 2,
+      "../../lib/tuya/PhysicalButtonMixin": 1,
+      "../../lib/tuya/VirtualButtonMixin": 1,
+      "lib/tuya/BatteryMixin.js": 2,
+      "../../lib/mixins/${mixin}": 1,
+      "lib/dynamic/SelfHealingDevice.js": 1,
+      "scripts/scanners/scanner-cache.js": 9,
+      "node_modules/homey/services/AthomApi.js": 2,
+      "scripts/community-sync/compare-fingerprints.js": 1,
+      "scripts/community-sync/extract-johan.js": 1,
+      "scripts/community-sync/extract-z2m.js": 1,
+      "scripts/community-sync/parse-issues.js": 1,
+      "scripts/legacy/wg1.js": 2,
+      "scripts/sync/lib/fetch.js": 4,
+      "scripts/sync/lib/drivers.js": 1,
+      "scripts/sync/lib/device-types.js": 1,
+      "scripts/sync/crawl-z2m.js": 1,
+      "scripts/sync/crawl-zha.js": 1,
+      "scripts/sync/crawl-blakadder.js": 1,
+      "scripts/sync/crawl-deconz.js": 1,
+      "scripts/sync/cross-reference.js": 1,
+      "../../lib/mixins/BatteryMixin": 1,
+      "lib/suppress-punycode.js": 1,
+      "lib/shims/color-space-shim.js": 1,
+      "lib/flow/UniversalFlowCardLoader.js": 1,
+      "lib/utils/CapabilityManager.js": 1,
+      "lib/analytics/AdvancedAnalytics.js": 1,
+      "lib/discovery/SmartDeviceDiscovery.js": 1,
+      "lib/helpers/UnknownDeviceHandler.js": 1,
+      "lib/diagnostics/SystemLogsCollector.js": 1,
+      "lib/helpers/DeviceIdentificationDatabase.js": 1,
+      "lib/diagnostics/DiagnosticAPI.js": 1,
+      "lib/utils/LogBuffer.js": 1,
+      "lib/smartadapt/SuggestionEngine.js": 1,
+      "lib/emergency/EmergencyDeviceFix.js": 1,
+      "lib/data/SourceCredits.js": 1,
+      "lib/tuya-local/TuyaUDPDiscovery.js": 1
+    },
+    "heaviestFiles": [
+      {
+        "path": "lib/devices/BaseUnifiedDevice.js",
+        "requires": 54,
+        "requiredBy": 8
+      },
+      {
+        "path": "lib/tuya/index.js",
+        "requires": 32,
+        "requiredBy": 1
+      },
+      {
+        "path": "lib/index.js",
+        "requires": 27,
+        "requiredBy": 0
+      },
+      {
+        "path": "app.js",
+        "requires": 25,
+        "requiredBy": 0
+      },
+      {
+        "path": "lib/clusters/index.js",
+        "requires": 23,
+        "requiredBy": 1
+      },
+      {
+        "path": "lib/devices/UnifiedSensorBase.js",
+        "requires": 21,
+        "requiredBy": 61
+      },
+      {
+        "path": "lib/UniversalZigbeeDevice.js",
+        "requires": 17,
+        "requiredBy": 2
+      },
+      {
+        "path": "lib/tuya/TuyaZigbeeDevice.js",
+        "requires": 16,
+        "requiredBy": 32
+      },
+      {
+        "path": "lib/managers/index.js",
+        "requires": 16,
+        "requiredBy": 1
+      },
+      {
+        "path": "lib/devices/index.js",
+        "requires": 15,
+        "requiredBy": 1
+      },
+      {
+        "path": "lib/zigbee/index.js",
+        "requires": 15,
+        "requiredBy": 1
+      },
+      {
+        "path": "drivers/sensor_climate_contact/device.js",
+        "requires": 14,
+        "requiredBy": 0
+      },
+      {
+        "path": "drivers/sensor_climate_lcdtemphumidsensor/device.js",
+        "requires": 14,
+        "requiredBy": 0
+      },
+      {
+        "path": "drivers/sensor_climate_temphumidsensor/device.js",
+        "requires": 14,
+        "requiredBy": 0
+      },
+      {
+        "path": "lib/zigbee/registerClusters.js",
+        "requires": 13,
+        "requiredBy": 2
+      },
+      {
+        "path": "drivers/sensor_contact_climate/device.js",
+        "requires": 13,
+        "requiredBy": 0
+      },
+      {
+        "path": "lib/devices/UnifiedSwitchBase.js",
+        "requires": 12,
+        "requiredBy": 45
+      },
+      {
+        "path": "lib/battery/index.js",
+        "requires": 11,
+        "requiredBy": 2
+      },
+      {
+        "path": "lib/tuya/TuyaEF00Manager.js",
+        "requires": 11,
+        "requiredBy": 4
+      },
+      {
+        "path": "lib/devices/UnifiedPlugBase.js",
+        "requires": 11,
+        "requiredBy": 34
+      }
+    ],
+    "avgRequiresPerFile": 1.34,
+    "topRequired": [
+      {
+        "module": "lib/utils/tuyaUtils.js",
+        "count": 163
+      },
+      {
+        "module": "lib/mixins/VirtualButtonMixin.js",
+        "count": 75
+      },
+      {
+        "module": "lib/mixins/PhysicalButtonMixin.js",
+        "count": 75
+      },
+      {
+        "module": "lib/devices/UnifiedSensorBase.js",
+        "count": 61
+      },
+      {
+        "module": "lib/utils/CaseInsensitiveMatcher.js",
+        "count": 53
+      },
+      {
+        "module": "lib/tuya-local/TuyaLocalDevice.js",
+        "count": 50
+      },
+      {
+        "module": "lib/devices/UnifiedSwitchBase.js",
+        "count": 45
+      },
+      {
+        "module": "lib/devices/ButtonDevice.js",
+        "count": 37
+      },
+      {
+        "module": "lib/devices/UnifiedPlugBase.js",
+        "count": 34
+      },
+      {
+        "module": "lib/tuya/TuyaZigbeeDevice.js",
+        "count": 32
+      },
+      {
+        "module": "lib/managers/SmartDivisorManager.js",
+        "count": 32
+      },
+      {
+        "module": "lib/ZigbeeTimeSync.js",
+        "count": 30
+      },
+      {
+        "module": "lib/tuya-local/TuyaLocalDriver.js",
+        "count": 30
+      },
+      {
+        "module": "lib/constants/ZigbeeConstants.js",
+        "count": 28
+      },
+      {
+        "module": "lib/TuyaSpecificCluster.js",
+        "count": 27
+      },
+      {
+        "module": "lib/devices/UnifiedLightBase.js",
+        "count": 24
+      },
+      {
+        "module": "lib/TuyaSpecificClusterDevice.js",
+        "count": 24
+      },
+      {
+        "module": "lib/helpers/DeviceDataHelper.js",
+        "count": 22
+      },
+      {
+        "module": "lib/ewelink-local/EweLinkLocalDevice.js",
+        "count": 21
+      },
+      {
+        "module": "lib/ewelink-local/EweLinkLocalDriver.js",
+        "count": 21
+      }
+    ]
+  },
+  "circulars": [
+    {
+      "cycle": [
+        "lib/helpers/device_helpers.js",
+        "lib/utils/safe-auto-migrate.js",
+        "lib/helpers/device_helpers.js"
+      ],
+      "length": 3,
+      "files": [
+        "lib/helpers/device_helpers.js",
+        "lib/utils/safe-auto-migrate.js",
+        "lib/helpers/device_helpers.js"
+      ]
+    }
+  ],
+  "unused": [
+    {
+      "path": "lib/AutonomousIntelligenceGate.js",
+      "requires": 1,
+      "isLib": true,
+      "isDriver": false,
+      "isScript": false
+    },
+    {
+      "path": "lib/BatteryManagerV2.js",
+      "requires": 1,
+      "isLib": true,
+      "isDriver": false,
+      "isScript": false
+    },
+    {
+      "path": "lib/BatteryManagerV3.js",
+      "requires": 1,
+      "isLib": true,
+      "isDriver": false,
+      "isScript": false
+    },
+    {
+      "path": "lib/ButtonRemoteManager.js",
+      "requires": 0,
+      "isLib": true,
+      "isDriver": false,
+      "isScript": false
+    },
+    {
+      "path": "lib/DeviceFingerprintDB.js",
+      "requires": 0,
+      "isLib": true,
+      "isDriver": false,
+      "isScript": false
+    },
+    {
+      "path": "lib/devices/HybridSwitchBase.js",
+      "requires": 3,
+      "isLib": true,
+      "isDriver": false,
+      "isScript": false
+    },
+    {
+      "path": "lib/DiagnosticManager.js",
+      "requires": 0,
+      "isLib": true,
+      "isDriver": false,
+      "isScript": false
+    },
+    {
+      "path": "lib/diagnostics/DebugManager.js",
+      "requires": 0,
+      "isLib": true,
+      "isDriver": false,
+      "isScript": false
+    },
+    {
+      "path": "lib/diagnostics/DeviceHealth.js",
+      "requires": 0,
+      "isLib": true,
+      "isDriver": false,
+      "isScript": false
+    },
+    {
+      "path": "lib/diagnostics/HealthCheck.js",
+      "requires": 0,
+      "isLib": true,
+      "isDriver": false,
+      "isScript": false
+    },
+    {
+      "path": "lib/drivers/DynamicDriverMatcher.js",
+      "requires": 2,
+      "isLib": true,
+      "isDriver": false,
+      "isScript": false
+    },
+    {
+      "path": "lib/dynamic/AutonomousEnricher.js",
+      "requires": 0,
+      "isLib": true,
+      "isDriver": false,
+      "isScript": false
+    },
+    {
+      "path": "lib/dynamic/SmartButtonRouter.js",
+      "requires": 0,
+      "isLib": true,
+      "isDriver": false,
+      "isScript": false
+    },
+    {
+      "path": "lib/DynamicDriverMatcher.js",
+      "requires": 0,
+      "isLib": true,
+      "isDriver": false,
+      "isScript": false
+    },
+    {
+      "path": "lib/EventDeduplicationLayer.js",
+      "requires": 0,
+      "isLib": true,
+      "isDriver": false,
+      "isScript": false
+    },
+    {
+      "path": "lib/GenesisOrchestrator.js",
+      "requires": 1,
+      "isLib": true,
+      "isDriver": false,
+      "isScript": false
+    },
+    {
+      "path": "lib/GlobalTimeSyncEngine.js",
+      "requires": 1,
+      "isLib": true,
+      "isDriver": false,
+      "isScript": false
+    },
+    {
+      "path": "lib/HeimanIasDevice.js",
+      "requires": 3,
+      "isLib": true,
+      "isDriver": false,
+      "isScript": false
+    },
+    {
+      "path": "lib/helpers/CustomPairingHelper.js",
+      "requires": 2,
+      "isLib": true,
+      "isDriver": false,
+      "isScript": false
+    },
+    {
+      "path": "lib/helpers/DeviceHintsDatabase.js",
+      "requires": 0,
+      "isLib": true,
+      "isDriver": false,
+      "isScript": false
+    },
+    {
+      "path": "lib/helpers/UniversalCapabilityDetector.js",
+      "requires": 1,
+      "isLib": true,
+      "isDriver": false,
+      "isScript": false
+    },
+    {
+      "path": "lib/helpers/VirtualCapabilities.js",
+      "requires": 0,
+      "isLib": true,
+      "isDriver": false,
+      "isScript": false
+    },
+    {
+      "path": "lib/HybridAbstraction.js",
+      "requires": 1,
+      "isLib": true,
+      "isDriver": false,
+      "isScript": false
+    },
+    {
+      "path": "lib/HybridDriverSystem.js",
+      "requires": 1,
+      "isLib": true,
+      "isDriver": false,
+      "isScript": false
+    },
+    {
+      "path": "lib/IASZoneBoundCluster.js",
+      "requires": 1,
+      "isLib": true,
+      "isDriver": false,
+      "isScript": false
+    },
+    {
+      "path": "lib/interpreters/UniversalRawInterpreter.js",
+      "requires": 0,
+      "isLib": true,
+      "isDriver": false,
+      "isScript": false
+    },
+    {
+      "path": "lib/ManufacturerBDD.js",
+      "requires": 0,
+      "isLib": true,
+      "isDriver": false,
+      "isScript": false
+    },
+    {
+      "path": "lib/ManufacturerDatabase.js",
+      "requires": 0,
+      "isLib": true,
+      "isDriver": false,
+      "isScript": false
+    },
+    {
+      "path": "lib/mixins/CoreCapabilityMixin.js",
+      "requires": 0,
+      "isLib": true,
+      "isDriver": false,
+      "isScript": false
+    },
+    {
+      "path": "lib/mixins/DeviceEnhancementsMixin.js",
+      "requires": 0,
+      "isLib": true,
+      "isDriver": false,
+      "isScript": false
+    },
+    {
+      "path": "lib/mixins/MultiGangMixin.js",
+      "requires": 0,
+      "isLib": true,
+      "isDriver": false,
+      "isScript": false
+    },
+    {
+      "path": "lib/mixins/NaturalLightMixin.js",
+      "requires": 1,
+      "isLib": true,
+      "isDriver": false,
+      "isScript": false
+    },
+    {
+      "path": "lib/mixins/SmartEnrichmentMixin.js",
+      "requires": 3,
+      "isLib": true,
+      "isDriver": false,
+      "isScript": false
+    },
+    {
+      "path": "lib/mixins/SmartFeatureEmulationMixin.js",
+      "requires": 1,
+      "isLib": true,
+      "isDriver": false,
+      "isScript": false
+    },
+    {
+      "path": "lib/mixins/TuyaDeviceMixin.js",
+      "requires": 3,
+      "isLib": true,
+      "isDriver": false,
+      "isScript": false
+    },
+    {
+      "path": "lib/mixins/VirtualEnergyMeterMixin.js",
+      "requires": 1,
+      "isLib": true,
+      "isDriver": false,
+      "isScript": false
+    },
+    {
+      "path": "lib/mixins/ZigbeeHealthMixin.js",
+      "requires": 2,
+      "isLib": true,
+      "isDriver": false,
+      "isScript": false
+    },
+    {
+      "path": "lib/NewDevices2025.js",
+      "requires": 0,
+      "isLib": true,
+      "isDriver": false,
+      "isScript": false
+    },
+    {
+      "path": "lib/OnOffBoundCluster.js",
+      "requires": 1,
+      "isLib": true,
+      "isDriver": false,
+      "isScript": false
+    },
+    {
+      "path": "lib/pairing/UXMessages.js",
+      "requires": 0,
+      "isLib": true,
+      "isDriver": false,
+      "isScript": false
+    },
+    {
+      "path": "lib/SmartSwitchDriver.js",
+      "requires": 1,
+      "isLib": true,
+      "isDriver": false,
+      "isScript": false
+    },
+    {
+      "path": "lib/SonoffZclDevice.js",
+      "requires": 3,
+      "isLib": true,
+      "isDriver": false,
+      "isScript": false
+    },
+    {
+      "path": "lib/templates/BEST_PRACTICE_DEVICE_TEMPLATE.js",
+      "requires": 2,
+      "isLib": true,
+      "isDriver": false,
+      "isScript": false
+    },
+    {
+      "path": "lib/templates/TuyaTS0601DeviceTemplate.js",
+      "requires": 3,
+      "isLib": true,
+      "isDriver": false,
+      "isScript": false
+    },
+    {
+      "path": "lib/tuya-dp-engine/converters/onoff.js",
+      "requires": 0,
+      "isLib": true,
+      "isDriver": false,
+      "isScript": false
+    },
+    {
+      "path": "lib/tuya-dp-engine/converters/power.js",
+      "requires": 0,
+      "isLib": true,
+      "isDriver": false,
+      "isScript": false
+    },
+    {
+      "path": "lib/tuya-dp-engine/converters/temperature.js",
+      "requires": 0,
+      "isLib": true,
+      "isDriver": false,
+      "isScript": false
+    },
+    {
+      "path": "lib/tuya-engine/utils/dp.js",
+      "requires": 0,
+      "isLib": true,
+      "isDriver": false,
+      "isScript": false
+    },
+    {
+      "path": "lib/tuya-engine/utils/logger.js",
+      "requires": 0,
+      "isLib": true,
+      "isDriver": false,
+      "isScript": false
+    },
+    {
+      "path": "lib/tuya-local/DeviceFingerprintDB.js",
+      "requires": 1,
+      "isLib": true,
+      "isDriver": false,
+      "isScript": false
+    },
+    {
+      "path": "lib/tuya-local/tuya-local-wizard.js",
+      "requires": 0,
+      "isLib": true,
+      "isDriver": false,
+      "isScript": false
+    },
+    {
+      "path": "lib/tuya-local/TuyaWiFiHybridManager.js",
+      "requires": 6,
+      "isLib": true,
+      "isDriver": false,
+      "isScript": false
+    },
+    {
+      "path": "lib/tuya/dp-parser-enhanced.js",
+      "requires": 0,
+      "isLib": true,
+      "isDriver": false,
+      "isScript": false
+    },
+    {
+      "path": "lib/tuya/IntelligenceHealth.js",
+      "requires": 1,
+      "isLib": true,
+      "isDriver": false,
+      "isScript": false
+    },
+    {
+      "path": "lib/tuya/MCUFormatDatabase.js",
+      "requires": 1,
+      "isLib": true,
+      "isDriver": false,
+      "isScript": false
+    },
+    {
+      "path": "lib/tuya/SanityFilter.js",
+      "requires": 0,
+      "isLib": true,
+      "isDriver": false,
+      "isScript": false
+    },
+    {
+      "path": "lib/tuya/TuyaDPDeviceHelper.js",
+      "requires": 0,
+      "isLib": true,
+      "isDriver": false,
+      "isScript": false
+    },
+    {
+      "path": "lib/tuya/TuyaDPManager_Enhanced.js",
+      "requires": 0,
+      "isLib": true,
+      "isDriver": false,
+      "isScript": false
+    },
+    {
+      "path": "lib/tuya/TuyaEF00Base.js",
+      "requires": 0,
+      "isLib": true,
+      "isDriver": false,
+      "isScript": false
+    },
+    {
+      "path": "lib/tuya/TuyaMCUManager.js",
+      "requires": 0,
+      "isLib": true,
+      "isDriver": false,
+      "isScript": false
+    },
+    {
+      "path": "lib/tuya/TuyaModernExtend.js",
+      "requires": 3,
+      "isLib": true,
+      "isDriver": false,
+      "isScript": false
+    },
+    {
+      "path": "lib/tuya/TuyaTimeSyncHandler.js",
+      "requires": 1,
+      "isLib": true,
+      "isDriver": false,
+      "isScript": false
+    },
+    {
+      "path": "lib/tuya/TuyaUniversalMapper.js",
+      "requires": 2,
+      "isLib": true,
+      "isDriver": false,
+      "isScript": false
+    },
+    {
+      "path": "lib/tuya/UniversalDPReceiver.js",
+      "requires": 2,
+      "isLib": true,
+      "isDriver": false,
+      "isScript": false
+    },
+    {
+      "path": "lib/tuya/UniversalTuyaParser.js",
+      "requires": 5,
+      "isLib": true,
+      "isDriver": false,
+      "isScript": false
+    },
+    {
+      "path": "lib/TuyaDiscovery.js",
+      "requires": 0,
+      "isLib": true,
+      "isDriver": false,
+      "isScript": false
+    },
+    {
+      "path": "lib/TuyaPowerOnStateCluster.js",
+      "requires": 1,
+      "isLib": true,
+      "isDriver": false,
+      "isScript": false
+    },
+    {
+      "path": "lib/TuyaSpecificBoundCluster.js",
+      "requires": 1,
+      "isLib": true,
+      "isDriver": false,
+      "isScript": false
+    },
+    {
+      "path": "lib/UniversalIasDevice.js",
+      "requires": 2,
+      "isLib": true,
+      "isDriver": false,
+      "isScript": false
+    },
+    {
+      "path": "lib/utils/AdaptiveEventEmitter.js",
+      "requires": 1,
+      "isLib": true,
+      "isDriver": false,
+      "isScript": false
+    },
+    {
+      "path": "lib/utils/CacheManager.js",
+      "requires": 0,
+      "isLib": true,
+      "isDriver": false,
+      "isScript": false
+    },
+    {
+      "path": "lib/utils/capability-safe-create.js",
+      "requires": 0,
+      "isLib": true,
+      "isDriver": false,
+      "isScript": false
+    },
+    {
+      "path": "lib/utils/capability-safe.js",
+      "requires": 0,
+      "isLib": true,
+      "isDriver": false,
+      "isScript": false
+    },
+    {
+      "path": "lib/utils/CapabilityAutoAdapter.js",
+      "requires": 0,
+      "isLib": true,
+      "isDriver": false,
+      "isScript": false
+    },
+    {
+      "path": "lib/utils/DriverUtils.js",
+      "requires": 0,
+      "isLib": true,
+      "isDriver": false,
+      "isScript": false
+    },
+    {
+      "path": "lib/utils/EnergyEstimator.js",
+      "requires": 0,
+      "isLib": true,
+      "isDriver": false,
+      "isScript": false
+    },
+    {
+      "path": "lib/utils/ManufacturerNameHelper.js",
+      "requires": 0,
+      "isLib": true,
+      "isDriver": false,
+      "isScript": false
+    },
+    {
+      "path": "lib/utils/mask-pii.js",
+      "requires": 1,
+      "isLib": true,
+      "isDriver": false,
+      "isScript": false
+    },
+    {
+      "path": "lib/utils/RateLimiter.js",
+      "requires": 0,
+      "isLib": true,
+      "isDriver": false,
+      "isScript": false
+    },
+    {
+      "path": "lib/utils/safeMigrate.js",
+      "requires": 2,
+      "isLib": true,
+      "isDriver": false,
+      "isScript": false
+    },
+    {
+      "path": "lib/utils/SmartValueProcessor.js",
+      "requires": 0,
+      "isLib": true,
+      "isDriver": false,
+      "isScript": false
+    },
+    {
+      "path": "lib/utils/tuya-dp-parser.js",
+      "requires": 0,
+      "isLib": true,
+      "isDriver": false,
+      "isScript": false
+    },
+    {
+      "path": "lib/utils/TuyaDataPointUtils.js",
+      "requires": 0,
+      "isLib": true,
+      "isDriver": false,
+      "isScript": false
+    },
+    {
+      "path": "lib/utils/TuyaDeviceHelper.js",
+      "requires": 0,
+      "isLib": true,
+      "isDriver": false,
+      "isScript": false
+    },
+    {
+      "path": "lib/utils/zigbee-retry.js",
+      "requires": 1,
+      "isLib": true,
+      "isDriver": false,
+      "isScript": false
+    },
+    {
+      "path": "lib/version.js",
+      "requires": 0,
+      "isLib": true,
+      "isDriver": false,
+      "isScript": false
+    },
+    {
+      "path": "lib/WindowCoveringBoundCluster.js",
+      "requires": 1,
+      "isLib": true,
+      "isDriver": false,
+      "isScript": false
+    },
+    {
+      "path": "lib/zigbee/obsolete/safe-io.js",
+      "requires": 0,
+      "isLib": true,
+      "isDriver": false,
+      "isScript": false
+    },
+    {
+      "path": "lib/zigbee/obsolete/wait-ready.js",
+      "requires": 0,
+      "isLib": true,
+      "isDriver": false,
+      "isScript": false
+    },
+    {
+      "path": "lib/zigbee/zigbee-cluster-map-usage-example.js",
+      "requires": 2,
+      "isLib": true,
+      "isDriver": false,
+      "isScript": false
+    },
+    {
+      "path": "drivers/contact_sensor_curtain/pair/list_devices.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": true,
+      "isScript": false
+    },
+    {
+      "path": "drivers/curtain_motor_shutter/pair/list_devices.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": true,
+      "isScript": false
+    },
+    {
+      "path": "drivers/curtain_motor_wall/pair/list_devices.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": true,
+      "isScript": false
+    },
+    {
+      "path": "drivers/curtain_motor/pair/list_devices.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": true,
+      "isScript": false
+    },
+    {
+      "path": "scripts/_add_fingerprints.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/_audit_dimmer_cover.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/_audit_dimmer2.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/_audit_dp.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/_audit_drivers_deep.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/_audit_scene_flows.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/_check_driver_issues.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/_check_fp.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/_check_mains.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/_check_titleformatted.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/_collision_detail.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/_final_validate.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/_fix_all_scene.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/_fix_scene.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/_fix_scene2.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/_scan_fp.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/_scan_fp2.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/_validate_all.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/_verify_prs.js",
+      "requires": 1,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/add-missing-fingerprints.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/ai-helper.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/analysis/add_missing_ids.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/analysis/audit_all_flow_cards.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/analysis/audit_complete_advanced.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/analysis/audit_drivers.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/analysis/audit_manufacturer_ids.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/analysis/categorize_by_pattern.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/analysis/deep_search.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/analysis/extract_removed.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/analysis/find_true_orphans.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/analysis/fix_dual_case_compatibility.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/analysis/fix_manufacturer_case.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/analysis/flow_analysis_patterns.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/analysis/flow_emergency_fixer.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/analysis/flow_optimizer_intelligent.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/analysis/forum_analysis_complete.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/analysis/research_orphans.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/analysis/restore_and_fix_flows.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/analysis/smart_categorize.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/analyze-conflicts.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/analyze-fingerprints-db.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/apply_enriched_fps_v3.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/apply_enriched_fps.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/auto_merge_and_report_v2.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/auto_merge_and_report.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/auto-publish.js",
+      "requires": 2,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/automation/_homed_crossref.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/automation/analyze-collisions.js",
+      "requires": 1,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/automation/api-key-manager.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/automation/apply-antigravity.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/automation/apply-premium-nexus-images.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/automation/apply-premium-unified-images.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/automation/audit-capabilities.js",
+      "requires": 2,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/automation/audit-case-sensitivity.js",
+      "requires": 1,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/automation/audit-flowcards.js",
+      "requires": 2,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/automation/auto-add-fingerprints.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/automation/auto-enrich-db.js",
+      "requires": 1,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/automation/auto-fix-patterns.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/automation/auto-push-publish.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/automation/auto-replace-images.js",
+      "requires": 1,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/automation/auto-sync-references.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/automation/auto-update-drivers.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/automation/auto-update-mcu-db.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/automation/auto-update.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/automation/auto-validate-all.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/automation/bvb-impact-report.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/automation/change-detector.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/automation/changelog-detector.js",
+      "requires": 1,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/automation/check-duplicate-ids.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/automation/cleanup-flow-cards.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/automation/community-responder-v7.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/automation/context-ingestion.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/automation/crossref-user-issues.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/automation/deduplicate-fingerprints.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/automation/deep-crossref-scraper.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/automation/dep-check.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/automation/detect-missing-variants.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/automation/diff-updater.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/automation/driver-generator.js",
+      "requires": 2,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/automation/driver-health.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/automation/extract-local-keys.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/automation/fetch-remote-logs.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/automation/fetch-z2m-fingerprints.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/automation/fingerprint-broadener.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/automation/fingerprint-dedup.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/automation/fingerprint-diff.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/automation/fix_hardcoded_divisions.js",
+      "requires": 2,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/automation/fix_mains_powered.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/automation/fix_missing_flows.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/automation/fix-app-images.js",
+      "requires": 1,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/automation/fix-battery.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/automation/fix-case-variants.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/automation/fix-compose-battery.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/automation/fix-console-log.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/automation/fix-crashers.js",
+      "requires": 1,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/automation/fix-detected-variants.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/automation/fix-duplicate-fingerprints.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/automation/fix-empty-catches.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/automation/fix-fingerprint-conflicts.js",
+      "requires": 1,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/automation/fix-mixin-imports.js",
+      "requires": 4,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/automation/full-pipeline.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/automation/generate-mapping-db.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/automation/generate-matrix.js",
+      "requires": 1,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/automation/generate-subdevices.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/automation/ha_mqtt_coherence_audit.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/automation/inject-autonomous-features.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/automation/integrate-pr-fingerprints.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/automation/integrate-to-master.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/automation/lint-collisions.js",
+      "requires": 1,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/automation/manifest-caseless-processor.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/automation/mass-fingerprint-healer.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/automation/mass-reopen.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/automation/mass-resolve-fps.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/automation/mega-audit.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/automation/mega-fixer.js",
+      "requires": 1,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/automation/mega-patcher.js",
+      "requires": 2,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/automation/mfs-aggregator.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/automation/micro-task-scheduler.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/automation/monthly-scan.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/automation/nightly-full-pipeline.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/automation/nightly-maintenance.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/automation/normalize-manufacturer-names.js",
+      "requires": 1,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/automation/omni-audit-10x.js",
+      "requires": 1,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/automation/optimize-fingerprints.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/automation/parallel-bot-handler.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/automation/perf-monitor.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/automation/pipeline-monitor.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/automation/pr-auto-merger.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/automation/pre-push-dual-layer-gate.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/automation/project-mapper.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/automation/recover-fingerprint-case.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/automation/relax-manifest-clusters.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/automation/reliability-engine.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/automation/resolve-collisions.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/automation/scheduler.js",
+      "requires": 1,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/automation/self-correction-audit.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/automation/sync-all-sources.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/automation/sync-changelog-readme.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/automation/test-mapping-db.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/automation/token-budget.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/automation/update-docs.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/automation/validate-all.js",
+      "requires": 1,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/automation/validate-drivers.js",
+      "requires": 2,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/automation/validate-fallbacks.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/automation/validate-magic-spell.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/automation/validate-urls.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/benchmark/app-audit-plus.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/bump-version-fix-icon.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/cartography/coverage-map.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/cartography/dependency-graph.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/cartography/dev-dashboard.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/cartography/error-tracker.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/cartography/performance-monitor.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/check_enriched.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/check_fp_samples.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/check_syntax.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/check-build.js",
+      "requires": 1,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/check-deps.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/ci/ai-fallback-repair.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/ci/antigravity-controls.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/ci/auto-validation-gate.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/ci/bug-hunter.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/ci/check-flow-ids.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/ci/ci-control-center.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/ci/ci-health-check.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/ci/diagnostic-report.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/ci/fetch-gh-reports.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/ci/find-bloat.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/ci/pre-commit-checks.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/ci/predictive-health.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/ci/resolve-collisions.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/ci/security-scanner.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/ci/signature-audit.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/ci/skill-check.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/ci/smart-energy-fixer.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/ci/STRICT_SYNTAX_GUARD.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/ci/validate-all-yaml.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/ci/zero-defect-control.js",
+      "requires": 1,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/clean_json.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/community-sync/fetch-pr-details.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/community-sync/generate-report.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/community-sync/sync-all.js",
+      "requires": 4,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/consolidate-workflows.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/controls/battery-capability-audit.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/crossref_missing_fps.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/debug/clean-puppeteer.js",
+      "requires": 1,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/deep-compare-stable-vs-master.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/detect-prefixes.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/diagnostic-auto-resolver.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/download-good-build.js",
+      "requires": 1,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/engine_reimplementation/HEALING_ORCHESTRATOR.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/enrich/enrich-from-user-feedback.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/extract-fingerprints.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/find_app_conflicts.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/find-size.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/fix_all_flow_issues.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/fix_appjson_encoding_pass2.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/fix_appjson_encoding.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/fix_github_issues_fingerprints.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/fix_math_patterns.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/fix_syntax_errors.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/fix_titleformatted_v3.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/fix_titleformatted.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/fix-25-drivers.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/fix-275-immax.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/fix-all-drivers.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/fix-app-json-structure.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/fix-collisions-final.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/fix-corrupted-drivers-v2.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/fix-corrupted-drivers.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/fix-empty-mfr.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/fix-final-drivers.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/fix-fingerprint-collisions.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/fix-forum-data-v2.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/fix-forum-data.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/fix-hybrid-refs-all.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/fix-hybrid-refs.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/fix-iife-corruption.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/fix-malformed-drivers.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/fix-missing-brace.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/fix-reg-function.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/fix-syntax-drivers.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/fix-unified-sensor-base-v2.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/fix-unified-sensor-base-v3.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/fix-unified-sensor-base-v4.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/fix-unified-sensor-base.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/fix-version.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/fixes/FINAL_STABILITY_SWEEP.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/fixes/FINAL_STRUCTURAL_PUNCH.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/fixes/FLATTEN_FLOW_LAYERS.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/fixes/FLOW_CARD_SURGERY.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/fixes/GENERALIZE_BRANDING.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/fixes/HEALING_HAMMER.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/fixes/LOWERCASE_FINGERPRINTS.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/fixes/MASTER_SYNTAX_REPAIR.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/fixes/quarantine/AUTO_SYNTAX_REPAIR.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/fixes/quarantine/BRUTE_FORCE_SDK3_STABILIZER.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/fixes/quarantine/CLEAN_CORRUPTED_MATH.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/fixes/quarantine/CLEAN_FLOW_CORRUPTION.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/fixes/quarantine/CLEAN_GLOBAL_CORRUPTION.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/fixes/quarantine/CLEAN_HYBRID_NOMENCLATURE_V2.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/fixes/quarantine/CLEAN_HYBRID_NOMENCLATURE.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/fixes/quarantine/MASSIVE_RESTORATION.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/fixes/quarantine/PROJECT_WIDE_RESTORATION.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/fixes/quarantine/RECOVER_CORRUPTED_FLOWS.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/fixes/quarantine/REPAIR_REG_FUNCTIONS.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/fixes/quarantine/STRUCTURE_RESTORE.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/fixes/quarantine/SYSTEMATIC_FLOW_CARD_FIXER.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/fixes/quarantine/ULTIMATE_AUTO_REPAIR.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/fixes/quarantine/ULTIMATE_DRIVER_STABILIZER.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/fixes/SURGICAL_FIX_LAST.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/fixes/SURGICAL_REMEDIATION_V1.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/fixes/THERMOSTAT_DECREASE_FIX.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/inject_issue_123.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/inject-fingerprints-bulk2.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/inject-fingerprints-from-issues.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/inject-remaining-fingerprints.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/inject-stable-fps-to-master.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/legacy/add_closed_issues_ids.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/legacy/add_github_ids.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/legacy/add_lowercase_ids.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/legacy/add-fps.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/legacy/add-zha-fps.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/legacy/analyze_remaining_duplicates.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/legacy/apply_advanced_patterns.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/legacy/apply_forum_improvements.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/legacy/apply_forum_zigbee_fixes.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/legacy/apply_intelligent_restoration.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/legacy/apply_phase2_enrichment.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/legacy/apply-pr-improvements.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/legacy/check_deleted_legitimate_shares.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/legacy/clean_manufacturer_ids.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/legacy/cleanup_backups.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/legacy/comprehensive_forum_github_sync.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/legacy/enrich_from_community_reports.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/legacy/final_conflict_resolution.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/legacy/fix_all_duplicates.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/legacy/fix_all_flow_issues.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/legacy/fix_all_issues_intelligent.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/legacy/fix_all_warnings_setcapability.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/legacy/fix_compose_files.js",
+      "requires": 1,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/legacy/fix_driver_images.js",
+      "requires": 1,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/legacy/fix_final_lib_warnings.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/legacy/fix_flow_ids.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/legacy/fix_missing_flow_registrations.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/legacy/fix_remaining_duplicates.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/legacy/fix_remaining_flow_issues.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/legacy/fix_remaining_warnings_math.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/legacy/fix-critical-duplicates-v2.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/legacy/fix-lowercase-fingerprints.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/legacy/fix-true-duplicates.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/legacy/resolve_real_conflicts.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/legacy/restore_all_and_verify_conflicts.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/legacy/restore_manufacturer_names.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/legacy/scan_all_community_sources.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/legacy/verify_current_conflicts.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/legacy/verify_legitimate_duplicates.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/legacy/wg-dev-climate.js",
+      "requires": 3,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/legacy/wg-dev-cover.js",
+      "requires": 1,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/legacy/wg-dev-light.js",
+      "requires": 2,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/legacy/wg-dev-misc.js",
+      "requires": 6,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/legacy/wg-dev-plug.js",
+      "requires": 1,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/legacy/wg-dev-sec.js",
+      "requires": 3,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/legacy/wg-dev-switches.js",
+      "requires": 4,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/legacy/wg-dev1.js",
+      "requires": 1,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/legacy/wg-flow1.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/legacy/wg-flow2.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/legacy/wg-flow3.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/legacy/wg2.js",
+      "requires": 1,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/legacy/wg3.js",
+      "requires": 1,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/legacy/wifi-gen-drivers.js",
+      "requires": 1,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/legacy/wifi-setup-dirs.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/lib/fetch.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/list-builds.js",
+      "requires": 1,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/maintenance/adaptive-lighting-enforcer.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/maintenance/ALIGN_ALL_VERSIONS.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/maintenance/ARITHMETIC_INTEGRITY_CHECK.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/maintenance/audit_assets.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/maintenance/audit-fingerprint-collisions.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/maintenance/audit-flow-migration.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/maintenance/audit-icons.js",
+      "requires": 1,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/maintenance/auto-resolve-collisions.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/maintenance/autonomous-caseless-fixer.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/maintenance/autonomous-character-sanitizer.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/maintenance/autonomous-community-ingestor.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/maintenance/autonomous-evolution-engine.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/maintenance/autonomous-intel-harvester.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/maintenance/autonomous-maintenance-orchestrator.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/maintenance/BOT_ACCURACY_FIXER.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/maintenance/centralize-hybrid-logic.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/maintenance/check_collisions.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/maintenance/check_invalid_paths.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/maintenance/check-broken-images.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/maintenance/check-duplicate-ids.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/maintenance/check-flow-ids.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/maintenance/clean-images.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/maintenance/cleanup-failed-runs.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/maintenance/cleanup-root-files.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/maintenance/dedupe_fingerprints.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/maintenance/deduplicate-hybrid-fingerprints.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/maintenance/enforce-fingerprint-rules.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/maintenance/ensure-500x500-images.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/maintenance/fetch-community-intel.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/maintenance/FINAL_SYNTAX_FIXER.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/maintenance/final-collision-remediation-v2.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/maintenance/final-collision-remediation.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/maintenance/final-flow-fixer.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/maintenance/find-duplicates.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/maintenance/fingerprint-dedup.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/maintenance/FIX_CORRUPTED_DRIVERS.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/maintenance/fix_workflows.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/maintenance/fix-all-duplicates.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/maintenance/fix-asset-paths.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/maintenance/fix-broken-iife-triggers.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/maintenance/fix-climate-sensor.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/maintenance/fix-cluster-ids.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/maintenance/fix-empty-remote-caps.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/maintenance/fix-energy-dashboard-metadata.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/maintenance/fix-energy-violations.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/maintenance/fix-extends-spaces.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/maintenance/fix-large-images.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/maintenance/fix-manifest-ids.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/maintenance/fix-one-image.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/maintenance/fix-unsafe-flow-cards.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/maintenance/fleet-repair-flows.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/maintenance/GLOBAL_CORRUPTION_CLEANER.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/maintenance/harden-driver-identification.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/maintenance/HARMONIZE_GITHUB_ACTIONS.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/maintenance/harmonize-icons.js",
+      "requires": 1,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/maintenance/heal-hybrid-flows.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/maintenance/inject-alarm-battery.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/maintenance/inject-attribute-reporting.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/maintenance/inject-ondeleted.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/maintenance/inject-time-sync.js",
+      "requires": 1,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/maintenance/INTEGRITY_SHIELD.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/maintenance/INTELLIGENT_ENGINE_STABILIZER.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/maintenance/manifest-collision-detector.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/maintenance/manual_image_audit.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/maintenance/mass-fix-collisions.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/maintenance/master-flow-patcher.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/maintenance/master-self-heal.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/maintenance/migrate-to-safe-flow-helper.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/maintenance/nexus-challenger.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/maintenance/nexus-restoration-patch.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/maintenance/nightly-auto-process.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/maintenance/normalize-case-integrity.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/maintenance/normalize-fingerprints.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/maintenance/recursive-validator.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/maintenance/repair_assets.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/maintenance/REPAIR_CORRUPTED_DRIVERS_V3.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/maintenance/REPAIR_FLOW_CORRUPTION.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/maintenance/restore-battery-caps.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/maintenance/revert-alarm-battery-conflict.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/maintenance/root-cleanup.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/maintenance/rule-21-linter.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/maintenance/sdk3-smart-linter.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/maintenance/setup-integrity-hook.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/maintenance/SMART_MAINTAINER.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/maintenance/smart-flow-injector.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/maintenance/stability-audit.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/maintenance/STRICT_SYNTAX_GUARD.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/maintenance/string-integrity-gate.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/maintenance/STRIP_XLARGE_IMAGES.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/maintenance/superior-audit.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/maintenance/surgical-collision-cleanup-v2.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/maintenance/surgical-collision-cleanup.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/maintenance/sync-app-json.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/maintenance/sync-z2m-mappings.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/maintenance/triage-engine.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/maintenance/update_plan.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/maintenance/update-github-actions.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/maintenance/validate-driver-manifests.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/maintenance/zero-defect-architect-audit.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/master-automation.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/merge_prs.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/optimize-drivers.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/ota/generate-firmware-compose.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/polish_app.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/PRE_COMMIT_CHECKS.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/prepare-publish.js",
+      "requires": 1,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/publish-stable.js",
+      "requires": 1,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/quick-check.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/refactor-hybrid-drivers.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/regen-images.js",
+      "requires": 1,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/remediation/check_png.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/remediation/check-all-syntax.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/remediation/comprehensive-bug-fixer.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/remediation/deep-cleanup.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/remediation/driver-sanctuary.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/remediation/EMERGENCY_RECOVER.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/remediation/emergency-repair-hardener-corruption.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/remediation/FINAL_FIX.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/remediation/final-integrity-fix.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/remediation/final-integrity-fixer.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/remediation/final-justice-v16.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/remediation/final-master-repairer-v12.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/remediation/final-master-stabilizer-v10.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/remediation/final-master-stabilizer-v11.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/remediation/final-master-stabilizer-v5.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/remediation/final-master-stabilizer-v6.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/remediation/final-master-stabilizer-v7.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/remediation/final-master-stabilizer-v8.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/remediation/final-master-stabilizer-v9.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/remediation/final-restoration-healer-v15.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/remediation/fix_braces.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/remediation/fix_corrupted_js.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/remediation/fix_deep_drivers.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/remediation/FIX_HYBRID_SYNTAX_V2.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/remediation/FIX_HYBRID_SYNTAX.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/remediation/fix_missing_assets.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/remediation/fix_multigang_drivers.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/remediation/fix_png_images.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/remediation/FIX_STRAY_NULLS_V2.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/remediation/FIX_STRAY_NULLS_V3.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/remediation/FIX_STRAY_NULLS_V4.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/remediation/FIX_STRAY_NULLS_V5.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/remediation/FIX_STRAY_NULLS_V6.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/remediation/FIX_STRAY_NULLS.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/remediation/fix-nan-safety-v2.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/remediation/fix-nan-safety.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/remediation/fix-pollution.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/remediation/full-rules-based-fixer.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/remediation/MASTER_STABILIZER.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/remediation/polish-manifest.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/remediation/PR120_CLEANUP.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/remediation/recover-syntax.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/remediation/resolve-manifest-collisions.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/remediation/resolve-nan-risks.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/remediation/resolve-numeric-literals.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/remediation/resolve-numeric-violations.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/remediation/resolve-variable-nan-risks.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/remediation/restore_placeholders.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/remediation/sledgehammer-integrity.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/remediation/ultimate-justice-v17.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/remediation/ultimate-nan-hardener.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/remediation/ultimate-syntax-healer-v14.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/remediation/uncorrupt-paths.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/remediation/universal_driver_repair_v2.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/remediation/universal_driver_repair.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/remediation/universal-cleanup.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/remediation/universal-healer.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/remediation/universal-master-stabilizer-v4.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/remediation/zero-defect-integrity-restorer.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/remediation/zero-defect-remediation.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/remediation/zero-defect-surgical-repair-v3.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/remediation/zero-defect-surgical-repair.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/repair-dup-flow-ids.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/resolve_conflicts.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/restore-drivers-v2.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/restore-drivers.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/restore-hybrid-drivers.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/restore-master-only-hybrid-mfs.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/scanners/csa-iot-scanner.js",
+      "requires": 1,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/scanners/domoticz-scanner.js",
+      "requires": 1,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/scanners/hubitat-scanner.js",
+      "requires": 1,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/scanners/openhab-scanner.js",
+      "requires": 1,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/scanners/smartthings-scanner.js",
+      "requires": 1,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/scanners/tinytuya-scanner.js",
+      "requires": 1,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/scanners/tuya-local-scanner.js",
+      "requires": 1,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/scanners/xiaomi-miot-scanner.js",
+      "requires": 1,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/shadow_sanitizer.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/sync-fingerprints-to-compose.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/sync/cross-ref.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/sync/cross-z2m.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/sync/extract-current.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/sync/run.js",
+      "requires": 5,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/sync/z2m-sync.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/sync/zha-sync.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/systemic-fix.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/temp_clear.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/temp_fix.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/test/validate-tze284-fields.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/tools/inject_fingerprint.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/tools/merge-pr327-fingerprints.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/ULTIMATE_CHECK.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/ULTRAGLOBAL_FLOW_FIX.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/undo-corruption.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/update-package-scripts.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/update-plan.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/utils/SafeRemediator.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/utils/smart-json-merge.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/validate-drivers.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/validate/homey-mandatory-check.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/validate/validate-app-json.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/validation/app-json-dual-layer-validator.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/validation/audit_architecture.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/validation/audit-anti-generic.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/validation/auto-fix-common-issues.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/validation/check_git_conflicts.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/validation/check-driver-collisions.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/validation/check-fingerprint-health.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/validation/check-pairing-collisions.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/validation/comprehensive-recursive-validator.js",
+      "requires": 2,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/validation/verify_fingerprints_integrity.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    },
+    {
+      "path": "scripts/validation/verify_flows_integrity.js",
+      "requires": 0,
+      "isLib": false,
+      "isDriver": false,
+      "isScript": true
+    }
+  ],
+  "topRequired": [
+    {
+      "module": "lib/utils/tuyaUtils.js",
+      "count": 163
+    },
+    {
+      "module": "lib/mixins/VirtualButtonMixin.js",
+      "count": 75
+    },
+    {
+      "module": "lib/mixins/PhysicalButtonMixin.js",
+      "count": 75
+    },
+    {
+      "module": "lib/devices/UnifiedSensorBase.js",
+      "count": 61
+    },
+    {
+      "module": "lib/utils/CaseInsensitiveMatcher.js",
+      "count": 53
+    },
+    {
+      "module": "lib/tuya-local/TuyaLocalDevice.js",
+      "count": 50
+    },
+    {
+      "module": "lib/devices/UnifiedSwitchBase.js",
+      "count": 45
+    },
+    {
+      "module": "lib/devices/ButtonDevice.js",
+      "count": 37
+    },
+    {
+      "module": "lib/devices/UnifiedPlugBase.js",
+      "count": 34
+    },
+    {
+      "module": "lib/tuya/TuyaZigbeeDevice.js",
+      "count": 32
+    },
+    {
+      "module": "lib/managers/SmartDivisorManager.js",
+      "count": 32
+    },
+    {
+      "module": "lib/ZigbeeTimeSync.js",
+      "count": 30
+    },
+    {
+      "module": "lib/tuya-local/TuyaLocalDriver.js",
+      "count": 30
+    },
+    {
+      "module": "lib/constants/ZigbeeConstants.js",
+      "count": 28
+    },
+    {
+      "module": "lib/TuyaSpecificCluster.js",
+      "count": 27
+    },
+    {
+      "module": "lib/devices/UnifiedLightBase.js",
+      "count": 24
+    },
+    {
+      "module": "lib/TuyaSpecificClusterDevice.js",
+      "count": 24
+    },
+    {
+      "module": "lib/helpers/DeviceDataHelper.js",
+      "count": 22
+    },
+    {
+      "module": "lib/ewelink-local/EweLinkLocalDevice.js",
+      "count": 21
+    },
+    {
+      "module": "lib/ewelink-local/EweLinkLocalDriver.js",
+      "count": 21
+    }
+  ],
+  "heaviestFiles": [
+    {
+      "path": "lib/devices/BaseUnifiedDevice.js",
+      "requires": 54,
+      "requiredBy": 8
+    },
+    {
+      "path": "lib/tuya/index.js",
+      "requires": 32,
+      "requiredBy": 1
+    },
+    {
+      "path": "lib/index.js",
+      "requires": 27,
+      "requiredBy": 0
+    },
+    {
+      "path": "app.js",
+      "requires": 25,
+      "requiredBy": 0
+    },
+    {
+      "path": "lib/clusters/index.js",
+      "requires": 23,
+      "requiredBy": 1
+    },
+    {
+      "path": "lib/devices/UnifiedSensorBase.js",
+      "requires": 21,
+      "requiredBy": 61
+    },
+    {
+      "path": "lib/UniversalZigbeeDevice.js",
+      "requires": 17,
+      "requiredBy": 2
+    },
+    {
+      "path": "lib/tuya/TuyaZigbeeDevice.js",
+      "requires": 16,
+      "requiredBy": 32
+    },
+    {
+      "path": "lib/managers/index.js",
+      "requires": 16,
+      "requiredBy": 1
+    },
+    {
+      "path": "lib/devices/index.js",
+      "requires": 15,
+      "requiredBy": 1
+    },
+    {
+      "path": "lib/zigbee/index.js",
+      "requires": 15,
+      "requiredBy": 1
+    },
+    {
+      "path": "drivers/sensor_climate_contact/device.js",
+      "requires": 14,
+      "requiredBy": 0
+    },
+    {
+      "path": "drivers/sensor_climate_lcdtemphumidsensor/device.js",
+      "requires": 14,
+      "requiredBy": 0
+    },
+    {
+      "path": "drivers/sensor_climate_temphumidsensor/device.js",
+      "requires": 14,
+      "requiredBy": 0
+    },
+    {
+      "path": "lib/zigbee/registerClusters.js",
+      "requires": 13,
+      "requiredBy": 2
+    },
+    {
+      "path": "drivers/sensor_contact_climate/device.js",
+      "requires": 13,
+      "requiredBy": 0
+    },
+    {
+      "path": "lib/devices/UnifiedSwitchBase.js",
+      "requires": 12,
+      "requiredBy": 45
+    },
+    {
+      "path": "lib/battery/index.js",
+      "requires": 11,
+      "requiredBy": 2
+    },
+    {
+      "path": "lib/tuya/TuyaEF00Manager.js",
+      "requires": 11,
+      "requiredBy": 4
+    },
+    {
+      "path": "lib/devices/UnifiedPlugBase.js",
+      "requires": 11,
+      "requiredBy": 34
+    }
+  ]
+}

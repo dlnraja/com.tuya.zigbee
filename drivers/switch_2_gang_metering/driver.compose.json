@@ -1,0 +1,123 @@
+{
+  "id": "switch_2_gang_metering",
+  "name": {
+    "en": "2 Gang Switch Module with metering"
+  },
+  "class": "socket",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "capabilities": [
+    "onoff",
+    "measure_power",
+    "meter_power",
+    "measure_current",
+    "measure_voltage",
+    "measure_battery",
+    "button.1",
+    "button.2"
+  ],
+  "capabilitiesOptions": {
+    "measure_power": {
+      "approximated": true
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    },
+    "measure_battery": {
+      "title": {
+        "en": "Battery",
+        "fr": "Batterie",
+        "nl": "Batterij",
+        "de": "Batterie"
+      }
+    },
+    "button.2": {
+      "title": {
+        "en": "Button 2",
+        "fr": "Bouton 2"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  },
+  "images": {
+    "large": "/{{driverAssetsPath}}/images/large.png",
+    "small": "/{{driverAssetsPath}}/images/small.png"
+  },
+  "zigbee": {
+    "productId": [
+      "TS0601",
+      "TS004F"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          4,
+          5,
+          6,
+          1794,
+          2820
+        ],
+        "bindings": [
+          6,
+          1794,
+          2820
+        ]
+      },
+      "2": {
+        "clusters": [
+          4,
+          5,
+          6
+        ],
+        "bindings": [
+          6
+        ]
+      }
+    },
+    "devices": {
+      "secondSwitch": {
+        "class": "socket",
+        "capabilities": [
+          "onoff"
+        ],
+        "name": {
+          "en": "2 Gang Switch Module with metering - Second Switch"
+        },
+        "capabilitiesOptions": {
+          "measure_power": {
+            "approximated": true
+          }
+        }
+      }
+    },
+    "learnmode": {
+      "image": "{{driverAssetsPath}}/icon.svg",
+      "instruction": {
+        "en": "Two tiles will be created, one for each channel of the device. Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode (the LED should blink green)."
+      }
+    },
+    "manufacturerName": [
+      "_hybrid_switch_2_gang_metering_needs_device_assignment",
+      "_HYBRID_SWITCH_2_GANG_METERING_NEEDS_DEVICE_ASSIGNMENT"
+    ]
+  },
+  "version": "1.0.0",
+  "energy": {
+    "batteries": [
+      "CR2032"
+    ]
+  }
+}

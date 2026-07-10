@@ -1,0 +1,595 @@
+{
+  "name": {
+    "en": "Sensor Climate Temphumidsensor",
+    "nl": "Sensor Klimaat TempHumiSensor",
+    "fr": "Capteur Climat TempHumidCapteur",
+    "de": "Sensor Klimaat TempHumiSensor",
+    "es": "Sensor Clima TempHumiSensor"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "measure_temperature",
+    "measure_humidity",
+    "measure_battery",
+    "button.1"
+  ],
+  "energy": {
+    "batteries": [
+      "CR2450"
+    ],
+    "mains": true
+  },
+  "subDevices": [],
+  "capabilityOptions": {
+    "measure_temperature.probe": {
+      "title": {
+        "en": "Probe Temperature",
+        "fr": "TempÃ©rature Sonde",
+        "nl": "Sonde Temperatuur",
+        "de": "Sondentemperatur"
+      }
+    }
+  },
+  "zigbee": {
+    "productId": [
+      "TS0201",
+      "TS0222",
+      "TH01",
+      "WSDCGQ01LM",
+      "WSDCGQ11LM",
+      "WSDCGQ12LM",
+      "lumi.sensor_ht",
+      "lumi.sensor_ht.agl02",
+      "lumi.weather",
+      "SM0201",
+      "SNZB-02",
+      "SNZB-02D",
+      "SNZB-02P",
+      "ZG-227Z",
+      "ZG-227ZL",
+      "CK-TLSR8656-SS5-01(7014)",
+      "SNZB-02DR2",
+      "SNZB-02LD",
+      "SNZB-02WD",
+      "THS317-ET",
+      "ZG-303Z",
+      "TY0201",
+      "TS1201",
+      "RH3052",
+      "Excellux"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          61184
+        ]
+      }
+    },
+    "manufacturerName": [
+      "_tz3000_ywagc4rj"
+    ]
+  },
+  "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": " Calibration (v5.5.28)",
+        "fr": " Calibration (v5.5.28)"
+      },
+      "children": [
+        {
+          "id": "temperature_calibration",
+          "type": "number",
+          "label": {
+            "en": "Temperature Offset (Â°C)",
+            "fr": "DÃ©calage TempÃ©rature (Â°C)"
+          },
+          "value": 0,
+          "min": -10,
+          "max": 10,
+          "step": 0.1,
+          "hint": {
+            "en": "Add or subtract from temperature reading. Use positive value if sensor reads too low.",
+            "fr": "Ajouter ou soustraire de la tempÃ©rature lue. Valeur positive si capteur lit trop bas."
+          }
+        },
+        {
+          "id": "humidity_calibration",
+          "type": "number",
+          "label": {
+            "en": "Humidity Offset (%)",
+            "fr": "DÃ©calage HumiditÃ© (%)"
+          },
+          "value": 0,
+          "min": -20,
+          "max": 20,
+          "step": 1,
+          "hint": {
+            "en": "Add or subtract from humidity reading. Use positive value if sensor reads too low.",
+            "fr": "Ajouter ou soustraire de l'humiditÃ© lue. Valeur positive si capteur lit trop bas."
+          }
+        },
+        {
+          "id": "sensor_precision",
+          "type": "dropdown",
+          "label": {
+            "en": "Decimal Precision",
+            "fr": "PrÃ©cision"
+          },
+          "value": "1",
+          "hint": {
+            "en": "Decimals for temp/humidity"
+          },
+          "values": [
+            {
+              "id": "1",
+              "label": {
+                "en": "1 decimal (20.5Â°C)"
+              }
+            },
+            {
+              "id": "2",
+              "label": {
+                "en": "2 decimals (20.53Â°C)"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": " Time Sync (v5.5.384)",
+        "fr": " Sync Heure (v5.5.384)",
+        "nl": " Tijdsync (v5.5.384)",
+        "de": " Zeitsync (v5.5.384)"
+      },
+      "children": [
+        {
+          "id": "time_sync_format",
+          "type": "dropdown",
+          "label": {
+            "en": "Time Format",
+            "fr": "Format Heure",
+            "nl": "Tijdformaat",
+            "de": "Zeitformat"
+          },
+          "value": "auto",
+          "hint": {
+            "en": "Select time sync format. Auto works for most devices. Change only if clock shows wrong time.",
+            "fr": "Format de synchronisation. Auto fonctionne pour la plupart. Changer si l'heure affichÃ©e est incorrecte.",
+            "nl": "Selecteer tijdsync formaat. Auto werkt voor de meeste apparaten.",
+            "de": "Zeitsync-Format wÃ¤hlen. Auto funktioniert fÃ¼r die meisten GerÃ¤te."
+          },
+          "values": [
+            {
+              "id": "auto",
+              "label": {
+                "en": " Auto-detect (recommended)",
+                "fr": " Auto-dÃ©tection (recommandÃ©)"
+              }
+            },
+            {
+              "id": "tuya_timestamp",
+              "label": {
+                "en": " LCD Sensor (8-byte epoch 2000)",
+                "fr": " Capteur LCD (8 octets epoch 2000)"
+              }
+            },
+            {
+              "id": "tuya_ts_unix",
+              "label": {
+                "en": " LCD Sensor Unix (8-byte epoch 1970)",
+                "fr": " Capteur LCD Unix (8 octets epoch 1970)"
+              }
+            },
+            {
+              "id": "tuya_standard",
+              "label": {
+                "en": " Tuya Standard (7-byte local)",
+                "fr": " Tuya Standard (7 octets local)"
+              }
+            },
+            {
+              "id": "tuya_utc_string",
+              "label": {
+                "en": " Tuya UTC (7-byte UTC)",
+                "fr": " Tuya UTC (7 octets UTC)"
+              }
+            },
+            {
+              "id": "tuya_mcu",
+              "label": {
+                "en": " Tuya MCU (9-byte with header)",
+                "fr": " Tuya MCU (9 octets avec header)"
+              }
+            },
+            {
+              "id": "tuya_extended",
+              "label": {
+                "en": " Tuya Extended (9-byte + timezone)",
+                "fr": " Tuya Ã‰tendu (9 octets + fuseau)"
+              }
+            },
+            {
+              "id": "tuya_full_tz",
+              "label": {
+                "en": " Tuya Full TZ (10-byte + DST)",
+                "fr": " Tuya Full TZ (10 octets + DST)"
+              }
+            },
+            {
+              "id": "zigbee_2000",
+              "label": {
+                "en": " Zigbee 2000 (4-byte epoch 2000)",
+                "fr": " Zigbee 2000 (4 octets epoch 2000)"
+              }
+            },
+            {
+              "id": "unix_1970",
+              "label": {
+                "en": " Unix 1970 (4-byte epoch 1970)",
+                "fr": " Unix 1970 (4 octets epoch 1970)"
+              }
+            }
+          ]
+        },
+        {
+          "id": "time_sync_timezone",
+          "type": "dropdown",
+          "label": {
+            "en": "Timezone Override",
+            "fr": "Forcer Fuseau Horaire",
+            "nl": "Tijdzone Override",
+            "de": "Zeitzone Override"
+          },
+          "value": "auto",
+          "hint": {
+            "en": "Override timezone. Use Auto to use Homey's timezone. Manual override for devices that don't handle DST.",
+            "fr": "Forcer le fuseau. Auto utilise celui de Homey. Manuel pour appareils sans gestion heure d'Ã©tÃ©.",
+            "nl": "Overschrijf tijdzone. Auto gebruikt Homey's tijdzone.",
+            "de": "Zeitzone Ã¼berschreiben. Auto verwendet Homey's Zeitzone."
+          },
+          "values": [
+            {
+              "id": "auto",
+              "label": {
+                "en": " Auto (Homey timezone)",
+                "fr": " Auto (fuseau Homey)"
+              }
+            },
+            {
+              "id": "utc",
+              "label": {
+                "en": " UTC (GMT+0)",
+                "fr": " UTC (GMT+0)"
+              }
+            },
+            {
+              "id": "gmt+1",
+              "label": {
+                "en": " GMT+1 (CET)",
+                "fr": " GMT+1 (Paris hiver)"
+              }
+            },
+            {
+              "id": "gmt+2",
+              "label": {
+                "en": " GMT+2 (CEST/EET)",
+                "fr": " GMT+2 (Paris Ã©tÃ©)"
+              }
+            },
+            {
+              "id": "gmt+3",
+              "label": {
+                "en": " GMT+3 (Moscow)",
+                "fr": " GMT+3 (Moscou)"
+              }
+            },
+            {
+              "id": "gmt-5",
+              "label": {
+                "en": " GMT-5 (EST)",
+                "fr": " GMT-5 (New York)"
+              }
+            },
+            {
+              "id": "gmt-8",
+              "label": {
+                "en": " GMT-8 (PST)",
+                "fr": " GMT-8 (Los Angeles)"
+              }
+            },
+            {
+              "id": "gmt+8",
+              "label": {
+                "en": " GMT+8 (China)",
+                "fr": " GMT+8 (Chine)"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": " Alarm Thresholds (E002)",
+        "fr": " Seuils d'alarme (E002)",
+        "nl": " Alarm drempels (E002)"
+      },
+      "children": [
+        {
+          "id": "alarm_temp_max",
+          "type": "number",
+          "label": {
+            "en": "Max Temperature Alarm (Â°C)",
+            "nl": "Max temperatuur alarm (Â°C)",
+            "fr": "Alarme tempÃ©rature max (Â°C)"
+          },
+          "hint": {
+            "en": "Device will trigger alarm when temperature exceeds this value (E002 cluster, not all devices support this)",
+            "nl": "Apparaat activeert alarm wanneer de temperatuur deze waarde overschrijdt"
+          },
+          "value": 40,
+          "min": -20,
+          "max": 60,
+          "step": 1
+        },
+        {
+          "id": "alarm_temp_min",
+          "type": "number",
+          "label": {
+            "en": "Min Temperature Alarm (Â°C)",
+            "nl": "Min temperatuur alarm (Â°C)",
+            "fr": "Alarme tempÃ©rature min (Â°C)"
+          },
+          "hint": {
+            "en": "Device will trigger alarm when temperature drops below this value",
+            "nl": "Apparaat activeert alarm wanneer de temperatuur onder deze waarde daalt"
+          },
+          "value": 0,
+          "min": -20,
+          "max": 60,
+          "step": 1
+        },
+        {
+          "id": "alarm_humidity_max",
+          "type": "number",
+          "label": {
+            "en": "Max Humidity Alarm (%)",
+            "nl": "Max luchtvochtigheid alarm (%)",
+            "fr": "Alarme humiditÃ© max (%)"
+          },
+          "hint": {
+            "en": "Device will trigger alarm when humidity exceeds this value",
+            "nl": "Apparaat activeert alarm wanneer de luchtvochtigheid deze waarde overschrijdt"
+          },
+          "value": 80,
+          "min": 0,
+          "max": 100,
+          "step": 1
+        },
+        {
+          "id": "alarm_humidity_min",
+          "type": "number",
+          "label": {
+            "en": "Min Humidity Alarm (%)",
+            "nl": "Min luchtvochtigheid alarm (%)",
+            "fr": "Alarme humiditÃ© min (%)"
+          },
+          "hint": {
+            "en": "Device will trigger alarm when humidity drops below this value",
+            "nl": "Apparaat activeert alarm wanneer de luchtvochtigheid onder deze waarde daalt"
+          },
+          "value": 20,
+          "min": 0,
+          "max": 100,
+          "step": 1
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": " Debug (Expert)",
+        "fr": " Debug (Expert)"
+      },
+      "children": [
+        {
+          "id": "zigbee_time_debug",
+          "type": "checkbox",
+          "label": {
+            "en": "ZCL Time Cluster Debug Mode",
+            "fr": "Mode Debug ZCL Time Cluster"
+          },
+          "value": false,
+          "hint": {
+            "en": " EXPERT ONLY: Test all ZCL Time sync methods on device startup. May drain battery if used frequently.",
+            "fr": " EXPERT UNIQUEMENT: Teste toutes les mÃ©thodes sync ZCL Time au dÃ©marrage. Peut vider la batterie si utilisÃ© frÃ©quemment."
+          }
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "Sensor Calibration",
+        "nl": "Sensor Kalibratie"
+      },
+      "children": [
+        {
+          "id": "temperature_offset",
+          "type": "number",
+          "label": {
+            "en": "Temperature offset",
+            "nl": "Temperatuur correctie"
+          },
+          "hint": {
+            "en": "Adjust sensor reading (Â±10Â°C)",
+            "nl": "Pas meetwaarde aan (Â±10Â°C)"
+          },
+          "units": "Â°C",
+          "value": 0,
+          "min": -10,
+          "max": 10,
+          "step": 0.1
+        },
+        {
+          "id": "humidity_offset",
+          "type": "number",
+          "label": {
+            "en": "Humidity offset",
+            "nl": "Luchtvochtigheid correctie"
+          },
+          "hint": {
+            "en": "Adjust sensor reading (Â±30%)",
+            "nl": "Pas meetwaarde aan (Â±30%)"
+          },
+          "units": "%",
+          "value": 0,
+          "min": -30,
+          "max": 30,
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "sonoff_temp_cal",
+      "type": "number",
+      "label": {
+        "en": "Temp Calibration (SONOFF)"
+      },
+      "value": 0,
+      "min": -10,
+      "max": 10,
+      "step": 0.1,
+      "hint": {
+        "en": "SNZB-02P temperature offset"
+      }
+    },
+    {
+      "id": "sonoff_hum_cal",
+      "type": "number",
+      "label": {
+        "en": "Humidity Calibration (SONOFF)"
+      },
+      "value": 0,
+      "min": -20,
+      "max": 20,
+      "step": 1,
+      "hint": {
+        "en": "SNZB-02P humidity offset"
+      }
+    },
+    {
+      "id": "enable_radio_sensing",
+      "type": "checkbox",
+      "label": {
+        "en": "Enable Radio Presence Sensing",
+        "fr": "Activer la DÃ©tection de PrÃ©sence Radio"
+      },
+      "value": false,
+      "hint": {
+        "en": "Infer presence from Zigbee signal fluctuations (BETA)",
+        "fr": "DÃ©duit la prÃ©sence des fluctuations du signal Zigbee (BETA)"
+      }
+    },
+    {
+      "id": "radio_sensitivity",
+      "type": "number",
+      "label": {
+        "en": "Radio Presence Sensitivity",
+        "fr": "SensibilitÃ© PrÃ©sence Radio"
+      },
+      "value": 15,
+      "min": 5,
+      "max": 50,
+      "hint": {
+        "en": "LQI variance threshold (higher = less sensitive)",
+        "fr": "Seuil de variance LQI (plus haut = moins sensible)"
+      }
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "Enhanced Features (v9.1)",
+        "fr": "Fonctionnalités Améliorées (v9.1)"
+      },
+      "children": [
+        {
+          "id": "battery_check_interval",
+          "type": "number",
+          "label": {
+            "en": "Battery Check Interval (hours)",
+            "fr": "Intervalle Vérification Batterie (heures)"
+          },
+          "value": 24,
+          "min": 1,
+          "max": 168,
+          "step": 1,
+          "hint": {
+            "en": "How often to poll battery status (for battery-powered devices)",
+            "fr": "Fréquence de vérification de l'état de la batterie"
+          }
+        },
+        {
+          "id": "availability_timeout",
+          "type": "number",
+          "label": {
+            "en": "Offline Timeout (minutes, 0=disabled)",
+            "fr": "Délai Hors Ligne (minutes, 0=désactivé)"
+          },
+          "value": 0,
+          "min": 0,
+          "max": 1440,
+          "step": 5,
+          "hint": {
+            "en": "Minutes without messages before marking device as offline (0 = use default)",
+            "fr": "Minutes sans messages avant de marquer l'appareil comme hors ligne (0 = par défaut)"
+          }
+        }
+      ]
+    }
+  ],
+  "images": {
+    "small": "/drivers/climate_sensor/assets/images/small.png",
+    "large": "/drivers/climate_sensor/assets/images/large.png"
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "fr": "VÃ©rifier MÃJ OTA",
+        "nl": "Controleer op OTA-updates"
+      }
+    }
+  ],
+  "flow": {
+    "triggers": [],
+    "conditions": [],
+    "actions": []
+  },
+  "id": "sensor_climate_temphumidsensor",
+  "version": "1.0.0",
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  }
+}

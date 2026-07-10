@@ -1,0 +1,104 @@
+{
+  "triggers": [
+    {
+      "id": "hybrid_light_sensor_turned_on",
+      "title": {
+        "en": "Light turned on",
+        "fr": "Lumière allumée"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Light turned on",
+        "fr": "Lumière allumée"
+      }
+    },
+    {
+      "id": "hybrid_light_sensor_turned_off",
+      "title": {
+        "en": "Light turned off",
+        "fr": "Lumière éteinte"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Light turned off",
+        "fr": "Lumière éteinte"
+      }
+    },
+    {
+      "id": "hybrid_light_sensor_button_pressed",
+      "title": {
+        "en": "Button pressed",
+        "fr": "Bouton appuyé"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Button pressed",
+        "fr": "Bouton appuyé"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "id": "hybrid_light_sensor_is_on",
+      "title": {
+        "en": "Light is on",
+        "fr": "Lumière est allumée"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Light is on",
+        "fr": "Lumière est allumée"
+      }
+    }
+  ],
+  "actions": [
+    {
+      "id": "hybrid_light_sensor_turn_on",
+      "title": {
+        "en": "Turn on",
+        "fr": "Allumer"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn on",
+        "fr": "Allumer"
+      }
+    },
+    {
+      "id": "hybrid_light_sensor_turn_off",
+      "title": {
+        "en": "Turn off",
+        "fr": "Éteindre"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn off",
+        "fr": "Éteindre"
+      }
+    },
+    {
+      "id": "hybrid_light_sensor_set_brightness",
+      "title": {
+        "en": "Set brightness",
+        "fr": "Régler luminosité"
+      },
+      "args": [
+        {
+          "name": "brightness",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "title": {
+            "en": "Brightness (%)",
+            "fr": "Luminosité (%)"
+          }
+        }
+      ],
+      "titleFormatted": {
+        "en": "Set brightness [[brightness]]",
+        "fr": "Régler luminosité [[brightness]]"
+      }
+    }
+  ]
+}

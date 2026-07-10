@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="960" height="960" viewBox="0 0 960 960" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Bulb shape -->
+  <path d="M480 150C370 150 280 240 280 350C280 430 320 500 380 540V650H580V540C640 500 680 430 680 350C680 240 590 150 480 150Z"
+        stroke="black" stroke-width="40" fill="none"/>
+  <!-- Screw base -->
+  <rect x="380" y="670" width="200" height="40" rx="10" fill="black"/>
+  <rect x="400" y="730" width="160" height="40" rx="10" fill="black"/>
+  <rect x="420" y="790" width="120" height="40" rx="10" fill="black"/>
+  <!-- Filament -->
+  <path d="M420 500 L440 400 L480 450 L520 400 L540 500" stroke="black" stroke-width="20" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Light rays -->
+  <line x1="480" y1="80" x2="480" y2="120" stroke="black" stroke-width="20" stroke-linecap="round"/>
+  <line x1="700" y1="250" x2="730" y2="220" stroke="black" stroke-width="20" stroke-linecap="round"/>
+  <line x1="260" y1="250" x2="230" y2="220" stroke="black" stroke-width="20" stroke-linecap="round"/>
+</svg>

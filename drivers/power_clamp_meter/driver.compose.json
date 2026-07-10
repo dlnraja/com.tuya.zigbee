@@ -1,0 +1,166 @@
+{
+  "name": {
+    "en": "CT Clamp Power Meter",
+    "fr": "Compteur Pince Ampèremétrique",
+    "nl": "Stroomtang Meter",
+    "de": "Stromzangen Messgerät",
+    "it": "Misuratore Pinza Amperometrica",
+    "sv": "Strömtång Mätare",
+    "no": "Strømtang Måler",
+    "es": "Medidor Pinza Amperimétrica",
+    "da": "Strømtang Måler"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "measure_power",
+    "meter_power",
+    "measure_current",
+    "measure_current.phase2",
+    "measure_voltage",
+    "measure_frequency",
+    "measure_power_factor",
+    "measure_power.phase1",
+    "measure_power.phase2",
+    "measure_power.phase3",
+    "button.1"
+  ],
+  "capabilitiesOptions": {
+    "measure_power": {
+      "title": {
+        "en": "Total Power",
+        "fr": "Puissance Totale"
+      },
+      "units": "W"
+    },
+    "measure_power.phase1": {
+      "title": {
+        "en": "Phase 1",
+        "fr": "Phase 1"
+      },
+      "units": "W"
+    },
+    "measure_power.phase2": {
+      "title": {
+        "en": "Phase 2",
+        "fr": "Phase 2"
+      },
+      "units": "W"
+    },
+    "measure_power.phase3": {
+      "title": {
+        "en": "Phase 3",
+        "fr": "Phase 3"
+      },
+      "units": "W"
+    },
+    "meter_power": {
+      "title": {
+        "en": "Energy",
+        "fr": "Énergie"
+      },
+      "units": "kWh"
+    },
+    "measure_frequency": {
+      "title": {
+        "en": "AC Frequency",
+        "fr": "Fréquence"
+      },
+      "units": "Hz"
+    },
+    "measure_power_factor": {
+      "title": {
+        "en": "Power Factor",
+        "fr": "Facteur de Puissance"
+      }
+    },
+    "measure_current.phase2": {
+      "title": {
+        "en": "Current B",
+        "fr": "Courant B"
+      },
+      "units": "A"
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  },
+  "settings": [
+    {
+      "id": "ct_ratio",
+      "type": "number",
+      "label": {
+        "en": "CT Ratio",
+        "fr": "Ratio Pince"
+      },
+      "value": 1,
+      "min": 1,
+      "max": 3000,
+      "hint": {
+        "en": "Current transformer ratio (e.g. 100:1 = 100)",
+        "fr": "Ratio du transformateur de courant"
+      }
+    }
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "_tze200_sur36rju",
+      "_tze204_sur36rju",
+      "_TZE284_81yrt3lo",
+      "_TZE204_81yrt3lo",
+      "_TZE200_81yrt3lo"
+    ],
+    "productId": [
+      "TS0601_clamp",
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6,
+          2820,
+          1794,
+          61184
+        ]
+      }
+    },
+    "learnmode": {
+      "instruction": {
+        "en": "Press the pairing button for 5 seconds until LED blinks",
+        "fr": "Appuyez sur le bouton d'appairage pendant 5 secondes"
+      }
+    }
+  },
+  "images": {
+    "small": "/drivers/power_clamp_meter/assets/images/small.png",
+    "large": "/drivers/power_clamp_meter/assets/images/large.png",
+    "xlarge": "/drivers/power_clamp_meter/assets/images/xlarge.png"
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "fr": "Vérifier MàJ OTA",
+        "nl": "Controleer op OTA-updates"
+      }
+    }
+  ],
+  "id": "power_clamp_meter",
+  "version": "1.0.0"
+}

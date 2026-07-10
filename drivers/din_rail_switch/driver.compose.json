@@ -1,0 +1,103 @@
+{
+  "name": {
+    "en": "DIN Rail Switch",
+    "fr": "Interrupteur DIN Rail",
+    "nl": "DIN Rail Schakelaar",
+    "de": "DIN-Schienen Schalter",
+    "it": "Interruttore DIN Rail",
+    "sv": "DIN-skena Strömbrytare",
+    "no": "DIN-skinne Bryter",
+    "es": "Interruptor DIN Rail",
+    "da": "DIN-skinne Kontakt"
+  },
+  "class": "socket",
+  "capabilities": [
+    "onoff",
+    "measure_power",
+    "meter_power",
+    "measure_voltage",
+    "measure_current",
+    "button.1"
+  ],
+  "capabilitiesOptions": {
+    "measure_power": {
+      "title": {
+        "en": "Power",
+        "fr": "Puissance"
+      },
+      "units": "W"
+    },
+    "meter_power": {
+      "title": {
+        "en": "Energy",
+        "fr": "Énergie"
+      },
+      "units": "kWh"
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_tz3000_3r9fthmw",
+      "_tz3000_7y5ikxwq",
+      "_tz3000_fjm6mjrj",
+      "_tze200_fjb98hbq",
+      "_tze204_aqnazj70",
+      "_tze204_fjb98hbq",
+      "_tz3000_rjxqso4a"
+    ],
+    "productId": [
+      "TS0001_din",
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6,
+          61184
+        ]
+      }
+    },
+    "learnmode": {
+      "instruction": {
+        "en": "Press the pairing button for 5-10 seconds until LED blinks rapidly",
+        "fr": "Appuyez sur le bouton d'appairage pendant 5-10 secondes jusqu'à clignotement rapide"
+      }
+    }
+  },
+  "images": {
+    "small": "/drivers/din_rail_switch/assets/images/small.png",
+    "large": "/drivers/din_rail_switch/assets/images/large.png",
+    "xlarge": "/drivers/din_rail_switch/assets/images/xlarge.png"
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "fr": "Vérifier MàJ OTA",
+        "nl": "Controleer op OTA-updates"
+      }
+    }
+  ],
+  "id": "din_rail_switch",
+  "version": "1.0.0"
+}

@@ -1,0 +1,134 @@
+{
+  "triggers": [
+    {
+      "id": "device_radiator_valve_smart_radiator_valve_target_temperature_changed_device_radiator_valve_smart",
+      "title": {
+        "en": "Target temperature changed",
+        "fr": "TempÃ©rature cible changÃ©e"
+      },
+      "tokens": [
+        {
+          "name": "temperature",
+          "type": "number",
+          "title": {
+            "en": "Temperature",
+            "fr": "TempÃ©rature"
+          },
+          "example": 21
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Target temperature changed",
+        "fr": "TempÃ©rature cible changÃ©e"
+      }
+    },
+    {
+      "id": "device_radiator_valve_smart_measure_temperature_changed",
+      "title": {
+        "en": "Temperature changed",
+        "fr": "TempÃ©rature changÃ©e"
+      },
+      "tokens": [
+        {
+          "name": "temperature",
+          "type": "number",
+          "title": {
+            "en": "Temperature",
+            "fr": "TempÃ©rature"
+          },
+          "example": 20.5
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Temperature changed",
+        "fr": "TempÃ©rature changÃ©e"
+      }
+    },
+    {
+      "id": "device_radiator_valve_smart_temp_changed",
+      "title": {
+        "en": "Temperature changed",
+        "fr": "TempÃ©rature changÃ©e",
+        "nl": "Temperatuur gewijzigd",
+        "de": "Temperatur geÃ¤ndert"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Temperature changed",
+        "fr": "TempÃ©rature changÃ©e",
+        "nl": "Temperatuur gewijzigd",
+        "de": "Temperatur geÃ¤ndert"
+      }
+    },
+    {
+      "id": "device_radiator_valve_smart_battery_low",
+      "title": {
+        "en": "Battery low",
+        "fr": "Batterie faible",
+        "nl": "Batterij laag",
+        "de": "Batterie schwach"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Battery low",
+        "fr": "Batterie faible",
+        "nl": "Batterij laag",
+        "de": "Batterie schwach"
+      }
+    }
+  ],
+  "actions": [
+    {
+      "id": "device_radiator_valve_smart_set_target_temperature",
+      "title": {
+        "en": "Set temperature to...",
+        "fr": "RÃ©gler la tempÃ©rature Ã..."
+      },
+      "args": [
+        {
+          "name": "temperature",
+          "type": "number",
+          "min": 5,
+          "max": 35,
+          "step": 0.5,
+          "title": {
+            "en": "Temperature",
+            "fr": "TempÃ©rature"
+          }
+        }
+      ],
+      "titleFormatted": {
+        "en": "Set temperature to... [[temperature]]",
+        "fr": "RÃ©gler la tempÃ©rature Ã... [[temperature]]"
+      }
+    },
+    {
+      "id": "device_radiator_valve_smart_set_temperature",
+      "title": {
+        "en": "Set temperature",
+        "fr": "RÃ©gler tempÃ©rature",
+        "nl": "Temperatuur instellen",
+        "de": "Temperatur einstellen"
+      },
+      "args": [
+        {
+          "name": "temperature",
+          "type": "range",
+          "min": 5,
+          "max": 35,
+          "step": 0.5,
+          "label": "Â°C",
+          "labelDecimals": 1
+        }
+      ],
+      "titleFormatted": {
+        "en": "Set temperature [[temperature]]",
+        "fr": "RÃ©gler tempÃ©rature [[temperature]]",
+        "nl": "Temperatuur instellen [[temperature]]",
+        "de": "Temperatur einstellen [[temperature]]"
+      }
+    }
+  ]
+}

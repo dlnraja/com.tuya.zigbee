@@ -1,0 +1,82 @@
+{
+  "name": {
+    "en": "LED Controller RGB",
+    "fr": "Contrôleur LED RGB",
+    "nl": "RGB LED Controller",
+    "de": "RGB LED Steuerung"
+  },
+  "class": "light",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "light_hue",
+    "light_saturation",
+    "light_temperature",
+    "light_mode",
+    "button.1"
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_iystcadi"
+    ],
+    "productId": [
+      "TS0503",
+      "TS0504"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6,
+          8,
+          768
+        ]
+      }
+    }
+  },
+  "images": {
+    "small": "/drivers/led_controller_rgb/assets/images/small.png",
+    "large": "/drivers/led_controller_rgb/assets/images/large.png",
+    "xlarge": "/drivers/led_controller_rgb/assets/images/xlarge.png"
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "energy": {
+    "batteries": [
+      "OTHER"
+    ]
+  },
+  "capabilitiesOptions": {
+    "onoff": {
+      "setOnDim": true
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  },
+  "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "fr": "Vérifier MàJ OTA",
+        "nl": "Controleer op OTA-updates"
+      }
+    }
+  ],
+  "id": "led_controller_rgb",
+  "version": "1.0.0"
+}

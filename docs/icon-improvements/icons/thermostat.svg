@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="960" height="960" viewBox="0 0 960 960" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Thermostat outer ring -->
+  <circle cx="480" cy="480" r="320" stroke="black" stroke-width="40" fill="none"/>
+  <!-- Inner display area -->
+  <circle cx="480" cy="480" r="220" stroke="black" stroke-width="30" fill="none"/>
+  <!-- Temperature display lines -->
+  <line x1="380" y1="420" x2="580" y2="420" stroke="black" stroke-width="25" stroke-linecap="round"/>
+  <line x1="380" y1="480" x2="580" y2="480" stroke="black" stroke-width="25" stroke-linecap="round"/>
+  <!-- Up arrow -->
+  <path d="M480 340 L520 380 L440 380 Z" fill="black"/>
+  <!-- Down arrow -->
+  <path d="M480 620 L520 580 L440 580 Z" fill="black"/>
+  <!-- Control buttons -->
+  <circle cx="300" cy="480" r="25" fill="black"/>
+  <circle cx="660" cy="480" r="25" fill="black"/>
+</svg>

@@ -1,0 +1,91 @@
+{
+  "_meta": {
+    "description": "Master URL reference for Tuya Unified Zigbee project",
+    "generated": "2026-05-10",
+    "total": 55,
+    "categories": 7
+  },
+  "project": {
+    "github_main": "https://github.com/dlnraja/com.tuya.zigbee",
+    "github_original": "https://github.com/JohanBendz/com.tuya.zigbee",
+    "github_issues": "https://github.com/dlnraja/com.tuya.zigbee/issues",
+    "issue_302_sourcecredits": "https://github.com/dlnraja/com.tuya.zigbee/issues/302",
+    "issue_305_gate_opener": "https://github.com/dlnraja/com.tuya.zigbee/issues/305",
+    "homey_app_store_test": "https://homey.app/a/com.dlnraja.tuya.zigbee/test/",
+    "homey_app_store_stable": "https://homey.app/a/com.dlnraja.tuya.zigbee.stable",
+    "device_finder": "https://dlnraja.github.io/com.tuya.zigbee/"
+  },
+  "forums": {
+    "homey_thread_main": "#
+    "homey_thread_johan": "#
+    "homey_french": "#
+    "homey_zigbee_tools": "https://developer.athom.com/tools/zigbee",
+    "legrand_integration": "#
+  },
+  "tuya_developer": {
+    "portal": "https://developer.tuya.com",
+    "zigbee_protocol": "https://developer.tuya.com/en/docs/iot/tuya-zigbee-universal-interface-instruction",
+    "cloud_uart": "https://developer.tuya.com/en/docs/iot/tuya-cloud-universal-serial-port-access-protocol",
+    "capability_map": "https://developer.tuya.com/cn/docs/iot-device-dev/tuyaos_zigbee_capability_map",
+    "ota_firmware": "https://developer.tuya.com/en/docs/IoT%20Device%20Management/iot_device_management_deviceOTA"
+  },
+  "zigbee_databases": {
+    "blakadder_main": "https://zigbee.blakadder.com/",
+    "blakadder_all": "https://zigbee.blakadder.com/all.html",
+    "z2m_supported": "https://www.zigbee2mqtt.io/supported-devices/",
+    "z2m_converters_tuya": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/tuya.ts",
+    "z2m_support_new_tuya": "https://www.zigbee2mqtt.io/advanced/support-new-devices/02_support_new_tuya_devices.html",
+    "zha_handlers": "https://github.com/zigpy/zha-device-handlers",
+    "zcl_specs": "https://zigbeealliance.org/wp-content/uploads/2021/10/07-5123-08-Zigbee-Cluster-Specification.pdf",
+    "csa_specs": "https://csa-iot.org/developer-resource/specifications-download-request/"
+  },
+  "custom_firmware": {
+    "openbeken": "https://github.com/openshwprojects/OpenBK7231T_App",
+    "libretiny": "https://github.com/libretiny-eu/libretiny",
+    "romasku_tuya_switch": "https://github.com/romasku/tuya-zigbee-switch",
+    "pvvx_zigbee_tl": "https://github.com/pvvx/ZigbeeTLc",
+    "tuya_cloudcutter": "https://github.com/tuya-cloudcutter/tuya-cloudcutter",
+    "tasmota_tuya_convert": "https://tasmota.github.io/docs/Tuya-Convert/",
+    "tinytuya": "https://github.com/jasonacox/tinytuya",
+    "localtuya": "https://github.com/rospogrigio/localtuya",
+    "tuya_sign_hacking": "https://github.com/nalajcie/tuya-sign-hacking"
+  },
+  "manufacturers": {
+    "philips_hue_dev": "https://developers.meethue.com",
+    "legrand_dev": "https://developer.legrand.com/local-interoperability/",
+    "ikea_dev": "https://developers.ikea.com",
+    "xiaomi_aqara_miot": "https://home.miot-spec.com/",
+    "sonoff_docs": "https://docs.iteadstudio.com/",
+    "panasonic_dev": "https://panasonic.com/jp/developer"
+  },
+  "community_global": {
+    "reddit_homeassistant": "https://www.reddit.com/r/homeassistant/",
+    "reddit_smarthome": "https://www.reddit.com/r/smarthome/",
+    "reddit_homey": "https://www.reddit.com/r/homey/",
+    "reddit_zigbee": "https://www.reddit.com/r/Zigbee/",
+    "smartthings_community": "https://community.smartthings.com",
+    "hubitat_community": "https://community.hubitat.com",
+    "ha_custom_fw_thread": "https://community-home-assistant.io/t/alternative-firmware-for-tuya-zigbee-devices/652875",
+    "ha_zosung_ir": "https://community-home-assistant.io/t/zha-moes-universal-ir-remote/576968",
+    "phoscon_forum": "https://forum.phoscon.de/",
+    "domoovore_fr": "https://forum.domoovore.com",
+    "homematic_de": "https://homematic-forum.de",
+    "iobroker_de": "https://forum.iobroker.net",
+    "habr_ru": "https://habr.com/ru/hub/zigbee/",
+    "4pda_ru": "https://4pda.to/forum/index.php?showforum=612",
+    "baidu_zigbee": "https://tieba.baidu.com/f?kw=zigbee",
+    "zhihu_zigbee": "https://www.zhihu.com/search?q=zigbee",
+    "csdn_zigbee": "https://blog.csdn.net/tag/zigbee",
+    "qiita_zigbee": "https://qiita.com/tags/zigbee",
+    "tweakers_nl": "https://gathering.tweakers.net/forum/list_messages/2165562"
+  },
+  "homey_sdk": {
+    "docs_main": "https://apps.developer.homey.app/the-basics/app",
+    "drivers_devices": "https://apps.developer.homey.app/the-basics/devices",
+    "homey_compose": "https://apps.developer.homey.app/advanced/homey-compose",
+    "sdk_v3_ref": "https://apps-sdk-v3.developer.homey.app/",
+    "cli_docs": "https://developers.homey.app/cli/",
+    "athom_zigbee_driver": "https://github.com/athombv/node-homey-zigbeedriver",
+    "zigbee_clusters": "https://github.com/athombv/node-zigbee-clusters"
+  }
+}

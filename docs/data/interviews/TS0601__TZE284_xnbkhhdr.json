@@ -1,0 +1,14 @@
+{
+  "id": "INT-017",
+  "deviceName": "AVATTO Smart Thermostat WT198",
+  "manufacturerName": "_TZE284_xnbkhhdr",
+  "productId": "TS0601",
+  "source": "JohanBendz #1345",
+  "user": "Nono-3ric",
+  "status": "new_device_request",
+  "priority": "medium",
+  "driver": "thermostat_radiator_valve",
+  "inputClusters": [4, 5, 61184, 0, 60672],
+  "powerSource": "battery",
+  "notes": "Battery-powered thermostat for radiator valves"
+}

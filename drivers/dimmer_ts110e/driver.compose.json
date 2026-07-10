@@ -1,0 +1,129 @@
+{
+  "id": "dimmer_ts110e",
+  "name": {
+    "en": "Tuya Dimmer Module TS110E",
+    "fr": "Module variateur Tuya TS110E",
+    "nl": "Tuya dimmermodule TS110E",
+    "de": "Tuya Dimmermodul TS110E",
+    "es": "MÃ³dulo regulador Tuya TS110E"
+  },
+  "class": "light",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "capabilities": [
+    "onoff",
+    "dim",
+    "measure_battery",
+    "button.1"
+  ],
+  "capabilitiesOptions": {
+    "dim": {
+      "opts": {
+        "duration": true
+      }
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    },
+    "measure_battery": {
+      "title": {
+        "en": "Battery",
+        "fr": "Batterie",
+        "nl": "Batterij",
+        "de": "Batterie"
+      }
+    }
+  },
+  "images": {
+    "large": "/drivers/dimmer_ts110e/assets/images/large.png",
+    "small": "/drivers/dimmer_ts110e/assets/images/small.png"
+  },
+  "energy": {
+    "approximation": {
+      "usageOn": 5,
+      "usageOff": 0.5
+    },
+    "batteries": [
+      "CR2032"
+    ]
+  },
+  "settings": [
+    {
+      "id": "minBrightness",
+      "type": "number",
+      "label": {
+        "en": "Minimum Brightness",
+        "fr": "LuminositÃ© Minimale"
+      },
+      "value": 10,
+      "min": 1,
+      "max": 1000
+    },
+    {
+      "id": "maxBrightness",
+      "type": "number",
+      "label": {
+        "en": "Maximum Brightness",
+        "fr": "LuminositÃ© Maximale"
+      },
+      "value": 1000,
+      "min": 1,
+      "max": 1000
+    }
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_9hpxg1rf",
+      "_TZ3000_8n7lpom4"
+    ],
+    "productId": [
+      "TS0601",
+      "TS0505B",
+      "TS0215A",
+      "TS0002",
+      "TS0003",
+      "TS0012",
+      "TS0013",
+      "TS0001",
+      "TS0726"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6,
+          8
+        ],
+        "bindings": [
+          6,
+          8
+        ]
+      }
+    },
+    "learnmode": {
+      "instruction": {
+        "en": "Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode.",
+        "fr": "Appuyez sur le bouton de configuration pendant 10 secondes ou allumez et Ã©teignez l'appareil cinq fois pour passer en mode appairage."
+      }
+    }
+  },
+  "flow": {
+    "triggers": [],
+    "conditions": [],
+    "actions": []
+  },
+  "version": "1.0.0"
+}

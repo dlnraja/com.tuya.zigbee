@@ -1,0 +1,105 @@
+{
+  "id": "transition_start_smooth",
+  "title": {
+    "en": "Start smooth transition"
+  },
+  "hint": {
+    "en": "Start a smooth transition on a numeric capability (e.g., dim, color_temperature)"
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "capabilities=onoff|dim"
+    },
+    {
+      "name": "capability",
+      "type": "text",
+      "title": {
+        "en": "Capability"
+      },
+      "placeholder": {
+        "en": "dim"
+      }
+    },
+    {
+      "name": "from_value",
+      "type": "number",
+      "title": {
+        "en": "From value"
+      }
+    },
+    {
+      "name": "to_value",
+      "type": "number",
+      "title": {
+        "en": "To value"
+      }
+    },
+    {
+      "name": "duration_seconds",
+      "type": "number",
+      "title": {
+        "en": "Duration (seconds)"
+      },
+      "min": 0.5,
+      "max": 3600,
+      "step": 0.5,
+      "value": 2
+    },
+    {
+      "name": "easing",
+      "type": "dropdown",
+      "title": {
+        "en": "Easing"
+      },
+      "values": [
+        {
+          "id": "linear",
+          "title": {
+            "en": "Linear"
+          }
+        },
+        {
+          "id": "easeIn",
+          "title": {
+            "en": "Ease In"
+          }
+        },
+        {
+          "id": "easeOut",
+          "title": {
+            "en": "Ease Out"
+          }
+        },
+        {
+          "id": "easeInOut",
+          "title": {
+            "en": "Ease In-Out"
+          }
+        },
+        {
+          "id": "cubicIn",
+          "title": {
+            "en": "Cubic In"
+          }
+        },
+        {
+          "id": "cubicOut",
+          "title": {
+            "en": "Cubic Out"
+          }
+        },
+        {
+          "id": "cubicInOut",
+          "title": {
+            "en": "Cubic In-Out"
+          }
+        }
+      ]
+    }
+  ],
+  "titleFormatted": {
+    "en": "Start smooth transition [[device]] [[capability]] [[from_value]] [[to_value]] [[duration_seconds]] [[easing]]"
+  }
+}

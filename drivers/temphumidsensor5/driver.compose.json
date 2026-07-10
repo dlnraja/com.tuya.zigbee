@@ -1,0 +1,75 @@
+{
+  "id": "temphumidsensor5",
+  "name": {
+    "en": "Temperature & Humidity Sensor",
+    "sv": "Temperatur- och fuktighetssensor"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "measure_temperature",
+    "measure_humidity",
+    "measure_battery",
+    "button.1"
+  ],
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  },
+  "energy": {
+    "batteries": [
+      "CR2032"
+    ]
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "images": {
+    "small": "/{{driverAssetsPath}}/images/small.png",
+    "large": "/{{driverAssetsPath}}/images/large.png"
+  },
+  "zigbee": {
+    "productId": [
+      "TY0201",
+      "SNTZ003",
+      "CK-TLSR8656-SS5-01(7014)",
+      "ZG-227Z",
+      "RH3052",
+      "TS0201"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          4,
+          5,
+          61184
+        ],
+        "bindings": [
+          10,
+          25,
+          61184
+        ]
+      }
+    },
+    "learnmode": {
+      "instruction": {
+        "en": "Press and hold the reset button for aprox 10 seconds until the LED blinks rapidly.",
+        "sv": "Tryck in nollnings-knappen under ca 10 sekunder tills LED-lampan binkar snabbt"
+      }
+    },
+    "manufacturerName": [
+      "_TZE200_placeholder"
+    ]
+  },
+  "version": "1.0.0"
+}

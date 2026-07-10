@@ -1,0 +1,18 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Battery Internal Resistance",
+    "fr": "Résistance interne de la batterie",
+    "nl": "Batterij interne weerstand",
+    "de": "Batterie-Innenwiderstand"
+  },
+  "units": {
+    "en": "ohm"
+  },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "decimals": 1,
+  "insights": true,
+  "min": 0
+}

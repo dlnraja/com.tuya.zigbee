@@ -1,0 +1,87 @@
+{
+  "id": "smoke_sensor3",
+  "name": {
+    "en": "Smoke Sensor"
+  },
+  "class": "sensor",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "capabilities": [
+    "measure_battery",
+    "alarm_smoke",
+    "alarm_tamper",
+    "button.1"
+  ],
+  "energy": {
+    "batteries": [
+      "AAA",
+      "AAA"
+    ]
+  },
+  "images": {
+    "large": "/{{driverAssetsPath}}/images/large.png",
+    "small": "/{{driverAssetsPath}}/images/small.png"
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_tze204_uebojraa",
+      "_TZ3210_up3pngle",
+      "_TYZB01_wqcac7lo",
+      "_TZE200_0zaf1cr8",
+      "_TZE284_0zaf1cr8",
+      "_TZE200_m9skfctm",
+      "_TZE200_t5p1vj8r",
+      "_TZE200_uebojraa",
+      "_TZE200_vzekyi4c",
+      "_TZE200_yh7aoahi",
+      "_TZE200_dq1mfjug",
+      "_TZE284_6ycgarab",
+      "_TZE204_cjbofhxw",
+      "_TZE284_cjbofhxw",
+      "_TZE200_qcasmfan",
+      "_TZE204_qaxkdgyt",
+      "_TZ3000_qtyyuaq6",
+      "_tze204_dq1mfjug",
+      "_TZE200_cjbofhxw"
+    ],
+    "productId": [
+      "TS0205",
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          1280
+        ],
+        "bindings": [
+          0,
+          1280
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "{{driverAssetsPath}}/icon.svg",
+      "instruction": {
+        "en": "Press the RESET pinhole on the side of the unit for 5 seconds until LED blinks."
+      }
+    }
+  },
+  "version": "1.0.0",
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  }
+}

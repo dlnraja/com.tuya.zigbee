@@ -1,0 +1,111 @@
+{
+  "id": "sr_zs_switch",
+  "name": {
+    "en": "SR-ZS Switch",
+    "pl": "Przełącznik SR-ZS"
+  },
+  "class": "socket",
+  "capabilities": [
+    "onoff_1",
+    "onoff_2",
+    "onoff_3",
+    "button.1"
+  ],
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "images": {
+    "large": "/drivers/sr_zs_switch/assets/images/large.png",
+    "small": "/drivers/sr_zs_switch/assets/images/small.png"
+  },
+  "version": "1.0.0",
+  "metadata": {
+    "driver": {
+      "catchall": true,
+      "reason": "Fallback for unmatched devices with PIDs: TS0002"
+    }
+  },
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  },
+  "zigbee": {
+    "productId": [
+      "TS0002"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          4,
+          5,
+          6,
+          61184
+        ],
+        "bindings": [
+          5,
+          6,
+          61184
+        ]
+      },
+      "2": {
+        "clusters": [
+          5,
+          6
+        ],
+        "bindings": [
+          5,
+          6
+        ]
+      },
+      "3": {
+        "clusters": [
+          5,
+          6
+        ],
+        "bindings": [
+          5,
+          6
+        ]
+      },
+      "4": {
+        "clusters": [
+          6
+        ],
+        "bindings": [
+          6
+        ]
+      },
+      "5": {
+        "clusters": [
+          6
+        ],
+        "bindings": [
+          6
+        ]
+      },
+      "6": {
+        "clusters": [
+          6
+        ],
+        "bindings": [
+          6
+        ]
+      }
+    },
+    "manufacturerName": [
+      "_GENERIC_SR_ZS_SWITCH",
+      "_generic_sr_zs_switch"
+    ]
+  }
+}

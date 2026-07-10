@@ -1,0 +1,110 @@
+{
+  "id": "device_generic_diy_universal",
+  "name": {
+    "en": "Device Generic Diy Universal",
+    "nl": "Device Generic Diy Universal",
+    "fr": "Device Generic Diy Universal"
+  },
+  "class": "other",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "measure_temperature",
+    "measure_humidity",
+    "measure_luminance",
+    "alarm_motion",
+    "alarm_contact",
+    "alarm_water",
+    "measure_battery",
+    "measure_power",
+    "measure_voltage",
+    "measure_current",
+    "meter_power",
+    "light_hue",
+    "light_saturation",
+    "light_temperature",
+    "light_mode",
+    "windowcoverings_set",
+    "windowcoverings_state",
+    "target_temperature",
+    "thermostat_mode",
+    "tuya_dp_value",
+    "tuya_dp_string",
+    "tuya_dp_raw",
+    "tuya_cluster_event",
+    "button.1"
+  ],
+  "capabilitiesOptions": {
+    "tuya_dp_value": {
+      "title": {
+        "en": "Last DP Value (Numeric)"
+      }
+    },
+    "tuya_dp_string": {
+      "title": {
+        "en": "Last DP String"
+      }
+    },
+    "tuya_dp_raw": {
+      "title": {
+        "en": "Last Raw DP (Hex)"
+      }
+    },
+    "tuya_cluster_event": {
+      "title": {
+        "en": "Last Cluster Event"
+      }
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  },
+  "platforms": [
+    "local"
+  ],
+  "energy": {
+    "batteries": [
+      "CR2032",
+      "AAA",
+      "AA",
+      "CR2",
+      "CR123A"
+    ]
+  },
+  "images": {
+    "large": "/drivers/universal_zigbee/assets/images/large.png",
+    "small": "/drivers/universal_zigbee/assets/images/small.png"
+  },
+  "flow": {
+    "triggers": [],
+    "conditions": [],
+    "actions": []
+  },
+  "settings": [],
+  "version": "1.0.0",
+  "connectivity": [
+    "zigbee"
+  ],
+  "zigbee": {
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0
+        ]
+      }
+    },
+    "manufacturerName": [
+      "_GENERIC_DEVICE_GENERIC_DIY_UNIVERSAL",
+      "_generic_device_generic_diy_universal"
+    ]
+  }
+}

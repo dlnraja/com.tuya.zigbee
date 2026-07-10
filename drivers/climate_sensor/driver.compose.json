@@ -1,0 +1,1193 @@
+{
+  "name": {
+    "en": "Climate Sensor",
+    "fr": "Capteur Climatique",
+    "nl": "Klimaatsensor",
+    "de": "Klimasensor"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "measure_temperature",
+    "measure_humidity",
+    "measure_battery",
+    "button.1"
+  ],
+  "energy": {
+    "batteries": [
+      "AAA",
+      "CR2032",
+      "CR2450"
+    ]
+  },
+  "subDevices": [],
+  "capabilityOptions": {
+    "measure_temperature.probe": {
+      "title": {
+        "en": "Probe Temperature",
+        "fr": "Température Sonde",
+        "nl": "Sonde Temperatuur",
+        "de": "Sondentemperatur"
+      }
+    }
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "OWON",
+      "_TYZB01_CBIEZPDS",
+      "_TYZB01_ZQVWKA4K",
+      "_TZ1800_LADPNGDX",
+      "_TZ2000_LXVYCLN5",
+      "_TZ2000_ZSFVULDE",
+      "_TZ3000_0HKMCRZA",
+      "_TZ3000_1O6X1BL0",
+      "_TZ3000_1TWFMKCC",
+      "_TZ3000_26GJLUGM",
+      "_TZ3000_3XDUWEKL",
+      "_TZ3000_3ZOFVCAA",
+      "_TZ3000_5AF5R192",
+      "_TZ3000_5FTKAULG",
+      "_TZ3000_7KSCDESH",
+      "_TZ3000_7Y90PANY",
+      "_TZ3000_82PTNSD4",
+      "_TZ3000_8UXXZZ4B",
+      "_TZ3000_9KBBFEHO",
+      "_TZ3000_AMQUDJR0",
+      "_TZ3000_AQQCRPTJ",
+      "_TZ3000_B1Q8KWMH",
+      "_TZ3000_BGSIGERS",
+      "_TZ3000_BKFE0BAB",
+      "_TZ3000_BMHWNL7S",
+      "_TZ3000_BZZGVET0",
+      "_TZ3000_CEPLRHNU",
+      "_TZ3000_CYGCAXVV",
+      "_TZ3000_DVQT7QRW",
+      "_TZ3000_EGQ7Y6PR",
+      "_TZ3000_EGVB1P2G",
+      "_TZ3000_EIT6L5",
+      "_TZ3000_ESYNMMOX",
+      "_TZ3000_EXC99DVW",
+      "_TZ3000_fllyghyj",
+      "_TZ3000_FKXMYICS",
+      "_TZ3000_GEYH5RFS",
+      "_TZ3000_HGM6K8KU",
+      "_TZ3000_HGU1DLAK",
+      "_TZ3000_HY6NCVMW",
+      "_TZ3000_IDRXIAJL",
+      "_TZ3000_IIACQPDZ",
+      "_TZ3000_ISW9U95Y",
+      "_TZ3000_IUGNAASP",
+      "_TZ3000_iv6ph5tr",
+      "_TZ3000_KKERJAND",
+      "_TZ3000_KKY16AAY",
+      "_TZ3000_KMSBWDOL",
+      "_TZ3000_KRWTZHFD",
+      "_TZ3000_L6RSAIPJ",
+      "_TZ3000_L8FSGO6P",
+      "_TZ3000_LMCP6B0A",
+      "_TZ3000_LQB7LCQ9",
+      "_TZ3000_LQMVRWA2",
+      "_TZ3000_LRFVZQ1E",
+      "_TZ3000_mlswgkc3",
+      "_TZ3000_MNLSBTHU",
+      "_TZ3000_MXZO5RHF",
+      "_TZ3000_N2XGB8O5",
+      "_TZ3000_NPGIPL5D",
+      "_TZ3000_OCUNFVBH",
+      "_TZ3000_OS0WY3VH",
+      "_TZ3000_P26FLEK3",
+      "_TZ3000_PIUENSVR",
+      "_TZ3000_PVLVOXVT",
+      "_TZ3000_QOGSNSXH",
+      "_TZ3000_RCUQXKQ0",
+      "_TZ3000_RDHUKKMI",
+      "_TZ3000_SFHYVE2G",
+      "_TZ3000_T3S9QMMG",
+      "_TZ3000_T3VVHRMH",
+      "_TZ3000_T6JRIFU5",
+      "_TZ3000_TSGQXDB4",
+      "_TZ3000_UNW0HPDV",
+      "_TZ3000_USVKZKYN",
+      "_TZ3000_V1W2K9DD",
+      "_TZ3000_V4MEVIRN",
+      "_TZ3000_VSJ5O7DM",
+      "_TZ3000_XDO0HJ1K",
+      "_TZ3000_XEUMNFF9",
+      "_TZ3000_YUPC0PB7",
+      "_TZ3000_ZBEACON",
+      "_TZ3000_ZF1LXTLJ",
+      "_TZ3000_ZFIRRI2D",
+      "_TZ3000_ZGTBI4OY",
+      "_TZ3000_ZIGISUYH",
+      "_TZ3210_6PWPEZ2J",
+      "_TZ3210_8N4DN1NE",
+      "_TZ3210_ALXKWN0H",
+      "_TZ3210_M3MXV66L",
+      "_TZ3210_PFBZS1AN",
+      "_TZ3210_PWAUW3G2",
+      "_TZ3210_URJF5U18",
+      "_TZ3210_Y5ZTGA9R",
+      "_TZ3290_JXVZQATWGSAQZX1U",
+      "_TZ3290_LYPNQVLEM5EQ1REE",
+      "_TZ3290_S6EZPA3J",
+      "_TZ6210_DUV6FHWT",
+      "_TZE200_01FVXAMO",
+      "_TZE200_04YFVWEB",
+      "_TZE200_0U3BJ3RC",
+      "_TZE200_127X7WNL",
+      "_TZE200_1DRR8TAB",
+      "_TZE200_1FUXIHTI",
+      "_TZE200_1N2KYPHZ",
+      "_TZE200_1OZGUK6X",
+      "_TZE200_1VXGQFBA",
+      "_TZE200_2CS6G9I7",
+      "_TZE200_2DPPLNSN",
+      "_TZE200_2ODRMQWQ",
+      "_TZE200_2VFXWENG",
+      "_TZE200_3EJWXPMU",
+      "_TZE200_3XFJP0AG",
+      "_TZE200_3YLEW7B4",
+      "_TZE200_4AIJVCZQ",
+      "_TZE200_4EEYEBRT",
+      "_TZE200_5D3VHJRO",
+      "_TZE200_6WI2MOPE",
+      "_TZE200_6Y7KYJGA",
+      "_TZE200_78IOIAML",
+      "_TZE200_7DEQ70B8",
+      "_TZE200_7FQKPHOQ",
+      "_TZE200_7P8UGV8D",
+      "_TZE200_7SHYDDJ3",
+      "_TZE200_86NBEW0J",
+      "_TZE200_8DAQWRSJ",
+      "_TZE200_8EAZVZO6",
+      "_TZE200_8PLY8MJJ",
+      "_TZE200_8THWKZXL",
+      "_TZE200_8VXJ8KHV",
+      "_TZE200_9DHENR94",
+      "_TZE200_9M4KMBFU",
+      "_TZE200_A0GVBDGV",
+      "_TZE200_A1OVDOBN",
+      "_TZE200_A8SDABTG",
+      "_TZE200_A8Z0G46U",
+      "_TZE200_AAO6QTCS",
+      "_TZE200_AUIN8MZR",
+      "_TZE200_AX8A8AHX",
+      "_TZE200_B2U1DRDV",
+      "_TZE200_BA69L9OL",
+      "_TZE200_BCUSNQT8",
+      "_TZE200_BLFCPSXZ",
+      "_TZE200_BV1JCQQU",
+      "_TZE200_BXDYEAA9",
+      "_TZE200_C7EMYJOM",
+      "_TZE200_CDUQH1L0",
+      "_TZE200_CLM4GDW4",
+      "_TZE200_CXU0JKJK",
+      "_TZE200_CZK78PTR",
+      "_TZE200_D9MZKHOQ",
+      "_TZE200_DCNSGGV",
+      "_TZE200_DHDSTCQC",
+      "_TZE200_DIKB3DP6",
+      "_TZE200_DIKKIKA5",
+      "_TZE200_DNG9FN0K",
+      "_TZE200_DNZ6YVL2",
+      "_TZE200_DO5QY8ZO",
+      "_TZE200_DRS6J6M5",
+      "_TZE200_DV8ABRRZ",
+      "_TZE200_E2BEDVO9",
+      "_TZE200_EANJJ2PA",
+      "_TZE200_EDL8PZ1K",
+      "_TZE200_EEVQQ1UV",
+      "_TZE200_EHHRV2E3",
+      "_TZE200_EMXXANVI",
+      "_TZE200_EN3WVCBX",
+      "_TZE200_EO6XHFBO",
+      "_TZE200_EXFRNLOW",
+      "_TZE200_EZQY5PVH",
+      "_TZE200_FEOLM6RK",
+      "_TZE200_FODV6BKR",
+      "_TZE200_FT523TWT",
+      "_TZE200_FWOORN8Y",
+      "_TZE200_G5WDNUOW",
+      "_TZE200_G5XQOSU7",
+      "_TZE200_GNW1RRIL",
+      "_TZE200_GRGOL3XP",
+      "_TZE200_H2RCTIFA",
+      "_TZE200_H4CGNBZG",
+      "_TZE200_HA0VWOEW",
+      "_TZE200_HDIH4FOA",
+      "_TZE200_HHRTIQ0X",
+      "_TZE200_HKTK6HZE",
+      "_TZE200_HMABVY81",
+      "_TZE200_HMQZFQML",
+      "_TZE200_HOJRYZZD",
+      "_TZE200_HR0TDD47",
+      "_TZE200_IJEY4Q29",
+      "_TZE200_IO0ZDQH1",
+      "_TZE200_IQ4YGAAI",
+      "_TZE200_IUK8KUPI",
+      "_TZE200_IVDC0KWL",
+      "_TZE200_IWN0GPZZ",
+      "_TZE200_J7SGD8PO",
+      "_TZE200_JEAXP72V",
+      "_TZE200_JKBLJRI7",
+      "_TZE200_JS3MGBJB",
+      "_TZE200_JXYHL4EQ",
+      "_TZE200_KF2HBKO4",
+      "_TZE200_KHX7NNKA",
+      "_TZE200_KLTFFUZL",
+      "_TZE200_KVPWQ8Z7",
+      "_TZE200_LEAQTHQQ",
+      "_TZE200_LHQTJWAX",
+      "_TZE200_LLM0EPXG",
+      "_TZE200_LVE3DVPY",
+      "_TZE200_MBY4KBTQ",
+      "_TZE200_MDE0UTNV",
+      "_TZE200_MFAMVSDB",
+      "_TZE200_MGSTDYZ3",
+      "_TZE200_MGXY2D9F",
+      "_TZE200_MOYCCEZE",
+      "_TZE200_MWVFVW8G",
+      "_TZE200_MX6U6L4Y",
+      "_TZE200_N1AAUWB4",
+      "_TZE200_N5FXYYJW",
+      "_TZE200_N8DLJORX",
+      "_TZE200_N9CLPSHT",
+      "_TZE200_NA5QLZOW",
+      "_TZE200_NHYJ64W2",
+      "_TZE200_NOJSJTJ2",
+      "_TZE200_NUS5KK3N",
+      "_TZE200_NVUPS4NH",
+      "_TZE200_NY94ONLB",
+      "_TZE200_NYVAVZBJ",
+      "_TZE200_ODLLDRXX",
+      "_TZE200_OGKDPGY2",
+      "_TZE200_OISQYL4O",
+      "_TZE200_OWWDXJBX",
+      "_TZE200_OYTI2UMS",
+      "_TZE200_P2QZZAZI",
+      "_TZE200_PBO8CJ0Z",
+      "_TZE200_PL31AQF5",
+      "_TZE200_PS5V5JOR",
+      "_TZE200_QANL25YU",
+      "_TZE200_QHLXVE78",
+      "_TZE200_QJP4YNVI",
+      "_TZE200_QRZTC3EV",
+      "_TZE200_QSOECQLK",
+      "_TZE200_QXYH4R7G",
+      "_TZE200_QYSS8GJY",
+      "_TZE200_R5KSY7QO",
+      "_TZE200_RAZ9QAVG",
+      "_TZE200_RBBX5MFQ",
+      "_TZE200_RD8CDSSD",
+      "_TZE200_RLQAMJHP",
+      "_TZE200_RSJ5PU8Y",
+      "_TZE200_RTRMFADK",
+      "_TZE200_S1XGTH2U",
+      "_TZE200_SFQYHVPV",
+      "_TZE200_SNFDQLLF",
+      "_TZE200_SNLOY4RW",
+      "_TZE200_SQ6AFFPE",
+      "_TZE200_STVGMDJZ",
+      "_TZE200_T3XD7L44",
+      "_TZE200_TBGECLDG",
+      "_TZE200_THBR5Z34",
+      "_TZE200_TVIAYMWX",
+      "_TZE200_TVRVDJ6O",
+      "_TZE200_TZYY0RTQ",
+      "_TZE200_U319YC66",
+      "_TZE200_U9BFWHA0",
+      "_TZE200_UDANK5ZS",
+      "_TZE200_UENOF8JD",
+      "_TZE200_UIYQSTZA",
+      "_TZE200_ULI8WASJ",
+      "_TZE200_UPAGMTA9",
+      "_TZE200_UX5V4DBD",
+      "_TZE200_UX5V4TGB",
+      "_TZE200_V1JQZ5CY",
+      "_TZE200_V6OSSQFY",
+      "_TZE200_VDIUWBKQ",
+      "_TZE200_VIZXBHCO",
+      "_TZE200_VM1GYRSO",
+      "_TZE200_VMCGJA59",
+      "_TZE200_VRCFO4I0",
+      "_TZE200_VRFECYKU",
+      "_TZE200_VUQZJ1EJ",
+      "_TZE200_VZQTVLJM",
+      "_TZE200_W6N8JEUU",
+      "_TZE200_WDFURKOA",
+      "_TZE200_WEHZA30A",
+      "_TZE200_WEM3GXYX",
+      "_TZE200_WHKGQXSE",
+      "_TZE200_WKTRYSAB",
+      "_TZE200_WRMHP6B3",
+      "_TZE200_WTIKAXZS",
+      "_TZE200_WV90LADG",
+      "_TZE200_WV9UKQCA",
+      "_TZE200_X8FP01WI",
+      "_TZE200_XPVAMYFZ",
+      "_TZE200_XTRNJAOZ",
+      "_TZE200_XU4A5RHJ",
+      "_TZE200_YBSQLJJG",
+      "_TZE200_YCRD8YWQ",
+      "_TZE200_YDKQBMPT",
+      "_TZE200_YDRDFKIM",
+      "_TZE200_YE5JKFSB",
+      "_TZE200_YENBR4OM",
+      "_TZE200_YFLZEEQJ",
+      "_TZE200_YI4JTQQ1",
+      "_TZE200_YKGLASUJ",
+      "_TZE200_YPPRDWSL",
+      "_TZE200_YRUGSPHV",
+      "_TZE200_YSM4DSB1",
+      "_TZE200_YTIBQBRA",
+      "_TZE200_YTX9FUDW",
+      "_TZE200_YVJC5CJN",
+      "_TZE200_YWE90LT0",
+      "_TZE200_Z3U99QXT",
+      "_TZE200_ZBFMVJ13",
+      "_TZE200_ZIVFVD7H",
+      "_TZE200_ZLWR0RAF",
+      "_TZE200_ZNPH9215",
+      "_TZE200_ZNZS7YAW",
+      "_TZE200_ZO0CFEKV",
+      "_TZE200_ZPPCGBDJ",
+      "_TZE200_ZQTIAM4U",
+      "_TZE200_ZR9C0DAY",
+      "_TZE200_ZUZ7F94Z",
+      "_TZE200_ZVO63CMO",
+      "_TZE200_ZYRDRMNO",
+      "_TZE204_1N2KYPHZ",
+      "_TZE204_1YOUK3HJ",
+      "_TZE204_2RVVQJOA",
+      "_TZE204_3CTWOAIP",
+      "_TZE204_3EJWXPMU",
+      "_TZE204_3Q3MAEOO",
+      "_TZE204_432ZHUWE",
+      "_TZE204_4BJIXEFP",
+      "_TZE204_58OF2PFN",
+      "_TZE204_5SLEHGEO",
+      "_TZE204_6A4VXFNV",
+      "_TZE204_6FK3GEWC",
+      "_TZE204_6VWFJKCJ",
+      "_TZE204_78IOIAML",
+      "_TZE204_7YYUO8SR",
+      "_TZE204_9MAHTQTG",
+      "_TZE204_A2JCOYUK",
+      "_TZE204_A8Z0G46U",
+      "_TZE204_A9OJZNJ8",
+      "_TZE204_AAI5GRIX",
+      "_TZE204_ADLBLWAB",
+      "_TZE204_AHWVLKPY",
+      "_TZE204_BQL5KHQX",
+      "_TZE204_C2FMOM5Z",
+      "_TZE204_C7EMYJOM",
+      "_TZE204_D6I25BWG",
+      "_TZE204_DAPWRYY7",
+      "_TZE204_DHOTIAUW",
+      "_TZE204_DIKB3DP6",
+      "_TZE204_DIKKIKA5",
+      "_TZE204_DOHBHB5K",
+      "_TZE204_DPQSVDBI",
+      "_TZE204_DQOLCPCP",
+      "_TZE204_DSAGRKVG",
+      "_TZE204_DVOSYYCN",
+      "_TZE204_DWCARSAT",
+      "_TZE204_E9AJS4FT",
+      "_TZE204_EAULRAS5",
+      "_TZE204_EDL8PZ1K",
+      "_TZE204_EJH6OWWZ",
+      "_TZE204_FHVDGEUH",
+      "_TZE204_G2KI0EJR",
+      "_TZE204_G4AU0AFS",
+      "_TZE204_G5XQOSU7",
+      "_TZE204_HIITH90N",
+      "_TZE204_IC7JTUTB",
+      "_TZE204_ILZKXRAV",
+      "_TZE204_IUK8KUPI",
+      "_TZE204_IWN0GPZZ",
+      "_TZE204_IYKI9KJP",
+      "_TZE204_JCWBWCKH",
+      "_TZE204_JTBGUSDC",
+      "_TZE204_K7V0EQKE",
+      "_TZE204_KHX7NNKA",
+      "_TZE204_KOBBCYUM",
+      "_TZE204_KVPWQ8Z7",
+      "_TZE204_L6LLGOXQ",
+      "_TZE204_L8XIYYMQ",
+      "_TZE204_LPEDVTVR",
+      "_TZE204_LTWBM23F",
+      "_TZE204_M1WL5FVQ",
+      "_TZE204_M64SMTI7",
+      "_TZE204_MBY4KBTQ",
+      "_TZE204_MHXN2JSO",
+      "_TZE204_MPG22JC1",
+      "_TZE204_MRFFAAMU",
+      "_TZE204_MUL9ABS3",
+      "_TZE204_MWOMYZ5N",
+      "_TZE204_NCTI2PRO",
+      "_TZE204_NH9M9EMK",
+      "_TZE204_NLADMFVF",
+      "_TZE204_NY94ONLB",
+      "_TZE204_O9GYSZW2",
+      "_TZE204_ODLLDRXX",
+      "_TZE204_OGKDPGY2",
+      "_TZE204_OH8Y8PV8",
+      "_TZE204_OQTPVX51",
+      "_TZE204_P1QRTLJN",
+      "_TZE204_PTAQH9TK",
+      "_TZE204_Q12RV9GJ",
+      "_TZE204_Q22AVXBV",
+      "_TZE204_QHLXVE78",
+      "_TZE204_QYFLBNBJ",
+      "_TZE204_R731ZLXK",
+      "_TZE204_RBBX5MFQ",
+      "_TZE204_RZRRJKZ2",
+      "_TZE204_S139ROAS",
+      "_TZE204_SA2UEFFE",
+      "_TZE204_SOOUCAN5",
+      "_TZE204_SRMAHPW",
+      "_TZE204_SRMAHPWL",
+      "_TZE204_SXM7L9X",
+      "_TZE204_T9FFMDIN",
+      "_TZE204_TAGEZCPH",
+      "_TZE204_TBGECLDG",
+      "_TZE204_TDHNHHIY",
+      "_TZE204_TUHFX7TF",
+      "_TZE204_TZREOBVU",
+      "_TZE204_U9BFWHA0",
+      "_TZE204_UAB532M0",
+      "_TZE204_UE3RZDDR",
+      "_TZE204_UO8QCAGC",
+      "_TZE204_UXLLNYWP",
+      "_TZE204_V5XJYPHJ",
+      "_TZE204_V6ICZJ35",
+      "_TZE204_VAWY74YH",
+      "_TZE204_VMCGJA59",
+      "_TZE204_W1WWXOJA",
+      "_TZE204_W2VUNXZM",
+      "_TZE204_WKTRYSAB",
+      "_TZE204_WWAEQNRF",
+      "_TZE204_X8FP01WI",
+      "_TZE204_X9USYGQ1",
+      "_TZE204_XPQ2RZHQ",
+      "_TZE204_XTRNJAOZ",
+      "_TZE204_Y4JQPRY8",
+      "_TZE204_YE5JKFSB",
+      "_TZE204_YVJC5CJN",
+      "_TZE204_YVX5LH6K",
+      "_TZE204_Z7A2JMYY",
+      "_TZE204_ZJHOQBRD",
+      "_TZE204_ZOUGPKPY",
+      "_TZE204_ZQQ3CIPQ",
+      "_TZE204_ZUEPXZCK",
+      "_TZE204_ZXKWAZTM",
+      "_TZE283_RCCXOX8P",
+      "_TZE284_0DVM9MVA",
+      "_TZE284_16M4BGSV",
+      "_TZE284_1DI7UJZP",
+      "_TZE284_1EMHI5MM",
+      "_TZE284_1LVLN0X6",
+      "_TZE284_1YOUK3HJ",
+      "_TZE284_2GI1HY8S",
+      "_TZE284_33BWCGA2",
+      "_TZE284_3CTWOAIP",
+      "_TZE284_3URSCHQL",
+      "_TZE284_3YP57TBY",
+      "_TZE284_432ZHUWE",
+      "_TZE284_4CQHD2HA",
+      "_TZE284_4DOSADBH",
+      "_TZE284_4HDBT6RN",
+      "_TZE284_5M4NCHBM",
+      "_TZE284_5SLEHGEO",
+      "_TZE284_5YS44KZO",
+      "_TZE284_6FOPVB6V",
+      "_TZE284_6HRNP30W",
+      "_TZE284_6TEUA268",
+      "_TZE284_78IOIAML",
+      "_TZE284_7GY9MQCA",
+      "_TZE284_8SE38W3C",
+      "_TZE284_9M4KMBFU",
+      "_TZE284_9XSTQOWH",
+      "_TZE284_9YAPGBUV",
+      "_TZE284_A14RJSLZ",
+      "_TZE284_A1OVDOBN",
+      "_TZE284_A9OJZNJ8",
+      "_TZE284_AAEAIFEZ",
+      "_TZE284_AAGRXLBD",
+      "_TZE284_AAI5GRIX",
+      "_TZE284_AC0FHFIQ",
+      "_TZE284_AGCXAW3F",
+      "_TZE284_AI4RQHKY",
+      "_TZE284_AJLU4CUD",
+      "_TZE284_AJUASRMX",
+      "_TZE284_AP9OWRSA",
+      "_TZE284_ATUJ3I0W",
+      "_TZE284_AWEPDIWI",
+      "_TZE284_B7KBNL6Q",
+      "_TZE284_CWYQWQBF",
+      "_TZE284_DIKB3DP6",
+      "_TZE284_DQOLCPCP",
+      "_TZE284_DVOSYYCN",
+      "_TZE284_E2BEDVO9",
+      "_TZE284_E4PF6L87",
+      "_TZE284_EEKPF0FT",
+      "_tze200_cirvgep4",
+      "_TZE200_cirvgep4",
+      "_TZE200_CIRVGEP4",
+      "_tze204_cirvgep4",
+      "_TZE204_cirvgep4",
+      "_TZE204_CIRVGEP4",
+      "_TZE284_HDYJYQJM",
+      "_TZE284_HECSEJSB",
+      "_TZE284_HHRTIQ0X",
+      "_TZE284_HODYRYLI",
+      "_TZE284_IDN2HTGU",
+      "_TZE284_IWN0GPZZ",
+      "_TZE284_IWYQTCLW",
+      "_TZE284_K7P2Q5D9",
+      "_TZE284_K7V0EQKE",
+      "_TZE284_KDQRAZMY",
+      "_TZE284_KHAH2LKR",
+      "_TZE284_KOBBCYUM",
+      "_TZE284_KYYU8RBJ",
+      "_TZE284_L8XIYYMQ",
+      "_TZE284_LOCANSQN",
+      "_TZE284_M1CVYNEB",
+      "_TZE284_MADL8EJV",
+      "_TZE284_MPZUABWK",
+      "_TZE284_MRFFAAMU",
+      "_TZE284_NHGDF6QR",
+      "_TZE284_NNHWCVBK",
+      "_TZE284_NT4PQUEF",
+      "_TZE284_NY94ONLB",
+      "_TZE284_P3DBF6QS",
+      "_TZE284_PGLPVDAR",
+      "_TZE284_Q22AVXBV",
+      "_TZE284_QF5MZEWI",
+      "_TZE284_QHLXVE78",
+      "_TZE284_QOY0EKBD",
+      "_TZE284_QYFLBNBJ",
+      "_TZE284_R3SZW0XR",
+      "_TZE284_RCCGWZZ8",
+      "_TZE284_ROUJJEVX",
+      "_TZE284_RQCUWLSA",
+      "_TZE284_RS62ZXK8",
+      "_TZE284_RZRRJKZ2",
+      "_TZE284_S5VUAADG",
+      "_TZE284_SONKAXRD",
+      "_TZE284_TBGECLDG",
+      "_TZE284_TUHFX7TF",
+      "_TZE284_TZREOBVU",
+      "_TZE284_UAB532M0",
+      "_TZE284_UDANK5ZS",
+      "_TZE284_UPAGMTA9",
+      "_TZE284_UTKEMKBS",
+      "_TZE284_V9HKZ2YN",
+      "_TZE284_VAWY74YH",
+      "_TZE284_VES1YCWX",
+      "_TZE284_VIZXBHCO",
+      "_TZE284_VJPAIH9F",
+      "_TZE284_VMCGJA59",
+      "_TZE284_VVMBJ46N",
+      "_TZE284_WBHAESPM",
+      "_TZE284_WCKQZTDQ",
+      "_TZE284_WDFURKOA",
+      "_TZE284_WTIKAXZS",
+      "_TZE284_WWAEQNRF",
+      "_TZE284_XPVAMYFZ",
+      "_TZE284_XVYWZHMI",
+      "_TZE284_Y4JQPRY8",
+      "_TZE284_YE5JKFSB",
+      "_TZE284_YJJDCQSQ",
+      "_TZE284_YMLDRMZX",
+      "_TZE284_YYYYYYYY",
+      "_TZE284_YZR43AYQ",
+      "_TZE284_Z5JZ7WPO",
+      "_TZE284_Z7A2JMYY",
+      "_TZE284_ZELDAWJV",
+      "_TZE284_ZJHOQBRD",
+      "_TZE284_ZM8ZPWAS",
+      "_TZE284_ZNBL8DJ5",
+      "_TZE284_ZNPH9215",
+      "_TZE284_ZPVUSBTV",
+      "_TZE284_ZQQ3CIPQ",
+      "_TZE600_WXQ8DPHA",
+      "_TZE200_nnrfa68v",
+      "_TZE200_znbl8dj5",
+      "_TZE200_qoy0ekbd",
+      "_TZE204_a8sdabtg",
+      "_tze204_nnrfa68v",
+      "_TZ3000_kvwjujy9",
+      "_TZE284_1fuxihti",
+      "_TYST11_2dpplnsn",
+      "_TYST11_8daqwrsj",
+      "_tze284_aao6qtcs",
+      "_TZE204_auin8mzr",
+      "_TZ3000_cduqh1l0",
+      "_TZE204_cduqh1l0",
+      "_TZE284_clm4gdw4",
+      "_TYST11_czk78ptr",
+      "_TZE204_drs6j6m5",
+      "_tze204_ezqy5pvh",
+      "_tze284_ezqy5pvh",
+      "_TYST11_hhrtiq0x",
+      "_TYST11_jeaxp72v",
+      "_tze284_mgstdyz3",
+      "_tze204_mja3fuja",
+      "_TZE204_n8dljorx",
+      "_tze204_oisqyl4o",
+      "_TYST11_ps5v5jor",
+      "_TYST11_udank5zs",
+      "_tze204_ux5v4tgb",
+      "_TZE204_v6ossqfy",
+      "_TYST11_wv90ladg",
+      "_TYST11_zivfvd7h",
+      "_TZE284_6fk3gewc",
+      "_tze284_dapwryy7",
+      "_TZE21C_dohbhb5k",
+      "_TZE284_ltwbm23f",
+      "_tze284_mul9abs3",
+      "_TZE200_nh9m9emk",
+      "_TZE284_r731zlxk",
+      "_tze284_uo8qcagc",
+      "_tze284_v5xjyphj",
+      "_tze204_rccxox8p",
+      "_TZE200_rccxox8p",
+      "_TZE284_rccxox8p",
+      "_TZE200_0dvm9mva",
+      "_tze204_0dvm9mva",
+      "_TZE200_3yp57tby",
+      "_tze200_ac0fhfiq",
+      "_TZE204_ac0fhfiq",
+      "_tze204_ai4rqhky",
+      "_tze200_eekpf0ft",
+      "_TZE204_eekpf0ft",
+      "_tze200_khah2lkr",
+      "_TZE204_qoy0ekbd",
+      "_tze204_v9hkz2yn",
+      "_tze200_v9hkz2yn",
+      "_tze204_ves1ycwx",
+      "_tze200_ves1ycwx",
+      "_TZE204_vjpaih9f",
+      "_tze204_znbl8dj5",
+      "_TZ3210_fllyghyj",
+      "_TZE204_locansqn",
+      "_TYST11_owwdxjbx",
+      "_TZE284_ahwvlkpy",
+      "_TZE200_dwcarsat",
+      "_TZE284_jtbgusdc",
+      "_TZE284_tdhnhhiy",
+      "_TZE200_wbhaespm",
+      "_TZE204_wbhaespm",
+      "_TZE204_zpvusbtv",
+      "_TZE284_9ern5sfh",
+      "_TZE284_8b9zpaav",
+      "_TZE284_it9utkro",
+      "_TZE284_o9ofysmo",
+      "_TZE284_xc3vwx5a",
+      "_TZE200_wqashyqo",
+      "_TZE284_65gzcss7",
+      "_TZE284_gyzlwu5q",
+      "_TZE284_hdml1aav",
+      "_tyst11_fzo2pocs",
+      "_tyst11_pisltm67",
+      "_tz3000_2xlvlnez",
+      "_tz3000_c8zfad4a",
+      "_tz3000_f09j9qjb",
+      "_tz3000_j6adk9id",
+      "_tz3000_mq4wujmp",
+      "_tz3000_nsa76jai",
+      "_tz3000_t9qqxn70",
+      "_tz3000_ugi8ky6u",
+      "_tz3000_vjhcenzo",
+      "_tz3000_vn88ezar",
+      "_tz3000_ww6drja5ts011f",
+      "_tz3210_fgwhjm9j",
+      "_tze200_dhke3p9w",
+      "_tze200_lawxy9e2",
+      "_tze200_nvodulvi",
+      "_tze200_oc7xqqbs",
+      "_tze200_rjxqso4a",
+      "_tze200_vhy3iakz",
+      "_tze204_6kijc7nd",
+      "_tze204_7ytnacie",
+      "_tze204_atdqo4nj",
+      "_tze204_fncxk3ob",
+      "_tze204_iadro9bf",
+      "_tze204_k7mfgaen",
+      "_tze204_mpbki2zm",
+      "_tze204_qvxrkeif",
+      "_tze204_rkbxtclc",
+      "_tze204_unsxl4ir",
+      "_tze204_xalsoe3m",
+      "_tze284_6kijc7nd",
+      "_tze284_chbyv06x",
+      "_tze284_d0ypnbvn",
+      "_tze284_dhke3p9w",
+      "_tze284_fncxk3ob",
+      "_tze284_fzo2pocs",
+      "_tze284_rjxqso4a",
+      "owon"
+    ],
+    "productId": [
+      "TS0201",
+      "TS0222",
+      "TH01",
+      "WSDCGQ01LM",
+      "WSDCGQ11LM",
+      "WSDCGQ12LM",
+      "lumi.sensor_ht",
+      "lumi.sensor_ht.agl02",
+      "lumi.weather",
+      "SM0201",
+      "SNZB-02",
+      "SNZB-02D",
+      "SNZB-02P",
+      "TS0601",
+      "ZG-227Z",
+      "ZG-227ZL",
+      "CK-TLSR8656-SS5-01(7014)",
+      "SNZB-02DR2",
+      "SNZB-02LD",
+      "SNZB-02WD",
+      "THS317-ET",
+      "TY0201",
+      "TS1201",
+      "RH3052",
+      "Excellux",
+      "SNZB-02B",
+      "SNZB-02M"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          1026,
+          1029,
+          61184
+        ]
+      }
+    }
+  },
+  "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "🌡️ Calibration (v5.5.28)",
+        "fr": "🌡️ Calibration (v5.5.28)"
+      },
+      "children": [
+        {
+          "id": "temperature_calibration",
+          "type": "number",
+          "label": {
+            "en": "Temperature Offset (°C)",
+            "fr": "Décalage Température (°C)"
+          },
+          "value": 0,
+          "min": -10,
+          "max": 10,
+          "step": 0.1,
+          "hint": {
+            "en": "Add or subtract from temperature reading. Use positive value if sensor reads too low.",
+            "fr": "Ajouter ou soustraire de la température lue. Valeur positive si capteur lit trop bas."
+          }
+        },
+        {
+          "id": "humidity_calibration",
+          "type": "number",
+          "label": {
+            "en": "Humidity Offset (%)",
+            "fr": "Décalage Humidité (%)"
+          },
+          "value": 0,
+          "min": -20,
+          "max": 20,
+          "step": 1,
+          "hint": {
+            "en": "Add or subtract from humidity reading. Use positive value if sensor reads too low.",
+            "fr": "Ajouter ou soustraire de l'humidité lue. Valeur positive si capteur lit trop bas."
+          }
+        },
+        {
+          "id": "sensor_precision",
+          "type": "dropdown",
+          "label": {
+            "en": "Decimal Precision",
+            "fr": "Précision"
+          },
+          "value": "1",
+          "hint": {
+            "en": "Decimals for temp/humidity"
+          },
+          "values": [
+            {
+              "id": "1",
+              "label": {
+                "en": "1 decimal (20.5°C)"
+              }
+            },
+            {
+              "id": "2",
+              "label": {
+                "en": "2 decimals (20.53°C)"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "🕒 Time Sync (v5.5.384)",
+        "fr": "🕒 Sync Heure (v5.5.384)",
+        "nl": "🕒 Tijdsync (v5.5.384)",
+        "de": "🕒 Zeitsync (v5.5.384)"
+      },
+      "children": [
+        {
+          "id": "time_sync_format",
+          "type": "dropdown",
+          "label": {
+            "en": "Time Format",
+            "fr": "Format Heure",
+            "nl": "Tijdformaat",
+            "de": "Zeitformat"
+          },
+          "value": "auto",
+          "hint": {
+            "en": "Select time sync format. Auto works for most devices. Change only if clock shows wrong time.",
+            "fr": "Format de synchronisation. Auto fonctionne pour la plupart. Changer si l'heure affichée est incorrecte.",
+            "nl": "Selecteer tijdsync formaat. Auto werkt voor de meeste apparaten.",
+            "de": "Zeitsync-Format wählen. Auto funktioniert für die meisten Geräte."
+          },
+          "values": [
+            {
+              "id": "auto",
+              "label": {
+                "en": "🔄 Auto-detect (recommended)",
+                "fr": "🔄 Auto-détection (recommandé)"
+              }
+            },
+            {
+              "id": "tuya_timestamp",
+              "label": {
+                "en": "📺 LCD Sensor (8-byte epoch 2000)",
+                "fr": "📺 Capteur LCD (8 octets epoch 2000)"
+              }
+            },
+            {
+              "id": "tuya_ts_unix",
+              "label": {
+                "en": "📺 LCD Sensor Unix (8-byte epoch 1970)",
+                "fr": "📺 Capteur LCD Unix (8 octets epoch 1970)"
+              }
+            },
+            {
+              "id": "tuya_standard",
+              "label": {
+                "en": "📅 Tuya Standard (7-byte local)",
+                "fr": "📅 Tuya Standard (7 octets local)"
+              }
+            },
+            {
+              "id": "tuya_utc_string",
+              "label": {
+                "en": "📅 Tuya UTC (7-byte UTC)",
+                "fr": "📅 Tuya UTC (7 octets UTC)"
+              }
+            },
+            {
+              "id": "tuya_mcu",
+              "label": {
+                "en": "🔧 Tuya MCU (9-byte with header)",
+                "fr": "🔧 Tuya MCU (9 octets avec header)"
+              }
+            },
+            {
+              "id": "tuya_extended",
+              "label": {
+                "en": "🌍 Tuya Extended (9-byte + timezone)",
+                "fr": "🌍 Tuya Étendu (9 octets + fuseau)"
+              }
+            },
+            {
+              "id": "tuya_full_tz",
+              "label": {
+                "en": "🌍 Tuya Full TZ (10-byte + DST)",
+                "fr": "🌍 Tuya Full TZ (10 octets + DST)"
+              }
+            },
+            {
+              "id": "zigbee_2000",
+              "label": {
+                "en": "⏱️ Zigbee 2000 (4-byte epoch 2000)",
+                "fr": "⏱️ Zigbee 2000 (4 octets epoch 2000)"
+              }
+            },
+            {
+              "id": "unix_1970",
+              "label": {
+                "en": "⏱️ Unix 1970 (4-byte epoch 1970)",
+                "fr": "⏱️ Unix 1970 (4 octets epoch 1970)"
+              }
+            }
+          ]
+        },
+        {
+          "id": "time_sync_timezone",
+          "type": "dropdown",
+          "label": {
+            "en": "Timezone Override",
+            "fr": "Forcer Fuseau Horaire",
+            "nl": "Tijdzone Override",
+            "de": "Zeitzone Override"
+          },
+          "value": "auto",
+          "hint": {
+            "en": "Override timezone. Use Auto to use Homey's timezone. Manual override for devices that don't handle DST.",
+            "fr": "Forcer le fuseau. Auto utilise celui de Homey. Manuel pour appareils sans gestion heure d'été.",
+            "nl": "Overschrijf tijdzone. Auto gebruikt Homey's tijdzone.",
+            "de": "Zeitzone überschreiben. Auto verwendet Homey's Zeitzone."
+          },
+          "values": [
+            {
+              "id": "auto",
+              "label": {
+                "en": "🔄 Auto (Homey timezone)",
+                "fr": "🔄 Auto (fuseau Homey)"
+              }
+            },
+            {
+              "id": "utc",
+              "label": {
+                "en": "🌐 UTC (GMT+0)",
+                "fr": "🌐 UTC (GMT+0)"
+              }
+            },
+            {
+              "id": "gmt+1",
+              "label": {
+                "en": "🇪🇺 GMT+1 (CET)",
+                "fr": "🇪🇺 GMT+1 (Paris hiver)"
+              }
+            },
+            {
+              "id": "gmt+2",
+              "label": {
+                "en": "🇪🇺 GMT+2 (CEST/EET)",
+                "fr": "🇪🇺 GMT+2 (Paris été)"
+              }
+            },
+            {
+              "id": "gmt+3",
+              "label": {
+                "en": "🇷🇺 GMT+3 (Moscow)",
+                "fr": "🇷🇺 GMT+3 (Moscou)"
+              }
+            },
+            {
+              "id": "gmt-5",
+              "label": {
+                "en": "🇺🇸 GMT-5 (EST)",
+                "fr": "🇺🇸 GMT-5 (New York)"
+              }
+            },
+            {
+              "id": "gmt-8",
+              "label": {
+                "en": "🇺🇸 GMT-8 (PST)",
+                "fr": "🇺🇸 GMT-8 (Los Angeles)"
+              }
+            },
+            {
+              "id": "gmt+8",
+              "label": {
+                "en": "🇨🇳 GMT+8 (China)",
+                "fr": "🇨🇳 GMT+8 (Chine)"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "🔔 Alarm Thresholds (E002)",
+        "fr": "🔔 Seuils d'alarme (E002)",
+        "nl": "🔔 Alarm drempels (E002)"
+      },
+      "children": [
+        {
+          "id": "alarm_temp_max",
+          "type": "number",
+          "label": {
+            "en": "Max Temperature Alarm (°C)",
+            "nl": "Max temperatuur alarm (°C)",
+            "fr": "Alarme température max (°C)"
+          },
+          "hint": {
+            "en": "Device will trigger alarm when temperature exceeds this value (E002 cluster, not all devices support this)",
+            "nl": "Apparaat activeert alarm wanneer de temperatuur deze waarde overschrijdt"
+          },
+          "value": 40,
+          "min": -20,
+          "max": 60,
+          "step": 1
+        },
+        {
+          "id": "alarm_temp_min",
+          "type": "number",
+          "label": {
+            "en": "Min Temperature Alarm (°C)",
+            "nl": "Min temperatuur alarm (°C)",
+            "fr": "Alarme température min (°C)"
+          },
+          "hint": {
+            "en": "Device will trigger alarm when temperature drops below this value",
+            "nl": "Apparaat activeert alarm wanneer de temperatuur onder deze waarde daalt"
+          },
+          "value": 0,
+          "min": -20,
+          "max": 60,
+          "step": 1
+        },
+        {
+          "id": "alarm_humidity_max",
+          "type": "number",
+          "label": {
+            "en": "Max Humidity Alarm (%)",
+            "nl": "Max luchtvochtigheid alarm (%)",
+            "fr": "Alarme humidité max (%)"
+          },
+          "hint": {
+            "en": "Device will trigger alarm when humidity exceeds this value",
+            "nl": "Apparaat activeert alarm wanneer de luchtvochtigheid deze waarde overschrijdt"
+          },
+          "value": 80,
+          "min": 0,
+          "max": 100,
+          "step": 1
+        },
+        {
+          "id": "alarm_humidity_min",
+          "type": "number",
+          "label": {
+            "en": "Min Humidity Alarm (%)",
+            "nl": "Min luchtvochtigheid alarm (%)",
+            "fr": "Alarme humidité min (%)"
+          },
+          "hint": {
+            "en": "Device will trigger alarm when humidity drops below this value",
+            "nl": "Apparaat activeert alarm wanneer de luchtvochtigheid onder deze waarde daalt"
+          },
+          "value": 20,
+          "min": 0,
+          "max": 100,
+          "step": 1
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "🧪 Debug (Expert)",
+        "fr": "🧪 Debug (Expert)"
+      },
+      "children": [
+        {
+          "id": "zigbee_time_debug",
+          "type": "checkbox",
+          "label": {
+            "en": "ZCL Time Cluster Debug Mode",
+            "fr": "Mode Debug ZCL Time Cluster"
+          },
+          "value": false,
+          "hint": {
+            "en": "⚠️ EXPERT ONLY: Test all ZCL Time sync methods on device startup. May drain battery if used frequently.",
+            "fr": "⚠️ EXPERT UNIQUEMENT: Teste toutes les méthodes sync ZCL Time au démarrage. Peut vider la batterie si utilisé fréquemment."
+          }
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "Sensor Calibration",
+        "nl": "Sensor Kalibratie"
+      },
+      "children": [
+        {
+          "id": "temperature_offset",
+          "type": "number",
+          "label": {
+            "en": "Temperature offset",
+            "nl": "Temperatuur correctie"
+          },
+          "hint": {
+            "en": "Adjust sensor reading (±10°C)",
+            "nl": "Pas meetwaarde aan (±10°C)"
+          },
+          "units": "°C",
+          "value": 0,
+          "min": -10,
+          "max": 10,
+          "step": 0.1
+        },
+        {
+          "id": "humidity_offset",
+          "type": "number",
+          "label": {
+            "en": "Humidity offset",
+            "nl": "Luchtvochtigheid correctie"
+          },
+          "hint": {
+            "en": "Adjust sensor reading (±30%)",
+            "nl": "Pas meetwaarde aan (±30%)"
+          },
+          "units": "%",
+          "value": 0,
+          "min": -30,
+          "max": 30,
+          "step": 1
+        }
+      ]
+    }
+  ],
+  "images": {
+    "small": "/drivers/climate_sensor/assets/images/small.png",
+    "large": "/drivers/climate_sensor/assets/images/large.png",
+    "xlarge": "/drivers/climate_sensor/assets/images/xlarge.png"
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "fr": "Vérifier MàJ OTA",
+        "nl": "Controleer op OTA-updates"
+      }
+    }
+  ],
+  "id": "climate_sensor",
+  "version": "1.0.0",
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  }
+}

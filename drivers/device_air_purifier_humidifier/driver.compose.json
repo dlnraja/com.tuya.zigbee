@@ -1,0 +1,104 @@
+{
+  "name": {
+    "en": "Device Air Purifier Humidifier",
+    "nl": "Luchtzuiveraar luchtbevochtiger",
+    "fr": "Purificateur d'air humidificateur",
+    "de": "Luftreiniger Luftbefeuchter",
+    "es": "Purificador de aire humidificador"
+  },
+  "class": "fan",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "measure_humidity",
+    "dim.humidity",
+    "measure_pm25",
+    "button.1"
+  ],
+  "capabilitiesOptions": {
+    "dim": {
+      "title": {
+        "en": "Mist Level",
+        "fr": "Niveau Brume"
+      },
+      "min": 0,
+      "max": 1,
+      "step": 0.33
+    },
+    "dim.humidity": {
+      "title": {
+        "en": "Target Humidity",
+        "fr": "HumiditÃ© Cible"
+      },
+      "min": 30,
+      "max": 80,
+      "step": 5
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  },
+  "zigbee": {
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          61184
+        ]
+      }
+    },
+    "learnmode": {
+      "instruction": {
+        "en": "Press and hold the power button for 5 seconds until WiFi indicator blinks",
+        "fr": "Maintenez le bouton power pendant 5 secondes"
+      }
+    },
+    "manufacturerName": [
+      "_hybrid_device_air_purifier_humidifier_needs_device_assignment",
+      "_HYBRID_DEVICE_AIR_PURIFIER_HUMIDIFIER_NEEDS_DEVICE_ASSIGNMENT"
+    ]
+  },
+  "images": {
+    "small": "/drivers/humidifier/assets/images/small.png",
+    "large": "/drivers/humidifier/assets/images/large.png"
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "energy": {
+    "approximation": {
+      "usageOn": 30,
+      "usageOff": 1
+    }
+  },
+  "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "fr": "VÃ©rifier MÃJ OTA",
+        "nl": "Controleer op OTA-updates"
+      }
+    }
+  ],
+  "flow": {
+    "triggers": [],
+    "conditions": [],
+    "actions": []
+  },
+  "settings": [],
+  "id": "device_air_purifier_humidifier",
+  "version": "1.0.0"
+}

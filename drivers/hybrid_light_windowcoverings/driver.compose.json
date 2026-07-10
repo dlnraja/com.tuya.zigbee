@@ -1,0 +1,116 @@
+{
+  "name": {
+    "en": "Hybrid Light + Window Covering",
+    "fr": "Hybride Lumière + Store",
+    "nl": "Hybride Licht + Raamdecoratie",
+    "de": "Hybrid Licht + Jalousie"
+  },
+  "class": "windowcoverings",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "windowcoverings_set",
+    "windowcoverings_state",
+    "button.1"
+  ],
+  "capabilitiesOptions": {
+    "dim": {
+      "title": {
+        "en": "Brightness",
+        "fr": "Luminosité"
+      }
+    },
+    "windowcoverings_set": {
+      "title": {
+        "en": "Cover Position",
+        "fr": "Position Store"
+      }
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_tz3000_sosdczdl",
+      "_tz3000_evag0pvn",
+      "_TZ3000_RYLAOZUC",
+      "_TZ3000_5FKUFHN1",
+      "_TZ3000_ZW7WR5UO"
+    ],
+    "productId": [
+      "TS0601",
+      "TS0001",
+      "TS0002"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          3,
+          4,
+          5,
+          6,
+          8,
+          257,
+          61184
+        ]
+      }
+    }
+  },
+  "settings": [
+    {
+      "id": "motor_reversal",
+      "type": "checkbox",
+      "label": {
+        "en": "Reverse Motor Direction",
+        "fr": "Inverser Direction Moteur"
+      },
+      "value": false,
+      "hint": {
+        "en": "Toggle if the curtain opens when it should close"
+      }
+    },
+    {
+      "id": "light_position_memory",
+      "type": "checkbox",
+      "label": {
+        "en": "Remember Light Position on Cover Move",
+        "fr": "Mémoriser Position Lumière"
+      },
+      "value": true,
+      "hint": {
+        "en": "Restore previous light brightness when cover is fully opened"
+      }
+    }
+  ],
+  "images": {
+    "small": "/drivers/hybrid_light_windowcoverings/assets/images/small.png",
+    "large": "/drivers/hybrid_light_windowcoverings/assets/images/large.png",
+    "xlarge": "/drivers/hybrid_light_windowcoverings/assets/images/xlarge.png"
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "fr": "Vérifier MàJ OTA"
+      }
+    }
+  ],
+  "id": "hybrid_light_windowcoverings",
+  "version": "1.0.0"
+}

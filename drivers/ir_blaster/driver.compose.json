@@ -1,0 +1,329 @@
+{
+  "name": {
+    "en": "IR Blaster Remote",
+    "nl": "IR Afstandsbediening",
+    "de": "IR-Fernbedienung",
+    "fr": "Télécommande IR"
+  },
+  "class": "remote",
+  "capabilities": [
+    "onoff",
+    "volume_up",
+    "volume_down",
+    "channel_up",
+    "channel_down",
+    "button.mute",
+    "button.source",
+    "button.menu",
+    "button.enter",
+    "button.learn_ir",
+    "button.1"
+  ],
+  "capabilitiesOptions": {
+    "button.learn_ir": {
+      "title": {
+        "en": "Learn IR Code",
+        "nl": "Leer IR Code",
+        "de": "IR-Code lernen"
+      },
+      "setable": false,
+      "maintenanceAction": true,
+      "getable": false
+    },
+    "onoff": {
+      "title": {
+        "en": "Power",
+        "nl": "Aan/Uit",
+        "de": "Ein/Aus"
+      }
+    },
+    "button.mute": {
+      "title": {
+        "en": "Mute"
+      },
+      "setable": false,
+      "maintenanceAction": true,
+      "getable": false
+    },
+    "button.source": {
+      "title": {
+        "en": "Source/Input"
+      },
+      "setable": false,
+      "maintenanceAction": true,
+      "getable": false
+    },
+    "button.menu": {
+      "title": {
+        "en": "Menu"
+      },
+      "setable": false,
+      "maintenanceAction": true,
+      "getable": false
+    },
+    "button.enter": {
+      "title": {
+        "en": "OK/Enter"
+      },
+      "setable": false,
+      "maintenanceAction": true,
+      "getable": false
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  },
+  "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "Universal Remote Config"
+      },
+      "children": [
+        {
+          "id": "ir_brand",
+          "type": "text",
+          "value": "Samsung",
+          "label": {
+            "en": "Remote Brand (e.g. Samsung, LG, Sony)"
+          },
+          "hint": {
+            "en": "Type the brand of your TV or AC (must match IR database)."
+          }
+        },
+        {
+          "id": "ir_category",
+          "type": "dropdown",
+          "value": "TV",
+          "label": {
+            "en": "Device Category"
+          },
+          "values": [
+            {
+              "id": "TV",
+              "label": {
+                "en": "TV"
+              }
+            },
+            {
+              "id": "Audio",
+              "label": {
+                "en": "Audio/Soundbar"
+              }
+            },
+            {
+              "id": "AC",
+              "label": {
+                "en": "Air Conditioner"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3210_JIC09I9A",
+      "_TZ3210_OGX8U9IT",
+      "_TZ3290_0XK5DGCV",
+      "_TZ3290_5LUHABKC",
+      "_tz3290_785fbxik",
+      "_TZ3290_7V1K4VUF",
+      "_TZ3290_AI4V11WR0MYCYH7K",
+      "_TZ3290_CFV2UYXE",
+      "_TZ3290_GHTYM4CE",
+      "_TZ3290_GNL5A6A5XVQL7C2A",
+      "_TZ3290_GNLSAFC7",
+      "_TZ3290_HDLPIFBK",
+      "_TZ3290_JXVZQATW",
+      "_TZ3290_KJFZUYCL",
+      "_TZ3290_LYPNQVLE",
+      "_TZ3290_NBA3KNPS",
+      "_TZ3290_NBA3KNPSARKAWGNT",
+      "_tz3290_nkpxapoz",
+      "_TZ3290_NLFQEDRT",
+      "_TZ3290_NWGYCQCO",
+      "_TZ3290_QDSS6SCO",
+      "_TZ3290_RLKMY85Q",
+      "_TZ3290_TVFRXBG9",
+      "_TZ3290_WLQDKVP7",
+      "_TZ3290_YAC64INU",
+      "_tz3290_yyax9ajf",
+      "_TZE200_KYFGCYF1",
+      "_TZE200_OWVFNI2Z",
+      "_TZE284_3MZB0SDZ",
+      "_TZE284_LA9VHSOK",
+      "_tz3000_cfv2uyxe"
+    ],
+    "productId": [
+      "TS1201",
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          6,
+          57348,
+          60672,
+          61184
+        ]
+      }
+    }
+  },
+  "images": {
+    "small": "/drivers/ir_blaster/assets/images/small.png",
+    "large": "/drivers/ir_blaster/assets/images/large.png",
+    "xlarge": "/drivers/ir_blaster/assets/images/xlarge.png"
+  },
+  "energy": {
+    "approximation": {
+      "usageConstant": 0.3
+    }
+  },
+  "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "fr": "Vérifier MàJ OTA",
+        "nl": "Controleer op OTA-updates"
+      }
+    }
+  ],
+  "repair": [
+    {
+      "id": "ir_setup"
+    }
+  ],
+  "flow": {
+    "actions": [
+      {
+        "id": "ir_blaster_send_tv_command",
+        "title": {
+          "en": "Send TV Command",
+          "fr": "Envoyer une commande TV"
+        },
+        "args": [
+          {
+            "name": "brand",
+            "type": "text",
+            "placeholder": "Samsung"
+          },
+          {
+            "name": "command",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "Power",
+                "title": {
+                  "en": "Power"
+                }
+              },
+              {
+                "id": "Volume Up",
+                "title": {
+                  "en": "Volume Up"
+                }
+              },
+              {
+                "id": "Volume Down",
+                "title": {
+                  "en": "Volume Down"
+                }
+              },
+              {
+                "id": "Mute",
+                "title": {
+                  "en": "Mute"
+                }
+              },
+              {
+                "id": "Channel Up",
+                "title": {
+                  "en": "Channel Up"
+                }
+              },
+              {
+                "id": "Channel Down",
+                "title": {
+                  "en": "Channel Down"
+                }
+              },
+              {
+                "id": "Source",
+                "title": {
+                  "en": "Source"
+                }
+              },
+              {
+                "id": "Menu",
+                "title": {
+                  "en": "Menu"
+                }
+              },
+              {
+                "id": "OK/Enter",
+                "title": {
+                  "en": "OK/Enter"
+                }
+              },
+              {
+                "id": "Up",
+                "title": {
+                  "en": "Up"
+                }
+              },
+              {
+                "id": "Down",
+                "title": {
+                  "en": "Down"
+                }
+              },
+              {
+                "id": "Left",
+                "title": {
+                  "en": "Left"
+                }
+              },
+              {
+                "id": "Right",
+                "title": {
+                  "en": "Right"
+                }
+              },
+              {
+                "id": "Back",
+                "title": {
+                  "en": "Back"
+                }
+              },
+              {
+                "id": "Home",
+                "title": {
+                  "en": "Home"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "id": "ir_blaster",
+  "version": "1.0.0"
+}

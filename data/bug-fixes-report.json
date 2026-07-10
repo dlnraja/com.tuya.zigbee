@@ -1,0 +1,112 @@
+{
+  "timestamp": "2026-04-20T13:34:44.812Z",
+  "version": "7.4.7",
+  "fixed": 13,
+  "warnings": 0,
+  "errors": 25,
+  "details": {
+    "warnings": [],
+    "errors": [
+      {
+        "file": "drivers\\air_purifier_siren_hybrid\\driver.js",
+        "error": "ENOENT: no such file or directory, open 'c:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\air_purifier_siren_hybrid\\driver.js'"
+      },
+      {
+        "file": "drivers\\bulb_rgbw_universal_hybrid\\driver.js",
+        "error": "ENOENT: no such file or directory, open 'c:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\bulb_rgbw_universal_hybrid\\driver.js'"
+      },
+      {
+        "file": "drivers\\device_air_purifier_floor_hybrid\\driver.js",
+        "error": "ENOENT: no such file or directory, open 'c:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\device_air_purifier_floor_hybrid\\driver.js'"
+      },
+      {
+        "file": "drivers\\device_air_purifier_smart_hybrid\\driver.js",
+        "error": "ENOENT: no such file or directory, open 'c:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\device_air_purifier_smart_hybrid\\driver.js'"
+      },
+      {
+        "file": "drivers\\device_floor_heating_hybrid\\driver.js",
+        "error": "ENOENT: no such file or directory, open 'c:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\device_floor_heating_hybrid\\driver.js'"
+      },
+      {
+        "file": "drivers\\device_floor_heating_thermostat_hybrid\\driver.js",
+        "error": "ENOENT: no such file or directory, open 'c:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\device_floor_heating_thermostat_hybrid\\driver.js'"
+      },
+      {
+        "file": "drivers\\device_generic_diy_universal_hybrid\\driver.js",
+        "error": "ENOENT: no such file or directory, open 'c:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\device_generic_diy_universal_hybrid\\driver.js'"
+      },
+      {
+        "file": "drivers\\device_generic_tuya_hybrid\\driver.js",
+        "error": "ENOENT: no such file or directory, open 'c:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\device_generic_tuya_hybrid\\driver.js'"
+      },
+      {
+        "file": "drivers\\dimmer_ts110e\\driver.js",
+        "error": "ENOENT: no such file or directory, open 'c:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\dimmer_ts110e\\driver.js'"
+      },
+      {
+        "file": "drivers\\floor_heating_thermostat\\driver.js",
+        "error": "ENOENT: no such file or directory, open 'c:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\floor_heating_thermostat\\driver.js'"
+      },
+      {
+        "file": "drivers\\garage_door_opener\\driver.js",
+        "error": "ENOENT: no such file or directory, open 'c:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\garage_door_opener\\driver.js'"
+      },
+      {
+        "file": "drivers\\hvac_controller\\driver.js",
+        "error": "ENOENT: no such file or directory, open 'c:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\hvac_controller\\driver.js'"
+      },
+      {
+        "file": "drivers\\light_sensor_outdoor\\driver.js",
+        "error": "ENOENT: no such file or directory, open 'c:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\light_sensor_outdoor\\driver.js'"
+      },
+      {
+        "file": "drivers\\motion_sensor_2\\driver.js",
+        "error": "ENOENT: no such file or directory, open 'c:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\motion_sensor_2\\driver.js'"
+      },
+      {
+        "file": "drivers\\pet_feeder_zigbee\\driver.js",
+        "error": "ENOENT: no such file or directory, open 'c:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\pet_feeder_zigbee\\driver.js'"
+      },
+      {
+        "file": "drivers\\radiator_valve_zigbee\\driver.js",
+        "error": "ENOENT: no such file or directory, open 'c:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\radiator_valve_zigbee\\driver.js'"
+      },
+      {
+        "file": "drivers\\sirentemphumidsensor\\driver.js",
+        "error": "ENOENT: no such file or directory, open 'c:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\sirentemphumidsensor\\driver.js'"
+      },
+      {
+        "file": "drivers\\siren_sirentemphumidsensor_hybrid\\driver.js",
+        "error": "ENOENT: no such file or directory, open 'c:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\siren_sirentemphumidsensor_hybrid\\driver.js'"
+      },
+      {
+        "file": "drivers\\smart_knob\\driver.js",
+        "error": "ENOENT: no such file or directory, open 'c:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\smart_knob\\driver.js'"
+      },
+      {
+        "file": "drivers\\smart_knob_switch_hybrid\\driver.js",
+        "error": "ENOENT: no such file or directory, open 'c:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\smart_knob_switch_hybrid\\driver.js'"
+      },
+      {
+        "file": "drivers\\smart_lcd_thermostat\\driver.js",
+        "error": "ENOENT: no such file or directory, open 'c:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\smart_lcd_thermostat\\driver.js'"
+      },
+      {
+        "file": "drivers\\switch_2gang",
+        "error": "EISDIR: illegal operation on a directory, read"
+      },
+      {
+        "file": "drivers\\switch_3gang",
+        "error": "EISDIR: illegal operation on a directory, read"
+      },
+      {
+        "file": "drivers\\switch_4gang",
+        "error": "EISDIR: illegal operation on a directory, read"
+      },
+      {
+        "file": "drivers\\universal_zigbee\\driver.js",
+        "error": "ENOENT: no such file or directory, open 'c:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\universal_zigbee\\driver.js'"
+      }
+    ]
+  }
+}

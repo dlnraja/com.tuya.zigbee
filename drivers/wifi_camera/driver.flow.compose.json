@@ -1,0 +1,132 @@
+{
+  "triggers": [
+    {
+      "id": "wifi_camera_motion_detected",
+      "title": {
+        "en": "Motion detected"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Motion detected"
+      }
+    },
+    {
+      "id": "wifi_camera_motion_cleared",
+      "title": {
+        "en": "Motion cleared"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Motion cleared"
+      }
+    }
+  ],
+  "actions": [
+    {
+      "id": "wifi_camera_set_privacy",
+      "title": {
+        "en": "Set privacy mode"
+      },
+      "args": [
+        {
+          "type": "dropdown",
+          "name": "mode",
+          "values": [
+            {
+              "id": "on",
+              "title": {
+                "en": "Privacy ON (camera off)"
+              }
+            },
+            {
+              "id": "off",
+              "title": {
+                "en": "Privacy OFF (camera on)"
+              }
+            }
+          ]
+        }
+      ],
+      "titleFormatted": {
+        "en": "Set privacy mode [[mode]]"
+      }
+    },
+    {
+      "id": "wifi_camera_set_night_vision",
+      "title": {
+        "en": "Set night vision"
+      },
+      "args": [
+        {
+          "type": "dropdown",
+          "name": "mode",
+          "values": [
+            {
+              "id": "0",
+              "title": {
+                "en": "Auto"
+              }
+            },
+            {
+              "id": "1",
+              "title": {
+                "en": "Off"
+              }
+            },
+            {
+              "id": "2",
+              "title": {
+                "en": "On"
+              }
+            }
+          ]
+        }
+      ],
+      "titleFormatted": {
+        "en": "Set night vision [[mode]]"
+      }
+    },
+    {
+      "id": "wifi_camera_ptz_move",
+      "title": {
+        "en": "PTZ move camera"
+      },
+      "args": [
+        {
+          "type": "dropdown",
+          "name": "direction",
+          "values": [
+            {
+              "id": "0",
+              "title": {
+                "en": "Up"
+              }
+            },
+            {
+              "id": "2",
+              "title": {
+                "en": "Right"
+              }
+            },
+            {
+              "id": "4",
+              "title": {
+                "en": "Down"
+              }
+            },
+            {
+              "id": "6",
+              "title": {
+                "en": "Left"
+              }
+            }
+          ]
+        }
+      ],
+      "titleFormatted": {
+        "en": "PTZ move camera [[direction]]"
+      }
+    }
+  ],
+  "conditions": []
+}

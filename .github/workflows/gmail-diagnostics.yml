@@ -1,0 +1,223 @@
+name: Gmail Diagnostics Auto-Analysis
+# <!-- badges:start -->
+# [![Gmail Diagnostics Auto-Analysis](https://github.com/dlnraja/com.tuya.zigbee/actions/workflows/gmail-diagnostics.yml/badge.svg)](https://github.com/dlnraja/com.tuya.zigbee/actions/workflows/gmail-diagnostics.yml)
+# <!-- badges:end -->
+
+
+on:
+  schedule:
+    - cron: '0 22 * * 0'    # Weekly sweep (Sunday 22:00 UTC)
+  workflow_dispatch:
+    inputs:
+      all_history:
+        description: "Fetch diagnostics from the historical baseline instead of the rolling window"
+        type: boolean
+        default: false
+        required: false
+      since:
+        description: "Optional start date for IMAP search, for example 2019-01-01"
+        required: false
+      until:
+        description: "Optional exclusive end date for IMAP search, for example 2024-01-01"
+        required: false
+      max_results:
+        description: "Maximum matching emails to fetch per IMAP window"
+        default: "1000"
+        required: false
+      max_total_results:
+        description: "Maximum matching emails to keep across all IMAP windows"
+        default: "5000"
+        required: false
+      chunk_days:
+        description: "Split historical IMAP fetch into N-day windows; 0 disables chunking"
+        default: "0"
+        required: false
+      reprocess:
+        description: "Ignore processed state and rebuild the diagnostic chronology"
+        type: boolean
+        default: false
+        required: false
+      auto_implement:
+        description: "Allow fingerprint implementation from sanitized diagnostics"
+        type: boolean
+        default: false
+        required: false
+      require_access:
+        description: "Fail the workflow when Gmail IMAP and OAuth diagnostics access are both unavailable"
+        type: boolean
+        default: false
+        required: false
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: gmail-diagnostics
+  cancel-in-progress: true
+
+env:
+  NODE_VERSION: "22"
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  fetch-diagnostics:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/setup-node@v5
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+      - run: npm ci --prefer-offline --no-audit || npm install
+      - name: Gmail auth health preflight
+        continue-on-error: true
+        env:
+          GMAIL_EMAIL: ${{ secrets.GMAIL_EMAIL }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          GMAIL_CLIENT_ID: ${{ secrets.GMAIL_CLIENT_ID }}
+          GMAIL_CLIENT_SECRET: ${{ secrets.GMAIL_CLIENT_SECRET }}
+          GMAIL_REFRESH_TOKEN: ${{ secrets.GMAIL_REFRESH_TOKEN }}
+          GMAIL_HEALTH_STRICT: "false"
+        run: node .github/scripts/gmail-token-keepalive.js
+      # v5.13.3: IMAP diagnostics with OAuth fallback and health preflight
+      - name: Fetch diagnostics via Gmail
+        env:
+          GMAIL_EMAIL: ${{ secrets.GMAIL_EMAIL }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          GMAIL_CLIENT_ID: ${{ secrets.GMAIL_CLIENT_ID }}
+          GMAIL_CLIENT_SECRET: ${{ secrets.GMAIL_CLIENT_SECRET }}
+          GMAIL_REFRESH_TOKEN: ${{ secrets.GMAIL_REFRESH_TOKEN }}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
+          MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY || '' }}
+          KIMI_API_KEY: ${{ secrets.KIMI_API_KEY || '' }}
+          TOGETHER_API_KEY: ${{ secrets.TOGETHER_API_KEY || '' }}
+          CEREBRAS_API_KEY: ${{ secrets.CEREBRAS_API_KEY || '' }}
+          HF_TOKEN: ${{ secrets.HF_TOKEN || '' }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY || '' }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GMAIL_DIAG_ALL_HISTORY: ${{ github.event.inputs.all_history || 'false' }}
+          GMAIL_DIAG_SINCE: ${{ github.event.inputs.since || '' }}
+          GMAIL_DIAG_UNTIL: ${{ github.event.inputs.until || '' }}
+          GMAIL_DIAG_MAX_RESULTS: ${{ github.event.inputs.max_results || '100' }}
+          GMAIL_DIAG_MAX_TOTAL_RESULTS: ${{ github.event.inputs.max_total_results || github.event.inputs.max_results || '100' }}
+          GMAIL_DIAG_CHUNK_DAYS: ${{ github.event.inputs.chunk_days || '0' }}
+          GMAIL_DIAG_STATE_LIMIT: ${{ github.event.inputs.max_total_results || '5000' }}
+          GMAIL_DIAG_REPROCESS: ${{ github.event.inputs.reprocess || 'false' }}
+          GMAIL_DIAG_AUTO_IMPLEMENT: ${{ github.event.inputs.auto_implement || 'false' }}
+          GMAIL_DIAG_REQUIRE_ACCESS: ${{ github.event.inputs.require_access || 'false' }}
+          DRY_RUN: ${{ github.event.inputs.auto_implement == 'true' && 'false' || 'true' }}
+        run: node .github/scripts/fetch-gmail-diagnostics.js
+      - name: Privacy gate for Gmail outputs
+        run: node .github/scripts/privacy-redactor.js .github/state/diagnostics-state.json .github/state/diagnostics-report.json .github/state/gmail-token-health.json .github/state/diagnostics-crossref.yml diagnostics
+      - name: Diagnostic history gate
+        run: npm run check:diag-history
+      - name: Commit state
+        continue-on-error: true
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          node .github/scripts/privacy-redactor.js .github/state/diagnostics-state.json .github/state/diagnostics-report.json .github/state/gmail-token-health.json .github/state/diagnostics-crossref.yml diagnostics
+          git add .github/state/diagnostics-state.json .github/state/diagnostics-report.json .github/state/gmail-token-health.json 2>/dev/null || true
+          COUNT=$(node -p "try{JSON.parse(require('fs').readFileSync('.github/state/diagnostics-report.json')).count||0}catch(e){0}")
+          VER=$(node -p "require('./app.json').version" 2>/dev/null || echo "?")
+          if ! git diff --staged --quiet; then
+            git commit -m "Diagnostics update $(date -u +%Y-%m-%d) [skip ci]"
+            bash scripts/ci/verified-git-push.sh master
+          else
+            echo "No Gmail diagnostic state changes to push"
+          fi
+      - name: Homey Device Diagnostics
+        if: always()
+        continue-on-error: true
+        timeout-minutes: 5
+        env:
+          HOMEY_PAT_API: ${{ secrets.HOMEY_PAT_API }}
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+        run: node .github/scripts/homey-device-diagnostics.js
+
+      - name: Collect & aggregate diagnostics
+        if: always()
+        continue-on-error: true
+        env:
+          HOMEY_PAT_API: ${{ secrets.HOMEY_PAT_API }}
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+          GH_PAT: ${{ secrets.GH_PAT }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node .github/scripts/collect-diagnostics.js
+
+      - name: Commit all diagnostics
+        continue-on-error: true
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          node .github/scripts/privacy-redactor.js .github/state/diagnostics-report.json .github/state/diagnostics-crossref.yml .github/state/homey-device-report.json diagnostics
+          git add diagnostics/ .github/state/diagnostics-*.json .github/state/homey-device-report.json 2>/dev/null || true
+          COUNT=$(node -p "try{JSON.parse(require('fs').readFileSync('.github/state/diagnostics-report.json')).count||0}catch(e){0}")
+          if ! git diff --staged --quiet; then
+            git commit -m "Diagnostics update $(date -u +%Y-%m-%d) [skip ci]"
+            bash scripts/ci/verified-git-push.sh master
+          else
+            echo "No aggregated diagnostic changes to push"
+          fi
+      - name: Diagnostic history gate after aggregation
+        if: always()
+        run: npm run check:diag-history
+
+      - name: "Protocol Pattern Detection (Multi-Protocol)"
+        if: always()
+        continue-on-error: true
+        timeout-minutes: 5
+        run: node .github/scripts/protocol-pattern-detector.js
+
+      - name: "Pattern Detector (feed resolver)"
+        if: always()
+        continue-on-error: true
+        timeout-minutes: 5
+        run: node .github/scripts/pattern-detector.js
+
+      - name: "Diagnostic Auto-Resolver (cross-ref diags+patterns → issues/PRs)"
+        if: always()
+        continue-on-error: true
+        timeout-minutes: 10
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node .github/scripts/diagnostic-auto-resolver.js
+
+      - name: "Resolution Summary"
+        if: always()
+        continue-on-error: true
+        run: node .github/scripts/resolution-summary.js
+
+      - name: Commit resolver state
+        continue-on-error: true
+        if: always()
+        run: |
+          node .github/scripts/privacy-redactor.js .github/state/resolver-*.json .github/state/pattern-*.json
+          git add .github/state/resolver-*.json .github/state/pattern-*.json 2>/dev/null || true
+          if ! git diff --staged --quiet; then
+            git commit -m "Resolved issues + patterns update [skip ci]"
+            bash scripts/ci/verified-git-push.sh master
+          else
+            echo "No resolver state changes to push"
+          fi
+
+      - name: Upload diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sanitized-diagnostics-report
+          path: |
+            .github/state/diagnostics-report.json
+            .github/state/diagnostics-crossref.yml
+            diagnostics/summary.json
+          retention-days: 30

@@ -1,0 +1,287 @@
+{
+  "id": "universal_zigbee",
+  "name": {
+    "en": "Generic Zigbee Device",
+    "fr": "Appareil Zigbee GÃ©nÃ©rique",
+    "nl": "Universeel Zigbee-apparaat",
+    "de": "Universelles Zigbee-GerÃ¤t"
+  },
+  "class": "other",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "measure_temperature",
+    "measure_humidity",
+    "measure_luminance",
+    "alarm_motion",
+    "alarm_contact",
+    "alarm_water",
+    "measure_battery",
+    "measure_power",
+    "measure_voltage",
+    "measure_current",
+    "meter_power",
+    "light_hue",
+    "light_saturation",
+    "light_temperature",
+    "light_mode",
+    "windowcoverings_set",
+    "windowcoverings_state",
+    "target_temperature",
+    "thermostat_mode",
+    "tuya_dp_value",
+    "tuya_dp_string",
+    "tuya_dp_raw",
+    "tuya_cluster_event",
+    "button.1"
+  ],
+  "capabilitiesOptions": {
+    "tuya_dp_value": {
+      "title": {
+        "en": "Last DP Value (Numeric)"
+      }
+    },
+    "tuya_dp_string": {
+      "title": {
+        "en": "Last DP String"
+      }
+    },
+    "tuya_dp_raw": {
+      "title": {
+        "en": "Last Raw DP (Hex)"
+      }
+    },
+    "tuya_cluster_event": {
+      "title": {
+        "en": "Last Cluster Event"
+      }
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "energy": {
+    "batteries": [
+      "CR2032",
+      "AAA",
+      "AA",
+      "CR2",
+      "CR123A"
+    ]
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_tz",
+      "_tzb",
+      "_tzc",
+      "_tze",
+      "_tzf",
+      "_tzh",
+      "_tzj",
+      "_tzl",
+      "_tzn",
+      "_tzq",
+      "_tzs",
+      "_tzw",
+      "_ty",
+      "_tyst",
+      "_tyzb",
+      "lidl livarno",
+      "nous",
+      "ts",
+      "tuyatec",
+      "ewelink",
+      "Aqara",
+      "Aubess",
+      "Avatto",
+      "Bitron",
+      "danfoss",
+      "Eco-DIM",
+      "EcoDim",
+      "Eurotronic",
+      "Heiman",
+      "IKEA of Sweden",
+      "LIDL Home",
+      "legrand",
+      "Moes",
+      "Philips",
+      "Robb SMARRT",
+      "schneider electric",
+      "Signify Netherlands B.V.",
+      "Silvercrest",
+      "Sunricher",
+      "Xiaomi",
+      "Zemismart",
+      "_TYZB01_",
+      "_TYZB02_",
+      "_TZ3000_",
+      "_TZ3000_ox96m1m4",
+      "_TZ3000_vm9p7o5f",
+      "_TZ3210_",
+      "_TZE200_",
+      "_TZE204_",
+      "_TZE284_",
+      "LIDL LIVARNO",
+      "NOUS",
+      "TUYATEC",
+      "EWELINK",
+      "aqara",
+      "aubess",
+      "avatto",
+      "bitron",
+      "DANFOSS",
+      "eco-dim",
+      "ecodim",
+      "eurotronic",
+      "heiman",
+      "ikea of sweden",
+      "lidl home",
+      "LEGRAND",
+      "moes",
+      "philips",
+      "robb smarrt",
+      "SCHNEIDER ELECTRIC",
+      "signify netherlands b.v.",
+      "silvercrest",
+      "sunricher",
+      "xiaomi",
+      "zemismart",
+      "AQARA",
+      "AUBESS",
+      "AVATTO",
+      "BITRON",
+      "ECO-DIM",
+      "ECODIM",
+      "EUROTRONIC",
+      "HEIMAN",
+      "IKEA OF SWEDEN",
+      "LIDL HOME",
+      "MOES",
+      "PHILIPS",
+      "ROBB SMARRT",
+      "SIGNIFY NETHERLANDS B.V.",
+      "SILVERCREST",
+      "SUNRICHER",
+      "XIAOMI",
+      "ZEMISMART",
+      "_TZ3000_dbou1ap4",
+      "_TZ3000_keabpigv",
+      "_TZ3000_12sxjap4",
+      "_TZ3000_hlijwsai",
+      "_TZ3000_riwp3k79",
+      "_TZ3000_i8l0nqdu",
+      "_TZ3000_9cpuaca6",
+      "_TZ3210_r0xgkft5",
+      "_TZ3000_kdpxju99",
+      "_TZ3000_utagpnzs",
+      "_TZ3000_5bsf8vaj",
+      "_TZ3000_oborybow"
+    ],
+    "productId": [
+      "TS0001",
+      "TS0002",
+      "TS0003",
+      "TS0004",
+      "TS0005",
+      "TS0006",
+      "TS0011",
+      "TS0012",
+      "TS0013",
+      "TS0014",
+      "TS0015",
+      "TS0041",
+      "TS0042",
+      "TS0043",
+      "TS0044",
+      "TS0045",
+      "TS0046",
+      "TS0047",
+      "TS0048",
+      "TS004F",
+      "TS0101",
+      "TS0111",
+      "TS011F",
+      "TS0121",
+      "TS0201",
+      "TS0203",
+      "TS0204",
+      "TS0205",
+      "TS0206",
+      "TS0208",
+      "TS0209",
+      "TS0210",
+      "TS0211",
+      "TS0212",
+      "TS0215",
+      "TS0215A",
+      "TS0216",
+      "TS0216A",
+      "TS0218",
+      "TS0222",
+      "TS0225",
+      "TS0301",
+      "TS0302",
+      "TS0303",
+      "TS0304",
+      "TS0401",
+      "TS0402",
+      "TS0501",
+      "TS0501A",
+      "TS0501B",
+      "TS0502",
+      "TS0502A",
+      "TS0502B",
+      "TS0503",
+      "TS0503A",
+      "TS0503B",
+      "TS0504",
+      "TS0504A",
+      "TS0504B",
+      "TS0505",
+      "TS0505A",
+      "TS0505B",
+      "TS0601",
+      "TS110E",
+      "TS110F",
+      "TS130F"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          61184
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "/drivers/universal_zigbee/assets/learnmode.svg",
+      "instruction": {
+        "en": "Press the pairing button on your Zigbee device until it enters pairing mode.",
+        "fr": "Appuyez sur le bouton d'appairage de votre appareil Zigbee jusqu'Ã ce qu'il passe en mode appairage."
+      }
+    }
+  },
+  "images": {
+    "large": "/drivers/universal_zigbee/assets/images/large.png",
+    "small": "/drivers/universal_zigbee/assets/images/small.png"
+  },
+  "flow": {
+    "triggers": [],
+    "conditions": [],
+    "actions": []
+  },
+  "settings": [],
+  "version": "1.0.0"
+}

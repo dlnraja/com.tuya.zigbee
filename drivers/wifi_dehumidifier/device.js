@@ -1,0 +1,47 @@
+'use strict';
+const { safeDivide } = require('../../lib/utils/tuyaUtils.js');
+const TuyaLocalDevice = require('../../lib/tuya-local/TuyaLocalDevice');
+
+class WiFiDehumidifierDevice extends TuyaLocalDevice {
+
+  // v9.0.74: This device is mains-powered. Declare it so UnifiedBatteryHandler
+  // does not add a false measure_battery capability (fixes false-battery reports).
+  get mainsPowered() { return true; }
+
+  get dpMappings() {
+    return {
+      '1':  { capability: 'onoff', writable: true, transform: (v) => !!v, reverseTransform: (v) => !!v },
+      '2':  { capability: 'unknown' }, // mode: auto/manual/dry_clothes/sleep
+      '4':  { capability: 'unknown' }, // fan speed: low/mid/high
+      '5':  { capability: 'target_humidity', writable: true },
+      '6':  { capability: 'measure_humidity' },
+      '7':  { capability: 'measure_temperature' },
+      '11': { capability: 'alarm_water', transform: (v) => !!v },
+      '12': { capability: 'child_lock', transform: (v) => v === true || v === 1 },
+      '13': { capability: 'unknown' }, // anion (ionizer)
+      '14': { capability: 'countdown_remaining' },
+      '101': { capability: 'unknown' }, // defrost
+      '102': { capability: 'unknown' }, // filter_reset
+    };
+  }
+
+  async onInit() {
+    await super.onInit();
+    for (const cap of ['measure_humidity', 'measure_temperature', 'alarm_water', 'target_humidity']) {
+      if (!this.hasCapability(cap)) {
+        try { await this.addCapability(cap); } catch (e) { /* optional */ }
+      }
+    }
+    this.log('[WIFI-DEHUMIDIFIER] Ready');
+  }
+
+
+  async onDeleted() {
+    if (this._destroyed) return;
+    this._destroyed = true;
+    this.log('Device deleted, cleaning up');
+    await super.onDeleted();
+  }
+}
+
+module.exports = WiFiDehumidifierDevice;

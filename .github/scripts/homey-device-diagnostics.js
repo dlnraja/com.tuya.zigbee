@@ -1,0 +1,125 @@
+#!/usr/bin/env node
+'use strict';
+const fs=require('fs'),path=require('path');
+const{fetchWithRetry}=require('./retry-helper');
+const privacy=require('./privacy-redactor');
+const TOKENS=[process.env.HOMEY_PAT_API,process.env.HOMEY_PAT].filter(Boolean);
+let PAT=null;
+const SUM=process.env.GITHUB_STEP_SUMMARY||null;
+const STATE=path.join(__dirname,'..','state');
+const REPORT=path.join(STATE,'homey-device-report.json');
+const DDIR=path.join(__dirname,'..','..','drivers');
+const APP='com.dlnraja.tuya.zigbee';
+function log(t){console.log(t);if(SUM)fs.appendFileSync(SUM,t+'\n');}
+async function api(url){
+  const r=await fetchWithRetry(url,{headers:{'Authorization':'Bearer '+PAT}},{retries:3,label:'homeyAPI'});
+  if(!r.ok)throw new Error(r.status+' '+new URL(url).pathname);
+  return r.json();
+}
+const deviceAlias=v=>privacy.alias('device',v||'unknown');
+const homeyAlias=v=>privacy.alias('homey',v||'unknown');
+function getLocalFPs(){
+  const fps=new Set();
+  try{
+    for(const d of fs.readdirSync(DDIR)){
+      try{const c=JSON.parse(fs.readFileSync(path.join(DDIR,d,'driver.compose.json'),'utf8'));
+        if(c.zigbee?.manufacturerName)c.zigbee.manufacturerName.forEach(m=>fps.add(m));
+      }catch{}
+    }
+  }catch{}
+  return fps;
+}
+function baseReport(){
+  return{date:new Date().toISOString(),appId:APP,status:'incomplete',
+    auth:{tokensProvided:TOKENS.length,authenticated:false,canListHomeys:false},
+    homeys:[],localFPs:getLocalFPs().size,warnings:[],errors:[]};
+}
+function addIssue(report,level,code,message){
+  const target=level==='error'?report.errors:report.warnings;
+  target.push({source:'homey_device_diagnostics',code,message:privacy.redact(message)});
+}
+function saveReport(report){
+  fs.mkdirSync(STATE,{recursive:true});
+  const safe=privacy.redactObject(report);privacy.assertNoLeaks(safe,REPORT);
+  fs.writeFileSync(REPORT,JSON.stringify(safe,null,2)+'\n');
+}
+if(!TOKENS.length){
+  const report=baseReport();
+  addIssue(report,'error','missing_homey_credential','Homey runtime diagnostics could not run because no credential is configured.');
+  saveReport(report);
+  console.log('HOMEY_PAT_API/HOMEY_PAT not set - skip');
+  process.exit(1);
+}
+async function main(){
+  log('## Homey Device Diagnostics');
+  const report=baseReport();
+  let me=null;
+  for(const t of TOKENS){
+    PAT=t;
+    try{me=await api('https://api.athom.com/user/me');report.auth.authenticated=true;log('Auth OK (token ****)');break;}catch(e){
+      addIssue(report,'warning','homey_auth_attempt_failed','A Homey credential failed authentication: '+privacy.redact(e.message));
+      log('Token **** failed: '+privacy.redact(e.message));
+    }
+  }
+  if(!me){
+    addIssue(report,'error','homey_auth_failed','All configured Homey credentials failed authentication.');
+    saveReport(report);
+    log('::error::All tokens failed for api.athom.com');
+    process.exit(1);
+  }
+  log('User: '+privacy.alias('homey-user',(me.id||me.email||me.firstname||'unknown')));
+  let homeys=[];
+  try{homeys=await api('https://api.athom.com/user/me/homey');report.auth.canListHomeys=true;}catch(e){
+    addIssue(report,'warning','homey_list_failed','Cannot list Homeys through the current Homey credential: '+privacy.redact(e.message));
+    log('::warning::Cannot list Homeys: '+privacy.redact(e.message)+' (PAT scope may be limited)');
+  }
+  if(!homeys||!homeys.length){
+    addIssue(report,'warning','homey_runtime_unavailable','No Homeys were accessible, so live runtime crash/device diagnostics were not collected.');
+    saveReport(report);
+    log('No Homeys found (try a full-scope OAuth token)');
+    return;
+  }
+  log('Found '+homeys.length+' Homey(s)');
+  const localFPs=getLocalFPs();
+  report.localFPs=localFPs.size;
+  report.status='complete';
+  log('Local fingerprints: '+localFPs.size);
+  for(const h of homeys){
+    log('\n### Homey: '+homeyAlias(h.id||h.name));
+    const base='https://'+h.id+'.connect.athom.com/api';
+    let devices=[],zigbee=null,appInfo=null,sysInfo=null;
+    try{const dd=await api(base+'/manager/devices/device');devices=Object.values(dd);}catch(e){log('Devices err: '+privacy.redact(e.message));}
+    try{zigbee=await api(base+'/manager/zigbee/state');}catch(e){log('Zigbee err: '+privacy.redact(e.message));}
+    try{const apps=await api(base+'/manager/apps/app');appInfo=apps[APP]||null;}catch(e){log('Apps err: '+privacy.redact(e.message));}
+    try{sysInfo=await api(base+'/manager/system');}catch(e){}
+    const tuyaDevs=devices.filter(d=>{
+      const mfr=d.settings?.zb_manufacturer_name||'';
+      return mfr.startsWith('_T')||d.driverUri?.includes('tuya');
+    });
+    const matched=[],unmatched=[];
+    for(const d of tuyaDevs){
+      const mfr=d.settings?.zb_manufacturer_name||'';
+      if(localFPs.has(mfr))matched.push({name:deviceAlias(d.id||d.name),mfr,model:d.settings?.zb_model_id||'?',driver:d.driverUri||'?',online:d.available||false});
+      else unmatched.push({name:deviceAlias(d.id||d.name),mfr,model:d.settings?.zb_model_id||'?',online:d.available||false});
+    }
+    log('Total devices: '+devices.length);
+    log('Tuya devices: '+tuyaDevs.length+' (matched: '+matched.length+', unmatched: '+unmatched.length+')');
+    if(appInfo)log('App version: '+(appInfo.version||'?'));
+    if(sysInfo)log('Firmware: '+(sysInfo.homeyVersion||sysInfo.softwareVersion||'?'));
+    if(unmatched.length){
+      log('\n**Unmatched fingerprints (not in our DB):**');
+      for(const u of unmatched)log('- `'+u.mfr+'` / `'+u.model+'` - '+u.name+(u.online?' (online)':' (offline)'));
+    }
+    const offline=tuyaDevs.filter(d=>!d.available);
+    if(offline.length)log('\nOffline Tuya devices: '+offline.length);
+    const hReport={id:homeyAlias(h.id||h.name),name:homeyAlias(h.id||h.name),firmware:sysInfo?.homeyVersion||sysInfo?.softwareVersion||'?',
+      appVersion:appInfo?.version||null,totalDevices:devices.length,tuyaDevices:tuyaDevs.length,
+      matched:matched.length,unmatched:unmatched.length,unmatchedList:unmatched,
+      offlineCount:offline.length,zigbeeNodes:zigbee?.nodes?Object.keys(zigbee.nodes).length:null};
+    if(zigbee?.nodes)hReport.zigbeeRouters=(Object.values(zigbee.nodes).filter(n=>n.type==='router')).length;
+    report.homeys.push(hReport);
+  }
+  saveReport(report);
+  log('\nReport saved to '+path.relative(process.cwd(),REPORT));
+}
+main().catch(e=>{console.error('Fatal:',privacy.redact(e.message));process.exit(1);});

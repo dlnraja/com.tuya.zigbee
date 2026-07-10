@@ -1,0 +1,164 @@
+'use strict';
+const { safeDivide, safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
+
+
+const { ZigBeeDevice } = require('homey-zigbeedriver');
+const { CLUSTER } = require('zigbee-clusters');
+const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
+const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
+
+/**
+ * 
+ *       DIN RAIL SWITCH - v5.6.0 + Bidirectional Buttons                       
+ * 
+ *   Smart circuit breaker / DIN rail switch with energy monitoring             
+ *   v5.6.0: Added bidirectional physical/virtual button support                
+ * 
+ */
+class DinRailSwitchDevice extends PhysicalButtonMixin(VirtualButtonMixin(ZigBeeDevice)) {
+
+  get gangCount() { return 1; }
+
+  async onNodeInit({ zclNode }) {
+    this.log('DIN Rail Switch v5.6.0 initializing...');
+
+    // v5.6.0: Track state for physical button detection
+    this._lastOnoffState = null;
+    this._appCommandPending = false;
+    this._appCommandTimeout = null;
+
+    // Register on/off capability
+    if (this.hasCapability('onoff')) {
+      this.registerCapability('onoff', CLUSTER.ON_OFF);
+    }
+
+    // Setup electrical measurement
+    await this._setupElectricalMeasurement(zclNode);
+
+    // Setup Tuya DP cluster for TS0601 devices
+    await this._setupTuyaDP(zclNode);
+
+    // v5.6.0: Initialize bidirectional button support
+    await this.initPhysicalButtonDetection(zclNode);
+    await this.initVirtualButtons();
+
+    this.log('DIN Rail Switch v5.6.0 initialized with bidirectional buttons');
+  }
+
+  _markAppCommand() {
+    this._appCommandPending = true;
+    clearTimeout(this._appCommandTimeout);
+    this._appCommandTimeout = this.homey.setTimeout(() => { if (this._destroyed) return; this._appCommandPending = false; }, 2000);
+  }
+
+  async _setupElectricalMeasurement(zclNode) {
+    const ep1 = zclNode.endpoints[1];
+    if (!ep1) return;
+
+    const emCluster = ep1.clusters?.electricalMeasurement || ep1.clusters?.[2820];
+    if (emCluster) {
+      this.log('[EM] Electrical Measurement cluster found');
+
+      if (this.hasCapability('measure_power')) {
+        emCluster.on('attr.activePower', (value) => {
+          if (this._destroyed) return;
+          const power = safeMultiply(value, 10);
+          this.safeSetCapabilityValue('measure_power', power).catch(this.error);
+        });
+      }
+
+      if (this.hasCapability('measure_voltage')) {
+        emCluster.on('attr.rmsVoltage', (value) => {
+          if (this._destroyed) return;
+          const voltage = safeMultiply(value, 10);
+          this.safeSetCapabilityValue('measure_voltage', voltage).catch(this.error);
+        });
+      }
+
+      if (this.hasCapability('measure_current')) {
+        emCluster.on('attr.rmsCurrent', (value) => {
+          if (this._destroyed) return;
+          const current = value * 1000;
+          this.safeSetCapabilityValue('measure_current', current).catch(this.error);
+        });
+      }
+    }
+
+    const meteringCluster = ep1.clusters?.metering || ep1.clusters?.[1794];
+    if (meteringCluster && this.hasCapability('meter_power')) {
+      meteringCluster.on('attr.currentSummationDelivered', (value) => {
+        if (this._destroyed) return;
+        const energy = value * 1000;
+        this.safeSetCapabilityValue('meter_power', energy).catch(this.error);
+      });
+    }
+  }
+
+  async _setupTuyaDP(zclNode) {
+    const ep1 = zclNode.endpoints[1];
+    if (!ep1) return;
+
+    const tuyaCluster = ep1.clusters?.tuya || ep1.clusters?.[61184];
+    if (!tuyaCluster) return;
+
+    this.log('[TUYA] Tuya DP cluster found');
+
+    tuyaCluster.on('response', (response) => {
+      this._handleTuyaDP(response);
+      });
+
+    tuyaCluster.on('reporting', (report) => {
+      this._handleTuyaDP(report);
+      });
+  }
+
+  _handleTuyaDP(data) {
+    if (!data || !data.dp ) return;
+    const { dp, value } = data;
+
+    this.log(`[DP${dp}] Value: ${value}`);
+
+    switch (dp) {
+    case 1: //On/Off state
+    case 16:
+      this.safeSetCapabilityValue('onoff', !!value).catch(this.error);
+      break;
+
+    case 17: //Total current (A*1000)
+    case 20:
+      if (this.hasCapability('measure_current')) {
+        this.safeSetCapabilityValue('measure_current', value * 1000).catch(this.error);
+      }
+      break;
+
+    case 18: // Power (W)
+      if (this.hasCapability('measure_power')) {
+        this.safeSetCapabilityValue('measure_power', value).catch(this.error);
+      }
+      break;
+
+    case 19: //Voltage (V*10)
+      if (this.hasCapability('measure_voltage')) {
+        this.safeSetCapabilityValue('measure_voltage', safeMultiply(value, 10)).catch(this.error);
+      }
+      break;
+
+    case 101: //Energy (kWh*100)
+      if (this.hasCapability('meter_power')) {
+        this.safeSetCapabilityValue('meter_power', value * 100).catch(this.error);
+      }
+      break;
+    }
+  }
+
+
+  async onDeleted() {
+    this._destroyed = true;
+    await super.onDeleted();
+    this.log('Device deleted, cleaning up');
+  }
+}
+
+module.exports = DinRailSwitchDevice;
+
+

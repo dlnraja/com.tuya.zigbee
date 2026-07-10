@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="960" height="960" viewBox="0 0 960 960" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Wall plate -->
+  <rect x="200" y="120" width="560" height="720" rx="40" stroke="black" stroke-width="40" fill="none"/>
+  <!-- Toggle switch body -->
+  <rect x="340" y="280" width="280" height="400" rx="40" stroke="black" stroke-width="40" fill="none"/>
+  <!-- Switch lever in ON position -->
+  <rect x="380" y="320" width="200" height="160" rx="20" fill="black"/>
+  <!-- Switch base -->
+  <rect x="380" y="520" width="200" height="120" rx="20" stroke="black" stroke-width="20" fill="none"/>
+</svg>

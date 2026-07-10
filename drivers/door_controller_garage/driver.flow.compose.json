@@ -1,0 +1,277 @@
+{
+  "triggers": [
+    {
+      "id": "door_controller_garage_door_controller_opened",
+      "highlight": true,
+      "title": {
+        "en": "Door opened",
+        "nl": "Deur geopend",
+        "fr": "Porte ouverte",
+        "de": "TÃ¼r geÃ¶ffnet"
+      },
+      "hint": {
+        "en": "Triggers when the door is opened",
+        "nl": "Triggert wanneer de deur wordt geopend",
+        "fr": "Se dÃ©clenche quand la porte est ouverte",
+        "de": "Wird ausgelÃ¶st, wenn die TÃ¼r geÃ¶ffnet wird"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Door opened",
+        "nl": "Deur geopend",
+        "fr": "Porte ouverte",
+        "de": "TÃ¼r geÃ¶ffnet"
+      }
+    },
+    {
+      "id": "door_controller_garage_door_controller_closed",
+      "title": {
+        "en": "Door closed",
+        "nl": "Deur gesloten",
+        "fr": "Porte fermÃ©e",
+        "de": "TÃ¼r geschlossen"
+      },
+      "hint": {
+        "en": "Triggers when the door is closed",
+        "nl": "Triggert wanneer de deur wordt gesloten",
+        "fr": "Se dÃ©clenche quand la porte est fermÃ©e",
+        "de": "Wird ausgelÃ¶st, wenn die TÃ¼r geschlossen wird"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Door closed",
+        "nl": "Deur gesloten",
+        "fr": "Porte fermÃ©e",
+        "de": "TÃ¼r geschlossen"
+      }
+    },
+    {
+      "id": "door_controller_garage_door_controller_locked",
+      "title": {
+        "en": "Door locked",
+        "nl": "Deur vergrendeld",
+        "fr": "Porte verrouillÃ©e",
+        "de": "TÃ¼r verriegelt"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Door locked",
+        "nl": "Deur vergrendeld",
+        "fr": "Porte verrouillÃ©e",
+        "de": "TÃ¼r verriegelt"
+      }
+    },
+    {
+      "id": "door_controller_garage_door_controller_unlocked",
+      "title": {
+        "en": "Door unlocked",
+        "nl": "Deur ontgrendeld",
+        "fr": "Porte dÃ©verrouillÃ©e",
+        "de": "TÃ¼r entriegelt"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Door unlocked",
+        "nl": "Deur ontgrendeld",
+        "fr": "Porte dÃ©verrouillÃ©e",
+        "de": "TÃ¼r entriegelt"
+      }
+    },
+    {
+      "id": "door_controller_garage_door_controller_motion_detected",
+      "title": {
+        "en": "Motion detected",
+        "fr": "Mouvement dÃ©tectÃ©",
+        "nl": "Beweging gedetecteerd",
+        "de": "Bewegung erkannt"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Motion detected",
+        "fr": "Mouvement dÃ©tectÃ©",
+        "nl": "Beweging gedetecteerd",
+        "de": "Bewegung erkannt"
+      }
+    },
+    {
+      "id": "door_controller_garage_door_controller_contact_alarm",
+      "title": {
+        "en": "Contact changed",
+        "fr": "Contact changÃ©",
+        "nl": "Contact gewijzigd",
+        "de": "Kontakt geÃ¤ndert"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Contact changed",
+        "fr": "Contact changÃ©",
+        "nl": "Contact gewijzigd",
+        "de": "Kontakt geÃ¤ndert"
+      }
+    },
+    {
+      "id": "door_controller_garage_door_controller_battery_low",
+      "title": {
+        "en": "Battery low",
+        "fr": "Batterie faible",
+        "nl": "Batterij laag",
+        "de": "Batterie schwach"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Battery low",
+        "fr": "Batterie faible",
+        "nl": "Batterij laag",
+        "de": "Batterie schwach"
+      }
+    },
+    {
+      "id": "door_controller_garage_door_controller_lock_changed",
+      "title": {
+        "en": "Lock changed",
+        "fr": "Serrure changÃ©e",
+        "nl": "Slot gewijzigd",
+        "de": "Schloss geÃ¤ndert"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Lock changed",
+        "fr": "Serrure changÃ©e",
+        "nl": "Slot gewijzigd",
+        "de": "Schloss geÃ¤ndert"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "id": "door_controller_garage_door_controller_is_open",
+      "title": {
+        "en": "Door !{{is|is not}} open",
+        "nl": "Deur !{{is|is niet}} open",
+        "fr": "Porte !{{est|n'est pas}} ouverte",
+        "de": "TÃ¼r !{{ist|ist nicht}} offen"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Door !{{is|is not}} open",
+        "nl": "Deur !{{is|is niet}} open",
+        "fr": "Porte !{{est|n'est pas}} ouverte",
+        "de": "TÃ¼r !{{ist|ist nicht}} offen"
+      }
+    },
+    {
+      "id": "door_controller_garage_door_controller_is_locked",
+      "title": {
+        "en": "Door !{{is|is not}} locked",
+        "nl": "Deur !{{is|is niet}} vergrendeld",
+        "fr": "Porte !{{est|n'est pas}} verrouillÃ©e",
+        "de": "TÃ¼r !{{ist|ist nicht}} verriegelt"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Door !{{is|is not}} locked",
+        "nl": "Deur !{{is|is niet}} vergrendeld",
+        "fr": "Porte !{{est|n'est pas}} verrouillÃ©e",
+        "de": "TÃ¼r !{{ist|ist nicht}} verriegelt"
+      }
+    },
+    {
+      "id": "door_controller_garage_door_controller_motion_active",
+      "title": {
+        "en": "Motion !{{is|is not}} detected",
+        "fr": "Mouvement !{{est|n'est pas}} dÃ©tectÃ©",
+        "nl": "Beweging !{{is|is niet}} gedetecteerd",
+        "de": "Bewegung !{{ist|ist nicht}} erkannt"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Motion !{{is|is not}} detected",
+        "fr": "Mouvement !{{est|n'est pas}} dÃ©tectÃ©",
+        "nl": "Beweging !{{is|is niet}} gedetecteerd",
+        "de": "Bewegung !{{ist|ist nicht}} erkannt"
+      }
+    },
+    {
+      "id": "door_controller_garage_door_controller_contact_open",
+      "title": {
+        "en": "Contact !{{is|is not}} open",
+        "fr": "Contact !{{est|n'est pas}} ouvert",
+        "nl": "Contact !{{is|is niet}} open",
+        "de": "Kontakt !{{ist|ist nicht}} offen"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Contact !{{is|is not}} open",
+        "fr": "Contact !{{est|n'est pas}} ouvert",
+        "nl": "Contact !{{is|is niet}} open",
+        "de": "Kontakt !{{ist|ist nicht}} offen"
+      }
+    }
+  ],
+  "actions": [
+    {
+      "id": "door_controller_garage_door_controller_open",
+      "title": {
+        "en": "Open door",
+        "nl": "Deur openen",
+        "fr": "Ouvrir la porte",
+        "de": "TÃ¼r Ã¶ffnen"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Open door",
+        "nl": "Deur openen",
+        "fr": "Ouvrir la porte",
+        "de": "TÃ¼r Ã¶ffnen"
+      }
+    },
+    {
+      "id": "door_controller_garage_door_controller_close",
+      "title": {
+        "en": "Close door",
+        "nl": "Deur sluiten",
+        "fr": "Fermer la porte",
+        "de": "TÃ¼r schlieÃŸen"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Close door",
+        "nl": "Deur sluiten",
+        "fr": "Fermer la porte",
+        "de": "TÃ¼r schlieÃŸen"
+      }
+    },
+    {
+      "id": "door_controller_garage_door_controller_lock",
+      "title": {
+        "en": "Lock door",
+        "nl": "Deur vergrendelen",
+        "fr": "Verrouiller la porte",
+        "de": "TÃ¼r verriegeln"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Lock door",
+        "nl": "Deur vergrendelen",
+        "fr": "Verrouiller la porte",
+        "de": "TÃ¼r verriegeln"
+      }
+    },
+    {
+      "id": "door_controller_garage_door_controller_unlock",
+      "title": {
+        "en": "Unlock door",
+        "nl": "Deur ontgrendelen",
+        "fr": "DÃ©verrouiller la porte",
+        "de": "TÃ¼r entriegeln"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Unlock door",
+        "nl": "Deur ontgrendelen",
+        "fr": "DÃ©verrouiller la porte",
+        "de": "TÃ¼r entriegeln"
+      }
+    }
+  ]
+}

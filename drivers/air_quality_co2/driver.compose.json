@@ -1,0 +1,244 @@
+{
+  "name": {
+    "en": "Zigbee Air Quality / CO2 Sensor",
+    "fr": "Capteur qualité air / CO2 Zigbee",
+    "nl": "CO2 Luchtkwaliteit Sensor",
+    "de": "CO2 Luftqualitätssensor"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "measure_co2",
+    "measure_temperature",
+    "measure_humidity",
+    "measure_pm25",
+    "measure_voc",
+    "measure_formaldehyde",
+    "alarm_generic",
+    "measure_battery",
+    "button.1"
+  ],
+  "subDevices": [],
+  "capabilitiesOptions": {
+    "measure_co2": {
+      "title": {
+        "en": "CO2 Level",
+        "fr": "Niveau CO2"
+      },
+      "units": "ppm"
+    },
+    "measure_pm25": {
+      "title": {
+        "en": "PM2.5",
+        "fr": "PM2.5"
+      },
+      "units": "µg/m³"
+    },
+    "measure_voc": {
+      "title": {
+        "en": "VOC",
+        "fr": "COV"
+      }
+    },
+    "measure_formaldehyde": {
+      "title": {
+        "en": "Formaldehyde (HCHO)",
+        "fr": "Formaldéhyde (HCHO)"
+      },
+      "units": "mg/m³"
+    },
+    "alarm_generic": {
+      "title": {
+        "en": "Air Quality Alert",
+        "fr": "Alerte Qualité Air"
+      }
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  },
+  "energy": {
+    "approximation": {
+      "usageOn": 1,
+      "usageOff": 0.5
+    },
+    "batteries": [
+      "AAA",
+      "OTHER"
+    ]
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_TZE200_8IKYD92M",
+      "_TZE204_8IKYD92M",
+      "_TZE200_y6rqas8p",
+      "_TZ3000_qaaysllp",
+      "_TYZB01_ftdkanlj",
+      "_TYZB01_kvwjujy9",
+      "_TZ3210_huzkzqyk",
+      "_TZ2000_a476raq2",
+      "_TZ2000_xogb73am",
+      "_TZ2000_avdnvykf",
+      "_TZ2000_hjsgdkfl",
+      "_TYZB01_a476raq2",
+      "_TYZB01_hjsgdkfl",
+      "_TZ3000_yd2e749y",
+      "_TZ3000_bjawzodf",
+      "_TZ3000_dowj6gyi",
+      "_TZ3000_0s1izerx",
+      "_TZ3000_akqdg6g7"
+    ],
+    "productId": [
+      "TS0601_co2",
+      "TS0601",
+      "TS0222",
+      "TS0201",
+      "TY0201",
+      "RH3052"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          61184
+        ]
+      }
+    }
+  },
+  "settings": [
+    {
+      "id": "co2_threshold",
+      "type": "number",
+      "label": {
+        "en": "CO2 Alert Threshold",
+        "fr": "Seuil alerte CO2"
+      },
+      "value": 1000,
+      "min": 400,
+      "max": 5000,
+      "units": "ppm"
+    },
+    {
+      "id": "temperature_unit",
+      "type": "dropdown",
+      "label": {
+        "en": "Temperature Unit",
+        "fr": "Unité température"
+      },
+      "value": "celsius",
+      "values": [
+        {
+          "id": "celsius",
+          "label": {
+            "en": "Celsius",
+            "fr": "Celsius"
+          }
+        },
+        {
+          "id": "fahrenheit",
+          "label": {
+            "en": "Fahrenheit",
+            "fr": "Fahrenheit"
+          }
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "Sensor Calibration",
+        "nl": "Sensor Kalibratie"
+      },
+      "children": [
+        {
+          "id": "temperature_offset",
+          "type": "number",
+          "label": {
+            "en": "Temperature offset",
+            "nl": "Temperatuur correctie"
+          },
+          "hint": {
+            "en": "Adjust sensor reading (±10°C)",
+            "nl": "Pas meetwaarde aan (±10°C)"
+          },
+          "units": "°C",
+          "value": 0,
+          "min": -10,
+          "max": 10,
+          "step": 0.1
+        },
+        {
+          "id": "humidity_offset",
+          "type": "number",
+          "label": {
+            "en": "Humidity offset",
+            "nl": "Luchtvochtigheid correctie"
+          },
+          "hint": {
+            "en": "Adjust sensor reading (±30%)",
+            "nl": "Pas meetwaarde aan (±30%)"
+          },
+          "units": "%",
+          "value": 0,
+          "min": -30,
+          "max": 30,
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "sensor_precision",
+      "type": "dropdown",
+      "label": {
+        "en": "Decimal Precision",
+        "fr": "Précision"
+      },
+      "value": "1",
+      "hint": {
+        "en": "Decimals for temperature/humidity values"
+      },
+      "values": [
+        {
+          "id": "1",
+          "label": {
+            "en": "1 decimal (20.5°C)"
+          }
+        },
+        {
+          "id": "2",
+          "label": {
+            "en": "2 decimals (20.53°C)"
+          }
+        }
+      ]
+    }
+  ],
+  "images": {
+    "small": "/drivers/air_quality_co2/assets/images/small.png",
+    "large": "/drivers/air_quality_co2/assets/images/large.png",
+    "xlarge": "/drivers/air_quality_co2/assets/images/xlarge.png"
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "fr": "Vérifier MàJ OTA",
+        "nl": "Controleer op OTA-updates"
+      }
+    }
+  ],
+  "id": "air_quality_co2",
+  "version": "1.0.0"
+}

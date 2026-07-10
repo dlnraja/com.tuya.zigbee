@@ -1,0 +1,84 @@
+{
+  "id": "motion_sensor_2",
+  "name": {
+    "en": "Motion Sensor",
+    "fr": "Capteur de mouvement",
+    "nl": "Bewegingssensor",
+    "de": "Bewegungssensor",
+    "es": "Sensor de movimiento"
+  },
+  "class": "sensor",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "capabilities": [
+    "measure_battery",
+    "measure_luminance",
+    "alarm_motion",
+    "button.1"
+  ],
+  "energy": {
+    "batteries": [
+      "CR2450"
+    ]
+  },
+  "images": {
+    "large": "/{{driverAssetsPath}}/images/large.png",
+    "small": "/{{driverAssetsPath}}/images/small.png"
+  },
+  "version": "1.0.0",
+  "metadata": {
+    "driver": {
+      "catchall": true,
+      "reason": "Fallback for unmatched devices with PIDs: TS0601, TS0225, Excellux, TS0207, TS0001"
+    }
+  },
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  },
+  "zigbee": {
+    "productId": [
+      "TS0601",
+      "TS0225",
+      "Excellux",
+      "TS0001"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          1024,
+          1280,
+          61184
+        ],
+        "bindings": [
+          1,
+          1024,
+          1280
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "{{driverAssetsPath}}/icon.svg",
+      "instruction": {
+        "en": "Press the reset button for aprox 5 seconds until the LED blinks."
+      }
+    },
+    "manufacturerName": [
+      "_GENERIC_MOTION_SENSOR_2",
+      "_generic_motion_sensor_2"
+    ]
+  }
+}

@@ -1,0 +1,375 @@
+# Auto Publish - Official Athom Actions (NO CLI)
+# Required secrets: HOMEY_PAT (from https://tools.developer.homey.app/me)
+name: Auto Publish
+
+# <!-- badges:start -->
+# [![Auto Publish](https://github.com/dlnraja/com.tuya.zigbee/actions/workflows/publish.yml/badge.svg)](https://github.com/dlnraja/com.tuya.zigbee/actions/workflows/publish.yml)
+# <!-- badges:end -->
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        type: choice
+        options: [patch, minor, major]
+        default: patch
+      changelog:
+        type: string
+        required: false
+        description: "Custom changelog (leave empty to auto-extract from .homeychangelog.json)"
+permissions:
+  contents: write
+concurrency:
+  group: publish
+  cancel-in-progress: true
+
+env:
+  NODE_VERSION: "22"
+  NODE_OPTIONS: "--dns-result-order=ipv4first"
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  validate:
+    name: Validate
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      # === AI providers — circular chain (ai-helper.js) ===
+      GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+      GROQ_API_KEY: ${{ secrets.GROQ_API_KEY || '' }}
+      HF_TOKEN: ${{ secrets.HF_TOKEN || '' }}
+      MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY || '' }}
+      OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY || '' }}
+      CEREBRAS_API_KEY: ${{ secrets.CEREBRAS_API_KEY || '' }}
+      TOGETHER_API_KEY: ${{ secrets.TOGETHER_API_KEY || '' }}
+      KIMI_API_KEY: ${{ secrets.KIMI_API_KEY || '' }}
+
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+      - run: npm ci --prefer-offline --no-audit || npm install
+      - name: GitHub Actions & YAML policy gate
+        run: npm run check:yaml
+      - name: Homey timer context guard
+        run: npm run check:timer-context
+      - name: Homey online guidelines / app-store audit
+        run: npm run check:homey-guidelines
+      - name: Google Assistant / Alexa voice-safety gate
+        run: npm run check:voice
+      - name: 🛡️ Check Git Conflicts
+        run: npm run validate:conflicts
+
+      - name: 🔍 Verify Fingerprints Integrity
+        continue-on-error: false
+        run: npm run validate:fingerprints
+      - name: Fingerprint catalog / device-name audit
+        run: npm run check:fingerprint-catalog
+
+      - name: 🔍 Verify Flows Integrity
+        continue-on-error: false
+        run: npm run validate:flows
+      - name: Button and TS004F flow routing gate
+        run: npm run check:button-flows
+      - name: Diagnostic history gate
+        run: npm run check:diag-history
+
+      - name: Normalize generated Flow manifest before validation
+        run: npm run fix:generated-flow-args
+
+      - name: Validate (npx)
+        run: npx homey app validate --level publish
+
+      - name: Normalize generated Flow manifest
+        run: npm run fix:generated-flow-args && npm run check:homey-guidelines
+
+      - name: Sanitize generated manifest after validation
+        run: node scripts/maintenance/sanitize-manifest.cjs app.json .homeybuild/app.json
+
+      - name: Athom Validate (Docker)
+        continue-on-error: true
+        uses: athombv/github-action-homey-app-validate@002b7273c2b86032cb20d9bf25a67c8daca13f2c # v1
+        with:
+          level: publish
+
+  version-and-publish:
+    needs: validate
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 100
+          token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+      - uses: actions/setup-node@v5
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+      - run: npm ci --prefer-offline --no-audit || npm install
+
+      - name: Check HOMEY_PAT
+        id: pat
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+        run: |
+          if [ -n "$HOMEY_PAT" ]; then
+            echo "ok=true" >> $GITHUB_OUTPUT
+          else
+            echo "ok=false" >> $GITHUB_OUTPUT
+            echo "::warning::HOMEY_PAT not set - add from https://tools.developer.homey.app/me"
+          fi
+
+      - name: Generate AI Changelog
+        id: ai_cl
+        continue-on-error: true
+        env:
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          GH_PAT: ${{ secrets.GH_PAT }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          timeout --kill-after=10s 90s node .github/scripts/generate-ai-changelog.js || echo "AI fallback"
+          VER=$(node -p "require('./app.json').version")
+          CL=$(node -e "const cl=require('./.homeychangelog.json');const v=process.argv[1];if(cl[v]&&cl[v].en)process.stdout.write(cl[v].en);" "$VER" 2>/dev/null || echo "")
+          echo "ai_text=$CL" >> $GITHUB_OUTPUT
+
+      - name: Extract Changelog
+        id: cl
+        shell: bash
+        run: |
+          CL="${{ inputs.changelog }}"
+          # Prefer: manual input > AI-generated > .homeychangelog.json
+          if [ -z "$CL" ] && [ -n "${{ steps.ai_cl.outputs.ai_text }}" ]; then
+            CL="${{ steps.ai_cl.outputs.ai_text }}"
+          fi
+          if [ -z "$CL" ]; then
+            VER=$(node -p "require('./app.json').version")
+            CL=$(node -e "const r=JSON.parse(require('child_process').execSync('node .github/scripts/extract-changelog.js '+process.argv[1],{encoding:'utf8'}).trim());process.stdout.write(r.homeyText)" "$VER" 2>/dev/null || echo "v${VER}: Bug fixes and improvements")
+          fi
+          # Escape newlines for GitHub output
+          CL="${CL//'%'/'%25'}"
+          CL="${CL//$'\n'/'%0A'}"
+          CL="${CL//$'\r'/'%0D'}"
+          echo "text=$CL" >> $GITHUB_OUTPUT
+
+      - name: Bump
+        if: steps.pat.outputs.ok == 'true'
+        id: bump
+        env:
+          BUMP_LEVEL: ${{ inputs.version || 'patch' }}
+          HOMEY_CHANGELOG: ${{ steps.cl.outputs.text }}
+        run: node .github/scripts/bump-homey-version.js
+
+      - name: Sync package manifests and .homeycompose version
+        if: steps.pat.outputs.ok == 'true'
+        run: node -e "const f=require('fs'),a=require('./app.json'),v=a.version;for(const file of ['package.json','package-lock.json']){if(!f.existsSync(file))continue;const j=JSON.parse(f.readFileSync(file,'utf8'));j.version=v;if(j.packages&&j.packages[''])j.packages[''].version=v;f.writeFileSync(file,JSON.stringify(j,null,2)+'\n');}if(f.existsSync('.homeycompose/app.json')){const hc=JSON.parse(f.readFileSync('.homeycompose/app.json','utf8'));hc.version=v;f.writeFileSync('.homeycompose/app.json',JSON.stringify(hc,null,2)+'\n');}console.log('Synced package manifests and .homeycompose to v'+v);"
+
+      - name: Update Changelogs for New Version
+        if: steps.pat.outputs.ok == 'true'
+        continue-on-error: true
+        env:
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          GH_PAT: ${{ secrets.GH_PAT }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          NEW_VER=$(node -p "require('./app.json').version")
+          CL_TEXT="${{ steps.cl.outputs.text }}"
+          # Update .homeychangelog.json with new version entry
+          node -e "
+            const fs=require('fs');
+            const cl=JSON.parse(fs.readFileSync('.homeychangelog.json','utf8'));
+            const v=process.argv[1], t=process.argv[2];
+            if(v && t && !cl[v]){cl[v]={en:t};fs.writeFileSync('.homeychangelog.json',JSON.stringify(cl,null,2)+'\n');}
+          " "$NEW_VER" "$CL_TEXT"
+          # Update CHANGELOG.md with new version header
+          if [ -f CHANGELOG.md ]; then
+            HEADER="## v${NEW_VER} ($(date +%Y-%m-%d))"
+            if ! grep -q "v${NEW_VER}" CHANGELOG.md; then
+              sed -i "0,/^## /{s/^## /${HEADER}\n\n${CL_TEXT}\n\n---\n\n## /}" CHANGELOG.md
+            fi
+          fi
+          # Update README.md last-updated date
+          if [ -f README.md ]; then
+            sed -i "s/Last Updated|[0-9-]*/Last Updated|$(date +%Y-%m-%d)/" README.md
+          fi
+          echo "Changelogs updated for v${NEW_VER}"
+
+      - name: Push
+        if: steps.pat.outputs.ok == 'true'
+        shell: bash
+        run: |
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git restore -- .github/state diagnostics screenshots screenshots-debug promote-screenshots push-promote-screenshots 2>/dev/null || true
+          for path in app.json .homeycompose .homeychangelog.json CHANGELOG.md README.md package.json package-lock.json; do
+            [ -e "$path" ] && git add "$path"
+          done
+          D=$(ls -d drivers/*/ 2>/dev/null | wc -l)
+          F=$(grep -rohE '"_T[A-Za-z0-9_]+"' drivers/*/driver.compose.json 2>/dev/null | sort -uf | wc -l || true)
+          git diff --cached --quiet || git commit -m "v${{ steps.bump.outputs.version }}: ${D} drivers, ${F} fingerprints [skip ci]"
+          git tag -f "v${{ steps.bump.outputs.version }}"
+          BRANCH="${GITHUB_REF_NAME:-master}"
+          git push origin HEAD:"refs/heads/$BRANCH"
+          git push origin -f "v${{ steps.bump.outputs.version }}"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Publish
+        if: steps.pat.outputs.ok == 'true'
+        id: pub
+        uses: ./.github/actions/homey-app-publish
+        with:
+          personal_access_token: ${{ secrets.HOMEY_PAT }}
+
+      - name: Create GitHub Release
+        if: steps.pat.outputs.ok == 'true'
+        continue-on-error: true
+        uses: softprops/action-gh-release@3bb12739c298aeb8a4eeaf626c5b8d85266b0e65 # v2
+        with:
+          tag_name: v${{ steps.bump.outputs.version }}
+          name: v${{ steps.bump.outputs.version }}
+          body: ${{ steps.cl.outputs.text }}
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+
+      # ===== DRAFT → TEST (Puppeteer + API fallback) =====
+      - name: Wait for Athom draft processing
+        if: steps.pub.outcome == 'success'
+        run: |
+          echo "Waiting 120s for Athom to process draft build..."
+          sleep 120
+
+      - name: Install Puppeteer
+        if: steps.pat.outputs.ok == 'true'
+        continue-on-error: true
+        run: npm install puppeteer athom-api --no-save
+
+      - name: "Tier 1: Promote via Browser (Puppeteer)"
+        if: steps.pat.outputs.ok == 'true'
+        id: promote_puppeteer
+        continue-on-error: true
+        timeout-minutes: 5
+        env:
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+          DRY_RUN: 'false'
+        run: node .github/scripts/auto-promote-puppeteer.js
+
+      - name: "Tier 2: Promote via OAuth (headless)"
+        if: steps.pat.outputs.ok == 'true' && steps.promote_puppeteer.outcome != 'success'
+        id: promote_oauth
+        continue-on-error: true
+        timeout-minutes: 3
+        env:
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+          ATHOM_CLIENT_ID: ${{ secrets.ATHOM_CLIENT_ID }}
+          ATHOM_CLIENT_SECRET: ${{ secrets.ATHOM_CLIENT_SECRET }}
+        run: node .github/scripts/auto-promote-oauth.js
+
+      - name: "Tier 3: Promote via API (PAT fallback)"
+        if: steps.pat.outputs.ok == 'true' && steps.promote_puppeteer.outcome != 'success' && steps.promote_oauth.outcome != 'success'
+        id: promote_api
+        continue-on-error: true
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+        run: node .github/scripts/auto-publish-draft.js
+
+      - name: Verify draft promotion result
+        id: verify_test
+        if: steps.pat.outputs.ok == 'true'
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+        run: |
+          if [ "${{ steps.promote_puppeteer.outcome }}" != "success" ] && \
+             [ "${{ steps.promote_oauth.outcome }}" != "success" ] && \
+             [ "${{ steps.promote_api.outcome }}" != "success" ]; then
+            echo "::warning::All draft-to-test promotion tiers returned non-success; verifying actual Homey channel state before failing."
+          fi
+          node .github/scripts/verify-test-version.js
+
+      - name: Full diagnostics sweep - sanitized
+        if: always()
+        continue-on-error: true
+        timeout-minutes: 10
+        env:
+          GMAIL_EMAIL: ${{ secrets.GMAIL_EMAIL }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          GMAIL_CLIENT_ID: ${{ secrets.GMAIL_CLIENT_ID }}
+          GMAIL_CLIENT_SECRET: ${{ secrets.GMAIL_CLIENT_SECRET }}
+          GMAIL_REFRESH_TOKEN: ${{ secrets.GMAIL_REFRESH_TOKEN }}
+          GMAIL_DIAG_AI_MAX: "0"
+          GMAIL_DIAG_REQUIRE_ACCESS: "false"
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          HOMEY_PAT_API: ${{ secrets.HOMEY_PAT_API }}
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+          GH_PAT: ${{ secrets.GH_PAT }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DRY_RUN: "true"
+        run: |
+          run_diag() {
+            local seconds="$1"
+            shift
+            local label="$*"
+            echo "::group::${label}"
+            if timeout --kill-after=30s "${seconds}s" "$@"; then
+              echo "[diag] completed: ${label}"
+            else
+              local code=$?
+              echo "::warning title=Diagnostics command timed out or failed::${label} exited with code ${code}"
+            fi
+            echo "::endgroup::"
+          }
+
+          run_diag 60 npm run check:fingerprint-catalog
+          run_diag 60 npm run check:homey-guidelines
+          run_diag 60 npm run check:button-flows
+          run_diag 180 node .github/scripts/fetch-gmail-diagnostics.js
+          run_diag 90 node scripts/automation/dashboard-monitor.js --latest --json
+          run_diag 60 node .github/scripts/privacy-redactor.js diagnostics .github/state/diagnostics-report.json .github/state/diagnostics-crossref.yml .github/state/homey-device-report.json .github/state/dashboard-monitor-report.json screenshots/full-diag-report.json
+          run_diag 60 node scripts/ci/diagnostic-history-gate.js --json
+
+      - name: Upload promote screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: publish-promote-screenshots
+          path: screenshots/
+          retention-days: 7
+          if-no-files-found: ignore
+
+      - name: Post update to Homey Community Forum
+        if: steps.pat.outputs.ok == 'true'
+        continue-on-error: true
+        env:
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+          APP_VERSION: ${{ steps.bump.outputs.version }}
+          CHANGELOG: ${{ steps.cl.outputs.text }}
+          PUBLISH_URL: ${{ steps.pub.outputs.url || 'https://homey.app/a/com.dlnraja.tuya.zigbee/test/' }}
+        run: node .github/scripts/post-forum-update.js
+
+      - name: Summary
+        if: always()
+        run: |
+          APP_ID=$(node -p "require('./app.json').id" 2>/dev/null || echo "com.dlnraja.tuya.zigbee")
+          if [ "${{ steps.pat.outputs.ok }}" == "true" ]; then
+            echo "## Published v${{ steps.bump.outputs.version }}" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "**Changelog:** ${{ steps.cl.outputs.text }}" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "Manage: ${{ steps.pub.outputs.url }}" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "[Install test version](https://homey.app/a/$APP_ID/test/)" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "## Validated only (HOMEY_PAT not set)" >> $GITHUB_STEP_SUMMARY
+            echo "Add secret from https://tools.developer.homey.app/me" >> $GITHUB_STEP_SUMMARY
+          fi
