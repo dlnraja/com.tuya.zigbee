@@ -36,7 +36,7 @@ class GasSensorDevice extends UnifiedSensorBase {
       // 
       4: { capability: 'measure_battery', divisor: 1 },
       9: { capability: 'alarm_tamper', transform: boolean() },
-      14: { internal: true, type: 'battery_low', transform: boolean() }, // SDK3: alarm_battery obsolÃ¨te
+      14: { internal: true, type: 'battery_low', transform: boolean() }, // SDK3: alarm_battery obsolète
 
       // 
       // v5.5.130: CONTROL FEATURES from Zigbee2MQTT

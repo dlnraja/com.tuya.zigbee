@@ -1,0 +1,135 @@
+# Delete All dlnraja Comments on Johan
+#
+# CARTE BLANCHE (P11) — deletes ALL comments by dlnraja (or dlnraja's bots)
+# on JohanBendz/com.tuya.zigbee.
+#
+# Uses GH_TOKEN from GitHub Secrets (only available in Actions).
+#
+# Usage:
+#   - Manual trigger from GitHub UI
+#   - workflow_dispatch with options:
+#       - max: limit number of deletions (default: all)
+#       - issue_filter: only delete on specific issue #
+#       - dry_run: true = preview only (no API calls)
+#
+# Safety:
+#   - DRY_RUN=true by default (preview)
+#   - explicit dry_run: false to actually delete
+#   - max + issue_filter for testing
+
+name: delete-johan-comments
+
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'DRY_RUN (preview only, no API calls)'
+        required: true
+        default: 'true'
+        type: choice
+        options:
+          - 'true'
+          - 'false'
+      max:
+        description: 'Max comments to delete (default: all 1171)'
+        required: false
+        default: '0'
+        type: string
+      issue_filter:
+        description: 'Only delete on issue # (default: all)'
+        required: false
+        default: ''
+        type: string
+
+concurrency:
+  group: delete-johan-comments
+  cancel-in-progress: true
+
+jobs:
+  delete:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: read
+    env:
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}
+      DRY_RUN: ${{ github.event.inputs.dry_run }}
+      MAX: ${{ github.event.inputs.max || '0' }}
+      ISSUE_FILTER: ${{ github.event.inputs.issue_filter || '' }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Verify GH_TOKEN
+        if: env.DRY_RUN != 'true'
+        run: |
+          if [ -z "$GH_TOKEN" ]; then
+            echo "::error::GH_TOKEN secret is not set"
+            exit 1
+          fi
+          echo "✓ GH_TOKEN is set (length: ${#GH_TOKEN})"
+
+      - name: Install deps
+        run: npm ci --prefer-offline --no-audit 2>&1 || npm install --no-audit
+
+      - name: Collect comments (if not already done)
+        run: |
+          if [ ! -f .github/state/johan-comments-to-delete.json ]; then
+            node tools/ci/collect-johan-comments-to-delete.js
+          else
+            echo "✓ List already exists"
+          fi
+
+      - name: Delete comments
+        id: delete
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          DRY_RUN: ${{ github.event.inputs.dry_run }}
+          MAX: ${{ github.event.inputs.max || '0' }}
+          ISSUE_FILTER: ${{ github.event.inputs.issue_filter || '' }}
+        run: |
+          if [ "$DRY_RUN" = "true" ]; then
+            echo "DRY_RUN=true → review mode (no API calls)"
+            node tools/ci/delete-johan-comments.js
+          else
+            echo "DRY_RUN=false → actually deleting"
+            ARGS=""
+            [ -n "$MAX" ] && [ "$MAX" != "0" ] && ARGS="$ARGS --max=$MAX"
+            [ -n "$ISSUE_FILTER" ] && ARGS="$ARGS"
+            export ISSUE_FILTER="$ISSUE_FILTER"
+            node tools/ci/delete-johan-comments.js $ARGS
+          fi
+
+      - name: Upload report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: johan-comments-deletion-report-${{ github.run_id }}
+          path: |
+            .github/state/johan-comments-deletion-report.json
+            .github/state/johan-comments-to-delete.json
+          if-no-files-found: ignore
+          retention-days: 30
+
+      - name: Summary
+        if: always()
+        run: |
+          if [ -f .github/state/johan-comments-deletion-report.json ]; then
+            echo "## 🗑️ Johan Comments Deletion"
+            echo ""
+            echo "Mode: ${{ github.event.inputs.dry_run == 'true' && 'DRY_RUN' || 'DELETE' }}"
+            echo "Max: ${{ github.event.inputs.max || 'all' }}"
+            echo "Filter: ${{ github.event.inputs.issue_filter || 'all' }}"
+            echo ""
+            cat .github/state/johan-comments-deletion-report.json | head -10
+          fi
+          echo ""
+          echo "Run: ${{ github.run_id }}"

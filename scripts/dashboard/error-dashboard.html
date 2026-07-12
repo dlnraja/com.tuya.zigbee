@@ -97,47 +97,46 @@
 <body>
 
 <h1>Error Dashboard</h1>
-<p class="subtitle">Universal Tuya Zigbee - Codebase Anti-Pattern &amp; Error Scan | 2026-06-18 09:33:54</p>
+<p class="subtitle">Universal Tuya Zigbee - Codebase Anti-Pattern &amp; Error Scan | 2026-07-12 09:50:01</p>
 
 <div class="nav-links"><a href="master-dashboard.html">Master Dashboard</a> | <a href="coverage-dashboard.html">Coverage</a> | <a href="driver-dashboard.html">Drivers</a> | <a href="dependency-dashboard.html">Dependencies</a> | <span style="color:#f0f6fc;font-weight:600">Errors</span> | <a href="performance-dashboard.html">Performance</a></div>
 
 <div class="summary-bar">
 <div class="summary-item">
-  <div class="num" style="color:#f85149">339</div>
+  <div class="num" style="color:#f85149">326</div>
   <div class="label">Errors</div>
 </div>
 <div class="summary-item">
-  <div class="num" style="color:#d29922">267</div>
+  <div class="num" style="color:#d29922">255</div>
   <div class="label">Warnings</div>
 </div>
 <div class="summary-item">
-  <div class="num" style="color:#58a6ff">55</div>
+  <div class="num" style="color:#58a6ff">59</div>
   <div class="label">Info</div>
 </div>
 <div class="summary-item">
-  <div class="num" style="color:#3fb950">559</div>
+  <div class="num" style="color:#3fb950">533</div>
   <div class="label">Auto-Fixable</div>
 </div>
 <div class="summary-item">
-  <div class="num" style="color:#bc8cff">9</div>
+  <div class="num" style="color:#bc8cff">8</div>
   <div class="label">Rules Triggered</div>
 </div>
 </div>
 <div class="section">
-<h2>Rule Breakdown (9 rules triggered)</h2>
+<h2>Rule Breakdown (8 rules triggered)</h2>
 <div style="max-height:500px;overflow-y:auto">
 <table>
 <thead><tr><th>Rule</th><th>Severity</th><th>Category</th><th>Count</th><th>Fixable</th></tr></thead>
 <tbody>
-<tr><td><span style="font-family:monospace;color:#58a6ff">RAW_SET_CAPABILITY</span></td><td><span class="tag tag-red">error</span></td><td>lifecycle</td><td>135</td><td><span class="tag tag-green">AUTO-FIX</span></td></tr>
-<tr><td><span style="font-family:monospace;color:#58a6ff">MISSING_DESTROY_GUARD</span></td><td><span class="tag tag-red">error</span></td><td>lifecycle</td><td>115</td><td><span class="tag tag-green">AUTO-FIX</span></td></tr>
+<tr><td><span style="font-family:monospace;color:#58a6ff">RAW_SET_CAPABILITY</span></td><td><span class="tag tag-red">error</span></td><td>lifecycle</td><td>125</td><td><span class="tag tag-green">AUTO-FIX</span></td></tr>
+<tr><td><span style="font-family:monospace;color:#58a6ff">MISSING_DESTROY_GUARD</span></td><td><span class="tag tag-red">error</span></td><td>lifecycle</td><td>105</td><td><span class="tag tag-green">AUTO-FIX</span></td></tr>
 <tr><td><span style="font-family:monospace;color:#58a6ff">BANNED_WILDCARD_FP</span></td><td><span class="tag tag-red">error</span></td><td>fingerprint</td><td>42</td><td><span style="color:#8b949e">manual</span></td></tr>
-<tr><td><span style="font-family:monospace;color:#58a6ff">BANNED_ZB_MODELID</span></td><td><span class="tag tag-red">error</span></td><td>settings-key</td><td>25</td><td><span class="tag tag-green">AUTO-FIX</span></td></tr>
-<tr><td><span style="font-family:monospace;color:#58a6ff">BANNED_ZB_MANUFACTURERNAME</span></td><td><span class="tag tag-red">error</span></td><td>settings-key</td><td>17</td><td><span class="tag tag-green">AUTO-FIX</span></td></tr>
-<tr><td><span style="font-family:monospace;color:#58a6ff">BANNED_LINEAR_BATTERY</span></td><td><span class="tag tag-red">error</span></td><td>anti-pattern</td><td>5</td><td><span style="color:#8b949e">manual</span></td></tr>
-<tr><td><span style="font-family:monospace;color:#58a6ff">MISSING_MARK_APP_COMMAND</span></td><td><span class="tag tag-yellow">warning</span></td><td>bidirectional-sync</td><td>258</td><td><span class="tag tag-green">AUTO-FIX</span></td></tr>
-<tr><td><span style="font-family:monospace;color:#58a6ff">GLOBAL_SETTIMEOUT</span></td><td><span class="tag tag-yellow">warning</span></td><td>lifecycle</td><td>9</td><td><span class="tag tag-green">AUTO-FIX</span></td></tr>
-<tr><td><span style="font-family:monospace;color:#58a6ff">HARDCODED_DP_ID</span></td><td><span class="tag tag-blue">info</span></td><td>maintainability</td><td>55</td><td><span style="color:#8b949e">manual</span></td></tr>
+<tr><td><span style="font-family:monospace;color:#58a6ff">BANNED_ZB_MODELID</span></td><td><span class="tag tag-red">error</span></td><td>settings-key</td><td>27</td><td><span class="tag tag-green">AUTO-FIX</span></td></tr>
+<tr><td><span style="font-family:monospace;color:#58a6ff">BANNED_ZB_MANUFACTURERNAME</span></td><td><span class="tag tag-red">error</span></td><td>settings-key</td><td>21</td><td><span class="tag tag-green">AUTO-FIX</span></td></tr>
+<tr><td><span style="font-family:monospace;color:#58a6ff">BANNED_LINEAR_BATTERY</span></td><td><span class="tag tag-red">error</span></td><td>anti-pattern</td><td>6</td><td><span style="color:#8b949e">manual</span></td></tr>
+<tr><td><span style="font-family:monospace;color:#58a6ff">MISSING_MARK_APP_COMMAND</span></td><td><span class="tag tag-yellow">warning</span></td><td>bidirectional-sync</td><td>255</td><td><span class="tag tag-green">AUTO-FIX</span></td></tr>
+<tr><td><span style="font-family:monospace;color:#58a6ff">HARDCODED_DP_ID</span></td><td><span class="tag tag-blue">info</span></td><td>maintainability</td><td>59</td><td><span style="color:#8b949e">manual</span></td></tr>
 </tbody>
 </table>
 </div>
@@ -148,34 +147,44 @@
     <div class="grid-sm">
       
       <div class="card">
-        <div style="font-weight:600;color:#79c0ff">lifecycle</div>
-        <div style="font-size:0.85em;margin:4px 0">
-          <span class="tag tag-red">250 E</span>
-          <span class="tag tag-yellow">9 W</span>
-          <span class="tag tag-blue">0 I</span>
-          <span style="margin-left:8px;color:#8b949e">Total: 259</span>
-        </div>
-        <div class="bar" style="width:100%"><div class="bar-fill" style="width:39.183055975794254%;background:#f85149"></div></div>
-      </div>
-      <div class="card">
         <div style="font-weight:600;color:#79c0ff">bidirectional-sync</div>
         <div style="font-size:0.85em;margin:4px 0">
           <span class="tag tag-red">0 E</span>
-          <span class="tag tag-yellow">258 W</span>
+          <span class="tag tag-yellow">255 W</span>
           <span class="tag tag-blue">0 I</span>
-          <span style="margin-left:8px;color:#8b949e">Total: 258</span>
+          <span style="margin-left:8px;color:#8b949e">Total: 255</span>
         </div>
-        <div class="bar" style="width:100%"><div class="bar-fill" style="width:39.03177004538578%;background:#d29922"></div></div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:39.84375%;background:#d29922"></div></div>
+      </div>
+      <div class="card">
+        <div style="font-weight:600;color:#79c0ff">lifecycle</div>
+        <div style="font-size:0.85em;margin:4px 0">
+          <span class="tag tag-red">230 E</span>
+          <span class="tag tag-yellow">0 W</span>
+          <span class="tag tag-blue">0 I</span>
+          <span style="margin-left:8px;color:#8b949e">Total: 230</span>
+        </div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:35.9375%;background:#f85149"></div></div>
       </div>
       <div class="card">
         <div style="font-weight:600;color:#79c0ff">maintainability</div>
         <div style="font-size:0.85em;margin:4px 0">
           <span class="tag tag-red">0 E</span>
           <span class="tag tag-yellow">0 W</span>
-          <span class="tag tag-blue">55 I</span>
-          <span style="margin-left:8px;color:#8b949e">Total: 55</span>
+          <span class="tag tag-blue">59 I</span>
+          <span style="margin-left:8px;color:#8b949e">Total: 59</span>
         </div>
-        <div class="bar" style="width:100%"><div class="bar-fill" style="width:8.32072617246596%;background:#58a6ff"></div></div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:9.21875%;background:#58a6ff"></div></div>
+      </div>
+      <div class="card">
+        <div style="font-weight:600;color:#79c0ff">settings-key</div>
+        <div style="font-size:0.85em;margin:4px 0">
+          <span class="tag tag-red">48 E</span>
+          <span class="tag tag-yellow">0 W</span>
+          <span class="tag tag-blue">0 I</span>
+          <span style="margin-left:8px;color:#8b949e">Total: 48</span>
+        </div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:7.5%;background:#f85149"></div></div>
       </div>
       <div class="card">
         <div style="font-weight:600;color:#79c0ff">fingerprint</div>
@@ -185,27 +194,17 @@
           <span class="tag tag-blue">0 I</span>
           <span style="margin-left:8px;color:#8b949e">Total: 42</span>
         </div>
-        <div class="bar" style="width:100%"><div class="bar-fill" style="width:6.354009077155824%;background:#f85149"></div></div>
-      </div>
-      <div class="card">
-        <div style="font-weight:600;color:#79c0ff">settings-key</div>
-        <div style="font-size:0.85em;margin:4px 0">
-          <span class="tag tag-red">42 E</span>
-          <span class="tag tag-yellow">0 W</span>
-          <span class="tag tag-blue">0 I</span>
-          <span style="margin-left:8px;color:#8b949e">Total: 42</span>
-        </div>
-        <div class="bar" style="width:100%"><div class="bar-fill" style="width:6.354009077155824%;background:#f85149"></div></div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:6.5625%;background:#f85149"></div></div>
       </div>
       <div class="card">
         <div style="font-weight:600;color:#79c0ff">anti-pattern</div>
         <div style="font-size:0.85em;margin:4px 0">
-          <span class="tag tag-red">5 E</span>
+          <span class="tag tag-red">6 E</span>
           <span class="tag tag-yellow">0 W</span>
           <span class="tag tag-blue">0 I</span>
-          <span style="margin-left:8px;color:#8b949e">Total: 5</span>
+          <span style="margin-left:8px;color:#8b949e">Total: 6</span>
         </div>
-        <div class="bar" style="width:100%"><div class="bar-fill" style="width:0.7564296520423601%;background:#f85149"></div></div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:0.9375%;background:#f85149"></div></div>
       </div>
     </div>
   
@@ -217,12 +216,12 @@
 <thead><tr><th>File</th><th>Issues</th><th>Errors</th><th>Warnings</th><th>Info</th></tr></thead>
 <tbody>
 <tr><td><span style="font-family:monospace;color:#58a6ff">lib/registry/CentralizedDPRegistry.js</span></td><td>23</td><td>-</td><td>-</td><td>23</td></tr>
-<tr><td><span style="font-family:monospace;color:#58a6ff">lib/battery/UnifiedBatteryHandler.js</span></td><td>14</td><td>3</td><td>-</td><td>11</td></tr>
-<tr><td><span style="font-family:monospace;color:#58a6ff">lib/devices/BaseUnifiedDevice.js</span></td><td>14</td><td>14</td><td>-</td><td>-</td></tr>
+<tr><td><span style="font-family:monospace;color:#58a6ff">lib/battery/UnifiedBatteryHandler.js</span></td><td>16</td><td>3</td><td>-</td><td>13</td></tr>
+<tr><td><span style="font-family:monospace;color:#58a6ff">lib/devices/BaseUnifiedDevice.js</span></td><td>15</td><td>15</td><td>-</td><td>-</td></tr>
+<tr><td><span style="font-family:monospace;color:#58a6ff">lib/battery/BatteryProfileDatabase.js</span></td><td>13</td><td>-</td><td>-</td><td>13</td></tr>
 <tr><td><span style="font-family:monospace;color:#58a6ff">drivers/switch_usb_dongle/driver.js</span></td><td>12</td><td>12</td><td>-</td><td>-</td></tr>
 <tr><td><span style="font-family:monospace;color:#58a6ff">drivers/contact_sensor/device.js</span></td><td>11</td><td>11</td><td>-</td><td>-</td></tr>
 <tr><td><span style="font-family:monospace;color:#58a6ff">drivers/sensor_contact_water/device.js</span></td><td>11</td><td>11</td><td>-</td><td>-</td></tr>
-<tr><td><span style="font-family:monospace;color:#58a6ff">lib/battery/BatteryProfileDatabase.js</span></td><td>11</td><td>-</td><td>-</td><td>11</td></tr>
 <tr><td><span style="font-family:monospace;color:#58a6ff">drivers/contact_sensor_zigbee/device.js</span></td><td>10</td><td>10</td><td>-</td><td>-</td></tr>
 <tr><td><span style="font-family:monospace;color:#58a6ff">drivers/sensor_climate_contact/device.js</span></td><td>10</td><td>10</td><td>-</td><td>-</td></tr>
 <tr><td><span style="font-family:monospace;color:#58a6ff">drivers/sensor_climate_lcdtemphumidsensor/device.js</span></td><td>10</td><td>10</td><td>-</td><td>-</td></tr>
@@ -231,9 +230,6 @@
 <tr><td><span style="font-family:monospace;color:#58a6ff">drivers/wifi_robot_vacuum/device.js</span></td><td>10</td><td>-</td><td>10</td><td>-</td></tr>
 <tr><td><span style="font-family:monospace;color:#58a6ff">drivers/air_purifier_contact/device.js</span></td><td>9</td><td>9</td><td>-</td><td>-</td></tr>
 <tr><td><span style="font-family:monospace;color:#58a6ff">drivers/device_air_purifier_siren/driver.js</span></td><td>8</td><td>8</td><td>-</td><td>-</td></tr>
-<tr><td><span style="font-family:monospace;color:#58a6ff">drivers/device_plug_smart/driver.js</span></td><td>8</td><td>6</td><td>2</td><td>-</td></tr>
-<tr><td><span style="font-family:monospace;color:#58a6ff">drivers/sensor_contact_plug/driver.js</span></td><td>8</td><td>6</td><td>2</td><td>-</td></tr>
-<tr><td><span style="font-family:monospace;color:#58a6ff">drivers/sensor_presence_radar/device.js</span></td><td>8</td><td>8</td><td>-</td><td>-</td></tr>
 <tr><td><span style="font-family:monospace;color:#58a6ff">drivers/water_leak_sensor/device.js</span></td><td>7</td><td>7</td><td>-</td><td>-</td></tr>
 <tr><td><span style="font-family:monospace;color:#58a6ff">drivers/bulb_dimmable/driver.js</span></td><td>6</td><td>6</td><td>-</td><td>-</td></tr>
 <tr><td><span style="font-family:monospace;color:#58a6ff">drivers/bulb_dimmable_dimmer/driver.js</span></td><td>6</td><td>6</td><td>-</td><td>-</td></tr>
@@ -241,19 +237,22 @@
 <tr><td><span style="font-family:monospace;color:#58a6ff">drivers/bulb_rgb_led/driver.js</span></td><td>6</td><td>6</td><td>-</td><td>-</td></tr>
 <tr><td><span style="font-family:monospace;color:#58a6ff">drivers/bulb_tunable_white/driver.js</span></td><td>6</td><td>6</td><td>-</td><td>-</td></tr>
 <tr><td><span style="font-family:monospace;color:#58a6ff">drivers/bulb_white/driver.js</span></td><td>6</td><td>6</td><td>-</td><td>-</td></tr>
+<tr><td><span style="font-family:monospace;color:#58a6ff">drivers/button_wireless_plug/driver.js</span></td><td>6</td><td>6</td><td>-</td><td>-</td></tr>
+<tr><td><span style="font-family:monospace;color:#58a6ff">drivers/device_din_rail_meter/driver.js</span></td><td>6</td><td>6</td><td>-</td><td>-</td></tr>
+<tr><td><span style="font-family:monospace;color:#58a6ff">drivers/device_plug_smart/driver.js</span></td><td>6</td><td>6</td><td>-</td><td>-</td></tr>
 </tbody>
 </table>
 </div>
 </div>
 <div class="section">
-<h2>All Findings (661)</h2>
+<h2>All Findings (640)</h2>
 
     <div class="filter-controls">
-      <button class="filter-btn active" onclick="filterHits('all')">All (661)</button>
-      <button class="filter-btn" onclick="filterHits('error')">Errors (339)</button>
-      <button class="filter-btn" onclick="filterHits('warning')">Warnings (267)</button>
-      <button class="filter-btn" onclick="filterHits('info')">Info (55)</button>
-      <button class="filter-btn" onclick="filterHits('fixable')">Fixable (559)</button>
+      <button class="filter-btn active" onclick="filterHits('all')">All (640)</button>
+      <button class="filter-btn" onclick="filterHits('error')">Errors (326)</button>
+      <button class="filter-btn" onclick="filterHits('warning')">Warnings (255)</button>
+      <button class="filter-btn" onclick="filterHits('info')">Info (59)</button>
+      <button class="filter-btn" onclick="filterHits('fixable')">Fixable (533)</button>
     </div>
     <div id="hits-list" class="error-list">
       
@@ -263,7 +262,7 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">drivers/air_purifier/device.js</span>
-          <span style="color:#8b949e">:25</span>
+          <span style="color:#8b949e">:29</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Capability listener without markAppCommand()</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">this.registerCapabilityListener ('onoff', async (value) =&gt; { this.log(`[AirPurifier] Setting state t</div>
@@ -274,7 +273,7 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">drivers/air_purifier/device.js</span>
-          <span style="color:#8b949e">:29</span>
+          <span style="color:#8b949e">:33</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Capability listener without markAppCommand()</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">this.registerCapabilityListener('dim', async (value) =&gt; {</div>
@@ -719,28 +718,6 @@
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Capability listener without markAppCommand()</div>
         
       </div>
-      <div class="error-item hit-entry" data-severity="warning" data-fixable="true" style="border-color:#9e6a03">
-        <span class="tag tag-yellow">warning</span>
-        <span style="font-family:monospace;color:#58a6ff;margin-left:4px">GLOBAL_SETTIMEOUT</span>
-        <span class="tag tag-green">AUTO-FIX</span>
-        <div style="margin-top:2px">
-          <span style="color:#58a6ff;font-family:monospace">drivers/blaster_remote/device.js</span>
-          <span style="color:#8b949e">:125</span>
-        </div>
-        <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Global setTimeout (use this.homey.setTimeout for device code)</div>
-        <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">setTimeout(() =&gt; {</div>
-      </div>
-      <div class="error-item hit-entry" data-severity="warning" data-fixable="true" style="border-color:#9e6a03">
-        <span class="tag tag-yellow">warning</span>
-        <span style="font-family:monospace;color:#58a6ff;margin-left:4px">GLOBAL_SETTIMEOUT</span>
-        <span class="tag tag-green">AUTO-FIX</span>
-        <div style="margin-top:2px">
-          <span style="color:#58a6ff;font-family:monospace">drivers/blaster_remote/device.js</span>
-          <span style="color:#8b949e">:208</span>
-        </div>
-        <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Global setTimeout (use this.homey.setTimeout for device code)</div>
-        <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">this._learnTimeout = setTimeout(() =&gt; {</div>
-      </div>
       <div class="error-item hit-entry" data-severity="error" data-fixable="true" style="border-color:#da3633">
         <span class="tag tag-red">error</span>
         <span style="font-family:monospace;color:#58a6ff;margin-left:4px">MISSING_DESTROY_GUARD</span>
@@ -879,7 +856,7 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">drivers/bulb_rgb/device.js</span>
-          <span style="color:#8b949e">:77</span>
+          <span style="color:#8b949e">:82</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Capability listener without markAppCommand()</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">if (this.hasCapability('light_hue')) {this.registerCapabilityListener('light_hue', async () =&gt; await</div>
@@ -890,7 +867,7 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">drivers/bulb_rgb/device.js</span>
-          <span style="color:#8b949e">:78</span>
+          <span style="color:#8b949e">:83</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Capability listener without markAppCommand()</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">if (this.hasCapability('light_saturation')) {this.registerCapabilityListener('light_saturation', asy</div>
@@ -1330,7 +1307,7 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">drivers/button_wireless_usb/device.js</span>
-          <span style="color:#8b949e">:98</span>
+          <span style="color:#8b949e">:99</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Capability listener without markAppCommand()</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">this.registerCapabilityListener(capabilityId, async value =&gt; {</div>
@@ -1352,7 +1329,7 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">drivers/christmas_lights/device.js</span>
-          <span style="color:#8b949e">:16</span>
+          <span style="color:#8b949e">:20</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Capability listener without markAppCommand()</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">this.registerCapabilityListener('onoff', async (value) =&gt; {</div>
@@ -1363,7 +1340,7 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">drivers/christmas_lights/device.js</span>
-          <span style="color:#8b949e">:21</span>
+          <span style="color:#8b949e">:25</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Capability listener without markAppCommand()</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">this.registerCapabilityListener('lidl_xmas_mode', async (mode) =&gt; {</div>
@@ -1374,7 +1351,7 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">drivers/christmas_lights/device.js</span>
-          <span style="color:#8b949e">:39</span>
+          <span style="color:#8b949e">:43</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Capability listener without markAppCommand()</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">this.registerCapabilityListener('dim', async (dim) =&gt; {</div>
@@ -1389,28 +1366,6 @@
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Capability listener without markAppCommand()</div>
         
-      </div>
-      <div class="error-item hit-entry" data-severity="error" data-fixable="true" style="border-color:#da3633">
-        <span class="tag tag-red">error</span>
-        <span style="font-family:monospace;color:#58a6ff;margin-left:4px">MISSING_DESTROY_GUARD</span>
-        <span class="tag tag-green">AUTO-FIX</span>
-        <div style="margin-top:2px">
-          <span style="color:#58a6ff;font-family:monospace">drivers/climate_sensor_gas/device.js</span>
-          <span style="color:#8b949e">:39</span>
-        </div>
-        <div style="color:#8b949e;font-size:0.85em;margin-top:1px">setCapabilityValue without _destroyed guard</div>
-        <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">device.setCapabilityValue('alarm_gas', true).catch(() =&gt; {});</div>
-      </div>
-      <div class="error-item hit-entry" data-severity="error" data-fixable="true" style="border-color:#da3633">
-        <span class="tag tag-red">error</span>
-        <span style="font-family:monospace;color:#58a6ff;margin-left:4px">RAW_SET_CAPABILITY</span>
-        <span class="tag tag-green">AUTO-FIX</span>
-        <div style="margin-top:2px">
-          <span style="color:#58a6ff;font-family:monospace">drivers/climate_sensor_gas/device.js</span>
-          <span style="color:#8b949e">:39</span>
-        </div>
-        <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Raw setCapabilityValue (use safeSetCapabilityValue)</div>
-        <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">device.setCapabilityValue('alarm_gas', true).catch(() =&gt; {});</div>
       </div>
       <div class="error-item hit-entry" data-severity="warning" data-fixable="true" style="border-color:#9e6a03">
         <span class="tag tag-yellow">warning</span>
@@ -1440,7 +1395,7 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">drivers/contact_sensor/device.js</span>
-          <span style="color:#8b949e">:244</span>
+          <span style="color:#8b949e">:243</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">setCapabilityValue without _destroyed guard</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">await super.setCapabilityValue('alarm_contact', newValue).catch(() =&gt; { });</div>
@@ -1451,7 +1406,7 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">drivers/contact_sensor/device.js</span>
-          <span style="color:#8b949e">:283</span>
+          <span style="color:#8b949e">:282</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">setCapabilityValue without _destroyed guard</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">async setCapabilityValue(capability, value) {</div>
@@ -1462,7 +1417,7 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">drivers/contact_sensor/device.js</span>
-          <span style="color:#8b949e">:384</span>
+          <span style="color:#8b949e">:383</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">setCapabilityValue without _destroyed guard</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">return super.setCapabilityValue(capability, finalValue);</div>
@@ -1473,7 +1428,7 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">drivers/contact_sensor/device.js</span>
-          <span style="color:#8b949e">:388</span>
+          <span style="color:#8b949e">:387</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">setCapabilityValue without _destroyed guard</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">return super.setCapabilityValue(capability, value);</div>
@@ -1484,7 +1439,7 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">drivers/contact_sensor/device.js</span>
-          <span style="color:#8b949e">:244</span>
+          <span style="color:#8b949e">:243</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Raw setCapabilityValue (use safeSetCapabilityValue)</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">await super.setCapabilityValue('alarm_contact', newValue).catch(() =&gt; { });</div>
@@ -1495,7 +1450,7 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">drivers/contact_sensor/device.js</span>
-          <span style="color:#8b949e">:283</span>
+          <span style="color:#8b949e">:282</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Raw setCapabilityValue (use safeSetCapabilityValue)</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">async setCapabilityValue(capability, value) {</div>
@@ -1506,7 +1461,7 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">drivers/contact_sensor/device.js</span>
-          <span style="color:#8b949e">:329</span>
+          <span style="color:#8b949e">:328</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Raw setCapabilityValue (use safeSetCapabilityValue)</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">await super.setCapabilityValue(capability, finalValue).catch(() =&gt; { });</div>
@@ -1517,7 +1472,7 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">drivers/contact_sensor/device.js</span>
-          <span style="color:#8b949e">:363</span>
+          <span style="color:#8b949e">:362</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Raw setCapabilityValue (use safeSetCapabilityValue)</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">await super.setCapabilityValue(capability, finalValue).catch(() =&gt; { });</div>
@@ -1528,7 +1483,7 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">drivers/contact_sensor/device.js</span>
-          <span style="color:#8b949e">:384</span>
+          <span style="color:#8b949e">:383</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Raw setCapabilityValue (use safeSetCapabilityValue)</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">return super.setCapabilityValue(capability, finalValue);</div>
@@ -1539,7 +1494,7 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">drivers/contact_sensor/device.js</span>
-          <span style="color:#8b949e">:388</span>
+          <span style="color:#8b949e">:387</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Raw setCapabilityValue (use safeSetCapabilityValue)</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">return super.setCapabilityValue(capability, value);</div>
@@ -1550,7 +1505,7 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">drivers/contact_sensor/device.js</span>
-          <span style="color:#8b949e">:404</span>
+          <span style="color:#8b949e">:403</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Raw setCapabilityValue (use safeSetCapabilityValue)</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">await super.setCapabilityValue('measure_battery', parseFloat(battery)).catch(() =&gt; { });</div>
@@ -1792,7 +1747,7 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">drivers/device_air_purifier_humidifier/device.js</span>
-          <span style="color:#8b949e">:36</span>
+          <span style="color:#8b949e">:40</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Capability listener without markAppCommand()</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">this.registerCapabilityListener('onoff', async (value) =&gt; {</div>
@@ -1803,7 +1758,7 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">drivers/device_air_purifier_humidifier/device.js</span>
-          <span style="color:#8b949e">:40</span>
+          <span style="color:#8b949e">:44</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Capability listener without markAppCommand()</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">this.registerCapabilityListener('dim', async (value) =&gt; {</div>
@@ -1814,7 +1769,7 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">drivers/device_air_purifier_humidifier/device.js</span>
-          <span style="color:#8b949e">:46</span>
+          <span style="color:#8b949e">:50</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Capability listener without markAppCommand()</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">this.registerCapabilityListener('dim.humidity', async (value) =&gt; {</div>
@@ -2118,33 +2073,11 @@
       </div>
       <div class="error-item hit-entry" data-severity="warning" data-fixable="true" style="border-color:#9e6a03">
         <span class="tag tag-yellow">warning</span>
-        <span style="font-family:monospace;color:#58a6ff;margin-left:4px">GLOBAL_SETTIMEOUT</span>
-        <span class="tag tag-green">AUTO-FIX</span>
-        <div style="margin-top:2px">
-          <span style="color:#58a6ff;font-family:monospace">drivers/device_plug_smart/driver.js</span>
-          <span style="color:#8b949e">:101</span>
-        </div>
-        <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Global setTimeout (use this.homey.setTimeout for device code)</div>
-        <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">setTimeout(() =&gt; args.device.triggerCapabilityListener('onoff', true).catch(() =&gt; {}), delay);</div>
-      </div>
-      <div class="error-item hit-entry" data-severity="warning" data-fixable="true" style="border-color:#9e6a03">
-        <span class="tag tag-yellow">warning</span>
-        <span style="font-family:monospace;color:#58a6ff;margin-left:4px">GLOBAL_SETTIMEOUT</span>
-        <span class="tag tag-green">AUTO-FIX</span>
-        <div style="margin-top:2px">
-          <span style="color:#58a6ff;font-family:monospace">drivers/device_plug_smart/driver.js</span>
-          <span style="color:#8b949e">:115</span>
-        </div>
-        <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Global setTimeout (use this.homey.setTimeout for device code)</div>
-        <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">setTimeout(() =&gt; args.device.triggerCapabilityListener('onoff', false).catch(() =&gt; {}), delay);</div>
-      </div>
-      <div class="error-item hit-entry" data-severity="warning" data-fixable="true" style="border-color:#9e6a03">
-        <span class="tag tag-yellow">warning</span>
         <span style="font-family:monospace;color:#58a6ff;margin-left:4px">MISSING_MARK_APP_COMMAND</span>
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">drivers/dimmer_1_gang_tuya/device.js</span>
-          <span style="color:#8b949e">:56</span>
+          <span style="color:#8b949e">:58</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Capability listener without markAppCommand()</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">this.registerCapabilityListener('onoff', async (value) =&gt; {</div>
@@ -2155,7 +2088,7 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">drivers/dimmer_1_gang_tuya/device.js</span>
-          <span style="color:#8b949e">:66</span>
+          <span style="color:#8b949e">:68</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Capability listener without markAppCommand()</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">this.registerCapabilityListener('dim', async (value) =&gt; {</div>
@@ -2166,61 +2099,6 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">drivers/dimmer_1_gang_tuya/device.js</span>
-          
-        </div>
-        <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Capability listener without markAppCommand()</div>
-        
-      </div>
-      <div class="error-item hit-entry" data-severity="warning" data-fixable="true" style="border-color:#9e6a03">
-        <span class="tag tag-yellow">warning</span>
-        <span style="font-family:monospace;color:#58a6ff;margin-left:4px">MISSING_MARK_APP_COMMAND</span>
-        <span class="tag tag-green">AUTO-FIX</span>
-        <div style="margin-top:2px">
-          <span style="color:#58a6ff;font-family:monospace">drivers/dimmer_2_gang_tuya/device.js</span>
-          <span style="color:#8b949e">:62</span>
-        </div>
-        <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Capability listener without markAppCommand()</div>
-        <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">this.registerCapabilityListener('onoff', async (value) =&gt; {</div>
-      </div>
-      <div class="error-item hit-entry" data-severity="warning" data-fixable="true" style="border-color:#9e6a03">
-        <span class="tag tag-yellow">warning</span>
-        <span style="font-family:monospace;color:#58a6ff;margin-left:4px">MISSING_MARK_APP_COMMAND</span>
-        <span class="tag tag-green">AUTO-FIX</span>
-        <div style="margin-top:2px">
-          <span style="color:#58a6ff;font-family:monospace">drivers/dimmer_2_gang_tuya/device.js</span>
-          <span style="color:#8b949e">:72</span>
-        </div>
-        <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Capability listener without markAppCommand()</div>
-        <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">this.registerCapabilityListener('dim', async (value) =&gt; {</div>
-      </div>
-      <div class="error-item hit-entry" data-severity="warning" data-fixable="true" style="border-color:#9e6a03">
-        <span class="tag tag-yellow">warning</span>
-        <span style="font-family:monospace;color:#58a6ff;margin-left:4px">MISSING_MARK_APP_COMMAND</span>
-        <span class="tag tag-green">AUTO-FIX</span>
-        <div style="margin-top:2px">
-          <span style="color:#58a6ff;font-family:monospace">drivers/dimmer_2_gang_tuya/device.js</span>
-          <span style="color:#8b949e">:101</span>
-        </div>
-        <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Capability listener without markAppCommand()</div>
-        <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">this.registerCapabilityListener('onoff', async (value) =&gt; {</div>
-      </div>
-      <div class="error-item hit-entry" data-severity="warning" data-fixable="true" style="border-color:#9e6a03">
-        <span class="tag tag-yellow">warning</span>
-        <span style="font-family:monospace;color:#58a6ff;margin-left:4px">MISSING_MARK_APP_COMMAND</span>
-        <span class="tag tag-green">AUTO-FIX</span>
-        <div style="margin-top:2px">
-          <span style="color:#58a6ff;font-family:monospace">drivers/dimmer_2_gang_tuya/device.js</span>
-          <span style="color:#8b949e">:111</span>
-        </div>
-        <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Capability listener without markAppCommand()</div>
-        <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">this.registerCapabilityListener('dim', async (value) =&gt; {</div>
-      </div>
-      <div class="error-item hit-entry" data-severity="warning" data-fixable="true" style="border-color:#9e6a03">
-        <span class="tag tag-yellow">warning</span>
-        <span style="font-family:monospace;color:#58a6ff;margin-left:4px">MISSING_MARK_APP_COMMAND</span>
-        <span class="tag tag-green">AUTO-FIX</span>
-        <div style="margin-top:2px">
-          <span style="color:#58a6ff;font-family:monospace">drivers/dimmer_2_gang_tuya/device.js</span>
           
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Capability listener without markAppCommand()</div>
@@ -2254,7 +2132,7 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">drivers/dimmer_wall_switch/device.js</span>
-          <span style="color:#8b949e">:32</span>
+          <span style="color:#8b949e">:33</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">setCapabilityValue without _destroyed guard</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">async setCapabilityValue(capability, value) {</div>
@@ -2265,7 +2143,7 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">drivers/dimmer_wall_switch/device.js</span>
-          <span style="color:#8b949e">:40</span>
+          <span style="color:#8b949e">:41</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">setCapabilityValue without _destroyed guard</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">return super.setCapabilityValue(capability, value);</div>
@@ -2276,7 +2154,7 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">drivers/dimmer_wall_switch/device.js</span>
-          <span style="color:#8b949e">:32</span>
+          <span style="color:#8b949e">:33</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Raw setCapabilityValue (use safeSetCapabilityValue)</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">async setCapabilityValue(capability, value) {</div>
@@ -2287,7 +2165,7 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">drivers/dimmer_wall_switch/device.js</span>
-          <span style="color:#8b949e">:40</span>
+          <span style="color:#8b949e">:41</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Raw setCapabilityValue (use safeSetCapabilityValue)</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">return super.setCapabilityValue(capability, value);</div>
@@ -2297,8 +2175,30 @@
         <span style="font-family:monospace;color:#58a6ff;margin-left:4px">MISSING_MARK_APP_COMMAND</span>
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
+          <span style="color:#58a6ff;font-family:monospace">drivers/doorbell/device.js</span>
+          <span style="color:#8b949e">:43</span>
+        </div>
+        <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Capability listener without markAppCommand()</div>
+        <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">this.registerCapabilityListener('alarm_generic', async (value) =&gt; {</div>
+      </div>
+      <div class="error-item hit-entry" data-severity="warning" data-fixable="true" style="border-color:#9e6a03">
+        <span class="tag tag-yellow">warning</span>
+        <span style="font-family:monospace;color:#58a6ff;margin-left:4px">MISSING_MARK_APP_COMMAND</span>
+        <span class="tag tag-green">AUTO-FIX</span>
+        <div style="margin-top:2px">
+          <span style="color:#58a6ff;font-family:monospace">drivers/doorbell/device.js</span>
+          
+        </div>
+        <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Capability listener without markAppCommand()</div>
+        
+      </div>
+      <div class="error-item hit-entry" data-severity="warning" data-fixable="true" style="border-color:#9e6a03">
+        <span class="tag tag-yellow">warning</span>
+        <span style="font-family:monospace;color:#58a6ff;margin-left:4px">MISSING_MARK_APP_COMMAND</span>
+        <span class="tag tag-green">AUTO-FIX</span>
+        <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">drivers/fan_controller/device.js</span>
-          <span style="color:#8b949e">:129</span>
+          <span style="color:#8b949e">:133</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Capability listener without markAppCommand()</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">this.registerCapabilityListener('dim', async (value) =&gt; {</div>
@@ -2309,7 +2209,7 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">drivers/fan_controller/device.js</span>
-          <span style="color:#8b949e">:141</span>
+          <span style="color:#8b949e">:145</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Capability listener without markAppCommand()</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">this.registerCapabilityListener('onoff', async (value) =&gt; {</div>
@@ -2500,28 +2400,6 @@
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Raw setCapabilityValue (use safeSetCapabilityValue)</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">async setCapabilityValue(capabilityId, value) {</div>
-      </div>
-      <div class="error-item hit-entry" data-severity="error" data-fixable="true" style="border-color:#da3633">
-        <span class="tag tag-red">error</span>
-        <span style="font-family:monospace;color:#58a6ff;margin-left:4px">MISSING_DESTROY_GUARD</span>
-        <span class="tag tag-green">AUTO-FIX</span>
-        <div style="margin-top:2px">
-          <span style="color:#58a6ff;font-family:monospace">drivers/gas_detector/device.js</span>
-          <span style="color:#8b949e">:44</span>
-        </div>
-        <div style="color:#8b949e;font-size:0.85em;margin-top:1px">setCapabilityValue without _destroyed guard</div>
-        <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">device.setCapabilityValue('alarm_gas', true).catch(() =&gt; {});</div>
-      </div>
-      <div class="error-item hit-entry" data-severity="error" data-fixable="true" style="border-color:#da3633">
-        <span class="tag tag-red">error</span>
-        <span style="font-family:monospace;color:#58a6ff;margin-left:4px">RAW_SET_CAPABILITY</span>
-        <span class="tag tag-green">AUTO-FIX</span>
-        <div style="margin-top:2px">
-          <span style="color:#58a6ff;font-family:monospace">drivers/gas_detector/device.js</span>
-          <span style="color:#8b949e">:44</span>
-        </div>
-        <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Raw setCapabilityValue (use safeSetCapabilityValue)</div>
-        <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">device.setCapabilityValue('alarm_gas', true).catch(() =&gt; {});</div>
       </div>
       <div class="error-item hit-entry" data-severity="warning" data-fixable="true" style="border-color:#9e6a03">
         <span class="tag tag-yellow">warning</span>
@@ -2727,7 +2605,7 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">drivers/hybrid_heater_thermostat/device.js</span>
-          <span style="color:#8b949e">:44</span>
+          <span style="color:#8b949e">:48</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Capability listener without markAppCommand()</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">this.registerCapabilityListener('onoff', async (value) =&gt; {</div>
@@ -2738,7 +2616,7 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">drivers/hybrid_heater_thermostat/device.js</span>
-          <span style="color:#8b949e">:54</span>
+          <span style="color:#8b949e">:58</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Capability listener without markAppCommand()</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">this.registerCapabilityListener('target_temperature', async (value) =&gt; {</div>
@@ -2749,7 +2627,7 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">drivers/hybrid_heater_thermostat/device.js</span>
-          <span style="color:#8b949e">:70</span>
+          <span style="color:#8b949e">:74</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Capability listener without markAppCommand()</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">this.registerCapabilityListener('thermostat_mode', async (value) =&gt; {</div>
@@ -3068,7 +2946,7 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">drivers/ir_blaster/device.js</span>
-          <span style="color:#8b949e">:155</span>
+          <span style="color:#8b949e">:181</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Capability listener without markAppCommand()</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">this.registerCapabilityListener('onoff', async (value) =&gt; {</div>
@@ -3079,7 +2957,7 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">drivers/ir_blaster/device.js</span>
-          <span style="color:#8b949e">:304</span>
+          <span style="color:#8b949e">:483</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Capability listener without markAppCommand()</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">this.registerCapabilityListener('button.learn_ir', async () =&gt; {</div>
@@ -3090,7 +2968,7 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">drivers/ir_blaster/device.js</span>
-          <span style="color:#8b949e">:311</span>
+          <span style="color:#8b949e">:490</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Capability listener without markAppCommand()</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">this.registerCapabilityListener('ir_protocol', async (protocol) =&gt; {</div>
@@ -3101,7 +2979,7 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">drivers/ir_blaster/device.js</span>
-          <span style="color:#8b949e">:318</span>
+          <span style="color:#8b949e">:497</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Capability listener without markAppCommand()</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">this.registerCapabilityListener('ir_frequency', async (frequency) =&gt; {</div>
@@ -3116,50 +2994,6 @@
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Capability listener without markAppCommand()</div>
         
-      </div>
-      <div class="error-item hit-entry" data-severity="error" data-fixable="true" style="border-color:#da3633">
-        <span class="tag tag-red">error</span>
-        <span style="font-family:monospace;color:#58a6ff;margin-left:4px">MISSING_DESTROY_GUARD</span>
-        <span class="tag tag-green">AUTO-FIX</span>
-        <div style="margin-top:2px">
-          <span style="color:#58a6ff;font-family:monospace">drivers/ir_blaster/irBlasterInit.js</span>
-          <span style="color:#8b949e">:24</span>
-        </div>
-        <div style="color:#8b949e;font-size:0.85em;margin-top:1px">setCapabilityValue without _destroyed guard</div>
-        <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">dev.setCapabilityValue('measure_battery', Math.round(v / 2)).catch(() =&gt; {});</div>
-      </div>
-      <div class="error-item hit-entry" data-severity="error" data-fixable="true" style="border-color:#da3633">
-        <span class="tag tag-red">error</span>
-        <span style="font-family:monospace;color:#58a6ff;margin-left:4px">MISSING_DESTROY_GUARD</span>
-        <span class="tag tag-green">AUTO-FIX</span>
-        <div style="margin-top:2px">
-          <span style="color:#58a6ff;font-family:monospace">drivers/ir_blaster/irBlasterInit.js</span>
-          <span style="color:#8b949e">:29</span>
-        </div>
-        <div style="color:#8b949e;font-size:0.85em;margin-top:1px">setCapabilityValue without _destroyed guard</div>
-        <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">dev.setCapabilityValue('measure_battery', Math.round(r.batteryPercentageRemaining / 2)).catch(() =&gt; </div>
-      </div>
-      <div class="error-item hit-entry" data-severity="error" data-fixable="true" style="border-color:#da3633">
-        <span class="tag tag-red">error</span>
-        <span style="font-family:monospace;color:#58a6ff;margin-left:4px">RAW_SET_CAPABILITY</span>
-        <span class="tag tag-green">AUTO-FIX</span>
-        <div style="margin-top:2px">
-          <span style="color:#58a6ff;font-family:monospace">drivers/ir_blaster/irBlasterInit.js</span>
-          <span style="color:#8b949e">:24</span>
-        </div>
-        <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Raw setCapabilityValue (use safeSetCapabilityValue)</div>
-        <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">dev.setCapabilityValue('measure_battery', Math.round(v / 2)).catch(() =&gt; {});</div>
-      </div>
-      <div class="error-item hit-entry" data-severity="error" data-fixable="true" style="border-color:#da3633">
-        <span class="tag tag-red">error</span>
-        <span style="font-family:monospace;color:#58a6ff;margin-left:4px">RAW_SET_CAPABILITY</span>
-        <span class="tag tag-green">AUTO-FIX</span>
-        <div style="margin-top:2px">
-          <span style="color:#58a6ff;font-family:monospace">drivers/ir_blaster/irBlasterInit.js</span>
-          <span style="color:#8b949e">:29</span>
-        </div>
-        <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Raw setCapabilityValue (use safeSetCapabilityValue)</div>
-        <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">dev.setCapabilityValue('measure_battery', Math.round(r.batteryPercentageRemaining / 2)).catch(() =&gt; </div>
       </div>
       <div class="error-item hit-entry" data-severity="warning" data-fixable="true" style="border-color:#9e6a03">
         <span class="tag tag-yellow">warning</span>
@@ -3189,7 +3023,7 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">drivers/led_controller_dimmable/device.js</span>
-          <span style="color:#8b949e">:162</span>
+          <span style="color:#8b949e">:166</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Capability listener without markAppCommand()</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">this.registerCapabilityListener('onoff', async (value) =&gt; {</div>
@@ -3200,7 +3034,7 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">drivers/led_controller_dimmable/device.js</span>
-          <span style="color:#8b949e">:184</span>
+          <span style="color:#8b949e">:188</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Capability listener without markAppCommand()</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">this.registerCapabilityListener('dim', async (value, opts) =&gt; {</div>
@@ -3288,7 +3122,7 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">drivers/light_bulb_rgb_rgbw/device.js</span>
-          <span style="color:#8b949e">:147</span>
+          <span style="color:#8b949e">:151</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Capability listener without markAppCommand()</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">this.registerCapabilityListener('light_hue', async () =&gt; await this._sendHSV());</div>
@@ -3299,7 +3133,7 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">drivers/light_bulb_rgb_rgbw/device.js</span>
-          <span style="color:#8b949e">:150</span>
+          <span style="color:#8b949e">:154</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Capability listener without markAppCommand()</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">this.registerCapabilityListener('light_saturation', async () =&gt; await this._sendHSV());</div>
@@ -3314,28 +3148,6 @@
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Capability listener without markAppCommand()</div>
         
-      </div>
-      <div class="error-item hit-entry" data-severity="error" data-fixable="true" style="border-color:#da3633">
-        <span class="tag tag-red">error</span>
-        <span style="font-family:monospace;color:#58a6ff;margin-left:4px">MISSING_DESTROY_GUARD</span>
-        <span class="tag tag-green">AUTO-FIX</span>
-        <div style="margin-top:2px">
-          <span style="color:#58a6ff;font-family:monospace">drivers/motion_sensor/device.js</span>
-          <span style="color:#8b949e">:385</span>
-        </div>
-        <div style="color:#8b949e;font-size:0.85em;margin-top:1px">setCapabilityValue without _destroyed guard</div>
-        <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">device.setCapabilityValue('measure_battery', Math.round(v)).catch(() =&gt; {});</div>
-      </div>
-      <div class="error-item hit-entry" data-severity="error" data-fixable="true" style="border-color:#da3633">
-        <span class="tag tag-red">error</span>
-        <span style="font-family:monospace;color:#58a6ff;margin-left:4px">RAW_SET_CAPABILITY</span>
-        <span class="tag tag-green">AUTO-FIX</span>
-        <div style="margin-top:2px">
-          <span style="color:#58a6ff;font-family:monospace">drivers/motion_sensor/device.js</span>
-          <span style="color:#8b949e">:385</span>
-        </div>
-        <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Raw setCapabilityValue (use safeSetCapabilityValue)</div>
-        <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">device.setCapabilityValue('measure_battery', Math.round(v)).catch(() =&gt; {});</div>
       </div>
       <div class="error-item hit-entry" data-severity="warning" data-fixable="true" style="border-color:#9e6a03">
         <span class="tag tag-yellow">warning</span>
@@ -3408,6 +3220,28 @@
         <span style="font-family:monospace;color:#58a6ff;margin-left:4px">MISSING_MARK_APP_COMMAND</span>
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
+          <span style="color:#58a6ff;font-family:monospace">drivers/presence_sensor_radar/device.js</span>
+          <span style="color:#8b949e">:179</span>
+        </div>
+        <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Capability listener without markAppCommand()</div>
+        <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">this.registerCapabilityListener('onoff', async (value) =&gt; {</div>
+      </div>
+      <div class="error-item hit-entry" data-severity="warning" data-fixable="true" style="border-color:#9e6a03">
+        <span class="tag tag-yellow">warning</span>
+        <span style="font-family:monospace;color:#58a6ff;margin-left:4px">MISSING_MARK_APP_COMMAND</span>
+        <span class="tag tag-green">AUTO-FIX</span>
+        <div style="margin-top:2px">
+          <span style="color:#58a6ff;font-family:monospace">drivers/presence_sensor_radar/device.js</span>
+          
+        </div>
+        <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Capability listener without markAppCommand()</div>
+        
+      </div>
+      <div class="error-item hit-entry" data-severity="warning" data-fixable="true" style="border-color:#9e6a03">
+        <span class="tag tag-yellow">warning</span>
+        <span style="font-family:monospace;color:#58a6ff;margin-left:4px">MISSING_MARK_APP_COMMAND</span>
+        <span class="tag tag-green">AUTO-FIX</span>
+        <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">drivers/radiator_controller/device.js</span>
           <span style="color:#8b949e">:58</span>
         </div>
@@ -3453,7 +3287,7 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">drivers/radiator_valve/device.js</span>
-          <span style="color:#8b949e">:198</span>
+          <span style="color:#8b949e">:197</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Capability listener without markAppCommand()</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">this.registerCapabilityListener('button_boost', async () =&gt; {</div>
@@ -3464,7 +3298,7 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">drivers/radiator_valve/device.js</span>
-          <span style="color:#8b949e">:203</span>
+          <span style="color:#8b949e">:202</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Capability listener without markAppCommand()</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">this.registerCapabilityListener('button_child_lock', async () =&gt; {</div>
@@ -3475,7 +3309,7 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">drivers/radiator_valve/device.js</span>
-          <span style="color:#8b949e">:266</span>
+          <span style="color:#8b949e">:265</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Capability listener without markAppCommand()</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">this.registerCapabilityListener('onoff', async (v) =&gt; { await this._sendTuyaDP(1, v, 'bool');</div>
@@ -3486,7 +3320,7 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">drivers/radiator_valve/device.js</span>
-          <span style="color:#8b949e">:270</span>
+          <span style="color:#8b949e">:269</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Capability listener without markAppCommand()</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">this.registerCapabilityListener('thermostat_mode', async (v) =&gt; {</div>
@@ -3497,7 +3331,7 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">drivers/radiator_valve/device.js</span>
-          <span style="color:#8b949e">:276</span>
+          <span style="color:#8b949e">:275</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Capability listener without markAppCommand()</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">this.registerCapabilityListener('target_temperature', async (v) =&gt; {</div>
@@ -3651,7 +3485,7 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">drivers/remote_button_wireless_usb/device.js</span>
-          <span style="color:#8b949e">:98</span>
+          <span style="color:#8b949e">:100</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Capability listener without markAppCommand()</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">this.registerCapabilityListener(capabilityId, async value =&gt; {</div>
@@ -4134,28 +3968,6 @@
         <span style="font-family:monospace;color:#58a6ff;margin-left:4px">MISSING_DESTROY_GUARD</span>
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
-          <span style="color:#58a6ff;font-family:monospace">drivers/sensor_contact_motion/device.js</span>
-          <span style="color:#8b949e">:387</span>
-        </div>
-        <div style="color:#8b949e;font-size:0.85em;margin-top:1px">setCapabilityValue without _destroyed guard</div>
-        <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">device.setCapabilityValue('measure_battery', Math.round(v)).catch(() =&gt; {});</div>
-      </div>
-      <div class="error-item hit-entry" data-severity="error" data-fixable="true" style="border-color:#da3633">
-        <span class="tag tag-red">error</span>
-        <span style="font-family:monospace;color:#58a6ff;margin-left:4px">RAW_SET_CAPABILITY</span>
-        <span class="tag tag-green">AUTO-FIX</span>
-        <div style="margin-top:2px">
-          <span style="color:#58a6ff;font-family:monospace">drivers/sensor_contact_motion/device.js</span>
-          <span style="color:#8b949e">:387</span>
-        </div>
-        <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Raw setCapabilityValue (use safeSetCapabilityValue)</div>
-        <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">device.setCapabilityValue('measure_battery', Math.round(v)).catch(() =&gt; {});</div>
-      </div>
-      <div class="error-item hit-entry" data-severity="error" data-fixable="true" style="border-color:#da3633">
-        <span class="tag tag-red">error</span>
-        <span style="font-family:monospace;color:#58a6ff;margin-left:4px">MISSING_DESTROY_GUARD</span>
-        <span class="tag tag-green">AUTO-FIX</span>
-        <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">drivers/sensor_contact_plug/driver.js</span>
           <span style="color:#8b949e">:58</span>
         </div>
@@ -4216,28 +4028,6 @@
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Raw setCapabilityValue (use safeSetCapabilityValue)</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">await args.device.setCapabilityValue('onoff', !current).catch(() =&gt; {});</div>
-      </div>
-      <div class="error-item hit-entry" data-severity="warning" data-fixable="true" style="border-color:#9e6a03">
-        <span class="tag tag-yellow">warning</span>
-        <span style="font-family:monospace;color:#58a6ff;margin-left:4px">GLOBAL_SETTIMEOUT</span>
-        <span class="tag tag-green">AUTO-FIX</span>
-        <div style="margin-top:2px">
-          <span style="color:#58a6ff;font-family:monospace">drivers/sensor_contact_plug/driver.js</span>
-          <span style="color:#8b949e">:101</span>
-        </div>
-        <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Global setTimeout (use this.homey.setTimeout for device code)</div>
-        <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">setTimeout(() =&gt; args.device.triggerCapabilityListener('onoff', true).catch(() =&gt; {}), delay);</div>
-      </div>
-      <div class="error-item hit-entry" data-severity="warning" data-fixable="true" style="border-color:#9e6a03">
-        <span class="tag tag-yellow">warning</span>
-        <span style="font-family:monospace;color:#58a6ff;margin-left:4px">GLOBAL_SETTIMEOUT</span>
-        <span class="tag tag-green">AUTO-FIX</span>
-        <div style="margin-top:2px">
-          <span style="color:#58a6ff;font-family:monospace">drivers/sensor_contact_plug/driver.js</span>
-          <span style="color:#8b949e">:115</span>
-        </div>
-        <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Global setTimeout (use this.homey.setTimeout for device code)</div>
-        <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">setTimeout(() =&gt; args.device.triggerCapabilityListener('onoff', false).catch(() =&gt; {}), delay);</div>
       </div>
       <div class="error-item hit-entry" data-severity="error" data-fixable="true" style="border-color:#da3633">
         <span class="tag tag-red">error</span>
@@ -4470,6 +4260,28 @@
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Raw setCapabilityValue (use safeSetCapabilityValue)</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">return super.setCapabilityValue(capability, value);</div>
       </div>
+      <div class="error-item hit-entry" data-severity="warning" data-fixable="true" style="border-color:#9e6a03">
+        <span class="tag tag-yellow">warning</span>
+        <span style="font-family:monospace;color:#58a6ff;margin-left:4px">MISSING_MARK_APP_COMMAND</span>
+        <span class="tag tag-green">AUTO-FIX</span>
+        <div style="margin-top:2px">
+          <span style="color:#58a6ff;font-family:monospace">drivers/sensor_illuminance_presence/device.js</span>
+          <span style="color:#8b949e">:125</span>
+        </div>
+        <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Capability listener without markAppCommand()</div>
+        <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">this.registerCapabilityListener('onoff', async value =&gt; {</div>
+      </div>
+      <div class="error-item hit-entry" data-severity="warning" data-fixable="true" style="border-color:#9e6a03">
+        <span class="tag tag-yellow">warning</span>
+        <span style="font-family:monospace;color:#58a6ff;margin-left:4px">MISSING_MARK_APP_COMMAND</span>
+        <span class="tag tag-green">AUTO-FIX</span>
+        <div style="margin-top:2px">
+          <span style="color:#58a6ff;font-family:monospace">drivers/sensor_illuminance_presence/device.js</span>
+          
+        </div>
+        <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Capability listener without markAppCommand()</div>
+        
+      </div>
       <div class="error-item hit-entry" data-severity="info" data-fixable="false" style="border-color:#1f6feb">
         <span class="tag tag-blue">info</span>
         <span style="font-family:monospace;color:#58a6ff;margin-left:4px">HARDCODED_DP_ID</span>
@@ -4514,94 +4326,6 @@
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Capability listener without markAppCommand()</div>
         
       </div>
-      <div class="error-item hit-entry" data-severity="error" data-fixable="true" style="border-color:#da3633">
-        <span class="tag tag-red">error</span>
-        <span style="font-family:monospace;color:#58a6ff;margin-left:4px">MISSING_DESTROY_GUARD</span>
-        <span class="tag tag-green">AUTO-FIX</span>
-        <div style="margin-top:2px">
-          <span style="color:#58a6ff;font-family:monospace">drivers/sensor_presence_radar/device.js</span>
-          <span style="color:#8b949e">:1127</span>
-        </div>
-        <div style="color:#8b949e;font-size:0.85em;margin-top:1px">setCapabilityValue without _destroyed guard</div>
-        <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">self.setCapabilityValue('measure_temperature', t).catch(() =&gt; {});</div>
-      </div>
-      <div class="error-item hit-entry" data-severity="error" data-fixable="true" style="border-color:#da3633">
-        <span class="tag tag-red">error</span>
-        <span style="font-family:monospace;color:#58a6ff;margin-left:4px">MISSING_DESTROY_GUARD</span>
-        <span class="tag tag-green">AUTO-FIX</span>
-        <div style="margin-top:2px">
-          <span style="color:#58a6ff;font-family:monospace">drivers/sensor_presence_radar/device.js</span>
-          <span style="color:#8b949e">:1136</span>
-        </div>
-        <div style="color:#8b949e;font-size:0.85em;margin-top:1px">setCapabilityValue without _destroyed guard</div>
-        <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">self.setCapabilityValue('measure_humidity', h).catch(() =&gt; {});</div>
-      </div>
-      <div class="error-item hit-entry" data-severity="error" data-fixable="true" style="border-color:#da3633">
-        <span class="tag tag-red">error</span>
-        <span style="font-family:monospace;color:#58a6ff;margin-left:4px">MISSING_DESTROY_GUARD</span>
-        <span class="tag tag-green">AUTO-FIX</span>
-        <div style="margin-top:2px">
-          <span style="color:#58a6ff;font-family:monospace">drivers/sensor_presence_radar/device.js</span>
-          <span style="color:#8b949e">:1143</span>
-        </div>
-        <div style="color:#8b949e;font-size:0.85em;margin-top:1px">setCapabilityValue without _destroyed guard</div>
-        <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">self.setCapabilityValue('measure_luminance', lux).catch(() =&gt; {});</div>
-      </div>
-      <div class="error-item hit-entry" data-severity="error" data-fixable="true" style="border-color:#da3633">
-        <span class="tag tag-red">error</span>
-        <span style="font-family:monospace;color:#58a6ff;margin-left:4px">MISSING_DESTROY_GUARD</span>
-        <span class="tag tag-green">AUTO-FIX</span>
-        <div style="margin-top:2px">
-          <span style="color:#58a6ff;font-family:monospace">drivers/sensor_presence_radar/device.js</span>
-          <span style="color:#8b949e">:1163</span>
-        </div>
-        <div style="color:#8b949e;font-size:0.85em;margin-top:1px">setCapabilityValue without _destroyed guard</div>
-        <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">self.setCapabilityValue('measure_battery', b).catch(() =&gt; {});</div>
-      </div>
-      <div class="error-item hit-entry" data-severity="error" data-fixable="true" style="border-color:#da3633">
-        <span class="tag tag-red">error</span>
-        <span style="font-family:monospace;color:#58a6ff;margin-left:4px">RAW_SET_CAPABILITY</span>
-        <span class="tag tag-green">AUTO-FIX</span>
-        <div style="margin-top:2px">
-          <span style="color:#58a6ff;font-family:monospace">drivers/sensor_presence_radar/device.js</span>
-          <span style="color:#8b949e">:1127</span>
-        </div>
-        <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Raw setCapabilityValue (use safeSetCapabilityValue)</div>
-        <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">self.setCapabilityValue('measure_temperature', t).catch(() =&gt; {});</div>
-      </div>
-      <div class="error-item hit-entry" data-severity="error" data-fixable="true" style="border-color:#da3633">
-        <span class="tag tag-red">error</span>
-        <span style="font-family:monospace;color:#58a6ff;margin-left:4px">RAW_SET_CAPABILITY</span>
-        <span class="tag tag-green">AUTO-FIX</span>
-        <div style="margin-top:2px">
-          <span style="color:#58a6ff;font-family:monospace">drivers/sensor_presence_radar/device.js</span>
-          <span style="color:#8b949e">:1136</span>
-        </div>
-        <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Raw setCapabilityValue (use safeSetCapabilityValue)</div>
-        <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">self.setCapabilityValue('measure_humidity', h).catch(() =&gt; {});</div>
-      </div>
-      <div class="error-item hit-entry" data-severity="error" data-fixable="true" style="border-color:#da3633">
-        <span class="tag tag-red">error</span>
-        <span style="font-family:monospace;color:#58a6ff;margin-left:4px">RAW_SET_CAPABILITY</span>
-        <span class="tag tag-green">AUTO-FIX</span>
-        <div style="margin-top:2px">
-          <span style="color:#58a6ff;font-family:monospace">drivers/sensor_presence_radar/device.js</span>
-          <span style="color:#8b949e">:1143</span>
-        </div>
-        <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Raw setCapabilityValue (use safeSetCapabilityValue)</div>
-        <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">self.setCapabilityValue('measure_luminance', lux).catch(() =&gt; {});</div>
-      </div>
-      <div class="error-item hit-entry" data-severity="error" data-fixable="true" style="border-color:#da3633">
-        <span class="tag tag-red">error</span>
-        <span style="font-family:monospace;color:#58a6ff;margin-left:4px">RAW_SET_CAPABILITY</span>
-        <span class="tag tag-green">AUTO-FIX</span>
-        <div style="margin-top:2px">
-          <span style="color:#58a6ff;font-family:monospace">drivers/sensor_presence_radar/device.js</span>
-          <span style="color:#8b949e">:1163</span>
-        </div>
-        <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Raw setCapabilityValue (use safeSetCapabilityValue)</div>
-        <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">self.setCapabilityValue('measure_battery', b).catch(() =&gt; {});</div>
-      </div>
       <div class="error-item hit-entry" data-severity="warning" data-fixable="true" style="border-color:#9e6a03">
         <span class="tag tag-yellow">warning</span>
         <span style="font-family:monospace;color:#58a6ff;margin-left:4px">MISSING_MARK_APP_COMMAND</span>
@@ -4630,7 +4354,7 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">drivers/sirentemphumidsensor/device.js</span>
-          <span style="color:#8b949e">:221</span>
+          <span style="color:#8b949e">:220</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Capability listener without markAppCommand()</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">this.registerCapabilityListener('onoff', async value =&gt; {</div>
@@ -4652,7 +4376,7 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">drivers/siren_sirentemphumidsensor/device.js</span>
-          <span style="color:#8b949e">:165</span>
+          <span style="color:#8b949e">:164</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Capability listener without markAppCommand()</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">this.registerCapabilityListener('onoff', async value =&gt; {</div>
@@ -4695,6 +4419,50 @@
         <span style="font-family:monospace;color:#58a6ff;margin-left:4px">MISSING_MARK_APP_COMMAND</span>
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
+          <span style="color:#58a6ff;font-family:monospace">drivers/smart_knob_rotary/device.js</span>
+          <span style="color:#8b949e">:59</span>
+        </div>
+        <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Capability listener without markAppCommand()</div>
+        <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">this.registerCapabilityListener(capability, async () =&gt; true);</div>
+      </div>
+      <div class="error-item hit-entry" data-severity="warning" data-fixable="true" style="border-color:#9e6a03">
+        <span class="tag tag-yellow">warning</span>
+        <span style="font-family:monospace;color:#58a6ff;margin-left:4px">MISSING_MARK_APP_COMMAND</span>
+        <span class="tag tag-green">AUTO-FIX</span>
+        <div style="margin-top:2px">
+          <span style="color:#58a6ff;font-family:monospace">drivers/smart_knob_rotary/device.js</span>
+          
+        </div>
+        <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Capability listener without markAppCommand()</div>
+        
+      </div>
+      <div class="error-item hit-entry" data-severity="error" data-fixable="true" style="border-color:#da3633">
+        <span class="tag tag-red">error</span>
+        <span style="font-family:monospace;color:#58a6ff;margin-left:4px">MISSING_DESTROY_GUARD</span>
+        <span class="tag tag-green">AUTO-FIX</span>
+        <div style="margin-top:2px">
+          <span style="color:#58a6ff;font-family:monospace">drivers/smart_knob_rotary/driver.js</span>
+          <span style="color:#8b949e">:38</span>
+        </div>
+        <div style="color:#8b949e;font-size:0.85em;margin-top:1px">setCapabilityValue without _destroyed guard</div>
+        <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">await args.device.setCapabilityValue('dim', dim).catch(() =&gt; {});</div>
+      </div>
+      <div class="error-item hit-entry" data-severity="error" data-fixable="true" style="border-color:#da3633">
+        <span class="tag tag-red">error</span>
+        <span style="font-family:monospace;color:#58a6ff;margin-left:4px">RAW_SET_CAPABILITY</span>
+        <span class="tag tag-green">AUTO-FIX</span>
+        <div style="margin-top:2px">
+          <span style="color:#58a6ff;font-family:monospace">drivers/smart_knob_rotary/driver.js</span>
+          <span style="color:#8b949e">:38</span>
+        </div>
+        <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Raw setCapabilityValue (use safeSetCapabilityValue)</div>
+        <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">await args.device.setCapabilityValue('dim', dim).catch(() =&gt; {});</div>
+      </div>
+      <div class="error-item hit-entry" data-severity="warning" data-fixable="true" style="border-color:#9e6a03">
+        <span class="tag tag-yellow">warning</span>
+        <span style="font-family:monospace;color:#58a6ff;margin-left:4px">MISSING_MARK_APP_COMMAND</span>
+        <span class="tag tag-green">AUTO-FIX</span>
+        <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">drivers/smart_scene_panel/device.js</span>
           <span style="color:#8b949e">:17</span>
         </div>
@@ -4712,35 +4480,13 @@
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Capability listener without markAppCommand()</div>
         
       </div>
-      <div class="error-item hit-entry" data-severity="error" data-fixable="true" style="border-color:#da3633">
-        <span class="tag tag-red">error</span>
-        <span style="font-family:monospace;color:#58a6ff;margin-left:4px">MISSING_DESTROY_GUARD</span>
-        <span class="tag tag-green">AUTO-FIX</span>
-        <div style="margin-top:2px">
-          <span style="color:#58a6ff;font-family:monospace">drivers/smoke_detector_advanced/device.js</span>
-          <span style="color:#8b949e">:63</span>
-        </div>
-        <div style="color:#8b949e;font-size:0.85em;margin-top:1px">setCapabilityValue without _destroyed guard</div>
-        <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">device.setCapabilityValue('measure_battery', battery).catch(() =&gt; {});</div>
-      </div>
-      <div class="error-item hit-entry" data-severity="error" data-fixable="true" style="border-color:#da3633">
-        <span class="tag tag-red">error</span>
-        <span style="font-family:monospace;color:#58a6ff;margin-left:4px">RAW_SET_CAPABILITY</span>
-        <span class="tag tag-green">AUTO-FIX</span>
-        <div style="margin-top:2px">
-          <span style="color:#58a6ff;font-family:monospace">drivers/smoke_detector_advanced/device.js</span>
-          <span style="color:#8b949e">:63</span>
-        </div>
-        <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Raw setCapabilityValue (use safeSetCapabilityValue)</div>
-        <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">device.setCapabilityValue('measure_battery', battery).catch(() =&gt; {});</div>
-      </div>
       <div class="error-item hit-entry" data-severity="info" data-fixable="false" style="border-color:#1f6feb">
         <span class="tag tag-blue">info</span>
         <span style="font-family:monospace;color:#58a6ff;margin-left:4px">HARDCODED_DP_ID</span>
         
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">drivers/soil_sensor/device.js</span>
-          <span style="color:#8b949e">:68</span>
+          <span style="color:#8b949e">:73</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Hardcoded DP ID (consider using constant)</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">dpId: 15,           // DP15 = battery percentage</div>
@@ -4806,7 +4552,7 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">drivers/switch_2gang/driver.js</span>
-          <span style="color:#8b949e">:117</span>
+          <span style="color:#8b949e">:113</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">setCapabilityValue without _destroyed guard</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">await args.device.setCapabilityValue('power_on_behavior', behavior).catch(() =&gt; {});</div>
@@ -4817,7 +4563,7 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">drivers/switch_2gang/driver.js</span>
-          <span style="color:#8b949e">:117</span>
+          <span style="color:#8b949e">:113</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Raw setCapabilityValue (use safeSetCapabilityValue)</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">await args.device.setCapabilityValue('power_on_behavior', behavior).catch(() =&gt; {});</div>
@@ -4850,7 +4596,7 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">drivers/switch_3gang/driver.js</span>
-          <span style="color:#8b949e">:90</span>
+          <span style="color:#8b949e">:91</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">setCapabilityValue without _destroyed guard</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">await args.device.setCapabilityValue('power_on_behavior', behavior).catch(() =&gt; {});</div>
@@ -4861,7 +4607,7 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">drivers/switch_3gang/driver.js</span>
-          <span style="color:#8b949e">:90</span>
+          <span style="color:#8b949e">:91</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Raw setCapabilityValue (use safeSetCapabilityValue)</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">await args.device.setCapabilityValue('power_on_behavior', behavior).catch(() =&gt; {});</div>
@@ -4894,7 +4640,7 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">drivers/switch_4gang/driver.js</span>
-          <span style="color:#8b949e">:109</span>
+          <span style="color:#8b949e">:105</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">setCapabilityValue without _destroyed guard</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">await args.device.setCapabilityValue('power_on_behavior', behavior).catch(() =&gt; {});</div>
@@ -4905,7 +4651,7 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">drivers/switch_4gang/driver.js</span>
-          <span style="color:#8b949e">:109</span>
+          <span style="color:#8b949e">:105</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Raw setCapabilityValue (use safeSetCapabilityValue)</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">await args.device.setCapabilityValue('power_on_behavior', behavior).catch(() =&gt; {});</div>
@@ -5345,7 +5091,7 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">drivers/usb_outlet_advanced/device.js</span>
-          <span style="color:#8b949e">:255</span>
+          <span style="color:#8b949e">:254</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Capability listener without markAppCommand()</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">this.registerCapabilityListener('onoff.led', async (value) =&gt; {</div>
@@ -5356,7 +5102,7 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">drivers/usb_outlet_advanced/device.js</span>
-          <span style="color:#8b949e">:263</span>
+          <span style="color:#8b949e">:262</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Capability listener without markAppCommand()</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">this.registerCapabilityListener('onoff.socket2', async (value) =&gt; {</div>
@@ -5367,7 +5113,7 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">drivers/usb_outlet_advanced/device.js</span>
-          <span style="color:#8b949e">:278</span>
+          <span style="color:#8b949e">:277</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Capability listener without markAppCommand()</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">this.registerCapabilityListener('onoff.usb1', async (value) =&gt; {</div>
@@ -5378,7 +5124,7 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">drivers/usb_outlet_advanced/device.js</span>
-          <span style="color:#8b949e">:296</span>
+          <span style="color:#8b949e">:295</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Capability listener without markAppCommand()</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">this.registerCapabilityListener('onoff.usb2', async (value) =&gt; {</div>
@@ -5400,7 +5146,7 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">drivers/valve_dual_irrigation/device.js</span>
-          <span style="color:#8b949e">:45</span>
+          <span style="color:#8b949e">:116</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Capability listener without markAppCommand()</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">this.registerCapabilityListener('onoff.valve_1', async (value) =&gt; {</div>
@@ -5411,7 +5157,7 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">drivers/valve_dual_irrigation/device.js</span>
-          <span style="color:#8b949e">:51</span>
+          <span style="color:#8b949e">:121</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Capability listener without markAppCommand()</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">this.registerCapabilityListener('onoff.valve_2', async (value) =&gt; {</div>
@@ -5444,7 +5190,7 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">drivers/valve_irrigation/device.js</span>
-          <span style="color:#8b949e">:105</span>
+          <span style="color:#8b949e">:153</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Capability listener without markAppCommand()</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">this.registerCapabilityListener('onoff.gang2', async (value) =&gt; {</div>
@@ -5499,7 +5245,7 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">drivers/wall_dimmer_tuya/device.js</span>
-          <span style="color:#8b949e">:58</span>
+          <span style="color:#8b949e">:64</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Capability listener without markAppCommand()</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">this.registerCapabilityListener('onoff', async (value) =&gt; {</div>
@@ -5510,7 +5256,7 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">drivers/wall_dimmer_tuya/device.js</span>
-          <span style="color:#8b949e">:68</span>
+          <span style="color:#8b949e">:74</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Capability listener without markAppCommand()</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">this.registerCapabilityListener('dim', async (value) =&gt; {</div>
@@ -5532,7 +5278,7 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">drivers/wall_switch_1_gang_tuya/device.js</span>
-          <span style="color:#8b949e">:36</span>
+          <span style="color:#8b949e">:38</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Capability listener without markAppCommand()</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">this.registerCapabilityListener('onoff', async (onOff) =&gt; {</div>
@@ -5553,74 +5299,8 @@
         <span style="font-family:monospace;color:#58a6ff;margin-left:4px">MISSING_MARK_APP_COMMAND</span>
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
-          <span style="color:#58a6ff;font-family:monospace">drivers/wall_switch_4_gang_tuya/device.js</span>
-          <span style="color:#8b949e">:77</span>
-        </div>
-        <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Capability listener without markAppCommand()</div>
-        <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">this.registerCapabilityListener('onoff', async (value) =&gt; {</div>
-      </div>
-      <div class="error-item hit-entry" data-severity="warning" data-fixable="true" style="border-color:#9e6a03">
-        <span class="tag tag-yellow">warning</span>
-        <span style="font-family:monospace;color:#58a6ff;margin-left:4px">MISSING_MARK_APP_COMMAND</span>
-        <span class="tag tag-green">AUTO-FIX</span>
-        <div style="margin-top:2px">
-          <span style="color:#58a6ff;font-family:monospace">drivers/wall_switch_4_gang_tuya/device.js</span>
-          
-        </div>
-        <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Capability listener without markAppCommand()</div>
-        
-      </div>
-      <div class="error-item hit-entry" data-severity="warning" data-fixable="true" style="border-color:#9e6a03">
-        <span class="tag tag-yellow">warning</span>
-        <span style="font-family:monospace;color:#58a6ff;margin-left:4px">MISSING_MARK_APP_COMMAND</span>
-        <span class="tag tag-green">AUTO-FIX</span>
-        <div style="margin-top:2px">
-          <span style="color:#58a6ff;font-family:monospace">drivers/wall_switch_5_gang_tuya/device.js</span>
-          <span style="color:#8b949e">:80</span>
-        </div>
-        <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Capability listener without markAppCommand()</div>
-        <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">this.registerCapabilityListener('onoff', async (value) =&gt; {</div>
-      </div>
-      <div class="error-item hit-entry" data-severity="warning" data-fixable="true" style="border-color:#9e6a03">
-        <span class="tag tag-yellow">warning</span>
-        <span style="font-family:monospace;color:#58a6ff;margin-left:4px">MISSING_MARK_APP_COMMAND</span>
-        <span class="tag tag-green">AUTO-FIX</span>
-        <div style="margin-top:2px">
-          <span style="color:#58a6ff;font-family:monospace">drivers/wall_switch_5_gang_tuya/device.js</span>
-          
-        </div>
-        <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Capability listener without markAppCommand()</div>
-        
-      </div>
-      <div class="error-item hit-entry" data-severity="warning" data-fixable="true" style="border-color:#9e6a03">
-        <span class="tag tag-yellow">warning</span>
-        <span style="font-family:monospace;color:#58a6ff;margin-left:4px">MISSING_MARK_APP_COMMAND</span>
-        <span class="tag tag-green">AUTO-FIX</span>
-        <div style="margin-top:2px">
-          <span style="color:#58a6ff;font-family:monospace">drivers/wall_switch_6_gang_tuya/device.js</span>
-          <span style="color:#8b949e">:84</span>
-        </div>
-        <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Capability listener without markAppCommand()</div>
-        <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">this.registerCapabilityListener('onoff', async (value) =&gt; {</div>
-      </div>
-      <div class="error-item hit-entry" data-severity="warning" data-fixable="true" style="border-color:#9e6a03">
-        <span class="tag tag-yellow">warning</span>
-        <span style="font-family:monospace;color:#58a6ff;margin-left:4px">MISSING_MARK_APP_COMMAND</span>
-        <span class="tag tag-green">AUTO-FIX</span>
-        <div style="margin-top:2px">
-          <span style="color:#58a6ff;font-family:monospace">drivers/wall_switch_6_gang_tuya/device.js</span>
-          
-        </div>
-        <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Capability listener without markAppCommand()</div>
-        
-      </div>
-      <div class="error-item hit-entry" data-severity="warning" data-fixable="true" style="border-color:#9e6a03">
-        <span class="tag tag-yellow">warning</span>
-        <span style="font-family:monospace;color:#58a6ff;margin-left:4px">MISSING_MARK_APP_COMMAND</span>
-        <span class="tag tag-green">AUTO-FIX</span>
-        <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">drivers/wall_thermostat/device.js</span>
-          <span style="color:#8b949e">:51</span>
+          <span style="color:#8b949e">:56</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Capability listener without markAppCommand()</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">this.registerCapabilityListener('onoff', async (onOff) =&gt; {</div>
@@ -5631,7 +5311,7 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">drivers/wall_thermostat/device.js</span>
-          <span style="color:#8b949e">:56</span>
+          <span style="color:#8b949e">:61</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Capability listener without markAppCommand()</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">this.registerCapabilityListener('thermostat_programming', async (mode) =&gt; {</div>
@@ -5642,7 +5322,7 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">drivers/wall_thermostat/device.js</span>
-          <span style="color:#8b949e">:61</span>
+          <span style="color:#8b949e">:66</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Capability listener without markAppCommand()</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">this.registerCapabilityListener('target_temperature', async (targetTemperature) =&gt; {</div>
@@ -5653,7 +5333,7 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">drivers/wall_thermostat/device.js</span>
-          <span style="color:#8b949e">:69</span>
+          <span style="color:#8b949e">:74</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Capability listener without markAppCommand()</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">this.registerCapabilityListener('measure_temperature', async (currentTemperature) =&gt; {</div>
@@ -5664,7 +5344,7 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">drivers/wall_thermostat/device.js</span>
-          <span style="color:#8b949e">:73</span>
+          <span style="color:#8b949e">:78</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Capability listener without markAppCommand()</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">this.registerCapabilityListener('child_lock', async (childlock) =&gt; {</div>
@@ -5686,7 +5366,7 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">drivers/water_leak_sensor/device.js</span>
-          <span style="color:#8b949e">:292</span>
+          <span style="color:#8b949e">:301</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">setCapabilityValue without _destroyed guard</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">await super.setCapabilityValue('alarm_water', !current).catch(() =&gt; { });</div>
@@ -5697,7 +5377,7 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">drivers/water_leak_sensor/device.js</span>
-          <span style="color:#8b949e">:300</span>
+          <span style="color:#8b949e">:309</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">setCapabilityValue without _destroyed guard</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">setCapabilityValue(capability, value) {</div>
@@ -5708,7 +5388,7 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">drivers/water_leak_sensor/device.js</span>
-          <span style="color:#8b949e">:307</span>
+          <span style="color:#8b949e">:316</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">setCapabilityValue without _destroyed guard</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">return super.setCapabilityValue(capability, invertedValue);</div>
@@ -5719,7 +5399,7 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">drivers/water_leak_sensor/device.js</span>
-          <span style="color:#8b949e">:292</span>
+          <span style="color:#8b949e">:301</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Raw setCapabilityValue (use safeSetCapabilityValue)</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">await super.setCapabilityValue('alarm_water', !current).catch(() =&gt; { });</div>
@@ -5730,7 +5410,7 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">drivers/water_leak_sensor/device.js</span>
-          <span style="color:#8b949e">:300</span>
+          <span style="color:#8b949e">:309</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Raw setCapabilityValue (use safeSetCapabilityValue)</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">setCapabilityValue(capability, value) {</div>
@@ -5741,7 +5421,7 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">drivers/water_leak_sensor/device.js</span>
-          <span style="color:#8b949e">:307</span>
+          <span style="color:#8b949e">:316</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Raw setCapabilityValue (use safeSetCapabilityValue)</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">return super.setCapabilityValue(capability, invertedValue);</div>
@@ -5752,7 +5432,7 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">drivers/water_leak_sensor/device.js</span>
-          <span style="color:#8b949e">:310</span>
+          <span style="color:#8b949e">:319</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Raw setCapabilityValue (use safeSetCapabilityValue)</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">return super.setCapabilityValue(capability, value);</div>
@@ -5869,44 +5549,11 @@
       </div>
       <div class="error-item hit-entry" data-severity="warning" data-fixable="true" style="border-color:#9e6a03">
         <span class="tag tag-yellow">warning</span>
-        <span style="font-family:monospace;color:#58a6ff;margin-left:4px">GLOBAL_SETTIMEOUT</span>
-        <span class="tag tag-green">AUTO-FIX</span>
-        <div style="margin-top:2px">
-          <span style="color:#58a6ff;font-family:monospace">drivers/wifi_camera/device.js</span>
-          <span style="color:#8b949e">:120</span>
-        </div>
-        <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Global setTimeout (use this.homey.setTimeout for device code)</div>
-        <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">this._reconnectTimer = setTimeout(async () =&gt; {</div>
-      </div>
-      <div class="error-item hit-entry" data-severity="warning" data-fixable="true" style="border-color:#9e6a03">
-        <span class="tag tag-yellow">warning</span>
-        <span style="font-family:monospace;color:#58a6ff;margin-left:4px">GLOBAL_SETTIMEOUT</span>
-        <span class="tag tag-green">AUTO-FIX</span>
-        <div style="margin-top:2px">
-          <span style="color:#58a6ff;font-family:monospace">drivers/wifi_camera/device.js</span>
-          <span style="color:#8b949e">:142</span>
-        </div>
-        <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Global setTimeout (use this.homey.setTimeout for device code)</div>
-        <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">setTimeout(() =&gt; this.safeSetCapabilityValue('alarm_motion', false).catch(() =&gt; {}), 30000);</div>
-      </div>
-      <div class="error-item hit-entry" data-severity="warning" data-fixable="true" style="border-color:#9e6a03">
-        <span class="tag tag-yellow">warning</span>
-        <span style="font-family:monospace;color:#58a6ff;margin-left:4px">GLOBAL_SETTIMEOUT</span>
-        <span class="tag tag-green">AUTO-FIX</span>
-        <div style="margin-top:2px">
-          <span style="color:#58a6ff;font-family:monospace">drivers/wifi_camera/device.js</span>
-          <span style="color:#8b949e">:314</span>
-        </div>
-        <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Global setTimeout (use this.homey.setTimeout for device code)</div>
-        <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">setTimeout(() =&gt; this._setDP(DP.PTZ_STOP, true).catch(() =&gt; {}), 1000);</div>
-      </div>
-      <div class="error-item hit-entry" data-severity="warning" data-fixable="true" style="border-color:#9e6a03">
-        <span class="tag tag-yellow">warning</span>
         <span style="font-family:monospace;color:#58a6ff;margin-left:4px">MISSING_MARK_APP_COMMAND</span>
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">drivers/wifi_ewelink_bulb/device.js</span>
-          <span style="color:#8b949e">:18</span>
+          <span style="color:#8b949e">:23</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Capability listener without markAppCommand()</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">this.registerCapabilityListener('onoff', async v =&gt; {</div>
@@ -5917,7 +5564,7 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">drivers/wifi_ewelink_bulb/device.js</span>
-          <span style="color:#8b949e">:21</span>
+          <span style="color:#8b949e">:26</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Capability listener without markAppCommand()</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">this.registerCapabilityListener('dim', async v =&gt; {</div>
@@ -5939,7 +5586,7 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">drivers/wifi_ewelink_dimmer/device.js</span>
-          <span style="color:#8b949e">:10</span>
+          <span style="color:#8b949e">:15</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Capability listener without markAppCommand()</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">this.registerCapabilityListener('onoff',async v=&gt;{await this._client.setDimmer(this._lastBrightness|</div>
@@ -5950,7 +5597,7 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">drivers/wifi_ewelink_dimmer/device.js</span>
-          <span style="color:#8b949e">:12</span>
+          <span style="color:#8b949e">:17</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Capability listener without markAppCommand()</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">this.registerCapabilityListener('dim',async v=&gt;{this._lastBrightness=Math.round(v);await this._clien</div>
@@ -5972,7 +5619,7 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">drivers/wifi_ewelink_fan/device.js</span>
-          <span style="color:#8b949e">:15</span>
+          <span style="color:#8b949e">:20</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Capability listener without markAppCommand()</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">this.registerCapabilityListener('onoff', async v =&gt; { await safeMultiply(this._client.setSwitch(v, 0</div>
@@ -5983,7 +5630,7 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">drivers/wifi_ewelink_fan/device.js</span>
-          <span style="color:#8b949e">:17</span>
+          <span style="color:#8b949e">:22</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Capability listener without markAppCommand()</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">if (this.hasCapability('onoff.2')) {this.registerCapabilityListener('onoff.2', async v =&gt; { await sa</div>
@@ -5994,7 +5641,7 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">drivers/wifi_ewelink_fan/device.js</span>
-          <span style="color:#8b949e">:20</span>
+          <span style="color:#8b949e">:25</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Capability listener without markAppCommand()</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">this.registerCapabilityListener('dim', async v =&gt; {</div>
@@ -6016,7 +5663,7 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">drivers/wifi_ewelink_led/device.js</span>
-          <span style="color:#8b949e">:18</span>
+          <span style="color:#8b949e">:23</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Capability listener without markAppCommand()</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">this.registerCapabilityListener('onoff', async v =&gt; {</div>
@@ -6027,7 +5674,7 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">drivers/wifi_ewelink_led/device.js</span>
-          <span style="color:#8b949e">:21</span>
+          <span style="color:#8b949e">:26</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Capability listener without markAppCommand()</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">this.registerCapabilityListener('dim', async v =&gt; {</div>
@@ -6225,7 +5872,7 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">drivers/wifi_led_strip/device.js</span>
-          <span style="color:#8b949e">:36</span>
+          <span style="color:#8b949e">:41</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Capability listener without markAppCommand()</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">this.registerCapabilityListener(cap, async () =&gt; {</div>
@@ -6500,7 +6147,29 @@
         
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">lib/battery/BatteryProfileDatabase.js</span>
-          <span style="color:#8b949e">:105</span>
+          <span style="color:#8b949e">:101</span>
+        </div>
+        <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Hardcoded DP ID (consider using constant)</div>
+        <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">dpId: 15,</div>
+      </div>
+      <div class="error-item hit-entry" data-severity="info" data-fixable="false" style="border-color:#1f6feb">
+        <span class="tag tag-blue">info</span>
+        <span style="font-family:monospace;color:#58a6ff;margin-left:4px">HARDCODED_DP_ID</span>
+        
+        <div style="margin-top:2px">
+          <span style="color:#58a6ff;font-family:monospace">lib/battery/BatteryProfileDatabase.js</span>
+          <span style="color:#8b949e">:111</span>
+        </div>
+        <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Hardcoded DP ID (consider using constant)</div>
+        <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">dpId: 15,</div>
+      </div>
+      <div class="error-item hit-entry" data-severity="info" data-fixable="false" style="border-color:#1f6feb">
+        <span class="tag tag-blue">info</span>
+        <span style="font-family:monospace;color:#58a6ff;margin-left:4px">HARDCODED_DP_ID</span>
+        
+        <div style="margin-top:2px">
+          <span style="color:#58a6ff;font-family:monospace">lib/battery/BatteryProfileDatabase.js</span>
+          <span style="color:#8b949e">:125</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Hardcoded DP ID (consider using constant)</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">dpId: 4,                   // DP4 = battery (needs *2)</div>
@@ -6511,7 +6180,7 @@
         
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">lib/battery/BatteryProfileDatabase.js</span>
-          <span style="color:#8b949e">:114</span>
+          <span style="color:#8b949e">:134</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Hardcoded DP ID (consider using constant)</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">dpId: 4,</div>
@@ -6522,7 +6191,7 @@
         
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">lib/battery/BatteryProfileDatabase.js</span>
-          <span style="color:#8b949e">:123</span>
+          <span style="color:#8b949e">:143</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Hardcoded DP ID (consider using constant)</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">dpId: 4,</div>
@@ -6533,7 +6202,7 @@
         
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">lib/battery/BatteryProfileDatabase.js</span>
-          <span style="color:#8b949e">:132</span>
+          <span style="color:#8b949e">:152</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Hardcoded DP ID (consider using constant)</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">dpId: 4,</div>
@@ -6544,7 +6213,7 @@
         
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">lib/battery/BatteryProfileDatabase.js</span>
-          <span style="color:#8b949e">:145</span>
+          <span style="color:#8b949e">:165</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Hardcoded DP ID (consider using constant)</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">dpId: 101,</div>
@@ -6555,7 +6224,7 @@
         
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">lib/battery/BatteryProfileDatabase.js</span>
-          <span style="color:#8b949e">:155</span>
+          <span style="color:#8b949e">:175</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Hardcoded DP ID (consider using constant)</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">dpId: 101,</div>
@@ -6566,7 +6235,7 @@
         
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">lib/battery/BatteryProfileDatabase.js</span>
-          <span style="color:#8b949e">:274</span>
+          <span style="color:#8b949e">:294</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Hardcoded DP ID (consider using constant)</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">dpId: 4,                   // Most common battery DP</div>
@@ -6577,7 +6246,7 @@
         
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">lib/battery/BatteryProfileDatabase.js</span>
-          <span style="color:#8b949e">:307</span>
+          <span style="color:#8b949e">:327</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Hardcoded DP ID (consider using constant)</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">dpId: 101,</div>
@@ -6599,7 +6268,7 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">lib/battery/UnifiedBatteryHandler.js</span>
-          <span style="color:#8b949e">:753</span>
+          <span style="color:#8b949e">:1049</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Wrong settings key zb_modelId (use zb_model_id)</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">const modelId = settings.zb_model_id || settings.zb_modelId || store.modelId || '';</div>
@@ -6610,7 +6279,7 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">lib/battery/UnifiedBatteryHandler.js</span>
-          <span style="color:#8b949e">:754</span>
+          <span style="color:#8b949e">:1050</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Wrong settings key zb_manufacturerName (use zb_manufacturer_name)</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">const mfr = settings.zb_manufacturer_name || settings.zb_manufacturerName || store.manufacturerName </div>
@@ -6621,7 +6290,7 @@
         
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">lib/battery/UnifiedBatteryHandler.js</span>
-          <span style="color:#8b949e">:271</span>
+          <span style="color:#8b949e">:324</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Hardcoded DP ID (consider using constant)</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">'_TZE284_oitavov2':    { chemistry: 'CR2032', source: 'tuya_dp', dpId: 15, algorithm: 'direct', note</div>
@@ -6632,7 +6301,7 @@
         
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">lib/battery/UnifiedBatteryHandler.js</span>
-          <span style="color:#8b949e">:272</span>
+          <span style="color:#8b949e">:325</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Hardcoded DP ID (consider using constant)</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">'_TZE284_aao3yzhs':   { chemistry: 'CR2032', source: 'tuya_dp', dpId: 15, algorithm: 'direct', notes</div>
@@ -6643,7 +6312,7 @@
         
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">lib/battery/UnifiedBatteryHandler.js</span>
-          <span style="color:#8b949e">:273</span>
+          <span style="color:#8b949e">:326</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Hardcoded DP ID (consider using constant)</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">'_TZE200_myd45weu':   { chemistry: 'CR2450', source: 'tuya_dp', dpId: 15, algorithm: 'direct', notes</div>
@@ -6654,7 +6323,29 @@
         
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">lib/battery/UnifiedBatteryHandler.js</span>
-          <span style="color:#8b949e">:274</span>
+          <span style="color:#8b949e">:327</span>
+        </div>
+        <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Hardcoded DP ID (consider using constant)</div>
+        <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">'_TZE204_myd45weu':   { chemistry: 'CR2450', source: 'tuya_dp', dpId: 15, algorithm: 'direct', notes</div>
+      </div>
+      <div class="error-item hit-entry" data-severity="info" data-fixable="false" style="border-color:#1f6feb">
+        <span class="tag tag-blue">info</span>
+        <span style="font-family:monospace;color:#58a6ff;margin-left:4px">HARDCODED_DP_ID</span>
+        
+        <div style="margin-top:2px">
+          <span style="color:#58a6ff;font-family:monospace">lib/battery/UnifiedBatteryHandler.js</span>
+          <span style="color:#8b949e">:328</span>
+        </div>
+        <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Hardcoded DP ID (consider using constant)</div>
+        <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">'_TZE284_myd45weu':   { chemistry: 'CR2450', source: 'tuya_dp', dpId: 15, algorithm: 'direct', notes</div>
+      </div>
+      <div class="error-item hit-entry" data-severity="info" data-fixable="false" style="border-color:#1f6feb">
+        <span class="tag tag-blue">info</span>
+        <span style="font-family:monospace;color:#58a6ff;margin-left:4px">HARDCODED_DP_ID</span>
+        
+        <div style="margin-top:2px">
+          <span style="color:#58a6ff;font-family:monospace">lib/battery/UnifiedBatteryHandler.js</span>
+          <span style="color:#8b949e">:329</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Hardcoded DP ID (consider using constant)</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">'_TZE284_vvmbj46n':   { chemistry: 'CR2032', source: 'tuya_dp', dpId: 4, algorithm: 'multiply_2', no</div>
@@ -6665,7 +6356,7 @@
         
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">lib/battery/UnifiedBatteryHandler.js</span>
-          <span style="color:#8b949e">:275</span>
+          <span style="color:#8b949e">:330</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Hardcoded DP ID (consider using constant)</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">'_TZE200_vvmbj46n':   { chemistry: 'CR2032', source: 'tuya_dp', dpId: 4, algorithm: 'multiply_2', no</div>
@@ -6676,7 +6367,7 @@
         
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">lib/battery/UnifiedBatteryHandler.js</span>
-          <span style="color:#8b949e">:276</span>
+          <span style="color:#8b949e">:331</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Hardcoded DP ID (consider using constant)</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">'_TZE200_bjawzodf':   { chemistry: 'CR2032', source: 'tuya_dp', dpId: 4, algorithm: 'multiply_2', no</div>
@@ -6687,7 +6378,7 @@
         
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">lib/battery/UnifiedBatteryHandler.js</span>
-          <span style="color:#8b949e">:277</span>
+          <span style="color:#8b949e">:332</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Hardcoded DP ID (consider using constant)</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">'_TZE200_a8sdabtg':   { chemistry: 'CR2032', source: 'tuya_dp', dpId: 4, algorithm: 'direct', notes:</div>
@@ -6698,7 +6389,7 @@
         
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">lib/battery/UnifiedBatteryHandler.js</span>
-          <span style="color:#8b949e">:278</span>
+          <span style="color:#8b949e">:333</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Hardcoded DP ID (consider using constant)</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">'_TZ3000_0dumfk2z':   { chemistry: 'CR2032', source: 'tuya_dp', dpId: 101, algorithm: 'direct', skip</div>
@@ -6709,7 +6400,7 @@
         
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">lib/battery/UnifiedBatteryHandler.js</span>
-          <span style="color:#8b949e">:279</span>
+          <span style="color:#8b949e">:334</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Hardcoded DP ID (consider using constant)</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">'_TZ3000_fdr5rqsn':   { chemistry: 'CR2032', source: 'tuya_dp', dpId: 101, algorithm: 'direct', skip</div>
@@ -6720,7 +6411,7 @@
         
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">lib/battery/UnifiedBatteryHandler.js</span>
-          <span style="color:#8b949e">:304</span>
+          <span style="color:#8b949e">:369</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Hardcoded DP ID (consider using constant)</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">'TS0601': { chemistry: 'CR2032', source: 'tuya_dp', dpId: 4, algorithm: 'direct' },</div>
@@ -6731,7 +6422,7 @@
         
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">lib/battery/UnifiedBatteryHandler.js</span>
-          <span style="color:#8b949e">:317</span>
+          <span style="color:#8b949e">:383</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Hardcoded DP ID (consider using constant)</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">'TS0215A': { chemistry: 'CR2032', source: 'tuya_dp', dpId: 101, algorithm: 'direct' }</div>
@@ -6758,13 +6449,24 @@
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Hardcoded DP ID (consider using constant)</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">* Format: [dpId:1][dpType:1][lenHi:1][lenLo:1][data:len]...</div>
       </div>
+      <div class="error-item hit-entry" data-severity="error" data-fixable="false" style="border-color:#da3633">
+        <span class="tag tag-red">error</span>
+        <span style="font-family:monospace;color:#58a6ff;margin-left:4px">BANNED_LINEAR_BATTERY</span>
+        
+        <div style="margin-top:2px">
+          <span style="color:#58a6ff;font-family:monospace">lib/devices/BaseUnifiedDevice.js</span>
+          <span style="color:#8b949e">:4774</span>
+        </div>
+        <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Linear battery formula detected (use UnifiedBatteryHandler)</div>
+        <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">const percent = UnifiedBatteryHandler?.calculateFromVoltage?.(voltage, 'CR2032') || Math.round(((vol</div>
+      </div>
       <div class="error-item hit-entry" data-severity="error" data-fixable="true" style="border-color:#da3633">
         <span class="tag tag-red">error</span>
         <span style="font-family:monospace;color:#58a6ff;margin-left:4px">BANNED_ZB_MODELID</span>
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">lib/devices/BaseUnifiedDevice.js</span>
-          <span style="color:#8b949e">:301</span>
+          <span style="color:#8b949e">:304</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Wrong settings key zb_modelId (use zb_model_id)</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">const pid = s.zb_model_id || s.zb_modelId || st.modelId || '';</div>
@@ -6775,7 +6477,7 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">lib/devices/BaseUnifiedDevice.js</span>
-          <span style="color:#8b949e">:592</span>
+          <span style="color:#8b949e">:634</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Wrong settings key zb_modelId (use zb_model_id)</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">// v5.6.0: FIX - Use correct settings keys (zb_model_id NOT zb_modelId)</div>
@@ -6786,7 +6488,7 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">lib/devices/BaseUnifiedDevice.js</span>
-          <span style="color:#8b949e">:595</span>
+          <span style="color:#8b949e">:637</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Wrong settings key zb_modelId (use zb_model_id)</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">|| settings.zb_modelId</div>
@@ -6797,7 +6499,7 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">lib/devices/BaseUnifiedDevice.js</span>
-          <span style="color:#8b949e">:767</span>
+          <span style="color:#8b949e">:809</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Wrong settings key zb_modelId (use zb_model_id)</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">// v5.6.0: FIX - Use correct settings keys (zb_model_id NOT zb_modelId)</div>
@@ -6808,7 +6510,7 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">lib/devices/BaseUnifiedDevice.js</span>
-          <span style="color:#8b949e">:771</span>
+          <span style="color:#8b949e">:813</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Wrong settings key zb_modelId (use zb_model_id)</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">const modelId = settings.zb_model_id || settings.zb_modelId || store.modelId || '';</div>
@@ -6819,7 +6521,7 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">lib/devices/BaseUnifiedDevice.js</span>
-          <span style="color:#8b949e">:3108</span>
+          <span style="color:#8b949e">:3233</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Wrong settings key zb_modelId (use zb_model_id)</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">// v5.6.0: FIX - Use correct settings keys (zb_model_id NOT zb_modelId)</div>
@@ -6830,7 +6532,7 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">lib/devices/BaseUnifiedDevice.js</span>
-          <span style="color:#8b949e">:3109</span>
+          <span style="color:#8b949e">:3234</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Wrong settings key zb_modelId (use zb_model_id)</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">const modelId = this.getSetting?.('zb_model_id') || this.getSetting?.('zb_modelId') || '';</div>
@@ -6841,7 +6543,7 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">lib/devices/BaseUnifiedDevice.js</span>
-          <span style="color:#8b949e">:3281</span>
+          <span style="color:#8b949e">:3406</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Wrong settings key zb_modelId (use zb_model_id)</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">// v5.6.0: FIX - Use correct settings keys (zb_model_id NOT zb_modelId)</div>
@@ -6852,7 +6554,7 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">lib/devices/BaseUnifiedDevice.js</span>
-          <span style="color:#8b949e">:3284</span>
+          <span style="color:#8b949e">:3409</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Wrong settings key zb_modelId (use zb_model_id)</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">const modelId = settings.zb_model_id || settings.zb_modelId || store.modelId || '';</div>
@@ -6863,7 +6565,7 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">lib/devices/BaseUnifiedDevice.js</span>
-          <span style="color:#8b949e">:300</span>
+          <span style="color:#8b949e">:303</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Wrong settings key zb_manufacturerName (use zb_manufacturer_name)</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">const mfr = s.zb_manufacturer_name || s.zb_manufacturerName || st.manufacturerName || '';</div>
@@ -6874,7 +6576,7 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">lib/devices/BaseUnifiedDevice.js</span>
-          <span style="color:#8b949e">:603</span>
+          <span style="color:#8b949e">:645</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Wrong settings key zb_manufacturerName (use zb_manufacturer_name)</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">|| settings.zb_manufacturerName</div>
@@ -6885,7 +6587,7 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">lib/devices/BaseUnifiedDevice.js</span>
-          <span style="color:#8b949e">:772</span>
+          <span style="color:#8b949e">:814</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Wrong settings key zb_manufacturerName (use zb_manufacturer_name)</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">const mfr = settings.zb_manufacturer_name || settings.zb_manufacturerName || store.manufacturerName </div>
@@ -6896,7 +6598,7 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">lib/devices/BaseUnifiedDevice.js</span>
-          <span style="color:#8b949e">:3110</span>
+          <span style="color:#8b949e">:3235</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Wrong settings key zb_manufacturerName (use zb_manufacturer_name)</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">const mfr = this.getSetting?.('zb_manufacturer_name') || this.getSetting?.('zb_manufacturerName') ||</div>
@@ -6907,7 +6609,7 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">lib/devices/BaseUnifiedDevice.js</span>
-          <span style="color:#8b949e">:3285</span>
+          <span style="color:#8b949e">:3410</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Wrong settings key zb_manufacturerName (use zb_manufacturer_name)</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">const mfr = settings.zb_manufacturer_name || settings.zb_manufacturerName || store.manufacturerName </div>
@@ -7105,7 +6807,7 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">lib/helpers/BatteryRouter.js</span>
-          <span style="color:#8b949e">:76</span>
+          <span style="color:#8b949e">:83</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Wrong settings key zb_modelId (use zb_model_id)</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">const modelId = settings.zb_model_id || settings.zb_modelId || store.modelId || '';</div>
@@ -7116,7 +6818,18 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">lib/helpers/BatteryRouter.js</span>
-          <span style="color:#8b949e">:252</span>
+          <span style="color:#8b949e">:319</span>
+        </div>
+        <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Wrong settings key zb_modelId (use zb_model_id)</div>
+        <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">settings.zb_model_id || settings.zb_modelId || store.modelId || ''</div>
+      </div>
+      <div class="error-item hit-entry" data-severity="error" data-fixable="true" style="border-color:#da3633">
+        <span class="tag tag-red">error</span>
+        <span style="font-family:monospace;color:#58a6ff;margin-left:4px">BANNED_ZB_MODELID</span>
+        <span class="tag tag-green">AUTO-FIX</span>
+        <div style="margin-top:2px">
+          <span style="color:#58a6ff;font-family:monospace">lib/helpers/BatteryRouter.js</span>
+          <span style="color:#8b949e">:344</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Wrong settings key zb_modelId (use zb_model_id)</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">const modelId = settings.zb_model_id || settings.zb_modelId || '';</div>
@@ -7127,10 +6840,21 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">lib/helpers/BatteryRouter.js</span>
-          <span style="color:#8b949e">:77</span>
+          <span style="color:#8b949e">:84</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Wrong settings key zb_manufacturerName (use zb_manufacturer_name)</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">const manufacturer = settings.zb_manufacturer_name || settings.zb_manufacturerName || store.manufact</div>
+      </div>
+      <div class="error-item hit-entry" data-severity="error" data-fixable="true" style="border-color:#da3633">
+        <span class="tag tag-red">error</span>
+        <span style="font-family:monospace;color:#58a6ff;margin-left:4px">BANNED_ZB_MANUFACTURERNAME</span>
+        <span class="tag tag-green">AUTO-FIX</span>
+        <div style="margin-top:2px">
+          <span style="color:#58a6ff;font-family:monospace">lib/helpers/BatteryRouter.js</span>
+          <span style="color:#8b949e">:318</span>
+        </div>
+        <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Wrong settings key zb_manufacturerName (use zb_manufacturer_name)</div>
+        <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">settings.zb_manufacturer_name || settings.zb_manufacturerName || store.manufacturerName || '',</div>
       </div>
       <div class="error-item hit-entry" data-severity="error" data-fixable="true" style="border-color:#da3633">
         <span class="tag tag-red">error</span>
@@ -7153,6 +6877,39 @@
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Wrong settings key zb_manufacturerName (use zb_manufacturer_name)</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">|| _g(() =&gt; device.getSetting?.('zb_manufacturerName'))</div>
+      </div>
+      <div class="error-item hit-entry" data-severity="error" data-fixable="true" style="border-color:#da3633">
+        <span class="tag tag-red">error</span>
+        <span style="font-family:monospace;color:#58a6ff;margin-left:4px">BANNED_ZB_MODELID</span>
+        <span class="tag tag-green">AUTO-FIX</span>
+        <div style="margin-top:2px">
+          <span style="color:#58a6ff;font-family:monospace">lib/helpers/ProbabilisticDeviceDetector.js</span>
+          <span style="color:#8b949e">:229</span>
+        </div>
+        <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Wrong settings key zb_modelId (use zb_model_id)</div>
+        <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">settings.zb_model_id || settings.zb_modelId || store.modelId || data.node?.modelId || '';</div>
+      </div>
+      <div class="error-item hit-entry" data-severity="error" data-fixable="true" style="border-color:#da3633">
+        <span class="tag tag-red">error</span>
+        <span style="font-family:monospace;color:#58a6ff;margin-left:4px">BANNED_ZB_MANUFACTURERNAME</span>
+        <span class="tag tag-green">AUTO-FIX</span>
+        <div style="margin-top:2px">
+          <span style="color:#58a6ff;font-family:monospace">lib/helpers/ProbabilisticDeviceDetector.js</span>
+          <span style="color:#8b949e">:231</span>
+        </div>
+        <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Wrong settings key zb_manufacturerName (use zb_manufacturer_name)</div>
+        <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">settings.zb_manufacturer_name || settings.zb_manufacturerName || store.manufacturerName || '';</div>
+      </div>
+      <div class="error-item hit-entry" data-severity="error" data-fixable="true" style="border-color:#da3633">
+        <span class="tag tag-red">error</span>
+        <span style="font-family:monospace;color:#58a6ff;margin-left:4px">BANNED_ZB_MANUFACTURERNAME</span>
+        <span class="tag tag-green">AUTO-FIX</span>
+        <div style="margin-top:2px">
+          <span style="color:#58a6ff;font-family:monospace">lib/mixins/TuyaDeviceMixin.js</span>
+          <span style="color:#8b949e">:171</span>
+        </div>
+        <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Wrong settings key zb_manufacturerName (use zb_manufacturer_name)</div>
+        <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">const manufacturerName = settings.zb_manufacturer_name || settings.zb_manufacturerName || store.manu</div>
       </div>
       <div class="error-item hit-entry" data-severity="error" data-fixable="true" style="border-color:#da3633">
         <span class="tag tag-red">error</span>
@@ -7440,13 +7197,24 @@
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Hardcoded DP ID (consider using constant)</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">dpId: 4,</div>
       </div>
+      <div class="error-item hit-entry" data-severity="error" data-fixable="true" style="border-color:#da3633">
+        <span class="tag tag-red">error</span>
+        <span style="font-family:monospace;color:#58a6ff;margin-left:4px">BANNED_ZB_MANUFACTURERNAME</span>
+        <span class="tag tag-green">AUTO-FIX</span>
+        <div style="margin-top:2px">
+          <span style="color:#58a6ff;font-family:monospace">lib/tuya/BatteryMixin.js</span>
+          <span style="color:#8b949e">:23</span>
+        </div>
+        <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Wrong settings key zb_manufacturerName (use zb_manufacturer_name)</div>
+        <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">const manufacturerName = settings.zb_manufacturer_name || settings.zb_manufacturerName || store.manu</div>
+      </div>
       <div class="error-item hit-entry" data-severity="error" data-fixable="false" style="border-color:#da3633">
         <span class="tag tag-red">error</span>
         <span style="font-family:monospace;color:#58a6ff;margin-left:4px">BANNED_LINEAR_BATTERY</span>
         
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">lib/tuya/DataRecoveryManager.js</span>
-          <span style="color:#8b949e">:364</span>
+          <span style="color:#8b949e">:398</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Linear battery formula detected (use UnifiedBatteryHandler)</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">const bat = Math.max(0, Math.min(100, Math.round((voltage - 2.4) / 0.6 * 100)));</div>
@@ -7546,7 +7314,7 @@
 </div>
 
 <pre>
-Generated: 2026-06-18 09:33:54
+Generated: 2026-07-12 09:50:01
 Universal Tuya Zigbee - Dashboard Suite
 </pre>
 </body>

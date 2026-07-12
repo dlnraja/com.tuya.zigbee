@@ -389,7 +389,7 @@ class FingerBot extends TuyaSpecificClusterDevice {
       break;
     }
 
-    case V1_FINGER_BOT_DATA_POINTS.lower:
+    case V1_FINGER_BOT_DATA_POINTS.lowerLimit:
       this.log('FingerBot lower limit DP report:', parsedValue);
       break;
 
@@ -401,7 +401,7 @@ class FingerBot extends TuyaSpecificClusterDevice {
       this.log('FingerBot reverse DP report:', parsedValue);
       break;
 
-    case V1_FINGER_BOT_DATA_POINTS.upper:
+    case V1_FINGER_BOT_DATA_POINTS.upperLimit:
       this.log('FingerBot upper limit DP report:', parsedValue);
       break;
 
@@ -418,8 +418,9 @@ class FingerBot extends TuyaSpecificClusterDevice {
     const mode = this._getConfiguredMode();
     const lower = this.getSetting('lower_limit');
     const upper = this.getSetting('upper_limit');
-    const delay = this.getSetting('sustain_time');
-    const reverse = this.getSetting('reverse_direction');
+    const delay = this.getSetting('sustain_time') ?? this.getSetting('delay');
+    const reverse = this.getSetting('reverse_direction') ?? this.getSetting('reverse');
+    const touch = this.getSetting('touch');
 
     try {
       if (includeMode) {
@@ -427,11 +428,11 @@ class FingerBot extends TuyaSpecificClusterDevice {
       }
 
       if (typeof lower === 'number') {
-        await this.writeData32(V1_FINGER_BOT_DATA_POINTS.lower, lower);
+        await this.writeData32(V1_FINGER_BOT_DATA_POINTS.lowerLimit, lower);
       }
 
       if (typeof upper === 'number') {
-        await this.writeData32(V1_FINGER_BOT_DATA_POINTS.upper, upper);
+        await this.writeData32(V1_FINGER_BOT_DATA_POINTS.upperLimit, upper);
       }
 
       if (typeof delay === 'number') {
@@ -443,6 +444,10 @@ class FingerBot extends TuyaSpecificClusterDevice {
           V1_FINGER_BOT_DATA_POINTS.reverse,
           reverse ? 1 : 0,
         );
+      }
+
+      if (typeof touch === 'boolean') {
+        await this.writeEnum(V1_FINGER_BOT_DATA_POINTS.touch, touch ? 1 : 0);
       }
     } catch (err) {
       this.error('Failed to apply FingerBot settings', err);
@@ -463,31 +468,41 @@ class FingerBot extends TuyaSpecificClusterDevice {
 
       case 'lower_limit':
         await this.writeData32(
-          V1_FINGER_BOT_DATA_POINTS.lower,
+          V1_FINGER_BOT_DATA_POINTS.lowerLimit,
           newSettings.lower_limit,
         );
         break;
 
       case 'upper_limit':
         await this.writeData32(
-          V1_FINGER_BOT_DATA_POINTS.upper,
+          V1_FINGER_BOT_DATA_POINTS.upperLimit,
           newSettings.upper_limit,
         );
         break;
 
       case 'sustain_time':
+      case 'delay':
         await this.writeData32(
           V1_FINGER_BOT_DATA_POINTS.delay,
-          newSettings.sustain_time,
+          newSettings.sustain_time ?? newSettings.delay,
         );
         break;
 
       case 'reverse_direction':
-        if (typeof newSettings.reverse_direction === 'boolean') {
+      case 'reverse': {
+        const reverse = newSettings.reverse_direction ?? newSettings.reverse;
+        if (typeof reverse === 'boolean') {
           await this.writeEnum(
             V1_FINGER_BOT_DATA_POINTS.reverse,
-            newSettings.reverse_direction ? 1 : 0,
+            reverse ? 1 : 0,
           );
+        }
+        break;
+      }
+
+      case 'touch':
+        if (typeof newSettings.touch === 'boolean') {
+          await this.writeEnum(V1_FINGER_BOT_DATA_POINTS.touch, newSettings.touch ? 1 : 0);
         }
         break;
 
@@ -562,4 +577,3 @@ class FingerBot extends TuyaSpecificClusterDevice {
 }
 
 module.exports = FingerBot;
-

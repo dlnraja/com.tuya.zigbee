@@ -2,8 +2,7 @@
 const { safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
 
 const { Cluster, BoundCluster } = require('zigbee-clusters');
-// A8: NaN Safety - use safeDivide/safeMultiply
-require('../../lib/tuya/TuyaSpecificCluster');
+const TuyaSpecificCluster = require('../../lib/clusters/TuyaSpecificCluster');
 const TuyaSpecificClusterDevice = require('../../lib/tuya/TuyaSpecificClusterDevice');
 
 Cluster.addCluster(TuyaSpecificCluster);
@@ -185,8 +184,8 @@ class sensortemphumidsensor extends TuyaSpecificClusterDevice {
     tuyaCluster.on('response', data => this.processTuyaMessage('response', data).catch(this.error));
     tuyaCluster.on('reporting', data => this.processTuyaMessage('reporting', data).catch(this.error));
     tuyaCluster.on('datapoint', data => this.processTuyaMessage('datapoint', data).catch(this.error));
-    tuyaCluster.on('timeSync', data => this.onTuyaTimeSync(data).catch(this.error));
-    tuyaCluster.on('mcuVersionResponse', data => this.onMcuVersionResponse(data).catch(this.error));
+    tuyaCluster.on('mcuSyncTime', data => this.onTuyaTimeSync(data).catch(error => this.error(error)));
+    tuyaCluster.on('mcuVersionRsp', data => this.onMcuVersionResponse(data).catch(error => this.error(error)));
   }
 
   async ensureCapability(capabilityId) {
@@ -216,7 +215,7 @@ class sensortemphumidsensor extends TuyaSpecificClusterDevice {
       const tuyaCluster = this.zclNode?.endpoints?.[1]?.clusters?.tuya;
       if (!tuyaCluster || typeof tuyaCluster.mcuVersionRequest !== 'function') {return;}
       const payload = Buffer.from([0x00, 0x00]);
-      await tuyaCluster.mcuVersionRequest({ payload });
+      await tuyaCluster.mcuVersionRequest({ data: payload });
     } catch (error) { this.error('Failed to send Tuya mcuVersionRequest', error); }
   }
 
@@ -231,10 +230,11 @@ class sensortemphumidsensor extends TuyaSpecificClusterDevice {
     try {
       const utcSeconds = Math.floor(Date.now() / 1000);
       const localSeconds = utcSeconds - (new Date().getTimezoneOffset() * 60);
-      const payload = Buffer.alloc(8);
-      payload.writeUInt32BE(utcSeconds >>> 0, 0);
-      payload.writeUInt32BE(localSeconds >>> 0, 4);
-      await this.zclNode.endpoints[1].clusters.tuya.timeSync({ payload });
+      await this.zclNode.endpoints[1].clusters.tuya.timeSync({
+        utcTime: utcSeconds,
+        localTime: localSeconds,
+        sequenceNumber: data?.sequenceNumber ?? data?.payloadSize ?? 0,
+      });
       this.homey.setTimeout(() => { if (this._destroyed) return; this.queryAll().catch(this.error); }, 500);
     } catch (error) { this.error('Failed to respond to Tuya timeSync request', error); }
   }

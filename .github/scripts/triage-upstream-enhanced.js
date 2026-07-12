@@ -4,12 +4,11 @@ const{execSync}=require('child_process');
 const{loadFingerprints,findAllDrivers,extractMfrFromText,extractAllFP,buildFullIndex,resolveFingerprint}=require('./load-fingerprints');
 const{sleep}=require('./retry-helper');
 const { analyzeAndRespond } = require('./intelligent-bug-detector.js');
+const {shadowSkip}=require('./github-shadow-policy');
 let investigateBug;try{investigateBug=require('./bug-investigator').investigate}catch{investigateBug=()=>null}
 const fs=require('fs'),path=require('path'),os=require('os');
 const DRY=process.env.DRY_RUN==='true';
 const REPO=process.env.TARGET_REPO||'JohanBendz/com.tuya.zigbee';
-const CAN_CLOSE=REPO.startsWith('dlnraja/');
-if(!CAN_CLOSE)console.log('NOTE: Close disabled for upstream repo '+REPO);
 const VER=process.env.APP_VERSION||'latest';
 const DRVC=process.env.DRIVER_COUNT||'138';
 const FPC=process.env.FP_COUNT||'5500';
@@ -25,6 +24,7 @@ function gh(c){return execSync(`gh ${c}`,{encoding:'utf8',timeout:60000,maxBuffe
 function wasTriaged(n){try{return gh(`api repos/${REPO}/issues/${n}/comments --jq ".[].body"`).includes(TAG);}catch{return false;}}
 function post(n,body){
   if(DRY){console.log(`[DRY] #${n}: ${body.slice(0,120)}...`);return;}
+  if(shadowSkip(REPO,'POST',{body}))return;
   const f=path.join(os.tmpdir(),'_triage.md');
   fs.writeFileSync(f,`${TAG}\n${body}`);
   try{gh(`issue comment ${n} -R ${REPO} -F "${f}"`);console.log(`Commented on ${REPO}#${n}`);}
@@ -107,12 +107,6 @@ for(const it of issues){
   await sleep(400); // Rate-limit: 0.4s between API calls
   if(wasTriaged(it.number)){
     iTriaged++;
-    // v5.11.47: Stale sweep — close already-triaged issues where all FPs supported
-    const mfrs2=extractMfrFromText(`${it.title||''} ${it.body||''}`);
-    const allSupp=mfrs2.length>0&&mfrs2.every(m=>fps.has(m));
-    if(allSupp&&!DRY&&CAN_CLOSE&&!hasUserSymptoms(it.body, it.title)){
-      try{gh(`issue close ${it.number} -R ${REPO} -r "completed" -c "All fingerprints supported in v${VER}. Closing as resolved."`);/* verify-only */;console.log(`  [SWEEP] Closed #${it.number}`);}catch{}
-    }
     continue;
   }
   const itTxt2=`${it.title||''} ${it.body||''}`;
@@ -139,10 +133,6 @@ for(const it of issues){
   else if(missing.length&&!found.length) msg=unsupportedMsg(missing);
   else if(found.length&&missing.length) msg=supportedMsg(found)+bugInfo+'\n\n---\n\n'+unsupportedMsg(missing);
   if(msg){post(it.number,msg);iCommented++;}
-  // Auto-close if ALL FPs supported (only on own repo)
-  if(found.length&&!missing.length&&!DRY&&CAN_CLOSE&&!hasUserSymptoms(it.body, it.title)){
-    try{gh(`issue edit ${it.number} -R ${REPO} --add-label "awaiting-verification" -c "All FPs here are Mapped in v${VER} — closing. Install the test version and re-pair if needed."`);iClosed++;console.log(`  Closed #${it.number} (all FPs supported)`);}catch(e){console.log(`  Close skip #${it.number}: ${e.message.slice(0,60)}`);}
-  }
 }
 
 // PRs
@@ -151,12 +141,6 @@ for(const pr of prs){
   await sleep(400); // Rate-limit: 0.4s between API calls
   if(wasTriaged(pr.number)){
     pTriaged++;
-    // v5.11.47: Stale sweep — close already-triaged PRs where all FPs supported
-    const mfrs3=extractMfrFromText(`${pr.title||''} ${pr.body||''}`);
-    const allSupp3=mfrs3.length>0&&mfrs3.every(m=>fps.has(m));
-    if(allSupp3&&!DRY&&CAN_CLOSE){
-      try{gh(`pr edit ${pr.number} -R ${REPO} --add-label "awaiting-verification" && echo "labeled in v${VER}. Thanks!"`);console.log(`  [SWEEP] Verify-requested PR #${pr.number}`);}catch{}
-    }
     continue;
   }
   const prTxt2=`${pr.title||''} ${pr.body||''}`;
@@ -171,10 +155,6 @@ for(const pr of prs){
   }
   missing.forEach(m=>newFps.push({fp:m,source:`${REPO}#${pr.number}`,type:'pr'}));
   if(found.length||missing.length){post(pr.number,prMsg(found,missing));pCommented++;}
-  // Auto-close PR if ALL FPs supported (only on own repo)
-  if(found.length&&!missing.length&&!DRY&&CAN_CLOSE){
-    try{gh(`pr edit ${pr.number} -R ${REPO} --add-label "awaiting-verification" && echo "All FPs in this PR are Mapped in v${VER} — closing as resolved. Thanks!"`);pClosed++;console.log(`  Closed PR #${pr.number} (all FPs supported)`);}catch(e){console.log(`  Close skip PR #${pr.number}: ${e.message.slice(0,60)}`);}
-  }
 }
 
 // Scan forks if enabled
@@ -195,7 +175,7 @@ if(SCAN_FORKS){
           const ORIG_REPO=REPO;
           // Post redirect comment on fork
           const msg=`Hi! This device request has been tracked in [Tuya Unified Zigbee](${GH}) **v${VER}**.\n\nPlease install from [Homey App Store](${APP}) and report issues on our [Forum](${FORUM}) or [GitHub](${GH}/issues).`;
-          if(!DRY){
+          if(!DRY&&!shadowSkip(fork,'POST',{body:msg})){
             try{
               const f=path.join(os.tmpdir(),'_triage_fork.md');
               fs.writeFileSync(f,`${TAG}\n${msg}`);

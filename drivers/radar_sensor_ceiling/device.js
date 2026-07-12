@@ -59,6 +59,14 @@ const getDataValue = (dpValue) => {
 }
 
 class radarSensorCeiling extends TuyaSpecificClusterDevice {
+  _shouldPublishDistance(intervalSeconds = 10) {
+    const intervalMs = Math.max(1, Number(intervalSeconds) || 10) * 1000;
+    const now = Date.now();
+    if (this._lastDistancePublishedAt && now - this._lastDistancePublishedAt < intervalMs) return false;
+    this._lastDistancePublishedAt = now;
+    return true;
+  }
+
   async onNodeInit({zclNode}) {
 
     zclNode.endpoints[1].clusters.tuya.on("response", value => this.updatePosition(value));
@@ -80,7 +88,7 @@ class radarSensorCeiling extends TuyaSpecificClusterDevice {
         this.onIlluminanceMeasuredAttributeReport(value/10)
         break;
       case dataPoints.tshpsTargetDistance:
-        if (new Date().getSeconds() % 10 === 0) {
+        if (this._shouldPublishDistance()) {
           this.safeSetCapabilityValue('target_distance', value/100).catch(() => {});
         }
 

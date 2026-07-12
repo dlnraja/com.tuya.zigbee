@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <rect x="0" y="0" width="200" height="200" fill="#F7FAFC"/>
+  <g transform="translate(40, 30)">
+    <rect x="20" y="15" width="80" height="120" rx="6" fill="#E8F0F7" stroke="#2C5282" stroke-width="3"/>
+    <rect x="28" y="25" width="64" height="100" rx="3" fill="#FFFFFF" stroke="#2C5282" stroke-width="2"/>
+    <rect x="38" y="40" width="44" height="10" rx="2" fill="#A0AEC0"/>
+    <rect x="38" y="58" width="44" height="10" rx="2" fill="#CBD5E0"/>
+    <rect x="38" y="76" width="44" height="10" rx="2" fill="#CBD5E0"/>
+    <circle cx="60" cy="106" r="9" fill="#4299E1"/>
+    <circle cx="60" cy="106" r="5" fill="#FFFFFF"/>
+  </g>
+  <g transform="translate(150, 100)">
+    <path d="M 0 0 L 0 -20 L 15 -10 Z" fill="#48BB78" opacity="0.7"/>
+  </g>
+  <g transform="translate(0, 100)">
+    <path d="M 30 0 L 30 -20 L 15 -10 Z" fill="#F56565" opacity="0.7"/>
+  </g>
+  <text x="100" y="185" font-family="Arial, sans-serif" font-size="14" fill="#2C5282" text-anchor="middle" font-weight="bold">Door / Window Sensor</text>
+</svg>

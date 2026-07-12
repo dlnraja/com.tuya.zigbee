@@ -26,8 +26,22 @@ env:
   NODE_VERSION: "22"
 
 jobs:
+  upstream-guard:
+    name: "🛡️ Upstream Guard"
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Verify no upstream writes
+        run: |
+          if grep -rE "(push|create|POST).*JohanBendz" .github/workflows/ 2>/dev/null | grep -v upstream-guard.yml; then
+            echo "::error::Workflow has potential upstream write"
+            exit 1
+          fi
+          echo "✓ No upstream writes"
+
   pre-validation:
     name: "Pre-Validation"
+    needs: upstream-guard
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:

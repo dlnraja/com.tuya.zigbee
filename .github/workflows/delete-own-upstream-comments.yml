@@ -1,0 +1,128 @@
+name: "Delete My Upstream Comments (Manual)"
+
+on:
+  workflow_dispatch:
+    inputs:
+      confirmation:
+        description: "Type exactly: DELETE MY JOHAN COMMENTS"
+        required: true
+        type: string
+      dry_run:
+        description: "Inventory only; do not delete"
+        required: true
+        default: true
+        type: boolean
+
+permissions:
+  contents: read
+
+concurrency:
+  group: delete-own-johan-comments
+  cancel-in-progress: false
+
+jobs:
+  delete-own-comments:
+    if: ${{ inputs.confirmation == 'DELETE MY JOHAN COMMENTS' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Require the personal token
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+        run: |
+          if [ -z "$GH_PAT" ]; then
+            echo "GH_PAT is required; nothing was changed." >&2
+            exit 1
+          fi
+
+      - name: Delete only comments owned by dlnraja
+        id: cleanup
+        uses: actions/github-script@f28e40c7f34bde8b3046d885e986cb6290c5673b # v7.1.0
+        with:
+          github-token: ${{ secrets.GH_PAT }}
+          script: |
+            const OWNER = 'dlnraja';
+            const owner = 'JohanBendz';
+            const repo = 'com.tuya.zigbee';
+            const dryRun = ${{ inputs.dry_run }};
+            const failures = [];
+            let deletedIssueComments = 0;
+            let deletedReviewComments = 0;
+
+            const issueComments = await github.paginate(
+              github.rest.issues.listCommentsForRepo,
+              { owner, repo, per_page: 100 }
+            );
+            const reviewComments = await github.paginate(
+              github.rest.pulls.listReviewCommentsForRepo,
+              { owner, repo, per_page: 100 }
+            );
+            const ownedIssueComments = issueComments.filter(comment => comment.user?.login === OWNER);
+            const ownedReviewComments = reviewComments.filter(comment => comment.user?.login === OWNER);
+
+            async function deleteIssueComment(comment) {
+              if (comment.user?.login !== OWNER) {
+                throw new Error(`Refusing issue comment ${comment.id}: author is not ${OWNER}`);
+              }
+              if (dryRun) return;
+              await github.rest.issues.deleteComment({ owner, repo, comment_id: comment.id });
+              deletedIssueComments++;
+            }
+
+            async function deleteReviewComment(comment) {
+              if (comment.user?.login !== OWNER) {
+                throw new Error(`Refusing review comment ${comment.id}: author is not ${OWNER}`);
+              }
+              if (dryRun) return;
+              await github.rest.pulls.deleteReviewComment({ owner, repo, comment_id: comment.id });
+              deletedReviewComments++;
+            }
+
+            for (const comment of ownedIssueComments) {
+              try { await deleteIssueComment(comment); }
+              catch (error) { failures.push(`issue comment ${comment.id}: ${error.message}`); }
+            }
+            for (const comment of ownedReviewComments) {
+              try { await deleteReviewComment(comment); }
+              catch (error) { failures.push(`review comment ${comment.id}: ${error.message}`); }
+            }
+
+            const remainingIssueComments = (await github.paginate(
+              github.rest.issues.listCommentsForRepo,
+              { owner, repo, per_page: 100 }
+            )).filter(comment => comment.user?.login === OWNER);
+            const remainingReviewComments = (await github.paginate(
+              github.rest.pulls.listReviewCommentsForRepo,
+              { owner, repo, per_page: 100 }
+            )).filter(comment => comment.user?.login === OWNER);
+
+            await core.summary
+              .addHeading('Manual upstream comment cleanup')
+              .addTable([
+                [{data: 'Kind', header: true}, {data: 'Found', header: true}, {data: 'Deleted', header: true}, {data: 'Remaining', header: true}],
+                ['Issue / PR conversation comments', String(ownedIssueComments.length), String(deletedIssueComments), String(remainingIssueComments.length)],
+                ['PR inline review comments', String(ownedReviewComments.length), String(deletedReviewComments), String(remainingReviewComments.length)],
+              ])
+              .addRaw(`\nMode: ${dryRun ? 'dry run' : 'live'}; failures: ${failures.length}.\n`)
+              .write();
+
+            core.setOutput('issue_found', ownedIssueComments.length);
+            core.setOutput('review_found', ownedReviewComments.length);
+            core.setOutput('issue_deleted', deletedIssueComments);
+            core.setOutput('review_deleted', deletedReviewComments);
+            core.setOutput('remaining', remainingIssueComments.length + remainingReviewComments.length);
+
+            if (failures.length) core.setFailed(failures.slice(0, 20).join('\n'));
+            if (!dryRun && (remainingIssueComments.length || remainingReviewComments.length)) {
+              core.setFailed('Final verification found comments still owned by dlnraja.');
+            }
+
+      - name: Final verification summary
+        if: always()
+        run: |
+          echo "## Final verification" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Issue comments found: ${{ steps.cleanup.outputs.issue_found || '0' }}" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Review comments found: ${{ steps.cleanup.outputs.review_found || '0' }}" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Issue comments deleted: ${{ steps.cleanup.outputs.issue_deleted || '0' }}" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Review comments deleted: ${{ steps.cleanup.outputs.review_deleted || '0' }}" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Remaining after verification: ${{ steps.cleanup.outputs.remaining || 'unknown' }}" >> "$GITHUB_STEP_SUMMARY"

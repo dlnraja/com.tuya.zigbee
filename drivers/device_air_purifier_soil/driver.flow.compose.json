@@ -5,7 +5,7 @@
       "title": {
         "en": "Soil moisture changed",
         "nl": "Bodemvochtigheid veranderd",
-        "fr": "HumiditÃ© sol changÃ©e",
+        "fr": "Humidité sol changée",
         "de": "Bodenfeuchtigkeit geÃ¤ndert"
       },
       "tokens": [
@@ -15,7 +15,7 @@
           "title": {
             "en": "Moisture (%)",
             "nl": "Vochtigheid (%)",
-            "fr": "HumiditÃ© (%)",
+            "fr": "Humidité (%)",
             "de": "Feuchtigkeit (%)"
           },
           "example": 45
@@ -25,7 +25,7 @@
       "titleFormatted": {
         "en": "Soil moisture changed",
         "nl": "Bodemvochtigheid veranderd",
-        "fr": "HumiditÃ© sol changÃ©e",
+        "fr": "Humidité sol changée",
         "de": "Bodenfeuchtigkeit geÃ¤ndert"
       }
     },
@@ -34,7 +34,7 @@
       "title": {
         "en": "Soil temperature changed",
         "nl": "Bodemtemperatuur veranderd",
-        "fr": "TempÃ©rature sol changÃ©e",
+        "fr": "Température sol changée",
         "de": "Bodentemperatur geÃ¤ndert"
       },
       "tokens": [
@@ -44,7 +44,7 @@
           "title": {
             "en": "Temperature (Â°C)",
             "nl": "Temperatuur (Â°C)",
-            "fr": "TempÃ©rature (Â°C)",
+            "fr": "Température (Â°C)",
             "de": "Temperatur (Â°C)"
           },
           "example": 18
@@ -54,7 +54,7 @@
       "titleFormatted": {
         "en": "Soil temperature changed",
         "nl": "Bodemtemperatuur veranderd",
-        "fr": "TempÃ©rature sol changÃ©e",
+        "fr": "Température sol changée",
         "de": "Bodentemperatur geÃ¤ndert"
       }
     },
@@ -70,7 +70,7 @@
       "hint": {
         "en": "Triggers when soil moisture drops below the configured dry threshold",
         "nl": "Triggert wanneer de bodemvochtigheid onder de droge drempel zakt",
-        "fr": "Se dÃ©clenche quand l'humiditÃ© du sol passe sous le seuil de sÃ©cheresse",
+        "fr": "Se déclenche quand l'humidité du sol passe sous le seuil de sécheresse",
         "de": "Wird ausgelÃ¶st, wenn die Bodenfeuchtigkeit unter den Trockenschwellenwert fÃ¤llt"
       },
       "args": [],
@@ -92,7 +92,7 @@
       "hint": {
         "en": "Triggers when soil moisture rises above the configured wet threshold",
         "nl": "Triggert wanneer de bodemvochtigheid boven de natte drempel stijgt",
-        "fr": "Se dÃ©clenche quand l'humiditÃ© du sol dÃ©passe le seuil d'humiditÃ©",
+        "fr": "Se déclenche quand l'humidité du sol dépasse le seuil d'humidité",
         "de": "Wird ausgelÃ¶st, wenn die Bodenfeuchtigkeit Ã¼ber den NÃ¤sseschwellenwert steigt"
       },
       "args": [],
@@ -108,20 +108,20 @@
       "title": {
         "en": "Soil moisture is optimal",
         "nl": "Bodemvochtigheid is optimaal",
-        "fr": "HumiditÃ© du sol optimale",
+        "fr": "Humidité du sol optimale",
         "de": "Bodenfeuchtigkeit ist optimal"
       },
       "hint": {
         "en": "Triggers when soil moisture is in the optimal range for plant growth",
         "nl": "Triggert wanneer de bodemvochtigheid in het optimale bereik voor plantengroei is",
-        "fr": "Se dÃ©clenche quand l'humiditÃ© du sol est dans la plage optimale pour la croissance des plantes",
+        "fr": "Se déclenche quand l'humidité du sol est dans la plage optimale pour la croissance des plantes",
         "de": "Wird ausgelÃ¶st, wenn die Bodenfeuchtigkeit im optimalen Bereich fÃ¼r Pflanzenwachstum liegt"
       },
       "args": [],
       "titleFormatted": {
         "en": "Soil moisture is optimal",
         "nl": "Bodemvochtigheid is optimaal",
-        "fr": "HumiditÃ© du sol optimale",
+        "fr": "Humidité du sol optimale",
         "de": "Bodenfeuchtigkeit ist optimal"
       }
     },
@@ -136,7 +136,7 @@
       "hint": {
         "en": "Triggers when soil temperature drops below 2Â°C - protect your plants!",
         "nl": "Triggert wanneer de bodemtemperatuur onder 2Â°C zakt - bescherm je planten!",
-        "fr": "Se dÃ©clenche quand la tempÃ©rature du sol passe sous 2Â°C - protÃ©gez vos plantes !",
+        "fr": "Se déclenche quand la température du sol passe sous 2Â°C - protégez vos plantes !",
         "de": "Wird ausgelÃ¶st, wenn die Bodentemperatur unter 2Â°C fÃ¤llt - schÃ¼tzen Sie Ihre Pflanzen!"
       },
       "args": [],
@@ -152,7 +152,7 @@
       "title": {
         "en": "Battery level changed",
         "nl": "Batterijniveau veranderd",
-        "fr": "Niveau batterie changÃ©",
+        "fr": "Niveau batterie changé",
         "de": "Batteriestand geÃ¤ndert"
       },
       "tokens": [
@@ -172,7 +172,7 @@
       "titleFormatted": {
         "en": "Battery level changed",
         "nl": "Batterijniveau veranderd",
-        "fr": "Niveau batterie changÃ©",
+        "fr": "Niveau batterie changé",
         "de": "Batteriestand geÃ¤ndert"
       }
     },
@@ -196,14 +196,14 @@
       "id": "device_air_purifier_soil_air_purifier_soil_soil_sensor_temp_changed",
       "title": {
         "en": "Temperature changed",
-        "fr": "TempÃ©rature changÃ©e",
+        "fr": "Température changée",
         "nl": "Temperatuur gewijzigd",
         "de": "Temperatur geÃ¤ndert"
       },
       "args": [],
       "titleFormatted": {
         "en": "Temperature changed",
-        "fr": "TempÃ©rature changÃ©e",
+        "fr": "Température changée",
         "nl": "Temperatuur gewijzigd",
         "de": "Temperatur geÃ¤ndert"
       }
@@ -212,14 +212,14 @@
       "id": "device_air_purifier_soil_air_purifier_soil_soil_sensor_humidity_changed",
       "title": {
         "en": "Humidity changed",
-        "fr": "HumiditÃ© changÃ©e",
+        "fr": "Humidité changée",
         "nl": "Vochtigheid gewijzigd",
         "de": "Feuchtigkeit geÃ¤ndert"
       },
       "args": [],
       "titleFormatted": {
         "en": "Humidity changed",
-        "fr": "HumiditÃ© changÃ©e",
+        "fr": "Humidité changée",
         "nl": "Vochtigheid gewijzigd",
         "de": "Feuchtigkeit geÃ¤ndert"
       }
@@ -247,7 +247,7 @@
       "title": {
         "en": "Soil moisture !{{is|is not}} below",
         "nl": "Bodemvochtigheid !{{is|is niet}} onder",
-        "fr": "HumiditÃ© sol !{{est|n'est pas}} en dessous de",
+        "fr": "Humidité sol !{{est|n'est pas}} en dessous de",
         "de": "Bodenfeuchtigkeit !{{ist|ist nicht}} unter"
       },
       "args": [
@@ -265,7 +265,7 @@
       "titleFormatted": {
         "en": "Soil moisture !{{is|is not}} below [[moisture]]",
         "nl": "Bodemvochtigheid !{{is|is niet}} onder [[moisture]]",
-        "fr": "HumiditÃ© sol !{{est|n'est pas}} en dessous de [[moisture]]",
+        "fr": "Humidité sol !{{est|n'est pas}} en dessous de [[moisture]]",
         "de": "Bodenfeuchtigkeit !{{ist|ist nicht}} unter [[moisture]]"
       }
     },
@@ -274,7 +274,7 @@
       "title": {
         "en": "Soil moisture !{{is|is not}} above",
         "nl": "Bodemvochtigheid !{{is|is niet}} boven",
-        "fr": "HumiditÃ© sol !{{est|n'est pas}} au-dessus de",
+        "fr": "Humidité sol !{{est|n'est pas}} au-dessus de",
         "de": "Bodenfeuchtigkeit !{{ist|ist nicht}} Ã¼ber"
       },
       "args": [
@@ -292,7 +292,7 @@
       "titleFormatted": {
         "en": "Soil moisture !{{is|is not}} above [[moisture]]",
         "nl": "Bodemvochtigheid !{{is|is niet}} boven [[moisture]]",
-        "fr": "HumiditÃ© sol !{{est|n'est pas}} au-dessus de [[moisture]]",
+        "fr": "Humidité sol !{{est|n'est pas}} au-dessus de [[moisture]]",
         "de": "Bodenfeuchtigkeit !{{ist|ist nicht}} Ã¼ber [[moisture]]"
       }
     },
@@ -301,7 +301,7 @@
       "title": {
         "en": "Soil temperature !{{is|is not}} above",
         "nl": "Bodemtemperatuur !{{is|is niet}} boven",
-        "fr": "TempÃ©rature sol !{{est|n'est pas}} au-dessus de",
+        "fr": "Température sol !{{est|n'est pas}} au-dessus de",
         "de": "Bodentemperatur !{{ist|ist nicht}} Ã¼ber"
       },
       "args": [
@@ -319,7 +319,7 @@
       "titleFormatted": {
         "en": "Soil temperature !{{is|is not}} above [[temp]]",
         "nl": "Bodemtemperatuur !{{is|is niet}} boven [[temp]]",
-        "fr": "TempÃ©rature sol !{{est|n'est pas}} au-dessus de [[temp]]",
+        "fr": "Température sol !{{est|n'est pas}} au-dessus de [[temp]]",
         "de": "Bodentemperatur !{{ist|ist nicht}} Ã¼ber [[temp]]"
       }
     },
@@ -370,14 +370,14 @@
       "id": "device_air_purifier_soil_air_purifier_soil_soil_sensor_water_detected",
       "title": {
         "en": "Water !{{is|is not}} detected",
-        "fr": "Eau !{{est|n'est pas}} dÃ©tectÃ©e",
+        "fr": "Eau !{{est|n'est pas}} détectée",
         "nl": "Water !{{is|is niet}} gedetecteerd",
         "de": "Wasser !{{ist|ist nicht}} erkannt"
       },
       "args": [],
       "titleFormatted": {
         "en": "Water !{{is|is not}} detected",
-        "fr": "Eau !{{est|n'est pas}} dÃ©tectÃ©e",
+        "fr": "Eau !{{est|n'est pas}} détectée",
         "nl": "Water !{{is|is niet}} gedetecteerd",
         "de": "Wasser !{{ist|ist nicht}} erkannt"
       }

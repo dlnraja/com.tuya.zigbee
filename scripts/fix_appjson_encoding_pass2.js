@@ -14,13 +14,13 @@ const path = require('path');
 const APP_JSON_PATH = path.join(__dirname, '..', 'app.json');
 
 const ENCODING_FIXES = [
-  [/Ã©/g, 'é'], [/Ã‰/g, 'É'],
-  [/Ã¨/g, 'è'], [/Ã‡/g, 'Ç'],
-  [/Ã¨/g, 'è'], [/Ã€/g, 'À'],
+  [/é/g, 'é'], [/Ã‰/g, 'É'],
+  [/è/g, 'è'], [/Ã‡/g, 'Ç'],
+  [/è/g, 'è'], [/Ã€/g, 'À'],
   [/Ãª/g, 'ê'], [/ÃŠ/g, 'Ê'],
   [/Ã«/g, 'ë'], [/Ã¯/g, 'ï'],
-  [/Ã /g, 'à'], [/Ã€/g, 'À'],
-  [/Ã¢/g, 'â'], [/Ã‚/g, 'Â'],
+  [/à/g, 'à'], [/Ã€/g, 'À'],
+  [/â/g, 'â'], [/Ã‚/g, 'Â'],
   [/Ã´/g, 'ô'], [/Ã"/g, 'Ô'],
   [/Ã®/g, 'î'], [/ÃŽ/g, 'Î'],
   [/Ã¹/g, 'ù'], [/Ã™/g, 'Ù'],
@@ -40,10 +40,10 @@ const ENCODING_FIXES = [
   [/Â /g, '\u00A0'],
   // Pattern: ÃJ → MÀJ (Mise à Jour)
   [/ÃJ/g, 'àJ'],
-  // VÃ©rifier → Vérifier
-  [/VÃ©rifier/g, 'Vérifier'],
+  // Vérifier → Vérifier
+  [/Vérifier/g, 'Vérifier'],
   [/MÃJ/g, 'MÀJ'],
-  // Loose Ã followed by uppercase/lowercase
+  // Loose àfollowed by uppercase/lowercase
   [/Ã([A-Za-z])/g, (m, c) => {
     // Try to map common combos
     const map = {
@@ -103,7 +103,7 @@ console.log('✅ Written.');
 // Verify
 console.log('\n🔍 Final verification...');
 const raw2 = fs.readFileSync(APP_JSON_PATH, 'utf8');
-const remaining = (raw2.match(/Ã©|Ã¨|Ã |Ã§|Ã¢|Ã´|Ã®|Ã»|Ã¹|Ãª|Ã«|Ã¯|Ã¼|â€™|â€œ|â€|Â©|Â°|ÃJ|MÃ|VÃ©/g) || []).length;
+const remaining = (raw2.match(/é|è|à|Ã§|â|Ã´|Ã®|Ã»|Ã¹|Ãª|Ã«|Ã¯|Ã¼|â€™|â€œ|â€|Â©|Â°|ÃJ|MÃ|Vé/g) || []).length;
 console.log(`  Remaining encoding issues: ${remaining}`);
 if (remaining === 0) {
   console.log('  ✅ ZERO encoding issues remain!');
@@ -112,7 +112,7 @@ if (remaining === 0) {
   const lines = raw2.split('\n');
   let count = 0;
   for (let i = 0; i < lines.length && count < 10; i++) {
-    if (/Ã©|Ã¨|Ã |Ã§|Ã¢|Ã´|Ã®|Ã»|Ã¹|Ãª|Ã«|Ã¯|Ã¼|â€™|â€œ|â€|Â©|Â°|ÃJ|MÃ|VÃ©/.test(lines[i])) {
+    if (/é|è|à|Ã§|â|Ã´|Ã®|Ã»|Ã¹|Ãª|Ã«|Ã¯|Ã¼|â€™|â€œ|â€|Â©|Â°|ÃJ|MÃ|Vé/.test(lines[i])) {
       console.log(`  L${i+1}: ${lines[i].trim().substring(0,80)}`);
       count++;
     }

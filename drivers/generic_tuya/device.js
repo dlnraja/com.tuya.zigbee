@@ -203,7 +203,7 @@ class GenericTuyaDevice extends AutoAdaptiveDevice {
       // Battery (CONFIDENCE: 0 - Official)
       4: { capability: 'measure_battery', parser: v => Math.min(100, Math.max(0, v)), confidence: 0 },
       10: { capability: 'measure_battery', parser: v => Math.min(100, Math.max(0, v)), confidence: 1 },
-      14: { internal: true, type: 'battery_low', parser: v => !!v, confidence: 0 }, // SDK3: alarm_battery obsolÃ¨te
+      14: { internal: true, type: 'battery_low', parser: v => !!v, confidence: 0 }, // SDK3: alarm_battery obsolète
       15: { capability: 'measure_battery', parser: v => Math.min(100, Math.max(0, v)), confidence: 0 },
       101: { capability: 'measure_battery', parser: v => Math.min(100, Math.max(0, v)), confidence: 1 },
       105: { capability: 'measure_battery', parser: v => Math.min(100, Math.max(0, v)), confidence: 1 },

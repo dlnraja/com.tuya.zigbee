@@ -24,7 +24,7 @@
     "measure_temperature.probe": {
       "title": {
         "en": "Probe Temperature",
-        "fr": "TempÃ©rature Sonde",
+        "fr": "Température Sonde",
         "nl": "Sonde Temperatuur",
         "de": "Sondentemperatur"
       }
@@ -83,7 +83,7 @@
           "type": "number",
           "label": {
             "en": "Temperature Offset (Â°C)",
-            "fr": "DÃ©calage TempÃ©rature (Â°C)"
+            "fr": "Décalage Température (Â°C)"
           },
           "value": 0,
           "min": -10,
@@ -91,7 +91,7 @@
           "step": 0.1,
           "hint": {
             "en": "Add or subtract from temperature reading. Use positive value if sensor reads too low.",
-            "fr": "Ajouter ou soustraire de la tempÃ©rature lue. Valeur positive si capteur lit trop bas."
+            "fr": "Ajouter ou soustraire de la température lue. Valeur positive si capteur lit trop bas."
           }
         },
         {
@@ -99,7 +99,7 @@
           "type": "number",
           "label": {
             "en": "Humidity Offset (%)",
-            "fr": "DÃ©calage HumiditÃ© (%)"
+            "fr": "Décalage Humidité (%)"
           },
           "value": 0,
           "min": -20,
@@ -107,7 +107,7 @@
           "step": 1,
           "hint": {
             "en": "Add or subtract from humidity reading. Use positive value if sensor reads too low.",
-            "fr": "Ajouter ou soustraire de l'humiditÃ© lue. Valeur positive si capteur lit trop bas."
+            "fr": "Ajouter ou soustraire de l'humidité lue. Valeur positive si capteur lit trop bas."
           }
         },
         {
@@ -115,7 +115,7 @@
           "type": "dropdown",
           "label": {
             "en": "Decimal Precision",
-            "fr": "PrÃ©cision"
+            "fr": "Précision"
           },
           "value": "1",
           "hint": {
@@ -159,7 +159,7 @@
           "value": "auto",
           "hint": {
             "en": "Select time sync format. Auto works for most devices. Change only if clock shows wrong time.",
-            "fr": "Format de synchronisation. Auto fonctionne pour la plupart. Changer si l'heure affichÃ©e est incorrecte.",
+            "fr": "Format de synchronisation. Auto fonctionne pour la plupart. Changer si l'heure affichée est incorrecte.",
             "nl": "Selecteer tijdsync formaat. Auto werkt voor de meeste apparaten.",
             "de": "Zeitsync-Format wÃ¤hlen. Auto funktioniert fÃ¼r die meisten GerÃ¤te."
           },
@@ -168,7 +168,7 @@
               "id": "auto",
               "label": {
                 "en": " Auto-detect (recommended)",
-                "fr": " Auto-dÃ©tection (recommandÃ©)"
+                "fr": " Auto-détection (recommandé)"
               }
             },
             {
@@ -248,7 +248,7 @@
           "value": "auto",
           "hint": {
             "en": "Override timezone. Use Auto to use Homey's timezone. Manual override for devices that don't handle DST.",
-            "fr": "Forcer le fuseau. Auto utilise celui de Homey. Manuel pour appareils sans gestion heure d'Ã©tÃ©.",
+            "fr": "Forcer le fuseau. Auto utilise celui de Homey. Manuel pour appareils sans gestion heure d'été.",
             "nl": "Overschrijf tijdzone. Auto gebruikt Homey's tijdzone.",
             "de": "Zeitzone Ã¼berschreiben. Auto verwendet Homey's Zeitzone."
           },
@@ -278,7 +278,7 @@
               "id": "gmt+2",
               "label": {
                 "en": " GMT+2 (CEST/EET)",
-                "fr": " GMT+2 (Paris Ã©tÃ©)"
+                "fr": " GMT+2 (Paris été)"
               }
             },
             {
@@ -327,7 +327,7 @@
           "label": {
             "en": "Max Temperature Alarm (Â°C)",
             "nl": "Max temperatuur alarm (Â°C)",
-            "fr": "Alarme tempÃ©rature max (Â°C)"
+            "fr": "Alarme température max (Â°C)"
           },
           "hint": {
             "en": "Device will trigger alarm when temperature exceeds this value (E002 cluster, not all devices support this)",
@@ -344,7 +344,7 @@
           "label": {
             "en": "Min Temperature Alarm (Â°C)",
             "nl": "Min temperatuur alarm (Â°C)",
-            "fr": "Alarme tempÃ©rature min (Â°C)"
+            "fr": "Alarme température min (Â°C)"
           },
           "hint": {
             "en": "Device will trigger alarm when temperature drops below this value",
@@ -361,7 +361,7 @@
           "label": {
             "en": "Max Humidity Alarm (%)",
             "nl": "Max luchtvochtigheid alarm (%)",
-            "fr": "Alarme humiditÃ© max (%)"
+            "fr": "Alarme humidité max (%)"
           },
           "hint": {
             "en": "Device will trigger alarm when humidity exceeds this value",
@@ -378,7 +378,7 @@
           "label": {
             "en": "Min Humidity Alarm (%)",
             "nl": "Min luchtvochtigheid alarm (%)",
-            "fr": "Alarme humiditÃ© min (%)"
+            "fr": "Alarme humidité min (%)"
           },
           "hint": {
             "en": "Device will trigger alarm when humidity drops below this value",
@@ -408,7 +408,7 @@
           "value": false,
           "hint": {
             "en": " EXPERT ONLY: Test all ZCL Time sync methods on device startup. May drain battery if used frequently.",
-            "fr": " EXPERT UNIQUEMENT: Teste toutes les mÃ©thodes sync ZCL Time au dÃ©marrage. Peut vider la batterie si utilisÃ© frÃ©quemment."
+            "fr": " EXPERT UNIQUEMENT: Teste toutes les méthodes sync ZCL Time au démarrage. Peut vider la batterie si utilisé fréquemment."
           }
         }
       ]
@@ -489,12 +489,12 @@
       "type": "checkbox",
       "label": {
         "en": "Enable Radio Presence Sensing",
-        "fr": "Activer la DÃ©tection de PrÃ©sence Radio"
+        "fr": "Activer la Détection de Présence Radio"
       },
       "value": false,
       "hint": {
         "en": "Infer presence from Zigbee signal fluctuations (BETA)",
-        "fr": "DÃ©duit la prÃ©sence des fluctuations du signal Zigbee (BETA)"
+        "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
       }
     },
     {
@@ -502,7 +502,7 @@
       "type": "number",
       "label": {
         "en": "Radio Presence Sensitivity",
-        "fr": "SensibilitÃ© PrÃ©sence Radio"
+        "fr": "Sensibilité Présence Radio"
       },
       "value": 15,
       "min": 5,
@@ -569,7 +569,7 @@
       "id": "ota_check",
       "title": {
         "en": "Check Zigbee OTA Update",
-        "fr": "VÃ©rifier MÃJ OTA",
+        "fr": "Vérifier MÃJ OTA",
         "nl": "Controleer op OTA-updates"
       }
     }
@@ -591,5 +591,32 @@
       "getable": false,
       "setable": false
     }
-  }
+  },
+  "_pidConflictNotes": [
+    "// PID-CONFLICT-NOTE Excellux shared with 30 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE TS0201 shared with 18 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE TS0222 shared with 9 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE TY0201 shared with 8 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE RH3052 shared with 7 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE ZG-227Z shared with 6 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE TS1201 shared with 5 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE CK-TLSR8656-SS5-01(7014) shared with 5 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE ZG-227ZL shared with 4 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE TH01 shared with 3 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE WSDCGQ01LM shared with 3 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE WSDCGQ11LM shared with 3 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE WSDCGQ12LM shared with 3 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE lumi.sensor_ht shared with 3 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE lumi.sensor_ht.agl02 shared with 3 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE lumi.weather shared with 3 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE SM0201 shared with 3 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE SNZB-02 shared with 3 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE SNZB-02D shared with 3 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE SNZB-02P shared with 3 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE SNZB-02DR2 shared with 3 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE SNZB-02LD shared with 3 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE SNZB-02WD shared with 3 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE THS317-ET shared with 3 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE ZG-303Z shared with 3 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
+  ]
 }

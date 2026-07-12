@@ -83,7 +83,7 @@ class ContactSensorDevice extends UnifiedSensorBase {
           return battery;
         }
       },
-      // Battery state - DP 3 (enum: 0=normal, 1=low) - SDK3: alarm_battery obsolÃ¨te, utiliser internal
+      // Battery state - DP 3 (enum: 0=normal, 1=low) - SDK3: alarm_battery obsolète, utiliser internal
       3: { internal: true, type: 'battery_low', transform: (v) => v === 1 || v === 'low' },
       // Battery alt - DP 4 (v5.5.793: Added validation)
       4: { 

@@ -564,7 +564,7 @@ return Math.min(100, safeMultiply(v, 2)); // Fallback: treat as raw with x2
     this.log(`[CLIMATE]  DIAGNOSTIC - isLCDClimateDevice: ${typeof this.isLCDClimateDevice === 'function' ? this.isLCDClimateDevice() : 'N/A'}`);
     this.log(`[CLIMATE]  DIAGNOSTIC - needsTuyaEpoch: ${this.needsTuyaEpoch || 'N/A'}`);
 
-    // DÃ©tection RTC via outCluster 0x000A (mÃ©thode fiable)
+    // Détection RTC via outCluster 0x000A (méthode fiable)
     const rtcDetection = TuyaRtcDetector.hasRtc(this, { useHeuristics: true });
     this.log(`[CLIMATE]  RTC Detection: ${JSON.stringify(rtcDetection)}`);
 
@@ -597,7 +597,7 @@ return Math.min(100, safeMultiply(v, 2)); // Fallback: treat as raw with x2
       },24 * 60 * 60 * 1000);
 
       // 
-      // DEBUG MODE: Test toutes les mÃ©thodes ZCL (si activÃ©)
+      // DEBUG MODE: Test toutes les méthodes ZCL (si activé)
       // 
       if (this.getSettings().zigbee_time_debug === true) {
         this.log('[CLIMATE]  ZCL DEBUG MODE: Testing all Time cluster methods...');
@@ -656,7 +656,7 @@ return Math.min(100, safeMultiply(v, 2)); // Fallback: treat as raw with x2
     // 
     await this._setupExplicitZCLClusters(zclNode);
 
-    // DIAGNOSTIC FORCÃ‰ - VÃ©rifier Ã©tat clusters et donnÃ©es
+    // DIAGNOSTIC FORCÃ‰ - Vérifier état clusters et données
     this.log(`[CLIMATE]  DIAGNOSTIC - Available clusters: ${JSON.stringify(Object.keys(clusters || {}))}`);
     this.log(`[CLIMATE]  DIAGNOSTIC - Available capabilities: ${JSON.stringify(this.getCapabilities())}`);
     this.log(`[CLIMATE]  DIAGNOSTIC - Current values: temp=${this.getCapabilityValue('measure_temperature')}, hum=${this.getCapabilityValue('measure_humidity')}, bat=${this.getCapabilityValue('measure_battery')}`);

@@ -23,17 +23,23 @@ class PlugSmartDriver extends ZigBeeDriver {
 
   _registerFlowCards() {
     // TRIGGERS
-    const _triggerIds = ["device_plug_smart_water_plug_smart_turned_on","device_plug_smart_water_plug_smart_turned_off","device_plug_smart_water_plug_smart_power_restored","device_plug_smart_water_plug_smart_power_changed","device_plug_smart_water_plug_smart_power_threshold","device_plug_smart_water_plug_smart_battery_low"];
-    for (const _tid of _triggerIds) {
+    const triggerIds = [
+      'device_plug_smart_water_plug_smart_turned_on',
+      'device_plug_smart_water_plug_smart_turned_off',
+      'device_plug_smart_water_plug_smart_power_restored',
+      'device_plug_smart_water_plug_smart_power_changed',
+      'device_plug_smart_water_plug_smart_power_threshold',
+      'device_plug_smart_water_plug_smart_battery_low',
+    ];
+    this._triggerCards = {};
+    for (const id of triggerIds) {
       try {
-        const _card = this._getFlowCard(_tid, "trigger");
-        if (_card) {
-          _card.registerRunListener(async (args) => {
-            if (!args.device) return;
-            args.device.emit("flow:" + _tid, args);
-          });
-        }
-      } catch (_err) { this.error("Trigger " + _tid + ": " + _err.message); }
+        // Device trigger cards are emitted by devices; unlike action/condition
+        // cards they must not receive a run listener on the driver.
+        this._triggerCards[id] = this.homey.flow.getDeviceTriggerCard(id);
+      } catch (err) {
+        this.log(`[FLOW] Optional trigger ${id} unavailable: ${err.message}`);
+      }
     }
     // END TRIGGERS
     // CONDITIONS

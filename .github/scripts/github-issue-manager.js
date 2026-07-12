@@ -6,10 +6,11 @@ const{analyzeScreenshot,analyzeMultipleScreenshots,formatForAIContext}=require('
 const{loadFingerprints,findAllDrivers,extractMfrFromText,extractAllFP,resolveFingerprint,buildFullIndex}=require('./load-fingerprints');
 const{investigate:investigateBug}=require('./bug-investigator');
 const{detectFromGitHub,buildPromptContext,getResponseHints}=require('./user-profile-detector');
+const{shadowSkip}=require('./github-shadow-policy');
 let _researchEngine=null;
 function getResearch(){if(_researchEngine)return _researchEngine;try{_researchEngine=require('./fp-research-engine')}catch{_researchEngine=null}return _researchEngine}
 const REPOS=(process.env.REPOS||'dlnraja/com.tuya.zigbee,JohanBendz/com.tuya.zigbee').split(',').map(s=>s.trim());
-const OWN=REPOS[0];
+const OWN='dlnraja/com.tuya.zigbee';
 const DRY=process.env.DRY_RUN==='true';
 const GH='https://api.github.com';
 const TOKEN=process.env.GH_PAT||process.env.GITHUB_TOKEN;
@@ -62,11 +63,13 @@ async function ghGet(ep){
 }
 async function ghPost(ep,body){
   if(DRY){console.log('[DRY] POST',ep,JSON.stringify(body).slice(0,120));return{id:'dry'}}
+  if(shadowSkip(ep,'POST',body))return null;
   try{const r=await fetchWithRetry(GH+ep,{method:'POST',headers:hdrs(TOKEN),body:JSON.stringify(body)},{retries:3,label:'ghPost'});
     return r.ok?r.json():null}catch{return null}
 }
 async function ghPatch(ep,body){
   if(DRY){console.log('[DRY] PATCH',ep,JSON.stringify(body).slice(0,120));return true}
+  if(shadowSkip(ep,'PATCH',body))return false;
   try{const r=await fetchWithRetry(GH+ep,{method:'PATCH',headers:hdrs(TOKEN),body:JSON.stringify(body)},{retries:3,label:'ghPatch'});return r.ok}catch{return false}
 }
 
@@ -655,4 +658,3 @@ async function main(){
 }
 
 main().catch(e=>{console.error('Fatal:',e.message);process.exit(1)});
-

@@ -119,5 +119,8 @@
     "batteries": [
       "CR2032"
     ]
-  }
+  },
+  "_pidConflictNotes": [
+    "// PID-CONFLICT-NOTE TS004F shared with 19 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
+  ]
 }

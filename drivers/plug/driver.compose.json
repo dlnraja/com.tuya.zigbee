@@ -34,7 +34,17 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_TZ3210_j4pdtz9v"
+      "_TZE200_placeholder_plug",
+      "_TZ3000_gnjozsaz",
+      "_TZ3000_j1v25l17",
+      "_TZ3000_ko6v90pg",
+      "_TZ3000_npg02xft",
+      "_TZ3000_pjcqjtev",
+      "_TZ3000_pmz6mjyu",
+      "_TZ3000_wzauvbcs",
+      "_TZ3000_yi0n4xfd",
+      "_TZ3210_4ux0ondb",
+      "_TZ3210_xzhnra8x"
     ],
     "productId": [
       "TS011F"
@@ -58,5 +68,11 @@
       }
     }
   },
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "_notes": [
+    "// FIX-EMPTY-MFR-AGGREGATEERROR: 2026-07-12 — placeholder added to prevent server-side build crash"
+  ],
+  "_pidConflictNotes": [
+    "// PID-CONFLICT-NOTE TS011F shared with 43 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
+  ]
 }

@@ -68,5 +68,8 @@
       "setOnDim": false
     }
   },
-  "class": "light"
+  "class": "light",
+  "_pidConflictNotes": [
+    "// PID-CONFLICT-NOTE TS0502A shared with 8 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
+  ]
 }

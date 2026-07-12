@@ -12,6 +12,8 @@ class SmartKnobRotaryDevice extends TuyaZigbeeDevice {
   async onNodeInit({ zclNode }) {
     await super.onNodeInit({ zclNode });
     this.log('Smart Knob Rotary device initialized');
+
+    this._registerPassiveButtonCapabilityListeners();
     
     // Store zclNode for later use
     this._zclNode = zclNode;
@@ -43,6 +45,19 @@ class SmartKnobRotaryDevice extends TuyaZigbeeDevice {
     await this._setupTuyaDPDetection(zclNode);
 
     this.log('Smart Knob Rotary initialization complete');
+  }
+
+  /**
+   * Homey may invoke maintenance button capabilities even when they are
+   * declared non-setable. Keep them passive: hardware gestures remain the
+   * only source of events, while UI invocations no longer fail with a
+   * "Missing Capability Listener" error.
+   */
+  _registerPassiveButtonCapabilityListeners() {
+    for (const capability of ['button.press', 'button.rotate_left', 'button.rotate_right']) {
+      if (!this.hasCapability(capability)) continue;
+      this.registerCapabilityListener(capability, async () => true);
+    }
   }
 
   /**

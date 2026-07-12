@@ -4,14 +4,14 @@
       "id": "climate_sensor_switch_switch_1gang_turned_on",
       "title": {
         "en": "Turned on",
-        "fr": "AllumÃ©",
+        "fr": "Allumé",
         "nl": "Aangezet",
         "de": "Eingeschaltet"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turned on",
-        "fr": "AllumÃ©",
+        "fr": "Allumé",
         "nl": "Aangezet",
         "de": "Eingeschaltet"
       }
@@ -198,14 +198,14 @@
       "id": "climate_sensor_switch_switch_1gang_power_changed",
       "title": {
         "en": "Power changed",
-        "fr": "Puissance changÃ©e",
+        "fr": "Puissance changée",
         "nl": "Vermogen gewijzigd",
         "de": "Leistung geÃ¤ndert"
       },
       "args": [],
       "titleFormatted": {
         "en": "Power changed",
-        "fr": "Puissance changÃ©e",
+        "fr": "Puissance changée",
         "nl": "Vermogen gewijzigd",
         "de": "Leistung geÃ¤ndert"
       }
@@ -238,14 +238,14 @@
       "id": "climate_sensor_switch_switch_1gang_is_on",
       "title": {
         "en": "Is !{{on|off}}",
-        "fr": "Est !{{allumÃ©|Ã©teint}}",
+        "fr": "Est !{{allumé|éteint}}",
         "nl": "Is !{{aan|uit}}",
         "de": "Ist !{{ein|aus}}"
       },
       "args": [],
       "titleFormatted": {
         "en": "Is !{{on|off}}",
-        "fr": "Est !{{allumÃ©|Ã©teint}}",
+        "fr": "Est !{{allumé|éteint}}",
         "nl": "Is !{{aan|uit}}",
         "de": "Ist !{{ein|aus}}"
       }
@@ -294,7 +294,7 @@
       },
       "hint": {
         "en": "Toggle the switch state (onoff, offon)",
-        "fr": "Basculer l'Ã©tat (onoff, offon)",
+        "fr": "Basculer l'état (onoff, offon)",
         "nl": "Wissel de status (aanuit, uitaan)",
         "de": "Status umschalten (einaus, ausein)"
       },
@@ -310,7 +310,7 @@
       "id": "climate_sensor_switch_switch_1gang_set_backlight",
       "title": {
         "en": "Set LED backlight mode",
-        "fr": "DÃ©finir le mode rÃ©troÃ©clairage LED",
+        "fr": "Définir le mode rétroéclairage LED",
         "nl": "LED achtergrondverlichting instellen",
         "de": "LED-Hintergrundbeleuchtung einstellen"
       },
@@ -341,7 +341,7 @@
               "id": "normal",
               "title": {
                 "en": "Normal (LED when ON)",
-                "fr": "Normal (LED quand allumÃ©)",
+                "fr": "Normal (LED quand allumé)",
                 "nl": "Normaal (LED bij AAN)",
                 "de": "Normal (LED bei EIN)"
               }
@@ -350,7 +350,7 @@
               "id": "inverted",
               "title": {
                 "en": "Inverted (LED when OFF)",
-                "fr": "InversÃ© (LED quand Ã©teint)",
+                "fr": "Inversé (LED quand éteint)",
                 "nl": "Omgekeerd (LED bij UIT)",
                 "de": "Invertiert (LED bei AUS)"
               }
@@ -360,7 +360,7 @@
       ],
       "titleFormatted": {
         "en": "Set LED backlight mode [[mode]]",
-        "fr": "DÃ©finir le mode rÃ©troÃ©clairage LED [[mode]]",
+        "fr": "Définir le mode rétroéclairage LED [[mode]]",
         "nl": "LED achtergrondverlichting instellen [[mode]]",
         "de": "LED-Hintergrundbeleuchtung einstellen [[mode]]"
       }
@@ -369,13 +369,13 @@
       "id": "climate_sensor_switch_switch_1gang_set_backlight_color",
       "title": {
         "en": "Set LED color",
-        "fr": "DÃ©finir la couleur LED",
+        "fr": "Définir la couleur LED",
         "nl": "LED kleur instellen",
         "de": "LED-Farbe einstellen"
       },
       "hint": {
         "en": "Set LED color for ON or OFF state (DP103/104, requires colored backlight)",
-        "fr": "DÃ©finir couleur LED pour Ã©tat ON/OFF (DP103/104)",
+        "fr": "Définir couleur LED pour état ON/OFF (DP103/104)",
         "nl": "Stel LED kleur in voor AAN/UIT (DP103/104)",
         "de": "LED-Farbe fÃ¼r EIN/AUS setzen (DP103/104)"
       },
@@ -500,7 +500,7 @@
       ],
       "titleFormatted": {
         "en": "Set LED color [[state]] [[color]]",
-        "fr": "DÃ©finir la couleur LED [[state]] [[color]]",
+        "fr": "Définir la couleur LED [[state]] [[color]]",
         "nl": "LED kleur instellen [[state]] [[color]]",
         "de": "LED-Farbe einstellen [[state]] [[color]]"
       }
@@ -509,13 +509,13 @@
       "id": "climate_sensor_switch_switch_1gang_set_backlight_brightness",
       "title": {
         "en": "Set LED brightness",
-        "fr": "DÃ©finir luminositÃ© LED",
+        "fr": "Définir luminosité LED",
         "nl": "LED helderheid instellen",
         "de": "LED-Helligkeit einstellen"
       },
       "hint": {
         "en": "Set LED backlight brightness 0-100% (DP102)",
-        "fr": "LuminositÃ© rÃ©troÃ©clairage 0-100% (DP102)",
+        "fr": "Luminosité rétroéclairage 0-100% (DP102)",
         "nl": "LED helderheid 0-100% (DP102)",
         "de": "LED-Helligkeit 0-100% (DP102)"
       },
@@ -532,7 +532,7 @@
       ],
       "titleFormatted": {
         "en": "Set LED brightness [[brightness]]",
-        "fr": "DÃ©finir luminositÃ© LED [[brightness]]",
+        "fr": "Définir luminosité LED [[brightness]]",
         "nl": "LED helderheid instellen [[brightness]]",
         "de": "LED-Helligkeit einstellen [[brightness]]"
       }
@@ -541,13 +541,13 @@
       "id": "climate_sensor_switch_switch_1gang_set_countdown",
       "title": {
         "en": "Set countdown timer",
-        "fr": "DÃ©finir minuterie",
+        "fr": "Définir minuterie",
         "nl": "Afteltimer instellen",
         "de": "Countdown-Timer setzen"
       },
       "hint": {
         "en": "Auto turn off after countdown (DP7, max 86400s = 24h)",
-        "fr": "Extinction auto aprÃ¨s compte Ã rebours (DP7, max 86400s)",
+        "fr": "Extinction auto après compte àrebours (DP7, max 86400s)",
         "nl": "Auto uit na aftellen (DP7, max 86400s)",
         "de": "Auto-Aus nach Countdown (DP7, max 86400s)"
       },
@@ -565,7 +565,7 @@
       ],
       "titleFormatted": {
         "en": "Set countdown timer [[seconds]]",
-        "fr": "DÃ©finir minuterie [[seconds]]",
+        "fr": "Définir minuterie [[seconds]]",
         "nl": "Afteltimer instellen [[seconds]]",
         "de": "Countdown-Timer setzen [[seconds]]"
       }
@@ -574,13 +574,13 @@
       "id": "climate_sensor_switch_switch_1gang_set_child_lock",
       "title": {
         "en": "Set child lock",
-        "fr": "DÃ©finir verrouillage enfant",
+        "fr": "Définir verrouillage enfant",
         "nl": "Kinderslot instellen",
         "de": "Kindersicherung setzen"
       },
       "hint": {
         "en": "Lock/unlock physical buttons (DP101)",
-        "fr": "Verrouiller/dÃ©verrouiller boutons (DP101)",
+        "fr": "Verrouiller/déverrouiller boutons (DP101)",
         "nl": "Vergrendel/ontgrendel knoppen (DP101)",
         "de": "Tasten sperren/entsperren (DP101)"
       },
@@ -596,7 +596,7 @@
               "id": "true",
               "title": {
                 "en": "Locked",
-                "fr": "VerrouillÃ©",
+                "fr": "Verrouillé",
                 "nl": "Vergrendeld",
                 "de": "Gesperrt"
               }
@@ -605,7 +605,7 @@
               "id": "false",
               "title": {
                 "en": "Unlocked",
-                "fr": "DÃ©verrouillÃ©",
+                "fr": "Déverrouillé",
                 "nl": "Ontgrendeld",
                 "de": "Entsperrt"
               }
@@ -615,7 +615,7 @@
       ],
       "titleFormatted": {
         "en": "Set child lock [[locked]]",
-        "fr": "DÃ©finir verrouillage enfant [[locked]]",
+        "fr": "Définir verrouillage enfant [[locked]]",
         "nl": "Kinderslot instellen [[locked]]",
         "de": "Kindersicherung setzen [[locked]]"
       }

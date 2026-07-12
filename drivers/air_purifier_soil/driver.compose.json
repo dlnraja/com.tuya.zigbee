@@ -25,7 +25,7 @@
     "measure_humidity.soil": {
       "title": {
         "en": "Soil Moisture",
-        "fr": "HumiditÃ© du Sol",
+        "fr": "Humidité du Sol",
         "nl": "Bodemvochtigheid",
         "de": "Bodenfeuchtigkeit"
       }
@@ -33,7 +33,7 @@
     "measure_humidity": {
       "title": {
         "en": "Air Humidity",
-        "fr": "HumiditÃ© de l'Air",
+        "fr": "Humidité de l'Air",
         "nl": "Luchtvochtigheid",
         "de": "Luftfeuchtigkeit"
       }
@@ -57,7 +57,7 @@
     "measure_conductivity": {
       "title": {
         "en": "Soil Fertility (EC)",
-        "fr": "FertilitÃ© du Sol (EC)",
+        "fr": "Fertilité du Sol (EC)",
         "nl": "Bodemvruchtbaarheid (EC)",
         "de": "Bodenfruchtbarkeit (EC)"
       }
@@ -75,8 +75,7 @@
   "energy": {
     "batteries": [
       "CR2450"
-    ],
-    "mains": true
+    ]
   },
   "subDevices": [],
   "settings": [
@@ -92,7 +91,7 @@
           "type": "number",
           "label": {
             "en": "Temperature Offset (Â°C)",
-            "fr": "DÃ©calage TempÃ©rature (Â°C)"
+            "fr": "Décalage Température (Â°C)"
           },
           "value": 0,
           "min": -30,
@@ -100,7 +99,7 @@
           "step": 0.1,
           "hint": {
             "en": "Offset to adjust temperature readings (-30 to +30)",
-            "fr": "DÃ©calage pour ajuster les lectures de tempÃ©rature (-30 Ã +30)"
+            "fr": "Décalage pour ajuster les lectures de température (-30 à+30)"
           }
         },
         {
@@ -108,7 +107,7 @@
           "type": "number",
           "label": {
             "en": "Air Humidity Offset (%)",
-            "fr": "DÃ©calage HumiditÃ© Air (%)"
+            "fr": "Décalage Humidité Air (%)"
           },
           "value": 0,
           "min": -30,
@@ -116,7 +115,7 @@
           "step": 1,
           "hint": {
             "en": "Offset to adjust air humidity readings (-30 to +30)",
-            "fr": "DÃ©calage pour ajuster les lectures d'humiditÃ© de l'air (-30 Ã +30)"
+            "fr": "Décalage pour ajuster les lectures d'humidité de l'air (-30 à+30)"
           }
         },
         {
@@ -124,7 +123,7 @@
           "type": "number",
           "label": {
             "en": "Soil Moisture Offset (%)",
-            "fr": "DÃ©calage HumiditÃ© Sol (%)"
+            "fr": "Décalage Humidité Sol (%)"
           },
           "value": 0,
           "min": -30,
@@ -132,7 +131,7 @@
           "step": 1,
           "hint": {
             "en": "Offset to adjust soil moisture readings (-30 to +30)",
-            "fr": "DÃ©calage pour ajuster les lectures d'humiditÃ© du sol (-30 Ã +30)"
+            "fr": "Décalage pour ajuster les lectures d'humidité du sol (-30 à+30)"
           }
         },
         {
@@ -140,7 +139,7 @@
           "type": "dropdown",
           "label": {
             "en": "Decimal Precision",
-            "fr": "PrÃ©cision"
+            "fr": "Précision"
           },
           "value": "1",
           "hint": {
@@ -175,7 +174,7 @@
           "type": "number",
           "label": {
             "en": "Soil Dryness Threshold (%)",
-            "fr": "Seuil SÃ©cheresse Sol (%)"
+            "fr": "Seuil Sécheresse Sol (%)"
           },
           "value": 30,
           "min": 0,
@@ -183,7 +182,7 @@
           "step": 5,
           "hint": {
             "en": "Moisture percentage below which water shortage alarm triggers (0-100%)",
-            "fr": "Pourcentage d'humiditÃ© en dessous duquel l'alarme manque d'eau se dÃ©clenche (0-100%)"
+            "fr": "Pourcentage d'humidité en dessous duquel l'alarme manque d'eau se déclenche (0-100%)"
           }
         }
       ]
@@ -192,7 +191,7 @@
       "type": "group",
       "label": {
         "en": " Settings (v5.5.330 Hobeian)",
-        "fr": " ParamÃ¨tres (v5.5.330 Hobeian)"
+        "fr": " Paramètres (v5.5.330 Hobeian)"
       },
       "children": [
         {
@@ -200,7 +199,7 @@
           "type": "dropdown",
           "label": {
             "en": "Temperature Unit",
-            "fr": "UnitÃ© de TempÃ©rature"
+            "fr": "Unité de Température"
           },
           "value": "celsius",
           "values": [
@@ -221,7 +220,7 @@
           ],
           "hint": {
             "en": "Temperature unit for display",
-            "fr": "UnitÃ© de tempÃ©rature pour l'affichage"
+            "fr": "Unité de température pour l'affichage"
           }
         }
       ]
@@ -231,12 +230,12 @@
       "type": "checkbox",
       "label": {
         "en": "Enable Radio Presence Sensing",
-        "fr": "Activer la DÃ©tection de PrÃ©sence Radio"
+        "fr": "Activer la Détection de Présence Radio"
       },
       "value": false,
       "hint": {
         "en": "Infer presence from Zigbee signal fluctuations (BETA)",
-        "fr": "DÃ©duit la prÃ©sence des fluctuations du signal Zigbee (BETA)"
+        "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
       }
     },
     {
@@ -244,7 +243,7 @@
       "type": "number",
       "label": {
         "en": "Radio Presence Sensitivity",
-        "fr": "SensibilitÃ© PrÃ©sence Radio"
+        "fr": "Sensibilité Présence Radio"
       },
       "value": 15,
       "min": 5,
@@ -267,7 +266,7 @@
       "id": "ota_check",
       "title": {
         "en": "Check Zigbee OTA Update",
-        "fr": "VÃ©rifier MÃJ OTA",
+        "fr": "Vérifier MÃJ OTA",
         "nl": "Controleer op OTA-updates"
       }
     }
@@ -304,5 +303,8 @@
       "catchall": true,
       "reason": "Fallback for unmatched devices with PIDs: TS0601, TS0001"
     }
-  }
+  },
+  "_pidConflictNotes": [
+    "// PID-CONFLICT-NOTE TS0001 shared with 35 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
+  ]
 }

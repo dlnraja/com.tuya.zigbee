@@ -67,7 +67,7 @@ class UsbDongleDualRepeaterDevice extends PhysicalButtonMixin(ZigBeeDevice) {
       this._bindOnOffChannel(zclNode, 2, 'onoff.usb2');
     }
 
-    // Mesure d'Ã©nergie sur endpoint 1
+    // Mesure d'énergie sur endpoint 1
     try {
       await this._configureEnergyReporting(zclNode);
     } catch (err) {
@@ -147,7 +147,7 @@ class UsbDongleDualRepeaterDevice extends PhysicalButtonMixin(ZigBeeDevice) {
   }
 
   /**
-   * Configure le reporting ZCL pour la mesure d'Ã©nergie.
+   * Configure le reporting ZCL pour la mesure d'énergie.
    */
   async _configureEnergyReporting(zclNode) {
     const ep1 = zclNode.endpoints[1];
@@ -231,7 +231,7 @@ class UsbDongleDualRepeaterDevice extends PhysicalButtonMixin(ZigBeeDevice) {
       this.log('[USB_DONGLE] Energy reporting configured' );
     } catch (err) {
       this.error('[USB_DONGLE] Failed to configure energy reporting, will retry:', err.message);
-      // Retry 1 min plus tard si le Zigbee stack n'Ã©tait pas prÃªt
+      // Retry 1 min plus tard si le Zigbee stack n'était pas prÃªt
       this.homey.setTimeout(() => { if (this._destroyed) return; this._configureEnergyReporting(zclNode); }, 60 * 1000);
     }
   }

@@ -36,7 +36,7 @@ class ThermostatTuyaDPDevice extends UnifiedThermostatBase {
       24: { capability: 'target_temperature', smartDivisor: true },
       35: { capability: 'measure_humidity', divisor: 1 },
       36: { capability: 'heating', transform: (v) => v === 1 || v === true },
-      101: { internal: true, type: 'battery_low', transform: (v) => v === 1 || v === 'low' } // SDK3: alarm_battery obsolÃ¨te
+      101: { internal: true, type: 'battery_low', transform: (v) => v === 1 || v === 'low' } // SDK3: alarm_battery obsolète
     };
   }
 

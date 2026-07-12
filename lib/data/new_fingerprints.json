@@ -388,7 +388,7 @@
   },
   {
     "manufacturerName": "_TZE200_vvmbj46n",
-    "driverId": "climate_sensor",
+    "driverId": "lcdtemphumidsensor",
     "type": "climate_sensor",
     "powerSource": "battery",
     "modelIds": [
@@ -397,7 +397,7 @@
   },
   {
     "manufacturerName": "_TZE284_vvmbj46n",
-    "driverId": "climate_sensor",
+    "driverId": "lcdtemphumidsensor",
     "type": "climate_sensor",
     "powerSource": "battery",
     "modelIds": [
@@ -442,9 +442,9 @@
   },
   {
     "manufacturerName": "_TZE200_8ygsuhe1",
-    "driverId": "zigbee_universal",
-    "type": "other",
-    "powerSource": "unknown",
+    "driverId": "air_quality_comprehensive",
+    "type": "air_quality",
+    "powerSource": "mains",
     "modelIds": [
       "TS0601"
     ]
@@ -768,12 +768,11 @@
   },
   {
     "manufacturerName": "_TZ3000_skueekg3",
-    "driverId": "zigbee_universal",
-    "type": "other",
-    "powerSource": "unknown",
+    "driverId": "wall_switch_1gang_1way",
+    "type": "switch",
+    "powerSource": "mains",
     "modelIds": [
-      "TS0001",
-      "TS000F"
+      "TS0001"
     ]
   },
   {
@@ -842,12 +841,11 @@
   },
   {
     "manufacturerName": "_TZ3000_fdxihpp7",
-    "driverId": "zigbee_universal",
-    "type": "other",
-    "powerSource": "unknown",
+    "driverId": "wall_switch_1gang_1way",
+    "type": "switch",
+    "powerSource": "mains",
     "modelIds": [
-      "TS0001",
-      "TS000F"
+      "TS0001"
     ]
   },
   {
@@ -870,9 +868,9 @@
   },
   {
     "manufacturerName": "_TZ3000_46t1rvdu",
-    "driverId": "zigbee_universal",
-    "type": "other",
-    "powerSource": "unknown",
+    "driverId": "switch_1gang",
+    "type": "switch",
+    "powerSource": "mains",
     "modelIds": [
       "TS0001"
     ]
@@ -1586,9 +1584,9 @@
   },
   {
     "manufacturerName": "_TZE284_sgabhwa6",
-    "driverId": "zigbee_universal",
-    "type": "other",
-    "powerSource": "unknown",
+    "driverId": "soil_sensor",
+    "type": "soil_sensor",
+    "powerSource": "battery",
     "modelIds": [
       "TS0601"
     ]
@@ -2855,9 +2853,9 @@
   },
   {
     "manufacturerName": "_TZ3000_akqdg6g7",
-    "driverId": "zigbee_universal",
-    "type": "other",
-    "powerSource": "unknown",
+    "driverId": "climate_sensor",
+    "type": "climate_sensor",
+    "powerSource": "battery",
     "modelIds": [
       "TS0201"
     ]
@@ -3044,9 +3042,9 @@
   },
   {
     "manufacturerName": "_TZE200_jthf7vb6",
-    "driverId": "zigbee_universal",
-    "type": "other",
-    "powerSource": "unknown",
+    "driverId": "water_leak_sensor",
+    "type": "water_leak_sensor",
+    "powerSource": "battery",
     "modelIds": [
       "TS0601"
     ]
@@ -3369,8 +3367,8 @@
   },
   {
     "manufacturerName": "_TZ3000_ruldv5dt",
-    "driverId": "presence_sensor_radar",
-    "type": "presence",
+    "driverId": "switch_2gang",
+    "type": "switch",
     "powerSource": "mains",
     "modelIds": [
       "TS0002"
@@ -5565,9 +5563,9 @@
   },
   {
     "manufacturerName": "_TZE200_ntcy3xu1",
-    "driverId": "zigbee_universal",
-    "type": "other",
-    "powerSource": "unknown",
+    "driverId": "smoke_detector_advanced",
+    "type": "smoke_detector",
+    "powerSource": "battery",
     "modelIds": [
       "TS0601"
     ]
@@ -5889,9 +5887,9 @@
   },
   {
     "manufacturerName": "_TZ3000_7ysdnebc",
-    "driverId": "zigbee_universal",
-    "type": "other",
-    "powerSource": "unknown",
+    "driverId": "dimmer_dual_channel",
+    "type": "dimmer",
+    "powerSource": "mains",
     "modelIds": [
       "TS1101"
     ]
@@ -6447,9 +6445,9 @@
   },
   {
     "manufacturerName": "_TZ3000_6l1pjfqe",
-    "driverId": "zigbee_universal",
-    "type": "other",
-    "powerSource": "unknown",
+    "driverId": "plug_energy_monitor",
+    "type": "plug",
+    "powerSource": "mains",
     "modelIds": [
       "TS011F"
     ]
@@ -6573,9 +6571,9 @@
   },
   {
     "manufacturerName": "_TZ3000_qaaysllp",
-    "driverId": "zigbee_universal",
-    "type": "other",
-    "powerSource": "unknown",
+    "driverId": "lcdtemphumidluxsensor",
+    "type": "climate_sensor",
+    "powerSource": "battery",
     "modelIds": [
       "TS0201"
     ]
@@ -7221,9 +7219,9 @@
   },
   {
     "manufacturerName": "_TZE200_pay2byax",
-    "driverId": "zigbee_universal",
-    "type": "other",
-    "powerSource": "unknown",
+    "driverId": "contact_sensor",
+    "type": "contact_sensor",
+    "powerSource": "battery",
     "modelIds": [
       "TS0601"
     ]
@@ -8358,18 +8356,18 @@
   },
   {
     "manufacturerName": "_TZ3210_dse8ogfy",
-    "driverId": "zigbee_universal",
-    "type": "other",
-    "powerSource": "unknown",
+    "driverId": "fingerbot",
+    "type": "fingerbot",
+    "powerSource": "battery",
     "modelIds": [
       "TS0001"
     ]
   },
   {
     "manufacturerName": "_TZ3210_j4pdtz9v",
-    "driverId": "zigbee_universal",
-    "type": "other",
-    "powerSource": "unknown",
+    "driverId": "fingerbot",
+    "type": "fingerbot",
+    "powerSource": "battery",
     "modelIds": [
       "TS0001"
     ]

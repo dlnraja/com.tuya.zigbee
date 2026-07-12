@@ -257,28 +257,52 @@ class Button4GangDevice extends ButtonDevice {
    */
   async _setupRawFrameInterceptor(zclNode) {
     try {
-      if (!zclNode || typeof zclNode.handleFrame !== 'function') return;
-      const orig = zclNode.handleFrame.bind(zclNode);
-      zclNode.handleFrame = async (...args) => {
-        const raw = this._decodeRawFrameArgs(args);
-        if (raw && (raw.clusterId === 57344 || raw.clusterId === 0xE000)) {
-          const d = raw.data;
-          this.log(`[E000-4G-RAW] EP${raw.endpointId} E000 frame`);
-          let btn = raw.endpointId;
-          let pt = 'single';
-          if (d?.length >= 2 && d[0] >= 1 && d[0] <= 4) {
-            btn = d[0];
-            pt = resolvePressType(d[1], 'E000-RAW');
-          } else if (d?.length >= 1) {
-            pt = resolvePressType(d[0], 'E000-RAW');
+      const node = await this.homey?.zigbee?.getNode?.(this);
+      if (!node || node.__tuyaButton4RawWrapper) return;
+
+      const original = typeof node.handleFrame === 'function'
+        ? node.handleFrame.bind(node)
+        : null;
+      const wrapper = async (...args) => {
+        const [endpointId, clusterId, frame] = args;
+        try {
+          const ep = Math.max(1, Math.min(4, Number(endpointId) || 1));
+          const json = typeof frame?.toJSON === 'function' ? frame.toJSON() : frame;
+          const data = Buffer.isBuffer(json?.data)
+            ? json.data
+            : Array.isArray(json?.data)
+              ? Buffer.from(json.data)
+              : this._extractRawFrameData(json);
+
+          // Proven TS0044 path: command 0xFD on cluster 0x0006, action in data[3].
+          if (Number(clusterId) === 0x0006 && data?.length >= 4 && [0, 1, 2].includes(data[3])) {
+            const pressType = resolvePressType(data[3], 'TS0044-RAW');
+            this.log(`[TS0044-RAW] EP${ep} data[3]=${data[3]} -> ${pressType}`);
+            await this._triggerButton4Gang(ep, pressType);
+          } else if (Number(clusterId) === 0xE000) {
+            let button = ep;
+            let pressType = 'single';
+            if (data?.length >= 2 && data[0] >= 1 && data[0] <= 4) {
+              button = data[0];
+              pressType = resolvePressType(data[1], 'E000-RAW');
+            } else if (data?.length >= 1) {
+              pressType = resolvePressType(data[0], 'E000-RAW');
+            }
+            await this._triggerButton4Gang(button, pressType);
           }
-          await this._triggerButton4Gang(btn, pt);
+        } catch (err) {
+          this.log(`[BUTTON-4-RAW] Decode failed: ${err.message}`);
         }
-        return orig(...args);
+        return original ? original(...args) : undefined;
       };
-      this.log('[E000-4G-RAW] Frame interceptor ready');
+
+      node.handleFrame = wrapper;
+      node.__tuyaButton4RawWrapper = wrapper;
+      this._rawZigbeeNode = node;
+      this._rawZigbeeOriginalHandleFrame = original;
+      this.log('[BUTTON-4-RAW] Raw node interceptor ready');
     } catch (e) {
-      this.log(`[E000-4G-RAW] Setup failed: ${e.message}`);
+      this.log(`[BUTTON-4-RAW] Setup failed: ${e.message}`);
     }
   }
 
@@ -364,6 +388,16 @@ class Button4GangDevice extends ButtonDevice {
     if (!this._e000Dedup) this._e000Dedup = {};
     this._e000Dedup[key] = now;
     return false;
+  }
+
+  async onDeleted() {
+    if (this._rawZigbeeNode?.__tuyaButton4RawWrapper === this._rawZigbeeNode.handleFrame) {
+      this._rawZigbeeNode.handleFrame = this._rawZigbeeOriginalHandleFrame || undefined;
+      delete this._rawZigbeeNode.__tuyaButton4RawWrapper;
+    }
+    this._rawZigbeeNode = null;
+    this._rawZigbeeOriginalHandleFrame = null;
+    await super.onDeleted?.();
   }
 
 }

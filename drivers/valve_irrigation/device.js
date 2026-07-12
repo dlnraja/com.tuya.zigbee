@@ -4,7 +4,7 @@ const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 
 
 const UnifiedPlugBase = require('../../lib/devices/UnifiedPlugBase');
-const { containsCI } = require('../../lib/utils/CaseInsensitiveMatcher');
+const { containsCI, includesCI } = require('../../lib/utils/CaseInsensitiveMatcher');
 const { ensureManufacturerSettings } = require('../../lib/helpers/ManufacturerNameHelper');
 
 /**
@@ -19,11 +19,29 @@ const { ensureManufacturerSettings } = require('../../lib/helpers/ManufacturerNa
  */
 const INSOMA_MFRS = ['_tze284_fhvpaltk'];
 const IMMAX_MFRS = ['_tze200_xlppj4f5'];
+const SIMPLE_VALVE_MFRS = [
+  '_tze200_d0ypnbvn',
+  '_tze204_d0ypnbvn',
+  '_tze284_d0ypnbvn',
+];
+const SIMPLE_VALVE_UNSUPPORTED_CAPABILITIES = [
+  'dim.valve_1',
+  'dim.valve_2',
+  'dim.valve_3',
+  'dim.valve_4',
+  'onoff.gang2',
+  'frost_protection',
+  'button.1',
+  'measure_battery',
+  'alarm_battery',
+  'meter_water',
+  'countdown_remaining',
+];
 
 class ValveIrrigationDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedPlugBase)) {
 
-  get plugCapabilities() { 
-    return ['onoff', 'measure_battery', 'meter_water']; 
+  get plugCapabilities() {
+    return this.isSimpleValve ? ['onoff'] : ['onoff', 'measure_battery', 'meter_water'];
   }
 
   /**
@@ -34,9 +52,25 @@ class ValveIrrigationDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unifi
     return INSOMA_MFRS.some(m => containsCI(mfr, m));
   }
 
+  /**
+   * The d0ypnbvn variants are mains-powered single valves. Match the complete
+   * manufacturer identifier so unrelated TS0601 irrigation devices retain
+   * their richer profiles.
+   */
+  get isSimpleValve() {
+    const manufacturer = this.getSetting('zb_manufacturer_name') || '';
+    return includesCI(SIMPLE_VALVE_MFRS, manufacturer);
+  }
+
   get dpMappings() {
     const mfr = this.getSetting('zb_manufacturer_name') || '';
     const isImmax = IMMAX_MFRS.some(m => containsCI(mfr, m));
+
+    if (this.isSimpleValve) {
+      return {
+        1: { capability: 'onoff', transform: (v) => v === 1 || v === true },
+      };
+    }
 
     // v5.11.210: Insoma 2-way valve uses DP 1 (valve1) + DP 2 (valve2) + DP 13 (battery)
     if (this.isInsoma) {
@@ -71,8 +105,20 @@ class ValveIrrigationDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unifi
       // v9.8.0: Ensure manufacturer settings populated BEFORE isInsoma check
       await ensureManufacturerSettings(this).catch(err => this.error('[VALVE-IRR] ensureManufacturerSettings failed:', err.message));
 
-      // Dynamic capabilities setup based on Insoma model detection
-      if (this.isInsoma) {
+      // Dynamic capabilities setup based on the exact hardware profile.
+      if (this.isSimpleValve) {
+        this.log('[VALVE-IRR] Single mains valve detected. Keeping DP 1 / onoff only.');
+        for (const capability of SIMPLE_VALVE_UNSUPPORTED_CAPABILITIES) {
+          if (this.hasCapability(capability)) {
+            await this.removeCapability(capability)
+              .catch(err => this.error(`Failed to remove ${capability}:`, err.message));
+          }
+        }
+        if (!this.hasCapability('onoff')) {
+          await this.addCapability('onoff')
+            .catch(err => this.error('Failed to add onoff:', err.message));
+        }
+      } else if (this.isInsoma) {
         this.log('[VALVE-IRR] Insoma Dual Valve detected. Stripping dimming levels, ensuring dual on/off switches.');
         // Remove 4-way dim levels
         for (const cap of ['dim.valve_1', 'dim.valve_2', 'dim.valve_3', 'dim.valve_4']) {
@@ -98,7 +144,9 @@ class ValveIrrigationDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unifi
       }
 
       await super.onNodeInit({ zclNode  });
-      await this.initVirtualButtons();
+      if (!this.isSimpleValve && this.hasCapability('button.1')) {
+        await this.initVirtualButtons();
+      }
 
       // Register capability listener for gang2 if present
       if (this.hasCapability('onoff.gang2')) {
@@ -125,18 +173,20 @@ class ValveIrrigationDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unifi
     this.log(`[VALVE-IRR] 💧 Starting watering for ${minutes} minutes`);
     const tuya = this.zclNode?.endpoints?.[1]?.clusters?.tuya;
     if (tuya?.datapoint) {
-      await tuya.datapoint({ dp: 5, value: minutes, type: 'value' });
+      if (!this.isSimpleValve) {
+        await tuya.datapoint({ dp: 5, value: minutes, type: 'value' });
+      }
       await tuya.datapoint({ dp: 1, value: true, type: 'bool' });
     }
   }
 
   async onDeleted() {
-    if (this._destroyed) return;
+    if (this._destroyed) { return; }
     this._destroyed = true;
     // Clean up timers to prevent memory leaks (inherited from UnifiedPlugBase if needed, but keeping for safety)
-    if (this._interval) { clearInterval(this._interval); this._interval = null; }
-    if (this._timer) { clearTimeout(this._timer); this._timer = null; }
-    if (this._pollInterval) { clearInterval(this._pollInterval); this._pollInterval = null; }
+    if (this._interval) { this.homey.clearInterval(this._interval); this._interval = null; }
+    if (this._timer) { this.homey.clearTimeout(this._timer); this._timer = null; }
+    if (this._pollInterval) { this.homey.clearInterval(this._pollInterval); this._pollInterval = null; }
     this.log('Device deleted, cleaning up');
     await super.onDeleted();
   }

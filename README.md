@@ -34,7 +34,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.192 |
+| **App Version** | v9.0.190 |
 | **Device Fingerprints** | 5,044+ |
 | **Unique Product IDs** | 571 |
 | **Drivers** | 430 (380 Zigbee + 50 WiFi) |
@@ -45,12 +45,13 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | **SDK Version** | 3 |
 | **Homey Compatibility** | >=12.2.0 |
 | **Last Updated** | 2026-07-12 |
+| **Last Updated** | 2026-07-05 |
 
 ### Top 20 Drivers by Fingerprint Count
 
 | # | Driver | Fingerprints |
 |---|--------|-------------|
-| 1 | `climate_sensor` | 695 |
+| 1 | `climate_sensor` | 694 |
 | 2 | `switch_1gang` | 409 |
 | 3 | `generic_tuya` | 337 |
 | 4 | `button_wireless_2` | 235 |
@@ -62,7 +63,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | 10 | `universal_zigbee` | 105 |
 | 11 | `generic_diy` | 83 |
 | 12 | `wall_thermostat` | 73 |
-| 13 | `air_purifier` | 68 |
+| 13 | `air_purifier` | 69 |
 | 14 | `switch_4gang` | 66 |
 | 15 | `light_bulb_rgb_rgbw` | 65 |
 | 16 | `dimmer_wall_1gang` | 54 |
@@ -102,8 +103,6 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | Version | Changes |
 |---------|---------|
 | **vchangelog** | [object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object  |
-| **v9.0.192** | Stability improvements and Homey test publication retry after transient processing failure. |
-| **v9.0.191** | Stability improvements and Homey test publication retry after transient processing failure. |
 | **v9.0.190** | Stability improvements and Homey test publication retry after transient processing failure. |
 | **v9.0.189** | Stability improvements and Homey test publication retry after transient processing failure. |
 | **v9.0.188** | Stability improvements and Homey test publication retry after transient processing failure. |
@@ -116,6 +115,8 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | **v9.0.181** | Stability improvements and Homey test publication retry after transient processing failure. |
 | **v9.0.180** | Stability improvements and Homey test publication retry after transient processing failure. |
 | **v9.0.179** | Stability improvements and Homey test publication retry after transient processing failure. |
+| **v9.0.178** | Stability improvements and Homey test publication retry after transient processing failure. |
+| **v9.0.177** | Stability improvements and Homey test publication retry after transient processing failure. |
 
 <!-- CHANGELOG_END -->
 
@@ -355,4 +356,4 @@ A massive thank you to the maintainers and contributors of:
 
 **Made with love by Dylan Rajasekaram & the Zigbee community**
 
-*Last updated: 2026-07-10*
+*Last updated: 2026-07-05*

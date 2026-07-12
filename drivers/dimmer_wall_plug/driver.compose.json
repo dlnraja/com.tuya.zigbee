@@ -34,7 +34,7 @@
       "value": true,
       "hint": {
         "en": "Estimate power consumption when real measurement is not available (AC/DC devices only)",
-        "fr": "Estimer la consommation quand la mesure rÃ©elle n'est pas disponible (appareils AC/DC seulement)"
+        "fr": "Estimer la consommation quand la mesure réelle n'est pas disponible (appareils AC/DC seulement)"
       }
     },
     {
@@ -57,7 +57,7 @@
           "id": "1",
           "label": {
             "en": "Ã—1 (Default)",
-            "fr": "Ã—1 (Par dÃ©faut)"
+            "fr": "Ã—1 (Par défaut)"
           }
         },
         {
@@ -93,7 +93,7 @@
           "id": "1",
           "label": {
             "en": "Ã—1 (Default)",
-            "fr": "Ã—1 (Par dÃ©faut)"
+            "fr": "Ã—1 (Par défaut)"
           }
         },
         {
@@ -129,7 +129,7 @@
           "id": "1",
           "label": {
             "en": "Ã—1 (Default)",
-            "fr": "Ã—1 (Par dÃ©faut)"
+            "fr": "Ã—1 (Par défaut)"
           }
         },
         {
@@ -165,7 +165,7 @@
           "id": "1",
           "label": {
             "en": "Ã—1 (Default)",
-            "fr": "Ã—1 (Par dÃ©faut)"
+            "fr": "Ã—1 (Par défaut)"
           }
         },
         {
@@ -178,7 +178,7 @@
       ],
       "hint": {
         "en": "Adjust if total energy (kWh) readings are way off.",
-        "fr": "Ajuster si l'Ã©nergie totale (kWh) est incorrecte."
+        "fr": "Ajuster si l'énergie totale (kWh) est incorrecte."
       }
     }
   ],
@@ -232,7 +232,7 @@
       "id": "ota_check",
       "title": {
         "en": "Check Zigbee OTA Update",
-        "fr": "VÃ©rifier MÃJ OTA",
+        "fr": "Vérifier MÃJ OTA",
         "nl": "Controleer op OTA-updates"
       }
     }

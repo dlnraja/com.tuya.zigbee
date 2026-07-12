@@ -4,12 +4,12 @@
       "id": "light_bulb_tunable_white_turned_on",
       "title": {
         "en": "Turned on",
-        "fr": "AllumÃ©"
+        "fr": "Allumé"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turned on",
-        "fr": "AllumÃ©"
+        "fr": "Allumé"
       }
     },
     {
@@ -28,7 +28,7 @@
       "id": "light_bulb_tunable_white_dim_changed",
       "title": {
         "en": "Brightness changed",
-        "fr": "LuminositÃ© changÃ©e"
+        "fr": "Luminosité changée"
       },
       "tokens": [
         {
@@ -36,7 +36,7 @@
           "type": "number",
           "title": {
             "en": "Brightness",
-            "fr": "LuminositÃ©"
+            "fr": "Luminosité"
           },
           "example": 0.75
         }
@@ -44,7 +44,7 @@
       "args": [],
       "titleFormatted": {
         "en": "Brightness changed",
-        "fr": "LuminositÃ© changÃ©e"
+        "fr": "Luminosité changée"
       }
     }
   ],
@@ -53,12 +53,12 @@
       "id": "light_bulb_tunable_white_is_on",
       "title": {
         "en": "Is turned !{{on|off}}",
-        "fr": "Est !{{allumÃ©|Ã©teint}}"
+        "fr": "Est !{{allumé|éteint}}"
       },
       "args": [],
       "titleFormatted": {
         "en": "Is turned !{{on|off}}",
-        "fr": "Est !{{allumÃ©|Ã©teint}}"
+        "fr": "Est !{{allumé|éteint}}"
       }
     }
   ],
@@ -103,7 +103,7 @@
       "id": "light_bulb_tunable_white_set_dim",
       "title": {
         "en": "Set brightness to...",
-        "fr": "RÃ©gler la luminositÃ© Ã..."
+        "fr": "Régler la luminosité Ã..."
       },
       "args": [
         {
@@ -116,13 +116,13 @@
           "labelMultiplier": 100,
           "title": {
             "en": "Brightness",
-            "fr": "LuminositÃ©"
+            "fr": "Luminosité"
           }
         }
       ],
       "titleFormatted": {
         "en": "Set brightness to... [[brightness]]",
-        "fr": "RÃ©gler la luminositÃ© Ã... [[brightness]]"
+        "fr": "Régler la luminosité Ã... [[brightness]]"
       }
     }
   ]

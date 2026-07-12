@@ -83,7 +83,7 @@ class ContactSensorDevice extends UnifiedSensorBase {
           return battery;
         }
       },
-      // Battery state - DP 3 (enum: 0=normal, 1=low) - SDK3: alarm_battery obsolÃ¨te, utiliser internal
+      // Battery state - DP 3 (enum: 0=normal, 1=low) - SDK3: alarm_battery obsolète, utiliser internal
       3: { internal: true, type: 'battery_low', transform: (v) => v === 1 || v === 'low' },
       // Battery alt - DP 4 (v5.5.793: Added validation)
       4: { 
@@ -185,7 +185,6 @@ class ContactSensorDevice extends UnifiedSensorBase {
     // v5.5.776: REMOVED HOBEIAN - Lasse_K forum Jan 2026 confirms ZG-102Z works correctly WITHOUT inversion
     // These sensors report closed=alarm, open=no alarm (inverted from standard)
     // v5.5.908: Added _TZ3000_996rpfy6 (blutch32 forum - always shows no)
-    // v5.12.2: Added _TZE200_pay2byax (ZG-102ZL reversed contact)
     const invertedByDefault = [
       // v5.12.1: REMOVED HOBEIAN  Lasse_K #1592 'always ja': standard TS0203 IAS bit0=1=open maps directly to alarm_contact=true, no inversion needed
       // 'HOBEIAN',  
@@ -197,7 +196,7 @@ class ContactSensorDevice extends UnifiedSensorBase {
       '_TZ3000_bzxloft2',  // Known inverted (forum reports)
       '_TZ3000_yxqnffam',  // Known inverted (forum reports)
       '_TZ3000_996rpfy6',  // v5.5.908: blutch32 forum - TS0203 always "no" fix
-      '_TZE200_pay2byax',  // v5.12.2: ZG-102ZL reversed
+      '_TZE200_pay2byax',  // DP1 inverse converter: raw 0=closed, raw 1=open
     ].some(id => includesCI(mfr, id));
     // v5.12.3: XOR  default inversion + user invert cancel each other out
     this._invertedByDefault = invertedByDefault;
@@ -447,4 +446,3 @@ class ContactSensorDevice extends UnifiedSensorBase {
 }
 
 module.exports = ContactSensorDevice;
-

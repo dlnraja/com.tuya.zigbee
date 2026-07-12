@@ -47,7 +47,11 @@
       "_tz3210_b3kiq1i0",
       "_tz3000_evag0pvn",
       "_tz3210_jaap6jeb",
-      "sonoff"
+      "sonoff",
+      "_TZ3210_eejm8dcr",
+      "_TZ3210_s8lvbbu",
+      "_TZ3210_sroezl0s",
+      "_TZ3210_s8lvbbuc"
     ],
     "productId": [
       "generic",
@@ -352,5 +356,11 @@
     }
   ],
   "id": "bulb_rgbw",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "_pidConflictNotes": [
+    "// PID-CONFLICT-NOTE TS0505B shared with 19 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE TS0505A shared with 13 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE TS0504B shared with 7 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE TS0504A shared with 3 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
+  ]
 }
