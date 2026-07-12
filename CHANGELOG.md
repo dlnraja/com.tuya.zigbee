@@ -4,7 +4,19 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [9.0.143] - 2026-06-28
+## [9.0.192] - 2026-07-12
+
+### Bug Fixes
+- Fixed issues with device pairing for specific Zigbee devices.
+
+### New Features
+- Added support for 8 new Zigbee devices, enhancing compatibility and user experience.
+
+### Improvements
+- Enriched 2637 fingerprints across 430 drivers for better performance and reliability.
+---
+
+ [9.0.143] - 2026-06-28
 
 v9.0.143: automated publish, manifest sync, and Homey test promotion.
 ---
