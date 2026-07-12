@@ -1,0 +1,28 @@
+{
+  "id": "contact_sensor_illuminance_changed",
+  "title": {
+    "en": "Contact sensor illuminance changed",
+    "fr": "Luminosité du capteur d'ouverture modifiée"
+  },
+  "tokens": [
+    {
+      "name": "lux",
+      "type": "number",
+      "title": {
+        "en": "Illuminance",
+        "fr": "Luminosité"
+      }
+    }
+  ],
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "driver_id=contact_sensor"
+    }
+  ],
+  "titleFormatted": {
+    "en": "[[device]] illuminance changed",
+    "fr": "Luminosité modifiée pour [[device]]"
+  }
+}

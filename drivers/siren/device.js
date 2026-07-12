@@ -45,7 +45,7 @@ class SirenDevice extends UnifiedPlugBase {
       // 
       // BATTERY
       // 
-      14: { internal: true, type: 'battery_low', transform: boolean() }, // SDK3: alarm_battery obsolÃ¨te
+      14: { internal: true, type: 'battery_low', transform: boolean() }, // SDK3: alarm_battery obsolète
       15: { capability: 'measure_battery', divisor: 1 },
 
       // 

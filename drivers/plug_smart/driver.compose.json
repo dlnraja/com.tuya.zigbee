@@ -52,7 +52,9 @@
     },
     "manufacturerName": [
       "_hybrid_plug_smart_needs_device_assignment",
-      "_HYBRID_PLUG_SMART_NEEDS_DEVICE_ASSIGNMENT"
+      "_HYBRID_PLUG_SMART_NEEDS_DEVICE_ASSIGNMENT",
+      "_TZ3000_cfnprab5to",
+      "_TZ3000_uwaort14"
     ]
   },
   "settings": [
@@ -659,5 +661,17 @@
       "getable": false,
       "setable": false
     }
-  }
+  },
+  "_pidConflictNotes": [
+    "// PID-CONFLICT-NOTE TS011F shared with 43 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE TS0002 shared with 27 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE TS0121 shared with 11 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE TS0101 shared with 9 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE TS0111 shared with 8 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE S26R2ZB shared with 7 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE S60ZBTPF shared with 4 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE S60ZBTPG shared with 4 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE S31 Lite zb shared with 4 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE S40LITE shared with 4 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
+  ]
 }

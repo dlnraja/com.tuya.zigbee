@@ -110,5 +110,10 @@
       "getable": false,
       "setable": false
     }
-  }
+  },
+  "_pidConflictNotes": [
+    "// PID-CONFLICT-NOTE TS0002 shared with 27 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE TS0042 shared with 13 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE TS0012 shared with 12 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
+  ]
 }

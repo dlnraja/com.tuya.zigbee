@@ -2,7 +2,7 @@
   "name": {
     "en": "Blaster Remote",
     "nl": "Blaster Afstandsbediening",
-    "fr": "TÃ©lÃ©commande Blaster",
+    "fr": "Télécommande Blaster",
     "de": "Blaster Fernbedienung",
     "es": "Control Remoto Blaster"
   },
@@ -53,7 +53,7 @@
       "id": "ota_check",
       "title": {
         "en": "Check Zigbee OTA Update",
-        "fr": "VÃ©rifier MÃJ OTA",
+        "fr": "Vérifier MÃJ OTA",
         "nl": "Controleer op OTA-updates"
       }
     }
@@ -69,12 +69,12 @@
       "type": "checkbox",
       "label": {
         "en": "Enable Radio Presence Sensing",
-        "fr": "Activer la DÃ©tection de PrÃ©sence Radio"
+        "fr": "Activer la Détection de Présence Radio"
       },
       "value": false,
       "hint": {
         "en": "Infer presence from Zigbee signal fluctuations (BETA)",
-        "fr": "DÃ©duit la prÃ©sence des fluctuations du signal Zigbee (BETA)"
+        "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
       }
     },
     {
@@ -82,7 +82,7 @@
       "type": "number",
       "label": {
         "en": "Radio Presence Sensitivity",
-        "fr": "SensibilitÃ© PrÃ©sence Radio"
+        "fr": "Sensibilité Présence Radio"
       },
       "value": 15,
       "min": 5,
@@ -120,5 +120,8 @@
       "catchall": true,
       "reason": "Fallback for unmatched devices with PIDs: TS0601, TS1201"
     }
-  }
+  },
+  "_pidConflictNotes": [
+    "// PID-CONFLICT-NOTE TS1201 shared with 5 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
+  ]
 }

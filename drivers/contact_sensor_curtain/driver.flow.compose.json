@@ -4,7 +4,7 @@
       "id": "contact_sensor_curtain_button_pressed",
       "title": {
         "en": "Button pressed",
-        "fr": "Bouton pressÃ©"
+        "fr": "Bouton pressé"
       },
       "tokens": [
         {
@@ -21,7 +21,7 @@
           "type": "string",
           "title": {
             "en": "Scene",
-            "fr": "ScÃ¨ne"
+            "fr": "Scène"
           },
           "example": "pressed"
         }
@@ -29,14 +29,14 @@
       "args": [],
       "titleFormatted": {
         "en": "Button pressed",
-        "fr": "Bouton pressÃ©"
+        "fr": "Bouton pressé"
       }
     },
     {
       "id": "contact_sensor_curtain_curtain_motor_windowcoverings_set_changed",
       "title": {
         "en": "Position changed",
-        "fr": "Position changÃ©e"
+        "fr": "Position changée"
       },
       "tokens": [
         {
@@ -52,14 +52,14 @@
       "args": [],
       "titleFormatted": {
         "en": "Position changed",
-        "fr": "Position changÃ©e"
+        "fr": "Position changée"
       }
     },
     {
       "id": "contact_sensor_curtain_curtain_motor_dim_changed",
       "title": {
         "en": "Brightness changed",
-        "fr": "LuminositÃ© changÃ©e"
+        "fr": "Luminosité changée"
       },
       "tokens": [
         {
@@ -67,7 +67,7 @@
           "type": "number",
           "title": {
             "en": "Brightness",
-            "fr": "LuminositÃ©"
+            "fr": "Luminosité"
           },
           "example": 0.75
         }
@@ -75,7 +75,7 @@
       "args": [],
       "titleFormatted": {
         "en": "Brightness changed",
-        "fr": "LuminositÃ© changÃ©e"
+        "fr": "Luminosité changée"
       }
     },
     {
@@ -120,7 +120,7 @@
       "id": "contact_sensor_curtain_curtain_motor_physical_off",
       "title": {
         "en": "Physically closed",
-        "fr": "FermÃ© physiquement"
+        "fr": "Fermé physiquement"
       },
       "tokens": [
         {
@@ -135,14 +135,14 @@
       "args": [],
       "titleFormatted": {
         "en": "Physically closed",
-        "fr": "FermÃ© physiquement"
+        "fr": "Fermé physiquement"
       }
     },
     {
       "id": "contact_sensor_curtain_curtain_motor_physical_single",
       "title": {
         "en": "Physically pressed",
-        "fr": "PressÃ© physiquement"
+        "fr": "Pressé physiquement"
       },
       "tokens": [
         {
@@ -157,21 +157,21 @@
       "args": [],
       "titleFormatted": {
         "en": "Physically pressed",
-        "fr": "PressÃ© physiquement"
+        "fr": "Pressé physiquement"
       }
     },
     {
       "id": "contact_sensor_curtain_curtain_motor_lux_changed",
       "title": {
         "en": "Luminance changed",
-        "fr": "Luminance changÃ©e",
+        "fr": "Luminance changée",
         "nl": "Lichtsterkte gewijzigd",
         "de": "Helligkeit geÃ¤ndert"
       },
       "args": [],
       "titleFormatted": {
         "en": "Luminance changed",
-        "fr": "Luminance changÃ©e",
+        "fr": "Luminance changée",
         "nl": "Lichtsterkte gewijzigd",
         "de": "Helligkeit geÃ¤ndert"
       }
@@ -182,7 +182,7 @@
       "id": "contact_sensor_curtain_curtain_motor_set_windowcoverings_set",
       "title": {
         "en": "Set position to...",
-        "fr": "RÃ©gler la position Ã..."
+        "fr": "Régler la position Ã..."
       },
       "args": [
         {
@@ -201,7 +201,7 @@
       ],
       "titleFormatted": {
         "en": "Set position to... [[position]]",
-        "fr": "RÃ©gler la position Ã... [[position]]"
+        "fr": "Régler la position Ã... [[position]]"
       }
     },
     {
@@ -232,7 +232,7 @@
       "id": "contact_sensor_curtain_curtain_motor_set_dim",
       "title": {
         "en": "Set brightness to...",
-        "fr": "RÃ©gler la luminositÃ© Ã..."
+        "fr": "Régler la luminosité Ã..."
       },
       "args": [
         {
@@ -245,13 +245,13 @@
           "labelMultiplier": 100,
           "title": {
             "en": "Brightness",
-            "fr": "LuminositÃ©"
+            "fr": "Luminosité"
           }
         }
       ],
       "titleFormatted": {
         "en": "Set brightness to... [[brightness]]",
-        "fr": "RÃ©gler la luminositÃ© Ã... [[brightness]]"
+        "fr": "Régler la luminosité Ã... [[brightness]]"
       }
     },
     {
@@ -280,7 +280,7 @@
       },
       "hint": {
         "en": "Move to the saved favorite position (if supported)",
-        "fr": "Aller Ã la position favorite enregistrÃ©e"
+        "fr": "Aller àla position favorite enregistrée"
       },
       "args": [],
       "titleFormatted": {
@@ -294,7 +294,7 @@
       "id": "contact_sensor_curtain_curtain_motor_set_brightness",
       "title": {
         "en": "Set brightness",
-        "fr": "RÃ©gler luminositÃ©",
+        "fr": "Régler luminosité",
         "nl": "Helderheid instellen",
         "de": "Helligkeit einstellen"
       },
@@ -311,7 +311,7 @@
       ],
       "titleFormatted": {
         "en": "Set brightness [[brightness]]",
-        "fr": "RÃ©gler luminositÃ© [[brightness]]",
+        "fr": "Régler luminosité [[brightness]]",
         "nl": "Helderheid instellen [[brightness]]",
         "de": "Helligkeit einstellen [[brightness]]"
       }
@@ -320,7 +320,7 @@
       "id": "contact_sensor_curtain_curtain_motor_set_position",
       "title": {
         "en": "Set position",
-        "fr": "RÃ©gler position",
+        "fr": "Régler position",
         "nl": "Positie instellen",
         "de": "Position einstellen"
       },
@@ -337,7 +337,7 @@
       ],
       "titleFormatted": {
         "en": "Set position [[position]]",
-        "fr": "RÃ©gler position [[position]]",
+        "fr": "Régler position [[position]]",
         "nl": "Positie instellen [[position]]",
         "de": "Position einstellen [[position]]"
       }

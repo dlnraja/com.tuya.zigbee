@@ -163,5 +163,8 @@
     }
   ],
   "id": "scene_switch_4",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "_pidConflictNotes": [
+    "// PID-CONFLICT-NOTE ERS-10TZBVK-AA shared with 4 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
+  ]
 }

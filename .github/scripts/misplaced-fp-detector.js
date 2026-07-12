@@ -3,7 +3,7 @@
 
 const fs = require('fs');
 const p = require('path');
-const DD = 'drivers';
+const DD = p.join(__dirname, '..', '..', 'drivers');  // Fixed: was 'drivers' (relative to CWD), now resolves to master/drivers
 
 // Build map of FPs in dedicated drivers
 const specific = new Map();

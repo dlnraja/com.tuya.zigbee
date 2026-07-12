@@ -19,10 +19,10 @@ const APP_JSON_PATH = path.join(__dirname, '..', 'app.json');
 // These are the most common double-encoding patterns found in French text
 const ENCODING_FIXES = [
   // é (U+00E9) → é
-  [/Ã©/g, 'é'],
+  [/é/g, 'é'],
   [/Ã‰/g, 'É'],
   // è (U+00E8) → è
-  [/Ã¨/g, 'è'],
+  [/è/g, 'è'],
   [/ÃˆÃ/g, 'È'],
   // ê (U+00EA) → ê
   [/Ãª/g, 'ê'],
@@ -30,10 +30,10 @@ const ENCODING_FIXES = [
   // ë (U+00EB)
   [/Ã«/g, 'ë'],
   // à (U+00E0) → à
-  [/Ã /g, 'à'],
+  [/à/g, 'à'],
   [/Ã€/g, 'À'],
   // â (U+00E2) → â
-  [/Ã¢/g, 'â'],
+  [/â/g, 'â'],
   [/Â/g, 'Â'],
   // ô (U+00F4) → ô
   [/Ã´/g, 'ô'],
@@ -238,7 +238,7 @@ const verify = JSON.parse(fs.readFileSync(APP_JSON_PATH, 'utf8'));
 const remainingIssues = [];
 function checkRemaining(obj, path = '') {
   if (typeof obj === 'string') {
-    if (/Ã|â€|Â©|Ã©|Ã¨|Ã |Ã§/.test(obj)) {
+    if (/Ã|â€|Â©|é|è|à|Ã§/.test(obj)) {
       remainingIssues.push({ path, snippet: obj.substring(0, 60) });
     }
     return;

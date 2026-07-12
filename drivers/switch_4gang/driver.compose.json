@@ -127,7 +127,11 @@
       "_TZE200_aqnazj70",
       "_TZ3000_qkixdnon",
       "_TZ302_pzao9ls1",
-      "lellki"
+      "lellki",
+      "_TZ3000",
+      "_TZ3000_excgg5kb",
+      "_TZ3000_enmfaave",
+      "_TZ3000_wkr3jqmr"
     ]
   },
   "images": {
@@ -781,5 +785,11 @@
     }
   ],
   "id": "switch_4gang",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "_pidConflictNotes": [
+    "// PID-CONFLICT-NOTE TS0726 shared with 21 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE TS0004 shared with 14 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE TS0014 shared with 7 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE JZ-ZB-004 shared with 2 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
+  ]
 }

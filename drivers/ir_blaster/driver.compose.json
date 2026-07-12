@@ -8,6 +8,7 @@
   "class": "remote",
   "capabilities": [
     "onoff",
+    "measure_battery",
     "volume_up",
     "volume_down",
     "channel_up",
@@ -166,7 +167,10 @@
       "_TZE200_OWVFNI2Z",
       "_TZE284_3MZB0SDZ",
       "_TZE284_LA9VHSOK",
-      "_tz3000_cfv2uyxe"
+      "_tz3000_cfv2uyxe",
+      "_tz3290_j37rooaxrcdcqo5n",
+      "_TZ3290_j37rooaxrcdcqo5n",
+      "_TZ3290_J37ROOAXRCDCQO5N"
     ],
     "productId": [
       "TS1201",
@@ -191,6 +195,10 @@
     "xlarge": "/drivers/ir_blaster/assets/images/xlarge.png"
   },
   "energy": {
+    "batteries": [
+      "CR2450",
+      "CR2032"
+    ],
     "approximation": {
       "usageConstant": 0.3
     }
@@ -325,5 +333,8 @@
     ]
   },
   "id": "ir_blaster",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "_pidConflictNotes": [
+    "// PID-CONFLICT-NOTE TS1201 shared with 5 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
+  ]
 }

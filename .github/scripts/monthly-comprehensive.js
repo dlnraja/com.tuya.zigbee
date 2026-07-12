@@ -8,6 +8,7 @@ const{callAI,analyzeImage,sleep}=require('./ai-helper');
 const{analyzeScreenshot,formatForAIContext}=require('./screenshot-analyzer');
 const{getForumAuth,refreshCsrf,fmtCk}=require('./forum-auth');
 const{fetchWithRetry}=require('./retry-helper');
+const{shadowSkip}=require('./github-shadow-policy');
 const{extractFP:_vFP,extractFPWithBrands:_vFPB,extractPID:_vPID,isValidTuyaFP}=require('./fp-validator');
 const DDIR=path.join(__dirname,'..','..','drivers');
 const STATE=path.join(__dirname,'..','state','monthly-state.json');
@@ -46,6 +47,7 @@ async function ghFetch(url){
 
 
 async function ghPost(url,body){
+  if(shadowSkip(url,'POST',body))return null;
   const token=process.env.GH_PAT||process.env.GITHUB_TOKEN;
   const h={Accept:'application/vnd.github+json','User-Agent':'tuya-monthly-bot','Content-Type':'application/json'};
   if(token)h.Authorization='Bearer '+token;

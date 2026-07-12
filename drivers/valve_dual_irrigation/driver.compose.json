@@ -1,7 +1,7 @@
 {
   "name": {
     "en": "Smart Valve 2-Way",
-    "fr": "Vanne ConnectÃ©e 2 Voies",
+    "fr": "Vanne Connectée 2 Voies",
     "nl": "Tweevoudige Irrigatieklep",
     "de": "Zwei-Wege-BewÃ¤sserungsventil"
   },
@@ -56,7 +56,7 @@
       "id": "ota_check",
       "title": {
         "en": "Check Zigbee OTA Update",
-        "fr": "VÃ©rifier MÃJ OTA",
+        "fr": "Vérifier MÃJ OTA",
         "nl": "Controleer op OTA-updates"
       }
     }
@@ -99,12 +99,12 @@
       "type": "checkbox",
       "label": {
         "en": "Enable Radio Presence Sensing",
-        "fr": "Activer la DÃ©tection de PrÃ©sence Radio"
+        "fr": "Activer la Détection de Présence Radio"
       },
       "value": false,
       "hint": {
         "en": "Infer presence from Zigbee signal fluctuations (BETA)",
-        "fr": "DÃ©duit la prÃ©sence des fluctuations du signal Zigbee (BETA)"
+        "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
       }
     },
     {
@@ -112,7 +112,7 @@
       "type": "number",
       "label": {
         "en": "Radio Presence Sensitivity",
-        "fr": "SensibilitÃ© PrÃ©sence Radio"
+        "fr": "Sensibilité Présence Radio"
       },
       "value": 15,
       "min": 5,

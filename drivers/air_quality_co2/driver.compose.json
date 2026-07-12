@@ -77,7 +77,6 @@
       "_TZE200_8IKYD92M",
       "_TZE204_8IKYD92M",
       "_TZE200_y6rqas8p",
-      "_TZ3000_qaaysllp",
       "_TYZB01_ftdkanlj",
       "_TYZB01_kvwjujy9",
       "_TZ3210_huzkzqyk",
@@ -90,8 +89,7 @@
       "_TZ3000_yd2e749y",
       "_TZ3000_bjawzodf",
       "_TZ3000_dowj6gyi",
-      "_TZ3000_0s1izerx",
-      "_TZ3000_akqdg6g7"
+      "_TZ3000_0s1izerx"
     ],
     "productId": [
       "TS0601_co2",
@@ -240,5 +238,11 @@
     }
   ],
   "id": "air_quality_co2",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "_pidConflictNotes": [
+    "// PID-CONFLICT-NOTE TS0201 shared with 18 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE TS0222 shared with 9 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE TY0201 shared with 8 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE RH3052 shared with 7 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
+  ]
 }

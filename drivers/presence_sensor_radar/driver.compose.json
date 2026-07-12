@@ -280,7 +280,8 @@
       "_TZE284_bquwrqh1",
       "_TZ3000_8bxrzyxz",
       "zg-204ze",
-      "zgaf-205l"
+      "zgaf-205l",
+      "_TZE200_sfqyhvpv"
     ],
     "productId": [
       "CK-BL702-MWS-01",
@@ -960,5 +961,28 @@
     }
   ],
   "id": "presence_sensor_radar",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "_pidConflictNotes": [
+    "// PID-CONFLICT-NOTE TS0225 shared with 19 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE TS110E shared with 18 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE TS0004 shared with 14 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE TS0203 shared with 10 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE CK-BL702-MWS-01(7016) shared with 9 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE ZP-301Z shared with 8 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE ZG-204ZL shared with 3 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE ZG-204ZM shared with 3 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE ZG-204ZV shared with 3 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE CK-BL702-MWS-01 shared with 2 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE MG1_5RZ shared with 2 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE SZLMR10 shared with 2 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE ZG-204ZH shared with 2 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE ZG-204ZK shared with 2 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE ZG-205Z shared with 2 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE SNZB-06P shared with 2 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE ZG-204ZE shared with 2 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE ZG-204ZQ shared with 2 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE ZG-205ZL shared with 2 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE ZG-302ZL shared with 2 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE ZG-302ZM shared with 2 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
+  ]
 }

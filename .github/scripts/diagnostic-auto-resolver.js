@@ -2,6 +2,7 @@
 "use strict";
 const fs=require("fs"),path=require("path");
 const{fetchWithRetry}=require("./retry-helper");
+const{shadowSkip}=require("./github-shadow-policy");
 const KB=require("./bug-knowledge-base");
 let _profileDetector=null;
 function getProfileDetector(){if(_profileDetector)return _profileDetector;try{_profileDetector=require("./user-profile-detector")}catch{_profileDetector=null}return _profileDetector}
@@ -60,10 +61,12 @@ try{const r=await fetchWithRetry(GH+ep,{headers:hdrs(TOKEN)},{retries:2,label:"g
 }
 async function ghPost(ep,body){
 if(DRY){console.log("[DRY] POST",ep.slice(0,60));return{id:"dry"}}
+if(shadowSkip(ep,"POST",body))return null;
 try{const r=await fetchWithRetry(GH+ep,{method:"POST",headers:{...hdrs(TOKEN),"Content-Type":"application/json"},body:JSON.stringify(body)},{retries:2,label:"ghPost"});return r.ok?r.json():null}catch{return null}
 }
 async function ghPatch(ep,body){
 if(DRY){console.log("[DRY] PATCH",ep.slice(0,60));return true}
+if(shadowSkip(ep,"PATCH",body))return false;
 try{const r=await fetchWithRetry(GH+ep,{method:"PATCH",headers:{...hdrs(TOKEN),"Content-Type":"application/json"},body:JSON.stringify(body)},{retries:2,label:"ghPatch"});return r.ok}catch{return false}
 }
 function collectDiagFPs(){

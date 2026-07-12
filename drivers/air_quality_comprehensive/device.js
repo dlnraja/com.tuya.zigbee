@@ -1,12 +1,19 @@
 'use strict';
 const { SensorBase } = require('../../lib/devices/UnifiedSensorBase');
+const { equalsCI } = require('../../lib/utils/CaseInsensitiveMatcher');
 
 class AirQualityComprehensiveDevice extends SensorBase {
 
   get mainsPowered() { return true; }
 
+  get isEightYgSmartAirbox() {
+    return equalsCI(this.getSetting('zb_manufacturer_name') || '', '_TZE200_8ygsuhe1');
+  }
+
   get sensorCapabilities() {
-    return ['measure_co2', 'measure_pm25', 'measure_temperature', 'measure_humidity', 'measure_voc', 'measure_formaldehyde'];
+    const capabilities = ['measure_co2', 'measure_temperature', 'measure_humidity', 'measure_voc', 'measure_formaldehyde'];
+    if (!this.isEightYgSmartAirbox) capabilities.push('measure_pm25');
+    return capabilities;
   }
 
   get dpMappings() {
@@ -14,7 +21,9 @@ class AirQualityComprehensiveDevice extends SensorBase {
       2: { capability: 'measure_co2', divisor: 1 },
       18: { capability: 'measure_temperature', smartDivisor: true },
       19: { capability: 'measure_humidity', smartDivisor: true },
-      20: { capability: 'measure_pm25', divisor: 1 },
+      20: this.isEightYgSmartAirbox
+        ? { capability: null, internal: 'secondary_air_quality_value' }
+        : { capability: 'measure_pm25', divisor: 1 },
       21: { capability: 'measure_voc', divisor: 1 },
       22: { capability: 'measure_formaldehyde', smartDivisor: true }
     };
@@ -65,6 +74,13 @@ class AirQualityComprehensiveDevice extends SensorBase {
       if (this.mainsPowered && this.hasCapability('measure_battery')) {
         await this.removeCapability('measure_battery').catch(() => { });
         this.log('[AIR-QUALITY] 🔌 Mains-powered: removed measure_battery');
+      }
+
+      // This Smart Airbox does not expose particulate measurements. Avoid stale,
+      // permanently empty PM tiles that were previously mistaken for DP20 data.
+      if (this.isEightYgSmartAirbox) {
+        await this.removeCapability('measure_pm25').catch(() => { });
+        await this.removeCapability('measure_pm10').catch(() => { });
       }
 
       // v5.11.15: Ensure VOC and HCHO capabilities are added for devices that report them
