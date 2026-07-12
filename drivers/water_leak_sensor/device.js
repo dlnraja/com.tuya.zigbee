@@ -37,6 +37,7 @@ const WATER_SENSOR_PROFILES = {
   '_TZE200_jthf7vb6': {
     type: 'tuya_dp', productId: 'TS0601',
     dpMappings: { 1: 'alarm_water', 4: 'measure_battery' },
+    invertRawAlarm: true,
     notes: 'Smart water leak alarm (forum request)'
   },
   '_TZE204_qq9mpfhw': {
@@ -182,8 +183,12 @@ class WaterLeakSensorDevice extends UnifiedSensorBase {
   }
 
   get dpMappings() {
+    const alarmTransform = boolean();
+    const transformAlarm = (value) => this._deviceProfile?.invertRawAlarm
+      ? !alarmTransform(value)
+      : alarmTransform(value);
     return {
-      1: { capability: 'alarm_water', transform: boolean() },
+      1: { capability: 'alarm_water', transform: transformAlarm },
       101: { capability: 'alarm_water', transform: boolean() },
       19: { capability: 'alarm_water', transform: boolean() },
       4: { capability: 'measure_battery', divisor: 1 },
@@ -236,12 +241,16 @@ class WaterLeakSensorDevice extends UnifiedSensorBase {
       await this._forceInitialAlarmRead(zclNode);
 
       // Delayed secondary read for sleepy sensors
-      this.homey.setTimeout(async () => { if (this._destroyed) return; try {
+      this._secondaryAlarmReadTimer = this.homey.setTimeout(async () => {
+        this._secondaryAlarmReadTimer = null;
+        if (this._destroyed) return;
+        try {
           this.log('[WATER] 📖 Delayed secondary alarm read (5s post-init)...');
           await this._forceInitialAlarmRead(zclNode);
         } catch (e) {
           this.log(`[WATER] ⚠️ Secondary read failed: ${e.message}`);
-        } }, 5000);
+        }
+      }, 5000);
 
       this.log(`[WATER] ✅ Water leak sensor ready (invert: ${this._invertAlarm})`);
     }, 'onNodeInit');
@@ -313,8 +322,13 @@ class WaterLeakSensorDevice extends UnifiedSensorBase {
   async onDeleted() {
     if (this._destroyed) return;
     this._destroyed = true;
+    if (this._secondaryAlarmReadTimer) {
+      this.homey.clearTimeout(this._secondaryAlarmReadTimer);
+      this._secondaryAlarmReadTimer = null;
+    }
     if (this._iasFallback) {
       this._iasFallback.destroy();
+      this._iasFallback = null;
     }
     if (super.onDeleted) {
       await super.onDeleted();

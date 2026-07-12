@@ -19,11 +19,14 @@ class WallSwitch1Gang1WayDevice extends PowerSwitchFeaturesMixin(PhysicalButtonM
   get gangCount() { return 1; }
 
   async onNodeInit({ zclNode }) {
-    // Auto-fix: Remove battery capabilities for mains-powered devices
-    await this.removeCapability('measure_battery').catch(() => {});
-    await this.removeCapability('alarm_battery').catch(() => {});
+    // All devices routed here are mains-powered one-gang relays. Remove stale
+    // capabilities retained by Homey after upgrading from an older manifest.
+    for (const capability of ['button.1', 'measure_battery', 'alarm_battery']) {
+      if (this.hasCapability(capability)) {
+        await this.removeCapability(capability).catch(() => {});
+      }
+    }
     await this._safeInvoke(async () => { await super.onNodeInit({ zclNode  });
-    await this.initVirtualButtons();
       // v9.8.0: Initialization is now orchestrated by UnifiedSwitchBase and Mixins.
       // Physical button detection, virtual buttons, and capability sync are handled automatically.
       // PowerSwitchFeaturesMixin adds DP 12 (power_on_state) and DP 2 (backlight_mode) support.

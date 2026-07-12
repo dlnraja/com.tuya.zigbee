@@ -69,8 +69,8 @@ class SmokeDetectorAdvancedDevice extends UnifiedSensorBase {
       14: {
         capability: 'measure_battery',
         transform: (v, device) => {
-          const batteryMap = { 0: 10, 1: 50, 2: 100 };
-          const battery = batteryMap[v] ?? (v > 2 ? v : 50);
+          const batteryMap = { 0: 5, 1: 40, 2: 100 };
+          const battery = batteryMap[v] ?? (v > 2 ? v : 40);
           if (device) {device.log(`[SMOKE] DP14 battery state: ${v} -> ${battery}%`);}
           return battery;
         }
@@ -90,10 +90,6 @@ class SmokeDetectorAdvancedDevice extends UnifiedSensorBase {
 
   async onNodeInit({ zclNode }) {
     await super.onNodeInit({ zclNode }); // v8.4.2: MUST call super BEFORE any capability operations
-
-    // Auto-fix: Remove battery capabilities for mains-powered devices
-    await this.removeCapability('measure_battery').catch(() => {});
-    await this.removeCapability('alarm_battery').catch(() => {});
 
     const mfr = this.getSetting('zb_manufacturer_name') || this.getData().manufacturerName || 'UNKNOWN';
     this.log(`[SMOKE-ADV] Smart Smoke Detector Advanced Ready. Mfr: ${mfr}`);

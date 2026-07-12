@@ -33,7 +33,12 @@
   "zigbee": {
     "manufacturerName": [
       "_TZ3210_pwj6vuj9",
-      "_TZ3210_d3m9v8p6"
+      "_TZ3210_d3m9v8p6",
+      "_TZ3210_j4pdtz9v",
+      "_TZ3210_dse8ogfy",
+      "_TZ3210_232nryqh",
+      "_TZ3210_okbss9dy",
+      "_TZ3210_dse8ogfy_fingerbot"
     ],
     "productId": [
       "TS0001",
@@ -62,6 +67,94 @@
       }
     }
   },
+  "settings": [
+    {
+      "id": "fingerbot_mode",
+      "type": "dropdown",
+      "label": {
+        "en": "Operating mode",
+        "fr": "Mode de fonctionnement"
+      },
+      "value": "click",
+      "values": [
+        {
+          "id": "click",
+          "label": {
+            "en": "Click",
+            "fr": "Appui"
+          }
+        },
+        {
+          "id": "switch",
+          "label": {
+            "en": "Switch",
+            "fr": "Interrupteur"
+          }
+        },
+        {
+          "id": "program",
+          "label": {
+            "en": "Program",
+            "fr": "Programme"
+          }
+        }
+      ]
+    },
+    {
+      "id": "reverse",
+      "type": "checkbox",
+      "label": {
+        "en": "Reverse direction",
+        "fr": "Inverser le sens"
+      },
+      "value": false
+    },
+    {
+      "id": "lower_limit",
+      "type": "number",
+      "label": {
+        "en": "Lower movement limit (%)",
+        "fr": "Limite basse (%)"
+      },
+      "value": 50,
+      "min": 0,
+      "max": 100,
+      "step": 1
+    },
+    {
+      "id": "upper_limit",
+      "type": "number",
+      "label": {
+        "en": "Upper movement limit (%)",
+        "fr": "Limite haute (%)"
+      },
+      "value": 100,
+      "min": 0,
+      "max": 100,
+      "step": 1
+    },
+    {
+      "id": "delay",
+      "type": "number",
+      "label": {
+        "en": "Sustain time (seconds)",
+        "fr": "Durée d'appui (secondes)"
+      },
+      "value": 1,
+      "min": 0,
+      "max": 10,
+      "step": 1
+    },
+    {
+      "id": "touch",
+      "type": "checkbox",
+      "label": {
+        "en": "Touch control",
+        "fr": "Commande tactile"
+      },
+      "value": false
+    }
+  ],
   "maintenanceActions": [
     {
       "id": "ota_check",
@@ -88,5 +181,13 @@
       "maintenanceAction": true,
       "getable": false
     }
-  }
+  },
+  "_pidConflictNotes": [
+    "// PID-CONFLICT-NOTE TS011F shared with 43 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE TS0001 shared with 35 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE TS0003 shared with 20 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE TS0011 shared with 14 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE TS000F shared with 9 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE TS0001_fingerbot shared with 2 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
+  ]
 }

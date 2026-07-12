@@ -29,14 +29,14 @@
     "meter_power": {
       "title": {
         "en": "Energy Consumed",
-        "fr": "Ã‰nergie ConsommÃ©e"
+        "fr": "Ã‰nergie Consommée"
       },
       "units": "kWh"
     },
     "meter_power.exported": {
       "title": {
         "en": "Energy Exported",
-        "fr": "Ã‰nergie ExportÃ©e"
+        "fr": "Ã‰nergie Exportée"
       },
       "units": "kWh"
     },
@@ -69,7 +69,7 @@
       "type": "group",
       "label": {
         "en": "Measurement Settings",
-        "fr": "ParamÃ¨tres de Mesure"
+        "fr": "Paramètres de Mesure"
       },
       "children": [
         {
@@ -92,7 +92,7 @@
               "id": "1",
               "label": {
                 "en": "Ã—1 (Default)",
-                "fr": "Ã—1 (Par dÃ©faut)"
+                "fr": "Ã—1 (Par défaut)"
               }
             },
             {
@@ -135,7 +135,7 @@
     "learnmode": {
       "instruction": {
         "en": "Press the pairing button on the meter for 5 seconds until LED blinks rapidly",
-        "fr": "Appuyez sur le bouton d'appairage du compteur pendant 5 secondes jusqu'Ã ce que la LED clignote rapidement"
+        "fr": "Appuyez sur le bouton d'appairage du compteur pendant 5 secondes jusqu'àce que la LED clignote rapidement"
       }
     },
     "manufacturerName": [
@@ -158,7 +158,7 @@
       "id": "ota_check",
       "title": {
         "en": "Check Zigbee OTA Update",
-        "fr": "VÃ©rifier MÃJ OTA",
+        "fr": "Vérifier MÃJ OTA",
         "nl": "Controleer op OTA-updates"
       }
     }

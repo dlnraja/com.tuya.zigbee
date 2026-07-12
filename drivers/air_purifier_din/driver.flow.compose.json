@@ -42,14 +42,14 @@
       "id": "air_purifier_din_din_rail_switch_turned_on",
       "title": {
         "en": "Turned on",
-        "fr": "AllumÃ©",
+        "fr": "Allumé",
         "nl": "Aangezet",
         "de": "Eingeschaltet"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turned on",
-        "fr": "AllumÃ©",
+        "fr": "Allumé",
         "nl": "Aangezet",
         "de": "Eingeschaltet"
       }
@@ -74,14 +74,14 @@
       "id": "air_purifier_din_din_rail_switch_physical_on",
       "title": {
         "en": "Turned on - physical button",
-        "fr": "AllumÃ© - bouton physique",
+        "fr": "Allumé - bouton physique",
         "nl": "Aangezet - fysieke knop",
         "de": "Eingeschaltet - physische Taste"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turned on - physical button",
-        "fr": "AllumÃ© - bouton physique",
+        "fr": "Allumé - bouton physique",
         "nl": "Aangezet - fysieke knop",
         "de": "Eingeschaltet - physische Taste"
       }
@@ -142,14 +142,14 @@
       "id": "air_purifier_din_din_rail_switch_power_changed",
       "title": {
         "en": "Power changed",
-        "fr": "Puissance changÃ©e",
+        "fr": "Puissance changée",
         "nl": "Vermogen gewijzigd",
         "de": "Leistung geÃ¤ndert"
       },
       "args": [],
       "titleFormatted": {
         "en": "Power changed",
-        "fr": "Puissance changÃ©e",
+        "fr": "Puissance changée",
         "nl": "Vermogen gewijzigd",
         "de": "Leistung geÃ¤ndert"
       }
@@ -160,14 +160,14 @@
       "id": "air_purifier_din_din_rail_switch_is_on",
       "title": {
         "en": "Is !{{on|off}}",
-        "fr": "Est !{{allumÃ©|Ã©teint}}",
+        "fr": "Est !{{allumé|éteint}}",
         "nl": "Is !{{aan|uit}}",
         "de": "Ist !{{ein|aus}}"
       },
       "args": [],
       "titleFormatted": {
         "en": "Is !{{on|off}}",
-        "fr": "Est !{{allumÃ©|Ã©teint}}",
+        "fr": "Est !{{allumé|éteint}}",
         "nl": "Is !{{aan|uit}}",
         "de": "Ist !{{ein|aus}}"
       }

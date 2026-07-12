@@ -44,6 +44,11 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
 
   get hybridModeEnabled() { return true; }
 
+  get isSgabhwa6Variant() {
+    const manufacturer = this.getSetting?.('zb_manufacturer_name') || '';
+    return manufacturer.toLowerCase() === '_tze284_sgabhwa6';
+  }
+
   /** Capabilities for soil sensors */
   get sensorCapabilities() {
     return [
@@ -79,7 +84,10 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
     return {
       1: { capability: 'measure_temperature', smartDivisor: true },
       2: { capability: 'measure_humidity.soil', divisor: 1 }, // Alt moisture (Z2M DP mapping)
-      3: { capability: 'measure_humidity.soil', divisor: 1 },
+      3: {
+        capability: 'measure_humidity.soil',
+        transform: (value) => this.isSgabhwa6Variant ? safeDivide(value, 10) : value,
+      },
       4: { capability: 'measure_ec', divisor: 1 }, // EC (Fertilizer level)
       5: {
         capability: 'measure_temperature',
@@ -233,6 +241,7 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
     if (dp === 2 || dp === 3 || dp === 105) {
       this.log(`[SOIL] Moisture DP${dp} = ${parsedValue}%`);
       let moisture = parsedValue;
+      if (dp === 3 && this.isSgabhwa6Variant) {moisture = safeDivide(moisture, 10);}
       if (dp === 105 && moisture > 100) {moisture = safeDivide(moisture, 10);}
       const normalizedMoisture = this._normalizeSoilMoisture(moisture, dp);
       if (normalizedMoisture === null) {return;}

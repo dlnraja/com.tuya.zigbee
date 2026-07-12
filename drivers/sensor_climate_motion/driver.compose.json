@@ -32,7 +32,7 @@
       "type": "dropdown",
       "label": {
         "en": "PIR Sensitivity",
-        "fr": "SensibilitÃ© PIR",
+        "fr": "Sensibilité PIR",
         "nl": "PIR Gevoeligheid",
         "de": "PIR Empfindlichkeit"
       },
@@ -68,7 +68,7 @@
       ],
       "hint": {
         "en": "PIR detection sensitivity (ZG-204ZL, TS0601 PIR sensors). Requires device wake-up.",
-        "fr": "SensibilitÃ© de dÃ©tection PIR (capteurs ZG-204ZL, TS0601 PIR). NÃ©cessite le rÃ©veil du pÃ©riphÃ©rique."
+        "fr": "Sensibilité de détection PIR (capteurs ZG-204ZL, TS0601 PIR). Nécessite le réveil du périphérique."
       }
     },
     {
@@ -76,7 +76,7 @@
       "type": "dropdown",
       "label": {
         "en": "PIR Keep Time",
-        "fr": "DurÃ©e Maintien PIR",
+        "fr": "Durée Maintien PIR",
         "nl": "PIR Aanhoudtijd",
         "de": "PIR Haltezeit"
       },
@@ -113,7 +113,7 @@
       ],
       "hint": {
         "en": "How long presence is maintained after last motion (ZG-204ZL, TS0601 PIR sensors). Requires device wake-up.",
-        "fr": "DurÃ©e de maintien de la prÃ©sence aprÃ¨s le dernier mouvement (capteurs ZG-204ZL, TS0601 PIR). NÃ©cessite le rÃ©veil du pÃ©riphÃ©rique."
+        "fr": "Durée de maintien de la présence après le dernier mouvement (capteurs ZG-204ZL, TS0601 PIR). Nécessite le réveil du périphérique."
       }
     },
     {
@@ -121,7 +121,7 @@
       "type": "number",
       "label": {
         "en": "Motion Holdoff (seconds)",
-        "fr": "DÃ©lai Mouvement (secondes)",
+        "fr": "Délai Mouvement (secondes)",
         "nl": "Beweging Holdoff (seconden)",
         "de": "Bewegung Holdoff (Sekunden)"
       },
@@ -131,7 +131,7 @@
       "step": 10,
       "hint": {
         "en": "Delay before triggering 'no motion' to prevent false triggers in occupied rooms. Set to 0 to disable.",
-        "fr": "DÃ©lai avant de dÃ©clencher 'pas de mouvement' pour Ã©viter les faux dÃ©clenchements dans les piÃ¨ces occupÃ©es. DÃ©finir Ã 0 pour dÃ©sactiver.",
+        "fr": "Délai avant de déclencher 'pas de mouvement' pour éviter les faux déclenchements dans les pièces occupées. Définir à0 pour désactiver.",
         "nl": "Vertraging voordat 'geen beweging' wordt getriggerd om valse triggers in bezette ruimtes te voorkomen. Stel in op 0 om uit te schakelen.",
         "de": "VerzÃ¶gerung vor dem AuslÃ¶sen von 'keine Bewegung', um Fehlalarme in besetzten RÃ¤umen zu vermeiden. Auf 0 setzen zum Deaktivieren."
       }
@@ -149,7 +149,7 @@
           "id": "auto",
           "label": {
             "en": "Auto Detect",
-            "fr": "DÃ©tection Automatique"
+            "fr": "Détection Automatique"
           }
         },
         {
@@ -176,7 +176,7 @@
       ],
       "hint": {
         "en": "Select power source manually or use auto-detection",
-        "fr": "SÃ©lectionnez la source d'alimentation manuellement ou utilisez la dÃ©tection automatique"
+        "fr": "Sélectionnez la source d'alimentation manuellement ou utilisez la détection automatique"
       }
     },
     {
@@ -192,7 +192,7 @@
           "id": "auto",
           "label": {
             "en": "Auto Detect",
-            "fr": "DÃ©tection Automatique"
+            "fr": "Détection Automatique"
           }
         },
         {
@@ -233,7 +233,7 @@
       ],
       "hint": {
         "en": "Select battery type manually or use auto-detection based on voltage",
-        "fr": "SÃ©lectionnez le type de batterie manuellement ou utilisez la dÃ©tection automatique basÃ©e sur la tension"
+        "fr": "Sélectionnez le type de batterie manuellement ou utilisez la détection automatique basée sur la tension"
       }
     },
     {
@@ -249,7 +249,7 @@
       "step": 5,
       "hint": {
         "en": "Trigger low battery warning when below this percentage",
-        "fr": "DÃ©clencher l'alerte batterie faible en dessous de ce pourcentage"
+        "fr": "Déclencher l'alerte batterie faible en dessous de ce pourcentage"
       }
     },
     {
@@ -265,7 +265,7 @@
       "step": 5,
       "hint": {
         "en": "Trigger critical battery warning when below this percentage",
-        "fr": "DÃ©clencher l'alerte batterie critique en dessous de ce pourcentage"
+        "fr": "Déclencher l'alerte batterie critique en dessous de ce pourcentage"
       }
     },
     {
@@ -278,7 +278,7 @@
       "value": true,
       "hint": {
         "en": "Send flow notifications for battery events",
-        "fr": "Envoyer des notifications de flow pour les Ã©vÃ©nements de batterie"
+        "fr": "Envoyer des notifications de flow pour les événements de batterie"
       }
     },
     {
@@ -294,7 +294,7 @@
       "step": 1,
       "hint": {
         "en": "How often to request battery status updates",
-        "fr": "FrÃ©quence de demande des mises Ã jour d'Ã©tat de batterie"
+        "fr": "Fréquence de demande des mises àjour d'état de batterie"
       }
     },
     {
@@ -302,7 +302,7 @@
       "type": "dropdown",
       "label": {
         "en": "Energy Optimization Mode",
-        "fr": "Mode Optimisation Ã‰nergÃ©tique"
+        "fr": "Mode Optimisation Ã‰nergétique"
       },
       "value": "balanced",
       "values": [
@@ -310,27 +310,27 @@
           "id": "performance",
           "label": {
             "en": "Performance (More responsive)",
-            "fr": "Performance (Plus rÃ©actif)"
+            "fr": "Performance (Plus réactif)"
           }
         },
         {
           "id": "balanced",
           "label": {
             "en": "Balanced",
-            "fr": "Ã‰quilibrÃ©"
+            "fr": "Ã‰quilibré"
           }
         },
         {
           "id": "power_saving",
           "label": {
             "en": "Power Saving (Longer battery)",
-            "fr": "Ã‰conomie d'Ã©nergie (Batterie plus longue)"
+            "fr": "Ã‰conomie d'énergie (Batterie plus longue)"
           }
         }
       ],
       "hint": {
         "en": "Balance between responsiveness and battery life",
-        "fr": "Ã‰quilibre entre rÃ©activitÃ© et durÃ©e de vie de la batterie"
+        "fr": "Ã‰quilibre entre réactivité et durée de vie de la batterie"
       }
     },
     {
@@ -343,7 +343,7 @@
       "value": true,
       "hint": {
         "en": "Estimate power consumption when real measurement is not available (AC/DC devices only)",
-        "fr": "Estimer la consommation quand la mesure rÃ©elle n'est pas disponible (appareils AC/DC seulement)"
+        "fr": "Estimer la consommation quand la mesure réelle n'est pas disponible (appareils AC/DC seulement)"
       }
     },
     {
@@ -351,12 +351,12 @@
       "type": "checkbox",
       "label": {
         "en": "Enable Radio Presence Sensing",
-        "fr": "Activer la DÃ©tection de PrÃ©sence Radio"
+        "fr": "Activer la Détection de Présence Radio"
       },
       "value": false,
       "hint": {
         "en": "Infer presence from Zigbee signal fluctuations (BETA)",
-        "fr": "DÃ©duit la prÃ©sence des fluctuations du signal Zigbee (BETA)"
+        "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
       }
     },
     {
@@ -364,7 +364,7 @@
       "type": "number",
       "label": {
         "en": "Radio Presence Sensitivity",
-        "fr": "SensibilitÃ© PrÃ©sence Radio"
+        "fr": "Sensibilité Présence Radio"
       },
       "value": 15,
       "min": 5,
@@ -406,7 +406,7 @@
       "id": "ota_check",
       "title": {
         "en": "Check Zigbee OTA Update",
-        "fr": "VÃ©rifier MÃJ OTA",
+        "fr": "Vérifier MÃJ OTA",
         "nl": "Controleer op OTA-updates"
       }
     }
@@ -450,5 +450,10 @@
       "getable": false,
       "setable": false
     }
-  }
+  },
+  "_pidConflictNotes": [
+    "// PID-CONFLICT-NOTE TS0001 shared with 35 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE Excellux shared with 30 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE TS0225 shared with 19 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
+  ]
 }

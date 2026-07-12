@@ -5,6 +5,7 @@ const{callAI,analyzeImage,sleep}=require('./ai-helper');
 const{getForumAuth,refreshCsrf,fmtCk,FORUM}=require('./forum-auth');
 
 const{fetchWithRetry}=require('./retry-helper');
+const{shadowSkip}=require('./github-shadow-policy');
 
 const GH='https://api.github.com';
 
@@ -93,6 +94,8 @@ async function ghFetch(url){
 
 
 async function ghPost(url,body){
+
+  if(shadowSkip(url,'POST',body))return null;
 
   const token=process.env.GH_PAT||process.env.GITHUB_TOKEN;
 

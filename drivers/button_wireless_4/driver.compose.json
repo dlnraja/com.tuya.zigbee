@@ -105,6 +105,9 @@
           8,
           18,
           57344
+        ],
+        "bindings": [
+          6
         ]
       },
       "2": {
@@ -114,6 +117,9 @@
           8,
           18,
           57344
+        ],
+        "bindings": [
+          6
         ]
       },
       "3": {
@@ -123,6 +129,9 @@
           8,
           18,
           57344
+        ],
+        "bindings": [
+          6
         ]
       },
       "4": {
@@ -132,6 +141,9 @@
           8,
           18,
           57344
+        ],
+        "bindings": [
+          6
         ]
       }
     },
@@ -173,7 +185,10 @@
       "_TZ3000_ABRSVSOU",
       "_tz3000_4fjiwweb",
       "_TZ3000_4fjiwweb",
-      "_TZ3000_4FJIWWEB"
+      "_TZ3000_4FJIWWEB",
+      "_TZ3000_jcspr0tp",
+      "_TZ3000_zgyzgdua",
+      "_TZ3000_abci1hiu"
     ]
   },
   "images": {
@@ -494,5 +509,11 @@
     }
   ],
   "id": "button_wireless_4",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "_pidConflictNotes": [
+    "// PID-CONFLICT-NOTE TS004F shared with 19 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE TS0044 shared with 9 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE TS0014 shared with 7 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE SNZB-01M shared with 5 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
+  ]
 }

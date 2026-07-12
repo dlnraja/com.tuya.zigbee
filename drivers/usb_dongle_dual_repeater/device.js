@@ -74,7 +74,7 @@ class UsbDongleDualRepeaterDevice extends TuyaZigbeeDevice {
       this._bindOnOffChannel(zclNode, 2, 'onoff.usb2');
     }
 
-    // Mesure d'Ã©nergie sur endpoint 1
+    // Mesure d'énergie sur endpoint 1
     try {
       await this._configureEnergyReporting(zclNode);
     } catch (err) {
@@ -158,7 +158,7 @@ class UsbDongleDualRepeaterDevice extends TuyaZigbeeDevice {
   }
 
   /**
-   * Configure le reporting ZCL pour la mesure d'Ã©nergie.
+   * Configure le reporting ZCL pour la mesure d'énergie.
    */
   async _configureEnergyReporting(zclNode) {
     const ep1 = zclNode.endpoints[1];

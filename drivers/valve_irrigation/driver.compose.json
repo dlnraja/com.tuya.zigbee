@@ -39,7 +39,8 @@
       "_tze284_loejka0i",
       "_TZE200_d0ypnbvn",
       "_TZE204_d0ypnbvn",
-      "_tze284_8zizsafo"
+      "_tze284_8zizsafo",
+      "_TZE284_d0ypnbvn"
     ],
     "productId": [
       "TS0601_irrigation",
@@ -107,5 +108,8 @@
     }
   ],
   "id": "valve_irrigation",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "_pidConflictNotes": [
+    "// PID-CONFLICT-NOTE TS0049 shared with 4 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
+  ]
 }

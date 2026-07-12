@@ -1,0 +1,112 @@
+{
+  "id": "door_sensor",
+  "name": {
+    "en": "Door / Window Sensor",
+    "fr": "Capteur Porte / Fenêtre",
+    "nl": "Deur / Raam Sensor",
+    "de": "Tür / Fenster Sensor",
+    "es": "Sensor de Puerta / Ventana",
+    "it": "Sensore Porta / Finestra"
+  },
+  "class": "sensor",
+  "platforms": ["local"],
+  "connectivity": ["zigbee"],
+  "subDevices": [],
+  "capabilities": [
+    "alarm_contact",
+    "measure_battery"
+  ],
+  "capabilitiesOptions": {
+    "alarm_contact": {
+      "title": {
+        "en": "Contact alarm",
+        "fr": "Alarme de contact"
+      }
+    },
+    "measure_battery": {
+      "title": {
+        "en": "Battery",
+        "fr": "Batterie"
+      }
+    }
+  },
+  "energy": {
+    "batteries": ["CR2032", "CR2450", "AAA"],
+    "approximation": {
+      "usageConstant": 0.1
+    }
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_6zvw8ham",
+      "_TZ3000_l3k0pnc1",
+      "_TZ3000_zutizvyk",
+      "_TZ3000_2mccw9py",
+      "_TZ3000_d1is6erx"
+    ],
+    "productId": [
+      "TS0203"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          3,
+          1280
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "{{driverAssetsPath}}/icon.svg",
+      "instruction": {
+        "en": "Press and hold the reset button for 5 seconds until the LED flashes.",
+        "fr": "Maintenez le bouton de réinitialisation pendant 5 secondes jusqu'à ce que la LED clignote.",
+        "nl": "Houd de resetknop 5 seconden ingedrukt tot de LED knippert.",
+        "de": "Halten Sie die Reset-Taste 5 Sekunden lang gedrückt, bis die LED blinkt."
+      }
+    }
+  },
+  "settings": [
+    {
+      "id": "battery_type",
+      "type": "dropdown",
+      "label": {
+        "en": "Battery Type",
+        "fr": "Type de pile"
+      },
+      "value": "CR2032",
+      "values": [
+        { "id": "CR2032", "label": { "en": "CR2032 (3V)" } },
+        { "id": "CR2450", "label": { "en": "CR2450 (3V)" } },
+        { "id": "AAA", "label": { "en": "AAA" } }
+      ]
+    },
+    {
+      "id": "battery_report_interval",
+      "type": "number",
+      "label": {
+        "en": "Battery Report Interval (hours)",
+        "fr": "Intervalle rapport batterie (heures)"
+      },
+      "value": 24,
+      "min": 1,
+      "max": 168
+    }
+  ],
+  "images": {
+    "small": "{{driverAssetsPath}}/images/small.png",
+    "large": "{{driverAssetsPath}}/images/large.png",
+    "xlarge": "{{driverAssetsPath}}/images/large.png"
+  },
+  "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "fr": "Vérifier mise à jour OTA Zigbee"
+      }
+    }
+  ],
+  "version": "1.0.0"
+}

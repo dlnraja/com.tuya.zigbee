@@ -5,24 +5,24 @@
       "highlight": true,
       "title": {
         "en": "Motion detected",
-        "fr": "Mouvement dÃ©tectÃ©"
+        "fr": "Mouvement détecté"
       },
       "args": [],
       "titleFormatted": {
         "en": "Motion detected",
-        "fr": "Mouvement dÃ©tectÃ©"
+        "fr": "Mouvement détecté"
       }
     },
     {
       "id": "sensor_climate_motion_motion_sensor_motion_cleared",
       "title": {
         "en": "Motion cleared",
-        "fr": "Mouvement terminÃ©"
+        "fr": "Mouvement terminé"
       },
       "args": [],
       "titleFormatted": {
         "en": "Motion cleared",
-        "fr": "Mouvement terminÃ©"
+        "fr": "Mouvement terminé"
       }
     },
     {
@@ -41,7 +41,7 @@
       "id": "sensor_climate_motion_motion_sensor_battery_changed",
       "title": {
         "en": "Battery level changed",
-        "fr": "Niveau batterie changÃ©"
+        "fr": "Niveau batterie changé"
       },
       "tokens": [
         {
@@ -57,21 +57,21 @@
       "args": [],
       "titleFormatted": {
         "en": "Battery level changed",
-        "fr": "Niveau batterie changÃ©"
+        "fr": "Niveau batterie changé"
       }
     },
     {
       "id": "sensor_climate_motion_motion_sensor_tamper_true",
       "title": {
         "en": "Tamper alarm triggered",
-        "fr": "Alarme anti-sabotage dÃ©clenchÃ©e",
+        "fr": "Alarme anti-sabotage déclenchée",
         "nl": "Sabotage alarm geactiveerd",
         "de": "Manipulationsalarm ausgelÃ¶st"
       },
       "args": [],
       "titleFormatted": {
         "en": "Tamper alarm triggered",
-        "fr": "Alarme anti-sabotage dÃ©clenchÃ©e",
+        "fr": "Alarme anti-sabotage déclenchée",
         "nl": "Sabotage alarm geactiveerd",
         "de": "Manipulationsalarm ausgelÃ¶st"
       }
@@ -80,14 +80,14 @@
       "id": "sensor_climate_motion_motion_sensor_tamper_false",
       "title": {
         "en": "Tamper alarm cleared",
-        "fr": "Alarme anti-sabotage terminÃ©e",
+        "fr": "Alarme anti-sabotage terminée",
         "nl": "Sabotage alarm opgeheven",
         "de": "Manipulationsalarm beendet"
       },
       "args": [],
       "titleFormatted": {
         "en": "Tamper alarm cleared",
-        "fr": "Alarme anti-sabotage terminÃ©e",
+        "fr": "Alarme anti-sabotage terminée",
         "nl": "Sabotage alarm opgeheven",
         "de": "Manipulationsalarm beendet"
       }
@@ -96,13 +96,13 @@
       "id": "sensor_climate_motion_motion_sensor_lux_changed",
       "title": {
         "en": "Luminance changed",
-        "fr": "Luminance changÃ©e",
+        "fr": "Luminance changée",
         "nl": "Lichtsterkte veranderd",
         "de": "Helligkeit geÃ¤ndert"
       },
       "hint": {
         "en": "This card triggers when the luminance sensor reports a new value, independent of motion detection",
-        "fr": "Cette carte se dÃ©clenche quand le capteur de luminance rapporte une nouvelle valeur, indÃ©pendamment de la dÃ©tection de mouvement",
+        "fr": "Cette carte se déclenche quand le capteur de luminance rapporte une nouvelle valeur, indépendamment de la détection de mouvement",
         "nl": "Deze kaart wordt geactiveerd wanneer de lichtsensor een nieuwe waarde rapporteert, onafhankelijk van bewegingsdetectie",
         "de": "Diese Karte wird ausgelÃ¶st, wenn der Helligkeitssensor einen neuen Wert meldet, unabhÃ¤ngig von der Bewegungserkennung"
       },
@@ -133,7 +133,7 @@
       "args": [],
       "titleFormatted": {
         "en": "Luminance changed",
-        "fr": "Luminance changÃ©e",
+        "fr": "Luminance changée",
         "nl": "Lichtsterkte veranderd",
         "de": "Helligkeit geÃ¤ndert"
       }
@@ -160,12 +160,12 @@
       "id": "sensor_climate_motion_motion_sensor_motion_active",
       "title": {
         "en": "Motion !{{is|is not}} detected",
-        "fr": "Mouvement !{{est|n'est pas}} dÃ©tectÃ©"
+        "fr": "Mouvement !{{est|n'est pas}} détecté"
       },
       "args": [],
       "titleFormatted": {
         "en": "Motion !{{is|is not}} detected",
-        "fr": "Mouvement !{{est|n'est pas}} dÃ©tectÃ©"
+        "fr": "Mouvement !{{est|n'est pas}} détecté"
       }
     },
     {

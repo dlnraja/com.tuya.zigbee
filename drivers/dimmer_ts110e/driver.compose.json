@@ -63,7 +63,7 @@
       "type": "number",
       "label": {
         "en": "Minimum Brightness",
-        "fr": "LuminositÃ© Minimale"
+        "fr": "Luminosité Minimale"
       },
       "value": 10,
       "min": 1,
@@ -74,7 +74,7 @@
       "type": "number",
       "label": {
         "en": "Maximum Brightness",
-        "fr": "LuminositÃ© Maximale"
+        "fr": "Luminosité Maximale"
       },
       "value": 1000,
       "min": 1,
@@ -116,7 +116,7 @@
     "learnmode": {
       "instruction": {
         "en": "Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode.",
-        "fr": "Appuyez sur le bouton de configuration pendant 10 secondes ou allumez et Ã©teignez l'appareil cinq fois pour passer en mode appairage."
+        "fr": "Appuyez sur le bouton de configuration pendant 10 secondes ou allumez et éteignez l'appareil cinq fois pour passer en mode appairage."
       }
     }
   },
@@ -125,5 +125,15 @@
     "conditions": [],
     "actions": []
   },
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "_pidConflictNotes": [
+    "// PID-CONFLICT-NOTE TS0001 shared with 35 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE TS0215A shared with 28 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE TS0002 shared with 27 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE TS0726 shared with 21 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE TS0003 shared with 20 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE TS0505B shared with 19 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE TS0013 shared with 15 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE TS0012 shared with 12 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
+  ]
 }

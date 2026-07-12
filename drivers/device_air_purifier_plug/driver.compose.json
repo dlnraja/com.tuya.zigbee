@@ -31,7 +31,7 @@
       "image": "/drivers/plug_energy_monitor/assets/learnmode.svg",
       "instruction": {
         "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
-        "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'Ã ce que la LED clignote."
+        "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'àce que la LED clignote."
       }
     },
     "endpoints": {
@@ -54,7 +54,7 @@
       "value": true,
       "hint": {
         "en": "Estimate power consumption when real measurement is not available (AC/DC devices only)",
-        "fr": "Estimer la consommation quand la mesure rÃ©elle n'est pas disponible (appareils AC/DC seulement)"
+        "fr": "Estimer la consommation quand la mesure réelle n'est pas disponible (appareils AC/DC seulement)"
       }
     },
     {
@@ -77,7 +77,7 @@
           "id": "1",
           "label": {
             "en": "Ã—1 (Default)",
-            "fr": "Ã—1 (Par dÃ©faut)"
+            "fr": "Ã—1 (Par défaut)"
           }
         },
         {
@@ -113,7 +113,7 @@
           "id": "1",
           "label": {
             "en": "Ã—1 (Default)",
-            "fr": "Ã—1 (Par dÃ©faut)"
+            "fr": "Ã—1 (Par défaut)"
           }
         },
         {
@@ -149,7 +149,7 @@
           "id": "1",
           "label": {
             "en": "Ã—1 (Default)",
-            "fr": "Ã—1 (Par dÃ©faut)"
+            "fr": "Ã—1 (Par défaut)"
           }
         },
         {
@@ -185,7 +185,7 @@
           "id": "1",
           "label": {
             "en": "Ã—1 (Default)",
-            "fr": "Ã—1 (Par dÃ©faut)"
+            "fr": "Ã—1 (Par défaut)"
           }
         },
         {
@@ -198,7 +198,7 @@
       ],
       "hint": {
         "en": "Adjust if total energy (kWh) readings are way off.",
-        "fr": "Ajuster si l'Ã©nergie totale (kWh) est incorrecte."
+        "fr": "Ajuster si l'énergie totale (kWh) est incorrecte."
       }
     }
   ],
@@ -247,7 +247,7 @@
       "id": "ota_check",
       "title": {
         "en": "Check Zigbee OTA Update",
-        "fr": "VÃ©rifier MÃJ OTA",
+        "fr": "Vérifier MÃJ OTA",
         "nl": "Controleer op OTA-updates"
       }
     }
@@ -258,5 +258,8 @@
     "actions": []
   },
   "id": "device_air_purifier_plug",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "_pidConflictNotes": [
+    "// PID-CONFLICT-NOTE TS011F shared with 43 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
+  ]
 }

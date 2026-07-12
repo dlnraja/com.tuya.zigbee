@@ -17,7 +17,7 @@ const { includesCI } = require('../../lib/utils/CaseInsensitiveMatcher');
 const ZCL_ONLY_MANUFACTURERS_3G = [
   '_TZ3000_qkixdnon', '_TZ3000_blhvsaqf', '_TZ3000_ysdv91bk',
   '_TZ3000_hafsqare', '_TZ3000_e98krvvk', '_TZ3000_iedbgyxt',
-  '_TZ3000_v4l4b0lp'
+  '_TZ3000_v4l4b0lp', '_TZ3000_iol4bl2y'
 ];
 
 class Switch3GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSwitchBase)) {
