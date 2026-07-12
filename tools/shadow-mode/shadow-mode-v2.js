@@ -21,7 +21,7 @@
  * State: tools/shadow-mode/state.json (per-session)
  *
  * @author Mavis investigation 2026-07-10
- * @version 0.2.2 (added --enrich pipeline with forum-integration, johan-ticket-importer, bidirectional-enricher, mfs-db-enricher, intelligent-variant-finder)
+ * @version 0.2.3 (P12: read-only johan-dump + johan-enrichment, NO auto-reply to Johan)
  */
 
 'use strict';
@@ -41,6 +41,8 @@ const DRIVER_MAPPING = path.join(MASTER_DIR, 'driver-mapping-database.json');
 const HERDSMAN_CACHE = path.join(MASTER_DIR, '.github', 'cache', 'z2m', 'tuya.ts');
 const APP_ROOT = MASTER_DIR;
 const NODE_BIN = process.execPath;
+// Make sure node is in PATH for child processes
+process.env.PATH = process.env.PATH + ';' + path.dirname(NODE_BIN);
 
 const C = {
   red:    (s) => `\x1b[31m${s}\x1b[0m`,
@@ -54,7 +56,7 @@ const C = {
 function loadState() {
   const defaults = {
     name: 'shadow-mode-v2',
-    version: '0.2.2',
+    version: '0.2.3',
     created: new Date().toISOString(),
     metrics: {
       runs_total: 0,
@@ -464,9 +466,11 @@ function cmdUseResolver(state) {
 }
 
 function cmdEnrich(state) {
-  // v0.2.2: Enrichment pipeline with new tools
+  // v0.2.3: Enrichment pipeline with new tools
   console.log(C.bold(C.blue('\n[ENRICH] Running enrichment pipeline...\n')));
   const tools = [
+    { name: 'johan-dump', script: 'tools/ci/johan-dump.js', label: 'Johan READ-ONLY dump', args: ['--incremental'] },
+    { name: 'johan-enrichment', script: 'tools/ci/johan-enrichment.js', label: 'Johan → mfs_db cross-ref (DRY-RUN)' },
     { name: 'forum-integration', script: 'tools/ci/forum-integration.js', label: 'Forum threads' },
     { name: 'johan-ticket-importer', script: 'tools/ci/johan-ticket-importer.js', label: 'Johan issues' },
     { name: 'intelligent-variant-finder', script: 'tools/ci/intelligent-variant-finder.js', label: 'Variant detection' },
