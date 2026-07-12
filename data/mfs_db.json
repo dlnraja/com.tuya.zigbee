@@ -4,9 +4,9 @@
     "description": "MFS Unified Database - Manufacturer Fingerprint Schema",
     "generatedAt": "2026-06-19T20:58:49.880Z",
     "generator": "mfs-aggregator v1.0.0",
-    "lastUpdated": "2026-07-12T18:21:07.336Z",
+    "lastUpdated": "2026-07-12T21:54:25.152Z",
     "lastEnrichment": {
-      "date": "2026-07-12T18:21:07.336Z",
+      "date": "2026-07-12T21:54:25.152Z",
       "addedToDevices": 0,
       "updatedInDevices": 4,
       "updatedDriverMaps": 0,
@@ -115930,7 +115930,7 @@
         "integration": 1
       },
       "confidence": 0.5,
-      "lastSeen": "2026-07-12T18:21:07.333Z"
+      "lastSeen": "2026-07-12T21:54:25.150Z"
     },
     "_TZ3290_yyax9ajf": {
       "manufacturerId": "_TZ3290_yyax9ajf",
@@ -115947,7 +115947,7 @@
         "integration": 1
       },
       "confidence": 0.5,
-      "lastSeen": "2026-07-12T18:21:07.334Z"
+      "lastSeen": "2026-07-12T21:54:25.151Z"
     },
     "_TZB210_ngnt8kni": {
       "manufacturerId": "_TZB210_ngnt8kni",
@@ -115981,7 +115981,7 @@
         "integration": 1
       },
       "confidence": 0.5,
-      "lastSeen": "2026-07-12T18:21:07.334Z"
+      "lastSeen": "2026-07-12T21:54:25.151Z"
     },
     "_TZE204_5cuocqty": {
       "manufacturerId": "_TZE204_5cuocqty",
@@ -116185,7 +116185,481 @@
         "integration": 1
       },
       "confidence": 0.5,
-      "lastSeen": "2026-07-12T18:21:07.334Z"
+      "lastSeen": "2026-07-12T21:54:25.151Z"
+    },
+    "_TZE200_ICKA1CLH": {
+      "manufacturerId": "_TZE200_ICKA1CLH",
+      "modelIds": [
+        "TS0601"
+      ],
+      "variants": [],
+      "deviceType": "unknown",
+      "driverHint": "generic_tuya",
+      "capabilities": [],
+      "powerSource": "unknown",
+      "sources": [
+        "johan-enrichment"
+      ],
+      "sourceDetails": {
+        "johan-enrichment": 1
+      },
+      "confidence": 0.6,
+      "lastSeen": "2026-07-12T21:53:38.286Z"
+    },
+    "_TZE200_CPBO62RN": {
+      "manufacturerId": "_TZE200_CPBO62RN",
+      "modelIds": [
+        "TS0601"
+      ],
+      "variants": [],
+      "deviceType": "unknown",
+      "driverHint": "generic_tuya",
+      "capabilities": [],
+      "powerSource": "unknown",
+      "sources": [
+        "johan-enrichment"
+      ],
+      "sourceDetails": {
+        "johan-enrichment": 1
+      },
+      "confidence": 0.6,
+      "lastSeen": "2026-07-12T21:53:38.286Z"
+    },
+    "_TZE200_3TOWULQD": {
+      "manufacturerId": "_TZE200_3TOWULQD",
+      "modelIds": [
+        "TS0601"
+      ],
+      "variants": [],
+      "deviceType": "unknown",
+      "driverHint": "generic_tuya",
+      "capabilities": [],
+      "powerSource": "unknown",
+      "sources": [
+        "johan-enrichment"
+      ],
+      "sourceDetails": {
+        "johan-enrichment": 1
+      },
+      "confidence": 0.6,
+      "lastSeen": "2026-07-12T21:53:38.286Z"
+    },
+    "_TZE200_PAY2BYAX": {
+      "manufacturerId": "_TZE200_PAY2BYAX",
+      "modelIds": [
+        "TS0203",
+        "TS0601"
+      ],
+      "variants": [],
+      "deviceType": "unknown",
+      "driverHint": "door_sensor",
+      "capabilities": [],
+      "powerSource": "unknown",
+      "sources": [
+        "johan-enrichment"
+      ],
+      "sourceDetails": {
+        "johan-enrichment": 1
+      },
+      "confidence": 0.6,
+      "lastSeen": "2026-07-12T21:53:38.286Z"
+    },
+    "_TZE200_YA4FT0W4": {
+      "manufacturerId": "_TZE200_YA4FT0W4",
+      "modelIds": [
+        "TS0601"
+      ],
+      "variants": [],
+      "deviceType": "unknown",
+      "driverHint": "generic_tuya",
+      "capabilities": [],
+      "powerSource": "unknown",
+      "sources": [
+        "johan-enrichment"
+      ],
+      "sourceDetails": {
+        "johan-enrichment": 1
+      },
+      "confidence": 0.6,
+      "lastSeen": "2026-07-12T21:53:38.286Z"
+    },
+    "_TZE200_BH3N6GK8": {
+      "manufacturerId": "_TZE200_BH3N6GK8",
+      "modelIds": [
+        "TS0601"
+      ],
+      "variants": [],
+      "deviceType": "unknown",
+      "driverHint": "generic_tuya",
+      "capabilities": [],
+      "powerSource": "unknown",
+      "sources": [
+        "johan-enrichment"
+      ],
+      "sourceDetails": {
+        "johan-enrichment": 1
+      },
+      "confidence": 0.6,
+      "lastSeen": "2026-07-12T21:53:38.286Z"
+    },
+    "_TZE200_2AAELWXK": {
+      "manufacturerId": "_TZE200_2AAELWXK",
+      "modelIds": [
+        "TS0225"
+      ],
+      "variants": [],
+      "deviceType": "unknown",
+      "driverHint": "generic_tuya",
+      "capabilities": [],
+      "powerSource": "unknown",
+      "sources": [
+        "johan-enrichment"
+      ],
+      "sourceDetails": {
+        "johan-enrichment": 1
+      },
+      "confidence": 0.6,
+      "lastSeen": "2026-07-12T21:53:38.286Z"
+    },
+    "_TZE200_6KIJC7ND": {
+      "manufacturerId": "_TZE200_6KIJC7ND",
+      "modelIds": [
+        "TS0601"
+      ],
+      "variants": [],
+      "deviceType": "unknown",
+      "driverHint": "generic_tuya",
+      "capabilities": [],
+      "powerSource": "unknown",
+      "sources": [
+        "johan-enrichment"
+      ],
+      "sourceDetails": {
+        "johan-enrichment": 1
+      },
+      "confidence": 0.6,
+      "lastSeen": "2026-07-12T21:53:38.286Z"
+    },
+    "_TZE200_LOCANSQN": {
+      "manufacturerId": "_TZE200_LOCANSQN",
+      "modelIds": [
+        "TS0601"
+      ],
+      "variants": [],
+      "deviceType": "unknown",
+      "driverHint": "generic_tuya",
+      "capabilities": [],
+      "powerSource": "unknown",
+      "sources": [
+        "johan-enrichment"
+      ],
+      "sourceDetails": {
+        "johan-enrichment": 1
+      },
+      "confidence": 0.6,
+      "lastSeen": "2026-07-12T21:53:38.286Z"
+    },
+    "_TZE200_IBA1CKEK": {
+      "manufacturerId": "_TZE200_IBA1CKEK",
+      "modelIds": [
+        "TS0601"
+      ],
+      "variants": [],
+      "deviceType": "unknown",
+      "driverHint": "generic_tuya",
+      "capabilities": [],
+      "powerSource": "unknown",
+      "sources": [
+        "johan-enrichment"
+      ],
+      "sourceDetails": {
+        "johan-enrichment": 1
+      },
+      "confidence": 0.6,
+      "lastSeen": "2026-07-12T21:53:38.286Z"
+    },
+    "_TZE200_P0GZBQCT": {
+      "manufacturerId": "_TZE200_P0GZBQCT",
+      "modelIds": [
+        "TS0601"
+      ],
+      "variants": [],
+      "deviceType": "unknown",
+      "driverHint": "generic_tuya",
+      "capabilities": [],
+      "powerSource": "unknown",
+      "sources": [
+        "johan-enrichment"
+      ],
+      "sourceDetails": {
+        "johan-enrichment": 1
+      },
+      "confidence": 0.6,
+      "lastSeen": "2026-07-12T21:53:38.286Z"
+    },
+    "_TZE200_9YAPGBUV": {
+      "manufacturerId": "_TZE200_9YAPGBUV",
+      "modelIds": [
+        "TS0601"
+      ],
+      "variants": [],
+      "deviceType": "unknown",
+      "driverHint": "generic_tuya",
+      "capabilities": [],
+      "powerSource": "unknown",
+      "sources": [
+        "johan-enrichment"
+      ],
+      "sourceDetails": {
+        "johan-enrichment": 1
+      },
+      "confidence": 0.6,
+      "lastSeen": "2026-07-12T21:53:38.286Z"
+    },
+    "_TZE200_3P5YDOS3": {
+      "manufacturerId": "_TZE200_3P5YDOS3",
+      "modelIds": [
+        "TS0601"
+      ],
+      "variants": [],
+      "deviceType": "unknown",
+      "driverHint": "generic_tuya",
+      "capabilities": [],
+      "powerSource": "unknown",
+      "sources": [
+        "johan-enrichment"
+      ],
+      "sourceDetails": {
+        "johan-enrichment": 1
+      },
+      "confidence": 0.6,
+      "lastSeen": "2026-07-12T21:53:38.286Z"
+    },
+    "_TZE200_DFXKCOTS": {
+      "manufacturerId": "_TZE200_DFXKCOTS",
+      "modelIds": [
+        "TS0601"
+      ],
+      "variants": [],
+      "deviceType": "unknown",
+      "driverHint": "generic_tuya",
+      "capabilities": [],
+      "powerSource": "unknown",
+      "sources": [
+        "johan-enrichment"
+      ],
+      "sourceDetails": {
+        "johan-enrichment": 1
+      },
+      "confidence": 0.6,
+      "lastSeen": "2026-07-12T21:53:38.286Z"
+    },
+    "_TZE200_CIRVGEP4": {
+      "manufacturerId": "_TZE200_CIRVGEP4",
+      "modelIds": [],
+      "variants": [],
+      "deviceType": "unknown",
+      "driverHint": "generic_tuya",
+      "capabilities": [],
+      "powerSource": "unknown",
+      "sources": [
+        "johan-enrichment"
+      ],
+      "sourceDetails": {
+        "johan-enrichment": 1
+      },
+      "confidence": 0.6,
+      "lastSeen": "2026-07-12T21:53:38.286Z"
+    },
+    "_TZE200_VM1GYRSO": {
+      "manufacturerId": "_TZE200_VM1GYRSO",
+      "modelIds": [
+        "TS0601"
+      ],
+      "variants": [],
+      "deviceType": "unknown",
+      "driverHint": "generic_tuya",
+      "capabilities": [],
+      "powerSource": "unknown",
+      "sources": [
+        "johan-enrichment"
+      ],
+      "sourceDetails": {
+        "johan-enrichment": 1
+      },
+      "confidence": 0.6,
+      "lastSeen": "2026-07-12T21:53:38.286Z"
+    },
+    "_TZE200_LVKK0HDG": {
+      "manufacturerId": "_TZE200_LVKK0HDG",
+      "modelIds": [
+        "TS0601"
+      ],
+      "variants": [],
+      "deviceType": "unknown",
+      "driverHint": "generic_tuya",
+      "capabilities": [],
+      "powerSource": "unknown",
+      "sources": [
+        "johan-enrichment"
+      ],
+      "sourceDetails": {
+        "johan-enrichment": 1
+      },
+      "confidence": 0.6,
+      "lastSeen": "2026-07-12T21:53:38.286Z"
+    },
+    "_TZE200_NKLQJK62": {
+      "manufacturerId": "_TZE200_NKLQJK62",
+      "modelIds": [
+        "TS0601"
+      ],
+      "variants": [],
+      "deviceType": "unknown",
+      "driverHint": "generic_tuya",
+      "capabilities": [],
+      "powerSource": "unknown",
+      "sources": [
+        "johan-enrichment"
+      ],
+      "sourceDetails": {
+        "johan-enrichment": 1
+      },
+      "confidence": 0.6,
+      "lastSeen": "2026-07-12T21:53:38.286Z"
+    },
+    "_TZE200_MYD45WEU": {
+      "manufacturerId": "_TZE200_MYD45WEU",
+      "modelIds": [
+        "TS0044"
+      ],
+      "variants": [],
+      "deviceType": "unknown",
+      "driverHint": "button_wireless_4",
+      "capabilities": [],
+      "powerSource": "unknown",
+      "sources": [
+        "johan-enrichment"
+      ],
+      "sourceDetails": {
+        "johan-enrichment": 1
+      },
+      "confidence": 0.6,
+      "lastSeen": "2026-07-12T21:53:38.286Z"
+    },
+    "_TZE200_DQ8BU0PT": {
+      "manufacturerId": "_TZE200_DQ8BU0PT",
+      "modelIds": [
+        "TS0601"
+      ],
+      "variants": [],
+      "deviceType": "unknown",
+      "driverHint": "generic_tuya",
+      "capabilities": [],
+      "powerSource": "unknown",
+      "sources": [
+        "johan-enrichment"
+      ],
+      "sourceDetails": {
+        "johan-enrichment": 1
+      },
+      "confidence": 0.6,
+      "lastSeen": "2026-07-12T21:53:38.286Z"
+    },
+    "_TYZB01_GEEPVXSY": {
+      "manufacturerId": "_TYZB01_GEEPVXSY",
+      "modelIds": [
+        "TS0202"
+      ],
+      "variants": [],
+      "deviceType": "unknown",
+      "driverHint": "motion_sensor",
+      "capabilities": [],
+      "powerSource": "unknown",
+      "sources": [
+        "johan-enrichment"
+      ],
+      "sourceDetails": {
+        "johan-enrichment": 1
+      },
+      "confidence": 0.6,
+      "lastSeen": "2026-07-12T21:53:38.286Z"
+    },
+    "_TZE200_R0JDJRVI": {
+      "manufacturerId": "_TZE200_R0JDJRVI",
+      "modelIds": [
+        "TS0601"
+      ],
+      "variants": [],
+      "deviceType": "unknown",
+      "driverHint": "generic_tuya",
+      "capabilities": [],
+      "powerSource": "unknown",
+      "sources": [
+        "johan-enrichment"
+      ],
+      "sourceDetails": {
+        "johan-enrichment": 1
+      },
+      "confidence": 0.6,
+      "lastSeen": "2026-07-12T21:53:38.286Z"
+    },
+    "_TZE200_VVMBJ46N": {
+      "manufacturerId": "_TZE200_VVMBJ46N",
+      "modelIds": [
+        "TS0601"
+      ],
+      "variants": [],
+      "deviceType": "unknown",
+      "driverHint": "generic_tuya",
+      "capabilities": [],
+      "powerSource": "unknown",
+      "sources": [
+        "johan-enrichment"
+      ],
+      "sourceDetails": {
+        "johan-enrichment": 1
+      },
+      "confidence": 0.6,
+      "lastSeen": "2026-07-12T21:53:38.286Z"
+    },
+    "_TZE200_T5P1VJ8R": {
+      "manufacturerId": "_TZE200_T5P1VJ8R",
+      "modelIds": [
+        "TS0601"
+      ],
+      "variants": [],
+      "deviceType": "unknown",
+      "driverHint": "generic_tuya",
+      "capabilities": [],
+      "powerSource": "unknown",
+      "sources": [
+        "johan-enrichment"
+      ],
+      "sourceDetails": {
+        "johan-enrichment": 1
+      },
+      "confidence": 0.6,
+      "lastSeen": "2026-07-12T21:53:38.286Z"
+    },
+    "_TZE200_UEBOJRAA": {
+      "manufacturerId": "_TZE200_UEBOJRAA",
+      "modelIds": [
+        "TS0601"
+      ],
+      "variants": [],
+      "deviceType": "unknown",
+      "driverHint": "generic_tuya",
+      "capabilities": [],
+      "powerSource": "unknown",
+      "sources": [
+        "johan-enrichment"
+      ],
+      "sourceDetails": {
+        "johan-enrichment": 1
+      },
+      "confidence": 0.6,
+      "lastSeen": "2026-07-12T21:53:38.286Z"
     }
   },
   "driverMapping": {
@@ -118973,7 +119447,8 @@
       "manufacturerIds": [
         "_tz3000_bgtzm4ny",
         "_tz3000_5tqxpine",
-        "_tz3000_uri7oadn"
+        "_tz3000_uri7oadn",
+        "_TZE200_MYD45WEU"
       ],
       "modelIds": [
         "TS0044",
@@ -121026,7 +121501,29 @@
         "zen thermostat",
         "zigbee alliance",
         "_tz3210_jaap6jeb",
-        "mãœller licht"
+        "mãœller licht",
+        "_TZE200_ICKA1CLH",
+        "_TZE200_CPBO62RN",
+        "_TZE200_3TOWULQD",
+        "_TZE200_YA4FT0W4",
+        "_TZE200_BH3N6GK8",
+        "_TZE200_2AAELWXK",
+        "_TZE200_6KIJC7ND",
+        "_TZE200_LOCANSQN",
+        "_TZE200_IBA1CKEK",
+        "_TZE200_P0GZBQCT",
+        "_TZE200_9YAPGBUV",
+        "_TZE200_3P5YDOS3",
+        "_TZE200_DFXKCOTS",
+        "_TZE200_CIRVGEP4",
+        "_TZE200_VM1GYRSO",
+        "_TZE200_LVKK0HDG",
+        "_TZE200_NKLQJK62",
+        "_TZE200_DQ8BU0PT",
+        "_TZE200_R0JDJRVI",
+        "_TZE200_VVMBJ46N",
+        "_TZE200_T5P1VJ8R",
+        "_TZE200_UEBOJRAA"
       ],
       "modelIds": [
         "ARDUINO_ZIGBEE",
@@ -121870,7 +122367,8 @@
         "_TZE284_bquwrqh1",
         "_TZE200_jt50ea5d",
         "_TZ3210_jaap6jeb",
-        "_TZE284_g1enhdsi"
+        "_TZE284_g1enhdsi",
+        "_TYZB01_GEEPVXSY"
       ],
       "modelIds": [
         "TS0202",
@@ -123441,10 +123939,17 @@
       ],
       "modelIds": [],
       "deviceType": "unknown"
+    },
+    "door_sensor": {
+      "manufacturerIds": [
+        "_TZE200_PAY2BYAX"
+      ],
+      "modelIds": [],
+      "deviceType": "unknown"
     }
   },
   "stats": {
-    "totalEntries": 4179,
+    "totalEntries": 4204,
     "totalVariants": 1,
     "entriesBySource": {
       "local": 4037,
@@ -123467,7 +123972,7 @@
     "coveragePercent": 42,
     "multiSourceCount": 1756,
     "lastAggregation": "2026-06-19T20:58:49.874Z",
-    "lastEnrichment": "2026-07-12T18:21:07.336Z"
+    "lastEnrichment": "2026-07-12T21:54:25.152Z"
   },
   "diff": {
     "lastRun": "2026-06-19T20:58:49.880Z",
