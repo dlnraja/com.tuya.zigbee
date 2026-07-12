@@ -13,7 +13,9 @@
     }
   },
   "zigbee": {
-    "manufacturerName": [],
+    "manufacturerName": [
+      "_TZE200_placeholder_tunable_bulb_E14"
+    ],
     "productId": [
       "TS0502A"
     ],
@@ -66,5 +68,11 @@
       "setOnDim": false
     }
   },
-  "class": "light"
+  "class": "light",
+  "_notes": [
+    "// FIX-EMPTY-MFR-AGGREGATEERROR: 2026-07-12 — placeholder added to prevent server-side build crash"
+  ],
+  "_pidConflictNotes": [
+    "// PID-CONFLICT-NOTE TS0502A shared with 8 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
+  ]
 }

@@ -1,4 +1,124 @@
 {
+  "_TZ3290_j37rooaxrcdcqo5n": {
+    "driverId": "ir_blaster",
+    "type": "ir_blaster",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS1201"
+    ]
+  },
+  "_TZE200_locansqn": {
+    "driverId": "lcdtemphumidsensor",
+    "type": "climate_sensor",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0601"
+    ]
+  },
+  "_TZE200_d0ypnbvn": {
+    "driverId": "valve_irrigation",
+    "type": "valve",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0601"
+    ]
+  },
+  "_TZE204_d0ypnbvn": {
+    "driverId": "valve_irrigation",
+    "type": "valve",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0601"
+    ]
+  },
+  "_TZE284_d0ypnbvn": {
+    "driverId": "valve_irrigation",
+    "type": "valve",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0601"
+    ]
+  },
+  "_TZ3000_iol4bl2y": {
+    "driverId": "switch_3gang",
+    "type": "switch",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0003"
+    ]
+  },
+  "_TZ3000_wzmuk9ai": {
+    "driverId": "plug_energy_monitor",
+    "type": "plug",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS011F"
+    ]
+  },
+  "_TZ3002_fdxihpp7": {
+    "driverId": "switch_1gang",
+    "type": "switch",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0001"
+    ]
+  },
+  "_TZ3000_0t4zjtia": {
+    "driverId": "wall_switch_1gang_1way",
+    "type": "switch",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0001"
+    ]
+  },
+  "_TZ3210_232nryqh": {
+    "driverId": "fingerbot",
+    "type": "fingerbot",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0001"
+    ]
+  },
+  "_TZ3210_okbss9dy": {
+    "driverId": "fingerbot",
+    "type": "fingerbot",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0001"
+    ]
+  },
+  "_TZ3000_88iqnhvd": {
+    "driverId": "plug_energy_monitor",
+    "type": "plug",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS011F"
+    ]
+  },
+  "_TZ3000_5ct6e7ye": {
+    "driverId": "plug_energy_monitor",
+    "type": "plug",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS011F"
+    ]
+  },
+  "_TZE200_d0yu2xgi": {
+    "driverId": "siren_sirentemphumidsensor",
+    "type": "siren_climate",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0601"
+    ]
+  },
+  "_TZ3000_vd43bbfq": {
+    "driverId": "curtain_module",
+    "type": "cover",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS130F"
+    ]
+  },
   "Immax": {
     "driverId": "doorwindowsensor_2",
     "type": "doorwindowsensor_2",
@@ -269,8 +389,8 @@
     ]
   },
   "_TYST11_d0yu2xgi": {
-    "driverId": "siren",
-    "type": "siren",
+    "driverId": "siren_sirentemphumidsensor",
+    "type": "siren_climate",
     "powerSource": "mains",
     "modelIds": [
       "TS0601"
@@ -1186,11 +1306,11 @@
     ]
   },
   "_TZ3000_46t1rvdu": {
-    "driverId": "contact_sensor",
-    "type": "contact_sensor",
-    "powerSource": "battery",
+    "driverId": "switch_1gang",
+    "type": "switch",
+    "powerSource": "mains",
     "modelIds": [
-      "TS0601"
+      "TS0001"
     ]
   },
   "_TZ3000_49qchf10": {
@@ -1394,11 +1514,11 @@
     ]
   },
   "_TZ3000_6l1pjfqe": {
-    "driverId": "generic_tuya",
-    "type": "other",
-    "powerSource": "unknown",
+    "driverId": "plug_energy_monitor",
+    "type": "plug",
+    "powerSource": "mains",
     "modelIds": [
-      "TS0601"
+      "TS011F"
     ]
   },
   "_TZ3000_6s5dc9lx": {
@@ -1498,11 +1618,11 @@
     ]
   },
   "_TZ3000_7ysdnebc": {
-    "driverId": "dimmer_wall_1gang",
+    "driverId": "dimmer_dual_channel",
     "type": "dimmer",
     "powerSource": "mains",
     "modelIds": [
-      "TS0601"
+      "TS1101"
     ]
   },
   "_TZ3000_8a833yls": {
@@ -1718,7 +1838,7 @@
     "type": "climate_sensor",
     "powerSource": "battery",
     "modelIds": [
-      "TS0601"
+      "TS0201"
     ]
   },
   "_TZ3000_aracgljk": {
@@ -1770,7 +1890,7 @@
     ]
   },
   "_TZ3000_b4awzgct": {
-    "driverId": "button_wireless",
+    "driverId": "button_wireless_4_ts0041",
     "type": "button",
     "powerSource": "battery",
     "modelIds": [
@@ -2220,11 +2340,11 @@
     ]
   },
   "_TZ3000_fdxihpp7": {
-    "driverId": "contact_sensor",
-    "type": "contact_sensor",
-    "powerSource": "battery",
+    "driverId": "wall_switch_1gang_1way",
+    "type": "switch",
+    "powerSource": "mains",
     "modelIds": [
-      "TS0601"
+      "TS0001"
     ]
   },
   "_TZ3000_femsaaua": {
@@ -3697,11 +3817,11 @@
     ]
   },
   "_TZ3000_qaaysllp": {
-    "driverId": "contact_sensor",
-    "type": "contact_sensor",
+    "driverId": "lcdtemphumidluxsensor",
+    "type": "climate_sensor",
     "powerSource": "battery",
     "modelIds": [
-      "TS0601"
+      "TS0201"
     ]
   },
   "_TZ3000_qd7hej8u": {
@@ -4019,11 +4139,11 @@
     ]
   },
   "_TZ3000_ruldv5dt": {
-    "driverId": "bulb_dimmable",
-    "type": "light",
+    "driverId": "switch_2gang",
+    "type": "switch",
     "powerSource": "mains",
     "modelIds": [
-      "TS0601"
+      "TS0002"
     ]
   },
   "_TZ3000_ruxexjfz": {
@@ -4075,11 +4195,11 @@
     ]
   },
   "_TZ3000_skueekg3": {
-    "driverId": "contact_sensor",
-    "type": "contact_sensor",
-    "powerSource": "battery",
+    "driverId": "wall_switch_1gang_1way",
+    "type": "switch",
+    "powerSource": "mains",
     "modelIds": [
-      "TS0601"
+      "TS0001"
     ]
   },
   "_TZ3000_sosdczdl": {
@@ -4554,11 +4674,11 @@
     ]
   },
   "_TZ3000_ww6drja5": {
-    "driverId": "plug_smart",
+    "driverId": "plug_energy_monitor",
     "type": "plug",
     "powerSource": "mains",
     "modelIds": [
-      "TS0601"
+      "TS011F"
     ]
   },
   "_TZ3000_wxtp7c5y": {
@@ -5090,11 +5210,11 @@
     ]
   },
   "_TZ3210_dse8ogfy": {
-    "driverId": "motion_sensor",
-    "type": "motion_sensor",
+    "driverId": "fingerbot",
+    "type": "fingerbot",
     "powerSource": "battery",
     "modelIds": [
-      "TS0601"
+      "TS0001"
     ]
   },
   "_TZ3210_dwytrmda": {
@@ -5235,11 +5355,11 @@
     ]
   },
   "_TZ3210_j4pdtz9v": {
-    "driverId": "motion_sensor",
-    "type": "motion_sensor",
+    "driverId": "fingerbot",
+    "type": "fingerbot",
     "powerSource": "battery",
     "modelIds": [
-      "TS0601"
+      "TS0001"
     ]
   },
   "_TZ3210_jd3z4yig": {
@@ -6309,9 +6429,9 @@
     ]
   },
   "_TZE200_8ygsuhe1": {
-    "driverId": "climate_sensor",
-    "type": "climate_sensor",
-    "powerSource": "battery",
+    "driverId": "air_quality_comprehensive",
+    "type": "air_quality",
+    "powerSource": "mains",
     "modelIds": [
       "TS0601"
     ]
@@ -9003,7 +9123,7 @@
     ]
   },
   "_TZE200_vvmbj46n": {
-    "driverId": "climate_sensor",
+    "driverId": "lcdtemphumidsensor",
     "type": "climate_sensor",
     "powerSource": "battery",
     "modelIds": [
@@ -12752,7 +12872,7 @@
     ]
   },
   "_TZE284_vvmbj46n": {
-    "driverId": "climate_sensor",
+    "driverId": "lcdtemphumidsensor",
     "type": "climate_sensor",
     "powerSource": "battery",
     "modelIds": [
@@ -13144,5 +13264,991 @@
       "button.1"
     ],
     "notes": "Normalized TZE28C1000000 prefix sibling for Homey forum 26439 #5484 Zemismart boiler switch."
+  },
+  "_TZE": {
+    "driverId": "generic_tuya",
+    "type": "other",
+    "powerSource": "unknown",
+    "modelIds": [
+      "TS0601",
+      "TS0603"
+    ]
+  },
+  "_TZ3000": {
+    "driverId": "switch_4gang",
+    "type": "switch_4gang",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0004",
+      "TS0011",
+      "TS0012",
+      "TS0014",
+      "TS0041",
+      "TS0044",
+      "TS004F",
+      "TS011F",
+      "TS0203",
+      "TS0215A",
+      "TS1002"
+    ]
+  },
+  "_TZE284": {
+    "driverId": "generic_tuya",
+    "type": "other",
+    "powerSource": "unknown",
+    "modelIds": [
+      "TS0601"
+    ]
+  },
+  "_TZE200": {
+    "driverId": "generic_tuya",
+    "type": "other",
+    "powerSource": "unknown",
+    "modelIds": [
+      "TS0601"
+    ]
+  },
+  "_TZ3210": {
+    "driverId": "switch_1gang",
+    "type": "switch",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0002",
+      "TS011F",
+      "TS110E"
+    ]
+  },
+  "_TZE204": {
+    "driverId": "generic_tuya",
+    "type": "other",
+    "powerSource": "unknown",
+    "modelIds": [
+      "TS0601"
+    ]
+  },
+  "_TZ3000_qewo8dlz": {
+    "driverId": "switch_3gang",
+    "type": "switch",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0013"
+    ]
+  },
+  "_TZ3000_gnjozsaz": {
+    "driverId": "plug",
+    "type": null,
+    "powerSource": null,
+    "modelIds": [
+      "TS011F"
+    ]
+  },
+  "_TZ3000_qkixdnon": {
+    "driverId": "switch_3gang",
+    "type": "switch",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0003"
+    ]
+  },
+  "_TYZB01": {
+    "driverId": "switch_1gang",
+    "type": "switch",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0014"
+    ]
+  },
+  "_TZ1800_ejwkn2h2": {
+    "driverId": "generic_tuya",
+    "type": "other",
+    "powerSource": "unknown",
+    "modelIds": [
+      "TS0601"
+    ]
+  },
+  "_TZ1800_fcdjzz3s": {
+    "driverId": "generic_tuya",
+    "type": "other",
+    "powerSource": "unknown",
+    "modelIds": [
+      "TS0601"
+    ]
+  },
+  "_TZ3000_6zvw8ham": {
+    "driverId": "door_sensor",
+    "type": null,
+    "powerSource": null,
+    "modelIds": [
+      "TS0203"
+    ]
+  },
+  "_TZ3000_excgg5kb": {
+    "driverId": "switch_4gang",
+    "type": "switch_4gang",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0004"
+    ]
+  },
+  "_TZ3000_g": {
+    "driverId": "button_wireless_scene",
+    "type": null,
+    "powerSource": null,
+    "modelIds": [
+      "TS004F"
+    ]
+  },
+  "_TZ3000_hafsqare": {
+    "driverId": "switch_1gang",
+    "type": "switch",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0011",
+      "TS0012"
+    ]
+  },
+  "_TZ3000_hhiodade": {
+    "driverId": "switch_1gang",
+    "type": "switch",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0011"
+    ]
+  },
+  "_TZ3000_iiacqpdz": {
+    "driverId": "bulb_dimmable",
+    "type": "light",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0601"
+    ]
+  },
+  "_TZ3000_jcspr0tp": {
+    "driverId": "button_wireless_4",
+    "type": "button",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0044"
+    ]
+  },
+  "_TZ3000_mrduubod": {
+    "driverId": "switch_1gang",
+    "type": "switch",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0014"
+    ]
+  },
+  "_TZ3000_r0pmi2p3": {
+    "driverId": "switch_1gang",
+    "type": "switch",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0014"
+    ]
+  },
+  "_TZ3000_sj7jbgks": {
+    "driverId": "button_wireless_3",
+    "type": "button",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0043"
+    ]
+  },
+  "_TZ3000_zgyzgdua": {
+    "driverId": "button_wireless_4",
+    "type": "button",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0044"
+    ]
+  },
+  "_TZ3000_zutizvyk": {
+    "driverId": "door_sensor",
+    "type": null,
+    "powerSource": null,
+    "modelIds": [
+      "TS0203",
+      "TS0601"
+    ]
+  },
+  "_TZ3210_nuenzetq": {
+    "driverId": "switch_1gang",
+    "type": "switch",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0002"
+    ]
+  },
+  "_TZE200_hhrtiq0x": {
+    "driverId": "generic_tuya",
+    "type": "other",
+    "powerSource": "unknown",
+    "modelIds": [
+      "TS0601"
+    ]
+  },
+  "_TZE200_t1blo2bj": {
+    "driverId": "generic_tuya",
+    "type": "other",
+    "powerSource": "unknown",
+    "modelIds": [
+      "TS0601"
+    ]
+  },
+  "_TZ3000_1obmmd8k": {
+    "driverId": "climate_sensor",
+    "type": "climate_sensor",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0601"
+    ]
+  },
+  "_TZ3000_2mccw9py": {
+    "driverId": "door_sensor",
+    "type": "contact_sensor",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0601"
+    ]
+  },
+  "_TZ3000_4js9lo5d": {
+    "driverId": "switch_1gang",
+    "type": "switch",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0012"
+    ]
+  },
+  "_TZ3000_abci1hiu": {
+    "driverId": "button_wireless_4",
+    "type": "button",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0044"
+    ]
+  },
+  "_TZ3000_au2o5e6q": {
+    "driverId": "sensor_contact_zigbee",
+    "type": "sensor",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0203",
+      "SNZB-04",
+      "MCCGQ01LM",
+      "lumi.sensor_magnet"
+    ]
+  },
+  "_TZ3000_bi6lpsew": {
+    "driverId": "switch_1gang",
+    "type": "switch",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0001"
+    ]
+  },
+  "_TZ3000_blhvsaqf": {
+    "driverId": "switch_1gang",
+    "type": "switch",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0001"
+    ]
+  },
+  "_TZ3000_cea5xugq": {
+    "driverId": "sensor_contact_zigbee",
+    "type": "sensor",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0203",
+      "SNZB-04",
+      "MCCGQ01LM",
+      "lumi.sensor_magnet"
+    ]
+  },
+  "_TZ3000_cfnprab5to": {
+    "driverId": "plug_smart",
+    "type": "plug",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0601"
+    ]
+  },
+  "_TZ3000_dbpmpco1": {
+    "driverId": "curtain_motor",
+    "type": "cover",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0601"
+    ]
+  },
+  "_TZ3000_e98krvvk": {
+    "driverId": "switch_1gang",
+    "type": "switch",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0012"
+    ]
+  },
+  "_TZ3000_enmfaave": {
+    "driverId": "switch_4gang",
+    "type": "switch_4gang",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0004"
+    ]
+  },
+  "_TZ3000_gbm10jnj": {
+    "driverId": "bulb_dimmable",
+    "type": "light",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0601"
+    ]
+  },
+  "_TZ3000_hkcpblrs": {
+    "driverId": "sensor_contact_zigbee",
+    "type": "sensor",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0203",
+      "SNZB-04",
+      "MCCGQ01LM",
+      "lumi.sensor_magnet"
+    ]
+  },
+  "_TZ3000_hyarhbyx": {
+    "driverId": "illuminance_sensor",
+    "type": "light_sensor",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0601"
+    ]
+  },
+  "_TZ3000_i8jfiezr": {
+    "driverId": "climate_sensor",
+    "type": "climate_sensor",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0201"
+    ]
+  },
+  "_TZ3000_iszegwpd": {
+    "driverId": "button_wireless_6",
+    "type": null,
+    "powerSource": null,
+    "modelIds": [
+      "TS0046"
+    ]
+  },
+  "_TZ3000_j1v25l17": {
+    "driverId": "plug",
+    "type": null,
+    "powerSource": null,
+    "modelIds": [
+      "TS011F"
+    ]
+  },
+  "_TZ3000_j9568h44": {
+    "driverId": "switch_1gang",
+    "type": "switch",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0001",
+      "TS0111",
+      "TS011F"
+    ]
+  },
+  "_TZ3000_kjfzuycl": {
+    "driverId": "button_wireless_scene",
+    "type": null,
+    "powerSource": null,
+    "modelIds": [
+      "TS004F"
+    ]
+  },
+  "_TZ3000_ko6v90pg": {
+    "driverId": "plug",
+    "type": null,
+    "powerSource": null,
+    "modelIds": [
+      "TS011F"
+    ]
+  },
+  "_TZ3000_l9brjwau": {
+    "driverId": "switch_1gang",
+    "type": "switch",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0002"
+    ]
+  },
+  "_TZ3000_ltiqubue": {
+    "driverId": "switch_1gang",
+    "type": "switch",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS130F"
+    ]
+  },
+  "_TZ3000_npg02xft": {
+    "driverId": "plug",
+    "type": null,
+    "powerSource": null,
+    "modelIds": [
+      "TS011F"
+    ]
+  },
+  "_TZ3000_o9f2zqln": {
+    "driverId": "water_leak_sensor",
+    "type": "water_leak_sensor",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0207"
+    ]
+  },
+  "_TZ3000_pjcqjtev": {
+    "driverId": "plug",
+    "type": null,
+    "powerSource": null,
+    "modelIds": [
+      "TS011F"
+    ]
+  },
+  "_TZ3000_pmz6mjyu": {
+    "driverId": "plug",
+    "type": null,
+    "powerSource": null,
+    "modelIds": [
+      "TS011F"
+    ]
+  },
+  "_TZ3000_rco1yzb1": {
+    "driverId": "button_wireless_scene",
+    "type": null,
+    "powerSource": null,
+    "modelIds": [
+      "TS004F"
+    ]
+  },
+  "_TZ3000_tk3s5tyg": {
+    "driverId": "button_wireless_1",
+    "type": "button",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0041"
+    ]
+  },
+  "_TZ3000_uaa99arv": {
+    "driverId": "switch_1gang",
+    "type": "switch",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0001"
+    ]
+  },
+  "_TZ3000_uwaort14": {
+    "driverId": "plug_smart",
+    "type": "plug",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0601"
+    ]
+  },
+  "_TZ3000_wkr3jqmr": {
+    "driverId": "switch_4gang",
+    "type": "switch_4gang",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0004"
+    ]
+  },
+  "_TZ3000_wzauvbcs": {
+    "driverId": "plug",
+    "type": null,
+    "powerSource": null,
+    "modelIds": [
+      "TS011F"
+    ]
+  },
+  "_TZ3000_xk5udnd6": {
+    "driverId": "water_leak_sensor",
+    "type": "water_leak_sensor",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0601"
+    ]
+  },
+  "_TZ3000_y56pgpgs": {
+    "driverId": "climate_sensor",
+    "type": "climate_sensor",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0202"
+    ]
+  },
+  "_TZ3000_yi0n4xfd": {
+    "driverId": "plug",
+    "type": null,
+    "powerSource": null,
+    "modelIds": [
+      "TS011F"
+    ]
+  },
+  "_TZ3000_yw5tvzsk": {
+    "driverId": "generic_tuya",
+    "type": "other",
+    "powerSource": "unknown",
+    "modelIds": [
+      "TS0601"
+    ]
+  },
+  "_TZ3000_zmy4lsw": {
+    "driverId": "switch_1gang",
+    "type": "switch",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0002"
+    ]
+  },
+  "_TZ3040": {
+    "driverId": "climate_sensor",
+    "type": "climate_sensor",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0202"
+    ]
+  },
+  "_TZ3040_o4mkahkc": {
+    "driverId": "climate_sensor",
+    "type": "climate_sensor",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0202"
+    ]
+  },
+  "_TZ3210_4ux0ondb": {
+    "driverId": "plug",
+    "type": null,
+    "powerSource": null,
+    "modelIds": [
+      "TS011F"
+    ]
+  },
+  "_TZ3210_dse8ogfy_fingerbot": {
+    "driverId": "fingerbot",
+    "type": "fingerbot",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0001"
+    ]
+  },
+  "_TZ3210_eejm8dcr": {
+    "driverId": "bulb_rgbw",
+    "type": null,
+    "powerSource": null,
+    "modelIds": [
+      "TS0505B"
+    ]
+  },
+  "_TZ3210_s8lvbbu": {
+    "driverId": "bulb_rgbw",
+    "type": null,
+    "powerSource": null,
+    "modelIds": [
+      "TS0505B"
+    ]
+  },
+  "_TZ3210_sroezl0s": {
+    "driverId": "bulb_rgbw",
+    "type": null,
+    "powerSource": null,
+    "modelIds": [
+      "TS0504B"
+    ]
+  },
+  "_TZ3210_xzhnra8x": {
+    "driverId": "plug",
+    "type": null,
+    "powerSource": null,
+    "modelIds": [
+      "TS011F"
+    ]
+  },
+  "_TZE200_b6wax7g0": {
+    "driverId": "generic_tuya",
+    "type": "other",
+    "powerSource": "unknown",
+    "modelIds": [
+      "TS0601"
+    ]
+  },
+  "_TZE200_bxoo2swd": {
+    "driverId": "switch_1gang",
+    "type": "switch",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0001",
+      "TS0002",
+      "TS0601"
+    ]
+  },
+  "_TZE200_dcrrztpa": {
+    "driverId": "dimmer_wall_1gang",
+    "type": "dimmer",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0601"
+    ]
+  },
+  "_TZE200_dq8bu0pt": {
+    "driverId": "generic_tuya",
+    "type": "other",
+    "powerSource": "unknown",
+    "modelIds": [
+      "TS0601"
+    ]
+  },
+  "_TZE200_sfqyhvpv": {
+    "driverId": "presence_sensor_radar",
+    "type": "presence",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0601"
+    ]
+  },
+  "_TZE200_shkxsgis": {
+    "driverId": "generic_tuya",
+    "type": "other",
+    "powerSource": "unknown",
+    "modelIds": [
+      "TS0601"
+    ]
+  },
+  "_TZE200_zqtiam4u": {
+    "driverId": "generic_tuya",
+    "type": "other",
+    "powerSource": "unknown",
+    "modelIds": [
+      "TS0601"
+    ]
+  },
+  "_TZE204_81yrt3l": {
+    "driverId": "generic_tuya",
+    "type": "other",
+    "powerSource": "unknown",
+    "modelIds": [
+      "TS0601"
+    ]
+  },
+  "_TZE204_bvfld3xc": {
+    "driverId": "generic_tuya",
+    "type": "other",
+    "powerSource": "unknown",
+    "modelIds": [
+      "TS0601"
+    ]
+  },
+  "_TZE204_jtbgusdc": {
+    "driverId": "generic_tuya",
+    "type": "other",
+    "powerSource": "unknown",
+    "modelIds": [
+      "TS0601"
+    ]
+  },
+  "_TZE204_mpbki2zm-TS0601": {
+    "driverId": "generic_tuya",
+    "type": "other",
+    "powerSource": "unknown",
+    "modelIds": [
+      "TS0601"
+    ]
+  },
+  "_TZE204_qasjif9": {
+    "driverId": "generic_tuya",
+    "type": "other",
+    "powerSource": "unknown",
+    "modelIds": [
+      "TS0601"
+    ]
+  },
+  "_TZE204_s139roas": {
+    "driverId": "generic_tuya",
+    "type": "other",
+    "powerSource": "unknown",
+    "modelIds": [
+      "TS0601"
+    ]
+  },
+  "_TZE204_srmahpwl": {
+    "driverId": "generic_tuya",
+    "type": "other",
+    "powerSource": "unknown",
+    "modelIds": [
+      "TS0601"
+    ]
+  },
+  "_TZE204_sxm7l9x": {
+    "driverId": "generic_tuya",
+    "type": "other",
+    "powerSource": "unknown",
+    "modelIds": [
+      "TS0601"
+    ]
+  },
+  "_TZE204_t1blo2bj": {
+    "driverId": "generic_tuya",
+    "type": "other",
+    "powerSource": "unknown",
+    "modelIds": [
+      "TS0601"
+    ]
+  },
+  "_TZE204_xtrnjaoz": {
+    "driverId": "generic_tuya",
+    "type": "other",
+    "powerSource": "unknown",
+    "modelIds": [
+      "TS0601"
+    ]
+  },
+  "_TZE284_0ints6w": {
+    "driverId": "generic_tuya",
+    "type": "other",
+    "powerSource": "unknown",
+    "modelIds": [
+      "TS0601"
+    ]
+  },
+  "_TZE284_81YRT3L": {
+    "driverId": "generic_tuya",
+    "type": "other",
+    "powerSource": "unknown",
+    "modelIds": [
+      "TS0601"
+    ]
+  },
+  "_TZE284_aa03yzhs": {
+    "driverId": "generic_tuya",
+    "type": "other",
+    "powerSource": "unknown",
+    "modelIds": [
+      "TS0601"
+    ]
+  },
+  "_TZE284_rqcuwlsa": {
+    "driverId": "generic_tuya",
+    "type": "other",
+    "powerSource": "unknown",
+    "modelIds": [
+      "TS0601"
+    ]
+  },
+  "_TZE284_uo8qcagc": {
+    "driverId": "generic_tuya",
+    "type": "other",
+    "powerSource": "unknown",
+    "modelIds": [
+      "TS0601"
+    ]
+  },
+  "_TZE28C1000000_81yrt3lo": {
+    "driverId": "generic_tuya",
+    "type": "other",
+    "powerSource": "unknown",
+    "modelIds": [
+      "TS0601"
+    ]
+  },
+  "_TZ3000_l3k0pnc1": {
+    "driverId": "door_sensor",
+    "type": "sensor",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0203"
+    ]
+  },
+  "_TZ3000_d1is6erx": {
+    "driverId": "door_sensor",
+    "type": "sensor",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0203"
+    ]
+  },
+  "_TYST11": {
+    "driverId": "climate_sensor",
+    "type": "device",
+    "powerSource": "unknown",
+    "modelIds": []
+  },
+  "_TYZB01_4lwqwyqn": {
+    "driverId": "switch_1gang",
+    "type": "device",
+    "powerSource": "unknown",
+    "modelIds": []
+  },
+  "_TZ3000_1bwpjvlz": {
+    "driverId": "motion_sensor",
+    "type": "device",
+    "powerSource": "unknown",
+    "modelIds": []
+  },
+  "_TZ3000_an5rjiwd": {
+    "driverId": "switch_1gang",
+    "type": "device",
+    "powerSource": "unknown",
+    "modelIds": []
+  },
+  "_TZ3000_bzzgvet0": {
+    "driverId": "climate_sensor",
+    "type": "device",
+    "powerSource": "unknown",
+    "modelIds": []
+  },
+  "_TZ3000_c8zfad4a": {
+    "driverId": "contact_sensor",
+    "type": "device",
+    "powerSource": "unknown",
+    "modelIds": []
+  },
+  "_TZ3000_dd8wwzcy": {
+    "driverId": "climate_sensor",
+    "type": "device",
+    "powerSource": "unknown",
+    "modelIds": []
+  },
+  "_TZ3000_ptjcjise": {
+    "driverId": "switch_1gang",
+    "type": "device",
+    "powerSource": "unknown",
+    "modelIds": []
+  },
+  "_TZ3000_u5u4cakc": {
+    "driverId": "climate_sensor",
+    "type": "device",
+    "powerSource": "unknown",
+    "modelIds": []
+  },
+  "_TZ3000_xwh1e22x": {
+    "driverId": "smart_irrigation_valve",
+    "type": "device",
+    "powerSource": "unknown",
+    "modelIds": []
+  },
+  "_TZ3002": {
+    "driverId": "switch_1gang",
+    "type": "device",
+    "powerSource": "unknown",
+    "modelIds": []
+  },
+  "_TZ3002_vaq2bfcu": {
+    "driverId": "switch_1gang",
+    "type": "device",
+    "powerSource": "unknown",
+    "modelIds": []
+  },
+  "_TZ3210_cehuw1lw": {
+    "driverId": "switch_1gang",
+    "type": "device",
+    "powerSource": "unknown",
+    "modelIds": []
+  },
+  "_TZ3210_eymunffl": {
+    "driverId": "motion_sensor",
+    "type": "device",
+    "powerSource": "unknown",
+    "modelIds": []
+  },
+  "_TZ3210_n0wbkysi": {
+    "driverId": "switch_1gang",
+    "type": "device",
+    "powerSource": "unknown",
+    "modelIds": []
+  },
+  "_TZ3210_ol1uhvza": {
+    "driverId": "contact_sensor",
+    "type": "device",
+    "powerSource": "unknown",
+    "modelIds": []
+  },
+  "_TZ3210_s8lvbbuc": {
+    "driverId": "bulb_rgbw",
+    "type": "device",
+    "powerSource": "unknown",
+    "modelIds": []
+  },
+  "_TZB210_ngnt8kni": {
+    "driverId": "bulb_dimmable",
+    "type": "device",
+    "powerSource": "unknown",
+    "modelIds": []
+  },
+  "_TZE204_5cuocqty": {
+    "driverId": "switch_1gang",
+    "type": "device",
+    "powerSource": "unknown",
+    "modelIds": []
+  },
+  "_TZE204_8fffc3kb": {
+    "driverId": "switch_1gang",
+    "type": "device",
+    "powerSource": "unknown",
+    "modelIds": []
+  },
+  "_TZE204_ahwvlkpy": {
+    "driverId": "climate_sensor",
+    "type": "device",
+    "powerSource": "unknown",
+    "modelIds": []
+  },
+  "_TZE284_bquwrqh1": {
+    "driverId": "switch_1gang",
+    "type": "device",
+    "powerSource": "unknown",
+    "modelIds": []
+  },
+  "_TZE284_n4ttsck2": {
+    "driverId": "smoke_detector_advanced",
+    "type": "device",
+    "powerSource": "unknown",
+    "modelIds": []
+  },
+  "_TZE284_rjxqso4a": {
+    "driverId": "climate_sensor",
+    "type": "device",
+    "powerSource": "unknown",
+    "modelIds": []
+  },
+  "_TZE200_jt50ea5d": {
+    "driverId": "motion_sensor",
+    "type": "device",
+    "powerSource": "unknown",
+    "modelIds": []
+  },
+  "_TZ3210_jaap6jeb": {
+    "driverId": "motion_sensor",
+    "type": "device",
+    "powerSource": "unknown",
+    "modelIds": []
+  },
+  "_TZE284_g1enhdsi": {
+    "driverId": "motion_sensor",
+    "type": "device",
+    "powerSource": "unknown",
+    "modelIds": []
+  },
+  "_TZ3000_atp7xmd9": {
+    "driverId": "switch_1gang",
+    "type": "device",
+    "powerSource": "unknown",
+    "modelIds": []
+  },
+  "_TZE200_a7sghmms": {
+    "driverId": "water_leak_sensor",
+    "type": "device",
+    "powerSource": "unknown",
+    "modelIds": []
   }
 }

@@ -4,7 +4,7 @@
       "id": "device_air_purifier_quality_air_quality_comprehensive_comprehensive_air_monitor_measure_temperature_changed",
       "title": {
         "en": "Temperature changed",
-        "fr": "TempÃ©rature changÃ©e"
+        "fr": "Température changée"
       },
       "tokens": [
         {
@@ -12,7 +12,7 @@
           "type": "number",
           "title": {
             "en": "Temperature",
-            "fr": "TempÃ©rature"
+            "fr": "Température"
           },
           "example": 20.5
         }
@@ -20,14 +20,14 @@
       "args": [],
       "titleFormatted": {
         "en": "Temperature changed",
-        "fr": "TempÃ©rature changÃ©e"
+        "fr": "Température changée"
       }
     },
     {
       "id": "device_air_purifier_quality_air_quality_comprehensive_comprehensive_air_monitor_measure_humidity_changed",
       "title": {
         "en": "Humidity changed",
-        "fr": "HumiditÃ© changÃ©e"
+        "fr": "Humidité changée"
       },
       "tokens": [
         {
@@ -35,7 +35,7 @@
           "type": "number",
           "title": {
             "en": "Humidity",
-            "fr": "HumiditÃ©"
+            "fr": "Humidité"
           },
           "example": 65
         }
@@ -43,21 +43,21 @@
       "args": [],
       "titleFormatted": {
         "en": "Humidity changed",
-        "fr": "HumiditÃ© changÃ©e"
+        "fr": "Humidité changée"
       }
     },
     {
       "id": "device_air_purifier_quality_air_quality_comprehensive_temp_changed",
       "title": {
         "en": "Temperature changed",
-        "fr": "TempÃ©rature changÃ©e",
+        "fr": "Température changée",
         "nl": "Temperatuur gewijzigd",
         "de": "Temperatur geÃ¤ndert"
       },
       "args": [],
       "titleFormatted": {
         "en": "Temperature changed",
-        "fr": "TempÃ©rature changÃ©e",
+        "fr": "Température changée",
         "nl": "Temperatuur gewijzigd",
         "de": "Temperatur geÃ¤ndert"
       }
@@ -66,14 +66,14 @@
       "id": "device_air_purifier_quality_air_quality_comprehensive_humidity_changed",
       "title": {
         "en": "Humidity changed",
-        "fr": "HumiditÃ© changÃ©e",
+        "fr": "Humidité changée",
         "nl": "Vochtigheid gewijzigd",
         "de": "Feuchtigkeit geÃ¤ndert"
       },
       "args": [],
       "titleFormatted": {
         "en": "Humidity changed",
-        "fr": "HumiditÃ© changÃ©e",
+        "fr": "Humidité changée",
         "nl": "Vochtigheid gewijzigd",
         "de": "Feuchtigkeit geÃ¤ndert"
       }

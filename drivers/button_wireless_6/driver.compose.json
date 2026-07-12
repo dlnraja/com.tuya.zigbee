@@ -96,7 +96,8 @@
   "zigbee": {
     "manufacturerName": [
       "_tze200_zxx7mi77",
-      "_tze204_zxx7mi77"
+      "_tze204_zxx7mi77",
+      "_TZ3000_iszegwpd"
     ],
     "productId": [
       "TS0046",
@@ -471,5 +472,8 @@
     }
   ],
   "id": "button_wireless_6",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "_pidConflictNotes": [
+    "// PID-CONFLICT-NOTE TS0046 shared with 4 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
+  ]
 }

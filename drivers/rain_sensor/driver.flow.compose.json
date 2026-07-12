@@ -90,6 +90,34 @@
         "nl": "Vochtigheid gewijzigd",
         "de": "Feuchtigkeit geändert"
       }
+    },
+    {
+      "id": "rain_sensor_illuminance_changed",
+      "title": {
+        "en": "Illuminance changed",
+        "fr": "Illuminance modifiee",
+        "nl": "Lichtsterkte gewijzigd",
+        "de": "Beleuchtungsstaerke geaendert"
+      },
+      "tokens": [
+        {
+          "name": "lux",
+          "type": "number",
+          "title": {
+            "en": "Illuminance (lux)",
+            "fr": "Illuminance (lux)",
+            "nl": "Lichtsterkte (lux)",
+            "de": "Beleuchtungsstaerke (lux)"
+          }
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Illuminance changed",
+        "fr": "Illuminance modifiee",
+        "nl": "Lichtsterkte gewijzigd",
+        "de": "Beleuchtungsstaerke geaendert"
+      }
     }
   ],
   "conditions": [

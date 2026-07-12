@@ -1,0 +1,112 @@
+# Upstream Guard — Reusable workflow
+#
+# This is a REUSABLE workflow that other workflows can call
+# to verify they are NOT writing to the upstream (JohanBendz/com.tuya.zigbee)
+# before doing any write operation.
+#
+# DEFAULT RULES (all writes to upstream are FORBIDDEN):
+#   - git push ... JohanBendz                      → FORBIDDEN
+#   - gh pr create --repo JohanBendz               → FORBIDDEN
+#   - gh issue create --repo JohanBendz            → FORBIDDEN
+#   - gh api -X POST/PUT/PATCH/DELETE ... JohanBendz → FORBIDDEN
+#   - curl -X POST/PUT/PATCH/DELETE ... JohanBendz → FORBIDDEN
+#   - fetch method=POST/PUT/PATCH/DELETE ... JohanBendz → FORBIDDEN
+#   - git clone ... JohanBendz                     → OK (read-only)
+#   - gh api (GET) ... JohanBendz                  → OK (read-only)
+#   - git fetch ... JohanBendz                     → OK (read-only)
+#
+# EXPLICIT EXCEPTIONS:
+#   Only via tools/ci/delete-johan-comments.js with 3 confirmations:
+#     1. ALLOW_UPSTREAM_WRITE=true env var
+#     2. --confirm CLI flag
+#     3. GH_TOKEN env var
+#   This is for deleting dlnraja's OWN comments (GitHub allows authors
+#   to delete their own comments). NEVER use for any other purpose.
+#
+# Usage in another workflow:
+#   jobs:
+#     guard:
+#       uses: ./.github/workflows/upstream-guard.yml
+#     your-job:
+#       needs: guard
+#       ...
+
+name: upstream-guard
+
+on:
+  workflow_call:
+    inputs:
+      target_repo:
+        description: 'The repo the workflow will write to (default: dlnraja/com.tuya.zigbee)'
+        required: false
+        type: string
+        default: 'dlnraja/com.tuya.zigbee'
+      allow_explicit_delete:
+        description: 'Allow DELETE on upstream (only for dlnraja own comments)'
+        required: false
+        type: boolean
+        default: false
+    outputs:
+      is_safe:
+        description: 'Whether the target is safe (not upstream)'
+        value: ${{ jobs.check.outputs.is_safe }}
+      delete_allowed:
+        description: 'Whether DELETE on upstream is allowed'
+        value: ${{ jobs.check.outputs.delete_allowed }}
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    outputs:
+      is_safe: ${{ steps.verify.outputs.is_safe }}
+      delete_allowed: ${{ steps.verify.outputs.delete_allowed }}
+    steps:
+      - name: Verify target is not upstream
+        id: verify
+        run: |
+          TARGET="${{ inputs.target_repo }}"
+          UPSTREAM="JohanBendz/com.tuya.zigbee"
+          if [ "$TARGET" = "$UPSTREAM" ]; then
+            echo "::error::BLOCKED: target '$TARGET' is the UPSTREAM (JohanBendz) repo. All writes must go to a fork."
+            echo "is_safe=false" >> $GITHUB_OUTPUT
+            exit 1
+          fi
+          if [[ "$TARGET" == *"JohanBendz"* ]]; then
+            echo "::error::BLOCKED: target '$TARGET' references upstream. Use a fork instead."
+            echo "is_safe=false" >> $GITHUB_OUTPUT
+            exit 1
+          fi
+          echo "✓ Target is safe: $TARGET (not upstream)"
+          echo "is_safe=true" >> $GITHUB_OUTPUT
+          # Check explicit delete allowance
+          if [ "${{ inputs.allow_explicit_delete }}" = "true" ]; then
+            echo "⚠️  EXPLICIT DELETE EXCEPTION enabled — only for dlnraja's own comments"
+            echo "delete_allowed=true" >> $GITHUB_OUTPUT
+          else
+            echo "delete_allowed=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Audit workflow files for upstream writes
+        run: |
+          echo "Scanning .github/workflows/*.yml for any reference to upstream..."
+          echo "DEFAULT: all writes to JohanBendz/com.tuya.zigbee are FORBIDDEN"
+          FOUND=0
+          for f in .github/workflows/*.yml; do
+            if [ -f "$f" ]; then
+              if grep -lE "(-X POST|-X PUT|-X PATCH|-X DELETE|method=.*(POST|PUT|PATCH|DELETE)).*JohanBendz" "$f" 2>/dev/null | grep -v upstream-guard.yml > /dev/null; then
+                echo "  ❌ $f: FORBIDDEN write pattern to upstream"
+                FOUND=$((FOUND+1))
+              elif grep -l "JohanBendz/com.tuya.zigbee" "$f" 2>/dev/null | grep -v upstream-guard.yml > /dev/null; then
+                echo "  ⚠️  $f: references upstream (verify read-only)"
+                FOUND=$((FOUND+1))
+              fi
+            fi
+          done
+          if [ $FOUND -gt 0 ]; then
+            echo ""
+            echo "❌ Found $FOUND workflow(s) with upstream reference. FIX REQUIRED."
+            exit 1
+          else
+            echo "  ✓ No upstream writes in active workflows"
+          fi

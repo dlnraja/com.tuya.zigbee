@@ -34,7 +34,6 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_TZ3000_18ejxno0",
       "_TZ3000_54pxp3gf",
       "_TZ3000_b2qdgogo",
       "_TZ3000_dlhhrpkr",
@@ -46,7 +45,8 @@
       "_TZ3000_zppy6ayt",
       "_TZ3000_weqmprfc",
       "_TZ3000_eezdmyns",
-      "_TZ3000_ygvf7qag"
+      "_TZ3000_ygvf7qag",
+      "_TZ3000_18ejxno0"
     ],
     "productId": [
       "TS0042",
@@ -138,5 +138,9 @@
       "catchall": true,
       "reason": "Fallback for unmatched devices with PIDs: TS0042, TS0043"
     }
-  }
+  },
+  "_pidConflictNotes": [
+    "// PID-CONFLICT-NOTE TS0043 shared with 16 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE TS0042 shared with 13 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
+  ]
 }

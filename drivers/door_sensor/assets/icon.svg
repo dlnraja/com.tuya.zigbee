@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 960" fill="none">
+  <rect x="0" y="0" width="960" height="960" fill="#E8F0F7"/>
+  <!-- Door frame -->
+  <rect x="280" y="120" width="400" height="720" rx="20" fill="#FFFFFF" stroke="#2C5282" stroke-width="20"/>
+  <!-- Door panel inset -->
+  <rect x="320" y="180" width="320" height="600" rx="10" fill="#E8F0F7" stroke="#4299E1" stroke-width="10"/>
+  <!-- Door handle -->
+  <circle cx="600" cy="500" r="32" fill="#4299E1"/>
+  <circle cx="600" cy="500" r="16" fill="#FFFFFF"/>
+  <!-- Hinge indicators (left side) -->
+  <rect x="295" y="220" width="20" height="60" rx="3" fill="#A0AEC0"/>
+  <rect x="295" y="680" width="20" height="60" rx="3" fill="#A0AEC0"/>
+  <!-- Status indicator (closed/open) -->
+  <circle cx="480" cy="160" r="20" fill="#48BB78"/>
+  <text x="480" y="900" font-family="Arial, sans-serif" font-size="64" fill="#2C5282" text-anchor="middle" font-weight="bold">DOOR</text>
+</svg>

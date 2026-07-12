@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dependency Dashboard</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, monospace;
+    background: #0a0e17; color: #c9d1d9; padding: 20px; line-height: 1.6;
+  }
+  h1 { color: #58a6ff; margin-bottom: 5px; font-size: 1.8em; }
+  h2 { color: #79c0ff; margin: 24px 0 12px; border-bottom: 1px solid #30363d; padding-bottom: 6px; font-size: 1.3em; }
+  h3 { color: #8b949e; margin: 15px 0 8px; font-size: 1.1em; }
+  .subtitle { color: #8b949e; margin-bottom: 20px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin: 16px 0; }
+  .grid-sm { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin: 16px 0; }
+  .card {
+    background: #161b22; border: 1px solid #30363d; border-radius: 8px;
+    padding: 16px; transition: border-color 0.2s;
+  }
+  .card:hover { border-color: #58a6ff; }
+  .card-title { color: #58a6ff; font-weight: 600; margin-bottom: 8px; font-size: 0.95em; }
+  .metric { font-size: 2em; font-weight: 700; color: #f0f6fc; }
+  .metric-sm { font-size: 1.3em; font-weight: 600; color: #f0f6fc; }
+  .metric-label { font-size: 0.85em; color: #8b949e; }
+  table { width: 100%; border-collapse: collapse; margin: 10px 0; }
+  th, td { text-align: left; padding: 6px 10px; border-bottom: 1px solid #30363d; font-size: 0.88em; }
+  th { color: #79c0ff; font-weight: 600; }
+  .bar { height: 14px; background: #30363d; border-radius: 3px; overflow: hidden; margin: 2px 0; }
+  .bar-lg { height: 20px; background: #30363d; border-radius: 4px; overflow: hidden; margin: 4px 0; }
+  .bar-fill { height: 100%; border-radius: 3px; transition: width 0.3s; }
+  .tag { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 0.75em; margin: 2px; }
+  .tag-green { background: #238636; color: #fff; }
+  .tag-blue { background: #1f6feb; color: #fff; }
+  .tag-yellow { background: #9e6a03; color: #fff; }
+  .tag-red { background: #da3633; color: #fff; }
+  .tag-gray { background: #30363d; color: #c9d1d9; }
+  .tag-purple { background: #6e40c9; color: #fff; }
+  .health-badge {
+    display: inline-block; padding: 2px 8px; border-radius: 10px;
+    font-size: 0.8em; font-weight: 600; color: #fff;
+  }
+  .health-good { background: #238636; }
+  .health-mid { background: #9e6a03; }
+  .health-bad { background: #da3633; }
+  .section { margin-bottom: 30px; }
+  .summary-bar { display: flex; gap: 20px; margin: 16px 0; flex-wrap: wrap; }
+  .summary-item { padding: 10px 16px; border-radius: 8px; background: #161b22; border: 1px solid #30363d; }
+  .summary-item .num { font-size: 1.8em; font-weight: 700; }
+  .summary-item .label { font-size: 0.85em; color: #8b949e; }
+  .filter-controls { margin: 12px 0; display: flex; gap: 8px; flex-wrap: wrap; }
+  .filter-btn {
+    padding: 4px 12px; border-radius: 6px; border: 1px solid #30363d;
+    background: #161b22; color: #c9d1d9; cursor: pointer; font-size: 0.85em;
+  }
+  .filter-btn.active { border-color: #58a6ff; color: #58a6ff; }
+  .filter-btn:hover { border-color: #58a6ff; }
+  pre {
+    background: #161b22; padding: 12px; border-radius: 6px;
+    border: 1px solid #30363d; font-size: 0.85em; overflow-x: auto;
+  }
+  .nav-links { margin: 12px 0; display: flex; gap: 12px; flex-wrap: wrap; }
+  .nav-links a { color: #58a6ff; text-decoration: none; font-size: 0.9em; }
+  .nav-links a:hover { text-decoration: underline; }
+  .treemap { display: flex; flex-wrap: wrap; gap: 2px; margin: 16px 0; }
+  .treemap-cell {
+    border-radius: 6px; padding: 10px; text-align: center;
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+    min-height: 60px; transition: transform 0.15s; cursor: default; overflow: hidden;
+  }
+  .treemap-cell:hover { transform: scale(1.03); z-index: 2; }
+  .treemap-num { font-size: 1.6em; font-weight: 700; color: #fff; }
+  .treemap-label { font-size: 0.75em; color: rgba(255,255,255,0.8); margin-top: 2px; }
+  .sparkline { display: flex; align-items: flex-end; gap: 1px; height: 30px; margin: 8px 0; }
+  .spark-bar { flex: 1; background: #58a6ff; border-radius: 1px; min-width: 3px; }
+  .error-list { max-height: 400px; overflow-y: auto; }
+  .error-item {
+    padding: 6px 10px; margin: 3px 0; border-left: 3px solid #30363d;
+    background: #161b22; border-radius: 0 4px 4px 0; font-size: 0.88em;
+  }
+  .module-path { font-family: monospace; color: #58a6ff; font-size: 0.88em; }
+  .tooltip { position: relative; }
+  .tooltip:hover::after {
+    content: attr(data-tip); position: absolute; bottom: 100%; left: 50%; transform: translateX(-50%);
+    background: #161b22; border: 1px solid #30363d; padding: 4px 8px;
+    border-radius: 4px; font-size: 0.75em; white-space: nowrap; z-index: 10;
+  }
+  @media (max-width: 800px) {
+    .grid { grid-template-columns: 1fr; }
+    .grid-sm { grid-template-columns: 1fr 1fr; }
+  }
+  
+</style>
+</head>
+<body>
+
+<h1>Dependency Dashboard</h1>
+<p class="subtitle">Universal Tuya Zigbee - Module Dependency Analysis | 2026-07-12 09:52:04</p>
+
+<div class="nav-links"><a href="master-dashboard.html">Master Dashboard</a> | <a href="coverage-dashboard.html">Coverage</a> | <a href="driver-dashboard.html">Drivers</a> | <span style="color:#f0f6fc;font-weight:600">Dependencies</span> | <a href="error-dashboard.html">Errors</a> | <a href="performance-dashboard.html">Performance</a></div>
+
+<div class="section">
+<h2>Overview</h2>
+
+    <div class="grid">
+      <div class="card">
+  <div class="card-title">Files Scanned</div>
+  <div class="metric" style="color:#f0f6fc">2,022</div>
+  
+</div>
+      <div class="card">
+  <div class="card-title">require() Calls</div>
+  <div class="metric" style="color:#f0f6fc">2,837</div>
+  <div class="metric-label">avg 1.4 per file</div>
+</div>
+      <div class="card">
+  <div class="card-title">Internal Modules</div>
+  <div class="metric" style="color:#f0f6fc">496</div>
+  <div class="metric-label">unique internal modules required</div>
+</div>
+      <div class="card">
+  <div class="card-title">External Packages</div>
+  <div class="metric" style="color:#f0f6fc">25</div>
+  <div class="metric-label">unique npm packages required</div>
+</div>
+      <div class="card">
+  <div class="card-title">Circular Dependencies</div>
+  <div class="metric" style="color:#3fb950">0</div>
+  <div class="metric-label">clean</div>
+</div>
+      <div class="card">
+  <div class="card-title">Unused Modules</div>
+  <div class="metric" style="color:#d29922">671</div>
+  <div class="metric-label">files not required by any other module</div>
+</div>
+    </div>
+  
+</div>
+<div class="section">
+<h2>Circular Dependencies (0)</h2>
+
+    <p style="color:#3fb950">No circular dependencies detected.</p>
+  
+</div>
+<div class="section">
+<h2>Most Required Internal Modules (Top 25)</h2>
+<div style="max-height:500px;overflow-y:auto">
+<table>
+<thead><tr><th>Module</th><th>Required By</th><th>Coverage</th></tr></thead>
+<tbody>
+<tr><td><span class="module-path">lib/utils/tuyaUtils.js</span></td><td>155</td><td><div class="bar" style="width:200px"><div class="bar-fill" style="width:100%;background:#58a6ff"></div></div></td></tr>
+<tr><td><span class="module-path">lib/mixins/VirtualButtonMixin.js</span></td><td>114</td><td><div class="bar" style="width:200px"><div class="bar-fill" style="width:73.54838709677419%;background:#58a6ff"></div></div></td></tr>
+<tr><td><span class="module-path">lib/mixins/PhysicalButtonMixin.js</span></td><td>112</td><td><div class="bar" style="width:200px"><div class="bar-fill" style="width:72.25806451612902%;background:#58a6ff"></div></div></td></tr>
+<tr><td><span class="module-path">lib/utils/CaseInsensitiveMatcher.js</span></td><td>90</td><td><div class="bar" style="width:200px"><div class="bar-fill" style="width:58.06451612903226%;background:#58a6ff"></div></div></td></tr>
+<tr><td><span class="module-path">lib/devices/UnifiedSensorBase.js</span></td><td>63</td><td><div class="bar" style="width:200px"><div class="bar-fill" style="width:40.64516129032258%;background:#58a6ff"></div></div></td></tr>
+<tr><td><span class="module-path">lib/tuya-local/TuyaLocalDevice.js</span></td><td>50</td><td><div class="bar" style="width:200px"><div class="bar-fill" style="width:32.25806451612903%;background:#58a6ff"></div></div></td></tr>
+<tr><td><span class="module-path">lib/devices/UnifiedSwitchBase.js</span></td><td>45</td><td><div class="bar" style="width:200px"><div class="bar-fill" style="width:29.03225806451613%;background:#58a6ff"></div></div></td></tr>
+<tr><td><span class="module-path">lib/devices/ButtonDevice.js</span></td><td>38</td><td><div class="bar" style="width:200px"><div class="bar-fill" style="width:24.516129032258064%;background:#58a6ff"></div></div></td></tr>
+<tr><td><span class="module-path">lib/devices/UnifiedPlugBase.js</span></td><td>37</td><td><div class="bar" style="width:200px"><div class="bar-fill" style="width:23.870967741935484%;background:#58a6ff"></div></div></td></tr>
+<tr><td><span class="module-path">lib/managers/SmartDivisorManager.js</span></td><td>34</td><td><div class="bar" style="width:200px"><div class="bar-fill" style="width:21.935483870967744%;background:#58a6ff"></div></div></td></tr>
+<tr><td><span class="module-path">lib/tuya/TuyaZigbeeDevice.js</span></td><td>33</td><td><div class="bar" style="width:200px"><div class="bar-fill" style="width:21.29032258064516%;background:#58a6ff"></div></div></td></tr>
+<tr><td><span class="module-path">lib/ZigbeeTimeSync.js</span></td><td>30</td><td><div class="bar" style="width:200px"><div class="bar-fill" style="width:19.35483870967742%;background:#58a6ff"></div></div></td></tr>
+<tr><td><span class="module-path">lib/tuya-local/TuyaLocalDriver.js</span></td><td>30</td><td><div class="bar" style="width:200px"><div class="bar-fill" style="width:19.35483870967742%;background:#58a6ff"></div></div></td></tr>
+<tr><td><span class="module-path">lib/FlowCardHelper.js</span></td><td>29</td><td><div class="bar" style="width:200px"><div class="bar-fill" style="width:18.70967741935484%;background:#58a6ff"></div></div></td></tr>
+<tr><td><span class="module-path">lib/constants/ZigbeeConstants.js</span></td><td>28</td><td><div class="bar" style="width:200px"><div class="bar-fill" style="width:18.064516129032256%;background:#58a6ff"></div></div></td></tr>
+<tr><td><span class="module-path">lib/devices/UnifiedLightBase.js</span></td><td>26</td><td><div class="bar" style="width:200px"><div class="bar-fill" style="width:16.7741935483871%;background:#58a6ff"></div></div></td></tr>
+<tr><td><span class="module-path">lib/TuyaSpecificCluster.js</span></td><td>26</td><td><div class="bar" style="width:200px"><div class="bar-fill" style="width:16.7741935483871%;background:#58a6ff"></div></div></td></tr>
+<tr><td><span class="module-path">lib/TuyaSpecificClusterDevice.js</span></td><td>23</td><td><div class="bar" style="width:200px"><div class="bar-fill" style="width:14.838709677419354%;background:#58a6ff"></div></div></td></tr>
+<tr><td><span class="module-path">lib/drivers/BaseZigBeeDriver.js</span></td><td>23</td><td><div class="bar" style="width:200px"><div class="bar-fill" style="width:14.838709677419354%;background:#58a6ff"></div></div></td></tr>
+<tr><td><span class="module-path">lib/helpers/DeviceDataHelper.js</span></td><td>22</td><td><div class="bar" style="width:200px"><div class="bar-fill" style="width:14.193548387096774%;background:#58a6ff"></div></div></td></tr>
+<tr><td><span class="module-path">lib/ewelink-local/EweLinkLocalDevice.js</span></td><td>21</td><td><div class="bar" style="width:200px"><div class="bar-fill" style="width:13.548387096774196%;background:#58a6ff"></div></div></td></tr>
+<tr><td><span class="module-path">lib/ewelink-local/EweLinkLocalDriver.js</span></td><td>21</td><td><div class="bar" style="width:200px"><div class="bar-fill" style="width:13.548387096774196%;background:#58a6ff"></div></div></td></tr>
+<tr><td><span class="module-path">lib/utils/TuyaPressTypeMap.js</span></td><td>18</td><td><div class="bar" style="width:200px"><div class="bar-fill" style="width:11.612903225806452%;background:#58a6ff"></div></div></td></tr>
+<tr><td><span class="module-path">lib/helpers/ManufacturerNameHelper.js</span></td><td>18</td><td><div class="bar" style="width:200px"><div class="bar-fill" style="width:11.612903225806452%;background:#58a6ff"></div></div></td></tr>
+<tr><td><span class="module-path">lib/devices/UnifiedThermostatBase.js</span></td><td>17</td><td><div class="bar" style="width:200px"><div class="bar-fill" style="width:10.967741935483872%;background:#58a6ff"></div></div></td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section">
+<h2>Heaviest Files (Most Dependencies)</h2>
+<div style="max-height:500px;overflow-y:auto">
+<table>
+<thead><tr><th>File</th><th>Requires</th><th>Required By</th></tr></thead>
+<tbody>
+<tr><td><span class="module-path">lib/devices/BaseUnifiedDevice.js</span></td><td>61</td><td>8</td></tr>
+<tr><td><span class="module-path">app.js</span></td><td>42</td><td>0</td></tr>
+<tr><td><span class="module-path">lib/tuya/index.js</span></td><td>32</td><td>1</td></tr>
+<tr><td><span class="module-path">lib/index.js</span></td><td>27</td><td>0</td></tr>
+<tr><td><span class="module-path">lib/clusters/index.js</span></td><td>23</td><td>1</td></tr>
+<tr><td><span class="module-path">lib/devices/index.js</span></td><td>23</td><td>1</td></tr>
+<tr><td><span class="module-path">lib/devices/UnifiedSensorBase.js</span></td><td>22</td><td>63</td></tr>
+<tr><td><span class="module-path">lib/tuya/TuyaZigbeeDevice.js</span></td><td>20</td><td>33</td></tr>
+<tr><td><span class="module-path">lib/features/index.js</span></td><td>18</td><td>0</td></tr>
+<tr><td><span class="module-path">lib/UniversalZigbeeDevice.js</span></td><td>17</td><td>2</td></tr>
+<tr><td><span class="module-path">lib/managers/index.js</span></td><td>16</td><td>1</td></tr>
+<tr><td><span class="module-path">lib/zigbee/index.js</span></td><td>15</td><td>1</td></tr>
+<tr><td><span class="module-path">drivers/sensor_climate_contact/device.js</span></td><td>14</td><td>0</td></tr>
+<tr><td><span class="module-path">drivers/sensor_climate_lcdtemphumidsensor/device.js</span></td><td>14</td><td>0</td></tr>
+<tr><td><span class="module-path">drivers/sensor_climate_temphumidsensor/device.js</span></td><td>14</td><td>0</td></tr>
+<tr><td><span class="module-path">lib/devices/UnifiedSwitchBase.js</span></td><td>13</td><td>45</td></tr>
+<tr><td><span class="module-path">lib/zigbee/registerClusters.js</span></td><td>13</td><td>2</td></tr>
+<tr><td><span class="module-path">drivers/sensor_contact_climate/device.js</span></td><td>13</td><td>0</td></tr>
+<tr><td><span class="module-path">lib/tuya/TuyaEF00Manager.js</span></td><td>12</td><td>4</td></tr>
+<tr><td><span class="module-path">lib/devices/UnifiedPlugBase.js</span></td><td>12</td><td>37</td></tr>
+<tr><td><span class="module-path">lib/battery/index.js</span></td><td>11</td><td>2</td></tr>
+<tr><td><span class="module-path">lib/managers/SmartDriverAdaptation.js</span></td><td>11</td><td>4</td></tr>
+<tr><td><span class="module-path">lib/devices/TuyaUnifiedDevice.js</span></td><td>10</td><td>6</td></tr>
+<tr><td><span class="module-path">drivers/presence_sensor_radar/device.js</span></td><td>10</td><td>0</td></tr>
+<tr><td><span class="module-path">drivers/remote_button_wireless_wall/device.js</span></td><td>10</td><td>0</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section">
+<h2>External Packages (25)</h2>
+
+      <div style="max-height:300px;overflow-y:auto">
+        <span class="tag tag-blue">${b.require}</span> <span class="tag tag-blue">${baseImport}</span> <span class="tag tag-blue">${importPath}</span> <span class="tag tag-blue">${requirePath}</span> <span class="tag tag-blue">canvas</span> <span class="tag tag-blue">color-space/hsv</span> <span class="tag tag-blue">color-space/rgb</span> <span class="tag tag-blue">color-space/xyy</span> <span class="tag tag-blue">color-space/xyz</span> <span class="tag tag-blue">glob</span> <span class="tag tag-blue">homey</span> <span class="tag tag-blue">homey-api</span> <span class="tag tag-blue">homey-zigbeedriver</span> <span class="tag tag-blue">imap-simple</span> <span class="tag tag-blue">js-yaml</span> <span class="tag tag-blue">mailparser</span> <span class="tag tag-blue">mqtt</span> <span class="tag tag-blue">puppeteer</span> <span class="tag tag-blue">qrcode</span> <span class="tag tag-blue">sharp</span> <span class="tag tag-blue">stream/promises</span> <span class="tag tag-blue">tar</span> <span class="tag tag-blue">tinygradient</span> <span class="tag tag-blue">tuyapi</span> <span class="tag tag-blue">zigbee-clusters</span>
+      </div>
+    
+</div>
+<div class="section">
+<h2>Unused Modules (671)</h2>
+
+    <div style="max-height:400px;overflow-y:auto">
+<table>
+<thead><tr><th>Module</th><th>Type</th><th>Own Requires</th></tr></thead>
+<tbody>
+<tr><td><span class="module-path">lib/BaseDriver.js</span></td><td><span class="tag tag-blue">lib</span></td><td>0</td></tr>
+<tr><td><span class="module-path">lib/BatteryManagerV3.js</span></td><td><span class="tag tag-blue">lib</span></td><td>1</td></tr>
+<tr><td><span class="module-path">lib/clusters/TuyaBatterySafeCluster.js</span></td><td><span class="tag tag-blue">lib</span></td><td>1</td></tr>
+<tr><td><span class="module-path">lib/compat/StableV5Compat.js</span></td><td><span class="tag tag-blue">lib</span></td><td>1</td></tr>
+<tr><td><span class="module-path">lib/devices/HybridSwitchBase.js</span></td><td><span class="tag tag-blue">lib</span></td><td>3</td></tr>
+<tr><td><span class="module-path">lib/diagnostics/DebugManager.js</span></td><td><span class="tag tag-blue">lib</span></td><td>0</td></tr>
+<tr><td><span class="module-path">lib/diagnostics/DeviceHealth.js</span></td><td><span class="tag tag-blue">lib</span></td><td>0</td></tr>
+<tr><td><span class="module-path">lib/diagnostics/HealthCheck.js</span></td><td><span class="tag tag-blue">lib</span></td><td>0</td></tr>
+<tr><td><span class="module-path">lib/drivers/DynamicDriverMatcher.js</span></td><td><span class="tag tag-blue">lib</span></td><td>2</td></tr>
+<tr><td><span class="module-path">lib/dynamic/AutonomousEnricher.js</span></td><td><span class="tag tag-blue">lib</span></td><td>1</td></tr>
+<tr><td><span class="module-path">lib/dynamic/SmartButtonRouter.js</span></td><td><span class="tag tag-blue">lib</span></td><td>0</td></tr>
+<tr><td><span class="module-path">lib/GlobalTimeSyncEngine.js</span></td><td><span class="tag tag-blue">lib</span></td><td>1</td></tr>
+<tr><td><span class="module-path">lib/helpers/CustomPairingHelper.js</span></td><td><span class="tag tag-blue">lib</span></td><td>2</td></tr>
+<tr><td><span class="module-path">lib/helpers/DeviceHintsDatabase.js</span></td><td><span class="tag tag-blue">lib</span></td><td>0</td></tr>
+<tr><td><span class="module-path">lib/helpers/UniversalCapabilityDetector.js</span></td><td><span class="tag tag-blue">lib</span></td><td>1</td></tr>
+<tr><td><span class="module-path">lib/helpers/VirtualCapabilities.js</span></td><td><span class="tag tag-blue">lib</span></td><td>0</td></tr>
+<tr><td><span class="module-path">lib/interpreters/UniversalRawInterpreter.js</span></td><td><span class="tag tag-blue">lib</span></td><td>0</td></tr>
+<tr><td><span class="module-path">lib/managers/BatchCapabilityUpdater.js</span></td><td><span class="tag tag-blue">lib</span></td><td>0</td></tr>
+<tr><td><span class="module-path">lib/mesh/DriverConsequenceTiering.js</span></td><td><span class="tag tag-blue">lib</span></td><td>0</td></tr>
+<tr><td><span class="module-path">lib/mixins/CoreCapabilityMixin.js</span></td><td><span class="tag tag-blue">lib</span></td><td>0</td></tr>
+<tr><td><span class="module-path">lib/mixins/DeviceEnhancementsMixin.js</span></td><td><span class="tag tag-blue">lib</span></td><td>0</td></tr>
+<tr><td><span class="module-path">lib/mixins/LegacyButtonDetectionMixin.js</span></td><td><span class="tag tag-blue">lib</span></td><td>1</td></tr>
+<tr><td><span class="module-path">lib/mixins/MultiGangMixin.js</span></td><td><span class="tag tag-blue">lib</span></td><td>0</td></tr>
+<tr><td><span class="module-path">lib/mixins/NaturalLightMixin.js</span></td><td><span class="tag tag-blue">lib</span></td><td>1</td></tr>
+<tr><td><span class="module-path">lib/mixins/SmartEnrichmentMixin.js</span></td><td><span class="tag tag-blue">lib</span></td><td>3</td></tr>
+<tr><td><span class="module-path">lib/mixins/SmartFeatureEmulationMixin.js</span></td><td><span class="tag tag-blue">lib</span></td><td>1</td></tr>
+<tr><td><span class="module-path">lib/mixins/TuyaDeviceMixin.js</span></td><td><span class="tag tag-blue">lib</span></td><td>3</td></tr>
+<tr><td><span class="module-path">lib/mixins/UnifiedButtonEngine.js</span></td><td><span class="tag tag-blue">lib</span></td><td>2</td></tr>
+<tr><td><span class="module-path">lib/mixins/VirtualEnergyMeterMixin.js</span></td><td><span class="tag tag-blue">lib</span></td><td>1</td></tr>
+<tr><td><span class="module-path">lib/mixins/ZigbeeHealthMixin.js</span></td><td><span class="tag tag-blue">lib</span></td><td>2</td></tr>
+<tr><td><span class="module-path">lib/OnOffBoundCluster.js</span></td><td><span class="tag tag-blue">lib</span></td><td>1</td></tr>
+<tr><td><span class="module-path">lib/pairing/UXMessages.js</span></td><td><span class="tag tag-blue">lib</span></td><td>0</td></tr>
+<tr><td><span class="module-path">lib/presence/AdvancedPresenceEngine.js</span></td><td><span class="tag tag-blue">lib</span></td><td>4</td></tr>
+<tr><td><span class="module-path">lib/protocol/BindingPersistence.js</span></td><td><span class="tag tag-blue">lib</span></td><td>0</td></tr>
+<tr><td><span class="module-path">lib/protocol/BitmapMultiFieldParser.js</span></td><td><span class="tag tag-blue">lib</span></td><td>0</td></tr>
+<tr><td><span class="module-path">lib/protocol/DPFragmentationHardening.js</span></td><td><span class="tag tag-blue">lib</span></td><td>0</td></tr>
+<tr><td><span class="module-path">lib/protocol/OccupancySensingEnhancement.js</span></td><td><span class="tag tag-blue">lib</span></td><td>0</td></tr>
+<tr><td><span class="module-path">lib/protocol/ScheduleDataEncoder.js</span></td><td><span class="tag tag-blue">lib</span></td><td>0</td></tr>
+<tr><td><span class="module-path">lib/registry/CapabilityMetadata.js</span></td><td><span class="tag tag-blue">lib</span></td><td>0</td></tr>
+<tr><td><span class="module-path">lib/templates/BEST_PRACTICE_DEVICE_TEMPLATE.js</span></td><td><span class="tag tag-blue">lib</span></td><td>2</td></tr>
+<tr><td><span class="module-path">lib/templates/TuyaTS0601DeviceTemplate.js</span></td><td><span class="tag tag-blue">lib</span></td><td>3</td></tr>
+<tr><td><span class="module-path">lib/tuya-engine/utils/dp.js</span></td><td><span class="tag tag-blue">lib</span></td><td>0</td></tr>
+<tr><td><span class="module-path">lib/tuya-engine/utils/logger.js</span></td><td><span class="tag tag-blue">lib</span></td><td>0</td></tr>
+<tr><td><span class="module-path">lib/tuya-local/DeviceFingerprintDB.js</span></td><td><span class="tag tag-blue">lib</span></td><td>0</td></tr>
+<tr><td><span class="module-path">lib/tuya-local/tuya-local-wizard.js</span></td><td><span class="tag tag-blue">lib</span></td><td>1</td></tr>
+<tr><td><span class="module-path">lib/tuya-local/TuyaQuirk.js</span></td><td><span class="tag tag-blue">lib</span></td><td>0</td></tr>
+<tr><td><span class="module-path">lib/tuya-local/TuyaWiFiHybridManager.js</span></td><td><span class="tag tag-blue">lib</span></td><td>6</td></tr>
+<tr><td><span class="module-path">lib/tuya/dp-parser-enhanced.js</span></td><td><span class="tag tag-blue">lib</span></td><td>0</td></tr>
+<tr><td><span class="module-path">lib/tuya/FaultBitmapDecoder.js</span></td><td><span class="tag tag-blue">lib</span></td><td>0</td></tr>
+<tr><td><span class="module-path">lib/tuya/IntelligenceHealth.js</span></td><td><span class="tag tag-blue">lib</span></td><td>2</td></tr>
+<tr><td><span class="module-path">lib/tuya/MagicPacketRegistry.js</span></td><td><span class="tag tag-blue">lib</span></td><td>0</td></tr>
+<tr><td><span class="module-path">lib/tuya/MCUFormatDatabase.js</span></td><td><span class="tag tag-blue">lib</span></td><td>1</td></tr>
+<tr><td><span class="module-path">lib/tuya/MCUVersionHelper.js</span></td><td><span class="tag tag-blue">lib</span></td><td>0</td></tr>
+<tr><td><span class="module-path">lib/tuya/SanityFilter.js</span></td><td><span class="tag tag-blue">lib</span></td><td>0</td></tr>
+<tr><td><span class="module-path">lib/tuya/TuyaDPDeviceHelper.js</span></td><td><span class="tag tag-blue">lib</span></td><td>0</td></tr>
+<tr><td><span class="module-path">lib/tuya/TuyaDPManager_Enhanced.js</span></td><td><span class="tag tag-blue">lib</span></td><td>0</td></tr>
+<tr><td><span class="module-path">lib/tuya/TuyaEF00Base.js</span></td><td><span class="tag tag-blue">lib</span></td><td>0</td></tr>
+<tr><td><span class="module-path">lib/tuya/TuyaMCUManager.js</span></td><td><span class="tag tag-blue">lib</span></td><td>0</td></tr>
+<tr><td><span class="module-path">lib/tuya/TuyaModernExtend.js</span></td><td><span class="tag tag-blue">lib</span></td><td>3</td></tr>
+<tr><td><span class="module-path">lib/tuya/TuyaTimeSyncHandler.js</span></td><td><span class="tag tag-blue">lib</span></td><td>1</td></tr>
+<tr><td><span class="module-path">lib/tuya/TuyaUniversalMapper.js</span></td><td><span class="tag tag-blue">lib</span></td><td>2</td></tr>
+<tr><td><span class="module-path">lib/tuya/UniversalDPReceiver.js</span></td><td><span class="tag tag-blue">lib</span></td><td>2</td></tr>
+<tr><td><span class="module-path">lib/tuya/UniversalTuyaParser.js</span></td><td><span class="tag tag-blue">lib</span></td><td>5</td></tr>
+<tr><td><span class="module-path">lib/utils/AdaptiveEventEmitter.js</span></td><td><span class="tag tag-blue">lib</span></td><td>1</td></tr>
+<tr><td><span class="module-path">lib/utils/CacheManager.js</span></td><td><span class="tag tag-blue">lib</span></td><td>1</td></tr>
+<tr><td><span class="module-path">lib/utils/capability-safe-create.js</span></td><td><span class="tag tag-blue">lib</span></td><td>0</td></tr>
+<tr><td><span class="module-path">lib/utils/capability-safe.js</span></td><td><span class="tag tag-blue">lib</span></td><td>0</td></tr>
+<tr><td><span class="module-path">lib/utils/CapabilityAutoAdapter.js</span></td><td><span class="tag tag-blue">lib</span></td><td>0</td></tr>
+<tr><td><span class="module-path">lib/utils/CapabilityMigrator.js</span></td><td><span class="tag tag-blue">lib</span></td><td>0</td></tr>
+<tr><td><span class="module-path">lib/utils/ConnectionStateTracker.js</span></td><td><span class="tag tag-blue">lib</span></td><td>0</td></tr>
+<tr><td><span class="module-path">lib/utils/CrashPrevention.js</span></td><td><span class="tag tag-blue">lib</span></td><td>0</td></tr>
+<tr><td><span class="module-path">lib/utils/DriverUtils.js</span></td><td><span class="tag tag-blue">lib</span></td><td>0</td></tr>
+<tr><td><span class="module-path">lib/utils/EnergyEstimator.js</span></td><td><span class="tag tag-blue">lib</span></td><td>1</td></tr>
+<tr><td><span class="module-path">lib/utils/ErrorClassifier.js</span></td><td><span class="tag tag-blue">lib</span></td><td>0</td></tr>
+<tr><td><span class="module-path">lib/utils/ManufacturerNameHelper.js</span></td><td><span class="tag tag-blue">lib</span></td><td>0</td></tr>
+<tr><td><span class="module-path">lib/utils/mask-pii.js</span></td><td><span class="tag tag-blue">lib</span></td><td>1</td></tr>
+<tr><td><span class="module-path">lib/utils/RateLimiter.js</span></td><td><span class="tag tag-blue">lib</span></td><td>0</td></tr>
+<tr><td><span class="module-path">lib/utils/RejoinDetector.js</span></td><td><span class="tag tag-blue">lib</span></td><td>0</td></tr>
+<tr><td><span class="module-path">lib/utils/safeMigrate.js</span></td><td><span class="tag tag-blue">lib</span></td><td>2</td></tr>
+<tr><td><span class="module-path">lib/utils/SmartValueProcessor.js</span></td><td><span class="tag tag-blue">lib</span></td><td>0</td></tr>
+<tr><td><span class="module-path">lib/utils/tuya-dp-parser.js</span></td><td><span class="tag tag-blue">lib</span></td><td>0</td></tr>
+<tr><td><span class="module-path">lib/utils/TuyaDataPointUtils.js</span></td><td><span class="tag tag-blue">lib</span></td><td>0</td></tr>
+<tr><td><span class="module-path">lib/utils/TuyaDeviceHelper.js</span></td><td><span class="tag tag-blue">lib</span></td><td>0</td></tr>
+<tr><td><span class="module-path">lib/utils/zigbee-retry.js</span></td><td><span class="tag tag-blue">lib</span></td><td>1</td></tr>
+<tr><td><span class="module-path">lib/zigbee/obsolete/safe-io.js</span></td><td><span class="tag tag-blue">lib</span></td><td>0</td></tr>
+<tr><td><span class="module-path">lib/zigbee/obsolete/wait-ready.js</span></td><td><span class="tag tag-blue">lib</span></td><td>0</td></tr>
+<tr><td><span class="module-path">lib/zigbee/zigbee-cluster-map-usage-example.js</span></td><td><span class="tag tag-blue">lib</span></td><td>2</td></tr>
+<tr><td><span class="module-path">drivers/contact_sensor_curtain/pair/list_devices.js</span></td><td><span class="tag tag-green">driver</span></td><td>0</td></tr>
+<tr><td><span class="module-path">drivers/curtain_motor_shutter/pair/list_devices.js</span></td><td><span class="tag tag-green">driver</span></td><td>0</td></tr>
+<tr><td><span class="module-path">drivers/curtain_motor_wall/pair/list_devices.js</span></td><td><span class="tag tag-green">driver</span></td><td>0</td></tr>
+<tr><td><span class="module-path">drivers/curtain_motor/pair/list_devices.js</span></td><td><span class="tag tag-green">driver</span></td><td>0</td></tr>
+<tr><td><span class="module-path">scripts/_validate_all.js</span></td><td><span class="tag tag-yellow">script</span></td><td>0</td></tr>
+<tr><td><span class="module-path">scripts/add-missing-fingerprints.js</span></td><td><span class="tag tag-yellow">script</span></td><td>0</td></tr>
+<tr><td><span class="module-path">scripts/ai-helper.js</span></td><td><span class="tag tag-yellow">script</span></td><td>0</td></tr>
+<tr><td><span class="module-path">scripts/analysis/add_missing_ids.js</span></td><td><span class="tag tag-yellow">script</span></td><td>0</td></tr>
+<tr><td><span class="module-path">scripts/analysis/audit_all_flow_cards.js</span></td><td><span class="tag tag-yellow">script</span></td><td>0</td></tr>
+<tr><td><span class="module-path">scripts/analysis/audit_complete_advanced.js</span></td><td><span class="tag tag-yellow">script</span></td><td>0</td></tr>
+<tr><td><span class="module-path">scripts/analysis/audit_drivers.js</span></td><td><span class="tag tag-yellow">script</span></td><td>0</td></tr>
+<tr><td><span class="module-path">scripts/analysis/audit_manufacturer_ids.js</span></td><td><span class="tag tag-yellow">script</span></td><td>0</td></tr>
+<tr><td><span class="module-path">scripts/analysis/categorize_by_pattern.js</span></td><td><span class="tag tag-yellow">script</span></td><td>0</td></tr>
+</tbody>
+</table>
+</div>
+    <p style="color:#8b949e;margin-top:8px">Showing 100 of 671 unused modules</p>
+  
+</div>
+
+<pre>
+Generated: 2026-07-12 09:52:04
+Universal Tuya Zigbee - Dashboard Suite
+</pre>
+</body>
+</html>

@@ -42,7 +42,8 @@
     },
     "manufacturerName": [
       "_hybrid_illuminance_sensor_needs_device_assignment",
-      "_HYBRID_ILLUMINANCE_SENSOR_NEEDS_DEVICE_ASSIGNMENT"
+      "_HYBRID_ILLUMINANCE_SENSOR_NEEDS_DEVICE_ASSIGNMENT",
+      "_TZ3000_hyarhbyx"
     ]
   },
   "icon": "/drivers/illuminance_sensor/assets/icon.svg",
@@ -79,5 +80,10 @@
       "getable": false,
       "setable": false
     }
-  }
+  },
+  "_pidConflictNotes": [
+    "// PID-CONFLICT-NOTE TS0225 shared with 19 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE TS0222 shared with 9 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE ZG-106Z shared with 2 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
+  ]
 }

@@ -1,0 +1,104 @@
+{
+  "_comment": "5 first tickets to implement in dry-run. Pulled from local files (FORUM_ISSUES_CONSOLIDATED.md, GITHUB_RESPONSES_FULL.md, INTELLIGENT_AUTOMATION.md patterns). Each ticket will be run through the variant engine to ensure all manufacturer variants are considered.",
+  "_generated": "2026-07-10T17:30:00+02:00",
+  "_session": "mvs_e7cd7397977c4571a373dc2350580aa1",
+  "_app_cible": "BOTH master + stable (bug fixes both, features master only)",
+  "tickets": [
+    {
+      "id": "T1-2026-07-10-mojibake-valve",
+      "source": "codex-sqlite-logs_2 + local-fingerprints",
+      "priority": "critical",
+      "title": "UTF-8 mojibake in valve_irrigation/device.js line 173",
+      "mfr": null,
+      "deviceIds": ["drivers/valve_irrigation/device.js"],
+      "body": "Hegel error: apply_patch verification failed on stable\\drivers\\valve_irrigation\\device.js for method startWatering (UTF-8 mojibake `💧` vs `💧`). Verified locally: `??` is the visible mojibake of `💧` (water droplet emoji, U+1F4A7). However, actual file inspection (2026-07-10 18:25 UTC) shows the file IS clean — F0 9F 92 A7 bytes present, no literal `??`. The `??` was likely terminal rendering, not actual corruption. Investigation note: M5 was a FALSE POSITIVE.",
+      "fix_strategy": "Edit line 173 to restore `💧`. Add tools/ci/prevent-apply-patch-corruption.js as pre-commit hook.",
+      "files": [
+        "master/drivers/valve_irrigation/device.js",
+        "master/tools/ci/prevent-apply-patch-corruption.js"
+      ],
+      "confidence": 95,
+      "estimated_effort": "5 min",
+      "app_cible": "master (check stable/valve_irrigation/device.js too)",
+      "backport": "MUST (bug fix, not feature)"
+    },
+    {
+      "id": "T2-2026-07-10-volta-bugs",
+      "source": "pr-508 + local-fingerprints",
+      "priority": "critical",
+      "title": "5 Volta bugs in .github/cache/herdsman/tuya-lib.ts",
+      "mfr": null,
+      "deviceIds": [".github/cache/herdsman/tuya-lib.ts", ".github/cache/z2m/tuya.ts"],
+      "body": "localTempCalibration1-5 defined at lines 1959-1999 with wrong sign/magnitude. Used in 30+ call sites in .github/cache/z2m/tuya.ts. Affects 19+ thermostat models (Moes, AVATTO, Beca, etc.) per ZHA_Z2M_QUIRKS_ANALYSIS.md. DP affected: 19, 27, 47, 101, 102, 103, 104, 105, 109, 114.",
+      "fix_strategy": "Merge PR #508 (already open on GitHub, 9,387 lines). Deletes localTempCalibration1-5, replaces with divideBy10/raw, adds 2s complement to convertBufferToNumber and convertDecimalValueTo4ByteHexArray.",
+      "files": [
+        "master/.github/cache/herdsman/tuya-lib.ts",
+        "master/.github/cache/z2m/tuya.ts",
+        "master/.github/cache/z2m/moes.ts"
+      ],
+      "confidence": 99,
+      "estimated_effort": "30 min (cherry-pick PR)",
+      "app_cible": "master first, then backport to stable",
+      "backport": "MUST (fix bug, Volta pattern is wrong)"
+    },
+    {
+      "id": "T3-2026-07-10-radiator-calibration",
+      "source": "github-issue-#339",
+      "priority": "high",
+      "title": "radiator_valve: _TZE200_9xfjixap calibration wrong",
+      "mfr": "_TZE200_9xfjixap",
+      "deviceIds": ["TS0601", "radiator_valve"],
+      "body": "Issue #339 open since 2026-07. User reports calibration offset is incorrect. Almost certainly a Volta bug V1/V3. Once PR #508 merges, the user should retest. Add cross-ref to issue comment when PR #508 lands.",
+      "fix_strategy": "Wait for PR #508 merge. Then auto-comment on issue #339 with 'Update to v9.0.193, re-pair, retest calibration'.",
+      "files": [
+        "master/drivers/radiator_valve/device.js"
+      ],
+      "confidence": 75,
+      "estimated_effort": "auto-comment 1 min after #508 merge",
+      "app_cible": "master (radiator_valve is master-only driver)",
+      "backport": "MAYBE (if stable has radiator_valve driver)"
+    },
+    {
+      "id": "T4-2026-07-10-soil-zg-303z",
+      "source": "github-issue-#340",
+      "priority": "high",
+      "title": "soil_sensor: ZG-303Z _TZE284_aa03yzhs",
+      "mfr": "_TZE284_aa03yzhs",
+      "deviceIds": ["ZG-303Z", "soil_sensor"],
+      "body": "Issue #340 open. ZG-303Z likely uses _TZE284_aa03yzhs FP (per FORUM_ISSUES_CONSOLIDATED.md INT-080). Soil temp ÷10 fix in v5.8.87. Need to verify FP is in current soil_sensor driver.compose.json.",
+      "fix_strategy": "Check master/data/fingerprints.json for _TZE284_aa03yzhs. If present in soil_sensor driverId, auto-close #340 with 'Update to v9.0.193'. If not, add the FP and bump version.",
+      "files": [
+        "master/data/fingerprints.json",
+        "master/drivers/soil_sensor/driver.compose.json"
+      ],
+      "confidence": 70,
+      "estimated_effort": "10 min",
+      "app_cible": "master first, then backport to stable",
+      "backport": "MUST (FP addition is a bug fix for missing device)"
+    },
+    {
+      "id": "T5-2026-07-10-app-crash-startup",
+      "source": "github-issue-#338",
+      "priority": "high",
+      "title": "App Crash on startup (v9.0 regression?)",
+      "mfr": null,
+      "deviceIds": [],
+      "body": "Issue #338 open 4 days. May be regression of v8.5.0 fix (safe require + DeviceFingerprintDB lazy init) if v9 changed the init. Need to verify lib/tuya/DeviceFingerprintDB.js still has lazy init + buffer-based JSON parsing (per KNOWN_ISSUES.md Bug OOM v8.5.7-v9.0.0).",
+      "fix_strategy": "Read master/lib/tuya/DeviceFingerprintDB.js. If lazy init is gone, restore it. Add a regression test for startup. Auto-close #338 when validated.",
+      "files": [
+        "master/lib/tuya/DeviceFingerprintDB.js",
+        "master/test/critical/startup-lazy-init.test.js"
+      ],
+      "confidence": 60,
+      "estimated_effort": "30-60 min (depends on root cause)",
+      "app_cible": "master (stable has different init path)",
+      "backport": "MAYBE (depends on whether stable has the same issue)"
+    }
+  ],
+  "_next_steps": [
+    "Run: node tools/shadow-mode/runner.js --dry-run --limit 5",
+    "For each ticket, the runner.js will: (1) call variant-engine.js, (2) generate fix proposal, (3) save to diagnostics/shadow-mode-dry-run-YYYY-MM-DD.md",
+    "Human reviews the report, then approves which tickets to actually implement",
+    "For approved tickets, runner opens a draft PR via gh CLI (when GITHUB_TOKEN is set)"
+  ]
+}

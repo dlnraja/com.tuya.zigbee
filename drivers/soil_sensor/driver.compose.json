@@ -83,7 +83,6 @@
       "_TZE200_A0GSPFYZ",
       "_TZE200_FQYTFMYK",
       "_TZE200_FQYTFYMK",
-      "_TZE200_PAY2BYAX",
       "_TZE200_SH8V7FHD",
       "_TZE200_ZNLLDQL1",
       "_TZE200_itp8dt7f",
@@ -106,6 +105,7 @@
       "_TZE284_9cqcpkgb",
       "_TZE284_A0GSPFYZ",
       "_TZE284_AA03YZHS",
+      "_TZE284_aao3yzhs",
       "_tze200_myd45weu",
       "_TZE200_myd45weu",
       "_TZE200_MYD45WEU",
@@ -119,7 +119,8 @@
       "_TZE284_FQYTFYMK",
       "_TZE284_NPJ9BUG3",
       "_TZE284_OITAVOV2",
-      "_tze284_tgrzpqf4"
+      "_tze284_tgrzpqf4",
+      "_TZE284_sgabhwa6"
     ],
     "productId": [
       "ZG-303Z",
@@ -310,5 +311,9 @@
     }
   ],
   "id": "soil_sensor",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "_pidConflictNotes": [
+    "// PID-CONFLICT-NOTE TS0001 shared with 35 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE ZG-303Z shared with 3 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
+  ]
 }

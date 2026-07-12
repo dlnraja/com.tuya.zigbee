@@ -4,7 +4,7 @@
       "id": "device_radiator_valve_thermostat_thermostat_tuya_dp_target_temperature_changed",
       "title": {
         "en": "Target temperature changed",
-        "fr": "TempÃ©rature cible changÃ©e"
+        "fr": "Température cible changée"
       },
       "tokens": [
         {
@@ -12,7 +12,7 @@
           "type": "number",
           "title": {
             "en": "Temperature (Â°C)",
-            "fr": "TempÃ©rature (Â°C)"
+            "fr": "Température (Â°C)"
           },
           "example": 21
         }
@@ -20,14 +20,14 @@
       "args": [],
       "titleFormatted": {
         "en": "Target temperature changed",
-        "fr": "TempÃ©rature cible changÃ©e"
+        "fr": "Température cible changée"
       }
     },
     {
       "id": "device_radiator_valve_thermostat_thermostat_tuya_dp_temperature_changed",
       "title": {
         "en": "Temperature changed",
-        "fr": "TempÃ©rature changÃ©e"
+        "fr": "Température changée"
       },
       "tokens": [
         {
@@ -35,7 +35,7 @@
           "type": "number",
           "title": {
             "en": "Temperature (Â°C)",
-            "fr": "TempÃ©rature (Â°C)"
+            "fr": "Température (Â°C)"
           },
           "example": 22.5
         }
@@ -43,14 +43,14 @@
       "args": [],
       "titleFormatted": {
         "en": "Temperature changed",
-        "fr": "TempÃ©rature changÃ©e"
+        "fr": "Température changée"
       }
     },
     {
       "id": "device_radiator_valve_thermostat_thermostat_tuya_dp_mode_changed",
       "title": {
         "en": "Mode changed",
-        "fr": "Mode changÃ©"
+        "fr": "Mode changé"
       },
       "tokens": [
         {
@@ -66,45 +66,45 @@
       "args": [],
       "titleFormatted": {
         "en": "Mode changed",
-        "fr": "Mode changÃ©"
+        "fr": "Mode changé"
       }
     },
     {
       "id": "device_radiator_valve_thermostat_thermostat_tuya_dp_heating_started",
       "title": {
         "en": "Heating started",
-        "fr": "Chauffage dÃ©marrÃ©"
+        "fr": "Chauffage démarré"
       },
       "args": [],
       "titleFormatted": {
         "en": "Heating started",
-        "fr": "Chauffage dÃ©marrÃ©"
+        "fr": "Chauffage démarré"
       }
     },
     {
       "id": "device_radiator_valve_thermostat_thermostat_tuya_dp_heating_stopped",
       "title": {
         "en": "Heating stopped",
-        "fr": "Chauffage arrÃªtÃ©"
+        "fr": "Chauffage arrÃªté"
       },
       "args": [],
       "titleFormatted": {
         "en": "Heating stopped",
-        "fr": "Chauffage arrÃªtÃ©"
+        "fr": "Chauffage arrÃªté"
       }
     },
     {
       "id": "device_radiator_valve_thermostat_thermostat_tuya_dp_turned_on",
       "title": {
         "en": "Turned on",
-        "fr": "AllumÃ©",
+        "fr": "Allumé",
         "nl": "Aangezet",
         "de": "Eingeschaltet"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turned on",
-        "fr": "AllumÃ©",
+        "fr": "Allumé",
         "nl": "Aangezet",
         "de": "Eingeschaltet"
       }
@@ -129,14 +129,14 @@
       "id": "device_radiator_valve_thermostat_thermostat_tuya_dp_temp_changed",
       "title": {
         "en": "Temperature changed",
-        "fr": "TempÃ©rature changÃ©e",
+        "fr": "Température changée",
         "nl": "Temperatuur gewijzigd",
         "de": "Temperatur geÃ¤ndert"
       },
       "args": [],
       "titleFormatted": {
         "en": "Temperature changed",
-        "fr": "TempÃ©rature changÃ©e",
+        "fr": "Température changée",
         "nl": "Temperatuur gewijzigd",
         "de": "Temperatur geÃ¤ndert"
       }
@@ -161,14 +161,14 @@
       "id": "device_radiator_valve_thermostat_thermostat_tuya_dp_humidity_changed",
       "title": {
         "en": "Humidity changed",
-        "fr": "HumiditÃ© changÃ©e",
+        "fr": "Humidité changée",
         "nl": "Vochtigheid gewijzigd",
         "de": "Feuchtigkeit geÃ¤ndert"
       },
       "args": [],
       "titleFormatted": {
         "en": "Humidity changed",
-        "fr": "HumiditÃ© changÃ©e",
+        "fr": "Humidité changée",
         "nl": "Vochtigheid gewijzigd",
         "de": "Feuchtigkeit geÃ¤ndert"
       }
@@ -191,24 +191,24 @@
       "id": "device_radiator_valve_thermostat_thermostat_tuya_dp_temperature_above_target",
       "title": {
         "en": "Temperature is above target",
-        "fr": "TempÃ©rature supÃ©rieure Ã la cible"
+        "fr": "Température supérieure àla cible"
       },
       "args": [],
       "titleFormatted": {
         "en": "Temperature is above target",
-        "fr": "TempÃ©rature supÃ©rieure Ã la cible"
+        "fr": "Température supérieure àla cible"
       }
     },
     {
       "id": "device_radiator_valve_thermostat_thermostat_tuya_dp_temperature_below_target",
       "title": {
         "en": "Temperature is below target",
-        "fr": "TempÃ©rature infÃ©rieure Ã la cible"
+        "fr": "Température inférieure àla cible"
       },
       "args": [],
       "titleFormatted": {
         "en": "Temperature is below target",
-        "fr": "TempÃ©rature infÃ©rieure Ã la cible"
+        "fr": "Température inférieure àla cible"
       }
     },
     {
@@ -262,26 +262,26 @@
       "id": "device_radiator_valve_thermostat_thermostat_tuya_dp_child_lock_is",
       "title": {
         "en": "Child lock is !{{enabled|disabled}}",
-        "fr": "Verrouillage enfant !{{activÃ©|dÃ©sactivÃ©}}"
+        "fr": "Verrouillage enfant !{{activé|désactivé}}"
       },
       "args": [],
       "titleFormatted": {
         "en": "Child lock is !{{enabled|disabled}}",
-        "fr": "Verrouillage enfant !{{activÃ©|dÃ©sactivÃ©}}"
+        "fr": "Verrouillage enfant !{{activé|désactivé}}"
       }
     },
     {
       "id": "device_radiator_valve_thermostat_thermostat_tuya_dp_is_on",
       "title": {
         "en": "Is !{{on|off}}",
-        "fr": "Est !{{allumÃ©|Ã©teint}}",
+        "fr": "Est !{{allumé|éteint}}",
         "nl": "Is !{{aan|uit}}",
         "de": "Ist !{{ein|aus}}"
       },
       "args": [],
       "titleFormatted": {
         "en": "Is !{{on|off}}",
-        "fr": "Est !{{allumÃ©|Ã©teint}}",
+        "fr": "Est !{{allumé|éteint}}",
         "nl": "Is !{{aan|uit}}",
         "de": "Ist !{{ein|aus}}"
       }
@@ -292,7 +292,7 @@
       "id": "device_radiator_valve_thermostat_thermostat_tuya_dp_set_target_temperature",
       "title": {
         "en": "Set target temperature",
-        "fr": "DÃ©finir tempÃ©rature cible"
+        "fr": "Définir température cible"
       },
       "args": [
         {
@@ -303,20 +303,20 @@
           "step": 0.5,
           "title": {
             "en": "Temperature",
-            "fr": "TempÃ©rature"
+            "fr": "Température"
           }
         }
       ],
       "titleFormatted": {
         "en": "Set target temperature [[temperature]]",
-        "fr": "DÃ©finir tempÃ©rature cible [[temperature]]"
+        "fr": "Définir température cible [[temperature]]"
       }
     },
     {
       "id": "device_radiator_valve_thermostat_thermostat_tuya_dp_set_mode",
       "title": {
         "en": "Set mode",
-        "fr": "DÃ©finir mode"
+        "fr": "Définir mode"
       },
       "args": [
         {
@@ -349,14 +349,14 @@
       ],
       "titleFormatted": {
         "en": "Set mode [[mode]]",
-        "fr": "DÃ©finir mode [[mode]]"
+        "fr": "Définir mode [[mode]]"
       }
     },
     {
       "id": "device_radiator_valve_thermostat_thermostat_tuya_dp_increase_temperature",
       "title": {
         "en": "Increase temperature",
-        "fr": "Augmenter tempÃ©rature"
+        "fr": "Augmenter température"
       },
       "args": [
         {
@@ -367,20 +367,20 @@
           "step": 0.5,
           "title": {
             "en": "Degrees",
-            "fr": "DegrÃ©s"
+            "fr": "Degrés"
           }
         }
       ],
       "titleFormatted": {
         "en": "Increase temperature [[degrees]]",
-        "fr": "Augmenter tempÃ©rature [[degrees]]"
+        "fr": "Augmenter température [[degrees]]"
       }
     },
     {
       "id": "device_radiator_valve_thermostat_thermostat_tuya_dp_decrease_temperature",
       "title": {
         "en": "Decrease temperature",
-        "fr": "Diminuer tempÃ©rature"
+        "fr": "Diminuer température"
       },
       "args": [
         {
@@ -391,20 +391,20 @@
           "step": 0.5,
           "title": {
             "en": "Degrees",
-            "fr": "DegrÃ©s"
+            "fr": "Degrés"
           }
         }
       ],
       "titleFormatted": {
         "en": "Decrease temperature [[degrees]]",
-        "fr": "Diminuer tempÃ©rature [[degrees]]"
+        "fr": "Diminuer température [[degrees]]"
       }
     },
     {
       "id": "device_radiator_valve_thermostat_thermostat_tuya_dp_set_child_lock",
       "title": {
         "en": "Set child lock",
-        "fr": "DÃ©finir verrouillage enfant"
+        "fr": "Définir verrouillage enfant"
       },
       "args": [
         {
@@ -415,14 +415,14 @@
               "id": "true",
               "title": {
                 "en": "Enabled",
-                "fr": "ActivÃ©"
+                "fr": "Activé"
               }
             },
             {
               "id": "false",
               "title": {
                 "en": "Disabled",
-                "fr": "DÃ©sactivÃ©"
+                "fr": "Désactivé"
               }
             }
           ]
@@ -430,7 +430,7 @@
       ],
       "titleFormatted": {
         "en": "Set child lock [[enabled]]",
-        "fr": "DÃ©finir verrouillage enfant [[enabled]]"
+        "fr": "Définir verrouillage enfant [[enabled]]"
       }
     },
     {
@@ -438,7 +438,7 @@
       "highlight": true,
       "title": {
         "en": "Set comfort preset",
-        "fr": "DÃ©finir prÃ©rÃ©glage confort",
+        "fr": "Définir préréglage confort",
         "nl": "Comfort preset instellen",
         "de": "Komfort-Voreinstellung"
       },
@@ -487,7 +487,7 @@
       ],
       "titleFormatted": {
         "en": "Set comfort preset [[preset]]",
-        "fr": "DÃ©finir prÃ©rÃ©glage confort [[preset]]",
+        "fr": "Définir préréglage confort [[preset]]",
         "nl": "Comfort preset instellen [[preset]]",
         "de": "Komfort-Voreinstellung [[preset]]"
       }
@@ -512,14 +512,14 @@
       "id": "device_radiator_valve_thermostat_thermostat_tuya_dp_schedule_off",
       "title": {
         "en": "Disable schedule",
-        "fr": "DÃ©sactiver programmation",
+        "fr": "Désactiver programmation",
         "nl": "Schema uitschakelen",
         "de": "Zeitplan deaktivieren"
       },
       "args": [],
       "titleFormatted": {
         "en": "Disable schedule",
-        "fr": "DÃ©sactiver programmation",
+        "fr": "Désactiver programmation",
         "nl": "Schema uitschakelen",
         "de": "Zeitplan deaktivieren"
       }
@@ -576,7 +576,7 @@
       "id": "device_radiator_valve_thermostat_thermostat_tuya_dp_set_temperature",
       "title": {
         "en": "Set temperature",
-        "fr": "RÃ©gler tempÃ©rature",
+        "fr": "Régler température",
         "nl": "Temperatuur instellen",
         "de": "Temperatur einstellen"
       },
@@ -593,7 +593,7 @@
       ],
       "titleFormatted": {
         "en": "Set temperature [[temperature]]",
-        "fr": "RÃ©gler tempÃ©rature [[temperature]]",
+        "fr": "Régler température [[temperature]]",
         "nl": "Temperatuur instellen [[temperature]]",
         "de": "Temperatur einstellen [[temperature]]"
       }

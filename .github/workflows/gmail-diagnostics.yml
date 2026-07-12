@@ -191,6 +191,7 @@ jobs:
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          READ_ONLY_SHADOW: "true"
         run: node .github/scripts/diagnostic-auto-resolver.js
 
       - name: "Resolution Summary"

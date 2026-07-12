@@ -52,7 +52,7 @@
       "type": "dropdown",
       "label": {
         "en": "Decimal Precision",
-        "fr": "PrÃ©cision"
+        "fr": "Précision"
       },
       "value": "1",
       "hint": {
@@ -78,12 +78,12 @@
       "type": "checkbox",
       "label": {
         "en": "Enable Radio Presence Sensing",
-        "fr": "Activer la DÃ©tection de PrÃ©sence Radio"
+        "fr": "Activer la Détection de Présence Radio"
       },
       "value": false,
       "hint": {
         "en": "Infer presence from Zigbee signal fluctuations (BETA)",
-        "fr": "DÃ©duit la prÃ©sence des fluctuations du signal Zigbee (BETA)"
+        "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
       }
     },
     {
@@ -91,7 +91,7 @@
       "type": "number",
       "label": {
         "en": "Radio Presence Sensitivity",
-        "fr": "SensibilitÃ© PrÃ©sence Radio"
+        "fr": "Sensibilité Présence Radio"
       },
       "value": 15,
       "min": 5,
@@ -107,7 +107,7 @@
       "id": "ota_check",
       "title": {
         "en": "Check Zigbee OTA Update",
-        "fr": "VÃ©rifier MÃJ OTA",
+        "fr": "Vérifier MÃJ OTA",
         "nl": "Controleer op OTA-updates"
       }
     }
@@ -129,5 +129,10 @@
       "getable": false,
       "setable": false
     }
-  }
+  },
+  "_pidConflictNotes": [
+    "// PID-CONFLICT-NOTE TS0201 shared with 18 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE TY0201 shared with 8 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE TS0601_lcd shared with 2 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
+  ]
 }

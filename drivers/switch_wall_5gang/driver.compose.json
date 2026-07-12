@@ -651,5 +651,8 @@
       "_GENERIC_SWITCH_WALL_5GANG",
       "_generic_switch_wall_5gang"
     ]
-  }
+  },
+  "_pidConflictNotes": [
+    "// PID-CONFLICT-NOTE TS0015 shared with 2 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
+  ]
 }

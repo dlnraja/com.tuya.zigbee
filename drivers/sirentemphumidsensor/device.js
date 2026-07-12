@@ -3,9 +3,8 @@ const { safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
 
 
 const { Cluster, BoundCluster } = require('zigbee-clusters');
-// A8: NaN Safety - use safeDivide/safeMultiply
-  require('../../lib/TuyaSpecificCluster');
-const TuyaSpecificClusterDevice = require('../../lib/TuyaSpecificClusterDevice');
+const TuyaSpecificCluster = require('../../lib/clusters/TuyaSpecificCluster');
+const TuyaSpecificClusterDevice = require('../../lib/tuya/TuyaSpecificClusterDevice');
 
 Cluster.addCluster(TuyaSpecificCluster);
 
@@ -263,11 +262,11 @@ class sensortemphumidsensor extends TuyaSpecificClusterDevice {
       this.processTuyaMessage('reportingConfiguration', data).catch(this.error);
       });
 
-    tuyaCluster.on('timeSync', data => {
+    tuyaCluster.on('mcuSyncTime', data => {
       this.onTuyaTimeSync(data).catch(this.error);
       });
 
-    tuyaCluster.on('mcuVersionResponse', data => {
+    tuyaCluster.on('mcuVersionRsp', data => {
       this.onMcuVersionResponse(data).catch(this.error);
       });
   }
@@ -328,7 +327,7 @@ class sensortemphumidsensor extends TuyaSpecificClusterDevice {
       this.transactionID += 1;
 
       this.log('Sending Tuya mcuVersionRequest (0x10), payload=', payload);
-      await tuyaCluster.mcuVersionRequest({ payload } );
+      await tuyaCluster.mcuVersionRequest({ data: payload } );
     } catch (error) {
       this.error('Failed to send Tuya mcuVersionRequest', error);
     }
@@ -369,7 +368,11 @@ class sensortemphumidsensor extends TuyaSpecificClusterDevice {
         payload,
       );
 
-      await this.zclNode.endpoints[1].clusters.tuya.timeSync({ payload });
+      await this.zclNode.endpoints[1].clusters.tuya.timeSync({
+        utcTime: utcSeconds,
+        localTime: localSeconds,
+        sequenceNumber: data?.sequenceNumber ?? data?.payloadSize ?? 0,
+      });
 
       this.homey.setTimeout(() => { if (this._destroyed) return; this.queryAll().catch(this.error); }, 500);
     } catch (error) {
@@ -579,4 +582,3 @@ class sensortemphumidsensor extends TuyaSpecificClusterDevice {
 }
 
 module.exports = sensortemphumidsensor;
-

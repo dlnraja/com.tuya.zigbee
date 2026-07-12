@@ -10,6 +10,14 @@ Cluster.addCluster(TuyaSpecificCluster);
 
 class radarSensor2 extends TuyaSpecificClusterDevice {
 
+  _shouldPublishDistance(intervalSeconds) {
+    const intervalMs = Math.max(1, Number(intervalSeconds) || 10) * 1000;
+    const now = Date.now();
+    if (this._lastDistancePublishedAt && now - this._lastDistancePublishedAt < intervalMs) return false;
+    this._lastDistancePublishedAt = now;
+    return true;
+  }
+
   async onNodeInit({ zclNode }) {
     this.printNode();
 /*     debug(true);
@@ -77,7 +85,7 @@ class radarSensor2 extends TuyaSpecificClusterDevice {
 
       case V2_RADAR_SENSOR_DATA_POINTS.targetDistance:
         const distanceUpdateInterval = this.getSetting('distance_update_interval') ?? 10;
-        if (new Date().getSeconds() % distanceUpdateInterval === 0) {
+        if (this._shouldPublishDistance(distanceUpdateInterval)) {
           this.safeSetCapabilityValue('target_distance', parsedValue / 100).catch(this.error); // converting to meters
           // Trigger the custom flow card for target distance change
           await this.targetDistanceTrigger.trigger(this, { target_distance: parsedValue / 100 }).catch(this.error);

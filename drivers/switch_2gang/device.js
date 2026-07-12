@@ -176,7 +176,7 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
       this.log('[SWITCH-2G] ✅ metering cluster found');
 
       if (typeof meteringCluster.on === 'function') {
-        meteringCluster.on('attr.current summation delivered', (value) => {
+        meteringCluster.on('attr.currentSummationDelivered', (value) => {
           const kwh = smartParse(value, null, { capability: 'meter_power' }) || 0;
           this.log(`[ZCL-DATA] switch.energy raw=${value} → ${kwh}kWh`);
           if (this.hasCapability('meter_power')) {
@@ -227,7 +227,10 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
       const msg = e?.message || String(e);
       if ((msg.includes('Zigbee') || msg.includes('démarrage') || msg.includes('starting')) && retryCount < 3) {
         this.log(`[SWITCH-2G] ⏳ Zigbee starting, will retry electrical reporting in 60s (attempt ${retryCount + 1}/3)`);
-        this.homey.setTimeout(() => { if (this._destroyed) return; this._configureElectricalReporting(retryCount + 1); }, 60000);
+        this._electricalReportingRetryTimer = this.homey.setTimeout(() => {
+          if (this._destroyed) return;
+          this._configureElectricalReporting(retryCount + 1).catch(() => {});
+        }, 60000);
       } else {
         this.log('[SWITCH-2G] electricalMeasurement reporting failed:', msg);
       }
@@ -255,7 +258,10 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
       const msg = e?.message || String(e);
       if ((msg.includes('Zigbee') || msg.includes('démarrage') || msg.includes('starting')) && retryCount < 3) {
         this.log(`[SWITCH-2G] ⏳ Zigbee starting, will retry metering reporting in 60s (attempt ${retryCount + 1}/3)`);
-        this.homey.setTimeout(() => { if (this._destroyed) return; this._configureMeteringReporting(retryCount + 1); }, 60000);
+        this._meteringReportingRetryTimer = this.homey.setTimeout(() => {
+          if (this._destroyed) return;
+          this._configureMeteringReporting(retryCount + 1).catch(() => {});
+        }, 60000);
       } else {
         this.log('[SWITCH-2G] metering reporting failed:', msg);
       }
@@ -460,13 +466,20 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
     }
   }
 
-  onDeleted() {
+  async onDeleted() {
+    this._destroyed = true;
     if (this._zclState?.timeout) {
       for (const epNum of [1, 2]) {
-        if (this._zclState.timeout[epNum]) {clearTimeout(this._zclState.timeout[epNum]);}
+        if (this._zclState.timeout[epNum]) {this.homey.clearTimeout(this._zclState.timeout[epNum]);}
       }
     }
-    super.onDeleted?.();
+    for (const timerName of ['_electricalReportingRetryTimer', '_meteringReportingRetryTimer']) {
+      if (this[timerName]) {
+        this.homey.clearTimeout(this[timerName]);
+        this[timerName] = null;
+      }
+    }
+    await super.onDeleted?.();
   }
 }
 

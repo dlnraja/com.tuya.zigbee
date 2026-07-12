@@ -102,7 +102,7 @@
       "image": "/drivers/universal_zigbee/assets/learnmode.svg",
       "instruction": {
         "en": "Press the pairing button on your Zigbee device until it enters pairing mode.",
-        "fr": "Appuyez sur le bouton d'appairage de votre appareil Zigbee jusqu'Ã ce qu'il passe en mode appairage."
+        "fr": "Appuyez sur le bouton d'appairage de votre appareil Zigbee jusqu'àce qu'il passe en mode appairage."
       }
     }
   },
@@ -121,12 +121,12 @@
       "type": "checkbox",
       "label": {
         "en": "Enable Natural Light (Solar Sync)",
-        "fr": "Activer la LumiÃ¨re Naturelle (Synchro Solaire)"
+        "fr": "Activer la Lumière Naturelle (Synchro Solaire)"
       },
       "value": false,
       "hint": {
         "en": "Automatically adjust color temperature based on time of day",
-        "fr": "Ajuste automatiquement la tempÃ©rature de couleur au fil de la journÃ©e"
+        "fr": "Ajuste automatiquement la température de couleur au fil de la journée"
       }
     },
     {
@@ -134,12 +134,12 @@
       "type": "checkbox",
       "label": {
         "en": "Enable Radio Presence Sensing",
-        "fr": "Activer la DÃ©tection de PrÃ©sence Radio"
+        "fr": "Activer la Détection de Présence Radio"
       },
       "value": false,
       "hint": {
         "en": "Infer presence from Zigbee signal fluctuations (BETA)",
-        "fr": "DÃ©duit la prÃ©sence des fluctuations du signal Zigbee (BETA)"
+        "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
       }
     },
     {
@@ -147,7 +147,7 @@
       "type": "number",
       "label": {
         "en": "Radio Presence Sensitivity",
-        "fr": "SensibilitÃ© PrÃ©sence Radio"
+        "fr": "Sensibilité Présence Radio"
       },
       "value": 15,
       "min": 5,
@@ -167,7 +167,7 @@
       "value": false,
       "hint": {
         "en": "Automatically adjust color temperature based on time of day",
-        "fr": "Ajuste automatiquement la tempÃ©rature de couleur au cours de la journÃ©e"
+        "fr": "Ajuste automatiquement la température de couleur au cours de la journée"
       }
     },
     {
@@ -180,9 +180,14 @@
       "value": false,
       "hint": {
         "en": "Automatically dim light when turned on at night",
-        "fr": "Baisse l'intensitÃ© lors de l'allumage nocturne"
+        "fr": "Baisse l'intensité lors de l'allumage nocturne"
       }
     }
   ],
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "_pidConflictNotes": [
+    "// PID-CONFLICT-NOTE TS0505B shared with 19 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE TS0504B shared with 7 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE TS0503B shared with 5 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
+  ]
 }

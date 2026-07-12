@@ -1,9 +1,16 @@
 'use strict';
-const { safeMultiply } = require('../../lib/utils/tuyaUtils.js');
-
 const { UnifiedSensorBase } = require('../../lib/devices/UnifiedSensorBase');
-// A8: NaN Safety - use safeDivide/safeMultiply
-  require('../../lib/tuya/GlobalTimeSyncEngine');
+const UnifiedBatteryHandler = require('../../lib/battery/UnifiedBatteryHandler');
+const GlobalTimeSyncEngine = require('../../lib/tuya/GlobalTimeSyncEngine');
+const ManufacturerNameHelper = require('../../lib/helpers/ManufacturerNameHelper');
+const { includesCI } = require('../../lib/utils/CaseInsensitiveMatcher');
+
+const DIRECT_HUMIDITY_MANUFACTURERS = [
+  '_TZE200_vvmbj46n',
+  '_TZE284_vvmbj46n',
+  '_TZE200_locansqn',
+  '_TZE284_locansqn',
+];
 
 /**
  * LCD Temperature & Humidity Sensor Device - v7.4.4
@@ -20,8 +27,8 @@ class LCDTempHumidSensorDevice extends UnifiedSensorBase {
   get mainsPowered() { return false; }
 
   /** v7.4.4: Intelligence for _TZE284_ sensors (No humidity divisor) */
-  get isUniversalModel() {
-    const mfr = this.getSetting?.('zb_manufacturer_name') || '';return mfr.toUpperCase().includes('VVM' ); // _TZE284_vvmbj46n
+  get usesDirectHumidity() {
+    return includesCI(DIRECT_HUMIDITY_MANUFACTURERS, ManufacturerNameHelper.getManufacturerName(this));
   }
 
   /** Capabilities for LCD temp/humidity sensors */
@@ -31,23 +38,23 @@ class LCDTempHumidSensorDevice extends UnifiedSensorBase {
 
   /** DP mappings for TS0201 LCD sensors */
   get dpMappings() {
-    const isVVM = this.isUniversalModel;
+    const usesDirectHumidity = this.usesDirectHumidity;
     return {
       // Temperature (Standard DP 1 or 18 or 101)
-      1: { capability: 'measure_temperature', smartDivisor: true },
+      1: { capability: 'measure_temperature', divisor: 10 },
       18: { capability: 'measure_temperature', smartDivisor: true },
       101: { capability: 'measure_temperature', smartDivisor: true },
 
       // Humidity (DP 2 or 102)
       // v7.4.4: Research shows _TZE284_vvmbj46n does NOT use divisor 10 for humidity!
-      2: { capability: 'measure_humidity', divisor: isVVM ? 1 : 10 },
-      102: { capability: 'measure_humidity', divisor: isVVM ? 1 : 10 },
+      2: { capability: 'measure_humidity', divisor: usesDirectHumidity ? 1 : 10 },
+      102: { capability: 'measure_humidity', divisor: usesDirectHumidity ? 1 : 10 },
 
       // Battery
       // v5.12.3: DP 3 battery enum (0=low, 1=med, 2=high)
-      3: { capability: 'measure_battery', divisor: 1, transform: (v) => v === 0 ? 10 : v === 1 ? 50 : v >= 2 ? 100 : Math.min(Math.max(v * 0) * 100) },
-      4: { capability: 'measure_battery', divisor: 1, transform: (v) => Math.min(Math.max(v * 0) * 100) },
-      15: { capability: 'measure_battery', divisor: 1, transform: (v) => Math.min(Math.max(v * 0) * 100) },
+      3: { capability: 'measure_battery', transform: (v) => UnifiedBatteryHandler.calculateFromTuyaDP(v, 'enum3') },
+      4: { capability: 'measure_battery', transform: (v) => UnifiedBatteryHandler.calculateFromTuyaDP(v, 'direct') },
+      15: { capability: 'measure_battery', transform: (v) => UnifiedBatteryHandler.calculateFromTuyaDP(v, 'direct') },
     };
   }
 
@@ -61,7 +68,10 @@ class LCDTempHumidSensorDevice extends UnifiedSensorBase {
       this._timeSyncEngine.setupListener(zclNode);
       
       // Perform initial sync after 5 seconds
-      this.homey.setTimeout(async () => { if (this._destroyed) return; await this._timeSyncEngine.syncTime(zclNode).catch(() => {}); }, 5000);
+      this._initialTimeSyncTimer = this.homey.setTimeout(async () => {
+        if (this._destroyed) return;
+        await this._timeSyncEngine.syncTime(zclNode).catch(() => {});
+      }, 5000);
       
       // Periodic sync every 4 hours for battery sensors
       this._timeSyncEngine.schedulePeriodicSync(zclNode,4 * 60 * 60 * 1000);
@@ -118,7 +128,17 @@ class LCDTempHumidSensorDevice extends UnifiedSensorBase {
        this._dataRecoveryManager?.forceRecovery?.();
     }
   }
+
+  async onDeleted() {
+    this._destroyed = true;
+    if (this._initialTimeSyncTimer) {
+      this.homey.clearTimeout(this._initialTimeSyncTimer);
+      this._initialTimeSyncTimer = null;
+    }
+    this._timeSyncEngine?.destroy?.();
+    this._timeSyncEngine = null;
+    await super.onDeleted?.();
+  }
 }
 
 module.exports = LCDTempHumidSensorDevice;
-

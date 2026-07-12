@@ -3,7 +3,15 @@
     "version": "1.0.0",
     "description": "MFS Unified Database - Manufacturer Fingerprint Schema",
     "generatedAt": "2026-06-19T20:58:49.880Z",
-    "generator": "mfs-aggregator v1.0.0"
+    "generator": "mfs-aggregator v1.0.0",
+    "lastUpdated": "2026-07-12T18:21:07.336Z",
+    "lastEnrichment": {
+      "date": "2026-07-12T18:21:07.336Z",
+      "addedToDevices": 0,
+      "updatedInDevices": 4,
+      "updatedDriverMaps": 0,
+      "source": "continuous-flow"
+    }
   },
   "sources": {
     "local": {
@@ -115617,6 +115625,567 @@
       },
       "confidence": 0.08,
       "lastSeen": "2026-06-19T20:58:49.769Z"
+    },
+    "_TYST11": {
+      "manufacturerId": "_TYST11",
+      "modelIds": [],
+      "variants": [],
+      "deviceType": "sensor",
+      "driverHint": null,
+      "capabilities": [],
+      "powerSource": "unknown",
+      "sources": [
+        "integration-2026-07-12"
+      ],
+      "sourceDetails": {
+        "integration": 1
+      },
+      "confidence": 0.5,
+      "lastSeen": "2026-07-12T18:15:41.793Z"
+    },
+    "_TYZB01_4lwqwyqn": {
+      "manufacturerId": "_TYZB01_4lwqwyqn",
+      "modelIds": [],
+      "variants": [],
+      "deviceType": "switch",
+      "driverHint": null,
+      "capabilities": [],
+      "powerSource": "unknown",
+      "sources": [
+        "integration-2026-07-12"
+      ],
+      "sourceDetails": {
+        "integration": 1
+      },
+      "confidence": 0.5,
+      "lastSeen": "2026-07-12T18:15:41.795Z"
+    },
+    "_TZ3000_1bwpjvlz": {
+      "manufacturerId": "_TZ3000_1bwpjvlz",
+      "modelIds": [],
+      "variants": [],
+      "deviceType": "switch",
+      "driverHint": null,
+      "capabilities": [],
+      "powerSource": "unknown",
+      "sources": [
+        "integration-2026-07-12"
+      ],
+      "sourceDetails": {
+        "integration": 1
+      },
+      "confidence": 0.5,
+      "lastSeen": "2026-07-12T18:15:41.795Z"
+    },
+    "_TZ3000_an5rjiwd": {
+      "manufacturerId": "_TZ3000_an5rjiwd",
+      "modelIds": [],
+      "variants": [],
+      "deviceType": "switch",
+      "driverHint": null,
+      "capabilities": [],
+      "powerSource": "unknown",
+      "sources": [
+        "integration-2026-07-12"
+      ],
+      "sourceDetails": {
+        "integration": 1
+      },
+      "confidence": 0.5,
+      "lastSeen": "2026-07-12T18:15:41.795Z"
+    },
+    "_TZ3000_bzzgvet0": {
+      "manufacturerId": "_TZ3000_bzzgvet0",
+      "modelIds": [],
+      "variants": [],
+      "deviceType": "switch",
+      "driverHint": null,
+      "capabilities": [],
+      "powerSource": "unknown",
+      "sources": [
+        "integration-2026-07-12"
+      ],
+      "sourceDetails": {
+        "integration": 1
+      },
+      "confidence": 0.5,
+      "lastSeen": "2026-07-12T18:15:41.795Z"
+    },
+    "_TZ3000_c8zfad4a": {
+      "manufacturerId": "_TZ3000_c8zfad4a",
+      "modelIds": [],
+      "variants": [],
+      "deviceType": "switch",
+      "driverHint": null,
+      "capabilities": [],
+      "powerSource": "unknown",
+      "sources": [
+        "integration-2026-07-12"
+      ],
+      "sourceDetails": {
+        "integration": 1
+      },
+      "confidence": 0.5,
+      "lastSeen": "2026-07-12T18:15:41.795Z"
+    },
+    "_TZ3000_dd8wwzcy": {
+      "manufacturerId": "_TZ3000_dd8wwzcy",
+      "modelIds": [],
+      "variants": [],
+      "deviceType": "switch",
+      "driverHint": null,
+      "capabilities": [],
+      "powerSource": "unknown",
+      "sources": [
+        "integration-2026-07-12"
+      ],
+      "sourceDetails": {
+        "integration": 1
+      },
+      "confidence": 0.5,
+      "lastSeen": "2026-07-12T18:15:41.795Z"
+    },
+    "_TZ3000_ptjcjise": {
+      "manufacturerId": "_TZ3000_ptjcjise",
+      "modelIds": [],
+      "variants": [],
+      "deviceType": "switch",
+      "driverHint": null,
+      "capabilities": [],
+      "powerSource": "unknown",
+      "sources": [
+        "integration-2026-07-12"
+      ],
+      "sourceDetails": {
+        "integration": 1
+      },
+      "confidence": 0.5,
+      "lastSeen": "2026-07-12T18:15:41.795Z"
+    },
+    "_TZ3000_u5u4cakc": {
+      "manufacturerId": "_TZ3000_u5u4cakc",
+      "modelIds": [],
+      "variants": [],
+      "deviceType": "switch",
+      "driverHint": null,
+      "capabilities": [],
+      "powerSource": "unknown",
+      "sources": [
+        "integration-2026-07-12"
+      ],
+      "sourceDetails": {
+        "integration": 1
+      },
+      "confidence": 0.5,
+      "lastSeen": "2026-07-12T18:15:41.795Z"
+    },
+    "_TZ3000_xwh1e22x": {
+      "manufacturerId": "_TZ3000_xwh1e22x",
+      "modelIds": [],
+      "variants": [],
+      "deviceType": "switch",
+      "driverHint": null,
+      "capabilities": [],
+      "powerSource": "unknown",
+      "sources": [
+        "integration-2026-07-12"
+      ],
+      "sourceDetails": {
+        "integration": 1
+      },
+      "confidence": 0.5,
+      "lastSeen": "2026-07-12T18:15:41.795Z"
+    },
+    "_TZ3002": {
+      "manufacturerId": "_TZ3002",
+      "modelIds": [],
+      "variants": [],
+      "deviceType": "unknown",
+      "driverHint": null,
+      "capabilities": [],
+      "powerSource": "unknown",
+      "sources": [
+        "integration-2026-07-12"
+      ],
+      "sourceDetails": {
+        "integration": 1
+      },
+      "confidence": 0.5,
+      "lastSeen": "2026-07-12T18:15:41.795Z"
+    },
+    "_TZ3002_vaq2bfcu": {
+      "manufacturerId": "_TZ3002_vaq2bfcu",
+      "modelIds": [],
+      "variants": [],
+      "deviceType": "unknown",
+      "driverHint": null,
+      "capabilities": [],
+      "powerSource": "unknown",
+      "sources": [
+        "integration-2026-07-12"
+      ],
+      "sourceDetails": {
+        "integration": 1
+      },
+      "confidence": 0.5,
+      "lastSeen": "2026-07-12T18:15:41.795Z"
+    },
+    "_TZ3210_cehuw1lw": {
+      "manufacturerId": "_TZ3210_cehuw1lw",
+      "modelIds": [],
+      "variants": [],
+      "deviceType": "switch",
+      "driverHint": null,
+      "capabilities": [],
+      "powerSource": "unknown",
+      "sources": [
+        "integration-2026-07-12"
+      ],
+      "sourceDetails": {
+        "integration": 1
+      },
+      "confidence": 0.5,
+      "lastSeen": "2026-07-12T18:15:41.795Z"
+    },
+    "_TZ3210_eymunffl": {
+      "manufacturerId": "_TZ3210_eymunffl",
+      "modelIds": [],
+      "variants": [],
+      "deviceType": "switch",
+      "driverHint": null,
+      "capabilities": [],
+      "powerSource": "unknown",
+      "sources": [
+        "integration-2026-07-12"
+      ],
+      "sourceDetails": {
+        "integration": 1
+      },
+      "confidence": 0.5,
+      "lastSeen": "2026-07-12T18:15:41.795Z"
+    },
+    "_TZ3210_n0wbkysi": {
+      "manufacturerId": "_TZ3210_n0wbkysi",
+      "modelIds": [],
+      "variants": [],
+      "deviceType": "switch",
+      "driverHint": null,
+      "capabilities": [],
+      "powerSource": "unknown",
+      "sources": [
+        "integration-2026-07-12"
+      ],
+      "sourceDetails": {
+        "integration": 1
+      },
+      "confidence": 0.5,
+      "lastSeen": "2026-07-12T18:15:41.795Z"
+    },
+    "_TZ3210_ol1uhvza": {
+      "manufacturerId": "_TZ3210_ol1uhvza",
+      "modelIds": [],
+      "variants": [],
+      "deviceType": "switch",
+      "driverHint": null,
+      "capabilities": [],
+      "powerSource": "unknown",
+      "sources": [
+        "integration-2026-07-12"
+      ],
+      "sourceDetails": {
+        "integration": 1
+      },
+      "confidence": 0.5,
+      "lastSeen": "2026-07-12T18:15:41.795Z"
+    },
+    "_TZ3210_s8lvbbuc": {
+      "manufacturerId": "_TZ3210_s8lvbbuc",
+      "modelIds": [],
+      "variants": [],
+      "deviceType": "switch",
+      "driverHint": null,
+      "capabilities": [],
+      "powerSource": "unknown",
+      "sources": [
+        "integration-2026-07-12"
+      ],
+      "sourceDetails": {
+        "integration": 1
+      },
+      "confidence": 0.5,
+      "lastSeen": "2026-07-12T18:15:41.795Z"
+    },
+    "_TZ3290": {
+      "manufacturerId": "_TZ3290",
+      "modelIds": [],
+      "variants": [],
+      "deviceType": "sensor",
+      "driverHint": null,
+      "capabilities": [],
+      "powerSource": "unknown",
+      "sources": [
+        "integration-2026-07-12"
+      ],
+      "sourceDetails": {
+        "integration": 1
+      },
+      "confidence": 0.5,
+      "lastSeen": "2026-07-12T18:21:07.333Z"
+    },
+    "_TZ3290_yyax9ajf": {
+      "manufacturerId": "_TZ3290_yyax9ajf",
+      "modelIds": [],
+      "variants": [],
+      "deviceType": "sensor",
+      "driverHint": null,
+      "capabilities": [],
+      "powerSource": "unknown",
+      "sources": [
+        "integration-2026-07-12"
+      ],
+      "sourceDetails": {
+        "integration": 1
+      },
+      "confidence": 0.5,
+      "lastSeen": "2026-07-12T18:21:07.334Z"
+    },
+    "_TZB210_ngnt8kni": {
+      "manufacturerId": "_TZB210_ngnt8kni",
+      "modelIds": [],
+      "variants": [],
+      "deviceType": "unknown",
+      "driverHint": null,
+      "capabilities": [],
+      "powerSource": "unknown",
+      "sources": [
+        "integration-2026-07-12"
+      ],
+      "sourceDetails": {
+        "integration": 1
+      },
+      "confidence": 0.5,
+      "lastSeen": "2026-07-12T18:15:41.795Z"
+    },
+    "_TZE200_amp6tsvy": {
+      "manufacturerId": "_TZE200_amp6tsvy",
+      "modelIds": [],
+      "variants": [],
+      "deviceType": "sensor",
+      "driverHint": null,
+      "capabilities": [],
+      "powerSource": "unknown",
+      "sources": [
+        "integration-2026-07-12"
+      ],
+      "sourceDetails": {
+        "integration": 1
+      },
+      "confidence": 0.5,
+      "lastSeen": "2026-07-12T18:21:07.334Z"
+    },
+    "_TZE204_5cuocqty": {
+      "manufacturerId": "_TZE204_5cuocqty",
+      "modelIds": [],
+      "variants": [],
+      "deviceType": "sensor",
+      "driverHint": null,
+      "capabilities": [],
+      "powerSource": "unknown",
+      "sources": [
+        "integration-2026-07-12"
+      ],
+      "sourceDetails": {
+        "integration": 1
+      },
+      "confidence": 0.5,
+      "lastSeen": "2026-07-12T18:15:41.795Z"
+    },
+    "_TZE204_8fffc3kb": {
+      "manufacturerId": "_TZE204_8fffc3kb",
+      "modelIds": [],
+      "variants": [],
+      "deviceType": "sensor",
+      "driverHint": null,
+      "capabilities": [],
+      "powerSource": "unknown",
+      "sources": [
+        "integration-2026-07-12"
+      ],
+      "sourceDetails": {
+        "integration": 1
+      },
+      "confidence": 0.5,
+      "lastSeen": "2026-07-12T18:15:41.795Z"
+    },
+    "_TZE204_ahwvlkpy": {
+      "manufacturerId": "_TZE204_ahwvlkpy",
+      "modelIds": [],
+      "variants": [],
+      "deviceType": "sensor",
+      "driverHint": null,
+      "capabilities": [],
+      "powerSource": "unknown",
+      "sources": [
+        "integration-2026-07-12"
+      ],
+      "sourceDetails": {
+        "integration": 1
+      },
+      "confidence": 0.5,
+      "lastSeen": "2026-07-12T18:15:41.795Z"
+    },
+    "_TZE284_bquwrqh1": {
+      "manufacturerId": "_TZE284_bquwrqh1",
+      "modelIds": [],
+      "variants": [],
+      "deviceType": "sensor",
+      "driverHint": null,
+      "capabilities": [],
+      "powerSource": "unknown",
+      "sources": [
+        "integration-2026-07-12"
+      ],
+      "sourceDetails": {
+        "integration": 1
+      },
+      "confidence": 0.5,
+      "lastSeen": "2026-07-12T18:15:41.795Z"
+    },
+    "_TZE284_n4ttsck2": {
+      "manufacturerId": "_TZE284_n4ttsck2",
+      "modelIds": [],
+      "variants": [],
+      "deviceType": "sensor",
+      "driverHint": null,
+      "capabilities": [],
+      "powerSource": "unknown",
+      "sources": [
+        "integration-2026-07-12"
+      ],
+      "sourceDetails": {
+        "integration": 1
+      },
+      "confidence": 0.5,
+      "lastSeen": "2026-07-12T18:15:41.795Z"
+    },
+    "_TZE284_rjxqso4a": {
+      "manufacturerId": "_TZE284_rjxqso4a",
+      "modelIds": [],
+      "variants": [],
+      "deviceType": "sensor",
+      "driverHint": null,
+      "capabilities": [],
+      "powerSource": "unknown",
+      "sources": [
+        "integration-2026-07-12"
+      ],
+      "sourceDetails": {
+        "integration": 1
+      },
+      "confidence": 0.5,
+      "lastSeen": "2026-07-12T18:15:41.795Z"
+    },
+    "_TZE200_jt50ea5d": {
+      "manufacturerId": "_TZE200_jt50ea5d",
+      "modelIds": [],
+      "variants": [],
+      "deviceType": "sensor",
+      "driverHint": null,
+      "capabilities": [],
+      "powerSource": "unknown",
+      "sources": [
+        "integration-2026-07-12"
+      ],
+      "sourceDetails": {
+        "integration": 1
+      },
+      "confidence": 0.5,
+      "lastSeen": "2026-07-12T18:15:41.795Z"
+    },
+    "_TZ3210_jaap6jeb": {
+      "manufacturerId": "_TZ3210_jaap6jeb",
+      "modelIds": [],
+      "variants": [],
+      "deviceType": "switch",
+      "driverHint": null,
+      "capabilities": [],
+      "powerSource": "unknown",
+      "sources": [
+        "integration-2026-07-12"
+      ],
+      "sourceDetails": {
+        "integration": 1
+      },
+      "confidence": 0.5,
+      "lastSeen": "2026-07-12T18:15:41.795Z"
+    },
+    "_TZE284_g1enhdsi": {
+      "manufacturerId": "_TZE284_g1enhdsi",
+      "modelIds": [],
+      "variants": [],
+      "deviceType": "sensor",
+      "driverHint": null,
+      "capabilities": [],
+      "powerSource": "unknown",
+      "sources": [
+        "integration-2026-07-12"
+      ],
+      "sourceDetails": {
+        "integration": 1
+      },
+      "confidence": 0.5,
+      "lastSeen": "2026-07-12T18:15:41.795Z"
+    },
+    "_TZ3000_atp7xmd9": {
+      "manufacturerId": "_TZ3000_atp7xmd9",
+      "modelIds": [],
+      "variants": [],
+      "deviceType": "switch",
+      "driverHint": null,
+      "capabilities": [],
+      "powerSource": "unknown",
+      "sources": [
+        "integration-2026-07-12"
+      ],
+      "sourceDetails": {
+        "integration": 1
+      },
+      "confidence": 0.5,
+      "lastSeen": "2026-07-12T18:15:41.795Z"
+    },
+    "_TZE200_a7sghmms": {
+      "manufacturerId": "_TZE200_a7sghmms",
+      "modelIds": [],
+      "variants": [],
+      "deviceType": "sensor",
+      "driverHint": null,
+      "capabilities": [],
+      "powerSource": "unknown",
+      "sources": [
+        "integration-2026-07-12"
+      ],
+      "sourceDetails": {
+        "integration": 1
+      },
+      "confidence": 0.5,
+      "lastSeen": "2026-07-12T18:15:41.795Z"
+    },
+    "_TZ3000_itb0omhv": {
+      "manufacturerId": "_TZ3000_itb0omhv",
+      "modelIds": [],
+      "variants": [],
+      "deviceType": "switch",
+      "driverHint": null,
+      "capabilities": [],
+      "powerSource": "unknown",
+      "sources": [
+        "integration-2026-07-12"
+      ],
+      "sourceDetails": {
+        "integration": 1
+      },
+      "confidence": 0.5,
+      "lastSeen": "2026-07-12T18:21:07.334Z"
     }
   },
   "driverMapping": {
@@ -116508,7 +117077,14 @@
         "_tze284_tdhnhhiy",
         "_tze200_wbhaespm",
         "_tze204_wbhaespm",
-        "_tze204_zpvusbtv"
+        "_tze204_zpvusbtv",
+        "_TYST11",
+        "_TZ3000_bzzgvet0",
+        "_TZ3000_dd8wwzcy",
+        "_TZ3000_u5u4cakc",
+        "_TZ3210_ol1uhvza",
+        "_TZE204_ahwvlkpy",
+        "_TZE284_rjxqso4a"
       ],
       "modelIds": [
         "TS0601",
@@ -117259,7 +117835,19 @@
         "_tze200_nvxorhcj",
         "_tze200_dzuqwsyg",
         "_tze200_tgeqdjgk",
-        "_tz3000_kqvb5akv"
+        "_tz3000_kqvb5akv",
+        "_TYZB01_4lwqwyqn",
+        "_TZ3000_an5rjiwd",
+        "_TZ3000_ptjcjise",
+        "_TZ3002",
+        "_TZ3002_vaq2bfcu",
+        "_TZ3210_cehuw1lw",
+        "_TZ3210_n0wbkysi",
+        "_TZE200_amp6tsvy",
+        "_TZE204_5cuocqty",
+        "_TZE204_8fffc3kb",
+        "_TZE284_bquwrqh1",
+        "_TZ3000_atp7xmd9"
       ],
       "modelIds": [
         "TS0501A",
@@ -117421,7 +118009,8 @@
         "_tz3210_hzdhb62z",
         "_tz3210_lfbz816s",
         "_tz3210_v5yquxma",
-        "_tz3210_yluvwhjc"
+        "_tz3210_yluvwhjc",
+        "_TZB210_ngnt8kni"
       ],
       "modelIds": [
         "TS0501A"
@@ -117668,7 +118257,8 @@
         "_tz3210_qigbovcq",
         "_tzb210_u3ri0968",
         "_tzb210_uoiqhjqe",
-        "_tz3210_b3kiq1i0"
+        "_tz3210_b3kiq1i0",
+        "_TZ3210_s8lvbbuc"
       ],
       "modelIds": [
         "generic",
@@ -118787,7 +119377,9 @@
         "_tze200_nvups4nh",
         "_tze200_ykglasuj",
         "lumi.sensor_magnet",
-        "lumi.sensor_magnet.aq2"
+        "lumi.sensor_magnet.aq2",
+        "_TZ3000_c8zfad4a",
+        "_TZ3210_ol1uhvza"
       ],
       "modelIds": [
         "TS0201",
@@ -118807,7 +119399,8 @@
         "_tze200_sh1btabb",
         "_tz3000_zojh9vz7",
         "_tz3000_gsat0axs",
-        "_tze204_sh1btabb"
+        "_tze204_sh1btabb",
+        "_TZE200_a7sghmms"
       ],
       "modelIds": [
         "TS0201",
@@ -121271,7 +121864,13 @@
         "_tze204_bjf8qum1",
         "_tze204_mchxve9o",
         "_tze204_sndkanfr",
-        "_tze284_0zse7xqg"
+        "_tze284_0zse7xqg",
+        "_TZ3000_1bwpjvlz",
+        "_TZ3210_eymunffl",
+        "_TZE284_bquwrqh1",
+        "_TZE200_jt50ea5d",
+        "_TZ3210_jaap6jeb",
+        "_TZE284_g1enhdsi"
       ],
       "modelIds": [
         "TS0202",
@@ -122192,7 +122791,8 @@
     },
     "smart_irrigation_valve": {
       "manufacturerIds": [
-        "_hybrid_smart_irrigation_valve_needs_device_assignment"
+        "_hybrid_smart_irrigation_valve_needs_device_assignment",
+        "_TZ3000_xwh1e22x"
       ],
       "modelIds": [
         "TS0601"
@@ -122273,7 +122873,8 @@
         "_tz3000_mwd3c2at",
         "_tyst11_d0yu2xgi",
         "_tz3000_d0yu2xgi",
-        "_tze200_d0yu2xgi"
+        "_tze200_d0yu2xgi",
+        "_TZE284_n4ttsck2"
       ],
       "modelIds": [
         "TS0205",
@@ -122832,17 +123433,26 @@
         "LDS"
       ],
       "deviceType": "unknown"
+    },
+    "thermostat": {
+      "manufacturerIds": [
+        "_TZ3290",
+        "_TZ3290_yyax9ajf"
+      ],
+      "modelIds": [],
+      "deviceType": "unknown"
     }
   },
   "stats": {
-    "totalEntries": 4146,
+    "totalEntries": 4179,
     "totalVariants": 1,
     "entriesBySource": {
       "local": 4037,
       "z2m": 1586,
       "hubitat": 426,
       "community": 34,
-      "phoscon": 107
+      "phoscon": 107,
+      "integration": 33
     },
     "entriesByDeviceType": {
       "fan": 47,
@@ -122856,7 +123466,8 @@
     },
     "coveragePercent": 42,
     "multiSourceCount": 1756,
-    "lastAggregation": "2026-06-19T20:58:49.874Z"
+    "lastAggregation": "2026-06-19T20:58:49.874Z",
+    "lastEnrichment": "2026-07-12T18:21:07.336Z"
   },
   "diff": {
     "lastRun": "2026-06-19T20:58:49.880Z",

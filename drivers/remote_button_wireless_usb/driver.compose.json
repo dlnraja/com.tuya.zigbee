@@ -2,7 +2,7 @@
   "name": {
     "en": "Remote Button Wireless Usb",
     "nl": "Draadloze Usb Afstandsbediening",
-    "fr": "Bouton TÃ©lÃ©commande Sans Fil Usb",
+    "fr": "Bouton Télécommande Sans Fil Usb",
     "de": "Drahtlose Usb Fernbedienung",
     "es": "BotÃ³n Remoto InalÃ¡mbrico Usb"
   },
@@ -72,7 +72,7 @@
       "type": "dropdown",
       "label": {
         "en": "Power-on Behavior",
-        "fr": "Comportement au dÃ©marrage"
+        "fr": "Comportement au démarrage"
       },
       "value": "previous",
       "values": [
@@ -87,7 +87,7 @@
           "id": "on",
           "label": {
             "en": "On",
-            "fr": "AllumÃ©"
+            "fr": "Allumé"
           }
         },
         {
@@ -101,7 +101,7 @@
           "id": "previous",
           "label": {
             "en": "Previous State",
-            "fr": "Ã‰tat prÃ©cÃ©dent"
+            "fr": "Ã‰tat précédent"
           }
         }
       ]
@@ -126,14 +126,14 @@
           "id": "on_off",
           "label": {
             "en": "On when switch is on",
-            "fr": "AllumÃ© quand interrupteur actif"
+            "fr": "Allumé quand interrupteur actif"
           }
         },
         {
           "id": "inverted",
           "label": {
             "en": "On when switch is off",
-            "fr": "AllumÃ© quand interrupteur Ã©teint"
+            "fr": "Allumé quand interrupteur éteint"
           }
         }
       ]
@@ -181,12 +181,12 @@
       "type": "checkbox",
       "label": {
         "en": "Enable Radio Presence Sensing",
-        "fr": "Activer la DÃ©tection de PrÃ©sence Radio"
+        "fr": "Activer la Détection de Présence Radio"
       },
       "value": false,
       "hint": {
         "en": "Infer presence from Zigbee signal fluctuations (BETA)",
-        "fr": "DÃ©duit la prÃ©sence des fluctuations du signal Zigbee (BETA)"
+        "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
       }
     },
     {
@@ -194,7 +194,7 @@
       "type": "number",
       "label": {
         "en": "Radio Presence Sensitivity",
-        "fr": "SensibilitÃ© PrÃ©sence Radio"
+        "fr": "Sensibilité Présence Radio"
       },
       "value": 15,
       "min": 5,
@@ -217,7 +217,7 @@
       "id": "ota_check",
       "title": {
         "en": "Check Zigbee OTA Update",
-        "fr": "VÃ©rifier MÃJ OTA",
+        "fr": "Vérifier MÃJ OTA",
         "nl": "Controleer op OTA-updates"
       }
     }
@@ -247,5 +247,8 @@
     "manufacturerName": [
       "_tz3000_m0vaazab"
     ]
-  }
+  },
+  "_pidConflictNotes": [
+    "// PID-CONFLICT-NOTE TS011F shared with 43 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
+  ]
 }

@@ -1,7 +1,7 @@
 'use strict';
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
-const { CLUSTER, Cluster, ZCLDataTypes } = require('zigbee-clusters');
+const { CLUSTER } = require('zigbee-clusters');
 
 // v5.8.52: Import Zosung clusters (registered at app startup in registerClusters.js)
 const ZosungIRControlCluster = require('../../lib/clusters/ZosungIRControlCluster');
@@ -20,12 +20,11 @@ const CMD_IR_LEARN = 0x00;
 
 // ZosungIRTransmit commands (cluster 0xED00)
 const CMD_START_TRANSMIT = 0x00;
-const CMD_START_TRANSMIT_ACK = 0x01;
 const CMD_CODE_DATA_REQUEST = 0x02;
-const CMD_CODE_DATA_RESPONSE = 0x03;
 const CMD_DONE_SENDING = 0x04;
-const CMD_DONE_RECEIVING = 0x05;
-const CMD_ACK = 0x0B;
+
+const KNOWN_MAINS_MANUFACTURER = '_tz3290_gnl5a6a5xvql7c2a';
+const J37_BATTERY_MANUFACTURER = '_tz3290_j37rooaxrcdcqo5n';
 
 // v5.5.356: IR Protocol constants from research
 const IR_PROTOCOLS = {
@@ -81,7 +80,30 @@ const LEARNING_STATES = {
  */
 class IrBlasterDevice extends ZigBeeDevice {
 
-  get mainsPowered() { return true; }
+  _getDeviceIdentity(zclNode = this._zclNode) {
+    const data = this.getData?.() || {};
+    const basicAttributes = zclNode?.endpoints?.[1]?.clusters?.basic?.attributes || {};
+    const unwrap = (value) => value?.value ?? value;
+    const manufacturerName = data.manufacturerName
+      || this.getSetting?.('zb_manufacturer_name')
+      || this.getStoreValue?.('manufacturerName')
+      || unwrap(basicAttributes.manufacturerName)
+      || '';
+    const modelId = data.modelId
+      || this.getSetting?.('zb_model_id')
+      || this.getStoreValue?.('modelId')
+      || unwrap(basicAttributes.modelId)
+      || '';
+
+    return {
+      manufacturerName: String(manufacturerName).toLowerCase(),
+      modelId: String(modelId).toUpperCase(),
+    };
+  }
+
+  get mainsPowered() {
+    return this._getDeviceIdentity().manufacturerName === KNOWN_MAINS_MANUFACTURER;
+  }
 
   /**
    * Safe OnOff with timeout - prevents 10000ms default timeout errors
@@ -100,7 +122,10 @@ class IrBlasterDevice extends ZigBeeDevice {
       await Promise.race([
         cluster[method](),
         new Promise((_, reject) =>
-          this.homey.setTimeout(() => { if (this._destroyed) return; reject(new Error(`OnOff.${method} timed out after ${timeoutMs}ms`)); }, timeoutMs)
+          this.homey.setTimeout(() => {
+            if (this._destroyed) { return; }
+            reject(new Error(`OnOff.${method} timed out after ${timeoutMs}ms`));
+          }, timeoutMs)
         )
       ]);
     } catch (err) {
@@ -109,27 +134,31 @@ class IrBlasterDevice extends ZigBeeDevice {
   }
 
   async onNodeInit({ zclNode }) {
-    // Auto-fix: Remove battery capabilities for mains-powered devices
-    await this.removeCapability('measure_battery').catch(() => {});
-    await this.removeCapability('alarm_battery').catch(() => {});
+    this._zclNode = zclNode;
     await super.onNodeInit({ zclNode });
-    // --- Attribute Reporting Configuration (auto-generated) ---
-    try {
-      await this.configureAttributeReporting([
-        {
-          cluster: 'genPowerCfg',
-          attributeName: 'batteryPercentageRemaining',
-          minInterval: 3600,
-          maxInterval: 43200,
-          minChange: 2,
-        }
-      ]);
-      this.log('Attribute reporting configured successfully');
-    } catch (err) {
-      this.log('Attribute reporting config failed (device may not support it):', err.message);
+
+    const identity = this._getDeviceIdentity(zclNode);
+    const isJ37BatteryVariant = identity.manufacturerName === J37_BATTERY_MANUFACTURER
+      && (!identity.modelId || identity.modelId === 'TS1201');
+
+    if (isJ37BatteryVariant && !this.hasCapability('measure_battery')) {
+      await this.addCapability('measure_battery').catch((err) => {
+        this.log('[IR-BATTERY] Could not restore measure_battery:', err.message);
+      });
     }
 
-    // v5.13.3: IR blasters are USB-powered, remove battery capthis.log('IR Blaster initializing...');
+    if (identity.manufacturerName === KNOWN_MAINS_MANUFACTURER) {
+      await this.removeCapability('measure_battery').catch(() => {});
+      await this.removeCapability('alarm_battery').catch(() => {});
+      this.log('[IR-BATTERY] Known USB-powered variant: battery capability disabled');
+    } else {
+      await this._setupBatteryReporting(zclNode);
+      if (isJ37BatteryVariant) {
+        this.log('[IR-BATTERY] J37 TS1201 battery profile enabled');
+      }
+    }
+
+    this.log('IR Blaster initializing...');
 
     // v5.5.356: Initialize enhanced IR storage system
     this._learnedCodes = this.getStoreValue('learned_codes') || {};
@@ -139,9 +168,6 @@ class IrBlasterDevice extends ZigBeeDevice {
     this._learningState = LEARNING_STATES.IDLE;
     this._protocolAnalysis = {};
     this._deviceCapabilities = null;
-
-    // Store zclNode reference
-    this._zclNode = zclNode;
 
     // Get device info
     await irBlasterInit.init(this);
@@ -202,6 +228,159 @@ class IrBlasterDevice extends ZigBeeDevice {
     await this._setupAdvancedClusterListeners(zclNode);
 
     this.log('IR Blaster initialized successfully with enhanced features');
+  }
+
+  _getPowerCfgCluster(zclNode = this._zclNode) {
+    for (const [endpointId, endpoint] of Object.entries(zclNode?.endpoints || {})) {
+      const cluster = endpoint?.clusters?.powerConfiguration
+        || endpoint?.clusters?.genPowerCfg
+        || endpoint?.clusters?.[0x0001]
+        || endpoint?.clusters?.[1];
+      if (cluster) { return { cluster, endpointId: Number(endpointId) }; }
+    }
+    return null;
+  }
+
+  _normalizeBatteryVoltage(rawVoltage) {
+    if (rawVoltage === null || rawVoltage === undefined) { return null; }
+    const raw = Number(rawVoltage);
+    if (!Number.isFinite(raw) || raw <= 0) { return null; }
+
+    if (raw > 1000 && raw <= 6000) { return raw / 1000; }
+    if (raw > 100 && raw <= 600) { return raw / 100; }
+    if (raw > 20 && raw <= 60) { return raw / 10; }
+    if (raw >= 1.5 && raw <= 6) { return raw; }
+    return null;
+  }
+
+  _voltageToBatteryPercent(rawVoltage) {
+    const voltage = this._normalizeBatteryVoltage(rawVoltage);
+    if (voltage === null) { return null; }
+
+    const curve = [
+      [3.3, 100], [3.1, 98], [3.0, 95], [2.9, 85], [2.8, 70],
+      [2.7, 50], [2.6, 30], [2.5, 15], [2.4, 8], [2.2, 2], [2.0, 0],
+    ];
+    if (voltage >= curve[0][0]) { return 100; }
+    for (let index = 0; index < curve.length - 1; index++) {
+      const high = curve[index];
+      const low = curve[index + 1];
+      if (voltage <= high[0] && voltage >= low[0]) {
+        const ratio = (voltage - low[0]) / (high[0] - low[0]);
+        return Math.round(low[1] + (ratio * (high[1] - low[1])));
+      }
+    }
+    return 0;
+  }
+
+  _normalizeBatteryPercentage(rawValue) {
+    if (rawValue === null || rawValue === undefined) { return null; }
+    const raw = Number(rawValue);
+    if (!Number.isFinite(raw) || raw < 0 || raw === 0xFF || raw === 0xFFFF) { return null; }
+    if (raw === 200) { return 100; }
+    if (raw > 1000 && raw <= 6000) { return this._voltageToBatteryPercent(raw); }
+    if (raw > 100 && raw < 200) { return Math.round(raw / 2); }
+    if (raw <= 100) { return Math.round(raw); }
+    return null;
+  }
+
+  async _setBatteryPercentage(percent, source) {
+    if (percent === null || percent === undefined) { return false; }
+    const numericPercent = Number(percent);
+    if (!this.hasCapability?.('measure_battery') || !Number.isFinite(numericPercent)) { return false; }
+    const value = Math.max(0, Math.min(100, Math.round(numericPercent)));
+    const setter = typeof this.safeSetCapabilityValue === 'function'
+      ? this.safeSetCapabilityValue.bind(this)
+      : this.setCapabilityValue.bind(this);
+
+    try {
+      await setter('measure_battery', value);
+      await this.setStoreValue('last_battery_percentage', value).catch(() => {});
+      await this.setStoreValue('last_battery_source', source).catch(() => {});
+      await this.setStoreValue('last_battery_time', Date.now()).catch(() => {});
+      this.log(`[IR-BATTERY] ${source}: ${value}%`);
+      return true;
+    } catch (err) {
+      this.log(`[IR-BATTERY] Failed to set battery from ${source}: ${err.message}`);
+      return false;
+    }
+  }
+
+  async _handleBatteryAttributes(attributes, source) {
+    if (!attributes) { return false; }
+
+    if (attributes.batteryPercentageRemaining !== undefined) {
+      const percent = this._normalizeBatteryPercentage(attributes.batteryPercentageRemaining);
+      if (percent !== null) { return this._setBatteryPercentage(percent, `${source} percentage`); }
+    }
+
+    if (attributes.batteryVoltage !== undefined) {
+      const percent = this._voltageToBatteryPercent(attributes.batteryVoltage);
+      if (percent !== null) {
+        await this.setStoreValue('batteryVoltage', attributes.batteryVoltage).catch(() => {});
+        return this._setBatteryPercentage(percent, `${source} voltage`);
+      }
+    }
+
+    return false;
+  }
+
+  _bindBatteryAttribute(cluster, eventName, listener) {
+    if (!cluster || typeof cluster.on !== 'function') { return; }
+    cluster.on(eventName, listener);
+    this._batteryBindings ??= [];
+    this._batteryBindings.push({ cluster, eventName, listener });
+  }
+
+  async _setupBatteryReporting(zclNode) {
+    if (!this.hasCapability?.('measure_battery')) { return; }
+
+    const powerCfg = this._getPowerCfgCluster(zclNode);
+    if (!powerCfg) {
+      const stored = this.getStoreValue?.('last_battery_percentage');
+      await this._setBatteryPercentage(stored, 'stored fallback');
+      this.log('[IR-BATTERY] Power Configuration cluster unavailable');
+      return;
+    }
+
+    try {
+      await this.configureAttributeReporting([
+        {
+          endpointId: powerCfg.endpointId,
+          cluster: CLUSTER.POWER_CONFIGURATION,
+          attributeName: 'batteryPercentageRemaining',
+          minInterval: 3600,
+          maxInterval: 43200,
+          minChange: 2,
+        },
+      ]);
+      this.log('[IR-BATTERY] Attribute reporting configured');
+    } catch (err) {
+      this.log('[IR-BATTERY] Attribute reporting unavailable:', err.message);
+    }
+
+    const { cluster } = powerCfg;
+    const percentageListener = (value) => {
+      const percent = this._normalizeBatteryPercentage(value);
+      this._setBatteryPercentage(percent, 'ZCL report percentage').catch(() => {});
+    };
+    const voltageListener = (value) => {
+      this.setStoreValue('batteryVoltage', value).catch(() => {});
+      const percent = this._voltageToBatteryPercent(value);
+      this._setBatteryPercentage(percent, 'ZCL report voltage').catch(() => {});
+    };
+    this._bindBatteryAttribute(cluster, 'attr.batteryPercentageRemaining', percentageListener);
+    this._bindBatteryAttribute(cluster, 'attr.batteryVoltage', voltageListener);
+
+    if (typeof cluster.readAttributes === 'function') {
+      const attributes = await cluster
+        .readAttributes(['batteryPercentageRemaining', 'batteryVoltage'])
+        .catch((err) => {
+          this.log('[IR-BATTERY] Initial read failed:', err.message);
+          return null;
+        });
+      await this._handleBatteryAttributes(attributes, 'ZCL initial read');
+    }
   }
 
   /**
@@ -362,7 +541,7 @@ class IrBlasterDevice extends ZigBeeDevice {
    * v5.5.356: Enable advanced IR learning mode with protocol detection
    */
   async _enableAdvancedLearnMode(duration = 30, options = {}) {
-    const { protocol = 'auto', frequency = IR_FREQUENCIES.DEFAULT, codeName } = options;
+    const { protocol = 'auto', frequency = IR_FREQUENCIES.DEFAULT } = options;
 
     this.log(`Enabling advanced IR learn mode: protocol=${protocol}, frequency=${frequency}, duration=${duration}s`);
 
@@ -434,7 +613,7 @@ class IrBlasterDevice extends ZigBeeDevice {
       // v5.5.357: FORUM FIX - Extend timeout to 60s (was 30s)
       const extendedDuration = Math.max(duration, 60);
       this._learnTimeout = this.homey.setTimeout(async () => {
-        if (this._destroyed) return;
+        if (this._destroyed) { return; }
         try {
           await this._disableLearnMode();
           this._learningState = LEARNING_STATES.TIMEOUT;
@@ -505,7 +684,7 @@ class IrBlasterDevice extends ZigBeeDevice {
 
       // Auto-disable after specified duration
       this._learnTimeout = this.homey.setTimeout(async () => {
-        if (this._destroyed) return;
+        if (this._destroyed) { return; }
         try {
           await this._disableLearnMode();
           this.log(`Learn mode auto-disabled after ${duration}s timeout`);
@@ -694,9 +873,12 @@ class IrBlasterDevice extends ZigBeeDevice {
     // Wait for acknowledgment and data requests
     // The device will request chunks via codeDataRequest events
     return new Promise((resolve, reject) => {
-      const timeout = this.homey.setTimeout(() => { if (this._destroyed) return; delete this._pendingIRMessage;
+      const timeout = this.homey.setTimeout(() => {
+        if (this._destroyed) { return; }
+        delete this._pendingIRMessage;
         delete this._pendingIRSeq;
-        reject(new Error('IR transmission timeout')); }, 10000);
+        reject(new Error('IR transmission timeout'));
+      }, 10000);
 
       this._irTransmitResolve = () => {
         this.homey.clearTimeout(timeout);
@@ -956,7 +1138,7 @@ class IrBlasterDevice extends ZigBeeDevice {
    * v5.5.362: Handle received code chunk during learning
    */
   async _handleReceivedCodeChunk(data) {
-    if (this._destroyed) return;
+    if (this._destroyed) { return; }
     const seq = data.seq ?? data.sequenceNumber;
     const position = data.position ?? 0;
     let chunkData = data.msgpart ?? data.data;
@@ -1077,7 +1259,7 @@ class IrBlasterDevice extends ZigBeeDevice {
   }
 
   // Handle IR cluster frames
-  _handleIRClusterFrame(clusterId, frame, meta) {
+  _handleIRClusterFrame(clusterId, frame) {
     this.log(`IR cluster frame: ${clusterId.toString(16)}, cmd: ${frame.command}`);
 
     if (clusterId === ZOSUNG_IR_CONTROL_CLUSTER_ID) {
@@ -1114,7 +1296,6 @@ class IrBlasterDevice extends ZigBeeDevice {
     const zclNode = this._zclNode;
     if (!zclNode?.endpoints?.[1]) {return;}
 
-    const irControlCluster = this._irControlCluster;
     this.log(`IR protocol hint: ${protocol} (IRProtocolSet disabled - struct incompatible)`);
   }
 
@@ -1233,7 +1414,7 @@ class IrBlasterDevice extends ZigBeeDevice {
 
   // v5.5.361: Handle code data request for chunked transmission
   async _handleCodeDataRequest(data) {
-    if (this._destroyed) return;
+    if (this._destroyed) { return; }
     if (!this._pendingIRMessage) {return;}
 
     // v5.9.14: Z2M-compatible field names
@@ -1271,7 +1452,7 @@ class IrBlasterDevice extends ZigBeeDevice {
 
   // v5.12.0: Handle Code04 from device (sending complete) — respond with Code05 per Z2M
   async _handleTransmitComplete(data) {
-    if (this._destroyed) return;
+    if (this._destroyed) { return; }
     const seq = data.seq ?? data.sequenceNumber;
     // Z2M: send Code05 (doneReceiving) back to device
     const cl = this._irTransmitCluster;
@@ -1406,7 +1587,6 @@ class IrBlasterDevice extends ZigBeeDevice {
   }
 
   onDeleted() {
-    super.onDeleted();
     this.log('IR Blaster device deleted');
 
     // Cleanup timeouts
@@ -1414,11 +1594,18 @@ class IrBlasterDevice extends ZigBeeDevice {
       this.homey.clearTimeout(this._learnTimeout);
     }
 
+    for (const { cluster, eventName, listener } of this._batteryBindings || []) {
+      if (typeof cluster.removeListener === 'function') {
+        cluster.removeListener(eventName, listener);
+      }
+    }
+    this._batteryBindings = [];
+
     // Cleanup any pending transmissions
     this._currentTransmitCode = null;
     this._receiveBuffers = {};
+    super.onDeleted();
   }
 }
 
 module.exports = IrBlasterDevice;
-

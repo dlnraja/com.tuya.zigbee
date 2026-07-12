@@ -6,10 +6,10 @@ const {sleep}=require('./retry-helper');
 const fs=require('fs');
 const path=require('path');
 const { analyzeAndRespond } = require('./intelligent-bug-detector.js');
+const {shadowSkip}=require('./github-shadow-policy');
 
 const DRY=process.env.DRY_RUN==='true';
 const REPO=process.env.TARGET_REPO||'JohanBendz/com.tuya.zigbee';
-const CAN_CLOSE=REPO.startsWith('dlnraja/');
 const VER=process.env.APP_VERSION||'latest';
 const DRVC=process.env.DRIVER_COUNT||'138';
 const FPC=process.env.FP_COUNT||'5579';
@@ -26,6 +26,7 @@ function wasTriaged(num){
 
 function postComment(num,body){
   if(DRY){console.log(`[DRY] #${num}: ${body.slice(0,100)}...`);return;}
+  if(shadowSkip(REPO,'POST',{body}))return;
   const tmpFile=path.join(os.tmpdir(),'_triage_msg.md');
   fs.writeFileSync(tmpFile,`${TAG}\n${body}`);
   try{gh(`issue comment ${num} -R ${REPO} -F "${tmpFile}"`);console.log(`Commented on ${REPO}#${num}`);}
@@ -80,12 +81,6 @@ for(const it of issues){
   const alreadyTriaged=wasTriaged(it.number);
   if(alreadyTriaged||isOwnerPost(it)){
     iTriaged++;
-    // v5.11.47: Stale sweep — close already-triaged items where all FPs are supported
-    const mfrs2=extractMfrFromText(`${it.title||''} ${it.body||''}`);
-    const allSupp2=mfrs2.length>0&&mfrs2.every(m=>fps.has(m));
-    if(allSupp2&&!DRY&&CAN_CLOSE){
-      try{gh(`issue close ${it.number} -R ${REPO} -r "completed" -c "All fingerprints supported in v${VER}. Closing as resolved."`);iClosed++;console.log(`  [SWEEP] Closed #${it.number}`);}catch{}
-    }
     continue;
   }
   const itTxt=`${it.title||''} ${it.body||''}`;
@@ -105,10 +100,6 @@ for(const it of issues){
     msg=buildSupportedMsg(found)+`\n\n---\n\`${missing.join('\`, \`')}\` ${missing.length===1?'isn\'t':'aren\'t'} in there yet — logged for next release.`;
   }
   if(msg){postComment(it.number,msg);iCommented++;}
-  // Auto-close if ALL FPs supported (only on own repo)
-  if(found.length&&!missing.length&&!DRY&&CAN_CLOSE){
-    try{gh(`issue edit ${it.number} -R ${REPO} --add-label "awaiting-verification"`);console.log(`  Verify-requested #${it.number}`);}catch{}
-  }
 }
 
 // PRs
@@ -119,12 +110,6 @@ for(const pr of prs){
   const alreadyTriaged2=wasTriaged(pr.number);
   if(alreadyTriaged2||isOwnerPost(pr)){
     pTriaged++;
-    // v5.11.47: Stale sweep — close already-triaged PRs where all FPs supported
-    const mfrs3=extractMfrFromText(`${pr.title||''} ${pr.body||''}`);
-    const allSupp3=mfrs3.length>0&&mfrs3.every(m=>fps.has(m));
-    if(allSupp3&&!DRY&&CAN_CLOSE){
-      try{gh(`pr edit ${pr.number} -R ${REPO} --add-label "awaiting-verification"`);console.log(`  [SWEEP] Verify-requested PR #${pr.number}`);}catch{}
-    }
     continue;
   }
   const prTxt=`${pr.title||''} ${pr.body||''}`;
@@ -140,10 +125,6 @@ for(const pr of prs){
   if(found.length||missing.length){
     postComment(pr.number,buildPRMsg(found,missing));
     pCommented++;
-  }
-  // Auto-close PR if ALL FPs supported (only on own repo)
-  if(found.length&&!missing.length&&!DRY&&CAN_CLOSE){
-    try{gh(`pr edit ${pr.number} -R ${REPO} --add-label "awaiting-verification"`);console.log(`  Verify-requested PR #${pr.number}`);}catch{}
   }
 }
 

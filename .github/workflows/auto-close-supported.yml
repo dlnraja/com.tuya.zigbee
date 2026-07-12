@@ -1,11 +1,8 @@
-# Universal Tuya Zigbee - Batch Close & Respond ALL Issues/PRs
-# Processes ALL open issues & PRs on dlnraja + JohanBendz repos
-# - Responds with FP status to unresponded issues/PRs
-# - Auto-closes issues/PRs where ALL fingerprints are already supported
-# - Auto-closes stale PRs on JohanBendz with FPs already integrated
-# - Labels everything for tracking
+# Universal Tuya Zigbee - Batch Analyze & Respond
+# Responses and labels remain available on dlnraja. State transitions are manual.
+# JohanBendz is a strict read-only evidence source.
 
-name: "Batch Close & Respond All"
+name: "Batch Analyze & Respond"
 
 # <!-- badges:start -->
 # [![Batch Close & Respond All](https://github.com/dlnraja/com.tuya.zigbee/actions/workflows/auto-close-supported.yml/badge.svg)](https://github.com/dlnraja/com.tuya.zigbee/actions/workflows/auto-close-supported.yml)
@@ -117,12 +114,13 @@ jobs:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY || '' }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
-          DRY_RUN: ${{ inputs.dry_run || 'false' }}
           STALE_DAYS: "14"
           MAX_ITEMS: ${{ inputs.max_items || '200' }}
           INCLUDE_CLOSED: ${{ inputs.include_closed || 'false' }}
           FORCE_REPROCESS: ${{ inputs.force_reprocess || 'false' }}
           REPOS: "JohanBendz/com.tuya.zigbee"
+          READ_ONLY_SHADOW: "true"
+          DRY_RUN: "true"
         run: node .github/scripts/github-issue-manager.js
 
       - name: Commit state

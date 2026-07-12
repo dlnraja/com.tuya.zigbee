@@ -38,7 +38,7 @@
           "id": "auto",
           "label": {
             "en": "Auto Detect",
-            "fr": "DÃ©tection Automatique"
+            "fr": "Détection Automatique"
           }
         },
         {
@@ -65,7 +65,7 @@
       ],
       "hint": {
         "en": "Select power source manually or use auto-detection",
-        "fr": "SÃ©lectionnez la source d'alimentation manuellement ou utilisez la dÃ©tection automatique"
+        "fr": "Sélectionnez la source d'alimentation manuellement ou utilisez la détection automatique"
       }
     },
     {
@@ -81,7 +81,7 @@
           "id": "auto",
           "label": {
             "en": "Auto Detect",
-            "fr": "DÃ©tection Automatique"
+            "fr": "Détection Automatique"
           }
         },
         {
@@ -122,7 +122,7 @@
       ],
       "hint": {
         "en": "Select battery type manually or use auto-detection based on voltage",
-        "fr": "SÃ©lectionnez le type de batterie manuellement ou utilisez la dÃ©tection automatique basÃ©e sur la tension"
+        "fr": "Sélectionnez le type de batterie manuellement ou utilisez la détection automatique basée sur la tension"
       }
     },
     {
@@ -138,7 +138,7 @@
       "step": 5,
       "hint": {
         "en": "Trigger low battery warning when below this percentage",
-        "fr": "DÃ©clencher l'alerte batterie faible en dessous de ce pourcentage"
+        "fr": "Déclencher l'alerte batterie faible en dessous de ce pourcentage"
       }
     },
     {
@@ -154,7 +154,7 @@
       "step": 5,
       "hint": {
         "en": "Trigger critical battery warning when below this percentage",
-        "fr": "DÃ©clencher l'alerte batterie critique en dessous de ce pourcentage"
+        "fr": "Déclencher l'alerte batterie critique en dessous de ce pourcentage"
       }
     },
     {
@@ -167,7 +167,7 @@
       "value": true,
       "hint": {
         "en": "Send flow notifications for battery events",
-        "fr": "Envoyer des notifications de flow pour les Ã©vÃ©nements de batterie"
+        "fr": "Envoyer des notifications de flow pour les événements de batterie"
       }
     },
     {
@@ -183,7 +183,7 @@
       "step": 1,
       "hint": {
         "en": "How often to request battery status updates",
-        "fr": "FrÃ©quence de demande des mises Ã jour d'Ã©tat de batterie"
+        "fr": "Fréquence de demande des mises àjour d'état de batterie"
       }
     },
     {
@@ -191,7 +191,7 @@
       "type": "dropdown",
       "label": {
         "en": "Energy Optimization Mode",
-        "fr": "Mode Optimisation Ã‰nergÃ©tique"
+        "fr": "Mode Optimisation Ã‰nergétique"
       },
       "value": "balanced",
       "values": [
@@ -199,27 +199,27 @@
           "id": "performance",
           "label": {
             "en": "Performance (More responsive)",
-            "fr": "Performance (Plus rÃ©actif)"
+            "fr": "Performance (Plus réactif)"
           }
         },
         {
           "id": "balanced",
           "label": {
             "en": "Balanced",
-            "fr": "Ã‰quilibrÃ©"
+            "fr": "Ã‰quilibré"
           }
         },
         {
           "id": "power_saving",
           "label": {
             "en": "Power Saving (Longer battery)",
-            "fr": "Ã‰conomie d'Ã©nergie (Batterie plus longue)"
+            "fr": "Ã‰conomie d'énergie (Batterie plus longue)"
           }
         }
       ],
       "hint": {
         "en": "Balance between responsiveness and battery life",
-        "fr": "Ã‰quilibre entre rÃ©activitÃ© et durÃ©e de vie de la batterie"
+        "fr": "Ã‰quilibre entre réactivité et durée de vie de la batterie"
       }
     },
     {
@@ -232,7 +232,7 @@
       "value": true,
       "hint": {
         "en": "Estimate power consumption when real measurement is not available (AC/DC devices only)",
-        "fr": "Estimer la consommation quand la mesure rÃ©elle n'est pas disponible (appareils AC/DC seulement)"
+        "fr": "Estimer la consommation quand la mesure réelle n'est pas disponible (appareils AC/DC seulement)"
       }
     },
     {
@@ -261,7 +261,7 @@
       "step": 1,
       "hint": {
         "en": "Time to wait before confirming state change (0=disabled). Increase for unstable sensors.",
-        "fr": "Temps d'attente avant de confirmer un changement d'Ã©tat (0=dÃ©sactivÃ©). Augmenter pour capteurs instables."
+        "fr": "Temps d'attente avant de confirmer un changement d'état (0=désactivé). Augmenter pour capteurs instables."
       }
     },
     {
@@ -282,12 +282,12 @@
       "type": "checkbox",
       "label": {
         "en": "Enable Radio Presence Sensing",
-        "fr": "Activer la DÃ©tection de PrÃ©sence Radio"
+        "fr": "Activer la Détection de Présence Radio"
       },
       "value": false,
       "hint": {
         "en": "Infer presence from Zigbee signal fluctuations (BETA)",
-        "fr": "DÃ©duit la prÃ©sence des fluctuations du signal Zigbee (BETA)"
+        "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
       }
     },
     {
@@ -295,7 +295,7 @@
       "type": "number",
       "label": {
         "en": "Radio Presence Sensitivity",
-        "fr": "SensibilitÃ© PrÃ©sence Radio"
+        "fr": "Sensibilité Présence Radio"
       },
       "value": 15,
       "min": 5,
@@ -337,7 +337,7 @@
       "id": "ota_check",
       "title": {
         "en": "Check Zigbee OTA Update",
-        "fr": "VÃ©rifier MÃJ OTA",
+        "fr": "Vérifier MÃJ OTA",
         "nl": "Controleer op OTA-updates"
       }
     }
@@ -379,5 +379,8 @@
       "_GENERIC_CONTACT_SENSOR_ZIGBEE",
       "_generic_contact_sensor_zigbee"
     ]
-  }
+  },
+  "_pidConflictNotes": [
+    "// PID-CONFLICT-NOTE Excellux shared with 30 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
+  ]
 }

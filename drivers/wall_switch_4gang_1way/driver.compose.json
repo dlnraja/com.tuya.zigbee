@@ -80,6 +80,8 @@
   },
   "zigbee": {
     "manufacturerName": [
+      "_tz3002_pzao9ls1",
+      "_TZ3002_pzao9ls1",
       "_tz3002_vaq2bfcu",
       "_tz3000_2ei1fkwb",
       "_tz3000_hy5lggkg",
@@ -104,6 +106,9 @@
           6,
           57344,
           57345
+        ],
+        "bindings": [
+          6
         ]
       },
       "2": {
@@ -115,6 +120,9 @@
           6,
           57344,
           57345
+        ],
+        "bindings": [
+          6
         ]
       },
       "3": {
@@ -126,6 +134,9 @@
           6,
           57344,
           57345
+        ],
+        "bindings": [
+          6
         ]
       },
       "4": {
@@ -137,6 +148,9 @@
           6,
           57344,
           57345
+        ],
+        "bindings": [
+          6
         ]
       }
     },
@@ -378,5 +392,10 @@
       "getable": false,
       "setable": false
     }
-  }
+  },
+  "_pidConflictNotes": [
+    "// PID-CONFLICT-NOTE TS0726 shared with 21 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE TS0004 shared with 14 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE TS0014 shared with 7 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
+  ]
 }

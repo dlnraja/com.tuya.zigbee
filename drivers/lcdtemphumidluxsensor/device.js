@@ -1,84 +1,194 @@
 'use strict';
 
-const Homey = require('homey');
 const { ZigBeeDevice } = require('homey-zigbeedriver');
-const { debug, CLUSTER } = require('zigbee-clusters');
+const { Cluster, CLUSTER } = require('zigbee-clusters');
 
-class lcdtemphumidluxsensor extends ZigBeeDevice {
-	
-	async onNodeInit({zclNode}) {
+class LcdTempHumidLuxSensor extends ZigBeeDevice {
 
-/*     debug(true);
-    this.enableDebug(); */
+  _ensureMeasurementEndpoint(zclNode) {
+    const endpoints = zclNode?.endpoints;
+    const endpointOne = endpoints?.[1];
+    if (!endpoints || !endpointOne) {
+      this.log('[QAAYS] Cannot create virtual endpoint 2: endpoint 1 is unavailable');
+      return null;
+    }
 
-		this.printNode();
+    let endpointTwo = endpoints[2];
+    if (!endpointTwo) {
+      const Endpoint = endpointOne.constructor;
+      if (typeof Endpoint !== 'function') {
+        this.log('[QAAYS] Cannot create virtual endpoint 2: endpoint constructor is unavailable');
+        return null;
+      }
 
-    if (this.isFirstInit()){
-			await this.configureAttributeReporting([
-				{
-					endpointId: 1,
-					cluster: CLUSTER.POWER_CONFIGURATION,
-					attributeName: 'batteryPercentageRemaining',
-          minInterval: 60, // Minimum interval (1 minute)
-          maxInterval: 21600, // Maximum interval (6 hours)
-          minChange: 1, // Report changes greater than 1%
-				}
-			]);
-		}
+      try {
+        endpointTwo = new Endpoint(zclNode, {
+          endpointId: 2,
+          inputClusters: [
+            CLUSTER.BASIC.ID,
+            CLUSTER.TEMPERATURE_MEASUREMENT.ID,
+            CLUSTER.RELATIVE_HUMIDITY_MEASUREMENT.ID,
+          ],
+          outputClusters: [],
+        });
+        endpoints[2] = endpointTwo;
+        this.log('[QAAYS] Created virtual endpoint 2 for temperature and humidity reports');
+      } catch (err) {
+        this.log('[QAAYS] Failed to create virtual endpoint 2:', err.message);
+        return null;
+      }
+    }
 
- 		// measure_temperature
-		zclNode.endpoints[2].clusters[CLUSTER.TEMPERATURE_MEASUREMENT.NAME]
-		.on('attr.measuredValue', this.onTemperatureMeasuredAttributeReport.bind(this));
-  
-		// measure_humidity
-		zclNode.endpoints[2].clusters[CLUSTER.RELATIVE_HUMIDITY_MEASUREMENT.NAME]
-		.on('attr.measuredValue', this.onRelativeHumidityMeasuredAttributeReport.bind(this));
+    // Repair partially described endpoint 2 instances without replacing them.
+    endpointTwo.clusters ??= {};
+    for (const clusterId of [
+      CLUSTER.TEMPERATURE_MEASUREMENT.ID,
+      CLUSTER.RELATIVE_HUMIDITY_MEASUREMENT.ID,
+    ]) {
+      const ClusterClass = Cluster.getCluster(clusterId);
+      if (ClusterClass && !endpointTwo.clusters?.[ClusterClass.NAME]) {
+        endpointTwo.clusters[ClusterClass.NAME] = new ClusterClass(endpointTwo);
+      }
+    }
 
-		// measure_luminance
-		zclNode.endpoints[1].clusters[CLUSTER.ILLUMINANCE_MEASUREMENT.NAME]
-		.on('attr.measuredValue', this.onIlluminanceMeasuredAttributeReport.bind(this));
+    return endpointTwo;
+  }
 
-		// measure_battery // alarm_battery
-		zclNode.endpoints[1].clusters[CLUSTER.POWER_CONFIGURATION.NAME]
-		.on('attr.batteryPercentageRemaining', this.handleBatteryPercentageReport.bind(this));
+  _bindAttribute(cluster, eventName, handler) {
+    if (!cluster || typeof cluster.on !== 'function') { return false; }
+    const listener = handler.bind(this);
+    cluster.on(eventName, listener);
+    this._attributeBindings ??= [];
+    this._attributeBindings.push({ cluster, eventName, listener });
+    return true;
+  }
 
-	}
+  async _setCapabilityIfPresent(capabilityId, value) {
+    if (!this.hasCapability(capabilityId) || !Number.isFinite(value)) { return; }
+    const setter = typeof this.safeSetCapabilityValue === 'function'
+      ? this.safeSetCapabilityValue.bind(this)
+      : this.setCapabilityValue.bind(this);
+    try {
+      await setter(capabilityId, value);
+    } catch (err) {
+      this.error(err);
+    }
+  }
 
- 	onTemperatureMeasuredAttributeReport(measuredValue) {
-		const temperatureOffset = this.getSetting('temperature_offset') || 0;
-		const parsedValue = this.getSetting('temperature_decimals') === '2' ? Math.round((measuredValue / 100) * 100) / 100 : Math.round((measuredValue / 100) * 10) / 10;
-		this.log('measure_temperature | temperatureMeasurement - measuredValue (temperature):', parsedValue, '+ temperature offset', temperatureOffset);
-		this.safeSetCapabilityValue('measure_temperature', parsedValue + temperatureOffset).catch(this.error);
-	}
+  async onNodeInit({ zclNode }) {
+    this._zclNode = zclNode;
+    const endpointTwo = this._ensureMeasurementEndpoint(zclNode);
+    const endpointOne = zclNode?.endpoints?.[1];
 
-	onRelativeHumidityMeasuredAttributeReport(measuredValue) {
-		const humidityOffset = this.getSetting('humidity_offset') || 0;
-		const parsedValue = this.getSetting('humidity_decimals') === '2' ? Math.round((measuredValue / 100) * 100) / 100 : Math.round((measuredValue / 100) * 10) / 10;
-		this.log('measure_humidity | relativeHumidity - measuredValue (humidity):', parsedValue, '+ humidity offset', humidityOffset);
-		this.safeSetCapabilityValue('measure_humidity', parsedValue + humidityOffset).catch(this.error);
-	}
+    if (!endpointOne) {
+      throw new Error('QAAYS sensor endpoint 1 is unavailable');
+    }
 
-	onIlluminanceMeasuredAttributeReport(measuredValue) {
-    const parsedValue = 10 ** ((measuredValue - 1) / 10000);
-		this.log('measure_luminance | Luminance - measuredValue (lux):', parsedValue);
-		this.safeSetCapabilityValue('measure_luminance', parsedValue).catch(this.error);
-	}
+    if (this.isFirstInit()) {
+      await this.configureAttributeReporting([
+        {
+          endpointId: 1,
+          cluster: CLUSTER.POWER_CONFIGURATION,
+          attributeName: 'batteryPercentageRemaining',
+          minInterval: 60,
+          maxInterval: 21600,
+          minChange: 1,
+        },
+      ]).catch((err) => this.log('[QAAYS] Battery reporting configuration unavailable:', err.message));
+    }
 
-	handleBatteryPercentageReport(batteryPercentageRemaining) {
-		const batteryThreshold = this.getSetting('batteryThreshold') || 20;
-		this.log("measure_battery | powerConfiguration - batteryPercentageRemaining (%): ", batteryPercentageRemaining/2);
-		this.safeSetCapabilityValue('measure_battery', batteryPercentageRemaining/2).catch(this.error);
-		this.safeSetCapabilityValue('alarm_battery', (batteryPercentageRemaining/2 < batteryThreshold) ? true : false).catch(this.error);
-	}
+    const temperatureCluster = endpointTwo?.clusters?.[CLUSTER.TEMPERATURE_MEASUREMENT.NAME];
+    const humidityCluster = endpointTwo?.clusters?.[CLUSTER.RELATIVE_HUMIDITY_MEASUREMENT.NAME];
+    const illuminanceCluster = endpointOne.clusters?.[CLUSTER.ILLUMINANCE_MEASUREMENT.NAME];
+    const powerCluster = endpointOne.clusters?.[CLUSTER.POWER_CONFIGURATION.NAME];
 
-	onDeleted(){
-	  super.onDeleted();
-	this.log("temphumidluxsensor removed")
-	}
+    this._bindAttribute(
+      temperatureCluster,
+      'attr.measuredValue',
+      this.onTemperatureMeasuredAttributeReport,
+    );
+    this._bindAttribute(
+      humidityCluster,
+      'attr.measuredValue',
+      this.onRelativeHumidityMeasuredAttributeReport,
+    );
+    this._bindAttribute(
+      illuminanceCluster,
+      'attr.measuredValue',
+      this.onIlluminanceMeasuredAttributeReport,
+    );
+    this._bindAttribute(
+      powerCluster,
+      'attr.batteryPercentageRemaining',
+      this.handleBatteryPercentageReport,
+    );
+
+    if (!temperatureCluster || !humidityCluster) {
+      this.log('[QAAYS] Temperature or humidity cluster is unavailable on endpoint 2');
+    }
+  }
+
+  onTemperatureMeasuredAttributeReport(measuredValue) {
+    const raw = Number(measuredValue);
+    if (!Number.isFinite(raw)) { return; }
+    const temperatureOffset = Number(this.getSetting('temperature_offset')) || 0;
+    const parsedValue = this.getSetting('temperature_decimals') === '2'
+      ? Math.round(raw) / 100
+      : Math.round(raw / 10) / 10;
+    this.log('measure_temperature | temperatureMeasurement:', parsedValue, '+ offset', temperatureOffset);
+    this._setCapabilityIfPresent('measure_temperature', parsedValue + temperatureOffset);
+  }
+
+  onRelativeHumidityMeasuredAttributeReport(measuredValue) {
+    const raw = Number(measuredValue);
+    if (!Number.isFinite(raw)) { return; }
+    const humidityOffset = Number(this.getSetting('humidity_offset')) || 0;
+    const parsedValue = this.getSetting('humidity_decimals') === '2'
+      ? Math.round(raw) / 100
+      : Math.round(raw / 10) / 10;
+    this.log('measure_humidity | relativeHumidity:', parsedValue, '+ offset', humidityOffset);
+    this._setCapabilityIfPresent('measure_humidity', parsedValue + humidityOffset);
+  }
+
+  onIlluminanceMeasuredAttributeReport(measuredValue) {
+    const raw = Number(measuredValue);
+    if (!Number.isFinite(raw) || raw === 0xFFFF) { return; }
+    const parsedValue = raw === 0 ? 0 : 10 ** ((raw - 1) / 10000);
+    this.log('measure_luminance | illuminanceMeasurement:', parsedValue);
+    this._setCapabilityIfPresent('measure_luminance', parsedValue);
+  }
+
+  handleBatteryPercentageReport(batteryPercentageRemaining) {
+    if (batteryPercentageRemaining === null || batteryPercentageRemaining === undefined) { return; }
+    const raw = Number(batteryPercentageRemaining);
+    if (!Number.isFinite(raw) || raw < 0 || raw === 0xFF) { return; }
+    const batteryPercentage = Math.max(0, Math.min(100, Math.round(raw / 2)));
+    const batteryThreshold = Number(this.getSetting('batteryThreshold')) || 20;
+    this.log('measure_battery | powerConfiguration:', batteryPercentage);
+    this._setCapabilityIfPresent('measure_battery', batteryPercentage);
+
+    if (this.hasCapability('alarm_battery')) {
+      const setter = typeof this.safeSetCapabilityValue === 'function'
+        ? this.safeSetCapabilityValue.bind(this)
+        : this.setCapabilityValue.bind(this);
+      setter('alarm_battery', batteryPercentage < batteryThreshold).catch((err) => this.error(err));
+    }
+  }
+
+  onDeleted() {
+    for (const { cluster, eventName, listener } of this._attributeBindings || []) {
+      if (typeof cluster.removeListener === 'function') {
+        cluster.removeListener(eventName, listener);
+      }
+    }
+    this._attributeBindings = [];
+    this.log('LCD temperature, humidity and luminance sensor removed');
+    super.onDeleted();
+  }
 
 }
 
-module.exports = lcdtemphumidluxsensor;
+module.exports = LcdTempHumidLuxSensor;
 
 
 /* "ids": {
