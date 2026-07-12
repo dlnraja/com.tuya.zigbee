@@ -770,5 +770,11 @@
   },
   "9.0.190": {
     "en": "Stability improvements and Homey test publication retry after transient processing failure."
+  },
+  "9.0.193": {
+    "en": "P11 release: door_sensor driver (TS0203), 96 Johan mfrs integrated (1618 FPs), workflow consolidation (47→34), continuous-flow + e2e-dashboard + upstream-guard, 13 archived. 657 dlnraja comments deleted from JohanBendz/com.tuya.zigbee.",
+    "fr": "Release P11: driver door_sensor (TS0203), 96 mfrs Johan intégrés (1618 FPs), consolidation workflows (47→34), continuous-flow + e2e-dashboard + upstream-guard, 13 archivés. 657 commentaires dlnraja supprimés sur JohanBendz/com.tuya.zigbee.",
+    "nl": "P11 release: door_sensor driver (TS0203), 96 Johan mfrs geïntegreerd (1618 FPs), workflow consolidatie (47→34), continuous-flow + e2e-dashboard + upstream-guard, 13 gearchiveerd. 657 dlnraja reacties verwijderd van JohanBendz/com.tuya.zigbee.",
+    "de": "P11-Release: door_sensor-Treiber (TS0203), 96 Johan-mfrs integriert (1618 FPs), Workflow-Konsolidierung (47→34), continuous-flow + e2e-dashboard + upstream-guard, 13 archiviert. 657 dlnraja-Kommentare aus JohanBendz/com.tuya.zigbee gelöscht."
   }
 }
