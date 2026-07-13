@@ -50,9 +50,12 @@ const CATEGORIES = [
 
 function download(url) {
   return new Promise((resolve, reject) => {
-    https.get(url, (res) => {
+    const headers = { 'User-Agent': 'mavis-ci' };
+    if (process.env.GH_TOKEN || process.env.GITHUB_TOKEN) {
+      headers['Authorization'] = `token ${process.env.GH_TOKEN || process.env.GITHUB_TOKEN}`;
+    }
+    https.get(url, { headers }, (res) => {
       if (res.statusCode === 301 || res.statusCode === 302) {
-        // Follow redirect
         return download(res.headers.location).then(resolve).catch(reject);
       }
       if (res.statusCode !== 200) {

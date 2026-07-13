@@ -29,7 +29,11 @@ const FOLDERS = ['tuya', 'xiaomi', 'ikea', 'philips', 'osram', 'inovelli', 'legr
 function ghApi(path) {
   return new Promise((resolve, reject) => {
     const url = `https://api.github.com/repos/${REPO}/contents/${path}?ref=${BRANCH}&per_page=100`;
-    https.get(url, { headers: { 'User-Agent': 'mavis-ci' }}, (res) => {
+    const headers = { 'User-Agent': 'mavis-ci' };
+    if (process.env.GH_TOKEN || process.env.GITHUB_TOKEN) {
+      headers['Authorization'] = `token ${process.env.GH_TOKEN || process.env.GITHUB_TOKEN}`;
+    }
+    https.get(url, { headers }, (res) => {
       if (res.statusCode !== 200) {
         return resolve({ status: res.statusCode, data: null });
       }
@@ -45,7 +49,11 @@ function ghApi(path) {
 
 function downloadFile(rawUrl) {
   return new Promise((resolve, reject) => {
-    https.get(rawUrl, { headers: { 'User-Agent': 'mavis-ci' }}, (res) => {
+    const headers = { 'User-Agent': 'mavis-ci' };
+    if (process.env.GH_TOKEN || process.env.GITHUB_TOKEN) {
+      headers['Authorization'] = `token ${process.env.GH_TOKEN || process.env.GITHUB_TOKEN}`;
+    }
+    https.get(rawUrl, { headers }, (res) => {
       if (res.statusCode !== 200) return resolve(null);
       let data = '';
       res.on('data', (chunk) => data += chunk);
@@ -55,30 +63,31 @@ function downloadFile(rawUrl) {
 }
 
 /**
- * Parse a Python quirk file to extract (manufacturer, model) from signature blocks.
+ * Parse a Python quirk file to extract (manufacturer, model) pairs.
+ * ZHA quirks use MODELS_INFO: [("mfr", "model"), ...] format.
+ * Some older quirks use signature = { 'manufacturer': ..., 'model': ... }.
  */
 function extractPairs(content) {
   const pairs = [];
-  // Find all signature blocks: signature = { ... }
-  // Each contains "manufacturer": "_TZE200_xxx" and "model": "TS0601"
-  const sigRegex = /signature\s*=\s*\{[\s\S]*?\}/g;
-  const manRegex = /["']manufacturer["']\s*:\s*["']([^"']+)["']/;
-  const modelRegex = /["']model["']\s*:\s*["']([^"']+)["']/;
-
+  // Try MODELS_INFO first (the standard format)
+  const miRegex = /MODELS_INFO\s*:\s*\[([\s\S]*?)\]\s*,/g;
   let m;
-  while ((m = sigRegex.exec(content)) !== null) {
-    const block = m[0];
-    const manMatch = manRegex.exec(block);
-    const modelMatch = modelRegex.exec(block);
-    if (manMatch && modelMatch) {
-      pairs.push({ manufacturer: manMatch[1], model: modelMatch[1] });
+  while ((m = miRegex.exec(content)) !== null) {
+    const block = m[1];
+    // Extract tuples ("mfr", "model")
+    const tupleRegex = /\(\s*['"]([^'"]+)['"]\s*,\s*['"]([^'"]+)['"]\s*\)/g;
+    let t;
+    while ((t = tupleRegex.exec(block)) !== null) {
+      pairs.push({ manufacturer: t[1], model: t[2] });
     }
   }
 
-  // Also try replace_signature (for replacement quirks)
-  const repRegex = /replace_signature\s*=\s*\{[\s\S]*?\}/g;
-  while ((m = repRegex.exec(content)) !== null) {
-    const block = m[0];
+  // Try signature = { ... } (older format)
+  const sigRegex = /signature\s*=\s*\{([\s\S]*?)\n\s*\}/g;
+  const manRegex = /['"]manufacturer['"]\s*:\s*['"]([^'"]+)['"]/;
+  const modelRegex = /['"]model['"]\s*:\s*['"]([^'"]+)['"]/;
+  while ((m = sigRegex.exec(content)) !== null) {
+    const block = m[1];
     const manMatch = manRegex.exec(block);
     const modelMatch = modelRegex.exec(block);
     if (manMatch && modelMatch) {
@@ -110,6 +119,8 @@ async function main() {
     console.log(pyFiles.length, 'files');
 
     for (const file of pyFiles) {
+      // Skip __init__.py (cluster implementations, not device quirks)
+      if (file.name === '__init__.py') continue;
       const content = await downloadFile(file.download_url);
       if (content) {
         const pairs = extractPairs(content);
