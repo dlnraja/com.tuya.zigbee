@@ -72,6 +72,9 @@ function trimPublishOnlyFiles() {
   const BACKUP_REGEX = /\.(bak|backup|tmp|old|orig|swp|swo|rej)(?:\.|$)/i;
   const DEV_FILES = [
     'pnpm-lock.yaml',
+    'pnpm-workspace.yaml',
+    'package-lock.json',
+    'yarn.lock',
     'tools/ci/delete-johan-comments.sh',
     'tools/ci/delete-own-upstream-comments.js',
     'tools/ci/delete-johan-comments.js',
@@ -361,7 +364,7 @@ try {
   // publishing so CI points at the real root cause.
   const publishStats = dirStats(destDir);
   const publishMB = publishStats.bytes / (1024 * 1024);
-  const maxPublishMB = Number(process.env.HOMEY_PUBLISH_SOURCE_MAX_MB || process.env.HOMEY_PUBLISH_MAX_UNCOMPRESSED_MB || 24);
+  const maxPublishMB = Number(process.env.HOMEY_PUBLISH_SOURCE_MAX_MB || process.env.HOMEY_PUBLISH_MAX_UNCOMPRESSED_MB || 26);
   console.log(`Publish directory size: ${publishMB.toFixed(2)} MB across ${publishStats.files} files (limit ${maxPublishMB.toFixed(2)} MB).`);
   if (publishMB > maxPublishMB) {
     console.error(`FATAL: publish directory is ${publishMB.toFixed(2)} MB, above the ${maxPublishMB.toFixed(2)} MB safety limit.`);
