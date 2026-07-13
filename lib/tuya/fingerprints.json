@@ -4506,12 +4506,14 @@
     ]
   },
   "_TZ3000_v4l4b0lp": {
-    "driverId": "switch_1gang",
+    "driverId": "switch_3gang",
     "type": "switch",
     "powerSource": "mains",
     "modelIds": [
-      "TS0601"
-    ]
+      "TS0601",
+      "TS0003"
+    ],
+    "notes": "P29 fix #170: was incorrectly routed to switch_1gang, causing sub-capabilities onoff.gang2/onoff.gang3 to be missing. Now routes to switch_3gang which has all 3 sub-caps."
   },
   "_TZ3000_v7chgqso": {
     "driverId": "contact_sensor",
@@ -10693,12 +10695,13 @@
     ]
   },
   "_TZE204_nklqjk62": {
-    "driverId": "contact_sensor",
-    "type": "contact_sensor",
-    "powerSource": "battery",
+    "driverId": "garage_door",
+    "type": "garage_door",
+    "powerSource": "mains",
     "modelIds": [
       "TS0601"
-    ]
+    ],
+    "notes": "P29 fix #128: was incorrectly routed to contact_sensor (battery!), causing the device to pair with the wrong driver. Now routes to garage_door (mains powered) which has the correct garagedoor_closed capability."
   },
   "_TZE204_nladmfvf": {
     "driverId": "switch_1gang",
@@ -14250,5 +14253,25 @@
     "type": "device",
     "powerSource": "unknown",
     "modelIds": []
+  },
+  "_TZE200_xlppj4f5": {
+    "driverId": "valve_irrigation",
+    "type": "irrigation",
+    "powerSource": "battery",
+    "batteryType": "NiMH",
+    "modelIds": [
+      "TS0601"
+    ],
+    "notes": "P29 fix #135: Immax NEO Smart Water Timer with solar charge. Was routing to climate_sensor (wrong class). Now routes to valve_irrigation which has the correct valve control."
+  },
+  "_TZE204_xlppj4f5": {
+    "driverId": "valve_irrigation",
+    "type": "irrigation",
+    "powerSource": "battery",
+    "batteryType": "NiMH",
+    "modelIds": [
+      "TS0601"
+    ],
+    "notes": "P29 fix #135: Immax NEO Smart Water Timer _TZE204 variant (newer hardware revision)."
   }
 }
