@@ -83,6 +83,48 @@ function trimPublishOnlyFiles() {
   for (const rel of DEV_FILES) {
     removed += removeIfExists(path.join(destDir, rel), 'dev artifact');
   }
+  // Prune large dev diagnostic dumps that bloat publish
+  const DEV_DIRS = [
+    'tools/ci/diagnostics',
+    'tools/ci/.cache',
+    'tools/ci/__pycache__',
+    'tools/shadow-mode/tickets',
+    'tools/shadow-mode/.cache',
+    'data/intel-harvest',
+    'data/community-sync',
+    'data/temp_desktop_cleanup',
+    'data/archive',
+    'data/forum-cache',
+    'data/diagnostics',
+    'data/backups',
+  ];
+  for (const rel of DEV_DIRS) {
+    const p = path.join(destDir, rel);
+    if (fs.existsSync(p)) {
+      try {
+        const { statSync } = require('fs');
+        // Walk and sum size
+        const stack = [p];
+        let bytes = 0;
+        while (stack.length > 0) {
+          const cur = stack.pop();
+          try {
+            const entries = fs.readdirSync(cur, { withFileTypes: true });
+            for (const e of entries) {
+              const full = path.join(cur, e.name);
+              if (e.isDirectory()) stack.push(full);
+              else { try { bytes += statSync(full).size; } catch {} }
+            }
+          } catch {}
+        }
+        if (bytes > 0) {
+          fs.rmSync(p, { recursive: true, force: true });
+          removed += bytes;
+          console.log(`Publish trim: removed ${rel} (${(bytes / 1024 / 1024).toFixed(2)} MB) — dev diagnostic dir`);
+        }
+      } catch {}
+    }
+  }
   // Walk the publish dir and remove any *.bak / *.backup / *.tmp / *.old / *.orig files
   const walkAndPrune = (dir) => {
     let stack = [dir];
