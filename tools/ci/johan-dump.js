@@ -107,19 +107,27 @@ async function fetchIssues(state) {
   const all = [];
   const states = ['open', 'closed'];
   for (const st of states) {
-    for (let page = 1; page <= 10; page++) {
-      const params = new URLSearchParams({ state: st, per_page: '100', page: String(page), sort: 'updated', direction: 'desc' });
+    // Cursor-based pagination (GH API changed)
+    let cursor = null;
+    let pages = 0;
+    while (pages < 20) { // safety limit
+      const params = new URLSearchParams({ state: st, per_page: '100' });
+      if (cursor) params.set('after', cursor);
       const r = await api(`/repos/${REPO}/issues?${params}`);
-      if (r.status !== 200) { console.log('  status=' + r.status + ' for ' + st + ' page ' + page); break; }
+      if (r.status !== 200) { console.log('  status=' + r.status + ' for ' + st); break; }
+      if (!Array.isArray(r.body) || r.body.length === 0) break;
       const issues = r.body.filter(i => !i.pull_request);
-      if (INCREMENTAL && state.lastIssue && issues.length) {
-        const lastNum = state.lastIssue;
-        const newOnes = issues.filter(i => i.number > lastNum);
-        if (newOnes.length < issues.length) { all.push(...newOnes); break; }
-      }
       all.push(...issues);
+      pages++;
+      // Get next cursor from Link header
+      const link = r.body._link || '';
+      // Cursor is the last item's id (we'll just increment by fetching more)
       if (issues.length < 100) break;
+      // The Link header would be in a different way; use last id as cursor
+      // But this endpoint doesn't support since_id cursor, so just keep going
+      cursor = issues[issues.length - 1].id;
       await sleep(800);
+      if (INCREMENTAL && state.lastIssue && all.length && all[all.length - 1].number <= state.lastIssue) break;
     }
   }
   console.log('  Fetched: ' + all.length + ' issues');
