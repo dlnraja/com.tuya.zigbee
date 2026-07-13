@@ -127,7 +127,6 @@ jobs:
         id: sacred-couples
         run: node tools/ci/enrich-sacred-couples.js
         continue-on-error: true
-        continue-on-error: true
 
       - name: Run intelligent variant finder
         id: variants
