@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "9.0.211",
+  "version": "9.0.212",
   "compatibility": ">=12.2.0",
   "platforms": [
     "local"
@@ -5916,6 +5916,47 @@
         }
       },
       {
+        "id": "button_wireless_1_button_1gang_button_scene_recall",
+        "title": {
+          "en": "Button 1 scene recalled",
+          "fr": "Bouton 1 scène rappelée",
+          "nl": "Knop 1 scène opgeroepen",
+          "de": "Taste 1 Szene aufgerufen"
+        },
+        "hint": {
+          "en": "When button 1 recalls a Zigbee scene (cluster 0x05 — scene mode, P31)",
+          "fr": "Lorsque le bouton 1 rappelle une scène Zigbee (cluster 0x05 — mode scène, P31)",
+          "nl": "Wanneer knop 1 recalls a Zigbee scène (cluster 0x05 — scène mode, P31)",
+          "de": "Wenn Taste 1 recalls a Zigbee Szene (Cluster 0x05 — Szene mode, P31)"
+        },
+        "tokens": [
+          {
+            "name": "scene_id",
+            "type": "number",
+            "title": {
+              "en": "Scene ID",
+              "fr": "ID Scène",
+              "nl": "Scène ID",
+              "de": "Szene ID"
+            },
+            "example": 1
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=button_wireless_1"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Button 1 scene [[scene_id]] recalled",
+          "fr": "Bouton 1 scène [[scene_id]] rappelée",
+          "nl": "Knop 1 scène [[scène_id]] opgeroepen",
+          "de": "Taste 1 Szene [[Szene_id]] aufgerufen"
+        }
+      },
+      {
         "id": "button_wireless_2_button_2gang_button_pressed",
         "title": {
           "en": "Button pressed",
@@ -6240,6 +6281,88 @@
           "fr": "Batterie faible",
           "nl": "Batterij laag",
           "de": "Batterie schwach"
+        }
+      },
+      {
+        "id": "button_wireless_2_button_1gang_button_scene_recall",
+        "title": {
+          "en": "Button 1 scene recalled",
+          "fr": "Bouton 1 scène rappelée",
+          "nl": "Knop 1 scène opgeroepen",
+          "de": "Taste 1 Szene aufgerufen"
+        },
+        "hint": {
+          "en": "When button 1 recalls a Zigbee scene (cluster 0x05 — scene mode, P31)",
+          "fr": "Lorsque le bouton 1 rappelle une scène Zigbee (cluster 0x05 — mode scène, P31)",
+          "nl": "Wanneer knop 1 recalls a Zigbee scène (cluster 0x05 — scène mode, P31)",
+          "de": "Wenn Taste 1 recalls a Zigbee Szene (Cluster 0x05 — Szene mode, P31)"
+        },
+        "tokens": [
+          {
+            "name": "scene_id",
+            "type": "number",
+            "title": {
+              "en": "Scene ID",
+              "fr": "ID Scène",
+              "nl": "Scène ID",
+              "de": "Szene ID"
+            },
+            "example": 1
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=button_wireless_2"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Button 1 scene [[scene_id]] recalled",
+          "fr": "Bouton 1 scène [[scene_id]] rappelée",
+          "nl": "Knop 1 scène [[scène_id]] opgeroepen",
+          "de": "Taste 1 Szene [[Szene_id]] aufgerufen"
+        }
+      },
+      {
+        "id": "button_wireless_2_button_2gang_button_scene_recall",
+        "title": {
+          "en": "Button 2 scene recalled",
+          "fr": "Bouton 2 scène rappelée",
+          "nl": "Knop 2 scène opgeroepen",
+          "de": "Taste 2 Szene aufgerufen"
+        },
+        "hint": {
+          "en": "When button 2 recalls a Zigbee scene (cluster 0x05 — scene mode, P31)",
+          "fr": "Lorsque le bouton 2 rappelle une scène Zigbee (cluster 0x05 — mode scène, P31)",
+          "nl": "Wanneer knop 2 recalls a Zigbee scène (cluster 0x05 — scène mode, P31)",
+          "de": "Wenn Taste 2 recalls a Zigbee Szene (Cluster 0x05 — Szene mode, P31)"
+        },
+        "tokens": [
+          {
+            "name": "scene_id",
+            "type": "number",
+            "title": {
+              "en": "Scene ID",
+              "fr": "ID Scène",
+              "nl": "Scène ID",
+              "de": "Szene ID"
+            },
+            "example": 2
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=button_wireless_2"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Button 2 scene [[scene_id]] recalled",
+          "fr": "Bouton 2 scène [[scene_id]] rappelée",
+          "nl": "Knop 2 scène [[scène_id]] opgeroepen",
+          "de": "Taste 2 Szene [[Szene_id]] aufgerufen"
         }
       },
       {
@@ -6878,6 +7001,129 @@
         }
       },
       {
+        "id": "button_wireless_3_button_1gang_button_scene_recall",
+        "title": {
+          "en": "Button 1 scene recalled",
+          "fr": "Bouton 1 scène rappelée",
+          "nl": "Knop 1 scène opgeroepen",
+          "de": "Taste 1 Szene aufgerufen"
+        },
+        "hint": {
+          "en": "When button 1 recalls a Zigbee scene (cluster 0x05 — scene mode, P31)",
+          "fr": "Lorsque le bouton 1 rappelle une scène Zigbee (cluster 0x05 — mode scène, P31)",
+          "nl": "Wanneer knop 1 recalls a Zigbee scène (cluster 0x05 — scène mode, P31)",
+          "de": "Wenn Taste 1 recalls a Zigbee Szene (Cluster 0x05 — Szene mode, P31)"
+        },
+        "tokens": [
+          {
+            "name": "scene_id",
+            "type": "number",
+            "title": {
+              "en": "Scene ID",
+              "fr": "ID Scène",
+              "nl": "Scène ID",
+              "de": "Szene ID"
+            },
+            "example": 1
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=button_wireless_3"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Button 1 scene [[scene_id]] recalled",
+          "fr": "Bouton 1 scène [[scene_id]] rappelée",
+          "nl": "Knop 1 scène [[scène_id]] opgeroepen",
+          "de": "Taste 1 Szene [[Szene_id]] aufgerufen"
+        }
+      },
+      {
+        "id": "button_wireless_3_button_2gang_button_scene_recall",
+        "title": {
+          "en": "Button 2 scene recalled",
+          "fr": "Bouton 2 scène rappelée",
+          "nl": "Knop 2 scène opgeroepen",
+          "de": "Taste 2 Szene aufgerufen"
+        },
+        "hint": {
+          "en": "When button 2 recalls a Zigbee scene (cluster 0x05 — scene mode, P31)",
+          "fr": "Lorsque le bouton 2 rappelle une scène Zigbee (cluster 0x05 — mode scène, P31)",
+          "nl": "Wanneer knop 2 recalls a Zigbee scène (cluster 0x05 — scène mode, P31)",
+          "de": "Wenn Taste 2 recalls a Zigbee Szene (Cluster 0x05 — Szene mode, P31)"
+        },
+        "tokens": [
+          {
+            "name": "scene_id",
+            "type": "number",
+            "title": {
+              "en": "Scene ID",
+              "fr": "ID Scène",
+              "nl": "Scène ID",
+              "de": "Szene ID"
+            },
+            "example": 2
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=button_wireless_3"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Button 2 scene [[scene_id]] recalled",
+          "fr": "Bouton 2 scène [[scene_id]] rappelée",
+          "nl": "Knop 2 scène [[scène_id]] opgeroepen",
+          "de": "Taste 2 Szene [[Szene_id]] aufgerufen"
+        }
+      },
+      {
+        "id": "button_wireless_3_button_3gang_button_scene_recall",
+        "title": {
+          "en": "Button 3 scene recalled",
+          "fr": "Bouton 3 scène rappelée",
+          "nl": "Knop 3 scène opgeroepen",
+          "de": "Taste 3 Szene aufgerufen"
+        },
+        "hint": {
+          "en": "When button 3 recalls a Zigbee scene (cluster 0x05 — scene mode, P31)",
+          "fr": "Lorsque le bouton 3 rappelle une scène Zigbee (cluster 0x05 — mode scène, P31)",
+          "nl": "Wanneer knop 3 recalls a Zigbee scène (cluster 0x05 — scène mode, P31)",
+          "de": "Wenn Taste 3 recalls a Zigbee Szene (Cluster 0x05 — Szene mode, P31)"
+        },
+        "tokens": [
+          {
+            "name": "scene_id",
+            "type": "number",
+            "title": {
+              "en": "Scene ID",
+              "fr": "ID Scène",
+              "nl": "Scène ID",
+              "de": "Szene ID"
+            },
+            "example": 3
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=button_wireless_3"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Button 3 scene [[scene_id]] recalled",
+          "fr": "Bouton 3 scène [[scene_id]] rappelée",
+          "nl": "Knop 3 scène [[scène_id]] opgeroepen",
+          "de": "Taste 3 Szene [[Szene_id]] aufgerufen"
+        }
+      },
+      {
         "id": "button_wireless_4_button_4gang_button_pressed",
         "title": {
           "en": "A button was pressed",
@@ -7398,6 +7644,170 @@
           "fr": "Batterie faible",
           "nl": "Batterij laag",
           "de": "Batterie schwach"
+        }
+      },
+      {
+        "id": "button_wireless_4_button_1gang_button_scene_recall",
+        "title": {
+          "en": "Button 1 scene recalled",
+          "fr": "Bouton 1 scène rappelée",
+          "nl": "Knop 1 scène opgeroepen",
+          "de": "Taste 1 Szene aufgerufen"
+        },
+        "hint": {
+          "en": "When button 1 recalls a Zigbee scene (cluster 0x05 — scene mode, P31)",
+          "fr": "Lorsque le bouton 1 rappelle une scène Zigbee (cluster 0x05 — mode scène, P31)",
+          "nl": "Wanneer knop 1 recalls a Zigbee scène (cluster 0x05 — scène mode, P31)",
+          "de": "Wenn Taste 1 recalls a Zigbee Szene (Cluster 0x05 — Szene mode, P31)"
+        },
+        "tokens": [
+          {
+            "name": "scene_id",
+            "type": "number",
+            "title": {
+              "en": "Scene ID",
+              "fr": "ID Scène",
+              "nl": "Scène ID",
+              "de": "Szene ID"
+            },
+            "example": 1
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=button_wireless_4"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Button 1 scene [[scene_id]] recalled",
+          "fr": "Bouton 1 scène [[scene_id]] rappelée",
+          "nl": "Knop 1 scène [[scène_id]] opgeroepen",
+          "de": "Taste 1 Szene [[Szene_id]] aufgerufen"
+        }
+      },
+      {
+        "id": "button_wireless_4_button_2gang_button_scene_recall",
+        "title": {
+          "en": "Button 2 scene recalled",
+          "fr": "Bouton 2 scène rappelée",
+          "nl": "Knop 2 scène opgeroepen",
+          "de": "Taste 2 Szene aufgerufen"
+        },
+        "hint": {
+          "en": "When button 2 recalls a Zigbee scene (cluster 0x05 — scene mode, P31)",
+          "fr": "Lorsque le bouton 2 rappelle une scène Zigbee (cluster 0x05 — mode scène, P31)",
+          "nl": "Wanneer knop 2 recalls a Zigbee scène (cluster 0x05 — scène mode, P31)",
+          "de": "Wenn Taste 2 recalls a Zigbee Szene (Cluster 0x05 — Szene mode, P31)"
+        },
+        "tokens": [
+          {
+            "name": "scene_id",
+            "type": "number",
+            "title": {
+              "en": "Scene ID",
+              "fr": "ID Scène",
+              "nl": "Scène ID",
+              "de": "Szene ID"
+            },
+            "example": 2
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=button_wireless_4"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Button 2 scene [[scene_id]] recalled",
+          "fr": "Bouton 2 scène [[scene_id]] rappelée",
+          "nl": "Knop 2 scène [[scène_id]] opgeroepen",
+          "de": "Taste 2 Szene [[Szene_id]] aufgerufen"
+        }
+      },
+      {
+        "id": "button_wireless_4_button_3gang_button_scene_recall",
+        "title": {
+          "en": "Button 3 scene recalled",
+          "fr": "Bouton 3 scène rappelée",
+          "nl": "Knop 3 scène opgeroepen",
+          "de": "Taste 3 Szene aufgerufen"
+        },
+        "hint": {
+          "en": "When button 3 recalls a Zigbee scene (cluster 0x05 — scene mode, P31)",
+          "fr": "Lorsque le bouton 3 rappelle une scène Zigbee (cluster 0x05 — mode scène, P31)",
+          "nl": "Wanneer knop 3 recalls a Zigbee scène (cluster 0x05 — scène mode, P31)",
+          "de": "Wenn Taste 3 recalls a Zigbee Szene (Cluster 0x05 — Szene mode, P31)"
+        },
+        "tokens": [
+          {
+            "name": "scene_id",
+            "type": "number",
+            "title": {
+              "en": "Scene ID",
+              "fr": "ID Scène",
+              "nl": "Scène ID",
+              "de": "Szene ID"
+            },
+            "example": 3
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=button_wireless_4"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Button 3 scene [[scene_id]] recalled",
+          "fr": "Bouton 3 scène [[scene_id]] rappelée",
+          "nl": "Knop 3 scène [[scène_id]] opgeroepen",
+          "de": "Taste 3 Szene [[Szene_id]] aufgerufen"
+        }
+      },
+      {
+        "id": "button_wireless_4_button_4gang_button_scene_recall",
+        "title": {
+          "en": "Button 4 scene recalled",
+          "fr": "Bouton 4 scène rappelée",
+          "nl": "Knop 4 scène opgeroepen",
+          "de": "Taste 4 Szene aufgerufen"
+        },
+        "hint": {
+          "en": "When button 4 recalls a Zigbee scene (cluster 0x05 — scene mode, P31)",
+          "fr": "Lorsque le bouton 4 rappelle une scène Zigbee (cluster 0x05 — mode scène, P31)",
+          "nl": "Wanneer knop 4 recalls a Zigbee scène (cluster 0x05 — scène mode, P31)",
+          "de": "Wenn Taste 4 recalls a Zigbee Szene (Cluster 0x05 — Szene mode, P31)"
+        },
+        "tokens": [
+          {
+            "name": "scene_id",
+            "type": "number",
+            "title": {
+              "en": "Scene ID",
+              "fr": "ID Scène",
+              "nl": "Scène ID",
+              "de": "Szene ID"
+            },
+            "example": 4
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=button_wireless_4"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Button 4 scene [[scene_id]] recalled",
+          "fr": "Bouton 4 scène [[scene_id]] rappelée",
+          "nl": "Knop 4 scène [[scène_id]] opgeroepen",
+          "de": "Taste 4 Szene [[Szene_id]] aufgerufen"
         }
       },
       {
@@ -10536,6 +10946,416 @@
         }
       },
       {
+        "id": "button_wireless_smart_button_1gang_button_2_pressed",
+        "title": {
+          "en": "Button 2 pressed",
+          "fr": "Bouton 2 appuyé"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=button_wireless_smart"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Button 2 pressed",
+          "fr": "Bouton 2 appuyé"
+        }
+      },
+      {
+        "id": "button_wireless_smart_button_1gang_button_2_double",
+        "title": {
+          "en": "Button 2 double-pressed",
+          "fr": "Bouton 2 double-cliqué"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=button_wireless_smart"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Button 2 double-pressed",
+          "fr": "Bouton 2 double-cliqué"
+        }
+      },
+      {
+        "id": "button_wireless_smart_button_1gang_button_2_long",
+        "title": {
+          "en": "Button 2 long-pressed",
+          "fr": "Bouton 2 pressé longtemps"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=button_wireless_smart"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Button 2 long-pressed",
+          "fr": "Bouton 2 pressé longtemps"
+        }
+      },
+      {
+        "id": "button_wireless_smart_button_1gang_button_2_triple",
+        "title": {
+          "en": "Button 2 triple-pressed",
+          "fr": "Bouton 2 triple-cliqué"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=button_wireless_smart"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Button 2 triple-pressed",
+          "fr": "Bouton 2 triple-cliqué"
+        }
+      },
+      {
+        "id": "button_wireless_smart_button_1gang_button_2_release",
+        "title": {
+          "en": "Button 2 released - after hold",
+          "fr": "Bouton 2 relâché - après maintien"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=button_wireless_smart"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Button 2 released - after hold",
+          "fr": "Bouton 2 relâché - après maintien"
+        }
+      },
+      {
+        "id": "button_wireless_smart_button_1gang_button_3_pressed",
+        "title": {
+          "en": "Button 3 pressed",
+          "fr": "Bouton 3 appuyé"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=button_wireless_smart"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Button 3 pressed",
+          "fr": "Bouton 3 appuyé"
+        }
+      },
+      {
+        "id": "button_wireless_smart_button_1gang_button_3_double",
+        "title": {
+          "en": "Button 3 double-pressed",
+          "fr": "Bouton 3 double-cliqué"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=button_wireless_smart"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Button 3 double-pressed",
+          "fr": "Bouton 3 double-cliqué"
+        }
+      },
+      {
+        "id": "button_wireless_smart_button_1gang_button_3_long",
+        "title": {
+          "en": "Button 3 long-pressed",
+          "fr": "Bouton 3 pressé longtemps"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=button_wireless_smart"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Button 3 long-pressed",
+          "fr": "Bouton 3 pressé longtemps"
+        }
+      },
+      {
+        "id": "button_wireless_smart_button_1gang_button_3_triple",
+        "title": {
+          "en": "Button 3 triple-pressed",
+          "fr": "Bouton 3 triple-cliqué"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=button_wireless_smart"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Button 3 triple-pressed",
+          "fr": "Bouton 3 triple-cliqué"
+        }
+      },
+      {
+        "id": "button_wireless_smart_button_1gang_button_3_release",
+        "title": {
+          "en": "Button 3 released - after hold",
+          "fr": "Bouton 3 relâché - après maintien"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=button_wireless_smart"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Button 3 released - after hold",
+          "fr": "Bouton 3 relâché - après maintien"
+        }
+      },
+      {
+        "id": "button_wireless_smart_button_1gang_button_4_pressed",
+        "title": {
+          "en": "Button 4 pressed",
+          "fr": "Bouton 4 appuyé"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=button_wireless_smart"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Button 4 pressed",
+          "fr": "Bouton 4 appuyé"
+        }
+      },
+      {
+        "id": "button_wireless_smart_button_1gang_button_4_double",
+        "title": {
+          "en": "Button 4 double-pressed",
+          "fr": "Bouton 4 double-cliqué"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=button_wireless_smart"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Button 4 double-pressed",
+          "fr": "Bouton 4 double-cliqué"
+        }
+      },
+      {
+        "id": "button_wireless_smart_button_1gang_button_4_long",
+        "title": {
+          "en": "Button 4 long-pressed",
+          "fr": "Bouton 4 pressé longtemps"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=button_wireless_smart"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Button 4 long-pressed",
+          "fr": "Bouton 4 pressé longtemps"
+        }
+      },
+      {
+        "id": "button_wireless_smart_button_1gang_button_4_triple",
+        "title": {
+          "en": "Button 4 triple-pressed",
+          "fr": "Bouton 4 triple-cliqué"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=button_wireless_smart"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Button 4 triple-pressed",
+          "fr": "Bouton 4 triple-cliqué"
+        }
+      },
+      {
+        "id": "button_wireless_smart_button_1gang_button_4_release",
+        "title": {
+          "en": "Button 4 released - after hold",
+          "fr": "Bouton 4 relâché - après maintien"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=button_wireless_smart"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Button 4 released - after hold",
+          "fr": "Bouton 4 relâché - après maintien"
+        }
+      },
+      {
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=button_wireless_smart"
+          }
+        ],
+        "title": {
+          "en": "Button 1 scene recall",
+          "fr": "Bouton 1 rappel de sc�ne",
+          "nl": "Knop 1 scène recall",
+          "de": "Taste 1 Szene recall"
+        },
+        "tokens": [
+          {
+            "title": {
+              "en": "Scene ID",
+              "fr": "ID de sc�ne",
+              "nl": "Scène ID",
+              "de": "Szene ID"
+            },
+            "name": "scene_id",
+            "type": "number",
+            "example": 1
+          }
+        ],
+        "id": "button_wireless_smart_button_1_scene_recall",
+        "titleFormatted": {
+          "en": "Button 1 scene recall (scene [[scene_id]])",
+          "fr": "Bouton 1 rappel de sc�ne (sc�ne [[scene_id]])",
+          "nl": "Knop 1 scène recall (scène [[scène_id]])",
+          "de": "Taste 1 Szene recall (Szene [[Szene_id]])"
+        }
+      },
+      {
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=button_wireless_smart"
+          }
+        ],
+        "title": {
+          "en": "Button 2 scene recall",
+          "fr": "Bouton 2 rappel de sc�ne",
+          "nl": "Knop 2 scène recall",
+          "de": "Taste 2 Szene recall"
+        },
+        "tokens": [
+          {
+            "title": {
+              "en": "Scene ID",
+              "fr": "ID de sc�ne",
+              "nl": "Scène ID",
+              "de": "Szene ID"
+            },
+            "name": "scene_id",
+            "type": "number",
+            "example": 1
+          }
+        ],
+        "id": "button_wireless_smart_button_2_scene_recall",
+        "titleFormatted": {
+          "en": "Button 2 scene recall (scene [[scene_id]])",
+          "fr": "Bouton 2 rappel de sc�ne (sc�ne [[scene_id]])",
+          "nl": "Knop 2 scène recall (scène [[scène_id]])",
+          "de": "Taste 2 Szene recall (Szene [[Szene_id]])"
+        }
+      },
+      {
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=button_wireless_smart"
+          }
+        ],
+        "title": {
+          "en": "Button 3 scene recall",
+          "fr": "Bouton 3 rappel de sc�ne",
+          "nl": "Knop 3 scène recall",
+          "de": "Taste 3 Szene recall"
+        },
+        "tokens": [
+          {
+            "title": {
+              "en": "Scene ID",
+              "fr": "ID de sc�ne",
+              "nl": "Scène ID",
+              "de": "Szene ID"
+            },
+            "name": "scene_id",
+            "type": "number",
+            "example": 1
+          }
+        ],
+        "id": "button_wireless_smart_button_3_scene_recall",
+        "titleFormatted": {
+          "en": "Button 3 scene recall (scene [[scene_id]])",
+          "fr": "Bouton 3 rappel de sc�ne (sc�ne [[scene_id]])",
+          "nl": "Knop 3 scène recall (scène [[scène_id]])",
+          "de": "Taste 3 Szene recall (Szene [[Szene_id]])"
+        }
+      },
+      {
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=button_wireless_smart"
+          }
+        ],
+        "title": {
+          "en": "Button 4 scene recall",
+          "fr": "Bouton 4 rappel de sc�ne",
+          "nl": "Knop 4 scène recall",
+          "de": "Taste 4 Szene recall"
+        },
+        "tokens": [
+          {
+            "title": {
+              "en": "Scene ID",
+              "fr": "ID de sc�ne",
+              "nl": "Scène ID",
+              "de": "Szene ID"
+            },
+            "name": "scene_id",
+            "type": "number",
+            "example": 1
+          }
+        ],
+        "id": "button_wireless_smart_button_4_scene_recall",
+        "titleFormatted": {
+          "en": "Button 4 scene recall (scene [[scene_id]])",
+          "fr": "Bouton 4 rappel de sc�ne (sc�ne [[scene_id]])",
+          "nl": "Knop 4 scène recall (scène [[scène_id]])",
+          "de": "Taste 4 Szene recall (Szene [[Szene_id]])"
+        }
+      },
+      {
         "id": "button_wireless_switch_switch_2gang_gang1_turned_on",
         "title": {
           "en": "Gang 1 turned on",
@@ -10903,6 +11723,47 @@
           "fr": "Puissance changée",
           "nl": "Vermogen gewijzigd",
           "de": "Leistung geÃ¤ndert"
+        }
+      },
+      {
+        "id": "button_wireless_usb_button_1gang_button_scene_recall",
+        "title": {
+          "en": "Button 1 scene recalled",
+          "fr": "Bouton 1 scène rappelée",
+          "nl": "Knop 1 scène opgeroepen",
+          "de": "Taste 1 Szene aufgerufen"
+        },
+        "hint": {
+          "en": "When button 1 recalls a Zigbee scene (cluster 0x05 — scene mode, P31)",
+          "fr": "Lorsque le bouton 1 rappelle une scène Zigbee (cluster 0x05 — mode scène, P31)",
+          "nl": "Wanneer knop 1 recalls a Zigbee scène (cluster 0x05 — scène mode, P31)",
+          "de": "Wenn Taste 1 recalls a Zigbee Szene (Cluster 0x05 — Szene mode, P31)"
+        },
+        "tokens": [
+          {
+            "name": "scene_id",
+            "type": "number",
+            "title": {
+              "en": "Scene ID",
+              "fr": "ID Scène",
+              "nl": "Scène ID",
+              "de": "Szene ID"
+            },
+            "example": 1
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=button_wireless_usb"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Button 1 scene [[scene_id]] recalled",
+          "fr": "Bouton 1 scène [[scene_id]] rappelée",
+          "nl": "Knop 1 scène [[scène_id]] opgeroepen",
+          "de": "Taste 1 Szene [[Szene_id]] aufgerufen"
         }
       },
       {
@@ -47000,6 +47861,117 @@
           "fr": "Batterie faible",
           "nl": "Batterij laag",
           "de": "Batterie schwach"
+        }
+      },
+      {
+        "id": "smart_knob_rotary_press_and_rotate_left",
+        "title": {
+          "en": "Pressed and rotated left",
+          "fr": "Appuyé et tourné à gauche",
+          "nl": "Ingedrukt en naar links gedraaid",
+          "de": "Gedrückt und nach links gedreht"
+        },
+        "hint": {
+          "en": "When the knob is pressed while being rotated counter-clockwise (P29 — matches pobao TZ-X1 Smart Scene Button spec)",
+          "fr": "Lorsque le bouton est appuyé tout en étant tourné dans le sens antihoraire (P29 — pobao TZ-X1 Smart Scene Button spec)"
+        },
+        "tokens": [
+          {
+            "name": "brightness",
+            "type": "number",
+            "title": {
+              "en": "Brightness %",
+              "fr": "Luminosité %"
+            },
+            "example": 50
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=smart_knob_rotary"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Pressed and rotated left",
+          "fr": "Appuyé et tourné à gauche"
+        }
+      },
+      {
+        "id": "smart_knob_rotary_press_and_rotate_right",
+        "title": {
+          "en": "Pressed and rotated right",
+          "fr": "Appuyé et tourné à droite",
+          "nl": "Ingedrukt en naar rechts gedraaid",
+          "de": "Gedrückt und nach rechts gedreht"
+        },
+        "hint": {
+          "en": "When the knob is pressed while being rotated clockwise (P29 — matches pobao TZ-X1 Smart Scene Button spec)",
+          "fr": "Lorsque le bouton est appuyé tout en étant tourné dans le sens horaire (P29 — pobao TZ-X1 Smart Scene Button spec)"
+        },
+        "tokens": [
+          {
+            "name": "brightness",
+            "type": "number",
+            "title": {
+              "en": "Brightness %",
+              "fr": "Luminosité %"
+            },
+            "example": 50
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=smart_knob_rotary"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Pressed and rotated right",
+          "fr": "Appuyé et tourné à droite"
+        }
+      },
+      {
+        "id": "smart_knob_rotary_scene_recall",
+        "title": {
+          "en": "Scene recalled",
+          "fr": "Scène rappelée",
+          "nl": "Scène opgeroepen",
+          "de": "Szene aufgerufen"
+        },
+        "hint": {
+          "en": "When the device recalls a Zigbee scene (cluster 0x05 — scene mode, P29)",
+          "fr": "Lorsque l'appareil rappelle une scène Zigbee (cluster 0x05 — mode scène, P29)",
+          "nl": "When the device recalls a Zigbee scène (cluster 0x05 — scène mode, P29)",
+          "de": "When the device recalls a Zigbee Szene (Cluster 0x05 — Szene mode, P29)"
+        },
+        "tokens": [
+          {
+            "name": "scene_id",
+            "type": "number",
+            "title": {
+              "en": "Scene ID",
+              "fr": "ID Scène",
+              "nl": "Scène ID",
+              "de": "Szene ID"
+            },
+            "example": 1
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=smart_knob_rotary"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Scene [[scene_id]] recalled",
+          "fr": "Scène [[scene_id]] rappelée",
+          "nl": "Scène [[scène_id]] opgeroepen",
+          "de": "Szene [[Szene_id]] aufgerufen"
         }
       },
       {
@@ -121010,8 +121982,7 @@
       "zigbee": {
         "productId": [
           "TS0601_air_purifier",
-          "TS0601",
-          "TS0201"
+          "TS0601"
         ],
         "endpoints": {
           "1": {
@@ -130026,33 +130997,41 @@
           "type": "dropdown",
           "label": {
             "en": "Operating Mode",
-            "fr": "Mode de fonctionnement"
+            "fr": "Mode de fonctionnement",
+            "nl": "Bedrijfsmodus",
+            "de": "Betriebsart"
           },
           "hint": {
-            "en": "Scene Mode allows single/double/long press. Dimmer Mode only supports single press. Auto tries to detect and switch automatically.",
-            "fr": "Le mode Scène permet les appuis simples/doubles/longs. Le mode Variateur ne supporte que l'appui simple. Auto tente de détecter et basculer automatiquement."
+            "en": "Scene Mode (default) allows single/double/long press for TS0041/TS0042/TS0043/TS0044/TS004F. Dimmer Mode only supports single press. Auto tries to detect and switch automatically.",
+            "fr": "Le mode Scène (par défaut) permet les appuis simples/doubles/longs pour TS0041/TS0042/TS0043/TS0044/TS004F. Le mode Variateur ne supporte que l'appui simple. Auto tente de détecter et basculer automatiquement."
           },
-          "value": "auto",
+          "value": "scene",
           "values": [
             {
               "id": "auto",
               "label": {
                 "en": "Auto-Detect",
-                "fr": "Détection Auto"
+                "fr": "Détection Auto",
+                "nl": "Automatisch",
+                "de": "Auto-Erkennung"
               }
             },
             {
               "id": "scene",
               "label": {
-                "en": "Scene Mode (Multi-press)",
-                "fr": "Mode Scène (Multi-clics)"
+                "en": "Scene Mode (default — Multi-press)",
+                "fr": "Mode Scène (par défaut — Multi-clics)",
+                "nl": "Scène-modus (standaard — Multi-klik)",
+                "de": "Szenenmodus (Standard — Mehrfachdruck)"
               }
             },
             {
               "id": "dimmer",
               "label": {
                 "en": "Dimmer Mode",
-                "fr": "Mode Variateur"
+                "fr": "Mode Variateur",
+                "nl": "Dimmer-modus",
+                "de": "Dimmermodus"
               }
             }
           ]
@@ -130665,33 +131644,41 @@
           "type": "dropdown",
           "label": {
             "en": "Operating Mode",
-            "fr": "Mode de fonctionnement"
+            "fr": "Mode de fonctionnement",
+            "nl": "Bedrijfsmodus",
+            "de": "Betriebsart"
           },
           "hint": {
-            "en": "Scene Mode allows single/double/long press. Dimmer Mode only supports single press. Auto tries to detect and switch automatically.",
-            "fr": "Le mode Scène permet les appuis simples/doubles/longs. Le mode Variateur ne supporte que l'appui simple. Auto tente de détecter et basculer automatiquement."
+            "en": "Scene Mode (default) allows single/double/long press for TS0041/TS0042/TS0043/TS0044/TS004F. Dimmer Mode only supports single press. Auto tries to detect and switch automatically.",
+            "fr": "Le mode Scène (par défaut) permet les appuis simples/doubles/longs pour TS0041/TS0042/TS0043/TS0044/TS004F. Le mode Variateur ne supporte que l'appui simple. Auto tente de détecter et basculer automatiquement."
           },
-          "value": "auto",
+          "value": "scene",
           "values": [
             {
               "id": "auto",
               "label": {
                 "en": "Auto-Detect",
-                "fr": "Détection Auto"
+                "fr": "Détection Auto",
+                "nl": "Automatisch",
+                "de": "Auto-Erkennung"
               }
             },
             {
               "id": "scene",
               "label": {
-                "en": "Scene Mode (Multi-press)",
-                "fr": "Mode Scène (Multi-clics)"
+                "en": "Scene Mode (default — Multi-press)",
+                "fr": "Mode Scène (par défaut — Multi-clics)",
+                "nl": "Scène-modus (standaard — Multi-klik)",
+                "de": "Szenenmodus (Standard — Mehrfachdruck)"
               }
             },
             {
               "id": "dimmer",
               "label": {
                 "en": "Dimmer Mode",
-                "fr": "Mode Variateur"
+                "fr": "Mode Variateur",
+                "nl": "Dimmer-modus",
+                "de": "Dimmermodus"
               }
             }
           ]
@@ -131151,33 +132138,41 @@
           "type": "dropdown",
           "label": {
             "en": "Operating Mode",
-            "fr": "Mode de fonctionnement"
+            "fr": "Mode de fonctionnement",
+            "nl": "Bedrijfsmodus",
+            "de": "Betriebsart"
           },
           "hint": {
-            "en": "Scene Mode allows single/double/long press. Dimmer Mode only supports single press. Auto tries to detect and switch automatically.",
-            "fr": "Le mode Scène permet les appuis simples/doubles/longs. Le mode Variateur ne supporte que l'appui simple. Auto tente de détecter et basculer automatiquement."
+            "en": "Scene Mode (default) allows single/double/long press for TS0041/TS0042/TS0043/TS0044/TS004F. Dimmer Mode only supports single press. Auto tries to detect and switch automatically.",
+            "fr": "Le mode Scène (par défaut) permet les appuis simples/doubles/longs pour TS0041/TS0042/TS0043/TS0044/TS004F. Le mode Variateur ne supporte que l'appui simple. Auto tente de détecter et basculer automatiquement."
           },
-          "value": "auto",
+          "value": "scene",
           "values": [
             {
               "id": "auto",
               "label": {
                 "en": "Auto-Detect",
-                "fr": "Détection Auto"
+                "fr": "Détection Auto",
+                "nl": "Automatisch",
+                "de": "Auto-Erkennung"
               }
             },
             {
               "id": "scene",
               "label": {
-                "en": "Scene Mode (Multi-press)",
-                "fr": "Mode Scène (Multi-clics)"
+                "en": "Scene Mode (default — Multi-press)",
+                "fr": "Mode Scène (par défaut — Multi-clics)",
+                "nl": "Scène-modus (standaard — Multi-klik)",
+                "de": "Szenenmodus (Standard — Mehrfachdruck)"
               }
             },
             {
               "id": "dimmer",
               "label": {
                 "en": "Dimmer Mode",
-                "fr": "Mode Variateur"
+                "fr": "Mode Variateur",
+                "nl": "Dimmer-modus",
+                "de": "Dimmermodus"
               }
             }
           ]
@@ -131649,33 +132644,41 @@
           "type": "dropdown",
           "label": {
             "en": "Operating Mode",
-            "fr": "Mode de fonctionnement"
+            "fr": "Mode de fonctionnement",
+            "nl": "Bedrijfsmodus",
+            "de": "Betriebsart"
           },
           "hint": {
-            "en": "Scene Mode allows single/double/long press. Dimmer Mode only supports single press. Auto tries to detect and switch automatically.",
-            "fr": "Le mode Scène permet les appuis simples/doubles/longs. Le mode Variateur ne supporte que l'appui simple. Auto tente de détecter et basculer automatiquement."
+            "en": "Scene Mode (default) allows single/double/long press for TS0041/TS0042/TS0043/TS0044/TS004F. Dimmer Mode only supports single press. Auto tries to detect and switch automatically.",
+            "fr": "Le mode Scène (par défaut) permet les appuis simples/doubles/longs pour TS0041/TS0042/TS0043/TS0044/TS004F. Le mode Variateur ne supporte que l'appui simple. Auto tente de détecter et basculer automatiquement."
           },
-          "value": "auto",
+          "value": "scene",
           "values": [
             {
               "id": "auto",
               "label": {
                 "en": "Auto-Detect",
-                "fr": "Détection Auto"
+                "fr": "Détection Auto",
+                "nl": "Automatisch",
+                "de": "Auto-Erkennung"
               }
             },
             {
               "id": "scene",
               "label": {
-                "en": "Scene Mode (Multi-press)",
-                "fr": "Mode Scène (Multi-clics)"
+                "en": "Scene Mode (default — Multi-press)",
+                "fr": "Mode Scène (par défaut — Multi-clics)",
+                "nl": "Scène-modus (standaard — Multi-klik)",
+                "de": "Szenenmodus (Standard — Mehrfachdruck)"
               }
             },
             {
               "id": "dimmer",
               "label": {
                 "en": "Dimmer Mode",
-                "fr": "Mode Variateur"
+                "fr": "Mode Variateur",
+                "nl": "Dimmer-modus",
+                "de": "Dimmermodus"
               }
             }
           ]
@@ -134879,6 +135882,51 @@
               57344,
               61184
             ]
+          },
+          "2": {
+            "clusters": [
+              0,
+              1,
+              3,
+              4,
+              5,
+              6,
+              18,
+              1280,
+              1281,
+              57344,
+              61184
+            ]
+          },
+          "3": {
+            "clusters": [
+              0,
+              1,
+              3,
+              4,
+              5,
+              6,
+              18,
+              1280,
+              1281,
+              57344,
+              61184
+            ]
+          },
+          "4": {
+            "clusters": [
+              0,
+              1,
+              3,
+              4,
+              5,
+              6,
+              18,
+              1280,
+              1281,
+              57344,
+              61184
+            ]
           }
         },
         "learnmode": {
@@ -135123,33 +136171,41 @@
           "type": "dropdown",
           "label": {
             "en": "Operating Mode",
-            "fr": "Mode de fonctionnement"
+            "fr": "Mode de fonctionnement",
+            "nl": "Bedrijfsmodus",
+            "de": "Betriebsart"
           },
           "hint": {
-            "en": "Scene Mode allows single/double/long press. Dimmer Mode only supports single press. Auto tries to detect and switch automatically.",
-            "fr": "Le mode Scène permet les appuis simples/doubles/longs. Le mode Variateur ne supporte que l'appui simple. Auto tente de détecter et basculer automatiquement."
+            "en": "Scene Mode (default) allows single/double/long press for TS0041/TS0042/TS0043/TS0044/TS004F. Dimmer Mode only supports single press. Auto tries to detect and switch automatically.",
+            "fr": "Le mode Scène (par défaut) permet les appuis simples/doubles/longs pour TS0041/TS0042/TS0043/TS0044/TS004F. Le mode Variateur ne supporte que l'appui simple. Auto tente de détecter et basculer automatiquement."
           },
-          "value": "auto",
+          "value": "scene",
           "values": [
             {
               "id": "auto",
               "label": {
                 "en": "Auto-Detect",
-                "fr": "Détection Auto"
+                "fr": "Détection Auto",
+                "nl": "Automatisch",
+                "de": "Auto-Erkennung"
               }
             },
             {
               "id": "scene",
               "label": {
-                "en": "Scene Mode (Multi-press)",
-                "fr": "Mode Scène (Multi-clics)"
+                "en": "Scene Mode (default — Multi-press)",
+                "fr": "Mode Scène (par défaut — Multi-clics)",
+                "nl": "Scène-modus (standaard — Multi-klik)",
+                "de": "Szenenmodus (Standard — Mehrfachdruck)"
               }
             },
             {
               "id": "dimmer",
               "label": {
                 "en": "Dimmer Mode",
-                "fr": "Mode Variateur"
+                "fr": "Mode Variateur",
+                "nl": "Dimmer-modus",
+                "de": "Dimmermodus"
               }
             }
           ]
@@ -135906,6 +136962,24 @@
             "fr": "Port USB 2"
           }
         },
+        "measure_voltage": {
+          "title": {
+            "en": "Voltage",
+            "fr": "Tension"
+          }
+        },
+        "measure_current": {
+          "title": {
+            "en": "Current",
+            "fr": "Courant"
+          }
+        },
+        "measure_battery": {
+          "title": {
+            "en": "Battery",
+            "fr": "Batterie"
+          }
+        },
         "measure_power": {
           "title": {
             "en": "Power",
@@ -136071,6 +137145,48 @@
           "hint": {
             "en": "LQI variance threshold (higher = less sensitive)",
             "fr": "Seuil de variance LQI (plus haut = moins sensible)"
+          }
+        },
+        {
+          "id": "button_mode",
+          "type": "dropdown",
+          "label": {
+            "en": "Button mode (advanced)",
+            "fr": "Mode bouton (avancé)",
+            "nl": "Knopmodus (geavanceerd)",
+            "de": "Tastenmodus (erweitert)"
+          },
+          "value": "scene",
+          "values": [
+            {
+              "id": "auto",
+              "label": {
+                "en": "Auto-detect",
+                "fr": "Détection auto"
+              }
+            },
+            {
+              "id": "scene",
+              "label": {
+                "en": "Force scene mode (default — multi-press)",
+                "fr": "Forcer mode scène (par défaut — multi-clics)",
+                "nl": "Scène-modus forceren (standaard — multi-klik)",
+                "de": "Szenenmodus erzwingen (Standard — Mehrfachdruck)"
+              }
+            },
+            {
+              "id": "dimmer",
+              "label": {
+                "en": "Force dimmer mode",
+                "fr": "Forcer mode variateur",
+                "nl": "Dimmer-modus forceren",
+                "de": "Dimmermodus erzwingen"
+              }
+            }
+          ],
+          "hint": {
+            "en": "Scene mode (default) sends cluster 0x05 commands. Use \"Force scene mode\" for TS0041 4-endpoint devices and multi-press detection.",
+            "fr": "Mode scène (par défaut) envoie des commandes cluster 0x05. Utiliser \"Forcer mode scène\" pour TS0041 4-endpoints et détection multi-clics."
           }
         }
       ],
@@ -201315,6 +202431,50 @@
       "_pidConflictNotes": [
         "// PID-CONFLICT-NOTE TS004F shared with 19 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE ERS-10TZBVK-AA shared with 4 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
+      ],
+      "settings": [
+        {
+          "id": "button_mode",
+          "type": "dropdown",
+          "label": {
+            "en": "Button mode (advanced)",
+            "fr": "Mode bouton (avancé)",
+            "nl": "Knopmodus (geavanceerd)",
+            "de": "Tastenmodus (erweitert)"
+          },
+          "value": "scene",
+          "values": [
+            {
+              "id": "auto",
+              "label": {
+                "en": "Auto-detect",
+                "fr": "Détection auto"
+              }
+            },
+            {
+              "id": "scene",
+              "label": {
+                "en": "Force scene mode (default — multi-press)",
+                "fr": "Forcer mode scène (par défaut — multi-clics)",
+                "nl": "Scène-modus forceren (standaard — multi-klik)",
+                "de": "Szenenmodus erzwingen (Standard — Mehrfachdruck)"
+              }
+            },
+            {
+              "id": "dimmer",
+              "label": {
+                "en": "Force dimmer mode",
+                "fr": "Forcer mode variateur",
+                "nl": "Dimmer-modus forceren",
+                "de": "Dimmermodus erzwingen"
+              }
+            }
+          ],
+          "hint": {
+            "en": "Scene mode (default) sends cluster 0x05 commands. Use \"Force scene mode\" for TS0041/TS004F/TS0601 4-endpoint devices and multi-press detection.",
+            "fr": "Mode scène (par défaut) envoie des commandes cluster 0x05. Utiliser \"Forcer mode scène\" pour TS0041/TS004F/TS0601 4-endpoints et détection multi-clics."
+          }
+        }
       ]
     },
     {
