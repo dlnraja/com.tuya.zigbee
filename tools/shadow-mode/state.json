@@ -14,10 +14,10 @@
     "mojibake_fixed": 5400,
     "drivers_analyzed": 0,
     "time_saved_minutes": 236,
-    "enrichmentRuns": 5,
-    "lastEnrichment": "2026-07-12T18:21:07.411Z"
+    "enrichmentRuns": 26,
+    "lastEnrichment": "2026-07-13T04:00:39.552Z"
   },
-  "last_run": "2026-07-12T18:21:07.411Z",
+  "last_run": "2026-07-13T04:00:39.552Z",
   "last_dry_run": "2026-07-12T16:00:28.368Z",
   "last_metrics_update": "2026-07-12T16:00:28.368Z",
   "description": "Full-shadow continuous ticket ingestion and dynamic implementation framework. Pulls from local sources (Codex SQLite, GH issues, local files) and implements tickets 1-by-1 with manufacturer variant awareness.",
@@ -68,5 +68,5 @@
     "Run: node tools/ci/push-helper.js master (prints copy-paste commands)"
   ],
   "next_run": "TODO: schedule via cron (every 6 hours suggested) once GITHUB_TOKEN is set",
-  "last_enrichment_update": "2026-07-12T18:21:07.411Z"
+  "last_enrichment_update": "2026-07-13T04:00:39.552Z"
 }

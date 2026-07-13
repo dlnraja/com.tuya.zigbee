@@ -4,9 +4,9 @@
     "description": "MFS Unified Database - Manufacturer Fingerprint Schema",
     "generatedAt": "2026-06-19T20:58:49.880Z",
     "generator": "mfs-aggregator v1.0.0",
-    "lastUpdated": "2026-07-12T21:54:25.152Z",
+    "lastUpdated": "2026-07-13T04:00:39.424Z",
     "lastEnrichment": {
-      "date": "2026-07-12T21:54:25.152Z",
+      "date": "2026-07-13T04:00:39.424Z",
       "addedToDevices": 0,
       "updatedInDevices": 4,
       "updatedDriverMaps": 0,
@@ -115930,7 +115930,7 @@
         "integration": 1
       },
       "confidence": 0.5,
-      "lastSeen": "2026-07-12T21:54:25.150Z"
+      "lastSeen": "2026-07-13T04:00:39.418Z"
     },
     "_TZ3290_yyax9ajf": {
       "manufacturerId": "_TZ3290_yyax9ajf",
@@ -115947,7 +115947,7 @@
         "integration": 1
       },
       "confidence": 0.5,
-      "lastSeen": "2026-07-12T21:54:25.151Z"
+      "lastSeen": "2026-07-13T04:00:39.422Z"
     },
     "_TZB210_ngnt8kni": {
       "manufacturerId": "_TZB210_ngnt8kni",
@@ -115981,7 +115981,7 @@
         "integration": 1
       },
       "confidence": 0.5,
-      "lastSeen": "2026-07-12T21:54:25.151Z"
+      "lastSeen": "2026-07-13T04:00:39.422Z"
     },
     "_TZE204_5cuocqty": {
       "manufacturerId": "_TZE204_5cuocqty",
@@ -116185,7 +116185,7 @@
         "integration": 1
       },
       "confidence": 0.5,
-      "lastSeen": "2026-07-12T21:54:25.151Z"
+      "lastSeen": "2026-07-13T04:00:39.422Z"
     },
     "_TZE200_ICKA1CLH": {
       "manufacturerId": "_TZE200_ICKA1CLH",
@@ -123972,7 +123972,7 @@
     "coveragePercent": 42,
     "multiSourceCount": 1756,
     "lastAggregation": "2026-06-19T20:58:49.874Z",
-    "lastEnrichment": "2026-07-12T21:54:25.152Z"
+    "lastEnrichment": "2026-07-13T04:00:39.424Z"
   },
   "diff": {
     "lastRun": "2026-06-19T20:58:49.880Z",
