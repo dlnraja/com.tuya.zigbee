@@ -9,8 +9,12 @@
     "it": "Sensore Porta / Finestra"
   },
   "class": "sensor",
-  "platforms": ["local"],
-  "connectivity": ["zigbee"],
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
   "subDevices": [],
   "capabilities": [
     "alarm_contact",
@@ -31,16 +35,18 @@
     }
   },
   "energy": {
-    "batteries": ["CR2032", "CR2450", "AAA"],
+    "batteries": [
+      "CR2032",
+      "CR2450",
+      "AAA"
+    ],
     "approximation": {
       "usageConstant": 0.1
     }
   },
   "zigbee": {
     "manufacturerName": [
-      "_TZ3000_6zvw8ham",
       "_TZ3000_l3k0pnc1",
-      "_TZ3000_zutizvyk",
       "_TZ3000_2mccw9py",
       "_TZ3000_d1is6erx"
     ],
@@ -77,9 +83,24 @@
       },
       "value": "CR2032",
       "values": [
-        { "id": "CR2032", "label": { "en": "CR2032 (3V)" } },
-        { "id": "CR2450", "label": { "en": "CR2450 (3V)" } },
-        { "id": "AAA", "label": { "en": "AAA" } }
+        {
+          "id": "CR2032",
+          "label": {
+            "en": "CR2032 (3V)"
+          }
+        },
+        {
+          "id": "CR2450",
+          "label": {
+            "en": "CR2450 (3V)"
+          }
+        },
+        {
+          "id": "AAA",
+          "label": {
+            "en": "AAA"
+          }
+        }
       ]
     },
     {
