@@ -62,14 +62,18 @@ function buildSceneRecallTriggers(driverName, buttonCount) {
       hint: {
         en: `When button ${i} recalls a Zigbee scene (cluster 0x05 — scene mode, P31)`,
         fr: `Lorsque le bouton ${i} rappelle une scène Zigbee (cluster 0x05 — mode scène, P31)`,
+        nl: `Wanneer knop ${i} een Zigbee-scène oproept (cluster 0x05 — scènemodus, P31)`,
+        de: `Wenn Taste ${i} eine Zigbee-Szene aufruft (Cluster 0x05 — Szenenmodus, P31)`,
       },
       tokens: [
-        { name: 'scene_id', type: 'number', title: { en: 'Scene ID', fr: 'ID Scène' }, example: i },
+        { name: 'scene_id', type: 'number', title: { en: 'Scene ID', fr: 'ID Scène', nl: 'Scène-ID', de: 'Szenen-ID' }, example: i },
       ],
       args: [],
       titleFormatted: {
         en: `Button ${i} scene [[scene_id]] recalled`,
         fr: `Bouton ${i} scène [[scene_id]] rappelée`,
+        nl: `Knop ${i} scène [[scene_id]] opgeroepen`,
+        de: `Taste ${i} Szene [[scene_id]] aufgerufen`,
       },
     });
   }

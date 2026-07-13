@@ -228,7 +228,9 @@
       },
       "hint": {
         "en": "When the device recalls a Zigbee scene (cluster 0x05 — scene mode, P29)",
-        "fr": "Lorsque l'appareil rappelle une scène Zigbee (cluster 0x05 — mode scène, P29)"
+        "fr": "Lorsque l'appareil rappelle une scène Zigbee (cluster 0x05 — mode scène, P29)",
+        "nl": "When the device recalls a Zigbee scène (cluster 0x05 — scène mode, P29)",
+        "de": "When the device recalls a Zigbee Szene (Cluster 0x05 — Szene mode, P29)"
       },
       "tokens": [
         {
@@ -236,7 +238,9 @@
           "type": "number",
           "title": {
             "en": "Scene ID",
-            "fr": "ID Scène"
+            "fr": "ID Scène",
+            "nl": "Scène ID",
+            "de": "Szene ID"
           },
           "example": 1
         }
@@ -244,7 +248,9 @@
       "args": [],
       "titleFormatted": {
         "en": "Scene [[scene_id]] recalled",
-        "fr": "Scène [[scene_id]] rappelée"
+        "fr": "Scène [[scene_id]] rappelée",
+        "nl": "Scène [[scène_id]] opgeroepen",
+        "de": "Szene [[Szene_id]] aufgerufen"
       }
     }
   ],

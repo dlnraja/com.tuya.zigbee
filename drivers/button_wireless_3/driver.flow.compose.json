@@ -525,7 +525,9 @@
       },
       "hint": {
         "en": "When button 1 recalls a Zigbee scene (cluster 0x05 — scene mode, P31)",
-        "fr": "Lorsque le bouton 1 rappelle une scène Zigbee (cluster 0x05 — mode scène, P31)"
+        "fr": "Lorsque le bouton 1 rappelle une scène Zigbee (cluster 0x05 — mode scène, P31)",
+        "nl": "Wanneer knop 1 recalls a Zigbee scène (cluster 0x05 — scène mode, P31)",
+        "de": "Wenn Taste 1 recalls a Zigbee Szene (Cluster 0x05 — Szene mode, P31)"
       },
       "tokens": [
         {
@@ -533,7 +535,9 @@
           "type": "number",
           "title": {
             "en": "Scene ID",
-            "fr": "ID Scène"
+            "fr": "ID Scène",
+            "nl": "Scène ID",
+            "de": "Szene ID"
           },
           "example": 1
         }
@@ -541,7 +545,9 @@
       "args": [],
       "titleFormatted": {
         "en": "Button 1 scene [[scene_id]] recalled",
-        "fr": "Bouton 1 scène [[scene_id]] rappelée"
+        "fr": "Bouton 1 scène [[scene_id]] rappelée",
+        "nl": "Knop 1 scène [[scène_id]] opgeroepen",
+        "de": "Taste 1 Szene [[Szene_id]] aufgerufen"
       }
     },
     {
@@ -554,7 +560,9 @@
       },
       "hint": {
         "en": "When button 2 recalls a Zigbee scene (cluster 0x05 — scene mode, P31)",
-        "fr": "Lorsque le bouton 2 rappelle une scène Zigbee (cluster 0x05 — mode scène, P31)"
+        "fr": "Lorsque le bouton 2 rappelle une scène Zigbee (cluster 0x05 — mode scène, P31)",
+        "nl": "Wanneer knop 2 recalls a Zigbee scène (cluster 0x05 — scène mode, P31)",
+        "de": "Wenn Taste 2 recalls a Zigbee Szene (Cluster 0x05 — Szene mode, P31)"
       },
       "tokens": [
         {
@@ -562,7 +570,9 @@
           "type": "number",
           "title": {
             "en": "Scene ID",
-            "fr": "ID Scène"
+            "fr": "ID Scène",
+            "nl": "Scène ID",
+            "de": "Szene ID"
           },
           "example": 2
         }
@@ -570,7 +580,9 @@
       "args": [],
       "titleFormatted": {
         "en": "Button 2 scene [[scene_id]] recalled",
-        "fr": "Bouton 2 scène [[scene_id]] rappelée"
+        "fr": "Bouton 2 scène [[scene_id]] rappelée",
+        "nl": "Knop 2 scène [[scène_id]] opgeroepen",
+        "de": "Taste 2 Szene [[Szene_id]] aufgerufen"
       }
     },
     {
@@ -583,7 +595,9 @@
       },
       "hint": {
         "en": "When button 3 recalls a Zigbee scene (cluster 0x05 — scene mode, P31)",
-        "fr": "Lorsque le bouton 3 rappelle une scène Zigbee (cluster 0x05 — mode scène, P31)"
+        "fr": "Lorsque le bouton 3 rappelle une scène Zigbee (cluster 0x05 — mode scène, P31)",
+        "nl": "Wanneer knop 3 recalls a Zigbee scène (cluster 0x05 — scène mode, P31)",
+        "de": "Wenn Taste 3 recalls a Zigbee Szene (Cluster 0x05 — Szene mode, P31)"
       },
       "tokens": [
         {
@@ -591,7 +605,9 @@
           "type": "number",
           "title": {
             "en": "Scene ID",
-            "fr": "ID Scène"
+            "fr": "ID Scène",
+            "nl": "Scène ID",
+            "de": "Szene ID"
           },
           "example": 3
         }
@@ -599,7 +615,9 @@
       "args": [],
       "titleFormatted": {
         "en": "Button 3 scene [[scene_id]] recalled",
-        "fr": "Bouton 3 scène [[scene_id]] rappelée"
+        "fr": "Bouton 3 scène [[scene_id]] rappelée",
+        "nl": "Knop 3 scène [[scène_id]] opgeroepen",
+        "de": "Taste 3 Szene [[Szene_id]] aufgerufen"
       }
     }
   ]
