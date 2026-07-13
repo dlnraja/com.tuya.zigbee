@@ -1,7 +1,12 @@
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 'use strict';
-const TuyaSpecificClusterDevice = require('../../lib/tuya/TuyaSpecificClusterDevice');
+
+// P24.7: Safe import for TuyaSpecificClusterDevice (crash-resilient)
+const { safeExtends } = require('../../lib/utils/ClassExtendsGuard');
+const TuyaSpecificClusterDevice = safeExtends('TuyaSpecificClusterDevice', () => {
+  return require('../../lib/tuya/TuyaSpecificClusterDevice');
+});
 const { includesCI } = require('../../lib/utils/CaseInsensitiveMatcher');
 const { safeParse } = require('../../lib/utils/tuyaUtils.js');
 const { smartParse, smartDivisorDetect } = require('../../lib/managers/SmartDivisorManager');
