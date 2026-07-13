@@ -22,6 +22,21 @@ runs:
         node scripts/maintenance/optimize-build-images.cjs
         node scripts/maintenance/sanitize-manifest.cjs app.json .homeybuild/app.json
 
+    - name: Clean .homeybuild (remove .bak, dev artifacts)
+      shell: bash
+      run: |
+        # Remove .bak / .backup / .tmp / .old / .orig files from build dir
+        # (auto-fix-all bot may re-add them via version bumps)
+        find .homeybuild -type f \( -name '*.bak' -o -name '*.backup' -o -name '*.tmp' -o -name '*.old' -o -name '*.orig' -o -name '*.swp' -o -name '*.swo' -o -name '*.rej' \) -delete
+        # Remove dev tool dirs
+        rm -rf .homeybuild/tools/ci/diagnostics .homeybuild/tools/ci/.cache .homeybuild/tools/ci/__pycache__ .homeybuild/tools/shadow-mode/tickets .homeybuild/tools/shadow-mode/.cache
+        rm -rf .homeybuild/data/intel-harvest .homeybuild/data/community-sync .homeybuild/data/temp_desktop_cleanup .homeybuild/data/archive .homeybuild/data/forum-cache .homeybuild/data/diagnostics .homeybuild/data/backups
+        # Remove dev lockfiles
+        rm -f .homeybuild/pnpm-lock.yaml .homeybuild/pnpm-workspace.yaml .homeybuild/package-lock.json .homeybuild/yarn.lock
+        # Remove dev scripts
+        rm -f .homeybuild/tools/ci/delete-johan-comments.sh .homeybuild/tools/ci/delete-johan-comments.js .homeybuild/tools/ci/delete-own-upstream-comments.js .homeybuild/tools/ci/collect-johan-comments-to-delete.js
+        echo "Cleaned .homeybuild of dev artifacts"
+
     - name: Prepare Publish Directory
       shell: bash
       run: npm run prepare-publish
