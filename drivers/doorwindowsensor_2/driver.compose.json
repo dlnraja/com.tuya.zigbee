@@ -27,7 +27,11 @@
   },
   "zigbee": {
     "productId": [
-      "TS0601"
+      "TS0601",
+      "RH3001",
+      "TS0203",
+      "DoorWindow-Sensor-ZB3.0",
+      "MCT-340 E"
     ],
     "endpoints": {
       "1": {
@@ -49,7 +53,10 @@
       }
     },
     "manufacturerName": [
-      "_TZ3000_dummy1781425895946"
+      "_TZ3000_dummy1781425895946",
+      "Immax",
+      "TUYATEC-0l6xaqmi",
+      "Visonic"
     ]
   },
   "version": "1.0.0",
