@@ -642,7 +642,7 @@ function generateCollisionPredictions(conflicts, drivers, allRemovals) {
 function loadPreviousState() {
   const statePath = path.join(STATE_DIR, 'fingerprint-conflict-state.json');
   try {
-    if (fs.existsSync(statePath)) return JSON.parse(fs.readFileSync(statePath, 'utf8'));
+    if (fs.existsSync(statePath)) return JSON.parse(Buffer.from(fs.readFileSync(statePath)).toString('utf8'));
   } catch { /* no previous state */ }
   return null;
 }

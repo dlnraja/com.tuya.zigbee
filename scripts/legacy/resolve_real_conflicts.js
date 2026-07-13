@@ -113,7 +113,7 @@ function applyResolutions(resolutions) {
     }
 
     try {
-      const content = JSON.parse(fs.readFileSync(composeFile, 'utf8'));
+      const content = JSON.parse(Buffer.from(fs.readFileSync(composeFile)).toString('utf8'));
 
       if (!content.zigbee) return;
 
@@ -165,7 +165,7 @@ if (!fs.existsSync(ANALYSIS_FILE)) {
   process.exit(1);
 }
 
-const analysis = JSON.parse(fs.readFileSync(ANALYSIS_FILE, 'utf8'));
+const analysis = JSON.parse(Buffer.from(fs.readFileSync(ANALYSIS_FILE)).toString('utf8'));
 const conflicts = analysis.conflicts || [];
 
 console.log(`📊 ${conflicts.length} conflits réels à résoudre\n`);
