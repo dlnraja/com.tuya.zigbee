@@ -170,7 +170,19 @@ async function fetchWithRetry(url, opts = {}, ro = {}) {
 
       return r;
     } catch (e) {
-      if (i < retries) {
+      // AggregateError handling (Node 15+): multiple sub-errors
+      if (e && e.name === 'AggregateError' && Array.isArray(e.errors) && e.errors.length > 0) {
+        const subErrors = e.errors.map(se => se.message || String(se)).join('; ');
+        if (i < retries) {
+          const d = Math.min(baseDelay * 2 ** i + Math.random() * 1000, maxDelay);
+          console.log(`  [${label || 'retry'}] AggregateError(${e.errors.length}): ${subErrors.substring(0, 150)}, wait ${Math.round(d / 1000)}s (${i + 1}/${retries})`);
+          await sleep(d);
+        } else {
+          // Last attempt: throw but with more context
+          e.message = `AggregateError after ${retries + 1} attempts: ${subErrors.substring(0, 300)}`;
+          throw e;
+        }
+      } else if (i < retries) {
         const d = Math.min(baseDelay * 2 ** i + Math.random() * 1000, maxDelay);
         console.log('  [' + (label || 'retry') + '] ' + e.name + ': ' + (e.message || '').substring(0, 80) + ', wait ' + Math.round(d / 1000) + 's (' + (i + 1) + '/' + retries + ')');
         await sleep(d);
