@@ -1,0 +1,93 @@
+name: Recurrent Orchestrator (P32)
+
+# P32 — Daily orchestrator that runs ALL analyzers in pipeline.
+# 100% offline. AI is OPTIONAL bonus (--ai flag).
+# Default mode works without ANY AI service.
+#
+# Pipeline:
+#  1. Smart variant handler  → variant-matrix.json
+#  2. Battery cartography    → battery-cartography.json
+#  3. Battery gaps            → battery-gaps.json
+#  4. Activity fetcher       → activity-snapshot.json
+#  5. Offline crash analyzer → crash-analysis.json
+#  6. Smart auto-fix         → auto-fix-proposals.json
+#  7. Temporal monitor       → temporal-monitor-report.json
+#  8. Session-start           → activity-cache.json
+#  9. LocalFirstEngine        → predictions + 35 rules
+#  10. AI bonus (optional)    → if --ai flag + API key available
+
+on:
+  schedule:
+    # Daily at 03:30 UTC (after shadow-mode at 03:00, before temporal at 06:00)
+    - cron: '30 3 * * *'
+  workflow_dispatch:
+    inputs:
+      use_ai:
+        description: 'Use AI bonus layer (requires API key in secrets)'
+        required: false
+        default: 'false'
+      quick:
+        description: 'Quick mode (skip heavy steps)'
+        required: false
+        default: 'false'
+
+jobs:
+  orchestrate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run Recurrent Orchestrator
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          ARGS=""
+          if [ "${{ inputs.use_ai }}" = "true" ]; then
+            ARGS="$ARGS --ai"
+          fi
+          if [ "${{ inputs.quick }}" = "true" ]; then
+            ARGS="$ARGS --quick"
+          fi
+          node tools/ci/recurrent-orchestrator.js $ARGS
+
+      - name: Upload Reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: orchestrator-reports-${{ github.run_id }}
+          path: |
+            .github/state/recurrent-orchestrator-report.json
+            .github/state/variant-matrix.json
+            .github/state/battery-cartography.json
+            .github/state/battery-gaps.json
+            .github/state/activity-snapshot.json
+            .github/state/crash-analysis.json
+            .github/state/auto-fix-proposals.json
+            .github/state/temporal-monitor-report.json
+            .github/state/local-first-engine-predictions.json
+            .github/state/activity-cache.json
+          retention-days: 30
+
+      - name: Print Summary
+        run: |
+          if [ -f .github/state/recurrent-orchestrator-report.json ]; then
+            echo "## 🧬 Recurrent Orchestrator Summary" >> $GITHUB_STEP_SUMMARY
+            STEPS=$(node -e "const j=require('./.github/state/recurrent-orchestrator-report.json'); console.log(j.summary.totalSteps)" 2>/dev/null || echo 0)
+            OK=$(node -e "const j=require('./.github/state/recurrent-orchestrator-report.json'); console.log(j.summary.ok)" 2>/dev/null || echo 0)
+            PRED=$(node -e "const j=require('./.github/state/recurrent-orchestrator-report.json'); console.log(j.summary.localFirstEngine?.predictions || 0)" 2>/dev/null || echo 0)
+            DURATION=$(node -e "const j=require('./.github/state/recurrent-orchestrator-report.json'); console.log((j.summary.totalDuration/1000).toFixed(1))" 2>/dev/null || echo 0)
+            AI=$(node -e "const j=require('./.github/state/recurrent-orchestrator-report.json'); console.log(j.aiAvailable ? 'available' : 'unavailable')" 2>/dev/null || echo unknown)
+            echo "- Total steps: $STEPS (ok=$OK)" >> $GITHUB_STEP_SUMMARY
+            echo "- LocalFirstEngine predictions: $PRED" >> $GITHUB_STEP_SUMMARY
+            echo "- Duration: ${DURATION}s" >> $GITHUB_STEP_SUMMARY
+            echo "- AI: $AI" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "Engine: 100% offline. AI is bonus only (never blocking)." >> $GITHUB_STEP_SUMMARY
+          fi
