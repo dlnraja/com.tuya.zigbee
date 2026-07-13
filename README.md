@@ -3,6 +3,7 @@
 <!-- AUTO-UPDATED: Do not edit badges manually - updated by GitHub Actions -->
 [![Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdlnraja%2Fcom.tuya.zigbee%2Fmaster%2Fapp.json&query=%24.version&label=version&color=blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![Fingerprints](https://img.shields.io/badge/fingerprints-6,543+-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
+[![Fingerprints](https://img.shields.io/badge/fingerprints-6,572+-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![Drivers](https://img.shields.io/badge/drivers-431-brightgreen)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![Flow Cards](https://img.shields.io/badge/flow%20cards-4,915-blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![SDK](https://img.shields.io/badge/SDK-3-orange)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
@@ -10,6 +11,7 @@
 [![Homey](https://img.shields.io/badge/Homey-Pro-blueviolet)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 
 A community-driven Homey app that brings local control to Tuya Zigbee devices — no cloud, no internet needed. Covers switches, sensors, lights, thermostats, covers, locks, and more across **431 drivers** and **6,543+ device fingerprints**.
+A community-driven Homey app that brings local control to Tuya Zigbee devices — no cloud, no internet needed. Covers switches, sensors, lights, thermostats, covers, locks, and more across **431 drivers** and **6,572+ device fingerprints**.
 
 **Key features:**
 - **Local-only** — everything runs on your Homey, nothing goes to the cloud
@@ -36,6 +38,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 |--------|-------|
 | **App Version** | v9.0.216 |
 | **Device Fingerprints** | 6,543+ |
+| **Device Fingerprints** | 6,572+ |
 | **Unique Product IDs** | 571 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
 | **Flow Cards** | 4,915 |
@@ -51,6 +54,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 | # | Driver | Fingerprints |
 |---|--------|-------------|
 | 1 | `climate_sensor` | 789 |
+| 1 | `climate_sensor` | 795 |
 | 2 | `switch_1gang` | 619 |
 | 3 | `generic_tuya` | 406 |
 | 4 | `presence_sensor_radar` | 250 |
@@ -69,6 +73,10 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 | 17 | `power_meter` | 83 |
 | 18 | `plug_smart` | 77 |
 | 19 | `soil_sensor` | 75 |
+| 16 | `generic_diy` | 95 |
+| 17 | `power_meter` | 83 |
+| 18 | `soil_sensor` | 79 |
+| 19 | `plug_smart` | 77 |
 | 20 | `wall_thermostat` | 73 |
 
 ### Drivers by Device Class
@@ -182,6 +190,7 @@ Homey Pro
        ├─ BatteryManager (8 chemistries, voltage fallback)
        ├─ PhysicalButtonMixin (2000ms detection)
        └─ 431 Drivers ─ 6,543+ fingerprints
+       └─ 431 Drivers ─ 6,572+ fingerprints
 ```
 
 ---
