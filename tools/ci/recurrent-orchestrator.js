@@ -117,6 +117,28 @@ async function runLocalFirstEngine() {
   }
 }
 
+async function runAutonomousVerification() {
+  const t0 = Date.now();
+  try {
+    const { AutonomousVerificationEngine } = require(path.join(repoRoot, 'lib', 'autonomous'));
+    const ave = new AutonomousVerificationEngine({
+      stateFile: path.join(stateDir, 'autonomous-verification.json'),
+    });
+    const report = await ave.runChecks();
+    return {
+      name: 'AutonomousVerification',
+      status: 'ok',
+      duration: Date.now() - t0,
+      checksRun: report.checks.length,
+      findings: report.findings.length,
+      fixes: report.fixes.length,
+      severity: report.findings.reduce((acc, f) => { acc[f.severity] = (acc[f.severity] || 0) + 1; return acc; }, {}),
+    };
+  } catch (err) {
+    return { name: 'AutonomousVerification', status: 'failed', error: err.message };
+  }
+}
+
 async function callAIBonus(report) {
   if (!useAI) return null;
   try {
@@ -195,12 +217,16 @@ async function main() {
   }
 
   // Step 9: LocalFirstEngine rules + predictions
-  log('Step 9/10: LocalFirstEngine (rules + predictions)...');
+  log('Step 9/11: LocalFirstEngine (rules + predictions)...');
   report.steps.push(await runLocalFirstEngine());
 
-  // Step 10: AI bonus (optional)
+  // Step 10: Autonomous verification (P37.6 — self-heal + AggregateError detection)
+  log('Step 10/11: Autonomous verification...');
+  report.steps.push(await runAutonomousVerification());
+
+  // Step 11: AI bonus (optional)
   if (useAI) {
-    log('Step 10/10: AI bonus layer...');
+    log('Step 11/11: AI bonus layer...');
     const aiResult = await callAIBonus(report);
     if (aiResult) {
       report.steps.push({
@@ -217,7 +243,7 @@ async function main() {
       });
     }
   } else {
-    log('Step 10/10: AI bonus SKIPPED (--ai flag not set)');
+    log('Step 11/11: AI bonus SKIPPED (--ai flag not set)');
   }
 
   // Summary
