@@ -14351,5 +14351,161 @@
     "type": "generic_diy",
     "powerSource": "battery",
     "modelIds": []
+  },
+  "_TZE284_ozf4e02o": {
+    "driverId": "presence_sensor_radar",
+    "type": "presence_sensor_radar",
+    "powerSource": "mains",
+    "modelIds": []
+  },
+  "_TZE284_yrwmnya3": {
+    "driverId": "presence_sensor_radar",
+    "type": "presence_sensor_radar",
+    "powerSource": "mains",
+    "modelIds": []
+  },
+  "_TZE204_ai4rqhky": {
+    "driverId": "climate_sensor",
+    "type": "climate_sensor",
+    "powerSource": "battery",
+    "modelIds": []
+  },
+  "_TZE284_5m4nchbm": {
+    "driverId": "climate_sensor",
+    "type": "climate_sensor",
+    "powerSource": "battery",
+    "modelIds": []
+  },
+  "_TZE284_ajuasrmx": {
+    "driverId": "climate_sensor",
+    "type": "climate_sensor",
+    "powerSource": "battery",
+    "modelIds": []
+  },
+  "_TZE284_kdqrazmy": {
+    "driverId": "climate_sensor",
+    "type": "climate_sensor",
+    "powerSource": "battery",
+    "modelIds": []
+  },
+  "_TZE284_q22avxbv": {
+    "driverId": "climate_sensor",
+    "type": "climate_sensor",
+    "powerSource": "battery",
+    "modelIds": []
+  },
+  "_TZE284_vjpaeih9": {
+    "driverId": "climate_sensor",
+    "type": "climate_sensor",
+    "powerSource": "battery",
+    "modelIds": []
+  },
+  "_TZE284_xpq2rzhq": {
+    "driverId": "climate_sensor",
+    "type": "climate_sensor",
+    "powerSource": "battery",
+    "modelIds": []
+  },
+  "_tz3000_pcqjmcud": {
+    "driverId": "smart_knob_rotary",
+    "type": "smart_knob_rotary",
+    "powerSource": "battery",
+    "modelIds": []
+  },
+  "_tz3000_gwkzibhs": {
+    "driverId": "smart_knob_rotary",
+    "type": "smart_knob_rotary",
+    "powerSource": "battery",
+    "modelIds": []
+  },
+  "_TZE284_4vbj3fxh": {
+    "driverId": "generic_diy",
+    "type": "generic_diy",
+    "powerSource": "battery",
+    "modelIds": []
+  },
+  "_TZE284_bw4ayyeh": {
+    "driverId": "generic_diy",
+    "type": "generic_diy",
+    "powerSource": "battery",
+    "modelIds": []
+  },
+  "_TZE284_kow4ok3t": {
+    "driverId": "generic_diy",
+    "type": "generic_diy",
+    "powerSource": "battery",
+    "modelIds": []
+  },
+  "_TZE284_mvtclclq": {
+    "driverId": "generic_diy",
+    "type": "generic_diy",
+    "powerSource": "battery",
+    "modelIds": []
+  },
+  "_TZE284_nbv4tdaz": {
+    "driverId": "generic_diy",
+    "type": "generic_diy",
+    "powerSource": "battery",
+    "modelIds": []
+  },
+  "_TZE284_tgrzpqf4": {
+    "driverId": "generic_diy",
+    "type": "generic_diy",
+    "powerSource": "battery",
+    "modelIds": []
+  },
+  "_TZE204_2jnoY8dj": {
+    "driverId": "fan_controller",
+    "type": "fan_controller",
+    "powerSource": "mains",
+    "modelIds": []
+  },
+  "_TZE608_2wg235cx": {
+    "driverId": "hybrid_garage_door_sensor",
+    "type": "hybrid_garage_door_sensor",
+    "powerSource": "battery",
+    "modelIds": []
+  },
+  "_TZE608_rwhg6ykp": {
+    "driverId": "hybrid_garage_door_sensor",
+    "type": "hybrid_garage_door_sensor",
+    "powerSource": "battery",
+    "modelIds": []
+  },
+  "_TZE608_dgtklgxf": {
+    "driverId": "hybrid_garage_door_sensor",
+    "type": "hybrid_garage_door_sensor",
+    "powerSource": "battery",
+    "modelIds": []
+  },
+  "_TZE608_qxlvbq2m": {
+    "driverId": "hybrid_garage_door_sensor",
+    "type": "hybrid_garage_door_sensor",
+    "powerSource": "battery",
+    "modelIds": []
+  },
+  "_TZE608_o8gmu7lo": {
+    "driverId": "hybrid_garage_door_sensor",
+    "type": "hybrid_garage_door_sensor",
+    "powerSource": "battery",
+    "modelIds": []
+  },
+  "_TZE284_mxujdmxo": {
+    "driverId": "water_tank_monitor",
+    "type": "water_tank_monitor",
+    "powerSource": "battery",
+    "modelIds": []
+  },
+  "_TZE204_tgl8i2np": {
+    "driverId": "curtain_motor",
+    "type": "curtain_motor",
+    "powerSource": "mains",
+    "modelIds": []
+  },
+  "_TZE204_trwaxi57": {
+    "driverId": "curtain_motor",
+    "type": "curtain_motor",
+    "powerSource": "mains",
+    "modelIds": []
   }
 }
