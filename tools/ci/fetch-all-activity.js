@@ -89,6 +89,32 @@ async function fetchGHEvents() {
   }
 }
 
+
+
+async function fetchGHWorkflowRuns(state) {
+  if (!ghToken) return [];
+  try {
+    const runs = await httpsGet(
+      `https://api.github.com/repos/${repo}/actions/runs?per_page=20`,
+      { 'Authorization': `token ${ghToken}`, 'Accept': 'application/vnd.github+json', 'User-Agent': 'P30-activity-fetcher' }
+    );
+    if (Array.isArray(runs && runs.workflow_runs)) {
+      return runs.workflow_runs.map(r => ({
+        id: r.id,
+        name: r.name,
+        status: r.status,
+        conclusion: r.conclusion,
+        branch: r.head_branch,
+        createdAt: r.created_at,
+        event: r.event,
+      }));
+    }
+    return [];
+  } catch (err) {
+    log('❌ GH workflow runs error:', err.message);
+    return [];
+  }
+}
 async function fetchGHPRs() {
   if (!ghToken) return [];
   try {
