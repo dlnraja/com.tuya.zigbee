@@ -97,6 +97,11 @@ jobs:
           fi
         continue-on-error: true
 
+      - name: Voice safety check
+        id: voice
+        run: npm run check:voice 2>&1 | tail -50
+        continue-on-error: true
+
       - name: JSON schema validation
         id: json
         run: |
