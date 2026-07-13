@@ -396,12 +396,14 @@
       "zen",
       "zen thermostat",
       "zigbee alliance",
-      "zigbee2mqtt"
+      "zigbee2mqtt",
+      "_tze"
     ],
     "productId": [
       "TS0203",
       "TS0601",
-      "TS0601_generic"
+      "TS0601_generic",
+      "TS0603"
     ],
     "endpoints": {
       "1": {
