@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "9.0.197",
+  "version": "9.0.198",
   "compatibility": ">=12.2.0",
   "platforms": [
     "local"
@@ -125520,11 +125520,9 @@
       "zigbee": {
         "manufacturerName": [
           "_TYZB01_BNGWDJSR",
-          "_TZ3000_9EVM3OTQ",
           "_tz3000_as7eqiri",
           "_tz3000_fbja4q6h",
           "_tz3000_hcm1fqxe",
-          "_TZ3000_KEABPIGB",
           "_tz3000_kihkx3cq",
           "_tz3000_lzfwt5qx",
           "_tz3000_m6u3q8jy",
@@ -131361,7 +131359,6 @@
           }
         },
         "manufacturerName": [
-          "_TZ3000_BI6LPSEW",
           "_TZ3000_BGTZM4NY",
           "_TZ3000_5TQXPINE",
           "_TZ3000_URI7OADN",
@@ -131377,15 +131374,6 @@
           "_tz3000_u3nv1jwk",
           "_TZ3000_u3nv1jwk",
           "_TZ3000_U3NV1JWK",
-          "_tz3000_kfu8zapd",
-          "_TZ3000_kfu8zapd",
-          "_TZ3000_KFU8ZAPD",
-          "_tz3000_xabckq1v",
-          "_TZ3000_xabckq1v",
-          "_TZ3000_XABCKQ1V",
-          "_tz3000_czuyt8lz",
-          "_TZ3000_czuyt8lz",
-          "_TZ3000_CZUYT8LZ",
           "_tz3000_b3mgfu0d",
           "_TZ3000_b3mgfu0d",
           "_TZ3000_B3MGFU0D",
@@ -138092,7 +138080,8 @@
           "RH3052",
           "Excellux",
           "SNZB-02B",
-          "SNZB-02M"
+          "SNZB-02M",
+          "TS0202"
         ],
         "endpoints": {
           "1": {
@@ -156333,8 +156322,7 @@
         "manufacturerName": [
           "_TZ3000_5f43h46b",
           "_TZE200_92t1xwwa",
-          "_TZE200_fco1mkys",
-          "_TZE200_bxoo2swd"
+          "_TZE200_fco1mkys"
         ]
       },
       "version": "1.0.0",
@@ -156405,9 +156393,7 @@
       },
       "zigbee": {
         "manufacturerName": [
-          "_TYZB01_v8gtiaed",
-          "_tz3000_92chsky7",
-          "_tz3000_v8gtiaed"
+          "_tz3000_92chsky7"
         ],
         "productId": [
           "TS110F",
@@ -166109,7 +166095,8 @@
         "productId": [
           "TS0203",
           "TS0601",
-          "TS0601_generic"
+          "TS0601_generic",
+          "TS0603"
         ],
         "endpoints": {
           "1": {
@@ -205669,7 +205656,9 @@
           "TS0726",
           "TS0041",
           "TS0002",
-          "TS0003"
+          "TS0003",
+          "TS110E",
+          "TS0014"
         ],
         "learnmode": {
           "image": "/drivers/switch_1gang/assets/learnmode.svg",
@@ -208997,7 +208986,16 @@
           "TS0004_switch_module",
           "TS0601",
           "TS0726",
-          "JZ-ZB-004"
+          "JZ-ZB-004",
+          "TS0011",
+          "TS0012",
+          "TS0041",
+          "TS0044",
+          "TS004F",
+          "TS011F",
+          "TS0203",
+          "TS0215A",
+          "TS1002"
         ],
         "endpoints": {
           "1": {
