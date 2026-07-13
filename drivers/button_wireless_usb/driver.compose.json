@@ -31,6 +31,24 @@
         "fr": "Port USB 2"
       }
     },
+    "measure_voltage": {
+      "title": {
+        "en": "Voltage",
+        "fr": "Tension"
+      }
+    },
+    "measure_current": {
+      "title": {
+        "en": "Current",
+        "fr": "Courant"
+      }
+    },
+    "measure_battery": {
+      "title": {
+        "en": "Battery",
+        "fr": "Batterie"
+      }
+    },
     "measure_power": {
       "title": {
         "en": "Power",
@@ -209,7 +227,9 @@
       "type": "dropdown",
       "label": {
         "en": "Button mode (advanced)",
-        "fr": "Mode bouton (avancé)"
+        "fr": "Mode bouton (avancé)",
+        "nl": "Knopmodus (geavanceerd)",
+        "de": "Tastenmodus (erweitert)"
       },
       "value": "scene",
       "values": [
@@ -224,14 +244,18 @@
           "id": "scene",
           "label": {
             "en": "Force scene mode (default — multi-press)",
-            "fr": "Forcer mode scène (par défaut — multi-clics)"
+            "fr": "Forcer mode scène (par défaut — multi-clics)",
+            "nl": "Scène-modus forceren (standaard — multi-klik)",
+            "de": "Szenenmodus erzwingen (Standard — Mehrfachdruck)"
           }
         },
         {
           "id": "dimmer",
           "label": {
             "en": "Force dimmer mode",
-            "fr": "Forcer mode variateur"
+            "fr": "Forcer mode variateur",
+            "nl": "Dimmer-modus forceren",
+            "de": "Dimmermodus erzwingen"
           }
         }
       ],
