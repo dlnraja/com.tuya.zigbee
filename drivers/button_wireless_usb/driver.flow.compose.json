@@ -85,6 +85,35 @@
         "nl": "Vermogen gewijzigd",
         "de": "Leistung geÃ¤ndert"
       }
+    },
+    {
+      "id": "button_wireless_usb_button_1gang_button_scene_recall",
+      "title": {
+        "en": "Button 1 scene recalled",
+        "fr": "Bouton 1 scène rappelée",
+        "nl": "Knop 1 scène opgeroepen",
+        "de": "Taste 1 Szene aufgerufen"
+      },
+      "hint": {
+        "en": "When button 1 recalls a Zigbee scene (cluster 0x05 — scene mode, P31)",
+        "fr": "Lorsque le bouton 1 rappelle une scène Zigbee (cluster 0x05 — mode scène, P31)"
+      },
+      "tokens": [
+        {
+          "name": "scene_id",
+          "type": "number",
+          "title": {
+            "en": "Scene ID",
+            "fr": "ID Scène"
+          },
+          "example": 1
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 1 scene [[scene_id]] recalled",
+        "fr": "Bouton 1 scène [[scene_id]] rappelée"
+      }
     }
   ],
   "conditions": [
