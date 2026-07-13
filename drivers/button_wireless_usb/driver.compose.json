@@ -211,20 +211,20 @@
         "en": "Button mode (advanced)",
         "fr": "Mode bouton (avancé)"
       },
-      "value": "auto",
+      "value": "scene",
       "values": [
         {
           "id": "auto",
           "label": {
-            "en": "Auto (default)",
-            "fr": "Auto (par défaut)"
+            "en": "Auto-detect",
+            "fr": "Détection auto"
           }
         },
         {
           "id": "scene",
           "label": {
-            "en": "Force scene mode",
-            "fr": "Forcer mode scène"
+            "en": "Force scene mode (default — multi-press)",
+            "fr": "Forcer mode scène (par défaut — multi-clics)"
           }
         },
         {
@@ -236,8 +236,8 @@
         }
       ],
       "hint": {
-        "en": "Scene mode sends cluster 0x05 commands. Use \"Force scene mode\" for TS0041 4-endpoint devices.",
-        "fr": "Mode scène envoie des commandes cluster 0x05. Utiliser \"Forcer mode scène\" pour TS0041 4-endpoints."
+        "en": "Scene mode (default) sends cluster 0x05 commands. Use \"Force scene mode\" for TS0041 4-endpoint devices and multi-press detection.",
+        "fr": "Mode scène (par défaut) envoie des commandes cluster 0x05. Utiliser \"Forcer mode scène\" pour TS0041 4-endpoints et détection multi-clics."
       }
     }
   ],
