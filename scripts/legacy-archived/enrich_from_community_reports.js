@@ -143,7 +143,7 @@ function enrichDriver(driverName, newIds) {
   }
 
   try {
-    const content = JSON.parse(fs.readFileSync(composeFile, 'utf8'));
+    const content = JSON.parse(Buffer.from(fs.readFileSync(composeFile)).toString('utf8'));
 
     if (!content.zigbee || !content.zigbee.manufacturerName) {
       console.log(`   ⚠️  ${driverName}: pas de manufacturerName dans zigbee config`);
@@ -200,7 +200,7 @@ function verifyFlowTriggers(driverName) {
 
   try {
     const driverCode = fs.readFileSync(driverFile, 'utf8');
-    const compose = JSON.parse(fs.readFileSync(composeFile, 'utf8'));
+    const compose = JSON.parse(Buffer.from(fs.readFileSync(composeFile)).toString('utf8'));
 
     // Vérifier si flow cards existent dans compose
     const flowTriggers = compose.flow?.triggers || [];

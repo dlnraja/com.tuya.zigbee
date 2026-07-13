@@ -14,6 +14,7 @@
  */
 'use strict';
 const fs = require('fs');
+const safeTimer = require('./utils/safe-timers') || require('../utils/safe-timers') || require('../../lib/utils/safe-timers') || require('../lib/utils/safe-timers') || require('./lib/utils/safe-timers') || require('../../../lib/utils/safe-timers');
 const path = require('path');
 const { execSync } = require('child_process');
 
@@ -430,7 +431,7 @@ If device is a button/scene switch that fails on standard clusters:
 - Parse raw payload hex for click types (0x00=single, 0x01=double, 0x02=hold)
 - ANTI-DOUBLON MANDATORY: Always include a debounce mutex (300ms lock):
   if (this._rawHandledTimeout) return;
-  this._rawHandledTimeout = setTimeout(() => { this._rawHandledTimeout = null; }, 300);
+  this._rawHandledTimeout = safeTimer.safeSetTimeout(globalThis, () => { this._rawHandledTimeout = null; }, 300);
 - TX ACKNOWLEDGE: Add writeCommand with manual Header 0x11 to prevent Tuya LED error blink
 
 CASE B — IR RECEIVERS:
@@ -443,7 +444,7 @@ CASE C — LCD CLIMATE & TIME SYNC:
 If device is a thermostat (TRV) or has LCD displaying time:
 - Tuya ignores standard Time cluster (0x000A) — uses DP 0x24 via EF00 instead
 - Generate syncTime() method using this.homey.clock.getTimezone() for GMT offset
-- Attach to setInterval (every 3 hours) in onNodeInit()
+- Attach to safeTimer.safeSetInterval(globalThis, every 3 hours) in onNodeInit()
 - Format: 8-byte payload [Year-2000, Month, Day, Hour, Min, Sec, Weekday, 0x00]
 
 CASE D — RUNTIME ENERGY ADAPTATION:
@@ -569,7 +570,7 @@ function preValidate() {
 
 function loadMemory() {
   try {
-    return JSON.parse(fs.readFileSync(MEM_FILE, 'utf8'));
+    return JSON.parse(Buffer.from(fs.readFileSync(MEM_FILE)).toString('utf8'));
   } catch {
     return { patterns: [], lastRun: null, totalRuns: 0, totalIssues: 0 };
   }
