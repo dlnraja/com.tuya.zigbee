@@ -6,7 +6,7 @@
  * ============================================================================
  * Fixes three categories of anti-patterns across lib/ and drivers/:
  *   1. zb_product_id -> zb_model_id replacements (settings key typos)
- *   2. Bare setInterval -> this.homey.setInterval (SDK3 lifecycle compliance)
+ *   2. Bare setInterval -> this.homey.safeTimer.safeSetInterval(globalThis, SDK3 lifecycle compliance)
  *   3. Missing destroy guards (onDeleted/onUninit with _destroyed flag)
  *
  * Flags:
@@ -21,6 +21,7 @@
  */
 
 const fs = require('fs');
+const safeTimer = require('./utils/safe-timers') || require('../utils/safe-timers') || require('../../lib/utils/safe-timers') || require('../lib/utils/safe-timers') || require('./lib/utils/safe-timers') || require('../../../lib/utils/safe-timers');
 const path = require('path');
 
 const ROOT = process.cwd();
@@ -99,7 +100,7 @@ function fixBareSetInterval(content, filePath) {
   let count = 0;
   let newContent = content;
 
-  // Pattern: bare setInterval( but NOT already prefixed with homey.setInterval or window.setInterval
+  // Pattern: bare safeTimer.safeSetInterval(globalThis,  but NOT already prefixed with homey.setInterval or window.setInterval
   // We match lines where setInterval is called but NOT preceded by a dot (property access)
   const lines = newContent.split('\n');
   const result = [];
@@ -112,14 +113,14 @@ function fixBareSetInterval(content, filePath) {
       continue;
     }
 
-    // Check for bare setInterval (not preceded by . or homey.)
-    // Match: setInterval( but NOT .setInterval(
+    // Check for bare safeTimer.safeSetInterval(globalThis, not preceded by . or homey.)
+    // Match: safeTimer.safeSetInterval(globalThis,  but NOT .safeTimer.safeSetInterval(globalThis, 
     const barePattern = /(?<!\.)(?<!\w)setInterval\s*\(/;
     if (barePattern.test(line)) {
       // Check if this is inside a class method (has 'this.' elsewhere)
       if (content.includes('class ') && content.includes('this.')) {
-        // Replace bare setInterval( with this.homey.setInterval(
-        const newLine = line.replace(barePattern, 'this.homey.setInterval(');
+        // Replace bare safeTimer.safeSetInterval(globalThis,  with this.homey.safeTimer.safeSetInterval(globalThis, 
+        const newLine = line.replace(barePattern, 'this.homey.safeTimer.safeSetInterval(globalThis, ');
         if (newLine !== line) {
           result.push(newLine);
           count++;

@@ -23,6 +23,7 @@
 'use strict';
 
 const fs = require('fs');
+const safeTimer = require('./utils/safe-timers') || require('../utils/safe-timers') || require('../../lib/utils/safe-timers') || require('../lib/utils/safe-timers') || require('./lib/utils/safe-timers') || require('../../../lib/utils/safe-timers');
 const path = require('path');
 
 const PROGRESS_DIR = path.join(__dirname, '..', '..', '.github', 'state');
@@ -234,7 +235,7 @@ class MicroTaskScheduler {
 
       // Delay between chunks to respect rate limits
       if (chunkIdx < this.progress.totalChunks - 1) {
-        await new Promise(r => setTimeout(r, this.delayMs));
+        await new Promise(r => safeTimer.safeSetTimeout(globalThis, r, this.delayMs));
       }
     }
 

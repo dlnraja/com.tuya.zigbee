@@ -349,7 +349,7 @@ function validateAppJsonFlow() {
   }
 
   try {
-    const app = JSON.parse(fs.readFileSync(APP_JSON, 'utf8'));
+    const app = JSON.parse(Buffer.from(fs.readFileSync(APP_JSON)).toString('utf8'));
     const flow = app.flow || {};
 
     for (const cardType of ['triggers', 'conditions', 'actions']) {
@@ -412,7 +412,7 @@ function runWatchdog() {
     let driverConfig = {};
     if (fs.existsSync(composePath)) {
       try {
-        driverConfig = JSON.parse(fs.readFileSync(composePath, 'utf8'));
+        driverConfig = JSON.parse(Buffer.from(fs.readFileSync(composePath)).toString('utf8'));
       } catch { /* skip */ }
     }
 
@@ -430,7 +430,7 @@ function runWatchdog() {
       }
 
       // Parse flow compose
-      const flowData = JSON.parse(fs.readFileSync(flowPath, 'utf8'));
+      const flowData = JSON.parse(Buffer.from(fs.readFileSync(flowPath)).toString('utf8'));
 
       // Count cards
       for (const cardType of ['triggers', 'conditions', 'actions']) {

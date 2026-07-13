@@ -81,7 +81,7 @@ function cleanBranch(baseDir, label) {
     const fpath = path.join(driversDir, driver, 'driver.compose.json');
     if (!fs.existsSync(fpath)) continue;
     try {
-      const data = JSON.parse(fs.readFileSync(fpath, 'utf8'));
+      const data = JSON.parse(Buffer.from(fs.readFileSync(fpath)).toString('utf8'));
       if (!data.zigbee) continue;
       let modified = false;
 
@@ -132,7 +132,7 @@ function loadAllMfrs(baseDir) {
     const fpath = path.join(driversDir, driver, 'driver.compose.json');
     if (!fs.existsSync(fpath)) continue;
     try {
-      const data = JSON.parse(fs.readFileSync(fpath, 'utf8'));
+      const data = JSON.parse(Buffer.from(fs.readFileSync(fpath)).toString('utf8'));
       if (!data.zigbee || !Array.isArray(data.zigbee.manufacturerName)) continue;
       mfrMap[driver] = new Set(data.zigbee.manufacturerName.map(m => m.toLowerCase()));
       for (const mfr of data.zigbee.manufacturerName) {
@@ -171,8 +171,8 @@ function syncMfrs(sourceDir, targetDir, sourceLabel, targetLabel) {
     const sourceFpath = path.join(sourceDriversDir, driver, 'driver.compose.json');
 
     try {
-      const targetData = JSON.parse(fs.readFileSync(targetFpath, 'utf8'));
-      const sourceData = JSON.parse(fs.readFileSync(sourceFpath, 'utf8'));
+      const targetData = JSON.parse(Buffer.from(fs.readFileSync(targetFpath)).toString('utf8'));
+      const sourceData = JSON.parse(Buffer.from(fs.readFileSync(sourceFpath)).toString('utf8'));
 
       let added = 0;
       for (const mfrLower of missing) {
@@ -238,7 +238,7 @@ function syncMfsDb(sourceDir, targetDir, sourceLabel, targetLabel) {
   // Create target if it doesn't exist
   let targetMfs = {};
   if (fs.existsSync(targetMfsPath)) {
-    targetMfs = JSON.parse(fs.readFileSync(targetMfsPath, 'utf8'));
+    targetMfs = JSON.parse(Buffer.from(fs.readFileSync(targetMfsPath)).toString('utf8'));
   }
 
   let added = 0;
@@ -270,7 +270,7 @@ function dedupBranch(baseDir, label) {
     const fpath = path.join(driversDir, driver, 'driver.compose.json');
     if (!fs.existsSync(fpath)) continue;
     try {
-      const data = JSON.parse(fs.readFileSync(fpath, 'utf8'));
+      const data = JSON.parse(Buffer.from(fs.readFileSync(fpath)).toString('utf8'));
       if (!data.zigbee || !Array.isArray(data.zigbee.manufacturerName)) continue;
 
       const seen = new Set();

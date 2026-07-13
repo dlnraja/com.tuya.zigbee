@@ -96,7 +96,7 @@ function runScript(scriptPath, args = []) {
 function loadHistoricalState(name) {
   const statePath = path.join(STATE_DIR, `${name}-state.json`);
   try {
-    if (fs.existsSync(statePath)) return JSON.parse(fs.readFileSync(statePath, 'utf8'));
+    if (fs.existsSync(statePath)) return JSON.parse(Buffer.from(fs.readFileSync(statePath)).toString('utf8'));
   } catch { /* no state */ }
   return null;
 }

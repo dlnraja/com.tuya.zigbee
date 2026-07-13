@@ -234,7 +234,7 @@ console.log(`  Written: ${(output.length / 1024 / 1024).toFixed(2)} MB`);
 
 // ─── VERIFY ──────────────────────────────────────────────────────────────────
 console.log('\n🔍 Post-fix verification...');
-const verify = JSON.parse(fs.readFileSync(APP_JSON_PATH, 'utf8'));
+const verify = JSON.parse(Buffer.from(fs.readFileSync(APP_JSON_PATH)).toString('utf8'));
 const remainingIssues = [];
 function checkRemaining(obj, path = '') {
   if (typeof obj === 'string') {

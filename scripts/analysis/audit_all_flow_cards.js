@@ -40,7 +40,7 @@ function scanDriver(driverName) {
   }
 
   try {
-    const compose = JSON.parse(fs.readFileSync(composePath, 'utf8'));
+    const compose = JSON.parse(Buffer.from(fs.readFileSync(composePath)).toString('utf8'));
     const driverJs = fs.existsSync(driverJsPath) ? fs.readFileSync(driverJsPath, 'utf8') : '';
     const deviceJs = fs.existsSync(deviceJsPath) ? fs.readFileSync(deviceJsPath, 'utf8') : '';
 

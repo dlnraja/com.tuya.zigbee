@@ -72,7 +72,7 @@ function getTrackedFiles() {
 function loadPreviousState() {
   const statePath = path.join(STATE_DIR, 'diagnostic-report-state.json');
   try {
-    if (fs.existsSync(statePath)) return JSON.parse(fs.readFileSync(statePath, 'utf8'));
+    if (fs.existsSync(statePath)) return JSON.parse(Buffer.from(fs.readFileSync(statePath)).toString('utf8'));
   } catch { /* no previous state */ }
   return null;
 }
@@ -267,7 +267,7 @@ function checkDriverHealth() {
     // Check driver.compose.json
     if (fs.existsSync(composePath)) {
       try {
-        const comp = JSON.parse(fs.readFileSync(composePath, 'utf8'));
+        const comp = JSON.parse(Buffer.from(fs.readFileSync(composePath)).toString('utf8'));
 
         // Empty manufacturerName
         if (comp.zigbee && Array.isArray(comp.zigbee.manufacturerName) && comp.zigbee.manufacturerName.length === 0) {
@@ -344,7 +344,7 @@ function checkDriverHealth() {
       continue;
     }
     try {
-      const comp = JSON.parse(fs.readFileSync(composePath, 'utf8'));
+      const comp = JSON.parse(Buffer.from(fs.readFileSync(composePath)).toString('utf8'));
       const hasExplicitFP = comp.zigbee && comp.zigbee.fingerprints && comp.zigbee.fingerprints.length > 0;
       const hasMFR = comp.zigbee && comp.zigbee.manufacturerName && comp.zigbee.manufacturerName.length > 0;
       const hasPID = comp.zigbee && comp.zigbee.productId && comp.zigbee.productId.length > 0;

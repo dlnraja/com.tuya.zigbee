@@ -46,7 +46,7 @@ if (typeof app.category === 'string') {
 }
 
 // Même correction dans .homeycompose/app.json
-const composeApp = JSON.parse(fs.readFileSync(COMPOSE_APP, 'utf8'));
+const composeApp = JSON.parse(Buffer.from(fs.readFileSync(COMPOSE_APP)).toString('utf8'));
 if (typeof composeApp.category === 'string') {
   composeApp.category = [composeApp.category];
   fs.writeFileSync(COMPOSE_APP, JSON.stringify(composeApp, null, 2));
@@ -99,7 +99,7 @@ driverDirs.forEach(dir => {
   stats.total++;
   let compose;
   try {
-    compose = JSON.parse(fs.readFileSync(composePath, 'utf8'));
+    compose = JSON.parse(Buffer.from(fs.readFileSync(composePath)).toString('utf8'));
   } catch (e) {
     console.log(`  ✗ JSON invalide dans ${dir}/driver.compose.json: ${e.message}`);
     return;
