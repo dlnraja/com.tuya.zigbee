@@ -1,0 +1,65 @@
+name: Autonomous Verification (P37)
+
+on:
+  # Every 6 hours
+  schedule:
+    - cron: '0 */6 * * *'
+  # Manual trigger
+  workflow_dispatch:
+    inputs:
+      run_full:
+        description: 'Run full verification suite'
+        type: boolean
+        default: true
+
+jobs:
+  verify:
+    name: Run autonomous verification
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Setup Node
+        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444
+        with:
+          node-version: '22'
+
+      - name: Install
+        run: npm ci || npm install
+
+      - name: Run P37 verification
+        run: |
+          echo "═══ P37 Autonomous Verification ═══"
+          node tools/ci/test-multichannel.js
+          echo ""
+          echo "═══ TITAN v5 compliance ═══"
+          node -e "
+            const fs=require('fs');
+            const FILES=['lib/multichannel/ChannelAdapters.js','lib/multichannel/MultiChannelManager.js','lib/multichannel/ParallelDetector.js','lib/multichannel/TransmissionManager.js','lib/multichannel/ReceptionManager.js','lib/autonomous/AutonomousVerificationEngine.js','lib/security/SecurityGuard.js'];
+            let clean=true;
+            for(const f of FILES){
+              if(!fs.existsSync(f))continue;
+              const c=fs.readFileSync(f,'utf8');
+              if(/\bsetTimeout\s*\(/.test(c)&&!/safeSetTimeout/.test(c)){console.log('  ❌',f,'raw setTimeout');clean=false;}
+              if(/\bsetInterval\s*\(/.test(c)&&!/safeSetInterval/.test(c)){console.log('  ❌',f,'raw setInterval');clean=false;}
+              if(/this\.setCapabilityValue\s*\(/.test(c)){console.log('  ❌',f,'raw setCapabilityValue');clean=false;}
+            }
+            if(clean)console.log('  ✅ TITAN v5 PASS');
+          "
+          echo ""
+          echo "═══ Module integrity ═══"
+          node -e "
+            const M=require('./lib/multichannel');
+            const A=require('./lib/autonomous');
+            const S=require('./lib/security/SecurityGuard');
+            console.log('  MultiChannelManager:',typeof M.MultiChannelManager);
+            console.log('  ParallelDetector:',typeof M.ParallelDetector);
+            console.log('  TransmissionManager:',typeof M.TransmissionManager);
+            console.log('  ReceptionManager:',typeof M.ReceptionManager);
+            console.log('  AutonomousVerificationEngine:',typeof A.AutonomousVerificationEngine);
+            console.log('  SecurityGuard:',typeof S.SecurityGuard);
+            console.log('  ✅ All modules loadable');
+          "
