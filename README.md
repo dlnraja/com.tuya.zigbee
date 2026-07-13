@@ -34,7 +34,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.212 |
+| **App Version** | v9.0.213 |
 | **Device Fingerprints** | 5,068+ |
 | **Unique Product IDs** | 571 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
@@ -102,6 +102,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | Version | Changes |
 |---------|---------|
 | **vchangelog** | [object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object  |
+| **v9.0.213** | Stability improvements and Homey test publication retry after transient processing failure. |
 | **v9.0.212** | Stability improvements and Homey test publication retry after transient processing failure. |
 | **v9.0.211** | Stability improvements and Homey test publication retry after transient processing failure. |
 | **v9.0.210** | Stability improvements and Homey test publication retry after transient processing failure. |
@@ -115,7 +116,6 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | **v9.0.202** | P11 release: door_sensor driver (TS0203), 96 Johan mfrs integrated (1618 FPs), continuous-flow + e2e-dashboard + upst... |
 | **v9.0.201** | P11 release: door_sensor driver (TS0203), 96 Johan mfrs integrated (1618 FPs), continuous-flow + e2e-dashboard + upst... |
 | **v9.0.200** | P11 release: door_sensor driver (TS0203), 96 Johan mfrs integrated (1618 FPs), continuous-flow + e2e-dashboard + upst... |
-| **v9.0.199** | P11 release: door_sensor driver (TS0203), 96 Johan mfrs integrated (1618 FPs), continuous-flow + e2e-dashboard + upst... |
 
 <!-- CHANGELOG_END -->
 
