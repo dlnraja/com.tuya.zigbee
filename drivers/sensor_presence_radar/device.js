@@ -1,5 +1,6 @@
 'use strict';
 const CI = require('../../lib/utils/CaseInsensitiveMatcher');
+const { safeSetTimeout, safeClearTimeout, isDestroyed } = require('../../../lib/utils/safe-timers');
 const { getManufacturer, getModelId } = require('../../lib/helpers/DeviceDataHelper');
 
 const { safeDivide, safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
@@ -839,7 +840,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       await this.setAvailable().catch(() => { });
 
       // v5.8.43: PR#125 michelhelsdingen - One-time battery + DP refresh after device wakes up
-      this.homey.setTimeout(async () => {
+      safeSetTimeout(this, async () => {
         if (this._destroyed) return;
         try {
           const ep1 = zclNode?.endpoints?.[1];
@@ -890,7 +891,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       await this._sendTuyaMagicPacket(zclNode);
     }
 
-    await new Promise(r => this.homey.setTimeout(r, 3000));
+    await new Promise(r => safeSetTimeout(this, r, 3000));
     this.log('[RADAR] Force DP poll after magic packet');
     await this._requestDPRefresh(zclNode);    // noBatteryCapability flag ensures battery is NEVER shown for these devices
     if ((config.noBatteryCapability || config.mainsPowered || !config.battery) && this.hasCapability('measure_battery')) {
@@ -1946,7 +1947,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
           break;
         } catch (e) {
           this.log(`[RADAR] âšï¸ Could not write IAS CIE (attempt ${attempt}): ${e.message}`);
-          if (attempt < 3) {await new Promise(r => this.homey.setTimeout(r, 1000));}
+          if (attempt < 3) {await new Promise(r => safeSetTimeout(this, r, 1000));}
         }
       }
 
@@ -1954,7 +1955,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       await this._setupIASZoneEnrollHandler(iasZone);
 
       // Step 5: Send enrollment response with retry
-      await new Promise(r => this.homey.setTimeout(r, 500)); // Small delay
+      await new Promise(r => safeSetTimeout(this, r, 500)); // Small delay
       for (let attempt = 1; attempt <= 3; attempt++) {
         try {
           if (iasZone.zoneEnrollResponse) {
@@ -1964,12 +1965,12 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
           }
         } catch (e) {
           this.log(`[RADAR] âšï¸ IAS Zone enrollment failed (attempt ${attempt}): ${e.message}`);
-          if (attempt < 3) {await new Promise(r => this.homey.setTimeout(r, 1000));}
+          if (attempt < 3) {await new Promise(r => safeSetTimeout(this, r, 1000));}
         }
       }
 
       // Step 6: Verify enrollment after delay
-      await new Promise(r => this.homey.setTimeout(r, 2000));
+      await new Promise(r => safeSetTimeout(this, r, 2000));
       try {
         const verifyAttrs = await iasZone.readAttributes(['zoneState', 'zoneId']);
         this.log(`[RADAR] ðŸ” Verify enrollment: zoneState=${verifyAttrs?.zoneState}, zoneId = ${verifyAttrs?.zoneId}`);if (verifyAttrs?.zoneState === 1 || verifyAttrs?.zoneState === 'enrolled') {
@@ -2065,7 +2066,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     iasZone.on('attr.zoneStatus', () => {
       if (_enrollTried) {return;}
       _enrollTried = true;
-      this.homey.setTimeout(async () => {
+      safeSetTimeout(this, async () => {
         try {
           const a = await iasZone.readAttributes(['zoneState']);
           if (a?.zoneState === 0 || a?.zoneState === 'notEnrolled') {
@@ -2073,7 +2074,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
             await this._reEnrollIASZone();
           }
         } catch (e) { /* device asleep */ }
-        this.homey.setTimeout(() => { if (this._destroyed) return; _enrollTried = false; }, 60000);
+        safeSetTimeout(this, () => { if (this._destroyed) return; _enrollTried = false; }, 60000);
       }, 2000);
       });
 
@@ -2366,7 +2367,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     }, pollInterval);
 
     // Initial poll after 2 seconds (faster than before)
-    this.homey.setTimeout(() => { if (this._destroyed) return; this._requestDPRefresh(zclNode);
+    safeSetTimeout(this, () => { if (this._destroyed) return; this._requestDPRefresh(zclNode);
       this._requestSpecificDP(zclNode , 1); }, 2000);
   }
 
