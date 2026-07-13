@@ -27,7 +27,10 @@ runs:
       run: |
         # Remove .bak / .backup / .tmp / .old / .orig files from build dir
         # (auto-fix-all bot may re-add them via version bumps)
-        find .homeybuild -type f \( -name '*.bak' -o -name '*.backup' -o -name '*.tmp' -o -name '*.old' -o -name '*.orig' -o -name '*.swp' -o -name '*.swo' -o -name '*.rej' \) -delete
+        # NOTE: filenames are like 'mfs_db.json.bak.1783880141728' (with timestamp)
+        # so we need to match anything containing .bak/.backup/etc, not just ending with it.
+        # Strategy: match filename containing '.bak.' or ending in '.bak' or '.backup'
+        find .homeybuild -type f -regex '.*\.\(bak\|backup\|tmp\|old\|orig\|swp\|swo\|rej\)[.0-9]*' -delete 2>/dev/null || true
         # Remove dev tool dirs
         rm -rf .homeybuild/tools/ci/diagnostics .homeybuild/tools/ci/.cache .homeybuild/tools/ci/__pycache__ .homeybuild/tools/shadow-mode/tickets .homeybuild/tools/shadow-mode/.cache
         rm -rf .homeybuild/data/intel-harvest .homeybuild/data/community-sync .homeybuild/data/temp_desktop_cleanup .homeybuild/data/archive .homeybuild/data/forum-cache .homeybuild/data/diagnostics .homeybuild/data/backups
@@ -35,7 +38,9 @@ runs:
         rm -f .homeybuild/pnpm-lock.yaml .homeybuild/pnpm-workspace.yaml .homeybuild/package-lock.json .homeybuild/yarn.lock
         # Remove dev scripts
         rm -f .homeybuild/tools/ci/delete-johan-comments.sh .homeybuild/tools/ci/delete-johan-comments.js .homeybuild/tools/ci/delete-own-upstream-comments.js .homeybuild/tools/ci/collect-johan-comments-to-delete.js
+        # Final report
         echo "Cleaned .homeybuild of dev artifacts"
+        du -sh .homeybuild 2>/dev/null || true
 
     - name: Prepare Publish Directory
       shell: bash
