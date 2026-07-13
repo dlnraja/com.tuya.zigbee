@@ -112,7 +112,7 @@
     ]
   },
   "_TZ3000_vd43bbfq": {
-    "driverId": "curtain_module",
+    "driverId": "curtainmodule",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -120,7 +120,7 @@
     ]
   },
   "Immax": {
-    "driverId": "doorwindowsensor_2",
+    "driverId": "doorwindowsensor2",
     "type": "doorwindowsensor_2",
     "powerSource": "battery",
     "modelIds": [
@@ -131,7 +131,7 @@
     ]
   },
   "TUYATEC-0l6xaqmi": {
-    "driverId": "doorwindowsensor_2",
+    "driverId": "doorwindowsensor2",
     "type": "doorwindowsensor_2",
     "powerSource": "battery",
     "modelIds": [
@@ -142,7 +142,7 @@
     ]
   },
   "TUYATEC-3tipnsrx": {
-    "driverId": "flood_sensor",
+    "driverId": "floodsensor",
     "type": "flood_sensor",
     "powerSource": "battery",
     "modelIds": [
@@ -330,7 +330,7 @@
     ]
   },
   "Visonic": {
-    "driverId": "doorwindowsensor_2",
+    "driverId": "doorwindowsensor2",
     "type": "doorwindowsensor_2",
     "powerSource": "battery",
     "modelIds": [
