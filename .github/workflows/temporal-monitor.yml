@@ -1,0 +1,46 @@
+name: Temporal Monitor (P29.7)
+
+# P29.7 — Daily cron that scans for new GH issues matching known bug patterns.
+# Generates a report with auto-fix candidates and needs-investigation items.
+
+on:
+  schedule:
+    # Daily at 06:00 UTC
+    - cron: '0 6 * * *'
+  workflow_dispatch:
+
+jobs:
+  temporal-monitor:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run Temporal Monitor
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node tools/ci/temporal-monitor.js
+
+      - name: Upload Report
+        uses: actions/upload-artifact@v4
+        with:
+          name: temporal-monitor-report
+          path: .github/state/temporal-monitor-report.json
+          retention-days: 30
+
+      - name: Commit State Update
+        run: |
+          if [ -n "$(git status --porcelain .github/state/temporal-monitor-*.json)" ]; then
+            git config user.email "p29.7@homey-mavis.local"
+            git config user.name "Mavis P29.7"
+            git add .github/state/temporal-monitor-state.json .github/state/temporal-monitor-report.json
+            git commit -m "chore(P29.7): temporal monitor daily run [skip ci]" || true
+            git push || true
+          fi

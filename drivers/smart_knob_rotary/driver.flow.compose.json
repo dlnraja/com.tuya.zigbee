@@ -159,6 +159,93 @@
         "nl": "Batterij laag",
         "de": "Batterie schwach"
       }
+    },
+    {
+      "id": "smart_knob_rotary_press_and_rotate_left",
+      "title": {
+        "en": "Pressed and rotated left",
+        "fr": "Appuyé et tourné à gauche",
+        "nl": "Ingedrukt en naar links gedraaid",
+        "de": "Gedrückt und nach links gedreht"
+      },
+      "hint": {
+        "en": "When the knob is pressed while being rotated counter-clockwise (P29 — matches pobao TZ-X1 Smart Scene Button spec)",
+        "fr": "Lorsque le bouton est appuyé tout en étant tourné dans le sens antihoraire (P29 — pobao TZ-X1 Smart Scene Button spec)"
+      },
+      "tokens": [
+        {
+          "name": "brightness",
+          "type": "number",
+          "title": {
+            "en": "Brightness %",
+            "fr": "Luminosité %"
+          },
+          "example": 50
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Pressed and rotated left",
+        "fr": "Appuyé et tourné à gauche"
+      }
+    },
+    {
+      "id": "smart_knob_rotary_press_and_rotate_right",
+      "title": {
+        "en": "Pressed and rotated right",
+        "fr": "Appuyé et tourné à droite",
+        "nl": "Ingedrukt en naar rechts gedraaid",
+        "de": "Gedrückt und nach rechts gedreht"
+      },
+      "hint": {
+        "en": "When the knob is pressed while being rotated clockwise (P29 — matches pobao TZ-X1 Smart Scene Button spec)",
+        "fr": "Lorsque le bouton est appuyé tout en étant tourné dans le sens horaire (P29 — pobao TZ-X1 Smart Scene Button spec)"
+      },
+      "tokens": [
+        {
+          "name": "brightness",
+          "type": "number",
+          "title": {
+            "en": "Brightness %",
+            "fr": "Luminosité %"
+          },
+          "example": 50
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Pressed and rotated right",
+        "fr": "Appuyé et tourné à droite"
+      }
+    },
+    {
+      "id": "smart_knob_rotary_scene_recall",
+      "title": {
+        "en": "Scene recalled",
+        "fr": "Scène rappelée",
+        "nl": "Scène opgeroepen",
+        "de": "Szene aufgerufen"
+      },
+      "hint": {
+        "en": "When the device recalls a Zigbee scene (cluster 0x05 — scene mode, P29)",
+        "fr": "Lorsque l'appareil rappelle une scène Zigbee (cluster 0x05 — mode scène, P29)"
+      },
+      "tokens": [
+        {
+          "name": "scene_id",
+          "type": "number",
+          "title": {
+            "en": "Scene ID",
+            "fr": "ID Scène"
+          },
+          "example": 1
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Scene [[scene_id]] recalled",
+        "fr": "Scène [[scene_id]] rappelée"
+      }
     }
   ],
   "conditions": [
