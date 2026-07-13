@@ -99,6 +99,30 @@ function pruneNodeModules(root, removed) {
   }
 }
 
+function pruneBackupFiles(root, removed) {
+  const stack = [root];
+  while (stack.length > 0) {
+    const current = stack.pop();
+    let entries;
+    try {
+      entries = fs.readdirSync(current, { withFileTypes: true });
+    } catch {
+      continue;
+    }
+    for (const entry of entries) {
+      const full = path.join(current, entry.name);
+      if (entry.isDirectory()) {
+        stack.push(full);
+        continue;
+      }
+      if (!entry.isFile()) continue;
+      if (/\.(bak|backup|tmp|old|orig|swp|swo|rej)(?:\.|$)/i.test(entry.name) || /^backup-/.test(entry.name) || /\.dedup-backup/.test(entry.name)) {
+        removePath(full, 'backup/temp file', removed);
+      }
+    }
+  }
+}
+
 function main() {
   if (!fs.existsSync(target)) {
     console.error(`[prune-publish-payload] Missing publish directory: ${target}`);
@@ -111,6 +135,18 @@ function main() {
   }
   removePath(path.join(target, 'data', '_used_mfrs.json'), 'diagnostic manufacturer inventory', removed);
   pruneNodeModules(target, removed);
+  pruneBackupFiles(target, removed);
+
+  // Prune dev artifacts
+  removePath(path.join(target, 'pnpm-lock.yaml'), 'dev lockfile', removed);
+  removePath(path.join(target, 'tools', 'ci', 'delete-johan-comments.sh'), 'dev tool', removed);
+  removePath(path.join(target, 'tools', 'ci', 'delete-own-upstream-comments.js'), 'dev tool', removed);
+  removePath(path.join(target, 'tools', 'ci', 'delete-johan-comments.js'), 'dev tool', removed);
+  removePath(path.join(target, 'tools', 'ci', 'collect-johan-comments-to-delete.js'), 'dev tool', removed);
+  // State files
+  removePath(path.join(target, '.github', 'state', 'johan-comments-to-delete.csv'), 'dev state', removed);
+  removePath(path.join(target, '.github', 'state', 'johan-comments-to-delete.json'), 'dev state', removed);
+  removePath(path.join(target, '.github', 'state', 'johan-comments-deletion-report.json'), 'dev state', removed);
 
   console.log(`[prune-publish-payload] Removed ${removed.count} item(s), ${toMB(removed.bytes)} MB`);
   for (const sample of removed.samples) {
