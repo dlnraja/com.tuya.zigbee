@@ -68,6 +68,50 @@ function trimPublishOnlyFiles() {
     path.join(destDir, 'data', '_used_mfrs.json'),
     'diagnostic manufacturer inventory, not loaded at runtime',
   );
+  // Prune dev/backup files that bloat the publish payload
+  const BACKUP_REGEX = /\.(bak|backup|tmp|old|orig|swp|swo|rej)(?:\.|$)/i;
+  const DEV_FILES = [
+    'pnpm-lock.yaml',
+    'tools/ci/delete-johan-comments.sh',
+    'tools/ci/delete-own-upstream-comments.js',
+    'tools/ci/delete-johan-comments.js',
+    'tools/ci/collect-johan-comments-to-delete.js',
+    '.github/state/johan-comments-to-delete.csv',
+    '.github/state/johan-comments-to-delete.json',
+    '.github/state/johan-comments-deletion-report.json',
+  ];
+  for (const rel of DEV_FILES) {
+    removed += removeIfExists(path.join(destDir, rel), 'dev artifact');
+  }
+  // Walk the publish dir and remove any *.bak / *.backup / *.tmp / *.old / *.orig files
+  const walkAndPrune = (dir) => {
+    let stack = [dir];
+    while (stack.length > 0) {
+      const current = stack.pop();
+      let entries;
+      try { entries = fs.readdirSync(current, { withFileTypes: true }); }
+      catch { continue; }
+      for (const entry of entries) {
+        const full = path.join(current, entry.name);
+        if (entry.isDirectory()) {
+          // Don't recurse into node_modules (huge, not relevant)
+          if (entry.name === 'node_modules' || entry.name === '.git') continue;
+          stack.push(full);
+          continue;
+        }
+        if (!entry.isFile()) continue;
+        if (BACKUP_REGEX.test(entry.name) || /^backup-/.test(entry.name) || /\.dedup-backup/.test(entry.name)) {
+          try {
+            const stat = fs.statSync(full);
+            fs.rmSync(full, { force: true });
+            removed += stat.size;
+            console.log(`Publish trim: removed ${path.relative(destDir, full)} (${(stat.size / 1024 / 1024).toFixed(2)} MB) — backup/temp file`);
+          } catch {}
+        }
+      }
+    }
+  };
+  walkAndPrune(destDir);
   if (removed > 0) {
     console.log(`Publish trim total: ${(removed / 1024 / 1024).toFixed(2)} MB`);
   }
