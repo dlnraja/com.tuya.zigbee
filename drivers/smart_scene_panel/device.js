@@ -1,6 +1,10 @@
 'use strict';
 
-const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
+// P24.7: Safe import for TuyaZigbeeDevice (crash-resilient)
+const { safeExtends } = require('../../lib/utils/ClassExtendsGuard');
+const TuyaZigbeeDevice = safeExtends('TuyaZigbeeDevice', () => {
+  return require('../../lib/tuya/TuyaZigbeeDevice');
+});
 
 class SmartScenePanelDevice extends TuyaZigbeeDevice {
   get mainsPowered() { return true; }
