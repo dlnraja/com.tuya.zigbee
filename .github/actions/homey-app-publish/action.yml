@@ -44,7 +44,7 @@ runs:
           npm install --omit=dev --ignore-scripts --no-audit --no-fund
         fi
         node "$GITHUB_WORKSPACE/scripts/maintenance/prune-publish-payload.cjs" "$PUBLISH_DIR"
-        HOMEY_CHECK_FINAL_PUBLISH_DIR=1 node "$GITHUB_WORKSPACE/scripts/ci/publish-size-gate.cjs" --strict --final
+        HOMEY_CHECK_FINAL_PUBLISH_DIR=1 HOMEY_PUBLISH_FINAL_MAX_MB=26 HOMEY_PUBLISH_SOURCE_MAX_MB=26 node "$GITHUB_WORKSPACE/scripts/ci/publish-size-gate.cjs" --strict --final
 
         run_homey_cli_publish() {
           if [ -x "$GITHUB_WORKSPACE/node_modules/.bin/homey" ]; then
