@@ -1,150 +1,212 @@
-# GitHub Secrets for AI Bonus Layer (Optional)
+# GitHub Secrets Inventory + AI Bonus Layer (P36)
 
 **All workflows work 100% offline without these secrets.**
 AI is a complementary enrichment, NEVER required.
 
-## Recommended Secrets (Minimal Access)
+This is the **canonical inventory** of all GH secrets implemented across P28-P36.
 
-Add these in: **Settings → Secrets and variables → Actions → New repository secret**
+---
 
-### Tier 1: Free AI (Recommended)
+## 📦 Secrets actuellement implémentés
 
-#### `GITHUB_TOKEN` (Auto-provided)
-- **Default**: Already available, no setup needed
-- **Access**: Provided automatically by GitHub Actions
-- **Provider**: GitHub Models API (`https://models.inference.ai.azure.com`)
-- **Models**: `gpt-4o-mini`, `gpt-4o`, etc.
-- **Cost**: **FREE** for GH users (rate-limited)
-- **Rate limit**: 15 requests/min, 150K tokens/day (free tier)
-- **Used in**: All workflows with `--ai` flag (LocalFirstEngine.callAI)
+| # | Secret name | Tier | Provider | Status | Auto-détection |
+|---|---|---|---|---|---|
+| 1 | `GITHUB_TOKEN` | Tier 1 | GitHub Models | **Auto** (default) | ✅ |
+| 2 | `MINIMAX_API_KEY` | Tier 0 | MiniMax M3 | Optional (unlimited subscription) | ✅ |
+| 3 | `OPENAI_API_KEY` | Tier 2 | OpenAI | Optional | ✅ |
+| 4 | `ANTHROPIC_API_KEY` | Tier 2 | Anthropic | Optional | ✅ |
+| 5 | `OLLAMA_HOST` | Tier 3 | Ollama (local) | Optional (self-hosted) | ✅ |
 
-**No setup required.** Just use the default `secrets.GITHUB_TOKEN` in workflows.
+**Note importante** : Vous avez mentionné que votre abonnement MiniMax pourrait être réduit ou supprimé. Le `AIBudgetGuard` (P36) gère cela automatiquement : si MiniMax échoue, il bascule silencieusement vers les providers suivants (GH Models → OpenAI → Anthropic → Ollama → local heuristic). **Aucune dépendance forte à MiniMax.**
 
-#### `MINIMAX_API_KEY` (P35 — Unlimited subscription)
-- **Provider**: MiniMax API (`https://api.MiniMax.chat/v1/text/chatcompletion_v2`)
-- **Models**: `MiniMax-M3`
-- **Cost**: **FREE** (unlimited subscription)
-- **Setup**: Add as GH secret `MINIMAX_API_KEY`
-- **Used in**: Tier 0 (first priority in LocalFirstEngine.callAI)
-- **Note**: User has unlimited MiniMax subscription, so this is the preferred provider when available
+---
 
-**Setup**: Add `MINIMAX_API_KEY` as GH secret. Used first in the cascade, before GH Models, OpenAI, Anthropic.
+## 🔄 Cascade order avec quota awareness (P36)
 
-### Tier 2: Direct API Keys (Optional, for higher volume)
+`LocalFirstEngine.callAI()` essaie dans cet ordre, **avec AIBudgetGuard** :
 
-#### `OPENAI_API_KEY` (Optional)
-- **Get from**: https://platform.openai.com/api-keys
-- **Provider**: OpenAI Direct API
-- **Models**: `gpt-4o-mini` (cheapest), `gpt-4o` (best)
-- **Cost**: ~$0.15/M tokens (gpt-4o-mini)
-- **Budget cap**: NEVER set in code (always use `--ai` flag with timeout 10s, max 800 tokens)
-- **Safety**: `LocalFirstEngine.callAI()` will abort if all providers fail
+1. **MiniMax M3** (si `MINIMAX_API_KEY` ET quota OK)
+2. **GitHub Models** (si `GITHUB_TOKEN` ET quota OK)
+3. **OpenAI gpt-4o-mini** (si `OPENAI_API_KEY` ET quota OK)
+4. **Anthropic Sonnet** (si `ANTHROPIC_API_KEY` ET quota OK)
+5. **Ollama local** (si `OLLAMA_HOST` ET quota OK)
+6. **Local heuristic** (always, no cost)
 
-#### `ANTHROPIC_API_KEY` (Optional)
-- **Get from**: https://console.anthropic.com/settings/keys
-- **Provider**: Anthropic Direct API
-- **Models**: `claude-3-5-sonnet-20241022`
-- **Cost**: ~$3/M tokens (Sonnet)
-- **Use case**: Better reasoning for complex crash analysis
+**Si tous les providers IA échouent** → silent fallback local (jamais de blocage).
 
-### Tier 3: Local AI (For total privacy)
+---
 
-#### `OLLAMA_HOST` (Optional)
-- **Get from**: Run Ollama locally (https://ollama.ai)
-- **Provider**: Local Ollama server
-- **Models**: `llama3.2`, `mistral`, `codellama` (free)
-- **Cost**: **FREE** (uses local GPU/CPU)
-- **Setup**:
-  ```bash
-  # On your runner or self-hosted runner
-  ollama serve
-  # Models are pulled automatically
-  ollama pull llama3.2
-  ```
-- **Used in**: workflows if `OLLAMA_HOST` secret is set to `http://localhost:11434`
+## 💰 Caps quotidiens configurables (env vars)
 
-## How It Works
+| Provider | Default cap | Env var override |
+|---|---|---|
+| MiniMax | 10,000 / jour | `MINIMAX_DAILY_CAP` |
+| github-models | 150 / jour | `GH_MODELS_DAILY_CAP` |
+| openai | 200 / jour | `OPENAI_DAILY_CAP` |
+| anthropic | 100 / jour | `ANTHROPIC_DAILY_CAP` |
+| ollama | 10,000 / jour (local, no cap) | — |
 
-`LocalFirstEngine.callAI(prompt, options)`:
-1. **Tries in order**: MiniMax (M3) → GitHub Models → OpenAI → Anthropic → Ollama
-2. **If all fail** → silent return `null` → engine falls back to local heuristic
-3. **Budget cap**: 800 tokens max per call, 10s timeout
-4. **Zero blocked workflows**: AI is never required, only enhances
+**Comportement quand cap dépassé** :
+- 429/402 HTTP → `markQuotaExhausted()` → provider disabled for 24h
+- 3+ erreurs consécutives → `recordError()` → provider disabled for 1h
+- Après le cooldown, le provider est ré-essayé
 
-## Cost Analysis (Worst Case)
+---
 
-If all workflows ran with `--ai` every day for a year:
-- 4 workflows/day × 365 days = 1,460 AI calls
-- × 800 tokens avg = 1.17M tokens
-- With MiniMax (unlimited subscription): **$0.00**
-- With GH Models free tier: **$0.00**
-- With OpenAI gpt-4o-mini: ~$0.18/year
-- With Anthropic Sonnet: ~$3.50/year
+## 🔌 Setup par tier
 
-## What Gets Sent to AI
-
-Only AFTER all local checks fail:
-- Crash patterns + counts (anonymized)
-- Recently observed issue numbers
-- Diagnostic summary (no user data, no PII)
-
-Local checks ALWAYS run first. AI is a sanity check / bonus.
-
-## To Enable AI Bonus in a Workflow
-
+### Tier 0 : MiniMax M3 (RECOMMANDÉ — gratuit illimité)
 ```yaml
-# Add this to the job's env
-env:
-  GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}  # optional
-  ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}  # optional
-
-# Use --ai flag in the script
-run: node tools/ci/recurrent-orchestrator.js --ai
+# In GH repo Settings → Secrets:
+MINIMAX_API_KEY = sk-...     # unlimited subscription
 ```
 
-## Optional: Manual Trigger for AI
+**Coût** : **$0.00** (unlimited subscription)
+**Provider** : `https://api.MiniMax.chat/v1/text/chatcompletion_v2`
+**Model** : `MiniMax-M3`
+**Tier** : Tier 0 (premier essayé)
 
+### Tier 1 : GitHub Models (default — gratuit avec limites)
+```yaml
+# AUTOMATIQUE — pas de setup nécessaire
+# GITHUB_TOKEN est fourni par défaut par GitHub Actions
+```
+
+**Coût** : **$0.00** (gratuit, rate-limited)
+**Provider** : `https://models.inference.ai.azure.com/chat/completions`
+**Models** : `gpt-4o-mini`, `gpt-4o`
+**Tier** : Tier 1 (si MiniMax indisponible)
+**Rate limit** : 15 req/min, 150K tokens/day
+
+### Tier 2 : OpenAI (paid, optional)
+```yaml
+OPENAI_API_KEY = sk-...     # Get from https://platform.openai.com/api-keys
+```
+
+**Coût** : ~$0.15/M tokens (gpt-4o-mini)
+**Models** : `gpt-4o-mini` (cheapest)
+**Tier** : Tier 2
+
+### Tier 2 : Anthropic (paid, optional)
+```yaml
+ANTHROPIC_API_KEY = sk-ant-...
+```
+
+**Coût** : ~$3/M tokens (Sonnet)
+**Models** : `claude-3-5-sonnet-20241022`
+**Tier** : Tier 2
+
+### Tier 3 : Ollama (self-hosted, gratuit)
+```yaml
+OLLAMA_HOST = http://localhost:11434
+```
+
+**Coût** : **$0.00** (local)
+**Models** : `llama3.2`, `mistral`, `codellama`
+**Setup** : Run `ollama serve` on your self-hosted runner
+
+---
+
+## 🛡️ AIBudgetGuard (P36)
+
+**Fichier** : `lib/SDK3CompatBridge.js` (classe `AIBudgetGuard`)
+
+### Comportement :
+1. **Cap quotidien** par provider
+2. **3+ erreurs consécutives** → disable provider for 1h
+3. **HTTP 429/402** (quota exhausted) → disable provider for 24h
+4. **Cooldown expiré** → re-essai automatique
+5. **State persisté** dans `.github/state/ai-budget.json`
+
+### Configuration via env vars (optionnel) :
+```bash
+MINIMAX_DAILY_CAP=10000     # default 10K
+GH_MODELS_DAILY_CAP=150     # default 150
+OPENAI_DAILY_CAP=200        # default 200
+ANTHROPIC_DAILY_CAP=100     # default 100
+```
+
+---
+
+## 📊 Ce qui est envoyé à l'IA
+
+**Seulement APRÈS que toutes les vérifications locales échouent :**
+- Crash patterns + counts (anonymisés)
+- Issue numbers récents
+- Diagnostic summary (no PII)
+
+**Vérifications locales TOUJOURS en premier** : `LocalFirstEngine.diagnose()` + `predictIssues()` marchent 100% offline.
+
+---
+
+## 🔍 Workflows qui peuvent utiliser l'IA (opt-in)
+
+| Workflow | Default mode | AI mode (`--ai` flag) |
+|---|---|---|
+| `.github/workflows/recurrent-orchestrator.yml` | Offline (10 steps) | + AI bonus (step 10) |
+| `.github/workflows/offline-crash-analyzer.yml` | Offline (heuristic) | + AI bonus (`--ai` input) |
+| `.github/workflows/activity-monitor.yml` | Offline (fetcher) | Pas d'IA |
+| `.github/workflows/temporal-monitor.yml` | Offline (classifier) | Pas d'IA |
+
+**Manual trigger** :
 ```yaml
 on:
   workflow_dispatch:
     inputs:
       use_ai:
-        description: 'Enable AI bonus layer'
+        description: 'Use AI bonus (optional, requires API key in secrets)'
         type: boolean
         default: false
 ```
 
-Users can opt-in to AI in the Actions tab → Run workflow → Enable AI.
+**Comportement** : si `use_ai=true` ET clé API disponible → utilise l'IA. Sinon → offline only.
 
-## Security Notes
+---
 
-- AI calls are made via HTTPS to vendor APIs (encrypted)
-- No user credentials are sent, only anonymized patterns
-- GH_TOKEN is auto-scoped to repo (no write access to other repos)
-- OPENAI_API_KEY and ANTHROPIC_API_KEY are read-only at the API level
-- All AI calls are logged in the workflow run output
+## 💸 Coût worst case
 
-## Backup Mode (if all AI is unavailable)
+| Scénario | Coût annuel |
+|---|---|
+| **0 secrets** (GH Token auto only) | **$0.00** |
+| MiniMax only | **$0.00** |
+| GH Models only | **$0.00** |
+| OpenAI gpt-4o-mini (worst) | ~$0.18/an |
+| Anthropic Sonnet (worst) | ~$3.50/an |
+| Mixed (MiniMax + GH + OpenAI) | <$0.10/an |
 
-`LocalFirstEngine.diagnose()` works entirely offline. AI is only consulted via `callAI()`. If `callAI()` returns `null` (no API key, all providers down, or budget exhausted), the engine proceeds with the local heuristic result.
+**Avec AIBudgetGuard + caps quotidiens : 0€ de surfacturation possible.**
 
-This means **the system NEVER fails because of AI** — it just provides less detailed analysis.
+---
 
-## What If Budget Is Concerned?
+## ✅ Garanties
 
-- **Tier 1 (GH Models)**: Free for GH users, no budget concerns
-- **Tier 2 (OpenAI/Anthropic)**: Use `--ai` flag only when needed
-- **Tier 3 (Ollama)**: Free, runs locally, no API costs
+- ✅ **Tous les workflows marchent 100% offline**
+- ✅ **AI est un bonus, jamais bloquant**
+- ✅ **Si MiniMax échoue → bascule vers GH Models ou OpenAI**
+- ✅ **Si tous les AI échouent → silent fallback local**
+- ✅ **Cap quotidiens configurables via env vars**
+- ✅ **Persistance des quotas (ne retry pas si saturé)**
+- ✅ **Budget persistant dans `.github/state/ai-budget.json`**
+- ✅ **Cooldown automatique après erreurs**
 
-The default is **always OFFLINE** (`--ai` not set). AI only runs when explicitly requested.
+---
 
-## Quick Setup (Recommended)
+## 🚀 Quick start
 
-1. **No setup needed for default behavior** — works 100% offline
-2. **For AI bonus**: 
-   - Ensure `secrets.GITHUB_TOKEN` is available (default, free)
-   - Add `OPENAI_API_KEY` for higher volume (optional)
-3. **For total privacy**: Run Ollama on self-hosted runner (advanced)
+1. **Pour offline-only** : aucun setup nécessaire
+2. **Pour AI bonus gratuit** : ajouter `MINIMAX_API_KEY` dans GH secrets
+3. **Pour tous les providers** : ajouter toutes les clés
 
-That's it! The system is designed to be useful with **zero AI** and even more useful with **free AI**.
+**C'est tout. Le système est conçu pour être utile avec zéro AI, et plus utile avec AI gratuit.**
+
+---
+
+## 📂 Fichiers clés
+
+- `lib/LocalFirstEngine.js` — moteur + `callAI()` avec budget
+- `lib/SDK3CompatBridge.js` — `AIBudgetGuard` + compensations SDK3
+- `lib/LowLevelBridge.js` — bypass des wrappers (P34)
+- `lib/battery/BatteryMasterEngine.js` — superset batterie (P35)
+- `.github/state/ai-budget.json` — state du budget (gitignored)
+- `.github/workflows/recurrent-orchestrator.yml` — orchestrateur offline+IA
+- `.github/workflows/offline-crash-analyzer.yml` — crash analyzer offline+IA
