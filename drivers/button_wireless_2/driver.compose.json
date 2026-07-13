@@ -573,10 +573,10 @@
         "fr": "Mode de fonctionnement"
       },
       "hint": {
-        "en": "Scene Mode allows single/double/long press. Dimmer Mode only supports single press. Auto tries to detect and switch automatically.",
-        "fr": "Le mode Scène permet les appuis simples/doubles/longs. Le mode Variateur ne supporte que l'appui simple. Auto tente de détecter et basculer automatiquement."
+        "en": "Scene Mode (default) allows single/double/long press for TS0041/TS0042/TS0043/TS0044/TS004F. Dimmer Mode only supports single press. Auto tries to detect and switch automatically.",
+        "fr": "Le mode Scène (par défaut) permet les appuis simples/doubles/longs pour TS0041/TS0042/TS0043/TS0044/TS004F. Le mode Variateur ne supporte que l'appui simple. Auto tente de détecter et basculer automatiquement."
       },
-      "value": "auto",
+      "value": "scene",
       "values": [
         {
           "id": "auto",
@@ -588,8 +588,8 @@
         {
           "id": "scene",
           "label": {
-            "en": "Scene Mode (Multi-press)",
-            "fr": "Mode Scène (Multi-clics)"
+            "en": "Scene Mode (default — Multi-press)",
+            "fr": "Mode Scène (par défaut — Multi-clics)"
           }
         },
         {
