@@ -122,6 +122,11 @@ jobs:
       - name: Run mfs-db enricher
         id: mfs
         run: node tools/ci/mfs-db-enricher.js
+
+      - name: P24.9 — Sacred Couple auto-enrichment
+        id: sacred-couples
+        run: node tools/ci/enrich-sacred-couples.js
+        continue-on-error: true
         continue-on-error: true
 
       - name: Run intelligent variant finder

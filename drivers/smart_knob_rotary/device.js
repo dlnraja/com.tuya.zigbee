@@ -3,7 +3,11 @@
 const CI = require('../../lib/utils/CaseInsensitiveMatcher');
 const { safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
 
-const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
+// P24.7: Safe import for TuyaZigbeeDevice (crash-resilient)
+const { safeExtends } = require('../../lib/utils/ClassExtendsGuard');
+const TuyaZigbeeDevice = safeExtends('TuyaZigbeeDevice', () => {
+  return require('../../lib/tuya/TuyaZigbeeDevice');
+});
 const { CLUSTER } = require('zigbee-clusters');
 const { resolve: resolvePressType } = require('../../lib/utils/TuyaPressTypeMap');
 
