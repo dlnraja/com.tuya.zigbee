@@ -438,7 +438,9 @@
       "type": "dropdown",
       "label": {
         "en": "Operating Mode",
-        "fr": "Mode de fonctionnement"
+        "fr": "Mode de fonctionnement",
+        "nl": "Bedrijfsmodus",
+        "de": "Betriebsart"
       },
       "hint": {
         "en": "Scene Mode (default) allows single/double/long press for TS0041/TS0042/TS0043/TS0044/TS004F. Dimmer Mode only supports single press. Auto tries to detect and switch automatically.",
@@ -450,21 +452,27 @@
           "id": "auto",
           "label": {
             "en": "Auto-Detect",
-            "fr": "Détection Auto"
+            "fr": "Détection Auto",
+            "nl": "Automatisch",
+            "de": "Auto-Erkennung"
           }
         },
         {
           "id": "scene",
           "label": {
             "en": "Scene Mode (default — Multi-press)",
-            "fr": "Mode Scène (par défaut — Multi-clics)"
+            "fr": "Mode Scène (par défaut — Multi-clics)",
+            "nl": "Scène-modus (standaard — Multi-klik)",
+            "de": "Szenenmodus (Standard — Mehrfachdruck)"
           }
         },
         {
           "id": "dimmer",
           "label": {
             "en": "Dimmer Mode",
-            "fr": "Mode Variateur"
+            "fr": "Mode Variateur",
+            "nl": "Dimmer-modus",
+            "de": "Dimmermodus"
           }
         }
       ]
