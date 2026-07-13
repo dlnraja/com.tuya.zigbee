@@ -14273,5 +14273,83 @@
       "TS0601"
     ],
     "notes": "P29 fix #135: Immax NEO Smart Water Timer _TZE204 variant (newer hardware revision)."
+  },
+  "_TZE284_2nhqasjh": {
+    "driverId": "soil_sensor",
+    "type": "soil_sensor",
+    "powerSource": "battery",
+    "modelIds": []
+  },
+  "_TZE200_fphxkxue": {
+    "driverId": "water_valve_smart",
+    "type": "water_valve_smart",
+    "powerSource": "battery",
+    "modelIds": []
+  },
+  "_TZE200_spyvfeti": {
+    "driverId": "water_valve_smart",
+    "type": "water_valve_smart",
+    "powerSource": "battery",
+    "modelIds": []
+  },
+  "_TZE200_hyhl5y36": {
+    "driverId": "presence_sensor_radar",
+    "type": "presence_sensor_radar",
+    "powerSource": "mains",
+    "modelIds": []
+  },
+  "_TZE200_p9zbdqgs": {
+    "driverId": "presence_sensor_radar",
+    "type": "presence_sensor_radar",
+    "powerSource": "mains",
+    "modelIds": []
+  },
+  "_TZE200_qasjif9e": {
+    "driverId": "presence_sensor_radar",
+    "type": "presence_sensor_radar",
+    "powerSource": "mains",
+    "modelIds": []
+  },
+  "_TZE200_d2zfgtij": {
+    "driverId": "energy_meter_3phase",
+    "type": "energy_meter_3phase",
+    "powerSource": "mains",
+    "modelIds": []
+  },
+  "_TZE200_s4sa1mcx": {
+    "driverId": "energy_meter_3phase",
+    "type": "energy_meter_3phase",
+    "powerSource": "mains",
+    "modelIds": []
+  },
+  "_TZE200_x8diwkqb": {
+    "driverId": "energy_meter_3phase",
+    "type": "energy_meter_3phase",
+    "powerSource": "mains",
+    "modelIds": []
+  },
+  "_TZE200_eqpaxqdv": {
+    "driverId": "sensor_gas_presence",
+    "type": "sensor_gas_presence",
+    "powerSource": "mains",
+    "modelIds": []
+  },
+  "_TZE200_wjk6rurm": {
+    "driverId": "power_meter",
+    "type": "power_meter",
+    "powerSource": "mains",
+    "modelIds": []
+  },
+  "_TZE200_hbnfokum": {
+    "driverId": "generic_diy",
+    "type": "generic_diy",
+    "powerSource": "battery",
+    "modelIds": []
+  },
+  "_TZE200_w0ap83qu": {
+    "driverId": "generic_diy",
+    "type": "generic_diy",
+    "powerSource": "battery",
+    "modelIds": []
   }
 }
