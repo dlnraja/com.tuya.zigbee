@@ -9,7 +9,7 @@
  *
  * Checks:
  *   1. zb_product_id usage (should be zb_model_id)
- *   2. Bare setInterval (should be this.homey.setInterval)
+ *   2. Bare safeTimer.safeSetInterval(globalThis, should be this.homey.setInterval)
  *   3. Missing destroy guards in device.js files with timers
  *   4. console.log/error/warn in class-based production code (lib/, drivers/)
  *
@@ -29,6 +29,7 @@
  */
 
 const fs = require('fs');
+const safeTimer = require('./utils/safe-timers') || require('../utils/safe-timers') || require('../../lib/utils/safe-timers') || require('../lib/utils/safe-timers') || require('./lib/utils/safe-timers') || require('../../../lib/utils/safe-timers');
 const path = require('path');
 
 const ROOT = process.cwd();
@@ -121,7 +122,7 @@ function checkBareSetInterval(content, filePath) {
     // Skip comments
     if (trimmed.startsWith('//') || trimmed.startsWith('*') || trimmed.startsWith('/*')) continue;
 
-    // Match bare setInterval( but NOT .setInterval(
+    // Match bare safeTimer.safeSetInterval(globalThis,  but NOT .safeTimer.safeSetInterval(globalThis, 
     if (/(?<!\.)(?<!\w)setInterval\s*\(/.test(line)) {
       lineNumbers.push(i + 1);
       count++;
@@ -133,7 +134,7 @@ function checkBareSetInterval(content, filePath) {
     violations.push({ type: 'BARE_SETINTERVAL', file: relPath, count, lines: lineNumbers, message: msg });
 
     if (AUTO_FIX) {
-      const newContent = content.replace(/(?<!\.)(?<!\w)setInterval\s*\(/g, 'this.homey.setInterval(');
+      const newContent = content.replace(/(?<!\.)(?<!\w)setInterval\s*\(/g, 'this.homey.safeTimer.safeSetInterval(globalThis, ');
       fs.writeFileSync(filePath, newContent, 'utf8');
       fixes.push({ type: 'BARE_SETINTERVAL', file: relPath, count });
       if (VERBOSE) console.log(`  ${C.G}FIXED${C.X} ${msg}`);

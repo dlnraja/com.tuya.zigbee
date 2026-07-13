@@ -88,7 +88,7 @@ if (!fs.existsSync(appJsonPath)) {
   fail('M12', 'app.json NOT FOUND at root');
 } else {
   try {
-    app = JSON.parse(fs.readFileSync(appJsonPath, 'utf8'));
+    app = JSON.parse(Buffer.from(fs.readFileSync(appJsonPath)).toString('utf8'));
     ok('M12', `app.json parsed OK (${(fs.statSync(appJsonPath).size / 1048576).toFixed(2)}MB)`);
   } catch(e) {
     fail('M12', `app.json INVALID JSON: ${e.message}`);
@@ -140,7 +140,7 @@ section('O17 — No icon field in app.json');
 if ('icon' in app) {
   fail('O17', `app.json has forbidden 'icon' field: "${app.icon}". SDK App.js:618 hardcodes assets/icon.svg.`,
     () => {
-      const a = JSON.parse(fs.readFileSync(appJsonPath, 'utf8'));
+      const a = JSON.parse(Buffer.from(fs.readFileSync(appJsonPath)).toString('utf8'));
       delete a.icon;
       fs.writeFileSync(appJsonPath, JSON.stringify(a, null, 2), 'utf8');
     });
@@ -153,7 +153,7 @@ section('O19 — category must be STRING');
 if (Array.isArray(app.category)) {
   fail('O19', `category is ARRAY ["${app.category.join('","')}"] — Athom server requires string`,
     () => {
-      const a = JSON.parse(fs.readFileSync(appJsonPath, 'utf8'));
+      const a = JSON.parse(Buffer.from(fs.readFileSync(appJsonPath)).toString('utf8'));
       a.category = Array.isArray(a.category) ? a.category[0] : a.category;
       fs.writeFileSync(appJsonPath, JSON.stringify(a, null, 2), 'utf8');
     });
@@ -236,7 +236,7 @@ if (!fs.existsSync(changelogPath)) {
   fail('M03', '.homeychangelog.json MISSING — required by SDK publish');
 } else {
   try {
-    changelog = JSON.parse(fs.readFileSync(changelogPath, 'utf8'));
+    changelog = JSON.parse(Buffer.from(fs.readFileSync(changelogPath)).toString('utf8'));
     ok('M03', `.homeychangelog.json OK (${Object.keys(changelog).length} versions)`);
   } catch(e) {
     fail('M03', `.homeychangelog.json INVALID JSON: ${e.message}`);
@@ -288,12 +288,12 @@ const pkgPath = path.join(ROOT, 'package.json');
 let pkg = null;
 if (fs.existsSync(pkgPath)) {
   try {
-    pkg = JSON.parse(fs.readFileSync(pkgPath, 'utf8'));
+    pkg = JSON.parse(Buffer.from(fs.readFileSync(pkgPath)).toString('utf8'));
     if (pkg.version !== app.version) {
       fail('M08', `Version mismatch: app.json=${app.version} vs package.json=${pkg.version}`,
         () => {
-          const p = JSON.parse(fs.readFileSync(pkgPath, 'utf8'));
-          const a = JSON.parse(fs.readFileSync(appJsonPath, 'utf8'));
+          const p = JSON.parse(Buffer.from(fs.readFileSync(pkgPath)).toString('utf8'));
+          const a = JSON.parse(Buffer.from(fs.readFileSync(appJsonPath)).toString('utf8'));
           p.version = a.version;
           fs.writeFileSync(pkgPath, JSON.stringify(p, null, 2), 'utf8');
         });
