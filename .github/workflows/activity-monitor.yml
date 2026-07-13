@@ -1,0 +1,77 @@
+name: Activity Monitor (P30)
+
+# P30 — Daily cron that fetches all GH activity + forum + local crashes.
+# Generates a snapshot for analysis and commits the cache.
+
+on:
+  schedule:
+    # Daily at 04:00 UTC (after shadow-mode at 03:00)
+    - cron: '0 4 * * *'
+  workflow_dispatch:
+
+jobs:
+  fetch-activity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run Activity Fetcher
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node tools/ci/fetch-all-activity.js
+
+      - name: Run Temporal Monitor
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node tools/ci/temporal-monitor.js
+
+      - name: Run Session-Start
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node tools/ci/session-start.js
+
+      - name: Upload Activity Snapshot
+        uses: actions/upload-artifact@v4
+        with:
+          name: activity-snapshot
+          path: |
+            .github/state/activity-snapshot.json
+            .github/state/temporal-monitor-report.json
+            .github/state/activity-cache.json
+          retention-days: 30
+
+      - name: Print Summary
+        run: |
+          if [ -f .github/state/activity-snapshot.json ]; then
+            echo "## 📊 Activity Snapshot Summary" >> $GITHUB_STEP_SUMMARY
+            GH_OPENS=$(node -e "const j=require('./.github/state/activity-snapshot.json'); console.log(j.github?.openIssues?.length || 0)" 2>/dev/null || echo 0)
+            FORUM=$(node -e "const j=require('./.github/state/activity-snapshot.json'); console.log(j.forum?.details?.length || 0)" 2>/dev/null || echo 0)
+            echo "- Open GH issues: $GH_OPENS" >> $GITHUB_STEP_SUMMARY
+            echo "- Forum topics with full posts: $FORUM" >> $GITHUB_STEP_SUMMARY
+          fi
+          if [ -f .github/state/temporal-monitor-report.json ]; then
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "## 🔍 Temporal Monitor" >> $GITHUB_STEP_SUMMARY
+            FIXES=$(node -e "const j=require('./.github/state/temporal-monitor-report.json'); console.log(j.newFixesAvailable || 0)" 2>/dev/null || echo 0)
+            INVESTIGATE=$(node -e "const j=require('./.github/state/temporal-monitor-report.json'); console.log(j.needInvestigation || 0)" 2>/dev/null || echo 0)
+            echo "- Fixes available: $FIXES" >> $GITHUB_STEP_SUMMARY
+            echo "- Need investigation: $INVESTIGATE" >> $GITHUB_STEP_SUMMARY
+          fi
+
+      - name: Commit State Updates
+        run: |
+          git config user.email "p30@homey-mavis.local"
+          git config user.name "Mavis P30"
+          git add -f .github/state/activity-snapshot.json .github/state/temporal-monitor-state.json .github/state/temporal-monitor-report.json .github/state/activity-cache.json 2>/dev/null || true
+          if [ -n "$(git status --porcelain)" ]; then
+            git commit -m "chore(P30): daily activity monitor [skip ci]" || true
+            git push || true
+          fi
