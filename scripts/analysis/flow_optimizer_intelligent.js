@@ -169,7 +169,7 @@ class IntelligentFlowOptimizer {
     try {
       const reportPath = path.join(__dirname, 'flow_analysis_report.json');
       if (fs.existsSync(reportPath)) {
-        return JSON.parse(fs.readFileSync(reportPath, 'utf8'));
+        return JSON.parse(Buffer.from(fs.readFileSync(reportPath)).toString('utf8'));
       }
     } catch (error) {
       console.log('⚠️ Could not load analysis report, continuing without it');
@@ -243,7 +243,7 @@ class IntelligentFlowOptimizer {
     if (!flowPath) return;
 
     // Charger les flows actuels
-    const currentFlows = JSON.parse(fs.readFileSync(flowPath, 'utf8'));
+    const currentFlows = JSON.parse(Buffer.from(fs.readFileSync(flowPath)).toString('utf8'));
 
     // Appliquer l'optimisation avec fallback intelligent
     const optimizedFlows = this.applyIntelligentOptimization(currentFlows, standardPattern, driverName);
@@ -462,7 +462,7 @@ class IntelligentFlowOptimizer {
 
     if (!flowPath) return;
 
-    const flows = JSON.parse(fs.readFileSync(flowPath, 'utf8'));
+    const flows = JSON.parse(Buffer.from(fs.readFileSync(flowPath)).toString('utf8'));
     let modified = false;
 
     // Appliquer les corrections pour chaque type de flow
