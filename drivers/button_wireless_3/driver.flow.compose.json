@@ -514,6 +514,93 @@
         "nl": "Batterij laag",
         "de": "Batterie schwach"
       }
+    },
+    {
+      "id": "button_wireless_3_button_1gang_button_scene_recall",
+      "title": {
+        "en": "Button 1 scene recalled",
+        "fr": "Bouton 1 scène rappelée",
+        "nl": "Knop 1 scène opgeroepen",
+        "de": "Taste 1 Szene aufgerufen"
+      },
+      "hint": {
+        "en": "When button 1 recalls a Zigbee scene (cluster 0x05 — scene mode, P31)",
+        "fr": "Lorsque le bouton 1 rappelle une scène Zigbee (cluster 0x05 — mode scène, P31)"
+      },
+      "tokens": [
+        {
+          "name": "scene_id",
+          "type": "number",
+          "title": {
+            "en": "Scene ID",
+            "fr": "ID Scène"
+          },
+          "example": 1
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 1 scene [[scene_id]] recalled",
+        "fr": "Bouton 1 scène [[scene_id]] rappelée"
+      }
+    },
+    {
+      "id": "button_wireless_3_button_2gang_button_scene_recall",
+      "title": {
+        "en": "Button 2 scene recalled",
+        "fr": "Bouton 2 scène rappelée",
+        "nl": "Knop 2 scène opgeroepen",
+        "de": "Taste 2 Szene aufgerufen"
+      },
+      "hint": {
+        "en": "When button 2 recalls a Zigbee scene (cluster 0x05 — scene mode, P31)",
+        "fr": "Lorsque le bouton 2 rappelle une scène Zigbee (cluster 0x05 — mode scène, P31)"
+      },
+      "tokens": [
+        {
+          "name": "scene_id",
+          "type": "number",
+          "title": {
+            "en": "Scene ID",
+            "fr": "ID Scène"
+          },
+          "example": 2
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 2 scene [[scene_id]] recalled",
+        "fr": "Bouton 2 scène [[scene_id]] rappelée"
+      }
+    },
+    {
+      "id": "button_wireless_3_button_3gang_button_scene_recall",
+      "title": {
+        "en": "Button 3 scene recalled",
+        "fr": "Bouton 3 scène rappelée",
+        "nl": "Knop 3 scène opgeroepen",
+        "de": "Taste 3 Szene aufgerufen"
+      },
+      "hint": {
+        "en": "When button 3 recalls a Zigbee scene (cluster 0x05 — scene mode, P31)",
+        "fr": "Lorsque le bouton 3 rappelle une scène Zigbee (cluster 0x05 — mode scène, P31)"
+      },
+      "tokens": [
+        {
+          "name": "scene_id",
+          "type": "number",
+          "title": {
+            "en": "Scene ID",
+            "fr": "ID Scène"
+          },
+          "example": 3
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 3 scene [[scene_id]] recalled",
+        "fr": "Bouton 3 scène [[scene_id]] rappelée"
+      }
     }
   ]
 }

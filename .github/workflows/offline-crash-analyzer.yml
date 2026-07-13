@@ -1,0 +1,76 @@
+name: Offline Crash Analyzer (P31)
+
+# P31 — Daily crash analysis using 100% offline heuristic engine.
+# No AI required. Works even when all external AI services are down.
+#
+# Pipeline:
+# 1. Run offline-crash-analyzer.js (heuristic pattern matching)
+# 2. Run smart-auto-fix.js (auto-fix proposals)
+# 3. Upload reports as artifacts
+# 4. If --ai flag is set and GITHUB_TOKEN is available, also call GH Models API (optional)
+
+on:
+  schedule:
+    # Daily at 05:00 UTC (after activity-monitor at 04:00)
+    - cron: '0 5 * * *'
+  workflow_dispatch:
+    inputs:
+      use_ai:
+        description: 'Use AI (GitHub Models) for bonus analysis (optional)'
+        required: false
+        default: 'false'
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run Offline Crash Analyzer
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node tools/ci/offline-crash-analyzer.js
+
+      - name: Run Smart Auto-Fix Engine
+        id: autofix
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if [ "${{ inputs.use_ai }}" = "true" ]; then
+            node tools/ci/smart-auto-fix.js --ai
+          else
+            node tools/ci/smart-auto-fix.js
+          fi
+
+      - name: Upload Reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: crash-analysis-${{ github.run_id }}
+          path: |
+            .github/state/crash-analysis.json
+            .github/state/auto-fix-proposals.json
+          retention-days: 30
+
+      - name: Print Summary
+        run: |
+          if [ -f .github/state/auto-fix-proposals.json ]; then
+            echo "## 🔧 Auto-Fix Engine Summary" >> $GITHUB_STEP_SUMMARY
+            TOTAL=$(node -e "const j=require('./.github/state/auto-fix-proposals.json'); console.log(j.summary?.totalPatterns || 0)" 2>/dev/null || echo 0)
+            AUTO=$(node -e "const j=require('./.github/state/auto-fix-proposals.json'); console.log(j.summary?.autoFixable || 0)" 2>/dev/null || echo 0)
+            APPLIED=$(node -e "const j=require('./.github/state/auto-fix-proposals.json'); console.log(j.summary?.alreadyApplied || 0)" 2>/dev/null || echo 0)
+            NEEDS=$(node -e "const j=require('./.github/state/auto-fix-proposals.json'); console.log(j.summary?.needsManualFix || 0)" 2>/dev/null || echo 0)
+            echo "- Total patterns: $TOTAL" >> $GITHUB_STEP_SUMMARY
+            echo "- Auto-fixable: $AUTO" >> $GITHUB_STEP_SUMMARY
+            echo "- Already applied (P19-P30): $APPLIED" >> $GITHUB_STEP_SUMMARY
+            echo "- Needs manual fix: $NEEDS" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "Engine: 100% offline. No AI required to run." >> $GITHUB_STEP_SUMMARY
+          fi
