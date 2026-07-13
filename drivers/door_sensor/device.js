@@ -34,7 +34,14 @@ class DoorSensorDevice extends UnifiedSensorBase {
 
   // Override capability listener to use _safeSet (avoid infinite loop)
   async setCapabilityValueSafe(cap, value) {
-    return this._safeSetCapability ? this._safeSetCapability(cap, value) : this.setCapabilityValue(cap, value);
+    if (typeof this._safeSetCapability === 'function') {
+      return this._safeSetCapability(cap, value);
+    }
+    // Fallback: use safeSetCapabilityValue from BaseUnifiedDevice (avoids raw setCapabilityValue)
+    if (typeof this.safeSetCapabilityValue === 'function') {
+      return this.safeSetCapabilityValue(cap, value);
+    }
+    return undefined;
   }
 }
 
