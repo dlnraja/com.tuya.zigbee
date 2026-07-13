@@ -20,6 +20,16 @@ Add these in: **Settings → Secrets and variables → Actions → New repositor
 
 **No setup required.** Just use the default `secrets.GITHUB_TOKEN` in workflows.
 
+#### `MINIMAX_API_KEY` (P35 — Unlimited subscription)
+- **Provider**: MiniMax API (`https://api.MiniMax.chat/v1/text/chatcompletion_v2`)
+- **Models**: `MiniMax-M3`
+- **Cost**: **FREE** (unlimited subscription)
+- **Setup**: Add as GH secret `MINIMAX_API_KEY`
+- **Used in**: Tier 0 (first priority in LocalFirstEngine.callAI)
+- **Note**: User has unlimited MiniMax subscription, so this is the preferred provider when available
+
+**Setup**: Add `MINIMAX_API_KEY` as GH secret. Used first in the cascade, before GH Models, OpenAI, Anthropic.
+
 ### Tier 2: Direct API Keys (Optional, for higher volume)
 
 #### `OPENAI_API_KEY` (Optional)
@@ -56,7 +66,7 @@ Add these in: **Settings → Secrets and variables → Actions → New repositor
 ## How It Works
 
 `LocalFirstEngine.callAI(prompt, options)`:
-1. **Tries in order**: GitHub Models → OpenAI → Anthropic → Ollama
+1. **Tries in order**: MiniMax (M3) → GitHub Models → OpenAI → Anthropic → Ollama
 2. **If all fail** → silent return `null` → engine falls back to local heuristic
 3. **Budget cap**: 800 tokens max per call, 10s timeout
 4. **Zero blocked workflows**: AI is never required, only enhances
@@ -66,8 +76,10 @@ Add these in: **Settings → Secrets and variables → Actions → New repositor
 If all workflows ran with `--ai` every day for a year:
 - 4 workflows/day × 365 days = 1,460 AI calls
 - × 800 tokens avg = 1.17M tokens
-- × $0.15/M (gpt-4o-mini) = **$0.18/year**
+- With MiniMax (unlimited subscription): **$0.00**
 - With GH Models free tier: **$0.00**
+- With OpenAI gpt-4o-mini: ~$0.18/year
+- With Anthropic Sonnet: ~$3.50/year
 
 ## What Gets Sent to AI
 
