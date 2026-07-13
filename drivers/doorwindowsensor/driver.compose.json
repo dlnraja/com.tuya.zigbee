@@ -26,7 +26,9 @@
   },
   "zigbee": {
     "productId": [
-      "RH3001"
+      "RH3001",
+      "TS0203",
+      "SNZB-04"
     ],
     "endpoints": {
       "1": {
@@ -54,7 +56,19 @@
       "tuyatec-abkehqus",
       "TUYATEC-G3GL6CGY",
       "TUYATEC-BFQ2I2SY",
-      "TUYATEC-ABKEHQUS"
+      "TUYATEC-ABKEHQUS",
+      "TUYATEC-7qunn4gq",
+      "TUYATEC-Bfq2i2Sy",
+      "TUYATEC-abkehqus",
+      "TUYATEC-crr8qb0p",
+      "TUYATEC-g3gl6cgy",
+      "TUYATEC-ip9ganvw",
+      "TUYATEC-kbqf60nt",
+      "TUYATEC-r9hgssol",
+      "TUYATEC-rkqiqvcs",
+      "TUYATEC-sb6t7ett",
+      "TUYATEC-trhrga6p",
+      "_TYZB01_xph99wvr"
     ]
   },
   "version": "1.0.0",

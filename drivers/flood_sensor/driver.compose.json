@@ -26,7 +26,8 @@
   },
   "zigbee": {
     "productId": [
-      "TS0207"
+      "TS0207",
+      "RH3001"
     ],
     "endpoints": {
       "1": {
@@ -49,7 +50,8 @@
       }
     },
     "manufacturerName": [
-      "_TZE200_placeholder"
+      "_TZE200_placeholder",
+      "TUYATEC-3tipnsrx"
     ]
   },
   "version": "1.0.0",
