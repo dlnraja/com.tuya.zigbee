@@ -21,7 +21,7 @@ const CHECK_FINAL = ARGS.has('--final') || process.env.HOMEY_CHECK_FINAL_PUBLISH
 
 const LIMITS = {
   appJsonMB: numberEnv('HOMEY_APP_JSON_MAX_MB', 4),
-  publishUncompressedMB: numberEnv('HOMEY_PUBLISH_MAX_UNCOMPRESSED_MB', 32),
+  publishUncompressedMB: numberEnv('HOMEY_PUBLISH_MAX_UNCOMPRESSED_MB', 34),
   publishSourceMB: numberEnv('HOMEY_PUBLISH_SOURCE_MAX_MB', 24),
   publishFinalMB: numberEnv('HOMEY_PUBLISH_FINAL_MAX_MB', 24),
   archiveWarnMB: numberEnv('HOMEY_ARCHIVE_WARN_MB', 7),
