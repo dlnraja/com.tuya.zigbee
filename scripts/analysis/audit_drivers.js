@@ -24,7 +24,7 @@ console.log('═'.repeat(70));
 for (const driver of drivers) {
   const composePath = path.join(driversDir, driver, 'driver.compose.json');
   try {
-    const compose = JSON.parse(fs.readFileSync(composePath, 'utf8'));
+    const compose = JSON.parse(Buffer.from(fs.readFileSync(composePath)).toString('utf8'));
     const zigbee = compose.zigbee || {};
     const mfrNames = zigbee.manufacturerName || [];
     const productIds = zigbee.productId || [];
@@ -120,7 +120,7 @@ console.log('─'.repeat(70));
 
 const fallbackPath = path.join(driversDir, 'universal_fallback', 'driver.compose.json');
 if (fs.existsSync(fallbackPath)) {
-  const fallback = JSON.parse(fs.readFileSync(fallbackPath, 'utf8'));
+  const fallback = JSON.parse(Buffer.from(fs.readFileSync(fallbackPath)).toString('utf8'));
   const mfr = fallback.zigbee?.manufacturerName || [];
   const pids = fallback.zigbee?.productId || [];
   console.log(`✅ universal_fallback exists`);

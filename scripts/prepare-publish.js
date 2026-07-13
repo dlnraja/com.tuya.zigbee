@@ -163,7 +163,7 @@ function trimPublishOnlyFiles() {
 }
 
 function readJson(file) {
-  return JSON.parse(fs.readFileSync(file, 'utf8'));
+  return JSON.parse(Buffer.from(fs.readFileSync(file)).toString('utf8'));
 }
 
 // Best-effort sanitization of the source tree before copy. Runs the
@@ -406,7 +406,7 @@ try {
   // An empty manufacturerName:[] or productId:[] on a zigbee driver triggers
   // an AggregateError during Athom's Zigbee init on the build server → processing_failed.
   try {
-    const manifest = JSON.parse(fs.readFileSync(destAppJson, 'utf8'));
+    const manifest = JSON.parse(Buffer.from(fs.readFileSync(destAppJson)).toString('utf8'));
     let stripped = 0;
     for (const d of (manifest.drivers || [])) {
       if (d.zigbee) {
