@@ -4,7 +4,7 @@
     "description": "MFS Unified Database - Manufacturer Fingerprint Schema",
     "generatedAt": "2026-06-19T20:58:49.880Z",
     "generator": "mfs-aggregator v1.0.0",
-    "lastUpdated": "2026-07-13T10:28:29.849Z",
+    "lastUpdated": "2026-07-13T10:33:38.926Z",
     "lastEnrichment": {
       "date": "2026-07-13T04:00:39.424Z",
       "addedToDevices": 0,
@@ -14,7 +14,8 @@
     },
     "sacredCouplesEnabled": true,
     "sacredCouplesCount": 6596,
-    "lastSacredCouplesUpdate": "2026-07-13T10:28:29.847Z"
+    "lastSacredCouplesUpdate": "2026-07-13T10:28:29.847Z",
+    "forumFixesApplied": true
   },
   "sources": {
     "local": {
@@ -117068,6 +117069,30 @@
       },
       "confidence": 0.5,
       "lastSeen": "2026-07-13T10:27:49.945Z"
+    },
+    "_sedea_unknown": {
+      "manufacturerId": "_sedea_unknown",
+      "modelIds": [
+        "TS0201"
+      ],
+      "variants": [],
+      "deviceType": "sensor",
+      "driverHint": "climate_sensor",
+      "capabilities": [
+        "measure_temperature",
+        "measure_humidity",
+        "measure_battery"
+      ],
+      "powerSource": "battery",
+      "sources": [
+        "forum"
+      ],
+      "sourceDetails": {
+        "forum": "community.homey.app/t/147569"
+      },
+      "confidence": 0.4,
+      "lastSeen": "2026-07-13T10:33:38.604Z",
+      "note": "SEDEA is a Tuya whitelabel brand. Real mfrs need to be extracted from device image."
     }
   },
   "driverMapping": {
@@ -117966,7 +117991,8 @@
         "_TZ3000_u5u4cakc",
         "_TZ3210_ol1uhvza",
         "_TZE204_ahwvlkpy",
-        "_TZE284_rjxqso4a"
+        "_TZE284_rjxqso4a",
+        "_sedea_unknown"
       ],
       "modelIds": [
         "TS0601",
@@ -121398,7 +121424,8 @@
     },
     "device_radiator_valve_thermostat": {
       "manufacturerIds": [
-        "_hybrid_device_radiator_valve_thermostat_needs_device_assignment"
+        "_hybrid_device_radiator_valve_thermostat_needs_device_assignment",
+        "_tze200_9xfjixap"
       ],
       "modelIds": [
         "TS0601"
@@ -202409,6 +202436,15 @@
         "user-data"
       ],
       "confidence": 0.6
+    },
+    "_sedea_unknown|ts0201": {
+      "mfr": "_sedea_unknown",
+      "pid": "ts0201",
+      "driver": "climate_sensor",
+      "sources": [
+        "forum"
+      ],
+      "confidence": 0.4
     }
   }
 }
