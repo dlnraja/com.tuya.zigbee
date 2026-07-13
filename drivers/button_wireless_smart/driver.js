@@ -29,9 +29,10 @@ class ButtonWirelessSmartDriver extends BaseZigBeeDriver {
     if (this._flowCardsRegistered) { return; }
     this._flowCardsRegistered = true;
 
-    this.log('ButtonWirelessSmartDriver v5.5.533 initialized');
+    this.log('ButtonWirelessSmartDriver v10.1.0 initialized (P26.4 multi-endpoint support)');
 
     // v5.5.533: Register flow cards with CORRECT IDs matching driver.flow.compose.json
+    // P26.4: Register flow cards for up to 4 buttons (multi-endpoint devices)
     try {
       // Main triggers with button token
       const mainTriggers = [
@@ -59,30 +60,26 @@ class ButtonWirelessSmartDriver extends BaseZigBeeDriver {
         }
       }
 
-      // Button 1 specific triggers (no token needed)
-      const button1Triggers = [
-        'button_wireless_smart_button_1gang_button_1_pressed',
-        'button_wireless_smart_button_1gang_button_1_double',
-        'button_wireless_smart_button_1gang_button_1_long',
-        'button_wireless_smart_button_1gang_button_1_triple',
-        'button_wireless_smart_button_1gang_button_1_release'
-      ];
-
-      for (const triggerId of button1Triggers) {
-        try {
-          const card = this._getFlowCard(triggerId, 'trigger');
-          if (card) {
-            card.registerRunListener(async (args, state) => {
-              if (!args.device) {
-                this.error(`[FLOW] Device not found for ${triggerId}`);
-                return false;
-              }
-              return true;
-            });
-            this.log(`[FLOW] Registered ${triggerId}`);
+      // Per-button triggers for up to 4 buttons (P26.4)
+      const buttonPressTypes = ['pressed', 'double', 'long', 'triple', 'release'];
+      for (let btn = 1; btn <= 4; btn++) {
+        for (const pressType of buttonPressTypes) {
+          const triggerId = `button_wireless_smart_button_1gang_button_${btn}_${pressType}`;
+          try {
+            const card = this._getFlowCard(triggerId, 'trigger');
+            if (card) {
+              card.registerRunListener(async (args, state) => {
+                if (!args.device) {
+                  this.error(`[FLOW] Device not found for ${triggerId}`);
+                  return false;
+                }
+                return true;
+              });
+              this.log(`[FLOW] Registered ${triggerId}`);
+            }
+          } catch (e) {
+            // Card doesn't exist for this button - skip silently
           }
-        } catch (e) {
-          this.log(`[FLOW] ${triggerId} not found`);
         }
       }
 
