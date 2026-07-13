@@ -1,0 +1,50 @@
+name: Secure Notifications (Enhanced)
+
+# <!-- badges:start -->
+# [![Secure Notifications (Enhanced)](https://github.com/dlnraja/com.tuya.zigbee/actions/workflows/notifications.yml/badge.svg)](https://github.com/dlnraja/com.tuya.zigbee/actions/workflows/notifications.yml)
+# <!-- badges:end -->
+
+
+on:
+  issues:
+    types: [opened, closed]
+  pull_request:
+    types: [opened, closed]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  notify-maintainers:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    if: "contains(github.event.repository.name, 'tuya.zigbee')"
+    steps:
+      - name: 📥 Checkout
+        uses: actions/checkout@v5
+
+      - name: 📦 Setup Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+          cache: npm
+
+      - name: Fetch and Dump Diagnostics securely
+        continue-on-error: true
+        run: |
+          npm ci --prefer-offline --no-audit || npm install
+          node .github/scripts/homey-device-diagnostics.js || true
+          node .github/scripts/privacy-redactor.js .github/state/homey-device-report.json .github/state/diagnostics-report.json diagnostics || true
+          
+      - name: Send Secure Email Notification
+        run: |
+          echo "Event triggered in the repository: ${{ github.event_name }}"
+          echo "Details: ${{ github.event.issue.html_url || github.event.pull_request.html_url }}"

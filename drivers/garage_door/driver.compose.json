@@ -1,0 +1,91 @@
+{
+  "name": {
+    "en": "Garage Door Controller",
+    "fr": "Contrôleur Porte Garage",
+    "nl": "Garagedeur Controller",
+    "de": "Garagentorsteuerung",
+    "it": "Controller Porta Garage",
+    "sv": "Garageportskontroll",
+    "no": "Garasjeportkontroller",
+    "es": "Controlador Puerta Garaje",
+    "da": "Garageportkontrol"
+  },
+  "class": "garagedoor",
+  "capabilities": [
+    "garagedoor_closed",
+    "alarm_contact",
+    "button.1"
+  ],
+  "capabilitiesOptions": {
+    "garagedoor_closed": {
+      "title": {
+        "en": "Door Closed",
+        "fr": "Porte Fermée"
+      }
+    },
+    "alarm_contact": {
+      "title": {
+        "en": "Door Open",
+        "fr": "Porte Ouverte"
+      }
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_tz3000_e3wzdxcx",
+      "_tz3000_sj7xocbp",
+      "_tze200_3jbslzh4",
+      "_tze204_3jbslzh4"
+    ],
+    "productId": [
+      "TS0601_garage",
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          61184
+        ]
+      }
+    },
+    "learnmode": {
+      "instruction": {
+        "en": "Press and hold the pairing button for 5 seconds",
+        "fr": "Maintenez le bouton d'appairage pendant 5 secondes"
+      }
+    }
+  },
+  "images": {
+    "small": "/drivers/garage_door/assets/images/small.png",
+    "large": "/drivers/garage_door/assets/images/large.png",
+    "xlarge": "/drivers/garage_door/assets/images/xlarge.png"
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "fr": "Vérifier MàJ OTA",
+        "nl": "Controleer op OTA-updates"
+      }
+    }
+  ],
+  "id": "garage_door",
+  "version": "1.0.0"
+}

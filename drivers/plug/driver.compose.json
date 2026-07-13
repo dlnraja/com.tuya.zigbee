@@ -1,0 +1,78 @@
+{
+  "id": "plug",
+  "name": {
+    "en": "Smart Plug without metering"
+  },
+  "class": "socket",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "capabilities": [
+    "onoff",
+    "button.1"
+  ],
+  "capabilitiesOptions": {
+    "measure_power": {
+      "approximated": true
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  },
+  "images": {
+    "large": "/{{driverAssetsPath}}/images/large.png",
+    "small": "/{{driverAssetsPath}}/images/small.png"
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_TZE200_placeholder_plug",
+      "_TZ3000_gnjozsaz",
+      "_TZ3000_j1v25l17",
+      "_TZ3000_ko6v90pg",
+      "_TZ3000_npg02xft",
+      "_TZ3000_pjcqjtev",
+      "_TZ3000_pmz6mjyu",
+      "_TZ3000_wzauvbcs",
+      "_TZ3000_yi0n4xfd",
+      "_TZ3210_4ux0ondb",
+      "_TZ3210_xzhnra8x"
+    ],
+    "productId": [
+      "TS011F"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          4,
+          5,
+          6
+        ],
+        "bindings": [
+          6
+        ]
+      }
+    },
+    "learnmode": {
+      "instruction": {
+        "en": "Press and hold down on/off switch for aprox 5 seconds until the LED blinks rapidly."
+      }
+    }
+  },
+  "version": "1.0.0",
+  "_notes": [
+    "// FIX-EMPTY-MFR-AGGREGATEERROR: 2026-07-12 — placeholder added to prevent server-side build crash"
+  ],
+  "_pidConflictNotes": [
+    "// PID-CONFLICT-NOTE TS011F shared with 43 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
+  ]
+}

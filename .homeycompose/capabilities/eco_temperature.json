@@ -1,0 +1,21 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Eco Temperature",
+    "fr": "Température Éco"
+  },
+  "desc": {
+    "en": "Temperature in eco mode",
+    "fr": "Température en mode éco"
+  },
+  "units": {
+    "en": "°C"
+  },
+  "getable": true,
+  "setable": true,
+  "uiComponent": "slider",
+  "min": 5,
+  "max": 25,
+  "step": 0.5,
+  "decimals": 1
+}

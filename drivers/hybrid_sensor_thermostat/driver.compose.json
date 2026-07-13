@@ -1,0 +1,156 @@
+{
+  "name": {
+    "en": "Hybrid Sensor + Thermostat",
+    "fr": "Hybride Capteur + Thermostat",
+    "nl": "Hybride Sensor + Thermostaat",
+    "de": "Hybrid Sensor + Thermostat"
+  },
+  "class": "thermostat",
+  "capabilities": [
+    "measure_temperature",
+    "measure_humidity",
+    "target_temperature",
+    "thermostat_mode",
+    "measure_battery",
+    "button.1"
+  ],
+  "capabilitiesOptions": {
+    "measure_temperature": {
+      "title": {
+        "en": "Current Temperature",
+        "fr": "Température Actuelle"
+      }
+    },
+    "measure_humidity": {
+      "title": {
+        "en": "Current Humidity",
+        "fr": "Humidité Actuelle"
+      }
+    },
+    "target_temperature": {
+      "title": {
+        "en": "Target Temperature",
+        "fr": "Température Cible"
+      },
+      "min": 5,
+      "max": 35,
+      "step": 0.5
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  },
+  "energy": {
+    "batteries": [
+      "AAA",
+      "CR2032",
+      "CR2450"
+    ]
+  },
+  "zigbee": {
+    "productId": [
+      "TS0601",
+      "TS0201"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          1026,
+          1029,
+          513,
+          61184
+        ]
+      }
+    },
+    "manufacturerName": [
+      "_TZE204_x1ovyvy1",
+      "_TZE200_bjzrowv2"
+    ]
+  },
+  "settings": [
+    {
+      "id": "temperature_calibration",
+      "type": "number",
+      "label": {
+        "en": "Temperature Offset (°C)",
+        "fr": "Décalage Température (°C)"
+      },
+      "value": 0,
+      "min": -10,
+      "max": 10,
+      "step": 0.1,
+      "hint": {
+        "en": "Add or subtract from temperature reading"
+      }
+    },
+    {
+      "id": "humidity_calibration",
+      "type": "number",
+      "label": {
+        "en": "Humidity Offset (%)",
+        "fr": "Décalage Humidité (%)"
+      },
+      "value": 0,
+      "min": -20,
+      "max": 20,
+      "step": 1
+    },
+    {
+      "id": "min_set_point",
+      "type": "number",
+      "label": {
+        "en": "Minimum Set Point (°C)",
+        "fr": "Point de Consigne Min (°C)"
+      },
+      "value": 5,
+      "min": 1,
+      "max": 15,
+      "step": 0.5
+    },
+    {
+      "id": "max_set_point",
+      "type": "number",
+      "label": {
+        "en": "Maximum Set Point (°C)",
+        "fr": "Point de Consigne Max (°C)"
+      },
+      "value": 35,
+      "min": 20,
+      "max": 45,
+      "step": 0.5
+    }
+  ],
+  "images": {
+    "small": "/drivers/hybrid_sensor_thermostat/assets/images/small.png",
+    "large": "/drivers/hybrid_sensor_thermostat/assets/images/large.png",
+    "xlarge": "/drivers/hybrid_sensor_thermostat/assets/images/xlarge.png"
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "fr": "Vérifier MàJ OTA"
+      }
+    }
+  ],
+  "id": "hybrid_sensor_thermostat",
+  "version": "1.0.0",
+  "_pidConflictNotes": [
+    "// PID-CONFLICT-NOTE TS0201 shared with 18 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
+  ]
+}

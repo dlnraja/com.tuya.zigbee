@@ -1,0 +1,235 @@
+{
+  "timestamp": "2026-07-12T17:48:31.097Z",
+  "mode": "dry-run",
+  "sourceReport": "C:\\Users\\Dell\\Documents\\homey\\master\\.github\\state\\new-mfrs-from-johan.json",
+  "canonical": {
+    "added": 96,
+    "skipped": 0,
+    "before": 1520,
+    "after": 1616
+  },
+  "drivers": {
+    "generic_tuya": {
+      "added": 29,
+      "skipped": 0,
+      "mfrs": [
+        "_TZE",
+        "_TZE284",
+        "_TZE200",
+        "_TZE204",
+        "_TZ1800_ejwkn2h2",
+        "_TZ1800_fcdjzz3s",
+        "_TZE200_hhrtiq0x",
+        "_TZE200_t1blo2bj",
+        "_TZ3000_yw5tvzsk",
+        "_TZE200_b6wax7g0",
+        "_TZE200_dq8bu0pt",
+        "_TZE200_shkxsgis",
+        "_TZE200_zqtiam4u",
+        "_TZE204_81yrt3l",
+        "_TZE204_bvfld3xc",
+        "_TZE204_jtbgusdc",
+        "_TZE204_mpbki2zm-TS0601",
+        "_TZE204_qasjif9",
+        "_TZE204_s139roas",
+        "_TZE204_srmahpwl",
+        "_TZE204_sxm7l9x",
+        "_TZE204_t1blo2bj",
+        "_TZE204_xtrnjaoz",
+        "_TZE284_0ints6w",
+        "_TZE284_81YRT3L",
+        "_TZE284_aa03yzhs",
+        "_TZE284_rqcuwlsa",
+        "_TZE284_uo8qcagc",
+        "_TZE28C1000000_81yrt3lo"
+      ]
+    },
+    "switch_4gang": {
+      "added": 4,
+      "skipped": 0,
+      "mfrs": [
+        "_TZ3000",
+        "_TZ3000_excgg5kb",
+        "_TZ3000_enmfaave",
+        "_TZ3000_wkr3jqmr"
+      ]
+    },
+    "switch_1gang": {
+      "added": 17,
+      "skipped": 0,
+      "mfrs": [
+        "_TZ3210",
+        "_TYZB01",
+        "_TZ3000_hafsqare",
+        "_TZ3000_hhiodade",
+        "_TZ3000_mrduubod",
+        "_TZ3000_r0pmi2p3",
+        "_TZ3210_nuenzetq",
+        "_TZ3000_4js9lo5d",
+        "_TZ3000_bi6lpsew",
+        "_TZ3000_blhvsaqf",
+        "_TZ3000_e98krvvk",
+        "_TZ3000_j9568h44",
+        "_TZ3000_l9brjwau",
+        "_TZ3000_ltiqubue",
+        "_TZ3000_uaa99arv",
+        "_TZ3000_zmy4lsw",
+        "_TZE200_bxoo2swd"
+      ]
+    },
+    "switch_3gang": {
+      "added": 2,
+      "skipped": 0,
+      "mfrs": [
+        "_TZ3000_qewo8dlz",
+        "_TZ3000_qkixdnon"
+      ]
+    },
+    "plug": {
+      "added": 10,
+      "skipped": 0,
+      "mfrs": [
+        "_TZ3000_gnjozsaz",
+        "_TZ3000_j1v25l17",
+        "_TZ3000_ko6v90pg",
+        "_TZ3000_npg02xft",
+        "_TZ3000_pjcqjtev",
+        "_TZ3000_pmz6mjyu",
+        "_TZ3000_wzauvbcs",
+        "_TZ3000_yi0n4xfd",
+        "_TZ3210_4ux0ondb",
+        "_TZ3210_xzhnra8x"
+      ]
+    },
+    "door_sensor": {
+      "added": 0,
+      "skipped": 5,
+      "mfrs": []
+    },
+    "button_wireless_scene": {
+      "added": 3,
+      "skipped": 0,
+      "mfrs": [
+        "_TZ3000_g",
+        "_TZ3000_kjfzuycl",
+        "_TZ3000_rco1yzb1"
+      ]
+    },
+    "bulb_dimmable": {
+      "added": 2,
+      "skipped": 0,
+      "mfrs": [
+        "_TZ3000_iiacqpdz",
+        "_TZ3000_gbm10jnj"
+      ]
+    },
+    "button_wireless_4": {
+      "added": 3,
+      "skipped": 0,
+      "mfrs": [
+        "_TZ3000_jcspr0tp",
+        "_TZ3000_zgyzgdua",
+        "_TZ3000_abci1hiu"
+      ]
+    },
+    "button_wireless_3": {
+      "added": 1,
+      "skipped": 0,
+      "mfrs": [
+        "_TZ3000_sj7jbgks"
+      ]
+    },
+    "climate_sensor": {
+      "added": 5,
+      "skipped": 0,
+      "mfrs": [
+        "_TZ3000_1obmmd8k",
+        "_TZ3000_i8jfiezr",
+        "_TZ3000_y56pgpgs",
+        "_TZ3040",
+        "_TZ3040_o4mkahkc"
+      ]
+    },
+    "contact_sensor": {
+      "added": 1,
+      "skipped": 0,
+      "mfrs": [
+        "_TZ3000_2mccw9py"
+      ]
+    },
+    "plug_smart": {
+      "added": 2,
+      "skipped": 0,
+      "mfrs": [
+        "_TZ3000_cfnprab5to",
+        "_TZ3000_uwaort14"
+      ]
+    },
+    "curtain_motor": {
+      "added": 1,
+      "skipped": 0,
+      "mfrs": [
+        "_TZ3000_dbpmpco1"
+      ]
+    },
+    "illuminance_sensor": {
+      "added": 1,
+      "skipped": 0,
+      "mfrs": [
+        "_TZ3000_hyarhbyx"
+      ]
+    },
+    "button_wireless_6": {
+      "added": 1,
+      "skipped": 0,
+      "mfrs": [
+        "_TZ3000_iszegwpd"
+      ]
+    },
+    "water_leak_sensor": {
+      "added": 2,
+      "skipped": 0,
+      "mfrs": [
+        "_TZ3000_o9f2zqln",
+        "_TZ3000_xk5udnd6"
+      ]
+    },
+    "button_wireless_1": {
+      "added": 1,
+      "skipped": 0,
+      "mfrs": [
+        "_TZ3000_tk3s5tyg"
+      ]
+    },
+    "fingerbot": {
+      "added": 1,
+      "skipped": 0,
+      "mfrs": [
+        "_TZ3210_dse8ogfy_fingerbot"
+      ]
+    },
+    "bulb_rgbw": {
+      "added": 3,
+      "skipped": 0,
+      "mfrs": [
+        "_TZ3210_eejm8dcr",
+        "_TZ3210_s8lvbbu",
+        "_TZ3210_sroezl0s"
+      ]
+    },
+    "dimmer_wall_1gang": {
+      "added": 1,
+      "skipped": 0,
+      "mfrs": [
+        "_TZE200_dcrrztpa"
+      ]
+    },
+    "presence_sensor_radar": {
+      "added": 1,
+      "skipped": 0,
+      "mfrs": [
+        "_TZE200_sfqyhvpv"
+      ]
+    }
+  }
+}

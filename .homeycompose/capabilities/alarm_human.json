@@ -1,0 +1,20 @@
+{
+  "type": "boolean",
+  "title": {
+    "en": "Human Presence",
+    "nl": "Menselijke aanwezigheid",
+    "de": "Menschliche Anwesenheit",
+    "fr": "Présence humaine"
+  },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "uiQuickAction": false,
+  "insights": true,
+  "insightsTitleTrue": {
+    "en": "Presence detected"
+  },
+  "insightsTitleFalse": {
+    "en": "No presence"
+  }
+}

@@ -1,0 +1,151 @@
+{
+  "name": {
+    "en": "Climate Sensor Smart",
+    "nl": "Slimme Klimaatsensor",
+    "fr": "Capteur Climatique Intelligent",
+    "de": "Intelligenter -Klimasensor",
+    "es": "Sensor ClimÃ¡tico Inteligente"
+  },
+  "class": "socket",
+  "capabilities": [
+    "onoff.gang1",
+    "onoff.gang2",
+    "onoff.gang3",
+    "onoff.gang4",
+    "measure_temperature",
+    "measure_humidity",
+    "button.1"
+  ],
+  "capabilitiesOptions": {
+    "onoff.gang1": {
+      "title": {
+        "en": "Switch 1",
+        "fr": "Interrupteur 1"
+      }
+    },
+    "onoff.gang2": {
+      "title": {
+        "en": "Switch 2",
+        "fr": "Interrupteur 2"
+      }
+    },
+    "onoff.gang3": {
+      "title": {
+        "en": "Switch 3",
+        "fr": "Interrupteur 3"
+      }
+    },
+    "onoff.gang4": {
+      "title": {
+        "en": "Switch 4",
+        "fr": "Interrupteur 4"
+      }
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  },
+  "settings": [
+    {
+      "id": "power_on_behavior",
+      "type": "dropdown",
+      "label": {
+        "en": "Power-On Behavior"
+      },
+      "value": "memory",
+      "values": [
+        {
+          "id": "off",
+          "label": {
+            "en": "Off"
+          }
+        },
+        {
+          "id": "on",
+          "label": {
+            "en": "On"
+          }
+        },
+        {
+          "id": "memory",
+          "label": {
+            "en": "Last State"
+          }
+        }
+      ]
+    },
+    {
+      "id": "backlight",
+      "type": "checkbox",
+      "label": {
+        "en": "Screen Backlight"
+      },
+      "value": true
+    },
+    {
+      "id": "pir_delay",
+      "type": "number",
+      "label": {
+        "en": "Radar Delay (seconds)"
+      },
+      "value": 5,
+      "min": 1,
+      "max": 600
+    }
+  ],
+  "images": {
+    "small": "/drivers/smart_scene_panel/assets/images/small.png",
+    "large": "/drivers/smart_scene_panel/assets/images/large.png"
+  },
+  "platforms": [
+    "local"
+  ],
+  "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "fr": "Vérifier MÃJ OTA",
+        "nl": "Controleer op OTA-updates"
+      }
+    }
+  ],
+  "energy": {
+    "batteries": [
+      "AAA",
+      "AAA"
+    ]
+  },
+  "flow": {
+    "triggers": [],
+    "conditions": [],
+    "actions": []
+  },
+  "id": "climate_sensor_smart",
+  "version": "1.0.0",
+  "connectivity": [
+    "zigbee"
+  ],
+  "zigbee": {
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0
+        ]
+      }
+    },
+    "manufacturerName": [
+      "_hybrid_climate_sensor_smart_needs_device_assignment",
+      "_HYBRID_CLIMATE_SENSOR_SMART_NEEDS_DEVICE_ASSIGNMENT"
+    ]
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "id": "rgb_bulb_E27",
+  "name": {
+    "en": "RGB Bulb E27"
+  },
+  "$extends": [
+    "light_color_ambiance"
+  ],
+  "energy": {
+    "approximation": {
+      "usageOn": 9,
+      "usageOff": 1
+    }
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_qd7hej8u",
+      "_TZ3210_mja6r5ix",
+      "_TZ3000_q50zhdsc",
+      "eWeLight",
+      "ewelight",
+      "EWELIGHT"
+    ],
+    "productId": [
+      "TS0505A",
+      "TS0505B",
+      "ZB-CL01"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6,
+          8,
+          768
+        ],
+        "bindings": [
+          6,
+          8,
+          768
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "{{driverAssetsPath}}/icon.svg",
+      "instruction": {
+        "en": "Power on to enter pairing mode."
+      }
+    }
+  },
+  "version": "1.0.0",
+  "connectivity": [
+    "zigbee"
+  ],
+  "capabilities": [
+    "onoff",
+    "dim",
+    "light_hue",
+    "light_saturation",
+    "button.1"
+  ],
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    },
+    "onoff": {
+      "setOnDim": false
+    }
+  },
+  "class": "light",
+  "_pidConflictNotes": [
+    "// PID-CONFLICT-NOTE TS0505B shared with 19 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE TS0505A shared with 13 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE ZB-CL01 shared with 3 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
+  ]
+}

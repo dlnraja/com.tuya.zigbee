@@ -1,0 +1,16 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Maintenance Score",
+    "fr": "Score Maintenance",
+    "nl": "Onderhoudsscore"
+  },
+  "uiComponent": "sensor",
+  "uiQuickAction": false,
+  "getable": true,
+  "setable": false,
+  "units": "pts",
+  "min": 0,
+  "max": 100,
+  "decimals": 0
+}

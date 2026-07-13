@@ -1,0 +1,21 @@
+{
+  "wakeInstruction": {
+    "en": "Press the button on the rain sensor to wake it up before updating.",
+    "fr": "Appuyez sur le bouton du capteur de pluie pour le réveiller avant la mise à jour.",
+    "nl": "Druk op de knop van de regensensor om deze te activeren bijwerken."
+  },
+  "updates": [
+    {
+      "changelog": {
+        "en": "Initial OTA support for Tuya rain sensors (TS0207/TS0601).",
+        "fr": "Support OTA initial pour les capteurs de pluie Tuya (TS0207/TS0601).",
+        "nl": "Initiële OTA-ondersteuning voor Tuya regensensoren (TS0207/TS0601)."
+      },
+      "device": {
+        "manufacturerName": "_TZ3210_tgvtvdoc",
+        "productId": ["TS0207", "TS0601"]
+      },
+      "files": []
+    }
+  ]
+}

@@ -1,0 +1,146 @@
+{
+  "name": {
+    "en": "Scene Switch Wall",
+    "nl": "Scène schakelaar wand",
+    "fr": "Interrupteur de scène mural",
+    "de": "Szenenschalter Wand",
+    "es": "Interruptor de escena de pared"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "button.1",
+    "button.2",
+    "measure_battery"
+  ],
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "getable": false,
+      "setable": false,
+      "maintenanceAction": true
+    },
+    "button.2": {
+      "title": {
+        "en": "Button 2",
+        "fr": "Bouton 2"
+      },
+      "getable": false,
+      "setable": false,
+      "maintenanceAction": true
+    }
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_54pxp3gf",
+      "_TZ3000_b2qdgogo",
+      "_TZ3000_dlhhrpkr",
+      "_TZ3000_e2oapmqu",
+      "_TZ3000_odixoqsg",
+      "_TZ3000_lmljdueb",
+      "_TZ3000_fsb6zw01",
+      "_TZ3000_c3ulyg6u",
+      "_TZ3000_zppy6ayt",
+      "_TZ3000_weqmprfc",
+      "_TZ3000_eezdmyns",
+      "_TZ3000_ygvf7qag",
+      "_TZ3000_18ejxno0"
+    ],
+    "productId": [
+      "TS0042",
+      "TS0043"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          3,
+          6,
+          4096,
+          57344,
+          61184
+        ]
+      }
+    }
+  },
+  "images": {
+    "small": "/drivers/scene_switch_2/assets/images/small.png",
+    "large": "/drivers/scene_switch_2/assets/images/large.png",
+    "xlarge": "/drivers/scene_switch_2/assets/images/xlarge.png"
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "energy": {
+    "batteries": [
+      "CR2032",
+      "CR2450"
+    ]
+  },
+  "settings": [
+    {
+      "id": "button_mode",
+      "type": "dropdown",
+      "label": {
+        "en": "Operating Mode",
+        "fr": "Mode de fonctionnement"
+      },
+      "hint": {
+        "en": "Scene Mode allows single/double/long press. Dimmer Mode only supports single press. Auto tries to detect and switch automatically.",
+        "fr": "Le mode Scène permet les appuis simples/doubles/longs. Le mode Variateur ne supporte que l'appui simple. Auto tente de détecter et basculer automatiquement."
+      },
+      "value": "auto",
+      "values": [
+        {
+          "id": "auto",
+          "label": {
+            "en": "Auto-Detect",
+            "fr": "Détection Auto"
+          }
+        },
+        {
+          "id": "scene",
+          "label": {
+            "en": "Scene Mode (Multi-press)",
+            "fr": "Mode Scène (Multi-clics)"
+          }
+        },
+        {
+          "id": "dimmer",
+          "label": {
+            "en": "Dimmer Mode",
+            "fr": "Mode Variateur"
+          }
+        }
+      ]
+    }
+  ],
+  "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "fr": "Vérifier MàJ OTA",
+        "nl": "Controleer op OTA-updates"
+      }
+    }
+  ],
+  "id": "scene_switch_wall",
+  "version": "1.0.0",
+  "metadata": {
+    "driver": {
+      "catchall": true,
+      "reason": "Fallback for unmatched devices with PIDs: TS0042, TS0043"
+    }
+  },
+  "_pidConflictNotes": [
+    "// PID-CONFLICT-NOTE TS0043 shared with 16 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE TS0042 shared with 13 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
+  ]
+}

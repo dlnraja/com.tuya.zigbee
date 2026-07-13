@@ -1,0 +1,68 @@
+{
+  "name": {
+    "en": "Boiler Switch with Energy Monitoring",
+    "fr": "Interrupteur Chaudière avec Monitoring Énergie"
+  },
+  "class": "socket",
+  "capabilities": [
+    "onoff",
+    "measure_power",
+    "measure_voltage",
+    "measure_current",
+    "meter_power",
+    "measure_temperature",
+    "button.1"
+  ],
+  "capabilitiesOptions": {
+    "measure_temperature": {
+      "title": {
+        "en": "Temperature",
+        "fr": "Température"
+      }
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  },
+  "zigbee": {
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          61184
+        ],
+        "bindings": [
+          61184
+        ]
+      }
+    },
+    "manufacturerName": [
+      "_hybrid_boiler_switch_energy_needs_device_assignment",
+      "_HYBRID_BOILER_SWITCH_ENERGY_NEEDS_DEVICE_ASSIGNMENT",
+      "_TZE204_rzdkn5rx",
+      "_TZE28C100000_rzdkn5rx",
+      "_TZE28C1000000_rzdkn5rx"
+    ]
+  },
+  "images": {
+    "small": "/drivers/boiler_switch_energy/assets/images/small.png",
+    "large": "/drivers/boiler_switch_energy/assets/images/large.png",
+    "xlarge": "/drivers/boiler_switch_energy/assets/images/xlarge.png"
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "id": "boiler_switch_energy",
+  "version": "1.0.0"
+}

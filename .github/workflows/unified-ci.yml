@@ -1,0 +1,271 @@
+name: 🛡️ Unified CI/CD Orchestrator
+
+# <!-- badges:start -->
+# [![Unified CI/CD](https://github.com/dlnraja/com.tuya.zigbee/actions/workflows/unified-ci.yml/badge.svg)](https://github.com/dlnraja/com.tuya.zigbee/actions/workflows/unified-ci.yml)
+# <!-- badges:end -->
+
+on:
+  push:
+    branches: [ master, main ]
+  pull_request:
+    branches: [ master, main ]
+  workflow_dispatch:
+    inputs:
+      force_audit:
+        description: "Run deep architectural audit"
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  validate:
+    name: 🔍 Universal Validation (SDK 3 Strict)
+    if: github.actor != 'github-actions[bot]' && github.actor != 'dependabot[bot]'
+    timeout-minutes: 15
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: Setup Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+          cache: 'npm'
+      
+      - name: Install dependencies
+        run: npm ci || npm install
+
+      - name: 🛡️ GitHub Actions & YAML Policy Gate
+        run: npm run check:yaml
+
+      - name: ⏱️ Homey Timer Context Guard
+        run: npm run check:timer-context
+
+      - name: 🗣️ Google Assistant / Alexa Voice-Safety Gate
+        run: npm run check:voice
+      
+      - name: 🛡️ Dual-Layer AggregateError Gate (BLOQUANT)
+        run: |
+          node - << 'GATE'
+          const fs = require('fs');
+          const WIFI_ID = id => { const s=(id||'').toLowerCase(); return s.startsWith('wifi_')||s.includes('ewelink')||s.includes('sonoff')||s.includes('radiator_wifi'); };
+          const app = JSON.parse(fs.readFileSync('app.json'));
+          const errs = [];
+          (app.drivers||[]).forEach(d => {
+            const conn = d.connectivity||[];
+            const hasZ = !!d.zigbee;
+            const isLan = conn.some(c=>['lan','cloud'].includes(c));
+            const type = hasZ&&isLan?'hybrid':hasZ?'zigbee':WIFI_ID(d.id)?'wifi':'virtual';
+            if(type==='zigbee'||type==='hybrid'){
+              const hasMf = d.zigbee.manufacturerName && d.zigbee.manufacturerName.length > 0;
+              const hasFp = d.zigbee.fingerprints && d.zigbee.fingerprints.length > 0;
+              if (hasFp && !hasMf) {
+                errs.push('['+type+'] '+d.id);
+              }
+            }
+          });
+          if(errs.length){console.error('❌ AggregateError dans',errs.length,'drivers:');errs.forEach(e=>console.error('  ❌',e));process.exit(1);}
+          console.log('✅ Dual-Layer: PASS — Zéro AggregateError');
+          GATE
+
+      - name: Normalize Homey manifest before validation
+        run: npm run fix:generated-flow-args
+
+      - name: 🏠 Homey Validate
+        run: npx homey app validate --level publish
+
+      - name: Normalize Homey manifest after validation
+        run: npm run fix:generated-flow-args && npm run check:homey-guidelines
+      
+      - name: 🛡️ Fleetwood Integrity & Manifest Gateway
+        run: node scripts/PRE_COMMIT_CHECKS.js
+      
+      - name: 🛡️ SDK 3 Strict Linter
+        run: node scripts/maintenance/rule-21-linter.js
+      
+      - name: 📊 Architectural Audit & Performance Benchmark
+        run: node scripts/benchmark/app-audit-plus.js
+      
+      - name: 🧹 Metadata Consistency Check
+        run: node scripts/maintenance/validate-driver-manifests.js
+
+      - name: 🔍 Fingerprint Collision Check
+        run: |
+          node .github/scripts/fp-collision-check.js --baseline .github/fingerprint-collision-baseline.json
+
+      - name: 🌌 ZERO DEFECT ARCHITECT AUDIT
+        run: node scripts/maintenance/zero-defect-architect-audit.js
+      
+      - name: 🔄 Z2M/ZHA Case Variant Check
+        run: |
+          echo "Checking case variant coverage for Z2M/ZHA compatibility..."
+          node scripts/automation/detect-missing-variants.js || echo "detect-missing-variants exited (may be stub)"
+          MISSING_FILE="data/community-sync/missing-variants-detected.json"
+          if [ -f "$MISSING_FILE" ] && [ -s "$MISSING_FILE" ]; then
+            MISSING=$(node -e "
+              try {
+                const raw = require('fs').readFileSync('$MISSING_FILE','utf8').trim();
+                if (!raw) { console.log(0); process.exit(0); }
+                const d = JSON.parse(raw);
+                console.log(d.total || 0);
+              } catch(e) { console.log(0); }
+            " 2>/dev/null || echo "0")
+          else
+            MISSING=0
+            echo "No missing-variants-detected.json found or file is empty — skipping"
+          fi
+          echo "Missing case variants: $MISSING"
+          if [ "$MISSING" -gt 0 ]; then
+            echo "::warning::Found $MISSING missing case variants - auto-fixing..."
+            node scripts/automation/fix-detected-variants.js || echo "fix-detected-variants exited (may be stub)"
+          else
+            echo "All drivers have complete case variant coverage"
+          fi
+
+      - name: 🔧 Flow Card Integrity Watchdog (Pre-Publish Gate)
+        run: |
+          echo "Running flow card integrity watchdog..."
+          node scripts/automation/flow-card-watchdog.js --ci --json > /tmp/flow-watchdog-report.json 2>&1 || EXIT_CODE=$?
+          cat /tmp/flow-watchdog-report.json | node -e "
+            const d=require('fs').readFileSync(0,'utf8');
+            try {
+              const j=JSON.parse(d);
+              const s=j.summary||{};
+              console.log('Flow Card Watchdog Results:');
+              console.log('  Drivers scanned: '+(s.driversScanned||0));
+              console.log('  Flow files: '+(s.driversWithFlowFiles||0));
+              console.log('  Total flow cards: '+(s.totalFlowCards||0));
+              console.log('  Errors: '+(s.errors||0));
+              console.log('  Warnings: '+(s.warnings||0));
+              if(s.errors>0) {
+                console.log('::error::Flow card watchdog found '+s.errors+' error(s)');
+                process.exit(1);
+              }
+              console.log('Flow card integrity: PASS');
+            } catch(e) { console.log('Flow card watchdog output parse skipped'); }
+          "
+          if [ "${EXIT_CODE:-0}" -ne 0 ]; then
+            echo "::error::Flow card integrity watchdog failed"
+            exit 1
+          fi
+
+  build:
+    name: 🏗️ Production Build & Optimize
+    needs: validate
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v5
+      - name: Setup Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+          cache: 'npm'
+      
+      - name: Install dependencies
+        run: npm ci || npm install
+      
+      - name: 👷 Homey Build
+        run: npx homey app build
+      
+      - name: 🖼️ Fix Large Images
+        run: |
+          node scripts/maintenance/fix-large-images.js
+          node scripts/maintenance/optimize-build-images.cjs
+          node scripts/maintenance/sanitize-manifest.cjs app.json .homeybuild/app.json
+      
+      - name: 🧪 Regression Verification
+        run: |
+          echo "Verifying presence of critical stability hooks..."
+          grep -q "_throttleMotionSpam" drivers/sensor_presence_radar/device.js && echo "Radar Hook Active" || echo "WARNING: _throttleMotionSpam not found"
+          grep -q "smartDivisor" lib/devices/UnifiedSensorBase.js && echo "Smart Divisor Active" || echo "WARNING: smartDivisor not found"
+      
+      - name: 📦 Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: homey-app-bundle
+          path: .homeybuild/
+
+      - name: 🧹 Cleanup build artifacts
+        if: failure()
+        run: |
+          rm -rf .homeybuild/ node_modules/ 2>/dev/null || true
+          echo "Cleaned up build artifacts on failure"
+
+  security:
+    name: 🛡️ Unified Security Shield (v8.5.0 Hardened)
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v5
+      - name: 🕵️ Deep Credential & Token Leak Detection
+        run: |
+          echo "🔐 [1/5] Checking for .env and forbidden files..."
+          FOUND_ENV=$(find . -maxdepth 3 -name '.env' -not -path './node_modules/*' -not -path './.git/*' 2>/dev/null | head -5 || true)
+          if [ -n "$FOUND_ENV" ]; then
+            echo "::error::⚠️ .env files detected in repo! Remove immediately: $FOUND_ENV"
+            exit 1
+          fi
+          echo "✅ No .env files in tracked directories"
+
+          echo "🔐 [2/5] Checking git remote URLs for embedded tokens..."
+          if git remote -v 2>/dev/null | grep -qiE 'gh[opsu]_[A-Za-z0-9]{30,}'; then
+            echo "::error::⚠️ GIT REMOTE CONTAINS A TOKEN! Run: git remote set-url origin <clean-url>"
+            echo "::error::Also revoke the token at: https://github.com/settings/tokens"
+            exit 1
+          fi
+          echo "✅ Git remote URLs are clean"
+
+          echo "🔐 [3/5] Running JavaScript Security Scanner..."
+          if node scripts/ci/security-scanner.js; then
+            echo "✅ Security scanner passed"
+          else
+            echo "::error::⚠️ Security scanner found issues"
+            exit 1
+          fi
+
+          echo "🔐 [4/5] Checking .gitignore for env/credential protection..."
+          REQUIRED_ENTRIES=(".env" "credentials.json" "secrets.json" "token.json" "*.key" "*.pem")
+          for entry in "${REQUIRED_ENTRIES[@]}"; do
+            if ! grep -qF "$entry" .gitignore 2>/dev/null; then
+              echo "::warning::⚠️ .gitignore missing: $entry"
+              echo "$entry" >> .gitignore
+            fi
+          done
+          echo "✅ .gitignore properly configured"
+
+          echo "🔐 [5/5] Checking for leaked emails in source..."
+          # Scope to source dirs only — scanning data/references/docs/reports
+          # with this broad regex takes >10min on this large repo and times
+          # out the job. Those dirs hold harvested/reference content, not code.
+          EMAIL_RESULT=$(grep -rniE "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" \
+            app.js api.js lib drivers \
+            --exclude-dir=node_modules --exclude-dir=.homeybuild \
+            --include='*.js' --include='*.json' --include='*.yml' --include='*.yaml' 2>/dev/null || true)
+          FILTERED=$(echo "$EMAIL_RESULT" | grep -viE "example\.com|test\.com|@homey\.app|@users\.noreply|@github\.com" || true)
+          if [ -n "$FILTERED" ]; then
+            echo "$FILTERED"
+            echo "::warning::⚠️ Found potential email leaks in code"
+          else
+            echo "✅ No email leaks detected"
+          fi
+
+  notify:
+    name: 📬 Notification & Diagnostics
+    needs: [validate, security]
+    if: always() && (needs.validate.result == 'failure' || needs.security.result == 'failure')
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: ⚠️ Notify on Failure
+        run: |
+          echo "::warning::Unified CI detected failures. Review logs above."

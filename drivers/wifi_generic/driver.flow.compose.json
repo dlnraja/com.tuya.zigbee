@@ -1,0 +1,91 @@
+{
+  "triggers": [
+    {
+      "id": "wifi_generic_dp_changed",
+      "title": {
+        "en": "A DP value changed"
+      },
+      "tokens": [
+        {
+          "name": "dp",
+          "type": "string",
+          "title": {
+            "en": "DP number"
+          }
+        },
+        {
+          "name": "value",
+          "type": "string",
+          "title": {
+            "en": "Value"
+          }
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "A DP value changed"
+      }
+    }
+  ],
+  "actions": [
+    {
+      "id": "wifi_generic_set_dp",
+      "title": {
+        "en": "Set a DP value"
+      },
+      "args": [
+        {
+          "name": "dp",
+          "type": "text",
+          "title": {
+            "en": "DP number"
+          }
+        },
+        {
+          "name": "value",
+          "type": "text",
+          "title": {
+            "en": "Value"
+          }
+        },
+        {
+          "name": "type",
+          "type": "dropdown",
+          "title": {
+            "en": "Type"
+          },
+          "values": [
+            {
+              "id": "bool",
+              "title": {
+                "en": "Boolean"
+              }
+            },
+            {
+              "id": "number",
+              "title": {
+                "en": "Number"
+              }
+            },
+            {
+              "id": "string",
+              "title": {
+                "en": "String"
+              }
+            },
+            {
+              "id": "json",
+              "title": {
+                "en": "JSON"
+              }
+            }
+          ]
+        }
+      ],
+      "titleFormatted": {
+        "en": "Set a DP value [[dp]] [[value]] [[type]]"
+      }
+    }
+  ],
+  "conditions": []
+}

@@ -1,0 +1,46 @@
+'use strict';
+const TuyaLocalDevice = require('../../lib/tuya-local/TuyaLocalDevice');
+
+class WiFiCoverDevice extends TuyaLocalDevice {
+
+  // v9.0.74: This device is mains-powered. Declare it so UnifiedBatteryHandler
+  // does not add a false measure_battery capability (fixes false-battery reports).
+  get mainsPowered() { return true; }
+
+  get dpMappings() {
+    return {
+      '1': { capability: 'windowcoverings_state', writable: true,
+        transform: async (v) => { if (v === 'open' || v === '0' || v === 0) {return 'up';}
+          if (v === 'close' || v === '2' || v === 2) {return 'down';}
+          return 'idle';
+        },
+        reverseTransform: (v) => {
+          if (v === 'up') {return 'open';}
+          if (v === 'down') {return 'close';}
+          return 'stop';
+        } },
+      '2': { capability: 'windowcoverings_set', writable: true,
+        transform: (v) => v / 100,
+        reverseTransform: (v) => Math.round(v * 100) },
+      '3': { capability: 'windowcoverings_set',
+        transform: (v) => v / 100 },
+      '5': { capability: null },
+      '7': { capability: null },
+      '12': { capability: null },
+    };
+  }
+
+  async onInit() {
+    await super.onInit();
+    this.log('[WIFI-COVER] Ready'); }
+
+
+  async onDeleted() {
+    if (this._destroyed) return;
+    this._destroyed = true;
+    this.log('Device deleted, cleaning up');
+    await super.onDeleted();
+  }
+}
+
+module.exports = WiFiCoverDevice;

@@ -1,0 +1,18 @@
+{
+  "id": "auto_off_timer_triggered",
+  "title": {
+    "en": "Auto-Off Timer triggered",
+    "fr": "Minuterie Auto-Off dÃ©clenchÃ©e"
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "capabilities=onoff"
+    }
+  ],
+  "titleFormatted": {
+    "en": "Auto-Off Timer triggered [[device]]",
+    "fr": "Minuterie Auto-Off dÃ©clenchÃ©e [[device]]"
+  }
+}

@@ -1,0 +1,279 @@
+{
+  "name": {
+    "en": "Generic DIY Zigbee Device",
+    "fr": "Appareil Zigbee DIY Générique",
+    "nl": "Generiek DIY Zigbee Apparaat",
+    "de": "Generisches DIY Zigbee Gerät"
+  },
+  "class": "other",
+  "images": {
+    "small": "/drivers/generic_diy/assets/images/small.png",
+    "large": "/drivers/generic_diy/assets/images/large.png",
+    "xlarge": "/drivers/generic_diy/assets/images/xlarge.png"
+  },
+  "capabilities": [
+    "button.1"
+  ],
+  "energy": {
+    "approximation": {
+      "usageConstant": 1
+    }
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "dln",
+      "dln-diy",
+      "dlnraja",
+      "efekta",
+      "legrand",
+      "lumi router",
+      "slzb",
+      "sonoffzigbee",
+      "schneider electric",
+      "schneider",
+      "se",
+      "wiser",
+      "danfoss",
+      "bosch",
+      "rbsh",
+      "niko",
+      "niko nv",
+      "d5x84yu",
+      "netatmo",
+      "ti router",
+      "ti.router",
+      "zig-a-zig-ah",
+      "zigfred",
+      "_tz3290_ot6ewjvmejq5ekhl",
+      "_tz3002_eda6eitk",
+      "_tz3002_vsom92pp",
+      "_tz3008_reatplte",
+      "_tz3210_2putqrmw",
+      "_tz3210_6smingw0",
+      "_tz3210_imaccztn",
+      "_tz3210_vbfp8eyv",
+      "_tz3210_zifx0xoj",
+      "_tz3290_7v1k4vufotpowp9z",
+      "_tze200_0hb4rdnp",
+      "_tze200_gne0e6mk",
+      "_tze200_hbnfokum",
+      "_tze200_w0ap83qu",
+      "_tze284_4vbj3fxh",
+      "_tze284_bw4ayyeh",
+      "_tze284_kow4ok3t",
+      "_tze284_mvtclclq",
+      "_tze284_nbv4tdaz",
+      "_tze284_tgrzpqf4",
+      "_tze200_2atgpdho",
+      "_tze200_2imwyigp",
+      "_tze200_7bztmfm1",
+      "_tze200_8whxpsiw",
+      "_tze200_9p5xmj5r",
+      "_tze200_9sfg7gm0",
+      "_tze200_a4bpgplm",
+      "_TZE204_2imwyigp",
+      "_TZE204_7bztmfm1",
+      "_TZE284_2se8efxh",
+      "_TZE284_9cqcpkgb",
+      "_TZE204_mvtclclq",
+      "_TZ3000_imaccztn",
+      "_TZ3000_mw1pqqqt",
+      "_TZ3000_9ni6xxld",
+      "_tz3210_emqmwtym",
+      "_tze200_spyvfeti",
+      "DLN",
+      "DLN-DIY",
+      "DLNRAJA",
+      "EFEKTA",
+      "LEGRAND",
+      "LUMI ROUTER",
+      "SLZB",
+      "SONOFFZIGBEE",
+      "SCHNEIDER ELECTRIC",
+      "SCHNEIDER",
+      "WISER",
+      "DANFOSS",
+      "BOSCH",
+      "RBSH",
+      "NIKO",
+      "NIKO NV",
+      "D5X84YU",
+      "NETATMO",
+      "TI ROUTER",
+      "TI.ROUTER",
+      "ZIG-A-ZIG-AH",
+      "ZIGFRED"
+    ],
+    "productId": [
+      "BUTTON",
+      "CC2530",
+      "CC2531",
+      "CC2652",
+      "CUSTOM",
+      "DIY",
+      "EFEKTA",
+      "ESP32",
+      "MAKER",
+      "PTVO",
+      "RELAY",
+      "ROUTER",
+      "SENSOR",
+      "SWITCH",
+      "SNZB-01",
+      "SNZB-02",
+      "SNZB-03",
+      "SNZB-04",
+      "SNZB-01P",
+      "SNZB-02P",
+      "SNZB-03P",
+      "SNZB-04P",
+      "SNZB-06P",
+      "S26R2ZB",
+      "S31ZB",
+      "S40ZBTPB",
+      "ZBMINI",
+      "ZBMINIL2",
+      "BASICZBR3",
+      "eTRV0100",
+      "eTRV0101",
+      "eTRV0103",
+      "eT093WRO",
+      "eT093WRG",
+      "TRV001",
+      "TRV003",
+      "0x8040",
+      "BSP-FZ2",
+      "BSP-EZ2",
+      "Battery switch, 1 button",
+      "Battery switch, 2 buttons",
+      "ZIGSTAR",
+      "TS0041A",
+      "TS0026",
+      "TS0052",
+      "TS0224",
+      "TS0105",
+      "TS0901",
+      "SNZB-09P"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0
+        ]
+      }
+    },
+    "learnmode": {
+      "instruction": {
+        "en": "Universal Zigbee Device (DIY + Standard ZCL)\n\n1. Put your device in pairing mode\n2. For Sonoff: Hold button 5+ seconds\n3. For ESP32/PTVO: Press boot button\n4. For Danfoss/Legrand/Schneider: Follow manufacturer pairing\n\nCapabilities auto-discovered from ZCL clusters.\n\nSupported: Sonoff, eWeLink, Danfoss, Legrand, Schneider, Bosch, Niko, ESP32, PTVO, CC2652, routers.",
+        "fr": "Appareil Zigbee DIY générique (ESP32, PTVO, CC253x, etc.)\n\n1. Mettez votre appareil DIY en mode appairage\n2. Pour ESP32: Appuyez sur boot ou déclenchez l'appairage\n3. Pour PTVO: Maintenez le bouton 5+ secondes\n4. Pour CC253x: Redémarrez ou réinitialisez\n\nLes capacités seront auto-découvertes depuis les clusters ZCL.\n\nSupporté: ESP32-C6, ESP32-H2, PTVO, CC2530/31, CC2652, routeurs Zigbee."
+      }
+    }
+  },
+  "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "🔧 Device Information",
+        "fr": "🔧 Informations Appareil"
+      },
+      "children": [
+        {
+          "id": "diy_manufacturer_name",
+          "type": "label",
+          "label": {
+            "en": "Manufacturer",
+            "fr": "Fabricant"
+          },
+          "value": "DIY"
+        },
+        {
+          "id": "diy_model_id",
+          "type": "label",
+          "label": {
+            "en": "Model ID",
+            "fr": "ID Modèle"
+          },
+          "value": "Unknown"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "📡 Discovered Clusters",
+        "fr": "📡 Clusters Découverts"
+      },
+      "children": [
+        {
+          "id": "discovered_clusters",
+          "type": "label",
+          "label": {
+            "en": "ZCL Clusters",
+            "fr": "Clusters ZCL"
+          },
+          "value": "Scanning..."
+        },
+        {
+          "id": "discovered_capabilities",
+          "type": "label",
+          "label": {
+            "en": "Capabilities Added",
+            "fr": "Capacités Ajoutées"
+          },
+          "value": "None yet"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "⚙️ Advanced",
+        "fr": "⚙️ Avancé"
+      },
+      "children": [
+        {
+          "id": "force_rescan",
+          "type": "checkbox",
+          "label": {
+            "en": "Force Cluster Rescan",
+            "fr": "Forcer Rescan Clusters"
+          },
+          "value": false,
+          "hint": {
+            "en": "Enable to rescan clusters on next init",
+            "fr": "Activer pour rescanner les clusters au prochain démarrage"
+          }
+        }
+      ]
+    }
+  ],
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "fr": "Vérifier MàJ OTA",
+        "nl": "Controleer op OTA-updates"
+      }
+    }
+  ],
+  "id": "generic_diy",
+  "version": "1.0.0",
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  }
+}

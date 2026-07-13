@@ -1,0 +1,106 @@
+{
+  "name": {
+    "en": "Smart Humidifier",
+    "fr": "Humidificateur Connecté",
+    "nl": "Slimme Luchtbevochtiger",
+    "de": "Intelligenter Luftbefeuchter",
+    "it": "Umidificatore Smart",
+    "sv": "Smart Luftfuktare",
+    "no": "Smart Luftfukter",
+    "es": "Humidificador Inteligente",
+    "da": "Smart Luftfugter"
+  },
+  "class": "fan",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "measure_humidity",
+    "dim.humidity",
+    "button.1"
+  ],
+  "capabilitiesOptions": {
+    "dim": {
+      "title": {
+        "en": "Mist Level",
+        "fr": "Niveau Brume"
+      },
+      "min": 0,
+      "max": 1,
+      "step": 0.33
+    },
+    "dim.humidity": {
+      "title": {
+        "en": "Target Humidity",
+        "fr": "Humidité Cible"
+      },
+      "min": 30,
+      "max": 80,
+      "step": 5
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_tze200_k7qgyrrb",
+      "_tze200_nt5dgejc",
+      "_tze204_k7qgyrrb",
+      "_tze204_nt5dgejc",
+      "_TZE284_ikul00sx"
+    ],
+    "productId": [
+      "TS0601_humid",
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          61184
+        ]
+      }
+    },
+    "learnmode": {
+      "instruction": {
+        "en": "Press and hold the power button for 5 seconds until WiFi indicator blinks",
+        "fr": "Maintenez le bouton power pendant 5 secondes"
+      }
+    }
+  },
+  "images": {
+    "small": "/drivers/humidifier/assets/images/small.png",
+    "large": "/drivers/humidifier/assets/images/large.png",
+    "xlarge": "/drivers/humidifier/assets/images/xlarge.png"
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "energy": {
+    "approximation": {
+      "usageOn": 30,
+      "usageOff": 1
+    }
+  },
+  "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "fr": "Vérifier MàJ OTA",
+        "nl": "Controleer op OTA-updates"
+      }
+    }
+  ],
+  "id": "humidifier",
+  "version": "1.0.0"
+}

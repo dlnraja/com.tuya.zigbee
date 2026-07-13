@@ -1,0 +1,229 @@
+{
+  "triggers": [
+    {
+      "id": "sr_zs_switch_switch_state_changed",
+      "title": {
+        "en": "Switch state changed",
+        "pl": "Stan przełącznika zmienił się"
+      },
+      "args": [
+        {
+          "name": "switch",
+          "type": "dropdown",
+          "values": [
+            {
+              "id": "1",
+              "title": {
+                "en": "Switch 1",
+                "pl": "Przełącznik 1"
+              }
+            },
+            {
+              "id": "2",
+              "title": {
+                "en": "Switch 2",
+                "pl": "Przełącznik 2"
+              }
+            },
+            {
+              "id": "3",
+              "title": {
+                "en": "Switch 3",
+                "pl": "Przełącznik 3"
+              }
+            }
+          ]
+        },
+        {
+          "name": "state",
+          "type": "dropdown",
+          "values": [
+            {
+              "id": "true",
+              "title": {
+                "en": "Turned on",
+                "pl": "Włączony"
+              }
+            },
+            {
+              "id": "false",
+              "title": {
+                "en": "Turned off",
+                "pl": "Wyłączony"
+              }
+            }
+          ]
+        }
+      ],
+      "titleFormatted": {
+        "en": "Switch state changed [[switch]] [[state]]",
+        "pl": "Stan przełącznika zmienił się [[switch]] [[state]]"
+      }
+    },
+    {
+      "id": "sr_zs_switch_scene_triggered_configurable",
+      "title": {
+        "en": "Scene triggered",
+        "pl": "Uruchomiono scenę"
+      },
+      "args": [
+        {
+          "name": "scene",
+          "type": "dropdown",
+          "values": [
+            {
+              "id": "1",
+              "title": {
+                "en": "Scene 1",
+                "pl": "Scena 1"
+              }
+            },
+            {
+              "id": "2",
+              "title": {
+                "en": "Scene 2",
+                "pl": "Scena 2"
+              }
+            },
+            {
+              "id": "3",
+              "title": {
+                "en": "Scene 3",
+                "pl": "Scena 3"
+              }
+            },
+            {
+              "id": "4",
+              "title": {
+                "en": "Scene 4",
+                "pl": "Scena 4"
+              }
+            },
+            {
+              "id": "5",
+              "title": {
+                "en": "Scene 5",
+                "pl": "Scena 5"
+              }
+            },
+            {
+              "id": "6",
+              "title": {
+                "en": "Scene 6",
+                "pl": "Scena 6"
+              }
+            }
+          ]
+        }
+      ],
+      "titleFormatted": {
+        "en": "Scene triggered [[scene]]",
+        "pl": "Uruchomiono scenę [[scene]]"
+      }
+    }
+  ],
+  "actions": [
+    {
+      "id": "sr_zs_switch_set_switch_state",
+      "title": {
+        "en": "Set switch state",
+        "pl": "Ustaw stan przełącznika"
+      },
+      "args": [
+        {
+          "name": "switch",
+          "type": "dropdown",
+          "values": [
+            {
+              "id": "1",
+              "title": {
+                "en": "Switch 1",
+                "pl": "Przełącznik 1"
+              }
+            },
+            {
+              "id": "2",
+              "title": {
+                "en": "Switch 2",
+                "pl": "Przełącznik 2"
+              }
+            },
+            {
+              "id": "3",
+              "title": {
+                "en": "Switch 3",
+                "pl": "Przełącznik 3"
+              }
+            }
+          ]
+        },
+        {
+          "name": "state",
+          "type": "dropdown",
+          "values": [
+            {
+              "id": "true",
+              "title": {
+                "en": "Turned on",
+                "pl": "Włączony"
+              }
+            },
+            {
+              "id": "false",
+              "title": {
+                "en": "Turned off",
+                "pl": "Wyłączony"
+              }
+            }
+          ]
+        }
+      ],
+      "titleFormatted": {
+        "en": "Set switch state [[switch]] [[state]]",
+        "pl": "Ustaw stan przełącznika [[switch]] [[state]]"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "id": "sr_zs_switch_switch_is",
+      "title": {
+        "en": "Switch # is !{{on|off}}",
+        "pl": "Przełącznik # jest !{{włączony|wyłączony}}"
+      },
+      "args": [
+        {
+          "name": "switch",
+          "type": "dropdown",
+          "values": [
+            {
+              "id": "1",
+              "title": {
+                "en": "Switch 1",
+                "pl": "Przełącznik 1"
+              }
+            },
+            {
+              "id": "2",
+              "title": {
+                "en": "Switch 2",
+                "pl": "Przełącznik 2"
+              }
+            },
+            {
+              "id": "3",
+              "title": {
+                "en": "Switch 3",
+                "pl": "Przełącznik 3"
+              }
+            }
+          ]
+        }
+      ],
+      "titleFormatted": {
+        "en": "Switch # is !{{on|off}} [[switch]]",
+        "pl": "Przełącznik # jest !{{włączony|wyłączony}} [[switch]]"
+      }
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "triggers": [
+    {
+      "id": "wifi_power_strip_socket1_on",
+      "title": {
+        "en": "Socket 1 turned on"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Socket 1 turned on"
+      }
+    },
+    {
+      "id": "wifi_power_strip_socket1_off",
+      "title": {
+        "en": "Socket 1 turned off"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Socket 1 turned off"
+      }
+    }
+  ],
+  "actions": [
+    {
+      "id": "wifi_power_strip_set_socket",
+      "title": {
+        "en": "Set socket on/off"
+      },
+      "args": [
+        {
+          "name": "socket",
+          "type": "dropdown",
+          "values": [
+            {
+              "id": "1",
+              "title": {
+                "en": "Socket 1"
+              }
+            },
+            {
+              "id": "2",
+              "title": {
+                "en": "Socket 2"
+              }
+            },
+            {
+              "id": "3",
+              "title": {
+                "en": "Socket 3"
+              }
+            },
+            {
+              "id": "4",
+              "title": {
+                "en": "Socket 4"
+              }
+            },
+            {
+              "id": "5",
+              "title": {
+                "en": "Socket 5"
+              }
+            },
+            {
+              "id": "6",
+              "title": {
+                "en": "Socket 6"
+              }
+            },
+            {
+              "id": "usb",
+              "title": {
+                "en": "USB"
+              }
+            }
+          ]
+        },
+        {
+          "name": "state",
+          "type": "dropdown",
+          "values": [
+            {
+              "id": "on",
+              "title": {
+                "en": "On"
+              }
+            },
+            {
+              "id": "off",
+              "title": {
+                "en": "Off"
+              }
+            }
+          ]
+        }
+      ],
+      "titleFormatted": {
+        "en": "Set socket on/off [[socket]] [[state]]"
+      }
+    }
+  ],
+  "conditions": []
+}

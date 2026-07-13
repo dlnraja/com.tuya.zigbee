@@ -1,0 +1,234 @@
+name: "🚀 Publish Stable to Test"
+
+# <!-- badges:start -->
+# [![🚀 Publish Stable to Test](https://github.com/dlnraja/com.tuya.zigbee/actions/workflows/publish-stable.yml/badge.svg)](https://github.com/dlnraja/com.tuya.zigbee/actions/workflows/publish-stable.yml)
+# <!-- badges:end -->
+
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+on:
+  push:
+    branches:
+      - stable-v5
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+defaults:
+  run:
+    shell: bash
+
+env:
+  NODE_VERSION: "22"
+
+jobs:
+  upstream-guard:
+    name: "🛡️ Upstream Guard"
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Verify no upstream writes
+        run: |
+          if grep -rE "(push|create|POST).*JohanBendz" .github/workflows/ 2>/dev/null | grep -v upstream-guard.yml; then
+            echo "::error::Workflow has potential upstream write"
+            exit 1
+          fi
+          echo "✓ No upstream writes"
+
+  pre-validation:
+    name: "Pre-Validation"
+    needs: upstream-guard
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+          cache: npm
+      - name: Install Dependencies
+        run: npm ci --prefer-offline --no-audit || npm install
+      - name: Crash regression guard - Homey timer context
+        run: npm run check:timer-context
+      - name: Google Assistant / Alexa voice-safety gate
+        run: npm run check:voice
+      - name: SDK3 Validation
+        run: |
+          SDK=$(node -p "require('./app.json').sdk || require('./app.json').sdkVersion")
+          if [ "$SDK" != "3" ]; then
+            echo "::error::Invalid SDK: $SDK (expected 3)"
+            exit 1
+          fi
+          echo "SDK3 validated"
+      - name: Validate App
+        run: npx homey app validate --level publish
+      - name: Sanitize generated manifest after validation
+        run: node scripts/maintenance/sanitize-manifest.cjs app.json .homeybuild/app.json
+
+  publish:
+    name: "Publish to Draft"
+    needs: pre-validation
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+          cache: npm
+      - name: Install Dependencies
+        run: npm ci --prefer-offline --no-audit || npm install
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+      - name: Build App
+        run: npx homey app build
+      - name: Sanitize Built Manifest
+        run: |
+          node scripts/maintenance/fix-large-images.js
+          node scripts/maintenance/optimize-build-images.cjs
+          node scripts/maintenance/sanitize-manifest.cjs .homeybuild/app.json
+      - name: Prepare Publish Directory
+        run: npm run prepare-publish
+      - name: Publish to Draft
+        id: publish
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+        run: |
+          PUBLISH_DIR="$(node -p "require('path').join(require('os').tmpdir(), 'homey-publish-temp')")"
+          if [ ! -d "$PUBLISH_DIR" ]; then
+            echo "::error::Prepared publish directory is missing: $PUBLISH_DIR"
+            exit 1
+          fi
+          cd "$PUBLISH_DIR"
+          if [ -f package-lock.json ] || [ -f npm-shrinkwrap.json ]; then
+            npm ci --omit=dev --ignore-scripts --no-audit --no-fund
+          else
+            npm install --omit=dev --ignore-scripts --no-audit --no-fund
+          fi
+          run_homey_cli_publish() {
+            if [ -x "$GITHUB_WORKSPACE/node_modules/.bin/homey" ]; then
+              HOMEY_HEADLESS=1 HOMEY_PAT="$HOMEY_PAT" "$GITHUB_WORKSPACE/node_modules/.bin/homey" app publish --path "$PUBLISH_DIR"
+            else
+              HOMEY_HEADLESS=1 HOMEY_PAT="$HOMEY_PAT" npx homey app publish --path "$PUBLISH_DIR"
+            fi
+          }
+          set +e
+          publish_output=$(run_homey_cli_publish 2>&1)
+          publish_status=$?
+          if [ "$publish_status" -ne 0 ] && printf '%s\n' "$publish_output" | grep -Eiq 'Timeout after [0-9]+ms|fetch failed|ETIMEDOUT|ECONNRESET|ECONNABORTED'; then
+            echo "::warning::Homey CLI publish hit a transient API timeout; retrying via direct Athom Apps API with extended timeouts."
+            fallback_output=$(HOMEY_PAT="$HOMEY_PAT" HOMEY_API_TIMEOUT_MS="${HOMEY_API_TIMEOUT_MS:-60000}" HOMEY_BUILD_POLL_TIMEOUT_MS="${HOMEY_BUILD_POLL_TIMEOUT_MS:-240000}" node "$GITHUB_WORKSPACE/scripts/direct-api-publish.js" --path "$PUBLISH_DIR" 2>&1)
+            fallback_status=$?
+            publish_output="$(printf '%s\n%s' "$publish_output" "$fallback_output")"
+            publish_status=$fallback_status
+          fi
+          set -e
+          printf '%s\n' "$publish_output"
+          if [ "$publish_status" -ne 0 ]; then
+            if printf '%s\n' "$publish_output" | grep -Eiq 'already been published|currently in review'; then
+              echo "::warning::Homey reports this version is already published or in review; continuing so test promotion can proceed."
+            else
+              exit "$publish_status"
+            fi
+          fi
+          echo "Draft publish completed"
+
+  promote:
+    name: "Promote to Test"
+    needs: [pre-validation, publish]
+    if: always() && needs.pre-validation.result == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci --prefer-offline --no-audit || npm install
+      - name: Wait for Athom draft processing
+        run: sleep 120
+      - name: Install Puppeteer
+        continue-on-error: true
+        run: npm install puppeteer --no-save
+      - name: Promote via Browser (Puppeteer)
+        id: promote_puppeteer
+        continue-on-error: true
+        timeout-minutes: 5
+        env:
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+        run: node .github/scripts/auto-promote-puppeteer.js
+      - name: Promote via API (PAT)
+        id: promote_api
+        if: steps.promote_puppeteer.outcome != 'success'
+        continue-on-error: true
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+        run: node .github/scripts/auto-publish-draft.js
+      - name: Verify draft promotion result
+        id: verify_test
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+        run: |
+          if [ "${{ steps.promote_puppeteer.outcome }}" != "success" ] && \
+             [ "${{ steps.promote_api.outcome }}" != "success" ]; then
+            echo "::warning::All stable draft-to-test promotion tiers returned non-success; verifying actual Homey channel state before failing."
+          fi
+          node .github/scripts/verify-test-version.js
+      - name: Summary
+        if: always()
+        run: |
+          VER=$(node -p "require('./app.json').version" 2>/dev/null || echo "?")
+          APP_ID=$(node -p "require('./app.json').id" 2>/dev/null || echo "?")
+          echo "## Stable Publish" >> $GITHUB_STEP_SUMMARY
+          echo "v$VER | APP_ID: $APP_ID" >> $GITHUB_STEP_SUMMARY
+      - name: Full diagnostics sweep - sanitized
+        if: always()
+        continue-on-error: true
+        timeout-minutes: 10
+        env:
+          GMAIL_EMAIL: ${{ secrets.GMAIL_EMAIL }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          GMAIL_CLIENT_ID: ${{ secrets.GMAIL_CLIENT_ID }}
+          GMAIL_CLIENT_SECRET: ${{ secrets.GMAIL_CLIENT_SECRET }}
+          GMAIL_REFRESH_TOKEN: ${{ secrets.GMAIL_REFRESH_TOKEN }}
+          GMAIL_DIAG_AI_MAX: "0"
+          GMAIL_DIAG_REQUIRE_ACCESS: "false"
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          HOMEY_PAT_API: ${{ secrets.HOMEY_PAT_API }}
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+          GH_PAT: ${{ secrets.GH_PAT }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DRY_RUN: "true"
+        run: |
+          run_diag() {
+            local seconds="$1"
+            shift
+            local label="$*"
+            echo "::group::${label}"
+            if timeout --kill-after=30s "${seconds}s" "$@"; then
+              echo "[diag] completed: ${label}"
+            else
+              local code=$?
+              echo "::warning title=Diagnostics command timed out or failed::${label} exited with code ${code}"
+            fi
+            echo "::endgroup::"
+          }
+
+          run_diag 180 node .github/scripts/fetch-gmail-diagnostics.js
+          run_diag 90 node scripts/automation/dashboard-monitor.js --latest --json
+          run_diag 120 node .github/scripts/homey-device-diagnostics.js
+          run_diag 120 node .github/scripts/collect-diagnostics.js
+          run_diag 60 node .github/scripts/privacy-redactor.js diagnostics .github/state/diagnostics-report.json .github/state/diagnostics-crossref.yml .github/state/homey-device-report.json .github/state/dashboard-monitor-report.json
+          run_diag 60 node scripts/ci/diagnostic-history-gate.js --json

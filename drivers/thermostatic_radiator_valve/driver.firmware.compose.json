@@ -1,0 +1,21 @@
+{
+  "wakeInstruction": {
+    "en": "Wake up the radiator valve by pressing the menu button.",
+    "fr": "Réveillez le thermostat en appuyant sur le bouton menu.",
+    "nl": "Wake de radiatorthermostaat op door op de menuknop te drukken."
+  },
+  "updates": [
+    {
+      "changelog": {
+        "en": "Initial OTA support for Tuya thermostatic radiator valves.",
+        "fr": "Support OTA initial pour les thermostats de radiateur Tuya.",
+        "nl": "Initiële OTA-ondersteuning voor Tuya radiatorthermostaten."
+      },
+      "device": {
+        "manufacturerName": "_TZE200_sur6q7ko",
+        "productId": ["TS0601"]
+      },
+      "files": []
+    }
+  ]
+}

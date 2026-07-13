@@ -1,0 +1,76 @@
+{
+  "name": {
+    "en": "Smart Valve 1-Way",
+    "fr": "Vanne Connectée 1 Voie",
+    "nl": "Enkelvoudige Klep",
+    "de": "Einzelventil"
+  },
+  "class": "other",
+  "capabilities": [
+    "onoff",
+    "dim.valve",
+    "measure_battery",
+    "button.1"
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "_tze200_vrjkcam9",
+      "_tz3000_ahxwesag"
+    ],
+    "productId": [
+      "TS0601_valve",
+      "TS0601",
+      "TS0001"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          61184
+        ]
+      }
+    }
+  },
+  "images": {
+    "small": "/drivers/valve_single/assets/images/small.png",
+    "large": "/drivers/valve_single/assets/images/large.png",
+    "xlarge": "/drivers/valve_single/assets/images/xlarge.png"
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "energy": {
+    "batteries": [
+      "AA"
+    ]
+  },
+  "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "fr": "Vérifier MàJ OTA",
+        "nl": "Controleer op OTA-updates"
+      }
+    }
+  ],
+  "id": "valve_single",
+  "version": "1.0.0",
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  },
+  "_pidConflictNotes": [
+    "// PID-CONFLICT-NOTE TS0001 shared with 35 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
+  ]
+}

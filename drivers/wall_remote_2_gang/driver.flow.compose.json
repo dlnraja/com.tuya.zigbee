@@ -1,0 +1,62 @@
+{
+  "triggers": [
+    {
+      "id": "wall_remote_2_gang_buttons",
+      "title": {
+        "en": "Button Action"
+      },
+      "args": [
+        {
+          "name": "action",
+          "type": "dropdown",
+          "title": {
+            "en": "Button Action"
+          },
+          "values": [
+            {
+              "id": "left-oneClick",
+              "title": {
+                "en": "left button was pressed 1 time"
+              }
+            },
+            {
+              "id": "left-twoClicks",
+              "title": {
+                "en": "left button was pressed 2 times"
+              }
+            },
+            {
+              "id": "left-longPress",
+              "title": {
+                "en": "left button was held down"
+              }
+            },
+            {
+              "id": "right-oneClick",
+              "title": {
+                "en": "right button was pressed 1 time"
+              }
+            },
+            {
+              "id": "right-twoClicks",
+              "title": {
+                "en": "right button was pressed 2 times"
+              }
+            },
+            {
+              "id": "right-longPress",
+              "title": {
+                "en": "right button was held down"
+              }
+            }
+          ]
+        }
+      ],
+      "titleFormatted": {
+        "en": "Button Action [[action]]"
+      }
+    }
+  ],
+  "conditions": [],
+  "actions": []
+}

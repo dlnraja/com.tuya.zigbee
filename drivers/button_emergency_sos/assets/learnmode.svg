@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- SOS Button Pairing Instructions -->
+  <!-- Button body -->
+  <circle cx="50" cy="45" r="30" fill="#E53935" stroke="#B71C1C" stroke-width="2"/>
+
+  <!-- SOS text -->
+  <text x="50" y="52" text-anchor="middle" font-family="Arial" font-size="14" font-weight="bold" fill="#FFF">SOS</text>
+
+  <!-- Press indicator arrows -->
+  <path d="M50 78 L50 85 M45 82 L50 88 L55 82" stroke="#4CAF50" stroke-width="2" fill="none"/>
+
+  <!-- Instruction -->
+  <text x="50" y="96" text-anchor="middle" font-size="7" fill="#666">Hold 5 seconds</text>
+</svg>

@@ -1,0 +1,36 @@
+{
+  "id": "boiler_switch_energy_turned_off",
+  "title": {
+    "en": "Boiler switch turned off",
+    "fr": "Interrupteur chaudiere eteint"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "capabilities=onoff,measure_power"
+    }
+  ],
+  "tokens": [
+    {
+      "name": "power",
+      "type": "number",
+      "title": {
+        "en": "Power",
+        "fr": "Puissance"
+      }
+    },
+    {
+      "name": "temperature",
+      "type": "number",
+      "title": {
+        "en": "Temperature",
+        "fr": "Temperature"
+      }
+    }
+  ],
+  "titleFormatted": {
+    "en": "Boiler switch turned off [[device]]",
+    "fr": "Interrupteur chaudiere eteint [[device]]"
+  }
+}

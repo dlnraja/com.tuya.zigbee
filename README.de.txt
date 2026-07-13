@@ -1,0 +1,3 @@
+Unified Smart Home Engine ermoeglicht lokale Steuerung fuer viele Tuya Zigbee-, eWeLink-, SmartThings- und kompatible Smart-Home-Geraete auf Homey Pro. Schalter, Sensoren, Steckdosen, Thermostate, Lampen, Abdeckungen, Schlösser und Energiegeraete werden lokal verarbeitet, wenn die jeweilige Hardware dies unterstuetzt.
+
+Die App kombiniert einen grossen Treiberkatalog mit adaptiver Fingerabdruckerkennung, Tuya-DP- und ZCL-Auswertung, Flow-Ausloesern fuer Tasten und Fernbedienungen, Batterieschaetzungen und selbstheilenden Geraetekarten. Dadurch bleiben viele generische oder umbenannte Geraete ohne Cloudkonto fuer unterstuetzte lokale Geraete nutzbar.

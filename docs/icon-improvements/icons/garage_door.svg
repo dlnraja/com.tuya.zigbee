@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="960" height="960" viewBox="0 0 960 960" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Garage door frame -->
+  <rect x="120" y="150" width="720" height="660" rx="20" stroke="black" stroke-width="40" fill="none"/>
+  <!-- Door sections -->
+  <line x1="120" y1="320" x2="840" y2="320" stroke="black" stroke-width="30"/>
+  <line x1="120" y1="490" x2="840" y2="490" stroke="black" stroke-width="30"/>
+  <line x1="120" y1="660" x2="840" y2="660" stroke="black" stroke-width="30"/>
+  <!-- Window in top section -->
+  <rect x="350" y="200" width="260" height="80" rx="20" stroke="black" stroke-width="20" fill="none"/>
+  <!-- Handle -->
+  <rect x="440" y="530" width="80" height="100" rx="15" fill="black"/>
+  <!-- Ground line -->
+  <line x1="80" y1="810" x2="880" y2="810" stroke="black" stroke-width="20" stroke-linecap="round"/>
+</svg>

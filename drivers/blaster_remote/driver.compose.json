@@ -1,0 +1,127 @@
+{
+  "name": {
+    "en": "Blaster Remote",
+    "nl": "Blaster Afstandsbediening",
+    "fr": "Télécommande Blaster",
+    "de": "Blaster Fernbedienung",
+    "es": "Control Remoto Blaster"
+  },
+  "class": "remote",
+  "capabilities": [
+    "button.learn_ir",
+    "ir_learned_code",
+    "ir_send_code",
+    "onoff",
+    "button.1"
+  ],
+  "capabilitiesOptions": {
+    "button.learn_ir": {
+      "title": {
+        "en": "Learn IR Code",
+        "fr": "Apprendre Code IR"
+      },
+      "setable": false,
+      "maintenanceAction": true,
+      "getable": false
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  },
+  "energy": {
+    "batteries": [
+      "CR2450"
+    ],
+    "approximation": {
+      "usageConstant": 0.3
+    },
+    "mains": true
+  },
+  "subDevices": [],
+  "images": {
+    "large": "/drivers/ir_remote/assets/images/large.png",
+    "small": "/drivers/ir_remote/assets/images/small.png"
+  },
+  "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "fr": "Vérifier MÃJ OTA",
+        "nl": "Controleer op OTA-updates"
+      }
+    }
+  ],
+  "flow": {
+    "triggers": [],
+    "conditions": [],
+    "actions": []
+  },
+  "settings": [
+    {
+      "id": "enable_radio_sensing",
+      "type": "checkbox",
+      "label": {
+        "en": "Enable Radio Presence Sensing",
+        "fr": "Activer la Détection de Présence Radio"
+      },
+      "value": false,
+      "hint": {
+        "en": "Infer presence from Zigbee signal fluctuations (BETA)",
+        "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
+      }
+    },
+    {
+      "id": "radio_sensitivity",
+      "type": "number",
+      "label": {
+        "en": "Radio Presence Sensitivity",
+        "fr": "Sensibilité Présence Radio"
+      },
+      "value": 15,
+      "min": 5,
+      "max": 50,
+      "hint": {
+        "en": "LQI variance threshold (higher = less sensitive)",
+        "fr": "Seuil de variance LQI (plus haut = moins sensible)"
+      }
+    }
+  ],
+  "id": "blaster_remote",
+  "version": "1.0.0",
+  "connectivity": [
+    "zigbee"
+  ],
+  "zigbee": {
+    "productId": [
+      "TS0601",
+      "TS1201"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0
+        ]
+      }
+    },
+    "manufacturerName": [
+      "_hybrid_blaster_remote_needs_device_assignment",
+      "_HYBRID_BLASTER_REMOTE_NEEDS_DEVICE_ASSIGNMENT"
+    ]
+  },
+  "metadata": {
+    "driver": {
+      "catchall": true,
+      "reason": "Fallback for unmatched devices with PIDs: TS0601, TS1201"
+    }
+  },
+  "_pidConflictNotes": [
+    "// PID-CONFLICT-NOTE TS1201 shared with 5 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
+  ]
+}

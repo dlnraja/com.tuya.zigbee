@@ -1,0 +1,111 @@
+{
+  "name": {
+    "en": "Device Air Purifier Motion",
+    "nl": "Luchtzuiveraar met beweging",
+    "fr": "Purificateur d'air àmouvement",
+    "de": "Luftreiniger mit Bewegung",
+    "es": "Purificador de aire con movimiento"
+  },
+  "class": "fan",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "measure_pm25",
+    "measure_battery",
+    "measure_luminance",
+    "alarm_motion",
+    "button.1"
+  ],
+  "capabilitiesOptions": {
+    "dim": {
+      "title": {
+        "en": "Fan Speed",
+        "fr": "Vitesse Ventilateur"
+      }
+    },
+    "measure_pm25": {
+      "title": {
+        "en": "PM2.5",
+        "fr": "PM2.5"
+      },
+      "units": "Âµg/mÂ³"
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  },
+  "images": {
+    "small": "/drivers/air_purifier/assets/images/small.png",
+    "large": "/drivers/air_purifier/assets/images/large.png"
+  },
+  "platforms": [
+    "local"
+  ],
+  "energy": {
+    "approximation": {
+      "usageOn": 50,
+      "usageOff": 1
+    },
+    "batteries": [
+      "AAA",
+      "AAA"
+    ]
+  },
+  "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "fr": "Vérifier MÃJ OTA",
+        "nl": "Controleer op OTA-updates"
+      }
+    }
+  ],
+  "flow": {
+    "triggers": [],
+    "conditions": [],
+    "actions": []
+  },
+  "settings": [],
+  "id": "device_air_purifier_motion",
+  "version": "1.0.0",
+  "connectivity": [
+    "zigbee"
+  ],
+  "zigbee": {
+    "productId": [
+      "TS0601",
+      "TS0225",
+      "Excellux",
+      "TS0001"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0
+        ]
+      }
+    },
+    "manufacturerName": [
+      "_hybrid_device_air_purifier_motion_needs_device_assignment",
+      "_HYBRID_DEVICE_AIR_PURIFIER_MOTION_NEEDS_DEVICE_ASSIGNMENT"
+    ]
+  },
+  "metadata": {
+    "driver": {
+      "catchall": true,
+      "reason": "Fallback for unmatched devices with PIDs: TS0601, TS0225, Excellux, TS0207, TS0001"
+    }
+  },
+  "_pidConflictNotes": [
+    "// PID-CONFLICT-NOTE TS0001 shared with 35 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE Excellux shared with 30 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE TS0225 shared with 19 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
+  ]
+}

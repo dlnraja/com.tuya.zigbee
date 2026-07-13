@@ -1,0 +1,451 @@
+{
+  "motion_sensor": {
+    "description": "Motion/Occupancy sensors (PIR, mmWave, radar)",
+    "dpMap": {
+      "1": {
+        "name": "presence",
+        "type": "BOOL",
+        "capability": "alarm_motion",
+        "readonly": true
+      },
+      "4": {
+        "name": "battery",
+        "type": "VALUE",
+        "capability": "measure_battery",
+        "readonly": true,
+        "scale": 1
+      },
+      "9": {
+        "name": "sensitivity",
+        "type": "ENUM",
+        "capability": "motion_sensitivity",
+        "values": { "0": "low", "1": "medium", "2": "high" }
+      },
+      "10": {
+        "name": "keep_time",
+        "type": "VALUE",
+        "capability": "motion_timeout",
+        "unit": "seconds",
+        "scale": 1
+      },
+      "11": {
+        "name": "illuminance",
+        "type": "VALUE",
+        "capability": "measure_luminance",
+        "readonly": true,
+        "unit": "lux"
+      }
+    }
+  },
+  "temperature_humidity": {
+    "description": "Temperature & Humidity sensors",
+    "dpMap": {
+      "1": {
+        "name": "temperature",
+        "type": "VALUE",
+        "capability": "measure_temperature",
+        "readonly": true,
+        "scale": 0.1,
+        "unit": "°C"
+      },
+      "2": {
+        "name": "humidity",
+        "type": "VALUE",
+        "capability": "measure_humidity",
+        "readonly": true,
+        "scale": 1,
+        "unit": "%"
+      },
+      "4": {
+        "name": "battery",
+        "type": "VALUE",
+        "capability": "measure_battery",
+        "readonly": true,
+        "scale": 1
+      },
+      "9": {
+        "name": "temp_alarm",
+        "type": "BOOL",
+        "capability": "alarm_heat",
+        "readonly": true
+      },
+      "10": {
+        "name": "humidity_alarm",
+        "type": "BOOL",
+        "capability": "alarm_humidity",
+        "readonly": true
+      },
+      "13": {
+        "name": "temp_unit",
+        "type": "ENUM",
+        "values": { "0": "celsius", "1": "fahrenheit" }
+      }
+    }
+  },
+  "smart_plug": {
+    "description": "Smart plugs with energy monitoring",
+    "dpMap": {
+      "1": {
+        "name": "switch",
+        "type": "BOOL",
+        "capability": "onoff",
+        "readonly": false
+      },
+      "18": {
+        "name": "current",
+        "type": "VALUE",
+        "capability": "measure_current",
+        "readonly": true,
+        "scale": 0.001,
+        "unit": "A"
+      },
+      "19": {
+        "name": "power",
+        "type": "VALUE",
+        "capability": "measure_power",
+        "readonly": true,
+        "scale": 0.1,
+        "unit": "W"
+      },
+      "20": {
+        "name": "voltage",
+        "type": "VALUE",
+        "capability": "measure_voltage",
+        "readonly": true,
+        "scale": 0.1,
+        "unit": "V"
+      },
+      "17": {
+        "name": "energy",
+        "type": "VALUE",
+        "capability": "meter_power",
+        "readonly": true,
+        "scale": 0.01,
+        "unit": "kWh"
+      }
+    }
+  },
+  "dimmer": {
+    "description": "Dimmers and brightness control",
+    "dpMap": {
+      "1": {
+        "name": "switch",
+        "type": "BOOL",
+        "capability": "onoff",
+        "readonly": false
+      },
+      "2": {
+        "name": "brightness",
+        "type": "VALUE",
+        "capability": "dim",
+        "readonly": false,
+        "scale": 0.001,
+        "min": 10,
+        "max": 1000
+      },
+      "3": {
+        "name": "min_brightness",
+        "type": "VALUE",
+        "capability": "dim.min",
+        "readonly": false,
+        "scale": 0.001
+      }
+    }
+  },
+  "cover": {
+    "description": "Curtains, blinds, shutters",
+    "dpMap": {
+      "1": {
+        "name": "control",
+        "type": "ENUM",
+        "capability": "windowcoverings_state",
+        "values": { "0": "open", "1": "stop", "2": "close" }
+      },
+      "2": {
+        "name": "position",
+        "type": "VALUE",
+        "capability": "windowcoverings_set",
+        "readonly": false,
+        "scale": 0.01,
+        "min": 0,
+        "max": 100
+      },
+      "3": {
+        "name": "current_position",
+        "type": "VALUE",
+        "capability": "windowcoverings_set",
+        "readonly": true,
+        "scale": 0.01
+      },
+      "5": {
+        "name": "mode",
+        "type": "ENUM",
+        "capability": "cover_mode",
+        "values": { "0": "tilt", "1": "lift" }
+      },
+      "7": {
+        "name": "direction",
+        "type": "ENUM",
+        "values": { "0": "forward", "1": "reverse" }
+      }
+    }
+  },
+  "light_rgb": {
+    "description": "RGB/RGBW/RGBWW smart bulbs",
+    "dpMap": {
+      "1": {
+        "name": "switch",
+        "type": "BOOL",
+        "capability": "onoff",
+        "readonly": false
+      },
+      "2": {
+        "name": "mode",
+        "type": "ENUM",
+        "values": { "0": "white", "1": "color", "2": "scene" }
+      },
+      "3": {
+        "name": "brightness",
+        "type": "VALUE",
+        "capability": "dim",
+        "readonly": false,
+        "scale": 0.001,
+        "min": 10,
+        "max": 1000
+      },
+      "4": {
+        "name": "temp_value",
+        "type": "VALUE",
+        "capability": "light_temperature",
+        "readonly": false,
+        "scale": 1
+      },
+      "5": {
+        "name": "color_hsv",
+        "type": "STRING",
+        "capability": "light_hue",
+        "readonly": false
+      }
+    }
+  },
+  "thermostat": {
+    "description": "Smart thermostats and TRVs",
+    "dpMap": {
+      "1": {
+        "name": "switch",
+        "type": "BOOL",
+        "capability": "onoff",
+        "readonly": false
+      },
+      "2": {
+        "name": "mode",
+        "type": "ENUM",
+        "capability": "thermostat_mode",
+        "values": { "0": "auto", "1": "manual", "2": "holiday" }
+      },
+      "16": {
+        "name": "current_temp",
+        "type": "VALUE",
+        "capability": "measure_temperature",
+        "readonly": true,
+        "scale": 0.1,
+        "unit": "°C"
+      },
+      "24": {
+        "name": "target_temp",
+        "type": "VALUE",
+        "capability": "target_temperature",
+        "readonly": false,
+        "scale": 0.1,
+        "unit": "°C"
+      },
+      "101": {
+        "name": "eco_mode",
+        "type": "BOOL",
+        "readonly": false
+      },
+      "102": {
+        "name": "child_lock",
+        "type": "BOOL",
+        "readonly": false
+      }
+    }
+  },
+  "contact_sensor": {
+    "description": "Door/window contact sensors",
+    "dpMap": {
+      "1": {
+        "name": "contact",
+        "type": "BOOL",
+        "capability": "alarm_contact",
+        "readonly": true
+      },
+      "4": {
+        "name": "battery",
+        "type": "VALUE",
+        "capability": "measure_battery",
+        "readonly": true,
+        "scale": 1
+      },
+      "15": {
+        "name": "tamper",
+        "type": "BOOL",
+        "capability": "alarm_tamper",
+        "readonly": true
+      }
+    }
+  },
+  "water_leak": {
+    "description": "Water leak detectors",
+    "dpMap": {
+      "1": {
+        "name": "water_leak",
+        "type": "BOOL",
+        "capability": "alarm_water",
+        "readonly": true
+      },
+      "4": {
+        "name": "battery",
+        "type": "VALUE",
+        "capability": "measure_battery",
+        "readonly": true,
+        "scale": 1
+      },
+      "15": {
+        "name": "water_leak_alarm",
+        "type": "ENUM",
+        "capability": "alarm_water",
+        "values": { "0": "no_leak", "1": "leak" }
+      }
+    }
+  },
+  "smoke_sensor": {
+    "description": "Smoke detectors",
+    "dpMap": {
+      "1": {
+        "name": "smoke",
+        "type": "BOOL",
+        "capability": "alarm_smoke",
+        "readonly": true
+      },
+      "4": {
+        "name": "battery",
+        "type": "VALUE",
+        "capability": "measure_battery",
+        "readonly": true,
+        "scale": 1
+      },
+      "14": {
+        "name": "smoke_state",
+        "type": "ENUM",
+        "capability": "alarm_smoke",
+        "values": { "0": "normal", "1": "alarm", "2": "fault" }
+      },
+      "15": {
+        "name": "test",
+        "type": "BOOL",
+        "readonly": false
+      }
+    }
+  },
+  "siren": {
+    "description": "Smart sirens and alarms",
+    "dpMap": {
+      "1": {
+        "name": "switch",
+        "type": "BOOL",
+        "capability": "onoff",
+        "readonly": false
+      },
+      "5": {
+        "name": "volume",
+        "type": "ENUM",
+        "capability": "volume_set",
+        "values": { "0": "low", "1": "medium", "2": "high" }
+      },
+      "7": {
+        "name": "alarm_type",
+        "type": "ENUM",
+        "values": { "0": "doorbell", "1": "alarm", "2": "fire" }
+      },
+      "13": {
+        "name": "duration",
+        "type": "VALUE",
+        "unit": "seconds",
+        "scale": 1
+      }
+    }
+  },
+  "scene_switch": {
+    "description": "Scene controllers and buttons",
+    "dpMap": {
+      "1": {
+        "name": "button_1",
+        "type": "ENUM",
+        "capability": "button.1",
+        "values": { "0": "single", "1": "double", "2": "hold" }
+      },
+      "2": {
+        "name": "button_2",
+        "type": "ENUM",
+        "capability": "button.2",
+        "values": { "0": "single", "1": "double", "2": "hold" }
+      },
+      "3": {
+        "name": "button_3",
+        "type": "ENUM",
+        "capability": "button.3",
+        "values": { "0": "single", "1": "double", "2": "hold" }
+      },
+      "4": {
+        "name": "button_4",
+        "type": "ENUM",
+        "capability": "button.4",
+        "values": { "0": "single", "1": "double", "2": "hold" }
+      },
+      "5": {
+        "name": "battery",
+        "type": "VALUE",
+        "capability": "measure_battery",
+        "readonly": true,
+        "scale": 1
+      }
+    }
+  },
+  "soil_moisture": {
+    "description": "Soil moisture sensors",
+    "dpMap": {
+      "1": {
+        "name": "soil_moisture",
+        "type": "VALUE",
+        "capability": "measure_humidity.soil",
+        "readonly": true,
+        "scale": 1,
+        "unit": "%"
+      },
+      "2": {
+        "name": "soil_temperature",
+        "type": "VALUE",
+        "capability": "measure_temperature.soil",
+        "readonly": true,
+        "scale": 0.1,
+        "unit": "°C"
+      },
+      "4": {
+        "name": "battery",
+        "type": "VALUE",
+        "capability": "measure_battery",
+        "readonly": true,
+        "scale": 1
+      },
+      "5": {
+        "name": "soil_ec",
+        "type": "VALUE",
+        "capability": "measure_ec",
+        "readonly": true,
+        "scale": 1,
+        "unit": "µS/cm"
+      }
+    }
+  }
+}

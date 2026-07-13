@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="960" height="960" viewBox="0 0 960 960" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Sensor probe -->
+  <rect x="420" y="100" width="120" height="650" rx="20" stroke="black" stroke-width="35" fill="none"/>
+  <!-- Probe tip (pointed) -->
+  <path d="M420 750 L480 850 L540 750" stroke="black" stroke-width="35" fill="none" stroke-linejoin="round"/>
+  <!-- Sensing area -->
+  <rect x="440" y="500" width="80" height="200" rx="10" fill="black"/>
+  <!-- Connection cable -->
+  <path d="M480 100 L480 50 L350 50 L350 150" stroke="black" stroke-width="25" fill="none" stroke-linecap="round"/>
+  <!-- Moisture droplet -->
+  <path d="M650 400 C650 400 700 340 700 310 C700 285 680 270 660 270 C640 270 620 285 620 310 C620 340 650 400 650 400 Z"
+        stroke="black" stroke-width="25" fill="none" stroke-linejoin="round"/>
+  <!-- Ground level line -->
+  <path d="M200 600 L350 580 L420 600 L540 600 L610 580 L760 600" stroke="black" stroke-width="20" fill="none" stroke-linecap="round"/>
+  <!-- Soil dots -->
+  <circle cx="300" cy="650" r="8" fill="black"/>
+  <circle cx="400" cy="680" r="6" fill="black"/>
+  <circle cx="560" cy="660" r="8" fill="black"/>
+  <circle cx="650" cy="690" r="6" fill="black"/>
+  <circle cx="350" cy="720" r="7" fill="black"/>
+</svg>

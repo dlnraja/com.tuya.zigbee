@@ -1,0 +1,120 @@
+name: Fetch Homey Diagnostics
+
+on:
+  schedule:
+    - cron: '0 */6 * * *' # Run every 6 hours
+  workflow_dispatch:
+    inputs:
+      all_history:
+        description: "Fetch historical diagnostics instead of the rolling window"
+        type: boolean
+        default: false
+        required: false
+      since:
+        description: "Optional start date for IMAP search, for example 2019-01-01"
+        required: false
+      until:
+        description: "Optional exclusive end date for IMAP search, for example 2024-01-01"
+        required: false
+      max_results:
+        description: "Maximum matching emails to fetch per IMAP window"
+        default: "500"
+        required: false
+      max_total_results:
+        description: "Maximum matching emails to keep across all IMAP windows"
+        default: "5000"
+        required: false
+      chunk_days:
+        description: "Split historical IMAP fetch into N-day windows; 0 disables chunking"
+        default: "0"
+        required: false
+      reprocess:
+        description: "Ignore processed state and rebuild the diagnostic chronology"
+        type: boolean
+        default: false
+        required: false
+      require_access:
+        description: "Fail the workflow when Gmail IMAP and OAuth diagnostics access are both unavailable"
+        type: boolean
+        default: false
+        required: false
+
+permissions:
+  contents: write
+
+jobs:
+  fetch-diags:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit || npm install
+
+      - name: Fetch Diagnostics from Gmail
+        id: gmail_fetch
+        env:
+          GMAIL_EMAIL: ${{ secrets.GMAIL_EMAIL }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          GMAIL_CLIENT_ID: ${{ secrets.GMAIL_CLIENT_ID }}
+          GMAIL_CLIENT_SECRET: ${{ secrets.GMAIL_CLIENT_SECRET }}
+          GMAIL_REFRESH_TOKEN: ${{ secrets.GMAIL_REFRESH_TOKEN }}
+          GMAIL_DIAG_ALL_HISTORY: ${{ github.event.inputs.all_history || 'false' }}
+          GMAIL_DIAG_SINCE: ${{ github.event.inputs.since || '' }}
+          GMAIL_DIAG_UNTIL: ${{ github.event.inputs.until || '' }}
+          GMAIL_DIAG_MAX_RESULTS: ${{ github.event.inputs.max_results || '100' }}
+          GMAIL_DIAG_MAX_TOTAL_RESULTS: ${{ github.event.inputs.max_total_results || github.event.inputs.max_results || '100' }}
+          GMAIL_DIAG_CHUNK_DAYS: ${{ github.event.inputs.chunk_days || '0' }}
+          GMAIL_DIAG_STATE_LIMIT: ${{ github.event.inputs.max_total_results || '5000' }}
+          GMAIL_DIAG_REPROCESS: ${{ github.event.inputs.reprocess || 'false' }}
+          GMAIL_DIAG_REQUIRE_ACCESS: ${{ github.event.inputs.require_access || 'false' }}
+          GMAIL_DIAG_AI_MAX: "0"
+          DRY_RUN: "true"
+        run: |
+          set +e
+          node .github/scripts/fetch-gmail-diagnostics.js
+          code=$?
+          echo "exit_code=$code" >> "$GITHUB_OUTPUT"
+          if [ "$code" -ne 0 ]; then
+            echo "::warning::Gmail diagnostics fetch failed with exit code $code; privacy gates and sanitized state commit will still run."
+          fi
+          exit 0
+
+      - name: Privacy and diagnostic gates
+        if: always()
+        run: |
+          node .github/scripts/privacy-redactor.js .github/state/diagnostics-state.json .github/state/diagnostics-report.json .github/state/gmail-token-health.json .github/state/diagnostics-crossref.yml diagnostics
+          npm run check:diag-history
+
+      - name: Commit and Push changes
+        if: always()
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          node .github/scripts/privacy-redactor.js .github/state/diagnostics-state.json .github/state/diagnostics-report.json .github/state/gmail-token-health.json .github/state/diagnostics-crossref.yml diagnostics
+          git add .github/state/diagnostics-state.json .github/state/diagnostics-report.json .github/state/gmail-token-health.json .github/state/diagnostics-crossref.yml 2>/dev/null || true
+          if ! git diff --staged --quiet; then
+            git commit -m "chore: update diagnostics report from Gmail [skip ci]"
+            bash scripts/ci/verified-git-push.sh master
+          else
+            echo "No sanitized diagnostic state changes to push"
+          fi
+
+      - name: Assert Gmail diagnostics access
+        if: always() && steps.gmail_fetch.outputs.exit_code != '0' && github.event.inputs.require_access == 'true'
+        run: |
+          echo "::error::Gmail diagnostics could not authenticate via IMAP or OAuth fallback. Refresh GMAIL_EMAIL/GMAIL_APP_PASSWORD and GMAIL_REFRESH_TOKEN secrets, then rerun Fetch Homey Diagnostics."
+          exit 1

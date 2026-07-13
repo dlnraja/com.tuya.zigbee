@@ -1,0 +1,518 @@
+{
+  "name": {
+    "en": "Radiator Valve",
+    "fr": "Radiator Valve",
+    "nl": "Radiatorklep",
+    "de": "Heizkörperventil"
+  },
+  "class": "thermostat",
+  "capabilities": [
+    "target_temperature",
+    "measure_temperature",
+    "thermostat_mode",
+    "measure_battery",
+    "child_lock",
+    "frost_protection",
+    "button.1"
+  ],
+  "energy": {
+    "batteries": [
+      "AA"
+    ],
+    "approximation": {
+      "usageConstant": 0.5
+    }
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_TYST11_AZQP6SSJ",
+      "_TYST11_CAJ4JZ0I",
+      "_TYST11_QTBRWRFV",
+      "_TYST11_ZUHSZJ9S",
+      "_TZ3000_8YKQFSYQ",
+      "_tz3000_abci1hiu",
+      "_TZ3000_C3G3PUPU",
+      "_TZ3000_CKQ7U3R4",
+      "_TZ3000_CXKJLBXX",
+      "_TZ3000_DFFVFLUI",
+      "_TZ3000_E3VHYRDZ",
+      "_TZ3000_EGFDWM0F",
+      "_TZ3000_EXNI6SWI",
+      "_TZ3000_F1BAPCIT",
+      "_TZ3000_FEMSRFTQ",
+      "_TZ3000_GP7P1XSN",
+      "_TZ3000_H1JNZ6L9",
+      "_TZ3000_HDC8BBHC",
+      "_TZ3000_HGPNZGAC",
+      "_TZ3000_HMITSLT3",
+      "_TZ3000_I1RW7P4P",
+      "_TZ3000_IDRFFZNF",
+      "_TZ3000_IV2HVNCP",
+      "_TZ3000_J34BMIDP",
+      "_TZ3000_JABBWUIE",
+      "_TZ3000_JBJZ13KN",
+      "_TZ3000_JEANJPMJ",
+      "_TZ3000_JIMBWDXD",
+      "_TZ3000_JKBRNVHR",
+      "_TZ3000_JNIHVWO1",
+      "_TZ3000_JVVHVQJK",
+      "_TZ3000_KAS5QBPQ",
+      "_TZ3000_KGVNSPDL",
+      "_TZ3000_KKSCH6EP",
+      "_TZ3000_KLCH39XT",
+      "_TZ3000_KMUXJUKF",
+      "_TZ3000_KUD7U2L1",
+      "_TZ3000_L6PWXUXM",
+      "_TZ3000_LD6G3AGD",
+      "_TZE200_0HG58EPR",
+      "_TZE200_1AGWNAFQ",
+      "_TZE200_44AF8IPG",
+      "_TZE200_4HBX5CVX",
+      "_TZE200_502ZX5SL",
+      "_TZE200_56BDWT92",
+      "_TZE200_5BDNQWNX",
+      "_TZE200_5TGZPCCV",
+      "_TZE200_6MAFO2GV",
+      "_TZE200_7RGHPOXO",
+      "_TZE200_8K8K3T3J",
+      "_TZE200_8XTK0CJS",
+      "_TZE200_9KQXLPBY",
+      "_TZE200_A4CJPZDI",
+      "_TZE200_AHL6L9K5",
+      "_TZE200_ANV5UJHV",
+      "_TZE200_AWNADKAN",
+      "_TZE200_AXBPZ5WM",
+      "_TZE200_AZQP6SSJ",
+      "_TZE200_B8X72KMY",
+      "_TZE200_CXAKECFO",
+      "_TZE200_D5P1KR8Z",
+      "_TZE200_D8FP6IVB",
+      "_TZE200_DCYDAPR2",
+      "_TZE200_DFRY6YLV",
+      "_TZE200_DMFGUULI",
+      "_TZE200_E5HPKC6D",
+      "_TZE200_FSOW0QSK",
+      "_TZE200_husqqvux",
+      "_TZE200_K1TUMQ4T",
+      "_TZE200_kds0pmmv",
+      "_TZE200_lllliz3p",
+      "_TZE200_lnbfnyxd",
+      "_TZE200_LRZNF59V",
+      "_TZE200_mudxchsu",
+      "_TZE200_OAHQGDIG",
+      "_TZE200_RXYPYJKW",
+      "_TZE200_sur6q7ko",
+      "_TZE200_TRV602",
+      "_TZE200_ZAABEFNT",
+      "_TZE200_ZUHSZJ9S",
+      "_TZE204_0DXRPQXL",
+      "_TZE204_7RGHPOXO",
+      "_TZE204_CA3I8M8P",
+      "_TZE204_CG8HDNJV",
+      "_TZE204_CMYC8G5I",
+      "_TZE204_DJURK6P5",
+      "_TZE204_E5HPKC6D",
+      "_TZE204_GLK6VIWG",
+      "_TZE204_GOECJD1T",
+      "_TZE204_K6RDMISZ",
+      "_TZE204_LNBFNYXD",
+      "_TZE204_LNXDK2CH",
+      "_TZE204_MUDXCHSU",
+      "_TZE204_R7BRSCR6",
+      "_TZE204_WGRFFNIY",
+      "_TZE204_WOWW89IP",
+      "_TZE204_XDTNPP1A",
+      "_TZE204_YWDXLDOJ",
+      "_TZE284_CGR0RHZA",
+      "_TZE284_CGROR0RHZA",
+      "_TZE284_HCS66AXL",
+      "_TZE284_K6RDMISZ",
+      "_tze204_zuhszj9s",
+      "_TZE200_qtbrwrfv",
+      "_TZE200_7YORZG8V",
+      "_TZE204_7YORZG8V",
+      "_TZE200_9XFHAYFY",
+      "_TZE204_9XFHAYFY",
+      "_TZE200_2EKUZS5A",
+      "_TZE204_2EKUZS5A",
+      "_TZE200_DZU5WN3M",
+      "_TZE204_DZU5WN3M",
+      "_TZE200_5TOC7EVC",
+      "_TZE204_5TOC7EVC",
+      "_TZE200_PS5V5JLC",
+      "_TZE204_PS5V5JLC",
+      "_TZE200_BVU2WNXQ",
+      "_TZE204_BVU2WNXQ",
+      "_TZE200_7GNA7M4G",
+      "_TZE204_7GNA7M4G",
+      "_TZE200_CIRVGEVT",
+      "_TZE204_CIRVGEVT",
+      "_TZE204_ZVLDKUAV",
+      "_TZE200_ZVLDKUAV",
+      "_TZE200_ODYKEZPG",
+      "_TZE204_ODYKEZPG",
+      "_TZE204_E3OITDYU",
+      "_TZE204_HHRTIQ0X",
+      "_TZE204_E9BA97VF",
+      "_TZE204_3YP57TBY",
+      "_TYST11_KGBXAXL2",
+      "_TZE204_ZION52EF",
+      "_TZE204_A4BPGPLM",
+      "_TZE204_Z1TYSPQW",
+      "_TZE200_57MBUHN0",
+      "_TZE204_57MBUHN0",
+      "_TZE200_p3dbf6qs",
+      "_tze284_ne4pikwm",
+      "_TZE284_ne4pikwm",
+      "_TZE284_NE4PIKWM",
+      "_tze200_ne4pikwm",
+      "_TZE200_ne4pikwm",
+      "_TZE200_NE4PIKWM"
+    ],
+    "productId": [
+      "TV01-ZB",
+      "TV02-ZB",
+      "TRV601",
+      "TRV602",
+      "SEA801-Zigbee",
+      "eTRV0100",
+      "SPZB0001",
+      "SPZB0003",
+      "lumi.airrtc.agl001",
+      "lumi.airrtc.vrfegl01",
+      "014G2461",
+      "014G2463",
+      "STZB402",
+      "STZB403",
+      "Zen-01",
+      "TS0601",
+      "TRVZB"
+    ],
+    "learnmode": {
+      "image": "/drivers/radiator_valve/assets/learnmode.svg",
+      "instruction": {
+        "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
+        "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
+      }
+    },
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6
+        ]
+      }
+    }
+  },
+  "settings": [
+    {
+      "id": "power_source",
+      "type": "dropdown",
+      "label": {
+        "en": "Power Source",
+        "fr": "Source d'Alimentation"
+      },
+      "value": "auto",
+      "values": [
+        {
+          "id": "auto",
+          "label": {
+            "en": "Auto Detect",
+            "fr": "Détection Automatique"
+          }
+        },
+        {
+          "id": "ac",
+          "label": {
+            "en": "AC Powered",
+            "fr": "Alimentation Secteur"
+          }
+        },
+        {
+          "id": "dc",
+          "label": {
+            "en": "DC Powered",
+            "fr": "Alimentation DC"
+          }
+        },
+        {
+          "id": "battery",
+          "label": {
+            "en": "Battery Powered",
+            "fr": "Sur Batterie"
+          }
+        }
+      ],
+      "hint": {
+        "en": "Select power source manually or use auto-detection",
+        "fr": "Sélectionnez la source d'alimentation manuellement ou utilisez la détection automatique"
+      }
+    },
+    {
+      "id": "battery_type",
+      "type": "dropdown",
+      "label": {
+        "en": "Battery Type",
+        "fr": "Type de Batterie"
+      },
+      "value": "auto",
+      "values": [
+        {
+          "id": "auto",
+          "label": {
+            "en": "Auto Detect",
+            "fr": "Détection Automatique"
+          }
+        },
+        {
+          "id": "CR2032",
+          "label": {
+            "en": "CR2032",
+            "fr": "CR2032 (Pile Bouton 3V)"
+          }
+        },
+        {
+          "id": "CR2450",
+          "label": {
+            "en": "CR2450",
+            "fr": "CR2450 (Pile Bouton 3V)"
+          }
+        },
+        {
+          "id": "AAA",
+          "label": {
+            "en": "AAA",
+            "fr": "AAA"
+          }
+        },
+        {
+          "id": "AA",
+          "label": {
+            "en": "AA",
+            "fr": "AA"
+          }
+        },
+        {
+          "id": "CR123A",
+          "label": {
+            "en": "CR123A",
+            "fr": "CR123A"
+          }
+        }
+      ],
+      "hint": {
+        "en": "Select battery type manually or use auto-detection based on voltage",
+        "fr": "Sélectionnez le type de batterie manuellement ou utilisez la détection automatique basée sur la tension"
+      }
+    },
+    {
+      "id": "battery_low_threshold",
+      "type": "number",
+      "label": {
+        "en": "Low Battery Threshold",
+        "fr": "Seuil Batterie Faible (%)"
+      },
+      "value": 20,
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "hint": {
+        "en": "Trigger low battery warning when below this percentage",
+        "fr": "Déclencher l'alerte batterie faible en dessous de ce pourcentage"
+      }
+    },
+    {
+      "id": "battery_critical_threshold",
+      "type": "number",
+      "label": {
+        "en": "Critical Battery Threshold",
+        "fr": "Seuil Batterie Critique (%)"
+      },
+      "value": 10,
+      "min": 0,
+      "max": 30,
+      "step": 5,
+      "hint": {
+        "en": "Trigger critical battery warning when below this percentage",
+        "fr": "Déclencher l'alerte batterie critique en dessous de ce pourcentage"
+      }
+    },
+    {
+      "id": "enable_battery_notifications",
+      "type": "checkbox",
+      "label": {
+        "en": "Enable Battery Notifications",
+        "fr": "Activer Notifications Batterie"
+      },
+      "value": true,
+      "hint": {
+        "en": "Send flow notifications for battery events",
+        "fr": "Envoyer des notifications de flow pour les événements de batterie"
+      }
+    },
+    {
+      "id": "battery_report_interval",
+      "type": "number",
+      "label": {
+        "en": "Battery Report Interval",
+        "fr": "Intervalle Rapport Batterie (heures)"
+      },
+      "value": 24,
+      "min": 1,
+      "max": 168,
+      "step": 1,
+      "hint": {
+        "en": "How often to request battery status updates",
+        "fr": "Fréquence de demande des mises à jour d'état de batterie"
+      }
+    },
+    {
+      "id": "optimization_mode",
+      "type": "dropdown",
+      "label": {
+        "en": "Energy Optimization Mode",
+        "fr": "Mode Optimisation Énergétique"
+      },
+      "value": "balanced",
+      "values": [
+        {
+          "id": "performance",
+          "label": {
+            "en": "Performance (More responsive)",
+            "fr": "Performance (Plus réactif)"
+          }
+        },
+        {
+          "id": "balanced",
+          "label": {
+            "en": "Balanced",
+            "fr": "Équilibré"
+          }
+        },
+        {
+          "id": "power_saving",
+          "label": {
+            "en": "Power Saving (Longer battery)",
+            "fr": "Économie d'énergie (Batterie plus longue)"
+          }
+        }
+      ],
+      "hint": {
+        "en": "Balance between responsiveness and battery life",
+        "fr": "Équilibre entre réactivité et durée de vie de la batterie"
+      }
+    },
+    {
+      "id": "enable_power_estimation",
+      "type": "checkbox",
+      "label": {
+        "en": "Enable Power Estimation",
+        "fr": "Activer Estimation Puissance"
+      },
+      "value": true,
+      "hint": {
+        "en": "Estimate power consumption when real measurement is not available (AC/DC devices only)",
+        "fr": "Estimer la consommation quand la mesure réelle n'est pas disponible (appareils AC/DC seulement)"
+      }
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "Weekly Schedule (Idea #22)"
+      },
+      "hint": {
+        "en": "Configure heating schedules. Format: 'HH:MM/TT HH:MM/TT ...' where TT is temperature in C. Up to 10 periods. Last period must be 24:00."
+      },
+      "children": [
+        {
+          "id": "schedule_enabled",
+          "type": "checkbox",
+          "label": {
+            "en": "Enable Schedule Mode"
+          },
+          "hint": {
+            "en": "Switch the TRV to schedule/program mode instead of manual mode"
+          },
+          "value": false
+        },
+        {
+          "id": "schedule_weekday",
+          "type": "text",
+          "label": {
+            "en": "Weekday Schedule (Mon-Fri)"
+          },
+          "pattern": "^(([01][0-9]|[2][0-4]):[0-5][0-9]\\/([0-2][0-9]|30)\\s{0,1})+$",
+          "value": "06:00/20 22:00/16 24:00/16",
+          "hint": {
+            "en": "Time/temp pairs for weekdays. Example: 06:00/20 means at 06:00 set 20C. Up to 10 periods."
+          }
+        },
+        {
+          "id": "schedule_weekend",
+          "type": "text",
+          "label": {
+            "en": "Weekend Schedule (Sat-Sun)"
+          },
+          "pattern": "^(([01][0-9]|[2][0-4]):[0-5][0-9]\\/([0-2][0-9]|30)\\s{0,1})+$",
+          "value": "08:00/20 22:00/16 24:00/16",
+          "hint": {
+            "en": "Time/temp pairs for weekends. Example: 08:00/20 means at 08:00 set 20C. Up to 10 periods."
+          }
+        }
+      ]
+    }
+  ],
+  "images": {
+    "small": "/drivers/radiator_valve/assets/images/small.png",
+    "large": "/drivers/radiator_valve/assets/images/large.png",
+    "xlarge": "/drivers/radiator_valve/assets/images/xlarge.png"
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "select_driver"
+      }
+    },
+    {
+      "id": "select_driver",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ],
+  "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "fr": "Vérifier MàJ OTA",
+        "nl": "Controleer op OTA-updates"
+      }
+    }
+  ],
+  "id": "radiator_valve",
+  "version": "1.0.0",
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  }
+}

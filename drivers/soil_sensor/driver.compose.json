@@ -1,0 +1,319 @@
+{
+  "name": {
+    "en": "Soil Moisture Sensor",
+    "fr": "Capteur d'Humidité du Sol",
+    "nl": "Bodemsensor",
+    "de": "Bodensensor"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "measure_humidity.soil",
+    "measure_temperature",
+    "measure_humidity",
+    "measure_luminance",
+    "measure_battery",
+    "alarm_water",
+    "measure_ec",
+    "measure_conductivity",
+    "button.1"
+  ],
+  "capabilitiesOptions": {
+    "measure_humidity.soil": {
+      "title": {
+        "en": "Soil Moisture",
+        "fr": "Humidité du Sol",
+        "nl": "Bodemvochtigheid",
+        "de": "Bodenfeuchtigkeit"
+      }
+    },
+    "measure_humidity": {
+      "title": {
+        "en": "Air Humidity",
+        "fr": "Humidité de l'Air",
+        "nl": "Luchtvochtigheid",
+        "de": "Luftfeuchtigkeit"
+      }
+    },
+    "alarm_water": {
+      "title": {
+        "en": "Water Shortage",
+        "fr": "Manque d'Eau",
+        "nl": "Watertekort",
+        "de": "Wassermangel"
+      }
+    },
+    "measure_ec": {
+      "title": {
+        "en": "Fertilizer (EC)",
+        "fr": "Engrais (EC)",
+        "nl": "Bemesting (EC)",
+        "de": "Dünger (EC)"
+      }
+    },
+    "measure_conductivity": {
+      "title": {
+        "en": "Soil Fertility (EC)",
+        "fr": "Fertilité du Sol (EC)",
+        "nl": "Bodemvruchtbaarheid (EC)",
+        "de": "Bodenfruchtbarkeit (EC)"
+      }
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  },
+  "energy": {
+    "batteries": [
+      "AAA",
+      "CR2032",
+      "CR2450"
+    ]
+  },
+  "subDevices": [],
+  "zigbee": {
+    "manufacturerName": [
+      "_TZE200_4XSYPNEY",
+      "_TZE200_9CV5TCGQ",
+      "_TZE200_A0GSPFYZ",
+      "_TZE200_FQYTFMYK",
+      "_TZE200_FQYTFYMK",
+      "_TZE200_SH8V7FHD",
+      "_TZE200_ZNLLDQL1",
+      "_TZE200_itp8dt7f",
+      "_TZE200_npj9bug3",
+      "_TZE204_4XSYPNEY",
+      "_TZE204_A0GSPFYZ",
+      "_TZE204_FQYTFMYK",
+      "_TZE204_FQYTFYMK",
+      "_TZE204_SH8V7FHD",
+      "_TZE204_pay2byax",
+      "_TZE21C_i2ij4rb3",
+      "_TZE2841000000_hdml1aav",
+      "_TZE284_0INTS6W",
+      "_tze284_0ints6wl",
+      "_TZE284_0ints6wl",
+      "_TZE284_0INTS6WL",
+      "_TZE284_2NHQASJH",
+      "_TZE284_2se8efxh",
+      "_TZE284_4XSYPNEY",
+      "_TZE284_9cqcpkgb",
+      "_TZE284_A0GSPFYZ",
+      "_TZE284_AA03YZHS",
+      "_TZE284_aao3yzhs",
+      "_tze200_myd45weu",
+      "_TZE200_myd45weu",
+      "_TZE200_MYD45WEU",
+      "_tze204_myd45weu",
+      "_TZE204_myd45weu",
+      "_TZE204_MYD45WEU",
+      "_tze284_myd45weu",
+      "_TZE284_myd45weu",
+      "_TZE284_MYD45WEU",
+      "_TZE284_FQYTFMYK",
+      "_TZE284_FQYTFYMK",
+      "_TZE284_NPJ9BUG3",
+      "_TZE284_OITAVOV2",
+      "_tze284_tgrzpqf4",
+      "_TZE284_sgabhwa6"
+    ],
+    "productId": [
+      "ZG-303Z",
+      "CS-201Z",
+      "TS0601",
+      "Arteco",
+      "TS0001"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          4,
+          5,
+          60672,
+          61184
+        ]
+      }
+    }
+  },
+  "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "🌡️ Calibration (v5.5.330 Hobeian)",
+        "fr": "🌡️ Calibration (v5.5.330 Hobeian)"
+      },
+      "children": [
+        {
+          "id": "temperature_calibration",
+          "type": "number",
+          "label": {
+            "en": "Temperature Offset (°C)",
+            "fr": "Décalage Température (°C)"
+          },
+          "value": 0,
+          "min": -30,
+          "max": 30,
+          "step": 0.1,
+          "hint": {
+            "en": "Offset to adjust temperature readings (-30 to +30)",
+            "fr": "Décalage pour ajuster les lectures de température (-30 à +30)"
+          }
+        },
+        {
+          "id": "humidity_calibration",
+          "type": "number",
+          "label": {
+            "en": "Air Humidity Offset (%)",
+            "fr": "Décalage Humidité Air (%)"
+          },
+          "value": 0,
+          "min": -30,
+          "max": 30,
+          "step": 1,
+          "hint": {
+            "en": "Offset to adjust air humidity readings (-30 to +30)",
+            "fr": "Décalage pour ajuster les lectures d'humidité de l'air (-30 à +30)"
+          }
+        },
+        {
+          "id": "moisture_calibration",
+          "type": "number",
+          "label": {
+            "en": "Soil Moisture Offset (%)",
+            "fr": "Décalage Humidité Sol (%)"
+          },
+          "value": 0,
+          "min": -30,
+          "max": 30,
+          "step": 1,
+          "hint": {
+            "en": "Offset to adjust soil moisture readings (-30 to +30)",
+            "fr": "Décalage pour ajuster les lectures d'humidité du sol (-30 à +30)"
+          }
+        },
+        {
+          "id": "sensor_precision",
+          "type": "dropdown",
+          "label": {
+            "en": "Decimal Precision",
+            "fr": "Précision"
+          },
+          "value": "1",
+          "hint": {
+            "en": "Decimals for temperature/humidity values"
+          },
+          "values": [
+            {
+              "id": "1",
+              "label": {
+                "en": "1 decimal (20.5°C)"
+              }
+            },
+            {
+              "id": "2",
+              "label": {
+                "en": "2 decimals (20.53°C)"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "⚠️ Alerts (v5.5.330 Hobeian)",
+        "fr": "⚠️ Alertes (v5.5.330 Hobeian)"
+      },
+      "children": [
+        {
+          "id": "soil_warning_threshold",
+          "type": "number",
+          "label": {
+            "en": "Soil Dryness Threshold (%)",
+            "fr": "Seuil Sécheresse Sol (%)"
+          },
+          "value": 30,
+          "min": 0,
+          "max": 100,
+          "step": 5,
+          "hint": {
+            "en": "Moisture percentage below which water shortage alarm triggers (0-100%)",
+            "fr": "Pourcentage d'humidité en dessous duquel l'alarme manque d'eau se déclenche (0-100%)"
+          }
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "⚙️ Settings (v5.5.330 Hobeian)",
+        "fr": "⚙️ Paramètres (v5.5.330 Hobeian)"
+      },
+      "children": [
+        {
+          "id": "temperature_unit",
+          "type": "dropdown",
+          "label": {
+            "en": "Temperature Unit",
+            "fr": "Unité de Température"
+          },
+          "value": "celsius",
+          "values": [
+            {
+              "id": "celsius",
+              "label": {
+                "en": "Celsius (°C)",
+                "fr": "Celsius (°C)"
+              }
+            },
+            {
+              "id": "fahrenheit",
+              "label": {
+                "en": "Fahrenheit (°F)",
+                "fr": "Fahrenheit (°F)"
+              }
+            }
+          ],
+          "hint": {
+            "en": "Temperature unit for display",
+            "fr": "Unité de température pour l'affichage"
+          }
+        }
+      ]
+    }
+  ],
+  "images": {
+    "small": "/drivers/soil_sensor/assets/images/small.png",
+    "large": "/drivers/soil_sensor/assets/images/large.png",
+    "xlarge": "/drivers/soil_sensor/assets/images/xlarge.png"
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "fr": "Vérifier MàJ OTA",
+        "nl": "Controleer op OTA-updates"
+      }
+    }
+  ],
+  "id": "soil_sensor",
+  "version": "1.0.0",
+  "_pidConflictNotes": [
+    "// PID-CONFLICT-NOTE TS0001 shared with 35 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE ZG-303Z shared with 3 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
+  ]
+}

@@ -1,0 +1,145 @@
+{
+  "triggers": [
+    {
+      "id": "curtain_motor_tilt_battery_low",
+      "title": {
+        "en": "Battery low",
+        "fr": "Batterie faible",
+        "nl": "Batterij laag",
+        "de": "Batterie schwach"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Battery low",
+        "fr": "Batterie faible",
+        "nl": "Batterij laag",
+        "de": "Batterie schwach"
+      }
+    }
+  ],
+  "conditions": [],
+  "actions": [
+    {
+      "id": "curtain_motor_tilt_turn_on",
+      "title": {
+        "en": "Turn on",
+        "fr": "Allumer",
+        "nl": "Inschakelen",
+        "de": "Einschalten"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn on",
+        "fr": "Allumer",
+        "nl": "Inschakelen",
+        "de": "Einschalten"
+      }
+    },
+    {
+      "id": "curtain_motor_tilt_turn_off",
+      "title": {
+        "en": "Turn off",
+        "fr": "Éteindre",
+        "nl": "Uitschakelen",
+        "de": "Ausschalten"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn off",
+        "fr": "Éteindre",
+        "nl": "Uitschakelen",
+        "de": "Ausschalten"
+      }
+    },
+    {
+      "id": "curtain_motor_tilt_toggle",
+      "title": {
+        "en": "Toggle",
+        "fr": "Basculer",
+        "nl": "Wisselen",
+        "de": "Umschalten"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Toggle",
+        "fr": "Basculer",
+        "nl": "Wisselen",
+        "de": "Umschalten"
+      }
+    },
+    {
+      "id": "curtain_motor_tilt_set_position",
+      "title": {
+        "en": "Set position",
+        "fr": "Régler position",
+        "nl": "Positie instellen",
+        "de": "Position einstellen"
+      },
+      "args": [
+        {
+          "name": "position",
+          "type": "range",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "label": "%",
+          "labelDecimals": 0
+        }
+      ],
+      "titleFormatted": {
+        "en": "Set position [[position]]",
+        "fr": "Régler position [[position]]",
+        "nl": "Positie instellen [[position]]",
+        "de": "Position einstellen [[position]]"
+      }
+    },
+    {
+      "id": "curtain_motor_tilt_open",
+      "title": {
+        "en": "Open",
+        "fr": "Ouvrir",
+        "nl": "Openen",
+        "de": "Öffnen"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Open",
+        "fr": "Ouvrir",
+        "nl": "Openen",
+        "de": "Öffnen"
+      }
+    },
+    {
+      "id": "curtain_motor_tilt_close",
+      "title": {
+        "en": "Close",
+        "fr": "Fermer",
+        "nl": "Sluiten",
+        "de": "Schließen"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Close",
+        "fr": "Fermer",
+        "nl": "Sluiten",
+        "de": "Schließen"
+      }
+    },
+    {
+      "id": "curtain_motor_tilt_stop",
+      "title": {
+        "en": "Stop",
+        "fr": "Arrêter",
+        "nl": "Stoppen",
+        "de": "Stoppen"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Stop",
+        "fr": "Arrêter",
+        "nl": "Stoppen",
+        "de": "Stoppen"
+      }
+    }
+  ]
+}

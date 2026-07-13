@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Universal Tuya Zigbee - Dev Dashboard</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, monospace;
+    background: #0a0e17; color: #c9d1d9;
+    padding: 20px; line-height: 1.6;
+  }
+  h1 { color: #58a6ff; margin-bottom: 10px; font-size: 1.8em; }
+  h2 { color: #79c0ff; margin: 20px 0 10px; font-size: 1.3em; border-bottom: 1px solid #21262d; padding-bottom: 5px; }
+  h3 { color: #8b949e; margin: 15px 0 8px; font-size: 1.1em; }
+  .subtitle { color: #8b949e; margin-bottom: 20px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; margin: 16px 0; }
+  .card {
+    background: #161b22; border: 1px solid #30363d; border-radius: 8px;
+    padding: 16px; transition: border-color 0.2s;
+  }
+  .card:hover { border-color: #58a6ff; }
+  .card-title { color: #58a6ff; font-weight: 600; margin-bottom: 8px; }
+  .metric { font-size: 2em; font-weight: 700; color: #f0f6fc; }
+  .metric-label { font-size: 0.85em; color: #8b949e; }
+  .metric-change { font-size: 0.85em; }
+  .metric-change.positive { color: #3fb950; }
+  .metric-change.negative { color: #f85149; }
+  .bar { height: 20px; background: #21262d; border-radius: 4px; overflow: hidden; margin: 4px 0; }
+  .bar-fill { height: 100%; border-radius: 4px; transition: width 0.3s; }
+  .bar-fill.green { background: linear-gradient(90deg, #238636, #3fb950); }
+  .bar-fill.blue { background: linear-gradient(90deg, #1f6feb, #58a6ff); }
+  .bar-fill.yellow { background: linear-gradient(90deg, #9e6a03, #d29922); }
+  .bar-fill.red { background: linear-gradient(90deg, #da3633, #f85149); }
+  table { width: 100%; border-collapse: collapse; margin: 8px 0; }
+  th, td { text-align: left; padding: 6px 10px; border-bottom: 1px solid #21262d; font-size: 0.9em; }
+  th { color: #79c0ff; font-weight: 600; }
+  .tag { display: inline-block; padding: 2px 8px; border-radius: 12px; font-size: 0.8em; margin: 2px; }
+  .tag-green { background: #238636; color: #fff; }
+  .tag-blue { background: #1f6feb; color: #fff; }
+  .tag-yellow { background: #9e6a03; color: #fff; }
+  .tag-red { background: #da3633; color: #fff; }
+  .tag-gray { background: #30363d; color: #c9d1d9; }
+  .health-score {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 10px 20px; border-radius: 8px; font-size: 1.5em; font-weight: 700;
+  }
+  .health-good { background: #238636; color: #fff; }
+  .health-warn { background: #9e6a03; color: #fff; }
+  .health-bad { background: #da3633; color: #fff; }
+  .timeline { max-height: 400px; overflow-y: auto; }
+  .timeline-item { padding: 6px 0; border-left: 2px solid #30363d; padding-left: 12px; margin-left: 8px; }
+  .timeline-hash { color: #58a6ff; font-family: monospace; }
+  .timeline-date { color: #8b949e; font-size: 0.85em; }
+  .timeline-msg { color: #c9d1d9; }
+  .section { margin-bottom: 30px; }
+  .pie-chart { display: inline-block; width: 20px; height: 20px; border-radius: 50%; margin-right: 4px; vertical-align: middle; }
+  .coverage-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 8px; }
+  .coverage-item { text-align: center; padding: 12px; background: #161b22; border: 1px solid #30363d; border-radius: 6px; }
+  .coverage-num { font-size: 1.8em; font-weight: 700; }
+  pre { background: #161b22; padding: 12px; border-radius: 6px; overflow-x: auto; font-size: 0.85em; border: 1px solid #30363d; }
+</style>
+</head>
+<body>
+
+<h1>Universe Tuya Zigbee - Dev Dashboard</h1>
+<p class="subtitle">Generated: 2026-07-12 09:49:46 | Version: 9.0.190</p>
+
+<!-- Health Score -->
+<div class="section">
+  <div class="health-score health-good">
+    <span>91/100</span>
+    <span style="font-size:0.5em;font-weight:400">Project Health Score</span>
+  </div>
+  <span class="tag tag-green">100% of drivers have images</span>
+  <span class="tag tag-yellow">30 drivers have compose but no flow cards</span>
+  
+</div>
+
+<!-- Overview Metrics -->
+<div class="section">
+  <h2>Overview</h2>
+  <div class="grid">
+    <div class="card">
+      <div class="card-title">Drivers</div>
+      <div class="metric">430</div>
+      <div class="metric-label">Total driver modules</div>
+    </div>
+    <div class="card">
+      <div class="card-title">Fingerprints</div>
+      <div class="metric">53</div>
+      <div class="metric-label">In database</div>
+    </div>
+    <div class="card">
+      <div class="card-title">Flow Cards</div>
+      <div class="metric">4870</div>
+      <div class="metric-label">Triggers: 2816 | Conditions: 641 | Actions: 1413</div>
+    </div>
+    <div class="card">
+      <div class="card-title">Lines of Code</div>
+      <div class="metric">175,761</div>
+      <div class="metric-label">548 files in lib/</div>
+    </div>
+    <div class="card">
+      <div class="card-title">Bundle Size</div>
+      <div class="metric">6123 KB</div>
+      <div class="metric-label">app.json</div>
+    </div>
+    <div class="card">
+      <div class="card-title">Capabilities</div>
+      <div class="metric">170</div>
+      <div class="metric-label">Unique capability types</div>
+    </div>
+  </div>
+</div>
+
+<!-- Driver Health -->
+<div class="section">
+  <h2>Driver Health</h2>
+  <div class="grid">
+    <div class="card">
+      <div class="card-title">File Completeness</div>
+      <div class="bar"><div class="bar-fill green" style="width:100.0%"></div></div>
+      <div style="display:flex;justify-content:space-between;font-size:0.85em">
+        <span>device.js: 430/430</span>
+        <span>100.0%</span>
+      </div>
+      <div class="bar"><div class="bar-fill green" style="width:100.0%"></div></div>
+      <div style="display:flex;justify-content:space-between;font-size:0.85em">
+        <span>driver.js: 430/430</span>
+        <span>100.0%</span>
+      </div>
+      <div class="bar"><div class="bar-fill blue" style="width:100.0%"></div></div>
+      <div style="display:flex;justify-content:space-between;font-size:0.85em">
+        <span>compose.json: 430/430</span>
+        <span>100.0%</span>
+      </div>
+      <div class="bar"><div class="bar-fill yellow" style="width:97.7%"></div></div>
+      <div style="display:flex;justify-content:space-between;font-size:0.85em">
+        <span>flow.compose: 420/430</span>
+        <span>97.7%</span>
+      </div>
+      <div class="bar"><div class="bar-fill blue" style="width:100.0%"></div></div>
+      <div style="display:flex;justify-content:space-between;font-size:0.85em">
+        <span>assets/images: 430/430</span>
+        <span>100.0%</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">Protocol Distribution</div>
+      <div class="bar"><div class="bar-fill green" style="width:25.3%"></div></div>
+      <div style="font-size:0.85em">Zigbee: 109 (25.3%)</div>
+      <div class="bar"><div class="bar-fill blue" style="width:1.4%"></div></div>
+      <div style="font-size:0.85em">WiFi: 6 (1.4%)</div>
+    </div>
+  </div>
+</div>
+
+<!-- Driver Categories -->
+<div class="section">
+  <h2>Driver Categories (17 categories)</h2>
+  <div class="coverage-grid">
+    
+    <div class="coverage-item">
+      <div class="coverage-num" style="color:#58a6ff">87</div>
+      <div style="font-size:0.85em;color:#8b949e">sensors</div>
+    </div>
+    <div class="coverage-item">
+      <div class="coverage-num" style="color:#3fb950">70</div>
+      <div style="font-size:0.85em;color:#8b949e">switches</div>
+    </div>
+    <div class="coverage-item">
+      <div class="coverage-num" style="color:#8b949e">50</div>
+      <div style="font-size:0.85em;color:#8b949e">other</div>
+    </div>
+    <div class="coverage-item">
+      <div class="coverage-num" style="color:#f85149">39</div>
+      <div style="font-size:0.85em;color:#8b949e">buttons</div>
+    </div>
+    <div class="coverage-item">
+      <div class="coverage-num" style="color:#f0883e">37</div>
+      <div style="font-size:0.85em;color:#8b949e">lights</div>
+    </div>
+    <div class="coverage-item">
+      <div class="coverage-num" style="color:#f0883e">35</div>
+      <div style="font-size:0.85em;color:#8b949e">ir</div>
+    </div>
+    <div class="coverage-item">
+      <div class="coverage-num" style="color:#d29922">29</div>
+      <div style="font-size:0.85em;color:#8b949e">dimmers</div>
+    </div>
+    <div class="coverage-item">
+      <div class="coverage-num" style="color:#3fb950">19</div>
+      <div style="font-size:0.85em;color:#8b949e">plugs</div>
+    </div>
+    <div class="coverage-item">
+      <div class="coverage-num" style="color:#ff7b72">16</div>
+      <div style="font-size:0.85em;color:#8b949e">climate</div>
+    </div>
+    <div class="coverage-item">
+      <div class="coverage-num" style="color:#79c0ff">12</div>
+      <div style="font-size:0.85em;color:#8b949e">valves</div>
+    </div>
+    <div class="coverage-item">
+      <div class="coverage-num" style="color:#58a6ff">9</div>
+      <div style="font-size:0.85em;color:#8b949e">doors</div>
+    </div>
+    <div class="coverage-item">
+      <div class="coverage-num" style="color:#bc8cff">8</div>
+      <div style="font-size:0.85em;color:#8b949e">covers</div>
+    </div>
+    <div class="coverage-item">
+      <div class="coverage-num" style="color:#58a6ff">8</div>
+      <div style="font-size:0.85em;color:#8b949e">energy</div>
+    </div>
+    <div class="coverage-item">
+      <div class="coverage-num" style="color:#79c0ff">4</div>
+      <div style="font-size:0.85em;color:#8b949e">fans</div>
+    </div>
+    <div class="coverage-item">
+      <div class="coverage-num" style="color:#d29922">3</div>
+      <div style="font-size:0.85em;color:#8b949e">locks</div>
+    </div>
+    <div class="coverage-item">
+      <div class="coverage-num" style="color:#3fb950">3</div>
+      <div style="font-size:0.85em;color:#8b949e">air_quality</div>
+    </div>
+    <div class="coverage-item">
+      <div class="coverage-num" style="color:#8b949e">1</div>
+      <div style="font-size:0.85em;color:#8b949e">gateways</div>
+    </div>
+  </div>
+</div>
+
+<!-- MCU Format Coverage -->
+<div class="section">
+  <h2>MCU / Protocol Format Coverage</h2>
+  <table>
+    <thead><tr><th>Format</th><th>Drivers</th><th>Coverage</th></tr></thead>
+    <tbody>
+    
+      <tr>
+        <td>ZCL On/Off</td>
+        <td>263</td>
+        <td>
+          <div class="bar" style="width:200px;display:inline-block;vertical-align:middle">
+            <div class="bar-fill blue" style="width:61.2%"></div>
+          </div>
+          <span style="font-size:0.85em;margin-left:8px">61.2%</span>
+        </td>
+      </tr>
+      <tr>
+        <td>Tuya DP 0xEF00</td>
+        <td>178</td>
+        <td>
+          <div class="bar" style="width:200px;display:inline-block;vertical-align:middle">
+            <div class="bar-fill blue" style="width:41.4%"></div>
+          </div>
+          <span style="font-size:0.85em;margin-left:8px">41.4%</span>
+        </td>
+      </tr>
+      <tr>
+        <td>ZCL Level Control</td>
+        <td>41</td>
+        <td>
+          <div class="bar" style="width:200px;display:inline-block;vertical-align:middle">
+            <div class="bar-fill blue" style="width:9.5%"></div>
+          </div>
+          <span style="font-size:0.85em;margin-left:8px">9.5%</span>
+        </td>
+      </tr>
+      <tr>
+        <td>ZCL Metering</td>
+        <td>37</td>
+        <td>
+          <div class="bar" style="width:200px;display:inline-block;vertical-align:middle">
+            <div class="bar-fill blue" style="width:8.6%"></div>
+          </div>
+          <span style="font-size:0.85em;margin-left:8px">8.6%</span>
+        </td>
+      </tr>
+      <tr>
+        <td>Custom Tuya</td>
+        <td>34</td>
+        <td>
+          <div class="bar" style="width:200px;display:inline-block;vertical-align:middle">
+            <div class="bar-fill blue" style="width:7.9%"></div>
+          </div>
+          <span style="font-size:0.85em;margin-left:8px">7.9%</span>
+        </td>
+      </tr>
+      <tr>
+        <td>ZCL Thermostat</td>
+        <td>32</td>
+        <td>
+          <div class="bar" style="width:200px;display:inline-block;vertical-align:middle">
+            <div class="bar-fill blue" style="width:7.4%"></div>
+          </div>
+          <span style="font-size:0.85em;margin-left:8px">7.4%</span>
+        </td>
+      </tr>
+      <tr>
+        <td>ZCL IAS Zone</td>
+        <td>30</td>
+        <td>
+          <div class="bar" style="width:200px;display:inline-block;vertical-align:middle">
+            <div class="bar-fill blue" style="width:7.0%"></div>
+          </div>
+          <span style="font-size:0.85em;margin-left:8px">7.0%</span>
+        </td>
+      </tr>
+      <tr>
+        <td>ZCL Color Control</td>
+        <td>14</td>
+        <td>
+          <div class="bar" style="width:200px;display:inline-block;vertical-align:middle">
+            <div class="bar-fill blue" style="width:3.3%"></div>
+          </div>
+          <span style="font-size:0.85em;margin-left:8px">3.3%</span>
+        </td>
+      </tr>
+      <tr>
+        <td>ZCL Window Covering</td>
+        <td>9</td>
+        <td>
+          <div class="bar" style="width:200px;display:inline-block;vertical-align:middle">
+            <div class="bar-fill blue" style="width:2.1%"></div>
+          </div>
+          <span style="font-size:0.85em;margin-left:8px">2.1%</span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Flow Cards -->
+<div class="section">
+  <h2>Flow Card Status</h2>
+  <div class="grid">
+    <div class="card">
+      <div class="card-title">By Type</div>
+      <div class="bar"><div class="bar-fill green" style="width:57.82340862422998%"></div></div>
+      <div style="font-size:0.85em">Triggers: 2816</div>
+      <div class="bar"><div class="bar-fill blue" style="width:13.162217659137577%"></div></div>
+      <div style="font-size:0.85em">Conditions: 641</div>
+      <div class="bar"><div class="bar-fill yellow" style="width:29.01437371663244%"></div></div>
+      <div style="font-size:0.85em">Actions: 1413</div>
+    </div>
+    <div class="card">
+      <div class="card-title">Coverage</div>
+      <div class="metric">420/430</div>
+      <div class="metric-label">Drivers with flow cards</div>
+      <div class="bar" style="margin-top:8px"><div class="bar-fill green" style="width:97.67441860465115%"></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- Lib Module Hotspots -->
+<div class="section">
+  <h2>Library Module Hotspots (Top 20 by LOC)</h2>
+  <table>
+    <thead><tr><th>Module</th><th>Lines</th><th>Size</th></tr></thead>
+    <tbody>
+    
+      <tr>
+        <td style="font-family:monospace;color:#58a6ff">devices\BaseUnifiedDevice.js</td>
+        <td>4,866</td>
+        <td>198.1 KB</td>
+      </tr>
+      <tr>
+        <td style="font-family:monospace;color:#58a6ff">devices\UnifiedSensorBase.js</td>
+        <td>4,575</td>
+        <td>200.1 KB</td>
+      </tr>
+      <tr>
+        <td style="font-family:monospace;color:#58a6ff">tuya\TuyaEF00Manager.js</td>
+        <td>3,219</td>
+        <td>124.5 KB</td>
+      </tr>
+      <tr>
+        <td style="font-family:monospace;color:#58a6ff">devices\TuyaUnifiedDevice.js</td>
+        <td>1,865</td>
+        <td>78.9 KB</td>
+      </tr>
+      <tr>
+        <td style="font-family:monospace;color:#58a6ff">battery\UnifiedBatteryHandler.js</td>
+        <td>1,819</td>
+        <td>82.6 KB</td>
+      </tr>
+      <tr>
+        <td style="font-family:monospace;color:#58a6ff">mixins\PhysicalButtonMixin.js</td>
+        <td>1,636</td>
+        <td>71.5 KB</td>
+      </tr>
+      <tr>
+        <td style="font-family:monospace;color:#58a6ff">devices\ButtonDevice.js</td>
+        <td>1,609</td>
+        <td>63.9 KB</td>
+      </tr>
+      <tr>
+        <td style="font-family:monospace;color:#58a6ff">tuya\TuyaZigbeeDevice.js</td>
+        <td>1,537</td>
+        <td>52.9 KB</td>
+      </tr>
+      <tr>
+        <td style="font-family:monospace;color:#58a6ff">tuya\TuyaTimeSyncFormats.js</td>
+        <td>1,527</td>
+        <td>72.6 KB</td>
+      </tr>
+      <tr>
+        <td style="font-family:monospace;color:#58a6ff">battery\BatteryHealthIntelligence.js</td>
+        <td>1,500</td>
+        <td>61.8 KB</td>
+      </tr>
+      <tr>
+        <td style="font-family:monospace;color:#58a6ff">tuya\TuyaDataPointsZ2M.js</td>
+        <td>1,482</td>
+        <td>41.8 KB</td>
+      </tr>
+      <tr>
+        <td style="font-family:monospace;color:#58a6ff">devices\UnifiedSwitchBase.js</td>
+        <td>1,401</td>
+        <td>54.1 KB</td>
+      </tr>
+      <tr>
+        <td style="font-family:monospace;color:#58a6ff">tuya\UniversalTuyaParser.js</td>
+        <td>1,322</td>
+        <td>47.3 KB</td>
+      </tr>
+      <tr>
+        <td style="font-family:monospace;color:#58a6ff">utils\DriverMappingLoader.js</td>
+        <td>1,286</td>
+        <td>43.0 KB</td>
+      </tr>
+      <tr>
+        <td style="font-family:monospace;color:#58a6ff">tuya\TuyaUnifiedParser.js</td>
+        <td>1,267</td>
+        <td>69.4 KB</td>
+      </tr>
+      <tr>
+        <td style="font-family:monospace;color:#58a6ff">sensors\IntelligentDPAutoDiscovery.js</td>
+        <td>1,254</td>
+        <td>44.2 KB</td>
+      </tr>
+      <tr>
+        <td style="font-family:monospace;color:#58a6ff">flow\FeatureFlowCards.js</td>
+        <td>1,221</td>
+        <td>43.9 KB</td>
+      </tr>
+      <tr>
+        <td style="font-family:monospace;color:#58a6ff">managers\SmartDriverAdaptation.js</td>
+        <td>1,202</td>
+        <td>47.4 KB</td>
+      </tr>
+      <tr>
+        <td style="font-family:monospace;color:#58a6ff">mixins\DeviceEnhancementsMixin.js</td>
+        <td>1,155</td>
+        <td>48.9 KB</td>
+      </tr>
+      <tr>
+        <td style="font-family:monospace;color:#58a6ff">intelligent\IntelligentDeviceAdapter.js</td>
+        <td>1,145</td>
+        <td>39.8 KB</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Recent Changes Timeline -->
+<div class="section">
+  <h2>Recent Changes (Last 30 Commits)</h2>
+  <div class="timeline">
+    
+  </div>
+</div>
+
+<!-- Top Issues -->
+
+
+<pre>
+=== Dashboard Summary ===
+Drivers: 430
+Fingerprints: 53
+Flow Cards: 4870
+LOC (lib): 175,761
+Health Score: 91/100
+Generated: 2026-07-12 09:49:46
+</pre>
+
+</body>
+</html>

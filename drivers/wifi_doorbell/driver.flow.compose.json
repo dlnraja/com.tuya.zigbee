@@ -1,0 +1,26 @@
+{
+  "triggers": [
+    {
+      "id": "wifi_doorbell_ring",
+      "title": {
+        "en": "Doorbell pressed"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Doorbell pressed"
+      }
+    },
+    {
+      "id": "wifi_doorbell_motion",
+      "title": {
+        "en": "Motion detected"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Motion detected"
+      }
+    }
+  ],
+  "conditions": [],
+  "actions": []
+}

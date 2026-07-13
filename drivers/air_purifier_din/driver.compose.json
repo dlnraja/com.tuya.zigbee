@@ -1,0 +1,89 @@
+{
+  "name": {
+    "en": "Air Purifier Din",
+    "nl": "Luchtreiniger Din",
+    "fr": "Purificateur d'air Din",
+    "de": "Luftreiniger Din",
+    "es": "Purificador de aire Din"
+  },
+  "class": "socket",
+  "capabilities": [
+    "onoff",
+    "measure_power",
+    "meter_power",
+    "measure_voltage",
+    "measure_current",
+    "dim",
+    "measure_pm25",
+    "button.1"
+  ],
+  "capabilitiesOptions": {
+    "measure_power": {
+      "title": {
+        "en": "Power",
+        "fr": "Puissance"
+      },
+      "units": "W"
+    },
+    "meter_power": {
+      "title": {
+        "en": "Energy",
+        "fr": "Ã‰nergie"
+      },
+      "units": "kWh"
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  },
+  "images": {
+    "small": "/drivers/din_rail_switch/assets/images/small.png",
+    "large": "/drivers/din_rail_switch/assets/images/large.png"
+  },
+  "platforms": [
+    "local"
+  ],
+  "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "fr": "Vérifier MÃJ OTA",
+        "nl": "Controleer op OTA-updates"
+      }
+    }
+  ],
+  "flow": {
+    "triggers": [],
+    "conditions": [],
+    "actions": []
+  },
+  "settings": [],
+  "id": "air_purifier_din",
+  "version": "1.0.0",
+  "connectivity": [
+    "zigbee"
+  ],
+  "zigbee": {
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0
+        ]
+      }
+    },
+    "manufacturerName": [
+      "_hybrid_air_purifier_din_needs_device_assignment",
+      "_HYBRID_AIR_PURIFIER_DIN_NEEDS_DEVICE_ASSIGNMENT"
+    ]
+  }
+}

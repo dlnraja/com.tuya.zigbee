@@ -1,0 +1,102 @@
+{
+  "triggers": [
+    {
+      "id": "smoke_sensor3_alarm_smoke_true",
+      "title": {
+        "en": "Smoke detected",
+        "fr": "Fumée détectée",
+        "nl": "Rook gedetecteerd",
+        "de": "Rauch erkannt"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Smoke detected",
+        "fr": "Fumée détectée",
+        "nl": "Rook gedetecteerd",
+        "de": "Rauch erkannt"
+      }
+    },
+    {
+      "id": "smoke_sensor3_alarm_smoke_false",
+      "title": {
+        "en": "Smoke cleared",
+        "fr": "Fumée dissipée",
+        "nl": "Rook verdwenen",
+        "de": "Rauch verschwunden"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Smoke cleared",
+        "fr": "Fumée dissipée",
+        "nl": "Rook verdwenen",
+        "de": "Rauch verschwunden"
+      }
+    },
+    {
+      "id": "smoke_sensor3_alarm_tamper_true",
+      "title": {
+        "en": "Tamper alarm triggered",
+        "fr": "Alarme anti-sabotage déclenchée",
+        "nl": "Sabotagealarm geactiveerd",
+        "de": "Manipulationsalarm ausgelöst"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Tamper alarm triggered",
+        "fr": "Alarme anti-sabotage déclenchée",
+        "nl": "Sabotagealarm geactiveerd",
+        "de": "Manipulationsalarm ausgelöst"
+      }
+    },
+    {
+      "id": "smoke_sensor3_alarm_tamper_false",
+      "title": {
+        "en": "Tamper alarm cleared",
+        "fr": "Alarme sabotage effacée",
+        "nl": "Sabotagealarm opgeheven",
+        "de": "Manipulationsalarm beendet"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Tamper alarm cleared",
+        "fr": "Alarme sabotage effacée",
+        "nl": "Sabotagealarm opgeheven",
+        "de": "Manipulationsalarm beendet"
+      }
+    },
+    {
+      "id": "smoke_sensor3_battery_low",
+      "title": {
+        "en": "Battery low",
+        "fr": "Batterie faible",
+        "nl": "Batterij laag",
+        "de": "Batterie schwach"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Battery low",
+        "fr": "Batterie faible",
+        "nl": "Batterij laag",
+        "de": "Batterie schwach"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "id": "smoke_sensor3_alarm_smoke_active",
+      "title": {
+        "en": "Smoke !{{is|is not}} detected",
+        "fr": "Fumée !{{est|n'est pas}} détectée",
+        "nl": "Rook !{{is|is niet}} gedetecteerd",
+        "de": "Rauch !{{wird|wird nicht}} erkannt"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Smoke !{{is|is not}} detected",
+        "fr": "Fumée !{{est|n'est pas}} détectée",
+        "nl": "Rook !{{is|is niet}} gedetecteerd",
+        "de": "Rauch !{{wird|wird nicht}} erkannt"
+      }
+    }
+  ]
+}

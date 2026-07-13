@@ -1,0 +1,17 @@
+{
+  "id": "INT-002",
+  "deviceName": "Presence Radar Sensor",
+  "manufacturerName": "_TZE204_gkfbdvyx",
+  "productId": "TS0601",
+  "deviceType": "router",
+  "inputClusters": [4, 5, 61184, 0],
+  "source": "Forum Page 39",
+  "status": "fixed",
+  "priority": "high",
+  "driver": "presence_sensor_radar",
+  "symptoms": ["Was broken, now working with movement detection"],
+  "fix": {
+    "applied": true,
+    "version": "5.5.750"
+  }
+}

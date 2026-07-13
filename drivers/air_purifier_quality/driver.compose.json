@@ -1,0 +1,254 @@
+{
+  "name": {
+    "en": "Air Purifier Quality",
+    "nl": "Luchtreiniger kwaliteit",
+    "fr": "Purificateur d'air qualité",
+    "de": "Luftreiniger QualitÃ¤ts-",
+    "es": "Purificador de aire calidad"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "measure_co2",
+    "measure_temperature",
+    "measure_humidity",
+    "measure_pm25",
+    "measure_voc",
+    "measure_formaldehyde",
+    "alarm_generic",
+    "measure_battery",
+    "onoff",
+    "dim",
+    "measure_power",
+    "button.1"
+  ],
+  "subDevices": [],
+  "capabilitiesOptions": {
+    "measure_co2": {
+      "title": {
+        "en": "CO2 Level",
+        "fr": "Niveau CO2"
+      },
+      "units": "ppm"
+    },
+    "measure_pm25": {
+      "title": {
+        "en": "PM2.5",
+        "fr": "PM2.5"
+      },
+      "units": "Âµg/mÂ³"
+    },
+    "measure_voc": {
+      "title": {
+        "en": "VOC",
+        "fr": "COV"
+      }
+    },
+    "measure_formaldehyde": {
+      "title": {
+        "en": "Formaldehyde (HCHO)",
+        "fr": "Formaldéhyde (HCHO)"
+      },
+      "units": "mg/mÂ³"
+    },
+    "alarm_generic": {
+      "title": {
+        "en": "Air Quality Alert",
+        "fr": "Alerte Qualité Air"
+      }
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  },
+  "energy": {
+    "batteries": [
+      "CR2450"
+    ],
+    "mains": true
+  },
+  "settings": [
+    {
+      "id": "co2_threshold",
+      "type": "number",
+      "label": {
+        "en": "CO2 Alert Threshold",
+        "fr": "Seuil alerte CO2"
+      },
+      "value": 1000,
+      "min": 400,
+      "max": 5000,
+      "units": "ppm"
+    },
+    {
+      "id": "temperature_unit",
+      "type": "dropdown",
+      "label": {
+        "en": "Temperature Unit",
+        "fr": "Unité température"
+      },
+      "value": "celsius",
+      "values": [
+        {
+          "id": "celsius",
+          "label": {
+            "en": "Celsius",
+            "fr": "Celsius"
+          }
+        },
+        {
+          "id": "fahrenheit",
+          "label": {
+            "en": "Fahrenheit",
+            "fr": "Fahrenheit"
+          }
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "Sensor Calibration",
+        "nl": "Sensor Kalibratie"
+      },
+      "children": [
+        {
+          "id": "temperature_offset",
+          "type": "number",
+          "label": {
+            "en": "Temperature offset",
+            "nl": "Temperatuur correctie"
+          },
+          "hint": {
+            "en": "Adjust sensor reading (Â±10Â°C)",
+            "nl": "Pas meetwaarde aan (Â±10Â°C)"
+          },
+          "units": "Â°C",
+          "value": 0,
+          "min": -10,
+          "max": 10,
+          "step": 0.1
+        },
+        {
+          "id": "humidity_offset",
+          "type": "number",
+          "label": {
+            "en": "Humidity offset",
+            "nl": "Luchtvochtigheid correctie"
+          },
+          "hint": {
+            "en": "Adjust sensor reading (Â±30%)",
+            "nl": "Pas meetwaarde aan (Â±30%)"
+          },
+          "units": "%",
+          "value": 0,
+          "min": -30,
+          "max": 30,
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "sensor_precision",
+      "type": "dropdown",
+      "label": {
+        "en": "Decimal Precision",
+        "fr": "Précision"
+      },
+      "value": "1",
+      "hint": {
+        "en": "Decimals for temperature/humidity values"
+      },
+      "values": [
+        {
+          "id": "1",
+          "label": {
+            "en": "1 decimal (20.5Â°C)"
+          }
+        },
+        {
+          "id": "2",
+          "label": {
+            "en": "2 decimals (20.53Â°C)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "enable_radio_sensing",
+      "type": "checkbox",
+      "label": {
+        "en": "Enable Radio Presence Sensing",
+        "fr": "Activer la Détection de Présence Radio"
+      },
+      "value": false,
+      "hint": {
+        "en": "Infer presence from Zigbee signal fluctuations (BETA)",
+        "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
+      }
+    },
+    {
+      "id": "radio_sensitivity",
+      "type": "number",
+      "label": {
+        "en": "Radio Presence Sensitivity",
+        "fr": "Sensibilité Présence Radio"
+      },
+      "value": 15,
+      "min": 5,
+      "max": 50,
+      "hint": {
+        "en": "LQI variance threshold (higher = less sensitive)",
+        "fr": "Seuil de variance LQI (plus haut = moins sensible)"
+      }
+    }
+  ],
+  "images": {
+    "small": "/drivers/air_quality_co2/assets/images/small.png",
+    "large": "/drivers/air_quality_co2/assets/images/large.png"
+  },
+  "platforms": [
+    "local"
+  ],
+  "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "fr": "Vérifier MÃJ OTA",
+        "nl": "Controleer op OTA-updates"
+      }
+    }
+  ],
+  "flow": {
+    "triggers": [],
+    "conditions": [],
+    "actions": []
+  },
+  "id": "air_purifier_quality",
+  "version": "1.0.0",
+  "connectivity": [
+    "zigbee"
+  ],
+  "zigbee": {
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0
+        ]
+      }
+    },
+    "manufacturerName": [
+      "_GENERIC_AIR_PURIFIER_QUALITY",
+      "_generic_air_purifier_quality"
+    ]
+  }
+}

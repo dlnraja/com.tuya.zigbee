@@ -1,0 +1,108 @@
+{
+  "name": {
+    "en": "Device Radiator Valve Thermostat",
+    "nl": "Device Radiator Valve Thermostat",
+    "fr": "Device Radiator Valve Thermostat"
+  },
+  "class": "thermostat",
+  "capabilities": [
+    "target_temperature",
+    "measure_temperature",
+    "thermostat_mode",
+    "measure_battery",
+    "onoff",
+    "measure_humidity",
+    "child_lock",
+    "button.1"
+  ],
+  "platforms": [
+    "local"
+  ],
+  "images": {
+    "large": "/drivers/thermostat_tuya_dp/assets/images/large.png",
+    "small": "/drivers/thermostat_tuya_dp/assets/images/small.png"
+  },
+  "energy": {
+    "batteries": [
+      "CR2450"
+    ],
+    "mains": true
+  },
+  "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "fr": "Vérifier MÃJ OTA",
+        "nl": "Controleer op OTA-updates"
+      }
+    }
+  ],
+  "flow": {
+    "triggers": [],
+    "conditions": [],
+    "actions": []
+  },
+  "settings": [
+    {
+      "id": "enable_radio_sensing",
+      "type": "checkbox",
+      "label": {
+        "en": "Enable Radio Presence Sensing",
+        "fr": "Activer la Détection de Présence Radio"
+      },
+      "value": false,
+      "hint": {
+        "en": "Infer presence from Zigbee signal fluctuations (BETA)",
+        "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
+      }
+    },
+    {
+      "id": "radio_sensitivity",
+      "type": "number",
+      "label": {
+        "en": "Radio Presence Sensitivity",
+        "fr": "Sensibilité Présence Radio"
+      },
+      "value": 15,
+      "min": 5,
+      "max": 50,
+      "hint": {
+        "en": "LQI variance threshold (higher = less sensitive)",
+        "fr": "Seuil de variance LQI (plus haut = moins sensible)"
+      }
+    }
+  ],
+  "id": "device_radiator_valve_thermostat",
+  "version": "1.0.0",
+  "connectivity": [
+    "zigbee"
+  ],
+  "zigbee": {
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0
+        ]
+      }
+    },
+    "manufacturerName": [
+      "_hybrid_device_radiator_valve_thermostat_needs_device_assignment",
+      "_HYBRID_DEVICE_RADIATOR_VALVE_THERMOSTAT_NEEDS_DEVICE_ASSIGNMENT"
+    ]
+  },
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  }
+}

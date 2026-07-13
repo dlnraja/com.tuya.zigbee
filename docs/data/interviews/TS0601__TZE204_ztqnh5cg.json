@@ -1,0 +1,17 @@
+{
+  "id": "INT-004",
+  "deviceName": "Presence Sensor",
+  "manufacturerName": "_TZE204_ztqnh5cg",
+  "productId": "TS0601",
+  "source": "Forum Page 45/46",
+  "user": "tlink",
+  "status": "fixed",
+  "driver": "presence_sensor_radar",
+  "symptoms": ["Flow triggers don't work (presence_detected, presence_cleared)"],
+  "fix": {
+    "applied": true,
+    "version": "5.5.435",
+    "commit": "efcce36261",
+    "description": "Flow registration added in driver.js"
+  }
+}

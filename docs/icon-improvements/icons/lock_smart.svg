@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="960" height="960" viewBox="0 0 960 960" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Lock body -->
+  <rect x="250" y="380" width="460" height="400" rx="40" stroke="black" stroke-width="40" fill="none"/>
+  <!-- Lock shackle -->
+  <path d="M320 380V300C320 210 390 150 480 150C570 150 640 210 640 300V380"
+        stroke="black" stroke-width="40" fill="none" stroke-linecap="round"/>
+  <!-- Keyhole -->
+  <circle cx="480" cy="530" r="50" stroke="black" stroke-width="30" fill="none"/>
+  <rect x="460" y="560" width="40" height="100" rx="10" fill="black"/>
+  <!-- Deadbolt indicator -->
+  <rect x="400" y="680" width="160" height="40" rx="10" fill="black"/>
+  <!-- Fingerprint area (optional) -->
+  <circle cx="480" cy="300" r="40" stroke="black" stroke-width="15" fill="none"/>
+</svg>

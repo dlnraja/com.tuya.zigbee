@@ -1,0 +1,115 @@
+{
+  "id": "air_purifier_siren",
+  "name": {
+    "en": "Air Purifier Siren",
+    "nl": "Luchtzuiveraar Sirene",
+    "fr": "Système de sirène purificateur d'air",
+    "de": "Luftreiniger Sirene",
+    "es": "Purificador de aire Sirena"
+  },
+  "class": "other",
+  "capabilities": [
+    "onoff",
+    "measure_temperature",
+    "measure_humidity",
+    "alarm_siren",
+    "alarm_motion",
+    "measure_battery",
+    "alarm_generic",
+    "dim",
+    "measure_pm25",
+    "button.1"
+  ],
+  "capabilitiesOptions": {
+    "onoff": {
+      "greyout": false
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  },
+  "energy": {
+    "batteries": [
+      "CR2450"
+    ],
+    "mains": true
+  },
+  "platforms": [
+    "local"
+  ],
+  "images": {
+    "small": "/drivers/air_purifier_siren/assets/images/small.png",
+    "large": "/drivers/air_purifier_siren/assets/images/large.png"
+  },
+  "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "fr": "Vérifier MÃJ OTA",
+        "nl": "Controleer op OTA-updates"
+      }
+    }
+  ],
+  "flow": {
+    "triggers": [],
+    "conditions": [],
+    "actions": []
+  },
+  "settings": [
+    {
+      "id": "enable_radio_sensing",
+      "type": "checkbox",
+      "label": {
+        "en": "Enable Radio Presence Sensing",
+        "fr": "Activer la Détection de Présence Radio"
+      },
+      "value": false,
+      "hint": {
+        "en": "Infer presence from Zigbee signal fluctuations (BETA)",
+        "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
+      }
+    },
+    {
+      "id": "radio_sensitivity",
+      "type": "number",
+      "label": {
+        "en": "Radio Presence Sensitivity",
+        "fr": "Sensibilité Présence Radio"
+      },
+      "value": 15,
+      "min": 5,
+      "max": 50,
+      "hint": {
+        "en": "LQI variance threshold (higher = less sensitive)",
+        "fr": "Seuil de variance LQI (plus haut = moins sensible)"
+      }
+    }
+  ],
+  "version": "1.0.0",
+  "connectivity": [
+    "zigbee"
+  ],
+  "zigbee": {
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0
+        ]
+      }
+    },
+    "manufacturerName": [
+      "_hybrid_air_purifier_siren_needs_device_assignment",
+      "_HYBRID_AIR_PURIFIER_SIREN_NEEDS_DEVICE_ASSIGNMENT"
+    ]
+  }
+}

@@ -1,0 +1,180 @@
+{
+  "class": "socket",
+  "capabilities": [
+    "onoff",
+    "onoff.l2",
+    "measure_power",
+    "meter_power",
+    "button.1"
+  ],
+  "zigbee": {
+    "productId": [
+      "TS0002"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6,
+          57344,
+          57345,
+          1794,
+          2820
+        ]
+      },
+      "2": {
+        "clusters": [
+          4,
+          5,
+          6
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "/drivers/switch_usb_dongle/assets/learnmode.svg",
+      "instruction": {
+        "en": "Plug the USB dongle into a USB power source. Press the button on the dongle 3 times quickly.",
+        "fr": "Branchez le dongle USB sur une source d'alimentation USB. Appuyez 3 fois rapidement sur le bouton du dongle."
+      }
+    },
+    "manufacturerName": [
+      "_TZE200_dummy"
+    ]
+  },
+  "images": {
+    "small": "/drivers/switch_usb_dongle/assets/images/small.png",
+    "large": "/drivers/switch_usb_dongle/assets/images/large.png",
+    "xlarge": "/drivers/switch_usb_dongle/assets/images/xlarge.png"
+  },
+  "settings": [
+    {
+      "id": "power_on_behavior",
+      "type": "dropdown",
+      "label": {
+        "en": "Power-On Behavior",
+        "fr": "Comportement à la mise sous tension"
+      },
+      "hint": {
+        "en": "What happens when power is restored after an outage (moesStartUpOnOff attribute)",
+        "fr": "Comportement lors de la restauration du courant après une coupure"
+      },
+      "value": "previous",
+      "values": [
+        {
+          "id": "off",
+          "label": {
+            "en": "Always Off",
+            "fr": "Toujours éteint"
+          }
+        },
+        {
+          "id": "on",
+          "label": {
+            "en": "Always On",
+            "fr": "Toujours allumé"
+          }
+        },
+        {
+          "id": "previous",
+          "label": {
+            "en": "Last State",
+            "fr": "Dernier état"
+          }
+        }
+      ]
+    }
+  ],
+  "name": {
+    "en": "USB 2-Port Relay & Zigbee Repeater",
+    "nl": "USB 2-poorts relais & Zigbee-repeater",
+    "fr": "Relais USB 2 ports & répéteur Zigbee",
+    "de": "USB 2-Port Relais & Zigbee Repeater",
+    "es": "Relé USB 2 puertos y repetidor Zigbee"
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "capabilitiesOptions": {
+    "onoff": {
+      "title": {
+        "en": "USB Port 1 (l1)",
+        "fr": "Port USB 1 (l1)"
+      }
+    },
+    "onoff.l2": {
+      "title": {
+        "en": "USB Port 2 (l2)",
+        "fr": "Port USB 2 (l2)"
+      }
+    },
+    "measure_power": {
+      "title": {
+        "en": "Power Consumption",
+        "fr": "Consommation électrique"
+      }
+    },
+    "meter_power": {
+      "title": {
+        "en": "Cumulative Energy",
+        "fr": "Énergie cumulée"
+      }
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    },
+    "measure_battery": {
+      "title": {
+        "en": "Battery",
+        "fr": "Batterie",
+        "nl": "Batterij",
+        "de": "Batterie"
+      }
+    }
+  },
+  "metadata": {
+    "app": {
+      "id": "com.dlnraja.tuya.zigbee",
+      "name": "Tuya Unified Zigbee",
+      "version": "7.5.50",
+      "api": {
+        "min": 3,
+        "max": 3
+      }
+    }
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ],
+  "id": "switch_usb_dongle",
+  "version": "1.0.0",
+  "energy": {
+    "batteries": [
+      "CR2032"
+    ]
+  },
+  "_pidConflictNotes": [
+    "// PID-CONFLICT-NOTE TS0002 shared with 27 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
+  ]
+}

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="960" height="960" viewBox="0 0 960 960" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Wall plate -->
+  <rect x="200" y="120" width="560" height="720" rx="40" stroke="black" stroke-width="40" fill="none"/>
+  <!-- Dimmer knob outer ring -->
+  <circle cx="480" cy="480" r="180" stroke="black" stroke-width="40" fill="none"/>
+  <!-- Dimmer knob inner -->
+  <circle cx="480" cy="480" r="80" fill="black"/>
+  <!-- Indicator line (rotated 45 degrees) -->
+  <line x1="480" y1="320" x2="480" y2="380" stroke="white" stroke-width="20" stroke-linecap="round"/>
+  <!-- Arc indicator showing level -->
+  <path d="M 300 480 A 180 180 0 0 1 480 300" stroke="black" stroke-width="15" fill="none" stroke-linecap="round"/>
+</svg>

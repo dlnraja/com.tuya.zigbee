@@ -1,0 +1,70 @@
+{
+  "id": "tariff_is_peak_period",
+  "title": {
+    "en": "Currently in peak period"
+  },
+  "hint": {
+    "en": "Checks if the current time falls within a peak tariff period"
+  },
+  "args": [
+    {
+      "name": "period_type",
+      "type": "dropdown",
+      "title": {
+        "en": "Period type to check"
+      },
+      "values": [
+        {
+          "id": "peak",
+          "title": {
+            "en": "Peak"
+          }
+        },
+        {
+          "id": "shoulder",
+          "title": {
+            "en": "Shoulder"
+          }
+        },
+        {
+          "id": "off_peak",
+          "title": {
+            "en": "Off-Peak"
+          }
+        },
+        {
+          "id": "day",
+          "title": {
+            "en": "Day"
+          }
+        },
+        {
+          "id": "night",
+          "title": {
+            "en": "Night"
+          }
+        }
+      ]
+    }
+  ],
+  "tokens": [
+    {
+      "name": "current_period",
+      "type": "string",
+      "title": {
+        "en": "Current period"
+      },
+      "example": "peak"
+    },
+    {
+      "name": "current_rate",
+      "type": "number",
+      "title": {
+        "en": "Current rate per kWh"
+      }
+    }
+  ],
+  "titleFormatted": {
+    "en": "Currently in peak period [[period_type]]"
+  }
+}

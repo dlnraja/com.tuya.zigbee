@@ -1,0 +1,659 @@
+{
+  "triggers": [
+    {
+      "id": "contact_sensor_switch_switch_1gang_turned_on",
+      "title": {
+        "en": "Turned on",
+        "fr": "Allumé",
+        "nl": "Aangezet",
+        "de": "Eingeschaltet"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Turned on",
+        "fr": "Allumé",
+        "nl": "Aangezet",
+        "de": "Eingeschaltet"
+      }
+    },
+    {
+      "id": "contact_sensor_switch_switch_1gang_turned_off",
+      "title": {
+        "en": "Turned off",
+        "fr": "Ã‰teint",
+        "nl": "Uitgezet",
+        "de": "Ausgeschaltet"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Turned off",
+        "fr": "Ã‰teint",
+        "nl": "Uitgezet",
+        "de": "Ausgeschaltet"
+      }
+    },
+    {
+      "id": "contact_sensor_switch_switch_1gang_physical_on",
+      "title": {
+        "en": "Physical ON",
+        "fr": "Physique ON",
+        "nl": "Fysiek AAN",
+        "de": "Physisch EIN"
+      },
+      "hint": {
+        "en": "Physical button turns ON",
+        "fr": "Bouton physique allume",
+        "nl": "Fysieke knop schakelt in",
+        "de": "Physische Taste schaltet ein"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Physical ON",
+        "fr": "Physique ON",
+        "nl": "Fysiek AAN",
+        "de": "Physisch EIN"
+      }
+    },
+    {
+      "id": "contact_sensor_switch_switch_1gang_physical_off",
+      "title": {
+        "en": "Physical OFF",
+        "fr": "Physique OFF",
+        "nl": "Fysiek UIT",
+        "de": "Physisch AUS"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Physical OFF",
+        "fr": "Physique OFF",
+        "nl": "Fysiek UIT",
+        "de": "Physisch AUS"
+      }
+    },
+    {
+      "id": "contact_sensor_switch_switch_1gang_physical_single",
+      "title": {
+        "en": "Single press",
+        "fr": "Simple pression",
+        "nl": "Enkele druk",
+        "de": "Einfacher Druck"
+      },
+      "hint": {
+        "en": "Physical button single press",
+        "fr": "Simple pression du bouton physique",
+        "nl": "Enkele druk op fysieke knop",
+        "de": "Einfacher Druck auf physische Taste"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Single press",
+        "fr": "Simple pression",
+        "nl": "Enkele druk",
+        "de": "Einfacher Druck"
+      }
+    },
+    {
+      "id": "contact_sensor_switch_switch_1gang_physical_double",
+      "title": {
+        "en": "Double press",
+        "fr": "Double pression",
+        "nl": "Dubbele druk",
+        "de": "Doppelter Druck"
+      },
+      "hint": {
+        "en": "Physical button double press",
+        "fr": "Double pression du bouton physique",
+        "nl": "Dubbele druk op fysieke knop",
+        "de": "Doppelter Druck auf physische Taste"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Double press",
+        "fr": "Double pression",
+        "nl": "Dubbele druk",
+        "de": "Doppelter Druck"
+      }
+    },
+    {
+      "id": "contact_sensor_switch_switch_1gang_physical_long_press",
+      "title": {
+        "en": "Long press",
+        "fr": "Pression longue",
+        "nl": "Lange druk",
+        "de": "Langer Druck"
+      },
+      "hint": {
+        "en": "Physical button held >600ms",
+        "fr": "Bouton physique maintenu >600ms",
+        "nl": "Fysieke knop ingedrukt >600ms",
+        "de": "Physische Taste gehalten >600ms"
+      },
+      "tokens": [
+        {
+          "name": "duration",
+          "type": "number",
+          "title": {
+            "en": "Duration (ms)"
+          },
+          "example": 1200
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Long press",
+        "fr": "Pression longue",
+        "nl": "Lange druk",
+        "de": "Langer Druck"
+      }
+    },
+    {
+      "id": "contact_sensor_switch_switch_1gang_physical_triple",
+      "title": {
+        "en": "Triple press",
+        "fr": "Triple pression",
+        "nl": "Drievoudige druk",
+        "de": "Dreifacher Druck"
+      },
+      "hint": {
+        "en": "Physical button triple press or more",
+        "fr": "Triple pression ou plus",
+        "nl": "Drievoudige druk of meer",
+        "de": "Dreifacher Druck oder mehr"
+      },
+      "tokens": [
+        {
+          "name": "clicks",
+          "type": "number",
+          "title": {
+            "en": "Click count"
+          },
+          "example": 3
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Triple press",
+        "fr": "Triple pression",
+        "nl": "Drievoudige druk",
+        "de": "Dreifacher Druck"
+      }
+    },
+    {
+      "id": "contact_sensor_switch_switch_1gang_battery_low",
+      "title": {
+        "en": "Battery low",
+        "fr": "Batterie faible",
+        "nl": "Batterij laag",
+        "de": "Batterie schwach"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Battery low",
+        "fr": "Batterie faible",
+        "nl": "Batterij laag",
+        "de": "Batterie schwach"
+      }
+    },
+    {
+      "id": "contact_sensor_switch_switch_1gang_power_changed",
+      "title": {
+        "en": "Power changed",
+        "fr": "Puissance changée",
+        "nl": "Vermogen gewijzigd",
+        "de": "Leistung geÃ¤ndert"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Power changed",
+        "fr": "Puissance changée",
+        "nl": "Vermogen gewijzigd",
+        "de": "Leistung geÃ¤ndert"
+      }
+    },
+    {
+      "id": "contact_sensor_switch_switch_1gang_gang1_scene",
+      "title": {
+        "en": "Gang 1 scene triggered"
+      },
+      "args": [],
+      "tokens": [
+        {
+          "name": "action",
+          "type": "string",
+          "title": {
+            "en": "Action"
+          },
+          "example": {
+            "en": "on"
+          }
+        }
+      ],
+      "titleFormatted": {
+        "en": "Gang 1 scene triggered"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "id": "contact_sensor_switch_switch_1gang_is_on",
+      "title": {
+        "en": "Is !{{on|off}}",
+        "fr": "Est !{{allumé|éteint}}",
+        "nl": "Is !{{aan|uit}}",
+        "de": "Ist !{{ein|aus}}"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Is !{{on|off}}",
+        "fr": "Est !{{allumé|éteint}}",
+        "nl": "Is !{{aan|uit}}",
+        "de": "Ist !{{ein|aus}}"
+      }
+    }
+  ],
+  "actions": [
+    {
+      "id": "contact_sensor_switch_switch_1gang_turn_on",
+      "title": {
+        "en": "Turn on",
+        "fr": "Allumer",
+        "nl": "Aanzetten",
+        "de": "Einschalten"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn on",
+        "fr": "Allumer",
+        "nl": "Aanzetten",
+        "de": "Einschalten"
+      }
+    },
+    {
+      "id": "contact_sensor_switch_switch_1gang_turn_off",
+      "title": {
+        "en": "Turn off",
+        "fr": "Ã‰teindre",
+        "nl": "Uitzetten",
+        "de": "Ausschalten"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn off",
+        "fr": "Ã‰teindre",
+        "nl": "Uitzetten",
+        "de": "Ausschalten"
+      }
+    },
+    {
+      "id": "contact_sensor_switch_switch_1gang_toggle",
+      "title": {
+        "en": "Toggle",
+        "fr": "Basculer",
+        "nl": "Wisselen",
+        "de": "Umschalten"
+      },
+      "hint": {
+        "en": "Toggle the switch state (onoff, offon)",
+        "fr": "Basculer l'état (onoff, offon)",
+        "nl": "Wissel de status (aanuit, uitaan)",
+        "de": "Status umschalten (einaus, ausein)"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Toggle",
+        "fr": "Basculer",
+        "nl": "Wisselen",
+        "de": "Umschalten"
+      }
+    },
+    {
+      "id": "contact_sensor_switch_switch_1gang_set_backlight",
+      "title": {
+        "en": "Set LED backlight mode",
+        "fr": "Définir le mode rétroéclairage LED",
+        "nl": "LED achtergrondverlichting instellen",
+        "de": "LED-Hintergrundbeleuchtung einstellen"
+      },
+      "hint": {
+        "en": "Control the switch LED indicator (DP15)",
+        "fr": "ContrÃ´le l'indicateur LED (DP15)",
+        "nl": "Beheer de LED indicator (DP15)",
+        "de": "Steuert die LED-Anzeige (DP15)"
+      },
+      "args": [
+        {
+          "type": "dropdown",
+          "name": "mode",
+          "title": {
+            "en": "Mode"
+          },
+          "values": [
+            {
+              "id": "off",
+              "title": {
+                "en": "Off",
+                "fr": "Ã‰teint",
+                "nl": "Uit",
+                "de": "Aus"
+              }
+            },
+            {
+              "id": "normal",
+              "title": {
+                "en": "Normal (LED when ON)",
+                "fr": "Normal (LED quand allumé)",
+                "nl": "Normaal (LED bij AAN)",
+                "de": "Normal (LED bei EIN)"
+              }
+            },
+            {
+              "id": "inverted",
+              "title": {
+                "en": "Inverted (LED when OFF)",
+                "fr": "Inversé (LED quand éteint)",
+                "nl": "Omgekeerd (LED bij UIT)",
+                "de": "Invertiert (LED bei AUS)"
+              }
+            }
+          ]
+        }
+      ],
+      "titleFormatted": {
+        "en": "Set LED backlight mode [[mode]]",
+        "fr": "Définir le mode rétroéclairage LED [[mode]]",
+        "nl": "LED achtergrondverlichting instellen [[mode]]",
+        "de": "LED-Hintergrundbeleuchtung einstellen [[mode]]"
+      }
+    },
+    {
+      "id": "contact_sensor_switch_switch_1gang_set_backlight_color",
+      "title": {
+        "en": "Set LED color",
+        "fr": "Définir la couleur LED",
+        "nl": "LED kleur instellen",
+        "de": "LED-Farbe einstellen"
+      },
+      "hint": {
+        "en": "Set LED color for ON or OFF state (DP103/104, requires colored backlight)",
+        "fr": "Définir couleur LED pour état ON/OFF (DP103/104)",
+        "nl": "Stel LED kleur in voor AAN/UIT (DP103/104)",
+        "de": "LED-Farbe fÃ¼r EIN/AUS setzen (DP103/104)"
+      },
+      "args": [
+        {
+          "type": "dropdown",
+          "name": "state",
+          "title": {
+            "en": "State"
+          },
+          "values": [
+            {
+              "id": "on",
+              "title": {
+                "en": "ON state",
+                "fr": "Ã‰tat ON",
+                "nl": "AAN staat",
+                "de": "EIN-Zustand"
+              }
+            },
+            {
+              "id": "off",
+              "title": {
+                "en": "OFF state",
+                "fr": "Ã‰tat OFF",
+                "nl": "UIT staat",
+                "de": "AUS-Zustand"
+              }
+            }
+          ]
+        },
+        {
+          "type": "dropdown",
+          "name": "color",
+          "title": {
+            "en": "Color"
+          },
+          "values": [
+            {
+              "id": "red",
+              "title": {
+                "en": "Red",
+                "fr": "Rouge",
+                "nl": "Rood",
+                "de": "Rot"
+              }
+            },
+            {
+              "id": "blue",
+              "title": {
+                "en": "Blue",
+                "fr": "Bleu",
+                "nl": "Blauw",
+                "de": "Blau"
+              }
+            },
+            {
+              "id": "green",
+              "title": {
+                "en": "Green",
+                "fr": "Vert",
+                "nl": "Groen",
+                "de": "GrÃ¼n"
+              }
+            },
+            {
+              "id": "white",
+              "title": {
+                "en": "White",
+                "fr": "Blanc",
+                "nl": "Wit",
+                "de": "WeiÃŸ"
+              }
+            },
+            {
+              "id": "yellow",
+              "title": {
+                "en": "Yellow",
+                "fr": "Jaune",
+                "nl": "Geel",
+                "de": "Gelb"
+              }
+            },
+            {
+              "id": "magenta",
+              "title": {
+                "en": "Magenta",
+                "fr": "Magenta",
+                "nl": "Magenta",
+                "de": "Magenta"
+              }
+            },
+            {
+              "id": "cyan",
+              "title": {
+                "en": "Cyan",
+                "fr": "Cyan",
+                "nl": "Cyaan",
+                "de": "Cyan"
+              }
+            },
+            {
+              "id": "warm_white",
+              "title": {
+                "en": "Warm White",
+                "fr": "Blanc Chaud",
+                "nl": "Warm Wit",
+                "de": "WarmweiÃŸ"
+              }
+            },
+            {
+              "id": "warm_yellow",
+              "title": {
+                "en": "Warm Yellow",
+                "fr": "Jaune Chaud",
+                "nl": "Warm Geel",
+                "de": "Warmgelb"
+              }
+            }
+          ]
+        }
+      ],
+      "titleFormatted": {
+        "en": "Set LED color [[state]] [[color]]",
+        "fr": "Définir la couleur LED [[state]] [[color]]",
+        "nl": "LED kleur instellen [[state]] [[color]]",
+        "de": "LED-Farbe einstellen [[state]] [[color]]"
+      }
+    },
+    {
+      "id": "contact_sensor_switch_switch_1gang_set_backlight_brightness",
+      "title": {
+        "en": "Set LED brightness",
+        "fr": "Définir luminosité LED",
+        "nl": "LED helderheid instellen",
+        "de": "LED-Helligkeit einstellen"
+      },
+      "hint": {
+        "en": "Set LED backlight brightness 0-100% (DP102)",
+        "fr": "Luminosité rétroéclairage 0-100% (DP102)",
+        "nl": "LED helderheid 0-100% (DP102)",
+        "de": "LED-Helligkeit 0-100% (DP102)"
+      },
+      "args": [
+        {
+          "type": "range",
+          "name": "brightness",
+          "min": 0,
+          "max": 100,
+          "step": 5,
+          "label": "%",
+          "labelDecimals": 0
+        }
+      ],
+      "titleFormatted": {
+        "en": "Set LED brightness [[brightness]]",
+        "fr": "Définir luminosité LED [[brightness]]",
+        "nl": "LED helderheid instellen [[brightness]]",
+        "de": "LED-Helligkeit einstellen [[brightness]]"
+      }
+    },
+    {
+      "id": "contact_sensor_switch_switch_1gang_set_countdown",
+      "title": {
+        "en": "Set countdown timer",
+        "fr": "Définir minuterie",
+        "nl": "Afteltimer instellen",
+        "de": "Countdown-Timer setzen"
+      },
+      "hint": {
+        "en": "Auto turn off after countdown (DP7, max 86400s = 24h)",
+        "fr": "Extinction auto après compte àrebours (DP7, max 86400s)",
+        "nl": "Auto uit na aftellen (DP7, max 86400s)",
+        "de": "Auto-Aus nach Countdown (DP7, max 86400s)"
+      },
+      "args": [
+        {
+          "type": "number",
+          "name": "seconds",
+          "min": 0,
+          "max": 86400,
+          "step": 1,
+          "placeholder": {
+            "en": "60"
+          }
+        }
+      ],
+      "titleFormatted": {
+        "en": "Set countdown timer [[seconds]]",
+        "fr": "Définir minuterie [[seconds]]",
+        "nl": "Afteltimer instellen [[seconds]]",
+        "de": "Countdown-Timer setzen [[seconds]]"
+      }
+    },
+    {
+      "id": "contact_sensor_switch_switch_1gang_set_child_lock",
+      "title": {
+        "en": "Set child lock",
+        "fr": "Définir verrouillage enfant",
+        "nl": "Kinderslot instellen",
+        "de": "Kindersicherung setzen"
+      },
+      "hint": {
+        "en": "Lock/unlock physical buttons (DP101)",
+        "fr": "Verrouiller/déverrouiller boutons (DP101)",
+        "nl": "Vergrendel/ontgrendel knoppen (DP101)",
+        "de": "Tasten sperren/entsperren (DP101)"
+      },
+      "args": [
+        {
+          "type": "dropdown",
+          "name": "locked",
+          "title": {
+            "en": "Lock"
+          },
+          "values": [
+            {
+              "id": "true",
+              "title": {
+                "en": "Locked",
+                "fr": "Verrouillé",
+                "nl": "Vergrendeld",
+                "de": "Gesperrt"
+              }
+            },
+            {
+              "id": "false",
+              "title": {
+                "en": "Unlocked",
+                "fr": "Déverrouillé",
+                "nl": "Ontgrendeld",
+                "de": "Entsperrt"
+              }
+            }
+          ]
+        }
+      ],
+      "titleFormatted": {
+        "en": "Set child lock [[locked]]",
+        "fr": "Définir verrouillage enfant [[locked]]",
+        "nl": "Kinderslot instellen [[locked]]",
+        "de": "Kindersicherung setzen [[locked]]"
+      }
+    },
+    {
+      "id": "contact_sensor_switch_switch_1gang_set_scene_mode",
+      "title": {
+        "en": "Set scene mode"
+      },
+      "args": [
+        {
+          "name": "mode",
+          "type": "dropdown",
+          "values": [
+            {
+              "id": "auto",
+              "title": {
+                "en": "Auto (Normal + flows)"
+              }
+            },
+            {
+              "id": "magic",
+              "title": {
+                "en": "Magic (Scene only)"
+              }
+            },
+            {
+              "id": "both",
+              "title": {
+                "en": "Both (Load + scene)"
+              }
+            }
+          ]
+        }
+      ],
+      "titleFormatted": {
+        "en": "Set scene mode [[mode]]"
+      }
+    }
+  ]
+}

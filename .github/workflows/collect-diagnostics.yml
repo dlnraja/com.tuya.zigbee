@@ -1,0 +1,105 @@
+# 🇺‌🇳‌🇮‌🇫‌🇮‌🇪‌🇩‌ ‌🇨‌🇴‌🇳‌🇸‌🇴‌🇱‌🇮‌🇩‌🇦‌🇹‌🇮‌🇴‌🇳‌ ‌🇻‌8‌.‌5‌.‌1‌7‌ — ENABLED
+name: Collect Diagnostics
+# <!-- badges:start -->
+# [![Collect Diagnostics](https://github.com/dlnraja/com.tuya.zigbee/actions/workflows/collect-diagnostics.yml/badge.svg)](https://github.com/dlnraja/com.tuya.zigbee/actions/workflows/collect-diagnostics.yml)
+# <!-- badges:end -->
+
+
+on:
+  schedule:
+    - cron: '15 10 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: read
+
+concurrency:
+  group: collect-diagnostics
+  cancel-in-progress: true
+
+env:
+  NODE_VERSION: "22"
+  NODE_OPTIONS: "--dns-result-order=ipv4first"
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/setup-node@v5
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+      - run: npm ci --prefer-offline --no-audit || npm install
+
+      - name: Collect diagnostics from all sources
+        continue-on-error: true
+        env:
+          HOMEY_PAT_API: ${{ secrets.HOMEY_PAT_API }}
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+          GH_PAT: ${{ secrets.GH_PAT }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node .github/scripts/collect-diagnostics.js
+      - name: Privacy gate for collected diagnostics
+        if: always()
+        run: node .github/scripts/privacy-redactor.js diagnostics .github/state/diagnostics-report.json .github/state/homey-device-report.json
+
+      - name: Commit diagnostics
+        continue-on-error: true
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if [ -d "diagnostics" ] && [ "$(ls -A diagnostics/ 2>/dev/null)" ]; then
+            node .github/scripts/privacy-redactor.js diagnostics .github/state/diagnostics-report.json .github/state/homey-device-report.json
+            git add diagnostics/
+            if ! git diff --staged --quiet; then
+              git commit -m "Diagnostics update $(date -u +%Y-%m-%d) [skip ci]"
+              bash scripts/ci/verified-git-push.sh master
+            else
+              echo "No diagnostic changes to commit"
+            fi
+          else
+            echo "::warning::diagnostics/ directory is empty or missing — skipping commit"
+          fi
+
+      - name: "Pattern Detector (analyze collected diagnostics)"
+        if: always()
+        continue-on-error: true
+        timeout-minutes: 5
+        run: node .github/scripts/pattern-detector.js
+
+      - name: "Resolution Summary"
+        if: always()
+        continue-on-error: true
+        run: node .github/scripts/resolution-summary.js
+
+      - name: Privacy gate before artifact upload
+        if: always()
+        run: node .github/scripts/privacy-redactor.js diagnostics
+
+      - name: Upload diagnostics artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: diagnostics-summary-${{ github.run_id }}
+          path: diagnostics/summary.json
+          retention-days: 30
+          if-no-files-found: warn
+      - name: Verify artifact upload
+        continue-on-error: true
+        if: always()
+        run: |
+          if [ -f "diagnostics/summary.json" ]; then
+            echo "Diagnostics summary ready for upload"
+          else
+            echo "::warning::diagnostics/summary.json not found — diagnostics collection may have failed"
+          fi

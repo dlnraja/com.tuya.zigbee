@@ -1,0 +1,151 @@
+{
+  "id": "handheld_remote_4_buttons",
+  "name": {
+    "en": "4 Button Remote",
+    "fr": "Télécommande 4 boutons",
+    "nl": "4-knops afstandsbediening",
+    "de": "4-Tasten-Fernbedienung",
+    "es": "Mando a distancia de 4 botones"
+  },
+  "class": "remote",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "capabilities": [
+    "button",
+    "measure_battery",
+    "button.1"
+  ],
+  "images": {
+    "large": "/drivers/handheld_remote_4_buttons/assets/images/large.png",
+    "small": "/drivers/handheld_remote_4_buttons/assets/images/small.png",
+    "xlarge": "/drivers/handheld_remote_4_buttons/assets/images/xlarge.png"
+  },
+  "energy": {
+    "batteries": [
+      "CR2032"
+    ]
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_tz3000_j70oanab",
+      "_tz3000_lxw3kcw2",
+      "_tz3000_rrjr1dsk",
+      "_tz3000_sqw3qqtc",
+      "_tz3000_uri7ez8u",
+      "_tz3000_vdfwjopk",
+      "_tz3000_w4thianr",
+      "_tz3000_w8jwkczz",
+      "_tz3000_xkh6oajz",
+      "_tz3000_yesuiipb",
+      "_tz3000_zszzgweg"
+    ],
+    "productId": [
+      "TS0044",
+      "TS004F",
+      "SNZB-01M",
+      "TS0014",
+      "TS0601",
+      "TS0215A"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6
+        ]
+      },
+      "2": {
+        "clusters": [
+          6
+        ]
+      },
+      "3": {
+        "clusters": [
+          6
+        ]
+      },
+      "4": {
+        "clusters": [
+          6
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "{{driverAssetsPath}}/icon.svg",
+      "instruction": {
+        "en": "Press the top button for aprox 10 seconds (Zigbee logo will start blinking)."
+      }
+    }
+  },
+  "settings": [
+    {
+      "id": "button_mode",
+      "type": "dropdown",
+      "label": {
+        "en": "Operating Mode",
+        "fr": "Mode de fonctionnement"
+      },
+      "hint": {
+        "en": "Scene Mode allows single/double/long press. Dimmer Mode only supports single press. Auto tries to detect and switch automatically.",
+        "fr": "Le mode Scène permet les appuis simples/doubles/longs. Le mode Variateur ne supporte que l'appui simple. Auto tente de détecter et basculer automatiquement."
+      },
+      "value": "auto",
+      "values": [
+        {
+          "id": "auto",
+          "label": {
+            "en": "Auto-Detect",
+            "fr": "Détection Auto"
+          }
+        },
+        {
+          "id": "scene",
+          "label": {
+            "en": "Scene Mode (Multi-press)",
+            "fr": "Mode Scène (Multi-clics)"
+          }
+        },
+        {
+          "id": "dimmer",
+          "label": {
+            "en": "Dimmer Mode",
+            "fr": "Mode Variateur"
+          }
+        }
+      ]
+    }
+  ],
+  "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "fr": "Vérifier MàJ OTA",
+        "nl": "Controleer op OTA-updates"
+      }
+    }
+  ],
+  "version": "1.0.0",
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  },
+  "_pidConflictNotes": [
+    "// PID-CONFLICT-NOTE TS0215A shared with 28 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE TS004F shared with 19 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE TS0044 shared with 9 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE TS0014 shared with 7 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE SNZB-01M shared with 5 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
+  ]
+}

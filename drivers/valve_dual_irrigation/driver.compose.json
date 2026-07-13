@@ -1,0 +1,128 @@
+{
+  "name": {
+    "en": "Smart Valve 2-Way",
+    "fr": "Vanne Connectée 2 Voies",
+    "nl": "Tweevoudige Irrigatieklep",
+    "de": "Zwei-Wege-BewÃ¤sserungsventil"
+  },
+  "class": "other",
+  "capabilities": [
+    "onoff.valve_1",
+    "onoff.valve_2",
+    "measure_battery",
+    "button.1"
+  ],
+  "zigbee": {
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6,
+          61184
+        ]
+      }
+    },
+    "manufacturerName": [
+      "_master_valve_dual_irrigation_needs_device_assignment",
+      "_MASTER_VALVE_DUAL_IRRIGATION_NEEDS_DEVICE_ASSIGNMENT",
+      "_tze284_eaet5qt5",
+      "_TZE284_eaet5qt5",
+      "_TZE284_EAET5QT5",
+      "_tze284_fhvpaltk",
+      "_TZE284_fhvpaltk",
+      "_TZE284_FHVPALTK"
+    ]
+  },
+  "images": {
+    "small": "/drivers/valve_dual_irrigation/assets/images/small.png",
+    "large": "/drivers/valve_dual_irrigation/assets/images/large.png"
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "energy": {
+    "batteries": [
+      "AA"
+    ]
+  },
+  "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "fr": "Vérifier MÃJ OTA",
+        "nl": "Controleer op OTA-updates"
+      }
+    }
+  ],
+  "capabilitiesOptions": {
+    "onoff.valve_1": {
+      "title": {
+        "en": "Valve 1",
+        "fr": "Vanne 1",
+        "nl": "Klep 1",
+        "de": "Ventil 1"
+      }
+    },
+    "onoff.valve_2": {
+      "title": {
+        "en": "Valve 2",
+        "fr": "Vanne 2",
+        "nl": "Klep 2",
+        "de": "Ventil 2"
+      }
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  },
+  "flow": {
+    "triggers": [],
+    "conditions": [],
+    "actions": []
+  },
+  "settings": [
+    {
+      "id": "enable_radio_sensing",
+      "type": "checkbox",
+      "label": {
+        "en": "Enable Radio Presence Sensing",
+        "fr": "Activer la Détection de Présence Radio"
+      },
+      "value": false,
+      "hint": {
+        "en": "Infer presence from Zigbee signal fluctuations (BETA)",
+        "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
+      }
+    },
+    {
+      "id": "radio_sensitivity",
+      "type": "number",
+      "label": {
+        "en": "Radio Presence Sensitivity",
+        "fr": "Sensibilité Présence Radio"
+      },
+      "value": 15,
+      "min": 5,
+      "max": 50,
+      "hint": {
+        "en": "LQI variance threshold (higher = less sensitive)",
+        "fr": "Seuil de variance LQI (plus haut = moins sensible)"
+      }
+    }
+  ],
+  "id": "valve_dual_irrigation",
+  "version": "1.0.0"
+}

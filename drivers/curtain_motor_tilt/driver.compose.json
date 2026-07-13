@@ -1,0 +1,158 @@
+{
+  "name": {
+    "en": "Curtain Motor with Tilt",
+    "fr": "Moteur Volet avec Inclinaison",
+    "nl": "Gordijn Kantelmotor",
+    "de": "Vorhang Kippmotor"
+  },
+  "class": "windowcoverings",
+  "capabilities": [
+    "windowcoverings_state",
+    "windowcoverings_set",
+    "windowcoverings_tilt_set",
+    "alarm_generic",
+    "measure_battery",
+    "button.1"
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "_tze200_7eue9vhc",
+      "_tze200_a8zrneee",
+      "_tze200_cpbo62rn",
+      "_tze200_eegnwoyw",
+      "_tze200_ergbiejo",
+      "_tze200_iossyxra",
+      "_tze200_lwlvaony",
+      "_tze200_pk29mnl3",
+      "_tze200_sbordckq",
+      "_TZE200_zah67ekd",
+      "_TZE200_3i3exuay",
+      "_tze200_gubdgai2",
+      "_TZE200_hsgrhjpf",
+      "_TZE200_nkoabg8w",
+      "_TZE200_nogaemzt",
+      "_TZE200_nueqqe6k",
+      "_TZE200_r0jdjrvi",
+      "_tze204_r0jdjrvi",
+      "_TZE204_r0jdjrvi",
+      "_TZE204_R0JDJRVI",
+      "_TZE200_rddyvrci",
+      "_TZE200_rmymn92d",
+      "_TZE200_xaabybja",
+      "_TZE200_xuzcvlku",
+      "_TZE200_zpzndjez"
+    ],
+    "productId": [
+      "TS0601_curtain_tilt",
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          258,
+          61184
+        ]
+      }
+    }
+  },
+  "images": {
+    "small": "/drivers/curtain_motor_tilt/assets/images/small.png",
+    "large": "/drivers/curtain_motor_tilt/assets/images/large.png",
+    "xlarge": "/drivers/curtain_motor_tilt/assets/images/xlarge.png"
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "energy": {
+    "batteries": [
+      "OTHER"
+    ]
+  },
+  "flow": {
+    "actions": [
+      {
+        "id": "curtain_calibrate",
+        "title": {
+          "en": "Calibrate curtain motor",
+          "nl": "Kalibreer gordijnmotor"
+        },
+        "hint": {
+          "en": "Run full open/close cycle for position calibration",
+          "nl": "Voer volledige open/sluit cyclus uit voor positie kalibratie"
+        }
+      },
+      {
+        "id": "curtain_reset_position",
+        "title": {
+          "en": "Reset position to 0%",
+          "nl": "Reset positie naar 0%"
+        },
+        "hint": {
+          "en": "Reset current position to fully closed",
+          "nl": "Reset huidige positie naar volledig gesloten"
+        }
+      },
+      {
+        "id": "curtain_hold",
+        "title": {
+          "en": "Hold curtain position",
+          "nl": "Gordijn positie vasthouden",
+          "fr": "Maintenir position rideau"
+        },
+        "hint": {
+          "en": "Stop curtain movement and hold at current position",
+          "nl": "Stop gordijn beweging en houd huidige positie vast"
+        }
+      },
+      {
+        "id": "curtain_open_partial",
+        "title": {
+          "en": "Open curtain partially",
+          "nl": "Gordijn gedeeltelijk openen",
+          "fr": "Ouvrir rideau partiellement"
+        },
+        "args": [
+          {
+            "type": "range",
+            "name": "position",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "label": "%",
+            "labelMultiplier": 1
+          }
+        ]
+      }
+    ]
+  },
+  "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "fr": "Vérifier MàJ OTA",
+        "nl": "Controleer op OTA-updates"
+      }
+    }
+  ],
+  "id": "curtain_motor_tilt",
+  "version": "1.0.0",
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  }
+}

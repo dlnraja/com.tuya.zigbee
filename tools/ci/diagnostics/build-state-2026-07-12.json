@@ -1,0 +1,15 @@
+﻿{
+    "fixesApplied":  7,
+    "validateStatus":  "PASS (publish level)",
+    "buildStatus":  "PASS",
+    "appVersion":  "v9.0.190",
+    "driversTotal":  430,
+    "appJsonSize":  6270249,
+    "timestamp":  "2026-07-12T11:41:05Z",
+    "fixesPending":  {
+                         "missingVariants":  4433,
+                         "criticalDrivers":  52,
+                         "pidConflicts":  241
+                     },
+    "buildDir":  ".homeybuild/"
+}

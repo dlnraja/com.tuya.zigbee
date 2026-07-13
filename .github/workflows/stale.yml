@@ -1,0 +1,57 @@
+name: "Mark Stale Issues & PRs"
+
+# <!-- badges:start -->
+# [![Stale Issues & PRs](https://github.com/dlnraja/com.tuya.zigbee/actions/workflows/stale.yml/badge.svg)](https://github.com/dlnraja/com.tuya.zigbee/actions/workflows/stale.yml)
+# <!-- badges:end -->
+
+
+on:
+  schedule:
+    - cron: '0 5 * * 1'  # Weekly Monday 05:00 UTC
+  workflow_dispatch:
+
+permissions:
+  issues: write
+  pull-requests: write
+
+concurrency:
+  group: stale
+  cancel-in-progress: true
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  stale:
+    name: "Mark Stale Issues & PRs (Never Close)"
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/stale@5bef64f19d7facfb25b37b414482c7164d639639 # v9
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          days-before-stale: 45
+          days-before-close: -1
+          stale-issue-message: >
+            This issue has been automatically marked as **stale** because it has not had
+            recent activity. It will remain open until a maintainer acts after user confirmation.
+
+
+            If your device is still not working:
+
+            1. Update to the **[latest test version](https://homey.app/a/com.dlnraja.tuya.zigbee/test/)**
+
+            2. **Remove and re-pair** your device
+
+            3. Share a new diagnostic report on the [Forum](https://community.homey.app/t/140352)
+          stale-pr-message: >
+            This PR has been automatically marked as **stale**. If the fingerprints
+            in this PR are not yet supported, please comment to keep it open.
+            It will not be closed automatically.
+          stale-issue-label: stale
+          stale-pr-label: stale
+          exempt-issue-labels: "pinned,security,enhancement,auto-fix,community-sync,new-device,needs-info"
+          exempt-pr-labels: "pinned,security,auto-fix,new-device,pr-fingerprints"
+          exempt-all-assignees: true
+          operations-per-run: 100

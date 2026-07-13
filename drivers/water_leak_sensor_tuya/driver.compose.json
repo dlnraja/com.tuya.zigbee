@@ -1,0 +1,156 @@
+{
+  "id": "WaterLeakSensor",
+  "name": {
+    "en": "Water Leak Sensor"
+  },
+  "class": "sensor",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "capabilities": [
+    "alarm_water",
+    "measure_battery",
+    "button.1"
+  ],
+  "energy": {
+    "batteries": [
+      "CR2"
+    ]
+  },
+  "images": {
+    "large": "/{{driverAssetsPath}}/images/large.png",
+    "small": "/{{driverAssetsPath}}/images/small.png"
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_tyzb01_o63ssaah",
+      "_TZ3000_0s9gukzt",
+      "_tz3000_2wcynpml",
+      "_TZ3000_3dfewsk1",
+      "_tz3000_4qaowtdo",
+      "_TZ3000_4uvovz4r",
+      "_tz3000_amis43tj",
+      "_tz3000_bfopm9ga",
+      "_tz3000_bzt33cyu",
+      "_TZ3000_eit7p838",
+      "_tz3000_eit8c5cs",
+      "_tz3000_fvm13j8w",
+      "_tz3000_fxjo6gfe",
+      "_TZ3000_fxvjhdyl",
+      "_tz3000_js34cuma",
+      "_TZ3000_kstbkt6a",
+      "_tz3000_kyakwbf8",
+      "_TZ3000_mugyhz0q",
+      "_tz3000_o9f2zqln",
+      "_TZ3000_ocjlo4ea",
+      "_tz3000_qdmnmddg",
+      "_tz3000_qhozxs2b",
+      "_tz3000_rurvxhcx",
+      "_tz3000_sq510a",
+      "_TZ3000_t6jriawg",
+      "_TZ3000_wuep9zng",
+      "_TZ3000_ww9i3e0y",
+      "_tze204_qq9mpfhw",
+      "tuyatec-bduz1xxp",
+      "tuyatec-h4wnrtck",
+      "tuyatec-ktev3uwq",
+      "_tze204_lw5ny7tp",
+      "_tze284_aghfucwi",
+      "_tze284_2qx7sivb",
+      "_tze284_8sejxcue",
+      "_tz3000_c8bqthpo",
+      "_TZ3000_k4ej3ww2",
+      "_TZ3000_kyb656no",
+      "_tz3000_mqiev3jk",
+      "_TZ3000_upgcbody",
+      "_tz3000_kxlmv9ag",
+      "_tz3000_r80pzsb9",
+      "_tz3000_shopg9ss",
+      "_tz3000_wmlc9p9z",
+      "_tz3000_sgpbz53b",
+      "_tz3000_abaplimj",
+      "_TZ3000_awvmkayh",
+      "_tz3000_e6ekbxts",
+      "_TYST11_qq9mpfhw",
+      "_TZE200_qq9mpfhw",
+      "TUYATEC-BDUZ1XXP",
+      "TUYATEC-H4WNRTCK",
+      "TUYATEC-KTEV3UWQ"
+    ],
+    "productId": [
+      "q9mpfhw",
+      "ZG-222Z",
+      "ZG-223Z",
+      "LS21001",
+      "_tz3000_eit6l5",
+      "_tz3000_k4ej3ww2",
+      "_tz3000_kyb656no",
+      "lumi.sensor_wleak.aq1",
+      "SJCGQ11LM",
+      "SJCGQ12LM",
+      "SJCGQ13LM",
+      "HS1WL",
+      "SNZB-05",
+      "3315-S",
+      "3315-Seu",
+      "TS0601",
+      "SQ510A",
+      "SNZB-05P",
+      "CK-TLSR8656-SS5-01(7019)"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          4,
+          5,
+          61184
+        ],
+        "bindings": [
+          61184
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "{{driverAssetsPath}}/icon.svg",
+      "instruction": {
+        "en": "Push the button for aprox 10 seconds until the LED blinks rapidly. If nothing happens; put two fingers against the detectors and repeat."
+      }
+    }
+  },
+  "version": "1.0.0",
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  },
+  "_pidConflictNotes": [
+    "// PID-CONFLICT-NOTE ZG-223Z shared with 3 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE q9mpfhw shared with 2 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE ZG-222Z shared with 2 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE LS21001 shared with 2 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE _tz3000_eit6l5 shared with 2 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE _tz3000_k4ej3ww2 shared with 2 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE _tz3000_kyb656no shared with 2 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE lumi.sensor_wleak.aq1 shared with 2 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE SJCGQ11LM shared with 2 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE SJCGQ12LM shared with 2 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE SJCGQ13LM shared with 2 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE HS1WL shared with 2 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE SNZB-05 shared with 2 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE 3315-S shared with 2 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE 3315-Seu shared with 2 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE SQ510A shared with 2 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE SNZB-05P shared with 2 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE CK-TLSR8656-SS5-01(7019) shared with 2 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
+  ]
+}

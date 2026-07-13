@@ -1,0 +1,18 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Battery Cycles",
+    "fr": "Cycles de batterie",
+    "nl": "Batterij cycli",
+    "de": "Batteriezyklen"
+  },
+  "units": {
+    "en": "cycles"
+  },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "decimals": 0,
+  "insights": true,
+  "min": 0
+}

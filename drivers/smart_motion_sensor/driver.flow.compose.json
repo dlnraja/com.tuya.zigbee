@@ -1,0 +1,102 @@
+{
+  "triggers": [
+    {
+      "id": "smart_motion_sensor_alarm_motion_true",
+      "title": {
+        "en": "Motion detected",
+        "fr": "Mouvement détecté",
+        "nl": "Beweging gedetecteerd",
+        "de": "Bewegung erkannt"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Motion detected",
+        "fr": "Mouvement détecté",
+        "nl": "Beweging gedetecteerd",
+        "de": "Bewegung erkannt"
+      }
+    },
+    {
+      "id": "smart_motion_sensor_alarm_motion_false",
+      "title": {
+        "en": "Motion cleared",
+        "fr": "Mouvement terminé",
+        "nl": "Beweging beëindigd",
+        "de": "Bewegung beendet"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Motion cleared",
+        "fr": "Mouvement terminé",
+        "nl": "Beweging beëindigd",
+        "de": "Bewegung beendet"
+      }
+    },
+    {
+      "id": "smart_motion_sensor_alarm_tamper_true",
+      "title": {
+        "en": "Tamper alarm triggered",
+        "fr": "Alarme anti-sabotage déclenchée",
+        "nl": "Sabotagealarm geactiveerd",
+        "de": "Manipulationsalarm ausgelöst"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Tamper alarm triggered",
+        "fr": "Alarme anti-sabotage déclenchée",
+        "nl": "Sabotagealarm geactiveerd",
+        "de": "Manipulationsalarm ausgelöst"
+      }
+    },
+    {
+      "id": "smart_motion_sensor_alarm_tamper_false",
+      "title": {
+        "en": "Tamper alarm cleared",
+        "fr": "Alarme sabotage effacée",
+        "nl": "Sabotagealarm opgeheven",
+        "de": "Manipulationsalarm beendet"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Tamper alarm cleared",
+        "fr": "Alarme sabotage effacée",
+        "nl": "Sabotagealarm opgeheven",
+        "de": "Manipulationsalarm beendet"
+      }
+    },
+    {
+      "id": "smart_motion_sensor_battery_low",
+      "title": {
+        "en": "Battery low",
+        "fr": "Batterie faible",
+        "nl": "Batterij laag",
+        "de": "Batterie schwach"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Battery low",
+        "fr": "Batterie faible",
+        "nl": "Batterij laag",
+        "de": "Batterie schwach"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "id": "smart_motion_sensor_alarm_motion_active",
+      "title": {
+        "en": "Motion !{{is|is not}} detected",
+        "fr": "Mouvement !{{est|n'est pas}} détecté",
+        "nl": "Beweging !{{is|is niet}} gedetecteerd",
+        "de": "Bewegung !{{wird|wird nicht}} erkannt"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Motion !{{is|is not}} detected",
+        "fr": "Mouvement !{{est|n'est pas}} détecté",
+        "nl": "Beweging !{{is|is niet}} gedetecteerd",
+        "de": "Bewegung !{{wird|wird nicht}} erkannt"
+      }
+    }
+  ]
+}

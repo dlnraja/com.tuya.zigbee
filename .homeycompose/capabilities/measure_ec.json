@@ -1,0 +1,19 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Electrical Conductivity",
+    "nl": "Elektrische geleidbaarheid",
+    "de": "Elektrische Leitfähigkeit",
+    "fr": "Conductivité électrique"
+  },
+  "units": {
+    "en": "µS/cm"
+  },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "decimals": 0,
+  "insights": true,
+  "min": 0,
+  "max": 20000
+}

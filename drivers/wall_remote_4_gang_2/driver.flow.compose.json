@@ -1,0 +1,48 @@
+{
+  "triggers": [
+    {
+      "id": "wall_remote_4_gang_2_wall_remote_4_gang_buttons_2",
+      "title": {
+        "en": "Button"
+      },
+      "args": [
+        {
+          "name": "button",
+          "type": "dropdown",
+          "title": {
+            "en": "Button Pressed"
+          },
+          "values": [
+            {
+              "id": "leftUp",
+              "title": {
+                "en": "Upper Left Button Pressed"
+              }
+            },
+            {
+              "id": "rightUp",
+              "title": {
+                "en": "Upper Right Button Pressed"
+              }
+            },
+            {
+              "id": "leftDown",
+              "title": {
+                "en": "Lower Left Button Pressed"
+              }
+            },
+            {
+              "id": "rightDown",
+              "title": {
+                "en": "Lower Right Button Pressed"
+              }
+            }
+          ]
+        }
+      ],
+      "titleFormatted": {
+        "en": "Button [[button]]"
+      }
+    }
+  ]
+}

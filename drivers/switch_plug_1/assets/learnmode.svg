@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <rect x="20" y="25" width="60" height="50" rx="5" fill="#FFF" stroke="#333" stroke-width="2"/>
+  <rect x="30" y="35" width="40" height="30" rx="3" fill="#4CAF50"/>
+  <circle cx="55" cy="50" r="8" fill="#FFF"/>
+  <path d="M70 20 L80 10 M72 22 L82 12" stroke="#FF9800" stroke-width="2"/>
+  <text x="50" y="88" text-anchor="middle" font-size="7" fill="#666">Toggle 5x</text>
+</svg>

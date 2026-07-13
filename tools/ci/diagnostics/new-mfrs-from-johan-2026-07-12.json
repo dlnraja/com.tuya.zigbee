@@ -1,0 +1,2832 @@
+{
+  "timestamp": "2026-07-12T17:43:36.449Z",
+  "source": "johan-shadow-comments-audit",
+  "summary": {
+    "totalFpsInJohan": 384,
+    "inCanonicalDB": 236,
+    "newFpsToIntegrate": 148,
+    "mapped": 96,
+    "unmapped": 52
+  },
+  "targetDistribution": {
+    "generic_tuya": 29,
+    "switch_4gang": 4,
+    "switch_1gang": 17,
+    "switch_3gang": 2,
+    "plug": 10,
+    "door_sensor": 5,
+    "unmapped": 52,
+    "button_wireless_scene": 3,
+    "bulb_dimmable": 2,
+    "button_wireless_4": 3,
+    "button_wireless_3": 1,
+    "climate_sensor": 5,
+    "contact_sensor": 1,
+    "plug_smart": 2,
+    "curtain_motor": 1,
+    "illuminance_sensor": 1,
+    "button_wireless_6": 1,
+    "water_leak_sensor": 2,
+    "button_wireless_1": 1,
+    "fingerbot": 1,
+    "bulb_rgbw": 3,
+    "dimmer_wall_1gang": 1,
+    "presence_sensor_radar": 1
+  },
+  "newFps": [
+    {
+      "mfr": "_TZE",
+      "issues": [
+        1354,
+        1355,
+        1360,
+        1362,
+        1363,
+        1372,
+        1374,
+        1379,
+        1381,
+        1382,
+        1384,
+        1385,
+        1387,
+        1393,
+        1396,
+        1397,
+        1398,
+        1399,
+        1400,
+        1403,
+        1404,
+        1405,
+        1406,
+        1409,
+        1410,
+        1416,
+        1424,
+        1425
+      ],
+      "pids": [
+        "TS0601",
+        "TS0603"
+      ],
+      "targetDriver": "generic_tuya",
+      "confidence": 70
+    },
+    {
+      "mfr": "_TZ3000",
+      "issues": [
+        1253,
+        1361,
+        1364,
+        1365,
+        1366,
+        1367,
+        1368,
+        1369,
+        1370,
+        1371,
+        1375,
+        1376,
+        1377,
+        1380,
+        1389,
+        1391,
+        1395,
+        1407,
+        1412,
+        1413,
+        1414,
+        1418,
+        1419,
+        1420
+      ],
+      "pids": [
+        "TS0004",
+        "TS0011",
+        "TS0012",
+        "TS0014",
+        "TS0041",
+        "TS0044",
+        "TS004F",
+        "TS011F",
+        "TS0203",
+        "TS0215A",
+        "TS1002"
+      ],
+      "targetDriver": "switch_4gang",
+      "confidence": 70
+    },
+    {
+      "mfr": "_TZE284",
+      "issues": [
+        1354,
+        1360,
+        1362,
+        1363,
+        1379,
+        1384,
+        1387,
+        1396,
+        1397,
+        1399,
+        1400,
+        1409,
+        1410,
+        1416
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "targetDriver": "generic_tuya",
+      "confidence": 70
+    },
+    {
+      "mfr": "_TZE200",
+      "issues": [
+        1372,
+        1374,
+        1382,
+        1398,
+        1403,
+        1404,
+        1405,
+        1406
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "targetDriver": "generic_tuya",
+      "confidence": 70
+    },
+    {
+      "mfr": "_TZ3210",
+      "issues": [
+        1350,
+        1359,
+        1388,
+        1402,
+        1408,
+        1411,
+        1417
+      ],
+      "pids": [
+        "TS0002",
+        "TS011F",
+        "TS110E"
+      ],
+      "targetDriver": "switch_1gang",
+      "confidence": 70
+    },
+    {
+      "mfr": "_TZE204",
+      "issues": [
+        1355,
+        1374,
+        1381,
+        1393,
+        1425
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "targetDriver": "generic_tuya",
+      "confidence": 70
+    },
+    {
+      "mfr": "_TZ3000_qewo8dlz",
+      "issues": [
+        382,
+        471,
+        601,
+        753
+      ],
+      "pids": [
+        "TS0013"
+      ],
+      "targetDriver": "switch_3gang",
+      "confidence": 70
+    },
+    {
+      "mfr": "_TZ3000_gnjozsaz",
+      "issues": [
+        256,
+        445,
+        521
+      ],
+      "pids": [
+        "TS011F"
+      ],
+      "targetDriver": "plug",
+      "confidence": 70
+    },
+    {
+      "mfr": "_TZ3000_qkixdnon",
+      "issues": [
+        1337,
+        1338,
+        1375
+      ],
+      "pids": [
+        "TS0003"
+      ],
+      "targetDriver": "switch_3gang",
+      "confidence": 70
+    },
+    {
+      "mfr": "_TYZB01",
+      "issues": [
+        1412,
+        1413
+      ],
+      "pids": [
+        "TS0014"
+      ],
+      "targetDriver": "switch_1gang",
+      "confidence": 70
+    },
+    {
+      "mfr": "_TZ1800_ejwkn2h2",
+      "issues": [
+        33,
+        201
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "targetDriver": "generic_tuya",
+      "confidence": 70
+    },
+    {
+      "mfr": "_TZ1800_fcdjzz3s",
+      "issues": [
+        24,
+        201
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "targetDriver": "generic_tuya",
+      "confidence": 70
+    },
+    {
+      "mfr": "_TZ3000_6zvw8ham",
+      "issues": [
+        509,
+        1323
+      ],
+      "pids": [
+        "TS0203"
+      ],
+      "targetDriver": "door_sensor",
+      "confidence": 70
+    },
+    {
+      "mfr": "_TZ3000_an5rjiwd",
+      "issues": [
+        121,
+        1128
+      ],
+      "pids": [],
+      "targetDriver": null,
+      "confidence": 30
+    },
+    {
+      "mfr": "_TZ3000_excgg5kb",
+      "issues": [
+        130,
+        159
+      ],
+      "pids": [
+        "TS0004"
+      ],
+      "targetDriver": "switch_4gang",
+      "confidence": 70
+    },
+    {
+      "mfr": "_TZ3000_g",
+      "issues": [
+        1364,
+        1377
+      ],
+      "pids": [
+        "TS004F"
+      ],
+      "targetDriver": "button_wireless_scene",
+      "confidence": 70
+    },
+    {
+      "mfr": "_TZ3000_hafsqare",
+      "issues": [
+        128,
+        1370
+      ],
+      "pids": [
+        "TS0011",
+        "TS0012"
+      ],
+      "targetDriver": "switch_1gang",
+      "confidence": 70
+    },
+    {
+      "mfr": "_TZ3000_hhiodade",
+      "issues": [
+        214,
+        818
+      ],
+      "pids": [
+        "TS0011"
+      ],
+      "targetDriver": "switch_1gang",
+      "confidence": 70
+    },
+    {
+      "mfr": "_TZ3000_iiacqpdz",
+      "issues": [
+        1252,
+        1277
+      ],
+      "pids": [],
+      "targetDriver": "bulb_dimmable",
+      "confidence": 70
+    },
+    {
+      "mfr": "_TZ3000_j1xl73iw",
+      "issues": [
+        362,
+        474
+      ],
+      "pids": [],
+      "targetDriver": null,
+      "confidence": 30
+    },
+    {
+      "mfr": "_TZ3000_jcspr0tp",
+      "issues": [
+        763,
+        864
+      ],
+      "pids": [
+        "TS0044"
+      ],
+      "targetDriver": "button_wireless_4",
+      "confidence": 70
+    },
+    {
+      "mfr": "_TZ3000_mrduubod",
+      "issues": [
+        1412,
+        1413
+      ],
+      "pids": [
+        "TS0014"
+      ],
+      "targetDriver": "switch_1gang",
+      "confidence": 70
+    },
+    {
+      "mfr": "_TZ3000_r0pmi2p3",
+      "issues": [
+        1412,
+        1413
+      ],
+      "pids": [
+        "TS0014"
+      ],
+      "targetDriver": "switch_1gang",
+      "confidence": 70
+    },
+    {
+      "mfr": "_TZ3000_sj7jbgks",
+      "issues": [
+        346,
+        1188
+      ],
+      "pids": [
+        "TS0043"
+      ],
+      "targetDriver": "button_wireless_3",
+      "confidence": 70
+    },
+    {
+      "mfr": "_TZ3000_zgyzgdua",
+      "issues": [
+        1231,
+        1327
+      ],
+      "pids": [
+        "TS0044"
+      ],
+      "targetDriver": "button_wireless_4",
+      "confidence": 70
+    },
+    {
+      "mfr": "_TZ3000_zutizvyk",
+      "issues": [
+        1304,
+        1347
+      ],
+      "pids": [
+        "TS0203",
+        "TS0601"
+      ],
+      "targetDriver": "door_sensor",
+      "confidence": 70
+    },
+    {
+      "mfr": "_TZ3210_eymunffl",
+      "issues": [
+        744,
+        857
+      ],
+      "pids": [
+        "TS0101"
+      ],
+      "targetDriver": null,
+      "confidence": 30
+    },
+    {
+      "mfr": "_TZ3210_nuenzetq",
+      "issues": [
+        1411,
+        1417
+      ],
+      "pids": [
+        "TS0002"
+      ],
+      "targetDriver": "switch_1gang",
+      "confidence": 70
+    },
+    {
+      "mfr": "_TZ3290_ot6ewjvmejq5ekhl",
+      "issues": [
+        522,
+        1331
+      ],
+      "pids": [
+        "TS1201"
+      ],
+      "targetDriver": null,
+      "confidence": 30
+    },
+    {
+      "mfr": "_TZE200_hhrtiq0x",
+      "issues": [
+        12,
+        229
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "targetDriver": "generic_tuya",
+      "confidence": 70
+    },
+    {
+      "mfr": "_TZE200_t1blo2bj",
+      "issues": [
+        366,
+        1333
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "targetDriver": "generic_tuya",
+      "confidence": 70
+    },
+    {
+      "mfr": "_TYST11",
+      "issues": [
+        1373
+      ],
+      "pids": [],
+      "targetDriver": null,
+      "confidence": 30
+    },
+    {
+      "mfr": "_TYZB01_4lwqwyqn",
+      "issues": [
+        1330
+      ],
+      "pids": [],
+      "targetDriver": null,
+      "confidence": 30
+    },
+    {
+      "mfr": "_TYZB01_bngwdjsr",
+      "issues": [
+        30
+      ],
+      "pids": [
+        "TS1001"
+      ],
+      "targetDriver": null,
+      "confidence": 30
+    },
+    {
+      "mfr": "_TZ2000_a476raq2",
+      "issues": [
+        290
+      ],
+      "pids": [],
+      "targetDriver": null,
+      "confidence": 30
+    },
+    {
+      "mfr": "_TZ2300_gjnozsaz",
+      "issues": [
+        521
+      ],
+      "pids": [],
+      "targetDriver": null,
+      "confidence": 30
+    },
+    {
+      "mfr": "_TZ3000_1bwpjvlz",
+      "issues": [
+        744
+      ],
+      "pids": [],
+      "targetDriver": null,
+      "confidence": 30
+    },
+    {
+      "mfr": "_TZ3000_1obmmd8k",
+      "issues": [
+        1188
+      ],
+      "pids": [],
+      "targetDriver": "climate_sensor",
+      "confidence": 70
+    },
+    {
+      "mfr": "_TZ3000_2mccw9py",
+      "issues": [
+        1188
+      ],
+      "pids": [],
+      "targetDriver": "contact_sensor",
+      "confidence": 70
+    },
+    {
+      "mfr": "_TZ3000_4js9lo5d",
+      "issues": [
+        11
+      ],
+      "pids": [
+        "TS0012"
+      ],
+      "targetDriver": "switch_1gang",
+      "confidence": 70
+    },
+    {
+      "mfr": "_TZ3000_a7ouggvs",
+      "issues": [
+        1188
+      ],
+      "pids": [],
+      "targetDriver": null,
+      "confidence": 30
+    },
+    {
+      "mfr": "_TZ3000_abci1hiu",
+      "issues": [
+        282
+      ],
+      "pids": [
+        "TS0044"
+      ],
+      "targetDriver": "button_wireless_4",
+      "confidence": 70
+    },
+    {
+      "mfr": "_TZ3000_ajkq2isy",
+      "issues": [
+        532
+      ],
+      "pids": [
+        "TS0502A"
+      ],
+      "targetDriver": null,
+      "confidence": 30
+    },
+    {
+      "mfr": "_TZ3000_au2o5e6q",
+      "issues": [
+        938
+      ],
+      "pids": [
+        "TS0203"
+      ],
+      "targetDriver": "door_sensor",
+      "confidence": 70
+    },
+    {
+      "mfr": "_TZ3000_bczr4e10",
+      "issues": [
+        1188
+      ],
+      "pids": [],
+      "targetDriver": null,
+      "confidence": 30
+    },
+    {
+      "mfr": "_TZ3000_bi6lpsew",
+      "issues": [
+        1188
+      ],
+      "pids": [],
+      "targetDriver": "switch_1gang",
+      "confidence": 70
+    },
+    {
+      "mfr": "_TZ3000_blhvsaqf",
+      "issues": [
+        1339
+      ],
+      "pids": [
+        "TS0001"
+      ],
+      "targetDriver": "switch_1gang",
+      "confidence": 70
+    },
+    {
+      "mfr": "_TZ3000_bzzgvet0",
+      "issues": [
+        1265
+      ],
+      "pids": [],
+      "targetDriver": null,
+      "confidence": 30
+    },
+    {
+      "mfr": "_TZ3000_c8ozah8n",
+      "issues": [
+        1166
+      ],
+      "pids": [],
+      "targetDriver": null,
+      "confidence": 30
+    },
+    {
+      "mfr": "_TZ3000_c8zfad4a",
+      "issues": [
+        1137
+      ],
+      "pids": [],
+      "targetDriver": null,
+      "confidence": 30
+    },
+    {
+      "mfr": "_TZ3000_cea5xugq",
+      "issues": [
+        192
+      ],
+      "pids": [
+        "TS0203"
+      ],
+      "targetDriver": "door_sensor",
+      "confidence": 70
+    },
+    {
+      "mfr": "_TZ3000_cfnprab5to",
+      "issues": [
+        287
+      ],
+      "pids": [],
+      "targetDriver": "plug_smart",
+      "confidence": 70
+    },
+    {
+      "mfr": "_TZ3000_cjfmu5he",
+      "issues": [
+        857
+      ],
+      "pids": [],
+      "targetDriver": null,
+      "confidence": 30
+    },
+    {
+      "mfr": "_TZ3000_dbpmpco1",
+      "issues": [
+        259
+      ],
+      "pids": [],
+      "targetDriver": "curtain_motor",
+      "confidence": 70
+    },
+    {
+      "mfr": "_TZ3000_dd8wwzcy",
+      "issues": [
+        1295
+      ],
+      "pids": [],
+      "targetDriver": null,
+      "confidence": 30
+    },
+    {
+      "mfr": "_TZ3000_dph3rpss",
+      "issues": [
+        9
+      ],
+      "pids": [
+        "TS130F"
+      ],
+      "targetDriver": null,
+      "confidence": 30
+    },
+    {
+      "mfr": "_TZ3000_e98krvvk",
+      "issues": [
+        1369
+      ],
+      "pids": [
+        "TS0012"
+      ],
+      "targetDriver": "switch_1gang",
+      "confidence": 70
+    },
+    {
+      "mfr": "_TZ3000_enmfaave",
+      "issues": [
+        1368
+      ],
+      "pids": [
+        "TS0004"
+      ],
+      "targetDriver": "switch_4gang",
+      "confidence": 70
+    },
+    {
+      "mfr": "_TZ3000_ew3ldmgx",
+      "issues": [
+        112
+      ],
+      "pids": [],
+      "targetDriver": null,
+      "confidence": 30
+    },
+    {
+      "mfr": "_TZ3000_f97vq5mn",
+      "issues": [
+        90
+      ],
+      "pids": [],
+      "targetDriver": null,
+      "confidence": 30
+    },
+    {
+      "mfr": "_TZ3000_gbm10jnj",
+      "issues": [
+        1188
+      ],
+      "pids": [],
+      "targetDriver": "bulb_dimmable",
+      "confidence": 70
+    },
+    {
+      "mfr": "_TZ3000_hkcpblrs",
+      "issues": [
+        876
+      ],
+      "pids": [
+        "TS0203"
+      ],
+      "targetDriver": "door_sensor",
+      "confidence": 70
+    },
+    {
+      "mfr": "_TZ3000_hyarhbyx",
+      "issues": [
+        1395
+      ],
+      "pids": [],
+      "targetDriver": "illuminance_sensor",
+      "confidence": 70
+    },
+    {
+      "mfr": "_TZ3000_i8jfiezr",
+      "issues": [
+        120
+      ],
+      "pids": [
+        "TS0201"
+      ],
+      "targetDriver": "climate_sensor",
+      "confidence": 70
+    },
+    {
+      "mfr": "_TZ3000_iszegwpd",
+      "issues": [
+        962
+      ],
+      "pids": [
+        "TS0046"
+      ],
+      "targetDriver": "button_wireless_6",
+      "confidence": 70
+    },
+    {
+      "mfr": "_TZ3000_j1v25l17",
+      "issues": [
+        518
+      ],
+      "pids": [
+        "TS011F"
+      ],
+      "targetDriver": "plug",
+      "confidence": 70
+    },
+    {
+      "mfr": "_TZ3000_j9568h44",
+      "issues": [
+        860
+      ],
+      "pids": [
+        "TS0001",
+        "TS0111",
+        "TS011F"
+      ],
+      "targetDriver": "switch_1gang",
+      "confidence": 70
+    },
+    {
+      "mfr": "_TZ3000_kjfzuycl",
+      "issues": [
+        225
+      ],
+      "pids": [
+        "TS004F"
+      ],
+      "targetDriver": "button_wireless_scene",
+      "confidence": 70
+    },
+    {
+      "mfr": "_TZ3000_ko6v90pg",
+      "issues": [
+        877
+      ],
+      "pids": [
+        "TS011F"
+      ],
+      "targetDriver": "plug",
+      "confidence": 70
+    },
+    {
+      "mfr": "_TZ3000_l9brjwau",
+      "issues": [
+        1337
+      ],
+      "pids": [
+        "TS0002"
+      ],
+      "targetDriver": "switch_1gang",
+      "confidence": 70
+    },
+    {
+      "mfr": "_TZ3000_ltiqubue",
+      "issues": [
+        9
+      ],
+      "pids": [
+        "TS130F"
+      ],
+      "targetDriver": "switch_1gang",
+      "confidence": 70
+    },
+    {
+      "mfr": "_TZ3000_npg02xft",
+      "issues": [
+        1036
+      ],
+      "pids": [
+        "TS011F"
+      ],
+      "targetDriver": "plug",
+      "confidence": 70
+    },
+    {
+      "mfr": "_TZ3000_o9f2zqln",
+      "issues": [
+        473
+      ],
+      "pids": [
+        "TS0207"
+      ],
+      "targetDriver": "water_leak_sensor",
+      "confidence": 70
+    },
+    {
+      "mfr": "_TZ3000_pjcqjtev",
+      "issues": [
+        407
+      ],
+      "pids": [
+        "TS011F"
+      ],
+      "targetDriver": "plug",
+      "confidence": 70
+    },
+    {
+      "mfr": "_TZ3000_pmz6mjyu",
+      "issues": [
+        170
+      ],
+      "pids": [
+        "TS011F"
+      ],
+      "targetDriver": "plug",
+      "confidence": 70
+    },
+    {
+      "mfr": "_TZ3000_ptjcjise",
+      "issues": [
+        1367
+      ],
+      "pids": [],
+      "targetDriver": null,
+      "confidence": 30
+    },
+    {
+      "mfr": "_TZ3000_qzjcsmar",
+      "issues": [
+        1188
+      ],
+      "pids": [],
+      "targetDriver": null,
+      "confidence": 30
+    },
+    {
+      "mfr": "_TZ3000_rco1yzb1",
+      "issues": [
+        423
+      ],
+      "pids": [
+        "TS004F"
+      ],
+      "targetDriver": "button_wireless_scene",
+      "confidence": 70
+    },
+    {
+      "mfr": "_TZ3000_rrjr1q0u",
+      "issues": [
+        1188
+      ],
+      "pids": [],
+      "targetDriver": null,
+      "confidence": 30
+    },
+    {
+      "mfr": "_TZ3000_tk3s5tyg",
+      "issues": [
+        73
+      ],
+      "pids": [
+        "TS0041"
+      ],
+      "targetDriver": "button_wireless_1",
+      "confidence": 70
+    },
+    {
+      "mfr": "_TZ3000_u5u4cakc",
+      "issues": [
+        1290
+      ],
+      "pids": [],
+      "targetDriver": null,
+      "confidence": 30
+    },
+    {
+      "mfr": "_TZ3000_uaa99arv",
+      "issues": [
+        864
+      ],
+      "pids": [],
+      "targetDriver": "switch_1gang",
+      "confidence": 70
+    },
+    {
+      "mfr": "_TZ3000_ukuvyhaa",
+      "issues": [
+        84
+      ],
+      "pids": [],
+      "targetDriver": null,
+      "confidence": 30
+    },
+    {
+      "mfr": "_TZ3000_uwaort14",
+      "issues": [
+        1296
+      ],
+      "pids": [],
+      "targetDriver": "plug_smart",
+      "confidence": 70
+    },
+    {
+      "mfr": "_TZ3000_w8jwkczz",
+      "issues": [
+        1188
+      ],
+      "pids": [],
+      "targetDriver": null,
+      "confidence": 30
+    },
+    {
+      "mfr": "_TZ3000_wkr3jqmr",
+      "issues": [
+        528
+      ],
+      "pids": [
+        "TS0004"
+      ],
+      "targetDriver": "switch_4gang",
+      "confidence": 70
+    },
+    {
+      "mfr": "_TZ3000_wzauvbcs",
+      "issues": [
+        157
+      ],
+      "pids": [
+        "TS011F"
+      ],
+      "targetDriver": "plug",
+      "confidence": 70
+    },
+    {
+      "mfr": "_TZ3000_xk5udnd6",
+      "issues": [
+        1278
+      ],
+      "pids": [],
+      "targetDriver": "water_leak_sensor",
+      "confidence": 70
+    },
+    {
+      "mfr": "_TZ3000_xwh1e22x",
+      "issues": [
+        1361
+      ],
+      "pids": [
+        "TS1002"
+      ],
+      "targetDriver": null,
+      "confidence": 30
+    },
+    {
+      "mfr": "_TZ3000_xxxxx",
+      "issues": [
+        1329
+      ],
+      "pids": [],
+      "targetDriver": null,
+      "confidence": 30
+    },
+    {
+      "mfr": "_TZ3000_y56pgpgs",
+      "issues": [
+        693
+      ],
+      "pids": [
+        "TS0202"
+      ],
+      "targetDriver": "climate_sensor",
+      "confidence": 70
+    },
+    {
+      "mfr": "_TZ3000_yi0n4xfd",
+      "issues": [
+        1419
+      ],
+      "pids": [
+        "TS011F"
+      ],
+      "targetDriver": "plug",
+      "confidence": 70
+    },
+    {
+      "mfr": "_TZ3000_yw5tvzsk",
+      "issues": [
+        1188
+      ],
+      "pids": [],
+      "targetDriver": "generic_tuya",
+      "confidence": 70
+    },
+    {
+      "mfr": "_TZ3000_zmy4lsw",
+      "issues": [
+        195
+      ],
+      "pids": [
+        "TS0002"
+      ],
+      "targetDriver": "switch_1gang",
+      "confidence": 70
+    },
+    {
+      "mfr": "_TZ3002",
+      "issues": [
+        1401
+      ],
+      "pids": [],
+      "targetDriver": null,
+      "confidence": 30
+    },
+    {
+      "mfr": "_TZ3002_vaq2bfcu",
+      "issues": [
+        1106
+      ],
+      "pids": [],
+      "targetDriver": null,
+      "confidence": 30
+    },
+    {
+      "mfr": "_TZ3040",
+      "issues": [
+        1392
+      ],
+      "pids": [
+        "TS0202"
+      ],
+      "targetDriver": "climate_sensor",
+      "confidence": 70
+    },
+    {
+      "mfr": "_TZ3040_o4mkahkc",
+      "issues": [
+        1392
+      ],
+      "pids": [
+        "TS0202"
+      ],
+      "targetDriver": "climate_sensor",
+      "confidence": 70
+    },
+    {
+      "mfr": "_TZ3210_4ux0ondb",
+      "issues": [
+        1326
+      ],
+      "pids": [
+        "TS011F"
+      ],
+      "targetDriver": "plug",
+      "confidence": 70
+    },
+    {
+      "mfr": "_TZ3210_cehuw1lw",
+      "issues": [
+        1312
+      ],
+      "pids": [],
+      "targetDriver": null,
+      "confidence": 30
+    },
+    {
+      "mfr": "_TZ3210_dse8ogfy_fingerbot",
+      "issues": [
+        1065
+      ],
+      "pids": [],
+      "targetDriver": "fingerbot",
+      "confidence": 70
+    },
+    {
+      "mfr": "_TZ3210_eejm8dcr",
+      "issues": [
+        1075
+      ],
+      "pids": [
+        "TS0505B"
+      ],
+      "targetDriver": "bulb_rgbw",
+      "confidence": 70
+    },
+    {
+      "mfr": "_TZ3210_n0wbkysi",
+      "issues": [
+        1402
+      ],
+      "pids": [],
+      "targetDriver": null,
+      "confidence": 30
+    },
+    {
+      "mfr": "_TZ3210_ol1uhvza",
+      "issues": [
+        329
+      ],
+      "pids": [],
+      "targetDriver": null,
+      "confidence": 30
+    },
+    {
+      "mfr": "_TZ3210_s8lvbbu",
+      "issues": [
+        1325
+      ],
+      "pids": [
+        "TS0505B"
+      ],
+      "targetDriver": "bulb_rgbw",
+      "confidence": 70
+    },
+    {
+      "mfr": "_TZ3210_s8lvbbuc",
+      "issues": [
+        1325
+      ],
+      "pids": [],
+      "targetDriver": null,
+      "confidence": 30
+    },
+    {
+      "mfr": "_TZ3210_sroezl0s",
+      "issues": [
+        277
+      ],
+      "pids": [
+        "TS0504B"
+      ],
+      "targetDriver": "bulb_rgbw",
+      "confidence": 70
+    },
+    {
+      "mfr": "_TZ3210_xzhnra8x",
+      "issues": [
+        1348
+      ],
+      "pids": [
+        "TS011F"
+      ],
+      "targetDriver": "plug",
+      "confidence": 70
+    },
+    {
+      "mfr": "_TZ3290",
+      "issues": [
+        1383
+      ],
+      "pids": [
+        "TS1201"
+      ],
+      "targetDriver": null,
+      "confidence": 30
+    },
+    {
+      "mfr": "_TZ3290_gnlsafc7",
+      "issues": [
+        940
+      ],
+      "pids": [
+        "TS1201"
+      ],
+      "targetDriver": null,
+      "confidence": 30
+    },
+    {
+      "mfr": "_TZ3290_ot6ewjvmej",
+      "issues": [
+        1331
+      ],
+      "pids": [],
+      "targetDriver": null,
+      "confidence": 30
+    },
+    {
+      "mfr": "_TZ3290_u9xac5rv",
+      "issues": [
+        940
+      ],
+      "pids": [
+        "TS1201"
+      ],
+      "targetDriver": null,
+      "confidence": 30
+    },
+    {
+      "mfr": "_TZ3290_yyax9ajf",
+      "issues": [
+        1383
+      ],
+      "pids": [
+        "TS1201"
+      ],
+      "targetDriver": null,
+      "confidence": 30
+    },
+    {
+      "mfr": "_TZB210_ngnt8kni",
+      "issues": [
+        1276
+      ],
+      "pids": [],
+      "targetDriver": null,
+      "confidence": 30
+    },
+    {
+      "mfr": "_TZE200_amp6tsvy",
+      "issues": [
+        1319
+      ],
+      "pids": [],
+      "targetDriver": null,
+      "confidence": 30
+    },
+    {
+      "mfr": "_TZE200_b6wax7g0",
+      "issues": [
+        12
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "targetDriver": "generic_tuya",
+      "confidence": 70
+    },
+    {
+      "mfr": "_TZE200_bxoo2swd",
+      "issues": [
+        1404
+      ],
+      "pids": [
+        "TS0001",
+        "TS0002",
+        "TS0601"
+      ],
+      "targetDriver": "switch_1gang",
+      "confidence": 70
+    },
+    {
+      "mfr": "_TZE200_dcrrztpa",
+      "issues": [
+        1307
+      ],
+      "pids": [],
+      "targetDriver": "dimmer_wall_1gang",
+      "confidence": 70
+    },
+    {
+      "mfr": "_TZE200_dq8bu0pt",
+      "issues": [
+        1297
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "targetDriver": "generic_tuya",
+      "confidence": 70
+    },
+    {
+      "mfr": "_TZE200_g1ib5ldv",
+      "issues": [
+        46
+      ],
+      "pids": [],
+      "targetDriver": null,
+      "confidence": 30
+    },
+    {
+      "mfr": "_TZE200_sfqyhvpv",
+      "issues": [
+        1287
+      ],
+      "pids": [],
+      "targetDriver": "presence_sensor_radar",
+      "confidence": 70
+    },
+    {
+      "mfr": "_TZE200_shkxsgis",
+      "issues": [
+        718
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "targetDriver": "generic_tuya",
+      "confidence": 70
+    },
+    {
+      "mfr": "_TZE200_zqtiam4u",
+      "issues": [
+        186
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "targetDriver": "generic_tuya",
+      "confidence": 70
+    },
+    {
+      "mfr": "_TZE204_5cuocqty",
+      "issues": [
+        981
+      ],
+      "pids": [],
+      "targetDriver": null,
+      "confidence": 30
+    },
+    {
+      "mfr": "_TZE204_81yrt3l",
+      "issues": [
+        1393
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "targetDriver": "generic_tuya",
+      "confidence": 70
+    },
+    {
+      "mfr": "_TZE204_8fffc3kb",
+      "issues": [
+        1302
+      ],
+      "pids": [],
+      "targetDriver": null,
+      "confidence": 30
+    },
+    {
+      "mfr": "_TZE204_ahwvlkpy",
+      "issues": [
+        1247
+      ],
+      "pids": [],
+      "targetDriver": null,
+      "confidence": 30
+    },
+    {
+      "mfr": "_TZE204_bvfld3xc",
+      "issues": [
+        1355
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "targetDriver": "generic_tuya",
+      "confidence": 70
+    },
+    {
+      "mfr": "_TZE204_ikvncluo",
+      "issues": [
+        940
+      ],
+      "pids": [
+        "TS1201"
+      ],
+      "targetDriver": null,
+      "confidence": 30
+    },
+    {
+      "mfr": "_TZE204_jtbgusdc",
+      "issues": [
+        1108
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "targetDriver": "generic_tuya",
+      "confidence": 70
+    },
+    {
+      "mfr": "_TZE204_mpbki2zm-TS0601",
+      "issues": [
+        705
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "targetDriver": "generic_tuya",
+      "confidence": 70
+    },
+    {
+      "mfr": "_TZE204_qasjif9",
+      "issues": [
+        643
+      ],
+      "pids": [],
+      "targetDriver": "generic_tuya",
+      "confidence": 70
+    },
+    {
+      "mfr": "_TZE204_s139roas",
+      "issues": [
+        1214
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "targetDriver": "generic_tuya",
+      "confidence": 70
+    },
+    {
+      "mfr": "_TZE204_srmahpwl",
+      "issues": [
+        848
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "targetDriver": "generic_tuya",
+      "confidence": 70
+    },
+    {
+      "mfr": "_TZE204_sxm7l9x",
+      "issues": [
+        357
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "targetDriver": "generic_tuya",
+      "confidence": 70
+    },
+    {
+      "mfr": "_TZE204_t1blo2bj",
+      "issues": [
+        517
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "targetDriver": "generic_tuya",
+      "confidence": 70
+    },
+    {
+      "mfr": "_TZE204_xtrnjaoz",
+      "issues": [
+        1425
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "targetDriver": "generic_tuya",
+      "confidence": 70
+    },
+    {
+      "mfr": "_TZE284_0ints6w",
+      "issues": [
+        1396
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "targetDriver": "generic_tuya",
+      "confidence": 70
+    },
+    {
+      "mfr": "_TZE284_81YRT3L",
+      "issues": [
+        1416
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "targetDriver": "generic_tuya",
+      "confidence": 70
+    },
+    {
+      "mfr": "_TZE284_aa03yzhs",
+      "issues": [
+        1336
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "targetDriver": "generic_tuya",
+      "confidence": 70
+    },
+    {
+      "mfr": "_TZE284_bquwrqh1",
+      "issues": [
+        1351
+      ],
+      "pids": [],
+      "targetDriver": null,
+      "confidence": 30
+    },
+    {
+      "mfr": "_TZE284_n4ttsck2",
+      "issues": [
+        1279
+      ],
+      "pids": [],
+      "targetDriver": null,
+      "confidence": 30
+    },
+    {
+      "mfr": "_TZE284_rjxqso4a",
+      "issues": [
+        1294
+      ],
+      "pids": [],
+      "targetDriver": null,
+      "confidence": 30
+    },
+    {
+      "mfr": "_TZE284_rqcuwlsa",
+      "issues": [
+        1387
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "targetDriver": "generic_tuya",
+      "confidence": 70
+    },
+    {
+      "mfr": "_TZE284_uo8qcagc",
+      "issues": [
+        1399
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "targetDriver": "generic_tuya",
+      "confidence": 70
+    },
+    {
+      "mfr": "_TZE28C1000000_81yrt3lo",
+      "issues": [
+        1424
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "targetDriver": "generic_tuya",
+      "confidence": 70
+    },
+    {
+      "mfr": "_TZE608",
+      "issues": [
+        1385
+      ],
+      "pids": [
+        "TS0603"
+      ],
+      "targetDriver": null,
+      "confidence": 30
+    },
+    {
+      "mfr": "_TZN3000_cfnprab5",
+      "issues": [
+        287
+      ],
+      "pids": [],
+      "targetDriver": null,
+      "confidence": 30
+    }
+  ],
+  "integrationPlan": [
+    {
+      "driver": "generic_tuya",
+      "mfr": "_TZE",
+      "pids": [
+        "TS0601",
+        "TS0603"
+      ],
+      "issues": [
+        1354,
+        1355,
+        1360,
+        1362,
+        1363,
+        1372,
+        1374,
+        1379,
+        1381,
+        1382,
+        1384,
+        1385,
+        1387,
+        1393,
+        1396,
+        1397,
+        1398,
+        1399,
+        1400,
+        1403,
+        1404,
+        1405,
+        1406,
+        1409,
+        1410,
+        1416,
+        1424,
+        1425
+      ],
+      "suggestedAction": "Add \"_TZE\" to generic_tuya/driver.compose.json manufacturerName list"
+    },
+    {
+      "driver": "switch_4gang",
+      "mfr": "_TZ3000",
+      "pids": [
+        "TS0004",
+        "TS0011",
+        "TS0012",
+        "TS0014",
+        "TS0041",
+        "TS0044",
+        "TS004F",
+        "TS011F",
+        "TS0203",
+        "TS0215A",
+        "TS1002"
+      ],
+      "issues": [
+        1253,
+        1361,
+        1364,
+        1365,
+        1366,
+        1367,
+        1368,
+        1369,
+        1370,
+        1371,
+        1375,
+        1376,
+        1377,
+        1380,
+        1389,
+        1391,
+        1395,
+        1407,
+        1412,
+        1413,
+        1414,
+        1418,
+        1419,
+        1420
+      ],
+      "suggestedAction": "Add \"_TZ3000\" to switch_4gang/driver.compose.json manufacturerName list"
+    },
+    {
+      "driver": "generic_tuya",
+      "mfr": "_TZE284",
+      "pids": [
+        "TS0601"
+      ],
+      "issues": [
+        1354,
+        1360,
+        1362,
+        1363,
+        1379,
+        1384,
+        1387,
+        1396,
+        1397,
+        1399,
+        1400,
+        1409,
+        1410,
+        1416
+      ],
+      "suggestedAction": "Add \"_TZE284\" to generic_tuya/driver.compose.json manufacturerName list"
+    },
+    {
+      "driver": "generic_tuya",
+      "mfr": "_TZE200",
+      "pids": [
+        "TS0601"
+      ],
+      "issues": [
+        1372,
+        1374,
+        1382,
+        1398,
+        1403,
+        1404,
+        1405,
+        1406
+      ],
+      "suggestedAction": "Add \"_TZE200\" to generic_tuya/driver.compose.json manufacturerName list"
+    },
+    {
+      "driver": "switch_1gang",
+      "mfr": "_TZ3210",
+      "pids": [
+        "TS0002",
+        "TS011F",
+        "TS110E"
+      ],
+      "issues": [
+        1350,
+        1359,
+        1388,
+        1402,
+        1408,
+        1411,
+        1417
+      ],
+      "suggestedAction": "Add \"_TZ3210\" to switch_1gang/driver.compose.json manufacturerName list"
+    },
+    {
+      "driver": "generic_tuya",
+      "mfr": "_TZE204",
+      "pids": [
+        "TS0601"
+      ],
+      "issues": [
+        1355,
+        1374,
+        1381,
+        1393,
+        1425
+      ],
+      "suggestedAction": "Add \"_TZE204\" to generic_tuya/driver.compose.json manufacturerName list"
+    },
+    {
+      "driver": "switch_3gang",
+      "mfr": "_TZ3000_qewo8dlz",
+      "pids": [
+        "TS0013"
+      ],
+      "issues": [
+        382,
+        471,
+        601,
+        753
+      ],
+      "suggestedAction": "Add \"_TZ3000_qewo8dlz\" to switch_3gang/driver.compose.json manufacturerName list"
+    },
+    {
+      "driver": "plug",
+      "mfr": "_TZ3000_gnjozsaz",
+      "pids": [
+        "TS011F"
+      ],
+      "issues": [
+        256,
+        445,
+        521
+      ],
+      "suggestedAction": "Add \"_TZ3000_gnjozsaz\" to plug/driver.compose.json manufacturerName list"
+    },
+    {
+      "driver": "switch_3gang",
+      "mfr": "_TZ3000_qkixdnon",
+      "pids": [
+        "TS0003"
+      ],
+      "issues": [
+        1337,
+        1338,
+        1375
+      ],
+      "suggestedAction": "Add \"_TZ3000_qkixdnon\" to switch_3gang/driver.compose.json manufacturerName list"
+    },
+    {
+      "driver": "switch_1gang",
+      "mfr": "_TYZB01",
+      "pids": [
+        "TS0014"
+      ],
+      "issues": [
+        1412,
+        1413
+      ],
+      "suggestedAction": "Add \"_TYZB01\" to switch_1gang/driver.compose.json manufacturerName list"
+    },
+    {
+      "driver": "generic_tuya",
+      "mfr": "_TZ1800_ejwkn2h2",
+      "pids": [
+        "TS0601"
+      ],
+      "issues": [
+        33,
+        201
+      ],
+      "suggestedAction": "Add \"_TZ1800_ejwkn2h2\" to generic_tuya/driver.compose.json manufacturerName list"
+    },
+    {
+      "driver": "generic_tuya",
+      "mfr": "_TZ1800_fcdjzz3s",
+      "pids": [
+        "TS0601"
+      ],
+      "issues": [
+        24,
+        201
+      ],
+      "suggestedAction": "Add \"_TZ1800_fcdjzz3s\" to generic_tuya/driver.compose.json manufacturerName list"
+    },
+    {
+      "driver": "door_sensor",
+      "mfr": "_TZ3000_6zvw8ham",
+      "pids": [
+        "TS0203"
+      ],
+      "issues": [
+        509,
+        1323
+      ],
+      "suggestedAction": "Add \"_TZ3000_6zvw8ham\" to door_sensor/driver.compose.json manufacturerName list"
+    },
+    {
+      "driver": "switch_4gang",
+      "mfr": "_TZ3000_excgg5kb",
+      "pids": [
+        "TS0004"
+      ],
+      "issues": [
+        130,
+        159
+      ],
+      "suggestedAction": "Add \"_TZ3000_excgg5kb\" to switch_4gang/driver.compose.json manufacturerName list"
+    },
+    {
+      "driver": "button_wireless_scene",
+      "mfr": "_TZ3000_g",
+      "pids": [
+        "TS004F"
+      ],
+      "issues": [
+        1364,
+        1377
+      ],
+      "suggestedAction": "Add \"_TZ3000_g\" to button_wireless_scene/driver.compose.json manufacturerName list"
+    },
+    {
+      "driver": "switch_1gang",
+      "mfr": "_TZ3000_hafsqare",
+      "pids": [
+        "TS0011",
+        "TS0012"
+      ],
+      "issues": [
+        128,
+        1370
+      ],
+      "suggestedAction": "Add \"_TZ3000_hafsqare\" to switch_1gang/driver.compose.json manufacturerName list"
+    },
+    {
+      "driver": "switch_1gang",
+      "mfr": "_TZ3000_hhiodade",
+      "pids": [
+        "TS0011"
+      ],
+      "issues": [
+        214,
+        818
+      ],
+      "suggestedAction": "Add \"_TZ3000_hhiodade\" to switch_1gang/driver.compose.json manufacturerName list"
+    },
+    {
+      "driver": "bulb_dimmable",
+      "mfr": "_TZ3000_iiacqpdz",
+      "pids": [],
+      "issues": [
+        1252,
+        1277
+      ],
+      "suggestedAction": "Add \"_TZ3000_iiacqpdz\" to bulb_dimmable/driver.compose.json manufacturerName list"
+    },
+    {
+      "driver": "button_wireless_4",
+      "mfr": "_TZ3000_jcspr0tp",
+      "pids": [
+        "TS0044"
+      ],
+      "issues": [
+        763,
+        864
+      ],
+      "suggestedAction": "Add \"_TZ3000_jcspr0tp\" to button_wireless_4/driver.compose.json manufacturerName list"
+    },
+    {
+      "driver": "switch_1gang",
+      "mfr": "_TZ3000_mrduubod",
+      "pids": [
+        "TS0014"
+      ],
+      "issues": [
+        1412,
+        1413
+      ],
+      "suggestedAction": "Add \"_TZ3000_mrduubod\" to switch_1gang/driver.compose.json manufacturerName list"
+    },
+    {
+      "driver": "switch_1gang",
+      "mfr": "_TZ3000_r0pmi2p3",
+      "pids": [
+        "TS0014"
+      ],
+      "issues": [
+        1412,
+        1413
+      ],
+      "suggestedAction": "Add \"_TZ3000_r0pmi2p3\" to switch_1gang/driver.compose.json manufacturerName list"
+    },
+    {
+      "driver": "button_wireless_3",
+      "mfr": "_TZ3000_sj7jbgks",
+      "pids": [
+        "TS0043"
+      ],
+      "issues": [
+        346,
+        1188
+      ],
+      "suggestedAction": "Add \"_TZ3000_sj7jbgks\" to button_wireless_3/driver.compose.json manufacturerName list"
+    },
+    {
+      "driver": "button_wireless_4",
+      "mfr": "_TZ3000_zgyzgdua",
+      "pids": [
+        "TS0044"
+      ],
+      "issues": [
+        1231,
+        1327
+      ],
+      "suggestedAction": "Add \"_TZ3000_zgyzgdua\" to button_wireless_4/driver.compose.json manufacturerName list"
+    },
+    {
+      "driver": "door_sensor",
+      "mfr": "_TZ3000_zutizvyk",
+      "pids": [
+        "TS0203",
+        "TS0601"
+      ],
+      "issues": [
+        1304,
+        1347
+      ],
+      "suggestedAction": "Add \"_TZ3000_zutizvyk\" to door_sensor/driver.compose.json manufacturerName list"
+    },
+    {
+      "driver": "switch_1gang",
+      "mfr": "_TZ3210_nuenzetq",
+      "pids": [
+        "TS0002"
+      ],
+      "issues": [
+        1411,
+        1417
+      ],
+      "suggestedAction": "Add \"_TZ3210_nuenzetq\" to switch_1gang/driver.compose.json manufacturerName list"
+    },
+    {
+      "driver": "generic_tuya",
+      "mfr": "_TZE200_hhrtiq0x",
+      "pids": [
+        "TS0601"
+      ],
+      "issues": [
+        12,
+        229
+      ],
+      "suggestedAction": "Add \"_TZE200_hhrtiq0x\" to generic_tuya/driver.compose.json manufacturerName list"
+    },
+    {
+      "driver": "generic_tuya",
+      "mfr": "_TZE200_t1blo2bj",
+      "pids": [
+        "TS0601"
+      ],
+      "issues": [
+        366,
+        1333
+      ],
+      "suggestedAction": "Add \"_TZE200_t1blo2bj\" to generic_tuya/driver.compose.json manufacturerName list"
+    },
+    {
+      "driver": "climate_sensor",
+      "mfr": "_TZ3000_1obmmd8k",
+      "pids": [],
+      "issues": [
+        1188
+      ],
+      "suggestedAction": "Add \"_TZ3000_1obmmd8k\" to climate_sensor/driver.compose.json manufacturerName list"
+    },
+    {
+      "driver": "contact_sensor",
+      "mfr": "_TZ3000_2mccw9py",
+      "pids": [],
+      "issues": [
+        1188
+      ],
+      "suggestedAction": "Add \"_TZ3000_2mccw9py\" to contact_sensor/driver.compose.json manufacturerName list"
+    },
+    {
+      "driver": "switch_1gang",
+      "mfr": "_TZ3000_4js9lo5d",
+      "pids": [
+        "TS0012"
+      ],
+      "issues": [
+        11
+      ],
+      "suggestedAction": "Add \"_TZ3000_4js9lo5d\" to switch_1gang/driver.compose.json manufacturerName list"
+    },
+    {
+      "driver": "button_wireless_4",
+      "mfr": "_TZ3000_abci1hiu",
+      "pids": [
+        "TS0044"
+      ],
+      "issues": [
+        282
+      ],
+      "suggestedAction": "Add \"_TZ3000_abci1hiu\" to button_wireless_4/driver.compose.json manufacturerName list"
+    },
+    {
+      "driver": "door_sensor",
+      "mfr": "_TZ3000_au2o5e6q",
+      "pids": [
+        "TS0203"
+      ],
+      "issues": [
+        938
+      ],
+      "suggestedAction": "Add \"_TZ3000_au2o5e6q\" to door_sensor/driver.compose.json manufacturerName list"
+    },
+    {
+      "driver": "switch_1gang",
+      "mfr": "_TZ3000_bi6lpsew",
+      "pids": [],
+      "issues": [
+        1188
+      ],
+      "suggestedAction": "Add \"_TZ3000_bi6lpsew\" to switch_1gang/driver.compose.json manufacturerName list"
+    },
+    {
+      "driver": "switch_1gang",
+      "mfr": "_TZ3000_blhvsaqf",
+      "pids": [
+        "TS0001"
+      ],
+      "issues": [
+        1339
+      ],
+      "suggestedAction": "Add \"_TZ3000_blhvsaqf\" to switch_1gang/driver.compose.json manufacturerName list"
+    },
+    {
+      "driver": "door_sensor",
+      "mfr": "_TZ3000_cea5xugq",
+      "pids": [
+        "TS0203"
+      ],
+      "issues": [
+        192
+      ],
+      "suggestedAction": "Add \"_TZ3000_cea5xugq\" to door_sensor/driver.compose.json manufacturerName list"
+    },
+    {
+      "driver": "plug_smart",
+      "mfr": "_TZ3000_cfnprab5to",
+      "pids": [],
+      "issues": [
+        287
+      ],
+      "suggestedAction": "Add \"_TZ3000_cfnprab5to\" to plug_smart/driver.compose.json manufacturerName list"
+    },
+    {
+      "driver": "curtain_motor",
+      "mfr": "_TZ3000_dbpmpco1",
+      "pids": [],
+      "issues": [
+        259
+      ],
+      "suggestedAction": "Add \"_TZ3000_dbpmpco1\" to curtain_motor/driver.compose.json manufacturerName list"
+    },
+    {
+      "driver": "switch_1gang",
+      "mfr": "_TZ3000_e98krvvk",
+      "pids": [
+        "TS0012"
+      ],
+      "issues": [
+        1369
+      ],
+      "suggestedAction": "Add \"_TZ3000_e98krvvk\" to switch_1gang/driver.compose.json manufacturerName list"
+    },
+    {
+      "driver": "switch_4gang",
+      "mfr": "_TZ3000_enmfaave",
+      "pids": [
+        "TS0004"
+      ],
+      "issues": [
+        1368
+      ],
+      "suggestedAction": "Add \"_TZ3000_enmfaave\" to switch_4gang/driver.compose.json manufacturerName list"
+    },
+    {
+      "driver": "bulb_dimmable",
+      "mfr": "_TZ3000_gbm10jnj",
+      "pids": [],
+      "issues": [
+        1188
+      ],
+      "suggestedAction": "Add \"_TZ3000_gbm10jnj\" to bulb_dimmable/driver.compose.json manufacturerName list"
+    },
+    {
+      "driver": "door_sensor",
+      "mfr": "_TZ3000_hkcpblrs",
+      "pids": [
+        "TS0203"
+      ],
+      "issues": [
+        876
+      ],
+      "suggestedAction": "Add \"_TZ3000_hkcpblrs\" to door_sensor/driver.compose.json manufacturerName list"
+    },
+    {
+      "driver": "illuminance_sensor",
+      "mfr": "_TZ3000_hyarhbyx",
+      "pids": [],
+      "issues": [
+        1395
+      ],
+      "suggestedAction": "Add \"_TZ3000_hyarhbyx\" to illuminance_sensor/driver.compose.json manufacturerName list"
+    },
+    {
+      "driver": "climate_sensor",
+      "mfr": "_TZ3000_i8jfiezr",
+      "pids": [
+        "TS0201"
+      ],
+      "issues": [
+        120
+      ],
+      "suggestedAction": "Add \"_TZ3000_i8jfiezr\" to climate_sensor/driver.compose.json manufacturerName list"
+    },
+    {
+      "driver": "button_wireless_6",
+      "mfr": "_TZ3000_iszegwpd",
+      "pids": [
+        "TS0046"
+      ],
+      "issues": [
+        962
+      ],
+      "suggestedAction": "Add \"_TZ3000_iszegwpd\" to button_wireless_6/driver.compose.json manufacturerName list"
+    },
+    {
+      "driver": "plug",
+      "mfr": "_TZ3000_j1v25l17",
+      "pids": [
+        "TS011F"
+      ],
+      "issues": [
+        518
+      ],
+      "suggestedAction": "Add \"_TZ3000_j1v25l17\" to plug/driver.compose.json manufacturerName list"
+    },
+    {
+      "driver": "switch_1gang",
+      "mfr": "_TZ3000_j9568h44",
+      "pids": [
+        "TS0001",
+        "TS0111",
+        "TS011F"
+      ],
+      "issues": [
+        860
+      ],
+      "suggestedAction": "Add \"_TZ3000_j9568h44\" to switch_1gang/driver.compose.json manufacturerName list"
+    },
+    {
+      "driver": "button_wireless_scene",
+      "mfr": "_TZ3000_kjfzuycl",
+      "pids": [
+        "TS004F"
+      ],
+      "issues": [
+        225
+      ],
+      "suggestedAction": "Add \"_TZ3000_kjfzuycl\" to button_wireless_scene/driver.compose.json manufacturerName list"
+    },
+    {
+      "driver": "plug",
+      "mfr": "_TZ3000_ko6v90pg",
+      "pids": [
+        "TS011F"
+      ],
+      "issues": [
+        877
+      ],
+      "suggestedAction": "Add \"_TZ3000_ko6v90pg\" to plug/driver.compose.json manufacturerName list"
+    },
+    {
+      "driver": "switch_1gang",
+      "mfr": "_TZ3000_l9brjwau",
+      "pids": [
+        "TS0002"
+      ],
+      "issues": [
+        1337
+      ],
+      "suggestedAction": "Add \"_TZ3000_l9brjwau\" to switch_1gang/driver.compose.json manufacturerName list"
+    },
+    {
+      "driver": "switch_1gang",
+      "mfr": "_TZ3000_ltiqubue",
+      "pids": [
+        "TS130F"
+      ],
+      "issues": [
+        9
+      ],
+      "suggestedAction": "Add \"_TZ3000_ltiqubue\" to switch_1gang/driver.compose.json manufacturerName list"
+    },
+    {
+      "driver": "plug",
+      "mfr": "_TZ3000_npg02xft",
+      "pids": [
+        "TS011F"
+      ],
+      "issues": [
+        1036
+      ],
+      "suggestedAction": "Add \"_TZ3000_npg02xft\" to plug/driver.compose.json manufacturerName list"
+    },
+    {
+      "driver": "water_leak_sensor",
+      "mfr": "_TZ3000_o9f2zqln",
+      "pids": [
+        "TS0207"
+      ],
+      "issues": [
+        473
+      ],
+      "suggestedAction": "Add \"_TZ3000_o9f2zqln\" to water_leak_sensor/driver.compose.json manufacturerName list"
+    },
+    {
+      "driver": "plug",
+      "mfr": "_TZ3000_pjcqjtev",
+      "pids": [
+        "TS011F"
+      ],
+      "issues": [
+        407
+      ],
+      "suggestedAction": "Add \"_TZ3000_pjcqjtev\" to plug/driver.compose.json manufacturerName list"
+    },
+    {
+      "driver": "plug",
+      "mfr": "_TZ3000_pmz6mjyu",
+      "pids": [
+        "TS011F"
+      ],
+      "issues": [
+        170
+      ],
+      "suggestedAction": "Add \"_TZ3000_pmz6mjyu\" to plug/driver.compose.json manufacturerName list"
+    },
+    {
+      "driver": "button_wireless_scene",
+      "mfr": "_TZ3000_rco1yzb1",
+      "pids": [
+        "TS004F"
+      ],
+      "issues": [
+        423
+      ],
+      "suggestedAction": "Add \"_TZ3000_rco1yzb1\" to button_wireless_scene/driver.compose.json manufacturerName list"
+    },
+    {
+      "driver": "button_wireless_1",
+      "mfr": "_TZ3000_tk3s5tyg",
+      "pids": [
+        "TS0041"
+      ],
+      "issues": [
+        73
+      ],
+      "suggestedAction": "Add \"_TZ3000_tk3s5tyg\" to button_wireless_1/driver.compose.json manufacturerName list"
+    },
+    {
+      "driver": "switch_1gang",
+      "mfr": "_TZ3000_uaa99arv",
+      "pids": [],
+      "issues": [
+        864
+      ],
+      "suggestedAction": "Add \"_TZ3000_uaa99arv\" to switch_1gang/driver.compose.json manufacturerName list"
+    },
+    {
+      "driver": "plug_smart",
+      "mfr": "_TZ3000_uwaort14",
+      "pids": [],
+      "issues": [
+        1296
+      ],
+      "suggestedAction": "Add \"_TZ3000_uwaort14\" to plug_smart/driver.compose.json manufacturerName list"
+    },
+    {
+      "driver": "switch_4gang",
+      "mfr": "_TZ3000_wkr3jqmr",
+      "pids": [
+        "TS0004"
+      ],
+      "issues": [
+        528
+      ],
+      "suggestedAction": "Add \"_TZ3000_wkr3jqmr\" to switch_4gang/driver.compose.json manufacturerName list"
+    },
+    {
+      "driver": "plug",
+      "mfr": "_TZ3000_wzauvbcs",
+      "pids": [
+        "TS011F"
+      ],
+      "issues": [
+        157
+      ],
+      "suggestedAction": "Add \"_TZ3000_wzauvbcs\" to plug/driver.compose.json manufacturerName list"
+    },
+    {
+      "driver": "water_leak_sensor",
+      "mfr": "_TZ3000_xk5udnd6",
+      "pids": [],
+      "issues": [
+        1278
+      ],
+      "suggestedAction": "Add \"_TZ3000_xk5udnd6\" to water_leak_sensor/driver.compose.json manufacturerName list"
+    },
+    {
+      "driver": "climate_sensor",
+      "mfr": "_TZ3000_y56pgpgs",
+      "pids": [
+        "TS0202"
+      ],
+      "issues": [
+        693
+      ],
+      "suggestedAction": "Add \"_TZ3000_y56pgpgs\" to climate_sensor/driver.compose.json manufacturerName list"
+    },
+    {
+      "driver": "plug",
+      "mfr": "_TZ3000_yi0n4xfd",
+      "pids": [
+        "TS011F"
+      ],
+      "issues": [
+        1419
+      ],
+      "suggestedAction": "Add \"_TZ3000_yi0n4xfd\" to plug/driver.compose.json manufacturerName list"
+    },
+    {
+      "driver": "generic_tuya",
+      "mfr": "_TZ3000_yw5tvzsk",
+      "pids": [],
+      "issues": [
+        1188
+      ],
+      "suggestedAction": "Add \"_TZ3000_yw5tvzsk\" to generic_tuya/driver.compose.json manufacturerName list"
+    },
+    {
+      "driver": "switch_1gang",
+      "mfr": "_TZ3000_zmy4lsw",
+      "pids": [
+        "TS0002"
+      ],
+      "issues": [
+        195
+      ],
+      "suggestedAction": "Add \"_TZ3000_zmy4lsw\" to switch_1gang/driver.compose.json manufacturerName list"
+    },
+    {
+      "driver": "climate_sensor",
+      "mfr": "_TZ3040",
+      "pids": [
+        "TS0202"
+      ],
+      "issues": [
+        1392
+      ],
+      "suggestedAction": "Add \"_TZ3040\" to climate_sensor/driver.compose.json manufacturerName list"
+    },
+    {
+      "driver": "climate_sensor",
+      "mfr": "_TZ3040_o4mkahkc",
+      "pids": [
+        "TS0202"
+      ],
+      "issues": [
+        1392
+      ],
+      "suggestedAction": "Add \"_TZ3040_o4mkahkc\" to climate_sensor/driver.compose.json manufacturerName list"
+    },
+    {
+      "driver": "plug",
+      "mfr": "_TZ3210_4ux0ondb",
+      "pids": [
+        "TS011F"
+      ],
+      "issues": [
+        1326
+      ],
+      "suggestedAction": "Add \"_TZ3210_4ux0ondb\" to plug/driver.compose.json manufacturerName list"
+    },
+    {
+      "driver": "fingerbot",
+      "mfr": "_TZ3210_dse8ogfy_fingerbot",
+      "pids": [],
+      "issues": [
+        1065
+      ],
+      "suggestedAction": "Add \"_TZ3210_dse8ogfy_fingerbot\" to fingerbot/driver.compose.json manufacturerName list"
+    },
+    {
+      "driver": "bulb_rgbw",
+      "mfr": "_TZ3210_eejm8dcr",
+      "pids": [
+        "TS0505B"
+      ],
+      "issues": [
+        1075
+      ],
+      "suggestedAction": "Add \"_TZ3210_eejm8dcr\" to bulb_rgbw/driver.compose.json manufacturerName list"
+    },
+    {
+      "driver": "bulb_rgbw",
+      "mfr": "_TZ3210_s8lvbbu",
+      "pids": [
+        "TS0505B"
+      ],
+      "issues": [
+        1325
+      ],
+      "suggestedAction": "Add \"_TZ3210_s8lvbbu\" to bulb_rgbw/driver.compose.json manufacturerName list"
+    },
+    {
+      "driver": "bulb_rgbw",
+      "mfr": "_TZ3210_sroezl0s",
+      "pids": [
+        "TS0504B"
+      ],
+      "issues": [
+        277
+      ],
+      "suggestedAction": "Add \"_TZ3210_sroezl0s\" to bulb_rgbw/driver.compose.json manufacturerName list"
+    },
+    {
+      "driver": "plug",
+      "mfr": "_TZ3210_xzhnra8x",
+      "pids": [
+        "TS011F"
+      ],
+      "issues": [
+        1348
+      ],
+      "suggestedAction": "Add \"_TZ3210_xzhnra8x\" to plug/driver.compose.json manufacturerName list"
+    },
+    {
+      "driver": "generic_tuya",
+      "mfr": "_TZE200_b6wax7g0",
+      "pids": [
+        "TS0601"
+      ],
+      "issues": [
+        12
+      ],
+      "suggestedAction": "Add \"_TZE200_b6wax7g0\" to generic_tuya/driver.compose.json manufacturerName list"
+    },
+    {
+      "driver": "switch_1gang",
+      "mfr": "_TZE200_bxoo2swd",
+      "pids": [
+        "TS0001",
+        "TS0002",
+        "TS0601"
+      ],
+      "issues": [
+        1404
+      ],
+      "suggestedAction": "Add \"_TZE200_bxoo2swd\" to switch_1gang/driver.compose.json manufacturerName list"
+    },
+    {
+      "driver": "dimmer_wall_1gang",
+      "mfr": "_TZE200_dcrrztpa",
+      "pids": [],
+      "issues": [
+        1307
+      ],
+      "suggestedAction": "Add \"_TZE200_dcrrztpa\" to dimmer_wall_1gang/driver.compose.json manufacturerName list"
+    },
+    {
+      "driver": "generic_tuya",
+      "mfr": "_TZE200_dq8bu0pt",
+      "pids": [
+        "TS0601"
+      ],
+      "issues": [
+        1297
+      ],
+      "suggestedAction": "Add \"_TZE200_dq8bu0pt\" to generic_tuya/driver.compose.json manufacturerName list"
+    },
+    {
+      "driver": "presence_sensor_radar",
+      "mfr": "_TZE200_sfqyhvpv",
+      "pids": [],
+      "issues": [
+        1287
+      ],
+      "suggestedAction": "Add \"_TZE200_sfqyhvpv\" to presence_sensor_radar/driver.compose.json manufacturerName list"
+    },
+    {
+      "driver": "generic_tuya",
+      "mfr": "_TZE200_shkxsgis",
+      "pids": [
+        "TS0601"
+      ],
+      "issues": [
+        718
+      ],
+      "suggestedAction": "Add \"_TZE200_shkxsgis\" to generic_tuya/driver.compose.json manufacturerName list"
+    },
+    {
+      "driver": "generic_tuya",
+      "mfr": "_TZE200_zqtiam4u",
+      "pids": [
+        "TS0601"
+      ],
+      "issues": [
+        186
+      ],
+      "suggestedAction": "Add \"_TZE200_zqtiam4u\" to generic_tuya/driver.compose.json manufacturerName list"
+    },
+    {
+      "driver": "generic_tuya",
+      "mfr": "_TZE204_81yrt3l",
+      "pids": [
+        "TS0601"
+      ],
+      "issues": [
+        1393
+      ],
+      "suggestedAction": "Add \"_TZE204_81yrt3l\" to generic_tuya/driver.compose.json manufacturerName list"
+    },
+    {
+      "driver": "generic_tuya",
+      "mfr": "_TZE204_bvfld3xc",
+      "pids": [
+        "TS0601"
+      ],
+      "issues": [
+        1355
+      ],
+      "suggestedAction": "Add \"_TZE204_bvfld3xc\" to generic_tuya/driver.compose.json manufacturerName list"
+    },
+    {
+      "driver": "generic_tuya",
+      "mfr": "_TZE204_jtbgusdc",
+      "pids": [
+        "TS0601"
+      ],
+      "issues": [
+        1108
+      ],
+      "suggestedAction": "Add \"_TZE204_jtbgusdc\" to generic_tuya/driver.compose.json manufacturerName list"
+    },
+    {
+      "driver": "generic_tuya",
+      "mfr": "_TZE204_mpbki2zm-TS0601",
+      "pids": [
+        "TS0601"
+      ],
+      "issues": [
+        705
+      ],
+      "suggestedAction": "Add \"_TZE204_mpbki2zm-TS0601\" to generic_tuya/driver.compose.json manufacturerName list"
+    },
+    {
+      "driver": "generic_tuya",
+      "mfr": "_TZE204_qasjif9",
+      "pids": [],
+      "issues": [
+        643
+      ],
+      "suggestedAction": "Add \"_TZE204_qasjif9\" to generic_tuya/driver.compose.json manufacturerName list"
+    },
+    {
+      "driver": "generic_tuya",
+      "mfr": "_TZE204_s139roas",
+      "pids": [
+        "TS0601"
+      ],
+      "issues": [
+        1214
+      ],
+      "suggestedAction": "Add \"_TZE204_s139roas\" to generic_tuya/driver.compose.json manufacturerName list"
+    },
+    {
+      "driver": "generic_tuya",
+      "mfr": "_TZE204_srmahpwl",
+      "pids": [
+        "TS0601"
+      ],
+      "issues": [
+        848
+      ],
+      "suggestedAction": "Add \"_TZE204_srmahpwl\" to generic_tuya/driver.compose.json manufacturerName list"
+    },
+    {
+      "driver": "generic_tuya",
+      "mfr": "_TZE204_sxm7l9x",
+      "pids": [
+        "TS0601"
+      ],
+      "issues": [
+        357
+      ],
+      "suggestedAction": "Add \"_TZE204_sxm7l9x\" to generic_tuya/driver.compose.json manufacturerName list"
+    },
+    {
+      "driver": "generic_tuya",
+      "mfr": "_TZE204_t1blo2bj",
+      "pids": [
+        "TS0601"
+      ],
+      "issues": [
+        517
+      ],
+      "suggestedAction": "Add \"_TZE204_t1blo2bj\" to generic_tuya/driver.compose.json manufacturerName list"
+    },
+    {
+      "driver": "generic_tuya",
+      "mfr": "_TZE204_xtrnjaoz",
+      "pids": [
+        "TS0601"
+      ],
+      "issues": [
+        1425
+      ],
+      "suggestedAction": "Add \"_TZE204_xtrnjaoz\" to generic_tuya/driver.compose.json manufacturerName list"
+    },
+    {
+      "driver": "generic_tuya",
+      "mfr": "_TZE284_0ints6w",
+      "pids": [
+        "TS0601"
+      ],
+      "issues": [
+        1396
+      ],
+      "suggestedAction": "Add \"_TZE284_0ints6w\" to generic_tuya/driver.compose.json manufacturerName list"
+    },
+    {
+      "driver": "generic_tuya",
+      "mfr": "_TZE284_81YRT3L",
+      "pids": [
+        "TS0601"
+      ],
+      "issues": [
+        1416
+      ],
+      "suggestedAction": "Add \"_TZE284_81YRT3L\" to generic_tuya/driver.compose.json manufacturerName list"
+    },
+    {
+      "driver": "generic_tuya",
+      "mfr": "_TZE284_aa03yzhs",
+      "pids": [
+        "TS0601"
+      ],
+      "issues": [
+        1336
+      ],
+      "suggestedAction": "Add \"_TZE284_aa03yzhs\" to generic_tuya/driver.compose.json manufacturerName list"
+    },
+    {
+      "driver": "generic_tuya",
+      "mfr": "_TZE284_rqcuwlsa",
+      "pids": [
+        "TS0601"
+      ],
+      "issues": [
+        1387
+      ],
+      "suggestedAction": "Add \"_TZE284_rqcuwlsa\" to generic_tuya/driver.compose.json manufacturerName list"
+    },
+    {
+      "driver": "generic_tuya",
+      "mfr": "_TZE284_uo8qcagc",
+      "pids": [
+        "TS0601"
+      ],
+      "issues": [
+        1399
+      ],
+      "suggestedAction": "Add \"_TZE284_uo8qcagc\" to generic_tuya/driver.compose.json manufacturerName list"
+    },
+    {
+      "driver": "generic_tuya",
+      "mfr": "_TZE28C1000000_81yrt3lo",
+      "pids": [
+        "TS0601"
+      ],
+      "issues": [
+        1424
+      ],
+      "suggestedAction": "Add \"_TZE28C1000000_81yrt3lo\" to generic_tuya/driver.compose.json manufacturerName list"
+    }
+  ]
+}

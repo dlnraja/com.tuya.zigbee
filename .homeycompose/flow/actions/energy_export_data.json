@@ -1,0 +1,91 @@
+{
+  "id": "energy_export_data",
+  "title": {
+    "en": "Export energy data"
+  },
+  "hint": {
+    "en": "Export energy history data for a device or all devices as a trigger token"
+  },
+  "args": [
+    {
+      "name": "format",
+      "type": "dropdown",
+      "title": {
+        "en": "Export format"
+      },
+      "values": [
+        {
+          "id": "json",
+          "title": {
+            "en": "JSON"
+          }
+        },
+        {
+          "id": "summary",
+          "title": {
+            "en": "Summary only"
+          }
+        }
+      ]
+    },
+    {
+      "name": "period",
+      "type": "dropdown",
+      "title": {
+        "en": "Time period"
+      },
+      "values": [
+        {
+          "id": "today",
+          "title": {
+            "en": "Today"
+          }
+        },
+        {
+          "id": "this_week",
+          "title": {
+            "en": "This week"
+          }
+        },
+        {
+          "id": "this_month",
+          "title": {
+            "en": "This month"
+          }
+        },
+        {
+          "id": "all",
+          "title": {
+            "en": "All data"
+          }
+        }
+      ]
+    }
+  ],
+  "tokens": [
+    {
+      "name": "export_data",
+      "type": "string",
+      "title": {
+        "en": "Exported data"
+      }
+    },
+    {
+      "name": "total_devices",
+      "type": "number",
+      "title": {
+        "en": "Total devices"
+      }
+    },
+    {
+      "name": "total_energy_kwh",
+      "type": "number",
+      "title": {
+        "en": "Total energy (kWh)"
+      }
+    }
+  ],
+  "titleFormatted": {
+    "en": "Export energy data [[format]] [[period]]"
+  }
+}

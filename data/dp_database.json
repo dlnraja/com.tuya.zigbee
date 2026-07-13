@@ -1,0 +1,513 @@
+{
+  "1": {
+    "deviceTypes": ["switch", "sensor", "light", "plug", "curtain", "thermostat", "siren", "valve", "fan", "contact", "motion", "smoke", "gas", "vibration"],
+    "capabilities": ["onoff", "alarm_contact", "alarm_water", "alarm_gas", "alarm_smoke", "occupancy", "presence", "windowcoverings_state"],
+    "dataTypes": ["bool", "enum", "value"],
+    "sources": ["our", "z2m", "zha"],
+    "notes": "Most common DP - state/control for nearly all device types"
+  },
+  "2": {
+    "deviceTypes": ["sensor", "thermostat", "curtain", "plug", "co2", "illuminance"],
+    "capabilities": ["measure_humidity", "target_temperature", "windowcoverings_set", "measure_co2", "measure_luminance"],
+    "dataTypes": ["value", "raw"],
+    "sources": ["our", "z2m", "zha"],
+    "notes": "Second most common - humidity, temperature target, position control"
+  },
+  "3": {
+    "deviceTypes": ["sensor", "thermostat", "curtain", "plug", "soil"],
+    "capabilities": ["measure_battery", "measure_temperature", "dim", "windowcoverings_set"],
+    "dataTypes": ["value", "raw"],
+    "sources": ["our", "z2m", "zha"],
+    "notes": "Battery, temperature, brightness, or position depending on device"
+  },
+  "4": {
+    "deviceTypes": ["sensor", "thermostat", "curtain", "smoke", "soil"],
+    "capabilities": ["measure_battery", "measure_temperature", "measure_ec"],
+    "dataTypes": ["value", "raw"],
+    "sources": ["our", "z2m", "zha"],
+    "notes": "Battery or secondary temperature"
+  },
+  "5": {
+    "deviceTypes": ["sensor", "thermostat", "siren", "valve", "curtain"],
+    "capabilities": ["measure_battery", "alarm_tamper", "measure_luminance", "eco_mode"],
+    "dataTypes": ["value", "bool", "enum"],
+    "sources": ["our", "z2m", "zha"],
+    "notes": "Battery, tamper alarm, or eco mode"
+  },
+  "6": {
+    "deviceTypes": ["sensor", "thermostat", "plug", "curtain", "motion", "gas", "valve"],
+    "capabilities": ["measure_temperature", "alarm_contact", "windowcoverings_set", "valve_duration"],
+    "dataTypes": ["value", "bool"],
+    "sources": ["our", "z2m", "zha"],
+    "notes": "Temperature, contact, or valve duration"
+  },
+  "7": {
+    "deviceTypes": ["plug", "thermostat", "siren", "valve", "curtain", "gas"],
+    "capabilities": ["onoff", "child_lock", "volume_set", "valve_countdown"],
+    "dataTypes": ["bool", "value", "enum"],
+    "sources": ["our", "z2m", "zha"],
+    "notes": "Switch state, child lock, or volume"
+  },
+  "8": {
+    "deviceTypes": ["thermostat", "curtain", "plug", "gas", "level_sensor"],
+    "capabilities": ["valve_position", "windowcoverings_set", "dim", "moving"],
+    "dataTypes": ["value"],
+    "sources": ["our", "z2m", "zha"],
+    "notes": "Valve position, curtain position, or brightness"
+  },
+  "9": {
+    "deviceTypes": ["sensor", "plug", "thermostat", "curtain", "motion", "gas", "valve"],
+    "capabilities": ["measure_power", "boost_mode", "windowcoverings_tilt_set", "motion_sensitivity"],
+    "dataTypes": ["value", "bool", "enum"],
+    "sources": ["our", "z2m", "zha"],
+    "notes": "Power, boost mode, tilt, or sensitivity"
+  },
+  "10": {
+    "deviceTypes": ["sensor", "curtain", "gas", "valve", "motion"],
+    "capabilities": ["measure_luminance", "fading_time", "weather_delay"],
+    "dataTypes": ["value", "enum"],
+    "sources": ["our", "z2m", "zha"],
+    "notes": "Luminance, fade time, or weather delay"
+  },
+  "11": {
+    "deviceTypes": ["sensor", "curtain", "gas", "valve", "motion"],
+    "capabilities": ["human_motion_state", "shutdown_timer"],
+    "dataTypes": ["enum", "value"],
+    "sources": ["our", "z2m", "zha"],
+    "notes": "Motion state or shutdown timer"
+  },
+  "12": {
+    "deviceTypes": ["sensor", "curtain", "gas", "valve", "illuminance"],
+    "capabilities": ["measure_luminance", "countdown", "timer_state"],
+    "dataTypes": ["value", "raw"],
+    "sources": ["our", "z2m", "zha"],
+    "notes": "Luminance, countdown, or timer state"
+  },
+  "13": {
+    "deviceTypes": ["switch", "sensor", "curtain", "thermostat", "valve"],
+    "capabilities": ["onoff", "measure_battery", "auto_clean"],
+    "dataTypes": ["bool", "value"],
+    "sources": ["our", "z2m", "zha"],
+    "notes": "Switch state, battery, or auto clean"
+  },
+  "14": {
+    "deviceTypes": ["sensor", "thermostat", "curtain", "valve", "smoke"],
+    "capabilities": ["measure_battery", "window_detection", "power_on_behavior"],
+    "dataTypes": ["value", "bool"],
+    "sources": ["our", "z2m", "zha"],
+    "notes": "Battery, window detection, or power on behavior"
+  },
+  "15": {
+    "deviceTypes": ["sensor", "thermostat", "curtain", "smoke", "gas", "valve", "motion"],
+    "capabilities": ["measure_battery", "max_temperature", "radar_sensitivity", "power_factor"],
+    "dataTypes": ["value", "uint8_t"],
+    "sources": ["our", "z2m", "zha"],
+    "notes": "Battery, max temp, radar sensitivity, or power factor"
+  },
+  "16": {
+    "deviceTypes": ["curtain", "thermostat", "dimmer", "smoke", "gas", "motion"],
+    "capabilities": ["occupied_heating_setpoint", "backlight_mode", "motionless_sensitivity"],
+    "dataTypes": ["value", "enum"],
+    "sources": ["our", "z2m", "zha"],
+    "notes": "Temperature setpoint, backlight, or sensitivity"
+  },
+  "17": {
+    "deviceTypes": ["sensor"],
+    "capabilities": ["measure_temperature"],
+    "dataTypes": ["value"],
+    "sources": ["our", "zha"],
+    "notes": "Temperature (ZHA specific)"
+  },
+  "18": {
+    "deviceTypes": ["sensor", "plug", "co2"],
+    "capabilities": ["measure_current", "measure_temperature", "measure_co2"],
+    "dataTypes": ["value"],
+    "sources": ["our", "z2m", "zha"],
+    "notes": "Current, temperature, or CO2"
+  },
+  "19": {
+    "deviceTypes": ["sensor", "thermostat", "valve", "co2", "motion"],
+    "capabilities": ["measure_voltage", "local_temperature_calibration", "target_distance"],
+    "dataTypes": ["value", "int32s"],
+    "sources": ["our", "z2m", "zha"],
+    "notes": "Voltage, temp calibration, or target distance"
+  },
+  "20": {
+    "deviceTypes": ["sensor", "plug", "siren", "co2"],
+    "capabilities": ["meter_power", "alarm_generic"],
+    "dataTypes": ["value"],
+    "sources": ["our", "zha"],
+    "notes": "Energy meter or alarm"
+  },
+  "21": {
+    "deviceTypes": ["plug", "siren", "curtain", "valve", "co2", "level_sensor"],
+    "capabilities": ["backlight_mode", "valve_alarm", "holiday_temperature"],
+    "dataTypes": ["enum", "value"],
+    "sources": ["our", "z2m", "zha"],
+    "notes": "Backlight mode, valve alarm, or holiday temp"
+  },
+  "22": {
+    "deviceTypes": ["sensor", "valve", "co2", "level_sensor"],
+    "capabilities": ["measure_temperature", "measure_formaldehyde"],
+    "dataTypes": ["value"],
+    "sources": ["our", "zha"],
+    "notes": "Temperature or formaldehyde"
+  },
+  "23": {
+    "deviceTypes": ["power_meter", "sos_button"],
+    "capabilities": ["energy_produced", "action"],
+    "dataTypes": ["value", "static"],
+    "sources": ["z2m", "zha"],
+    "notes": "MISSING FROM OUR DRIVERS - energy produced or SOS action"
+  },
+  "24": {
+    "deviceTypes": ["thermostat"],
+    "capabilities": ["local_temperature"],
+    "dataTypes": ["value"],
+    "sources": ["our", "z2m", "zha"],
+    "notes": "Local temperature reading"
+  },
+  "25": {
+    "deviceTypes": ["valve"],
+    "capabilities": ["valve_duration"],
+    "dataTypes": ["value"],
+    "sources": ["our", "zha"],
+    "notes": "Valve duration setting"
+  },
+  "26": {
+    "deviceTypes": ["valve", "power_meter"],
+    "capabilities": ["error_status", "voltage"],
+    "dataTypes": ["raw", "value"],
+    "sources": ["our", "z2m", "zha"],
+    "notes": "Error status or voltage"
+  },
+  "27": {
+    "deviceTypes": ["trv"],
+    "capabilities": ["local_temperature_calibration"],
+    "dataTypes": ["int32s"],
+    "sources": ["zha"],
+    "notes": "ZHA-only TRV temp calibration"
+  },
+  "28": {
+    "deviceTypes": ["thermostat"],
+    "capabilities": ["local_temperature_calibration"],
+    "dataTypes": ["int32s"],
+    "sources": ["zha"],
+    "notes": "ZHA-only thermostat temp calibration"
+  },
+  "29": {
+    "deviceTypes": ["power_meter"],
+    "capabilities": ["total_active_power"],
+    "dataTypes": ["value"],
+    "sources": ["z2m", "zha"],
+    "notes": "MISSING FROM OUR DRIVERS - total active power"
+  },
+  "30": {
+    "deviceTypes": ["power_meter", "thermostat"],
+    "capabilities": ["total_reactive_power", "child_lock"],
+    "dataTypes": ["value", "bool"],
+    "sources": ["zha"],
+    "notes": "ZHA-only reactive power or child lock"
+  },
+  "32": {
+    "deviceTypes": ["power_meter"],
+    "capabilities": ["ac_frequency"],
+    "dataTypes": ["value"],
+    "sources": ["zha"],
+    "notes": "ZHA-only AC frequency"
+  },
+  "35": {
+    "deviceTypes": ["thermostat", "trv"],
+    "capabilities": ["measure_humidity", "error_or_battery_low"],
+    "dataTypes": ["value", "binary"],
+    "sources": ["our", "zha"],
+    "notes": "Humidity or error/battery low"
+  },
+  "36": {
+    "deviceTypes": ["thermostat", "trv"],
+    "capabilities": ["heating", "frost_protection"],
+    "dataTypes": ["bool"],
+    "sources": ["our", "zha"],
+    "notes": "Heating state or frost protection"
+  },
+  "37": {
+    "deviceTypes": ["valve"],
+    "capabilities": ["weather_delay"],
+    "dataTypes": ["enum"],
+    "sources": ["zha"],
+    "notes": "ZHA-only valve weather delay"
+  },
+  "38": {
+    "deviceTypes": ["sensor", "valve"],
+    "capabilities": ["normal_timer"],
+    "dataTypes": ["string"],
+    "sources": ["our", "zha"],
+    "notes": "Timer setting"
+  },
+  "39": {
+    "deviceTypes": ["thermostat", "trv"],
+    "capabilities": ["scale_protection"],
+    "dataTypes": ["bool"],
+    "sources": ["our", "zha"],
+    "notes": "Scale protection"
+  },
+  "40": {
+    "deviceTypes": ["thermostat", "trv"],
+    "capabilities": ["child_lock"],
+    "dataTypes": ["bool"],
+    "sources": ["our", "zha"],
+    "notes": "Child lock"
+  },
+  "42": {
+    "deviceTypes": ["valve"],
+    "capabilities": ["switch_enabled"],
+    "dataTypes": ["bool"],
+    "sources": ["zha"],
+    "notes": "ZHA-only valve switch enabled"
+  },
+  "47": {
+    "deviceTypes": ["thermostat", "trv", "valve"],
+    "capabilities": ["local_temperature_calibration", "smart_irrigation"],
+    "dataTypes": ["int32s", "value"],
+    "sources": ["our", "zha"],
+    "notes": "Temp calibration or smart irrigation"
+  },
+  "50": {
+    "deviceTypes": ["power_meter"],
+    "capabilities": ["power_factor"],
+    "dataTypes": ["value"],
+    "sources": ["zha"],
+    "notes": "ZHA-only power factor"
+  },
+  "59": {
+    "deviceTypes": ["valve"],
+    "capabilities": ["measure_battery"],
+    "dataTypes": ["value"],
+    "sources": ["our", "zha"],
+    "notes": "Battery level"
+  },
+  "101": {
+    "deviceTypes": ["sensor", "plug", "motion", "contact", "smoke", "gas", "valve", "siren", "thermostat", "trv", "power_meter"],
+    "capabilities": ["measure_battery", "measure_pressure", "presence", "measure_temperature", "measure_humidity", "energy_ph_a", "ac_frequency"],
+    "dataTypes": ["value", "raw", "divideBy10"],
+    "sources": ["our", "z2m", "zha"],
+    "notes": "Very common extended DP - battery, pressure, presence, or energy"
+  },
+  "102": {
+    "deviceTypes": ["sensor", "plug", "motion", "smoke", "valve", "siren", "thermostat", "trv", "power_meter"],
+    "capabilities": ["measure_battery", "local_temperature", "update_frequency", "measure_humidity"],
+    "dataTypes": ["value", "raw", "divideBy10"],
+    "sources": ["our", "z2m", "zha"],
+    "notes": "Battery, temperature, or update frequency"
+  },
+  "103": {
+    "deviceTypes": ["sensor", "plug", "motion", "valve", "siren", "thermostat", "trv", "power_meter"],
+    "capabilities": ["measure_battery", "rms_voltage", "occupancy"],
+    "dataTypes": ["value", "raw"],
+    "sources": ["our", "z2m", "zha"],
+    "notes": "Battery, voltage, or occupancy"
+  },
+  "104": {
+    "deviceTypes": ["sensor", "plug", "motion", "valve", "siren", "thermostat", "trv", "power_meter"],
+    "capabilities": ["measure_luminance", "presence", "rms_current", "valve_position"],
+    "dataTypes": ["value", "raw", "trueFalse1"],
+    "sources": ["our", "z2m", "zha"],
+    "notes": "Luminance, presence, current, or valve position"
+  },
+  "105": {
+    "deviceTypes": ["sensor", "plug", "motion", "valve", "siren", "thermostat", "trv", "power_meter"],
+    "capabilities": ["measure_power", "active_power", "battery_low"],
+    "dataTypes": ["value", "raw", "divideBy100"],
+    "sources": ["our", "z2m", "zha"],
+    "notes": "Power, active power, or battery low"
+  },
+  "106": {
+    "deviceTypes": ["sensor", "motion", "valve", "siren", "thermostat", "trv", "power_meter"],
+    "capabilities": ["away_mode", "dry", "temperature_sensor_select"],
+    "dataTypes": ["value", "raw", "enum"],
+    "sources": ["our", "z2m", "zha"],
+    "notes": "Away mode, dry contact, or sensor select"
+  },
+  "107": {
+    "deviceTypes": ["sensor", "motion", "valve", "siren", "thermostat", "trv", "power_meter"],
+    "capabilities": ["deadzone_temperature", "breath_sensitivity"],
+    "dataTypes": ["value", "raw"],
+    "sources": ["our", "z2m", "zha"],
+    "notes": "Deadzone temperature or breath sensitivity"
+  },
+  "108": {
+    "deviceTypes": ["sensor", "plug", "motion", "valve", "siren", "thermostat", "trv", "power_meter"],
+    "capabilities": ["schedule_mode", "thermostat_mode", "small_motion_detection_distance"],
+    "dataTypes": ["value", "enum"],
+    "sources": ["our", "z2m", "zha"],
+    "notes": "Schedule mode, thermostat mode, or motion distance"
+  },
+  "109": {
+    "deviceTypes": ["sensor", "plug", "motion", "valve", "siren", "thermostat", "trv", "power_meter"],
+    "capabilities": ["measure_humidity", "regulator_period", "humidity_calibration", "energy_consumed_ph_a"],
+    "dataTypes": ["value", "enum"],
+    "sources": ["our", "z2m", "zha"],
+    "notes": "Humidity, regulator period, or energy phase A"
+  },
+  "110": {
+    "deviceTypes": ["sensor", "plug", "motion", "valve", "siren", "thermostat", "trv", "power_meter"],
+    "capabilities": ["backlight_mode", "motor_thrust", "detection_distance_min", "energy_produced_ph_a"],
+    "dataTypes": ["value", "enum"],
+    "sources": ["our", "zha"],
+    "notes": "Backlight, motor thrust, or distance min"
+  },
+  "111": {
+    "deviceTypes": ["sensor", "plug", "motion", "valve", "thermostat", "trv", "power_meter"],
+    "capabilities": ["invert_relay", "display_brightness", "breath_detection_min", "ac_frequency"],
+    "dataTypes": ["value", "enum", "divideBy100"],
+    "sources": ["our", "z2m", "zha"],
+    "notes": "Invert relay, display brightness, or frequency"
+  },
+  "112": {
+    "deviceTypes": ["sensor", "plug", "motion", "trv", "power_meter"],
+    "capabilities": ["antifrost_temperature", "humidity_sensitivity", "presence", "energy_consumed_ph_b"],
+    "dataTypes": ["value", "trueFalse1"],
+    "sources": ["our", "z2m", "zha"],
+    "notes": "Antifrost temp, humidity sensitivity, or presence"
+  },
+  "113": {
+    "deviceTypes": ["sensor", "plug", "siren", "trv", "power_meter"],
+    "capabilities": ["display_orientation", "temperature_sensitivity", "energy_produced_ph_b", "ac_frequency"],
+    "dataTypes": ["value", "enum", "raw"],
+    "sources": ["our", "z2m", "zha"],
+    "notes": "Display orientation, temp sensitivity, or frequency"
+  },
+  "114": {
+    "deviceTypes": ["sensor", "plug", "motion", "valve", "siren", "trv", "power_meter"],
+    "capabilities": ["valve_position", "small_move_detection_max", "irrigation_duration", "active_power_ph_b"],
+    "dataTypes": ["value", "raw"],
+    "sources": ["our", "zha"],
+    "notes": "Valve position, motion max, or power phase B"
+  },
+  "115": {
+    "deviceTypes": ["sensor", "motion", "valve", "power_meter"],
+    "capabilities": ["sensor_mode", "energy_produced_ph_b"],
+    "dataTypes": ["value", "enum"],
+    "sources": ["our", "zha"],
+    "notes": "Sensor mode or energy phase B"
+  },
+  "116": {
+    "deviceTypes": ["sensor", "motion", "siren", "trv", "power_meter"],
+    "capabilities": ["eco_temperature", "move_sensitivity", "volume_set", "energy_consumed_ph_c"],
+    "dataTypes": ["value", "enum"],
+    "sources": ["our", "zha"],
+    "notes": "Eco temp, move sensitivity, or volume"
+  },
+  "117": {
+    "deviceTypes": ["power_meter", "motion", "trv"],
+    "capabilities": ["comfort_temperature", "small_move_sensitivity", "power_factor_ph_b"],
+    "dataTypes": ["value"],
+    "sources": ["zha"],
+    "notes": "ZHA-only comfort temp or power factor B"
+  },
+  "118": {
+    "deviceTypes": ["power_meter", "motion", "trv"],
+    "capabilities": ["fault_code", "breath_sensitivity", "energy_consumed_ph_b"],
+    "dataTypes": ["value", "int16s"],
+    "sources": ["zha"],
+    "notes": "ZHA-only fault code or breath sensitivity"
+  },
+  "119": {
+    "deviceTypes": ["power_meter", "trv"],
+    "capabilities": ["comfort_temperature", "power_factor_ph_b"],
+    "dataTypes": ["value"],
+    "sources": ["zha"],
+    "notes": "ZHA-only comfort temp or power factor B"
+  },
+  "120": {
+    "deviceTypes": ["power_meter", "thermostat", "trv"],
+    "capabilities": ["eco_temperature", "current", "power_factor_ph_c"],
+    "dataTypes": ["value", "int16s"],
+    "sources": ["zha"],
+    "notes": "ZHA-only eco temp or current"
+  },
+  "121": {
+    "deviceTypes": ["power_meter", "thermostat", "trv", "motion"],
+    "capabilities": ["holiday_temperature", "voltage", "rms_voltage_ph_c"],
+    "dataTypes": ["value", "int16s"],
+    "sources": ["our", "zha"],
+    "notes": "Holiday temp, voltage, or voltage phase C"
+  },
+  "122": {
+    "deviceTypes": ["power_meter", "thermostat", "motion"],
+    "capabilities": ["power", "rms_current_ph_c"],
+    "dataTypes": ["value", "int16s"],
+    "sources": ["zha"],
+    "notes": "ZHA-only power or current phase C"
+  },
+  "123": {
+    "deviceTypes": ["power_meter", "thermostat", "motion"],
+    "capabilities": ["energy", "active_power_ph_c"],
+    "dataTypes": ["value", "int16s"],
+    "sources": ["zha"],
+    "notes": "ZHA-only energy or power phase C"
+  },
+  "126": {
+    "deviceTypes": ["power_meter"],
+    "capabilities": ["power_factor_ph_c"],
+    "dataTypes": ["value"],
+    "sources": ["zha"],
+    "notes": "ZHA-only power factor phase C"
+  },
+  "127": {
+    "deviceTypes": ["power_meter", "trv"],
+    "capabilities": ["energy_consumed_ph_c", "hysteresis_mode"],
+    "dataTypes": ["value", "enum"],
+    "sources": ["zha"],
+    "notes": "ZHA-only energy phase C or hysteresis"
+  },
+  "128": {
+    "deviceTypes": ["power_meter"],
+    "capabilities": ["energy_produced_ph_c"],
+    "dataTypes": ["value"],
+    "sources": ["zha"],
+    "notes": "ZHA-only energy produced phase C"
+  },
+  "129": {
+    "deviceTypes": ["power_meter"],
+    "capabilities": ["update_frequency"],
+    "dataTypes": ["value"],
+    "sources": ["our"],
+    "notes": "OUR ONLY - power meter update frequency"
+  },
+  "130": {
+    "deviceTypes": ["trv"],
+    "capabilities": ["scale_protection"],
+    "dataTypes": ["bool"],
+    "sources": ["zha"],
+    "notes": "ZHA-only scale protection"
+  },
+  "131": {
+    "deviceTypes": ["power_meter"],
+    "capabilities": ["current"],
+    "dataTypes": ["int16s"],
+    "sources": ["zha"],
+    "notes": "ZHA-only current"
+  },
+  "132": {
+    "deviceTypes": ["power_meter"],
+    "capabilities": ["ac_frequency"],
+    "dataTypes": ["raw"],
+    "sources": ["z2m", "zha"],
+    "notes": "MISSING FROM OUR DRIVERS - AC frequency"
+  },
+  "133": {
+    "deviceTypes": ["power_meter"],
+    "capabilities": ["temperature"],
+    "dataTypes": ["value"],
+    "sources": ["zha"],
+    "notes": "ZHA-only temperature"
+  },
+  "134": {
+    "deviceTypes": ["power_meter"],
+    "capabilities": ["device_status"],
+    "dataTypes": ["int16s"],
+    "sources": ["zha"],
+    "notes": "ZHA-only device status"
+  }
+}

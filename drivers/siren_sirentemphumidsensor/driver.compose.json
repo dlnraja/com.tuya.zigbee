@@ -1,0 +1,93 @@
+{
+  "id": "sirentemphumidsensor",
+  "name": {
+    "en": "Siren Sirentemphumidsensor",
+    "nl": "Sirene Sirenetemphumidsensor",
+    "fr": "Sirène Sirènetemphumidsensor",
+    "de": "Sirene Sirenetemphumidsensor",
+    "es": "Sirena Sirenetemphumidsensor"
+  },
+  "class": "other",
+  "capabilities": [
+    "onoff",
+    "measure_temperature",
+    "measure_humidity",
+    "alarm_siren",
+    "alarm_motion",
+    "measure_battery",
+    "alarm_generic",
+    "button.1"
+  ],
+  "capabilitiesOptions": {
+    "onoff": {
+      "greyout": false
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  },
+  "energy": {
+    "batteries": [
+      "CR123A",
+      "CR123A"
+    ]
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "images": {
+    "small": "/{{driverAssetsPath}}/images/small.png",
+    "large": "/{{driverAssetsPath}}/images/large.png"
+  },
+  "zigbee": {
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          4,
+          5,
+          61184
+        ],
+        "bindings": [
+          10,
+          25,
+          61184
+        ]
+      }
+    },
+    "learnmode": {
+      "instruction": {
+        "en": "Press and hold the button inside the battery compartment for aprox 5 seconds until the siren beeps."
+      }
+    },
+    "manufacturerName": [
+      "_hybrid_siren_sirentemphumidsensor_needs_device_assignment",
+      "_HYBRID_SIREN_SIRENTEMPHUMIDSENSOR_NEEDS_DEVICE_ASSIGNMENT",
+      "_TZE200_d0yu2xgi",
+      "_TYST11_d0yu2xgi"
+    ]
+  },
+  "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "fr": "Vérifier MàJ OTA",
+        "nl": "Controleer op OTA-updates"
+      }
+    }
+  ],
+  "version": "1.0.0"
+}

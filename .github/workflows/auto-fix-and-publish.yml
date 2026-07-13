@@ -1,0 +1,174 @@
+name: 🤖 Auto-Fix + Publish Pipeline
+
+on:
+  push:
+    branches: [master, stable-v5]
+  schedule:
+    - cron: '0 */6 * * *'  # Every 6 hours
+  workflow_dispatch:
+
+defaults:
+  run:
+    shell: bash
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  auto-fix:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 100
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+          cache: npm
+
+      - name: Install deps
+        run: npm ci --prefer-offline --no-audit || npm install --no-audit
+
+      - name: 🗣️ Google Assistant / Alexa voice-safety gate
+        run: npm run check:voice
+
+      - name: 🤖 Run auto-fix-all
+        run: node scripts/validation/auto-fix-all.js || true
+
+      - name: 📊 Dashboard monitor
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+        run: timeout 30 node scripts/automation/dashboard-monitor.js --latest || true
+
+      - name: 📋 Check processing_failed builds
+        id: processing_check
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+        run: node .github/scripts/processing-failure-republish-check.js
+
+      - name: 🔁 Bump version for Homey recovery publish
+        if: env.publish_recovery_requires_bump == 'true' || github.event_name == 'workflow_dispatch'
+        env:
+          BUMP_LEVEL: patch
+          HOMEY_CHANGELOG: ${{ env.publish_recovery_changelog || 'Stability improvements and Homey test publication retry.' }}
+        run: |
+          echo "Recovery publish reason: ${publish_recovery_reason:-manual workflow dispatch}"
+          node .github/scripts/bump-homey-version.js
+
+      - name: 🔐 Redact dashboard diagnostics before committing
+        if: always()
+        run: node .github/scripts/privacy-redactor.js .github/state/dashboard-monitor-report.json || true
+
+      - name: 💾 Commit fixes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          restore_volatile_artifacts() {
+            for path in .github/state diagnostics screenshots screenshots-debug promote-screenshots push-promote-screenshots .homeybuild; do
+              git restore -- "$path" 2>/dev/null || true
+            done
+          }
+          stage_auto_fix_paths() {
+            for path in drivers lib app.json .homeycompose .homeychangelog.json CHANGELOG.md README.md docs .cursorrules AI_INSTRUCTIONS.md package.json package-lock.json; do
+              [ -e "$path" ] && git add "$path"
+            done
+          }
+          restore_volatile_artifacts
+          stage_auto_fix_paths
+          if ! git diff --staged --quiet; then
+            git commit -m "🤖 auto-fix-all: automated fixes [skip ci]"
+            BRANCH="${GITHUB_REF_NAME:-master}"
+            restore_volatile_artifacts
+            if ! git diff --quiet || ! git diff --cached --quiet; then
+              echo "::group::Remaining tracked changes before rebase"
+              git status --short
+              echo "::endgroup::"
+              echo "::error::Uncommitted tracked changes remain before rebase"
+              exit 1
+            fi
+            git fetch origin "$BRANCH"
+            if ! git merge-base --is-ancestor "origin/$BRANCH" HEAD; then
+              git rebase "origin/$BRANCH"
+            else
+              echo "origin/$BRANCH is already an ancestor of HEAD; skipping rebase"
+            fi
+            git push origin HEAD:"refs/heads/$BRANCH"
+            git fetch origin "$BRANCH"
+            git merge-base --is-ancestor HEAD "origin/$BRANCH" || {
+              echo "::error::Auto-fix commit HEAD is not reachable from origin/$BRANCH after push"
+              exit 1
+            }
+          else
+            echo "No auto-fix changes to commit"
+          fi
+
+      - name: 🚀 Publish if needed
+        if: env.trigger_publish == 'true' || github.event_name == 'workflow_dispatch'
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+        run: |
+          npx homey app build
+          node scripts/maintenance/fix-large-images.js
+          node scripts/maintenance/optimize-build-images.cjs
+          node scripts/maintenance/sanitize-manifest.cjs app.json .homeybuild/app.json
+          npm run prepare-publish
+          PUBLISH_DIR="$(node -p "require('path').join(require('os').tmpdir(), 'homey-publish-temp')")"
+          if [ ! -d "$PUBLISH_DIR" ]; then
+            echo "::error::Prepared publish directory is missing: $PUBLISH_DIR"
+            exit 1
+          fi
+          cd "$PUBLISH_DIR"
+          if [ -f package-lock.json ] || [ -f npm-shrinkwrap.json ]; then
+            npm ci --omit=dev --ignore-scripts --no-audit --no-fund
+          else
+            npm install --omit=dev --ignore-scripts --no-audit --no-fund
+          fi
+          run_homey_cli_publish() {
+            if [ -x "$GITHUB_WORKSPACE/node_modules/.bin/homey" ]; then
+              HOMEY_HEADLESS=1 HOMEY_PAT="$HOMEY_PAT" "$GITHUB_WORKSPACE/node_modules/.bin/homey" app publish --path "$PUBLISH_DIR"
+            else
+              HOMEY_HEADLESS=1 HOMEY_PAT="$HOMEY_PAT" npx homey app publish --path "$PUBLISH_DIR"
+            fi
+          }
+          set +e
+          publish_output=$(run_homey_cli_publish 2>&1)
+          publish_status=$?
+          if [ "$publish_status" -ne 0 ] && printf '%s\n' "$publish_output" | grep -Eiq 'Timeout after [0-9]+ms|fetch failed|ETIMEDOUT|ECONNRESET|ECONNABORTED'; then
+            echo "::warning::Homey CLI publish hit a transient API timeout; retrying via direct Athom Apps API with extended timeouts."
+            fallback_output=$(HOMEY_PAT="$HOMEY_PAT" HOMEY_API_TIMEOUT_MS="${HOMEY_API_TIMEOUT_MS:-60000}" HOMEY_BUILD_POLL_TIMEOUT_MS="${HOMEY_BUILD_POLL_TIMEOUT_MS:-240000}" node "$GITHUB_WORKSPACE/scripts/direct-api-publish.js" --path "$PUBLISH_DIR" 2>&1)
+            fallback_status=$?
+            publish_output="$(printf '%s\n%s' "$publish_output" "$fallback_output")"
+            publish_status=$fallback_status
+          fi
+          set -e
+          printf '%s\n' "$publish_output"
+          if [ "$publish_status" -ne 0 ]; then
+            if printf '%s\n' "$publish_output" | grep -Eiq 'already been published|currently in review'; then
+              echo "::warning::Homey reports this version is already published or in review; continuing so test promotion can proceed."
+            else
+              exit "$publish_status"
+            fi
+          fi
+
+      - name: 📊 Post-publish dashboard check
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+        run: |
+          sleep 60
+          timeout 20 node scripts/automation/dashboard-monitor.js --latest || true
+
+      - name: 🔔 Notify on failure
+        if: failure()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: 420,
+              body: `⚠️ Auto-Fix pipeline failed. Check [run #${context.runId}](${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId})`
+            });

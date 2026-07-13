@@ -1,0 +1,16 @@
+{
+  "id": "INT-018",
+  "deviceName": "BSEED 2-Gang Wall Switch",
+  "manufacturerName": "_TZ3000_l9brjwau",
+  "productId": "TS0002",
+  "source": "JohanBendz #1337, dlnraja #103",
+  "user": "pjmpessers",
+  "status": "fixed",
+  "driver": "switch_2gang",
+  "notes": "ZCL-only device, uses PhysicalButtonMixin for button detection",
+  "fix": {
+    "applied": true,
+    "version": "5.5.896",
+    "description": "PR #120 packetninja - PhysicalButtonMixin with 2000ms timeout"
+  }
+}

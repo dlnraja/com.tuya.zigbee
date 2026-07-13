@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="960" height="960" viewBox="0 0 960 960" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Main sensor body -->
+  <rect x="180" y="250" width="300" height="460" rx="40" stroke="black" stroke-width="40" fill="none"/>
+  <!-- Magnet piece -->
+  <rect x="580" y="300" width="200" height="360" rx="30" stroke="black" stroke-width="35" fill="none"/>
+  <!-- Gap between sensor and magnet -->
+  <line x1="500" y1="350" x2="560" y2="350" stroke="black" stroke-width="15" stroke-dasharray="15 15"/>
+  <line x1="500" y1="480" x2="560" y2="480" stroke="black" stroke-width="15" stroke-dasharray="15 15"/>
+  <line x1="500" y1="610" x2="560" y2="610" stroke="black" stroke-width="15" stroke-dasharray="15 15"/>
+  <!-- LED indicator on sensor -->
+  <circle cx="330" cy="320" r="25" fill="black"/>
+  <!-- Magnetic field lines -->
+  <path d="M530 380 C540 400 540 440 530 460" stroke="black" stroke-width="15" fill="none"/>
+  <path d="M530 500 C540 520 540 560 530 580" stroke="black" stroke-width="15" fill="none"/>
+</svg>

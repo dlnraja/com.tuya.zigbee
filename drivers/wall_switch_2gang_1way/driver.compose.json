@@ -1,0 +1,324 @@
+{
+  "name": {
+    "en": "Wall Switch 2-Gang 1-Way (BSEED)",
+    "nl": "Wandschakelaar 2-groeps 1-weg (BSEED)",
+    "fr": "Interrupteur mural 2 gangs 1 voie (BSEED)",
+    "de": "Wandschalter 2-fach 1-weg (BSEED)",
+    "es": "Interruptor de pared 2 grupos 1 vía (BSEED)"
+  },
+  "class": "socket",
+  "capabilities": [
+    "onoff",
+    "onoff.gang2",
+    "button.1",
+    "button.2"
+  ],
+  "energy": {
+    "approximation": {
+      "usageOn": 100,
+      "usageOff": 1
+    },
+    "batteries": [
+      "CR2032"
+    ]
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "images": {
+    "small": "/drivers/wall_switch_2gang_1way/assets/images/small.png",
+    "large": "/drivers/wall_switch_2gang_1way/assets/images/large.png",
+    "xlarge": "/drivers/wall_switch_2gang_1way/assets/images/xlarge.png"
+  },
+  "devices": {
+    "secondSwitch": {
+      "class": "socket",
+      "capabilities": [
+        "onoff"
+      ],
+      "name": {
+        "en": "Wall Switch 2-Gang - Gang 2",
+        "nl": "Muurschakelaar 2-Gang - Gang 2"
+      },
+      "images": {
+        "small": "drivers/wall_switch_2gang_1way/assets/images/small.png",
+        "large": "drivers/wall_switch_2gang_1way/assets/images/large.png"
+      }
+    }
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_tz3000_xk5udnd6",
+      "_tz3000_z1uezkpi",
+      "HOBEIAN",
+      "hobeian"
+    ],
+    "productId": [
+      "TS0002",
+      "TS0012",
+      "TS0042"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6,
+          57344,
+          57345
+        ]
+      },
+      "2": {
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6
+        ]
+      }
+    },
+    "learnmode": {
+      "instruction": {
+        "en": "Press and hold the reset button for 5 seconds until the LED blinks, or toggle 3 times quickly.",
+        "nl": "Houd de resetknop 5 seconden ingedrukt totdat de LED knippert, of schakel 3 keer snel."
+      }
+    }
+  },
+  "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "💡 LED Indicator",
+        "nl": "💡 LED-indicator"
+      },
+      "children": [
+        {
+          "id": "backlight_mode",
+          "type": "dropdown",
+          "label": {
+            "en": "LED Indicator Mode",
+            "nl": "LED-indicator Modus"
+          },
+          "hint": {
+            "en": "Control when the LED indicator is lit",
+            "nl": "Bepaal wanneer de LED brandt"
+          },
+          "value": "normal",
+          "values": [
+            {
+              "id": "off",
+              "label": {
+                "en": "Always Off",
+                "nl": "Altijd Uit"
+              }
+            },
+            {
+              "id": "normal",
+              "label": {
+                "en": "On when Switch ON",
+                "nl": "Aan bij AAN"
+              }
+            },
+            {
+              "id": "inverted",
+              "label": {
+                "en": "On when Switch OFF",
+                "nl": "Aan bij UIT"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "Power-On Behavior",
+        "nl": "Gedrag bij inschakelen"
+      },
+      "children": [
+        {
+          "id": "power_on_behavior",
+          "type": "dropdown",
+          "label": {
+            "en": "Power-On Behavior",
+            "nl": "Gedrag bij inschakelen",
+            "de": "Einschaltverhalten",
+            "fr": "Comportement à la mise sous tension"
+          },
+          "hint": {
+            "en": "What happens when power is restored after an outage",
+            "nl": "Wat er gebeurt als de stroom terugkeert na een stroomstoring"
+          },
+          "value": "memory",
+          "values": [
+            {
+              "id": "off",
+              "label": {
+                "en": "Always Off",
+                "nl": "Altijd Uit"
+              }
+            },
+            {
+              "id": "on",
+              "label": {
+                "en": "Always On",
+                "nl": "Altijd Aan"
+              }
+            },
+            {
+              "id": "memory",
+              "label": {
+                "en": "Last State",
+                "nl": "Laatste status"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "External Switch Type",
+        "nl": "Extern schakelaartype"
+      },
+      "children": [
+        {
+          "id": "switch_mode",
+          "type": "dropdown",
+          "label": {
+            "en": "External Switch Type",
+            "nl": "Extern schakelaartype",
+            "de": "Externer Schaltertyp",
+            "fr": "Type d'interrupteur externe"
+          },
+          "hint": {
+            "en": "Type of external switch connected to this relay module",
+            "nl": "Type externe schakelaar aangesloten op deze relaismodule"
+          },
+          "value": "toggle",
+          "values": [
+            {
+              "id": "toggle",
+              "label": {
+                "en": "Toggle",
+                "nl": "Tuimelschakelaar"
+              }
+            },
+            {
+              "id": "state",
+              "label": {
+                "en": "State (Rocker)",
+                "nl": "Status (Wipschakelaar)"
+              }
+            },
+            {
+              "id": "momentary",
+              "label": {
+                "en": "Momentary (Push Button)",
+                "nl": "Pulsdrukknop"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "🎭 Scene Mode",
+        "nl": "🎭 Scènemodus"
+      },
+      "children": [
+        {
+          "id": "scene_mode",
+          "type": "dropdown",
+          "label": {
+            "en": "Scene Mode",
+            "nl": "Scènemodus"
+          },
+          "hint": {
+            "en": "Auto: normal switch + triggers flows. Magic: button triggers scene flows only (load unchanged). Both: controls load AND triggers scene flows.",
+            "nl": "Auto: normale schakelaar + flows. Magic: knop triggert alleen scèneflows (belasting ongewijzigd). Both: bestuurt belasting EN triggert scèneflows."
+          },
+          "value": "auto",
+          "values": [
+            {
+              "id": "auto",
+              "label": {
+                "en": "Auto (Normal + flows)",
+                "nl": "Auto (Normaal + flows)"
+              }
+            },
+            {
+              "id": "magic",
+              "label": {
+                "en": "Magic (Scene only)",
+                "nl": "Magic (Alleen scène)"
+              }
+            },
+            {
+              "id": "both",
+              "label": {
+                "en": "Both (Load + scene)",
+                "nl": "Both (Belasting + scène)"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "fr": "Vérifier MàJ OTA",
+        "nl": "Controleer op OTA-updates"
+      }
+    }
+  ],
+  "id": "wall_switch_2gang_1way",
+  "version": "1.0.0",
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    },
+    "button.2": {
+      "title": {
+        "en": "Button 2",
+        "fr": "Bouton 2"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    },
+    "measure_battery": {
+      "title": {
+        "en": "Battery",
+        "fr": "Batterie",
+        "nl": "Batterij",
+        "de": "Batterie"
+      }
+    }
+  },
+  "_pidConflictNotes": [
+    "// PID-CONFLICT-NOTE TS0002 shared with 27 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE TS0042 shared with 13 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
+    "// PID-CONFLICT-NOTE TS0012 shared with 12 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
+  ]
+}

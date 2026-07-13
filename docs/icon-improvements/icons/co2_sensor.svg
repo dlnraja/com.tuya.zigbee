@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="960" height="960" viewBox="0 0 960 960" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Sensor body -->
+  <rect x="230" y="180" width="500" height="600" rx="60" stroke="black" stroke-width="40" fill="none"/>
+  <!-- Display area -->
+  <rect x="300" y="260" width="360" height="180" rx="20" stroke="black" stroke-width="25" fill="none"/>
+  <!-- CO2 text -->
+  <text x="480" y="380" text-anchor="middle" font-family="Arial" font-weight="bold" font-size="80" fill="black">CO2</text>
+  <!-- Gas cloud symbol -->
+  <circle cx="400" cy="560" r="50" stroke="black" stroke-width="20" fill="none"/>
+  <circle cx="480" cy="530" r="60" stroke="black" stroke-width="20" fill="none"/>
+  <circle cx="560" cy="560" r="45" stroke="black" stroke-width="20" fill="none"/>
+  <!-- PPM indicator -->
+  <path d="M350 680 L450 680 L480 650 L510 680 L610 680" stroke="black" stroke-width="20" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Air quality dots -->
+  <circle cx="350" cy="730" r="12" fill="black"/>
+  <circle cx="430" cy="730" r="12" stroke="black" stroke-width="8" fill="none"/>
+  <circle cx="510" cy="730" r="12" stroke="black" stroke-width="8" fill="none"/>
+  <circle cx="590" cy="730" r="12" stroke="black" stroke-width="8" fill="none"/>
+</svg>

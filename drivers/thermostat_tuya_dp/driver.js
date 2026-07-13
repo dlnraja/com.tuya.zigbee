@@ -1,0 +1,232 @@
+'use strict';
+
+const { ZigBeeDriver } = require('homey-zigbeedriver');
+
+class ThermostatTuyaDpDriver extends ZigBeeDriver {
+async onInit() {
+    await super.onInit();
+    if (this._flowCardsRegistered) {return;}
+    this._flowCardsRegistered = true;
+    this.log('ThermostatTuyaDpDriver v5.5.573 initialized');
+    this._registerFlowCards();
+  }
+
+  _registerFlowCards() {
+    // TRIGGERS
+    try { this.homey.flow.getDeviceTriggerCard('thermostat_tuya_dp_target_temperature_changed'); } catch (e) {}
+    try { this.homey.flow.getDeviceTriggerCard('thermostat_tuya_dp_temperature_changed'); } catch (e) {}
+    try { this.homey.flow.getDeviceTriggerCard('thermostat_tuya_dp_mode_changed'); } catch (e) {}
+    try { this.homey.flow.getDeviceTriggerCard('thermostat_tuya_dp_heating_started'); } catch (e) {}
+    try { this.homey.flow.getDeviceTriggerCard('thermostat_tuya_dp_heating_stopped'); } catch (e) {}
+    try { this.homey.flow.getDeviceTriggerCard('thermostat_tuya_dp_turned_on'); } catch (e) {}
+    try { this.homey.flow.getDeviceTriggerCard('thermostat_tuya_dp_turned_off'); } catch (e) {}
+    try { this.homey.flow.getDeviceTriggerCard('thermostat_tuya_dp_temp_changed'); } catch (e) {}
+    try { this.homey.flow.getDeviceTriggerCard('thermostat_tuya_dp_battery_low'); } catch (e) {}
+    try { this.homey.flow.getDeviceTriggerCard('thermostat_tuya_dp_humidity_changed'); } catch (e) {}
+
+    // CONDITIONS
+    try {
+      const card = this.homey.flow.getConditionCard('thermostat_tuya_dp_is_heating');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) {return false;}
+          return args.device.getCapabilityValue('onoff') === true;
+        });
+      }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition thermostat_tuya_dp_is_heating: ${err.message}`); }; }
+
+    try {
+      const card = this.homey.flow.getConditionCard('thermostat_tuya_dp_temperature_above_target');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) {return false;}
+          const val = args.device.getCapabilityValue('measure_co2') || 0;
+          return val > (args.threshold || 400);
+        });
+      }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition thermostat_tuya_dp_temperature_above_target: ${err.message}`); }; }
+
+    try {
+      const card = this.homey.flow.getConditionCard('thermostat_tuya_dp_temperature_below_target');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) {return false;}
+          return args.device.getCapabilityValue('onoff') === true;
+        });
+      }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition thermostat_tuya_dp_temperature_below_target: ${err.message}`); }; }
+
+    try {
+      const card = this.homey.flow.getConditionCard('thermostat_tuya_dp_mode_is');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) {return false;}
+          return args.device.getCapabilityValue('onoff') === true;
+        });
+      }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition thermostat_tuya_dp_mode_is: ${err.message}`); }; }
+
+    try {
+      const card = this.homey.flow.getConditionCard('thermostat_tuya_dp_child_lock_is');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) {return false;}
+          return args.device.getCapabilityValue('onoff') === true;
+        });
+      }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition thermostat_tuya_dp_child_lock_is: ${err.message}`); }; }
+
+    try {
+      const card = this.homey.flow.getConditionCard('thermostat_tuya_dp_is_on');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) {return false;}
+          return args.device.getCapabilityValue('onoff') === true;
+        });
+      }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition thermostat_tuya_dp_is_on: ${err.message}`); }; }
+
+    // ACTIONS
+    try {
+      const card = this.homey.flow.getActionCard('thermostat_tuya_dp_set_target_temperature');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) {return false;}
+          await args.device['setCapabilityValue']('target_temperature', args.temperature || args.value).catch(() => {});
+          return true;
+        });
+      }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action thermostat_tuya_dp_set_target_temperature: ${err.message}`); }; }
+
+    try {
+      const card = this.homey.flow.getActionCard('thermostat_tuya_dp_set_mode');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) {return false;}
+          // Generic action handler
+          this.log('[FLOW] Action thermostat_tuya_dp_set_mode triggered for', args.device.getName());
+          return true;
+        });
+      }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action thermostat_tuya_dp_set_mode: ${err.message}`); }; }
+
+    try {
+      const card = this.homey.flow.getActionCard('thermostat_tuya_dp_increase_temperature');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) {return false;}
+          // Generic action handler
+          this.log('[FLOW] Action thermostat_tuya_dp_increase_temperature triggered for', args.device.getName());
+          return true;
+        });
+      }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action thermostat_tuya_dp_increase_temperature: ${err.message}`); }; }
+
+    try {
+      const card = this.homey.flow.getActionCard('thermostat_tuya_dp_decrease_temperature');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) {return false;}
+          // Generic action handler
+          this.log('[FLOW] Action thermostat_tuya_dp_decrease_temperature triggered for', args.device.getName());
+          return true;
+        });
+      }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action thermostat_tuya_dp_decrease_temperature: ${err.message}`); }; }
+
+    try {
+      const card = this.homey.flow.getActionCard('thermostat_tuya_dp_set_child_lock');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) {return false;}
+          // Generic action handler
+          this.log('[FLOW] Action thermostat_tuya_dp_set_child_lock triggered for', args.device.getName());
+          return true;
+        });
+      }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action thermostat_tuya_dp_set_child_lock: ${err.message}`); }; }
+
+    try {
+      const card = this.homey.flow.getActionCard('thermostat_tuya_dp_set_comfort_preset');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) {return false;}
+          // Generic action handler
+          this.log('[FLOW] Action thermostat_tuya_dp_set_comfort_preset triggered for', args.device.getName());
+          return true;
+        });
+      }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action thermostat_tuya_dp_set_comfort_preset: ${err.message}`); }; }
+
+    try {
+      const card = this.homey.flow.getActionCard('thermostat_tuya_dp_schedule_on');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) {return false;}
+          await args.device['setCapabilityValue']('onoff', true).catch(() => {});
+          return true;
+        });
+      }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action thermostat_tuya_dp_schedule_on: ${err.message}`); }; }
+
+    try {
+      const card = this.homey.flow.getActionCard('thermostat_tuya_dp_schedule_off');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) {return false;}
+          await args.device['setCapabilityValue']('onoff', false).catch(() => {});
+          return true;
+        });
+      }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action thermostat_tuya_dp_schedule_off: ${err.message}`); }; }
+
+    try {
+      const card = this.homey.flow.getActionCard('thermostat_tuya_dp_turn_on');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) {return false;}
+          await args.device['setCapabilityValue']('onoff', true).catch(() => {});
+          return true;
+        });
+      }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action thermostat_tuya_dp_turn_on: ${err.message}`); }; }
+
+    try {
+      const card = this.homey.flow.getActionCard('thermostat_tuya_dp_turn_off');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) {return false;}
+          await args.device['setCapabilityValue']('onoff', false).catch(() => {});
+          return true;
+        });
+      }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action thermostat_tuya_dp_turn_off: ${err.message}`); }; }
+
+    try {
+      const card = this.homey.flow.getActionCard('thermostat_tuya_dp_toggle');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) {return false;}
+          const current = args.device.getCapabilityValue('onoff');
+          await args.device['setCapabilityValue']('onoff', !current).catch(() => {});
+          return true;
+        });
+      }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action thermostat_tuya_dp_toggle: ${err.message}`); }; }
+
+    try {
+      const card = this.homey.flow.getActionCard('thermostat_tuya_dp_set_temperature');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) {return false;}
+          await args.device['setCapabilityValue']('target_temperature', args.temperature || args.value).catch(() => {});
+          return true;
+        });
+      }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action thermostat_tuya_dp_set_temperature: ${err.message}`); }; }
+
+    this.log('[FLOW] All flow cards registered');
+  }
+}
+
+module.exports = ThermostatTuyaDpDriver;

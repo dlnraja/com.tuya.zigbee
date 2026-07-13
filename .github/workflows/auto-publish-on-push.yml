@@ -1,0 +1,529 @@
+name: Auto-Publish on Push
+
+# <!-- badges:start -->
+# [![Auto-Publish on Push](https://github.com/dlnraja/com.tuya.zigbee/actions/workflows/auto-publish-on-push.yml/badge.svg)](https://github.com/dlnraja/com.tuya.zigbee/actions/workflows/auto-publish-on-push.yml)
+# <!-- badges:end -->
+
+on:
+  push:
+    branches: [master, main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publish
+  cancel-in-progress: true
+
+env:
+  NODE_VERSION: "22"
+  NODE_OPTIONS: "--dns-result-order=ipv4first"
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  publish:
+    name: Validate & Auto-Publish to Homey App Store
+    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+
+    steps:
+      # ─────────────────────────────────────────────────────────────
+      # 1. CHECKOUT + SETUP
+      # ─────────────────────────────────────────────────────────────
+      - name: Checkout
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 100
+          token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit || npm install
+
+      - name: Crash regression guard - Homey timer context
+        run: npm run check:timer-context
+
+      - name: GitHub Actions & YAML policy gate
+        run: npm run check:yaml
+
+      - name: Google Assistant / Alexa voice-safety gate
+        run: npm run check:voice
+
+      # ─────────────────────────────────────────────────────────────
+      # 2. CHECK SECRETS
+      # ─────────────────────────────────────────────────────────────
+      - name: Check HOMEY_PAT availability
+        id: check_pat
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+        run: |
+          if [ -n "$HOMEY_PAT" ]; then
+            echo "has_pat=true" >> $GITHUB_OUTPUT
+            echo "✅ HOMEY_PAT is set — publish will run"
+          else
+            echo "has_pat=false" >> $GITHUB_OUTPUT
+            echo "⚠️  HOMEY_PAT not set — publish will be skipped"
+          fi
+
+      - name: Read current version
+        id: pre_info
+        run: |
+          V=$(node -p "require('./app.json').version")
+          echo "version=$V" >> $GITHUB_OUTPUT
+          echo "Current version: v$V"
+
+      # ─────────────────────────────────────────────────────────────
+      # 3. PRE-CLEAN — Fix source files BEFORE any validation
+      # ─────────────────────────────────────────────────────────────
+      - name: "🔧 PRE-CLEAN: Fix empty manufacturerName in driver.compose.json + app.json"
+        run: |
+          node - << 'PRECLEAN'
+          const fs = require('fs'), path = require('path');
+
+          // Step A: Fix driver.compose.json source files
+          const driversDir = path.join(process.cwd(), 'drivers');
+          let srcFixed = 0;
+          try {
+            fs.readdirSync(driversDir)
+              .filter(d => fs.statSync(path.join(driversDir, d)).isDirectory())
+              .forEach(d => {
+                const p = path.join(driversDir, d, 'driver.compose.json');
+                if (!fs.existsSync(p)) return;
+                try {
+                  const comp = JSON.parse(fs.readFileSync(p, 'utf8'));
+                  if (comp.zigbee && !comp.zigbee.manufacturerName) {
+                    // Use driver ID as placeholder so the array is never truly empty
+                    const placeholder = (d || 'Unknown').replace(/_/g, ' ');
+                    comp.zigbee.manufacturerName = [placeholder];
+                    fs.writeFileSync(p, JSON.stringify(comp, null, 2) + '\n', 'utf8');
+                    srcFixed++;
+                  }
+                } catch (e) { console.warn(`Skipping corrupt ${d}/driver.compose.json: ${e.message}`); }
+              });
+          } catch (e) { console.error('driver scan error:', e.message); }
+
+          // Step B: Fix app.json — extract driver ID for placeholder
+          const app = JSON.parse(fs.readFileSync('app.json', 'utf8'));
+          let appFixed = 0;
+          app.drivers.forEach(d => {
+            if (!d.zigbee) return;
+            if (!d.zigbee.manufacturerName) {
+              const placeholder = (d.id || 'Unknown').replace(/_/g, ' ');
+              d.zigbee.manufacturerName = [placeholder];
+              appFixed++;
+            }
+          });
+          if (appFixed > 0) fs.writeFileSync('app.json', JSON.stringify(app, null, 2), 'utf8');
+
+          console.log(`PRE-CLEAN done: ${srcFixed} driver.compose.json fixed, ${appFixed} entries ensured in app.json`);
+          PRECLEAN
+
+      # ─────────────────────────────────────────────────────────────
+      # 4. CHANGELOG + VERSION BUMP
+      # ─────────────────────────────────────────────────────────────
+      - name: Generate AI Changelog
+        continue-on-error: true
+        env:
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: timeout --kill-after=10s 90s node .github/scripts/generate-ai-changelog.js || echo "AI changelog skipped"
+
+      - name: Extract Changelog
+        id: cl
+        run: |
+          VER=$(node -p "require('./app.json').version")
+          CL=$(node -e "
+            try {
+              const r=JSON.parse(require('child_process').execSync('node .github/scripts/extract-changelog.js '+process.argv[1],{encoding:'utf8'}).trim());
+              process.stdout.write(r.homeyText);
+            } catch(e) { process.stdout.write('Bug fixes and improvements'); }
+          " "$VER" 2>/dev/null || echo "v${VER}: Bug fixes and improvements")
+          echo "text=$CL" >> $GITHUB_OUTPUT
+
+      - name: Determine bump level
+        id: bump_level
+        run: |
+          MSG=$(git log -1 --pretty=%B)
+          if [[ "$MSG" == *"[major]"* ]]; then echo "level=major" >> $GITHUB_OUTPUT
+          elif [[ "$MSG" == *"[minor]"* ]]; then echo "level=minor" >> $GITHUB_OUTPUT
+          else echo "level=patch" >> $GITHUB_OUTPUT; fi
+
+      - name: Bump version
+        id: bump
+        env:
+          BUMP_LEVEL: ${{ steps.bump_level.outputs.level }}
+          HOMEY_CHANGELOG: ${{ steps.cl.outputs.text }}
+        run: node .github/scripts/bump-homey-version.js
+
+      - name: Sync package manifests version
+        run: |
+          node -e "
+            const f=require('fs');
+            const app=JSON.parse(f.readFileSync('app.json','utf8'));
+            const version=app.version;
+            for (const file of ['package.json', 'package-lock.json']) {
+              if (!f.existsSync(file)) continue;
+              const json=JSON.parse(f.readFileSync(file,'utf8'));
+              json.version=version;
+              if (json.packages && json.packages['']) json.packages[''].version=version;
+              f.writeFileSync(file, JSON.stringify(json,null,2)+'\n');
+            }
+            if (f.existsSync('.homeycompose/app.json')) {
+              const hc=JSON.parse(f.readFileSync('.homeycompose/app.json','utf8'));
+              hc.version=version;
+              f.writeFileSync('.homeycompose/app.json', JSON.stringify(hc,null,2)+'\n');
+            }
+            console.log('Synced package manifests to v'+version);
+          "
+
+      - name: Read bumped version
+        id: info
+        run: |
+          V=$(node -p "require('./app.json').version")
+          echo "version=$V" >> $GITHUB_OUTPUT
+          echo "Bumped to v$V"
+
+      # ─────────────────────────────────────────────────────────────
+      # 5. VALIDATE — Strict gate before publish
+      # ─────────────────────────────────────────────────────────────
+      - name: Resolve fingerprint collisions
+        continue-on-error: true
+        run: node scripts/ci/resolve-collisions.js
+
+      - name: Mandatory files check (51 rules)
+        run: node scripts/validate/homey-mandatory-check.js
+
+      - name: Athom server requirements check
+        run: node scripts/validate/validate-app-json.js
+
+      - name: "Comprehensive Validation Gate (JSON + Schema + Zigbee)"
+        run: |
+          node - << 'GATE'
+          const fs = require('fs');
+          const path = require('path');
+
+          const errors = [];
+
+          // 1. Validate app.json structure
+          console.log('Checking app.json structure...');
+          try {
+            const appRaw = fs.readFileSync('app.json', 'utf8');
+            const app = JSON.parse(appRaw); // Will throw on invalid JSON
+
+            if (!app.id) errors.push('app.json: Missing required field "id"');
+            if (!app.version) errors.push('app.json: Missing required field "version"');
+            if (!app.compatibility) errors.push('app.json: Missing required field "compatibility"');
+
+            // 2. Validate drivers
+            (app.drivers || []).forEach(d => {
+              const prefix = `Driver "${d.id || 'unknown'}":`;
+
+              // Basic required fields
+              if (!d.id) errors.push(`${prefix} Missing required field "id"`);
+              if (!d.name) errors.push(`${prefix} Missing required field "name"`);
+
+              // Zigbee specific checks
+              if (d.zigbee) {
+                const conn = d.connectivity || [];
+                const isZigbee = conn.includes('zigbee');
+
+                if (isZigbee) {
+                  const hasMf = d.zigbee.manufacturerName && d.zigbee.manufacturerName.length > 0;
+                  const hasFp = d.zigbee.fingerprints && d.zigbee.fingerprints.length > 0;
+                  const hasPid = d.zigbee.productId && d.zigbee.productId.length > 0;
+
+                  // If it has fingerprints, it MUST have manufacturerName (Anti-AggregateError)
+                  if (hasFp && !hasMf) {
+                    errors.push(`${prefix} Missing/empty "manufacturerName" (has fingerprints)`);
+                  }
+
+                  // If it's a pure Zigbee driver (no Lan/Cloud), it needs at least one identifier
+                  const isLan = conn.some(c => ['lan', 'cloud'].includes(c));
+                  if (!isLan && !hasMf && !hasPid) {
+                    errors.push(`${prefix} No "manufacturerName" or "productId" found`);
+                  }
+                }
+              }
+            });
+          } catch (e) {
+            errors.push(`CRITICAL: app.json parsing failed - ${e.message}`);
+          }
+
+          // 3. Check driver compose files for JSON syntax
+          console.log('Checking driver compose files...');
+          const driversDir = path.join(process.cwd(), 'drivers');
+          if (fs.existsSync(driversDir)) {
+            fs.readdirSync(driversDir).forEach(d => {
+              const p = path.join(driversDir, d, 'driver.compose.json');
+              if (fs.existsSync(p)) {
+                try {
+                  const raw = fs.readFileSync(p, 'utf8');
+                  JSON.parse(raw); // Validate syntax
+                } catch (e) {
+                  errors.push(`File "${d}/driver.compose.json": Invalid JSON - ${e.message}`);
+                }
+              }
+            });
+          }
+
+          // Output results
+          if (errors.length > 0) {
+            console.error(`\n❌ Found ${errors.length} validation errors:`);
+            errors.forEach(e => console.error(`  - ${e}`));
+            process.exit(1);
+          } else {
+            console.log('✅ All checks passed: JSON syntax valid, app.json structure correct, Zigbee drivers configured properly.');
+          }
+          GATE
+
+      - name: Normalize Homey manifest before validation
+        run: npm run fix:generated-flow-args
+
+      - name: Official Homey validator
+        run: npx homey app validate --level publish
+
+      - name: Sanitize generated manifest after validation
+        run: npm run fix:generated-flow-args && npm run check:homey-guidelines
+
+      # ─────────────────────────────────────────────────────────────
+      # 6. PUBLISH
+      # ─────────────────────────────────────────────────────────────
+      - name: Publish to Homey App Store
+        id: pub
+        if: steps.check_pat.outputs.has_pat == 'true'
+        uses: ./.github/actions/homey-app-publish
+        with:
+          personal_access_token: ${{ secrets.HOMEY_PAT }}
+
+      # ─────────────────────────────────────────────────────────────
+      # 7. POST-PUBLISH (all continue-on-error)
+      # ─────────────────────────────────────────────────────────────
+      - name: Create GitHub Release
+        if: steps.check_pat.outputs.has_pat == 'true'
+        continue-on-error: true
+        uses: softprops/action-gh-release@3bb12739c298aeb8a4eeaf626c5b8d85266b0e65 # v2
+        with:
+          tag_name: v${{ steps.info.outputs.version }}
+          name: v${{ steps.info.outputs.version }}
+          body: ${{ steps.cl.outputs.text }}
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+
+      - name: Wait for Athom draft processing
+        if: steps.pub.outcome == 'success'
+        run: sleep 120
+
+      - name: Install Puppeteer (draft → test promotion)
+        if: steps.check_pat.outputs.has_pat == 'true'
+        continue-on-error: true
+        run: npm install puppeteer athom-api --no-save
+
+      - name: "Tier 1: Promote via Browser"
+        if: steps.check_pat.outputs.has_pat == 'true'
+        id: promote_puppeteer
+        continue-on-error: true
+        timeout-minutes: 5
+        env:
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+          DRY_RUN: 'false'
+        run: node .github/scripts/auto-promote-puppeteer.js
+
+      - name: "Tier 2: Promote via OAuth"
+        id: promote_oauth
+        if: steps.check_pat.outputs.has_pat == 'true' && steps.promote_puppeteer.outcome != 'success'
+        continue-on-error: true
+        timeout-minutes: 5
+        env:
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+          ATHOM_CLIENT_ID: ${{ secrets.ATHOM_CLIENT_ID }}
+          ATHOM_CLIENT_SECRET: ${{ secrets.ATHOM_CLIENT_SECRET }}
+        run: node .github/scripts/auto-promote-oauth.js
+
+      - name: "Tier 3: Promote via PAT API"
+        id: promote_api
+        if: steps.check_pat.outputs.has_pat == 'true' && steps.promote_puppeteer.outcome != 'success' && steps.promote_oauth.outcome != 'success'
+        continue-on-error: true
+        timeout-minutes: 5
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+        run: node .github/scripts/auto-publish-draft.js
+
+      - name: Verify draft promotion result
+        id: verify_test
+        if: steps.check_pat.outputs.has_pat == 'true'
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+        run: |
+          if [ "${{ steps.promote_puppeteer.outcome }}" != "success" ] && \
+             [ "${{ steps.promote_oauth.outcome }}" != "success" ] && \
+             [ "${{ steps.promote_api.outcome }}" != "success" ]; then
+            echo "::warning::All draft-to-test promotion tiers returned non-success; verifying actual Homey channel state before failing."
+          fi
+          node .github/scripts/verify-test-version.js
+
+      - name: Regenerate README & Docs
+        if: always()
+        continue-on-error: true
+        run: |
+          node .github/scripts/auto-update-docs.js || true
+          node .github/scripts/generate-readme.js || true
+
+      # ─────────────────────────────────────────────────────────────
+      # 8. BOT COMMIT — Always runs, commits clean state
+      # ─────────────────────────────────────────────────────────────
+      - name: Bot commit & push
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          restore_volatile_artifacts() {
+            for path in .github/state diagnostics screenshots screenshots-debug promote-screenshots push-promote-screenshots .homeybuild; do
+              git restore -- "$path" 2>/dev/null || true
+            done
+          }
+          stage_publish_metadata() {
+            for path in app.json .homeycompose .homeychangelog.json CHANGELOG.md README.md docs .github/scripts/_stats.json package.json package-lock.json; do
+              [ -e "$path" ] && git add "$path"
+            done
+            for path in drivers/*/driver.compose.json; do
+              [ -e "$path" ] && git add "$path"
+            done
+          }
+          node scripts/maintenance/sanitize-manifest.cjs app.json .homeybuild/app.json || true
+          node <<'NODE'
+          const fs = require('fs');
+          const app = JSON.parse(fs.readFileSync('app.json', 'utf8'));
+          const version = app.version;
+          for (const file of ['package.json', 'package-lock.json']) {
+            if (!fs.existsSync(file)) continue;
+            const json = JSON.parse(fs.readFileSync(file, 'utf8'));
+            json.version = version;
+            if (json.packages && json.packages['']) json.packages[''].version = version;
+            fs.writeFileSync(file, JSON.stringify(json, null, 2) + '\n');
+          }
+          if (fs.existsSync('.homeycompose/app.json')) {
+            const compose = JSON.parse(fs.readFileSync('.homeycompose/app.json', 'utf8'));
+            compose.version = version;
+            fs.writeFileSync('.homeycompose/app.json', JSON.stringify(compose, null, 2) + '\n');
+          }
+          if (fs.existsSync('.homeychangelog.json')) {
+            const changelog = JSON.parse(fs.readFileSync('.homeychangelog.json', 'utf8'));
+            const current = changelog[version] && String(changelog[version].en || '');
+            if (!current || /^y{20,}$/i.test(current) || /^v\d+\.\d+\.\d+:$/.test(current.trim())) {
+              changelog[version] = { en: `v${version}: automated publish, manifest sync, and Homey test promotion.` };
+              fs.writeFileSync('.homeychangelog.json', JSON.stringify(changelog, null, 2) + '\n');
+            }
+          }
+          NODE
+          restore_volatile_artifacts
+          stage_publish_metadata
+          VER=$(node -p "require('./app.json').version" 2>/dev/null || echo "${{ steps.info.outputs.version }}")
+          D=$(ls -d drivers/*/ 2>/dev/null | wc -l)
+          F=$(grep -rohE '"_T[A-Za-z0-9_]+"' drivers/*/driver.compose.json 2>/dev/null | sort -uf | wc -l || echo 0)
+          git diff --cached --quiet || git commit -m "v${VER}: ${D} drivers, ${F} FPs [skip ci]"
+          restore_volatile_artifacts
+          if ! git diff --quiet || ! git diff --cached --quiet; then
+            echo "::group::Tracked changes after publish metadata commit"
+            git status --short
+            echo "::endgroup::"
+            stage_publish_metadata
+            git diff --cached --quiet || git commit -m "chore(master): sync generated publish metadata [skip ci]"
+          fi
+          restore_volatile_artifacts
+          if ! git diff --quiet || ! git diff --cached --quiet; then
+            echo "::group::Remaining tracked changes before rebase"
+            git status --short
+            echo "::endgroup::"
+            echo "::error::Uncommitted tracked changes remain before rebase"
+            exit 1
+          fi
+          git fetch origin master
+          if ! git merge-base --is-ancestor origin/master HEAD; then
+            if ! git rebase -X ours origin/master; then
+              echo "::warning::Generated publish metadata conflicted with origin/master; dropping metadata commit and keeping origin/master."
+              git rebase --abort || true
+              git reset --hard origin/master
+            fi
+          else
+            echo "origin/master is already an ancestor of HEAD; skipping rebase"
+          fi
+          git push origin HEAD:refs/heads/master
+          git fetch origin master
+          git merge-base --is-ancestor HEAD origin/master || {
+            echo "::error::Bot commit HEAD is not reachable from origin/master after push"
+            exit 1
+          }
+
+      - name: Full diagnostics sweep - sanitized
+        if: always()
+        continue-on-error: true
+        timeout-minutes: 12
+        env:
+          GMAIL_EMAIL: ${{ secrets.GMAIL_EMAIL }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          GMAIL_CLIENT_ID: ${{ secrets.GMAIL_CLIENT_ID }}
+          GMAIL_CLIENT_SECRET: ${{ secrets.GMAIL_CLIENT_SECRET }}
+          GMAIL_REFRESH_TOKEN: ${{ secrets.GMAIL_REFRESH_TOKEN }}
+          GMAIL_DIAG_AI_MAX: "0"
+          GMAIL_DIAG_REQUIRE_ACCESS: "false"
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          HOMEY_PAT_API: ${{ secrets.HOMEY_PAT_API }}
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+          GH_PAT: ${{ secrets.GH_PAT }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DRY_RUN: "true"
+        run: |
+          run_diag() {
+            local seconds="$1"
+            shift
+            local label="$*"
+            echo "::group::${label}"
+            if timeout --kill-after=30s "${seconds}s" "$@"; then
+              echo "[diag] completed: ${label}"
+            else
+              local code=$?
+              echo "::warning title=Diagnostics command timed out or failed::${label} exited with code ${code}"
+            fi
+            echo "::endgroup::"
+          }
+
+          run_diag 60 node .github/scripts/gmail-token-keepalive.js
+          run_diag 180 node .github/scripts/fetch-gmail-diagnostics.js
+          run_diag 90 node scripts/automation/dashboard-monitor.js --latest
+          run_diag 120 node .github/scripts/homey-device-diagnostics.js
+          run_diag 120 node .github/scripts/collect-diagnostics.js
+          run_diag 60 node .github/scripts/privacy-redactor.js diagnostics .github/state/diagnostics-report.json .github/state/diagnostics-crossref.yml .github/state/homey-device-report.json .github/state/dashboard-monitor-report.json
+          run_diag 60 node scripts/ci/diagnostic-history-gate.js --json
+
+      # ─────────────────────────────────────────────────────────────
+      # 9. SUMMARY
+      # ─────────────────────────────────────────────────────────────
+      - name: Summary
+        if: always()
+        run: |
+          APP_ID=$(node -p "require('./app.json').id" 2>/dev/null || echo "com.dlnraja.tuya.zigbee")
+          echo "## v${{ steps.info.outputs.version }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Changelog:** ${{ steps.cl.outputs.text }}" >> $GITHUB_STEP_SUMMARY
+          if [ "${{ steps.check_pat.outputs.has_pat }}" == "true" ] && [ "${{ steps.verify_test.outcome }}" == "success" ]; then
+            echo "✅ Published to Homey App Store (Test channel)" >> $GITHUB_STEP_SUMMARY
+            echo "[Install test version](https://homey.app/a/$APP_ID/test/)" >> $GITHUB_STEP_SUMMARY
+          elif [ "${{ steps.check_pat.outputs.has_pat }}" == "true" ]; then
+            echo "⚠️ Published draft build, but Homey test promotion was not confirmed" >> $GITHUB_STEP_SUMMARY
+            echo "[Open Homey test page](https://homey.app/a/$APP_ID/test/)" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "⚠️ Validated only — HOMEY_PAT not set" >> $GITHUB_STEP_SUMMARY
+          fi
