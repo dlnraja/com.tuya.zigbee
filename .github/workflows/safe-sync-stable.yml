@@ -1,0 +1,79 @@
+name: Safe Sync master → stable-v5 (P52)
+
+on:
+  schedule:
+    # Daily at 04:00 UTC (after the auto-fix-all bot at 03:00)
+    - cron: '0 4 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  safe-sync:
+    name: Sync safe changes to stable-v5
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout stable-v5
+        uses: actions/checkout@v5
+        with:
+          ref: stable-v5
+          fetch-depth: 50
+
+      - name: Fetch master
+        run: git fetch origin master --depth=50
+
+      - name: Setup Node
+        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444
+        with:
+          node-version: '22'
+
+      - name: Run safe-sync tool
+        run: |
+          echo "═══ P52 Auto Safe Sync master → stable-v5 ═══"
+          node tools/ci/apply-safe-sync.js || echo "Sync tool not found, using manual approach"
+
+      - name: Apply safe changes manually (if tool not present)
+        run: |
+          SAFE_FILES="lib/tuya/fingerprints.json lib/battery/ data/mfs_db.json lib/LocalFirstEngine.js lib/SDK3CompatBridge.js lib/LowLevelBridge.js lib/utils/safe-timers.js"
+          for f in $SAFE_FILES; do
+            if [ -f "$f" ] && git show "origin/master:$f" > /tmp/master_file 2>/dev/null; then
+              if ! diff -q "$f" /tmp/master_file > /dev/null; then
+                cp /tmp/master_file "$f"
+                echo "  ✓ updated $f"
+              fi
+            fi
+          done
+
+      - name: Bump stable version
+        run: |
+          # Get current version
+          CURRENT=$(node -e "const c=require('./.homeycompose/app.json');console.log(c.version)")
+          echo "Current version: $CURRENT"
+          # Bump patch
+          NEW=$(echo $CURRENT | awk -F. '{print $1"."$2"."$3+1"-stable"}')
+          if [ "$NEW" = "$CURRENT" ] || [ "$NEW" = "${CURRENT%-stable}-stable" ]; then
+            # Already has -stable suffix, bump patch
+            NEW=$(echo $CURRENT | sed 's/\([0-9]*\)\.\([0-9]*\)\.\([0-9]*\)\(-stable\)\?$/\1.\2.\3-stable/' | awk -F. '{print $1"."$2"."$3+1"-stable"}')
+          fi
+          node -e "
+            const fs=require('fs');
+            const c=JSON.parse(fs.readFileSync('.homeycompose/app.json','utf8'));
+            c.version='$NEW';
+            c.stableNotes='P52-auto: synced safe changes from master';
+            fs.writeFileSync('.homeycompose/app.json',JSON.stringify(c,null,2));
+            console.log('Bumped to $NEW');
+          "
+
+      - name: Commit + push
+        run: |
+          git add .homeycompose/app.json lib/ data/ 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+          git -c user.email="p52-bot@homey-mavis.local" -c user.name="P52 Sync Bot" commit -m "chore(P52-auto): sync safe changes from master"
+          git push origin stable-v5
+          echo "✓ Pushed to stable-v5"
