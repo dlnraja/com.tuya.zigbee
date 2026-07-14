@@ -1,3 +1,8 @@
+defaults:
+  run:
+    shell: bash
+
+---
 name: Temporal Monitor (P29.7)
 
 # P29.7 — Daily cron that scans for new GH issues matching known bug patterns.

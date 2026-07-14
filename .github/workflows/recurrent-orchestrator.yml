@@ -1,3 +1,8 @@
+defaults:
+  run:
+    shell: bash
+
+---
 name: Recurrent Orchestrator (P32)
 
 # P32 — Daily orchestrator that runs ALL analyzers in pipeline.
