@@ -25,10 +25,10 @@ defaults:
 env:
   NODE_VERSION: "22"
   # v5.12.0: 431 drivers × assets still overshoots the 26 MB default.
-  # 40 MB is well within the Athom API practical ceiling (45-50 MB).
+  # 45 MB is the practical Athom limit (slightly under the 50 MB API cap).
   # Local size-gate checks against this env var.
-  HOMEY_PUBLISH_MAX_UNCOMPRESSED_MB: "40"
-  HOMEY_PUBLISH_SOURCE_MAX_MB: "40"
+  HOMEY_PUBLISH_MAX_UNCOMPRESSED_MB: "45"
+  HOMEY_PUBLISH_SOURCE_MAX_MB: "45"
 
 jobs:
   upstream-guard:
