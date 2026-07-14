@@ -188,15 +188,26 @@ Homey Pro
 
 ## Data Sources
 
-| Source | Usage |
-|--------|-------|
-| **[Zigbee2MQTT](https://www.zigbee2mqtt.io)** | Device discovery, DP mappings, manufacturer names |
-| **[Blakadder](https://zigbee.blakadder.com)** | Cross-checking rebranded Tuya devices |
-| **[ZHA / zigpy](https://github.com/zigpy/zha-device-handlers)** | Device signatures, custom quirks |
-| **[deCONZ](https://github.com/dresden-elektronik/deconz-rest-plugin)** | REST plugin device data |
-| **[CSA](https://csa-iot.org)** | Zigbee 3.0 certified products |
-| **[Homey Community Forum](https://community.homey.app)** | User reports, device interviews |
-| **[JohanBendz Fork](https://github.com/JohanBendz/com.tuya.zigbee)** | Community contributions |
+> **P53 (2026-07-14)**: 15 external data sources orchestrated via `tools/ci/mega-crawler.js` + GHA `mega-crawl.yml` (daily 02:00 UTC).
+> Blakadder coverage: **92.3% in mfs_db**, **92.0% in drivers**, **48 new candidates auto-applied** to drivers.
+
+| Source | Usage | Crawler |
+|--------|-------|---------|
+| **[Blakadder](https://zigbee.blakadder.com)** | 2,692-device DB, 635 Tuya FPs | `crawl-blakadder.js` + `blakadder-fetch.yml` (daily 04:00 UTC) |
+| **[Zigbee2MQTT](https://www.zigbee2mqtt.io)** | Device discovery, DP mappings, manufacturer names | `crawl-z2m.js` |
+| **[ZHA / zigpy](https://github.com/zigpy/zha-device-handlers)** | Device signatures, custom quirks | `crawl-zha.js` |
+| **[deCONZ](https://github.com/dresden-elektronik/deconz-rest-plugin)** | REST plugin device data | `crawl-deconz.js` |
+| **[CSA](https://csa-iot.org)** | Zigbee 3.0 certified products | `csa-iot-scanner.js` |
+| **[TinyTuya](https://github.com/jasonacox/tinytuya)** | DP type definitions | `tinytuya-scanner.js` |
+| **[Tuya-Local](https://github.com/make-all/tuya-local)** | YAML configs | `tuya-local-scanner.js` |
+| **[Hubitat](https://hubitat.com)** | Groovy Tuya drivers | `hubitat-scanner.js` |
+| **[SmartThings](https://www.smartthings.com)** | Edge fingerprint files | `smartthings-scanner.js` |
+| **[openHAB](https://www.openhab.org)** | Zigbee XML thing definitions | `openhab-scanner.js` |
+| **[Domoticz](https://domoticz.com)** | Zigbee Lua/Python plugins | `domoticz-scanner.js` |
+| **[Xiaomi MIoT](https://miot-spec.org)** | MIoT spec + Z2M Lumi FPs | `xiaomi-miot-scanner.js` |
+| **[JohanBendz Fork](https://github.com/JohanBendz/com.tuya.zigbee)** | Community contributions (issues, PRs, comments) | `johan-dump.js` |
+| **[Homey Community Forum](https://community.homey.app)** | Topic 140352 (2031 posts, 142 participants) | `forum-fetch-140352.js` |
+| **[Gmail Diagnostics](https://mail.google.com)** | Crash logs from app users | `gmail-diagnostics.yml` (daily) |
 
 ---
 
