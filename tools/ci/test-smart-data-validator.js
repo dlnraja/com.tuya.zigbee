@@ -4,6 +4,7 @@
  */
 'use strict';
 const { SmartDataValidator } = require('../../lib/data/SmartDataValidator');
+const { SmartCapability, installSmartCapMixin } = require('../../lib/data/SmartCapability');
 
 let passed = 0, failed = 0;
 function assert(cond, msg) {
@@ -232,6 +233,69 @@ async function runTests() {
     assert(s.records === 3, '3 records');
     assert(s.commits === 2, '2 commits');
     assert(s.deduped === 1, '1 deduped');
+  }
+
+  // Test 14: SmartCapability high-level wrapper
+  console.log('\nTest 14: SmartCapability high-level wrapper');
+  {
+    const cap = new SmartCapability('test', {
+      sources: { a: { priority: 1, weight: 0.5 } },
+      debounceMs: 0, hysteresisMs: 0,
+    });
+    const d = cap.update(null, 'a', 42);
+    assert(d.commit === true, 'update returns commit decision');
+    assert(d.value === 42, 'value = 42');
+  }
+
+  // Test 15: SmartCapability.updateMulti
+  console.log('\nTest 15: SmartCapability.updateMulti (record multiple sources at once)');
+  {
+    const cap = new SmartCapability('test', {
+      sources: {
+        a: { priority: 1, weight: 0.6 },
+        b: { priority: 2, weight: 0.4 },
+      },
+      debounceMs: 0, hysteresisMs: 0,
+    });
+    const d = cap.updateMulti(null, { a: { value: 70, confidence: 0.9 }, b: { value: 72, confidence: 0.85 } });
+    assertClose(d.value, 70.8, 0.3, 'multi-source update: ~70.8');
+    assert(d.sources.length === 2, '2 sources used');
+  }
+
+  // Test 16: SmartCapability mixin
+  console.log('\nTest 16: SmartCapability mixin on a fake device class');
+  {
+    class FakeDevice {}
+    installSmartCapMixin(FakeDevice);
+    const dev = new FakeDevice();
+    const cap = dev.smartCap('measure_temperature', {
+      sources: { zcl: { priority: 1, weight: 0.5 } },
+      debounceMs: 0, hysteresisMs: 0,
+    });
+    assert(cap instanceof SmartCapability, 'smartCap returns SmartCapability instance');
+    cap.record('zcl', 22);
+    const d = cap.commit();
+    assert(d.value === 22, 'value 22 via mixin');
+    // Test that second call to smartCap returns the same instance
+    const cap2 = dev.smartCap('measure_temperature');
+    assert(cap2 === cap, 'smartCap returns same instance on 2nd call');
+  }
+
+  // Test 17: SmartCapability high-level update() with device mock
+  console.log('\nTest 17: SmartCapability.update with device mock');
+  {
+    const cap = new SmartCapability('measure_battery', {
+      sources: { zcl: { priority: 1, weight: 0.5 } },
+      debounceMs: 0, hysteresisMs: 0,
+    });
+    const updates = [];
+    const fakeDevice = {
+      setCapabilityValue: (cap, val) => updates.push({ cap, val }),
+    };
+    cap.update(fakeDevice, 'zcl', 72);
+    assert(updates.length === 1, '1 setCapabilityValue call');
+    assert(updates[0].cap === 'measure_battery', 'capability = measure_battery');
+    assert(updates[0].val === 72, 'value = 72');
   }
 
   console.log('\n═══ RESULTS ═══');
