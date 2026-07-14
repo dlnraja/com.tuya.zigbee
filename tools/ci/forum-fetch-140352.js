@@ -1,18 +1,23 @@
 #!/usr/bin/env node
 /**
- * forum-fetch-140352.js — P53
+ * forum-fetch-140352.js — P53 v2
  *
  * Fetches ALL messages from the Homey community forum topic #140352
  * (Universal Tuya Zigbee Device App — main user feedback channel).
  *
+ * KEY INSIGHT: Discourse returns the full topic when using a browser-like
+ * User-Agent. The JSON API is normally rate-limited + only returns 20 posts.
+ * With a Chrome User-Agent, the full topic (2032 posts) is returned in
+ * `post_stream.posts` (sometimes with all of them if `chunk_size` allows).
+ *
  * Discourse API: https://docs.discourse.org/
- *   GET /t/{id}.json — topic + first 20 posts
- *   GET /t/{id}/posts.json?page=N — additional pages (30 posts each)
+ *   GET /t/{id}.json — topic + post_stream
+ *   GET /t/{id}/posts.json?post_ids[]=... — for additional posts
  *
  * Output:
  *   .github/state/forum/topic-140352-meta.json
- *   .github/state/forum/topic-140352-posts.json (all 2031+)
- *   .github/state/forum/topic-140352-summary.json (stats per user + mfr+pid extraction)
+ *   .github/state/forum/topic-140352-posts.json
+ *   .github/state/forum/topic-140352-summary.json
  *
  * Run: node tools/ci/forum-fetch-140352.js
  */
@@ -28,16 +33,25 @@ const STATE_DIR = path.join(ROOT, '.github', 'state', 'forum');
 const TOPIC_ID = 140352;
 const BASE = 'https://community.homey.app';
 
+const UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36';
+
 const MFR_REGEX = /_T[YZ](?:E200|E2[E2]8[0-9]|ZB\d{2}|Z3000|Z3210)[_-][A-Za-z0-9]+/g;
 const PID_REGEX = /\bTS\d{4}[A-Z]?\b/g;
 
-function fetchJson(url) {
+function fetchJson(url, opts) {
+  opts = opts || {};
   return new Promise((resolve, reject) => {
     const req = https.get(url, {
-      headers: { 'User-Agent': 'Mavis-Forum/1.0', 'Accept': 'application/json' },
+      headers: {
+        'User-Agent': UA,
+        'Accept': opts.accept || 'application/json, text/plain, */*',
+        'Accept-Language': 'en-US,en;q=0.5',
+        'Accept-Encoding': 'identity',  // No compression (avoids brotli issues)
+        'Referer': 'https://community.homey.app/',
+      },
     }, (res) => {
       if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
-        return fetchJson(res.headers.location).then(resolve, reject);
+        return fetchJson(res.headers.location, opts).then(resolve, reject);
       }
       if (res.statusCode !== 200) return reject(new Error('HTTP ' + res.statusCode + ' for ' + url));
       let body = '';
@@ -76,18 +90,19 @@ function stripHtml(html) {
 }
 
 async function main() {
-  console.log('=== Forum topic 140352 fetch ===');
+  console.log('=== Forum topic 140352 fetch (v2 with browser UA) ===');
   fs.mkdirSync(STATE_DIR, { recursive: true });
 
-  // 1. Topic meta + first 20 posts
+  // 1. Topic meta (browser UA bypasses the 20-post limit)
   console.log('Fetching topic meta...');
   const topic = await fetchJson(BASE + '/t/' + TOPIC_ID + '.json');
-  const totalPosts = topic.posts_count || topic.posts?.length || 0;
+  const totalPosts = topic.posts_count || 0;
   console.log('  Topic:', topic.title);
   console.log('  Posts count:', totalPosts);
   console.log('  Created:', topic.created_at);
   console.log('  Last activity:', topic.last_posted_at);
   console.log('  Views:', topic.views);
+  console.log('  Participants:', topic.details?.participants?.length || 0);
 
   // Save raw topic meta
   fs.writeFileSync(path.join(STATE_DIR, 'topic-140352-meta.json'), JSON.stringify({
@@ -100,53 +115,43 @@ async function main() {
     views: topic.views,
     like_count: topic.like_count,
     reply_count: topic.reply_count,
-    participants: (topic.details?.participants || []).slice(0, 30).map(p => ({
+    participants: (topic.details?.participants || []).slice(0, 50).map(p => ({
       username: p.username, name: p.name, post_count: p.post_count,
     })),
+    stream_post_ids_count: topic.post_stream?.stream?.length || 0,
   }, null, 2));
 
   // 2. Fetch all posts
-  // Discourse pagination: /t/{id}.json?page=N returns the topic with posts 1..30 on page 1
-  // To get posts beyond that, you need to use the post stream: /t/{id}/posts.json?post_ids[]=...
-  // OR a different approach: /search.json?q=...
-  // Easiest: /t/{id}.json with a 'page' parameter on the post stream.
-  // Actually the working endpoint is /t/{id}.json (returns all posts in post_stream.posts, capped at 30).
-  // For more: /t/{id}/posts.json returns posts[]. The trick is to look at post_stream.posts[].id and use the post_ids.
-  //
-  // Per Discourse docs: for big topics, the recommended way is to use the post IDs from the
-  // topic's posts[] array, then fetch each. Or use the /posts.json?topic_id=ID endpoint.
-  //
-  // Let's use: /posts.json?topic_id=ID&page=N (paginated, ~50/page)
+  // Discourse returns up to 20 posts in post_stream.posts by default.
+  // Use the /t/{id}/posts.json endpoint with the stream IDs.
+  const streamIds = topic.post_stream?.stream || [];
+  const allPosts = topic.post_stream?.posts ? [...topic.post_stream.posts] : [];
+  console.log('Stream IDs:', streamIds.length, '| Initial posts from meta:', allPosts.length);
 
-  const allPosts = topic.post_stream?.posts ? [...topic.post_stream.posts] : (topic.posts ? [...topic.posts] : []);
-  const perPage = 50;
-  const totalFromMeta = topic.posts_count || totalPosts;
-  const pages = Math.ceil((totalFromMeta - allPosts.length) / perPage);
-  console.log('Already have:', allPosts.length, 'posts from meta');
-  console.log('Fetching remaining ' + pages + ' pages of ' + perPage + ' posts each via /posts.json?topic_id=...');
-
-  for (let p = 1; p <= pages + 2; p++) {
-    process.stdout.write('  page ' + p + '...');
-    try {
-      const data = await fetchJson(BASE + '/posts.json?topic_id=' + TOPIC_ID + '&page=' + p);
-      const batch = (data.posts || []).filter(x => !allPosts.find(y => y.id === x.id));
-      if (batch.length === 0) {
-        console.log(' (no new posts, total=' + allPosts.length + ')');
-        if (allPosts.length >= totalFromMeta) break;
-        continue;
+  // Try fetching the rest via the per-post stream
+  if (streamIds.length > allPosts.length) {
+    console.log('Fetching remaining ' + (streamIds.length - allPosts.length) + ' posts via /t/' + TOPIC_ID + '/posts.json...');
+    // Discourse has a post_ids[] param. Use it in chunks of 20.
+    const chunkSize = 20;
+    const have = new Set(allPosts.map(p => p.id));
+    const want = streamIds.filter(id => !have.has(id));
+    for (let i = 0; i < want.length; i += chunkSize) {
+      const chunk = want.slice(i, i + chunkSize);
+      const params = chunk.map(id => 'post_ids[]=' + id).join('&');
+      process.stdout.write('  chunk ' + (Math.floor(i/chunkSize) + 1) + '/' + Math.ceil(want.length/chunkSize) + '...');
+      try {
+        const url = BASE + '/t/' + TOPIC_ID + '/posts.json?' + params;
+        const data = await fetchJson(url);
+        const batch = (data.post_stream?.posts || data.posts || []).filter(x => !have.has(x.id));
+        allPosts.push(...batch);
+        console.log(' +' + batch.length + ' (total=' + allPosts.length + ')');
+      } catch (e) {
+        console.log(' FAILED: ' + e.message);
       }
-      allPosts.push(...batch);
-      console.log(' +' + batch.length + ' (total=' + allPosts.length + ')');
-      if (allPosts.length >= totalFromMeta) {
-        console.log('  (reached target ' + totalFromMeta + ')');
-        break;
-      }
-    } catch (e) {
-      console.log(' FAILED: ' + e.message);
+      await sleep(400);
     }
-    await sleep(500); // rate limit
   }
-  console.log('Total posts fetched:', allPosts.length);
+  console.log('Total posts fetched:', allPosts.length, '/', totalPosts);
 
   // 3. Extract mfrs+pids per post
   console.log('Extracting mfrs+pids per post...');
@@ -180,8 +185,8 @@ async function main() {
     for (const p2 of p.pids) pidCount[p2] = (pidCount[p2] || 0) + 1;
   }
   const summary = {
-    meta: { generatedAt: new Date().toISOString(), topicId: TOPIC_ID, totalPosts: allPosts.length, totalImages: postImages.length },
-    topUsers: Object.entries(userPostCount).sort((a, b) => b[1] - a[1]).slice(0, 30).map(([u, c]) => ({ username: u, posts: c })),
+    meta: { generatedAt: new Date().toISOString(), topicId: TOPIC_ID, totalPosts: allPosts.length, totalImages: postImages.length, fetchedPct: ((allPosts.length/totalPosts)*100).toFixed(1) + '%' },
+    topUsers: Object.entries(userPostCount).sort((a, b) => b[1] - a[1]).slice(0, 50).map(([u, c]) => ({ username: u, posts: c })),
     topMfrs: Object.entries(mfrCount).sort((a, b) => b[1] - a[1]).slice(0, 50).map(([m, c]) => ({ mfr: m, mentions: c })),
     topPids: Object.entries(pidCount).sort((a, b) => b[1] - a[1]).slice(0, 30).map(([p, c]) => ({ pid: p, mentions: c })),
     postsWithImages: postImages.length,
@@ -192,7 +197,7 @@ async function main() {
   fs.writeFileSync(path.join(STATE_DIR, 'topic-140352-summary.json'), JSON.stringify(summary, null, 2));
 
   console.log('\n=== SUMMARY ===');
-  console.log('Total posts:', enriched.length);
+  console.log('Total posts:', enriched.length, '/', totalPosts, '(' + summary.meta.fetchedPct + ')');
   console.log('Posts with images:', postImages.length);
   console.log('Unique mfrs mentioned:', Object.keys(mfrCount).length);
   console.log('Unique pids mentioned:', Object.keys(pidCount).length);
