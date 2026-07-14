@@ -14507,5 +14507,175 @@
     "type": "curtain_motor",
     "powerSource": "mains",
     "modelIds": []
+  },
+  "_TZ3000_xxxxxxxx": {
+    "driverId": "generic_diy",
+    "type": "generic_diy",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0044"
+    ]
+  },
+  "_TZ3000_5KXL9ESG": {
+    "driverId": "switch_4gang",
+    "type": "switch_4gang",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0004"
+    ]
+  },
+  "_TZ3000_EZQBVRQZ": {
+    "driverId": "switch_4gang",
+    "type": "switch_4gang",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0004"
+    ]
+  },
+  "_TZ3000_GEXNIQBQ": {
+    "driverId": "switch_4gang",
+    "type": "switch_4gang",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0004"
+    ]
+  },
+  "_TZE200_h4astvf8": {
+    "driverId": "siren_sirentemphumidsensor",
+    "type": "siren_sirentemphumidsensor",
+    "powerSource": "mains",
+    "modelIds": []
+  },
+  "_TZE204_e2bedvo9": {
+    "driverId": "climate_sensor",
+    "type": "climate_sensor",
+    "powerSource": "battery",
+    "modelIds": []
+  },
+  "_TZE204_wjk6rurm": {
+    "driverId": "power_meter",
+    "type": "power_meter",
+    "powerSource": "mains",
+    "modelIds": []
+  },
+  "_TZE284_wjk6rurm": {
+    "driverId": "power_meter",
+    "type": "power_meter",
+    "powerSource": "mains",
+    "modelIds": []
+  },
+  "_TZ3000_4XFQLGQO": {
+    "driverId": "switch_2gang",
+    "type": "switch_2gang",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0002"
+    ]
+  },
+  "_TZ3000_4ZF0CRGO": {
+    "driverId": "switch_2gang",
+    "type": "switch_2gang",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0002"
+    ]
+  },
+  "_TZ3000_HBIC3KA3": {
+    "driverId": "switch_3gang",
+    "type": "switch_3gang",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0003"
+    ]
+  },
+  "_TZE284_nj7sfid2": {
+    "driverId": "sensor_gas_presence",
+    "type": "sensor_gas_presence",
+    "powerSource": "mains",
+    "modelIds": []
+  },
+  "_TZE204_ax8a8ahx": {
+    "driverId": "soil_sensor",
+    "type": "soil_sensor",
+    "powerSource": "battery",
+    "modelIds": []
+  },
+  "_TZE204_b2u1drdv": {
+    "driverId": "soil_sensor",
+    "type": "soil_sensor",
+    "powerSource": "battery",
+    "modelIds": []
+  },
+  "_TZE204_ba69l9ol": {
+    "driverId": "soil_sensor",
+    "type": "soil_sensor",
+    "powerSource": "battery",
+    "modelIds": []
+  },
+  "_TZE204_2dpplnsn": {
+    "driverId": "climate_sensor",
+    "type": "climate_sensor",
+    "powerSource": "battery",
+    "modelIds": []
+  },
+  "_TZE204_2atgpdho": {
+    "driverId": "climate_sensor",
+    "type": "climate_sensor",
+    "powerSource": "battery",
+    "modelIds": []
+  },
+  "_TZE204_8whxpsiw": {
+    "driverId": "climate_sensor",
+    "type": "climate_sensor",
+    "powerSource": "battery",
+    "modelIds": []
+  },
+  "_TZE204_9p5xmj5r": {
+    "driverId": "climate_sensor",
+    "type": "climate_sensor",
+    "powerSource": "battery",
+    "modelIds": []
+  },
+  "_TZE204_9sfg7gm0": {
+    "driverId": "climate_sensor",
+    "type": "climate_sensor",
+    "powerSource": "battery",
+    "modelIds": []
+  },
+  "_TZE204_a4bpgplm": {
+    "driverId": "climate_sensor",
+    "type": "climate_sensor",
+    "powerSource": "battery",
+    "modelIds": []
+  },
+  "_TZE204_0hb4rdnp": {
+    "driverId": "generic_diy",
+    "type": "generic_diy",
+    "powerSource": "battery",
+    "modelIds": []
+  },
+  "_TZE204_gne0e6mk": {
+    "driverId": "generic_diy",
+    "type": "generic_diy",
+    "powerSource": "battery",
+    "modelIds": []
+  },
+  "_TZE204_hbnfokum": {
+    "driverId": "generic_diy",
+    "type": "generic_diy",
+    "powerSource": "battery",
+    "modelIds": []
+  },
+  "_TZE204_w0ap83qu": {
+    "driverId": "generic_diy",
+    "type": "generic_diy",
+    "powerSource": "battery",
+    "modelIds": []
+  },
+  "_TZE200_4bjixefp": {
+    "driverId": "soil_sensor",
+    "type": "soil_sensor",
+    "powerSource": "battery",
+    "modelIds": []
   }
 }
