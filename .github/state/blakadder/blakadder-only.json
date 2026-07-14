@@ -1,0 +1,1099 @@
+[
+  {
+    "mfr": "_TZ3000_ZTRFRCSU",
+    "productId": "TS0001",
+    "model": "141L100RC",
+    "description": "Megos Switch and Dimming Light Remote Control",
+    "vendor": "Aldi",
+    "category": "remote",
+    "blakadderSlug": "aldi-141l100rc-html",
+    "compatibility": [
+      "z2m",
+      "tasmota"
+    ],
+    "source": "blakadder",
+    "sources": [
+      "blakadder"
+    ],
+    "suggestedDrivers": [
+      "button_wireless_1",
+      "button_wireless_2",
+      "button_wireless_3",
+      "button_wireless_4",
+      "wireless_switch"
+    ]
+  },
+  {
+    "mfr": "_TZ3210_REMYPQQM",
+    "productId": "TS0505B",
+    "model": "TS0505B",
+    "description": "Tuya 12W E27 RGB+CCT Bulb",
+    "vendor": "Avacom",
+    "category": "bulb",
+    "blakadderSlug": "avacom-ts0505b-html",
+    "compatibility": [
+      "z2m",
+      "zha",
+      "tasmota"
+    ],
+    "source": "blakadder",
+    "sources": [
+      "blakadder"
+    ],
+    "suggestedDrivers": [
+      "bulb_1gang",
+      "bulb_color",
+      "bulb_tunable"
+    ]
+  },
+  {
+    "mfr": "_TZ3000_9VO5ICAU",
+    "productId": null,
+    "model": "TS011F",
+    "description": "Smart Plug with Power Monitor BR",
+    "vendor": "Avatto",
+    "category": "plug",
+    "blakadderSlug": "avatto-n-ot10-html",
+    "compatibility": [
+      "z2m",
+      "zha"
+    ],
+    "source": "blakadder",
+    "sources": [
+      "blakadder"
+    ],
+    "suggestedDrivers": [
+      "plug_smart",
+      "plug_energy",
+      "plug_outdoor"
+    ]
+  },
+  {
+    "mfr": "_TZ3000_JYUPJ3FW",
+    "productId": "TS0006",
+    "model": "ZTS16",
+    "description": "6 Gang Light Switch Brazil",
+    "vendor": "Avatto",
+    "category": "switch",
+    "blakadderSlug": "avatto-zts16-html",
+    "compatibility": [
+      "z2m"
+    ],
+    "source": "blakadder",
+    "sources": [
+      "blakadder"
+    ],
+    "suggestedDrivers": [
+      "switch_1gang",
+      "switch_2gang",
+      "switch_3gang",
+      "switch_4gang",
+      "generic_switch"
+    ]
+  },
+  {
+    "mfr": "_TZ3210_PSGQ7YSZ",
+    "productId": "TS0502B",
+    "model": "TS0502A",
+    "description": "ST64 E27 Dual Color Filament Bulb",
+    "vendor": "Benexmart",
+    "category": "bulb",
+    "blakadderSlug": "benexmart-st64-html",
+    "compatibility": [
+      "z2m",
+      "zha",
+      "deconz"
+    ],
+    "source": "blakadder",
+    "sources": [
+      "blakadder"
+    ],
+    "suggestedDrivers": [
+      "bulb_1gang",
+      "bulb_color",
+      "bulb_tunable"
+    ]
+  },
+  {
+    "mfr": "_TZ3210_IJCZZG9H",
+    "productId": "TS0505B",
+    "model": "C05Z",
+    "description": "RGBCCT LED Controller",
+    "vendor": "Giderwel",
+    "category": "light",
+    "blakadderSlug": "giderwel-c05z-html",
+    "compatibility": [
+      "z2m",
+      "zha",
+      "tasmota",
+      "z4d"
+    ],
+    "source": "blakadder",
+    "sources": [
+      "blakadder"
+    ],
+    "suggestedDrivers": [
+      "light_strip",
+      "light_1channel",
+      "light_2channel"
+    ]
+  },
+  {
+    "mfr": "TUYATEC-W89THYFC",
+    "productId": null,
+    "model": "WZB-PIR",
+    "description": "PIR Motion Detector",
+    "vendor": "Hihome",
+    "category": "sensor",
+    "blakadderSlug": "hihome-wzb-pir-html",
+    "compatibility": [
+      "z2m",
+      "iob",
+      "deconz",
+      "zha",
+      "ihost"
+    ],
+    "source": "blakadder",
+    "sources": [
+      "blakadder"
+    ],
+    "suggestedDrivers": [
+      "climate_sensor",
+      "motion_sensor",
+      "door_window_sensor",
+      "water_leak_sensor",
+      "soil_sensor",
+      "air_quality"
+    ]
+  },
+  {
+    "mfr": "TUYATEC-AVTSQQBD",
+    "productId": null,
+    "model": "WZB-SDS",
+    "description": "Door/Window Sensor",
+    "vendor": "Hihome",
+    "category": "sensor",
+    "blakadderSlug": "hihome-wzb-sds-html",
+    "compatibility": [
+      "z2m",
+      "deconz",
+      "iob",
+      "zha",
+      "tasmota",
+      "ihost"
+    ],
+    "source": "blakadder",
+    "sources": [
+      "blakadder"
+    ],
+    "suggestedDrivers": [
+      "climate_sensor",
+      "motion_sensor",
+      "door_window_sensor",
+      "water_leak_sensor",
+      "soil_sensor",
+      "air_quality"
+    ]
+  },
+  {
+    "mfr": "_TZ3210_GRNWGEGN",
+    "productId": "TS0501B",
+    "model": "JD4101",
+    "description": "LED Dimming Driver 9-42V 150-300mA 12W",
+    "vendor": "Jisim",
+    "category": "light",
+    "blakadderSlug": "jisim-jd4101-html",
+    "compatibility": [
+      "z2m"
+    ],
+    "source": "blakadder",
+    "sources": [
+      "blakadder"
+    ],
+    "suggestedDrivers": [
+      "light_strip",
+      "light_1channel",
+      "light_2channel"
+    ]
+  },
+  {
+    "mfr": "_TZ3210_PUDG9SGE",
+    "productId": "TS0501B",
+    "model": "JD4102",
+    "description": "LED Dimming Driver 9-42V 350-500mA 20W",
+    "vendor": "Jisim",
+    "category": "light",
+    "blakadderSlug": "jisim-jd4102-html",
+    "compatibility": [
+      "z2m"
+    ],
+    "source": "blakadder",
+    "sources": [
+      "blakadder"
+    ],
+    "suggestedDrivers": [
+      "light_strip",
+      "light_1channel",
+      "light_2channel"
+    ]
+  },
+  {
+    "mfr": "_TZ3000_7DNDCNNB",
+    "productId": null,
+    "model": "CM004",
+    "description": "Overload Protection Switch 25A",
+    "vendor": "LELLKI",
+    "category": "switch",
+    "blakadderSlug": "lellki-cm004-html",
+    "compatibility": [
+      "z2m",
+      "zha"
+    ],
+    "source": "blakadder",
+    "sources": [
+      "blakadder"
+    ],
+    "suggestedDrivers": [
+      "switch_1gang",
+      "switch_2gang",
+      "switch_3gang",
+      "switch_4gang",
+      "generic_switch"
+    ]
+  },
+  {
+    "mfr": "_TYST11_XU1RKTY3",
+    "productId": null,
+    "model": "DT82LE",
+    "description": "DC Curtain Motor",
+    "vendor": "Lawson",
+    "category": "cover",
+    "blakadderSlug": "lawson-dt82le-html",
+    "compatibility": [
+      "z2m",
+      "deconz"
+    ],
+    "source": "blakadder",
+    "sources": [
+      "blakadder"
+    ],
+    "suggestedDrivers": [
+      "curtain",
+      "blind",
+      "garage_door"
+    ]
+  },
+  {
+    "mfr": "_TZ3000_KOHBVA1F",
+    "productId": "TS0505B",
+    "model": "14153706L",
+    "description": "Livarno LED Ceiling Light",
+    "vendor": "Lidl",
+    "category": "light",
+    "blakadderSlug": "lidl-14153706l-html",
+    "compatibility": [
+      "z2m",
+      "zha"
+    ],
+    "source": "blakadder",
+    "sources": [
+      "blakadder"
+    ],
+    "suggestedDrivers": [
+      "light_strip",
+      "light_1channel",
+      "light_2channel"
+    ]
+  },
+  {
+    "mfr": "_TZ3000_AIM0ZTEK",
+    "productId": null,
+    "model": "WH100",
+    "description": "Water Heater Switch",
+    "vendor": "LoraTap",
+    "category": "switch",
+    "blakadderSlug": "loratap-wh100-html",
+    "compatibility": [
+      "z2m",
+      "zha"
+    ],
+    "source": "blakadder",
+    "sources": [
+      "blakadder"
+    ],
+    "suggestedDrivers": [
+      "switch_1gang",
+      "switch_2gang",
+      "switch_3gang",
+      "switch_4gang",
+      "generic_switch"
+    ]
+  },
+  {
+    "mfr": "_TZ3000_HODIFXA9",
+    "productId": "TS0501B",
+    "model": "S9B22LED9W-4K-ZB",
+    "description": "Classic Globe B22",
+    "vendor": "Mercator Ikuü",
+    "category": "bulb",
+    "blakadderSlug": "mercator-s9b22led9w-4k-zb-html",
+    "compatibility": [
+      "zha"
+    ],
+    "source": "blakadder",
+    "sources": [
+      "blakadder"
+    ],
+    "suggestedDrivers": [
+      "bulb_1gang",
+      "bulb_color",
+      "bulb_tunable"
+    ]
+  },
+  {
+    "mfr": "_TZ3000_589KQ4UL",
+    "productId": "TS0505B",
+    "model": "S9GU10LED5-RGB-Z",
+    "description": "Walter 7W RGB-CCT LED Downlight IP44",
+    "vendor": "Mercator Ikuü",
+    "category": "bulb",
+    "blakadderSlug": "mercator-s9gu10led5-rgb-z-html",
+    "compatibility": [
+      "z2m"
+    ],
+    "source": "blakadder",
+    "sources": [
+      "blakadder"
+    ],
+    "suggestedDrivers": [
+      "bulb_1gang",
+      "bulb_color",
+      "bulb_tunable"
+    ]
+  },
+  {
+    "mfr": "_TZ3000_1MTKTXDK",
+    "productId": "TS0505B",
+    "model": "SMD4106W-RGB-ZB",
+    "description": "Walter 7W RGB-CCT LED Downlight IP44",
+    "vendor": "Mercator Ikuü",
+    "category": "light",
+    "blakadderSlug": "mercator-smd4106w-rgb-zb-html",
+    "compatibility": [
+      "z2m"
+    ],
+    "source": "blakadder",
+    "sources": [
+      "blakadder"
+    ],
+    "suggestedDrivers": [
+      "light_strip",
+      "light_1channel",
+      "light_2channel"
+    ]
+  },
+  {
+    "mfr": "_TZ3000_BUJV0R9B",
+    "productId": "TS0505B",
+    "model": "SMD9300",
+    "description": "Donovan 36W CCT Panel Light",
+    "vendor": "Mercator Ikuü",
+    "category": "light",
+    "blakadderSlug": "mercator-smd9300-html",
+    "compatibility": [
+      "z2m"
+    ],
+    "source": "blakadder",
+    "sources": [
+      "blakadder"
+    ],
+    "suggestedDrivers": [
+      "light_strip",
+      "light_1channel",
+      "light_2channel"
+    ]
+  },
+  {
+    "mfr": "_TZ3000_TZA2VJXX",
+    "productId": "TS0505B",
+    "model": "SMLD233-ZB",
+    "description": "RGB+CCT LED Strip Light Kit 2m 12V",
+    "vendor": "Mercator Ikuü",
+    "category": "light",
+    "blakadderSlug": "mercator-smld233-zb-html",
+    "compatibility": [
+      "z2m"
+    ],
+    "source": "blakadder",
+    "sources": [
+      "blakadder"
+    ],
+    "suggestedDrivers": [
+      "light_strip",
+      "light_1channel",
+      "light_2channel"
+    ]
+  },
+  {
+    "mfr": "_TZ3210_Q7ORYLLX",
+    "productId": "TS0501",
+    "model": "SPP01G",
+    "description": "Single Power Point",
+    "vendor": "Mercator Ikuü",
+    "category": "switch",
+    "blakadderSlug": "mercator-spp01g-html",
+    "compatibility": [
+      "zha",
+      "zha"
+    ],
+    "source": "blakadder",
+    "sources": [
+      "blakadder"
+    ],
+    "suggestedDrivers": [
+      "switch_1gang",
+      "switch_2gang",
+      "switch_3gang",
+      "switch_4gang",
+      "generic_switch"
+    ]
+  },
+  {
+    "mfr": "_TZ3000_FXJDCIKV",
+    "productId": "TS0014",
+    "model": "SSW04",
+    "description": "Quad Switch",
+    "vendor": "Mercator Ikuü",
+    "category": "switch",
+    "blakadderSlug": "mercator-ssw04-html",
+    "compatibility": [
+      "z2m",
+      "tasmota"
+    ],
+    "source": "blakadder",
+    "sources": [
+      "blakadder"
+    ],
+    "suggestedDrivers": [
+      "switch_1gang",
+      "switch_2gang",
+      "switch_3gang",
+      "switch_4gang",
+      "generic_switch"
+    ]
+  },
+  {
+    "mfr": "_TZ3210_MNY0ZVKM",
+    "productId": "TS0505B",
+    "model": "FUTC08Z",
+    "description": "6W RGB+CCT LED Garden Light DC24V",
+    "vendor": "MiBoxer",
+    "category": "light",
+    "blakadderSlug": "miboxer-futc08z-html",
+    "compatibility": [
+      "z2m"
+    ],
+    "source": "blakadder",
+    "sources": [
+      "blakadder"
+    ],
+    "suggestedDrivers": [
+      "light_strip",
+      "light_1channel",
+      "light_2channel"
+    ]
+  },
+  {
+    "mfr": "_TZE3000_PFC7I3KT",
+    "productId": "TS0003",
+    "model": "MS-104CZ",
+    "description": "Switch Module 3 Gang 2 Way",
+    "vendor": "Moes",
+    "category": "switch",
+    "blakadderSlug": "moes-ms-104cz-html",
+    "compatibility": [
+      "deconz",
+      "zha"
+    ],
+    "source": "blakadder",
+    "sources": [
+      "blakadder"
+    ],
+    "suggestedDrivers": [
+      "switch_1gang",
+      "switch_2gang",
+      "switch_3gang",
+      "switch_4gang",
+      "generic_switch"
+    ]
+  },
+  {
+    "mfr": "_TZ3210_MNTZA0SW",
+    "productId": "TS0505B",
+    "model": "404062",
+    "description": "tint LED Kea Ceiling Light white + color 42cm",
+    "vendor": "Müller Licht",
+    "category": "light",
+    "blakadderSlug": "muller-licht-404062-html",
+    "compatibility": [
+      "z2m"
+    ],
+    "source": "blakadder",
+    "sources": [
+      "blakadder"
+    ],
+    "suggestedDrivers": [
+      "light_strip",
+      "light_1channel",
+      "light_2channel"
+    ]
+  },
+  {
+    "mfr": "_TZ3210_R0VZQ1OJ",
+    "productId": "TS0505B",
+    "model": "404062",
+    "description": "tint LED Kea Ceiling Light white + color 42cm",
+    "vendor": "Müller Licht",
+    "category": "light",
+    "blakadderSlug": "muller-licht-404062-html",
+    "compatibility": [
+      "z2m"
+    ],
+    "source": "blakadder",
+    "sources": [
+      "blakadder"
+    ],
+    "suggestedDrivers": [
+      "light_strip",
+      "light_1channel",
+      "light_2channel"
+    ]
+  },
+  {
+    "mfr": "_TZ3000_HDTMULPN",
+    "productId": "TS0203",
+    "model": "NAS-DS05B2",
+    "description": "Door Sensor (Homekit)",
+    "vendor": "Neo",
+    "category": "sensor",
+    "blakadderSlug": "neo-nas-ds05b2-html",
+    "compatibility": [
+      "zha",
+      "z2m"
+    ],
+    "source": "blakadder",
+    "sources": [
+      "blakadder"
+    ],
+    "suggestedDrivers": [
+      "climate_sensor",
+      "motion_sensor",
+      "door_window_sensor",
+      "water_leak_sensor",
+      "soil_sensor",
+      "air_quality"
+    ]
+  },
+  {
+    "mfr": "_TZ3210_MCM6M1MA",
+    "productId": "TS0505B",
+    "model": "DL41-03-10-R-ZB",
+    "description": "RGBW Downlight",
+    "vendor": "Oz Smart Things",
+    "category": "light",
+    "blakadderSlug": "oz-smart-things-dl41-03-10-r-zb-html",
+    "compatibility": [
+      "z2m"
+    ],
+    "source": "blakadder",
+    "sources": [
+      "blakadder"
+    ],
+    "suggestedDrivers": [
+      "light_strip",
+      "light_1channel",
+      "light_2channel"
+    ]
+  },
+  {
+    "mfr": "_TZ3210_G0QR1FQO",
+    "productId": "TS0503B",
+    "model": "C03Z",
+    "description": "RGB LED Controller",
+    "vendor": "Tuya",
+    "category": "light",
+    "blakadderSlug": "tuya-c03z-html",
+    "compatibility": [
+      "z2m"
+    ],
+    "source": "blakadder",
+    "sources": [
+      "blakadder"
+    ],
+    "suggestedDrivers": [
+      "light_strip",
+      "light_1channel",
+      "light_2channel"
+    ]
+  },
+  {
+    "mfr": "_TZ3000_MANTUFYR",
+    "productId": "TS0001",
+    "model": "DS-102BZN",
+    "description": "Boiler Switch 20A",
+    "vendor": "Tuya",
+    "category": "switch",
+    "blakadderSlug": "tuya-ds-102bzn-html",
+    "compatibility": [
+      "zha",
+      "z2m"
+    ],
+    "source": "blakadder",
+    "sources": [
+      "blakadder"
+    ],
+    "suggestedDrivers": [
+      "switch_1gang",
+      "switch_2gang",
+      "switch_3gang",
+      "switch_4gang",
+      "generic_switch"
+    ]
+  },
+  {
+    "mfr": "TUYATEC-L8U78XHN",
+    "productId": "TS0901",
+    "model": "HS2RNL-TY",
+    "description": "Zigbee Repeater with Ambient Light",
+    "vendor": "Tuya",
+    "category": "router",
+    "blakadderSlug": "tuya-hs2rnl-ty-html",
+    "compatibility": [
+      "zha"
+    ],
+    "source": "blakadder",
+    "sources": [
+      "blakadder"
+    ],
+    "suggestedDrivers": [
+      "router_zigbee"
+    ]
+  },
+  {
+    "mfr": "_TZ3210_NEHAYYHX",
+    "productId": "TS0501B",
+    "model": "TS0501B",
+    "description": "Single Color LED Controller",
+    "vendor": "Tuya",
+    "category": "light",
+    "blakadderSlug": "tuya-ts0501b-html",
+    "compatibility": [
+      "z2m",
+      "zha",
+      "deconz",
+      "z4d"
+    ],
+    "source": "blakadder",
+    "sources": [
+      "blakadder"
+    ],
+    "suggestedDrivers": [
+      "light_strip",
+      "light_1channel",
+      "light_2channel"
+    ]
+  },
+  {
+    "mfr": "_TZ3210_WUHEOFSG",
+    "productId": "TS0501B",
+    "model": "TS0501B",
+    "description": "Single Color LED Controller",
+    "vendor": "Tuya",
+    "category": "light",
+    "blakadderSlug": "tuya-ts0501b-html",
+    "compatibility": [
+      "z2m",
+      "zha",
+      "deconz",
+      "z4d"
+    ],
+    "source": "blakadder",
+    "sources": [
+      "blakadder"
+    ],
+    "suggestedDrivers": [
+      "light_strip",
+      "light_1channel",
+      "light_2channel"
+    ]
+  },
+  {
+    "mfr": "_TZ3210_19QB27DA",
+    "productId": "TS0501B",
+    "model": "TS0501B",
+    "description": "Single Color LED Controller",
+    "vendor": "Tuya",
+    "category": "light",
+    "blakadderSlug": "tuya-ts0501b-html",
+    "compatibility": [
+      "z2m",
+      "zha",
+      "deconz",
+      "z4d"
+    ],
+    "source": "blakadder",
+    "sources": [
+      "blakadder"
+    ],
+    "suggestedDrivers": [
+      "light_strip",
+      "light_1channel",
+      "light_2channel"
+    ]
+  },
+  {
+    "mfr": "_TZ3210_93GNBDGZ",
+    "productId": "TS0501B",
+    "model": "TS0501B",
+    "description": "Single Color LED Controller",
+    "vendor": "Tuya",
+    "category": "light",
+    "blakadderSlug": "tuya-ts0501b-html",
+    "compatibility": [
+      "z2m",
+      "zha",
+      "deconz",
+      "z4d"
+    ],
+    "source": "blakadder",
+    "sources": [
+      "blakadder"
+    ],
+    "suggestedDrivers": [
+      "light_strip",
+      "light_1channel",
+      "light_2channel"
+    ]
+  },
+  {
+    "mfr": "_TZ3000_NZBM4AD4",
+    "productId": "TS0504A",
+    "model": "TS0504A",
+    "description": "RGBW LED Controller",
+    "vendor": "Tuya",
+    "category": "light",
+    "blakadderSlug": "tuya-ts0504a-html",
+    "compatibility": [
+      "z2m"
+    ],
+    "source": "blakadder",
+    "sources": [
+      "blakadder"
+    ],
+    "suggestedDrivers": [
+      "light_strip",
+      "light_1channel",
+      "light_2channel"
+    ]
+  },
+  {
+    "mfr": "_TZ3210_BFVYBIXD",
+    "productId": "TS0504B",
+    "model": "TS0504B",
+    "description": "LED Strip Controller DC5-24v RGBW",
+    "vendor": "Tuya",
+    "category": "light",
+    "blakadderSlug": "tuya-ts0504b-html",
+    "compatibility": [
+      "z2m",
+      "tasmota",
+      "zha"
+    ],
+    "source": "blakadder",
+    "sources": [
+      "blakadder"
+    ],
+    "suggestedDrivers": [
+      "light_strip",
+      "light_1channel",
+      "light_2channel"
+    ]
+  },
+  {
+    "mfr": "_TZ3210_1ELPPMBA",
+    "productId": "TS0504B",
+    "model": "TS0504B",
+    "description": "LED Strip Controller DC5-24v RGBW",
+    "vendor": "Tuya",
+    "category": "light",
+    "blakadderSlug": "tuya-ts0504b-html",
+    "compatibility": [
+      "z2m",
+      "tasmota",
+      "zha"
+    ],
+    "source": "blakadder",
+    "sources": [
+      "blakadder"
+    ],
+    "suggestedDrivers": [
+      "light_strip",
+      "light_1channel",
+      "light_2channel"
+    ]
+  },
+  {
+    "mfr": "_TZ3210_5SNKKRXW",
+    "productId": "TS0505B",
+    "model": "TS0505B",
+    "description": "Downlight 10W/12W RGBCCT 3.5/4 Inch",
+    "vendor": "Tuya",
+    "category": "light",
+    "blakadderSlug": "tuya-ts0505b-html",
+    "compatibility": [
+      "z2m",
+      "zha",
+      "tasmota",
+      "z4d"
+    ],
+    "source": "blakadder",
+    "sources": [
+      "blakadder"
+    ],
+    "suggestedDrivers": [
+      "light_strip",
+      "light_1channel",
+      "light_2channel"
+    ]
+  },
+  {
+    "mfr": "_TZ3210_BICJQPG4",
+    "productId": "TS0505B",
+    "model": "TS0505B",
+    "description": "Downlight 10W/12W RGBCCT 3.5/4 Inch",
+    "vendor": "Tuya",
+    "category": "light",
+    "blakadderSlug": "tuya-ts0505b-html",
+    "compatibility": [
+      "z2m",
+      "zha",
+      "tasmota",
+      "z4d"
+    ],
+    "source": "blakadder",
+    "sources": [
+      "blakadder"
+    ],
+    "suggestedDrivers": [
+      "light_strip",
+      "light_1channel",
+      "light_2channel"
+    ]
+  },
+  {
+    "mfr": "_TZ3210_0RN9QHNU",
+    "productId": "TS0505B",
+    "model": "TS0505B",
+    "description": "Downlight 10W/12W RGBCCT 3.5/4 Inch",
+    "vendor": "Tuya",
+    "category": "light",
+    "blakadderSlug": "tuya-ts0505b-html",
+    "compatibility": [
+      "z2m",
+      "zha",
+      "tasmota",
+      "z4d"
+    ],
+    "source": "blakadder",
+    "sources": [
+      "blakadder"
+    ],
+    "suggestedDrivers": [
+      "light_strip",
+      "light_1channel",
+      "light_2channel"
+    ]
+  },
+  {
+    "mfr": "_TZ3000_L13ERPV4",
+    "productId": null,
+    "model": "TS130F",
+    "description": "Curtain Switch",
+    "vendor": "Tuya",
+    "category": "cover",
+    "blakadderSlug": "tuya-ts130f-html",
+    "compatibility": [
+      "deconz",
+      "zha",
+      "z4d"
+    ],
+    "source": "blakadder",
+    "sources": [
+      "blakadder"
+    ],
+    "suggestedDrivers": [
+      "curtain",
+      "blind",
+      "garage_door"
+    ]
+  },
+  {
+    "mfr": "_TZ3000_NFNMI125",
+    "productId": null,
+    "model": "XH-002P",
+    "description": "Power Monitoring 16A EU/FR Plug",
+    "vendor": "Tuya",
+    "category": "plug",
+    "blakadderSlug": "tuya-xh-002p-html",
+    "compatibility": [
+      "zha"
+    ],
+    "source": "blakadder",
+    "sources": [
+      "blakadder"
+    ],
+    "suggestedDrivers": [
+      "plug_smart",
+      "plug_energy",
+      "plug_outdoor"
+    ]
+  },
+  {
+    "mfr": "_TZ3210_KLV2WUL0",
+    "productId": "TS0505B",
+    "model": "ZigBee-01-5CH",
+    "description": "RGBCW LED Controller",
+    "vendor": "Tuya",
+    "category": "light",
+    "blakadderSlug": "tuya-zigbee-01-5ch-html",
+    "compatibility": [
+      "z2m"
+    ],
+    "source": "blakadder",
+    "sources": [
+      "blakadder"
+    ],
+    "suggestedDrivers": [
+      "light_strip",
+      "light_1channel",
+      "light_2channel"
+    ]
+  },
+  {
+    "mfr": "_TZ3210_WP1K8XWS",
+    "productId": "TS0503B",
+    "model": "YSR-MINI-Z02",
+    "description": "RGB LED Controller 5-24V",
+    "vendor": "Ysrsai",
+    "category": "light",
+    "blakadderSlug": "ysrsai-ysr-mini-z02-html",
+    "compatibility": [
+      "z2m"
+    ],
+    "source": "blakadder",
+    "sources": [
+      "blakadder"
+    ],
+    "suggestedDrivers": [
+      "light_strip",
+      "light_1channel",
+      "light_2channel"
+    ]
+  },
+  {
+    "mfr": "_TZ3000_RBL8C85W",
+    "productId": "TS0012",
+    "model": "ZS-B-EU2",
+    "description": "No Neutral Switch 2 Gang EU/UK",
+    "vendor": "Zemismart",
+    "category": "switch",
+    "blakadderSlug": "zemismart-606eu-z2-html",
+    "compatibility": [
+      "zha",
+      "z2m"
+    ],
+    "source": "blakadder",
+    "sources": [
+      "blakadder"
+    ],
+    "suggestedDrivers": [
+      "switch_1gang",
+      "switch_2gang",
+      "switch_3gang",
+      "switch_4gang",
+      "generic_switch"
+    ]
+  },
+  {
+    "mfr": "_TZ3210_E020AAAJ",
+    "productId": "TS0505B",
+    "model": "XLD-TYCL1-Z",
+    "description": "24W RGBCW Downlight",
+    "vendor": "Zemismart",
+    "category": "light",
+    "blakadderSlug": "zemismart-xld-tycl1-z-html",
+    "compatibility": [
+      "zha",
+      "z2m"
+    ],
+    "source": "blakadder",
+    "sources": [
+      "blakadder"
+    ],
+    "suggestedDrivers": [
+      "light_strip",
+      "light_1channel",
+      "light_2channel"
+    ]
+  },
+  {
+    "mfr": "_TZ3000_UBRVWOXV",
+    "productId": "TS0001",
+    "model": "ZN-LRL1E",
+    "description": "High Power 20A Switch",
+    "vendor": "Zemismart",
+    "category": "switch",
+    "blakadderSlug": "zemismart-zn-lrl1e-html",
+    "compatibility": [
+      "tasmota",
+      "z2m",
+      "zha"
+    ],
+    "source": "blakadder",
+    "sources": [
+      "blakadder"
+    ],
+    "suggestedDrivers": [
+      "switch_1gang",
+      "switch_2gang",
+      "switch_3gang",
+      "switch_4gang",
+      "generic_switch"
+    ]
+  },
+  {
+    "mfr": "_TZE200_9XEJEGCY",
+    "productId": "TS0601",
+    "model": "MSA201 Z",
+    "description": "24G Human Presence Sensor",
+    "vendor": "Merrytek",
+    "category": "sensor",
+    "blakadderSlug": "merrytek-msa201-z-html",
+    "compatibility": [
+      "zha",
+      "z2m"
+    ],
+    "source": "blakadder",
+    "sources": [
+      "blakadder"
+    ],
+    "suggestedDrivers": [
+      "climate_sensor",
+      "motion_sensor",
+      "door_window_sensor",
+      "water_leak_sensor",
+      "soil_sensor",
+      "air_quality"
+    ]
+  }
+]

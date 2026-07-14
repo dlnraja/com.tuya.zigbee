@@ -1,0 +1,15 @@
+{
+  "totalBlakadderFingerprints": 635,
+  "inMfsDb": 586,
+  "inJohan": 0,
+  "inGmail": 0,
+  "inDrivers": 584,
+  "blakadderOnly": 48,
+  "redundantlyConfirmed": 583,
+  "coveragePct": {
+    "mfsDb": "92.3",
+    "drivers": "92.0",
+    "johan": "0.0",
+    "gmail": "0.0"
+  }
+}
