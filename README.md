@@ -47,7 +47,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | **Languages** | EN, FR, NL, DE |
 | **SDK Version** | 3 |
 | **Homey Compatibility** | >=12.2.0 |
-| **Last Updated** | 2026-07-13 |
+| **Last Updated** | 2026-07-14 |
 
 ### Top 20 Drivers by Fingerprint Count
 
@@ -69,7 +69,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | 13 | `device_radiator_valve` | 106 |
 | 14 | `universal_zigbee` | 105 |
 | 15 | `wall_dimmer_tuya` | 105 |
-| 16 | `generic_diy` | 91 |
+| 16 | `generic_diy` | 95 |
 | 17 | `power_meter` | 83 |
 | 18 | `plug_smart` | 77 |
 | 19 | `soil_sensor` | 75 |
@@ -364,4 +364,4 @@ A massive thank you to the maintainers and contributors of:
 
 **Made with love by Dylan Rajasekaram & the Zigbee community**
 
-*Last updated: 2026-07-13*
+*Last updated: 2026-07-14*
