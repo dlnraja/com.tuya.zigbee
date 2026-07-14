@@ -77,4 +77,4 @@ jobs:
             echo "- Needs manual fix: $NEEDS" >> $GITHUB_STEP_SUMMARY
             echo "" >> $GITHUB_STEP_SUMMARY
             echo "Engine: 100% offline. No AI required to run." >> $GITHUB_STEP_SUMMARY
-          fi
+          fi\n
