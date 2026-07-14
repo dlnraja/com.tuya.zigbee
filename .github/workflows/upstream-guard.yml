@@ -2,7 +2,6 @@ defaults:
   run:
     shell: bash
 
----
 # Upstream Guard — Reusable workflow
 #
 # This is a REUSABLE workflow that other workflows can call
