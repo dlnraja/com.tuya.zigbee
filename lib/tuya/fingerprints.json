@@ -14683,5 +14683,199 @@
     "type": "climate_sensor",
     "powerSource": "battery",
     "modelIds": []
+  },
+  "_TZE200_8whu6kkr": {
+    "driverId": "climate_sensor",
+    "type": "climate_sensor",
+    "powerSource": "battery",
+    "modelIds": []
+  },
+  "_TZE200_utwgivdk": {
+    "driverId": "climate_sensor",
+    "type": "climate_sensor",
+    "powerSource": "battery",
+    "modelIds": []
+  },
+  "_TZE204_z7a2jmyy": {
+    "driverId": "climate_sensor",
+    "type": "climate_sensor",
+    "powerSource": "battery",
+    "modelIds": []
+  },
+  "_TZE204_zrctll6o": {
+    "driverId": "climate_sensor",
+    "type": "climate_sensor",
+    "powerSource": "battery",
+    "modelIds": []
+  },
+  "_TZE284_xz4yr5nz": {
+    "driverId": "climate_sensor",
+    "type": "climate_sensor",
+    "powerSource": "battery",
+    "modelIds": []
+  },
+  "_TZE204_qasifk8z": {
+    "driverId": "presence_sensor_radar",
+    "type": "presence_sensor_radar",
+    "powerSource": "mains",
+    "modelIds": []
+  },
+  "_TZE204_oh8y2grn": {
+    "driverId": "presence_sensor_radar",
+    "type": "presence_sensor_radar",
+    "powerSource": "mains",
+    "modelIds": []
+  },
+  "_TZE204_rqhsbjr2": {
+    "driverId": "presence_sensor_radar",
+    "type": "presence_sensor_radar",
+    "powerSource": "mains",
+    "modelIds": []
+  },
+  "_TZE284_8catj2au": {
+    "driverId": "presence_sensor_radar",
+    "type": "presence_sensor_radar",
+    "powerSource": "mains",
+    "modelIds": []
+  },
+  "_TZ3000_gbmcijn6": {
+    "driverId": "button_wireless_4",
+    "type": "button_wireless_4",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0044"
+    ]
+  },
+  "_TZ3000_bv1czkkn": {
+    "driverId": "button_wireless_1",
+    "type": "button_wireless_1",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0041"
+    ]
+  },
+  "_TZ3000_4a3l0x0t": {
+    "driverId": "button_wireless_1",
+    "type": "button_wireless_1",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0041"
+    ]
+  },
+  "_TZE204_4f2wexj6": {
+    "driverId": "water_valve_smart",
+    "type": "water_valve_smart",
+    "powerSource": "battery",
+    "modelIds": []
+  },
+  "_TZE284_zjho8u0y": {
+    "driverId": "valve_irrigation",
+    "type": "valve_irrigation",
+    "powerSource": "battery",
+    "modelIds": []
+  },
+  "_TZE200_5vqk5kod": {
+    "driverId": "curtain_motor",
+    "type": "curtain_motor",
+    "powerSource": "mains",
+    "modelIds": []
+  },
+  "_TZE204_dq7c8fng": {
+    "driverId": "curtain_motor",
+    "type": "curtain_motor",
+    "powerSource": "mains",
+    "modelIds": []
+  },
+  "_TZE200_8z0p4dtt": {
+    "driverId": "switch_1gang",
+    "type": "switch_1gang",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0001"
+    ]
+  },
+  "_TZE200_lzqvyjtr": {
+    "driverId": "switch_1gang",
+    "type": "switch_1gang",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0001"
+    ]
+  },
+  "_TZE204_ljpxwimu": {
+    "driverId": "siren_sirentemphumidsensor",
+    "type": "siren_sirentemphumidsensor",
+    "powerSource": "mains",
+    "modelIds": []
+  },
+  "_TZE200_kzmjjf4u": {
+    "driverId": "door_window_sensor",
+    "type": "door_window_sensor",
+    "powerSource": "battery",
+    "modelIds": []
+  },
+  "_TZE200_mwgsmffw": {
+    "driverId": "soil_sensor",
+    "type": "soil_sensor",
+    "powerSource": "battery",
+    "modelIds": []
+  },
+  "_TZE200_rk1wojnp": {
+    "driverId": "power_meter",
+    "type": "power_meter",
+    "powerSource": "mains",
+    "modelIds": []
+  },
+  "_TZE204_6fk3wbyy": {
+    "driverId": "vibration_sensor",
+    "type": "vibration_sensor",
+    "powerSource": "battery",
+    "modelIds": []
+  },
+  "_TZE200_mja4nu3j": {
+    "driverId": "air_quality_monitor",
+    "type": "air_quality_monitor",
+    "powerSource": "battery",
+    "modelIds": []
+  },
+  "_TZ3000_2hpk2v9l": {
+    "driverId": "motion_sensor",
+    "type": "motion_sensor",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0202"
+    ]
+  },
+  "_TZE200_e3kr8tbp": {
+    "driverId": "switch_2gang",
+    "type": "switch_2gang",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0002"
+    ]
+  },
+  "_TZE200_wfxuoxia": {
+    "driverId": "garage_door_opener",
+    "type": "garage_door_opener",
+    "powerSource": "mains",
+    "modelIds": []
+  },
+  "_TZE200_0hg3xegf": {
+    "driverId": "thermostatic_radiator_valve",
+    "type": "thermostatic_radiator_valve",
+    "powerSource": "battery",
+    "modelIds": []
+  },
+  "_TZE204_nvkl4dkf": {
+    "driverId": "climate_sensor",
+    "type": "climate_sensor",
+    "powerSource": "battery",
+    "modelIds": []
+  },
+  "_TZE200_hkdl0fmv": {
+    "driverId": "climate_sensor",
+    "type": "climate_sensor",
+    "powerSource": "battery",
+    "modelIds": []
   }
 }
