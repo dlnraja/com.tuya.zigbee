@@ -1,6 +1,6 @@
 {
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "9.0.216-stable.1",
+  "version": "9.0.216-stable.2",
   "compatibility": ">=12.2.0",
   "platforms": [
     "local"
@@ -103,6 +103,6 @@
   },
   "channel": "stable",
   "stableSince": "2026-07-14",
-  "stableNotes": "v9.0.216 with safe bug fixes only. No new architecture features (multi-channel, AVE, daily-digest are master-only).",
+  "stableNotes": "P52: synced 26 new FPs (#439) + 6 new chem profiles from master. No new architecture features.",
   "_comment": "Generated from .homeycompose/app.json. STABLE channel — only bug fixes applied."
 }
