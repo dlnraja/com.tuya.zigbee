@@ -64,6 +64,17 @@ jobs:
         run: |
           if [ -f package.json ]; then npm ci --prefer-offline --no-audit || npm install; else echo "No package.json"; fi
 
+      # P53: restore previous scanner-blob cache (this is the KEY fix for
+      # the 4 timeout scanners: tuya-local, openhab, xiaomi-miot, csa-iot).
+      # Subsequent runs use 304 Not Modified for unchanged files → ~1s.
+      - name: 📥 Restore scanner-blob cache
+        uses: actions/cache@v4
+        with:
+          path: .cache/scanner-blobs/
+          key: mega-crawl-scanner-blobs-${{ github.run_id }}
+          restore-keys: |
+            mega-crawl-scanner-blobs-
+
       - name: 🕷️ Run Mega Crawler
         id: crawl
         run: |
