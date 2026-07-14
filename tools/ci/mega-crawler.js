@@ -127,7 +127,9 @@ function filterCrawlers() {
 function runOne(c) {
   const start = Date.now();
   try {
-    const out = execSync(c.cmd, { cwd: ROOT, encoding: 'utf8', timeout: TIMEOUT_MS, stdio: ['ignore', 'pipe', 'pipe'] });
+    // P55 — bumped maxBuffer to 50MB to handle verbose scanners (tuya-local
+    // with 200+ YAMLs in parallel was hitting ENOBUFS at default 1MB)
+    const out = execSync(c.cmd, { cwd: ROOT, encoding: 'utf8', timeout: TIMEOUT_MS, stdio: ['ignore', 'pipe', 'pipe'], maxBuffer: 50 * 1024 * 1024 });
     const dur = Date.now() - start;
     return { id: c.id, status: 'ok', durationMs: dur, outputLines: out.split('\n').length };
   } catch (e) {

@@ -27,6 +27,7 @@
 const fs = require('fs');
 const path = require('path');
 const https = require('https');
+const { SmartFetcher } = require(path.resolve(__dirname, '..', '..', 'lib', 'scraper', 'smart-fetch'));
 
 const ROOT = path.resolve(__dirname, '..', '..');
 const STATE_DIR = path.join(ROOT, '.github', 'state', 'forum');
@@ -38,33 +39,33 @@ const UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
 const MFR_REGEX = /_T[YZ](?:E200|E2[E2]8[0-9]|ZB\d{2}|Z3000|Z3210)[_-][A-Za-z0-9]+/g;
 const PID_REGEX = /\bTS\d{4}[A-Z]?\b/g;
 
-function fetchJson(url, opts) {
+// P55 — smart fetcher with browser UA + cache + retry + adaptive rate limit
+const fetcher = new SmartFetcher({
+  source: 'forum-topic-140352',
+  userAgent: UA,
+  concurrency: 4,
+  maxRetries: 2,
+  baseBackoffMs: 5000,
+  defaultDelay: 400,
+  headers: {
+    'Accept': 'application/json, text/plain, */*',
+    'Accept-Language': 'en-US,en;q=0.5',
+    'Accept-Encoding': 'identity',
+    'Referer': 'https://community.homey.app/',
+  },
+});
+
+async function fetchJson(url, opts) {
   opts = opts || {};
-  return new Promise((resolve, reject) => {
-    const req = https.get(url, {
-      headers: {
-        'User-Agent': UA,
-        'Accept': opts.accept || 'application/json, text/plain, */*',
-        'Accept-Language': 'en-US,en;q=0.5',
-        'Accept-Encoding': 'identity',  // No compression (avoids brotli issues)
-        'Referer': 'https://community.homey.app/',
-      },
-    }, (res) => {
-      if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
-        return fetchJson(res.headers.location, opts).then(resolve, reject);
-      }
-      if (res.statusCode !== 200) return reject(new Error('HTTP ' + res.statusCode + ' for ' + url));
-      let body = '';
-      res.setEncoding('utf8');
-      res.on('data', c => body += c);
-      res.on('end', () => {
-        try { resolve(JSON.parse(body)); }
-        catch (e) { reject(new Error('JSON parse: ' + e.message + ' — body head: ' + body.substring(0, 200))); }
-      });
-    });
-    req.on('error', reject);
-    req.setTimeout(60000, () => req.destroy(new Error('timeout')));
+  const r = await fetcher.fetch(url, {
+    headers: opts.accept ? { 'Accept': opts.accept } : {},
   });
+  if (r.statusCode !== 200) {
+    throw new Error('HTTP ' + r.statusCode + ' for ' + url);
+  }
+  const body = r.body.toString('utf8');
+  try { return JSON.parse(body); }
+  catch (e) { throw new Error('JSON parse: ' + e.message + ' — body head: ' + body.substring(0, 200)); }
 }
 
 // Puppeteer fallback for when the JSON API is rate-limited or returns HTML.
@@ -206,20 +207,34 @@ async function main() {
     const chunkSize = 20;
     const have = new Set(allPosts.map(p => p.id));
     const want = streamIds.filter(id => !have.has(id));
+    // Build all URLs upfront
+    const chunkUrls = [];
     for (let i = 0; i < want.length; i += chunkSize) {
       const chunk = want.slice(i, i + chunkSize);
       const params = chunk.map(id => 'post_ids[]=' + id).join('&');
-      process.stdout.write('  chunk ' + (Math.floor(i/chunkSize) + 1) + '/' + Math.ceil(want.length/chunkSize) + '...');
+      chunkUrls.push({ idx: i, url: BASE + '/t/' + TOPIC_ID + '/posts.json?' + params });
+    }
+    console.log('  ' + chunkUrls.length + ' chunks to fetch (parallel, concurrency=' + fetcher.concurrency + ')...');
+    // P55 — fetch in parallel (smartFetcher handles cache + retry + 429 backoff)
+    const tChunks = Date.now();
+    const chunkResults = await fetcher.fetchAll(chunkUrls.map(c => c.url), {
+      concurrency: fetcher.concurrency,
+      onProgress: (d, t) => process.stdout.write(`\r  chunk ${d}/${t}    `),
+    });
+    console.log(`\r  Chunks done in ${Date.now() - tChunks}ms`);
+    for (let i = 0; i < chunkUrls.length; i++) {
+      const r = chunkResults[i];
+      if (r.error || !r.body) {
+        console.log('  chunk ' + (i + 1) + ' FAILED: ' + r.error);
+        continue;
+      }
       try {
-        const url = BASE + '/t/' + TOPIC_ID + '/posts.json?' + params;
-        const data = await fetchJson(url);
+        const data = JSON.parse(r.body.toString('utf8'));
         const batch = (data.post_stream?.posts || data.posts || []).filter(x => !have.has(x.id));
         allPosts.push(...batch);
-        console.log(' +' + batch.length + ' (total=' + allPosts.length + ')');
       } catch (e) {
-        console.log(' FAILED: ' + e.message);
+        console.log('  chunk ' + (i + 1) + ' parse error: ' + e.message);
       }
-      await sleep(400);
     }
   }
   console.log('Total posts fetched:', allPosts.length, '/', totalPosts);

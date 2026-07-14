@@ -15,33 +15,32 @@
 const https = require('https');
 const fs = require('fs');
 const path = require('path');
+const { SmartFetcher } = require(path.resolve(__dirname, '..', '..', 'lib', 'scraper', 'smart-fetch'));
 
 const STATE_DIR = 'C:/Users/Dell/Documents/homey/master/.github/state';
 const FORUM_BASE = 'https://community.homey.app';
 const SEARCH_TERMS = ['tuya zigbee button', 'TS0041', 'TS0044', 'button wireless', 'button press', 'flow card', 'button scene'];
 
-function fetchJson(url, options = {}) {
-  return new Promise((resolve, reject) => {
-    const headers = {
-      'User-Agent': 'Mavis-CI/1.0',
-      'Accept': 'application/json',
-      ...options.headers,
-    };
-    https.get(url, { headers }, (res) => {
-      if (res.statusCode === 301 || res.statusCode === 302) {
-        return fetchJson(res.headers.location).then(resolve).catch(reject);
-      }
-      if (res.statusCode !== 200) {
-        return resolve({ status: res.statusCode, data: null });
-      }
-      let data = '';
-      res.on('data', (chunk) => data += chunk);
-      res.on('end', () => {
-        try { resolve({ status: 200, data: JSON.parse(data) }); }
-        catch (e) { resolve({ status: 200, data: data }); }
-      });
-    }).on('error', reject);
-  });
+// P55 — smart fetcher with browser UA + concurrency + cache + retry
+const fetcher = new SmartFetcher({
+  source: 'forum-temporal',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+  concurrency: 4,
+  maxRetries: 2,
+  baseBackoffMs: 3000,
+  defaultDelay: 200,
+  headers: { 'Accept': 'application/json, text/plain, */*', 'Referer': 'https://community.homey.app/' },
+});
+
+async function fetchJson(url, options = {}) {
+  try {
+    const r = await fetcher.fetch(url);
+    if (r.statusCode !== 200) return { status: r.statusCode, data: null };
+    try { return { status: 200, data: JSON.parse(r.body.toString('utf8')) }; }
+    catch (e) { return { status: 200, data: r.body.toString('utf8') }; }
+  } catch (e) {
+    return { status: 0, data: null, error: e.message };
+  }
 }
 
 async function getForumTopics() {
@@ -101,17 +100,39 @@ async function main() {
   const topics = await getForumTopics();
   console.log(`Found ${topics.length} unique forum topics`);
 
-  // Get details for each topic
+  // Get details for each topic (P55 — parallel batch with smartFetcher)
+  const topicSubset = topics.slice(0, 30);
+  const tDetails = Date.now();
+  const detailResults = await fetcher.fetchAll(topicSubset.map(t => FORUM_BASE + '/t/' + t.id + '.json'), {
+    concurrency: fetcher.concurrency,
+    onProgress: (d, t) => process.stdout.write(`\r  [Details] ${d}/${t}    `),
+  });
+  console.log(`\r  [Details] Done in ${Date.now() - tDetails}ms`);
   const detailed = [];
-  for (const topic of topics.slice(0, 30)) { // limit to top 30
-    const posts = await getTopicPosts(topic.id);
+  for (let i = 0; i < topicSubset.length; i++) {
+    const topic = topicSubset[i];
+    const r = detailResults[i];
+    if (r.error || !r.body) {
+      console.log('  #' + topic.id + ' error: ' + r.error);
+      continue;
+    }
+    let data;
+    try { data = JSON.parse(r.body.toString('utf8')); } catch { continue; }
+    const posts = (data.post_stream?.posts || []).map(p => ({
+      id: p.id,
+      username: p.username,
+      name: p.name,
+      createdAt: p.created_at,
+      updatedAt: p.updated_at,
+      cooked: p.cooked ? p.cooked.substring(0, 500) : '',
+      likeCount: p.like_count,
+      reads: p.reads,
+    }));
     detailed.push({
       ...topic,
       posts: posts.slice(0, 5), // first 5 posts
       postCount: posts.length,
     });
-    // rate limit
-    await new Promise(r => setTimeout(r, 200));
   }
 
   // Save

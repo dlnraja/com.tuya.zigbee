@@ -67,10 +67,13 @@ jobs:
       # P53: restore previous scanner-blob cache (this is the KEY fix for
       # the 4 timeout scanners: tuya-local, openhab, xiaomi-miot, csa-iot).
       # Subsequent runs use 304 Not Modified for unchanged files → ~1s.
-      - name: 📥 Restore scanner-blob cache
+      # P55: also cache the smart-fetch cache (.cache/scraper-cache/)
+      - name: 📥 Restore scanner caches
         uses: actions/cache@v4
         with:
-          path: .cache/scanner-blobs/
+          path: |
+            .cache/scanner-blobs/
+            .cache/scraper-cache/
           key: mega-crawl-scanner-blobs-${{ github.run_id }}
           restore-keys: |
             mega-crawl-scanner-blobs-
