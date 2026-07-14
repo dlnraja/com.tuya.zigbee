@@ -22,6 +22,14 @@ const { registerCustomClusters } = require('./lib/zigbee/registerClusters');
 const FlowCardManager = require('./lib/flow/FlowCardManager');
 const UniversalFlowCardLoader = require('./lib/flow/UniversalFlowCardLoader');
 const FeatureFlowCards = require('./lib/flow/FeatureFlowCards');
+// v9.0.241-stable (P58 sync): install safeSetCapabilityValue + smartCap globally
+try {
+  const { ZigBeeDevice } = require('homey-zigbeedriver');
+  const { installSafeCapabilityMixin } = require('./lib/utils/SafeCapability');
+  const SmartCapability = require('./lib/data/SmartCapability');
+  installSafeCapabilityMixin(ZigBeeDevice);
+  SmartCapability.installSmartCapMixin(ZigBeeDevice);
+} catch (e) { /* best-effort */ }
 const CapabilityManager = require('./lib/utils/CapabilityManager');
 const AdvancedAnalytics = require('./lib/analytics/AdvancedAnalytics');
 const SmartDeviceDiscovery = require('./lib/discovery/SmartDeviceDiscovery');
