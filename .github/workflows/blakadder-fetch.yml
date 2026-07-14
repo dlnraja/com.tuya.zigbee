@@ -1,0 +1,110 @@
+# Blakadder Integration v2 — P53
+# Crawls zigbee.blakadder.com and cross-references with mfs_db + Johan + Gmail
+name: 🗂️ Blakadder Integration
+
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Dry run (no commit, just upload artifact)'
+        required: false
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: blakadder-fetch
+  cancel-in-progress: false
+
+defaults:
+  run:
+    shell: bash
+
+env:
+  NODE_VERSION: '22'
+
+jobs:
+  fetch-and-cross-ref:
+    name: 🗂️ Fetch + Cross-ref
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      GH_PAT: ${{ secrets.GH_PAT }}
+
+    steps:
+      - name: 📥 Checkout
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 📦 Setup Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+
+      - name: 📦 Install deps (if any)
+        run: |
+          if [ -f package.json ]; then
+            npm ci --prefer-offline --no-audit || npm install
+          else
+            echo "No package.json — pure Node scripts"
+          fi
+
+      - name: 🌐 Crawl Blakadder (database.js v2)
+        id: crawl
+        run: |
+          echo "## 🌐 Blakadder Crawl" >> $GITHUB_STEP_SUMMARY
+          node scripts/sync/crawl-blakadder.js 2>&1 | tee crawl-blakadder.log
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+          cat crawl-blakadder.log >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+
+      - name: 🔍 Cross-reference with mfs_db / Johan / Gmail
+        id: crossref
+        run: |
+          echo "## 🔍 Cross-reference" >> $GITHUB_STEP_SUMMARY
+          node tools/ci/blakadder-cross-ref.js 2>&1 | tee cross-ref.log
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+          cat cross-ref.log >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+
+      - name: 📦 Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: blakadder-data
+          path: |
+            .github/state/blakadder/
+            scripts/sync/data/blakadder.json
+            crawl-blakadder.log
+            cross-ref.log
+          if-no-files-found: warn
+          retention-days: 14
+
+      - name: 📝 Commit results (Master only)
+        if: ${{ !inputs.dry_run }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          # Only commit Blakadder state files, never the data/
+          git add .github/state/blakadder/ scripts/sync/data/blakadder.json 2>/dev/null || true
+          git add tools/ci/blakadder-fetch.js tools/ci/blakadder-cross-ref.js 2>/dev/null || true
+          git add scripts/sync/crawl-blakadder.js 2>/dev/null || true
+          git add .github/workflows/blakadder-fetch.yml 2>/dev/null || true
+
+          if git diff --staged --quiet; then
+            echo "Nothing to commit"
+            echo "### ℹ️ No new blakadder data" >> $GITHUB_STEP_SUMMARY
+          else
+            VER=$(node -p "require('./app.json').version" 2>/dev/null || echo '?')
+            git commit -m "blakadder(P53): refresh cross-ref data v${VER} [skip ci]"
+            git push origin HEAD:master
+            echo "### ✅ Blakadder data committed to master" >> $GITHUB_STEP_SUMMARY
+          fi
