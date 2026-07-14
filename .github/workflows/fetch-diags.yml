@@ -2,7 +2,7 @@ name: Fetch Homey Diagnostics
 
 on:
   schedule:
-    - cron: '0 */6 * * *' # Run every 6 hours
+    - cron: '25 */6 * * *' # Run every 6 hours
   workflow_dispatch:
     inputs:
       all_history:

@@ -7,7 +7,7 @@ name: Autonomous Verification (P37)
 on:
   # Every 6 hours
   schedule:
-    - cron: '0 */6 * * *'
+    - cron: '15 */6 * * *'
   # Manual trigger
   workflow_dispatch:
     inputs:
