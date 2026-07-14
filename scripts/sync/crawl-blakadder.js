@@ -46,11 +46,26 @@ function safeArr(v) {
 }
 
 function parseBlakadderJs(jsText) {
-  // Strip the "window.database = " prefix and trailing semicolon
-  const m = jsText.trim().match(/^window\.database\s*=\s*([\s\S]+?)\s*;?\s*$/);
-  if (!m) throw new Error('Could not locate window.database = {...} payload');
-  // Wrap in parens and JSON.parse — keys are already quoted strings
-  return JSON.parse('(' + m[1] + ')');
+  // Strip the "window.database = " prefix
+  let s = jsText.trim();
+  const m = s.match(/^window\.database\s*=\s*/);
+  if (!m) throw new Error('Could not locate window.database = ... prefix');
+  s = s.slice(m[0].length);
+  // Strip trailing semicolon
+  s = s.replace(/;\s*$/, '');
+  // Strip JS comments (// and /* */)
+  s = s.replace(/\/\*[\s\S]*?\*\//g, '');
+  s = s.replace(/(^|[^:])\/\/.*$/gm, '$1');
+  // Trim trailing commas (Blakadder DB has them between entries: "},\n  ,\n  {")
+  s = s.replace(/,(\s*[}\]])/g, '$1');
+  // Now it should be valid JSON. Parse it directly.
+  try {
+    return JSON.parse(s);
+  } catch (e) {
+    // Debug: write the snippet to a file
+    try { require('fs').writeFileSync('/tmp/blakadder-parse-fail.json', s.substring(0, 2000)); } catch {}
+    throw new Error('JSON.parse failed: ' + e.message + ' — first 200 chars: ' + s.substring(0, 200));
+  }
 }
 
 async function crawlBlakadder() {
