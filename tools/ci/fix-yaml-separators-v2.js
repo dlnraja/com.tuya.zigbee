@@ -1,6 +1,7 @@
-// fix-yaml-separators-v2.js — P53
+// fix-yaml-separators-v2.js — P53 (updated P55.1 for stable)
 // Remove the extra `---` separator that P54 D1 commit 8565cb363 added
-// between `defaults:` and `name:` in 11 workflows.
+// between `defaults:` and the next section (name: or comment block) in 11
+// workflows.
 //
 // The bot added:
 //   defaults:
@@ -8,6 +9,7 @@
 //       shell: bash
 //
 //   ---            <-- BAD: extra separator
+//   # comment
 //   name: ...
 //
 // GHA workflow files should have at most ONE `---` separator (at the start
@@ -49,16 +51,18 @@ for (const f of AFFECTED) {
     continue;
   }
   let content = fs.readFileSync(full, 'utf8');
-  // Find the pattern: `defaults:` ... `---` ... `name:`
-  // Replace with just `defaults:` ... `name:` (no separator)
-  const re = /(defaults:\s*\n(?:\s+\w+:.*\n)*[ \t]*---\s*\n)(name:)/;
+  // Find pattern: `defaults:` ... (any lines) ... `---` (then anything)
+  // The `---` line should be removed. We use a non-capturing group for the
+  // first part and capture the rest to preserve it.
+  const re = /(defaults:\s*\n(?:\s+\S.*\n)*\n)[ \t]*---\s*\n/;
   const match = content.match(re);
   if (!match) {
     console.log('  [NO MATCH]', f, '(pattern not found - may already be fixed)');
     ok++;
     continue;
   }
-  const newContent = content.replace(re, '$1'); // Remove the `---` line
+  // Replace: keep $1 (the defaults block), drop the `---` line.
+  const newContent = content.replace(re, '$1');
   if (APPLY) {
     fs.writeFileSync(full, newContent);
     console.log('  [FIXED]', f);
