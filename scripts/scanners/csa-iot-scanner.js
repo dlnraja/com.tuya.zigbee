@@ -22,6 +22,15 @@ try {
 } catch { /* fallback: no caching */ }
 const CACHE_ID = 'csa-iot';
 
+// P53: per-URL blob cache (persisted across GHA runs)
+let DiffCache;
+try { DiffCache = require('./diff-cache').DiffCache; } catch { /* fallback */ }
+let diffCache;
+
+// P53: bounded parallel fetcher
+let fetchAll;
+try { fetchAll = require('./concurrent-fetch').fetchAll; } catch { /* fallback */ }
+
 const CSA_API = 'https://api.csa-iot.org';
 const CSA_SEARCH = 'https://csa-iot.org/csa-iot/connected-things/';
 
@@ -64,13 +73,22 @@ function httpGet(url, options = {}) {
 }
 
 function fetchRaw(url) {
+  if (diffCache) {
+    return diffCache.fetchIfChanged(url, { timeout: 30000 })
+      .then(r => r.body.toString('utf8'))
+      .catch(() => fetchRawPlain(url));
+  }
+  return fetchRawPlain(url);
+}
+
+function fetchRawPlain(url) {
   return new Promise((resolve, reject) => {
     https.get(url, {
       headers: { 'User-Agent': 'HomeyTuyaScanner/1.0' },
       timeout: 30000,
     }, (res) => {
       if (res.statusCode === 301 || res.statusCode === 302) {
-        return fetchRaw(res.headers.location).then(resolve, reject);
+        return fetchRawPlain(res.headers.location).then(resolve, reject);
       }
       if (res.statusCode !== 200) return reject(new Error(`HTTP ${res.statusCode}`));
       let data = '';
@@ -155,10 +173,30 @@ async function fetchCsaProducts() {
 
       console.log(`  Found ${jsonFiles.length} relevant files in ${repo.owner}/${repo.repo}`);
 
-      for (const file of jsonFiles.slice(0, 20)) {
+      // P53: parallel fetch of json files (10x speedup) with diff-cache
+      const filesToFetch = jsonFiles.slice(0, 20);
+      const urls = filesToFetch.map(file => `https://raw.githubusercontent.com/${repo.owner}/${repo.repo}/main/${file.path}`);
+
+      let fetched = [];
+      if (fetchAll && urls.length > 0) {
+        fetched = await fetchAll(urls, {
+          concurrency: 10,
+          timeout: 30000,
+          perHost: { 'raw.githubusercontent.com': 20 },
+          onProgress: (d, t) => process.stdout.write(`\r    fetching ${d}/${t}...`),
+        });
+        process.stdout.write('\n');
+      } else {
+        for (const url of urls) {
+          try { fetched.push({ url, body: Buffer.from(await fetchRaw(url)) }); }
+          catch (e) { fetched.push({ url, error: e.message }); }
+        }
+      }
+
+      for (const r of fetched) {
+        if (r.error) continue;
         try {
-          const rawUrl = `https://raw.githubusercontent.com/${repo.owner}/${repo.repo}/main/${file.path}`;
-          const content = await fetchRaw(rawUrl);
+          const content = r.body.toString('utf8');
           const data = JSON.parse(content);
           if (Array.isArray(data)) {
             for (const item of data) {
@@ -195,15 +233,32 @@ async function scanCsaGitHub() {
     try {
       const searchResult = await githubGet(`/search/code?q=${encodeURIComponent(query)}&per_page=20`);
       const items = searchResult.items || [];
-      for (const item of items) {
-        if (!item.path || !item.path.endsWith('.json')) continue;
-        const repoFullName = item.repository?.full_name;
-        if (!repoFullName) continue;
 
+      // Filter to .json files only
+      const candidates = items.filter(item => {
+        if (!item.path || !item.path.endsWith('.json')) return false;
+        if (!item.repository?.full_name) return false;
+        return true;
+      });
+
+      // P53: parallel fetch
+      const fetchTasks = candidates.map(item => {
+        const repoFullName = item.repository.full_name;
+        const mainUrl = `https://raw.githubusercontent.com/${repoFullName}/main/${item.path}`;
+        return fetchRaw(mainUrl)
+          .then(content => ({ item, content }))
+          .catch(e => ({ item, error: e.message }));
+      });
+      const fetched = fetchAll ? await Promise.all(fetchTasks) : await (async () => {
+        const out = [];
+        for (const t of fetchTasks) out.push(await t);
+        return out;
+      })();
+
+      for (const r of fetched) {
+        if (r.error || !r.content) continue;
         try {
-          const rawUrl = `https://raw.githubusercontent.com/${repoFullName}/main/${item.path}`;
-          const content = await fetchRaw(rawUrl);
-          const data = JSON.parse(content);
+          const data = JSON.parse(r.content);
           if (Array.isArray(data)) {
             for (const item of data) {
               if (item.manufacturer || item.companyName || item.mfgCode) {
@@ -261,6 +316,12 @@ async function scan() {
     } else {
       console.log('Cache EXPIRED or MISSING - fetching fresh data');
     }
+  }
+
+  // P53: per-URL diff cache
+  if (DiffCache) {
+    diffCache = new DiffCache(CACHE_ID);
+    console.log(`Diff cache: ${diffCache.listEntries().length} URLs already cached`);
   }
 
   const { mfrs: localMfrs, driverMap } = getLocalFingerprints();
@@ -352,6 +413,12 @@ async function scan() {
   if (cache) {
     cache.save(output);
     console.log(`Cache SAVED (TTL: 7d)`);
+  }
+
+  // P53: log diff cache stats
+  if (diffCache) {
+    const s = diffCache.getStats();
+    console.log(`Diff cache stats: ${s.hits} hits, ${s.misses} misses, ${s.notModified} 304s, ${(s.bytesFetched/1024).toFixed(1)}KB fetched, ${(s.bytesCached/1024).toFixed(1)}KB cached`);
   }
 
   return output;

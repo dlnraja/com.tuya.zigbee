@@ -72,7 +72,12 @@ function collectCollisions() {
 
     for (const mfr of zigbee.manufacturerName) {
       for (const pid of zigbee.productId) {
-        const key = `${String(mfr).toLowerCase()}|${String(pid)}`;
+        // P53 fix: case-SENSITIVE comparison. mfrs like "_TZ3000_xxx" and
+        // "_tz3000_xxx" are treated as DIFFERENT mfrs (Homey match is case-
+        // sensitive). This aligns with driver-conflict-audit.js (official) which
+        // reports 0 mfr+pid duplicates — the previous lower-case logic produced
+        // 3,274 false positives from case-only differences.
+        const key = `${String(mfr)}|${String(pid)}`;
         if (!map.has(key)) map.set(key, []);
         map.get(key).push(driverId);
       }
