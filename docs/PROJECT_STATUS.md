@@ -10,6 +10,7 @@
 | Drivers | 431 |
 | Fingerprints | 6,421 |
 | Fingerprints | 6,432 |
+| Fingerprints | 6,447 |
 | Last Updated | 2026-07-14 |
 
 ## Drivers by Category
