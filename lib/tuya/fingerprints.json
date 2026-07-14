@@ -14677,5 +14677,11 @@
     "type": "soil_sensor",
     "powerSource": "battery",
     "modelIds": []
+  },
+  "_tz3000_ugi8ky6u": {
+    "driverId": "climate_sensor",
+    "type": "climate_sensor",
+    "powerSource": "battery",
+    "modelIds": []
   }
 }
