@@ -1,3 +1,8 @@
+defaults:
+  run:
+    shell: bash
+
+---
 name: Offline Crash Analyzer (P31)
 
 # P31 — Daily crash analysis using 100% offline heuristic engine.
