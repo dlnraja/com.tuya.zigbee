@@ -11,16 +11,19 @@ if (!fs.existsSync(DATA_DIR)) fs.mkdirSync(DATA_DIR, { recursive: true });
 const Z2M_BASE = 'https://raw.githubusercontent.com/Koenkk/zigbee-herdsman-converters/master/src/devices';
 const SOURCES = ['tuya', 'sonoff', 'danfoss', 'schneider_electric', 'legrand', 'bosch', 'ikea', 'lumi', 'niko', 'philips'];
 
-// ── HTTP GET ───────────────────────────────────────────────────────────────
-function httpGet(url) {
-  return new Promise((resolve, reject) => {
-    https.get(url, { timeout: 60000 }, (res) => {
-      if (res.statusCode !== 200) return reject(new Error('HTTP ' + res.statusCode));
-      let d = '';
-      res.on('data', c => (d += c));
-      res.on('end', () => resolve(d));
-    }).on('error', reject);
-  });
+// ── HTTP GET (P55 — use smart-fetch for cache + retry + adaptive rate) ───
+const ROOT_DIR = path.resolve(__dirname, '..', '..');
+const { SmartFetcher } = require(path.join(ROOT_DIR, 'lib/scraper/smart-fetch'));
+const z2mFetcher = new SmartFetcher({
+  source: 'z2m',
+  userAgent: 'Mavis-Z2MSync/1.0',
+  maxRetries: 3,
+  baseBackoffMs: 1000,
+  timeout: 60000,
+});
+async function httpGet(url) {
+  const r = await z2mFetcher.fetch(url);
+  return r.body.toString('utf8');
 }
 
 // ── Load local fingerprints from all driver.compose.json ───────────────────
@@ -141,20 +144,28 @@ async function main() {
     JSON.stringify({ manufacturerNames: [...mfrs].sort(), productIds: [...pids].sort() }, null, 2)
   );
 
-  // 2. Fetch Z2M sources
+  // 2. Fetch Z2M sources (P55 — use bounded-parallel batch)
+  console.log('Fetching ' + SOURCES.length + ' Z2M source files in parallel (concurrency=' + (z2mFetcher.concurrency) + ')...');
+  const urls = SOURCES.map(name => Z2M_BASE + '/' + name + '.ts');
+  const tFetch = Date.now();
+  const results = await z2mFetcher.fetchAll(urls, { concurrency: z2mFetcher.concurrency });
+  const fetchDur = Date.now() - tFetch;
   const allZ2m = [];
-  for (const name of SOURCES) {
-    const url = Z2M_BASE + '/' + name + '.ts';
-    try {
-      console.log('Fetching ' + name + '...');
-      const src = await httpGet(url);
+  for (let i = 0; i < SOURCES.length; i++) {
+    const name = SOURCES[i];
+    const r = results[i];
+    if (r.error) {
+      console.log('  ' + name + ': SKIP (' + r.error + ')');
+    } else {
+      const src = r.body.toString('utf8');
       const fps = extractFromZ2M(src, name);
       allZ2m.push(...fps);
-      console.log('  -> ' + fps.length + ' fingerprints extracted');
-    } catch (e) {
-      console.log('  -> SKIP: ' + e.message);
+      const tag = r.fromCache ? (r.notModified ? 'CACHED 304' : 'CACHED stale') : 'FRESH';
+      console.log('  ' + name + ': ' + tag + ' (' + (r.durationMs || 0) + 'ms) -> ' + fps.length + ' fingerprints');
     }
   }
+  const stats = z2mFetcher.getStats();
+  console.log('  Fetch summary: ' + fetchDur + 'ms total, ' + (stats.metrics?.avgDurationMs || '?') + 'ms avg, 429s=' + (stats.metrics?.total429 || 0));
 
   // 3. Deduplicate
   const z2mMfrs = new Map();

@@ -1,12 +1,12 @@
 {
-  "timestamp": "2026-06-29T07:55:55.993Z",
+  "timestamp": "2026-07-14T13:24:44.582Z",
   "localStats": {
-    "manufacturerNames": 4798,
-    "productIds": 562
+    "manufacturerNames": 5141,
+    "productIds": 571
   },
   "z2mStats": {
     "manufacturerNames": 50,
-    "productIds": 1720
+    "productIds": 1740
   },
   "missingManufacturerNames": [
     {
@@ -21,46 +21,6 @@
     },
     {
       "value": "AOYAN",
-      "source": "tuya",
-      "suggestedDriver": "generic_diy"
-    },
-    {
-      "value": "_TZ3000_mw1pqqqt",
-      "source": "tuya",
-      "suggestedDriver": "generic_diy"
-    },
-    {
-      "value": "_TZ3000_9ni6xxld",
-      "source": "tuya",
-      "suggestedDriver": "generic_diy"
-    },
-    {
-      "value": "_TZ3000_abrsvsou",
-      "source": "tuya",
-      "suggestedDriver": "generic_diy"
-    },
-    {
-      "value": "_TZE200_hl0ss9oa",
-      "source": "tuya",
-      "suggestedDriver": "generic_diy"
-    },
-    {
-      "value": "_TZE200_y4mdop0b",
-      "source": "tuya",
-      "suggestedDriver": "generic_diy"
-    },
-    {
-      "value": "_TZE200_vs0skpuc",
-      "source": "tuya",
-      "suggestedDriver": "generic_diy"
-    },
-    {
-      "value": "_TZE200_ehhrv2e3",
-      "source": "tuya",
-      "suggestedDriver": "generic_diy"
-    },
-    {
-      "value": "_TZE200_dikkika5",
       "source": "tuya",
       "suggestedDriver": "generic_diy"
     },
@@ -80,11 +40,6 @@
       "suggestedDriver": "generic_diy"
     },
     {
-      "value": "_TZE200_lvkk0hdg",
-      "source": "tuya",
-      "suggestedDriver": "generic_diy"
-    },
-    {
       "value": "_TZ3210_emqmwtym",
       "source": "tuya",
       "suggestedDriver": "generic_diy"
@@ -95,27 +50,7 @@
       "suggestedDriver": "generic_diy"
     },
     {
-      "value": "_TZE284_0ints6wl",
-      "source": "tuya",
-      "suggestedDriver": "generic_diy"
-    },
-    {
       "value": "_TZE284_yzr43ayq",
-      "source": "tuya",
-      "suggestedDriver": "generic_diy"
-    },
-    {
-      "value": "_TZE200_cq8lu23i",
-      "source": "tuya",
-      "suggestedDriver": "generic_diy"
-    },
-    {
-      "value": "_TZE200_4pm4pekt",
-      "source": "tuya",
-      "suggestedDriver": "generic_diy"
-    },
-    {
-      "value": "_TZE200_y8jijhba",
       "source": "tuya",
       "suggestedDriver": "generic_diy"
     },
@@ -130,58 +65,23 @@
       "suggestedDriver": "generic_diy"
     },
     {
-      "value": "_TZE284_8se38w3c",
-      "source": "tuya",
-      "suggestedDriver": "generic_diy"
-    },
-    {
-      "value": "_TZE200_spyvfeti",
-      "source": "tuya",
-      "suggestedDriver": "generic_diy"
-    },
-    {
-      "value": "_TZE204_gm8h14wy",
-      "source": "tuya",
-      "suggestedDriver": "generic_diy"
-    },
-    {
-      "value": "_TZE204_trwaxi57",
-      "source": "tuya",
-      "suggestedDriver": "generic_diy"
-    },
-    {
-      "value": "_TZE204_ccgyhbvd",
-      "source": "tuya",
-      "suggestedDriver": "generic_diy"
-    },
-    {
-      "value": "_TZE204_y8ficeai",
-      "source": "tuya",
-      "suggestedDriver": "generic_diy"
-    },
-    {
-      "value": "_TZE284_7e6v8u9f",
-      "source": "tuya",
-      "suggestedDriver": "generic_diy"
-    },
-    {
-      "value": "_TZE204_apiu8k13",
-      "source": "tuya",
-      "suggestedDriver": "generic_diy"
-    },
-    {
-      "value": "_TZE204_he9apaui",
-      "source": "tuya",
-      "suggestedDriver": "generic_diy"
-    },
-    {
-      "value": "_TZE204_fhv95pf1",
-      "source": "tuya",
-      "suggestedDriver": "generic_diy"
-    },
-    {
       "value": "DTS1XM9",
       "source": "tuya",
+      "suggestedDriver": "generic_diy"
+    },
+    {
+      "value": "eWeLink",
+      "source": "sonoff",
+      "suggestedDriver": "generic_diy"
+    },
+    {
+      "value": "Danfoss",
+      "source": "danfoss",
+      "suggestedDriver": "generic_diy"
+    },
+    {
+      "value": "Schneider Electric",
+      "source": "schneider_electric",
       "suggestedDriver": "generic_diy"
     },
     {
@@ -218,6 +118,11 @@
     },
     {
       "value": "FNB54-WTS08ML1.0",
+      "source": "tuya",
+      "suggestedDriver": "generic_diy"
+    },
+    {
+      "value": "AY222Z",
       "source": "tuya",
       "suggestedDriver": "generic_diy"
     },
@@ -287,6 +192,36 @@
       "suggestedDriver": "generic_diy"
     },
     {
+      "value": "AY-601ZL",
+      "source": "tuya",
+      "suggestedDriver": "generic_diy"
+    },
+    {
+      "value": "AY-801ZL",
+      "source": "tuya",
+      "suggestedDriver": "generic_diy"
+    },
+    {
+      "value": "AY-602ZL",
+      "source": "tuya",
+      "suggestedDriver": "generic_diy"
+    },
+    {
+      "value": "AY-802ZL",
+      "source": "tuya",
+      "suggestedDriver": "generic_diy"
+    },
+    {
+      "value": "AY-603ZL",
+      "source": "tuya",
+      "suggestedDriver": "generic_diy"
+    },
+    {
+      "value": "AY-803ZL",
+      "source": "tuya",
+      "suggestedDriver": "generic_diy"
+    },
+    {
       "value": "gq8b1uv",
       "source": "tuya",
       "suggestedDriver": "generic_diy"
@@ -317,7 +252,17 @@
       "suggestedDriver": "generic_diy"
     },
     {
+      "value": "AY201Z",
+      "source": "tuya",
+      "suggestedDriver": "generic_diy"
+    },
+    {
       "value": "AY-204Z",
+      "source": "tuya",
+      "suggestedDriver": "generic_diy"
+    },
+    {
+      "value": "AY205Z",
       "source": "tuya",
       "suggestedDriver": "generic_diy"
     },
@@ -337,6 +282,11 @@
       "suggestedDriver": "generic_diy"
     },
     {
+      "value": "AY02SZ",
+      "source": "tuya",
+      "suggestedDriver": "generic_diy"
+    },
+    {
       "value": "AY-303Z",
       "source": "tuya",
       "suggestedDriver": "generic_diy"
@@ -347,7 +297,17 @@
       "suggestedDriver": "generic_diy"
     },
     {
+      "value": "AY208Z",
+      "source": "tuya",
+      "suggestedDriver": "generic_diy"
+    },
+    {
       "value": "ZS-304Z",
+      "source": "tuya",
+      "suggestedDriver": "generic_diy"
+    },
+    {
+      "value": "AY-204ZX",
       "source": "tuya",
       "suggestedDriver": "generic_diy"
     },
@@ -437,6 +397,11 @@
       "suggestedDriver": "generic_diy"
     },
     {
+      "value": "Dongle-PP10",
+      "source": "sonoff",
+      "suggestedDriver": "generic_diy"
+    },
+    {
       "value": "TRV-ZBT",
       "source": "sonoff",
       "suggestedDriver": "generic_diy"
@@ -492,29 +457,9 @@
       "suggestedDriver": "generic_diy"
     },
     {
-      "value": "SWV-ZF2",
-      "source": "sonoff",
-      "suggestedDriver": "water_valve_smart"
-    },
-    {
-      "value": "SNZB-02B",
-      "source": "sonoff",
-      "suggestedDriver": "climate_sensor"
-    },
-    {
-      "value": "SNZB-02M",
-      "source": "sonoff",
-      "suggestedDriver": "climate_sensor"
-    },
-    {
       "value": "BASIC-ZB1GSP",
       "source": "sonoff",
       "suggestedDriver": "generic_diy"
-    },
-    {
-      "value": "SNZB-06P24",
-      "source": "sonoff",
-      "suggestedDriver": "presence_sensor_radar"
     },
     {
       "value": "MINI-ZB1GSP",
@@ -527,14 +472,19 @@
       "suggestedDriver": "generic_diy"
     },
     {
-      "value": "SNZB-09P",
+      "value": "MINI-ZB1GS",
       "source": "sonoff",
       "suggestedDriver": "generic_diy"
     },
     {
-      "value": "SNZB-03PR2",
+      "value": "SNZB-02UL",
       "source": "sonoff",
-      "suggestedDriver": "motion_sensor"
+      "suggestedDriver": "climate_sensor"
+    },
+    {
+      "value": "S61SZBTPB",
+      "source": "sonoff",
+      "suggestedDriver": "generic_diy"
     },
     {
       "value": "devi_f",
@@ -2642,6 +2592,11 @@
       "suggestedDriver": "generic_diy"
     },
     {
+      "value": "lumi.curtain.acn018",
+      "source": "lumi",
+      "suggestedDriver": "generic_diy"
+    },
+    {
       "value": "lumi.curtain.acn003",
       "source": "lumi",
       "suggestedDriver": "generic_diy"
@@ -2753,6 +2708,11 @@
     },
     {
       "value": "lumi.light.acn023",
+      "source": "lumi",
+      "suggestedDriver": "generic_diy"
+    },
+    {
+      "value": "lumi.light.acn036",
       "source": "lumi",
       "suggestedDriver": "generic_diy"
     },
@@ -7632,6 +7592,11 @@
       "suggestedDriver": "generic_diy"
     },
     {
+      "value": "LGT011",
+      "source": "philips",
+      "suggestedDriver": "generic_diy"
+    },
+    {
       "value": "929003808401_01",
       "source": "philips",
       "suggestedDriver": "generic_diy"
@@ -7733,6 +7698,11 @@
     },
     {
       "value": "929004610502",
+      "source": "philips",
+      "suggestedDriver": "generic_diy"
+    },
+    {
+      "value": "929004610601",
       "source": "philips",
       "suggestedDriver": "generic_diy"
     },
