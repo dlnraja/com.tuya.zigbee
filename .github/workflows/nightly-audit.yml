@@ -47,6 +47,13 @@ jobs:
           echo "## 🌊 Data flooding detection (P57)" >> $GITHUB_STEP_SUMMARY
           node tools/ci/detect-data-flooding.js >> $GITHUB_STEP_SUMMARY 2>&1
 
+      - name: 🩹 Aggregate error + process error audit (P58.6)
+        run: |
+          echo "## 🩹 Aggregate error audit (P58.6)" >> $GITHUB_STEP_SUMMARY
+          node tools/ci/aggregate-error-fixer.js --json >> $GITHUB_STEP_SUMMARY 2>&1
+          echo "## 🩹 Tests" >> $GITHUB_STEP_SUMMARY
+          node tools/ci/test-aggregate-error-fixer.js 2>&1 | tail -3 >> $GITHUB_STEP_SUMMARY
+
       - name: 🧠 Smart Update plan
         run: |
           echo "## 🧠 Smart Update plan" >> $GITHUB_STEP_SUMMARY
