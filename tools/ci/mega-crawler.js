@@ -45,7 +45,7 @@ const STATE_DIR = path.join(ROOT, '.github', 'state', 'mega-crawl');
 const args = process.argv.slice(2);
 const only = (() => { const a = args.find(x => x.startsWith('--only=')); return a ? a.split('=')[1] : null; })();
 const skip = (() => { const a = args.find(x => x.startsWith('--skip=')); return a ? a.split('=')[1].split(',') : []; })();
-const TIMEOUT_MS = (() => { const a = args.find(x => x.startsWith('--timeout=')); return a ? parseInt(a.split('=')[1]) * 1000 : 300000; })();
+const TIMEOUT_MS = (() => { const a = args.find(x => x.startsWith('--timeout=')); return a ? parseInt(a.split('=')[1]) * 1000 : 900000; })();
 const PARALLEL = args.includes('--parallel');
 
 // Define crawlers
