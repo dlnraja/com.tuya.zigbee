@@ -6,6 +6,12 @@
 |---|---|---|---|
 | Manufacturer Names | 5141 | 50 | 16 |
 | Product IDs | 571 | 1740 | 1537 |
+**Date:** 2026-06-29T07:55:55.993Z
+
+| Metric | Local | Z2M | Missing |
+|---|---|---|---|
+| Manufacturer Names | 4798 | 50 | 36 |
+| Product IDs | 562 | 1720 | 1523 |
 
 ## Missing Manufacturer Names
 
@@ -26,6 +32,38 @@
 | eWeLink | sonoff | generic_diy |
 | Danfoss | danfoss | generic_diy |
 | Schneider Electric | schneider_electric | generic_diy |
+| _TZ3000_mw1pqqqt | tuya | generic_diy |
+| _TZ3000_9ni6xxld | tuya | generic_diy |
+| _TZ3000_abrsvsou | tuya | generic_diy |
+| _TZE200_hl0ss9oa | tuya | generic_diy |
+| _TZE200_y4mdop0b | tuya | generic_diy |
+| _TZE200_vs0skpuc | tuya | generic_diy |
+| _TZE200_ehhrv2e3 | tuya | generic_diy |
+| _TZE200_dikkika5 | tuya | generic_diy |
+| _TZE200_3xfjp0ag | tuya | generic_diy |
+| _TZE200_lhqtjwax | tuya | generic_diy |
+| AOYAN  | tuya | generic_diy |
+| _TZE200_lvkk0hdg | tuya | generic_diy |
+| _TZ3210_emqmwtym | tuya | generic_diy |
+| _TZE200_khah2lkr | tuya | generic_diy |
+| _TZE284_0ints6wl | tuya | generic_diy |
+| _TZE284_yzr43ayq | tuya | generic_diy |
+| _TZE200_cq8lu23i | tuya | generic_diy |
+| _TZE200_4pm4pekt | tuya | generic_diy |
+| _TZE200_y8jijhba | tuya | generic_diy |
+| TELINK | tuya | generic_diy |
+| A89G12C | tuya | generic_diy |
+| _TZE284_8se38w3c | tuya | generic_diy |
+| _TZE200_spyvfeti | tuya | generic_diy |
+| _TZE204_gm8h14wy | tuya | generic_diy |
+| _TZE204_trwaxi57 | tuya | generic_diy |
+| _TZE204_ccgyhbvd | tuya | generic_diy |
+| _TZE204_y8ficeai | tuya | generic_diy |
+| _TZE284_7e6v8u9f | tuya | generic_diy |
+| _TZE204_apiu8k13 | tuya | generic_diy |
+| _TZE204_he9apaui | tuya | generic_diy |
+| _TZE204_fhv95pf1 | tuya | generic_diy |
+| DTS1XM9 | tuya | generic_diy |
 |  Legrand\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000 | legrand | generic_diy |
 
 ## Missing Product IDs
@@ -76,6 +114,13 @@
 | AY208Z | tuya | generic_diy |
 | ZS-304Z | tuya | generic_diy |
 | AY-204ZX | tuya | generic_diy |
+| AY-204Z | tuya | generic_diy |
+| SM0202 | tuya | generic_diy |
+| ZG-101Z | tuya | generic_diy |
+| 5rta89nj | tuya | generic_diy |
+| AY-303Z | tuya | generic_diy |
+| AY-302Z | tuya | generic_diy |
+| ZS-304Z | tuya | generic_diy |
 | ZG-226Z | tuya | generic_diy |
 | ZG-228Z | tuya | generic_diy |
 | ZG-229Z | tuya | generic_diy |
@@ -111,6 +156,15 @@
 | MINI-ZB1GS | sonoff | generic_diy |
 | SNZB-02UL | sonoff | climate_sensor |
 | S61SZBTPB | sonoff | generic_diy |
+| SWV-ZF2 | sonoff | water_valve_smart |
+| SNZB-02B | sonoff | climate_sensor |
+| SNZB-02M | sonoff | climate_sensor |
+| BASIC-ZB1GSP | sonoff | generic_diy |
+| SNZB-06P24 | sonoff | presence_sensor_radar |
+| MINI-ZB1GSP | sonoff | generic_diy |
+| MINI-ZB1GP | sonoff | generic_diy |
+| SNZB-09P | sonoff | generic_diy |
+| SNZB-03PR2 | sonoff | motion_sensor |
 | devi_f | danfoss | generic_diy |
 | W564100 | schneider_electric | generic_diy |
 | PUCK/SHUTTER/1 | schneider_electric | generic_diy |
@@ -134,4 +188,16 @@
 | U201DST600ZB | schneider_electric | generic_diy |
 
 *...and 1437 more*
+| U201SRY2KWZB | schneider_electric | generic_diy |
+| CCTFR6100 | schneider_electric | generic_diy |
+| NHPB/SWITCH/1 | schneider_electric | generic_diy |
+| U202SRY2KWZB | schneider_electric | generic_diy |
+| 1GANG/SHUTTER/1 | schneider_electric | generic_diy |
+| 1GANG/DIMMER/1 | schneider_electric | generic_diy |
+| 1GANG/DALI/1 | schneider_electric | generic_diy |
+| 2GANG/DIMMER/1 | schneider_electric | generic_diy |
+| 2GANG/DIMMER/2 | schneider_electric | generic_diy |
+| 1GANG/SWITCH/1 | schneider_electric | generic_diy |
+
+*...and 1423 more*
 
