@@ -11,7 +11,7 @@ name: "Driver Maintenance"
 
 on:
   schedule:
-    - cron: '0 4 * * 5'
+    - cron: '30 4 * * 5'
   workflow_dispatch:
     inputs:
       dry_run:

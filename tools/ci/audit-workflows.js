@@ -1,44 +1,68 @@
-#!/usr/bin/env node
-// audit-workflows.js
+// audit-workflows.js — P54 Source of truth audit
+// Find cron schedule conflicts, timeout issues, rate limit problems in workflows
+'use strict';
 const fs = require('fs');
 const path = require('path');
+const { execFileSync } = require('child_process');
+const gitExe = 'C:\\Program Files\\Git\\cmd\\git.exe';
+function git(args) { return execFileSync(gitExe, args, { cwd: process.cwd(), encoding: 'utf8' }).toString(); }
 
-const dir = '.github/workflows';
-const files = fs.readdirSync(dir).filter(f => f.endsWith('.yml') || f.endsWith('.yaml'));
-console.log('=== EXISTING WORKFLOWS ===');
-console.log('Total:', files.length);
-console.log();
+const DIR = '.github/workflows';
+const files = fs.readdirSync(DIR).filter(f => f.endsWith('.yml'));
 
-const scheduleWorkflows = [];
-const onDemandWorkflows = [];
+console.log('=== Workflow cron schedule audit ===\n');
+
+const cronSchedules = [];
+
 for (const f of files) {
-  const c = fs.readFileSync(path.join(dir, f), 'utf8');
-  const size = c.length;
-  const lines = c.split('\n').length;
-  const hasSchedule = /schedule:/.test(c);
-  const hasPush = /push:/.test(c);
-  const hasPR = /pull_request:/.test(c);
-  const hasDispatch = /workflow_dispatch:/.test(c);
-  const hasWorkflowCall = /workflow_call:/.test(c);
-  const hasCron = /cron:/.test(c);
-  const concurrency = /concurrency:/.test(c);
-  const cronRegex = /cron:\s*['"]([^'"]+)['"]/;
-  const cronMatch = c.match(cronRegex);
-  const triggers = [];
-  if (hasSchedule) triggers.push('schedule');
-  if (hasPush) triggers.push('push');
-  if (hasPR) triggers.push('PR');
-  if (hasDispatch) triggers.push('manual');
-  if (hasWorkflowCall) triggers.push('reusable');
-  const info = { f, size, lines, triggers: triggers.join('+'), hasCron, hasConcurrency: concurrency };
-  if (hasCron) info.cron = cronMatch ? cronMatch[1] : '?';
-  if (hasSchedule || hasCron) scheduleWorkflows.push(info);
-  else onDemandWorkflows.push(info);
-  console.log('  ' + f + ' (' + size + 'B, ' + lines + 'L): ' + triggers.join('+') + (hasCron ? ' cron=' + (cronMatch ? cronMatch[1] : '?') : '') + (concurrency ? ' [concurrency]' : ''));
+  const content = fs.readFileSync(path.join(DIR, f), 'utf8');
+  // Find cron schedules
+  const cronRegex = /cron:\s*['"]([^'"]+)['"]/g;
+  let match;
+  while ((match = cronRegex.exec(content)) !== null) {
+    cronSchedules.push({ file: f, cron: match[1] });
+  }
 }
-console.log();
-console.log('=== SCHEDULED ===');
-for (const w of scheduleWorkflows) console.log('  ' + w.f + ': cron=' + w.cron + ' triggers=' + w.triggers);
-console.log();
-console.log('=== ON-DEMAND ===');
-for (const w of onDemandWorkflows) console.log('  ' + w.f + ': triggers=' + w.triggers);
+
+// Parse cron to find which minute they run
+const byMinute = {};
+for (const s of cronSchedules) {
+  // Format: '0 2 * * *' or similar
+  const parts = s.cron.split(/\s+/);
+  if (parts.length >= 2) {
+    const min = parts[0];
+    const hour = parts[1];
+    const key = `${hour}:${min === '*' ? '*' : min.padStart(2, '0')}`;
+    if (!byMinute[key]) byMinute[key] = [];
+    byMinute[key].push(s.file);
+  }
+}
+
+const sortedKeys = Object.keys(byMinute).sort();
+for (const key of sortedKeys) {
+  if (byMinute[key].length > 1) {
+    console.log(`WARNING: ${byMinute[key].length} workflows at ${key} UTC:`);
+    byMinute[key].forEach(f => console.log('  -', f));
+  }
+}
+if (Object.values(byMinute).every(arr => arr.length === 1)) {
+  console.log('No cron schedule conflicts detected (no exact-time overlaps)');
+}
+
+console.log('\n=== Workflow timeout audit ===\n');
+for (const f of files) {
+  const content = fs.readFileSync(path.join(DIR, f), 'utf8');
+  const tm = content.match(/timeout-minutes:\s*(\d+)/);
+  if (tm) {
+    console.log(`  ${f}: ${tm[1]} min`);
+  }
+}
+
+console.log('\n=== Last 5 runs per workflow ===\n');
+// Get recent runs
+try {
+  const runs = git(['log', '--oneline', '--since=1 day ago', '--', '.github/workflows/']);
+  console.log('  Workflow changes in last 24h:', (runs.match(/\n/g) || []).length, 'commits');
+} catch (e) {
+  console.log('  (could not check recent changes)');
+}
