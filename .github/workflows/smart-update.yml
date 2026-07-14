@@ -1,0 +1,55 @@
+name: 🧠 Smart Update Orchestrator
+
+on:
+  schedule:
+    # Daily 01:30 UTC, after knowledge-graph runs but before mega-crawl
+    - cron: '30 1 * * *'
+  workflow_dispatch:
+    inputs:
+      trigger:
+        description: 'Trigger mega-crawl with skip flags for fresh sources'
+        required: false
+        type: boolean
+        default: false
+      dry_run:
+        description: 'Just print the plan, do not trigger anything'
+        required: false
+        type: boolean
+        default: true
+
+permissions:
+  contents: read
+
+concurrency:
+  group: smart-update
+  cancel-in-progress: true
+
+jobs:
+  plan:
+    name: 📋 Compute update plan
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: 📥 Checkout
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 🧠 Compute plan
+        id: plan
+        run: |
+          echo "## 🧠 Smart Update Plan" >> $GITHUB_STEP_SUMMARY
+          node tools/ci/smart-update-orchestrator.js >> $GITHUB_STEP_SUMMARY
+
+      - name: 🪙 Token sanity check
+        run: |
+          echo "## 🪙 Token Sanity" >> $GITHUB_STEP_SUMMARY
+          node tools/ci/token-sanity-check.js >> $GITHUB_STEP_SUMMARY
+
+      - name: 🔄 Trigger mega-crawl if requested
+        if: github.event_name == 'workflow_dispatch' && inputs.trigger == true
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          node tools/ci/smart-update-orchestrator.js --trigger --silent
