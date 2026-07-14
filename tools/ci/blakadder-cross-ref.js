@@ -46,7 +46,15 @@ function normalizeMfr(s) {
 
 function main() {
   console.log('=== Blakadder cross-reference ===');
+  try {
+    return _main();
+  } catch (e) {
+    console.error('FATAL:', e.stack || e.message);
+    process.exit(1);
+  }
+}
 
+function _main() {
   // ── Load sources ────────────────────────────────────────────────────
   const blakadderPath = path.join(ROOT, 'scripts', 'sync', 'data', 'blakadder.json');
   const blakadder = loadJson(blakadderPath, null);
@@ -282,4 +290,4 @@ function groupBy(arr, key) {
 
 function pct(n, d) { return d > 0 ? ((n / d) * 100).toFixed(1) : '0.0'; }
 
-main().catch(e => { console.error('FATAL:', e.stack || e.message); process.exit(1); });
+main();
