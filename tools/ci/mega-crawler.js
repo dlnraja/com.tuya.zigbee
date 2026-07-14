@@ -138,7 +138,27 @@ function runOne(c) {
   }
 }
 
-function main() {
+async function runParallel(list, parallelism) {
+  const results = new Array(list.length);
+  let nextIdx = 0;
+  async function worker() {
+    while (nextIdx < list.length) {
+      const i = nextIdx++;
+      const c = list[i];
+      process.stdout.write('  [' + c.id + '] running...');
+      const r = runOne(c);
+      if (r.status === 'ok') console.log(' OK (' + r.durationMs + 'ms, ' + r.outputLines + ' lines)');
+      else if (r.status === 'skipped') console.log(' SKIPPED (' + r.durationMs + 'ms)');
+      else console.log(' FAILED (' + r.durationMs + 'ms): ' + r.error);
+      results[i] = r;
+    }
+  }
+  const workers = Array.from({ length: Math.min(parallelism, list.length) }, () => worker());
+  await Promise.all(workers);
+  return results;
+}
+
+async function main() {
   console.log('=== Mega Crawler (P53) ===');
   fs.mkdirSync(STATE_DIR, { recursive: true });
 
@@ -146,16 +166,19 @@ function main() {
   console.log('Crawlers to run:', list.length);
   for (const c of list) console.log('  -', c.id, '·', c.name);
 
-  const results = [];
+  // P53: parallel mode (default 4 workers). Use --sequential for old behavior.
+  const parallel = !args.includes('--sequential');
+  const parallelism = (() => {
+    const a = args.find(x => x.startsWith('--parallel='));
+    return a ? parseInt(a.split('=')[1]) : 4;
+  })();
+  if (parallel) console.log('Mode: PARALLEL (workers=' + parallelism + ')');
+  else console.log('Mode: SEQUENTIAL');
+
   const t0 = Date.now();
-  for (const c of list) {
-    process.stdout.write('  [' + c.id + '] running...');
-    const r = runOne(c);
-    if (r.status === 'ok') console.log(' OK (' + r.durationMs + 'ms, ' + r.outputLines + ' lines)');
-    else if (r.status === 'skipped') console.log(' SKIPPED (' + r.durationMs + 'ms)');
-    else console.log(' FAILED (' + r.durationMs + 'ms): ' + r.error);
-    results.push(r);
-  }
+  const results = parallel
+    ? await runParallel(list, parallelism)
+    : list.map(c => runOne(c));
   const totalMs = Date.now() - t0;
 
   const ok = results.filter(r => r.status === 'ok').length;
@@ -163,7 +186,7 @@ function main() {
   const failed = results.filter(r => r.status === 'failed').length;
 
   const report = {
-    meta: { generatedAt: new Date().toISOString(), totalDurationMs: totalMs, parallel: PARALLEL, timeoutMs: TIMEOUT_MS },
+    meta: { generatedAt: new Date().toISOString(), totalDurationMs: totalMs, parallel, parallelism, timeoutMs: TIMEOUT_MS },
     summary: { total: results.length, ok, skipped, failed },
     results,
   };
@@ -187,5 +210,4 @@ function main() {
   }
 }
 
-try { main(); }
-catch (e) { console.error('FATAL:', e.stack || e.message); process.exit(1); }
+main().catch(e => { console.error('FATAL:', e.stack || e.message); process.exit(1); });
