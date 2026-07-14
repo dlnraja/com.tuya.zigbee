@@ -1,0 +1,156 @@
+name: 🔬 Publish Diagnose
+
+# Auto-runs after every "🚀 Publish Stable to Test" workflow
+# Detects stuck / failed publishes and reports actionable next steps.
+# Designed to break the "silent-fail at Prepare Publish Directory" pattern.
+
+on:
+  workflow_run:
+    workflows: ["🚀 Publish Stable to Test"]
+    types: [completed]
+  workflow_dispatch:
+    inputs:
+      run_id:
+        description: 'GH run id to diagnose (default = most recent)'
+        required: false
+        type: string
+
+permissions:
+  contents: read
+  actions: read
+
+concurrency:
+  group: publish-diagnose
+  cancel-in-progress: true
+
+jobs:
+  diagnose:
+    name: 🔬 Diagnose publish outcome
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: 📥 Checkout
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 1
+
+      - name: 🔍 Find target run
+        id: find_run
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if [ -n "${{ inputs.run_id }}" ]; then
+            RUN_ID="${{ inputs.run_id }}"
+          else
+            # workflow_run event: ${{ github.event.workflow_run.id }}
+            if [ -n "${{ github.event.workflow_run.id }}" ]; then
+              RUN_ID="${{ github.event.workflow_run.id }}"
+            else
+              # Fallback: most recent publish run
+              RUN_ID=$(gh run list --workflow "🚀 Publish Stable to Test" --limit 1 --json databaseId -q '.[0].databaseId')
+            fi
+          fi
+          echo "run_id=$RUN_ID" >> $GITHUB_OUTPUT
+          echo "## 🔬 Diagnosing run $RUN_ID" >> $GITHUB_STEP_SUMMARY
+
+      - name: 📊 Read run + jobs
+        id: meta
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          RUN_ID="${{ steps.find_run.outputs.run_id }}"
+          RUN_JSON=$(gh run view "$RUN_ID" --json status,conclusion,name,createdAt,updatedAt,headBranch,event)
+          echo "$RUN_JSON" | python3 -c "import sys,json;d=json.load(sys.stdin);print(json.dumps(d,indent=2))" >> $GITHUB_STEP_SUMMARY
+          echo "## 📊 Run metadata" >> $GITHUB_STEP_SUMMARY
+          echo "$RUN_JSON" >> $GITHUB_STEP_SUMMARY
+
+      - name: 🩺 Per-job status
+        id: jobs
+        if: always()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          RUN_ID="${{ steps.find_run.outputs.run_id }}"
+          echo "## 🩺 Per-job status" >> $GITHUB_STEP_SUMMARY
+          echo "| Job | Status | Conclusion | Started | Completed |" >> $GITHUB_STEP_SUMMARY
+          echo "|-----|--------|------------|---------|-----------|" >> $GITHUB_STEP_SUMMARY
+          gh run view "$RUN_ID" --json jobs \
+            | python3 -c "
+              import sys, json
+              d = json.load(sys.stdin)
+              for j in d['jobs']:
+                print(f\"| {j['name']} | {j['status']} | {j.get('conclusion','-')} | {j.get('startedAt','-')} | {j.get('completedAt','-')} |\")
+            " >> $GITHUB_STEP_SUMMARY
+
+      - name: 🔎 Detect failure mode
+        id: detect
+        if: always()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          RUN_ID="${{ steps.find_run.outputs.run_id }}"
+          # Look at all jobs to figure out the failure mode
+          FAIL_MODE=$(gh run view "$RUN_ID" --json jobs \
+            | python3 -c "
+              import sys, json
+              d = json.load(sys.stdin)
+              for j in d['jobs']:
+                if j.get('conclusion') == 'failure':
+                  name = j['name']
+                  for s in j['steps']:
+                    if s.get('conclusion') == 'failure':
+                      print(f'{name}|{s[\"name\"]}')
+                      sys.exit(0)
+              print('unknown|none')
+            ")
+          JOB_NAME=$(echo "$FAIL_MODE" | cut -d'|' -f1)
+          STEP_NAME=$(echo "$FAIL_MODE" | cut -d'|' -f2)
+          echo "## 🔎 Failure mode: \`$JOB_NAME\` → \`$STEP_NAME\`" >> $GITHUB_STEP_SUMMARY
+          echo "job=$JOB_NAME" >> $GITHUB_OUTPUT
+          echo "step=$STEP_NAME" >> $GITHUB_OUTPUT
+
+      - name: 💡 Recommend next action
+        if: always()
+        run: |
+          JOB="${{ steps.detect.outputs.job }}"
+          STEP="${{ steps.detect.outputs.step }}"
+          echo "## 💡 Recommendation" >> $GITHUB_STEP_SUMMARY
+          case "$STEP" in
+            *"Prepare Publish Directory"*)
+              echo "**Root cause**: build dir > size gate." >> $GITHUB_STEP_SUMMARY
+              echo "" >> $GITHUB_STEP_SUMMARY
+              echo "**Fix**:" >> $GITHUB_STEP_SUMMARY
+              echo "1. Check size: \`HOMEY_PUBLISH_MAX_UNCOMPRESSED_MB=40\` is in publish-stable.yml env" >> $GITHUB_STEP_SUMMARY
+              echo "2. Check SVG optimizer ran: \`node scripts/maintenance/optimize-build-svgs.cjs\`" >> $GITHUB_STEP_SUMMARY
+              echo "3. Check mfs_db.json trimmed: build dir should be < 40 MB" >> $GITHUB_STEP_SUMMARY
+              echo "4. If still over, bump \`HOMEY_PUBLISH_MAX_UNCOMPRESSED_MB\` to 45" >> $GITHUB_STEP_SUMMARY
+              ;;
+            *"Validate App"*)
+              echo "**Root cause**: app validation failed (likely version or pre-release suffix)." >> $GITHUB_STEP_SUMMARY
+              echo "" >> $GITHUB_STEP_SUMMARY
+              echo "**Fix**:" >> $GITHUB_STEP_SUMMARY
+              echo "1. Use plain semver: \`9.0.242\` not \`9.0.242-stable.1\`" >> $GITHUB_STEP_SUMMARY
+              echo "2. Re-bump and re-trigger" >> $GITHUB_STEP_SUMMARY
+              ;;
+            *"Publish to Draft"*)
+              echo "**Root cause**: Athom API rejected (auth, network, or size)." >> $GITHUB_STEP_SUMMARY
+              echo "" >> $GITHUB_STEP_SUMMARY
+              echo "**Fix**:" >> $GITHUB_STEP_SUMMARY
+              echo "1. Check \`HOMEY_PAT\` secret is valid" >> $GITHUB_STEP_SUMMARY
+              echo "2. Check Homey developer portal for app status" >> $GITHUB_STEP_SUMMARY
+              echo "3. Re-trigger via workflow_dispatch" >> $GITHUB_STEP_SUMMARY
+              ;;
+            *)
+              echo "Unknown failure mode. Check full logs: \`gh run view ${{ steps.find_run.outputs.run_id }} --log\`" >> $GITHUB_STEP_SUMMARY
+              ;;
+          esac
+
+      - name: 🔁 Auto-retry if transient
+        if: always() && steps.detect.outputs.step == '🕷️ Run Mega Crawler'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # If mega-crawl is the failure (not size-gate), it might be a network blip.
+          # Re-trigger with skip=tuya-local to avoid the worst-offender.
+          echo "## 🔁 Auto-retry: re-triggering mega-crawl with skip=tuya-local" >> $GITHUB_STEP_SUMMARY
+          gh workflow run "🕷️ Mega Crawler" --ref master --field skip=tuya-local --field timeout=300 || true
