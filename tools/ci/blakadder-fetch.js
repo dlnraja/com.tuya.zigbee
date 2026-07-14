@@ -21,9 +21,9 @@
 
 const fs = require('fs');
 const path = require('path');
-const https = require('https');
-
 const ROOT = path.resolve(__dirname, '..', '..');
+const { smartFetch, SmartFetcher } = require(path.join(ROOT, 'lib/scraper/smart-fetch'));
+
 const STATE_DIR = path.join(ROOT, '.github', 'state', 'blakadder');
 const DATA_DIR = path.join(ROOT, 'data', 'blakadder');
 
@@ -36,32 +36,23 @@ const PID_REGEX = /\bTS\d{4}[A-Z]?\b/g;
 // Blakadder "zigbeemodel" entries are often internal pids like "lumi.sensor_magnet.aq2",
 // "ZB-SW01", "ptvo.switch", "TS0601", "_TZE200_...". We extract all of these.
 
-function fetchUrl(url) {
-  return new Promise((resolve, reject) => {
-    const req = https.get(url, { headers: { 'User-Agent': USER_AGENT, 'Accept': '*/*' } }, (res) => {
-      if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
-        return fetchUrl(res.headers.location).then(resolve, reject);
-      }
-      if (res.statusCode !== 200) {
-        return reject(new Error('HTTP ' + res.statusCode + ' for ' + url));
-      }
-      let body = '';
-      res.setEncoding('utf8');
-      res.on('data', c => body += c);
-      res.on('end', () => resolve(body));
-    });
-    req.on('error', reject);
-    req.setTimeout(60000, () => req.destroy(new Error('timeout')));
-  });
-}
-
 function parseBlakadderJs(jsText) {
   // Strip the "window.database = " prefix and the trailing ";"
   let s = jsText.trim();
   const m = s.match(/^window\.database\s*=\s*([\s\S]+?)\s*;?\s*$/);
   if (!m) throw new Error('Could not locate window.database = {...} payload');
-  // Wrap in parens and JSON.parse — keys are already quoted strings
-  const jsonText = '(' + m[1] + ')';
+  // Convert JS object literal → valid JSON: handle trailing commas, comments,
+  // unquoted keys. Blakadder occasionally has these in their DB.
+  let jsonText = m[1];
+  // Remove single-line comments
+  jsonText = jsonText.replace(/\/\/[^\n]*/g, '');
+  // Remove block comments
+  jsonText = jsonText.replace(/\/\*[\s\S]*?\*\//g, '');
+  // Quote unquoted keys: `key: value` → `"key": value`
+  jsonText = jsonText.replace(/([{,]\s*)([a-zA-Z_$][a-zA-Z0-9_$]*)\s*:/g, '$1"$2":');
+  // Remove trailing commas in objects/arrays
+  jsonText = jsonText.replace(/,(\s*[}\]])/g, '$1');
+  // JSON.parse (no paren-wrap: that breaks the parse)
   return JSON.parse(jsonText);
 }
 
@@ -131,8 +122,19 @@ async function main() {
 
   console.log('  GET', SOURCE_URL);
   const t0 = Date.now();
-  const jsText = await fetchUrl(SOURCE_URL);
-  console.log('  Received ' + (jsText.length / 1024).toFixed(1) + ' KB in ' + ((Date.now() - t0) / 1000).toFixed(1) + 's');
+  // P55 — use smart-fetch (cache + retry + adaptive rate limit)
+  const blakFetcher = new SmartFetcher({
+    source: 'blakadder',
+    userAgent: USER_AGENT,
+    headers: { 'Accept': '*/*' },
+    maxRetries: 3,
+    baseBackoffMs: 1000,
+  });
+  const r = await blakFetcher.fetch(SOURCE_URL);
+  const jsText = r.body.toString('utf8');
+  console.log('  Received ' + (jsText.length / 1024).toFixed(1) + ' KB in ' + ((Date.now() - t0) / 1000).toFixed(1) + 's' + (r.fromCache ? ' (CACHED ' + (r.notModified ? '304' : 'stale') + ')' : ' (FRESH)'));
+  const stats = blakFetcher.getStats();
+  if (stats.metrics) console.log('  Stats: avgDur=' + stats.metrics.avgDurationMs + 'ms, 429s=' + stats.metrics.total429 + ', consecutiveSuccess=' + stats.metrics.consecutiveSuccess);
 
   console.log('  Parsing...');
   const raw = parseBlakadderJs(jsText);

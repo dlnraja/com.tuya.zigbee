@@ -20,6 +20,7 @@
 const fs = require('fs');
 const path = require('path');
 const https = require('https');
+const { SmartFetcher } = require(path.resolve(__dirname, '..', '..', 'lib', 'scraper', 'smart-fetch'));
 
 const repoRoot = path.resolve(__dirname, '..', '..');
 const outputFile = path.join(repoRoot, '.github', 'state', 'activity-snapshot.json');
@@ -28,35 +29,54 @@ const repo = 'dlnraja/com.tuya.zigbee';
 
 function log(...args) { console.log('[P30 activity]', ...args); }
 
-function httpsGet(url, headers = {}) {
-  return new Promise((resolve, reject) => {
-    const req = https.get(url, { headers, timeout: 60000 }, (res) => {
-      let data = '';
-      res.on('data', chunk => { data += chunk; });
-      res.on('end', () => {
-        if (res.statusCode >= 200 && res.statusCode < 300) {
-          try { resolve(JSON.parse(data)); } catch (e) { reject(new Error(`Parse: ${e.message}`)); }
-        } else if (res.statusCode === 404) { resolve(null); }
-        else { reject(new Error(`HTTP ${res.statusCode}: ${data.substring(0, 200)}`)); }
-      });
-    });
-    req.on('error', reject);
-    req.on('timeout', () => { req.destroy(); reject(new Error('Timeout')); });
-  });
+// P55 — smart fetchers (cache + retry + adaptive rate limit)
+const ghFetcher = new SmartFetcher({
+  source: 'github',
+  userAgent: 'P30-activity-fetcher',
+  concurrency: 8,
+  maxRetries: 3,
+  baseBackoffMs: 2000,
+  headers: {
+    'Accept': 'application/vnd.github+json',
+    ...(ghToken ? { 'Authorization': 'token ' + ghToken } : {}),
+  },
+});
+const forumFetcher = new SmartFetcher({
+  source: 'forum-topic',
+  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+  concurrency: 4,
+  maxRetries: 2,
+  baseBackoffMs: 3000,
+  defaultDelay: 250,
+  headers: { 'Accept': 'application/json, text/plain, */*', 'Referer': 'https://community.homey.app/' },
+});
+
+async function httpsGet(url, headers = {}) {
+  // Use the appropriate fetcher based on URL host
+  const fetcher = url.includes('api.github.com') ? ghFetcher : forumFetcher;
+  try {
+    const r = await fetcher.fetch(url, { headers });
+    if (r.statusCode >= 200 && r.statusCode < 300) {
+      try { return JSON.parse(r.body.toString('utf8')); } catch (e) { throw new Error('Parse: ' + e.message); }
+    }
+    if (r.statusCode === 404) return null;
+    throw new Error('HTTP ' + r.statusCode + ': ' + r.body.toString('utf8').substring(0, 200));
+  } catch (e) {
+    if (e.message?.includes('Parse')) throw e;
+    throw e;
+  }
 }
 
 async function fetchGHIssues(state) {
   if (!ghToken) return [];
   try {
-    const open = await httpsGet(
+    // P55 — parallel batch
+    const urls = [
       `https://api.github.com/repos/${repo}/issues?state=open&per_page=50`,
-      { 'Authorization': `token ${ghToken}`, 'Accept': 'application/vnd.github+json', 'User-Agent': 'P30-activity-fetcher' }
-    );
-    const recent = await httpsGet(
       `https://api.github.com/repos/${repo}/issues?state=all&per_page=30&since=${state.lastGHFetch || '2026-07-01T00:00:00Z'}`,
-      { 'Authorization': `token ${ghToken}`, 'Accept': 'application/vnd.github+json', 'User-Agent': 'P30-activity-fetcher' }
-    );
-    return { open, recent };
+    ];
+    const results = await ghFetcher.fetchAll(urls, { concurrency: 2 });
+    return { open: results[0].error ? [] : JSON.parse(results[0].body.toString('utf8')), recent: results[1].error ? [] : JSON.parse(results[1].body.toString('utf8')) };
   } catch (err) {
     log('❌ GH issues error:', err.message);
     return { open: [], recent: [] };
@@ -145,32 +165,37 @@ async function fetchForumTopics() {
       const topicIds = [...new Set(search.posts.map(p => p.topic_id).filter(Boolean))].slice(0, 15);
       searchResults = topicIds;
 
-      for (const tid of topicIds) {
+      // P55 — parallel fetch all topic details (smartFetcher handles cache + retry + 429)
+      const tTopic = Date.now();
+      const detailResults = await forumFetcher.fetchAll(topicIds.map(tid => `${forumBase}/t/${tid}.json`), {
+        concurrency: forumFetcher.concurrency,
+        onProgress: (d, t) => process.stdout.write(`\r  [Forum] ${d}/${t}    `),
+      });
+      console.log(`\r  [Forum] Done in ${Date.now() - tTopic}ms`);
+      for (let i = 0; i < topicIds.length; i++) {
+        const tid = topicIds[i];
+        const r = detailResults[i];
+        if (r.error || !r.body) continue;
         try {
-          const detail = await httpsGet(
-            `${forumBase}/t/${tid}.json`,
-            { 'User-Agent': 'Mozilla/5.0 (P30-activity-fetcher)' }
-          );
-          if (detail) {
-            const posts = (detail.post_stream?.posts || []).map(p => ({
-              id: p.id,
-              username: p.username,
-              createdAt: p.created_at,
-              cooked: (p.cooked || '').replace(/<[^>]+>/g, '').substring(0, 1000),
-            }));
-            topicDetails.push({
-              id: tid,
-              title: detail.title,
-              slug: detail.slug,
-              createdAt: detail.created_at,
-              lastPostedAt: detail.last_posted_at,
-              postsCount: detail.posts_count,
-              views: detail.views,
-              likeCount: detail.like_count,
-              posts,
-              url: `${forumBase}/t/${detail.slug}/${tid}`,
-            });
-          }
+          const detail = JSON.parse(r.body.toString('utf8'));
+          const posts = (detail.post_stream?.posts || []).map(p => ({
+            id: p.id,
+            username: p.username,
+            createdAt: p.created_at,
+            cooked: (p.cooked || '').replace(/<[^>]+>/g, '').substring(0, 1000),
+          }));
+          topicDetails.push({
+            id: tid,
+            title: detail.title,
+            slug: detail.slug,
+            createdAt: detail.created_at,
+            lastPostedAt: detail.last_posted_at,
+            postsCount: detail.posts_count,
+            views: detail.views,
+            likeCount: detail.like_count,
+            posts,
+            url: `${forumBase}/t/${detail.slug}/${tid}`,
+          });
         } catch (e) { /* skip topic */ }
       }
     }
