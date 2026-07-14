@@ -236,13 +236,31 @@ async function scanMiotSpec() {
     if (index && index.services) {
       console.log(`  Found ${index.services.length} service types`);
 
-      for (const service of index.services) {
-        // Each service type URL contains device definitions
-        const serviceSpec = await fetchMiotSpecDeviceType(service.type);
+      // P53.5: parallelize the per-service fetches (was sequential, 100+ URLs = 100s+)
+      // Use fetchAll (with rate limit) when available, else Promise.all
+      const serviceUrls = index.services.map(s => s.type);
+      let serviceResults;
+      if (fetchAll) {
+        // fetchAll returns results in same order as input
+        const fetched = await fetchAll(serviceUrls, {
+          concurrency: 30,
+          timeout: 30000,
+          perHost: { 'miot-spec.org': 30 },
+          onProgress: (d, t) => process.stdout.write(`\r    services ${d}/${t}...`),
+        });
+        process.stdout.write('\n');
+        serviceResults = fetched;
+      } else {
+        serviceResults = await Promise.all(serviceUrls.map(u =>
+          fetchMiotSpecDeviceType(u).catch(() => null)
+        ));
+      }
+      for (let si = 0; si < index.services.length; si++) {
+        const serviceSpec = serviceResults[si];
         if (serviceSpec && serviceSpec.type) {
           allSpecs.push({
             ...serviceSpec,
-            category: service.description,
+            category: index.services[si].description,
           });
         }
       }
@@ -252,26 +270,42 @@ async function scanMiotSpec() {
   }
 
   // Also try known device type URLs
-  // P53: parallelize category fetches
+  // P53: parallelize category fetches (but use fetchAll for rate-limiting)
+  // P53.5: 18 categories × 10 instances = 180 concurrent raw fetches via Promise.all was too many
+  // Now: category index fetched sequentially, but instance fetches go through fetchAll
   const categoryTasks = MIOT_CATEGORIES.map(async (category) => {
     try {
       const specUrl = `${MIOT_SPEC_BASE}/devicetype?type=urn:miot-spec-v2:device:${category}:0000A001`;
       const spec = await httpGet(specUrl);
       if (spec && spec.instances) {
         console.log(`  ${category}: ${spec.instances.length} device types`);
-        // Parallelize instance fetches
-        const instanceTasks = spec.instances.slice(0, 10).map(instance => {
-          return fetchMiotSpecDeviceType(`${MIOT_SPEC_INSTANCE}/${instance.type}`)
-            .then(deviceSpec => deviceSpec ? { ...deviceSpec, category, instance: instance.description } : null)
-            .catch(() => null);
-        });
-        const deviceSpecs = fetchAll
-          ? (await Promise.all(instanceTasks)).filter(Boolean)
-          : (await (async () => {
+        // Use fetchAll for instance fetches (rate-limited parallel)
+        const instanceUrls = spec.instances.slice(0, 10).map(i => `${MIOT_SPEC_INSTANCE}/${i.type}`);
+        const results = await (fetchAll
+          ? fetchAll(instanceUrls, {
+              concurrency: 30,
+              timeout: 30000,
+              perHost: { 'miot-spec.org': 30 },
+            })
+          : (async () => {
               const out = [];
-              for (const t of instanceTasks) { const r = await t; if (r) out.push(r); }
+              for (const u of instanceUrls) {
+                const r = await fetchMiotSpecDeviceType(u);
+                out.push(r ? { url: u, body: Buffer.from(JSON.stringify(r)) } : { url: u, error: 'fail' });
+              }
               return out;
             })());
+        const deviceSpecs = [];
+        for (let ii = 0; ii < results.length; ii++) {
+          const r = results[ii];
+          if (r.error || !r.body) continue;
+          try {
+            const spec = typeof r.body === 'string' ? JSON.parse(r.body) : r.body;
+            if (spec && spec.type) {
+              deviceSpecs.push({ ...spec, category, instance: spec.instances?.[ii]?.description || '' });
+            }
+          } catch (e) { /* skip */ }
+        }
         return deviceSpecs;
       }
     } catch (e) {
@@ -280,16 +314,15 @@ async function scanMiotSpec() {
     return [];
   });
 
-  const categoryResults = fetchAll
-    ? (await Promise.all(categoryTasks)).flat()
-    : (await (async () => {
-        const out = [];
-        for (const t of categoryTasks) {
-          const r = await t;
-          if (r) out.push(...r);
-        }
-        return out;
-      })());
+  // P53.5: use fetchAll-style rate limiting for category fetches
+  // Sequential for category index (18 calls is fine), but instances use fetchAll above
+  const categoryResults = [];
+  for (const t of categoryTasks) {
+    try {
+      const r = await t;
+      if (r) categoryResults.push(...r);
+    } catch (e) { /* skip */ }
+  }
   allSpecs.push(...categoryResults);
 
   return allSpecs;

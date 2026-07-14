@@ -241,10 +241,11 @@ async function scan() {
       const urls = newFiles.map(f => f.download_url || `${OPENHAB_RAW}/${repoInfo.owner}/${repoInfo.repo}/${repoInfo.path}/${f.name}`);
       let fetched = [];
       if (fetchAll && urls.length > 0) {
+        // P53.5: bumped concurrency 10 -> 30 for slow GHA network
         fetched = await fetchAll(urls, {
-          concurrency: 10,
+          concurrency: 30,
           timeout: 30000,
-          perHost: { 'raw.githubusercontent.com': 20 },
+          perHost: { 'raw.githubusercontent.com': 30 },
           onProgress: (d, t) => process.stdout.write(`\r    fetching ${d}/${t}...`),
         });
         process.stdout.write('\n');
