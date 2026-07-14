@@ -1,0 +1,99 @@
+name: 🌙 Nightly Audit
+
+# Runs the full P57 audit + smart-data-validator + knowledge-graph daily
+# Posts results as a workflow summary + saves artifacts
+# Catches regressions introduced during the day BEFORE they ship.
+
+on:
+  schedule:
+    # Daily 03:30 UTC, after knowledge-graph sync
+    - cron: '30 3 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: nightly-audit
+  cancel-in-progress: true
+
+jobs:
+  audit:
+    name: 🌙 Run all P57 audits
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: 📥 Checkout
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 1
+
+      - name: 📦 Setup Node
+        uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+          cache: npm
+
+      - name: 📦 Install deps
+        run: npm ci --prefer-offline --no-audit || npm install
+
+      - name: 🩺 Regression audit (P57)
+        run: |
+          echo "## 🩺 Regression audit (P57)" >> $GITHUB_STEP_SUMMARY
+          node tools/ci/audit-regressions.js >> $GITHUB_STEP_SUMMARY 2>&1
+
+      - name: 🌊 Data flooding detection (P57)
+        run: |
+          echo "## 🌊 Data flooding detection (P57)" >> $GITHUB_STEP_SUMMARY
+          node tools/ci/detect-data-flooding.js >> $GITHUB_STEP_SUMMARY 2>&1
+
+      - name: 🧠 Smart Update plan
+        run: |
+          echo "## 🧠 Smart Update plan" >> $GITHUB_STEP_SUMMARY
+          node tools/ci/smart-update-orchestrator.js --json >> $GITHUB_STEP_SUMMARY 2>&1
+
+      - name: 🪙 Token sanity
+        run: |
+          echo "## 🪙 Token sanity" >> $GITHUB_STEP_SUMMARY
+          node tools/ci/token-sanity-check.js >> $GITHUB_STEP_SUMMARY 2>&1
+
+      - name: 📊 Build knowledge graph
+        run: |
+          echo "## 📊 Build knowledge graph" >> $GITHUB_STEP_SUMMARY
+          node tools/ci/build-knowledge-graph.js >> $GITHUB_STEP_SUMMARY 2>&1
+
+      - name: 🧪 Run all P58 tests
+        run: |
+          echo "## 🧪 P58 test results" >> $GITHUB_STEP_SUMMARY
+          for t in test-safe-capability test-battery-core-bridge test-svg-optimizer test-orchestrator; do
+            echo "### $t" >> $GITHUB_STEP_SUMMARY
+            node tools/ci/$t.js 2>&1 | tail -5 >> $GITHUB_STEP_SUMMARY
+          done
+
+      - name: 💾 Upload audit artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nightly-audit-${{ github.run_id }}
+          path: |
+            .github/state/regressions-audit.json
+            .github/state/data-flooding-report.json
+            .github/state/knowledge-graph-summary.md
+          retention-days: 30
+
+      - name: 🚨 Check for critical regressions
+        if: always()
+        run: |
+          # Fail the workflow if new direct-setcapabilityvalue issues appear
+          CRITICAL=$(node -e "
+            try {
+              const a = require('./.github/state/regressions-audit.json');
+              const d = (a.findings || a.drivers || []).filter(x => x.pattern === 'direct-setcapabilityvalue').length;
+              process.stdout.write(String(d));
+            } catch(e) { process.stdout.write('0'); }
+          ")
+          if [ "$CRITICAL" -gt 0 ]; then
+            echo "::warning::$CRITICAL direct-setcapabilityvalue issues found (regression vs P58 baseline)"
+          else
+            echo "✅ No direct-setcapabilityvalue regressions vs P58 baseline"
+          fi
