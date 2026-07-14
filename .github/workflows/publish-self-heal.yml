@@ -1,0 +1,80 @@
+name: 🩹 Publish Self-Heal
+
+# Auto-runs periodically to detect stuck/failed publishes and re-trigger them.
+# Catches the "stuck past 60min timeout" pattern that GHA sometimes has.
+# Runs every 4h, 2h after the scheduled publish-stable cron.
+
+on:
+  schedule:
+    # Every 4 hours, offset from mega-crawl and publish schedules
+    - cron: '0 4,8,12,16,20 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+
+concurrency:
+  group: publish-self-heal
+  cancel-in-progress: true
+
+jobs:
+  heal:
+    name: 🩹 Self-heal stuck publishes
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: 🔍 Find recent publish runs
+        id: find
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Look for runs of "🚀 Publish Stable to Test" that are stuck > 90 min
+          # (normal publish takes 5-10 min; > 90 min = stuck)
+          STUCK_RUNS=$(gh run list \
+            --workflow "🚀 Publish Stable to Test" \
+            --limit 5 \
+            --json databaseId,status,createdAt,updatedAt \
+            | python3 -c "
+              import sys, json, datetime
+              d = json.load(sys.stdin)
+              now = datetime.datetime.now(datetime.timezone.utc)
+              stuck = []
+              for r in d:
+                if r['status'] == 'in_progress':
+                  started = datetime.datetime.fromisoformat(r['createdAt'].replace('Z', '+00:00'))
+                  age_min = (now - started).total_seconds() / 60
+                  if age_min > 90:
+                    stuck.append(f\"{r['databaseId']} ({age_min:.0f}min)\")
+              if stuck:
+                print('\\n'.join(stuck))
+              else:
+                print('OK')
+            ")
+          echo "## 🔍 Stuck publish runs (>90 min in_progress)" >> $GITHUB_STEP_SUMMARY
+          echo "$STUCK_RUNS" >> $GITHUB_STEP_SUMMARY
+          echo "stuck_runs=$STUCK_RUNS" >> $GITHUB_OUTPUT
+
+      - name: 🛑 Cancel stuck runs
+        if: steps.find.outputs.stuck_runs != 'OK'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          echo "## 🛑 Cancelling stuck runs" >> $GITHUB_STEP_SUMMARY
+          for run_id in $(echo "${{ steps.find.outputs.stuck_runs }}" | awk '{print $1}'); do
+            echo "- Cancelling $run_id" >> $GITHUB_STEP_SUMMARY
+            gh run cancel "$run_id" 2>&1 || true
+          done
+
+      - name: 🔁 Re-trigger publish-stable
+        if: steps.find.outputs.stuck_runs != 'OK'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          echo "## 🔁 Re-triggering publish" >> $GITHUB_STEP_SUMMARY
+          gh workflow run "🚀 Publish Stable to Test" --ref stable-v5 2>&1 | tee -a $GITHUB_STEP_SUMMARY
+
+      - name: ✅ All good
+        if: steps.find.outputs.stuck_runs == 'OK'
+        run: |
+          echo "## ✅ No stuck publish runs detected" >> $GITHUB_STEP_SUMMARY
