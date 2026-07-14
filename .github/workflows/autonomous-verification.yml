@@ -1,3 +1,8 @@
+defaults:
+  run:
+    shell: bash
+
+---
 name: Autonomous Verification (P37)
 
 on:
@@ -62,4 +67,4 @@ jobs:
             console.log('  AutonomousVerificationEngine:',typeof A.AutonomousVerificationEngine);
             console.log('  SecurityGuard:',typeof S.SecurityGuard);
             console.log('  ✅ All modules loadable');
-          "
+          "\n

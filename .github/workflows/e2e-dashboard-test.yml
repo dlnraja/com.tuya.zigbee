@@ -1,3 +1,8 @@
+defaults:
+  run:
+    shell: bash
+
+---
 # End-to-End Dashboard Test
 #
 # Runs after every continuous-flow + on push to master.
@@ -181,4 +186,4 @@ jobs:
         run: |
           echo "::error::Process error detected in one or both apps."
           echo "Master: ${{ steps.validate-master.outputs.PROCESS_ERROR_DETECTED }}"
-          echo "Stable: ${{ steps.validate-stable.outputs.STABLE_PROCESS_ERROR }}"
+          echo "Stable: ${{ steps.validate-stable.outputs.STABLE_PROCESS_ERROR }}"\n

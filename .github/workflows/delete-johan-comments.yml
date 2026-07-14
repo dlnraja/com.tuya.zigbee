@@ -1,3 +1,8 @@
+defaults:
+  run:
+    shell: bash
+
+---
 # Delete All dlnraja Comments on Johan
 #
 # CARTE BLANCHE (P11) — deletes ALL comments by dlnraja (or dlnraja's bots)
@@ -132,4 +137,4 @@ jobs:
             cat .github/state/johan-comments-deletion-report.json | head -10
           fi
           echo ""
-          echo "Run: ${{ github.run_id }}"
+          echo "Run: ${{ github.run_id }}"\n
