@@ -243,7 +243,7 @@ async function scanMiotSpec() {
       if (fetchAll) {
         // fetchAll returns results in same order as input
         const fetched = await fetchAll(serviceUrls, {
-          concurrency: 30,
+          concurrency: 50,
           timeout: 30000,
           perHost: { 'miot-spec.org': 30 },
           onProgress: (d, t) => process.stdout.write(`\r    services ${d}/${t}...`),
@@ -283,7 +283,7 @@ async function scanMiotSpec() {
         const instanceUrls = spec.instances.slice(0, 10).map(i => `${MIOT_SPEC_INSTANCE}/${i.type}`);
         const results = await (fetchAll
           ? fetchAll(instanceUrls, {
-              concurrency: 30,
+              concurrency: 50,
               timeout: 30000,
               perHost: { 'miot-spec.org': 30 },
             })
