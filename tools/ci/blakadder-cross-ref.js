@@ -17,7 +17,7 @@
  *   - data/mfs_db.json                    (our master FP DB)
  *   - .github/state/johan-dump/devices.json
  *   - .github/state/gmail/state.json
- *   - drivers/*/driver.compose.json      (our drivers)
+ *   - drivers/<name>/driver.compose.json (our drivers)
  *
  * Outputs:
  *   - .github/state/blakadder/cross-ref-report.json
