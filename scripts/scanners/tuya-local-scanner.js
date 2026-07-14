@@ -282,10 +282,11 @@ async function scan() {
     let fetched = [];
     if (fetchAll) {
       // Single-pass: fetchAll uses diff-cache internally if available
+      // P53.5: bumped concurrency 10 -> 30 to compensate for slow GHA network (~5-10s per fetch)
       fetched = await fetchAll(urls, {
-        concurrency: 10,
+        concurrency: 30,
         timeout: 30000,
-        perHost: { 'raw.githubusercontent.com': 20, 'api.github.com': 8 },
+        perHost: { 'raw.githubusercontent.com': 30, 'api.github.com': 10 },
         onProgress: (d, t) => process.stdout.write(`\r    fetching ${d}/${t}...`),
       });
       process.stdout.write('\n');
