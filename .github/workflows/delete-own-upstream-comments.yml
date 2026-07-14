@@ -2,7 +2,6 @@ defaults:
   run:
     shell: bash
 
----
 name: "Delete My Upstream Comments (Manual)"
 
 on:
