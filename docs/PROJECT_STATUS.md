@@ -12,6 +12,8 @@
 | Unique mfrs in mfs_db | 4,149 |
 | Sacred Couples | 12,307+ |
 | External Sources | 15 (Blakadder, Johan, Gmail, Forum, Z2M, ZHA, deCONZ + 8 scanners) |
+| Drivers | 431 |
+| Fingerprints | 6,506 |
 | Last Updated | 2026-07-14 |
 
 ## P53 Highlights
