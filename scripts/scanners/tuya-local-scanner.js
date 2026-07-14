@@ -281,13 +281,20 @@ async function scan() {
 
     let fetched = [];
     if (fetchAll) {
-      // Single-pass: fetchAll uses diff-cache internally if available
       // P53.5: bumped concurrency 10 -> 30 to compensate for slow GHA network (~5-10s per fetch)
+      // P53.6: removed perHost rate limit - GH_TOKEN gives 5000 req/hr = 1.4/sec,
+      //         and rate limiting throttles us more than needed in GHA
+      // P55: throttle progress output (every 25) to avoid filling pipe buffer
+      let lastProgress = 0;
       fetched = await fetchAll(urls, {
-        concurrency: 30,
+        concurrency: 50,
         timeout: 30000,
-        perHost: { 'raw.githubusercontent.com': 30, 'api.github.com': 10 },
-        onProgress: (d, t) => process.stdout.write(`\r    fetching ${d}/${t}...`),
+        onProgress: (d, t) => {
+          if (d === t || d - lastProgress >= 25) {
+            process.stdout.write(`\r    fetching ${d}/${t}...`);
+            lastProgress = d;
+          }
+        },
       });
       process.stdout.write('\n');
     } else {
