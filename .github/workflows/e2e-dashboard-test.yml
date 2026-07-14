@@ -1,3 +1,8 @@
+defaults:
+  run:
+    shell: bash
+
+---
 # End-to-End Dashboard Test
 #
 # Runs after every continuous-flow + on push to master.
