@@ -49,8 +49,8 @@ const SCANNER_CONFIG = {
     name: 'Tuya-Local',
     outputDir: path.join(REPO_ROOT, 'data', 'scanners'),
     outputFile: 'tuya-local-results.json',
-    ttl: 24 * 60 * 60 * 1000,    // 24 hours
-    volatility: 'standard',
+    ttl: 7 * 24 * 60 * 60 * 1000, // 7 days (P53: very stable upstream, diff-cache covers changes)
+    volatility: 'very-stable',
     description: 'make-all/tuya-local YAML configs',
   },
   hubitat: {
@@ -73,8 +73,8 @@ const SCANNER_CONFIG = {
     name: 'openHAB',
     outputDir: path.join(REPO_ROOT, 'data', 'scanners'),
     outputFile: 'openhab-results.json',
-    ttl: 48 * 60 * 60 * 1000,    // 48 hours (stable upstream)
-    volatility: 'stable',
+    ttl: 7 * 24 * 60 * 60 * 1000, // 7 days (P53: stable XMLs, diff-cache covers changes)
+    volatility: 'very-stable',
     description: 'openHAB Zigbee XML thing definitions',
   },
   domoticz: {
@@ -89,8 +89,8 @@ const SCANNER_CONFIG = {
     name: 'Xiaomi MIoT',
     outputDir: path.join(REPO_ROOT, 'data', 'scanners'),
     outputFile: 'xiaomi-miot-results.json',
-    ttl: 24 * 60 * 60 * 1000,    // 24 hours
-    volatility: 'standard',
+    ttl: 7 * 24 * 60 * 60 * 1000, // 7 days (P53: stable MIoT spec, diff-cache covers changes)
+    volatility: 'very-stable',
     description: 'miot-spec.org + Z2M Lumi fingerprints',
   },
   'csa-iot': {

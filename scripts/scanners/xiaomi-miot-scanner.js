@@ -22,6 +22,15 @@ try {
 } catch { /* fallback: no caching */ }
 const CACHE_ID = 'xiaomi-miot';
 
+// P53: per-URL blob cache (persisted across GHA runs)
+let DiffCache;
+try { DiffCache = require('./diff-cache').DiffCache; } catch { /* fallback */ }
+let diffCache;
+
+// P53: bounded parallel fetcher
+let fetchAll;
+try { fetchAll = require('./concurrent-fetch').fetchAll; } catch { /* fallback */ }
+
 const MIOT_SPEC_BASE = 'https://miot-spec.org/miot-spec-v2';
 const MIOT_SPEC_INSTANCE = `${MIOT_SPEC_BASE}/instance`;
 const MIOT_SPEC_ORG = 'https://miot-spec.org';
@@ -71,13 +80,22 @@ function httpGet(url) {
 }
 
 function fetchRaw(url) {
+  if (diffCache) {
+    return diffCache.fetchIfChanged(url, { timeout: 30000 })
+      .then(r => r.body.toString('utf8'))
+      .catch(() => fetchRawPlain(url));
+  }
+  return fetchRawPlain(url);
+}
+
+function fetchRawPlain(url) {
   return new Promise((resolve, reject) => {
     https.get(url, {
       headers: { 'User-Agent': 'HomeyTuyaScanner/1.0' },
       timeout: 30000,
     }, (res) => {
       if (res.statusCode === 301 || res.statusCode === 302) {
-        return fetchRaw(res.headers.location).then(resolve, reject);
+        return fetchRawPlain(res.headers.location).then(resolve, reject);
       }
       if (res.statusCode !== 200) return reject(new Error(`HTTP ${res.statusCode}`));
       let data = '';
@@ -234,27 +252,45 @@ async function scanMiotSpec() {
   }
 
   // Also try known device type URLs
-  for (const category of MIOT_CATEGORIES) {
+  // P53: parallelize category fetches
+  const categoryTasks = MIOT_CATEGORIES.map(async (category) => {
     try {
       const specUrl = `${MIOT_SPEC_BASE}/devicetype?type=urn:miot-spec-v2:device:${category}:0000A001`;
       const spec = await httpGet(specUrl);
       if (spec && spec.instances) {
         console.log(`  ${category}: ${spec.instances.length} device types`);
-        for (const instance of spec.instances.slice(0, 10)) {
-          const deviceSpec = await fetchMiotSpecDeviceType(`${MIOT_SPEC_INSTANCE}/${instance.type}`);
-          if (deviceSpec) {
-            allSpecs.push({
-              ...deviceSpec,
-              category,
-              instance: instance.description,
-            });
-          }
-        }
+        // Parallelize instance fetches
+        const instanceTasks = spec.instances.slice(0, 10).map(instance => {
+          return fetchMiotSpecDeviceType(`${MIOT_SPEC_INSTANCE}/${instance.type}`)
+            .then(deviceSpec => deviceSpec ? { ...deviceSpec, category, instance: instance.description } : null)
+            .catch(() => null);
+        });
+        const deviceSpecs = fetchAll
+          ? (await Promise.all(instanceTasks)).filter(Boolean)
+          : (await (async () => {
+              const out = [];
+              for (const t of instanceTasks) { const r = await t; if (r) out.push(r); }
+              return out;
+            })());
+        return deviceSpecs;
       }
     } catch (e) {
       // Category might not exist
     }
-  }
+    return [];
+  });
+
+  const categoryResults = fetchAll
+    ? (await Promise.all(categoryTasks)).flat()
+    : (await (async () => {
+        const out = [];
+        for (const t of categoryTasks) {
+          const r = await t;
+          if (r) out.push(...r);
+        }
+        return out;
+      })());
+  allSpecs.push(...categoryResults);
 
   return allSpecs;
 }
@@ -338,6 +374,12 @@ async function scan() {
     }
   }
 
+  // P53: per-URL diff cache
+  if (DiffCache) {
+    diffCache = new DiffCache(CACHE_ID);
+    console.log(`Diff cache: ${diffCache.listEntries().length} URLs already cached`);
+  }
+
   const { mfrs: localMfrs, driverMap } = getLocalFingerprints();
   console.log(`Loaded ${localMfrs.size} local manufacturer fingerprints`);
 
@@ -357,14 +399,39 @@ async function scan() {
     'https://raw.githubusercontent.com/Koenkk/zigbee-herdsman-converters/master/src/devices/lumi.ts',
   ];
 
-  for (const fileUrl of z2mFiles) {
-    try {
-      const source = await fetchRaw(fileUrl);
-      const parsed = parseZigbeeSource(source, fileUrl.split('/').pop());
-      zigbeeDevices.push(parsed);
-      console.log(`Parsed ${fileUrl.split('/').pop()}: ${parsed.manufacturerNames.length} mfrs`);
-    } catch (e) {
-      console.error(`Error fetching ${fileUrl}: ${e.message}`);
+  // P53: parallel fetch of z2m files (diff-cache aware)
+  if (fetchAll && z2mFiles.length > 0) {
+    const results = await fetchAll(z2mFiles, {
+      concurrency: 5,
+      timeout: 60000,
+      perHost: { 'raw.githubusercontent.com': 20 },
+    });
+    for (let i = 0; i < z2mFiles.length; i++) {
+      const fileUrl = z2mFiles[i];
+      const r = results[i];
+      if (r.error) {
+        console.error(`Error fetching ${fileUrl}: ${r.error}`);
+        continue;
+      }
+      try {
+        const source = r.body.toString('utf8');
+        const parsed = parseZigbeeSource(source, fileUrl.split('/').pop());
+        zigbeeDevices.push(parsed);
+        console.log(`Parsed ${fileUrl.split('/').pop()}: ${parsed.manufacturerNames.length} mfrs`);
+      } catch (e) {
+        console.error(`Error parsing ${fileUrl}: ${e.message}`);
+      }
+    }
+  } else {
+    for (const fileUrl of z2mFiles) {
+      try {
+        const source = await fetchRaw(fileUrl);
+        const parsed = parseZigbeeSource(source, fileUrl.split('/').pop());
+        zigbeeDevices.push(parsed);
+        console.log(`Parsed ${fileUrl.split('/').pop()}: ${parsed.manufacturerNames.length} mfrs`);
+      } catch (e) {
+        console.error(`Error fetching ${fileUrl}: ${e.message}`);
+      }
     }
   }
 
@@ -378,21 +445,36 @@ async function scan() {
     try {
       const searchResult = await githubGet(`/search/code?q=${encodeURIComponent(query)}&per_page=10`);
       const items = searchResult.items || [];
-      for (const item of items) {
-        if (!item.path || (!item.path.endsWith('.ts') && !item.path.endsWith('.js'))) continue;
-        const repoFullName = item.repository?.full_name;
-        if (!repoFullName) continue;
 
+      // Filter to .ts/.js only
+      const candidates = items.filter(item => {
+        if (!item.path || (!item.path.endsWith('.ts') && !item.path.endsWith('.js'))) return false;
+        if (!item.repository?.full_name) return false;
+        return true;
+      });
+
+      // P53: parallel fetch
+      const fetchTasks = candidates.map(item => {
+        const repoFullName = item.repository.full_name;
+        const mainUrl = `https://raw.githubusercontent.com/${repoFullName}/main/${item.path}`;
+        return fetchRaw(mainUrl)
+          .then(body => ({ item, body, url: mainUrl }))
+          .catch(() => {
+            const masterUrl = `https://raw.githubusercontent.com/${repoFullName}/master/${item.path}`;
+            return fetchRaw(masterUrl).then(body => ({ item, body, url: masterUrl })).catch(e => ({ item, error: e.message }));
+          });
+      });
+      const fetched = fetchAll ? await Promise.all(fetchTasks) : await (async () => {
+        const out = [];
+        for (const t of fetchTasks) out.push(await t);
+        return out;
+      })();
+
+      for (const r of fetched) {
+        if (r.error || !r.body) continue;
         try {
-          const rawUrl = `https://raw.githubusercontent.com/${repoFullName}/main/${item.path}`;
-          let source;
-          try {
-            source = await fetchRaw(rawUrl);
-          } catch (e) {
-            const altUrl = `https://raw.githubusercontent.com/${repoFullName}/master/${item.path}`;
-            source = await fetchRaw(altUrl);
-          }
-          const parsed = parseZigbeeSource(source, item.path);
+          const source = typeof r.body === 'string' ? r.body : r.body.toString('utf8');
+          const parsed = parseZigbeeSource(source, r.item.path);
           if (parsed.manufacturerNames.length > 0) {
             zigbeeDevices.push(parsed);
           }
@@ -455,6 +537,12 @@ async function scan() {
   if (cache) {
     cache.save(output);
     console.log(`Cache SAVED (TTL: 24h)`);
+  }
+
+  // P53: log diff cache stats
+  if (diffCache) {
+    const s = diffCache.getStats();
+    console.log(`Diff cache stats: ${s.hits} hits, ${s.misses} misses, ${s.notModified} 304s, ${(s.bytesFetched/1024).toFixed(1)}KB fetched, ${(s.bytesCached/1024).toFixed(1)}KB cached`);
   }
 
   return output;

@@ -1,0 +1,101 @@
+# Mega Crawler — P53
+# Runs ALL external source crawlers in sequence (Blakadder, Johan, Gmail, Forum, Z2M, ZHA, deCONZ, scanners)
+# Schedule: daily 02:00 UTC
+name: 🕷️ Mega Crawler
+
+on:
+  schedule:
+    # Daily at 02:00 UTC (before recurrent-orchestrator at 03:30)
+    - cron: '0 2 * * *'
+  workflow_dispatch:
+    inputs:
+      only:
+        description: 'Run only one crawler (e.g. blakadder, johan, gmail, z2m)'
+        required: false
+        type: string
+      skip:
+        description: 'Skip crawlers (comma-separated, e.g. gmail,forum)'
+        required: false
+        type: string
+      timeout:
+        description: 'Per-crawler timeout in seconds (default 600)'
+        required: false
+        type: string
+        default: '600'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mega-crawl
+  cancel-in-progress: false
+
+defaults:
+  run:
+    shell: bash
+
+env:
+  NODE_VERSION: '22'
+
+jobs:
+  mega-crawl:
+    name: 🕷️ Mega Crawl
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      GH_PAT: ${{ secrets.GH_PAT }}
+      GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+
+    steps:
+      - name: 📥 Checkout
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 📦 Setup Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+
+      - name: 📦 Install deps
+        run: |
+          if [ -f package.json ]; then npm ci --prefer-offline --no-audit || npm install; else echo "No package.json"; fi
+
+      # P53: restore previous scanner-blob cache (this is the KEY fix for
+      # the 4 timeout scanners: tuya-local, openhab, xiaomi-miot, csa-iot).
+      # Subsequent runs use 304 Not Modified for unchanged files → ~1s.
+      - name: 📥 Restore scanner-blob cache
+        uses: actions/cache@v4
+        with:
+          path: .cache/scanner-blobs/
+          key: mega-crawl-scanner-blobs-${{ github.run_id }}
+          restore-keys: |
+            mega-crawl-scanner-blobs-
+
+      - name: 🕷️ Run Mega Crawler
+        id: crawl
+        run: |
+          ARGS=""
+          if [ -n "${{ inputs.only }}" ]; then ARGS="$ARGS --only=${{ inputs.only }}"; fi
+          if [ -n "${{ inputs.skip }}" ]; then ARGS="$ARGS --skip=${{ inputs.skip }}"; fi
+          if [ -n "${{ inputs.timeout }}" ]; then ARGS="$ARGS --timeout=${{ inputs.timeout }}"; fi
+          echo "## 🕷️ Mega Crawler" >> $GITHUB_STEP_SUMMARY
+          node tools/ci/mega-crawler.js $ARGS 2>&1 | tee mega-crawl.log
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+          cat mega-crawl.log >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+
+      - name: 📦 Upload artifacts
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: mega-crawl-data
+          path: |
+            .github/state/mega-crawl/
+            mega-crawl.log
+          if-no-files-found: warn
+          retention-days: 7
