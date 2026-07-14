@@ -1,3 +1,8 @@
+defaults:
+  run:
+    shell: bash
+
+---
 name: Activity Monitor (P30)
 
 # P30 — Daily cron that fetches all GH activity + forum + local crashes.
