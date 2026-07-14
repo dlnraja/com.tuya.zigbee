@@ -205,11 +205,20 @@ sanitizeSourceTree();
 //    a NUL created between sanitize and copy, or a non-Windows run that
 //    still ends up packaging a reserved name for a Windows-built tar).
 let skippedReserved = 0;
+let skippedBackup = 0;
+const BACKUP_FILE_REGEX = /\.(bak|backup|tmp|old|orig|swp|swo|rej)(\.[0-9]+)?$/i;
 const filter = (src, dest) => {
   const name = path.basename(src);
   if (isReservedName(name)) {
     skippedReserved++;
     console.error(`REJECTED reserved-name entry from pack: ${src}`);
+    return false;
+  }
+  // P58.7: skip Homey CLI backup files (mfs_db.json.bak.<timestamp>) — they
+  // are leftovers from prior builds and add ~19 MB to the publish dir.
+  // HOMEY_INCLUDE_MFS_DB=1 keeps them (debug use case).
+  if (BACKUP_FILE_REGEX.test(name) && process.env.HOMEY_INCLUDE_MFS_DB !== '1') {
+    skippedBackup++;
     return false;
   }
   return true;
@@ -229,6 +238,9 @@ try {
     console.error(`FATAL: ${skippedReserved} reserved-name file(s) were rejected during copy.`);
     console.error('The source tree is contaminated. Run: node scripts/maintenance/kill-stray-nulls.cjs --force');
     process.exit(2);
+  }
+  if (skippedBackup > 0) {
+    console.log(`Publish trim: skipped ${skippedBackup} backup/temp file(s) (HOMEY_INCLUDE_MFS_DB=1 to keep)`);
   }
 
   // 3) Validate mandatory manifest files exist in destination.
