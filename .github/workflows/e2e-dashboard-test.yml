@@ -202,4 +202,4 @@ jobs:
         run: |
           echo "::error::Process error detected in one or both apps."
           echo "Master: ${{ steps.validate-master.outputs.PROCESS_ERROR_DETECTED }}"
-          echo "Stable: ${{ steps.validate-stable.outputs.STABLE_PROCESS_ERROR }}"
+          echo "Stable: ${{ steps.validate-stable.outputs.STABLE_PROCESS_ERROR }}"\n
