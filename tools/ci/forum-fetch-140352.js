@@ -67,6 +67,66 @@ function fetchJson(url, opts) {
   });
 }
 
+// Puppeteer fallback for when the JSON API is rate-limited or returns HTML.
+// Requires: npm install puppeteer (~200MB Chromium download).
+// Usage: set FORUM_USE_PUPPETEER=1 in the environment.
+// Intelligent wait: we wait for the page to load, then for the JS to finish
+// rendering posts (3-5s after navigation, because Discourse loads posts lazily).
+
+async function fetchJsonPuppeteer(url) {
+  let puppeteer;
+  try {
+    puppeteer = require('puppeteer');
+  } catch (e) {
+    throw new Error('Puppeteer not installed — run `npm install puppeteer` to enable this fallback');
+  }
+  console.log('  [puppeteer] Launching browser...');
+  const browser = await puppeteer.launch({ headless: 'new', args: ['--no-sandbox', '--disable-setuid-sandbox'] });
+  try {
+    const page = await browser.newPage();
+    await page.setUserAgent(UA);
+    await page.setExtraHTTPHeaders({ 'Accept-Language': 'en-US,en;q=0.5', 'Referer': 'https://community.homey.app/' });
+
+    // For API endpoints, just fetch the JSON directly via page.goto + page.content
+    if (url.includes('.json')) {
+      const res = await page.goto(url, { waitUntil: 'networkidle2', timeout: 60000 });
+      if (!res || !res.ok()) throw new Error('HTTP ' + (res ? res.status() : 'unknown') + ' via Puppeteer');
+      // Wait for lazy-loaded content (Discourse loads posts via JS)
+      await new Promise(r => setTimeout(r, 3000));
+      const body = await page.content();
+      // Strip HTML wrapper if present
+      const json = body.replace(/^<pre[^>]*>/, '').replace(/<\/pre>$/, '').trim();
+      return JSON.parse(json);
+    }
+    // For HTML pages, wait for posts to render
+    await page.goto(url, { waitUntil: 'networkidle2', timeout: 60000 });
+    // Intelligent wait: scroll to bottom to trigger lazy loading
+    await page.evaluate(async () => {
+      await new Promise((resolve) => {
+        let totalHeight = 0;
+        const distance = 100;
+        const timer = setInterval(() => {
+          window.scrollBy(0, distance);
+          totalHeight += distance;
+          if (totalHeight >= document.body.scrollHeight) {
+            clearInterval(timer);
+            resolve();
+          }
+        }, 100);
+      });
+    });
+    // Wait for any post elements
+    try {
+      await page.waitForSelector('.topic-post, .post', { timeout: 10000 });
+    } catch (e) {
+      console.log('  [puppeteer] No posts selector found, returning HTML anyway');
+    }
+    return await page.content();
+  } finally {
+    await browser.close();
+  }
+}
+
 function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
 
 function extractMfrsPid(text) {
@@ -90,12 +150,23 @@ function stripHtml(html) {
 }
 
 async function main() {
-  console.log('=== Forum topic 140352 fetch (v2 with browser UA) ===');
+  console.log('=== Forum topic 140352 fetch (v2 with browser UA + Puppeteer fallback) ===');
   fs.mkdirSync(STATE_DIR, { recursive: true });
 
-  // 1. Topic meta (browser UA bypasses the 20-post limit)
+  const USE_PUPPETEER = process.env.FORUM_USE_PUPPETEER === '1';
+  const fetch = USE_PUPPETEER ? fetchJsonPuppeteer : fetchJson;
+  if (USE_PUPPETEER) console.log('  Mode: PUPPETEER (slow but reliable)');
+
+  // 1. Topic meta
   console.log('Fetching topic meta...');
-  const topic = await fetchJson(BASE + '/t/' + TOPIC_ID + '.json');
+  let topic;
+  try {
+    topic = await fetch(BASE + '/t/' + TOPIC_ID + '.json');
+  } catch (e) {
+    if (USE_PUPPETEER) throw e;
+    console.log('  JSON API failed, falling back to Puppeteer...');
+    topic = await fetchJsonPuppeteer(BASE + '/t/' + TOPIC_ID + '.json');
+  }
   const totalPosts = topic.posts_count || 0;
   console.log('  Topic:', topic.title);
   console.log('  Posts count:', totalPosts);
