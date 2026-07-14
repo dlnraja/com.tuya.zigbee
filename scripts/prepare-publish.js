@@ -188,6 +188,89 @@ function sanitizeSourceTree() {
     // missing we still rely on the filter below to skip reserved names.
     console.warn('Warning: kill-stray-nulls helper unavailable, relying on copy filter only:', e.message);
   }
+
+  // P58.8: Strip Homey CLI backup files (.bak.N, .tmp, .old, .bak) from
+  // .homeybuild BEFORE the copy, so the size-gate sees the trimmed build.
+  // These are leftovers from the build process and add ~19 MB across 6 files.
+  // HOMEY_INCLUDE_MFS_DB=1 keeps them (debug use case).
+  if (process.env.HOMEY_INCLUDE_MFS_DB !== '1') {
+    const BACKUP_FILE_REGEX = /\.(bak|backup|tmp|old|orig|swp|swo|rej)(\.[0-9]+)?$/i;
+    let removedBak = 0;
+    let removedBytes = 0;
+    const stack = [path.join(__dirname, '..', '.homeybuild')];
+    while (stack.length) {
+      const cur = stack.pop();
+      let entries;
+      try { entries = fs.readdirSync(cur, { withFileTypes: true }); } catch { continue; }
+      for (const e of entries) {
+        const full = path.join(cur, e.name);
+        if (e.isDirectory()) {
+          if (e.name === 'node_modules' || e.name === '.git') continue;
+          stack.push(full);
+        } else if (e.isFile() && BACKUP_FILE_REGEX.test(e.name)) {
+          try {
+            const stat = fs.statSync(full);
+            fs.rmSync(full, { force: true });
+            removedBak++;
+            removedBytes += stat.size;
+          } catch { /* skip */ }
+        }
+      }
+    }
+    if (removedBak > 0) {
+      console.log(`Sanitized ${removedBak} backup file(s) from .homeybuild (saved ${(removedBytes / 1024 / 1024).toFixed(2)} MB).`);
+    }
+  }
+
+  // P58.8: Also trim the same DEV files + mfs_db.json that the destDir
+  // trim removes. Without this, the source size-gate trips on the build
+  // dir (46+ MB) even though the prepared dir is fine.
+  const srcDir = path.join(__dirname, '..', '.homeybuild');
+  const trimFromSource = (relPath, reason) => {
+    if (process.env.HOMEY_INCLUDE_MFS_DB === '1' && relPath.includes('mfs_db.json')) return 0;
+    const full = path.join(srcDir, relPath);
+    if (!fs.existsSync(full)) return 0;
+    const stat = fs.statSync(full);
+    fs.rmSync(full, { force: true });
+    console.log(`Source trim: removed ${relPath} (${(stat.size / 1024 / 1024).toFixed(2)} MB) — ${reason}`);
+    return stat.size;
+  };
+  trimFromSource('data/mfs_db.json', 'offline enrichment cache (HOMEY_INCLUDE_MFS_DB=1 to keep)');
+  trimFromSource('data/_used_mfrs.json', 'diagnostic manufacturer inventory');
+  // Same DEV_FILES as the destDir trim
+  for (const f of ['pnpm-lock.yaml', 'pnpm-workspace.yaml', 'package-lock.json', 'yarn.lock']) {
+    trimFromSource(f, 'dev artifact');
+  }
+  // Same DEV_DIRS as the destDir trim
+  const devDirs = [
+    'tools/ci/diagnostics', 'tools/ci/.cache', 'tools/ci/__pycache__',
+    'tools/shadow-mode/tickets', 'tools/shadow-mode/.cache',
+    'data/intel-harvest', 'data/community-sync', 'data/temp_desktop_cleanup',
+    'data/archive', 'data/forum-cache', 'data/diagnostics', 'data/backups',
+  ];
+  for (const rel of devDirs) {
+    const p = path.join(srcDir, rel);
+    if (fs.existsSync(p)) {
+      try {
+        let bytes = 0;
+        const stack = [p];
+        while (stack.length) {
+          const cur = stack.pop();
+          try {
+            for (const e of fs.readdirSync(cur, { withFileTypes: true })) {
+              const full = path.join(cur, e.name);
+              if (e.isDirectory()) stack.push(full);
+              else { try { bytes += fs.statSync(full).size; } catch {} }
+            }
+          } catch {}
+        }
+        if (bytes > 0) {
+          fs.rmSync(p, { recursive: true, force: true });
+          console.log(`Source trim: removed ${rel} (${(bytes / 1024 / 1024).toFixed(2)} MB) — dev diagnostic dir`);
+        }
+      } catch {}
+    }
+  }
 }
 
 console.log(`Copying built files from ${srcDir} to ${destDir}...`);
