@@ -124439,9 +124439,9 @@
     "multiSourceCount": 1756,
     "lastAggregation": "2026-06-19T20:58:49.874Z",
     "lastEnrichment": "2026-07-13T04:59:38.214Z",
-    "sacredCouples": 8312,
+    "sacredCouples": 8342,
     "lastSacredCoupleEnrichment": "2026-07-13T23:57:58.590Z",
-    "fingerprints": 1715,
+    "fingerprints": 1745,
     "lastUpdate": "2026-07-14"
   },
   "diff": {
@@ -216111,6 +216111,200 @@
       "confidence": 0.95
     },
     "_tz3000_ugi8ky6u": {
+      "driverId": "climate_sensor",
+      "productIds": [],
+      "source": "fingerprints-2026-07-14",
+      "confidence": 0.95
+    },
+    "_TZE200_8whu6kkr": {
+      "driverId": "climate_sensor",
+      "productIds": [],
+      "source": "fingerprints-2026-07-14",
+      "confidence": 0.95
+    },
+    "_TZE200_utwgivdk": {
+      "driverId": "climate_sensor",
+      "productIds": [],
+      "source": "fingerprints-2026-07-14",
+      "confidence": 0.95
+    },
+    "_TZE204_z7a2jmyy": {
+      "driverId": "climate_sensor",
+      "productIds": [],
+      "source": "fingerprints-2026-07-14",
+      "confidence": 0.95
+    },
+    "_TZE204_zrctll6o": {
+      "driverId": "climate_sensor",
+      "productIds": [],
+      "source": "fingerprints-2026-07-14",
+      "confidence": 0.95
+    },
+    "_TZE284_xz4yr5nz": {
+      "driverId": "climate_sensor",
+      "productIds": [],
+      "source": "fingerprints-2026-07-14",
+      "confidence": 0.95
+    },
+    "_TZE204_qasifk8z": {
+      "driverId": "presence_sensor_radar",
+      "productIds": [],
+      "source": "fingerprints-2026-07-14",
+      "confidence": 0.95
+    },
+    "_TZE204_oh8y2grn": {
+      "driverId": "presence_sensor_radar",
+      "productIds": [],
+      "source": "fingerprints-2026-07-14",
+      "confidence": 0.95
+    },
+    "_TZE204_rqhsbjr2": {
+      "driverId": "presence_sensor_radar",
+      "productIds": [],
+      "source": "fingerprints-2026-07-14",
+      "confidence": 0.95
+    },
+    "_TZE284_8catj2au": {
+      "driverId": "presence_sensor_radar",
+      "productIds": [],
+      "source": "fingerprints-2026-07-14",
+      "confidence": 0.95
+    },
+    "_TZ3000_gbmcijn6": {
+      "driverId": "button_wireless_4",
+      "productIds": [
+        "TS0044"
+      ],
+      "source": "fingerprints-2026-07-14",
+      "confidence": 0.95
+    },
+    "_TZ3000_bv1czkkn": {
+      "driverId": "button_wireless_1",
+      "productIds": [
+        "TS0041"
+      ],
+      "source": "fingerprints-2026-07-14",
+      "confidence": 0.95
+    },
+    "_TZ3000_4a3l0x0t": {
+      "driverId": "button_wireless_1",
+      "productIds": [
+        "TS0041"
+      ],
+      "source": "fingerprints-2026-07-14",
+      "confidence": 0.95
+    },
+    "_TZE204_4f2wexj6": {
+      "driverId": "water_valve_smart",
+      "productIds": [],
+      "source": "fingerprints-2026-07-14",
+      "confidence": 0.95
+    },
+    "_TZE284_zjho8u0y": {
+      "driverId": "valve_irrigation",
+      "productIds": [],
+      "source": "fingerprints-2026-07-14",
+      "confidence": 0.95
+    },
+    "_TZE200_5vqk5kod": {
+      "driverId": "curtain_motor",
+      "productIds": [],
+      "source": "fingerprints-2026-07-14",
+      "confidence": 0.95
+    },
+    "_TZE204_dq7c8fng": {
+      "driverId": "curtain_motor",
+      "productIds": [],
+      "source": "fingerprints-2026-07-14",
+      "confidence": 0.95
+    },
+    "_TZE200_8z0p4dtt": {
+      "driverId": "switch_1gang",
+      "productIds": [
+        "TS0001"
+      ],
+      "source": "fingerprints-2026-07-14",
+      "confidence": 0.95
+    },
+    "_TZE200_lzqvyjtr": {
+      "driverId": "switch_1gang",
+      "productIds": [
+        "TS0001"
+      ],
+      "source": "fingerprints-2026-07-14",
+      "confidence": 0.95
+    },
+    "_TZE204_ljpxwimu": {
+      "driverId": "siren_sirentemphumidsensor",
+      "productIds": [],
+      "source": "fingerprints-2026-07-14",
+      "confidence": 0.95
+    },
+    "_TZE200_kzmjjf4u": {
+      "driverId": "door_window_sensor",
+      "productIds": [],
+      "source": "fingerprints-2026-07-14",
+      "confidence": 0.95
+    },
+    "_TZE200_mwgsmffw": {
+      "driverId": "soil_sensor",
+      "productIds": [],
+      "source": "fingerprints-2026-07-14",
+      "confidence": 0.95
+    },
+    "_TZE200_rk1wojnp": {
+      "driverId": "power_meter",
+      "productIds": [],
+      "source": "fingerprints-2026-07-14",
+      "confidence": 0.95
+    },
+    "_TZE204_6fk3wbyy": {
+      "driverId": "vibration_sensor",
+      "productIds": [],
+      "source": "fingerprints-2026-07-14",
+      "confidence": 0.95
+    },
+    "_TZE200_mja4nu3j": {
+      "driverId": "air_quality_monitor",
+      "productIds": [],
+      "source": "fingerprints-2026-07-14",
+      "confidence": 0.95
+    },
+    "_TZ3000_2hpk2v9l": {
+      "driverId": "motion_sensor",
+      "productIds": [
+        "TS0202"
+      ],
+      "source": "fingerprints-2026-07-14",
+      "confidence": 0.95
+    },
+    "_TZE200_e3kr8tbp": {
+      "driverId": "switch_2gang",
+      "productIds": [
+        "TS0002"
+      ],
+      "source": "fingerprints-2026-07-14",
+      "confidence": 0.95
+    },
+    "_TZE200_wfxuoxia": {
+      "driverId": "garage_door_opener",
+      "productIds": [],
+      "source": "fingerprints-2026-07-14",
+      "confidence": 0.95
+    },
+    "_TZE200_0hg3xegf": {
+      "driverId": "thermostatic_radiator_valve",
+      "productIds": [],
+      "source": "fingerprints-2026-07-14",
+      "confidence": 0.95
+    },
+    "_TZE204_nvkl4dkf": {
+      "driverId": "climate_sensor",
+      "productIds": [],
+      "source": "fingerprints-2026-07-14",
+      "confidence": 0.95
+    },
+    "_TZE200_hkdl0fmv": {
       "driverId": "climate_sensor",
       "productIds": [],
       "source": "fingerprints-2026-07-14",
