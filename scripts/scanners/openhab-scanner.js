@@ -22,6 +22,15 @@ try {
 } catch { /* fallback: no caching */ }
 const CACHE_ID = 'openhab';
 
+// P53: per-URL blob cache (persisted across GHA runs)
+let DiffCache;
+try { DiffCache = require('./diff-cache').DiffCache; } catch { /* fallback */ }
+let diffCache;
+
+// P53: bounded parallel fetcher
+let fetchAll;
+try { fetchAll = require('./concurrent-fetch').fetchAll; } catch { /* fallback */ }
+
 const OPENHAB_API = 'https://api.github.com';
 const OPENHAB_RAW = 'https://raw.githubusercontent.com';
 
@@ -66,13 +75,22 @@ function githubGet(urlPath) {
 }
 
 function fetchRaw(url) {
+  if (diffCache) {
+    return diffCache.fetchIfChanged(url, { timeout: 30000 })
+      .then(r => r.body.toString('utf8'))
+      .catch(() => fetchRawPlain(url));
+  }
+  return fetchRawPlain(url);
+}
+
+function fetchRawPlain(url) {
   return new Promise((resolve, reject) => {
     https.get(url, {
       headers: { 'User-Agent': 'HomeyTuyaScanner/1.0' },
       timeout: 30000,
     }, (res) => {
       if (res.statusCode === 301 || res.statusCode === 302) {
-        return fetchRaw(res.headers.location).then(resolve, reject);
+        return fetchRawPlain(res.headers.location).then(resolve, reject);
       }
       if (res.statusCode !== 200) return reject(new Error(`HTTP ${res.statusCode}`));
       let data = '';
@@ -186,6 +204,12 @@ async function scan() {
     }
   }
 
+  // P53: per-URL diff cache
+  if (DiffCache) {
+    diffCache = new DiffCache(CACHE_ID);
+    console.log(`Diff cache: ${diffCache.listEntries().length} URLs already cached`);
+  }
+
   const { mfrs: localMfrs, driverMap } = getLocalFingerprints();
   console.log(`Loaded ${localMfrs.size} local manufacturer fingerprints`);
 
@@ -205,14 +229,42 @@ async function scan() {
       const xmlFiles = items.filter((f) => f.name && f.name.endsWith('.xml'));
       console.log(`  Found ${xmlFiles.length} XML files`);
 
-      for (const file of xmlFiles) {
-        const fileKey = `${repoInfo.owner}/${repoInfo.repo}/${repoInfo.path}/${file.name}`;
-        if (processedFiles.has(fileKey)) continue;
+      // Filter out already-processed (in this run) files
+      const newFiles = xmlFiles.filter(f => {
+        const fileKey = `${repoInfo.owner}/${repoInfo.repo}/${repoInfo.path}/${f.name}`;
+        if (processedFiles.has(fileKey)) return false;
         processedFiles.add(fileKey);
+        return true;
+      });
 
+      // P53: parallel fetch (10x speedup) with diff-cache
+      const urls = newFiles.map(f => f.download_url || `${OPENHAB_RAW}/${repoInfo.owner}/${repoInfo.repo}/${repoInfo.path}/${f.name}`);
+      let fetched = [];
+      if (fetchAll && urls.length > 0) {
+        fetched = await fetchAll(urls, {
+          concurrency: 10,
+          timeout: 30000,
+          perHost: { 'raw.githubusercontent.com': 20 },
+          onProgress: (d, t) => process.stdout.write(`\r    fetching ${d}/${t}...`),
+        });
+        process.stdout.write('\n');
+      } else {
+        for (const url of urls) {
+          try { fetched.push({ url, body: Buffer.from(await fetchRaw(url)) }); }
+          catch (e) { fetched.push({ url, error: e.message }); }
+        }
+      }
+
+      for (let fi = 0; fi < newFiles.length; fi++) {
+        const file = newFiles[fi];
+        const r = fetched[fi];
+        if (r.error) {
+          console.error(`  [FAIL] ${file.name}: ${r.error}`);
+          continue;
+        }
         try {
-          const rawUrl = file.download_url || `${OPENHAB_RAW}/${repoInfo.owner}/${repoInfo.repo}/${repoInfo.path}/${file.name}`;
-          const source = await fetchRaw(rawUrl);
+          const source = r.body.toString('utf8');
+          const fileKey = `${repoInfo.owner}/${repoInfo.repo}/${repoInfo.path}/${file.name}`;
           const parsed = parseOpenHabXml(source, fileKey);
           if (parsed.manufacturerNames.length > 0 || parsed.thingTypes.length > 0) {
             const newFps = parsed.manufacturerNames.filter((m) => !localMfrs.has(m));
@@ -246,38 +298,55 @@ async function scan() {
       const items = searchResult.items || [];
       console.log(`  Found ${items.length} files`);
 
-      for (const item of items) {
-        if (!item.path || !item.path.endsWith('.xml')) continue;
+      // Filter to new XML files only
+      const newItems = items.filter(item => {
+        if (!item.path || !item.path.endsWith('.xml')) return false;
         const fileKey = `${item.repository?.full_name}/${item.path}`;
-        if (processedFiles.has(fileKey)) continue;
+        if (processedFiles.has(fileKey)) return false;
         processedFiles.add(fileKey);
+        return true;
+      });
 
+      // P53: parallel fetch with diff-cache
+      const fetchTasks = newItems.map(item => {
         const repoFullName = item.repository?.full_name;
-        if (!repoFullName) continue;
+        if (!repoFullName) return Promise.resolve({ item, error: 'no repo' });
+        // Try main first; diff-cache will help on second run
+        const mainUrl = `https://raw.githubusercontent.com/${repoFullName}/main/${item.path}`;
+        return fetchRaw(mainUrl)
+          .then(body => ({ item, body, url: mainUrl }))
+          .catch(() => {
+            const masterUrl = `https://raw.githubusercontent.com/${repoFullName}/master/${item.path}`;
+            return fetchRaw(masterUrl).then(body => ({ item, body, url: masterUrl })).catch(e => ({ item, error: e.message }));
+          });
+      });
+      const fetched = fetchAll ? await Promise.all(fetchTasks) : await (async () => {
+        const out = [];
+        for (const t of fetchTasks) out.push(await t);
+        return out;
+      })();
 
+      for (const r of fetched) {
+        if (r.error || !r.body) {
+          if (r.item) console.error(`  [FAIL] ${r.item.path}: ${r.error || 'no body'}`);
+          continue;
+        }
         try {
-          const rawUrl = `https://raw.githubusercontent.com/${repoFullName}/main/${item.path}`;
-          let source;
-          try {
-            source = await fetchRaw(rawUrl);
-          } catch (e) {
-            const altUrl = `https://raw.githubusercontent.com/${repoFullName}/master/${item.path}`;
-            source = await fetchRaw(altUrl);
-          }
-
+          const source = typeof r.body === 'string' ? r.body : r.body.toString('utf8');
+          const fileKey = `${r.item.repository?.full_name}/${r.item.path}`;
           const parsed = parseOpenHabXml(source, fileKey);
           if (parsed.manufacturerNames.length > 0) {
             const newFps = parsed.manufacturerNames.filter((m) => !localMfrs.has(m));
             allDevices.push({
               ...parsed,
-              repo: repoFullName,
+              repo: r.item.repository?.full_name,
               newFingerprints: newFps,
               isNew: newFps.length > 0,
             });
-            console.log(`  [OK] ${item.path}: ${parsed.manufacturerNames.length} mfrs`);
+            console.log(`  [OK] ${r.item.path}: ${parsed.manufacturerNames.length} mfrs`);
           }
         } catch (e) {
-          console.error(`  [FAIL] ${item.path}: ${e.message}`);
+          console.error(`  [FAIL] ${r.item.path}: ${e.message}`);
         }
       }
     } catch (e) {
@@ -311,6 +380,12 @@ async function scan() {
   if (cache) {
     cache.save(output);
     console.log(`Cache SAVED (TTL: 48h)`);
+  }
+
+  // P53: log diff cache stats
+  if (diffCache) {
+    const s = diffCache.getStats();
+    console.log(`Diff cache stats: ${s.hits} hits, ${s.misses} misses, ${s.notModified} 304s, ${(s.bytesFetched/1024).toFixed(1)}KB fetched, ${(s.bytesCached/1024).toFixed(1)}KB cached`);
   }
 
   return output;
