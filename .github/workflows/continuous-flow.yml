@@ -1,3 +1,8 @@
+defaults:
+  run:
+    shell: bash
+
+---
 # Continuous Flow — Consolidated daily workflow
 #
 # Replaces 10+ scheduled workflows:
@@ -244,4 +249,4 @@ jobs:
             🌒 Continuous flow ran successfully.
             - Mode: ${{ github.event.inputs.mode || 'schedule' }}
             - DRY_RUN: ${{ env.DRY_RUN }}
-            - Run: ${{ github.run_id }}
+            - Run: ${{ github.run_id }}\n
