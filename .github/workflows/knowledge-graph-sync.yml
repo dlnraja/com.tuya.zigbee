@@ -1,0 +1,79 @@
+name: 🧠 Knowledge Graph Daily Sync
+
+# P56 — Daily knowledge graph rebuild + smart investigations
+# Runs at 02:30 UTC (after mega-crawl at 02:00, before other 03:00+ jobs)
+# - 100% LOCAL: builds KG from docs/, drivers/, workflows/ (no external API)
+# - Smart investigations on top-3 drivers + top-3 issues + top-3 lessons
+# - Saves snapshot to .github/state/knowledge-graph-history/ (30-day retention)
+# - Detects new entities since last sync (delta tracking)
+# - ZERO external API usage (no GH, no Gmail, no Forum, no Blakadder)
+
+on:
+  schedule:
+    # Daily at 02:30 UTC (off-peak, after mega-crawl at 02:00)
+    - cron: '30 2 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: knowledge-graph-sync
+  cancel-in-progress: false
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  sync:
+    name: 🧠 Knowledge Graph Sync
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: 📥 Checkout
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 📦 Setup Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+          cache: npm
+
+      - name: 📦 Install deps
+        run: |
+          if [ -f package.json ]; then npm ci --prefer-offline --no-audit || npm install; else echo "No package.json"; fi
+
+      - name: 🧠 Run Daily Knowledge Sync
+        id: sync
+        run: |
+          echo "## 🧠 Knowledge Graph Daily Sync (P56)" >> $GITHUB_STEP_SUMMARY
+          node tools/ci/daily-knowledge-sync.js 2>&1 | tee kg-sync.log
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+          cat kg-sync.log >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+
+      - name: 📊 Display KG Summary
+        if: always()
+        run: |
+          if [ -f .github/state/knowledge-graph-summary.md ]; then
+            echo "## 📊 Knowledge Graph Summary" >> $GITHUB_STEP_SUMMARY
+            cat .github/state/knowledge-graph-summary.md >> $GITHUB_STEP_SUMMARY
+          fi
+
+      - name: 📦 Upload KG artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: knowledge-graph-data
+          path: |
+            .github/state/knowledge-graph.json
+            .github/state/knowledge-graph-summary.md
+            .github/state/investigations/
+            .github/state/knowledge-graph-history/
+          if-no-files-found: warn
+          retention-days: 30
