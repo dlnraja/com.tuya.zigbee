@@ -78,4 +78,4 @@ jobs:
           if [ -n "$(git status --porcelain)" ]; then
             git commit -m "chore(P30): daily activity monitor [skip ci]" || true
             git push || true
-          fi
+          fi\n

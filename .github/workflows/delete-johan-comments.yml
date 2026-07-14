@@ -136,4 +136,4 @@ jobs:
             cat .github/state/johan-comments-deletion-report.json | head -10
           fi
           echo ""
-          echo "Run: ${{ github.run_id }}"
+          echo "Run: ${{ github.run_id }}"\n
