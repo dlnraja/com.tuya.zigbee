@@ -114,6 +114,7 @@ jobs:
           npx homey app build
           node scripts/maintenance/fix-large-images.js
           node scripts/maintenance/optimize-build-images.cjs
+          node scripts/maintenance/optimize-build-svgs.cjs
           node scripts/maintenance/sanitize-manifest.cjs app.json .homeybuild/app.json
           npm run prepare-publish
           PUBLISH_DIR="$(node -p "require('path').join(require('os').tmpdir(), 'homey-publish-temp')")"
