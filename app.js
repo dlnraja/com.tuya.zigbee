@@ -22,6 +22,20 @@ const { registerCustomClusters } = require('./lib/zigbee/registerClusters');
 const FlowCardManager = require('./lib/flow/FlowCardManager');
 const UniversalFlowCardLoader = require('./lib/flow/UniversalFlowCardLoader');
 const FeatureFlowCards = require('./lib/flow/FeatureFlowCards');
+
+// v9.0.240 (P58): Install safeSetCapabilityValue + smartCap mixin globally on
+// every ZigBeeDevice subclass (Universal, Tuya, Light, Specific, ...).
+// Doing it at app-load ensures the method is on the prototype before any driver
+// instance is constructed.
+try {
+  const { ZigBeeDevice } = require('homey-zigbeedriver');
+  const { installSafeCapabilityMixin } = require('./lib/utils/SafeCapability');
+  const SmartCapability = require('./lib/data/SmartCapability');
+  installSafeCapabilityMixin(ZigBeeDevice);
+  SmartCapability.installSmartCapMixin(ZigBeeDevice);
+} catch (e) {
+  // Best-effort — mixin is additive, missing it is non-fatal
+}
 const CapabilityManager = require('./lib/utils/CapabilityManager');
 const AdvancedAnalytics = require('./lib/analytics/AdvancedAnalytics');
 const SmartDeviceDiscovery = require('./lib/discovery/SmartDeviceDiscovery');
