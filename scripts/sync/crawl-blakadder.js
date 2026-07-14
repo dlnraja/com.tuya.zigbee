@@ -25,7 +25,7 @@ let ScannerCache;
 try {
   ScannerCache = require('../scanners/scanner-cache').ScannerCache;
 } catch { /* fallback: no caching */ }
-const CACHE_ID = 'blakadder-v2';
+const CACHE_ID = 'blakadder';
 
 // Note: zigbee.blakadder.com does NOT expose all.json (404s to homepage).
 // The actual full DB lives in /assets/js/database.js wrapped as window.database = {...}
