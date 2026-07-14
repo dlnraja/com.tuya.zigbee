@@ -23,6 +23,29 @@ const config = {
 
 const outputFilePath = path.join(__dirname, '../../.github/state/diagnostics-report.json');
 
+// P55 — Smart retry with exponential backoff for IMAP (which is not HTTP
+// but suffers from transient connection drops)
+const MAX_RETRIES = 3;
+const BASE_BACKOFF_MS = 2000;
+
+async function withRetry(fn, label) {
+  let lastErr;
+  for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
+    try {
+      return await fn(attempt);
+    } catch (e) {
+      lastErr = e;
+      const backoff = BASE_BACKOFF_MS * Math.pow(2, attempt - 1) + Math.random() * 500;
+      console.log(`  [gmail-imap] ${label} attempt ${attempt}/${MAX_RETRIES} failed: ${e.message}`);
+      if (attempt < MAX_RETRIES) {
+        console.log(`  [gmail-imap] retrying in ${Math.round(backoff)}ms...`);
+        await new Promise(r => setTimeout(r, backoff));
+      }
+    }
+  }
+  throw lastErr;
+}
+
 async function main() {
     if (!config.imap.user || !config.imap.password) {
         console.error('Error: GMAIL_EMAIL or GMAIL_APP_PASSWORD environment variable is missing.');
@@ -32,7 +55,8 @@ async function main() {
     let connection;
     try {
         console.log(`Connecting to IMAP for ${privacy.alias('account', config.imap.user)}...`);
-        connection = await imaps.connect(config);
+        // P55 — smart retry on IMAP connect (transient network drops)
+        connection = await withRetry(() => imaps.connect(config), 'IMAP connect');
         
         await connection.openBox('INBOX');
 
@@ -49,7 +73,8 @@ async function main() {
         };
 
         console.log('Searching for recent diagnostic emails...');
-        const messages = await connection.search(searchCriteria, fetchOptions);
+        // P55 — smart retry on IMAP search
+        const messages = await withRetry(() => connection.search(searchCriteria, fetchOptions), 'IMAP search');
 
         if (messages.length === 0) {
             console.log('No new diagnostic emails found.');

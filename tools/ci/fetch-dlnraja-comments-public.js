@@ -15,30 +15,35 @@
 'use strict';
 
 const https = require('https');
+const path = require('path');
+const { SmartFetcher } = require(path.resolve(__dirname, '..', '..', 'lib', 'scraper', 'smart-fetch'));
 
 const REPO = 'JohanBendz/com.tuya.zigbee';
 const USERNAME = 'dlnraja';
 const TOKEN = process.env.GH_TOKEN || process.env.GITHUB_TOKEN;
 
-function call(path) {
-  return new Promise((resolve, reject) => {
-    const headers = {
-      'User-Agent': 'Mavis-Public-API',
-      'Accept': 'application/vnd.github+json',
-    };
-    if (TOKEN) headers['Authorization'] = 'Bearer ' + TOKEN;
-    https.get('https://api.github.com' + path, { headers }, (res) => {
-      let body = '';
-      res.on('data', c => body += c);
-      res.on('end', () => {
-        try { resolve({ status: res.statusCode, rate: parseInt(res.headers['x-ratelimit-remaining'] || '0', 10), body: JSON.parse(body) }); }
-        catch (e) { resolve({ status: res.statusCode, body: body.substring(0, 200) }); }
-      });
-    }).on('error', reject);
-  });
-}
+// P55 — use smart-fetch (cache + retry + adaptive rate limit)
+// GH_TOKEN gives 5000 req/hr (1.4 req/sec). Without token, only 60 req/hr.
+const ghFetcher = new SmartFetcher({
+  source: 'github',
+  userAgent: 'Mavis-Public-API',
+  maxRetries: 3,
+  baseBackoffMs: 2000,  // 429s from GitHub usually need 1-5s backoff
+  concurrency: TOKEN ? 10 : 2,  // Be gentle without auth
+  defaultDelay: TOKEN ? 100 : 2000,  // Sleep between requests when no token
+  headers: {
+    'Accept': 'application/vnd.github+json',
+    ...(TOKEN ? { 'Authorization': 'Bearer ' + TOKEN } : {}),
+  },
+});
 
-async function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
+async function call(apiPath) {
+  const r = await ghFetcher.fetch('https://api.github.com' + apiPath, {
+    headers: TOKEN ? { 'Authorization': 'Bearer ' + TOKEN } : {},
+  });
+  const body = JSON.parse(r.body.toString('utf8'));
+  return { status: 200, body, rate: 0 };  // rate header info not preserved, but OK
+}
 
 async function main() {
   console.log('Fetch dlnraja comments on ' + REPO);
@@ -58,41 +63,44 @@ async function main() {
       console.log('  status=' + r.status + ' body=' + JSON.stringify(r.body).substring(0, 200));
       break;
     }
-    console.log('  page=' + page + ' status=' + r.status + ' rate_remaining=' + r.rate + ' total=' + r.body.total_count);
+    console.log('  page=' + page + ' status=' + r.status + ' total=' + r.body.total_count);
     if (r.body.items) allIssues.push(...r.body.items);
     if (r.body.items.length < 100) break;
     page++;
-    await sleep(1500); // rate limit
   }
   console.log('  Total issues with dlnraja comments: ' + allIssues.length);
   console.log('');
 
-  // Step 2: For each issue, get all comments by dlnraja
-  console.log('Step 2: Fetch comments per issue...');
+  // Step 2: For each issue, get all comments by dlnraja (P55 — bounded parallel)
+  console.log('Step 2: Fetch comments per issue (parallel, concurrency=' + ghFetcher.concurrency + ')...');
+  // Build list of comment-page URLs for all issues
+  const commentUrls = [];
   for (const issue of allIssues) {
-    const issueNum = issue.number;
-    const issueTitle = (issue.title || '').substring(0, 50);
-    const allIssueComments = [];
-    let cPage = 1;
-    while (cPage <= 5) {
-      const r = await call(`/repos/${REPO}/issues/${issueNum}/comments?per_page=100&page=${cPage}`);
-      if (r.status !== 200) {
-        console.log('  #' + issueNum + ' status=' + r.status);
-        break;
-      }
-      if (!Array.isArray(r.body)) break;
-      const dlnComments = r.body.filter(c => c.user.login === USERNAME);
-      allIssueComments.push(...dlnComments);
-      allComments.push(...dlnComments);
-      if (r.body.length < 100) break;
-      cPage++;
-      await sleep(1000);
+    for (let cp = 1; cp <= 5; cp++) {
+      commentUrls.push({ issue: issue, page: cp, url: `/repos/${REPO}/issues/${issue.number}/comments?per_page=100&page=${cp}` });
     }
-    if (allIssueComments.length > 0) {
-      issues.set(issueNum, { title: issueTitle, comments: allIssueComments });
-      process.stdout.write('.');
-    } else {
-      process.stdout.write('x');
+  }
+  // Fetch in parallel (smartFetcher handles cache + retry + adaptive rate)
+  const t2 = Date.now();
+  const r2 = await ghFetcher.fetchAll(commentUrls.map(c => 'https://api.github.com' + c.url), {
+    concurrency: ghFetcher.concurrency,
+    onProgress: (d, t) => process.stdout.write(`\r  [Step 2] ${d}/${t}    `),
+  });
+  console.log(`\r  [Step 2] Done in ${Date.now() - t2}ms`);
+  for (let i = 0; i < commentUrls.length; i++) {
+    const { issue, page } = commentUrls[i];
+    const r = r2[i];
+    if (r.error || !r.body) continue;
+    let body;
+    try { body = JSON.parse(r.body.toString('utf8')); } catch { continue; }
+    if (!Array.isArray(body)) continue;
+    const dlnComments = body.filter(c => c.user?.login === USERNAME);
+    if (dlnComments.length > 0) {
+      if (!issues.has(issue.number)) {
+        issues.set(issue.number, { title: (issue.title || '').substring(0, 50), comments: [] });
+      }
+      issues.get(issue.number).comments.push(...dlnComments);
+      allComments.push(...dlnComments);
     }
   }
   console.log('\n  Total dlnraja comments found: ' + allComments.length);
