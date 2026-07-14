@@ -18,10 +18,10 @@ on:
         required: false
         type: string
       timeout:
-        description: 'Per-crawler timeout in seconds (default 600)'
+        description: 'Per-crawler timeout in seconds (default 900)'
         required: false
         type: string
-        default: '600'
+        default: '900'
 
 permissions:
   contents: write
