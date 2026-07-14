@@ -242,10 +242,10 @@ async function scan() {
       let fetched = [];
       if (fetchAll && urls.length > 0) {
         // P53.5: bumped concurrency 10 -> 30 for slow GHA network
+        // P53.6: removed perHost - throttling hurts more than helps with GH_TOKEN
         fetched = await fetchAll(urls, {
-          concurrency: 30,
+          concurrency: 50,
           timeout: 30000,
-          perHost: { 'raw.githubusercontent.com': 30 },
           onProgress: (d, t) => process.stdout.write(`\r    fetching ${d}/${t}...`),
         });
         process.stdout.write('\n');
