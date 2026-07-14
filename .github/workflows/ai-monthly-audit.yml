@@ -857,4 +857,4 @@ jobs:
             ai-audit
             monthly
             automated
-          assignees: ${{ github.repository_owner }}
+          assignees: ${{ github.repository_owner }}\n

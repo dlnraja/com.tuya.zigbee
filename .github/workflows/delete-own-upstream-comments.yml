@@ -129,4 +129,4 @@ jobs:
           echo "- Review comments found: ${{ steps.cleanup.outputs.review_found || '0' }}" >> "$GITHUB_STEP_SUMMARY"
           echo "- Issue comments deleted: ${{ steps.cleanup.outputs.issue_deleted || '0' }}" >> "$GITHUB_STEP_SUMMARY"
           echo "- Review comments deleted: ${{ steps.cleanup.outputs.review_deleted || '0' }}" >> "$GITHUB_STEP_SUMMARY"
-          echo "- Remaining after verification: ${{ steps.cleanup.outputs.remaining || 'unknown' }}" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Remaining after verification: ${{ steps.cleanup.outputs.remaining || 'unknown' }}" >> "$GITHUB_STEP_SUMMARY"\n

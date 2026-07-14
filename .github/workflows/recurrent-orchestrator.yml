@@ -94,4 +94,4 @@ jobs:
             echo "- AI: $AI" >> $GITHUB_STEP_SUMMARY
             echo "" >> $GITHUB_STEP_SUMMARY
             echo "Engine: 100% offline. AI is bonus only (never blocking)." >> $GITHUB_STEP_SUMMARY
-          fi
+          fi\n
