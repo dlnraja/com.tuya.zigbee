@@ -3,6 +3,9 @@
 name: 🗂️ Blakadder Integration
 
 on:
+  schedule:
+    # Daily at 04:00 UTC (after recurrent-orchestrator at 03:30, before continuous-flow)
+    - cron: '0 4 * * *'
   workflow_dispatch:
     inputs:
       dry_run:
