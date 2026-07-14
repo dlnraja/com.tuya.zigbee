@@ -1,3 +1,8 @@
+defaults:
+  run:
+    shell: bash
+
+---
 name: Temporal Monitor (P29.7)
 
 # P29.7 — Daily cron that scans for new GH issues matching known bug patterns.
@@ -43,4 +48,4 @@ jobs:
             git add .github/state/temporal-monitor-state.json .github/state/temporal-monitor-report.json
             git commit -m "chore(P29.7): temporal monitor daily run [skip ci]" || true
             git push || true
-          fi
+          fi\n

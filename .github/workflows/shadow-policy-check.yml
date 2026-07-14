@@ -1,3 +1,8 @@
+defaults:
+  run:
+    shell: bash
+
+---
 name: "GitHub Shadow Policy"
 
 on:
@@ -26,4 +31,4 @@ jobs:
         run: |
           node --check .github/scripts/github-shadow-policy.js
           node --check .github/scripts/check-github-shadow-policy.js
-          node .github/scripts/check-github-shadow-policy.js
+          node .github/scripts/check-github-shadow-policy.js\n
