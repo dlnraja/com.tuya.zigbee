@@ -37,7 +37,7 @@ class GasDetectorDriver extends ZigBeeDriver {
     // END TRIGGERS
     // CONDITIONS
     try {
-      const card = this.homey.flow.getConditionCard('climate_sensor_gas_gas_detector_gas_is_detected');
+      const card = this.homey.flow.getConditionCard('climate_sensor_gas_detector_gas_is_detected');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -47,7 +47,7 @@ class GasDetectorDriver extends ZigBeeDriver {
     } catch (err) { if (this.developerDebugMode) { this.error(`Condition climate_sensor_gas_gas_detector_gas_is_detected: ${err.message}`); }; }
 
     try {
-      const card = this.homey.flow.getConditionCard('climate_sensor_gas_gas_detector_co_is_detected');
+      const card = this.homey.flow.getConditionCard('climate_sensor_gas_detector_co_is_detected');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -57,7 +57,7 @@ class GasDetectorDriver extends ZigBeeDriver {
     } catch (err) { if (this.developerDebugMode) { this.error(`Condition climate_sensor_gas_gas_detector_co_is_detected: ${err.message}`); }; }
 
     try {
-      const card = this.homey.flow.getConditionCard('climate_sensor_gas_gas_detector_co_active');
+      const card = this.homey.flow.getConditionCard('climate_sensor_gas_detector_co_active');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -67,7 +67,7 @@ class GasDetectorDriver extends ZigBeeDriver {
     } catch (err) { if (this.developerDebugMode) { this.error(`Condition climate_sensor_gas_gas_detector_co_active: ${err.message}`); }; }
 
     try {
-      const card = this.homey.flow.getConditionCard('climate_sensor_gas_gas_detector_gas_active');
+      const card = this.homey.flow.getConditionCard('climate_sensor_gas_detector_gas_active');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -78,7 +78,7 @@ class GasDetectorDriver extends ZigBeeDriver {
 
     // ACTIONS
     try {
-      const card = this.homey.flow.getActionCard('climate_sensor_gas_gas_detector_test');
+      const card = this.homey.flow.getActionCard('climate_sensor_gas_detector_test');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -90,7 +90,7 @@ class GasDetectorDriver extends ZigBeeDriver {
     } catch (err) { if (this.developerDebugMode) { this.error(`Action climate_sensor_gas_gas_detector_test: ${err.message}`); }; }
 
     try {
-      const card = this.homey.flow.getActionCard('climate_sensor_gas_gas_detector_mute');
+      const card = this.homey.flow.getActionCard('climate_sensor_gas_detector_mute');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
