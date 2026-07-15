@@ -205,8 +205,13 @@ function auditManifest(app, pkg, report) {
   }
 
   const engines = pkg.engines || {};
-  if (semverMajor(engines.node) < 22) {
-    pushError(report, 'NODE22_ENGINE_REQUIRED', 'package.json', 'Node.js 22 is the current Homey app runtime target in CI and docs', { node: engines.node });
+  // v9.0.253 (P62): Changed from < 22 to < 18 to match dlnraja's v8.5.7+
+  // forum fix (post #2050) which downgraded engines.node to >=18 for
+  // Homey Pro compatibility. Homey Pro 2023/2026/mini (firmware 12.2+)
+  // uses Node 18 on initial release, Node 22 only on firmware 12.9.0-rc+.
+  // >=18 covers all compatible Homey Pro devices.
+  if (semverMajor(engines.node) < 18) {
+    pushError(report, 'NODE18_ENGINE_REQUIRED', 'package.json', 'Node.js 18+ is the minimum Homey app runtime target (Homey Pro 2023+ compatibility)', { node: engines.node });
   }
   if (semverMajor(engines.homey) < 12) {
     pushWarning(report, 'HOMEY_ENGINE_OLD', 'package.json', 'Homey engine should match the supported Homey Pro generation', { homey: engines.homey });
