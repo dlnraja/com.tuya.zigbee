@@ -110,6 +110,13 @@ jobs:
         if: env.trigger_publish == 'true' || github.event_name == 'workflow_dispatch'
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+          # v9.0.253 (P62): Bumped from 26 to 30 MB. The P62 fixes added
+          # lib/utils/SafeTimerAccessor.js + P59-P61 test files + P61
+          # mfs_db updates, pushing the publish directory to 26.07 MB.
+          HOMEY_PUBLISH_MAX_UNCOMPRESSED_MB: "30"
+          HOMEY_PUBLISH_SOURCE_MAX_MB: "30"
+          HOMEY_ZIGBEE_MAX_TOTAL_COMBOS: "30000"
+          HOMEY_ZIGBEE_MAX_DRIVER_COMBOS: "1000"
         run: |
           npx homey app build
           node scripts/maintenance/fix-large-images.js
