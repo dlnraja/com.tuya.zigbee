@@ -187,6 +187,10 @@ const SENSOR_CONFIGS = {
   },
 
   // TYPE B2: ZG-204ZV MULTISENSOR
+  // P64.12: DP mapping aligned with Z2M herdsman-converters (canonical source).
+  // Z2M ZG-204ZV uses: DP 102=fading_time, 104=humidity_calibration,
+  // 105=temperature_calibration, 107=illuminance_interval, 108=indicator,
+  // 109=temperature_unit. We previously had 102/103/104/105/107 SWAPPED.
   'ZG_204ZV_MULTISENSOR': {
     sensors: [
       '_TZE200_grgol3xp', '_TZE204_grgol3xp',
@@ -209,23 +213,26 @@ const SENSOR_CONFIGS = {
     noIasMotion: true,
     dpMap: {
       1: { cap: 'alarm_motion', type: 'presence_bool' },
+      101: { cap: 'measure_humidity', divisor: 1 },
+      106: { cap: 'measure_luminance', type: 'lux_direct' },
+      108: { cap: null, setting: 'indicator' },
+      109: { cap: null, setting: 'temperature_unit' },
+      110: { cap: 'measure_battery', divisor: 1 },
+      111: { cap: 'measure_temperature', smartDivisor: true },
+      2: { cap: null, setting: 'motion_detection_sensitivity', min: 0, max: 10 },
+      102: { cap: null, setting: 'fading_time', min: 0, max: 28800 },
+      103: { cap: null, setting: 'anti_interference' },
+      104: { cap: null, setting: 'humidity_calibration', min: -30, max: 30 },
+      105: { cap: null, setting: 'temperature_calibration', min: -20, max: 20 },
+      107: { cap: null, setting: 'illuminance_interval', min: 1, max: 720 },
+      // Best-effort extra DPs (not in Z2M, but observed in some firmware variants)
       3: { cap: 'measure_temperature', smartDivisor: true },
       4: { cap: 'measure_humidity', multiplier: 10 },
       9: { cap: 'measure_luminance', type: 'lux_direct' },
       10: { cap: 'measure_battery', divisor: 1 },
+      11: { cap: null, setting: 'motion_detection_sensitivity', min: 0, max: 19 },
       17: { cap: 'alarm_generic', type: 'bool', flowTrigger: 'sos_pressed' },
       18: { cap: 'alarm_generic', type: 'bool', flowTrigger: 'sos_pressed' },
-      101: { cap: 'measure_humidity', divisor: 1 },
-      106: { cap: 'measure_luminance', type: 'lux_direct' },
-      110: { cap: 'measure_battery', divisor: 1 },
-      111: { cap: 'measure_temperature', smartDivisor: true },
-      2: { cap: null, setting: 'fading_time', min: 0, max: 28800 },
-      11: { cap: null, setting: 'motion_detection_sensitivity', min: 0, max: 19 },
-      102: { cap: null, setting: 'illuminance_interval', min: 1, max: 720 },
-      103: { cap: null, setting: 'temperature_unit' },
-      104: { cap: null, setting: 'temperature_calibration', min: -20, max: 20 },
-      105: { cap: null, setting: 'humidity_calibration', min: -30, max: 30 },
-      107: { cap: null, setting: 'indicator' },
       113: { cap: null, internal: 'radar_scene' },
       119: { cap: null, internal: 'radar_breathing' },
       122: { cap: null, internal: 'radar_energy' },
@@ -311,7 +318,7 @@ const SENSOR_CONFIGS = {
     noTemperature: true,
     noHumidity: true,
     noIasMotion: true,
-    writableDPs: [2, 3, 4, 102, 103, 104, 105, 107, 108, 109, 110, 111, 122, 123],
+    writableDPs: [2, 3, 4, 102, 103, 104, 105, 107, 108, 109, 110, 111, 114, 115, 116, 117, 118, 119, 120, 122, 123],
     dpMap: {
       1: { cap: 'alarm_motion', type: 'presence_bool' },
       101: { cap: 'alarm_motion', type: 'motion_state_enum', enumMap: { 0: false, 1: true, 2: true, 3: true } },
@@ -331,6 +338,13 @@ const SENSOR_CONFIGS = {
       111: { cap: null, setting: 'motionless_minimum_distance', divisor: 100 },
       112: { cap: null, internal: 'reset_setting' },
       113: { cap: null, setting: 'breathe_false_detection' },
+      114: { cap: null, setting: 'time' },
+      115: { cap: null, setting: 'alarm_time', min: 0, max: 28800 },
+      116: { cap: null, setting: 'alarm_volume', min: 0, max: 100 },
+      117: { cap: null, setting: 'working_mode' },
+      118: { cap: null, internal: 'auto1' },
+      119: { cap: null, internal: 'auto2' },
+      120: { cap: null, internal: 'auto3' },
       122: { cap: null, setting: 'motion_detection_mode' },
       123: { cap: null, setting: 'motion_detection_sensitivity', min: 0, max: 10 },
     }
