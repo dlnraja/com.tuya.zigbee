@@ -157744,10 +157744,11 @@
     "_tz3000_mrduubod|ts0014": {
       "mfr": "_tz3000_mrduubod",
       "pid": "ts0014",
-      "driver": "switch_1gang",
+      "driver": "wall_switch_4gang_1way",
       "sources": [
         "canonical",
-        "user-data"
+        "user-data",
+        "p63-fix"
       ],
       "confidence": 0.95
     },
