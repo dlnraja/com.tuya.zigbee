@@ -37,7 +37,7 @@ class LedStripDriver extends ZigBeeDriver {
     // END TRIGGERS
     // CONDITIONS
     try {
-      const card = this.homey.flow.getConditionCard('device_air_purifier_led_led_strip_led_strip_is_on');
+      const card = this.homey.flow.getConditionCard('device_air_purifier_led_strip_led_strip_is_on');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -47,7 +47,7 @@ class LedStripDriver extends ZigBeeDriver {
     } catch (err) { if (this.developerDebugMode) { this.error(`Condition device_air_purifier_led_led_strip_led_strip_is_on: ${err.message}`); }; }
 
     try {
-      const card = this.homey.flow.getConditionCard('device_air_purifier_led_led_strip_is_on');
+      const card = this.homey.flow.getConditionCard('device_air_purifier_led_strip_is_on');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -58,7 +58,7 @@ class LedStripDriver extends ZigBeeDriver {
 
     // ACTIONS
     try {
-      const card = this.homey.flow.getActionCard('device_air_purifier_led_led_strip_led_strip_turn_on');
+      const card = this.homey.flow.getActionCard('device_air_purifier_led_strip_led_strip_turn_on');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -69,7 +69,7 @@ class LedStripDriver extends ZigBeeDriver {
     } catch (err) { if (this.developerDebugMode) { this.error(`Action device_air_purifier_led_led_strip_led_strip_turn_on: ${err.message}`); }; }
 
     try {
-      const card = this.homey.flow.getActionCard('device_air_purifier_led_led_strip_led_strip_turn_off');
+      const card = this.homey.flow.getActionCard('device_air_purifier_led_strip_led_strip_turn_off');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -80,7 +80,7 @@ class LedStripDriver extends ZigBeeDriver {
     } catch (err) { if (this.developerDebugMode) { this.error(`Action device_air_purifier_led_led_strip_led_strip_turn_off: ${err.message}`); }; }
 
     try {
-      const card = this.homey.flow.getActionCard('device_air_purifier_led_led_strip_led_strip_toggle');
+      const card = this.homey.flow.getActionCard('device_air_purifier_led_strip_led_strip_toggle');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -92,7 +92,7 @@ class LedStripDriver extends ZigBeeDriver {
     } catch (err) { if (this.developerDebugMode) { this.error(`Action device_air_purifier_led_led_strip_led_strip_toggle: ${err.message}`); }; }
 
     try {
-      const card = this.homey.flow.getActionCard('device_air_purifier_led_led_strip_turn_on');
+      const card = this.homey.flow.getActionCard('device_air_purifier_led_strip_turn_on');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -103,7 +103,7 @@ class LedStripDriver extends ZigBeeDriver {
     } catch (err) { if (this.developerDebugMode) { this.error(`Action device_air_purifier_led_led_strip_turn_on: ${err.message}`); }; }
 
     try {
-      const card = this.homey.flow.getActionCard('device_air_purifier_led_led_strip_turn_off');
+      const card = this.homey.flow.getActionCard('device_air_purifier_led_strip_turn_off');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -114,7 +114,7 @@ class LedStripDriver extends ZigBeeDriver {
     } catch (err) { if (this.developerDebugMode) { this.error(`Action device_air_purifier_led_led_strip_turn_off: ${err.message}`); }; }
 
     try {
-      const card = this.homey.flow.getActionCard('device_air_purifier_led_led_strip_toggle');
+      const card = this.homey.flow.getActionCard('device_air_purifier_led_strip_toggle');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -126,7 +126,7 @@ class LedStripDriver extends ZigBeeDriver {
     } catch (err) { if (this.developerDebugMode) { this.error(`Action device_air_purifier_led_led_strip_toggle: ${err.message}`); }; }
 
     try {
-      const card = this.homey.flow.getActionCard('device_air_purifier_led_led_strip_set_brightness');
+      const card = this.homey.flow.getActionCard('device_air_purifier_led_strip_set_brightness');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
