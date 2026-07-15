@@ -153569,10 +153569,12 @@
     "_tze200_ztc6ggyl|ts0601": {
       "mfr": "_tze200_ztc6ggyl",
       "pid": "ts0601",
-      "driver": "dimmer_wall_1gang",
+      "driver": "presence_sensor_radar",
       "sources": [
         "canonical",
-        "mfs_db"
+        "mfs_db",
+        "z2m",
+        "deconz"
       ],
       "confidence": 0.95
     },
