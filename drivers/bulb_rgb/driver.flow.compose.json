@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "bulb_rgb_smart_bulb_rgb_turned_on",
+      "id": "bulb_rgb_turned_on",
       "title": {
         "en": "Turned on",
         "fr": "Allumé"
@@ -13,7 +13,7 @@
       }
     },
     {
-      "id": "bulb_rgb_smart_bulb_rgb_turned_off",
+      "id": "bulb_rgb_turned_off",
       "title": {
         "en": "Turned off",
         "fr": "Éteint"
@@ -25,7 +25,7 @@
       }
     },
     {
-      "id": "bulb_rgb_smart_bulb_rgb_dim_changed",
+      "id": "bulb_rgb_dim_changed",
       "title": {
         "en": "Brightness changed",
         "fr": "Luminosité changée"
@@ -48,38 +48,6 @@
       }
     },
     {
-      "id": "bulb_rgb_turned_on",
-      "title": {
-        "en": "Turned on",
-        "fr": "Allumé",
-        "nl": "Aangezet",
-        "de": "Eingeschaltet"
-      },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turned on",
-        "fr": "Allumé",
-        "nl": "Aangezet",
-        "de": "Eingeschaltet"
-      }
-    },
-    {
-      "id": "bulb_rgb_turned_off",
-      "title": {
-        "en": "Turned off",
-        "fr": "Éteint",
-        "nl": "Uitgezet",
-        "de": "Ausgeschaltet"
-      },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turned off",
-        "fr": "Éteint",
-        "nl": "Uitgezet",
-        "de": "Ausgeschaltet"
-      }
-    },
-    {
       "id": "bulb_rgb_battery_low",
       "title": {
         "en": "Battery low",
@@ -98,37 +66,21 @@
   ],
   "conditions": [
     {
-      "id": "bulb_rgb_smart_bulb_rgb_is_on",
-      "title": {
-        "en": "Is turned !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}}"
-      },
-      "args": [],
-      "titleFormatted": {
-        "en": "Is turned !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}}"
-      }
-    },
-    {
       "id": "bulb_rgb_is_on",
       "title": {
-        "en": "Is !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}}",
-        "nl": "Is !{{aan|uit}}",
-        "de": "Ist !{{ein|aus}}"
+        "en": "Is turned !{{on|off}}",
+        "fr": "Est !{{allumé|éteint}}"
       },
       "args": [],
       "titleFormatted": {
-        "en": "Is !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}}",
-        "nl": "Is !{{aan|uit}}",
-        "de": "Ist !{{ein|aus}}"
+        "en": "Is turned !{{on|off}}",
+        "fr": "Est !{{allumé|éteint}}"
       }
     }
   ],
   "actions": [
     {
-      "id": "bulb_rgb_smart_bulb_rgb_turn_on",
+      "id": "bulb_rgb_turn_on",
       "title": {
         "en": "Turn on",
         "fr": "Allumer"
@@ -140,7 +92,7 @@
       }
     },
     {
-      "id": "bulb_rgb_smart_bulb_rgb_turn_off",
+      "id": "bulb_rgb_turn_off",
       "title": {
         "en": "Turn off",
         "fr": "Éteindre"
@@ -152,7 +104,7 @@
       }
     },
     {
-      "id": "bulb_rgb_smart_bulb_rgb_toggle",
+      "id": "bulb_rgb_toggle",
       "title": {
         "en": "Toggle on or off",
         "fr": "Basculer"
@@ -164,7 +116,7 @@
       }
     },
     {
-      "id": "bulb_rgb_smart_bulb_rgb_set_dim",
+      "id": "bulb_rgb_set_dim",
       "title": {
         "en": "Set brightness to...",
         "fr": "Régler la luminosité à..."
@@ -187,54 +139,6 @@
       "titleFormatted": {
         "en": "Set brightness to... [[brightness]]",
         "fr": "Régler la luminosité à... [[brightness]]"
-      }
-    },
-    {
-      "id": "bulb_rgb_turn_on",
-      "title": {
-        "en": "Turn on",
-        "fr": "Allumer",
-        "nl": "Aanzetten",
-        "de": "Einschalten"
-      },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turn on",
-        "fr": "Allumer",
-        "nl": "Aanzetten",
-        "de": "Einschalten"
-      }
-    },
-    {
-      "id": "bulb_rgb_turn_off",
-      "title": {
-        "en": "Turn off",
-        "fr": "Éteindre",
-        "nl": "Uitzetten",
-        "de": "Ausschalten"
-      },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turn off",
-        "fr": "Éteindre",
-        "nl": "Uitzetten",
-        "de": "Ausschalten"
-      }
-    },
-    {
-      "id": "bulb_rgb_toggle",
-      "title": {
-        "en": "Toggle",
-        "fr": "Basculer",
-        "nl": "Wisselen",
-        "de": "Umschalten"
-      },
-      "args": [],
-      "titleFormatted": {
-        "en": "Toggle",
-        "fr": "Basculer",
-        "nl": "Wisselen",
-        "de": "Umschalten"
       }
     },
     {

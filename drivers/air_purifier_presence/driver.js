@@ -37,7 +37,7 @@ class PresenceSensorRadarDriver extends ZigBeeDriver {
     // END TRIGGERS
     // CONDITIONS
     try {
-      const card = this.homey.flow.getConditionCard('air_purifier_presence_presence_sensor_radar_is_present');
+      const card = this.homey.flow.getConditionCard('air_purifier_presence_sensor_radar_is_present');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -47,7 +47,7 @@ class PresenceSensorRadarDriver extends ZigBeeDriver {
     } catch (err) { if (this.developerDebugMode) { this.error(`Condition air_purifier_presence_presence_sensor_radar_is_present: ${err.message}`); }; }
 
     try {
-      const card = this.homey.flow.getConditionCard('air_purifier_presence_presence_sensor_radar_illuminance_above');
+      const card = this.homey.flow.getConditionCard('air_purifier_presence_sensor_radar_illuminance_above');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -57,7 +57,7 @@ class PresenceSensorRadarDriver extends ZigBeeDriver {
     } catch (err) { if (this.developerDebugMode) { this.error(`Condition air_purifier_presence_presence_sensor_radar_illuminance_above: ${err.message}`); }; }
 
     try {
-      const card = this.homey.flow.getConditionCard('air_purifier_presence_presence_sensor_radar_distance_within');
+      const card = this.homey.flow.getConditionCard('air_purifier_presence_sensor_radar_distance_within');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -67,7 +67,7 @@ class PresenceSensorRadarDriver extends ZigBeeDriver {
     } catch (err) { if (this.developerDebugMode) { this.error(`Condition air_purifier_presence_presence_sensor_radar_distance_within: ${err.message}`); }; }
 
     try {
-      const card = this.homey.flow.getConditionCard('air_purifier_presence_presence_sensor_radar_motion_active');
+      const card = this.homey.flow.getConditionCard('air_purifier_presence_sensor_radar_motion_active');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;

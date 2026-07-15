@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "device_radiator_valve_smart_radiator_valve_target_temperature_changed_device_radiator_valve_smart",
+      "id": "device_radiator_valve_smart",
       "title": {
         "en": "Target temperature changed",
         "fr": "Température cible changée"
@@ -130,5 +130,6 @@
         "de": "Temperatur einstellen [[temperature]]"
       }
     }
-  ]
+  ],
+  "conditions": []
 }

@@ -16,7 +16,7 @@ async onInit() {
 
     // CONDITIONS
     try {
-      const card = this.homey.flow.getConditionCard('light_bulb_rgb_rgbw_bulb_rgb_smart_bulb_rgb_is_on');
+      const card = this.homey.flow.getConditionCard('light_bulb_rgb_rgbw_bulb_rgb_rgb_is_on');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -37,7 +37,7 @@ async onInit() {
 
     // ACTIONS
     try {
-      const card = this.homey.flow.getActionCard('light_bulb_rgb_rgbw_bulb_rgb_smart_bulb_rgb_turn_on');
+      const card = this.homey.flow.getActionCard('light_bulb_rgb_rgbw_bulb_rgb_rgb_turn_on');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -48,7 +48,7 @@ async onInit() {
     } catch (err) { if (this.developerDebugMode) { this.error(`Action light_bulb_rgb_rgbw_bulb_rgb_smart_bulb_rgb_turn_on: ${err.message}`); }; }
 
     try {
-      const card = this.homey.flow.getActionCard('light_bulb_rgb_rgbw_bulb_rgb_smart_bulb_rgb_turn_off');
+      const card = this.homey.flow.getActionCard('light_bulb_rgb_rgbw_bulb_rgb_rgb_turn_off');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -59,7 +59,7 @@ async onInit() {
     } catch (err) { if (this.developerDebugMode) { this.error(`Action light_bulb_rgb_rgbw_bulb_rgb_smart_bulb_rgb_turn_off: ${err.message}`); }; }
 
     try {
-      const card = this.homey.flow.getActionCard('light_bulb_rgb_rgbw_bulb_rgb_smart_bulb_rgb_toggle');
+      const card = this.homey.flow.getActionCard('light_bulb_rgb_rgbw_bulb_rgb_rgb_toggle');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -71,7 +71,7 @@ async onInit() {
     } catch (err) { if (this.developerDebugMode) { this.error(`Action light_bulb_rgb_rgbw_bulb_rgb_smart_bulb_rgb_toggle: ${err.message}`); }; }
 
     try {
-      const card = this.homey.flow.getActionCard('light_bulb_rgb_rgbw_bulb_rgb_smart_bulb_rgb_set_dim');
+      const card = this.homey.flow.getActionCard('light_bulb_rgb_rgbw_bulb_rgb_rgb_set_dim');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
