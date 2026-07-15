@@ -151362,12 +151362,14 @@
     "_tze200_ka8l86iu|ts0601": {
       "mfr": "_tze200_ka8l86iu",
       "pid": "ts0601",
-      "driver": "smoke_sensor2",
+      "driver": "presence_sensor_radar",
       "sources": [
         "canonical",
-        "mfs_db"
+        "mfs_db",
+        "p64-fix"
       ],
-      "confidence": 0.95
+      "confidence": 0.95,
+      "notes": "Tuya Presence Sensor (deconz #7030) — top-level already correct (presence_sensor_radar). Sacred couple had wrong smoke_sensor2 routing."
     },
     "_tze200_kb5noeto|ts0601": {
       "mfr": "_tze200_kb5noeto",

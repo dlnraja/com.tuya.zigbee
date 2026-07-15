@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "sensor_illuminance_presence_presence_detected",
+      "id": "sensor_illuminance_presence_detected",
       "highlight": true,
       "title": {
         "en": "Presence detected",
@@ -24,7 +24,7 @@
       }
     },
     {
-      "id": "sensor_illuminance_presence_presence_cleared",
+      "id": "sensor_illuminance_presence_cleared",
       "title": {
         "en": "Presence cleared",
         "nl": "Aanwezigheid opgeheven",
@@ -245,5 +245,6 @@
         "de": "Bewegung !{{ist|ist nicht}} erkannt"
       }
     }
-  ]
+  ],
+  "actions": []
 }
