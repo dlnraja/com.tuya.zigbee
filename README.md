@@ -5,17 +5,24 @@
 [![Fingerprints](https://img.shields.io/badge/fingerprints-5,546+-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![Drivers](https://img.shields.io/badge/drivers-431-brightgreen)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![Flow Cards](https://img.shields.io/badge/flow%20cards-4,844-blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
+[![Fingerprints](https://img.shields.io/badge/fingerprints-5,243+-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
+[![Fingerprints](https://img.shields.io/badge/fingerprints-5,073+-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
+[![Drivers](https://img.shields.io/badge/drivers-431-brightgreen)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
+[![Flow Cards](https://img.shields.io/badge/flow%20cards-4,915-blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![SDK](https://img.shields.io/badge/SDK-3-orange)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![License](https://img.shields.io/badge/license-GPL--3.0-red)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/LICENSE)
 [![Homey](https://img.shields.io/badge/Homey-Pro-blueviolet)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 
 A community-driven Homey app that brings local control to Tuya Zigbee devices — no cloud, no internet needed. Covers switches, sensors, lights, thermostats, covers, locks, and more across **431 drivers** and **5,546+ device fingerprints**.
+A community-driven Homey app that brings local control to Tuya Zigbee devices — no cloud, no internet needed. Covers switches, sensors, lights, thermostats, covers, locks, and more across **431 drivers** and **5,243+ device fingerprints**.
+A community-driven Homey app that brings local control to Tuya Zigbee devices — no cloud, no internet needed. Covers switches, sensors, lights, thermostats, covers, locks, and more across **431 drivers** and **5,073+ device fingerprints**.
 
 **Key features:**
 - **Local-only** — everything runs on your Homey, nothing goes to the cloud
 - **Hybrid mode** — auto-detects whether a device speaks Tuya DP or standard ZCL
 - **Smart battery** — voltage-based fallback when devices don't report percentage
 - **4,844+ flow cards** — triggers, conditions & actions in EN, FR, NL, DE
+- **4,915+ flow cards** — triggers, conditions & actions in EN, FR, NL, DE
 - **SDK3** — built on the latest Homey platform
 
 ---
@@ -39,12 +46,20 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 | **Unique Product IDs** | 571 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
 | **Flow Cards** | 4,844 |
+| **App Version** | v9.0.215 |
+| **Device Fingerprints** | 5,243+ |
+| **App Version** | v9.0.216 |
+| **Device Fingerprints** | 5,073+ |
+| **Unique Product IDs** | 571 |
+| **Drivers** | 431 (381 Zigbee + 50 WiFi) |
+| **Flow Cards** | 4,915 |
 | **Unique Capabilities** | 170 |
 | **SVG Icons** | 731 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK Version** | 3 |
 | **Homey Compatibility** | >=12.2.0 |
 | **Last Updated** | 2026-07-23 |
+| **Last Updated** | 2026-07-13 |
 
 ### Top 20 Drivers by Fingerprint Count
 
@@ -70,6 +85,26 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 | 18 | `soil_sensor` | 54 |
 | 19 | `thermostat_tuya_dp` | 52 |
 | 20 | `switch_2gang` | 50 |
+| 1 | `climate_sensor` | 699 |
+| 2 | `switch_1gang` | 431 |
+| 3 | `generic_tuya` | 345 |
+| 4 | `button_wireless_2` | 225 |
+| 5 | `diy_custom_zigbee` | 205 |
+| 6 | `presence_sensor_radar` | 160 |
+| 7 | `radiator_valve` | 143 |
+| 8 | `sensor_contact_zigbee` | 114 |
+| 9 | `universal_zigbee` | 105 |
+| 10 | `wall_dimmer_tuya` | 105 |
+| 11 | `generic_diy` | 82 |
+| 12 | `wall_thermostat` | 73 |
+| 13 | `air_purifier` | 70 |
+| 14 | `switch_4gang` | 69 |
+| 15 | `light_bulb_rgb_rgbw` | 65 |
+| 16 | `dimmer_wall_1gang` | 54 |
+| 17 | `water_leak_sensor_tuya` | 53 |
+| 18 | `thermostat_tuya_dp` | 50 |
+| 19 | `switch_3gang` | 49 |
+| 20 | `curtain_motor` | 48 |
 
 ### Drivers by Device Class
 
@@ -116,6 +151,20 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 | **v9.0.326** | Stability improvements and Homey test publication retry after transient processing failure. |
 | **v9.0.325** | Stability improvements and Homey test publication retry after transient processing failure. |
 | **v9.0.324** | P76 architectural fix: 7 new HOBEIAN/ga1maeof fingerprint collisions baselined (P75.31 follow-up). Architectural test... |
+| **v9.0.216** | Stability improvements and Homey test build recovery. |
+| **v9.0.215** | Stability improvements and Homey test build recovery. |
+| **v9.0.214** | Stability improvements and Homey test publication retry after transient processing failure. |
+| **v9.0.213** | Stability improvements and Homey test publication retry after transient processing failure. |
+| **v9.0.212** | Stability improvements and Homey test publication retry after transient processing failure. |
+| **v9.0.211** | Stability improvements and Homey test publication retry after transient processing failure. |
+| **v9.0.210** | Stability improvements and Homey test publication retry after transient processing failure. |
+| **v9.0.209** | Stability improvements and Homey test publication retry after transient processing failure. |
+| **v9.0.208** | P11 release: door_sensor driver (TS0203), 96 Johan mfrs integrated (1618 FPs), continuous-flow + e2e-dashboard + upst... |
+| **v9.0.207** | P11 release: door_sensor driver (TS0203), 96 Johan mfrs integrated (1618 FPs), continuous-flow + e2e-dashboard + upst... |
+| **v9.0.206** | P11 release: door_sensor driver (TS0203), 96 Johan mfrs integrated (1618 FPs), continuous-flow + e2e-dashboard + upst... |
+| **v9.0.205** | P11 release: door_sensor driver (TS0203), 96 Johan mfrs integrated (1618 FPs), continuous-flow + e2e-dashboard + upst... |
+| **v9.0.204** | P11 release: door_sensor driver (TS0203), 96 Johan mfrs integrated (1618 FPs), continuous-flow + e2e-dashboard + upst... |
+| **v9.0.203** | P11 release: door_sensor driver (TS0203), 96 Johan mfrs integrated (1618 FPs), continuous-flow + e2e-dashboard + upst... |
 
 <!-- CHANGELOG_END -->
 
@@ -182,6 +231,8 @@ Homey Pro
        ├─ BatteryManager (8 chemistries, voltage fallback)
        ├─ PhysicalButtonMixin (2000ms detection)
        └─ 431 Drivers ─ 5,546+ fingerprints
+       └─ 431 Drivers ─ 5,243+ fingerprints
+       └─ 431 Drivers ─ 5,073+ fingerprints
 ```
 
 ---
@@ -356,3 +407,4 @@ A massive thank you to the maintainers and contributors of:
 **Made with love by Dylan Rajasekaram & the Zigbee community**
 
 *Last updated: 2026-07-23*
+*Last updated: 2026-07-13*
