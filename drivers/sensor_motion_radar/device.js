@@ -1,6 +1,7 @@
 'use strict';
 const CI = require('../../lib/utils/CaseInsensitiveMatcher');
 const { safeDivide, safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
+const SleepyInit = require('../../lib/utils/SleepyDeviceInit');
 
 
 const { UnifiedSensorBase } = require('../../lib/devices/UnifiedSensorBase');
@@ -120,17 +121,20 @@ class MotionRadarHybridDevice extends UnifiedSensorBase {
     const config = this._getSensorConfig();
     
     // Attribute Reporting
-    try {
-      await this.configureAttributeReporting([
-        { cluster: 'ssIasZone', attributeName: 'zoneStatus', minInterval: 0, maxInterval: 3600, minChange: 1 },
-        { cluster: 'msIlluminanceMeasurement', attributeName: 'measuredValue', minInterval: 30, maxInterval: 600, minChange: 50 },
-        { cluster: 'msTemperatureMeasurement', attributeName: 'measuredValue', minInterval: 30, maxInterval: 600, minChange: 50 },
-        { cluster: 'msRelativeHumidity', attributeName: 'measuredValue', minInterval: 30, maxInterval: 600, minChange: 100 },
-        { cluster: 'genPowerCfg', attributeName: 'batteryPercentageRemaining', minInterval: 3600, maxInterval: 43200, minChange: 2 }
-      ]);
-    } catch (err) {
-      this.log('Attribute reporting config failed:', err.message);
-    }
+    // v9.0.251 (P60): Fire-and-forget for sleepy EndDevices
+    const reportingPayload = [
+      { cluster: 'ssIasZone', attributeName: 'zoneStatus', minInterval: 0, maxInterval: 3600, minChange: 1 },
+      { cluster: 'msIlluminanceMeasurement', attributeName: 'measuredValue', minInterval: 30, maxInterval: 600, minChange: 50 },
+      { cluster: 'msTemperatureMeasurement', attributeName: 'measuredValue', minInterval: 30, maxInterval: 600, minChange: 50 },
+      { cluster: 'msRelativeHumidity', attributeName: 'measuredValue', minInterval: 30, maxInterval: 600, minChange: 100 },
+      { cluster: 'genPowerCfg', attributeName: 'batteryPercentageRemaining', minInterval: 3600, maxInterval: 43200, minChange: 2 }
+    ];
+    SleepyInit.fireAndForget(this,
+      this.configureAttributeReporting(reportingPayload),
+      { name: 'configureAttributeReporting', timeoutMs: SleepyInit.ZCL_TIMEOUT_MS }
+    ).then((res) => {
+      if (res && res !== 'timeout') this.log('Attribute reporting configured');
+    });
 
     // Capability Management
     if (this.hasCapability('alarm_contact')) {

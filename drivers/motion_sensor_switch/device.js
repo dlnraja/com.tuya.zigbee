@@ -3,6 +3,7 @@ const UnifiedSwitchBase = require('../../lib/devices/UnifiedSwitchBase');
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 const { setupSonoffEwelink, handleSonoffEwlSettings } = require('../../lib/mixins/SonoffEwelinkMixin');
+const SleepyInit = require('../../lib/utils/SleepyDeviceInit');
 
 /**
  * 
@@ -44,9 +45,8 @@ class Switch1GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
   }
 
   async onNodeInit({ zclNode }) {
-    // --- Attribute Reporting Configuration (auto-generated) ---
-    try {
-      await this.configureAttributeReporting([
+    // v9.0.251 (P60): Fire-and-forget for sleepy EndDevices
+    const reportingPayload = [
         {
           cluster: 'genPowerCfg',
           attributeName: 'batteryPercentageRemaining',
@@ -75,11 +75,13 @@ class Switch1GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
           maxInterval: 600,
           minChange: 10,
         }
-      ]);
-      this.log('Attribute reporting configured successfully');
-    } catch (err) {
-      this.log('Attribute reporting config failed (device may not support it):', err.message);
-    }
+    ];
+    SleepyInit.fireAndForget(this,
+      this.configureAttributeReporting(reportingPayload),
+      { name: 'configureAttributeReporting', timeoutMs: SleepyInit.ZCL_TIMEOUT_MS }
+    ).then((res) => {
+      if (res && res !== 'timeout') this.log('Attribute reporting configured successfully');
+    });
 
     // v5.8.95: Removed redundant _markAppCommand + broken _handleTuyaDatapoint wrapper.
     // UnifiedSwitchBase._setGangOnOff() now calls PhysicalButtonMixin.markAppCommand() centrally.
