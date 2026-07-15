@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "9.0.272",
+  "version": "9.0.273",
   "compatibility": ">=12.2.0",
   "platforms": [
     "local"
@@ -12521,6 +12521,45 @@
           "fr": "Température changée",
           "nl": "Temperatuur gewijzigd",
           "de": "Temperatur geändert"
+        }
+      },
+      {
+        "id": "climate_sensor_battery_voltage_changed",
+        "title": {
+          "en": "Battery voltage changed",
+          "fr": "Tension batterie changée",
+          "nl": "Batterijspanning veranderd",
+          "de": "Batteriespannung geändert"
+        },
+        "hint": {
+          "en": "Triggers when the battery voltage changes (V). For Z2M-standard Zigbee devices like _TZ3000_fllyghyj (WSD500A) and similar.",
+          "fr": "Se déclenche quand la tension batterie change (V). Pour les devices Zigbee standard Z2M comme _TZ3000_fllyghyj (WSD500A) et similaires."
+        },
+        "tokens": [
+          {
+            "name": "voltage",
+            "type": "number",
+            "title": {
+              "en": "Voltage (V)",
+              "fr": "Tension (V)",
+              "nl": "Spanning (V)",
+              "de": "Spannung (V)"
+            },
+            "example": 3
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=climate_sensor"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Battery voltage changed",
+          "fr": "Tension batterie changée",
+          "nl": "Batterijspanning veranderd",
+          "de": "Batteriespannung geändert"
         }
       },
       {
@@ -69333,6 +69372,44 @@
         "titleFormatted": {
           "en": "Humidity is below [[humidity]]",
           "fr": "Humidité inférieure à [[humidity]]"
+        }
+      },
+      {
+        "id": "climate_sensor_battery_voltage_below",
+        "title": {
+          "en": "Battery voltage is below",
+          "fr": "Tension batterie inférieure à",
+          "nl": "Batterijspanning lager dan",
+          "de": "Batteriespannung unter"
+        },
+        "hint": {
+          "en": "Triggers when the battery voltage drops below the threshold (V). Default 2.5V for most sensors.",
+          "fr": "Se déclenche quand la tension batterie descend sous le seuil (V). 2,5V par défaut pour la plupart des capteurs."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=climate_sensor"
+          },
+          {
+            "name": "voltage",
+            "type": "number",
+            "min": 0,
+            "max": 5,
+            "title": {
+              "en": "Threshold (V)",
+              "fr": "Seuil (V)",
+              "nl": "Drempel (V)",
+              "de": "Schwelle (V)"
+            }
+          }
+        ],
+        "titleFormatted": {
+          "en": "Battery voltage is below",
+          "fr": "Tension batterie inférieure à",
+          "nl": "Batterijspanning lager dan",
+          "de": "Batteriespannung unter"
         }
       },
       {
@@ -136779,6 +136856,7 @@
         "measure_temperature",
         "measure_humidity",
         "measure_battery",
+        "measure_voltage",
         "button.1"
       ],
       "energy": {
@@ -157256,7 +157334,8 @@
         "onoff",
         "measure_power",
         "power_on_behavior",
-        "button.1"
+        "button.1",
+        "measure_voltage"
       ],
       "energy": {
         "batteries": [
@@ -176454,7 +176533,8 @@
       "capabilities": [
         "alarm_motion",
         "measure_battery",
-        "button.1"
+        "button.1",
+        "measure_voltage"
       ],
       "energy": {
         "batteries": [
@@ -194334,7 +194414,8 @@
         "alarm_tamper",
         "measure_battery",
         "measure_luminance",
-        "button.1"
+        "button.1",
+        "measure_voltage"
       ],
       "energy": {
         "batteries": [
@@ -196708,7 +196789,8 @@
         "measure_battery",
         "measure_luminance.distance",
         "alarm_tamper",
-        "button.1"
+        "button.1",
+        "measure_voltage"
       ],
       "capabilitiesOptions": {
         "measure_luminance.distance": {
