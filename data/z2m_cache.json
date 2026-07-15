@@ -1,0 +1,122 @@
+{
+  "_meta": {
+    "source": "https://raw.githubusercontent.com/Koenkk/zigbee-herdsman-converters/master/src/devices/tuya.ts",
+    "fetched": "2026-07-15T21:30:00Z",
+    "description": "Z2M Tuya device definitions: each entry is a (manufacturerName, modelID) → vendor/model/description mapping. The HOBEIAN ZG-204Z family has many variants."
+  },
+  "ZG-204Z family (HOBEIAN mmWave/PIR sensors)": {
+    "ZG-204Z_basic": {
+      "manufacturerName": ["_TZE204_*"],
+      "modelId": "TS0601",
+      "vendor": "HOBEIAN / Tuya",
+      "description": "Basic PIR-only motion sensor (no lux, no mmWave)",
+      "z2m_model": "varies by firmware"
+    },
+    "ZG-204ZL": {
+      "manufacturerName": ["_TZE200_3towulqd"],
+      "modelId": "TS0601",
+      "vendor": "HOBEIAN",
+      "description": "PIR motion + lux illuminance sensor (no mmWave)",
+      "z2m_model": "ZG-204ZL",
+      "z2m_link": "https://www.zigbee2mqtt.io/devices/ZG-204ZL.html"
+    },
+    "ZG-204ZM_v1": {
+      "manufacturerName": ["_TZE200_2aaelwxk"],
+      "modelId": "TS0601",
+      "vendor": "HOBEIAN",
+      "description": "PIR + 24GHz mmWave + lux (older hardware, 2xAAA)",
+      "z2m_model": "ZG-204ZM",
+      "z2m_link": "https://www.zigbee2mqtt.io/devices/ZG-204ZM.html",
+      "note": "PCB marking ZG-204ZS is hardware-equivalent"
+    },
+    "ZG-204ZM_v2": {
+      "manufacturerName": ["_TZE200_kb5noeto"],
+      "modelId": "TS0601",
+      "vendor": "HOBEIAN",
+      "description": "PIR + 24GHz mmWave + lux (newer hardware, 2xAAA)",
+      "z2m_model": "ZG-204ZM",
+      "z2m_link": "https://www.zigbee2mqtt.io/devices/ZG-204ZM.html",
+      "note": "Known issue: can get stuck in 'presence detected' state"
+    },
+    "ZG-204ZP": {
+      "manufacturerName": ["_TZE200_ka8l86iu"],
+      "modelId": "TS0601",
+      "vendor": "HOBEIAN",
+      "description": "Smallest presence sensor 24GHz mmWave (no PIR, no lux, CR2450)",
+      "z2m_model": "ZG-204ZK (Z2M renames ZP → ZK)",
+      "z2m_link": "https://www.zigbee2mqtt.io/devices/ZG-204ZK.html",
+      "note": "AliExpress sells as ZG-204ZP, Z2M renames to ZG-204ZK (AliExpress cert distinction)"
+    },
+    "ZG-204ZV": {
+      "manufacturerName": ["_TZE204_*"],
+      "modelId": "TS0601",
+      "vendor": "HOBEIAN",
+      "description": "mmWave + PIR + temp + humidity + lux (full sensor)",
+      "z2m_model": "ZG-204ZV"
+    },
+    "ZG-204ZX": {
+      "manufacturerName": ["_TZE200_w0ap83qu"],
+      "modelId": "TS0601",
+      "vendor": "HOBEIAN",
+      "description": "PIR + mmWave + lux (variant)",
+      "z2m_model": "ZG-204ZX"
+    },
+    "ZG-204ZH": {
+      "manufacturerName": ["_TZE204_*"],
+      "modelId": "TS0601",
+      "vendor": "HOBEIAN",
+      "description": "PIR + lux (variant)",
+      "z2m_model": "ZG-204ZH"
+    }
+  },
+  "Soil sensor family (HOBEIAN ZG-303Z)": {
+    "ZG-303Z": {
+      "manufacturerName": [
+        "_TZE200_myd45weu",
+        "_TZE284_myd45weu",
+        "_TZE284_aao3yzhs",
+        "_TZE284_2nhqasjh",
+        "_TZE284_awepdiwi",
+        "_TZE284_ga1maeof",
+        "_TZE284_g2e6cpnw",
+        "_TZE284_sgabhwa6",
+        "_TZE284_0ints6wl",
+        "_TZE284_tgrzpqf4"
+      ],
+      "modelId": "TS0601",
+      "vendor": "HOBEIAN",
+      "description": "Soil moisture + temperature + EC + battery (varies by submodel)",
+      "z2m_model": "ZG-303Z (and sub-variants ZG-303L, ZG-303B)"
+    }
+  },
+  "MFR+PID+name combos (mfs_db key insight)": {
+    "insight": "Each MFR can have multiple PIDs. Each MFR+PID can map to multiple device names. Each device name can have multiple MFR+PID variants. The mapping is N:N:N.",
+    "examples": [
+      {
+        "mfr_pid": "_TZE200_ka8l86iu / TS0601",
+        "device_names": ["ZG-204ZP (AliExpress)", "ZG-204ZK (Z2M rename)"],
+        "homey_driver": "presence_sensor_radar"
+      },
+      {
+        "mfr_pid": "_TZE200_kb5noeto / TS0601",
+        "device_names": ["ZG-204ZM v2", "ZG-204ZS (PCB marking)"],
+        "homey_driver": "presence_sensor_radar"
+      },
+      {
+        "mfr_pid": "_TZE200_2aaelwxk / TS0601",
+        "device_names": ["ZG-204ZM v1", "ZG-204ZS (PCB marking)"],
+        "homey_driver": "presence_sensor_radar"
+      },
+      {
+        "mfr_pid": "_TZE200_3towulqd / TS0601",
+        "device_names": ["ZG-204ZL"],
+        "homey_driver": "presence_sensor_radar (WRONG - should be motion_sensor only, no mmWave)"
+      },
+      {
+        "mfr_pid": "_TZE284_awepdiwi / TS0601",
+        "device_names": ["ZG-303Z (or similar)"],
+        "homey_driver": "soil_sensor"
+      }
+    ]
+  }
+}
