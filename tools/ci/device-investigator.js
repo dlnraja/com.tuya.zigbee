@@ -899,6 +899,7 @@ async function reportOne(mfr, pid, { webfetch = false, bugs = false, noColor = f
       humidity: ['measure_humidity'],
       illuminance: ['measure_luminance'],
       battery: ['measure_battery', 'alarm_battery'],
+      battery_voltage: ['measure_voltage'],   // P64.13 — ZCL BatteryVoltage
       voltage: ['measure_voltage'],
       current: ['measure_current'],
       power: ['measure_power'],
