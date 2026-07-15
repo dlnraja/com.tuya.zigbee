@@ -34,7 +34,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.261 |
+| **App Version** | v9.0.262 |
 | **Device Fingerprints** | 5,337+ |
 | **Unique Product IDs** | 571 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
@@ -102,6 +102,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | Version | Changes |
 |---------|---------|
 | **vchangelog** | [object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object  |
+| **v9.0.262** | v9.0.220: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.261** | v9.0.220: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.260** | v9.0.220: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.259** | v9.0.220: automated publish, manifest sync, and Homey test promotion. |
@@ -115,7 +116,6 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | **v9.0.251** | v9.0.220: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.250** | v9.0.220: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.249** | v9.0.220: automated publish, manifest sync, and Homey test promotion. |
-| **v9.0.248** | v9.0.220: automated publish, manifest sync, and Homey test promotion. |
 
 <!-- CHANGELOG_END -->
 
