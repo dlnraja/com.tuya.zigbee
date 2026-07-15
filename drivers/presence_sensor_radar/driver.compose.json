@@ -827,8 +827,84 @@
       "step": 10,
       "units": "s",
       "hint": {
-        "en": "ZG-204ZM: How long presence stays active after last detection (seconds)",
-        "fr": "ZG-204ZM: Durée de maintien de la présence après dernière détection (secondes)"
+        "en": "ZG-204ZM/ZV: How long presence stays active after last detection (seconds)",
+        "fr": "ZG-204ZM/ZV: Durée de maintien de la présence après dernière détection (secondes)"
+      }
+    },
+    {
+      "id": "illuminance_interval",
+      "type": "number",
+      "label": {
+        "en": "Illuminance Report Interval (s) — ZG-204ZV",
+        "fr": "Intervalle Rapport Luminosité (s) — ZG-204ZV",
+        "nl": "Verlichtingsrapport-interval (s) — ZG-204ZV",
+        "de": "Beleuchtungsbericht-Intervall (s) — ZG-204ZV"
+      },
+      "value": 30,
+      "min": 1,
+      "max": 720,
+      "step": 1,
+      "units": "s",
+      "hint": {
+        "en": "ZG-204ZV DP 107: how often the device reports illuminance (seconds)",
+        "fr": "ZG-204ZV DP 107: fréquence à laquelle l'appareil rapporte la luminosité (secondes)"
+      }
+    },
+    {
+      "id": "humidity_calibration",
+      "type": "number",
+      "label": {
+        "en": "Humidity Calibration (%) — ZG-204ZV",
+        "fr": "Calibration Humidité (%) — ZG-204ZV",
+        "nl": "Vochtigheidskalibratie (%) — ZG-204ZV",
+        "de": "Feuchtigkeitskalibrierung (%) — ZG-204ZV"
+      },
+      "value": 0,
+      "min": -30,
+      "max": 30,
+      "step": 1,
+      "units": "%",
+      "hint": {
+        "en": "ZG-204ZV DP 104: humidity calibration offset (added to reported value)",
+        "fr": "ZG-204ZV DP 104: décalage de calibration d'humidité (ajouté à la valeur rapportée)"
+      }
+    },
+    {
+      "id": "temperature_calibration",
+      "type": "number",
+      "label": {
+        "en": "Temperature Calibration (°C) — ZG-204ZV",
+        "fr": "Calibration Température (°C) — ZG-204ZV",
+        "nl": "Temperatuurkalibratie (°C) — ZG-204ZV",
+        "de": "Temperaturkalibrierung (°C) — ZG-204ZV"
+      },
+      "value": 0,
+      "min": -20,
+      "max": 20,
+      "step": 0.1,
+      "units": "°C",
+      "hint": {
+        "en": "ZG-204ZV DP 105: temperature calibration offset (added to reported value)",
+        "fr": "ZG-204ZV DP 105: décalage de calibration de température (ajouté à la valeur rapportée)"
+      }
+    },
+    {
+      "id": "temperature_unit",
+      "type": "dropdown",
+      "label": {
+        "en": "Temperature Unit — ZG-204ZV",
+        "fr": "Unité de Température — ZG-204ZV",
+        "nl": "Temperatuureenheid — ZG-204ZV",
+        "de": "Temperatureinheit — ZG-204ZV"
+      },
+      "value": "celsius",
+      "values": [
+        { "id": "celsius", "label": { "en": "Celsius (°C)", "fr": "Celsius (°C)" } },
+        { "id": "fahrenheit", "label": { "en": "Fahrenheit (°F)", "fr": "Fahrenheit (°F)" } }
+      ],
+      "hint": {
+        "en": "ZG-204ZV DP 109: temperature display unit",
+        "fr": "ZG-204ZV DP 109: unité d'affichage de la température"
       }
     },
     {
@@ -1003,6 +1079,82 @@
       "hint": {
         "en": "Enable/disable the LED indicator on the sensor",
         "fr": "Activer/désactiver l'indicateur LED"
+      }
+    },
+    {
+      "id": "time",
+      "type": "number",
+      "label": {
+        "en": "Time (s) — ZG-204ZM",
+        "fr": "Temps (s) — ZG-204ZM",
+        "nl": "Tijd (s) — ZG-204ZM",
+        "de": "Zeit (s) — ZG-204ZM"
+      },
+      "value": 0,
+      "min": 0,
+      "max": 28800,
+      "step": 1,
+      "units": "s",
+      "hint": {
+        "en": "Time setting (ZG-204ZM DP 114) — seconds before report",
+        "fr": "Réglage du temps (ZG-204ZM DP 114) — secondes avant rapport"
+      }
+    },
+    {
+      "id": "alarm_time",
+      "type": "number",
+      "label": {
+        "en": "Alarm Time (s) — ZG-204ZM",
+        "fr": "Temps d'alarme (s) — ZG-204ZM",
+        "nl": "Alarmtijd (s) — ZG-204ZM",
+        "de": "Alarmzeit (s) — ZG-204ZM"
+      },
+      "value": 30,
+      "min": 0,
+      "max": 28800,
+      "step": 1,
+      "units": "s",
+      "hint": {
+        "en": "Alarm duration (ZG-204ZM DP 115) — seconds of alarm output",
+        "fr": "Durée d'alarme (ZG-204ZM DP 115) — secondes de sortie d'alarme"
+      }
+    },
+    {
+      "id": "alarm_volume",
+      "type": "number",
+      "label": {
+        "en": "Alarm Volume (%) — ZG-204ZM",
+        "fr": "Volume d'alarme (%) — ZG-204ZM",
+        "nl": "Alarmvolume (%) — ZG-204ZM",
+        "de": "Alarmlautstärke (%) — ZG-204ZM"
+      },
+      "value": 50,
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "units": "%",
+      "hint": {
+        "en": "Alarm volume (ZG-204ZM DP 116) — 0=mute, 100=max",
+        "fr": "Volume d'alarme (ZG-204ZM DP 116) — 0=muet, 100=max"
+      }
+    },
+    {
+      "id": "working_mode",
+      "type": "dropdown",
+      "label": {
+        "en": "Working Mode — ZG-204ZM",
+        "fr": "Mode de fonctionnement — ZG-204ZM",
+        "nl": "Werkmodus — ZG-204ZM",
+        "de": "Arbeitsmodus — ZG-204ZM"
+      },
+      "value": "auto",
+      "values": [
+        { "id": "auto", "label": { "en": "Auto (recommended)", "fr": "Auto (recommandé)" } },
+        { "id": "manual", "label": { "en": "Manual", "fr": "Manuel" } }
+      ],
+      "hint": {
+        "en": "Working mode (ZG-204ZM DP 117) — auto uses auto1/2/3, manual uses user settings",
+        "fr": "Mode de fonctionnement (ZG-204ZM DP 117) — auto utilise auto1/2/3, manuel utilise les paramètres utilisateur"
       }
     },
     {
