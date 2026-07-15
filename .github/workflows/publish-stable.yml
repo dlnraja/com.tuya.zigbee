@@ -29,6 +29,10 @@ env:
   # Local size-gate checks against this env var.
   HOMEY_PUBLISH_MAX_UNCOMPRESSED_MB: "45"
   HOMEY_PUBLISH_SOURCE_MAX_MB: "45"
+  # v5.12.1 (P58.10): 2874 FPs (P19) × productId expand to 20,444 combos,
+  # exceeding the default 20,000 limit. 30,000 gives headroom.
+  HOMEY_ZIGBEE_MAX_TOTAL_COMBOS: "30000"
+  HOMEY_ZIGBEE_MAX_DRIVER_COMBOS: "1000"
 
 jobs:
   upstream-guard:
