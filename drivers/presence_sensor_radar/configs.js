@@ -191,6 +191,8 @@ const SENSOR_CONFIGS = {
     sensors: [
       '_TZE200_grgol3xp', '_TZE204_grgol3xp',
       '_TZE200_uli8wasj', '_TZE204_uli8wasj',
+      '_TZE200_rhgsbacq', '_TZE204_rhgsbacq',
+      '_TZE200_y8jijhba', '_TZE204_y8jijhba',
       'HOBEIAN',
       '_TZ3000_8bxrzyxz', '_TZ3000_8BXRZYXZ',
     ],

@@ -1004,6 +1004,21 @@
         "en": "Enable/disable the LED indicator on the sensor",
         "fr": "Activer/désactiver l'indicateur LED"
       }
+    },
+    {
+      "id": "anti_interference",
+      "type": "checkbox",
+      "label": {
+        "en": "Anti-Interference (ZG-204ZV/ZK)",
+        "fr": "Anti-Interférence (ZG-204ZV/ZK)",
+        "nl": "Anti-Interferentie (ZG-204ZV/ZK)",
+        "de": "Anti-Interferenz (ZG-204ZV/ZK)"
+      },
+      "value": false,
+      "hint": {
+        "en": "Enable anti-interference to reduce false presence triggers from Wi-Fi/RF noise (only for ZG-204ZV/ZK family mmWave sensors).",
+        "fr": "Active la fonction anti-interférence pour réduire les faux déclenchements de présence dus au bruit Wi-Fi/RF (uniquement pour la famille ZG-204ZV/ZK)."
+      }
     }
   ],
   "images": {
