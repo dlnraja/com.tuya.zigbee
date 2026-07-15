@@ -1,0 +1,289 @@
+{
+  "mfr": "_TZE200_tyffvoij",
+  "pid": "TS0601",
+  "driver": "presence_sensor_radar",
+  "capabilities": [
+    "alarm_motion",
+    "measure_luminance",
+    "measure_temperature",
+    "measure_humidity",
+    "alarm_human",
+    "onoff",
+    "measure_battery",
+    "measure_luminance.distance",
+    "alarm_motion.zone1",
+    "alarm_motion.zone2",
+    "alarm_motion.zone3",
+    "measure_luminance.distance.zone1",
+    "measure_luminance.distance.zone2",
+    "measure_luminance.distance.zone3",
+    "button.1"
+  ],
+  "clusters": {
+    "compose": [
+      0,
+      61184
+    ],
+    "code": []
+  },
+  "datapoints": {
+    "code": [
+      {
+        "id": 108,
+        "source": "DP"
+      },
+      {
+        "id": 1,
+        "source": "dpMap-key"
+      },
+      {
+        "id": 2,
+        "source": "dpMap-key"
+      },
+      {
+        "id": 3,
+        "source": "dpMap-key"
+      },
+      {
+        "id": 4,
+        "source": "dpMap-key"
+      },
+      {
+        "id": 9,
+        "source": "dpMap-key"
+      },
+      {
+        "id": 12,
+        "source": "dpMap-key"
+      },
+      {
+        "id": 101,
+        "source": "dpMap-key"
+      },
+      {
+        "id": 102,
+        "source": "dpMap-key"
+      },
+      {
+        "id": 6,
+        "source": "dpMap-key"
+      },
+      {
+        "id": 103,
+        "source": "dpMap-key"
+      },
+      {
+        "id": 104,
+        "source": "dpMap-key"
+      },
+      {
+        "id": 105,
+        "source": "dpMap-key"
+      },
+      {
+        "id": 106,
+        "source": "dpMap-key"
+      },
+      {
+        "id": 107,
+        "source": "dpMap-key"
+      },
+      {
+        "id": 10,
+        "source": "dpMap-key"
+      },
+      {
+        "id": 17,
+        "source": "dpMap-key"
+      },
+      {
+        "id": 18,
+        "source": "dpMap-key"
+      },
+      {
+        "id": 110,
+        "source": "dpMap-key"
+      },
+      {
+        "id": 111,
+        "source": "dpMap-key"
+      },
+      {
+        "id": 11,
+        "source": "dpMap-key"
+      },
+      {
+        "id": 113,
+        "source": "dpMap-key"
+      },
+      {
+        "id": 119,
+        "source": "dpMap-key"
+      },
+      {
+        "id": 122,
+        "source": "dpMap-key"
+      },
+      {
+        "id": 123,
+        "source": "dpMap-key"
+      },
+      {
+        "id": 124,
+        "source": "dpMap-key"
+      },
+      {
+        "id": 13,
+        "source": "dpMap-key"
+      },
+      {
+        "id": 14,
+        "source": "dpMap-key"
+      },
+      {
+        "id": 15,
+        "source": "dpMap-key"
+      },
+      {
+        "id": 16,
+        "source": "dpMap-key"
+      },
+      {
+        "id": 19,
+        "source": "dpMap-key"
+      },
+      {
+        "id": 121,
+        "source": "dpMap-key"
+      },
+      {
+        "id": 109,
+        "source": "dpMap-key"
+      },
+      {
+        "id": 112,
+        "source": "dpMap-key"
+      }
+    ],
+    "z2m": [
+      {
+        "id": 1,
+        "name": "presence"
+      },
+      {
+        "id": 2,
+        "name": "static_detection_sensitivity"
+      },
+      {
+        "id": 4,
+        "name": "static_detection_distance"
+      },
+      {
+        "id": 101,
+        "name": "motion_state"
+      },
+      {
+        "id": 102,
+        "name": "fading_time"
+      },
+      {
+        "id": 106,
+        "name": "illuminance"
+      },
+      {
+        "id": 107,
+        "name": "indicator"
+      },
+      {
+        "id": 121,
+        "name": "battery"
+      },
+      {
+        "id": 122,
+        "name": "motion_detection_mode"
+      },
+      {
+        "id": 123,
+        "name": "motion_detection_sensitivity"
+      }
+    ]
+  },
+  "exposes": [
+    "presence",
+    "enum",
+    "battery",
+    "binary",
+    "motion_state",
+    "indicator"
+  ],
+  "flows": {
+    "triggers": [
+      "presence_sensor_radar_presence_detected",
+      "presence_sensor_radar_presence_cleared",
+      "presence_sensor_radar_motion_detected",
+      "presence_sensor_radar_illuminance_changed",
+      "presence_sensor_radar_distance_changed",
+      "presence_sensor_radar_lux_changed",
+      "presence_sensor_radar_battery_low",
+      "presence_sensor_radar_zone1_presence",
+      "presence_sensor_radar_zone2_presence",
+      "presence_sensor_radar_zone3_presence",
+      "presence_sensor_radar_movement_classification_changed"
+    ],
+    "conditions": [
+      "presence_sensor_radar_is_present",
+      "presence_sensor_radar_illuminance_above",
+      "presence_sensor_radar_distance_within",
+      "presence_sensor_radar_motion_active",
+      "presence_sensor_radar_zone_active",
+      "presence_sensor_radar_movement_is"
+    ],
+    "actions": []
+  },
+  "z2m_cache": {
+    "manufacturerName": [
+      "_TZE200_tyffvoij"
+    ],
+    "modelId": "TS0601",
+    "vendor": "HOBEIAN",
+    "description": "PIR + 24GHz mmWave + lux (newest hardware, ZG-204ZM v3)",
+    "z2m_model": "ZG-204ZM",
+    "z2m_link": "https://www.zigbee2mqtt.io/devices/ZG-204ZM.html",
+    "note": "Newest ZG-204ZM variant",
+    "family": "ZG-204ZM_v3",
+    "matchedMfr": "_TZE200_tyffvoij"
+  },
+  "sacred": {
+    "mfr": "_tze200_tyffvoij",
+    "pid": "ts0601",
+    "driver": "presence_sensor_radar",
+    "sources": [
+      "canonical",
+      "mfs_db",
+      "p64.8-productNames"
+    ],
+    "confidence": 0.95,
+    "productNames": [
+      "ZG-204ZM v3"
+    ]
+  },
+  "top": {
+    "driverId": "presence_sensor_radar",
+    "source": "auto-sync"
+  },
+  "herdsman_block": "    {\n        zigbeeModel: [\"ZG-204ZM\", \"AY205Z\"],\n        fingerprint: tuya.fingerprint(\"TS0601\", [\"_TZE200_2aaelwxk\", \"_TZE200_kb5noeto\", \"_TZE200_tyffvoij\", \"_TZE200_yflzeeqj\"]),\n        model: \"ZG-204ZM\",\n        vendor: \"Tuya\",\n        description: \"PIR 24Ghz human presence sensor\",\n        extend: [\n            tuya.modernExtend.tuyaBase({dp: true}),\n            // Besides dp, also uses standard illuminance cluster\n            // https://github.com/Koenkk/zigbee-herdsman-converters/issues/10897\n            m.illuminance({reporting: false}),\n        ],\n        exposes: [\n            e.presence(),\n            e.enum(\"motion_state\", ea.STATE, [\"none\", \"large\", \"small\", \"static\"]).withDescription(\"Motion state\"),\n            e.battery(),\n            e\n                .numeric(\"fading_time\", ea.STATE_SET)\n                .withValueMin(0)\n                .withValueMax(28800)\n                .withValueStep(1)\n                .withUnit(\"s\")\n                .withDescription(\"Presence keep time\"),\n            e\n                .numeric(\"static_detection_distance\", ea.STATE_SET)\n                .withValueMin(0)\n                .withValueMax(6)\n                .withValueStep(0.01)\n                .withUnit(\"m\")\n                .withDescription(\"Static detection distance\"),\n            e\n                .numeric(\"static_detection_sensitivity\", ea.STATE_SET)\n                .withValueMin(0)\n                .withValueMax(10)\n                .withValueStep(1)\n                .withDescription(\"Static detection sensitivity\"),\n            e.binary(\"indicator\", ea.STATE_SET, \"ON\", \"OFF\").withDescription(\"LED indicator mode\"),\n            e\n                .enum(\"motion_detection_mode\", ea.STATE_SET, [\"only_pir\", \"pir_and_radar\", \"only_radar\"])\n                .withDescription(\"Motion detection mode (Firmware version>=0122052017)\"),\n            e\n                .numeric(\"motion_detection_sensitivity\", ea.STATE_SET)\n                .withValueMin(0)\n                .withValueMax(10)\n                .withValueStep(1)\n                .withDescription(\"Motion detection sensitivity (Firmware version>=0122052017)\"),\n        ],\n\n        meta: {\n            tuyaDatapoints: [\n                [1, \"presence\", tuya.valueConverter.trueFalse1],\n                [2, \"static_detection_sensitivity\", tuya.valueConverter.raw],\n                [4, \"static_detection_distance\", tuya.valueConverter.divideBy100],\n                [\n                    101,\n                    \"motion_state\",\n                    tuya.valueConverterBasic.lookup({\n                        none: tuya.enum(0),\n                        large: tuya.enum(1),\n                        small: tuya.enum(2),\n                        static: tuya.enum(3),\n                    }),\n                ],\n                [102, \"fading_time\", tuya.valueConverter.raw],\n                [106, \"illuminance\", tuya.valueConverter.raw],\n                [107, \"indicator\", tuya.valueConverter.onOff],\n                [121, \"battery\", tuya.valueConverter.raw],\n                [\n                    122,\n                    \"motion_detection_mode\",\n                    tuya.valueConverterBasic.lookup({\n                        only_pir: tuya.enum(0),\n                        pir_and_radar: tuya.enum(1),\n                        only_radar: tuya.enum(2),\n                    }),\n                ],\n                [123, \"motion_detection_sensitivity\", tuya.valueConverter.raw],\n            ],\n        },\n        whiteLabel: [\n            {\n                model: \"AY205Z\",\n                vendor: \"AOYAN\",\n                description: \"PIR 24Ghz human presence sensor\",\n                fingerprint: [{modelID: \"AY205Z\", manufacturerName: \"AOYAN\"}],\n            },\n        ],\n    },",
+  "search_links": {
+    "z2m": "https://www.zigbee2mqtt.io/supported-devices/?q=_TZE200_tyffvoij%20ZG-204ZM%20TS0601",
+    "z2m_gh": "https://github.com/Koenkk/zigbee2mqtt/issues?q=_TZE200_tyffvoij%20ZG-204ZM%20TS0601",
+    "z2m_repo": "https://github.com/Koenkk/zigbee-herdsman-converters/search?q=_TZE200_tyffvoij%20ZG-204ZM%20TS0601",
+    "deconz_gh": "https://github.com/dresden-elektronik/deconz-rest-plugin/issues?q=_TZE200_tyffvoij%20ZG-204ZM%20TS0601",
+    "deconz_src": "https://github.com/search?q=repo%3Adresden-elektronik%2Fdeconz-rest-plugin+_TZE200_tyffvoij%20ZG-204ZM%20TS0601&type=code",
+    "hubitat": "https://community.hubitat.com/search?q=_TZE200_tyffvoij%20ZG-204ZM%20TS0601",
+    "hubitat_gh": "https://github.com/search?q=org%3AHubitatCommunity+_TZE200_tyffvoij%20ZG-204ZM%20TS0601&type=repositories",
+    "aliexpress": "https://www.aliexpress.com/wholesale?SearchText=_TZE200_tyffvoij%20ZG-204ZM%20TS0601",
+    "taobao": "https://s.taobao.com/search?q=_TZE200_tyffvoij%20ZG-204ZM%20TS0601",
+    "google": "https://www.google.com/search?q=_TZE200_tyffvoij%20ZG-204ZM%20TS0601+zigbee+homey+issue",
+    "ddg": "https://duckduckgo.com/?q=_TZE200_tyffvoij%20ZG-204ZM%20TS0601+zigbee+homey+issue",
+    "forum_homey": "https://community.homey.app/search?q=_TZE200_tyffvoij%20ZG-204ZM%20TS0601"
+  }
+}
