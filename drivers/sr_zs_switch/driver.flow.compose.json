@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "sr_zs_switch_switch_state_changed",
+      "id": "sr_zs_switch_state_changed",
       "title": {
         "en": "Switch state changed",
         "pl": "Stan przełącznika zmienił się"
@@ -186,7 +186,7 @@
   ],
   "conditions": [
     {
-      "id": "sr_zs_switch_switch_is",
+      "id": "sr_zs_switch_is",
       "title": {
         "en": "Switch # is !{{on|off}}",
         "pl": "Przełącznik # jest !{{włączony|wyłączony}}"
