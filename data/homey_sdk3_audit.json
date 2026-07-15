@@ -1,0 +1,1613 @@
+{
+  "_meta": {
+    "source": "homey-zigbeedriver/lib/system/capabilities + known SDK3 list",
+    "fetched": "2026-07-15T21:47:39.814Z",
+    "totalSdkCaps": 109,
+    "totalKnown": 91,
+    "totalUsedCaps": 170,
+    "totalBad": 200
+  },
+  "sdkCapabilities": {
+    "alarm_battery": {
+      "options": [
+        "powerConfiguration"
+      ],
+      "source": "homey-zigbeedriver"
+    },
+    "alarm_contact": {
+      "options": [
+        "binaryInput",
+        "occupancySensing"
+      ],
+      "source": "homey-zigbeedriver"
+    },
+    "alarm_heat": {
+      "options": [
+        "binaryInput"
+      ],
+      "source": "homey-zigbeedriver"
+    },
+    "alarm_motion": {
+      "options": [
+        "binaryInput",
+        "occupancySensing"
+      ],
+      "source": "homey-zigbeedriver"
+    },
+    "alarm_smoke": {
+      "options": [
+        "binaryInput"
+      ],
+      "source": "homey-zigbeedriver"
+    },
+    "alarm_water": {
+      "options": [
+        "binaryInput"
+      ],
+      "source": "homey-zigbeedriver"
+    },
+    "dim": {
+      "options": [
+        "levelControl"
+      ],
+      "source": "homey-zigbeedriver"
+    },
+    "light_hue": {
+      "options": [
+        "colorControl"
+      ],
+      "source": "homey-zigbeedriver"
+    },
+    "light_mode": {
+      "options": [
+        "colorControl"
+      ],
+      "source": "homey-zigbeedriver"
+    },
+    "light_saturation": {
+      "options": [
+        "colorControl"
+      ],
+      "source": "homey-zigbeedriver"
+    },
+    "light_temperature": {
+      "options": [
+        "colorControl"
+      ],
+      "source": "homey-zigbeedriver"
+    },
+    "measure_battery": {
+      "options": [
+        "powerConfiguration"
+      ],
+      "source": "homey-zigbeedriver"
+    },
+    "measure_current": {
+      "options": [
+        "electricalMeasurement"
+      ],
+      "source": "homey-zigbeedriver"
+    },
+    "measure_humidity": {
+      "options": [
+        "relativeHumidity"
+      ],
+      "source": "homey-zigbeedriver"
+    },
+    "measure_luminance": {
+      "options": [
+        "illuminanceMeasurement"
+      ],
+      "source": "homey-zigbeedriver"
+    },
+    "measure_power": {
+      "options": [
+        "electricalMeasurement"
+      ],
+      "source": "homey-zigbeedriver"
+    },
+    "measure_pressure": {
+      "options": [
+        "pressureMeasurement"
+      ],
+      "source": "homey-zigbeedriver"
+    },
+    "measure_temperature": {
+      "options": [
+        "deviceTemperature",
+        "temperatureMeasurement"
+      ],
+      "source": "homey-zigbeedriver"
+    },
+    "measure_voltage": {
+      "options": [
+        "electricalMeasurement"
+      ],
+      "source": "homey-zigbeedriver"
+    },
+    "measure_water": {
+      "options": [
+        "flowMeasurement"
+      ],
+      "source": "homey-zigbeedriver"
+    },
+    "meter_power": {
+      "options": [
+        "metering"
+      ],
+      "source": "homey-zigbeedriver"
+    },
+    "onoff": {
+      "options": [
+        "onOff"
+      ],
+      "source": "homey-zigbeedriver"
+    },
+    "windowcoverings_set": {
+      "options": [
+        "windowCovering"
+      ],
+      "source": "homey-zigbeedriver"
+    },
+    "windowcoverings_state": {
+      "options": [
+        "windowCovering"
+      ],
+      "source": "homey-zigbeedriver"
+    },
+    "windowcoverings_tilt_set": {
+      "options": [
+        "windowCovering"
+      ],
+      "source": "homey-zigbeedriver"
+    },
+    "button": {
+      "options": [
+        "0",
+        "1"
+      ],
+      "source": "sdk3-known"
+    },
+    "button.identify": {
+      "options": [],
+      "source": "sdk3-known"
+    },
+    "button.toggle": {
+      "options": [],
+      "source": "sdk3-known"
+    },
+    "button.toggle_1": {
+      "options": [],
+      "source": "sdk3-known"
+    },
+    "button.toggle_2": {
+      "options": [],
+      "source": "sdk3-known"
+    },
+    "button.reset_1": {
+      "options": [],
+      "source": "sdk3-known"
+    },
+    "button.reset_2": {
+      "options": [],
+      "source": "sdk3-known"
+    },
+    "button.reset_3": {
+      "options": [],
+      "source": "sdk3-known"
+    },
+    "button.reset_4": {
+      "options": [],
+      "source": "sdk3-known"
+    },
+    "button.reset_5": {
+      "options": [],
+      "source": "sdk3-known"
+    },
+    "button.reset_6": {
+      "options": [],
+      "source": "sdk3-known"
+    },
+    "button.program_1": {
+      "options": [],
+      "source": "sdk3-known"
+    },
+    "button.program_2": {
+      "options": [],
+      "source": "sdk3-known"
+    },
+    "button.program_3": {
+      "options": [],
+      "source": "sdk3-known"
+    },
+    "button.program_4": {
+      "options": [],
+      "source": "sdk3-known"
+    },
+    "target_temperature": {
+      "options": [],
+      "source": "sdk3-known"
+    },
+    "thermostat_mode": {
+      "options": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "source": "sdk3-known"
+    },
+    "thermostat_state": {
+      "options": [],
+      "source": "sdk3-known"
+    },
+    "measure_temperature.outdoor": {
+      "options": [],
+      "source": "sdk3-known"
+    },
+    "onoff.gang2": {
+      "options": [],
+      "source": "sdk3-known"
+    },
+    "onoff.gang3": {
+      "options": [],
+      "source": "sdk3-known"
+    },
+    "onoff.gang4": {
+      "options": [],
+      "source": "sdk3-known"
+    },
+    "onoff.gang5": {
+      "options": [],
+      "source": "sdk3-known"
+    },
+    "onoff.gang6": {
+      "options": [],
+      "source": "sdk3-known"
+    },
+    "onoff.gang7": {
+      "options": [],
+      "source": "sdk3-known"
+    },
+    "onoff.gang8": {
+      "options": [],
+      "source": "sdk3-known"
+    },
+    "lock_mode": {
+      "options": [
+        "0",
+        "1"
+      ],
+      "source": "sdk3-known"
+    },
+    "power_on_behavior": {
+      "options": [
+        "0",
+        "1",
+        "2"
+      ],
+      "source": "sdk3-known"
+    },
+    "alarm_tamper": {
+      "options": [],
+      "source": "sdk3-known"
+    },
+    "alarm_rain": {
+      "options": [],
+      "source": "sdk3-known"
+    },
+    "alarm_co": {
+      "options": [],
+      "source": "sdk3-known"
+    },
+    "alarm_co2": {
+      "options": [],
+      "source": "sdk3-known"
+    },
+    "alarm_pm25": {
+      "options": [],
+      "source": "sdk3-known"
+    },
+    "alarm_voc": {
+      "options": [],
+      "source": "sdk3-known"
+    },
+    "alarm_human": {
+      "options": [],
+      "source": "sdk3-known"
+    },
+    "alarm_generic": {
+      "options": [],
+      "source": "sdk3-known"
+    },
+    "measure_luminance.distance": {
+      "options": [],
+      "source": "sdk3-known"
+    },
+    "measure_humidity.soil": {
+      "options": [],
+      "source": "sdk3-known"
+    },
+    "measure_ec": {
+      "options": [],
+      "source": "sdk3-known"
+    },
+    "measure_conductivity": {
+      "options": [],
+      "source": "sdk3-known"
+    },
+    "measure_pm25": {
+      "options": [],
+      "source": "sdk3-known"
+    },
+    "measure_voc": {
+      "options": [],
+      "source": "sdk3-known"
+    },
+    "measure_co2": {
+      "options": [],
+      "source": "sdk3-known"
+    },
+    "measure_co": {
+      "options": [],
+      "source": "sdk3-known"
+    },
+    "measure_noise": {
+      "options": [],
+      "source": "sdk3-known"
+    },
+    "measure_rain": {
+      "options": [],
+      "source": "sdk3-known"
+    },
+    "measure_uv": {
+      "options": [],
+      "source": "sdk3-known"
+    },
+    "measure_pm10": {
+      "options": [],
+      "source": "sdk3-known"
+    },
+    "child_lock": {
+      "options": [],
+      "source": "sdk3-known"
+    },
+    "volume_set": {
+      "options": [],
+      "source": "sdk3-known"
+    },
+    "volume_mute": {
+      "options": [],
+      "source": "sdk3-known"
+    },
+    "speaker_playing": {
+      "options": [],
+      "source": "sdk3-known"
+    },
+    "speaker_track": {
+      "options": [],
+      "source": "sdk3-known"
+    },
+    "vacuumdock_state": {
+      "options": [],
+      "source": "sdk3-known"
+    },
+    "vacuumcleaner_state": {
+      "options": [],
+      "source": "sdk3-known"
+    },
+    "rgb_mode": {
+      "options": [],
+      "source": "sdk3-known"
+    },
+    "hue_mode": {
+      "options": [],
+      "source": "sdk3-known"
+    },
+    "saturation_mode": {
+      "options": [],
+      "source": "sdk3-known"
+    },
+    "color_mode": {
+      "options": [],
+      "source": "sdk3-known"
+    },
+    "fan_speed": {
+      "options": [],
+      "source": "sdk3-known"
+    },
+    "windowcoverings_tilt_state": {
+      "options": [],
+      "source": "sdk3-known"
+    },
+    "valve_position": {
+      "options": [],
+      "source": "sdk3-known"
+    },
+    "lock_state": {
+      "options": [],
+      "source": "sdk3-known"
+    },
+    "valve_state": {
+      "options": [],
+      "source": "sdk3-known"
+    },
+    "doorbell_event": {
+      "options": [],
+      "source": "sdk3-known"
+    },
+    "homealarm_state": {
+      "options": [],
+      "source": "sdk3-known"
+    },
+    "presence": {
+      "options": [],
+      "source": "sdk3-known"
+    },
+    "person_present": {
+      "options": [],
+      "source": "sdk3-known"
+    },
+    "owntrack_location": {
+      "options": [],
+      "source": "sdk3-known"
+    },
+    "curtain_state": {
+      "options": [],
+      "source": "sdk3-known"
+    },
+    "curtain_position": {
+      "options": [],
+      "source": "sdk3-known"
+    },
+    "curtain_set": {
+      "options": [],
+      "source": "sdk3-known"
+    },
+    "curtain_tilt_set": {
+      "options": [],
+      "source": "sdk3-known"
+    },
+    "curtain_tilt_state": {
+      "options": [],
+      "source": "sdk3-known"
+    },
+    "shutter_position": {
+      "options": [],
+      "source": "sdk3-known"
+    },
+    "shutter_set": {
+      "options": [],
+      "source": "sdk3-known"
+    },
+    "shutter_state": {
+      "options": [],
+      "source": "sdk3-known"
+    },
+    "screen_brightness": {
+      "options": [],
+      "source": "sdk3-known"
+    },
+    "screen_on": {
+      "options": [],
+      "source": "sdk3-known"
+    },
+    "tv_channel": {
+      "options": [],
+      "source": "sdk3-known"
+    },
+    "tv_volume": {
+      "options": [],
+      "source": "sdk3-known"
+    },
+    "tv_mute": {
+      "options": [],
+      "source": "sdk3-known"
+    },
+    "tv_power": {
+      "options": [],
+      "source": "sdk3-known"
+    },
+    "flow_action_run": {
+      "options": [],
+      "source": "sdk3-known"
+    }
+  },
+  "knownSdk3": [
+    "button",
+    "button.identify",
+    "button.toggle",
+    "button.toggle_1",
+    "button.toggle_2",
+    "button.reset_1",
+    "button.reset_2",
+    "button.reset_3",
+    "button.reset_4",
+    "button.reset_5",
+    "button.reset_6",
+    "button.program_1",
+    "button.program_2",
+    "button.program_3",
+    "button.program_4",
+    "target_temperature",
+    "thermostat_mode",
+    "thermostat_state",
+    "measure_temperature.outdoor",
+    "onoff.gang2",
+    "onoff.gang3",
+    "onoff.gang4",
+    "onoff.gang5",
+    "onoff.gang6",
+    "onoff.gang7",
+    "onoff.gang8",
+    "lock_mode",
+    "power_on_behavior",
+    "alarm_tamper",
+    "alarm_rain",
+    "alarm_co",
+    "alarm_co2",
+    "alarm_pm25",
+    "alarm_voc",
+    "alarm_human",
+    "alarm_generic",
+    "measure_luminance.distance",
+    "measure_humidity.soil",
+    "measure_ec",
+    "measure_conductivity",
+    "measure_pm25",
+    "measure_voc",
+    "measure_co2",
+    "measure_co",
+    "measure_noise",
+    "measure_rain",
+    "measure_uv",
+    "measure_pm10",
+    "child_lock",
+    "volume_set",
+    "volume_mute",
+    "speaker_playing",
+    "speaker_track",
+    "vacuumdock_state",
+    "vacuumcleaner_state",
+    "rgb_mode",
+    "hue_mode",
+    "saturation_mode",
+    "color_mode",
+    "light_mode",
+    "light_hue",
+    "light_saturation",
+    "light_temperature",
+    "fan_speed",
+    "windowcoverings_state",
+    "windowcoverings_set",
+    "windowcoverings_tilt_state",
+    "windowcoverings_tilt_set",
+    "valve_position",
+    "lock_state",
+    "valve_state",
+    "doorbell_event",
+    "homealarm_state",
+    "presence",
+    "person_present",
+    "owntrack_location",
+    "curtain_state",
+    "curtain_position",
+    "curtain_set",
+    "curtain_tilt_set",
+    "curtain_tilt_state",
+    "shutter_position",
+    "shutter_set",
+    "shutter_state",
+    "screen_brightness",
+    "screen_on",
+    "tv_channel",
+    "tv_volume",
+    "tv_mute",
+    "tv_power",
+    "flow_action_run"
+  ],
+  "bad": [
+    {
+      "cap": "measure_formaldehyde",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "air_purifier_quality"
+    },
+    {
+      "cap": "alarm_siren",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "air_purifier_siren"
+    },
+    {
+      "cap": "measure_formaldehyde",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "air_quality_co2"
+    },
+    {
+      "cap": "measure_formaldehyde",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "air_quality_comprehensive"
+    },
+    {
+      "cap": "button.learn_ir",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "blaster_remote"
+    },
+    {
+      "cap": "ir_learned_code",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "blaster_remote"
+    },
+    {
+      "cap": "ir_send_code",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "blaster_remote"
+    },
+    {
+      "cap": "onoff.channel2",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "bulb_dimmable_dimmer"
+    },
+    {
+      "cap": "dim.channel2",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "bulb_dimmable_dimmer"
+    },
+    {
+      "cap": "tuya_dp_value",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "bulb_rgbw_universal"
+    },
+    {
+      "cap": "tuya_dp_string",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "bulb_rgbw_universal"
+    },
+    {
+      "cap": "tuya_dp_raw",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "bulb_rgbw_universal"
+    },
+    {
+      "cap": "tuya_cluster_event",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "bulb_rgbw_universal"
+    },
+    {
+      "cap": "finger_bot_mode",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "button_wireless_fingerbot"
+    },
+    {
+      "cap": "onoff.usb2",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "button_wireless_usb"
+    },
+    {
+      "cap": "dim.valve",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "button_wireless_valve"
+    },
+    {
+      "cap": "dim.speed",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "ceiling_fan"
+    },
+    {
+      "cap": "lidl_xmas_mode",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "christmas_lights"
+    },
+    {
+      "cap": "frost_protection",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "climate_sensor_device"
+    },
+    {
+      "cap": "measure_power.phase1",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "climate_sensor_energy"
+    },
+    {
+      "cap": "measure_power.phase2",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "climate_sensor_energy"
+    },
+    {
+      "cap": "measure_power.phase3",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "climate_sensor_energy"
+    },
+    {
+      "cap": "alarm_gas",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "climate_sensor_gas"
+    },
+    {
+      "cap": "button.toggle_3",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "climate_sensor_presence"
+    },
+    {
+      "cap": "meter_power.exported",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "device_air_purifier_din"
+    },
+    {
+      "cap": "measure_temperature.floor",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "device_air_purifier_floor"
+    },
+    {
+      "cap": "dim.humidity",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "device_air_purifier_humidifier"
+    },
+    {
+      "cap": "measure_formaldehyde",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "device_air_purifier_quality"
+    },
+    {
+      "cap": "frost_protection",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "device_air_purifier_radiator"
+    },
+    {
+      "cap": "measure_water_level",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "device_air_purifier_water"
+    },
+    {
+      "cap": "measure_water_percentage",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "device_air_purifier_water"
+    },
+    {
+      "cap": "alarm_water_low",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "device_air_purifier_water"
+    },
+    {
+      "cap": "alarm_water_high",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "device_air_purifier_water"
+    },
+    {
+      "cap": "meter_power.exported",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "device_din_rail"
+    },
+    {
+      "cap": "meter_power.exported",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "device_din_rail_meter"
+    },
+    {
+      "cap": "measure_temperature.floor",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "device_floor_heating"
+    },
+    {
+      "cap": "measure_temperature.floor",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "device_floor_heating_thermostat"
+    },
+    {
+      "cap": "tuya_dp_value",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "device_generic_diy_universal"
+    },
+    {
+      "cap": "tuya_dp_string",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "device_generic_diy_universal"
+    },
+    {
+      "cap": "tuya_dp_raw",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "device_generic_diy_universal"
+    },
+    {
+      "cap": "tuya_cluster_event",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "device_generic_diy_universal"
+    },
+    {
+      "cap": "tuya_dp_value",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "device_generic_tuya"
+    },
+    {
+      "cap": "tuya_dp_string",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "device_generic_tuya"
+    },
+    {
+      "cap": "tuya_dp_raw",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "device_generic_tuya"
+    },
+    {
+      "cap": "tuya_cluster_event",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "device_generic_tuya"
+    },
+    {
+      "cap": "frost_protection",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "device_radiator_valve"
+    },
+    {
+      "cap": "frost_protection",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "device_radiator_valve_smart"
+    },
+    {
+      "cap": "dim.gang2",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "dimmer_3gang"
+    },
+    {
+      "cap": "dim.gang3",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "dimmer_3gang"
+    },
+    {
+      "cap": "onoff.2",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "dimmer_4ch"
+    },
+    {
+      "cap": "dim.2",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "dimmer_4ch"
+    },
+    {
+      "cap": "onoff.3",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "dimmer_4ch"
+    },
+    {
+      "cap": "dim.3",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "dimmer_4ch"
+    },
+    {
+      "cap": "onoff.4",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "dimmer_4ch"
+    },
+    {
+      "cap": "dim.4",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "dimmer_4ch"
+    },
+    {
+      "cap": "onoff.channel2",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "dimmer_dual_channel"
+    },
+    {
+      "cap": "dim.channel2",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "dimmer_dual_channel"
+    },
+    {
+      "cap": "meter_power.exported",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "din_rail_meter"
+    },
+    {
+      "cap": "locked",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "door_controller"
+    },
+    {
+      "cap": "locked",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "door_controller_garage"
+    },
+    {
+      "cap": "garagedoor_closed",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "door_controller_garage"
+    },
+    {
+      "cap": "measure_power.phase1",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "energy_meter_3phase"
+    },
+    {
+      "cap": "measure_power.phase2",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "energy_meter_3phase"
+    },
+    {
+      "cap": "measure_power.phase3",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "energy_meter_3phase"
+    },
+    {
+      "cap": "measure_frequency",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "energy_meter_din"
+    },
+    {
+      "cap": "finger_bot_mode",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "fingerbot"
+    },
+    {
+      "cap": "finger_bot_mode",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "fingerbot_switch"
+    },
+    {
+      "cap": "locked",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "fingerprint_lock"
+    },
+    {
+      "cap": "measure_temperature.floor",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "floor_heating_thermostat"
+    },
+    {
+      "cap": "garagedoor_closed",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "garage_door"
+    },
+    {
+      "cap": "garagedoor_closed",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "garage_door_opener"
+    },
+    {
+      "cap": "alarm_gas",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "gas_detector"
+    },
+    {
+      "cap": "alarm_gas",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "gas_sensor"
+    },
+    {
+      "cap": "button.toggle_3",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "gas_sensor_switch"
+    },
+    {
+      "cap": "button.toggle_4",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "gas_sensor_switch"
+    },
+    {
+      "cap": "alarm_gas",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "gas_sensor_switch"
+    },
+    {
+      "cap": "dim.humidity",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "humidifier"
+    },
+    {
+      "cap": "dim.speed",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "hvac_air_conditioner"
+    },
+    {
+      "cap": "dim.humidity",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "hvac_dehumidifier"
+    },
+    {
+      "cap": "dim.speed",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "hvac_dehumidifier"
+    },
+    {
+      "cap": "garagedoor_closed",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "hybrid_garage_door_sensor"
+    },
+    {
+      "cap": "volume_up",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "ir_blaster"
+    },
+    {
+      "cap": "volume_down",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "ir_blaster"
+    },
+    {
+      "cap": "channel_up",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "ir_blaster"
+    },
+    {
+      "cap": "channel_down",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "ir_blaster"
+    },
+    {
+      "cap": "button.mute",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "ir_blaster"
+    },
+    {
+      "cap": "button.source",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "ir_blaster"
+    },
+    {
+      "cap": "button.menu",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "ir_blaster"
+    },
+    {
+      "cap": "button.enter",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "ir_blaster"
+    },
+    {
+      "cap": "button.learn_ir",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "ir_blaster"
+    },
+    {
+      "cap": "onoff.ir_learn",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "ir_remote"
+    },
+    {
+      "cap": "button.ir_test",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "ir_remote"
+    },
+    {
+      "cap": "locked",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "lock_smart"
+    },
+    {
+      "cap": "button.feed",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "pet_feeder"
+    },
+    {
+      "cap": "measure_weight",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "pet_feeder_zigbee"
+    },
+    {
+      "cap": "measure_current.phase2",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "power_clamp_meter"
+    },
+    {
+      "cap": "measure_frequency",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "power_clamp_meter"
+    },
+    {
+      "cap": "measure_power_factor",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "power_clamp_meter"
+    },
+    {
+      "cap": "measure_power.phase1",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "power_clamp_meter"
+    },
+    {
+      "cap": "measure_power.phase2",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "power_clamp_meter"
+    },
+    {
+      "cap": "measure_power.phase3",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "power_clamp_meter"
+    },
+    {
+      "cap": "measure_presence_confidence",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "presence_detector"
+    },
+    {
+      "cap": "measure_presence_duration",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "presence_detector"
+    },
+    {
+      "cap": "alarm_motion.zone1",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "presence_sensor_ceiling"
+    },
+    {
+      "cap": "alarm_motion.zone2",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "presence_sensor_ceiling"
+    },
+    {
+      "cap": "alarm_motion.zone3",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "presence_sensor_ceiling"
+    },
+    {
+      "cap": "measure_luminance.distance.zone1",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "presence_sensor_ceiling"
+    },
+    {
+      "cap": "measure_luminance.distance.zone2",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "presence_sensor_ceiling"
+    },
+    {
+      "cap": "measure_luminance.distance.zone3",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "presence_sensor_ceiling"
+    },
+    {
+      "cap": "alarm_motion.zone1",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "presence_sensor_radar"
+    },
+    {
+      "cap": "alarm_motion.zone2",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "presence_sensor_radar"
+    },
+    {
+      "cap": "alarm_motion.zone3",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "presence_sensor_radar"
+    },
+    {
+      "cap": "measure_luminance.distance.zone1",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "presence_sensor_radar"
+    },
+    {
+      "cap": "measure_luminance.distance.zone2",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "presence_sensor_radar"
+    },
+    {
+      "cap": "measure_luminance.distance.zone3",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "presence_sensor_radar"
+    },
+    {
+      "cap": "target_distance",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "radar_sensor"
+    },
+    {
+      "cap": "target_distance",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "radar_sensor_2"
+    },
+    {
+      "cap": "target_distance",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "radar_sensor_ceiling"
+    },
+    {
+      "cap": "frost_protection",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "radiator_controller"
+    },
+    {
+      "cap": "frost_protection",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "radiator_valve"
+    },
+    {
+      "cap": "window_detection",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "radiator_valve_zigbee"
+    },
+    {
+      "cap": "frost_protection_temperature",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "radiator_valve_zigbee"
+    },
+    {
+      "cap": "finger_bot_mode",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "remote_button_wireless_fingerbot"
+    },
+    {
+      "cap": "onoff.usb2",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "remote_button_wireless_usb"
+    },
+    {
+      "cap": "dim.valve",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "remote_button_wireless_valve"
+    },
+    {
+      "cap": "measure_temperature.probe",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "sensor_climate_contact"
+    },
+    {
+      "cap": "alarm_gas",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "sensor_gas_presence"
+    },
+    {
+      "cap": "alarm_siren",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "sirentemphumidsensor"
+    },
+    {
+      "cap": "alarm_siren",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "siren_sirentemphumidsensor"
+    },
+    {
+      "cap": "measure_formaldehyde",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "smart_air_detection_box"
+    },
+    {
+      "cap": "button.rotate_left",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "smart_knob_rotary"
+    },
+    {
+      "cap": "button.rotate_right",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "smart_knob_rotary"
+    },
+    {
+      "cap": "button.press",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "smart_knob_rotary"
+    },
+    {
+      "cap": "onoff_1",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "sr_zs_switch"
+    },
+    {
+      "cap": "onoff_2",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "sr_zs_switch"
+    },
+    {
+      "cap": "onoff_3",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "sr_zs_switch"
+    },
+    {
+      "cap": "button.toggle_3",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "switch_3gang"
+    },
+    {
+      "cap": "button.toggle_3",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "switch_4gang"
+    },
+    {
+      "cap": "button.toggle_4",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "switch_4gang"
+    },
+    {
+      "cap": "onoff.outlet2",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "switch_plug_2"
+    },
+    {
+      "cap": "onoff.l2",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "switch_usb_dongle"
+    },
+    {
+      "cap": "thermostat_preset",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "thermostatic_radiator_valve"
+    },
+    {
+      "cap": "window_open",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "thermostatic_radiator_valve"
+    },
+    {
+      "cap": "onoff.ch2",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "thermostat_4ch"
+    },
+    {
+      "cap": "onoff.ch3",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "thermostat_4ch"
+    },
+    {
+      "cap": "onoff.ch4",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "thermostat_4ch"
+    },
+    {
+      "cap": "target_temperature.ch2",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "thermostat_4ch"
+    },
+    {
+      "cap": "target_temperature.ch3",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "thermostat_4ch"
+    },
+    {
+      "cap": "target_temperature.ch4",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "thermostat_4ch"
+    },
+    {
+      "cap": "measure_temperature.ch2",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "thermostat_4ch"
+    },
+    {
+      "cap": "measure_temperature.ch3",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "thermostat_4ch"
+    },
+    {
+      "cap": "measure_temperature.ch4",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "thermostat_4ch"
+    },
+    {
+      "cap": "meter_water",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "ultrasonic_water_meter"
+    },
+    {
+      "cap": "tuya_dp_value",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "universal_zigbee"
+    },
+    {
+      "cap": "tuya_dp_string",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "universal_zigbee"
+    },
+    {
+      "cap": "tuya_dp_raw",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "universal_zigbee"
+    },
+    {
+      "cap": "tuya_cluster_event",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "universal_zigbee"
+    },
+    {
+      "cap": "onoff.usb2",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "usb_dongle_dual_repeater"
+    },
+    {
+      "cap": "onoff.usb2",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "usb_dongle_triple"
+    },
+    {
+      "cap": "onoff.usb3",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "usb_dongle_triple"
+    },
+    {
+      "cap": "onoff.socket2",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "usb_outlet_advanced"
+    },
+    {
+      "cap": "onoff.usb1",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "usb_outlet_advanced"
+    },
+    {
+      "cap": "onoff.usb2",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "usb_outlet_advanced"
+    },
+    {
+      "cap": "onoff.led",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "usb_outlet_advanced"
+    },
+    {
+      "cap": "onoff.valve_1",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "valve_dual_irrigation"
+    },
+    {
+      "cap": "onoff.valve_2",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "valve_dual_irrigation"
+    },
+    {
+      "cap": "dim.valve_1",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "valve_irrigation"
+    },
+    {
+      "cap": "dim.valve_2",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "valve_irrigation"
+    },
+    {
+      "cap": "dim.valve_3",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "valve_irrigation"
+    },
+    {
+      "cap": "dim.valve_4",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "valve_irrigation"
+    },
+    {
+      "cap": "frost_protection",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "valve_irrigation"
+    },
+    {
+      "cap": "dim.valve",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "valve_single"
+    },
+    {
+      "cap": "alarm_vibration",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "vibration_sensor"
+    },
+    {
+      "cap": "thermostat_programming",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "wall_thermostat"
+    },
+    {
+      "cap": "measure_water_level",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "water_tank_monitor"
+    },
+    {
+      "cap": "measure_water_percentage",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "water_tank_monitor"
+    },
+    {
+      "cap": "alarm_water_low",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "water_tank_monitor"
+    },
+    {
+      "cap": "alarm_water_high",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "water_tank_monitor"
+    },
+    {
+      "cap": "meter_water",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "water_valve_smart"
+    },
+    {
+      "cap": "target_humidity",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "wifi_dehumidifier"
+    },
+    {
+      "cap": "locked",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "wifi_door_lock"
+    },
+    {
+      "cap": "onoff.2",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "wifi_ewelink_fan"
+    },
+    {
+      "cap": "onoff.2",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "wifi_ewelink_switch_2ch"
+    },
+    {
+      "cap": "onoff.2",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "wifi_ewelink_switch_4ch"
+    },
+    {
+      "cap": "onoff.3",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "wifi_ewelink_switch_4ch"
+    },
+    {
+      "cap": "onoff.4",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "wifi_ewelink_switch_4ch"
+    },
+    {
+      "cap": "garagedoor_closed",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "wifi_garage_door"
+    },
+    {
+      "cap": "wifi_heater_mode",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "wifi_heater"
+    },
+    {
+      "cap": "eco_mode",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "wifi_heater"
+    },
+    {
+      "cap": "onoff.socket2",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "wifi_power_strip"
+    },
+    {
+      "cap": "onoff.socket3",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "wifi_power_strip"
+    },
+    {
+      "cap": "onoff.socket4",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "wifi_power_strip"
+    },
+    {
+      "cap": "onoff.2",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "wifi_sonoff_dualr3"
+    },
+    {
+      "cap": "onoff.2",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "wifi_sonoff_tx_2ch"
+    },
+    {
+      "cap": "onoff.2",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "wifi_sonoff_tx_3ch"
+    },
+    {
+      "cap": "onoff.3",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "wifi_sonoff_tx_3ch"
+    },
+    {
+      "cap": "measure_water_level",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "wifi_water_tank_monitor"
+    },
+    {
+      "cap": "measure_water_percentage",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "wifi_water_tank_monitor"
+    },
+    {
+      "cap": "alarm_water_low",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "wifi_water_tank_monitor"
+    },
+    {
+      "cap": "alarm_water_high",
+      "reason": "NOT a known Homey SDK3 capability",
+      "driver": "wifi_water_tank_monitor"
+    }
+  ]
+}
