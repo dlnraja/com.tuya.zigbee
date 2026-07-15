@@ -1,0 +1,7449 @@
+{
+  "_meta": {
+    "totalMfrsInDrivers": 4236,
+    "totalMfrsInZ2M": 1385,
+    "totalGaps": 728,
+    "byExpose": {
+      "occupancy": 10,
+      "power_on_behavior": 57,
+      "action": 108,
+      "temperature": 15,
+      "humidity": 9,
+      "power": 68,
+      "voltage": 18,
+      "energy": 72,
+      "child_lock": 82,
+      "current": 43,
+      "battery_voltage": 7,
+      "presence": 43,
+      "illuminance": 45,
+      "switch": 33,
+      "smoke": 12,
+      "vibration": 8,
+      "voc": 11,
+      "contact": 10,
+      "fan_speed": 6,
+      "gas": 17,
+      "co": 5,
+      "tamper": 3,
+      "pressure": 1,
+      "battery": 39,
+      "distance": 1,
+      "soil_moisture": 3,
+      "brightness": 1,
+      "light": 1
+    }
+  },
+  "gaps": [
+    {
+      "mfr": "_tze200_seq9cm6u",
+      "drivers": [
+        "bed_sensor"
+      ],
+      "expose": "occupancy",
+      "suggestedCaps": [
+        "alarm_motion",
+        "alarm_human"
+      ]
+    },
+    {
+      "mfr": "_tz3210_ngqk6jia",
+      "drivers": [
+        "bulb_tunable_white",
+        "wall_dimmer_tuya"
+      ],
+      "expose": "power_on_behavior",
+      "suggestedCaps": [
+        "power_on_behavior"
+      ]
+    },
+    {
+      "mfr": "_tz3000_8utxxtzr",
+      "drivers": [
+        "button_emergency_sos"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tz3000_ug1vtuzn",
+      "drivers": [
+        "button_wireless_2"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tze204_jygvp6fk",
+      "drivers": [
+        "button_wireless_2"
+      ],
+      "expose": "temperature",
+      "suggestedCaps": [
+        "measure_temperature"
+      ]
+    },
+    {
+      "mfr": "_tze204_jygvp6fk",
+      "drivers": [
+        "button_wireless_2"
+      ],
+      "expose": "humidity",
+      "suggestedCaps": [
+        "measure_humidity"
+      ]
+    },
+    {
+      "mfr": "_tze200_d7lpruvi",
+      "drivers": [
+        "button_wireless_2"
+      ],
+      "expose": "temperature",
+      "suggestedCaps": [
+        "measure_temperature"
+      ]
+    },
+    {
+      "mfr": "_tze200_d7lpruvi",
+      "drivers": [
+        "button_wireless_2"
+      ],
+      "expose": "humidity",
+      "suggestedCaps": [
+        "measure_humidity"
+      ]
+    },
+    {
+      "mfr": "_tze204_ksz749x8",
+      "drivers": [
+        "button_wireless_2"
+      ],
+      "expose": "temperature",
+      "suggestedCaps": [
+        "measure_temperature"
+      ]
+    },
+    {
+      "mfr": "_tze204_ksz749x8",
+      "drivers": [
+        "button_wireless_2"
+      ],
+      "expose": "humidity",
+      "suggestedCaps": [
+        "measure_humidity"
+      ]
+    },
+    {
+      "mfr": "_tze204_1wnh8bqp",
+      "drivers": [
+        "button_wireless_2"
+      ],
+      "expose": "temperature",
+      "suggestedCaps": [
+        "measure_temperature"
+      ]
+    },
+    {
+      "mfr": "_tze204_1wnh8bqp",
+      "drivers": [
+        "button_wireless_2"
+      ],
+      "expose": "humidity",
+      "suggestedCaps": [
+        "measure_humidity"
+      ]
+    },
+    {
+      "mfr": "_tze284_1wnh8bqp",
+      "drivers": [
+        "button_wireless_2"
+      ],
+      "expose": "temperature",
+      "suggestedCaps": [
+        "measure_temperature"
+      ]
+    },
+    {
+      "mfr": "_tze284_1wnh8bqp",
+      "drivers": [
+        "button_wireless_2"
+      ],
+      "expose": "humidity",
+      "suggestedCaps": [
+        "measure_humidity"
+      ]
+    },
+    {
+      "mfr": "_tz3000_p6ju8myv",
+      "drivers": [
+        "button_wireless_2"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tz3000_0zrccfgx",
+      "drivers": [
+        "button_wireless_2"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tz3000_fsiepnrh",
+      "drivers": [
+        "button_wireless_2"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tz3000_eo3dttwe",
+      "drivers": [
+        "button_wireless_2"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tz3000_jwcixnrz",
+      "drivers": [
+        "button_wireless_2"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tze200_hkdl5fmv",
+      "drivers": [
+        "button_wireless_2"
+      ],
+      "expose": "power",
+      "suggestedCaps": [
+        "measure_power"
+      ]
+    },
+    {
+      "mfr": "_tze200_hkdl5fmv",
+      "drivers": [
+        "button_wireless_2"
+      ],
+      "expose": "voltage",
+      "suggestedCaps": [
+        "measure_voltage"
+      ]
+    },
+    {
+      "mfr": "_tze200_hkdl5fmv",
+      "drivers": [
+        "button_wireless_2"
+      ],
+      "expose": "energy",
+      "suggestedCaps": [
+        "meter_power"
+      ]
+    },
+    {
+      "mfr": "_tze200_hkdl5fmv",
+      "drivers": [
+        "button_wireless_2"
+      ],
+      "expose": "temperature",
+      "suggestedCaps": [
+        "measure_temperature"
+      ]
+    },
+    {
+      "mfr": "_tze200_hkdl5fmv",
+      "drivers": [
+        "button_wireless_2"
+      ],
+      "expose": "child_lock",
+      "suggestedCaps": [
+        "child_lock"
+      ]
+    },
+    {
+      "mfr": "_tze200_hkdl5fmv",
+      "drivers": [
+        "button_wireless_2"
+      ],
+      "expose": "power_on_behavior",
+      "suggestedCaps": [
+        "power_on_behavior"
+      ]
+    },
+    {
+      "mfr": "_tze200_hkdl5fmv",
+      "drivers": [
+        "button_wireless_2"
+      ],
+      "expose": "current",
+      "suggestedCaps": [
+        "measure_current"
+      ]
+    },
+    {
+      "mfr": "_tz3000_itnrsufe",
+      "drivers": [
+        "button_wireless_2"
+      ],
+      "expose": "temperature",
+      "suggestedCaps": [
+        "measure_temperature"
+      ]
+    },
+    {
+      "mfr": "_tz3000_itnrsufe",
+      "drivers": [
+        "button_wireless_2"
+      ],
+      "expose": "humidity",
+      "suggestedCaps": [
+        "measure_humidity"
+      ]
+    },
+    {
+      "mfr": "_tz3000_itnrsufe",
+      "drivers": [
+        "button_wireless_2"
+      ],
+      "expose": "battery_voltage",
+      "suggestedCaps": [
+        "measure_voltage"
+      ]
+    },
+    {
+      "mfr": "_tze204_muvkrjr5",
+      "drivers": [
+        "button_wireless_2"
+      ],
+      "expose": "presence",
+      "suggestedCaps": [
+        "alarm_motion",
+        "alarm_human"
+      ]
+    },
+    {
+      "mfr": "_tze284_d4h8j2n6",
+      "drivers": [
+        "button_wireless_2"
+      ],
+      "expose": "presence",
+      "suggestedCaps": [
+        "alarm_motion",
+        "alarm_human"
+      ]
+    },
+    {
+      "mfr": "_tze284_d4h8j2n6",
+      "drivers": [
+        "button_wireless_2"
+      ],
+      "expose": "illuminance",
+      "suggestedCaps": [
+        "measure_luminance"
+      ]
+    },
+    {
+      "mfr": "_tz3000_u2bbagu4",
+      "drivers": [
+        "button_wireless_2"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tz3000_qeuvnohg",
+      "drivers": [
+        "button_wireless_2"
+      ],
+      "expose": "switch",
+      "suggestedCaps": [
+        "onoff"
+      ]
+    },
+    {
+      "mfr": "_tz3000_qeuvnohg",
+      "drivers": [
+        "button_wireless_2"
+      ],
+      "expose": "power",
+      "suggestedCaps": [
+        "measure_power"
+      ]
+    },
+    {
+      "mfr": "_tz3000_qeuvnohg",
+      "drivers": [
+        "button_wireless_2"
+      ],
+      "expose": "current",
+      "suggestedCaps": [
+        "measure_current"
+      ]
+    },
+    {
+      "mfr": "_tz3000_qeuvnohg",
+      "drivers": [
+        "button_wireless_2"
+      ],
+      "expose": "voltage",
+      "suggestedCaps": [
+        "measure_voltage"
+      ]
+    },
+    {
+      "mfr": "_tz3000_qeuvnohg",
+      "drivers": [
+        "button_wireless_2"
+      ],
+      "expose": "energy",
+      "suggestedCaps": [
+        "meter_power"
+      ]
+    },
+    {
+      "mfr": "_tz3000_zl1kmjqx",
+      "drivers": [
+        "button_wireless_2"
+      ],
+      "expose": "temperature",
+      "suggestedCaps": [
+        "measure_temperature"
+      ]
+    },
+    {
+      "mfr": "_tz3000_zl1kmjqx",
+      "drivers": [
+        "button_wireless_2"
+      ],
+      "expose": "humidity",
+      "suggestedCaps": [
+        "measure_humidity"
+      ]
+    },
+    {
+      "mfr": "_tz3000_zl1kmjqx",
+      "drivers": [
+        "button_wireless_2"
+      ],
+      "expose": "battery_voltage",
+      "suggestedCaps": [
+        "measure_voltage"
+      ]
+    },
+    {
+      "mfr": "_tze204_d7lpruvi",
+      "drivers": [
+        "button_wireless_2"
+      ],
+      "expose": "temperature",
+      "suggestedCaps": [
+        "measure_temperature"
+      ]
+    },
+    {
+      "mfr": "_tze204_d7lpruvi",
+      "drivers": [
+        "button_wireless_2"
+      ],
+      "expose": "humidity",
+      "suggestedCaps": [
+        "measure_humidity"
+      ]
+    },
+    {
+      "mfr": "_tze284_d7lpruvi",
+      "drivers": [
+        "button_wireless_2"
+      ],
+      "expose": "temperature",
+      "suggestedCaps": [
+        "measure_temperature"
+      ]
+    },
+    {
+      "mfr": "_tze284_d7lpruvi",
+      "drivers": [
+        "button_wireless_2"
+      ],
+      "expose": "humidity",
+      "suggestedCaps": [
+        "measure_humidity"
+      ]
+    },
+    {
+      "mfr": "_tyst11_2dpplnsn",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "child_lock",
+      "suggestedCaps": [
+        "child_lock"
+      ]
+    },
+    {
+      "mfr": "_tyst11_wv90ladg",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "child_lock",
+      "suggestedCaps": [
+        "child_lock"
+      ]
+    },
+    {
+      "mfr": "_tze200_0u3bj3rc",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "presence",
+      "suggestedCaps": [
+        "alarm_motion",
+        "alarm_human"
+      ]
+    },
+    {
+      "mfr": "_tze200_1drr8tab",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "child_lock",
+      "suggestedCaps": [
+        "child_lock"
+      ]
+    },
+    {
+      "mfr": "_tze200_2dpplnsn",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "child_lock",
+      "suggestedCaps": [
+        "child_lock"
+      ]
+    },
+    {
+      "mfr": "_tze200_4eeyebrt",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "child_lock",
+      "suggestedCaps": [
+        "child_lock"
+      ]
+    },
+    {
+      "mfr": "_tze200_5d3vhjro",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "smoke",
+      "suggestedCaps": [
+        "alarm_smoke"
+      ]
+    },
+    {
+      "mfr": "_tze200_78ioiaml",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "energy",
+      "suggestedCaps": [
+        "meter_power"
+      ]
+    },
+    {
+      "mfr": "_tze200_78ioiaml",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "power",
+      "suggestedCaps": [
+        "measure_power"
+      ]
+    },
+    {
+      "mfr": "_tze200_7deq70b8",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "switch",
+      "suggestedCaps": [
+        "onoff"
+      ]
+    },
+    {
+      "mfr": "_tze200_7fqkphoq",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "child_lock",
+      "suggestedCaps": [
+        "child_lock"
+      ]
+    },
+    {
+      "mfr": "_tze200_86nbew0j",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "power_on_behavior",
+      "suggestedCaps": [
+        "power_on_behavior"
+      ]
+    },
+    {
+      "mfr": "_tze200_8eazvzo6",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "switch",
+      "suggestedCaps": [
+        "onoff"
+      ]
+    },
+    {
+      "mfr": "_tze200_8eazvzo6",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "current",
+      "suggestedCaps": [
+        "measure_current"
+      ]
+    },
+    {
+      "mfr": "_tze200_8eazvzo6",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "power",
+      "suggestedCaps": [
+        "measure_power"
+      ]
+    },
+    {
+      "mfr": "_tze200_8ply8mjj",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "vibration",
+      "suggestedCaps": [
+        "alarm_tamper",
+        "alarm_vibration"
+      ]
+    },
+    {
+      "mfr": "_tze200_8thwkzxl",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "child_lock",
+      "suggestedCaps": [
+        "child_lock"
+      ]
+    },
+    {
+      "mfr": "_tze200_auin8mzr",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "occupancy",
+      "suggestedCaps": [
+        "alarm_motion",
+        "alarm_human"
+      ]
+    },
+    {
+      "mfr": "_tze200_bcusnqt8",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "power",
+      "suggestedCaps": [
+        "measure_power"
+      ]
+    },
+    {
+      "mfr": "_tze200_bcusnqt8",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "current",
+      "suggestedCaps": [
+        "measure_current"
+      ]
+    },
+    {
+      "mfr": "_tze200_bcusnqt8",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "energy",
+      "suggestedCaps": [
+        "meter_power"
+      ]
+    },
+    {
+      "mfr": "_tze200_blfcpsxz",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "voc",
+      "suggestedCaps": [
+        "measure_voc"
+      ]
+    },
+    {
+      "mfr": "_tze200_dcnsggv",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "power_on_behavior",
+      "suggestedCaps": [
+        "power_on_behavior"
+      ]
+    },
+    {
+      "mfr": "_tze200_dikb3dp6",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "energy",
+      "suggestedCaps": [
+        "meter_power"
+      ]
+    },
+    {
+      "mfr": "_tze200_dikb3dp6",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "power",
+      "suggestedCaps": [
+        "measure_power"
+      ]
+    },
+    {
+      "mfr": "_tze200_dnz6yvl2",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "smoke",
+      "suggestedCaps": [
+        "alarm_smoke"
+      ]
+    },
+    {
+      "mfr": "_tze200_do5qy8zo",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "child_lock",
+      "suggestedCaps": [
+        "child_lock"
+      ]
+    },
+    {
+      "mfr": "_tze200_drs6j6m5",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "power_on_behavior",
+      "suggestedCaps": [
+        "power_on_behavior"
+      ]
+    },
+    {
+      "mfr": "_tze200_dv8abrrz",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "child_lock",
+      "suggestedCaps": [
+        "child_lock"
+      ]
+    },
+    {
+      "mfr": "_tze200_e2bedvo9",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "smoke",
+      "suggestedCaps": [
+        "alarm_smoke"
+      ]
+    },
+    {
+      "mfr": "_tze200_edl8pz1k",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "child_lock",
+      "suggestedCaps": [
+        "child_lock"
+      ]
+    },
+    {
+      "mfr": "_tze200_eo6xhfbo",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "child_lock",
+      "suggestedCaps": [
+        "child_lock"
+      ]
+    },
+    {
+      "mfr": "_tze200_fwoorn8y",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "contact",
+      "suggestedCaps": [
+        "alarm_contact"
+      ]
+    },
+    {
+      "mfr": "_tze200_grgol3xp",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "presence",
+      "suggestedCaps": [
+        "alarm_motion",
+        "alarm_human"
+      ]
+    },
+    {
+      "mfr": "_tze200_grgol3xp",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "illuminance",
+      "suggestedCaps": [
+        "measure_luminance"
+      ]
+    },
+    {
+      "mfr": "_tze200_h2rctifa",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "power_on_behavior",
+      "suggestedCaps": [
+        "power_on_behavior"
+      ]
+    },
+    {
+      "mfr": "_tze200_hdih4foa",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "presence",
+      "suggestedCaps": [
+        "alarm_motion",
+        "alarm_human"
+      ]
+    },
+    {
+      "mfr": "_tze200_hdih4foa",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "illuminance",
+      "suggestedCaps": [
+        "measure_luminance"
+      ]
+    },
+    {
+      "mfr": "_tze200_hmqzfqml",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "power_on_behavior",
+      "suggestedCaps": [
+        "power_on_behavior"
+      ]
+    },
+    {
+      "mfr": "_tze200_hmqzfqml",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "fan_speed",
+      "suggestedCaps": [
+        "dim"
+      ]
+    },
+    {
+      "mfr": "_tze200_ijey4q29",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "contact",
+      "suggestedCaps": [
+        "alarm_contact"
+      ]
+    },
+    {
+      "mfr": "_tze200_ijey4q29",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "illuminance",
+      "suggestedCaps": [
+        "measure_luminance"
+      ]
+    },
+    {
+      "mfr": "_tze200_io0zdqh1",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "power_on_behavior",
+      "suggestedCaps": [
+        "power_on_behavior"
+      ]
+    },
+    {
+      "mfr": "_tze200_iuk8kupi",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "gas",
+      "suggestedCaps": [
+        "alarm_gas"
+      ]
+    },
+    {
+      "mfr": "_tze200_iuk8kupi",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "co",
+      "suggestedCaps": [
+        "measure_co"
+      ]
+    },
+    {
+      "mfr": "_tze200_iwn0gpzz",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "power",
+      "suggestedCaps": [
+        "measure_power"
+      ]
+    },
+    {
+      "mfr": "_tze200_iwn0gpzz",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "current",
+      "suggestedCaps": [
+        "measure_current"
+      ]
+    },
+    {
+      "mfr": "_tze200_iwn0gpzz",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "energy",
+      "suggestedCaps": [
+        "meter_power"
+      ]
+    },
+    {
+      "mfr": "_tze200_jkbljri7",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "illuminance",
+      "suggestedCaps": [
+        "measure_luminance"
+      ]
+    },
+    {
+      "mfr": "_tze200_jkbljri7",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "presence",
+      "suggestedCaps": [
+        "alarm_motion",
+        "alarm_human"
+      ]
+    },
+    {
+      "mfr": "_tze200_jkbljri7",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "occupancy",
+      "suggestedCaps": [
+        "alarm_motion",
+        "alarm_human"
+      ]
+    },
+    {
+      "mfr": "_tze200_js3mgbjb",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "switch",
+      "suggestedCaps": [
+        "onoff"
+      ]
+    },
+    {
+      "mfr": "_tze200_jxyhl4eq",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "occupancy",
+      "suggestedCaps": [
+        "alarm_motion",
+        "alarm_human"
+      ]
+    },
+    {
+      "mfr": "_tze200_jxyhl4eq",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "illuminance",
+      "suggestedCaps": [
+        "measure_luminance"
+      ]
+    },
+    {
+      "mfr": "_tze200_kf2hbko4",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "contact",
+      "suggestedCaps": [
+        "alarm_contact"
+      ]
+    },
+    {
+      "mfr": "_tze200_kf2hbko4",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "illuminance",
+      "suggestedCaps": [
+        "measure_luminance"
+      ]
+    },
+    {
+      "mfr": "_tze200_khx7nnka",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "illuminance",
+      "suggestedCaps": [
+        "measure_luminance"
+      ]
+    },
+    {
+      "mfr": "_tze200_kltffuzl",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "contact",
+      "suggestedCaps": [
+        "alarm_contact"
+      ]
+    },
+    {
+      "mfr": "_tze200_kvpwq8z7",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "gas",
+      "suggestedCaps": [
+        "alarm_gas"
+      ]
+    },
+    {
+      "mfr": "_tze200_mby4kbtq",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "gas",
+      "suggestedCaps": [
+        "alarm_gas"
+      ]
+    },
+    {
+      "mfr": "_tze200_mgxy2d9f",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "tamper",
+      "suggestedCaps": [
+        "alarm_tamper"
+      ]
+    },
+    {
+      "mfr": "_tze200_mgxy2d9f",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "occupancy",
+      "suggestedCaps": [
+        "alarm_motion",
+        "alarm_human"
+      ]
+    },
+    {
+      "mfr": "_tze200_mx6u6l4y",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "presence",
+      "suggestedCaps": [
+        "alarm_motion",
+        "alarm_human"
+      ]
+    },
+    {
+      "mfr": "_tze200_n8dljorx",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "contact",
+      "suggestedCaps": [
+        "alarm_contact"
+      ]
+    },
+    {
+      "mfr": "_tze200_na5qlzow",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "occupancy",
+      "suggestedCaps": [
+        "alarm_motion",
+        "alarm_human"
+      ]
+    },
+    {
+      "mfr": "_tze200_na5qlzow",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "illuminance",
+      "suggestedCaps": [
+        "measure_luminance"
+      ]
+    },
+    {
+      "mfr": "_tze200_nus5kk3n",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "gas",
+      "suggestedCaps": [
+        "alarm_gas"
+      ]
+    },
+    {
+      "mfr": "_tze200_nvups4nh",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "contact",
+      "suggestedCaps": [
+        "alarm_contact"
+      ]
+    },
+    {
+      "mfr": "_tze200_ny94onlb",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "energy",
+      "suggestedCaps": [
+        "meter_power"
+      ]
+    },
+    {
+      "mfr": "_tze200_ny94onlb",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "power",
+      "suggestedCaps": [
+        "measure_power"
+      ]
+    },
+    {
+      "mfr": "_tze200_oisqyl4o",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "switch",
+      "suggestedCaps": [
+        "onoff"
+      ]
+    },
+    {
+      "mfr": "_tze200_oyti2ums",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "switch",
+      "suggestedCaps": [
+        "onoff"
+      ]
+    },
+    {
+      "mfr": "_tze200_oyti2ums",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "current",
+      "suggestedCaps": [
+        "measure_current"
+      ]
+    },
+    {
+      "mfr": "_tze200_pbo8cj0z",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "child_lock",
+      "suggestedCaps": [
+        "child_lock"
+      ]
+    },
+    {
+      "mfr": "_tze200_qanl25yu",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "power_on_behavior",
+      "suggestedCaps": [
+        "power_on_behavior"
+      ]
+    },
+    {
+      "mfr": "_tze200_qanl25yu",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "fan_speed",
+      "suggestedCaps": [
+        "dim"
+      ]
+    },
+    {
+      "mfr": "_tze200_qhlxve78",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "power",
+      "suggestedCaps": [
+        "measure_power"
+      ]
+    },
+    {
+      "mfr": "_tze200_qhlxve78",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "current",
+      "suggestedCaps": [
+        "measure_current"
+      ]
+    },
+    {
+      "mfr": "_tze200_qhlxve78",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "energy",
+      "suggestedCaps": [
+        "meter_power"
+      ]
+    },
+    {
+      "mfr": "_tze200_qjp4ynvi",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "child_lock",
+      "suggestedCaps": [
+        "child_lock"
+      ]
+    },
+    {
+      "mfr": "_tze200_qxyh4r7g",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "occupancy",
+      "suggestedCaps": [
+        "alarm_motion",
+        "alarm_human"
+      ]
+    },
+    {
+      "mfr": "_tze200_qxyh4r7g",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "illuminance",
+      "suggestedCaps": [
+        "measure_luminance"
+      ]
+    },
+    {
+      "mfr": "_tze200_qyss8gjy",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "power_on_behavior",
+      "suggestedCaps": [
+        "power_on_behavior"
+      ]
+    },
+    {
+      "mfr": "_tze200_raz9qavg",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "switch",
+      "suggestedCaps": [
+        "onoff"
+      ]
+    },
+    {
+      "mfr": "_tze200_rbbx5mfq",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "illuminance",
+      "suggestedCaps": [
+        "measure_luminance"
+      ]
+    },
+    {
+      "mfr": "_tze200_rtrmfadk",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "child_lock",
+      "suggestedCaps": [
+        "child_lock"
+      ]
+    },
+    {
+      "mfr": "_tze200_snfdqllf",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "power",
+      "suggestedCaps": [
+        "measure_power"
+      ]
+    },
+    {
+      "mfr": "_tze200_snfdqllf",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "energy",
+      "suggestedCaps": [
+        "meter_power"
+      ]
+    },
+    {
+      "mfr": "_tze200_tbgecldg",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "child_lock",
+      "suggestedCaps": [
+        "child_lock"
+      ]
+    },
+    {
+      "mfr": "_tze200_u319yc66",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "gas",
+      "suggestedCaps": [
+        "alarm_gas"
+      ]
+    },
+    {
+      "mfr": "_tze200_uli8wasj",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "presence",
+      "suggestedCaps": [
+        "alarm_motion",
+        "alarm_human"
+      ]
+    },
+    {
+      "mfr": "_tze200_uli8wasj",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "illuminance",
+      "suggestedCaps": [
+        "measure_luminance"
+      ]
+    },
+    {
+      "mfr": "_tze200_ux5v4dbd",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "smoke",
+      "suggestedCaps": [
+        "alarm_smoke"
+      ]
+    },
+    {
+      "mfr": "_tze200_v6ossqfy",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "presence",
+      "suggestedCaps": [
+        "alarm_motion",
+        "alarm_human"
+      ]
+    },
+    {
+      "mfr": "_tze200_vizxbhco",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "power_on_behavior",
+      "suggestedCaps": [
+        "power_on_behavior"
+      ]
+    },
+    {
+      "mfr": "_tze200_vm1gyrso",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "power_on_behavior",
+      "suggestedCaps": [
+        "power_on_behavior"
+      ]
+    },
+    {
+      "mfr": "_tze200_vrfecyku",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "illuminance",
+      "suggestedCaps": [
+        "measure_luminance"
+      ]
+    },
+    {
+      "mfr": "_tze200_vrfecyku",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "presence",
+      "suggestedCaps": [
+        "alarm_motion",
+        "alarm_human"
+      ]
+    },
+    {
+      "mfr": "_tze200_vrfecyku",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "occupancy",
+      "suggestedCaps": [
+        "alarm_motion",
+        "alarm_human"
+      ]
+    },
+    {
+      "mfr": "_tze200_vuqzj1ej",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "presence",
+      "suggestedCaps": [
+        "alarm_motion",
+        "alarm_human"
+      ]
+    },
+    {
+      "mfr": "_tze200_vuqzj1ej",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "illuminance",
+      "suggestedCaps": [
+        "measure_luminance"
+      ]
+    },
+    {
+      "mfr": "_tze200_vzqtvljm",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "illuminance",
+      "suggestedCaps": [
+        "measure_luminance"
+      ]
+    },
+    {
+      "mfr": "_tze200_wem3gxyx",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "child_lock",
+      "suggestedCaps": [
+        "child_lock"
+      ]
+    },
+    {
+      "mfr": "_tze200_wv90ladg",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "child_lock",
+      "suggestedCaps": [
+        "child_lock"
+      ]
+    },
+    {
+      "mfr": "_tze200_x8fp01wi",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "switch",
+      "suggestedCaps": [
+        "onoff"
+      ]
+    },
+    {
+      "mfr": "_tze200_x8fp01wi",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "power",
+      "suggestedCaps": [
+        "measure_power"
+      ]
+    },
+    {
+      "mfr": "_tze200_x8fp01wi",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "energy",
+      "suggestedCaps": [
+        "meter_power"
+      ]
+    },
+    {
+      "mfr": "_tze200_yflzeeqj",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "presence",
+      "suggestedCaps": [
+        "alarm_motion",
+        "alarm_human"
+      ]
+    },
+    {
+      "mfr": "_tze200_yi4jtqq1",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "illuminance",
+      "suggestedCaps": [
+        "measure_luminance"
+      ]
+    },
+    {
+      "mfr": "_tze200_ykglasuj",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "contact",
+      "suggestedCaps": [
+        "alarm_contact"
+      ]
+    },
+    {
+      "mfr": "_tze200_ykglasuj",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "illuminance",
+      "suggestedCaps": [
+        "measure_luminance"
+      ]
+    },
+    {
+      "mfr": "_tze200_ypprdwsl",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "illuminance",
+      "suggestedCaps": [
+        "measure_luminance"
+      ]
+    },
+    {
+      "mfr": "_tze200_ypprdwsl",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "presence",
+      "suggestedCaps": [
+        "alarm_motion",
+        "alarm_human"
+      ]
+    },
+    {
+      "mfr": "_tze200_ypprdwsl",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "occupancy",
+      "suggestedCaps": [
+        "alarm_motion",
+        "alarm_human"
+      ]
+    },
+    {
+      "mfr": "_tze200_ytibqbra",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "smoke",
+      "suggestedCaps": [
+        "alarm_smoke"
+      ]
+    },
+    {
+      "mfr": "_tze200_ytibqbra",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "tamper",
+      "suggestedCaps": [
+        "alarm_tamper"
+      ]
+    },
+    {
+      "mfr": "_tze200_ywe90lt0",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "power_on_behavior",
+      "suggestedCaps": [
+        "power_on_behavior"
+      ]
+    },
+    {
+      "mfr": "_tze200_zbfmvj13",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "presence",
+      "suggestedCaps": [
+        "alarm_motion",
+        "alarm_human"
+      ]
+    },
+    {
+      "mfr": "_tze200_c2fmom5z",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "voc",
+      "suggestedCaps": [
+        "measure_voc"
+      ]
+    },
+    {
+      "mfr": "_tze200_dwcarsat",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "voc",
+      "suggestedCaps": [
+        "measure_voc"
+      ]
+    },
+    {
+      "mfr": "_tze200_mja3fuja",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "voc",
+      "suggestedCaps": [
+        "measure_voc"
+      ]
+    },
+    {
+      "mfr": "_tze200_nh9m9emk",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "switch",
+      "suggestedCaps": [
+        "onoff"
+      ]
+    },
+    {
+      "mfr": "_tze200_rccxox8p",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "smoke",
+      "suggestedCaps": [
+        "alarm_smoke"
+      ]
+    },
+    {
+      "mfr": "_tze200_ryfmq5rl",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "voc",
+      "suggestedCaps": [
+        "measure_voc"
+      ]
+    },
+    {
+      "mfr": "_tze200_wbhaespm",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "energy",
+      "suggestedCaps": [
+        "meter_power"
+      ]
+    },
+    {
+      "mfr": "_tze200_yvx5lh6k",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "voc",
+      "suggestedCaps": [
+        "measure_voc"
+      ]
+    },
+    {
+      "mfr": "_tze204_3q3maeoo",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "child_lock",
+      "suggestedCaps": [
+        "child_lock"
+      ]
+    },
+    {
+      "mfr": "_tze204_4bjixefp",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "switch",
+      "suggestedCaps": [
+        "onoff"
+      ]
+    },
+    {
+      "mfr": "_tze204_4bjixefp",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "power",
+      "suggestedCaps": [
+        "measure_power"
+      ]
+    },
+    {
+      "mfr": "_tze204_4bjixefp",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "current",
+      "suggestedCaps": [
+        "measure_current"
+      ]
+    },
+    {
+      "mfr": "_tze204_4bjixefp",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "energy",
+      "suggestedCaps": [
+        "meter_power"
+      ]
+    },
+    {
+      "mfr": "_tze204_4bjixefp",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "power_on_behavior",
+      "suggestedCaps": [
+        "power_on_behavior"
+      ]
+    },
+    {
+      "mfr": "_tze204_6a4vxfnv",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "child_lock",
+      "suggestedCaps": [
+        "child_lock"
+      ]
+    },
+    {
+      "mfr": "_tze204_6vwfjkcj",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "child_lock",
+      "suggestedCaps": [
+        "child_lock"
+      ]
+    },
+    {
+      "mfr": "_tze204_6vwfjkcj",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "power",
+      "suggestedCaps": [
+        "measure_power"
+      ]
+    },
+    {
+      "mfr": "_tze204_6vwfjkcj",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "current",
+      "suggestedCaps": [
+        "measure_current"
+      ]
+    },
+    {
+      "mfr": "_tze204_6vwfjkcj",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "energy",
+      "suggestedCaps": [
+        "meter_power"
+      ]
+    },
+    {
+      "mfr": "_tze204_78ioiaml",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "energy",
+      "suggestedCaps": [
+        "meter_power"
+      ]
+    },
+    {
+      "mfr": "_tze204_78ioiaml",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "power",
+      "suggestedCaps": [
+        "measure_power"
+      ]
+    },
+    {
+      "mfr": "_tze204_aai5grix",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "presence",
+      "suggestedCaps": [
+        "alarm_motion",
+        "alarm_human"
+      ]
+    },
+    {
+      "mfr": "_tze204_aai5grix",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "illuminance",
+      "suggestedCaps": [
+        "measure_luminance"
+      ]
+    },
+    {
+      "mfr": "_tze204_adlblwab",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "power_on_behavior",
+      "suggestedCaps": [
+        "power_on_behavior"
+      ]
+    },
+    {
+      "mfr": "_tze204_bql5khqx",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "power_on_behavior",
+      "suggestedCaps": [
+        "power_on_behavior"
+      ]
+    },
+    {
+      "mfr": "_tze204_d6i25bwg",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "child_lock",
+      "suggestedCaps": [
+        "child_lock"
+      ]
+    },
+    {
+      "mfr": "_tze204_dapwryy7",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "presence",
+      "suggestedCaps": [
+        "alarm_motion",
+        "alarm_human"
+      ]
+    },
+    {
+      "mfr": "_tze204_dapwryy7",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "illuminance",
+      "suggestedCaps": [
+        "measure_luminance"
+      ]
+    },
+    {
+      "mfr": "_tze204_dhotiauw",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "power",
+      "suggestedCaps": [
+        "measure_power"
+      ]
+    },
+    {
+      "mfr": "_tze204_dikb3dp6",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "energy",
+      "suggestedCaps": [
+        "meter_power"
+      ]
+    },
+    {
+      "mfr": "_tze204_dikb3dp6",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "power",
+      "suggestedCaps": [
+        "measure_power"
+      ]
+    },
+    {
+      "mfr": "_tze204_dsagrkvg",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "switch",
+      "suggestedCaps": [
+        "onoff"
+      ]
+    },
+    {
+      "mfr": "_tze204_dwcarsat",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "voc",
+      "suggestedCaps": [
+        "measure_voc"
+      ]
+    },
+    {
+      "mfr": "_tze204_e9ajs4ft",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "illuminance",
+      "suggestedCaps": [
+        "measure_luminance"
+      ]
+    },
+    {
+      "mfr": "_tze204_e9ajs4ft",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "presence",
+      "suggestedCaps": [
+        "alarm_motion",
+        "alarm_human"
+      ]
+    },
+    {
+      "mfr": "_tze204_eaulras5",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "presence",
+      "suggestedCaps": [
+        "alarm_motion",
+        "alarm_human"
+      ]
+    },
+    {
+      "mfr": "_tze204_eaulras5",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "illuminance",
+      "suggestedCaps": [
+        "measure_luminance"
+      ]
+    },
+    {
+      "mfr": "_tze204_edl8pz1k",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "child_lock",
+      "suggestedCaps": [
+        "child_lock"
+      ]
+    },
+    {
+      "mfr": "_tze204_fhvdgeuh",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "switch",
+      "suggestedCaps": [
+        "onoff"
+      ]
+    },
+    {
+      "mfr": "_tze204_fhvdgeuh",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "power",
+      "suggestedCaps": [
+        "measure_power"
+      ]
+    },
+    {
+      "mfr": "_tze204_fhvdgeuh",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "current",
+      "suggestedCaps": [
+        "measure_current"
+      ]
+    },
+    {
+      "mfr": "_tze204_fhvdgeuh",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "energy",
+      "suggestedCaps": [
+        "meter_power"
+      ]
+    },
+    {
+      "mfr": "_tze204_fhvdgeuh",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "power_on_behavior",
+      "suggestedCaps": [
+        "power_on_behavior"
+      ]
+    },
+    {
+      "mfr": "_tze204_g2ki0ejr",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "child_lock",
+      "suggestedCaps": [
+        "child_lock"
+      ]
+    },
+    {
+      "mfr": "_tze204_hiith90n",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "switch",
+      "suggestedCaps": [
+        "onoff"
+      ]
+    },
+    {
+      "mfr": "_tze204_ilzkxrav",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "power",
+      "suggestedCaps": [
+        "measure_power"
+      ]
+    },
+    {
+      "mfr": "_tze204_ilzkxrav",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "current",
+      "suggestedCaps": [
+        "measure_current"
+      ]
+    },
+    {
+      "mfr": "_tze204_ilzkxrav",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "energy",
+      "suggestedCaps": [
+        "meter_power"
+      ]
+    },
+    {
+      "mfr": "_tze204_iuk8kupi",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "gas",
+      "suggestedCaps": [
+        "alarm_gas"
+      ]
+    },
+    {
+      "mfr": "_tze204_iuk8kupi",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "co",
+      "suggestedCaps": [
+        "measure_co"
+      ]
+    },
+    {
+      "mfr": "_tze204_iwn0gpzz",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "power",
+      "suggestedCaps": [
+        "measure_power"
+      ]
+    },
+    {
+      "mfr": "_tze204_iwn0gpzz",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "current",
+      "suggestedCaps": [
+        "measure_current"
+      ]
+    },
+    {
+      "mfr": "_tze204_iwn0gpzz",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "energy",
+      "suggestedCaps": [
+        "meter_power"
+      ]
+    },
+    {
+      "mfr": "_tze204_jcwbwckh",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "power",
+      "suggestedCaps": [
+        "measure_power"
+      ]
+    },
+    {
+      "mfr": "_tze204_jcwbwckh",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "current",
+      "suggestedCaps": [
+        "measure_current"
+      ]
+    },
+    {
+      "mfr": "_tze204_jcwbwckh",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "energy",
+      "suggestedCaps": [
+        "meter_power"
+      ]
+    },
+    {
+      "mfr": "_tze204_khx7nnka",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "illuminance",
+      "suggestedCaps": [
+        "measure_luminance"
+      ]
+    },
+    {
+      "mfr": "_tze204_kvpwq8z7",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "gas",
+      "suggestedCaps": [
+        "alarm_gas"
+      ]
+    },
+    {
+      "mfr": "_tze204_l6llgoxq",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "current",
+      "suggestedCaps": [
+        "measure_current"
+      ]
+    },
+    {
+      "mfr": "_tze204_l6llgoxq",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "power",
+      "suggestedCaps": [
+        "measure_power"
+      ]
+    },
+    {
+      "mfr": "_tze204_l6llgoxq",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "energy",
+      "suggestedCaps": [
+        "meter_power"
+      ]
+    },
+    {
+      "mfr": "_tze204_l8xiyymq",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "power_on_behavior",
+      "suggestedCaps": [
+        "power_on_behavior"
+      ]
+    },
+    {
+      "mfr": "_tze204_ltwbm23f",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "child_lock",
+      "suggestedCaps": [
+        "child_lock"
+      ]
+    },
+    {
+      "mfr": "_tze204_m64smti7",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "energy",
+      "suggestedCaps": [
+        "meter_power"
+      ]
+    },
+    {
+      "mfr": "_tze204_mby4kbtq",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "gas",
+      "suggestedCaps": [
+        "alarm_gas"
+      ]
+    },
+    {
+      "mfr": "_tze204_mhxn2jso",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "presence",
+      "suggestedCaps": [
+        "alarm_motion",
+        "alarm_human"
+      ]
+    },
+    {
+      "mfr": "_tze204_mhxn2jso",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "illuminance",
+      "suggestedCaps": [
+        "measure_luminance"
+      ]
+    },
+    {
+      "mfr": "_tze204_mrffaamu",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "energy",
+      "suggestedCaps": [
+        "meter_power"
+      ]
+    },
+    {
+      "mfr": "_tze204_mrffaamu",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "power",
+      "suggestedCaps": [
+        "measure_power"
+      ]
+    },
+    {
+      "mfr": "_tze204_mrffaamu",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "current",
+      "suggestedCaps": [
+        "measure_current"
+      ]
+    },
+    {
+      "mfr": "_tze204_mul9abs3",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "child_lock",
+      "suggestedCaps": [
+        "child_lock"
+      ]
+    },
+    {
+      "mfr": "_tze204_mwomyz5n",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "child_lock",
+      "suggestedCaps": [
+        "child_lock"
+      ]
+    },
+    {
+      "mfr": "_tze204_ncti2pro",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "power_on_behavior",
+      "suggestedCaps": [
+        "power_on_behavior"
+      ]
+    },
+    {
+      "mfr": "_tze204_ny94onlb",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "energy",
+      "suggestedCaps": [
+        "meter_power"
+      ]
+    },
+    {
+      "mfr": "_tze204_ny94onlb",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "power",
+      "suggestedCaps": [
+        "measure_power"
+      ]
+    },
+    {
+      "mfr": "_tze204_oh8y8pv8",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "child_lock",
+      "suggestedCaps": [
+        "child_lock"
+      ]
+    },
+    {
+      "mfr": "_tze204_oqtpvx51",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "illuminance",
+      "suggestedCaps": [
+        "measure_luminance"
+      ]
+    },
+    {
+      "mfr": "_tze204_oqtpvx51",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "presence",
+      "suggestedCaps": [
+        "alarm_motion",
+        "alarm_human"
+      ]
+    },
+    {
+      "mfr": "_tze204_ptaqh9tk",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "switch",
+      "suggestedCaps": [
+        "onoff"
+      ]
+    },
+    {
+      "mfr": "_tze204_q12rv9gj",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "child_lock",
+      "suggestedCaps": [
+        "child_lock"
+      ]
+    },
+    {
+      "mfr": "_tze204_q22avxbv",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "energy",
+      "suggestedCaps": [
+        "meter_power"
+      ]
+    },
+    {
+      "mfr": "_tze204_q22avxbv",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "power",
+      "suggestedCaps": [
+        "measure_power"
+      ]
+    },
+    {
+      "mfr": "_tze204_q22avxbv",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "current",
+      "suggestedCaps": [
+        "measure_current"
+      ]
+    },
+    {
+      "mfr": "_tze204_qhlxve78",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "power",
+      "suggestedCaps": [
+        "measure_power"
+      ]
+    },
+    {
+      "mfr": "_tze204_qhlxve78",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "current",
+      "suggestedCaps": [
+        "measure_current"
+      ]
+    },
+    {
+      "mfr": "_tze204_qhlxve78",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "energy",
+      "suggestedCaps": [
+        "meter_power"
+      ]
+    },
+    {
+      "mfr": "_tze204_rbbx5mfq",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "illuminance",
+      "suggestedCaps": [
+        "measure_luminance"
+      ]
+    },
+    {
+      "mfr": "_tze204_sooucan5",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "illuminance",
+      "suggestedCaps": [
+        "measure_luminance"
+      ]
+    },
+    {
+      "mfr": "_tze204_sooucan5",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "presence",
+      "suggestedCaps": [
+        "alarm_motion",
+        "alarm_human"
+      ]
+    },
+    {
+      "mfr": "_tze204_tagezcph",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "child_lock",
+      "suggestedCaps": [
+        "child_lock"
+      ]
+    },
+    {
+      "mfr": "_tze204_tbgecldg",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "child_lock",
+      "suggestedCaps": [
+        "child_lock"
+      ]
+    },
+    {
+      "mfr": "_tze204_tzreobvu",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "energy",
+      "suggestedCaps": [
+        "meter_power"
+      ]
+    },
+    {
+      "mfr": "_tze204_tzreobvu",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "power",
+      "suggestedCaps": [
+        "measure_power"
+      ]
+    },
+    {
+      "mfr": "_tze204_tzreobvu",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "current",
+      "suggestedCaps": [
+        "measure_current"
+      ]
+    },
+    {
+      "mfr": "_tze204_uo8qcagc",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "gas",
+      "suggestedCaps": [
+        "alarm_gas"
+      ]
+    },
+    {
+      "mfr": "_tze204_uxllnywp",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "illuminance",
+      "suggestedCaps": [
+        "measure_luminance"
+      ]
+    },
+    {
+      "mfr": "_tze204_uxllnywp",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "presence",
+      "suggestedCaps": [
+        "alarm_motion",
+        "alarm_human"
+      ]
+    },
+    {
+      "mfr": "_tze204_v6iczj35",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "gas",
+      "suggestedCaps": [
+        "alarm_gas"
+      ]
+    },
+    {
+      "mfr": "_tze204_w2vunxzm",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "pressure",
+      "suggestedCaps": [
+        "measure_pressure"
+      ]
+    },
+    {
+      "mfr": "_tze204_x8fp01wi",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "switch",
+      "suggestedCaps": [
+        "onoff"
+      ]
+    },
+    {
+      "mfr": "_tze204_x8fp01wi",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "power",
+      "suggestedCaps": [
+        "measure_power"
+      ]
+    },
+    {
+      "mfr": "_tze204_x8fp01wi",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "energy",
+      "suggestedCaps": [
+        "meter_power"
+      ]
+    },
+    {
+      "mfr": "_tze204_xpq2rzhq",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "illuminance",
+      "suggestedCaps": [
+        "measure_luminance"
+      ]
+    },
+    {
+      "mfr": "_tze204_xpq2rzhq",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "presence",
+      "suggestedCaps": [
+        "alarm_motion",
+        "alarm_human"
+      ]
+    },
+    {
+      "mfr": "_tze204_zjhoqbrd",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "child_lock",
+      "suggestedCaps": [
+        "child_lock"
+      ]
+    },
+    {
+      "mfr": "_tze204_zougpkpy",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "gas",
+      "suggestedCaps": [
+        "alarm_gas"
+      ]
+    },
+    {
+      "mfr": "_tze204_zqq3cipq",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "power_on_behavior",
+      "suggestedCaps": [
+        "power_on_behavior"
+      ]
+    },
+    {
+      "mfr": "_tze204_ac0fhfiq",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "energy",
+      "suggestedCaps": [
+        "meter_power"
+      ]
+    },
+    {
+      "mfr": "_tze204_ac0fhfiq",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "power",
+      "suggestedCaps": [
+        "measure_power"
+      ]
+    },
+    {
+      "mfr": "_tze204_ac0fhfiq",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "current",
+      "suggestedCaps": [
+        "measure_current"
+      ]
+    },
+    {
+      "mfr": "_tze204_ai4rqhky",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "smoke",
+      "suggestedCaps": [
+        "alarm_smoke"
+      ]
+    },
+    {
+      "mfr": "_tze204_c2fmom5z",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "voc",
+      "suggestedCaps": [
+        "measure_voc"
+      ]
+    },
+    {
+      "mfr": "_tze204_eekpf0ft",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "child_lock",
+      "suggestedCaps": [
+        "child_lock"
+      ]
+    },
+    {
+      "mfr": "_tze204_vjpaih9f",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "child_lock",
+      "suggestedCaps": [
+        "child_lock"
+      ]
+    },
+    {
+      "mfr": "_tze204_wbhaespm",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "energy",
+      "suggestedCaps": [
+        "meter_power"
+      ]
+    },
+    {
+      "mfr": "_tze204_yvx5lh6k",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "voc",
+      "suggestedCaps": [
+        "measure_voc"
+      ]
+    },
+    {
+      "mfr": "_tze284_1lvln0x6",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "presence",
+      "suggestedCaps": [
+        "alarm_motion",
+        "alarm_human"
+      ]
+    },
+    {
+      "mfr": "_tze284_2gi1hy8s",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "child_lock",
+      "suggestedCaps": [
+        "child_lock"
+      ]
+    },
+    {
+      "mfr": "_tze284_4cqhd2ha",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "vibration",
+      "suggestedCaps": [
+        "alarm_tamper",
+        "alarm_vibration"
+      ]
+    },
+    {
+      "mfr": "_tze284_4hdbt6rn",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "energy",
+      "suggestedCaps": [
+        "meter_power"
+      ]
+    },
+    {
+      "mfr": "_tze284_4hdbt6rn",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "current",
+      "suggestedCaps": [
+        "measure_current"
+      ]
+    },
+    {
+      "mfr": "_tze284_4hdbt6rn",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "power",
+      "suggestedCaps": [
+        "measure_power"
+      ]
+    },
+    {
+      "mfr": "_tze284_5m4nchbm",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "switch",
+      "suggestedCaps": [
+        "onoff"
+      ]
+    },
+    {
+      "mfr": "_tze284_5m4nchbm",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "current",
+      "suggestedCaps": [
+        "measure_current"
+      ]
+    },
+    {
+      "mfr": "_tze284_5m4nchbm",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "power",
+      "suggestedCaps": [
+        "measure_power"
+      ]
+    },
+    {
+      "mfr": "_tze284_5m4nchbm",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "energy",
+      "suggestedCaps": [
+        "meter_power"
+      ]
+    },
+    {
+      "mfr": "_tze284_65gzcss7",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "illuminance",
+      "suggestedCaps": [
+        "measure_luminance"
+      ]
+    },
+    {
+      "mfr": "_tze284_6teua268",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "vibration",
+      "suggestedCaps": [
+        "alarm_tamper",
+        "alarm_vibration"
+      ]
+    },
+    {
+      "mfr": "_tze284_78ioiaml",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "energy",
+      "suggestedCaps": [
+        "meter_power"
+      ]
+    },
+    {
+      "mfr": "_tze284_78ioiaml",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "power",
+      "suggestedCaps": [
+        "measure_power"
+      ]
+    },
+    {
+      "mfr": "_tze284_8b9zpaav",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "voc",
+      "suggestedCaps": [
+        "measure_voc"
+      ]
+    },
+    {
+      "mfr": "_tze284_9xstqowh",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "energy",
+      "suggestedCaps": [
+        "meter_power"
+      ]
+    },
+    {
+      "mfr": "_tze284_9xstqowh",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "power",
+      "suggestedCaps": [
+        "measure_power"
+      ]
+    },
+    {
+      "mfr": "_tze284_9xstqowh",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "current",
+      "suggestedCaps": [
+        "measure_current"
+      ]
+    },
+    {
+      "mfr": "_tze284_a14rjslz",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "energy",
+      "suggestedCaps": [
+        "meter_power"
+      ]
+    },
+    {
+      "mfr": "_tze284_a14rjslz",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "power",
+      "suggestedCaps": [
+        "measure_power"
+      ]
+    },
+    {
+      "mfr": "_tze284_aai5grix",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "presence",
+      "suggestedCaps": [
+        "alarm_motion",
+        "alarm_human"
+      ]
+    },
+    {
+      "mfr": "_tze284_aai5grix",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "illuminance",
+      "suggestedCaps": [
+        "measure_luminance"
+      ]
+    },
+    {
+      "mfr": "_tze284_ac0fhfiq",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "energy",
+      "suggestedCaps": [
+        "meter_power"
+      ]
+    },
+    {
+      "mfr": "_tze284_ac0fhfiq",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "power",
+      "suggestedCaps": [
+        "measure_power"
+      ]
+    },
+    {
+      "mfr": "_tze284_ac0fhfiq",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "current",
+      "suggestedCaps": [
+        "measure_current"
+      ]
+    },
+    {
+      "mfr": "_tze284_agcxaw3f",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "child_lock",
+      "suggestedCaps": [
+        "child_lock"
+      ]
+    },
+    {
+      "mfr": "_tze284_ai4rqhky",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "smoke",
+      "suggestedCaps": [
+        "alarm_smoke"
+      ]
+    },
+    {
+      "mfr": "_tze284_ajuasrmx",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "presence",
+      "suggestedCaps": [
+        "alarm_motion",
+        "alarm_human"
+      ]
+    },
+    {
+      "mfr": "_tze284_ajuasrmx",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "illuminance",
+      "suggestedCaps": [
+        "measure_luminance"
+      ]
+    },
+    {
+      "mfr": "_tze284_atuj3i0w",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tze284_dikb3dp6",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "energy",
+      "suggestedCaps": [
+        "meter_power"
+      ]
+    },
+    {
+      "mfr": "_tze284_dikb3dp6",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "power",
+      "suggestedCaps": [
+        "measure_power"
+      ]
+    },
+    {
+      "mfr": "_tze284_e2bedvo9",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "smoke",
+      "suggestedCaps": [
+        "alarm_smoke"
+      ]
+    },
+    {
+      "mfr": "_tze284_eekpf0ft",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "child_lock",
+      "suggestedCaps": [
+        "child_lock"
+      ]
+    },
+    {
+      "mfr": "_tze284_idn2htgu",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tze284_iwn0gpzz",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "power",
+      "suggestedCaps": [
+        "measure_power"
+      ]
+    },
+    {
+      "mfr": "_tze284_iwn0gpzz",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "current",
+      "suggestedCaps": [
+        "measure_current"
+      ]
+    },
+    {
+      "mfr": "_tze284_iwn0gpzz",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "energy",
+      "suggestedCaps": [
+        "meter_power"
+      ]
+    },
+    {
+      "mfr": "_tze284_iwyqtclw",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "switch",
+      "suggestedCaps": [
+        "onoff"
+      ]
+    },
+    {
+      "mfr": "_tze284_iwyqtclw",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "power_on_behavior",
+      "suggestedCaps": [
+        "power_on_behavior"
+      ]
+    },
+    {
+      "mfr": "_tze284_iwyqtclw",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tze284_k7p2q5d9",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "illuminance",
+      "suggestedCaps": [
+        "measure_luminance"
+      ]
+    },
+    {
+      "mfr": "_tze284_khah2lkr",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "child_lock",
+      "suggestedCaps": [
+        "child_lock"
+      ]
+    },
+    {
+      "mfr": "_tze284_l8xiyymq",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "power_on_behavior",
+      "suggestedCaps": [
+        "power_on_behavior"
+      ]
+    },
+    {
+      "mfr": "_tze284_madl8ejv",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "child_lock",
+      "suggestedCaps": [
+        "child_lock"
+      ]
+    },
+    {
+      "mfr": "_tze284_mrffaamu",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "energy",
+      "suggestedCaps": [
+        "meter_power"
+      ]
+    },
+    {
+      "mfr": "_tze284_mrffaamu",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "power",
+      "suggestedCaps": [
+        "measure_power"
+      ]
+    },
+    {
+      "mfr": "_tze284_mrffaamu",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "current",
+      "suggestedCaps": [
+        "measure_current"
+      ]
+    },
+    {
+      "mfr": "_tze284_ny94onlb",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "energy",
+      "suggestedCaps": [
+        "meter_power"
+      ]
+    },
+    {
+      "mfr": "_tze284_ny94onlb",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "power",
+      "suggestedCaps": [
+        "measure_power"
+      ]
+    },
+    {
+      "mfr": "_tze284_pglpvdar",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "energy",
+      "suggestedCaps": [
+        "meter_power"
+      ]
+    },
+    {
+      "mfr": "_tze284_pglpvdar",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "current",
+      "suggestedCaps": [
+        "measure_current"
+      ]
+    },
+    {
+      "mfr": "_tze284_pglpvdar",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "power",
+      "suggestedCaps": [
+        "measure_power"
+      ]
+    },
+    {
+      "mfr": "_tze284_q22avxbv",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "energy",
+      "suggestedCaps": [
+        "meter_power"
+      ]
+    },
+    {
+      "mfr": "_tze284_q22avxbv",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "power",
+      "suggestedCaps": [
+        "measure_power"
+      ]
+    },
+    {
+      "mfr": "_tze284_q22avxbv",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "current",
+      "suggestedCaps": [
+        "measure_current"
+      ]
+    },
+    {
+      "mfr": "_tze284_qhlxve78",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "power",
+      "suggestedCaps": [
+        "measure_power"
+      ]
+    },
+    {
+      "mfr": "_tze284_qhlxve78",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "current",
+      "suggestedCaps": [
+        "measure_current"
+      ]
+    },
+    {
+      "mfr": "_tze284_qhlxve78",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "energy",
+      "suggestedCaps": [
+        "meter_power"
+      ]
+    },
+    {
+      "mfr": "_tze284_roujjevx",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "switch",
+      "suggestedCaps": [
+        "onoff"
+      ]
+    },
+    {
+      "mfr": "_tze284_tbgecldg",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "child_lock",
+      "suggestedCaps": [
+        "child_lock"
+      ]
+    },
+    {
+      "mfr": "_tze284_tzreobvu",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "energy",
+      "suggestedCaps": [
+        "meter_power"
+      ]
+    },
+    {
+      "mfr": "_tze284_tzreobvu",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "power",
+      "suggestedCaps": [
+        "measure_power"
+      ]
+    },
+    {
+      "mfr": "_tze284_tzreobvu",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "current",
+      "suggestedCaps": [
+        "measure_current"
+      ]
+    },
+    {
+      "mfr": "_tze284_v9hkz2yn",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "energy",
+      "suggestedCaps": [
+        "meter_power"
+      ]
+    },
+    {
+      "mfr": "_tze284_v9hkz2yn",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "power",
+      "suggestedCaps": [
+        "measure_power"
+      ]
+    },
+    {
+      "mfr": "_tze284_ves1ycwx",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "energy",
+      "suggestedCaps": [
+        "meter_power"
+      ]
+    },
+    {
+      "mfr": "_tze284_vjpaih9f",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "child_lock",
+      "suggestedCaps": [
+        "child_lock"
+      ]
+    },
+    {
+      "mfr": "_tze284_wbhaespm",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "energy",
+      "suggestedCaps": [
+        "meter_power"
+      ]
+    },
+    {
+      "mfr": "_tze284_ymldrmzx",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "child_lock",
+      "suggestedCaps": [
+        "child_lock"
+      ]
+    },
+    {
+      "mfr": "_tze284_yzr43ayq",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "illuminance",
+      "suggestedCaps": [
+        "measure_luminance"
+      ]
+    },
+    {
+      "mfr": "_tze284_z5jz7wpo",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "power_on_behavior",
+      "suggestedCaps": [
+        "power_on_behavior"
+      ]
+    },
+    {
+      "mfr": "_tze284_zeldawjv",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "power_on_behavior",
+      "suggestedCaps": [
+        "power_on_behavior"
+      ]
+    },
+    {
+      "mfr": "_tze284_zjhoqbrd",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "child_lock",
+      "suggestedCaps": [
+        "child_lock"
+      ]
+    },
+    {
+      "mfr": "_tze284_zm8zpwas",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "switch",
+      "suggestedCaps": [
+        "onoff"
+      ]
+    },
+    {
+      "mfr": "_tze284_zpvusbtv",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "power_on_behavior",
+      "suggestedCaps": [
+        "power_on_behavior"
+      ]
+    },
+    {
+      "mfr": "_tze284_zpvusbtv",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "child_lock",
+      "suggestedCaps": [
+        "child_lock"
+      ]
+    },
+    {
+      "mfr": "_tze284_zqq3cipq",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "power_on_behavior",
+      "suggestedCaps": [
+        "power_on_behavior"
+      ]
+    },
+    {
+      "mfr": "_tze284_gyzlwu5q",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "smoke",
+      "suggestedCaps": [
+        "alarm_smoke"
+      ]
+    },
+    {
+      "mfr": "_tze284_hdml1aav",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "illuminance",
+      "suggestedCaps": [
+        "measure_luminance"
+      ]
+    },
+    {
+      "mfr": "_tze284_it9utkro",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "voc",
+      "suggestedCaps": [
+        "measure_voc"
+      ]
+    },
+    {
+      "mfr": "_tze284_ltwbm23f",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "child_lock",
+      "suggestedCaps": [
+        "child_lock"
+      ]
+    },
+    {
+      "mfr": "_tze284_o9ofysmo",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "illuminance",
+      "suggestedCaps": [
+        "measure_luminance"
+      ]
+    },
+    {
+      "mfr": "_tze284_rccxox8p",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "smoke",
+      "suggestedCaps": [
+        "alarm_smoke"
+      ]
+    },
+    {
+      "mfr": "_tze284_xc3vwx5a",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "illuminance",
+      "suggestedCaps": [
+        "measure_luminance"
+      ]
+    },
+    {
+      "mfr": "_tze284_xpq2rzhq",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "illuminance",
+      "suggestedCaps": [
+        "measure_luminance"
+      ]
+    },
+    {
+      "mfr": "_tze284_xpq2rzhq",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "presence",
+      "suggestedCaps": [
+        "alarm_motion",
+        "alarm_human"
+      ]
+    },
+    {
+      "mfr": "_tyst11_pisltm67",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "illuminance",
+      "suggestedCaps": [
+        "measure_luminance"
+      ]
+    },
+    {
+      "mfr": "_tz3000_ugi8ky6u",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tze200_lawxy9e2",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "power_on_behavior",
+      "suggestedCaps": [
+        "power_on_behavior"
+      ]
+    },
+    {
+      "mfr": "_tze200_lawxy9e2",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "fan_speed",
+      "suggestedCaps": [
+        "dim"
+      ]
+    },
+    {
+      "mfr": "_tze200_nvodulvi",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "power_on_behavior",
+      "suggestedCaps": [
+        "power_on_behavior"
+      ]
+    },
+    {
+      "mfr": "_tze200_nvodulvi",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tze200_nvodulvi",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "presence",
+      "suggestedCaps": [
+        "alarm_motion",
+        "alarm_human"
+      ]
+    },
+    {
+      "mfr": "_tze200_oc7xqqbs",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "occupancy",
+      "suggestedCaps": [
+        "alarm_motion",
+        "alarm_human"
+      ]
+    },
+    {
+      "mfr": "_tze200_oc7xqqbs",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "illuminance",
+      "suggestedCaps": [
+        "measure_luminance"
+      ]
+    },
+    {
+      "mfr": "_tze200_v9hkz2yn",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "energy",
+      "suggestedCaps": [
+        "meter_power"
+      ]
+    },
+    {
+      "mfr": "_tze200_v9hkz2yn",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "power",
+      "suggestedCaps": [
+        "measure_power"
+      ]
+    },
+    {
+      "mfr": "_tze200_ves1ycwx",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "energy",
+      "suggestedCaps": [
+        "meter_power"
+      ]
+    },
+    {
+      "mfr": "_tze200_vhy3iakz",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "power_on_behavior",
+      "suggestedCaps": [
+        "power_on_behavior"
+      ]
+    },
+    {
+      "mfr": "_tze204_6kijc7nd",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "child_lock",
+      "suggestedCaps": [
+        "child_lock"
+      ]
+    },
+    {
+      "mfr": "_tze204_7ytnacie",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "power_on_behavior",
+      "suggestedCaps": [
+        "power_on_behavior"
+      ]
+    },
+    {
+      "mfr": "_tze204_7ytnacie",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "child_lock",
+      "suggestedCaps": [
+        "child_lock"
+      ]
+    },
+    {
+      "mfr": "_tze204_atdqo4nj",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "child_lock",
+      "suggestedCaps": [
+        "child_lock"
+      ]
+    },
+    {
+      "mfr": "_tze204_iadro9bf",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "illuminance",
+      "suggestedCaps": [
+        "measure_luminance"
+      ]
+    },
+    {
+      "mfr": "_tze204_iadro9bf",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "presence",
+      "suggestedCaps": [
+        "alarm_motion",
+        "alarm_human"
+      ]
+    },
+    {
+      "mfr": "_tze204_rkbxtclc",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "power_on_behavior",
+      "suggestedCaps": [
+        "power_on_behavior"
+      ]
+    },
+    {
+      "mfr": "_tze204_rkbxtclc",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "child_lock",
+      "suggestedCaps": [
+        "child_lock"
+      ]
+    },
+    {
+      "mfr": "_tze204_unsxl4ir",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "power_on_behavior",
+      "suggestedCaps": [
+        "power_on_behavior"
+      ]
+    },
+    {
+      "mfr": "_tze204_v9hkz2yn",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "energy",
+      "suggestedCaps": [
+        "meter_power"
+      ]
+    },
+    {
+      "mfr": "_tze204_v9hkz2yn",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "power",
+      "suggestedCaps": [
+        "measure_power"
+      ]
+    },
+    {
+      "mfr": "_tze204_ves1ycwx",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "energy",
+      "suggestedCaps": [
+        "meter_power"
+      ]
+    },
+    {
+      "mfr": "_tze204_xalsoe3m",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "child_lock",
+      "suggestedCaps": [
+        "child_lock"
+      ]
+    },
+    {
+      "mfr": "_tze284_6kijc7nd",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "child_lock",
+      "suggestedCaps": [
+        "child_lock"
+      ]
+    },
+    {
+      "mfr": "_tze284_chbyv06x",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "gas",
+      "suggestedCaps": [
+        "alarm_gas"
+      ]
+    },
+    {
+      "mfr": "_tze284_mul9abs3",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "child_lock",
+      "suggestedCaps": [
+        "child_lock"
+      ]
+    },
+    {
+      "mfr": "_tze284_uo8qcagc",
+      "drivers": [
+        "climate_sensor"
+      ],
+      "expose": "gas",
+      "suggestedCaps": [
+        "alarm_gas"
+      ]
+    },
+    {
+      "mfr": "_tze204_trwaxi57",
+      "drivers": [
+        "curtain_motor"
+      ],
+      "expose": "switch",
+      "suggestedCaps": [
+        "onoff"
+      ]
+    },
+    {
+      "mfr": "_tze204_trwaxi57",
+      "drivers": [
+        "curtain_motor"
+      ],
+      "expose": "child_lock",
+      "suggestedCaps": [
+        "child_lock"
+      ]
+    },
+    {
+      "mfr": "_tze200_libht6ua",
+      "drivers": [
+        "curtain_motor_shutter"
+      ],
+      "expose": "battery",
+      "suggestedCaps": [
+        "measure_battery",
+        "alarm_battery"
+      ]
+    },
+    {
+      "mfr": "_tze284_libht6ua",
+      "drivers": [
+        "curtain_motor_shutter"
+      ],
+      "expose": "battery",
+      "suggestedCaps": [
+        "measure_battery",
+        "alarm_battery"
+      ]
+    },
+    {
+      "mfr": "_tze200_5nldle7w",
+      "drivers": [
+        "curtain_motor_shutter"
+      ],
+      "expose": "child_lock",
+      "suggestedCaps": [
+        "child_lock"
+      ]
+    },
+    {
+      "mfr": "_tze210_inpjmc0h",
+      "drivers": [
+        "curtain_motor_shutter"
+      ],
+      "expose": "battery",
+      "suggestedCaps": [
+        "measure_battery",
+        "alarm_battery"
+      ]
+    },
+    {
+      "mfr": "_tze200_7bztmfm1",
+      "drivers": [
+        "device_air_purifier_plug",
+        "generic_diy",
+        "smart_air_detection_box"
+      ],
+      "expose": "co",
+      "suggestedCaps": [
+        "measure_co"
+      ]
+    },
+    {
+      "mfr": "_tze204_7bztmfm1",
+      "drivers": [
+        "device_air_purifier_plug",
+        "generic_diy",
+        "smart_air_detection_box"
+      ],
+      "expose": "co",
+      "suggestedCaps": [
+        "measure_co"
+      ]
+    },
+    {
+      "mfr": "_tz3000_gzvniqjb",
+      "drivers": [
+        "device_din_rail"
+      ],
+      "expose": "switch",
+      "suggestedCaps": [
+        "onoff"
+      ]
+    },
+    {
+      "mfr": "tuya",
+      "drivers": [
+        "device_generic_tuya_universal"
+      ],
+      "expose": "child_lock",
+      "suggestedCaps": [
+        "child_lock"
+      ]
+    },
+    {
+      "mfr": "_tz3000_2izubafb",
+      "drivers": [
+        "dimmer_wall_1gang"
+      ],
+      "expose": "battery",
+      "suggestedCaps": [
+        "measure_battery",
+        "alarm_battery"
+      ]
+    },
+    {
+      "mfr": "_tz3000_2izubafb",
+      "drivers": [
+        "dimmer_wall_1gang"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tz3000_4fsgukof",
+      "drivers": [
+        "dimmer_wall_1gang"
+      ],
+      "expose": "battery",
+      "suggestedCaps": [
+        "measure_battery",
+        "alarm_battery"
+      ]
+    },
+    {
+      "mfr": "_tz3000_4fsgukof",
+      "drivers": [
+        "dimmer_wall_1gang"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tz3000_9r5jaajv",
+      "drivers": [
+        "dimmer_wall_1gang"
+      ],
+      "expose": "battery",
+      "suggestedCaps": [
+        "measure_battery",
+        "alarm_battery"
+      ]
+    },
+    {
+      "mfr": "_tz3000_9r5jaajv",
+      "drivers": [
+        "dimmer_wall_1gang"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tz3000_hurauima",
+      "drivers": [
+        "dimmer_wall_1gang"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tz3000_irwuzilv",
+      "drivers": [
+        "dimmer_wall_1gang"
+      ],
+      "expose": "battery",
+      "suggestedCaps": [
+        "measure_battery",
+        "alarm_battery"
+      ]
+    },
+    {
+      "mfr": "_tz3000_irwuzilv",
+      "drivers": [
+        "dimmer_wall_1gang"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tz3000_nxdziqzc",
+      "drivers": [
+        "dimmer_wall_1gang"
+      ],
+      "expose": "battery",
+      "suggestedCaps": [
+        "measure_battery",
+        "alarm_battery"
+      ]
+    },
+    {
+      "mfr": "_tz3000_nxdziqzc",
+      "drivers": [
+        "dimmer_wall_1gang"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tz3000_p3fph1go",
+      "drivers": [
+        "dimmer_wall_1gang"
+      ],
+      "expose": "battery",
+      "suggestedCaps": [
+        "measure_battery",
+        "alarm_battery"
+      ]
+    },
+    {
+      "mfr": "_tz3000_p3fph1go",
+      "drivers": [
+        "dimmer_wall_1gang"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tz3000_pkfazisv",
+      "drivers": [
+        "dimmer_wall_1gang"
+      ],
+      "expose": "battery",
+      "suggestedCaps": [
+        "measure_battery",
+        "alarm_battery"
+      ]
+    },
+    {
+      "mfr": "_tz3000_pkfazisv",
+      "drivers": [
+        "dimmer_wall_1gang"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tz3000_r2fgo9ks",
+      "drivers": [
+        "dimmer_wall_1gang"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tz3000_ssp0maqm",
+      "drivers": [
+        "dimmer_wall_1gang"
+      ],
+      "expose": "battery",
+      "suggestedCaps": [
+        "measure_battery",
+        "alarm_battery"
+      ]
+    },
+    {
+      "mfr": "_tz3000_ssp0maqm",
+      "drivers": [
+        "dimmer_wall_1gang"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tz3000_tj4pwzzm",
+      "drivers": [
+        "dimmer_wall_1gang"
+      ],
+      "expose": "battery",
+      "suggestedCaps": [
+        "measure_battery",
+        "alarm_battery"
+      ]
+    },
+    {
+      "mfr": "_tz3000_tj4pwzzm",
+      "drivers": [
+        "dimmer_wall_1gang"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tz3000_wr2ucaj9",
+      "drivers": [
+        "dimmer_wall_1gang"
+      ],
+      "expose": "battery",
+      "suggestedCaps": [
+        "measure_battery",
+        "alarm_battery"
+      ]
+    },
+    {
+      "mfr": "_tz3000_wr2ucaj9",
+      "drivers": [
+        "dimmer_wall_1gang"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tz3000_zsh6uat3",
+      "drivers": [
+        "dimmer_wall_1gang"
+      ],
+      "expose": "battery",
+      "suggestedCaps": [
+        "measure_battery",
+        "alarm_battery"
+      ]
+    },
+    {
+      "mfr": "_tz3000_zsh6uat3",
+      "drivers": [
+        "dimmer_wall_1gang"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tz3002_tdf2m4ch",
+      "drivers": [
+        "dimmer_wall_1gang"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tze284_nvodulvi",
+      "drivers": [
+        "dimmer_wall_1gang"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tze284_nvodulvi",
+      "drivers": [
+        "dimmer_wall_1gang"
+      ],
+      "expose": "presence",
+      "suggestedCaps": [
+        "alarm_motion",
+        "alarm_human"
+      ]
+    },
+    {
+      "mfr": "_tz3002_eda6eitk",
+      "drivers": [
+        "generic_diy",
+        "generic_tuya"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tz3002_vsom92pp",
+      "drivers": [
+        "generic_diy",
+        "generic_tuya"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tz3210_vbfp8eyv",
+      "drivers": [
+        "generic_diy",
+        "vibration_sensor"
+      ],
+      "expose": "switch",
+      "suggestedCaps": [
+        "onoff"
+      ]
+    },
+    {
+      "mfr": "_tz3210_vbfp8eyv",
+      "drivers": [
+        "generic_diy",
+        "vibration_sensor"
+      ],
+      "expose": "power",
+      "suggestedCaps": [
+        "measure_power"
+      ]
+    },
+    {
+      "mfr": "_tz3210_vbfp8eyv",
+      "drivers": [
+        "generic_diy",
+        "vibration_sensor"
+      ],
+      "expose": "current",
+      "suggestedCaps": [
+        "measure_current"
+      ]
+    },
+    {
+      "mfr": "_tz3210_vbfp8eyv",
+      "drivers": [
+        "generic_diy",
+        "vibration_sensor"
+      ],
+      "expose": "voltage",
+      "suggestedCaps": [
+        "measure_voltage"
+      ]
+    },
+    {
+      "mfr": "_tz3210_vbfp8eyv",
+      "drivers": [
+        "generic_diy",
+        "vibration_sensor"
+      ],
+      "expose": "energy",
+      "suggestedCaps": [
+        "meter_power"
+      ]
+    },
+    {
+      "mfr": "_tze200_hbnfokum",
+      "drivers": [
+        "generic_diy"
+      ],
+      "expose": "switch",
+      "suggestedCaps": [
+        "onoff"
+      ]
+    },
+    {
+      "mfr": "_tze284_4vbj3fxh",
+      "drivers": [
+        "generic_diy"
+      ],
+      "expose": "child_lock",
+      "suggestedCaps": [
+        "child_lock"
+      ]
+    },
+    {
+      "mfr": "_tze284_bw4ayyeh",
+      "drivers": [
+        "generic_diy"
+      ],
+      "expose": "presence",
+      "suggestedCaps": [
+        "alarm_motion",
+        "alarm_human"
+      ]
+    },
+    {
+      "mfr": "_tze284_bw4ayyeh",
+      "drivers": [
+        "generic_diy"
+      ],
+      "expose": "illuminance",
+      "suggestedCaps": [
+        "measure_luminance"
+      ]
+    },
+    {
+      "mfr": "_tze284_bw4ayyeh",
+      "drivers": [
+        "generic_diy"
+      ],
+      "expose": "battery",
+      "suggestedCaps": [
+        "measure_battery",
+        "alarm_battery"
+      ]
+    },
+    {
+      "mfr": "_tze284_bw4ayyeh",
+      "drivers": [
+        "generic_diy"
+      ],
+      "expose": "distance",
+      "suggestedCaps": [
+        "measure_luminance.distance",
+        "measure_distance"
+      ]
+    },
+    {
+      "mfr": "_tze284_mvtclclq",
+      "drivers": [
+        "generic_diy",
+        "usb_outlet_advanced"
+      ],
+      "expose": "child_lock",
+      "suggestedCaps": [
+        "child_lock"
+      ]
+    },
+    {
+      "mfr": "_tze284_nbv4tdaz",
+      "drivers": [
+        "generic_diy"
+      ],
+      "expose": "battery",
+      "suggestedCaps": [
+        "measure_battery",
+        "alarm_battery"
+      ]
+    },
+    {
+      "mfr": "_tze284_nbv4tdaz",
+      "drivers": [
+        "generic_diy"
+      ],
+      "expose": "child_lock",
+      "suggestedCaps": [
+        "child_lock"
+      ]
+    },
+    {
+      "mfr": "_tze200_2atgpdho",
+      "drivers": [
+        "generic_diy",
+        "thermostatic_radiator_valve"
+      ],
+      "expose": "child_lock",
+      "suggestedCaps": [
+        "child_lock"
+      ]
+    },
+    {
+      "mfr": "_tze200_2imwyigp",
+      "drivers": [
+        "generic_diy",
+        "generic_tuya"
+      ],
+      "expose": "switch",
+      "suggestedCaps": [
+        "onoff"
+      ]
+    },
+    {
+      "mfr": "_tze200_9p5xmj5r",
+      "drivers": [
+        "generic_diy",
+        "wall_thermostat"
+      ],
+      "expose": "battery",
+      "suggestedCaps": [
+        "measure_battery",
+        "alarm_battery"
+      ]
+    },
+    {
+      "mfr": "_tze200_a4bpgplm",
+      "drivers": [
+        "generic_diy",
+        "wall_thermostat"
+      ],
+      "expose": "battery",
+      "suggestedCaps": [
+        "measure_battery",
+        "alarm_battery"
+      ]
+    },
+    {
+      "mfr": "_tze204_2imwyigp",
+      "drivers": [
+        "generic_diy",
+        "generic_tuya"
+      ],
+      "expose": "switch",
+      "suggestedCaps": [
+        "onoff"
+      ]
+    },
+    {
+      "mfr": "_tze204_mvtclclq",
+      "drivers": [
+        "generic_diy",
+        "usb_outlet_advanced"
+      ],
+      "expose": "child_lock",
+      "suggestedCaps": [
+        "child_lock"
+      ]
+    },
+    {
+      "mfr": "_tze200_spyvfeti",
+      "drivers": [
+        "generic_diy",
+        "water_valve_smart"
+      ],
+      "expose": "child_lock",
+      "suggestedCaps": [
+        "child_lock"
+      ]
+    },
+    {
+      "mfr": "_tz3000_0dumfk2z",
+      "drivers": [
+        "generic_tuya"
+      ],
+      "expose": "battery_voltage",
+      "suggestedCaps": [
+        "measure_voltage"
+      ]
+    },
+    {
+      "mfr": "_tz3000_0dumfk2z",
+      "drivers": [
+        "generic_tuya"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tz3000_ovbvmhiq",
+      "drivers": [
+        "generic_tuya"
+      ],
+      "expose": "switch",
+      "suggestedCaps": [
+        "onoff"
+      ]
+    },
+    {
+      "mfr": "_tz3000_ovbvmhiq",
+      "drivers": [
+        "generic_tuya"
+      ],
+      "expose": "power_on_behavior",
+      "suggestedCaps": [
+        "power_on_behavior"
+      ]
+    },
+    {
+      "mfr": "_tz3000_ovbvmhiq",
+      "drivers": [
+        "generic_tuya"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tz3000_pftj0i7z",
+      "drivers": [
+        "generic_tuya"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tze200_cpbo62rn",
+      "drivers": [
+        "generic_tuya"
+      ],
+      "expose": "illuminance",
+      "suggestedCaps": [
+        "measure_luminance"
+      ]
+    },
+    {
+      "mfr": "_tze200_kzm5w4iz",
+      "drivers": [
+        "generic_tuya"
+      ],
+      "expose": "contact",
+      "suggestedCaps": [
+        "alarm_contact"
+      ]
+    },
+    {
+      "mfr": "_tze200_kzm5w4iz",
+      "drivers": [
+        "generic_tuya"
+      ],
+      "expose": "vibration",
+      "suggestedCaps": [
+        "alarm_tamper",
+        "alarm_vibration"
+      ]
+    },
+    {
+      "mfr": "_tze200_nslr42tt",
+      "drivers": [
+        "generic_tuya"
+      ],
+      "expose": "current",
+      "suggestedCaps": [
+        "measure_current"
+      ]
+    },
+    {
+      "mfr": "_tze200_nslr42tt",
+      "drivers": [
+        "generic_tuya"
+      ],
+      "expose": "power",
+      "suggestedCaps": [
+        "measure_power"
+      ]
+    },
+    {
+      "mfr": "_tze200_nslr42tt",
+      "drivers": [
+        "generic_tuya"
+      ],
+      "expose": "energy",
+      "suggestedCaps": [
+        "meter_power"
+      ]
+    },
+    {
+      "mfr": "_tze200_rqhnxkqu",
+      "drivers": [
+        "generic_tuya"
+      ],
+      "expose": "power_on_behavior",
+      "suggestedCaps": [
+        "power_on_behavior"
+      ]
+    },
+    {
+      "mfr": "_tze200_rqhnxkqu",
+      "drivers": [
+        "generic_tuya"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tze200_xixlazkg",
+      "drivers": [
+        "generic_tuya"
+      ],
+      "expose": "child_lock",
+      "suggestedCaps": [
+        "child_lock"
+      ]
+    },
+    {
+      "mfr": "_tze204_2jnoy8dj",
+      "drivers": [
+        "generic_tuya"
+      ],
+      "expose": "power_on_behavior",
+      "suggestedCaps": [
+        "power_on_behavior"
+      ]
+    },
+    {
+      "mfr": "_tze204_d2zfgtij",
+      "drivers": [
+        "generic_tuya"
+      ],
+      "expose": "voltage",
+      "suggestedCaps": [
+        "measure_voltage"
+      ]
+    },
+    {
+      "mfr": "_tze204_d2zfgtij",
+      "drivers": [
+        "generic_tuya"
+      ],
+      "expose": "power",
+      "suggestedCaps": [
+        "measure_power"
+      ]
+    },
+    {
+      "mfr": "_tze204_d2zfgtij",
+      "drivers": [
+        "generic_tuya"
+      ],
+      "expose": "current",
+      "suggestedCaps": [
+        "measure_current"
+      ]
+    },
+    {
+      "mfr": "_tze204_d2zfgtij",
+      "drivers": [
+        "generic_tuya"
+      ],
+      "expose": "energy",
+      "suggestedCaps": [
+        "meter_power"
+      ]
+    },
+    {
+      "mfr": "_tze204_lawxy9e2",
+      "drivers": [
+        "generic_tuya"
+      ],
+      "expose": "power_on_behavior",
+      "suggestedCaps": [
+        "power_on_behavior"
+      ]
+    },
+    {
+      "mfr": "_tze204_lawxy9e2",
+      "drivers": [
+        "generic_tuya"
+      ],
+      "expose": "fan_speed",
+      "suggestedCaps": [
+        "dim"
+      ]
+    },
+    {
+      "mfr": "_tze204_lb0fsvba",
+      "drivers": [
+        "generic_tuya"
+      ],
+      "expose": "switch",
+      "suggestedCaps": [
+        "onoff"
+      ]
+    },
+    {
+      "mfr": "_tze204_lb0fsvba",
+      "drivers": [
+        "generic_tuya"
+      ],
+      "expose": "energy",
+      "suggestedCaps": [
+        "meter_power"
+      ]
+    },
+    {
+      "mfr": "_tze204_lb0fsvba",
+      "drivers": [
+        "generic_tuya"
+      ],
+      "expose": "power",
+      "suggestedCaps": [
+        "measure_power"
+      ]
+    },
+    {
+      "mfr": "_tze204_lb0fsvba",
+      "drivers": [
+        "generic_tuya"
+      ],
+      "expose": "voltage",
+      "suggestedCaps": [
+        "measure_voltage"
+      ]
+    },
+    {
+      "mfr": "_tze204_lb0fsvba",
+      "drivers": [
+        "generic_tuya"
+      ],
+      "expose": "current",
+      "suggestedCaps": [
+        "measure_current"
+      ]
+    },
+    {
+      "mfr": "_tze204_s4sa1mcx",
+      "drivers": [
+        "generic_tuya"
+      ],
+      "expose": "energy",
+      "suggestedCaps": [
+        "meter_power"
+      ]
+    },
+    {
+      "mfr": "_tze204_s4sa1mcx",
+      "drivers": [
+        "generic_tuya"
+      ],
+      "expose": "power",
+      "suggestedCaps": [
+        "measure_power"
+      ]
+    },
+    {
+      "mfr": "_tze204_x8diwkqb",
+      "drivers": [
+        "generic_tuya"
+      ],
+      "expose": "energy",
+      "suggestedCaps": [
+        "meter_power"
+      ]
+    },
+    {
+      "mfr": "_tze204_x8diwkqb",
+      "drivers": [
+        "generic_tuya"
+      ],
+      "expose": "power",
+      "suggestedCaps": [
+        "measure_power"
+      ]
+    },
+    {
+      "mfr": "_tze284_d2zfgtij",
+      "drivers": [
+        "generic_tuya"
+      ],
+      "expose": "voltage",
+      "suggestedCaps": [
+        "measure_voltage"
+      ]
+    },
+    {
+      "mfr": "_tze284_d2zfgtij",
+      "drivers": [
+        "generic_tuya"
+      ],
+      "expose": "power",
+      "suggestedCaps": [
+        "measure_power"
+      ]
+    },
+    {
+      "mfr": "_tze284_d2zfgtij",
+      "drivers": [
+        "generic_tuya"
+      ],
+      "expose": "current",
+      "suggestedCaps": [
+        "measure_current"
+      ]
+    },
+    {
+      "mfr": "_tze284_d2zfgtij",
+      "drivers": [
+        "generic_tuya"
+      ],
+      "expose": "energy",
+      "suggestedCaps": [
+        "meter_power"
+      ]
+    },
+    {
+      "mfr": "_tze284_hyssaqjk",
+      "drivers": [
+        "generic_tuya"
+      ],
+      "expose": "power_on_behavior",
+      "suggestedCaps": [
+        "power_on_behavior"
+      ]
+    },
+    {
+      "mfr": "_tze284_kv1nvirl",
+      "drivers": [
+        "generic_tuya"
+      ],
+      "expose": "energy",
+      "suggestedCaps": [
+        "meter_power"
+      ]
+    },
+    {
+      "mfr": "_tze284_kv1nvirl",
+      "drivers": [
+        "generic_tuya"
+      ],
+      "expose": "power",
+      "suggestedCaps": [
+        "measure_power"
+      ]
+    },
+    {
+      "mfr": "_tze284_kv1nvirl",
+      "drivers": [
+        "generic_tuya"
+      ],
+      "expose": "voltage",
+      "suggestedCaps": [
+        "measure_voltage"
+      ]
+    },
+    {
+      "mfr": "_tze284_kv1nvirl",
+      "drivers": [
+        "generic_tuya"
+      ],
+      "expose": "current",
+      "suggestedCaps": [
+        "measure_current"
+      ]
+    },
+    {
+      "mfr": "_tze284_s4sa1mcx",
+      "drivers": [
+        "generic_tuya"
+      ],
+      "expose": "energy",
+      "suggestedCaps": [
+        "meter_power"
+      ]
+    },
+    {
+      "mfr": "_tze284_s4sa1mcx",
+      "drivers": [
+        "generic_tuya"
+      ],
+      "expose": "power",
+      "suggestedCaps": [
+        "measure_power"
+      ]
+    },
+    {
+      "mfr": "_tze284_x8diwkqb",
+      "drivers": [
+        "generic_tuya"
+      ],
+      "expose": "energy",
+      "suggestedCaps": [
+        "meter_power"
+      ]
+    },
+    {
+      "mfr": "_tze284_x8diwkqb",
+      "drivers": [
+        "generic_tuya"
+      ],
+      "expose": "power",
+      "suggestedCaps": [
+        "measure_power"
+      ]
+    },
+    {
+      "mfr": "_tze28c1000000_81yrt3lo",
+      "drivers": [
+        "generic_tuya"
+      ],
+      "expose": "voltage",
+      "suggestedCaps": [
+        "measure_voltage"
+      ]
+    },
+    {
+      "mfr": "_tyzb01_vwqnz1sn",
+      "drivers": [
+        "motion_sensor"
+      ],
+      "expose": "battery",
+      "suggestedCaps": [
+        "measure_battery",
+        "alarm_battery"
+      ]
+    },
+    {
+      "mfr": "_tze200_2se8efxh",
+      "drivers": [
+        "plug_smart"
+      ],
+      "expose": "temperature",
+      "suggestedCaps": [
+        "measure_temperature"
+      ]
+    },
+    {
+      "mfr": "_tze200_2se8efxh",
+      "drivers": [
+        "plug_smart"
+      ],
+      "expose": "soil_moisture",
+      "suggestedCaps": [
+        "measure_humidity",
+        "measure_soil_moisture"
+      ]
+    },
+    {
+      "mfr": "_tze200_2se8efxh",
+      "drivers": [
+        "plug_smart"
+      ],
+      "expose": "battery",
+      "suggestedCaps": [
+        "measure_battery",
+        "alarm_battery"
+      ]
+    },
+    {
+      "mfr": "_tze200_9cqcpkgb",
+      "drivers": [
+        "plug_smart"
+      ],
+      "expose": "temperature",
+      "suggestedCaps": [
+        "measure_temperature"
+      ]
+    },
+    {
+      "mfr": "_tze200_9cqcpkgb",
+      "drivers": [
+        "plug_smart"
+      ],
+      "expose": "soil_moisture",
+      "suggestedCaps": [
+        "measure_humidity",
+        "measure_soil_moisture"
+      ]
+    },
+    {
+      "mfr": "_tze200_9cqcpkgb",
+      "drivers": [
+        "plug_smart"
+      ],
+      "expose": "battery",
+      "suggestedCaps": [
+        "measure_battery",
+        "alarm_battery"
+      ]
+    },
+    {
+      "mfr": "_tze200_ga1maeof",
+      "drivers": [
+        "plug_smart"
+      ],
+      "expose": "temperature",
+      "suggestedCaps": [
+        "measure_temperature"
+      ]
+    },
+    {
+      "mfr": "_tze200_ga1maeof",
+      "drivers": [
+        "plug_smart"
+      ],
+      "expose": "soil_moisture",
+      "suggestedCaps": [
+        "measure_humidity",
+        "measure_soil_moisture"
+      ]
+    },
+    {
+      "mfr": "_tze200_ga1maeof",
+      "drivers": [
+        "plug_smart"
+      ],
+      "expose": "battery",
+      "suggestedCaps": [
+        "measure_battery",
+        "alarm_battery"
+      ]
+    },
+    {
+      "mfr": "_tze200_k6jhsr0q",
+      "drivers": [
+        "pool_pump"
+      ],
+      "expose": "power_on_behavior",
+      "suggestedCaps": [
+        "power_on_behavior"
+      ]
+    },
+    {
+      "mfr": "_tz3000_4fjiwweb",
+      "drivers": [
+        "power_meter"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tz3000_abrsvsou",
+      "drivers": [
+        "power_meter"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tz3000_ixla93vd",
+      "drivers": [
+        "power_meter"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tz3000_uri7ongn",
+      "drivers": [
+        "power_meter"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tz3000_8bxrzyxz",
+      "drivers": [
+        "presence_sensor_radar"
+      ],
+      "expose": "power",
+      "suggestedCaps": [
+        "measure_power"
+      ]
+    },
+    {
+      "mfr": "_tz3000_8bxrzyxz",
+      "drivers": [
+        "presence_sensor_radar"
+      ],
+      "expose": "current",
+      "suggestedCaps": [
+        "measure_current"
+      ]
+    },
+    {
+      "mfr": "_tz3000_8bxrzyxz",
+      "drivers": [
+        "presence_sensor_radar"
+      ],
+      "expose": "voltage",
+      "suggestedCaps": [
+        "measure_voltage"
+      ]
+    },
+    {
+      "mfr": "_tz3000_8bxrzyxz",
+      "drivers": [
+        "presence_sensor_radar"
+      ],
+      "expose": "energy",
+      "suggestedCaps": [
+        "meter_power"
+      ]
+    },
+    {
+      "mfr": "_tz3210_zxbtub8r",
+      "drivers": [
+        "presence_sensor_radar",
+        "wall_dimmer_1gang_1way"
+      ],
+      "expose": "power_on_behavior",
+      "suggestedCaps": [
+        "power_on_behavior"
+      ]
+    },
+    {
+      "mfr": "_tz3210_cyuyd5az",
+      "drivers": [
+        "presence_sensor_radar"
+      ],
+      "expose": "power_on_behavior",
+      "suggestedCaps": [
+        "power_on_behavior"
+      ]
+    },
+    {
+      "mfr": "_tze204_81yrt3lo",
+      "drivers": [
+        "presence_sensor_radar"
+      ],
+      "expose": "voltage",
+      "suggestedCaps": [
+        "measure_voltage"
+      ]
+    },
+    {
+      "mfr": "_tze284_81yrt3lo",
+      "drivers": [
+        "presence_sensor_radar"
+      ],
+      "expose": "voltage",
+      "suggestedCaps": [
+        "measure_voltage"
+      ]
+    },
+    {
+      "mfr": "_tze284_yrwmnya3",
+      "drivers": [
+        "presence_sensor_radar"
+      ],
+      "expose": "power_on_behavior",
+      "suggestedCaps": [
+        "power_on_behavior"
+      ]
+    },
+    {
+      "mfr": "_tze200_u6x1zyv2",
+      "drivers": [
+        "rain_sensor"
+      ],
+      "expose": "illuminance",
+      "suggestedCaps": [
+        "measure_luminance"
+      ]
+    },
+    {
+      "mfr": "_tz3000_fa9mlvja",
+      "drivers": [
+        "remote_button_wireless"
+      ],
+      "expose": "battery_voltage",
+      "suggestedCaps": [
+        "measure_voltage"
+      ]
+    },
+    {
+      "mfr": "_tz3000_fa9mlvja",
+      "drivers": [
+        "remote_button_wireless"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tz3002_6ahhkwyh",
+      "drivers": [
+        "scene_switch_2"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tze284_2baujqot",
+      "drivers": [
+        "sensor_contact_zigbee"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tz3210_jowhpxop",
+      "drivers": [
+        "sensor_contact_zigbee"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tz3210_3ulg9kpo",
+      "drivers": [
+        "sensor_contact_zigbee"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "immax",
+      "drivers": [
+        "sensor_contact_zigbee"
+      ],
+      "expose": "child_lock",
+      "suggestedCaps": [
+        "child_lock"
+      ]
+    },
+    {
+      "mfr": "_tze200_2m38mh6k",
+      "drivers": [
+        "sensor_contact_zigbee"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tze200_eqpaxqdv",
+      "drivers": [
+        "sensor_gas_presence"
+      ],
+      "expose": "switch",
+      "suggestedCaps": [
+        "onoff"
+      ]
+    },
+    {
+      "mfr": "_tze284_nj7sfid2",
+      "drivers": [
+        "sensor_gas_presence"
+      ],
+      "expose": "brightness",
+      "suggestedCaps": [
+        "dim"
+      ]
+    },
+    {
+      "mfr": "_tze204_hewlydpz",
+      "drivers": [
+        "sensor_illuminance_presence"
+      ],
+      "expose": "power_on_behavior",
+      "suggestedCaps": [
+        "power_on_behavior"
+      ]
+    },
+    {
+      "mfr": "_tze204_hewlydpz",
+      "drivers": [
+        "sensor_illuminance_presence"
+      ],
+      "expose": "child_lock",
+      "suggestedCaps": [
+        "child_lock"
+      ]
+    },
+    {
+      "mfr": "_tz3210_cwamkvua",
+      "drivers": [
+        "sensor_motion_presence"
+      ],
+      "expose": "light",
+      "suggestedCaps": [
+        "onoff",
+        "dim"
+      ]
+    },
+    {
+      "mfr": "_tze200_8isdky6j",
+      "drivers": [
+        "sensor_motion_presence"
+      ],
+      "expose": "gas",
+      "suggestedCaps": [
+        "alarm_gas"
+      ]
+    },
+    {
+      "mfr": "_tze200_p6fuhvez",
+      "drivers": [
+        "sensor_motion_presence"
+      ],
+      "expose": "gas",
+      "suggestedCaps": [
+        "alarm_gas"
+      ]
+    },
+    {
+      "mfr": "_tze200_aj0oxo1i",
+      "drivers": [
+        "sensor_motion_presence"
+      ],
+      "expose": "gas",
+      "suggestedCaps": [
+        "alarm_gas"
+      ]
+    },
+    {
+      "mfr": "_tz3000_g9g2xnch",
+      "drivers": [
+        "smart_knob",
+        "switch_1gang"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tz3000_r0o2dahu",
+      "drivers": [
+        "smart_knob",
+        "switch_1gang"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tz3000_gwkzibhs",
+      "drivers": [
+        "smart_knob_rotary"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tz3000_qja6nq5z",
+      "drivers": [
+        "smart_knob_rotary"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tze284_6ocnqlhn",
+      "drivers": [
+        "smart_rcbo"
+      ],
+      "expose": "temperature",
+      "suggestedCaps": [
+        "measure_temperature"
+      ]
+    },
+    {
+      "mfr": "_tze204_cjbofhxw",
+      "drivers": [
+        "smoke_sensor3"
+      ],
+      "expose": "current",
+      "suggestedCaps": [
+        "measure_current"
+      ]
+    },
+    {
+      "mfr": "_tze204_cjbofhxw",
+      "drivers": [
+        "smoke_sensor3"
+      ],
+      "expose": "power",
+      "suggestedCaps": [
+        "measure_power"
+      ]
+    },
+    {
+      "mfr": "_tze204_cjbofhxw",
+      "drivers": [
+        "smoke_sensor3"
+      ],
+      "expose": "voltage",
+      "suggestedCaps": [
+        "measure_voltage"
+      ]
+    },
+    {
+      "mfr": "_tze204_cjbofhxw",
+      "drivers": [
+        "smoke_sensor3"
+      ],
+      "expose": "energy",
+      "suggestedCaps": [
+        "meter_power"
+      ]
+    },
+    {
+      "mfr": "_tze284_cjbofhxw",
+      "drivers": [
+        "smoke_sensor3"
+      ],
+      "expose": "current",
+      "suggestedCaps": [
+        "measure_current"
+      ]
+    },
+    {
+      "mfr": "_tze284_cjbofhxw",
+      "drivers": [
+        "smoke_sensor3"
+      ],
+      "expose": "power",
+      "suggestedCaps": [
+        "measure_power"
+      ]
+    },
+    {
+      "mfr": "_tze284_cjbofhxw",
+      "drivers": [
+        "smoke_sensor3"
+      ],
+      "expose": "voltage",
+      "suggestedCaps": [
+        "measure_voltage"
+      ]
+    },
+    {
+      "mfr": "_tze284_cjbofhxw",
+      "drivers": [
+        "smoke_sensor3"
+      ],
+      "expose": "energy",
+      "suggestedCaps": [
+        "meter_power"
+      ]
+    },
+    {
+      "mfr": "_tze204_qaxkdgyt",
+      "drivers": [
+        "smoke_sensor3"
+      ],
+      "expose": "co",
+      "suggestedCaps": [
+        "measure_co"
+      ]
+    },
+    {
+      "mfr": "_tze204_qaxkdgyt",
+      "drivers": [
+        "smoke_sensor3"
+      ],
+      "expose": "gas",
+      "suggestedCaps": [
+        "alarm_gas"
+      ]
+    },
+    {
+      "mfr": "_tze204_ntcy3xu1",
+      "drivers": [
+        "socket_power_strip_four_three"
+      ],
+      "expose": "smoke",
+      "suggestedCaps": [
+        "alarm_smoke"
+      ]
+    },
+    {
+      "mfr": "_tze204_ntcy3xu1",
+      "drivers": [
+        "socket_power_strip_four_three"
+      ],
+      "expose": "tamper",
+      "suggestedCaps": [
+        "alarm_tamper"
+      ]
+    },
+    {
+      "mfr": "_tz3000_0ht8dnxj",
+      "drivers": [
+        "switch_1gang"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tz3000_11pg3ima",
+      "drivers": [
+        "switch_1gang"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tz3000_icoxotza",
+      "drivers": [
+        "switch_1gang"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tz3000_m4ah6bcz",
+      "drivers": [
+        "switch_1gang"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tz3000_qfhhb5y4",
+      "drivers": [
+        "switch_1gang"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tz3000_s678wazd",
+      "drivers": [
+        "switch_1gang"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tz3000_wsspgtcd",
+      "drivers": [
+        "switch_1gang"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tz3000_b3mgfu0d",
+      "drivers": [
+        "switch_1gang"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tz3000_cumqn2av",
+      "drivers": [
+        "switch_1gang"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tz3000_czuyt8lz",
+      "drivers": [
+        "switch_1gang"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tz3000_et7afzxz",
+      "drivers": [
+        "switch_1gang"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tz3000_nuombroo",
+      "drivers": [
+        "switch_1gang"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tz3000_pcqjmcud",
+      "drivers": [
+        "switch_1gang"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tz3000_xabckq1v",
+      "drivers": [
+        "switch_1gang"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tz3002_9vcekkp1",
+      "drivers": [
+        "switch_1gang"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tz3002_jn2x20tg",
+      "drivers": [
+        "switch_1gang"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tz3002_sal078g8",
+      "drivers": [
+        "switch_1gang"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tz3002_sfh0jtz0",
+      "drivers": [
+        "switch_1gang"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tz3002_pw4ad2xa",
+      "drivers": [
+        "switch_1gang"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tz3002_uu4uircb",
+      "drivers": [
+        "switch_1gang"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tz3002_yptomml1",
+      "drivers": [
+        "switch_1gang"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tz300a_fhbcipep",
+      "drivers": [
+        "switch_1gang"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tze200_abatw3kj",
+      "drivers": [
+        "switch_1gang"
+      ],
+      "expose": "temperature",
+      "suggestedCaps": [
+        "measure_temperature"
+      ]
+    },
+    {
+      "mfr": "_tze200_afycb3cg",
+      "drivers": [
+        "switch_1gang"
+      ],
+      "expose": "vibration",
+      "suggestedCaps": [
+        "alarm_tamper",
+        "alarm_vibration"
+      ]
+    },
+    {
+      "mfr": "_tze200_hggxgsjj",
+      "drivers": [
+        "switch_1gang"
+      ],
+      "expose": "vibration",
+      "suggestedCaps": [
+        "alarm_tamper",
+        "alarm_vibration"
+      ]
+    },
+    {
+      "mfr": "_tze200_iba1ckek",
+      "drivers": [
+        "switch_1gang"
+      ],
+      "expose": "vibration",
+      "suggestedCaps": [
+        "alarm_tamper",
+        "alarm_vibration"
+      ]
+    },
+    {
+      "mfr": "_tze200_tgeqdjgk",
+      "drivers": [
+        "switch_1gang"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tze200_yjryxpot",
+      "drivers": [
+        "switch_1gang"
+      ],
+      "expose": "vibration",
+      "suggestedCaps": [
+        "alarm_tamper",
+        "alarm_vibration"
+      ]
+    },
+    {
+      "mfr": "_tze204_3regm3h6",
+      "drivers": [
+        "switch_1gang"
+      ],
+      "expose": "child_lock",
+      "suggestedCaps": [
+        "child_lock"
+      ]
+    },
+    {
+      "mfr": "_tze204_ccgyhbvd",
+      "drivers": [
+        "switch_1gang"
+      ],
+      "expose": "child_lock",
+      "suggestedCaps": [
+        "child_lock"
+      ]
+    },
+    {
+      "mfr": "_tze204_fhv95pf1",
+      "drivers": [
+        "switch_1gang"
+      ],
+      "expose": "child_lock",
+      "suggestedCaps": [
+        "child_lock"
+      ]
+    },
+    {
+      "mfr": "_tze204_gm8h14wy",
+      "drivers": [
+        "switch_1gang"
+      ],
+      "expose": "child_lock",
+      "suggestedCaps": [
+        "child_lock"
+      ]
+    },
+    {
+      "mfr": "_tze204_he9apaui",
+      "drivers": [
+        "switch_1gang"
+      ],
+      "expose": "child_lock",
+      "suggestedCaps": [
+        "child_lock"
+      ]
+    },
+    {
+      "mfr": "_tze204_ouy7vpm1",
+      "drivers": [
+        "switch_1gang"
+      ],
+      "expose": "child_lock",
+      "suggestedCaps": [
+        "child_lock"
+      ]
+    },
+    {
+      "mfr": "_tze204_y8ficeai",
+      "drivers": [
+        "switch_1gang"
+      ],
+      "expose": "child_lock",
+      "suggestedCaps": [
+        "child_lock"
+      ]
+    },
+    {
+      "mfr": "_tze284_3regm3h6",
+      "drivers": [
+        "switch_1gang"
+      ],
+      "expose": "child_lock",
+      "suggestedCaps": [
+        "child_lock"
+      ]
+    },
+    {
+      "mfr": "_tze284_7e6v8u9f",
+      "drivers": [
+        "switch_1gang"
+      ],
+      "expose": "child_lock",
+      "suggestedCaps": [
+        "child_lock"
+      ]
+    },
+    {
+      "mfr": "_tze284_tgeqdjgk",
+      "drivers": [
+        "switch_1gang"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tz3000_5kxl9esg",
+      "drivers": [
+        "switch_4gang"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tz3000_ezqbvrqz",
+      "drivers": [
+        "switch_4gang"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tz3000_kfkqkjqe",
+      "drivers": [
+        "switch_4gang"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tz3000_lcjsewlo",
+      "drivers": [
+        "switch_4gang"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tz3000_m3pafcnk",
+      "drivers": [
+        "switch_4gang"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tz3000_noru9tix",
+      "drivers": [
+        "switch_4gang"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tz3000_qhyadm57",
+      "drivers": [
+        "switch_4gang"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tz3000_rsylfthg",
+      "drivers": [
+        "switch_4gang"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tz3002_1s0vfmtv",
+      "drivers": [
+        "switch_4gang"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tz3002_a4kvf6zd",
+      "drivers": [
+        "switch_4gang"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tz3002_aewsvjcu",
+      "drivers": [
+        "switch_4gang"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tz3002_gdwja9a7",
+      "drivers": [
+        "switch_4gang"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tz3002_hkaktryd",
+      "drivers": [
+        "switch_4gang"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tz3002_iedhxgyi",
+      "drivers": [
+        "switch_4gang"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tz3002_kq3kqwjt",
+      "drivers": [
+        "switch_4gang"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tz3002_l8bfzlcd",
+      "drivers": [
+        "switch_4gang"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tz3002_m3pafcnk",
+      "drivers": [
+        "switch_4gang"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tz3002_phu8ygaw",
+      "drivers": [
+        "switch_4gang"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tz3002_rbnycsav",
+      "drivers": [
+        "switch_4gang"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tz3002_tlsvxhxc",
+      "drivers": [
+        "switch_4gang"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tz3002_u7d3nes3",
+      "drivers": [
+        "switch_4gang"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tz3002_umdkr64x",
+      "drivers": [
+        "switch_4gang"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tz3002_xkxgfxsg",
+      "drivers": [
+        "switch_4gang"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tz3002_ybtqbyk3",
+      "drivers": [
+        "switch_4gang"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tz3002_ymv5vytn",
+      "drivers": [
+        "switch_4gang"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tz3002_zjuvw9zf",
+      "drivers": [
+        "switch_4gang"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tz300a_82iab0pn",
+      "drivers": [
+        "switch_4gang"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tz300a_ohjmifiz",
+      "drivers": [
+        "switch_4gang"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tz300a_rncj86af",
+      "drivers": [
+        "switch_4gang"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tz300a_vkflnsl0",
+      "drivers": [
+        "switch_4gang"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tz300a_vqrs45nj",
+      "drivers": [
+        "switch_4gang"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tz3000_402vrq2i",
+      "drivers": [
+        "switch_4_gang_metering"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tz3000_1fqpj6qz",
+      "drivers": [
+        "switch_4_gang_metering"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tz3000_cziew6eu",
+      "drivers": [
+        "switch_wall_6gang"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tze200_9xfjixap",
+      "drivers": [
+        "thermostatic_radiator_valve"
+      ],
+      "expose": "child_lock",
+      "suggestedCaps": [
+        "child_lock"
+      ]
+    },
+    {
+      "mfr": "_tze200_ywdxldoj",
+      "drivers": [
+        "thermostatic_radiator_valve"
+      ],
+      "expose": "child_lock",
+      "suggestedCaps": [
+        "child_lock"
+      ]
+    },
+    {
+      "mfr": "_tze204_wc2w9t1s",
+      "drivers": [
+        "thermostatic_radiator_valve"
+      ],
+      "expose": "child_lock",
+      "suggestedCaps": [
+        "child_lock"
+      ]
+    },
+    {
+      "mfr": "_tze284_noixx2uz",
+      "drivers": [
+        "thermostatic_radiator_valve"
+      ],
+      "expose": "child_lock",
+      "suggestedCaps": [
+        "child_lock"
+      ]
+    },
+    {
+      "mfr": "_tze200_ckud7u2l",
+      "drivers": [
+        "thermostatic_radiator_valve"
+      ],
+      "expose": "child_lock",
+      "suggestedCaps": [
+        "child_lock"
+      ]
+    },
+    {
+      "mfr": "_tze200_cwnjrr72",
+      "drivers": [
+        "thermostatic_radiator_valve"
+      ],
+      "expose": "child_lock",
+      "suggestedCaps": [
+        "child_lock"
+      ]
+    },
+    {
+      "mfr": "_tze200_pisltm67",
+      "drivers": [
+        "thermostat_tuya_dp"
+      ],
+      "expose": "illuminance",
+      "suggestedCaps": [
+        "measure_luminance"
+      ]
+    },
+    {
+      "mfr": "avatto",
+      "drivers": [
+        "universal_zigbee"
+      ],
+      "expose": "child_lock",
+      "suggestedCaps": [
+        "child_lock"
+      ]
+    },
+    {
+      "mfr": "moes",
+      "drivers": [
+        "universal_zigbee"
+      ],
+      "expose": "child_lock",
+      "suggestedCaps": [
+        "child_lock"
+      ]
+    },
+    {
+      "mfr": "_tze284_eaet5qt5",
+      "drivers": [
+        "valve_dual_irrigation"
+      ],
+      "expose": "switch",
+      "suggestedCaps": [
+        "onoff"
+      ]
+    },
+    {
+      "mfr": "_tze284_fhvpaltk",
+      "drivers": [
+        "valve_dual_irrigation"
+      ],
+      "expose": "switch",
+      "suggestedCaps": [
+        "onoff"
+      ]
+    },
+    {
+      "mfr": "_tze200_gomuk3dc",
+      "drivers": [
+        "valve_irrigation"
+      ],
+      "expose": "energy",
+      "suggestedCaps": [
+        "meter_power"
+      ]
+    },
+    {
+      "mfr": "_tze200_gomuk3dc",
+      "drivers": [
+        "valve_irrigation"
+      ],
+      "expose": "power",
+      "suggestedCaps": [
+        "measure_power"
+      ]
+    },
+    {
+      "mfr": "_tze200_jt50ea5d",
+      "drivers": [
+        "valve_irrigation"
+      ],
+      "expose": "battery_voltage",
+      "suggestedCaps": [
+        "measure_voltage"
+      ]
+    },
+    {
+      "mfr": "_tze200_ugekduaj",
+      "drivers": [
+        "valve_irrigation"
+      ],
+      "expose": "energy",
+      "suggestedCaps": [
+        "meter_power"
+      ]
+    },
+    {
+      "mfr": "_tze200_ugekduaj",
+      "drivers": [
+        "valve_irrigation"
+      ],
+      "expose": "power",
+      "suggestedCaps": [
+        "measure_power"
+      ]
+    },
+    {
+      "mfr": "_tze204_gomuk3dc",
+      "drivers": [
+        "valve_irrigation"
+      ],
+      "expose": "energy",
+      "suggestedCaps": [
+        "meter_power"
+      ]
+    },
+    {
+      "mfr": "_tze204_gomuk3dc",
+      "drivers": [
+        "valve_irrigation"
+      ],
+      "expose": "power",
+      "suggestedCaps": [
+        "measure_power"
+      ]
+    },
+    {
+      "mfr": "_tze204_ugekduaj",
+      "drivers": [
+        "valve_irrigation"
+      ],
+      "expose": "energy",
+      "suggestedCaps": [
+        "meter_power"
+      ]
+    },
+    {
+      "mfr": "_tze204_ugekduaj",
+      "drivers": [
+        "valve_irrigation"
+      ],
+      "expose": "power",
+      "suggestedCaps": [
+        "measure_power"
+      ]
+    },
+    {
+      "mfr": "_tze284_8zizsafo",
+      "drivers": [
+        "valve_irrigation"
+      ],
+      "expose": "battery",
+      "suggestedCaps": [
+        "measure_battery",
+        "alarm_battery"
+      ]
+    },
+    {
+      "mfr": "_tze284_gomuk3dc",
+      "drivers": [
+        "valve_irrigation"
+      ],
+      "expose": "energy",
+      "suggestedCaps": [
+        "meter_power"
+      ]
+    },
+    {
+      "mfr": "_tze284_gomuk3dc",
+      "drivers": [
+        "valve_irrigation"
+      ],
+      "expose": "power",
+      "suggestedCaps": [
+        "measure_power"
+      ]
+    },
+    {
+      "mfr": "_tz3000_ky0fq4ho",
+      "drivers": [
+        "vibration_sensor"
+      ],
+      "expose": "switch",
+      "suggestedCaps": [
+        "onoff"
+      ]
+    },
+    {
+      "mfr": "_tz3000_ky0fq4ho",
+      "drivers": [
+        "vibration_sensor"
+      ],
+      "expose": "power",
+      "suggestedCaps": [
+        "measure_power"
+      ]
+    },
+    {
+      "mfr": "_tz3000_ky0fq4ho",
+      "drivers": [
+        "vibration_sensor"
+      ],
+      "expose": "current",
+      "suggestedCaps": [
+        "measure_current"
+      ]
+    },
+    {
+      "mfr": "_tz3000_ky0fq4ho",
+      "drivers": [
+        "vibration_sensor"
+      ],
+      "expose": "voltage",
+      "suggestedCaps": [
+        "measure_voltage"
+      ]
+    },
+    {
+      "mfr": "_tz3000_ky0fq4ho",
+      "drivers": [
+        "vibration_sensor"
+      ],
+      "expose": "energy",
+      "suggestedCaps": [
+        "meter_power"
+      ]
+    },
+    {
+      "mfr": "_tze200_jfw0a4aa",
+      "drivers": [
+        "vibration_sensor"
+      ],
+      "expose": "contact",
+      "suggestedCaps": [
+        "alarm_contact"
+      ]
+    },
+    {
+      "mfr": "_tze200_wzk0x7fq",
+      "drivers": [
+        "vibration_sensor"
+      ],
+      "expose": "contact",
+      "suggestedCaps": [
+        "alarm_contact"
+      ]
+    },
+    {
+      "mfr": "_tze200_ahpcyzth",
+      "drivers": [
+        "vibration_sensor"
+      ],
+      "expose": "presence",
+      "suggestedCaps": [
+        "alarm_motion",
+        "alarm_human"
+      ]
+    },
+    {
+      "mfr": "_tze200_bfmfhxra",
+      "drivers": [
+        "vibration_sensor"
+      ],
+      "expose": "presence",
+      "suggestedCaps": [
+        "alarm_motion",
+        "alarm_human"
+      ]
+    },
+    {
+      "mfr": "_tze200_cqtamhh5",
+      "drivers": [
+        "vibration_sensor"
+      ],
+      "expose": "presence",
+      "suggestedCaps": [
+        "alarm_motion",
+        "alarm_human"
+      ]
+    },
+    {
+      "mfr": "_tze200_df04ghrb",
+      "drivers": [
+        "vibration_sensor"
+      ],
+      "expose": "presence",
+      "suggestedCaps": [
+        "alarm_motion",
+        "alarm_human"
+      ]
+    },
+    {
+      "mfr": "_tze200_kccdzaeo",
+      "drivers": [
+        "vibration_sensor"
+      ],
+      "expose": "presence",
+      "suggestedCaps": [
+        "alarm_motion",
+        "alarm_human"
+      ]
+    },
+    {
+      "mfr": "_tze200_khzbklyh",
+      "drivers": [
+        "vibration_sensor"
+      ],
+      "expose": "presence",
+      "suggestedCaps": [
+        "alarm_motion",
+        "alarm_human"
+      ]
+    },
+    {
+      "mfr": "_tze200_kijxnb8q",
+      "drivers": [
+        "vibration_sensor"
+      ],
+      "expose": "presence",
+      "suggestedCaps": [
+        "alarm_motion",
+        "alarm_human"
+      ]
+    },
+    {
+      "mfr": "_tze200_llvwkkde",
+      "drivers": [
+        "vibration_sensor"
+      ],
+      "expose": "presence",
+      "suggestedCaps": [
+        "alarm_motion",
+        "alarm_human"
+      ]
+    },
+    {
+      "mfr": "_tze200_s7rsrtbg",
+      "drivers": [
+        "vibration_sensor"
+      ],
+      "expose": "presence",
+      "suggestedCaps": [
+        "alarm_motion",
+        "alarm_human"
+      ]
+    },
+    {
+      "mfr": "_tze200_tmszbtzq",
+      "drivers": [
+        "vibration_sensor"
+      ],
+      "expose": "presence",
+      "suggestedCaps": [
+        "alarm_motion",
+        "alarm_human"
+      ]
+    },
+    {
+      "mfr": "_tze200_toeldckg",
+      "drivers": [
+        "vibration_sensor"
+      ],
+      "expose": "presence",
+      "suggestedCaps": [
+        "alarm_motion",
+        "alarm_human"
+      ]
+    },
+    {
+      "mfr": "_tze200_xlnzk169",
+      "drivers": [
+        "vibration_sensor"
+      ],
+      "expose": "presence",
+      "suggestedCaps": [
+        "alarm_motion",
+        "alarm_human"
+      ]
+    },
+    {
+      "mfr": "_tz3210_k1msuvg6",
+      "drivers": [
+        "wall_dimmer_tuya"
+      ],
+      "expose": "power_on_behavior",
+      "suggestedCaps": [
+        "power_on_behavior"
+      ]
+    },
+    {
+      "mfr": "_tz3210_mt5xjoy6",
+      "drivers": [
+        "wall_dimmer_tuya"
+      ],
+      "expose": "power_on_behavior",
+      "suggestedCaps": [
+        "power_on_behavior"
+      ]
+    },
+    {
+      "mfr": "_tz3210_vfwhhldz",
+      "drivers": [
+        "wall_dimmer_tuya"
+      ],
+      "expose": "power_on_behavior",
+      "suggestedCaps": [
+        "power_on_behavior"
+      ]
+    },
+    {
+      "mfr": "_tz3210_wdexaypg",
+      "drivers": [
+        "wall_dimmer_tuya"
+      ],
+      "expose": "power_on_behavior",
+      "suggestedCaps": [
+        "power_on_behavior"
+      ]
+    },
+    {
+      "mfr": "_tz3210_weaqkhab",
+      "drivers": [
+        "wall_dimmer_tuya"
+      ],
+      "expose": "power_on_behavior",
+      "suggestedCaps": [
+        "power_on_behavior"
+      ]
+    },
+    {
+      "mfr": "_tz3210_ysfo0wla",
+      "drivers": [
+        "wall_dimmer_tuya"
+      ],
+      "expose": "power_on_behavior",
+      "suggestedCaps": [
+        "power_on_behavior"
+      ]
+    },
+    {
+      "mfr": "_tze200_qzaing2g",
+      "drivers": [
+        "wall_dimmer_tuya"
+      ],
+      "expose": "voltage",
+      "suggestedCaps": [
+        "measure_voltage"
+      ]
+    },
+    {
+      "mfr": "_tze200_qzaing2g",
+      "drivers": [
+        "wall_dimmer_tuya"
+      ],
+      "expose": "current",
+      "suggestedCaps": [
+        "measure_current"
+      ]
+    },
+    {
+      "mfr": "_tze200_qzaing2g",
+      "drivers": [
+        "wall_dimmer_tuya"
+      ],
+      "expose": "power",
+      "suggestedCaps": [
+        "measure_power"
+      ]
+    },
+    {
+      "mfr": "_tze200_qzaing2g",
+      "drivers": [
+        "wall_dimmer_tuya"
+      ],
+      "expose": "child_lock",
+      "suggestedCaps": [
+        "child_lock"
+      ]
+    },
+    {
+      "mfr": "_tze200_tsxpl0d0",
+      "drivers": [
+        "wall_dimmer_tuya"
+      ],
+      "expose": "power_on_behavior",
+      "suggestedCaps": [
+        "power_on_behavior"
+      ]
+    },
+    {
+      "mfr": "_tze204_1v1dxkck",
+      "drivers": [
+        "wall_dimmer_tuya"
+      ],
+      "expose": "power_on_behavior",
+      "suggestedCaps": [
+        "power_on_behavior"
+      ]
+    },
+    {
+      "mfr": "_tze204_znvwzxkq",
+      "drivers": [
+        "wall_dimmer_tuya"
+      ],
+      "expose": "power_on_behavior",
+      "suggestedCaps": [
+        "power_on_behavior"
+      ]
+    },
+    {
+      "mfr": "_tze284_znvwzxkq",
+      "drivers": [
+        "wall_dimmer_tuya"
+      ],
+      "expose": "power_on_behavior",
+      "suggestedCaps": [
+        "power_on_behavior"
+      ]
+    },
+    {
+      "mfr": "_tze200_dcnsggvz",
+      "drivers": [
+        "wall_dimmer_tuya"
+      ],
+      "expose": "power_on_behavior",
+      "suggestedCaps": [
+        "power_on_behavior"
+      ]
+    },
+    {
+      "mfr": "_tz3210_3mpwqzuu",
+      "drivers": [
+        "wall_dimmer_tuya"
+      ],
+      "expose": "power_on_behavior",
+      "suggestedCaps": [
+        "power_on_behavior"
+      ]
+    },
+    {
+      "mfr": "_tz3210_pagajpog",
+      "drivers": [
+        "wall_dimmer_tuya"
+      ],
+      "expose": "power_on_behavior",
+      "suggestedCaps": [
+        "power_on_behavior"
+      ]
+    },
+    {
+      "mfr": "_tz3002_pzao9ls1",
+      "drivers": [
+        "wall_switch_4gang_1way"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    },
+    {
+      "mfr": "_tze200_68nvbio9",
+      "drivers": [
+        "wall_thermostat"
+      ],
+      "expose": "battery",
+      "suggestedCaps": [
+        "measure_battery",
+        "alarm_battery"
+      ]
+    },
+    {
+      "mfr": "_tze200_pw7mji0l",
+      "drivers": [
+        "wall_thermostat"
+      ],
+      "expose": "battery",
+      "suggestedCaps": [
+        "measure_battery",
+        "alarm_battery"
+      ]
+    },
+    {
+      "mfr": "_tze200_cf1sl3tj",
+      "drivers": [
+        "wall_thermostat"
+      ],
+      "expose": "battery",
+      "suggestedCaps": [
+        "measure_battery",
+        "alarm_battery"
+      ]
+    },
+    {
+      "mfr": "_tze200_nw1r9hp6",
+      "drivers": [
+        "wall_thermostat"
+      ],
+      "expose": "battery",
+      "suggestedCaps": [
+        "measure_battery",
+        "alarm_battery"
+      ]
+    },
+    {
+      "mfr": "_tze200_68nvbi09",
+      "drivers": [
+        "wall_thermostat"
+      ],
+      "expose": "battery",
+      "suggestedCaps": [
+        "measure_battery",
+        "alarm_battery"
+      ]
+    },
+    {
+      "mfr": "_tze204_pcdmj88b",
+      "drivers": [
+        "wall_thermostat"
+      ],
+      "expose": "battery",
+      "suggestedCaps": [
+        "measure_battery",
+        "alarm_battery"
+      ]
+    },
+    {
+      "mfr": "_tze284_pcdmj88b",
+      "drivers": [
+        "wall_thermostat"
+      ],
+      "expose": "battery",
+      "suggestedCaps": [
+        "measure_battery",
+        "alarm_battery"
+      ]
+    },
+    {
+      "mfr": "_tze200_z1tyspqw",
+      "drivers": [
+        "wall_thermostat"
+      ],
+      "expose": "battery",
+      "suggestedCaps": [
+        "measure_battery",
+        "alarm_battery"
+      ]
+    },
+    {
+      "mfr": "_tze200_bvrlmajk",
+      "drivers": [
+        "wall_thermostat"
+      ],
+      "expose": "battery",
+      "suggestedCaps": [
+        "measure_battery",
+        "alarm_battery"
+      ]
+    },
+    {
+      "mfr": "_tze204_rtrmfadk",
+      "drivers": [
+        "wall_thermostat"
+      ],
+      "expose": "battery",
+      "suggestedCaps": [
+        "measure_battery",
+        "alarm_battery"
+      ]
+    },
+    {
+      "mfr": "_tze204_cvcu2p6e",
+      "drivers": [
+        "wall_thermostat"
+      ],
+      "expose": "battery",
+      "suggestedCaps": [
+        "measure_battery",
+        "alarm_battery"
+      ]
+    },
+    {
+      "mfr": "_tze204_9mjy74mp",
+      "drivers": [
+        "wall_thermostat"
+      ],
+      "expose": "battery",
+      "suggestedCaps": [
+        "measure_battery",
+        "alarm_battery"
+      ]
+    },
+    {
+      "mfr": "_tze200_9mjy74mp",
+      "drivers": [
+        "wall_thermostat"
+      ],
+      "expose": "battery",
+      "suggestedCaps": [
+        "measure_battery",
+        "alarm_battery"
+      ]
+    },
+    {
+      "mfr": "_tze204_qyr2m29i",
+      "drivers": [
+        "wall_thermostat"
+      ],
+      "expose": "battery",
+      "suggestedCaps": [
+        "measure_battery",
+        "alarm_battery"
+      ]
+    },
+    {
+      "mfr": "_tze284_iilebqoo",
+      "drivers": [
+        "wall_thermostat"
+      ],
+      "expose": "battery",
+      "suggestedCaps": [
+        "measure_battery",
+        "alarm_battery"
+      ]
+    },
+    {
+      "mfr": "_tze204_0hcjew5p",
+      "drivers": [
+        "wall_thermostat"
+      ],
+      "expose": "power",
+      "suggestedCaps": [
+        "measure_power"
+      ]
+    },
+    {
+      "mfr": "_tze204_0hcjew5p",
+      "drivers": [
+        "wall_thermostat"
+      ],
+      "expose": "voltage",
+      "suggestedCaps": [
+        "measure_voltage"
+      ]
+    },
+    {
+      "mfr": "_tze204_0hcjew5p",
+      "drivers": [
+        "wall_thermostat"
+      ],
+      "expose": "current",
+      "suggestedCaps": [
+        "measure_current"
+      ]
+    },
+    {
+      "mfr": "_tze204_0hcjew5p",
+      "drivers": [
+        "wall_thermostat"
+      ],
+      "expose": "energy",
+      "suggestedCaps": [
+        "meter_power"
+      ]
+    },
+    {
+      "mfr": "_tze200_vexa5o82",
+      "drivers": [
+        "wall_thermostat"
+      ],
+      "expose": "battery",
+      "suggestedCaps": [
+        "measure_battery",
+        "alarm_battery"
+      ]
+    },
+    {
+      "mfr": "_tz3000_gsat0axs",
+      "drivers": [
+        "water_leak_sensor"
+      ],
+      "expose": "switch",
+      "suggestedCaps": [
+        "onoff"
+      ]
+    },
+    {
+      "mfr": "_tz3000_gsat0axs",
+      "drivers": [
+        "water_leak_sensor"
+      ],
+      "expose": "power",
+      "suggestedCaps": [
+        "measure_power"
+      ]
+    },
+    {
+      "mfr": "_tz3000_gsat0axs",
+      "drivers": [
+        "water_leak_sensor"
+      ],
+      "expose": "current",
+      "suggestedCaps": [
+        "measure_current"
+      ]
+    },
+    {
+      "mfr": "_tz3000_gsat0axs",
+      "drivers": [
+        "water_leak_sensor"
+      ],
+      "expose": "voltage",
+      "suggestedCaps": [
+        "measure_voltage"
+      ]
+    },
+    {
+      "mfr": "_tz3000_gsat0axs",
+      "drivers": [
+        "water_leak_sensor"
+      ],
+      "expose": "energy",
+      "suggestedCaps": [
+        "meter_power"
+      ]
+    },
+    {
+      "mfr": "_tz3000_zojh9vz7",
+      "drivers": [
+        "water_leak_sensor"
+      ],
+      "expose": "switch",
+      "suggestedCaps": [
+        "onoff"
+      ]
+    },
+    {
+      "mfr": "_tz3000_zojh9vz7",
+      "drivers": [
+        "water_leak_sensor"
+      ],
+      "expose": "power",
+      "suggestedCaps": [
+        "measure_power"
+      ]
+    },
+    {
+      "mfr": "_tz3000_zojh9vz7",
+      "drivers": [
+        "water_leak_sensor"
+      ],
+      "expose": "current",
+      "suggestedCaps": [
+        "measure_current"
+      ]
+    },
+    {
+      "mfr": "_tz3000_zojh9vz7",
+      "drivers": [
+        "water_leak_sensor"
+      ],
+      "expose": "voltage",
+      "suggestedCaps": [
+        "measure_voltage"
+      ]
+    },
+    {
+      "mfr": "_tz3000_zojh9vz7",
+      "drivers": [
+        "water_leak_sensor"
+      ],
+      "expose": "energy",
+      "suggestedCaps": [
+        "meter_power"
+      ]
+    },
+    {
+      "mfr": "_tze200_vuwtqx0t",
+      "drivers": [
+        "water_valve_garden",
+        "water_valve_smart"
+      ],
+      "expose": "battery_voltage",
+      "suggestedCaps": [
+        "measure_voltage"
+      ]
+    },
+    {
+      "mfr": "_tze284_vuwtqx0t",
+      "drivers": [
+        "water_valve_garden",
+        "water_valve_smart"
+      ],
+      "expose": "battery_voltage",
+      "suggestedCaps": [
+        "measure_voltage"
+      ]
+    },
+    {
+      "mfr": "_tze200_r32ctezx",
+      "drivers": [
+        "water_valve_smart"
+      ],
+      "expose": "power_on_behavior",
+      "suggestedCaps": [
+        "power_on_behavior"
+      ]
+    },
+    {
+      "mfr": "_tze200_r32ctezx",
+      "drivers": [
+        "water_valve_smart"
+      ],
+      "expose": "fan_speed",
+      "suggestedCaps": [
+        "dim"
+      ]
+    },
+    {
+      "mfr": "_tze204_r32ctezx",
+      "drivers": [
+        "water_valve_smart"
+      ],
+      "expose": "power_on_behavior",
+      "suggestedCaps": [
+        "power_on_behavior"
+      ]
+    },
+    {
+      "mfr": "_tze204_r32ctezx",
+      "drivers": [
+        "water_valve_smart"
+      ],
+      "expose": "fan_speed",
+      "suggestedCaps": [
+        "dim"
+      ]
+    },
+    {
+      "mfr": "_tze284_7zazvlyn",
+      "drivers": [
+        "water_valve_smart"
+      ],
+      "expose": "action",
+      "suggestedCaps": [
+        "alarm_motion"
+      ]
+    }
+  ]
+}
