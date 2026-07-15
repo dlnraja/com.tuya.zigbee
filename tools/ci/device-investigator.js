@@ -167,18 +167,34 @@ function loadDpDb()   { return loadJson(DP_DB, {}); }
 function loadZ2MCache() { return loadJson(Z2M_CACHE, {}); }
 
 // ─── our driver analysis ──────────────────────────────────────────────────
-function findDriverForMfr(mfr) {
+function findDriverForMfr(mfr, preferredDriver = null) {
   if (!mfr || !fs.existsSync(DRIVERS_DIR)) return null;
   const mfrLower = mfr.toLowerCase();
-  for (const e of fs.readdirSync(DRIVERS_DIR, { withFileTypes: true })) {
-    if (!e.isDirectory()) continue;
-    const cf = path.join(DRIVERS_DIR, e.name, 'driver.compose.json');
+  // If we have a preferred driver (from fingerprint, sacredCouples, etc.),
+  // try it first. Otherwise return the first driver that contains the mfr.
+  const drivers = fs.readdirSync(DRIVERS_DIR, { withFileTypes: true })
+    .filter(e => e.isDirectory())
+    .map(e => e.name);
+  if (preferredDriver && drivers.includes(preferredDriver)) {
+    const cf = path.join(DRIVERS_DIR, preferredDriver, 'driver.compose.json');
+    if (fs.existsSync(cf)) {
+      try {
+        const c = JSON.parse(fs.readFileSync(cf, 'utf8'));
+        const mfrs = c.zigbee?.manufacturerName || [];
+        if (mfrs.some(x => x.toLowerCase() === mfrLower)) {
+          return { name: preferredDriver, config: c, compose: cf };
+        }
+      } catch (_) {}
+    }
+  }
+  for (const name of drivers) {
+    const cf = path.join(DRIVERS_DIR, name, 'driver.compose.json');
     if (!fs.existsSync(cf)) continue;
     try {
       const c = JSON.parse(fs.readFileSync(cf, 'utf8'));
       const mfrs = c.zigbee?.manufacturerName || [];
       if (mfrs.some(x => x.toLowerCase() === mfrLower)) {
-        return { name: e.name, config: c, compose: cf };
+        return { name, config: c, compose: cf };
       }
     } catch (_) {}
   }
@@ -703,7 +719,10 @@ async function reportOne(mfr, pid, { webfetch = false, bugs = false, noColor = f
 
   // ─── 2. driver.compose.json + driver.js + flow ─────────────────────────
   section('2. Our driver: compose + js + flow + configs');
-  const driver = findDriverForMfr(mfr);
+  // Prefer the driver the fingerprint says (runtime truth)
+  const fp = loadFps();
+  const fpDriverId = fp[mfr]?.driverId || fp[mfr.toLowerCase()]?.driverId;
+  const driver = findDriverForMfr(mfr, fpDriverId);
   let analysis = null;
   if (driver) {
     analysis = analyzeDriver(driver.name);
@@ -724,7 +743,6 @@ async function reportOne(mfr, pid, { webfetch = false, bugs = false, noColor = f
 
   // ─── 3. fingerprints.json ──────────────────────────────────────────────
   section('3. Tuya fingerprints (lib/tuya/fingerprints.json)');
-  const fp = loadFps();
   if (fp[mfr]) {
     l(`  ${mfr} → ${ok(JSON.stringify(fp[mfr]))}`);
   } else if (fp[mfr.toLowerCase()]) {
