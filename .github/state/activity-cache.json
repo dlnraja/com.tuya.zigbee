@@ -1,5 +1,5 @@
 {
-  "timestamp": 1784137458806,
+  "timestamp": 1784152878030,
   "data": {
     "gh": {
       "openIssues": [
@@ -35,6 +35,16 @@
         }
       ],
       "recentComments": [
+        {
+          "n": "506",
+          "u": "dlnraja",
+          "b": "<!-- diag-resolver -->\n### Auto-resolved by Diagnostic Resolver\n\nAll fingerprints in this issue found in **Tuya Unified Zigbee v9.0.266**:\n- `_TZ3000_fllyghyj` -> **climate_sensor**\n\n**Install:** http"
+        },
+        {
+          "n": "506",
+          "u": "dlnraja",
+          "b": "<!-- diag-resolver -->\n### Auto-resolved by Diagnostic Resolver\n\nAll fingerprints in this issue found in **Tuya Unified Zigbee v9.0.263**:\n- `_TZ3000_fllyghyj` -> **climate_sensor**\n\n**Install:** http"
+        },
         {
           "n": "506",
           "u": "dlnraja",
@@ -74,16 +84,6 @@
           "n": "511",
           "u": "stephanmaastricht",
           "b": "Hi Dylan, i have no idea how this works its AI talking to me :-)\n\nI found the likely cause.\n\nIn the current `drivers/soil_sensor/driver.compose.json`, the `manufacturerName` list does not contain:\n\n_T"
-        },
-        {
-          "n": "506",
-          "u": "github-actions[bot]",
-          "b": "<!-- tuya-reopen-bot -->\nThis issue has been **automatically reopened** because @Lalla80111 posted a new comment.\nIt will be reviewed in the next automation cycle.\n\n> If your device is still not worki"
-        },
-        {
-          "n": "506",
-          "u": "Lalla80111",
-          "b": "Thanx, now it's adding as an unknown zigbee device but working. \n \n The driver is: homey:virtualdriverzigbee:homey \n \n \n \n \n I see the fingerprint is included in driver.compose.json under climate_sens"
         }
       ]
     },
@@ -135,7 +135,7 @@
       {
         "name": "crash-analysis.json",
         "sizeKB": 0,
-        "modified": "2026-07-15T17:44:17.244Z"
+        "modified": "2026-07-15T17:44:33.384Z"
       },
       {
         "name": "diagnostics-report.json",

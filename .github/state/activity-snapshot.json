@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-07-15T17:44:33.279Z",
+  "fetchedAt": "2026-07-15T22:01:17.054Z",
   "github": {
     "openIssues": [
       {
@@ -26,7 +26,7 @@
         "title": "Temp and humidity sensor",
         "state": "open",
         "createdAt": "2026-07-07T15:24:02Z",
-        "updatedAt": "2026-07-15T11:45:59Z",
+        "updatedAt": "2026-07-15T19:53:40Z",
         "user": "Lalla80111",
         "labels": [
           "bug",
@@ -37,7 +37,7 @@
           "sensor",
           "device_issue"
         ],
-        "commentsCount": 7,
+        "commentsCount": 9,
         "body": "My temperature and humidity sensor is recognized as Air Purifier and not working.\n\n<img width=\"250\" height=\"443\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/c5417930-f080-4c82-a573-471589894eef\" />\n\nInterview:\n\n\n\n  \"ids\": {\n    \"modelId\": \"TS0201\",\n    \"manufacturerName\": \"_TZ3000_fllyghyj\"\n  },\n  \"endpoints\": {\n    \"ieeeAddress\": \"a4:c1:38:be:49:b1:e3:1d\",\n    \"networkAddress\": 9567,\n    \"modelId\": \"TS0201\",\n    \"manufacturerName\": \"_TZ3000_fllyghyj\",\n    \"endpointDescriptors\": [\n      {\n        \"status\": \"SUCCESS\",\n        \"nwkAddrOfInterest\": 9567,\n        \"_reserved\": 24,\n        \"endpointId\": 1,\n        \"applicationProfileId\": 260,\n        \"applicationDeviceId\": 770,\n        \"applicationDeviceVersion\": 0,\n        \"_reserved1\": 1,\n        \"inputClusters\": [\n          1,\n          3,\n          1026,\n          1029,\n          0\n        ],\n        \"outputClusters\": [\n          3,\n          25,\n          10\n        ]\n      }\n    ],\n    \"deviceType\": \"enddevice\",\n    \"receiveWhenIdle\": false,\n    \"capabilities\": {\n      \"alternatePANCoordinator\": false,\n      \"deviceType\": false,\n      \"powerSourceMains\": false,\n      \"receiveWhenIdle\": false,\n      \"security\": false,\n      \"allocateAddress\": true\n    },\n    \"extendedEndpointDescriptors\": {\n      \"1\": {\n        \"clusters\": {\n          \"powerConfiguration\": {\n            \"attributes\": [\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 0,\n                \"dataTypeId\": 33,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 32,\n                \"dataTypeId\": 32,\n                \"name\": \"batteryVoltage\",\n                \"value\": 29,\n                \"reportingConfigu",
         "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/506"
       },
@@ -132,9 +132,714 @@
         "body": "## 📱 Basic Information\n\n**Brand & Model**:  Tuya ZigBee Wireless Smart Home Scene Switch Light 4 Gang\n**Purchase Link**:  https://www.aliexpress.com/item/1005009111576166.html\n**Power Source**: [X] Battery / [ ] Mains\n**Current Status**: [ ] Not pairing / [ ] Pairs but missing features / [X] Not working at all\n\n---\n\n## 🔍 Zigbee Fingerprint (MANDATORY)\n\nPlease provide this information from Homey Developer Tools:\n\n**Manufacturer Name**: `_TZ3000_u3nv1jwk`  \n**Model ID**: `TS0044`  \n**Endpoints**: `[ ]`  \n**Clusters**: `[ ]`\n\n### How to Get Fingerprint:\n1. Pair device with Homey\n2. Go to Developer Tools → Devices → [Your Device]\n3. Click \"Advanced\" tab\n4. Screenshot OR copy the information above\n\n**Screenshot or fingerprint data**:\n```\nPaste fingerprint here\n---\nProperty\tValue\nID\t94ea8485-10e3-4435-80db-34fe005d6e4c\nName\tZigbee-enhet\nClass\tsocket\nDriver\thomey:virtualdriverzigbee:driver\nReady\tYes\nAvailable\tYes\nWarning\tNo\nCustom icon\tNo\n\nData\nKey\tValue\ntoken\t\"b042d9f8-00ac-466b-9714-0c78c"
       }
     ],
-    "recentComments": [],
-    "events": [],
-    "recentPRs": []
+    "recentComments": [
+      {
+        "id": 4984708441,
+        "user": "dlnraja",
+        "createdAt": "2026-07-15T19:53:40Z",
+        "body": "<!-- diag-resolver -->\n### Auto-resolved by Diagnostic Resolver\n\nAll fingerprints in this issue found in **Tuya Unified Zigbee v9.0.266**:\n- `_TZ3000_fllyghyj` -> **climate_sensor**\n\n**Install:** https://homey.app/a/com.dlnraja.tuya.zigbee/test/\nRemove and re-pair your device after installing.\n\n**Troubleshooting:** https://github.com/dlnraja/com.tuya.zigbee/wiki/Troubleshooting\n\n> **Detected protocols:** unknown\n",
+        "issueUrl": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues/506",
+        "issueNumber": "506"
+      },
+      {
+        "id": 4984369226,
+        "user": "dlnraja",
+        "createdAt": "2026-07-15T19:12:02Z",
+        "body": "<!-- diag-resolver -->\n### Auto-resolved by Diagnostic Resolver\n\nAll fingerprints in this issue found in **Tuya Unified Zigbee v9.0.263**:\n- `_TZ3000_fllyghyj` -> **climate_sensor**\n\n**Install:** https://homey.app/a/com.dlnraja.tuya.zigbee/test/\nRemove and re-pair your device after installing.\n\n**Troubleshooting:** https://github.com/dlnraja/com.tuya.zigbee/wiki/Troubleshooting\n\n> **Detected protocols:** unknown\n",
+        "issueUrl": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues/506",
+        "issueNumber": "506"
+      },
+      {
+        "id": 4980158577,
+        "user": "dlnraja",
+        "createdAt": "2026-07-15T11:45:59Z",
+        "body": "<!-- diag-resolver -->\n### Auto-resolved by Diagnostic Resolver\n\nAll fingerprints in this issue found in **Tuya Unified Zigbee v9.0.261**:\n- `_TZ3000_fllyghyj` -> **climate_sensor**\n\n**Install:** https://homey.app/a/com.dlnraja.tuya.zigbee/test/\nRemove and re-pair your device after installing.\n\n**Troubleshooting:** https://github.com/dlnraja/com.tuya.zigbee/wiki/Troubleshooting\n\n> **Detected protocols:** unknown\n",
+        "issueUrl": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues/506",
+        "issueNumber": "506"
+      },
+      {
+        "id": 4978265156,
+        "user": "dlnraja",
+        "createdAt": "2026-07-15T08:04:56Z",
+        "body": "<!-- diag-resolver -->\n### Auto-resolved by Diagnostic Resolver\n\nAll fingerprints in this issue found in **Tuya Unified Zigbee v9.0.252**:\n- `_TZ3000_fllyghyj` -> **climate_sensor**\n\n**Install:** https://homey.app/a/com.dlnraja.tuya.zigbee/test/\nRemove and re-pair your device after installing.\n\n**Troubleshooting:** https://github.com/dlnraja/com.tuya.zigbee/wiki/Troubleshooting\n\n> **Detected protocols:** unknown\n",
+        "issueUrl": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues/506",
+        "issueNumber": "506"
+      },
+      {
+        "id": 4973452584,
+        "user": "Lalla80111",
+        "createdAt": "2026-07-14T20:01:12Z",
+        "body": "Thanx for the superior work  you're doing :)\n\nI want to inform you that the new v9.0.218 is crashing and gives the message \"Exit Code: 1, Exit Signal: null\"\nDiagnostics: 168adaa3-b63a-4298-9b9b-51b3616ac91c\n\n",
+        "issueUrl": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues/506",
+        "issueNumber": "506"
+      },
+      {
+        "id": 4968617145,
+        "user": "stephanmaastricht",
+        "createdAt": "2026-07-14T11:24:54Z",
+        "body": "Hi Dylan,\n\nAfter updating to v9.0.218 the app crashes immediately.\n\nThe app is marked as \"Crashed\" in Homey and therefore it no longer appears in \"Add Device\", so I cannot test the soil sensor anymore.\n\nThe new test URL [https://homey.app/a/com.dlnraja.tuya.zigbee/test/\\n3](https://homey.app/a/com.dlnraja.tuya.zigbee/test/%5Cn3)also returns a 404 page.\n\nCould you please check the latest test build?\n\nThank you!",
+        "issueUrl": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues/511",
+        "issueNumber": "511"
+      },
+      {
+        "id": 4968186712,
+        "user": "dlnraja",
+        "createdAt": "2026-07-14T10:31:17Z",
+        "body": "## P53 — 678 of 955 new Tuya FPs added to generic_tuya ✅\n\nThanks for the auto-scan! I processed the 955 FPs in this issue.\n\n**Results:**\n- 277 of 955 FPs were **already in drivers** (including other specialized drivers like `presence_sensor_radar`, `climate_sensor`, etc.)\n- 678 **new FPs added** to `drivers/generic_tuya/driver.compose.json`\n- 0 FPs were ambiguous or non-Tuya patterns\n- `generic_tuya` grew from 381 → **1059 manufacturer names**\n\n**Coverage by prefix:**\n| Prefix | Added |\n|---|---",
+        "issueUrl": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues/439",
+        "issueNumber": "439"
+      },
+      {
+        "id": 4967322532,
+        "user": "dlnraja",
+        "createdAt": "2026-07-14T09:14:14Z",
+        "body": "Hi @Lalla80111 👋\n\nThanks for the patience and the detailed diagnostic! I've been investigating the issue and I have good news: **the auto-publish pipeline is now unblocked**.\n\n## What was happening\n\nThe fingerprint `_TZ3000_fllyghyj` + `TS0201` is correctly mapped to `climate_sensor` in `drivers/climate_sensor/driver.compose.json:150` and in `mfs_db.json`. However, the **auto-publish bot was broken** due to a YAML separator regression in 12 GHA workflow files (extra `---` markers causing multi-",
+        "issueUrl": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues/506",
+        "issueNumber": "506"
+      },
+      {
+        "id": 4966962761,
+        "user": "dlnraja",
+        "createdAt": "2026-07-14T08:31:53Z",
+        "body": "Hi @stephanmaastricht 👋\\n\\nThanks again for your detailed investigation — you were right. After deep cross-referencing, I found two issues:\\n\\n## Bug 1: Your fingerprint was actually present, but the auto-publish bot likely reverted it\\n\\nI verified that `_TZE284_awepdiwi` IS in `drivers/soil_sensor/driver.compose.json:145` in the current source. This is exactly the P19 pattern where the auto-publish bot regenerates `app.json` from a baseline that doesn't include the latest fixes.\\n\\n## Bug 2: ",
+        "issueUrl": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues/511",
+        "issueNumber": "511"
+      },
+      {
+        "id": 4964343207,
+        "user": "stephanmaastricht",
+        "createdAt": "2026-07-14T00:56:57Z",
+        "body": "Hi Dylan, i have no idea how this works its AI talking to me :-)\n\nI found the likely cause.\n\nIn the current `drivers/soil_sensor/driver.compose.json`, the `manufacturerName` list does not contain:\n\n_TZE284_awepdiwi\n\nIt also does not contain the similar fingerprint:\n\n_TZE284_ga1maeof\n\nMy device reports:\n\nManufacturer: _TZE284_awepdiwi\nProduct ID: TS0601\n\nThe endpoint clusters match the driver:\n0, 4, 5, 60672, 61184\n\nSo Homey cannot match the device because the manufacturer fingerprint is missing ",
+        "issueUrl": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues/511",
+        "issueNumber": "511"
+      },
+      {
+        "id": 4959744257,
+        "user": "github-actions[bot]",
+        "createdAt": "2026-07-13T15:39:21Z",
+        "body": "<!-- tuya-reopen-bot -->\nThis issue has been **automatically reopened** because @Lalla80111 posted a new comment.\nIt will be reviewed in the next automation cycle.\n\n> If your device is still not working, please share:\n> 1. **Device Interview** from [Developer Tools](https://tools.developer.homey.app)\n> 2. **Diagnostic Report ID** from device settings",
+        "issueUrl": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues/506",
+        "issueNumber": "506"
+      },
+      {
+        "id": 4959742319,
+        "user": "Lalla80111",
+        "createdAt": "2026-07-13T15:39:08Z",
+        "body": "Thanx, now it's adding as an unknown zigbee device but working. \n \n The driver is: homey:virtualdriverzigbee:homey \n \n \n \n \n I see the fingerprint is included in driver.compose.json under climate_sensor but still it's unknown. \n \n \n \n \n Tried remove both device and app and reinstalled 9.0.211. \n \n \n \n App log:\n436a34b3-6af3-4bc3-a0d5-bd96a24c6f29\n \n \n \n \n \n \n \n \n dlnraja  left a comment  (dlnraja/com.tuya.zigbee#506) \n \n\n Hey  @Lalla80111 , \n Thanks for reporting this! It looks like your tempera",
+        "issueUrl": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues/506",
+        "issueNumber": "506"
+      },
+      {
+        "id": 4956825157,
+        "user": "stephanmaastricht",
+        "createdAt": "2026-07-13T10:09:17Z",
+        "body": "Hi Dylan,\n\nI noticed the repository already contains versions 9.0.193, 9.0.194 and 9.0.195.\n\nHowever, the Homey test link still installs version 9.0.192.\n\nCould you please check if the latest test build has been published to the Homey test channel?\n\nI am still getting \"Unknown Zigbee Device\" because only v9.0.192 is available to install.\n\nThank you!",
+        "issueUrl": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues/511",
+        "issueNumber": "511"
+      },
+      {
+        "id": 4956777275,
+        "user": "dlnraja",
+        "createdAt": "2026-07-13T10:03:54Z",
+        "body": "<!-- diag-resolver -->\n### Set mainsPowered=true and remove measure_battery in onNodeInit\n\n**Action:** remove_battery_capability\n\n**Version:** v9.0.195\n",
+        "issueUrl": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues/76",
+        "issueNumber": "76"
+      },
+      {
+        "id": 4955799812,
+        "user": "dlnraja",
+        "createdAt": "2026-07-13T08:09:25Z",
+        "body": "<!-- diag-resolver -->\n### Set mainsPowered=true and remove measure_battery in onNodeInit\n\n**Action:** remove_battery_capability\n\n**Version:** v9.0.193\n",
+        "issueUrl": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues/76",
+        "issueNumber": "76"
+      },
+      {
+        "id": 4955730304,
+        "user": "dlnraja",
+        "createdAt": "2026-07-13T08:00:17Z",
+        "body": "<!-- diag-resolver -->\n### Set mainsPowered=true and remove measure_battery in onNodeInit\n\n**Action:** remove_battery_capability\n\n**Version:** v9.0.193\n",
+        "issueUrl": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues/76",
+        "issueNumber": "76"
+      },
+      {
+        "id": 4955459133,
+        "user": "dlnraja",
+        "createdAt": "2026-07-13T07:23:29Z",
+        "body": "<!-- diag-resolver -->\n### Set mainsPowered=true and remove measure_battery in onNodeInit\n\n**Action:** remove_battery_capability\n\n**Version:** v9.0.192\n",
+        "issueUrl": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues/76",
+        "issueNumber": "76"
+      },
+      {
+        "id": 4955383881,
+        "user": "dlnraja",
+        "createdAt": "2026-07-13T07:13:51Z",
+        "body": "<!-- diag-resolver -->\n### Set mainsPowered=true and remove measure_battery in onNodeInit\n\n**Action:** remove_battery_capability\n\n**Version:** v9.0.190\n",
+        "issueUrl": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues/76",
+        "issueNumber": "76"
+      },
+      {
+        "id": 4955383726,
+        "user": "dlnraja",
+        "createdAt": "2026-07-13T07:13:50Z",
+        "body": "<!-- diag-resolver -->\n### Auto-resolved by Diagnostic Resolver\n\nAll fingerprints in this issue found in **Tuya Unified Zigbee v9.0.190**:\n- `_TZE284_awepdiwi` -> **soil_sensor**\n- `_TZE284_ga1maeof` -> **soilsensor**\n\n**Install:** https://homey.app/a/com.dlnraja.tuya.zigbee/test/\nRemove and re-pair your device after installing.\n\n\n> **Protocol:** Tuya DP (cluster 0xEF00). Ensure DP listeners active.\n**Troubleshooting:** https://github.com/dlnraja/com.tuya.zigbee/wiki/Troubleshooting\n\n> **Detecte",
+        "issueUrl": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues/511",
+        "issueNumber": "511"
+      },
+      {
+        "id": 4953384470,
+        "user": "stephanmaastricht",
+        "createdAt": "2026-07-13T00:21:17Z",
+        "body": "sorry pushed the wrong button",
+        "issueUrl": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues/511",
+        "issueNumber": "511"
+      },
+      {
+        "id": 4953379733,
+        "user": "stephanmaastricht",
+        "createdAt": "2026-07-13T00:20:06Z",
+        "body": "Hi Dylan,\n\nI created a fresh Zigbee interview after installing the latest test version (v9.0.192).\n\nThe device still pairs as \"Unknown Zigbee Device\".\n\nThe new interview is identical to the previous one:\n\nManufacturer: _TZE284_awepdiwi\nModel: TS0601\n\nInput clusters:\n4, 5, 61184 (EF00), 0, 60672\n\nI've attached the complete interview again.\n\nCould you please verify that the _TZE284_awepdiwi fingerprint is actually included in the current test build and mapped correctly?\n\nThank you!\n\n\"ids\": {\"model",
+        "issueUrl": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues/511",
+        "issueNumber": "511"
+      },
+      {
+        "id": 4953102066,
+        "user": "dlnraja",
+        "createdAt": "2026-07-12T22:54:44Z",
+        "body": "<!-- diag-resolver -->\n### Set mainsPowered=true and remove measure_battery in onNodeInit\n\n**Action:** remove_battery_capability\n\n**Version:** v9.0.193\n",
+        "issueUrl": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues/76",
+        "issueNumber": "76"
+      },
+      {
+        "id": 4952893976,
+        "user": "dlnraja",
+        "createdAt": "2026-07-12T21:46:13Z",
+        "body": "Closed by Mavis: P6/P7 already integrated this work (96 mfrs from Johan, 1618 FPs in canonical DB, 431 drivers in master). PRs are 4+ months old with 50+ conflicts against current master. The auto-sync workflows that generated these PRs are now superseded by continuous-flow.yml + bidirectional-enricher.js (P8/P11). Work is preserved in current master.",
+        "issueUrl": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues/505",
+        "issueNumber": "505"
+      },
+      {
+        "id": 4952893870,
+        "user": "dlnraja",
+        "createdAt": "2026-07-12T21:46:11Z",
+        "body": "Closed by Mavis: P6/P7 already integrated this work (96 mfrs from Johan, 1618 FPs in canonical DB, 431 drivers in master). PRs are 4+ months old with 50+ conflicts against current master. The auto-sync workflows that generated these PRs are now superseded by continuous-flow.yml + bidirectional-enricher.js (P8/P11). Work is preserved in current master.",
+        "issueUrl": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues/507",
+        "issueNumber": "507"
+      },
+      {
+        "id": 4952893771,
+        "user": "dlnraja",
+        "createdAt": "2026-07-12T21:46:09Z",
+        "body": "Closed by Mavis: P6/P7 already integrated this work (96 mfrs from Johan, 1618 FPs in canonical DB, 431 drivers in master). PRs are 4+ months old with 50+ conflicts against current master. The auto-sync workflows that generated these PRs are now superseded by continuous-flow.yml + bidirectional-enricher.js (P8/P11). Work is preserved in current master.",
+        "issueUrl": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues/508",
+        "issueNumber": "508"
+      },
+      {
+        "id": 4950677865,
+        "user": "dlnraja",
+        "createdAt": "2026-07-12T09:25:47Z",
+        "body": "<!-- diag-resolver -->\n### Set mainsPowered=true and remove measure_battery in onNodeInit\n\n**Action:** remove_battery_capability\n\n**Version:** v9.0.192\n",
+        "issueUrl": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues/76",
+        "issueNumber": "76"
+      },
+      {
+        "id": 4950619984,
+        "user": "dlnraja",
+        "createdAt": "2026-07-12T09:04:18Z",
+        "body": "<!-- tuya-issue-manager -->\nHey @Lalla80111,\n\nThanks for reporting this! It looks like your temperature and humidity sensor is being misidentified as an Air Purifier, which is definitely not ideal. Given the model ID TS0201 and the manufacturer _TZ3000_fllyghyj, it seems like we might need to update the fingerprint for proper recognition.\n\nTo tackle this, I recommend completely deleting the device from Homey, then re-pairing it. This step is crucial because Homey caches capabilities during pairi",
+        "issueUrl": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues/506",
+        "issueNumber": "506"
+      },
+      {
+        "id": 4950616706,
+        "user": "dlnraja",
+        "createdAt": "2026-07-12T09:03:05Z",
+        "body": "<!-- tuya-issue-manager -->\nHey @stephanmaastricht! Thanks for the detailed report on the Smart Solar Soil Sensor TS0601 (_TZE284_awepdiwi). I see that it pairs but is detected as an unknown device, which can definitely be frustrating.\n\nSince this device is similar to the _TZE284_ga1maeof model, I’ll look into adding support for it. To help me out, could you please provide the complete Zigbee Interview? That would be super helpful!\n\nIn the meantime, if you’re missing features, I recommend comple",
+        "issueUrl": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues/511",
+        "issueNumber": "511"
+      },
+      {
+        "id": 4950615974,
+        "user": "github-actions[bot]",
+        "createdAt": "2026-07-12T09:02:48Z",
+        "body": "<!-- tuya-triage-bot -->\nThanks for this.\n\nMapped in our fork v9.0.192: `tuya` (device_generic_tuya_universal), `TUYA` (device_generic_tuya_universal).\n\nTracked in [dlnraja/com.tuya.zigbee](https://github.com/dlnraja/com.tuya.zigbee).",
+        "issueUrl": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues/507",
+        "issueNumber": "507"
+      },
+      {
+        "id": 4950615856,
+        "user": "github-actions[bot]",
+        "createdAt": "2026-07-12T09:02:45Z",
+        "body": "<!-- tuya-triage-bot -->\nI see these fingerprints are mapped in the Tuya Unified Zigbee app(https://github.com/dlnraja/com.tuya.zigbee) v9.0.192: `_TZ3000_u3nv1jwk+TS0044` → **button_wireless_4**, `TS0044+TS0601` → **button_wireless**, `_TZ3000_+TS0044` → **universal_zigbee**, `ts0044+TS0601` → **button_wireless**, `_tz3000_u3nv1jwk+TS0044` → **button_wireless_4**, `_TZ3000_U3NV1JWK+TS0044` → **button_wireless_4**, `tuya+TS0601` → **device_generic_tuya_universal**, `TUYA+TS0601` → **device_gener",
+        "issueUrl": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues/76",
+        "issueNumber": "76"
+      }
+    ],
+    "events": [
+      {
+        "createdAt": "2026-07-15T21:54:24Z",
+        "actor": "dlnraja",
+        "type": "PushEvent",
+        "description": "pushed master (0 commits)"
+      },
+      {
+        "createdAt": "2026-07-15T21:52:33Z",
+        "actor": "github-actions[bot]",
+        "type": "PushEvent",
+        "description": "pushed master (0 commits)"
+      },
+      {
+        "createdAt": "2026-07-15T21:51:42Z",
+        "actor": "dlnraja",
+        "type": "PushEvent",
+        "description": "pushed master (0 commits)"
+      },
+      {
+        "createdAt": "2026-07-15T21:00:34Z",
+        "actor": "dlnraja",
+        "type": "PushEvent",
+        "description": "pushed master (0 commits)"
+      },
+      {
+        "createdAt": "2026-07-15T20:59:51Z",
+        "actor": "github-actions[bot]",
+        "type": "PushEvent",
+        "description": "pushed stable-v5 (0 commits)"
+      },
+      {
+        "createdAt": "2026-07-15T20:59:00Z",
+        "actor": "dlnraja",
+        "type": "PushEvent",
+        "description": "pushed stable-v5 (0 commits)"
+      },
+      {
+        "createdAt": "2026-07-15T20:58:49Z",
+        "actor": "github-actions[bot]",
+        "type": "PushEvent",
+        "description": "pushed master (0 commits)"
+      },
+      {
+        "createdAt": "2026-07-15T20:57:49Z",
+        "actor": "dlnraja",
+        "type": "PushEvent",
+        "description": "pushed master (0 commits)"
+      },
+      {
+        "createdAt": "2026-07-15T20:39:42Z",
+        "actor": "dlnraja",
+        "type": "PushEvent",
+        "description": "pushed master (0 commits)"
+      },
+      {
+        "createdAt": "2026-07-15T20:37:50Z",
+        "actor": "github-actions[bot]",
+        "type": "PushEvent",
+        "description": "pushed master (0 commits)"
+      },
+      {
+        "createdAt": "2026-07-15T20:36:54Z",
+        "actor": "dlnraja",
+        "type": "PushEvent",
+        "description": "pushed master (0 commits)"
+      },
+      {
+        "createdAt": "2026-07-15T20:34:35Z",
+        "actor": "dlnraja",
+        "type": "PushEvent",
+        "description": "pushed master (0 commits)"
+      },
+      {
+        "createdAt": "2026-07-15T20:32:59Z",
+        "actor": "github-actions[bot]",
+        "type": "PushEvent",
+        "description": "pushed stable-v5 (0 commits)"
+      },
+      {
+        "createdAt": "2026-07-15T20:32:34Z",
+        "actor": "github-actions[bot]",
+        "type": "PushEvent",
+        "description": "pushed master (0 commits)"
+      },
+      {
+        "createdAt": "2026-07-15T20:32:13Z",
+        "actor": "dlnraja",
+        "type": "PushEvent",
+        "description": "pushed stable-v5 (0 commits)"
+      },
+      {
+        "createdAt": "2026-07-15T20:31:44Z",
+        "actor": "dlnraja",
+        "type": "PushEvent",
+        "description": "pushed master (0 commits)"
+      },
+      {
+        "createdAt": "2026-07-15T20:00:33Z",
+        "actor": "dlnraja",
+        "type": "PushEvent",
+        "description": "pushed master (0 commits)"
+      },
+      {
+        "createdAt": "2026-07-15T19:58:43Z",
+        "actor": "github-actions[bot]",
+        "type": "PushEvent",
+        "description": "pushed master (0 commits)"
+      },
+      {
+        "createdAt": "2026-07-15T19:58:18Z",
+        "actor": "dlnraja",
+        "type": "PushEvent",
+        "description": "pushed stable-v5 (0 commits)"
+      },
+      {
+        "createdAt": "2026-07-15T19:57:55Z",
+        "actor": "dlnraja",
+        "type": "PushEvent",
+        "description": "pushed master (0 commits)"
+      },
+      {
+        "createdAt": "2026-07-15T19:53:40Z",
+        "actor": "dlnraja",
+        "type": "IssueCommentEvent",
+        "description": "commented on #506: Temp and humidity sensor"
+      },
+      {
+        "createdAt": "2026-07-15T19:39:11Z",
+        "actor": "dlnraja",
+        "type": "PushEvent",
+        "description": "pushed master (0 commits)"
+      },
+      {
+        "createdAt": "2026-07-15T19:36:59Z",
+        "actor": "dlnraja",
+        "type": "PushEvent",
+        "description": "pushed stable-v5 (0 commits)"
+      },
+      {
+        "createdAt": "2026-07-15T19:36:38Z",
+        "actor": "dlnraja",
+        "type": "PushEvent",
+        "description": "pushed master (0 commits)"
+      },
+      {
+        "createdAt": "2026-07-15T19:33:07Z",
+        "actor": "github-actions[bot]",
+        "type": "PushEvent",
+        "description": "pushed master (0 commits)"
+      },
+      {
+        "createdAt": "2026-07-15T19:29:39Z",
+        "actor": "dlnraja",
+        "type": "PushEvent",
+        "description": "pushed master (0 commits)"
+      },
+      {
+        "createdAt": "2026-07-15T19:27:22Z",
+        "actor": "dlnraja",
+        "type": "PushEvent",
+        "description": "pushed stable-v5 (0 commits)"
+      },
+      {
+        "createdAt": "2026-07-15T19:27:03Z",
+        "actor": "dlnraja",
+        "type": "PushEvent",
+        "description": "pushed master (0 commits)"
+      },
+      {
+        "createdAt": "2026-07-15T19:22:33Z",
+        "actor": "dlnraja",
+        "type": "PushEvent",
+        "description": "pushed master (0 commits)"
+      },
+      {
+        "createdAt": "2026-07-15T19:20:43Z",
+        "actor": "github-actions[bot]",
+        "type": "PushEvent",
+        "description": "pushed master (0 commits)"
+      }
+    ],
+    "recentPRs": [
+      {
+        "number": 505,
+        "title": "Weekly Fingerprint Sync (759 new lines)",
+        "state": "closed",
+        "user": "github-actions[bot]",
+        "createdAt": "2026-07-06T07:46:30Z",
+        "mergedAt": null,
+        "body": "## Automated Weekly Fingerprint Sync\n\nThis PR was auto-generated by the weekly fingerprint sync workflow.\n\n### What changed\n- Fetched latest fingerprints from Z2M (tuya, sonoff, danfoss, schneider, legrand, bosch, ikea, xiaomi)\n- Auto-added safe Tuya _T* and SONOFF/eWeLink (SNZB-*, ZBMINI*, S31ZB, TRVZB, SWV-*) patterns to appropriate drivers\n- All JSON validated\n\n### Reports\nSee data/community-sync/sync-report.md for full details.\nSee .github/state/johan-full-scan.json for Johan code pattern analysis.\nSee data/community-sync/missing-fingerprints.json for non-Tuya items needing manual review.\n\n### Review checklist\n- [ ] Check new fingerprints are in the correct drivers\n- [ ] Verify no duplicate entries\n- [ ] Validate app with npx homey app validate\n- [ ] Check soil_sensor for new _TZE284/_TZE200 variants with extra DPs (fertilizer/EC)",
+        "labels": [
+          "automated",
+          "fingerprints",
+          "awaiting-verification"
+        ]
+      },
+      {
+        "number": 507,
+        "title": "Johan SDK3 Sync — 87 FPs added, 0 DP gaps",
+        "state": "closed",
+        "user": "github-actions[bot]",
+        "createdAt": "2026-07-08T06:05:30Z",
+        "mergedAt": null,
+        "body": "## Automated Johan SDK3 Sync\n\n### Fingerprints\n- **Added**: 87 new FPs auto-matched to existing drivers\n- **DP gaps**: 0 drivers with missing Tuya DP mappings\n- **New Johan drivers**: 0 (not in our codebase)\n\n### Auto-Scaffold\n- **Scaffolded**: 0 new drivers created\n- **FPs added**: 0 uncovered FPs added to existing drivers\n- **Conflicts**: 73 cross-class PID conflicts\n\n### Conflict Audit\n- **High severity**: 73 cross-class PID conflicts\n- **MFR conflicts**: 5 real risk duplicates\n- **Split suggestions**: 73\n\n### Report\nReports are uploaded as the `johan-sdk3-sync-report` workflow artifact:\n- `johan-sdk3-sync.json`\n- `driver-scaffold-report.json`\n- `driver-conflict-audit.json`\n\n### Safety\n- Draft mode: `true`\n- CI is intentionally enabled for this PR; do not use `[skip ci]` for sync branches with routing/conflict risk.\n\n### Review checklist\n- [ ] Verify new FPs are in the correct drivers\n- [ ] Review scaffolded drivers (need device.js DP mappings)\n- [ ] Check DP gaps — may need manual ",
+        "labels": [
+          "automated",
+          "fingerprints",
+          "awaiting-verification",
+          "upstream",
+          "needs-review",
+          "conflict-audit"
+        ]
+      },
+      {
+        "number": 508,
+        "title": "Driver Maintenance — 0 scaffolded, 73 conflicts",
+        "state": "closed",
+        "user": "dlnraja",
+        "createdAt": "2026-07-10T07:49:38Z",
+        "mergedAt": null,
+        "body": "## Automated Driver Maintenance\n\n### Auto-Scaffold Results\n- **Scaffolded**: 0 new drivers created from Johan SDK3\n- **FPs added**: 21 uncovered FPs added to existing drivers\n- **Cross-class conflicts**: 73\n\n### Conflict Audit\n- **High severity PID conflicts**: 73\n- **MFR+PID duplicates (real risk)**: 0\n- **Orphan drivers**: 58\n- **Split suggestions**: 73\n\n### Reports\n- `driver-scaffold-report.json` — full scaffold details\n- `driver-conflict-audit.json` — full conflict analysis\n\n### Review checklist\n- [ ] Review scaffolded drivers — add DP mappings to device.js\n- [ ] Review high-severity conflicts — consider splitting drivers\n- [ ] 🤖 **Dynamic Heuristic Check**: Do not hardcode `onoff.2` or standard alarm capabilities in `app.json` if `UniversalVariantManager` handles them dynamically.\n- [ ] Validate with `npx homey app validate`",
+        "labels": [
+          "automated",
+          "fingerprints",
+          "drivers",
+          "config",
+          "maintenance"
+        ]
+      },
+      {
+        "number": 510,
+        "title": "Fix routing of myd45weu soil sensor variants",
+        "state": "closed",
+        "user": "dlnraja",
+        "createdAt": "2026-07-10T12:47:31Z",
+        "mergedAt": "2026-07-10T12:47:47Z",
+        "body": "The fingerprint catalog assigned three `myd45weu` variants to disabled `soilsensor_2`, while the active `soil_sensor` driver already contains the corresponding manufacturer identifiers.\n\nThis aligns the catalog with the live driver and restores integrity validation (`verify_fingerprints_integrity.js`: 0 errors).",
+        "labels": []
+      },
+      {
+        "number": 509,
+        "title": "Fix TS0201 temperature/humidity sensor routing",
+        "state": "closed",
+        "user": "dlnraja",
+        "createdAt": "2026-07-10T12:37:46Z",
+        "mergedAt": "2026-07-10T12:38:11Z",
+        "body": "Fixes #506.\n\nThe supplied interview identifies `_TZ3000_fllyghyj / TS0201` as a battery temperature/humidity sensor with clusters 0x0402 and 0x0405. It was incorrectly assigned to `air_purifier` in `master`.\n\nThis change removes the fingerprint from the air-purifier driver and assigns it to `climate_sensor`. Local Homey `app validate --level publish` passes after the change.",
+        "labels": [
+          "fingerprints",
+          "drivers"
+        ]
+      },
+      {
+        "number": 500,
+        "title": "[codex] fix stable diagnostics and recent device routing",
+        "state": "closed",
+        "user": "dlnraja",
+        "createdAt": "2026-07-05T14:27:36Z",
+        "mergedAt": null,
+        "body": "## What changed\n- Hardened Gmail diagnostics scripts and `gmail-token-keepalive.yml` so empty secrets are treated as absent, non-strict auth failures warn instead of failing, and diagnostic dumps/logs are redacted before writing.\n- Fixed Gemini-reported battery fallback regressions where `null` could be coerced to `0`, affecting low-bool battery state and button voltage fallback.\n- Made IR blaster battery handling dynamic so mains/USB-powered variants drop `measure_battery` while battery TS1201 variants keep reporting.\n- Added exact, tested routing for recent GitHub/Johan/Homey activity: `Wing+TS0201`, `Zbeacon+TH01`, `_TZ3210_jlf1nepw+TS011F`, `_TZE28C1000000_81yrt3lo+TS0601`, and `_TZE204_xtrnjaoz+TS0601`.\n\n## Why\nRecent bot comments, forum posts, and mailbox diagnostics pointed at three root causes: Gmail app-password/OAuth secrets can be unavailable after credential rotation, battery fallbacks were treating missing values as real zero values, and broad fingerprint catalogs were ove",
+        "labels": []
+      },
+      {
+        "number": 504,
+        "title": "Add manufacturer device quirk detection",
+        "state": "closed",
+        "user": "dlnraja",
+        "createdAt": "2026-07-05T16:28:49Z",
+        "mergedAt": "2026-07-05T16:29:51Z",
+        "body": "## Summary\n- add a manufacturer/device quirk registry for buggy Tuya variants where modelId alone is unsafe\n- feed quirk votes and penalties into probabilistic detection, including TS0014 actuator false-battery handling and TS004F button/rotary split\n- improve endpoint parsing for Homey endpointDescriptors and ignore GreenPower endpoint 242 in functional gang counts\n- document the source-backed quirk rules and add critical regression tests\n\n## Sources crossed\n- Homey forum #2099 and JohanBendz/com.tuya.zigbee #1413 for _TZ3000_mrduubod / TS0014\n- Zigbee2MQTT TS0014 / TS004F docs and Koenkk issues/discussions #15339, #27119, #27239\n- ZHA device-handlers TS004F issues #3604 and #4301\n- local prior TS004F button/battery audit and raw EF00 state-map tests\n\n## Validation\n- node --check lib/helpers/ManufacturerDeviceQuirkRegistry.js lib/helpers/ProbabilisticDeviceDetector.js test/critical/manufacturer-device-quirks.test.js\n- npx mocha test/critical/manufacturer-device-quirks.test.js test/cri",
+        "labels": [
+          "documentation",
+          "library"
+        ]
+      },
+      {
+        "number": 503,
+        "title": "[codex] Add probabilistic local device detection",
+        "state": "closed",
+        "user": "dlnraja",
+        "createdAt": "2026-07-05T15:49:14Z",
+        "mergedAt": "2026-07-05T15:52:48Z",
+        "body": "## Summary\n\nAdds a local-first probabilistic device detection layer for unknown devices and migration recommendations.\n\n- New `ProbabilisticDeviceDetector` crosses compound fingerprints, runtime fingerprints, driver mapping DB, MFS/community databases, Zigbee clusters, observed Tuya DP IDs, and the 15-minute DP learning report.\n- Unknown device analysis now includes ranked candidates, probability/confidence, evidence badges, and cross-source alternatives.\n- Driver migration recommendations can use the probabilistic result when confidence is strong enough, including exact fingerprint overrides for generic legacy routes.\n- Adds a reference doc for local probabilistic detection rules and safety thresholds.\n- Adds critical regression coverage for exact TS0601 soil routing, learned radar/presence behavior, UnknownDeviceHandler enrichment, and migration override behavior.\n\n## Safety\n\nThe detector is lazy-loaded and guarded per source. Missing or corrupt local databases degrade to lower confi",
+        "labels": [
+          "documentation",
+          "library"
+        ]
+      },
+      {
+        "number": 502,
+        "title": "[codex] Enrich secondary battery paths from version audit",
+        "state": "closed",
+        "user": "dlnraja",
+        "createdAt": "2026-07-05T15:16:55Z",
+        "mergedAt": "2026-07-05T15:21:17Z",
+        "body": "## Summary\n\nThis PR applies the July 5 version-history audit for battery, energy, and button regressions.\n\n- Added a dated reference document that maps the relevant historical battery/button versions and the runtime gaps found during the audit.\n- Extended secondary battery paths (`SmartBatteryManager` and `BatteryRouter`) so they reuse the unified Tuya DP matrix, voltage DPs, sentinel filtering, store metadata, and multi-endpoint discovery.\n- Hardened local Wi-Fi battery normalization so ambiguous extended/state DP values do not overwrite a real battery percentage.\n- Updated the physical button rules to match the current direct ZCL/Tuya-DP dispatch architecture introduced after the historical `triggerCapabilityListener()` echo-loop fixes.\n- Added critical tests for secondary router/manager battery behavior and extended the Wi-Fi local battery test.\n\n## Root Cause\n\nThe main unified battery cascade had been repaired in PR #501, but older secondary managers still carried stale private DP ",
+        "labels": [
+          "documentation",
+          "library"
+        ]
+      },
+      {
+        "number": 501,
+        "title": "Fix battery cascade for local and legacy devices",
+        "state": "closed",
+        "user": "dlnraja",
+        "createdAt": "2026-07-05T14:55:02Z",
+        "mergedAt": "2026-07-05T14:55:52Z",
+        "body": "## Summary\n- restores the historic unified battery cascade on current master: Tuya DP percent/state/voltage, ZCL 0-200, legacy store keys, and source/estimated metadata\n- routes Wi-Fi local `measure_battery` through the same cascade while preserving SmartDivisor energy parsing and safe capability updates\n- adds regression tests for legacy battery restore, invalid sentinels, Wi-Fi DP battery normalization, and real DP values replacing estimates\n\n## Validation\n- `npx mocha test\\critical\\unified-battery-cascade.test.js test\\critical\\wifi-local-battery-normalization.test.js --timeout 10000`\n- `npm run check:button-flows`\n- `npm run precommit`\n- pre-push gate passed",
+        "labels": [
+          "library"
+        ]
+      },
+      {
+        "number": 499,
+        "title": "[codex] fix stable battery fallback cascade",
+        "state": "closed",
+        "user": "dlnraja",
+        "createdAt": "2026-07-05T11:08:31Z",
+        "mergedAt": "2026-07-05T11:12:48Z",
+        "body": "## What changed\n\n- Unified the historical battery fallback cascade across `UnifiedBatteryHandler`, `TuyaUnifiedDevice`, `SmartBatteryManager`, `BatteryRouter`, legacy converters, and battery reader helpers.\n- Added support for the old and current Tuya/ZCL battery modes: ZCL 0-200, Tuya percent DPs, DP14/DP3 enum or low-battery state, voltage DPs 33/35/247, old store keys, and marked estimated fallback values.\n- Kept ambiguous DPs such as DP2/DP7/DP13 profile-only so humidity, luminance, valve, and position values are not hijacked as battery globally.\n- Added CI/runtime guard coverage and targeted Mocha tests for the cascade.\n\n## Why\n\nThe app had several battery implementations from older pushes that were only partially merged into the current runtime. Buttons had the newest cascade, but generic Tuya/TS0601 helpers could still miss battery reports, misread voltage units, or leave Homey showing an unknown battery value.\n\n## Validation\n\n- `npm test`\n- `npm run precommit`\n- `npm run valida",
+        "labels": [
+          "library",
+          "scripts"
+        ]
+      },
+      {
+        "number": 498,
+        "title": "fix(stable): cascade button batteries and route issue 439 IR",
+        "state": "closed",
+        "user": "dlnraja",
+        "createdAt": "2026-07-05T10:43:08Z",
+        "mergedAt": "2026-07-05T10:46:13Z",
+        "body": "## Summary\n- expand ButtonDevice battery cascade across old app/Z2M DP variants, voltage DPs, multi-endpoint Tuya queries, stored-key restore, and estimated fallback\n- route Issue #439 TS1201 `_TZ3290_*` IR variants out of button/climate drivers and into `ir_blaster`\n- add `measure_battery` runtime handling for TS1201 IR remotes via genPowerCfg reads/reports\n- add CI guards for the new button battery cascade and Issue #439 TS1201 routing\n\n## Validation\n- `node -c lib\\\\devices\\\\ButtonDevice.js`\n- `node -c drivers\\\\ir_blaster\\\\device.js`\n- `npm test -- --grep \"button flow runtime routing guards\"`\n- `npm run check:button-flows`\n- `npm run precommit`\n- `npm run validate:recursive`\n- `npm run validate:publish`",
+        "labels": [
+          "fingerprints",
+          "drivers",
+          "config",
+          "library",
+          "scripts"
+        ]
+      },
+      {
+        "number": 497,
+        "title": "fix(stable): restore 2-button battery percentage routing",
+        "state": "closed",
+        "user": "dlnraja",
+        "createdAt": "2026-07-05T10:12:47Z",
+        "mergedAt": "2026-07-05T10:19:44Z",
+        "body": "## Summary\n- route TS0042/two-button Tuya battery DPs (3/4/14/15/101) explicitly through ButtonDevice before generic discovery can miss or misclassify them\n- bind Tuya DP battery listeners on init and wake/rejoin, including cluster and EF00 manager event formats\n- treat null/undefined/non-numeric battery values as missing so Homey does not stay on '?' and real DP/ZCL values replace estimated fallback\n- add CI/test guards for the two-button battery route\n\n## Validation\n- node -c lib/devices/ButtonDevice.js\n- npm test -- --grep \"button flow runtime routing guards\"\n- npm run check:button-flows\n- npm run precommit\n- npm run validate:publish\n- npm run validate:recursive\r\n",
+        "labels": [
+          "library",
+          "scripts"
+        ]
+      },
+      {
+        "number": 496,
+        "title": "fix(stable): harden button UI pulses and battery fallback",
+        "state": "closed",
+        "user": "dlnraja",
+        "createdAt": "2026-07-05T09:50:39Z",
+        "mergedAt": "2026-07-05T09:56:52Z",
+        "body": "## Summary\n- pulse visible button capabilities through a shared ButtonDevice helper, including legacy button fallback\n- trigger the generic remote_button_pressed flow from the stable ButtonDevice router for single/double/long/multi/release paths\n- replace indefinite unknown button battery values with a marked estimated fallback until real ZCL/Tuya DP data arrives\n- extend check:button-flows to guard stable button UI and battery fallback coverage\n\n## Validation\n- npm run check:button-flows\n- npm run precommit\n- npm run validate:recursive\n- npm run validate:publish",
+        "labels": [
+          "library",
+          "scripts"
+        ]
+      },
+      {
+        "number": 495,
+        "title": "fix: harden Gmail diagnostics automation",
+        "state": "closed",
+        "user": "dlnraja",
+        "createdAt": "2026-07-05T09:21:35Z",
+        "mergedAt": "2026-07-05T09:28:05Z",
+        "body": "## Summary\n- make Gmail auth health non-blocking by default while preserving sanitized health state and alerts\n- add an explicit strict mode for manual/reusable health runs\n- deduplicate Gmail authentication alert issues instead of creating repeated alerts\n- force Gmail diagnostics preflight to stay non-blocking\n\n## Validation\n- node --check .github/scripts/gmail-token-keepalive.js\n- node --check .github/scripts/fetch-gmail-diagnostics.js\n- npm run check:yaml\n- npm run check:diag-history\n- node scripts/ci/security-scanner.js\n- pre-commit and pre-push gates passed",
+        "labels": [
+          "fingerprints",
+          "drivers",
+          "scripts",
+          "workflows"
+        ]
+      },
+      {
+        "number": 494,
+        "title": "Harden forum feedback routes and actuator flows",
+        "state": "closed",
+        "user": "dlnraja",
+        "createdAt": "2026-07-04T10:26:51Z",
+        "mergedAt": "2026-07-05T09:05:22Z",
+        "body": "## Summary\\n- Lock forum #2099 TS0014/Moes routing and wall-switch button listener safeguards in CI\\n- Make water valve flow actions call the outbound on/off command path before local state updates\\n- Correct affected generated/wrapper ZCL energy conversions from currentSummationDelivered\\n- Add 2026-07-04 forum feedback reference report and regression rules\\n\\n## Validation\\n- npm run precommit\\n- npm run validate:publish\\n- npm run build\\n- npm run prepare-publish\\n- npm run check:button-flows",
+        "labels": [
+          "documentation",
+          "fingerprints",
+          "awaiting-verification",
+          "drivers",
+          "config",
+          "library",
+          "scripts"
+        ]
+      },
+      {
+        "number": 493,
+        "title": "Fix forum-reported button and actuator regressions",
+        "state": "closed",
+        "user": "dlnraja",
+        "createdAt": "2026-07-04T10:26:51Z",
+        "mergedAt": "2026-07-05T09:04:58Z",
+        "body": "## Summary\\n- Fix forum #2099 TS0014/Moes 4-gang button.N capability listener path on stable-v5\\n- Route _TZ3000_mrduubod TS0014 away from generic switch_4gang and lock it in CI\\n- Correct affected ZCL energy conversions and make water valve flow actions call the outbound command path\\n- Add 2026-07-04 forum feedback reference report and regression rules\\n\\n## Validation\\n- npm run precommit\\n- npm run validate:publish\\n- npm run check:button-flows",
+        "labels": [
+          "documentation",
+          "fingerprints",
+          "awaiting-verification",
+          "drivers",
+          "config",
+          "library",
+          "scripts"
+        ]
+      },
+      {
+        "number": 491,
+        "title": "fix(store): refresh Homey guideline compliance stable",
+        "state": "closed",
+        "user": "dlnraja",
+        "createdAt": "2026-07-04T09:49:44Z",
+        "mergedAt": "2026-07-04T09:54:44Z",
+        "body": "## Summary\n- refresh Homey App Store guideline checks from official 2026 docs\n- align stable App Store description, brand color and README text\n- add Homey guideline reference report\n- remove redundant driver Flow device args from switch and wall switch cards\n- clean invalid device interpolation from affected stable Flow titleFormatted entries\n\n## Validation\n- npm run precommit --if-present\n- npm run validate:publish --if-present\n- npm run check:homey-guidelines -- --json\n\n## Notes\n- stable publish validation passes after removing 100 duplicate generated Flow device args\n- fingerprint warnings are existing stable catalog warnings",
+        "labels": [
+          "documentation",
+          "drivers",
+          "flow-cards",
+          "config",
+          "scripts"
+        ]
+      },
+      {
+        "number": 492,
+        "title": "fix(store): refresh Homey guideline compliance",
+        "state": "closed",
+        "user": "dlnraja",
+        "createdAt": "2026-07-04T09:49:44Z",
+        "mergedAt": "2026-07-04T09:54:37Z",
+        "body": "## Summary\n- refresh Homey App Store guideline checks from official 2026 docs\n- align App Store descriptions, brand color and plain-text readmes\n- add Homey guideline reference report\n- fix virtual presence Flow titleFormatted metadata and duplicate device args\n- align presence force Flow filter with Homey driver_id syntax\n\n## Validation\n- npm run precommit --if-present\n- npm run validate:publish --if-present\n- npm run build && npm run prepare-publish\n- npm run check:homey-guidelines -- --json\n\n## Notes\n- publish payload gate passes after prepare-publish: build directory 29.86 MB / 32 MB, prepared publish 20.33 MB / 24 MB\n- fingerprint warnings are existing runtime-only/non-target manifest warnings",
+        "labels": [
+          "documentation",
+          "drivers",
+          "flow-cards",
+          "config",
+          "scripts"
+        ]
+      },
+      {
+        "number": 490,
+        "title": "fix(ci): harden Gmail diagnostics auth fallback",
+        "state": "closed",
+        "user": "dlnraja",
+        "createdAt": "2026-07-04T09:08:50Z",
+        "mergedAt": "2026-07-04T09:16:39Z",
+        "body": "## Summary\n- make Gmail diagnostics fetch support a strict mode while soft-failing scheduled/publish jobs with sanitized state\n- replace IMAP-only health check with IMAP primary + OAuth fallback\n- pass OAuth secrets through Gmail-related workflows and keep privacy gates active\n\n## Verification\n- node --check Gmail diagnostics scripts\n- npm run check:yaml --if-present\n- npm run check:diag-history --if-present\n- npm run security:diagnostics --if-present\n- npm run precommit --if-present\n- temp smoke test: non-strict fetch exits 0, strict fetch exits 1, auth health exits 1 without secrets",
+        "labels": [
+          "scripts",
+          "workflows"
+        ]
+      }
+    ]
   },
   "forum": {
     "topics": [
@@ -169,9 +874,9 @@
         "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
         "slug": "app-pro-universal-tuya-zigbee-device-app-test",
         "createdAt": "2025-07-25T01:07:08.482Z",
-        "lastPostedAt": "2026-07-15T11:28:14.428Z",
-        "postsCount": 2035,
-        "views": 22372,
+        "lastPostedAt": "2026-07-15T19:09:17.227Z",
+        "postsCount": 2036,
+        "views": 22385,
         "likeCount": 450,
         "posts": [
           {
@@ -304,7 +1009,7 @@
         "createdAt": "2020-02-26T09:12:23.664Z",
         "lastPostedAt": "2026-06-30T17:50:44.858Z",
         "postsCount": 1159,
-        "views": 175848,
+        "views": 175853,
         "likeCount": 683,
         "posts": [
           {
@@ -639,7 +1344,7 @@
     {
       "name": "crash-analysis.json",
       "sizeKB": 0,
-      "modified": "2026-07-15T17:44:17.244Z"
+      "modified": "2026-07-15T17:44:33.384Z"
     },
     {
       "name": "diagnostics-report.json",
