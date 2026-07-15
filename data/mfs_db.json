@@ -128897,8 +128897,8 @@
     "source": "auto-sync"
   },
   "_TZE284_AWEPDIWI": {
-    "driverId": "climate_sensor",
-    "source": "auto-sync"
+    "driverId": "soil_sensor",
+    "source": "p64.4-stale-fix"
   },
   "_TZE284_B7KBNL6Q": {
     "driverId": "climate_sensor",
@@ -133426,8 +133426,8 @@
     "source": "auto-sync"
   },
   "_TZE200_3towulqd": {
-    "driverId": "motion_sensor_2",
-    "source": "auto-sync"
+    "driverId": "presence_sensor_radar",
+    "source": "p64.4-stale-fix"
   },
   "_TZ3218_AWARHUSB": {
     "driverId": "motion_sensor_radar_mmwave",
@@ -135255,8 +135255,8 @@
     "source": "auto-sync"
   },
   "_tze284_oitavov2": {
-    "driverId": "sensor_climate_contact",
-    "source": "auto-sync"
+    "driverId": "soil_sensor",
+    "source": "p64.4-stale-fix"
   },
   "_tze200_myd45weu": {
     "driverId": "soilsensor_2",
@@ -136369,8 +136369,8 @@
     "source": "auto-sync"
   },
   "_TZE284_ga1maeof": {
-    "driverId": "soilsensor",
-    "source": "auto-sync"
+    "driverId": "soil_sensor",
+    "source": "p64.4-stale-fix"
   },
   "_tze284_sgabhwa6": {
     "driverId": "soilsensor_2",
@@ -141280,9 +141280,8 @@
     "addedAt": "2026-06-26T14:42:09.179Z"
   },
   "_TZE204_3towulqd": {
-    "driverId": "motion_sensor",
-    "source": "auto-sync",
-    "addedAt": "2026-06-26T14:42:09.180Z"
+    "driverId": "presence_sensor_radar",
+    "source": "p64.4-stale-fix"
   },
   "_TZE200_7hfcudw5": {
     "driverId": "motion_sensor",
@@ -141305,19 +141304,16 @@
     "addedAt": "2026-06-26T14:42:09.180Z"
   },
   "_TZE200_2aaelwxk": {
-    "driverId": "motion_sensor",
-    "source": "auto-sync",
-    "addedAt": "2026-06-26T14:42:09.180Z"
+    "driverId": "presence_sensor_radar",
+    "source": "p64.4-stale-fix"
   },
   "_TZE204_2aaelwxk": {
-    "driverId": "motion_sensor",
-    "source": "auto-sync",
-    "addedAt": "2026-06-26T14:42:09.180Z"
+    "driverId": "presence_sensor_radar",
+    "source": "p64.4-stale-fix"
   },
   "_TZE200_kb5noeto": {
-    "driverId": "motion_sensor",
-    "source": "auto-sync",
-    "addedAt": "2026-06-26T14:42:09.180Z"
+    "driverId": "presence_sensor_radar",
+    "source": "p64.4-stale-fix"
   },
   "_TZE200_ppuj1vem": {
     "driverId": "motion_sensor",
