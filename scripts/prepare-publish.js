@@ -393,7 +393,10 @@ try {
   // intentionally carries broad support matrices, but the publish payload must
   // stay small enough for the App Store processor.
   try {
-    const compact = compactManifestFile(destAppJson);
+    const compact = compactManifestFile(destAppJson, {
+      maxTotalCombos: Number(process.env.HOMEY_ZIGBEE_MAX_TOTAL_COMBOS) || undefined,
+      maxDriverCombos: Number(process.env.HOMEY_ZIGBEE_MAX_DRIVER_COMBOS) || undefined,
+    });
     if (compact.overTotalLimit) {
       console.error(`FATAL: publish manifest still has ${compact.afterTotal} Zigbee identifier combinations after compaction.`);
       console.error(`Limit: ${compact.maxTotalCombos}. Lower HOMEY_ZIGBEE_MAX_DRIVER_COMBOS or split broad drivers.`);
