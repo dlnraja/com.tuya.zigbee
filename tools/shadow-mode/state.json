@@ -3,9 +3,9 @@
   "version": "0.2.0",
   "created": "2026-07-10T19:52:14.921Z",
   "metrics": {
-    "runs_total": 25,
-    "tickets_extracted": 1792,
-    "tickets_processed": 260,
+    "runs_total": 28,
+    "tickets_extracted": 2224,
+    "tickets_processed": 320,
     "bugs_found": 125,
     "bugs_fixed": 5400,
     "prs_created": 0,
@@ -18,8 +18,8 @@
     "lastEnrichment": "2026-07-13T10:04:41.642Z",
     "cron_runs": 1
   },
-  "last_run": "2026-07-13T21:01:38.123Z",
-  "last_dry_run": "2026-07-13T21:01:38.123Z",
+  "last_run": "2026-07-15T17:42:03.335Z",
+  "last_dry_run": "2026-07-15T17:42:03.334Z",
   "last_metrics_update": "2026-07-12T16:00:28.368Z",
   "description": "Full-shadow continuous ticket ingestion and dynamic implementation framework. Pulls from local sources (Codex SQLite, GH issues, local files) and implements tickets 1-by-1 with manufacturer variant awareness.",
   "author": "Mavis investigation 2026-07-10 (session mvs_e7cd7397977c4571a373dc2350580aa1)",
