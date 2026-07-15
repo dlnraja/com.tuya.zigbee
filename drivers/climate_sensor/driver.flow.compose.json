@@ -122,6 +122,39 @@
         "nl": "Temperatuur gewijzigd",
         "de": "Temperatur geändert"
       }
+    },
+    {
+      "id": "climate_sensor_battery_voltage_changed",
+      "title": {
+        "en": "Battery voltage changed",
+        "fr": "Tension batterie changée",
+        "nl": "Batterijspanning veranderd",
+        "de": "Batteriespannung geändert"
+      },
+      "hint": {
+        "en": "Triggers when the battery voltage changes (V). For Z2M-standard Zigbee devices like _TZ3000_fllyghyj (WSD500A) and similar.",
+        "fr": "Se déclenche quand la tension batterie change (V). Pour les devices Zigbee standard Z2M comme _TZ3000_fllyghyj (WSD500A) et similaires."
+      },
+      "tokens": [
+        {
+          "name": "voltage",
+          "type": "number",
+          "title": {
+            "en": "Voltage (V)",
+            "fr": "Tension (V)",
+            "nl": "Spanning (V)",
+            "de": "Spannung (V)"
+          },
+          "example": 3
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Battery voltage changed",
+        "fr": "Tension batterie changée",
+        "nl": "Batterijspanning veranderd",
+        "de": "Batteriespannung geändert"
+      }
     }
   ],
   "conditions": [
@@ -219,6 +252,39 @@
       "titleFormatted": {
         "en": "Humidity is below [[humidity]]",
         "fr": "Humidité inférieure à [[humidity]]"
+      }
+    },
+    {
+      "id": "climate_sensor_battery_voltage_below",
+      "title": {
+        "en": "Battery voltage is below",
+        "fr": "Tension batterie inférieure à",
+        "nl": "Batterijspanning lager dan",
+        "de": "Batteriespannung unter"
+      },
+      "hint": {
+        "en": "Triggers when the battery voltage drops below the threshold (V). Default 2.5V for most sensors.",
+        "fr": "Se déclenche quand la tension batterie descend sous le seuil (V). 2,5V par défaut pour la plupart des capteurs."
+      },
+      "args": [
+        {
+          "name": "voltage",
+          "type": "number",
+          "min": 0,
+          "max": 5,
+          "title": {
+            "en": "Threshold (V)",
+            "fr": "Seuil (V)",
+            "nl": "Drempel (V)",
+            "de": "Schwelle (V)"
+          }
+        }
+      ],
+      "titleFormatted": {
+        "en": "Battery voltage is below",
+        "fr": "Tension batterie inférieure à",
+        "nl": "Batterijspanning lager dan",
+        "de": "Batteriespannung unter"
       }
     }
   ]

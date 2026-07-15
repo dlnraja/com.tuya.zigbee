@@ -12,7 +12,8 @@
     "alarm_tamper",
     "measure_battery",
     "measure_luminance",
-    "button.1"
+    "button.1",
+    "measure_voltage"
   ],
   "energy": {
     "batteries": [
