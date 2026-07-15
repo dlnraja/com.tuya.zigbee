@@ -38,7 +38,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
     // END TRIGGERS
     // CONDITIONS
     try {
-      const card = this.homey.flow.getConditionCard('contact_sensor_switch_switch_1gang_is_on');
+      const card = this.homey.flow.getConditionCard('contact_sensor_switch_1gang_is_on');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -49,7 +49,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
 
     // ACTIONS
     try {
-      const card = this.homey.flow.getActionCard('contact_sensor_switch_switch_1gang_turn_on');
+      const card = this.homey.flow.getActionCard('contact_sensor_switch_1gang_turn_on');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -60,7 +60,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
     } catch (err) { if (this.developerDebugMode) { this.error(`Action contact_sensor_switch_switch_1gang_turn_on: ${err.message}`); }; }
 
     try {
-      const card = this.homey.flow.getActionCard('contact_sensor_switch_switch_1gang_turn_off');
+      const card = this.homey.flow.getActionCard('contact_sensor_switch_1gang_turn_off');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -71,7 +71,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
     } catch (err) { if (this.developerDebugMode) { this.error(`Action contact_sensor_switch_switch_1gang_turn_off: ${err.message}`); }; }
 
     try {
-      const card = this.homey.flow.getActionCard('contact_sensor_switch_switch_1gang_toggle');
+      const card = this.homey.flow.getActionCard('contact_sensor_switch_1gang_toggle');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -83,7 +83,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
     } catch (err) { if (this.developerDebugMode) { this.error(`Action contact_sensor_switch_switch_1gang_toggle: ${err.message}`); }; }
 
     try {
-      const card = this.homey.flow.getActionCard('contact_sensor_switch_switch_1gang_set_backlight');
+      const card = this.homey.flow.getActionCard('contact_sensor_switch_1gang_set_backlight');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -94,7 +94,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
     } catch (err) { if (this.developerDebugMode) { this.error(`Action contact_sensor_switch_switch_1gang_set_backlight: ${err.message}`); }; }
 
     try {
-      const card = this.homey.flow.getActionCard('contact_sensor_switch_switch_1gang_set_backlight_color');
+      const card = this.homey.flow.getActionCard('contact_sensor_switch_1gang_set_backlight_color');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -105,7 +105,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
     } catch (err) { if (this.developerDebugMode) { this.error(`Action contact_sensor_switch_switch_1gang_set_backlight_color: ${err.message}`); }; }
 
     try {
-      const card = this.homey.flow.getActionCard('contact_sensor_switch_switch_1gang_set_backlight_brightness');
+      const card = this.homey.flow.getActionCard('contact_sensor_switch_1gang_set_backlight_brightness');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -116,7 +116,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
     } catch (err) { if (this.developerDebugMode) { this.error(`Action contact_sensor_switch_switch_1gang_set_backlight_brightness: ${err.message}`); }; }
 
     try {
-      const card = this.homey.flow.getActionCard('contact_sensor_switch_switch_1gang_set_countdown');
+      const card = this.homey.flow.getActionCard('contact_sensor_switch_1gang_set_countdown');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -128,7 +128,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
     } catch (err) { if (this.developerDebugMode) { this.error(`Action contact_sensor_switch_switch_1gang_set_countdown: ${err.message}`); }; }
 
     try {
-      const card = this.homey.flow.getActionCard('contact_sensor_switch_switch_1gang_set_child_lock');
+      const card = this.homey.flow.getActionCard('contact_sensor_switch_1gang_set_child_lock');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -140,7 +140,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
     } catch (err) { if (this.developerDebugMode) { this.error(`Action contact_sensor_switch_switch_1gang_set_child_lock: ${err.message}`); }; }
 
     try {
-      const card = this.homey.flow.getActionCard('contact_sensor_switch_switch_1gang_set_scene_mode');
+      const card = this.homey.flow.getActionCard('contact_sensor_switch_1gang_set_scene_mode');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;

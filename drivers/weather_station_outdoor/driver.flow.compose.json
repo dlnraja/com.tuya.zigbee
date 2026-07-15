@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "weather_station_outdoor_outdoor_temperature_changed",
+      "id": "weather_station_outdoor_temperature_changed",
       "title": {
         "en": "Outdoor temperature changed",
         "fr": "Température extérieure changée"
@@ -24,7 +24,7 @@
       }
     },
     {
-      "id": "weather_station_outdoor_outdoor_humidity_changed",
+      "id": "weather_station_outdoor_humidity_changed",
       "title": {
         "en": "Outdoor humidity changed",
         "fr": "Humidité extérieure changée"
@@ -98,22 +98,6 @@
       }
     },
     {
-      "id": "weather_station_outdoor_humidity_changed",
-      "title": {
-        "en": "Humidity changed",
-        "fr": "Humidité changée",
-        "nl": "Vochtigheid gewijzigd",
-        "de": "Feuchtigkeit geändert"
-      },
-      "args": [],
-      "titleFormatted": {
-        "en": "Humidity changed",
-        "fr": "Humidité changée",
-        "nl": "Vochtigheid gewijzigd",
-        "de": "Feuchtigkeit geändert"
-      }
-    },
-    {
       "id": "weather_station_outdoor_lux_changed",
       "title": {
         "en": "Luminance changed",
@@ -148,7 +132,7 @@
   ],
   "conditions": [
     {
-      "id": "weather_station_outdoor_outdoor_temp_above",
+      "id": "weather_station_outdoor_temp_above",
       "title": {
         "en": "Outdoor temperature above",
         "fr": "Température extérieure supérieure à"
@@ -167,7 +151,7 @@
       }
     },
     {
-      "id": "weather_station_outdoor_outdoor_temp_below",
+      "id": "weather_station_outdoor_temp_below",
       "title": {
         "en": "Outdoor temperature below",
         "fr": "Température extérieure inférieure à"
@@ -209,5 +193,6 @@
         "fr": "Pression en baisse - mauvais temps"
       }
     }
-  ]
+  ],
+  "actions": []
 }

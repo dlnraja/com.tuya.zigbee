@@ -38,7 +38,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
     // END TRIGGERS
     // ACTIONS
     try {
-      const card = this.homey.flow.getActionCard('contact_sensor_curtain_curtain_motor_set_windowcoverings_set');
+      const card = this.homey.flow.getActionCard('contact_sensor_curtain_motor_set_windowcoverings_set');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -49,7 +49,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
     } catch (err) { if (this.developerDebugMode) { this.error(`Action contact_sensor_curtain_curtain_motor_set_windowcoverings_set: ${err.message}`); }; }
 
     try {
-      const card = this.homey.flow.getActionCard('contact_sensor_curtain_curtain_motor_windowcoverings_open');
+      const card = this.homey.flow.getActionCard('contact_sensor_curtain_motor_windowcoverings_open');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -61,7 +61,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
     } catch (err) { if (this.developerDebugMode) { this.error(`Action contact_sensor_curtain_curtain_motor_windowcoverings_open: ${err.message}`); }; }
 
     try {
-      const card = this.homey.flow.getActionCard('contact_sensor_curtain_curtain_motor_windowcoverings_close');
+      const card = this.homey.flow.getActionCard('contact_sensor_curtain_motor_windowcoverings_close');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -73,7 +73,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
     } catch (err) { if (this.developerDebugMode) { this.error(`Action contact_sensor_curtain_curtain_motor_windowcoverings_close: ${err.message}`); }; }
 
     try {
-      const card = this.homey.flow.getActionCard('contact_sensor_curtain_curtain_motor_set_dim');
+      const card = this.homey.flow.getActionCard('contact_sensor_curtain_motor_set_dim');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -84,7 +84,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
     } catch (err) { if (this.developerDebugMode) { this.error(`Action contact_sensor_curtain_curtain_motor_set_dim: ${err.message}`); }; }
 
     try {
-      const card = this.homey.flow.getActionCard('contact_sensor_curtain_curtain_motor_stop');
+      const card = this.homey.flow.getActionCard('contact_sensor_curtain_motor_stop');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -96,7 +96,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
     } catch (err) { if (this.developerDebugMode) { this.error(`Action contact_sensor_curtain_curtain_motor_stop: ${err.message}`); }; }
 
     try {
-      const card = this.homey.flow.getActionCard('contact_sensor_curtain_curtain_motor_set_favorite');
+      const card = this.homey.flow.getActionCard('contact_sensor_curtain_motor_set_favorite');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -108,7 +108,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
     } catch (err) { if (this.developerDebugMode) { this.error(`Action contact_sensor_curtain_curtain_motor_set_favorite: ${err.message}`); }; }
 
     try {
-      const card = this.homey.flow.getActionCard('contact_sensor_curtain_curtain_motor_set_brightness');
+      const card = this.homey.flow.getActionCard('contact_sensor_curtain_motor_set_brightness');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -119,7 +119,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
     } catch (err) { if (this.developerDebugMode) { this.error(`Action contact_sensor_curtain_curtain_motor_set_brightness: ${err.message}`); }; }
 
     try {
-      const card = this.homey.flow.getActionCard('contact_sensor_curtain_curtain_motor_set_position');
+      const card = this.homey.flow.getActionCard('contact_sensor_curtain_motor_set_position');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -130,7 +130,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
     } catch (err) { if (this.developerDebugMode) { this.error(`Action contact_sensor_curtain_curtain_motor_set_position: ${err.message}`); }; }
 
     try {
-      const card = this.homey.flow.getActionCard('contact_sensor_curtain_curtain_motor_open');
+      const card = this.homey.flow.getActionCard('contact_sensor_curtain_motor_open');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -142,7 +142,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
     } catch (err) { if (this.developerDebugMode) { this.error(`Action contact_sensor_curtain_curtain_motor_open: ${err.message}`); }; }
 
     try {
-      const card = this.homey.flow.getActionCard('contact_sensor_curtain_curtain_motor_close');
+      const card = this.homey.flow.getActionCard('contact_sensor_curtain_motor_close');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
