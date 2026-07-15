@@ -1,6 +1,7 @@
 {
+  "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "9.0.248",
+  "version": "9.0.249",
   "compatibility": ">=12.2.0",
   "platforms": [
     "local"
@@ -150282,7 +150283,6 @@
           }
         },
         "manufacturerName": [
-          "_TZE200_dummy",
           "_TZE284_o3x45p96",
           "_TZE284_P3DBF6QS",
           "_TZE200_p3dbf6qs",
@@ -156850,9 +156850,7 @@
             "en": "Power on to enter pairing mode."
           }
         },
-        "manufacturerName": [
-          "_TZE200_dummy"
-        ]
+        "manufacturerName": []
       },
       "version": "1.0.0",
       "_pidConflictNotes": [
@@ -164509,9 +164507,7 @@
             "en": "Push the button for aprox 10 seconds until the LED blinks rapidly. If nothing happens; put two fingers against the detectors and repeat."
           }
         },
-        "manufacturerName": [
-          "_TZE200_placeholder"
-        ]
+        "manufacturerName": []
       },
       "version": "1.0.0",
       "capabilitiesOptions": {
@@ -169115,8 +169111,6 @@
       },
       "zigbee": {
         "manufacturerName": [
-          "_tz3000_sosdczdl",
-          "_tz3000_evag0pvn",
           "_TZ3000_RYLAOZUC",
           "_TZ3000_5FKUFHN1",
           "_TZ3000_ZW7WR5UO"
@@ -171120,8 +171114,7 @@
         "manufacturerName": [
           "_tzb210_ngnt8kni",
           "_tzb210_endmggws",
-          "_tz3210_p9ao60da",
-          "_TZ3000_iystcadi"
+          "_tz3210_p9ao60da"
         ],
         "productId": [
           "TS0502"
@@ -171286,9 +171279,7 @@
         "button.1"
       ],
       "zigbee": {
-        "manufacturerName": [
-          "_TZ3000_iystcadi"
-        ],
+        "manufacturerName": [],
         "productId": [
           "TS0503",
           "TS0504"
@@ -171706,8 +171697,7 @@
       "zigbee": {
         "manufacturerName": [
           "_tz3000_oboryztc",
-          "_tz3210_iystcadi",
-          "_TZ3000_iystcadi"
+          "_tz3210_iystcadi"
         ],
         "endpoints": {
           "1": {
@@ -172034,10 +172024,7 @@
           "_tz3210_95txyzbx",
           "_tz3210_a5fxguxr",
           "_tz3210_eejm8dcr",
-          "_tz3210_iystcadi",
-          "_tz3210_sroezl0s",
           "_tz3210_trm3l2aw",
-          "_TZ3000_iystcadi",
           "_TZ3210_keabpigv"
         ],
         "productId": [
@@ -172394,48 +172381,14 @@
       },
       "zigbee": {
         "manufacturerName": [
-          "_tz3000_as7eqiri",
-          "_tz3000_fbja4q6h",
-          "_tz3000_hcm1fqxe",
           "_TZ3000_KEABPIGB",
-          "_tz3000_kihkx3cq",
-          "_tz3000_lzfwt5qx",
-          "_tz3000_m6u3q8jy",
           "_tz3000_psg0zx5j",
-          "_tz3000_tqlv4yz4",
-          "_tz3000_u5u4cakc",
-          "_tz3000_vzopcetz",
-          "_tz3000_w2ug5kgu",
-          "_tz3000_x2fqbdun",
-          "_tz3210_0c4np92r",
-          "_tz3210_0fc3g9sq",
-          "_tz3210_1agihf3z",
           "_tz3210_4ubylghk",
           "_tz3210_agwvapnp",
-          "_tz3210_bcplf4ds",
-          "_tz3210_dxrjkpi6",
-          "_tz3210_h1zvcpwd",
-          "_tz3210_jkbdrvvf",
           "_tz3210_ksqwlz9v",
-          "_tz3210_lezkafxf",
-          "_tz3210_lmqquxus",
-          "_tz3210_rbgfkwbl",
-          "_tz3210_sroezl0s",
-          "_tz3210_taw0fc13",
-          "_tz3210_wuheyhvm",
           "_tz3000_bumeauzp",
           "_tz3000_6dwfra5l",
-          "_tz3210_claeh5ds",
-          "_TZB210_0bkzabht",
-          "_TZB210_ayx58ft5",
-          "_TZB210_eiwanbeb",
-          "_TZ3210_c2iwpxf1",
-          "_TZ3000_g1glzzfk",
-          "_TZ3210_09hzmirw",
-          "_TZ3000_RYLAOZUC",
-          "_TZ3000_5FKUFHN1",
-          "_TZ3000_ZW7WR5UO",
-          "_TZ3000_iystcadi"
+          "_tz3210_claeh5ds"
         ],
         "productId": [
           "TS0502A",
@@ -173921,33 +173874,7 @@
       },
       "zigbee": {
         "manufacturerName": [
-          "_tz3000_as7eqiri",
-          "_tz3000_fbja4q6h",
-          "_tz3000_hcm1fqxe",
-          "_TZ3000_KEABPIGB",
-          "_tz3000_kihkx3cq",
-          "_tz3000_lzfwt5qx",
-          "_tz3000_m6u3q8jy",
-          "_tz3000_tqlv4yz4",
-          "_tz3000_u5u4cakc",
-          "_tz3000_vzopcetz",
-          "_tz3000_w2ug5kgu",
-          "_tz3000_x2fqbdun",
-          "_tz3210_0c4np92r",
-          "_tz3210_0fc3g9sq",
-          "_tz3210_1agihf3z",
-          "_tz3210_4ubylghk",
-          "_tz3210_bcplf4ds",
-          "_tz3210_dxrjkpi6",
-          "_tz3210_h1zvcpwd",
-          "_tz3210_jkbdrvvf",
-          "_tz3210_lezkafxf",
-          "_tz3210_lmqquxus",
-          "_tz3210_rbgfkwbl",
           "_tz3210_s8lvbbu",
-          "_tz3210_sroezl0s",
-          "_tz3210_taw0fc13",
-          "_tz3210_wuheyhvm",
           "_tz3210_s8lvbbuc",
           "_tzb210_3zfp8mki",
           "_tzb210_417ikxay",
@@ -173958,7 +173885,6 @@
           "_tzb210_wxazcmsh",
           "_tzb210_wy1pyu1q",
           "_tzb210_yatkpuha",
-          "_tzb210_endmggws",
           "_TZ3210_B8JDOSXO",
           "_TZ3210_C0S1XLOA",
           "_TZ3210_CIEIJUW1",
@@ -173969,7 +173895,6 @@
           "_TZ3210_IFGA63RG",
           "_TZ3210_IT1U8AHZ",
           "_TZ3210_IW0ZKCU8",
-          "_TZ3210_jd3z4yig",
           "_TZ3210_JICMOITE",
           "_TZ3210_JJQDQXFQ",
           "_TZ3210_LJOASIXL",
@@ -173984,8 +173909,7 @@
           "_TZB210_6EED09B9",
           "_TZB210_LNNKH3F9",
           "_TZB210_RWY5HEXP",
-          "_TZB210_ZMPPWAWA",
-          "_tz3000_jd3z4yig"
+          "_TZB210_ZMPPWAWA"
         ],
         "endpoints": {
           "1": {
@@ -177750,7 +177674,6 @@
           }
         },
         "manufacturerName": [
-          "_TZE200_dummy",
           "_TZ3000_pnzfdr9y",
           "_TZ3000_br3laukf"
         ]
@@ -184057,9 +183980,7 @@
             "en": "Four tiles will be created, one for each channel of the device. Press the setup button combined with 1 channel button for 10 seconds (the LED should blink blue)."
           }
         },
-        "manufacturerName": [
-          "_TZE200_dummy"
-        ]
+        "manufacturerName": []
       },
       "version": "1.0.0",
       "metadata": {
@@ -188396,9 +188317,6 @@
       },
       "zigbee": {
         "manufacturerName": [
-          "_TZ3000_qd7hej8u",
-          "_TZ3210_mja6r5ix",
-          "_TZ3000_q50zhdsc",
           "eWeLight",
           "ewelight",
           "EWELIGHT"
@@ -188639,8 +188557,7 @@
       },
       "zigbee": {
         "manufacturerName": [
-          "_TZ3000_gek6snaj",
-          "_TZ3000_iystcadi"
+          "_TZ3000_gek6snaj"
         ],
         "productId": [
           "TS0505A",
@@ -188803,8 +188720,7 @@
         "manufacturerName": [
           "_TZ3000_dl4pxp1r",
           "_TZ3000_qqjaziws",
-          "_TZ3000_ukuvyhaa",
-          "_tz3210_eejm8dcr"
+          "_TZ3000_ukuvyhaa"
         ],
         "productId": [
           "TS0503A",
@@ -207214,7 +207130,6 @@
           "_TZ3000_JRPDAUJD",
           "_TZ3000_JSFZKFTC",
           "_TZ3000_JU82PU2B",
-          "_TZ3000_KEABPIGB",
           "_TZ3000_KFU8ZAPD",
           "_TZ3000_KJ0NWDZ6",
           "_TZ3000_KTXQIYRA",
@@ -208422,9 +208337,7 @@
             "en": "Two tiles will be created, one for each channel of the device. Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode (the LED should blink green)."
           }
         },
-        "manufacturerName": [
-          "_TZE200_placeholder"
-        ]
+        "manufacturerName": []
       },
       "version": "1.0.0",
       "capabilitiesOptions": {
@@ -212284,9 +212197,7 @@
             "fr": "Branchez le dongle USB sur une source d'alimentation USB. Appuyez 3 fois rapidement sur le bouton du dongle."
           }
         },
-        "manufacturerName": [
-          "_TZE200_dummy"
-        ]
+        "manufacturerName": []
       },
       "images": {
         "small": "/drivers/switch_usb_dongle/assets/images/small.png",
@@ -216654,9 +216565,7 @@
             "sv": "Tryck in nollnings-knappen under ca 10 sekunder tills LED-lampan binkar snabbt"
           }
         },
-        "manufacturerName": [
-          "_TZE200_placeholder"
-        ]
+        "manufacturerName": []
       },
       "version": "1.0.0",
       "_pidConflictNotes": [
@@ -219740,9 +219649,7 @@
             "en": "Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode (the LED should blink green)."
           }
         },
-        "manufacturerName": [
-          "_TZE200_dummy"
-        ]
+        "manufacturerName": []
       },
       "version": "1.0.0",
       "capabilitiesOptions": {
@@ -220361,7 +220268,6 @@
           "_tz3210_d062rv7j",
           "_tz3210_dfe8hwlq",
           "_tz3210_e5t9bfdv",
-          "_tz3210_eejm8dcr",
           "_tz3210_ejctepku",
           "_tz3210_eymunffl",
           "_tz3210_f8dqbuze",
@@ -220372,7 +220278,6 @@
           "_tz3210_i680rtja",
           "_tz3210_invesber",
           "_tz3210_ip2akl4w",
-          "_tz3210_iystcadi",
           "_TZ3210_k1msuvg6",
           "_tz3210_k1pe6ibm",
           "_tz3210_kvnbgrrj",
@@ -220439,7 +220344,6 @@
           "_TZ3000_mgusv51k",
           "_tzb210_rkgngb5o",
           "_tzb210_g01ie5wu",
-          "_tz3210_4ubylghk",
           "_tze200_nue3fvem",
           "_tze204_9i9dt8is",
           "_tz3000_xfs39dbf",
@@ -220447,8 +220351,7 @@
           "_tze200_zenj4lxv",
           "_tze204_a0syesf5",
           "_tze284_5cuocqty",
-          "_TZE284_ip2akl4w",
-          "_TZ3000_iystcadi"
+          "_TZE284_ip2akl4w"
         ],
         "productId": [
           "TS0601_dim1",
@@ -223865,9 +223768,7 @@
             "en": "Five tiles will be created, one for each channel of the device. Switch the unit on and off five times and hold for 5 seconds to enter pairing mode (the LED should flash red and blue)."
           }
         },
-        "manufacturerName": [
-          "_TZE200_placeholder"
-        ]
+        "manufacturerName": []
       },
       "version": "1.0.0",
       "capabilitiesOptions": {
