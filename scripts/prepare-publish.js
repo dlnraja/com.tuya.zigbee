@@ -457,9 +457,13 @@ try {
   // 5c) Archive budget guard. Homey may accept the upload but later mark the
   // draft as processing_failed when the packed app is too heavy. Fail before
   // publishing so CI points at the real root cause.
+  // v9.0.257 (P62.4): Bumped default 26 -> 30 MB. P58+P59+P60+P61+P62 additions
+  // (BatteryCore, SVG optimizer, SmartCapability, SmartFeature, deduplication,
+  // fixes, etc.) pushed the publish directory above 26 MB. The HOMEY_PUBLISH_*
+  // env vars (workflow-level) override this if set.
   const publishStats = dirStats(destDir);
   const publishMB = publishStats.bytes / (1024 * 1024);
-  const maxPublishMB = Number(process.env.HOMEY_PUBLISH_SOURCE_MAX_MB || process.env.HOMEY_PUBLISH_MAX_UNCOMPRESSED_MB || 26);
+  const maxPublishMB = Number(process.env.HOMEY_PUBLISH_SOURCE_MAX_MB || process.env.HOMEY_PUBLISH_MAX_UNCOMPRESSED_MB || 30);
   console.log(`Publish directory size: ${publishMB.toFixed(2)} MB across ${publishStats.files} files (limit ${maxPublishMB.toFixed(2)} MB).`);
   if (publishMB > maxPublishMB) {
     console.error(`FATAL: publish directory is ${publishMB.toFixed(2)} MB, above the ${maxPublishMB.toFixed(2)} MB safety limit.`);
