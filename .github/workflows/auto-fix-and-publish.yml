@@ -49,6 +49,15 @@ jobs:
       - name: 🤖 Run auto-fix-all
         run: node scripts/validation/auto-fix-all.js || true
 
+      # v9.0.262 (P63.3): Re-inject manual driver fixes (HOBEIAN P61 etc.)
+      # AFTER the auto-fix-all has run, BEFORE the build/publish. The
+      # auto-publish bot regenerates driver.compose.json from canonical
+      # templates and may drop manual fingerprints. This step re-applies
+      # the fixes so the compiled manifest (app.json) and the source
+      # stay in sync.
+      - name: "🔁 Re-inject manual driver fixes (P63.3)"
+        run: node tools/ci/re-inject-manual-fixes.js
+
       - name: 📊 Dashboard monitor
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
