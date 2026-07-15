@@ -116,10 +116,48 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       this.log('[RADAR] Firmware detection failed:', e.message);
     }
 
+    // v9.0.249 (P59): Non-blocking cluster binding — same pattern as
+    // drivers/sensor_presence_radar/device.js. Without explicit binding,
+    // the device sends reports to its previous parent (the Zigbee
+    // coordinator it was last paired to) and Homey never sees them.
+    // Forum reference: #2045 (Kringloper: "no bindings").
+    this._setupRadarClusterBinding(zclNode);
+
     // Start polling/refresh cycle
     this._startInitializationCycle(zclNode);
 
     this.log('[RADAR] Ready');
+  }
+
+  /**
+   * v9.0.249 (P59): Bind ZCL clusters to Homey for sleepy radar devices.
+   * Mirrors sensor_presence_radar (line 826-834). Best-effort: each
+   * .bind() is fire-and-forget; failures are logged but non-fatal.
+   */
+  _setupRadarClusterBinding(zclNode) {
+    try {
+      const ep1 = zclNode?.endpoints?.[1];
+      if (!ep1) {
+        this.log('[RADAR] No endpoint 1 — skipping cluster binding');
+        return;
+      }
+      const clusters = [
+        'iasZone', 'ssIasZone', 'genPowerCfg', 'powerConfiguration',
+        'msIlluminanceMeasurement', 'msOccupancySensing',
+        'msTemperatureMeasurement', 'msRelativeHumidity'
+      ];
+      let bound = 0;
+      for (const cName of clusters) {
+        const cl = ep1.clusters?.[cName];
+        if (cl?.bind) {
+          cl.bind().catch((e) => this.log(`[RADAR] bind ${cName} failed: ${e.message}`));
+          bound++;
+        }
+      }
+      this.log(`[RADAR] 📡 Cluster binding initiated (${bound} clusters)`);
+    } catch (e) {
+      this.log('[RADAR] Cluster binding skipped:', e.message);
+    }
   }
 
   _ensureInference() {
