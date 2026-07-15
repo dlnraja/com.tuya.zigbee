@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "smart_remote_1_button_button_1gang_button_1_pressed",
+      "id": "smart_remote_1_button_1gang_button_1_pressed",
       "title": {
         "fr": "Bouton appuyé",
         "en": "Button pressed"
@@ -13,7 +13,7 @@
       }
     },
     {
-      "id": "smart_remote_1_button_button_1gang_button_1_double",
+      "id": "smart_remote_1_button_1gang_button_1_double",
       "title": {
         "fr": "Bouton double-appui",
         "en": "Button double-pressed"
@@ -25,7 +25,7 @@
       }
     },
     {
-      "id": "smart_remote_1_button_button_1gang_button_1_long",
+      "id": "smart_remote_1_button_1gang_button_1_long",
       "title": {
         "fr": "Bouton appui long",
         "en": "Button long-pressed"
@@ -37,7 +37,7 @@
       }
     },
     {
-      "id": "smart_remote_1_button_button_1gang_button_1_triple",
+      "id": "smart_remote_1_button_1gang_button_1_triple",
       "title": {
         "fr": "Bouton triple-appui",
         "en": "Button triple-pressed"
@@ -49,7 +49,7 @@
       }
     },
     {
-      "id": "smart_remote_1_button_button_1gang_button_1_release",
+      "id": "smart_remote_1_button_1gang_button_1_release",
       "title": {
         "fr": "Bouton relâché",
         "en": "Button released"

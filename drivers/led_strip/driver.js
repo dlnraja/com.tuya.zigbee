@@ -15,7 +15,7 @@ async onInit() {
     // TRIGGERS
     // CONDITIONS
     try {
-      const card = this.homey.flow.getConditionCard('led_strip_led_strip_is_on');
+      const card = this.homey.flow.getConditionCard('led_strip_is_on');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -36,7 +36,7 @@ async onInit() {
 
     // ACTIONS
     try {
-      const card = this.homey.flow.getActionCard('led_strip_led_strip_turn_on');
+      const card = this.homey.flow.getActionCard('led_strip_turn_on');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -47,7 +47,7 @@ async onInit() {
     } catch (err) { if (this.developerDebugMode) { this.error(`Action led_strip_led_strip_turn_on: ${err.message}`); }; }
 
     try {
-      const card = this.homey.flow.getActionCard('led_strip_led_strip_turn_off');
+      const card = this.homey.flow.getActionCard('led_strip_turn_off');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -58,7 +58,7 @@ async onInit() {
     } catch (err) { if (this.developerDebugMode) { this.error(`Action led_strip_led_strip_turn_off: ${err.message}`); }; }
 
     try {
-      const card = this.homey.flow.getActionCard('led_strip_led_strip_toggle');
+      const card = this.homey.flow.getActionCard('led_strip_toggle');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
