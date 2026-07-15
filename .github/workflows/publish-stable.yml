@@ -31,7 +31,9 @@ env:
   HOMEY_PUBLISH_SOURCE_MAX_MB: "45"
   # v5.12.1 (P58.10): 2874 FPs (P19) × productId expand to 20,444 combos,
   # exceeding the default 20,000 limit. 30,000 gives headroom.
-  HOMEY_ZIGBEE_MAX_TOTAL_COMBOS: "30000"
+  # v5.12.1 (P59 sync): stable has 30,211 combos (more than master due to
+  # driver differences over time). 35,000 covers stable with headroom.
+  HOMEY_ZIGBEE_MAX_TOTAL_COMBOS: "35000"
   HOMEY_ZIGBEE_MAX_DRIVER_COMBOS: "1000"
 
 jobs:
