@@ -1,5 +1,5 @@
 {
-  "timestamp": 1784096546351,
+  "timestamp": 1784137458806,
   "data": {
     "gh": {
       "openIssues": [
@@ -35,6 +35,16 @@
         }
       ],
       "recentComments": [
+        {
+          "n": "506",
+          "u": "dlnraja",
+          "b": "<!-- diag-resolver -->\n### Auto-resolved by Diagnostic Resolver\n\nAll fingerprints in this issue found in **Tuya Unified Zigbee v9.0.261**:\n- `_TZ3000_fllyghyj` -> **climate_sensor**\n\n**Install:** http"
+        },
+        {
+          "n": "506",
+          "u": "dlnraja",
+          "b": "<!-- diag-resolver -->\n### Auto-resolved by Diagnostic Resolver\n\nAll fingerprints in this issue found in **Tuya Unified Zigbee v9.0.252**:\n- `_TZ3000_fllyghyj` -> **climate_sensor**\n\n**Install:** http"
+        },
         {
           "n": "506",
           "u": "Lalla80111",
@@ -74,16 +84,6 @@
           "n": "506",
           "u": "Lalla80111",
           "b": "Thanx, now it's adding as an unknown zigbee device but working. \n \n The driver is: homey:virtualdriverzigbee:homey \n \n \n \n \n I see the fingerprint is included in driver.compose.json under climate_sens"
-        },
-        {
-          "n": "511",
-          "u": "stephanmaastricht",
-          "b": "Hi Dylan,\n\nI noticed the repository already contains versions 9.0.193, 9.0.194 and 9.0.195.\n\nHowever, the Homey test link still installs version 9.0.192.\n\nCould you please check if the latest test bui"
-        },
-        {
-          "n": "76",
-          "u": "dlnraja",
-          "b": "<!-- diag-resolver -->\n### Set mainsPowered=true and remove measure_battery in onNodeInit\n\n**Action:** remove_battery_capability\n\n**Version:** v9.0.195\n"
         }
       ]
     },
@@ -131,6 +131,17 @@
         "excerpt": ""
       }
     ],
-    "crashes": null
+    "crashes": [
+      {
+        "name": "crash-analysis.json",
+        "sizeKB": 0,
+        "modified": "2026-07-15T17:44:17.244Z"
+      },
+      {
+        "name": "diagnostics-report.json",
+        "sizeKB": 1,
+        "modified": "2026-07-15T08:01:46.964Z"
+      }
+    ]
   }
 }
