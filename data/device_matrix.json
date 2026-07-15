@@ -1,0 +1,97 @@
+[
+  {
+    "mfr": "_TZE204_*",
+    "pid": "TS0601",
+    "model": "varies by firmware",
+    "family": "ZG-204Z family (HOBEIAN mmWave/PIR sensors)",
+    "description": "Basic PIR-only motion sensor (no lux, no mmWave)",
+    "vendor": "HOBEIAN / Tuya",
+    "driver": "MISSING",
+    "fingerprint": "MISSING"
+  },
+  {
+    "mfr": "_TZE200_3towulqd",
+    "pid": "TS0601",
+    "model": "ZG-204ZL",
+    "family": "ZG-204Z family (HOBEIAN mmWave/PIR sensors)",
+    "description": "PIR motion + lux illuminance sensor (no mmWave)",
+    "vendor": "HOBEIAN",
+    "driver": "presence_sensor_radar",
+    "fingerprint": "presence_sensor_radar",
+    "z2m_link": "https://www.zigbee2mqtt.io/devices/ZG-204ZL.html"
+  },
+  {
+    "mfr": "_TZE200_2aaelwxk",
+    "pid": "TS0601",
+    "model": "ZG-204ZM",
+    "family": "ZG-204Z family (HOBEIAN mmWave/PIR sensors)",
+    "description": "PIR + 24GHz mmWave + lux (older hardware, 2xAAA)",
+    "vendor": "HOBEIAN",
+    "driver": "presence_sensor_radar",
+    "fingerprint": "presence_sensor_radar",
+    "z2m_link": "https://www.zigbee2mqtt.io/devices/ZG-204ZM.html"
+  },
+  {
+    "mfr": "_TZE200_kb5noeto",
+    "pid": "TS0601",
+    "model": "ZG-204ZM",
+    "family": "ZG-204Z family (HOBEIAN mmWave/PIR sensors)",
+    "description": "PIR + 24GHz mmWave + lux (newer hardware, 2xAAA)",
+    "vendor": "HOBEIAN",
+    "driver": "presence_sensor_radar",
+    "fingerprint": "presence_sensor_radar",
+    "z2m_link": "https://www.zigbee2mqtt.io/devices/ZG-204ZM.html"
+  },
+  {
+    "mfr": "_TZE200_ka8l86iu",
+    "pid": "TS0601",
+    "model": "ZG-204ZK (Z2M renames ZP → ZK)",
+    "family": "ZG-204Z family (HOBEIAN mmWave/PIR sensors)",
+    "description": "Smallest presence sensor 24GHz mmWave (no PIR, no lux, CR2450)",
+    "vendor": "HOBEIAN",
+    "driver": "presence_sensor_radar",
+    "fingerprint": "presence_sensor_radar",
+    "z2m_link": "https://www.zigbee2mqtt.io/devices/ZG-204ZK.html"
+  },
+  {
+    "mfr": "_TZE204_*",
+    "pid": "TS0601",
+    "model": "ZG-204ZV",
+    "family": "ZG-204Z family (HOBEIAN mmWave/PIR sensors)",
+    "description": "mmWave + PIR + temp + humidity + lux (full sensor)",
+    "vendor": "HOBEIAN",
+    "driver": "MISSING",
+    "fingerprint": "MISSING"
+  },
+  {
+    "mfr": "_TZE200_w0ap83qu",
+    "pid": "TS0601",
+    "model": "ZG-204ZX",
+    "family": "ZG-204Z family (HOBEIAN mmWave/PIR sensors)",
+    "description": "PIR + mmWave + lux (variant)",
+    "vendor": "HOBEIAN",
+    "driver": "generic_diy",
+    "fingerprint": "presence_sensor_radar"
+  },
+  {
+    "mfr": "_TZE204_*",
+    "pid": "TS0601",
+    "model": "ZG-204ZH",
+    "family": "ZG-204Z family (HOBEIAN mmWave/PIR sensors)",
+    "description": "PIR + lux (variant)",
+    "vendor": "HOBEIAN",
+    "driver": "MISSING",
+    "fingerprint": "MISSING"
+  },
+  {
+    "mfr": "_TZE200_tyffvoij",
+    "pid": "TS0601",
+    "model": "ZG-204ZM",
+    "family": "ZG-204Z family (HOBEIAN mmWave/PIR sensors)",
+    "description": "PIR + 24GHz mmWave + lux (newest hardware, ZG-204ZM v3)",
+    "vendor": "HOBEIAN",
+    "driver": "presence_sensor_radar",
+    "fingerprint": "presence_sensor_radar",
+    "z2m_link": "https://www.zigbee2mqtt.io/devices/ZG-204ZM.html"
+  }
+]
