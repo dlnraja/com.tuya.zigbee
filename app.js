@@ -36,6 +36,22 @@ try {
 } catch (e) {
   // Best-effort — mixin is additive, missing it is non-fatal
 }
+
+// v9.0.249 (P59): Install getManufacturerName() globally on ZigBeeDevice.
+// Forum crash reference (topic 140352):
+//   - #2044 "this.getManufacturerName is not a function" (presence radar)
+//   - #2045 dlnraja v8.1.5 fix
+//   - #2033 #2046 multiple users with presence-sensor crashes
+// Drivers historically used `MfrHelper.getManufacturerName(this)` (a free
+// function). A few wrote `this.getManufacturerName()` thinking it was a method.
+// Patching the prototype covers all 431 drivers at once.
+try {
+  const { ZigBeeDevice } = require('homey-zigbeedriver');
+  const { installManufacturerNameAccessor } = require('./lib/utils/ManufacturerNameAccessor');
+  installManufacturerNameAccessor(ZigBeeDevice);
+} catch (e) {
+  // Best-effort — additive, missing it falls back to helper import
+}
 const CapabilityManager = require('./lib/utils/CapabilityManager');
 const AdvancedAnalytics = require('./lib/analytics/AdvancedAnalytics');
 const SmartDeviceDiscovery = require('./lib/discovery/SmartDeviceDiscovery');
