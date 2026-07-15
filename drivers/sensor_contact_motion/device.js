@@ -2,6 +2,7 @@
 
 const UnifiedSensorBase = require('../../lib/devices/UnifiedSensorBase');
 const IASZoneManager = require('../../lib/managers/IASZoneManager');
+const SleepyInit = require('../../lib/utils/SleepyDeviceInit');
 
 let UnifiedBatteryHandler = null;
 try { UnifiedBatteryHandler = require('../../lib/battery/UnifiedBatteryHandler'); } catch (e) { /* optional */ }
@@ -612,9 +613,11 @@ class MotionSensorDevice extends UnifiedSensorBase {
     await this.removeCapability('alarm_battery').catch(() => {});
     await this._safeInvoke(async () => {
       await super.onNodeInit({ zclNode });
-      // --- Attribute Reporting Configuration (auto-generated) ---
-      try {
-      await this.configureAttributeReporting([
+      // v9.0.251 (P60): Attribute reporting moved to non-blocking for sleepy
+      // EndDevices. The original try/await/catch waits up to 5s for an ACK
+      // from the device, which has already gone to sleep. Same fix as
+      // motion_sensor and sensor_presence_radar.
+      const configureReportingPayload = [
       {
       cluster: 'ssIasZone',
       attributeName: 'zoneStatus',
@@ -650,11 +653,13 @@ class MotionSensorDevice extends UnifiedSensorBase {
       maxInterval: 600,
       minChange: 100,
       }
-      ]);
-      this.log('Attribute reporting configured successfully');
-      } catch (err) {
-      this.log('Attribute reporting config failed (device may not support it):', err.message);
-      }
+      ];
+      SleepyInit.fireAndForget(this,
+        this.configureAttributeReporting(configureReportingPayload),
+        { name: 'configureAttributeReporting', timeoutMs: SleepyInit.ZCL_TIMEOUT_MS }
+      ).then((res) => {
+        if (res && res !== 'timeout') this.log('Attribute reporting configured successfully');
+      });
       // v5.5.228: Remove alarm_contact if wrongly added (motion sensors use alarm_motion only)
       if (this.hasCapability('alarm_contact')) {
       await this.removeCapability('alarm_contact').catch(() => { });
@@ -1072,15 +1077,14 @@ class MotionSensorDevice extends UnifiedSensorBase {
       };
 
       // v5.5.517: Try to write CIE address for proper enrollment
-      try {
+      // v9.0.251 (P60): Fire-and-forget for sleepy EndDevices (ZG-204ZM etc.)
+      SleepyInit.fireAndForget(this, (async () => {
         const homeyIeeeAddress = this.homey.zigbee?.getNetwork?.()?.ieeeAddress;
         if (homeyIeeeAddress) {
           await iasCluster.writeAttributes({ iasCieAddress: homeyIeeeAddress });
           this.log('[MOTION-IAS] ✅ CIE address written:', homeyIeeeAddress);
         }
-      } catch (cieErr) {
-        this.log('[MOTION-IAS] CIE address write (normal if already set):', cieErr.message);
-      }
+      })(), { name: 'writeCieAddress' });
 
       // Zone Status Change Notification (motion detected)
       iasCluster.onZoneStatusChangeNotification = async (payload) => {
@@ -1145,15 +1149,14 @@ class MotionSensorDevice extends UnifiedSensorBase {
       });
 
       // Send Zone Enroll Response
-      try {
+      // v9.0.251 (P60): Fire-and-forget for sleepy EndDevices
+      SleepyInit.fireAndForget(this, (async () => {
         await iasCluster.zoneEnrollResponse({
           enrollResponseCode: 0,
           zoneId: 23
         });
         this.log('[MOTION-IAS] ✅ Zone Enroll Response sent');
-      } catch (e) {
-        this.log('[MOTION-IAS] Zone enroll (normal if already enrolled):', e.message);
-      }
+      })(), { name: 'zoneEnrollResponse' });
 
       this.log('[MOTION-IAS] ✅ Motion detection via IAS Zone configured');
     } catch (err) {
