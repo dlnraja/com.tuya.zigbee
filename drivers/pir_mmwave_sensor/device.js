@@ -4,6 +4,7 @@ const { Cluster } = require('zigbee-clusters');
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 const { CLUSTER } = require('zigbee-clusters');
 const TuyaSpecificCluster = require('../../lib/TuyaSpecificCluster');
+const SleepyInit = require('../../lib/utils/SleepyDeviceInit');
 // const TuyaSpecificClusterDevice = require('../../lib/TuyaSpecificClusterDevice'); // Not needed - using ZigBeeDevice
 
 Cluster.addCluster(TuyaSpecificCluster);
@@ -56,7 +57,8 @@ class pir_mmwave_sensor extends ZigBeeDevice {
         this.printNode();
 
         if (this.isFirstInit()) {
-            await this.configureAttributeReporting([
+            // v9.0.251 (P60): Fire-and-forget for sleepy EndDevices
+            const reportingPayload = [
                 {
                     endpointId: 1,
                     cluster: CLUSTER.IAS_ZONE,
@@ -79,7 +81,13 @@ class pir_mmwave_sensor extends ZigBeeDevice {
                     maxInterval: 3600,
                     minChange: 10,
                 }
-            ]).catch(this.error);
+            ];
+            SleepyInit.fireAndForget(this,
+                this.configureAttributeReporting(reportingPayload),
+                { name: 'configureAttributeReporting', timeoutMs: SleepyInit.ZCL_TIMEOUT_MS }
+            ).then((res) => {
+                if (res && res !== 'timeout') this.log('Attribute reporting configured');
+            });
         }
 
         // alarm_motion handler
