@@ -37,7 +37,7 @@ class LonsonhoContactSensorDriver extends ZigBeeDriver {
     // END TRIGGERS
     // CONDITIONS
     try {
-      const card = this.homey.flow.getConditionCard('air_purifier_contact_contact_sensor_is_open');
+      const card = this.homey.flow.getConditionCard('air_purifier_contact_sensor_is_open');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -47,7 +47,7 @@ class LonsonhoContactSensorDriver extends ZigBeeDriver {
     } catch (err) { if (this.developerDebugMode) { this.error(`Condition air_purifier_contact_contact_sensor_is_open: ${err.message}`); }; }
 
     try {
-      const card = this.homey.flow.getConditionCard('air_purifier_contact_contact_sensor_battery_above');
+      const card = this.homey.flow.getConditionCard('air_purifier_contact_sensor_battery_above');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -58,7 +58,7 @@ class LonsonhoContactSensorDriver extends ZigBeeDriver {
     } catch (err) { if (this.developerDebugMode) { this.error(`Condition air_purifier_contact_contact_sensor_battery_above: ${err.message}`); }; }
 
     try {
-      const card = this.homey.flow.getConditionCard('air_purifier_contact_contact_sensor_contact_open');
+      const card = this.homey.flow.getConditionCard('air_purifier_contact_sensor_contact_open');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -68,7 +68,7 @@ class LonsonhoContactSensorDriver extends ZigBeeDriver {
     } catch (err) { if (this.developerDebugMode) { this.error(`Condition air_purifier_contact_contact_sensor_contact_open: ${err.message}`); }; }
 
     try {
-      const card = this.homey.flow.getConditionCard('air_purifier_contact_contact_sensor_tamper_active');
+      const card = this.homey.flow.getConditionCard('air_purifier_contact_sensor_tamper_active');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;

@@ -15,7 +15,7 @@ async onInit() {
     // TRIGGERS
     // CONDITIONS
     try {
-      const card = this.homey.flow.getConditionCard('lock_smart_is_locked');
+      const card = this.homey.flow.getConditionCard('lock_locked');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -25,7 +25,7 @@ async onInit() {
     } catch (err) { if (this.developerDebugMode) { this.error(`Condition lock_smart_is_locked: ${err.message}`); }; }
 
     try {
-      const card = this.homey.flow.getConditionCard('lock_smart_tamper_active');
+      const card = this.homey.flow.getConditionCard('lock_active');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -36,28 +36,7 @@ async onInit() {
 
     // ACTIONS
     try {
-      const card = this.homey.flow.getActionCard('lock_smart_lock');
-      if (card) {
-        card.registerRunListener(async (args) => {
-          if (!args.device) {return false;}
-          // Generic action handler
-          this.log('[FLOW] Action lock_smart_lock triggered for', args.device.getName());
-          return true;
-        });
-      }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Action lock_smart_lock: ${err.message}`); }; }
-
-    try {
-      const card = this.homey.flow.getActionCard('lock_smart_unlock');
-      if (card) {
-        card.registerRunListener(async (args) => {
-          if (!args.device) {return false;}
-          // Generic action handler
-          this.log('[FLOW] Action lock_smart_unlock triggered for', args.device.getName());
-          return true;
-        });
-      }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Action lock_smart_unlock: ${err.message}`); }; }
+      const card = this.homey.flow.getActionCard('lock_smart_unlock: ${err.message}`); }; }
 
     this.log('[FLOW] All flow cards registered');
   }

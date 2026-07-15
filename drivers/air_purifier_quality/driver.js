@@ -36,7 +36,7 @@ class AirQualityCO2Driver extends ZigBeeDriver {
     } catch (err) { if (this.developerDebugMode) { this.error(`Condition air_purifier_quality_hybrid_air_quality_co2_co2_above: ${err.message}`); }; }
 
     try {
-      const card = this.homey.flow.getConditionCard('air_purifier_quality_air_quality_co2_co2_below');
+      const card = this.homey.flow.getConditionCard('air_purifier_quality_air_quality_co2_below');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;

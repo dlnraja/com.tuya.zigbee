@@ -13,7 +13,7 @@ class WaterValveSmartDriver extends ZigBeeDriver {
 
   _registerFlowCards() {
     try {
-      const card = this.homey.flow.getActionCard('water_valve_smart_set_valve');
+      const card = this.homey.flow.getActionCard('water_valve_valve');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
