@@ -1,6 +1,6 @@
 {
   "name": "com.dlnraja.tuya.zigbee",
-  "version": "5.12.3",
+  "version": "5.12.1",
   "description": "Tuya Unified Zigbee - Local-first control with AI automation",
   "main": "app.js",
   "scripts": {
@@ -135,7 +135,7 @@
   "author": "Dylan L.N. Raja",
   "license": "MIT",
   "engines": {
-    "node": ">=22.0.0",
+    "node": ">=18.0.0",
     "homey": ">=12.2.0"
   },
   "dependencies": {
