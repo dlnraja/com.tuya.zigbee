@@ -3,6 +3,7 @@
 const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
 const { Cluster, CLUSTER } = require('zigbee-clusters');
 const TuyaSpecificCluster = require('../../lib/clusters/TuyaSpecificCluster');
+const SleepyInit = require('../../lib/utils/SleepyDeviceInit');
 
 Cluster.addCluster(TuyaSpecificCluster);
 
@@ -28,7 +29,10 @@ class motion_sensor_2 extends PhysicalButtonMixin(TuyaZigbeeDevice) {
     }
 
     if (this.isFirstInit()) {
-      await this.configureAttributeReporting([
+      // v9.0.251 (P60): Fire-and-forget for sleepy EndDevices (ZG-204ZM etc.)
+      // The previous `await ... .catch()` blocked 5s waiting for ACK from
+      // a sleeping device. Now we time out after ZCL_TIMEOUT_MS.
+      const reportingPayload = [
         {
           endpointId: 1,
           cluster: CLUSTER.IAS_ZONE,
@@ -51,7 +55,13 @@ class motion_sensor_2 extends PhysicalButtonMixin(TuyaZigbeeDevice) {
           maxInterval: 3600,
           minChange: 10,
         }
-      ]).catch(this.error);
+      ];
+      SleepyInit.fireAndForget(this,
+        this.configureAttributeReporting(reportingPayload),
+        { name: 'configureAttributeReporting', timeoutMs: SleepyInit.ZCL_TIMEOUT_MS }
+      ).then((res) => {
+        if (res && res !== 'timeout') this.log('Attribute reporting configured');
+      });
     }
 
     // alarm_motion handler (IAS Zone)

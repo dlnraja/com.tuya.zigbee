@@ -2,6 +2,7 @@
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 const { debug, CLUSTER } = require('zigbee-clusters');
+const SleepyInit = require('../../lib/utils/SleepyDeviceInit');
 
 class smart_motion_sensor extends ZigBeeDevice {
 
@@ -10,7 +11,8 @@ class smart_motion_sensor extends ZigBeeDevice {
 		this.printNode();
 
 		if (this.isFirstInit()){
-			await this.configureAttributeReporting([
+			// v9.0.251 (P60): Fire-and-forget for sleepy EndDevices
+			const reportingPayload = [
 				{
 					endpointId: 1,
 					cluster: CLUSTER.IAS_ZONE,
@@ -26,7 +28,13 @@ class smart_motion_sensor extends ZigBeeDevice {
           maxInterval: 21600, // Maximum interval (6 hours)
           minChange: 1, // Report changes greater than 1%
 				}
-			]);
+			];
+			SleepyInit.fireAndForget(this,
+				this.configureAttributeReporting(reportingPayload),
+				{ name: 'configureAttributeReporting', timeoutMs: SleepyInit.ZCL_TIMEOUT_MS }
+			).then((res) => {
+				if (res && res !== 'timeout') this.log('Attribute reporting configured');
+			});
 		}
 
 		// alarm_motion & alarm_tamper
