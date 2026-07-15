@@ -129545,8 +129545,9 @@
     "source": "auto-sync"
   },
   "_TZE200_npj9bug3": {
-    "driverId": "climate_sensor",
-    "source": "auto-sync"
+    "driverId": "soil_sensor",
+    "source": "auto-sync|fixed-p61",
+    "addedAt": "2026-07-15T00:00:00.000Z"
   },
   "_TZE284_65gzcss7": {
     "driverId": "climate_sensor",
@@ -135197,8 +135198,9 @@
     "source": "auto-sync"
   },
   "HOBEIAN": {
-    "driverId": "scene_switch_6",
-    "source": "auto-sync"
+    "driverId": "water_leak_sensor",
+    "source": "auto-sync|fixed-p61",
+    "addedAt": "2026-07-15T00:00:00.000Z"
   },
   "_hybrid_scene_switch_6ch_needs_device_assignment": {
     "driverId": "scene_switch_6ch",
@@ -140679,8 +140681,9 @@
     "source": "auto-sync"
   },
   "_TZE284_pcdmj88b": {
-    "driverId": "wall_thermostat",
-    "source": "auto-sync"
+    "driverId": "device_radiator_valve",
+    "source": "auto-sync|fixed-p61",
+    "addedAt": "2026-07-15T00:00:00.000Z"
   },
   "_TZE200_z1tyspqw": {
     "driverId": "wall_thermostat",
@@ -141422,9 +141425,9 @@
     "addedAt": "2026-06-26T14:42:09.191Z"
   },
   "_TZE284_myd45weu": {
-    "driverId": "soilsensor_2",
-    "source": "homey-forum-2097",
-    "addedAt": "2026-06-30T00:00:00.000Z"
+    "driverId": "soil_sensor",
+    "source": "homey-forum-2097|fixed-p61",
+    "addedAt": "2026-07-15T00:00:00.000Z"
   },
   "sacredCouples": {
     "_tz3290_j37rooaxrcdcqo5n|ts1201": {
@@ -247938,6 +247941,16 @@
         "TS0207"
       ],
       "source": "fingerprints-2026-07-14",
+      "confidence": 0.95
+    },
+    "hobeian|zg-222z": {
+      "mfr": "hobeian",
+      "pid": "zg-222z",
+      "driver": "water_leak_sensor",
+      "sources": [
+        "homey-forum-2090",
+        "p61-fix"
+      ],
       "confidence": 0.95
     }
   }
