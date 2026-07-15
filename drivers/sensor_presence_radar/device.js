@@ -2,6 +2,7 @@
 const CI = require('../../lib/utils/CaseInsensitiveMatcher');
 const { safeSetTimeout, safeClearTimeout, isDestroyed } = require('../../../lib/utils/safe-timers');
 const { getManufacturer, getModelId } = require('../../lib/helpers/DeviceDataHelper');
+const SleepyInit = require('../../lib/utils/SleepyDeviceInit');
 
 const { safeDivide, safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
 
@@ -702,9 +703,26 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     // Auto-fix: Remove battery capabilities for mains-powered devices
     await this.removeCapability('measure_battery').catch(() => {});
     await this.removeCapability('alarm_battery').catch(() => {});
-    // --- Attribute Reporting Configuration (auto-generated) ---
-    try {
-      await this.configureAttributeReporting([
+    // v9.0.251 (P60): Attribute reporting moved to non-blocking for sleepy
+    // EndDevices (e.g. ZG-204ZM). The previous try/await/catch pattern still
+    // waits up to 5s for an ACK from the device, which goes to sleep within
+    // 5s of pairing. The user would see the device "becomes unavailable
+    // after 5 seconds while it keeps blinking" (forum post #685/#687 —
+    // Francesco_Carrozzo ZG-204ZM).
+    //
+    // dlnraja v5.5.252 fix: "Battery sensors like ZG-204ZM now use a
+    // 'passive mode' initialization: No blocking operations during init,
+    // only sets up listeners to receive data, device is marked available
+    // immediately, data will update when the sensor reports (on motion
+    // detection)."
+    //
+    // We now fire-and-forget the configure call with a 2s soft timeout.
+    // If the device is awake, the configure completes in <500ms. If it's
+    // sleeping, we time out gracefully and the device still works (we just
+    // don't override its default reporting). The configure will be retried
+    // passively on the next wake event (motion/zoneStatus) when the
+    // device sends an unsolicited report — that's enough.
+    const configureReportingPayload = [
         {
           cluster: 'ssIasZone',
           attributeName: 'zoneStatus',
@@ -740,11 +758,13 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
           maxInterval: 43200,
           minChange: 2,
         }
-      ]);
-      this.log('Attribute reporting configured successfully');
-    } catch (err) {
-      this.log('Attribute reporting config failed (device may not support it):', err.message);
-    }
+    ];
+    SleepyInit.fireAndForget(this,
+      this.configureAttributeReporting(configureReportingPayload),
+      { name: 'configureAttributeReporting', timeoutMs: SleepyInit.ZCL_TIMEOUT_MS }
+    ).then((res) => {
+      if (res && res !== 'timeout') this.log('Attribute reporting configured successfully');
+    });
 
     // v5.7.34: Use _getManufacturerName() for consistent multi-source retrieval
     const mfr = this._getManufacturerName();
