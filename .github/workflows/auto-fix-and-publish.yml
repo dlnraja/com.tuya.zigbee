@@ -15,6 +15,16 @@ permissions:
   contents: write
   pull-requests: write
 
+# v9.0.256 (P62.3): Move HOMEY_PUBLISH env vars to workflow level so they
+# apply to ALL steps in ALL jobs (not just the publish step). The step-level
+# env block doesn't propagate to the npm subshell on all GHA runner images,
+# so the prepare-publish step was still seeing limit 26.00 MB.
+env:
+  HOMEY_PUBLISH_MAX_UNCOMPRESSED_MB: "30"
+  HOMEY_PUBLISH_SOURCE_MAX_MB: "30"
+  HOMEY_ZIGBEE_MAX_TOTAL_COMBOS: "30000"
+  HOMEY_ZIGBEE_MAX_DRIVER_COMBOS: "1000"
+
 jobs:
   auto-fix:
     runs-on: ubuntu-latest
