@@ -7711,8 +7711,8 @@
     ]
   },
   "_TZE200_ka8l86iu": {
-    "driverId": "smoke_sensor2",
-    "type": "smoke",
+    "driverId": "presence_sensor_radar",
+    "type": "presence",
     "powerSource": "battery",
     "modelIds": [
       "TS0601"
@@ -9597,9 +9597,9 @@
     ]
   },
   "_TZE200_ztc6ggyl": {
-    "driverId": "dimmer_wall_1gang",
-    "type": "dimmer",
-    "powerSource": "mains",
+    "driverId": "presence_sensor_radar",
+    "type": "presence",
+    "powerSource": "battery",
     "modelIds": [
       "TS0601"
     ]
