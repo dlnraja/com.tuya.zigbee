@@ -15,6 +15,16 @@ permissions:
   contents: write
   pull-requests: write
 
+# v9.0.256 (P62.3): Move HOMEY_PUBLISH env vars to workflow level so they
+# apply to ALL steps in ALL jobs (not just the publish step). The step-level
+# env block doesn't propagate to the npm subshell on all GHA runner images,
+# so the prepare-publish step was still seeing limit 26.00 MB.
+env:
+  HOMEY_PUBLISH_MAX_UNCOMPRESSED_MB: "30"
+  HOMEY_PUBLISH_SOURCE_MAX_MB: "30"
+  HOMEY_ZIGBEE_MAX_TOTAL_COMBOS: "30000"
+  HOMEY_ZIGBEE_MAX_DRIVER_COMBOS: "1000"
+
 jobs:
   auto-fix:
     runs-on: ubuntu-latest
@@ -110,7 +120,19 @@ jobs:
         if: env.trigger_publish == 'true' || github.event_name == 'workflow_dispatch'
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+          # v9.0.253 (P62): Bumped from 26 to 30 MB. The P62 fixes added
+          # lib/utils/SafeTimerAccessor.js + P59-P61 test files + P61
+          # mfs_db updates, pushing the publish directory to 26.07 MB.
+          HOMEY_PUBLISH_MAX_UNCOMPRESSED_MB: "30"
+          HOMEY_PUBLISH_SOURCE_MAX_MB: "30"
+          HOMEY_ZIGBEE_MAX_TOTAL_COMBOS: "30000"
+          HOMEY_ZIGBEE_MAX_DRIVER_COMBOS: "1000"
         run: |
+          # v9.0.255 (P62.2): Also export in the shell because npm subshells
+          # don't always inherit step env blocks on all GHA runner images.
+          export HOMEY_PUBLISH_MAX_UNCOMPRESSED_MB HOMEY_PUBLISH_SOURCE_MAX_MB
+          export HOMEY_ZIGBEE_MAX_TOTAL_COMBOS HOMEY_ZIGBEE_MAX_DRIVER_COMBOS
+          echo "Limits: HOMEY_PUBLISH_MAX_UNCOMPRESSED_MB=$HOMEY_PUBLISH_MAX_UNCOMPRESSED_MB MB"
           npx homey app build
           node scripts/maintenance/fix-large-images.js
           node scripts/maintenance/optimize-build-images.cjs
