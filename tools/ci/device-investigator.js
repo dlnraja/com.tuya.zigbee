@@ -390,14 +390,51 @@ function escapeRe(s) {
 }
 
 // ─── Z2M herdsman-converters raw fetch ─────────────────────────────────────
-// We try the per-vendor file when the cache tells us the vendor. Tuya
-// devices (which is the bulk of our mfrs starting with _TZE / _TZ) live
-// in tuya.ts. Some vendors like HOBEIAN, ZY-M100 also live in tuya.ts.
+// First try the local cache (data/z2m_herdsman_cache.json) — built by
+// tools/ci/build-z2m-cache.js. Falls back to HTTP fetch if cache miss / stale.
 async function fetchZ2MHerdsmanDefinition(mfr, pid, vendorHint) {
+  // 1. Try local cache (fast, no HTTP)
+  const cachePath = path.join(ROOT, 'data', 'z2m_herdsman_cache.json');
+  if (fs.existsSync(cachePath)) {
+    try {
+      const cache = JSON.parse(fs.readFileSync(cachePath, 'utf8'));
+      const idxs = cache.byMfr?.[mfr] || [];
+      if (process.env.DEV_INV_DEBUG) console.log(`   [cache] ${mfr} → ${idxs.length} device idxs`);
+      for (const idx of idxs) {
+        const dev = cache.devices[idx];
+        if (!dev) continue;
+        // Match by model OR by zigbeeModel OR by the modelId used in fingerprint
+        if (pid) {
+          const pidLower = pid.toLowerCase();
+          const matchesModel = dev.model && dev.model.toLowerCase() === pidLower;
+          const matchesZm = (dev.zigbeeModels || []).some(z => z.toLowerCase() === pidLower);
+          const matchesModelId = (dev.modelIds || []).some(m => m.toLowerCase() === pidLower);
+          if (!matchesModel && !matchesZm && !matchesModelId) continue;
+        }
+        if (process.env.DEV_INV_DEBUG) console.log(`   [cache] HIT: ${dev.model} (${dev.vendor})`);
+        return {
+          line: dev.line,
+          model: dev.model,
+          vendor: dev.vendor,
+          description: dev.description,
+          zigbeeModels: dev.zigbeeModels || [],
+          exposes: dev.exposes || [],
+          dps: dev.dps || [],
+          clusters: dev.clusters || [],
+          whiteLabels: dev.whiteLabels || [],
+          block: `[cache hit, ${dev.blockLen} bytes, fetched ${cache._meta.fetched}]`,
+          sourceFile: 'data/z2m_herdsman_cache.json (local)',
+        };
+      }
+    } catch (e) {
+      if (process.env.DEV_INV_DEBUG) console.log(`   [cache] error: ${e.message}`);
+    }
+  } else {
+    if (process.env.DEV_INV_DEBUG) console.log(`   [cache] no cache at ${cachePath}`);
+  }
+  // 2. Fallback: HTTP fetch (slow, 1.3MB)
   const filesToTry = [];
   const v = (vendorHint || '').toLowerCase();
-  // Most Tuya-style mfrs (_TZE*, _TZ*) are in tuya.ts. Some vendors have
-  // their own file. We try vendor-specific first, then tuya.ts as fallback.
   const vendorFileMap = {
     hobeian: ['hobeian', 'tuya'],
     'zy-m100': ['tuya'],
@@ -426,7 +463,6 @@ async function fetchZ2MHerdsmanDefinition(mfr, pid, vendorHint) {
       const found = parseZ2MHerdsmanForMfr(res.text, mfr, pid);
       if (found) return { ...found, sourceFile: url };
     } catch (e) {
-      // log first attempt
       if (filesToTry.indexOf(url) === 0) {
         console.log(`   [fetch] ${url} → ${e.message}`);
       }
