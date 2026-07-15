@@ -46,6 +46,21 @@ try {
 } catch (e) {
   // Best-effort — additive, missing it falls back to helper import
 }
+
+// v9.0.253 (P62): Install safeSetTimeout() globally on ZigBeeDevice.
+// Gmail crash analysis (2026-07-15): 89x "Cannot read properties of
+// undefined (reading 'setTimeout')" + 48x "...reading '_destroyed'".
+// Root cause: `this.homey.setTimeout(...)` where this.homey is
+// undefined. Patching the prototype with safe wrappers covers all
+// 431 drivers in one shot. Existing lib/utils/safe-timers.js is
+// re-used.
+try {
+  const { ZigBeeDevice } = require('homey-zigbeedriver');
+  const { installSafeTimerAccessor } = require('./lib/utils/SafeTimerAccessor');
+  installSafeTimerAccessor(ZigBeeDevice);
+} catch (e) {
+  // Best-effort — additive
+}
 const CapabilityManager = require('./lib/utils/CapabilityManager');
 const AdvancedAnalytics = require('./lib/analytics/AdvancedAnalytics');
 const SmartDeviceDiscovery = require('./lib/discovery/SmartDeviceDiscovery');
