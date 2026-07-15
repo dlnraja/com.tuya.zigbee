@@ -13,7 +13,8 @@
   "capabilities": [
     "alarm_motion",
     "measure_battery",
-    "button.1"
+    "button.1",
+    "measure_voltage"
   ],
   "energy": {
     "batteries": [
