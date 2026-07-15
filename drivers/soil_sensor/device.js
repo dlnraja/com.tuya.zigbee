@@ -49,6 +49,27 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
     return manufacturer.toLowerCase() === '_tze284_sgabhwa6';
   }
 
+  // P64.10: Detect ZG-303Z (HOBEIAN) family which uses a different DP map:
+  //   DP 1 = water_warning, DP 103 = temperature, DP 105 = humidity_calibration,
+  //   DP 107 = soil_moisture, DP 108 = battery, DP 109 = humidity.
+  // The legacy Z2M `TS0601_soil` map uses DP 3=moisture, DP 5=temperature, DP 15=battery.
+  get isZG303ZVariant() {
+    const manufacturer = (this.getSetting?.('zb_manufacturer_name') || '').toLowerCase();
+    // MFRs known to use the ZG-303Z DP map: _TZE200_wqashyqo, _TZE284_awepdiwi,
+    // _TZE284_ga1maeof, _TZE284_myd45weu, _TZE284_oitavov2, _TZE284_2nhqasjh,
+    // _TZE284_aao3yzhs, _TZE284_tgrzpqf4, _TZE284_0ints6wl, _TZE200_npj9bug3.
+    const zg303Mfrs = [
+      '_tze200_wqashyqo', '_tze284_awepdiwi', '_tze284_ga1maeof',
+      '_tze284_myd45weu', '_tze284_oitavov2', '_tze284_2nhqasjh',
+      '_tze284_aao3yzhs', '_tze284_tgrzpqf4', '_tze284_0ints6wl',
+      '_tze200_npj9bug3', '_tze200_myd45weu', '_tze204_myd45weu',
+    ];
+    if (zg303Mfrs.includes(manufacturer)) {return true;}
+    // vendor name 'HOBEIAN' is a strong hint too
+    if (manufacturer === 'hobeian' || manufacturer === 'hobeian zg-303z') {return true;}
+    return false;
+  }
+
   /** Capabilities for soil sensors */
   get sensorCapabilities() {
     return [
@@ -238,18 +259,95 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
       return;
     }
 
-    if (dp === 2 || dp === 3 || dp === 105) {
+    // P64.10 FIX: DP 105 is humidity_calibration on ZG-303Z (not moisture).
+    // DP 107 is soil_moisture on ZG-303Z — we now also accept it here.
+    // This prevents calibration values from firing the moisture flow trigger
+    // (which caused "Invalid value" errors in user reports).
+    if (dp === 2 || dp === 3 || dp === 107) {
       this.log(`[SOIL] Moisture DP${dp} = ${parsedValue}%`);
       let moisture = parsedValue;
       if (dp === 3 && this.isSgabhwa6Variant) {moisture = safeDivide(moisture, 10);}
-      if (dp === 105 && moisture > 100) {moisture = safeDivide(moisture, 10);}
       const normalizedMoisture = this._normalizeSoilMoisture(moisture, dp);
       if (normalizedMoisture === null) {return;}
-      
+
       const targetCap = this.hasCapability('measure_humidity.soil') ? 'measure_humidity.soil' : 'measure_humidity';
       this.safeSetCapabilityValue(targetCap, normalizedMoisture).catch(() => { });
       this._updateWaterAlarm();
       this._triggerMoistureFlows(normalizedMoisture);
+      return;
+    }
+
+    // P64.10 ADD: ZG-303Z humidity_calibration (DP 105) — apply offset to humidity reading
+    // and store in setting; do NOT trigger any flow (calibration is not a moisture event).
+    if (dp === 105) {
+      this.log(`[SOIL] Humidity calibration DP${dp} = ${parsedValue}`);
+      if (this.getSetting) {
+        this.setSettings({ humidity_calibration: Number(parsedValue) || 0 }).catch(() => {});
+      }
+      return;
+    }
+
+    // P64.10 ADD: ZG-303Z temperature (DP 103) — raw, divide by 10
+    if (dp === 103) {
+      let temp = parsedValue;
+      if (Math.abs(temp) > 1000) {temp = safeDivide(temp, 100);}
+      else if (Math.abs(temp) > 100) {temp = safeDivide(temp, 10);}
+      this.log(`[SOIL] Temp DP${dp} = ${temp}°C`);
+      this.safeSetCapabilityValue('measure_temperature', parseFloat(temp)).catch(() => { });
+      this._triggerTemperatureFlows(temp);
+      return;
+    }
+
+    // P64.10 ADD: ZG-303Z water_warning (DP 1) — set alarm_water.
+    // For ZG-303Z family, DP 1 is water_warning (enum) — NOT temperature.
+    // Legacy devices still treat DP 1 as temperature.
+    if (dp === 1 && this.isZG303ZVariant) {
+      const v = Number(parsedValue);
+      this.log(`[SOIL] Water warning DP${dp} = ${v}`);
+      if (Number.isFinite(v) && this.hasCapability('alarm_water')) {
+        this.safeSetCapabilityValue('alarm_water', v >= 1).catch(() => { });
+      }
+      return;
+    }
+
+    // P64.10 ADD: ZG-303Z battery (DP 108) — read raw %
+    if (dp === 108) {
+      this.log(`[SOIL] Battery DP${dp} = ${parsedValue}%`);
+      const v = Number(parsedValue);
+      if (Number.isFinite(v) && this.hasCapability('measure_battery')) {
+        this.safeSetCapabilityValue('measure_battery', Math.max(0, Math.min(100, v))).catch(() => { });
+      }
+      return;
+    }
+
+    // P64.10 ADD: ZG-303Z soil_calibration (DP 102), temp_calibration (DP 104),
+    // temp_unit (DP 106) — store as settings, do NOT fire flows.
+    if (dp === 102 || dp === 104 || dp === 106) {
+      const settingName = dp === 102 ? 'soil_calibration'
+                        : dp === 104 ? 'temperature_calibration'
+                        : 'temperature_unit';
+      this.log(`[SOIL] Calibration DP${dp} (${settingName}) = ${parsedValue}`);
+      if (this.getSetting) {
+        const v = Number(parsedValue);
+        if (Number.isFinite(v)) {
+          this.setSettings({ [settingName]: v }).catch(() => {});
+        }
+      }
+      return;
+    }
+
+    // P64.10 ADD: ZG-303Z soil_warning (DP 110), temp_sampling (DP 111), soil_sampling (DP 112) — settings
+    if (dp === 110 || dp === 111 || dp === 112) {
+      const settingName = dp === 110 ? 'soil_warning'
+                        : dp === 111 ? 'temperature_sampling'
+                        : 'soil_sampling';
+      this.log(`[SOIL] Setting DP${dp} (${settingName}) = ${parsedValue}`);
+      if (this.getSetting) {
+        const v = Number(parsedValue);
+        if (Number.isFinite(v)) {
+          this.setSettings({ [settingName]: v }).catch(() => {});
+        }
+      }
       return;
     }
 
