@@ -27,7 +27,7 @@ class ClimateSensorDevice extends UnifiedSensorBase {
   }
 
   get sensorCapabilities() {
-    return ['measure_temperature', 'measure_humidity', 'measure_battery', 'measure_luminance'];
+    return ['measure_temperature', 'measure_humidity', 'measure_battery', 'measure_voltage', 'measure_luminance'];
   }
 
   get dpMappings() {
