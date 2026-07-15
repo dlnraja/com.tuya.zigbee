@@ -6447,7 +6447,7 @@
     ]
   },
   "_TZE200_9cqcpkgb": {
-    "driverId": "plug_smart",
+    "driverId": "presence_sensor_radar",
     "type": "plug",
     "powerSource": "mains",
     "modelIds": [
@@ -7260,7 +7260,7 @@
     ]
   },
   "_TZE200_ga1maeof": {
-    "driverId": "plug_smart",
+    "driverId": "soil_sensor",
     "type": "plug",
     "powerSource": "mains",
     "modelIds": [
@@ -7348,10 +7348,13 @@
     ]
   },
   "_TZE200_grgol3xp": {
-    "driverId": "vibration_sensor",
-    "type": "vibration_sensor",
+    "driverId": "presence_sensor_radar",
+    "type": "presence",
     "powerSource": "battery",
     "modelIds": [
+      "TS0601"
+    ],
+    "productIds": [
       "TS0601"
     ]
   },
@@ -8566,52 +8569,15 @@
     ]
   },
   "_TZE200_rhgsbacq": {
-    "driverId": "motion_sensor_radar_mmwave",
-    "type": "radar",
+    "driverId": "presence_sensor_radar",
+    "type": "presence",
     "powerSource": "battery",
-    "batteryType": "CR2032",
     "modelIds": [
       "TS0601"
     ],
-    "capabilities": [
-      "alarm_motion",
-      "measure_temperature",
-      "measure_humidity",
-      "measure_luminance",
-      "measure_battery"
-    ],
-    "clusters": [
-      0,
-      1,
-      3,
-      1024,
-      1026,
-      1029,
-      1280,
-      61184
-    ],
-    "dps": {
-      "1": {
-        "name": "presence",
-        "converter": "boolean",
-        "capability": "alarm_motion"
-      },
-      "9": {
-        "name": "sensitivity",
-        "converter": "raw"
-      },
-      "15": {
-        "name": "battery",
-        "converter": "raw",
-        "capability": "measure_battery"
-      },
-      "101": {
-        "name": "illuminance",
-        "converter": "raw",
-        "capability": "measure_luminance"
-      }
-    },
-    "notes": "ZG-204ZM is a 5-in-1 sensor like Aqara FP300: presence + temp + humidity + illuminance + battery. Uses both Tuya DP (61184) and standard ZCL clusters."
+    "productIds": [
+      "TS0601"
+    ]
   },
   "_TZE200_rjxqso4a": {
     "driverId": "co_sensor",
@@ -8965,10 +8931,13 @@
     "notes": "GitHub Issue #79 - Patrickske1"
   },
   "_TZE200_uli8wasj": {
-    "driverId": "vibration_sensor",
-    "type": "vibration_sensor",
+    "driverId": "presence_sensor_radar",
+    "type": "presence",
     "powerSource": "battery",
     "modelIds": [
+      "TS0601"
+    ],
+    "productIds": [
       "TS0601"
     ]
   },
@@ -14347,10 +14316,15 @@
     "modelIds": []
   },
   "_TZE200_w0ap83qu": {
-    "driverId": "generic_diy",
-    "type": "generic_diy",
+    "driverId": "presence_sensor_radar",
+    "type": "presence",
     "powerSource": "battery",
-    "modelIds": []
+    "modelIds": [
+      "TS0601"
+    ],
+    "productIds": [
+      "TS0601"
+    ]
   },
   "_TZE284_ozf4e02o": {
     "driverId": "presence_sensor_radar",
@@ -14449,7 +14423,7 @@
     "modelIds": []
   },
   "_TZE284_tgrzpqf4": {
-    "driverId": "generic_diy",
+    "driverId": "soil_sensor",
     "type": "generic_diy",
     "powerSource": "battery",
     "modelIds": []
@@ -14667,7 +14641,7 @@
     "modelIds": []
   },
   "_TZE204_w0ap83qu": {
-    "driverId": "generic_diy",
+    "driverId": "presence_sensor_radar",
     "type": "generic_diy",
     "powerSource": "battery",
     "modelIds": []
@@ -20599,7 +20573,7 @@
     "confidence": 0.85
   },
   "_TZE200_GRGOL3XP": {
-    "driverId": "climate_sensor",
+    "driverId": "presence_sensor_radar",
     "type": "climate_sensor",
     "powerSource": "unknown",
     "modelIds": [
@@ -21489,7 +21463,7 @@
     "confidence": 0.85
   },
   "_TZE200_ULI8WASJ": {
-    "driverId": "climate_sensor",
+    "driverId": "presence_sensor_radar",
     "type": "climate_sensor",
     "powerSource": "unknown",
     "modelIds": [
@@ -23789,7 +23763,7 @@
     "confidence": 0.85
   },
   "_TZE284_AWEPDIWI": {
-    "driverId": "climate_sensor",
+    "driverId": "soil_sensor",
     "type": "climate_sensor",
     "powerSource": "unknown",
     "modelIds": [
@@ -31239,7 +31213,7 @@
     "confidence": 0.85
   },
   "_tze200_w0ap83qu": {
-    "driverId": "generic_diy",
+    "driverId": "presence_sensor_radar",
     "type": "generic_diy",
     "powerSource": "unknown",
     "modelIds": [
@@ -31299,7 +31273,7 @@
     "confidence": 0.85
   },
   "_tze284_tgrzpqf4": {
-    "driverId": "generic_diy",
+    "driverId": "soil_sensor",
     "type": "generic_diy",
     "powerSource": "unknown",
     "modelIds": [
@@ -42519,7 +42493,7 @@
     "confidence": 0.85
   },
   "_TZE204_y8jijhba": {
-    "driverId": "sensor_illuminance_presence",
+    "driverId": "presence_sensor_radar",
     "type": "sensor_illuminance_presence",
     "powerSource": "unknown",
     "modelIds": [
@@ -42529,7 +42503,7 @@
     "confidence": 0.85
   },
   "_TZE204_3towulqd": {
-    "driverId": "sensor_illuminance_presence",
+    "driverId": "presence_sensor_radar",
     "type": "sensor_illuminance_presence",
     "powerSource": "unknown",
     "modelIds": [
@@ -42539,7 +42513,7 @@
     "confidence": 0.85
   },
   "_TZE204_2aaelwxk": {
-    "driverId": "sensor_illuminance_presence",
+    "driverId": "presence_sensor_radar",
     "type": "sensor_illuminance_presence",
     "powerSource": "unknown",
     "modelIds": [
@@ -42619,7 +42593,7 @@
     "confidence": 0.85
   },
   "_TZE204_2se8efxh": {
-    "driverId": "sensor_presence_radar",
+    "driverId": "plug_smart",
     "type": "sensor_presence_radar",
     "powerSource": "unknown",
     "modelIds": [
@@ -43709,7 +43683,7 @@
     "confidence": 0.85
   },
   "_TZE284_ga1maeof": {
-    "driverId": "soilsensor",
+    "driverId": "soil_sensor",
     "type": "soilsensor",
     "powerSource": "unknown",
     "modelIds": [
@@ -54327,5 +54301,27 @@
     ],
     "source": "driver-compose-2026-07-14",
     "confidence": 0.85
+  },
+  "_TZE204_zg204z": {
+    "driverId": "presence_sensor_radar",
+    "type": "presence",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0601"
+    ],
+    "productIds": [
+      "TS0601"
+    ]
+  },
+  "_TZE204_zg204zh": {
+    "driverId": "presence_sensor_radar",
+    "type": "presence",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0601"
+    ],
+    "productIds": [
+      "TS0601"
+    ]
   }
 }
