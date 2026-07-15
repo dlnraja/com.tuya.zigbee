@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "fingerprint_lock_lock_changed",
+      "id": "fingerprint_lock_changed",
       "title": {
         "en": "Lock changed",
         "fr": "Serrure changée",
@@ -85,7 +85,7 @@
   ],
   "actions": [
     {
-      "id": "fingerprint_lock_lock",
+      "id": "fingerprint_lock",
       "title": {
         "en": "Lock",
         "fr": "Verrouiller",
