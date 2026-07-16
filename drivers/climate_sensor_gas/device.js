@@ -1,5 +1,6 @@
 'use strict';
 const { UnifiedSensorBase } = require('../../lib/devices/UnifiedSensorBase');
+const { safeSetCapabilityValue } = require('../../lib/utils/SafeCapability');
 
 /**
  * Gas Detector Device - TS0601 Tuya DP Protocol
@@ -36,7 +37,7 @@ class GasDetectorDevice extends UnifiedSensorBase {
           // Store for diagnostics, trigger alarm if high
           device._gasValue = v;
           if (v > 10) { // High gas level threshold
-            device.safeSetCapabilityValue('alarm_gas', true).catch(() => {});
+            safeSetCapabilityValue(device, 'alarm_gas', true).catch(() => {});
           }
           return v;
         }
