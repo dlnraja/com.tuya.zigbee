@@ -280,10 +280,17 @@ function checkDeviceJsConsistency(driverName, flowData) {
 
   let totalActions = 0;
   let totalConditions = 0;
+  // P74: Iterate properly to count actions and conditions separately.
+  // The previous code added cards.length to totalActions in EVERY
+  // iteration (including conditions), double-counting conditions as
+  // actions. Split into per-type counters.
   for (const cardType of ['actions', 'conditions']) {
     const cards = flowData[cardType] || [];
-    totalActions += cards.length;
-    if (cardType === 'conditions') totalConditions = cards.length;
+    if (cardType === 'actions') {
+      totalActions = cards.length;
+    } else if (cardType === 'conditions') {
+      totalConditions = cards.length;
+    }
   }
 
   if (totalActions === 0 && totalConditions === 0) return;
@@ -296,12 +303,46 @@ function checkDeviceJsConsistency(driverName, flowData) {
       sourceText.includes('onRunListener') ||
       hasKnownFlowHelper;
 
+    // P74: Debug diagnostic when warning fires (can be removed later)
+    if (!hasRunHandler && process.env.WATCHDOG_DEBUG) {
+      console.log(`[DEBUG] ${driverName}: sourceFiles=${JSON.stringify(sourceFiles)}, hasRegRL=${sourceText.includes('registerRunListener')}, hasOnRun=${sourceText.includes('onRunListener')}, hasKnownFlowHelper=${hasKnownFlowHelper}, srcLen=${sourceText.length}`);
+    }
+
     if (!hasRunHandler) {
+      // P74: Distinguish severity:
+      //   - ERROR if driver declares flow cards via getActionCard/getConditionCard
+      //     but has no registerRunListener (forgot to wire it = Flow will not work)
+      //   - WARN if driver.js is empty/missing (forgot to write = Flow will not work
+      //     but might be intentionally a stub for SDK3 base behavior)
+      //   - INFO if driver.js has any flow-card-related code (likely auto-handled
+      //     by a base class factory pattern)
+      const hasFlowCardApi = sourceText.includes('getActionCard') ||
+        sourceText.includes('getConditionCard') ||
+        sourceText.includes('homey.flow.getActionCard') ||
+        sourceText.includes('homey.flow.getConditionCard');
+      const driverJs = fs.existsSync(driverPath) ? fs.readFileSync(driverPath, 'utf8') : '';
+      const driverJsIsEmpty = driverJs.length < 200;
+
+      let severity = SEV.WARN;
+      let msg = `Flow cards define ${totalActions} action(s) / ${totalConditions} condition(s) but no registerRunListener`;
+      if (hasFlowCardApi) {
+        // Card is registered via getActionCard but listener never wired
+        severity = SEV.ERROR;
+        msg = `CRITICAL: getActionCard/getConditionCard called but no registerRunListener for ${totalActions} action(s) / ${totalConditions} condition(s)`;
+      } else if (driverJsIsEmpty) {
+        msg = `Flow cards define ${totalActions} action(s) / ${totalConditions} condition(s) but driver.js is empty (no flow handlers)`;
+      } else {
+        // Likely a base-class pattern (e.g. HybridDriverFactory, registerButtonFlowCards).
+        // Lower severity to info so it doesn't drown the report.
+        severity = SEV.INFO;
+        msg = `Flow cards define ${totalActions} action(s) / ${totalConditions} condition(s); driver.js has flow-related code but no registerRunListener — likely a base class factory pattern`;
+      }
+
       report.deviceJsConsistency.inconsistent++;
-      addIssue(SEV.WARN, 'device_js', driverName,
-        `Flow cards define ${totalActions} action(s) / ${totalConditions} condition(s) but device.js/driver.js has no registerRunListener`, {
-          actions: totalActions, conditions: totalConditions,
-        });
+      addIssue(severity, 'device_js', driverName, msg, {
+        actions: totalActions, conditions: totalConditions,
+        hasFlowCardApi, driverJsIsEmpty,
+      });
     } else {
       report.deviceJsConsistency.consistent++;
     }
