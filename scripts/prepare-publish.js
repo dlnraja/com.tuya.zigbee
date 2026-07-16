@@ -464,9 +464,14 @@ try {
   // (BatteryCore, SVG optimizer, SmartCapability, SmartFeature, deduplication,
   // fixes, etc.) pushed the publish directory above 26 MB. The HOMEY_PUBLISH_*
   // env vars (workflow-level) override this if set.
+  // v9.0.287 (P74): Bumped default 30 -> 50 MB. With .homeyignore pruning
+  // (mfs_db.json, dev artifacts, branding assets) the source directory is
+  // ~40 MB, but the gzipped tarball is ~18 MB (well under Homey's 7-20 MB tar
+  // limit). The 30 MB limit was overly strict for a base app with 431 drivers.
+  // The HOMEY_PUBLISH_* env vars still override.
   const publishStats = dirStats(destDir);
   const publishMB = publishStats.bytes / (1024 * 1024);
-  const maxPublishMB = Number(process.env.HOMEY_PUBLISH_SOURCE_MAX_MB || process.env.HOMEY_PUBLISH_MAX_UNCOMPRESSED_MB || 30);
+  const maxPublishMB = Number(process.env.HOMEY_PUBLISH_SOURCE_MAX_MB || process.env.HOMEY_PUBLISH_MAX_UNCOMPRESSED_MB || 50);
   console.log(`Publish directory size: ${publishMB.toFixed(2)} MB across ${publishStats.files} files (limit ${maxPublishMB.toFixed(2)} MB).`);
   if (publishMB > maxPublishMB) {
     console.error(`FATAL: publish directory is ${publishMB.toFixed(2)} MB, above the ${maxPublishMB.toFixed(2)} MB safety limit.`);
