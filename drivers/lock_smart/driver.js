@@ -12,7 +12,8 @@ async onInit() {
   }
 
   _registerFlowCards() {
-    // TRIGGERS
+    // TRIGGERS
+
     // CONDITIONS
     try {
       const card = this.homey.flow.getConditionCard('lock_locked');
@@ -36,7 +37,26 @@ async onInit() {
 
     // ACTIONS
     try {
-      const card = this.homey.flow.getActionCard('lock_smart_unlock: ${err.message}`); }; }
+      const card = this.homey.flow.getActionCard('lock_smart_unlock');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) {return false;}
+          if (typeof args.device.unlock === 'function') {await args.device.unlock().catch(() => {});}
+          return true;
+        });
+      }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action lock_smart_unlock: ${err.message}`); }; }
+
+    try {
+      const card = this.homey.flow.getActionCard('lock_smart_lock');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) {return false;}
+          if (typeof args.device.lock === 'function') {await args.device.lock().catch(() => {});}
+          return true;
+        });
+      }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action lock_smart_lock: ${err.message}`); }; }
 
     this.log('[FLOW] All flow cards registered');
   }
