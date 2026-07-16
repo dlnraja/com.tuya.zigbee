@@ -573,62 +573,74 @@
       ]
     }
   ],
-  "9.0.143": {
-    "en": "v9.0.143: automated publish, manifest sync, and Homey test promotion."
+  "5.12.0": {
+    "en": "v5.12.0: stable-v5 batch sync (drivers, FPs, flows, manifest) from master v9.0.240–v9.0.260."
   },
-  "9.0.142": {
-    "en": "v9.0.142: automated publish, manifest sync, and Homey test promotion."
+  "5.12.1": {
+    "en": "v5.12.1: stable-v5 sync of v9.0.263–v9.0.275 (drivers, FPs, flows, manifest)."
   },
-  "9.0.141": {
-    "en": "v9.0.141: automated publish, manifest sync, and Homey test promotion."
+  "5.12.2": {
+    "en": "v5.12.2: stable-v5 sync of v9.0.276–v9.0.282 (drivers, FPs, flows, manifest)."
   },
-  "9.0.140": {
-    "en": "v9.0.140: automated publish, manifest sync, and Homey test promotion."
+  "5.12.3": {
+    "en": "v5.12.3: stable-v5 P74 sync — publish-size-gate fix, .homeyignore pruning, HOBEIAN collision resolved, 88 driver.js flow handlers, master baseline updated."
   },
-  "9.0.139": {
-    "en": "v9.0.139: automated publish, manifest sync, and Homey test promotion."
-  },
-  "9.0.138": {
-    "en": "v9.0.138: automated publish, manifest sync, and Homey test promotion."
-  },
-  "9.0.137": {
-    "en": "v9.0.137: automated publish, manifest sync, and Homey test promotion."
-  },
-  "9.0.136": {
-    "en": "v9.0.136: automated publish, manifest sync, and Homey test promotion."
-  },
-  "9.0.135": {
-    "en": "v9.0.135: automated publish, manifest sync, and Homey test promotion."
-  },
-  "9.0.134": {
-    "en": "v9.0.134: automated publish, manifest sync, and Homey test promotion."
-  },
-  "9.0.133": {
-    "en": "v9.0.133: automated publish, manifest sync, and Homey test promotion."
-  },
-  "9.0.132": {
-    "en": "v9.0.132: automated publish, manifest sync, and Homey test promotion."
-  },
-  "9.0.131": {
-    "en": "v9.0.130:"
-  },
-  "9.0.130": {
-    "en": "v9.0.130: automated publish, manifest sync, and Homey test promotion."
-  },
-  "9.0.129": {
-    "en": "v9.0.128:"
-  },
-  "9.0.128": {
-    "en": "v9.0.128: automated publish, manifest sync, and Homey test promotion."
-  },
-  "9.0.127": {
-    "en": "v9.0.126:"
+  "9.0.125": {
+    "en": "v9.0.125: automated publish, manifest sync, and Homey test promotion."
   },
   "9.0.126": {
     "en": "v9.0.126: automated publish, manifest sync, and Homey test promotion."
   },
-  "9.0.125": {
-    "en": "v9.0.125: automated publish, manifest sync, and Homey test promotion."
+  "9.0.127": {
+    "en": "v9.0.126:"
+  },
+  "9.0.128": {
+    "en": "v9.0.128: automated publish, manifest sync, and Homey test promotion."
+  },
+  "9.0.129": {
+    "en": "v9.0.128:"
+  },
+  "9.0.130": {
+    "en": "v9.0.130: automated publish, manifest sync, and Homey test promotion."
+  },
+  "9.0.131": {
+    "en": "v9.0.130:"
+  },
+  "9.0.132": {
+    "en": "v9.0.132: automated publish, manifest sync, and Homey test promotion."
+  },
+  "9.0.133": {
+    "en": "v9.0.133: automated publish, manifest sync, and Homey test promotion."
+  },
+  "9.0.134": {
+    "en": "v9.0.134: automated publish, manifest sync, and Homey test promotion."
+  },
+  "9.0.135": {
+    "en": "v9.0.135: automated publish, manifest sync, and Homey test promotion."
+  },
+  "9.0.136": {
+    "en": "v9.0.136: automated publish, manifest sync, and Homey test promotion."
+  },
+  "9.0.137": {
+    "en": "v9.0.137: automated publish, manifest sync, and Homey test promotion."
+  },
+  "9.0.138": {
+    "en": "v9.0.138: automated publish, manifest sync, and Homey test promotion."
+  },
+  "9.0.139": {
+    "en": "v9.0.139: automated publish, manifest sync, and Homey test promotion."
+  },
+  "9.0.140": {
+    "en": "v9.0.140: automated publish, manifest sync, and Homey test promotion."
+  },
+  "9.0.141": {
+    "en": "v9.0.141: automated publish, manifest sync, and Homey test promotion."
+  },
+  "9.0.142": {
+    "en": "v9.0.142: automated publish, manifest sync, and Homey test promotion."
+  },
+  "9.0.143": {
+    "en": "v9.0.143: automated publish, manifest sync, and Homey test promotion."
   },
   "9.0.144": {
     "en": "v9.0.144: automated publish, manifest sync, and Homey test promotion."
@@ -771,17 +783,17 @@
   "9.0.190": {
     "en": "Stability improvements and Homey test publication retry after transient processing failure."
   },
-  "9.0.193": {
-    "en": "P11 release: door_sensor driver (TS0203), 96 Johan mfrs integrated (1618 FPs), workflow consolidation (47→34), continuous-flow + e2e-dashboard + upstream-guard, 13 archived. 657 dlnraja comments deleted from JohanBendz/com.tuya.zigbee.",
-    "fr": "Release P11: driver door_sensor (TS0203), 96 mfrs Johan intégrés (1618 FPs), consolidation workflows (47→34), continuous-flow + e2e-dashboard + upstream-guard, 13 archivés. 657 commentaires dlnraja supprimés sur JohanBendz/com.tuya.zigbee.",
-    "nl": "P11 release: door_sensor driver (TS0203), 96 Johan mfrs geïntegreerd (1618 FPs), workflow consolidatie (47→34), continuous-flow + e2e-dashboard + upstream-guard, 13 gearchiveerd. 657 dlnraja reacties verwijderd van JohanBendz/com.tuya.zigbee.",
-    "de": "P11-Release: door_sensor-Treiber (TS0203), 96 Johan-mfrs integriert (1618 FPs), Workflow-Konsolidierung (47→34), continuous-flow + e2e-dashboard + upstream-guard, 13 archiviert. 657 dlnraja-Kommentare aus JohanBendz/com.tuya.zigbee gelöscht."
-  },
   "9.0.191": {
     "en": "Stability improvements and Homey test publication retry after transient processing failure."
   },
   "9.0.192": {
     "en": "Stability improvements and Homey test publication retry after transient processing failure."
+  },
+  "9.0.193": {
+    "en": "P11 release: door_sensor driver (TS0203), 96 Johan mfrs integrated (1618 FPs), workflow consolidation (47→34), continuous-flow + e2e-dashboard + upstream-guard, 13 archived. 657 dlnraja comments deleted from JohanBendz/com.tuya.zigbee.",
+    "fr": "Release P11: driver door_sensor (TS0203), 96 mfrs Johan intégrés (1618 FPs), consolidation workflows (47→34), continuous-flow + e2e-dashboard + upstream-guard, 13 archivés. 657 commentaires dlnraja supprimés sur JohanBendz/com.tuya.zigbee.",
+    "nl": "P11 release: door_sensor driver (TS0203), 96 Johan mfrs geïntegreerd (1618 FPs), workflow consolidatie (47→34), continuous-flow + e2e-dashboard + upstream-guard, 13 gearchiveerd. 657 dlnraja reacties verwijderd van JohanBendz/com.tuya.zigbee.",
+    "de": "P11-Release: door_sensor-Treiber (TS0203), 96 Johan-mfrs integriert (1618 FPs), Workflow-Konsolidierung (47→34), continuous-flow + e2e-dashboard + upstream-guard, 13 archiviert. 657 dlnraja-Kommentare aus JohanBendz/com.tuya.zigbee gelöscht."
   },
   "9.0.194": {
     "en": "P11 release: door_sensor driver (TS0203), 96 Johan mfrs integrated (1618 FPs), continuous-flow + e2e-dashboard + upstream-guard, 13 archived. 657 dlnraja comments deleted from JohanBendz/com.tuya.zigbee."
