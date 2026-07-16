@@ -1,5 +1,10 @@
 name: Safe Sync master → stable-v5 (P52)
 
+# P74: defaults.run.shell: bash is REQUIRED by Fleetwood Integrity check
+defaults:
+  run:
+    shell: bash
+
 on:
   schedule:
     # Daily at 04:00 UTC (after the auto-fix-all bot at 03:00)
