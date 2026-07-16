@@ -1,7 +1,3 @@
-defaults:
-  run:
-    shell: bash
-
 # Continuous Flow — Consolidated daily workflow
 #
 # Replaces 10+ scheduled workflows:
@@ -68,6 +64,10 @@ concurrency:
   cancel-in-progress: true
 
 # 30 min hard timeout
+defaults:
+  run:
+    shell: bash
+
 jobs:
   enrich:
     runs-on: ubuntu-latest
@@ -89,13 +89,13 @@ jobs:
           target_repo: dlnraja/com.tuya.zigbee
 
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           fetch-depth: 50
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: 'npm'
@@ -228,7 +228,7 @@ jobs:
       pull-requests: write
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -248,4 +248,4 @@ jobs:
             🌒 Continuous flow ran successfully.
             - Mode: ${{ github.event.inputs.mode || 'schedule' }}
             - DRY_RUN: ${{ env.DRY_RUN }}
-            - Run: ${{ github.run_id }}\n
+            - Run: ${{ github.run_id }}
