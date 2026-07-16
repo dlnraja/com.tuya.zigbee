@@ -33,6 +33,11 @@
 
 name: upstream-guard
 
+# P74: defaults.run.shell: bash is REQUIRED by Fleetwood Integrity check
+defaults:
+  run:
+    shell: bash
+
 on:
   workflow_call:
     inputs:
