@@ -30,6 +30,13 @@ jobs:
     if: "!contains(github.event.head_commit.message, '[skip ci]')"
     runs-on: ubuntu-latest
     timeout-minutes: 25
+    # v9.0.287 (P74): Bumped publish-size limits to 50 MB. With .homeyignore
+    # pruning (mfs_db.json, dev artifacts, branding assets) the source
+    # directory is ~40 MB. The gzipped tarball is ~18 MB.
+    env:
+      HOMEY_PUBLISH_FINAL_MAX_MB: "50"
+      HOMEY_PUBLISH_SOURCE_MAX_MB: "50"
+      HOMEY_PUBLISH_MAX_UNCOMPRESSED_MB: "50"
 
     steps:
       # ─────────────────────────────────────────────────────────────
