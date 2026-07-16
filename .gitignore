@@ -181,6 +181,26 @@ scripts/sync/data/
 .github/state/spam-scan-results.json
 .github/state/external-sources-data.json
 
+# P74: All operational state files (per security-scanner warning — may contain
+# private operational data from forum/Gmail/diagnostic scans)
+.github/state/activity-cache.json
+.github/state/activity-snapshot.json
+.github/state/blakadder/
+.github/state/gmail/
+.github/state/forum/
+.github/state/johan-dump/
+.github/state/auto-enrich/
+.github/state/mega-crawl/
+.github/state/investigations/
+.github/state/knowledge-graph-history/
+.github/state/temporal-monitor-report.json
+.github/state/temporal-monitor-state.json
+.github/state/fp-collision-analysis.json
+.github/state/fp-collisions-baseline.json
+# Allow .gitkeep so the dir structure is preserved
+!.github/state/.gitkeep
+!.github/state/**/.gitkeep
+
 # Claude Code session files
 .claude/
 CLAUDE.md
