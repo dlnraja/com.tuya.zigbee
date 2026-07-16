@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-07-15T22:01:17.054Z",
+  "fetchedAt": "2026-07-16T06:25:59.138Z",
   "github": {
     "openIssues": [
       {
@@ -26,7 +26,7 @@
         "title": "Temp and humidity sensor",
         "state": "open",
         "createdAt": "2026-07-07T15:24:02Z",
-        "updatedAt": "2026-07-15T19:53:40Z",
+        "updatedAt": "2026-07-15T22:04:20Z",
         "user": "Lalla80111",
         "labels": [
           "bug",
@@ -37,7 +37,7 @@
           "sensor",
           "device_issue"
         ],
-        "commentsCount": 9,
+        "commentsCount": 10,
         "body": "My temperature and humidity sensor is recognized as Air Purifier and not working.\n\n<img width=\"250\" height=\"443\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/c5417930-f080-4c82-a573-471589894eef\" />\n\nInterview:\n\n\n\n  \"ids\": {\n    \"modelId\": \"TS0201\",\n    \"manufacturerName\": \"_TZ3000_fllyghyj\"\n  },\n  \"endpoints\": {\n    \"ieeeAddress\": \"a4:c1:38:be:49:b1:e3:1d\",\n    \"networkAddress\": 9567,\n    \"modelId\": \"TS0201\",\n    \"manufacturerName\": \"_TZ3000_fllyghyj\",\n    \"endpointDescriptors\": [\n      {\n        \"status\": \"SUCCESS\",\n        \"nwkAddrOfInterest\": 9567,\n        \"_reserved\": 24,\n        \"endpointId\": 1,\n        \"applicationProfileId\": 260,\n        \"applicationDeviceId\": 770,\n        \"applicationDeviceVersion\": 0,\n        \"_reserved1\": 1,\n        \"inputClusters\": [\n          1,\n          3,\n          1026,\n          1029,\n          0\n        ],\n        \"outputClusters\": [\n          3,\n          25,\n          10\n        ]\n      }\n    ],\n    \"deviceType\": \"enddevice\",\n    \"receiveWhenIdle\": false,\n    \"capabilities\": {\n      \"alternatePANCoordinator\": false,\n      \"deviceType\": false,\n      \"powerSourceMains\": false,\n      \"receiveWhenIdle\": false,\n      \"security\": false,\n      \"allocateAddress\": true\n    },\n    \"extendedEndpointDescriptors\": {\n      \"1\": {\n        \"clusters\": {\n          \"powerConfiguration\": {\n            \"attributes\": [\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 0,\n                \"dataTypeId\": 33,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 32,\n                \"dataTypeId\": 32,\n                \"name\": \"batteryVoltage\",\n                \"value\": 29,\n                \"reportingConfigu",
         "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/506"
       },
@@ -133,6 +133,14 @@
       }
     ],
     "recentComments": [
+      {
+        "id": 4985723039,
+        "user": "dlnraja",
+        "createdAt": "2026-07-15T22:04:20Z",
+        "body": "@Lalla80111 Just checking in again — we have released several versions since your last reply (v9.0.252, v9.0.258, v9.0.261, v9.0.263, v9.0.266, and v9.0.269 are all on the test channel). The crash you saw in v9.0.218 was caused by a known issue that has been fixed since v9.0.250. Could you please:\n\n1. Reinstall the app from the test channel: https://homey.app/a/com.dlnraja.tuya.zigbee/test/\n2. Remove the device completely (don't just re-pair — also remove the device entry from Homey)\n3. Re-pair ",
+        "issueUrl": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues/506",
+        "issueNumber": "506"
+      },
       {
         "id": 4984708441,
         "user": "dlnraja",
@@ -364,17 +372,51 @@
         "body": "<!-- tuya-triage-bot -->\nThanks for this.\n\nMapped in our fork v9.0.192: `tuya` (device_generic_tuya_universal), `TUYA` (device_generic_tuya_universal).\n\nTracked in [dlnraja/com.tuya.zigbee](https://github.com/dlnraja/com.tuya.zigbee).",
         "issueUrl": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues/507",
         "issueNumber": "507"
-      },
-      {
-        "id": 4950615856,
-        "user": "github-actions[bot]",
-        "createdAt": "2026-07-12T09:02:45Z",
-        "body": "<!-- tuya-triage-bot -->\nI see these fingerprints are mapped in the Tuya Unified Zigbee app(https://github.com/dlnraja/com.tuya.zigbee) v9.0.192: `_TZ3000_u3nv1jwk+TS0044` → **button_wireless_4**, `TS0044+TS0601` → **button_wireless**, `_TZ3000_+TS0044` → **universal_zigbee**, `ts0044+TS0601` → **button_wireless**, `_tz3000_u3nv1jwk+TS0044` → **button_wireless_4**, `_TZ3000_U3NV1JWK+TS0044` → **button_wireless_4**, `tuya+TS0601` → **device_generic_tuya_universal**, `TUYA+TS0601` → **device_gener",
-        "issueUrl": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues/76",
-        "issueNumber": "76"
       }
     ],
     "events": [
+      {
+        "createdAt": "2026-07-15T22:26:49Z",
+        "actor": "dlnraja",
+        "type": "PushEvent",
+        "description": "pushed master (0 commits)"
+      },
+      {
+        "createdAt": "2026-07-15T22:25:18Z",
+        "actor": "dlnraja",
+        "type": "PushEvent",
+        "description": "pushed stable-v5 (0 commits)"
+      },
+      {
+        "createdAt": "2026-07-15T22:25:04Z",
+        "actor": "github-actions[bot]",
+        "type": "PushEvent",
+        "description": "pushed master (0 commits)"
+      },
+      {
+        "createdAt": "2026-07-15T22:24:14Z",
+        "actor": "dlnraja",
+        "type": "PushEvent",
+        "description": "pushed master (0 commits)"
+      },
+      {
+        "createdAt": "2026-07-15T22:08:32Z",
+        "actor": "dlnraja",
+        "type": "PushEvent",
+        "description": "pushed master (0 commits)"
+      },
+      {
+        "createdAt": "2026-07-15T22:06:00Z",
+        "actor": "dlnraja",
+        "type": "PushEvent",
+        "description": "pushed master (0 commits)"
+      },
+      {
+        "createdAt": "2026-07-15T22:04:20Z",
+        "actor": "dlnraja",
+        "type": "IssueCommentEvent",
+        "description": "commented on #506: Temp and humidity sensor"
+      },
       {
         "createdAt": "2026-07-15T21:54:24Z",
         "actor": "dlnraja",
@@ -512,48 +554,6 @@
         "actor": "dlnraja",
         "type": "PushEvent",
         "description": "pushed stable-v5 (0 commits)"
-      },
-      {
-        "createdAt": "2026-07-15T19:36:38Z",
-        "actor": "dlnraja",
-        "type": "PushEvent",
-        "description": "pushed master (0 commits)"
-      },
-      {
-        "createdAt": "2026-07-15T19:33:07Z",
-        "actor": "github-actions[bot]",
-        "type": "PushEvent",
-        "description": "pushed master (0 commits)"
-      },
-      {
-        "createdAt": "2026-07-15T19:29:39Z",
-        "actor": "dlnraja",
-        "type": "PushEvent",
-        "description": "pushed master (0 commits)"
-      },
-      {
-        "createdAt": "2026-07-15T19:27:22Z",
-        "actor": "dlnraja",
-        "type": "PushEvent",
-        "description": "pushed stable-v5 (0 commits)"
-      },
-      {
-        "createdAt": "2026-07-15T19:27:03Z",
-        "actor": "dlnraja",
-        "type": "PushEvent",
-        "description": "pushed master (0 commits)"
-      },
-      {
-        "createdAt": "2026-07-15T19:22:33Z",
-        "actor": "dlnraja",
-        "type": "PushEvent",
-        "description": "pushed master (0 commits)"
-      },
-      {
-        "createdAt": "2026-07-15T19:20:43Z",
-        "actor": "github-actions[bot]",
-        "type": "PushEvent",
-        "description": "pushed master (0 commits)"
       }
     ],
     "recentPRs": [
@@ -876,7 +876,7 @@
         "createdAt": "2025-07-25T01:07:08.482Z",
         "lastPostedAt": "2026-07-15T19:09:17.227Z",
         "postsCount": 2036,
-        "views": 22385,
+        "views": 22397,
         "likeCount": 450,
         "posts": [
           {
@@ -1009,7 +1009,7 @@
         "createdAt": "2020-02-26T09:12:23.664Z",
         "lastPostedAt": "2026-06-30T17:50:44.858Z",
         "postsCount": 1159,
-        "views": 175853,
+        "views": 175854,
         "likeCount": 683,
         "posts": [
           {
@@ -1340,18 +1340,7 @@
     ]
   },
   "emails": {},
-  "crashLogs": [
-    {
-      "name": "crash-analysis.json",
-      "sizeKB": 0,
-      "modified": "2026-07-15T17:44:33.384Z"
-    },
-    {
-      "name": "diagnostics-report.json",
-      "sizeKB": 1,
-      "modified": "2026-07-15T08:01:46.964Z"
-    }
-  ],
+  "crashLogs": [],
   "state": {
     "lastGHFetch": "2026-07-13T00:00:00Z",
     "lastForumFetch": "2026-07-13T00:00:00Z"

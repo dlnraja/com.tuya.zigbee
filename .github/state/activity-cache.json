@@ -1,5 +1,5 @@
 {
-  "timestamp": 1784152878030,
+  "timestamp": 1784183160073,
   "data": {
     "gh": {
       "openIssues": [
@@ -35,6 +35,11 @@
         }
       ],
       "recentComments": [
+        {
+          "n": "506",
+          "u": "dlnraja",
+          "b": "@Lalla80111 Just checking in again — we have released several versions since your last reply (v9.0.252, v9.0.258, v9.0.261, v9.0.263, v9.0.266, and v9.0.269 are all on the test channel). The crash you"
+        },
         {
           "n": "506",
           "u": "dlnraja",
@@ -79,11 +84,6 @@
           "n": "511",
           "u": "dlnraja",
           "b": "Hi @stephanmaastricht 👋\\n\\nThanks again for your detailed investigation — you were right. After deep cross-referencing, I found two issues:\\n\\n## Bug 1: Your fingerprint was actually present, but the"
-        },
-        {
-          "n": "511",
-          "u": "stephanmaastricht",
-          "b": "Hi Dylan, i have no idea how this works its AI talking to me :-)\n\nI found the likely cause.\n\nIn the current `drivers/soil_sensor/driver.compose.json`, the `manufacturerName` list does not contain:\n\n_T"
         }
       ]
     },
@@ -131,17 +131,6 @@
         "excerpt": ""
       }
     ],
-    "crashes": [
-      {
-        "name": "crash-analysis.json",
-        "sizeKB": 0,
-        "modified": "2026-07-15T17:44:33.384Z"
-      },
-      {
-        "name": "diagnostics-report.json",
-        "sizeKB": 1,
-        "modified": "2026-07-15T08:01:46.964Z"
-      }
-    ]
+    "crashes": null
   }
 }
