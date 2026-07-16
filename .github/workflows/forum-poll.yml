@@ -1,0 +1,93 @@
+name: 🌍 Forum Poll (P69)
+
+on:
+  schedule:
+    # Every 4 hours (02, 06, 10, 14, 18, 22 UTC). Coordinates with
+    # - 02:00 UTC: mega-crawl (also polls forum)
+    # - */4 cron: auto-enrich-closed-loop
+    # Dedicated run for redundancy and clearer logs.
+    - cron: '15 2,6,10,14,18,22 * * *'
+  workflow_dispatch:
+    inputs:
+      topic_id:
+        description: 'Homey forum topic ID (default 140352 — Universal TUYA Zigbee)'
+        required: false
+        type: string
+        default: '140352'
+      max_posts:
+        description: 'Max posts to fetch per topic'
+        required: false
+        type: string
+        default: '20'
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: forum-poll
+  cancel-in-progress: false
+
+defaults:
+  run:
+    shell: bash
+
+env:
+  NODE_VERSION: '22'
+
+jobs:
+  forum-poll:
+    name: 🌍 Poll Homey Forum
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: 📥 Checkout
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 📦 Setup Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+
+      - name: 📦 Install deps
+        run: |
+          if [ -f package.json ]; then
+            npm ci --prefer-offline --no-audit || npm install --no-audit
+          else
+            echo "No package.json"
+          fi
+
+      - name: 🌍 Poll Forum
+        id: poll
+        run: |
+          TOPIC="${{ inputs.topic_id || '140352' }}"
+          MAX="${{ inputs.max_posts || '20' }}"
+          echo "## 🌍 Forum Poll" >> $GITHUB_STEP_SUMMARY
+          echo "Topic ID: $TOPIC, Max posts: $MAX" >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+          node tools/ci/forum-poll.js --topic="$TOPIC" --max="$MAX" 2>&1 | tee forum-poll.log || echo "FORUM_SKIP"
+          echo '```' >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          if [ -f .github/state/forum/latest.json ]; then
+            echo "### Latest forum state" >> $GITHUB_STEP_SUMMARY
+            echo '```json' >> $GITHUB_STEP_SUMMARY
+            head -c 2000 .github/state/forum/latest.json >> $GITHUB_STEP_SUMMARY
+            echo '' >> $GITHUB_STEP_SUMMARY
+            echo '```' >> $GITHUB_STEP_SUMMARY
+          fi
+
+      - name: 📦 Upload artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: forum-poll
+          path: |
+            .github/state/forum/
+            forum-poll.log
+          if-no-files-found: warn
+          retention-days: 7
