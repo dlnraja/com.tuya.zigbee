@@ -58,9 +58,6 @@ jobs:
   check:
     runs-on: ubuntu-latest
     timeout-minutes: 2
-    defaults:
-      run:
-        shell: bash
     outputs:
       is_safe: ${{ steps.verify.outputs.is_safe }}
       delete_allowed: ${{ steps.verify.outputs.delete_allowed }}
