@@ -1,7 +1,3 @@
-defaults:
-  run:
-    shell: bash
-
 # Upstream Guard — Reusable workflow
 #
 # This is a REUSABLE workflow that other workflows can call
@@ -119,4 +115,4 @@ jobs:
             exit 1
           else
             echo "  ✓ No upstream writes in active workflows"
-          fi\n
+          fi
