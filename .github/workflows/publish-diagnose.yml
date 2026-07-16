@@ -74,13 +74,7 @@ jobs:
           echo "## 🩺 Per-job status" >> $GITHUB_STEP_SUMMARY
           echo "| Job | Status | Conclusion | Started | Completed |" >> $GITHUB_STEP_SUMMARY
           echo "|-----|--------|------------|---------|-----------|" >> $GITHUB_STEP_SUMMARY
-          gh run view "$RUN_ID" --json jobs \
-            | python3 -c "
-              import sys, json
-              d = json.load(sys.stdin)
-              for j in d['jobs']:
-                print(f\"| {j['name']} | {j['status']} | {j.get('conclusion','-')} | {j.get('startedAt','-')} | {j.get('completedAt','-')} |\")
-            " >> $GITHUB_STEP_SUMMARY
+          gh run view "$RUN_ID" --json jobs | python3 scripts/ci/per-job-status.py >> $GITHUB_STEP_SUMMARY
 
       - name: 🔎 Detect failure mode
         id: detect
@@ -90,19 +84,7 @@ jobs:
         run: |
           RUN_ID="${{ steps.find_run.outputs.run_id }}"
           # Look at all jobs to figure out the failure mode
-          FAIL_MODE=$(gh run view "$RUN_ID" --json jobs \
-            | python3 -c "
-              import sys, json
-              d = json.load(sys.stdin)
-              for j in d['jobs']:
-                if j.get('conclusion') == 'failure':
-                  name = j['name']
-                  for s in j['steps']:
-                    if s.get('conclusion') == 'failure':
-                      print(f'{name}|{s[\"name\"]}')
-                      sys.exit(0)
-              print('unknown|none')
-            ")
+          FAIL_MODE=$(gh run view "$RUN_ID" --json jobs | python3 scripts/ci/find-failure-mode.py | head -1)
           JOB_NAME=$(echo "$FAIL_MODE" | cut -d'|' -f1)
           STEP_NAME=$(echo "$FAIL_MODE" | cut -d'|' -f2)
           echo "## 🔎 Failure mode: \`$JOB_NAME\` → \`$STEP_NAME\`" >> $GITHUB_STEP_SUMMARY
