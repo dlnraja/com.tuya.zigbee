@@ -1,295 +1,64 @@
-# HOMEYIGNORE - Tuya Zigbee Master Branch
-# ╔══════════════════════════════════════════════════════════════╗
-# ║  ARCHIVE SIZE RULES (enforced by athom-archive-audit.js)    ║
-# ║  Target: < 20MB compressed / < 55MB uncompressed            ║
-# ║  Athom hard limit: ~30MB compressed (processing failed if >) ║
-# ║  Root cause v8.1.7+: .diag/ was NOT excluded → 55MB bloat   ║
-# ╚══════════════════════════════════════════════════════════════╝
-#
-# CRITICAL RULE: NO *.json wildcard — it breaks runtime deps.
-# CRITICAL RULE: NO *.md wildcard at root — Homey requires README.md.
-# Only exclude specific dev/CI files, NEVER use broad wildcards.
-
-# === CI/CD & Dev Infrastructure ===
-.github/
-.githooks/
-.git/
-.windsurf/
-.vscode/
-.idea/
-.vs/
-.agents/
-scripts/
-docs/
-references/
-backup/
-project-data/
-data/community-sync/
-data/temp_desktop_cleanup/
-data/intel-harvest/
-data/archive/
-reimplementation_gateway/
-diagnostics/
-reports/
-logs/
-.archive/
-.git-rewrite/
-skills/
-scratch/
-tmp_artifacts/
-screenshots/
-
-# === CRITICAL — Diagnostic & CI artifacts (55MB bloat source — DO NOT REMOVE) ===
-.diag/
-.memory/
-.ai/
-.gemini/
-.claude/
-.antigravityignore
-
-# === Dev config files ===
-.cascade
-.windsurfrules
-.cursorrules
-.clinerule
-.clinerules
-.gemini/
-.nycrc
-.prettierrc
-.prettierrc.*
-.prettierignore
-.eslintrc.*
-eslint.config.js
-jest.config.js
-karma.conf.js
-babel.config.js
-webpack.config.js
-rollup.config.js
-vite.config.js
-.env
-.env.*
-config.local.js
-secrets.json
-credentials.json
-
-# === Build/cache/deps ===
-node_modules/
-.npm/
-.nyc_output/
-.homeybuild/
-build/
-dist/
-out/
-target/
-temp/
-tmp/
-package-lock.json
-.cache/
-.tmp/
-
-# === Root-level dev artifacts (CRITICAL — causing Processing failed via 65MB+ archive) ===
-stable_app.json
-tuya_z2m.ts
-fix_build_errors.js
-full_diff.txt
-packed_files.txt
-packed_files_details.txt
-*.backup
-*.backup2
-*.dedup-backup
-*.dedup-backup2
-repomix-*.md
-repomix-*.txt
-
-# === Large dev data JSON files (NOT needed at runtime) ===
+# P74: exclude operational/tooling from Homey build
+data/mfs_db.json.bak.1783880141728
+data/mfs_db.json.bak.1783880329430
+data/mfs_db.json.bak.1783880467275
+data/mfs_db.json.bak.1783893265074
+data/mfs_db.json.bak.1783893619736
+data/mfs_db.json.bak.1783915239312
+data/mfs_db.json.bak.1784138540321
+data/z2m_cache.json
+data/dp_registry.json
+data/z2m_herdsman_cache.json
+data/z2m_expose_gap_report.json
+data/zg204_investigation.json
+data/community-sync
+data/intel-harvest
+data/temp_desktop_cleanup
+data/reference-urls.json
+data/full-rules-fix-report.json
+data/_used_mfrs.json
 data/bug-fixes-report.json
 data/bug-patterns.json
-data/COMMUNITY_ENRICHMENT_REPORT.json
-data/PHASE2_ENRICHMENT_REPORT.json
-data/full-rules-fix-report.json
-data/reference-urls.json
 data/community-intel.json
+data/COMMUNITY_ENRICHMENT_REPORT.json
+data/historical_mfs.json
+data/orphan_injection_plan.json
+data/orphan_injection_report.json
+data/mfs_db.json
+data/device_matrix.json
+data/homey_sdk3_audit.json
 data/universal_tuya_urls.json
+data/fingerprints.json
+data/dp_database.json
 data/rapport_data.json
-MANUFACTURER_IDS_AUDIT.json
-**/MANUFACTURER_IDS_AUDIT.json
-*.analysis.json
-
-# === Large lib/data JSON files (dev-only, NOT imported at runtime) ===
-lib/data/categorized_devices.json
-lib/data/enrichment_data.json
-lib/data/fingerprints_raw.json
-lib/data/fingerprint_map.json
-lib/data/generated_fingerprints.json
-lib/data/model_manufacturer_map.json
-lib/data/new_fingerprints.js
-lib/data/new_fingerprints.json
-lib/data/smart_fingerprints.js
-lib/data/z2m_devices.json
-lib/data/z2m_devices_full.json
-
-# === Dev-only engine (not imported by runtime code) ===
-lib/tuya-dp-engine/
-
-# === Documentation & AI context files (not needed at runtime) ===
-# NOTE: README.txt IS REQUIRED by SDK (App.js:1427 throws if missing)
-# NOTE: README.*.txt ARE required for multilingual App Store descriptions
-CHANGELOG.md
-CONTRIBUTING.md
-CODE_OF_CONDUCT.md
-LICENSE
-README.md
-PROJECT_INDEX.md
-AI_CONTEXT_MANDATE.md
-GLOBAL_IMPROVEMENT_PLAN.md
+data/PHASE2_ENRICHMENT_REPORT.json
+data/manufacturers.json
+data/driver-mapping-database.json
+reports
+scripts
+tools
+docs
+.github
+.archive
+.cache
+test
+tests
+examples
+reference pdf
+reimplementation_gateway
+assets/branding
+DEAD-SIMPLE-DELETION.ps1
+DO-EVERYTHING.ps1
+ONE-CLICK.ps1
+nul
+CLAUDE.md
 *.md
-!README.txt
-!README.nl.txt
-!README.de.txt
-!README.fr.txt
-# README.txt            ← DO NOT EXCLUDE — REQUIRED BY ATHOM SDK
-# README.nl.txt         ← DO NOT EXCLUDE — App Store NL description
-# README.de.txt         ← DO NOT EXCLUDE — App Store DE description
-# README.fr.txt         ← DO NOT EXCLUDE — App Store FR description
-drivers/**/README.txt
-
-# === Root dev scripts (non-runtime) ===
-_*.js
-_*.py
-*.ps1
-*.cmd
-*.bat
-*.patch
-*.py
-*.pdf
-
-# === Data files not needed ===
-*.csv
-**/*.csv
-*.log
-*.tmp
-*.zip
-*.tar.gz
-*.rar
-*.7z
 *.bak
-*.old
-*.orig
-*.swp
-*.swo
-*~
-backup-*
-**/*.backup*
-**/*.bak
-
-# === Windows reserved-name junk (PowerShell redirection pollution) — DO NOT REMOVE ===
-# These names cannot exist as files on Windows (they are device names), but a
-# broken `Out-File NUL` / `> NUL` redirection can create a real file that
-# fs.unlinkSync cannot delete. A NUL inside .homeybuild hangs tar-stream and
-# produces a 0-byte / corrupt archive = root cause of Athom "processing_failed".
-# Excluding them here is a last-resort guard if one slips back in.
-NUL
-CON
-PRN
-AUX
-COM1
-COM2
-COM3
-COM4
-COM5
-COM6
-COM7
-COM8
-COM9
-LPT1
-LPT2
-LPT3
-LPT4
-LPT5
-LPT6
-LPT7
-LPT8
-LPT9
-
-# === OS files ===
-.DS_Store
-Thumbs.db
-desktop.ini
-
-# === Test files ===
-test/
-tests/
-spec/
-*.test.js
-*.spec.js
-
-# === Assets NOT needed for runtime ===
-assets/branding/
-assets/templates/
-assets/README.md
-
-# === Non-runtime images (JPGs are never used by Homey SDK) ===
-**/*.jpg
-
-# === Learnmode SVGs (optional) ===
-**/learnmode.svg
-
-# === Driver PNG images — Archive Budget Control ===
-# FIX (2026-05-30): large.png files are now minuscule copies of small.png (~1KB each)
-# Total impact: 411 drivers × ~1KB = ~411KB (vs 13MB before) → archive stays under 15MB ✅
-# IMPORTANT: large.png MUST stay in repo — Homey CLI validate --level publish requires them
-# STRATEGY: Keep large.png (tiny copies) + exclude xlarge.png (not required by CLI)
-#
-# xlarge.png excluded (not required by Homey CLI validate or App Store)
-drivers/**/assets/images/xlarge.png
-drivers/**/assets/images/*xlarge*.png
-# Root-level xlarge excluded too
-assets/images/xlarge.png
-
-# === Root dev artifact text/diff files ===
-*.txt
-!README.txt
-!README.nl.txt
-!README.de.txt
-!README.fr.txt
-
-# === RUNTIME FILES — DO NOT EXCLUDE (required for App Store & Runtime) ===
-# app.json                          ← Homey manifest
-# package.json                      ← Node package
-# .homeychangelog.json              ← Store changelog
-# driver-mapping-database.json      ← DriverMappingLoader.js
-# data/fingerprints.json            ← DeviceFingerprintDB.js (lazy-loaded)
-# lib/tuya/fingerprints.json        ← tuya-engine/index.js:14
-# lib/tuya/profiles.json            ← tuya-engine/index.js:15
-# lib/tuya/capability-map.json      ← tuya-dp-engine
-# locales/*.json                    ← lib/util/index.js:131
-# assets/icon.svg                   ← Athom SDK3 App.js:618 (iconHash)
-# assets/images/small.png           ← Required
-# assets/images/large.png           ← Required
-# drivers/*/assets/icon.svg         ← Required per driver
-# drivers/*/assets/images/small.png ← Required
-# drivers/*/assets/images/large.png ← Required
-
-# === ADDED BY fix-all-blocking.js ===
-
-# Backup file - dev only
-driver-mapping-database.json.dedup-backup
-
-data/archive/collisions.json
-data/archive/icons_grid.html
-data/archive/icons_grid_dark.html
-reference pdf/
-# Fingerprint DB full backup (11MB � not needed at runtime)
-data/fingerprints.json.full-backup
-
-
-app.json.pre-compact-backup
-.homeycompose.temp_bak/
-
-# v9.0.54: Reduce archive size
-assets/branding/
-tests/
-*.backup*
-orphan_*.json
-orphan_*.txt
-*.patch
+*.tmp
+*.log
+*.ts
+jest.config.js
+orphan_injection_plan.json
+orphan_injection_report.json
+historical_mfs.json
+driver-mapping-database.json
