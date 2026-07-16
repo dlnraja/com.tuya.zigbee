@@ -1,6 +1,6 @@
 'use strict';
 const CI = require('../../lib/utils/CaseInsensitiveMatcher');
-const { safeSetTimeout, safeClearTimeout, isDestroyed } = require('../../../lib/utils/safe-timers');
+const { safeSetTimeout, safeClearTimeout, isDestroyed } = require('../../lib/utils/safe-timers');
 const { getManufacturer, getModelId } = require('../../lib/helpers/DeviceDataHelper');
 const SleepyInit = require('../../lib/utils/SleepyDeviceInit');
 
