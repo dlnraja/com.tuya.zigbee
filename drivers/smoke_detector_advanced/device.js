@@ -2,6 +2,7 @@
 
 // v8.4.2: REMOVED unused CLUSTERS import to prevent lint warnings
 const { UnifiedSensorBase } = require('../../lib/devices/UnifiedSensorBase');
+const { safeSetCapabilityValue } = require('../../lib/utils/SafeCapability');
 
 /**
  * SMOKE DETECTOR ADVANCED - v5.5.503
@@ -60,7 +61,7 @@ class SmokeDetectorAdvancedDevice extends UnifiedSensorBase {
                 device.driver?.homey?.flow?.getDeviceTriggerCard('smoke_detector_advanced_battery_low')?.trigger(device, {}).catch(() => {});
               }
             }
-            device.safeSetCapabilityValue('measure_battery', battery).catch(() => {});
+            safeSetCapabilityValue(device, 'measure_battery', battery).catch(() => {});
             return null;
           }
           return v;
