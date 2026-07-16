@@ -6,7 +6,9 @@ name: Gmail Diagnostics Auto-Analysis
 
 on:
   schedule:
-    - cron: '0 22 * * 0'    # Weekly sweep (Sunday 22:00 UTC)
+    # R69: every 6 hours (00, 06, 12, 18 UTC) for faster turnaround
+    # Auto-enrich-closed-loop.yml runs every 4h and includes gmail scan
+    - cron: '0 0,6,12,18 * * *'
   workflow_dispatch:
     inputs:
       all_history:
