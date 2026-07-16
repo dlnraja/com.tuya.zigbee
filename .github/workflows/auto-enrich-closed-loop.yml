@@ -1,0 +1,138 @@
+name: 🔄 Auto-Enrich Closed Loop (P69)
+
+on:
+  schedule:
+    # Every 4 hours (00, 04, 08, 12, 16, 20 UTC). Coordinates with:
+    # - 02:00 UTC: mega-crawl (full sweep)
+    # - 03:30 UTC: recurrent-orchestrator
+    # - 04:00 UTC: safe-sync-stable
+    # - 04:15 UTC: blakadder-fetch
+    # - 22:00 UTC Sunday: gmail diagnostics
+    # - 30 3 *: nightly audit
+    - cron: '0 */4 * * *'
+  workflow_dispatch:
+    inputs:
+      skip_crawl:
+        description: 'Skip external crawling (faster dry-run)'
+        required: false
+        type: boolean
+        default: false
+      dry_run:
+        description: 'Dry run (no commits)'
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+concurrency:
+  group: auto-enrich-loop
+  cancel-in-progress: false
+
+defaults:
+  run:
+    shell: bash
+
+env:
+  NODE_VERSION: '22'
+  HOMEY_PUBLISH_MAX_UNCOMPRESSED_MB: "30"
+  HOMEY_PUBLISH_SOURCE_MAX_MB: "30"
+  HOMEY_ZIGBEE_MAX_TOTAL_COMBOS: "30000"
+  HOMEY_ZIGBEE_MAX_DRIVER_COMBOS: "1000"
+
+jobs:
+  closed-loop:
+    name: 🔄 Run Closed Loop
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      GH_PAT: ${{ secrets.GH_PAT }}
+      GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+      GMAIL_EMAIL: ${{ secrets.GMAIL_EMAIL }}
+      GMAIL_CLIENT_ID: ${{ secrets.GMAIL_CLIENT_ID }}
+      GMAIL_CLIENT_SECRET: ${{ secrets.GMAIL_CLIENT_SECRET }}
+      GMAIL_REFRESH_TOKEN: ${{ secrets.GMAIL_REFRESH_TOKEN }}
+      HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+      HOMEY_PAT_API: ${{ secrets.HOMEY_PAT_API }}
+
+    steps:
+      - name: 📥 Checkout
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 📦 Setup Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+
+      - name: 📦 Install deps
+        run: |
+          if [ -f package.json ]; then
+            npm ci --prefer-offline --no-audit || npm install --no-audit
+          else
+            echo "No package.json"
+          fi
+
+      # P55: restore scanner cache
+      - name: 📥 Restore scanner caches
+        uses: actions/cache@v4
+        with:
+          path: |
+            .cache/scanner-blobs/
+            .cache/scraper-cache/
+          key: auto-enrich-cache-${{ github.run_id }}
+          restore-keys: |
+            auto-enrich-cache-
+
+      - name: 🔄 Run Closed Loop
+        id: loop
+        run: |
+          ARGS=""
+          if [ "${{ inputs.skip_crawl }}" = "true" ]; then ARGS="$ARGS --skip-crawl"; fi
+          if [ "${{ inputs.dry_run }}" = "true" ]; then ARGS="$ARGS --dry-run"; fi
+          echo "## 🔄 Auto-Enrich Closed Loop" >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+          node tools/ci/auto-enrich-closed-loop.js $ARGS 2>&1 | tee auto-enrich.log
+          echo '```' >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          if [ -f .github/state/auto-enrich/loop.json ]; then
+            echo "### Summary JSON" >> $GITHUB_STEP_SUMMARY
+            echo '```json' >> $GITHUB_STEP_SUMMARY
+            cat .github/state/auto-enrich/loop.json >> $GITHUB_STEP_SUMMARY
+            echo '' >> $GITHUB_STEP_SUMMARY
+            echo '```' >> $GITHUB_STEP_SUMMARY
+          fi
+
+      - name: 📦 Upload artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: auto-enrich-loop
+          path: |
+            .github/state/auto-enrich/
+            auto-enrich.log
+          if-no-files-found: warn
+          retention-days: 14
+
+      # Auto-PR if loop discovered new FPs
+      - name: 🔀 Open PR if changes
+        if: steps.loop.outputs.committed == 'true' && github.event_name != 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const loop = JSON.parse(fs.readFileSync('.github/state/auto-enrich/loop.json', 'utf8'));
+            if (loop.errors.length > 0) {
+              core.setFailed(`Auto-enrich loop completed with ${loop.errors.length} errors. See artifacts.`);
+              return;
+            }
+            // No PR for scheduled runs - just push to master
+            // safe-sync-stable handles the stable-v5 sync separately
+            console.log('Loop completed. Changes committed to master.');
