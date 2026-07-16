@@ -35,22 +35,7 @@ jobs:
             --workflow "🚀 Publish Stable to Test" \
             --limit 5 \
             --json databaseId,status,createdAt,updatedAt \
-            | python3 -c "
-              import sys, json, datetime
-              d = json.load(sys.stdin)
-              now = datetime.datetime.now(datetime.timezone.utc)
-              stuck = []
-              for r in d:
-                if r['status'] == 'in_progress':
-                  started = datetime.datetime.fromisoformat(r['createdAt'].replace('Z', '+00:00'))
-                  age_min = (now - started).total_seconds() / 60
-                  if age_min > 90:
-                    stuck.append(f\"{r['databaseId']} ({age_min:.0f}min)\")
-              if stuck:
-                print('\\n'.join(stuck))
-              else:
-                print('OK')
-            ")
+            | python3 scripts/ci/find-stuck-runs.py)
           echo "## 🔍 Stuck publish runs (>90 min in_progress)" >> $GITHUB_STEP_SUMMARY
           echo "$STUCK_RUNS" >> $GITHUB_STEP_SUMMARY
           echo "stuck_runs=$STUCK_RUNS" >> $GITHUB_OUTPUT
