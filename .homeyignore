@@ -28,13 +28,14 @@ data/mfs_db.json
 data/device_matrix.json
 data/homey_sdk3_audit.json
 data/universal_tuya_urls.json
-data/fingerprints.json
 data/dp_database.json
 data/rapport_data.json
 data/PHASE2_ENRICHMENT_REPORT.json
 data/manufacturers.json
-data/driver-mapping-database.json
 reports
+# P74.1: KEEP runtime files (Mandatory check M10):
+# - data/fingerprints.json  ← runtime fingerprints
+# - driver-mapping-database.json  ← runtime mapping
 scripts
 tools
 docs
