@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "bulb_dimmable_dimmer_turned_on",
+      "id": "bulb_dimmable_bulb_dimmable_dimmer_turned_on",
       "title": {
         "en": "Turned on",
         "fr": "Allumé"
@@ -13,7 +13,7 @@
       }
     },
     {
-      "id": "bulb_dimmable_dimmer_turned_off",
+      "id": "bulb_dimmable_bulb_dimmable_dimmer_turned_off",
       "title": {
         "en": "Turned off",
         "fr": "Éteint"
@@ -25,7 +25,7 @@
       }
     },
     {
-      "id": "bulb_dimmable_dimmer_dim_changed",
+      "id": "bulb_dimmable_bulb_dimmable_dimmer_dim_changed",
       "title": {
         "en": "Brightness changed",
         "fr": "Luminosité changée"
@@ -98,7 +98,7 @@
   ],
   "conditions": [
     {
-      "id": "bulb_dimmable_dimmer_is_on",
+      "id": "bulb_dimmable_bulb_dimmable_dimmer_is_on",
       "title": {
         "en": "Is turned !{{on|off}}",
         "fr": "Est !{{allumé|éteint}}"
@@ -128,7 +128,7 @@
   ],
   "actions": [
     {
-      "id": "bulb_dimmable_dimmer_turn_on",
+      "id": "bulb_dimmable_bulb_dimmable_dimmer_turn_on",
       "title": {
         "en": "Turn on",
         "fr": "Allumer"
@@ -140,7 +140,7 @@
       }
     },
     {
-      "id": "bulb_dimmable_dimmer_turn_off",
+      "id": "bulb_dimmable_bulb_dimmable_dimmer_turn_off",
       "title": {
         "en": "Turn off",
         "fr": "Éteindre"
@@ -152,7 +152,7 @@
       }
     },
     {
-      "id": "bulb_dimmable_dimmer_toggle",
+      "id": "bulb_dimmable_bulb_dimmable_dimmer_toggle",
       "title": {
         "en": "Toggle on or off",
         "fr": "Basculer"
@@ -164,7 +164,7 @@
       }
     },
     {
-      "id": "bulb_dimmable_dimmer_set_dim",
+      "id": "bulb_dimmable_bulb_dimmable_dimmer_set_dim",
       "title": {
         "en": "Set brightness to...",
         "fr": "Régler la luminosité à..."
