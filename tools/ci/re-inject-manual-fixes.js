@@ -54,11 +54,11 @@ const MANUAL_FIXES = [
   {
     id: 'p61-hobeian-water-leak-sensor',
     file: 'drivers/water_leak_sensor/driver.compose.json',
-    description: 'Peter #2090: HOBEIAN ZG-222Z water detector',
-    match: (mfrs) => ['HOBEIAN', 'hobeian', 'Hobeian'].some(x => mfrs.includes(x)),
-    addIfMissing: ['HOBEIAN', 'hobeian', 'Hobeian'],
-    addAtTop: true,
-    source: 'p61-fix',
+    description: 'Peter #2090: HOBEIAN ZG-222Z water detector — DISABLED in P74 (collision with sensor_contact_zigbee)',
+    match: (mfrs) => false, // P74: HOBEIAN | TS0601 collides with sensor_contact_zigbee (Hobeian ZG-301Z door sensor)
+    addIfMissing: [],
+    addAtTop: false,
+    source: 'p74-disabled',
   },
 ];
 
