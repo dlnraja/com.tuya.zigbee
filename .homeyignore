@@ -1,4 +1,10 @@
 # P74: exclude operational/tooling from Homey build
+# P74.6: global *.bak files (catches lib/tuya/fingerprints.json.bak.*)
+**/*.bak.*
+**/*.bak
+**/*.tmp
+**/*.old
+**/*.orig
 data/mfs_db.json.bak.1783880141728
 data/mfs_db.json.bak.1783880329430
 data/mfs_db.json.bak.1783880467275
@@ -62,3 +68,5 @@ jest.config.js
 orphan_injection_plan.json
 orphan_injection_report.json
 historical_mfs.json
+# P74.6: stable-v5 app.json artifact (committed by mistake in master)
+stable_app.json
