@@ -266,6 +266,12 @@
         "en": "Triggers when the battery voltage drops below the threshold (V). Default 2.5V for most sensors.",
         "fr": "Se déclenche quand la tension batterie descend sous le seuil (V). 2,5V par défaut pour la plupart des capteurs."
       },
+      "titleFormatted": {
+        "en": "Battery voltage is below [[voltage]]V",
+        "fr": "Tension batterie inférieure à [[voltage]]V",
+        "nl": "Batterijspanning lager dan [[voltage]]V",
+        "de": "Batteriespannung unter [[voltage]]V"
+      },
       "args": [
         {
           "name": "voltage",
@@ -279,13 +285,7 @@
             "de": "Schwelle (V)"
           }
         }
-      ],
-      "titleFormatted": {
-        "en": "Battery voltage is below",
-        "fr": "Tension batterie inférieure à",
-        "nl": "Batterijspanning lager dan",
-        "de": "Batteriespannung unter"
-      }
+      ]
     }
   ]
 }
