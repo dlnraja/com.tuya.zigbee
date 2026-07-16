@@ -28,6 +28,11 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
+      - name: 📥 Checkout
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 1
+
       - name: 🔍 Find recent publish runs
         id: find
         env:
