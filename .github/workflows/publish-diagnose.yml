@@ -18,6 +18,10 @@ on:
 permissions:
   contents: read
   actions: read
+defaults:
+  run:
+    shell: bash
+
 
 concurrency:
   group: publish-diagnose
