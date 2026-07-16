@@ -82,17 +82,17 @@ jobs:
       NODE_VERSION: '20'
 
     steps:
-      - name: Upstream guard (no writes to Johan)
-        id: guard
-        uses: ./.github/workflows/upstream-guard.yml
-        with:
-          target_repo: dlnraja/com.tuya.zigbee
-
       - name: Checkout
         uses: actions/checkout@v5
         with:
           fetch-depth: 50
           token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Upstream guard (no writes to Johan)
+        id: guard
+        uses: ./.github/workflows/upstream-guard.yml
+        with:
+          target_repo: dlnraja/com.tuya.zigbee
 
       - name: Setup Node
         uses: actions/setup-node@v5
@@ -223,7 +223,7 @@ jobs:
   post-comment:
     runs-on: ubuntu-latest
     needs: enrich
-    if: github.event_name == 'push' && steps.enrich.outcome == 'success'
+    if: github.event_name == 'push' && needs.enrich.result == 'success'
     permissions:
       pull-requests: write
     steps:
