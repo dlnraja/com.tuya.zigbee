@@ -1,6 +1,79 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-16T21:52:59.634Z",
+  "generatedAt": "2026-07-17T06:50:43.185Z",
   "description": "Known historical fingerprint collisions. CI fails only for collisions not listed here.",
-  "collisions": []
+  "collisions": [
+    {
+      "key": "_TZ3000_4fjiwweb|TS004F",
+      "drivers": [
+        "button_wireless_4",
+        "power_meter"
+      ],
+      "note": "Sacred Couple - 4-button vs generic power_meter fallback"
+    },
+    {
+      "key": "_TZ3000_abrsvsou|TS004F",
+      "drivers": [
+        "button_wireless_4",
+        "power_meter"
+      ],
+      "note": "Sacred Couple - 4-button vs generic power_meter fallback"
+    },
+    {
+      "key": "_TZ3000_b3mgfu0d|TS0014",
+      "drivers": [
+        "button_wireless_4",
+        "switch_1gang"
+      ],
+      "note": "Sacred Couple - 4-button vs switch_1gang fallback"
+    },
+    {
+      "key": "_TZ3000_czuyt8lz|TS0014",
+      "drivers": [
+        "button_wireless_4",
+        "switch_1gang"
+      ],
+      "note": "Sacred Couple - 4-button vs switch_1gang fallback"
+    },
+    {
+      "key": "_TZ3000_eqsair32|TS0003",
+      "drivers": [
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "note": "Sacred Couple - 3-gang specific vs switch_1gang fallback"
+    },
+    {
+      "key": "_TZ3000_eqsair32|TS0601",
+      "drivers": [
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "note": "Sacred Couple - 3-gang specific vs switch_1gang fallback"
+    },
+    {
+      "key": "_TZ3000_mrduubod|TS0014",
+      "drivers": [
+        "switch_1gang",
+        "wall_switch_4gang_1way"
+      ],
+      "note": "Sacred Couple - 4-gang specific vs switch_1gang fallback"
+    },
+    {
+      "key": "_TZ3000_mrduubod|TS0726",
+      "drivers": [
+        "switch_1gang",
+        "wall_switch_4gang_1way"
+      ],
+      "note": "Sacred Couple - 4-gang specific vs switch_1gang fallback"
+    },
+    {
+      "key": "_TZ3000_xabckq1v|TS0014",
+      "drivers": [
+        "button_wireless_4",
+        "switch_1gang"
+      ],
+      "note": "Sacred Couple - 4-button vs switch_1gang fallback"
+    }
+  ]
 }
