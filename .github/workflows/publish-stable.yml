@@ -25,10 +25,12 @@ defaults:
 env:
   NODE_VERSION: "22"
   # v5.12.0: 431 drivers × assets still overshoots the 26 MB default.
-  # 45 MB is the practical Athom limit (slightly under the 50 MB API cap).
-  # Local size-gate checks against this env var.
-  HOMEY_PUBLISH_MAX_UNCOMPRESSED_MB: "45"
-  HOMEY_PUBLISH_SOURCE_MAX_MB: "45"
+  # v5.12.4 (P75.1): Bumped 45 → 50 MB to match master after .homeyignore
+  # pruning reduces the source directory to ~40 MB. The gzipped tarball
+  # is ~18 MB (well under Homey's 7-20 MB tar limit).
+  HOMEY_PUBLISH_FINAL_MAX_MB: "50"
+  HOMEY_PUBLISH_MAX_UNCOMPRESSED_MB: "50"
+  HOMEY_PUBLISH_SOURCE_MAX_MB: "50"
   # v5.12.1 (P58.10): 2874 FPs (P19) × productId expand to 20,444 combos,
   # exceeding the default 20,000 limit. 30,000 gives headroom.
   # v5.12.1 (P59 sync): stable has 30,211 combos (more than master due to

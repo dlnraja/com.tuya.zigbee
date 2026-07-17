@@ -863,5 +863,8 @@
   },
   "9.0.216": {
     "en": "Stability improvements and Homey test build recovery."
+  },
+  "5.12.4": {
+    "en": "v5.12.4: Fix routing collision for TS0201 + _TZ3000_fllyghyj temp/humidity sensors (issue 506). Removed wrongly-classified LCD temp/humidity mfrs from air_quality_co2 and added to lcdtemphumidsensor. Stable-v5 sync from master v9.0.294."
   }
 }
