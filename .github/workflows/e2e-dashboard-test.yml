@@ -120,9 +120,7 @@ jobs:
               echo "::warning::Could not checkout stable-v5 worktree, using stable_app.json from master"
               cp master/stable_app.json stable/app.json
               if [ ! -f stable/package.json ]; then
-                cat > stable/package.json <<'PKG'
-{"name":"com.dlnraja.tuya.zigbee.stable","version":"5.12.4","main":"app.js"}
-PKG
+                printf '%s' '{"name":"com.dlnraja.tuya.zigbee.stable","version":"5.12.4","main":"app.js"}' > stable/package.json
               fi
               echo "STABLE_AVAILABLE=true" >> $GITHUB_OUTPUT
             else
