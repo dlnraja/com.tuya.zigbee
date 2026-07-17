@@ -1094,5 +1094,8 @@
   },
   "9.0.297": {
     "en": "v9.0.294: Fix routing collision for TS0201 + _TZ3000_fllyghyj temp/humidity sensors (issue 506). Removed wrongly-classified LCD temp/humidity mfrs from air_quality_co2 and added to lcdtemphumidsensor. Applied 52 canonical fingerprint gaps across 24 drivers. Bumped 24 . Fixed publish-stable.yml missing HOMEY_PUBLISH_FINAL_MAX_MB. 431 drivers, 2908 FPs."
+  },
+  "9.0.298": {
+    "en": "v9.0.294: Fix routing collision for TS0201 + _TZ3000_fllyghyj temp/humidity sensors (issue 506). Removed wrongly-classified LCD temp/humidity mfrs from air_quality_co2 and added to lcdtemphumidsensor. Applied 52 canonical fingerprint gaps across 24 drivers. Bumped 24 . Fixed publish-stable.yml missing HOMEY_PUBLISH_FINAL_MAX_MB. 431 drivers, 2908 FPs."
   }
 }
