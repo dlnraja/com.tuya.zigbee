@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "9.0.297",
+  "version": "9.0.298",
   "compatibility": ">=12.2.0",
   "platforms": [
     "local"
@@ -130782,13 +130782,7 @@
           "_tz3290_nkpxapoz",
           "_tz3290_yyax9ajf",
           "sonoff",
-          "_TZ3000_kfu8zapd",
-          "_TZ3000_xabckq1v",
-          "_TZ3000_czuyt8lz",
-          "_TZ3000_b3mgfu0d",
-          "_TZ3000_rco1yzb1",
-          "_TZ3000_abrsvsou",
-          "_TZ3000_4fjiwweb"
+          "_TZ3000_rco1yzb1"
         ]
       },
       "images": {
@@ -201013,8 +201007,7 @@
           "_tz3000_csflgqj2",
           "_tz3000_gwkzibhs",
           "_tz3000_pzui3skt",
-          "_tz3000_qja6nq5z",
-          "_TZ3000_ugi8ky6u"
+          "_tz3000_qja6nq5z"
         ],
         "productId": [
           "TS004F",
@@ -207944,8 +207937,7 @@
           "_tz3000_zeuulson",
           "_tz33000_d9yfgzur",
           "_tze204_e1hutaaj",
-          "_tze284_c8ipbljq",
-          "_TZ3000_eqsair32"
+          "_tze284_c8ipbljq"
         ]
       },
       "images": {
@@ -221756,8 +221748,7 @@
           "_TZ3000_tyg4yiat",
           "_TZ3002_PZAO9LS1",
           "HOBEIAN",
-          "hobeian",
-          "_TZ3000_mrduubod"
+          "hobeian"
         ],
         "productId": [
           "TS0726",
