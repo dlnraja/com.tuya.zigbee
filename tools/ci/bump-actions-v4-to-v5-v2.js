@@ -49,7 +49,33 @@ function walk(dir) {
 }
 
 function processFile(file, dryRun) {
-  const orig = fs.readFileSync(file, 'utf8');
+  // Detect UTF-16 BOM (0xFF 0xFE = UTF-16 LE) and skip — these files
+  // are not safe to rewrite as UTF-8 (the tool would corrupt them).
+  // Most CI workflow files are UTF-8, so this is a rare edge case.
+  const buf = fs.readFileSync(file);
+  if (buf[0] === 0xFF && buf[1] === 0xFE) {
+    console.log(`\n${path.relative(REPO, file)}: SKIPPED (UTF-16 LE BOM — not safe to rewrite)`);
+    return { changed: false, count: 0, skipped: true };
+  }
+  if (buf[0] === 0xEF && buf[1] === 0xBB && buf[2] === 0xBF) {
+    // UTF-8 BOM — strip it for processing, preserve on write
+    const orig = buf.toString('utf8').substring(1);
+    let text = orig;
+    const changes = [];
+    for (const { pattern, replace, reason } of BUMPS) {
+      text = text.replace(pattern, (m) => {
+        changes.push(`    - ${m} → ${replace} (${reason})`);
+        return replace;
+      });
+    }
+    if (text === orig) return { changed: false, count: 0 };
+    if (!dryRun) {
+      const fs2 = require('fs');
+      fs2.writeFileSync(file, '\uFEFF' + text, 'utf8');
+    }
+    return { changed: true, count: changes.length, changes, file };
+  }
+  const orig = buf.toString('utf8');
   let text = orig;
   const changes = [];
   for (const { pattern, replace, reason } of BUMPS) {
