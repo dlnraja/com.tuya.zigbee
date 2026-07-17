@@ -69,7 +69,7 @@ jobs:
       # Subsequent runs use 304 Not Modified for unchanged files → ~1s.
       # P55: also cache the smart-fetch cache (.cache/scraper-cache/)
       - name: 📥 Restore scanner caches
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: |
             .cache/scanner-blobs/
@@ -93,7 +93,7 @@ jobs:
           echo '```' >> $GITHUB_STEP_SUMMARY
 
       - name: 📦 Upload artifacts
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         if: always()
         with:
           name: mega-crawl-data

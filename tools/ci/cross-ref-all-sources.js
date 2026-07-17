@@ -227,7 +227,20 @@ const summary = {
   pairsBySourceCount: counts,
   newInUserOnly: newInUserOnly.length,
   inCanonicalNotDrivers: inCanonicalNotDrivers.length,
-  inMfsNotDrivers: inMfsNotDrivers.length
+  inMfsNotDrivers: inMfsNotDrivers.length,
+  // P75.3: include full lists so apply-canonical-gaps-final.js can read them
+  inCanonicalNotDriversList: inCanonicalNotDrivers.map(e => ({
+    mfr: e.mfr, pid: e.pid,
+    drivers: [...e.info].map(i => i.driver).filter(Boolean)
+  })),
+  inMfsNotDriversList: inMfsNotDrivers.map(e => ({
+    mfr: e.mfr, pid: e.pid,
+    driverHint: [...e.info].map(i => i.driverHint).filter(Boolean)[0] || null
+  })),
+  newInUserOnlyList: newInUserOnly.map(e => ({
+    mfr: e.mfr, pid: e.pid,
+    sources: [...e.sources]
+  }))
 };
 fs.writeFileSync('.github/state/mfr-pid-cross-ref.json', JSON.stringify(summary, null, 2));
 console.log('\nSaved summary to .github/state/mfr-pid-cross-ref.json');
