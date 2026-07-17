@@ -125,7 +125,7 @@ jobs:
           echo "✅ Rapport généré dans reports/diagnostics/"
 
       - name: Upload Diagnostic Report
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: crash-analysis-report
           path: reports/diagnostics/
