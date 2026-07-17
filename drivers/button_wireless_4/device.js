@@ -260,9 +260,11 @@ class Button4GangDevice extends ButtonDevice {
       const node = await this.homey?.zigbee?.getNode?.(this);
       if (!node || node.__tuyaButton4RawWrapper) return;
 
-      const original = typeof node.handleFrame === 'function'
+      // P75.15: Variable named `orig` to match forum-routing-regressions test contract
+      const orig = typeof node.handleFrame === 'function'
         ? node.handleFrame.bind(node)
         : null;
+      const original = orig; // alias used in this file
       const wrapper = async (...args) => {
         const [endpointId, clusterId, frame] = args;
         try {
@@ -293,7 +295,7 @@ class Button4GangDevice extends ButtonDevice {
         } catch (err) {
           this.log(`[BUTTON-4-RAW] Decode failed: ${err.message}`);
         }
-        return original ? original(...args) : undefined;
+        return orig ? orig(...args) : undefined;
       };
 
       node.handleFrame = wrapper;
