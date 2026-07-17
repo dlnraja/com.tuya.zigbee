@@ -80,7 +80,7 @@ jobs:
             fi
             exit $EXIT
           fi
-          echo "✓ Master validation PASS"
+          echo "Master validation PASS"
 
       - name: Bug hunter (master)
         id: bug-master
@@ -102,58 +102,77 @@ jobs:
             echo "(driver-health-check.js not present, skipping)"
           fi
 
-      - name: Checkout stable (separate repo, use Homey CLI)
+      - name: Checkout stable (P75.11: use git worktree to actually fetch stable-v5)
         id: checkout-stable
         run: |
+          # P75.11: The previous version only did `mkdir -p stable` and left it empty,
+          # which caused the validator to fail with:
+          #   "Could not find a valid Homey App at /path/stable/app.json: ENOENT"
+          # Now we use `git worktree add` to actually check out the stable-v5 branch.
           mkdir -p stable
-          # Stable is in the same monorepo (different branch in some setups)
-          # We use the release manifest instead
-          if [ -f master/stable_app.json ]; then
-            cp master/stable_app.json /tmp/stable_app.json
-            echo "✓ Found stable_app.json"
+          git fetch --depth=1 origin stable-v5:refs/remotes/origin/stable-v5 2>/dev/null || true
+          if git worktree add --detach stable origin/stable-v5 2>/dev/null; then
+            echo "Checked out stable-v5 branch into stable/"
+            echo "STABLE_AVAILABLE=true" >> $GITHUB_OUTPUT
           else
-            echo "::warning::stable_app.json not found in master — using master as proxy"
-            echo "STABLE_AVAILABLE=false" >> $GITHUB_OUTPUT
+            # Fallback: use the saved stable_app.json snapshot from master
+            if [ -f master/stable_app.json ]; then
+              echo "::warning::Could not checkout stable-v5 worktree, using stable_app.json from master"
+              cp master/stable_app.json stable/app.json
+              if [ ! -f stable/package.json ]; then
+                cat > stable/package.json <<'PKG'
+{"name":"com.dlnraja.tuya.zigbee.stable","version":"5.12.4","main":"app.js"}
+PKG
+              fi
+              echo "STABLE_AVAILABLE=true" >> $GITHUB_OUTPUT
+            else
+              echo "::warning::No stable source available, skipping stable validation"
+              echo "STABLE_AVAILABLE=false" >> $GITHUB_OUTPUT
+            fi
           fi
 
       - name: Validate stable (AggregateError + process errors)
         id: validate-stable
         run: |
-          if [ -d stable ]; then
-            cd stable
-            set +e
-            OUTPUT=$(npx homey app validate --level publish 2>&1)
-            EXIT=$?
-            set -e
-            echo "$OUTPUT" > /tmp/stable-validate.txt
-            if [ $EXIT -ne 0 ]; then
-              echo "::error::Stable validation FAILED (exit $EXIT)"
-              if echo "$OUTPUT" | grep -q "AggregateError"; then
-                echo "STABLE_AGGREGATE_ERROR=true" >> $GITHUB_OUTPUT
-              fi
-              if echo "$OUTPUT" | grep -qE "Error:|TypeError:|RangeError:|SyntaxError:"; then
-                echo "STABLE_PROCESS_ERROR=true" >> $GITHUB_OUTPUT
-              fi
-            else
-              echo "✓ Stable validation PASS"
+          if [ "${{ steps.checkout-stable.outputs.STABLE_AVAILABLE }}" != "true" ]; then
+            echo "(stable not available, skipping)"
+            exit 0
+          fi
+          if [ ! -f stable/app.json ]; then
+            echo "(stable/app.json missing after checkout, skipping)"
+            exit 0
+          fi
+          cd stable
+          set +e
+          OUTPUT=$(npx homey app validate --level publish 2>&1)
+          EXIT=$?
+          set -e
+          echo "$OUTPUT" > /tmp/stable-validate.txt
+          if [ $EXIT -ne 0 ]; then
+            echo "::error::Stable validation FAILED (exit $EXIT)"
+            if echo "$OUTPUT" | grep -q "AggregateError"; then
+              echo "STABLE_AGGREGATE_ERROR=true" >> $GITHUB_OUTPUT
+            fi
+            if echo "$OUTPUT" | grep -qE "Error:|TypeError:|RangeError:|SyntaxError:"; then
+              echo "STABLE_PROCESS_ERROR=true" >> $GITHUB_OUTPUT
             fi
           else
-            echo "(stable not available, skipping)"
+            echo "Stable validation PASS"
           fi
 
       - name: Build summary
         if: always()
         run: |
           {
-            echo "## 📊 E2E Dashboard Test — $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+            echo "## E2E Dashboard Test - $(date -u +%Y-%m-%dT%H:%M:%SZ)"
             echo ""
             echo "### Master (v9.x)"
-            echo "- Validation: ${{ steps.validate-master.outcome == 'success' && '✅ PASS' || '❌ FAIL' }}"
-            echo "- Bug hunter: ${{ steps.bug-master.outcome == 'success' && '✅ OK' || '⚠️ WARN' }}"
-            echo "- Driver health: ${{ steps.health-master.outcome == 'success' && '✅ OK' || '⚠️ WARN' }}"
+            echo "- Validation: ${{ steps.validate-master.outcome == 'success' && 'PASS' || 'FAIL' }}"
+            echo "- Bug hunter: ${{ steps.bug-master.outcome == 'success' && 'OK' || 'WARN' }}"
+            echo "- Driver health: ${{ steps.health-master.outcome == 'success' && 'OK' || 'WARN' }}"
             echo ""
             echo "### Stable (v5.x)"
-            echo "- Validation: ${{ steps.validate-stable.outcome == 'success' && '✅ PASS' || '❌ FAIL' }}"
+            echo "- Validation: ${{ steps.validate-stable.outcome == 'success' && 'PASS' || 'FAIL' }}"
             echo ""
             echo "**Run ID**: ${{ github.run_id }}"
             echo "**Trigger**: ${{ github.event_name }} ${{ github.event.schedule || github.event.workflow_run.head_branch || '' }}"
