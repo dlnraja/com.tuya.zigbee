@@ -1,0 +1,116 @@
+{
+  "timestamp": 1784269413635,
+  "data": {
+    "gh": {
+      "openIssues": [
+        {
+          "n": 439,
+          "t": "[Auto] New Tuya devices found in zigbee2mqtt",
+          "u": "github-actions[bot]",
+          "l": [
+            "enhancement",
+            "new-fingerprint",
+            "auto-scan"
+          ]
+        }
+      ],
+      "recentComments": [
+        {
+          "n": "506",
+          "u": "dlnraja",
+          "b": "Fixed in P75.2. The TS0201 / TS0222 / TY0201 productIds were removed from \\\u0007ir_quality_co2\\ (Homey routing prefers productId over manufacturerName — was stealing TS0201 from \\climate_sensor\\). The 4 w"
+        },
+        {
+          "n": "511",
+          "u": "dlnraja",
+          "b": "Fixed in P14.2 + P19 sync. The manufacturerName \\_TZE284_awepdiwi\\ has been added to the climate_sensor driver (which supports temp/humidity/battery measurements). The soil moisture DP is also handled"
+        },
+        {
+          "n": "506",
+          "u": "dlnraja",
+          "b": "<!-- diag-resolver -->\n### Auto-resolved by Diagnostic Resolver\n\nAll fingerprints in this issue found in **Tuya Unified Zigbee v9.0.294**:\n- `_TZ3000_fllyghyj` -> **climate_sensor**\n\n**Install:** http"
+        },
+        {
+          "n": "506",
+          "u": "dlnraja",
+          "b": "## Root cause found (P75.2)\n\nThanks @Lalla80111 for the detailed interview — this was super helpful. I finally found the actual root cause.\n\n### The bug\n\nYour device is **not** misidentified as Air Pu"
+        },
+        {
+          "n": "506",
+          "u": "dlnraja",
+          "b": "<!-- diag-resolver -->\n### Auto-resolved by Diagnostic Resolver\n\nAll fingerprints in this issue found in **Tuya Unified Zigbee v9.0.286**:\n- `_TZ3000_fllyghyj` -> **climate_sensor**\n\n**Install:** http"
+        },
+        {
+          "n": "506",
+          "u": "Lalla80111",
+          "b": "I uninstalled the app and removed the device in Homey, installed latest test version from link (9.0.261).\nConfirm the app is working and not crashing, but my device is still added as Unknown Device, b"
+        },
+        {
+          "n": "506",
+          "u": "dlnraja",
+          "b": "<!-- diag-resolver -->\n### Auto-resolved by Diagnostic Resolver\n\nAll fingerprints in this issue found in **Tuya Unified Zigbee v9.0.279**:\n- `_TZ3000_fllyghyj` -> **climate_sensor**\n\n**Install:** http"
+        },
+        {
+          "n": "506",
+          "u": "dlnraja",
+          "b": "<!-- diag-resolver -->\n### Auto-resolved by Diagnostic Resolver\n\nAll fingerprints in this issue found in **Tuya Unified Zigbee v9.0.274**:\n- `_TZ3000_fllyghyj` -> **climate_sensor**\n\n**Install:** http"
+        },
+        {
+          "n": "511",
+          "u": "dlnraja",
+          "b": "Hi @stephanmaastricht 👋\n\nJust to confirm: **v9.0.218 was a known crash from June** that has been fixed in many subsequent versions. The current test build is **v9.0.273** which includes:\n- 431 driver"
+        },
+        {
+          "n": "506",
+          "u": "dlnraja",
+          "b": "<!-- diag-resolver -->\n### Auto-resolved by Diagnostic Resolver\n\nAll fingerprints in this issue found in **Tuya Unified Zigbee v9.0.273**:\n- `_TZ3000_fllyghyj` -> **climate_sensor**\n\n**Install:** http"
+        }
+      ]
+    },
+    "forum": [
+      {
+        "topicId": 140352,
+        "title": "",
+        "username": "dlnraja",
+        "createdAt": "2025-07-25T01:07:08.539Z",
+        "excerpt": ""
+      },
+      {
+        "topicId": 26439,
+        "title": "",
+        "username": "Peter_van_Werkhoven",
+        "createdAt": "2025-06-07T16:43:53.992Z",
+        "excerpt": ""
+      },
+      {
+        "topicId": 147569,
+        "title": "",
+        "username": "Peter_Kawa",
+        "createdAt": "2025-12-22T11:02:12.854Z",
+        "excerpt": ""
+      },
+      {
+        "topicId": 148530,
+        "title": "",
+        "username": "Jolink",
+        "createdAt": "2026-01-05T11:11:27.849Z",
+        "excerpt": ""
+      },
+      {
+        "topicId": 145056,
+        "title": "",
+        "username": "Thunder",
+        "createdAt": "2025-11-07T16:07:54.328Z",
+        "excerpt": ""
+      },
+      {
+        "topicId": 78790,
+        "title": "",
+        "username": "Thunder",
+        "createdAt": "2026-01-28T12:33:25.343Z",
+        "excerpt": ""
+      }
+    ],
+    "crashes": null
+  }
+}
