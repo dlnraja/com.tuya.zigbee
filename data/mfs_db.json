@@ -83770,7 +83770,8 @@
       "manufacturerId": "_tz3000_kfu8zapd",
       "modelIds": [
         "TS0001",
-        "TS0601"
+        "TS0601",
+        "TS0044"
       ],
       "variants": [],
       "deviceType": "unknown",
@@ -83789,7 +83790,8 @@
       "sources": [
         "local",
         "z2m",
-        "hubitat"
+        "hubitat",
+        "user-data-cross-ref"
       ],
       "sourceDetails": {
         "local": 1,
@@ -83797,7 +83799,7 @@
         "hubitat": 2
       },
       "confidence": 0.25,
-      "lastSeen": "2026-06-19T20:58:49.761Z"
+      "lastSeen": "2026-07-17T03:19:18.664Z"
     },
     "_tz3000_kj0nwdz6": {
       "manufacturerId": "_tz3000_kj0nwdz6",
