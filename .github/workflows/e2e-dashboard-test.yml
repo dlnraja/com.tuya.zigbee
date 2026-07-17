@@ -102,7 +102,7 @@ jobs:
             echo "(driver-health-check.js not present, skipping)"
           fi
 
-      - name: Checkout stable (P75.11: use git worktree to actually fetch stable-v5)
+      - name: 'Checkout stable (P75.11 use git worktree to actually fetch stable-v5)'
         id: checkout-stable
         run: |
           # P75.11: The previous version only did `mkdir -p stable` and left it empty,
