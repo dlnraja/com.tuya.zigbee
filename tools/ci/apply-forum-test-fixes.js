@@ -10,6 +10,18 @@ const ROOTS = [
   { dir: path.join(__dirname, '..', '..', 'app.json'), name: 'app.json' },
 ];
 
+// P75.21: Skip-drivers that ALREADY claim the mfr in their catch-all manufacturerName list.
+// These drivers act as fallback Sacred Couple routers. The auto-fix-all bot treats
+// "mfr X exists in catch-all driver Y" as a "duplication" and removes it from the
+// specific driver (button_wireless_4, switch_3gang, etc.). This skip-list prevents
+// the bot from re-introducing the regression.
+const CATCH_ALL_MFRS = {
+  // switch_1gang has 100+ mfrs in its catch-all list. Any mfr from button_wireless_4,
+  // switch_3gang, wall_switch_4gang_1way, etc. that is already in switch_1gang
+  // will be skipped here to prevent the auto-fix-all bot from removing it.
+  switch_1gang: require('../../data/sacred-couple-catch-all.json').catchall || [],
+};
+
 const MFR_MAP = {
   button_wireless_4: [
     '_TZ3000_u3nv1jwk',
@@ -123,8 +135,25 @@ function applyToAppJson(driverId, mfrs) {
 
 let totalAdded = 0;
 for (const [driverId, mfrs] of Object.entries(MFR_MAP)) {
-  const c = applyToCompose(driverId, mfrs);
-  const a = applyToAppJson(driverId, mfrs);
+  // P75.21: Filter out mfrs that are already in a catch-all driver (switch_1gang).
+  // This prevents the auto-fix-all bot from re-introducing Sacred Couple regressions
+  // by removing the mfr from the specific driver (button_wireless_4, etc.) since it
+  // sees "duplication" with the catch-all.
+  const filteredMfrs = mfrs.filter(mfr => {
+    for (const [catchAllDriver, catchAllMfrs] of Object.entries(CATCH_ALL_MFRS)) {
+      if (driverId === catchAllDriver) return true; // Keep mfrs for the catch-all itself
+      if (catchAllMfrs.some(m => m.toLowerCase() === mfr.toLowerCase())) {
+        return false; // Skip — already in catch-all, would cause Sacred Couple collision
+      }
+    }
+    return true;
+  });
+  if (filteredMfrs.length === 0) {
+    console.log(`[${driverId}] all ${mfrs.length} mfrs skipped (already in catch-all switch_1gang)`);
+    continue;
+  }
+  const c = applyToCompose(driverId, filteredMfrs);
+  const a = applyToAppJson(driverId, filteredMfrs);
   const count = (c.added || []).length + (a.added || []).length;
   totalAdded += count;
   if (count > 0) {
