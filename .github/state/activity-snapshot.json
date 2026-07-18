@@ -1,7 +1,25 @@
 {
-  "fetchedAt": "2026-07-17T06:23:31.543Z",
+  "fetchedAt": "2026-07-18T06:11:06.545Z",
   "github": {
     "openIssues": [
+      {
+        "number": 512,
+        "title": "Driver Maintenance — 0 scaffolded, 75 conflicts",
+        "state": "open",
+        "createdAt": "2026-07-17T06:46:03Z",
+        "updatedAt": "2026-07-17T06:48:19Z",
+        "user": "dlnraja",
+        "labels": [
+          "automated",
+          "fingerprints",
+          "drivers",
+          "config",
+          "maintenance"
+        ],
+        "commentsCount": 0,
+        "body": "## Automated Driver Maintenance\n\n### Auto-Scaffold Results\n- **Scaffolded**: 0 new drivers created from Johan SDK3\n- **FPs added**: 26 uncovered FPs added to existing drivers\n- **Cross-class conflicts**: 75\n\n### Conflict Audit\n- **High severity PID conflicts**: 75\n- **MFR+PID duplicates (real risk)**: 2\n- **Orphan drivers**: 63\n- **Split suggestions**: 75\n\n### Reports\n- `driver-scaffold-report.json` — full scaffold details\n- `driver-conflict-audit.json` — full conflict analysis\n\n### Review checklist\n- [ ] Review scaffolded drivers — add DP mappings to device.js\n- [ ] Review high-severity conflicts — consider splitting drivers\n- [ ] 🤖 **Dynamic Heuristic Check**: Do not hardcode `onoff.2` or standard alarm capabilities in `app.json` if `UniversalVariantManager` handles them dynamically.\n- [ ] Validate with `npx homey app validate`",
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/pull/512"
+      },
       {
         "number": 439,
         "title": "[Auto] New Tuya devices found in zigbee2mqtt",
@@ -23,6 +41,21 @@
       }
     ],
     "recentIssues": [
+      {
+        "number": 512,
+        "title": "Driver Maintenance — 0 scaffolded, 75 conflicts",
+        "state": "open",
+        "createdAt": "2026-07-17T06:46:03Z",
+        "user": "dlnraja",
+        "labels": [
+          "automated",
+          "fingerprints",
+          "drivers",
+          "config",
+          "maintenance"
+        ],
+        "body": "## Automated Driver Maintenance\n\n### Auto-Scaffold Results\n- **Scaffolded**: 0 new drivers created from Johan SDK3\n- **FPs added**: 26 uncovered FPs added to existing drivers\n- **Cross-class conflicts**: 75\n\n### Conflict Audit\n- **High severity PID conflicts**: 75\n- **MFR+PID duplicates (real risk)**: 2\n- **Orphan drivers**: 63\n- **Split suggestions**: 75\n\n### Reports\n- `driver-scaffold-report.json` — full scaffold details\n- `driver-conflict-audit.json` — full conflict analysis\n\n### Review checklist\n- [ ] Review scaffolded drivers — add DP mappings to device.js\n- [ ] Review high-severity conflicts — consider splitting drivers\n- [ ] 🤖 **Dynamic Heuristic Check**: Do not hardcode `onoff.2` or standard alarm capabilities in `app.json` if `UniversalVariantManager` handles them dynamically.\n- [ ] Validate with `npx homey app validate`"
+      },
       {
         "number": 511,
         "title": "Support Smart Solar Soil Sensor TS0601 (_TZE284_awepdiwi)",
@@ -94,6 +127,38 @@
       }
     ],
     "recentComments": [
+      {
+        "id": 5010070561,
+        "user": "dlnraja",
+        "createdAt": "2026-07-18T05:28:55Z",
+        "body": "Closing per your message: the device is functional (temp/humidity/battery working) and you're satisfied with the result. The homey:virtualdriverzigbee label appears when Homey caches an existing device entry from a prior version of the app — clearing the app cache + re-pairing after a fresh install should resolve it. If you ever want to dig deeper, just reply with a fresh diagnostic report.\n\nThanks for the patience and the detailed interview data — that was the key to finding the actual root cau",
+        "issueUrl": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues/506",
+        "issueNumber": "506"
+      },
+      {
+        "id": 5009109356,
+        "user": "dlnraja",
+        "createdAt": "2026-07-18T01:14:54Z",
+        "body": "<!-- diag-resolver -->\n### Auto-resolved by Diagnostic Resolver\n\nAll fingerprints in this issue found in **Tuya Unified Zigbee v9.0.300**:\n- `_TZ3000_fllyghyj` -> **climate_sensor**\n\n**Install:** https://homey.app/a/com.dlnraja.tuya.zigbee/test/\nRemove and re-pair your device after installing.\n\n**Troubleshooting:** https://github.com/dlnraja/com.tuya.zigbee/wiki/Troubleshooting\n\n> **Detected protocols:** unknown\n",
+        "issueUrl": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues/506",
+        "issueNumber": "506"
+      },
+      {
+        "id": 5007857441,
+        "user": "github-actions[bot]",
+        "createdAt": "2026-07-17T21:58:27Z",
+        "body": "<!-- tuya-reopen-bot -->\nThis issue has been **automatically reopened** because @Lalla80111 posted a new comment.\nIt will be reviewed in the next automation cycle.\n\n> If your device is still not working, please share:\n> 1. **Device Interview** from [Developer Tools](https://tools.developer.homey.app)\n> 2. **Diagnostic Report ID** from device settings",
+        "issueUrl": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues/506",
+        "issueNumber": "506"
+      },
+      {
+        "id": 5007855541,
+        "user": "Lalla80111",
+        "createdAt": "2026-07-17T21:58:15Z",
+        "body": "Thanx, for information now I'm at 9.0.300 but still it's using the \"homey:virtualdriverzigbee:driver\". Everything seems to be working fine.\nNot sure why but as long it's working I'm satisfied 🙂\nTried another device (same ID) and it's altso added as Zigbee Device.",
+        "issueUrl": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues/506",
+        "issueNumber": "506"
+      },
       {
         "id": 4998716777,
         "user": "dlnraja",
@@ -301,223 +366,207 @@
         "body": "<!-- diag-resolver -->\n### Set mainsPowered=true and remove measure_battery in onNodeInit\n\n**Action:** remove_battery_capability\n\n**Version:** v9.0.195\n",
         "issueUrl": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues/76",
         "issueNumber": "76"
-      },
-      {
-        "id": 4955799812,
-        "user": "dlnraja",
-        "createdAt": "2026-07-13T08:09:25Z",
-        "body": "<!-- diag-resolver -->\n### Set mainsPowered=true and remove measure_battery in onNodeInit\n\n**Action:** remove_battery_capability\n\n**Version:** v9.0.193\n",
-        "issueUrl": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues/76",
-        "issueNumber": "76"
-      },
-      {
-        "id": 4955730304,
-        "user": "dlnraja",
-        "createdAt": "2026-07-13T08:00:17Z",
-        "body": "<!-- diag-resolver -->\n### Set mainsPowered=true and remove measure_battery in onNodeInit\n\n**Action:** remove_battery_capability\n\n**Version:** v9.0.193\n",
-        "issueUrl": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues/76",
-        "issueNumber": "76"
-      },
-      {
-        "id": 4955459133,
-        "user": "dlnraja",
-        "createdAt": "2026-07-13T07:23:29Z",
-        "body": "<!-- diag-resolver -->\n### Set mainsPowered=true and remove measure_battery in onNodeInit\n\n**Action:** remove_battery_capability\n\n**Version:** v9.0.192\n",
-        "issueUrl": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues/76",
-        "issueNumber": "76"
-      },
-      {
-        "id": 4955383881,
-        "user": "dlnraja",
-        "createdAt": "2026-07-13T07:13:51Z",
-        "body": "<!-- diag-resolver -->\n### Set mainsPowered=true and remove measure_battery in onNodeInit\n\n**Action:** remove_battery_capability\n\n**Version:** v9.0.190\n",
-        "issueUrl": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues/76",
-        "issueNumber": "76"
       }
     ],
     "events": [
       {
-        "createdAt": "2026-07-17T03:55:46Z",
+        "createdAt": "2026-07-18T05:40:23Z",
         "actor": "dlnraja",
         "type": "PushEvent",
         "description": "pushed master (0 commits)"
       },
       {
-        "createdAt": "2026-07-17T03:52:08Z",
+        "createdAt": "2026-07-18T05:36:47Z",
         "actor": "github-actions[bot]",
         "type": "ReleaseEvent",
         "description": "ReleaseEvent"
       },
       {
-        "createdAt": "2026-07-17T03:50:34Z",
+        "createdAt": "2026-07-18T05:32:20Z",
         "actor": "dlnraja",
         "type": "PushEvent",
-        "description": "pushed stable-v5 (0 commits)"
+        "description": "pushed master (0 commits)"
       },
       {
-        "createdAt": "2026-07-17T03:49:27Z",
+        "createdAt": "2026-07-18T05:30:39Z",
         "actor": "github-actions[bot]",
         "type": "PushEvent",
         "description": "pushed master (0 commits)"
       },
       {
-        "createdAt": "2026-07-17T03:48:32Z",
+        "createdAt": "2026-07-18T05:29:51Z",
         "actor": "dlnraja",
         "type": "PushEvent",
         "description": "pushed master (0 commits)"
       },
       {
-        "createdAt": "2026-07-17T03:38:45Z",
-        "actor": "dlnraja",
-        "type": "PushEvent",
-        "description": "pushed master (0 commits)"
-      },
-      {
-        "createdAt": "2026-07-17T03:35:05Z",
-        "actor": "github-actions[bot]",
-        "type": "ReleaseEvent",
-        "description": "ReleaseEvent"
-      },
-      {
-        "createdAt": "2026-07-17T03:33:45Z",
+        "createdAt": "2026-07-18T05:28:55Z",
         "actor": "dlnraja",
         "type": "IssueCommentEvent",
         "description": "commented on #506: Temp and humidity sensor"
       },
       {
-        "createdAt": "2026-07-17T03:33:46Z",
+        "createdAt": "2026-07-18T05:28:55Z",
         "actor": "dlnraja",
         "type": "IssuesEvent",
         "description": "closed issue #506: Temp and humidity sensor"
       },
       {
-        "createdAt": "2026-07-17T03:33:28Z",
-        "actor": "dlnraja",
-        "type": "IssueCommentEvent",
-        "description": "commented on #511: Support Smart Solar Soil Sensor TS0601 (_TZE284_aw"
-      },
-      {
-        "createdAt": "2026-07-17T03:33:28Z",
-        "actor": "dlnraja",
-        "type": "IssuesEvent",
-        "description": "closed issue #511: Support Smart Solar Soil Sensor TS0601 (_TZE284_aw"
-      },
-      {
-        "createdAt": "2026-07-17T03:32:09Z",
+        "createdAt": "2026-07-18T03:22:33Z",
         "actor": "github-actions[bot]",
         "type": "PushEvent",
         "description": "pushed master (0 commits)"
       },
       {
-        "createdAt": "2026-07-17T03:31:28Z",
-        "actor": "dlnraja",
-        "type": "PushEvent",
-        "description": "pushed master (0 commits)"
-      },
-      {
-        "createdAt": "2026-07-17T03:20:36Z",
-        "actor": "dlnraja",
-        "type": "PushEvent",
-        "description": "pushed master (0 commits)"
-      },
-      {
-        "createdAt": "2026-07-17T03:16:55Z",
-        "actor": "github-actions[bot]",
-        "type": "ReleaseEvent",
-        "description": "ReleaseEvent"
-      },
-      {
-        "createdAt": "2026-07-17T03:10:15Z",
-        "actor": "dlnraja",
-        "type": "PushEvent",
-        "description": "pushed master (0 commits)"
-      },
-      {
-        "createdAt": "2026-07-17T02:53:58Z",
-        "actor": "github-actions[bot]",
-        "type": "PushEvent",
-        "description": "pushed master (0 commits)"
-      },
-      {
-        "createdAt": "2026-07-17T02:53:09Z",
-        "actor": "dlnraja",
-        "type": "PushEvent",
-        "description": "pushed master (0 commits)"
-      },
-      {
-        "createdAt": "2026-07-17T02:44:18Z",
-        "actor": "github-actions[bot]",
-        "type": "PushEvent",
-        "description": "pushed master (0 commits)"
-      },
-      {
-        "createdAt": "2026-07-17T02:43:17Z",
-        "actor": "dlnraja",
-        "type": "PushEvent",
-        "description": "pushed master (0 commits)"
-      },
-      {
-        "createdAt": "2026-07-17T01:34:29Z",
-        "actor": "dlnraja",
-        "type": "PushEvent",
-        "description": "pushed master (0 commits)"
-      },
-      {
-        "createdAt": "2026-07-17T01:30:51Z",
-        "actor": "github-actions[bot]",
-        "type": "ReleaseEvent",
-        "description": "ReleaseEvent"
-      },
-      {
-        "createdAt": "2026-07-17T01:27:59Z",
-        "actor": "github-actions[bot]",
-        "type": "PushEvent",
-        "description": "pushed master (0 commits)"
-      },
-      {
-        "createdAt": "2026-07-17T01:27:06Z",
-        "actor": "dlnraja",
-        "type": "PushEvent",
-        "description": "pushed master (0 commits)"
-      },
-      {
-        "createdAt": "2026-07-17T01:22:05Z",
+        "createdAt": "2026-07-18T01:14:54Z",
         "actor": "dlnraja",
         "type": "IssueCommentEvent",
         "description": "commented on #506: Temp and humidity sensor"
       },
       {
-        "createdAt": "2026-07-17T01:15:19Z",
+        "createdAt": "2026-07-17T21:58:27Z",
+        "actor": "github-actions[bot]",
+        "type": "IssueCommentEvent",
+        "description": "commented on #506: Temp and humidity sensor"
+      },
+      {
+        "createdAt": "2026-07-17T21:58:27Z",
+        "actor": "github-actions[bot]",
+        "type": "IssuesEvent",
+        "description": "reopened issue #506: Temp and humidity sensor"
+      },
+      {
+        "createdAt": "2026-07-17T21:58:15Z",
+        "actor": "Lalla80111",
+        "type": "IssueCommentEvent",
+        "description": "commented on #506: Temp and humidity sensor"
+      },
+      {
+        "createdAt": "2026-07-17T19:23:55Z",
         "actor": "github-actions[bot]",
         "type": "PushEvent",
-        "description": "pushed stable-v5 (0 commits)"
+        "description": "pushed master (0 commits)"
       },
       {
-        "createdAt": "2026-07-17T01:14:28Z",
-        "actor": "dlnraja",
-        "type": "PushEvent",
-        "description": "pushed stable-v5 (0 commits)"
-      },
-      {
-        "createdAt": "2026-07-17T01:08:22Z",
+        "createdAt": "2026-07-17T13:58:33Z",
         "actor": "github-actions[bot]",
         "type": "PushEvent",
         "description": "pushed master (0 commits)"
       },
       {
-        "createdAt": "2026-07-17T01:08:05Z",
+        "createdAt": "2026-07-17T08:24:48Z",
+        "actor": "github-actions[bot]",
+        "type": "PushEvent",
+        "description": "pushed master (0 commits)"
+      },
+      {
+        "createdAt": "2026-07-17T08:08:06Z",
+        "actor": "github-actions[bot]",
+        "type": "PushEvent",
+        "description": "pushed master (0 commits)"
+      },
+      {
+        "createdAt": "2026-07-17T07:00:45Z",
         "actor": "dlnraja",
         "type": "PushEvent",
         "description": "pushed master (0 commits)"
       },
       {
-        "createdAt": "2026-07-17T01:07:24Z",
+        "createdAt": "2026-07-17T06:53:30Z",
+        "actor": "github-actions[bot]",
+        "type": "PushEvent",
+        "description": "pushed master (0 commits)"
+      },
+      {
+        "createdAt": "2026-07-17T06:52:55Z",
         "actor": "dlnraja",
         "type": "PushEvent",
         "description": "pushed master (0 commits)"
+      },
+      {
+        "createdAt": "2026-07-17T06:52:35Z",
+        "actor": "dlnraja",
+        "type": "PushEvent",
+        "description": "pushed master (0 commits)"
+      },
+      {
+        "createdAt": "2026-07-17T06:50:58Z",
+        "actor": "github-actions[bot]",
+        "type": "ReleaseEvent",
+        "description": "ReleaseEvent"
+      },
+      {
+        "createdAt": "2026-07-17T06:48:46Z",
+        "actor": "github-actions[bot]",
+        "type": "PushEvent",
+        "description": "pushed master (0 commits)"
+      },
+      {
+        "createdAt": "2026-07-17T06:48:21Z",
+        "actor": "gemini-code-assist[bot]",
+        "type": "PullRequestReviewEvent",
+        "description": "PullRequestReviewEvent"
+      },
+      {
+        "createdAt": "2026-07-17T06:48:18Z",
+        "actor": "gemini-code-assist[bot]",
+        "type": "PullRequestReviewCommentEvent",
+        "description": "PullRequestReviewCommentEvent"
+      },
+      {
+        "createdAt": "2026-07-17T06:48:18Z",
+        "actor": "gemini-code-assist[bot]",
+        "type": "PullRequestReviewCommentEvent",
+        "description": "PullRequestReviewCommentEvent"
+      },
+      {
+        "createdAt": "2026-07-17T06:48:18Z",
+        "actor": "gemini-code-assist[bot]",
+        "type": "PullRequestReviewCommentEvent",
+        "description": "PullRequestReviewCommentEvent"
+      },
+      {
+        "createdAt": "2026-07-17T06:48:18Z",
+        "actor": "gemini-code-assist[bot]",
+        "type": "PullRequestReviewCommentEvent",
+        "description": "PullRequestReviewCommentEvent"
+      },
+      {
+        "createdAt": "2026-07-17T06:48:18Z",
+        "actor": "gemini-code-assist[bot]",
+        "type": "PullRequestReviewCommentEvent",
+        "description": "PullRequestReviewCommentEvent"
+      },
+      {
+        "createdAt": "2026-07-17T06:47:48Z",
+        "actor": "dlnraja",
+        "type": "PushEvent",
+        "description": "pushed master (0 commits)"
+      },
+      {
+        "createdAt": "2026-07-17T06:46:04Z",
+        "actor": "github-actions[bot]",
+        "type": "PullRequestEvent",
+        "description": "labeled PR #512: "
       }
     ],
     "recentPRs": [
+      {
+        "number": 512,
+        "title": "Driver Maintenance — 0 scaffolded, 75 conflicts",
+        "state": "open",
+        "user": "dlnraja",
+        "createdAt": "2026-07-17T06:46:03Z",
+        "mergedAt": null,
+        "body": "## Automated Driver Maintenance\n\n### Auto-Scaffold Results\n- **Scaffolded**: 0 new drivers created from Johan SDK3\n- **FPs added**: 26 uncovered FPs added to existing drivers\n- **Cross-class conflicts**: 75\n\n### Conflict Audit\n- **High severity PID conflicts**: 75\n- **MFR+PID duplicates (real risk)**: 2\n- **Orphan drivers**: 63\n- **Split suggestions**: 75\n\n### Reports\n- `driver-scaffold-report.json` — full scaffold details\n- `driver-conflict-audit.json` — full conflict analysis\n\n### Review checklist\n- [ ] Review scaffolded drivers — add DP mappings to device.js\n- [ ] Review high-severity conflicts — consider splitting drivers\n- [ ] 🤖 **Dynamic Heuristic Check**: Do not hardcode `onoff.2` or standard alarm capabilities in `app.json` if `UniversalVariantManager` handles them dynamically.\n- [ ] Validate with `npx homey app validate`",
+        "labels": [
+          "automated",
+          "fingerprints",
+          "drivers",
+          "config",
+          "maintenance"
+        ]
+      },
       {
         "number": 505,
         "title": "Weekly Fingerprint Sync (759 new lines)",
@@ -786,19 +835,6 @@
           "config",
           "scripts"
         ]
-      },
-      {
-        "number": 490,
-        "title": "fix(ci): harden Gmail diagnostics auth fallback",
-        "state": "closed",
-        "user": "dlnraja",
-        "createdAt": "2026-07-04T09:08:50Z",
-        "mergedAt": "2026-07-04T09:16:39Z",
-        "body": "## Summary\n- make Gmail diagnostics fetch support a strict mode while soft-failing scheduled/publish jobs with sanitized state\n- replace IMAP-only health check with IMAP primary + OAuth fallback\n- pass OAuth secrets through Gmail-related workflows and keep privacy gates active\n\n## Verification\n- node --check Gmail diagnostics scripts\n- npm run check:yaml --if-present\n- npm run check:diag-history --if-present\n- npm run security:diagnostics --if-present\n- npm run precommit --if-present\n- temp smoke test: non-strict fetch exits 0, strict fetch exits 1, auth health exits 1 without secrets",
-        "labels": [
-          "scripts",
-          "workflows"
-        ]
       }
     ]
   },
@@ -837,7 +873,7 @@
         "createdAt": "2025-07-25T01:07:08.482Z",
         "lastPostedAt": "2026-07-16T06:38:42.535Z",
         "postsCount": 2037,
-        "views": 22440,
+        "views": 22460,
         "likeCount": 450,
         "posts": [
           {
@@ -970,7 +1006,7 @@
         "createdAt": "2020-02-26T09:12:23.664Z",
         "lastPostedAt": "2026-06-30T17:50:44.858Z",
         "postsCount": 1159,
-        "views": 175868,
+        "views": 175881,
         "likeCount": 683,
         "posts": [
           {
@@ -1103,7 +1139,7 @@
         "createdAt": "2025-12-22T10:41:23.701Z",
         "lastPostedAt": "2025-12-22T11:33:13.718Z",
         "postsCount": 3,
-        "views": 90,
+        "views": 91,
         "likeCount": 2,
         "posts": [
           {

@@ -1,5 +1,5 @@
 {
-  "timestamp": 1784269413635,
+  "timestamp": 1784355067233,
   "data": {
     "gh": {
       "openIssues": [
@@ -15,6 +15,26 @@
         }
       ],
       "recentComments": [
+        {
+          "n": "506",
+          "u": "dlnraja",
+          "b": "Closing per your message: the device is functional (temp/humidity/battery working) and you're satisfied with the result. The homey:virtualdriverzigbee label appears when Homey caches an existing devic"
+        },
+        {
+          "n": "506",
+          "u": "dlnraja",
+          "b": "<!-- diag-resolver -->\n### Auto-resolved by Diagnostic Resolver\n\nAll fingerprints in this issue found in **Tuya Unified Zigbee v9.0.300**:\n- `_TZ3000_fllyghyj` -> **climate_sensor**\n\n**Install:** http"
+        },
+        {
+          "n": "506",
+          "u": "github-actions[bot]",
+          "b": "<!-- tuya-reopen-bot -->\nThis issue has been **automatically reopened** because @Lalla80111 posted a new comment.\nIt will be reviewed in the next automation cycle.\n\n> If your device is still not worki"
+        },
+        {
+          "n": "506",
+          "u": "Lalla80111",
+          "b": "Thanx, for information now I'm at 9.0.300 but still it's using the \"homey:virtualdriverzigbee:driver\". Everything seems to be working fine.\nNot sure why but as long it's working I'm satisfied 🙂\nTried"
+        },
         {
           "n": "506",
           "u": "dlnraja",
@@ -44,26 +64,6 @@
           "n": "506",
           "u": "Lalla80111",
           "b": "I uninstalled the app and removed the device in Homey, installed latest test version from link (9.0.261).\nConfirm the app is working and not crashing, but my device is still added as Unknown Device, b"
-        },
-        {
-          "n": "506",
-          "u": "dlnraja",
-          "b": "<!-- diag-resolver -->\n### Auto-resolved by Diagnostic Resolver\n\nAll fingerprints in this issue found in **Tuya Unified Zigbee v9.0.279**:\n- `_TZ3000_fllyghyj` -> **climate_sensor**\n\n**Install:** http"
-        },
-        {
-          "n": "506",
-          "u": "dlnraja",
-          "b": "<!-- diag-resolver -->\n### Auto-resolved by Diagnostic Resolver\n\nAll fingerprints in this issue found in **Tuya Unified Zigbee v9.0.274**:\n- `_TZ3000_fllyghyj` -> **climate_sensor**\n\n**Install:** http"
-        },
-        {
-          "n": "511",
-          "u": "dlnraja",
-          "b": "Hi @stephanmaastricht 👋\n\nJust to confirm: **v9.0.218 was a known crash from June** that has been fixed in many subsequent versions. The current test build is **v9.0.273** which includes:\n- 431 driver"
-        },
-        {
-          "n": "506",
-          "u": "dlnraja",
-          "b": "<!-- diag-resolver -->\n### Auto-resolved by Diagnostic Resolver\n\nAll fingerprints in this issue found in **Tuya Unified Zigbee v9.0.273**:\n- `_TZ3000_fllyghyj` -> **climate_sensor**\n\n**Install:** http"
         }
       ]
     },
