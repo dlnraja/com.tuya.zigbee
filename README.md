@@ -35,6 +35,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | Metric | Value |
 |--------|-------|
 | **App Version** | v9.0.307 |
+| **App Version** | v9.0.308 |
 | **Device Fingerprints** | 5,286+ |
 | **Unique Product IDs** | 571 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
@@ -103,6 +104,8 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 |---------|---------|
 | **vchangelog** | [object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object  |
 | **v9.0.307** | Stability improvements and Homey test publication retry. |
+| **v9.0.308** | P75.26: re-inject-manual-fixes.js - always check addIfMissing (fix logic bug that allowed auto-fix-all bot to revert ... |
+| **v9.0.307** | P75.26: re-inject-manual-fixes.js - always check addIfMissing (fix logic bug that allowed auto-fix-all bot to revert ... |
 | **v9.0.306** | Stability improvements and Homey test publication retry. |
 | **v9.0.305** | Stability improvements and Homey test publication retry. |
 | **v9.0.304** | v9.0.294: Fix routing collision for TS0201 + _TZ3000_fllyghyj temp/humidity sensors (issue 506). Removed wrongly-clas... |
