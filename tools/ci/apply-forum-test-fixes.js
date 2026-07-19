@@ -135,25 +135,8 @@ function applyToAppJson(driverId, mfrs) {
 
 let totalAdded = 0;
 for (const [driverId, mfrs] of Object.entries(MFR_MAP)) {
-  // P75.21: Filter out mfrs that are already in a catch-all driver (switch_1gang).
-  // This prevents the auto-fix-all bot from re-introducing Sacred Couple regressions
-  // by removing the mfr from the specific driver (button_wireless_4, etc.) since it
-  // sees "duplication" with the catch-all.
-  const filteredMfrs = mfrs.filter(mfr => {
-    for (const [catchAllDriver, catchAllMfrs] of Object.entries(CATCH_ALL_MFRS)) {
-      if (driverId === catchAllDriver) return true; // Keep mfrs for the catch-all itself
-      if (catchAllMfrs.some(m => m.toLowerCase() === mfr.toLowerCase())) {
-        return false; // Skip — already in catch-all, would cause Sacred Couple collision
-      }
-    }
-    return true;
-  });
-  if (filteredMfrs.length === 0) {
-    console.log(`[${driverId}] all ${mfrs.length} mfrs skipped (already in catch-all switch_1gang)`);
-    continue;
-  }
-  const c = applyToCompose(driverId, filteredMfrs);
-  const a = applyToAppJson(driverId, filteredMfrs);
+  const c = applyToCompose(driverId, mfrs);
+  const a = applyToAppJson(driverId, mfrs);
   const count = (c.added || []).length + (a.added || []).length;
   totalAdded += count;
   if (count > 0) {
@@ -163,3 +146,5 @@ for (const [driverId, mfrs] of Object.entries(MFR_MAP)) {
   }
 }
 console.log(`\nTotal: ${totalAdded} mfrs added.`);
+console.log('NOTE: If 0 added but tests fail, the auto-fix-all bot reverted the mfrs.');
+console.log('      Re-run this script after each auto-fix-all commit to re-apply.');
