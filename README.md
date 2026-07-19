@@ -36,6 +36,8 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 |--------|-------|
 | **App Version** | v9.0.302 |
 | **Device Fingerprints** | 5,308+ |
+| **App Version** | v9.0.303 |
+| **Device Fingerprints** | 5,284+ |
 | **Unique Product IDs** | 571 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
 | **Flow Cards** | 4,844 |
@@ -102,6 +104,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | Version | Changes |
 |---------|---------|
 | **vchangelog** | [object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object  |
+| **v9.0.303** | v9.0.294: Fix routing collision for TS0201 + _TZ3000_fllyghyj temp/humidity sensors (issue 506). Removed wrongly-clas... |
 | **v9.0.302** | v9.0.294: Fix routing collision for TS0201 + _TZ3000_fllyghyj temp/humidity sensors (issue 506). Removed wrongly-clas... |
 | **v9.0.301** | v9.0.294: Fix routing collision for TS0201 + _TZ3000_fllyghyj temp/humidity sensors (issue 506). Removed wrongly-clas... |
 | **v9.0.300** | v9.0.294: Fix routing collision for TS0201 + _TZ3000_fllyghyj temp/humidity sensors (issue 506). Removed wrongly-clas... |
@@ -115,7 +118,6 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | **v9.0.292** | v9.0.220: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.291** | v9.0.220: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.290** | v9.0.220: automated publish, manifest sync, and Homey test promotion. |
-| **v9.0.289** | v9.0.220: automated publish, manifest sync, and Homey test promotion. |
 
 <!-- CHANGELOG_END -->
 
