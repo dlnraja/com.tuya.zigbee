@@ -121,9 +121,8 @@ function patchFix(fix) {
     return false;
   }
   const mfrs = j.zigbee.manufacturerName;
-  if (fix.match(mfrs)) {
-    return false; // already has the fix
-  }
+  // P75.26: do NOT short-circuit on match() — the auto-fix-all bot can leave
+  // the anchor mfr while removing siblings. We must always check addIfMissing.
   // Add missing fingerprints
   let added = 0;
   for (const fp of fix.addIfMissing) {
@@ -136,7 +135,13 @@ function patchFix(fix) {
       added++;
     }
   }
-  if (added === 0) return false;
+  if (added === 0) {
+    if (fix.match(mfrs)) {
+      return false; // already complete
+    }
+    // match() returns false but no addIfMissing gaps: skip silently
+    return false;
+  }
   fs.writeFileSync(fp, JSON.stringify(j, null, 2) + '\n');
   console.log(`  ✅ ${fix.id} (${fix.description}): added ${added} FP(s) from source '${fix.source}'`);
   return true;
