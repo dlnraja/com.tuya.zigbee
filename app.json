@@ -1,7 +1,7 @@
 {
-  "_comment": "Generated from .homeycompose/app.json. STABLE channel — only bug fixes applied.",
+  "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "9.0.311",
+  "version": "9.0.312",
   "compatibility": ">=12.2.0",
   "platforms": [
     "local"
@@ -102,9 +102,6 @@
       "path": "/replace"
     }
   },
-  "channel": "stable",
-  "stableSince": "2026-07-14",
-  "stableNotes": "P52: synced 26 new FPs (#439) + 6 new chem profiles from master. No new architecture features.",
   "flow": {
     "triggers": [
       {
@@ -4576,7 +4573,7 @@
         }
       },
       {
-        "id": "bulb_dimmable_dimmer_turned_on",
+        "id": "bulb_dimmable_dimmer_dimmer_turned_on",
         "title": {
           "en": "Turned on",
           "fr": "Allumé"
@@ -4594,7 +4591,7 @@
         }
       },
       {
-        "id": "bulb_dimmable_dimmer_turned_off",
+        "id": "bulb_dimmable_dimmer_dimmer_turned_off",
         "title": {
           "en": "Turned off",
           "fr": "Éteint"
@@ -4612,7 +4609,7 @@
         }
       },
       {
-        "id": "bulb_dimmable_dimmer_dim_changed",
+        "id": "bulb_dimmable_dimmer_dimmer_dim_changed",
         "title": {
           "en": "Brightness changed",
           "fr": "Luminosité changée"
@@ -18255,7 +18252,7 @@
         }
       },
       {
-        "id": "device_air_purifier_thermostat_tuya_dp_target_temperature_changed",
+        "id": "device_air_purifier_thermostat_thermostat_tuya_dp_target_temperature_changed",
         "title": {
           "en": "Target temperature changed",
           "fr": "Température cible changée"
@@ -18284,7 +18281,7 @@
         }
       },
       {
-        "id": "device_air_purifier_thermostat_tuya_dp_temperature_changed",
+        "id": "device_air_purifier_thermostat_thermostat_tuya_dp_temperature_changed",
         "title": {
           "en": "Temperature changed",
           "fr": "Température changée"
@@ -18313,7 +18310,7 @@
         }
       },
       {
-        "id": "device_air_purifier_thermostat_tuya_dp_mode_changed",
+        "id": "device_air_purifier_thermostat_thermostat_tuya_dp_mode_changed",
         "title": {
           "en": "Mode changed",
           "fr": "Mode changé"
@@ -18342,7 +18339,7 @@
         }
       },
       {
-        "id": "device_air_purifier_thermostat_tuya_dp_heating_started",
+        "id": "device_air_purifier_thermostat_thermostat_tuya_dp_heating_started",
         "title": {
           "en": "Heating started",
           "fr": "Chauffage démarré"
@@ -18360,7 +18357,7 @@
         }
       },
       {
-        "id": "device_air_purifier_thermostat_tuya_dp_heating_stopped",
+        "id": "device_air_purifier_thermostat_thermostat_tuya_dp_heating_stopped",
         "title": {
           "en": "Heating stopped",
           "fr": "Chauffage arrÃªté"
@@ -18378,7 +18375,7 @@
         }
       },
       {
-        "id": "device_air_purifier_thermostat_tuya_dp_turned_on",
+        "id": "device_air_purifier_thermostat_thermostat_tuya_dp_turned_on",
         "title": {
           "en": "Turned on",
           "fr": "Allumé",
@@ -18400,7 +18397,7 @@
         }
       },
       {
-        "id": "device_air_purifier_thermostat_tuya_dp_turned_off",
+        "id": "device_air_purifier_thermostat_thermostat_tuya_dp_turned_off",
         "title": {
           "en": "Turned off",
           "fr": "Ã‰teint",
@@ -18422,7 +18419,7 @@
         }
       },
       {
-        "id": "device_air_purifier_thermostat_tuya_dp_temp_changed",
+        "id": "device_air_purifier_thermostat_thermostat_tuya_dp_temp_changed",
         "title": {
           "en": "Temperature changed",
           "fr": "Température changée",
@@ -18444,7 +18441,7 @@
         }
       },
       {
-        "id": "device_air_purifier_thermostat_tuya_dp_battery_low",
+        "id": "device_air_purifier_thermostat_thermostat_tuya_dp_battery_low",
         "title": {
           "en": "Battery low",
           "fr": "Batterie faible",
@@ -18466,7 +18463,7 @@
         }
       },
       {
-        "id": "device_air_purifier_thermostat_tuya_dp_humidity_changed",
+        "id": "device_air_purifier_thermostat_thermostat_tuya_dp_humidity_changed",
         "title": {
           "en": "Humidity changed",
           "fr": "Humidité changée",
@@ -19384,7 +19381,7 @@
         }
       },
       {
-        "id": "device_plug_energy_monitor_plug_on",
+        "id": "device_plug_energy_monitor_monitor_plug_on",
         "highlight": true,
         "title": {
           "en": "Turned on",
@@ -19413,7 +19410,7 @@
         }
       },
       {
-        "id": "device_plug_energy_monitor_plug_off",
+        "id": "device_plug_energy_monitor_monitor_plug_off",
         "title": {
           "en": "Turned off",
           "nl": "Uitgeschakeld",
@@ -19441,7 +19438,7 @@
         }
       },
       {
-        "id": "device_plug_energy_monitor_plug_restored",
+        "id": "device_plug_energy_monitor_monitor_plug_restored",
         "title": {
           "en": "Power restored",
           "nl": "Stroom hersteld",
@@ -19469,7 +19466,7 @@
         }
       },
       {
-        "id": "device_plug_energy_monitor_plug_changed",
+        "id": "device_plug_energy_monitor_monitor_plug_changed",
         "title": {
           "en": "Power consumption changed",
           "nl": "Stroomverbruik gewijzigd",
@@ -19526,7 +19523,7 @@
         }
       },
       {
-        "id": "device_plug_energy_monitor_plug_threshold",
+        "id": "device_plug_energy_monitor_monitor_plug_threshold",
         "highlight": true,
         "title": {
           "en": "Power exceeds threshold",
@@ -19568,7 +19565,7 @@
         }
       },
       {
-        "id": "device_plug_energy_monitor_plug_low",
+        "id": "device_plug_energy_monitor_monitor_plug_low",
         "title": {
           "en": "Battery low",
           "fr": "Batterie faible",
@@ -68835,7 +68832,7 @@
         }
       },
       {
-        "id": "bulb_dimmable_dimmer_is_on",
+        "id": "bulb_dimmable_dimmer_dimmer_is_on",
         "title": {
           "en": "Is turned !{{on|off}}",
           "fr": "Est !{{allumé|éteint}}"
@@ -71038,7 +71035,7 @@
         }
       },
       {
-        "id": "device_air_purifier_thermostat_tuya_dp_is_heating",
+        "id": "device_air_purifier_thermostat_thermostat_tuya_dp_is_heating",
         "title": {
           "en": "Thermostat is !{{heating|not heating}}",
           "fr": "Thermostat !{{chauffe|ne chauffe pas}}"
@@ -71056,7 +71053,7 @@
         }
       },
       {
-        "id": "device_air_purifier_thermostat_tuya_dp_temperature_above_target",
+        "id": "device_air_purifier_thermostat_thermostat_tuya_dp_temperature_above_target",
         "title": {
           "en": "Temperature is above target",
           "fr": "Température supérieure àla cible"
@@ -71074,7 +71071,7 @@
         }
       },
       {
-        "id": "device_air_purifier_thermostat_tuya_dp_temperature_below_target",
+        "id": "device_air_purifier_thermostat_thermostat_tuya_dp_temperature_below_target",
         "title": {
           "en": "Temperature is below target",
           "fr": "Température inférieure àla cible"
@@ -71092,7 +71089,7 @@
         }
       },
       {
-        "id": "device_air_purifier_thermostat_tuya_dp_mode_is",
+        "id": "device_air_purifier_thermostat_thermostat_tuya_dp_mode_is",
         "title": {
           "en": "Mode is",
           "fr": "Mode est"
@@ -71144,7 +71141,7 @@
         }
       },
       {
-        "id": "device_air_purifier_thermostat_tuya_dp_child_lock_is",
+        "id": "device_air_purifier_thermostat_thermostat_tuya_dp_child_lock_is",
         "title": {
           "en": "Child lock is !{{enabled|disabled}}",
           "fr": "Verrouillage enfant !{{activé|désactivé}}"
@@ -71162,7 +71159,7 @@
         }
       },
       {
-        "id": "device_air_purifier_thermostat_tuya_dp_is_on",
+        "id": "device_air_purifier_thermostat_thermostat_tuya_dp_is_on",
         "title": {
           "en": "Is !{{on|off}}",
           "fr": "Est !{{allumé|éteint}}",
@@ -71375,7 +71372,7 @@
         }
       },
       {
-        "id": "device_plug_energy_monitor_plug_on",
+        "id": "device_plug_energy_monitor_monitor_plug_on",
         "title": {
           "en": "Plug !{{is|is not}} on",
           "nl": "Stekker !{{is|is niet}} aan",
@@ -85628,7 +85625,7 @@
         }
       },
       {
-        "id": "bulb_dimmable_dimmer_turn_on",
+        "id": "bulb_dimmable_dimmer_dimmer_turn_on",
         "title": {
           "en": "Turn on",
           "fr": "Allumer"
@@ -85646,7 +85643,7 @@
         }
       },
       {
-        "id": "bulb_dimmable_dimmer_turn_off",
+        "id": "bulb_dimmable_dimmer_dimmer_turn_off",
         "title": {
           "en": "Turn off",
           "fr": "Éteindre"
@@ -85664,7 +85661,7 @@
         }
       },
       {
-        "id": "bulb_dimmable_dimmer_toggle",
+        "id": "bulb_dimmable_dimmer_dimmer_toggle",
         "title": {
           "en": "Toggle on or off",
           "fr": "Basculer"
@@ -85682,7 +85679,7 @@
         }
       },
       {
-        "id": "bulb_dimmable_dimmer_set_dim",
+        "id": "bulb_dimmable_dimmer_dimmer_set_dim",
         "title": {
           "en": "Set brightness to...",
           "fr": "Régler la luminosité à..."
@@ -92076,7 +92073,7 @@
         }
       },
       {
-        "id": "device_air_purifier_thermostat_tuya_dp_set_target_temperature",
+        "id": "device_air_purifier_thermostat_thermostat_tuya_dp_set_target_temperature",
         "title": {
           "en": "Set target temperature",
           "fr": "Définir température cible"
@@ -92105,7 +92102,7 @@
         }
       },
       {
-        "id": "device_air_purifier_thermostat_tuya_dp_set_mode",
+        "id": "device_air_purifier_thermostat_thermostat_tuya_dp_set_mode",
         "title": {
           "en": "Set mode",
           "fr": "Définir mode"
@@ -92150,7 +92147,7 @@
         }
       },
       {
-        "id": "device_air_purifier_thermostat_tuya_dp_increase_temperature",
+        "id": "device_air_purifier_thermostat_thermostat_tuya_dp_increase_temperature",
         "title": {
           "en": "Increase temperature",
           "fr": "Augmenter température"
@@ -92179,7 +92176,7 @@
         }
       },
       {
-        "id": "device_air_purifier_thermostat_tuya_dp_decrease_temperature",
+        "id": "device_air_purifier_thermostat_thermostat_tuya_dp_decrease_temperature",
         "title": {
           "en": "Decrease temperature",
           "fr": "Diminuer température"
@@ -92208,7 +92205,7 @@
         }
       },
       {
-        "id": "device_air_purifier_thermostat_tuya_dp_set_child_lock",
+        "id": "device_air_purifier_thermostat_thermostat_tuya_dp_set_child_lock",
         "title": {
           "en": "Set child lock",
           "fr": "Définir verrouillage enfant"
@@ -92246,7 +92243,7 @@
         }
       },
       {
-        "id": "device_air_purifier_thermostat_tuya_dp_set_comfort_preset",
+        "id": "device_air_purifier_thermostat_thermostat_tuya_dp_set_comfort_preset",
         "highlight": true,
         "title": {
           "en": "Set comfort preset",
@@ -92310,7 +92307,7 @@
         }
       },
       {
-        "id": "device_air_purifier_thermostat_tuya_dp_schedule_on",
+        "id": "device_air_purifier_thermostat_thermostat_tuya_dp_schedule_on",
         "title": {
           "en": "Enable schedule",
           "fr": "Activer programmation",
@@ -92332,7 +92329,7 @@
         }
       },
       {
-        "id": "device_air_purifier_thermostat_tuya_dp_schedule_off",
+        "id": "device_air_purifier_thermostat_thermostat_tuya_dp_schedule_off",
         "title": {
           "en": "Disable schedule",
           "fr": "Désactiver programmation",
@@ -92354,7 +92351,7 @@
         }
       },
       {
-        "id": "device_air_purifier_thermostat_tuya_dp_turn_on",
+        "id": "device_air_purifier_thermostat_thermostat_tuya_dp_turn_on",
         "title": {
           "en": "Turn on",
           "fr": "Allumer",
@@ -92376,7 +92373,7 @@
         }
       },
       {
-        "id": "device_air_purifier_thermostat_tuya_dp_turn_off",
+        "id": "device_air_purifier_thermostat_thermostat_tuya_dp_turn_off",
         "title": {
           "en": "Turn off",
           "fr": "Ã‰teindre",
@@ -92398,7 +92395,7 @@
         }
       },
       {
-        "id": "device_air_purifier_thermostat_tuya_dp_toggle",
+        "id": "device_air_purifier_thermostat_thermostat_tuya_dp_toggle",
         "title": {
           "en": "Toggle",
           "fr": "Basculer",
@@ -92420,7 +92417,7 @@
         }
       },
       {
-        "id": "device_air_purifier_thermostat_tuya_dp_set_temperature",
+        "id": "device_air_purifier_thermostat_thermostat_tuya_dp_set_temperature",
         "title": {
           "en": "Set temperature",
           "fr": "Régler température",
@@ -92898,7 +92895,7 @@
         }
       },
       {
-        "id": "device_plug_energy_monitor_plug_on",
+        "id": "device_plug_energy_monitor_monitor_plug_on",
         "title": {
           "en": "Turn on",
           "nl": "Inschakelen",
@@ -92920,7 +92917,7 @@
         }
       },
       {
-        "id": "device_plug_energy_monitor_plug_off",
+        "id": "device_plug_energy_monitor_monitor_plug_off",
         "title": {
           "en": "Turn off",
           "nl": "Uitschakelen",
@@ -92964,7 +92961,7 @@
         }
       },
       {
-        "id": "device_plug_energy_monitor_plug_on_delay",
+        "id": "device_plug_energy_monitor_monitor_plug_on_delay",
         "title": {
           "en": "Turn on after delay",
           "nl": "Inschakelen na vertraging",
@@ -92996,7 +92993,7 @@
         }
       },
       {
-        "id": "device_plug_energy_monitor_plug_off_delay",
+        "id": "device_plug_energy_monitor_monitor_plug_off_delay",
         "title": {
           "en": "Turn off after delay",
           "nl": "Uitschakelen na vertraging",
@@ -93028,7 +93025,7 @@
         }
       },
       {
-        "id": "device_plug_energy_monitor_plug_indicator",
+        "id": "device_plug_energy_monitor_monitor_plug_indicator",
         "title": {
           "en": "Set LED indicator mode",
           "fr": "Définir le mode LED",
@@ -93101,7 +93098,7 @@
         }
       },
       {
-        "id": "device_plug_energy_monitor_plug_power_on",
+        "id": "device_plug_energy_monitor_monitor_plug_power_on",
         "title": {
           "en": "Set power-on behavior",
           "fr": "Définir comportement démarrage",
@@ -157385,9 +157382,7 @@
           "TS110E",
           "TS110F",
           "_TYZB01_qezuin6k",
-          "_TZ3000_2izubafb",
           "_TZ3000_49qchf10",
-          "_TZ3000_4fsgukof",
           "_TZ3000_5rpu3r0d",
           "_TZ3000_7dcddnye",
           "_TZ3000_7hcgjxpc",
@@ -157396,7 +157391,6 @@
           "_TZ3000_g1glzzfk",
           "_TZ3000_gb5gaeca",
           "_TZ3000_hurauima",
-          "_TZ3000_iivsrikg",
           "_TZ3000_irwuzilv",
           "_TZ3000_j0gtlepx",
           "_TZ3000_j2w1dw29",
@@ -165535,7 +165529,6 @@
           "ZEN THERMOSTAT",
           "ZIGBEE ALLIANCE",
           "ZIGBEE2MQTT",
-          "_TYST11_pisltm67",
           "_TZ1800_ejwkn2h2",
           "_TZ1800_fcdjzz3s",
           "_TZ3000_0dumfk2z",
@@ -165608,12 +165601,7 @@
           "_TZB210_qzsxaqqe",
           "_TZB210_rs0ufzwg",
           "_TZB210_u3ri0968",
-          "_TZB210_ue01a0s2",
           "_TZB210_uoiqhjqe",
-          "_TZB210_w9hcix2r",
-          "_TZB210_wxazcmsh",
-          "_TZB210_wy1pyu1q",
-          "_TZB210_yatkpuha",
           "_TZE200",
           "_TZE200_0hb4rdnp",
           "_TZE200_2imwyigp",
@@ -165629,7 +165617,6 @@
           "_TZE200_rqhnxkqu",
           "_TZE200_xixlazkg",
           "_TZE204",
-          "_TZE204_1v1dxkck",
           "_TZE204_2imwyigp",
           "_TZE204_2jnoy8dj",
           "_TZE204_d2zfgtij",
@@ -165638,7 +165625,6 @@
           "_TZE204_lawxy9e2",
           "_TZE204_lb0fsvba",
           "_TZE204_mpbki2zm-TS0601",
-          "_TZE204_ogkdpgy2",
           "_TZE204_qasjif9",
           "_TZE204_s4sa1mcx",
           "_TZE204_x8diwkqb",
@@ -174153,7 +174139,6 @@
           "_TZE200_MCHXVE9O",
           "_TZE200_NHK3BPXQ",
           "_TZE200_XQ4HGAFZ",
-          "_TZE200_jt50ea5d",
           "_TZE204_BJF8QUM1",
           "_TZE204_MCHXVE9O",
           "_TZE204_SNDKANFR",
@@ -174726,7 +174711,6 @@
       "zigbee": {
         "manufacturerName": [
           "_TZ3000_hdlpifbk",
-          "_TZ3000_u3oupgdy",
           "_TZ3218_AWARHUSB",
           "_TZ3218_T9YNFZ",
           "_TZ3218_T9YNFZ4X",
@@ -179953,7 +179937,6 @@
           "_TZE200_5B5NOETO",
           "_TZE200_5b5noeto",
           "_TZE200_7GCLUKJS",
-          "_TZE200_86nbew0j",
           "_TZE200_AR0SLWND",
           "_TZE200_CLRDRNYA",
           "_TZE200_CRQ3R3LA",
@@ -180099,7 +180082,6 @@
           "_TZE284_81yrt3lo",
           "_TZE284_8catj2au",
           "_TZE284_9OVSKA9W",
-          "_TZE284_9xstqowh",
           "_TZE284_AR5PRZMW",
           "_TZE284_CHCNJ5ST",
           "_TZE284_DEBCZECI",
@@ -198917,7 +198899,6 @@
         "manufacturerName": [
           "_TYZB01_B6EAXDLH",
           "_TYZB01_BNGGSFSF",
-          "_TYZB01_sbpc1zrb",
           "_TZ3000_8R5U7WKH",
           "_TZ3000_AB7HFUIL",
           "_TZ3000_AOGB3S2T",
@@ -198935,7 +198916,6 @@
           "_TZE200_NLRFGPNY",
           "_TZE200_T1BLO2BJ",
           "_TZE200_WNVHLCGL",
-          "_TZE200_znzs7yaw",
           "_TZE204_NLRFGPNY",
           "_TZE204_Q76RTOA9",
           "_TZE204_q76rtoa9",
@@ -201014,8 +200994,7 @@
           "_tz3000_csflgqj2",
           "_tz3000_gwkzibhs",
           "_tz3000_pzui3skt",
-          "_tz3000_qja6nq5z",
-          "_TZ3000_ugi8ky6u"
+          "_tz3000_qja6nq5z"
         ],
         "productId": [
           "TS004F",
@@ -204198,8 +204177,7 @@
       },
       "zigbee": {
         "manufacturerName": [
-          "_TZE284_ga1maeof",
-          "_TZE284_awepdiwi"
+          "_TZE284_ga1maeof"
         ],
         "productId": [
           "TS0601"
@@ -207047,7 +207025,6 @@
         },
         "manufacturerName": [
           "_TZ3000_01GPYDA5",
-          "_TZ3000_18ejxno0",
           "_TZ3000_4JS6G1CW",
           "_TZ3000_4XFQLGQO",
           "_TZ3000_4ZF0CRGO",
@@ -208934,7 +208911,6 @@
           "_TZ3000_Z6ZPLT0Y",
           "_TZ3000_enmfaave",
           "_TZ3000_excgg5kb",
-          "_TZ3000_imaccztn",
           "_TZ3000_qkixdnon",
           "_TZ3000_wkr3jqmr",
           "_TZ3002_1S0VFMTV",
@@ -223600,11 +223576,7 @@
       },
       "zigbee": {
         "manufacturerName": [
-          "_TZ3000_8n7lqbm0",
           "_TZ3000_YZ38GDRA",
-          "_TZ3000_ctftgjwb",
-          "_TZ3000_udl7uyd2",
-          "_TZ3218_7fiyo3kv",
           "_TZ3290_IXD9MVV4",
           "_TZ3290_ixd9mvv4",
           "_TZE200_R32CTEZX",
