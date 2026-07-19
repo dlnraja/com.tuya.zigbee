@@ -1123,6 +1123,7 @@
     "en": "Stability improvements and Homey test publication retry."
   },
   "9.0.307": {
-    "en": "Stability improvements and Homey test publication retry after transient processing failure."
+    "en": "P75.26: re-inject-manual-fixes.js - always check addIfMissing (fix logic bug that allowed auto-fix-all bot to revert forum-routing test mfrs). Re-applied P75.18-22 mfrs (button_wireless_4, smart_knob_rotary, switch_3gang, wall_switch_4gang_1way) + HOBEIAN to sensor_contact_zigbee (P61 fix preserved). 431 drivers, 2902 FPs.",
+    "fr": "P75.26: re-inject-manual-fixes.js - vérification complète de addIfMissing (correction du bug logique qui permettait au bot auto-fix-all de revenir sur les mfrs des tests forum-routing). Ré-application des mfrs P75.18-22 (button_wireless_4, smart_knob_rotary, switch_3gang, wall_switch_4gang_1way) + HOBEIAN sur sensor_contact_zigbee (correction P61 préservée). 431 drivers, 2902 FPs."
   }
 }
