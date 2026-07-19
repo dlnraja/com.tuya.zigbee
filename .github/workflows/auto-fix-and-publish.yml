@@ -20,8 +20,11 @@ permissions:
 # env block doesn't propagate to the npm subshell on all GHA runner images,
 # so the prepare-publish step was still seeing limit 26.00 MB.
 env:
-  HOMEY_PUBLISH_MAX_UNCOMPRESSED_MB: "30"
-  HOMEY_PUBLISH_SOURCE_MAX_MB: "30"
+  # P75.27: Bumped from 30 -> 35 MB to accommodate growing build dir
+  # (currently 30.20 MB with 431 drivers + 2902 FPs). Build was failing
+  # the publish-size-gate at 30 MB; prepared publish dir is only 23.74 MB.
+  HOMEY_PUBLISH_MAX_UNCOMPRESSED_MB: "35"
+  HOMEY_PUBLISH_SOURCE_MAX_MB: "35"
   HOMEY_ZIGBEE_MAX_TOTAL_COMBOS: "30000"
   HOMEY_ZIGBEE_MAX_DRIVER_COMBOS: "1000"
 
@@ -129,11 +132,11 @@ jobs:
         if: env.trigger_publish == 'true' || github.event_name == 'workflow_dispatch'
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
-          # v9.0.253 (P62): Bumped from 26 to 30 MB. The P62 fixes added
-          # lib/utils/SafeTimerAccessor.js + P59-P61 test files + P61
-          # mfs_db updates, pushing the publish directory to 26.07 MB.
-          HOMEY_PUBLISH_MAX_UNCOMPRESSED_MB: "30"
-          HOMEY_PUBLISH_SOURCE_MAX_MB: "30"
+          # P75.27: Bumped from 30 to 35 MB (build dir now 30.20 MB with
+          # 431 drivers + 2902 FPs). Prepared publish dir is 23.74 MB so
+          # this is only the BUILD limit (sanity check), not the upload.
+          HOMEY_PUBLISH_MAX_UNCOMPRESSED_MB: "35"
+          HOMEY_PUBLISH_SOURCE_MAX_MB: "35"
           HOMEY_ZIGBEE_MAX_TOTAL_COMBOS: "30000"
           HOMEY_ZIGBEE_MAX_DRIVER_COMBOS: "1000"
         run: |
