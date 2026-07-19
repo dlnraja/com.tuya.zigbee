@@ -60,6 +60,52 @@ const MANUAL_FIXES = [
     addAtTop: false,
     source: 'p74-disabled',
   },
+  // P75.18-22: Forum-routing test mfrs (must be in driver, not just switch_1gang catch-all)
+  {
+    id: 'p75.18-button-wireless-4-mfrs',
+    file: 'drivers/button_wireless_4/driver.compose.json',
+    description: 'P75.18-22: Forum-routing test mfrs (auto-fix-all reverts these)',
+    match: (mfrs) => mfrs.includes('_TZ3000_kfu8zapd'),
+    addIfMissing: [
+      '_TZ3000_u3nv1jwk',
+      '_TZ3000_kfu8zapd',
+      '_TZ3000_xabckq1v',
+      '_TZ3000_czuyt8lz',
+      '_TZ3000_b3mgfu0d',
+      '_TZ3000_rco1yzb1',
+      '_TZ3000_abrsvsou',
+      '_TZ3000_4fjiwweb',
+    ],
+    addAtTop: false,
+    source: 'p75.18-forum-routing',
+  },
+  {
+    id: 'p75.18-smart-knob-rotary-mfrs',
+    file: 'drivers/smart_knob_rotary/driver.compose.json',
+    description: 'P75.18-22: Smart knob rotary mfrs (Moes/Lidl TS004F)',
+    match: (mfrs) => mfrs.includes('_TZ3000_qja6nq5z'),
+    addIfMissing: ['_TZ3000_qja6nq5z', '_TZ3000_gwkzibhs', '_TZ3000_ugi8ky6u'],
+    addAtTop: false,
+    source: 'p75.18-forum-routing',
+  },
+  {
+    id: 'p75.18-switch-3gang-mfrs',
+    file: 'drivers/switch_3gang/driver.compose.json',
+    description: 'P75.18-22: 3-gang switch mfrs',
+    match: (mfrs) => mfrs.includes('_TZ3000_eqsair32'),
+    addIfMissing: ['_TZ3000_eqsair32', '_TZ3000_qxcnwv26'],
+    addAtTop: false,
+    source: 'p75.18-forum-routing',
+  },
+  {
+    id: 'p75.18-wall-switch-4gang-1way-mfrs',
+    file: 'drivers/wall_switch_4gang_1way/driver.compose.json',
+    description: 'P75.18-22: 4-gang wall switch mfrs (Moes TS0014)',
+    match: (mfrs) => mfrs.includes('_TZ3000_mrduubod'),
+    addIfMissing: ['_TZ3000_mrduubod', '_TZ3002_pzao9ls1'],
+    addAtTop: false,
+    source: 'p75.18-forum-routing',
+  },
 ];
 
 function patchFix(fix) {
