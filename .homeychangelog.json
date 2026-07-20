@@ -1165,5 +1165,8 @@
   "9.0.316": {
     "en": "P75.27: HOMEY_PUBLISH_MAX 30 → 35 MB (size gate fix). P75.32/32b test coverage: 49 mixins + 29 flow cards + 23 regression audit = 101 tests passing. P75.26: re-inject script logic fix (always check addIfMissing). 431 drivers, 2902 FPs.",
     "fr": "P75.27: HOMEY_PUBLISH_MAX 30 → 35 MB (correctif size gate). P75.32/32b couverture: 49 mixins + 29 flow cards + 23 audit régression = 101 tests passants. P75.26: correctif logique re-inject script. 431 drivers, 2902 FPs."
+  },
+  "9.0.317": {
+    "en": "P75.27: HOMEY_PUBLISH_MAX 30 → 35 MB (size gate fix). P75.32/32b test coverage: 49 mixins + 29 flow cards + 23 regression audit = 101 tests passing. P75.26: re-inject script logic fix (always check addIfMissing). 431 drivers, 2902 FPs."
   }
 }
