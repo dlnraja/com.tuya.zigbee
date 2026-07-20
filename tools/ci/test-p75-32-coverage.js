@@ -7,6 +7,7 @@ const path = require('path');
 const tests = [
   { name: 'test-mixin-coverage.js', desc: 'Mixins (SafeCapability, VirtualEnergy, Button, etc.)' },
   { name: 'test-flow-card-coverage.js', desc: 'Flow card modules (Advanced, Feature, Manager, etc.)' },
+  { name: 'test-regression-audit.js', desc: 'Regression audit reports (button/flow/crash)' },
 ];
 
 console.log('=== P75.32 Coverage Test Suite ===\n');
