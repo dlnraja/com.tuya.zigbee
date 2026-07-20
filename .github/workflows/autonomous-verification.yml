@@ -66,4 +66,4 @@ jobs:
             console.log('  AutonomousVerificationEngine:',typeof A.AutonomousVerificationEngine);
             console.log('  SecurityGuard:',typeof S.SecurityGuard);
             console.log('  ✅ All modules loadable');
-          "\n
+          "
