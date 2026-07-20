@@ -1,5 +1,5 @@
 // Test script
-const B = require('./lib/SDK3CompatBridge');
+const B = require('../../lib/SDK3CompatBridge');
 async function main() {
   console.log('SDK3CompatBridge v' + B.version);
   console.log('Limitations:', B.limitationsCount);
