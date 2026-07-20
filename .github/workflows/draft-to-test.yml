@@ -114,7 +114,8 @@ jobs:
 
       - name: Get app version
         id: app_ver
-        run: echo "version=$(node -p \"require('./app.json').version\")" >> $GITHUB_OUTPUT
+        run: |
+          echo "version=$(node -p 'require(\"./app.json\").version')" >> "$GITHUB_OUTPUT"
 
       - name: Verify draft promotion result
         id: verify_test
