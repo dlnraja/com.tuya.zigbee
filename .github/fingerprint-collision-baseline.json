@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-17T06:50:43.185Z",
+  "generatedAt": "2026-07-20T12:25:00.000Z",
   "description": "Known historical fingerprint collisions. CI fails only for collisions not listed here.",
   "collisions": [
     {
@@ -74,6 +74,65 @@
         "switch_1gang"
       ],
       "note": "Sacred Couple - 4-button vs switch_1gang fallback"
+    },
+    {
+      "key": "_TZE284_ga1maeof|TS0601",
+      "drivers": [
+        "soil_sensor",
+        "soilsensor"
+      ],
+      "note": "P75.31: ga1maeof soil sensor in both soil_sensor and legacy soilsensor driver - intentional cross-driver"
+    },
+    {
+      "key": "hobeian|TS0001",
+      "drivers": [
+        "soil_sensor",
+        "water_leak_sensor"
+      ],
+      "note": "P75.31: HOBEIAN TS0001 - shared by soil sensor and water leak sensor (both TS0001 hardware variant)"
+    },
+    {
+      "key": "Hobeian|TS0001",
+      "drivers": [
+        "soil_sensor",
+        "water_leak_sensor"
+      ],
+      "note": "P75.31: HOBEIAN TS0001 (case variant) - same as lowercase collision"
+    },
+    {
+      "key": "HOBEIAN|TS0001",
+      "drivers": [
+        "soil_sensor",
+        "water_leak_sensor"
+      ],
+      "note": "P75.31: HOBEIAN TS0001 (uppercase) - canonical manufacturer name, used by most HOBEIAN devices"
+    },
+    {
+      "key": "hobeian|TS0601",
+      "drivers": [
+        "sensor_contact_zigbee",
+        "soil_sensor",
+        "water_leak_sensor"
+      ],
+      "note": "P75.31: HOBEIAN TS0601 - shared across 3 sensor drivers (Tuya shared productId for sensors)"
+    },
+    {
+      "key": "Hobeian|TS0601",
+      "drivers": [
+        "sensor_contact_zigbee",
+        "soil_sensor",
+        "water_leak_sensor"
+      ],
+      "note": "P75.31: HOBEIAN TS0601 (case variant)"
+    },
+    {
+      "key": "HOBEIAN|TS0601",
+      "drivers": [
+        "sensor_contact_zigbee",
+        "soil_sensor",
+        "water_leak_sensor"
+      ],
+      "note": "P75.31: HOBEIAN TS0601 (uppercase) - canonical HOBEIAN manufacturer name"
     }
   ]
 }
