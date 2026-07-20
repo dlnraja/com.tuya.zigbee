@@ -1,10 +1,14 @@
 #!/usr/bin/env node
 /**
- * P29.7 — Temporal Monitoring Cron
+ * P29.7 — Temporal Monitoring Cron (refreshed P78)
  *
  * Runs daily to detect NEW GH issues / forum topics that match the
  * patterns we've fixed in past P-iterations. Generates an alert if
  * we see regressions or new devices that match known bug patterns.
+ *
+ * P78 update: refreshed after P76-P77 - now tracks P77 battery/button
+ * patterns (247 battery drivers, 54 button drivers) and reports
+ * regressions against the latest architectural baselines.
  *
  * Steps:
  * 1. Fetch all GH issues (state: open, label: bug, createdAt > lastRun)
