@@ -2,14 +2,14 @@
 
 <!-- AUTO-UPDATED: Do not edit badges manually - updated by GitHub Actions -->
 [![Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdlnraja%2Fcom.tuya.zigbee%2Fmaster%2Fapp.json&query=%24.version&label=version&color=blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
-[![Fingerprints](https://img.shields.io/badge/fingerprints-5,274+-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
+[![Fingerprints](https://img.shields.io/badge/fingerprints-5,275+-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![Drivers](https://img.shields.io/badge/drivers-431-brightgreen)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![Flow Cards](https://img.shields.io/badge/flow%20cards-4,844-blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![SDK](https://img.shields.io/badge/SDK-3-orange)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![License](https://img.shields.io/badge/license-GPL--3.0-red)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/LICENSE)
 [![Homey](https://img.shields.io/badge/Homey-Pro-blueviolet)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 
-A community-driven Homey app that brings local control to Tuya Zigbee devices — no cloud, no internet needed. Covers switches, sensors, lights, thermostats, covers, locks, and more across **431 drivers** and **5,274+ device fingerprints**.
+A community-driven Homey app that brings local control to Tuya Zigbee devices — no cloud, no internet needed. Covers switches, sensors, lights, thermostats, covers, locks, and more across **431 drivers** and **5,275+ device fingerprints**.
 
 **Key features:**
 - **Local-only** — everything runs on your Homey, nothing goes to the cloud
@@ -34,8 +34,8 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.312 |
-| **Device Fingerprints** | 5,274+ |
+| **App Version** | v9.0.313 |
+| **Device Fingerprints** | 5,275+ |
 | **Unique Product IDs** | 571 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
 | **Flow Cards** | 4,844 |
@@ -44,7 +44,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 | **Languages** | EN, FR, NL, DE |
 | **SDK Version** | 3 |
 | **Homey Compatibility** | >=12.2.0 |
-| **Last Updated** | 2026-07-19 |
+| **Last Updated** | 2026-07-20 |
 
 ### Top 20 Drivers by Fingerprint Count
 
@@ -57,14 +57,14 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 | 5 | `presence_sensor_radar` | 217 |
 | 6 | `diy_custom_zigbee` | 205 |
 | 7 | `radiator_valve` | 142 |
-| 8 | `sensor_contact_zigbee` | 121 |
+| 8 | `sensor_contact_zigbee` | 118 |
 | 9 | `universal_zigbee` | 104 |
 | 10 | `wall_dimmer_tuya` | 101 |
 | 11 | `generic_diy` | 81 |
 | 12 | `wall_thermostat` | 73 |
 | 13 | `switch_4gang` | 69 |
 | 14 | `dimmer_wall_1gang` | 64 |
-| 15 | `soil_sensor` | 64 |
+| 15 | `soil_sensor` | 63 |
 | 16 | `bulb_dimmable` | 62 |
 | 17 | `motion_sensor` | 56 |
 | 18 | `water_leak_sensor_tuya` | 53 |
@@ -102,6 +102,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 | Version | Changes |
 |---------|---------|
 | **vchangelog** | [object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object  |
+| **v9.0.313** | Stability improvements and Homey test publication retry after transient processing failure. |
 | **v9.0.312** | Stability improvements and Homey test publication retry after transient processing failure. |
 | **v9.0.311** | Stability improvements and Homey test publication retry after transient processing failure. |
 | **v9.0.310** | Stability improvements and Homey test publication retry after transient processing failure. |
@@ -115,7 +116,6 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 | **v9.0.302** | v9.0.294: Fix routing collision for TS0201 + _TZ3000_fllyghyj temp/humidity sensors (issue 506). Removed wrongly-clas... |
 | **v9.0.301** | v9.0.294: Fix routing collision for TS0201 + _TZ3000_fllyghyj temp/humidity sensors (issue 506). Removed wrongly-clas... |
 | **v9.0.300** | v9.0.294: Fix routing collision for TS0201 + _TZ3000_fllyghyj temp/humidity sensors (issue 506). Removed wrongly-clas... |
-| **v9.0.299** | v9.0.294: Fix routing collision for TS0201 + _TZ3000_fllyghyj temp/humidity sensors (issue 506). Removed wrongly-clas... |
 
 <!-- CHANGELOG_END -->
 
@@ -181,7 +181,7 @@ Homey Pro
        │    └─ Per-fingerprint: DP mappings, quirks, timing
        ├─ BatteryManager (8 chemistries, voltage fallback)
        ├─ PhysicalButtonMixin (2000ms detection)
-       └─ 431 Drivers ─ 5,274+ fingerprints
+       └─ 431 Drivers ─ 5,275+ fingerprints
 ```
 
 ---
@@ -355,4 +355,4 @@ A massive thank you to the maintainers and contributors of:
 
 **Made with love by Dylan Rajasekaram & the Zigbee community**
 
-*Last updated: 2026-07-19*
+*Last updated: 2026-07-20*
