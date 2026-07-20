@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-16T21:55:03.865Z",
+  "generatedAt": "2026-07-20T12:24:21.514Z",
   "description": "Known historical fingerprint collisions. CI fails only for collisions not listed here.",
   "collisions": [
     {
@@ -1306,6 +1306,13 @@
       ]
     },
     {
+      "key": "_TZ3000_4fjiwweb|TS004F",
+      "drivers": [
+        "button_wireless_4",
+        "power_meter"
+      ]
+    },
+    {
       "key": "_TZ3000_4ugnzsli|3300-S",
       "drivers": [
         "contact_sensor",
@@ -2027,6 +2034,13 @@
       ]
     },
     {
+      "key": "_TZ3000_abrsvsou|TS004F",
+      "drivers": [
+        "button_wireless_4",
+        "power_meter"
+      ]
+    },
+    {
       "key": "_TZ3000_awvmkayh|_tz3000_eit6l5",
       "drivers": [
         "water_leak_sensor",
@@ -2188,6 +2202,13 @@
       ]
     },
     {
+      "key": "_TZ3000_b3mgfu0d|TS0014",
+      "drivers": [
+        "button_wireless_4",
+        "switch_1gang"
+      ]
+    },
+    {
       "key": "_TZ3000_bfn1w0mm|TS0002",
       "drivers": [
         "button_wireless_2",
@@ -2290,6 +2311,13 @@
       "drivers": [
         "button_wireless_2",
         "plug_smart"
+      ]
+    },
+    {
+      "key": "_TZ3000_czuyt8lz|TS0014",
+      "drivers": [
+        "button_wireless_4",
+        "switch_1gang"
       ]
     },
     {
@@ -2696,6 +2724,20 @@
       "drivers": [
         "button_wireless_2",
         "switch_wireless"
+      ]
+    },
+    {
+      "key": "_TZ3000_eqsair32|TS0003",
+      "drivers": [
+        "switch_1gang",
+        "switch_3gang"
+      ]
+    },
+    {
+      "key": "_TZ3000_eqsair32|TS0601",
+      "drivers": [
+        "switch_1gang",
+        "switch_3gang"
       ]
     },
     {
@@ -3336,6 +3378,13 @@
       ]
     },
     {
+      "key": "_TZ3000_kfu8zapd|TS0014",
+      "drivers": [
+        "button_wireless_4",
+        "switch_1gang"
+      ]
+    },
+    {
       "key": "_TZ3000_kqvb5akv|TS0001",
       "drivers": [
         "switch_1gang",
@@ -3914,6 +3963,20 @@
       "drivers": [
         "dimmer_wall_1gang",
         "wall_dimmer_tuya"
+      ]
+    },
+    {
+      "key": "_TZ3000_mrduubod|TS0014",
+      "drivers": [
+        "switch_1gang",
+        "wall_switch_4gang_1way"
+      ]
+    },
+    {
+      "key": "_TZ3000_mrduubod|TS0726",
+      "drivers": [
+        "switch_1gang",
+        "wall_switch_4gang_1way"
       ]
     },
     {
@@ -4953,6 +5016,27 @@
       ]
     },
     {
+      "key": "_TZ3000_qxcnwv26|TS0601",
+      "drivers": [
+        "bulb_dimmable",
+        "switch_3gang"
+      ]
+    },
+    {
+      "key": "_TZ3000_rco1yzb1|TS0044",
+      "drivers": [
+        "button_wireless_4",
+        "button_wireless_scene"
+      ]
+    },
+    {
+      "key": "_TZ3000_rco1yzb1|TS004F",
+      "drivers": [
+        "button_wireless_4",
+        "button_wireless_scene"
+      ]
+    },
+    {
       "key": "_TZ3000_rcuyhwe3|Excellux",
       "drivers": [
         "contact_sensor",
@@ -5342,6 +5426,21 @@
       "drivers": [
         "button_wireless_2",
         "switch_wireless"
+      ]
+    },
+    {
+      "key": "_TZ3000_ugi8ky6u|TS004F",
+      "drivers": [
+        "power_meter",
+        "smart_knob_rotary"
+      ]
+    },
+    {
+      "key": "_TZ3000_ugi8ky6u|TS0601",
+      "drivers": [
+        "generic_tuya",
+        "power_meter",
+        "smart_knob_rotary"
       ]
     },
     {
@@ -5762,6 +5861,13 @@
       "drivers": [
         "button_wireless_2",
         "plug"
+      ]
+    },
+    {
+      "key": "_TZ3000_xabckq1v|TS0014",
+      "drivers": [
+        "button_wireless_4",
+        "switch_1gang"
       ]
     },
     {
@@ -8204,10 +8310,18 @@
       ]
     },
     {
+      "key": "_TZE284_2se8efxh|TS0001",
+      "drivers": [
+        "soil_sensor",
+        "water_leak_sensor"
+      ]
+    },
+    {
       "key": "_TZE284_2se8efxh|TS0601",
       "drivers": [
         "plug_smart",
-        "soil_sensor"
+        "soil_sensor",
+        "water_leak_sensor"
       ]
     },
     {
@@ -8379,6 +8493,13 @@
       ]
     },
     {
+      "key": "Hobeian|TS0001",
+      "drivers": [
+        "soil_sensor",
+        "water_leak_sensor"
+      ]
+    },
+    {
       "key": "HOBEIAN|TS0001",
       "drivers": [
         "soil_sensor",
@@ -8400,6 +8521,14 @@
         "sensor_contact_zigbee",
         "soil_sensor",
         "switch_wireless",
+        "water_leak_sensor"
+      ]
+    },
+    {
+      "key": "Hobeian|TS0601",
+      "drivers": [
+        "sensor_contact_zigbee",
+        "soil_sensor",
         "water_leak_sensor"
       ]
     },
