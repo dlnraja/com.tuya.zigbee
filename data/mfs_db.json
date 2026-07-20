@@ -83770,7 +83770,8 @@
       "manufacturerId": "_tz3000_kfu8zapd",
       "modelIds": [
         "TS0001",
-        "TS0601"
+        "TS0601",
+        "TS0044"
       ],
       "variants": [],
       "deviceType": "unknown",
@@ -83789,7 +83790,8 @@
       "sources": [
         "local",
         "z2m",
-        "hubitat"
+        "hubitat",
+        "user-data-cross-ref"
       ],
       "sourceDetails": {
         "local": 1,
@@ -83797,7 +83799,7 @@
         "hubitat": 2
       },
       "confidence": 0.25,
-      "lastSeen": "2026-06-19T20:58:49.761Z"
+      "lastSeen": "2026-07-17T03:19:18.664Z"
     },
     "_tz3000_kj0nwdz6": {
       "manufacturerId": "_tz3000_kj0nwdz6",
@@ -124439,8 +124441,11 @@
     "multiSourceCount": 1756,
     "lastAggregation": "2026-06-19T20:58:49.874Z",
     "lastEnrichment": "2026-07-13T04:59:38.214Z",
-    "sacredCouples": 6597,
-    "lastSacredCoupleEnrichment": "2026-07-13T23:57:58.590Z"
+    "sacredCouples": 12363,
+    "lastSacredCoupleEnrichment": "2026-07-13T23:57:58.590Z",
+    "fingerprints": 5710,
+    "lastUpdate": "2026-07-14",
+    "lastUpdated": "2026-07-20T03:57:00.639Z"
   },
   "diff": {
     "lastRun": "2026-06-19T20:58:49.880Z",
@@ -248131,6 +248136,271 @@
       "productNames": [
         "ZG-204ZH"
       ]
+    },
+    "_tyzb01_ujfk3xd9|ts0601": {
+      "driver": "climate_sensor",
+      "source": "blakadder-r68",
+      "added": "2026-07-16T14:35:26.325Z"
+    },
+    "_tyzb01_wpmo3ja3|ts0601": {
+      "driver": "co_sensor",
+      "source": "blakadder-r68",
+      "added": "2026-07-16T14:35:26.326Z"
+    },
+    "_tyzb01_8scntis1|ts0601": {
+      "driver": "siren",
+      "source": "blakadder-r68",
+      "added": "2026-07-16T14:35:26.326Z"
+    },
+    "_tyzb01_8wt0zp49|ts0601": {
+      "driver": "sensor_gas_presence",
+      "source": "blakadder-r68",
+      "added": "2026-07-16T14:35:26.326Z"
+    },
+    "_tyzb01_qiplt4jq|ts0601": {
+      "driver": "smoke_sensor2",
+      "source": "blakadder-r68",
+      "added": "2026-07-16T14:35:26.326Z"
+    },
+    "_tyzb01_fi5yftwv|ts0601": {
+      "driver": "climate_sensor",
+      "source": "blakadder-r68",
+      "added": "2026-07-16T14:35:26.326Z"
+    },
+    "_tyzb01_dvakyzhd|ts0601": {
+      "driver": "switch_wall_4gang",
+      "source": "blakadder-r68",
+      "added": "2026-07-16T14:35:26.326Z"
+    },
+    "_tyzb01_7qf81wty|ts0601": {
+      "driver": "scene_switch_1",
+      "source": "blakadder-r68",
+      "added": "2026-07-16T14:35:26.326Z"
+    },
+    "_tyzb01_hww2py6b|ts0601": {
+      "driver": "scene_switch_1",
+      "source": "blakadder-r68",
+      "added": "2026-07-16T14:35:26.326Z"
+    },
+    "_tz3000_ztrfrcsu|ts0001": {
+      "driver": "scene_switch_1",
+      "source": "blakadder-r68",
+      "added": "2026-07-16T14:35:26.326Z"
+    },
+    "_tz3210_remypqqm|ts0505b": {
+      "driver": "bulb_dimmable",
+      "source": "blakadder-r68",
+      "added": "2026-07-16T14:35:26.326Z"
+    },
+    "_tz3000_9vo5icau|ts011f": {
+      "driver": "plug_energy_monitor",
+      "source": "blakadder-r68",
+      "added": "2026-07-16T14:35:26.326Z"
+    },
+    "_tz3000_jyupj3fw|ts0016": {
+      "driver": "switch_wall_6gang",
+      "source": "blakadder-r68",
+      "added": "2026-07-16T14:35:26.326Z"
+    },
+    "_tz3210_psgq7ysz|ts0502a": {
+      "driver": "bulb_dimmable",
+      "source": "blakadder-r68",
+      "added": "2026-07-16T14:35:26.326Z"
+    },
+    "_tz3210_ijczzg9h|ts0504a": {
+      "driver": "bulb_dimmable",
+      "source": "blakadder-r68",
+      "added": "2026-07-16T14:35:26.326Z"
+    },
+    "_tz3000_7dndcnnb|ts0601": {
+      "driver": "switch_1gang",
+      "source": "blakadder-r68",
+      "added": "2026-07-16T14:35:26.326Z"
+    },
+    "_tyst11_xu1rkty3|ts0601": {
+      "driver": "curtain_motor",
+      "source": "blakadder-r68",
+      "added": "2026-07-16T14:35:26.326Z"
+    },
+    "_tz3000_kohbva1f|ts0601": {
+      "driver": "bulb_dimmable",
+      "source": "blakadder-r68",
+      "added": "2026-07-16T14:35:26.326Z"
+    },
+    "_tz3000_aim0ztek|ts0601": {
+      "driver": "wall_dimmer_tuya",
+      "source": "blakadder-r68",
+      "added": "2026-07-16T14:35:26.326Z"
+    },
+    "_tz3000_hodifxa9|ts0001": {
+      "driver": "bulb_dimmable",
+      "source": "blakadder-r68",
+      "added": "2026-07-16T14:35:26.326Z"
+    },
+    "_tz3000_589kq4ul|ts0001": {
+      "driver": "bulb_dimmable",
+      "source": "blakadder-r68",
+      "added": "2026-07-16T14:35:26.327Z"
+    },
+    "_tz3000_1mtktxdk|ts0001": {
+      "driver": "bulb_dimmable",
+      "source": "blakadder-r68",
+      "added": "2026-07-16T14:35:26.327Z"
+    },
+    "_tz3000_bujv0r9b|ts0001": {
+      "driver": "bulb_dimmable",
+      "source": "blakadder-r68",
+      "added": "2026-07-16T14:35:26.327Z"
+    },
+    "_tz3000_tza2vjxx|ts0001": {
+      "driver": "bulb_dimmable",
+      "source": "blakadder-r68",
+      "added": "2026-07-16T14:35:26.327Z"
+    },
+    "_tz3210_q7oryllx|ts0601": {
+      "driver": "switch_1gang",
+      "source": "blakadder-r68",
+      "added": "2026-07-16T14:35:26.327Z"
+    },
+    "_tz3000_fxjdcikv|ts0001": {
+      "driver": "switch_wall_4gang",
+      "source": "blakadder-r68",
+      "added": "2026-07-16T14:35:26.327Z"
+    },
+    "_tz3210_mny0zvkm|ts0601": {
+      "driver": "bulb_dimmable",
+      "source": "blakadder-r68",
+      "added": "2026-07-16T14:35:26.327Z"
+    },
+    "_tze3000_pfc7i3kt|ts0601": {
+      "driver": "switch_3gang",
+      "source": "blakadder-r68",
+      "added": "2026-07-16T14:35:26.327Z"
+    },
+    "_tz3210_mntza0sw|ts0601": {
+      "driver": "bulb_dimmable",
+      "source": "blakadder-r68",
+      "added": "2026-07-16T14:35:26.327Z"
+    },
+    "_tz3210_r0vzq1oj|ts0601": {
+      "driver": "bulb_dimmable",
+      "source": "blakadder-r68",
+      "added": "2026-07-16T14:35:26.327Z"
+    },
+    "_tz3000_hdtmulpn|ts0601": {
+      "driver": "sensor_contact_zigbee",
+      "source": "blakadder-r68",
+      "added": "2026-07-16T14:35:26.327Z"
+    },
+    "_tz3210_mcm6m1ma|ts0601": {
+      "driver": "bulb_dimmable",
+      "source": "blakadder-r68",
+      "added": "2026-07-16T14:35:26.327Z"
+    },
+    "_tz3210_g0qr1fqo|ts0601": {
+      "driver": "bulb_dimmable",
+      "source": "blakadder-r68",
+      "added": "2026-07-16T14:35:26.327Z"
+    },
+    "_tz3000_mantufyr|ts0601": {
+      "driver": "switch_1gang",
+      "source": "blakadder-r68",
+      "added": "2026-07-16T14:35:26.327Z"
+    },
+    "_tz3210_grnwgegn|ts0501b": {
+      "driver": "bulb_dimmable",
+      "source": "blakadder-r68",
+      "added": "2026-07-16T14:35:26.327Z"
+    },
+    "_tz3210_nehayyhx|ts0501b": {
+      "driver": "bulb_dimmable",
+      "source": "blakadder-r68",
+      "added": "2026-07-16T14:35:26.327Z"
+    },
+    "_tz3210_wuheofsg|ts0501b": {
+      "driver": "bulb_dimmable",
+      "source": "blakadder-r68",
+      "added": "2026-07-16T14:35:26.327Z"
+    },
+    "_tz3210_19qb27da|ts0501b": {
+      "driver": "bulb_dimmable",
+      "source": "blakadder-r68",
+      "added": "2026-07-16T14:35:26.327Z"
+    },
+    "_tz3210_93gnbdgz|ts0501b": {
+      "driver": "bulb_dimmable",
+      "source": "blakadder-r68",
+      "added": "2026-07-16T14:35:26.327Z"
+    },
+    "_tz3000_nzbm4ad4|ts0504a": {
+      "driver": "bulb_dimmable",
+      "source": "blakadder-r68",
+      "added": "2026-07-16T14:35:26.327Z"
+    },
+    "_tz3210_bfvybixd|ts0504b": {
+      "driver": "bulb_dimmable",
+      "source": "blakadder-r68",
+      "added": "2026-07-16T14:35:26.327Z"
+    },
+    "_tz3210_1elppmba|ts0504b": {
+      "driver": "bulb_dimmable",
+      "source": "blakadder-r68",
+      "added": "2026-07-16T14:35:26.327Z"
+    },
+    "_tz3210_5snkkrxw|ts0505b": {
+      "driver": "bulb_dimmable",
+      "source": "blakadder-r68",
+      "added": "2026-07-16T14:35:26.327Z"
+    },
+    "_tz3210_bicjqpg4|ts0505b": {
+      "driver": "bulb_dimmable",
+      "source": "blakadder-r68",
+      "added": "2026-07-16T14:35:26.327Z"
+    },
+    "_tz3210_0rn9qhnu|ts0505b": {
+      "driver": "bulb_dimmable",
+      "source": "blakadder-r68",
+      "added": "2026-07-16T14:35:26.327Z"
+    },
+    "_tz3000_l13erpv4|ts130f": {
+      "driver": "curtain_motor",
+      "source": "blakadder-r68",
+      "added": "2026-07-16T14:35:26.327Z"
+    },
+    "_tz3000_nfnmi125|ts0601": {
+      "driver": "plug_energy_monitor",
+      "source": "blakadder-r68",
+      "added": "2026-07-16T14:35:26.327Z"
+    },
+    "_tz3210_klv2wul0|ts0601": {
+      "driver": "bulb_dimmable",
+      "source": "blakadder-r68",
+      "added": "2026-07-16T14:35:26.327Z"
+    },
+    "_tz3210_wp1k8xws|ts0504a": {
+      "driver": "bulb_dimmable",
+      "source": "blakadder-r68",
+      "added": "2026-07-16T14:35:26.327Z"
+    },
+    "_tz3000_rbl8c85w|ts0601": {
+      "driver": "switch_2gang",
+      "source": "blakadder-r68",
+      "added": "2026-07-16T14:35:26.327Z"
+    },
+    "_tz3210_e020aaaj|ts0601": {
+      "driver": "bulb_dimmable",
+      "source": "blakadder-r68",
+      "added": "2026-07-16T14:35:26.327Z"
+    },
+    "_tz3000_ubrvwoxv|ts0601": {
+      "driver": "switch_1gang",
+      "source": "blakadder-r68",
+      "added": "2026-07-16T14:35:26.327Z"
+    },
+    "_tze200_9xejegcy|ts0601": {
+      "driver": "presence_sensor_radar",
+      "source": "blakadder-r68",
+      "added": "2026-07-16T14:35:26.327Z"
     }
   },
   "_TZE200_W0AP83QU": {
@@ -248144,5 +248414,225 @@
   "_TZE204_ZG204ZH": {
     "driverId": "presence_sensor_radar",
     "source": "p64.8-missing-zg204"
+  },
+  "_tz3000_ztrfrcsu": {
+    "driver": "scene_switch_1",
+    "pid": "TS0001",
+    "source": "blakadder-r68"
+  },
+  "_tz3210_remypqqm": {
+    "driver": "bulb_dimmable",
+    "pid": "TS0505B",
+    "source": "blakadder-r68"
+  },
+  "_tz3000_9vo5icau": {
+    "driver": "plug_energy_monitor",
+    "pid": "TS011F",
+    "source": "blakadder-r68"
+  },
+  "_tz3000_jyupj3fw": {
+    "driver": "switch_wall_6gang",
+    "pid": "TS0016",
+    "source": "blakadder-r68"
+  },
+  "_tz3210_psgq7ysz": {
+    "driver": "bulb_dimmable",
+    "pid": "TS0502A",
+    "source": "blakadder-r68"
+  },
+  "_tz3210_ijczzg9h": {
+    "driver": "bulb_dimmable",
+    "pid": "TS0504A",
+    "source": "blakadder-r68"
+  },
+  "_tz3000_7dndcnnb": {
+    "driver": "switch_1gang",
+    "pid": "TS0601",
+    "source": "blakadder-r68"
+  },
+  "_tyst11_xu1rkty3": {
+    "driver": "curtain_motor",
+    "pid": "TS0601",
+    "source": "blakadder-r68"
+  },
+  "_tz3000_kohbva1f": {
+    "driver": "bulb_dimmable",
+    "pid": "TS0601",
+    "source": "blakadder-r68"
+  },
+  "_tz3000_aim0ztek": {
+    "driver": "wall_dimmer_tuya",
+    "pid": "TS0601",
+    "source": "blakadder-r68"
+  },
+  "_tz3000_hodifxa9": {
+    "driver": "bulb_dimmable",
+    "pid": "TS0001",
+    "source": "blakadder-r68"
+  },
+  "_tz3000_589kq4ul": {
+    "driver": "bulb_dimmable",
+    "pid": "TS0001",
+    "source": "blakadder-r68"
+  },
+  "_tz3000_1mtktxdk": {
+    "driver": "bulb_dimmable",
+    "pid": "TS0001",
+    "source": "blakadder-r68"
+  },
+  "_tz3000_bujv0r9b": {
+    "driver": "bulb_dimmable",
+    "pid": "TS0001",
+    "source": "blakadder-r68"
+  },
+  "_tz3000_tza2vjxx": {
+    "driver": "bulb_dimmable",
+    "pid": "TS0001",
+    "source": "blakadder-r68"
+  },
+  "_tz3210_q7oryllx": {
+    "driver": "switch_1gang",
+    "pid": "TS0601",
+    "source": "blakadder-r68"
+  },
+  "_tz3000_fxjdcikv": {
+    "driver": "switch_wall_4gang",
+    "pid": "TS0001",
+    "source": "blakadder-r68"
+  },
+  "_tz3210_mny0zvkm": {
+    "driver": "bulb_dimmable",
+    "pid": "TS0601",
+    "source": "blakadder-r68"
+  },
+  "_tze3000_pfc7i3kt": {
+    "driver": "switch_3gang",
+    "pid": "TS0601",
+    "source": "blakadder-r68"
+  },
+  "_tz3210_mntza0sw": {
+    "driver": "bulb_dimmable",
+    "pid": "TS0601",
+    "source": "blakadder-r68"
+  },
+  "_tz3210_r0vzq1oj": {
+    "driver": "bulb_dimmable",
+    "pid": "TS0601",
+    "source": "blakadder-r68"
+  },
+  "_tz3000_hdtmulpn": {
+    "driver": "sensor_contact_zigbee",
+    "pid": "TS0601",
+    "source": "blakadder-r68"
+  },
+  "_tz3210_mcm6m1ma": {
+    "driver": "bulb_dimmable",
+    "pid": "TS0601",
+    "source": "blakadder-r68"
+  },
+  "_tz3210_g0qr1fqo": {
+    "driver": "bulb_dimmable",
+    "pid": "TS0601",
+    "source": "blakadder-r68"
+  },
+  "_tz3000_mantufyr": {
+    "driver": "switch_1gang",
+    "pid": "TS0601",
+    "source": "blakadder-r68"
+  },
+  "_tz3210_grnwgegn": {
+    "driver": "bulb_dimmable",
+    "pid": "TS0501B",
+    "source": "blakadder-r68"
+  },
+  "_tz3210_nehayyhx": {
+    "driver": "bulb_dimmable",
+    "pid": "TS0501B",
+    "source": "blakadder-r68"
+  },
+  "_tz3210_wuheofsg": {
+    "driver": "bulb_dimmable",
+    "pid": "TS0501B",
+    "source": "blakadder-r68"
+  },
+  "_tz3210_19qb27da": {
+    "driver": "bulb_dimmable",
+    "pid": "TS0501B",
+    "source": "blakadder-r68"
+  },
+  "_tz3210_93gnbdgz": {
+    "driver": "bulb_dimmable",
+    "pid": "TS0501B",
+    "source": "blakadder-r68"
+  },
+  "_tz3000_nzbm4ad4": {
+    "driver": "bulb_dimmable",
+    "pid": "TS0504A",
+    "source": "blakadder-r68"
+  },
+  "_tz3210_bfvybixd": {
+    "driver": "bulb_dimmable",
+    "pid": "TS0504B",
+    "source": "blakadder-r68"
+  },
+  "_tz3210_1elppmba": {
+    "driver": "bulb_dimmable",
+    "pid": "TS0504B",
+    "source": "blakadder-r68"
+  },
+  "_tz3210_5snkkrxw": {
+    "driver": "bulb_dimmable",
+    "pid": "TS0505B",
+    "source": "blakadder-r68"
+  },
+  "_tz3210_bicjqpg4": {
+    "driver": "bulb_dimmable",
+    "pid": "TS0505B",
+    "source": "blakadder-r68"
+  },
+  "_tz3210_0rn9qhnu": {
+    "driver": "bulb_dimmable",
+    "pid": "TS0505B",
+    "source": "blakadder-r68"
+  },
+  "_tz3000_l13erpv4": {
+    "driver": "curtain_motor",
+    "pid": "TS130F",
+    "source": "blakadder-r68"
+  },
+  "_tz3000_nfnmi125": {
+    "driver": "plug_energy_monitor",
+    "pid": "TS0601",
+    "source": "blakadder-r68"
+  },
+  "_tz3210_klv2wul0": {
+    "driver": "bulb_dimmable",
+    "pid": "TS0601",
+    "source": "blakadder-r68"
+  },
+  "_tz3210_wp1k8xws": {
+    "driver": "bulb_dimmable",
+    "pid": "TS0504A",
+    "source": "blakadder-r68"
+  },
+  "_tz3000_rbl8c85w": {
+    "driver": "switch_2gang",
+    "pid": "TS0601",
+    "source": "blakadder-r68"
+  },
+  "_tz3210_e020aaaj": {
+    "driver": "bulb_dimmable",
+    "pid": "TS0601",
+    "source": "blakadder-r68"
+  },
+  "_tz3000_ubrvwoxv": {
+    "driver": "switch_1gang",
+    "pid": "TS0601",
+    "source": "blakadder-r68"
+  },
+  "_tze200_9xejegcy": {
+    "driver": "presence_sensor_radar",
+    "pid": "TS0601",
+    "source": "blakadder-r68"
   }
 }
