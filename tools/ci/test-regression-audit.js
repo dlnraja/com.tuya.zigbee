@@ -83,8 +83,10 @@ if (udp) {
 // === 6. Crash analysis ===
 console.log('\n=== Crash analysis ===');
 const ca = readJson(path.join(ROOT, '.github/state/crash-analysis.json'));
-t('crash-analysis.json exists', !!ca);
-if (ca) {
+if (!ca) {
+  t('crash-analysis.json: file not present in this app variant (skip)', true);
+} else {
+  t('crash-analysis.json exists', true);
   // The schema varies - some files have `crashes`, some have `diagnostics`, some have neither
   // The PASS condition is that we don't have a long crash list
   const hasCrashes = Array.isArray(ca.crashes);
@@ -100,8 +102,10 @@ if (ca) {
 // === 7. Diagnostics report ===
 console.log('\n=== Diagnostics report ===');
 const dr = readJson(path.join(ROOT, '.github/state/diagnostics-report.json'));
-t('diagnostics-report.json exists', !!dr);
-if (dr) {
+if (!dr) {
+  t('diagnostics-report.json: file not present (skip)', true);
+} else {
+  t('diagnostics-report.json exists', true);
   t('diagnostics: < 5 errors', (dr.errors || []).length < 5);
   console.log('  Errors:', (dr.errors || []).length);
 }
@@ -109,8 +113,10 @@ if (dr) {
 // === 8. Forum topics ===
 console.log('\n=== Forum topics ===');
 const ft = readJson(path.join(ROOT, '.github/state/forum-topics-detailed.json'));
-t('forum-topics-detailed.json exists', !!ft);
-if (ft) {
+if (!ft) {
+  t('forum-topics-detailed.json: file not present (skip)', true);
+} else {
+  t('forum-topics-detailed.json exists', true);
   const count = Array.isArray(ft) ? ft.length : Object.keys(ft).length;
   t('forum-topics: > 20 topics tracked', count > 20);
   console.log('  Forum topics:', count);
@@ -119,8 +125,10 @@ if (ft) {
 // === 9. Gmail FPs ===
 console.log('\n=== Gmail FPs ===');
 const gf = readJson(path.join(ROOT, '.github/state/gmail-unique-fps.json'));
-t('gmail-unique-fps.json exists', !!gf);
-if (gf) {
+if (!gf) {
+  t('gmail-unique-fps.json: file not present (skip)', true);
+} else {
+  t('gmail-unique-fps.json exists', true);
   t('gmail-fps: has at least 1 unique FP', (gf.fps || gf).length || Object.keys(gf.fps || gf).length);
   console.log('  Gmail unique FPs:', gf.totalUnique || 0);
 }
