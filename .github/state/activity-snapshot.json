@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-07-19T06:37:36.330Z",
+  "fetchedAt": "2026-07-20T06:55:06.250Z",
   "github": {
     "openIssues": [
       {
@@ -370,184 +370,184 @@
     ],
     "events": [
       {
-        "createdAt": "2026-07-19T03:43:27Z",
+        "createdAt": "2026-07-20T06:43:33Z",
+        "actor": "github-actions[bot]",
+        "type": "PushEvent",
+        "description": "pushed stable-v5 (0 commits)"
+      },
+      {
+        "createdAt": "2026-07-20T03:57:13Z",
         "actor": "github-actions[bot]",
         "type": "PushEvent",
         "description": "pushed master (0 commits)"
       },
       {
-        "createdAt": "2026-07-18T19:19:14Z",
-        "actor": "github-actions[bot]",
-        "type": "PushEvent",
-        "description": "pushed master (0 commits)"
-      },
-      {
-        "createdAt": "2026-07-18T15:29:32Z",
-        "actor": "github-actions[bot]",
-        "type": "PushEvent",
-        "description": "pushed master (0 commits)"
-      },
-      {
-        "createdAt": "2026-07-18T15:28:48Z",
+        "createdAt": "2026-07-20T03:29:01Z",
         "actor": "dlnraja",
         "type": "PushEvent",
         "description": "pushed master (0 commits)"
       },
       {
-        "createdAt": "2026-07-18T15:28:27Z",
-        "actor": "dlnraja",
-        "type": "PushEvent",
-        "description": "pushed master (0 commits)"
-      },
-      {
-        "createdAt": "2026-07-18T15:28:08Z",
+        "createdAt": "2026-07-20T03:25:24Z",
         "actor": "github-actions[bot]",
         "type": "ReleaseEvent",
         "description": "ReleaseEvent"
       },
       {
-        "createdAt": "2026-07-18T15:25:30Z",
+        "createdAt": "2026-07-20T03:22:59Z",
         "actor": "github-actions[bot]",
         "type": "PushEvent",
         "description": "pushed master (0 commits)"
       },
       {
-        "createdAt": "2026-07-18T15:24:38Z",
+        "createdAt": "2026-07-20T03:22:51Z",
+        "actor": "github-actions[bot]",
+        "type": "PushEvent",
+        "description": "pushed stable-v5 (0 commits)"
+      },
+      {
+        "createdAt": "2026-07-20T02:59:55Z",
         "actor": "dlnraja",
         "type": "PushEvent",
         "description": "pushed master (0 commits)"
       },
       {
-        "createdAt": "2026-07-18T13:42:32Z",
-        "actor": "github-actions[bot]",
-        "type": "PushEvent",
-        "description": "pushed master (0 commits)"
-      },
-      {
-        "createdAt": "2026-07-18T08:05:43Z",
-        "actor": "github-actions[bot]",
-        "type": "PushEvent",
-        "description": "pushed master (0 commits)"
-      },
-      {
-        "createdAt": "2026-07-18T07:47:13Z",
-        "actor": "github-actions[bot]",
-        "type": "PushEvent",
-        "description": "pushed master (0 commits)"
-      },
-      {
-        "createdAt": "2026-07-18T06:20:11Z",
-        "actor": "github-actions[bot]",
-        "type": "PushEvent",
-        "description": "pushed master (0 commits)"
-      },
-      {
-        "createdAt": "2026-07-18T06:11:10Z",
-        "actor": "github-actions[bot]",
-        "type": "PushEvent",
-        "description": "pushed master (0 commits)"
-      },
-      {
-        "createdAt": "2026-07-18T05:40:23Z",
+        "createdAt": "2026-07-20T00:16:18Z",
         "actor": "dlnraja",
         "type": "PushEvent",
         "description": "pushed master (0 commits)"
       },
       {
-        "createdAt": "2026-07-18T05:36:47Z",
+        "createdAt": "2026-07-20T00:12:36Z",
         "actor": "github-actions[bot]",
         "type": "ReleaseEvent",
         "description": "ReleaseEvent"
       },
       {
-        "createdAt": "2026-07-18T05:32:20Z",
+        "createdAt": "2026-07-20T00:10:01Z",
+        "actor": "github-actions[bot]",
+        "type": "PushEvent",
+        "description": "pushed master (0 commits)"
+      },
+      {
+        "createdAt": "2026-07-20T00:09:02Z",
+        "actor": "dlnraja",
+        "type": "PushEvent",
+        "description": "pushed stable-v5 (0 commits)"
+      },
+      {
+        "createdAt": "2026-07-20T00:08:54Z",
         "actor": "dlnraja",
         "type": "PushEvent",
         "description": "pushed master (0 commits)"
       },
       {
-        "createdAt": "2026-07-18T05:30:39Z",
-        "actor": "github-actions[bot]",
-        "type": "PushEvent",
-        "description": "pushed master (0 commits)"
-      },
-      {
-        "createdAt": "2026-07-18T05:29:51Z",
+        "createdAt": "2026-07-19T23:07:45Z",
         "actor": "dlnraja",
         "type": "PushEvent",
         "description": "pushed master (0 commits)"
       },
       {
-        "createdAt": "2026-07-18T05:28:55Z",
-        "actor": "dlnraja",
-        "type": "IssueCommentEvent",
-        "description": "commented on #506: Temp and humidity sensor"
+        "createdAt": "2026-07-19T22:57:15Z",
+        "actor": "github-actions[bot]",
+        "type": "ReleaseEvent",
+        "description": "ReleaseEvent"
       },
       {
-        "createdAt": "2026-07-18T05:28:55Z",
-        "actor": "dlnraja",
-        "type": "IssuesEvent",
-        "description": "closed issue #506: Temp and humidity sensor"
-      },
-      {
-        "createdAt": "2026-07-18T03:22:33Z",
+        "createdAt": "2026-07-19T22:54:41Z",
         "actor": "github-actions[bot]",
         "type": "PushEvent",
         "description": "pushed master (0 commits)"
       },
       {
-        "createdAt": "2026-07-18T01:14:54Z",
-        "actor": "dlnraja",
-        "type": "IssueCommentEvent",
-        "description": "commented on #506: Temp and humidity sensor"
-      },
-      {
-        "createdAt": "2026-07-17T21:58:27Z",
-        "actor": "github-actions[bot]",
-        "type": "IssueCommentEvent",
-        "description": "commented on #506: Temp and humidity sensor"
-      },
-      {
-        "createdAt": "2026-07-17T21:58:27Z",
-        "actor": "github-actions[bot]",
-        "type": "IssuesEvent",
-        "description": "reopened issue #506: Temp and humidity sensor"
-      },
-      {
-        "createdAt": "2026-07-17T21:58:15Z",
-        "actor": "Lalla80111",
-        "type": "IssueCommentEvent",
-        "description": "commented on #506: Temp and humidity sensor"
-      },
-      {
-        "createdAt": "2026-07-17T19:23:55Z",
-        "actor": "github-actions[bot]",
-        "type": "PushEvent",
-        "description": "pushed master (0 commits)"
-      },
-      {
-        "createdAt": "2026-07-17T13:58:33Z",
-        "actor": "github-actions[bot]",
-        "type": "PushEvent",
-        "description": "pushed master (0 commits)"
-      },
-      {
-        "createdAt": "2026-07-17T08:24:48Z",
-        "actor": "github-actions[bot]",
-        "type": "PushEvent",
-        "description": "pushed master (0 commits)"
-      },
-      {
-        "createdAt": "2026-07-17T08:08:06Z",
-        "actor": "github-actions[bot]",
-        "type": "PushEvent",
-        "description": "pushed master (0 commits)"
-      },
-      {
-        "createdAt": "2026-07-17T07:00:45Z",
+        "createdAt": "2026-07-19T22:53:40Z",
         "actor": "dlnraja",
         "type": "PushEvent",
         "description": "pushed master (0 commits)"
+      },
+      {
+        "createdAt": "2026-07-19T21:38:04Z",
+        "actor": "dlnraja",
+        "type": "PushEvent",
+        "description": "pushed master (0 commits)"
+      },
+      {
+        "createdAt": "2026-07-19T21:33:16Z",
+        "actor": "github-actions[bot]",
+        "type": "ReleaseEvent",
+        "description": "ReleaseEvent"
+      },
+      {
+        "createdAt": "2026-07-19T21:32:29Z",
+        "actor": "github-actions[bot]",
+        "type": "PushEvent",
+        "description": "pushed master (0 commits)"
+      },
+      {
+        "createdAt": "2026-07-19T21:32:24Z",
+        "actor": "github-actions[bot]",
+        "type": "PushEvent",
+        "description": "pushed stable-v5 (0 commits)"
+      },
+      {
+        "createdAt": "2026-07-19T19:20:54Z",
+        "actor": "github-actions[bot]",
+        "type": "PushEvent",
+        "description": "pushed master (0 commits)"
+      },
+      {
+        "createdAt": "2026-07-19T16:09:04Z",
+        "actor": "dlnraja",
+        "type": "PushEvent",
+        "description": "pushed master (0 commits)"
+      },
+      {
+        "createdAt": "2026-07-19T15:54:22Z",
+        "actor": "github-actions[bot]",
+        "type": "ReleaseEvent",
+        "description": "ReleaseEvent"
+      },
+      {
+        "createdAt": "2026-07-19T15:51:41Z",
+        "actor": "github-actions[bot]",
+        "type": "PushEvent",
+        "description": "pushed master (0 commits)"
+      },
+      {
+        "createdAt": "2026-07-19T15:51:07Z",
+        "actor": "dlnraja",
+        "type": "PushEvent",
+        "description": "pushed stable-v5 (0 commits)"
+      },
+      {
+        "createdAt": "2026-07-19T15:50:47Z",
+        "actor": "dlnraja",
+        "type": "PushEvent",
+        "description": "pushed master (0 commits)"
+      },
+      {
+        "createdAt": "2026-07-19T15:48:51Z",
+        "actor": "dlnraja",
+        "type": "PushEvent",
+        "description": "pushed master (0 commits)"
+      },
+      {
+        "createdAt": "2026-07-19T15:45:12Z",
+        "actor": "github-actions[bot]",
+        "type": "ReleaseEvent",
+        "description": "ReleaseEvent"
+      },
+      {
+        "createdAt": "2026-07-19T15:43:57Z",
+        "actor": "github-actions[bot]",
+        "type": "PushEvent",
+        "description": "pushed master (0 commits)"
+      },
+      {
+        "createdAt": "2026-07-19T15:43:57Z",
+        "actor": "github-actions[bot]",
+        "type": "PushEvent",
+        "description": "pushed stable-v5 (0 commits)"
       }
     ],
     "recentPRs": [
@@ -873,7 +873,7 @@
         "createdAt": "2025-07-25T01:07:08.482Z",
         "lastPostedAt": "2026-07-16T06:38:42.535Z",
         "postsCount": 2037,
-        "views": 22478,
+        "views": 22497,
         "likeCount": 450,
         "posts": [
           {
@@ -1006,7 +1006,7 @@
         "createdAt": "2020-02-26T09:12:23.664Z",
         "lastPostedAt": "2026-06-30T17:50:44.858Z",
         "postsCount": 1159,
-        "views": 175886,
+        "views": 175892,
         "likeCount": 683,
         "posts": [
           {
