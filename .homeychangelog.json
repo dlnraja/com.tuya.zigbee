@@ -1242,5 +1242,9 @@
   },
   "9.0.334": {
     "en": "Stability improvements and Homey test publication retry after transient processing failure."
+  },
+  "5.12.13": {
+    "en": "P77 + P78: battery/button enrichment analysis tools (3 new tools). P29.7 temporal-monitor refreshed. 137/137 stable tests passing. 431 drivers, 5712 fingerprints, 0 new collisions.",
+    "fr": "P77 + P78: outils analyse enrichissement batteries/boutons (3 nouveaux outils). P29.7 temporal-monitor rafraîchi. 137/137 tests stable passants. 431 drivers, 5712 fingerprints, 0 collision."
   }
 }
