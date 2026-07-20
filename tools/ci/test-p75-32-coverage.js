@@ -8,6 +8,7 @@ const tests = [
   { name: 'test-mixin-coverage.js', desc: 'Mixins (SafeCapability, VirtualEnergy, Button, etc.)' },
   { name: 'test-flow-card-coverage.js', desc: 'Flow card modules (Advanced, Feature, Manager, etc.)' },
   { name: 'test-regression-audit.js', desc: 'Regression audit reports (button/flow/crash)' },
+  { name: 'test-architectural-coverage.js', desc: 'Architectural safety patterns across all 431 drivers' },
 ];
 
 console.log('=== P75.32 Coverage Test Suite ===\n');
