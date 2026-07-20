@@ -1178,5 +1178,8 @@
   },
   "9.0.320": {
     "en": "P76 architectural fix: 7 new HOBEIAN/ga1maeof fingerprint collisions baselined (P75.31 follow-up). Architectural test false positives fixed (raw setCapabilityValue=0, global timers=0). Security Shield v8.5.0 fixed: 4 forbidden state files untracked. 28+ architectural tests passing (was 27 false positives), 129/129 master tests passing. 431 drivers, 2902 FPs."
+  },
+  "9.0.321": {
+    "en": "P76 architectural fix: 7 new HOBEIAN/ga1maeof fingerprint collisions baselined (P75.31 follow-up). Architectural test false positives fixed (raw setCapabilityValue=0, global timers=0). Security Shield v8.5.0 fixed: 4 forbidden state files untracked. 28+ architectural tests passing (was 27 false positives), 129/129 master tests passing. 431 drivers, 2902 FPs."
   }
 }
