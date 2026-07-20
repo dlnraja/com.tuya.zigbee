@@ -100,6 +100,13 @@
       "note": "P75.31: HOBEIAN TS0001 (case variant) - same as lowercase collision"
     },
     {
+      "key": "Hobeian|TS0001",
+      "drivers": [
+        "soil_sensor",
+        "water_leak_sensor"
+      ]
+    },
+    {
       "key": "HOBEIAN|TS0001",
       "drivers": [
         "soil_sensor",
