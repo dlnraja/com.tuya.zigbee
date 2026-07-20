@@ -1,6 +1,6 @@
 {
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.12.8",
+  "version": "5.12.9-stable",
   "compatibility": ">=12.2.0",
   "platforms": [
     "local"
@@ -103,6 +103,6 @@
   },
   "channel": "stable",
   "stableSince": "2026-07-14",
-  "stableNotes": "P52: synced 26 new FPs (#439) + 6 new chem profiles from master. No new architecture features.",
+  "stableNotes": "P52-auto: synced safe changes from master",
   "_comment": "Generated from .homeycompose/app.json. STABLE channel — only bug fixes applied."
 }
