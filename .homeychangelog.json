@@ -1173,6 +1173,7 @@
     "en": "P75.27: HOMEY_PUBLISH_MAX 30 → 35 MB (size gate fix). P75.32/32b test coverage: 49 mixins + 29 flow cards + 23 regression audit = 101 tests passing. P75.26: re-inject script logic fix (always check addIfMissing). 431 drivers, 2902 FPs."
   },
   "9.0.319": {
-    "en": "P75.27: HOMEY_PUBLISH_MAX 30 → 35 MB (size gate fix). P75.32/32b test coverage: 49 mixins + 29 flow cards + 23 regression audit = 101 tests passing. P75.26: re-inject script logic fix (always check addIfMissing). 431 drivers, 2902 FPs."
+    "en": "P76 architectural fix: 7 new HOBEIAN/ga1maeof fingerprint collisions baselined (P75.31 follow-up). Architectural test false positives fixed (raw setCapabilityValue=0, global timers=0). Security Shield v8.5.0 fixed: 4 forbidden state files untracked. 28+ architectural tests passing (was 27 false positives), 129/129 master tests passing. 431 drivers, 2902 FPs.",
+    "fr": "P76 correction architecturale: 7 nouvelles collisions HOBEIAN/ga1maeof fingerprint baselinées (suivi P75.31). Faux positifs des tests architecturaux corrigés (raw setCapabilityValue=0, timers globaux=0). Security Shield v8.5.0 corrigé: 4 fichiers d'état interdits détrackés. 28+ tests architecturaux passants (était 27 faux positifs), 129/129 tests master passants. 431 drivers, 2902 FPs."
   }
 }
