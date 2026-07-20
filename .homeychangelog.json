@@ -883,5 +883,8 @@
   "5.12.9": {
     "en": "P75.27-stable: HOMEY_PUBLISH_MAX 30 → 35 MB fix. P75.32/32b test coverage (49 mixins + 29 flow cards + 23 regression audit = 101 tests passing).",
     "fr": "P75.27-stable: HOMEY_PUBLISH_MAX 30 → 35 MB fix. P75.32/32b couverture de tests (49 mixins + 29 flow cards + 23 audit régression = 101 tests passants)."
+  },
+  "5.12.10": {
+    "en": "Stability improvements and Homey test publication retry."
   }
 }
