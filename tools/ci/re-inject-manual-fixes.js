@@ -106,6 +106,33 @@ const MANUAL_FIXES = [
     addAtTop: false,
     source: 'p75.18-forum-routing',
   },
+  // P75.31: soil_sensor mfrs (P64.10 + #511 Peter) - bot reverts after P64 tests pass
+  {
+    id: 'p75.31-soil-sensor-hobeian-zg303z',
+    file: 'drivers/soil_sensor/driver.compose.json',
+    description: 'P75.31: soil_sensor mfrs - HOBEIAN + ZG-303Z family (Peter #511)',
+    match: (mfrs) => mfrs.includes('HOBEIAN'),
+    addIfMissing: [
+      'HOBEIAN', 'hobeian', 'Hobeian',
+      '_TZE284_awepdiwi', '_tze284_awepdiwi',
+      '_TZE284_ga1maeof', '_tze284_ga1maeof',
+    ],
+    addAtTop: false,
+    source: 'p75.31-p64.10-p511',
+  },
+  // P75.31: water_leak_sensor HOBEIAN (P61 fix - was disabled in P74, restored)
+  {
+    id: 'p75.31-water-leak-sensor-hobeian-zg222z',
+    file: 'drivers/water_leak_sensor/driver.compose.json',
+    description: 'P75.31: water_leak_sensor HOBEIAN + ZG-222Z (Peter #2090)',
+    match: (mfrs) => mfrs.includes('HOBEIAN'),
+    addIfMissing: [
+      'HOBEIAN', 'hobeian', 'Hobeian',
+      '_TZE284_2se8efxh', '_TZE284_xuv7ptg0',
+    ],
+    addAtTop: true,
+    source: 'p75.31-p61-restored',
+  },
 ];
 
 function patchFix(fix) {
