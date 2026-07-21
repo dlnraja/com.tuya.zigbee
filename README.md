@@ -34,7 +34,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.328 |
+| **App Version** | v9.0.329 |
 | **Device Fingerprints** | 5,275+ |
 | **Unique Product IDs** | 571 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
@@ -44,7 +44,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | **Languages** | EN, FR, NL, DE |
 | **SDK Version** | 3 |
 | **Homey Compatibility** | >=12.2.0 |
-| **Last Updated** | 2026-07-20 |
+| **Last Updated** | 2026-07-21 |
 
 ### Top 20 Drivers by Fingerprint Count
 
@@ -102,6 +102,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | Version | Changes |
 |---------|---------|
 | **vchangelog** | [object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object  |
+| **v9.0.329** | P77 + P78: battery/button enrichment analysis (247 battery drivers, 54 button drivers audited). P29.7 temporal-monito... |
 | **v9.0.328** | P77 + P78: battery/button enrichment analysis (247 battery drivers, 54 button drivers audited). P29.7 temporal-monito... |
 | **v9.0.327** | P77 + P78: battery/button enrichment analysis (247 battery drivers, 54 button drivers audited). P29.7 temporal-monito... |
 | **v9.0.326** | Stability improvements and Homey test publication retry after transient processing failure. |
@@ -115,7 +116,6 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | **v9.0.318** | P75.27: HOMEY_PUBLISH_MAX 30 â†’ 35 MB (size gate fix). P75.32/32b test coverage: 49 mixins + 29 flow cards + 23 regres... |
 | **v9.0.317** | P75.27: HOMEY_PUBLISH_MAX 30 â†’ 35 MB (size gate fix). P75.32/32b test coverage: 49 mixins + 29 flow cards + 23 regres... |
 | **v9.0.316** | P75.27: HOMEY_PUBLISH_MAX 30 â†’ 35 MB (size gate fix). P75.32/32b test coverage: 49 mixins + 29 flow cards + 23 regres... |
-| **v9.0.315** | Stability improvements and Homey test publication retry after transient processing failure. |
 
 <!-- CHANGELOG_END -->
 
@@ -355,4 +355,4 @@ A massive thank you to the maintainers and contributors of:
 
 **Made with love by Dylan Rajasekaram & the Zigbee community**
 
-*Last updated: 2026-07-20*
+*Last updated: 2026-07-21*
