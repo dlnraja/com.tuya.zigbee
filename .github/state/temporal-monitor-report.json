@@ -1,0 +1,1908 @@
+{
+  "runAt": "2026-07-21T06:35:58.145Z",
+  "newIssues": [
+    {
+      "number": 506,
+      "title": "Temp and humidity sensor",
+      "state": "closed",
+      "labels": [
+        "bug",
+        "enhancement",
+        "device-request",
+        "new-fingerprint",
+        "reopened-by-user",
+        "sensor",
+        "device_issue"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/506",
+      "classifications": [],
+      "hasFix": true,
+      "fix": "Already in fingerprints.json → climate_sensor",
+      "fixConfidence": 0.9
+    },
+    {
+      "number": 428,
+      "title": "Bug report - unable to add known sensor",
+      "state": "closed",
+      "labels": [
+        "bug",
+        "new-fingerprint",
+        "reopened-by-user",
+        "zigbee",
+        "sensor"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/428",
+      "classifications": [
+        "known-productid"
+      ],
+      "hasFix": true,
+      "fix": "Already in fingerprints.json → soil_sensor",
+      "fixConfidence": 0.9
+    },
+    {
+      "number": 424,
+      "title": "[Device Support] Bed sensor _TZE200_seq9cm6u pairs as \"Unknown Zigbee Device\"",
+      "state": "closed",
+      "labels": [
+        "bug",
+        "device-request",
+        "new-fingerprint",
+        "device_support"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/424",
+      "classifications": [
+        "known-productid"
+      ],
+      "hasFix": true,
+      "fix": "Already in fingerprints.json → bed_sensor",
+      "fixConfidence": 0.9
+    },
+    {
+      "number": 413,
+      "title": "[plug_energy_monitor] Bug: \t_TZ3000_wzmuk9ai   \tTS011F",
+      "state": "closed",
+      "labels": [
+        "bug",
+        "new-fingerprint",
+        "TS011F",
+        "plug_energy_monitor"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/413",
+      "classifications": [],
+      "hasFix": true,
+      "fix": "Already in fingerprints.json → plug_energy_monitor",
+      "fixConfidence": 0.9
+    },
+    {
+      "number": 412,
+      "title": "_TZ3000_yj6k7vfo [button_wireless_smart] Bug: No button press detected again. #334  #410",
+      "state": "closed",
+      "labels": [
+        "bug",
+        "new-fingerprint",
+        "button",
+        "TS0041"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/412",
+      "classifications": [
+        "button-mode-issue",
+        "known-productid"
+      ],
+      "hasFix": true,
+      "fix": "Already in fingerprints.json → button_wireless_4_ts0041",
+      "fixConfidence": 0.9
+    },
+    {
+      "number": 410,
+      "title": "_TZ3000_yj6k7vfo [button_wireless_smart] Bug: No button press detected again. #334",
+      "state": "closed",
+      "labels": [
+        "bug",
+        "new-fingerprint",
+        "button"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/410",
+      "classifications": [],
+      "hasFix": false,
+      "fix": null,
+      "fixConfidence": 0
+    },
+    {
+      "number": 406,
+      "title": "[presence_sensor_radar] Bug: _TZE200_ka8l86iu PesenceSensor #374 #382 #399 ",
+      "state": "closed",
+      "labels": [
+        "bug",
+        "new-fingerprint",
+        "presence_sensor"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/406",
+      "classifications": [],
+      "hasFix": true,
+      "fix": "Already in fingerprints.json → presence_sensor_radar",
+      "fixConfidence": 0.9
+    },
+    {
+      "number": 399,
+      "title": "[presence_sensor_radar] Bug: _TZE200_ka8l86iu PesenceSensor #374 #382",
+      "state": "closed",
+      "labels": [
+        "bug",
+        "new-fingerprint",
+        "presence_sensor",
+        "presence_sensor_radar"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/399",
+      "classifications": [],
+      "hasFix": true,
+      "fix": "Already in fingerprints.json → presence_sensor_radar",
+      "fixConfidence": 0.9
+    },
+    {
+      "number": 398,
+      "title": "Bug report - Strange readings from the soil sensors  #376",
+      "state": "closed",
+      "labels": [
+        "bug",
+        "new-fingerprint",
+        "pairing_issue",
+        "sensor",
+        "soil_sensor",
+        "pairing"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/398",
+      "classifications": [],
+      "hasFix": false,
+      "fix": null,
+      "fixConfidence": 0
+    },
+    {
+      "number": 395,
+      "title": "TS0601 _TZE200_9xfjixap #339#379 #381  #384",
+      "state": "closed",
+      "labels": [
+        "bug",
+        "new-fingerprint",
+        "Tuya",
+        "TS0601",
+        "device_issue",
+        "awaiting-verification"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/395",
+      "classifications": [
+        "known-productid"
+      ],
+      "hasFix": false,
+      "fix": null,
+      "fixConfidence": 0
+    },
+    {
+      "number": 394,
+      "title": "_TZE200_u6x1zyv2 \tTS0601 From #370  #373",
+      "state": "closed",
+      "labels": [
+        "bug",
+        "new-fingerprint",
+        "zigbee",
+        "device",
+        "sensor",
+        "awaiting-verification"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/394",
+      "classifications": [
+        "known-productid"
+      ],
+      "hasFix": false,
+      "fix": null,
+      "fixConfidence": 0
+    },
+    {
+      "number": 388,
+      "title": "Bug Report: Incorrect recognition of Rain Sensor TS0207 as Water Leak Sensor",
+      "state": "closed",
+      "labels": [
+        "bug",
+        "new-fingerprint",
+        "awaiting-verification",
+        "device recognition"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/388",
+      "classifications": [
+        "wrong-driver-routing",
+        "water-device"
+      ],
+      "hasFix": false,
+      "fix": null,
+      "fixConfidence": 0
+    },
+    {
+      "number": 383,
+      "title": "Bug Report: Bed Sensor issues still persist in v8.1.141",
+      "state": "closed",
+      "labels": [
+        "bug",
+        "awaiting-verification",
+        "bed_sensor",
+        "v8.1.141"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/383",
+      "classifications": [],
+      "hasFix": false,
+      "fix": null,
+      "fixConfidence": 0
+    },
+    {
+      "number": 382,
+      "title": "[presence_sensor_radar] Bug: _TZE200_ka8l86iu PesenceSensor #374",
+      "state": "closed",
+      "labels": [
+        "bug",
+        "presence_sensor"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/382",
+      "classifications": [
+        "known-productid"
+      ],
+      "hasFix": true,
+      "fix": "Already in fingerprints.json → device_radiator_valve",
+      "fixConfidence": 0.9
+    },
+    {
+      "number": 381,
+      "title": "TS0601  _TZE200_9xfjixap  #339#379",
+      "state": "closed",
+      "labels": [
+        "bug",
+        "new-fingerprint",
+        "TS0601",
+        "device_issue"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/381",
+      "classifications": [
+        "known-productid"
+      ],
+      "hasFix": true,
+      "fix": "Already in fingerprints.json → device_radiator_valve",
+      "fixConfidence": 0.9
+    },
+    {
+      "number": 380,
+      "title": "361 configuration page is still loading endlessly",
+      "state": "closed",
+      "labels": [
+        "bug",
+        "awaiting-verification",
+        "configuration",
+        "loading_issue"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/380",
+      "classifications": [],
+      "hasFix": false,
+      "fix": null,
+      "fixConfidence": 0
+    },
+    {
+      "number": 379,
+      "title": "[radiator_valve] Bug: _TZE200_9xfjixap Still not working #339",
+      "state": "closed",
+      "labels": [
+        "bug",
+        "radiator_valve"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/379",
+      "classifications": [
+        "water-device"
+      ],
+      "hasFix": true,
+      "fix": "Already in fingerprints.json → device_radiator_valve",
+      "fixConfidence": 0.9
+    },
+    {
+      "number": 378,
+      "title": "Bug Report: Bed Sensor issues still persist in v8.1.124",
+      "state": "closed",
+      "labels": [
+        "bug",
+        "bed_sensor"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/378",
+      "classifications": [],
+      "hasFix": false,
+      "fix": null,
+      "fixConfidence": 0
+    },
+    {
+      "number": 376,
+      "title": "Bug report - Strange readings from the soil sensors",
+      "state": "closed",
+      "labels": [
+        "bug",
+        "new-fingerprint",
+        "soil_sensor",
+        "sensor_readings"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/376",
+      "classifications": [],
+      "hasFix": true,
+      "fix": "Already in fingerprints.json → soil_sensor",
+      "fixConfidence": 0.9
+    },
+    {
+      "number": 375,
+      "title": "361 Still loading endlessly",
+      "state": "closed",
+      "labels": [
+        "bug",
+        "device"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/375",
+      "classifications": [],
+      "hasFix": false,
+      "fix": null,
+      "fixConfidence": 0
+    },
+    {
+      "number": 374,
+      "title": "[presence_sensor_radar] Bug: _TZE200_ka8l86iu PesenceSensor",
+      "state": "closed",
+      "labels": [
+        "bug",
+        "presence_sensor"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/374",
+      "classifications": [
+        "known-productid"
+      ],
+      "hasFix": true,
+      "fix": "Already in fingerprints.json → presence_sensor_radar",
+      "fixConfidence": 0.9
+    },
+    {
+      "number": 373,
+      "title": "From #370",
+      "state": "closed",
+      "labels": [
+        "bug",
+        "update",
+        "device_issue",
+        "LUX"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/373",
+      "classifications": [],
+      "hasFix": false,
+      "fix": null,
+      "fixConfidence": 0
+    },
+    {
+      "number": 371,
+      "title": "Bug Report: Bed Sensor issues still persist in v8.1.106",
+      "state": "closed",
+      "labels": [
+        "bug",
+        "bed_sensor",
+        "v8.1.106"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/371",
+      "classifications": [],
+      "hasFix": false,
+      "fix": null,
+      "fixConfidence": 0
+    },
+    {
+      "number": 370,
+      "title": "[rain_sensor] Bug: _TZE200_u6x1zyv2",
+      "state": "closed",
+      "labels": [
+        "bug",
+        "rain_sensor",
+        "lux_reading"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/370",
+      "classifications": [
+        "known-productid"
+      ],
+      "hasFix": true,
+      "fix": "Already in fingerprints.json → motion_sensor",
+      "fixConfidence": 0.9
+    },
+    {
+      "number": 367,
+      "title": "Bug Report: Bed Sensor issues still persist in v8.1.92",
+      "state": "closed",
+      "labels": [
+        "bug",
+        "bed_sensor",
+        "v8.1.92"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/367",
+      "classifications": [],
+      "hasFix": false,
+      "fix": null,
+      "fixConfidence": 0
+    },
+    {
+      "number": 365,
+      "title": "[radiator_valve] Bug: \t_TZE200_9xfjixap",
+      "state": "closed",
+      "labels": [
+        "bug",
+        "new-fingerprint",
+        "connection_issue",
+        "radiator_valve",
+        "temperature_display",
+        "connectivity_issue"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/365",
+      "classifications": [
+        "known-productid",
+        "water-device"
+      ],
+      "hasFix": true,
+      "fix": "Already in fingerprints.json → device_radiator_valve",
+      "fixConfidence": 0.9
+    },
+    {
+      "number": 363,
+      "title": "Bug: Issue in post #328 ist not fixed, please reopen the issue",
+      "state": "closed",
+      "labels": [
+        "bug",
+        "battery",
+        "sensitivity"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/363",
+      "classifications": [],
+      "hasFix": false,
+      "fix": null,
+      "fixConfidence": 0
+    },
+    {
+      "number": 361,
+      "title": "Bug report - Debugging option not loading",
+      "state": "closed",
+      "labels": [
+        "bug",
+        "configuration",
+        "debugging",
+        "version_issue"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/361",
+      "classifications": [],
+      "hasFix": false,
+      "fix": null,
+      "fixConfidence": 0
+    },
+    {
+      "number": 360,
+      "title": "[bed_sensor] Bug: Issue in post #328 ist not fixed",
+      "state": "closed",
+      "labels": [
+        "bug",
+        "bed_sensor"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/360",
+      "classifications": [],
+      "hasFix": false,
+      "fix": null,
+      "fixConfidence": 0
+    },
+    {
+      "number": 355,
+      "title": "[bed_sensor] Bug:  Issue in post #328 ist not fixed!",
+      "state": "closed",
+      "labels": [
+        "bug",
+        "bed_sensor"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/355",
+      "classifications": [],
+      "hasFix": false,
+      "fix": null,
+      "fixConfidence": 0
+    },
+    {
+      "number": 340,
+      "title": "[soil_sensor] Bug: ZG-303Z ",
+      "state": "closed",
+      "labels": [
+        "bug",
+        "zigbee",
+        "soil_sensor",
+        "ZG-303Z"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/340",
+      "classifications": [],
+      "hasFix": false,
+      "fix": null,
+      "fixConfidence": 0
+    },
+    {
+      "number": 339,
+      "title": "[radiator_valve] Bug: _TZE200_9xfjixap Still not working",
+      "state": "closed",
+      "labels": [
+        "bug",
+        "new-fingerprint",
+        "TS0601",
+        "awaiting-verification",
+        "radiator_valve",
+        "measure_temperature",
+        "missing_data",
+        "temperature_display"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/339",
+      "classifications": [
+        "known-productid",
+        "water-device"
+      ],
+      "hasFix": true,
+      "fix": "Already in fingerprints.json → device_radiator_valve",
+      "fixConfidence": 0.9
+    },
+    {
+      "number": 338,
+      "title": "Bug report - App Crash on startup",
+      "state": "closed",
+      "labels": [
+        "bug",
+        "bug_report",
+        "crash",
+        "v8.1.6",
+        "startup_crash"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/338",
+      "classifications": [],
+      "hasFix": false,
+      "fix": null,
+      "fixConfidence": 0
+    },
+    {
+      "number": 337,
+      "title": "[motion_sensor_2] Bug: _TZE200_3towulqd ",
+      "state": "closed",
+      "labels": [
+        "bug",
+        "TS0601",
+        "motion_sensor",
+        "awaiting-verification",
+        "delay_issue",
+        "delay"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/337",
+      "classifications": [
+        "known-productid"
+      ],
+      "hasFix": true,
+      "fix": "Already in fingerprints.json → presence_sensor_radar",
+      "fixConfidence": 0.9
+    },
+    {
+      "number": 334,
+      "title": "_TZ3000_yj6k7vfo  [button_wireless_smart] Bug: No button press detected again.",
+      "state": "closed",
+      "labels": [
+        "bug",
+        "new-fingerprint",
+        "device",
+        "TS0041",
+        "awaiting-verification",
+        "device issue",
+        "button_wireless_smart",
+        "_TZ3000_yj6k7vfo",
+        "generic-matching"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/334",
+      "classifications": [
+        "button-mode-issue",
+        "known-productid"
+      ],
+      "hasFix": true,
+      "fix": "Already in fingerprints.json → button_wireless_4_ts0041",
+      "fixConfidence": 0.9
+    },
+    {
+      "number": 333,
+      "title": "Smart Button (round). Added but not working",
+      "state": "closed",
+      "labels": [
+        "bug",
+        "enhancement",
+        "device-request",
+        "new-fingerprint",
+        "zigbee",
+        "device",
+        "TS0041",
+        "awaiting-verification",
+        "flow-cards",
+        "Smart Button",
+        "button_wireless_1",
+        "battery",
+        "flow_cards",
+        "TZ3000"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/333",
+      "classifications": [],
+      "hasFix": false,
+      "fix": null,
+      "fixConfidence": 0
+    },
+    {
+      "number": 332,
+      "title": "[BUG] Could not get device by ID - Zigbee Gate Opener Module / QS-Zigbee-C03 / TS0603",
+      "state": "closed",
+      "labels": [
+        "bug",
+        "enhancement",
+        "new-fingerprint",
+        "zigbee",
+        "device"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/332",
+      "classifications": [
+        "garage-device"
+      ],
+      "hasFix": false,
+      "fix": null,
+      "fixConfidence": 0
+    },
+    {
+      "number": 331,
+      "title": "[BUG] Setting tab not loading",
+      "state": "closed",
+      "labels": [
+        "bug",
+        "enhancement",
+        "settings",
+        "critical"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/331",
+      "classifications": [],
+      "hasFix": false,
+      "fix": null,
+      "fixConfidence": 0
+    },
+    {
+      "number": 329,
+      "title": "CT Clamp Power Meter",
+      "state": "closed",
+      "labels": [
+        "bug",
+        "device-request",
+        "new-fingerprint",
+        "device_request",
+        "zigbee",
+        "device",
+        "awaiting-verification",
+        "power_clamp_meter",
+        "new_fingerprint"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/329",
+      "classifications": [
+        "known-productid"
+      ],
+      "hasFix": false,
+      "fix": null,
+      "fixConfidence": 0
+    },
+    {
+      "number": 328,
+      "title": "Pressure Sensing Strap/Bed Occupancy Sensor",
+      "state": "closed",
+      "labels": [
+        "bug",
+        "enhancement",
+        "device-request",
+        "new-fingerprint",
+        "feature_request",
+        "TS0601",
+        "zigbee",
+        "device",
+        "awaiting-verification",
+        "bed_sensor",
+        "pressure_sensor"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/328",
+      "classifications": [
+        "battery-question-mark",
+        "known-productid"
+      ],
+      "hasFix": true,
+      "fix": "Already in fingerprints.json → bed_sensor",
+      "fixConfidence": 0.9
+    },
+    {
+      "number": 326,
+      "title": "[rain_sensor] Bug: _TZE200_u6x1zyv2",
+      "state": "closed",
+      "labels": [
+        "bug",
+        "new-fingerprint",
+        "rain_sensor"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/326",
+      "classifications": [],
+      "hasFix": false,
+      "fix": null,
+      "fixConfidence": 0
+    },
+    {
+      "number": 325,
+      "title": "[climate_sensor] Bug: Ist detected as an Climate Sensor but is a presence Sensor",
+      "state": "closed",
+      "labels": [
+        "bug",
+        "presence_sensor",
+        "climate_sensor"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/325",
+      "classifications": [
+        "known-productid"
+      ],
+      "hasFix": true,
+      "fix": "Already in fingerprints.json → presence_sensor_radar",
+      "fixConfidence": 0.9
+    },
+    {
+      "number": 323,
+      "title": "Tuya PJ-1203A Incorrect measurement values",
+      "state": "closed",
+      "labels": [
+        "bug",
+        "device-request",
+        "new-fingerprint",
+        "Tuya",
+        "PJ-1203A",
+        "measurement"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/323",
+      "classifications": [
+        "known-productid"
+      ],
+      "hasFix": true,
+      "fix": "Already in fingerprints.json → generic_tuya",
+      "fixConfidence": 0.9
+    },
+    {
+      "number": 318,
+      "title": "Tuya PJ-1203A Incorrect measurement values",
+      "state": "closed",
+      "labels": [
+        "bug",
+        "device-request",
+        "new-fingerprint",
+        "energy-meter",
+        "PJ-1203A",
+        "TZE204_81yrt3l"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/318",
+      "classifications": [
+        "known-productid"
+      ],
+      "hasFix": true,
+      "fix": "Already in fingerprints.json → generic_tuya",
+      "fixConfidence": 0.9
+    },
+    {
+      "number": 317,
+      "title": "NOT WORK FOR HIST SERVER VERSION",
+      "state": "closed",
+      "labels": [
+        "bug",
+        "enhancement",
+        "pairing issue",
+        "IR WiFi Tuya",
+        "Homey Self-Hosted Server"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/317",
+      "classifications": [],
+      "hasFix": false,
+      "fix": null,
+      "fixConfidence": 0
+    },
+    {
+      "number": 316,
+      "title": "Climate sensor, wrong device recognized",
+      "state": "closed",
+      "labels": [
+        "bug",
+        "enhancement",
+        "device-request",
+        "new-fingerprint",
+        "zigbee",
+        "awaiting-verification",
+        "device_recognition"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/316",
+      "classifications": [],
+      "hasFix": true,
+      "fix": "Already in fingerprints.json → climate_sensor",
+      "fixConfidence": 0.9
+    },
+    {
+      "number": 314,
+      "title": "Smart Wireless Button (1), unknown device",
+      "state": "closed",
+      "labels": [
+        "bug",
+        "enhancement",
+        "device-request",
+        "new-fingerprint",
+        "device_request",
+        "zigbee",
+        "device",
+        "awaiting-verification",
+        "device issue",
+        "already_supported"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/314",
+      "classifications": [
+        "battery-question-mark",
+        "button-mode-issue",
+        "known-productid"
+      ],
+      "hasFix": true,
+      "fix": "Already in fingerprints.json → button_wireless_4_ts0041",
+      "fixConfidence": 0.9
+    },
+    {
+      "number": 312,
+      "title": "INSOMA DUAL IRRIGATION VALVE ISSUE. New COMPLETE fingerprint",
+      "state": "closed",
+      "labels": [
+        "bug",
+        "enhancement",
+        "device-request",
+        "new-fingerprint",
+        "zigbee",
+        "pairing_issue",
+        "device_issue",
+        "pairing issue",
+        "awaiting-verification",
+        "bug_report",
+        "Irrigation",
+        "Insoma",
+        "Irrigation Valve",
+        "valve_irrigation",
+        "fingerprint_supported",
+        "needs_diag"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/312",
+      "classifications": [
+        "water-device"
+      ],
+      "hasFix": false,
+      "fix": null,
+      "fixConfidence": 0
+    },
+    {
+      "number": 308,
+      "title": "[BUG] Setting tab not loading",
+      "state": "closed",
+      "labels": [
+        "bug",
+        "enhancement",
+        "settings",
+        "critical"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/308",
+      "classifications": [],
+      "hasFix": false,
+      "fix": null,
+      "fixConfidence": 0
+    },
+    {
+      "number": 305,
+      "title": "Zigbee Gate Opener Module / QS-Zigbee-C03 / TS0603",
+      "state": "closed",
+      "labels": [
+        "bug",
+        "device-request",
+        "new-fingerprint",
+        "device_request",
+        "zigbee",
+        "device",
+        "awaiting-verification",
+        "TS0603",
+        "garage_door_opener",
+        "_TZE608_c75zqghm"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/305",
+      "classifications": [
+        "garage-device"
+      ],
+      "hasFix": true,
+      "fix": "Already in fingerprints.json → garage_door_opener",
+      "fixConfidence": 0.9
+    },
+    {
+      "number": 302,
+      "title": "App crashes during startup",
+      "state": "closed",
+      "labels": [
+        "bug",
+        "enhancement",
+        "crash",
+        "startup"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/302",
+      "classifications": [],
+      "hasFix": false,
+      "fix": null,
+      "fixConfidence": 0
+    },
+    {
+      "number": 276,
+      "title": "Smart Solar Soil Sensor",
+      "state": "closed",
+      "labels": [
+        "bug",
+        "enhancement",
+        "device-request",
+        "new-fingerprint",
+        "TS0601",
+        "zigbee",
+        "sensor",
+        "awaiting-verification",
+        "soil",
+        "diagnostics-needed"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/276",
+      "classifications": [
+        "known-productid"
+      ],
+      "hasFix": true,
+      "fix": "Already in fingerprints.json → generic_tuya",
+      "fixConfidence": 0.9
+    },
+    {
+      "number": 275,
+      "title": "_TZE200_xlppj4f5 Immax NEO Smart Water Timer still does not work",
+      "state": "closed",
+      "labels": [
+        "bug",
+        "enhancement",
+        "device-request",
+        "new-fingerprint",
+        "TS0601",
+        "zigbee",
+        "driver_issue",
+        "awaiting-verification",
+        "device-support",
+        "valve"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/275",
+      "classifications": [
+        "battery-question-mark",
+        "water-device"
+      ],
+      "hasFix": true,
+      "fix": "UniversalBatteryFallback (P28) handles all 0-50/0-100/0-200/0-255 scales + sentinels",
+      "fixConfidence": 0.7
+    },
+    {
+      "number": 260,
+      "title": "[Device] Insoma Two Way Irrigation Valve (Zigbee)",
+      "state": "closed",
+      "labels": [
+        "bug",
+        "device-request",
+        "new-fingerprint",
+        "zigbee",
+        "awaiting-verification",
+        "new-device",
+        "Irrigation",
+        "Insoma",
+        "Irrigation Valve"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/260",
+      "classifications": [
+        "water-device"
+      ],
+      "hasFix": false,
+      "fix": null,
+      "fixConfidence": 0
+    },
+    {
+      "number": 206,
+      "title": "[Zigbee USB Plug 3 Gang] TS0003 - _TZ3210_n0wbkysi",
+      "state": "closed",
+      "labels": [
+        "bug",
+        "device-request",
+        "new-fingerprint",
+        "zigbee",
+        "awaiting-verification",
+        "TS0003",
+        "new-device",
+        "climate"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/206",
+      "classifications": [
+        "known-productid"
+      ],
+      "hasFix": true,
+      "fix": "Already in fingerprints.json → switch_1gang",
+      "fixConfidence": 0.9
+    },
+    {
+      "number": 200,
+      "title": "Temperature and Humidity LCD sensor",
+      "state": "closed",
+      "labels": [
+        "bug",
+        "device-request",
+        "new-fingerprint",
+        "zigbee",
+        "sensor",
+        "temperature",
+        "humidity",
+        "climate"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/200",
+      "classifications": [
+        "known-productid"
+      ],
+      "hasFix": true,
+      "fix": "Already in fingerprints.json → generic_tuya",
+      "fixConfidence": 0.9
+    },
+    {
+      "number": 198,
+      "title": "SNZB-01M still detected as unknown Zigbee device",
+      "state": "closed",
+      "labels": [
+        "bug",
+        "enhancement",
+        "device-request",
+        "new-fingerprint",
+        "reopened-by-user",
+        "device_support",
+        "zigbee",
+        "pairing_issue",
+        "Sonoff",
+        "awaiting-verification",
+        "climate",
+        "bug_report",
+        "device issue",
+        "SNZB-01M"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/198",
+      "classifications": [
+        "missing-features"
+      ],
+      "hasFix": false,
+      "fix": null,
+      "fixConfidence": 0
+    },
+    {
+      "number": 197,
+      "title": "[plug_energy_monitor] Bug: _TZ3000_wzmuk9ai",
+      "state": "closed",
+      "labels": [
+        "bug",
+        "new-fingerprint",
+        "reopened-by-user",
+        "energy_monitor",
+        "TS011F",
+        "awaiting-verification",
+        "needs-investigation",
+        "energy-monitoring",
+        "plug_energy_monitor"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/197",
+      "classifications": [],
+      "hasFix": true,
+      "fix": "Already in fingerprints.json → plug_energy_monitor",
+      "fixConfidence": 0.9
+    },
+    {
+      "number": 194,
+      "title": "[plug_energy_monitor CK-BL702-SWP-01(7020)] Bug: follow-up from #188",
+      "state": "closed",
+      "labels": [
+        "bug",
+        "fingerprint",
+        "new-fingerprint",
+        "reopened-by-user",
+        "device_support",
+        "zigbee",
+        "device",
+        "device_issue",
+        "awaiting-verification",
+        "device-support",
+        "fingerprint-missing",
+        "needs-investigation",
+        "plug_energy_monitor"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/194",
+      "classifications": [],
+      "hasFix": false,
+      "fix": null,
+      "fixConfidence": 0
+    },
+    {
+      "number": 193,
+      "title": "[climate_sensor _TZ3000_xr3htd96 TS0201] Bug:",
+      "state": "closed",
+      "labels": [
+        "bug",
+        "awaiting-verification",
+        "climate_sensor"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/193",
+      "classifications": [
+        "battery-question-mark",
+        "wrong-driver-routing"
+      ],
+      "hasFix": true,
+      "fix": "Already in fingerprints.json → climate_sensor",
+      "fixConfidence": 0.9
+    },
+    {
+      "number": 179,
+      "title": "Pairing fails for TS0601 presence sensors: create_bindings_failed (zdoInvalidEndpoint)",
+      "state": "closed",
+      "labels": [
+        "bug",
+        "zigbee",
+        "pairing"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/179",
+      "classifications": [
+        "known-productid"
+      ],
+      "hasFix": false,
+      "fix": null,
+      "fixConfidence": 0
+    },
+    {
+      "number": 178,
+      "title": "[soil_sensor] Bug: No Connetion possible \t_TZE284_oitavov2",
+      "state": "closed",
+      "labels": [
+        "bug",
+        "reopened-by-user",
+        "awaiting-verification",
+        "soil_sensor",
+        "connection_issue"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/178",
+      "classifications": [
+        "known-productid"
+      ],
+      "hasFix": true,
+      "fix": "Already in fingerprints.json → soil_sensor",
+      "fixConfidence": 0.9
+    },
+    {
+      "number": 177,
+      "title": "Soil Sensor with fertilizer level A89G12C",
+      "state": "closed",
+      "labels": [
+        "bug",
+        "device-request",
+        "new-fingerprint",
+        "awaiting-verification",
+        "soil_sensor",
+        "A89G12C"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/177",
+      "classifications": [],
+      "hasFix": false,
+      "fix": null,
+      "fixConfidence": 0
+    },
+    {
+      "number": 176,
+      "title": "[soil_sensor] Bug:",
+      "state": "closed",
+      "labels": [
+        "bug",
+        "new-fingerprint",
+        "reopened-by-user",
+        "awaiting-verification",
+        "soil_sensor",
+        "connection_issue"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/176",
+      "classifications": [
+        "known-productid"
+      ],
+      "hasFix": true,
+      "fix": "Already in fingerprints.json → soil_sensor",
+      "fixConfidence": 0.9
+    },
+    {
+      "number": 174,
+      "title": "[DEVICE] Bug report - Identification mismatch for ZG-204ZE (Presence Sensor Radar)",
+      "state": "closed",
+      "labels": [
+        "bug",
+        "device-request",
+        "device",
+        "needs-info",
+        "awaiting-verification"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/174",
+      "classifications": [],
+      "hasFix": false,
+      "fix": null,
+      "fixConfidence": 0
+    },
+    {
+      "number": 171,
+      "title": "Bseed E-touch series Zigbee 1-Gang",
+      "state": "closed",
+      "labels": [
+        "bug",
+        "enhancement",
+        "device-request",
+        "new-fingerprint",
+        "reopened-by-user",
+        "zigbee",
+        "BSEED",
+        "E-touch"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/171",
+      "classifications": [
+        "missing-features"
+      ],
+      "hasFix": true,
+      "fix": "Already in fingerprints.json → bulb_dimmable",
+      "fixConfidence": 0.9
+    },
+    {
+      "number": 170,
+      "title": "Bug: TS0003 (_TZ3000_v4l4b0lp) - Sub-capability Flow cards (Gang 1/2/3) are completely unlinked",
+      "state": "closed",
+      "labels": [
+        "bug",
+        "enhancement",
+        "new-fingerprint",
+        "reopened-by-user",
+        "zigbee",
+        "awaiting-verification",
+        "TS0003",
+        "Flow cards"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/170",
+      "classifications": [
+        "sub-capability-issue",
+        "known-productid"
+      ],
+      "hasFix": true,
+      "fix": "Already in fingerprints.json → switch_3gang",
+      "fixConfidence": 0.9
+    },
+    {
+      "number": 163,
+      "title": "[DEVICE] Motion Sensor",
+      "state": "closed",
+      "labels": [
+        "bug",
+        "enhancement",
+        "device-request",
+        "device_request",
+        "reopened-by-user",
+        "pairing_issue",
+        "motion_sensor",
+        "awaiting-verification"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/163",
+      "classifications": [],
+      "hasFix": false,
+      "fix": null,
+      "fixConfidence": 0
+    },
+    {
+      "number": 162,
+      "title": "[fingerbot] Bug:",
+      "state": "closed",
+      "labels": [
+        "bug",
+        "reopened-by-user",
+        "awaiting-verification",
+        "fingerbot"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/162",
+      "classifications": [
+        "button-missing-listener",
+        "fingerbot"
+      ],
+      "hasFix": false,
+      "fix": null,
+      "fixConfidence": 0
+    },
+    {
+      "number": 161,
+      "title": "[fingerbot] Bug:",
+      "state": "closed",
+      "labels": [
+        "bug",
+        "already-supported",
+        "fingerbot"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/161",
+      "classifications": [
+        "button-missing-listener",
+        "fingerbot"
+      ],
+      "hasFix": true,
+      "fix": "Already in fingerprints.json → fingerbot",
+      "fixConfidence": 0.9
+    },
+    {
+      "number": 155,
+      "title": "[Alert] Gmail OAuth token EXPIRED — IMAP fallback active",
+      "state": "closed",
+      "labels": [
+        "bug",
+        "automation",
+        "Gmail",
+        "OAuth",
+        "IMAP"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/155",
+      "classifications": [],
+      "hasFix": false,
+      "fix": null,
+      "fixConfidence": 0
+    },
+    {
+      "number": 154,
+      "title": "[Alert] Gmail token EXPIRED — regenerate at OAuth Playground",
+      "state": "closed",
+      "labels": [
+        "bug",
+        "automation",
+        "Gmail",
+        "token",
+        "OAuth"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/154",
+      "classifications": [],
+      "hasFix": false,
+      "fix": null,
+      "fixConfidence": 0
+    },
+    {
+      "number": 153,
+      "title": "[Alert] Gmail token EXPIRED — regenerate at OAuth Playground",
+      "state": "closed",
+      "labels": [
+        "bug",
+        "automation",
+        "Gmail",
+        "token",
+        "OAuth"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/153",
+      "classifications": [],
+      "hasFix": false,
+      "fix": null,
+      "fixConfidence": 0
+    },
+    {
+      "number": 151,
+      "title": "[Info] SOS button IAS enrollment fails on init (sleepy device — expected)",
+      "state": "closed",
+      "labels": [
+        "bug",
+        "documentation",
+        "device-request",
+        "needs-info",
+        "info",
+        "sleepy_device",
+        "enrollment",
+        "diagnostic"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/151",
+      "classifications": [
+        "battery-question-mark"
+      ],
+      "hasFix": true,
+      "fix": "UniversalBatteryFallback (P28) handles all 0-50/0-100/0-200/0-255 scales + sentinels",
+      "fixConfidence": 0.7
+    },
+    {
+      "number": 149,
+      "title": "[Bug] LCD Temp/Humidity sensor paired as thermostat (wrong driver)",
+      "state": "closed",
+      "labels": [
+        "bug",
+        "already-supported",
+        "sensor",
+        "driver_issue"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/149",
+      "classifications": [
+        "wrong-driver-routing"
+      ],
+      "hasFix": false,
+      "fix": null,
+      "fixConfidence": 0
+    },
+    {
+      "number": 148,
+      "title": "[Bug] Contact sensor with luminance paired as mmWave radar (wrong driver match)",
+      "state": "closed",
+      "labels": [
+        "bug",
+        "device_issue",
+        "driver",
+        "contact_sensor",
+        "mmWave_radar",
+        "driver_issue"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/148",
+      "classifications": [
+        "wrong-driver-routing"
+      ],
+      "hasFix": false,
+      "fix": null,
+      "fixConfidence": 0
+    },
+    {
+      "number": 147,
+      "title": "[Fingerprint] Add _TZ3000_itb0omhv to switch_1gang (TS0001)",
+      "state": "closed",
+      "labels": [
+        "bug",
+        "fingerprint",
+        "already-supported",
+        "device_recognition",
+        "switch"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/147",
+      "classifications": [
+        "button-mode-issue",
+        "known-productid"
+      ],
+      "hasFix": true,
+      "fix": "Already in fingerprints.json → button_wireless",
+      "fixConfidence": 0.9
+    },
+    {
+      "number": 146,
+      "title": "[Bug] isTuyaDP ReferenceError in IAS Zone enrollment verification",
+      "state": "closed",
+      "labels": [
+        "bug",
+        "sensor",
+        "high severity",
+        "IAS Zone"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/146",
+      "classifications": [],
+      "hasFix": false,
+      "fix": null,
+      "fixConfidence": 0
+    },
+    {
+      "number": 145,
+      "title": "[Alert] Gmail token EXPIRED",
+      "state": "closed",
+      "labels": [
+        "bug",
+        "automation",
+        "security",
+        "stale",
+        "token"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/145",
+      "classifications": [],
+      "hasFix": false,
+      "fix": null,
+      "fixConfidence": 0
+    },
+    {
+      "number": 144,
+      "title": "[Alert] Gmail token EXPIRED",
+      "state": "closed",
+      "labels": [
+        "bug",
+        "automation",
+        "urgent",
+        "security"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/144",
+      "classifications": [],
+      "hasFix": false,
+      "fix": null,
+      "fixConfidence": 0
+    },
+    {
+      "number": 143,
+      "title": "[Alert] Gmail token EXPIRED",
+      "state": "closed",
+      "labels": [
+        "bug",
+        "automation",
+        "urgent",
+        "security"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/143",
+      "classifications": [],
+      "hasFix": false,
+      "fix": null,
+      "fixConfidence": 0
+    },
+    {
+      "number": 137,
+      "title": "Plug Energy Monitor, wrong voltage",
+      "state": "closed",
+      "labels": [
+        "bug",
+        "device-request",
+        "reopened-by-user",
+        "plug",
+        "energy_monitor"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/137",
+      "classifications": [],
+      "hasFix": false,
+      "fix": null,
+      "fixConfidence": 0
+    },
+    {
+      "number": 129,
+      "title": "Curtain Motor Switch TS130F_TZ3000_5iixzdo7",
+      "state": "closed",
+      "labels": [
+        "bug",
+        "enhancement",
+        "device-request",
+        "curtain_motor",
+        "pairing_issue"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/129",
+      "classifications": [],
+      "hasFix": true,
+      "fix": "Already in fingerprints.json → curtain_motor",
+      "fixConfidence": 0.9
+    },
+    {
+      "number": 127,
+      "title": "Presence Sensor (Radar) _TZE204_e5m9c5hl not working correctly",
+      "state": "closed",
+      "labels": [
+        "bug",
+        "enhancement",
+        "driver improvement"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/127",
+      "classifications": [
+        "known-productid"
+      ],
+      "hasFix": true,
+      "fix": "Already in fingerprints.json → presence_sensor_radar",
+      "fixConfidence": 0.9
+    },
+    {
+      "number": 122,
+      "title": "Longsam mini m3 curtain motor",
+      "state": "closed",
+      "labels": [
+        "bug",
+        "enhancement",
+        "device-request",
+        "curtain_motor"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/122",
+      "classifications": [
+        "known-productid"
+      ],
+      "hasFix": true,
+      "fix": "Already in fingerprints.json → generic_tuya",
+      "fixConfidence": 0.9
+    },
+    {
+      "number": 121,
+      "title": "_TZ3000_an5rjiwd - not working",
+      "state": "closed",
+      "labels": [
+        "bug",
+        "enhancement",
+        "automation",
+        "device-request",
+        "zigbee",
+        "button",
+        "AliExpress"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/121",
+      "classifications": [
+        "wrong-driver-routing"
+      ],
+      "hasFix": false,
+      "fix": null,
+      "fixConfidence": 0
+    },
+    {
+      "number": 117,
+      "title": "Longsam mini m3 Smart Curtain",
+      "state": "closed",
+      "labels": [
+        "bug",
+        "enhancement",
+        "device-request",
+        "zigbee",
+        "curtain"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/117",
+      "classifications": [
+        "battery-question-mark",
+        "missing-features"
+      ],
+      "hasFix": true,
+      "fix": "UniversalBatteryFallback (P28) handles all 0-50/0-100/0-200/0-255 scales + sentinels",
+      "fixConfidence": 0.7
+    },
+    {
+      "number": 101,
+      "title": "[Device] Tuya Zigbee TS0601 Soil Moisture / Temperature Sensor (_TZE284_aa03yzhs)",
+      "state": "closed",
+      "labels": [
+        "bug",
+        "enhancement",
+        "device-request",
+        "Tuya",
+        "zigbee",
+        "sensor"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/101",
+      "classifications": [
+        "missing-features",
+        "known-productid"
+      ],
+      "hasFix": true,
+      "fix": "Already in fingerprints.json → generic_tuya",
+      "fixConfidence": 0.9
+    },
+    {
+      "number": 97,
+      "title": "[DEVICE] Presence Sensor Radar:   zb_product_id    \"TS0225\" - zb_manufacturer_name     \"_TZ321C_fkzihaxe8\" - Wenzhi cant get any value.",
+      "state": "closed",
+      "labels": [
+        "bug",
+        "device-request",
+        "reopened-by-user",
+        "presence_sensor",
+        "awaiting-verification"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/97",
+      "classifications": [],
+      "hasFix": false,
+      "fix": null,
+      "fixConfidence": 0
+    },
+    {
+      "number": 96,
+      "title": "Can't add Tuya Zigbee smoke detector (model PG-S11Z)",
+      "state": "closed",
+      "labels": [
+        "bug",
+        "enhancement",
+        "device-request",
+        "Tuya",
+        "device_request",
+        "zigbee",
+        "smoke detector",
+        "pairing issue"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/96",
+      "classifications": [
+        "battery-question-mark",
+        "missing-features"
+      ],
+      "hasFix": true,
+      "fix": "UniversalBatteryFallback (P28) handles all 0-50/0-100/0-200/0-255 scales + sentinels",
+      "fixConfidence": 0.7
+    },
+    {
+      "number": 95,
+      "title": "[DEVICE] HOBEIAN ZG-227Z Temperature sensor",
+      "state": "closed",
+      "labels": [
+        "bug",
+        "enhancement",
+        "device-request",
+        "device_request"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/95",
+      "classifications": [],
+      "hasFix": false,
+      "fix": null,
+      "fixConfidence": 0
+    },
+    {
+      "number": 90,
+      "title": "[BUG] can't compile the code due to an error",
+      "state": "closed",
+      "labels": [
+        "bug",
+        "enhancement",
+        "zigbee",
+        "curtain_motor",
+        "thermostat",
+        "compilation",
+        "window_open",
+        "compilation-error"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/90",
+      "classifications": [],
+      "hasFix": false,
+      "fix": null,
+      "fixConfidence": 0
+    },
+    {
+      "number": 88,
+      "title": "Bug - Incorrect driver assigned to device - 2 gang dimmer module x climate sensor",
+      "state": "closed",
+      "labels": [
+        "bug",
+        "enhancement",
+        "device-request",
+        "device_issue"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/88",
+      "classifications": [
+        "known-productid"
+      ],
+      "hasFix": true,
+      "fix": "Already in fingerprints.json → dimmer_wall_1gang",
+      "fixConfidence": 0.9
+    },
+    {
+      "number": 87,
+      "title": "Device Request - Presence Sensor Radar - _TZE204_mtoaryre / TS0601",
+      "state": "closed",
+      "labels": [
+        "bug",
+        "enhancement",
+        "device-request",
+        "new-fingerprint",
+        "device_request",
+        "zigbee",
+        "presence_sensor"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/87",
+      "classifications": [
+        "known-productid"
+      ],
+      "hasFix": true,
+      "fix": "Already in fingerprints.json → presence_sensor_radar",
+      "fixConfidence": 0.9
+    },
+    {
+      "number": 83,
+      "title": "WoodUpp / Tuya 24V LED Driver",
+      "state": "closed",
+      "labels": [
+        "bug",
+        "enhancement",
+        "device-request",
+        "zigbee",
+        "device_issue"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/83",
+      "classifications": [],
+      "hasFix": false,
+      "fix": null,
+      "fixConfidence": 0
+    },
+    {
+      "number": 80,
+      "title": "Tuya Zigbee Temperature Humidity Sensor with LCD Screen ZTH05Z",
+      "state": "closed",
+      "labels": [
+        "bug",
+        "enhancement",
+        "device-request",
+        "Tuya",
+        "device_request",
+        "zigbee",
+        "sensor",
+        "temperature",
+        "humidity",
+        "Temperature Sensor"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/80",
+      "classifications": [
+        "battery-question-mark",
+        "missing-features"
+      ],
+      "hasFix": true,
+      "fix": "UniversalBatteryFallback (P28) handles all 0-50/0-100/0-200/0-255 scales + sentinels",
+      "fixConfidence": 0.7
+    },
+    {
+      "number": 78,
+      "title": "[DEVICE] TS0601_TZE200_9yapgbuv incorrectly defined as sound controller",
+      "state": "closed",
+      "labels": [
+        "bug",
+        "device"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/78",
+      "classifications": [
+        "known-productid"
+      ],
+      "hasFix": true,
+      "fix": "Already in fingerprints.json → climate_sensor",
+      "fixConfidence": 0.9
+    },
+    {
+      "number": 76,
+      "title": "[DEVICE] 4 button touch remote (TS0044 / _TZ3000_u3nv1jwk)",
+      "state": "closed",
+      "labels": [
+        "bug",
+        "enhancement",
+        "device-request",
+        "new-fingerprint",
+        "request",
+        "reopened-by-user",
+        "zigbee",
+        "device",
+        "awaiting-verification",
+        "TS0044"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/76",
+      "classifications": [
+        "button-mode-issue",
+        "missing-features",
+        "known-productid"
+      ],
+      "hasFix": true,
+      "fix": "Already in fingerprints.json → button_wireless_4",
+      "fixConfidence": 0.9
+    },
+    {
+      "number": 74,
+      "title": "🚨 Auto-organize workflow failed",
+      "state": "closed",
+      "labels": [
+        "bug",
+        "automation",
+        "priority-high",
+        "workflow"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/74",
+      "classifications": [],
+      "hasFix": false,
+      "fix": null,
+      "fixConfidence": 0
+    },
+    {
+      "number": 73,
+      "title": "🚨 Auto-organize workflow failed",
+      "state": "closed",
+      "labels": [
+        "bug",
+        "automation",
+        "priority-high",
+        "workflow"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/73",
+      "classifications": [],
+      "hasFix": false,
+      "fix": null,
+      "fixConfidence": 0
+    }
+  ],
+  "newFixesAvailable": 48,
+  "regressions": 0,
+  "needInvestigation": 52,
+  "byClassification": {
+    "known-productid": 34,
+    "button-mode-issue": 5,
+    "wrong-driver-routing": 5,
+    "water-device": 7,
+    "garage-device": 2,
+    "battery-question-mark": 8,
+    "missing-features": 7,
+    "sub-capability-issue": 1,
+    "button-missing-listener": 2,
+    "fingerbot": 2
+  }
+}
