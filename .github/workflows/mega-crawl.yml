@@ -69,7 +69,7 @@ jobs:
       # Subsequent runs use 304 Not Modified for unchanged files → ~1s.
       # P55: also cache the smart-fetch cache (.cache/scraper-cache/)
       - name: 📥 Restore scanner caches
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: |
             .cache/scanner-blobs/
@@ -80,6 +80,9 @@ jobs:
 
       - name: 🕷️ Run Mega Crawler
         id: crawl
+        # P79: continue-on-error — 1 crawler failure shouldn't fail the whole workflow
+        # (e.g. tuya-local transient ETIMEDOUT on 2026-07-21). Report shows failures.
+        continue-on-error: true
         run: |
           ARGS=""
           if [ -n "${{ inputs.only }}" ]; then ARGS="$ARGS --only=${{ inputs.only }}"; fi
@@ -87,13 +90,16 @@ jobs:
           if [ -n "${{ inputs.timeout }}" ]; then ARGS="$ARGS --timeout=${{ inputs.timeout }}"; fi
           echo "## 🕷️ Mega Crawler" >> $GITHUB_STEP_SUMMARY
           node tools/ci/mega-crawler.js $ARGS 2>&1 | tee mega-crawl.log
+          EXIT=$?
           echo "" >> $GITHUB_STEP_SUMMARY
           echo '```' >> $GITHUB_STEP_SUMMARY
           cat mega-crawl.log >> $GITHUB_STEP_SUMMARY
           echo '```' >> $GITHUB_STEP_SUMMARY
+          echo "Crawler exit: $EXIT"
+          exit $EXIT
 
       - name: 📦 Upload artifacts
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         if: always()
         with:
           name: mega-crawl-data
