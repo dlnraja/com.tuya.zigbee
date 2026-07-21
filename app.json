@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "9.0.330",
+  "version": "9.0.331",
   "compatibility": ">=12.2.0",
   "platforms": [
     "local"
@@ -124225,7 +124225,6 @@
       "subDevices": [],
       "zigbee": {
         "manufacturerName": [
-          "_TZE200_8ygsuhe1",
           "_tz3000_jr2atpww",
           "_tz3000_kqvb8qa8",
           "_tz3000_krajfo4p",
@@ -124887,7 +124886,6 @@
           "_TZ3210_778drfdt",
           "_TZ3210_EBBFKVOY",
           "_TZ3210_HZDHB62Z",
-          "_TZ3210_IYSTCADI",
           "_TZ3210_LFBZ816S",
           "_TZ3210_V5YQUXMA",
           "_TZ3210_YLUVWHJC",
@@ -128321,7 +128319,6 @@
       "zigbee": {
         "manufacturerName": [
           "_tyzb01_trqoesc6",
-          "_tz3000_8utxxtzr",
           "_tz3000_8xz0pyqy",
           "_tz3000_c0gf6xd7",
           "_tz3000_cdso6bjw",
@@ -141792,7 +141789,6 @@
           "LUMI.SENSOR_MAGNET.AQ2",
           "ZBEACON",
           "_TZ3000_bpkijo14",
-          "_TZE200_pay2byax",
           "_tz3000_85czd6fy",
           "_tz3000_bpkijo14",
           "lumi.sensor_magnet",
@@ -145188,8 +145184,6 @@
       "zigbee": {
         "manufacturerName": [
           "_TZ3000_4uuaja4a",
-          "_TZ3000_EVAG0PVN",
-          "_TZ3000_SOSDCZDL",
           "_TZ3000_eafaa66e",
           "_TZ3000_eg7awg6a",
           "_TZ3000_fccpjz5z",
@@ -145209,12 +145203,9 @@
           "_TZE200_ZC2OWU5K",
           "_TZE200_di3tfv5b",
           "_TZE200_gaj531w3",
-          "_TZE200_mexisfik",
           "_TZE204_6wi2mope",
           "_TZE204_BDBLIDQ3",
           "_TZE204_FCTWHUGX",
-          "_TZE204_TGL8I2NP",
-          "_TZE204_TRWAXI57",
           "_TZE204_TXRZY8HS",
           "_TZE204_XUZCVLKU",
           "_TZE204_ZAH67EKH",
@@ -157413,7 +157404,6 @@
           "_TZ3000_zsh6uat3",
           "_TZ3002_tdf2m4ch",
           "_TZ3210_09hzmirw",
-          "_TZ3210_4UBYLGHK",
           "_TZ3210_c2iwpxf1",
           "_TZ3210_dbilpfqk",
           "_TZ3210_dxroobu3",
@@ -157426,15 +157416,8 @@
           "_TZB210_0bkzabht",
           "_TZB210_ayx58ft5",
           "_TZB210_eiwanbeb",
-          "_TZE200_0nauxa0p",
           "_TZE200_4mh6tyyo",
-          "_TZE200_9cxuhakf",
-          "_TZE200_a0syesf5",
-          "_TZE200_e3oitdyu",
-          "_TZE200_fjjbhx9d",
           "_TZE200_gwkapsoq",
-          "_TZE200_la2c2uo9",
-          "_TZE200_p0gzbqct",
           "_TZE200_whpb9yts",
           "_TZE204_bxoo2swd",
           "_TZE204_dcnsggvz",
@@ -162980,7 +162963,9 @@
             "en": "Push the button for aprox 10 seconds until the LED blinks rapidly. If nothing happens; put two fingers against the detectors and repeat."
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_TZ3000_baeiitad"
+        ]
       },
       "version": "1.0.0",
       "capabilitiesOptions": {
@@ -165362,6 +165347,7 @@
       "zigbee": {
         "manufacturerName": [
           "3REALITY",
+          "3reality",
           "ADURO",
           "ADUROSMART",
           "AJAX",
@@ -165536,6 +165522,7 @@
           "_TZ3000_1kmurvlx",
           "_TZ3000_589KQ4UL",
           "_TZ3000_6dwfra5l",
+          "_TZ3000_8utxxtzr",
           "_TZ3000_BUJV0R9B",
           "_TZ3000_HODIFXA9",
           "_TZ3000_KOHBVA1F",
@@ -165543,9 +165530,11 @@
           "_TZ3000_TZA2VJXX",
           "_TZ3000_bumeauzp",
           "_TZ3000_cllghx1k",
+          "_TZ3000_evag0pvn",
           "_TZ3000_filhl5b7",
           "_TZ3000_ovbvmhiq",
           "_TZ3000_pftj0i7z",
+          "_TZ3000_sosdczdl",
           "_TZ3000_yujem9ee",
           "_TZ3000_ywagc4rj",
           "_TZ3002_eda6eitk",
@@ -165556,6 +165545,7 @@
           "_TZ3210_0RN9QHNU",
           "_TZ3210_19QB27DA",
           "_TZ3210_1ELPPMBA",
+          "_TZ3210_4ubylghk",
           "_TZ3210_5SNKKRXW",
           "_TZ3210_6smingw0",
           "_TZ3210_93GNBDGZ",
@@ -165581,11 +165571,13 @@
           "_TZ3210_b8jdosxo",
           "_TZ3210_claeh5ds",
           "_TZ3210_dkul5xix",
+          "_TZ3210_iystcadi",
           "_TZ3210_kjafhwd2",
           "_TZ3210_ncw88jfq",
           "_TZ3210_p9ao60da",
           "_TZ3210_qigbovcq",
           "_TZ3210_qjvi92wz",
+          "_TZ3210_r0xgkft5",
           "_TZ3210_sw9uxoea",
           "_TZ3210_w3hl6rao",
           "_TZ3210_wbsgmojq",
@@ -165601,19 +165593,29 @@
           "_TZB210_qzsxaqqe",
           "_TZB210_rs0ufzwg",
           "_TZB210_u3ri0968",
+          "_TZB210_ue01a0s2",
           "_TZB210_uoiqhjqe",
+          "_TZB210_w9hcix2r",
+          "_TZB210_wxazcmsh",
+          "_TZB210_wy1pyu1q",
+          "_TZB210_yatkpuha",
           "_TZE200",
           "_TZE200_0hb4rdnp",
+          "_TZE200_2atgpdho",
           "_TZE200_2imwyigp",
+          "_TZE200_8whxpsiw",
+          "_TZE200_9sfg7gm0",
+          "_TZE200_a4bpgplm",
+          "_TZE200_ckud7u2l",
           "_TZE200_cpbo62rn",
+          "_TZE200_cwnjrr72",
           "_TZE200_dq8bu0pt",
           "_TZE200_eegnwoyw",
           "_TZE200_gne0e6mk",
           "_TZE200_gubdgai2",
-          "_TZE200_kzm5w4iz",
           "_TZE200_mlglxwp3",
-          "_TZE200_nslr42tt",
           "_TZE200_osmxri8y",
+          "_TZE200_pvvbommb",
           "_TZE200_rqhnxkqu",
           "_TZE200_xixlazkg",
           "_TZE204",
@@ -165627,6 +165629,8 @@
           "_TZE204_mpbki2zm-TS0601",
           "_TZE204_qasjif9",
           "_TZE204_s4sa1mcx",
+          "_TZE204_tgl8i2np",
+          "_TZE204_trwaxi57",
           "_TZE204_x8diwkqb",
           "_TZE204_xu4a5rhj",
           "_TZE20C_xbexmf8h",
@@ -165638,8 +165642,6 @@
           "_TZE284_s4sa1mcx",
           "_TZE284_x8diwkqb",
           "_TZE28C1000000_81yrt3lo",
-          "se",
-          "3reality",
           "aduro",
           "adurosmart",
           "ajax",
@@ -165761,6 +165763,7 @@
           "samsung",
           "samsung electronics",
           "saswell",
+          "se",
           "securifi",
           "sengled",
           "sengled inc.",
@@ -168703,7 +168706,6 @@
         },
         "manufacturerName": [
           "_TYZB01_a476raq2",
-          "_TYZB01_hjsgdkfl",
           "_TZ2000_a476raq2",
           "_TZ2000_avdnvykf",
           "_TZ2000_hjsgdkfl",
@@ -173293,9 +173295,6 @@
           "_tze200_g2kiyjvf",
           "_tze200_ne4s6z47",
           "_tze204_rrbcyh1f",
-          "_tze200_lgstepha",
-          "_tze200_kagkgk0i",
-          "_tze200_i0b1dbqu",
           "_tze204_khoqss0a"
         ],
         "productId": [
@@ -177338,7 +177337,6 @@
           "_TZ3210_5ct6e7ye",
           "_TZE200_2se8efxh",
           "_TZE200_9cqcpkgb",
-          "_TZE200_ga1maeof",
           "_hybrid_plug_smart_needs_device_assignment"
         ]
       },
@@ -179525,7 +179523,6 @@
       "zigbee": {
         "manufacturerName": [
           "_tze204_yensya2c",
-          "_tze200_9qayzqa8",
           "_tze204_9qayzqa8",
           "_tze200_m9qayzqa8"
         ],
@@ -192332,7 +192329,6 @@
         },
         "manufacturerName": [
           "_tze200_3to",
-          "_tze200_7hfcudw5",
           "_tze200_rxqls8v0",
           "_tze204_rxqls8v0"
         ]
@@ -199298,7 +199294,6 @@
         "manufacturerName": [
           "_HYBRID_SIREN_SIRENTEMPHUMIDSENSOR_NEEDS_DEVICE_ASSIGNMENT",
           "_TYST11_d0yu2xgi",
-          "_TZE200_d0yu2xgi",
           "_TZE200_h4astvf8",
           "_TZE204_ljpxwimu",
           "_hybrid_siren_sirentemphumidsensor_needs_device_assignment"
@@ -202555,7 +202550,6 @@
           "_TZ3000_MWD3C2AT",
           "_TZ3000_d0yu2xgi",
           "_TZ3000_tk3s5tyg",
-          "_TZE200_ntcy3xu1",
           "_tz3400_tk3s5tyg"
         ]
       },
@@ -203052,12 +203046,7 @@
           "_TYZB01_wqcac7lo",
           "_TZE200_0zaf1cr8",
           "_TZE284_0zaf1cr8",
-          "_TZE200_m9skfctm",
-          "_TZE200_t5p1vj8r",
-          "_TZE200_uebojraa",
-          "_TZE200_vzekyi4c",
           "_TZE200_yh7aoahi",
-          "_TZE200_dq1mfjug",
           "_TZE284_6ycgarab",
           "_TZE204_cjbofhxw",
           "_TZE284_cjbofhxw",
@@ -203431,7 +203420,6 @@
       "zigbee": {
         "manufacturerName": [
           "_TZE204_ntcy3xu1",
-          "_TYZB01_mtunwanm",
           "_TZ3000_9tg32trw",
           "_TZ3000_djgzdba9"
         ],
@@ -203807,12 +203795,9 @@
       "subDevices": [],
       "zigbee": {
         "manufacturerName": [
-          "_TZE200_1agwnems",
           "_TZE200_4XSYPNEY",
           "_TZE200_4bjixefp",
-          "_TZE200_579lguh2",
           "_TZE200_9CV5TCGQ",
-          "_TZE200_9i9dt8is",
           "_TZE200_A0GSPFYZ",
           "_TZE200_FQYTFMYK",
           "_TZE200_FQYTFYMK",
@@ -203820,17 +203805,10 @@
           "_TZE200_SH8V7FHD",
           "_TZE200_ZNLLDQL1",
           "_TZE200_ctq0k47x",
-          "_TZE200_dfxkcots",
-          "_TZE200_ebwgzdqq",
-          "_TZE200_ip2akl4w",
           "_TZE200_itp8dt7f",
           "_TZE200_mwgsmffw",
           "_TZE200_myd45weu",
           "_TZE200_npj9bug3",
-          "_TZE200_ojzhk75b",
-          "_TZE200_swaamsoy",
-          "_TZE200_vucankjx",
-          "_TZE200_w4cryh2i",
           "_TZE204_4XSYPNEY",
           "_TZE204_9qhuzgo0",
           "_TZE204_A0GSPFYZ",
@@ -206747,7 +206725,10 @@
             "en": "Two tiles will be created, one for each channel of the device. Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode (the LED should blink green)."
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_TYZB01_MTUNWANM",
+          "_TZ3000_18ejxno0"
+        ]
       },
       "version": "1.0.0",
       "capabilitiesOptions": {
@@ -208605,16 +208586,10 @@
       },
       "zigbee": {
         "manufacturerName": [
-          "_TZE200_bkkmqmyo",
-          "_TZE200_eaac7dkw",
           "_TZE204_bkkmqmyo",
-          "_TZE200_lsanae15",
           "_TZE204_lsanae15",
           "_tze200_rhblgy0z",
           "_tze204_rhblgy0z",
-          "_TZE200_byzdayie",
-          "_TZE200_fsb6zw01",
-          "_TZE200_ewxhg6o9",
           "_tz3000_402vrq2i",
           "_tze200_rks0sgb7",
           "_tze204_q9xty0ad",
@@ -208936,7 +208911,6 @@
           "_TZ300A_VQRS45NJ",
           "_TZ302_pzao9ls1",
           "_TZ3210_IYMFXDIS",
-          "_TZE200_aqnazj70",
           "_TZE204_XIBAABMU",
           "_TZE284_XIBAABMU",
           "_tz3210_imaccztn",
@@ -209622,7 +209596,6 @@
         "manufacturerName": [
           "_TZE204_3Z6HCA0Q",
           "_TZE284_4AR89TR1",
-          "_TZE200_3p5ydos3",
           "_TZE204_n9ctkb6j"
         ],
         "productId": [
@@ -212248,7 +212221,6 @@
       "zigbee": {
         "manufacturerName": [
           "_TZ3000_CZIEW6EU",
-          "_TZE200_tz32mtza",
           "_TZE204_TZ32MTZA",
           "_TZE284_TZ32MTZA"
         ],
@@ -213779,7 +213751,29 @@
         ]
       },
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_TZE200_7HFCUDW5",
+          "_TZE200_8YGSUHE1",
+          "_TZE200_9QAYZQA8",
+          "_TZE200_D0YU2XGI",
+          "_TZE200_DQ1MFJUG",
+          "_TZE200_GA1MAEOF",
+          "_TZE200_GGEV5FSL",
+          "_TZE200_I0B1DBQU",
+          "_TZE200_KAGKGK0I",
+          "_TZE200_KZM5W4IZ",
+          "_TZE200_LGSTEPHA",
+          "_TZE200_M9SKFCTM",
+          "_TZE200_NSLR42TT",
+          "_TZE200_NTCY3XU1",
+          "_TZE200_PAY2BYAX",
+          "_TZE200_T5P1VJ8R",
+          "_TZE200_UEBOJRAA",
+          "_TZE200_V9HKZ2YN",
+          "_TZE200_VES1YCWX",
+          "_TZE200_VZEKYI4C",
+          "_TZE200_YOJQA8XN"
+        ],
         "productId": [
           "TS0601_wirelesssw",
           "TS0601",
@@ -214972,7 +214966,9 @@
             "sv": "Tryck in nollnings-knappen under ca 10 sekunder tills LED-lampan binkar snabbt"
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_TYZB01_HJSGDKFL"
+        ]
       },
       "version": "1.0.0",
       "_pidConflictNotes": [
@@ -222174,7 +222170,28 @@
             "en": "Five tiles will be created, one for each channel of the device. Switch the unit on and off five times and hold for 5 seconds to enter pairing mode (the LED should flash red and blue)."
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_TZE200_0NAUXA0P",
+          "_TZE200_1AGWNEMS",
+          "_TZE200_3P5YDOS3",
+          "_TZE200_579LGUH2",
+          "_TZE200_9CXUHAKF",
+          "_TZE200_9I9DT8IS",
+          "_TZE200_A0SYESF5",
+          "_TZE200_AQNAZJ70",
+          "_TZE200_DFXKCOTS",
+          "_TZE200_E3OITDYU",
+          "_TZE200_EBWGZDQQ",
+          "_TZE200_FJJBHX9D",
+          "_TZE200_IP2AKL4W",
+          "_TZE200_LA2C2UO9",
+          "_TZE200_MEXISFIK",
+          "_TZE200_OJZHK75B",
+          "_TZE200_P0GZBQCT",
+          "_TZE200_SWAAMSOY",
+          "_TZE200_VUCANKJX",
+          "_TZE200_W4CRYH2I"
+        ]
       },
       "version": "1.0.0",
       "capabilitiesOptions": {
