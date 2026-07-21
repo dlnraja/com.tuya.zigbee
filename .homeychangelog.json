@@ -1,6 +1,12 @@
 {
   "changelog": [
     {
+      "version": "9.0.330",
+      "date": "2026-07-22",
+      "channel": "master",
+      "en": "P80: +685 issue #439 FPs to generic_tuya, +135 mfrs to 7 orphan drivers (PR #512), enrich-orphan-drivers.js v4 cross-orphan safe"
+    },
+    {
       "version": "9.0.53",
       "en": "CRITICAL: sdkVersion fix (Processing failed), Missing Capability Listener (setable:false), timer fallback, battery restore, duplicate method fix, HOBEIAN ZG-301Z, NFKD normalize, 87 fingerprints restored, Polos validator",
       "fr": "CRITIQUE: sdkVersion (Processing failed), Missing Capability Listener, fallback timer, batterie, HOBEIAN, NFKD, 87 fingerprints, Polos"
