@@ -9413,6 +9413,38 @@
         "doorwindowsensor_2",
         "sensor_contact_zigbee"
       ]
+    },
+    {
+      "key": "_TZ3000_baeiitad|TS0207",
+      "drivers": [
+        "flood_sensor",
+        "water_leak_sensor"
+      ],
+      "note": "P80-stable: flood_sensor + water_leak_sensor both claim this mfr (Sacred Couple)"
+    },
+    {
+      "key": "_tz3000_ptjcjise|TS0002",
+      "drivers": [
+        "switch_1gang",
+        "switch_usb_dongle"
+      ],
+      "note": "P80-stable: switch_usb_dongle enriched with this mfr, switch_1gang already had it"
+    },
+    {
+      "key": "_TZ3000_ugi8ky6u|TS0601",
+      "drivers": [
+        "power_meter",
+        "smart_knob_rotary"
+      ],
+      "note": "P80-stable: stable has more mfrs in power_meter/smart_knob_rotary"
+    },
+    {
+      "key": "_TZE200_rhgsbacq|TS0601",
+      "drivers": [
+        "motion_sensor_radar_mmwave",
+        "presence_sensor_radar"
+      ],
+      "note": "P80-stable: stable has more mfrs in motion_sensor_radar_mmwave/presence_sensor_radar"
     }
   ]
 }
