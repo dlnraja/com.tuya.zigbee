@@ -1,6 +1,12 @@
 {
   "changelog": [
     {
+      "version": "9.0.331",
+      "date": "2026-07-22",
+      "channel": "master",
+      "en": "P80.5: enrich-orphan-drivers.js v7 variants-aware, +147 mfrs to 3 more orphan drivers (led_controller_rgb, relay_board_4_channel, switch_usb_dongle), 0 new collisions"
+    },
+    {
       "version": "9.0.330",
       "date": "2026-07-22",
       "channel": "master",
