@@ -1,13 +1,16 @@
 #!/usr/bin/env node
 'use strict';
 /**
- * enrich-orphan-drivers.js (P80.3) — v4: cross-orphan safe
+ * enrich-orphan-drivers.js (P80.5) — v7 variants-aware variant of v4
  *
- * For each orphan zigbee driver (has PIDs, no mfrs), find mfrs that:
- *   1) Match the driver's class via Blakader category
- *   2) Are NOT in any existing (non-exempt) driver
- *   3) Are NOT wanted by another orphan driver of the same PID
- *      (if 2 orphans want the same mfr, neither gets it)
+ * V4 was good (135 mfrs, 0 collisions) but didn't account for:
+ *   - mfrs that cover MULTIPLE PIDs (e.g. _tz3000_xxx → [TS0601, TS0203])
+ *   - mfrs that have VARIANTS (mfs_db.variants like _tzn3000_)
+ *
+ * V7 fix: when a mfr from mfs_db lists multiple modelIds, treat the mfr as
+ * valid for ANY of the driver's PIDs that intersect with those modelIds.
+ *
+ * Keep v4's strong cross-orphan safety filter (no Sacred Couple collisions).
  *
  * Run:   node tools/ci/enrich-orphan-drivers.js
  * Apply: node tools/ci/enrich-orphan-drivers.js --apply
@@ -20,6 +23,7 @@ const DRIVERS = path.join(ROOT, 'drivers');
 const BLK_PID = path.join(ROOT, '.github', 'state', 'blakadder', 'mfr-pid.json');
 const JOHAN_DEV = path.join(ROOT, '.github', 'state', 'johan-dump', 'devices.json');
 const JOHAN_ISS = path.join(ROOT, '.github', 'state', 'johan-dump', 'issues.json');
+const MFS_DB = path.join(ROOT, 'data', 'mfs_db.json');
 
 const APPLY = process.argv.includes('--apply');
 
@@ -44,7 +48,7 @@ const CLASS_TO_CATS = {
   'other': ['misc', 'sensor', 'switch']
 };
 
-// 1. Load drivers + global mfr index
+// 1. Load drivers
 const drivers = new Map();
 const globalMfrIndex = new Map();
 for (const d of fs.readdirSync(DRIVERS)) {
@@ -68,26 +72,29 @@ for (const d of fs.readdirSync(DRIVERS)) {
   } catch {}
 }
 
-// 2. Build pid -> [{mfr, cats}] from sources
-const pidToMfrs = new Map();
+// 2. Build mfr -> {pids:Set, cats:Set, realKey:String, source} from sources
+const mfrData = new Map();
+const addMfr = (mfr, pid, cats, src) => {
+  if (!mfr) return;
+  if (!mfrData.has(mfr)) mfrData.set(mfr, { pids: new Set(), cats: new Set(), sources: new Set() });
+  const d = mfrData.get(mfr);
+  if (pid) d.pids.add(pid);
+  if (cats) for (const c of cats) d.cats.add(c);
+  if (src) d.sources.add(src);
+};
+
 if (fs.existsSync(BLK_PID)) {
   const blk = JSON.parse(fs.readFileSync(BLK_PID, 'utf8'));
   for (const k of Object.keys(blk)) {
     const e = blk[k];
-    if (!pidToMfrs.has(e.pid)) pidToMfrs.set(e.pid, []);
-    pidToMfrs.get(e.pid).push({ mfr: e.mfr, cats: e.categories || ['misc'] });
+    addMfr(e.mfr, e.pid, e.categories, 'blakadder');
   }
 }
 if (fs.existsSync(JOHAN_DEV)) {
   const jd = JSON.parse(fs.readFileSync(JOHAN_DEV, 'utf8'));
   for (const d of jd) {
     for (const pid of (d.pids || [])) {
-      for (const mfr of (d.mfrs || [])) {
-        if (!pidToMfrs.has(pid)) pidToMfrs.set(pid, []);
-        if (!pidToMfrs.get(pid).some(x => x.mfr === mfr)) {
-          pidToMfrs.get(pid).push({ mfr, cats: [] });
-        }
-      }
+      for (const mfr of (d.mfrs || [])) addMfr(mfr, pid, null, 'johan-dev');
     }
   }
 }
@@ -99,13 +106,34 @@ if (fs.existsSync(JOHAN_ISS)) {
     const body = i.body || '';
     const mfrs = [...new Set([...body.matchAll(mfrRe)].map(m => m[0]))];
     const pids = [...new Set([...body.matchAll(pidRe)].map(m => m[0]))];
-    for (const p of pids) {
-      if (!pidToMfrs.has(p)) pidToMfrs.set(p, []);
-      for (const m of mfrs) {
-        if (!pidToMfrs.get(p).some(x => x.mfr === m)) {
-          pidToMfrs.get(p).push({ mfr: m, cats: [] });
-        }
-      }
+    for (const m of mfrs) for (const p of pids) addMfr(m, p, null, 'johan-iss');
+  }
+}
+// mfs_db: register the primary mfr + each variant as a separate mfr entry
+// but use the model's "category" as a class hint (we use this as additional cat info)
+if (fs.existsSync(MFS_DB)) {
+  const mfs = JSON.parse(fs.readFileSync(MFS_DB, 'utf8'));
+  const devs = mfs.devices || {};
+  for (const k of Object.keys(devs)) {
+    const dev = devs[k];
+    if (!dev.modelIds) continue;
+    // Determine cat from deviceType
+    const dt = dev.deviceType || '';
+    const hint = dev.driverHint || '';
+    const cats = [];
+    if (dt === 'thermostat' || hint.includes('radiator') || hint.includes('thermostat')) cats.push('hvac');
+    if (dt === 'sensor' || hint.includes('sensor') || hint.includes('leak') || hint.includes('motion')) cats.push('sensor');
+    if (dt === 'light' || hint.includes('bulb') || hint.includes('light') || hint.includes('led')) cats.push('light', 'dimmer');
+    if (dt === 'switch' || dt === 'plug' || hint.includes('plug') || hint.includes('switch') || hint.includes('dimmer') || hint.includes('socket')) cats.push('plug', 'switch', 'dimmer');
+    if (dt === 'cover' || dt === 'curtain' || hint.includes('curtain')) cats.push('cover');
+    if (dt === 'lock' || hint.includes('lock')) cats.push('lock', 'misc');
+    if (dt === 'fan' || hint.includes('fan') || hint.includes('purifier') || hint.includes('air')) cats.push('hvac');
+    if (cats.length === 0) cats.push('misc', 'sensor', 'switch');
+    // Primary mfr
+    for (const pid of dev.modelIds) addMfr(k, pid, cats, 'mfs-db');
+    // Each variant
+    for (const v of (dev.variants || [])) {
+      for (const pid of dev.modelIds) addMfr(v, pid, cats, 'mfs-db-variant');
     }
   }
 }
@@ -119,44 +147,43 @@ for (const [d, info] of drivers) {
 }
 console.log(`Orphan zigbee drivers (have PIDs, no mfrs): ${orphans.length}`);
 
-// 4. For each orphan, compute initial candidates (cands + class match)
-const orphanInitial = new Map(); // driver -> Set<mfr>
+// 4. For each orphan: candidates = mfrs that have at least one matching PID
+// AND (no cats known OR cat match class)
+const orphanCands = new Map();
 for (const o of orphans) {
   const allowedCats = CLASS_TO_CATS[o.class] || ['misc'];
   const cands = new Set();
-  for (const pid of o.pids) {
-    const ms = pidToMfrs.get(pid);
-    if (!ms) continue;
-    for (const e of ms) {
-      const catMatch = e.cats.length === 0 || e.cats.some(c => allowedCats.includes(c));
+  for (const [mfr, data] of mfrData) {
+    if (data.cats.size > 0) {
+      const catMatch = [...data.cats].some(c => allowedCats.includes(c));
       if (!catMatch) continue;
-      cands.add(e.mfr);
     }
+    // PID match: mfr covers at least one of driver's PIDs
+    const pidMatch = o.pids.some(p => data.pids.has(p));
+    if (!pidMatch) continue;
+    cands.add(mfr);
   }
-  orphanInitial.set(o.driver, cands);
+  orphanCands.set(o.driver, cands);
 }
 
-// 5. Build mfr -> [orphan drivers] index to detect cross-orphan conflicts
+// 5. Build mfr -> [orphans] for cross-orphan detection
 const mfrToOrphans = new Map();
-for (const [drv, cands] of orphanInitial) {
+for (const [drv, cands] of orphanCands) {
   for (const m of cands) {
     if (!mfrToOrphans.has(m)) mfrToOrphans.set(m, []);
     mfrToOrphans.get(m).push(drv);
   }
 }
 
-// 6. For each orphan, filter:
-//    a) mfr must NOT be in any existing (non-exempt) driver
-//    b) mfr must NOT be wanted by another orphan (cross-orphan collision)
+// 6. Filter: not in any existing non-exempt driver + no cross-orphan
 const proposals = [];
 for (const o of orphans) {
-  const cands = orphanInitial.get(o.driver);
+  const cands = orphanCands.get(o.driver);
   const unique = [];
   for (const m of cands) {
     const otherDrivers = (globalMfrIndex.get(m) || []).filter(d => d !== o.driver);
     const realDupes = otherDrivers.filter(d => !EXEMPT_DRIVERS.has(d));
-    if (realDupes.length > 0) continue; // existing driver has it
-    // Cross-orphan conflict: another orphan wants the same mfr
+    if (realDupes.length > 0) continue;
     const competingOrphans = (mfrToOrphans.get(m) || []).filter(d => d !== o.driver);
     if (competingOrphans.length > 0) continue;
     unique.push(m);
@@ -164,7 +191,7 @@ for (const o of orphans) {
   proposals.push({ driver: o.driver, class: o.class, pids: o.pids, candidates: unique, candsTotal: cands.size });
 }
 
-console.log('\n=== P80.3 — Orphan driver enrichment (v4 cross-orphan safe) ===\n');
+console.log('\n=== P80.5 — Orphan driver enrichment (v7 variants-aware) ===\n');
 let totalToAdd = 0;
 for (const p of proposals) {
   if (p.candidates.length === 0) {
