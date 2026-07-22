@@ -1,6 +1,12 @@
 {
   "changelog": [
     {
+      "version": "5.12.15",
+      "date": "2026-07-22",
+      "channel": "stable",
+      "en": "P80-stable-fix: revert 5 orphan drivers creating 35+ Sacred Couple collisions on stable (switch_1gang catch-all has more mfrs than master). Kept issue #439 FPs (685) + flood_sensor + temphumidsensor5 + led_controller_rgb + relay_board_4_channel + switch_usb_dongle. 0 new collisions."
+    },
+    {
       "version": "5.12.14",
       "date": "2026-07-22",
       "channel": "stable",
