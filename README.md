@@ -2,14 +2,14 @@
 
 <!-- AUTO-UPDATED: Do not edit badges manually - updated by GitHub Actions -->
 [![Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdlnraja%2Fcom.tuya.zigbee%2Fmaster%2Fapp.json&query=%24.version&label=version&color=blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
-[![Fingerprints](https://img.shields.io/badge/fingerprints-5,304+-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
+[![Fingerprints](https://img.shields.io/badge/fingerprints-5,306+-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![Drivers](https://img.shields.io/badge/drivers-431-brightgreen)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![Flow Cards](https://img.shields.io/badge/flow%20cards-4,844-blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![SDK](https://img.shields.io/badge/SDK-3-orange)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![License](https://img.shields.io/badge/license-GPL--3.0-red)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/LICENSE)
 [![Homey](https://img.shields.io/badge/Homey-Pro-blueviolet)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 
-A community-driven Homey app that brings local control to Tuya Zigbee devices — no cloud, no internet needed. Covers switches, sensors, lights, thermostats, covers, locks, and more across **431 drivers** and **5,304+ device fingerprints**.
+A community-driven Homey app that brings local control to Tuya Zigbee devices — no cloud, no internet needed. Covers switches, sensors, lights, thermostats, covers, locks, and more across **431 drivers** and **5,306+ device fingerprints**.
 
 **Key features:**
 - **Local-only** — everything runs on your Homey, nothing goes to the cloud
@@ -34,8 +34,8 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.332 |
-| **Device Fingerprints** | 5,304+ |
+| **App Version** | v9.0.333 |
+| **Device Fingerprints** | 5,306+ |
 | **Unique Product IDs** | 571 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
 | **Flow Cards** | 4,844 |
@@ -102,6 +102,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 | Version | Changes |
 |---------|---------|
 | **vchangelog** | [object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object  |
+| **v9.0.333** | v9.0.330: docs(P80): changelog v9.0.330 - issue #439 + orphan enrichment |
 | **v9.0.332** | v9.0.330: docs(P80): changelog v9.0.330 - issue #439 + orphan enrichment |
 | **v9.0.331** | v9.0.330: docs(P80): changelog v9.0.330 - issue #439 + orphan enrichment |
 | **v9.0.329** | P77 + P78: battery/button enrichment analysis (247 battery drivers, 54 button drivers audited). P29.7 temporal-monito... |
@@ -115,7 +116,6 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 | **v9.0.321** | P76 architectural fix: 7 new HOBEIAN/ga1maeof fingerprint collisions baselined (P75.31 follow-up). Architectural test... |
 | **v9.0.320** | P76 architectural fix: 7 new HOBEIAN/ga1maeof fingerprint collisions baselined (P75.31 follow-up). Architectural test... |
 | **v9.0.319** | P76 architectural fix: 7 new HOBEIAN/ga1maeof fingerprint collisions baselined (P75.31 follow-up). Architectural test... |
-| **v9.0.318** | P75.27: HOMEY_PUBLISH_MAX 30 → 35 MB (size gate fix). P75.32/32b test coverage: 49 mixins + 29 flow cards + 23 regres... |
 
 <!-- CHANGELOG_END -->
 
@@ -181,7 +181,7 @@ Homey Pro
        │    └─ Per-fingerprint: DP mappings, quirks, timing
        ├─ BatteryManager (8 chemistries, voltage fallback)
        ├─ PhysicalButtonMixin (2000ms detection)
-       └─ 431 Drivers ─ 5,304+ fingerprints
+       └─ 431 Drivers ─ 5,306+ fingerprints
 ```
 
 ---
