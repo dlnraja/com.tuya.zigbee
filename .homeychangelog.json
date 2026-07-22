@@ -1,6 +1,12 @@
 {
   "changelog": [
     {
+      "version": "5.12.14",
+      "date": "2026-07-22",
+      "channel": "stable",
+      "en": "P80-stable: treat issue #439 (+685 generic_tuya FPs) + PR #512 orphan enrichment (+135 mfrs v4, +147 mfrs v7). 0 new Sacred Couple collisions."
+    },
+    {
       "version": "9.0.53",
       "en": "CRITICAL: sdkVersion fix (Processing failed), Missing Capability Listener (setable:false), timer fallback, battery restore, duplicate method fix, HOBEIAN ZG-301Z, NFKD normalize, 87 fingerprints restored, Polos validator",
       "fr": "CRITIQUE: sdkVersion (Processing failed), Missing Capability Listener, fallback timer, batterie, HOBEIAN, NFKD, 87 fingerprints, Polos"
