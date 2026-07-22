@@ -133,6 +133,117 @@ const MANUAL_FIXES = [
     addAtTop: true,
     source: 'p75.31-p61-restored',
   },
+  // P80: 685 missing mfrs from issue #439 auto-scan - go to generic_tuya
+  // The auto-publish bot often reverts mfr additions on driver.compose.json
+  // We re-add them here. The set is large but stable (it comes from issue body).
+  // Use a marker: if at least one of the new mfrs is present, treat as complete.
+  {
+    id: 'p80-issue-439-generic-tuya-fps',
+    file: 'drivers/generic_tuya/driver.compose.json',
+    description: 'P80: 685 mfrs from issue #439 (Zigbee2MQTT auto-scan, 2026-07-01)',
+    match: (mfrs) => mfrs.includes('_TYST11_fzo2pocs') && mfrs.includes('_TZE200_2hf7x9n3'),
+    addIfMissing: [
+      // Sample marker - the real bulk apply is via apply-issue-439-fps.js
+      // We only add 2 anchor mfrs to detect if the bot reverted. The full
+      // set is too large to put in this file. Re-run apply-issue-439-fps.js
+      // if these are missing.
+      '_TYST11_fzo2pocs', '_TZE200_2hf7x9n3',
+    ],
+    addAtTop: false,
+    source: 'p80-issue-439',
+  },
+  // P80: PR #512 orphan drivers - 7 drivers enriched (P80.5 v7 also covers more)
+  {
+    id: 'p80-orphan-device-radiator-valve-smart',
+    file: 'drivers/device_radiator_valve_smart/driver.compose.json',
+    description: 'P80: thermostat mfrs (Avatto, Beca, Moes TRV family) for HOBEIAN/TS0601',
+    match: (mfrs) => mfrs.includes('_TZE200_BVU2WNXZ'),
+    addIfMissing: ['_TZE200_BVU2WNXZ', '_TZE200_HVAXB2TC', '_TZE200_AOCLFNXZ', '_TZE200_B6WAX7G0', '_TZE200_2EKUZ3DZ'],
+    addAtTop: false,
+    source: 'p80-orphan',
+  },
+  {
+    id: 'p80-orphan-switch-2-gang',
+    file: 'drivers/switch_2_gang/driver.compose.json',
+    description: 'P80: switch_2_gang mfrs (socket orphan, TS0002/TS0003/TS0012/TS0013/TS011F)',
+    match: (mfrs) => mfrs.includes('_TYZB01_ANEIICMQ'),
+    addIfMissing: ['_TYZB01_ANEIICMQ', '_TYZB01_ZSL6Z0PW', '_TYZB01_NCUTBJDI', '_TZ3000_v4l4b0lp', '_TZ3000_f09j9qjb'],
+    addAtTop: false,
+    source: 'p80-orphan',
+  },
+  {
+    id: 'p80-orphan-switch-wireless',
+    file: 'drivers/switch_wireless/driver.compose.json',
+    description: 'P80: switch_wireless mfrs (sensor orphan, TS0215A/TS0601)',
+    match: (mfrs) => mfrs.includes('_TZE200_LGSTEPHA'),
+    addIfMissing: ['_TZE200_LGSTEPHA', '_TZE200_KAGKGK0I', '_TZE200_I0B1DBQU', '_TZE200_RJXQSO4A', '_TZE200_IKVNCLUO'],
+    addAtTop: false,
+    source: 'p80-orphan',
+  },
+  {
+    id: 'p80-orphan-temphumidsensor5',
+    file: 'drivers/temphumidsensor5/driver.compose.json',
+    description: 'P80: temphumidsensor5 mfrs (sensor orphan, TY0201/SNTZ003/TS0201)',
+    match: (mfrs) => mfrs.includes('_TYZB01_HJSGDKFL'),
+    addIfMissing: ['_TYZB01_HJSGDKFL', '_TYZB01_UJFK3XD9'],
+    addAtTop: false,
+    source: 'p80-orphan',
+  },
+  {
+    id: 'p80-orphan-valvecontroller',
+    file: 'drivers/valvecontroller/driver.compose.json',
+    description: 'P80: valvecontroller mfrs (other class orphan, TS0001/TS0111/TS011F)',
+    match: (mfrs) => mfrs.includes('_TYZB01_4TLKSK8A'),
+    addIfMissing: ['_TYZB01_4TLKSK8A', '_TZE200_BXOO2SWD', '_TZ3000_hyarhbyx', '_TZ3000_gjrubzje', '_TZ3000_wpueorev'],
+    addAtTop: false,
+    source: 'p80-orphan',
+  },
+  {
+    id: 'p80-orphan-wall-switch-5-gang-tuya',
+    file: 'drivers/wall_switch_5_gang_tuya/driver.compose.json',
+    description: 'P80: wall_switch_5_gang_tuya mfrs (socket orphan, TS0011/ZBMINI/etc.)',
+    match: (mfrs) => mfrs.includes('_TZE200_7TDTQGWV'),
+    addIfMissing: ['_TZE200_7TDTQGWV', '_TYZB01_QEQVMVTI', '_TZ3000_aetquff4', '_TZ3000_hafsqare', '_TZE200_3P5YDOS3'],
+    addAtTop: false,
+    source: 'p80-orphan',
+  },
+  {
+    id: 'p80-orphan-flood-sensor',
+    file: 'drivers/flood_sensor/driver.compose.json',
+    description: 'P80: flood_sensor mfr (sensor orphan, TS0207/RH3001)',
+    match: (mfrs) => mfrs.includes('_TZ3000_baeiitad'),
+    addIfMissing: ['_TZ3000_baeiitad'],
+    addAtTop: false,
+    source: 'p80-orphan',
+  },
+  // P80.5: enrich-orphan-drivers.js v7 - 3 more drivers covered
+  {
+    id: 'p80.5-orphan-led-controller-rgb',
+    file: 'drivers/led_controller_rgb/driver.compose.json',
+    description: 'P80.5: led_controller_rgb mfr (light orphan, TS0503/TS0504)',
+    match: (mfrs) => mfrs.includes('_TZ3000_iystcadi'),
+    addIfMissing: ['_TZ3000_iystcadi'],
+    addAtTop: false,
+    source: 'p80.5-orphan',
+  },
+  {
+    id: 'p80.5-orphan-relay-board-4-channel',
+    file: 'drivers/relay_board_4_channel/driver.compose.json',
+    description: 'P80.5: relay_board_4_channel mfrs (socket orphan, TS0004)',
+    match: (mfrs) => mfrs.includes('_TZ3000_imaccztn'),
+    addIfMissing: ['_TZ3000_imaccztn', '_TZ3000_u3oupgdy'],
+    addAtTop: false,
+    source: 'p80.5-orphan',
+  },
+  {
+    id: 'p80.5-orphan-switch-usb-dongle',
+    file: 'drivers/switch_usb_dongle/driver.compose.json',
+    description: 'P80.5: switch_usb_dongle mfrs (socket orphan, TS0002)',
+    match: (mfrs) => mfrs.includes('_TZE200_BXOO2SWD'),
+    addIfMissing: ['_TZE200_BXOO2SWD', '_TZ3000_Itgngnqz', '_TZ3000_kgxej1dv', '_TZ3000_ywubfuvt'],
+    addAtTop: false,
+    source: 'p80.5-orphan',
+  },
 ];
 
 function patchFix(fix) {
