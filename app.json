@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "9.0.331",
+  "version": "9.0.332",
   "compatibility": ">=12.2.0",
   "platforms": [
     "local"
@@ -121826,7 +121826,6 @@
         },
         "manufacturerName": [
           "_hybrid_air_purifier_motion_needs_device_assignment",
-          "_TZ3000_s8r1qoyq",
           "_HYBRID_AIR_PURIFIER_MOTION_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
@@ -165601,21 +165600,14 @@
           "_TZB210_yatkpuha",
           "_TZE200",
           "_TZE200_0hb4rdnp",
-          "_TZE200_2atgpdho",
           "_TZE200_2imwyigp",
-          "_TZE200_8whxpsiw",
-          "_TZE200_9sfg7gm0",
-          "_TZE200_a4bpgplm",
-          "_TZE200_ckud7u2l",
           "_TZE200_cpbo62rn",
-          "_TZE200_cwnjrr72",
           "_TZE200_dq8bu0pt",
           "_TZE200_eegnwoyw",
           "_TZE200_gne0e6mk",
           "_TZE200_gubdgai2",
           "_TZE200_mlglxwp3",
           "_TZE200_osmxri8y",
-          "_TZE200_pvvbommb",
           "_TZE200_rqhnxkqu",
           "_TZE200_xixlazkg",
           "_TZE204",
@@ -169750,7 +169742,9 @@
         "button.1"
       ],
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_tz3000_iystcadi"
+        ],
         "productId": [
           "TS0503",
           "TS0504"
@@ -182450,7 +182444,24 @@
             "en": "Four tiles will be created, one for each channel of the device. Press the setup button combined with 1 channel button for 10 seconds (the LED should blink blue)."
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_tyzb01_bagt1e4o",
+          "_tz3000_4fjiwweb",
+          "_tz3000_abrsvsou",
+          "_tz3000_imaccztn",
+          "_tz3000_mmkbptmx",
+          "_tz3000_mrduubod",
+          "_tz3000_u3oupgdy",
+          "_tz3000_uri7ongn",
+          "_tze200_1ozguk6x",
+          "_tze200_aqnazj70",
+          "_tze200_bkkmqmyo",
+          "_tze200_byzdayie",
+          "_tze200_eaac7dkw",
+          "_tze200_ewxhg6o9",
+          "_tze200_fsb6zw01",
+          "_tze200_lsanae15"
+        ]
       },
       "version": "1.0.0",
       "metadata": {
@@ -195033,9 +195044,7 @@
           "_tze284_ggev5fsl",
           "_tze284_nj7sfid2",
           "_tze284_rjgdhqqi",
-          "_tze200_yojqa8xn",
           "_TZ3000_2uollq9d",
-          "_tze200_ggev5fsl",
           "_tz3210_2uollq9d",
           "_TZE200_eqpaxqdv",
           "_TZE284_nj7sfid2",
@@ -206726,8 +206735,7 @@
           }
         },
         "manufacturerName": [
-          "_TYZB01_MTUNWANM",
-          "_TZ3000_18ejxno0"
+          "_TYZB01_MTUNWANM"
         ]
       },
       "version": "1.0.0",
@@ -210580,7 +210588,21 @@
             "fr": "Branchez le dongle USB sur une source d'alimentation USB. Appuyez 3 fois rapidement sur le bouton du dongle."
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_tz3000_18ejxno0",
+          "_tz3000_3zofvcaa",
+          "_tz3000_jcspr0tp",
+          "_tz3000_jl7qyupf",
+          "_tz3000_lmlsduws",
+          "_tz3000_lqb7lcq9",
+          "_tz3000_pvlvoxvt",
+          "_tz3000_qkixdnon",
+          "_tz3000_s8r1qoyq",
+          "_tz3000_zmy4lslw",
+          "_tz3210_8n4dn1ne",
+          "_tz3210_jlf1nepw",
+          "_tz3210_urjf5u18"
+        ]
       },
       "images": {
         "small": "/drivers/switch_usb_dongle/assets/images/small.png",
@@ -213769,8 +213791,6 @@
           "_TZE200_PAY2BYAX",
           "_TZE200_T5P1VJ8R",
           "_TZE200_UEBOJRAA",
-          "_TZE200_V9HKZ2YN",
-          "_TZE200_VES1YCWX",
           "_TZE200_VZEKYI4C",
           "_TZE200_YOJQA8XN"
         ],
