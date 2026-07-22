@@ -1233,5 +1233,8 @@
   },
   "9.0.333": {
     "en": "v9.0.330: docs(P80): changelog v9.0.330 - issue #439 + orphan enrichment"
+  },
+  "9.0.334": {
+    "en": "Stability improvements and Homey test publication retry after transient processing failure."
   }
 }
