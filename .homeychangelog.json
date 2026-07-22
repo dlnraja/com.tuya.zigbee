@@ -1,6 +1,12 @@
 {
   "changelog": [
     {
+      "version": "9.0.332",
+      "date": "2026-07-22",
+      "channel": "master",
+      "en": "P80.6: re-inject P80/P80.5 mfrs after auto-publish bot revert. 10 new manual fixes added to re-inject-manual-fixes.js. generic_tuya: 462 -> 1126 FPs. 0 new Sacred Couple collisions."
+    },
+    {
       "version": "9.0.331",
       "date": "2026-07-22",
       "channel": "master",
