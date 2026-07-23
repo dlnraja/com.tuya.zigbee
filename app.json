@@ -163,11 +163,7 @@
             "type": "device",
             "filter": "capabilities=onoff"
           }
-        ],
-        "titleFormatted": {
-          "en": "Auto-Off Timer triggered [[device]]",
-          "fr": "Minuterie Auto-Off dÃ©clenchÃ©e [[device]]"
-        }
+        ]
       },
       {
         "id": "battery_health_changed",
@@ -288,13 +284,7 @@
               "de": "Geschätzte Resttage"
             }
           }
-        ],
-        "titleFormatted": {
-          "en": "Battery health changed [[device]] [[health_status]]",
-          "fr": "Santé de la batterie modifiée [[device]] [[health_status]]",
-          "nl": "Batterij gezondheid gewijzigd [[device]] [[health_status]]",
-          "de": "Batteriezustand geändert [[device]] [[health_status]]"
-        }
+        ]
       },
       {
         "id": "battery_needs_replacement",
@@ -368,13 +358,7 @@
               "de": "Zyklenanzahl"
             }
           }
-        ],
-        "titleFormatted": {
-          "en": "Battery needs replacement [[device]]",
-          "fr": "La batterie doit être remplacée [[device]]",
-          "nl": "Batterij moet worden vervangen [[device]]",
-          "de": "Batterie muss ersetzt werden [[device]]"
-        }
+        ]
       },
       {
         "id": "boiler_switch_energy_turned_off",
@@ -406,11 +390,7 @@
               "fr": "Temperature"
             }
           }
-        ],
-        "titleFormatted": {
-          "en": "Boiler switch turned off [[device]]",
-          "fr": "Interrupteur chaudiere eteint [[device]]"
-        }
+        ]
       },
       {
         "id": "boiler_switch_energy_turned_on",
@@ -442,11 +422,7 @@
               "fr": "Temperature"
             }
           }
-        ],
-        "titleFormatted": {
-          "en": "Boiler switch turned on [[device]]",
-          "fr": "Interrupteur chaudiere allume [[device]]"
-        }
+        ]
       },
       {
         "id": "button_double_press",
@@ -473,13 +449,7 @@
             "name": "device",
             "filter": "capabilities=button.1,capabilities=button"
           }
-        ],
-        "titleFormatted": {
-          "en": "Button double-pressed [[device]]",
-          "fr": "Bouton double-cliqué [[device]]",
-          "nl": "Knop dubbel ingedrukt [[device]]",
-          "de": "Taste doppelt gedrückt [[device]]"
-        }
+        ]
       },
       {
         "id": "button_long_press",
@@ -506,13 +476,7 @@
             "name": "device",
             "filter": "capabilities=button.1,capabilities=button"
           }
-        ],
-        "titleFormatted": {
-          "en": "Button long-pressed [[device]]",
-          "fr": "Bouton pressé longtemps [[device]]",
-          "nl": "Knop lang ingedrukt [[device]]",
-          "de": "Taste lange gedrückt [[device]]"
-        }
+        ]
       },
       {
         "id": "button_multi_press",
@@ -548,13 +512,7 @@
             "name": "device",
             "filter": "capabilities=button.1,capabilities=button"
           }
-        ],
-        "titleFormatted": {
-          "en": "Button multi-pressed [[device]]",
-          "fr": "Bouton multi-cliqué [[device]]",
-          "nl": "Knop meerdere keren ingedrukt [[device]]",
-          "de": "Taste mehrfach gedrückt [[device]]"
-        }
+        ]
       },
       {
         "id": "button_pressed",
@@ -590,13 +548,7 @@
             "name": "device",
             "filter": "capabilities=button.1,capabilities=button"
           }
-        ],
-        "titleFormatted": {
-          "en": "Button pressed [[device]]",
-          "fr": "Bouton appuyé [[device]]",
-          "nl": "Knop ingedrukt [[device]]",
-          "de": "Taste gedrückt [[device]]"
-        }
+        ]
       },
       {
         "id": "button_release",
@@ -623,13 +575,7 @@
             "name": "device",
             "filter": "capabilities=button.1,capabilities=button"
           }
-        ],
-        "titleFormatted": {
-          "en": "Button released [[device]]",
-          "fr": "Bouton relâché [[device]]",
-          "nl": "Knop losgelaten [[device]]",
-          "de": "Taste losgelassen [[device]]"
-        }
+        ]
       },
       {
         "id": "button_triple_clicked",
@@ -643,11 +589,7 @@
             "type": "device",
             "filter": "capabilities=button.1,capabilities=button"
           }
-        ],
-        "titleFormatted": {
-          "en": "Button was triple-clicked - software [[device]]",
-          "fr": "Bouton triple-cliquÃ© (Logiciel) [[device]]"
-        }
+        ]
       },
       {
         "id": "capability_value_changed_generic",
@@ -696,13 +638,7 @@
             "name": "device",
             "filter": "capabilities=onoff"
           }
-        ],
-        "titleFormatted": {
-          "en": "Any capability value changed [[device]]",
-          "nl": "Elke capaciteitswaarde gewijzigd [[device]]",
-          "de": "Jeder Fähigkeitswert geändert [[device]]",
-          "fr": "Toute valeur de capacité changée [[device]]"
-        }
+        ]
       },
       {
         "id": "condition_evaluated_true",
@@ -762,11 +698,7 @@
             "type": "device",
             "filter": "driver_id=contact_sensor"
           }
-        ],
-        "titleFormatted": {
-          "en": "[[device]] illuminance changed",
-          "fr": "Luminosité modifiée pour [[device]]"
-        }
+        ]
       },
       {
         "id": "energy_daily_summary_ready",
@@ -928,10 +860,7 @@
             },
             "example": "3V_CR2032"
           }
-        ],
-        "titleFormatted": {
-          "en": "Battery replacement predicted [[device]]"
-        }
+        ]
       },
       {
         "id": "health_failure_predicted",
@@ -979,10 +908,7 @@
               "en": "Estimated days until failure"
             }
           }
-        ],
-        "titleFormatted": {
-          "en": "Device failure predicted [[device]]"
-        }
+        ]
       },
       {
         "id": "knob_rotated",
@@ -1027,13 +953,7 @@
             "name": "device",
             "filter": "driver_id=smart_knob,capabilities=dim"
           }
-        ],
-        "titleFormatted": {
-          "en": "Knob rotated [[device]]",
-          "fr": "Molette tournée [[device]]",
-          "nl": "Draaiknop gedraaid [[device]]",
-          "de": "Drehknopf gedreht [[device]]"
-        }
+        ]
       },
       {
         "id": "network_new_device_joined",
@@ -1228,11 +1148,7 @@
               "fr": "Puissance actuelle (W)"
             }
           }
-        ],
-        "titleFormatted": {
-          "en": "Overload detected - safety cutoff [[device]]",
-          "fr": "Surcharge dÃ©tectÃ©e (Coupure SÃ©curitÃ©) [[device]]"
-        }
+        ]
       },
       {
         "id": "presence_cleared_from_zone",
@@ -1272,10 +1188,7 @@
               "en": "Final confidence (0-100)"
             }
           }
-        ],
-        "titleFormatted": {
-          "en": "Presence cleared from zone [[device]]"
-        }
+        ]
       },
       {
         "id": "presence_detected_in_zone",
@@ -1322,10 +1235,7 @@
               "en": "Duration (minutes)"
             }
           }
-        ],
-        "titleFormatted": {
-          "en": "Presence detected in zone [[device]]"
-        }
+        ]
       },
       {
         "id": "radio_presence_detected",
@@ -1343,11 +1253,7 @@
             "type": "device",
             "filter": "capabilities=measure_presence_confidence,capabilities=alarm_presence"
           }
-        ],
-        "titleFormatted": {
-          "en": "Radio Presence Sensing Detected [[device]]",
-          "fr": "PrÃ©sence Radio DÃ©tectÃ©e (Inferred) [[device]]"
-        }
+        ]
       },
       {
         "id": "remote_button_pressed",
@@ -1383,13 +1289,7 @@
             "name": "device",
             "filter": "capabilities=button.1,capabilities=button"
           }
-        ],
-        "titleFormatted": {
-          "en": "Remote button pressed [[device]]",
-          "fr": "Bouton de télécommande appuyé [[device]]",
-          "nl": "Afstandsbediening knop ingedrukt [[device]]",
-          "de": "Fernbedienungstaste gedrückt [[device]]"
-        }
+        ]
       },
       {
         "id": "schedule_action_executed",
@@ -1634,13 +1534,7 @@
               "fr": "onoff.gang2"
             }
           }
-        ],
-        "titleFormatted": {
-          "en": "Sub-capability changed [[device]] [[capability]]",
-          "fr": "Sous-capacité changée [[device]] [[capability]]",
-          "nl": "Sub-capability gewijzigd [[device]] [[capability]]",
-          "de": "Sub-Fähigkeit geändert [[device]] [[capability]]"
-        }
+        ]
       },
       {
         "id": "target_distance_changed",
@@ -1665,10 +1559,7 @@
             },
             "filter": "driver_id=radar_sensor_2"
           }
-        ],
-        "titleFormatted": {
-          "en": "Target distance changed [[device]]"
-        }
+        ]
       },
       {
         "id": "tariff_period_changed",
@@ -1768,10 +1659,7 @@
             },
             "example": "dim"
           }
-        ],
-        "titleFormatted": {
-          "en": "Transition completed [[device]]"
-        }
+        ]
       },
       {
         "id": "tuya_bitmap_changed",
@@ -1816,11 +1704,7 @@
             "min": 0,
             "max": 255
           }
-        ],
-        "titleFormatted": {
-          "en": "Tuya bitmap DP changed [[device]] [[dp]]",
-          "fr": "Bitmap Tuya changé [[device]] [[dp]]"
-        }
+        ]
       },
       {
         "id": "tuya_cluster_received",
@@ -1864,11 +1748,7 @@
             "name": "device",
             "filter": "capabilities=tuya_cluster_event|onoff"
           }
-        ],
-        "titleFormatted": {
-          "en": "Zigbee cluster event received [[device]]",
-          "fr": "Événement cluster Zigbee reçu [[device]]"
-        }
+        ]
       },
       {
         "id": "tuya_dp_changed",
@@ -1920,11 +1800,7 @@
             "name": "device",
             "filter": "capabilities=tuya_dp_value|onoff"
           }
-        ],
-        "titleFormatted": {
-          "en": "Any Tuya DP changed [[device]]",
-          "fr": "Tout DP Tuya changé [[device]]"
-        }
+        ]
       },
       {
         "id": "tuya_dp_received",
@@ -1974,13 +1850,7 @@
             "min": 0,
             "max": 255
           }
-        ],
-        "titleFormatted": {
-          "en": "Tuya Data Point received [[device]] [[dp]]",
-          "fr": "Data Point Tuya reçu [[device]] [[dp]]",
-          "nl": "Tuya Data Point ontvangen [[device]] [[dp]]",
-          "de": "Tuya Datenpunkt empfangen [[device]] [[dp]]"
-        }
+        ]
       },
       {
         "id": "tuya_dp_threshold_crossed",
@@ -2056,13 +1926,7 @@
               "fr": "Valeur seuil"
             }
           }
-        ],
-        "titleFormatted": {
-          "en": "DP threshold crossed [[device]] [[dp]] [[threshold]]",
-          "fr": "Seuil DP franchi [[device]] [[dp]] [[threshold]]",
-          "nl": "DP drempel overschreden [[device]] [[dp]] [[threshold]]",
-          "de": "DP Schwellwert überschritten [[device]] [[dp]] [[threshold]]"
-        }
+        ]
       },
       {
         "id": "tuya_raw_received",
@@ -2107,11 +1971,7 @@
             "min": 0,
             "max": 255
           }
-        ],
-        "titleFormatted": {
-          "en": "Tuya raw DP received [[device]] [[dp]]",
-          "fr": "DP Tuya brut reçu [[device]] [[dp]]"
-        }
+        ]
       },
       {
         "id": "virtual_button_pressed",
@@ -2147,13 +2007,7 @@
             "name": "device",
             "filter": "capabilities=button.1,capabilities=button"
           }
-        ],
-        "titleFormatted": {
-          "en": "Virtual button pressed in app [[device]]",
-          "fr": "Bouton virtuel appuyé dans l'app [[device]]",
-          "nl": "Virtuele knop ingedrukt in app [[device]]",
-          "de": "Virtuelle Taste in App gedrückt [[device]]"
-        }
+        ]
       },
       {
         "id": "air_purifier_turned_on",
@@ -67342,13 +67196,7 @@
               "de": "Gesundheitsstatus"
             }
           }
-        ],
-        "titleFormatted": {
-          "en": "Battery health is below [[threshold]] [[device]]",
-          "fr": "La santé de la batterie est inférieure à [[threshold]] [[device]]",
-          "nl": "Batterij gezondheid is onder [[threshold]] [[device]]",
-          "de": "Batteriezustand ist unter [[threshold]] [[device]]"
-        }
+        ]
       },
       {
         "id": "boiler_switch_energy_power_above",
@@ -67374,11 +67222,7 @@
             "step": 10,
             "value": 1000
           }
-        ],
-        "titleFormatted": {
-          "en": "Boiler power is above [[threshold]] W [[device]]",
-          "fr": "La puissance chaudiere est au-dessus de [[threshold]] W [[device]]"
-        }
+        ]
       },
       {
         "id": "boiler_switch_energy_temperature_above",
@@ -67404,11 +67248,7 @@
             "step": 0.5,
             "value": 50
           }
-        ],
-        "titleFormatted": {
-          "en": "Boiler temperature is above [[threshold]] C [[device]]",
-          "fr": "La temperature chaudiere est au-dessus de [[threshold]] C [[device]]"
-        }
+        ]
       },
       {
         "id": "condition_all_met",
@@ -67557,10 +67397,7 @@
               "en": "All conditions met"
             }
           }
-        ],
-        "titleFormatted": {
-          "en": "All conditions met [[device]] [[condition_1_cap]] [[condition_1_op]] [[condition_1_val]] [[condition_2_cap]] [[condition_2_op]] [[condition_2_val]]"
-        }
+        ]
       },
       {
         "id": "energy_usage_above_threshold",
@@ -67683,10 +67520,7 @@
               "en": "Health status"
             }
           }
-        ],
-        "titleFormatted": {
-          "en": "Device health below [[threshold]] [[device]]"
-        }
+        ]
       },
       {
         "id": "network_health_good",
@@ -67799,10 +67633,7 @@
               "en": "Presence duration (minutes)"
             }
           }
-        ],
-        "titleFormatted": {
-          "en": "Zone is occupied [[device]]"
-        }
+        ]
       },
       {
         "id": "schedule_is_active",
@@ -67961,11 +67792,7 @@
               "fr": "onoff.gang2"
             }
           }
-        ],
-        "titleFormatted": {
-          "en": "Sub-capability [[capability]] is on [[device]]",
-          "fr": "Sous-capacité [[capability]] est active [[device]]"
-        }
+        ]
       },
       {
         "id": "tariff_is_peak_period",
@@ -68060,10 +67887,7 @@
               "en": "Active transition count"
             }
           }
-        ],
-        "titleFormatted": {
-          "en": "Transition in progress [[device]]"
-        }
+        ]
       },
       {
         "id": "tuya_dp_equals",
@@ -68099,11 +67923,7 @@
               "fr": "Valeur"
             }
           }
-        ],
-        "titleFormatted": {
-          "en": "Tuya DP [[dp]] equals [[value]] [[device]]",
-          "fr": "DP Tuya [[dp]] égal à [[value]] [[device]]"
-        }
+        ]
       },
       {
         "id": "tuya_dp_type_is",
@@ -68171,11 +67991,7 @@
               }
             ]
           }
-        ],
-        "titleFormatted": {
-          "en": "DP type is... [[device]] [[dp]] [[dp_type]]",
-          "fr": "Type DP est... [[device]] [[dp]] [[dp_type]]"
-        }
+        ]
       },
       {
         "id": "virtual_presence_any_room_occupied",
@@ -82832,13 +82648,7 @@
               "de": "Der tatsächliche Batterieprozentswert bei der gemessenen Spannung"
             }
           }
-        ],
-        "titleFormatted": {
-          "en": "Calibrate battery reading [[device]] [[reference_voltage]] [[reference_percentage]]",
-          "fr": "Calibrer la lecture de la batterie [[device]] [[reference_voltage]] [[reference_percentage]]",
-          "nl": "Batterij uitlezing kalibreren [[device]] [[reference_voltage]] [[reference_percentage]]",
-          "de": "Batterieablesung kalibrieren [[device]] [[reference_voltage]] [[reference_percentage]]"
-        }
+        ]
       },
       {
         "id": "capability_historical_value",
@@ -82881,13 +82691,7 @@
             "max": 1440,
             "step": 1
           }
-        ],
-        "titleFormatted": {
-          "en": "Retrieve historical capability value [[device]] [[capability]] [[minutes_ago]]",
-          "nl": "Historische capaciteitswaarde ophalen [[device]] [[capability]] [[minutes_ago]]",
-          "de": "Historischen Fähigkeitswert abrufen [[device]] [[capability]] [[minutes_ago]]",
-          "fr": "Récupérer la valeur historique de la capacité [[device]] [[capability]] [[minutes_ago]]"
-        }
+        ]
       },
       {
         "id": "condition_evaluate_set",
@@ -82929,10 +82733,7 @@
               "en": "Condition set evaluated"
             }
           }
-        ],
-        "titleFormatted": {
-          "en": "Evaluate condition set [[condition_set_id]] [[device]]"
-        }
+        ]
       },
       {
         "id": "energy_export_data",
@@ -83076,10 +82877,7 @@
               "en": "Error rate (%)"
             }
           }
-        ],
-        "titleFormatted": {
-          "en": "Run health prediction [[device]]"
-        }
+        ]
       },
       {
         "id": "natural_light_disable",
@@ -83202,12 +83000,7 @@
             "type": "device",
             "filter": "driver_uri=homey:app:com.dlnraja.tuya.zigbee"
           }
-        ],
-        "titleFormatted": {
-          "en": "Check Device OTA Firmware Updates [[device]]",
-          "fr": "Vérifier Mises à Jour (OTA) de l'appareil [[device]]",
-          "nl": "OTA firmware updates controleren [[device]]"
-        }
+        ]
       },
       {
         "id": "presence_force_in_zone",
@@ -83373,10 +83166,7 @@
               "en": "Created schedule ID"
             }
           }
-        ],
-        "titleFormatted": {
-          "en": "Create schedule [[device]] [[schedule_name]] [[capability]] [[capability_value]] [[cron_expression]] [[interval_minutes]]"
-        }
+        ]
       },
       {
         "id": "set_power_on_behavior",
@@ -83751,13 +83541,7 @@
               "fr": "Marche/Arrêt"
             }
           }
-        ],
-        "titleFormatted": {
-          "en": "Set sub-capability [[device]] [[capability]] [[value]]",
-          "fr": "Définir sous-capacité [[device]] [[capability]] [[value]]",
-          "nl": "Sub-capability instellen [[device]] [[capability]] [[value]]",
-          "de": "Sub-Fähigkeit setzen [[device]] [[capability]] [[value]]"
-        }
+        ]
       },
       {
         "id": "sub_capability_toggle",
@@ -83789,13 +83573,7 @@
               "fr": "onoff.gang2"
             }
           }
-        ],
-        "titleFormatted": {
-          "en": "Toggle sub-capability [[device]] [[capability]]",
-          "fr": "Basculer sous-capacitÃ© [[device]] [[capability]]",
-          "nl": "Sub-capability omschakelen [[device]] [[capability]]",
-          "de": "Sub-FÃ¤higkeit umschalten [[device]] [[capability]]"
-        }
+        ]
       },
       {
         "id": "switch_multi_gang_turn_off",
@@ -83851,11 +83629,7 @@
               }
             ]
           }
-        ],
-        "titleFormatted": {
-          "en": "Turn off Gang.. [[device]] [[gang]]",
-          "fr": "Eteindre Bouton.. [[device]] [[gang]]"
-        }
+        ]
       },
       {
         "id": "switch_multi_gang_turn_on",
@@ -83911,11 +83685,7 @@
               }
             ]
           }
-        ],
-        "titleFormatted": {
-          "en": "Turn on Gang.. [[device]] [[gang]]",
-          "fr": "Allumer Bouton.. [[device]] [[gang]]"
-        }
+        ]
       },
       {
         "id": "tariff_set_rate",
@@ -84130,10 +83900,7 @@
               }
             ]
           }
-        ],
-        "titleFormatted": {
-          "en": "Start smooth transition [[device]] [[capability]] [[from_value]] [[to_value]] [[duration_seconds]] [[easing]]"
-        }
+        ]
       },
       {
         "id": "tuya_dp_send",
@@ -84171,13 +83938,7 @@
               "fr": "Valeur"
             }
           }
-        ],
-        "titleFormatted": {
-          "en": "Send Tuya DP [[device]] [[dp]] [[value]]",
-          "fr": "Envoyer DP Tuya [[device]] [[dp]] [[value]]",
-          "nl": "Tuya DP verzenden [[device]] [[dp]] [[value]]",
-          "de": "Tuya DP senden [[device]] [[dp]] [[value]]"
-        }
+        ]
       },
       {
         "id": "tuya_dp_send_typed",
@@ -84256,11 +84017,7 @@
               "en": "Value"
             }
           }
-        ],
-        "titleFormatted": {
-          "en": "Send typed Tuya DP [[device]] [[dp]] [[dp_type]] [[value]]",
-          "fr": "Envoyer DP Tuya typé [[device]] [[dp]] [[dp_type]] [[value]]"
-        }
+        ]
       },
       {
         "id": "virtual_presence_force_clear_all",
@@ -130762,9 +130519,7 @@
           "_TZ3000_MJWG6A52",
           "_TZ3000_MUTFMN4U",
           "_TZ3000_NGSPH3OJ",
-          "_TZ3000_UYJMM0ET",
-          "_TZ3000_famkxci2",
-          "_TZ3000_sj7jbgks"
+          "_TZ3000_UYJMM0ET"
         ],
         "productId": [
           "TS0043",
@@ -132282,7 +132037,6 @@
       },
       "zigbee": {
         "manufacturerName": [
-          "_TZ3000_iszegwpd",
           "_tze200_zxx7mi77",
           "_tze204_zxx7mi77"
         ],
@@ -156802,7 +156556,6 @@
       },
       "zigbee": {
         "manufacturerName": [
-          "_TYZB01_qezuin6k",
           "_TZ3210_c2iwsgbm",
           "_TZ3210_dwytrmda",
           "_TZ3210_fwpt0tcx",
@@ -162659,16 +162412,7 @@
           }
         },
         "manufacturerName": [
-          "Immax",
-          "TUYATEC-0l6xaqmi",
-          "Visonic",
-          "_TZ3000_dummy1781425895946",
-          "immax",
-          "tuyatec-0l6xaqmi",
-          "visonic",
-          "IMMAX",
-          "TUYATEC-0L6XAQMI",
-          "VISONIC"
+          "_TZ3000_dummy1781425895946"
         ]
       },
       "version": "1.0.0",
@@ -167262,7 +167006,6 @@
           "_TZE200_rqhnxkqu",
           "_TZE200_xixlazkg",
           "_TZE204",
-          "_TZE204_1v1dxkck",
           "_TZE204_2imwyigp",
           "_TZE204_2jnoy8dj",
           "_TZE204_d2zfgtij",
@@ -167271,22 +167014,6 @@
           "_TZE204_lawxy9e2",
           "_TZE204_lb0fsvba",
           "_TZE204_mpbki2zm-TS0601",
-          "_TZE204_mrffaamu",
-          "_TZE204_mul9abs3",
-          "_TZE204_mwomyz5n",
-          "_TZE204_nbkshs6k",
-          "_TZE204_ncti2pro",
-          "_TZE204_nladmfvf",
-          "_TZE204_no6qtgtl",
-          "_TZE204_ny94onlb",
-          "_TZE204_odlldrxx",
-          "_TZE204_ogkdpgy2",
-          "_TZE204_oh8y8pv8",
-          "_TZE204_oqtpvx51",
-          "_TZE204_ptaqh9tk",
-          "_TZE204_q12rv9gj",
-          "_TZE204_q22avxbv",
-          "_TZE204_q9xty0ad",
           "_TZE204_qasjif9",
           "_TZE204_s4sa1mcx",
           "_TZE204_tgl8i2np",
@@ -175983,7 +175710,6 @@
           "_TYST11_I5J6IFXJ",
           "_TYZB01_2B8F6CIO",
           "_TYZB01_2JZBHOMB",
-          "_TYZB01_5nr7ncpl",
           "_TYZB01_71KFVVMA",
           "_TYZB01_BHXCJVLV",
           "_TYZB01_EF5XLC9Q",
@@ -175997,7 +175723,6 @@
           "_TZ3000_2hpk2v9l",
           "_TZ3000_5k5vh43t",
           "_TZ3000_6ZVPCDNY",
-          "_TZ3000_6ygjfyll",
           "_TZ3000_BMG14AX7",
           "_TZ3000_BSVQRK3B",
           "_TZ3000_C8OZAH8N",
@@ -176021,33 +175746,16 @@
           "_TZ3210_JIJR1SSS",
           "_TZ3210_jaap6jeb",
           "_TZE200_8VIYDIWR",
-          "_TZE200_8isdky6j",
           "_TZE200_ARGE1PTM",
           "_TZE200_BH4N9CLUK",
           "_TZE200_DCRRZTPA",
           "_TZE200_MCHXVE9O",
           "_TZE200_NHK3BPXQ",
           "_TZE200_XQ4HGAFZ",
-          "_TZE200_aj0oxo1i",
-          "_TZE200_ghynnvos",
-          "_TZE200_iq4ygaai",
-          "_TZE200_jsaqgakf",
-          "_TZE200_jt50ea5d",
-          "_TZE200_me6wtiqs",
-          "_TZE200_mgxy2d9f",
-          "_TZE200_p6fuhvez",
-          "_TZE200_s6hzw8g2",
-          "_TZE200_u6x1zyv2",
-          "_TZE200_wqashyqo",
           "_TZE204_BJF8QUM1",
           "_TZE204_MCHXVE9O",
           "_TZE204_SNDKANFR",
-          "_TZE204_debczeci",
-          "_TZE204_oqtpvx51",
-          "_TZE204_sooucan5",
           "_TZE284_0ZSE7XQG",
-          "_TZE284_g1enhdsi",
-          "_TZE284_tre6haif",
           "tuyatec-bd5faf9p",
           "tuyatec-smmlguju",
           "tuyatec-zw6hxafz"
@@ -176640,12 +176348,10 @@
       "subDevices": [],
       "zigbee": {
         "manufacturerName": [
-          "_TZ3000_hdlpifbk",
           "_TZ3218_AWARHUSB",
           "_TZ3218_T9YNFZ",
           "_TZ3218_T9YNFZ4X",
           "_TZE200_1IBPYHON",
-          "_TZE200_rhgsbacq",
           "_TZE204_1IBPYHON",
           "_TZE284_0WFZACEL",
           "_TZE284_ZY6WJM01",
@@ -178713,16 +178419,6 @@
       },
       "zigbee": {
         "manufacturerName": [
-          "_TZ3000_gnjozsaz",
-          "_TZ3000_j1v25l17",
-          "_TZ3000_ko6v90pg",
-          "_TZ3000_npg02xft",
-          "_TZ3000_pjcqjtev",
-          "_TZ3000_pmz6mjyu",
-          "_TZ3000_wzauvbcs",
-          "_TZ3000_yi0n4xfd",
-          "_TZ3210_4ux0ondb",
-          "_TZ3210_xzhnra8x",
           "_TZE200_placeholder_plug"
         ],
         "productId": [
@@ -182043,7 +181739,6 @@
           "_TZE200_5B5NOETO",
           "_TZE200_5b5noeto",
           "_TZE200_7GCLUKJS",
-          "_TZE200_86nbew0j",
           "_TZE200_AR0SLWND",
           "_TZE200_CLRDRNYA",
           "_TZE200_CQ8LU23I",
@@ -182208,13 +181903,11 @@
           "_TZE204_zg204zh",
           "_TZE204_ztc6ggyl",
           "_TZE204_ztqnh5cg",
-          "_TZE284_1youk3hj",
           "_TZE284_4QZNLKBU",
           "_TZE284_4qznlkbu",
           "_TZE284_81yrt3lo",
           "_TZE284_8catj2au",
           "_TZE284_9OVSKA9W",
-          "_TZE284_9xstqowh",
           "_TZE284_AR5PRZMW",
           "_TZE284_CHCNJ5ST",
           "_TZE284_DEBCZECI",
@@ -182262,13 +181955,7 @@
           "_tze204_3towulqd",
           "_tze204_xsm7l9xa",
           "zg-204ze",
-          "zgaf-205l",
-          "_TZE200_uli8wasj",
-          "_TZE200_grgol3xp",
-          "_TZE200_rhgsbacq",
-          "_TZE200_w0ap83qu",
-          "_TZE204_zg204z",
-          "_TZE204_zg204zh"
+          "zgaf-205l"
         ],
         "productId": [
           "CK-BL702-MWS-01",
@@ -201449,7 +201136,6 @@
           "_TYZB01_8scntis1",
           "_TYZB01_B6EAXDLH",
           "_TYZB01_BNGGSFSF",
-          "_TYZB01_sbpc1zrb",
           "_TZ3000_8R5U7WKH",
           "_TZ3000_AB7HFUIL",
           "_TZ3000_AOGB3S2T",
@@ -201467,7 +201153,6 @@
           "_TZE200_NLRFGPNY",
           "_TZE200_T1BLO2BJ",
           "_TZE200_WNVHLCGL",
-          "_TZE200_znzs7yaw",
           "_TZE204_NLRFGPNY",
           "_TZE204_Q76RTOA9",
           "_TZE204_T1BLO2BJ",
@@ -205247,7 +204932,6 @@
           "lumi.sensor_smoke"
         ],
         "manufacturerName": [
-          "_TYZB01_wqcac7lo",
           "_TZ3000_MWD3C2AT",
           "_TZ3000_TK3S5TYG",
           "_TZ3000_d0yu2xgi",
@@ -205592,8 +205276,6 @@
         },
         "manufacturerName": [
           "_GENERIC_SMOKE_SENSOR",
-          "_TYZB01_dsjszp0x",
-          "_TZE284_gyzlwu5q",
           "_generic_smoke_sensor"
         ]
       },
@@ -205972,7 +205654,6 @@
       },
       "zigbee": {
         "manufacturerName": [
-          "_TYZB01_vkwryfdr",
           "_tz3000_j1rx47vc",
           "_tz3000_u5u0drof"
         ],
@@ -206528,31 +206209,20 @@
       "subDevices": [],
       "zigbee": {
         "manufacturerName": [
-          "_TZE200_1agwnems",
           "_TZE200_4XSYPNEY",
           "_TZE200_4bjixefp",
           "_TZE200_9CV5TCGQ",
-          "_TZE200_9i9dt8is",
           "_TZE200_A0GSPFYZ",
           "_TZE200_FQYTFMYK",
           "_TZE200_FQYTFYMK",
           "_TZE200_MYD45WEU",
           "_TZE200_SH8V7FHD",
           "_TZE200_ZNLLDQL1",
-          "_TZE200_ctq0k47x",
-          "_TZE200_dfxkcots",
-          "_TZE200_ebwgzdqq",
-          "_TZE200_ip2akl4w",
           "_TZE200_itp8dt7f",
           "_TZE200_mwgsmffw",
           "_TZE200_myd45weu",
           "_TZE200_npj9bug3",
-          "_TZE200_ojzhk75b",
-          "_TZE200_swaamsoy",
-          "_TZE200_vucankjx",
-          "_TZE200_w4cryh2i",
           "_TZE204_4XSYPNEY",
-          "_TZE204_9qhuzgo0",
           "_TZE204_A0GSPFYZ",
           "_TZE204_FQYTFMYK",
           "_TZE204_FQYTFYMK",
@@ -206563,7 +206233,6 @@
           "_TZE204_ba69l9ol",
           "_TZE204_myd45weu",
           "_TZE204_pay2byax",
-          "_TZE204_vevc4c6g",
           "_TZE21C_i2ij4rb3",
           "_TZE2841000000_hdml1aav",
           "_TZE284_0INTS6W",
@@ -206945,8 +206614,7 @@
       },
       "zigbee": {
         "manufacturerName": [
-          "_TZE284_ga1maeof",
-          "_TZE284_awepdiwi"
+          "_TZE284_ga1maeof"
         ],
         "productId": [
           "TS0601"
@@ -209902,7 +209570,6 @@
           "_TZ3000_4ZF0CRGO",
           "_TZ3000_5KSUFHQI",
           "_TZ3000_7VCDO2VN",
-          "_TZ3000_7hp93xpr",
           "_TZ3000_CAUQ1OKQ",
           "_TZ3000_CRIIAHCG",
           "_TZ3000_EEI0UBPY",
@@ -212675,9 +212342,7 @@
       "zigbee": {
         "manufacturerName": [
           "_TZE204_3Z6HCA0Q",
-          "_TZE284_4AR89TR1",
-          "_TZE200_3p5ydos3",
-          "_TZE204_n9ctkb6j"
+          "_TZE284_4AR89TR1"
         ],
         "productId": [
           "TS0601"
@@ -215362,13 +215027,9 @@
       },
       "zigbee": {
         "manufacturerName": [
-          "TZE204_7sjncirf",
           "_TZ3000_CZIEW6EU",
           "_TZE204_TZ32MTZA",
-          "_TZE204_ad2jkxwh",
-          "_TZE284_TZ32MTZA",
-          "tze204_7sjncirf",
-          "TZE204_7SJNCIRF"
+          "_TZE284_TZ32MTZA"
         ],
         "productId": [
           "TS0016",
@@ -220483,8 +220144,6 @@
         "manufacturerName": [
           "_TYZB01_VKWRYFDR",
           "_TYZB01_vkwryfdr",
-          "_TZ3000_2xlvlnez",
-          "_TZ3000_2xlvlnvp",
           "_TZ3000_8KCQDNGY",
           "_TZ3000_8gs8h2e4",
           "_TZ3000_ATP3BEWS",
@@ -221413,7 +221072,6 @@
           "_TYZB01_GEIGPSY4",
           "_TYZB01_J9XXAHCL",
           "_TYZB01_KULDUHBJ",
-          "_TZ3000_8bxrzyxz",
           "_TZ3000_A4OUV4QS",
           "_TZ3000_BMFW11GS",
           "_TZ3000_BMFW9YKL",
@@ -222368,7 +222026,6 @@
           }
         },
         "manufacturerName": [
-          "_TYZB02_key8kk7r",
           "_tz3000_w8jwkczz"
         ]
       },
@@ -223333,9 +222990,6 @@
       },
       "zigbee": {
         "manufacturerName": [
-          "_TYZB01_qeqvmvti",
-          "_TYZB01_seqwasot",
-          "_TYZB01_xfpdrwvc",
           "_tz3000_2mb38mf3"
         ],
         "productId": [
@@ -226310,18 +225964,6 @@
           "_TYZB01_sqmd19i1",
           "_TYZB01_ttvdudvx",
           "_TZ3000_gsat0axs",
-          "_TZ3000_hzlsaltw",
-          "_TZ3000_ikuxinvo",
-          "_TZ3000_jsfzkftc",
-          "_TZ3000_k4ej3ww2",
-          "_TZ3000_kqvb5akv",
-          "_TZ3000_kstbkt6a",
-          "_TZ3000_kyb656no",
-          "_TZ3000_mkhkxx1p",
-          "_TZ3000_mqiev3jk",
-          "_TZ3000_mugyhz0q",
-          "_TZ3000_o9f2zqln",
-          "_TZ3000_ocjlo4ea",
           "_TZ3000_pattern",
           "_TZ3000_xk5udnd6",
           "_TZ3000_zojh9vz7",
