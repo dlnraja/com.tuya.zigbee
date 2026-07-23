@@ -1,7 +1,7 @@
 {
-  "_comment": "Generated from .homeycompose/app.json. STABLE channel — only bug fixes applied.",
+  "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "9.0.335",
+  "version": "9.0.336",
   "compatibility": ">=12.2.0",
   "platforms": [
     "local"
@@ -102,9 +102,6 @@
       "path": "/replace"
     }
   },
-  "channel": "stable",
-  "stableSince": "2026-07-14",
-  "stableNotes": "P52-auto: synced safe changes from master",
   "flow": {
     "triggers": [
       {
@@ -120450,10 +120447,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "zigbee": {
@@ -120553,10 +120547,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "images": {
@@ -121005,10 +120996,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "zigbee": {
@@ -121196,10 +121184,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       }
     },
@@ -121543,10 +121528,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "maintenanceActions": [
@@ -121630,10 +121612,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "images": {
@@ -121717,10 +121696,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "images": {
@@ -121814,10 +121790,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "zigbee": {
@@ -121954,10 +121927,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "subDevices": [],
@@ -122621,10 +122591,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "energy": {
@@ -122843,10 +122810,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "energy": {
@@ -122996,10 +122960,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "energy": {
@@ -123924,27 +123885,18 @@
         "button.toggle": {
           "title": {
             "en": "toggle"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.identify": {
           "title": {
             "en": "identify"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.1": {
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "metadata": {
@@ -124059,10 +124011,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "energy": {
@@ -124264,10 +124213,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "energy": {
@@ -124278,7 +124224,6 @@
       "subDevices": [],
       "zigbee": {
         "manufacturerName": [
-          "_TZE200_8ygsuhe1",
           "_tz3000_jr2atpww",
           "_tz3000_kqvb8qa8",
           "_tz3000_krajfo4p",
@@ -124716,10 +124661,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       }
     },
@@ -124744,19 +124686,13 @@
           "title": {
             "en": "Learn IR Code",
             "fr": "Apprendre Code IR"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.1": {
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "energy": {
@@ -124876,10 +124812,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "zigbee": {
@@ -125300,10 +125233,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "maintenanceActions": [
@@ -125643,10 +125573,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "maintenanceActions": [
@@ -126137,10 +126064,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "maintenanceActions": [
@@ -126621,10 +126545,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "maintenanceActions": [
@@ -127080,10 +127001,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "maintenanceActions": [
@@ -127467,10 +127385,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "maintenanceActions": [
@@ -127553,10 +127468,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "platforms": [
@@ -128005,10 +127917,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "maintenanceActions": [
@@ -128346,10 +128255,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "maintenanceActions": [
@@ -128400,10 +128306,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "energy": {
@@ -128819,10 +128722,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "zigbee": {
@@ -129170,10 +129070,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "getable": false,
-          "setable": false,
-          "maintenanceAction": true
+          }
         },
         "measure_battery": {
           "title": {
@@ -129612,19 +129509,13 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "getable": false,
-          "setable": false,
-          "maintenanceAction": true
+          }
         },
         "button.2": {
           "title": {
             "en": "Button 2",
             "fr": "Bouton 2"
-          },
-          "getable": false,
-          "setable": false,
-          "maintenanceAction": true
+          }
         },
         "measure_battery": {
           "title": {
@@ -130277,28 +130168,19 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "getable": false,
-          "setable": false,
-          "maintenanceAction": true
+          }
         },
         "button.2": {
           "title": {
             "en": "Button 2",
             "fr": "Bouton 2"
-          },
-          "getable": false,
-          "setable": false,
-          "maintenanceAction": true
+          }
         },
         "button.3": {
           "title": {
             "en": "Button 3",
             "fr": "Bouton 3"
-          },
-          "getable": false,
-          "setable": false,
-          "maintenanceAction": true
+          }
         },
         "measure_battery": {
           "title": {
@@ -130769,37 +130651,25 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "getable": false,
-          "setable": false,
-          "maintenanceAction": true
+          }
         },
         "button.2": {
           "title": {
             "en": "Button 2",
             "fr": "Bouton 2"
-          },
-          "getable": false,
-          "setable": false,
-          "maintenanceAction": true
+          }
         },
         "button.3": {
           "title": {
             "en": "Button 3",
             "fr": "Bouton 3"
-          },
-          "getable": false,
-          "setable": false,
-          "maintenanceAction": true
+          }
         },
         "button.4": {
           "title": {
             "en": "Button 4",
             "fr": "Bouton 4"
-          },
-          "getable": false,
-          "setable": false,
-          "maintenanceAction": true
+          }
         },
         "measure_battery": {
           "title": {
@@ -131270,37 +131140,25 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "getable": false,
-          "setable": false,
-          "maintenanceAction": true
+          }
         },
         "button.2": {
           "title": {
             "en": "Button 2",
             "fr": "Bouton 2"
-          },
-          "getable": false,
-          "setable": false,
-          "maintenanceAction": true
+          }
         },
         "button.3": {
           "title": {
             "en": "Button 3",
             "fr": "Bouton 3"
-          },
-          "getable": false,
-          "setable": false,
-          "maintenanceAction": true
+          }
         },
         "button.4": {
           "title": {
             "en": "Button 4",
             "fr": "Bouton 4"
-          },
-          "getable": false,
-          "setable": false,
-          "maintenanceAction": true
+          }
         },
         "measure_battery": {
           "title": {
@@ -131745,55 +131603,37 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "getable": false,
-          "setable": false,
-          "maintenanceAction": true
+          }
         },
         "button.2": {
           "title": {
             "en": "Button 2",
             "fr": "Bouton 2"
-          },
-          "getable": false,
-          "setable": false,
-          "maintenanceAction": true
+          }
         },
         "button.3": {
           "title": {
             "en": "Button 3",
             "fr": "Bouton 3"
-          },
-          "getable": false,
-          "setable": false,
-          "maintenanceAction": true
+          }
         },
         "button.4": {
           "title": {
             "en": "Button 4",
             "fr": "Bouton 4"
-          },
-          "getable": false,
-          "setable": false,
-          "maintenanceAction": true
+          }
         },
         "button.5": {
           "title": {
             "en": "Button 5",
             "fr": "Bouton 5"
-          },
-          "getable": false,
-          "setable": false,
-          "maintenanceAction": true
+          }
         },
         "button.6": {
           "title": {
             "en": "Button 6",
             "fr": "Bouton 6"
-          },
-          "getable": false,
-          "setable": false,
-          "maintenanceAction": true
+          }
         },
         "measure_battery": {
           "title": {
@@ -132225,73 +132065,49 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "getable": false,
-          "setable": false,
-          "maintenanceAction": true
+          }
         },
         "button.2": {
           "title": {
             "en": "Button 2",
             "fr": "Bouton 2"
-          },
-          "getable": false,
-          "setable": false,
-          "maintenanceAction": true
+          }
         },
         "button.3": {
           "title": {
             "en": "Button 3",
             "fr": "Bouton 3"
-          },
-          "getable": false,
-          "setable": false,
-          "maintenanceAction": true
+          }
         },
         "button.4": {
           "title": {
             "en": "Button 4",
             "fr": "Bouton 4"
-          },
-          "getable": false,
-          "setable": false,
-          "maintenanceAction": true
+          }
         },
         "button.5": {
           "title": {
             "en": "Button 5",
             "fr": "Bouton 5"
-          },
-          "getable": false,
-          "setable": false,
-          "maintenanceAction": true
+          }
         },
         "button.6": {
           "title": {
             "en": "Button 6",
             "fr": "Bouton 6"
-          },
-          "getable": false,
-          "setable": false,
-          "maintenanceAction": true
+          }
         },
         "button.7": {
           "title": {
             "en": "Button 7",
             "fr": "Bouton 7"
-          },
-          "getable": false,
-          "setable": false,
-          "maintenanceAction": true
+          }
         },
         "button.8": {
           "title": {
             "en": "Button 8",
             "fr": "Bouton 8"
-          },
-          "getable": false,
-          "setable": false,
-          "maintenanceAction": true
+          }
         },
         "measure_battery": {
           "title": {
@@ -133373,18 +133189,12 @@
         "button.toggle": {
           "title": {
             "en": "toggle"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.identify": {
           "title": {
             "en": "identify"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.push": {
           "title": {
@@ -133394,18 +133204,12 @@
         "button.1": {
           "title": {
             "en": "1"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.2": {
           "title": {
             "en": "2"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         }
       },
       "metadata": {
@@ -133956,15 +133760,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
-        },
-        "button.2": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         }
       },
       "maintenanceActions": [
@@ -134011,19 +133807,13 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "getable": false,
-          "setable": false,
-          "maintenanceAction": true
+          }
         },
         "button.2": {
           "title": {
             "en": "Button 2",
             "fr": "Bouton 2"
-          },
-          "getable": false,
-          "setable": false,
-          "maintenanceAction": true
+          }
         },
         "measure_battery": {
           "title": {
@@ -134441,10 +134231,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "getable": false,
-          "setable": false,
-          "maintenanceAction": true
+          }
         },
         "measure_battery": {
           "title": {
@@ -135424,42 +135211,27 @@
         "button.toggle_1": {
           "title": {
             "en": "1"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.toggle_2": {
           "title": {
             "en": "2"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.identify": {
           "title": {
             "en": "identify"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.1": {
           "title": {
             "en": "1"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.2": {
           "title": {
             "en": "2"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         }
       },
       "metadata": {
@@ -135622,18 +135394,12 @@
         "button.1": {
           "title": {
             "en": "1"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.2": {
           "title": {
             "en": "2"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         }
       },
       "energy": {
@@ -135901,19 +135667,13 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "getable": false,
-          "setable": false,
-          "maintenanceAction": true
+          }
         },
         "button.2": {
           "title": {
             "en": "Button 2",
             "fr": "Bouton 2"
-          },
-          "getable": false,
-          "setable": false,
-          "maintenanceAction": true
+          }
         },
         "measure_battery": {
           "title": {
@@ -136300,19 +136060,13 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "getable": false,
-          "setable": false,
-          "maintenanceAction": true
+          }
         },
         "button.2": {
           "title": {
             "en": "Button 2",
             "fr": "Bouton 2"
-          },
-          "getable": false,
-          "setable": false,
-          "maintenanceAction": true
+          }
         },
         "measure_battery": {
           "title": {
@@ -136993,10 +136747,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "maintenanceActions": [
@@ -137078,10 +136829,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "_pidConflictNotes": [
@@ -138390,10 +138138,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "_sacredCoupleFixes": [
@@ -138712,10 +138457,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "zigbee": {
@@ -139084,10 +138826,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "maintenanceActions": [
@@ -139249,10 +138988,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "_pidConflictNotes": [
@@ -139312,10 +139048,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "energy": {
@@ -140319,10 +140052,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "_pidConflictNotes": [
@@ -140386,43 +140116,28 @@
         "button.toggle_1": {
           "title": {
             "en": "1"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.toggle_2": {
           "title": {
             "en": "2"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.toggle_3": {
           "title": {
             "en": "3"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.identify": {
           "title": {
             "en": "identify"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.1": {
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "subDevices": [],
@@ -141069,10 +140784,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "settings": [
@@ -141834,27 +141546,18 @@
         "button.toggle": {
           "title": {
             "en": "toggle"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.identify": {
           "title": {
             "en": "identify"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.1": {
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "metadata": {
@@ -142003,10 +141706,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       }
     },
@@ -142396,10 +142096,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "_pidConflictNotes": [
@@ -142483,10 +142180,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "platforms": [
@@ -143253,10 +142947,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "_pidConflictNotes": [
@@ -143933,10 +143624,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "_pidConflictNotes": [
@@ -144605,27 +144293,18 @@
         "button.toggle": {
           "title": {
             "en": "toggle"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.identify": {
           "title": {
             "en": "identify"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.1": {
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "metadata": {
@@ -145064,10 +144743,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "zigbee": {
@@ -145164,10 +144840,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "_pidConflictNotes": [
@@ -145360,19 +145033,13 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "button.2": {
           "title": {
             "en": "Button 2",
             "fr": "Bouton 2"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "_pidConflictNotes": [
@@ -145499,10 +145166,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "platforms": [
@@ -145734,10 +145398,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "platforms": [
@@ -146271,10 +145932,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       }
     },
@@ -146324,10 +145982,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "platforms": [
@@ -146801,10 +146456,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       }
     },
@@ -146842,10 +146494,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "zigbee": {
@@ -146971,10 +146620,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "settings": [
@@ -147147,10 +146793,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "zigbee": {
@@ -147244,10 +146887,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "zigbee": {
@@ -147640,10 +147280,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "maintenanceActions": [
@@ -147700,10 +147337,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "images": {
@@ -148013,10 +147647,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "maintenanceActions": [
@@ -148078,10 +147709,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "subDevices": [],
@@ -148717,10 +148345,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "energy": {
@@ -149421,10 +149046,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "_pidConflictNotes": [
@@ -149707,10 +149329,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "maintenanceActions": [
@@ -149783,10 +149402,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "zigbee": {
@@ -150138,10 +149754,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "maintenanceActions": [
@@ -150254,10 +149867,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "energy": {
@@ -150602,10 +150212,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       }
     },
@@ -150675,10 +150282,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "platforms": [
@@ -151149,10 +150753,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "maintenanceActions": [
@@ -151470,10 +151071,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "maintenanceActions": [
@@ -151558,10 +151156,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "zigbee": {
@@ -151670,10 +151265,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "images": {
@@ -151785,10 +151377,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "platforms": [
@@ -151895,10 +151484,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "platforms": [
@@ -151990,10 +151576,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "energy": {
@@ -152808,10 +152391,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "_pidConflictNotes": [
@@ -153493,10 +153073,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "_pidConflictNotes": [
@@ -154177,10 +153754,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "_pidConflictNotes": [
@@ -154860,10 +154434,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       }
     },
@@ -155177,10 +154748,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       }
     },
@@ -155491,10 +155059,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       }
     },
@@ -155599,10 +155164,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       }
     },
@@ -155627,10 +155189,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "images": {
@@ -155709,10 +155268,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "images": {
@@ -155786,10 +155342,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "measure_battery": {
           "title": {
@@ -155907,10 +155460,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "measure_battery": {
           "title": {
@@ -156036,10 +155586,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "measure_battery": {
           "title": {
@@ -156153,10 +155700,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "measure_battery": {
           "title": {
@@ -156275,10 +155819,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "measure_battery": {
           "title": {
@@ -156292,10 +155833,7 @@
           "title": {
             "en": "Button 2",
             "fr": "Bouton 2"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "images": {
@@ -156409,10 +155947,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "measure_battery": {
           "title": {
@@ -156426,10 +155961,7 @@
           "title": {
             "en": "Button 2",
             "fr": "Bouton 2"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "images": {
@@ -156592,28 +156124,19 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "button.2": {
           "title": {
             "en": "Button 2",
             "fr": "Bouton 2"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "button.3": {
           "title": {
             "en": "Button 3",
             "fr": "Bouton 3"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "measure_battery": {
           "title": {
@@ -156717,10 +156240,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "measure_battery": {
           "title": {
@@ -157138,10 +156658,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "measure_battery": {
           "title": {
@@ -157507,10 +157024,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "measure_battery": {
           "title": {
@@ -157621,10 +157135,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "measure_battery": {
           "title": {
@@ -157697,10 +157208,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "measure_battery": {
           "title": {
@@ -158212,10 +157720,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "measure_battery": {
           "title": {
@@ -158472,10 +157977,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "measure_battery": {
           "title": {
@@ -159083,35 +158585,23 @@
         "button.toggle_1": {
           "title": {
             "en": "1"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.toggle_2": {
           "title": {
             "en": "2"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.identify": {
           "title": {
             "en": "identify"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.1": {
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "measure_battery": {
           "title": {
@@ -159536,10 +159026,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "measure_battery": {
           "title": {
@@ -159648,10 +159135,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "settings": [
@@ -159813,10 +159297,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "zigbee": {
@@ -159904,10 +159385,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "energy": {
@@ -160787,10 +160265,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "maintenanceActions": [
@@ -161131,10 +160606,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "maintenanceActions": [
@@ -161595,10 +161067,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "maintenanceActions": [
@@ -161687,10 +161156,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "_pidConflictNotes": [
@@ -161762,10 +161228,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "settings": []
@@ -161838,10 +161301,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "_pidConflictNotes": [
@@ -161909,10 +161369,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "_pidConflictNotes": [
@@ -161949,10 +161406,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "images": {
@@ -162132,10 +161586,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "images": {
@@ -162279,10 +161730,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       }
     },
@@ -162315,10 +161763,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "zigbee": {
@@ -162386,10 +161831,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "zigbee": {
@@ -162605,15 +162047,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
-        },
-        "button.push": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         }
       },
       "_pidConflictNotes": [
@@ -163312,35 +162746,23 @@
         "button.toggle": {
           "title": {
             "en": "toggle"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.identify": {
           "title": {
             "en": "identify"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.push": {
           "title": {
             "en": "push"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.1": {
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "metadata": {
@@ -163485,10 +162907,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       }
     },
@@ -163553,10 +162972,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "_pidConflictNotes": [
@@ -163619,10 +163035,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "zigbee": {
@@ -163759,10 +163172,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "platforms": [
@@ -163819,10 +163229,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "zigbee": {
@@ -163915,10 +163322,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "zigbee": {
@@ -164010,10 +163414,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "energy": {
@@ -164625,10 +164026,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "maintenanceActions": [
@@ -165273,51 +164671,33 @@
         "button.toggle_1": {
           "title": {
             "en": "1"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.toggle_2": {
           "title": {
             "en": "2"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.toggle_3": {
           "title": {
             "en": "3"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.toggle_4": {
           "title": {
             "en": "4"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.identify": {
           "title": {
             "en": "identify"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.1": {
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "metadata": {
@@ -165622,10 +165002,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "maintenanceActions": [
@@ -165913,10 +165290,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       }
     },
@@ -165956,10 +165330,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "energy": {
@@ -166143,8 +165514,6 @@
           "ZEN THERMOSTAT",
           "ZIGBEE ALLIANCE",
           "ZIGBEE2MQTT",
-          "_TYST11_pisltm67",
-          "_TYZB01_vwqnz1sn",
           "_TZ1800_ejwkn2h2",
           "_TZ1800_fcdjzz3s",
           "_TZ3000_0dumfk2z",
@@ -166161,8 +165530,6 @@
           "_TZ3000_bumeauzp",
           "_TZ3000_cllghx1k",
           "_TZ3000_evag0pvn",
-          "_TZ3000_fawk5xjv",
-          "_TZ3000_fbjdkph9",
           "_TZ3000_filhl5b7",
           "_TZ3000_ovbvmhiq",
           "_TZ3000_pftj0i7z",
@@ -166244,7 +165611,6 @@
           "_TZE200_rqhnxkqu",
           "_TZE200_xixlazkg",
           "_TZE204",
-          "_TZE204_1v1dxkck",
           "_TZE204_2imwyigp",
           "_TZE204_2jnoy8dj",
           "_TZE204_d2zfgtij",
@@ -166253,7 +165619,6 @@
           "_TZE204_lawxy9e2",
           "_TZE204_lb0fsvba",
           "_TZE204_mpbki2zm-TS0601",
-          "_TZE204_ogkdpgy2",
           "_TZE204_qasjif9",
           "_TZE204_s4sa1mcx",
           "_TZE204_tgl8i2np",
@@ -166661,10 +166026,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "_pidConflictNotes": [
@@ -166718,10 +166080,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "zigbee": {
@@ -166872,10 +166231,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "energy": {
@@ -167232,10 +166588,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "zigbee": {
@@ -167335,10 +166688,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "energy": {},
@@ -167685,10 +167035,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "energy": {
@@ -167830,10 +167177,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "energy": {
@@ -167970,10 +167314,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "zigbee": {
@@ -168087,10 +167428,7 @@
           "title": {
             "en": "Button",
             "fr": "Bouton"
-          },
-          "getable": false,
-          "setable": false,
-          "maintenanceAction": true
+          }
         }
       },
       "energy": {
@@ -168227,10 +167565,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "zigbee": {
@@ -168355,10 +167690,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "energy": {
@@ -168500,10 +167832,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "energy": {
@@ -168675,10 +168004,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "_pidConflictNotes": [
@@ -168715,10 +168041,7 @@
             "en": "Learn IR Code",
             "nl": "Leer IR Code",
             "de": "IR-Code lernen"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "onoff": {
           "title": {
@@ -168730,43 +168053,28 @@
         "button.mute": {
           "title": {
             "en": "Mute"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.source": {
           "title": {
             "en": "Source/Input"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.menu": {
           "title": {
             "en": "Menu"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.enter": {
           "title": {
             "en": "OK/Enter"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.1": {
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "settings": [
@@ -169058,15 +168366,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
-        },
-        "button.ir_test": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         }
       },
       "settings": [
@@ -169264,10 +168564,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "_pidConflictNotes": [
@@ -169528,10 +168825,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "_pidConflictNotes": [
@@ -169605,10 +168899,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "_pidConflictNotes": [
@@ -169769,10 +169060,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "_pidConflictNotes": [
@@ -170253,10 +169541,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "maintenanceActions": [
@@ -170335,10 +169620,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "maintenanceActions": [
@@ -170379,10 +169661,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "zigbee": {
@@ -170509,10 +169788,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "maintenanceActions": [
@@ -170840,10 +170116,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "maintenanceActions": [
@@ -171166,10 +170439,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "maintenanceActions": [
@@ -171532,10 +170802,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "maintenanceActions": [
@@ -171931,10 +171198,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "maintenanceActions": [
@@ -172497,10 +171761,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "maintenanceActions": [
@@ -173019,10 +172280,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "maintenanceActions": [
@@ -173523,10 +172781,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "maintenanceActions": [
@@ -173887,10 +173142,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "maintenanceActions": [
@@ -173945,10 +173197,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "zigbee": {
@@ -174310,10 +173559,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "maintenanceActions": [
@@ -174788,10 +174034,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "maintenanceActions": [
@@ -174890,7 +174133,6 @@
           "_TZE200_MCHXVE9O",
           "_TZE200_NHK3BPXQ",
           "_TZE200_XQ4HGAFZ",
-          "_TZE200_jt50ea5d",
           "_TZE204_BJF8QUM1",
           "_TZE204_MCHXVE9O",
           "_TZE204_SNDKANFR",
@@ -175314,10 +174556,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "_pidConflictNotes": [
@@ -175372,10 +174611,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "zigbee": {
@@ -175896,10 +175132,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "_pidConflictNotes": [
@@ -176602,27 +175835,18 @@
         "button.toggle": {
           "title": {
             "en": "toggle"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.identify": {
           "title": {
             "en": "identify"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.1": {
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "metadata": {
@@ -176768,10 +175992,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "_pidConflictNotes": [
@@ -176884,10 +176105,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "images": {
@@ -176958,10 +176176,7 @@
           "title": {
             "en": "Feed Now",
             "fr": "Distribuer"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "alarm_generic": {
           "title": {
@@ -176973,10 +176188,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "zigbee": {
@@ -177069,10 +176281,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "zigbee": {
@@ -177191,10 +176400,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "_pidConflictNotes": [
@@ -177373,10 +176579,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "_pidConflictNotes": [
@@ -177463,10 +176666,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "_pidConflictNotes": [
@@ -177498,10 +176698,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "images": {
@@ -178046,10 +177243,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "maintenanceActions": [
@@ -178740,10 +177934,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "_pidConflictNotes": [
@@ -179418,27 +178609,18 @@
         "button.toggle": {
           "title": {
             "en": "toggle"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.identify": {
           "title": {
             "en": "identify"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.1": {
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "metadata": {
@@ -179591,10 +178773,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       }
     },
@@ -179684,10 +178863,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "settings": [
@@ -179797,10 +178973,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "energy": {
@@ -180063,10 +179236,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "settings": [
@@ -180341,10 +179511,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "subDevices": [],
@@ -180730,10 +179897,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "subDevices": [],
@@ -180765,7 +179929,6 @@
           "_TZE200_5B5NOETO",
           "_TZE200_5b5noeto",
           "_TZE200_7GCLUKJS",
-          "_TZE200_86nbew0j",
           "_TZE200_AR0SLWND",
           "_TZE200_CLRDRNYA",
           "_TZE200_CRQ3R3LA",
@@ -180911,7 +180074,6 @@
           "_TZE284_81yrt3lo",
           "_TZE284_8catj2au",
           "_TZE284_9OVSKA9W",
-          "_TZE284_9xstqowh",
           "_TZE284_AR5PRZMW",
           "_TZE284_CHCNJ5ST",
           "_TZE284_DEBCZECI",
@@ -181146,10 +180308,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "settings": [
@@ -181318,10 +180477,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "_pidConflictNotes": [
@@ -181460,10 +180616,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "zigbee": {
@@ -181926,10 +181079,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "energy": {
@@ -182678,10 +181828,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       }
     },
@@ -182719,10 +181866,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "zigbee": {
@@ -182796,10 +181940,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "connectivity": [
@@ -182932,10 +182073,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "energy": {
@@ -183079,10 +182217,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "settings": []
@@ -183175,10 +182310,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "_pidConflictNotes": [
@@ -183345,10 +182477,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "_pidConflictNotes": [
@@ -183482,10 +182611,7 @@
             "fr": "Bouton 1",
             "nl": "Knop 1",
             "de": "Taste 1"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.2": {
           "title": {
@@ -183493,10 +182619,7 @@
             "fr": "Bouton 2",
             "nl": "Knop 2",
             "de": "Taste 2"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.3": {
           "title": {
@@ -183504,10 +182627,7 @@
             "fr": "Bouton 3",
             "nl": "Knop 3",
             "de": "Taste 3"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.4": {
           "title": {
@@ -183515,10 +182635,7 @@
             "fr": "Bouton 4",
             "nl": "Knop 4",
             "de": "Taste 4"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "measure_battery": {
           "title": {
@@ -183561,28 +182678,19 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "getable": false,
-          "setable": false,
-          "maintenanceAction": true
+          }
         },
         "button.2": {
           "title": {
             "en": "Button 2",
             "fr": "Bouton 2"
-          },
-          "getable": false,
-          "setable": false,
-          "maintenanceAction": true
+          }
         },
         "button.3": {
           "title": {
             "en": "Button 3",
             "fr": "Bouton 3"
-          },
-          "getable": false,
-          "setable": false,
-          "maintenanceAction": true
+          }
         },
         "measure_battery": {
           "title": {
@@ -184676,18 +183784,12 @@
         "button.toggle": {
           "title": {
             "en": "toggle"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.identify": {
           "title": {
             "en": "identify"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.push": {
           "title": {
@@ -184697,18 +183799,12 @@
         "button.1": {
           "title": {
             "en": "1"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.2": {
           "title": {
             "en": "2"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         }
       },
       "metadata": {
@@ -184805,37 +183901,25 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "getable": false,
-          "setable": false,
-          "maintenanceAction": true
+          }
         },
         "button.2": {
           "title": {
             "en": "Button 2",
             "fr": "Bouton 2"
-          },
-          "getable": false,
-          "setable": false,
-          "maintenanceAction": true
+          }
         },
         "button.3": {
           "title": {
             "en": "Button 3",
             "fr": "Bouton 3"
-          },
-          "getable": false,
-          "setable": false,
-          "maintenanceAction": true
+          }
         },
         "button.4": {
           "title": {
             "en": "Button 4",
             "fr": "Bouton 4"
-          },
-          "getable": false,
-          "setable": false,
-          "maintenanceAction": true
+          }
         },
         "measure_battery": {
           "title": {
@@ -185645,15 +184729,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
-        },
-        "button.2": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         }
       },
       "maintenanceActions": [
@@ -185723,19 +184799,13 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "getable": false,
-          "setable": false,
-          "maintenanceAction": true
+          }
         },
         "button.2": {
           "title": {
             "en": "Button 2",
             "fr": "Bouton 2"
-          },
-          "getable": false,
-          "setable": false,
-          "maintenanceAction": true
+          }
         },
         "measure_battery": {
           "title": {
@@ -186122,10 +185192,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "getable": false,
-          "setable": false,
-          "maintenanceAction": true
+          }
         },
         "measure_battery": {
           "title": {
@@ -186555,18 +185622,12 @@
         "button.1": {
           "title": {
             "en": "1"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.2": {
           "title": {
             "en": "2"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         }
       },
       "energy": {
@@ -186782,19 +185843,13 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "getable": false,
-          "setable": false,
-          "maintenanceAction": true
+          }
         },
         "button.2": {
           "title": {
             "en": "Button 2",
             "fr": "Bouton 2"
-          },
-          "getable": false,
-          "setable": false,
-          "maintenanceAction": true
+          }
         },
         "measure_battery": {
           "title": {
@@ -187176,10 +186231,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "getable": false,
-          "setable": false,
-          "maintenanceAction": true
+          }
         },
         "measure_battery": {
           "title": {
@@ -187623,10 +186675,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       }
     },
@@ -187653,10 +186702,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "images": {
@@ -187734,10 +186780,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "images": {
@@ -187821,10 +186864,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "images": {
@@ -187902,10 +186942,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "images": {
@@ -187983,10 +187020,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "images": {
@@ -188066,10 +187100,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "images": {
@@ -188150,10 +187181,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "images": {
@@ -188239,10 +187267,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "images": {
@@ -188325,10 +187350,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "images": {
@@ -188408,10 +187430,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "images": {
@@ -188489,10 +187508,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "images": {
@@ -188568,10 +187584,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "getable": false,
-          "setable": false,
-          "maintenanceAction": true
+          }
         }
       },
       "zigbee": {
@@ -188694,19 +187707,13 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "getable": false,
-          "setable": false,
-          "maintenanceAction": true
+          }
         },
         "button.2": {
           "title": {
             "en": "Button 2",
             "fr": "Bouton 2"
-          },
-          "getable": false,
-          "setable": false,
-          "maintenanceAction": true
+          }
         }
       },
       "zigbee": {
@@ -188827,28 +187834,19 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "getable": false,
-          "setable": false,
-          "maintenanceAction": true
+          }
         },
         "button.2": {
           "title": {
             "en": "Button 2",
             "fr": "Bouton 2"
-          },
-          "getable": false,
-          "setable": false,
-          "maintenanceAction": true
+          }
         },
         "button.3": {
           "title": {
             "en": "Button 3",
             "fr": "Bouton 3"
-          },
-          "getable": false,
-          "setable": false,
-          "maintenanceAction": true
+          }
         }
       },
       "zigbee": {
@@ -188976,10 +187974,7 @@
             "fr": "Bouton 1",
             "nl": "Knop 1",
             "de": "Taste 1"
-          },
-          "getable": false,
-          "setable": false,
-          "maintenanceAction": true
+          }
         },
         "button.2": {
           "title": {
@@ -188987,10 +187982,7 @@
             "fr": "Bouton 2",
             "nl": "Knop 2",
             "de": "Taste 2"
-          },
-          "getable": false,
-          "setable": false,
-          "maintenanceAction": true
+          }
         },
         "button.3": {
           "title": {
@@ -188998,10 +187990,7 @@
             "fr": "Bouton 3",
             "nl": "Knop 3",
             "de": "Taste 3"
-          },
-          "getable": false,
-          "setable": false,
-          "maintenanceAction": true
+          }
         },
         "button.4": {
           "title": {
@@ -189009,10 +187998,7 @@
             "fr": "Bouton 4",
             "nl": "Knop 4",
             "de": "Taste 4"
-          },
-          "getable": false,
-          "setable": false,
-          "maintenanceAction": true
+          }
         },
         "measure_battery": {
           "title": {
@@ -189145,55 +188131,37 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "getable": false,
-          "setable": false,
-          "maintenanceAction": true
+          }
         },
         "button.2": {
           "title": {
             "en": "Button 2",
             "fr": "Bouton 2"
-          },
-          "getable": false,
-          "setable": false,
-          "maintenanceAction": true
+          }
         },
         "button.3": {
           "title": {
             "en": "Button 3",
             "fr": "Bouton 3"
-          },
-          "getable": false,
-          "setable": false,
-          "maintenanceAction": true
+          }
         },
         "button.4": {
           "title": {
             "en": "Button 4",
             "fr": "Bouton 4"
-          },
-          "getable": false,
-          "setable": false,
-          "maintenanceAction": true
+          }
         },
         "button.5": {
           "title": {
             "en": "Button 5",
             "fr": "Bouton 5"
-          },
-          "getable": false,
-          "setable": false,
-          "maintenanceAction": true
+          }
         },
         "button.6": {
           "title": {
             "en": "Button 6",
             "fr": "Bouton 6"
-          },
-          "getable": false,
-          "setable": false,
-          "maintenanceAction": true
+          }
         }
       },
       "zigbee": {
@@ -189307,55 +188275,37 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "getable": false,
-          "setable": false,
-          "maintenanceAction": true
+          }
         },
         "button.2": {
           "title": {
             "en": "Button 2",
             "fr": "Bouton 2"
-          },
-          "getable": false,
-          "setable": false,
-          "maintenanceAction": true
+          }
         },
         "button.3": {
           "title": {
             "en": "Button 3",
             "fr": "Bouton 3"
-          },
-          "getable": false,
-          "setable": false,
-          "maintenanceAction": true
+          }
         },
         "button.4": {
           "title": {
             "en": "Button 4",
             "fr": "Bouton 4"
-          },
-          "getable": false,
-          "setable": false,
-          "maintenanceAction": true
+          }
         },
         "button.5": {
           "title": {
             "en": "Button 5",
             "fr": "Bouton 5"
-          },
-          "getable": false,
-          "setable": false,
-          "maintenanceAction": true
+          }
         },
         "button.6": {
           "title": {
             "en": "Button 6",
             "fr": "Bouton 6"
-          },
-          "getable": false,
-          "setable": false,
-          "maintenanceAction": true
+          }
         },
         "measure_battery": {
           "title": {
@@ -189457,19 +188407,13 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "getable": false,
-          "setable": false,
-          "maintenanceAction": true
+          }
         },
         "button.2": {
           "title": {
             "en": "Button 2",
             "fr": "Bouton 2"
-          },
-          "getable": false,
-          "setable": false,
-          "maintenanceAction": true
+          }
         }
       },
       "zigbee": {
@@ -190077,10 +189021,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       }
     },
@@ -190591,10 +189532,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "zigbee": {
@@ -191061,10 +189999,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "_pidConflictNotes": [
@@ -191111,10 +190046,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "subDevices": [],
@@ -191756,10 +190688,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "settings": [
@@ -192448,10 +191377,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "_pidConflictNotes": [
@@ -192991,10 +191917,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "zigbee": {
@@ -193428,10 +192351,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "_pidConflictNotes": [
@@ -194116,10 +193036,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "_pidConflictNotes": [
@@ -194163,10 +193080,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "subDevices": [],
@@ -195127,10 +194041,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "_pidConflictNotes": [
@@ -195466,10 +194377,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "zigbee": {
@@ -196053,10 +194961,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "_pidConflictNotes": [
@@ -196128,10 +195033,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "subDevices": [],
@@ -196836,10 +195738,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "subDevices": [],
@@ -197517,10 +196416,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "energy": {
@@ -197878,10 +196774,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "_pidConflictNotes": [
@@ -197927,10 +196820,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "subDevices": [],
@@ -198993,10 +197883,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       }
     },
@@ -199036,10 +197923,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "subDevices": [],
@@ -199975,10 +198859,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "maintenanceActions": [
@@ -200022,7 +198903,6 @@
         "manufacturerName": [
           "_TYZB01_B6EAXDLH",
           "_TYZB01_BNGGSFSF",
-          "_TYZB01_sbpc1zrb",
           "_TZ3000_8R5U7WKH",
           "_TZ3000_AB7HFUIL",
           "_TZ3000_AOGB3S2T",
@@ -200040,7 +198920,6 @@
           "_TZE200_NLRFGPNY",
           "_TZE200_T1BLO2BJ",
           "_TZE200_WNVHLCGL",
-          "_TZE200_znzs7yaw",
           "_TZE204_NLRFGPNY",
           "_TZE204_Q76RTOA9",
           "_TZE204_q76rtoa9",
@@ -200333,10 +199212,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "maintenanceActions": [
@@ -200383,10 +199259,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "energy": {
@@ -200475,10 +199348,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "energy": {
@@ -200864,10 +199734,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "_pidConflictNotes": [
@@ -200904,10 +199771,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "images": {
@@ -201191,10 +200055,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "settings": []
@@ -201232,10 +200093,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "zigbee": {
@@ -201371,10 +200229,7 @@
             "fr": "Bouton 1",
             "nl": "Knop 1",
             "de": "Taste 1"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "measure_battery": {
           "title": {
@@ -201461,10 +200316,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "_pidConflictNotes": [
@@ -201518,10 +200370,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "energy": {
@@ -201662,10 +200511,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       }
     },
@@ -201705,10 +200551,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "platforms": [
@@ -201920,10 +200763,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "energy": {
@@ -202002,10 +200842,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "zigbee": {
@@ -202095,10 +200932,7 @@
             "fr": "Rotation Gauche",
             "nl": "Draai Links",
             "de": "Links drehen"
-          },
-          "getable": false,
-          "setable": false,
-          "maintenanceAction": true
+          }
         },
         "button.rotate_right": {
           "title": {
@@ -202106,10 +200940,7 @@
             "fr": "Rotation Droite",
             "nl": "Draai Rechts",
             "de": "Rechts drehen"
-          },
-          "getable": false,
-          "setable": false,
-          "maintenanceAction": true
+          }
         },
         "button.press": {
           "title": {
@@ -202117,10 +200948,7 @@
             "fr": "Appui",
             "nl": "Druk",
             "de": "Drücken"
-          },
-          "getable": false,
-          "setable": false,
-          "maintenanceAction": true
+          }
         },
         "dim": {
           "title": {
@@ -202144,10 +200972,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "energy": {
@@ -202172,8 +200997,7 @@
           "_tz3000_csflgqj2",
           "_tz3000_gwkzibhs",
           "_tz3000_pzui3skt",
-          "_tz3000_qja6nq5z",
-          "_TZ3000_ugi8ky6u"
+          "_tz3000_qja6nq5z"
         ],
         "productId": [
           "TS004F",
@@ -202349,10 +201173,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "_pidConflictNotes": [
@@ -202409,10 +201230,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "zigbee": {
@@ -202525,10 +201343,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "_pidConflictNotes": [
@@ -202625,10 +201440,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       }
     },
@@ -202706,10 +201518,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "_pidConflictNotes": [
@@ -202791,10 +201600,7 @@
             "fr": "Bouton 1",
             "nl": "Knop 1",
             "de": "Taste 1"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "measure_battery": {
           "title": {
@@ -202888,10 +201694,7 @@
             "fr": "Bouton 1",
             "nl": "Knop 1",
             "de": "Taste 1"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.2": {
           "title": {
@@ -202899,10 +201702,7 @@
             "fr": "Bouton 2",
             "nl": "Knop 2",
             "de": "Taste 2"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.3": {
           "title": {
@@ -202910,10 +201710,7 @@
             "fr": "Bouton 3",
             "nl": "Knop 3",
             "de": "Taste 3"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.4": {
           "title": {
@@ -202921,10 +201718,7 @@
             "fr": "Bouton 4",
             "nl": "Knop 4",
             "de": "Taste 4"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "measure_battery": {
           "title": {
@@ -202985,10 +201779,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "zigbee": {
@@ -203110,10 +201901,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "energy": {
@@ -203214,10 +202002,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "settings": []
@@ -203251,10 +202036,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "images": {
@@ -203488,10 +202270,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "images": {
@@ -204026,10 +202805,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "maintenanceActions": [
@@ -204092,10 +202868,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "zigbee": {
@@ -204229,10 +203002,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "_pidConflictNotes": [
@@ -204327,10 +203097,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "_pidConflictNotes": [
@@ -204361,10 +203128,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "images": {
@@ -204482,10 +203246,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "images": {
@@ -204660,10 +203421,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "images": {
@@ -204808,10 +203566,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "images": {
@@ -205038,10 +203793,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "energy": {
@@ -205054,11 +203806,9 @@
       "subDevices": [],
       "zigbee": {
         "manufacturerName": [
-          "_TZE200_1agwnems",
           "_TZE200_4XSYPNEY",
           "_TZE200_4bjixefp",
           "_TZE200_9CV5TCGQ",
-          "_TZE200_9i9dt8is",
           "_TZE200_A0GSPFYZ",
           "_TZE200_FQYTFMYK",
           "_TZE200_FQYTFYMK",
@@ -205070,10 +203820,6 @@
           "_TZE200_mwgsmffw",
           "_TZE200_myd45weu",
           "_TZE200_npj9bug3",
-          "_TZE200_ojzhk75b",
-          "_TZE200_swaamsoy",
-          "_TZE200_vucankjx",
-          "_TZE200_w4cryh2i",
           "_TZE204_4XSYPNEY",
           "_TZE204_9qhuzgo0",
           "_TZE204_A0GSPFYZ",
@@ -205336,10 +204082,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "energy": {
@@ -205419,8 +204162,7 @@
       },
       "zigbee": {
         "manufacturerName": [
-          "_TZE284_ga1maeof",
-          "_TZE284_awepdiwi"
+          "_TZE284_ga1maeof"
         ],
         "productId": [
           "TS0601"
@@ -205450,10 +204192,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "settings": []
@@ -205522,10 +204261,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "measure_humidity.soil": {
           "title": {
@@ -205573,10 +204309,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "zigbee": {
@@ -206266,30 +204999,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
-        },
-        "button.toggle_1": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
-        },
-        "button.toggle_2": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
-        },
-        "button.identify": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
-        },
-        "button.toggle": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         }
       },
       "metadata": {
@@ -206450,10 +205160,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "measure_battery": {
           "title": {
@@ -206503,10 +205210,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "measure_battery": {
           "title": {
@@ -207867,20 +206571,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
-        },
-        "button.toggle": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
-        },
-        "button.identify": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         }
       },
       "metadata": {
@@ -208055,10 +206746,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "measure_battery": {
           "title": {
@@ -208072,10 +206760,7 @@
           "title": {
             "en": "Button 2",
             "fr": "Bouton 2"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "_pidConflictNotes": [
@@ -208116,10 +206801,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "measure_battery": {
           "title": {
@@ -208133,10 +206815,7 @@
           "title": {
             "en": "Button 2",
             "fr": "Bouton 2"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "images": {
@@ -208920,19 +207599,13 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "button.2": {
           "title": {
             "en": "Button 2",
             "fr": "Bouton 2"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "measure_battery": {
           "title": {
@@ -208941,21 +207614,6 @@
             "nl": "Batterij",
             "de": "Batterie"
           }
-        },
-        "button.toggle_1": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
-        },
-        "button.toggle_2": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
-        },
-        "button.identify": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
         }
       },
       "metadata": {
@@ -209132,10 +207790,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "measure_battery": {
           "title": {
@@ -209149,19 +207804,13 @@
           "title": {
             "en": "Button 2",
             "fr": "Bouton 2"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "button.3": {
           "title": {
             "en": "Button 3",
             "fr": "Bouton 3"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "_pidConflictNotes": [
@@ -209803,28 +208452,19 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "button.2": {
           "title": {
             "en": "Button 2",
             "fr": "Bouton 2"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "button.3": {
           "title": {
             "en": "Button 3",
             "fr": "Bouton 3"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "measure_battery": {
           "title": {
@@ -209833,26 +208473,6 @@
             "nl": "Batterij",
             "de": "Batterie"
           }
-        },
-        "button.toggle_1": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
-        },
-        "button.toggle_2": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
-        },
-        "button.toggle_3": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
-        },
-        "button.identify": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
         }
       },
       "metadata": {
@@ -209941,10 +208561,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "measure_battery": {
           "title": {
@@ -209958,28 +208575,19 @@
           "title": {
             "en": "Button 2",
             "fr": "Bouton 2"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "button.3": {
           "title": {
             "en": "Button 3",
             "fr": "Bouton 3"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "button.4": {
           "title": {
             "en": "Button 4",
             "fr": "Bouton 4"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "images": {
@@ -210313,7 +208921,6 @@
           "_TZ300A_VQRS45NJ",
           "_TZ302_pzao9ls1",
           "_TZ3210_IYMFXDIS",
-          "_TZE200_aqnazj70",
           "_TZE204_XIBAABMU",
           "_TZE284_XIBAABMU",
           "_tz3210_imaccztn",
@@ -210861,37 +209468,25 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "button.2": {
           "title": {
             "en": "Button 2",
             "fr": "Bouton 2"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "button.3": {
           "title": {
             "en": "Button 3",
             "fr": "Bouton 3"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "button.4": {
           "title": {
             "en": "Button 4",
             "fr": "Bouton 4"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "measure_battery": {
           "title": {
@@ -210900,31 +209495,6 @@
             "nl": "Batterij",
             "de": "Batterie"
           }
-        },
-        "button.toggle_1": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
-        },
-        "button.toggle_2": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
-        },
-        "button.toggle_3": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
-        },
-        "button.toggle_4": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
-        },
-        "button.identify": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
         }
       },
       "metadata": {
@@ -211002,10 +209572,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "measure_battery": {
           "title": {
@@ -211558,10 +210125,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "measure_battery": {
           "title": {
@@ -211646,10 +210210,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "measure_battery": {
           "title": {
@@ -211914,10 +210475,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "measure_battery": {
           "title": {
@@ -212133,10 +210691,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "measure_battery": {
           "title": {
@@ -212839,27 +211394,18 @@
         "button.toggle": {
           "title": {
             "en": "toggle"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.identify": {
           "title": {
             "en": "identify"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.1": {
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "metadata": {
@@ -213478,46 +212024,31 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "button.2": {
           "title": {
             "en": "Button 2",
             "fr": "Bouton 2"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "button.3": {
           "title": {
             "en": "Button 3",
             "fr": "Bouton 3"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "button.4": {
           "title": {
             "en": "Button 4",
             "fr": "Bouton 4"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "button.5": {
           "title": {
             "en": "Button 5",
             "fr": "Bouton 5"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "measure_battery": {
           "title": {
@@ -213662,55 +212193,37 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "button.2": {
           "title": {
             "en": "Button 2",
             "fr": "Bouton 2"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "button.3": {
           "title": {
             "en": "Button 3",
             "fr": "Bouton 3"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "button.4": {
           "title": {
             "en": "Button 4",
             "fr": "Bouton 4"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "button.5": {
           "title": {
             "en": "Button 5",
             "fr": "Bouton 5"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "button.6": {
           "title": {
             "en": "Button 6",
             "fr": "Bouton 6"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "measure_battery": {
           "title": {
@@ -214352,64 +212865,43 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "button.2": {
           "title": {
             "en": "Button 2",
             "fr": "Bouton 2"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "button.3": {
           "title": {
             "en": "Button 3",
             "fr": "Bouton 3"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "button.4": {
           "title": {
             "en": "Button 4",
             "fr": "Bouton 4"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "button.5": {
           "title": {
             "en": "Button 5",
             "fr": "Bouton 5"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "button.6": {
           "title": {
             "en": "Button 6",
             "fr": "Bouton 6"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "button.7": {
           "title": {
             "en": "Button 7",
             "fr": "Bouton 7"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "measure_battery": {
           "title": {
@@ -214881,73 +213373,49 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "button.2": {
           "title": {
             "en": "Button 2",
             "fr": "Bouton 2"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "button.3": {
           "title": {
             "en": "Button 3",
             "fr": "Bouton 3"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "button.4": {
           "title": {
             "en": "Button 4",
             "fr": "Bouton 4"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "button.5": {
           "title": {
             "en": "Button 5",
             "fr": "Bouton 5"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "button.6": {
           "title": {
             "en": "Button 6",
             "fr": "Bouton 6"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "button.7": {
           "title": {
             "en": "Button 7",
             "fr": "Bouton 7"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "button.8": {
           "title": {
             "en": "Button 8",
             "fr": "Bouton 8"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "measure_battery": {
           "title": {
@@ -215805,10 +214273,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "measure_battery": {
           "title": {
@@ -216005,10 +214470,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "_pidConflictNotes": [
@@ -216088,10 +214550,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "_pidConflictNotes": [
@@ -216250,10 +214709,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "_pidConflictNotes": [
@@ -216372,10 +214828,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "energy": {
@@ -216487,10 +214940,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "energy": {
@@ -216676,10 +215126,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "maintenanceActions": [
@@ -216900,10 +215347,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       }
     },
@@ -216929,10 +215373,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "platforms": [
@@ -217250,10 +215691,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "images": {
@@ -217333,10 +215771,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "images": {
@@ -217413,10 +215848,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "images": {
@@ -217501,10 +215933,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "zigbee": {
@@ -217558,10 +215987,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "zigbee": {
@@ -217631,10 +216057,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "zigbee": {
@@ -217695,10 +216118,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "energy": {
@@ -217959,10 +216379,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "platforms": [
@@ -218285,10 +216702,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "energy": {},
@@ -218511,10 +216925,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "platforms": [
@@ -218811,10 +217222,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "energy": {
@@ -219382,10 +217790,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "flow": {
@@ -219522,10 +217927,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "maintenanceActions": [
@@ -219610,10 +218012,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "_pidConflictNotes": [
@@ -219682,10 +218081,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "_pidConflictNotes": [
@@ -219837,10 +218233,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "_pidConflictNotes": [
@@ -219923,10 +218316,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "_pidConflictNotes": [
@@ -220030,10 +218420,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "energy": {
@@ -220273,10 +218660,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "images": {
@@ -220509,10 +218893,7 @@
             "fr": "Bouton 1",
             "nl": "Knop 1",
             "de": "Taste 1"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "measure_battery": {
           "title": {
@@ -220606,10 +218987,7 @@
             "fr": "Bouton 1",
             "nl": "Knop 1",
             "de": "Taste 1"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.2": {
           "title": {
@@ -220617,10 +218995,7 @@
             "fr": "Bouton 2",
             "nl": "Knop 2",
             "de": "Taste 2"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "measure_battery": {
           "title": {
@@ -220718,10 +219093,7 @@
             "fr": "Bouton 1",
             "nl": "Knop 1",
             "de": "Taste 1"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.2": {
           "title": {
@@ -220729,10 +219101,7 @@
             "fr": "Bouton 2",
             "nl": "Knop 2",
             "de": "Taste 2"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.3": {
           "title": {
@@ -220740,10 +219109,7 @@
             "fr": "Bouton 3",
             "nl": "Knop 3",
             "de": "Taste 3"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "measure_battery": {
           "title": {
@@ -220850,10 +219216,7 @@
             "fr": "Bouton 1",
             "nl": "Knop 1",
             "de": "Taste 1"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.2": {
           "title": {
@@ -220861,10 +219224,7 @@
             "fr": "Bouton 2",
             "nl": "Knop 2",
             "de": "Taste 2"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.3": {
           "title": {
@@ -220872,10 +219232,7 @@
             "fr": "Bouton 3",
             "nl": "Knop 3",
             "de": "Taste 3"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.4": {
           "title": {
@@ -220883,10 +219240,7 @@
             "fr": "Bouton 4",
             "nl": "Knop 4",
             "de": "Taste 4"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "measure_battery": {
           "title": {
@@ -221013,10 +219367,7 @@
             "fr": "Bouton 1",
             "nl": "Knop 1",
             "de": "Taste 1"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.2": {
           "title": {
@@ -221024,10 +219375,7 @@
             "fr": "Bouton 2",
             "nl": "Knop 2",
             "de": "Taste 2"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.3": {
           "title": {
@@ -221035,10 +219383,7 @@
             "fr": "Bouton 3",
             "nl": "Knop 3",
             "de": "Taste 3"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.4": {
           "title": {
@@ -221046,10 +219391,7 @@
             "fr": "Bouton 4",
             "nl": "Knop 4",
             "de": "Taste 4"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "measure_battery": {
           "title": {
@@ -221164,10 +219506,7 @@
             "fr": "Bouton 1",
             "nl": "Knop 1",
             "de": "Taste 1"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.2": {
           "title": {
@@ -221175,10 +219514,7 @@
             "fr": "Bouton 2",
             "nl": "Knop 2",
             "de": "Taste 2"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.3": {
           "title": {
@@ -221186,10 +219522,7 @@
             "fr": "Bouton 3",
             "nl": "Knop 3",
             "de": "Taste 3"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.4": {
           "title": {
@@ -221197,10 +219530,7 @@
             "fr": "Bouton 4",
             "nl": "Knop 4",
             "de": "Taste 4"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "measure_battery": {
           "title": {
@@ -221320,10 +219650,7 @@
             "fr": "Bouton 1",
             "nl": "Knop 1",
             "de": "Taste 1"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.2": {
           "title": {
@@ -221331,10 +219658,7 @@
             "fr": "Bouton 2",
             "nl": "Knop 2",
             "de": "Taste 2"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.3": {
           "title": {
@@ -221342,10 +219666,7 @@
             "fr": "Bouton 3",
             "nl": "Knop 3",
             "de": "Taste 3"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.4": {
           "title": {
@@ -221353,10 +219674,7 @@
             "fr": "Bouton 4",
             "nl": "Knop 4",
             "de": "Taste 4"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.5": {
           "title": {
@@ -221364,10 +219682,7 @@
             "fr": "Bouton 5",
             "nl": "Knop 5",
             "de": "Taste 5"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.6": {
           "title": {
@@ -221375,10 +219690,7 @@
             "fr": "Bouton 6",
             "nl": "Knop 6",
             "de": "Taste 6"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "measure_battery": {
           "title": {
@@ -221424,10 +219736,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "images": {
@@ -221699,10 +220008,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "measure_battery": {
           "title": {
@@ -221843,10 +220149,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "measure_battery": {
           "title": {
@@ -222116,10 +220419,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "measure_battery": {
           "title": {
@@ -222133,10 +220433,7 @@
           "title": {
             "en": "Button 2",
             "fr": "Bouton 2"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "_pidConflictNotes": [
@@ -222470,19 +220767,13 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "button.2": {
           "title": {
             "en": "Button 2",
             "fr": "Bouton 2"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "measure_battery": {
           "title": {
@@ -222615,10 +220906,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "measure_battery": {
           "title": {
@@ -222632,19 +220920,13 @@
           "title": {
             "en": "Button 2",
             "fr": "Bouton 2"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "button.3": {
           "title": {
             "en": "Button 3",
             "fr": "Bouton 3"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "_pidConflictNotes": [
@@ -223004,28 +221286,19 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "button.2": {
           "title": {
             "en": "Button 2",
             "fr": "Bouton 2"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "button.3": {
           "title": {
             "en": "Button 3",
             "fr": "Bouton 3"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "measure_battery": {
           "title": {
@@ -223180,10 +221453,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "measure_battery": {
           "title": {
@@ -223197,28 +221467,19 @@
           "title": {
             "en": "Button 2",
             "fr": "Bouton 2"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "button.3": {
           "title": {
             "en": "Button 3",
             "fr": "Bouton 3"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "button.4": {
           "title": {
             "en": "Button 4",
             "fr": "Bouton 4"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "_pidConflictNotes": [
@@ -223371,10 +221632,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "measure_battery": {
           "title": {
@@ -223388,28 +221646,19 @@
           "title": {
             "en": "Button 2",
             "fr": "Bouton 2"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "button.3": {
           "title": {
             "en": "Button 3",
             "fr": "Bouton 3"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "button.4": {
           "title": {
             "en": "Button 4",
             "fr": "Bouton 4"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "settings": []
@@ -223774,37 +222023,25 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "button.2": {
           "title": {
             "en": "Button 2",
             "fr": "Bouton 2"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "button.3": {
           "title": {
             "en": "Button 3",
             "fr": "Bouton 3"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "button.4": {
           "title": {
             "en": "Button 4",
             "fr": "Bouton 4"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "_pidConflictNotes": [
@@ -223984,10 +222221,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "measure_battery": {
           "title": {
@@ -224001,37 +222235,25 @@
           "title": {
             "en": "Button 2",
             "fr": "Bouton 2"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "button.3": {
           "title": {
             "en": "Button 3",
             "fr": "Bouton 3"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "button.4": {
           "title": {
             "en": "Button 4",
             "fr": "Bouton 4"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "button.5": {
           "title": {
             "en": "Button 5",
             "fr": "Bouton 5"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "_pidConflictNotes": [
@@ -224207,10 +222429,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "measure_battery": {
           "title": {
@@ -224224,46 +222443,31 @@
           "title": {
             "en": "Button 2",
             "fr": "Bouton 2"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "button.3": {
           "title": {
             "en": "Button 3",
             "fr": "Bouton 3"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "button.4": {
           "title": {
             "en": "Button 4",
             "fr": "Bouton 4"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "button.5": {
           "title": {
             "en": "Button 5",
             "fr": "Bouton 5"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "button.6": {
           "title": {
             "en": "Button 6",
             "fr": "Bouton 6"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "settings": []
@@ -224403,10 +222607,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "settings": []
@@ -224472,10 +222673,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "_pidConflictNotes": [
@@ -224508,10 +222706,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "energy": {
@@ -225001,10 +223196,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "_pidConflictNotes": [
@@ -225091,10 +223283,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "platforms": [
@@ -225293,10 +223482,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "energy": {
@@ -225417,10 +223603,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "energy": {
@@ -225433,11 +223616,7 @@
       },
       "zigbee": {
         "manufacturerName": [
-          "_TZ3000_8n7lqbm0",
           "_TZ3000_YZ38GDRA",
-          "_TZ3000_ctftgjwb",
-          "_TZ3000_udl7uyd2",
-          "_TZ3218_7fiyo3kv",
           "_TZ3290_IXD9MVV4",
           "_TZ3290_ixd9mvv4",
           "_TZE200_R32CTEZX",
@@ -225722,10 +223901,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "energy": {
@@ -225980,10 +224156,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       }
     },
@@ -226123,10 +224296,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       }
     },
@@ -226160,10 +224330,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "pair": [
@@ -226579,10 +224746,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       }
     },
@@ -226724,10 +224888,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       }
     },
@@ -226865,10 +225026,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       }
     },
@@ -227013,10 +225171,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       }
     },
@@ -227154,10 +225309,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       }
     },
@@ -227271,10 +225423,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       }
     },
@@ -227387,10 +225536,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       }
     },
@@ -227429,10 +225575,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "pair": [
@@ -227635,10 +225778,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       }
     },
@@ -227750,10 +225890,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       }
     },
@@ -227868,10 +226005,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       }
     },
@@ -227983,10 +226117,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       }
     },
@@ -228019,10 +226150,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "pair": [
@@ -228157,10 +226285,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "pair": [
@@ -228362,10 +226487,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       }
     },
@@ -228525,10 +226647,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       }
     },
@@ -228666,10 +226785,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       }
     },
@@ -228825,10 +226941,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       }
     },
@@ -228859,10 +226972,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "pair": [
@@ -229129,10 +227239,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       }
     },
@@ -229269,10 +227376,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       }
     },
@@ -229414,10 +227518,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       }
     },
@@ -229559,10 +227660,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       }
     },
@@ -229705,10 +227803,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       }
     },
@@ -229849,10 +227944,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       }
     },
@@ -229900,10 +227992,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "pair": [
@@ -230172,10 +228261,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "pair": [
@@ -230529,10 +228615,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       }
     },
@@ -230678,10 +228761,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       }
     },
@@ -230793,10 +228873,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       }
     },
@@ -230905,10 +228982,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "images": {
@@ -231037,10 +229111,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       }
     },
@@ -231152,10 +229223,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       }
     },
@@ -231267,10 +229335,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       }
     },
@@ -231386,10 +229451,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       }
     },
@@ -231501,10 +229563,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       }
     },
@@ -231619,10 +229678,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       }
     },
@@ -231734,10 +229790,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       }
     },
@@ -231843,10 +229896,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "images": {
@@ -231975,10 +230025,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "images": {
@@ -232133,10 +230180,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       }
     },
@@ -232274,19 +230318,13 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "button.2": {
           "title": {
             "en": "Button 2",
             "fr": "Bouton 2"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "maintenanceActions": [
@@ -232443,28 +230481,19 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "button.2": {
           "title": {
             "en": "Button 2",
             "fr": "Bouton 2"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "button.3": {
           "title": {
             "en": "Button 3",
             "fr": "Bouton 3"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "maintenanceActions": [
@@ -232628,37 +230657,25 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "button.2": {
           "title": {
             "en": "Button 2",
             "fr": "Bouton 2"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "button.3": {
           "title": {
             "en": "Button 3",
             "fr": "Bouton 3"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         },
         "button.4": {
           "title": {
             "en": "Button 4",
             "fr": "Bouton 4"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "maintenanceActions": [
@@ -232811,10 +230828,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       }
     },
@@ -232865,10 +230879,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "pair": [
@@ -233184,10 +231195,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       }
     },
@@ -233263,10 +231271,7 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
+          }
         }
       },
       "_pidConflictNotes": [
