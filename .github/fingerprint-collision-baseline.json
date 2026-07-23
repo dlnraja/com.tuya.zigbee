@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-20T12:25:00.000Z",
+  "generatedAt": "2026-07-23T19:03:59.272Z",
   "description": "Known historical fingerprint collisions. CI fails only for collisions not listed here.",
   "collisions": [
     {
@@ -154,6 +154,3334 @@
         "water_leak_sensor"
       ],
       "note": "P75.31: HOBEIAN TS0601 (uppercase) - canonical HOBEIAN manufacturer name"
+    },
+    {
+      "key": "_TZ3000_n2egfsli|air_purifier_contact,generic_tuya",
+      "mfr": "_TZ3000_n2egfsli",
+      "drivers": [
+        "air_purifier_contact",
+        "generic_tuya"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE200_8ygsuhe1|air_quality_co2,air_quality_comprehensive",
+      "mfr": "_TZE200_8ygsuhe1",
+      "drivers": [
+        "air_quality_co2",
+        "air_quality_comprehensive"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE284_8b9zpaav|air_quality_comprehensive,climate_sensor",
+      "mfr": "_TZE284_8b9zpaav",
+      "drivers": [
+        "air_quality_comprehensive",
+        "climate_sensor"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE284_it9utkro|air_quality_comprehensive,climate_sensor",
+      "mfr": "_TZE284_it9utkro",
+      "drivers": [
+        "air_quality_comprehensive",
+        "climate_sensor"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZ3210_7VGTTNA6|bulb_rgb,sensor_motion_presence",
+      "mfr": "_TZ3210_7VGTTNA6",
+      "drivers": [
+        "bulb_rgb",
+        "sensor_motion_presence"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZ3210_A04ACM9S|bulb_rgb,sensor_motion_presence",
+      "mfr": "_TZ3210_A04ACM9S",
+      "drivers": [
+        "bulb_rgb",
+        "sensor_motion_presence"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZ3210_CM9MBPR1|bulb_rgb,sensor_motion_presence",
+      "mfr": "_TZ3210_CM9MBPR1",
+      "drivers": [
+        "bulb_rgb",
+        "sensor_motion_presence"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZ3210_DDIGCA5N|bulb_rgb,usb_dongle_triple",
+      "mfr": "_TZ3210_DDIGCA5N",
+      "drivers": [
+        "bulb_rgb",
+        "usb_dongle_triple"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZ3210_JLF1NEPW|bulb_rgb,usb_dongle_triple",
+      "mfr": "_TZ3210_JLF1NEPW",
+      "drivers": [
+        "bulb_rgb",
+        "usb_dongle_triple"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZ3210_RWMITWJ4|bulb_rgb,usb_dongle_triple",
+      "mfr": "_TZ3210_RWMITWJ4",
+      "drivers": [
+        "bulb_rgb",
+        "usb_dongle_triple"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "SONOFF|bulb_rgbw,button_wireless_4,module_mini_switch,remote_button_wireless",
+      "mfr": "SONOFF",
+      "drivers": [
+        "bulb_rgbw",
+        "button_wireless_4",
+        "module_mini_switch",
+        "remote_button_wireless"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "sonoff|bulb_rgbw,button_wireless_4,module_mini_switch,remote_button_wireless",
+      "mfr": "sonoff",
+      "drivers": [
+        "bulb_rgbw",
+        "button_wireless_4",
+        "module_mini_switch",
+        "remote_button_wireless"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_tz3210_ngqk6jia|bulb_tunable_white,wall_dimmer_tuya",
+      "mfr": "_tz3210_ngqk6jia",
+      "drivers": [
+        "bulb_tunable_white",
+        "wall_dimmer_tuya"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_tz3210_p9ao60da|bulb_tunable_white,led_controller_cct",
+      "mfr": "_tz3210_p9ao60da",
+      "drivers": [
+        "bulb_tunable_white",
+        "led_controller_cct"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_tz3000_oboryztc|bulb_white,led_strip_advanced",
+      "mfr": "_tz3000_oboryztc",
+      "drivers": [
+        "bulb_white",
+        "led_strip_advanced"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZ3000_mrpevh8p|button_wireless,generic_tuya",
+      "mfr": "_TZ3000_mrpevh8p",
+      "drivers": [
+        "button_wireless",
+        "generic_tuya"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZ3000_5bpeda8u|button_wireless_1,generic_tuya",
+      "mfr": "_TZ3000_5bpeda8u",
+      "drivers": [
+        "button_wireless_1",
+        "generic_tuya"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZ3000_tk3s5tyg|button_wireless_1,smoke_detector_advanced",
+      "mfr": "_TZ3000_tk3s5tyg",
+      "drivers": [
+        "button_wireless_1",
+        "smoke_detector_advanced"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TYZB01_aneiicmq|button_wireless_2,switch_1_gang",
+      "mfr": "_TYZB01_aneiicmq",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1_gang"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TYZB01_b8cr31hp|button_wireless_2,wall_switch_3_gang",
+      "mfr": "_TYZB01_b8cr31hp",
+      "drivers": [
+        "button_wireless_2",
+        "wall_switch_3_gang"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TYZB01_bagt1e4o|button_wireless_2,wall_switch_4_gang",
+      "mfr": "_TYZB01_bagt1e4o",
+      "drivers": [
+        "button_wireless_2",
+        "wall_switch_4_gang"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TYZB01_digziiav|button_wireless_2,switch_2_gang",
+      "mfr": "_TYZB01_digziiav",
+      "drivers": [
+        "button_wireless_2",
+        "switch_2_gang"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TYZB01_mqel1whf|button_wireless_2,wall_switch_3_gang",
+      "mfr": "_TYZB01_mqel1whf",
+      "drivers": [
+        "button_wireless_2",
+        "wall_switch_3_gang"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TYZB01_ncutbjdi|button_wireless_2,switch_1_gang",
+      "mfr": "_TYZB01_ncutbjdi",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1_gang"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TYZB01_phjeraqq|button_wireless_2,smart_switch",
+      "mfr": "_TYZB01_phjeraqq",
+      "drivers": [
+        "button_wireless_2",
+        "smart_switch"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TYZB01_qeqvmvti|button_wireless_2,wall_switch_1_gang",
+      "mfr": "_TYZB01_qeqvmvti",
+      "drivers": [
+        "button_wireless_2",
+        "wall_switch_1_gang"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TYZB01_seqwasot|button_wireless_2,wall_switch_1_gang",
+      "mfr": "_TYZB01_seqwasot",
+      "drivers": [
+        "button_wireless_2",
+        "wall_switch_1_gang"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TYZB01_xfpdrwvc|button_wireless_2,wall_switch_1_gang",
+      "mfr": "_TYZB01_xfpdrwvc",
+      "drivers": [
+        "button_wireless_2",
+        "wall_switch_1_gang"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TYZB01_xiuox57i|button_wireless_2,wall_switch_3_gang",
+      "mfr": "_TYZB01_xiuox57i",
+      "drivers": [
+        "button_wireless_2",
+        "wall_switch_3_gang"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TYZB01_zsl6z0pw|button_wireless_2,switch_2_gang",
+      "mfr": "_TYZB01_zsl6z0pw",
+      "drivers": [
+        "button_wireless_2",
+        "switch_2_gang"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZ3000_5f43h46b|button_wireless_2,dimmer_2_gang",
+      "mfr": "_TZ3000_5f43h46b",
+      "drivers": [
+        "button_wireless_2",
+        "dimmer_2_gang"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZ3000_VMPBYGS5|button_wireless_2,module_mini_switch",
+      "mfr": "_TZ3000_VMPBYGS5",
+      "drivers": [
+        "button_wireless_2",
+        "module_mini_switch"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZ3000_cymsnfvf|button_wireless_2,module_mini_switch",
+      "mfr": "_TZ3000_cymsnfvf",
+      "drivers": [
+        "button_wireless_2",
+        "module_mini_switch"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZ3000_g8n1n7lg|button_wireless_2,water_valve_smart",
+      "mfr": "_TZ3000_g8n1n7lg",
+      "drivers": [
+        "button_wireless_2",
+        "water_valve_smart"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZ3000_gnjozsaz|button_wireless_2,plug",
+      "mfr": "_TZ3000_gnjozsaz",
+      "drivers": [
+        "button_wireless_2",
+        "plug"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZ3000_pjcqjtev|button_wireless_2,plug",
+      "mfr": "_TZ3000_pjcqjtev",
+      "drivers": [
+        "button_wireless_2",
+        "plug"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZ3000_pmz6mjyu|button_wireless_2,plug",
+      "mfr": "_TZ3000_pmz6mjyu",
+      "drivers": [
+        "button_wireless_2",
+        "plug"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZ3000_sj7jbgks|button_wireless_2,button_wireless_3",
+      "mfr": "_TZ3000_sj7jbgks",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_3"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZ3000_typdpbpg|button_wireless_2,switch_plug_1",
+      "mfr": "_TZ3000_typdpbpg",
+      "drivers": [
+        "button_wireless_2",
+        "switch_plug_1"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZ3000_wzauvbcs|button_wireless_2,plug",
+      "mfr": "_TZ3000_wzauvbcs",
+      "drivers": [
+        "button_wireless_2",
+        "plug"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZ3000_zloso4jk|button_wireless_2,switch_plug_2",
+      "mfr": "_TZ3000_zloso4jk",
+      "drivers": [
+        "button_wireless_2",
+        "switch_plug_2"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_tz3000_n2egfsli|button_wireless_2,doorwindowsensor_3",
+      "mfr": "_tz3000_n2egfsli",
+      "drivers": [
+        "button_wireless_2",
+        "doorwindowsensor_3"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_tz3000_qzjcsmar|button_wireless_2,light_bulb_rgb",
+      "mfr": "_tz3000_qzjcsmar",
+      "drivers": [
+        "button_wireless_2",
+        "light_bulb_rgb"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZ3000_rco1yzb1|button_wireless_4,button_wireless_scene",
+      "mfr": "_TZ3000_rco1yzb1",
+      "drivers": [
+        "button_wireless_4",
+        "button_wireless_scene"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZ3040_FWXUZCF4|button_wireless_4,sensor_motion_presence",
+      "mfr": "_TZ3040_FWXUZCF4",
+      "drivers": [
+        "button_wireless_4",
+        "sensor_motion_presence"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZ3290_IXD9MVV4|button_wireless_4,water_valve_garden,water_valve_smart",
+      "mfr": "_TZ3290_IXD9MVV4",
+      "drivers": [
+        "button_wireless_4",
+        "water_valve_garden",
+        "water_valve_smart"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_tz3290_785fbxik|button_wireless_4,ir_blaster",
+      "mfr": "_tz3290_785fbxik",
+      "drivers": [
+        "button_wireless_4",
+        "ir_blaster"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_tz3290_nkpxapoz|button_wireless_4,ir_blaster",
+      "mfr": "_tz3290_nkpxapoz",
+      "drivers": [
+        "button_wireless_4",
+        "ir_blaster"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_tz3290_yyax9ajf|button_wireless_4,ir_blaster",
+      "mfr": "_tz3290_yyax9ajf",
+      "drivers": [
+        "button_wireless_4",
+        "ir_blaster"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_tz3000_2xlvlnez|button_wireless_plug,climate_sensor",
+      "mfr": "_tz3000_2xlvlnez",
+      "drivers": [
+        "button_wireless_plug",
+        "climate_sensor"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE200_byzdayie|button_wireless_plug,power_meter,switch_4_gang_metering",
+      "mfr": "_TZE200_byzdayie",
+      "drivers": [
+        "button_wireless_plug",
+        "power_meter",
+        "switch_4_gang_metering"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE200_fsb6zw01|button_wireless_plug,power_meter,switch_4_gang_metering",
+      "mfr": "_TZE200_fsb6zw01",
+      "drivers": [
+        "button_wireless_plug",
+        "power_meter",
+        "switch_4_gang_metering"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE200_ewxhg6o9|button_wireless_plug,power_meter,switch_4_gang_metering",
+      "mfr": "_TZE200_ewxhg6o9",
+      "drivers": [
+        "button_wireless_plug",
+        "power_meter",
+        "switch_4_gang_metering"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE204_byzdayie|button_wireless_plug,power_meter",
+      "mfr": "_TZE204_byzdayie",
+      "drivers": [
+        "button_wireless_plug",
+        "power_meter"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE204_fsb6zw01|button_wireless_plug,switch_4_gang_metering",
+      "mfr": "_TZE204_fsb6zw01",
+      "drivers": [
+        "button_wireless_plug",
+        "switch_4_gang_metering"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE200_bkkmqmyo|button_wireless_plug,power_meter,switch_4_gang_metering",
+      "mfr": "_TZE200_bkkmqmyo",
+      "drivers": [
+        "button_wireless_plug",
+        "power_meter",
+        "switch_4_gang_metering"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE200_eaac7dkw|button_wireless_plug,power_meter,switch_4_gang_metering",
+      "mfr": "_TZE200_eaac7dkw",
+      "drivers": [
+        "button_wireless_plug",
+        "power_meter",
+        "switch_4_gang_metering"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE204_bkkmqmyo|button_wireless_plug,power_meter,switch_4_gang_metering",
+      "mfr": "_TZE204_bkkmqmyo",
+      "drivers": [
+        "button_wireless_plug",
+        "power_meter",
+        "switch_4_gang_metering"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE200_lsanae15|button_wireless_plug,power_meter,switch_4_gang_metering",
+      "mfr": "_TZE200_lsanae15",
+      "drivers": [
+        "button_wireless_plug",
+        "power_meter",
+        "switch_4_gang_metering"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE204_lsanae15|button_wireless_plug,power_meter,switch_4_gang_metering",
+      "mfr": "_TZE204_lsanae15",
+      "drivers": [
+        "button_wireless_plug",
+        "power_meter",
+        "switch_4_gang_metering"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE200_tz32mtza|button_wireless_plug,switch_wall_6gang",
+      "mfr": "_TZE200_tz32mtza",
+      "drivers": [
+        "button_wireless_plug",
+        "switch_wall_6gang"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZ3000_iv6ph5tr|button_wireless_plug,climate_sensor",
+      "mfr": "_TZ3000_iv6ph5tr",
+      "drivers": [
+        "button_wireless_plug",
+        "climate_sensor"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZ3000_mlswgkc3|button_wireless_plug,climate_sensor",
+      "mfr": "_TZ3000_mlswgkc3",
+      "drivers": [
+        "button_wireless_plug",
+        "climate_sensor"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZ3000_cehuw1lw|button_wireless_plug,gas_sensor",
+      "mfr": "_TZ3000_cehuw1lw",
+      "drivers": [
+        "button_wireless_plug",
+        "gas_sensor"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZ3210_xzhnra8x|button_wireless_plug,plug",
+      "mfr": "_TZ3210_xzhnra8x",
+      "drivers": [
+        "button_wireless_plug",
+        "plug"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE200_wfxuhoea|button_wireless_plug,lcdtemphumidsensor_plug_energy",
+      "mfr": "_TZE200_wfxuhoea",
+      "drivers": [
+        "button_wireless_plug",
+        "lcdtemphumidsensor_plug_energy"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZ3000_T3VVHRMH|climate_sensor,doorwindowsensor_3",
+      "mfr": "_TZ3000_T3VVHRMH",
+      "drivers": [
+        "climate_sensor",
+        "doorwindowsensor_3"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE200_A8SDABTG|climate_sensor,temphumidsensor3",
+      "mfr": "_TZE200_A8SDABTG",
+      "drivers": [
+        "climate_sensor",
+        "temphumidsensor3"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE200_dwcarsat|climate_sensor,illuminance_sensor",
+      "mfr": "_TZE200_dwcarsat",
+      "drivers": [
+        "climate_sensor",
+        "illuminance_sensor"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE200_qoy0ekbd|climate_sensor,temphumidsensor3",
+      "mfr": "_TZE200_qoy0ekbd",
+      "drivers": [
+        "climate_sensor",
+        "temphumidsensor3"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE200_wbhaespm|climate_sensor,power_meter",
+      "mfr": "_TZE200_wbhaespm",
+      "drivers": [
+        "climate_sensor",
+        "power_meter"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE204_a8sdabtg|climate_sensor,temphumidsensor3",
+      "mfr": "_TZE204_a8sdabtg",
+      "drivers": [
+        "climate_sensor",
+        "temphumidsensor3"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE204_ac0fhfiq|climate_sensor,power_meter",
+      "mfr": "_TZE204_ac0fhfiq",
+      "drivers": [
+        "climate_sensor",
+        "power_meter"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE204_qoy0ekbd|climate_sensor,temphumidsensor3",
+      "mfr": "_TZE204_qoy0ekbd",
+      "drivers": [
+        "climate_sensor",
+        "temphumidsensor3"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE204_wbhaespm|climate_sensor,power_meter",
+      "mfr": "_TZE204_wbhaespm",
+      "drivers": [
+        "climate_sensor",
+        "power_meter"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE284_P3DBF6QS|climate_sensor,device_air_purifier_radiator",
+      "mfr": "_TZE284_P3DBF6QS",
+      "drivers": [
+        "climate_sensor",
+        "device_air_purifier_radiator"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE284_gyzlwu5q|climate_sensor,smoke_sensor",
+      "mfr": "_TZE284_gyzlwu5q",
+      "drivers": [
+        "climate_sensor",
+        "smoke_sensor"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_tz3000_c8zfad4a|climate_sensor,doorwindowsensor_4",
+      "mfr": "_tz3000_c8zfad4a",
+      "drivers": [
+        "climate_sensor",
+        "doorwindowsensor_4"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_tz3000_f09j9qjb|climate_sensor,wall_switch_3gang_1way",
+      "mfr": "_tz3000_f09j9qjb",
+      "drivers": [
+        "climate_sensor",
+        "wall_switch_3gang_1way"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_tz3000_mq4wujmp|climate_sensor,smart_garden_irrigation_control",
+      "mfr": "_tz3000_mq4wujmp",
+      "drivers": [
+        "climate_sensor",
+        "smart_garden_irrigation_control"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_tz3000_vjhcenzo|climate_sensor,wall_switch_3gang_1way",
+      "mfr": "_tz3000_vjhcenzo",
+      "drivers": [
+        "climate_sensor",
+        "wall_switch_3gang_1way"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZ3000_996rpfy6|contact_sensor_zigbee,generic_tuya",
+      "mfr": "_TZ3000_996rpfy6",
+      "drivers": [
+        "contact_sensor_zigbee",
+        "generic_tuya"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_tz3000_wptayaqr|curtain_module,sensor_contact_zigbee",
+      "mfr": "_tz3000_wptayaqr",
+      "drivers": [
+        "curtain_module",
+        "sensor_contact_zigbee"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE204_tgl8i2np|curtain_motor,generic_tuya",
+      "mfr": "_TZE204_tgl8i2np",
+      "drivers": [
+        "curtain_motor",
+        "generic_tuya"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE204_trwaxi57|curtain_motor,generic_tuya",
+      "mfr": "_TZE204_trwaxi57",
+      "drivers": [
+        "curtain_motor",
+        "generic_tuya"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZ3210_dwytrmda|curtain_motor_shutter,dimmer_1_gang",
+      "mfr": "_TZ3210_dwytrmda",
+      "drivers": [
+        "curtain_motor_shutter",
+        "dimmer_1_gang"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZ3000_el5kt5im|curtain_motor_shutter,tunable_spot_GU10",
+      "mfr": "_TZ3000_el5kt5im",
+      "drivers": [
+        "curtain_motor_shutter",
+        "tunable_spot_GU10"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZ3000_8uaoilu9|curtain_motor_shutter,rgb_floor_led_light",
+      "mfr": "_TZ3000_8uaoilu9",
+      "drivers": [
+        "curtain_motor_shutter",
+        "rgb_floor_led_light"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZB210_lmqquxus|curtain_motor_shutter,light_bulb_rgb",
+      "mfr": "_TZB210_lmqquxus",
+      "drivers": [
+        "curtain_motor_shutter",
+        "light_bulb_rgb"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZ3000_odygigth|curtain_motor_shutter,rgb_bulb_E14",
+      "mfr": "_TZ3000_odygigth",
+      "drivers": [
+        "curtain_motor_shutter",
+        "rgb_bulb_E14"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZ3000_gek6snaj|curtain_motor_shutter,rgb_led_light_bar",
+      "mfr": "_TZ3000_gek6snaj",
+      "drivers": [
+        "curtain_motor_shutter",
+        "rgb_led_light_bar"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_tze200_7bztmfm1|device_air_purifier_plug,generic_diy,smart_air_detection_box",
+      "mfr": "_tze200_7bztmfm1",
+      "drivers": [
+        "device_air_purifier_plug",
+        "generic_diy",
+        "smart_air_detection_box"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE204_7bztmfm1|device_air_purifier_plug,generic_diy,smart_air_detection_box",
+      "mfr": "_TZE204_7bztmfm1",
+      "drivers": [
+        "device_air_purifier_plug",
+        "generic_diy",
+        "smart_air_detection_box"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE284_byzdayie|device_air_purifier_plug,power_meter",
+      "mfr": "_TZE284_byzdayie",
+      "drivers": [
+        "device_air_purifier_plug",
+        "power_meter"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZ3000_ga5shatp|device_air_purifier_plug,dimmer_wall_plug",
+      "mfr": "_TZ3000_ga5shatp",
+      "drivers": [
+        "device_air_purifier_plug",
+        "dimmer_wall_plug"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE200_p3dbf6qs|device_air_purifier_radiator,radiator_valve",
+      "mfr": "_TZE200_p3dbf6qs",
+      "drivers": [
+        "device_air_purifier_radiator",
+        "radiator_valve"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE204_o3x45p96|device_air_purifier_radiator,wall_thermostat",
+      "mfr": "_TZE204_o3x45p96",
+      "drivers": [
+        "device_air_purifier_radiator",
+        "wall_thermostat"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE284_c6wv4xyo|device_air_purifier_radiator,wall_thermostat",
+      "mfr": "_TZE284_c6wv4xyo",
+      "drivers": [
+        "device_air_purifier_radiator",
+        "wall_thermostat"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE284_hvaxb2tc|device_air_purifier_radiator,wall_thermostat",
+      "mfr": "_TZE284_hvaxb2tc",
+      "drivers": [
+        "device_air_purifier_radiator",
+        "wall_thermostat"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE284_o3x45p96|device_air_purifier_radiator,wall_thermostat",
+      "mfr": "_TZE284_o3x45p96",
+      "drivers": [
+        "device_air_purifier_radiator",
+        "wall_thermostat"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE284_rv6iuyxb|device_air_purifier_radiator,wall_thermostat",
+      "mfr": "_TZE284_rv6iuyxb",
+      "drivers": [
+        "device_air_purifier_radiator",
+        "wall_thermostat"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_tz3210_emqmwtym|device_din_rail,light_bulb_rgb",
+      "mfr": "_tz3210_emqmwtym",
+      "drivers": [
+        "device_din_rail",
+        "light_bulb_rgb"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "smartthings|device_generic_tuya_universal,diy_custom_zigbee",
+      "mfr": "smartthings",
+      "drivers": [
+        "device_generic_tuya_universal",
+        "diy_custom_zigbee"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "SMARTTHINGS|device_generic_tuya_universal,diy_custom_zigbee",
+      "mfr": "SMARTTHINGS",
+      "drivers": [
+        "device_generic_tuya_universal",
+        "diy_custom_zigbee"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_tz3000_cjfmu5he|device_plug_smart,water_valve_garden",
+      "mfr": "_tz3000_cjfmu5he",
+      "drivers": [
+        "device_plug_smart",
+        "water_valve_garden"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZ3000_estfrmup|dimmer_1_gang,generic_tuya",
+      "mfr": "_TZ3000_estfrmup",
+      "drivers": [
+        "dimmer_1_gang",
+        "generic_tuya"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TYZB01_v8gtiaed|dimmer_2_gang,switch_1gang",
+      "mfr": "_TYZB01_v8gtiaed",
+      "drivers": [
+        "dimmer_2_gang",
+        "switch_1gang"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_tz3000_92chsky7|dimmer_2_gang_tuya,dimmer_dual_channel",
+      "mfr": "_tz3000_92chsky7",
+      "drivers": [
+        "dimmer_2_gang_tuya",
+        "dimmer_dual_channel"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZ3000_j6adk9id|dimmer_wall_1gang,generic_tuya",
+      "mfr": "_TZ3000_j6adk9id",
+      "drivers": [
+        "dimmer_wall_1gang",
+        "generic_tuya"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZ3000_t9qqxn70|dimmer_wall_1gang,generic_tuya",
+      "mfr": "_TZ3000_t9qqxn70",
+      "drivers": [
+        "dimmer_wall_1gang",
+        "generic_tuya"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE200_dhke3p9w|dimmer_wall_1gang,generic_tuya",
+      "mfr": "_TZE200_dhke3p9w",
+      "drivers": [
+        "dimmer_wall_1gang",
+        "generic_tuya"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE200_nvodulvi|dimmer_wall_1gang,generic_tuya",
+      "mfr": "_TZE200_nvodulvi",
+      "drivers": [
+        "dimmer_wall_1gang",
+        "generic_tuya"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE204_7ytnacie|dimmer_wall_1gang,generic_tuya",
+      "mfr": "_TZE204_7ytnacie",
+      "drivers": [
+        "dimmer_wall_1gang",
+        "generic_tuya"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE204_atdqo4nj|dimmer_wall_1gang,generic_tuya",
+      "mfr": "_TZE204_atdqo4nj",
+      "drivers": [
+        "dimmer_wall_1gang",
+        "generic_tuya"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE204_fncxk3ob|dimmer_wall_1gang,generic_tuya",
+      "mfr": "_TZE204_fncxk3ob",
+      "drivers": [
+        "dimmer_wall_1gang",
+        "generic_tuya"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE204_k7mfgaen|dimmer_wall_1gang,generic_tuya",
+      "mfr": "_TZE204_k7mfgaen",
+      "drivers": [
+        "dimmer_wall_1gang",
+        "generic_tuya"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE204_rkbxtclc|dimmer_wall_1gang,generic_tuya",
+      "mfr": "_TZE204_rkbxtclc",
+      "drivers": [
+        "dimmer_wall_1gang",
+        "generic_tuya"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE204_unsxl4ir|dimmer_wall_1gang,generic_tuya",
+      "mfr": "_TZE204_unsxl4ir",
+      "drivers": [
+        "dimmer_wall_1gang",
+        "generic_tuya"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE284_dhke3p9w|dimmer_wall_1gang,generic_tuya",
+      "mfr": "_TZE284_dhke3p9w",
+      "drivers": [
+        "dimmer_wall_1gang",
+        "generic_tuya"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE284_fncxk3ob|dimmer_wall_1gang,generic_tuya",
+      "mfr": "_TZE284_fncxk3ob",
+      "drivers": [
+        "dimmer_wall_1gang",
+        "generic_tuya"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "diyruz|diy_custom_zigbee,generic_tuya",
+      "mfr": "diyruz",
+      "drivers": [
+        "diy_custom_zigbee",
+        "generic_tuya"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "dresden elektronik|diy_custom_zigbee,generic_tuya",
+      "mfr": "dresden elektronik",
+      "drivers": [
+        "diy_custom_zigbee",
+        "generic_tuya"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "phoscon|diy_custom_zigbee,generic_tuya",
+      "mfr": "phoscon",
+      "drivers": [
+        "diy_custom_zigbee",
+        "generic_tuya"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "popp|diy_custom_zigbee,generic_tuya",
+      "mfr": "popp",
+      "drivers": [
+        "diy_custom_zigbee",
+        "generic_tuya"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "zigbee2mqtt|diy_custom_zigbee,generic_tuya",
+      "mfr": "zigbee2mqtt",
+      "drivers": [
+        "diy_custom_zigbee",
+        "generic_tuya"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "DIYRUZ|diy_custom_zigbee,generic_tuya",
+      "mfr": "DIYRUZ",
+      "drivers": [
+        "diy_custom_zigbee",
+        "generic_tuya"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "DRESDEN ELEKTRONIK|diy_custom_zigbee,generic_tuya",
+      "mfr": "DRESDEN ELEKTRONIK",
+      "drivers": [
+        "diy_custom_zigbee",
+        "generic_tuya"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "PHOSCON|diy_custom_zigbee,generic_tuya",
+      "mfr": "PHOSCON",
+      "drivers": [
+        "diy_custom_zigbee",
+        "generic_tuya"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "POPP|diy_custom_zigbee,generic_tuya",
+      "mfr": "POPP",
+      "drivers": [
+        "diy_custom_zigbee",
+        "generic_tuya"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "ZIGBEE2MQTT|diy_custom_zigbee,generic_tuya",
+      "mfr": "ZIGBEE2MQTT",
+      "drivers": [
+        "diy_custom_zigbee",
+        "generic_tuya"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "TUYATEC-7QUNN4GQ|doorwindowsensor,sensor_contact_zigbee",
+      "mfr": "TUYATEC-7QUNN4GQ",
+      "drivers": [
+        "doorwindowsensor",
+        "sensor_contact_zigbee"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "TUYATEC-7qunn4gq|doorwindowsensor,sensor_contact_zigbee",
+      "mfr": "TUYATEC-7qunn4gq",
+      "drivers": [
+        "doorwindowsensor",
+        "sensor_contact_zigbee"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "TUYATEC-ABKEHQUS|doorwindowsensor,hybrid_fan_sensor,temphumidsensor",
+      "mfr": "TUYATEC-ABKEHQUS",
+      "drivers": [
+        "doorwindowsensor",
+        "hybrid_fan_sensor",
+        "temphumidsensor"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "TUYATEC-BFQ2I2SY|doorwindowsensor,hybrid_fan_sensor,temphumidsensor",
+      "mfr": "TUYATEC-BFQ2I2SY",
+      "drivers": [
+        "doorwindowsensor",
+        "hybrid_fan_sensor",
+        "temphumidsensor"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "TUYATEC-CRR8QB0P|doorwindowsensor,sensor_contact_zigbee",
+      "mfr": "TUYATEC-CRR8QB0P",
+      "drivers": [
+        "doorwindowsensor",
+        "sensor_contact_zigbee"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "TUYATEC-G3GL6CGY|doorwindowsensor,temphumidsensor",
+      "mfr": "TUYATEC-G3GL6CGY",
+      "drivers": [
+        "doorwindowsensor",
+        "temphumidsensor"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "TUYATEC-IP9GANVW|doorwindowsensor,sensor_contact_zigbee",
+      "mfr": "TUYATEC-IP9GANVW",
+      "drivers": [
+        "doorwindowsensor",
+        "sensor_contact_zigbee"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "TUYATEC-KBQF60NT|doorwindowsensor,sensor_contact_zigbee",
+      "mfr": "TUYATEC-KBQF60NT",
+      "drivers": [
+        "doorwindowsensor",
+        "sensor_contact_zigbee"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "TUYATEC-R9HGSSOL|doorwindowsensor,sensor_contact_zigbee",
+      "mfr": "TUYATEC-R9HGSSOL",
+      "drivers": [
+        "doorwindowsensor",
+        "sensor_contact_zigbee"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "TUYATEC-RKQIQVCS|doorwindowsensor,sensor_contact_zigbee",
+      "mfr": "TUYATEC-RKQIQVCS",
+      "drivers": [
+        "doorwindowsensor",
+        "sensor_contact_zigbee"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "TUYATEC-SB6T7ETT|doorwindowsensor,sensor_contact_zigbee",
+      "mfr": "TUYATEC-SB6T7ETT",
+      "drivers": [
+        "doorwindowsensor",
+        "sensor_contact_zigbee"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "TUYATEC-TRHRGA6P|doorwindowsensor,sensor_contact_zigbee",
+      "mfr": "TUYATEC-TRHRGA6P",
+      "drivers": [
+        "doorwindowsensor",
+        "sensor_contact_zigbee"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "TUYATEC-crr8qb0p|doorwindowsensor,sensor_contact_zigbee",
+      "mfr": "TUYATEC-crr8qb0p",
+      "drivers": [
+        "doorwindowsensor",
+        "sensor_contact_zigbee"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "TUYATEC-ip9ganvw|doorwindowsensor,sensor_contact_zigbee",
+      "mfr": "TUYATEC-ip9ganvw",
+      "drivers": [
+        "doorwindowsensor",
+        "sensor_contact_zigbee"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "TUYATEC-kbqf60nt|doorwindowsensor,sensor_contact_zigbee",
+      "mfr": "TUYATEC-kbqf60nt",
+      "drivers": [
+        "doorwindowsensor",
+        "sensor_contact_zigbee"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "TUYATEC-r9hgssol|doorwindowsensor,sensor_contact_zigbee",
+      "mfr": "TUYATEC-r9hgssol",
+      "drivers": [
+        "doorwindowsensor",
+        "sensor_contact_zigbee"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "TUYATEC-rkqiqvcs|doorwindowsensor,sensor_contact_zigbee",
+      "mfr": "TUYATEC-rkqiqvcs",
+      "drivers": [
+        "doorwindowsensor",
+        "sensor_contact_zigbee"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "TUYATEC-sb6t7ett|doorwindowsensor,sensor_contact_zigbee",
+      "mfr": "TUYATEC-sb6t7ett",
+      "drivers": [
+        "doorwindowsensor",
+        "sensor_contact_zigbee"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "TUYATEC-trhrga6p|doorwindowsensor,sensor_contact_zigbee",
+      "mfr": "TUYATEC-trhrga6p",
+      "drivers": [
+        "doorwindowsensor",
+        "sensor_contact_zigbee"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TYZB01_xph99wvr|doorwindowsensor,sensor_contact_zigbee",
+      "mfr": "_TYZB01_xph99wvr",
+      "drivers": [
+        "doorwindowsensor",
+        "sensor_contact_zigbee"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "tuyatec-7qunn4gq|doorwindowsensor,sensor_contact_zigbee",
+      "mfr": "tuyatec-7qunn4gq",
+      "drivers": [
+        "doorwindowsensor",
+        "sensor_contact_zigbee"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "tuyatec-abkehqus|doorwindowsensor,hybrid_fan_sensor,temphumidsensor",
+      "mfr": "tuyatec-abkehqus",
+      "drivers": [
+        "doorwindowsensor",
+        "hybrid_fan_sensor",
+        "temphumidsensor"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "tuyatec-bfq2i2sy|doorwindowsensor,hybrid_fan_sensor,temphumidsensor",
+      "mfr": "tuyatec-bfq2i2sy",
+      "drivers": [
+        "doorwindowsensor",
+        "hybrid_fan_sensor",
+        "temphumidsensor"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "tuyatec-crr8qb0p|doorwindowsensor,sensor_contact_zigbee",
+      "mfr": "tuyatec-crr8qb0p",
+      "drivers": [
+        "doorwindowsensor",
+        "sensor_contact_zigbee"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "tuyatec-g3gl6cgy|doorwindowsensor,temphumidsensor",
+      "mfr": "tuyatec-g3gl6cgy",
+      "drivers": [
+        "doorwindowsensor",
+        "temphumidsensor"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "tuyatec-ip9ganvw|doorwindowsensor,sensor_contact_zigbee",
+      "mfr": "tuyatec-ip9ganvw",
+      "drivers": [
+        "doorwindowsensor",
+        "sensor_contact_zigbee"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "tuyatec-kbqf60nt|doorwindowsensor,sensor_contact_zigbee",
+      "mfr": "tuyatec-kbqf60nt",
+      "drivers": [
+        "doorwindowsensor",
+        "sensor_contact_zigbee"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "tuyatec-r9hgssol|doorwindowsensor,sensor_contact_zigbee",
+      "mfr": "tuyatec-r9hgssol",
+      "drivers": [
+        "doorwindowsensor",
+        "sensor_contact_zigbee"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "tuyatec-rkqiqvcs|doorwindowsensor,sensor_contact_zigbee",
+      "mfr": "tuyatec-rkqiqvcs",
+      "drivers": [
+        "doorwindowsensor",
+        "sensor_contact_zigbee"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "tuyatec-sb6t7ett|doorwindowsensor,sensor_contact_zigbee",
+      "mfr": "tuyatec-sb6t7ett",
+      "drivers": [
+        "doorwindowsensor",
+        "sensor_contact_zigbee"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "tuyatec-trhrga6p|doorwindowsensor,sensor_contact_zigbee",
+      "mfr": "tuyatec-trhrga6p",
+      "drivers": [
+        "doorwindowsensor",
+        "sensor_contact_zigbee"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "IMMAX|doorwindowsensor_2,sensor_contact_zigbee",
+      "mfr": "IMMAX",
+      "drivers": [
+        "doorwindowsensor_2",
+        "sensor_contact_zigbee"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "Immax|doorwindowsensor_2,sensor_contact_zigbee",
+      "mfr": "Immax",
+      "drivers": [
+        "doorwindowsensor_2",
+        "sensor_contact_zigbee"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "TUYATEC-0L6XAQMI|doorwindowsensor_2,sensor_contact_zigbee",
+      "mfr": "TUYATEC-0L6XAQMI",
+      "drivers": [
+        "doorwindowsensor_2",
+        "sensor_contact_zigbee"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "TUYATEC-0l6xaqmi|doorwindowsensor_2,sensor_contact_zigbee",
+      "mfr": "TUYATEC-0l6xaqmi",
+      "drivers": [
+        "doorwindowsensor_2",
+        "sensor_contact_zigbee"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "VISONIC|doorwindowsensor_2,sensor_contact_zigbee",
+      "mfr": "VISONIC",
+      "drivers": [
+        "doorwindowsensor_2",
+        "sensor_contact_zigbee"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "Visonic|doorwindowsensor_2,sensor_contact_zigbee",
+      "mfr": "Visonic",
+      "drivers": [
+        "doorwindowsensor_2",
+        "sensor_contact_zigbee"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "immax|doorwindowsensor_2,sensor_contact_zigbee",
+      "mfr": "immax",
+      "drivers": [
+        "doorwindowsensor_2",
+        "sensor_contact_zigbee"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "tuyatec-0l6xaqmi|doorwindowsensor_2,sensor_contact_zigbee",
+      "mfr": "tuyatec-0l6xaqmi",
+      "drivers": [
+        "doorwindowsensor_2",
+        "sensor_contact_zigbee"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "visonic|doorwindowsensor_2,sensor_contact_zigbee",
+      "mfr": "visonic",
+      "drivers": [
+        "doorwindowsensor_2",
+        "sensor_contact_zigbee"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZ3000_oxslv1c9|doorwindowsensor_3,socket_power_strip",
+      "mfr": "_TZ3000_oxslv1c9",
+      "drivers": [
+        "doorwindowsensor_3",
+        "socket_power_strip"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZ3000_pjb1ua0m|doorwindowsensor_3,switch_1gang",
+      "mfr": "_TZ3000_pjb1ua0m",
+      "drivers": [
+        "doorwindowsensor_3",
+        "switch_1gang"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE200_lawxy9e2|fan_controller,generic_tuya",
+      "mfr": "_TZE200_lawxy9e2",
+      "drivers": [
+        "fan_controller",
+        "generic_tuya"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "TUYATEC-3TIPNSRX|flood_sensor,sensor_contact_zigbee",
+      "mfr": "TUYATEC-3TIPNSRX",
+      "drivers": [
+        "flood_sensor",
+        "sensor_contact_zigbee"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "TUYATEC-3tipnsrx|flood_sensor,sensor_contact_zigbee",
+      "mfr": "TUYATEC-3tipnsrx",
+      "drivers": [
+        "flood_sensor",
+        "sensor_contact_zigbee"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "tuyatec-3tipnsrx|flood_sensor,sensor_contact_zigbee",
+      "mfr": "tuyatec-3tipnsrx",
+      "drivers": [
+        "flood_sensor",
+        "sensor_contact_zigbee"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE204_nklqjk62|garage_door,sensor_contact_zigbee",
+      "mfr": "_TZE204_nklqjk62",
+      "drivers": [
+        "garage_door",
+        "sensor_contact_zigbee"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE284_chbyv06x|gas_detector,gas_sensor,generic_tuya",
+      "mfr": "_TZE284_chbyv06x",
+      "drivers": [
+        "gas_detector",
+        "gas_sensor",
+        "generic_tuya"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZ3000_2uollq9d|gas_sensor,sensor_gas_presence",
+      "mfr": "_TZ3000_2uollq9d",
+      "drivers": [
+        "gas_sensor",
+        "sensor_gas_presence"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE200_gjldowol|gas_sensor,presence_sensor_radar",
+      "mfr": "_TZE200_gjldowol",
+      "drivers": [
+        "gas_sensor",
+        "presence_sensor_radar"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE200_jxyhl4eq|gas_sensor,generic_tuya",
+      "mfr": "_TZE200_jxyhl4eq",
+      "drivers": [
+        "gas_sensor",
+        "generic_tuya"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE200_mby4kbtq|gas_sensor,generic_tuya",
+      "mfr": "_TZE200_mby4kbtq",
+      "drivers": [
+        "gas_sensor",
+        "generic_tuya"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE200_na5qlzow|gas_sensor,generic_tuya",
+      "mfr": "_TZE200_na5qlzow",
+      "drivers": [
+        "gas_sensor",
+        "generic_tuya"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE200_nojsjtj2|gas_sensor,generic_tuya",
+      "mfr": "_TZE200_nojsjtj2",
+      "drivers": [
+        "gas_sensor",
+        "generic_tuya"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE200_nus5kk3n|gas_sensor,generic_tuya",
+      "mfr": "_TZE200_nus5kk3n",
+      "drivers": [
+        "gas_sensor",
+        "generic_tuya"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE200_qxyh4r7g|gas_sensor,generic_tuya",
+      "mfr": "_TZE200_qxyh4r7g",
+      "drivers": [
+        "gas_sensor",
+        "generic_tuya"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE200_ttcovulf|gas_sensor,presence_sensor_radar",
+      "mfr": "_TZE200_ttcovulf",
+      "drivers": [
+        "gas_sensor",
+        "presence_sensor_radar"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE200_vrcfo4i0|gas_sensor,generic_tuya",
+      "mfr": "_TZE200_vrcfo4i0",
+      "drivers": [
+        "gas_sensor",
+        "generic_tuya"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE200_yojqa8xn|gas_sensor,generic_tuya",
+      "mfr": "_TZE200_yojqa8xn",
+      "drivers": [
+        "gas_sensor",
+        "generic_tuya"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE204_hiith90n|gas_sensor,generic_tuya",
+      "mfr": "_TZE204_hiith90n",
+      "drivers": [
+        "gas_sensor",
+        "generic_tuya"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE204_mby4kbtq|gas_sensor,generic_tuya",
+      "mfr": "_TZE204_mby4kbtq",
+      "drivers": [
+        "gas_sensor",
+        "generic_tuya"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE204_uo8qcagc|gas_sensor,generic_tuya",
+      "mfr": "_TZE204_uo8qcagc",
+      "drivers": [
+        "gas_sensor",
+        "generic_tuya"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE204_v6iczj35|gas_sensor,generic_tuya",
+      "mfr": "_TZE204_v6iczj35",
+      "drivers": [
+        "gas_sensor",
+        "generic_tuya"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE204_yojqa8xn|gas_sensor,generic_tuya",
+      "mfr": "_TZE204_yojqa8xn",
+      "drivers": [
+        "gas_sensor",
+        "generic_tuya"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE204_zougpkpy|gas_sensor,generic_tuya",
+      "mfr": "_TZE204_zougpkpy",
+      "drivers": [
+        "gas_sensor",
+        "generic_tuya"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZ3000_blhvsaqf|gas_sensor_switch,generic_tuya",
+      "mfr": "_TZ3000_blhvsaqf",
+      "drivers": [
+        "gas_sensor_switch",
+        "generic_tuya"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_tz3000_o1jzcxou|gateway_zigbee_bridge,usb_dongle_triple",
+      "mfr": "_tz3000_o1jzcxou",
+      "drivers": [
+        "gateway_zigbee_bridge",
+        "usb_dongle_triple"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "BOSCH|generic_diy,generic_tuya",
+      "mfr": "BOSCH",
+      "drivers": [
+        "generic_diy",
+        "generic_tuya"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "WISER|generic_diy,generic_tuya",
+      "mfr": "WISER",
+      "drivers": [
+        "generic_diy",
+        "generic_tuya"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE200_w0ap83qu|generic_diy,presence_sensor_radar",
+      "mfr": "_TZE200_w0ap83qu",
+      "drivers": [
+        "generic_diy",
+        "presence_sensor_radar"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE204_2imwyigp|generic_diy,generic_tuya",
+      "mfr": "_TZE204_2imwyigp",
+      "drivers": [
+        "generic_diy",
+        "generic_tuya"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE204_mvtclclq|generic_diy,usb_outlet_advanced",
+      "mfr": "_TZE204_mvtclclq",
+      "drivers": [
+        "generic_diy",
+        "usb_outlet_advanced"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE284_9cqcpkgb|generic_diy,soil_sensor",
+      "mfr": "_TZE284_9cqcpkgb",
+      "drivers": [
+        "generic_diy",
+        "soil_sensor"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_tz3210_vbfp8eyv|generic_diy,vibration_sensor",
+      "mfr": "_tz3210_vbfp8eyv",
+      "drivers": [
+        "generic_diy",
+        "vibration_sensor"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_tz3290_7v1k4vufotpowp9z|generic_diy,ir_remote",
+      "mfr": "_tz3290_7v1k4vufotpowp9z",
+      "drivers": [
+        "generic_diy",
+        "ir_remote"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_tz3290_ot6ewjvmejq5ekhl|generic_diy,ir_remote",
+      "mfr": "_tz3290_ot6ewjvmejq5ekhl",
+      "drivers": [
+        "generic_diy",
+        "ir_remote"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_tze200_2atgpdho|generic_diy,thermostatic_radiator_valve",
+      "mfr": "_tze200_2atgpdho",
+      "drivers": [
+        "generic_diy",
+        "thermostatic_radiator_valve"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_tze200_8whxpsiw|generic_diy,thermostat_tuya_dp",
+      "mfr": "_tze200_8whxpsiw",
+      "drivers": [
+        "generic_diy",
+        "thermostat_tuya_dp"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_tze200_9p5xmj5r|generic_diy,wall_thermostat",
+      "mfr": "_tze200_9p5xmj5r",
+      "drivers": [
+        "generic_diy",
+        "wall_thermostat"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_tze200_9sfg7gm0|generic_diy,thermostat_tuya_dp",
+      "mfr": "_tze200_9sfg7gm0",
+      "drivers": [
+        "generic_diy",
+        "thermostat_tuya_dp"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_tze200_a4bpgplm|generic_diy,wall_thermostat",
+      "mfr": "_tze200_a4bpgplm",
+      "drivers": [
+        "generic_diy",
+        "wall_thermostat"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_tze200_w0ap83qu|generic_diy,presence_sensor_radar",
+      "mfr": "_tze200_w0ap83qu",
+      "drivers": [
+        "generic_diy",
+        "presence_sensor_radar"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_tze284_kow4ok3t|generic_diy,switch_4_gang_metering",
+      "mfr": "_tze284_kow4ok3t",
+      "drivers": [
+        "generic_diy",
+        "switch_4_gang_metering"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_tze284_mvtclclq|generic_diy,usb_outlet_advanced",
+      "mfr": "_tze284_mvtclclq",
+      "drivers": [
+        "generic_diy",
+        "usb_outlet_advanced"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_tze284_tgrzpqf4|generic_diy,soil_sensor",
+      "mfr": "_tze284_tgrzpqf4",
+      "drivers": [
+        "generic_diy",
+        "soil_sensor"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "bosch|generic_diy,generic_tuya",
+      "mfr": "bosch",
+      "drivers": [
+        "generic_diy",
+        "generic_tuya"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "se|generic_diy,generic_tuya",
+      "mfr": "se",
+      "drivers": [
+        "generic_diy",
+        "generic_tuya"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "wiser|generic_diy,generic_tuya",
+      "mfr": "wiser",
+      "drivers": [
+        "generic_diy",
+        "generic_tuya"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TYST11_pisltm67|generic_tuya,thermostat_tuya_dp",
+      "mfr": "_TYST11_pisltm67",
+      "drivers": [
+        "generic_tuya",
+        "thermostat_tuya_dp"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TYZB01_4mdqxxnn|generic_tuya,illuminance_sensor",
+      "mfr": "_TYZB01_4mdqxxnn",
+      "drivers": [
+        "generic_tuya",
+        "illuminance_sensor"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TYZB01_m6ec2pgj|generic_tuya,illuminance_sensor",
+      "mfr": "_TYZB01_m6ec2pgj",
+      "drivers": [
+        "generic_tuya",
+        "illuminance_sensor"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZ3000_402vrq2i|generic_tuya,power_meter",
+      "mfr": "_TZ3000_402vrq2i",
+      "drivers": [
+        "generic_tuya",
+        "power_meter"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZ3000_7kscdesh|generic_tuya,illuminance_sensor",
+      "mfr": "_TZ3000_7kscdesh",
+      "drivers": [
+        "generic_tuya",
+        "illuminance_sensor"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZ3000_8n7lqbm0|generic_tuya,water_valve_smart",
+      "mfr": "_TZ3000_8n7lqbm0",
+      "drivers": [
+        "generic_tuya",
+        "water_valve_smart"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZ3000_ctftgjwb|generic_tuya,water_valve_smart",
+      "mfr": "_TZ3000_ctftgjwb",
+      "drivers": [
+        "generic_tuya",
+        "water_valve_smart"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZ3000_do6txrcw|generic_tuya,illuminance_sensor",
+      "mfr": "_TZ3000_do6txrcw",
+      "drivers": [
+        "generic_tuya",
+        "illuminance_sensor"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZ3000_hy6ncvmw|generic_tuya,illuminance_sensor",
+      "mfr": "_TZ3000_hy6ncvmw",
+      "drivers": [
+        "generic_tuya",
+        "illuminance_sensor"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZ3000_kkerjand|generic_tuya,power_meter",
+      "mfr": "_TZ3000_kkerjand",
+      "drivers": [
+        "generic_tuya",
+        "power_meter"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZ3000_ko6v90pg|generic_tuya,plug",
+      "mfr": "_TZ3000_ko6v90pg",
+      "drivers": [
+        "generic_tuya",
+        "plug"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZ3000_udl7uyd2|generic_tuya,water_valve_smart",
+      "mfr": "_TZ3000_udl7uyd2",
+      "drivers": [
+        "generic_tuya",
+        "water_valve_smart"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZ3000_xfs39dbf|generic_tuya,power_meter",
+      "mfr": "_TZ3000_xfs39dbf",
+      "drivers": [
+        "generic_tuya",
+        "power_meter"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZ3000_ywubfuvt|generic_tuya,switch_usb_dongle",
+      "mfr": "_TZ3000_ywubfuvt",
+      "drivers": [
+        "generic_tuya",
+        "switch_usb_dongle"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZ3218_7fiyo3kv|generic_tuya,water_valve_smart",
+      "mfr": "_TZ3218_7fiyo3kv",
+      "drivers": [
+        "generic_tuya",
+        "water_valve_smart"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZ3290_jxvzqatwgsaqzx1u|generic_tuya,ir_blaster",
+      "mfr": "_TZ3290_jxvzqatwgsaqzx1u",
+      "drivers": [
+        "generic_tuya",
+        "ir_blaster"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZ3290_lypnqvlem5eq1ree|generic_tuya,ir_blaster",
+      "mfr": "_TZ3290_lypnqvlem5eq1ree",
+      "drivers": [
+        "generic_tuya",
+        "ir_blaster"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE200_78ioiaml|generic_tuya,power_meter",
+      "mfr": "_TZE200_78ioiaml",
+      "drivers": [
+        "generic_tuya",
+        "power_meter"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE200_blfcpsxz|generic_tuya,illuminance_sensor",
+      "mfr": "_TZE200_blfcpsxz",
+      "drivers": [
+        "generic_tuya",
+        "illuminance_sensor"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE200_dikb3dp6|generic_tuya,power_meter",
+      "mfr": "_TZE200_dikb3dp6",
+      "drivers": [
+        "generic_tuya",
+        "power_meter"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE200_fodv6bkr|generic_tuya,vibration_sensor",
+      "mfr": "_TZE200_fodv6bkr",
+      "drivers": [
+        "generic_tuya",
+        "vibration_sensor"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE200_fwoorn8y|generic_tuya,illuminance_sensor",
+      "mfr": "_TZE200_fwoorn8y",
+      "drivers": [
+        "generic_tuya",
+        "illuminance_sensor"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE200_gomuk3dc|generic_tuya,power_meter",
+      "mfr": "_TZE200_gomuk3dc",
+      "drivers": [
+        "generic_tuya",
+        "power_meter"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE200_grgol3xp|generic_tuya,vibration_sensor",
+      "mfr": "_TZE200_grgol3xp",
+      "drivers": [
+        "generic_tuya",
+        "vibration_sensor"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE200_iwn0gpzz|generic_tuya,power_meter",
+      "mfr": "_TZE200_iwn0gpzz",
+      "drivers": [
+        "generic_tuya",
+        "power_meter"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE200_khx7nnka|generic_tuya,vibration_sensor",
+      "mfr": "_TZE200_khx7nnka",
+      "drivers": [
+        "generic_tuya",
+        "vibration_sensor"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE200_kltffuzl|generic_tuya,illuminance_sensor",
+      "mfr": "_TZE200_kltffuzl",
+      "drivers": [
+        "generic_tuya",
+        "illuminance_sensor"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE200_ny94onlb|generic_tuya,power_meter",
+      "mfr": "_TZE200_ny94onlb",
+      "drivers": [
+        "generic_tuya",
+        "power_meter"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE200_oc7xqqbs|generic_tuya,presence_sensor_radar",
+      "mfr": "_TZE200_oc7xqqbs",
+      "drivers": [
+        "generic_tuya",
+        "presence_sensor_radar"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE200_qhlxve78|generic_tuya,power_meter",
+      "mfr": "_TZE200_qhlxve78",
+      "drivers": [
+        "generic_tuya",
+        "power_meter"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE200_rhblgy0z|generic_tuya,power_meter",
+      "mfr": "_TZE200_rhblgy0z",
+      "drivers": [
+        "generic_tuya",
+        "power_meter"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE200_rks0sgb7|generic_tuya,power_meter",
+      "mfr": "_TZE200_rks0sgb7",
+      "drivers": [
+        "generic_tuya",
+        "power_meter"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE200_ugekduaj|generic_tuya,power_meter",
+      "mfr": "_TZE200_ugekduaj",
+      "drivers": [
+        "generic_tuya",
+        "power_meter"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE200_uli8wasj|generic_tuya,vibration_sensor",
+      "mfr": "_TZE200_uli8wasj",
+      "drivers": [
+        "generic_tuya",
+        "vibration_sensor"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE200_v9hkz2yn|generic_tuya,power_meter",
+      "mfr": "_TZE200_v9hkz2yn",
+      "drivers": [
+        "generic_tuya",
+        "power_meter"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE200_ves1ycwx|generic_tuya,power_meter",
+      "mfr": "_TZE200_ves1ycwx",
+      "drivers": [
+        "generic_tuya",
+        "power_meter"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE200_vmcgja59|generic_tuya,power_meter",
+      "mfr": "_TZE200_vmcgja59",
+      "drivers": [
+        "generic_tuya",
+        "power_meter"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE200_wktrysab|generic_tuya,power_meter",
+      "mfr": "_TZE200_wktrysab",
+      "drivers": [
+        "generic_tuya",
+        "power_meter"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE200_x8fp01wi|generic_tuya,power_meter",
+      "mfr": "_TZE200_x8fp01wi",
+      "drivers": [
+        "generic_tuya",
+        "power_meter"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE200_yi4jtqq1|generic_tuya,vibration_sensor",
+      "mfr": "_TZE200_yi4jtqq1",
+      "drivers": [
+        "generic_tuya",
+        "vibration_sensor"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE204_6kijc7nd|generic_tuya,thermostatic_radiator_valve",
+      "mfr": "_TZE204_6kijc7nd",
+      "drivers": [
+        "generic_tuya",
+        "thermostatic_radiator_valve"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE204_78ioiaml|generic_tuya,power_meter",
+      "mfr": "_TZE204_78ioiaml",
+      "drivers": [
+        "generic_tuya",
+        "power_meter"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE204_dhotiauw|generic_tuya,power_meter",
+      "mfr": "_TZE204_dhotiauw",
+      "drivers": [
+        "generic_tuya",
+        "power_meter"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE204_dikb3dp6|generic_tuya,power_meter",
+      "mfr": "_TZE204_dikb3dp6",
+      "drivers": [
+        "generic_tuya",
+        "power_meter"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE204_dvosyycn|generic_tuya,power_meter",
+      "mfr": "_TZE204_dvosyycn",
+      "drivers": [
+        "generic_tuya",
+        "power_meter"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE204_dwcarsat|generic_tuya,illuminance_sensor",
+      "mfr": "_TZE204_dwcarsat",
+      "drivers": [
+        "generic_tuya",
+        "illuminance_sensor"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE204_gomuk3dc|generic_tuya,power_meter",
+      "mfr": "_TZE204_gomuk3dc",
+      "drivers": [
+        "generic_tuya",
+        "power_meter"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE204_iadro9bf|generic_tuya,presence_sensor_radar",
+      "mfr": "_TZE204_iadro9bf",
+      "drivers": [
+        "generic_tuya",
+        "presence_sensor_radar"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE204_iwn0gpzz|generic_tuya,power_meter",
+      "mfr": "_TZE204_iwn0gpzz",
+      "drivers": [
+        "generic_tuya",
+        "power_meter"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE204_khx7nnka|generic_tuya,vibration_sensor",
+      "mfr": "_TZE204_khx7nnka",
+      "drivers": [
+        "generic_tuya",
+        "vibration_sensor"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE204_l6llgoxq|generic_tuya,power_meter",
+      "mfr": "_TZE204_l6llgoxq",
+      "drivers": [
+        "generic_tuya",
+        "power_meter"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE204_m64smti7|generic_tuya,power_meter",
+      "mfr": "_TZE204_m64smti7",
+      "drivers": [
+        "generic_tuya",
+        "power_meter"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE204_mpbki2zm|generic_tuya,power_meter,thermostatic_radiator_valve",
+      "mfr": "_TZE204_mpbki2zm",
+      "drivers": [
+        "generic_tuya",
+        "power_meter",
+        "thermostatic_radiator_valve"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE204_ny94onlb|generic_tuya,power_meter",
+      "mfr": "_TZE204_ny94onlb",
+      "drivers": [
+        "generic_tuya",
+        "power_meter"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE204_q9xty0ad|generic_tuya,power_meter",
+      "mfr": "_TZE204_q9xty0ad",
+      "drivers": [
+        "generic_tuya",
+        "power_meter"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE204_qhlxve78|generic_tuya,power_meter",
+      "mfr": "_TZE204_qhlxve78",
+      "drivers": [
+        "generic_tuya",
+        "power_meter"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE204_rhblgy0z|generic_tuya,power_meter",
+      "mfr": "_TZE204_rhblgy0z",
+      "drivers": [
+        "generic_tuya",
+        "power_meter"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE204_tdhnhhiy|generic_tuya,power_meter",
+      "mfr": "_TZE204_tdhnhhiy",
+      "drivers": [
+        "generic_tuya",
+        "power_meter"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE204_ugekduaj|generic_tuya,power_meter",
+      "mfr": "_TZE204_ugekduaj",
+      "drivers": [
+        "generic_tuya",
+        "power_meter"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE204_v9hkz2yn|generic_tuya,power_meter",
+      "mfr": "_TZE204_v9hkz2yn",
+      "drivers": [
+        "generic_tuya",
+        "power_meter"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE204_ves1ycwx|generic_tuya,power_meter",
+      "mfr": "_TZE204_ves1ycwx",
+      "drivers": [
+        "generic_tuya",
+        "power_meter"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE204_wktrysab|generic_tuya,power_meter",
+      "mfr": "_TZE204_wktrysab",
+      "drivers": [
+        "generic_tuya",
+        "power_meter"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE204_x8fp01wi|generic_tuya,power_meter",
+      "mfr": "_TZE204_x8fp01wi",
+      "drivers": [
+        "generic_tuya",
+        "power_meter"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE204_xalsoe3m|generic_tuya,thermostatic_radiator_valve",
+      "mfr": "_TZE204_xalsoe3m",
+      "drivers": [
+        "generic_tuya",
+        "thermostatic_radiator_valve"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE284_6kijc7nd|generic_tuya,thermostatic_radiator_valve",
+      "mfr": "_TZE284_6kijc7nd",
+      "drivers": [
+        "generic_tuya",
+        "thermostatic_radiator_valve"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE284_78ioiaml|generic_tuya,power_meter",
+      "mfr": "_TZE284_78ioiaml",
+      "drivers": [
+        "generic_tuya",
+        "power_meter"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE284_8zizsafo|generic_tuya,valve_dual_irrigation",
+      "mfr": "_TZE284_8zizsafo",
+      "drivers": [
+        "generic_tuya",
+        "valve_dual_irrigation"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE284_ac0fhfiq|generic_tuya,power_meter",
+      "mfr": "_TZE284_ac0fhfiq",
+      "drivers": [
+        "generic_tuya",
+        "power_meter"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE284_ajlu4cud|generic_tuya,water_valve_smart",
+      "mfr": "_TZE284_ajlu4cud",
+      "drivers": [
+        "generic_tuya",
+        "water_valve_smart"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE284_dikb3dp6|generic_tuya,power_meter",
+      "mfr": "_TZE284_dikb3dp6",
+      "drivers": [
+        "generic_tuya",
+        "power_meter"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE284_dvosyycn|generic_tuya,power_meter",
+      "mfr": "_TZE284_dvosyycn",
+      "drivers": [
+        "generic_tuya",
+        "power_meter"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE284_fzo2pocs|generic_tuya,switch_1gang",
+      "mfr": "_TZE284_fzo2pocs",
+      "drivers": [
+        "generic_tuya",
+        "switch_1gang"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE284_gomuk3dc|generic_tuya,power_meter",
+      "mfr": "_TZE284_gomuk3dc",
+      "drivers": [
+        "generic_tuya",
+        "power_meter"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE284_idn2htgu|generic_tuya,water_valve_smart",
+      "mfr": "_TZE284_idn2htgu",
+      "drivers": [
+        "generic_tuya",
+        "water_valve_smart"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE284_iwn0gpzz|generic_tuya,power_meter",
+      "mfr": "_TZE284_iwn0gpzz",
+      "drivers": [
+        "generic_tuya",
+        "power_meter"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE284_ny94onlb|generic_tuya,power_meter",
+      "mfr": "_TZE284_ny94onlb",
+      "drivers": [
+        "generic_tuya",
+        "power_meter"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE284_qhlxve78|generic_tuya,power_meter",
+      "mfr": "_TZE284_qhlxve78",
+      "drivers": [
+        "generic_tuya",
+        "power_meter"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE284_v9hkz2yn|generic_tuya,power_meter",
+      "mfr": "_TZE284_v9hkz2yn",
+      "drivers": [
+        "generic_tuya",
+        "power_meter"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE284_ves1ycwx|generic_tuya,power_meter",
+      "mfr": "_TZE284_ves1ycwx",
+      "drivers": [
+        "generic_tuya",
+        "power_meter"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE284_wbhaespm|generic_tuya,power_meter",
+      "mfr": "_TZE284_wbhaespm",
+      "drivers": [
+        "generic_tuya",
+        "power_meter"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE284_zpvusbtv|generic_tuya,power_meter",
+      "mfr": "_TZE284_zpvusbtv",
+      "drivers": [
+        "generic_tuya",
+        "power_meter"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_tz3000_w8jwkczz|handheld_remote_4_buttons,wall_remote_3_gang",
+      "mfr": "_tz3000_w8jwkczz",
+      "drivers": [
+        "handheld_remote_4_buttons",
+        "wall_remote_3_gang"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "TUYATEC-1UXX9CCI|hybrid_fan_sensor,temphumidsensor",
+      "mfr": "TUYATEC-1UXX9CCI",
+      "drivers": [
+        "hybrid_fan_sensor",
+        "temphumidsensor"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "TUYATEC-HAOIUWZY|hybrid_fan_sensor,temphumidsensor",
+      "mfr": "TUYATEC-HAOIUWZY",
+      "drivers": [
+        "hybrid_fan_sensor",
+        "temphumidsensor"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "TUYATEC-QUN7VQ14|hybrid_fan_sensor,temphumidsensor2",
+      "mfr": "TUYATEC-QUN7VQ14",
+      "drivers": [
+        "hybrid_fan_sensor",
+        "temphumidsensor2"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "TUYATEC-RIUJ5XZS|hybrid_fan_sensor,temphumidsensor",
+      "mfr": "TUYATEC-RIUJ5XZS",
+      "drivers": [
+        "hybrid_fan_sensor",
+        "temphumidsensor"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "TUYATEC-V3UXBUXY|hybrid_fan_sensor,temphumidsensor",
+      "mfr": "TUYATEC-V3UXBUXY",
+      "drivers": [
+        "hybrid_fan_sensor",
+        "temphumidsensor"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "tuyatec-1uxx9cci|hybrid_fan_sensor,temphumidsensor",
+      "mfr": "tuyatec-1uxx9cci",
+      "drivers": [
+        "hybrid_fan_sensor",
+        "temphumidsensor"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "tuyatec-haoiuwzy|hybrid_fan_sensor,temphumidsensor",
+      "mfr": "tuyatec-haoiuwzy",
+      "drivers": [
+        "hybrid_fan_sensor",
+        "temphumidsensor"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "tuyatec-qun7vq14|hybrid_fan_sensor,temphumidsensor2",
+      "mfr": "tuyatec-qun7vq14",
+      "drivers": [
+        "hybrid_fan_sensor",
+        "temphumidsensor2"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "tuyatec-riuj5xzs|hybrid_fan_sensor,temphumidsensor",
+      "mfr": "tuyatec-riuj5xzs",
+      "drivers": [
+        "hybrid_fan_sensor",
+        "temphumidsensor"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "tuyatec-v3uxbuxy|hybrid_fan_sensor,temphumidsensor",
+      "mfr": "tuyatec-v3uxbuxy",
+      "drivers": [
+        "hybrid_fan_sensor",
+        "temphumidsensor"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TYZB01_BNGWDJSR|hybrid_light_sensor,remote_dimmer",
+      "mfr": "_TYZB01_BNGWDJSR",
+      "drivers": [
+        "hybrid_light_sensor",
+        "remote_dimmer"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZ3290_CFV2UYXE|ir_blaster,usb_dongle_dual_repeater",
+      "mfr": "_TZ3290_CFV2UYXE",
+      "drivers": [
+        "ir_blaster",
+        "usb_dongle_dual_repeater"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_tz3000_cfv2uyxe|ir_blaster,usb_dongle_dual_repeater",
+      "mfr": "_tz3000_cfv2uyxe",
+      "drivers": [
+        "ir_blaster",
+        "usb_dongle_dual_repeater"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZ3000_iystcadi|led_controller_dimmable,led_controller_rgb",
+      "mfr": "_TZ3000_iystcadi",
+      "drivers": [
+        "led_controller_dimmable",
+        "led_controller_rgb"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_tz3210_0zabbfax|led_strip_rgbw,light_bulb_rgb",
+      "mfr": "_tz3210_0zabbfax",
+      "drivers": [
+        "led_strip_rgbw",
+        "light_bulb_rgb"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_tz3210_95txyzbx|led_strip_rgbw,light_bulb_rgb",
+      "mfr": "_tz3210_95txyzbx",
+      "drivers": [
+        "led_strip_rgbw",
+        "light_bulb_rgb"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZ3210_keabpigv|led_strip_rgbw,light_bulb_rgb,light_bulb_tunable_white",
+      "mfr": "_TZ3210_keabpigv",
+      "drivers": [
+        "led_strip_rgbw",
+        "light_bulb_rgb",
+        "light_bulb_tunable_white"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_tz3000_6zvw8ham|light_bulb_rgb,sensor_contact_zigbee",
+      "mfr": "_tz3000_6zvw8ham",
+      "drivers": [
+        "light_bulb_rgb",
+        "sensor_contact_zigbee"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_tzb210_g01ie5wu|light_bulb_rgb,wall_dimmer_1gang_1way,wall_dimmer_tuya",
+      "mfr": "_tzb210_g01ie5wu",
+      "drivers": [
+        "light_bulb_rgb",
+        "wall_dimmer_1gang_1way",
+        "wall_dimmer_tuya"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "ewelink|module_mini_switch,universal_zigbee",
+      "mfr": "ewelink",
+      "drivers": [
+        "module_mini_switch",
+        "universal_zigbee"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "EWELINK|module_mini_switch,universal_zigbee",
+      "mfr": "EWELINK",
+      "drivers": [
+        "module_mini_switch",
+        "universal_zigbee"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE200_rhgsbacq|motion_sensor_radar_mmwave,presence_sensor_radar",
+      "mfr": "_TZE200_rhgsbacq",
+      "drivers": [
+        "motion_sensor_radar_mmwave",
+        "presence_sensor_radar"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_tyzb01_dr6sduka|motion_sensor_switch,pir_sensor_2",
+      "mfr": "_tyzb01_dr6sduka",
+      "drivers": [
+        "motion_sensor_switch",
+        "pir_sensor_2"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZ3000_br3laukf|outdoor_plug,sensor_contact_zigbee",
+      "mfr": "_TZ3000_br3laukf",
+      "drivers": [
+        "outdoor_plug",
+        "sensor_contact_zigbee"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_tz3040_6ygjfyll|pir_sensor_2,sensor_motion_presence",
+      "mfr": "_tz3040_6ygjfyll",
+      "drivers": [
+        "pir_sensor_2",
+        "sensor_motion_presence"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TYZB01_jytabjkb|pir_sensor_2,sensor_motion_presence",
+      "mfr": "_TYZB01_jytabjkb",
+      "drivers": [
+        "pir_sensor_2",
+        "sensor_motion_presence"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZ3000_6ygjfyll|pir_sensor_2,sensor_motion_presence",
+      "mfr": "_TZ3000_6ygjfyll",
+      "drivers": [
+        "pir_sensor_2",
+        "sensor_motion_presence"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZ3000_bb6xaihh|pir_sensor_2,switch_1gang",
+      "mfr": "_TZ3000_bb6xaihh",
+      "drivers": [
+        "pir_sensor_2",
+        "switch_1gang"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZ3000_j1v25l17|plug,plug_energy_monitor",
+      "mfr": "_TZ3000_j1v25l17",
+      "drivers": [
+        "plug",
+        "plug_energy_monitor"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZ3000_yi0n4xfd|plug,switch_1gang",
+      "mfr": "_TZ3000_yi0n4xfd",
+      "drivers": [
+        "plug",
+        "switch_1gang"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZ3210_4ux0ondb|plug,wall_socket",
+      "mfr": "_TZ3210_4ux0ondb",
+      "drivers": [
+        "plug",
+        "wall_socket"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZ3000_ugi8ky6u|power_meter,smart_knob_rotary",
+      "mfr": "_TZ3000_ugi8ky6u",
+      "drivers": [
+        "power_meter",
+        "smart_knob_rotary"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZ3000_8bxrzyxz|presence_sensor_radar,vibration_sensor",
+      "mfr": "_TZ3000_8bxrzyxz",
+      "drivers": [
+        "presence_sensor_radar",
+        "vibration_sensor"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZ3210_ZXBTUB8R|presence_sensor_radar,wall_dimmer_1gang_1way",
+      "mfr": "_TZ3210_ZXBTUB8R",
+      "drivers": [
+        "presence_sensor_radar",
+        "wall_dimmer_1gang_1way"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE200_IKVNCLUO|presence_sensor_radar,switch_wireless",
+      "mfr": "_TZE200_IKVNCLUO",
+      "drivers": [
+        "presence_sensor_radar",
+        "switch_wireless"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_tzb210_zxbtub8r|presence_sensor_radar,wall_dimmer_1gang_1way",
+      "mfr": "_tzb210_zxbtub8r",
+      "drivers": [
+        "presence_sensor_radar",
+        "wall_dimmer_1gang_1way"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_tz3000_iszegwpd|remote_button_wireless_wall,scene_switch_6",
+      "mfr": "_tz3000_iszegwpd",
+      "drivers": [
+        "remote_button_wireless_wall",
+        "scene_switch_6"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_tz3000_wkai4ga5|remote_button_wireless_wall,scene_switch_4",
+      "mfr": "_tz3000_wkai4ga5",
+      "drivers": [
+        "remote_button_wireless_wall",
+        "scene_switch_4"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_tz3000_nsar4ife|scene_switch_3,switch_3_gang",
+      "mfr": "_tz3000_nsar4ife",
+      "drivers": [
+        "scene_switch_3",
+        "switch_3_gang"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "HOBEIAN|scene_switch_6,sensor_contact_presence,sensor_contact_zigbee,switch_plug_1,switch_plug_2,switch_temp_sensor,switch_wall_7gang,wall_curtain_switch,wall_switch_2gang_1way,wall_switch_3gang_1way,wall_switch_4gang_1way,water_leak_sensor",
+      "mfr": "HOBEIAN",
+      "drivers": [
+        "scene_switch_6",
+        "sensor_contact_presence",
+        "sensor_contact_zigbee",
+        "switch_plug_1",
+        "switch_plug_2",
+        "switch_temp_sensor",
+        "switch_wall_7gang",
+        "wall_curtain_switch",
+        "wall_switch_2gang_1way",
+        "wall_switch_3gang_1way",
+        "wall_switch_4gang_1way",
+        "water_leak_sensor"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "hobeian|scene_switch_6,sensor_contact_presence,sensor_contact_zigbee,switch_plug_1,switch_plug_2,switch_temp_sensor,switch_wall_7gang,wall_curtain_switch,wall_switch_2gang_1way,wall_switch_3gang_1way,wall_switch_4gang_1way,water_leak_sensor",
+      "mfr": "hobeian",
+      "drivers": [
+        "scene_switch_6",
+        "sensor_contact_presence",
+        "sensor_contact_zigbee",
+        "switch_plug_1",
+        "switch_plug_2",
+        "switch_temp_sensor",
+        "switch_wall_7gang",
+        "wall_curtain_switch",
+        "wall_switch_2gang_1way",
+        "wall_switch_3gang_1way",
+        "wall_switch_4gang_1way",
+        "water_leak_sensor"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZ3000_rcuyhwe3|sensor_contact_rain,smart_door_window_sensor",
+      "mfr": "_TZ3000_rcuyhwe3",
+      "drivers": [
+        "sensor_contact_rain",
+        "smart_door_window_sensor"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "Hobeian|sensor_contact_zigbee,water_leak_sensor",
+      "mfr": "Hobeian",
+      "drivers": [
+        "sensor_contact_zigbee",
+        "water_leak_sensor"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_tz3000_nkl1wxia|sensor_contact_zigbee,wall_switch_3_gang",
+      "mfr": "_tz3000_nkl1wxia",
+      "drivers": [
+        "sensor_contact_zigbee",
+        "wall_switch_3_gang"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZ3000_lf56vpxj|sensor_motion_presence,slim_motion_sensor",
+      "mfr": "_TZ3000_lf56vpxj",
+      "drivers": [
+        "sensor_motion_presence",
+        "slim_motion_sensor"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZ3000_kz1anoi8|sensor_motion_presence,water_valve_garden",
+      "mfr": "_TZ3000_kz1anoi8",
+      "drivers": [
+        "sensor_motion_presence",
+        "water_valve_garden"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZ3000_ejwkn2h2|smart_door_window_sensor,switch_1gang",
+      "mfr": "_TZ3000_ejwkn2h2",
+      "drivers": [
+        "smart_door_window_sensor",
+        "switch_1gang"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_tz3210_eymunffl|smart_garden_irrigation_control,wall_dimmer_tuya",
+      "mfr": "_tz3210_eymunffl",
+      "drivers": [
+        "smart_garden_irrigation_control",
+        "wall_dimmer_tuya"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_tz3400_tk3s5tyg|smoke_detector_advanced,wall_remote_1_gang",
+      "mfr": "_tz3400_tk3s5tyg",
+      "drivers": [
+        "smoke_detector_advanced",
+        "wall_remote_1_gang"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TYZB01_dsjszp0x|smoke_sensor,smoke_sensor2",
+      "mfr": "_TYZB01_dsjszp0x",
+      "drivers": [
+        "smoke_sensor",
+        "smoke_sensor2"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TYZB01_vkwryfdr|socket_power_strip_four,usb_outlet_advanced",
+      "mfr": "_TYZB01_vkwryfdr",
+      "drivers": [
+        "socket_power_strip_four",
+        "usb_outlet_advanced"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "TZE204_7SJNCIRF|switch_1gang,switch_wall_6gang",
+      "mfr": "TZE204_7SJNCIRF",
+      "drivers": [
+        "switch_1gang",
+        "switch_wall_6gang"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZ3000_BLHVSAQF|switch_1gang,switch_wall_7gang",
+      "mfr": "_TZ3000_BLHVSAQF",
+      "drivers": [
+        "switch_1gang",
+        "switch_wall_7gang"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZ3000_HAFSQARE|switch_1gang,switch_wall_7gang",
+      "mfr": "_TZ3000_HAFSQARE",
+      "drivers": [
+        "switch_1gang",
+        "switch_wall_7gang"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZ3000_YSDV91BK|switch_1gang,switch_wall_7gang",
+      "mfr": "_TZ3000_YSDV91BK",
+      "drivers": [
+        "switch_1gang",
+        "switch_wall_7gang"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZ3218_7FIYO3KV|switch_1gang,switch_temp_sensor",
+      "mfr": "_TZ3218_7FIYO3KV",
+      "drivers": [
+        "switch_1gang",
+        "switch_temp_sensor"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "tze204_7sjncirf|switch_1gang,switch_wall_6gang",
+      "mfr": "tze204_7sjncirf",
+      "drivers": [
+        "switch_1gang",
+        "switch_wall_6gang"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZ3000_tyg4yiat|switch_4gang,wall_switch_4gang_1way",
+      "mfr": "_TZ3000_tyg4yiat",
+      "drivers": [
+        "switch_4gang",
+        "wall_switch_4gang_1way"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZ3002_pzao9ls1|switch_4gang,wall_switch_4gang_1way",
+      "mfr": "_TZ3002_pzao9ls1",
+      "drivers": [
+        "switch_4gang",
+        "wall_switch_4gang_1way"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE204_72bewjky|switch_wall_6gang,wall_switch_6_gang_tuya",
+      "mfr": "_TZE204_72bewjky",
+      "drivers": [
+        "switch_wall_6gang",
+        "wall_switch_6_gang_tuya"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE204_ad2jkxwh|switch_wall_6gang,wall_switch_6_gang_tuya",
+      "mfr": "_TZE204_ad2jkxwh",
+      "drivers": [
+        "switch_wall_6gang",
+        "wall_switch_6_gang_tuya"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_tz3000_xk5udnd6|wall_switch_2gang_1way,wall_switch_3gang_1way",
+      "mfr": "_tz3000_xk5udnd6",
+      "drivers": [
+        "wall_switch_2gang_1way",
+        "wall_switch_3gang_1way"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE200_htnnfasr|water_tank_monitor,water_valve_garden",
+      "mfr": "_TZE200_htnnfasr",
+      "drivers": [
+        "water_tank_monitor",
+        "water_valve_garden"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE200_vuwtqx0t|water_valve_garden,water_valve_smart",
+      "mfr": "_TZE200_vuwtqx0t",
+      "drivers": [
+        "water_valve_garden",
+        "water_valve_smart"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE284_vuwtqx0t|water_valve_garden,water_valve_smart",
+      "mfr": "_TZE284_vuwtqx0t",
+      "drivers": [
+        "water_valve_garden",
+        "water_valve_smart"
+      ],
+      "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
     }
   ]
 }
