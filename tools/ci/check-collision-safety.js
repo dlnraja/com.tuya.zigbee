@@ -55,7 +55,16 @@ function loadDriversFromDisk(root) {
   return result;
 }
 
-function computeSacredCouples(drivers) {
+const baseline = JSON.parse(fs.readFileSync(path.join(ROOT, '.github', 'fingerprint-collision-baseline.json'), 'utf8'));
+const baselineKeys = new Set();
+if (baseline.collisions) {
+  for (const c of baseline.collisions) {
+    if (c.key) baselineKeys.add(c.key);
+  }
+}
+console.log('Sacred Couple baseline entries (ignored):', baselineKeys.size);
+
+function computeSacredCouples(drivers, baselineKeys = null) {
   const mfrToDrivers = new Map();
   for (const [d, info] of drivers) {
     for (const m of info.mfrs) {
@@ -65,7 +74,12 @@ function computeSacredCouples(drivers) {
   }
   const sc = new Set();
   for (const [m, ds] of mfrToDrivers) {
-    if (ds.size > 1) sc.add(m + '|' + [...ds].sort().join(','));
+    if (ds.size > 1) {
+      const key = m + '|' + [...ds].sort().join(',');
+      // If this exact key is in baseline, it's a known/accepted Sacred Couple
+      if (baselineKeys && baselineKeys.has(key)) continue;
+      sc.add(key);
+    }
   }
   return sc;
 }
@@ -73,16 +87,16 @@ function computeSacredCouples(drivers) {
 console.log('═══ P83.2 — Collision Safety Check (vs HEAD) ═══');
 
 const currentDrivers = loadDriversFromDisk(ROOT);
-const currentSC = computeSacredCouples(currentDrivers);
-console.log('Current Sacred Couples (working tree):', currentSC.size);
+const currentSC = computeSacredCouples(currentDrivers, baselineKeys);
+console.log('Current Sacred Couples (working tree, excl. baseline):', currentSC.size);
 
 // Try HEAD~1
 let previousSC;
 try {
   const prevDrivers = loadDriversAtRef('HEAD~1', ROOT);
   if (prevDrivers) {
-    previousSC = computeSacredCouples(prevDrivers);
-    console.log('Previous Sacred Couples (HEAD~1):', previousSC.size);
+    previousSC = computeSacredCouples(prevDrivers, baselineKeys);
+    console.log('Previous Sacred Couples (HEAD~1, excl. baseline):', previousSC.size);
   }
 } catch (e) {
   console.log('Cannot compare to HEAD~1 (', e.message, ')');
