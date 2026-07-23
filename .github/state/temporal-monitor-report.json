@@ -1,26 +1,8 @@
 {
-  "runAt": "2026-07-23T06:36:09.789Z",
-  "newIssues": [
-    {
-      "number": 513,
-      "title": "Bug report - Zigbee Climate sensor not installing",
-      "state": "open",
-      "labels": [
-        "bug"
-      ],
-      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/513",
-      "classifications": [
-        "known-productid"
-      ],
-      "hasFix": true,
-      "fix": "Already in fingerprints.json → climate_sensor",
-      "fixConfidence": 0.9
-    }
-  ],
-  "newFixesAvailable": 1,
+  "runAt": "2026-07-23T08:27:24.413Z",
+  "newIssues": [],
+  "newFixesAvailable": 0,
   "regressions": 0,
   "needInvestigation": 0,
-  "byClassification": {
-    "known-productid": 1
-  }
+  "byClassification": {}
 }
