@@ -1246,5 +1246,8 @@
   "5.12.13": {
     "en": "P77 + P78: battery/button enrichment analysis tools (3 new tools). P29.7 temporal-monitor refreshed. 137/137 stable tests passing. 431 drivers, 5712 fingerprints, 0 new collisions.",
     "fr": "P77 + P78: outils analyse enrichissement batteries/boutons (3 nouveaux outils). P29.7 temporal-monitor rafraîchi. 137/137 tests stable passants. 431 drivers, 5712 fingerprints, 0 collision."
+  },
+  "5.12.18": {
+    "en": "v5.12.17: v5.12.17: P83.1-stable docs + TuyaNormalizer propagation to 6 lib files"
   }
 }
