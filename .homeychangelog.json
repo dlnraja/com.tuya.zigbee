@@ -1249,5 +1249,8 @@
   },
   "5.12.18": {
     "en": "v5.12.17: v5.12.17: P83.1-stable docs + TuyaNormalizer propagation to 6 lib files"
+  },
+  "9.0.336": {
+    "en": "v9.0.335: fix(P83.1): clean app.json - extract first JSON object (was concatenated with trailing second object)"
   }
 }
