@@ -30,7 +30,24 @@
   },
   "zigbee": {
     "productId": [
-      "TS0601_air_purifier"
+      "014G2461",
+      "014G2463",
+      "SEA801-Zigbee",
+      "SPZB0001",
+      "SPZB0003",
+      "STZB402",
+      "STZB403",
+      "TRV601",
+      "TRV602",
+      "TRVZB",
+      "TS0601",
+      "TS0601_air_purifier",
+      "TV01-ZB",
+      "TV02-ZB",
+      "Zen-01",
+      "eTRV0100",
+      "lumi.airrtc.agl001",
+      "lumi.airrtc.vrfegl01"
     ],
     "learnmode": {
       "image": "/drivers/radiator_valve/assets/learnmode.svg",
