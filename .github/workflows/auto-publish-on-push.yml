@@ -33,10 +33,13 @@ jobs:
     # v9.0.287 (P74): Bumped publish-size limits to 50 MB. With .homeyignore
     # pruning (mfs_db.json, dev artifacts, branding assets) the source
     # directory is ~40 MB. The gzipped tarball is ~18 MB.
+    # v9.0.343 (P86): Bumped max total combos from 20000 to 30000 to support
+    # multi-PID mfs_db enrichment (431 drivers × wider mfr/pid matrices).
     env:
       HOMEY_PUBLISH_FINAL_MAX_MB: "50"
       HOMEY_PUBLISH_SOURCE_MAX_MB: "50"
       HOMEY_PUBLISH_MAX_UNCOMPRESSED_MB: "50"
+      HOMEY_ZIGBEE_MAX_TOTAL_COMBOS: "30000"
 
     steps:
       # ─────────────────────────────────────────────────────────────
