@@ -1,6 +1,12 @@
 {
   "changelog": [
     {
+      "version": "5.12.16",
+      "date": "2026-07-23",
+      "channel": "stable",
+      "en": "P82-stable: TuyaNormalizer v10.0.0 ULTIMATE - case-insensitive matching library (NFKD + accents + multi-PID + variants + scoring) synced from master. Fixes potential #513-style issues on stable."
+    },
+    {
       "version": "5.12.15",
       "date": "2026-07-22",
       "channel": "stable",
