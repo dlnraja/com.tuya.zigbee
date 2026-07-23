@@ -1252,5 +1252,8 @@
   },
   "9.0.336": {
     "en": "v9.0.335: fix(P83.1): clean app.json - extract first JSON object (was concatenated with trailing second object)"
+  },
+  "9.0.337": {
+    "en": "v9.0.335: fix(P83.1): clean app.json - extract first JSON object (was concatenated with trailing second object)"
   }
 }
