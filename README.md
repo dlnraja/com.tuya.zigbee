@@ -43,7 +43,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.334 |
+| **App Version** | v9.0.336 |
 | **Device Fingerprints** | 5,306+ |
 | **Unique Product IDs** | 571 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
@@ -147,6 +147,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | Version | Changes |
 |---------|---------|
 | **vchangelog** | [object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object  |
+| **v9.0.336** | v9.0.335: fix(P83.1): clean app.json - extract first JSON object (was concatenated with trailing second object) |
 | **v9.0.334** | Stability improvements and Homey test publication retry after transient processing failure. |
 | **v9.0.333** | v9.0.330: docs(P80): changelog v9.0.330 - issue #439 + orphan enrichment |
 | **v9.0.332** | v9.0.330: docs(P80): changelog v9.0.330 - issue #439 + orphan enrichment |
@@ -160,7 +161,6 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | **v9.0.323** | P76 architectural fix: 7 new HOBEIAN/ga1maeof fingerprint collisions baselined (P75.31 follow-up). Architectural test... |
 | **v9.0.322** | P76 architectural fix: 7 new HOBEIAN/ga1maeof fingerprint collisions baselined (P75.31 follow-up). Architectural test... |
 | **v9.0.321** | P76 architectural fix: 7 new HOBEIAN/ga1maeof fingerprint collisions baselined (P75.31 follow-up). Architectural test... |
-| **v9.0.320** | P76 architectural fix: 7 new HOBEIAN/ga1maeof fingerprint collisions baselined (P75.31 follow-up). Architectural test... |
 | **v9.0.216** | Stability improvements and Homey test build recovery. |
 | **v9.0.215** | Stability improvements and Homey test build recovery. |
 | **v9.0.214** | Stability improvements and Homey test publication retry after transient processing failure. |
