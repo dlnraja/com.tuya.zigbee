@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "9.0.334",
+  "version": "9.0.333",
   "compatibility": ">=12.2.0",
   "platforms": [
     "local"
@@ -169743,8 +169743,7 @@
       ],
       "zigbee": {
         "manufacturerName": [
-          "_tz3000_iystcadi",
-          "_TZ3000_iystcadi"
+          "_tz3000_iystcadi"
         ],
         "productId": [
           "TS0503",
@@ -182451,6 +182450,7 @@
           "_tz3000_abrsvsou",
           "_tz3000_imaccztn",
           "_tz3000_mmkbptmx",
+          "_tz3000_mrduubod",
           "_tz3000_u3oupgdy",
           "_tz3000_uri7ongn",
           "_tze200_1ozguk6x",
@@ -182460,9 +182460,7 @@
           "_tze200_eaac7dkw",
           "_tze200_ewxhg6o9",
           "_tze200_fsb6zw01",
-          "_tze200_lsanae15",
-          "_TZ3000_imaccztn",
-          "_TZ3000_u3oupgdy"
+          "_tze200_lsanae15"
         ]
       },
       "version": "1.0.0",
