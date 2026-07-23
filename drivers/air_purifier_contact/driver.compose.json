@@ -397,8 +397,11 @@
   },
   "zigbee": {
     "productId": [
+      "Excellux",
+      "TS0203",
       "TS0601",
-      "Excellux"
+      "TS0601_generic",
+      "TS0603"
     ],
     "endpoints": {
       "1": {
