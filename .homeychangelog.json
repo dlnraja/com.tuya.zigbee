@@ -1,6 +1,12 @@
 {
   "changelog": [
     {
+      "version": "9.0.333",
+      "date": "2026-07-23",
+      "channel": "master",
+      "en": "P82: TuyaNormalizer v10.0.0 ULTIMATE - single source of truth for case-insensitive matching (NFKD + accents + emojis + multi-PID + variants + scoring). Fixes issue #513 (climate_sensor _TZE284_hodyryli). 1760 mfr case-mismatches audited, 370 mfrs enriched with case variants. lib/Util.js + CaseInsensitiveMatcher + PermissiveMatchingEngine refactored as backward-compat shims."
+    },
+    {
       "version": "9.0.332",
       "date": "2026-07-22",
       "channel": "master",
