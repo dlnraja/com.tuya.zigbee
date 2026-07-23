@@ -59,16 +59,28 @@ class ContactPresenceHybridDevice extends UnifiedSensorBase {
     const mappings = {};
     const settings = this.getSettings() || {};
     const invertPresence = settings.invert_presence ?? config.invertPresence ?? false;
+    const invertContact = settings.invert_contact ?? config.invertContact ?? false;
     for (const [dpId, dpConfig] of Object.entries(dpMap)) {
       const dp = parseInt(dpId);
       if (dpConfig.cap === 'alarm_motion' || dpConfig.cap === 'alarm_human') {
+        // v9.0.340: also map alarm_contact for Door/Window sensors (HOBEIAN ZG-227Z forum #2114)
+        const presenceTransform = (v) => transformPresence(v, dpConfig.type, invertPresence, config.configName);
+        const contactTransform = (v) => transformPresence(v, dpConfig.type, invertContact, config.configName);
         mappings[dp] = {
           capability: 'alarm_motion',
-          transform: (v) => transformPresence(v, dpConfig.type, invertPresence, config.configName),
-          alsoSets: { 'alarm_human': (v) => transformPresence(v, dpConfig.type, invertPresence, config.configName) }
+          transform: presenceTransform,
+          alsoSets: {
+            'alarm_human': presenceTransform,
+            'alarm_contact': contactTransform
+          }
         };
       } else if (dpConfig.cap) {
-        mappings[dp] = { capability: dpConfig.cap, transform: (v) => safeDivide(v, dpConfig.divisor || 1) };
+        const mapping = { capability: dpConfig.cap, transform: (v) => safeDivide(v, dpConfig.divisor || 1) };
+        // v9.0.340: Mark lux_direct as skipValidator to bypass auto-correction (forum #2114)
+        if (dpConfig.type === 'lux_direct') {
+          mapping.skipValidator = true;
+        }
+        mappings[dp] = mapping;
       }
     }
     return mappings;

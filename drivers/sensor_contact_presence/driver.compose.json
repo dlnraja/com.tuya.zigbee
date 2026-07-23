@@ -296,6 +296,19 @@
       }
     },
     {
+      "id": "invert_contact",
+      "type": "checkbox",
+      "label": {
+        "en": "Invert Contact State",
+        "fr": "Inverser État Contact"
+      },
+      "value": false,
+      "hint": {
+        "en": "Enable if contact state shows open when closed and vice versa (firmware bug workaround for door/window placement)",
+        "fr": "Activer si l'état du contact indique ouvert quand fermé et vice versa (contournement bug firmware pour placement porte/fenêtre)"
+      }
+    },
+    {
       "id": "motion_detection_mode",
       "type": "dropdown",
       "label": {
