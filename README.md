@@ -34,8 +34,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.345 |
-| **App Version** | v9.0.346 |
+| **App Version** | v9.0.347 |
 | **Device Fingerprints** | 5,379+ |
 | **Unique Product IDs** | 571 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
@@ -103,8 +102,8 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | Version | Changes |
 |---------|---------|
 | **vchangelog** | [object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object  |
+| **v9.0.347** | v9.0.346: fix(P89): mfs_db dedup + TuyaNormalizer in DeviceFingerprintDB |
 | **v9.0.345** | v9.0.340: v9.0.340: P85 forum #2114 Door/Window contact + luminance fix |
-| **v9.0.346** | v9.0.345: docs(P88): cross-source mfr & DP fixes (forum + Z2M + mfs_db) |
 | **v9.0.344** | v9.0.340: v9.0.340: P85 forum #2114 Door/Window contact + luminance fix |
 | **v9.0.343** | v9.0.340: v9.0.340: P85 forum #2114 Door/Window contact + luminance fix |
 | **v9.0.342** | v9.0.340: v9.0.340: P85 forum #2114 Door/Window contact + luminance fix |
@@ -117,7 +116,6 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | **v9.0.332** | v9.0.330: docs(P80): changelog v9.0.330 - issue #439 + orphan enrichment |
 | **v9.0.331** | v9.0.330: docs(P80): changelog v9.0.330 - issue #439 + orphan enrichment |
 | **v9.0.329** | P77 + P78: battery/button enrichment analysis (247 battery drivers, 54 button drivers audited). P29.7 temporal-monito... |
-| **v9.0.328** | P77 + P78: battery/button enrichment analysis (247 battery drivers, 54 button drivers audited). P29.7 temporal-monito... |
 
 <!-- CHANGELOG_END -->
 
