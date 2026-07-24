@@ -26,7 +26,13 @@
     }
   },
   "zigbee": {
-    "manufacturerName": [],
+    "manufacturerName": [
+      "_TZE200_BVU2WNXZ",
+      "_TZE200_HVAXB2TC",
+      "_TZE200_AOCLFNXZ",
+      "_TZE200_B6WAX7G0",
+      "_TZE200_2EKUZ3DZ"
+    ],
     "productId": [
       "0x8040",
       "BASICZBR3",
