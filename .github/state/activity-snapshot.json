@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-07-23T06:36:09.344Z",
+  "fetchedAt": "2026-07-24T06:33:28.206Z",
   "github": {
     "openIssues": [
       {
@@ -7,12 +7,13 @@
         "title": "Bug report - Zigbee Climate sensor not installing",
         "state": "open",
         "createdAt": "2026-07-22T09:23:13Z",
-        "updatedAt": "2026-07-23T01:28:20Z",
+        "updatedAt": "2026-07-24T01:21:38Z",
         "user": "finnamu",
         "labels": [
-          "bug"
+          "bug",
+          "reopened-by-user"
         ],
-        "commentsCount": 3,
+        "commentsCount": 11,
         "body": "### Describe the bug\n\n> Climate sensor \n    \"modelId\": \"TS0601\", \n    \"manufacturerName\": \"_TZE284_hodyryli\"\nis listed in driver.compose.json, but new install gives Unknown Zigbee unit.\nThe sensor worked in an earlier version from April.\n\n### To Reproduce\n\nInstall sensor\n\n### Expected behavior\n\nSensor installed correctly\n\n### App and Homey version\n\n> * What Homey version are you running? Homey Pro 23, \n> * What version of Homey firmware do you use? Ver 13.3.0\n> * What version of the Tuya Zigbee App are you using? Unified Smart Home Engine v9.0.328\n\n### Screenshots\n\n> If applicable, add screenshots to help explain your problem.\n\n### Additional context\n\n> Add any other context about the problem here.\n\n[Interview Climate Sensor.txt](https://github.com/user-attachments/files/30262347/Interview.Climate.Sensor.txt)\n",
         "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/513"
       },
@@ -62,7 +63,8 @@
         "createdAt": "2026-07-22T09:23:13Z",
         "user": "finnamu",
         "labels": [
-          "bug"
+          "bug",
+          "reopened-by-user"
         ],
         "body": "### Describe the bug\n\n> Climate sensor \n    \"modelId\": \"TS0601\", \n    \"manufacturerName\": \"_TZE284_hodyryli\"\nis listed in driver.compose.json, but new install gives Unknown Zigbee unit.\nThe sensor worked in an earlier version from April.\n\n### To Reproduce\n\nInstall sensor\n\n### Expected behavior\n\nSensor installed correctly\n\n### App and Homey version\n\n> * What Homey version are you running? Homey Pro 23, \n> * What version of Homey firmware do you use? Ver 13.3.0\n> * What version of the Tuya Zigbee App are you using? Unified Smart Home Engine v9.0.328\n\n### Screenshots\n\n> If applicable, add screenshots to help explain your problem.\n\n### Additional context\n\n> Add any other context about the problem here.\n\n[Interview Climate Sensor.txt](https://github.com/user-attachments/files/30262347/Interview.Climate.Sensor.txt)\n"
       },
@@ -152,6 +154,70 @@
       }
     ],
     "recentComments": [
+      {
+        "id": 5065178546,
+        "user": "dlnraja",
+        "createdAt": "2026-07-24T01:21:38Z",
+        "body": "<!-- diag-resolver -->\n### Auto-resolved by Diagnostic Resolver\n\nAll fingerprints in this issue found in **Tuya Unified Zigbee v9.0.343**:\n- `_TZE284_hodyryli` -> **climate_sensor**\n\n**Install:** https://homey.app/a/com.dlnraja.tuya.zigbee/test/\nRemove and re-pair your device after installing.\n\n\n> **Protocol:** Tuya DP (cluster 0xEF00). Ensure DP listeners active.\n**Troubleshooting:** https://github.com/dlnraja/com.tuya.zigbee/wiki/Troubleshooting\n\n> **Detected protocols:** tuya_dp\n",
+        "issueUrl": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues/513",
+        "issueNumber": "513"
+      },
+      {
+        "id": 5063545116,
+        "user": "github-actions[bot]",
+        "createdAt": "2026-07-23T21:18:10Z",
+        "body": "<!-- tuya-reopen-bot -->\nThis issue has been **automatically reopened** because @finnamu posted a new comment.\nIt will be reviewed in the next automation cycle.\n\n> If your device is still not working, please share:\n> 1. **Device Interview** from [Developer Tools](https://tools.developer.homey.app)\n> 2. **Diagnostic Report ID** from device settings",
+        "issueUrl": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues/513",
+        "issueNumber": "513"
+      },
+      {
+        "id": 5063542750,
+        "user": "finnamu",
+        "createdAt": "2026-07-23T21:18:00Z",
+        "body": "Installed v9.0.341. Pairing still gives unkown unit.",
+        "issueUrl": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues/513",
+        "issueNumber": "513"
+      },
+      {
+        "id": 5059957966,
+        "user": "dlnraja",
+        "createdAt": "2026-07-23T14:59:28Z",
+        "body": "Closing - fix verified in v9.0.333 (P82). User: please re-pair after installing from test channel.",
+        "issueUrl": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues/513",
+        "issueNumber": "513"
+      },
+      {
+        "id": 5059953765,
+        "user": "dlnraja",
+        "createdAt": "2026-07-23T14:59:03Z",
+        "body": "## Fixed in v9.0.333 (P82) - now in test channel\n\n**Root cause**: Your device reports `_TZE284_hodyryli` (lowercase) but the driver had only `_TZE284_HODYRYLI` (uppercase). Homey is case-SENSITIVE in mfr matching, so the device fell through to \"Unknown Zigbee unit\".\n\n**Fix applied**: `drivers/climate_sensor/driver.compose.json` now has BOTH case variants of the mfr:\n- `_TZE284_HODYRYLI` (canonical, uppercase)\n- `_TZE284_hodyryli` (lowercase, your device's casing)\n\n**Install**: https://homey.app/",
+        "issueUrl": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues/513",
+        "issueNumber": "513"
+      },
+      {
+        "id": 5058864245,
+        "user": "dlnraja",
+        "createdAt": "2026-07-23T13:19:08Z",
+        "body": "<!-- diag-resolver -->\n### Auto-resolved by Diagnostic Resolver\n\nAll fingerprints in this issue found in **Tuya Unified Zigbee v9.0.334**:\n- `_TZE284_hodyryli` -> **climate_sensor**\n\n**Install:** https://homey.app/a/com.dlnraja.tuya.zigbee/test/\nRemove and re-pair your device after installing.\n\n\n> **Protocol:** Tuya DP (cluster 0xEF00). Ensure DP listeners active.\n**Troubleshooting:** https://github.com/dlnraja/com.tuya.zigbee/wiki/Troubleshooting\n\n> **Detected protocols:** tuya_dp\n",
+        "issueUrl": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues/513",
+        "issueNumber": "513"
+      },
+      {
+        "id": 5056364929,
+        "user": "finnamu",
+        "createdAt": "2026-07-23T08:54:01Z",
+        "body": "The fingerprint is already listed in **driver.compose.json**, but new install still gives **Unknown Zigbee unit**.\nThe sensor worked in an earlier version from April.",
+        "issueUrl": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues/513",
+        "issueNumber": "513"
+      },
+      {
+        "id": 5055975026,
+        "user": "dlnraja",
+        "createdAt": "2026-07-23T08:07:38Z",
+        "body": "<!-- diag-resolver -->\n### Auto-resolved by Diagnostic Resolver\n\nAll fingerprints in this issue found in **Tuya Unified Zigbee v9.0.334**:\n- `_TZE284_hodyryli` -> **climate_sensor**\n\n**Install:** https://homey.app/a/com.dlnraja.tuya.zigbee/test/\nRemove and re-pair your device after installing.\n\n\n> **Protocol:** Tuya DP (cluster 0xEF00). Ensure DP listeners active.\n**Troubleshooting:** https://github.com/dlnraja/com.tuya.zigbee/wiki/Troubleshooting\n\n> **Detected protocols:** tuya_dp\n",
+        "issueUrl": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues/513",
+        "issueNumber": "513"
+      },
       {
         "id": 5053326412,
         "user": "dlnraja",
@@ -327,252 +393,188 @@
         "body": "<!-- diag-resolver -->\n### Auto-resolved by Diagnostic Resolver\n\nAll fingerprints in this issue found in **Tuya Unified Zigbee v9.0.261**:\n- `_TZ3000_fllyghyj` -> **climate_sensor**\n\n**Install:** https://homey.app/a/com.dlnraja.tuya.zigbee/test/\nRemove and re-pair your device after installing.\n\n**Troubleshooting:** https://github.com/dlnraja/com.tuya.zigbee/wiki/Troubleshooting\n\n> **Detected protocols:** unknown\n",
         "issueUrl": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues/506",
         "issueNumber": "506"
-      },
-      {
-        "id": 4978265156,
-        "user": "dlnraja",
-        "createdAt": "2026-07-15T08:04:56Z",
-        "body": "<!-- diag-resolver -->\n### Auto-resolved by Diagnostic Resolver\n\nAll fingerprints in this issue found in **Tuya Unified Zigbee v9.0.252**:\n- `_TZ3000_fllyghyj` -> **climate_sensor**\n\n**Install:** https://homey.app/a/com.dlnraja.tuya.zigbee/test/\nRemove and re-pair your device after installing.\n\n**Troubleshooting:** https://github.com/dlnraja/com.tuya.zigbee/wiki/Troubleshooting\n\n> **Detected protocols:** unknown\n",
-        "issueUrl": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues/506",
-        "issueNumber": "506"
-      },
-      {
-        "id": 4973452584,
-        "user": "Lalla80111",
-        "createdAt": "2026-07-14T20:01:12Z",
-        "body": "Thanx for the superior work  you're doing :)\n\nI want to inform you that the new v9.0.218 is crashing and gives the message \"Exit Code: 1, Exit Signal: null\"\nDiagnostics: 168adaa3-b63a-4298-9b9b-51b3616ac91c\n\n",
-        "issueUrl": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues/506",
-        "issueNumber": "506"
-      },
-      {
-        "id": 4968617145,
-        "user": "stephanmaastricht",
-        "createdAt": "2026-07-14T11:24:54Z",
-        "body": "Hi Dylan,\n\nAfter updating to v9.0.218 the app crashes immediately.\n\nThe app is marked as \"Crashed\" in Homey and therefore it no longer appears in \"Add Device\", so I cannot test the soil sensor anymore.\n\nThe new test URL [https://homey.app/a/com.dlnraja.tuya.zigbee/test/\\n3](https://homey.app/a/com.dlnraja.tuya.zigbee/test/%5Cn3)also returns a 404 page.\n\nCould you please check the latest test build?\n\nThank you!",
-        "issueUrl": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues/511",
-        "issueNumber": "511"
-      },
-      {
-        "id": 4968186712,
-        "user": "dlnraja",
-        "createdAt": "2026-07-14T10:31:17Z",
-        "body": "## P53 — 678 of 955 new Tuya FPs added to generic_tuya ✅\n\nThanks for the auto-scan! I processed the 955 FPs in this issue.\n\n**Results:**\n- 277 of 955 FPs were **already in drivers** (including other specialized drivers like `presence_sensor_radar`, `climate_sensor`, etc.)\n- 678 **new FPs added** to `drivers/generic_tuya/driver.compose.json`\n- 0 FPs were ambiguous or non-Tuya patterns\n- `generic_tuya` grew from 381 → **1059 manufacturer names**\n\n**Coverage by prefix:**\n| Prefix | Added |\n|---|---",
-        "issueUrl": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues/439",
-        "issueNumber": "439"
-      },
-      {
-        "id": 4967322532,
-        "user": "dlnraja",
-        "createdAt": "2026-07-14T09:14:14Z",
-        "body": "Hi @Lalla80111 👋\n\nThanks for the patience and the detailed diagnostic! I've been investigating the issue and I have good news: **the auto-publish pipeline is now unblocked**.\n\n## What was happening\n\nThe fingerprint `_TZ3000_fllyghyj` + `TS0201` is correctly mapped to `climate_sensor` in `drivers/climate_sensor/driver.compose.json:150` and in `mfs_db.json`. However, the **auto-publish bot was broken** due to a YAML separator regression in 12 GHA workflow files (extra `---` markers causing multi-",
-        "issueUrl": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues/506",
-        "issueNumber": "506"
-      },
-      {
-        "id": 4966962761,
-        "user": "dlnraja",
-        "createdAt": "2026-07-14T08:31:53Z",
-        "body": "Hi @stephanmaastricht 👋\\n\\nThanks again for your detailed investigation — you were right. After deep cross-referencing, I found two issues:\\n\\n## Bug 1: Your fingerprint was actually present, but the auto-publish bot likely reverted it\\n\\nI verified that `_TZE284_awepdiwi` IS in `drivers/soil_sensor/driver.compose.json:145` in the current source. This is exactly the P19 pattern where the auto-publish bot regenerates `app.json` from a baseline that doesn't include the latest fixes.\\n\\n## Bug 2: ",
-        "issueUrl": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues/511",
-        "issueNumber": "511"
-      },
-      {
-        "id": 4964343207,
-        "user": "stephanmaastricht",
-        "createdAt": "2026-07-14T00:56:57Z",
-        "body": "Hi Dylan, i have no idea how this works its AI talking to me :-)\n\nI found the likely cause.\n\nIn the current `drivers/soil_sensor/driver.compose.json`, the `manufacturerName` list does not contain:\n\n_TZE284_awepdiwi\n\nIt also does not contain the similar fingerprint:\n\n_TZE284_ga1maeof\n\nMy device reports:\n\nManufacturer: _TZE284_awepdiwi\nProduct ID: TS0601\n\nThe endpoint clusters match the driver:\n0, 4, 5, 60672, 61184\n\nSo Homey cannot match the device because the manufacturer fingerprint is missing ",
-        "issueUrl": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues/511",
-        "issueNumber": "511"
-      },
-      {
-        "id": 4959744257,
-        "user": "github-actions[bot]",
-        "createdAt": "2026-07-13T15:39:21Z",
-        "body": "<!-- tuya-reopen-bot -->\nThis issue has been **automatically reopened** because @Lalla80111 posted a new comment.\nIt will be reviewed in the next automation cycle.\n\n> If your device is still not working, please share:\n> 1. **Device Interview** from [Developer Tools](https://tools.developer.homey.app)\n> 2. **Diagnostic Report ID** from device settings",
-        "issueUrl": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues/506",
-        "issueNumber": "506"
       }
     ],
     "events": [
       {
-        "createdAt": "2026-07-23T06:28:48Z",
+        "createdAt": "2026-07-24T06:23:34Z",
         "actor": "github-actions[bot]",
         "type": "PushEvent",
         "description": "pushed stable-v5 (0 commits)"
       },
       {
-        "createdAt": "2026-07-23T03:38:31Z",
+        "createdAt": "2026-07-24T03:36:15Z",
         "actor": "github-actions[bot]",
         "type": "PushEvent",
         "description": "pushed master (0 commits)"
       },
       {
-        "createdAt": "2026-07-23T01:28:20Z",
+        "createdAt": "2026-07-24T01:21:38Z",
         "actor": "dlnraja",
         "type": "IssueCommentEvent",
         "description": "commented on #513: Bug report - Zigbee Climate sensor not installing"
       },
       {
-        "createdAt": "2026-07-22T19:40:08Z",
-        "actor": "github-actions[bot]",
+        "createdAt": "2026-07-23T22:59:47Z",
+        "actor": "dlnraja",
         "type": "PushEvent",
         "description": "pushed master (0 commits)"
       },
       {
-        "createdAt": "2026-07-22T18:54:03Z",
-        "actor": "dlnraja",
-        "type": "IssueCommentEvent",
-        "description": "commented on #513: Bug report - Zigbee Climate sensor not installing"
+        "createdAt": "2026-07-23T22:54:47Z",
+        "actor": "github-actions[bot]",
+        "type": "ReleaseEvent",
+        "description": "ReleaseEvent"
       },
       {
-        "createdAt": "2026-07-22T14:18:33Z",
-        "actor": "github-actions[bot]",
+        "createdAt": "2026-07-23T22:50:25Z",
+        "actor": "dlnraja",
+        "type": "PushEvent",
+        "description": "pushed stable-v5 (0 commits)"
+      },
+      {
+        "createdAt": "2026-07-23T22:42:51Z",
+        "actor": "dlnraja",
         "type": "PushEvent",
         "description": "pushed master (0 commits)"
       },
       {
-        "createdAt": "2026-07-22T13:16:53Z",
+        "createdAt": "2026-07-23T22:35:51Z",
         "actor": "dlnraja",
+        "type": "PushEvent",
+        "description": "pushed master (0 commits)"
+      },
+      {
+        "createdAt": "2026-07-23T22:31:46Z",
+        "actor": "github-actions[bot]",
+        "type": "ReleaseEvent",
+        "description": "ReleaseEvent"
+      },
+      {
+        "createdAt": "2026-07-23T22:27:29Z",
+        "actor": "dlnraja",
+        "type": "PushEvent",
+        "description": "pushed master (0 commits)"
+      },
+      {
+        "createdAt": "2026-07-23T21:48:47Z",
+        "actor": "dlnraja",
+        "type": "PushEvent",
+        "description": "pushed stable-v5 (0 commits)"
+      },
+      {
+        "createdAt": "2026-07-23T21:47:22Z",
+        "actor": "dlnraja",
+        "type": "PushEvent",
+        "description": "pushed master (0 commits)"
+      },
+      {
+        "createdAt": "2026-07-23T21:44:04Z",
+        "actor": "dlnraja",
+        "type": "PushEvent",
+        "description": "pushed master (0 commits)"
+      },
+      {
+        "createdAt": "2026-07-23T21:20:48Z",
+        "actor": "dlnraja",
+        "type": "PushEvent",
+        "description": "pushed master (0 commits)"
+      },
+      {
+        "createdAt": "2026-07-23T21:18:10Z",
+        "actor": "github-actions[bot]",
         "type": "IssueCommentEvent",
         "description": "commented on #513: Bug report - Zigbee Climate sensor not installing"
       },
       {
-        "createdAt": "2026-07-22T09:23:15Z",
-        "actor": "finnamu",
+        "createdAt": "2026-07-23T21:18:10Z",
+        "actor": "github-actions[bot]",
+        "type": "IssuesEvent",
+        "description": "reopened issue #513: Bug report - Zigbee Climate sensor not installing"
+      },
+      {
+        "createdAt": "2026-07-23T21:18:10Z",
+        "actor": "github-actions[bot]",
         "type": "IssuesEvent",
         "description": "labeled issue #513: Bug report - Zigbee Climate sensor not installing"
       },
       {
-        "createdAt": "2026-07-22T09:23:14Z",
+        "createdAt": "2026-07-23T21:18:00Z",
         "actor": "finnamu",
-        "type": "IssuesEvent",
-        "description": "opened issue #513: Bug report - Zigbee Climate sensor not installing"
+        "type": "IssueCommentEvent",
+        "description": "commented on #513: Bug report - Zigbee Climate sensor not installing"
       },
       {
-        "createdAt": "2026-07-22T08:41:48Z",
-        "actor": "github-actions[bot]",
-        "type": "PushEvent",
-        "description": "pushed master (0 commits)"
-      },
-      {
-        "createdAt": "2026-07-22T08:26:34Z",
-        "actor": "github-actions[bot]",
-        "type": "PushEvent",
-        "description": "pushed master (0 commits)"
-      },
-      {
-        "createdAt": "2026-07-22T06:44:13Z",
-        "actor": "github-actions[bot]",
-        "type": "PushEvent",
-        "description": "pushed master (0 commits)"
-      },
-      {
-        "createdAt": "2026-07-22T06:36:48Z",
-        "actor": "github-actions[bot]",
-        "type": "PushEvent",
-        "description": "pushed master (0 commits)"
-      },
-      {
-        "createdAt": "2026-07-22T06:26:03Z",
-        "actor": "github-actions[bot]",
-        "type": "PushEvent",
-        "description": "pushed stable-v5 (0 commits)"
-      },
-      {
-        "createdAt": "2026-07-22T03:36:46Z",
-        "actor": "github-actions[bot]",
-        "type": "PushEvent",
-        "description": "pushed master (0 commits)"
-      },
-      {
-        "createdAt": "2026-07-22T00:59:56Z",
-        "actor": "dlnraja",
-        "type": "PushEvent",
-        "description": "pushed master (0 commits)"
-      },
-      {
-        "createdAt": "2026-07-22T00:46:32Z",
+        "createdAt": "2026-07-23T21:05:27Z",
         "actor": "github-actions[bot]",
         "type": "ReleaseEvent",
         "description": "ReleaseEvent"
       },
       {
-        "createdAt": "2026-07-22T00:44:42Z",
+        "createdAt": "2026-07-23T21:01:22Z",
         "actor": "dlnraja",
         "type": "PushEvent",
         "description": "pushed stable-v5 (0 commits)"
       },
       {
-        "createdAt": "2026-07-22T00:44:01Z",
-        "actor": "github-actions[bot]",
-        "type": "PushEvent",
-        "description": "pushed master (0 commits)"
-      },
-      {
-        "createdAt": "2026-07-22T00:43:10Z",
+        "createdAt": "2026-07-23T20:58:27Z",
         "actor": "dlnraja",
         "type": "PushEvent",
         "description": "pushed master (0 commits)"
       },
       {
-        "createdAt": "2026-07-22T00:36:11Z",
-        "actor": "dlnraja",
-        "type": "PushEvent",
-        "description": "pushed stable-v5 (0 commits)"
-      },
-      {
-        "createdAt": "2026-07-22T00:10:50Z",
-        "actor": "dlnraja",
-        "type": "PushEvent",
-        "description": "pushed stable-v5 (0 commits)"
-      },
-      {
-        "createdAt": "2026-07-22T00:10:28Z",
-        "actor": "dlnraja",
-        "type": "PushEvent",
-        "description": "pushed master (0 commits)"
-      },
-      {
-        "createdAt": "2026-07-22T00:06:44Z",
+        "createdAt": "2026-07-23T20:54:38Z",
         "actor": "github-actions[bot]",
         "type": "ReleaseEvent",
         "description": "ReleaseEvent"
       },
       {
-        "createdAt": "2026-07-22T00:03:58Z",
+        "createdAt": "2026-07-23T20:52:26Z",
+        "actor": "dlnraja",
+        "type": "PushEvent",
+        "description": "pushed master (0 commits)"
+      },
+      {
+        "createdAt": "2026-07-23T20:50:40Z",
+        "actor": "dlnraja",
+        "type": "PushEvent",
+        "description": "pushed master (0 commits)"
+      },
+      {
+        "createdAt": "2026-07-23T19:40:04Z",
         "actor": "github-actions[bot]",
         "type": "PushEvent",
         "description": "pushed master (0 commits)"
       },
       {
-        "createdAt": "2026-07-22T00:03:03Z",
+        "createdAt": "2026-07-23T19:39:42Z",
         "actor": "dlnraja",
         "type": "PushEvent",
         "description": "pushed master (0 commits)"
       },
       {
-        "createdAt": "2026-07-21T23:46:03Z",
-        "actor": "dlnraja",
-        "type": "PushEvent",
-        "description": "pushed master (0 commits)"
-      },
-      {
-        "createdAt": "2026-07-21T23:42:24Z",
+        "createdAt": "2026-07-23T19:34:50Z",
         "actor": "github-actions[bot]",
         "type": "ReleaseEvent",
         "description": "ReleaseEvent"
       },
       {
-        "createdAt": "2026-07-21T23:40:14Z",
-        "actor": "github-actions[bot]",
+        "createdAt": "2026-07-23T19:33:53Z",
+        "actor": "dlnraja",
         "type": "PushEvent",
         "description": "pushed master (0 commits)"
       },
       {
-        "createdAt": "2026-07-21T23:39:08Z",
+        "createdAt": "2026-07-23T19:28:34Z",
         "actor": "dlnraja",
         "type": "PushEvent",
         "description": "pushed master (0 commits)"
+      },
+      {
+        "createdAt": "2026-07-23T19:28:20Z",
+        "actor": "dlnraja",
+        "type": "PushEvent",
+        "description": "pushed stable-v5 (0 commits)"
       }
     ],
     "recentPRs": [
@@ -898,7 +900,7 @@
         "createdAt": "2025-07-25T01:07:08.482Z",
         "lastPostedAt": "2026-07-16T06:38:42.535Z",
         "postsCount": 2037,
-        "views": 22616,
+        "views": 22672,
         "likeCount": 450,
         "posts": [
           {
@@ -1031,7 +1033,7 @@
         "createdAt": "2020-02-26T09:12:23.664Z",
         "lastPostedAt": "2026-06-30T17:50:44.858Z",
         "postsCount": 1159,
-        "views": 175921,
+        "views": 175953,
         "likeCount": 683,
         "posts": [
           {
@@ -1274,7 +1276,7 @@
         "createdAt": "2025-11-07T15:49:37.095Z",
         "lastPostedAt": "2025-11-07T17:39:33.740Z",
         "postsCount": 4,
-        "views": 228,
+        "views": 229,
         "likeCount": 2,
         "posts": [
           {
@@ -1311,7 +1313,7 @@
         "createdAt": "2023-04-02T18:23:38.975Z",
         "lastPostedAt": "2026-01-28T12:33:25.343Z",
         "postsCount": 7,
-        "views": 1774,
+        "views": 1775,
         "likeCount": 0,
         "posts": [
           {

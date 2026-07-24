@@ -1,5 +1,5 @@
 {
-  "timestamp": 1784788570302,
+  "timestamp": 1784874809221,
   "data": {
     "gh": {
       "openIssues": [
@@ -8,7 +8,8 @@
           "t": "Bug report - Zigbee Climate sensor not installing",
           "u": "finnamu",
           "l": [
-            "bug"
+            "bug",
+            "reopened-by-user"
           ]
         },
         {
@@ -26,52 +27,52 @@
         {
           "n": "513",
           "u": "dlnraja",
-          "b": "<!-- diag-resolver -->\n### Auto-resolved by Diagnostic Resolver\n\nAll fingerprints in this issue found in **Tuya Unified Zigbee v9.0.334**:\n- `_TZE284_hodyryli` -> **climate_sensor**\n\n**Install:** http"
+          "b": "<!-- diag-resolver -->\n### Auto-resolved by Diagnostic Resolver\n\nAll fingerprints in this issue found in **Tuya Unified Zigbee v9.0.343**:\n- `_TZE284_hodyryli` -> **climate_sensor**\n\n**Install:** http"
         },
         {
           "n": "513",
-          "u": "dlnraja",
-          "b": "<!-- diag-resolver -->\n### Auto-resolved by Diagnostic Resolver\n\nAll fingerprints in this issue found in **Tuya Unified Zigbee v9.0.334**:\n- `_TZE284_hodyryli` -> **climate_sensor**\n\n**Install:** http"
-        },
-        {
-          "n": "513",
-          "u": "dlnraja",
-          "b": "<!-- diag-resolver -->\n### Auto-resolved by Diagnostic Resolver\n\nAll fingerprints in this issue found in **Tuya Unified Zigbee v9.0.334**:\n- `_TZE284_hodyryli` -> **climate_sensor**\n\n**Install:** http"
-        },
-        {
-          "n": "506",
-          "u": "dlnraja",
-          "b": "Closing per your message: the device is functional (temp/humidity/battery working) and you're satisfied with the result. The homey:virtualdriverzigbee label appears when Homey caches an existing devic"
-        },
-        {
-          "n": "506",
-          "u": "dlnraja",
-          "b": "<!-- diag-resolver -->\n### Auto-resolved by Diagnostic Resolver\n\nAll fingerprints in this issue found in **Tuya Unified Zigbee v9.0.300**:\n- `_TZ3000_fllyghyj` -> **climate_sensor**\n\n**Install:** http"
-        },
-        {
-          "n": "506",
           "u": "github-actions[bot]",
-          "b": "<!-- tuya-reopen-bot -->\nThis issue has been **automatically reopened** because @Lalla80111 posted a new comment.\nIt will be reviewed in the next automation cycle.\n\n> If your device is still not worki"
+          "b": "<!-- tuya-reopen-bot -->\nThis issue has been **automatically reopened** because @finnamu posted a new comment.\nIt will be reviewed in the next automation cycle.\n\n> If your device is still not working,"
         },
         {
-          "n": "506",
-          "u": "Lalla80111",
-          "b": "Thanx, for information now I'm at 9.0.300 but still it's using the \"homey:virtualdriverzigbee:driver\". Everything seems to be working fine.\nNot sure why but as long it's working I'm satisfied 🙂\nTried"
+          "n": "513",
+          "u": "finnamu",
+          "b": "Installed v9.0.341. Pairing still gives unkown unit."
         },
         {
-          "n": "506",
+          "n": "513",
           "u": "dlnraja",
-          "b": "Fixed in P75.2. The TS0201 / TS0222 / TY0201 productIds were removed from \\\u0007ir_quality_co2\\ (Homey routing prefers productId over manufacturerName �� was stealing TS0201 from \\climate_sensor\\). The 4 "
+          "b": "Closing - fix verified in v9.0.333 (P82). User: please re-pair after installing from test channel."
         },
         {
-          "n": "511",
+          "n": "513",
           "u": "dlnraja",
-          "b": "Fixed in P14.2 + P19 sync. The manufacturerName \\_TZE284_awepdiwi\\ has been added to the climate_sensor driver (which supports temp/humidity/battery measurements). The soil moisture DP is also handled"
+          "b": "## Fixed in v9.0.333 (P82) - now in test channel\n\n**Root cause**: Your device reports `_TZE284_hodyryli` (lowercase) but the driver had only `_TZE284_HODYRYLI` (uppercase). Homey is case-SENSITIVE in "
         },
         {
-          "n": "506",
+          "n": "513",
           "u": "dlnraja",
-          "b": "<!-- diag-resolver -->\n### Auto-resolved by Diagnostic Resolver\n\nAll fingerprints in this issue found in **Tuya Unified Zigbee v9.0.294**:\n- `_TZ3000_fllyghyj` -> **climate_sensor**\n\n**Install:** http"
+          "b": "<!-- diag-resolver -->\n### Auto-resolved by Diagnostic Resolver\n\nAll fingerprints in this issue found in **Tuya Unified Zigbee v9.0.334**:\n- `_TZE284_hodyryli` -> **climate_sensor**\n\n**Install:** http"
+        },
+        {
+          "n": "513",
+          "u": "finnamu",
+          "b": "The fingerprint is already listed in **driver.compose.json**, but new install still gives **Unknown Zigbee unit**.\nThe sensor worked in an earlier version from April."
+        },
+        {
+          "n": "513",
+          "u": "dlnraja",
+          "b": "<!-- diag-resolver -->\n### Auto-resolved by Diagnostic Resolver\n\nAll fingerprints in this issue found in **Tuya Unified Zigbee v9.0.334**:\n- `_TZE284_hodyryli` -> **climate_sensor**\n\n**Install:** http"
+        },
+        {
+          "n": "513",
+          "u": "dlnraja",
+          "b": "<!-- diag-resolver -->\n### Auto-resolved by Diagnostic Resolver\n\nAll fingerprints in this issue found in **Tuya Unified Zigbee v9.0.334**:\n- `_TZE284_hodyryli` -> **climate_sensor**\n\n**Install:** http"
+        },
+        {
+          "n": "513",
+          "u": "dlnraja",
+          "b": "<!-- diag-resolver -->\n### Auto-resolved by Diagnostic Resolver\n\nAll fingerprints in this issue found in **Tuya Unified Zigbee v9.0.334**:\n- `_TZE284_hodyryli` -> **climate_sensor**\n\n**Install:** http"
         }
       ]
     },
