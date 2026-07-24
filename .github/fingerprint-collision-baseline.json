@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-23T19:03:59.272Z",
+  "generatedAt": "2026-07-24T19:16:23.798Z",
   "description": "Known historical fingerprint collisions. CI fails only for collisions not listed here.",
   "collisions": [
     {
@@ -3510,6 +3510,14 @@
         "water_valve_smart"
       ],
       "note": "Sacred Couple - mfr in 2+ drivers (catch-all + specific)"
+    },
+    {
+      "key": "_TZE204_81yrt3lo|din_rail_meter,presence_sensor_radar",
+      "drivers": [
+        "din_rail_meter",
+        "presence_sensor_radar"
+      ],
+      "note": "Sacred Couple - 81yrt3lo dual energy meter (P87: moved from presence_sensor_radar to din_rail_meter, kept for back-compat)"
     }
   ]
 }
