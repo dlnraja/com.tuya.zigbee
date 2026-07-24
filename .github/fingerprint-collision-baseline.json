@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-24T19:16:23.798Z",
+  "generatedAt": "2026-07-24T20:53:09.831Z",
   "description": "Known historical fingerprint collisions. CI fails only for collisions not listed here.",
   "collisions": [
     {
@@ -3490,6 +3490,30 @@
         "presence_sensor_radar"
       ],
       "note": "Sacred Couple - 81yrt3lo dual energy meter (P87: moved from presence_sensor_radar to din_rail_meter, kept for back-compat)"
+    },
+    {
+      "key": "HOBEIAN|scene_switch_6,switch_plug_1,switch_plug_2,switch_temp_sensor,switch_wall_7gang,water_leak_sensor",
+      "drivers": [
+        "scene_switch_6",
+        "switch_plug_1",
+        "switch_plug_2",
+        "switch_temp_sensor",
+        "switch_wall_7gang",
+        "water_leak_sensor"
+      ],
+      "note": "Sacred Couple - HOBEIAN generic mfr (water leak + switch + scene); added P88 for ZG-222Z coverage"
+    },
+    {
+      "key": "hobeian|scene_switch_6,switch_plug_1,switch_plug_2,switch_temp_sensor,switch_wall_7gang,water_leak_sensor",
+      "drivers": [
+        "scene_switch_6",
+        "switch_plug_1",
+        "switch_plug_2",
+        "switch_temp_sensor",
+        "switch_wall_7gang",
+        "water_leak_sensor"
+      ],
+      "note": "Sacred Couple - HOBEIAN generic mfr (water leak + switch + scene); added P88 for ZG-222Z coverage"
     }
   ]
 }
