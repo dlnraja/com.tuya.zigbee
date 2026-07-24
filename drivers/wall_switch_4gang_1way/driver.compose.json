@@ -11,11 +11,7 @@
     "onoff",
     "onoff.gang2",
     "onoff.gang3",
-    "onoff.gang4",
-    "button.1",
-    "button.2",
-    "button.3",
-    "button.4"
+    "onoff.gang4"
   ],
   "energy": {
     "approximation": {
@@ -384,44 +380,7 @@
   ],
   "id": "wall_switch_4gang_1way",
   "version": "1.0.0",
-  "capabilitiesOptions": {
-    "button.1": {
-      "title": {
-        "en": "Button 1",
-        "fr": "Bouton 1"
-      },
-      "maintenanceAction": true,
-      "getable": false,
-      "setable": false
-    },
-    "button.2": {
-      "title": {
-        "en": "Button 2",
-        "fr": "Bouton 2"
-      },
-      "maintenanceAction": true,
-      "getable": false,
-      "setable": false
-    },
-    "button.3": {
-      "title": {
-        "en": "Button 3",
-        "fr": "Bouton 3"
-      },
-      "maintenanceAction": true,
-      "getable": false,
-      "setable": false
-    },
-    "button.4": {
-      "title": {
-        "en": "Button 4",
-        "fr": "Bouton 4"
-      },
-      "maintenanceAction": true,
-      "getable": false,
-      "setable": false
-    }
-  },
+  "capabilitiesOptions": {},
   "_pidConflictNotes": [
     "// PID-CONFLICT-NOTE TS0726 shared with 21 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
     "// PID-CONFLICT-NOTE TS0004 shared with 14 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
