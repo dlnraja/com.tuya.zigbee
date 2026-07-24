@@ -128843,7 +128843,8 @@
       "_TZ3000_n2egfsli",
       "_tz3000_n2egfsli"
     ],
-    "variantsCount": 2
+    "variantsCount": 2,
+    "addedAt": "2026-06-26T14:42:09.171Z"
   },
   "_tz3000_aa5t61rh": {
     "driverId": "button_wireless_2",
@@ -139971,22 +139972,6 @@
     ],
     "pid": "CK-TLSR8656-SS5-01(7014)",
     "modelIdsCount": 28
-  },
-  "_TZE200_8YGSUHE1": {
-    "driverId": "climate_sensor",
-    "source": "auto-sync",
-    "modelIds": [
-      "TS0215A",
-      "TS0601",
-      "TS0601_wirelesssw"
-    ],
-    "pid": "TS0215A",
-    "modelIdsCount": 3,
-    "variants": [
-      "_TZE200_8YGSUHE1",
-      "_TZE200_8ygsuhe1"
-    ],
-    "variantsCount": 2
   },
   "_TZE200_9DHENR94": {
     "driverId": "climate_sensor",
@@ -174847,93 +174832,6 @@
     "pid": "TS0601",
     "modelIdsCount": 2
   },
-  "_TZE284_81yrt3lo": {
-    "driverId": "power_clamp_meter",
-    "source": "auto-sync",
-    "modelIds": [
-      "CK-BL702-MWS-01",
-      "CK-BL702-MWS-01(7016)",
-      "MG1_5RZ",
-      "SNZB-06P",
-      "SNZB-06P24",
-      "SZLMR10",
-      "TS0004",
-      "TS0203",
-      "TS0225",
-      "TS0601",
-      "TS110E",
-      "ZG-204ZE",
-      "ZG-204ZH",
-      "ZG-204ZK",
-      "ZG-204ZL",
-      "ZG-204ZM",
-      "ZG-204ZQ",
-      "ZG-204ZV",
-      "ZG-205Z",
-      "ZG-205ZL",
-      "ZG-302ZL",
-      "ZG-302ZM",
-      "ZP-301Z"
-    ],
-    "pid": "CK-BL702-MWS-01",
-    "modelIdsCount": 23,
-    "variants": [
-      "_TZE284_81YRT3LO",
-      "_TZE284_81yrt3lo"
-    ],
-    "variantsCount": 2
-  },
-  "_TZE204_81yrt3lo": {
-    "driverId": "power_clamp_meter",
-    "source": "auto-sync",
-    "modelIds": [
-      "CK-BL702-MWS-01",
-      "CK-BL702-MWS-01(7016)",
-      "MG1_5RZ",
-      "SNZB-06P",
-      "SNZB-06P24",
-      "SZLMR10",
-      "TS0004",
-      "TS0203",
-      "TS0225",
-      "TS0601",
-      "TS110E",
-      "ZG-204ZE",
-      "ZG-204ZH",
-      "ZG-204ZK",
-      "ZG-204ZL",
-      "ZG-204ZM",
-      "ZG-204ZQ",
-      "ZG-204ZV",
-      "ZG-205Z",
-      "ZG-205ZL",
-      "ZG-302ZL",
-      "ZG-302ZM",
-      "ZP-301Z"
-    ],
-    "pid": "CK-BL702-MWS-01",
-    "modelIdsCount": 23,
-    "variants": [
-      "_TZE204_81YRT3LO",
-      "_TZE204_81yrt3lo"
-    ],
-    "variantsCount": 2
-  },
-  "_TZE200_81yrt3lo": {
-    "driverId": "power_clamp_meter",
-    "source": "auto-sync",
-    "modelIds": [
-      "TS0601",
-      "TS0601_clamp"
-    ],
-    "pid": "TS0601",
-    "modelIdsCount": 2,
-    "variants": [
-      "_TZE200_81YRT3LO",
-      "_TZE200_81yrt3lo"
-    ],
-    "variantsCount": 2
-  },
   "_TZ3000_BYFDWKTR": {
     "driverId": "power_meter",
     "source": "auto-sync",
@@ -175419,42 +175317,6 @@
     "pid": "CK-BL702-MWS-01",
     "modelIdsCount": 23
   },
-  "_TZE200_2AAELWXK": {
-    "driverId": "presence_sensor_radar",
-    "source": "auto-sync",
-    "modelIds": [
-      "CK-BL702-MWS-01",
-      "CK-BL702-MWS-01(7016)",
-      "MG1_5RZ",
-      "SNZB-06P",
-      "SNZB-06P24",
-      "SZLMR10",
-      "TS0004",
-      "TS0203",
-      "TS0225",
-      "TS0601",
-      "TS110E",
-      "ZG-204ZE",
-      "ZG-204ZH",
-      "ZG-204ZK",
-      "ZG-204ZL",
-      "ZG-204ZM",
-      "ZG-204ZQ",
-      "ZG-204ZV",
-      "ZG-205Z",
-      "ZG-205ZL",
-      "ZG-302ZL",
-      "ZG-302ZM",
-      "ZP-301Z"
-    ],
-    "pid": "CK-BL702-MWS-01",
-    "modelIdsCount": 23,
-    "variants": [
-      "_TZE200_2AAELWXK",
-      "_TZE200_2aaelwxk"
-    ],
-    "variantsCount": 2
-  },
   "_TZE200_5B5NOETO": {
     "driverId": "presence_sensor_radar",
     "source": "auto-sync",
@@ -175860,42 +175722,6 @@
     "pid": "CK-BL702-MWS-01",
     "modelIdsCount": 23
   },
-  "_TZE200_KB5NOETO": {
-    "driverId": "presence_sensor_radar",
-    "source": "auto-sync",
-    "modelIds": [
-      "CK-BL702-MWS-01",
-      "CK-BL702-MWS-01(7016)",
-      "MG1_5RZ",
-      "SNZB-06P",
-      "SNZB-06P24",
-      "SZLMR10",
-      "TS0004",
-      "TS0203",
-      "TS0225",
-      "TS0601",
-      "TS110E",
-      "ZG-204ZE",
-      "ZG-204ZH",
-      "ZG-204ZK",
-      "ZG-204ZL",
-      "ZG-204ZM",
-      "ZG-204ZQ",
-      "ZG-204ZV",
-      "ZG-205Z",
-      "ZG-205ZL",
-      "ZG-302ZL",
-      "ZG-302ZM",
-      "ZP-301Z"
-    ],
-    "pid": "CK-BL702-MWS-01",
-    "modelIdsCount": 23,
-    "variants": [
-      "_TZE200_KB5NOETO",
-      "_TZE200_kb5noeto"
-    ],
-    "variantsCount": 2
-  },
   "_TZE200_LAOKFQWU": {
     "driverId": "presence_sensor_radar",
     "source": "auto-sync",
@@ -176112,42 +175938,6 @@
     ],
     "pid": "CK-BL702-MWS-01",
     "modelIdsCount": 23
-  },
-  "_TZE200_PPUJ1VEM": {
-    "driverId": "presence_sensor_radar",
-    "source": "auto-sync",
-    "modelIds": [
-      "CK-BL702-MWS-01",
-      "CK-BL702-MWS-01(7016)",
-      "MG1_5RZ",
-      "SNZB-06P",
-      "SNZB-06P24",
-      "SZLMR10",
-      "TS0004",
-      "TS0203",
-      "TS0225",
-      "TS0601",
-      "TS110E",
-      "ZG-204ZE",
-      "ZG-204ZH",
-      "ZG-204ZK",
-      "ZG-204ZL",
-      "ZG-204ZM",
-      "ZG-204ZQ",
-      "ZG-204ZV",
-      "ZG-205Z",
-      "ZG-205ZL",
-      "ZG-302ZL",
-      "ZG-302ZM",
-      "ZP-301Z"
-    ],
-    "pid": "CK-BL702-MWS-01",
-    "modelIdsCount": 23,
-    "variants": [
-      "_TZE200_PPUJ1VEM",
-      "_TZE200_ppuj1vem"
-    ],
-    "variantsCount": 2
   },
   "_TZE200_QASJIF9E": {
     "driverId": "presence_sensor_radar",
@@ -177234,42 +177024,6 @@
     "pid": "CK-BL702-MWS-01",
     "modelIdsCount": 23
   },
-  "_TZE204_JVA8INK8": {
-    "driverId": "presence_sensor_radar",
-    "source": "auto-sync",
-    "modelIds": [
-      "CK-BL702-MWS-01",
-      "CK-BL702-MWS-01(7016)",
-      "MG1_5RZ",
-      "SNZB-06P",
-      "SNZB-06P24",
-      "SZLMR10",
-      "TS0004",
-      "TS0203",
-      "TS0225",
-      "TS0601",
-      "TS110E",
-      "ZG-204ZE",
-      "ZG-204ZH",
-      "ZG-204ZK",
-      "ZG-204ZL",
-      "ZG-204ZM",
-      "ZG-204ZQ",
-      "ZG-204ZV",
-      "ZG-205Z",
-      "ZG-205ZL",
-      "ZG-302ZL",
-      "ZG-302ZM",
-      "ZP-301Z"
-    ],
-    "pid": "CK-BL702-MWS-01",
-    "modelIdsCount": 23,
-    "variants": [
-      "_TZE204_JVA8INK8",
-      "_tze204_jva8ink8"
-    ],
-    "variantsCount": 2
-  },
   "_TZE204_KYHBRFYL": {
     "driverId": "presence_sensor_radar",
     "source": "auto-sync",
@@ -177362,42 +177116,6 @@
     ],
     "pid": "CK-BL702-MWS-01",
     "modelIdsCount": 23
-  },
-  "_TZE204_LYETPPRM": {
-    "driverId": "presence_sensor_radar",
-    "source": "auto-sync",
-    "modelIds": [
-      "CK-BL702-MWS-01",
-      "CK-BL702-MWS-01(7016)",
-      "MG1_5RZ",
-      "SNZB-06P",
-      "SNZB-06P24",
-      "SZLMR10",
-      "TS0004",
-      "TS0203",
-      "TS0225",
-      "TS0601",
-      "TS110E",
-      "ZG-204ZE",
-      "ZG-204ZH",
-      "ZG-204ZK",
-      "ZG-204ZL",
-      "ZG-204ZM",
-      "ZG-204ZQ",
-      "ZG-204ZV",
-      "ZG-205Z",
-      "ZG-205ZL",
-      "ZG-302ZL",
-      "ZG-302ZM",
-      "ZP-301Z"
-    ],
-    "pid": "CK-BL702-MWS-01",
-    "modelIdsCount": 23,
-    "variants": [
-      "_TZE204_LYETPPRM",
-      "_tze204_lyetpprm"
-    ],
-    "variantsCount": 2
   },
   "_TZE204_MRF6VTUA": {
     "driverId": "presence_sensor_radar",
@@ -177863,42 +177581,6 @@
     ],
     "pid": "CK-BL702-MWS-01",
     "modelIdsCount": 23
-  },
-  "_TZE204_WUKB7RHC": {
-    "driverId": "presence_sensor_radar",
-    "source": "auto-sync",
-    "modelIds": [
-      "CK-BL702-MWS-01",
-      "CK-BL702-MWS-01(7016)",
-      "MG1_5RZ",
-      "SNZB-06P",
-      "SNZB-06P24",
-      "SZLMR10",
-      "TS0004",
-      "TS0203",
-      "TS0225",
-      "TS0601",
-      "TS110E",
-      "ZG-204ZE",
-      "ZG-204ZH",
-      "ZG-204ZK",
-      "ZG-204ZL",
-      "ZG-204ZM",
-      "ZG-204ZQ",
-      "ZG-204ZV",
-      "ZG-205Z",
-      "ZG-205ZL",
-      "ZG-302ZL",
-      "ZG-302ZM",
-      "ZP-301Z"
-    ],
-    "pid": "CK-BL702-MWS-01",
-    "modelIdsCount": 23,
-    "variants": [
-      "_TZE204_WUKB7RHC",
-      "_tze204_wukb7rhc"
-    ],
-    "variantsCount": 2
   },
   "_TZE204_XPQ2RBER": {
     "driverId": "presence_sensor_radar",
@@ -179078,42 +178760,6 @@
     "pid": "CK-BL702-MWS-01",
     "modelIdsCount": 23
   },
-  "_TZE200_jva8ink8": {
-    "driverId": "presence_sensor_radar",
-    "source": "auto-sync",
-    "modelIds": [
-      "CK-BL702-MWS-01",
-      "CK-BL702-MWS-01(7016)",
-      "MG1_5RZ",
-      "SNZB-06P",
-      "SNZB-06P24",
-      "SZLMR10",
-      "TS0004",
-      "TS0203",
-      "TS0225",
-      "TS0601",
-      "TS110E",
-      "ZG-204ZE",
-      "ZG-204ZH",
-      "ZG-204ZK",
-      "ZG-204ZL",
-      "ZG-204ZM",
-      "ZG-204ZQ",
-      "ZG-204ZV",
-      "ZG-205Z",
-      "ZG-205ZL",
-      "ZG-302ZL",
-      "ZG-302ZM",
-      "ZP-301Z"
-    ],
-    "pid": "CK-BL702-MWS-01",
-    "modelIdsCount": 23,
-    "variants": [
-      "_TZE200_jva8ink8",
-      "_tze200_jva8ink8"
-    ],
-    "variantsCount": 2
-  },
   "_tze200_dtzziy1e": {
     "driverId": "presence_sensor_radar",
     "source": "auto-sync",
@@ -179273,42 +178919,6 @@
     ],
     "pid": "CK-BL702-MWS-01",
     "modelIdsCount": 23
-  },
-  "_TZE200_lyetpprm": {
-    "driverId": "presence_sensor_radar",
-    "source": "auto-sync",
-    "modelIds": [
-      "CK-BL702-MWS-01",
-      "CK-BL702-MWS-01(7016)",
-      "MG1_5RZ",
-      "SNZB-06P",
-      "SNZB-06P24",
-      "SZLMR10",
-      "TS0004",
-      "TS0203",
-      "TS0225",
-      "TS0601",
-      "TS110E",
-      "ZG-204ZE",
-      "ZG-204ZH",
-      "ZG-204ZK",
-      "ZG-204ZL",
-      "ZG-204ZM",
-      "ZG-204ZQ",
-      "ZG-204ZV",
-      "ZG-205Z",
-      "ZG-205ZL",
-      "ZG-302ZL",
-      "ZG-302ZM",
-      "ZP-301Z"
-    ],
-    "pid": "CK-BL702-MWS-01",
-    "modelIdsCount": 23,
-    "variants": [
-      "_TZE200_lyetpprm",
-      "_tze200_lyetpprm"
-    ],
-    "variantsCount": 2
   },
   "_TZE204_debczeci": {
     "driverId": "presence_sensor_radar",
@@ -179712,78 +179322,6 @@
     ],
     "pid": "CK-BL702-MWS-01",
     "modelIdsCount": 23
-  },
-  "_TZE204_clrdrnya": {
-    "driverId": "presence_sensor_radar",
-    "source": "auto-sync",
-    "modelIds": [
-      "CK-BL702-MWS-01",
-      "CK-BL702-MWS-01(7016)",
-      "MG1_5RZ",
-      "SNZB-06P",
-      "SNZB-06P24",
-      "SZLMR10",
-      "TS0004",
-      "TS0203",
-      "TS0225",
-      "TS0601",
-      "TS110E",
-      "ZG-204ZE",
-      "ZG-204ZH",
-      "ZG-204ZK",
-      "ZG-204ZL",
-      "ZG-204ZM",
-      "ZG-204ZQ",
-      "ZG-204ZV",
-      "ZG-205Z",
-      "ZG-205ZL",
-      "ZG-302ZL",
-      "ZG-302ZM",
-      "ZP-301Z"
-    ],
-    "pid": "CK-BL702-MWS-01",
-    "modelIdsCount": 23,
-    "variants": [
-      "_TZE204_clrdrnya",
-      "_tze204_clrdrnya"
-    ],
-    "variantsCount": 2
-  },
-  "_TZE200_clrdrnya": {
-    "driverId": "presence_sensor_radar",
-    "source": "auto-sync",
-    "modelIds": [
-      "CK-BL702-MWS-01",
-      "CK-BL702-MWS-01(7016)",
-      "MG1_5RZ",
-      "SNZB-06P",
-      "SNZB-06P24",
-      "SZLMR10",
-      "TS0004",
-      "TS0203",
-      "TS0225",
-      "TS0601",
-      "TS110E",
-      "ZG-204ZE",
-      "ZG-204ZH",
-      "ZG-204ZK",
-      "ZG-204ZL",
-      "ZG-204ZM",
-      "ZG-204ZQ",
-      "ZG-204ZV",
-      "ZG-205Z",
-      "ZG-205ZL",
-      "ZG-302ZL",
-      "ZG-302ZM",
-      "ZP-301Z"
-    ],
-    "pid": "CK-BL702-MWS-01",
-    "modelIdsCount": 23,
-    "variants": [
-      "_TZE200_clrdrnya",
-      "_tze200_clrdrnya"
-    ],
-    "variantsCount": 2
   },
   "_TZE204_r0jdjrvi": {
     "driverId": "presence_sensor_radar",
@@ -184384,7 +183922,8 @@
       "_TZE200_7hfcudw5",
       "_tze200_7hfcudw5"
     ],
-    "variantsCount": 2
+    "variantsCount": 2,
+    "addedAt": "2026-06-26T14:42:09.180Z"
   },
   "_tze200_rxqls8v0": {
     "driverId": "sensor_contact_motion",
@@ -184399,7 +183938,8 @@
       "_TZE200_rxqls8v0",
       "_tze200_rxqls8v0"
     ],
-    "variantsCount": 2
+    "variantsCount": 2,
+    "addedAt": "2026-06-26T14:42:09.180Z"
   },
   "_tze204_2aaelwxk": {
     "driverId": "presence_sensor_radar",
@@ -184486,7 +184026,8 @@
       "_TZE204_rxqls8v0",
       "_tze204_rxqls8v0"
     ],
-    "variantsCount": 2
+    "variantsCount": 2,
+    "addedAt": "2026-06-26T14:42:09.180Z"
   },
   "_TZE200_nlrfgpny": {
     "driverId": "sensor_contact_motion",
@@ -192049,53 +191590,6 @@
     ],
     "pid": "01MINIZB",
     "modelIdsCount": 34
-  },
-  "_TZ3000_BSEED": {
-    "driverId": "switch_1gang",
-    "source": "auto-sync",
-    "modelIds": [
-      "01MINIZB",
-      "BASICZBR3",
-      "S26R2ZB",
-      "S31ZB",
-      "TS0001",
-      "TS0001_power",
-      "TS0001_switch",
-      "TS0001_switch_module",
-      "TS0002",
-      "TS0003",
-      "TS000F",
-      "TS0011",
-      "TS0012",
-      "TS0014",
-      "TS0041",
-      "TS0101",
-      "TS0111",
-      "TS011F",
-      "TS0601",
-      "TS0726",
-      "TS110E",
-      "TS130F",
-      "TS4100",
-      "ZBM5-1C-120",
-      "ZBM5-2C-120",
-      "ZBM5-3C-120",
-      "ZBMINI",
-      "ZBMINIL2",
-      "ZBMINIL2-R2",
-      "ZBMINIR",
-      "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
-    ],
-    "pid": "01MINIZB",
-    "modelIdsCount": 34,
-    "variants": [
-      "_TZ3000_BSEED",
-      "_TZ3000_bseed"
-    ],
-    "variantsCount": 2
   },
   "_TZ3000_BZCZR4E1": {
     "driverId": "switch_1gang",
@@ -204297,7 +203791,8 @@
       "_TZ3000_wzmuk9ai",
       "_tz3000_wzmuk9ai"
     ],
-    "variantsCount": 2
+    "variantsCount": 2,
+    "addedAt": "2026-06-26T14:42:09.178Z"
   },
   "_TYZB01_7YIDYQXD": {
     "driverId": "switch_1gang",
@@ -207597,15 +207092,6 @@
     "driverId": "switch_2gang",
     "source": "auto-sync"
   },
-  "_TZ3000_L9BRJWAU": {
-    "driverId": "switch_2gang",
-    "source": "auto-sync",
-    "variants": [
-      "_TZ3000_L9BRJWAU",
-      "_TZ3000_l9brjwau"
-    ],
-    "variantsCount": 2
-  },
   "_TZ3000_MTNPT6WS": {
     "driverId": "switch_2gang",
     "source": "auto-sync"
@@ -209074,15 +208560,6 @@
     "pid": "JZ-ZB-004",
     "modelIdsCount": 16
   },
-  "_TZ3000_XK5UDND6": {
-    "driverId": "switch_4gang",
-    "source": "auto-sync",
-    "variants": [
-      "_TZ3000_XK5UDND6",
-      "_TZ3000_xk5udnd6"
-    ],
-    "variantsCount": 2
-  },
   "_TZ3000_Z6ZPLT0Y": {
     "driverId": "switch_4gang",
     "source": "auto-sync",
@@ -210404,36 +209881,6 @@
     ],
     "pid": "014G2461",
     "modelIdsCount": 17
-  },
-  "_TZE200_ne4pikwm": {
-    "driverId": "thermostatic_radiator_valve",
-    "source": "auto-sync",
-    "modelIds": [
-      "014G2461",
-      "014G2463",
-      "SEA801-Zigbee",
-      "SPZB0001",
-      "SPZB0003",
-      "STZB402",
-      "STZB403",
-      "TRV601",
-      "TRV602",
-      "TRVZB",
-      "TS0601",
-      "TV01-ZB",
-      "TV02-ZB",
-      "Zen-01",
-      "eTRV0100",
-      "lumi.airrtc.agl001",
-      "lumi.airrtc.vrfegl01"
-    ],
-    "pid": "014G2461",
-    "modelIdsCount": 17,
-    "variants": [
-      "_TZE200_ne4pikwm",
-      "_tze200_ne4pikwm"
-    ],
-    "variantsCount": 2
   },
   "_TZE204_xalsoe3m": {
     "driverId": "thermostatic_radiator_valve",
@@ -212663,27 +212110,6 @@
     ],
     "pid": "CK-BL702-MWS-01(7016)",
     "modelIdsCount": 8
-  },
-  "_TZ3000_KY0FQ4HO": {
-    "driverId": "vibration_sensor",
-    "source": "auto-sync",
-    "modelIds": [
-      "CK-BL702-MWS-01(7016)",
-      "TS011F",
-      "TS0209",
-      "TS0210",
-      "TS0601",
-      "ZG-102ZM",
-      "ZG-103Z",
-      "ZG-103ZL"
-    ],
-    "pid": "CK-BL702-MWS-01(7016)",
-    "modelIdsCount": 8,
-    "variants": [
-      "_TZ3000_KY0FQ4HO",
-      "_TZ3000_ky0fq4ho"
-    ],
-    "variantsCount": 2
   },
   "_TZ3000_LQPT3MVR": {
     "driverId": "vibration_sensor",
@@ -215252,22 +214678,6 @@
     "pid": "TS0004",
     "modelIdsCount": 3
   },
-  "_TZ3002_PZAO9LS1": {
-    "driverId": "wall_switch_4gang_1way",
-    "source": "auto-sync",
-    "modelIds": [
-      "TS0004",
-      "TS0014",
-      "TS0726"
-    ],
-    "pid": "TS0004",
-    "modelIdsCount": 3,
-    "variants": [
-      "_TZ3002_PZAO9LS1",
-      "_TZ3002_pzao9ls1"
-    ],
-    "variantsCount": 2
-  },
   "_TZ3000_mrduubod": {
     "driverId": "wall_switch_4gang_1way",
     "source": "auto-sync",
@@ -216446,7 +215856,8 @@
       "_TZ3000_fvm13j8w",
       "_tz3000_fvm13j8w"
     ],
-    "variantsCount": 2
+    "variantsCount": 2,
+    "addedAt": "2026-06-26T14:42:09.191Z"
   },
   "_tz3000_fxjo6gfe": {
     "driverId": "water_leak_sensor_tuya",
@@ -216532,7 +215943,8 @@
       "_TZ3000_js34cuma",
       "_tz3000_js34cuma"
     ],
-    "variantsCount": 2
+    "variantsCount": 2,
+    "addedAt": "2026-06-26T14:42:09.191Z"
   },
   "_tz3000_kstbkt6a": {
     "driverId": "water_leak_sensor_tuya",
@@ -216564,7 +215976,8 @@
       "_TZ3000_kstbkt6a",
       "_tz3000_kstbkt6a"
     ],
-    "variantsCount": 2
+    "variantsCount": 2,
+    "addedAt": "2026-06-26T14:42:09.191Z"
   },
   "_tz3000_kyakwbf8": {
     "driverId": "water_leak_sensor_tuya",
@@ -216623,7 +216036,8 @@
       "_TZ3000_mugyhz0q",
       "_tz3000_mugyhz0q"
     ],
-    "variantsCount": 2
+    "variantsCount": 2,
+    "addedAt": "2026-06-26T14:42:09.191Z"
   },
   "_tz3000_o9f2zqln": {
     "driverId": "water_leak_sensor_tuya",
@@ -216763,7 +216177,8 @@
       "_TZ3000_rurvxhcx",
       "_tz3000_rurvxhcx"
     ],
-    "variantsCount": 2
+    "variantsCount": 2,
+    "addedAt": "2026-06-26T14:42:09.191Z"
   },
   "_tz3000_sq510a": {
     "driverId": "water_leak_sensor_tuya",
@@ -216822,7 +216237,8 @@
       "_TZ3000_t6jriawg",
       "_tz3000_t6jriawg"
     ],
-    "variantsCount": 2
+    "variantsCount": 2,
+    "addedAt": "2026-06-26T14:42:09.191Z"
   },
   "_tz3000_wuep9zng": {
     "driverId": "water_leak_sensor_tuya",
@@ -216908,7 +216324,8 @@
       "_TZE204_qq9mpfhw",
       "_tze204_qq9mpfhw"
     ],
-    "variantsCount": 2
+    "variantsCount": 2,
+    "addedAt": "2026-06-26T14:42:09.191Z"
   },
   "tuyatec-bduz1xxp": {
     "driverId": "water_leak_sensor_tuya",
@@ -217087,7 +216504,8 @@
       "_TZ3000_k4ej3ww2",
       "_tz3000_k4ej3ww2"
     ],
-    "variantsCount": 2
+    "variantsCount": 2,
+    "addedAt": "2026-06-26T14:42:09.191Z"
   },
   "_tz3000_kyb656no": {
     "driverId": "water_leak_sensor_tuya",
@@ -217119,7 +216537,8 @@
       "_TZ3000_kyb656no",
       "_tz3000_kyb656no"
     ],
-    "variantsCount": 2
+    "variantsCount": 2,
+    "addedAt": "2026-06-26T14:42:09.191Z"
   },
   "_tz3000_mqiev3jk": {
     "driverId": "water_leak_sensor_tuya",
@@ -217178,7 +216597,8 @@
       "_TZ3000_upgcbody",
       "_tz3000_upgcbody"
     ],
-    "variantsCount": 2
+    "variantsCount": 2,
+    "addedAt": "2026-06-26T14:42:09.191Z"
   },
   "_tz3000_kxlmv9ag": {
     "driverId": "water_leak_sensor_tuya",
@@ -217844,7 +217264,8 @@
       "_TZE200_SH1BTABB",
       "_tze200_sh1btabb"
     ],
-    "variantsCount": 2
+    "variantsCount": 2,
+    "addedAt": "2026-06-26T14:42:09.191Z"
   },
   "_tze200_fphxkxue": {
     "driverId": "water_valve_smart",
@@ -218022,440 +217443,268 @@
     "pid": "TS0207",
     "modelIdsCount": 1
   },
-  "_TZ3000_n2egfsli": {
-    "driverId": "air_purifier_contact",
-    "source": "auto-sync",
-    "addedAt": "2026-06-26T14:42:09.171Z",
-    "modelIds": [
-      "TS0203",
-      "TS0601",
-      "TS0601_generic",
-      "TS0603"
-    ],
-    "pid": "TS0203",
-    "modelIdsCount": 4,
-    "variants": [
-      "_TZ3000_n2egfsli",
-      "_tz3000_n2egfsli"
-    ],
-    "variantsCount": 2
-  },
-  "_TZE200_8ygsuhe1": {
-    "driverId": "air_quality_co2",
-    "source": "auto-sync",
-    "addedAt": "2026-06-26T14:42:09.171Z",
-    "modelIds": [
-      "TS0005",
-      "TS0006",
-      "TS0601"
-    ],
-    "pid": "TS0005",
-    "modelIdsCount": 3,
-    "variants": [
-      "_TZE200_8YGSUHE1",
-      "_TZE200_8ygsuhe1"
-    ],
-    "variantsCount": 2
-  },
-  "_TZ3000_l9brjwau": {
-    "driverId": "button_wireless_switch",
-    "source": "auto-sync",
-    "addedAt": "2026-06-26T14:42:09.174Z",
-    "modelIds": [
-      "01MINIZB",
-      "BASICZBR3",
-      "S26R2ZB",
-      "S31ZB",
-      "TS0001",
-      "TS0001_power",
-      "TS0001_switch",
-      "TS0001_switch_module",
-      "TS0002",
-      "TS0003",
-      "TS000F",
-      "TS0011",
-      "TS0012",
-      "TS0014",
-      "TS0041",
-      "TS0101",
-      "TS0111",
-      "TS011F",
-      "TS0601",
-      "TS0726",
-      "TS110E",
-      "TS130F",
-      "TS4100",
-      "ZBM5-1C-120",
-      "ZBM5-2C-120",
-      "ZBM5-3C-120",
-      "ZBMINI",
-      "ZBMINIL2",
-      "ZBMINIL2-R2",
-      "ZBMINIR",
-      "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
-    ],
-    "pid": "01MINIZB",
-    "modelIdsCount": 34,
-    "variants": [
-      "_TZ3000_L9BRJWAU",
-      "_TZ3000_l9brjwau"
-    ],
-    "variantsCount": 2
-  },
-  "_TZ3000_wzmuk9ai": {
-    "driverId": "device_air_purifier_plug",
-    "source": "auto-sync",
-    "addedAt": "2026-06-26T14:42:09.178Z",
-    "variants": [
-      "_TZ3000_wzmuk9ai",
-      "_tz3000_wzmuk9ai"
-    ],
-    "variantsCount": 2
-  },
-  "_TZE204_81YRT3LO": {
-    "driverId": "din_rail_meter",
-    "source": "auto-sync",
-    "addedAt": "2026-06-26T14:42:09.178Z",
-    "variants": [
-      "_TZE204_81YRT3LO",
-      "_TZE204_81yrt3lo"
-    ],
-    "variantsCount": 2
-  },
-  "_TZE284_81YRT3LO": {
-    "driverId": "din_rail_meter",
-    "source": "auto-sync",
-    "addedAt": "2026-06-26T14:42:09.178Z",
-    "variants": [
-      "_TZE284_81YRT3LO",
-      "_TZE284_81yrt3lo"
-    ],
-    "variantsCount": 2
-  },
-  "_TZE200_81YRT3LO": {
-    "driverId": "din_rail_meter",
-    "source": "auto-sync",
-    "addedAt": "2026-06-26T14:42:09.178Z",
-    "variants": [
-      "_TZE200_81YRT3LO",
-      "_TZE200_81yrt3lo"
-    ],
-    "variantsCount": 2
-  },
-  "_TZ3002_pzao9ls1": {
-    "driverId": "gas_sensor_switch",
-    "source": "auto-sync",
-    "addedAt": "2026-06-26T14:42:09.179Z",
-    "modelIds": [
-      "TS0004",
-      "TS0014",
-      "TS0726"
-    ],
-    "pid": "TS0004",
-    "modelIdsCount": 3,
-    "variants": [
-      "_TZ3002_PZAO9LS1",
-      "_TZ3002_pzao9ls1"
-    ],
-    "variantsCount": 2
-  },
-  "_TZ3000_xk5udnd6": {
-    "driverId": "gas_sensor_switch",
-    "source": "auto-sync",
-    "addedAt": "2026-06-26T14:42:09.179Z",
-    "modelIds": [
-      "3315-S",
-      "3315-Seu",
-      "CK-TLSR8656-SS5-01(7019)",
-      "HS1WL",
-      "LS21001",
-      "SJCGQ11LM",
-      "SJCGQ12LM",
-      "SJCGQ13LM",
-      "SNZB-05",
-      "SNZB-05P",
-      "SQ510A",
-      "TS0001",
-      "TS0207",
-      "TS0601",
-      "ZG-222Z",
-      "ZG-223Z",
-      "_tz3000_eit6l5",
-      "_tz3000_k4ej3ww2",
-      "_tz3000_kyb656no",
-      "lumi.sensor_wleak.aq1"
-    ],
-    "pid": "3315-S",
-    "modelIdsCount": 20,
-    "variants": [
-      "_TZ3000_XK5UDND6",
-      "_TZ3000_xk5udnd6"
-    ],
-    "variantsCount": 2
-  },
-  "_TZ3000_bseed": {
-    "driverId": "gas_sensor_switch",
-    "source": "auto-sync",
-    "addedAt": "2026-06-26T14:42:09.179Z",
-    "variants": [
-      "_TZ3000_BSEED",
-      "_TZ3000_bseed"
-    ],
-    "variantsCount": 2
-  },
-  "_TZE204_3towulqd": {
-    "driverId": "presence_sensor_radar",
-    "source": "p64.4-stale-fix",
-    "variants": [
-      "_TZE204_3towulqd",
-      "_tze204_3towulqd"
-    ],
-    "variantsCount": 2
-  },
-  "_TZE200_7hfcudw5": {
-    "driverId": "motion_sensor",
-    "source": "auto-sync",
-    "addedAt": "2026-06-26T14:42:09.180Z",
-    "variants": [
-      "_TZE200_7hfcudw5",
-      "_tze200_7hfcudw5"
-    ],
-    "variantsCount": 2
-  },
-  "_TZE200_myd45weu": {
-    "driverId": "soilsensor_2",
-    "source": "homey-forum-2097",
-    "addedAt": "2026-06-26T14:42:09.180Z",
-    "modelIds": [
-      "Arteco",
-      "CS-201Z",
-      "TS0001",
-      "TS0601",
-      "ZG-303Z"
-    ],
-    "pid": "Arteco",
-    "modelIdsCount": 5,
-    "variants": [
-      "_TZE200_myd45weu",
-      "_tze200_myd45weu"
-    ],
-    "variantsCount": 2
-  },
-  "_TZE200_rxqls8v0": {
-    "driverId": "motion_sensor",
-    "source": "auto-sync",
-    "addedAt": "2026-06-26T14:42:09.180Z",
-    "variants": [
-      "_TZE200_rxqls8v0",
-      "_tze200_rxqls8v0"
-    ],
-    "variantsCount": 2
-  },
-  "_TZE204_rxqls8v0": {
-    "driverId": "motion_sensor",
-    "source": "auto-sync",
-    "addedAt": "2026-06-26T14:42:09.180Z",
-    "variants": [
-      "_TZE204_rxqls8v0",
-      "_tze204_rxqls8v0"
-    ],
-    "variantsCount": 2
-  },
-  "_TZE200_2aaelwxk": {
-    "driverId": "presence_sensor_radar",
-    "source": "p64.4-stale-fix",
-    "modelIds": [
-      "CK-BL702-MWS-01",
-      "CK-BL702-MWS-01(7016)",
-      "MG1_5RZ",
-      "SNZB-06P",
-      "SNZB-06P24",
-      "SZLMR10",
-      "TS0004",
-      "TS0203",
-      "TS0225",
-      "TS0601",
-      "TS110E",
-      "ZG-204ZE",
-      "ZG-204ZH",
-      "ZG-204ZK",
-      "ZG-204ZL",
-      "ZG-204ZM",
-      "ZG-204ZQ",
-      "ZG-204ZV",
-      "ZG-205Z",
-      "ZG-205ZL",
-      "ZG-302ZL",
-      "ZG-302ZM",
-      "ZP-301Z"
-    ],
-    "pid": "CK-BL702-MWS-01",
-    "modelIdsCount": 23,
-    "variants": [
-      "_TZE200_2AAELWXK",
-      "_TZE200_2aaelwxk"
-    ],
-    "variantsCount": 2
-  },
-  "_TZE204_2aaelwxk": {
-    "driverId": "presence_sensor_radar",
-    "source": "p64.4-stale-fix",
-    "variants": [
-      "_TZE204_2aaelwxk",
-      "_tze204_2aaelwxk"
-    ],
-    "variantsCount": 2
-  },
-  "_TZE200_kb5noeto": {
-    "driverId": "presence_sensor_radar",
-    "source": "p64.4-stale-fix",
-    "modelIds": [
-      "CK-BL702-MWS-01",
-      "CK-BL702-MWS-01(7016)",
-      "MG1_5RZ",
-      "SNZB-06P",
-      "SNZB-06P24",
-      "SZLMR10",
-      "TS0004",
-      "TS0203",
-      "TS0225",
-      "TS0601",
-      "TS110E",
-      "ZG-204ZE",
-      "ZG-204ZH",
-      "ZG-204ZK",
-      "ZG-204ZL",
-      "ZG-204ZM",
-      "ZG-204ZQ",
-      "ZG-204ZV",
-      "ZG-205Z",
-      "ZG-205ZL",
-      "ZG-302ZL",
-      "ZG-302ZM",
-      "ZP-301Z"
-    ],
-    "pid": "CK-BL702-MWS-01",
-    "modelIdsCount": 23,
-    "variants": [
-      "_TZE200_KB5NOETO",
-      "_TZE200_kb5noeto"
-    ],
-    "variantsCount": 2
-  },
-  "_TZE200_ppuj1vem": {
-    "driverId": "motion_sensor",
-    "source": "auto-sync",
-    "addedAt": "2026-06-26T14:42:09.180Z",
-    "modelIds": [
-      "CK-BL702-MWS-01",
-      "CK-BL702-MWS-01(7016)",
-      "MG1_5RZ",
-      "SNZB-06P",
-      "SNZB-06P24",
-      "SZLMR10",
-      "TS0004",
-      "TS0203",
-      "TS0225",
-      "TS0601",
-      "TS110E",
-      "ZG-204ZE",
-      "ZG-204ZH",
-      "ZG-204ZK",
-      "ZG-204ZL",
-      "ZG-204ZM",
-      "ZG-204ZQ",
-      "ZG-204ZV",
-      "ZG-205Z",
-      "ZG-205ZL",
-      "ZG-302ZL",
-      "ZG-302ZM",
-      "ZP-301Z"
-    ],
-    "pid": "CK-BL702-MWS-01",
-    "modelIdsCount": 23,
-    "variants": [
-      "_TZE200_PPUJ1VEM",
-      "_TZE200_ppuj1vem"
-    ],
-    "variantsCount": 2
-  },
   "_tze204_clrdrnya": {
-    "driverId": "motion_sensor_radar_mmwave",
+    "driverId": "presence_sensor_radar",
     "source": "auto-sync",
-    "addedAt": "2026-06-26T14:42:09.180Z",
+    "modelIds": [
+      "CK-BL702-MWS-01",
+      "CK-BL702-MWS-01(7016)",
+      "MG1_5RZ",
+      "SNZB-06P",
+      "SNZB-06P24",
+      "SZLMR10",
+      "TS0004",
+      "TS0203",
+      "TS0225",
+      "TS0601",
+      "TS110E",
+      "ZG-204ZE",
+      "ZG-204ZH",
+      "ZG-204ZK",
+      "ZG-204ZL",
+      "ZG-204ZM",
+      "ZG-204ZQ",
+      "ZG-204ZV",
+      "ZG-205Z",
+      "ZG-205ZL",
+      "ZG-302ZL",
+      "ZG-302ZM",
+      "ZP-301Z"
+    ],
+    "pid": "CK-BL702-MWS-01",
+    "modelIdsCount": 23,
     "variants": [
       "_TZE204_clrdrnya",
       "_tze204_clrdrnya"
     ],
-    "variantsCount": 2
+    "variantsCount": 2,
+    "addedAt": "2026-06-26T14:42:09.180Z"
   },
   "_tze200_clrdrnya": {
-    "driverId": "motion_sensor_radar_mmwave",
+    "driverId": "presence_sensor_radar",
     "source": "auto-sync",
-    "addedAt": "2026-06-26T14:42:09.180Z",
+    "modelIds": [
+      "CK-BL702-MWS-01",
+      "CK-BL702-MWS-01(7016)",
+      "MG1_5RZ",
+      "SNZB-06P",
+      "SNZB-06P24",
+      "SZLMR10",
+      "TS0004",
+      "TS0203",
+      "TS0225",
+      "TS0601",
+      "TS110E",
+      "ZG-204ZE",
+      "ZG-204ZH",
+      "ZG-204ZK",
+      "ZG-204ZL",
+      "ZG-204ZM",
+      "ZG-204ZQ",
+      "ZG-204ZV",
+      "ZG-205Z",
+      "ZG-205ZL",
+      "ZG-302ZL",
+      "ZG-302ZM",
+      "ZP-301Z"
+    ],
+    "pid": "CK-BL702-MWS-01",
+    "modelIdsCount": 23,
     "variants": [
       "_TZE200_clrdrnya",
       "_tze200_clrdrnya"
     ],
-    "variantsCount": 2
+    "variantsCount": 2,
+    "addedAt": "2026-06-26T14:42:09.180Z"
   },
   "_tze200_lyetpprm": {
-    "driverId": "motion_sensor_radar_mmwave",
+    "driverId": "presence_sensor_radar",
     "source": "auto-sync",
-    "addedAt": "2026-06-26T14:42:09.180Z",
+    "modelIds": [
+      "CK-BL702-MWS-01",
+      "CK-BL702-MWS-01(7016)",
+      "MG1_5RZ",
+      "SNZB-06P",
+      "SNZB-06P24",
+      "SZLMR10",
+      "TS0004",
+      "TS0203",
+      "TS0225",
+      "TS0601",
+      "TS110E",
+      "ZG-204ZE",
+      "ZG-204ZH",
+      "ZG-204ZK",
+      "ZG-204ZL",
+      "ZG-204ZM",
+      "ZG-204ZQ",
+      "ZG-204ZV",
+      "ZG-205Z",
+      "ZG-205ZL",
+      "ZG-302ZL",
+      "ZG-302ZM",
+      "ZP-301Z"
+    ],
+    "pid": "CK-BL702-MWS-01",
+    "modelIdsCount": 23,
     "variants": [
       "_TZE200_lyetpprm",
       "_tze200_lyetpprm"
     ],
-    "variantsCount": 2
+    "variantsCount": 2,
+    "addedAt": "2026-06-26T14:42:09.180Z"
   },
   "_tze204_lyetpprm": {
-    "driverId": "motion_sensor_radar_mmwave",
+    "driverId": "presence_sensor_radar",
     "source": "auto-sync",
-    "addedAt": "2026-06-26T14:42:09.180Z",
+    "modelIds": [
+      "CK-BL702-MWS-01",
+      "CK-BL702-MWS-01(7016)",
+      "MG1_5RZ",
+      "SNZB-06P",
+      "SNZB-06P24",
+      "SZLMR10",
+      "TS0004",
+      "TS0203",
+      "TS0225",
+      "TS0601",
+      "TS110E",
+      "ZG-204ZE",
+      "ZG-204ZH",
+      "ZG-204ZK",
+      "ZG-204ZL",
+      "ZG-204ZM",
+      "ZG-204ZQ",
+      "ZG-204ZV",
+      "ZG-205Z",
+      "ZG-205ZL",
+      "ZG-302ZL",
+      "ZG-302ZM",
+      "ZP-301Z"
+    ],
+    "pid": "CK-BL702-MWS-01",
+    "modelIdsCount": 23,
     "variants": [
       "_TZE204_LYETPPRM",
       "_tze204_lyetpprm"
     ],
-    "variantsCount": 2
+    "variantsCount": 2,
+    "addedAt": "2026-06-26T14:42:09.180Z"
   },
   "_tze204_wukb7rhc": {
-    "driverId": "motion_sensor_radar_mmwave",
+    "driverId": "presence_sensor_radar",
     "source": "auto-sync",
-    "addedAt": "2026-06-26T14:42:09.180Z",
+    "modelIds": [
+      "CK-BL702-MWS-01",
+      "CK-BL702-MWS-01(7016)",
+      "MG1_5RZ",
+      "SNZB-06P",
+      "SNZB-06P24",
+      "SZLMR10",
+      "TS0004",
+      "TS0203",
+      "TS0225",
+      "TS0601",
+      "TS110E",
+      "ZG-204ZE",
+      "ZG-204ZH",
+      "ZG-204ZK",
+      "ZG-204ZL",
+      "ZG-204ZM",
+      "ZG-204ZQ",
+      "ZG-204ZV",
+      "ZG-205Z",
+      "ZG-205ZL",
+      "ZG-302ZL",
+      "ZG-302ZM",
+      "ZP-301Z"
+    ],
+    "pid": "CK-BL702-MWS-01",
+    "modelIdsCount": 23,
     "variants": [
       "_TZE204_WUKB7RHC",
       "_tze204_wukb7rhc"
     ],
-    "variantsCount": 2
+    "variantsCount": 2,
+    "addedAt": "2026-06-26T14:42:09.180Z"
   },
   "_tze200_jva8ink8": {
-    "driverId": "motion_sensor_radar_mmwave",
+    "driverId": "presence_sensor_radar",
     "source": "auto-sync",
-    "addedAt": "2026-06-26T14:42:09.180Z",
+    "modelIds": [
+      "CK-BL702-MWS-01",
+      "CK-BL702-MWS-01(7016)",
+      "MG1_5RZ",
+      "SNZB-06P",
+      "SNZB-06P24",
+      "SZLMR10",
+      "TS0004",
+      "TS0203",
+      "TS0225",
+      "TS0601",
+      "TS110E",
+      "ZG-204ZE",
+      "ZG-204ZH",
+      "ZG-204ZK",
+      "ZG-204ZL",
+      "ZG-204ZM",
+      "ZG-204ZQ",
+      "ZG-204ZV",
+      "ZG-205Z",
+      "ZG-205ZL",
+      "ZG-302ZL",
+      "ZG-302ZM",
+      "ZP-301Z"
+    ],
+    "pid": "CK-BL702-MWS-01",
+    "modelIdsCount": 23,
     "variants": [
       "_TZE200_jva8ink8",
       "_tze200_jva8ink8"
     ],
-    "variantsCount": 2
+    "variantsCount": 2,
+    "addedAt": "2026-06-26T14:42:09.180Z"
   },
   "_tze204_jva8ink8": {
-    "driverId": "motion_sensor_radar_mmwave",
+    "driverId": "presence_sensor_radar",
     "source": "auto-sync",
-    "addedAt": "2026-06-26T14:42:09.180Z",
+    "modelIds": [
+      "CK-BL702-MWS-01",
+      "CK-BL702-MWS-01(7016)",
+      "MG1_5RZ",
+      "SNZB-06P",
+      "SNZB-06P24",
+      "SZLMR10",
+      "TS0004",
+      "TS0203",
+      "TS0225",
+      "TS0601",
+      "TS110E",
+      "ZG-204ZE",
+      "ZG-204ZH",
+      "ZG-204ZK",
+      "ZG-204ZL",
+      "ZG-204ZM",
+      "ZG-204ZQ",
+      "ZG-204ZV",
+      "ZG-205Z",
+      "ZG-205ZL",
+      "ZG-302ZL",
+      "ZG-302ZM",
+      "ZP-301Z"
+    ],
+    "pid": "CK-BL702-MWS-01",
+    "modelIdsCount": 23,
     "variants": [
       "_TZE204_JVA8INK8",
       "_tze204_jva8ink8"
     ],
-    "variantsCount": 2
+    "variantsCount": 2,
+    "addedAt": "2026-06-26T14:42:09.180Z"
   },
   "_tze200_ne4pikwm": {
-    "driverId": "radiator_valve",
+    "driverId": "thermostatic_radiator_valve",
     "source": "auto-sync",
-    "addedAt": "2026-06-26T14:42:09.183Z",
     "modelIds": [
       "014G2461",
       "014G2463",
@@ -218481,296 +217730,8 @@
       "_TZE200_ne4pikwm",
       "_tze200_ne4pikwm"
     ],
-    "variantsCount": 2
-  },
-  "_TZ3000_ky0fq4ho": {
-    "driverId": "sensor_illuminance_presence",
-    "source": "auto-sync",
-    "addedAt": "2026-06-26T14:42:09.184Z",
-    "modelIds": [
-      "CK-BL702-MWS-01(7016)",
-      "TS011F",
-      "TS0209",
-      "TS0210",
-      "TS0601",
-      "ZG-102ZM",
-      "ZG-103Z",
-      "ZG-103ZL"
-    ],
-    "pid": "CK-BL702-MWS-01(7016)",
-    "modelIdsCount": 8,
-    "variants": [
-      "_TZ3000_KY0FQ4HO",
-      "_TZ3000_ky0fq4ho"
-    ],
-    "variantsCount": 2
-  },
-  "_TZE200_SH1BTABB": {
-    "driverId": "water_leak_sensor",
-    "source": "auto-sync",
-    "addedAt": "2026-06-26T14:42:09.191Z",
-    "variants": [
-      "_TZE200_SH1BTABB",
-      "_tze200_sh1btabb"
-    ],
-    "variantsCount": 2
-  },
-  "_TZE204_qq9mpfhw": {
-    "driverId": "water_leak_sensor",
-    "source": "auto-sync",
-    "addedAt": "2026-06-26T14:42:09.191Z",
-    "variants": [
-      "_TZE204_qq9mpfhw",
-      "_tze204_qq9mpfhw"
-    ],
-    "variantsCount": 2
-  },
-  "_TZ3000_k4ej3ww2": {
-    "driverId": "water_leak_sensor",
-    "source": "auto-sync",
-    "addedAt": "2026-06-26T14:42:09.191Z",
-    "modelIds": [
-      "3315-S",
-      "3315-Seu",
-      "CK-TLSR8656-SS5-01(7019)",
-      "HS1WL",
-      "LS21001",
-      "SJCGQ11LM",
-      "SJCGQ12LM",
-      "SJCGQ13LM",
-      "SNZB-05",
-      "SNZB-05P",
-      "SQ510A",
-      "TS0601",
-      "ZG-222Z",
-      "ZG-223Z",
-      "_tz3000_eit6l5",
-      "_tz3000_k4ej3ww2",
-      "_tz3000_kyb656no",
-      "lumi.sensor_wleak.aq1",
-      "q9mpfhw"
-    ],
-    "pid": "3315-S",
-    "modelIdsCount": 19,
-    "variants": [
-      "_TZ3000_k4ej3ww2",
-      "_tz3000_k4ej3ww2"
-    ],
-    "variantsCount": 2
-  },
-  "_TZ3000_upgcbody": {
-    "driverId": "water_leak_sensor",
-    "source": "auto-sync",
-    "addedAt": "2026-06-26T14:42:09.191Z",
-    "modelIds": [
-      "3315-S",
-      "3315-Seu",
-      "CK-TLSR8656-SS5-01(7019)",
-      "HS1WL",
-      "LS21001",
-      "SJCGQ11LM",
-      "SJCGQ12LM",
-      "SJCGQ13LM",
-      "SNZB-05",
-      "SNZB-05P",
-      "SQ510A",
-      "TS0601",
-      "ZG-222Z",
-      "ZG-223Z",
-      "_tz3000_eit6l5",
-      "_tz3000_k4ej3ww2",
-      "_tz3000_kyb656no",
-      "lumi.sensor_wleak.aq1",
-      "q9mpfhw"
-    ],
-    "pid": "3315-S",
-    "modelIdsCount": 19,
-    "variants": [
-      "_TZ3000_upgcbody",
-      "_tz3000_upgcbody"
-    ],
-    "variantsCount": 2
-  },
-  "_TZ3000_kstbkt6a": {
-    "driverId": "water_leak_sensor",
-    "source": "auto-sync",
-    "addedAt": "2026-06-26T14:42:09.191Z",
-    "modelIds": [
-      "3315-S",
-      "3315-Seu",
-      "CK-TLSR8656-SS5-01(7019)",
-      "HS1WL",
-      "LS21001",
-      "SJCGQ11LM",
-      "SJCGQ12LM",
-      "SJCGQ13LM",
-      "SNZB-05",
-      "SNZB-05P",
-      "SQ510A",
-      "TS0601",
-      "ZG-222Z",
-      "ZG-223Z",
-      "_tz3000_eit6l5",
-      "_tz3000_k4ej3ww2",
-      "_tz3000_kyb656no",
-      "lumi.sensor_wleak.aq1",
-      "q9mpfhw"
-    ],
-    "pid": "3315-S",
-    "modelIdsCount": 19,
-    "variants": [
-      "_TZ3000_kstbkt6a",
-      "_tz3000_kstbkt6a"
-    ],
-    "variantsCount": 2
-  },
-  "_TZ3000_fvm13j8w": {
-    "driverId": "water_leak_sensor",
-    "source": "auto-sync",
-    "addedAt": "2026-06-26T14:42:09.191Z",
-    "variants": [
-      "_TZ3000_fvm13j8w",
-      "_tz3000_fvm13j8w"
-    ],
-    "variantsCount": 2
-  },
-  "_TZ3000_kyb656no": {
-    "driverId": "water_leak_sensor",
-    "source": "auto-sync",
-    "addedAt": "2026-06-26T14:42:09.191Z",
-    "modelIds": [
-      "3315-S",
-      "3315-Seu",
-      "CK-TLSR8656-SS5-01(7019)",
-      "HS1WL",
-      "LS21001",
-      "SJCGQ11LM",
-      "SJCGQ12LM",
-      "SJCGQ13LM",
-      "SNZB-05",
-      "SNZB-05P",
-      "SQ510A",
-      "TS0601",
-      "ZG-222Z",
-      "ZG-223Z",
-      "_tz3000_eit6l5",
-      "_tz3000_k4ej3ww2",
-      "_tz3000_kyb656no",
-      "lumi.sensor_wleak.aq1",
-      "q9mpfhw"
-    ],
-    "pid": "3315-S",
-    "modelIdsCount": 19,
-    "variants": [
-      "_TZ3000_kyb656no",
-      "_tz3000_kyb656no"
-    ],
-    "variantsCount": 2
-  },
-  "_TZ3000_mugyhz0q": {
-    "driverId": "water_leak_sensor",
-    "source": "auto-sync",
-    "addedAt": "2026-06-26T14:42:09.191Z",
-    "modelIds": [
-      "3315-S",
-      "3315-Seu",
-      "CK-TLSR8656-SS5-01(7019)",
-      "HS1WL",
-      "LS21001",
-      "SJCGQ11LM",
-      "SJCGQ12LM",
-      "SJCGQ13LM",
-      "SNZB-05",
-      "SNZB-05P",
-      "SQ510A",
-      "TS0601",
-      "ZG-222Z",
-      "ZG-223Z",
-      "_tz3000_eit6l5",
-      "_tz3000_k4ej3ww2",
-      "_tz3000_kyb656no",
-      "lumi.sensor_wleak.aq1",
-      "q9mpfhw"
-    ],
-    "pid": "3315-S",
-    "modelIdsCount": 19,
-    "variants": [
-      "_TZ3000_mugyhz0q",
-      "_tz3000_mugyhz0q"
-    ],
-    "variantsCount": 2
-  },
-  "_TZ3000_t6jriawg": {
-    "driverId": "water_leak_sensor",
-    "source": "auto-sync",
-    "addedAt": "2026-06-26T14:42:09.191Z",
-    "modelIds": [
-      "3315-S",
-      "3315-Seu",
-      "CK-TLSR8656-SS5-01(7019)",
-      "HS1WL",
-      "LS21001",
-      "SJCGQ11LM",
-      "SJCGQ12LM",
-      "SJCGQ13LM",
-      "SNZB-05",
-      "SNZB-05P",
-      "SQ510A",
-      "TS0601",
-      "ZG-222Z",
-      "ZG-223Z",
-      "_tz3000_eit6l5",
-      "_tz3000_k4ej3ww2",
-      "_tz3000_kyb656no",
-      "lumi.sensor_wleak.aq1",
-      "q9mpfhw"
-    ],
-    "pid": "3315-S",
-    "modelIdsCount": 19,
-    "variants": [
-      "_TZ3000_t6jriawg",
-      "_tz3000_t6jriawg"
-    ],
-    "variantsCount": 2
-  },
-  "_TZ3000_js34cuma": {
-    "driverId": "water_leak_sensor",
-    "source": "auto-sync",
-    "addedAt": "2026-06-26T14:42:09.191Z",
-    "variants": [
-      "_TZ3000_js34cuma",
-      "_tz3000_js34cuma"
-    ],
-    "variantsCount": 2
-  },
-  "_TZ3000_rurvxhcx": {
-    "driverId": "water_leak_sensor",
-    "source": "auto-sync",
-    "addedAt": "2026-06-26T14:42:09.191Z",
-    "variants": [
-      "_TZ3000_rurvxhcx",
-      "_tz3000_rurvxhcx"
-    ],
-    "variantsCount": 2
-  },
-  "_TZE284_myd45weu": {
-    "driverId": "soil_sensor",
-    "source": "homey-forum-2097|fixed-p61",
-    "addedAt": "2026-07-15T00:00:00.000Z",
-    "modelIds": [
-      "Arteco",
-      "CS-201Z",
-      "TS0001",
-      "TS0601",
-      "ZG-303Z"
-    ],
-    "pid": "Arteco",
-    "modelIdsCount": 5,
-    "variants": [
-      "_TZE284_myd45weu",
-      "_tze284_myd45weu"
-    ],
-    "variantsCount": 2
+    "variantsCount": 2,
+    "addedAt": "2026-06-26T14:42:09.183Z"
   },
   "sacredCouples": {
     "_tz3290_j37rooaxrcdcqo5n|ts1201": {
@@ -325747,42 +324708,6 @@
       "added": "2026-07-16T14:35:26.327Z"
     }
   },
-  "_TZE200_W0AP83QU": {
-    "driverId": "presence_sensor_radar",
-    "source": "p64.8-missing-zg204",
-    "modelIds": [
-      "CK-BL702-MWS-01",
-      "CK-BL702-MWS-01(7016)",
-      "MG1_5RZ",
-      "SNZB-06P",
-      "SNZB-06P24",
-      "SZLMR10",
-      "TS0004",
-      "TS0203",
-      "TS0225",
-      "TS0601",
-      "TS110E",
-      "ZG-204ZE",
-      "ZG-204ZH",
-      "ZG-204ZK",
-      "ZG-204ZL",
-      "ZG-204ZM",
-      "ZG-204ZQ",
-      "ZG-204ZV",
-      "ZG-205Z",
-      "ZG-205ZL",
-      "ZG-302ZL",
-      "ZG-302ZM",
-      "ZP-301Z"
-    ],
-    "pid": "CK-BL702-MWS-01",
-    "modelIdsCount": 23,
-    "variants": [
-      "_TZE200_W0AP83QU",
-      "_tze200_w0ap83qu"
-    ],
-    "variantsCount": 2
-  },
   "_TZE204_ZG204Z": {
     "driverId": "presence_sensor_radar",
     "source": "p64.8-missing-zg204",
@@ -326064,5 +324989,390 @@
     "driver": "presence_sensor_radar",
     "pid": "TS0601",
     "source": "blakadder-r68"
+  },
+  "_tze200_8ygsuhe1": {
+    "driverId": "climate_sensor",
+    "source": "auto-sync",
+    "modelIds": [
+      "TS0215A",
+      "TS0601",
+      "TS0601_wirelesssw"
+    ],
+    "pid": "TS0215A",
+    "modelIdsCount": 3,
+    "variants": [
+      "_TZE200_8YGSUHE1",
+      "_TZE200_8ygsuhe1"
+    ],
+    "variantsCount": 2,
+    "addedAt": "2026-06-26T14:42:09.171Z"
+  },
+  "_tze284_81yrt3lo": {
+    "driverId": "power_clamp_meter",
+    "source": "auto-sync",
+    "modelIds": [
+      "CK-BL702-MWS-01",
+      "CK-BL702-MWS-01(7016)",
+      "MG1_5RZ",
+      "SNZB-06P",
+      "SNZB-06P24",
+      "SZLMR10",
+      "TS0004",
+      "TS0203",
+      "TS0225",
+      "TS0601",
+      "TS110E",
+      "ZG-204ZE",
+      "ZG-204ZH",
+      "ZG-204ZK",
+      "ZG-204ZL",
+      "ZG-204ZM",
+      "ZG-204ZQ",
+      "ZG-204ZV",
+      "ZG-205Z",
+      "ZG-205ZL",
+      "ZG-302ZL",
+      "ZG-302ZM",
+      "ZP-301Z"
+    ],
+    "pid": "CK-BL702-MWS-01",
+    "modelIdsCount": 23,
+    "variants": [
+      "_TZE284_81YRT3LO",
+      "_TZE284_81yrt3lo"
+    ],
+    "variantsCount": 2,
+    "addedAt": "2026-06-26T14:42:09.178Z"
+  },
+  "_tze204_81yrt3lo": {
+    "driverId": "power_clamp_meter",
+    "source": "auto-sync",
+    "modelIds": [
+      "CK-BL702-MWS-01",
+      "CK-BL702-MWS-01(7016)",
+      "MG1_5RZ",
+      "SNZB-06P",
+      "SNZB-06P24",
+      "SZLMR10",
+      "TS0004",
+      "TS0203",
+      "TS0225",
+      "TS0601",
+      "TS110E",
+      "ZG-204ZE",
+      "ZG-204ZH",
+      "ZG-204ZK",
+      "ZG-204ZL",
+      "ZG-204ZM",
+      "ZG-204ZQ",
+      "ZG-204ZV",
+      "ZG-205Z",
+      "ZG-205ZL",
+      "ZG-302ZL",
+      "ZG-302ZM",
+      "ZP-301Z"
+    ],
+    "pid": "CK-BL702-MWS-01",
+    "modelIdsCount": 23,
+    "variants": [
+      "_TZE204_81YRT3LO",
+      "_TZE204_81yrt3lo"
+    ],
+    "variantsCount": 2,
+    "addedAt": "2026-06-26T14:42:09.178Z"
+  },
+  "_tze200_81yrt3lo": {
+    "driverId": "power_clamp_meter",
+    "source": "auto-sync",
+    "modelIds": [
+      "TS0601",
+      "TS0601_clamp"
+    ],
+    "pid": "TS0601",
+    "modelIdsCount": 2,
+    "variants": [
+      "_TZE200_81YRT3LO",
+      "_TZE200_81yrt3lo"
+    ],
+    "variantsCount": 2,
+    "addedAt": "2026-06-26T14:42:09.178Z"
+  },
+  "_tze200_2aaelwxk": {
+    "driverId": "presence_sensor_radar",
+    "source": "auto-sync",
+    "modelIds": [
+      "CK-BL702-MWS-01",
+      "CK-BL702-MWS-01(7016)",
+      "MG1_5RZ",
+      "SNZB-06P",
+      "SNZB-06P24",
+      "SZLMR10",
+      "TS0004",
+      "TS0203",
+      "TS0225",
+      "TS0601",
+      "TS110E",
+      "ZG-204ZE",
+      "ZG-204ZH",
+      "ZG-204ZK",
+      "ZG-204ZL",
+      "ZG-204ZM",
+      "ZG-204ZQ",
+      "ZG-204ZV",
+      "ZG-205Z",
+      "ZG-205ZL",
+      "ZG-302ZL",
+      "ZG-302ZM",
+      "ZP-301Z"
+    ],
+    "pid": "CK-BL702-MWS-01",
+    "modelIdsCount": 23,
+    "variants": [
+      "_TZE200_2AAELWXK",
+      "_TZE200_2aaelwxk"
+    ],
+    "variantsCount": 2
+  },
+  "_tze200_kb5noeto": {
+    "driverId": "presence_sensor_radar",
+    "source": "auto-sync",
+    "modelIds": [
+      "CK-BL702-MWS-01",
+      "CK-BL702-MWS-01(7016)",
+      "MG1_5RZ",
+      "SNZB-06P",
+      "SNZB-06P24",
+      "SZLMR10",
+      "TS0004",
+      "TS0203",
+      "TS0225",
+      "TS0601",
+      "TS110E",
+      "ZG-204ZE",
+      "ZG-204ZH",
+      "ZG-204ZK",
+      "ZG-204ZL",
+      "ZG-204ZM",
+      "ZG-204ZQ",
+      "ZG-204ZV",
+      "ZG-205Z",
+      "ZG-205ZL",
+      "ZG-302ZL",
+      "ZG-302ZM",
+      "ZP-301Z"
+    ],
+    "pid": "CK-BL702-MWS-01",
+    "modelIdsCount": 23,
+    "variants": [
+      "_TZE200_KB5NOETO",
+      "_TZE200_kb5noeto"
+    ],
+    "variantsCount": 2
+  },
+  "_tze200_ppuj1vem": {
+    "driverId": "presence_sensor_radar",
+    "source": "auto-sync",
+    "modelIds": [
+      "CK-BL702-MWS-01",
+      "CK-BL702-MWS-01(7016)",
+      "MG1_5RZ",
+      "SNZB-06P",
+      "SNZB-06P24",
+      "SZLMR10",
+      "TS0004",
+      "TS0203",
+      "TS0225",
+      "TS0601",
+      "TS110E",
+      "ZG-204ZE",
+      "ZG-204ZH",
+      "ZG-204ZK",
+      "ZG-204ZL",
+      "ZG-204ZM",
+      "ZG-204ZQ",
+      "ZG-204ZV",
+      "ZG-205Z",
+      "ZG-205ZL",
+      "ZG-302ZL",
+      "ZG-302ZM",
+      "ZP-301Z"
+    ],
+    "pid": "CK-BL702-MWS-01",
+    "modelIdsCount": 23,
+    "variants": [
+      "_TZE200_PPUJ1VEM",
+      "_TZE200_ppuj1vem"
+    ],
+    "variantsCount": 2,
+    "addedAt": "2026-06-26T14:42:09.180Z"
+  },
+  "_tz3000_bseed": {
+    "driverId": "switch_1gang",
+    "source": "auto-sync",
+    "modelIds": [
+      "01MINIZB",
+      "BASICZBR3",
+      "S26R2ZB",
+      "S31ZB",
+      "TS0001",
+      "TS0001_power",
+      "TS0001_switch",
+      "TS0001_switch_module",
+      "TS0002",
+      "TS0003",
+      "TS000F",
+      "TS0011",
+      "TS0012",
+      "TS0014",
+      "TS0041",
+      "TS0101",
+      "TS0111",
+      "TS011F",
+      "TS0601",
+      "TS0726",
+      "TS110E",
+      "TS130F",
+      "TS4100",
+      "ZBM5-1C-120",
+      "ZBM5-2C-120",
+      "ZBM5-3C-120",
+      "ZBMINI",
+      "ZBMINIL2",
+      "ZBMINIL2-R2",
+      "ZBMINIR",
+      "ZBMINIR2",
+      "ZBMINIR2-R2",
+      "ZG-301Z",
+      "ZG-302Z1"
+    ],
+    "pid": "01MINIZB",
+    "modelIdsCount": 34,
+    "variants": [
+      "_TZ3000_BSEED",
+      "_TZ3000_bseed"
+    ],
+    "variantsCount": 2,
+    "addedAt": "2026-06-26T14:42:09.179Z"
+  },
+  "_tz3000_l9brjwau": {
+    "driverId": "button_wireless_switch",
+    "source": "auto-sync",
+    "addedAt": "2026-06-26T14:42:09.174Z",
+    "modelIds": [
+      "01MINIZB",
+      "BASICZBR3",
+      "S26R2ZB",
+      "S31ZB",
+      "TS0001",
+      "TS0001_power",
+      "TS0001_switch",
+      "TS0001_switch_module",
+      "TS0002",
+      "TS0003",
+      "TS000F",
+      "TS0011",
+      "TS0012",
+      "TS0014",
+      "TS0041",
+      "TS0101",
+      "TS0111",
+      "TS011F",
+      "TS0601",
+      "TS0726",
+      "TS110E",
+      "TS130F",
+      "TS4100",
+      "ZBM5-1C-120",
+      "ZBM5-2C-120",
+      "ZBM5-3C-120",
+      "ZBMINI",
+      "ZBMINIL2",
+      "ZBMINIL2-R2",
+      "ZBMINIR",
+      "ZBMINIR2",
+      "ZBMINIR2-R2",
+      "ZG-301Z",
+      "ZG-302Z1"
+    ],
+    "pid": "01MINIZB",
+    "modelIdsCount": 34,
+    "variants": [
+      "_TZ3000_L9BRJWAU",
+      "_TZ3000_l9brjwau"
+    ],
+    "variantsCount": 2
+  },
+  "_tz3000_xk5udnd6": {
+    "driverId": "gas_sensor_switch",
+    "source": "auto-sync",
+    "addedAt": "2026-06-26T14:42:09.179Z",
+    "modelIds": [
+      "3315-S",
+      "3315-Seu",
+      "CK-TLSR8656-SS5-01(7019)",
+      "HS1WL",
+      "LS21001",
+      "SJCGQ11LM",
+      "SJCGQ12LM",
+      "SJCGQ13LM",
+      "SNZB-05",
+      "SNZB-05P",
+      "SQ510A",
+      "TS0001",
+      "TS0207",
+      "TS0601",
+      "ZG-222Z",
+      "ZG-223Z",
+      "_tz3000_eit6l5",
+      "_tz3000_k4ej3ww2",
+      "_tz3000_kyb656no",
+      "lumi.sensor_wleak.aq1"
+    ],
+    "pid": "3315-S",
+    "modelIdsCount": 20,
+    "variants": [
+      "_TZ3000_XK5UDND6",
+      "_TZ3000_xk5udnd6"
+    ],
+    "variantsCount": 2
+  },
+  "_tz3000_ky0fq4ho": {
+    "driverId": "vibration_sensor",
+    "source": "auto-sync",
+    "modelIds": [
+      "CK-BL702-MWS-01(7016)",
+      "TS011F",
+      "TS0209",
+      "TS0210",
+      "TS0601",
+      "ZG-102ZM",
+      "ZG-103Z",
+      "ZG-103ZL"
+    ],
+    "pid": "CK-BL702-MWS-01(7016)",
+    "modelIdsCount": 8,
+    "variants": [
+      "_TZ3000_KY0FQ4HO",
+      "_TZ3000_ky0fq4ho"
+    ],
+    "variantsCount": 2,
+    "addedAt": "2026-06-26T14:42:09.184Z"
+  },
+  "_tz3002_pzao9ls1": {
+    "driverId": "wall_switch_4gang_1way",
+    "source": "auto-sync",
+    "modelIds": [
+      "TS0004",
+      "TS0014",
+      "TS0726"
+    ],
+    "pid": "TS0004",
+    "modelIdsCount": 3,
+    "variants": [
+      "_TZ3002_PZAO9LS1",
+      "_TZ3002_pzao9ls1"
+    ],
+    "variantsCount": 2,
+    "addedAt": "2026-06-26T14:42:09.179Z"
   }
 }
