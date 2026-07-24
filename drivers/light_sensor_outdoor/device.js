@@ -45,8 +45,11 @@ class LightSensorOutdoorDevice extends TuyaZigbeeDevice {
     }
 
     // v5.13.20: Assign dpMappings directly to device for EF00Manager visibility
+    // P88: SmarterCurry Luminance Sensor (_TZE284_aaeasoll) uses DP 2 for illuminance
+    // per Z2M PR #12347 (https://github.com/Koenkk/zigbee-herdsman-converters/pull/12347)
     this.dpMappings = {
       1: { capability: 'measure_luminance', divisor: 1 },
+      2: { capability: 'measure_luminance', divisor: 1 },  // P88: SmarterCurry (PR #12347)
       4: { capability: 'measure_battery', divisor: 1 },
     };
 
