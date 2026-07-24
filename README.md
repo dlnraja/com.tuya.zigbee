@@ -35,6 +35,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | Metric | Value |
 |--------|-------|
 | **App Version** | v9.0.345 |
+| **App Version** | v9.0.346 |
 | **Device Fingerprints** | 5,379+ |
 | **Unique Product IDs** | 571 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
@@ -103,6 +104,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 |---------|---------|
 | **vchangelog** | [object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object  |
 | **v9.0.345** | v9.0.340: v9.0.340: P85 forum #2114 Door/Window contact + luminance fix |
+| **v9.0.346** | v9.0.345: docs(P88): cross-source mfr & DP fixes (forum + Z2M + mfs_db) |
 | **v9.0.344** | v9.0.340: v9.0.340: P85 forum #2114 Door/Window contact + luminance fix |
 | **v9.0.343** | v9.0.340: v9.0.340: P85 forum #2114 Door/Window contact + luminance fix |
 | **v9.0.342** | v9.0.340: v9.0.340: P85 forum #2114 Door/Window contact + luminance fix |
