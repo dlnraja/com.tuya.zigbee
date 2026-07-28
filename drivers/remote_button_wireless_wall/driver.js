@@ -15,7 +15,7 @@ class Button1GangDriver extends BaseZigBeeDriver {
 
   async onInit() {
     await super.onInit();
-    if (this._flowCardsRegistered) return;
+    if (this._flowCardsRegistered) {return;}
     this._flowCardsRegistered = true;
 
     this.log('Remote wall button driver initialized');

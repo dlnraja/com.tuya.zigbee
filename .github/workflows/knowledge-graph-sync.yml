@@ -1,3 +1,7 @@
+# 🧠 Knowledge Graph Daily Sync
+# Triggers: cron: 30 2 * * * + workflow_dispatch | Secrets: GITHUB_TOKEN only
+# Doc header added 2026-07-29 (workflows genealogy enrichment).
+
 name: 🧠 Knowledge Graph Daily Sync
 
 # P56 — Daily knowledge graph rebuild + smart investigations

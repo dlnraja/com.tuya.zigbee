@@ -36,16 +36,19 @@ const SEARCH_QUERIES = [
 const KNOWN_REPOS = [
   { owner: 'fison67', name: 'TS-Kite' },
   { owner: 'lelandblue', name: 'hubitat' },
-  { owner: 'w35l3y', name: 'SmartThingsEdgeDrivers' },
+  { owner: 'SmartThingsCommunity', name: 'SmartThingsEdgeDrivers' },
 ];
 
 // ── GitHub API authentication ────────────────────────────────────────────
-const GH_TOKEN = process.env.GH_PAT || process.env.GITHUB_TOKEN;
+const GH_TOKEN = process.env.GH_PAT || process.env.GITHUB_TOKEN || process.env.GH_TOKEN;
 const GH_HEADERS = {
   'User-Agent': 'HomeyTuyaScanner/1.0',
   'Accept': 'application/vnd.github.v3+json',
   ...(GH_TOKEN ? { Authorization: `token ${GH_TOKEN}` } : {}),
 };
+
+// Auth/network errors detected during this run (feeds the cache anti-poisoning guard)
+const RUN_ERRORS = [];
 
 // ── HTTP helpers ─────────────────────────────────────────────────────────
 function githubGet(urlPath) {
@@ -60,9 +63,12 @@ function githubGet(urlPath) {
       let data = '';
       res.on('data', (c) => data += c);
       res.on('end', () => {
+        if (res.statusCode && res.statusCode >= 400) {
+          RUN_ERRORS.push(`GitHub HTTP ${res.statusCode} ${urlPath}`);
+        }
         try { resolve(JSON.parse(data)); } catch (e) { resolve([]); }
       });
-    }).on('error', reject);
+    }).on('error', (e) => { RUN_ERRORS.push(e.message); reject(e); });
   });
 }
 
@@ -238,7 +244,9 @@ async function scan() {
   for (const query of SEARCH_QUERIES) {
     console.log(`\nSearching: "${query}"`);
     try {
-      const searchResult = await githubGet(`/search/code?q=${encodeURIComponent(query)}+path:fingerprint.yml&per_page=30`);
+      // P53-fix: GitHub classic code search ignores `path:` qualifier (0 results
+      // since 2024); rely on the YAML fingerprint parser to filter instead.
+      const searchResult = await githubGet(`/search/code?q=${encodeURIComponent(query)}&per_page=30`);
       const items = searchResult.items || [];
       console.log(`  Found ${items.length} files`);
 
@@ -299,7 +307,7 @@ async function scan() {
       const items = await githubGet(`/repos/${repo.owner}/${repo.name}/git/trees/main?recursive=1`);
       const tree = items.tree || [];
       const ymlFiles = tree.filter((f) =>
-        f.path && (f.path.endsWith('fingerprint.yml') || f.path.endsWith('fingerprint.yaml'))
+        f.path && /fingerprints?\.ya?ml$/.test(f.path)
       );
       console.log(`  Found ${ymlFiles.length} fingerprint files`);
 
@@ -342,7 +350,7 @@ async function scan() {
       totalManufacturerNames: [...new Set(allDevices.flatMap((d) => d.manufacturerNames))].length,
       totalModelIds: [...new Set(allDevices.flatMap((d) => d.modelIds))].length,
       newFingerprints: uniqueNewMfrs.length,
-      matchedToLocal: allDevices.reduce((sum, d) => sum + d.localMatches.length, 0),
+      matchedToLocal: allDevices.reduce((sum, d) => sum + (d.localMatches?.length || 0), 0),
     },
     devices: allDevices.slice(0, 300),
     newFingerprints: uniqueNewMfrs.slice(0, 200),
@@ -354,7 +362,7 @@ async function scan() {
 
   // Save to cache
   if (cache) {
-    cache.save(output);
+    cache.save(output, null, { hadErrors: RUN_ERRORS.length > 0 });
     console.log(`Cache SAVED (TTL: 12h)`);
   }
 

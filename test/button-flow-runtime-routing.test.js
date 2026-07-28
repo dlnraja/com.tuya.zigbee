@@ -74,9 +74,11 @@ describe('button flow runtime routing guards', function() {
     assert.match(source, /this\.cleanup\(\{ silent: true \}\)/);
     assert.match(source, /epId === 'getDeviceEndpoint'/);
     assert.match(source, /typeof cluster\?\.removeListener === 'function'/);
+    const onMatch = source.match(/if\s*\(\s*lower\.includes\('on'\)\s*\)\s*\{?\s*return\s+'on';\s*\}?/);
+    const offMatch = source.match(/if\s*\(\s*lower\.includes\('off'\)\s*\)\s*\{?\s*return\s+'off';\s*\}?/);
+    assert(onMatch && offMatch, 'onOff classifier must check both on and off states');
     assert(
-      source.indexOf("if (lower.includes('on')) return 'on';") <
-      source.indexOf("if (lower.includes('off')) return 'off';"),
+      onMatch.index < offMatch.index,
       'onOff commands must classify commandOnWithTimedOff as on before checking off'
     );
     assert.match(base, /multistateInput/);

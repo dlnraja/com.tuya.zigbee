@@ -42,6 +42,7 @@
   "subDevices": [],
   "zigbee": {
     "manufacturerName": [
+      "_TZE200_8ygsuhe1",
       "_tz3000_jr2atpww",
       "_tz3000_kqvb8qa8",
       "_tz3000_krajfo4p",
@@ -350,9 +351,5 @@
     }
   ],
   "id": "air_quality_comprehensive",
-  "version": "1.0.0",
-  "_pidConflictNotes": [
-    "// PID-CONFLICT-NOTE TS0005 shared with 2 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE TS0006 shared with 2 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-  ]
+  "version": "1.0.0"
 }

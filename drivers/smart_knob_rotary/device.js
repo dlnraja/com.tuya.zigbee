@@ -59,7 +59,7 @@ class SmartKnobRotaryDevice extends TuyaZigbeeDevice {
    */
   _registerPassiveButtonCapabilityListeners() {
     for (const capability of ['button.press', 'button.rotate_left', 'button.rotate_right']) {
-      if (!this.hasCapability(capability)) continue;
+      if (!this.hasCapability(capability)) {continue;}
       this.registerCapabilityListener(capability, async () => true);
     }
   }
@@ -310,7 +310,7 @@ class SmartKnobRotaryDevice extends TuyaZigbeeDevice {
   }
 
   async _handleRotation(direction, rate) {
-    if (this._destroyed) return;
+    if (this._destroyed) {return;}
     const delta = direction === 'up' ? 0.1 : -0.1;
     this._updateSimulatedBrightness(delta);
     if (direction === 'up') {
@@ -321,7 +321,7 @@ class SmartKnobRotaryDevice extends TuyaZigbeeDevice {
   }
 
   async _handleRotationStep(direction, stepSize) {
-    if (this._destroyed) return;
+    if (this._destroyed) {return;}
     const delta = direction === 'up' ? stepSize / 254 : -(stepSize / 254);
     this._updateSimulatedBrightness(delta);
     if (direction === 'up') {
@@ -342,7 +342,7 @@ class SmartKnobRotaryDevice extends TuyaZigbeeDevice {
   async _triggerRotateLeft() {
     if (this.hasCapability('button.rotate_left')) {
       await this.safeSetCapabilityValue('button.rotate_left', true).catch(this.error);
-      this.homey.setTimeout(() => { if (this._destroyed) return; this.safeSetCapabilityValue('button.rotate_left', false).catch(this.error); }, 100);
+      this.homey.setTimeout(() => { if (this._destroyed) {return;} this.safeSetCapabilityValue('button.rotate_left', false).catch(this.error); }, 100);
     }
     const rotateLeftTrigger = (() => { try { return this.homey.flow.getDeviceTriggerCard('smart_knob_rotary_rotate_left', 'trigger'); } catch(e) { return null; } })();
     if (rotateLeftTrigger) {
@@ -351,9 +351,10 @@ class SmartKnobRotaryDevice extends TuyaZigbeeDevice {
   }
 
   async _triggerRotateRight() {
+    if (this._destroyed) {return;}
     if (this.hasCapability('button.rotate_right')) {
       await this.safeSetCapabilityValue('button.rotate_right', true).catch(this.error);
-      this.homey.setTimeout(() => { if (this._destroyed) return; this.safeSetCapabilityValue('button.rotate_right', false).catch(this.error); }, 100);
+      this.homey.setTimeout(() => { if (this._destroyed) {return;} this.safeSetCapabilityValue('button.rotate_right', false).catch(this.error); }, 100);
     }
     const rotateRightTrigger = (() => { try { return this.homey.flow.getDeviceTriggerCard('smart_knob_rotary_rotate_right', 'trigger'); } catch(e) { return null; } })();
     if (rotateRightTrigger) {
@@ -362,9 +363,10 @@ class SmartKnobRotaryDevice extends TuyaZigbeeDevice {
   }
 
   async _triggerButtonPress(action) {
+    if (this._destroyed) {return;}
     if (this.hasCapability('button.press')) {
       await this.safeSetCapabilityValue('button.press', true).catch(this.error);
-      this.homey.setTimeout(() => { if (this._destroyed) return; this.safeSetCapabilityValue('button.press', false).catch(this.error); }, 100);
+      this.homey.setTimeout(() => { if (this._destroyed) {return;} this.safeSetCapabilityValue('button.press', false).catch(this.error); }, 100);
     }
     try {
       const genericTrigger = (() => { try { return this.homey.flow.getDeviceTriggerCard('smart_knob_rotary_pressed', 'trigger'); } catch(e) { return null; } })();

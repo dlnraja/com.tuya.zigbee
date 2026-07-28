@@ -91,9 +91,25 @@ class Switch1GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
   }
   async onSettings({ oldSettings, newSettings, changedKeys }) {
     await super.onSettings({ oldSettings, newSettings, changedKeys });
-    for (var k of changedKeys) {
+    for (const k of changedKeys) {
       await handleSonoffEwlSettings(this, k, newSettings[k]);
     }
+  }
+
+  /**
+   * Les cartes flow de ce driver sont préfixées « air_purifier_switch_1gang_ »
+   * alors que PhysicalButtonMixin construit les IDs depuis this.driver.id
+   * (« air_purifier_switch »). Remap pour aligner code et cartes — fournit
+   * notamment les tokens duration/clicks/action des cartes physical_* et
+   * gang1_scene.
+   */
+  _safeTriggerFlow(triggerId, tokens = {}, debug = {}) {
+    const remapped = typeof triggerId === 'string' &&
+      triggerId.startsWith('air_purifier_switch_') &&
+      !triggerId.startsWith('air_purifier_switch_1gang_')
+      ? triggerId.replace('air_purifier_switch_', 'air_purifier_switch_1gang_')
+      : triggerId;
+    return super._safeTriggerFlow(remapped, tokens, debug);
   }
 
 

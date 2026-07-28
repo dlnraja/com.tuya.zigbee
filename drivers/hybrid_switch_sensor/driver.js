@@ -4,7 +4,7 @@ const { ZigBeeDriver } = require('homey-zigbeedriver');
 class HybridSwitchSensorDriver extends ZigBeeDriver {
   async onInit() {
     await super.onInit();
-    if (this._flowCardsRegistered) return;
+    if (this._flowCardsRegistered) {return;}
     this._flowCardsRegistered = true;
     this.log('HybridSwitchSensorDriver initialized');
     this._registerFlowCards();
@@ -16,34 +16,34 @@ class HybridSwitchSensorDriver extends ZigBeeDriver {
       const card = this.homey.flow.getActionCard('hybrid_switch_sensor_turn_on');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           await args.device['setCapabilityValue']('onoff', true).catch(() => {});
           return true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Action hybrid_switch_sensor_turn_on: ${err.message}`); }; }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action hybrid_switch_sensor_turn_on: ${err.message}`); } }
 
     try {
       const card = this.homey.flow.getActionCard('hybrid_switch_sensor_turn_off');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           await args.device['setCapabilityValue']('onoff', false).catch(() => {});
           return true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Action hybrid_switch_sensor_turn_off: ${err.message}`); }; }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action hybrid_switch_sensor_turn_off: ${err.message}`); } }
 
     // CONDITIONS
     try {
       const card = this.homey.flow.getConditionCard('hybrid_switch_sensor_is_on');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Condition hybrid_switch_sensor_is_on: ${err.message}`); }; }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition hybrid_switch_sensor_is_on: ${err.message}`); } }
 
     this.log('[FLOW] All flow cards registered');
   }

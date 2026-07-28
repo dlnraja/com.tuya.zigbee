@@ -423,8 +423,7 @@
   ],
   "zigbee": {
     "manufacturerName": [
-      "_master_sensor_climate_motion_needs_device_assignment",
-      "_MASTER_SENSOR_CLIMATE_MOTION_NEEDS_DEVICE_ASSIGNMENT"
+      "_tz3000_lf56vpxj"
     ],
     "productId": [
       "TS0601",
@@ -450,10 +449,5 @@
       "getable": false,
       "setable": false
     }
-  },
-  "_pidConflictNotes": [
-    "// PID-CONFLICT-NOTE TS0001 shared with 35 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE Excellux shared with 30 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE TS0225 shared with 19 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-  ]
+  }
 }

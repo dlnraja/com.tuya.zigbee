@@ -7,7 +7,7 @@ class SirentemphumidsensorDriver extends Driver {
 
   async onInit() {
     await super.onInit();
-    if (this._flowCardsRegistered) return;
+    if (this._flowCardsRegistered) {return;}
     this._flowCardsRegistered = true;
 
       // === AUTO-GENERATED FLOW HANDLERS ===
@@ -15,20 +15,20 @@ class SirentemphumidsensorDriver extends Driver {
       // Edit if you need custom behaviour.
 
       this.homey.flow.getActionCard('sirentemphumidsensor_alarm_state')?.registerRunListener(async (args) => {
-        if (!args.device) return false;
+        if (!args.device) {return false;}
         return true; // TODO: implement action for sirentemphumidsensor_alarm_state
       });
       this.homey.flow.getActionCard('sirentemphumidsensor_alarm_duration')?.registerRunListener(async (args) => {
-        if (!args.device) return false;
+        if (!args.device) {return false;}
         await args.device.setCapabilityValue('onoff', true).catch(() => {});
         return true;
       });
       this.homey.flow.getActionCard('sirentemphumidsensor_siren_volume')?.registerRunListener(async (args) => {
-        if (!args.device) return false;
+        if (!args.device) {return false;}
         return true; // TODO: implement action for sirentemphumidsensor_siren_volume
       });
       this.homey.flow.getActionCard('sirentemphumidsensor_alarm_tune')?.registerRunListener(async (args) => {
-        if (!args.device) return false;
+        if (!args.device) {return false;}
         return true; // TODO: implement action for sirentemphumidsensor_alarm_tune
       });
   }

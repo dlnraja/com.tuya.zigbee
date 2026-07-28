@@ -7,7 +7,7 @@ class FloodSensorDriver extends Driver {
 
   async onInit() {
     await super.onInit();
-    if (this._flowCardsRegistered) return;
+    if (this._flowCardsRegistered) {return;}
     this._flowCardsRegistered = true;
 
       // === AUTO-GENERATED FLOW HANDLERS ===
@@ -15,7 +15,7 @@ class FloodSensorDriver extends Driver {
       // Edit if you need custom behaviour.
 
       this.homey.flow.getConditionCard('flood_sensor_alarm_water_active')?.registerRunListener(async (args) => {
-        if (!args.device) return false;
+        if (!args.device) {return false;}
         return true; // TODO: implement condition for flood_sensor_alarm_water_active
       });
   }

@@ -64,7 +64,13 @@
     ]
   },
   "zigbee": {
-    "manufacturerName": [],
+    "manufacturerName": [
+      "_tz3210_eejm8dcr",
+      "_tz3210_iystcadi",
+      "_TZE204_lawxy9e2",
+      "_tze284_nthhgkd6",
+      "_TZE284_nthhgkd6"
+    ],
     "productId": [
       "01MINIZB",
       "BASICZBR3",
@@ -146,9 +152,5 @@
       }
     }
   },
-  "version": "1.0.0",
-  "_pidConflictNotes": [
-    "// PID-CONFLICT-NOTE TS110E shared with 18 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE TS110F shared with 9 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-  ]
+  "version": "1.0.0"
 }

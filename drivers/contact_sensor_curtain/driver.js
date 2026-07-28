@@ -15,7 +15,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
   async onInit() {
     // Sleepy device: Use Passive Mode (SLEEPY_TUYA_56_YEARS_BUG.md)
     await super.onInit();
-    if (this._flowCardsRegistered) return;
+    if (this._flowCardsRegistered) {return;}
     this._flowCardsRegistered = true;
     this.log('curtain_motor driver v5.5.571 initialized');
     this._registerFlowCards();
@@ -29,11 +29,11 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
         const _card = this._getFlowCard(_tid, "trigger");
         if (_card) {
           _card.registerRunListener(async (args) => {
-            if (!args.device) return;
-            args.device.emit("flow:" + _tid, args);
+            if (!args.device) {return;}
+            args.device.emit(`flow:${  _tid}`, args);
           });
         }
-      } catch (_err) { this.error("Trigger " + _tid + ": " + _err.message); }
+      } catch (_err) { this.error(`Trigger ${  _tid  }: ${  _err.message}`); }
     }
     // END TRIGGERS
     // ACTIONS
@@ -41,117 +41,117 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
       const card = this.homey.flow.getActionCard('contact_sensor_curtain_motor_set_windowcoverings_set');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           await args.device['setCapabilityValue']('windowcoverings_set', args.position || args.value || 0).catch(() => {});
           return true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Action contact_sensor_curtain_curtain_motor_set_windowcoverings_set: ${err.message}`); }; }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action contact_sensor_curtain_curtain_motor_set_windowcoverings_set: ${err.message}`); } }
 
     try {
       const card = this.homey.flow.getActionCard('contact_sensor_curtain_motor_windowcoverings_open');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           // Generic action handler
           this.log('[FLOW] Action contact_sensor_curtain_curtain_motor_windowcoverings_open triggered for', args.device.getName());
           return true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Action contact_sensor_curtain_curtain_motor_windowcoverings_open: ${err.message}`); }; }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action contact_sensor_curtain_curtain_motor_windowcoverings_open: ${err.message}`); } }
 
     try {
       const card = this.homey.flow.getActionCard('contact_sensor_curtain_motor_windowcoverings_close');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           // Generic action handler
           this.log('[FLOW] Action contact_sensor_curtain_curtain_motor_windowcoverings_close triggered for', args.device.getName());
           return true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Action contact_sensor_curtain_curtain_motor_windowcoverings_close: ${err.message}`); }; }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action contact_sensor_curtain_curtain_motor_windowcoverings_close: ${err.message}`); } }
 
     try {
       const card = this.homey.flow.getActionCard('contact_sensor_curtain_motor_set_dim');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           await args.device['setCapabilityValue']('dim', args.brightness || args.value || 1).catch(() => {});
           return true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Action contact_sensor_curtain_curtain_motor_set_dim: ${err.message}`); }; }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action contact_sensor_curtain_curtain_motor_set_dim: ${err.message}`); } }
 
     try {
       const card = this.homey.flow.getActionCard('contact_sensor_curtain_motor_stop');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           // Generic action handler
           this.log('[FLOW] Action contact_sensor_curtain_curtain_motor_stop triggered for', args.device.getName());
           return true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Action contact_sensor_curtain_curtain_motor_stop: ${err.message}`); }; }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action contact_sensor_curtain_curtain_motor_stop: ${err.message}`); } }
 
     try {
       const card = this.homey.flow.getActionCard('contact_sensor_curtain_motor_set_favorite');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           // Generic action handler
           this.log('[FLOW] Action contact_sensor_curtain_curtain_motor_set_favorite triggered for', args.device.getName());
           return true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Action contact_sensor_curtain_curtain_motor_set_favorite: ${err.message}`); }; }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action contact_sensor_curtain_curtain_motor_set_favorite: ${err.message}`); } }
 
     try {
       const card = this.homey.flow.getActionCard('contact_sensor_curtain_motor_set_brightness');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           await args.device['setCapabilityValue']('dim', args.brightness || args.value || 1).catch(() => {});
           return true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Action contact_sensor_curtain_curtain_motor_set_brightness: ${err.message}`); }; }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action contact_sensor_curtain_curtain_motor_set_brightness: ${err.message}`); } }
 
     try {
       const card = this.homey.flow.getActionCard('contact_sensor_curtain_motor_set_position');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           await args.device['setCapabilityValue']('windowcoverings_set', args.position || args.value || 0).catch(() => {});
           return true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Action contact_sensor_curtain_curtain_motor_set_position: ${err.message}`); }; }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action contact_sensor_curtain_curtain_motor_set_position: ${err.message}`); } }
 
     try {
       const card = this.homey.flow.getActionCard('contact_sensor_curtain_motor_open');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           // Generic action handler
           this.log('[FLOW] Action contact_sensor_curtain_curtain_motor_open triggered for', args.device.getName());
           return true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Action contact_sensor_curtain_curtain_motor_open: ${err.message}`); }; }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action contact_sensor_curtain_curtain_motor_open: ${err.message}`); } }
 
     try {
       const card = this.homey.flow.getActionCard('contact_sensor_curtain_motor_close');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           // Generic action handler
           this.log('[FLOW] Action contact_sensor_curtain_curtain_motor_close triggered for', args.device.getName());
           return true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Action contact_sensor_curtain_curtain_motor_close: ${err.message}`); }; }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action contact_sensor_curtain_curtain_motor_close: ${err.message}`); } }
 
     this.log('[FLOW] All flow cards registered');
   }

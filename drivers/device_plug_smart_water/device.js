@@ -46,14 +46,14 @@ class SmartPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedPlug
     // Let the base value from caller be the raw value, and we apply the scale directly if possible!
     // But then default must match. Let's just multiply the base divided value by however it differs from 1.
     
-    if (capability === 'measure_power') return safeMultiply(value, powerScale);
-    if (capability === 'meter_power') return safeMultiply(value, energyScale);
+    if (capability === 'measure_power') {return safeMultiply(value, powerScale);}
+    if (capability === 'meter_power') {return safeMultiply(value, energyScale);}
     
     const voltageScale = parseFloat(this.getSetting('voltage_scale')) || 0.1;
-    if (capability === 'measure_voltage') return (value * (safeParse)(voltageScale * 0.1)); 
+    if (capability === 'measure_voltage') {return value * safeParse(voltageScale * 0.1);} 
     
     const currentScale = parseFloat(this.getSetting('current_scale')) || 0.001;
-    if (capability === 'measure_current') return (value * (safeParse)(currentScale * 0.001));
+    if (capability === 'measure_current') {return value * safeParse(currentScale * 0.001);}
 
     return value;
   }
@@ -143,28 +143,28 @@ class SmartPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedPlug
   _markAppCommand() {
     this._appCommandPending = true;
     clearTimeout(this._appCommandTimeout);
-    this._appCommandTimeout = this.homey.setTimeout(() => { if (this._destroyed) return; this._appCommandPending = false; }, 2000);
+    this._appCommandTimeout = this.homey.setTimeout(() => { if (this._destroyed) {return;} this._appCommandPending = false; }, 2000);
   }
 
   async _setupEnergyMonitoring(zclNode) {
     const ep1 = zclNode?.endpoints?.[1];
-    if (!ep1 ) return;
+    if (!ep1 ) {return;}
 
     // Electrical Measurement cluster (0x0B04) - v5.5.422: Apply user scale
     try {
       const elec = ep1.clusters?.haElectricalMeasurement;if (elec?.on) {
         elec.on('attr.activePower', (v) => {
-          if (this._destroyed) return;
+          if (this._destroyed) {return;}
           const scaled = safeMultiply(this._applyScale(v, 10), 'measure_power');
           this.safeSetCapabilityValue('measure_power', parseFloat(scaled)).catch(() => { });
       });
         elec.on('attr.rmsVoltage', (v) => {
-          if (this._destroyed) return;
+          if (this._destroyed) {return;}
           const scaled = safeMultiply(this._applyScale(v, 10), 'measure_voltage');
           this.safeSetCapabilityValue('measure_voltage', parseFloat(scaled)).catch(() => { });
       });
         elec.on('attr.rmsCurrent', (v) => {
-          if (this._destroyed) return;
+          if (this._destroyed) {return;}
           const scaled = this._applyScale(v * 1000, 'measure_current' );
           this.safeSetCapabilityValue('measure_current', parseFloat(scaled)).catch(() => { });
       });
@@ -176,7 +176,7 @@ class SmartPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedPlug
     try {
       const meter = ep1.clusters?.seMetering;if (meter?.on) {
         meter.on('attr.currentSummationDelivered', (v) => {
-          if (this._destroyed) return;
+          if (this._destroyed) {return;}
           const scaled = this._applyScale(v * 1000, 'meter_power');
           this.safeSetCapabilityValue('meter_power', parseFloat(scaled)).catch(() => { });
       });

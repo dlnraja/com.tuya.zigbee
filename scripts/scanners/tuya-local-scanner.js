@@ -36,12 +36,15 @@ const TUYALOCAL_API = 'https://api.github.com';
 const CONFIG_DIR = 'custom_components/tuya_local/devices';
 
 // ── GitHub API authentication ────────────────────────────────────────────
-const GH_TOKEN = process.env.GH_PAT || process.env.GITHUB_TOKEN;
+const GH_TOKEN = process.env.GH_PAT || process.env.GITHUB_TOKEN || process.env.GH_TOKEN;
 const GH_HEADERS = {
   'User-Agent': 'HomeyTuyaScanner/1.0',
   'Accept': 'application/vnd.github.v3+json',
   ...(GH_TOKEN ? { Authorization: `token ${GH_TOKEN}` } : {}),
 };
+
+// Auth/network errors detected during this run (feeds the cache anti-poisoning guard)
+const RUN_ERRORS = [];
 
 // ── HTTP helpers ─────────────────────────────────────────────────────────
 function githubGet(urlPath) {
@@ -56,9 +59,12 @@ function githubGet(urlPath) {
       let data = '';
       res.on('data', (c) => data += c);
       res.on('end', () => {
+        if (res.statusCode && res.statusCode >= 400) {
+          RUN_ERRORS.push(`GitHub HTTP ${res.statusCode} ${urlPath}`);
+        }
         try { resolve(JSON.parse(data)); } catch (e) { resolve([]); }
       });
-    }).on('error', reject);
+    }).on('error', (e) => { RUN_ERRORS.push(e.message); reject(e); });
   });
 }
 
@@ -258,6 +264,7 @@ async function scan() {
   const allDevices = [];
   let pageCount = 0;
   let page = 1;
+  let prevFirstName = null;
 
   // Paginate through config directory
   while (true) {
@@ -271,6 +278,14 @@ async function scan() {
     }
 
     if (!Array.isArray(items) || items.length === 0) break;
+    // P53-fix: the GitHub contents API ignores `page`/`per_page` for directories
+    // and returns the full listing (up to 1000 entries) on every call — detect
+    // the repeated first entry to avoid an infinite pagination loop.
+    if (items[0] && items[0].name === prevFirstName) {
+      console.log('  (same listing returned again — contents API does not paginate, stopping)');
+      break;
+    }
+    prevFirstName = items[0] && items[0].name;
     pageCount++;
 
     const yamlFiles = items.filter((f) => f.name && (f.name.endsWith('.yaml') || f.name.endsWith('.yml')));
@@ -389,7 +404,7 @@ async function scan() {
 
   // Save to cache
   if (cache) {
-    cache.save(output);
+    cache.save(output, null, { hadErrors: RUN_ERRORS.length > 0 });
     console.log(`Cache SAVED (TTL: 24h)`);
   }
 

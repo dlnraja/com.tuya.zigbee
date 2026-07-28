@@ -35,7 +35,7 @@ class WiFiSwitch2GangDevice extends TuyaLocalDevice {
 
 
   async onDeleted() {
-    if (this._destroyed) return;
+    if (this._destroyed) {return;}
     this._destroyed = true;
     this.log('Device deleted, cleaning up');
     await super.onDeleted();

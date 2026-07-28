@@ -12,7 +12,7 @@ class AirQualityComprehensiveDevice extends SensorBase {
 
   get sensorCapabilities() {
     const capabilities = ['measure_co2', 'measure_temperature', 'measure_humidity', 'measure_voc', 'measure_formaldehyde'];
-    if (!this.isEightYgSmartAirbox) capabilities.push('measure_pm25');
+    if (!this.isEightYgSmartAirbox) {capabilities.push('measure_pm25');}
     return capabilities;
   }
 

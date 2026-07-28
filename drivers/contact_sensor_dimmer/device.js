@@ -34,12 +34,12 @@ class ContactSensorDimmerDevice extends ZigBeeDevice {
   }
 
   async _handleButtonPress(value) {
-    if (this._destroyed) return;
+    if (this._destroyed) {return;}
     this.log(`[CONTACT] Button pressed: ${value}`);
     try {
       await this._safeSetCapability('button', true).catch(() => { });
       this.homey.setTimeout(() => {
-        if (this._destroyed) return;
+        if (this._destroyed) {return;}
         this._safeSetCapability('button', false).catch(() => { });
       }, 500);
 

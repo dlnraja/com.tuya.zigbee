@@ -23,7 +23,7 @@ async onInit() {
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Condition plug_smart_is_on: ${err.message}`); }; }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition plug_smart_is_on: ${err.message}`); } }
 
     // ACTIONS
     try {
@@ -35,7 +35,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Action plug_smart_turn_on: ${err.message}`); }; }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action plug_smart_turn_on: ${err.message}`); } }
 
     try {
       const card = this.homey.flow.getActionCard('plug_off');
@@ -46,7 +46,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Action plug_smart_turn_off: ${err.message}`); }; }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action plug_smart_turn_off: ${err.message}`); } }
 
     try {
       const card = this.homey.flow.getActionCard('plug_on_delay');
@@ -57,7 +57,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Action plug_smart_turn_on_delay: ${err.message}`); }; }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action plug_smart_turn_on_delay: ${err.message}`); } }
 
     try {
       const card = this.homey.flow.getActionCard('plug_off_delay');
@@ -68,7 +68,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Action plug_smart_turn_off_delay: ${err.message}`); }; }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action plug_smart_turn_off_delay: ${err.message}`); } }
 
     try {
       const card = this.homey.flow.getActionCard('plug_indicator');
@@ -80,7 +80,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Action plug_smart_set_indicator: ${err.message}`); }; }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action plug_smart_set_indicator: ${err.message}`); } }
 
     try {
       const card = this.homey.flow.getActionCard('plug_power_on');
@@ -91,7 +91,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Action plug_smart_set_power_on: ${err.message}`); }; }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action plug_smart_set_power_on: ${err.message}`); } }
 
     try {
       const card = this.homey.flow.getActionCard('set_power_on_behavior');
@@ -105,7 +105,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Action set_power_on_behavior: ${err.message}`); }; }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action set_power_on_behavior: ${err.message}`); } }
 
     this.log('[FLOW] All flow cards registered');
   }

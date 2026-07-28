@@ -24,7 +24,7 @@ class FloorHeatingThermostatDevice extends TuyaZigbeeDevice {
       
       // Initial sync after 10 seconds (let device settle)
       this.homey.setTimeout(async () => {
-        if (this._destroyed) return;
+        if (this._destroyed) {return;}
         try {
           const result = await this._timeSync.sync({ force: true });
           if (result.success) {
@@ -40,7 +40,7 @@ class FloorHeatingThermostatDevice extends TuyaZigbeeDevice {
       
       // Periodic sync every 6 hours
       this._timeSyncInterval = this.homey.setInterval(async () => {
-        if (this._destroyed) return;
+        if (this._destroyed) {return;}
         try {
           const result = await this._timeSync.sync();
           if (!result.success && result.reason === 'no_rtc') {
@@ -124,7 +124,7 @@ class FloorHeatingThermostatDevice extends TuyaZigbeeDevice {
     try {
       const node = this.zclNode || this._zclNode;
       const tuyaCluster = node?.endpoints?.[1]?.clusters?.tuya;
-      if (!tuyaCluster) return;
+      if (!tuyaCluster) {return;}
 
       const now = new Date();
       let utcOffset = 0;

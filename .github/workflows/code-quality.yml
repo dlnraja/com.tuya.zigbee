@@ -121,13 +121,16 @@ jobs:
       - name: Driver health check
         id: health
         run: |
-          if [ -f tools/ci/driver-health-check.js ]; then
-            node tools/ci/driver-health-check.js 2>&1 | tail -30 || true
+          if [ -f scripts/validation/check-driver-health.js ]; then
+            node scripts/validation/check-driver-health.js 2>&1 | tail -30 || true
           fi
         continue-on-error: true
 
       - name: Build summary
         if: always()
+        env:
+          # Pass PR ref through env to avoid shell injection from fork branch names
+          PR_HEAD_REF: ${{ github.event.pull_request.head.ref || github.ref_name }}
         run: |
           {
             echo "## 🔍 Code Quality — $(date -u +%Y-%m-%dT%H:%M:%SZ)"
@@ -137,5 +140,5 @@ jobs:
             echo "- Health: ${{ steps.health.outcome == 'success' && '✅' || '⚠️' }}"
             echo ""
             echo "**Run**: ${{ github.run_id }}"
-            echo "**Trigger**: ${{ github.event_name }} ${{ github.event.pull_request.head.ref || github.ref_name }}"
+            echo "**Trigger**: ${{ github.event_name }} $PR_HEAD_REF"
           } >> $GITHUB_STEP_SUMMARY

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>WiFi Devices - Tuya Unified Zigbee v9.0.348</title>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2/dist/tailwind.min.css" rel="stylesheet">
+<style>
+:root{--bg:#0f172a;--card:#1e293b;--accent:#3b82f6;--green:#10b981;--text:#e2e8f0;--muted:#94a3b8}
+*{box-sizing:border-box}body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--text);margin:0}
+.hero{background:linear-gradient(135deg,#3b2f5f,#0f172a);padding:2rem;text-align:center}
+.hero h1{font-size:2rem;margin:0}.hero p{color:var(--muted);margin:.5rem 0}
+.stats{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin:1rem 0}
+.stat{background:var(--card);border-radius:.5rem;padding:.75rem 1.5rem;text-align:center}
+.stat b{font-size:1.5rem;color:var(--accent);display:block}
+.section{max-width:1400px;margin:0 auto;padding:1.5rem 1rem}
+.section h2{font-size:1.5rem;border-bottom:2px solid var(--accent);padding-bottom:.5rem;margin-bottom:1rem}
+.section h3{color:var(--accent);font-size:1.1rem;margin:1.25rem 0 .5rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1rem}
+.card{background:var(--card);border-radius:.75rem;padding:1.25rem;border:1px solid #334155}
+.card h3{margin:0 0 .5rem;font-size:1.05rem;color:var(--text)}
+.card .meta{color:var(--muted);font-size:.8rem;margin:.25rem 0}
+.card ul{margin:.5rem 0;padding-left:1.25rem;font-size:.85rem;color:var(--muted)}
+.card li{margin:.2rem 0}
+.badge{display:inline-block;padding:.125rem .5rem;border-radius:9999px;font-size:.7rem;font-weight:600}
+.cap{display:inline-block;background:#1e293b;border:1px solid #334155;padding:.125rem .375rem;border-radius:.25rem;font-size:.7rem;margin:1px;color:var(--muted)}
+table{width:100%;border-collapse:collapse;font-size:.85rem;margin:.5rem 0}
+th,td{border:1px solid #334155;padding:.5rem .75rem;text-align:left;vertical-align:top}
+th{background:var(--card);color:var(--accent)}
+td code,li code,p code{font-family:monospace;font-size:.8rem;background:#0f172a;padding:.0625rem .375rem;border-radius:.25rem;border:1px solid #334155}
+pre.schema{background:#0f172a;border:1px solid #334155;border-radius:.5rem;padding:1rem;overflow-x:auto;font-size:.78rem;line-height:1.35;color:#6ee7b7}
+.faq details{background:var(--card);border:1px solid #334155;border-radius:.5rem;padding:.75rem 1rem;margin:.5rem 0}
+.faq summary{cursor:pointer;font-weight:600}
+.faq p{color:var(--muted);font-size:.875rem;margin:.5rem 0 0}
+.steps{counter-reset:s;list-style:none;padding:0}
+.steps li{counter-increment:s;background:var(--card);border:1px solid #334155;border-radius:.5rem;padding:.75rem 1rem;margin:.5rem 0;font-size:.9rem}
+.steps li::before{content:counter(s);display:inline-block;background:var(--accent);color:#fff;border-radius:9999px;width:1.5rem;height:1.5rem;line-height:1.5rem;text-align:center;margin-right:.75rem;font-weight:700}
+.note{background:#3b82f615;border:1px solid #3b82f640;border-radius:.5rem;padding:.75rem 1rem;font-size:.85rem;color:var(--muted);margin:1rem 0}
+.footer{text-align:center;padding:2rem;color:var(--muted);font-size:.875rem}
+.footer a{color:var(--accent);text-decoration:none}
+.nav{max-width:1400px;margin:0 auto;padding:1rem 1rem 0;font-size:.875rem}
+.nav a{color:var(--accent);text-decoration:none}
+</style></head><body>
+<div class="hero"><h1>📡 WiFi Devices</h1>
+<p>Tuya Unified Zigbee v9.0.348 — Local-first Tuya WiFi, no cloud required in operation</p>
+<div class="stats">
+<div class="stat"><b>50</b>WiFi Drivers</div>
+<div class="stat"><b>28</b>Tuya LAN (local-first)</div>
+<div class="stat"><b>995</b>tuya-local devices catalogued</div>
+<div class="stat"><b>16,193</b>DP mappings</div>
+</div>
+<p><a href="index.html" style="color:var(--accent)">🔍 ← Back to Device Finder (431 drivers, 5,734 fingerprints)</a></p>
+</div>
+
+<div class="section" id="user">
+<h2>👤 For Users</h2>
+<h3>Which WiFi devices are supported?</h3>
+<p>50 WiFi drivers ship with the app: <b>28 speak the Tuya LAN protocol</b> (local-first,
+AES-encrypted TCP on port 6668) and 22 use other local protocols (eWeLink, Sonoff DIY, camera).
+Every Tuya LAN driver below works <b>entirely on your local network</b> once paired.</p>
+<div class="grid"><div class="card"><div style="display:flex;justify-content:space-between;align-items:start"><h3>eWeLink Bulb (SONOFF B02/B05)</h3><span class="badge" style="background:#10b98120;color:#6ee7b7;border:1px solid #10b98140">eWeLink</span></div><div class="meta"><code>wifi_ewelink_bulb</code> · 4 capabilities</div><div><span class="cap">onoff</span><span class="cap">dim</span><span class="cap">light_temperature</span><span class="cap">button.1</span></div></div><div class="card"><div style="display:flex;justify-content:space-between;align-items:start"><h3>eWeLink Dimmer (SONOFF D1)</h3><span class="badge" style="background:#10b98120;color:#6ee7b7;border:1px solid #10b98140">eWeLink</span></div><div class="meta"><code>wifi_ewelink_dimmer</code> · 3 capabilities</div><div><span class="cap">onoff</span><span class="cap">dim</span><span class="cap">button.1</span></div></div><div class="card"><div style="display:flex;justify-content:space-between;align-items:start"><h3>eWeLink Fan Controller (SONOFF iFan)</h3><span class="badge" style="background:#10b98120;color:#6ee7b7;border:1px solid #10b98140">eWeLink</span></div><div class="meta"><code>wifi_ewelink_fan</code> · 4 capabilities</div><div><span class="cap">onoff</span><span class="cap">onoff.2</span><span class="cap">dim</span><span class="cap">button.1</span></div></div><div class="card"><div style="display:flex;justify-content:space-between;align-items:start"><h3>eWeLink LED Strip (SONOFF L1/L2)</h3><span class="badge" style="background:#10b98120;color:#6ee7b7;border:1px solid #10b98140">eWeLink</span></div><div class="meta"><code>wifi_ewelink_led</code> · 3 capabilities</div><div><span class="cap">onoff</span><span class="cap">dim</span><span class="cap">button.1</span></div></div><div class="card"><div style="display:flex;justify-content:space-between;align-items:start"><h3>eWeLink Plug (SONOFF)</h3><span class="badge" style="background:#10b98120;color:#6ee7b7;border:1px solid #10b98140">eWeLink</span></div><div class="meta"><code>wifi_ewelink_plug</code> · 2 capabilities</div><div><span class="cap">onoff</span><span class="cap">button.1</span></div></div><div class="card"><div style="display:flex;justify-content:space-between;align-items:start"><h3>eWeLink Power Monitor (SONOFF)</h3><span class="badge" style="background:#10b98120;color:#6ee7b7;border:1px solid #10b98140">eWeLink</span></div><div class="meta"><code>wifi_ewelink_pow</code> · 5 capabilities</div><div><span class="cap">onoff</span><span class="cap">measure_power</span><span class="cap">measure_voltage</span><span class="cap">measure_current</span><span class="cap">button.1</span></div></div><div class="card"><div style="display:flex;justify-content:space-between;align-items:start"><h3>eWeLink Switch (SONOFF)</h3><span class="badge" style="background:#10b98120;color:#6ee7b7;border:1px solid #10b98140">eWeLink</span></div><div class="meta"><code>wifi_ewelink_switch</code> · 2 capabilities</div><div><span class="cap">onoff</span><span class="cap">button.1</span></div></div><div class="card"><div style="display:flex;justify-content:space-between;align-items:start"><h3>eWeLink Switch 2-Channel (SONOFF)</h3><span class="badge" style="background:#10b98120;color:#6ee7b7;border:1px solid #10b98140">eWeLink</span></div><div class="meta"><code>wifi_ewelink_switch_2ch</code> · 3 capabilities</div><div><span class="cap">onoff</span><span class="cap">onoff.2</span><span class="cap">button.1</span></div></div><div class="card"><div style="display:flex;justify-content:space-between;align-items:start"><h3>eWeLink Switch 4-Channel (SONOFF)</h3><span class="badge" style="background:#10b98120;color:#6ee7b7;border:1px solid #10b98140">eWeLink</span></div><div class="meta"><code>wifi_ewelink_switch_4ch</code> · 5 capabilities</div><div><span class="cap">onoff</span><span class="cap">onoff.2</span><span class="cap">onoff.3</span><span class="cap">onoff.4</span><span class="cap">button.1</span></div></div><div class="card"><div style="display:flex;justify-content:space-between;align-items:start"><h3>eWeLink TH Sensor Switch (SONOFF)</h3><span class="badge" style="background:#10b98120;color:#6ee7b7;border:1px solid #10b98140">eWeLink</span></div><div class="meta"><code>wifi_ewelink_th</code> · 2 capabilities</div><div><span class="cap">onoff</span><span class="cap">button.1</span></div></div><div class="card"><div style="display:flex;justify-content:space-between;align-items:start"><h3>SONOFF BASIC R4</h3><span class="badge" style="background:#10b98120;color:#6ee7b7;border:1px solid #10b98140">Sonoff DIY</span></div><div class="meta"><code>wifi_sonoff_basicr4</code> · 2 capabilities</div><div><span class="cap">onoff</span><span class="cap">button.1</span></div></div><div class="card"><div style="display:flex;justify-content:space-between;align-items:start"><h3>SONOFF DUAL R3</h3><span class="badge" style="background:#10b98120;color:#6ee7b7;border:1px solid #10b98140">Sonoff DIY</span></div><div class="meta"><code>wifi_sonoff_dualr3</code> · 6 capabilities</div><div><span class="cap">onoff</span><span class="cap">onoff.2</span><span class="cap">measure_power</span><span class="cap">measure_voltage</span><span class="cap">measure_current</span><span class="cap">button.1</span></div></div><div class="card"><div style="display:flex;justify-content:space-between;align-items:start"><h3>SONOFF Micro USB</h3><span class="badge" style="background:#10b98120;color:#6ee7b7;border:1px solid #10b98140">Sonoff DIY</span></div><div class="meta"><code>wifi_sonoff_micro</code> · 2 capabilities</div><div><span class="cap">onoff</span><span class="cap">button.1</span></div></div><div class="card"><div style="display:flex;justify-content:space-between;align-items:start"><h3>SONOFF MINI R3</h3><span class="badge" style="background:#10b98120;color:#6ee7b7;border:1px solid #10b98140">Sonoff DIY</span></div><div class="meta"><code>wifi_sonoff_minir3</code> · 2 capabilities</div><div><span class="cap">onoff</span><span class="cap">button.1</span></div></div><div class="card"><div style="display:flex;justify-content:space-between;align-items:start"><h3>SONOFF MINI R4 / R4M</h3><span class="badge" style="background:#10b98120;color:#6ee7b7;border:1px solid #10b98140">Sonoff DIY</span></div><div class="meta"><code>wifi_sonoff_minir4</code> · 2 capabilities</div><div><span class="cap">onoff</span><span class="cap">button.1</span></div></div><div class="card"><div style="display:flex;justify-content:space-between;align-items:start"><h3>SONOFF POW Elite / POWR320D</h3><span class="badge" style="background:#10b98120;color:#6ee7b7;border:1px solid #10b98140">Sonoff DIY</span></div><div class="meta"><code>wifi_sonoff_pow_elite</code> · 6 capabilities</div><div><span class="cap">onoff</span><span class="cap">measure_power</span><span class="cap">measure_voltage</span><span class="cap">measure_current</span><span class="cap">meter_power</span><span class="cap">button.1</span></div></div><div class="card"><div style="display:flex;justify-content:space-between;align-items:start"><h3>SONOFF S-MATE2 Extreme</h3><span class="badge" style="background:#10b98120;color:#6ee7b7;border:1px solid #10b98140">Sonoff DIY</span></div><div class="meta"><code>wifi_sonoff_smate2</code> · 2 capabilities</div><div><span class="cap">onoff</span><span class="cap">button.1</span></div></div><div class="card"><div style="display:flex;justify-content:space-between;align-items:start"><h3>SONOFF THR316D / THR320D</h3><span class="badge" style="background:#10b98120;color:#6ee7b7;border:1px solid #10b98140">Sonoff DIY</span></div><div class="meta"><code>wifi_sonoff_thr316d</code> · 5 capabilities</div><div><span class="cap">onoff</span><span class="cap">measure_temperature</span><span class="cap">measure_humidity</span><span class="cap">target_temperature</span><span class="cap">button.1</span></div></div><div class="card"><div style="display:flex;justify-content:space-between;align-items:start"><h3>SONOFF TX Touch 1-Gang</h3><span class="badge" style="background:#10b98120;color:#6ee7b7;border:1px solid #10b98140">Sonoff DIY</span></div><div class="meta"><code>wifi_sonoff_tx_1ch</code> · 2 capabilities</div><div><span class="cap">onoff</span><span class="cap">button.1</span></div></div><div class="card"><div style="display:flex;justify-content:space-between;align-items:start"><h3>SONOFF TX Touch 2-Gang</h3><span class="badge" style="background:#10b98120;color:#6ee7b7;border:1px solid #10b98140">Sonoff DIY</span></div><div class="meta"><code>wifi_sonoff_tx_2ch</code> · 3 capabilities</div><div><span class="cap">onoff</span><span class="cap">onoff.2</span><span class="cap">button.1</span></div></div><div class="card"><div style="display:flex;justify-content:space-between;align-items:start"><h3>SONOFF TX Touch 3-Gang</h3><span class="badge" style="background:#10b98120;color:#6ee7b7;border:1px solid #10b98140">Sonoff DIY</span></div><div class="meta"><code>wifi_sonoff_tx_3ch</code> · 4 capabilities</div><div><span class="cap">onoff</span><span class="cap">onoff.2</span><span class="cap">onoff.3</span><span class="cap">button.1</span></div></div><div class="card"><div style="display:flex;justify-content:space-between;align-items:start"><h3>WiFi 2-Gang Switch</h3><span class="badge" style="background:#7c3aed20;color:#a78bfa;border:1px solid #7c3aed40">Tuya LAN</span></div><div class="meta"><code>wifi_switch_2gang</code> · 5 capabilities</div><div><span class="cap">onoff</span><span class="cap">onoff.gang2</span><span class="cap">power_on_behavior</span><span class="cap">button.1</span><span class="cap">button.2</span></div></div><div class="card"><div style="display:flex;justify-content:space-between;align-items:start"><h3>WiFi 3-Gang Switch</h3><span class="badge" style="background:#7c3aed20;color:#a78bfa;border:1px solid #7c3aed40">Tuya LAN</span></div><div class="meta"><code>wifi_switch_3gang</code> · 7 capabilities</div><div><span class="cap">onoff</span><span class="cap">onoff.gang2</span><span class="cap">onoff.gang3</span><span class="cap">power_on_behavior</span><span class="cap">button.1</span><span class="cap">button.2</span></div></div><div class="card"><div style="display:flex;justify-content:space-between;align-items:start"><h3>WiFi 4-Gang Switch</h3><span class="badge" style="background:#7c3aed20;color:#a78bfa;border:1px solid #7c3aed40">Tuya LAN</span></div><div class="meta"><code>wifi_switch_4gang</code> · 9 capabilities</div><div><span class="cap">onoff</span><span class="cap">onoff.gang2</span><span class="cap">onoff.gang3</span><span class="cap">onoff.gang4</span><span class="cap">power_on_behavior</span><span class="cap">button.1</span></div></div><div class="card"><div style="display:flex;justify-content:space-between;align-items:start"><h3>WiFi Air Purifier (Tuya Local)</h3><span class="badge" style="background:#7c3aed20;color:#a78bfa;border:1px solid #7c3aed40">Tuya LAN</span></div><div class="meta"><code>wifi_air_purifier</code> · 6 capabilities</div><div><span class="cap">onoff</span><span class="cap">dim</span><span class="cap">measure_pm25</span><span class="cap">measure_temperature</span><span class="cap">measure_humidity</span><span class="cap">button.1</span></div></div><div class="card"><div style="display:flex;justify-content:space-between;align-items:start"><h3>WiFi Air Quality Monitor (Tuya Local)</h3><span class="badge" style="background:#7c3aed20;color:#a78bfa;border:1px solid #7c3aed40">Tuya LAN</span></div><div class="meta"><code>wifi_air_quality</code> · 5 capabilities</div><div><span class="cap">measure_co2</span><span class="cap">measure_temperature</span><span class="cap">measure_humidity</span><span class="cap">measure_pm25</span><span class="cap">button.1</span></div></div><div class="card"><div style="display:flex;justify-content:space-between;align-items:start"><h3>WiFi Camera (Tuya Local)</h3><span class="badge" style="background:#ef444420;color:#fca5a5;border:1px solid #ef444440">Camera</span></div><div class="meta"><code>wifi_camera</code> · 3 capabilities</div><div><span class="cap">alarm_motion</span><span class="cap">onoff</span><span class="cap">button.1</span></div></div><div class="card"><div style="display:flex;justify-content:space-between;align-items:start"><h3>WiFi Curtain Motor (Tuya Local)</h3><span class="badge" style="background:#7c3aed20;color:#a78bfa;border:1px solid #7c3aed40">Tuya LAN</span></div><div class="meta"><code>wifi_cover</code> · 3 capabilities</div><div><span class="cap">windowcoverings_state</span><span class="cap">windowcoverings_set</span><span class="cap">button.1</span></div></div><div class="card"><div style="display:flex;justify-content:space-between;align-items:start"><h3>WiFi Dehumidifier (Tuya Local)</h3><span class="badge" style="background:#7c3aed20;color:#a78bfa;border:1px solid #7c3aed40">Tuya LAN</span></div><div class="meta"><code>wifi_dehumidifier</code> · 7 capabilities</div><div><span class="cap">onoff</span><span class="cap">measure_humidity</span><span class="cap">measure_temperature</span><span class="cap">target_humidity</span><span class="cap">alarm_water</span><span class="cap">child_lock</span></div></div><div class="card"><div style="display:flex;justify-content:space-between;align-items:start"><h3>WiFi Device (Tuya Local)</h3><span class="badge" style="background:#7c3aed20;color:#a78bfa;border:1px solid #7c3aed40">Tuya LAN</span></div><div class="meta"><code>wifi_generic</code> · 2 capabilities</div><div><span class="cap">onoff</span><span class="cap">button.1</span></div></div><div class="card"><div style="display:flex;justify-content:space-between;align-items:start"><h3>WiFi Dimmer (Tuya Local)</h3><span class="badge" style="background:#7c3aed20;color:#a78bfa;border:1px solid #7c3aed40">Tuya LAN</span></div><div class="meta"><code>wifi_dimmer</code> · 3 capabilities</div><div><span class="cap">onoff</span><span class="cap">dim</span><span class="cap">button.1</span></div></div><div class="card"><div style="display:flex;justify-content:space-between;align-items:start"><h3>WiFi Door Lock (Tuya Local)</h3><span class="badge" style="background:#7c3aed20;color:#a78bfa;border:1px solid #7c3aed40">Tuya LAN</span></div><div class="meta"><code>wifi_door_lock</code> · 5 capabilities</div><div><span class="cap">locked</span><span class="cap">measure_battery</span><span class="cap">alarm_generic</span><span class="cap">alarm_contact</span><span class="cap">button.1</span></div></div><div class="card"><div style="display:flex;justify-content:space-between;align-items:start"><h3>WiFi Doorbell / Camera (Tuya Local)</h3><span class="badge" style="background:#7c3aed20;color:#a78bfa;border:1px solid #7c3aed40">Tuya LAN</span></div><div class="meta"><code>wifi_doorbell</code> · 3 capabilities</div><div><span class="cap">alarm_generic</span><span class="cap">alarm_motion</span><span class="cap">button.1</span></div></div><div class="card"><div style="display:flex;justify-content:space-between;align-items:start"><h3>WiFi Fan (Tuya Local)</h3><span class="badge" style="background:#7c3aed20;color:#a78bfa;border:1px solid #7c3aed40">Tuya LAN</span></div><div class="meta"><code>wifi_fan</code> · 3 capabilities</div><div><span class="cap">onoff</span><span class="cap">dim</span><span class="cap">button.1</span></div></div><div class="card"><div style="display:flex;justify-content:space-between;align-items:start"><h3>WiFi Garage Door (Tuya Local)</h3><span class="badge" style="background:#7c3aed20;color:#a78bfa;border:1px solid #7c3aed40">Tuya LAN</span></div><div class="meta"><code>wifi_garage_door</code> · 3 capabilities</div><div><span class="cap">garagedoor_closed</span><span class="cap">alarm_contact</span><span class="cap">button.1</span></div></div><div class="card"><div style="display:flex;justify-content:space-between;align-items:start"><h3>WiFi Heater (Tuya Local)</h3><span class="badge" style="background:#7c3aed20;color:#a78bfa;border:1px solid #7c3aed40">Tuya LAN</span></div><div class="meta"><code>wifi_heater</code> · 7 capabilities</div><div><span class="cap">onoff</span><span class="cap">target_temperature</span><span class="cap">measure_temperature</span><span class="cap">wifi_heater_mode</span><span class="cap">child_lock</span><span class="cap">eco_mode</span></div></div><div class="card"><div style="display:flex;justify-content:space-between;align-items:start"><h3>WiFi Humidifier (Tuya Local)</h3><span class="badge" style="background:#7c3aed20;color:#a78bfa;border:1px solid #7c3aed40">Tuya LAN</span></div><div class="meta"><code>wifi_humidifier</code> · 5 capabilities</div><div><span class="cap">onoff</span><span class="cap">measure_humidity</span><span class="cap">measure_temperature</span><span class="cap">alarm_water</span><span class="cap">button.1</span></div></div><div class="card"><div style="display:flex;justify-content:space-between;align-items:start"><h3>WiFi IR Remote (Tuya Local)</h3><span class="badge" style="background:#7c3aed20;color:#a78bfa;border:1px solid #7c3aed40">Tuya LAN</span></div><div class="meta"><code>wifi_ir_remote</code> · 2 capabilities</div><div><span class="cap">onoff</span><span class="cap">button.1</span></div></div><div class="card"><div style="display:flex;justify-content:space-between;align-items:start"><h3>WiFi LED Strip RGBCW (Tuya Local)</h3><span class="badge" style="background:#7c3aed20;color:#a78bfa;border:1px solid #7c3aed40">Tuya LAN</span></div><div class="meta"><code>wifi_led_strip</code> · 7 capabilities</div><div><span class="cap">onoff</span><span class="cap">dim</span><span class="cap">light_hue</span><span class="cap">light_saturation</span><span class="cap">light_temperature</span><span class="cap">light_mode</span></div></div><div class="card"><div style="display:flex;justify-content:space-between;align-items:start"><h3>WiFi Light RGBCW (Tuya Local)</h3><span class="badge" style="background:#7c3aed20;color:#a78bfa;border:1px solid #7c3aed40">Tuya LAN</span></div><div class="meta"><code>wifi_light</code> · 7 capabilities</div><div><span class="cap">onoff</span><span class="cap">dim</span><span class="cap">light_hue</span><span class="cap">light_saturation</span><span class="cap">light_temperature</span><span class="cap">light_mode</span></div></div><div class="card"><div style="display:flex;justify-content:space-between;align-items:start"><h3>WiFi Liquid Level Sensor</h3><span class="badge" style="background:#7c3aed20;color:#a78bfa;border:1px solid #7c3aed40">Tuya LAN</span></div><div class="meta"><code>wifi_water_tank_monitor</code> · 6 capabilities</div><div><span class="cap">measure_water_level</span><span class="cap">measure_water_percentage</span><span class="cap">alarm_water_low</span><span class="cap">alarm_water_high</span><span class="cap">alarm_water</span><span class="cap">button.1</span></div></div><div class="card"><div style="display:flex;justify-content:space-between;align-items:start"><h3>WiFi Pet Feeder (Tuya Local)</h3><span class="badge" style="background:#7c3aed20;color:#a78bfa;border:1px solid #7c3aed40">Tuya LAN</span></div><div class="meta"><code>wifi_pet_feeder</code> · 3 capabilities</div><div><span class="cap">onoff</span><span class="cap">measure_battery</span><span class="cap">button.1</span></div></div><div class="card"><div style="display:flex;justify-content:space-between;align-items:start"><h3>WiFi Power Strip (Tuya Local)</h3><span class="badge" style="background:#7c3aed20;color:#a78bfa;border:1px solid #7c3aed40">Tuya LAN</span></div><div class="meta"><code>wifi_power_strip</code> · 8 capabilities</div><div><span class="cap">onoff</span><span class="cap">onoff.socket2</span><span class="cap">onoff.socket3</span><span class="cap">onoff.socket4</span><span class="cap">measure_power</span><span class="cap">meter_power</span></div></div><div class="card"><div style="display:flex;justify-content:space-between;align-items:start"><h3>WiFi Robot Vacuum (Tuya Local)</h3><span class="badge" style="background:#7c3aed20;color:#a78bfa;border:1px solid #7c3aed40">Tuya LAN</span></div><div class="meta"><code>wifi_robot_vacuum</code> · 4 capabilities</div><div><span class="cap">onoff</span><span class="cap">vacuumcleaner_state</span><span class="cap">measure_battery</span><span class="cap">button.1</span></div></div><div class="card"><div style="display:flex;justify-content:space-between;align-items:start"><h3>WiFi Sensor (Tuya Local)</h3><span class="badge" style="background:#7c3aed20;color:#a78bfa;border:1px solid #7c3aed40">Tuya LAN</span></div><div class="meta"><code>wifi_sensor</code> · 4 capabilities</div><div><span class="cap">measure_temperature</span><span class="cap">measure_humidity</span><span class="cap">measure_battery</span><span class="cap">button.1</span></div></div><div class="card"><div style="display:flex;justify-content:space-between;align-items:start"><h3>WiFi Siren (Tuya Local)</h3><span class="badge" style="background:#7c3aed20;color:#a78bfa;border:1px solid #7c3aed40">Tuya LAN</span></div><div class="meta"><code>wifi_siren</code> · 6 capabilities</div><div><span class="cap">onoff</span><span class="cap">alarm_generic</span><span class="cap">measure_temperature</span><span class="cap">measure_humidity</span><span class="cap">measure_battery</span><span class="cap">button.1</span></div></div><div class="card"><div style="display:flex;justify-content:space-between;align-items:start"><h3>WiFi Smart Plug (Tuya Local)</h3><span class="badge" style="background:#7c3aed20;color:#a78bfa;border:1px solid #7c3aed40">Tuya LAN</span></div><div class="meta"><code>wifi_plug</code> · 6 capabilities</div><div><span class="cap">onoff</span><span class="cap">measure_power</span><span class="cap">meter_power</span><span class="cap">measure_current</span><span class="cap">measure_voltage</span><span class="cap">button.1</span></div></div><div class="card"><div style="display:flex;justify-content:space-between;align-items:start"><h3>WiFi Switch (Tuya Local)</h3><span class="badge" style="background:#7c3aed20;color:#a78bfa;border:1px solid #7c3aed40">Tuya LAN</span></div><div class="meta"><code>wifi_switch</code> · 3 capabilities</div><div><span class="cap">onoff</span><span class="cap">power_on_behavior</span><span class="cap">button.1</span></div></div><div class="card"><div style="display:flex;justify-content:space-between;align-items:start"><h3>WiFi Thermostat (Tuya Local)</h3><span class="badge" style="background:#7c3aed20;color:#a78bfa;border:1px solid #7c3aed40">Tuya LAN</span></div><div class="meta"><code>wifi_thermostat</code> · 6 capabilities</div><div><span class="cap">onoff</span><span class="cap">target_temperature</span><span class="cap">measure_temperature</span><span class="cap">measure_humidity</span><span class="cap">child_lock</span><span class="cap">button.1</span></div></div><div class="card"><div style="display:flex;justify-content:space-between;align-items:start"><h3>WiFi Water Valve (Tuya Local)</h3><span class="badge" style="background:#7c3aed20;color:#a78bfa;border:1px solid #7c3aed40">Tuya LAN</span></div><div class="meta"><code>wifi_water_valve</code> · 3 capabilities</div><div><span class="cap">onoff</span><span class="cap">measure_battery</span><span class="cap">button.1</span></div></div></div>
+
+<h3>How does local-first work?</h3>
+<div class="note">🏠 <b>Local-first, cloud-optional.</b> After pairing, your WiFi devices are controlled over your
+LAN only — no Tuya cloud round-trip, no internet dependency, no subscription. If the Tuya cloud goes down or you
+block it on your firewall, your devices keep working.</div>
+
+<h3>How to pair a Tuya WiFi device</h3>
+<ol class="steps">
+<li>Put the device in pairing mode and add it once in the <b>Smart Life / Tuya Smart</b> mobile app (this provisions it on your WiFi).</li>
+<li>In Homey, add the device with the matching <code>wifi_*</code> driver and choose a pairing method: <b>QR code</b> (Smart Life), <b>Tuya IoT API</b>, or <b>manual</b> entry.</li>
+<li>The app retrieves the device's <code>local_key</code> <b>once</b> from the Tuya cloud (opt-in) and stores it locally on Homey.</li>
+<li>From then on, all communication is <b>local TCP</b>. Cloud credentials can be removed from the app settings — control stays local.</li>
+</ol>
+
+<h3>FAQ</h3>
+<div class="faq">
+<details><summary>Do WiFi devices need the Tuya cloud to work?</summary>
+<p>No. The cloud is only used once during pairing to fetch the <code>local_key</code>. Daily operation
+(on/off, dimming, telemetry, automations) is 100% LAN via <code>TuyaLocalClient</code> (TCP 6668, AES).</p></details>
+<details><summary>Why does pairing need the cloud at all?</summary>
+<p>Tuya devices encrypt local traffic with a per-device <code>local_key</code> that is only issued by the Tuya
+cloud at provisioning time. Fetching it is a one-time, explicit opt-in step — you can also enter it manually
+if you extracted it yourself.</p></details>
+<details><summary>What happens if my device gets a new IP address?</summary>
+<p><code>TuyaUDPDiscovery</code> listens on UDP 6666/6667/6668 for device broadcasts and re-resolves the IP
+automatically (IP self-healing). No re-pairing needed.</p></details>
+<details><summary>What happens when a device is offline?</summary>
+<p>Commands are buffered in a bounded offline queue (50 commands, 5-minute expiry) and the client reconnects
+with exponential backoff (5 s → 60 s) plus a 15 s heartbeat. The device shows as unavailable in Homey instead
+of failing silently.</p></details>
+<details><summary>Can I enable the cloud as a fallback?</summary>
+<p>Yes — <code>wifi_connection_policy.cloudFallback</code> (default <code>false</code>, local-first). Even then,
+the cloud is only queried for a <b>diagnostic status snapshot</b> (rate-limited, never applied to capabilities):
+control always stays local. Every transport decision is logged with its reason.</p></details>
+</div>
+</div>
+
+<div class="section" id="technical">
+<h2>🔧 Under the Hood</h2>
+<p>The WiFi stack follows the <b>tuya-local</b> pattern: pure decision logic first, I/O second, and every
+transport decision explainable from the logs.</p>
+<div class="grid">
+<div class="card"><h3>TuyaLocalClient</h3><div class="meta"><code>lib/tuya-local/TuyaLocalClient.js</code></div>
+<ul><li>TCP 6668, AES-encrypted Tuya LAN protocol</li>
+<li>Auto protocol negotiation: 3.3 → 3.4 → 3.5 → 3.2 → 3.1</li>
+<li>Heartbeat every 15 s; reconnect backoff 5 s → 60 s</li>
+<li>Command queue: 200 ms spacing, 10 s timeout, 2 retries</li>
+<li>Offline queue: 50 commands, 5-minute expiry</li></ul></div>
+<div class="card"><h3>LocalFirstResolver</h3><div class="meta"><code>lib/wifi/LocalFirstResolver.js</code></div>
+<ul><li>Pure decision logic, zero I/O — fully unit-tested</li>
+<li>Priority: <b>LAN</b> (device_id + local_key present) → <b>cloud</b> (only if LAN impossible AND
+<code>cloudFallback=true</code> AND credentials present) → <b>none</b></li>
+<li>Returns a human-readable <code>reason</code> for every decision, logged as
+<code>[LOCAL-FIRST] Transport decision: …</code></li></ul></div>
+<div class="card"><h3>TuyaUDPDiscovery</h3><div class="meta"><code>lib/tuya-local/TuyaUDPDiscovery.js</code></div>
+<ul><li>UDP 6666/6667/6668 broadcast listener</li>
+<li>IP self-healing: re-resolves devices after DHCP changes</li>
+<li>IP resolution order: settings → UDP cache → <code>find()</code> scan on connect</li></ul></div>
+<div class="card"><h3>WiFiConnectionPolicy</h3><div class="meta"><code>lib/wifi/WiFiConnectionPolicy.js</code></div>
+<ul><li>Per-device policy store, strategy <code>local_first</code></li>
+<li><code>cloudFallback</code> defaults to <b>false</b> (opt-in)</li>
+<li><code>localDiscovery</code> enables dynamic IP self-healing</li></ul></div>
+<div class="card"><h3>Cloud fallback (opt-in)</h3><div class="meta"><code>lib/tuya-local/TuyaLocalDevice.js</code></div>
+<ul><li>On LAN failure: diagnostic cloud snapshot only, rate-limited to 1 / 10 min</li>
+<li>Snapshot is <b>never applied</b> to capabilities — control stays local</li>
+<li>Device set unavailable, LAN retried after 5 min (<code>connection-timeout</code> handler)</li></ul></div>
+<div class="card"><h3>LocalWiFiTuyaBridge</h3><div class="meta"><code>lib/tuya/LocalWiFiTuyaBridge.js</code></div>
+<ul><li>Local-first facade over discovery + client</li>
+<li><code>resolveTransport(id)</code> with decision logging</li>
+<li>Clean session lifecycle: register → connect → sendCommand → destroy</li></ul></div>
+</div>
+</div>
+
+<div class="section" id="architecture">
+<h2>🏗 Architecture</h2>
+<h3>Data flow</h3>
+<pre class="schema">
+                     UDP 6666 / 6667 / 6668 (broadcasts)
+              ┌──────────────────────────────────────────┐
+              │                                          ▼
+┌───────────────┐   TCP 6668, AES        ┌────────────────────────────┐
+│  Tuya WiFi    │ ◄────────────────────► │  TuyaLocalClient           │
+│  device       │   proto 3.1/3.3/3.4/3.5│  heartbeat 15s · backoff    │
+│               │                        │  5s→60s · queues            │
+└───────────────┘                        └─────────────┬──────────────┘
+       ▲                                               │
+       │ LAN (default)                    ┌─────────────▼──────────────┐
+       │                                  │  LocalFirstResolver        │
+┌──────┴───────────────────────┐          │  pure decision + reason    │
+│  Homey app                   │          │  lan → cloud? → none       │
+│  wifi_* drivers (Tuya LAN)   │          └─────────────┬──────────────┘
+│  TuyaLocalDevice             │                        │ only if cloudFallback=true
+└──────────────────────────────┘          ┌─────────────▼──────────────┐
+        ▲ TuyaUDPDiscovery                │  Tuya Cloud (opt-in)       │
+        └── IP self-healing ─────────────►│  diagnostic snapshot only, │
+                                          │  never applied, rate-      │
+                                          │  limited 1/10min           │
+                                          └────────────────────────────┘
+</pre>
+
+<h3>Components</h3>
+<table>
+<tr><th>Component</th><th>File</th><th>Role</th></tr>
+<tr><td>TuyaLocalClient</td><td><code>lib/tuya-local/TuyaLocalClient.js</code></td><td>Encrypted LAN session: protocol auto-negotiation, heartbeat, backoff, command &amp; offline queues</td></tr>
+<tr><td>TuyaLocalDevice</td><td><code>lib/tuya-local/TuyaLocalDevice.js</code></td><td>Base class for the 28 Tuya LAN drivers; wires resolver decisions, <code>connection-timeout</code> fallback, LAN retry</td></tr>
+<tr><td>LocalFirstResolver</td><td><code>lib/wifi/LocalFirstResolver.js</code></td><td>Pure transport decision (lan/cloud/none) with a logged, user-diagnosable reason</td></tr>
+<tr><td>WiFiConnectionPolicy</td><td><code>lib/wifi/WiFiConnectionPolicy.js</code></td><td>Per-device policy store — <code>local_first</code> strategy, <code>cloudFallback</code> opt-in (default off)</td></tr>
+<tr><td>TuyaUDPDiscovery</td><td><code>lib/tuya-local/TuyaUDPDiscovery.js</code></td><td>UDP 6666/6667/6668 listener, dynamic IP self-healing</td></tr>
+<tr><td>LocalWiFiTuyaBridge</td><td><code>lib/tuya/LocalWiFiTuyaBridge.js</code></td><td>Local-first facade (discovery + sessions) for unified WiFi handling</td></tr>
+<tr><td>TuyaCloudAPI</td><td><code>lib/tuya-local/TuyaCloudAPI.js</code></td><td>Pairing-time <code>local_key</code> retrieval and opt-in diagnostic snapshots</td></tr>
+</table>
+
+<h3>DP mappings (tuya-local catalog)</h3>
+<p>The data-point mappings are cross-checked against the <b>tuya-local</b> project catalog:
+<b>995 devices</b> catalogued across
+<b>519 manufacturers</b> with
+<b>16,193 DP mappings</b>
+(snapshot 500 devices exported in <code>data/scanners/tuya-local-results.json</code>).
+Conservative additions land in driver <code>dpMappings</code> only when attested across multiple devices —
+ambiguous generic DP names ("switch", "sensor", "value") are annotated, never guessed.</p>
+</div>
+
+<div class="footer">
+<p>Generated 2026-07-28 | <a href="index.html">🔍 Device Finder</a> | <a href="https://github.com/dlnraja/com.tuya.zigbee">GitHub</a> | <a href="https://github.com/dlnraja/com.tuya.zigbee/tree/master/lib/tuya-local">tuya-local stack</a> | <a href="https://community.homey.app/t/140352">Forum</a></p>
+<p>Data auto-regenerated from the repository on every Pages deploy</p>
+</div>
+</body></html>

@@ -25,7 +25,7 @@ class TuyaWaterLeakSensor extends TuyaSpecificClusterDevice {
 
         // Periodically read battery status every hour
         this.batteryInterval = this.homey.setInterval(async () => {
-          if (this._destroyed) return;
+          if (this._destroyed) {return;}
             try {
                 await zclNode.endpoints[1].clusters.tuya.read({ dp: 14 });
                 await zclNode.endpoints[1].clusters.tuya.read({ dp: 15 });
@@ -39,6 +39,7 @@ class TuyaWaterLeakSensor extends TuyaSpecificClusterDevice {
     // Handle datapoint events
     onReport(data) {
         this.log('Received a response or report:', data);
+        if (this._destroyed) {return;}
 
         if (data.dp === 15) {
             // Set the value of the 'measure_battery' capability.
@@ -51,6 +52,7 @@ class TuyaWaterLeakSensor extends TuyaSpecificClusterDevice {
         if (data.dp === 101) {
             // Set the value of the 'alarm_water' capability
             this.log('Received a response or report for dp 101, updating capability...');
+            if (this._destroyed) {return;}
             this.safeSetCapabilityValue('alarm_water', data.data.readUInt8(0) === 1).catch(() => {});
             this.log('Capability has been updated.');
         }

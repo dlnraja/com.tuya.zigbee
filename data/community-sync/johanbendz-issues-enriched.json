@@ -1,0 +1,150 @@
+{
+  "date": "2026-02-01",
+  "source": "JohanBendz/com.tuya.zigbee open issues",
+  "totalIssues": 12,
+  "allAlreadySupported": true,
+
+  "fingerprints": [
+    {
+      "issue": "#122",
+      "mfr": "_TZ3000_fisb3ajo",
+      "productId": "TS0002",
+      "device": "2-gang switch with neutral",
+      "user": "eeckelaertyannick",
+      "driver": "switch_2gang",
+      "status": "supported",
+      "protocol": "ZCL",
+      "clusters": [0, 4, 5, 6, 57344, 57345],
+      "endpoints": [1, 2],
+      "z2mInfo": "Lonsonho TS0002 variant"
+    },
+    {
+      "issue": "#1337",
+      "mfr": "_TZ3000_l9brjwau",
+      "productId": "TS0002",
+      "device": "BSEED 2-gang wall switch with neutral",
+      "user": "pjmpessers",
+      "driver": "switch_2gang",
+      "status": "supported",
+      "protocol": "ZCL-only (BSEED)",
+      "notes": "ZCL-only manufacturer - no Tuya DP"
+    },
+    {
+      "issue": "#1338",
+      "mfr": "_TZ3000_qkixdnon",
+      "productId": "TS0003",
+      "device": "BSEED 3-gang wall switch with neutral",
+      "user": "pjmpessers",
+      "driver": "switch_3gang",
+      "status": "supported",
+      "protocol": "ZCL-only (BSEED)"
+    },
+    {
+      "issue": "#1339",
+      "mfr": "_TZ3000_blhvsaqf",
+      "productId": "TS0001",
+      "device": "BSEED 1-gang wall switch with neutral",
+      "user": "pjmpessers",
+      "driver": "switch_1gang, wall_switch_1gang_1way",
+      "status": "supported",
+      "protocol": "ZCL-only (BSEED)",
+      "notes": "Has custom clusters 0xE000/0xE001"
+    },
+    {
+      "issue": "#1341",
+      "mfr": "_TZE284_aao3yzhs",
+      "productId": "TS0601",
+      "device": "Tuya Smart Plant Sensor",
+      "user": "proisland",
+      "driver": "soil_sensor",
+      "status": "supported",
+      "protocol": "Tuya DP",
+      "dpMappings": {
+        "3": "soil_moisture (raw)",
+        "5": "temperature (÷10)",
+        "9": "temperature_unit",
+        "14": "battery_state",
+        "15": "battery (%)"
+      },
+      "z2mModel": "TS0601_soil_3"
+    },
+    {
+      "issue": "#1336",
+      "mfr": "_TZE284_aa03yzhs",
+      "productId": "TS0601",
+      "device": "Soil Moisture/Temperature Sensor",
+      "user": "csmobiel",
+      "driver": "soil_sensor",
+      "status": "supported",
+      "protocol": "Tuya DP",
+      "notes": "Variant of _TZE284_aao3yzhs"
+    },
+    {
+      "issue": "#1343",
+      "mfr": "_TZE200_rhgsbacq",
+      "productId": "TS0601",
+      "device": "10G 4-in-1 Human Motion Sensor (ZG-204ZV)",
+      "user": "cvh1111",
+      "driver": "presence_sensor_radar",
+      "status": "supported",
+      "protocol": "Tuya DP",
+      "capabilities": ["motion", "luminance", "temperature", "humidity", "battery"],
+      "notes": "ZG-204ZV multisensor variant"
+    },
+    {
+      "issue": "#1344",
+      "mfr": "_TZ3000_bgsigers",
+      "productId": "TS0201",
+      "device": "Temperature/Humidity Sensor",
+      "user": "fjvs1467",
+      "driver": "climate_sensor",
+      "status": "supported",
+      "protocol": "ZCL",
+      "issueType": "bug",
+      "notes": "Bug report - sensors stopped working"
+    },
+    {
+      "issue": "#1345",
+      "mfr": "_TZE284_xnbkhhdr",
+      "productId": "TS0601",
+      "device": "AVATTO Smart Thermostat WT198",
+      "user": "Nono-3ric",
+      "driver": "thermostat_tuya_dp, radiator_valve",
+      "status": "supported",
+      "protocol": "Tuya DP",
+      "z2mInfo": "ZWT198 variant - battery/USB-C powered with dry contact relay",
+      "capabilities": ["target_temperature", "measure_temperature", "thermostat_mode"]
+    },
+    {
+      "issue": "#1342",
+      "mfr": "Zbeacon",
+      "productId": "DS01",
+      "device": "Door/Window Sensor",
+      "user": "geertvanelslander",
+      "driver": "contact_sensor",
+      "status": "check_required",
+      "notes": "Non-standard fingerprint format - needs verification"
+    }
+  ],
+
+  "bseedZclOnlyList": [
+    "_TZ3000_l9brjwau",
+    "_TZ3000_blhvsaqf",
+    "_TZ3000_ysdv91bk",
+    "_TZ3000_hafsqare",
+    "_TZ3000_e98krvvk",
+    "_TZ3000_iedbgyxt",
+    "_TZ3000_qkixdnon"
+  ],
+
+  "researchSources": [
+    "Z2M issues #19998, #23455, #25752, #26734",
+    "ZHA issues #1580, #3305, #4361",
+    "SmartThings Community Edge Driver",
+    "Blakadder zigbee.blakadder.com",
+    "Home Assistant Community forums",
+    "Hubitat Community",
+    "OpenHAB Community",
+    "deCONZ issues"
+  ]
+}

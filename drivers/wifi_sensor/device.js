@@ -9,7 +9,7 @@ class WiFiSensorDevice extends TuyaLocalDevice {
       '3':  { capability: 'unknown' },
       '4':  { capability: 'measure_battery' },
       '7':  { capability: 'unknown' },
-      '9':  { capability: 'unknown' },
+      '9':  { capability: 'unknown' }, // tuya-local: "button" (x4/10 devices)
       '10': { capability: 'unknown' },
       '14': { capability: 'alarm_generic',
         transform: (v) => v !== 'normal' && v !== 0 },
@@ -31,7 +31,7 @@ class WiFiSensorDevice extends TuyaLocalDevice {
 
 
   async onDeleted() {
-    if (this._destroyed) return;
+    if (this._destroyed) {return;}
     this._destroyed = true;
     this.log('Device deleted, cleaning up');
     await super.onDeleted();

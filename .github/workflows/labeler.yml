@@ -1,3 +1,7 @@
+# PR Labeler
+# Triggers: pull_request_target | Secrets: GITHUB_TOKEN only
+# Doc header added 2026-07-29 (workflows genealogy enrichment).
+
 name: "PR Labeler"
 
 # <!-- badges:start -->

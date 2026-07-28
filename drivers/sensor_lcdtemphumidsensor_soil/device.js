@@ -113,8 +113,8 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
         capability: 'measure_temperature',
         transform: (v) => {
           // Auto-detect scale: >1000=Ã·100, 100-1000=Ã·10, 100=raw Â°C
-          if (Math.abs(v) > 1000) return v * 100;
-          if (Math.abs(v) > 100) return safeMultiply(v, 10);
+          if (Math.abs(v) > 1000) {return v * 100;}
+          if (Math.abs(v) > 100) {return safeMultiply(v, 10);}
           return v; // Already in Â°C (_TZE284_oitavov2 QT-07S)
         }
       },
@@ -162,7 +162,7 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
         // For other devices, DP 111 is alarm_water (bool).
         transform: (v) => {
           const mfr = this.getSetting?.('zb_manufacturer_name') || '';
-          if (mfr.includes('npj9bug3')) return v;
+          if (mfr.includes('npj9bug3')) {return v;}
           return v === 1; // Fallback to alarm_water
         }
       },
@@ -398,7 +398,7 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
     }
     if (dp === 109) {
       this.log(`[SOIL]  SOIL MOISTURE DP109 = ${parsedValue}%`);
-      let cap = this.hasCapability('measure_humidity.soil') ? 'measure_humidity.soil' : 'measure_humidity';
+      const cap = this.hasCapability('measure_humidity.soil') ? 'measure_humidity.soil' : 'measure_humidity';
       this._safeSetCapability(cap, parseFloat(parsedValue));
       return;
     }
@@ -422,7 +422,7 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
         const threshold = this._soilWarningThreshold || 30;
         // v6.1.1: Force alarm to false if moisture is clearly safe (> threshold)
         // This resolves 'stuck' alarms when DP111 is latched or BVB smoothing occurs.
-        const alarm = (validatedMoisture < threshold);
+        const alarm = validatedMoisture < threshold;
         this._safeSetCapability('alarm_water', alarm);
         if (!alarm) {
           this.log(`[SOIL]  Forcing alarm_water to false as moisture ${validatedMoisture}% > ${threshold}%`);
@@ -439,9 +439,9 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
       let temp = parsedValue;
       const mfr = this.getSettingValue?.('zb_manufacturer_name') || '';const rawCelsius = includesCI(mfr, '_tze284_oitavov2') || includesCI(mfr, '_tze200_oitavov2');
       if (rawCelsius) { /* already Â°C */ }
-      else if (temp > 1000) temp = temp * 100;
-      else if (temp > 100) temp = safeMultiply(temp, 10);
-      else temp = safeMultiply(temp, 10);
+      else if (temp > 1000) {temp = temp * 100;}
+      else if (temp > 100) {temp = safeMultiply(temp, 10);}
+      else {temp = safeMultiply(temp, 10);}
 
       this.log(`[SOIL]  TEMPERATURE DP5 = ${parsedValue}  Raw ${temp}Â°C` );
       this._safeSetCapability('measure_temperature', parseFloat(temp));
@@ -582,7 +582,7 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
    */
   async onEndDeviceAnnounce() {
     this.log('[REJOIN] Device announced itself, refreshing state...');
-    if (typeof this._updateLastSeen === 'function') this._updateLastSeen();
+    if (typeof this._updateLastSeen === 'function') {this._updateLastSeen();}
     // Proactive data recovery if supported
     if (this._dataRecoveryManager) {
        this._dataRecoveryManager.triggerRecovery();

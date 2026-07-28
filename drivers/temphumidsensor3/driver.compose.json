@@ -52,7 +52,12 @@
         "it": "Tenere premuto il pulsante all'interno del vano batteria per cicrca 5 secondi finchè il LED non lampeggia rapidamente."
       }
     },
-    "manufacturerName": []
+    "manufacturerName": [
+      "_tze200_a8sdabtg",
+      "_tze200_qoy0ekbd",
+      "_tze204_a8sdabtg",
+      "_tze204_qoy0ekbd"
+    ]
   },
   "version": "1.0.0",
   "capabilitiesOptions": {
@@ -65,8 +70,5 @@
       "getable": false,
       "setable": false
     }
-  },
-  "_pidConflictNotes": [
-    "// PID-CONFLICT-NOTE SNTZ003 shared with 3 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-  ]
+  }
 }

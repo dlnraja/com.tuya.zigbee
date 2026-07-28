@@ -7,7 +7,7 @@ class LightSensorOutdoorDriver extends Driver {
 
   async onInit() {
     await super.onInit();
-    if (this._flowCardsRegistered) return;
+    if (this._flowCardsRegistered) {return;}
     this._flowCardsRegistered = true;
 
       // === AUTO-GENERATED FLOW HANDLERS ===
@@ -15,7 +15,7 @@ class LightSensorOutdoorDriver extends Driver {
       // Edit if you need custom behaviour.
 
       this.homey.flow.getConditionCard('light_sensor_outdoor_battery_low')?.registerRunListener(async (args) => {
-        if (!args.device) return false;
+        if (!args.device) {return false;}
         return args.device.getCapabilityValue('light_sensor_outdoor_battery') === true;
       });
   }

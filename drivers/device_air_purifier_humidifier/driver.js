@@ -17,7 +17,7 @@ class HumidifierDriver extends Driver {
 
   async onInit() {
     await super.onInit();
-    if (this._flowCardsRegistered) return;
+    if (this._flowCardsRegistered) {return;}
     this._flowCardsRegistered = true;
 
     this.log('Humidifier driver initialized');
@@ -26,7 +26,7 @@ class HumidifierDriver extends Driver {
     const reg = (id, fn) => {
       try {
         const card = this.homey.flow.getActionCard(id);
-        if (card) card.registerRunListener(fn);
+        if (card) {card.registerRunListener(fn);}
       } catch (e) {
         this.error(`Error registering flow card ${id}:`, e.message);
       }

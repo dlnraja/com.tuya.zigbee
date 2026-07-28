@@ -14,7 +14,31 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_TZE200_placeholder_tunable_bulb_E14"
+      "_tz3000_5fkufhn1",
+      "_TZ3000_5fkufhn1",
+      "_TZ3000_5FKUFHN1",
+      "_tz3000_g1glzzfk",
+      "_tz3000_kdpxju99",
+      "_tz3000_keabpigv",
+      "_tz3000_obacbukl",
+      "_tz3000_oborybow",
+      "_TZ3000_oborybow",
+      "_TZ3000_OBORYBOW",
+      "_tz3000_rylaozuc",
+      "_TZ3000_rylaozuc",
+      "_TZ3000_RYLAOZUC",
+      "_tz3000_vzopcetz",
+      "_tz3000_zw7wr5uo",
+      "_tz3210_09hzmirw",
+      "_tz3210_c2iwpxf1",
+      "_tz3210_jtifm80b",
+      "_tz3210_ngqk6jia",
+      "_tz3210_p9ao60da",
+      "_tz3210_sroezl0s",
+      "_tz3210_zdrhqmo0",
+      "_tzb210_0bkzabht",
+      "_tzb210_ayx58ft5",
+      "_tzb210_eiwanbeb"
     ],
     "productId": [
       "TS0502A"
@@ -71,8 +95,5 @@
   "class": "light",
   "_notes": [
     "// FIX-EMPTY-MFR-AGGREGATEERROR: 2026-07-12 — placeholder added to prevent server-side build crash"
-  ],
-  "_pidConflictNotes": [
-    "// PID-CONFLICT-NOTE TS0502A shared with 8 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
   ]
 }

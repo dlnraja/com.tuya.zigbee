@@ -19,7 +19,7 @@ class AirPurifierDevice extends TuyaSpecificClusterDevice {
   }
 
   async handleTuyaDataReport(data) {
-    if (!data || data.dp === null || data.dp === undefined) return;
+    if (!data || data.dp === null || data.dp === undefined) {return;}
     const v = data.data ?? data.value;
     if (data.dp === DP.state) {
       const s = Boolean(v);
@@ -30,7 +30,7 @@ class AirPurifierDevice extends TuyaSpecificClusterDevice {
         try {
           const card =
       this.homey.flow.getDeviceTriggerCard(id)?.trigger(this, {}, {}).catch((err) => this.error(err))
-          if (card) await card
+          if (card) {await card}
         } catch (e) { this.error('[FLOW] Trigger onoff failed:', e.message); }
       }
     } else if (data.dp === DP.pm25) {
@@ -40,7 +40,7 @@ class AirPurifierDevice extends TuyaSpecificClusterDevice {
         this.safeSetCapabilityValue('measure_pm25', pm).catch(() => {});
         try {
           const card = this.homey.flow.getDeviceTriggerCard('device_air_purifier_climate_air_purifier_climate_air_purifier_pm25_changed', 'action')
-          if (card ) await card.trigger(this, { pm25: pm }, {}).catch(() => {});
+          if (card ) {await card.trigger(this, { pm25: pm }, {}).catch(() => {});}
         } catch (e) { this.error('[FLOW] Trigger pm25 failed:', e.message); }
       }
     } else if (data.dp === DP.speed) {

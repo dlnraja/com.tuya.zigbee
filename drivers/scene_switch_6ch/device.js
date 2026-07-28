@@ -19,7 +19,7 @@ class SceneSwitch6chDevice extends ButtonDevice {
 
   onDeleted() {
     this._destroyed = true;
-    if (super.onDeleted) super.onDeleted();
+    if (super.onDeleted) {super.onDeleted();}
   }
 }
 

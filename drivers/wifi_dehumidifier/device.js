@@ -12,7 +12,7 @@ class WiFiDehumidifierDevice extends TuyaLocalDevice {
     return {
       '1':  { capability: 'onoff', writable: true, transform: (v) => !!v, reverseTransform: (v) => !!v },
       '2':  { capability: 'unknown' }, // mode: auto/manual/dry_clothes/sleep
-      '4':  { capability: 'unknown' }, // fan speed: low/mid/high
+      '4':  { capability: 'unknown' }, // fan speed: low/mid/high | tuya-local: "speed" (x30/34 devices)
       '5':  { capability: 'target_humidity', writable: true },
       '6':  { capability: 'measure_humidity' },
       '7':  { capability: 'measure_temperature' },
@@ -37,7 +37,7 @@ class WiFiDehumidifierDevice extends TuyaLocalDevice {
 
 
   async onDeleted() {
-    if (this._destroyed) return;
+    if (this._destroyed) {return;}
     this._destroyed = true;
     this.log('Device deleted, cleaning up');
     await super.onDeleted();

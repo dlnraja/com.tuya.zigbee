@@ -1,3 +1,7 @@
+# Recurrent Orchestrator (P32)
+# Triggers: cron: 30 3 * * * + workflow_dispatch | Secrets: GITHUB_TOKEN only
+# Doc header added 2026-07-29 (workflows genealogy enrichment).
+
 defaults:
   run:
     shell: bash
@@ -34,6 +38,13 @@ on:
         description: 'Quick mode (skip heavy steps)'
         required: false
         default: 'false'
+
+# Least privilege: read-only pipeline (activity/issues/pulls scans)
+permissions:
+  contents: read
+  issues: read
+  pull-requests: read
+  actions: read
 
 jobs:
   orchestrate:

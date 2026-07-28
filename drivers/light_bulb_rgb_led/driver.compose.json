@@ -28,7 +28,47 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_TZE200_placeholder_light_bulb_rgb_led"
+      "_tz3000_1mtktxdk",
+      "_TZ3000_1MTKTXDK",
+      "_tz3000_589kq4ul",
+      "_TZ3000_589KQ4UL",
+      "_tz3000_5bsf8vaj",
+      "_tz3000_bujv0r9b",
+      "_TZ3000_BUJV0R9B",
+      "_tz3000_kohbva1f",
+      "_TZ3000_KOHBVA1F",
+      "_tz3000_tza2vjxx",
+      "_TZ3000_TZA2VJXX",
+      "_tz3000_utagpnzs",
+      "_TZ3210_0RN9QHNU",
+      "_TZ3210_5SNKKRXW",
+      "_TZ3210_BICJQPG4",
+      "_tz3210_e020aaaj",
+      "_TZ3210_E020AAAJ",
+      "_tz3210_ijczzg9h",
+      "_TZ3210_IJCZZG9H",
+      "_TZ3210_iystcadi",
+      "_tz3210_klsm24op",
+      "_TZ3210_klsm24op",
+      "_tz3210_klv2wul0",
+      "_TZ3210_KLV2WUL0",
+      "_tz3210_mcm6m1ma",
+      "_TZ3210_mcm6m1ma",
+      "_TZ3210_MCM6M1MA",
+      "_tz3210_mntza0sw",
+      "_TZ3210_mntza0sw",
+      "_TZ3210_MNTZA0SW",
+      "_tz3210_mny0zvkm",
+      "_TZ3210_MNY0ZVKM",
+      "_tz3210_pdqu9pot",
+      "_TZ3210_pdqu9pot",
+      "_TZ3210_pwauw3g2",
+      "_TZ3210_PWAUW3G2",
+      "_tz3210_r0vzq1oj",
+      "_TZ3210_r0vzq1oj",
+      "_TZ3210_R0VZQ1OJ",
+      "_tz3210_remypqqm",
+      "_TZ3210_REMYPQQM"
     ],
     "endpoints": {
       "1": {
@@ -496,8 +536,5 @@
   "version": "1.0.0",
   "_notes": [
     "// FIX-EMPTY-MFR-AGGREGATEERROR: 2026-07-12 — placeholder added to prevent server-side build crash"
-  ],
-  "_pidConflictNotes": [
-    "// PID-CONFLICT-NOTE TS0505B shared with 19 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
   ]
 }

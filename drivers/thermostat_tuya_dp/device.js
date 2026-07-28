@@ -52,7 +52,7 @@ class ThermostatTuyaDPDevice extends UnifiedThermostatBase {
       
       // Initial sync after 10 seconds (let device settle)
       this.homey.setTimeout(async () => {
-        if (this._destroyed) return;
+        if (this._destroyed) {return;}
         try {
           const result = await this._timeSync.sync({ force: true });
           if (result.success) {
@@ -68,7 +68,7 @@ class ThermostatTuyaDPDevice extends UnifiedThermostatBase {
       
       // Periodic sync every 6 hours
       this._timeSyncInterval = this.homey.setInterval(async () => {
-        if (this._destroyed) return;
+        if (this._destroyed) {return;}
         try {
           const result = await this._timeSync.sync();
           if (!result.success && result.reason === 'no_rtc') {

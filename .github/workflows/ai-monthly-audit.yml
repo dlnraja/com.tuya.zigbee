@@ -1,8 +1,12 @@
+# AI Monthly Audit (TITAN Protocol v2)
+# Triggers: cron: 17 0 1 * * + workflow_dispatch | Secrets: ANTHROPIC_API_KEY,GH_PAT,GOOGLE_AI_KEY,OPENAI_API_KEY
+# Doc header added 2026-07-29 (workflows genealogy enrichment).
+
 name: AI Monthly Audit (TITAN Protocol v2)
 
 on:
   schedule:
-    - cron: '0 0 1 * *'  # 1st of every month at 00:00 UTC
+    - cron: '17 0 1 * *'  # 1st of every month at 00:17 UTC (staggered: was 00:00, avoids 3 simultaneous monthly runs)
   workflow_dispatch:
     inputs:
       analysis_depth:
@@ -167,8 +171,8 @@ jobs:
           echo "security_passed=$SEC" >> $GITHUB_OUTPUT
 
           # Syntax check (drivers only, fast)
-          if [ -f scripts/validation/check-syntax-drivers.js ]; then
-            node scripts/validation/check-syntax-drivers.js 2>&1 | tail -5 > /tmp/audit-validation/syntax.txt || true
+          if [ -f scripts/validation/check-driver-health.js ]; then
+            node scripts/validation/check-driver-health.js 2>&1 | tail -5 > /tmp/audit-validation/syntax.txt || true
             SYNTAX=$(grep -c "PASSED" /tmp/audit-validation/syntax.txt || echo "0")
           else
             SYNTAX=-1
@@ -811,7 +815,7 @@ jobs:
 
       - name: Create Pull Request
         if: steps.should_pr.outputs.create_pr == 'true'
-        uses: peter-evans/create-pull-request@v6
+        uses: peter-evans/create-pull-request@c5a7806660adbe173f04e3e038b0ccdcd758773c # v6.1.0
         with:
           token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
           commit-message: 'ai: monthly audit $(date +%Y-%m) [skip ci]'

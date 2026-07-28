@@ -7,7 +7,7 @@ class CurtainModuleDriver extends Driver {
 
   async onInit() {
     await super.onInit();
-    if (this._flowCardsRegistered) return;
+    if (this._flowCardsRegistered) {return;}
     this._flowCardsRegistered = true;
 
       // === AUTO-GENERATED FLOW HANDLERS ===
@@ -15,11 +15,11 @@ class CurtainModuleDriver extends Driver {
       // Edit if you need custom behaviour.
 
       this.homey.flow.getActionCard('curtain_module_move_open')?.registerRunListener(async (args) => {
-        if (!args.device) return false;
+        if (!args.device) {return false;}
         return true; // TODO: implement action for curtain_module_move_open
       });
       this.homey.flow.getActionCard('curtain_module_move_close')?.registerRunListener(async (args) => {
-        if (!args.device) return false;
+        if (!args.device) {return false;}
         return true; // TODO: implement action for curtain_module_move_close
       });
   }

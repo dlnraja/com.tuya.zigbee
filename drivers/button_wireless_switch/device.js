@@ -41,21 +41,21 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
 
   async _setupPowerMeasurement(zclNode) {
     const endpoint = zclNode?.endpoints?.[1];
-    if (!endpoint?.clusters) return;
+    if (!endpoint?.clusters) {return;}
 
     const elecCluster = endpoint.clusters.electricalMeasurement || endpoint.clusters.haElectricalMeasurement || endpoint.clusters[0x0B04];
     if (elecCluster && typeof elecCluster.on === 'function') {
       elecCluster.on('attr.activePower', (value) => {
         const watts = safeMultiply(value, 10);
-        if (this.hasCapability('measure_power')) this.safeSetCapabilityValue('measure_power', parseFloat(watts)).catch(() => { });
+        if (this.hasCapability('measure_power')) {this.safeSetCapabilityValue('measure_power', parseFloat(watts)).catch(() => { });}
       });
       elecCluster.on('attr.rmsVoltage', (value) => {
         const volts = safeMultiply(value, 10);
-        if (this.hasCapability('measure_voltage')) this.safeSetCapabilityValue('measure_voltage', parseFloat(volts)).catch(() => { });
+        if (this.hasCapability('measure_voltage')) {this.safeSetCapabilityValue('measure_voltage', parseFloat(volts)).catch(() => { });}
       });
       elecCluster.on('attr.rmsCurrent', (value) => {
         const amps = value * 1000;
-        if (this.hasCapability('measure_current')) this.safeSetCapabilityValue('measure_current', parseFloat(amps)).catch(() => { });
+        if (this.hasCapability('measure_current')) {this.safeSetCapabilityValue('measure_current', parseFloat(amps)).catch(() => { });}
       });
       this._readElectricalAttributes(elecCluster);
     }
@@ -64,7 +64,7 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
     if (meteringCluster && typeof meteringCluster.on === 'function') {
       meteringCluster.on('attr.currentSummationDelivered', (value) => {
         const kwh = value / 1000;
-        if (this.hasCapability('meter_power')) this.safeSetCapabilityValue('meter_power', parseFloat(kwh)).catch(() => { });
+        if (this.hasCapability('meter_power')) {this.safeSetCapabilityValue('meter_power', parseFloat(kwh)).catch(() => { });}
       });
       this._readMeteringAttributes(meteringCluster);
     }
@@ -127,14 +127,14 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
         this._lastCommandTime = Date.now();
         this._zclState.pending[epNum] = true;
         clearTimeout(this._zclState.timeout[epNum]);
-        this._zclState.timeout[epNum] = this.homey.setTimeout(() => { if (this._destroyed) return; this._zclState.pending[epNum] = false; }, 2000);
+        this._zclState.timeout[epNum] = this.homey.setTimeout(() => { if (this._destroyed) {return;} this._zclState.pending[epNum] = false; }, 2000);
         
         const onOff = getOnOffCluster(epNum);
         if (onOff) {
           try {
             await onOff.writeAttributes({ onOff: !!value });
           } catch (e) {
-            if (typeof onOff[value ? 'setOn' : 'setOff'] === 'function') await onOff[value ? 'setOn' : 'setOff']();
+            if (typeof onOff[value ? 'setOn' : 'setOff'] === 'function') {await onOff[value ? 'setOn' : 'setOff']();}
           }
         }
         return true;
@@ -147,7 +147,7 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
         const capName = epNum === 1 ? 'onoff' : 'onoff.gang2';
         onOff.on('attr.onOff', async (value) => {
           const now = Date.now();
-          if (now - (this._zclState.lastReport[epNum] || 0) < 1000) return;
+          if (now - (this._zclState.lastReport[epNum] || 0) < 1000) {return;}
           this._zclState.lastReport[epNum] = now;
 
           const isPhysical = !this._zclState.pending[epNum];
@@ -221,7 +221,7 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
   onDeleted() {
     if (this._zclState?.timeout) {
       for (const epNum of [1, 2]) {
-        if (this._zclState.timeout[epNum]) clearTimeout(this._zclState.timeout[epNum]);
+        if (this._zclState.timeout[epNum]) {clearTimeout(this._zclState.timeout[epNum]);}
       }
     }
     super.onDeleted?.();

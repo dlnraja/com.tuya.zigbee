@@ -97,8 +97,8 @@ const parseSchedule = (bytes) => {
         const tempHexArray = [bytes[i * periodSize + 1], bytes[i * periodSize + 2]];
         const tempRaw = Buffer.from(tempHexArray).readUIntBE(0, tempHexArray.length);
         const temp = tempRaw / 10;
-        schedule.push(strHours + ":" + strMinutes + "/" + temp);
-        if (rHours === 24) break;
+        schedule.push(`${strHours  }:${  strMinutes  }/${  temp}`);
+        if (rHours === 24) {break;}
     }
 
     return schedule.join(' ');
@@ -121,7 +121,7 @@ const marshalSchedule = (workingDay, weekDayDataPoint, scheduleString) => {
             payload.push(dataPointTodayByte[weekDayDataPoint]);
             break;
         default:
-            throw new Error('Invalid "workingDay" setting:' + workingDay);
+            throw new Error(`Invalid "workingDay" setting:${  workingDay}`);
     }
 
     // day split to 10 min segments = total 144 segments
@@ -129,8 +129,8 @@ const marshalSchedule = (workingDay, weekDayDataPoint, scheduleString) => {
     // ponytail: VALIDATION_DEFERRED - schedule validated by split+length below; regex is YAGNI
     const schedule = scheduleString.split(' ');
     const schedulePeriods = schedule.length;
-    if (schedulePeriods > 10) throw new Error('There cannot be more than 10 periods in the schedule: ' + scheduleString);
-    if (schedulePeriods < 2) throw new Error('There cannot be less than 2 periods in the schedule: ' + scheduleString);
+    if (schedulePeriods > 10) {throw new Error(`There cannot be more than 10 periods in the schedule: ${  scheduleString}`);}
+    if (schedulePeriods < 2) {throw new Error(`There cannot be less than 2 periods in the schedule: ${  scheduleString}`);}
     let prevHour;
 
     for (const period of schedule) {
@@ -140,7 +140,7 @@ const marshalSchedule = (workingDay, weekDayDataPoint, scheduleString) => {
         const m = parseInt(hm[1]);
         const temp = parseFloat(timeTemp[1]);
         if (h < 0 || h > 24 || m < 0 || m >= 60 || m % 10 !== 0 || temp < 5 || temp > 30 || temp % 0.5 !== 0) {
-            throw new Error('Invalid hour, minute or temperature of: ' + period);
+            throw new Error(`Invalid hour, minute or temperature of: ${  period}`);
         } else if (prevHour > h) {
             throw new Error(`The hour of the next segment can't be less than the previous one: ${prevHour} > ${h}`);
         }

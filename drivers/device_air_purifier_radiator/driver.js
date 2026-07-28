@@ -13,7 +13,7 @@ class RadiatorValveDriver extends ZigBeeDriver {
     }
   async onInit() {
     await super.onInit();
-    if (this._flowCardsRegistered) return;
+    if (this._flowCardsRegistered) {return;}
     this._flowCardsRegistered = true;
     this.log('RadiatorValveDriver v5.5.572 initialized');
     this._registerFlowCards();
@@ -28,23 +28,23 @@ class RadiatorValveDriver extends ZigBeeDriver {
   const card = null;
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           await args.device['setCapabilityValue']('target_temperature', args.temperature || args.value).catch(() => {});
           return true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Action device_air_purifier_radiator_hybrid_radiator_valve_set_target_temperature: ${err.message}`); }; }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action device_air_purifier_radiator_hybrid_radiator_valve_set_target_temperature: ${err.message}`); } }
 
     try {
       const card = this.homey.flow.getActionCard('device_air_purifier_radiator_radiator_valve_set_temperature');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           await args.device['setCapabilityValue']('target_temperature', args.temperature || args.value).catch(() => {});
           return true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Action device_air_purifier_radiator_radiator_valve_set_temperature: ${err.message}`); }; }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action device_air_purifier_radiator_radiator_valve_set_temperature: ${err.message}`); } }
 
     this.log('[FLOW] All flow cards registered');
     }

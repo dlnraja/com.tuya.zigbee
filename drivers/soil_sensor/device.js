@@ -207,6 +207,7 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
   }
 
   _updateWaterAlarm() {
+    if (this._destroyed) {return;}
     const moisture = this.getCapabilityValue('measure_humidity.soil');
     const threshold = this.getSetting('soil_warning_threshold') || 30;
     if (moisture !== null && this.hasCapability('alarm_water')) {
@@ -243,6 +244,15 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
       if (value.length === 4) {parsedValue = value.readInt32BE(0);}
       else if (value.length === 2) {parsedValue = value.readInt16BE(0);}
       else if (value.length === 1) {parsedValue = value.readUInt8(0);}
+    }
+
+    // Forum 140352 FIX: ignore Tuya overflow/sentinel readings (e.g. 67109120
+    // = 0x04000000) reported by some soil sensors for temperature/humidity.
+    // They surfaced as absurd values (67109120 °C / %) in Homey. Legitimate
+    // soil readings never reach this magnitude, so drop the report.
+    if (typeof parsedValue === 'number' && Number.isFinite(parsedValue) && Math.abs(parsedValue) >= 0x04000000) {
+      this.log(`[SOIL] Ignoring overflow/sentinel value DP${dp} = ${parsedValue} (0x${(parsedValue >>> 0).toString(16).toUpperCase()})`);
+      return;
     }
 
     // Conductivity / EC (DP 4, 20, 22, 106, 112)

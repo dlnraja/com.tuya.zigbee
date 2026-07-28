@@ -14,6 +14,8 @@ try {
 
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
+// v9.x (upstream PR #1431): split frames packing several DPs (Dooya DC1545R)
+const { parseTuyaMultiDpFrame } = require('../../lib/TuyaDataPoints');
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
@@ -131,7 +133,7 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
     if (this._healthInterval) {clearInterval(this._healthInterval);}
 
     this._healthInterval = this.homey.setInterval(async () => {
-      if (this._destroyed) return;
+      if (this._destroyed) {return;}
       // Skip if device had recent successful communication
       if (Date.now() - (this._lastCommSuccess || 0) < 300000) {return;}
       
@@ -157,7 +159,7 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
    * v5.7.9: Cleanup on device removal
    */
   async onDeleted() {
-    if (this._destroyed) return;
+    if (this._destroyed) {return;}
     this._destroyed = true;
     if (this._healthInterval) {clearInterval(this._healthInterval);}
     await super.onDeleted?.();
@@ -193,8 +195,21 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
   _handleTuyaDP(data) {
     if (!data) {return;}
 
+    // v9.x (upstream PR #1431): some curtain modules (Dooya DC1545R family)
+    // pack SEVERAL datapoints into one report frame — split and process each,
+    // otherwise trailing DPs (e.g. position feedback) are silently dropped.
+    if (Buffer.isBuffer(data.data) && typeof data.length === 'number' && data.data.length > data.length) {
+      for (const sub of parseTuyaMultiDpFrame(data)) {
+        this._handleTuyaDP({ ...data, dp: sub.dp, datatype: sub.datatype, data: sub.data, length: sub.data.length });
+      }
+      return;
+    }
+
     const dp = data.dp || data.datapoint;
-    const value = data.data?.[0] ?? data.value;
+    // v9.x: decode the full big-endian payload, not just the first byte
+    const value = Buffer.isBuffer(data.data)
+      ? data.data.reduce((acc, b) => (acc << 8) + b, 0)
+      : (data.value ?? data.data?.[0]);
 
     this.log(`[CURTAIN] DP${dp} = ${value}`);
 
@@ -222,13 +237,13 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
    * v5.5.322: Handle physical button press on curtain robot
    */
   async _handleButtonPress(value) {
-    if (this._destroyed) return;
+    if (this._destroyed) {return;}
     this.log(`[CURTAIN] 🔘 Button pressed: ${value}`);
     try {
       // Set button capability to trigger flows
       await this._safeSetCapability('button', true);
       // Reset after short delay
-      this.homey.setTimeout(() => { if (this._destroyed) return; this._safeSetCapability('button', false); }, 500);
+      this.homey.setTimeout(() => { if (this._destroyed) {return;} this._safeSetCapability('button', false); }, 500);
 
       // Trigger flow card if available
       const triggerCard = this.homey.flow.getDeviceTriggerCard('curtain_motor_button_pressed');

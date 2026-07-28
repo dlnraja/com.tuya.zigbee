@@ -1,3 +1,7 @@
+# 🔬 Publish Diagnose
+# Triggers: workflow_dispatch,workflow_run | Secrets: GITHUB_TOKEN only
+# Doc header added 2026-07-29 (workflows genealogy enrichment).
+
 name: 🔬 Publish Diagnose
 
 # Auto-runs after every "🚀 Publish Stable to Test" workflow

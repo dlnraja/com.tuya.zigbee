@@ -10,10 +10,10 @@
 | **App ID** | `com.dlnraja.tuya.zigbee` |
 | **Author** | Dylan Rajasekaram (dlnraja) |
 | **License** | GPL-3.0 (was MIT-licensed JohanBendz fork) |
-| **Branches** | `master` (preview/dev) + `stable` (production) |
-| **Current Version** | v9.0.220+ |
-| **Drivers** | 431 (381 Zigbee + 50 WiFi) |
-| **Fingerprints** | 6,503+ (4,149 mfrs in mfs_db) |
+| **Branches** | `master` (preview/dev) + `stable-v5` (production) |
+| **Current Version** | v9.0.348 (audit 2026-07-27) |
+| **Drivers** | 430 on master, 431 on `stable-v5` |
+| **Fingerprints** | 5,471 (audit 2026-07-27; 4,218 entries in mfs_db) |
 | **SDK** | Homey SDK v3 (compatibility >= 12.2.0) |
 
 ## The Sacred Couple Doctrine
@@ -31,9 +31,11 @@ A **(mfr, pid)** pair = the canonical identity of a Zigbee device.
 | Branch | Purpose | Rule |
 |--------|---------|------|
 | **`master`** | Dev/preview, new features, experiments, new FPs | Push freely. Auto-publish to Test channel. |
-| **`stable`** | Production, zero bugs, zero crashes | **Only** backport from master after master has been verified. |
+| **`stable-v5`** | Production, zero bugs, zero crashes | **Only** backport from master after master has been verified. |
 
 > The user has been burned before by bot auto-publish reverting fixes — see P19 lessons in memory.
+>
+> **2026-07-27 — git history purge**: history was rewritten with `git-filter-repo` to remove sensitive/operational paths (see `HISTORY_PURGE.md`). The first visible commit is now the v9.0.192 snapshot (2026-07-10) and the `origin` remote was dropped by the purge — it must be re-added before any push.
 
 ## Data Sources (15 external)
 
@@ -84,7 +86,7 @@ All orchestrated via `tools/ci/mega-crawler.js` + GHA `mega-crawl.yml` (daily 02
 | `tools/ci/` | All CI/diagnostic/analysis tools |
 | `scripts/sync/` | Source crawlers (blakadder, z2m, zha, deconz) |
 | `scripts/scanners/` | Scanners (tinytuya, hubitat, etc.) |
-| `.github/workflows/` | 44 GHA workflows (21 with schedule) |
+| `.github/workflows/` | 54 GHA workflows (see `reports/kimi-2026-07-28/workflows-audit.md`) |
 | `.github/state/` | Per-source state (gitignored, populated by crawlers) |
 
 ## Common Bug Patterns to Watch
@@ -123,7 +125,7 @@ All orchestrated via `tools/ci/mega-crawler.js` + GHA `mega-crawl.yml` (daily 02
 1. Use `tools/ci/apply-blakadder-new.js` (or similar) in **dry-run** mode first
 2. Review the candidate list
 3. Confirm with the user before `--apply` (modifies 6-30 driver.compose.json files)
-4. Always on `master`, never on `stable`
+4. Always on `master`, never on `stable-v5`
 5. Commit + push; the auto-publish bot will create the test build
 
 ## When Reading Discourse / Homey Community Forum
@@ -153,7 +155,7 @@ This fetches all 2032 posts of topic 140352 in ~5 minutes with 100% success.
 
 ## Don't Do
 
-- **Don't** push to `stable` directly. Wait for master to be verified.
+- **Don't** push to `stable-v5` directly. Wait for master to be verified.
 - **Don't** skip the pre-push gate. If `--no-verify` is needed, document why.
 - **Don't** add mfrs to a driver that doesn't match its device class.
 - **Don't** use `setTimeout` directly in device.js — use `safeSetTimeout` from `lib/utils/safe-timers.js`.
@@ -166,7 +168,7 @@ This fetches all 2032 posts of topic 140352 in ~5 minutes with 100% success.
 - **P22**: Discourse search API is rate-limited. Use `/t/{id}.json` for full topic reads.
 - **P23**: Publish size gate: app.json MB=4, publishUncompressed=32, publishSource=24. Use `find -regex` for `*.bak.<digits>` cleanup.
 - **P38.6**: Auto-apply needs dry-run by default. The user will review before `--apply`.
-- **P51**: Stable is now a separate branch. Sync master→stable only when master is verified.
+- **P51**: Stable is now a separate branch (`stable-v5`). Sync master→stable-v5 only when master is verified.
 
 ## Contact / Channels
 

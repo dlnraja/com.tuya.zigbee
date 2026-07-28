@@ -76,7 +76,7 @@ class WallSwitch4Gang1WayDevice extends PhysicalButtonMixin(VirtualButtonMixin(U
     }
     const tokens = typeof countOrOptions === 'number'
       ? { clicks: countOrOptions }
-      : { ...(countOrOptions || {}) };
+      : { ...countOrOptions || {} };
     if (options?.source) {
       tokens.source = options.source;
     }

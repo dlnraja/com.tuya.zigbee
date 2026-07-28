@@ -224,7 +224,7 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
       if ((msg.includes('Zigbee') || msg.includes('démarrage') || msg.includes('starting')) && retryCount < 3) {
         this.log(`[SWITCH-2G]  Zigbee starting, will retry electrical reporting in 60s (attempt ${retryCount + 1}/3)`);
         this.homey.setTimeout(() => {
-          if (this._destroyed) return;
+          if (this._destroyed) {return;}
           this._configureElectricalReporting(retryCount + 1).catch(err => this.error(err));
         }, 60000);
       } else {
@@ -254,7 +254,7 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
       if ((msg.includes('Zigbee') || msg.includes('démarrage') || msg.includes('starting')) && retryCount < 3) {
         this.log(`[SWITCH-2G]  Zigbee starting, will retry metering reporting in 60s (attempt ${retryCount + 1}/3)`);
         this.homey.setTimeout(() => {
-          if (this._destroyed) return;
+          if (this._destroyed) {return;}
           this._configureMeteringReporting(retryCount + 1).catch(err => this.error(err));
         }, 60000);
       } else {
@@ -272,7 +272,7 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
         'activePower', 'rmsVoltage', 'rmsCurrent'
       ]).catch(() => ({}));
 
-      if (this._destroyed) return;
+      if (this._destroyed) {return;}
       if (attrs.activePower != null && this.hasCapability('measure_power')) {
         const watts = smartParse(attrs.activePower, null, { capability: 'measure_power' });
         this.safeSetCapabilityValue('measure_power', parseFloat(watts)).catch(() => { });
@@ -281,6 +281,7 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
         const volts = smartParse(attrs.rmsVoltage, null, { capability: 'measure_voltage' });
         this.safeSetCapabilityValue('measure_voltage', parseFloat(volts)).catch(() => { });
       }
+      if (this._destroyed) {return;}
       if (attrs.rmsCurrent != null && this.hasCapability('measure_current')) {
         const amps = smartParse(attrs.rmsCurrent, null, { capability: 'measure_current' });
         this.safeSetCapabilityValue('measure_current', parseFloat(amps)).catch(() => { });
@@ -300,7 +301,7 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
         'currentSummationDelivered'
       ]).catch(() => ({}));
 
-      if (this._destroyed) return;
+      if (this._destroyed) {return;}
       if (attrs.currentSummationDelivered != null && this.hasCapability('meter_power')) {
         const kwh = smartParse(attrs.currentSummationDelivered, null, { capability: 'meter_power' });
         this.safeSetCapabilityValue('meter_power', parseFloat(kwh)).catch(() => { });

@@ -7,7 +7,7 @@ class PirMmwaveSensorDriver extends Driver {
 
   async onInit() {
     await super.onInit();
-    if (this._flowCardsRegistered) return;
+    if (this._flowCardsRegistered) {return;}
     this._flowCardsRegistered = true;
 
       // === AUTO-GENERATED FLOW HANDLERS ===
@@ -15,7 +15,7 @@ class PirMmwaveSensorDriver extends Driver {
       // Edit if you need custom behaviour.
 
       this.homey.flow.getConditionCard('pir_mmwave_sensor_has_presence')?.registerRunListener(async (args) => {
-        if (!args.device) return false;
+        if (!args.device) {return false;}
         return true; // TODO: implement condition for pir_mmwave_sensor_has_presence
       });
   }

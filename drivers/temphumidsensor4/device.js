@@ -77,7 +77,7 @@ class temphumidsensor4 extends TuyaSpecificClusterDevice {
 		switch (dp) {
 			case 1:
 				this.warn
-				this.log('Temperature is ', (measuredValue / 10.0), ' C (', measuredValue, ')');
+				this.log('Temperature is ', measuredValue / 10.0, ' C (', measuredValue, ')');
 				this.reportTemperatureCapacity(measuredValue);
 				break;
 

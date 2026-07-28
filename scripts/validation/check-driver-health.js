@@ -162,8 +162,9 @@ for (const filePath of allFiles) {
   totalChecked++;
   const content = fs.readFileSync(filePath, 'utf8');
 
-  checkSyntax(filePath);
   if (filePath.endsWith('.js')) {
+    // node --check n'est valide que pour du JS (les .json échouent par nature)
+    checkSyntax(filePath);
     checkMixinOrder(filePath, content);
     checkLifecycle(filePath, content);
     checkConsole(filePath, content);

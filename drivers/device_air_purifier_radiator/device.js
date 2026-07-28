@@ -103,7 +103,7 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
       
       // Initial sync after 10 seconds (let device settle)
       this.homey.setTimeout(async () => {
-        if (this._destroyed) return;
+        if (this._destroyed) {return;}
         try {
           const result = await this._timeSync.sync({ force: true });
           if (result.success) {
@@ -119,7 +119,7 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
       
       // Periodic sync every 6 hours
       this._timeSyncInterval = this.homey.setInterval(async () => {
-        if (this._destroyed) return;
+        if (this._destroyed) {return;}
         try {
           const result = await this._timeSync.sync();
           if (!result.success && result.reason === 'no_rtc') {
@@ -219,19 +219,19 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
   _markAppCommand() {
     this._appCommandPending = true;
     clearTimeout(this._appCommandTimeout);
-    this._appCommandTimeout = this.homey.setTimeout(() => { if (this._destroyed) return; this._appCommandPending = false; }, 2000);
+    this._appCommandTimeout = this.homey.setTimeout(() => { if (this._destroyed) {return;} this._appCommandPending = false; }, 2000);
   }
 
   async _setupThermostatCluster(zclNode) {
     const ep1 = zclNode?.endpoints?.[1];
-    if (!ep1 ) return;
+    if (!ep1 ) {return;}
 
     try {
       const thermo = ep1.clusters?.hvacThermostat;if (thermo?.on) {
         thermo.on('attr.localTemperature', (v) => this.safeSetCapabilityValue('measure_temperature', parseFloat(v )).catch(() => { }));
         thermo.on('attr.occupiedHeatingSetpoint', (v) => this.safeSetCapabilityValue('target_temperature', v * 100).catch(() => { }));
         thermo.on('attr.pIHeatingDemand', (v) => {
-          if (this.hasCapability('dim')) this['safeSetCapabilityValue']('dim', v * 100).catch(() => { });
+          if (this.hasCapability('dim')) {this['safeSetCapabilityValue']('dim', v * 100).catch(() => { });}
       });
         this.log('[TRV]  ZCL Thermostat configured');
       }
@@ -281,7 +281,7 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
   async _setupSonoffTRVZB(zclNode) {
     try {
       const isSonoff = await setupSonoffTRVZB(this, zclNode);
-      if (isSonoff) this.log('[TRV] SONOFF TRVZB features enabled');
+      if (isSonoff) {this.log('[TRV] SONOFF TRVZB features enabled');}
     } catch (e) {
       this.log('[TRV] SONOFF setup skipped:', e.message);
     }
@@ -302,7 +302,7 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
     try {
       const node = this.zclNode || this._zclNode;
       const tuyaCluster = node?.endpoints?.[1]?.clusters?.tuya;
-      if (!tuyaCluster) return;
+      if (!tuyaCluster) {return;}
 
       const now = new Date();
       let utcOffset = 0;
@@ -336,7 +336,7 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
    */
   async onEndDeviceAnnounce() {
     this.log('[REJOIN] Device announced itself, refreshing state...');
-    if (typeof this._updateLastSeen === 'function') this._updateLastSeen();
+    if (typeof this._updateLastSeen === 'function') {this._updateLastSeen();}
     // Proactive data recovery if supported
     if (this._dataRecoveryManager) {
        this._dataRecoveryManager.triggerRecovery();

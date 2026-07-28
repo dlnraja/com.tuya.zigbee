@@ -44,14 +44,14 @@ class SmartPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedPlug
     const powerScale = parseFloat(this.getSetting('power_scale')) || 1;
     const energyScale = parseFloat(this.getSetting('meter_power_scale')) || parseFloat(this.getSetting('energy_scale')) || 1;
     
-    if (capability === 'measure_power') return safeMultiply(value, powerScale);
-    if (capability === 'meter_power') return safeMultiply(value, energyScale);
+    if (capability === 'measure_power') {return safeMultiply(value, powerScale);}
+    if (capability === 'meter_power') {return safeMultiply(value, energyScale);}
     
     const voltageScale = parseFloat(this.getSetting('voltage_scale')) || 0.1;
-    if (capability === 'measure_voltage') return value * safeParse(voltageScale * 0.1); 
+    if (capability === 'measure_voltage') {return value * safeParse(voltageScale * 0.1);} 
     
     const currentScale = parseFloat(this.getSetting('current_scale')) || 0.001;
-    if (capability === 'measure_current') return value * safeParse(currentScale * 0.001);
+    if (capability === 'measure_current') {return value * safeParse(currentScale * 0.001);}
 
     return value;
   }
@@ -141,7 +141,7 @@ class SmartPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedPlug
   _markAppCommand() {
     this._appCommandPending = true;
     clearTimeout(this._appCommandTimeout);
-    this._appCommandTimeout = this.homey.setTimeout(() => { if (this._destroyed) return; this._appCommandPending = false; }, 2000);
+    this._appCommandTimeout = this.homey.setTimeout(() => { if (this._destroyed) {return;} this._appCommandPending = false; }, 2000);
   }
 
   async _setupEnergyMonitoring(zclNode) {
@@ -152,17 +152,17 @@ class SmartPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedPlug
     try {
       const elec = ep1.clusters?.haElectricalMeasurement;if (elec?.on) {
         elec.on('attr.activePower', (v) => {
-          if (this._destroyed) return;
+          if (this._destroyed) {return;}
           const scaled = this._applyScale(v, 'measure_power');
           this.safeSetCapabilityValue('measure_power', parseFloat(scaled)).catch(() => { });
         });
         elec.on('attr.rmsVoltage', (v) => {
-          if (this._destroyed) return;
+          if (this._destroyed) {return;}
           const scaled = this._applyScale(v, 'measure_voltage');
           this.safeSetCapabilityValue('measure_voltage', parseFloat(scaled)).catch(() => { });
         });
         elec.on('attr.rmsCurrent', (v) => {
-          if (this._destroyed) return;
+          if (this._destroyed) {return;}
           const scaledCurrent = this._applyScale(v * 1000, 'measure_current');
           this.safeSetCapabilityValue('measure_current', parseFloat(scaledCurrent)).catch(() => { });
           const scaledPower = this._applyScale(v * 1000, 'meter_power');

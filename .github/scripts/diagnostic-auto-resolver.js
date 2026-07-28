@@ -145,6 +145,20 @@ if(st.commented.includes(iss.id))continue;
 const txt=iss.title+" "+iss.body;
 const fps=exFP(txt);const pids=exPID(txt);
 if(!fps.length&&!pids.length)continue;
+// v9.0.349: Never auto-resolve issues the user reopened or still reports broken
+const _labels=(iss.labels||[]).map(l=>typeof l==="string"?l:l&&l.name);
+if(_labels.includes("reopened-by-user")){console.log("Skip #"+iss.number+": label reopened-by-user");continue;}
+const _cmts=await ghGet("/repos/"+repo+"/issues/"+iss.number+"/comments?per_page=100");
+if(Array.isArray(_cmts)&&_cmts.length){
+const _isBot=c=>(c.body||"").includes(TAG)||(c.body||"").includes("<!-- tuya-reopen-bot -->")||(((c.user||{}).login)||"").includes("[bot]");
+const _humans=_cmts.filter(c=>!_isBot(c));
+const _bots=_cmts.filter(_isBot);
+const _lastHuman=_humans[_humans.length-1];
+const _lastBot=_bots[_bots.length-1];
+if(_lastHuman&&(!_lastBot||_lastHuman.created_at>_lastBot.created_at)&&/\b(still|toujours|not fixed|encore)\b/i.test(_lastHuman.body||"")){
+console.log("Skip #"+iss.number+": latest human comment reports still broken");continue;
+}
+}
 // v5.13.1: Correlate mfr+pid pairs for smarter resolution
 const fpPidPairs=[];
 for(const fp of fps){for(const pid of pids){fpPidPairs.push({mfr:fp,pid});}}

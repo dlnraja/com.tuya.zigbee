@@ -60,7 +60,7 @@ class WiFiLightDevice extends TuyaLocalDevice {
   }
 
   async _onData(data) {
-    if (this._destroyed) return;
+    if (this._destroyed) {return;}
     if (data && data.dps) {
       const dps = data.dps;
       
@@ -87,7 +87,7 @@ class WiFiLightDevice extends TuyaLocalDevice {
   }
 
   async onDeleted() {
-    if (this._destroyed) return;
+    if (this._destroyed) {return;}
     this._destroyed = true;
     this.log('Device deleted, cleaning up');
     await super.onDeleted();

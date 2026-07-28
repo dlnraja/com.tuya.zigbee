@@ -45,7 +45,13 @@
     "large": "/{{driverAssetsPath}}/images/large.png"
   },
   "zigbee": {
-    "manufacturerName": [],
+    "manufacturerName": [
+      "_tyzb01_sqmd19i1",
+      "_tyzb01_ttvdudvx",
+      "_TZ3210_2dfy6tol",
+      "_TZ3210_EYMUNFFL",
+      "_TZ3210_tfxwxklq"
+    ],
     "productId": [
       "TS0011",
       "TS0049",
@@ -84,9 +90,5 @@
       }
     }
   },
-  "version": "1.0.0",
-  "_pidConflictNotes": [
-    "// PID-CONFLICT-NOTE TS0101 shared with 9 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE TS0049 shared with 4 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-  ]
+  "version": "1.0.0"
 }

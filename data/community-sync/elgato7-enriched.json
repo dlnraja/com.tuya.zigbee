@@ -1,0 +1,37 @@
+{
+  "user": "elgato7",
+  "issues": ["#117", "#122"],
+  "device": {
+    "brand": "Longsam M3",
+    "mfr": "_TZE204_xu4a5rhj",
+    "productId": "TS0601",
+    "firmware": "M3TYW-2.0-13",
+    "type": "curtain_motor"
+  },
+  "dpMap": {
+    "1": "control (0=open,1=stop,2=close)",
+    "2": "position_set (0-100, 4 bytes!)",
+    "3": "position_state (read)",
+    "5": "direction (0=fwd,1=rev)",
+    "7": "work_state",
+    "8": "motor_speed (0-255)"
+  },
+  "bugs": [
+    {"id": "BUG-001", "title": "Position inverted (100-x)", "fix": "invert_position setting"},
+    {"id": "BUG-002", "title": "DP2 needs 4 bytes", "fix": "v5.7.42 UniversalDPSender"},
+    {"id": "BUG-003", "title": "Regression v5.5.937+", "fix": "v5.7.42"}
+  ],
+  "sources": [
+    "dlnraja #117, #122",
+    "ZHA #3181, #1319",
+    "Z2M #25428, #26660, #22614",
+    "JohanBendz #1070",
+    "zigbee2mqtt.io/TS0601_cover_1",
+    "blakadder DS82",
+    "deCONZ #4521",
+    "Tuya Developer Protocol Spec",
+    "Z2M herdsman PR #1999"
+  ],
+  "fixVersion": "5.7.42",
+  "status": "fixed"
+}

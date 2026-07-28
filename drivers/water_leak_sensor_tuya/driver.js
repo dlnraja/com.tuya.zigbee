@@ -7,7 +7,7 @@ class WaterLeakSensorTuyaDriver extends Driver {
 
   async onInit() {
     await super.onInit();
-    if (this._flowCardsRegistered) return;
+    if (this._flowCardsRegistered) {return;}
     this._flowCardsRegistered = true;
 
       // === AUTO-GENERATED FLOW HANDLERS ===
@@ -15,7 +15,7 @@ class WaterLeakSensorTuyaDriver extends Driver {
       // Edit if you need custom behaviour.
 
       this.homey.flow.getConditionCard('water_leak_sensor_tuya_alarm_water_active')?.registerRunListener(async (args) => {
-        if (!args.device) return false;
+        if (!args.device) {return false;}
         return true; // TODO: implement condition for water_leak_sensor_tuya_alarm_water_active
       });
   }

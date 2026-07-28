@@ -10,7 +10,14 @@ const dataPoints = {
   tsSmokeAlarm: 1, // 0=Smoke Alarm On, 1=Smoke Alarm Off
   tsTamperAlert: 4,
   tsBatteryState: 14, // dp14 0=20% 1=50% 2=90% [dp=14] battery low   value 2 (FULL)
+  // v9.x (upstream PR #1237): smoke+temp+humidity combo sensors (_TZE284_gyzlwu5q)
+  tsTemperature: 23, // value | temperature x10
+  tsHumidity: 24, // value | humidity %
   }
+
+// v9.x: Battery percent lookup for DP14 enum (fixes upstream fallthrough bug
+// where a low battery (0) was reported as 90% due to missing breaks)
+const BATTERY_STATE_PERCENT = { 0: 20, 1: 50, 2: 90 };
 
 const dataTypes = {
   raw: 0, // [ bytes ]
@@ -66,7 +73,7 @@ class smoke_sensor2 extends TuyaSpecificClusterDevice {
     const value = getDataValue(data);
     switch (dp) {
       case dataPoints.tsSmokeAlarm:
-        this.log("present state: "+ value);
+        this.log(`present state: ${ value}`);
         var smokeAlarm = value === 0 ? true : false;
         this.safeSetCapabilityValue('alarm_smoke', Boolean(smokeAlarm)).catch(this.error);
         break;
@@ -75,29 +82,43 @@ class smoke_sensor2 extends TuyaSpecificClusterDevice {
         this.safeSetCapabilityValue('alarm_tamper', Boolean(value)).catch(this.error);
         break;
 
-      case dataPoints.tsBatteryState:
-
-        switch (value) { 
-          case 0:
-            var batteryPerc = 20;
-            var batAlarm = value === 0 ? true : false;
-            this.log("measure_battery | powerConfiguration - batteryPercentageRemaining (%): ", batteryPerc);
-            this.safeSetCapabilityValue('alarm_battery', batAlarm).catch(this.error);
-          case 1:
-            var batteryPerc = 50;
-            this.log("measure_battery | powerConfiguration - batteryPercentageRemaining (%): ", batteryPerc);
-          case 2:
-            var batteryPerc = 90;
-            this.log("measure_battery | powerConfiguration - batteryPercentageRemaining (%): ", batteryPerc);
-        break;
-        }
-        
+      case dataPoints.tsBatteryState: {
+        // v9.x: lookup instead of fallthrough switch (upstream bug: missing
+        // breaks made a low battery (0) report 90%)
+        const batteryPerc = BATTERY_STATE_PERCENT[value] ?? 90;
+        this.log("measure_battery | powerConfiguration - batteryPercentageRemaining (%): ", batteryPerc);
+        this.safeSetCapabilityValue('alarm_battery', value === 0).catch(this.error);
         this.safeSetCapabilityValue('measure_battery', batteryPerc).catch(this.error);
-
         break;
-      
+      }
+
+      // v9.x (upstream PR #1237): temperature (x10) and humidity for combo sensors
+      // Capabilities are added lazily so plain smoke sensors keep a clean UI.
+      case dataPoints.tsTemperature: {
+        const temperatureOffset = this.getSetting('temperature_offset') || 0;
+        this.log('measure_temperature | value:', value / 10.0, '+ offset', temperatureOffset);
+        await this._ensureClimateCapability('measure_temperature');
+        this.safeSetCapabilityValue('measure_temperature', value / 10.0 + temperatureOffset).catch(this.error);
+        break;
+      }
+
+      case dataPoints.tsHumidity: {
+        const humidityOffset = this.getSetting('humidity_offset') || 0;
+        this.log('measure_humidity | value:', value, '+ offset', humidityOffset);
+        await this._ensureClimateCapability('measure_humidity');
+        this.safeSetCapabilityValue('measure_humidity', value + humidityOffset).catch(this.error);
+        break;
+      }
+
       default:
       this.log('dp value', dp, value)
+    }
+  }
+
+  // v9.x: lazily add a climate capability on first DP23/24 report
+  async _ensureClimateCapability(cap) {
+    if (!this.hasCapability(cap)) {
+      await this.addCapability(cap).catch((err) => this.log(`addCapability ${cap}:`, err.message));
     }
   }
 

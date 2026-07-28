@@ -1,3 +1,7 @@
+# 🔍 Build Error Diagnostic (Puppeteer)
+# Triggers: cron: 17 2 * * * + workflow_dispatch | Secrets: HOMEY_EMAIL,HOMEY_PASSWORD
+# Doc header added 2026-07-29 (workflows genealogy enrichment).
+
 name: 🔍 Build Error Diagnostic (Puppeteer)
 
 on:

@@ -16,3 +16,4 @@ fs.mkdirSync(OUT,{recursive:true});
 fs.writeFileSync(path.join(OUT,'devices.json'),JSON.stringify(drivers,null,2));
 fs.writeFileSync(path.join(OUT,'index.html'),generateHTML(drivers,app));
 console.log('Device Finder generated: '+OUT);
+try{require('./generate-wifi-page')();}catch(e){console.warn('WiFi page generation failed (non-fatal): '+e.message);}

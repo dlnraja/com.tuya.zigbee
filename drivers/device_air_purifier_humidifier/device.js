@@ -29,10 +29,10 @@ class HumidifierDevice extends ZigBeeDevice {
 
   async _setupTuyaDP(zclNode) {
     const ep1 = zclNode.endpoints[1];
-    if (!ep1) return;
+    if (!ep1) {return;}
 
     const tuyaCluster = ep1.clusters?.tuya || ep1.clusters?.[61184];
-    if (!tuyaCluster) return;
+    if (!tuyaCluster) {return;}
 
     this.log('[TUYA] DP cluster found' );
 
@@ -58,7 +58,7 @@ class HumidifierDevice extends ZigBeeDevice {
   }
 
   _handleDP(dp, value) {
-    if (dp === undefined) return;
+    if (dp === undefined) {return;}
     this.log(`[DP${dp}] = ${value}`);
 
     switch (dp) {

@@ -1,3 +1,7 @@
+# Autonomous Verification (P37)
+# Triggers: cron: 15 */6 * * * + workflow_dispatch | Secrets: GITHUB_TOKEN only
+# Doc header added 2026-07-29 (workflows genealogy enrichment).
+
 defaults:
   run:
     shell: bash
@@ -15,6 +19,9 @@ on:
         description: 'Run full verification suite'
         type: boolean
         default: true
+
+permissions:
+  contents: read
 
 jobs:
   verify:

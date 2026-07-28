@@ -1,3 +1,7 @@
+# Temporal Monitor (P29.7)
+# Triggers: cron: 0 6 * * * + workflow_dispatch | Secrets: GITHUB_TOKEN only
+# Doc header added 2026-07-29 (workflows genealogy enrichment).
+
 defaults:
   run:
     shell: bash
@@ -12,6 +16,11 @@ on:
     # Daily at 06:00 UTC
     - cron: '0 6 * * *'
   workflow_dispatch:
+
+# Least privilege: push of the report + read-only GH issues scan
+permissions:
+  contents: write
+  issues: read
 
 jobs:
   temporal-monitor:

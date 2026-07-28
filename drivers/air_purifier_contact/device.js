@@ -31,7 +31,7 @@ class ContactSensorDevice extends UnifiedSensorBase {
       1: {
         capability: 'alarm_contact',
         transform: (v) => {
-          if (typeof v === 'boolean') return !v;
+          if (typeof v === 'boolean') {return !v;}
           return v === 0 || v === 'open';
         },
         debounce: 500
@@ -140,8 +140,8 @@ class ContactSensorDevice extends UnifiedSensorBase {
 
   async onSettings({ oldSettings, newSettings, changedKeys }) {
     if (changedKeys.includes('invert_contact') || changedKeys.includes('reverse_alarm')) {
-      const inv = changedKeys.includes('invert_contact') ? newSettings.invert_contact : (this.getSetting('invert_contact') || false);
-      const rev = changedKeys.includes('reverse_alarm') ? newSettings.reverse_alarm : (this.getSetting('reverse_alarm') || false);
+      const inv = changedKeys.includes('invert_contact') ? newSettings.invert_contact : this.getSetting('invert_contact') || false;
+      const rev = changedKeys.includes('reverse_alarm') ? newSettings.reverse_alarm : this.getSetting('reverse_alarm') || false;
       if (this._invertedByDefault) {
         this._invertContact = !(inv || rev);
         this._userExplicitInvert = false;
@@ -175,8 +175,8 @@ class ContactSensorDevice extends UnifiedSensorBase {
       const isIAS = this._iasOriginatedAlarm;
       this._iasOriginatedAlarm = false;
 
-      const shouldInvert = isIAS ? false : (this._userExplicitInvert || this._invertContact);
-      let finalValue = shouldInvert ? !value : value;
+      const shouldInvert = isIAS ? false : this._userExplicitInvert || this._invertContact;
+      const finalValue = shouldInvert ? !value : value;
 
       const now = Date.now();
       const state = this._contactState || { lastValue: null, lastChangeTime: 0, timer: null };
@@ -193,9 +193,9 @@ class ContactSensorDevice extends UnifiedSensorBase {
       const timeSinceLastChange = now - state.lastChangeTime;
 
       if (state.lastValue !== null && timeSinceLastChange < this._debounceMs) {
-        if (state.timer) this.homey.clearTimeout(state.timer);
+        if (state.timer) {this.homey.clearTimeout(state.timer);}
         state.timer = this.homey.setTimeout(async () => {
-          if (this._destroyed) return;
+          if (this._destroyed) {return;}
           this.log(`[CONTACT] Debounce complete - applying: ${finalValue}`);
           state.lastValue = finalValue;
           state.confirmedValue = finalValue;
@@ -213,9 +213,9 @@ class ContactSensorDevice extends UnifiedSensorBase {
             this.log(`[CONTACT] BLOCKED: Likely 1-hour keep-alive false "closed"`);
             return;
           }
-          if (state.timer) this.homey.clearTimeout(state.timer);
+          if (state.timer) {this.homey.clearTimeout(state.timer);}
           state.timer = this.homey.setTimeout(async () => {
-            if (this._destroyed) return;
+            if (this._destroyed) {return;}
             this.log(`[CONTACT] Extended debounce complete - applying: ${finalValue}`);
             state.lastValue = finalValue;
             state.confirmedValue = finalValue;
@@ -244,12 +244,18 @@ class ContactSensorDevice extends UnifiedSensorBase {
   }
 
   async _handleBatteryUpdate(value) {
-    if (this._destroyed) return;
+    if (this._destroyed) {return;}
     const now = Date.now();
-    if (this._lastBatteryReportTime && (now - this._lastBatteryReportTime) < BATTERY_THROTTLE_MS) return;
+    if (this._lastBatteryReportTime && (now - this._lastBatteryReportTime) < BATTERY_THROTTLE_MS) {return;}
     this._lastBatteryReportTime = now;
     const battery = Math.max(VALIDATION.BATTERY_MIN, Math.min(VALIDATION.BATTERY_MAX, value));
     await super._safeSetCapability('measure_battery', parseFloat(battery)).catch(() => { });
+    // Déclenche la carte battery_changed avec son token `battery`
+    // (pattern voisin : soil_sensor_battery_changed dans drivers/soil_sensor).
+    try {
+      const card = this.homey.flow.getDeviceTriggerCard('air_purifier_contact_sensor_battery_changed');
+      if (card) {card.trigger(this, { battery: parseFloat(battery) }, {}).catch(() => {});}
+    } catch (e) { /* flow indisponible */ }
   }
 
   async onUninit() {
@@ -257,11 +263,11 @@ class ContactSensorDevice extends UnifiedSensorBase {
       this.homey.clearTimeout(this._contactState.timer);
       this._contactState.timer = null;
     }
-    if (super.onUninit) await super.onUninit();
+    if (super.onUninit) {await super.onUninit();}
   }
 
   async onDeleted() {
-    if (this._destroyed) return;
+    if (this._destroyed) {return;}
     this._destroyed = true;
     if (this._contactState?.timer) {
       this.homey.clearTimeout(this._contactState.timer);
@@ -271,8 +277,8 @@ class ContactSensorDevice extends UnifiedSensorBase {
   }
 
   async onEndDeviceAnnounce() {
-    if (typeof this._updateLastSeen === 'function') this._updateLastSeen();
-    if (this._dataRecoveryManager) this._dataRecoveryManager.triggerRecovery();
+    if (typeof this._updateLastSeen === 'function') {this._updateLastSeen();}
+    if (this._dataRecoveryManager) {this._dataRecoveryManager.triggerRecovery();}
   }
 }
 

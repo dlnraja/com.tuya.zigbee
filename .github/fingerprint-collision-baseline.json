@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-24T20:53:09.831Z",
+  "generatedAt": "2026-07-28T01:06:09.512Z",
   "description": "Known historical fingerprint collisions. CI fails only for collisions not listed here.",
   "collisions": [
     {
@@ -3542,6 +3542,286 @@
         "water_leak_sensor"
       ],
       "note": "Sacred Couple - HOBEIAN generic mfr (water leak + switch + scene); added P88 for ZG-222Z coverage"
+    },
+    {
+      "key": "_TZ3000_eqsair32|01MINIZB",
+      "drivers": [
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "note": "Sacred Couple - 3-gang specific vs switch_1gang fallback"
+    },
+    {
+      "key": "_TZ3000_eqsair32|BASICZBR3",
+      "drivers": [
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "note": "Sacred Couple - 3-gang specific vs switch_1gang fallback"
+    },
+    {
+      "key": "_TZ3000_eqsair32|S26R2ZB",
+      "drivers": [
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "note": "Sacred Couple - 3-gang specific vs switch_1gang fallback"
+    },
+    {
+      "key": "_TZ3000_eqsair32|S31ZB",
+      "drivers": [
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "note": "Sacred Couple - 3-gang specific vs switch_1gang fallback"
+    },
+    {
+      "key": "_TZ3000_eqsair32|TS0001",
+      "drivers": [
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "note": "Sacred Couple - 3-gang specific vs switch_1gang fallback"
+    },
+    {
+      "key": "_TZ3000_eqsair32|TS0001_power",
+      "drivers": [
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "note": "Sacred Couple - 3-gang specific vs switch_1gang fallback"
+    },
+    {
+      "key": "_TZ3000_eqsair32|TS0001_switch",
+      "drivers": [
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "note": "Sacred Couple - 3-gang specific vs switch_1gang fallback"
+    },
+    {
+      "key": "_TZ3000_eqsair32|TS0001_switch_module",
+      "drivers": [
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "note": "Sacred Couple - 3-gang specific vs switch_1gang fallback"
+    },
+    {
+      "key": "_TZ3000_eqsair32|TS0002",
+      "drivers": [
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "note": "Sacred Couple - 3-gang specific vs switch_1gang fallback"
+    },
+    {
+      "key": "_TZ3000_eqsair32|TS0011",
+      "drivers": [
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "note": "Sacred Couple - 3-gang specific vs switch_1gang fallback"
+    },
+    {
+      "key": "_TZ3000_eqsair32|TS0012",
+      "drivers": [
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "note": "Sacred Couple - 3-gang specific vs switch_1gang fallback"
+    },
+    {
+      "key": "_TZ3000_eqsair32|TS0014",
+      "drivers": [
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "note": "Sacred Couple - 3-gang specific vs switch_1gang fallback"
+    },
+    {
+      "key": "_TZ3000_eqsair32|TS0041",
+      "drivers": [
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "note": "Sacred Couple - 3-gang specific vs switch_1gang fallback"
+    },
+    {
+      "key": "_TZ3000_eqsair32|TS0101",
+      "drivers": [
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "note": "Sacred Couple - 3-gang specific vs switch_1gang fallback"
+    },
+    {
+      "key": "_TZ3000_eqsair32|TS0111",
+      "drivers": [
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "note": "Sacred Couple - 3-gang specific vs switch_1gang fallback"
+    },
+    {
+      "key": "_TZ3000_eqsair32|TS011F",
+      "drivers": [
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "note": "Sacred Couple - 3-gang specific vs switch_1gang fallback"
+    },
+    {
+      "key": "_TZ3000_eqsair32|TS0203",
+      "drivers": [
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "note": "Sacred Couple - 3-gang specific vs switch_1gang fallback"
+    },
+    {
+      "key": "_TZ3000_eqsair32|TS0726",
+      "drivers": [
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "note": "Sacred Couple - 3-gang specific vs switch_1gang fallback"
+    },
+    {
+      "key": "_TZ3000_eqsair32|TS110E",
+      "drivers": [
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "note": "Sacred Couple - 3-gang specific vs switch_1gang fallback"
+    },
+    {
+      "key": "_TZ3000_eqsair32|TS130F",
+      "drivers": [
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "note": "Sacred Couple - 3-gang specific vs switch_1gang fallback"
+    },
+    {
+      "key": "_TZ3000_eqsair32|TS4100",
+      "drivers": [
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "note": "Sacred Couple - 3-gang specific vs switch_1gang fallback"
+    },
+    {
+      "key": "_TZ3000_eqsair32|ZBM5-1C-120",
+      "drivers": [
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "note": "Sacred Couple - 3-gang specific vs switch_1gang fallback"
+    },
+    {
+      "key": "_TZ3000_eqsair32|ZBM5-2C-120",
+      "drivers": [
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "note": "Sacred Couple - 3-gang specific vs switch_1gang fallback"
+    },
+    {
+      "key": "_TZ3000_eqsair32|ZBM5-3C-120",
+      "drivers": [
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "note": "Sacred Couple - 3-gang specific vs switch_1gang fallback"
+    },
+    {
+      "key": "_TZ3000_eqsair32|ZBMINI",
+      "drivers": [
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "note": "Sacred Couple - 3-gang specific vs switch_1gang fallback"
+    },
+    {
+      "key": "_TZ3000_eqsair32|ZBMINIL2",
+      "drivers": [
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "note": "Sacred Couple - 3-gang specific vs switch_1gang fallback"
+    },
+    {
+      "key": "_TZ3000_eqsair32|ZBMINIL2-R2",
+      "drivers": [
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "note": "Sacred Couple - 3-gang specific vs switch_1gang fallback"
+    },
+    {
+      "key": "_TZ3000_eqsair32|ZBMINIR",
+      "drivers": [
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "note": "Sacred Couple - 3-gang specific vs switch_1gang fallback"
+    },
+    {
+      "key": "_TZ3000_eqsair32|ZBMINIR2",
+      "drivers": [
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "note": "Sacred Couple - 3-gang specific vs switch_1gang fallback"
+    },
+    {
+      "key": "_TZ3000_eqsair32|ZBMINIR2-R2",
+      "drivers": [
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "note": "Sacred Couple - 3-gang specific vs switch_1gang fallback"
+    },
+    {
+      "key": "_TZ3000_eqsair32|ZG-301Z",
+      "drivers": [
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "note": "Sacred Couple - 3-gang specific vs switch_1gang fallback"
+    },
+    {
+      "key": "_TZ3000_eqsair32|ZG-302Z1",
+      "drivers": [
+        "switch_1gang",
+        "switch_3gang"
+      ],
+      "note": "Sacred Couple - 3-gang specific vs switch_1gang fallback"
+    },
+    {
+      "key": "_TZE200_IKVNCLUO|TS0215A",
+      "drivers": [
+        "presence_sensor_radar",
+        "switch_wireless"
+      ],
+      "note": "P80: sensor orphan dual-claim (switch_wireless TS0215A/TS0601 + presence_sensor_radar) - re-inject-manual-fixes intentional"
+    },
+    {
+      "key": "_TZE200_IKVNCLUO|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "switch_wireless"
+      ],
+      "note": "P80: sensor orphan dual-claim (switch_wireless TS0215A/TS0601 + presence_sensor_radar) - re-inject-manual-fixes intentional"
+    },
+    {
+      "key": "_TZE200_IKVNCLUO|TS0601_wirelesssw",
+      "drivers": [
+        "presence_sensor_radar",
+        "switch_wireless"
+      ],
+      "note": "P80: sensor orphan dual-claim (switch_wireless TS0215A/TS0601 + presence_sensor_radar) - re-inject-manual-fixes intentional"
     }
   ]
 }

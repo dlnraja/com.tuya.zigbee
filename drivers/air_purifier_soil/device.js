@@ -18,8 +18,8 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
       5: {
         capability: 'measure_temperature',
         transform: (v) => {
-          if (Math.abs(v) > 1000) return v * 100;
-          if (Math.abs(v) > 100) return safeMultiply(v, 10);
+          if (Math.abs(v) > 1000) {return v * 100;}
+          if (Math.abs(v) > 100) {return safeMultiply(v, 10);}
           return v;
         }
       },
@@ -38,23 +38,51 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
     const dp = Number(dpId);
     let parsedValue = value;
     if (Buffer.isBuffer(value)) {
-       if (value.length === 4) parsedValue = value.readInt32BE(0);
-       else if (value.length === 1) parsedValue = value.readUInt8(0);
+       if (value.length === 4) {parsedValue = value.readInt32BE(0);}
+       else if (value.length === 1) {parsedValue = value.readUInt8(0);}
     }
 
     if (dp === 3) {
       this.safeSetCapabilityValue('measure_humidity.soil', parseFloat(parsedValue)).catch(() => { });
     } else if (dp === 5) {
       let temp = parsedValue;
-      if (temp > 100) temp = safeMultiply(temp, 10);
+      if (temp > 100) {temp = safeMultiply(temp, 10);}
       this.safeSetCapabilityValue('measure_temperature', parseFloat(temp)).catch(() => { });
     } else {
       super._handleDP(dpId, value);
     }
   }
 
+  /**
+   * Point d'entrée unique des mises à jour de capabilities : déclenche les
+   * cartes *_changed avec leurs tokens (pattern voisin : soil_sensor).
+   */
+  async safeSetCapabilityValue(capability, value) {
+    const result = await super.safeSetCapabilityValue(capability, value);
+    this._maybeTriggerMeasureFlow(capability, value);
+    return result;
+  }
+
+  _maybeTriggerMeasureFlow(capability, value) {
+    if (this._destroyed || typeof value !== 'number' || Number.isNaN(value)) {return;}
+    const CARDS = {
+      'measure_humidity.soil': ['air_purifier_soil_sensor_moisture_changed', 'moisture'],
+      measure_temperature: ['air_purifier_soil_sensor_temperature_changed', 'temperature'],
+      measure_battery: ['air_purifier_soil_sensor_battery_changed', 'battery'],
+    };
+    const hit = CARDS[capability];
+    if (!hit) {return;}
+    this._lastFlowValues = this._lastFlowValues || {};
+    if (this._lastFlowValues[capability] === value) {return;}
+    this._lastFlowValues[capability] = value;
+    try {
+      const card = this.homey.flow.getDeviceTriggerCard(hit[0]);
+      if (card) {card.trigger(this, { [hit[1]]: value }, {}).catch(() => {});}
+    } catch (e) { /* flow indisponible */ }
+  }
+
   onDeleted() {
-    if (typeof super.onDeleted === 'function') super.onDeleted();
+    if (typeof super.onDeleted === 'function') {super.onDeleted();}
   }
 }
 

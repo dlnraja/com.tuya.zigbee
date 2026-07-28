@@ -1,3 +1,7 @@
+# Mark Stale Issues & PRs
+# Triggers: cron: 0 5 * * 1 + workflow_dispatch | Secrets: GITHUB_TOKEN only
+# Doc header added 2026-07-29 (workflows genealogy enrichment).
+
 name: "Mark Stale Issues & PRs"
 
 # <!-- badges:start -->

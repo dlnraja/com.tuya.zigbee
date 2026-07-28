@@ -94,7 +94,7 @@ class AirQualityCO2Device extends UnifiedSensorBase {
     for (const cap of ['measure_pm25', 'measure_voc', 'measure_formaldehyde']) {
       if (!this.hasCapability(cap)) {
         await this.addCapability(cap).catch(() => {});
-        this.log('[CO2] Added ' + cap);
+        this.log(`[CO2] Added ${  cap}`);
       }
     }
 
@@ -110,7 +110,7 @@ class AirQualityCO2Device extends UnifiedSensorBase {
    * v5.5.317: Validate CO2 with inference engine
    */
   _validateCO2(rawCO2) {
-    if (!this._airQualityInference) return rawCO2;
+    if (!this._airQualityInference) {return rawCO2;}
 
     const vocValue = this.getCapabilityValue('measure_voc');
     const validatedCO2 = this._airQualityInference.validateCO2(rawCO2, vocValue);
@@ -136,7 +136,7 @@ class AirQualityCO2Device extends UnifiedSensorBase {
 
   async _setupAirQualityZCL(zclNode) {
     const ep1 = zclNode?.endpoints?.[1];
-    if (!ep1) return;
+    if (!ep1) {return;}
 
     try {
       const temp = ep1.clusters?.msTemperatureMeasurement;
@@ -166,6 +166,35 @@ class AirQualityCO2Device extends UnifiedSensorBase {
   }
 
 
+  /**
+   * Point d'entrée unique des mises à jour de capabilities : déclenche les
+   * cartes *_changed avec leurs tokens (pattern voisin : soil_sensor).
+   */
+  async safeSetCapabilityValue(capability, value) {
+    const result = await super.safeSetCapabilityValue(capability, value);
+    this._maybeTriggerMeasureFlow(capability, value);
+    return result;
+  }
+
+  _maybeTriggerMeasureFlow(capability, value) {
+    if (this._destroyed || typeof value !== 'number' || Number.isNaN(value)) {return;}
+    const CARDS = {
+      measure_co2: ['air_purifier_quality_air_quality_co2_level_changed', 'co2'],
+      measure_temperature: ['air_purifier_quality_air_quality_co2_air_temperature_changed', 'temperature'],
+      measure_humidity: ['air_purifier_quality_air_quality_co2_air_humidity_changed', 'humidity'],
+      measure_pm25: ['air_purifier_quality_air_quality_co2_pm25_changed', 'pm25'],
+    };
+    const hit = CARDS[capability];
+    if (!hit) {return;}
+    this._lastFlowValues = this._lastFlowValues || {};
+    if (this._lastFlowValues[capability] === value) {return;}
+    this._lastFlowValues[capability] = value;
+    try {
+      const card = this.homey.flow.getDeviceTriggerCard(hit[0]);
+      if (card) {card.trigger(this, { [hit[1]]: value }, {}).catch(() => {});}
+    } catch (e) { /* flow indisponible */ }
+  }
+
   async onDeleted() {
     this._destroyed = true;
     await super.onDeleted();
@@ -177,7 +206,7 @@ class AirQualityCO2Device extends UnifiedSensorBase {
    */
   async onEndDeviceAnnounce() {
     this.log('[REJOIN] Device announced itself, refreshing state...');
-    if (typeof this._updateLastSeen === 'function') this._updateLastSeen();
+    if (typeof this._updateLastSeen === 'function') {this._updateLastSeen();}
     // Proactive data recovery if supported
     if (this._dataRecoveryManager) {
        this._dataRecoveryManager.triggerRecovery();

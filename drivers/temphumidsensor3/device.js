@@ -55,7 +55,7 @@ class temphumidsensor3 extends ZigBeeDevice {
 		const batteryThreshold = this.getSetting('batteryThreshold') || 20;
 		this.log("measure_battery | powerConfiguration - batteryPercentageRemaining (%): ", batteryPercentageRemaining/2);
 		this.safeSetCapabilityValue('measure_battery', batteryPercentageRemaining/2).catch(() => {});
-		this.safeSetCapabilityValue('alarm_battery', (batteryPercentageRemaining/2 < batteryThreshold) ? true : false).catch(() => {})
+		this.safeSetCapabilityValue('alarm_battery', batteryPercentageRemaining/2 < batteryThreshold ? true : false).catch(() => {})
 	}
 
 	onDeleted(){

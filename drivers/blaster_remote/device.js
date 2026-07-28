@@ -56,8 +56,8 @@ class IRRemoteDevice extends ZigBeeDevice {
     try {
       const mfr = this.getSetting('zb_manufacturer_name') || this.getData()?.manufacturerName || '';
       const mdl = this.getSetting('zb_model_id') || this.getData()?.modelId || '';
-      if (mfr) await this.setSettings({ zb_manufacturer_name: mfr }).catch(() => {});
-      if (mdl) await this.setSettings({ zb_model_id: mdl }).catch(() => {});
+      if (mfr) {await this.setSettings({ zb_manufacturer_name: mfr }).catch(() => {});}
+      if (mdl) {await this.setSettings({ zb_model_id: mdl }).catch(() => {});}
     } catch (e) { this.error('[IR] Store device info failed:', e.message); }
 
     this._zclNode = zclNode;
@@ -95,14 +95,14 @@ class IRRemoteDevice extends ZigBeeDevice {
         try { await this._handleRawControlFrame(cid, frame, meta); } catch (e) { this.error('[IR] raw ctrl err:', e.message); }
         return;
       }
-      if (origHandleFrame) return origHandleFrame(cid, frame, meta);
+      if (origHandleFrame) {return origHandleFrame(cid, frame, meta);}
     };
 
     // Register capabilities
     if (this.hasCapability('button.learn_ir'))
-      this.registerCapabilityListener('button.learn_ir', () => this.startLearn());
+      {this.registerCapabilityListener('button.learn_ir', () => this.startLearn());}
     if (this.hasCapability('ir_send_code'))
-      this.registerCapabilityListener('ir_send_code', (v) => this.sendIRCode(v));
+      {this.registerCapabilityListener('ir_send_code', (v) => this.sendIRCode(v));}
 
     this.log('[IR] Ready  full Zosung protocol');
   }
@@ -110,7 +110,7 @@ class IRRemoteDevice extends ZigBeeDevice {
   _nextSeq() { return this._seq = (this._seq + 1) % 0x10000; }
 
   async sendIRCode(code) {
-    if (!code) return;
+    if (!code) {return;}
     const msg = JSON.stringify({
       key_num: 1, delay: 300,
       key1: { num: 1, freq: 38000, type: 1, key_code: code }
@@ -123,6 +123,7 @@ class IRRemoteDevice extends ZigBeeDevice {
 
       // Timeout after 10s
       this.homey.setTimeout(() => {
+        if (this._destroyed) {return;}
         if (this._pendingSend?.seq === seq) {
           this._pendingSend = null;
           reject(new Error('IR send timeout'));
@@ -167,17 +168,17 @@ class IRRemoteDevice extends ZigBeeDevice {
 
   // Device requests a chunk of IR data
   _onCodeDataRequest(data) {
-    if (!this._pendingSend) return;
+    if (!this._pendingSend) {return;}
     const { msg, seq } = this._pendingSend;
     const pos = data?.position || 0;
     const maxLen = data?.maxlen || 64;
     const chunk = msg.substring(pos, pos + maxLen);
-    if (!chunk.length) return;
+    if (!chunk.length) {return;}
 
     // Calculate simple CRC (sum of bytes mod 256)
     const chunkBuf = Buffer.from(chunk, 'utf8');
     let crc = 0;
-    for (const b of chunkBuf) crc = (crc + b) & 0xFF;
+    for (const b of chunkBuf) {crc = (crc + b) & 0xFF;}
 
     this.log('[IR-TX] Sending chunk pos:', pos, 'len:', chunk.length, 'crc:', crc);
 
@@ -206,6 +207,7 @@ class IRRemoteDevice extends ZigBeeDevice {
 
       clearTimeout(this._learnTimeout);
       this._learnTimeout = this.homey.setTimeout(() => {
+        if (this._destroyed) {return;}
         if (this._learnBuffer) {
           this.log('[IR-RX] Learn timeout');
           this._learnBuffer = null;
@@ -252,10 +254,10 @@ class IRRemoteDevice extends ZigBeeDevice {
 
   // Receive a chunk of learned IR code
   _onCodeDataResponse(data) {
-    if (!this._learnBuffer) return;
+    if (!this._learnBuffer) {return;}
     const pos = data?.position || 0;
     const chunk = data?.msgpart;
-    if (!chunk) return;
+    if (!chunk) {return;}
 
     const chunkStr = Buffer.isBuffer(chunk) ? chunk.toString('utf8') : String(chunk);
     this._learnBuffer.chunks.set(pos, chunkStr);
@@ -299,7 +301,7 @@ class IRRemoteDevice extends ZigBeeDevice {
           .catch(err => this.error('[IR-RX] Flow trigger err:', err.message));
       }
 
-      if (this._learnBuffer.resolve) this._learnBuffer.resolve(keyCode);
+      if (this._learnBuffer.resolve) {this._learnBuffer.resolve(keyCode);}
       this._learnBuffer = null;
     }
   }
@@ -312,12 +314,12 @@ class IRRemoteDevice extends ZigBeeDevice {
     const cmd = frame?.cmdId ?? meta?.cmdId ?? frame?.[0];
     this.log('[IR-RAW] 0xED00 cmd:', cmd);
     // Forward to appropriate handler based on command ID
-    if (cmd === 0x00) this._onStartTransmit(this._parseTransmitFrame(frame));
-    else if (cmd === 0x01) this._onStartTransmitAck(this._parseTransmitFrame(frame));
-    else if (cmd === 0x02) this._onCodeDataRequest(this._parseRequestFrame(frame));
-    else if (cmd === 0x03) this._onCodeDataResponse(this._parseResponseFrame(frame));
-    else if (cmd === 0x04) this._onDoneSending(frame);
-    else if (cmd === 0x05) this._onDoneReceiving(frame);
+    if (cmd === 0x00) {this._onStartTransmit(this._parseTransmitFrame(frame));}
+    else if (cmd === 0x01) {this._onStartTransmitAck(this._parseTransmitFrame(frame));}
+    else if (cmd === 0x02) {this._onCodeDataRequest(this._parseRequestFrame(frame));}
+    else if (cmd === 0x03) {this._onCodeDataResponse(this._parseResponseFrame(frame));}
+    else if (cmd === 0x04) {this._onDoneSending(frame);}
+    else if (cmd === 0x05) {this._onDoneReceiving(frame);}
   }
 
   async _handleRawControlFrame(cid, frame, meta) {
@@ -327,19 +329,19 @@ class IRRemoteDevice extends ZigBeeDevice {
   }
 
   _parseTransmitFrame(f) {
-    if (!f || !f.data) return f;
+    if (!f || !f.data) {return f;}
     const d = f.data;
     return { seq: d.readUInt16BE?.(0) || 0, length: d.readUInt32BE?.(2) || 0, cmd: d[12] || 0 };
   }
 
   _parseRequestFrame(f) {
-    if (!f || !f.data) return f;
+    if (!f || !f.data) {return f;}
     const d = f.data;
     return { seq: d.readUInt16BE?.(0) || 0, position: d.readUInt16BE?.(2) || 0, maxlen: d[4] || 64 };
   }
 
   _parseResponseFrame(f) {
-    if (!f || !f.data) return f;
+    if (!f || !f.data) {return f;}
     const d = f.data;
     const pos = d.readUInt16BE?.(3) || 0;
     const chunk = d.slice(5, -1);

@@ -24,7 +24,7 @@ class ValveDualIrrigationDevice extends BaseUnifiedDevice {
 
   _toTuyaDPType(type) {
     const normalized = String(type || 'value').toLowerCase();
-    return ({ raw: 0, bool: 1, boolean: 1, value: 2, string: 3, enum: 4, bitmap: 5 })[normalized] ?? 2;
+    return { raw: 0, bool: 1, boolean: 1, value: 2, string: 3, enum: 4, bitmap: 5 }[normalized] ?? 2;
   }
 
   get dpMappings() {
@@ -70,7 +70,7 @@ class ValveDualIrrigationDevice extends BaseUnifiedDevice {
 
   _normalizeValveStatus(value) {
     const normalized = this._normalizeDPValue(value);
-    return ({ 0: 'manual', 1: 'auto', 2: 'idle' })[normalized] || 'unknown';
+    return { 0: 'manual', 1: 'auto', 2: 'idle' }[normalized] || 'unknown';
   }
 
   async _handleDualValveDP(dpId, rawValue) {
@@ -180,7 +180,7 @@ class ValveDualIrrigationDevice extends BaseUnifiedDevice {
   async onEndDeviceAnnounce() {
     if (this._destroyed) {return;}
     this.log('[REJOIN] Device announced itself, refreshing state...');
-    if (typeof this._updateLastSeen === 'function') this._updateLastSeen();
+    if (typeof this._updateLastSeen === 'function') {this._updateLastSeen();}
     // Proactive data recovery if supported
     if (this._dataRecoveryManager) {
       await Promise.resolve(this._dataRecoveryManager.triggerRecovery()).catch(err => {

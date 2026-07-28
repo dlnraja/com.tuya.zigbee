@@ -1,12 +1,12 @@
 # PROJECT_INDEX.md - Unified Smart Home Engine (Local-First) Reference Guide
 
-> **Version**: 9.0.52 | **App ID**: `com.dlnraja.tuya.zigbee` (stable: `com.dlnraja.tuya.zigbee.stable`)
-> **429 drivers** (378 Zigbee + 51 WiFi) | **4,189+ fingerprints** | **4,313 flow cards** | **186 capabilities** | **SDK v3**
-> **Session 2026-06-21** : Investigation forensique complète — 20 root causes résolues (boutons+batterie+devices)
+> **Version**: 9.0.348 | **App ID**: `com.dlnraja.tuya.zigbee` (stable: `com.dlnraja.tuya.zigbee.stable`, branch `stable-v5` v5.12.29)
+> **430 drivers** (master; 431 on `stable-v5`) | **5,471 fingerprints** | **4,833 flow cards** | **186 capabilities** | **SDK v3**
+> **Audit 2026-07-27** : see [AUDIT_HOMEY_2026-07-27.md](AUDIT_HOMEY_2026-07-27.md) — all publish blockers resolved; git history purged on 2026-07-27 (see [HISTORY_PURGE.md](HISTORY_PURGE.md))
 
 ⚠️ **ATTENTION AI AGENTS, LOCAL CLAUDE CODE, & ANTIGRAVITY SKILLS** ⚠️
 Before making ANY changes to this repository, you **MUST** execute the mandatory entry procedure:
-1. **Read [AI_GLOBAL_ACTION_PLAN.md](.archive/root-cleanup-2026-05-28/AI_GLOBAL_ACTION_PLAN.md)** — immediate plan of action and token-saving offline intelligence aggregator methodology.
+1. **Read [AUDIT_HOMEY_2026-07-27.md](AUDIT_HOMEY_2026-07-27.md)** — latest full audit (publish blockers, debt, security). Note: the former `.archive/root-cleanup-2026-05-28/AI_GLOBAL_ACTION_PLAN.md` was removed by the 2026-07-27 history purge.
 2. **Read [GLOBAL_INVESTIGATION_PLAN.md](docs/GLOBAL_INVESTIGATION_PLAN.md)** — 22-section deep diagnostic methodology covering forums, logs, emails, and external Z2M/ZHA/Domoticz cross-references.
 3. **Understand the Single-MFR Multi-Variant Rule** — A single `manufacturerName` can map to dozens of different product variants (PIDs). Check `productId` combinations!
 4. **Leverage the Local Arsenal** — Use Antigravity Skills in `.agents/skills/` and local Claude Code tools for automated audits.
@@ -46,6 +46,23 @@ Before making ANY changes to this repository, you **MUST** execute the mandatory
 28. [Dual-Layer Pairing Architecture & Aggregate Error Prevention](#28-dual-layer-pairing-architecture--aggregate-error-prevention-v8534)
 29. [Session Changelog v9.0.22 (June 2026)](#29-session-changelog-v9022-june-2026)
 30. [Pre-Commit Automation & Validation Gates](#30-pre-commit-automation--validation-gates)
+
+---
+
+## 📊 INVESTIGATION REPORTS (2026-07-28)
+
+Reports in [`reports/kimi-2026-07-28/`](reports/kimi-2026-07-28/):
+
+| Report | Scope |
+|--------|-------|
+| [workflows-audit.md](reports/kimi-2026-07-28/workflows-audit.md) | Audit of the 54 GitHub Actions workflows |
+| [dashboard-diag.md](reports/kimi-2026-07-28/dashboard-diag.md) | Diagnostic of the 6 HTML dashboards |
+| [scripts-catalog-phase1.md](reports/kimi-2026-07-28/scripts-catalog-phase1.md) | Catalog of the 860 scripts (604 `scripts/**/*.js` + 256 `tools/ci/*.js`) with roles and execution results |
+| [driver-fixes.md](reports/kimi-2026-07-28/driver-fixes.md) | Driver fixes (CI collision, wall_switch_4gang_1way, ZG-227Z) |
+| [issue-513.md](reports/kimi-2026-07-28/issue-513.md) | Issue #513 analysis (`_onDeleted` crash fix, diag-resolver bot guard) |
+| [destroyed-guard-fixes.md](reports/kimi-2026-07-28/destroyed-guard-fixes.md) | 36 `_destroyed` timer guards fixed across 29 files |
+| [sources-crawl.md](reports/kimi-2026-07-28/sources-crawl.md) | Fresh crawl of 13/15 data sources (blakadder, Z2M, ZHA, scanners…) |
+| [missing-devices-applied.md](reports/kimi-2026-07-28/missing-devices-applied.md) | Cross-ref of missing devices: +88 mfrs / +292 pids added to mfs_db |
 
 ---
 
@@ -476,7 +493,7 @@ class Device extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSwitchBase))
 | scripts/validation/ | 11 files | Fingerprint health, collision checking, schema validation |
 | scripts/ | 109 files (root) | Maintenance, fixes, fingerprint scans |
 | .github/scripts/ | 50+ files | GitHub Actions: forum, github, triage, Athom automation |
-| .github/workflows/ | 63 YAML files | CI/CD pipelines (daily, weekly, monthly) |
+| .github/workflows/ | 54 files (53 .yml + 1 .manual) | CI/CD pipelines (daily, weekly, monthly) |
 | .githooks/ | -- | Git hooks (pre-commit, pre-push) |
 
 ### Documentation
@@ -494,16 +511,18 @@ class Device extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSwitchBase))
 
 ## 12. YML WORKFLOWS
 
-### 63 Workflows (see .github/WORKFLOW_GUIDELINES.md for full list)
+### 54 Workflows (see .github/WORKFLOW_GUIDELINES.md for full list)
+
+> Audit complet 2026-07-28 : `reports/kimi-2026-07-28/workflows-audit.md` (53 actifs + 1 archivé `homey-app-cicd.yml.manual`).
 
 | Workflow | Schedule | Key Secrets |
 |----------|----------|-------------|
-| daily-everything | 4x/day | ALL secrets |
-| sunday-master | Sun 07:00 | ALL secrets |
-| nightly-auto-process | 03:30 daily | ALL secrets |
-| weekly-fingerprint-sync | Mon 06:00 | GH_PAT |
+| continuous-flow | daily 03:00 | GH_PAT |
+| mega-crawl | daily 02:00 | ALL secrets |
+| recurrent-orchestrator | 03:30 daily | ALL secrets |
+| gmail-diagnostics | 4x/day | Gmail IMAP |
 | publish | manual | HOMEY_PAT |
-| auto-publish-on-push | on complete | HOMEY_PAT |
+| auto-publish-on-push | on push master | HOMEY_PAT |
 
 ### YML Rules
 1. Read `.github/WORKFLOW_GUIDELINES.md` BEFORE editing any yml

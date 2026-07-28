@@ -1,3 +1,7 @@
+# Bug Report Auto-PR
+# Triggers: issues,workflow_dispatch | Secrets: CEREBRAS_API_KEY,DEEPSEEK_API_KEY,GH_PAT,GOOGLE_API_KEY,GROQ_API_KEY,HF_TOKEN,KIMI_API_KEY,MISTRAL_API_KEY,NVIDIA_API_KEY,OPENAI_API_KEY,OPENROUTER_API_KEY,TOGETHER_API_KEY
+# Doc header added 2026-07-29 (workflows genealogy enrichment).
+
 name: "Bug Report Auto-PR"
 
 # <!-- badges:start -->

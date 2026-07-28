@@ -25,8 +25,8 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_master_device_plug_energy_needs_device_assignment",
-      "_MASTER_DEVICE_PLUG_ENERGY_NEEDS_DEVICE_ASSIGNMENT"
+      "_TZ3000_b1q8kwmh",
+      "_tz3000_dd8wwzcy"
     ],
     "productId": [
       "TS0002",
@@ -685,10 +685,5 @@
       "getable": false,
       "setable": false
     }
-  },
-  "_pidConflictNotes": [
-    "// PID-CONFLICT-NOTE TS011F shared with 43 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE TS0002 shared with 27 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE TS0121 shared with 11 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-  ]
+  }
 }

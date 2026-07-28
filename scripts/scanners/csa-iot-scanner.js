@@ -31,22 +31,22 @@ let diffCache;
 let fetchAll;
 try { fetchAll = require('./concurrent-fetch').fetchAll; } catch { /* fallback */ }
 
-const CSA_API = 'https://api.csa-iot.org';
-const CSA_SEARCH = 'https://csa-iot.org/csa-iot/connected-things/';
-
-// CSA-IoT API endpoints
-const CSA_ENDPOINTS = {
-  search: '/api/v1/certifiedproducts/search',
-  products: '/api/v1/certifiedproducts',
-};
+// P54: api.csa-iot.org is dead (DNS no longer resolves) and the csa-iot.org
+// product pages are JS/WordPress-driven (admin-ajax) — not machine-readable.
+// The current machine-readable source of CSA certified products is the Matter
+// DCL (Distributed Compliance Ledger) mainnet observer REST API.
+const DCL_API = 'https://on.dcl.csa-iot.org';
 
 // ── GitHub API authentication ────────────────────────────────────────────
-const GH_TOKEN = process.env.GH_PAT || process.env.GITHUB_TOKEN;
+const GH_TOKEN = process.env.GH_PAT || process.env.GITHUB_TOKEN || process.env.GH_TOKEN;
 const GH_HEADERS = {
   'User-Agent': 'HomeyTuyaScanner/1.0',
   'Accept': 'application/vnd.github.v3+json',
   ...(GH_TOKEN ? { Authorization: `token ${GH_TOKEN}` } : {}),
 };
+
+// Auth/network errors detected during this run (feeds the cache anti-poisoning guard)
+const RUN_ERRORS = [];
 
 // ── HTTP helpers ─────────────────────────────────────────────────────────
 function httpGet(url, options = {}) {
@@ -66,9 +66,12 @@ function httpGet(url, options = {}) {
       let data = '';
       res.on('data', (c) => data += c);
       res.on('end', () => {
+        if (res.statusCode && res.statusCode >= 400) {
+          RUN_ERRORS.push(`HTTP ${res.statusCode} ${url}`);
+        }
         try { resolve(JSON.parse(data)); } catch (e) { resolve({ raw: data }); }
       });
-    }).on('error', reject);
+    }).on('error', (e) => { RUN_ERRORS.push(e.message); reject(e); });
   });
 }
 
@@ -110,9 +113,12 @@ function githubGet(urlPath) {
       let data = '';
       res.on('data', (c) => data += c);
       res.on('end', () => {
+        if (res.statusCode && res.statusCode >= 400) {
+          RUN_ERRORS.push(`GitHub HTTP ${res.statusCode} ${urlPath}`);
+        }
         try { resolve(JSON.parse(data)); } catch (e) { resolve([]); }
       });
-    }).on('error', reject);
+    }).on('error', (e) => { RUN_ERRORS.push(e.message); reject(e); });
   });
 }
 
@@ -133,30 +139,68 @@ function parseCsaProduct(product) {
   };
 }
 
+// ── Fetch CSA certified products from the Matter DCL mainnet ─────────────
+// DCL REST: /dcl/model/models (cosmos-style pagination via next_key),
+// vendor names from /dcl/vendorinfo/vendors/{vid}.
+async function fetchDclProducts() {
+  const models = [];
+  let nextKey = null;
+  do {
+    const qs = nextKey
+      ? `?pagination.key=${encodeURIComponent(nextKey)}`
+      : '?pagination.limit=1000';
+    const res = await httpGet(`${DCL_API}/dcl/model/models${qs}`);
+    if (!Array.isArray(res.model)) break;
+    models.push(...res.model);
+    nextKey = (res.pagination && res.pagination.next_key) || null;
+  } while (nextKey);
+
+  // Resolve vendor names for unique VIDs (bounded parallelism)
+  const vids = [...new Set(models.map((m) => m.vid).filter((v) => v != null))];
+  const vendorNames = new Map();
+  const CHUNK = 20;
+  for (let i = 0; i < vids.length; i += CHUNK) {
+    await Promise.all(vids.slice(i, i + CHUNK).map(async (vid) => {
+      try {
+        const r = await httpGet(`${DCL_API}/dcl/vendorinfo/vendors/${vid}`);
+        const info = r.vendorInfo || {};
+        const name = info.vendorName || info.companyLegalName;
+        if (name) vendorNames.set(vid, name);
+      } catch { /* vendor info missing on ledger */ }
+    }));
+  }
+
+  return models.map((m) => parseCsaProduct({
+    companyName: vendorNames.get(m.vid) || (m.vid != null ? `VID ${m.vid}` : null),
+    productName: m.productName || m.productLabel || null,
+    modelId: m.pid != null ? `0x${m.pid.toString(16).padStart(4, '0')}` : null,
+    certificationId: (m.vid != null && m.pid != null) ? `${m.vid}/${m.pid}` : null,
+    manufacturerCode: m.vid != null ? `0x${m.vid.toString(16).padStart(4, '0')}` : null,
+    platform: 'matter-dcl',
+  }));
+}
+
 // ── Fetch CSA certified products (web scraping fallback) ─────────────────
 async function fetchCsaProducts() {
   const products = [];
 
-  // Try the CSA-IoT API first
+  // Primary source: Matter DCL mainnet (api.csa-iot.org is dead)
   try {
-    console.log('Attempting CSA-IoT API...');
-    const result = await httpGet(`${CSA_API}${CSA_ENDPOINTS.search}`, {
-      headers: { 'Content-Type': 'application/json' },
-    });
-    if (result && Array.isArray(result.products)) {
-      return result.products.map(parseCsaProduct);
+    console.log('Fetching CSA certified products from Matter DCL...');
+    const dclProducts = await fetchDclProducts();
+    if (dclProducts.length > 0) {
+      console.log(`  DCL: ${dclProducts.length} certified models`);
+      return dclProducts;
     }
-    if (result && Array.isArray(result.data)) {
-      return result.data.map(parseCsaProduct);
-    }
+    console.log('  DCL returned 0 models, trying GitHub mirrors...');
   } catch (e) {
-    console.log(`  API not available: ${e.message}`);
+    console.log(`  DCL not available: ${e.message}`);
   }
 
   // Fallback: scrape from GitHub mirrors of CSA data
   console.log('Falling back to GitHub CSA-IoT data mirrors...');
   const csaRepos = [
-    { owner: 'csa-iot', repo: 'connected-things-data' },
+    // csa-iot/connected-things-data: removed upstream (404)
     { owner: 'project-chip', repo: 'connectedhomeip' },
   ];
 
@@ -412,7 +456,7 @@ async function scan() {
 
   // Save to cache
   if (cache) {
-    cache.save(output);
+    cache.save(output, null, { hadErrors: RUN_ERRORS.length > 0 });
     console.log(`Cache SAVED (TTL: 7d)`);
   }
 

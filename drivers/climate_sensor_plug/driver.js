@@ -15,7 +15,7 @@ class PlugSmartDriver extends ZigBeeDriver {
 
   async onInit() {
     await super.onInit();
-    if (this._flowCardsRegistered) return;
+    if (this._flowCardsRegistered) {return;}
     this._flowCardsRegistered = true;
     this.log('PlugSmartDriver v5.5.570 initialized');
     this._registerFlowCards();
@@ -29,11 +29,11 @@ class PlugSmartDriver extends ZigBeeDriver {
         const _card = this._getFlowCard(_tid, "trigger");
         if (_card) {
           _card.registerRunListener(async (args) => {
-            if (!args.device) return;
-            args.device.emit("flow:" + _tid, args);
+            if (!args.device) {return;}
+            args.device.emit(`flow:${  _tid}`, args);
           });
         }
-      } catch (_err) { this.error("Trigger " + _tid + ": " + _err.message); }
+      } catch (_err) { this.error(`Trigger ${  _tid  }: ${  _err.message}`); }
     }
     // END TRIGGERS
     // CONDITIONS
@@ -41,79 +41,79 @@ class PlugSmartDriver extends ZigBeeDriver {
       const card = this.homey.flow.getConditionCard('climate_sensor_plug_on');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Condition climate_sensor_plug_plug_smart_is_on: ${err.message}`); }; }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition climate_sensor_plug_plug_smart_is_on: ${err.message}`); } }
 
     // ACTIONS
     try {
       const card = this.homey.flow.getActionCard('climate_sensor_plug_on');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           await args.device['setCapabilityValue']('onoff', true).catch(() => {});
           return true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Action climate_sensor_plug_plug_smart_turn_on: ${err.message}`); }; }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action climate_sensor_plug_plug_smart_turn_on: ${err.message}`); } }
 
     try {
       const card = this.homey.flow.getActionCard('climate_sensor_plug_off');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           await args.device['setCapabilityValue']('onoff', false).catch(() => {});
           return true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Action climate_sensor_plug_plug_smart_turn_off: ${err.message}`); }; }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action climate_sensor_plug_plug_smart_turn_off: ${err.message}`); } }
 
     try {
       const card = this.homey.flow.getActionCard('climate_sensor_plug_sensor_plug_sensor_plug_plug_on_delay');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           await args.device['setCapabilityValue']('onoff', true).catch(() => {});
           return true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Action climate_sensor_plug_plug_smart_turn_on_delay: ${err.message}`); }; }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action climate_sensor_plug_plug_smart_turn_on_delay: ${err.message}`); } }
 
     try {
       const card = this.homey.flow.getActionCard('climate_sensor_plug_off_delay');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           await args.device['setCapabilityValue']('onoff', false).catch(() => {});
           return true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Action climate_sensor_plug_plug_smart_turn_off_delay: ${err.message}`); }; }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action climate_sensor_plug_plug_smart_turn_off_delay: ${err.message}`); } }
 
     try {
       const card = this.homey.flow.getActionCard('climate_sensor_plug_indicator');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           // Generic action handler
           this.log('[FLOW] Action climate_sensor_plug_plug_smart_set_indicator triggered for', args.device.getName());
           return true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Action climate_sensor_plug_plug_smart_set_indicator: ${err.message}`); }; }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action climate_sensor_plug_plug_smart_set_indicator: ${err.message}`); } }
 
     try {
       const card = this.homey.flow.getActionCard('climate_sensor_plug_power_on');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           await args.device['setCapabilityValue']('onoff', true).catch(() => {});
           return true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Action climate_sensor_plug_plug_smart_set_power_on: ${err.message}`); }; }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action climate_sensor_plug_plug_smart_set_power_on: ${err.message}`); } }
 
     this.log('[FLOW] All flow cards registered');
   }

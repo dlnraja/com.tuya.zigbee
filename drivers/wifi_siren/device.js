@@ -5,17 +5,17 @@ class WiFiSirenDevice extends TuyaLocalDevice {
   get dpMappings() {
     return {
       '1':   { capability: 'onoff', writable: true, transform: (v) => !!v, reverseTransform: (v) => !!v },
-      '4':   { capability: 'unknown' },
-      '5':   { capability: 'unknown' },
+      '4':   { capability: 'unknown' }, // tuya-local: "tone" (x3/10 devices)
+      '5':   { capability: 'unknown' }, // tuya-local: "volume_level" (x5/10 devices)
       '6':   { capability: 'alarm_generic', transform: (v) => !!v },
-      '7':   { capability: 'unknown' },
+      '7':   { capability: 'unknown' }, // tuya-local: "duration" (x3/10 devices)
       '9':   { capability: 'measure_temperature', smartDivisor: true },
       '10':  { capability: 'measure_humidity' },
       '13':  { capability: 'measure_battery' },
       '15':  { capability: 'unknown' },
       '101': { capability: 'unknown' },
-      '102': { capability: 'unknown' },
-      '103': { capability: 'unknown' },
+      '102': { capability: 'unknown' }, // tuya-local: "Alarm detection" (x5/10 devices)
+      '103': { capability: 'unknown' }, // tuya-local: "Open detection" (x4/10 devices)
       '104': { capability: 'unknown' },
     };
   }
@@ -32,7 +32,7 @@ class WiFiSirenDevice extends TuyaLocalDevice {
 
 
   async onDeleted() {
-    if (this._destroyed) return;
+    if (this._destroyed) {return;}
     this._destroyed = true;
     this.log('Device deleted, cleaning up');
     await super.onDeleted();

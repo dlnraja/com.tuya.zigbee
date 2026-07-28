@@ -75,22 +75,22 @@ class soilsensor extends TuyaSpecificClusterDevice {
 
     switch (dp) {
       case dataPoints.humidity:
-        this.log("Humidity: " + value);
+        this.log(`Humidity: ${  value}`);
 
         this.safeSetCapabilityValue('measure_humidity', value).catch(this.error);
         break;
       case dataPoints.temperature:
-        this.log("Temparature: " + value);
+        this.log(`Temparature: ${  value}`);
 
         this.safeSetCapabilityValue('measure_temperature', value).catch(this.error);
         break;
       case dataPoints.battery:
-        this.log("Battery: " + value);
+        this.log(`Battery: ${  value}`);
 
         this.safeSetCapabilityValue('measure_battery', value).catch(this.error);
         break;
       case dataPoints.battery_state:
-        this.log("Battery state: " + value);
+        this.log(`Battery state: ${  value}`);
         var batAlarm = value === 0 ? true : false;
 
         this.safeSetCapabilityValue('alarm_battery', batAlarm).catch(this.error);

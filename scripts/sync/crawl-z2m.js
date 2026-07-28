@@ -16,7 +16,7 @@ try {
 } catch { /* fallback: no caching */ }
 const CACHE_ID = 'z2m';
 
-const GH_TOKEN = process.env.GH_PAT || process.env.GITHUB_TOKEN;
+const GH_TOKEN = process.env.GH_PAT || process.env.GITHUB_TOKEN || process.env.GH_TOKEN;
 const GH_HEADERS = GH_TOKEN ? { Authorization: `token ${GH_TOKEN}`, Accept: 'application/vnd.github.v3+json' } : { Accept: 'application/vnd.github.v3+json' };
 
 const API = "https://api.github.com/repos/Koenkk/zigbee-herdsman-converters/contents/src/devices";

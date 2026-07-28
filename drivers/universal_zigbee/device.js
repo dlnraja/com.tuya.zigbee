@@ -31,7 +31,7 @@ class UniversalZigbeeDeviceSub extends UniversalZigbeeDevice {
    * Setup standard ZCL listeners for native Zigbee devices (IKEA, Philips, etc.)
    */
   _setupNativeZclListeners() {
-    if (!this.zclNode) return;
+    if (!this.zclNode) {return;}
 
     // A. OnOff (0x0006)
     this.registerCapability('onoff', 'genOnOff', {
@@ -81,7 +81,7 @@ class UniversalZigbeeDeviceSub extends UniversalZigbeeDevice {
     const iasCluster = this.zclNode.endpoints?.[1]?.clusters?.iasZone;
     if (iasCluster) {
       const cap = this.hasCapability('alarm_water') ? 'alarm_water' : 
-                  (this.hasCapability('alarm_contact') ? 'alarm_contact' : 'alarm_motion');
+                  this.hasCapability('alarm_contact') ? 'alarm_contact' : 'alarm_motion';
       
       this.registerCapability(cap, 'iasZone', {
          get: 'zoneStatus',
@@ -94,7 +94,7 @@ class UniversalZigbeeDeviceSub extends UniversalZigbeeDevice {
     this.registerCapability('measure_battery', 'genPowerCfg', {
       get: 'batteryPercentageRemaining',
       report: 'batteryPercentageRemaining',
-      reportParser: v => (v === 255) ? null : Math.round(v)
+      reportParser: v => v === 255 ? null : Math.round(v)
     }).catch(() => {});
   }
 
@@ -115,7 +115,7 @@ class UniversalZigbeeDeviceSub extends UniversalZigbeeDevice {
    */
   async onEndDeviceAnnounce() {
     this.log('[REJOIN] Device announced itself, refreshing state...');
-    if (typeof this._updateLastSeen === 'function') this._updateLastSeen();
+    if (typeof this._updateLastSeen === 'function') {this._updateLastSeen();}
     // Proactive data recovery if supported
     if (this._dataRecoveryManager) {
        this._dataRecoveryManager.triggerRecovery();

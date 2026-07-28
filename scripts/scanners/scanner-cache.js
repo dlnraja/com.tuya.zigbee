@@ -295,10 +295,22 @@ class ScannerCache {
 
   /**
    * Save data to cache.
+   * Anti-poisoning guard: when the run detected auth/network errors AND
+   * produced 0 results, the cache write is skipped — otherwise an
+   * unauthenticated run would poison the cache for the whole TTL (12h-7d).
    * @param {object} data - Scanner output data
    * @param {string} [sourceHash] - Optional hash of the source data for change detection
+   * @param {object} [opts] - { hadErrors: boolean } auth/network errors detected during the run
+   * @returns {boolean} true if the cache was written, false if skipped by the guard
    */
-  save(data, sourceHash = null) {
+  save(data, sourceHash = null, opts = {}) {
+    if (opts.hadErrors && this._countItems(data) === 0) {
+      const stats0 = loadStats();
+      stats0.errors[this.id] = (stats0.errors[this.id] || 0) + 1;
+      saveStats(stats0);
+      log(C.Y, `Cache SKIPPED for "${this.id}": 0 results + fetch/auth errors detected (anti-poisoning guard)`);
+      return false;
+    }
     ensureCacheDir();
     const stats = loadStats();
     const hash = sourceHash || computeHash(data);
@@ -326,6 +338,7 @@ class ScannerCache {
     if (fs.existsSync(this.config.outputDir)) {
       fs.writeFileSync(this.outputPath, JSON.stringify(data, null, 2));
     }
+    return true;
   }
 
   /**

@@ -163,10 +163,10 @@ class sensortemphumidsensor extends TuyaSpecificClusterDevice {
 
     this.registerCapabilityListener('onoff', async value => {
       await this.writeBool(dataPoints.ALARM, value);
-      this.homey.setTimeout(() => { if (this._destroyed) return; this.queryAll().catch(this.error); }, 1200);
+      this.homey.setTimeout(() => { if (this._destroyed) {return;} this.queryAll().catch(this.error); }, 1200);
     });
 
-    this.homey.setTimeout(() => { if (this._destroyed) return; this.bootstrap().catch(this.error); }, 5000);
+    this.homey.setTimeout(() => { if (this._destroyed) {return;} this.bootstrap().catch(this.error); }, 5000);
   }
 
   _registerTimeBoundCluster(zclNode) {
@@ -235,12 +235,12 @@ class sensortemphumidsensor extends TuyaSpecificClusterDevice {
         localTime: localSeconds,
         sequenceNumber: data?.sequenceNumber ?? data?.payloadSize ?? 0,
       });
-      this.homey.setTimeout(() => { if (this._destroyed) return; this.queryAll().catch(this.error); }, 500);
+      this.homey.setTimeout(() => { if (this._destroyed) {return;} this.queryAll().catch(this.error); }, 500);
     } catch (error) { this.error('Failed to respond to Tuya timeSync request', error); }
   }
 
   async onMcuVersionResponse(data) {
-    this.homey.setTimeout(() => { if (this._destroyed) return; this.queryAll().catch(this.error); }, 500);
+    this.homey.setTimeout(() => { if (this._destroyed) {return;} this.queryAll().catch(this.error); }, 500);
   }
 
   async processTuyaMessage(source, data) {
@@ -261,10 +261,12 @@ class sensortemphumidsensor extends TuyaSpecificClusterDevice {
   }
 
   handlePowerMode(measuredValue) {
+    if (this._destroyed) {return;}
     this.safeSetCapabilityValue('alarm_battery', measuredValue === 0 || measuredValue === 1).catch(() => {});
   }
 
   reportHumidityCapacity(measuredValue) {
+    if (this._destroyed) {return;}
     const humidityOffset = Number(this.getSetting('humidity_offset') || 0);
     this.safeSetCapabilityValue('measure_humidity', Number(measuredValue) + humidityOffset).catch(() => {});
   }

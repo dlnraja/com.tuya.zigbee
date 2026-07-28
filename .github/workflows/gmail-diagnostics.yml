@@ -1,3 +1,7 @@
+# Gmail Diagnostics Auto-Analysis
+# Triggers: cron: 0 0,6,12,18 * * * + workflow_dispatch | Secrets: CEREBRAS_API_KEY,GH_PAT,GMAIL_APP_PASSWORD,GMAIL_CLIENT_ID,GMAIL_CLIENT_SECRET,GMAIL_EMAIL,GMAIL_REFRESH_TOKEN,GOOGLE_API_KEY,HF_TOKEN,HOMEY_PAT,HOMEY_PAT_API,KIMI_API_KEY,MISTRAL_API_KEY,NVIDIA_API_KEY,OPENROUTER_API_KEY,TOGETHER_API_KEY
+# Doc header added 2026-07-29 (workflows genealogy enrichment).
+
 name: Gmail Diagnostics Auto-Analysis
 # <!-- badges:start -->
 # [![Gmail Diagnostics Auto-Analysis](https://github.com/dlnraja/com.tuya.zigbee/actions/workflows/gmail-diagnostics.yml/badge.svg)](https://github.com/dlnraja/com.tuya.zigbee/actions/workflows/gmail-diagnostics.yml)

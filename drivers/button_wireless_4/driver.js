@@ -10,7 +10,7 @@ const { registerButtonFlowCards } = require('../../lib/FlowCardHelper');
 class ButtonWireless4Driver extends BaseZigBeeDriver {
 async onInit() {
     await super.onInit();
-    if (this._flowCardsRegistered) return;
+    if (this._flowCardsRegistered) {return;}
     this._flowCardsRegistered = true;
 
     const driverId = this.id || this.manifest?.id || 'button_wireless_4';

@@ -77,23 +77,23 @@ class soilsensor2 extends TuyaSpecificClusterDevice {
 
     switch (dp) {
       case dataPoints.humidity:
-        this.log("Humidity: " + value);
+        this.log(`Humidity: ${  value}`);
         await this._safeSetSoilCapability('measure_humidity.soil', value);
         await this._safeSetSoilCapability('measure_humidity', value);
         break;
 
       case dataPoints.temperature:
-        this.log("Temparature: " + value/10);
+        this.log(`Temparature: ${  value/10}`);
         await this._safeSetSoilCapability('measure_temperature', value / 10);
         break;
 
       case dataPoints.battery:
-        this.log("Battery: " + value);
+        this.log(`Battery: ${  value}`);
         await this._safeSetSoilCapability('measure_battery', value);
         break;
 
       case dataPoints.battery_state:
-        this.log("Battery state: " + value);
+        this.log(`Battery state: ${  value}`);
         var batAlarm = value === 0 ? true : false;
         await this._safeSetSoilCapability('alarm_battery', batAlarm);
         break;
@@ -118,7 +118,7 @@ class soilsensor2 extends TuyaSpecificClusterDevice {
 
     const setter = typeof this.safeSetCapabilityValue === 'function'
       ? this.safeSetCapabilityValue.bind(this)
-      : (typeof this.setCapabilityValue === 'function' ? this.setCapabilityValue.bind(this) : null);
+      : typeof this.setCapabilityValue === 'function' ? this.setCapabilityValue.bind(this) : null;
 
     if (!setter) {
       this.error(`[SOIL2] No capability setter available for ${capability}`);

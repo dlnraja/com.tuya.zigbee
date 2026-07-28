@@ -51,7 +51,7 @@ class smart_door_window_sensor extends ZigBeeDevice {
 		const batteryThreshold = this.getSetting('batteryThreshold') || 20;
 		this.log("measure_battery | powerConfiguration - batteryPercentageRemaining (%): ", batteryPercentageRemaining/2);
 		this.safeSetCapabilityValue('measure_battery', batteryPercentageRemaining/2).catch(this.error);
-		this.safeSetCapabilityValue('alarm_battery', (batteryPercentageRemaining/2 < batteryThreshold) ? true : false).catch(this.error);
+		this.safeSetCapabilityValue('alarm_battery', batteryPercentageRemaining/2 < batteryThreshold ? true : false).catch(this.error);
 	}
 
   onDeleted(){

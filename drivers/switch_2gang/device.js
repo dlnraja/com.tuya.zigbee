@@ -228,7 +228,7 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
       if ((msg.includes('Zigbee') || msg.includes('démarrage') || msg.includes('starting')) && retryCount < 3) {
         this.log(`[SWITCH-2G] ⏳ Zigbee starting, will retry electrical reporting in 60s (attempt ${retryCount + 1}/3)`);
         this._electricalReportingRetryTimer = this.homey.setTimeout(() => {
-          if (this._destroyed) return;
+          if (this._destroyed) {return;}
           this._configureElectricalReporting(retryCount + 1).catch(() => {});
         }, 60000);
       } else {
@@ -259,7 +259,7 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
       if ((msg.includes('Zigbee') || msg.includes('démarrage') || msg.includes('starting')) && retryCount < 3) {
         this.log(`[SWITCH-2G] ⏳ Zigbee starting, will retry metering reporting in 60s (attempt ${retryCount + 1}/3)`);
         this._meteringReportingRetryTimer = this.homey.setTimeout(() => {
-          if (this._destroyed) return;
+          if (this._destroyed) {return;}
           this._configureMeteringReporting(retryCount + 1).catch(() => {});
         }, 60000);
       } else {
@@ -277,7 +277,7 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
         'activePower', 'rmsVoltage', 'rmsCurrent'
       ]).catch(() => ({}));
 
-      if (this._destroyed) return;
+      if (this._destroyed) {return;}
       if (attrs.activePower != null && this.hasCapability('measure_power')) {
         this.safeSetCapabilityValue('measure_power', safeParse(attrs.activePower, 10)).catch(() => {});
       }
@@ -302,7 +302,7 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
         'currentSummationDelivered'
       ]).catch(() => ({}));
 
-      if (this._destroyed) return;
+      if (this._destroyed) {return;}
       if (attrs.currentSummationDelivered != null && this.hasCapability('meter_power')) {
         this.safeSetCapabilityValue('meter_power', attrs.currentSummationDelivered / 1000).catch(() => {});
       }

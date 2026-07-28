@@ -653,7 +653,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
       this.configureAttributeReporting(configureReportingPayload),
       { name: 'configureAttributeReporting', timeoutMs: SleepyInit.ZCL_TIMEOUT_MS }
     ).then((res) => {
-      if (res && res !== 'timeout') this.log('Attribute reporting configured successfully');
+      if (res && res !== 'timeout') {this.log('Attribute reporting configured successfully');}
     });
 
     // v5.5.228: Remove alarm_contact if wrongly added (motion sensors use alarm_motion only)
@@ -975,7 +975,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
       // v5.8.32: Delayed cleanup - remove temp/humidity if no DP data received in 5 min
       // Fixes PIR-only variants (e.g. _TZE200_3towulqd ZG-204ZL) showing bogus values
       this._permissiveCleanupTimeout = this.homey.setTimeout(async () => {
-        if (this._destroyed) return;
+        if (this._destroyed) {return;}
         try {
           if (!this._hasReceivedTempDP && this.hasCapability('measure_temperature')) {
             const val = this.getCapabilityValue('measure_temperature');
@@ -1227,7 +1227,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
     };
 
     // Initial poll after 3 seconds
-    this.homey.setTimeout(async () => { if (this._destroyed) return; this.log('[MOTION-DP]  Initial DP poll...');
+    this.homey.setTimeout(async () => { if (this._destroyed) {return;} this.log('[MOTION-DP]  Initial DP poll...');
       // Request all DPs that might contain temp / humidity/battery
       await requestDP(3);   // Temperature (ZG-204ZV)
       await requestDP(4);   // Humidity or Battery
@@ -1245,7 +1245,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
     // Periodic poll every 5 minutes for variant devices
     if (isVariant) {
       this._dpPollingInterval = this.homey.setInterval(async () => {
-        if (this._destroyed) return;
+        if (this._destroyed) {return;}
         this.log('[MOTION-DP]  Periodic DP poll...');
         await requestDP(3);  // Temperature
         await requestDP(4);  // Humidity
@@ -1354,7 +1354,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
 
     // Auto-sleep after 10 seconds of inactivity
     clearTimeout(this._sleepTimer);
-    this._sleepTimer = this.homey.setTimeout(() => { if (this._destroyed) return; this._isDeviceAwake = false;
+    this._sleepTimer = this.homey.setTimeout(() => { if (this._destroyed) {return;} this._isDeviceAwake = false;
       this.log('[SLEEPY]  Device assumed sleeping (timeout)'); }, 10000);
   }
 
@@ -1383,7 +1383,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
 
       const data = await Promise.race([
         cluster.readAttributes(attributes),
-        new Promise((_, reject) => this.homey.setTimeout(() => { if (this._destroyed) return; reject(new Error('Smart timeout')); }, timeout))
+        new Promise((_, reject) => this.homey.setTimeout(() => { if (this._destroyed) {return;} reject(new Error('Smart timeout')); }, timeout))
       ]);
 
       this._pendingZclReads.delete(readId);
@@ -1609,7 +1609,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
     }
 
     this._luxReportTimer = this.homey.setInterval(() => {
-      if (this._destroyed) return;
+      if (this._destroyed) {return;}
       this._requestLuxUpdate();
     }, this._luxSmartReporting.luxReportInterval);
 

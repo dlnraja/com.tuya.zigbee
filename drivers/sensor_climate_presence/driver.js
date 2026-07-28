@@ -14,7 +14,7 @@ class PresenceSensorRadarDriver extends ZigBeeDriver {
 
   async onInit() {
     await super.onInit();
-    if (this._flowCardsRegistered) return;
+    if (this._flowCardsRegistered) {return;}
     this._flowCardsRegistered = true;
     this.log('PresenceSensorRadarDriver v5.5.580 initialized');
     this._registerFlowCards();
@@ -28,11 +28,11 @@ class PresenceSensorRadarDriver extends ZigBeeDriver {
         const _card = this._getFlowCard(_tid, "trigger");
         if (_card) {
           _card.registerRunListener(async (args) => {
-            if (!args.device) return;
-            args.device.emit("flow:" + _tid, args);
+            if (!args.device) {return;}
+            args.device.emit(`flow:${  _tid}`, args);
           });
         }
-      } catch (_err) { this.error("Trigger " + _tid + ": " + _err.message); }
+      } catch (_err) { this.error(`Trigger ${  _tid  }: ${  _err.message}`); }
     }
     // END TRIGGERS
     // CONDITIONS
@@ -40,41 +40,41 @@ class PresenceSensorRadarDriver extends ZigBeeDriver {
       const card = this.homey.flow.getConditionCard('sensor_climate_presence_presence_sensor_radar_is_present_sensor_presence_radar');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           return args.device.getCapabilityValue('alarm_motion') === true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Condition sensor_climate_presence_presence_sensor_radar_is_present_sensor_presence_radar: ${err.message}`); }; }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition sensor_climate_presence_presence_sensor_radar_is_present_sensor_presence_radar: ${err.message}`); } }
 
     try {
       const card = this.homey.flow.getConditionCard('sensor_climate_presence_presence_sensor_radar_illuminance_above_sensor_presence_radar');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           return args.device.getCapabilityValue('alarm_motion') === true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Condition sensor_climate_presence_presence_sensor_radar_illuminance_above_sensor_presence_radar: ${err.message}`); }; }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition sensor_climate_presence_presence_sensor_radar_illuminance_above_sensor_presence_radar: ${err.message}`); } }
 
     try {
       const card = this.homey.flow.getConditionCard('sensor_climate_presence_presence_sensor_radar_distance_within_sensor_presence_radar');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           return args.device.getCapabilityValue('alarm_motion') === true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Condition sensor_climate_presence_presence_sensor_radar_distance_within_sensor_presence_radar: ${err.message}`); }; }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition sensor_climate_presence_presence_sensor_radar_distance_within_sensor_presence_radar: ${err.message}`); } }
 
     try {
       const card = this.homey.flow.getConditionCard('sensor_climate_presence_presence_sensor_radar_motion_active_sensor_presence_radar');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           return args.device.getCapabilityValue('alarm_motion') === true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Condition sensor_climate_presence_presence_sensor_radar_motion_active_sensor_presence_radar: ${err.message}`); }; }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition sensor_climate_presence_presence_sensor_radar_motion_active_sensor_presence_radar: ${err.message}`); } }
 
     this.log('[FLOW] All flow cards registered');
   }
