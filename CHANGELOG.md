@@ -4,6 +4,27 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
+## [5.12.29] - 2026-07-27
+
+Stability line (branch `stable-v5`, production). This release contains only minimal,
+zero-regression stability backports synced from master — no new drivers, no behavior changes.
+
+### Bug Fixes
+- Fixed the broken `onDeleted()` chain (issue #513): added guarded `super.onDeleted()` calls in
+  `TuyaZigbeeDevice`, `UnifiedSensorBase`, `TuyaUnifiedDevice`, `outdoor_2_socket` and the best-practice
+  template, preventing `null._onDeleted` crashes when devices are removed.
+- Added `_destroyed` guards (37 guards across 29 files) before deferred SDK calls
+  (`setCapabilityValue`, timers, DP requests), preventing crashes when callbacks fire after a device
+  has been deleted.
+
+### Improvements
+- P52 sync of safe changes from master to the stable line.
+
+> Note: entries below (9.0.x) are historical and inherited from the master line; the 5.12.x stable
+> series is tracked in `.homeychangelog.json`.
+
+---
+
 ## [9.0.192] - 2026-07-12
 
 ### Bug Fixes

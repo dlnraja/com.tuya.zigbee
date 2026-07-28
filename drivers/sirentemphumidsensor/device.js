@@ -402,6 +402,7 @@ class sensortemphumidsensor extends TuyaSpecificClusterDevice {
       data,
     );switch (dp) {
     case dataPoints.ALARM:
+      if (this._destroyed) {return;}
       await this.safeSetCapabilityValue('onoff', !!measuredValue);
       await this.safeSetCapabilityValue('alarm_siren', !!measuredValue);
       break;

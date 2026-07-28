@@ -150,6 +150,7 @@ class Switch8GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
           const mode = this.sceneMode;
           if (mode === 'magic') {
             const invertedValue = !value;
+            if (this._destroyed) {return;}
             this.safeSetCapabilityValue(capName, invertedValue).catch(() => {});
             const invertedCluster = getOnOffCluster(epNum);
             if (invertedCluster) {

@@ -31,7 +31,12 @@ class outdoor2socket_2 extends ZigBeeDevice {
     
   }
 
-  onDeleted() {
+  async onDeleted() {
+    // Backport (issue #513): Call parent onDeleted so zigbee listeners are
+    // removed on the deleted device
+    if (super.onDeleted) {
+      await super.onDeleted();
+    }
     this.log("Double Outdoor Smart 2 Socket removed");
   }
 }

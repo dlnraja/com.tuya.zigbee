@@ -261,10 +261,12 @@ class sensortemphumidsensor extends TuyaSpecificClusterDevice {
   }
 
   handlePowerMode(measuredValue) {
+    if (this._destroyed) {return;}
     this.safeSetCapabilityValue('alarm_battery', measuredValue === 0 || measuredValue === 1).catch(() => {});
   }
 
   reportHumidityCapacity(measuredValue) {
+    if (this._destroyed) {return;}
     const humidityOffset = Number(this.getSetting('humidity_offset') || 0);
     this.safeSetCapabilityValue('measure_humidity', Number(measuredValue) + humidityOffset).catch(() => {});
   }
