@@ -72,6 +72,7 @@ class curtain_module_2_gang extends UnifiedSwitchBase {
                             windowCoveringEndpoint
                         ].clusters.windowCovering[windowCoveringCommand]();
 
+                        if (this._destroyed) {return null;}
                         await this.safeSetCapabilityValue(
                             "windowcoverings_set",
                             value

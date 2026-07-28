@@ -123,6 +123,7 @@ class IRRemoteDevice extends ZigBeeDevice {
 
       // Timeout after 10s
       this.homey.setTimeout(() => {
+        if (this._destroyed) {return;}
         if (this._pendingSend?.seq === seq) {
           this._pendingSend = null;
           reject(new Error('IR send timeout'));
@@ -206,6 +207,7 @@ class IRRemoteDevice extends ZigBeeDevice {
 
       clearTimeout(this._learnTimeout);
       this._learnTimeout = this.homey.setTimeout(() => {
+        if (this._destroyed) {return;}
         if (this._learnBuffer) {
           this.log('[IR-RX] Learn timeout');
           this._learnBuffer = null;

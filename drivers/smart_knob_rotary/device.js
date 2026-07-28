@@ -351,6 +351,7 @@ class SmartKnobRotaryDevice extends TuyaZigbeeDevice {
   }
 
   async _triggerRotateRight() {
+    if (this._destroyed) {return;}
     if (this.hasCapability('button.rotate_right')) {
       await this.safeSetCapabilityValue('button.rotate_right', true).catch(this.error);
       this.homey.setTimeout(() => { if (this._destroyed) return; this.safeSetCapabilityValue('button.rotate_right', false).catch(this.error); }, 100);
@@ -362,6 +363,7 @@ class SmartKnobRotaryDevice extends TuyaZigbeeDevice {
   }
 
   async _triggerButtonPress(action) {
+    if (this._destroyed) {return;}
     if (this.hasCapability('button.press')) {
       await this.safeSetCapabilityValue('button.press', true).catch(this.error);
       this.homey.setTimeout(() => { if (this._destroyed) return; this.safeSetCapabilityValue('button.press', false).catch(this.error); }, 100);

@@ -139,6 +139,7 @@ class GarageDoorOpenerDevice extends BaseUnifiedDevice {
     // but we still attempt it; some firmware versions respond.
     if (this.tuyaEF00Manager && typeof this.tuyaEF00Manager.requestDP === 'function') {
       await new Promise(r => this.homey.setTimeout(r, 2000));
+      if (this._destroyed) {return;}
       await this.tuyaEF00Manager.requestDP(3).catch(() => {});
       this.log('[GarageOpener] DP3 state requested for initial sync');
     }

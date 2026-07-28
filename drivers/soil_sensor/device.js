@@ -207,6 +207,7 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
   }
 
   _updateWaterAlarm() {
+    if (this._destroyed) {return;}
     const moisture = this.getCapabilityValue('measure_humidity.soil');
     const threshold = this.getSetting('soil_warning_threshold') || 30;
     if (moisture !== null && this.hasCapability('alarm_water')) {

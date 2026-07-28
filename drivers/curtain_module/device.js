@@ -60,6 +60,7 @@ class curtain_module extends ZigBeeDevice {
                       await this.zclNode.endpoints[windowCoveringEndpoint].clusters
                         .windowCovering[windowCoveringCommand]();
 
+                      if (this._destroyed) {return null;}
                       await this.safeSetCapabilityValue('windowcoverings_set', value).catch(() => {});
                       return null;
                     }

@@ -281,6 +281,7 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
         const volts = smartParse(attrs.rmsVoltage, null, { capability: 'measure_voltage' });
         this.safeSetCapabilityValue('measure_voltage', parseFloat(volts)).catch(() => { });
       }
+      if (this._destroyed) {return;}
       if (attrs.rmsCurrent != null && this.hasCapability('measure_current')) {
         const amps = smartParse(attrs.rmsCurrent, null, { capability: 'measure_current' });
         this.safeSetCapabilityValue('measure_current', parseFloat(amps)).catch(() => { });

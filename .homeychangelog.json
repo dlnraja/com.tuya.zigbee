@@ -1,6 +1,12 @@
 {
   "changelog": [
     {
+      "version": "5.12.29",
+      "date": "2026-07-27",
+      "channel": "stable",
+      "en": "Stable-v5 stability backports from master: fixed broken onDeleted() chain (issue #513, guarded super.onDeleted() in 5 classes), added 37 _destroyed guards across 29 files to prevent crashes after device deletion, P52 sync of safe changes. Minimal, zero-regression production line."
+    },
+    {
       "version": "5.12.16",
       "date": "2026-07-23",
       "channel": "stable",

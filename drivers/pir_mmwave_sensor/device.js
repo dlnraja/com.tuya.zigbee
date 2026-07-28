@@ -141,6 +141,7 @@ class pir_mmwave_sensor extends ZigBeeDevice {
 
     // Handle motion status attribute reports
     onZoneStatusAttributeReport(status) {
+        if (this._destroyed) {return;}
         this.log("Motion status: ", status.alarm1);
         this.safeSetCapabilityValue('alarm_motion', status.alarm1).catch(this.error);
     }

@@ -132,6 +132,7 @@ class WiFiCameraDevice extends Homey.Device {
   }
 
   _onDPData(data) {
+    if (this._destroyed) {return;}
     if (!data || !data.dps) {return;}
     const dps = data.dps;
     

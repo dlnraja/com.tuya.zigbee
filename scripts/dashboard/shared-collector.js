@@ -342,10 +342,19 @@ function collectFingerprintMetrics() {
   const metrics = { totalDB: 0, source: 'unknown', loaded: false, sizeMB: 0, uniqueManufacturerNames: 0, uniqueProductIds: 0 };
 
   const fpPaths = [
+    path.join(DATA_DIR, 'mfs_db.json'), // master fingerprint DB (see AGENTS.md)
     path.join(DATA_DIR, 'fingerprints.json'),
     path.join(LIB_DIR, 'data', 'fingerprints.json'),
     path.join(LIB_DIR, 'tuya', 'fingerprints.json')
   ];
+
+  // mfs_db.json wraps entries in a top-level "devices" object
+  function extractEntries(data) {
+    if (data && data.devices && typeof data.devices === 'object' && !Array.isArray(data.devices)) {
+      return data.devices;
+    }
+    return data;
+  }
 
   for (const fpPath of fpPaths) {
     if (fs.existsSync(fpPath)) {
@@ -353,18 +362,23 @@ function collectFingerprintMetrics() {
       metrics.sizeMB = Math.round(stat.size / (1024 * 1024) * 100) / 100;
       try {
         const data = JSON.parse(fs.readFileSync(fpPath));
-        metrics.totalDB = Object.keys(data).length;
+        const entries = extractEntries(data);
+        metrics.totalDB = Object.keys(entries).length;
         metrics.loaded = true;
         metrics.source = fpPath;
 
         // Count unique manufacturer names and product IDs
         const mfrSet = new Set();
         const pidSet = new Set();
-        for (const entries of Object.values(data)) {
-          if (Array.isArray(entries)) {
-            for (const entry of entries) {
-              if (entry.manufacturerName) mfrSet.add(entry.manufacturerName.toLowerCase());
-              if (entry.productId) pidSet.add(entry.productId);
+        for (const value of Object.values(entries)) {
+          const list = Array.isArray(value) ? value : [value];
+          for (const entry of list) {
+            if (!entry || typeof entry !== 'object') continue;
+            const mfr = entry.manufacturerName || entry.manufacturerId;
+            if (mfr) mfrSet.add(mfr.toLowerCase());
+            if (entry.productId) pidSet.add(entry.productId);
+            if (Array.isArray(entry.modelIds)) {
+              for (const pid of entry.modelIds) pidSet.add(pid);
             }
           }
         }
@@ -375,7 +389,8 @@ function collectFingerprintMetrics() {
         try {
           const buf = fs.readFileSync(fpPath);
           const data = JSON.parse(buf);
-          metrics.totalDB = Object.keys(data).length;
+          const entries = extractEntries(data);
+          metrics.totalDB = Object.keys(entries).length;
           metrics.loaded = true;
           metrics.source = fpPath;
         } catch {}
