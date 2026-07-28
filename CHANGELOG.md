@@ -4,6 +4,26 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
+## [9.0.193 → 9.0.348] - 2026-07-12 → 2026-07-27
+
+Grouped entry — 156 version bumps, summarized by milestones (see `AUDIT_HOMEY_2026-07-27.md` for the final state).
+
+### Milestones (P era)
+- **P52**: Stable branch sync (`stable-v5`).
+- **P60**: `SleepyDeviceInit` — safe initialization for battery/sleepy devices.
+- **P61**: HOBEIAN ZG-222Z support.
+- **P64**: `soil_sensor` driver (issue #511).
+- **P80**: Orphan drivers cleanup (issue #439 / PR #512).
+- **P83.2**: `mfs_db` orchestrator — +434 manufacturers / +75 drivers.
+- **P86**: Multi-PID support (one driver, several productIds).
+- **P87–P91**: Forum harvest, manufacturer mapping, `TuyaNormalizer` (propagated in P91).
+- **2026-07-13 → 2026-07-27**: 161 automated `auto-fix-all` commits (fingerprints, routing, manifest sync).
+
+### Repository
+- **2026-07-27**: Git history rewritten with `git-filter-repo` to purge sensitive/operational paths (see `HISTORY_PURGE.md`). First visible commit is now the v9.0.192 snapshot (2026-07-10); the `origin` remote was dropped by the purge and must be re-added before push.
+
+---
+
 ## [9.0.192] - 2026-07-12
 
 ### Bug Fixes
@@ -1700,7 +1720,6 @@ No driver changes or bug fixes in this release.
 - Harmonized icons across all 228 drivers and updated app store listing assets.
 ---
 
- [7.5.32] - 2026-05-13
 ## [5.13.6] - 2026-05-14
 
 ### Hardening & Stabilization (Zero-Defect Mandate)
@@ -1717,6 +1736,8 @@ No driver changes or bug fixes in this release.
 ---
 
 ## [7.5.32] - 2026-05-13
+
+> *Note: this entry was duplicated — a stray `[7.5.32]` header also prefixed the 5.13.6 entry above. Deduplicated on 2026-07-28; this is the single canonical 7.5.32 entry.*
 
 ### Bug Fixes
 - Restored draft-to-test workflow fixes from stable branch for reliable testing.

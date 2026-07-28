@@ -21,17 +21,18 @@ class WiFiThermostatDevice extends TuyaLocalDevice {
           return MODE_MAP[v] || 'heat';
         },
         reverseTransform: (v) => MODE_REV[v] !== undefined ? MODE_REV[v] : 1 },
-      '5':  { capability: 'unknown' }, // system mode
+      '5':  { capability: 'unknown' }, // system mode | tuya-local: "fan_mode" (x24/68 devices)
+      '7':  { capability: 'child_lock', writable: true, transform: (v) => v === true || v === 1, reverseTransform: (v) => v === true }, // tuya-local: "lock" (x20/68 devices)
       '12': { capability: 'unknown' }, // child_lock
       '13': { capability: 'unknown' }, // fault
       '14': { capability: 'measure_temperature.floor', smartDivisor: true },
-      '15': { capability: 'unknown' }, // max_temp
+      '15': { capability: 'unknown' }, // max_temp | tuya-local: "max_temperature" (x15/68 devices)
       '19': { capability: 'unknown' }, // temp_correction
       '24': { capability: 'measure_humidity' },
-      '36': { capability: 'unknown' }, // schedule
-      '40': { capability: 'unknown' }, // valve state
+      '36': { capability: 'unknown' }, // schedule | tuya-local: "hvac_action" (x13/68 devices)
+      '40': { capability: 'unknown' }, // valve state | tuya-local: "lock" (x22/68 devices)
       '45': { capability: 'unknown' }, // sensor type
-      '101': { capability: 'unknown' },
+      '101': { capability: 'unknown' }, // tuya-local: "hvac_mode" (x51/68 devices)
       '102': { capability: 'unknown' },
     };
   }
@@ -48,7 +49,7 @@ class WiFiThermostatDevice extends TuyaLocalDevice {
 
 
   async onDeleted() {
-    if (this._destroyed) return;
+    if (this._destroyed) {return;}
     this._destroyed = true;
     this.log('Device deleted, cleaning up');
     await super.onDeleted();

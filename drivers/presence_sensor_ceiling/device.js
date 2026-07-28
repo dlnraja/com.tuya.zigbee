@@ -149,13 +149,13 @@ class CeilingPresenceSensorDevice extends UnifiedSensorBase {
   }
 
   async _handleAutoRelay(presence) {
-    if (this._destroyed) return;
+    if (this._destroyed) {return;}
     const delay = presence ? this.getSetting('relay_delay_on') || 0 : this.getSetting('relay_delay_off') || 0;
     
     if (this._relayTimeout) {this.homey.clearTimeout(this._relayTimeout);}
     
     this._relayTimeout = this.homey.setTimeout(async () => { 
-      if (this._destroyed) return;
+      if (this._destroyed) {return;}
       await this._setRelay(presence);  
     }, delay * 1000);
   }

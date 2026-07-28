@@ -44,7 +44,7 @@ class WaterTankMonitorDevice extends UnifiedSensorBase {
    * Handle Tuya datapoints  Z2M TLC2206 verified mapping
    */
   async _handleDP(dp, value) {
-    if (this._destroyed) return;
+    if (this._destroyed) {return;}
     this.log(`[LIQUID] DP${dp}: ${value}`);
 
     try {
@@ -88,7 +88,7 @@ class WaterTankMonitorDevice extends UnifiedSensorBase {
   }
 
   async _handleLiquidState(value) {
-    if (this._destroyed) return;
+    if (this._destroyed) {return;}
     const parsed = typeof value === 'number' ? value : parseInt(value) || 0;
     const stateName = LIQUID_STATE[parsed] || 'normal';
     this._lastState = stateName;
@@ -118,7 +118,7 @@ class WaterTankMonitorDevice extends UnifiedSensorBase {
   }
 
   async _handleLiquidDepth(value) {
-    if (this._destroyed) return;
+    if (this._destroyed) {return;}
     const parsed = typeof value === 'number' ? value : parseInt(value) || 0;
     const depthCm = parsed;
     this._lastDepth = depthCm;
@@ -135,7 +135,7 @@ class WaterTankMonitorDevice extends UnifiedSensorBase {
   }
 
   async _handleLiquidPercent(value) {
-    if (this._destroyed) return;
+    if (this._destroyed) {return;}
     const parsed = typeof value === 'number' ? value : parseInt(value) || 0;
     const percent = Math.max(0, Math.min(100, parsed));
     this._lastPercent = percent;
@@ -157,19 +157,19 @@ class WaterTankMonitorDevice extends UnifiedSensorBase {
         const val = newSettings[key];
         switch (key) {
         case 'installation_height': // DP19
-          if (this.tuyaEF00Manager) await this.tuyaEF00Manager.sendDP(19, val, 'value');
+          if (this.tuyaEF00Manager) {await this.tuyaEF00Manager.sendDP(19, val, 'value');}
           this.log(`[LIQUID] Sent DP19 installation_height = ${val}mm`);
           break;
         case 'liquid_depth_max': // DP21
-          if (this.tuyaEF00Manager) await this.tuyaEF00Manager.sendDP(21, val, 'value');
+          if (this.tuyaEF00Manager) {await this.tuyaEF00Manager.sendDP(21, val, 'value');}
           this.log(`[LIQUID] Sent DP21 liquid_depth_max = ${val}mm`);
           break;
         case 'max_set': // DP7
-          if (this.tuyaEF00Manager) await this.tuyaEF00Manager.sendDP(7, val, 'value');
+          if (this.tuyaEF00Manager) {await this.tuyaEF00Manager.sendDP(7, val, 'value');}
           this.log(`[LIQUID] Sent DP7 max_set = ${val}%`);
           break;
         case 'min_set': // DP8
-          if (this.tuyaEF00Manager) await this.tuyaEF00Manager.sendDP(8, val, 'value');
+          if (this.tuyaEF00Manager) {await this.tuyaEF00Manager.sendDP(8, val, 'value');}
           this.log(`[LIQUID] Sent DP8 min_set = ${val}%`);
           break;
         }

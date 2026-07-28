@@ -208,14 +208,14 @@ class ClimateSensorDevice extends UnifiedSensorBase {
         transform: (v) => {
           // v5.5.792: Auto-detect divisor based on value range
           // If value > 100, it's likely Ã—10 scaled (e.g., 650  65.0%)
-          if (v > 100) return Math.round(v);
+          if (v > 100) {return Math.round(v);}
           return v;
         }
       },
       7: {
         capability: 'measure_humidity',
         transform: (v) => {
-          if (v > 100) return Math.round(v);
+          if (v > 100) {return Math.round(v);}
           return v;
         }
       },
@@ -229,9 +229,9 @@ class ClimateSensorDevice extends UnifiedSensorBase {
       3: {
         capability: 'measure_battery', transform: (v) => {
           // DP3 = battery_state enum (0=low, 1=medium, 2=high) for some _TZE200
-          if (v === 0) return 10;   // low
-          if (v === 1) return 50;   // medium
-          if (v === 2) return 100;  // high
+          if (v === 0) {return 10;}   // low
+          if (v === 1) {return 50;}   // medium
+          if (v === 2) {return 100;}  // high
 return Math.min(100, safeMultiply(v, 2)); // Fallback: treat as raw with x2
         }
       },
@@ -272,18 +272,18 @@ return Math.min(100, safeMultiply(v, 2)); // Fallback: treat as raw with x2
    * Determines best protocol based on manufacturerName
    */
   get deviceProtocol() {
-    const mfr = CI.normalize((this._manufacturerName || ''));
+    const mfr = CI.normalize(this._manufacturerName || '');
 
-    if (mfr.startsWith('_tze284')) return 'TUYA_DP_LCD';      // LCD with Tuya epoch
-    if (mfr.startsWith('_tze200')) return 'TUYA_DP';          // Standard Tuya DP
-    if (mfr.startsWith('_tze204')) return 'TUYA_DP_ENHANCED'; // Enhanced Tuya DP
-    if (mfr.startsWith('_tz3000')) return 'ZCL_STANDARD';     // Pure ZCL
-    if (mfr.startsWith('_tz3210')) return 'ZCL_STANDARD';     // Pure ZCL
+    if (mfr.startsWith('_tze284')) {return 'TUYA_DP_LCD';}      // LCD with Tuya epoch
+    if (mfr.startsWith('_tze200')) {return 'TUYA_DP';}          // Standard Tuya DP
+    if (mfr.startsWith('_tze204')) {return 'TUYA_DP_ENHANCED';} // Enhanced Tuya DP
+    if (mfr.startsWith('_tz3000')) {return 'ZCL_STANDARD';}     // Pure ZCL
+    if (mfr.startsWith('_tz3210')) {return 'ZCL_STANDARD';}     // Pure ZCL
 
     // Check modelId for protocol hints
     const modelId = this._modelId || '';
-    if (CI.equalsCI(modelId, 'TS0201')) return 'ZCL_STANDARD';
-    if (CI.equalsCI(modelId, 'TS0601')) return 'TUYA_DP';
+    if (CI.equalsCI(modelId, 'TS0201')) {return 'ZCL_STANDARD';}
+    if (CI.equalsCI(modelId, 'TS0601')) {return 'TUYA_DP';}
 
     return 'HYBRID'; // Default: try both
   }
@@ -292,7 +292,7 @@ return Math.min(100, safeMultiply(v, 2)); // Fallback: treat as raw with x2
    * v5.5.190: Check if device needs Tuya epoch (2000) for time sync
    */
   get needsTuyaEpoch() {
-    const mfr = CI.normalize((this._manufacturerName || ''));
+    const mfr = CI.normalize(this._manufacturerName || '');
     // v5.8.74: ALL _TZE* devices need Tuya epoch (2000), not just _TZE284
     // Z2M issue #30054: wrong epoch (1970 vs 2000) causes wrong time on ALL TS0601
     return mfr.startsWith('_tze200') ||
@@ -309,11 +309,11 @@ return Math.min(100, safeMultiply(v, 2)); // Fallback: treat as raw with x2
    * These devices are PASSIVE and will never display time unless we push sync
    */
   isLCDClimateDevice() {
-    const mfr = CI.normalize((this._manufacturerName || ''));
+    const mfr = CI.normalize(this._manufacturerName || '');
     const modelId = this._modelId || '';
 
     // _TZE284_ series are LCD climate sensors with RTC displays
-    if (mfr.startsWith('_tze284_')) return true;
+    if (mfr.startsWith('_tze284_')) {return true;}
 
     // Known LCD climate sensor manufacturer IDs
     const lcdManufacturers = [
@@ -326,11 +326,11 @@ return Math.min(100, safeMultiply(v, 2)); // Fallback: treat as raw with x2
 
     // Check if manufacturer matches known LCD devices
     for (const lcdMfr of lcdManufacturers) {
-      if (mfr.includes(lcdMfr)) return true;
+      if (mfr.includes(lcdMfr)) {return true;}
     }
 
     // TS0601 with LCD indicators (some have LCD displays)
-    if (CI.equalsCI(modelId, 'TS0601') && mfr.startsWith('_tze284_')) return true;
+    if (CI.equalsCI(modelId, 'TS0601') && mfr.startsWith('_tze284_')) {return true;}
 
     return false;
   }
@@ -339,7 +339,7 @@ return Math.min(100, safeMultiply(v, 2)); // Fallback: treat as raw with x2
    * v5.5.190: Check if device uses battery_state enum (DP3) vs battery% (DP4)
    */
   get usesBatteryStateEnum() {
-    const mfr = CI.normalize((this._manufacturerName || ''));
+    const mfr = CI.normalize(this._manufacturerName || '');
     // Some _TZE200 devices use DP3 with enum (low / medium/high)
     return mfr.includes('_tze200_vvmbj46n'); // TH05Z original uses DP3
   }
@@ -590,7 +590,7 @@ return Math.min(100, safeMultiply(v, 2)); // Fallback: treat as raw with x2
 
       // Daily sync (ultra battery-safe)
       this._dailyZclSyncInterval = this.homey.setInterval(async () => {
-        if (this._destroyed) return;
+        if (this._destroyed) {return;}
         this.log('[CLIMATE]  Daily ZCL Time sync...');
         const result = await this.zigbeeTimeSync.sync();
         this.log(`[CLIMATE] Daily sync result: ${result.success ? 'success' : result.reason}`);
@@ -622,7 +622,7 @@ return Math.min(100, safeMultiply(v, 2)); // Fallback: treat as raw with x2
       const lcdSyncDelays = [3000, 10000, 30000, 60000, 120000]; // 3s, 10s, 30s, 1m, 2m
       lcdSyncDelays.forEach((delay, index) => {
         this.homey.setTimeout(async () => {
-          if (this._destroyed) return;
+          if (this._destroyed) {return;}
           try {
             this.log(`[CLIMATE]  LCD time sync attempt ${index + 1}/${lcdSyncDelays.length}...`);
             await this._sendForcedTimeSync();
@@ -635,7 +635,7 @@ return Math.min(100, safeMultiply(v, 2)); // Fallback: treat as raw with x2
 
       // Schedule hourly Tuya EF00 sync for LCD devices (in addition to ZCL daily)
       this._hourlyLcdSyncInterval = this.homey.setInterval(async () => {
-        if (this._destroyed) return;
+        if (this._destroyed) {return;}
         this.log('[CLIMATE]  Hourly LCD Tuya EF00 time sync...');
         await this._sendForcedTimeSync().catch(e => this.log('[CLIMATE] LCD sync failed:', e.message));
       },60 * 60 * 1000); // 1 hour
@@ -644,7 +644,7 @@ return Math.min(100, safeMultiply(v, 2)); // Fallback: treat as raw with x2
     // Legacy time sync for non-RTC devices (keep existing behavior)
     if (!TuyaDeviceClassifier.hasRtcScreen(this) && !this.isLCDClimateDevice()) {
       this._hourlySyncInterval = this.homey.setInterval(async () => {
-        if (this._destroyed) return;
+        if (this._destroyed) {return;}
         this.log('[CLIMATE]  Hourly time sync (non-RTC device)...');
         await this._sendTimeSync().catch(e => this.log('[CLIMATE] Time sync failed:', e.message));
       },60 * 60 * 1000); // 1 hour
@@ -1131,7 +1131,7 @@ return Math.min(100, safeMultiply(v, 2)); // Fallback: treat as raw with x2
    */
   async _readZCLAttributesNow(zclNode) {
     const ep1 = zclNode?.endpoints?.[1];
-    if (!ep1) return;
+    if (!ep1) {return;}
 
     this.log('[ZCL-READ]  Reading ZCL attributes...' );
 
@@ -1201,11 +1201,11 @@ return Math.min(100, safeMultiply(v, 2)); // Fallback: treat as raw with x2
 
     intervals.forEach((delay, index) => {
       const timer = this.homey.setTimeout(async () => {
-        if (this._destroyed) return;
+        if (this._destroyed) {return;}
         this.log(`[CLIMATE]  DP request attempt ${index + 1}/${intervals.length}`);
 
         const zclNode = this._zclNode;
-        if (!zclNode) return;
+        if (!zclNode) {return;}
 
         if (this._hasTuyaCluster) {
           await this._sendTuyaMagicPacket(zclNode).catch(() => { });
@@ -1403,7 +1403,7 @@ return Math.min(100, safeMultiply(v, 2)); // Fallback: treat as raw with x2
    * Merged from climate_box_vvmbj46n - LCD devices need time sync when they wake
    */
   async _handleDP(dp, value, dataType) {
-    if (this._destroyed) return;
+    if (this._destroyed) {return;}
     // Device is awake! Trigger time sync for LCD displays
     if (CI.containsCI(getManufacturer(this), '_tze284')) {
       this._sendTimeSync().catch(() => { });
@@ -1442,7 +1442,7 @@ return Math.min(100, safeMultiply(v, 2)); // Fallback: treat as raw with x2
     } else if (dp === 2 || dp === 7 || dp === 103) {
       // v5.11.26: FIX #1328 - auto-divisor before offset (raw value may be >100 e.g. 435=43.5%)
       let hum = value;
-      if (hum > 100) hum = Math.round(hum);
+      if (hum > 100) {hum = Math.round(hum);}
       processedValue = this._applyHumOffset(hum);
     }
 
@@ -1454,7 +1454,7 @@ return Math.min(100, safeMultiply(v, 2)); // Fallback: treat as raw with x2
 
   // v5.8.98: Soil sensor profile (ZHA #4282, Z2M #27501)
   _isSoilSensor() {
-    const mfr = CI.normalize((this._manufacturerName || ''));
+    const mfr = CI.normalize(this._manufacturerName || '');
     return ['_tze284_oitavov2', '_tze200_myd45weu', '_tze200_ga1maeof',
       '_tze200_9cqcpkgb', '_tze204_myd45weu', '_tze284_myd45weu',
       '_tze200_2se8efxh'].some(s => CI.containsCI(mfr, s));
@@ -1508,10 +1508,10 @@ return Math.min(100, safeMultiply(v, 2)); // Fallback: treat as raw with x2
       break;
     case 3: // Battery state enum (some _TZE200 devices)
       let bat3 = rawValue;
-      if (rawValue === 0) bat3 = 10;      // low
-      else if (rawValue === 1) bat3 = 50; // medium
-      else if (rawValue === 2) bat3 = 100; // high
-      else bat3 =Math.min(100, safeMultiply(rawValue, 2));
+      if (rawValue === 0) {bat3 = 10;}      // low
+      else if (rawValue === 1) {bat3 = 50;} // medium
+      else if (rawValue === 2) {bat3 = 100;} // high
+      else {bat3 =Math.min(100, safeMultiply(rawValue, 2));}
       this.log(`[CLIMATE-DP] DP3 battery_state raw=${rawValue}  ${bat3}% (enum: 0=low, 1=med, 2=high)`);
       break;
     case 4: // Battery (standard with Ã—2 multiplier)
@@ -1538,7 +1538,7 @@ return Math.min(100, safeMultiply(v, 2)); // Fallback: treat as raw with x2
     super.onTuyaStatus(status);
 
     // Log final capability values after processing
-    this.homey.setTimeout(() => { if (this._destroyed) return; const temp = this.getCapabilityValue('measure_temperature');
+    this.homey.setTimeout(() => { if (this._destroyed) {return;} const temp = this.getCapabilityValue('measure_temperature');
       const hum = this.getCapabilityValue('measure_humidity');
       const bat = this.getCapabilityValue('measure_battery');
       if (temp !== null || hum !== null || bat !== null) {
@@ -1581,7 +1581,7 @@ return Math.min(100, safeMultiply(v, 2)); // Fallback: treat as raw with x2
 
     const e002Keys = ['alarm_temp_max', 'alarm_temp_min', 'alarm_humidity_max', 'alarm_humidity_min'];
     const hasE002Change = changedKeys.some(k => e002Keys.includes(k));
-    if (!hasE002Change) return;
+    if (!hasE002Change) {return;}
 
     try {
       const ep = this._zclNode?.endpoints?.[1];
@@ -1615,7 +1615,7 @@ return Math.min(100, safeMultiply(v, 2)); // Fallback: treat as raw with x2
   }
 
   async onDeleted() {
-    if (this._destroyed) return;
+    if (this._destroyed) {return;}
     this._destroyed = true;
     this.log('[CLIMATE] Device deleted');
     await this.onUninit();

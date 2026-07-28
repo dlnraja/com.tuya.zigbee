@@ -22,7 +22,7 @@ async onInit() {
         const card = this._getFlowCard(id, 'trigger');
         if (card) {
           card.registerRunListener(async (args) => {
-            if (!args.device) return;
+            if (!args.device) {return;}
             args.device.emit(`flow:${id}`, args);
           });
         }
@@ -38,7 +38,7 @@ async onInit() {
           return args.device.getCapabilityValue('alarm_contact') === true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Condition bed_sensor_is_occupied: ${err.message}`); }; }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition bed_sensor_is_occupied: ${err.message}`); } }
 
     this.log('[FLOW] All flow cards registered');
   }

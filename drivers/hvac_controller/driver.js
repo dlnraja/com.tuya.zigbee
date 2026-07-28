@@ -7,7 +7,7 @@ class HvacControllerDriver extends Driver {
 
   async onInit() {
     await super.onInit();
-    if (this._flowCardsRegistered) return;
+    if (this._flowCardsRegistered) {return;}
     this._flowCardsRegistered = true;
 
       // === AUTO-GENERATED FLOW HANDLERS ===
@@ -15,37 +15,37 @@ class HvacControllerDriver extends Driver {
       // Edit if you need custom behaviour.
 
       this.homey.flow.getActionCard('hvac_controller_set_target_temperature')?.registerRunListener(async (args) => {
-        if (!args.device) return false;
+        if (!args.device) {return false;}
         await args.device.setCapabilityValue('target_temperature', args.temperature).catch(() => {});
         return true;
       });
       this.homey.flow.getActionCard('hvac_controller_set_temperature')?.registerRunListener(async (args) => {
-        if (!args.device) return false;
+        if (!args.device) {return false;}
         await args.device.setCapabilityValue('temperature', args.temperature).catch(() => {});
         return true;
       });
       this.homey.flow.getActionCard('hvac_controller_set_mode')?.registerRunListener(async (args) => {
-        if (!args.device) return false;
+        if (!args.device) {return false;}
         await args.device.setCapabilityValue('mode', args.mode).catch(() => {});
         return true;
       });
       this.homey.flow.getActionCard('hvac_controller_set_fan_speed')?.registerRunListener(async (args) => {
-        if (!args.device) return false;
+        if (!args.device) {return false;}
         await args.device.setCapabilityValue('fan_speed', args.fan_speed).catch(() => {});
         return true;
       });
       this.homey.flow.getActionCard('hvac_controller_turn_on')?.registerRunListener(async (args) => {
-        if (!args.device) return false;
+        if (!args.device) {return false;}
         await args.device.setCapabilityValue('onoff', true).catch(() => {});
         return true;
       });
       this.homey.flow.getActionCard('hvac_controller_turn_off')?.registerRunListener(async (args) => {
-        if (!args.device) return false;
+        if (!args.device) {return false;}
         await args.device.setCapabilityValue('onoff', false).catch(() => {});
         return true;
       });
       this.homey.flow.getActionCard('hvac_controller_toggle')?.registerRunListener(async (args) => {
-        if (!args.device) return false;
+        if (!args.device) {return false;}
         const v = args.device.getCapabilityValue('onoff');
         await args.device.setCapabilityValue('onoff', !v).catch(() => {});
         return true;

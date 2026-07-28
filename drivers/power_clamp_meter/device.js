@@ -424,7 +424,7 @@ class PowerClampMeterDevice extends ZigBeeDevice {
   }
 
   async _updateTotalPower() {
-    if (this._destroyed) return;
+    if (this._destroyed) {return;}
     try {
       const p1 = this.getCapabilityValue('measure_power.phase1') || 0;
       const p2 = this.getCapabilityValue('measure_power.phase2') || 0;

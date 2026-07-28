@@ -7,7 +7,7 @@ class WallThermostatDriver extends Driver {
 
   async onInit() {
     await super.onInit();
-    if (this._flowCardsRegistered) return;
+    if (this._flowCardsRegistered) {return;}
     this._flowCardsRegistered = true;
 
       // === AUTO-GENERATED FLOW HANDLERS ===
@@ -15,27 +15,27 @@ class WallThermostatDriver extends Driver {
       // Edit if you need custom behaviour.
 
       this.homey.flow.getActionCard('wall_thermostat_turn_on')?.registerRunListener(async (args) => {
-        if (!args.device) return false;
+        if (!args.device) {return false;}
         await args.device.setCapabilityValue('onoff', true).catch(() => {});
         return true;
       });
       this.homey.flow.getActionCard('wall_thermostat_turn_off')?.registerRunListener(async (args) => {
-        if (!args.device) return false;
+        if (!args.device) {return false;}
         await args.device.setCapabilityValue('onoff', false).catch(() => {});
         return true;
       });
       this.homey.flow.getActionCard('wall_thermostat_toggle')?.registerRunListener(async (args) => {
-        if (!args.device) return false;
+        if (!args.device) {return false;}
         const v = args.device.getCapabilityValue('onoff');
         await args.device.setCapabilityValue('onoff', !v).catch(() => {});
         return true;
       });
       this.homey.flow.getActionCard('wall_thermostat_enable_child_lock')?.registerRunListener(async (args) => {
-        if (!args.device) return false;
+        if (!args.device) {return false;}
         return true; // TODO: implement action for wall_thermostat_enable_child_lock
       });
       this.homey.flow.getActionCard('wall_thermostat_disable_child_lock')?.registerRunListener(async (args) => {
-        if (!args.device) return false;
+        if (!args.device) {return false;}
         return true; // TODO: implement action for wall_thermostat_disable_child_lock
       });
   }

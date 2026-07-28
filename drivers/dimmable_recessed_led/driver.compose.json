@@ -40,7 +40,24 @@
         "en": "Power on to enter pairing mode."
       }
     },
-    "manufacturerName": []
+    "manufacturerName": [
+      "_tz3000_g1glzzfk",
+      "_TZ3000_G1GLZZFK",
+      "_tz3000_zw7wr5uo",
+      "_TZ3000_zw7wr5uo",
+      "_TZ3000_ZW7WR5UO",
+      "_tz3210_c2iwpxf1",
+      "_TZ3210_C2IWPXF1",
+      "_tz3210_frm6149r",
+      "_TZ3210_FRM6149R",
+      "_tz3210_invesber",
+      "_tz3210_psgq7ysz",
+      "_TZ3210_PSGQ7YSZ",
+      "_tz3210_xwqng7ol",
+      "_TZ3210_XWQNG7OL",
+      "_tzb210_rkgngb5o",
+      "_TZB210_RKGNGB5O"
+    ]
   },
   "version": "1.0.0",
   "connectivity": [
@@ -65,8 +82,5 @@
       "setOnDim": false
     }
   },
-  "class": "light",
-  "_pidConflictNotes": [
-    "// PID-CONFLICT-NOTE TS0502B shared with 6 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-  ]
+  "class": "light"
 }

@@ -7,7 +7,7 @@ class Doorwindowsensor3Driver extends Driver {
 
   async onInit() {
     await super.onInit();
-    if (this._flowCardsRegistered) return;
+    if (this._flowCardsRegistered) {return;}
     this._flowCardsRegistered = true;
 
       // === AUTO-GENERATED FLOW HANDLERS ===
@@ -15,7 +15,7 @@ class Doorwindowsensor3Driver extends Driver {
       // Edit if you need custom behaviour.
 
       this.homey.flow.getConditionCard('doorwindowsensor_3_alarm_contact_active')?.registerRunListener(async (args) => {
-        if (!args.device) return false;
+        if (!args.device) {return false;}
         return true; // TODO: implement condition for doorwindowsensor_3_alarm_contact_active
       });
   }

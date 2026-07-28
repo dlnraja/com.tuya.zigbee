@@ -1,3 +1,7 @@
+# 🔄 Auto-Enrich Closed Loop (P69)
+# Triggers: cron: 0 */4 * * * + workflow_dispatch | Secrets: GH_PAT,GMAIL_APP_PASSWORD,GMAIL_CLIENT_ID,GMAIL_CLIENT_SECRET,GMAIL_EMAIL,GMAIL_REFRESH_TOKEN,HOMEY_PAT,HOMEY_PAT_API
+# Doc header added 2026-07-29 (workflows genealogy enrichment).
+
 name: 🔄 Auto-Enrich Closed Loop (P69)
 
 on:

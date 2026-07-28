@@ -64,7 +64,7 @@ class HybridLightSensorDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
 
     const mapping = this.dpMappings[dpId];
     if (mapping) {
-      let val = value / (mapping.divisor || 1);
+      const val = value / (mapping.divisor || 1);
       if (val !== null && val !== undefined) {
         return this.safeSetCapabilityValue(mapping.capability, val).catch(() => {});
       }

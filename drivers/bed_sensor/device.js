@@ -75,7 +75,7 @@ class BedSensorDevice extends UnifiedSensorBase {
         batteryValue = 100; // fallback
       }
       this.log(`[BED] Battery DP4: raw=${value} -> ${batteryValue}%`);
-      if (!this._destroyed) this.safeSetCapabilityValue('measure_battery', batteryValue).catch(() => {});
+      if (!this._destroyed) {this.safeSetCapabilityValue('measure_battery', batteryValue).catch(() => {});}
       this._lastDPReceived = true;
       return;
     }
@@ -88,7 +88,7 @@ class BedSensorDevice extends UnifiedSensorBase {
    * The parent class only handles DP1->alarm_motion, not alarm_contact
    */
   async _handleCommonDP(dp, rawValue) {
-    if (this._destroyed) return;
+    if (this._destroyed) {return;}
     const value = this._parseValue(rawValue);
 
     // Handle DP1 for alarm_contact (bed sensor specific)
@@ -96,7 +96,7 @@ class BedSensorDevice extends UnifiedSensorBase {
     if (dp === 1 && this.hasCapability('alarm_contact')) {
       const occupied = value === 0;
       this.log(`[BED] Presence: ${occupied ? 'OCCUPIED' : 'VACANT'} (DP1=${value})`);
-      if (!this._destroyed) this.safeSetCapabilityValue('alarm_contact', occupied).catch(() => {});
+      if (!this._destroyed) {this.safeSetCapabilityValue('alarm_contact', occupied).catch(() => {});}
       this._lastDPReceived = true;
 
       // Fire flow triggers
@@ -133,12 +133,12 @@ class BedSensorDevice extends UnifiedSensorBase {
   _setupDPolling() {
     // Delayed initial query (3s after init)
     this._initQueryTimeout = this.homey.setTimeout(async () => {
-      if (this._destroyed) return;
+      if (this._destroyed) {return;}
       try {
         this.log('[BED] Requesting initial DP data...');
         const dps = [1, 4, 12];
         for (const dp of dps) {
-          if (this._destroyed) break;
+          if (this._destroyed) {break;}
           // Use tuyaEF00Manager if available
           if (this.tuyaEF00Manager?.requestDP) {
             await this.tuyaEF00Manager.requestDP(dp).catch(() => {});
@@ -207,8 +207,8 @@ class BedSensorDevice extends UnifiedSensorBase {
 
   async onUninit() {
     this._destroyed = true;
-    if (this._initQueryTimeout) clearTimeout(this._initQueryTimeout);
-    if (this._pollInterval) clearInterval(this._pollInterval);
+    if (this._initQueryTimeout) {clearTimeout(this._initQueryTimeout);}
+    if (this._pollInterval) {clearInterval(this._pollInterval);}
     this.log('[BED] Bed Sensor uninitialized');
     await super.onUninit();
   }

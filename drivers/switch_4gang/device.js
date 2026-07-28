@@ -123,7 +123,7 @@ class Switch4GangDevice extends BaseClass {
         this._lastCommandTime = Date.now();
         this._zclState.pending[epNum] = true;
         clearTimeout(this._zclState.timeout[epNum]);
-        this._zclState.timeout[epNum] = this.homey.setTimeout(() => { if (this._destroyed) return; this._zclState.pending[epNum] = false; }, 2000);
+        this._zclState.timeout[epNum] = this.homey.setTimeout(() => { if (this._destroyed) {return;} this._zclState.pending[epNum] = false; }, 2000);
         
         const onOff = getOnOffCluster(epNum);
         if (onOff && typeof onOff.writeAttributes === 'function') {
@@ -152,7 +152,7 @@ class Switch4GangDevice extends BaseClass {
       const capName = epNum === 1 ? 'onoff' : `onoff.gang${epNum}`;
       onOff.on('attr.onOff', async (value) => {
         const now = Date.now();
-        if (now - (this._zclState.lastReport[epNum] || 0) < 1000) return;
+        if (now - (this._zclState.lastReport[epNum] || 0) < 1000) {return;}
         this._zclState.lastReport[epNum] = now;
 
         const isPhysical = !this._zclState.pending[epNum];

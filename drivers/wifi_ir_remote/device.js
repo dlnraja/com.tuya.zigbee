@@ -6,8 +6,8 @@ class WiFiIRRemoteDevice extends TuyaLocalDevice {
     return {
       '1':   { capability: 'onoff', writable: true, transform: (v) => !!v, reverseTransform: (v) => !!v },
       '2':   { capability: 'unknown' },
-      '201': { capability: 'unknown' },
-      '202': { capability: 'unknown' },
+      '201': { capability: 'unknown' }, // tuya-local: "send" (IR send, x4)
+      '202': { capability: 'unknown' }, // tuya-local: "receive" (IR learn, x2)
     };
   }
 
@@ -61,7 +61,7 @@ class WiFiIRRemoteDevice extends TuyaLocalDevice {
 
 
   async onDeleted() {
-    if (this._destroyed) return;
+    if (this._destroyed) {return;}
     this._destroyed = true;
     this.log('Device deleted, cleaning up');
     await super.onDeleted();

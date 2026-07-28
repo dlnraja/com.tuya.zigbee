@@ -75,12 +75,14 @@ class lcdtemphumidsensor3 extends TuyaSpecificClusterDevice {
         this.log("measure_battery | powerConfiguration - batteryPercentageRemaining (%): ", parsedValue);
 
         this.safeSetCapabilityValue('measure_battery', parsedValue).catch(this.error);
-        this.safeSetCapabilityValue('alarm_battery', (parsedValue < batteryThreshold)).catch(this.error);
+        this.safeSetCapabilityValue('alarm_battery', parsedValue < batteryThreshold).catch(this.error);
         break;
 
       case dataPoints.currentHumidity:
         const humidityOffset = this.getSetting('humidity_offset') || 0;
-        parsedValue = measuredValue/10;
+        // v9.x (upstream PR #1346): Some devices send humidity as 0-100,
+        // others as 0-1000 (value * 10). Auto-detect: if > 100, divide by 10.
+        parsedValue = measuredValue > 100 ? measuredValue / 10 : measuredValue;
         this.log('measure_humidity | relativeHumidity - measuredValue (humidity):', parsedValue, '+ humidity offset', humidityOffset);
 
         this.safeSetCapabilityValue('measure_humidity', parsedValue + humidityOffset).catch(this.error);

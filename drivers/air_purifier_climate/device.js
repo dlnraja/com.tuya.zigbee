@@ -21,7 +21,7 @@ class AirPurifierClimateDevice extends TuyaSpecificClusterDevice {
   }
 
   async handleTuyaDataReport(data) {
-    if (!data || data.dp === null || data.dp === undefined) return;
+    if (!data || data.dp === null || data.dp === undefined) {return;}
     const v = data.data ?? data.value;
 
     if (data.dp === DP.state) {
@@ -35,6 +35,7 @@ class AirPurifierClimateDevice extends TuyaSpecificClusterDevice {
       if (this._lastPm25 !== pm) {
         this._lastPm25 = pm;
         this.safeSetCapabilityValue('measure_pm25', pm).catch(() => {});
+        this._triggerPm25Changed(pm);
       }
     } else if (data.dp === DP.speed ) {
       const spd = safeMultiply(v, 0);
@@ -42,8 +43,20 @@ class AirPurifierClimateDevice extends TuyaSpecificClusterDevice {
     }
   }
 
+  /**
+   * Déclenche la carte pm25_changed avec son token `pm25`
+   * (pattern voisin : soil_sensor_moisture_changed dans drivers/soil_sensor).
+   */
+  _triggerPm25Changed(pm25) {
+    if (this._destroyed) {return;}
+    try {
+      const card = this.homey.flow.getDeviceTriggerCard('air_purifier_climate_air_purifier_pm25_changed');
+      if (card) {card.trigger(this, { pm25 }, {}).catch(() => {});}
+    } catch (e) { /* flow indisponible */ }
+  }
+
   onDeleted() {
-    if (typeof super.onDeleted === 'function') super.onDeleted();
+    if (typeof super.onDeleted === 'function') {super.onDeleted();}
   }
 }
 

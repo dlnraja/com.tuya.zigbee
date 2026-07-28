@@ -31,7 +31,40 @@
     }
   },
   "zigbee": {
-    "manufacturerName": [],
+    "manufacturerName": [
+      "_tz3000_1dd0d5yi",
+      "_TZ3000_1dd0d5yi",
+      "_tz3000_5iixzdo7",
+      "_TZ3000_5iixzdo7",
+      "_tz3000_74hsp7qy",
+      "_TZ3000_74hsp7qy",
+      "_tz3000_8h7wgocw",
+      "_TZ3000_8h7wgocw",
+      "_tz3000_bs93npae",
+      "_TZ3000_bs93npae",
+      "_TZ3000_dojqjapa",
+      "_tz3000_e3vhyirx",
+      "_TZ3000_e3vhyirx",
+      "_TZ3000_egq7y6pr",
+      "_TZ3000_EGQ7Y6PR",
+      "_tz3000_femsaaua",
+      "_TZ3000_femsaaua",
+      "_tz3000_jwv3cwak",
+      "_TZ3000_jwv3cwak",
+      "_TZ3000_L13ERPV4",
+      "_tz3000_ltiqubue",
+      "_tz3000_vw8pawxa",
+      "_TZ3000_vw8pawxa",
+      "_tz3000_yruungrl",
+      "_TZ3000_yruungrl",
+      "_TZ3210_dwytrmda",
+      "_tz3210_ol1uhvza",
+      "_TZ3210_ol1uhvza",
+      "_tz3210_xbpt8ewc",
+      "_TZ3210_xbpt8ewc",
+      "_tze20c_xbexmf8h",
+      "_TZE20C_xbexmf8h"
+    ],
     "productId": [
       "TS130F"
     ],
@@ -73,8 +106,5 @@
       "getable": false,
       "setable": false
     }
-  },
-  "_pidConflictNotes": [
-    "// PID-CONFLICT-NOTE TS130F shared with 6 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-  ]
+  }
 }

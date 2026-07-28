@@ -7,7 +7,7 @@ class WifiSonoffDualr3Driver extends Driver {
 
   async onInit() {
     await super.onInit();
-    if (this._flowCardsRegistered) return;
+    if (this._flowCardsRegistered) {return;}
     this._flowCardsRegistered = true;
 
       // === AUTO-GENERATED FLOW HANDLERS ===
@@ -15,29 +15,29 @@ class WifiSonoffDualr3Driver extends Driver {
       // Edit if you need custom behaviour.
 
       this.homey.flow.getActionCard('wifi_sonoff_dualr3_turn_on_gang1')?.registerRunListener(async (args) => {
-        if (!args.device) return false;
+        if (!args.device) {return false;}
         return true; // TODO: implement action for wifi_sonoff_dualr3_turn_on_gang1
       });
       this.homey.flow.getActionCard('wifi_sonoff_dualr3_turn_off_gang1')?.registerRunListener(async (args) => {
-        if (!args.device) return false;
+        if (!args.device) {return false;}
         return true; // TODO: implement action for wifi_sonoff_dualr3_turn_off_gang1
       });
       this.homey.flow.getActionCard('wifi_sonoff_dualr3_turn_on_gang2')?.registerRunListener(async (args) => {
-        if (!args.device) return false;
+        if (!args.device) {return false;}
         return true; // TODO: implement action for wifi_sonoff_dualr3_turn_on_gang2
       });
       this.homey.flow.getActionCard('wifi_sonoff_dualr3_turn_off_gang2')?.registerRunListener(async (args) => {
-        if (!args.device) return false;
+        if (!args.device) {return false;}
         return true; // TODO: implement action for wifi_sonoff_dualr3_turn_off_gang2
       });
       this.homey.flow.getActionCard('wifi_sonoff_dualr3_toggle_gang1')?.registerRunListener(async (args) => {
-        if (!args.device) return false;
+        if (!args.device) {return false;}
         const v = args.device.getCapabilityValue('onoff');
         await args.device.setCapabilityValue('onoff', !v).catch(() => {});
         return true;
       });
       this.homey.flow.getActionCard('wifi_sonoff_dualr3_toggle_gang2')?.registerRunListener(async (args) => {
-        if (!args.device) return false;
+        if (!args.device) {return false;}
         const v = args.device.getCapabilityValue('onoff');
         await args.device.setCapabilityValue('onoff', !v).catch(() => {});
         return true;

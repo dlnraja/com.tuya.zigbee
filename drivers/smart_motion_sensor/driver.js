@@ -7,7 +7,7 @@ class SmartMotionSensorDriver extends Driver {
 
   async onInit() {
     await super.onInit();
-    if (this._flowCardsRegistered) return;
+    if (this._flowCardsRegistered) {return;}
     this._flowCardsRegistered = true;
 
       // === AUTO-GENERATED FLOW HANDLERS ===
@@ -15,7 +15,7 @@ class SmartMotionSensorDriver extends Driver {
       // Edit if you need custom behaviour.
 
       this.homey.flow.getConditionCard('smart_motion_sensor_alarm_motion_active')?.registerRunListener(async (args) => {
-        if (!args.device) return false;
+        if (!args.device) {return false;}
         return true; // TODO: implement condition for smart_motion_sensor_alarm_motion_active
       });
   }

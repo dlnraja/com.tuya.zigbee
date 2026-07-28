@@ -21,7 +21,7 @@ class RainSensorDevice extends UnifiedSensorBase {
   }
 
     get dpMappings() {
-    const mfr = typeof this.getSetting === 'function' ? (this.getSetting('zb_manufacturer_name') || '') : '';
+    const mfr = typeof this.getSetting === 'function' ? this.getSetting('zb_manufacturer_name') || '' : '';
 
     // ── TS0601 HOBEIAN variants (ZG-223Z) ──
     if (includesCI(mfr, 'u6x1zyv2') || includesCI(mfr, 'jsaqgakf') || includesCI(mfr, '2pddnnrk')) {
@@ -60,7 +60,7 @@ class RainSensorDevice extends UnifiedSensorBase {
       // TS0207 and some TS0601 variants
       15: { capability: 'measure_battery', divisor: 1 },
       101: { capability: 'measure_luminance', divisor: 1 }, // Illuminance (lux)
-      105: { capability: 'alarm_water', transform: (v) => typeof v === 'number' ? v > 0 : (v !== 0 && v !== false) }, // Rain intensity -> rain alarm
+      105: { capability: 'alarm_water', transform: (v) => typeof v === 'number' ? v > 0 : v !== 0 && v !== false }, // Rain intensity -> rain alarm
       106: { capability: 'measure_humidity', divisor: 1 }  // Rain level on some variants
     };
   }

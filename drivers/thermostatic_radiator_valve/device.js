@@ -51,13 +51,13 @@ class ThermostaticRadiatorValve extends TuyaThermostatEnhancedMixin(TuyaSpecific
     }
 
     setWindowOpen(state) {
-        this.debug("Window open action received on '" + this.getName() + "' Value:", state);
+        this.debug(`Window open action received on '${  this.getName()  }' Value:`, state);
         this.writeBool(THERMOSTAT_DATA_POINTS.windowDetection, state)
             .catch(this.log);
     }
 
     getWindowOpen() {
-        var currentValue = this.getCapabilityValue('window_open');
+        const currentValue = this.getCapabilityValue('window_open');
         return currentValue;
     }
 
@@ -109,11 +109,11 @@ class ThermostaticRadiatorValve extends TuyaThermostatEnhancedMixin(TuyaSpecific
     }
 
     async setCapabilitySave(capName, capValue) {
-        var currentValue = this.getCapabilityValue(capName);
+        const currentValue = this.getCapabilityValue(capName);
         if (currentValue === capValue) {
             return; // not changed
         }
-        this.debug("set capability '" + capName + "' to value:", capValue);
+        this.debug(`set capability '${  capName  }' to value:`, capValue);
         try {
             await this.safeSetCapabilityValue(capName, capValue);
         } catch (e) {
@@ -129,7 +129,7 @@ class ThermostaticRadiatorValve extends TuyaThermostatEnhancedMixin(TuyaSpecific
         // v2.0.0: Route enhanced DP values to the mixin handler first
         if (this.handleEnhancedDP) {
             const handled = await this.handleEnhancedDP(dp, parsedValue);
-            if (handled) return;
+            if (handled) {return;}
         }
 
         switch (dp) {

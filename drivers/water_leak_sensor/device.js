@@ -243,7 +243,7 @@ class WaterLeakSensorDevice extends UnifiedSensorBase {
       // Delayed secondary read for sleepy sensors
       this._secondaryAlarmReadTimer = this.homey.setTimeout(async () => {
         this._secondaryAlarmReadTimer = null;
-        if (this._destroyed) return;
+        if (this._destroyed) {return;}
         try {
           this.log('[WATER] 📖 Delayed secondary alarm read (5s post-init)...');
           await this._forceInitialAlarmRead(zclNode);
@@ -267,7 +267,7 @@ class WaterLeakSensorDevice extends UnifiedSensorBase {
         try {
           const attrs = await Promise.race([
             iasCluster.readAttributes(['zoneStatus', 'zoneState']),
-            new Promise((_, rej) => this.homey.setTimeout(() => { if (this._destroyed) return; rej(new Error('timeout')); }, 5000))
+            new Promise((_, rej) => this.homey.setTimeout(() => { if (this._destroyed) {return;} rej(new Error('timeout')); }, 5000))
           ]);
           if (attrs?.zoneStatus !== undefined && typeof this._handleIASZoneStatus === 'function') {
             this._handleIASZoneStatus(attrs.zoneStatus);
@@ -320,7 +320,7 @@ class WaterLeakSensorDevice extends UnifiedSensorBase {
   }
 
   async onDeleted() {
-    if (this._destroyed) return;
+    if (this._destroyed) {return;}
     this._destroyed = true;
     if (this._secondaryAlarmReadTimer) {
       this.homey.clearTimeout(this._secondaryAlarmReadTimer);

@@ -1,5 +1,7 @@
 # 📋 Audit Final Global — Conformité Règles + Root Causes + Fixes
 
+*Historical document (2026-06-21) — superseded by [AUDIT_HOMEY_2026-07-27.md](AUDIT_HOMEY_2026-07-27.md).*
+
 **Date** : 2026-06-21
 **Portée** : Revue complète des règles, comparaison versions historiques, validation
 

@@ -1,3 +1,7 @@
+# delete-johan-comments
+# Triggers: workflow_dispatch | Secrets: GH_TOKEN
+# Doc header added 2026-07-29 (workflows genealogy enrichment).
+
 defaults:
   run:
     shell: bash

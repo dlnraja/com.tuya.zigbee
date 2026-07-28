@@ -24,21 +24,28 @@ const CACHE_ID = 'tinytuya';
 
 // ── GitHub API base ──────────────────────────────────────────────────────
 const TINYTUYA_API = 'https://api.github.com';
-const TINYTUYA_RAW = 'https://raw.githubusercontent.com/jasonacox/tinytuya/main';
+const TINYTUYA_RAW = 'https://raw.githubusercontent.com/jasonacox/tinytuya/master';
 
 // Key directories to scan for device definitions
+// P53-fix: DP definitions moved into the Contrib subdirectories upstream —
+// scanning only top-level dirs yielded 0 entries.
 const SCAN_PATHS = [
   'tinytuya',
+  'tinytuya/Contrib',
   'examples',
+  'examples/Contrib',
 ];
 
 // ── GitHub API authentication ────────────────────────────────────────────
-const GH_TOKEN = process.env.GH_PAT || process.env.GITHUB_TOKEN;
+const GH_TOKEN = process.env.GH_PAT || process.env.GITHUB_TOKEN || process.env.GH_TOKEN;
 const GH_HEADERS = {
   'User-Agent': 'HomeyTuyaScanner/1.0',
   'Accept': 'application/vnd.github.v3+json',
   ...(GH_TOKEN ? { Authorization: `token ${GH_TOKEN}` } : {}),
 };
+
+// Auth/network errors detected during this run (feeds the cache anti-poisoning guard)
+const RUN_ERRORS = [];
 
 // ── HTTP helpers ─────────────────────────────────────────────────────────
 function githubGet(urlPath) {
@@ -53,9 +60,12 @@ function githubGet(urlPath) {
       let data = '';
       res.on('data', (c) => data += c);
       res.on('end', () => {
+        if (res.statusCode && res.statusCode >= 400) {
+          RUN_ERRORS.push(`GitHub HTTP ${res.statusCode} ${urlPath}`);
+        }
         try { resolve(JSON.parse(data)); } catch (e) { resolve([]); }
       });
-    }).on('error', reject);
+    }).on('error', (e) => { RUN_ERRORS.push(e.message); reject(e); });
   });
 }
 
@@ -154,6 +164,39 @@ function parseTinyTuyaSource(source, filename) {
       dpId,
       dataType: TINYTUYA_DP_TYPES[dataType.toUpperCase()] || dataType.toLowerCase(),
       description,
+      capability: DP_TO_CAPABILITY[dpId] || null,
+      source: filename,
+    });
+  }
+
+  const seenDp = new Set(results.filter((r) => r.dpId).map((r) => r.dpId));
+
+  // Modern upstream format 1 (Contrib modules): class constants  DPS_POWER = "1"
+  const dpsConstRe = /^\s*(DPS_[A-Z0-9_]+)\s*=\s*["'](\d{1,3})["']/gm;
+  while ((match = dpsConstRe.exec(source)) !== null) {
+    const dpId = parseInt(match[2], 10);
+    if (seenDp.has(dpId)) continue;
+    seenDp.add(dpId);
+    const name = match[1].replace(/^DPS_/, '').toLowerCase().replace(/_/g, ' ');
+    results.push({
+      dpId,
+      dataType: 'unknown',
+      description: name,
+      capability: DP_TO_CAPABILITY[dpId] || null,
+      source: filename,
+    });
+  }
+
+  // Modern upstream format 2 (Contrib modules): dps_data dict  '108': { 'name': 'upper_temp', ... }
+  const dpsDictRe = /["'](\d{1,3})["']\s*:\s*\{\s*["']name["']\s*:\s*["']([^"']+)["']/g;
+  while ((match = dpsDictRe.exec(source)) !== null) {
+    const dpId = parseInt(match[1], 10);
+    if (seenDp.has(dpId)) continue;
+    seenDp.add(dpId);
+    results.push({
+      dpId,
+      dataType: 'unknown',
+      description: match[2],
       capability: DP_TO_CAPABILITY[dpId] || null,
       source: filename,
     });
@@ -289,7 +332,7 @@ async function scan() {
 
   // Save to cache
   if (cache) {
-    cache.save(output);
+    cache.save(output, null, { hadErrors: RUN_ERRORS.length > 0 });
     console.log(`Cache SAVED (TTL: 24h)`);
   }
 

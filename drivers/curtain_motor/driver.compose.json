@@ -97,7 +97,10 @@
       "_TZE204_ZPZNDJEZ",
       "_TZE204_dq7c8fng",
       "_TZE284_HBJWGKDH",
-      "_TZE284_LNYZ4A6V"
+      "_TZE284_LNYZ4A6V",
+      "_TZ3000_ehgouyvu",
+      "_TZE284_ncc7uahd",
+      "_TZE200_rgeapp2c"
     ],
     "productId": [
       "01MINIZB",
@@ -523,11 +526,5 @@
     }
   ],
   "id": "curtain_motor",
-  "version": "1.0.0",
-  "_pidConflictNotes": [
-    "// PID-CONFLICT-NOTE TS0726 shared with 21 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE TS130F shared with 6 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE TS0301 shared with 5 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE TS0302 shared with 2 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-  ]
+  "version": "1.0.0"
 }

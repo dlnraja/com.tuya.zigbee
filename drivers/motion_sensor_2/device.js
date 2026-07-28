@@ -60,7 +60,7 @@ class motion_sensor_2 extends PhysicalButtonMixin(TuyaZigbeeDevice) {
         this.configureAttributeReporting(reportingPayload),
         { name: 'configureAttributeReporting', timeoutMs: SleepyInit.ZCL_TIMEOUT_MS }
       ).then((res) => {
-        if (res && res !== 'timeout') this.log('Attribute reporting configured');
+        if (res && res !== 'timeout') {this.log('Attribute reporting configured');}
       });
     }
 
@@ -100,7 +100,7 @@ class motion_sensor_2 extends PhysicalButtonMixin(TuyaZigbeeDevice) {
 
   // Handle device removal with cleanup
   async onDeleted() {
-    if (this._destroyed) return;
+    if (this._destroyed) {return;}
     this._destroyed = true;
     this.log('Motion Sensor removed');
     try {

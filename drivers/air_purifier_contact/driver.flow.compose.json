@@ -132,19 +132,6 @@
         "fr": "Se déclenche quand le capteur est ouvert depuis la durée spécifiée",
         "de": "Wird ausgelÃ¶st, wenn der Sensor lÃ¤nger als die angegebene Dauer offen ist"
       },
-      "tokens": [
-        {
-          "name": "duration",
-          "type": "number",
-          "title": {
-            "en": "Duration (min)",
-            "nl": "Duur (min)",
-            "fr": "Durée (min)",
-            "de": "Dauer (min)"
-          },
-          "example": 5
-        }
-      ],
       "args": [],
       "titleFormatted": {
         "en": "Left open for duration",

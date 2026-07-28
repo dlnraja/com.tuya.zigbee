@@ -22,7 +22,7 @@ class Button1GangDevice extends ButtonDevice {
           epCount++;
         }
       }
-      if (epCount > 0) detected = epCount;
+      if (epCount > 0) {detected = epCount;}
     }
     this.buttonCount = detected;
     this.log(`[BUTTON_WIRELESS_SMART] Auto-detected ${this.buttonCount} endpoint(s) for ${this.getData()?.id || 'unknown'}`);

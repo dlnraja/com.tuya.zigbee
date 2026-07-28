@@ -9,7 +9,7 @@ class UniversalZigbeeDeviceSub extends UniversalZigbeeDevice {
   }
 
   _setupNativeZclListeners() {
-    if (!this.zclNode) return;
+    if (!this.zclNode) {return;}
 
     this.registerCapability('onoff', 'genOnOff', {
       get: 'onOff',
@@ -19,13 +19,13 @@ class UniversalZigbeeDeviceSub extends UniversalZigbeeDevice {
     this.registerCapability('dim', 'genLevelCtrl', {
       get: 'currentLevel',
       report: 'currentLevel',
-      reportParser: v => (v / 254)
+      reportParser: v => v / 254
     }).catch(() => {});
 
     this.registerCapability('measure_battery', 'genPowerCfg', {
       get: 'batteryPercentageRemaining',
       report: 'batteryPercentageRemaining',
-      reportParser: v => (v === 255) ? null : Math.round(v / 2)
+      reportParser: v => v === 255 ? null : Math.round(v / 2)
     }).catch(() => {});
   }
 

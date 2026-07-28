@@ -1,3 +1,7 @@
+# 🩹 Publish Self-Heal
+# Triggers: cron: 0 4,8,12,16,20 * * * + workflow_dispatch | Secrets: GITHUB_TOKEN only
+# Doc header added 2026-07-29 (workflows genealogy enrichment).
+
 name: 🩹 Publish Self-Heal
 
 # Auto-runs periodically to detect stuck/failed publishes and re-trigger them.

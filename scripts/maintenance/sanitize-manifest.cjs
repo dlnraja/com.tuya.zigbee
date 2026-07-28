@@ -193,7 +193,11 @@ function sanitizeManifestFile(manifestPath, options = {}) {
     if (dryRun) {
       log(`${label}: dry-run would write ${changes} change(s).`);
     } else {
-      fs.writeFileSync(manifestPath, JSON.stringify(manifest, null, 2) + '\n');
+      // Write COMPACT (no pretty-print). A prettified manifest is ~43% larger
+      // (6.2MB vs 3.3MB here) and pushes app.json over Athom's ~4MB limit,
+      // which surfaces as processing_failed on the build server. app.json is
+      // generated (see _comment) — edit .homeycompose/driver.compose.json.
+      fs.writeFileSync(manifestPath, JSON.stringify(manifest) + '\n');
       log(`${label}: wrote ${changes} change(s).`);
     }
   } else {

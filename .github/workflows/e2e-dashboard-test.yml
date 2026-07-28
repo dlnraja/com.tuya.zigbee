@@ -1,3 +1,7 @@
+# e2e-dashboard-test
+# Triggers: cron: 0 7 * * * + workflow_dispatch,workflow_run | Secrets: GITHUB_TOKEN only
+# Doc header added 2026-07-29 (workflows genealogy enrichment).
+
 defaults:
   run:
     shell: bash
@@ -86,20 +90,20 @@ jobs:
         id: bug-master
         working-directory: master
         run: |
-          if [ -f tools/ci/ci-bug-hunter.js ]; then
-            node tools/ci/ci-bug-hunter.js 2>&1 | tee /tmp/master-bugs.txt || true
+          if [ -f scripts/ci/bug-hunter.js ]; then
+            node scripts/ci/bug-hunter.js 2>&1 | tee /tmp/master-bugs.txt || true
           else
-            echo "(ci-bug-hunter.js not present, skipping)"
+            echo "(bug-hunter.js not present, skipping)"
           fi
 
       - name: Driver health (master)
         id: health-master
         working-directory: master
         run: |
-          if [ -f tools/ci/driver-health-check.js ]; then
-            node tools/ci/driver-health-check.js 2>&1 | tee /tmp/master-health.txt || true
+          if [ -f scripts/validation/check-driver-health.js ]; then
+            node scripts/validation/check-driver-health.js 2>&1 | tee /tmp/master-health.txt || true
           else
-            echo "(driver-health-check.js not present, skipping)"
+            echo "(check-driver-health.js not present, skipping)"
           fi
 
       - name: 'Checkout stable (P75.11 use git worktree to actually fetch stable-v5)'
@@ -160,6 +164,9 @@ jobs:
 
       - name: Build summary
         if: always()
+        env:
+          # Pass trigger ref through env to avoid shell injection from branch names
+          TRIGGER_REF: ${{ github.event.schedule || github.event.workflow_run.head_branch || '' }}
         run: |
           {
             echo "## E2E Dashboard Test - $(date -u +%Y-%m-%dT%H:%M:%SZ)"
@@ -173,7 +180,7 @@ jobs:
             echo "- Validation: ${{ steps.validate-stable.outcome == 'success' && 'PASS' || 'FAIL' }}"
             echo ""
             echo "**Run ID**: ${{ github.run_id }}"
-            echo "**Trigger**: ${{ github.event_name }} ${{ github.event.schedule || github.event.workflow_run.head_branch || '' }}"
+            echo "**Trigger**: ${{ github.event_name }} $TRIGGER_REF"
           } >> $GITHUB_STEP_SUMMARY
 
       - name: Upload test reports

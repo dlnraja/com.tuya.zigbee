@@ -72,7 +72,7 @@ const convertMultiByteNumberPayloadToSingleDecimalNumber = chunks => {
 };
 
 const getDataValue = dpValue => {
-  if (!dpValue || !dpValue.data) return null;
+  if (!dpValue || !dpValue.data) {return null;}
   switch (dpValue.datatype) {
   case dataTypes.raw:
     return dpValue.data;
@@ -173,10 +173,10 @@ class sensortemphumidsensor extends TuyaSpecificClusterDevice {
 
     this.registerCapabilityListener('onoff', async value => {
       await this.writeBool(dataPoints.ALARM, value);
-      this.homey.setTimeout(() => { if (this._destroyed) return; this.queryAll().catch(this.error); }, 1200);
+      this.homey.setTimeout(() => { if (this._destroyed) {return;} this.queryAll().catch(this.error); }, 1200);
     });
 
-    this.homey.setTimeout(() => { if (this._destroyed) return; this.bootstrap().catch(this.error); }, 5000);
+    this.homey.setTimeout(() => { if (this._destroyed) {return;} this.bootstrap().catch(this.error); }, 5000);
   }
 
   _registerTimeBoundCluster(zclNode) {
@@ -190,7 +190,7 @@ class sensortemphumidsensor extends TuyaSpecificClusterDevice {
 
   _registerTuyaListeners(zclNode) {
     const tuyaCluster = zclNode?.endpoints?.[1]?.clusters?.tuya;
-    if (!tuyaCluster) return;
+    if (!tuyaCluster) {return;}
 
     tuyaCluster.on('response', data => this.processTuyaMessage('response', data).catch(this.error));
     tuyaCluster.on('reporting', data => this.processTuyaMessage('reporting', data).catch(this.error));
@@ -200,7 +200,7 @@ class sensortemphumidsensor extends TuyaSpecificClusterDevice {
   }
 
   async ensureCapability(capabilityId) {
-    if (!this.hasCapability(capabilityId)) await this.addCapability(capabilityId);
+    if (!this.hasCapability(capabilityId)) {await this.addCapability(capabilityId);}
   }
 
   async bootstrap() {
@@ -213,7 +213,7 @@ class sensortemphumidsensor extends TuyaSpecificClusterDevice {
   async bootstrapBasicRead() {
     try {
       const basicCluster = this.zclNode?.endpoints?.[1]?.clusters?.basic;
-      if (!basicCluster) return;
+      if (!basicCluster) {return;}
       await basicCluster.readAttributes(['manufacturerName', 'zclVersion', 'appVersion', 'modelId', 'powerSource']);
     } catch (error) { }
   }
@@ -225,7 +225,7 @@ class sensortemphumidsensor extends TuyaSpecificClusterDevice {
   async sendMcuVersionRequest() {
     try {
       const tuyaCluster = this.zclNode?.endpoints?.[1]?.clusters?.tuya;
-      if (!tuyaCluster || typeof tuyaCluster.mcuVersionRequest !== 'function') return;
+      if (!tuyaCluster || typeof tuyaCluster.mcuVersionRequest !== 'function') {return;}
       this.transactionID = (this.transactionID || 0) + 1;
       const payload = Buffer.from([0x00, this.transactionID & 0xff]);
       await tuyaCluster.mcuVersionRequest({ payload });
@@ -235,7 +235,7 @@ class sensortemphumidsensor extends TuyaSpecificClusterDevice {
   async queryAll() {
     try {
       const tuyaCluster = this.zclNode?.endpoints?.[1]?.clusters?.tuya;
-      if (!tuyaCluster || typeof tuyaCluster.dataQuery !== 'function') return;
+      if (!tuyaCluster || typeof tuyaCluster.dataQuery !== 'function') {return;}
       await tuyaCluster.dataQuery({});
     } catch (error) { }
   }
@@ -248,13 +248,13 @@ class sensortemphumidsensor extends TuyaSpecificClusterDevice {
       payload.writeUInt32BE(utcSeconds >>> 0, 0);
       payload.writeUInt32BE(localSeconds >>> 0, 4);
       const tuya = this.zclNode?.endpoints?.[1]?.clusters?.tuya;
-      if (tuya) await tuya.timeSync({ payload });
-      this.homey.setTimeout(() => { if (this._destroyed) return; this.queryAll().catch(this.error); }, 500);
+      if (tuya) {await tuya.timeSync({ payload });}
+      this.homey.setTimeout(() => { if (this._destroyed) {return;} this.queryAll().catch(this.error); }, 500);
     } catch (error) { }
   }
 
   async onMcuVersionResponse(data) {
-    this.homey.setTimeout(() => { if (this._destroyed) return; this.queryAll().catch(this.error); }, 500);
+    this.homey.setTimeout(() => { if (this._destroyed) {return;} this.queryAll().catch(this.error); }, 500);
   }
 
   async processTuyaMessage(source, data) {
@@ -287,8 +287,8 @@ class sensortemphumidsensor extends TuyaSpecificClusterDevice {
   }
 
   handlePowerMode(measuredValue) {
-    if (measuredValue <= 1) this.reportAlarmBatteryCapacity(false);
-    else this.reportAlarmBatteryCapacity(false);
+    if (measuredValue <= 1) {this.reportAlarmBatteryCapacity(false);}
+    else {this.reportAlarmBatteryCapacity(false);}
   }
 
   async safeSetCapabilityValue(capabilityId, value) {
@@ -315,9 +315,9 @@ class sensortemphumidsensor extends TuyaSpecificClusterDevice {
 
   async onSettings({ newSettings, changedKeys }) {
     for (const key of changedKeys) {
-      if (key === 'alarmvolume') await this.sendAlarmVolume(Number(newSettings[key]));
-      if (key === 'alarmsoundtime') await this.sendAlarmDuration(Number(newSettings[key]));
-      if (key === 'alarmtune') await this.sendAlarmTune(Number(newSettings[key]));
+      if (key === 'alarmvolume') {await this.sendAlarmVolume(Number(newSettings[key]));}
+      if (key === 'alarmsoundtime') {await this.sendAlarmDuration(Number(newSettings[key]));}
+      if (key === 'alarmtune') {await this.sendAlarmTune(Number(newSettings[key]));}
     }
   }
 

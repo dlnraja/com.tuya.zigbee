@@ -108,7 +108,7 @@ class WallThermostatDevice extends TuyaSpecificClusterDevice {
                 this.log('Thermostat mode received', parsedValue);
 
                 try {
-                    await this.safeSetCapabilityValue('thermostat_programming', (parsedValue === 0 ? "0" : "1"));
+                    await this.safeSetCapabilityValue('thermostat_programming', parsedValue === 0 ? "0" : "1");
                 } catch (e) {
                     this.log("Failed to set mode", e);
                 }

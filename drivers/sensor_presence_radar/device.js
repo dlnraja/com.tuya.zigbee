@@ -763,7 +763,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       this.configureAttributeReporting(configureReportingPayload),
       { name: 'configureAttributeReporting', timeoutMs: SleepyInit.ZCL_TIMEOUT_MS }
     ).then((res) => {
-      if (res && res !== 'timeout') this.log('Attribute reporting configured successfully');
+      if (res && res !== 'timeout') {this.log('Attribute reporting configured successfully');}
     });
 
     // v5.7.34: Use _getManufacturerName() for consistent multi-source retrieval
@@ -861,7 +861,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
 
       // v5.8.43: PR#125 michelhelsdingen - One-time battery + DP refresh after device wakes up
       safeSetTimeout(this, async () => {
-        if (this._destroyed) return;
+        if (this._destroyed) {return;}
         try {
           const ep1 = zclNode?.endpoints?.[1];
           // Try ZCL PowerConfiguration read
@@ -1140,7 +1140,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     // v5.8.86: JJ10 forum fix - respect noTemperature/noHumidity config flags
     // Previously, ZCL listeners would re-add capabilities that were removed by orphan cleanup
     listen(ep1.clusters?.msTemperatureMeasurement, 'attr.measuredValue', async (v) => {
-      if (self._destroyed) return;
+      if (self._destroyed) {return;}
       if (config.noTemperature) {return;}
       const t = v * 100;
       if (t <= -40 || t >= 100) {return;}
@@ -1150,7 +1150,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       });
 
     listen(ep1.clusters?.msRelativeHumidity, 'attr.measuredValue', async (v) => {
-      if (self._destroyed) return;
+      if (self._destroyed) {return;}
       if (config.noHumidity) {return;}
       const h = v * 100;
       if (h < 0 || h > 100) {return;}
@@ -1160,7 +1160,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       });
 
     listen(ep1.clusters?.msIlluminanceMeasurement, 'attr.measuredValue', async (v) => {
-      if (self._destroyed) return;
+      if (self._destroyed) {return;}
       const lux = parseFloat(Math.round(Math.pow(10, (v - 1) / 10000)));
       if (!self.hasCapability('measure_luminance'))
         {await self.addCapability('measure_luminance').catch(() => {});}
@@ -2094,7 +2094,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
             await this._reEnrollIASZone();
           }
         } catch (e) { /* device asleep */ }
-        safeSetTimeout(this, () => { if (this._destroyed) return; _enrollTried = false; }, 60000);
+        safeSetTimeout(this, () => { if (this._destroyed) {return;} _enrollTried = false; }, 60000);
       }, 2000);
       });
 
@@ -2141,7 +2141,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
 
     // Check every 5 minutes if enrollment is still valid
     this._enrollmentCheckInterval = this.homey.setInterval(async () => {
-      if (this._destroyed) return;
+      if (this._destroyed) {return;}
       if (!this._iasZoneCluster) {return;}
 
       try {
@@ -2312,7 +2312,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     let luxPollCounter = 0;
 
     // Poll at configured interval
-    this._pollingInterval = this.homey.setInterval(async () => { if (this._destroyed) return; try {
+    this._pollingInterval = this.homey.setInterval(async () => { if (this._destroyed) {return;} try {
         const now = Date.now();
         const timeSinceLastPresence = now - (this._lastPresenceUpdate || 0);
 
@@ -2387,7 +2387,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     }, pollInterval);
 
     // Initial poll after 2 seconds (faster than before)
-    safeSetTimeout(this, () => { if (this._destroyed) return; this._requestDPRefresh(zclNode);
+    safeSetTimeout(this, () => { if (this._destroyed) {return;} this._requestDPRefresh(zclNode);
       this._requestSpecificDP(zclNode , 1); }, 2000);
   }
 
@@ -2621,9 +2621,9 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
   // Copied from sensor_motion_presence/device.js with adapted flow card IDs
   _handlePresenceWithDebounce(presence, dpId) {
     const current = this.getCapabilityValue('alarm_motion');
-    if (presence === current) return;
+    if (presence === current) {return;}
     if (presence) {
-      if (this._intelGate) this._intelGate.process('alarm_motion', true);
+      if (this._intelGate) {this._intelGate.process('alarm_motion', true);}
       this.safeSetCapabilityValue('alarm_motion', true).catch(() => {});
       this._triggerPresenceFlows(true);
     } else {

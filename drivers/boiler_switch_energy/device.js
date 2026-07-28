@@ -74,7 +74,7 @@ class BoilerSwitchEnergyDevice extends PhysicalButtonMixin(VirtualButtonMixin(Un
   }
 
   async onNodeInit({ zclNode }) {
-    if (this._initialized || this._initializing) return;
+    if (this._initialized || this._initializing) {return;}
     this._initializing = true;
 
     try {
@@ -97,7 +97,7 @@ class BoilerSwitchEnergyDevice extends PhysicalButtonMixin(VirtualButtonMixin(Un
 
   onDeleted() {
     this._destroyed = true;
-    if (super.onDeleted) super.onDeleted();
+    if (super.onDeleted) {super.onDeleted();}
   }
 }
 

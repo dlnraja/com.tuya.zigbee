@@ -30,7 +30,16 @@
         "en": "Turn the switch on/off 3 times quickly"
       }
     },
-    "manufacturerName": [],
+    "manufacturerName": [
+      "_tz1800_fcdjzz3s",
+      "_TZE200_gubdgai2",
+      "_TZE200_hbnfokum",
+      "_TZE284_bw4ayyeh",
+      "_tze284_pislt0wa",
+      "_TZE284_pislt0wa",
+      "piriv01",
+      "vabrate"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -764,10 +773,5 @@
     "actions": []
   },
   "id": "motion_sensor_switch",
-  "version": "1.0.0",
-  "_pidConflictNotes": [
-    "// PID-CONFLICT-NOTE TS0001 shared with 35 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE Excellux shared with 30 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE TS0225 shared with 19 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-  ]
+  "version": "1.0.0"
 }

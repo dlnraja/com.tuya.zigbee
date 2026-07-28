@@ -1,5 +1,7 @@
 # Fixes Summary — 2026-06-23
 
+*Historical document (2026-06-23) — superseded by [AUDIT_HOMEY_2026-07-27.md](AUDIT_HOMEY_2026-07-27.md).*
+
 Audit agrégé de tous les scripts de fix existants (`FIX_STRAY_NULLS*`, `root-cleanup`, `prepare-publish`, `direct-api-publish`, `check-build`, `inspect-pack`, `auto-publish`) + docs de build/deploy, et patch unifié appliqué aux deux projets (`tuya_repair` + `tuya-repair-nexus`).
 
 ---

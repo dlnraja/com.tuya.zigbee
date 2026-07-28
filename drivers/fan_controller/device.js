@@ -158,7 +158,7 @@ class FanControllerDevice extends ZigBeeDevice {
   }
 
   async _handleDP(dp, value) {
-    if (this._destroyed) return;
+    if (this._destroyed) {return;}
     if (dp === undefined) {return;}
     this.log(`[DP${dp}] = ${value}`);
 

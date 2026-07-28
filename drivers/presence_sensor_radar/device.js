@@ -46,7 +46,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
    */
   get mainsPowered() {
     const config = this._getRadarConfig();
-    if (config && config.mainsPowered) return true;
+    if (config && config.mainsPowered) {return true;}
     const mfr = (MfrHelper.getManufacturerName(this) || '').toLowerCase();
     return MAINS_POWERED_RADARS.has(mfr);
   }
@@ -343,7 +343,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
 
     // A2. Idea #21: Handle multi-zone presence DPs (alarm_motion.zone1/zone2/zone3)
     if (mapping.cap && mapping.cap.startsWith('alarm_motion.zone')) {
-      let presence = transformPresence(value, mapping.type, config.invertPresence, config.configName);
+      const presence = transformPresence(value, mapping.type, config.invertPresence, config.configName);
       if (presence !== null) {
         this.log(`[RADAR] Zone ${mapping.zone} presence: ${presence}`);
         return this.safeSetCapabilityValue(mapping.cap, presence).catch(() => {});
@@ -456,10 +456,10 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     }
 
     // 1. Time Sync
-    this.homey.setTimeout(() => { if (this._destroyed) return; this._sendTimeSync(zclNode); }, 2000);
+    this.homey.setTimeout(() => { if (this._destroyed) {return;} this._sendTimeSync(zclNode); }, 2000);
 
     // 2. DP Refresh
-    this.homey.setTimeout(() => { if (this._destroyed) return; this._requestDPRefresh(zclNode); }, 3000);
+    this.homey.setTimeout(() => { if (this._destroyed) {return;} this._requestDPRefresh(zclNode); }, 3000);
 
     if (this._getRadarConfig().needsPolling === false) {
       this.log('[RADAR] Periodic DP polling disabled by device profile');
@@ -515,7 +515,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
    */
   async _initMultiZoneCapabilities() {
     const config = this._getRadarConfig();
-    if (!config || !config.hasMultiZone) return;
+    if (!config || !config.hasMultiZone) {return;}
 
     // Zone presence capabilities (alarm_motion.zone1, zone2, zone3)
     const zoneCaps = [

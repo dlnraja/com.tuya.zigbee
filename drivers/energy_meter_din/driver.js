@@ -24,7 +24,7 @@ class EnergyMeterDinDriver extends ZigBeeDriver {
       const powerCard = this.homey.flow.getConditionCard('energy_meter_din_power_above');
       if (powerCard) {
         powerCard.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           const power = args.device.getCapabilityValue('measure_power') || 0;
           return power > (args.threshold || 100);
         });

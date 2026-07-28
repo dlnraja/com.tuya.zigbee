@@ -23,14 +23,14 @@ class WiFiFanDevice extends TuyaLocalDevice {
       '3':  { capability: 'dim', writable: true,
         transform: (v) => {
           const val = Number(v);
-          if (!Number.isFinite(val)) return 0;
+          if (!Number.isFinite(val)) {return 0;}
           const { min, max } = this._getFanSpeedRange();
           return Math.max(0, Math.min(1, (val - min) / (max - min)));
         },
         reverseTransform: (v) => {
           const val = Number(v);
           const { min, max } = this._getFanSpeedRange();
-          if (!Number.isFinite(val)) return min;
+          if (!Number.isFinite(val)) {return min;}
           return Math.round(min + (Math.max(0, Math.min(1, val)) * (max - min)));
         } },
       '4':  { capability: null },
@@ -50,7 +50,7 @@ class WiFiFanDevice extends TuyaLocalDevice {
 
 
   async onDeleted() {
-    if (this._destroyed) return;
+    if (this._destroyed) {return;}
     this._destroyed = true;
     this.log('Device deleted, cleaning up');
     await super.onDeleted();

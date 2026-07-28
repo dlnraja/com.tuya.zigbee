@@ -1,4 +1,6 @@
 # 🌍 GLOBAL IMPROVEMENT PLAN — Phoenix Sovereign Unified Engine v9.0.0+
+
+*Historical document (metrics dated 2026-05-26) — superseded by [AUDIT_HOMEY_2026-07-27.md](AUDIT_HOMEY_2026-07-27.md).*
 > **Branch**: `master` (Experimental/Beta) + `stable-v5` (Production/Stable)  
 > **App ID**: `com.dlnraja.tuya.zigbee` (Stable app: `com.dlnraja.tuya.zigbee.stable`)  
 > **Status**: ACTIVE & SECURED | **Zero-Defect Publish Quality Gate**: 100% Passed  

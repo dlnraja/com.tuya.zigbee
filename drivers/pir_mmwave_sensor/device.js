@@ -86,7 +86,7 @@ class pir_mmwave_sensor extends ZigBeeDevice {
                 this.configureAttributeReporting(reportingPayload),
                 { name: 'configureAttributeReporting', timeoutMs: SleepyInit.ZCL_TIMEOUT_MS }
             ).then((res) => {
-                if (res && res !== 'timeout') this.log('Attribute reporting configured');
+                if (res && res !== 'timeout') {this.log('Attribute reporting configured');}
             });
         }
 
@@ -120,7 +120,7 @@ class pir_mmwave_sensor extends ZigBeeDevice {
             
             // Set up periodic battery reading since automatic reporting doesn't work
             this.batteryInterval = this.homey.setInterval(async () => {
-              if (this._destroyed) return;
+              if (this._destroyed) {return;}
                 try {
                     const battery = await zclNode.endpoints[1].clusters.powerConfiguration.readAttributes(['batteryPercentageRemaining']);
                     if (battery && battery.batteryPercentageRemaining !== undefined) {
@@ -141,6 +141,7 @@ class pir_mmwave_sensor extends ZigBeeDevice {
 
     // Handle motion status attribute reports
     onZoneStatusAttributeReport(status) {
+        if (this._destroyed) {return;}
         this.log("Motion status: ", status.alarm1);
         this.safeSetCapabilityValue('alarm_motion', status.alarm1).catch(this.error);
     }

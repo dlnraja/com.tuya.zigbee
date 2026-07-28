@@ -1,3 +1,7 @@
+# GitHub Shadow Policy
+# Triggers: pull_request,push,workflow_dispatch | Secrets: GITHUB_TOKEN only
+# Doc header added 2026-07-29 (workflows genealogy enrichment).
+
 defaults:
   run:
     shell: bash

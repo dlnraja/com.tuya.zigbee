@@ -19,13 +19,13 @@ class ZigBeeContactSensorDevice extends UnifiedSensorBase {
       const finalValue = value;
       const now = Date.now();
       const state = this._contactState;
-      if (state.confirmedValue === finalValue) return;
+      if (state.confirmedValue === finalValue) {return;}
 
       const timeSinceLastChange = now - state.lastChangeTime;
       if (state.lastValue !== null && timeSinceLastChange < this._debounceMs) {
-        if (state.timer) this.homey.clearTimeout(state.timer);
+        if (state.timer) {this.homey.clearTimeout(state.timer);}
         state.timer = this.homey.setTimeout(async () => {
-          if (this._destroyed) return;
+          if (this._destroyed) {return;}
           state.lastValue = finalValue;
           state.confirmedValue = finalValue;
           state.lastChangeTime = Date.now();

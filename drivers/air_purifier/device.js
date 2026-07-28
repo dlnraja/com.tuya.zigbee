@@ -59,6 +59,7 @@ class AirPurifierDevice extends BaseUnifiedDevice {
         const pm25 = typeof value === 'number' ? value : parseInt(value);
         this.log(`[AirPurifier] 📥 PM2.5: ${pm25}`);
         await this.safeSetCapabilityValue('measure_pm25', pm25).catch(() => {});
+        this._triggerPm25Changed(pm25);
         break;
       }
 
@@ -72,6 +73,18 @@ class AirPurifierDevice extends BaseUnifiedDevice {
       default:
         this.log(`[AirPurifier] 📥 Unhandled DP ${dpId}:`, value);
     }
+  }
+
+  /**
+   * Déclenche la carte air_purifier_pm25_changed avec son token `pm25`
+   * (pattern voisin : soil_sensor_moisture_changed dans drivers/soil_sensor).
+   */
+  _triggerPm25Changed(pm25) {
+    if (this._destroyed) {return;}
+    try {
+      const card = this.homey.flow.getDeviceTriggerCard('air_purifier_pm25_changed');
+      if (card) {card.trigger(this, { pm25 }, {}).catch(() => {});}
+    } catch (e) { /* flow indisponible */ }
   }
 
 }

@@ -1,5 +1,7 @@
 # 🔍 Rapport d'Investigation Forensique — Tuya Unified Zigbee
 
+*Historical document (2026-06-20) — superseded by [AUDIT_HOMEY_2026-07-27.md](AUDIT_HOMEY_2026-07-27.md). The "8 729 commits × 16 branches" cited below no longer exist: the git history was purged/rewritten on 2026-07-27 (see [HISTORY_PURGE.md](HISTORY_PURGE.md)).*
+
 **Date** : 2026-06-20
 **Portée** : 8 729 commits × 16 branches — extraction MFS + architecture boutons + audit qualité complet + bugs runtime
 **Statut** ✅ Investigation terminée — 53/53 tests, 0 régression

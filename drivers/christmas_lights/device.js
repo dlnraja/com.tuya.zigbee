@@ -68,14 +68,14 @@ class christmas_lights extends TuyaSpecificClusterDevice {
     }
 
     async setColor({dim,light_hue,light_saturation}) {
-        if (dim===undefined) dim = this.getCapabilityValue('dim');
-        if (light_hue===undefined) light_hue = this.getCapabilityValue('light_hue');
-        if (light_saturation===undefined) light_saturation = this.getCapabilityValue('light_saturation');
+        if (dim===undefined) {dim = this.getCapabilityValue('dim');}
+        if (light_hue===undefined) {light_hue = this.getCapabilityValue('light_hue');}
+        if (light_saturation===undefined) {light_saturation = this.getCapabilityValue('light_saturation');}
         return this.writeString(5,this.make4String(light_hue * 360) + this.make4String(light_saturation * 1000) + this.make4String(dim * 1000))
     }
 
     async setWhiteDim({dim}) {
-        if (dim===undefined) dim = this.getCapabilityValue('dim');
+        if (dim===undefined) {dim = this.getCapabilityValue('dim');}
         return this.writeData32(3,dim*1000);
     }
 
@@ -104,11 +104,11 @@ class christmas_lights extends TuyaSpecificClusterDevice {
         this.safeSetCapabilityValue('lidl_xmas_mode', 'effect').catch(this.error);
         let es = this.effectMap[args.effect_name];
         const speed = String(args.effect_speed);
-        if (speed.length === 1) es += '0';
+        if (speed.length === 1) {es += '0';}
         es += speed;
         for (let i=0;i<9;i++) {
-            const color = args['effect_color_' + i];
-            if (color === '#fff') break;
+            const color = args[`effect_color_${  i}`];
+            if (color === '#fff') {break;}
             es += color.substr(1).toLowerCase();
         }
         return this.writeString(6,es);
@@ -116,12 +116,12 @@ class christmas_lights extends TuyaSpecificClusterDevice {
 
     // String Helper Functions
     make4String(v) {
-        let s = Math.round(v).toString(16);
-        if(s.length===4) return s;
-        else if(s.length===3) return '0'+s;
-        else if(s.length===2) return '00'+s;
-        else if(s.length===1) return '000' + s;
-        else return '0000';
+        const s = Math.round(v).toString(16);
+        if(s.length===4) {return s;}
+        else if(s.length===3) {return `0${s}`;}
+        else if(s.length===2) {return `00${s}`;}
+        else if(s.length===1) {return `000${  s}`;}
+        else {return '0000';}
     }
 
     onDeleted(){

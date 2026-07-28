@@ -88,7 +88,7 @@ class Switch5GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
       this.registerCapabilityListener(capName, async (value) => {
         this._zclState.pending[epNum] = true;
         clearTimeout(this._zclState.timeout[epNum]);
-        this._zclState.timeout[epNum] = this.homey.setTimeout(() => { if (this._destroyed) return; this._zclState.pending[epNum] = false; }, 2000);
+        this._zclState.timeout[epNum] = this.homey.setTimeout(() => { if (this._destroyed) {return;} this._zclState.pending[epNum] = false; }, 2000);
         const onOff = getOnOffCluster(epNum);
         if (onOff) {await onOff[value ? 'setOn' : 'setOff']();}
         return true;
@@ -102,7 +102,7 @@ class Switch5GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
 
       const capName = epNum === 1 ? 'onoff' : `onoff.gang${epNum}`;
       onOff.on('attr.onOff', async (value) => {
-        if (this._destroyed) return;
+        if (this._destroyed) {return;}
         const isPhysical = !this._zclState.pending[epNum];
         if (this._zclState.lastState[epNum] !== value) {
           this._zclState.lastState[epNum] = value;
@@ -114,6 +114,7 @@ class Switch5GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
           const mode = this.sceneMode;
           if (mode === 'magic') {
             const invertedValue = !value;
+            if (this._destroyed) {return;}
             this.safeSetCapabilityValue(capName, invertedValue).catch(() => {});
             const invertedCluster = getOnOffCluster(epNum);
             if (invertedCluster) {

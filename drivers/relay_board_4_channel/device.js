@@ -13,7 +13,7 @@ class relay_board_4_channel extends ZigBeeDevice {
         const { subDeviceId } = this.getData();
         this.log("Device data: ", subDeviceId);
 
-        let options = {};
+        const options = {};
 
         switch (subDeviceId){
             case 'secondSwitch':

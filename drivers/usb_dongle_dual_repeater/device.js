@@ -242,7 +242,7 @@ class UsbDongleDualRepeaterDevice extends TuyaZigbeeDevice {
     } catch (err) {
       this.error('[USB_DONGLE] _configureEnergyReporting Error:', err.message);
       // Retry 1 min plus tard si le Zigbee stack n'était pas prêt
-      this.homey.setTimeout(() => { if (this._destroyed) return; this._configureEnergyReporting(zclNode); }, 60 * 1000);
+      this.homey.setTimeout(() => { if (this._destroyed) {return;} this._configureEnergyReporting(zclNode); }, 60 * 1000);
     }
   }
 

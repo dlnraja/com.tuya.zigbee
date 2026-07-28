@@ -7,7 +7,7 @@ class WifiSonoffPowEliteDriver extends Driver {
 
   async onInit() {
     await super.onInit();
-    if (this._flowCardsRegistered) return;
+    if (this._flowCardsRegistered) {return;}
     this._flowCardsRegistered = true;
 
       // === AUTO-GENERATED FLOW HANDLERS ===
@@ -15,17 +15,17 @@ class WifiSonoffPowEliteDriver extends Driver {
       // Edit if you need custom behaviour.
 
       this.homey.flow.getActionCard('wifi_sonoff_pow_elite_turn_on')?.registerRunListener(async (args) => {
-        if (!args.device) return false;
+        if (!args.device) {return false;}
         await args.device.setCapabilityValue('onoff', true).catch(() => {});
         return true;
       });
       this.homey.flow.getActionCard('wifi_sonoff_pow_elite_turn_off')?.registerRunListener(async (args) => {
-        if (!args.device) return false;
+        if (!args.device) {return false;}
         await args.device.setCapabilityValue('onoff', false).catch(() => {});
         return true;
       });
       this.homey.flow.getActionCard('wifi_sonoff_pow_elite_toggle')?.registerRunListener(async (args) => {
-        if (!args.device) return false;
+        if (!args.device) {return false;}
         const v = args.device.getCapabilityValue('onoff');
         await args.device.setCapabilityValue('onoff', !v).catch(() => {});
         return true;

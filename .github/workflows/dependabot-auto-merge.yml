@@ -1,3 +1,7 @@
+# Dependabot Auto-Merge
+# Triggers: pull_request | Secrets: GH_PAT
+# Doc header added 2026-07-29 (workflows genealogy enrichment).
+
 name: Dependabot Auto-Merge
 
 # <!-- badges:start -->

@@ -14,7 +14,8 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_TZE200_placeholder_rgb_wall_led_light"
+      "_tz3000_5bsf8vaj",
+      "_tz3000_utagpnzs"
     ],
     "productId": [
       "TS0505A"
@@ -72,8 +73,5 @@
   "class": "light",
   "_notes": [
     "// FIX-EMPTY-MFR-AGGREGATEERROR: 2026-07-12 — placeholder added to prevent server-side build crash"
-  ],
-  "_pidConflictNotes": [
-    "// PID-CONFLICT-NOTE TS0505A shared with 13 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
   ]
 }

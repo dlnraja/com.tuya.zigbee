@@ -88,7 +88,7 @@ class GenericTuyaDevice extends AutoAdaptiveDevice {
     this._setupDPDiscovery();
 
     // Request common DPs after delay (for mains-powered devices)
-    this.homey.setTimeout(() => { if (this._destroyed) return; this._requestCommonDPs().catch(() => {}); }, 5000);
+    this.homey.setTimeout(() => { if (this._destroyed) {return;} this._requestCommonDPs().catch(() => {}); }, 5000);
 
     // Log auto-adaptive status
     const status = this.getAutoAdaptiveStatus();
@@ -103,7 +103,7 @@ class GenericTuyaDevice extends AutoAdaptiveDevice {
    * Override: Handle device-specific DP processing
    */
   async _handleDeviceSpecificDP(dpId, value, mapping) {
-    if (this._destroyed) return;
+    if (this._destroyed) {return;}
     // Log discovery for unknown devices
     this.log(`[GENERIC]  DP${dpId}  ${mapping.capability} = ${value}`);
 
@@ -165,7 +165,7 @@ class GenericTuyaDevice extends AutoAdaptiveDevice {
    * Handle discovered DP and auto-map to capabilities
    */
   async _handleDiscoveredDP(data) {
-    if (this._destroyed) return;
+    if (this._destroyed) {return;}
     const { dp, value, type } = data;
 
     this.log(`[GENERIC]  Discovered DP${dp} = ${JSON.stringify(value)} (type: ${type})`);
@@ -290,7 +290,7 @@ class GenericTuyaDevice extends AutoAdaptiveDevice {
    * Override onDeleted to cleanup
    */
   async onDeleted() {
-    if (this._destroyed) return;
+    if (this._destroyed) {return;}
     this._destroyed = true;
     this.log('[GENERIC] Device deleted, cleaning up...');
     this._discoveredDPs?.clear();

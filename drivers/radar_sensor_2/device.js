@@ -13,7 +13,7 @@ class radarSensor2 extends TuyaSpecificClusterDevice {
   _shouldPublishDistance(intervalSeconds) {
     const intervalMs = Math.max(1, Number(intervalSeconds) || 10) * 1000;
     const now = Date.now();
-    if (this._lastDistancePublishedAt && now - this._lastDistancePublishedAt < intervalMs) return false;
+    if (this._lastDistancePublishedAt && now - this._lastDistancePublishedAt < intervalMs) {return false;}
     this._lastDistancePublishedAt = now;
     return true;
   }

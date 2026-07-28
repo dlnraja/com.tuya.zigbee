@@ -1,3 +1,7 @@
+# 🌙 Nightly Audit
+# Triggers: cron: 30 3 * * * + workflow_dispatch | Secrets: GITHUB_TOKEN only
+# Doc header added 2026-07-29 (workflows genealogy enrichment).
+
 name: 🌙 Nightly Audit
 
 # Runs the full P57 audit + smart-data-validator + knowledge-graph daily

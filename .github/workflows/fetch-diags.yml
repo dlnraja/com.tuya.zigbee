@@ -1,3 +1,7 @@
+# Fetch Homey Diagnostics
+# Triggers: cron: 25 */6 * * * + workflow_dispatch | Secrets: GMAIL_APP_PASSWORD,GMAIL_CLIENT_ID,GMAIL_CLIENT_SECRET,GMAIL_EMAIL,GMAIL_REFRESH_TOKEN
+# Doc header added 2026-07-29 (workflows genealogy enrichment).
+
 name: Fetch Homey Diagnostics
 
 on:

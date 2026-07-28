@@ -1,3 +1,7 @@
+# Smart PR Auto-Merge
+# Triggers: pull_request,pull_request_review,workflow_dispatch | Secrets: CEREBRAS_API_KEY,DEEPSEEK_API_KEY,GH_PAT,GOOGLE_API_KEY,GROQ_API_KEY,HF_TOKEN,KIMI_API_KEY,MISTRAL_API_KEY,OPENAI_API_KEY,OPENROUTER_API_KEY,TOGETHER_API_KEY
+# Doc header added 2026-07-29 (workflows genealogy enrichment).
+
 name: Smart PR Auto-Merge
 
 # <!-- badges:start -->
@@ -38,11 +42,13 @@ jobs:
     name: "AI-Assisted Smart Merge"
     runs-on: ubuntu-latest
     timeout-minutes: 20
-    # Run on any PR (bot or human), or manual dispatch
+    # Run on same-repo PRs only (bot or human), or manual dispatch.
+    # Fork PRs are excluded: this job checkouts the PR merge commit and runs
+    # npm ci + .github/scripts/smart-pr-merge.js, i.e. executes PR code.
     if: >
       github.event_name == 'workflow_dispatch' ||
-      github.event_name == 'pull_request' ||
-      (github.event_name == 'pull_request_review' && github.event.review.state == 'approved')
+      (github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository) ||
+      (github.event_name == 'pull_request_review' && github.event.review.state == 'approved' && github.event.pull_request.head.repo.full_name == github.repository)
     env:
       # === AI providers — circular chain (ai-helper.js) ===
       GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}

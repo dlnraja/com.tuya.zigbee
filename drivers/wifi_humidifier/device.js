@@ -10,14 +10,14 @@ class WiFiHumidifierDevice extends TuyaLocalDevice {
   get dpMappings() {
     return {
       '1':  { capability: 'onoff', writable: true, transform: (v) => !!v, reverseTransform: (v) => !!v },
-      '2':  { capability: 'unknown' },
+      '2':  { capability: 'unknown' }, // tuya-local: "speed" (x5/15 devices)
       '3':  { capability: 'unknown' },
-      '4':  { capability: 'unknown' },
+      '4':  { capability: 'unknown' }, // tuya-local: "mode" (x4/15 devices)
       '6':  { capability: 'measure_humidity' },
       '7':  { capability: 'measure_temperature', smartDivisor: true },
       '11': { capability: 'unknown' },
-      '12': { capability: 'unknown' },
-      '13': { capability: 'unknown' },
+      '12': { capability: 'unknown' }, // tuya-local: "temperature_f" (x4/15 devices)
+      '13': { capability: 'unknown' }, // tuya-local: "humidity" (x8/15 devices)
       '14': { capability: 'alarm_water' },
       '15': { capability: 'unknown' },
       '101': { capability: 'unknown' },
@@ -36,7 +36,7 @@ class WiFiHumidifierDevice extends TuyaLocalDevice {
 
 
   async onDeleted() {
-    if (this._destroyed) return;
+    if (this._destroyed) {return;}
     this._destroyed = true;
     this.log('Device deleted, cleaning up');
     await super.onDeleted();

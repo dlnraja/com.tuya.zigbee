@@ -18,12 +18,12 @@ class IrrigationController extends ZigBeeDevice {
     this.registerCapability('onoff', CLUSTER.ON_OFF);
 
     this.registerCapabilityListener("onoff", async (value, options) => {
-      this.log("value "+value);
-      this.log("options "+options.duration);
+      this.log(`value ${value}`);
+      this.log(`options ${options.duration}`);
       if (value && options.duration != undefined ){
         await zclNode.endpoints[1].clusters['onOff'].setOn();
         this._onOffTimeout = this.homey.setTimeout(async () => {
-          if (this._destroyed) return;
+          if (this._destroyed) {return;}
           await zclNode.endpoints[1].clusters['onOff'].setOff();
         }, options.duration);
       } else if(value && options.duration === undefined){
@@ -50,11 +50,12 @@ class IrrigationController extends ZigBeeDevice {
         const batteryThreshold = this.getSetting('batteryThreshold') || 20;
         this.log('Battery percentage received:', batteryPercentage);
 
+        if (this._destroyed) {return;}
         this.safeSetCapabilityValue('measure_battery', batteryPercentage).catch((err) => {
           this.error('Failed to update battery level', err);
         });
 
-        this.safeSetCapabilityValue('alarm_battery', (batteryPercentageRemaining/2 < batteryThreshold) ? true : false).catch(this.error);
+        this.safeSetCapabilityValue('alarm_battery', batteryPercentageRemaining/2 < batteryThreshold ? true : false).catch(this.error);
 
       }
     });

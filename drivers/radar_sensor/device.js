@@ -62,7 +62,7 @@ class radarSensor extends TuyaSpecificClusterDevice {
   _shouldPublishDistance(intervalSeconds) {
     const intervalMs = Math.max(1, Number(intervalSeconds) || 10) * 1000;
     const now = Date.now();
-    if (this._lastDistancePublishedAt && now - this._lastDistancePublishedAt < intervalMs) return false;
+    if (this._lastDistancePublishedAt && now - this._lastDistancePublishedAt < intervalMs) {return false;}
     this._lastDistancePublishedAt = now;
     return true;
   }
@@ -78,14 +78,14 @@ class radarSensor extends TuyaSpecificClusterDevice {
 
     switch (dp) {
       case dataPoints.tshpsPresenceState:
-        this.log("presence state: "+ value)
+        this.log(`presence state: ${ value}`)
         this.safeSetCapabilityValue('alarm_motion', Boolean(value)).catch(() => {})
         break;
       case dataPoints.tshpscSensitivity:
-        this.log("sensitivity state: "+ value)
+        this.log(`sensitivity state: ${ value}`)
         break;
       case dataPoints.tshpsIlluminanceLux:
-        this.log("lux value: "+ value)
+        this.log(`lux value: ${ value}`)
         this.onIlluminanceMeasuredAttributeReport(value)
         break;
       case dataPoints.tshpsTargetDistance:

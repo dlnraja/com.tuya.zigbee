@@ -42,16 +42,15 @@ defaults:
 ```
 **TRAP**: Job without `npm ci` will crash on `require('./retry-helper')` imports!
 
-### Always include:
+### Always include (least privilege):
 ```yaml
 permissions:
-  contents: write
-  issues: write
-  pull-requests: write
+  contents: read  # default — add write scopes ONLY when a step actually needs them
 concurrency:
   group: workflow-name
   cancel-in-progress: true
 ```
+**WHY**: Every workflow MUST declare an explicit `permissions:` block (otherwise `GITHUB_TOKEN` inherits repo defaults). Start at `contents: read`; add `contents: write` only for `git push`, `issues: write` / `pull-requests: write` only when the workflow creates/comments issues or PRs. Never use write-for-all.
 
 ### Always set timeout:
 ```yaml
@@ -259,7 +258,7 @@ env:
 See `.github/SECRETS.md` for full secret reference.
 
 ### Supply-Chain Security
-All action refs pinned to SHA hashes (Mar 2026). Format: `action@SHA # vN`. Updated to Node.js 24: checkout v5, setup-node v5, upload-artifact v5, cache v5, github-script v7.0.1
+Pinning rule (actual, since Jul 2026): **third-party actions pinned to full SHA** — format `owner/repo@<SHA> # vX.Y.Z` (e.g. `peter-evans/create-pull-request`, `marocchino/sticky-pull-request-comment`). **Official `actions/*` on major version tags**: checkout v5, setup-node v5, upload-artifact v5, cache v5, github-script v7 — Node.js 24 runtime. (Earlier claim that ALL refs were SHA-pinned was wrong; third-party actions were pinned in the 2026-07-28 security follow-up.)
 
 ---
 
@@ -410,16 +409,15 @@ defaults:
 ```
 **TRAP**: Job without `npm ci` will crash on `require('./retry-helper')` imports!
 
-### Always include:
+### Always include (least privilege):
 ```yaml
 permissions:
-  contents: write
-  issues: write
-  pull-requests: write
+  contents: read  # default — add write scopes ONLY when a step actually needs them
 concurrency:
   group: workflow-name
   cancel-in-progress: true
 ```
+**WHY**: Every workflow MUST declare an explicit `permissions:` block (otherwise `GITHUB_TOKEN` inherits repo defaults). Start at `contents: read`; add `contents: write` only for `git push`, `issues: write` / `pull-requests: write` only when the workflow creates/comments issues or PRs. Never use write-for-all.
 
 ### Always set timeout:
 ```yaml
@@ -627,7 +625,7 @@ env:
 See `.github/SECRETS.md` for full secret reference.
 
 ### Supply-Chain Security
-All action refs pinned to SHA hashes (Mar 2026). Format: `action@SHA # vN`. Updated to Node.js 24: checkout v5, setup-node v5, upload-artifact v5, cache v5, github-script v7.0.1
+Pinning rule (actual, since Jul 2026): **third-party actions pinned to full SHA** — format `owner/repo@<SHA> # vX.Y.Z` (e.g. `peter-evans/create-pull-request`, `marocchino/sticky-pull-request-comment`). **Official `actions/*` on major version tags**: checkout v5, setup-node v5, upload-artifact v5, cache v5, github-script v7 — Node.js 24 runtime. (Earlier claim that ALL refs were SHA-pinned was wrong; third-party actions were pinned in the 2026-07-28 security follow-up.)
 
 ---
 

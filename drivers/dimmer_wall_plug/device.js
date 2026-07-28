@@ -144,7 +144,7 @@ const ENERGY_DEVICE_CONFIGS = {
 // Build manufacturer -> config lookup
 const ENERGY_CONFIG_MAP = {};
 for (const [configName, config] of Object.entries(ENERGY_DEVICE_CONFIGS)) {
-  for (const mfr of (config.sensors || [])) {
+  for (const mfr of config.sensors || []) {
     ENERGY_CONFIG_MAP[mfr] = { ...config, configName };
   }
 }
@@ -339,7 +339,7 @@ class EnergyMonitorPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
    */
   async _setupZclEnergy(zclNode, config) {
     const ep1 = zclNode?.endpoints?.[1];
-    if (!ep1 ) return;
+    if (!ep1 ) {return;}
 
     const zclAttrs = config.zclAttrs || {};
 
@@ -401,7 +401,7 @@ class EnergyMonitorPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
       const mc = ep1.clusters?.metering || ep1.clusters?.seMetering;
       const baseEDiv = zclAttrs.energy?.divisor || 100;const parseE = (v) => {
         const raw = typeof v === 'object' ? v[0] || 0 : v;
-        const eScale = parseFloat(this.getSetting?.('meter_power_scale')) || 1;return safeDivide(((raw, safeMultiply)(baseEDiv)), eScale);
+        const eScale = parseFloat(this.getSetting?.('meter_power_scale')) || 1;return safeDivide((raw, safeMultiply)(baseEDiv), eScale);
       };
       if (mc && zclAttrs.energy) {
         if (mc.on) {
@@ -414,7 +414,7 @@ class EnergyMonitorPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
         // v5.11.26: Poll metering  many TS011F don't auto-report energy
         if (mc.readAttributes) {
           this._meterPoll = this.homey.setInterval(async () => {
-            if (this._destroyed) return;
+            if (this._destroyed) {return;}
             try {
               const a = await mc.readAttributes(['currentSummDelivered']).catch(() => null);
               if (a?.currentSummDelivered !== undefined) {

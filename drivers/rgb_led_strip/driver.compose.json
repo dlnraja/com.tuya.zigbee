@@ -14,7 +14,21 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_TZE200_placeholder_rgb_led_strip"
+      "_tz3000_12sxjap4",
+      "_tz3000_dbou1ap4",
+      "_TZ3000_dbou1ap4",
+      "_TZ3000_DBOU1AP4",
+      "_tz3000_hlijwsai",
+      "_tz3000_jd3z4yig",
+      "_tz3000_kdpxju99",
+      "_TZ3000_kdpxju99",
+      "_TZ3000_KDPXJU99",
+      "_TZ3000_KEABPIGV",
+      "_tz3000_riwp3k79",
+      "_TZ3000_riwp3k79",
+      "_TZ3000_RIWP3K79",
+      "_tz3210_4ubylghk",
+      "_tz3210_jd3z4yig"
     ],
     "productId": [
       "TS0505A"
@@ -72,8 +86,5 @@
   "class": "light",
   "_notes": [
     "// FIX-EMPTY-MFR-AGGREGATEERROR: 2026-07-12 — placeholder added to prevent server-side build crash"
-  ],
-  "_pidConflictNotes": [
-    "// PID-CONFLICT-NOTE TS0505A shared with 13 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
   ]
 }

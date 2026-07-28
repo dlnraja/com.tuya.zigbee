@@ -36,19 +36,20 @@ fs.writeFileSync(BACKUP, raw);
 console.log('  ✓ Backup créé: app.json.backup2');
 
 // --- 2. Corriger le champ category ---
+// Athom server requires category to be a STRING, not an array.
 console.log('\n[2/6] Correction du champ category...');
 const oldCategory = app.category;
-if (typeof app.category === 'string') {
-  app.category = [app.category];
-  console.log(`  ✓ category: "${oldCategory}" → ${JSON.stringify(app.category)}`);
-} else if (Array.isArray(app.category)) {
-  console.log(`  ✓ category déjà en array: ${JSON.stringify(app.category)}`);
+if (Array.isArray(app.category)) {
+  app.category = app.category[0] || 'appliances';
+  console.log(`  ✓ category: "${oldCategory}" → "${app.category}"`);
+} else if (typeof app.category === 'string') {
+  console.log(`  ✓ category déjà en string: "${app.category}"`);
 }
 
 // Même correction dans .homeycompose/app.json
 const composeApp = JSON.parse(Buffer.from(fs.readFileSync(COMPOSE_APP)).toString('utf8'));
-if (typeof composeApp.category === 'string') {
-  composeApp.category = [composeApp.category];
+if (Array.isArray(composeApp.category)) {
+  composeApp.category = composeApp.category[0] || 'appliances';
   fs.writeFileSync(COMPOSE_APP, JSON.stringify(composeApp, null, 2));
   console.log('  ✓ .homeycompose/app.json category corrigé aussi');
 }

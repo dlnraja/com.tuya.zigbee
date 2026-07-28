@@ -181,7 +181,7 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
   }
 
   async _handleTuyaDP(dp, value) {
-    if (this._destroyed) return;
+    if (this._destroyed) {return;}
     // Battery DPs
     if (dp === 4 || dp === 15 || (dp === 101 && typeof value === 'number')) {
       const battery = Math.min(100, Math.max(0, parseInt(value, 10)));
@@ -257,7 +257,7 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
    * Alarm Handling
    */
   async _handleAlarm(payload) {
-    if (this._destroyed) return;
+    if (this._destroyed) {return;}
     this._updateActivity();
 
     const now = Date.now();
@@ -280,7 +280,7 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
     // Auto-reset
     if (this._resetTimeout) {this.homey.clearTimeout(this._resetTimeout);}
     this._resetTimeout = this.homey.setTimeout(async () => {
-      if (this._destroyed) return;
+      if (this._destroyed) {return;}
       await this.safeSetCapabilityValue('alarm_generic', false).catch(() => { });
       this.log('[SOS] alarm_generic reset');
     }, 5000);
@@ -303,7 +303,7 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
   }
 
   async _updateBattery(value, type) {
-    if (this._destroyed) return;
+    if (this._destroyed) {return;}
     if (value === undefined || value === null || value === 255) {return;}
 
     let percent;
@@ -345,7 +345,7 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
     try {
       const result = await Promise.race([
         powerCfg.readAttributes(['batteryPercentageRemaining', 'batteryVoltage']),
-        new Promise((_, r) => this.homey.setTimeout(() => { if (this._destroyed) return; r(new Error('Timeout')); }, 1500))
+        new Promise((_, r) => this.homey.setTimeout(() => { if (this._destroyed) {return;} r(new Error('Timeout')); }, 1500))
       ]).catch(() => ({}));
 
       if (result.batteryPercentageRemaining !== undefined) {this._updateBattery(result.batteryPercentageRemaining, 'percentage');}
@@ -361,7 +361,7 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
   _setupHeartbeatMonitor() {
     this._lastActivity = Date.now();
     this._heartbeatInterval = this.homey.setInterval(() => {
-      if (this._destroyed) return;
+      if (this._destroyed) {return;}
       const hours = (Date.now() - this._lastActivity) / (1000 * 60 * 60);
       if (hours > 24) {
         this.log('[SOS] ⚠️ No activity for', Math.round(hours), 'hours');

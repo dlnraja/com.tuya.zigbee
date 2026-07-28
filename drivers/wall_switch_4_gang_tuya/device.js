@@ -77,7 +77,7 @@ class wall_switch_4_gang_tuya extends TuyaSpecificClusterDevice {
   async _setupGang(zclNode, gangName, dpOnOff) {
     // Register capability listener for on/off for each gang
     this.registerCapabilityListener('onoff', async (value) => {
-      if (typeof this.markAppCommand === 'function') this.markAppCommand();
+      if (typeof this.markAppCommand === 'function') {this.markAppCommand();}
       this.log(`${gangName} on/off:`, value);
       try {
         await this.writeBool(dpOnOff, value);
@@ -101,7 +101,7 @@ class wall_switch_4_gang_tuya extends TuyaSpecificClusterDevice {
       case V1_MULTI_SWITCH_DATA_POINTS.onOffSwitchOne:
         this.log('Received on/off for first gang:', parsedValue);
         if (!this.isSubDevice()) {
-          if (typeof this._triggerPhysicalFlow === 'function') this._triggerPhysicalFlow(parsedValue);
+          if (typeof this._triggerPhysicalFlow === 'function') {this._triggerPhysicalFlow(parsedValue);}
           await this['safeSetCapabilityValue']('onoff', parsedValue).catch(this.error);
         }
         break;
@@ -109,7 +109,7 @@ class wall_switch_4_gang_tuya extends TuyaSpecificClusterDevice {
       case V1_MULTI_SWITCH_DATA_POINTS.onOffSwitchTwo:
         this.log('Received on/off for second gang:', parsedValue);
         if (subDeviceId === 'secondGang') {
-          if (typeof this._triggerPhysicalFlow === 'function') this._triggerPhysicalFlow(parsedValue);
+          if (typeof this._triggerPhysicalFlow === 'function') {this._triggerPhysicalFlow(parsedValue);}
           await this['safeSetCapabilityValue']('onoff', parsedValue).catch(this.error);
         }
         break;
@@ -117,7 +117,7 @@ class wall_switch_4_gang_tuya extends TuyaSpecificClusterDevice {
       case V1_MULTI_SWITCH_DATA_POINTS.onOffSwitchThree:
         this.log('Received on/off for third gang:', parsedValue);
         if (subDeviceId === 'thirdGang') {
-          if (typeof this._triggerPhysicalFlow === 'function') this._triggerPhysicalFlow(parsedValue);
+          if (typeof this._triggerPhysicalFlow === 'function') {this._triggerPhysicalFlow(parsedValue);}
           await this['safeSetCapabilityValue']('onoff', parsedValue).catch(this.error);
         }
         break;
@@ -125,7 +125,7 @@ class wall_switch_4_gang_tuya extends TuyaSpecificClusterDevice {
       case V1_MULTI_SWITCH_DATA_POINTS.onOffSwitchFour:
         this.log('Received on/off for fourth gang:', parsedValue);
         if (subDeviceId === 'fourthGang') {
-          if (typeof this._triggerPhysicalFlow === 'function') this._triggerPhysicalFlow(parsedValue);
+          if (typeof this._triggerPhysicalFlow === 'function') {this._triggerPhysicalFlow(parsedValue);}
           await this['safeSetCapabilityValue']('onoff', parsedValue).catch(this.error);
         }
         break;

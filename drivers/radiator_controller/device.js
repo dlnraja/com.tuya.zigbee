@@ -21,7 +21,7 @@ class RadiatorControllerDevice extends ZigBeeDevice {
 
     try {
       this._timeSync = new ZigbeeTimeSync(this, { throttleMs: 6 * 60 * 60 * 1000 });
-      this.homey.setTimeout(async () => { if (this._destroyed) return; const result = await this._timeSync.sync({ force: true }).catch(() => ({ success: false }));
+      this.homey.setTimeout(async () => { if (this._destroyed) {return;} const result = await this._timeSync.sync({ force: true }).catch(() => ({ success: false }));
         if (result.success) {this.log('[TimeSync] Initial sync successful');} }, 10000);
     } catch (e) {
       this.log('[TimeSync] Init failed:', e.message);

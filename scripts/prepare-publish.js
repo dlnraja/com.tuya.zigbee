@@ -403,6 +403,24 @@ try {
       process.exit(1);
     }
     console.log(`Zigbee identifier matrix: ${compact.beforeTotal} -> ${compact.afterTotal} combinations across ${(compact.changes || []).length} compacted driver(s), ${compact.pruned || 0} pruned synthetic driver(s).`);
+    console.log(`  - mfs_db evidence: ${compact.mfsDbLoaded ? 'loaded (prioritized compaction)' : 'ABSENT — legacy order-based truncation'}`);
+    if (compact.mfsDbLoaded) {
+      console.log(`  - observed manufacturers preserved: ${compact.observedKept}/${compact.observedBefore}`);
+      if ((compact.rescuedDrivers || []).length > 0) {
+        console.log(`  - rescued ${compact.rescuedDrivers.length} all-synthetic/empty driver(s) with observed mfs_db manufacturers: ${compact.rescuedDrivers.map(r => r.id).join(', ')}`);
+      }
+    }
+    if ((compact.observedDropped || []).length > 0) {
+      console.error(`  - WARNING: budget-forced observed manufacturer drops in ${compact.observedDropped.length} driver(s):`);
+      for (const item of compact.observedDropped.slice(0, 12)) {
+        console.error(`    - ${item.id}: ${item.manufacturers.length} dropped (${item.manufacturers.slice(0, 5).join(', ')}${item.manufacturers.length > 5 ? ', ...' : ''})`);
+      }
+    }
+    if (process.env.COMPACT_VERBOSE === '1' && Array.isArray(compact.logLines)) {
+      for (const line of compact.logLines) {
+        console.log(`  ${line}`);
+      }
+    }
     if (compact.filteredSyntheticManufacturers > 0) {
       console.log(`  - removed ${compact.filteredSyntheticManufacturers} synthetic manufacturer identifier(s) from publish manifest`);
     }

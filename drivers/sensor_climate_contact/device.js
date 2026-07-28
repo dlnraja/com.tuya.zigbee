@@ -592,7 +592,7 @@ return Math.min(100, safeMultiply(v, 2)); // Fallback: treat as raw with x2
 
       // Daily sync (ultra battery-safe)
       this._dailyZclSyncInterval = this.homey.setInterval(async () => {
-        if (this._destroyed) return;
+        if (this._destroyed) {return;}
         this.log('[CLIMATE]  Daily ZCL Time sync...');
         const result = await this.zigbeeTimeSync.sync();
         this.log(`[CLIMATE] Daily sync result: ${result.success ? 'success' : result.reason}`);
@@ -624,7 +624,7 @@ return Math.min(100, safeMultiply(v, 2)); // Fallback: treat as raw with x2
       const lcdSyncDelays = [3000, 10000, 30000, 60000, 120000]; // 3s, 10s, 30s, 1m, 2m
       lcdSyncDelays.forEach((delay, index) => {
         this.homey.setTimeout(async () => {
-          if (this._destroyed) return;
+          if (this._destroyed) {return;}
           try {
             this.log(`[CLIMATE]  LCD time sync attempt ${index + 1}/${lcdSyncDelays.length}...`);
             await this._sendForcedTimeSync();
@@ -637,7 +637,7 @@ return Math.min(100, safeMultiply(v, 2)); // Fallback: treat as raw with x2
 
       // Schedule hourly Tuya EF00 sync for LCD devices (in addition to ZCL daily)
       this._hourlyLcdSyncInterval = this.homey.setInterval(async () => {
-        if (this._destroyed) return;
+        if (this._destroyed) {return;}
         this.log('[CLIMATE]  Hourly LCD Tuya EF00 time sync...');
         await this._sendForcedTimeSync().catch(e => this.log('[CLIMATE] LCD sync failed:', e.message));
       },60 * 60 * 1000); // 1 hour
@@ -646,7 +646,7 @@ return Math.min(100, safeMultiply(v, 2)); // Fallback: treat as raw with x2
     // Legacy time sync for non-RTC devices (keep existing behavior)
     if (!TuyaDeviceClassifier.hasRtcScreen(this) && !this.isLCDClimateDevice()) {
       this._hourlySyncInterval = this.homey.setInterval(async () => {
-        if (this._destroyed) return;
+        if (this._destroyed) {return;}
         this.log('[CLIMATE]  Hourly time sync (non-RTC device)...');
         await this._sendTimeSync().catch(e => this.log('[CLIMATE] Time sync failed:', e.message));
       },60 * 60 * 1000); // 1 hour
@@ -1203,7 +1203,7 @@ return Math.min(100, safeMultiply(v, 2)); // Fallback: treat as raw with x2
 
     intervals.forEach((delay, index) => {
       const timer = this.homey.setTimeout(async () => {
-        if (this._destroyed) return;
+        if (this._destroyed) {return;}
         this.log(`[CLIMATE]  DP request attempt ${index + 1}/${intervals.length}`);
 
         const zclNode = this._zclNode;
@@ -1405,7 +1405,7 @@ return Math.min(100, safeMultiply(v, 2)); // Fallback: treat as raw with x2
    * Merged from climate_box_vvmbj46n - LCD devices need time sync when they wake
    */
   async _handleDP(dp, value, dataType) {
-    if (this._destroyed) return;
+    if (this._destroyed) {return;}
     // Device is awake! Trigger time sync for LCD displays
     if (CI.containsCI(getManufacturer(this), '_tze284')) {
       this._sendTimeSync().catch(() => { });
@@ -1540,7 +1540,7 @@ return Math.min(100, safeMultiply(v, 2)); // Fallback: treat as raw with x2
     super.onTuyaStatus(status);
 
     // Log final capability values after processing
-    this.homey.setTimeout(() => { if (this._destroyed) return; const temp = this.getCapabilityValue('measure_temperature');
+    this.homey.setTimeout(() => { if (this._destroyed) {return;} const temp = this.getCapabilityValue('measure_temperature');
       const hum = this.getCapabilityValue('measure_humidity');
       const bat = this.getCapabilityValue('measure_battery');
       if (temp !== null || hum !== null || bat !== null) {
@@ -1617,7 +1617,7 @@ return Math.min(100, safeMultiply(v, 2)); // Fallback: treat as raw with x2
   }
 
   async onDeleted() {
-    if (this._destroyed) return;
+    if (this._destroyed) {return;}
     this._destroyed = true;
     this.log('[CLIMATE] Device deleted');
     await this.onUninit();

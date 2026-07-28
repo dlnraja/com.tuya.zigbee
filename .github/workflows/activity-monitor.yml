@@ -1,3 +1,7 @@
+# Activity Monitor (P30)
+# Triggers: cron: 0 4 * * * + workflow_dispatch | Secrets: GITHUB_TOKEN only
+# Doc header added 2026-07-29 (workflows genealogy enrichment).
+
 defaults:
   run:
     shell: bash
@@ -12,6 +16,13 @@ on:
     # Daily at 04:00 UTC (after shadow-mode at 03:00)
     - cron: '0 4 * * *'
   workflow_dispatch:
+
+# Least privilege: push of the activity snapshot + read-only GH API scans
+permissions:
+  contents: write
+  issues: read
+  pull-requests: read
+  actions: read
 
 jobs:
   fetch-activity:

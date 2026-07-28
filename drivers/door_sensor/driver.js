@@ -7,7 +7,7 @@ class DoorSensorDriver extends Driver {
 
   async onInit() {
     await super.onInit();
-    if (this._flowCardsRegistered) return;
+    if (this._flowCardsRegistered) {return;}
     this._flowCardsRegistered = true;
 
       // === AUTO-GENERATED FLOW HANDLERS ===
@@ -15,19 +15,19 @@ class DoorSensorDriver extends Driver {
       // Edit if you need custom behaviour.
 
       this.homey.flow.getConditionCard('door_sensor_is_open')?.registerRunListener(async (args) => {
-        if (!args.device) return false;
+        if (!args.device) {return false;}
         return args.device.getCapabilityValue('open') === true;
       });
       this.homey.flow.getConditionCard('door_sensor_battery_above')?.registerRunListener(async (args) => {
-        if (!args.device) return false;
+        if (!args.device) {return false;}
         return args.device.getCapabilityValue('door_sensor_battery') >= args.threshold;
       });
       this.homey.flow.getConditionCard('door_sensor_contact_open')?.registerRunListener(async (args) => {
-        if (!args.device) return false;
+        if (!args.device) {return false;}
         return true; // TODO: implement condition for door_sensor_contact_open
       });
       this.homey.flow.getConditionCard('door_sensor_tamper_active')?.registerRunListener(async (args) => {
-        if (!args.device) return false;
+        if (!args.device) {return false;}
         return true; // TODO: implement condition for door_sensor_tamper_active
       });
   }

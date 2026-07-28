@@ -27,7 +27,7 @@ class DimmerWall1GangDevice extends VirtualButtonMixin(UnifiedLightBase) {
   _markAppCommand() {
     this._appCommandPending = true;
     clearTimeout(this._appCommandTimeout);
-    this._appCommandTimeout = this.homey.setTimeout(() => { if (this._destroyed) return; this._appCommandPending = false; }, 2000);
+    this._appCommandTimeout = this.homey.setTimeout(() => { if (this._destroyed) {return;} this._appCommandPending = false; }, 2000);
   }
 
   async _setOnOff(value) { this._markAppCommand(); return super._setOnOff(value); }
@@ -40,29 +40,42 @@ class DimmerWall1GangDevice extends VirtualButtonMixin(UnifiedLightBase) {
 
     if (dpId === 1) {
       const v = rawValue === 1 || rawValue === true;
-      if (this._lastOnoffState === v) return;
+      if (this._lastOnoffState === v) {return;}
       this._lastOnoffState = v;
       if (isPhysical) {
-        const id = v ? 'air_purifier_dimmer_dimmer_wall_1gang_physical_on' : 'air_purifier_dimmer_dimmer_wall_1gang_physical_off';
+        // IDs alignés sur driver.flow.compose.json (simple préfixe)
+        const id = v ? 'air_purifier_dimmer_wall_1gang_physical_on' : 'air_purifier_dimmer_wall_1gang_physical_off';
         const card = this.safeApp?._safeGetTriggerCard?.(id );
-        if (card) card.trigger(this, {}, {}).catch(() => {});
+        if (card) {card.trigger(this, {}, {}).catch(() => {});}
       }
     } else if (dpId === 2 || dpId === 101) {
       const dim = this.getCapabilityValue('dim');
-      if (this._lastDimValue === dim) return;
+      if (this._lastDimValue === dim) {return;}
       const increased = oldDim !== null && dim > oldDim;
       this._lastDimValue = dim;
+      this._triggerDimChanged(dim);
       if (isPhysical && oldDim !== null) {
-        const id = increased ? 'air_purifier_dimmer_dimmer_wall_1gang_physical_brightness_up' : 'air_purifier_dimmer_dimmer_wall_1gang_physical_brightness_down';
+        const id = increased ? 'air_purifier_dimmer_wall_1gang_physical_brightness_up' : 'air_purifier_dimmer_wall_1gang_physical_brightness_down';
         const card = this.safeApp?._safeGetTriggerCard?.(id );
-        if (card) card.trigger(this, { brightness: Math.round(dim * 100) }, {}).catch(() => {});
+        if (card) {card.trigger(this, { brightness: Math.round(dim * 100) }, {}).catch(() => {});}
       }
     }
   }
 
+  /**
+   * Déclenche la carte dimmer_1gang_dim_changed avec son token `dim` (0-1).
+   */
+  _triggerDimChanged(dim) {
+    if (this._destroyed) {return;}
+    try {
+      const card = this.homey.flow.getDeviceTriggerCard('air_purifier_dimmer_wall_1gang_dimmer_1gang_dim_changed');
+      if (card) {card.trigger(this, { dim }, {}).catch(() => {});}
+    } catch (e) { /* flow indisponible */ }
+  }
+
   onDeleted() {
     clearTimeout(this._appCommandTimeout);
-    if (typeof super.onDeleted === 'function') super.onDeleted();
+    if (typeof super.onDeleted === 'function') {super.onDeleted();}
   }
 }
 

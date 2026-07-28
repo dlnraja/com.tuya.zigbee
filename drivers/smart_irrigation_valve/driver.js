@@ -28,12 +28,12 @@ class SmartIrrigationValveDriver extends ZigBeeDriver {
     const safeRegisterAction = (id, fn) => {
       try {
         const card = this.homey.flow.getActionCard(id);
-        if (card) card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+        if (card) {card.registerRunListener(async (args) => {
+          if (!args.device) {return false;}
           return fn(args.device, args);
-        });
+        });}
       } catch (e) {
-        if (this.developerDebugMode) this.error(`Action ${id} registration error: ${e.message}`);
+        if (this.developerDebugMode) {this.error(`Action ${id} registration error: ${e.message}`);}
       }
     };
 
@@ -50,7 +50,7 @@ class SmartIrrigationValveDriver extends ZigBeeDriver {
       const faultCard = this.homey.flow.getConditionCard('smart_irrigation_valve_fault_active');
       if (faultCard) {
         faultCard.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           return args.device.getCapabilityValue('alarm_fault') === true;
         });
       }

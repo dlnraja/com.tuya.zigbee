@@ -30,7 +30,7 @@ class Button2GangDevice extends ButtonDevice {
     // v5.9.22: Use centralized resolvePressType (prevents 0-index regression)
     for (let ep = 1; ep <= 2; ep++) {
       const endpoint = zclNode?.endpoints?.[ep];
-      if (!endpoint ) continue;
+      if (!endpoint ) {continue;}
       const sc = endpoint.clusters?.scenes || endpoint.clusters?.[5];
       if (sc?.on) {
         sc.on('recall', async (p ) => {
@@ -53,7 +53,7 @@ class Button2GangDevice extends ButtonDevice {
         tc.on('response', async (d) => {
           const dp = d?.dp ?? d?.dpId;
           const v = d?.data ?? d?.value ?? 0;
-          if (dp >= 1 && dp <= 2) await this.triggerButtonPress(dp, resolvePressType(v, 'BTN2-DP'));
+          if (dp >= 1 && dp <= 2) {await this.triggerButtonPress(dp, resolvePressType(v, 'BTN2-DP'));}
       });
       }
     } catch (e) { /* ok */ }
@@ -66,7 +66,7 @@ class Button2GangDevice extends ButtonDevice {
 
     for (let ep = 1; ep <= 2; ep++) {
       const endpoint = zclNode?.endpoints?.[ep];
-      if (!endpoint ) continue;
+      if (!endpoint ) {continue;}
 
       // v5.8.16: Try registered tuyaE000 cluster
       const e000Cluster = endpoint.clusters?.tuyaE000 || endpoint.clusters?.[57344];
@@ -95,7 +95,7 @@ class Button2GangDevice extends ButtonDevice {
       if (onOff && typeof onOff.on === 'function') {
         const handle = async (cmd, type) => {
           const now = Date.now();
-          if (now - (this._e000Dedup[`${ep}_${cmd}`] || 0) < 500) return;
+          if (now - (this._e000Dedup[`${ep}_${cmd}`] || 0) < 500) {return;}
           this._e000Dedup[`${ep}_${cmd}`] = now;
           this.log(`[BUTTON2-E000]  EP${ep} ${cmd}  Button ${ep} ${type}`);
           await this.triggerButtonPress(ep, type);
@@ -109,7 +109,7 @@ class Button2GangDevice extends ButtonDevice {
           const ce = ep;
           if (endpoint) {
             endpoint.bind('onOff', new OBC({onSetOn:(p)=>{
-              if(p?.cmdId!==0xFD)return;
+              if(p?.cmdId!==0xFD){return;}
               this.triggerButtonPress(ce, resolvePressType(p.scene?? 0, 'BTN2-0xFD'));
             }}));
           }
@@ -128,17 +128,17 @@ class Button2GangDevice extends ButtonDevice {
       const TuyaE000BoundCluster = require('../../lib/clusters/TuyaE000BoundCluster');
       for (let ep = 1; ep <= 2; ep++) {
         const endpoint = zclNode?.endpoints?.[ep];
-        if (!endpoint ) continue;
+        if (!endpoint ) {continue;}
         const bc = new TuyaE000BoundCluster({
           device: this,
           onButtonPress: async (button, pressType) => {
-            const btn = (button >= 1 && button <= 2) ? button : ep;
+            const btn = button >= 1 && button <= 2 ? button : ep;
             this.log(`[BUTTON2-E000]  BoundCluster EP${ep}  Button ${btn} ${pressType}`);
             await this.triggerButtonPress(btn, pressType);
           }
         });
         bc.endpoint = ep;
-        if (!endpoint.bindings) endpoint.bindings = {};
+        if (!endpoint.bindings) {endpoint.bindings = {};}
         endpoint.bindings['tuyaE000'] = bc;
         this.log(`[BUTTON2-E000]  BoundCluster EP${ep} ready`);
       }
@@ -149,7 +149,7 @@ class Button2GangDevice extends ButtonDevice {
 
   async _setupRawFrameInterceptor(zclNode) {
     try {
-      if (!zclNode || typeof zclNode.handleFrame !== 'function') return;
+      if (!zclNode || typeof zclNode.handleFrame !== 'function') {return;}
       const orig = zclNode.handleFrame.bind(zclNode);
       zclNode.handleFrame = async (epId, cId, f, m) => {
         if (cId === 57344 || cId === 0xE000) {
@@ -166,14 +166,14 @@ class Button2GangDevice extends ButtonDevice {
   }
 
   async onDeleted() {
-    if (this._destroyed) return;
+    if (this._destroyed) {return;}
     this._destroyed = true;
     this.log('Button2GangDevice deleted');
     if (this._clickState) {
-      if (this._clickState.clickTimer) clearTimeout(this._clickState.clickTimer);
-      if (this._clickState.longPressTimer) clearTimeout(this._clickState.longPressTimer);
+      if (this._clickState.clickTimer) {clearTimeout(this._clickState.clickTimer);}
+      if (this._clickState.longPressTimer) {clearTimeout(this._clickState.longPressTimer);}
     }
-    if (super.onDeleted) await super.onDeleted();
+    if (super.onDeleted) {await super.onDeleted();}
   }
 }
 
