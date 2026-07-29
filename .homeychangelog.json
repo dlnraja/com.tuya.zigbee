@@ -1,6 +1,11 @@
 {
   "changelog": [
     {
+      "version": "9.0.359",
+      "date": "2026-07-29",
+      "en": "fix: ghost drivers pruned from publish, climate probe DP38, resolve-collisions case fix, security untracking"
+    },
+    {
       "version": "9.0.333",
       "date": "2026-07-23",
       "channel": "master",
