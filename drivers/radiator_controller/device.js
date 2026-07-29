@@ -78,10 +78,10 @@ class RadiatorControllerDevice extends ZigBeeDevice {
     }
 
     try {
-        const heatingAction = (() => { try { return this.homey.flow.getActionCard('set_heating_mode'); } catch (e) { return null; } })();
-        heatingAction.registerRunListener(async (args) => this._setHeatingMode(args.mode));
+        const pilotSent = (() => { try { return this.homey.flow.getDeviceTriggerCard('pilot_signal_sent'); } catch (e) { return null; } })();
+        this._pilotSignalSentTrigger = pilotSent;
     } catch (e) {
-        this.log('set_heating_mode action not available');
+        this.log('pilot_signal_sent trigger not available');
     }
   }
 
@@ -127,8 +127,19 @@ class RadiatorControllerDevice extends ZigBeeDevice {
 
   async _sendPilotWireSignal(mode) {
     const config = this.heatingModes[mode];
+    if (!config) {return false;}
     this.log(`Pilot wire signal: ${config.description}`);
     // implementation details for pulse modulation...
+    if (this._pilotSignalSentTrigger) {
+      this._pilotSignalSentTrigger.trigger(this, { signal_type: mode }).catch(() => {});
+    }
+    return true;
+  }
+
+  async _setTemperatureOffset(offset) {
+    this.log(`Temperature offset: ${offset}°C`);
+    this.temperatureOffset = offset;
+    // implementation details for offset calibration...
     return true;
   }
 

@@ -152,7 +152,7 @@ class GenericDIYDevice extends ZigBeeDevice {
 
   _registerFlowActions() {
     // Identify
-    this.homey.flow.getDeviceTriggerCard('generic_diy_identify')?.registerRunListener(async () => {
+    this.homey.flow.getDeviceActionCard('generic_diy_identify')?.registerRunListener(async () => {
       const ep = this.zclNode?.endpoints?.[1];
       if (ep?.clusters?.identify) {
         await ep.clusters.identify.identify({ identifyTime: 5 });
@@ -161,21 +161,21 @@ class GenericDIYDevice extends ZigBeeDevice {
     });
 
     // Turn ON endpoint
-    this.homey.flow.getDeviceTriggerCard('generic_diy_turn_on_endpoint')?.registerRunListener(async ({ endpoint } ) => {
+    this.homey.flow.getDeviceActionCard('generic_diy_turn_on_endpoint')?.registerRunListener(async ({ endpoint } ) => {
       const ep = this.zclNode?.endpoints?.[endpoint];
       if (ep?.clusters?.onOff) {await ep.clusters.onOff.setOn();}
       return true;
     });
 
     // Turn OFF endpoint
-    this.homey.flow.getDeviceTriggerCard('generic_diy_turn_off_endpoint')?.registerRunListener(async ({ endpoint } ) => {
+    this.homey.flow.getDeviceActionCard('generic_diy_turn_off_endpoint')?.registerRunListener(async ({ endpoint } ) => {
       const ep = this.zclNode?.endpoints?.[endpoint];
       if (ep?.clusters?.onOff) {await ep.clusters.onOff.setOff();}
       return true;
     });
 
     // Set Dim Level
-    this.homey.flow.getDeviceTriggerCard('generic_diy_set_dim')?.registerRunListener(async ({ level } ) => {
+    this.homey.flow.getDeviceActionCard('generic_diy_set_dim')?.registerRunListener(async ({ level } ) => {
       const ep = this.zclNode?.endpoints?.[1];
       if (ep?.clusters?.levelControl) {
         await ep.clusters.levelControl.moveToLevel({ level: safeMultiply(Math.round(level), 254), transitionTime: 0 });

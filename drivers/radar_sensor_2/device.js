@@ -24,7 +24,7 @@ class radarSensor2 extends TuyaSpecificClusterDevice {
     this.enableDebug(); */
 
     // Initialize the flow card for target distance changes
-    this.targetDistanceTrigger = this.homey.flow.getDeviceTriggerCard('target_distance_changed');
+    this.targetDistanceTrigger = this.homey.flow.getDeviceTriggerCard('radar_sensor_2_target_distance_changed');
 
     // Read and log device attributes
     await this._readDeviceAttributes(zclNode);
