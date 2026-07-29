@@ -59,15 +59,12 @@ jobs:
 
       - name: Bump stable version
         run: |
-          # Get current version
+          # Get current version (strip any legacy -stable suffix: pre-release
+          # versions are rejected by `homey app validate --level publish`)
           CURRENT=$(node -e "const c=require('./.homeycompose/app.json');console.log(c.version)")
           echo "Current version: $CURRENT"
-          # Bump patch
-          NEW=$(echo $CURRENT | awk -F. '{print $1"."$2"."$3+1"-stable"}')
-          if [ "$NEW" = "$CURRENT" ] || [ "$NEW" = "${CURRENT%-stable}-stable" ]; then
-            # Already has -stable suffix, bump patch
-            NEW=$(echo $CURRENT | sed 's/\([0-9]*\)\.\([0-9]*\)\.\([0-9]*\)\(-stable\)\?$/\1.\2.\3-stable/' | awk -F. '{print $1"."$2"."$3+1"-stable"}')
-          fi
+          # Bump patch — plain semver x.y.z only
+          NEW=$(echo ${CURRENT%-stable} | awk -F. '{print $1"."$2"."$3+1}')
           node -e "
             const fs=require('fs');
             const c=JSON.parse(fs.readFileSync('.homeycompose/app.json','utf8'));
