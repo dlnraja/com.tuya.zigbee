@@ -4,6 +4,18 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
+## [5.12.30] - 2026-07-29
+
+Stability line (branch `stable-v5`, production). Minimal zero-regression backport from master.
+
+### Bug Fixes
+- `measure_temperature.probe` (external probe, DP38 — e.g. `_TZE284_hodyryli`, issue #513): probe
+  temperature was shown 10x too low. `SmartDivisorManager` now knows `measure_temperature.probe`
+  (temperature type, ×10 divisor, valid range), so the raw ×10 value is scaled before
+  `ProductValueValidator` auto-correction. Regression test added (`test/smart-divisor-probe.test.js`).
+
+---
+
 ## [5.12.29] - 2026-07-27
 
 Stability line (branch `stable-v5`, production). This release contains only minimal,
