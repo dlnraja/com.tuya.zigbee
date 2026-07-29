@@ -34,7 +34,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.365 |
+| **App Version** | v9.0.366 |
 | **Device Fingerprints** | 5,655+ |
 | **Unique Product IDs** | 571 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
@@ -102,6 +102,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | Version | Changes |
 |---------|---------|
 | **vchangelog** | [object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object  |
+| **v9.0.366** | v9.0.365: Battery estimation: the generic 0-50-scale doubling heuristic in `UnifiedBatteryHandler.normalizeZigbeeValu... |
 | **v9.0.365** | v9.0.364: Smart scaling engine (dynamic divisors/multipliers): |
 | **v9.0.363** | v9.0.361: `measure_temperature.probe` (external probe, DP38 â€” e.g. `_TZE284_hodyryli`, issue #513): probe temperature... |
 | **v9.0.362** | v9.0.361: `measure_temperature.probe` (external probe, DP38 â€” e.g. `_TZE284_hodyryli`, issue #513): probe temperature... |
@@ -115,7 +116,6 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | **v9.0.354** | Stability improvements and Homey test publication retry after transient processing failure. |
 | **v9.0.353** | Stability improvements and Homey test publication retry after transient processing failure. |
 | **v9.0.352** | v9.0.346: fix(P89): mfs_db dedup + TuyaNormalizer in DeviceFingerprintDB |
-| **v9.0.351** | v9.0.346: fix(P89): mfs_db dedup + TuyaNormalizer in DeviceFingerprintDB |
 
 <!-- CHANGELOG_END -->
 
