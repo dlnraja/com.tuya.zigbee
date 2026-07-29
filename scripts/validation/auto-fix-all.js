@@ -114,6 +114,10 @@ run('Case variants (HOBEIAN etc)', 'node scripts/validation/ensure-case-variants
 // 7. Pre-commit FP sync check
 run('FP sync (compose↔app.json)', 'node scripts/validation/pre-commit-fp-sync.js');
 
+// 7b. Resync app.json zigbee blocks from compose (canonical). Bots edit
+// compose without rebuilding app.json, which breaks routing regression tests.
+run('app.json zigbee resync (from compose)', 'node scripts/maintenance/sync-appjson-zigbee.js');
+
 // 8. Validate driver mesh (Polos)
 run('Driver mesh validator', 'node scripts/validation/validate-driver-mesh.js');
 
