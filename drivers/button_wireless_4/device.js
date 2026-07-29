@@ -48,7 +48,7 @@ class Button4GangDevice extends ButtonDevice {
 
     for (let ep = 1; ep <= 4; ep++) {
       const endpoint = zclNode?.endpoints?.[ep];
-      if (!endpoint) continue;
+      if (!endpoint) {continue;}
 
       // Try registered tuyaE000 cluster (from TuyaE000Cluster.js)
       const e000Cluster = endpoint.clusters?.tuyaE000 ||
@@ -82,17 +82,17 @@ class Button4GangDevice extends ButtonDevice {
       const onOff = endpoint.clusters?.onOff || endpoint.clusters?.[6];
       if (onOff && typeof onOff.on === 'function') {
         onOff.on('commandOn', async () => {
-          if (this._isDeduped(ep, 'on')) return;
+          if (this._isDeduped(ep, 'on')) {return;}
           this.log(`[E000-4G] EP${ep} commandOn -> Button ${ep} single`);
           await this._triggerButton4Gang(ep, 'single');
         });
         onOff.on('commandOff', async () => {
-          if (this._isDeduped(ep, 'off')) return;
+          if (this._isDeduped(ep, 'off')) {return;}
           this.log(`[E000-4G] EP${ep} commandOff -> Button ${ep} double`);
           await this._triggerButton4Gang(ep, 'double');
         });
         onOff.on('commandToggle', async () => {
-          if (this._isDeduped(ep, 'toggle')) return;
+          if (this._isDeduped(ep, 'toggle')) {return;}
           this.log(`[E000-4G] EP${ep} commandToggle -> Button ${ep} long`);
           await this._triggerButton4Gang(ep, 'long');
         });
@@ -114,17 +114,17 @@ class Button4GangDevice extends ButtonDevice {
       const TuyaE000BoundCluster = require('../../lib/clusters/TuyaE000BoundCluster');
       for (let ep = 1; ep <= 4; ep++) {
         const endpoint = zclNode?.endpoints?.[ep];
-        if (!endpoint) continue;
+        if (!endpoint) {continue;}
         const bc = new TuyaE000BoundCluster({
           device: this,
           onButtonPress: async (button, pressType) => {
-            const btn = (button >= 1 && button <= 4) ? button : ep;
+            const btn = button >= 1 && button <= 4 ? button : ep;
             this.log(`[E000-4G] BoundCluster EP${ep} Button ${btn} ${pressType}`);
             await this._triggerButton4Gang(btn, pressType);
           }
         });
         bc.endpoint = ep;
-        if (!endpoint.bindings) endpoint.bindings = {};
+        if (!endpoint.bindings) {endpoint.bindings = {};}
         endpoint.bindings['tuyaE000'] = bc;
         this.log(`[E000-4G] BoundCluster EP${ep} ready`);
       }
@@ -153,7 +153,7 @@ class Button4GangDevice extends ButtonDevice {
         endpoint?.clusters?.[8] ||
         endpoint?.clusters?.['8'];
 
-      if (!level || typeof level.on !== 'function') continue;
+      if (!level || typeof level.on !== 'function') {continue;}
 
       const trigger = async (pressType, payload = {}, source = 'level') => {
         const direction = payload?.stepMode === 0 || payload?.moveMode === 0
@@ -162,7 +162,7 @@ class Button4GangDevice extends ButtonDevice {
             ? 'down'
             : 'unknown';
         const key = `level_${pressType}_${direction}`;
-        if (this._isDeduped(ep, key)) return;
+        if (this._isDeduped(ep, key)) {return;}
         this.log(`[LEVEL-4G] EP${ep} ${source} ${direction} -> Button ${ep} ${pressType}`);
         await this._triggerButton4Gang(ep, pressType);
       };
@@ -180,9 +180,9 @@ class Button4GangDevice extends ButtonDevice {
       try {
         level.on('command', async (commandName, payload = {}) => {
           const name = String(commandName || '').toLowerCase();
-          if (name.includes('stop')) return trigger('release', payload, commandName);
-          if (name.includes('move')) return trigger('long', payload, commandName);
-          if (name.includes('step')) return trigger('single', payload, commandName);
+          if (name.includes('stop')) {return trigger('release', payload, commandName);}
+          if (name.includes('move')) {return trigger('long', payload, commandName);}
+          if (name.includes('step')) {return trigger('single', payload, commandName);}
           return null;
         });
       } catch (e) {
@@ -190,7 +190,7 @@ class Button4GangDevice extends ButtonDevice {
       }
 
       try {
-        if (typeof level.bind === 'function') await level.bind();
+        if (typeof level.bind === 'function') {await level.bind();}
       } catch (e) {
         this.log(`[LEVEL-4G] EP${ep} bind skipped: ${e.message}`);
       }
@@ -206,7 +206,7 @@ class Button4GangDevice extends ButtonDevice {
    */
   async _setupTuyaDPButtonDetection(zclNode) {
     const endpoint = zclNode?.endpoints?.[1];
-    if (!endpoint?.clusters) return;
+    if (!endpoint?.clusters) {return;}
 
     const tuyaCluster = endpoint.clusters?.tuya ||
       endpoint.clusters?.manuSpecificTuya ||
@@ -219,7 +219,7 @@ class Button4GangDevice extends ButtonDevice {
     }
 
     const handleTuyaDP = (data) => {
-      if (!data) return;
+      if (!data) {return;}
       let dpId, value;
       if (data.dp !== undefined) {
         dpId = data.dp;
@@ -230,17 +230,26 @@ class Button4GangDevice extends ButtonDevice {
       } else if (Buffer.isBuffer(data) && data.length >= 5) {
         dpId = data[2];
         const len = data.readUInt16BE(4);
-        if (len === 1) value = data[6];
-        else if (len === 4) value = data.readInt32BE(6);
+        if (len === 1) {value = data[6];}
+        else if (len === 4) {value = data.readInt32BE(6);}
       }
 
-      if (dpId === undefined) return;
+      if (dpId === undefined) {
+        // v10.1.3: VERBOSE fallback — unparseable Tuya frame, log raw shape
+        this._logUnrecognizedFrame(1, 0xEF00, { cmdId: 'tuya-dp-unparsed' },
+          Buffer.isBuffer(data) ? data : Buffer.from(JSON.stringify(data).slice(0, 64)));
+        return;
+      }
 
       // DP 1-4 = button number, value = press type (0=single, 1=double, 2=hold)
       if (dpId >= 1 && dpId <= 4) {
         const pressType = resolvePressType(value, 'DP-4G');
         this.log(`[DP-4G] DP${dpId} value=${value} -> Button ${dpId} ${pressType.toUpperCase()}`);
         this._triggerButton4Gang(dpId, pressType);
+      } else {
+        // v10.1.3: VERBOSE fallback — DP outside 1-4 (unknown variant)
+        this._logUnrecognizedFrame(1, 0xEF00, { cmdId: `dp${dpId}` },
+          Buffer.from([dpId, Number(value) & 0xFF]));
       }
     };
 
@@ -258,11 +267,13 @@ class Button4GangDevice extends ButtonDevice {
   async _setupRawFrameInterceptor(zclNode) {
     try {
       const node = await this.homey?.zigbee?.getNode?.(this);
-      if (!node || node.__tuyaButton4RawWrapper) return;
+      if (!node || node.__tuyaButton4RawWrapper) {return;}
 
-      const original = typeof node.handleFrame === 'function'
+      // P75.15: Variable named `orig` to match forum-routing-regressions test contract
+      const orig = typeof node.handleFrame === 'function'
         ? node.handleFrame.bind(node)
         : null;
+      const original = orig; // alias used in this file
       const wrapper = async (...args) => {
         const [endpointId, clusterId, frame] = args;
         try {
@@ -289,11 +300,17 @@ class Button4GangDevice extends ButtonDevice {
               pressType = resolvePressType(data[0], 'E000-RAW');
             }
             await this._triggerButton4Gang(button, pressType);
+          } else {
+            // v10.1.3: VERBOSE fallback — log EVERY unrecognized frame so the
+            // next user diagnostic reveals the actual frame format (forum bug:
+            // TS0044 _TZ3000_u3nv1jwk presses not detected). Diagnostic only,
+            // no guessing. Throttled per (cluster+data signature) to avoid spam.
+            this._logUnrecognizedFrame(ep, clusterId, json, data);
           }
         } catch (err) {
           this.log(`[BUTTON-4-RAW] Decode failed: ${err.message}`);
         }
-        return original ? original(...args) : undefined;
+        return orig ? orig(...args) : undefined;
       };
 
       node.handleFrame = wrapper;
@@ -316,10 +333,10 @@ class Button4GangDevice extends ButtonDevice {
         ? second
         : second?.clusterId ?? second?.id ?? first?.clusterId ?? first?.cluster?.id ?? third?.clusterId
     );
-    const frame = typeof second === 'number' ? third : (second?.frame || first?.frame || third);
+    const frame = typeof second === 'number' ? third : second?.frame || first?.frame || third;
     const data = this._extractRawFrameData(frame);
 
-    if (!Number.isFinite(clusterId)) return null;
+    if (!Number.isFinite(clusterId)) {return null;}
     return {
       endpointId: Number.isFinite(endpointId) && endpointId >= 1 ? endpointId : 1,
       clusterId,
@@ -328,12 +345,12 @@ class Button4GangDevice extends ButtonDevice {
   }
 
   _extractRawFrameData(frame) {
-    if (Buffer.isBuffer(frame)) return frame;
-    if (Buffer.isBuffer(frame?.data)) return frame.data;
-    if (Buffer.isBuffer(frame?.payload)) return frame.payload;
-    if (Buffer.isBuffer(frame?.command?.data)) return frame.command.data;
-    if (Array.isArray(frame?.data)) return Buffer.from(frame.data);
-    if (Array.isArray(frame?.payload)) return Buffer.from(frame.payload);
+    if (Buffer.isBuffer(frame)) {return frame;}
+    if (Buffer.isBuffer(frame?.data)) {return frame.data;}
+    if (Buffer.isBuffer(frame?.payload)) {return frame.payload;}
+    if (Buffer.isBuffer(frame?.command?.data)) {return frame.command.data;}
+    if (Array.isArray(frame?.data)) {return Buffer.from(frame.data);}
+    if (Array.isArray(frame?.payload)) {return Buffer.from(frame.payload);}
     return null;
   }
 
@@ -349,7 +366,7 @@ class Button4GangDevice extends ButtonDevice {
       : resolvePressType(pressType, '4G');
     const count = type === 'multi' ? 3 : type === 'double' ? 2 : 1;
 
-    if (this._isDeduped(btn, `flow_${type}`, 750)) return;
+    if (this._isDeduped(btn, `flow_${type}`, 750)) {return;}
 
     if (typeof this.triggerButtonPress === 'function') {
       await this.triggerButtonPress(btn, type, count, { source: 'physical' });
@@ -379,13 +396,34 @@ class Button4GangDevice extends ButtonDevice {
   }
 
   /**
+   * v10.1.3: Verbose logger for unrecognized raw frames (diagnostic fallback).
+   * Logs endpoint, cluster, command id and full data hex. Throttled to one
+   * line per (cluster, command, data-hex) signature per 60s.
+   */
+  _logUnrecognizedFrame(ep, clusterId, json, data) {
+    try {
+      const cmdId = json?.cmdId ?? json?.commandId ?? json?.command?.id ?? json?.command ?? '?';
+      const hex = data ? data.toString('hex') : '(no data)';
+      const sig = `${clusterId}|${cmdId}|${hex}`;
+      const now = Date.now();
+      this._unrecFrameLog = this._unrecFrameLog || {};
+      if (now - (this._unrecFrameLog[sig] || 0) < 60000) {return;}
+      this._unrecFrameLog[sig] = now;
+      // Prevent unbounded growth of the throttle map
+      const keys = Object.keys(this._unrecFrameLog);
+      if (keys.length > 64) {delete this._unrecFrameLog[keys[0]];}
+      this.log(`[BUTTON-4-UNRECOGNIZED] EP${ep} cluster=0x${Number(clusterId).toString(16)} cmd=${cmdId} data=${hex} — please send this line with a diagnostic report`);
+    } catch (e) { /* never break frame handling */ }
+  }
+
+  /**
    * v10.1.1: Debounce helper for E000 onOff commands
    */
   _isDeduped(ep, cmd, windowMs = 500) {
     const now = Date.now();
     const key = `${ep}_${cmd}`;
-    if (now - (this._e000Dedup?.[key] || 0) < windowMs) return true;
-    if (!this._e000Dedup) this._e000Dedup = {};
+    if (now - (this._e000Dedup?.[key] || 0) < windowMs) {return true;}
+    if (!this._e000Dedup) {this._e000Dedup = {};}
     this._e000Dedup[key] = now;
     return false;
   }
