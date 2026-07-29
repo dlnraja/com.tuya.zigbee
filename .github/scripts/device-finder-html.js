@@ -44,7 +44,7 @@ function page(D,t,v,R){return`<!DOCTYPE html>
 </style></head><body>
 <div class="hero"><h1>🔍 Device Finder</h1>
 <p>Tuya Unified Zigbee v${v} — Find your device instantly</p>
-<p><a href="wifi.html" style="color:var(--accent)">📡 WiFi Devices — local-first Tuya WiFi</a></p>
+<p><a href="wifi.html" style="color:var(--accent)">📡 WiFi Devices — local-first Tuya WiFi</a> · <a href="dashboards.html" style="color:var(--accent)">📊 Dashboards</a></p>
 <div class="stats">
 <div class="stat"><b>${D.length}</b>Drivers</div>
 <div class="stat"><b>${t.toLocaleString()}</b>Fingerprints</div>
@@ -58,7 +58,7 @@ function page(D,t,v,R){return`<!DOCTYPE html>
 </div>
 <div class="grid" id="grid">${D.map(d=>card(d,R)).join('')}</div>
 <div class="footer">
-<p>Generated ${new Date().toISOString().split('T')[0]} | <a href="wifi.html">📡 WiFi Devices</a> | <a href="${R}">GitHub</a> | <a href="https://homey.app/a/com.dlnraja.tuya.zigbee/test/">Install Test</a> | <a href="https://community.homey.app/t/140352">Forum</a></p>
+<p>Generated ${new Date().toISOString().split('T')[0]} | <a href="wifi.html">📡 WiFi Devices</a> | <a href="dashboards.html">📊 Dashboards</a> | <a href="${R}">GitHub</a> | <a href="https://homey.app/a/com.dlnraja.tuya.zigbee/test/">Install Test</a> | <a href="https://community.homey.app/t/140352">Forum</a></p>
 <p>Data auto-updated daily by CI/CD pipeline</p>
 </div>
 <script>${js()}</script>
