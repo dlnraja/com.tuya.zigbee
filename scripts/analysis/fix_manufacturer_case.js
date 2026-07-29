@@ -11,7 +11,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const DRIVERS_PATH = path.join(__dirname, 'drivers');
+const DRIVERS_PATH = path.join(__dirname, '..', '..', 'drivers');
 
 // Patterns de correction case sensitivity
 const CASE_FIXES = [

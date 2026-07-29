@@ -131,7 +131,7 @@ async function main() {
   console.log('\n=== ADDING TO DRIVERS ===\n');
 
   for (const [driver, ids] of Object.entries(categories)) {
-    const driverPath = path.join(__dirname, 'drivers', driver, 'driver.compose.json');
+    const driverPath = path.join(__dirname, '..', '..', 'drivers', driver, 'driver.compose.json');
     if (!fs.existsSync(driverPath)) {
       console.log(`⚠️ ${driver}: Not found, skipping ${ids.length}`);
       continue;

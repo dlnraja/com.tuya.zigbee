@@ -471,10 +471,12 @@ async function scan() {
 
 // ── Run if executed directly ─────────────────────────────────────────────
 if (require.main === module) {
-  scan().catch((e) => {
-    console.error('CSA-IoT Scanner failed:', e.message);
-    process.exit(1);
-  });
+  scan()
+    .then(() => process.exit(0)) // explicit exit: keep-alive HTTPS sockets would otherwise hang the process
+    .catch((e) => {
+      console.error('CSA-IoT Scanner failed:', e.message);
+      process.exit(1);
+    });
 }
 
 module.exports = { scan, parseCsaProduct };

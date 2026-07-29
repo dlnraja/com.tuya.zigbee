@@ -6,7 +6,7 @@ const path = require('path');
 
 console.log('🔍 AUDIT EXHAUSTIF FLOW CARDS - TOUS DRIVERS\n');
 
-const ROOT = path.join(__dirname, '..');
+const ROOT = path.join(__dirname, '..', '..');
 const DRIVERS_DIR = path.join(ROOT, 'drivers');
 
 const issues = {

@@ -16,7 +16,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const DRIVERS_PATH = path.join(__dirname, 'drivers');
+const DRIVERS_PATH = path.join(__dirname, '..', '..', 'drivers');
 
 // Patterns Tuya qui nécessitent dual case support
 const DUAL_CASE_PATTERNS = [

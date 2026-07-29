@@ -86,13 +86,13 @@ const NOT_CLIMATE_SENSOR_IDS = [
 ];
 
 async function findAllDrivers() {
-  const driversDir = path.join(__dirname, '../drivers');
+  const driversDir = path.join(__dirname, '../../drivers');
   const entries = await fs.readdir(driversDir, { withFileTypes: true });
   return entries.filter(e => e.isDirectory()).map(e => e.name);
 }
 
 async function readDriverCompose(driverName) {
-  const composePath = path.join(__dirname, '../drivers', driverName, 'driver.compose.json');
+  const composePath = path.join(__dirname, '../../drivers', driverName, 'driver.compose.json');
   try {
     const content = await fs.readFile(composePath, 'utf8');
     return JSON.parse(content);

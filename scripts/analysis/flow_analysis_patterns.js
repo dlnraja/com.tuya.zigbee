@@ -21,7 +21,7 @@ class FlowAnalyzer {
       optimizations: []
     };
 
-    this.driversPath = path.join(__dirname, 'drivers');
+    this.driversPath = path.join(__dirname, '..', '..', 'drivers');
     this.report = {
       totalFlows: 0,
       duplicateFlows: 0,

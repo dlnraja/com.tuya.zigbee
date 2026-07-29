@@ -29,6 +29,7 @@ if (!dashFile) {
   process.exit(0);
 }
 
+if (!dashFile) { console.log('[SKIP] CI artifact dashboard-monitor-report.json not found locally — run in CI or download state first.'); process.exit(0); }
 const dash = JSON.parse(fs.readFileSync(dashFile, 'utf8'));
 console.log('\n=== DASHBOARD REPORT TOP KEYS ===');
 for (const k of Object.keys(dash)) {

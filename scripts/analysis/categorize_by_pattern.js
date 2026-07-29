@@ -36,7 +36,7 @@ for (const id of orphans) {
 }
 
 // Check which normalized IDs already exist in drivers
-const driversDir = path.join(__dirname, 'drivers');
+const driversDir = path.join(__dirname, '..', '..', 'drivers');
 let existingIds = new Set();
 
 function scanDrivers(dir) {

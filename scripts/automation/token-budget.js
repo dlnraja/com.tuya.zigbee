@@ -167,7 +167,7 @@ function _isAvailable(providerName) {
   // Check env key
   let key;
   if (providerName === 'github-models') {
-    key = process.env.GH_PAT || process.env.GITHUB_TOKEN;
+    key = process.env.GH_PAT || process.env.GITHUB_TOKEN || process.env.GH_TOKEN;
   } else {
     const envMap = {
       openrouter: 'OPENROUTER_API_KEY', 'xiaomi-mimo': 'XIAOMI_MIMO_API_KEY',
