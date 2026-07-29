@@ -11,7 +11,7 @@ const path = require('path');
 
 class IntelligentFlowOptimizer {
   constructor() {
-    this.driversPath = path.join(__dirname, 'drivers');
+    this.driversPath = path.join(__dirname, '..', '..', 'drivers');
     this.backupPath = path.join(__dirname, 'flow_backups');
     this.optimizationResults = {
       processed: 0,

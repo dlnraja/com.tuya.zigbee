@@ -6,7 +6,7 @@ const removedIds = fs.readFileSync('removed_ids_raw.txt', 'utf8').trim().split('
 console.log(`Total removed IDs: ${removedIds.length}`);
 
 // Get all current manufacturerNames from all drivers
-const driversDir = path.join(__dirname, 'drivers');
+const driversDir = path.join(__dirname, '..', '..', 'drivers');
 let allCurrentIds = new Set();
 
 function scanDrivers(dir) {

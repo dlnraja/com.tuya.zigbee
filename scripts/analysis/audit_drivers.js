@@ -7,7 +7,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const driversDir = path.join(__dirname, '..', 'drivers');
+const driversDir = path.join(__dirname, '..', '..', 'drivers');
 const issues = [];
 const mfrMap = new Map(); // manufacturerName -> [{ driver, productIds }]
 const productIdMap = new Map(); // productId -> [drivers]

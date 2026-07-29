@@ -149,7 +149,7 @@ async function main() {
   for (const [driver, ids] of Object.entries(categories)) {
     if (driver === 'unknown' || ids.length === 0) continue;
 
-    const driverPath = path.join(__dirname, 'drivers', driver, 'driver.compose.json');
+    const driverPath = path.join(__dirname, '..', '..', 'drivers', driver, 'driver.compose.json');
     if (!fs.existsSync(driverPath)) {
       console.log(`⚠️ ${driver}: Driver not found`);
       continue;

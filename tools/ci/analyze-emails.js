@@ -1,5 +1,6 @@
 // analyze-emails.js — Deep analysis of 10,742 emails
 const fs = require('fs');
+if (!fs.existsSync('.github/state/emails-aggregate.json')) { console.log('[SKIP] emails-aggregate.json not found locally — produced by the gmail-diagnostics workflow.'); process.exit(0); }
 const data = JSON.parse(fs.readFileSync('.github/state/emails-aggregate.json', 'utf8'));
 const emails = data.emails;
 

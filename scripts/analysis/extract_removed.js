@@ -15,7 +15,7 @@ const removedIds = [...new Set(removedLines.map(line => {
 console.log(`Total unique removed manufacturerNames: ${removedIds.length}`);
 
 // Get all current manufacturerNames in drivers
-const driversDir = path.join(__dirname, 'drivers');
+const driversDir = path.join(__dirname, '..', '..', 'drivers');
 let allCurrentIds = new Set();
 
 function scanDrivers(dir) {

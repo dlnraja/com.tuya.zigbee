@@ -221,7 +221,7 @@ function _isWithinLimits(name) {
 function _getApiKey(name) {
   const provider = PROVIDERS[name];
   if (!provider) return null;
-  if (provider.envKey === '_GH') return process.env.GH_PAT || process.env.GITHUB_TOKEN || null;
+  if (provider.envKey === '_GH') return process.env.GH_PAT || process.env.GITHUB_TOKEN || process.env.GH_TOKEN || null;
   return process.env[provider.envKey] || null;
 }
 

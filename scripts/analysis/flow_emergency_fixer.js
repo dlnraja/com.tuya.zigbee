@@ -11,7 +11,7 @@ const path = require('path');
 
 class FlowEmergencyFixer {
   constructor() {
-    this.driversPath = path.join(__dirname, 'drivers');
+    this.driversPath = path.join(__dirname, '..', '..', 'drivers');
     this.fixResults = {
       processed: 0,
       fixed: 0,
