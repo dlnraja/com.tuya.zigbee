@@ -53,10 +53,19 @@ class SmartScenePanelDevice extends TuyaZigbeeDevice {
       if (this.hasCapability(cap)) {
         this.safeSetCapabilityValue(cap, !!value).catch(this.error);
       }
-      const flowCardId = `sensor_climate_smart_climate_sensor_smart_smart_scene_panel_switch_${g}_changed`;
-      this.homey.flow.getDeviceTriggerCard(flowCardId).trigger(this, { state: !!value }, {}).catch(() => {})
+      // IDs hachés (sha1) définis dans driver.flow.compose.json
+      const switchCardIds = {
+        1: 'sensor_climate_sensor_smart_smart_scene_pane_61d9d',
+        2: 'sensor_climate_sensor_smart_smart_scene_pane_57762',
+        3: 'sensor_climate_sensor_smart_smart_scene_pane_fbfa2',
+        4: 'sensor_climate_sensor_smart_smart_scene_pane_ceaca'
+      };
+      const flowCardId = switchCardIds[g];
+      if (flowCardId) {
+        this.homey.flow.getDeviceTriggerCard(flowCardId).trigger(this, { state: !!value }, {}).catch(() => {})
+      }
     } else if (dp >= 5 && dp <= 8) {
-      this.homey.flow.getDeviceTriggerCard('sensor_climate_smart_climate_sensor_smart_smart_scene_panel_scene_activated').trigger(this, { scene: String(dp) }, { scene: String(dp) }).catch(() => {})
+      this.homey.flow.getDeviceTriggerCard('sensor_climate_sensor_smart_smart_scene_pane_abe86').trigger(this, { scene: String(dp) }, { scene: String(dp) }).catch(() => {})
     } else if (dp === 38) {
       this.log(`[SCENE-PANEL] relay_status=${value}`);
     } else if (dp === 106) {

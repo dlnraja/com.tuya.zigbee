@@ -82,7 +82,13 @@ All orchestrated via `tools/ci/mega-crawler.js` + GHA `mega-crawl.yml` (daily 02
 | `drivers/*/driver.compose.json` | 431 driver manifests (manufacturerName, productId, capabilities) |
 | `drivers/*/device.js` | Device logic (careful with setTimeout → use `lib/utils/safe-timers.js`) |
 | `lib/tuya/` | Tuya DP protocol implementation |
+| `lib/utils/fingerprint-matcher.js` | Caseless heuristic FP matcher, scored tiers (env `TUYA_FP_VERBOSE`, `TUYA_FP_HEURISTIC`) |
+| `lib/wifi/LocalFirstResolver.js` + `lib/tuya/LocalWiFiTuyaBridge.js` | WiFi local-first resolution (bridge v2) |
 | `lib/utils/safe-timers.js` | `safeSetTimeout`, `safeSetInterval`, `isDestroyed` helpers |
+| `scripts/maintenance/` | sync-appjson-zigbee (canonical resync, wired in auto-fix-all), sanitize-manifest (`normalizeFlowCardIds`), compact-zigbee-identifiers (mfs_db-priority, `HOMEY_ZIGBEE_MAX_*` budgets) |
+| `scripts/ci/resolve-collisions.js` | Baseline-aware FP collision resolver (`.github/fingerprint-collision-baseline.json`) |
+| `scripts/ULTIMATE_CHECK.js` | Verbose check orchestrator (`--verbose`) |
+| `.github/scripts/generate-{device-finder,wifi-page,dashboards-page}.js` | GitHub Pages generators (Device Finder, wifi.html, dashboards.html + 6 dashboards → `.github/pages-build/`) |
 | `tools/ci/` | All CI/diagnostic/analysis tools |
 | `scripts/sync/` | Source crawlers (blakadder, z2m, zha, deconz) |
 | `scripts/scanners/` | Scanners (tinytuya, hubitat, etc.) |

@@ -295,7 +295,7 @@ class IRRemoteDevice extends ZigBeeDevice {
       this.safeSetCapabilityValue('ir_learned_code', keyCode).catch(this.error);
 
       // Trigger flow
-      const card = this.homey.flow.getDeviceTriggerCard('ir_code_received');
+      const card = this.homey.flow.getDeviceTriggerCard('blaster_remote_ir_code_received');
       if (card) {
         card.trigger(this, { ir_code: keyCode }, {})
           .catch(err => this.error('[IR-RX] Flow trigger err:', err.message));

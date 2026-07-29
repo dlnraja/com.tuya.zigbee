@@ -258,7 +258,7 @@ env:
 See `.github/SECRETS.md` for full secret reference.
 
 ### Supply-Chain Security
-Pinning rule (actual, since Jul 2026): **third-party actions pinned to full SHA** — format `owner/repo@<SHA> # vX.Y.Z` (e.g. `peter-evans/create-pull-request`, `marocchino/sticky-pull-request-comment`). **Official `actions/*` on major version tags**: checkout v5, setup-node v5, upload-artifact v5, cache v5, github-script v7 — Node.js 24 runtime. (Earlier claim that ALL refs were SHA-pinned was wrong; third-party actions were pinned in the 2026-07-28 security follow-up.)
+Pinning rule (actual, since 2026-07-29): **ALL actions pinned to full SHA, no exception** — format `owner/repo@<SHA> # vX.Y.Z`. Third-party actions were pinned in the 2026-07-28 security follow-up; official `actions/*` were pinned in the 2026-07-29 follow-up: checkout v5.1.0, setup-node v5.0.0, upload-artifact v5.0.0, cache v5.1.0, github-script v7.1.0 — Node.js 24 runtime. Never introduce a tag/branch ref (`@v5`, `@main`); resolve the SHA via `git ls-remote https://github.com/<owner>/<repo> "refs/tags/<tag>*"`.
 
 ---
 
@@ -625,7 +625,7 @@ env:
 See `.github/SECRETS.md` for full secret reference.
 
 ### Supply-Chain Security
-Pinning rule (actual, since Jul 2026): **third-party actions pinned to full SHA** — format `owner/repo@<SHA> # vX.Y.Z` (e.g. `peter-evans/create-pull-request`, `marocchino/sticky-pull-request-comment`). **Official `actions/*` on major version tags**: checkout v5, setup-node v5, upload-artifact v5, cache v5, github-script v7 — Node.js 24 runtime. (Earlier claim that ALL refs were SHA-pinned was wrong; third-party actions were pinned in the 2026-07-28 security follow-up.)
+Pinning rule (actual, since 2026-07-29): **ALL actions pinned to full SHA, no exception** — format `owner/repo@<SHA> # vX.Y.Z`. Third-party actions were pinned in the 2026-07-28 security follow-up; official `actions/*` were pinned in the 2026-07-29 follow-up: checkout v5.1.0, setup-node v5.0.0, upload-artifact v5.0.0, cache v5.1.0, github-script v7.1.0 — Node.js 24 runtime. Never introduce a tag/branch ref (`@v5`, `@main`); resolve the SHA via `git ls-remote https://github.com/<owner>/<repo> "refs/tags/<tag>*"`.
 
 ---
 

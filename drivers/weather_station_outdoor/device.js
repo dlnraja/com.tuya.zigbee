@@ -66,10 +66,10 @@ class WeatherStationOutdoorDevice extends UnifiedSensorBase {
     try {
       switch (capability) {
       case 'measure_temperature':
-        this.homey.flow.getDeviceTriggerCard('weather_station_outdoor_outdoor_temperature_changed')?.trigger(this, { temperature: value }, {}).catch(() => {})
+        this.homey.flow.getDeviceTriggerCard('weather_station_outdoor_temperature_changed')?.trigger(this, { temperature: value }, {}).catch(() => {})
         break;
       case 'measure_humidity':
-        this.homey.flow.getDeviceTriggerCard('weather_station_outdoor_outdoor_humidity_changed')?.trigger(this, { humidity: value }, {}).catch(() => {})
+        this.homey.flow.getDeviceTriggerCard('weather_station_outdoor_humidity_changed')?.trigger(this, { humidity: value }, {}).catch(() => {})
         break;
       case 'measure_pressure': {
         this.homey.flow.getDeviceTriggerCard('weather_station_outdoor_pressure_changed')?.trigger(this, { pressure: value }, {}).catch(() => {})

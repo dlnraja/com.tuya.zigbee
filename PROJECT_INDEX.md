@@ -49,7 +49,7 @@ Before making ANY changes to this repository, you **MUST** execute the mandatory
 
 ---
 
-## 📊 INVESTIGATION REPORTS (2026-07-28)
+## 📊 INVESTIGATION REPORTS (2026-07-28/29)
 
 Reports in [`reports/kimi-2026-07-28/`](reports/kimi-2026-07-28/):
 
@@ -81,6 +81,9 @@ Reports in [`reports/kimi-2026-07-29/`](reports/kimi-2026-07-29/):
 | [workflows-genealogy.md](reports/kimi-2026-07-29/workflows-genealogy.md) | Genealogy of all 200 workflows that ever existed |
 | [github-pages-wifi.md](reports/kimi-2026-07-29/github-pages-wifi.md) | GitHub Pages WiFi section + auto-generator |
 | [forum-bugs-reliquats-solo.md](reports/kimi-2026-07-29/forum-bugs-reliquats-solo.md) | Forum bugs fixes + leftovers consolidation |
+| [deep-harvest.md](reports/kimi-2026-07-29/deep-harvest.md) | Deep harvest (dlnraja + upstream JohanBendz + forks): mfs_db enrichment |
+| [forum-dlnraja-history.md](reports/kimi-2026-07-29/forum-dlnraja-history.md) | dlnraja forum history (700 posts + main thread 2039 posts) |
+| [pin-sha-docs.md](reports/kimi-2026-07-29/pin-sha-docs.md) | SHA pinning of all official `actions/*` + docs sync (AGENTS, PROJECT_INDEX) |
 
 ---
 
@@ -212,6 +215,11 @@ _TZ3000_abc + TS0001 → switch_2gang  ❌ CONFLIT (même driver different!)
 - Device matches if `manufacturerName IN list` AND `productId IN list`
 - Order matters: first matching driver wins
 - Exact string match required
+
+### Heuristic Matcher (`lib/utils/fingerprint-matcher.js`)
+- Case-insensitive matching with scored tiers (exact > normalized caseless > prefix/substring)
+- Diagnostics via env: `TUYA_FP_VERBOSE=1` (trace), `TUYA_FP_HEURISTIC=0` (disable heuristic fallback)
+- Details: [heuristic-matching.md](reports/kimi-2026-07-28/heuristic-matching.md)
 
 ### When to REMOVE a fingerprint
 - ONLY if SAME manufacturerName + SAME productId in WRONG driver
@@ -490,8 +498,9 @@ class Device extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSwitchBase))
 |------|-------|---------|
 | lib/devices/ | 17 files | Device base classes (BaseUnifiedDevice, Unified*Base, HybridSwitchBase) |
 | lib/mixins/ | 18 files | Reusable behavior (PhysicalButton, VirtualButton, Sonoff*, Thermostat) |
-| lib/tuya/ | 57 files | Tuya protocol (TuyaEF00Manager, TuyaDPParser, SanityFilter, TimeSync) |
-| lib/utils/ | 50 files | Utilities (AdaptiveDataParser, CaseInsensitiveMatcher, CacheManager) |
+| lib/tuya/ | 63 files | Tuya protocol (TuyaEF00Manager, TuyaDPParser, SanityFilter, TimeSync, LocalWiFiTuyaBridge v2) |
+| lib/utils/ | 72 files | Utilities (AdaptiveDataParser, CaseInsensitiveMatcher, CacheManager, fingerprint-matcher) |
+| lib/wifi/ | 2 files | WiFi local-first (LocalFirstResolver, WiFiConnectionPolicy) |
 | lib/battery/ | 12 files | Battery management (UnifiedBatteryHandler, Calculator, Monitor) |
 | lib/managers/ | 23 files | Services (SmartDivisor, DynamicCapability, Energy, IASZone, IEEE) |
 | lib/clusters/ | 28 files | ZCL clusters (OnOff, LevelControl, Tuya*, ZosungIR*) |
@@ -506,12 +515,14 @@ class Device extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSwitchBase))
 ### Scripts
 | Path | Files | Purpose |
 |------|-------|---------|
-| scripts/automation/ | 95 files | CI/CD, auto-update, validate-all, driver-health, mega-audit |
-| scripts/ci/ | 20 files | Pre-commit checks, security scanner, CI health gate |
-| scripts/validation/ | 11 files | Fingerprint health, collision checking, schema validation |
-| scripts/ | 109 files (root) | Maintenance, fixes, fingerprint scans |
-| .github/scripts/ | 50+ files | GitHub Actions: forum, github, triage, Athom automation |
+| scripts/automation/ | 119 files | CI/CD, auto-update, validate-all, driver-health, mega-audit |
+| scripts/ci/ | 36 files | Pre-commit checks, security scanner, CI health gate, baseline-aware resolve-collisions |
+| scripts/maintenance/ | 121 files | sync-appjson-zigbee (canonical resync, wired in validation/auto-fix-all), sanitize-manifest (normalizeFlowCardIds), compact-zigbee-identifiers (mfs_db-priority compaction, HOMEY_ZIGBEE_MAX_* budgets) |
+| scripts/validation/ | 33 files | Fingerprint health, collision checking, schema validation, auto-fix-all |
+| scripts/ | 94 files (root) | Maintenance, fixes, fingerprint scans, ULTIMATE_CHECK orchestrator (`--verbose`) |
+| .github/scripts/ | 166 files | GitHub Actions: forum, github, triage, Athom automation, Pages generators (generate-device-finder, generate-wifi-page, generate-dashboards-page) |
 | .github/workflows/ | 54 files (53 .yml + 1 .manual) | CI/CD pipelines (daily, weekly, monthly) |
+| .github/pages-build/ | -- | GitHub Pages site (deploy-pages.yml): Device Finder (index.html), wifi.html, dashboards.html + 6 dashboards |
 | .githooks/ | -- | Git hooks (pre-commit, pre-push) |
 
 ### Documentation
