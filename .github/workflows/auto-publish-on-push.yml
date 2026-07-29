@@ -137,7 +137,7 @@ jobs:
               appFixed++;
             }
           });
-          if (appFixed > 0) fs.writeFileSync('app.json', JSON.stringify(app, null, 2), 'utf8');
+          if (appFixed > 0) fs.writeFileSync('app.json', JSON.stringify(app), 'utf8'); // compact: canonical format (pretty = 6.2MB > 4MB limit + merge conflicts)
 
           console.log(`PRE-CLEAN done: ${srcFixed} driver.compose.json fixed, ${appFixed} entries ensured in app.json`);
           PRECLEAN
