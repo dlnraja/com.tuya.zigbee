@@ -1,7 +1,7 @@
 {
   "_comment": "Generated from .homeycompose/app.json. STABLE channel — only bug fixes applied.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.12.32",
+  "version": "5.12.33",
   "compatibility": ">=12.2.0",
   "platforms": [
     "local"
@@ -137865,6 +137865,8 @@
           "_TZ3000_T3VVHRMH",
           "_TZ3000_T6JRIFU5",
           "_TZ3000_TSGQXDB4",
+          "_TZE200_9XFJIXAPV",
+          "_TZ3000_FLONMACT",
           "_TZ3000_UNW0HPDV",
           "_TZ3000_USVKZKYN",
           "_TZ3000_UTWGOAUK",
@@ -137907,6 +137909,8 @@
           "_TZ3000_rdhukkmi",
           "_TZ3000_saiqcn0y",
           "_TZ3000_tsgqxdb4",
+          "_tze200_9xfjixapv",
+          "_tz3000_flonmact",
           "_TZ3000_u5u4cakc",
           "_TZ3000_v1w2k9dd",
           "_TZ3000_xr3htd96",

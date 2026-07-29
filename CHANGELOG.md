@@ -4,6 +4,21 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
+## [5.12.33] - 2026-07-29
+
+Stability line (branch `stable-v5`, production). Minimal zero-regression backports from master.
+
+### Bug Fixes
+- Fingerprints: re-added `_TZ3000_flonmact` (TS0201 climate sensor, issue #183 regression)
+  and `_TZE200_9xfjixapv` (TS0601, issue #395) to `climate_sensor`.
+- IAS enrollment: `retryIASEnrollment` no longer writes a zeroed CIE address (which
+  actively broke enrollment) — coordinator IEEE now comes from `IEEEAdvancedEnrollment`,
+  with early-exit when already enrolled.
+- IAS enrollment: deferred background retries (30 s / 120 s) for sleepy devices that are
+  unreachable during pairing (contact/water sensors stuck reporting no alarm).
+
+---
+
 ## [5.12.32] - 2026-07-29
 
 Stability line (branch `stable-v5`, production). Minimal zero-regression backports from master 9.0.365.
