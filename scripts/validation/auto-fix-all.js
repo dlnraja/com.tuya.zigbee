@@ -61,7 +61,7 @@ fixJSON('sdk/sdkVersion normalization', () => {
       changed = true;
     }
     // Do NOT delete sdk — it is the canonical field.
-    if (changed) fs.writeFileSync(fp, JSON.stringify(c, null, 2) + '\n', 'utf8');
+    if (changed) fs.writeFileSync(fp, JSON.stringify(c) + '\n', 'utf8'); // compact: canonical app.json format (pretty-print = 6.2MB > 4MB Athom limit + guaranteed merge conflicts)
   }
 });
 
@@ -99,7 +99,7 @@ fixJSON('app.json button.X generated options', () => {
       d.capabilitiesOptions = opts;
     }
   }
-  if (fixed > 0) fs.writeFileSync(fp, JSON.stringify(c, null, 2) + '\n', 'utf8');
+  if (fixed > 0) fs.writeFileSync(fp, JSON.stringify(c) + '\n', 'utf8'); // compact (see above)
 });
 
 // 4. Fix broken require() paths
