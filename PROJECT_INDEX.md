@@ -63,6 +63,24 @@ Reports in [`reports/kimi-2026-07-28/`](reports/kimi-2026-07-28/):
 | [destroyed-guard-fixes.md](reports/kimi-2026-07-28/destroyed-guard-fixes.md) | 36 `_destroyed` timer guards fixed across 29 files |
 | [sources-crawl.md](reports/kimi-2026-07-28/sources-crawl.md) | Fresh crawl of 13/15 data sources (blakadder, Z2M, ZHA, scanners…) |
 | [missing-devices-applied.md](reports/kimi-2026-07-28/missing-devices-applied.md) | Cross-ref of missing devices: +88 mfrs / +292 pids added to mfs_db |
+| [publish-pruning-rootcause.md](reports/kimi-2026-07-28/publish-pruning-rootcause.md) | Root cause #513: publish compactor truncated observed mfrs |
+| [compactor-priority-fix.md](reports/kimi-2026-07-28/compactor-priority-fix.md) | Priority compactor: 5,395/5,395 observed mfrs preserved |
+| [appjson-size-fix.md](reports/kimi-2026-07-28/appjson-size-fix.md) | app.json 6.49MB → 3.30MB (sanitize-manifest compact) |
+| [security-audit.md](reports/kimi-2026-07-28/security-audit.md) | Security audit + hardening (permissions, injections, SHA pinning) |
+| [master-backlog-fixes.md](reports/kimi-2026-07-28/master-backlog-fixes.md) | 27 drivers filled, 20 flow cards wired, ULTIMATE_CHECK implemented |
+| [heuristic-matching.md](reports/kimi-2026-07-28/heuristic-matching.md) | Case-insensitive heuristic fingerprint matcher (38 tests) |
+| [wifi-local-first.md](reports/kimi-2026-07-28/wifi-local-first.md) | WiFi TuyaLocal-first (LocalFirstResolver, bridge v2) |
+| [upstream-pr-ports.md](reports/kimi-2026-07-28/upstream-pr-ports.md) | Logic ported from 12 upstream PRs |
+| [synthetic-mfr-resolution.md](reports/kimi-2026-07-28/synthetic-mfr-resolution.md) | 95/95 synthetic mfrs resolved to real devices |
+| [scanner-fixes.md](reports/kimi-2026-07-28/scanner-fixes.md) | Scanner repairs (auth, SmartThings, TinyTuya, CSA-IoT) |
+
+Reports in [`reports/kimi-2026-07-29/`](reports/kimi-2026-07-29/):
+
+| Report | Scope |
+|--------|-------|
+| [workflows-genealogy.md](reports/kimi-2026-07-29/workflows-genealogy.md) | Genealogy of all 200 workflows that ever existed |
+| [github-pages-wifi.md](reports/kimi-2026-07-29/github-pages-wifi.md) | GitHub Pages WiFi section + auto-generator |
+| [forum-bugs-reliquats-solo.md](reports/kimi-2026-07-29/forum-bugs-reliquats-solo.md) | Forum bugs fixes + leftovers consolidation |
 
 ---
 
