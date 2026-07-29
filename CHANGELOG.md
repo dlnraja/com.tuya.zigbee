@@ -4,6 +4,20 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
+## [5.12.32] - 2026-07-29
+
+Stability line (branch `stable-v5`, production). Minimal zero-regression backports from master 9.0.365.
+
+### Bug Fixes
+- Battery estimation: 0-50-scale doubling restricted to curated manufacturers
+  (genuinely discharged devices were shown at 2× their real level).
+- SOS button battery: smart normalization for percentage/DP reports and correct
+  ZCL 100mV voltage units (30 → 3.0 V).
+- SOS button: `button.1` capability listener (virtual press triggers the alarm).
+- Regression tests added (`test/battery-sos-scaling.test.js`).
+
+---
+
 ## [5.12.31] - 2026-07-29
 
 Stability line (branch `stable-v5`, production). Minimal zero-regression backports from master.
