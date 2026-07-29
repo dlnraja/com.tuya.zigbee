@@ -92,7 +92,7 @@ let unresolved = 0;
 for (const [key, entries] of fpMap) {
   const uniqueDrivers = [...new Set(entries.map(e => e.driver))];
   if (uniqueDrivers.length > 1) {
-    if (baselineKeys.has(key)) continue; // documented intentional dual-claim
+    if (baselineKeys.has(key.toLowerCase())) continue; // documented intentional dual-claim
     const [mfr, pid] = key.split('|');
 
     // Pick the victim driver. Some TS0601 families need explicit ownership because
