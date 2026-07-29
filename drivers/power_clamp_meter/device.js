@@ -436,7 +436,9 @@ class PowerClampMeterDevice extends ZigBeeDevice {
     if (typeof super.safeSetCapabilityValue === 'function') {
       return super.safeSetCapabilityValue(capability, value);
     }
-    return this.setCapabilityValue(capability, value).catch(() => {});
+    const rawSet = typeof this.setCapabilityValue === 'function' ? this.setCapabilityValue.bind(this) : null;
+    if (rawSet) return rawSet(capability, value).catch(() => {});
+    return undefined;
   }
 
   async _updateTotalPower() {
