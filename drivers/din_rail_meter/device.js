@@ -1,6 +1,7 @@
 'use strict';
 
 const UnifiedPlugBase = require('../../lib/devices/UnifiedPlugBase');
+const EnergyJumpGuard = require('../../lib/tuya/EnergyJumpGuard');
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
@@ -54,6 +55,14 @@ class DinRailMeterDevice extends UnifiedPlugBase {
       this.log('DIN Rail Meter v9.7.3 initialized');
       this.log('[DIN-METER] ✅ Ready');
     }, 'onNodeInit');
+  }
+
+  // v9.7.4: Defensive guard against wrong-family energy divisors (forum ×660 bug)
+  async safeSetCapabilityValue(capability, value) {
+    if (capability === 'meter_power' || capability === 'meter_power.exported') {
+      value = EnergyJumpGuard.check(this, value);
+    }
+    return super.safeSetCapabilityValue(capability, value);
   }
 
   async onSettings({ oldSettings, newSettings, changedKeys }) {

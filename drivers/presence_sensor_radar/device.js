@@ -88,6 +88,23 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     return this._cachedRadarConfig;
   }
 
+  /**
+   * v8.0.1: Keep alarm_human (presence) in sync with alarm_motion.
+   * Forum bug (ka8l86iu): the device exposes motion but never presence.
+   * Root cause: ZCL occupancy (0x0406) updates in the base class only feed
+   * alarm_motion, while alarm_human was only set from DP reports. This
+   * driver treats presence ≡ motion (DP1 handler already sets both), so
+   * mirroring is consistent with the driver's own semantics.
+   */
+  async safeSetCapabilityValue(capability, value) {
+    const result = await super.safeSetCapabilityValue(capability, value);
+    if (capability === 'alarm_motion' && typeof value === 'boolean' &&
+        typeof this.hasCapability === 'function' && this.hasCapability('alarm_human')) {
+      await super.safeSetCapabilityValue('alarm_human', value).catch(() => {});
+    }
+    return result;
+  }
+
   async onNodeInit({ zclNode }) {
     // v5.11.139: Call super.onNodeInit() FIRST to initialize TuyaZigbeeDevice base class
     // which provides _safeInvoke and other L14 features
@@ -321,7 +338,15 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       // v9.7.6: Use enumMap from mapping if available (e.g., gkfbdvyx: {0:false, 1:true, 2:true})
       let presence;
       if (mapping.enumMap) {
-        presence = mapping.enumMap[value] !== undefined ? mapping.enumMap[value] : !!value;
+        if (typeof value === 'boolean') {
+          // v8.0.1: Bool frames are unambiguous per Z2M binary presence
+          // semantics (true = present). A numeric enumMap would silently
+          // invert booleans (enumMap[true] → enumMap["1"]) — forum bug
+          // ka8l86iu "motion but no presence".
+          presence = value;
+        } else {
+          presence = mapping.enumMap[value] !== undefined ? mapping.enumMap[value] : !!value;
+        }
         if (config.invertPresence) { presence = !presence; }
       } else {
         presence = transformPresence(value, mapping.type, config.invertPresence, config.configName);

@@ -1,6 +1,10 @@
 # 🩹 Publish Self-Heal
-# Triggers: cron: 0 4,8,12,16,20 * * * + workflow_dispatch | Secrets: GITHUB_TOKEN only
+# Triggers: cron: 0 4,8,12,16,20 * * * + workflow_dispatch | Secrets: GITHUB_TOKEN, HOMEY_PAT
 # Doc header added 2026-07-29 (workflows genealogy enrichment).
+# 2026-07-29: added athom-heal job — detects Athom-side processing_failed
+# builds (>6h old, no newer active build) and re-triggers the publish
+# pipeline, max 1 retry/24h (actions/cache marker). Also fixed permissions:
+# gh run cancel / gh workflow run require actions: write (was read → 403).
 
 name: 🩹 Publish Self-Heal
 
@@ -16,7 +20,7 @@ on:
 
 permissions:
   contents: read
-  actions: read
+  actions: write
 defaults:
   run:
     shell: bash
@@ -76,3 +80,56 @@ jobs:
         if: steps.find.outputs.stuck_runs == 'OK'
         run: |
           echo "## ✅ No stuck publish runs detected" >> $GITHUB_STEP_SUMMARY
+
+  athom-heal:
+    name: 🩹 Athom processing_failed self-heal
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    # Self-heal must never block or fail the workflow on its own errors.
+    continue-on-error: true
+    steps:
+      - name: 📥 Checkout
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+        with:
+          fetch-depth: 1
+
+      - name: 🟢 Setup Node
+        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
+        with:
+          node-version: '22'
+
+      - name: ♻️ Restore retry marker (max 1 retry/24h)
+        uses: actions/cache/restore@caa296126883cff596d87d8935842f9db880ef25 # v5.1.0
+        with:
+          path: .github/state/publish-self-heal-retry.txt
+          key: publish-self-heal-retry-${{ github.run_id }}
+          restore-keys: |
+            publish-self-heal-retry-
+
+      - name: 🔍 Probe Athom builds for processing_failed
+        id: probe
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+          SELF_HEAL_MARKER: .github/state/publish-self-heal-retry.txt
+        run: node .github/scripts/athom-processing-failure-retry.js
+
+      - name: 💾 Save retry marker
+        if: steps.probe.outputs.retry == 'true'
+        uses: actions/cache/save@caa296126883cff596d87d8935842f9db880ef25 # v5.1.0
+        with:
+          path: .github/state/publish-self-heal-retry.txt
+          key: publish-self-heal-retry-${{ github.run_id }}
+
+      - name: 🔁 Re-trigger publish pipeline
+        if: steps.probe.outputs.retry == 'true'
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          {
+            echo "## 🔁 Self-heal re-trigger"
+            echo ""
+            echo "- Reason: ${{ steps.probe.outputs.reason }}"
+            echo "- Failed build: #${{ steps.probe.outputs.latest_build_id }} v${{ steps.probe.outputs.latest_version }} (${{ steps.probe.outputs.latest_state }}, ${{ steps.probe.outputs.failure_age_hours }}h old)"
+          } >> $GITHUB_STEP_SUMMARY
+          gh workflow run "🚀 Publish Stable to Test" --ref stable-v5 2>&1 | tee -a $GITHUB_STEP_SUMMARY || true

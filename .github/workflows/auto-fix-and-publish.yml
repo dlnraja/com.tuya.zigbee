@@ -18,6 +18,7 @@ defaults:
 permissions:
   contents: write
   pull-requests: write
+  issues: write  # needed by the "🔔 Notify on failure" step (POST /issues/420/comments was 403)
 
 # v9.0.256 (P62.3): Move HOMEY_PUBLISH env vars to workflow level so they
 # apply to ALL steps in ALL jobs (not just the publish step). The step-level
@@ -118,7 +119,15 @@ jobs:
             fi
             git fetch origin "$BRANCH"
             if ! git merge-base --is-ancestor "origin/$BRANCH" HEAD; then
-              git rebase "origin/$BRANCH"
+              # Rebase conflicts (typically app.json version bumps raced with a
+              # concurrent push) used to fail the whole run. Auto-fix commits
+              # are idempotent and regenerated next run, so on conflict we
+              # abort and resync to origin instead of failing.
+              if ! git rebase -X ours "origin/$BRANCH"; then
+                echo "::warning::Rebase conflict on origin/$BRANCH; dropping auto-fix commit and resyncing (fixes are regenerated on the next run)"
+                git rebase --abort || true
+                git reset --hard "origin/$BRANCH"
+              fi
             else
               echo "origin/$BRANCH is already an ancestor of HEAD; skipping rebase"
             fi

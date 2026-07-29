@@ -366,8 +366,10 @@ const SENSOR_CONFIGS = {
     presenceEnumMapping: { 0: true, 1: false },
     dpMap: {
       1: { cap: 'alarm_motion', type: 'presence_enum', enumMap: { 0: true, 1: false } },
+      4: { cap: 'measure_luminance.distance', smartDivisor: true }, // detection_distance (dp_registry/Z2M ZG-204ZK)
       106: { cap: 'measure_luminance', type: 'lux_direct' },
       110: { cap: 'measure_battery', divisor: 1 },
+      121: { cap: 'measure_battery', divisor: 1 }, // battery (dp_registry/Z2M ZG-204ZK — alt DP to 110)
     }
   },
 

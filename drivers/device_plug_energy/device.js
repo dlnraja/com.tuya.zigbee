@@ -3,6 +3,7 @@ const { safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
 
 
 const UnifiedPlugBase = require('../../lib/devices/UnifiedPlugBase');
+const EnergyJumpGuard = require('../../lib/tuya/EnergyJumpGuard');
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 
@@ -59,6 +60,14 @@ class SmartPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedPlug
   }
 
   get gangCount() { return 1; }
+
+  // v5.6.1: Defensive guard against wrong-family energy divisors (forum ×660 bug)
+  async safeSetCapabilityValue(capability, value) {
+    if (capability === 'meter_power') {
+      value = EnergyJumpGuard.check(this, value);
+    }
+    return super.safeSetCapabilityValue(capability, value);
+  }
 
   async onNodeInit({ zclNode }) {
     // --- Attribute Reporting Configuration (auto-generated) ---
