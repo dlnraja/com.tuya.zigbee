@@ -212,7 +212,11 @@ jobs:
       # ─────────────────────────────────────────────────────────────
       - name: Resolve fingerprint collisions
         continue-on-error: true
-        run: node scripts/ci/resolve-collisions.js
+        # P92.25: dry-run only. Removals at publish time caused recurring mfr
+        # loss (SOS/Loratap/rco1yzb1/eqsair32 purged in loops). Real collisions
+        # are handled by the baseline policy + the priority compactor; new
+        # collisions are enforced by fp-collision-check in validate/unified-ci.
+        run: node scripts/ci/resolve-collisions.js --dry-run || echo "collision report only (non-blocking)"
 
       - name: Mandatory files check (51 rules)
         run: node scripts/validate/homey-mandatory-check.js
