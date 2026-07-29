@@ -1,11 +1,11 @@
 {
-  "id": "resetEnergyMeter",
+  "id": "resetenergymeter",
   "title": {
     "en": "Reset Energy Meter",
     "sv": "Återställ energimätaren"
   },
   "args": [],
-  "callback": "resetEnergyMeter",
+  "callback": "resetenergymeter",
   "titleFormatted": {
     "en": "Reset Energy Meter",
     "sv": "Återställ energimätaren"

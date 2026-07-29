@@ -59,14 +59,14 @@ async onInit() {
     } catch (err) { if (this.developerDebugMode) { this.error(`Condition sensor_motion_radar_motion_sensor_radar_mmwa_07985: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getConditionCard('sensor_motion_radar_motion_sensor_radar_mmwave_target_distance_l_9897d');
+      const card = this.homey.flow.getConditionCard('sensor_motion_radar_motion_sensor_radar_mmwa_f94bf');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Condition sensor_motion_radar_motion_sensor_radar_mmwave_target_distance_l_9897d: ${err.message}`); } }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition sensor_motion_radar_motion_sensor_radar_mmwa_f94bf: ${err.message}`); } }
 
     try {
       const card = this.homey.flow.getConditionCard('sensor_motion_radar_motion_sensor_radar_mmwa_251e3');
