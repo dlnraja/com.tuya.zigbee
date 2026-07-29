@@ -1332,5 +1332,8 @@
   },
   "9.0.365": {
     "en": "v9.0.364: Smart scaling engine (dynamic divisors/multipliers):"
+  },
+  "9.0.366": {
+    "en": "v9.0.365: Battery estimation: the generic 0-50-scale doubling heuristic in `UnifiedBatteryHandler.normalizeZigbeeValue` misread genuinely discharged devices (a real 40 % report became 80 %). Doubling now applies only to curated manufacturers (`BATTERY_0_50_SCALE_MFRS`)., SOS button (`button_emergency_sos`) battery info: percentage and Tuya DP reports now go through the smart normalizer (ZCL 0-200,"
   }
 }
