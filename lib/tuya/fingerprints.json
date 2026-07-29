@@ -12122,10 +12122,11 @@
   },
   "_TZE284_hodyryli": {
     "driverId": "climate_sensor",
-    "type": "climate",
+    "type": "climate_sensor",
     "powerSource": "battery",
     "modelIds": [
-      "TS0601"
+      "TS0601",
+      "TS0201"
     ],
     "dps": {
       "1": {
@@ -12138,7 +12139,8 @@
         "converter": "raw",
         "capability": "measure_humidity"
       }
-    }
+    },
+    "source": "manual-fix-2026-07-27"
   },
   "_TZE284_iadro9bf": {
     "driverId": "generic_tuya",
@@ -23873,16 +23875,6 @@
     "confidence": 0.85
   },
   "_TZE284_HHRTIQ0X": {
-    "driverId": "climate_sensor",
-    "type": "climate_sensor",
-    "powerSource": "unknown",
-    "modelIds": [
-      "TS0201"
-    ],
-    "source": "driver-compose-2026-07-14",
-    "confidence": 0.85
-  },
-  "_TZE284_HODYRYLI": {
     "driverId": "climate_sensor",
     "type": "climate_sensor",
     "powerSource": "unknown",
