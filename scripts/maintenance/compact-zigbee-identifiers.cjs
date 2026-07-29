@@ -39,7 +39,7 @@ const PRIORITIZED_MAX_TOTAL_COMBOS = 60000;
 // productIds are reduced to the ones actually observed with the driver's
 // manufacturers — this shrinks the cross-product without losing any real pair.
 const DEFAULT_PID_REDUCE_OVER = 350;
-const SYNTHETIC_MANUFACTURER_RE = /unknown|dummy|placeholder|needs_device_assignment|^_generic_|^_GENERIC_|^_hybrid_|^_HYBRID_|^_master_|^_MASTER_/;
+const SYNTHETIC_MANUFACTURER_RE = /unknown|dummy|placeholder|needs_device_assignment|needs_exact_fingerprint|migrated_to|^_generic_|^_GENERIC_|^_hybrid_|^_HYBRID_|^_master_|^_MASTER_|^_disabled_|^_DISABLED_/;
 const MFS_DB_META_KEYS = new Set(['_meta', 'sources', 'devices', 'driverMapping', 'stats', 'diff']);
 
 function uniqStrings(values) {
