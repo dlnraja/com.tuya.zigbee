@@ -34,8 +34,42 @@ function classifyTask(t,s,o){
   return{cx:type==='code'||type==='analyze'?2:1,type};
 }
 
+// ─── v9.0.367: HARD BILLING GUARD ──────────────────────────────────────────
+// Central enforcement point: EVERY provider call funnels through callAIEngine.
+// Rules:
+//  1. Paid-tier providers (deepseek, openai, …) are BLOCKED unless
+//     AI_ALLOW_PAID=true is set explicitly in the workflow env.
+//  2. Per-provider daily cap (from scripts/automation/token-budget.js BUDGETS,
+//     overridable via AI_DAILY_CAP_<NAME>).
+//  3. Global daily cap across ALL providers (AI_GLOBAL_DAILY_CAP, default 2000).
+// The rate-state file (.github/state/ai-rate-state.json) is restored via CI
+// cache, so caps hold across runs of the same day.
+let _BUDGETS=null;
+function _budgets(){if(_BUDGETS)return _BUDGETS;try{_BUDGETS=require('../../scripts/automation/token-budget').BUDGETS||{}}catch{_BUDGETS={}}return _BUDGETS;}
+function _dailyCap(name){
+  const env=process.env['AI_DAILY_CAP_'+name.toUpperCase().replace(/[^A-Z0-9]/g,'_')];
+  if(env&&Number.isFinite(parseInt(env,10)))return parseInt(env,10);
+  return _budgets()[name]?.dailyRequests??500;
+}
+function budgetAllows(name){
+  _rtLoad();
+  const b=_budgets()[name];
+  if(b&&b.tier==='paid'&&process.env.AI_ALLOW_PAID!=='true'){
+    console.log(`  [${name}] BLOCKED: paid provider (set AI_ALLOW_PAID=true to enable)`);
+    return false;
+  }
+  const used=_rt.d[name]||0;
+  const cap=_dailyCap(name);
+  if(used>=cap){console.log(`  [${name}] BLOCKED: daily cap ${used}/${cap}`);return false;}
+  const globalCap=parseInt(process.env.AI_GLOBAL_DAILY_CAP||'2000',10);
+  const total=Object.values(_rt.d).reduce((a,c)=>a+c,0);
+  if(total>=globalCap){console.log(`  [${name}] BLOCKED: global daily cap ${total}/${globalCap}`);return false;}
+  return true;
+}
+
 async function callAIEngine(url, headers, body, providerName, maxRetries = 1, timeout = 30000) {
   if (!cbOk(providerName)) return null;
+  if (!budgetAllows(providerName)) return null;
   for (let retry = 0; retry <= maxRetries; retry++) {
     if (retry > 0) await sleep(backoff(retry));
     try {
@@ -370,4 +404,4 @@ function smartMergePost(existing,fresh,opts){
 function getAIBudget(){_rtLoad();return{used:_rt.d,budget:_rtBudget()}}
 function localFallback(){}
 
-module.exports={callAI,callAIEnsemble,splitTaskAndCombine,analyzeImage,sleep,localFallback,textSimilarity,isDuplicateContent,MAX_POST_SIZE,smartMergePost,getAIBudget,classifyTask};
+module.exports={callAI,callAIEnsemble,splitTaskAndCombine,analyzeImage,sleep,localFallback,textSimilarity,isDuplicateContent,MAX_POST_SIZE,smartMergePost,getAIBudget,classifyTask,budgetAllows};
