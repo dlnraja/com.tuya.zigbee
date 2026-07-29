@@ -4,6 +4,20 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
+## [5.12.31] - 2026-07-29
+
+Stability line (branch `stable-v5`, production). Minimal zero-regression backports from master.
+
+### Bug Fixes
+- Smart scaling engine (same fixes as master 9.0.364): prefix resolution for
+  sub-capabilities in `SmartDivisorManager`, self-validating divisor cache
+  (range-checked, zero-values never learned, cross-protocol cache guarded),
+  `_TZE284_vvmbj46n` battery 0-50 → 0-100 % multiplier, and
+  `ProductValueValidator` now prefers the smallest plausible divisor without
+  mutating shared rules. Regression tests added (`test/smart-scaling-heuristics.test.js`).
+
+---
+
 ## [5.12.30] - 2026-07-29
 
 Stability line (branch `stable-v5`, production). Minimal zero-regression backport from master.
