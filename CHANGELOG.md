@@ -4,6 +4,16 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
+## [9.0.365] - 2026-07-29
+
+### Fixed
+- Battery estimation: the generic 0-50-scale doubling heuristic in `UnifiedBatteryHandler.normalizeZigbeeValue` misread genuinely discharged devices (a real 40 % report became 80 %). Doubling now applies only to curated manufacturers (`BATTERY_0_50_SCALE_MFRS`).
+- SOS button (`button_emergency_sos`) battery info: percentage and Tuya DP reports now go through the smart normalizer (ZCL 0-200, sentinels, mV quirk); ZCL `batteryVoltage` 100mV units are converted correctly (30 → 3.0 V, previously read as 30 V).
+- SOS button management: `button.1` now has a capability listener (virtual press from the app UI triggers the SOS alarm; fixes "Missing Capability Listener: button.1").
+- 9 new regression tests (`test/battery-sos-scaling.test.js`).
+
+---
+
 ## [9.0.364] - 2026-07-29
 
 ### Improved
