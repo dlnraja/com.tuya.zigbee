@@ -246,6 +246,14 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
       else if (value.length === 1) {parsedValue = value.readUInt8(0);}
     }
 
+    // Backport (forum 140352): ignore Tuya overflow/sentinel readings
+    // (e.g. 67109120 = 0x04000000) reported by some soil sensors for
+    // temperature/humidity. Legitimate readings never reach this magnitude.
+    if (typeof parsedValue === 'number' && Number.isFinite(parsedValue) && Math.abs(parsedValue) >= 0x04000000) {
+      this.log(`[SOIL] Ignoring overflow/sentinel value DP${dp} = ${parsedValue} (0x${(parsedValue >>> 0).toString(16).toUpperCase()})`);
+      return;
+    }
+
     // Conductivity / EC (DP 4, 20, 22, 106, 112)
     if (dp === 4 || dp === 20 || dp === 22 || dp === 106 || dp === 112) {
       this.log(`[SOIL] EC/Conductivity DP${dp} = ${parsedValue}`);
