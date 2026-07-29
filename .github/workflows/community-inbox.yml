@@ -1,0 +1,61 @@
+# 📥 Community Inbox Digest (v9.0.362)
+# Triggers: cron: 17 5 * * * + workflow_dispatch | Secrets: GITHUB_TOKEN only
+# Generates reports/community-inbox.md — unified daily view of open issues,
+# PRs and unanswered forum posts. Read-only against GitHub.
+
+name: 📥 Community Inbox
+
+on:
+  schedule:
+    # Daily at 05:17 UTC (off the :00 herd)
+    - cron: '17 5 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: community-inbox
+  cancel-in-progress: false
+
+defaults:
+  run:
+    shell: bash
+
+env:
+  NODE_VERSION: '22'
+
+jobs:
+  digest:
+    name: 📥 Generate community inbox digest
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: 📥 Checkout
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 📦 Setup Node.js
+        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: 📥 Build digest
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node .github/scripts/community-inbox-digest.js
+
+      - name: 💾 Commit digest
+        continue-on-error: true
+        run: |
+          git add reports/community-inbox.md
+          if ! git diff --staged --quiet; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git commit -m "📥 community inbox digest $(date -u +%Y-%m-%d) [skip ci]"
+            bash scripts/ci/verified-git-push.sh master
+          else
+            echo "No digest changes"
+          fi
