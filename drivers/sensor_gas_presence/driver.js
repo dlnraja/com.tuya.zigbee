@@ -89,7 +89,7 @@ class PresenceSensorRadarDriver extends ZigBeeDriver {
           return false;
         });
       }
-    } catch (err) { this.error(`Action sensor_gas_presence_run_self_test: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action sensor_gas_presence_run_self_test: ${err.message}`); }; }
 
     this.log('[FLOW] All flow cards registered');
   }
