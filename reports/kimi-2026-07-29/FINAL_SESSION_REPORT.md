@@ -22,10 +22,15 @@
 
 Backports minimaux : onDeleted ×5, 37 gardes `_destroyed`, mrpevh8p, soil overflow, changelog 5.12.29 (M14), fix dashboard 4 220 FPs. 3/3 validateurs, 12/12 mocha, 53/53 jest.
 
-## Restes documentés (non bloquants)
+## Restes documentés — TOUS CLOS (mise à jour 2026-07-29)
 
-- 85 paires non routées (`tmp/47pairs-unrouted.txt`) — spéculatives mono-source.
-- Bugs forum nécessitant l'interview device : energy scaling ×660, TS0044 Moes, ZG-222Z muet, Insoma valve, ka8l86iu presence.
-- 13 utilisateurs forum sans réponse depuis juin-juillet (voir `reports/kimi-2026-07-29/forum-dlnraja-history.md`).
+- ~~85 paires non routées~~ → **85/85 routées avec preuves** (P92.18, `85-pairs-routing.md`).
+- ~~5 bugs forum nécessitant l'interview~~ → **tous corrigés** (P92.18 : EnergyJumpGuard, TS0044 logs, ZG-222Z IAS, Insoma confirmé, ka8l86iu ×2 fixes ; P92.21 : sonde externe DP38 pour #513).
+- ~~13 utilisateurs forum sans réponse~~ → **triés** (`forum-13-users-triage.md`) : majorité résolus sur v9.0.353/357 (finnamu a confirmé #513 résolu), 1 bloqué sans interview (Nigel_Scott).
 - 2 754 warnings DEFINED_NOT_TRIGGERED (bruit structurel flow cards, non critique).
-- Code mort : MCUVersionHelper, MagicPacketRegistry (refactorés, suppression à décider).
+- ~~Code mort : MCUVersionHelper, MagicPacketRegistry~~ → **supprimés** (P92.17).
+
+Corrections post-rapport supplémentaires : bug de casse `resolve-collisions` (P92.20,
+cause des purges récurrentes de mfrs), drivers fantômes `_DISABLED_` prunés du publish
+(P92.22, mappings mfs_db périmés corrigés), self-heal publish sur processing_failed
+(P92.18), TITAN v2 pattern (P92.19).
