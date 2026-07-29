@@ -107,6 +107,42 @@ function stripDeviceTitleFormatted(manifest) {
   return stripped;
 }
 
+const FLOW_ID_RE = /^[a-z0-9_]+$/;
+const FLOW_ID_MAX = 50;
+
+function normalizeFlowCardIds(manifest) {
+  const crypto = require('crypto');
+  let renamed = 0;
+  const flow = manifest.flow || {};
+  const seenPerType = { triggers: new Set(), conditions: new Set(), actions: new Set() };
+  for (const type of ['triggers', 'conditions', 'actions']) {
+    const cards = flow[type];
+    if (!Array.isArray(cards)) continue;
+    const seen = seenPerType[type];
+    for (const card of cards) {
+      if (!card || typeof card.id !== 'string') continue;
+      if (FLOW_ID_RE.test(card.id) && card.id.length <= FLOW_ID_MAX) {
+        seen.add(card.id);
+        continue;
+      }
+      let base = card.id.toLowerCase().replace(/[^a-z0-9_]/g, '_');
+      if (base.length > FLOW_ID_MAX) {
+        const h = crypto.createHash('sha1').update(card.id).digest('hex').slice(0, 5);
+        base = base.slice(0, FLOW_ID_MAX - 6) + '_' + h;
+      }
+      let candidate = base;
+      let n = 2;
+      while (seen.has(candidate)) {
+        candidate = base.slice(0, FLOW_ID_MAX - 3) + '_' + (n++);
+      }
+      seen.add(candidate);
+      card.id = candidate;
+      renamed++;
+    }
+  }
+  return renamed;
+}
+
 function sanitizeManifestFile(manifestPath, options = {}) {
   const opts = options && typeof options === 'object' ? options : {};
   const dryRun = opts.dryRun === true || process.env.DRY_RUN === 'true';
@@ -179,6 +215,16 @@ function sanitizeManifestFile(manifestPath, options = {}) {
     log(`${label}: stripped ${deviceTitleFormatted} device titleFormatted Flow card(s).`);
   }
 
+  // 5b) Normalize invalid Flow card IDs. Homey requires ^[a-z0-9_]+$ and
+  //    max 50 chars; the legacy generators emit driver-prefixed ids up to 80
+  //    chars and occasional camelCase. Rename deterministically (same input
+  //    id → same output) so repeated CI runs are idempotent.
+  const flowIdsNormalized = normalizeFlowCardIds(manifest);
+  if (flowIdsNormalized > 0) {
+    changes += flowIdsNormalized;
+    log(`${label}: normalized ${flowIdsNormalized} invalid Flow card id(s).`);
+  }
+
   // 6) Drop the generator comment from build/publish manifests only
   //    (keep the tracked root app.json stable).
   const isTrackedRootManifest = path.resolve(manifestPath) === path.join(APP_ROOT, 'app.json');
@@ -221,4 +267,4 @@ if (require.main === module) {
   process.exit(failures > 0 ? 1 : 0);
 }
 
-module.exports = { sanitizeManifestFile, stripGeneratedButtonOptions, dedupeFlowArgs, stripDeviceTitleFormatted };
+module.exports = { sanitizeManifestFile, stripGeneratedButtonOptions, dedupeFlowArgs, stripDeviceTitleFormatted, normalizeFlowCardIds };
