@@ -190,6 +190,18 @@ jobs:
         timeout-minutes: 5
         run: node .github/scripts/pattern-detector.js
 
+      - name: "Restore resolver state cache"
+        if: always()
+        continue-on-error: true
+        uses: actions/cache@caa296126883cff596d87d8935842f9db880ef25 # v5.1.0
+        with:
+          path: |
+            .github/state/resolver-state.json
+            .github/state/ai-rate-state.json
+          key: resolver-state-${{ github.run_id }}
+          restore-keys: |
+            resolver-state-
+
       - name: "Diagnostic Auto-Resolver (cross-ref diags+patterns → issues/PRs)"
         if: always()
         continue-on-error: true

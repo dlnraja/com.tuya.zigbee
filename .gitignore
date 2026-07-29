@@ -219,13 +219,11 @@ oauth2.keys.json
 client_secret*.json
 
 # Security: token/secret files in state directory
+# NOTE: .github/state/** stays fully ignored (security-scanner policy) —
+# resolver state persists via actions/cache instead of git tracking.
 .github/state/**
 !.github/state/.gitkeep
 !.github/state/README.md
-# v9.0.362: resolver state must persist across CI runs (dedup, no secrets inside —
-# the workflow runs privacy-redactor on these files before committing)
-!.github/state/resolver-state.json
-!.github/state/resolver-report.json
 .github/state/_new_refresh_token*
 .github/state/_token_*
 .github/state/*secret*
