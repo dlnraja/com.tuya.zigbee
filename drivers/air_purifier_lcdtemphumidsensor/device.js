@@ -47,7 +47,7 @@ class AirPurifierLCDDevice extends TuyaSpecificClusterDevice {
   _triggerPm25Changed(pm25) {
     if (this._destroyed) {return;}
     try {
-      const card = this.homey.flow.getDeviceTriggerCard('air_purifier_lcdtemphumidsensor_air_purifier_pm25_changed');
+      const card = this.homey.flow.getDeviceTriggerCard('air_purifier_lcdtemphumidsensor_air_purifier_66846');
       if (card) {card.trigger(this, { pm25 }, {}).catch(() => {});}
     } catch (e) { /* flow indisponible */ }
   }

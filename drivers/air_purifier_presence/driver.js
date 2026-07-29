@@ -47,7 +47,7 @@ class PresenceSensorRadarDriver extends ZigBeeDriver {
     } catch (err) { if (this.developerDebugMode) { this.error(`Condition air_purifier_presence_presence_sensor_radar_is_present: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getConditionCard('air_purifier_presence_sensor_radar_illuminance_above');
+      const card = this.homey.flow.getConditionCard('air_purifier_presence_sensor_radar_illuminan_fa4ec');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}

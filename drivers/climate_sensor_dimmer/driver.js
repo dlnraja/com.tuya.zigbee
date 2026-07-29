@@ -37,7 +37,7 @@ class Dimmer1gangDriver extends ZigBeeDriver {
     // END TRIGGERS
     // CONDITIONS
     try {
-      const card = this.homey.flow.getConditionCard('climate_sensor_dimmer_wall_1gang_dimmer_1gang_is_on');
+      const card = this.homey.flow.getConditionCard('climate_sensor_dimmer_wall_1gang_dimmer_1gan_ab9c7');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -58,7 +58,7 @@ class Dimmer1gangDriver extends ZigBeeDriver {
 
     // ACTIONS
     try {
-      const card = this.homey.flow.getActionCard('climate_sensor_dimmer_wall_1gang_dimmer_1gang_turn_on');
+      const card = this.homey.flow.getActionCard('climate_sensor_dimmer_wall_1gang_dimmer_1gan_d1151');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -69,7 +69,7 @@ class Dimmer1gangDriver extends ZigBeeDriver {
     } catch (err) { if (this.developerDebugMode) { this.error(`Action climate_sensor_dimmer_dimmer_wall_1gang_dimmer_1gang_turn_on: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getActionCard('climate_sensor_dimmer_wall_1gang_dimmer_1gang_turn_off');
+      const card = this.homey.flow.getActionCard('climate_sensor_dimmer_wall_1gang_dimmer_1gan_02d79');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -80,7 +80,7 @@ class Dimmer1gangDriver extends ZigBeeDriver {
     } catch (err) { if (this.developerDebugMode) { this.error(`Action climate_sensor_dimmer_dimmer_wall_1gang_dimmer_1gang_turn_off: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getActionCard('climate_sensor_dimmer_wall_1gang_dimmer_1gang_toggle');
+      const card = this.homey.flow.getActionCard('climate_sensor_dimmer_wall_1gang_dimmer_1gan_6ec6b');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -92,7 +92,7 @@ class Dimmer1gangDriver extends ZigBeeDriver {
     } catch (err) { if (this.developerDebugMode) { this.error(`Action climate_sensor_dimmer_dimmer_wall_1gang_dimmer_1gang_toggle: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getActionCard('climate_sensor_dimmer_wall_1gang_dimmer_1gang_set_dim');
+      const card = this.homey.flow.getActionCard('climate_sensor_dimmer_wall_1gang_dimmer_1gan_c6599');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}

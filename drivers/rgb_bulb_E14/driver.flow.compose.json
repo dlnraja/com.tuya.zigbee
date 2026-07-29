@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "rgb_bulb_E14_turned_on",
+      "id": "rgb_bulb_e14_turned_on_5f26e",
       "title": {
         "en": "Turned on",
         "fr": "Allume",
@@ -17,7 +17,7 @@
       }
     },
     {
-      "id": "rgb_bulb_E14_turned_off",
+      "id": "rgb_bulb_e14_turned_off_3e5b0",
       "title": {
         "en": "Turned off",
         "fr": "Eteint",
@@ -33,7 +33,7 @@
       }
     },
     {
-      "id": "rgb_bulb_E14_dim_changed",
+      "id": "rgb_bulb_e14_dim_changed_4e405",
       "title": {
         "en": "Brightness changed",
         "fr": "Luminosite changee"
@@ -56,7 +56,7 @@
       }
     },
     {
-      "id": "rgb_bulb_E14_battery_low",
+      "id": "rgb_bulb_e14_battery_low_cf745",
       "title": {
         "en": "Battery low",
         "fr": "Batterie faible",
@@ -74,7 +74,7 @@
   ],
   "conditions": [
     {
-      "id": "rgb_bulb_E14_is_on",
+      "id": "rgb_bulb_e14_is_on_1a22e",
       "title": {
         "en": "Is turned !{{on|off}}",
         "fr": "Est !{{allume|eteint}}",
@@ -92,7 +92,7 @@
   ],
   "actions": [
     {
-      "id": "rgb_bulb_E14_turn_on",
+      "id": "rgb_bulb_e14_turn_on_4d6f2",
       "title": {
         "en": "Turn on",
         "fr": "Allumer",
@@ -108,7 +108,7 @@
       }
     },
     {
-      "id": "rgb_bulb_E14_turn_off",
+      "id": "rgb_bulb_e14_turn_off_c1955",
       "title": {
         "en": "Turn off",
         "fr": "Eteindre",
@@ -124,7 +124,7 @@
       }
     },
     {
-      "id": "rgb_bulb_E14_toggle",
+      "id": "rgb_bulb_e14_toggle_23078",
       "title": {
         "en": "Toggle",
         "fr": "Basculer",
@@ -140,7 +140,7 @@
       }
     },
     {
-      "id": "rgb_bulb_E14_set_brightness",
+      "id": "rgb_bulb_e14_set_brightness_1a06d",
       "title": {
         "en": "Set brightness",
         "fr": "Regler luminosite",
@@ -166,7 +166,7 @@
       }
     },
     {
-      "id": "rgb_bulb_E14_set_color",
+      "id": "rgb_bulb_e14_set_color_44444",
       "title": {
         "en": "Set color",
         "fr": "Regler couleur",
@@ -187,7 +187,7 @@
       }
     },
     {
-      "id": "rgb_bulb_E14_set_color_temperature",
+      "id": "rgb_bulb_e14_set_color_44444_temperature",
       "title": {
         "en": "Set color temperature",
         "fr": "Regler temperature de couleur"

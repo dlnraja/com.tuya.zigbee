@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "rgb_spot_GardenLight_turned_on",
+      "id": "rgb_spot_gardenlight_turned_on_17633",
       "title": {
         "en": "Turned on",
         "fr": "Allume",
@@ -17,7 +17,7 @@
       }
     },
     {
-      "id": "rgb_spot_GardenLight_turned_off",
+      "id": "rgb_spot_gardenlight_turned_off_6d3e1",
       "title": {
         "en": "Turned off",
         "fr": "Eteint",
@@ -33,7 +33,7 @@
       }
     },
     {
-      "id": "rgb_spot_GardenLight_dim_changed",
+      "id": "rgb_spot_gardenlight_dim_changed_3cd13",
       "title": {
         "en": "Brightness changed",
         "fr": "Luminosite changee"
@@ -56,7 +56,7 @@
       }
     },
     {
-      "id": "rgb_spot_GardenLight_battery_low",
+      "id": "rgb_spot_gardenlight_battery_low_93735",
       "title": {
         "en": "Battery low",
         "fr": "Batterie faible",
@@ -74,7 +74,7 @@
   ],
   "conditions": [
     {
-      "id": "rgb_spot_GardenLight_is_on",
+      "id": "rgb_spot_gardenlight_is_on_abeb6",
       "title": {
         "en": "Is turned !{{on|off}}",
         "fr": "Est !{{allume|eteint}}",
@@ -92,7 +92,7 @@
   ],
   "actions": [
     {
-      "id": "rgb_spot_GardenLight_turn_on",
+      "id": "rgb_spot_gardenlight_turn_on_17c40",
       "title": {
         "en": "Turn on",
         "fr": "Allumer",
@@ -108,7 +108,7 @@
       }
     },
     {
-      "id": "rgb_spot_GardenLight_turn_off",
+      "id": "rgb_spot_gardenlight_turn_off_4f740",
       "title": {
         "en": "Turn off",
         "fr": "Eteindre",
@@ -124,7 +124,7 @@
       }
     },
     {
-      "id": "rgb_spot_GardenLight_toggle",
+      "id": "rgb_spot_gardenlight_toggle_824d8",
       "title": {
         "en": "Toggle",
         "fr": "Basculer",
@@ -140,7 +140,7 @@
       }
     },
     {
-      "id": "rgb_spot_GardenLight_set_brightness",
+      "id": "rgb_spot_gardenlight_set_brightness_4d147",
       "title": {
         "en": "Set brightness",
         "fr": "Regler luminosite",
@@ -166,7 +166,7 @@
       }
     },
     {
-      "id": "rgb_spot_GardenLight_set_color",
+      "id": "rgb_spot_gardenlight_set_color_f8fd0",
       "title": {
         "en": "Set color",
         "fr": "Regler couleur",
@@ -187,7 +187,7 @@
       }
     },
     {
-      "id": "rgb_spot_GardenLight_set_color_temperature",
+      "id": "rgb_spot_gardenlight_set_color_f8fd0_temperature",
       "title": {
         "en": "Set color temperature",
         "fr": "Regler temperature de couleur"

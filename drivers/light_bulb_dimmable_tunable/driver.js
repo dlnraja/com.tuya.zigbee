@@ -22,7 +22,7 @@ class SmartBulbDimmerDriver extends ZigBeeDriver {
 
   _registerFlowCards() {
     // TRIGGERS
-    const _triggerIds = ["light_bulb_dimmable_tunable_bulb_dimmable_smart_bulb_dimmer_turned_on","light_bulb_dimmable_tunable_bulb_dimmable_smart_bulb_dimmer_turned_off","light_bulb_dimmable_tunable_bulb_dimmable_smart_bulb_dimmer_dim_changed","light_bulb_dimmable_tunable_bulb_dimmable_turned_on","light_bulb_dimmable_tunable_bulb_dimmable_turned_off","light_bulb_dimmable_tunable_bulb_dimmable_battery_low"];
+    const _triggerIds = ["light_bulb_dimmable_tunable_bulb_dimmable_smart_bulb_dimmer_turned_on","light_bulb_dimmable_tunable_bulb_dimmable_smart_bulb_dimmer_turned_off","light_bulb_dimmable_tunable_bulb_dimmable_smart_bulb_dimmer_dim_changed","light_bulb_dimmable_tunable_bulb_dimmable_tu_f68af","light_bulb_dimmable_tunable_bulb_dimmable_tu_aac6d","light_bulb_dimmable_tunable_bulb_dimmable_ba_bf947"];
     for (const _tid of _triggerIds) {
       try {
         const _card = this._getFlowCard(_tid, "trigger");
@@ -37,7 +37,7 @@ class SmartBulbDimmerDriver extends ZigBeeDriver {
     // END TRIGGERS
     // CONDITIONS
     try {
-      const card = this.homey.flow.getConditionCard('light_bulb_dimmable_tunable_bulb_dimmable_dimmer_is_on');
+      const card = this.homey.flow.getConditionCard('light_bulb_dimmable_tunable_bulb_dimmable_di_f31fc');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -58,7 +58,7 @@ class SmartBulbDimmerDriver extends ZigBeeDriver {
 
     // ACTIONS
     try {
-      const card = this.homey.flow.getActionCard('light_bulb_dimmable_tunable_bulb_dimmable_dimmer_turn_on');
+      const card = this.homey.flow.getActionCard('light_bulb_dimmable_tunable_bulb_dimmable_di_a4e5f');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -69,7 +69,7 @@ class SmartBulbDimmerDriver extends ZigBeeDriver {
     } catch (err) { if (this.developerDebugMode) { this.error(`Action light_bulb_dimmable_tunable_bulb_dimmable_smart_bulb_dimmer_turn_on: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getActionCard('light_bulb_dimmable_tunable_bulb_dimmable_dimmer_turn_off');
+      const card = this.homey.flow.getActionCard('light_bulb_dimmable_tunable_bulb_dimmable_di_28ee6');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -80,7 +80,7 @@ class SmartBulbDimmerDriver extends ZigBeeDriver {
     } catch (err) { if (this.developerDebugMode) { this.error(`Action light_bulb_dimmable_tunable_bulb_dimmable_smart_bulb_dimmer_turn_off: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getActionCard('light_bulb_dimmable_tunable_bulb_dimmable_dimmer_toggle');
+      const card = this.homey.flow.getActionCard('light_bulb_dimmable_tunable_bulb_dimmable_di_4dbe8');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -92,7 +92,7 @@ class SmartBulbDimmerDriver extends ZigBeeDriver {
     } catch (err) { if (this.developerDebugMode) { this.error(`Action light_bulb_dimmable_tunable_bulb_dimmable_smart_bulb_dimmer_toggle: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getActionCard('light_bulb_dimmable_tunable_bulb_dimmable_dimmer_set_dim');
+      const card = this.homey.flow.getActionCard('light_bulb_dimmable_tunable_bulb_dimmable_di_bf48d');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -137,7 +137,7 @@ class SmartBulbDimmerDriver extends ZigBeeDriver {
     } catch (err) { if (this.developerDebugMode) { this.error(`Action light_bulb_dimmable_tunable_bulb_dimmable_toggle: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getActionCard('light_bulb_dimmable_tunable_bulb_dimmable_set_brightness');
+      const card = this.homey.flow.getActionCard('light_bulb_dimmable_tunable_bulb_dimmable_se_92a1c');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -145,7 +145,7 @@ class SmartBulbDimmerDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Action light_bulb_dimmable_tunable_bulb_dimmable_set_brightness: ${err.message}`); } }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action light_bulb_dimmable_tunable_bulb_dimmable_se_92a1c: ${err.message}`); } }
 
     this.log('[FLOW] All flow cards registered');
   }

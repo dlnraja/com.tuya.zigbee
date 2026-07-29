@@ -35,7 +35,7 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
     } catch (err) { if (this.developerDebugMode) { this.error(`Condition device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_is_heating: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getConditionCard('device_air_purifier_thermostat_thermostat_tuya_dp_temperature_above_target');
+      const card = this.homey.flow.getConditionCard('device_air_purifier_thermostat_thermostat_tu_db309');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -43,51 +43,51 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
           return val > (args.threshold || 400);
       });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Condition device_air_purifier_thermostat_thermostat_tuya_dp_temperature_above_target: ${err.message}`); } }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition device_air_purifier_thermostat_thermostat_tu_db309: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getConditionCard('device_air_purifier_thermostat_thermostat_tuya_dp_temperature_below_target');
+      const card = this.homey.flow.getConditionCard('device_air_purifier_thermostat_thermostat_tu_864c7');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Condition device_air_purifier_thermostat_thermostat_tuya_dp_temperature_below_target: ${err.message}`); } }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition device_air_purifier_thermostat_thermostat_tu_864c7: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getConditionCard('device_air_purifier_thermostat_thermostat_tuya_dp_mode_is');
+      const card = this.homey.flow.getConditionCard('device_air_purifier_thermostat_thermostat_tu_64a5b');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Condition device_air_purifier_thermostat_thermostat_tuya_dp_mode_is: ${err.message}`); } }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition device_air_purifier_thermostat_thermostat_tu_64a5b: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getConditionCard('device_air_purifier_thermostat_thermostat_tuya_dp_child_lock_is');
+      const card = this.homey.flow.getConditionCard('device_air_purifier_thermostat_thermostat_tu_21c57');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Condition device_air_purifier_thermostat_thermostat_tuya_dp_child_lock_is: ${err.message}`); } }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition device_air_purifier_thermostat_thermostat_tu_21c57: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getConditionCard('device_air_purifier_thermostat_thermostat_tuya_dp_is_on');
+      const card = this.homey.flow.getConditionCard('device_air_purifier_thermostat_thermostat_tu_2fcc5');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Condition device_air_purifier_thermostat_thermostat_tuya_dp_is_on: ${err.message}`); } }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition device_air_purifier_thermostat_thermostat_tu_2fcc5: ${err.message}`); } }
 
     // ACTIONS
     try {
-      const card = this.homey.flow.getActionCard('device_air_purifier_thermostat_thermostat_tuya_dp_set_target_temperature');
+      const card = this.homey.flow.getActionCard('device_air_purifier_thermostat_thermostat_tu_77560');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -95,70 +95,70 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Action device_air_purifier_thermostat_thermostat_tuya_dp_set_target_temperature: ${err.message}`); } }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action device_air_purifier_thermostat_thermostat_tu_77560: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getActionCard('device_air_purifier_thermostat_thermostat_tuya_dp_set_mode');
+      const card = this.homey.flow.getActionCard('device_air_purifier_thermostat_thermostat_tu_33b12');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
           // Generic action handler
-          this.log('[FLOW] Action device_air_purifier_thermostat_thermostat_tuya_dp_set_mode triggered for', args.device.getName());
+          this.log('[FLOW] Action device_air_purifier_thermostat_thermostat_tu_33b12 triggered for', args.device.getName());
           return true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Action device_air_purifier_thermostat_thermostat_tuya_dp_set_mode: ${err.message}`); } }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action device_air_purifier_thermostat_thermostat_tu_33b12: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getActionCard('device_air_purifier_thermostat_thermostat_tuya_dp_increase_temperature');
+      const card = this.homey.flow.getActionCard('device_air_purifier_thermostat_thermostat_tu_deca2');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
           // Generic action handler
-          this.log('[FLOW] Action device_air_purifier_thermostat_thermostat_tuya_dp_increase_temperature triggered for', args.device.getName());
+          this.log('[FLOW] Action device_air_purifier_thermostat_thermostat_tu_deca2 triggered for', args.device.getName());
           return true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Action device_air_purifier_thermostat_thermostat_tuya_dp_increase_temperature: ${err.message}`); } }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action device_air_purifier_thermostat_thermostat_tu_deca2: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getActionCard('device_air_purifier_thermostat_thermostat_tuya_dp_decrease_temperature');
+      const card = this.homey.flow.getActionCard('device_air_purifier_thermostat_thermostat_tu_5131d');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
           // Generic action handler
-          this.log('[FLOW] Action device_air_purifier_thermostat_thermostat_tuya_dp_decrease_temperature triggered for', args.device.getName());
+          this.log('[FLOW] Action device_air_purifier_thermostat_thermostat_tu_5131d triggered for', args.device.getName());
           return true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Action device_air_purifier_thermostat_thermostat_tuya_dp_decrease_temperature: ${err.message}`); } }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action device_air_purifier_thermostat_thermostat_tu_5131d: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getActionCard('device_air_purifier_thermostat_thermostat_tuya_dp_set_child_lock');
+      const card = this.homey.flow.getActionCard('device_air_purifier_thermostat_thermostat_tu_4b8c2');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
           // Generic action handler
-          this.log('[FLOW] Action device_air_purifier_thermostat_thermostat_tuya_dp_set_child_lock triggered for', args.device.getName());
+          this.log('[FLOW] Action device_air_purifier_thermostat_thermostat_tu_4b8c2 triggered for', args.device.getName());
           return true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Action device_air_purifier_thermostat_thermostat_tuya_dp_set_child_lock: ${err.message}`); } }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action device_air_purifier_thermostat_thermostat_tu_4b8c2: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getActionCard('device_air_purifier_thermostat_thermostat_tuya_dp_set_comfort_preset');
+      const card = this.homey.flow.getActionCard('device_air_purifier_thermostat_thermostat_tu_c904d');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
           // Generic action handler
-          this.log('[FLOW] Action device_air_purifier_thermostat_thermostat_tuya_dp_set_comfort_preset triggered for', args.device.getName());
+          this.log('[FLOW] Action device_air_purifier_thermostat_thermostat_tu_c904d triggered for', args.device.getName());
           return true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Action device_air_purifier_thermostat_thermostat_tuya_dp_set_comfort_preset: ${err.message}`); } }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action device_air_purifier_thermostat_thermostat_tu_c904d: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getActionCard('device_air_purifier_thermostat_thermostat_tuya_dp_schedule_on');
+      const card = this.homey.flow.getActionCard('device_air_purifier_thermostat_thermostat_tu_9219c');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -166,10 +166,10 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Action device_air_purifier_thermostat_thermostat_tuya_dp_schedule_on: ${err.message}`); } }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action device_air_purifier_thermostat_thermostat_tu_9219c: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getActionCard('device_air_purifier_thermostat_thermostat_tuya_dp_schedule_off');
+      const card = this.homey.flow.getActionCard('device_air_purifier_thermostat_thermostat_tu_8d7be');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -177,10 +177,10 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Action device_air_purifier_thermostat_thermostat_tuya_dp_schedule_off: ${err.message}`); } }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action device_air_purifier_thermostat_thermostat_tu_8d7be: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getActionCard('device_air_purifier_thermostat_thermostat_tuya_dp_turn_on');
+      const card = this.homey.flow.getActionCard('device_air_purifier_thermostat_thermostat_tu_d5edb');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -188,10 +188,10 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Action device_air_purifier_thermostat_thermostat_tuya_dp_turn_on: ${err.message}`); } }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action device_air_purifier_thermostat_thermostat_tu_d5edb: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getActionCard('device_air_purifier_thermostat_thermostat_tuya_dp_turn_off');
+      const card = this.homey.flow.getActionCard('device_air_purifier_thermostat_thermostat_tu_de75c');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -199,10 +199,10 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Action device_air_purifier_thermostat_thermostat_tuya_dp_turn_off: ${err.message}`); } }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action device_air_purifier_thermostat_thermostat_tu_de75c: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getActionCard('device_air_purifier_thermostat_thermostat_tuya_dp_toggle');
+      const card = this.homey.flow.getActionCard('device_air_purifier_thermostat_thermostat_tu_22d2b');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -211,10 +211,10 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Action device_air_purifier_thermostat_thermostat_tuya_dp_toggle: ${err.message}`); } }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action device_air_purifier_thermostat_thermostat_tu_22d2b: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getActionCard('device_air_purifier_thermostat_thermostat_tuya_dp_set_temperature');
+      const card = this.homey.flow.getActionCard('device_air_purifier_thermostat_thermostat_tu_131bb');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -222,7 +222,7 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Action device_air_purifier_thermostat_thermostat_tuya_dp_set_temperature: ${err.message}`); } }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action device_air_purifier_thermostat_thermostat_tu_131bb: ${err.message}`); } }
 
     this.log('[FLOW] All flow cards registered');
     }

@@ -82,7 +82,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
     } catch (err) { if (this.developerDebugMode) { this.error(`Action button_wireless_fingerbot_fingerbot_switch_switch_1gang_toggle: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getActionCard('button_wireless_fingerbot_switch_1gang_set_backlight');
+      const card = this.homey.flow.getActionCard('button_wireless_fingerbot_switch_1gang_set_b_8fda1');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -93,7 +93,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
     } catch (err) { if (this.developerDebugMode) { this.error(`Action button_wireless_fingerbot_fingerbot_switch_switch_1gang_set_backlight: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getActionCard('button_wireless_fingerbot_switch_1gang_set_backlight_color');
+      const card = this.homey.flow.getActionCard('button_wireless_fingerbot_switch_1gang_set_b_8fda1_color');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -104,7 +104,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
     } catch (err) { if (this.developerDebugMode) { this.error(`Action button_wireless_fingerbot_fingerbot_switch_switch_1gang_set_backlight_color: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getActionCard('button_wireless_fingerbot_switch_1gang_set_backlight_brightness');
+      const card = this.homey.flow.getActionCard('button_wireless_fingerbot_switch_1gang_set_b_8fda1_brightness');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -115,7 +115,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
     } catch (err) { if (this.developerDebugMode) { this.error(`Action button_wireless_fingerbot_fingerbot_switch_switch_1gang_set_backlight_brightness: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getActionCard('button_wireless_fingerbot_switch_1gang_set_countdown');
+      const card = this.homey.flow.getActionCard('button_wireless_fingerbot_switch_1gang_set_c_fc895');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -127,7 +127,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
     } catch (err) { if (this.developerDebugMode) { this.error(`Action button_wireless_fingerbot_fingerbot_switch_switch_1gang_set_countdown: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getActionCard('button_wireless_fingerbot_switch_1gang_set_child_lock');
+      const card = this.homey.flow.getActionCard('button_wireless_fingerbot_switch_1gang_set_c_4bbc8');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -139,7 +139,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
     } catch (err) { if (this.developerDebugMode) { this.error(`Action button_wireless_fingerbot_fingerbot_switch_switch_1gang_set_child_lock: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getActionCard('button_wireless_fingerbot_switch_1gang_set_scene_mode');
+      const card = this.homey.flow.getActionCard('button_wireless_fingerbot_switch_1gang_set_s_296a3');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}

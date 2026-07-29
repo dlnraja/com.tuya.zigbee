@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "device_air_purifier_quality_air_quality_comprehensive_air_monitor_measure_temperature_changed",
+      "id": "device_air_purifier_quality_air_quality_comprehensive_air_monitor_measur_5e035",
       "title": {
         "en": "Temperature changed",
         "fr": "Température changée"
@@ -24,7 +24,7 @@
       }
     },
     {
-      "id": "device_air_purifier_quality_air_quality_comprehensive_air_monitor_measure_humidity_changed",
+      "id": "device_air_purifier_quality_air_quality_comprehensive_air_monitor_measur_fd5e7",
       "title": {
         "en": "Humidity changed",
         "fr": "Humidité changée"
@@ -47,7 +47,7 @@
       }
     },
     {
-      "id": "device_air_purifier_quality_air_quality_comprehensive_temp_changed",
+      "id": "device_air_purifier_quality_air_quality_comp_188ca",
       "title": {
         "en": "Temperature changed",
         "fr": "Température changée",
@@ -63,7 +63,7 @@
       }
     },
     {
-      "id": "device_air_purifier_quality_air_quality_comprehensive_humidity_changed",
+      "id": "device_air_purifier_quality_air_quality_comp_c4210",
       "title": {
         "en": "Humidity changed",
         "fr": "Humidité changée",
@@ -79,7 +79,7 @@
       }
     },
     {
-      "id": "device_air_purifier_quality_air_quality_comprehensive_battery_low",
+      "id": "device_air_purifier_quality_air_quality_comp_460b3",
       "title": {
         "en": "Battery low",
         "fr": "Batterie faible",
@@ -97,7 +97,7 @@
   ],
   "conditions": [
     {
-      "id": "device_air_purifier_quality_air_quality_comprehensive_co2_above",
+      "id": "device_air_purifier_quality_air_quality_comp_1e649",
       "title": {
         "en": "CO !{{is|is not}} above"
       },
@@ -115,7 +115,7 @@
       }
     },
     {
-      "id": "device_air_purifier_quality_air_quality_comprehensive_temp_above",
+      "id": "device_air_purifier_quality_air_quality_comp_f1466",
       "title": {
         "en": "Temperature !{{is|is not}} above"
       },
@@ -133,7 +133,7 @@
       }
     },
     {
-      "id": "device_air_purifier_quality_air_quality_comprehensive_humidity_above",
+      "id": "device_air_purifier_quality_air_quality_comp_07a64",
       "title": {
         "en": "Humidity !{{is|is not}} above"
       },

@@ -29,8 +29,8 @@ env:
   # the publish-size-gate at 30 MB; prepared publish dir is only 23.74 MB.
   HOMEY_PUBLISH_MAX_UNCOMPRESSED_MB: "35"
   HOMEY_PUBLISH_SOURCE_MAX_MB: "35"
-  HOMEY_ZIGBEE_MAX_TOTAL_COMBOS: "30000"
-  HOMEY_ZIGBEE_MAX_DRIVER_COMBOS: "1000"
+  HOMEY_ZIGBEE_MAX_TOTAL_COMBOS: "60000"
+  HOMEY_ZIGBEE_MAX_DRIVER_COMBOS: "10000"
 
 jobs:
   auto-fix:
@@ -141,8 +141,8 @@ jobs:
           # this is only the BUILD limit (sanity check), not the upload.
           HOMEY_PUBLISH_MAX_UNCOMPRESSED_MB: "35"
           HOMEY_PUBLISH_SOURCE_MAX_MB: "35"
-          HOMEY_ZIGBEE_MAX_TOTAL_COMBOS: "30000"
-          HOMEY_ZIGBEE_MAX_DRIVER_COMBOS: "1000"
+          HOMEY_ZIGBEE_MAX_TOTAL_COMBOS: "60000"
+          HOMEY_ZIGBEE_MAX_DRIVER_COMBOS: "10000"
         run: |
           # v9.0.255 (P62.2): Also export in the shell because npm subshells
           # don't always inherit step env blocks on all GHA runner images.

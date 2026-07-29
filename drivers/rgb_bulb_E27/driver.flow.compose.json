@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "rgb_bulb_E27_turned_on",
+      "id": "rgb_bulb_e27_turned_on_562f7",
       "title": {
         "en": "Turned on",
         "fr": "Allume",
@@ -17,7 +17,7 @@
       }
     },
     {
-      "id": "rgb_bulb_E27_turned_off",
+      "id": "rgb_bulb_e27_turned_off_54db7",
       "title": {
         "en": "Turned off",
         "fr": "Eteint",
@@ -33,7 +33,7 @@
       }
     },
     {
-      "id": "rgb_bulb_E27_dim_changed",
+      "id": "rgb_bulb_e27_dim_changed_5ac60",
       "title": {
         "en": "Brightness changed",
         "fr": "Luminosite changee"
@@ -56,7 +56,7 @@
       }
     },
     {
-      "id": "rgb_bulb_E27_battery_low",
+      "id": "rgb_bulb_e27_battery_low_17d18",
       "title": {
         "en": "Battery low",
         "fr": "Batterie faible",
@@ -74,7 +74,7 @@
   ],
   "conditions": [
     {
-      "id": "rgb_bulb_E27_is_on",
+      "id": "rgb_bulb_e27_is_on_35330",
       "title": {
         "en": "Is turned !{{on|off}}",
         "fr": "Est !{{allume|eteint}}",
@@ -92,7 +92,7 @@
   ],
   "actions": [
     {
-      "id": "rgb_bulb_E27_turn_on",
+      "id": "rgb_bulb_e27_turn_on_2e839",
       "title": {
         "en": "Turn on",
         "fr": "Allumer",
@@ -108,7 +108,7 @@
       }
     },
     {
-      "id": "rgb_bulb_E27_turn_off",
+      "id": "rgb_bulb_e27_turn_off_bf92a",
       "title": {
         "en": "Turn off",
         "fr": "Eteindre",
@@ -124,7 +124,7 @@
       }
     },
     {
-      "id": "rgb_bulb_E27_toggle",
+      "id": "rgb_bulb_e27_toggle_259fe",
       "title": {
         "en": "Toggle",
         "fr": "Basculer",
@@ -140,7 +140,7 @@
       }
     },
     {
-      "id": "rgb_bulb_E27_set_brightness",
+      "id": "rgb_bulb_e27_set_brightness_0e945",
       "title": {
         "en": "Set brightness",
         "fr": "Regler luminosite",
@@ -166,7 +166,7 @@
       }
     },
     {
-      "id": "rgb_bulb_E27_set_color",
+      "id": "rgb_bulb_e27_set_color_2b954",
       "title": {
         "en": "Set color",
         "fr": "Regler couleur",
@@ -187,7 +187,7 @@
       }
     },
     {
-      "id": "rgb_bulb_E27_set_color_temperature",
+      "id": "rgb_bulb_e27_set_color_2b954_temperature",
       "title": {
         "en": "Set color temperature",
         "fr": "Regler temperature de couleur"

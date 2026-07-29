@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "device_air_purifier_water_tank_monitor_state_changed",
+      "id": "device_air_purifier_water_tank_monitor_state_0d1a2",
       "title": {
         "en": "Liquid state changed",
         "nl": "Vloeistofstatus veranderd",
@@ -29,7 +29,7 @@
       }
     },
     {
-      "id": "device_air_purifier_water_tank_monitor_level_changed",
+      "id": "device_air_purifier_water_tank_monitor_level_c099c",
       "title": {
         "en": "Liquid level changed",
         "nl": "Vloeistofniveau veranderd",

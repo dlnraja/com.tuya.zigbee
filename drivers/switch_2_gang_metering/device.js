@@ -95,13 +95,13 @@ class switch_2_gang_metering extends UnifiedSwitchBase {
         }
       });
     
-      this.registerCapability('resetEnergyMeter', 'resetEnergyMeter');
+      this.registerCapability('resetenergymeter_c3c03', 'resetenergymeter_c3c03');
 
     }
 
   }
 
-  async resetEnergyMeter() {
+  async resetenergymeter_c3c03() {
     try {
       // Endpoint: 1 Cluster: 0x00 Command: 0 Payload:
       await this.zclNode.endpoints[1].clusters.basic.doCommand('0');

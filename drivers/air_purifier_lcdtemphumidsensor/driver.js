@@ -21,7 +21,7 @@ class AirPurifierDriver extends ZigBeeDriver {
     this._flowCardsRegistered = true;
 
     this.log('Air Purifier Driver initialized');
-    const triggers = ['air_purifier_lcdtemphumidsensor_air_purifier_turned_on', 'air_purifier_lcdtemphumidsensor_air_purifier_turned_off', 'air_purifier_lcdtemphumidsensor_air_purifier_pm25_changed'];
+    const triggers = ['air_purifier_lcdtemphumidsensor_air_purifier_5d364', 'air_purifier_lcdtemphumidsensor_air_purifier_f6b7a', 'air_purifier_lcdtemphumidsensor_air_purifier_66846'];
     for (const id of triggers) {
       try {
         // Flow card registration logic was lost during previous corruption

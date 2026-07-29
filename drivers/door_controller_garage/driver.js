@@ -22,7 +22,7 @@ class DoorControllerDriver extends ZigBeeDriver {
 
   _registerFlowCards() {
     // TRIGGERS
-    const _triggerIds = ["door_controller_garage_door_controller_opened","door_controller_garage_door_controller_closed","door_controller_garage_door_controller_locked","door_controller_garage_door_controller_unlocked","door_controller_garage_door_controller_motion_detected","door_controller_garage_door_controller_contact_alarm","door_controller_garage_door_controller_battery_low","door_controller_garage_door_controller_lock_changed"];
+    const _triggerIds = ["door_controller_garage_door_controller_opened","door_controller_garage_door_controller_closed","door_controller_garage_door_controller_locked","door_controller_garage_door_controller_unlocked","door_controller_garage_door_controller_motio_c9b97","door_controller_garage_door_controller_conta_c857d","door_controller_garage_door_controller_battery_low","door_controller_garage_door_controller_lock__18145"];
     for (const _tid of _triggerIds) {
       try {
         const _card = this._getFlowCard(_tid, "trigger");
@@ -57,24 +57,24 @@ class DoorControllerDriver extends ZigBeeDriver {
     } catch (err) { if (this.developerDebugMode) { this.error(`Condition door_controller_garage_door_controller_is_locked: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getConditionCard('door_controller_garage_door_controller_motion_active');
+      const card = this.homey.flow.getConditionCard('door_controller_garage_door_controller_motio_26b63');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Condition door_controller_garage_door_controller_motion_active: ${err.message}`); } }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition door_controller_garage_door_controller_motio_26b63: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getConditionCard('door_controller_garage_door_controller_contact_open');
+      const card = this.homey.flow.getConditionCard('door_controller_garage_door_controller_conta_765cd');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Condition door_controller_garage_door_controller_contact_open: ${err.message}`); } }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition door_controller_garage_door_controller_conta_765cd: ${err.message}`); } }
 
     // ACTIONS
     try {

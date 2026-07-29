@@ -40,7 +40,7 @@ class RadarMotionSensorMmwaveDriver extends ZigBeeDriver {
         }
       },
       {
-        id: 'motion_sensor_radar_mmwave_target_distance_less_than',
+        id: 'motion_sensor_radar_mmwave_target_distance_l_9897d',
         fn: async (args) => {
           const distance = args.device.getCapabilityValue('measure_luminance.distance') || 0;
           return distance < (args.distance || 3);

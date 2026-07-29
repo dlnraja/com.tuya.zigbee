@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "dimmer_air_purifier_air_purifier_dimmer_wall_1gang_physical_on",
+      "id": "dimmer_air_purifier_air_purifier_dimmer_wall_e4263",
       "args": [],
       "title": {
         "en": "Turned on - physical button"
@@ -11,7 +11,7 @@
       }
     },
     {
-      "id": "dimmer_air_purifier_air_purifier_dimmer_wall_1gang_physical_off",
+      "id": "dimmer_air_purifier_air_purifier_dimmer_wall_1049d",
       "args": [],
       "title": {
         "en": "Turned off - physical button"
@@ -21,7 +21,7 @@
       }
     },
     {
-      "id": "dimmer_air_purifier_air_purifier_dimmer_wall_1gang_physical_brightness_up",
+      "id": "dimmer_air_purifier_air_purifier_dimmer_wall_1gang_physical_brig_40f57",
       "args": [],
       "title": {
         "en": "Brightness increased - physical"
@@ -41,7 +41,7 @@
       }
     },
     {
-      "id": "dimmer_air_purifier_air_purifier_dimmer_wall_1gang_physical_brightness_down",
+      "id": "dimmer_air_purifier_air_purifier_dimmer_wall_1gang_physical_brig_a6dcb",
       "args": [],
       "title": {
         "en": "Brightness decreased - physical"
@@ -61,7 +61,7 @@
       }
     },
     {
-      "id": "dimmer_air_purifier_air_purifier_dimmer_wall_1gang_dimmer_1gang_turned_on",
+      "id": "dimmer_air_purifier_air_purifier_dimmer_wall_1gang_dimmer_1gang__66522",
       "title": {
         "en": "Turned on",
         "fr": "Allumé"
@@ -73,7 +73,7 @@
       }
     },
     {
-      "id": "dimmer_air_purifier_air_purifier_dimmer_wall_1gang_dimmer_1gang_turned_off",
+      "id": "dimmer_air_purifier_air_purifier_dimmer_wall_1gang_dimmer_1gang__05bb4",
       "title": {
         "en": "Turned off",
         "fr": "Ã‰teint"
@@ -85,7 +85,7 @@
       }
     },
     {
-      "id": "dimmer_air_purifier_air_purifier_dimmer_wall_1gang_dimmer_1gang_dim_changed",
+      "id": "dimmer_air_purifier_air_purifier_dimmer_wall_1gang_dimmer_1gang__09f81",
       "title": {
         "en": "Brightness changed",
         "fr": "Luminosité changée"
@@ -108,7 +108,7 @@
       }
     },
     {
-      "id": "dimmer_air_purifier_air_purifier_dimmer_wall_1gang_turned_on",
+      "id": "dimmer_air_purifier_air_purifier_dimmer_wall_b55e5",
       "title": {
         "en": "Turned on",
         "fr": "Allumé",
@@ -124,7 +124,7 @@
       }
     },
     {
-      "id": "dimmer_air_purifier_air_purifier_dimmer_wall_1gang_turned_off",
+      "id": "dimmer_air_purifier_air_purifier_dimmer_wall_c4016",
       "title": {
         "en": "Turned off",
         "fr": "Ã‰teint",
@@ -140,7 +140,7 @@
       }
     },
     {
-      "id": "dimmer_air_purifier_air_purifier_dimmer_wall_1gang_power_changed",
+      "id": "dimmer_air_purifier_air_purifier_dimmer_wall_5f693",
       "title": {
         "en": "Power changed",
         "fr": "Puissance changée",
@@ -158,7 +158,7 @@
   ],
   "conditions": [
     {
-      "id": "dimmer_air_purifier_air_purifier_dimmer_wall_1gang_dimmer_1gang_is_on",
+      "id": "dimmer_air_purifier_air_purifier_dimmer_wall_9b26f",
       "title": {
         "en": "Is turned !{{on|off}}",
         "fr": "Est !{{allumé|éteint}}"
@@ -170,7 +170,7 @@
       }
     },
     {
-      "id": "dimmer_air_purifier_air_purifier_dimmer_wall_1gang_is_on",
+      "id": "dimmer_air_purifier_air_purifier_dimmer_wall_f05a4",
       "title": {
         "en": "Is !{{on|off}}",
         "fr": "Est !{{allumé|éteint}}",
@@ -188,7 +188,7 @@
   ],
   "actions": [
     {
-      "id": "dimmer_air_purifier_air_purifier_dimmer_wall_1gang_dimmer_1gang_turn_on",
+      "id": "dimmer_air_purifier_air_purifier_dimmer_wall_1gang_dimmer_1gang__70e47",
       "title": {
         "en": "Turn on",
         "fr": "Allumer"
@@ -200,7 +200,7 @@
       }
     },
     {
-      "id": "dimmer_air_purifier_air_purifier_dimmer_wall_1gang_dimmer_1gang_turn_off",
+      "id": "dimmer_air_purifier_air_purifier_dimmer_wall_1gang_dimmer_1gang__4a6fa",
       "title": {
         "en": "Turn off",
         "fr": "Ã‰teindre"
@@ -212,7 +212,7 @@
       }
     },
     {
-      "id": "dimmer_air_purifier_air_purifier_dimmer_wall_1gang_dimmer_1gang_toggle",
+      "id": "dimmer_air_purifier_air_purifier_dimmer_wall_9df13",
       "title": {
         "en": "Toggle on or off",
         "fr": "Basculer"
@@ -224,7 +224,7 @@
       }
     },
     {
-      "id": "dimmer_air_purifier_air_purifier_dimmer_wall_1gang_dimmer_1gang_set_dim",
+      "id": "dimmer_air_purifier_air_purifier_dimmer_wall_1gang_dimmer_1gang__71ab0",
       "title": {
         "en": "Set brightness to...",
         "fr": "Régler la luminosité Ã..."
@@ -250,7 +250,7 @@
       }
     },
     {
-      "id": "dimmer_air_purifier_air_purifier_dimmer_wall_1gang_turn_on",
+      "id": "dimmer_air_purifier_air_purifier_dimmer_wall_165a6",
       "title": {
         "en": "Turn on",
         "fr": "Allumer",
@@ -266,7 +266,7 @@
       }
     },
     {
-      "id": "dimmer_air_purifier_air_purifier_dimmer_wall_1gang_turn_off",
+      "id": "dimmer_air_purifier_air_purifier_dimmer_wall_4c4ad",
       "title": {
         "en": "Turn off",
         "fr": "Ã‰teindre",
@@ -282,7 +282,7 @@
       }
     },
     {
-      "id": "dimmer_air_purifier_air_purifier_dimmer_wall_1gang_toggle",
+      "id": "dimmer_air_purifier_air_purifier_dimmer_wall_bf27d",
       "title": {
         "en": "Toggle",
         "fr": "Basculer",
@@ -298,7 +298,7 @@
       }
     },
     {
-      "id": "dimmer_air_purifier_air_purifier_dimmer_wall_1gang_set_brightness",
+      "id": "dimmer_air_purifier_air_purifier_dimmer_wall_60a7a",
       "title": {
         "en": "Set brightness",
         "fr": "Régler luminosité",

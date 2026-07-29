@@ -202,8 +202,8 @@ class AirPurifierPresenceHybridDevice extends UnifiedSensorBase {
   _maybeTriggerMeasureFlow(capability, value) {
     if (this._destroyed || typeof value !== 'number' || Number.isNaN(value)) {return;}
     const CARDS = {
-      measure_luminance: ['air_purifier_presence_sensor_radar_illuminance_changed', 'lux'],
-      'measure_luminance.distance': ['air_purifier_presence_sensor_radar_distance_changed', 'distance'],
+      measure_luminance: ['air_purifier_presence_sensor_radar_illuminan_505ed', 'lux'],
+      'measure_luminance.distance': ['air_purifier_presence_sensor_radar_distance__30088', 'distance'],
     };
     const hit = CARDS[capability];
     if (!hit) {return;}

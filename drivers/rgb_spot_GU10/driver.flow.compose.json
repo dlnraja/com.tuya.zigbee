@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "rgb_spot_GU10_turned_on",
+      "id": "rgb_spot_gu10_turned_on_5867c",
       "title": {
         "en": "Turned on",
         "fr": "Allume",
@@ -17,7 +17,7 @@
       }
     },
     {
-      "id": "rgb_spot_GU10_turned_off",
+      "id": "rgb_spot_gu10_turned_off_fd649",
       "title": {
         "en": "Turned off",
         "fr": "Eteint",
@@ -33,7 +33,7 @@
       }
     },
     {
-      "id": "rgb_spot_GU10_dim_changed",
+      "id": "rgb_spot_gu10_dim_changed_ed5a5",
       "title": {
         "en": "Brightness changed",
         "fr": "Luminosite changee"
@@ -56,7 +56,7 @@
       }
     },
     {
-      "id": "rgb_spot_GU10_battery_low",
+      "id": "rgb_spot_gu10_battery_low_c9582",
       "title": {
         "en": "Battery low",
         "fr": "Batterie faible",
@@ -74,7 +74,7 @@
   ],
   "conditions": [
     {
-      "id": "rgb_spot_GU10_is_on",
+      "id": "rgb_spot_gu10_is_on_19284",
       "title": {
         "en": "Is turned !{{on|off}}",
         "fr": "Est !{{allume|eteint}}",
@@ -92,7 +92,7 @@
   ],
   "actions": [
     {
-      "id": "rgb_spot_GU10_turn_on",
+      "id": "rgb_spot_gu10_turn_on_85d0e",
       "title": {
         "en": "Turn on",
         "fr": "Allumer",
@@ -108,7 +108,7 @@
       }
     },
     {
-      "id": "rgb_spot_GU10_turn_off",
+      "id": "rgb_spot_gu10_turn_off_dc88c",
       "title": {
         "en": "Turn off",
         "fr": "Eteindre",
@@ -124,7 +124,7 @@
       }
     },
     {
-      "id": "rgb_spot_GU10_toggle",
+      "id": "rgb_spot_gu10_toggle_6292b",
       "title": {
         "en": "Toggle",
         "fr": "Basculer",
@@ -140,7 +140,7 @@
       }
     },
     {
-      "id": "rgb_spot_GU10_set_brightness",
+      "id": "rgb_spot_gu10_set_brightness_f5e6c",
       "title": {
         "en": "Set brightness",
         "fr": "Regler luminosite",
@@ -166,7 +166,7 @@
       }
     },
     {
-      "id": "rgb_spot_GU10_set_color",
+      "id": "rgb_spot_gu10_set_color_4098b",
       "title": {
         "en": "Set color",
         "fr": "Regler couleur",
@@ -187,7 +187,7 @@
       }
     },
     {
-      "id": "rgb_spot_GU10_set_color_temperature",
+      "id": "rgb_spot_gu10_set_color_4098b_temperature",
       "title": {
         "en": "Set color temperature",
         "fr": "Regler temperature de couleur"

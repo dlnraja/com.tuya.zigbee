@@ -22,7 +22,7 @@ class PresenceSensorRadarDriver extends ZigBeeDriver {
 
   _registerFlowCards() {
     // TRIGGERS
-    const _triggerIds = ["sensor_climate_presence_sensor_presence_radar_presence_detected","sensor_climate_presence_sensor_presence_radar_presence_cleared","sensor_climate_presence_presence_sensor_radar_motion_detected_sensor_presence_radar","sensor_climate_presence_presence_sensor_radar_illuminance_changed_sensor_presence_radar","sensor_climate_presence_presence_sensor_radar_distance_changed_sensor_presence_radar","sensor_climate_presence_presence_sensor_radar_lux_changed_sensor_presence_radar","sensor_climate_presence_presence_sensor_radar_battery_low_sensor_presence_radar"];
+    const _triggerIds = ["sensor_climate_presence_sensor_presence_rada_34c19","sensor_climate_presence_sensor_presence_rada_05404","sensor_climate_presence_presence_sensor_radar_motion_detected_sensor_presence_radar","sensor_climate_presence_presence_sensor_radar_illuminance_changed_sensor_presence_radar","sensor_climate_presence_presence_sensor_radar_distance_changed_sensor_presence_radar","sensor_climate_presence_presence_sensor_radar_lux_changed_sensor_presence_radar","sensor_climate_presence_presence_sensor_radar_battery_low_sensor_presence_radar"];
     for (const _tid of _triggerIds) {
       try {
         const _card = this._getFlowCard(_tid, "trigger");

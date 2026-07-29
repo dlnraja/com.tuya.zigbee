@@ -37,9 +37,9 @@ class ButtonWirelessSmartDriver extends BaseZigBeeDriver {
       // Main triggers with button token
       const mainTriggers = [
         'button_wireless_smart_button_1gang_button_pressed',
-        'button_wireless_smart_button_1gang_button_double_press',
-        'button_wireless_smart_button_1gang_button_long_press',
-        'button_wireless_smart_button_1gang_button_multi_press'
+        'button_wireless_smart_button_1gang_button_do_2c981',
+        'button_wireless_smart_button_1gang_button_lo_8a4e2',
+        'button_wireless_smart_button_1gang_button_mu_55088'
       ];
 
       for (const triggerId of mainTriggers) {

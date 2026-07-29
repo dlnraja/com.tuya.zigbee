@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "sensor_lcdtemphumidsensor_temphumidsensor_lcdtemphumidsensor_temp_changed",
+      "id": "sensor_lcdtemphumidsensor_temphumidsensor_lc_6d73e",
       "title": {
         "en": "Temperature changed",
         "fr": "Température changée",
@@ -17,7 +17,7 @@
       }
     },
     {
-      "id": "sensor_lcdtemphumidsensor_temphumidsensor_lcdtemphumidsensor_humidity_changed",
+      "id": "sensor_lcdtemphumidsensor_temphumidsensor_lc_a08bb",
       "title": {
         "en": "Humidity changed",
         "fr": "Humidité changée",
@@ -33,7 +33,7 @@
       }
     },
     {
-      "id": "sensor_lcdtemphumidsensor_temphumidsensor_lcdtemphumidsensor_battery_low",
+      "id": "sensor_lcdtemphumidsensor_temphumidsensor_lc_af394",
       "title": {
         "en": "Battery low",
         "fr": "Batterie faible",
@@ -51,7 +51,7 @@
   ],
   "conditions": [
     {
-      "id": "sensor_lcdtemphumidsensor_temphumidsensor_lcdtemphumidsensor_temp_above",
+      "id": "sensor_lcdtemphumidsensor_temphumidsensor_lc_e110e",
       "title": {
         "en": "Temperature !{{is|is not}} above"
       },
@@ -69,7 +69,7 @@
       }
     },
     {
-      "id": "sensor_lcdtemphumidsensor_temphumidsensor_lcdtemphumidsensor_humidity_above",
+      "id": "sensor_lcdtemphumidsensor_temphumidsensor_lc_a8df3",
       "title": {
         "en": "Humidity !{{is|is not}} above"
       },

@@ -16,7 +16,7 @@ async onInit() {
 
     // ACTIONS
     try {
-      const card = this.homey.flow.getActionCard('curtain_motor_shutter_curtain_motor_set_windowcoverings_set');
+      const card = this.homey.flow.getActionCard('curtain_motor_shutter_curtain_motor_set_wind_571a6');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -24,31 +24,31 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Action curtain_motor_shutter_curtain_motor_set_windowcoverings_set: ${err.message}`); } }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action curtain_motor_shutter_curtain_motor_set_wind_571a6: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getActionCard('curtain_motor_shutter_curtain_motor_windowcoverings_open');
+      const card = this.homey.flow.getActionCard('curtain_motor_shutter_curtain_motor_windowco_91bdf');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
           // Generic action handler
-          this.log('[FLOW] Action curtain_motor_shutter_curtain_motor_windowcoverings_open triggered for', args.device.getName());
+          this.log('[FLOW] Action curtain_motor_shutter_curtain_motor_windowco_91bdf triggered for', args.device.getName());
           return true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Action curtain_motor_shutter_curtain_motor_windowcoverings_open: ${err.message}`); } }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action curtain_motor_shutter_curtain_motor_windowco_91bdf: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getActionCard('curtain_motor_shutter_curtain_motor_windowcoverings_close');
+      const card = this.homey.flow.getActionCard('curtain_motor_shutter_curtain_motor_windowco_52301');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
           // Generic action handler
-          this.log('[FLOW] Action curtain_motor_shutter_curtain_motor_windowcoverings_close triggered for', args.device.getName());
+          this.log('[FLOW] Action curtain_motor_shutter_curtain_motor_windowco_52301 triggered for', args.device.getName());
           return true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Action curtain_motor_shutter_curtain_motor_windowcoverings_close: ${err.message}`); } }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action curtain_motor_shutter_curtain_motor_windowco_52301: ${err.message}`); } }
 
     try {
       const card = this.homey.flow.getActionCard('curtain_motor_shutter_curtain_motor_set_dim');

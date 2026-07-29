@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "sensor_lcdtemphumidsensor_soil_sensor_moisture_changed",
+      "id": "sensor_lcdtemphumidsensor_soil_sensor_moistu_8517b",
       "title": {
         "en": "Soil moisture changed",
         "nl": "Bodemvochtigheid veranderd",
@@ -30,7 +30,7 @@
       }
     },
     {
-      "id": "sensor_lcdtemphumidsensor_soil_sensor_temperature_changed",
+      "id": "sensor_lcdtemphumidsensor_soil_sensor_temper_b2371",
       "title": {
         "en": "Soil temperature changed",
         "nl": "Bodemtemperatuur veranderd",
@@ -126,7 +126,7 @@
       }
     },
     {
-      "id": "sensor_lcdtemphumidsensor_soil_sensor_frost_warning",
+      "id": "sensor_lcdtemphumidsensor_soil_sensor_frost__aeb2e",
       "title": {
         "en": "Frost warning",
         "nl": "Vorstwaarschwing",
@@ -148,7 +148,7 @@
       }
     },
     {
-      "id": "sensor_lcdtemphumidsensor_soil_sensor_battery_changed",
+      "id": "sensor_lcdtemphumidsensor_soil_sensor_batter_d438e",
       "title": {
         "en": "Battery level changed",
         "nl": "Batterijniveau veranderd",
@@ -209,7 +209,7 @@
       }
     },
     {
-      "id": "sensor_lcdtemphumidsensor_soil_sensor_humidity_changed",
+      "id": "sensor_lcdtemphumidsensor_soil_sensor_humidi_6314f",
       "title": {
         "en": "Humidity changed",
         "fr": "Humidité changée",
@@ -243,7 +243,7 @@
   ],
   "conditions": [
     {
-      "id": "sensor_lcdtemphumidsensor_soil_sensor_moisture_below",
+      "id": "sensor_lcdtemphumidsensor_soil_sensor_moistu_0cbb4",
       "title": {
         "en": "Soil moisture !{{is|is not}} below",
         "nl": "Bodemvochtigheid !{{is|is niet}} onder",
@@ -270,7 +270,7 @@
       }
     },
     {
-      "id": "sensor_lcdtemphumidsensor_soil_sensor_moisture_above",
+      "id": "sensor_lcdtemphumidsensor_soil_sensor_moistu_bf5cf",
       "title": {
         "en": "Soil moisture !{{is|is not}} above",
         "nl": "Bodemvochtigheid !{{is|is niet}} boven",
@@ -297,7 +297,7 @@
       }
     },
     {
-      "id": "sensor_lcdtemphumidsensor_soil_sensor_temperature_above",
+      "id": "sensor_lcdtemphumidsensor_soil_sensor_temper_7acc7",
       "title": {
         "en": "Soil temperature !{{is|is not}} above",
         "nl": "Bodemtemperatuur !{{is|is niet}} boven",
@@ -340,7 +340,7 @@
       }
     },
     {
-      "id": "sensor_lcdtemphumidsensor_soil_sensor_battery_above",
+      "id": "sensor_lcdtemphumidsensor_soil_sensor_batter_a39d2",
       "title": {
         "en": "Battery !{{is|is not}} above",
         "nl": "Batterij !{{is|is niet}} boven",
@@ -367,7 +367,7 @@
       }
     },
     {
-      "id": "sensor_lcdtemphumidsensor_soil_sensor_water_detected",
+      "id": "sensor_lcdtemphumidsensor_soil_sensor_water__199d7",
       "title": {
         "en": "Water !{{is|is not}} detected",
         "fr": "Eau !{{est|n'est pas}} détectée",

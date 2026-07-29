@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "air_purifier_presence_sensor_radar_presence_detected",
+      "id": "air_purifier_presence_sensor_radar_presence__fe90b",
       "highlight": true,
       "title": {
         "en": "Presence detected",
@@ -24,7 +24,7 @@
       }
     },
     {
-      "id": "air_purifier_presence_sensor_radar_presence_cleared",
+      "id": "air_purifier_presence_sensor_radar_presence__29489",
       "title": {
         "en": "Presence cleared",
         "nl": "Aanwezigheid opgeheven",
@@ -68,7 +68,7 @@
       }
     },
     {
-      "id": "air_purifier_presence_sensor_radar_illuminance_changed",
+      "id": "air_purifier_presence_sensor_radar_illuminan_505ed",
       "title": {
         "en": "Illuminance changed",
         "nl": "Lichtsterkte veranderd",
@@ -97,7 +97,7 @@
       }
     },
     {
-      "id": "air_purifier_presence_sensor_radar_distance_changed",
+      "id": "air_purifier_presence_sensor_radar_distance__30088",
       "title": {
         "en": "Detection distance changed",
         "nl": "Detectieafstand veranderd",
@@ -176,7 +176,7 @@
       }
     },
     {
-      "id": "air_purifier_presence_sensor_radar_illuminance_above",
+      "id": "air_purifier_presence_sensor_radar_illuminan_fa4ec",
       "title": {
         "en": "Illuminance !{{is|is not}} above",
         "nl": "Lichtsterkte !{{is|is niet}} boven",

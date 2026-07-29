@@ -43,7 +43,7 @@ jobs:
       HOMEY_PUBLISH_FINAL_MAX_MB: "50"
       HOMEY_PUBLISH_SOURCE_MAX_MB: "50"
       HOMEY_PUBLISH_MAX_UNCOMPRESSED_MB: "50"
-      HOMEY_ZIGBEE_MAX_TOTAL_COMBOS: "30000"
+      HOMEY_ZIGBEE_MAX_TOTAL_COMBOS: "60000"
 
     steps:
       # ─────────────────────────────────────────────────────────────

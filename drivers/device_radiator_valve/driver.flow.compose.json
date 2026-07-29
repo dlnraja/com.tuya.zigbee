@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "device_radiator_valve_radiator_valve_target_temperature_changed",
+      "id": "device_radiator_valve_radiator_valve_target__e4723",
       "title": {
         "en": "Target temperature changed",
         "fr": "Température cible changée"
@@ -24,7 +24,7 @@
       }
     },
     {
-      "id": "device_radiator_valve_radiator_valve_measure_temperature_changed_device_radiator_valve",
+      "id": "device_radiator_valve_radiator_valve_measure_52847",
       "title": {
         "en": "Temperature changed",
         "fr": "Température changée"
@@ -47,7 +47,7 @@
       }
     },
     {
-      "id": "device_radiator_valve_radiator_valve_temp_changed_device_radiator_valve",
+      "id": "device_radiator_valve_radiator_valve_temp_ch_6f21b",
       "title": {
         "en": "Temperature changed",
         "fr": "Température changée",
@@ -63,7 +63,7 @@
       }
     },
     {
-      "id": "device_radiator_valve_radiator_valve_battery_low_device_radiator_valve",
+      "id": "device_radiator_valve_radiator_valve_battery_5cda4",
       "title": {
         "en": "Battery low",
         "fr": "Batterie faible",
@@ -81,7 +81,7 @@
   ],
   "actions": [
     {
-      "id": "device_radiator_valve_radiator_valve_set_target_temperature_device_radiator_valve",
+      "id": "device_radiator_valve_radiator_valve_set_tar_e6a2f",
       "title": {
         "en": "Set temperature to...",
         "fr": "Régler la température Ã..."
@@ -105,7 +105,7 @@
       }
     },
     {
-      "id": "device_radiator_valve_radiator_valve_set_temperature_device_radiator_valve",
+      "id": "device_radiator_valve_radiator_valve_set_tem_25366",
       "title": {
         "en": "Set temperature",
         "fr": "Régler température",

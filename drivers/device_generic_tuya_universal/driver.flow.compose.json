@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "device_generic_tuya_universal_generic_tuya_measure_temperature_changed",
+      "id": "device_generic_tuya_universal_generic_tuya_m_2cc2b",
       "title": {
         "en": "Temperature changed",
         "fr": "Température changée"
@@ -24,7 +24,7 @@
       }
     },
     {
-      "id": "device_generic_tuya_universal_generic_tuya_measure_humidity_changed",
+      "id": "device_generic_tuya_universal_generic_tuya_m_9d606",
       "title": {
         "en": "Humidity changed",
         "fr": "Humidité changée"
@@ -47,7 +47,7 @@
       }
     },
     {
-      "id": "device_generic_tuya_universal_generic_tuya_dp_received",
+      "id": "device_generic_tuya_universal_generic_tuya_d_14029",
       "title": {
         "en": "Data Point received",
         "fr": "Point de données reçu"
@@ -79,7 +79,7 @@
       }
     },
     {
-      "id": "device_generic_tuya_universal_generic_tuya_battery_low",
+      "id": "device_generic_tuya_universal_generic_tuya_b_1cf3c",
       "title": {
         "en": "Battery low",
         "fr": "Batterie faible",
@@ -95,7 +95,7 @@
       }
     },
     {
-      "id": "device_generic_tuya_universal_generic_tuya_temp_changed",
+      "id": "device_generic_tuya_universal_generic_tuya_t_e169e",
       "title": {
         "en": "Temperature changed",
         "fr": "Température changée",
@@ -111,7 +111,7 @@
       }
     },
     {
-      "id": "device_generic_tuya_universal_generic_tuya_humidity_changed",
+      "id": "device_generic_tuya_universal_generic_tuya_h_f8ef2",
       "title": {
         "en": "Humidity changed",
         "fr": "Humidité changée",
@@ -129,7 +129,7 @@
   ],
   "conditions": [
     {
-      "id": "device_generic_tuya_universal_generic_tuya_battery_above",
+      "id": "device_generic_tuya_universal_generic_tuya_b_244f4",
       "title": {
         "en": "Battery is above...",
         "fr": "Batterie au-dessus de..."
@@ -155,7 +155,7 @@
   ],
   "actions": [
     {
-      "id": "device_generic_tuya_universal_generic_tuya_request_dp",
+      "id": "device_generic_tuya_universal_generic_tuya_r_26517",
       "title": {
         "en": "Request Data Point",
         "fr": "Demander Point de Données"

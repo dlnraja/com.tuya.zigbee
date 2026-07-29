@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "device_air_purifier_radiator_valve_target_temperature_changed",
+      "id": "device_air_purifier_radiator_valve_target_te_0314d",
       "title": {
         "en": "Target temperature changed",
         "fr": "Température cible changée"
@@ -24,7 +24,7 @@
       }
     },
     {
-      "id": "device_air_purifier_radiator_valve_measure_temperature_changed",
+      "id": "device_air_purifier_radiator_valve_measure_t_2d860",
       "title": {
         "en": "Temperature changed",
         "fr": "Température changée"
@@ -81,7 +81,7 @@
   ],
   "actions": [
     {
-      "id": "device_air_purifier_radiator_valve_set_target_temperature",
+      "id": "device_air_purifier_radiator_valve_set_targe_92f15",
       "title": {
         "en": "Set temperature to...",
         "fr": "Régler la température Ã..."

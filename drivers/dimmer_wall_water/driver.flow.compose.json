@@ -21,7 +21,7 @@
       }
     },
     {
-      "id": "dimmer_wall_water_dimmer_wall_1gang_physical_brightness_up",
+      "id": "dimmer_wall_water_dimmer_wall_1gang_physical_759d1",
       "args": [],
       "title": {
         "en": "Brightness increased - physical"
@@ -41,7 +41,7 @@
       }
     },
     {
-      "id": "dimmer_wall_water_dimmer_wall_1gang_physical_brightness_down",
+      "id": "dimmer_wall_water_dimmer_wall_1gang_physical_7522c",
       "args": [],
       "title": {
         "en": "Brightness decreased - physical"
@@ -61,7 +61,7 @@
       }
     },
     {
-      "id": "dimmer_wall_water_dimmer_wall_1gang_dimmer_1gang_turned_on",
+      "id": "dimmer_wall_water_dimmer_wall_1gang_dimmer_1_7277c",
       "title": {
         "en": "Turned on",
         "fr": "Allumé"
@@ -73,7 +73,7 @@
       }
     },
     {
-      "id": "dimmer_wall_water_dimmer_wall_1gang_dimmer_1gang_turned_off",
+      "id": "dimmer_wall_water_dimmer_wall_1gang_dimmer_1_e5cc9",
       "title": {
         "en": "Turned off",
         "fr": "Ã‰teint"
@@ -85,7 +85,7 @@
       }
     },
     {
-      "id": "dimmer_wall_water_dimmer_wall_1gang_dimmer_1gang_dim_changed",
+      "id": "dimmer_wall_water_dimmer_wall_1gang_dimmer_1_b9d22",
       "title": {
         "en": "Brightness changed",
         "fr": "Luminosité changée"
@@ -158,7 +158,7 @@
   ],
   "conditions": [
     {
-      "id": "dimmer_wall_water_dimmer_wall_1gang_dimmer_1gang_is_on",
+      "id": "dimmer_wall_water_dimmer_wall_1gang_dimmer_1_f53e3",
       "title": {
         "en": "Is turned !{{on|off}}",
         "fr": "Est !{{allumé|éteint}}"
@@ -188,7 +188,7 @@
   ],
   "actions": [
     {
-      "id": "dimmer_wall_water_dimmer_wall_1gang_dimmer_1gang_turn_on",
+      "id": "dimmer_wall_water_dimmer_wall_1gang_dimmer_1_37795",
       "title": {
         "en": "Turn on",
         "fr": "Allumer"
@@ -200,7 +200,7 @@
       }
     },
     {
-      "id": "dimmer_wall_water_dimmer_wall_1gang_dimmer_1gang_turn_off",
+      "id": "dimmer_wall_water_dimmer_wall_1gang_dimmer_1_cd269",
       "title": {
         "en": "Turn off",
         "fr": "Ã‰teindre"
@@ -212,7 +212,7 @@
       }
     },
     {
-      "id": "dimmer_wall_water_dimmer_wall_1gang_dimmer_1gang_toggle",
+      "id": "dimmer_wall_water_dimmer_wall_1gang_dimmer_1_cf81f",
       "title": {
         "en": "Toggle on or off",
         "fr": "Basculer"
@@ -224,7 +224,7 @@
       }
     },
     {
-      "id": "dimmer_wall_water_dimmer_wall_1gang_dimmer_1gang_set_dim",
+      "id": "dimmer_wall_water_dimmer_wall_1gang_dimmer_1_deef8",
       "title": {
         "en": "Set brightness to...",
         "fr": "Régler la luminosité Ã..."

@@ -21,7 +21,7 @@
       }
     },
     {
-      "id": "climate_sensor_dimmer_wall_1gang_physical_brightness_up",
+      "id": "climate_sensor_dimmer_wall_1gang_physical_br_d2d99",
       "args": [],
       "title": {
         "en": "Brightness increased - physical"
@@ -41,7 +41,7 @@
       }
     },
     {
-      "id": "climate_sensor_dimmer_wall_1gang_physical_brightness_down",
+      "id": "climate_sensor_dimmer_wall_1gang_physical_br_f339f",
       "args": [],
       "title": {
         "en": "Brightness decreased - physical"
@@ -61,7 +61,7 @@
       }
     },
     {
-      "id": "climate_sensor_dimmer_wall_1gang_dimmer_1gang_turned_on",
+      "id": "climate_sensor_dimmer_wall_1gang_dimmer_1gan_85e1d",
       "title": {
         "en": "Turned on",
         "fr": "Allumé"
@@ -73,7 +73,7 @@
       }
     },
     {
-      "id": "climate_sensor_dimmer_wall_1gang_dimmer_1gang_turned_off",
+      "id": "climate_sensor_dimmer_wall_1gang_dimmer_1gan_f81b9",
       "title": {
         "en": "Turned off",
         "fr": "Ã‰teint"
@@ -85,7 +85,7 @@
       }
     },
     {
-      "id": "climate_sensor_dimmer_wall_1gang_dimmer_1gang_dim_changed",
+      "id": "climate_sensor_dimmer_wall_1gang_dimmer_1gan_5e646",
       "title": {
         "en": "Brightness changed",
         "fr": "Luminosité changée"
@@ -158,7 +158,7 @@
   ],
   "conditions": [
     {
-      "id": "climate_sensor_dimmer_wall_1gang_dimmer_1gang_is_on",
+      "id": "climate_sensor_dimmer_wall_1gang_dimmer_1gan_ab9c7",
       "title": {
         "en": "Is turned !{{on|off}}",
         "fr": "Est !{{allumé|éteint}}"
@@ -188,7 +188,7 @@
   ],
   "actions": [
     {
-      "id": "climate_sensor_dimmer_wall_1gang_dimmer_1gang_turn_on",
+      "id": "climate_sensor_dimmer_wall_1gang_dimmer_1gan_d1151",
       "title": {
         "en": "Turn on",
         "fr": "Allumer"
@@ -200,7 +200,7 @@
       }
     },
     {
-      "id": "climate_sensor_dimmer_wall_1gang_dimmer_1gang_turn_off",
+      "id": "climate_sensor_dimmer_wall_1gang_dimmer_1gan_02d79",
       "title": {
         "en": "Turn off",
         "fr": "Ã‰teindre"
@@ -212,7 +212,7 @@
       }
     },
     {
-      "id": "climate_sensor_dimmer_wall_1gang_dimmer_1gang_toggle",
+      "id": "climate_sensor_dimmer_wall_1gang_dimmer_1gan_6ec6b",
       "title": {
         "en": "Toggle on or off",
         "fr": "Basculer"
@@ -224,7 +224,7 @@
       }
     },
     {
-      "id": "climate_sensor_dimmer_wall_1gang_dimmer_1gang_set_dim",
+      "id": "climate_sensor_dimmer_wall_1gang_dimmer_1gan_c6599",
       "title": {
         "en": "Set brightness to...",
         "fr": "Régler la luminosité Ã..."

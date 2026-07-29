@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "sensor_climate_sensor_smart_smart_scene_panel_scene_activated",
+      "id": "sensor_climate_sensor_smart_smart_scene_pane_abe86",
       "title": {
         "en": "Scene activated"
       },
@@ -42,7 +42,7 @@
       }
     },
     {
-      "id": "sensor_climate_sensor_smart_smart_scene_panel_switch_1_changed",
+      "id": "sensor_climate_sensor_smart_smart_scene_pane_61d9d",
       "title": {
         "en": "Switch 1 changed"
       },
@@ -52,7 +52,7 @@
       }
     },
     {
-      "id": "sensor_climate_sensor_smart_smart_scene_panel_switch_2_changed",
+      "id": "sensor_climate_sensor_smart_smart_scene_pane_57762",
       "title": {
         "en": "Switch 2 changed"
       },
@@ -62,7 +62,7 @@
       }
     },
     {
-      "id": "sensor_climate_sensor_smart_smart_scene_panel_switch_3_changed",
+      "id": "sensor_climate_sensor_smart_smart_scene_pane_fbfa2",
       "title": {
         "en": "Switch 3 changed"
       },
@@ -72,7 +72,7 @@
       }
     },
     {
-      "id": "sensor_climate_sensor_smart_smart_scene_panel_switch_4_changed",
+      "id": "sensor_climate_sensor_smart_smart_scene_pane_ceaca",
       "title": {
         "en": "Switch 4 changed"
       },
@@ -84,7 +84,7 @@
   ],
   "actions": [
     {
-      "id": "sensor_climate_sensor_smart_smart_scene_panel_set_switch_1",
+      "id": "sensor_climate_sensor_smart_smart_scene_pane_4d73e",
       "title": {
         "en": "Set switch 1"
       },
@@ -99,7 +99,7 @@
       }
     },
     {
-      "id": "sensor_climate_sensor_smart_smart_scene_panel_set_switch_2",
+      "id": "sensor_climate_sensor_smart_smart_scene_pane_492ef",
       "title": {
         "en": "Set switch 2"
       },
@@ -114,7 +114,7 @@
       }
     },
     {
-      "id": "sensor_climate_sensor_smart_smart_scene_panel_set_switch_3",
+      "id": "sensor_climate_sensor_smart_smart_scene_pane_e5876",
       "title": {
         "en": "Set switch 3"
       },
@@ -129,7 +129,7 @@
       }
     },
     {
-      "id": "sensor_climate_sensor_smart_smart_scene_panel_set_switch_4",
+      "id": "sensor_climate_sensor_smart_smart_scene_pane_f1f68",
       "title": {
         "en": "Set switch 4"
       },

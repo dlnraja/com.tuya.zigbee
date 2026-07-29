@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "sensor_climate_presence_sensor_presence_radar_presence_detected",
+      "id": "sensor_climate_presence_sensor_presence_rada_34c19",
       "highlight": true,
       "title": {
         "en": "Presence detected",
@@ -24,7 +24,7 @@
       }
     },
     {
-      "id": "sensor_climate_presence_sensor_presence_radar_presence_cleared",
+      "id": "sensor_climate_presence_sensor_presence_rada_05404",
       "title": {
         "en": "Presence cleared",
         "nl": "Aanwezigheid opgeheven",
@@ -46,7 +46,7 @@
       }
     },
     {
-      "id": "sensor_climate_presence_sensor_radar_motion_detected_sensor_presence_radar",
+      "id": "sensor_climate_presence_sensor_radar_motion__34acb",
       "title": {
         "en": "Motion detected",
         "nl": "Beweging gedetecteerd",
@@ -68,7 +68,7 @@
       }
     },
     {
-      "id": "sensor_climate_presence_sensor_radar_illuminance_changed_sensor_presence_radar",
+      "id": "sensor_climate_presence_sensor_radar_illumin_42661",
       "title": {
         "en": "Illuminance changed",
         "nl": "Lichtsterkte veranderd",
@@ -97,7 +97,7 @@
       }
     },
     {
-      "id": "sensor_climate_presence_sensor_radar_distance_changed_sensor_presence_radar",
+      "id": "sensor_climate_presence_sensor_radar_distanc_f862e",
       "title": {
         "en": "Detection distance changed",
         "nl": "Detectieafstand veranderd",
@@ -126,7 +126,7 @@
       }
     },
     {
-      "id": "sensor_climate_presence_sensor_radar_lux_changed_sensor_presence_radar",
+      "id": "sensor_climate_presence_sensor_radar_lux_cha_ca462",
       "title": {
         "en": "Luminance changed",
         "fr": "Luminance changée",
@@ -142,7 +142,7 @@
       }
     },
     {
-      "id": "sensor_climate_presence_sensor_radar_battery_low_sensor_presence_radar",
+      "id": "sensor_climate_presence_sensor_radar_battery_3de7e",
       "title": {
         "en": "Battery low",
         "fr": "Batterie faible",
@@ -160,7 +160,7 @@
   ],
   "conditions": [
     {
-      "id": "sensor_climate_presence_sensor_radar_is_present_sensor_presence_radar",
+      "id": "sensor_climate_presence_sensor_radar_is_pres_9002d",
       "title": {
         "en": "Someone !{{is|is not}} present",
         "nl": "Iemand !{{is|is niet}} aanwezig",
@@ -176,7 +176,7 @@
       }
     },
     {
-      "id": "sensor_climate_presence_sensor_radar_illuminance_above_sensor_presence_radar",
+      "id": "sensor_climate_presence_sensor_radar_illumin_bd363",
       "title": {
         "en": "Illuminance !{{is|is not}} above",
         "nl": "Lichtsterkte !{{is|is niet}} boven",
@@ -203,7 +203,7 @@
       }
     },
     {
-      "id": "sensor_climate_presence_sensor_radar_distance_within_sensor_presence_radar",
+      "id": "sensor_climate_presence_sensor_radar_distanc_c82b4",
       "title": {
         "en": "Target !{{is|is not}} within distance",
         "nl": "Doel !{{is|is niet}} binnen afstand",
@@ -230,7 +230,7 @@
       }
     },
     {
-      "id": "sensor_climate_presence_sensor_radar_motion_active_sensor_presence_radar",
+      "id": "sensor_climate_presence_sensor_radar_motion__853f1",
       "title": {
         "en": "Motion !{{is|is not}} detected",
         "fr": "Mouvement !{{est|n'est pas}} détecté",
