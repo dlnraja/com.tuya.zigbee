@@ -53,6 +53,7 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
       await this._ensureCapabilities();
 
       // 3. Setup Listeners
+      this._registerButtonListener();
       await this._setupIasAce();
       await this._setupIasZone();
       await this._setupTuyaDP();
@@ -76,6 +77,26 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
       }
     }
     await this.safeSetCapabilityValue('alarm_generic', false).catch(() => { });
+  }
+
+  /**
+   * v9.0.365: Capability listener for button.1 (virtual press from the app UI).
+   * Without it Homey logs "Missing Capability Listener: button.1" and the
+   * button tile does nothing. This driver extends TuyaZigbeeDevice, not
+   * ButtonDevice, so the base-class registration never ran.
+   */
+  _registerButtonListener() {
+    if (!this.hasCapability('button.1') || this._buttonListenerRegistered) {return;}
+    this._buttonListenerRegistered = true;
+    try {
+      this.registerCapabilityListener('button.1', async () => {
+        this.log('[SOS] Virtual button press (app UI)');
+        await this._handleAlarm({ source: 'virtual-button' });
+      });
+      this.log('[SOS] ✅ button.1 capability listener registered');
+    } catch (e) {
+      this.log('[SOS] button.1 listener registration failed:', e.message);
+    }
   }
 
   /**
@@ -181,11 +202,20 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
   }
 
   async _handleTuyaDP(dp, value) {
-    if (this._destroyed) return;
+    if (this._destroyed) {return;}
     // Battery DPs
     if (dp === 4 || dp === 15 || (dp === 101 && typeof value === 'number')) {
-      const battery = Math.min(100, Math.max(0, parseInt(value, 10)));
-      if (!isNaN(battery)) {
+      // v9.0.365: route through the smart normalizer (0-200 / 0-50 curated
+      // scales, mV-as-percentage quirk, sentinels) — the previous raw clamp
+      // misread every non-0-100 scale.
+      const raw = parseInt(value, 10);
+      const battery = UnifiedBatteryHandler?.normalizeZigbeeValue
+        ? UnifiedBatteryHandler.normalizeZigbeeValue(raw, {
+            manufacturer: this.getSetting('zb_manufacturer_name') || '',
+            batteryType: 'CR2032',
+          })
+        : Math.min(100, Math.max(0, raw));
+      if (battery !== null && battery !== undefined && !isNaN(battery)) {
         await this.safeSetCapabilityValue('measure_battery', battery).catch(() => { });
         this._updateActivity();
       }
@@ -257,7 +287,7 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
    * Alarm Handling
    */
   async _handleAlarm(payload) {
-    if (this._destroyed) return;
+    if (this._destroyed) {return;}
     this._updateActivity();
 
     const now = Date.now();
@@ -280,7 +310,7 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
     // Auto-reset
     if (this._resetTimeout) {this.homey.clearTimeout(this._resetTimeout);}
     this._resetTimeout = this.homey.setTimeout(async () => {
-      if (this._destroyed) return;
+      if (this._destroyed) {return;}
       await this.safeSetCapabilityValue('alarm_generic', false).catch(() => { });
       this.log('[SOS] alarm_generic reset');
     }, 5000);
@@ -303,21 +333,28 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
   }
 
   async _updateBattery(value, type) {
-    if (this._destroyed) return;
+    if (this._destroyed) {return;}
     if (value === undefined || value === null || value === 255) {return;}
 
     let percent;
     if (type === 'percentage') {
-      percent = value > 100 ? Math.round(value / 2) : value;
+      // v9.0.365: smart normalization instead of the ">100 ? /2 : as-is"
+      // rule (misread 0-50 scales and ZCL 0-200 values ≤ 100).
+      percent = UnifiedBatteryHandler?.normalizeZigbeeValue
+        ? UnifiedBatteryHandler.normalizeZigbeeValue(value, {
+            manufacturer: this.getSetting('zb_manufacturer_name') || '',
+            batteryType: 'CR2032',
+          })
+        : (value > 100 ? Math.round(value / 2) : value);
+      if (percent === null || percent === undefined) {return;}
     } else {
-      // Voltage to percent: interpret raw value (mV or V)
+      // ZCL batteryVoltage is in 100mV units (30 = 3.0V); tolerate mV (3000)
+      // and plain volts (3.0) too — the previous code read 3.0V as "30V".
       let voltage = typeof value === 'number' ? value : parseFloat(value);
       if (isNaN(voltage)) {return;}
-      // If value looks like millivolts (>300), convert to volts
-      if (voltage > 300) {voltage = voltage / 1000;}
-      percent = UnifiedBatteryHandler
-        ? UnifiedBatteryHandler.calculateFromVoltage(voltage, "3V_2100")
-        : UnifiedBatteryHandler.calculateFromVoltage(voltage, "3V_2100");
+      if (voltage > 300) {voltage = voltage / 1000;}      // mV
+      else if (voltage >= 10) {voltage = voltage / 10;}   // ZCL 100mV units
+      percent = UnifiedBatteryHandler.calculateFromVoltage(voltage, '3V_2100');
     }
 
     if (percent >= 0 && percent <= 100) {
@@ -345,7 +382,7 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
     try {
       const result = await Promise.race([
         powerCfg.readAttributes(['batteryPercentageRemaining', 'batteryVoltage']),
-        new Promise((_, r) => this.homey.setTimeout(() => { if (this._destroyed) return; r(new Error('Timeout')); }, 1500))
+        new Promise((_, r) => this.homey.setTimeout(() => { if (this._destroyed) {return;} r(new Error('Timeout')); }, 1500))
       ]).catch(() => ({}));
 
       if (result.batteryPercentageRemaining !== undefined) {this._updateBattery(result.batteryPercentageRemaining, 'percentage');}
@@ -361,7 +398,7 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
   _setupHeartbeatMonitor() {
     this._lastActivity = Date.now();
     this._heartbeatInterval = this.homey.setInterval(() => {
-      if (this._destroyed) return;
+      if (this._destroyed) {return;}
       const hours = (Date.now() - this._lastActivity) / (1000 * 60 * 60);
       if (hours > 24) {
         this.log('[SOS] ⚠️ No activity for', Math.round(hours), 'hours');
