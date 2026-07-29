@@ -32,6 +32,7 @@ let stats = {
 function scanDriver(driverName) {
   const driverPath = path.join(DRIVERS_DIR, driverName);
   const composePath = path.join(driverPath, 'driver.compose.json');
+  const flowComposePath = path.join(driverPath, 'driver.flow.compose.json');
   const driverJsPath = path.join(driverPath, 'driver.js');
   const deviceJsPath = path.join(driverPath, 'device.js');
 
@@ -44,10 +45,33 @@ function scanDriver(driverName) {
     const driverJs = fs.existsSync(driverJsPath) ? fs.readFileSync(driverJsPath, 'utf8') : '';
     const deviceJs = fs.existsSync(deviceJsPath) ? fs.readFileSync(deviceJsPath, 'utf8') : '';
 
-    const flow = compose.flow || {};
-    const triggers = flow.triggers || [];
-    const conditions = flow.conditions || [];
-    const actions = flow.actions || [];
+    // Les flow cards vivent dans driver.flow.compose.json (fusionné dans app.json
+    // au build). On lit les deux sources et on fusionne.
+    let flowCompose = {};
+    if (fs.existsSync(flowComposePath)) {
+      flowCompose = JSON.parse(Buffer.from(fs.readFileSync(flowComposePath)).toString('utf8'));
+    }
+
+    const composeFlow = compose.flow || {};
+    const mergeCards = (key) => {
+      const seen = new Set();
+      return [...(composeFlow[key] || []), ...(flowCompose[key] || [])].filter(card => {
+        if (!card.id || seen.has(card.id)) return false;
+        seen.add(card.id);
+        return true;
+      });
+    };
+    const triggers = mergeCards('triggers');
+    const conditions = mergeCards('conditions');
+    const actions = mergeCards('actions');
+
+    // CHECK 1 ne s'applique qu'aux cards définies INLINE dans driver.compose.json
+    // (champ legacy "flow"). Les cards de driver.flow.compose.json sont enregistrées
+    // dynamiquement (helpers, boucles, libs partagées) : un match littéral y serait
+    // un faux positif massif.
+    const inlineTriggers = composeFlow.triggers || [];
+    const inlineConditions = composeFlow.conditions || [];
+    const inlineActions = composeFlow.actions || [];
 
     stats.totalTriggers += triggers.length;
     stats.totalConditions += conditions.length;
@@ -65,7 +89,7 @@ function scanDriver(driverName) {
     // CHECK 1: Flow cards définis mais non enregistrés dans driver.js
     // ═══════════════════════════════════════════════════════════════════════════
 
-    triggers.forEach(trigger => {
+    inlineTriggers.forEach(trigger => {
       const registrationPattern = `getDeviceTriggerCard('${trigger.id}')`;
       if (driverJs && !driverJs.includes(registrationPattern)) {
         result.issues.push({
@@ -79,7 +103,7 @@ function scanDriver(driverName) {
       }
     });
 
-    conditions.forEach(condition => {
+    inlineConditions.forEach(condition => {
       const registrationPattern = `getDeviceConditionCard('${condition.id}')`;
       if (driverJs && !driverJs.includes(registrationPattern)) {
         result.issues.push({
@@ -106,7 +130,7 @@ function scanDriver(driverName) {
       }
     });
 
-    actions.forEach(action => {
+    inlineActions.forEach(action => {
       const registrationPattern = `getDeviceActionCard('${action.id}')`;
       if (driverJs && !driverJs.includes(registrationPattern)) {
         result.issues.push({
@@ -135,7 +159,7 @@ function scanDriver(driverName) {
             severity: 'CRITICAL',
             card: 'trigger',
             id: triggerId,
-            message: `Trigger '${triggerId}' appelé dans device.js mais NON défini dans driver.compose.json`
+            message: `Trigger '${triggerId}' appelé dans device.js mais NON défini dans driver.flow.compose.json`
           });
           issues.triggeredButNotDefined.push({ driver: driverName, id: triggerId });
         }

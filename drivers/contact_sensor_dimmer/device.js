@@ -44,7 +44,7 @@ class ContactSensorDimmerDevice extends ZigBeeDevice {
       }, 500);
 
       const triggerCard = (() => {
-        try { return this.homey.flow.getDeviceTriggerCard('contact_button_pressed'); }
+        try { return this.homey.flow.getDeviceTriggerCard('contact_sensor_dimmer_button_pressed'); }
         catch (e) { return null; }
       })();
       
