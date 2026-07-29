@@ -6,7 +6,7 @@
     "de": "Blaster Fernbedienung",
     "es": "Control Remoto Blaster"
   },
-  "class": "remote",
+  "class": "other",
   "capabilities": [
     "button.learn_ir",
     "ir_learned_code",
@@ -34,19 +34,9 @@
       "setable": false
     }
   },
-  "energy": {
-    "batteries": [
-      "CR2450"
-    ],
-    "approximation": {
-      "usageConstant": 0.3
-    },
-    "mains": true
-  },
-  "subDevices": [],
   "images": {
-    "large": "/drivers/ir_remote/assets/images/large.png",
-    "small": "/drivers/ir_remote/assets/images/small.png"
+    "large": "/drivers/blaster_remote/assets/images/large.png",
+    "small": "/drivers/blaster_remote/assets/images/small.png"
   },
   "maintenanceActions": [
     {
