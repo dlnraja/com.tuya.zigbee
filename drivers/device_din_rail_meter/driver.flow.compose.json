@@ -25,7 +25,7 @@
       }
     },
     {
-      "id": "device_din_rail_meter_hvac_dehumidifier_measure_humidity_changed",
+      "id": "device_din_rail_meter_hvac_dehumidifier_meas_1d190",
       "title": {
         "en": "Humidity changed",
         "fr": "Humidité changée"
@@ -48,7 +48,7 @@
       }
     },
     {
-      "id": "device_din_rail_meter_hvac_dehumidifier_measure_temperature_changed",
+      "id": "device_din_rail_meter_hvac_dehumidifier_meas_22e01",
       "title": {
         "en": "Temperature changed",
         "fr": "Température changée"
@@ -71,7 +71,7 @@
       }
     },
     {
-      "id": "device_din_rail_meter_hvac_dehumidifier_measure_power_changed",
+      "id": "device_din_rail_meter_hvac_dehumidifier_meas_0eef3",
       "title": {
         "en": "Power changed",
         "fr": "Puissance changée"
@@ -94,7 +94,7 @@
       }
     },
     {
-      "id": "device_din_rail_meter_hvac_dehumidifier_alarm_water_true",
+      "id": "device_din_rail_meter_hvac_dehumidifier_alar_73e5b",
       "title": {
         "en": "Water leak detected",
         "fr": "Fuite d'eau détectée"
@@ -106,7 +106,7 @@
       }
     },
     {
-      "id": "device_din_rail_meter_hvac_dehumidifier_alarm_water_false",
+      "id": "device_din_rail_meter_hvac_dehumidifier_alar_b2881",
       "title": {
         "en": "No water leak",
         "fr": "Aucune fuite d'eau"
@@ -118,7 +118,7 @@
       }
     },
     {
-      "id": "device_din_rail_meter_hvac_dehumidifier_humidity_changed",
+      "id": "device_din_rail_meter_hvac_dehumidifier_humi_c9558",
       "title": {
         "en": "Humidity changed",
         "fr": "Humidité changée",
@@ -134,7 +134,7 @@
       }
     },
     {
-      "id": "device_din_rail_meter_hvac_dehumidifier_temp_changed",
+      "id": "device_din_rail_meter_hvac_dehumidifier_temp_4bc03",
       "title": {
         "en": "Temperature changed",
         "fr": "Température changée",
@@ -150,7 +150,7 @@
       }
     },
     {
-      "id": "device_din_rail_meter_hvac_dehumidifier_power_changed",
+      "id": "device_din_rail_meter_hvac_dehumidifier_powe_f9a4b",
       "title": {
         "en": "Power changed",
         "fr": "Puissance changée",
@@ -166,7 +166,7 @@
       }
     },
     {
-      "id": "device_din_rail_meter_hvac_dehumidifier_water_alarm",
+      "id": "device_din_rail_meter_hvac_dehumidifier_wate_84fff",
       "title": {
         "en": "Water alarm",
         "fr": "Alarme eau",
@@ -182,7 +182,7 @@
       }
     },
     {
-      "id": "device_din_rail_meter_hvac_dehumidifier_battery_low",
+      "id": "device_din_rail_meter_hvac_dehumidifier_batt_85804",
       "title": {
         "en": "Battery low",
         "fr": "Batterie faible",
@@ -212,7 +212,7 @@
       }
     },
     {
-      "id": "device_din_rail_meter_hvac_dehumidifier_water_detected",
+      "id": "device_din_rail_meter_hvac_dehumidifier_wate_6b6a3",
       "title": {
         "en": "Water !{{is|is not}} detected",
         "fr": "Eau !{{est|n'est pas}} détectée",
@@ -266,7 +266,7 @@
       }
     },
     {
-      "id": "device_din_rail_meter_hvac_dehumidifier_set_temperature",
+      "id": "device_din_rail_meter_hvac_dehumidifier_set__c71a0",
       "title": {
         "en": "Set temperature",
         "fr": "Régler température",

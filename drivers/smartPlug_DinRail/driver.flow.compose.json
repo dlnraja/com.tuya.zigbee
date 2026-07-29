@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "smartPlug_DinRail_turned_on",
+      "id": "smartplug_dinrail_turned_on_99666",
       "title": {
         "en": "Turned on",
         "fr": "Allume"
@@ -13,7 +13,7 @@
       }
     },
     {
-      "id": "smartPlug_DinRail_turned_off",
+      "id": "smartplug_dinrail_turned_off_9283e",
       "title": {
         "en": "Turned off",
         "fr": "Eteint"
@@ -27,7 +27,7 @@
   ],
   "conditions": [
     {
-      "id": "smartPlug_DinRail_is_on",
+      "id": "smartplug_dinrail_is_on_8b85e",
       "title": {
         "en": "Is turned !{{on|off}}",
         "fr": "Est !{{allume|eteint}}"
@@ -41,7 +41,7 @@
   ],
   "actions": [
     {
-      "id": "smartPlug_DinRail_turn_on",
+      "id": "smartplug_dinrail_turn_on_22327",
       "title": {
         "en": "Turn on",
         "fr": "Allumer"
@@ -53,7 +53,7 @@
       }
     },
     {
-      "id": "smartPlug_DinRail_turn_off",
+      "id": "smartplug_dinrail_turn_off_85560",
       "title": {
         "en": "Turn off",
         "fr": "Eteindre"
@@ -65,7 +65,7 @@
       }
     },
     {
-      "id": "smartPlug_DinRail_toggle",
+      "id": "smartplug_dinrail_toggle_980f9",
       "title": {
         "en": "Toggle",
         "fr": "Basculer"

@@ -102,12 +102,12 @@ class switch_1_gang_metering extends UnifiedSwitchBase {
       }
     });
 
-    // Register resetEnergyMeter capability
-    this.registerCapability('resetEnergyMeter', 'resetEnergyMeter');
+    // Register resetenergymeter_c3c03 capability
+    this.registerCapability('resetenergymeter_c3c03', 'resetenergymeter_c3c03');
 
   }
 
-  async resetEnergyMeter() {
+  async resetenergymeter_c3c03() {
     try {
       // Reset metering attributes (adjust the command according to your device)
       await this.zclNode.endpoints[1].clusters.metering.writeAttributes({

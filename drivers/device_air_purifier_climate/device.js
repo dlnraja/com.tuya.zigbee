@@ -26,7 +26,7 @@ class AirPurifierDevice extends TuyaSpecificClusterDevice {
       if (this._lastOnoff !== s ) {
         this._lastOnoff = s;
         this['safeSetCapabilityValue']('onoff', s).catch(() => {});
-        const id = s ? 'device_air_purifier_climate_air_purifier_climate_air_purifier_turned_on' : 'device_air_purifier_climate_air_purifier_climate_air_purifier_turned_off';
+        const id = s ? 'device_air_purifier_climate_air_purifier_cli_87d70' : 'device_air_purifier_climate_air_purifier_cli_19b6a';
         try {
           const card =
       this.homey.flow.getDeviceTriggerCard(id)?.trigger(this, {}, {}).catch((err) => this.error(err))
@@ -39,7 +39,7 @@ class AirPurifierDevice extends TuyaSpecificClusterDevice {
         this._lastPm25 = pm;
         this.safeSetCapabilityValue('measure_pm25', pm).catch(() => {});
         try {
-          const card = this.homey.flow.getDeviceTriggerCard('device_air_purifier_climate_air_purifier_climate_air_purifier_pm25_changed', 'action')
+          const card = this.homey.flow.getDeviceTriggerCard('device_air_purifier_climate_air_purifier_cli_459aa', 'action')
           if (card ) {await card.trigger(this, { pm25: pm }, {}).catch(() => {});}
         } catch (e) { this.error('[FLOW] Trigger pm25 failed:', e.message); }
       }

@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "dimmer_bulb_dimmable_bulb_dimmable_dimmer_bulb_dimmable_dimmer_turned_on",
+      "id": "dimmer_bulb_dimmable_bulb_dimmable_dimmer_bu_9e8af",
       "title": {
         "en": "Turned on",
         "fr": "Allumé"
@@ -13,7 +13,7 @@
       }
     },
     {
-      "id": "dimmer_bulb_dimmable_bulb_dimmable_dimmer_bulb_dimmable_dimmer_turned_off",
+      "id": "dimmer_bulb_dimmable_bulb_dimmable_dimmer_bu_0828e",
       "title": {
         "en": "Turned off",
         "fr": "Ã‰teint"
@@ -25,7 +25,7 @@
       }
     },
     {
-      "id": "dimmer_bulb_dimmable_bulb_dimmable_dimmer_bulb_dimmable_dimmer_dim_changed",
+      "id": "dimmer_bulb_dimmable_bulb_dimmable_dimmer_bu_220ad",
       "title": {
         "en": "Brightness changed",
         "fr": "Luminosité changée"
@@ -48,7 +48,7 @@
       }
     },
     {
-      "id": "dimmer_bulb_dimmable_bulb_dimmable_dimmer_bulb_dimmable_turned_on",
+      "id": "dimmer_bulb_dimmable_bulb_dimmable_dimmer_bu_e7ee7",
       "title": {
         "en": "Turned on",
         "fr": "Allumé",
@@ -64,7 +64,7 @@
       }
     },
     {
-      "id": "dimmer_bulb_dimmable_bulb_dimmable_dimmer_bulb_dimmable_turned_off",
+      "id": "dimmer_bulb_dimmable_bulb_dimmable_dimmer_bu_030bd",
       "title": {
         "en": "Turned off",
         "fr": "Ã‰teint",
@@ -80,7 +80,7 @@
       }
     },
     {
-      "id": "dimmer_bulb_dimmable_bulb_dimmable_dimmer_bulb_dimmable_battery_low",
+      "id": "dimmer_bulb_dimmable_bulb_dimmable_dimmer_bu_cf29f",
       "title": {
         "en": "Battery low",
         "fr": "Batterie faible",
@@ -98,7 +98,7 @@
   ],
   "conditions": [
     {
-      "id": "dimmer_bulb_dimmable_bulb_dimmable_dimmer_bulb_dimmable_dimmer_is_on",
+      "id": "dimmer_bulb_dimmable_bulb_dimmable_dimmer_bu_6c729",
       "title": {
         "en": "Is turned !{{on|off}}",
         "fr": "Est !{{allumé|éteint}}"
@@ -110,7 +110,7 @@
       }
     },
     {
-      "id": "dimmer_bulb_dimmable_bulb_dimmable_dimmer_bulb_dimmable_is_on",
+      "id": "dimmer_bulb_dimmable_bulb_dimmable_dimmer_bu_66c9b",
       "title": {
         "en": "Is !{{on|off}}",
         "fr": "Est !{{allumé|éteint}}",
@@ -128,7 +128,7 @@
   ],
   "actions": [
     {
-      "id": "dimmer_bulb_dimmable_bulb_dimmable_dimmer_bulb_dimmable_dimmer_turn_on",
+      "id": "dimmer_bulb_dimmable_bulb_dimmable_dimmer_bu_84d0c",
       "title": {
         "en": "Turn on",
         "fr": "Allumer"
@@ -140,7 +140,7 @@
       }
     },
     {
-      "id": "dimmer_bulb_dimmable_bulb_dimmable_dimmer_bulb_dimmable_dimmer_turn_off",
+      "id": "dimmer_bulb_dimmable_bulb_dimmable_dimmer_bu_72177",
       "title": {
         "en": "Turn off",
         "fr": "Ã‰teindre"
@@ -152,7 +152,7 @@
       }
     },
     {
-      "id": "dimmer_bulb_dimmable_bulb_dimmable_dimmer_bulb_dimmable_dimmer_toggle",
+      "id": "dimmer_bulb_dimmable_bulb_dimmable_dimmer_bu_3dc54",
       "title": {
         "en": "Toggle on or off",
         "fr": "Basculer"
@@ -164,7 +164,7 @@
       }
     },
     {
-      "id": "dimmer_bulb_dimmable_bulb_dimmable_dimmer_bulb_dimmable_dimmer_set_dim",
+      "id": "dimmer_bulb_dimmable_bulb_dimmable_dimmer_bu_631da",
       "title": {
         "en": "Set brightness to...",
         "fr": "Régler la luminosité Ã..."
@@ -190,7 +190,7 @@
       }
     },
     {
-      "id": "dimmer_bulb_dimmable_bulb_dimmable_dimmer_bulb_dimmable_turn_on",
+      "id": "dimmer_bulb_dimmable_bulb_dimmable_dimmer_bu_89495",
       "title": {
         "en": "Turn on",
         "fr": "Allumer",
@@ -206,7 +206,7 @@
       }
     },
     {
-      "id": "dimmer_bulb_dimmable_bulb_dimmable_dimmer_bulb_dimmable_turn_off",
+      "id": "dimmer_bulb_dimmable_bulb_dimmable_dimmer_bu_578bb",
       "title": {
         "en": "Turn off",
         "fr": "Ã‰teindre",
@@ -222,7 +222,7 @@
       }
     },
     {
-      "id": "dimmer_bulb_dimmable_bulb_dimmable_dimmer_bulb_dimmable_toggle",
+      "id": "dimmer_bulb_dimmable_bulb_dimmable_dimmer_bu_f3f9a",
       "title": {
         "en": "Toggle",
         "fr": "Basculer",
@@ -238,7 +238,7 @@
       }
     },
     {
-      "id": "dimmer_bulb_dimmable_bulb_dimmable_dimmer_bulb_dimmable_set_brightness",
+      "id": "dimmer_bulb_dimmable_bulb_dimmable_dimmer_bu_e071f",
       "title": {
         "en": "Set brightness",
         "fr": "Régler luminosité",

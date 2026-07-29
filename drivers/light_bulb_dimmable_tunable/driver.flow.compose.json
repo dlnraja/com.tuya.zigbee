@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "light_bulb_dimmable_tunable_bulb_dimmable_dimmer_turned_on",
+      "id": "light_bulb_dimmable_tunable_bulb_dimmable_di_3f214",
       "title": {
         "en": "Turned on",
         "fr": "Allumé"
@@ -13,7 +13,7 @@
       }
     },
     {
-      "id": "light_bulb_dimmable_tunable_bulb_dimmable_dimmer_turned_off",
+      "id": "light_bulb_dimmable_tunable_bulb_dimmable_di_4e7ae",
       "title": {
         "en": "Turned off",
         "fr": "Ã‰teint"
@@ -25,7 +25,7 @@
       }
     },
     {
-      "id": "light_bulb_dimmable_tunable_bulb_dimmable_dimmer_dim_changed",
+      "id": "light_bulb_dimmable_tunable_bulb_dimmable_di_aa545",
       "title": {
         "en": "Brightness changed",
         "fr": "Luminosité changée"
@@ -48,7 +48,7 @@
       }
     },
     {
-      "id": "light_bulb_dimmable_tunable_bulb_dimmable_turned_on",
+      "id": "light_bulb_dimmable_tunable_bulb_dimmable_tu_f68af",
       "title": {
         "en": "Turned on",
         "fr": "Allumé",
@@ -64,7 +64,7 @@
       }
     },
     {
-      "id": "light_bulb_dimmable_tunable_bulb_dimmable_turned_off",
+      "id": "light_bulb_dimmable_tunable_bulb_dimmable_tu_aac6d",
       "title": {
         "en": "Turned off",
         "fr": "Ã‰teint",
@@ -80,7 +80,7 @@
       }
     },
     {
-      "id": "light_bulb_dimmable_tunable_bulb_dimmable_battery_low",
+      "id": "light_bulb_dimmable_tunable_bulb_dimmable_ba_bf947",
       "title": {
         "en": "Battery low",
         "fr": "Batterie faible",
@@ -98,7 +98,7 @@
   ],
   "conditions": [
     {
-      "id": "light_bulb_dimmable_tunable_bulb_dimmable_dimmer_is_on",
+      "id": "light_bulb_dimmable_tunable_bulb_dimmable_di_f31fc",
       "title": {
         "en": "Is turned !{{on|off}}",
         "fr": "Est !{{allumé|éteint}}"
@@ -128,7 +128,7 @@
   ],
   "actions": [
     {
-      "id": "light_bulb_dimmable_tunable_bulb_dimmable_dimmer_turn_on",
+      "id": "light_bulb_dimmable_tunable_bulb_dimmable_di_a4e5f",
       "title": {
         "en": "Turn on",
         "fr": "Allumer"
@@ -140,7 +140,7 @@
       }
     },
     {
-      "id": "light_bulb_dimmable_tunable_bulb_dimmable_dimmer_turn_off",
+      "id": "light_bulb_dimmable_tunable_bulb_dimmable_di_28ee6",
       "title": {
         "en": "Turn off",
         "fr": "Ã‰teindre"
@@ -152,7 +152,7 @@
       }
     },
     {
-      "id": "light_bulb_dimmable_tunable_bulb_dimmable_dimmer_toggle",
+      "id": "light_bulb_dimmable_tunable_bulb_dimmable_di_4dbe8",
       "title": {
         "en": "Toggle on or off",
         "fr": "Basculer"
@@ -164,7 +164,7 @@
       }
     },
     {
-      "id": "light_bulb_dimmable_tunable_bulb_dimmable_dimmer_set_dim",
+      "id": "light_bulb_dimmable_tunable_bulb_dimmable_di_bf48d",
       "title": {
         "en": "Set brightness to...",
         "fr": "Régler la luminosité Ã..."
@@ -238,7 +238,7 @@
       }
     },
     {
-      "id": "light_bulb_dimmable_tunable_bulb_dimmable_set_brightness",
+      "id": "light_bulb_dimmable_tunable_bulb_dimmable_se_92a1c",
       "title": {
         "en": "Set brightness",
         "fr": "Régler luminosité",

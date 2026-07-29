@@ -23,7 +23,7 @@ class LonsonhoContactSensorDriver extends ZigBeeDriver {
 
   _registerFlowCards() {
     // TRIGGERS
-    const _triggerIds = ["contact_sensor_zigbee_contact_sensor_opened","contact_sensor_zigbee_contact_sensor_closed","contact_sensor_zigbee_contact_sensor_tamper_true","contact_sensor_zigbee_contact_sensor_battery_changed","contact_sensor_zigbee_contact_sensor_battery_low","contact_sensor_zigbee_contact_sensor_left_open","contact_sensor_zigbee_contact_sensor_contact_alarm","contact_sensor_zigbee_contact_sensor_tamper_alarm"];
+    const _triggerIds = ["contact_sensor_zigbee_contact_sensor_opened","contact_sensor_zigbee_contact_sensor_closed","contact_sensor_zigbee_contact_sensor_tamper_true","contact_sensor_zigbee_contact_sensor_battery_14ff4","contact_sensor_zigbee_contact_sensor_battery_low","contact_sensor_zigbee_contact_sensor_left_open","contact_sensor_zigbee_contact_sensor_contact_alarm","contact_sensor_zigbee_contact_sensor_tamper_alarm"];
     for (const _tid of _triggerIds) {
       try {
         const _card = this._getFlowCard(_tid, "trigger");

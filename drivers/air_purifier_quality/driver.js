@@ -46,14 +46,14 @@ class AirQualityCO2Driver extends ZigBeeDriver {
     } catch (err) { if (this.developerDebugMode) { this.error(`Condition air_purifier_quality_air_quality_co2_co2_below: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getConditionCard('air_purifier_quality_air_quality_co2_air_quality_good');
+      const card = this.homey.flow.getConditionCard('air_purifier_quality_air_quality_co2_air_qua_06f97');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Condition air_purifier_quality_air_quality_co2_air_quality_good: ${err.message}`); } }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition air_purifier_quality_air_quality_co2_air_qua_06f97: ${err.message}`); } }
 
     this.log('[FLOW] All flow cards registered');
     }

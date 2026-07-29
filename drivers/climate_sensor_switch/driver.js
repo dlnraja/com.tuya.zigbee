@@ -104,7 +104,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
     } catch (err) { if (this.developerDebugMode) { this.error(`Action climate_sensor_switch_switch_1gang_set_backlight_color: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getActionCard('climate_sensor_switch_1gang_set_backlight_brightness');
+      const card = this.homey.flow.getActionCard('climate_sensor_switch_1gang_set_backlight_br_ee06c');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}

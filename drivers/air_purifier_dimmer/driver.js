@@ -58,7 +58,7 @@ class Dimmer1gangDriver extends ZigBeeDriver {
 
     // ACTIONS
     try {
-      const card = this.homey.flow.getActionCard('air_purifier_dimmer_wall_1gang_dimmer_1gang_turn_on');
+      const card = this.homey.flow.getActionCard('air_purifier_dimmer_wall_1gang_dimmer_1gang__70e47');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -69,7 +69,7 @@ class Dimmer1gangDriver extends ZigBeeDriver {
     } catch (err) { if (this.developerDebugMode) { this.error(`Action air_purifier_dimmer_dimmer_wall_1gang_dimmer_1gang_turn_on: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getActionCard('air_purifier_dimmer_wall_1gang_dimmer_1gang_turn_off');
+      const card = this.homey.flow.getActionCard('air_purifier_dimmer_wall_1gang_dimmer_1gang__4a6fa');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -92,7 +92,7 @@ class Dimmer1gangDriver extends ZigBeeDriver {
     } catch (err) { if (this.developerDebugMode) { this.error(`Action air_purifier_dimmer_dimmer_wall_1gang_dimmer_1gang_toggle: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getActionCard('air_purifier_dimmer_wall_1gang_dimmer_1gang_set_dim');
+      const card = this.homey.flow.getActionCard('air_purifier_dimmer_wall_1gang_dimmer_1gang__71ab0');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}

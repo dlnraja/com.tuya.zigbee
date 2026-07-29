@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "tunable_spot_GU10_turned_on",
+      "id": "tunable_spot_gu10_turned_on_0e27c",
       "title": {
         "en": "Turned on",
         "fr": "Allume",
@@ -17,7 +17,7 @@
       }
     },
     {
-      "id": "tunable_spot_GU10_turned_off",
+      "id": "tunable_spot_gu10_turned_off_01819",
       "title": {
         "en": "Turned off",
         "fr": "Eteint",
@@ -33,7 +33,7 @@
       }
     },
     {
-      "id": "tunable_spot_GU10_dim_changed",
+      "id": "tunable_spot_gu10_dim_changed_edbff",
       "title": {
         "en": "Brightness changed",
         "fr": "Luminosite changee"
@@ -56,7 +56,7 @@
       }
     },
     {
-      "id": "tunable_spot_GU10_battery_low",
+      "id": "tunable_spot_gu10_battery_low_ff8cd",
       "title": {
         "en": "Battery low",
         "fr": "Batterie faible",
@@ -74,7 +74,7 @@
   ],
   "conditions": [
     {
-      "id": "tunable_spot_GU10_is_on",
+      "id": "tunable_spot_gu10_is_on_bbfa7",
       "title": {
         "en": "Is turned !{{on|off}}",
         "fr": "Est !{{allume|eteint}}",
@@ -92,7 +92,7 @@
   ],
   "actions": [
     {
-      "id": "tunable_spot_GU10_turn_on",
+      "id": "tunable_spot_gu10_turn_on_b68d8",
       "title": {
         "en": "Turn on",
         "fr": "Allumer",
@@ -108,7 +108,7 @@
       }
     },
     {
-      "id": "tunable_spot_GU10_turn_off",
+      "id": "tunable_spot_gu10_turn_off_6ffc7",
       "title": {
         "en": "Turn off",
         "fr": "Eteindre",
@@ -124,7 +124,7 @@
       }
     },
     {
-      "id": "tunable_spot_GU10_toggle",
+      "id": "tunable_spot_gu10_toggle_a2711",
       "title": {
         "en": "Toggle",
         "fr": "Basculer",
@@ -140,7 +140,7 @@
       }
     },
     {
-      "id": "tunable_spot_GU10_set_brightness",
+      "id": "tunable_spot_gu10_set_brightness_a659f",
       "title": {
         "en": "Set brightness",
         "fr": "Regler luminosite",
@@ -166,7 +166,7 @@
       }
     },
     {
-      "id": "tunable_spot_GU10_set_color_temperature",
+      "id": "tunable_spot_gu10_set_color_temperature_c8c9b",
       "title": {
         "en": "Set color temperature",
         "fr": "Regler temperature de couleur"

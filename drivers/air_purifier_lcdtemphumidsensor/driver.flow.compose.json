@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "air_purifier_lcdtemphumidsensor_air_purifier_turned_on",
+      "id": "air_purifier_lcdtemphumidsensor_air_purifier_5d364",
       "title": {
         "en": "Turned on",
         "fr": "Allumé",
@@ -17,7 +17,7 @@
       }
     },
     {
-      "id": "air_purifier_lcdtemphumidsensor_air_purifier_turned_off",
+      "id": "air_purifier_lcdtemphumidsensor_air_purifier_f6b7a",
       "title": {
         "en": "Turned off",
         "fr": "Ã‰teint",
@@ -33,7 +33,7 @@
       }
     },
     {
-      "id": "air_purifier_lcdtemphumidsensor_air_purifier_pm25_changed",
+      "id": "air_purifier_lcdtemphumidsensor_air_purifier_66846",
       "title": {
         "en": "PM2.5 changed",
         "fr": "PM2.5 changé",
@@ -79,7 +79,7 @@
   ],
   "actions": [
     {
-      "id": "air_purifier_lcdtemphumidsensor_air_purifier_turn_on",
+      "id": "air_purifier_lcdtemphumidsensor_air_purifier_26199",
       "title": {
         "en": "Turn on",
         "fr": "Allumer",
@@ -95,7 +95,7 @@
       }
     },
     {
-      "id": "air_purifier_lcdtemphumidsensor_air_purifier_turn_off",
+      "id": "air_purifier_lcdtemphumidsensor_air_purifier_6d7d1",
       "title": {
         "en": "Turn off",
         "fr": "Ã‰teindre",
@@ -111,7 +111,7 @@
       }
     },
     {
-      "id": "air_purifier_lcdtemphumidsensor_air_purifier_toggle",
+      "id": "air_purifier_lcdtemphumidsensor_air_purifier_cc9a6",
       "title": {
         "en": "Toggle",
         "fr": "Basculer",
@@ -127,7 +127,7 @@
       }
     },
     {
-      "id": "air_purifier_lcdtemphumidsensor_air_purifier_set_fan_speed",
+      "id": "air_purifier_lcdtemphumidsensor_air_purifier_f725f",
       "title": {
         "en": "Set fan speed",
         "fr": "Régler vitesse",
@@ -153,7 +153,7 @@
       }
     },
     {
-      "id": "air_purifier_lcdtemphumidsensor_air_purifier_set_brightness",
+      "id": "air_purifier_lcdtemphumidsensor_air_purifier_ca0d1",
       "title": {
         "en": "Set brightness",
         "fr": "Régler luminosité",

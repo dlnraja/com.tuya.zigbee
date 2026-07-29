@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "tunable_bulb_E14_turned_on",
+      "id": "tunable_bulb_e14_turned_on_5a028",
       "title": {
         "en": "Turned on",
         "fr": "Allume",
@@ -17,7 +17,7 @@
       }
     },
     {
-      "id": "tunable_bulb_E14_turned_off",
+      "id": "tunable_bulb_e14_turned_off_0d5ac",
       "title": {
         "en": "Turned off",
         "fr": "Eteint",
@@ -33,7 +33,7 @@
       }
     },
     {
-      "id": "tunable_bulb_E14_dim_changed",
+      "id": "tunable_bulb_e14_dim_changed_7ab79",
       "title": {
         "en": "Brightness changed",
         "fr": "Luminosite changee"
@@ -56,7 +56,7 @@
       }
     },
     {
-      "id": "tunable_bulb_E14_battery_low",
+      "id": "tunable_bulb_e14_battery_low_92430",
       "title": {
         "en": "Battery low",
         "fr": "Batterie faible",
@@ -74,7 +74,7 @@
   ],
   "conditions": [
     {
-      "id": "tunable_bulb_E14_is_on",
+      "id": "tunable_bulb_e14_is_on_a3800",
       "title": {
         "en": "Is turned !{{on|off}}",
         "fr": "Est !{{allume|eteint}}",
@@ -92,7 +92,7 @@
   ],
   "actions": [
     {
-      "id": "tunable_bulb_E14_turn_on",
+      "id": "tunable_bulb_e14_turn_on_fb7c5",
       "title": {
         "en": "Turn on",
         "fr": "Allumer",
@@ -108,7 +108,7 @@
       }
     },
     {
-      "id": "tunable_bulb_E14_turn_off",
+      "id": "tunable_bulb_e14_turn_off_71f94",
       "title": {
         "en": "Turn off",
         "fr": "Eteindre",
@@ -124,7 +124,7 @@
       }
     },
     {
-      "id": "tunable_bulb_E14_toggle",
+      "id": "tunable_bulb_e14_toggle_814bb",
       "title": {
         "en": "Toggle",
         "fr": "Basculer",
@@ -140,7 +140,7 @@
       }
     },
     {
-      "id": "tunable_bulb_E14_set_brightness",
+      "id": "tunable_bulb_e14_set_brightness_8794d",
       "title": {
         "en": "Set brightness",
         "fr": "Regler luminosite",
@@ -166,7 +166,7 @@
       }
     },
     {
-      "id": "tunable_bulb_E14_set_color_temperature",
+      "id": "tunable_bulb_e14_set_color_temperature_ce77f",
       "title": {
         "en": "Set color temperature",
         "fr": "Regler temperature de couleur"

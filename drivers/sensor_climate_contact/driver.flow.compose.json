@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "sensor_climate_contact_climate_sensor_temperature_changed",
+      "id": "sensor_climate_contact_climate_sensor_temper_3f4df",
       "highlight": true,
       "title": {
         "en": "Temperature changed",
@@ -25,7 +25,7 @@
       }
     },
     {
-      "id": "sensor_climate_contact_climate_sensor_humidity_changed",
+      "id": "sensor_climate_contact_climate_sensor_humidi_6e606",
       "title": {
         "en": "Humidity changed",
         "fr": "Humidité changée"
@@ -60,7 +60,7 @@
       }
     },
     {
-      "id": "sensor_climate_contact_climate_sensor_temperature_alarm_high",
+      "id": "sensor_climate_contact_climate_sensor_temper_e9e02",
       "title": {
         "en": "Temperature too high",
         "fr": "Température trop haute"
@@ -72,7 +72,7 @@
       }
     },
     {
-      "id": "sensor_climate_contact_climate_sensor_temperature_alarm_low",
+      "id": "sensor_climate_contact_climate_sensor_temper_c1e0a",
       "title": {
         "en": "Temperature too low",
         "fr": "Température trop basse"
@@ -84,7 +84,7 @@
       }
     },
     {
-      "id": "sensor_climate_contact_climate_sensor_humidity_alarm_high",
+      "id": "sensor_climate_contact_climate_sensor_humidi_7d34f",
       "title": {
         "en": "Humidity too high",
         "fr": "Humidité trop haute"
@@ -96,7 +96,7 @@
       }
     },
     {
-      "id": "sensor_climate_contact_climate_sensor_humidity_alarm_low",
+      "id": "sensor_climate_contact_climate_sensor_humidi_63135",
       "title": {
         "en": "Humidity too low",
         "fr": "Humidité trop basse"
@@ -126,7 +126,7 @@
   ],
   "conditions": [
     {
-      "id": "sensor_climate_contact_climate_sensor_temperature_above",
+      "id": "sensor_climate_contact_climate_sensor_temper_01c88",
       "title": {
         "en": "Temperature is above",
         "fr": "Température supérieure à"
@@ -150,7 +150,7 @@
       }
     },
     {
-      "id": "sensor_climate_contact_climate_sensor_temperature_below",
+      "id": "sensor_climate_contact_climate_sensor_temper_3c3b8",
       "title": {
         "en": "Temperature is below",
         "fr": "Température inférieure à"
@@ -174,7 +174,7 @@
       }
     },
     {
-      "id": "sensor_climate_contact_climate_sensor_humidity_above",
+      "id": "sensor_climate_contact_climate_sensor_humidi_06734",
       "title": {
         "en": "Humidity is above",
         "fr": "Humidité supérieure à"
@@ -198,7 +198,7 @@
       }
     },
     {
-      "id": "sensor_climate_contact_climate_sensor_humidity_below",
+      "id": "sensor_climate_contact_climate_sensor_humidi_ae5f9",
       "title": {
         "en": "Humidity is below",
         "fr": "Humidité inférieure à"

@@ -180,8 +180,8 @@ class AirQualityCO2Device extends UnifiedSensorBase {
     if (this._destroyed || typeof value !== 'number' || Number.isNaN(value)) {return;}
     const CARDS = {
       measure_co2: ['air_purifier_quality_air_quality_co2_level_changed', 'co2'],
-      measure_temperature: ['air_purifier_quality_air_quality_co2_air_temperature_changed', 'temperature'],
-      measure_humidity: ['air_purifier_quality_air_quality_co2_air_humidity_changed', 'humidity'],
+      measure_temperature: ['air_purifier_quality_air_quality_co2_air_tem_fdfb3', 'temperature'],
+      measure_humidity: ['air_purifier_quality_air_quality_co2_air_hum_4a124', 'humidity'],
       measure_pm25: ['air_purifier_quality_air_quality_co2_pm25_changed', 'pm25'],
     };
     const hit = CARDS[capability];

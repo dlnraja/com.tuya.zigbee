@@ -38,7 +38,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
     // END TRIGGERS
     // ACTIONS
     try {
-      const card = this.homey.flow.getActionCard('contact_sensor_curtain_motor_set_windowcoverings_set');
+      const card = this.homey.flow.getActionCard('contact_sensor_curtain_motor_set_windowcover_9c716');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}

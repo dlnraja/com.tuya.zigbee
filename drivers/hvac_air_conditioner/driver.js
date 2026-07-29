@@ -15,8 +15,8 @@ async onInit() {
     // TRIGGERS
     try { this.homey.flow.getDeviceTriggerCard('hvac_air_conditioner_air_conditioner_turned_on'); } catch (e) {}
     try { this.homey.flow.getDeviceTriggerCard('hvac_air_conditioner_air_conditioner_turned_off'); } catch (e) {}
-    try { this.homey.flow.getDeviceTriggerCard('hvac_air_conditioner_air_conditioner_target_temperature_changed'); } catch (e) {}
-    try { this.homey.flow.getDeviceTriggerCard('hvac_air_conditioner_air_conditioner_measure_temperature_changed'); } catch (e) {}
+    try { this.homey.flow.getDeviceTriggerCard('hvac_air_conditioner_air_conditioner_target__f57d0'); } catch (e) {}
+    try { this.homey.flow.getDeviceTriggerCard('hvac_air_conditioner_air_conditioner_measure_32479'); } catch (e) {}
     try { this.homey.flow.getDeviceTriggerCard('hvac_air_conditioner_turned_on'); } catch (e) {}
     try { this.homey.flow.getDeviceTriggerCard('hvac_air_conditioner_turned_off'); } catch (e) {}
     try { this.homey.flow.getDeviceTriggerCard('hvac_air_conditioner_temp_changed'); } catch (e) {}
@@ -79,7 +79,7 @@ async onInit() {
     } catch (err) { if (this.developerDebugMode) { this.error(`Action hvac_air_conditioner_air_conditioner_toggle: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getActionCard('hvac_air_conditioner_air_conditioner_set_target_temperature');
+      const card = this.homey.flow.getActionCard('hvac_air_conditioner_air_conditioner_set_tar_2810f');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -87,7 +87,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Action hvac_air_conditioner_air_conditioner_set_target_temperature: ${err.message}`); } }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action hvac_air_conditioner_air_conditioner_set_tar_2810f: ${err.message}`); } }
 
     try {
       const card = this.homey.flow.getActionCard('hvac_air_conditioner_turn_on');
