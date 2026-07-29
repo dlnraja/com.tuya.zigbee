@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dashboards — Universal Tuya Zigbee</title>
+<style>
+:root{--bg:#0d1117;--fg:#c9d1d9;--muted:#8b949e;--accent:#58a6ff;--card:#161b22;--border:#30363d}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+header{padding:2rem 1.5rem 1rem;border-bottom:1px solid var(--border)}
+h1{margin:0 0 .5rem;font-size:1.5rem}
+.sub{color:var(--muted);font-size:.9rem}
+main{padding:1.5rem;max-width:1100px;margin:0 auto}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem}
+.card{display:block;background:var(--card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.2rem;text-decoration:none;color:var(--fg);transition:border-color .15s}
+.card:hover{border-color:var(--accent)}
+.card h3{margin:.2rem 0 .4rem;color:var(--accent);font-size:1.05rem}
+.card p{margin:0;color:var(--muted);font-size:.85rem}
+footer{padding:1.5rem;border-top:1px solid var(--border);color:var(--muted);font-size:.8rem}
+a{color:var(--accent)}
+</style>
+</head>
+<body>
+<header>
+<h1>📊 Project Dashboards</h1>
+<p class="sub">Live health metrics for Universal Tuya Zigbee — regenerated on every Pages deploy</p>
+<p class="sub"><a href="index.html">← Device Finder</a> · <a href="wifi.html">📡 WiFi Devices</a></p>
+</header>
+<main>
+<div class="grid">
+
+      <a class="card" href="dashboards/master-dashboard.html">
+        <h3>Master Dashboard</h3>
+        <p>Global health, drivers, fingerprints, flow cards, images</p>
+      </a>
+
+      <a class="card" href="dashboards/driver-dashboard.html">
+        <h3>Driver Dashboard</h3>
+        <p>Per-driver detail and coverage</p>
+      </a>
+
+      <a class="card" href="dashboards/coverage-dashboard.html">
+        <h3>Coverage Dashboard</h3>
+        <p>Fingerprint and source coverage</p>
+      </a>
+
+      <a class="card" href="dashboards/error-dashboard.html">
+        <h3>Error Dashboard</h3>
+        <p>Anti-patterns and code findings</p>
+      </a>
+
+      <a class="card" href="dashboards/dependency-dashboard.html">
+        <h3>Dependency Dashboard</h3>
+        <p>Module graph, cycles, unused modules</p>
+      </a>
+
+      <a class="card" href="dashboards/performance-dashboard.html">
+        <h3>Performance Dashboard</h3>
+        <p>Syntax checks and perf history</p>
+      </a>
+</div>
+</main>
+<footer>
+<p>Generated 2026-07-29 | <a href="https://github.com/dlnraja/com.tuya.zigbee">GitHub</a> | <a href="https://community.homey.app/t/140352">Forum</a></p>
+</footer>
+</body>
+</html>

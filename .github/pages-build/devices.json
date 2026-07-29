@@ -311,7 +311,9 @@
       "_TZ3000_XKWALGNE",
       "_TZ3000_ZTRFRCSU",
       "_TZ3000_bv1czkkn",
-      "_TZ3210_AMLEYEEJ"
+      "_TZ3210_AMLEYEEJ",
+      "_TZ3000_mrpevh8p",
+      "_TZ3000_MRPEVH8P"
     ],
     "pids": [
       "TS0041",
@@ -351,7 +353,7 @@
       "measure_battery"
     ],
     "proto": "ZCL",
-    "fpCount": 15
+    "fpCount": 17
   },
   {
     "id": "switch_1gang",
@@ -536,7 +538,6 @@
       "_TZ3000_MHHXXJRS",
       "_TZ3000_MKHKXX1P",
       "_TZ3000_MKMB4SMS",
-      "_TZ3000_MRPEVH8P",
       "_TZ3000_MTMTLJO4",
       "_TZ3000_MUFWV0RY",
       "_TZ3000_MYAAKNBQ",
@@ -925,7 +926,7 @@
       "button.1"
     ],
     "proto": "ZCL",
-    "fpCount": 513
+    "fpCount": 512
   },
   {
     "id": "relay_board_2_channel",
@@ -1037,8 +1038,6 @@
     "class": "socket",
     "mfrs": [
       "_tz3210_eejm8dcr",
-      "_tz3210_iystcadi",
-      "_TZE204_lawxy9e2",
       "_tze284_nthhgkd6",
       "_TZE284_nthhgkd6"
     ],
@@ -1088,7 +1087,7 @@
       "button.2"
     ],
     "proto": "ZCL",
-    "fpCount": 5
+    "fpCount": 3
   },
   {
     "id": "switch_2_gang",
@@ -1558,7 +1557,6 @@
     "name": "2-Channel Dimmer Module",
     "class": "light",
     "mfrs": [
-      "_TZ3000_7ysdnebc",
       "_tz3000_92chsky7"
     ],
     "pids": [
@@ -1573,7 +1571,7 @@
       "button.1"
     ],
     "proto": "ZCL",
-    "fpCount": 2
+    "fpCount": 1
   },
   {
     "id": "switch_2gang",
@@ -2979,7 +2977,6 @@
     "name": "Bed Sensor",
     "class": "sensor",
     "mfrs": [
-      "_TZE200_seq9cm6u",
       "_TZE200_sh11h1f5",
       "_TZE204_seq9cm6u",
       "_TZE204_sh11h1f5",
@@ -2996,7 +2993,7 @@
       "button.1"
     ],
     "proto": "EF00",
-    "fpCount": 6
+    "fpCount": 5
   },
   {
     "id": "blaster_remote",
@@ -4798,7 +4795,6 @@
     "mfrs": [
       "_TYZB01_wpmo3ja3",
       "_TZ3000_NBM3PJII",
-      "_TZE200_AYCXWIAU",
       "_TZE200_PBDLRMFB",
       "_TZE204_PBDLRMFB",
       "_tyzb01_wpmo3ja3",
@@ -4817,14 +4813,13 @@
       "button.1"
     ],
     "proto": "ZCL",
-    "fpCount": 8
+    "fpCount": 7
   },
   {
     "id": "air_quality_comprehensive",
     "name": "Comprehensive Air Monitor",
     "class": "sensor",
     "mfrs": [
-      "_TZE200_8ygsuhe1",
       "_tz3000_jr2atpww",
       "_tz3000_kqvb8qa8",
       "_tz3000_krajfo4p",
@@ -4850,7 +4845,7 @@
       "button.1"
     ],
     "proto": "ZCL",
-    "fpCount": 8
+    "fpCount": 7
   },
   {
     "id": "contact_sensor",
@@ -4861,7 +4856,6 @@
       "LUMI.SENSOR_MAGNET.AQ2",
       "ZBEACON",
       "_TZ3000_bpkijo14",
-      "_TZE200_pay2byax",
       "_tz3000_85czd6fy",
       "_tz3000_bpkijo14",
       "lumi.sensor_magnet",
@@ -4908,7 +4902,7 @@
       "button.1"
     ],
     "proto": "EF00",
-    "fpCount": 10
+    "fpCount": 9
   },
   {
     "id": "contact_sensor_curtain",
@@ -5107,7 +5101,6 @@
       "_TZE204_ZPZNDJEZ",
       "_TZE204_dq7c8fng",
       "_TZE284_HBJWGKDH",
-      "_TZE284_LNYZ4A6V",
       "_TZ3000_ehgouyvu",
       "_TZE284_ncc7uahd",
       "_TZE200_rgeapp2c"
@@ -5178,7 +5171,7 @@
       "button.1"
     ],
     "proto": "EF00",
-    "fpCount": 39
+    "fpCount": 38
   },
   {
     "id": "power_clamp_meter",
@@ -5187,7 +5180,13 @@
     "mfrs": [
       "_tze200_sur36rju",
       "_tze204_sur36rju",
-      "_TZE200_81yrt3lo"
+      "_TZE200_81yrt3lo",
+      "_TZE204_81YRT3LO",
+      "_TZE204_81yrt3lo",
+      "_tze204_81yrt3lo",
+      "_TZE284_81YRT3LO",
+      "_TZE284_81yrt3lo",
+      "_tze284_81yrt3lo"
     ],
     "pids": [
       "CK-BL702-MWS-01",
@@ -5227,7 +5226,7 @@
       "button.1"
     ],
     "proto": "EF00",
-    "fpCount": 3
+    "fpCount": 9
   },
   {
     "id": "curtain_module",
@@ -5386,7 +5385,6 @@
     "class": "windowcoverings",
     "mfrs": [
       "_TZE200_zah67ekd",
-      "_tze200_7eue9vhc",
       "_tze200_a8zrneee",
       "_tze200_ergbiejo",
       "_tze200_iossyxra",
@@ -5409,7 +5407,7 @@
       "button.1"
     ],
     "proto": "ZCL",
-    "fpCount": 10
+    "fpCount": 9
   },
   {
     "id": "hvac_dehumidifier",
@@ -5614,7 +5612,10 @@
     "id": "device_air_purifier_plug",
     "name": "Device Air Purifier Plug",
     "class": "socket",
-    "mfrs": [],
+    "mfrs": [
+      "_TZE200_7eue9vhc",
+      "_TZE284_lnyz4a6v"
+    ],
     "pids": [
       "0x8040",
       "BASICZBR3",
@@ -5659,7 +5660,7 @@
       "button.1"
     ],
     "proto": "ZCL",
-    "fpCount": 0
+    "fpCount": 2
   },
   {
     "id": "device_air_purifier_presence",
@@ -5719,9 +5720,7 @@
     "id": "device_air_purifier_radiator",
     "name": "Device Air Purifier Radiator",
     "class": "thermostat",
-    "mfrs": [
-      "_TZE284_nbv4tdaz"
-    ],
+    "mfrs": [],
     "pids": [
       "014G2461",
       "014G2463",
@@ -5755,7 +5754,7 @@
       "button.1"
     ],
     "proto": "EF00",
-    "fpCount": 1
+    "fpCount": 0
   },
   {
     "id": "device_air_purifier_siren",
@@ -6421,23 +6420,16 @@
     "class": "light",
     "mfrs": [
       "_tz3000_8uaoilu9",
-      "_tz3000_dbou1ap4",
       "_tz3000_gek6snaj",
-      "_tz3000_i8l0nqdu",
       "_tz3000_iystcadi",
-      "_tz3000_kdpxju99",
       "_tz3000_n",
-      "_tz3000_oborybow",
       "_tz3000_odygigth",
       "_tz3000_q50zhdsc",
       "_tz3000_qd7hej8u",
       "_tz3000_qqjaziws",
-      "_tz3210_b3kiq1i0",
-      "_tz3210_b8jdosxo",
       "_tz3210_bfwvfyx1",
       "_tz3210_c0s1xloa",
       "_tz3210_cieijuw1",
-      "_tz3210_dkul5xix",
       "_tz3210_dn5higyl",
       "_tz3210_dwzfzfjc",
       "_tz3210_hicxa0rh",
@@ -6449,33 +6441,18 @@
       "_tz3210_jjqdqxfq",
       "_tz3210_ljoasixl",
       "_tz3210_mja6r5ix",
-      "_tz3210_p9ao60da",
-      "_tz3210_qigbovcq",
       "_tz3210_r5afgmkl",
       "_tz3210_rcggc0ys",
       "_tz3210_sln7ah6r",
-      "_tz3210_sw9uxoea",
-      "_tz3210_wbsgmojq",
       "_tz3210_wxa85bwk",
       "_tz3210_x13bu7za",
       "_tz3210_z1vlyufu",
       "_tz3210_zexrfbzd",
       "_tz3210_zrvxvydd",
-      "_tzb210_3zfp8mki",
-      "_tzb210_417ikxay",
       "_tzb210_6eed09b9",
       "_tzb210_endmggws",
-      "_tzb210_gj0ccsar",
       "_tzb210_lnnkh3f9",
-      "_tzb210_rs0ufzwg",
       "_tzb210_rwy5hexp",
-      "_tzb210_u3ri0968",
-      "_tzb210_ue01a0s2",
-      "_tzb210_uoiqhjqe",
-      "_tzb210_w9hcix2r",
-      "_tzb210_wxazcmsh",
-      "_tzb210_wy1pyu1q",
-      "_tzb210_yatkpuha",
       "_tzb210_zmppwawa",
       "_tze200_2gtsuokt",
       "_TZE200_2gtsuokt",
@@ -6495,8 +6472,6 @@
       "_TZE200_na98lvjp",
       "_tze200_nthosjmx",
       "_TZE200_nthosjmx",
-      "_TZE204_2jnoy8dj",
-      "_TZE204_trwaxi57",
       "_tze204_zhiqbr7l",
       "_TZE204_zhiqbr7l"
     ],
@@ -6518,7 +6493,7 @@
       "button.1"
     ],
     "proto": "ZCL",
-    "fpCount": 79
+    "fpCount": 55
   },
   {
     "id": "dimmable_recessed_led",
@@ -6776,23 +6751,17 @@
     "name": "DIN Rail Energy Meter",
     "class": "sensor",
     "mfrs": [
-      "_TZE204_81YRT3LO",
-      "_TZE204_81yrt3lo",
       "_TZE204_DHOTIAUW",
       "_TZE204_dhotiauw",
-      "_TZE284_81YRT3LO",
-      "_TZE284_81yrt3lo",
       "_tze200_davzgqq0",
       "_tze200_ipxszdhv",
       "_tze204_2dpa3fqj",
-      "_tze204_81yrt3lo",
       "_tze204_davzgqq0",
       "_tze204_dhotiauw",
       "_tze204_ipxszdhv",
       "_tze204_nslr42tt",
       "_tze204_shkxsgis",
-      "_tze284_2dpa3fqj",
-      "_tze284_81yrt3lo"
+      "_tze284_2dpa3fqj"
     ],
     "pids": [
       "SDM01-3Z1",
@@ -6813,7 +6782,7 @@
       "button.1"
     ],
     "proto": "ZCL",
-    "fpCount": 17
+    "fpCount": 11
   },
   {
     "id": "energy_meter_din",
@@ -7237,9 +7206,7 @@
     "id": "doorwindowsensor_3",
     "name": "Door & Window Sensor",
     "class": "sensor",
-    "mfrs": [
-      "_TZ3000_jowhpxop"
-    ],
+    "mfrs": [],
     "pids": [
       "01MINIZB",
       "BASICZBR3",
@@ -7283,7 +7250,7 @@
       "button.1"
     ],
     "proto": "ZCL",
-    "fpCount": 1
+    "fpCount": 0
   },
   {
     "id": "doorwindowsensor_4",
@@ -7292,7 +7259,9 @@
     "mfrs": [
       "_tze284_8whfphjv",
       "cat0001",
-      "dss0010"
+      "dss0010",
+      "CAT0001",
+      "DSS0010"
     ],
     "pids": [
       "CK-TLSR8656-SS5-01(7014)",
@@ -7324,7 +7293,7 @@
       "button.1"
     ],
     "proto": "ZCL",
-    "fpCount": 3
+    "fpCount": 5
   },
   {
     "id": "door_controller",
@@ -7708,7 +7677,6 @@
     "mfrs": [
       "_TZ3210_232nryqh",
       "_TZ3210_d3m9v8p6",
-      "_TZ3210_dse8ogfy",
       "_TZ3210_dse8ogfy_fingerbot",
       "_TZ3210_j4pdtz9v",
       "_TZ3210_okbss9dy",
@@ -7730,7 +7698,7 @@
       "button.1"
     ],
     "proto": "ZCL",
-    "fpCount": 7
+    "fpCount": 6
   },
   {
     "id": "fingerbot_switch",
@@ -7959,9 +7927,7 @@
     "id": "gas_sensor_switch",
     "name": "Gas Sensor Switch",
     "class": "socket",
-    "mfrs": [
-      "_TZ3000_9ni6xxld"
-    ],
+    "mfrs": [],
     "pids": [
       "01MINIZB",
       "3315-S",
@@ -8038,7 +8004,7 @@
       "button.1"
     ],
     "proto": "ZCL",
-    "fpCount": 1
+    "fpCount": 0
   },
   {
     "id": "gas_sensor",
@@ -8380,7 +8346,6 @@
       "ZEN THERMOSTAT",
       "ZIGBEE ALLIANCE",
       "ZIGBEE2MQTT",
-      "_TZ1800_fcdjzz3s",
       "_TZ3000_0dumfk2z",
       "_TZ3000_1MTKTXDK",
       "_TZ3000_1kmurvlx",
@@ -8397,7 +8362,6 @@
       "_TZ3000_ovbvmhiq",
       "_TZ3000_pftj0i7z",
       "_TZ3000_sosdczdl",
-      "_TZ3000_yujem9ee",
       "_TZ3002_eda6eitk",
       "_TZ3002_vsom92pp",
       "_TZ3008_1a8m8wd6",
@@ -8463,9 +8427,7 @@
       "_TZE200_dq8bu0pt",
       "_TZE200_eegnwoyw",
       "_TZE200_gne0e6mk",
-      "_TZE200_gubdgai2",
       "_TZE200_mlglxwp3",
-      "_TZE200_osmxri8y",
       "_TZE200_rqhnxkqu",
       "_TZE200_xixlazkg",
       "_TZE204",
@@ -8475,7 +8437,6 @@
       "_TZE204_f2rflfa6",
       "_TZE204_izy1g1mb",
       "_TZE204_lawxy9e2",
-      "_TZE204_lb0fsvba",
       "_TZE204_mpbki2zm-TS0601",
       "_TZE204_qasjif9",
       "_TZE204_s4sa1mcx",
@@ -8674,7 +8635,7 @@
       "button.1"
     ],
     "proto": "EF00",
-    "fpCount": 449
+    "fpCount": 444
   },
   {
     "id": "universal_zigbee",
@@ -9236,9 +9197,6 @@
       "_TZ3000_v1v0578s",
       "_TZ3000_vax66fba",
       "_TZ3000_xr5m6p9y",
-      "_TZE200_locansqn",
-      "_TZE200_vvmbj46n",
-      "_TZE284_vvmbj46n",
       "_tz2000_avdnvykf",
       "_tz2000_hjsgdkfl"
     ],
@@ -9256,7 +9214,7 @@
       "button.1"
     ],
     "proto": "ZCL",
-    "fpCount": 13
+    "fpCount": 10
   },
   {
     "id": "lcdtemphumidsensor_2",
@@ -9294,7 +9252,11 @@
       "dht0001",
       "dhta001",
       "ntcht01",
-      "ntcht02"
+      "ntcht02",
+      "DHT0001",
+      "DHTA001",
+      "NTCHT01",
+      "NTCHT02"
     ],
     "pids": [
       "TS0601",
@@ -9308,14 +9270,13 @@
       "button.1"
     ],
     "proto": "EF00",
-    "fpCount": 10
+    "fpCount": 14
   },
   {
     "id": "lcdtemphumidluxsensor",
     "name": "LCD Temperature, Humidity and Luminance Sensor",
     "class": "sensor",
     "mfrs": [
-      "_TZ3000_qaaysllp",
       "_tz3000_8jtgjy0k",
       "_tz3000_g8fjhjt5"
     ],
@@ -9333,7 +9294,7 @@
       "button.1"
     ],
     "proto": "ZCL",
-    "fpCount": 3
+    "fpCount": 2
   },
   {
     "id": "lcdtemphumidsensor_plug_energy",
@@ -9723,7 +9684,7 @@
       "_tz3210_r0vzq1oj",
       "_TZ3210_r0vzq1oj",
       "_TZ3210_R0VZQ1OJ",
-      "_TZ3210_R0XGKFT5",
+      "_tz3210_remypqqm",
       "_TZ3210_REMYPQQM"
     ],
     "pids": [
@@ -9895,10 +9856,7 @@
     "id": "rgb_wall_led_light",
     "name": "Livarno Lux Smart LED Wall Light",
     "class": "light",
-    "mfrs": [
-      "_tz3000_5bsf8vaj",
-      "_tz3000_utagpnzs"
-    ],
+    "mfrs": [],
     "pids": [
       "TS0505A"
     ],
@@ -9910,7 +9868,7 @@
       "button.1"
     ],
     "proto": "ZCL",
-    "fpCount": 2
+    "fpCount": 0
   },
   {
     "id": "lock_smart",
@@ -9923,7 +9881,6 @@
       "_tze200_bmzphld8",
       "_tze200_g2kiyjvf",
       "_tze200_ne4s6z47",
-      "_tze204_khoqss0a",
       "_tze204_rrbcyh1f"
     ],
     "pids": [
@@ -9938,7 +9895,7 @@
       "button.1"
     ],
     "proto": "ZCL",
-    "fpCount": 8
+    "fpCount": 7
   },
   {
     "id": "module_mini_switch",
@@ -10137,7 +10094,9 @@
       "_tze284_pislt0wa",
       "_TZE284_pislt0wa",
       "piriv01",
-      "vabrate"
+      "vabrate",
+      "PIRIV01",
+      "VABRATE"
     ],
     "pids": [
       "Excellux",
@@ -10163,7 +10122,7 @@
       "button.1"
     ],
     "proto": "ZCL",
-    "fpCount": 8
+    "fpCount": 10
   },
   {
     "id": "usb_outlet_advanced",
@@ -10366,13 +10325,10 @@
       "E-WELINK",
       "_TZ3000_5ct6e7ye",
       "_TZ3000_6l1pjfqe",
-      "_TZ3000_88iqnhvd",
       "_TZ3000_fqoynhku",
       "_TZ3000_j1v25l17",
       "_TZ3000_oxv67pno",
       "_TZ3000_wamqdr3f",
-      "_TZ3000_ww6drja5",
-      "_TZ3000_wzmuk9ai",
       "_ts3000_gwkzibhs",
       "_tz3000_2iiimqs9",
       "_tz3000_7issjl2q",
@@ -10491,7 +10447,7 @@
       "button.1"
     ],
     "proto": "ZCL",
-    "fpCount": 38
+    "fpCount": 35
   },
   {
     "id": "plug_smart_switch",
@@ -11164,7 +11120,6 @@
       "_TZE200_B8X72KMY",
       "_TZE200_BVU2WNXQ",
       "_TZE200_CIRVGEVT",
-      "_TZE200_CXAKECFO",
       "_TZE200_D5P1KR8Z",
       "_TZE200_D8FP6IVB",
       "_TZE200_DCYDAPR2",
@@ -11275,7 +11230,7 @@
       "button.1"
     ],
     "proto": "ZCL",
-    "fpCount": 149
+    "fpCount": 148
   },
   {
     "id": "radiator_valve_zigbee",
@@ -11667,21 +11622,7 @@
     "name": "RGB LED Strip",
     "class": "light",
     "mfrs": [
-      "_tz3000_12sxjap4",
-      "_TZ3000_5BSF8VAJ",
-      "_TZ3000_9cpuaca6",
-      "_TZ3000_9CPUACA6",
-      "_TZ3000_dbou1ap4",
-      "_TZ3000_DBOU1AP4",
-      "_tz3000_hlijwsai",
       "_tz3000_jd3z4yig",
-      "_TZ3000_kdpxju99",
-      "_TZ3000_KDPXJU99",
-      "_TZ3000_KEABPIGV",
-      "_tz3000_riwp3k79",
-      "_TZ3000_riwp3k79",
-      "_TZ3000_RIWP3K79",
-      "_TZ3000_UTAGPNZS",
       "_tz3210_4ubylghk",
       "_tz3210_jd3z4yig"
     ],
@@ -11696,7 +11637,7 @@
       "button.1"
     ],
     "proto": "ZCL",
-    "fpCount": 17
+    "fpCount": 3
   },
   {
     "id": "rgb_led_strip_controller",
@@ -11731,7 +11672,6 @@
     "name": "RGB Mood Light",
     "class": "light",
     "mfrs": [
-      "_tz3000_9cpuaca6",
       "_tz3210_r0xgkft5"
     ],
     "pids": [
@@ -11746,7 +11686,7 @@
       "button.1"
     ],
     "proto": "ZCL",
-    "fpCount": 2
+    "fpCount": 1
   },
   {
     "id": "rgb_spot_GardenLight",
@@ -11979,7 +11919,12 @@
     "id": "sensor_climate_contact",
     "name": "Sensor Climate Contact",
     "class": "sensor",
-    "mfrs": [],
+    "mfrs": [
+      "_TZE200_aycxwiau",
+      "_TZE200_cxakecfo",
+      "_tze200_seq9cm6u",
+      "_TZE204_khoqss0a"
+    ],
     "pids": [
       "TS0601"
     ],
@@ -11994,7 +11939,7 @@
       "button.1"
     ],
     "proto": "EF00",
-    "fpCount": 0
+    "fpCount": 4
   },
   {
     "id": "sensor_climate_lcdtemphumidsensor",
@@ -12249,7 +12194,12 @@
     "id": "sensor_contact_rain",
     "name": "Sensor Contact Rain",
     "class": "sensor",
-    "mfrs": [],
+    "mfrs": [
+      "_tz3000_jowhpxop",
+      "_tz3210_p68kms0l",
+      "_tz3210_tgvtvdoc",
+      "_tze200_u6x1zyv2"
+    ],
     "pids": [
       "Excellux",
       "TS0203",
@@ -12266,7 +12216,7 @@
       "button.1"
     ],
     "proto": "ZCL",
-    "fpCount": 0
+    "fpCount": 4
   },
   {
     "id": "sensor_contact_water",
@@ -12830,7 +12780,6 @@
     "mfrs": [
       "_HYBRID_SIREN_SIRENTEMPHUMIDSENSOR_NEEDS_DEVICE_ASSIGNMENT",
       "_TYST11_d0yu2xgi",
-      "_TZE200_d0yu2xgi",
       "_TZE200_h4astvf8",
       "_TZE204_ljpxwimu",
       "_hybrid_siren_sirentemphumidsensor_needs_device_assignment"
@@ -12849,7 +12798,7 @@
       "button.1"
     ],
     "proto": "ZCL",
-    "fpCount": 6
+    "fpCount": 5
   },
   {
     "id": "sirentemphumidsensor",
@@ -13725,7 +13674,8 @@
       "_tz3000_qkixdnon",
       "_TZ3218_sgbsg6mr",
       "_tze204_r0jdjrvi",
-      "zbeacon"
+      "zbeacon",
+      "ZBEACON"
     ],
     "pids": [
       "TS0001",
@@ -13740,7 +13690,7 @@
       "button.1"
     ],
     "proto": "ZCL",
-    "fpCount": 5
+    "fpCount": 6
   },
   {
     "id": "smart_rcbo",
@@ -13879,8 +13829,7 @@
       "_TZ3000_MWD3C2AT",
       "_TZ3000_TK3S5TYG",
       "_TZ3000_d0yu2xgi",
-      "_TZ3000_tk3s5tyg",
-      "_TZE200_ntcy3xu1"
+      "_TZ3000_tk3s5tyg"
     ],
     "pids": [
       "GS361A-H04",
@@ -13908,7 +13857,7 @@
       "button.1"
     ],
     "proto": "ZCL",
-    "fpCount": 5
+    "fpCount": 4
   },
   {
     "id": "smart_switch",
@@ -14664,12 +14613,7 @@
     "id": "temphumidsensor3",
     "name": "Temperature & Humidity Sensor",
     "class": "sensor",
-    "mfrs": [
-      "_tze200_a8sdabtg",
-      "_tze200_qoy0ekbd",
-      "_tze204_a8sdabtg",
-      "_tze204_qoy0ekbd"
-    ],
+    "mfrs": [],
     "pids": [
       "SNTZ003"
     ],
@@ -14680,7 +14624,7 @@
       "button.1"
     ],
     "proto": "ZCL",
-    "fpCount": 4
+    "fpCount": 0
   },
   {
     "id": "temphumidsensor4",
@@ -14903,11 +14847,7 @@
       "_TZ3000_5fkufhn1",
       "_TZ3000_5FKUFHN1",
       "_tz3000_g1glzzfk",
-      "_tz3000_keabpigv",
       "_tz3000_obacbukl",
-      "_tz3000_oborybow",
-      "_TZ3000_oborybow",
-      "_TZ3000_OBORYBOW",
       "_tz3000_rylaozuc",
       "_TZ3000_rylaozuc",
       "_TZ3000_RYLAOZUC",
@@ -14934,7 +14874,7 @@
       "button.1"
     ],
     "proto": "ZCL",
-    "fpCount": 24
+    "fpCount": 20
   },
   {
     "id": "tunable_bulb_E27",
@@ -15551,7 +15491,6 @@
       "_TZ3000_8h7wgocw",
       "_tz3000_bs93npae",
       "_TZ3000_bs93npae",
-      "_TZ3000_dojqjapa",
       "_tz3000_e3vhyirx",
       "_TZ3000_e3vhyirx",
       "_TZ3000_egq7y6pr",
@@ -15561,7 +15500,6 @@
       "_tz3000_jwv3cwak",
       "_TZ3000_jwv3cwak",
       "_TZ3000_L13ERPV4",
-      "_tz3000_ltiqubue",
       "_tz3000_vw8pawxa",
       "_TZ3000_vw8pawxa",
       "_tz3000_yruungrl",
@@ -15583,7 +15521,7 @@
       "button.1"
     ],
     "proto": "ZCL",
-    "fpCount": 32
+    "fpCount": 30
   },
   {
     "id": "wall_socket",
@@ -15612,34 +15550,14 @@
     "name": "Wall Switch (1/4 Gang)",
     "class": "socket",
     "mfrs": [
-      "_tyzb01_bagt1e4o",
-      "_TYZB01_BAGT1E4O",
-      "_tz3000_5tqxpine",
-      "_tz3000_a4xycprs",
       "_TZ3000_ABCI1HIU",
-      "_tz3000_b7bxojrg",
-      "_tz3000_bgtzm4ny",
-      "_tz3000_dku2cfsc",
-      "_tz3000_dziaict4",
-      "_TZ3000_dziaict4",
-      "_TZ3000_EE8NRT2L",
       "_tz3000_fa9mlvja",
-      "_tz3000_fjt5218m",
       "_tz3000_ixla93vd",
-      "_tz3000_j61x9rxn",
-      "_TZ3000_j61x9rxn",
       "_TZ3000_JR2ATPWW",
-      "_tz3000_mh9px7cq",
-      "_TZ3000_mh9px7cq",
-      "_tz3000_r0pmi2p3",
-      "_TZ3000_R0PMI2P3",
       "_tz3000_ufhtxr59",
       "_TZ3000_UFHTXR59",
       "_tz3000_vp6clf9d",
       "_TZ3000_VP6CLF9D",
-      "_tz3000_xwuveizv",
-      "_TZ3000_xwuveizv",
-      "_tze200_1ozguk6x",
       "_tze200_aqnazj70",
       "_TZE200_MEXISFIK",
       "_TZE200_MYD45WEU"
@@ -15658,21 +15576,19 @@
       "button.4"
     ],
     "proto": "ZCL",
-    "fpCount": 31
+    "fpCount": 11
   },
   {
     "id": "wall_switch_1gang_1way",
     "name": "Wall Switch 1-Gang 1-Way",
     "class": "socket",
     "mfrs": [
-      "_TZ3000_0t4zjtia",
       "_TZ3000_FDXIHPP7",
       "_TZ3000_OVYAISIP",
       "_TZ3000_PK8TGTDB",
       "_TZ3000_fdxihpp7",
       "_TZ3000_ovyaisip",
       "_TZ3000_pk8tgtdb",
-      "_TZ3000_skueekg3",
       "_tz3000_ovyaisip",
       "_tz3000_pk8tgtdb",
       "_tz3000_vw40zqp4"
@@ -15690,7 +15606,7 @@
       "onoff"
     ],
     "proto": "ZCL",
-    "fpCount": 11
+    "fpCount": 9
   },
   {
     "id": "wall_switch_2gang_1way",
@@ -16078,7 +15994,6 @@
       "_TZ3000_pattern",
       "_TZ3000_xk5udnd6",
       "_TZ3000_zojh9vz7",
-      "_TZE200_jthf7vb6",
       "_TZE284_2se8efxh",
       "_TZE284_xuv7ptg0",
       "hobeian",
@@ -16116,7 +16031,7 @@
       "button.1"
     ],
     "proto": "EF00",
-    "fpCount": 17
+    "fpCount": 16
   },
   {
     "id": "water_leak_sensor_tuya",
@@ -16900,9 +16815,6 @@
     "mfrs": [
       "_tz3000_k1msavlx",
       "_tz3000_otwpdq1d",
-      "_TZ3210_tgvtvdoc",
-      "_TZ3210_p68kms0l",
-      "_TZE200_u6x1zyv2",
       "_TZE204_u6x1zyv2"
     ],
     "pids": [
@@ -16918,7 +16830,7 @@
       "button.1"
     ],
     "proto": "EF00",
-    "fpCount": 6
+    "fpCount": 3
   },
   {
     "id": "zigbee_repeater",
