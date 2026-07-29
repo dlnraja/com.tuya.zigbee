@@ -4,6 +4,13 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
+## [9.0.361] - 2026-07-29
+
+### Fixed
+- `measure_temperature.probe` (external probe, DP38 — e.g. `_TZE284_hodyryli`, issue #513): probe temperature was shown 10x too low. `SmartDivisorManager` now knows `measure_temperature.probe` (temperature type, ×10 divisor, valid range), so the raw ×10 value is scaled before `ProductValueValidator` auto-correction. Regression test added (`test/smart-divisor-probe.test.js`).
+
+---
+
 ## [9.0.193 → 9.0.348] - 2026-07-12 → 2026-07-27
 
 Grouped entry — 156 version bumps, summarized by milestones (see `AUDIT_HOMEY_2026-07-27.md` for the final state).
