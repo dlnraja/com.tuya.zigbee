@@ -1,6 +1,38 @@
 {
   "triggers": [
     {
+      "id": "contact_sensor_dimmer_button_pressed",
+      "title": {
+        "en": "Button pressed",
+        "fr": "Bouton pressé"
+      },
+      "tokens": [
+        {
+          "name": "button",
+          "type": "number",
+          "title": {
+            "en": "Button",
+            "fr": "Bouton"
+          },
+          "example": 1
+        },
+        {
+          "name": "scene",
+          "type": "string",
+          "title": {
+            "en": "Scene",
+            "fr": "Scène"
+          },
+          "example": "pressed"
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Button pressed",
+        "fr": "Bouton pressé"
+      }
+    },
+    {
       "id": "contact_sensor_dimmer_contact_sensor_opened",
       "highlight": true,
       "title": {

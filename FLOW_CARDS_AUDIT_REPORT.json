@@ -1,167 +1,16 @@
 {
-  "timestamp": "2026-07-29T02:35:11.303Z",
+  "timestamp": "2026-07-29T02:57:38.644Z",
   "stats": {
     "driversScanned": 431,
-    "totalTriggers": 2792,
+    "totalTriggers": 2794,
     "totalConditions": 618,
     "totalActions": 1363,
-    "totalIssues": 2923
+    "totalIssues": 2879
   },
   "issues": {
-    "missingRegistration": [
-      {
-        "driver": "air_purifier_curtain",
-        "type": "action",
-        "id": "air_purifier_curtain_curtain_calibrate"
-      },
-      {
-        "driver": "air_purifier_curtain",
-        "type": "action",
-        "id": "air_purifier_curtain_curtain_reset_position"
-      },
-      {
-        "driver": "air_purifier_curtain",
-        "type": "action",
-        "id": "air_purifier_curtain_curtain_hold"
-      },
-      {
-        "driver": "air_purifier_curtain",
-        "type": "action",
-        "id": "air_purifier_curtain_curtain_open_partial"
-      },
-      {
-        "driver": "curtain_motor_tilt",
-        "type": "action",
-        "id": "curtain_calibrate"
-      },
-      {
-        "driver": "curtain_motor_tilt",
-        "type": "action",
-        "id": "curtain_reset_position"
-      },
-      {
-        "driver": "curtain_motor_tilt",
-        "type": "action",
-        "id": "curtain_hold"
-      },
-      {
-        "driver": "curtain_motor_tilt",
-        "type": "action",
-        "id": "curtain_open_partial"
-      },
-      {
-        "driver": "ir_blaster",
-        "type": "action",
-        "id": "ir_blaster_send_tv_command"
-      },
-      {
-        "driver": "radiator_controller",
-        "type": "trigger",
-        "id": "radiator_mode_changed"
-      },
-      {
-        "driver": "radiator_controller",
-        "type": "trigger",
-        "id": "pilot_signal_sent"
-      },
-      {
-        "driver": "radiator_controller",
-        "type": "condition",
-        "id": "radiator_is_heating"
-      },
-      {
-        "driver": "radiator_controller",
-        "type": "condition",
-        "id": "heating_mode_is"
-      },
-      {
-        "driver": "radiator_controller",
-        "type": "action",
-        "id": "set_heating_mode"
-      },
-      {
-        "driver": "radiator_controller",
-        "type": "action",
-        "id": "send_pilot_signal"
-      },
-      {
-        "driver": "radiator_controller",
-        "type": "action",
-        "id": "set_temperature_offset"
-      },
-      {
-        "driver": "sensor_gas_presence",
-        "type": "action",
-        "id": "sensor_gas_presence_run_self_test"
-      }
-    ],
+    "missingRegistration": [],
     "missingRunListener": [],
-    "triggeredButNotDefined": [
-      {
-        "driver": "blaster_remote",
-        "id": "ir_code_received"
-      },
-      {
-        "driver": "climate_sensor_smart",
-        "id": "climate_sensor_smart_smart_scene_panel_scene_activated"
-      },
-      {
-        "driver": "contact_sensor_curtain",
-        "id": "contact_button_pressed"
-      },
-      {
-        "driver": "contact_sensor_dimmer",
-        "id": "contact_button_pressed"
-      },
-      {
-        "driver": "generic_diy",
-        "id": "generic_diy_identify"
-      },
-      {
-        "driver": "generic_diy",
-        "id": "generic_diy_turn_on_endpoint"
-      },
-      {
-        "driver": "generic_diy",
-        "id": "generic_diy_turn_off_endpoint"
-      },
-      {
-        "driver": "generic_diy",
-        "id": "generic_diy_set_dim"
-      },
-      {
-        "driver": "radar_sensor_2",
-        "id": "target_distance_changed"
-      },
-      {
-        "driver": "sensor_climate_smart",
-        "id": "sensor_climate_smart_climate_sensor_smart_smart_scene_panel_scene_activated"
-      },
-      {
-        "driver": "sr_zs_switch",
-        "id": "switch_state_changed"
-      },
-      {
-        "driver": "sr_zs_switch",
-        "id": "scene_triggered_configurable"
-      },
-      {
-        "driver": "usb_outlet_advanced",
-        "id": "usb_outlet_button_pressed"
-      },
-      {
-        "driver": "wall_remote_4_gang_2",
-        "id": "wall_remote_4_gang_buttons_2"
-      },
-      {
-        "driver": "weather_station_outdoor",
-        "id": "weather_station_outdoor_outdoor_temperature_changed"
-      },
-      {
-        "driver": "weather_station_outdoor",
-        "id": "weather_station_outdoor_outdoor_humidity_changed"
-      }
-    ],
+    "triggeredButNotDefined": [],
     "definedButNeverTriggered": [
       {
         "driver": "air_purifier",
@@ -510,10 +359,6 @@
       {
         "driver": "blaster_remote",
         "id": "blaster_remote_ir_remote_code_learned"
-      },
-      {
-        "driver": "blaster_remote",
-        "id": "blaster_remote_ir_code_received"
       },
       {
         "driver": "bulb_dimmable",
@@ -2093,10 +1938,6 @@
       },
       {
         "driver": "climate_sensor_smart",
-        "id": "climate_sensor_smart_scene_panel_scene_activated"
-      },
-      {
-        "driver": "climate_sensor_smart",
         "id": "climate_sensor_smart_scene_panel_switch_1_changed"
       },
       {
@@ -2186,10 +2027,6 @@
       {
         "driver": "contact_sensor",
         "id": "contact_sensor_tamper_alarm"
-      },
-      {
-        "driver": "contact_sensor_curtain",
-        "id": "contact_sensor_curtain_button_pressed"
       },
       {
         "driver": "contact_sensor_curtain",
@@ -5381,10 +5218,6 @@
       },
       {
         "driver": "radiator_controller",
-        "id": "pilot_signal_sent"
-      },
-      {
-        "driver": "radiator_controller",
         "id": "radiator_controller_turned_on"
       },
       {
@@ -6885,10 +6718,6 @@
       },
       {
         "driver": "sensor_climate_smart",
-        "id": "sensor_climate_sensor_smart_smart_scene_pane_abe86"
-      },
-      {
-        "driver": "sensor_climate_smart",
         "id": "sensor_climate_sensor_smart_smart_scene_pane_61d9d"
       },
       {
@@ -8034,14 +7863,6 @@
       {
         "driver": "soil_sensor",
         "id": "soil_sensor_ec_high"
-      },
-      {
-        "driver": "sr_zs_switch",
-        "id": "sr_zs_switch_state_changed"
-      },
-      {
-        "driver": "sr_zs_switch",
-        "id": "sr_zs_switch_scene_triggered_configurable"
       },
       {
         "driver": "switch",
@@ -9705,10 +9526,6 @@
       },
       {
         "driver": "usb_outlet_advanced",
-        "id": "usb_outlet_advanced_usb_outlet_button_pressed"
-      },
-      {
-        "driver": "usb_outlet_advanced",
         "id": "usb_outlet_advanced_turned_on"
       },
       {
@@ -10002,10 +9819,6 @@
       {
         "driver": "wall_remote_4_gang",
         "id": "wall_remote_4_gang_button_4gang_button_4_release"
-      },
-      {
-        "driver": "wall_remote_4_gang_2",
-        "id": "wall_remote_4_gang_2_wall_remote_4_gang_buttons_2"
       },
       {
         "driver": "wall_remote_4_gang_3",
@@ -10638,14 +10451,6 @@
       {
         "driver": "water_valve_smart",
         "id": "water_valve_smart_water_consumed"
-      },
-      {
-        "driver": "weather_station_outdoor",
-        "id": "weather_station_outdoor_temperature_changed"
-      },
-      {
-        "driver": "weather_station_outdoor",
-        "id": "weather_station_outdoor_humidity_changed"
       },
       {
         "driver": "weather_station_outdoor",
@@ -11853,34 +11658,6 @@
       "actions": 8,
       "issues": [
         {
-          "type": "MISSING_REGISTRATION",
-          "severity": "HIGH",
-          "card": "action",
-          "id": "air_purifier_curtain_curtain_calibrate",
-          "message": "Action 'air_purifier_curtain_curtain_calibrate' définie mais NON enregistrée dans driver.js"
-        },
-        {
-          "type": "MISSING_REGISTRATION",
-          "severity": "HIGH",
-          "card": "action",
-          "id": "air_purifier_curtain_curtain_reset_position",
-          "message": "Action 'air_purifier_curtain_curtain_reset_position' définie mais NON enregistrée dans driver.js"
-        },
-        {
-          "type": "MISSING_REGISTRATION",
-          "severity": "HIGH",
-          "card": "action",
-          "id": "air_purifier_curtain_curtain_hold",
-          "message": "Action 'air_purifier_curtain_curtain_hold' définie mais NON enregistrée dans driver.js"
-        },
-        {
-          "type": "MISSING_REGISTRATION",
-          "severity": "HIGH",
-          "card": "action",
-          "id": "air_purifier_curtain_curtain_open_partial",
-          "message": "Action 'air_purifier_curtain_curtain_open_partial' définie mais NON enregistrée dans driver.js"
-        },
-        {
           "type": "DEFINED_NOT_TRIGGERED",
           "severity": "WARNING",
           "card": "trigger",
@@ -12571,25 +12348,11 @@
       "actions": 2,
       "issues": [
         {
-          "type": "TRIGGERED_NOT_DEFINED",
-          "severity": "CRITICAL",
-          "card": "trigger",
-          "id": "ir_code_received",
-          "message": "Trigger 'ir_code_received' appelé dans device.js mais NON défini dans driver.flow.compose.json"
-        },
-        {
           "type": "DEFINED_NOT_TRIGGERED",
           "severity": "WARNING",
           "card": "trigger",
           "id": "blaster_remote_ir_remote_code_learned",
           "message": "Trigger 'blaster_remote_ir_remote_code_learned' défini mais JAMAIS appelé dans device.js"
-        },
-        {
-          "type": "DEFINED_NOT_TRIGGERED",
-          "severity": "WARNING",
-          "card": "trigger",
-          "id": "blaster_remote_ir_code_received",
-          "message": "Trigger 'blaster_remote_ir_code_received' défini mais JAMAIS appelé dans device.js"
         }
       ]
     },
@@ -15658,20 +15421,6 @@
       "actions": 4,
       "issues": [
         {
-          "type": "TRIGGERED_NOT_DEFINED",
-          "severity": "CRITICAL",
-          "card": "trigger",
-          "id": "climate_sensor_smart_smart_scene_panel_scene_activated",
-          "message": "Trigger 'climate_sensor_smart_smart_scene_panel_scene_activated' appelé dans device.js mais NON défini dans driver.flow.compose.json"
-        },
-        {
-          "type": "DEFINED_NOT_TRIGGERED",
-          "severity": "WARNING",
-          "card": "trigger",
-          "id": "climate_sensor_smart_scene_panel_scene_activated",
-          "message": "Trigger 'climate_sensor_smart_scene_panel_scene_activated' défini mais JAMAIS appelé dans device.js"
-        },
-        {
           "type": "DEFINED_NOT_TRIGGERED",
           "severity": "WARNING",
           "card": "trigger",
@@ -15892,20 +15641,6 @@
       "actions": 10,
       "issues": [
         {
-          "type": "TRIGGERED_NOT_DEFINED",
-          "severity": "CRITICAL",
-          "card": "trigger",
-          "id": "contact_button_pressed",
-          "message": "Trigger 'contact_button_pressed' appelé dans device.js mais NON défini dans driver.flow.compose.json"
-        },
-        {
-          "type": "DEFINED_NOT_TRIGGERED",
-          "severity": "WARNING",
-          "card": "trigger",
-          "id": "contact_sensor_curtain_button_pressed",
-          "message": "Trigger 'contact_sensor_curtain_button_pressed' défini mais JAMAIS appelé dans device.js"
-        },
-        {
           "type": "DEFINED_NOT_TRIGGERED",
           "severity": "WARNING",
           "card": "trigger",
@@ -15965,17 +15700,10 @@
     },
     {
       "driver": "contact_sensor_dimmer",
-      "triggers": 8,
+      "triggers": 9,
       "conditions": 4,
       "actions": 0,
       "issues": [
-        {
-          "type": "TRIGGERED_NOT_DEFINED",
-          "severity": "CRITICAL",
-          "card": "trigger",
-          "id": "contact_button_pressed",
-          "message": "Trigger 'contact_button_pressed' appelé dans device.js mais NON défini dans driver.flow.compose.json"
-        },
         {
           "type": "DEFINED_NOT_TRIGGERED",
           "severity": "WARNING",
@@ -16438,34 +16166,6 @@
       "conditions": 0,
       "actions": 11,
       "issues": [
-        {
-          "type": "MISSING_REGISTRATION",
-          "severity": "HIGH",
-          "card": "action",
-          "id": "curtain_calibrate",
-          "message": "Action 'curtain_calibrate' définie mais NON enregistrée dans driver.js"
-        },
-        {
-          "type": "MISSING_REGISTRATION",
-          "severity": "HIGH",
-          "card": "action",
-          "id": "curtain_reset_position",
-          "message": "Action 'curtain_reset_position' définie mais NON enregistrée dans driver.js"
-        },
-        {
-          "type": "MISSING_REGISTRATION",
-          "severity": "HIGH",
-          "card": "action",
-          "id": "curtain_hold",
-          "message": "Action 'curtain_hold' définie mais NON enregistrée dans driver.js"
-        },
-        {
-          "type": "MISSING_REGISTRATION",
-          "severity": "HIGH",
-          "card": "action",
-          "id": "curtain_open_partial",
-          "message": "Action 'curtain_open_partial' définie mais NON enregistrée dans driver.js"
-        },
         {
           "type": "DEFINED_NOT_TRIGGERED",
           "severity": "WARNING",
@@ -20300,34 +20000,6 @@
       "actions": 7,
       "issues": [
         {
-          "type": "TRIGGERED_NOT_DEFINED",
-          "severity": "CRITICAL",
-          "card": "trigger",
-          "id": "generic_diy_identify",
-          "message": "Trigger 'generic_diy_identify' appelé dans device.js mais NON défini dans driver.flow.compose.json"
-        },
-        {
-          "type": "TRIGGERED_NOT_DEFINED",
-          "severity": "CRITICAL",
-          "card": "trigger",
-          "id": "generic_diy_turn_on_endpoint",
-          "message": "Trigger 'generic_diy_turn_on_endpoint' appelé dans device.js mais NON défini dans driver.flow.compose.json"
-        },
-        {
-          "type": "TRIGGERED_NOT_DEFINED",
-          "severity": "CRITICAL",
-          "card": "trigger",
-          "id": "generic_diy_turn_off_endpoint",
-          "message": "Trigger 'generic_diy_turn_off_endpoint' appelé dans device.js mais NON défini dans driver.flow.compose.json"
-        },
-        {
-          "type": "TRIGGERED_NOT_DEFINED",
-          "severity": "CRITICAL",
-          "card": "trigger",
-          "id": "generic_diy_set_dim",
-          "message": "Trigger 'generic_diy_set_dim' appelé dans device.js mais NON défini dans driver.flow.compose.json"
-        },
-        {
           "type": "DEFINED_NOT_TRIGGERED",
           "severity": "WARNING",
           "card": "trigger",
@@ -21189,13 +20861,6 @@
       "conditions": 4,
       "actions": 23,
       "issues": [
-        {
-          "type": "MISSING_REGISTRATION",
-          "severity": "HIGH",
-          "card": "action",
-          "id": "ir_blaster_send_tv_command",
-          "message": "Action 'ir_blaster_send_tv_command' définie mais NON enregistrée dans driver.js"
-        },
         {
           "type": "DEFINED_NOT_TRIGGERED",
           "severity": "WARNING",
@@ -22965,17 +22630,10 @@
     },
     {
       "driver": "radar_sensor_2",
-      "triggers": 3,
+      "triggers": 4,
       "conditions": 0,
       "actions": 0,
       "issues": [
-        {
-          "type": "TRIGGERED_NOT_DEFINED",
-          "severity": "CRITICAL",
-          "card": "trigger",
-          "id": "target_distance_changed",
-          "message": "Trigger 'target_distance_changed' appelé dans device.js mais NON défini dans driver.flow.compose.json"
-        },
         {
           "type": "DEFINED_NOT_TRIGGERED",
           "severity": "WARNING",
@@ -23034,62 +22692,6 @@
       "conditions": 3,
       "actions": 7,
       "issues": [
-        {
-          "type": "MISSING_REGISTRATION",
-          "severity": "CRITICAL",
-          "card": "trigger",
-          "id": "radiator_mode_changed",
-          "message": "Trigger 'radiator_mode_changed' défini mais NON enregistré dans driver.js"
-        },
-        {
-          "type": "MISSING_REGISTRATION",
-          "severity": "CRITICAL",
-          "card": "trigger",
-          "id": "pilot_signal_sent",
-          "message": "Trigger 'pilot_signal_sent' défini mais NON enregistré dans driver.js"
-        },
-        {
-          "type": "MISSING_REGISTRATION",
-          "severity": "CRITICAL",
-          "card": "condition",
-          "id": "radiator_is_heating",
-          "message": "Condition 'radiator_is_heating' définie mais NON enregistrée dans driver.js"
-        },
-        {
-          "type": "MISSING_REGISTRATION",
-          "severity": "CRITICAL",
-          "card": "condition",
-          "id": "heating_mode_is",
-          "message": "Condition 'heating_mode_is' définie mais NON enregistrée dans driver.js"
-        },
-        {
-          "type": "MISSING_REGISTRATION",
-          "severity": "HIGH",
-          "card": "action",
-          "id": "set_heating_mode",
-          "message": "Action 'set_heating_mode' définie mais NON enregistrée dans driver.js"
-        },
-        {
-          "type": "MISSING_REGISTRATION",
-          "severity": "HIGH",
-          "card": "action",
-          "id": "send_pilot_signal",
-          "message": "Action 'send_pilot_signal' définie mais NON enregistrée dans driver.js"
-        },
-        {
-          "type": "MISSING_REGISTRATION",
-          "severity": "HIGH",
-          "card": "action",
-          "id": "set_temperature_offset",
-          "message": "Action 'set_temperature_offset' définie mais NON enregistrée dans driver.js"
-        },
-        {
-          "type": "DEFINED_NOT_TRIGGERED",
-          "severity": "WARNING",
-          "card": "trigger",
-          "id": "pilot_signal_sent",
-          "message": "Trigger 'pilot_signal_sent' défini mais JAMAIS appelé dans device.js"
-        },
         {
           "type": "DEFINED_NOT_TRIGGERED",
           "severity": "WARNING",
@@ -26071,20 +25673,6 @@
       "actions": 4,
       "issues": [
         {
-          "type": "TRIGGERED_NOT_DEFINED",
-          "severity": "CRITICAL",
-          "card": "trigger",
-          "id": "sensor_climate_smart_climate_sensor_smart_smart_scene_panel_scene_activated",
-          "message": "Trigger 'sensor_climate_smart_climate_sensor_smart_smart_scene_panel_scene_activated' appelé dans device.js mais NON défini dans driver.flow.compose.json"
-        },
-        {
-          "type": "DEFINED_NOT_TRIGGERED",
-          "severity": "WARNING",
-          "card": "trigger",
-          "id": "sensor_climate_sensor_smart_smart_scene_pane_abe86",
-          "message": "Trigger 'sensor_climate_sensor_smart_smart_scene_pane_abe86' défini mais JAMAIS appelé dans device.js"
-        },
-        {
           "type": "DEFINED_NOT_TRIGGERED",
           "severity": "WARNING",
           "card": "trigger",
@@ -26632,13 +26220,6 @@
       "conditions": 4,
       "actions": 1,
       "issues": [
-        {
-          "type": "MISSING_REGISTRATION",
-          "severity": "HIGH",
-          "card": "action",
-          "id": "sensor_gas_presence_run_self_test",
-          "message": "Action 'sensor_gas_presence_run_self_test' définie mais NON enregistrée dans driver.js"
-        },
         {
           "type": "DEFINED_NOT_TRIGGERED",
           "severity": "WARNING",
@@ -28710,34 +28291,6 @@
       "conditions": 1,
       "actions": 1,
       "issues": [
-        {
-          "type": "TRIGGERED_NOT_DEFINED",
-          "severity": "CRITICAL",
-          "card": "trigger",
-          "id": "switch_state_changed",
-          "message": "Trigger 'switch_state_changed' appelé dans device.js mais NON défini dans driver.flow.compose.json"
-        },
-        {
-          "type": "TRIGGERED_NOT_DEFINED",
-          "severity": "CRITICAL",
-          "card": "trigger",
-          "id": "scene_triggered_configurable",
-          "message": "Trigger 'scene_triggered_configurable' appelé dans device.js mais NON défini dans driver.flow.compose.json"
-        },
-        {
-          "type": "DEFINED_NOT_TRIGGERED",
-          "severity": "WARNING",
-          "card": "trigger",
-          "id": "sr_zs_switch_state_changed",
-          "message": "Trigger 'sr_zs_switch_state_changed' défini mais JAMAIS appelé dans device.js"
-        },
-        {
-          "type": "DEFINED_NOT_TRIGGERED",
-          "severity": "WARNING",
-          "card": "trigger",
-          "id": "sr_zs_switch_scene_triggered_configurable",
-          "message": "Trigger 'sr_zs_switch_scene_triggered_configurable' défini mais JAMAIS appelé dans device.js"
-        },
         {
           "type": "MISSING_TOKENS",
           "severity": "MEDIUM",
@@ -32023,20 +31576,6 @@
       "actions": 3,
       "issues": [
         {
-          "type": "TRIGGERED_NOT_DEFINED",
-          "severity": "CRITICAL",
-          "card": "trigger",
-          "id": "usb_outlet_button_pressed",
-          "message": "Trigger 'usb_outlet_button_pressed' appelé dans device.js mais NON défini dans driver.flow.compose.json"
-        },
-        {
-          "type": "DEFINED_NOT_TRIGGERED",
-          "severity": "WARNING",
-          "card": "trigger",
-          "id": "usb_outlet_advanced_usb_outlet_button_pressed",
-          "message": "Trigger 'usb_outlet_advanced_usb_outlet_button_pressed' défini mais JAMAIS appelé dans device.js"
-        },
-        {
           "type": "DEFINED_NOT_TRIGGERED",
           "severity": "WARNING",
           "card": "trigger",
@@ -32648,28 +32187,6 @@
           "card": "trigger",
           "id": "wall_remote_4_gang_button_4gang_button_4_release",
           "message": "Trigger 'wall_remote_4_gang_button_4gang_button_4_release' défini mais JAMAIS appelé dans device.js"
-        }
-      ]
-    },
-    {
-      "driver": "wall_remote_4_gang_2",
-      "triggers": 1,
-      "conditions": 0,
-      "actions": 0,
-      "issues": [
-        {
-          "type": "TRIGGERED_NOT_DEFINED",
-          "severity": "CRITICAL",
-          "card": "trigger",
-          "id": "wall_remote_4_gang_buttons_2",
-          "message": "Trigger 'wall_remote_4_gang_buttons_2' appelé dans device.js mais NON défini dans driver.flow.compose.json"
-        },
-        {
-          "type": "DEFINED_NOT_TRIGGERED",
-          "severity": "WARNING",
-          "card": "trigger",
-          "id": "wall_remote_4_gang_2_wall_remote_4_gang_buttons_2",
-          "message": "Trigger 'wall_remote_4_gang_2_wall_remote_4_gang_buttons_2' défini mais JAMAIS appelé dans device.js"
         }
       ]
     },
@@ -33977,34 +33494,6 @@
       "conditions": 4,
       "actions": 0,
       "issues": [
-        {
-          "type": "TRIGGERED_NOT_DEFINED",
-          "severity": "CRITICAL",
-          "card": "trigger",
-          "id": "weather_station_outdoor_outdoor_temperature_changed",
-          "message": "Trigger 'weather_station_outdoor_outdoor_temperature_changed' appelé dans device.js mais NON défini dans driver.flow.compose.json"
-        },
-        {
-          "type": "TRIGGERED_NOT_DEFINED",
-          "severity": "CRITICAL",
-          "card": "trigger",
-          "id": "weather_station_outdoor_outdoor_humidity_changed",
-          "message": "Trigger 'weather_station_outdoor_outdoor_humidity_changed' appelé dans device.js mais NON défini dans driver.flow.compose.json"
-        },
-        {
-          "type": "DEFINED_NOT_TRIGGERED",
-          "severity": "WARNING",
-          "card": "trigger",
-          "id": "weather_station_outdoor_temperature_changed",
-          "message": "Trigger 'weather_station_outdoor_temperature_changed' défini mais JAMAIS appelé dans device.js"
-        },
-        {
-          "type": "DEFINED_NOT_TRIGGERED",
-          "severity": "WARNING",
-          "card": "trigger",
-          "id": "weather_station_outdoor_humidity_changed",
-          "message": "Trigger 'weather_station_outdoor_humidity_changed' défini mais JAMAIS appelé dans device.js"
-        },
         {
           "type": "DEFINED_NOT_TRIGGERED",
           "severity": "WARNING",

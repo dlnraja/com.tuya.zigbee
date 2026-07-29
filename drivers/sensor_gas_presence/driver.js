@@ -76,6 +76,21 @@ class PresenceSensorRadarDriver extends ZigBeeDriver {
       }
     } catch (err) { if (this.developerDebugMode) { this.error(`Condition sensor_gas_presence_presence_sensor_radar_motion_active: ${err.message}`); } }
 
+    // ACTIONS
+    try {
+      const selfTestCard = this.homey.flow.getDeviceActionCard('sensor_gas_presence_run_self_test');
+      if (selfTestCard) {
+        selfTestCard.registerRunListener(async (args) => {
+          if (!args.device) {return false;}
+          if (typeof args.device.runSelfTest === 'function') {
+            return args.device.runSelfTest(args.test_type || 'all');
+          }
+          this.log(`[SELF-TEST] Not supported by device (requested: ${args.test_type || 'all'})`);
+          return false;
+        });
+      }
+    } catch (err) { this.error(`Action sensor_gas_presence_run_self_test: ${err.message}`); }
+
     this.log('[FLOW] All flow cards registered');
   }
 }

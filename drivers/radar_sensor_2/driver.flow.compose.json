@@ -46,6 +46,29 @@
         "en": "Motion ended",
         "fr": "Mouvement termine"
       }
+    },
+    {
+      "id": "radar_sensor_2_target_distance_changed",
+      "title": {
+        "en": "Target distance changed",
+        "fr": "Distance cible changee"
+      },
+      "args": [],
+      "tokens": [
+        {
+          "name": "target_distance",
+          "type": "number",
+          "title": {
+            "en": "Target distance (m)",
+            "fr": "Distance cible (m)"
+          },
+          "example": 2.5
+        }
+      ],
+      "titleFormatted": {
+        "en": "Target distance changed",
+        "fr": "Distance cible changee"
+      }
     }
   ],
   "conditions": [],
