@@ -1323,5 +1323,8 @@
   },
   "9.0.361": {
     "en": "v9.0.359: chore: bump v9.0.359 — débloque le publish (9.0.358 déjà publiée en build 2689)"
+  },
+  "9.0.362": {
+    "en": "v9.0.361: `measure_temperature.probe` (external probe, DP38 — e.g. `_TZE284_hodyryli`, issue #513): probe temperature was shown 10x too low. `SmartDivisorManager` now knows `measure_temperature.probe` (temperature type, ×10 divisor, valid range), so the raw ×10 value is scaled before `ProductValueValidator` auto-correction. Regression test added (`test/smart-divisor-probe.test.js`)."
   }
 }
