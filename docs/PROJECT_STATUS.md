@@ -8,7 +8,7 @@
 |--------|-------|
 | Version | v9.0.352 |
 | Drivers | 431 |
-| Fingerprints | 5,606 |
+| Fingerprints | 5,608 |
 | Last Updated | 2026-07-29 |
 
 ## Drivers by Category
