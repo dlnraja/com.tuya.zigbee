@@ -148,15 +148,34 @@ if(!fps.length&&!pids.length)continue;
 // v9.0.349: Never auto-resolve issues the user reopened or still reports broken
 const _labels=(iss.labels||[]).map(l=>typeof l==="string"?l:l&&l.name);
 if(_labels.includes("reopened-by-user")){console.log("Skip #"+iss.number+": label reopened-by-user");continue;}
+// v9.0.362: A human took over the conversation — never auto-resolve until maintainer acts
+if(_labels.includes("needs-maintainer")){console.log("Skip #"+iss.number+": label needs-maintainer");continue;}
 const _cmts=await ghGet("/repos/"+repo+"/issues/"+iss.number+"/comments?per_page=100");
 if(Array.isArray(_cmts)&&_cmts.length){
 const _isBot=c=>(c.body||"").includes(TAG)||(c.body||"").includes("<!-- tuya-reopen-bot -->")||(((c.user||{}).login)||"").includes("[bot]");
-const _humans=_cmts.filter(c=>!_isBot(c));
+const _isOwner=c=>((c.user||{}).login||"")===OWN.split("/")[0];
+const _humans=_cmts.filter(c=>!_isBot(c)&&!_isOwner(c));
 const _bots=_cmts.filter(_isBot);
+const _owners=_cmts.filter(c=>_isOwner(c)&&!_isBot(c));
 const _lastHuman=_humans[_humans.length-1];
 const _lastBot=_bots[_bots.length-1];
+const _lastOwner=_owners[_owners.length-1];
 if(_lastHuman&&(!_lastBot||_lastHuman.created_at>_lastBot.created_at)&&/\b(still|toujours|not fixed|encore)\b/i.test(_lastHuman.body||"")){
 console.log("Skip #"+iss.number+": latest human comment reports still broken");continue;
+}
+// v9.0.362: Comment-based dedup + escalation (state file is gitignored, cannot persist)
+const _handled=[_lastBot,_lastOwner].filter(Boolean).sort((a,b)=>a.created_at<b.created_at?-1:1).pop();
+if(_handled){
+if(_lastHuman&&_lastHuman.created_at>_handled.created_at){
+// Human replied after the bot/maintainer: stop auto-resolving, escalate once
+console.log("Escalate #"+iss.number+": human replied after auto-resolve");
+await ghPost("/repos/"+repo+"/issues/"+iss.number+"/labels",{labels:["needs-maintainer"]});
+continue;
+}
+if(_handled===_lastOwner){console.log("Skip #"+iss.number+": maintainer is handling");continue;}
+// Bot had the last word: skip if it already resolved for the current app version
+const _vm=(_lastBot.body||"").match(/Tuya Unified Zigbee v([\d.]+)/);
+if(_vm&&_vm[1]===appVer){console.log("Skip #"+iss.number+": already auto-resolved in v"+appVer);continue;}
 }
 }
 // v5.13.1: Correlate mfr+pid pairs for smarter resolution
