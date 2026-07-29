@@ -60,6 +60,14 @@ class ClimateSensorDevice extends UnifiedSensorBase {
 
     const mapping = this.dpMappings[dpId];
     if (mapping) {
+      // Dynamic capability addition (e.g. measure_temperature.probe for DP38
+      // external probe, ZY-ZTH03PRO/ZT08) — mirrors UnifiedSensorBase handler
+      // which this method overrides.
+      if (mapping.dynamicAdd && mapping.capability && !this.hasCapability(mapping.capability)) {
+        this.addCapability(mapping.capability)
+          .then(() => this.log(`[CLIMATE] ✨ DYNAMIC ADD: ${mapping.capability} (from DP${dpId})`))
+          .catch((e) => this.log(`[CLIMATE] ⚠️ Could not add ${mapping.capability}: ${e.message}`));
+      }
       let val;
       if (mapping.smartDivisor === true) {
         const { smartParse } = require('../../lib/managers/SmartDivisorManager');
