@@ -2,14 +2,14 @@
 
 <!-- AUTO-UPDATED: Do not edit badges manually - updated by GitHub Actions -->
 [![Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdlnraja%2Fcom.tuya.zigbee%2Fmaster%2Fapp.json&query=%24.version&label=version&color=blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
-[![Fingerprints](https://img.shields.io/badge/fingerprints-5,608+-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
+[![Fingerprints](https://img.shields.io/badge/fingerprints-5,610+-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![Drivers](https://img.shields.io/badge/drivers-431-brightgreen)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![Flow Cards](https://img.shields.io/badge/flow%20cards-4,844-blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![SDK](https://img.shields.io/badge/SDK-3-orange)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![License](https://img.shields.io/badge/license-GPL--3.0-red)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/LICENSE)
 [![Homey](https://img.shields.io/badge/Homey-Pro-blueviolet)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 
-A community-driven Homey app that brings local control to Tuya Zigbee devices — no cloud, no internet needed. Covers switches, sensors, lights, thermostats, covers, locks, and more across **431 drivers** and **5,608+ device fingerprints**.
+A community-driven Homey app that brings local control to Tuya Zigbee devices — no cloud, no internet needed. Covers switches, sensors, lights, thermostats, covers, locks, and more across **431 drivers** and **5,610+ device fingerprints**.
 
 **Key features:**
 - **Local-only** — everything runs on your Homey, nothing goes to the cloud
@@ -34,8 +34,8 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.352 |
-| **Device Fingerprints** | 5,608+ |
+| **App Version** | v9.0.353 |
+| **Device Fingerprints** | 5,610+ |
 | **Unique Product IDs** | 571 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
 | **Flow Cards** | 4,844 |
@@ -53,7 +53,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 | 1 | `climate_sensor` | 854 |
 | 2 | `switch_1gang` | 511 |
 | 3 | `generic_tuya` | 442 |
-| 4 | `button_wireless_2` | 246 |
+| 4 | `button_wireless_2` | 245 |
 | 5 | `presence_sensor_radar` | 242 |
 | 6 | `diy_custom_zigbee` | 205 |
 | 7 | `radiator_valve` | 148 |
@@ -67,7 +67,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 | 15 | `motion_sensor` | 57 |
 | 16 | `dimmer_wall_1gang` | 56 |
 | 17 | `dimmable_led_strip` | 55 |
-| 18 | `soil_sensor` | 54 |
+| 18 | `soil_sensor` | 55 |
 | 19 | `thermostat_tuya_dp` | 52 |
 | 20 | `switch_2gang` | 50 |
 
@@ -102,6 +102,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 | Version | Changes |
 |---------|---------|
 | **vchangelog** | [object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object  |
+| **v9.0.353** | v9.0.346: fix(P89): mfs_db dedup + TuyaNormalizer in DeviceFingerprintDB |
 | **v9.0.352** | v9.0.346: fix(P89): mfs_db dedup + TuyaNormalizer in DeviceFingerprintDB |
 | **v9.0.351** | v9.0.346: fix(P89): mfs_db dedup + TuyaNormalizer in DeviceFingerprintDB |
 | **v9.0.350** | v9.0.346: fix(P89): mfs_db dedup + TuyaNormalizer in DeviceFingerprintDB |
@@ -115,7 +116,6 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 | **v9.0.341** | v9.0.340: v9.0.340: P85 forum #2114 Door/Window contact + luminance fix |
 | **v9.0.339** | v9.0.338: v9.0.338: P84 |
 | **v9.0.337** | v9.0.335: fix(P83.1): clean app.json - extract first JSON object (was concatenated with trailing second object) |
-| **v9.0.336** | v9.0.335: fix(P83.1): clean app.json - extract first JSON object (was concatenated with trailing second object) |
 
 <!-- CHANGELOG_END -->
 
@@ -181,7 +181,7 @@ Homey Pro
        │    └─ Per-fingerprint: DP mappings, quirks, timing
        ├─ BatteryManager (8 chemistries, voltage fallback)
        ├─ PhysicalButtonMixin (2000ms detection)
-       └─ 431 Drivers ─ 5,608+ fingerprints
+       └─ 431 Drivers ─ 5,610+ fingerprints
 ```
 
 ---
