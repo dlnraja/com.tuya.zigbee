@@ -6,17 +6,16 @@
 
 | Metric | Value |
 |--------|-------|
-| Version | v9.0.359 |
+| Version | v9.0.361 |
 | Drivers | 431 |
-| Fingerprints | 5,624 |
-| Fingerprints | 5,641 |
+| Fingerprints | 5,655 |
 | Last Updated | 2026-07-29 |
 
 ## Drivers by Category
 
 | Category | Count |
 |----------|-------|
-| sensor | 126 |
+| sensor | 127 |
 | socket | 117 |
 | light | 61 |
 | other | 30 |
