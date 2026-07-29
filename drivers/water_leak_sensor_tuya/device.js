@@ -3,13 +3,19 @@
 const { Cluster } = require('zigbee-clusters');
 const TuyaSpecificCluster = require('../../lib/TuyaSpecificCluster');
 const TuyaSpecificClusterDevice = require("../../lib/TuyaSpecificClusterDevice");
+const IASZoneManager = require('../../lib/managers/IASZoneManager');
+const { safeSetTimeout, safeClearTimeout } = require('../../lib/utils/safe-timers');
 
 Cluster.addCluster(TuyaSpecificCluster);
 
 class TuyaWaterLeakSensor extends TuyaSpecificClusterDevice {
 
     async onNodeInit({ zclNode }) {
-        
+
+        // v5.5.900: store zclNode (IASZoneManager reads device.zclNode)
+        this.zclNode = zclNode;
+        this._receivedDpData = false;
+
         this.printNode();
 
         // Listen for water leaks
@@ -22,6 +28,51 @@ class TuyaWaterLeakSensor extends TuyaSpecificClusterDevice {
         .catch(err => {
             this.error('Error when reading device attributes ', err);
         });
+
+        // v5.5.900: IAS Zone support (forum bug: HOBEIAN ZG-222Z pairs but no data).
+        // This driver claims TS0207 IAS devices (e.g. _TZ3000_k4ej3ww2) in
+        // addition to TS0601 Tuya-DP devices, but historically only listened to
+        // the Tuya EF00 cluster — so IAS devices paired and stayed silent.
+        // enrollIASZone() is a no-op (with a log) when the device has no IAS
+        // cluster, so it is safe to run for both families.
+        try {
+            this._iasManager = new IASZoneManager(this);
+            this._iasEnrolled = await this._iasManager.enrollIASZone();
+            this.log(`[WATER-TUYA] IAS enrollment: ${this._iasEnrolled ? 'OK' : 'not applicable (no IAS cluster)'}`);
+
+            // Force an initial zoneStatus read so sleepy IAS sensors get a state
+            const iasZone = zclNode.endpoints[1].clusters.iasZone ||
+                            zclNode.endpoints[1].clusters.ssIasZone;
+            if (iasZone?.readAttributes) {
+                const attrs = await iasZone.readAttributes(['zoneStatus', 'zoneState']).catch(() => null);
+                if (attrs?.zoneStatus !== undefined) {
+                    const zs = typeof attrs.zoneStatus === 'number'
+                        ? attrs.zoneStatus
+                        : (attrs.zoneStatus?.alarm1 || attrs.zoneStatus?.alarm2 ? 1 : 0);
+                    this._receivedDpData = true; // any data path alive
+                    await this.safeSetCapabilityValue('alarm_water', Boolean(zs & 0x03)).catch(() => {});
+                    this.log(`[WATER-TUYA] Initial IAS zoneStatus=${zs} → alarm_water=${Boolean(zs & 0x03)}`);
+                }
+            }
+        } catch (err) {
+            this.log(`[WATER-TUYA] ⚠️ IAS setup error (non-critical): ${err.message}`);
+        }
+
+        // v5.5.900: Verbose fallback — if after 5 minutes neither a Tuya DP
+        // report nor any IAS data arrived, log a detailed diagnostic so the
+        // next user report reveals the actual data path (no guessing).
+        this._noDataTimer = safeSetTimeout(this, () => {
+            if (this._receivedDpData) {return;}
+            const alarmValue = this.getCapabilityValue('alarm_water');
+            if (alarmValue !== null && alarmValue !== undefined) {return;}
+            const ep = this.zclNode?.endpoints?.[1];
+            const clusterIds = ep ? Object.keys(ep.clusters || {}) : [];
+            this.log('╔══════════════════════════════════════════════════════════════╗');
+            this.log('║ [WATER-TUYA] ⚠️ NO DATA after 5 min — verbose diagnostic    ║');
+            this.log('╚══════════════════════════════════════════════════════════════╝');
+            this.log(`[WATER-TUYA] mfr=${this.getSetting?.('zb_manufacturer_name') || 'unknown'} iasEnrolled=${this._iasEnrolled} clusters=${JSON.stringify(clusterIds)}`);
+            this.log('[WATER-TUYA] Please send this diagnostic: the device neither sent Tuya DP reports nor IAS zone updates.');
+        }, 5 * 60 * 1000);
 
         // Periodically read battery status every hour
         this.batteryInterval = this.homey.setInterval(async () => {
@@ -40,6 +91,7 @@ class TuyaWaterLeakSensor extends TuyaSpecificClusterDevice {
     onReport(data) {
         this.log('Received a response or report:', data);
         if (this._destroyed) {return;}
+        this._receivedDpData = true;
 
         if (data.dp === 15) {
             // Set the value of the 'measure_battery' capability.
@@ -59,12 +111,21 @@ class TuyaWaterLeakSensor extends TuyaSpecificClusterDevice {
     }
     
     onDeleted() {
+      this._destroyed = true;
+      if (this._noDataTimer) {
+        safeClearTimeout(this, this._noDataTimer);
+        this._noDataTimer = null;
+      }
       super.onDeleted();
         this.log("Water Leak Sensor removed");
     }
 
     onUninit() {
         clearInterval(this.batteryInterval);
+        if (this._noDataTimer) {
+          safeClearTimeout(this, this._noDataTimer);
+          this._noDataTimer = null;
+        }
     }
 
 }

@@ -105,6 +105,27 @@ function loadBaseline(file) {
   })));
 }
 
+// A current collision is covered by the baseline when the exact entry exists
+// OR when the baseline holds the same key with a SUPERSET of the current
+// drivers: the fingerprint was removed from one or more drivers, which is an
+// improvement, not a new collision (previously flagged as NEW and failed CI,
+// e.g. hobeian|TS0601 3 drivers -> 2 drivers on 2026-07-29).
+function isCoveredByBaseline(baseline, collision) {
+  const id = collisionId(collision);
+  if (baseline.has(id)) return true;
+  const currentDrivers = new Set(normalizeDrivers(collision.drivers));
+  const suffix = ' -> ';
+  for (const entry of baseline) {
+    const sep = entry.indexOf(suffix);
+    if (sep === -1 || entry.slice(0, sep) !== collision.key) continue;
+    const baselineDrivers = entry.slice(sep + suffix.length).split(',');
+    if ([...currentDrivers].every(d => baselineDrivers.includes(d))) {
+      return true;
+    }
+  }
+  return false;
+}
+
 function writeBaseline(file, collisions) {
   const out = {
     version: 1,
@@ -148,7 +169,7 @@ function main() {
 
   const baseline = loadBaseline(args.baseline);
   const currentIds = new Set(collisions.map(collisionId));
-  const newCollisions = collisions.filter(c => !baseline.has(collisionId(c)));
+  const newCollisions = collisions.filter(c => !isCoveredByBaseline(baseline, c));
   const resolvedBaseline = [...baseline].filter(id => !currentIds.has(id));
 
   const result = {

@@ -1,5 +1,5 @@
 # 🌙 Nightly Audit
-# Triggers: cron: 30 3 * * * + workflow_dispatch | Secrets: GITHUB_TOKEN only
+# Triggers: cron: 45 3 * * * + workflow_dispatch | Secrets: GITHUB_TOKEN only
 # Doc header added 2026-07-29 (workflows genealogy enrichment).
 
 name: 🌙 Nightly Audit
@@ -10,8 +10,9 @@ name: 🌙 Nightly Audit
 
 on:
   schedule:
-    # Daily 03:30 UTC, after knowledge-graph sync
-    - cron: '30 3 * * *'
+    # Daily 03:45 UTC, after knowledge-graph sync (staggered 2026-07-29: was
+    # 03:30, collided with recurrent-orchestrator at the exact same cron)
+    - cron: '45 3 * * *'
   workflow_dispatch:
 
 permissions:

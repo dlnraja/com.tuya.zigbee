@@ -1,5 +1,5 @@
 # Safe Sync master → stable-v5 (P52)
-# Triggers: cron: 0 4 * * * + workflow_dispatch | Secrets: GITHUB_TOKEN only
+# Triggers: cron: 25 4 * * * + workflow_dispatch | Secrets: GITHUB_TOKEN only
 # Doc header added 2026-07-29 (workflows genealogy enrichment).
 
 name: Safe Sync master → stable-v5 (P52)
@@ -11,8 +11,9 @@ defaults:
 
 on:
   schedule:
-    # Daily at 04:00 UTC (after the auto-fix-all bot at 03:00)
-    - cron: '0 4 * * *'
+    # Daily at 04:25 UTC (after the auto-fix-all bot at 03:00; staggered
+    # 2026-07-29: was 04:00, collided with activity-monitor + publish-self-heal)
+    - cron: '25 4 * * *'
   workflow_dispatch:
 
 permissions:

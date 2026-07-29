@@ -2,6 +2,7 @@ const { includesCI } = require('../../lib/utils/CaseInsensitiveMatcher');
 'use strict';
 const { safeDivide, safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
 const { smartParse } = require('../../lib/managers/SmartDivisorManager');
+const EnergyJumpGuard = require('../../lib/tuya/EnergyJumpGuard');
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 
@@ -189,7 +190,9 @@ class PowerClampMeterDevice extends ZigBeeDevice {
       '_TZE204_cjbofhxw', '_TZE284_cjbofhxw',   // Matsee Plus variant (Z2M #15359)
       '_TZE28C1000000_81yrt3lo'                  // New variant (Issue #329, Z2M #26403)
     ];
-    return pj1203aIds.some(id => includesCI(pj1203aIds, id)) ? 'pj1203a' : '3phase';
+    // v5.7.10: FIX — actually compare the device mfr (previous code tested the
+    // list against itself and ALWAYS returned 'pj1203a', even for 3-phase meters)
+    return includesCI(pj1203aIds, mfr) ? 'pj1203a' : '3phase';
   }
 
   _handleDP(dp, value) {
@@ -421,6 +424,19 @@ class PowerClampMeterDevice extends ZigBeeDevice {
     const total = energyA + energyB;
     this.safeSetCapabilityValue('meter_power', total).catch(this.error);
     this.log(`[METER]  Total Energy: ${total} kWh (A:${energyA} + B:${energyB})`);
+  }
+
+  // v5.7.10: Defensive guard against wrong-family energy divisors (forum ×660 bug).
+  // safeSetCapabilityValue is installed on ZigBeeDevice.prototype by app.js
+  // (lib/utils/SafeCapability mixin); fall back to raw set if mixin absent.
+  async safeSetCapabilityValue(capability, value) {
+    if (capability === 'meter_power' || capability === 'meter_power.exported') {
+      value = EnergyJumpGuard.check(this, value);
+    }
+    if (typeof super.safeSetCapabilityValue === 'function') {
+      return super.safeSetCapabilityValue(capability, value);
+    }
+    return this.setCapabilityValue(capability, value).catch(() => {});
   }
 
   async _updateTotalPower() {

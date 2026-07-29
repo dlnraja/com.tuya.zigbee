@@ -234,13 +234,22 @@ class Button4GangDevice extends ButtonDevice {
         else if (len === 4) {value = data.readInt32BE(6);}
       }
 
-      if (dpId === undefined) {return;}
+      if (dpId === undefined) {
+        // v10.1.3: VERBOSE fallback — unparseable Tuya frame, log raw shape
+        this._logUnrecognizedFrame(1, 0xEF00, { cmdId: 'tuya-dp-unparsed' },
+          Buffer.isBuffer(data) ? data : Buffer.from(JSON.stringify(data).slice(0, 64)));
+        return;
+      }
 
       // DP 1-4 = button number, value = press type (0=single, 1=double, 2=hold)
       if (dpId >= 1 && dpId <= 4) {
         const pressType = resolvePressType(value, 'DP-4G');
         this.log(`[DP-4G] DP${dpId} value=${value} -> Button ${dpId} ${pressType.toUpperCase()}`);
         this._triggerButton4Gang(dpId, pressType);
+      } else {
+        // v10.1.3: VERBOSE fallback — DP outside 1-4 (unknown variant)
+        this._logUnrecognizedFrame(1, 0xEF00, { cmdId: `dp${dpId}` },
+          Buffer.from([dpId, Number(value) & 0xFF]));
       }
     };
 
@@ -291,6 +300,12 @@ class Button4GangDevice extends ButtonDevice {
               pressType = resolvePressType(data[0], 'E000-RAW');
             }
             await this._triggerButton4Gang(button, pressType);
+          } else {
+            // v10.1.3: VERBOSE fallback — log EVERY unrecognized frame so the
+            // next user diagnostic reveals the actual frame format (forum bug:
+            // TS0044 _TZ3000_u3nv1jwk presses not detected). Diagnostic only,
+            // no guessing. Throttled per (cluster+data signature) to avoid spam.
+            this._logUnrecognizedFrame(ep, clusterId, json, data);
           }
         } catch (err) {
           this.log(`[BUTTON-4-RAW] Decode failed: ${err.message}`);
@@ -378,6 +393,27 @@ class Button4GangDevice extends ButtonDevice {
     } catch (e) {
       this.log(`[E000-4G] Flow trigger error: ${e.message}`);
     }
+  }
+
+  /**
+   * v10.1.3: Verbose logger for unrecognized raw frames (diagnostic fallback).
+   * Logs endpoint, cluster, command id and full data hex. Throttled to one
+   * line per (cluster, command, data-hex) signature per 60s.
+   */
+  _logUnrecognizedFrame(ep, clusterId, json, data) {
+    try {
+      const cmdId = json?.cmdId ?? json?.commandId ?? json?.command?.id ?? json?.command ?? '?';
+      const hex = data ? data.toString('hex') : '(no data)';
+      const sig = `${clusterId}|${cmdId}|${hex}`;
+      const now = Date.now();
+      this._unrecFrameLog = this._unrecFrameLog || {};
+      if (now - (this._unrecFrameLog[sig] || 0) < 60000) {return;}
+      this._unrecFrameLog[sig] = now;
+      // Prevent unbounded growth of the throttle map
+      const keys = Object.keys(this._unrecFrameLog);
+      if (keys.length > 64) {delete this._unrecFrameLog[keys[0]];}
+      this.log(`[BUTTON-4-UNRECOGNIZED] EP${ep} cluster=0x${Number(clusterId).toString(16)} cmd=${cmdId} data=${hex} — please send this line with a diagnostic report`);
+    } catch (e) { /* never break frame handling */ }
   }
 
   /**
