@@ -1314,5 +1314,8 @@
   },
   "9.0.358": {
     "en": "Stability improvements and Homey test publication retry after transient processing failure."
+  },
+  "9.0.360": {
+    "en": "v9.0.359: chore: bump v9.0.359 — débloque le publish (9.0.358 déjà publiée en build 2689)"
   }
 }
