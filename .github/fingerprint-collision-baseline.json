@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-28T01:06:09.512Z",
+  "generatedAt": "2026-07-29T01:34:45.205Z",
   "description": "Known historical fingerprint collisions. CI fails only for collisions not listed here.",
   "collisions": [
     {
@@ -3822,6 +3822,22 @@
         "switch_wireless"
       ],
       "note": "P80: sensor orphan dual-claim (switch_wireless TS0215A/TS0601 + presence_sensor_radar) - re-inject-manual-fixes intentional"
+    },
+    {
+      "key": "_TZE200_gubdgai2|TS0001",
+      "drivers": [
+        "curtain_motor",
+        "motion_sensor_switch"
+      ],
+      "note": "Dual-claim intentional: mfr used by both Quoya cover (TS0302/TS0601, ZHA ts0601_cover) and RD24G01 presence sensor (TS0601, Z2M) - cross-product noise on TS0001"
+    },
+    {
+      "key": "_TZE200_gubdgai2|TS0601",
+      "drivers": [
+        "curtain_motor",
+        "motion_sensor_switch"
+      ],
+      "note": "Dual-claim intentional: ZHA cover quirk + Z2M RD24G01 presence sensor share this mfr/pid"
     }
   ]
 }

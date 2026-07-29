@@ -42,6 +42,23 @@ const driverDirs = fs.readdirSync(DRIVERS_DIR).filter(d => {
   catch { return false; }
 });
 
+// Load the documented intentional dual-claim baseline. Any collision key
+// listed there is INTENTIONAL (Sacred Couple policy) and must NOT be
+// "resolved" — otherwise this script fights the baseline on every publish
+// (it removed kfu8zapd from button_wireless_4 and eqsair32 from switch_3gang).
+const BASELINE_PATH = path.join(__dirname, '../../.github/fingerprint-collision-baseline.json');
+const baselineKeys = new Set();
+try {
+  const baseline = JSON.parse(fs.readFileSync(BASELINE_PATH, 'utf8'));
+  for (const entry of baseline.collisions || []) {
+    if (entry && entry.key) baselineKeys.add(String(entry.key).toLowerCase());
+  }
+  if (!JSON_OUTPUT) console.log(`Loaded ${baselineKeys.size} intentional dual-claims from baseline (will be skipped).`);
+} catch (e) {
+  console.warn(`WARNING: baseline not readable (${e.message}) — running WITHOUT it. Abort to avoid destructive pruning.`);
+  process.exit(2);
+}
+
 const driverCount = driverDirs.length;
 const allChanges = [];
 
@@ -75,6 +92,7 @@ let unresolved = 0;
 for (const [key, entries] of fpMap) {
   const uniqueDrivers = [...new Set(entries.map(e => e.driver))];
   if (uniqueDrivers.length > 1) {
+    if (baselineKeys.has(key)) continue; // documented intentional dual-claim
     const [mfr, pid] = key.split('|');
 
     // Pick the victim driver. Some TS0601 families need explicit ownership because

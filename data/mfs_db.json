@@ -4,7 +4,7 @@
     "description": "MFS Unified Database - Manufacturer Fingerprint Schema",
     "generatedAt": "2026-06-19T20:58:49.880Z",
     "generator": "mfs-aggregator v1.0.0",
-    "lastUpdated": "2026-07-28T23:53:42.198Z",
+    "lastUpdated": "2026-07-29T01:29:09.163Z",
     "lastEnrichment": {
       "date": "2026-07-13T04:00:39.424Z",
       "addedToDevices": 0,
@@ -33824,7 +33824,7 @@
         "TS0601"
       ],
       "variants": [],
-      "deviceType": "unknown",
+      "deviceType": "cover",
       "driverHint": "curtain_motor",
       "capabilities": [
         "windowcoverings_state",
@@ -33837,14 +33837,17 @@
       "powerSource": "mains",
       "sources": [
         "local",
-        "z2m"
+        "z2m",
+        "zha",
+        "deep_harvest_2026-07-29"
       ],
       "sourceDetails": {
         "local": 1,
         "z2m": 1
       },
       "confidence": 0.17,
-      "lastSeen": "2026-06-19T20:58:49.750Z"
+      "lastSeen": "2026-07-29T01:35:01.718Z",
+      "notes": "Dual-use mfr: Quoya cover (TS0302/TS0601, ZHA ts0601_cover) + RD24G01 24GHz presence sensor (TS0601, Z2M). Presence variant handled by motion_sensor_switch."
     },
     "_tze204_r0jdjrvi": {
       "manufacturerId": "_tze204_r0jdjrvi",
@@ -62108,7 +62111,8 @@
       "modelIds": [
         "CK-BL702-MWS-01",
         "ZG-227Z",
-        "HOBEIAN"
+        "HOBEIAN",
+        "ZG-303Z"
       ],
       "variants": [],
       "deviceType": "sensor",
@@ -62135,14 +62139,16 @@
       "powerSource": "battery",
       "sources": [
         "local",
-        "phoscon"
+        "phoscon",
+        "community"
       ],
       "sourceDetails": {
         "local": 2,
-        "phoscon": 1
+        "phoscon": 1,
+        "community": 1
       },
       "confidence": 0.17,
-      "lastSeen": "2026-06-19T20:58:49.768Z"
+      "lastSeen": "2026-07-29T01:28:44.197Z"
     },
     "zg-204ze": {
       "manufacturerId": "zg-204ze",
@@ -81300,9 +81306,12 @@
       "manufacturerId": "zbeacon",
       "modelIds": [
         "TS0001",
-        "TS0601"
+        "TS0601",
+        "TH01"
       ],
-      "variants": [],
+      "variants": [
+        "Z3-P3-L_G7"
+      ],
       "deviceType": "unknown",
       "driverHint": "switch_1gang",
       "capabilities": [
@@ -81318,14 +81327,16 @@
       "powerSource": "mains",
       "sources": [
         "local",
-        "z2m"
+        "z2m",
+        "community"
       ],
       "sourceDetails": {
         "local": 1,
-        "z2m": 1
+        "z2m": 1,
+        "community": 1
       },
       "confidence": 0.17,
-      "lastSeen": "2026-06-19T20:58:49.732Z"
+      "lastSeen": "2026-07-29T01:29:09.163Z"
     },
     "_tyst11_fzo2pocs": {
       "manufacturerId": "_tyst11_fzo2pocs",
@@ -120435,6 +120446,33 @@
         "Zemismart"
       ],
       "resolvedFrom": "synthetic-resolution 2026-07-28"
+    },
+    "wing": {
+      "manufacturerId": "wing",
+      "modelIds": [
+        "TS0201"
+      ],
+      "variants": [
+        "ZTH11-3.0",
+        "ZTH13-3.0"
+      ],
+      "deviceType": "sensor",
+      "driverHint": "climate_sensor",
+      "capabilities": [
+        "measure_temperature",
+        "measure_humidity",
+        "measure_battery",
+        "alarm_battery"
+      ],
+      "powerSource": "battery",
+      "sources": [
+        "community"
+      ],
+      "sourceDetails": {
+        "community": 2
+      },
+      "confidence": 0.6,
+      "lastSeen": "2026-07-29T01:28:44.197Z"
     }
   },
   "driverMapping": {
@@ -127758,7 +127796,7 @@
     }
   },
   "stats": {
-    "totalEntries": 4313,
+    "totalEntries": 4314,
     "totalVariants": 164,
     "entriesBySource": {
       "local": 4037,
