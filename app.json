@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "9.0.356",
+  "version": "9.0.357",
   "compatibility": ">=12.2.0",
   "platforms": [
     "local"
@@ -131067,10 +131067,8 @@
           "_TZ3000_b3mgfu0d",
           "_TZ3000_abrsvsou",
           "_TZ3000_4fjiwweb",
-          "_TZ3000_rco1yzb1",
           "_TZ3000_kfu8zapd",
-          "_TZ3000_KFU8ZAPD",
-          "_TZ3000_rco1yzb1"
+          "_TZ3000_KFU8ZAPD"
         ]
       },
       "images": {
@@ -155182,13 +155180,7 @@
         }
       },
       "zigbee": {
-        "manufacturerName": [
-          "_TZE200_BVU2WNXZ",
-          "_TZE200_HVAXB2TC",
-          "_TZE200_AOCLFNXZ",
-          "_TZE200_B6WAX7G0",
-          "_TZE200_2EKUZ3DZ"
-        ],
+        "manufacturerName": [],
         "productId": [
           "0x8040",
           "BASICZBR3",
@@ -166364,9 +166356,7 @@
           "zen",
           "zen thermostat",
           "zigbee alliance",
-          "zigbee2mqtt",
-          "_TYST11_fzo2pocs",
-          "_TZE200_2hf7x9n3"
+          "zigbee2mqtt"
         ],
         "productId": [
           "TS0203",
@@ -183067,8 +183057,7 @@
           "_tz3000_abrsvsou",
           "_tz3000_imaccztn",
           "_tz3000_mmkbptmx",
-          "_tz3000_uri7ongn",
-          "_TZ3000_u3oupgdy"
+          "_tz3000_uri7ongn"
         ]
       },
       "version": "1.0.0",
@@ -194931,9 +194920,6 @@
       "subDevices": [],
       "zigbee": {
         "manufacturerName": [
-          "Hobeian",
-          "hobeian",
-          "HOBEIAN",
           "IMMAX",
           "Immax",
           "TUYATEC-0L6XAQMI",
@@ -204279,14 +204265,7 @@
           "_tze284_sgabhwa6",
           "_tze284_tgrzpqf4",
           "A89G12C",
-          "a89g12c",
-          "HOBEIAN",
-          "hobeian",
-          "Hobeian",
-          "_TZE284_awepdiwi",
-          "_tze284_awepdiwi",
-          "_TZE284_ga1maeof",
-          "_tze284_ga1maeof"
+          "a89g12c"
         ],
         "productId": [
           "0x8040",
@@ -207196,11 +207175,7 @@
         },
         "manufacturerName": [
           "_TYZB01_MTUNWANM",
-          "_TZ3000_f09j9qjb",
-          "_TYZB01_ANEIICMQ",
-          "_TYZB01_ZSL6Z0PW",
-          "_TYZB01_NCUTBJDI",
-          "_TZ3000_v4l4b0lp"
+          "_TZ3000_f09j9qjb"
         ]
       },
       "version": "1.0.0",
@@ -208359,11 +208334,9 @@
           }
         },
         "manufacturerName": [
-          "_TZ3000_EQSAIR32",
           "_TZ3000_QXCNWV26",
           "_TZ3000_V4L4B0LP",
           "_TZ3000_iol4bl2y",
-          "_TZ3000_eqsair32",
           "_TZ3000_qxcnwv26",
           "_TZE204_QFG3GZ3W",
           "_tz3000_0q5fjqgw",
@@ -208404,8 +208377,7 @@
           "_tz3000_zeuulson",
           "_tz33000_d9yfgzur",
           "_tze204_e1hutaaj",
-          "_tze284_c8ipbljq",
-          "_TZ3000_eqsair32"
+          "_tze284_c8ipbljq"
         ]
       },
       "images": {
@@ -211095,11 +211067,7 @@
           "_tz3000_qkixdnon",
           "_tz3210_8n4dn1ne",
           "_tz3210_jlf1nepw",
-          "_tz3210_urjf5u18",
-          "_TZE200_BXOO2SWD",
-          "_TZ3000_Itgngnqz",
-          "_TZ3000_kgxej1dv",
-          "_TZ3000_ywubfuvt"
+          "_tz3210_urjf5u18"
         ]
       },
       "images": {
@@ -214282,9 +214250,7 @@
           "_TZE200_UEBOJRAA",
           "_TZE200_VZEKYI4C",
           "_TZE200_YOJQA8XN",
-          "_tz3000_ixla93vd",
-          "_TZE200_RJXQSO4A",
-          "_TZE200_IKVNCLUO"
+          "_tz3000_ixla93vd"
         ],
         "productId": [
           "TS0601_wirelesssw",
@@ -215456,8 +215422,7 @@
           }
         },
         "manufacturerName": [
-          "_TYZB01_HJSGDKFL",
-          "_TYZB01_UJFK3XD9"
+          "_TYZB01_HJSGDKFL"
         ]
       },
       "version": "1.0.0",
@@ -218487,13 +218452,7 @@
             "en": "Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode (the LED should blink green)."
           }
         },
-        "manufacturerName": [
-          "_TYZB01_4TLKSK8A",
-          "_TZE200_BXOO2SWD",
-          "_TZ3000_hyarhbyx",
-          "_TZ3000_gjrubzje",
-          "_TZ3000_wpueorev"
-        ]
+        "manufacturerName": []
       },
       "version": "1.0.0",
       "capabilitiesOptions": {
@@ -222590,11 +222549,7 @@
           "_TZE200_P0GZBQCT",
           "_TZE200_SWAAMSOY",
           "_TZE200_VUCANKJX",
-          "_TZE200_W4CRYH2I",
-          "_TZE200_7TDTQGWV",
-          "_TYZB01_QEQVMVTI",
-          "_TZ3000_aetquff4",
-          "_TZ3000_hafsqare"
+          "_TZE200_W4CRYH2I"
         ]
       },
       "version": "1.0.0",
