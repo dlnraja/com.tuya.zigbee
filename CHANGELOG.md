@@ -4,6 +4,18 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
+## [9.0.364] - 2026-07-29
+
+### Improved
+- Smart scaling engine (dynamic divisors/multipliers):
+  - `SmartDivisorManager` now resolves sub-capabilities by prefix (`measure_temperature.floor`, `.outdoor`, … → base type), with explicit entries keeping precedence.
+  - Self-validating divisor cache: a cached divisor that produces an out-of-range value for a new sample is rejected and re-detected (no more cache poisoning by atypical first values); zero raw values are never learned; cross-protocol cache entries are range-checked too.
+  - Curated multiplier fix: `_TZE284_vvmbj46n` battery DP4 raw 0-50 now maps to 0-100 % (divisor 0.5 = ×2) instead of being halved.
+  - `ProductValueValidator` auto-correction now prefers the smallest divisor landing in the typical range (root cause of the issue #513 ×10-too-low probe), and no longer mutates the shared `PRODUCT_RULES` arrays.
+  - 10 new regression tests (`test/smart-scaling-heuristics.test.js`).
+
+---
+
 ## [9.0.361] - 2026-07-29
 
 ### Fixed
