@@ -1329,5 +1329,8 @@
   },
   "9.0.363": {
     "en": "v9.0.361: `measure_temperature.probe` (external probe, DP38 — e.g. `_TZE284_hodyryli`, issue #513): probe temperature was shown 10x too low. `SmartDivisorManager` now knows `measure_temperature.probe` (temperature type, ×10 divisor, valid range), so the raw ×10 value is scaled before `ProductValueValidator` auto-correction. Regression test added (`test/smart-divisor-probe.test.js`)."
+  },
+  "9.0.365": {
+    "en": "v9.0.364: Smart scaling engine (dynamic divisors/multipliers):"
   }
 }
