@@ -1204,6 +1204,51 @@
         }
       },
       {
+        "id": "ota_update_available",
+        "title": {
+          "en": "OTA firmware update available",
+          "fr": "Mise à jour firmware OTA disponible",
+          "nl": "OTA firmware-update beschikbaar",
+          "de": "OTA-Firmware-Update verfügbar"
+        },
+        "hint": {
+          "en": "Triggers when the OTA discovery finds a newer firmware for a device (checked periodically against the public zigbee-OTA index)",
+          "fr": "Se déclenche quand la découverte OTA trouve un firmware plus récent pour un device (vérifié périodiquement sur l'index public zigbee-OTA)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "title": {
+              "en": "Device",
+              "fr": "Device"
+            }
+          }
+        ],
+        "tokens": [
+          {
+            "name": "current_version",
+            "type": "string",
+            "title": {
+              "en": "Current version",
+              "fr": "Version actuelle"
+            }
+          },
+          {
+            "name": "new_version",
+            "type": "string",
+            "title": {
+              "en": "New version",
+              "fr": "Nouvelle version"
+            }
+          }
+        ],
+        "titleFormatted": {
+          "en": "OTA update available for [[device]]",
+          "fr": "MàJ OTA disponible pour [[device]]"
+        }
+      },
+      {
         "id": "overload_detected",
         "title": {
           "en": "Overload detected - safety cutoff",
@@ -67560,6 +67605,33 @@
         }
       },
       {
+        "id": "ota_has_update",
+        "title": {
+          "en": "Device !{{has|has no}} OTA update available",
+          "fr": "Device !{{a|n'a pas}} de MàJ OTA disponible",
+          "nl": "Apparaat !{{heeft|heeft geen}} OTA-update beschikbaar",
+          "de": "Gerät !{{hat|hat kein}} OTA-Update verfügbar"
+        },
+        "hint": {
+          "en": "True when the last OTA discovery scan found a newer firmware for this device",
+          "fr": "Vrai quand le dernier scan OTA a trouvé un firmware plus récent pour ce device"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "title": {
+              "en": "Device",
+              "fr": "Device"
+            }
+          }
+        ],
+        "titleFormatted": {
+          "en": "[[device]] !{{has|has no}} OTA update",
+          "fr": "[[device]] !{{a|n'a pas}} de MàJ OTA"
+        }
+      },
+      {
         "id": "presence_zone_occupied",
         "title": {
           "en": "Zone is occupied"
@@ -83073,11 +83145,75 @@
             "placeholder": {
               "en": "0"
             }
+          },
+          {
+            "type": "text",
+            "name": "quiet_start",
+            "title": {
+              "en": "Quiet hours start (HH:MM, optional)",
+              "fr": "Début heures calmes (HH:MM, optionnel)"
+            },
+            "placeholder": {
+              "en": "22:00"
+            }
+          },
+          {
+            "type": "text",
+            "name": "quiet_end",
+            "title": {
+              "en": "Quiet hours end (HH:MM, optional)",
+              "fr": "Fin heures calmes (HH:MM, optionnel)"
+            },
+            "placeholder": {
+              "en": "07:00"
+            }
           }
         ],
         "titleFormatted": {
-          "en": "Hue-style: [[motion_sensor]] turns on [[light]] at [[brightness]]% for [[timeout]] min (lux < [[lux_threshold]])",
-          "fr": "Style Hue : [[motion_sensor]] allume [[light]] à [[brightness]]% pour [[timeout]] min (lux < [[lux_threshold]])"
+          "en": "Hue-style: [[motion_sensor]] turns on [[light]] at [[brightness]]% for [[timeout]] min (lux < [[lux_threshold]], quiet [[quiet_start]]-[[quiet_end]])",
+          "fr": "Style Hue : [[motion_sensor]] allume [[light]] à [[brightness]]% pour [[timeout]] min (lux < [[lux_threshold]], calme [[quiet_start]]-[[quiet_end]])"
+        }
+      },
+      {
+        "id": "hue_sleep",
+        "title": {
+          "en": "Sleep routine (sunset simulation)",
+          "fr": "Routine coucher (simulation de crépuscule)",
+          "nl": "Slaaproutine (zonsondergangsimulatie)",
+          "de": "Schlafroutine (Sonnenuntergangssimulation)"
+        },
+        "hint": {
+          "en": "Gradually dims the light to 1% over the chosen duration, then turns it off",
+          "fr": "Diminue progressivement la lumière jusqu'à 1% sur la durée choisie, puis l'éteint",
+          "nl": "Dimt het licht geleidelijk naar 1% en schakelt daarna uit",
+          "de": "Dimmt das Licht schrittweise auf 1% und schaltet dann aus"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "light",
+            "title": {
+              "en": "Light",
+              "fr": "Lumière"
+            }
+          },
+          {
+            "type": "number",
+            "name": "ramp_minutes",
+            "title": {
+              "en": "Duration (min)",
+              "fr": "Durée (min)"
+            },
+            "min": 1,
+            "max": 60,
+            "placeholder": {
+              "en": "15"
+            }
+          }
+        ],
+        "titleFormatted": {
+          "en": "Sleep: dim [[light]] to off over [[ramp_minutes]] min",
+          "fr": "Coucher : tamiser [[light]] jusqu'à extinction sur [[ramp_minutes]] min"
         }
       },
       {
@@ -83264,6 +83400,24 @@
         }
       },
       {
+        "id": "ota_run_discovery",
+        "title": {
+          "en": "Run OTA discovery scan",
+          "fr": "Lancer un scan de découverte OTA",
+          "nl": "OTA-detectiescan starten",
+          "de": "OTA-Erkennungsscan starten"
+        },
+        "hint": {
+          "en": "Checks all Zigbee devices against the public zigbee-OTA firmware index and notifies for available updates",
+          "fr": "Vérifie tous les devices Zigbee sur l'index public zigbee-OTA et notifie les mises à jour disponibles"
+        },
+        "args": [],
+        "titleFormatted": {
+          "en": "Run OTA discovery scan",
+          "fr": "Lancer le scan OTA"
+        }
+      },
+      {
         "id": "presence_force_in_zone",
         "title": {
           "en": "Force presence in zone"
@@ -83330,6 +83484,86 @@
         "titleFormatted": {
           "en": "Reset Energy Meter",
           "sv": "Återställ energimätaren"
+        }
+      },
+      {
+        "id": "scene_apply",
+        "title": {
+          "en": "Apply scene",
+          "fr": "Appliquer la scène",
+          "nl": "Scène toepassen",
+          "de": "Szene anwenden"
+        },
+        "hint": {
+          "en": "Re-applies a scene previously captured with 'Capture scene'",
+          "fr": "Réapplique une scène précédemment capturée avec 'Capturer la scène'"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "light",
+            "title": {
+              "en": "Light",
+              "fr": "Lumière"
+            }
+          },
+          {
+            "type": "number",
+            "name": "slot",
+            "title": {
+              "en": "Slot (1-5)",
+              "fr": "Slot (1-5)"
+            },
+            "min": 1,
+            "max": 5,
+            "placeholder": {
+              "en": "1"
+            }
+          }
+        ],
+        "titleFormatted": {
+          "en": "Apply scene slot [[slot]] to [[light]]",
+          "fr": "Appliquer le slot [[slot]] à [[light]]"
+        }
+      },
+      {
+        "id": "scene_capture",
+        "title": {
+          "en": "Capture scene",
+          "fr": "Capturer la scène",
+          "nl": "Scène vastleggen",
+          "de": "Szene speichern"
+        },
+        "hint": {
+          "en": "Stores the light's current state (on/off, brightness, color temperature) in a slot to re-apply later with 'Apply scene'",
+          "fr": "Enregistre l'état actuel de la lumière (on/off, luminosité, température) dans un slot pour le réappliquer avec 'Appliquer la scène'"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "light",
+            "title": {
+              "en": "Light",
+              "fr": "Lumière"
+            }
+          },
+          {
+            "type": "number",
+            "name": "slot",
+            "title": {
+              "en": "Slot (1-5)",
+              "fr": "Slot (1-5)"
+            },
+            "min": 1,
+            "max": 5,
+            "placeholder": {
+              "en": "1"
+            }
+          }
+        ],
+        "titleFormatted": {
+          "en": "Capture [[light]] state into scene slot [[slot]]",
+          "fr": "Capturer l'état de [[light]] dans le slot [[slot]]"
         }
       },
       {

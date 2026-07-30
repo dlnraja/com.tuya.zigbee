@@ -1,6 +1,13 @@
 {
   "changelog": [
     {
+      "version": "9.0.378",
+      "date": "2026-07-30",
+      "channel": "test",
+      "en": "OTA overhaul (Tuya MCU fallback, manufacturerName matching, notifications + 3 flow cards), Hue batch 2 (sleep, scenes, DND window), publish race fix.",
+      "fr": "Refonte OTA (fallback MCU Tuya, matching par fabricant, notifications + 3 cards), batch Hue 2 (coucher, scènes, fenêtre DND), fix course publish."
+    },
+    {
       "version": "9.0.377",
       "date": "2026-07-30",
       "channel": "test",

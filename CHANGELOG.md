@@ -4,6 +4,15 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
+## [9.0.378] - 2026-07-30
+
+### Added
+- **OTA overhaul**: Tuya MCU fallback for devices without a ZCL OTA cluster (manufacturer code 4417, matched by manufacturerName against the public zigbee-OTA index), device context (modelId/manufacturerName) passed through the whole check chain, dedup'd timeline notifications and flow trigger on new firmware. New flow cards: trigger `ota_update_available`, condition `ota_has_update`, action `ota_run_discovery`.
+- **Hue-style batch 2**: `hue_sleep` (sunset ramp to off), `scene_capture`/`scene_apply` (state slots 1-5), quiet-hours (DND) window on `hue_motion_lighting`.
+- Publish pipeline: pull --rebase before push (race with auto-fix bots).
+
+---
+
 ## [9.0.377] - 2026-07-30
 
 ### Fixed

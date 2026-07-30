@@ -1,0 +1,18 @@
+{
+  "id": "ota_run_discovery",
+  "title": {
+    "en": "Run OTA discovery scan",
+    "fr": "Lancer un scan de découverte OTA",
+    "nl": "OTA-detectiescan starten",
+    "de": "OTA-Erkennungsscan starten"
+  },
+  "hint": {
+    "en": "Checks all Zigbee devices against the public zigbee-OTA firmware index and notifies for available updates",
+    "fr": "Vérifie tous les devices Zigbee sur l'index public zigbee-OTA et notifie les mises à jour disponibles"
+  },
+  "args": [],
+  "titleFormatted": {
+    "en": "Run OTA discovery scan",
+    "fr": "Lancer le scan OTA"
+  }
+}
