@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "9.0.374",
+  "version": "9.0.375",
   "compatibility": ">=12.2.0",
   "platforms": [
     "local"
@@ -68086,6 +68086,95 @@
         ],
         "titleFormatted": {
           "en": "Currently in peak period [[period_type]]"
+        }
+      },
+      {
+        "id": "telemetry_is_estimated",
+        "title": {
+          "en": "Value !{{is|is not}} estimated",
+          "fr": "Valeur !{{estimée|mesurée}}",
+          "nl": "Waarde !{{is geschat|is gemeten}}",
+          "de": "Wert !{{ist geschätzt|ist gemessen}}"
+        },
+        "hint": {
+          "en": "True when the current value of the selected capability comes from the estimation engine (not a real device report)",
+          "fr": "Vrai quand la valeur actuelle de la capability choisie vient du moteur d'estimation (pas d'un relevé réel du device)",
+          "nl": "Waar als de huidige waarde van de capability uit de schattingsengine komt",
+          "de": "Wahr, wenn der aktuelle Wert der Capability aus der Schätz-Engine stammt"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id!=none"
+          },
+          {
+            "type": "dropdown",
+            "name": "capability",
+            "title": {
+              "en": "Capability",
+              "fr": "Capability",
+              "nl": "Capability",
+              "de": "Capability"
+            },
+            "values": [
+              {
+                "id": "measure_power",
+                "title": {
+                  "en": "Power (W)",
+                  "fr": "Puissance (W)"
+                }
+              },
+              {
+                "id": "measure_voltage",
+                "title": {
+                  "en": "Voltage (V)",
+                  "fr": "Tension (V)"
+                }
+              },
+              {
+                "id": "measure_current",
+                "title": {
+                  "en": "Current (A)",
+                  "fr": "Courant (A)"
+                }
+              },
+              {
+                "id": "meter_power",
+                "title": {
+                  "en": "Energy (kWh)",
+                  "fr": "Énergie (kWh)"
+                }
+              },
+              {
+                "id": "measure_battery",
+                "title": {
+                  "en": "Battery (%)",
+                  "fr": "Batterie (%)"
+                }
+              },
+              {
+                "id": "measure_temperature",
+                "title": {
+                  "en": "Temperature",
+                  "fr": "Température"
+                }
+              },
+              {
+                "id": "measure_humidity",
+                "title": {
+                  "en": "Humidity",
+                  "fr": "Humidité"
+                }
+              }
+            ]
+          }
+        ],
+        "titleFormatted": {
+          "en": "[[capability]] of [[device]] !{{is|is not}} estimated",
+          "fr": "[[capability]] de [[device]] !{{est|n'est pas}} estimée",
+          "nl": "[[capability]] van [[device]] !{{is|is niet}} geschat",
+          "de": "[[capability]] von [[device]] !{{ist|ist nicht}} geschätzt"
         }
       },
       {

@@ -4,6 +4,16 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
+## [9.0.375] - 2026-07-30
+
+### Added
+- **Product reference database** (`data/product-reference.json`, rebuilt weekly by `tools/ci/build-product-reference.js`): 9027 fingerprints merged from blakadder, mfs_db, driver composes and community-sync — vendor, model, title, category, product page, image URL candidates, battery types, energy profile, and variant groups (same product, different fingerprints). No external API, zero cost.
+- **Energy consumption reference** (`data/energy-consumption-reference.json`): typical nominal/standby watts per driver family + typical battery chemistries; the telemetry estimator now uses it before falling back to class heuristics.
+- **Flow condition `telemetry_is_estimated`**: tells whether a value (power, voltage, current, energy, battery, temperature, humidity) currently comes from the estimation engine or a real device report — estimated values are now distinguishable in flows.
+- Fixed mfs_db routing gap: `_TZE284_hodyryli` was missing entirely.
+
+---
+
 ## [9.0.373] - 2026-07-30
 
 ### Fixed

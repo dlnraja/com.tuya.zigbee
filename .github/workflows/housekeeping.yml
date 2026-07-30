@@ -52,6 +52,9 @@ jobs:
       - name: 📚 Refresh script registry
         run: node .github/scripts/generate-script-registry.js
 
+      - name: 🔋 Refresh product reference DB
+        run: node tools/ci/build-product-reference.js
+
       - name: 💾 Commit moves (only if any)
         continue-on-error: true
         run: |
