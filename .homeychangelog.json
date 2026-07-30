@@ -1,6 +1,13 @@
 {
   "changelog": [
     {
+      "version": "9.0.376",
+      "date": "2026-07-30",
+      "channel": "test",
+      "en": "Hue-style smart features: motion-activated lighting (lux guard, auto-off), circadian curve application, wake-up sunrise ramp — as flow action cards.",
+      "fr": "Smart features style Hue : éclairage sur mouvement (garde lux, auto-off), courbe circadienne, rampe réveil — en cartes de flow."
+    },
+    {
       "version": "9.0.375",
       "date": "2026-07-30",
       "channel": "test",
