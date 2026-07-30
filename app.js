@@ -712,10 +712,64 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
         this.log(`[HUE] Scène ${slot} appliquée à ${light.getName?.()}`);
         return true;
       });
+
+    // ── Fondu vers un niveau (style Lutron) ──────────────────────────────────
+    this.homey.flow.getActionCard('dim_to_level')
+      .registerRunListener(async (args) => {
+        const { light, target = 50, ramp_minutes: duration = 5 } = args;
+        if (!light) {return false;}
+        const targetDim = Math.max(0, Math.min(100, target)) / 100;
+        const current = light.getCapabilityValue?.('dim');
+        const startDim = typeof current === 'number' && current >= 0 ? current : 0;
+        if (duration <= 0) {
+          await this._hueSetLight(light, { onoff: targetDim > 0, dim: targetDim });
+          return true;
+        }
+        const steps = Math.max(5, Math.min(30, Math.ceil(duration * 2)));
+        const stepMs = (duration * 60 * 1000) / steps;
+        this.homey.clearInterval?.(light._hueWakeupTimer);
+        let step = 0;
+        if (targetDim > 0 && startDim === 0) {await this._hueSetLight(light, { onoff: true, dim: 0.01 });}
+        light._hueWakeupTimer = this.homey.setInterval(async () => {
+          step++;
+          const dim = startDim + (targetDim - startDim) * (step / steps);
+          await this._hueSetLight(light, { dim: Math.round(Math.max(0.01, dim) * 100) / 100 });
+          if (step >= steps) {
+            this.homey.clearInterval?.(light._hueWakeupTimer);
+            light._hueWakeupTimer = null;
+            if (targetDim === 0) {await this._hueSetLight(light, { onoff: false });}
+            this.log(`[HUE] Fondu terminé sur ${light.getName?.()}: ${targetDim * 100}%`);
+          }
+        }, stepMs);
+        return true;
+      });
+
+    // ── Cycle de scènes (style bouton raccourci IKEA) ────────────────────────
+    this.homey.flow.getActionCard('scene_cycle')
+      .registerRunListener(async (args) => {
+        const { light, slots = 3 } = args;
+        if (!light) {return false;}
+        const count = Math.max(1, Math.min(5, slots));
+        const current = (await light.getStoreValue?.('hue_scene_cycle_pos')) || 0;
+        const next = (current % count) + 1;
+        const scene = await light.getStoreValue?.(`hue_scene_${next}`);
+        await light.setStoreValue?.('hue_scene_cycle_pos', next).catch(() => {});
+        if (!scene) {
+          this.log(`[HUE] Cycle: slot ${next} vide pour ${light.getName?.()}`);
+          return false;
+        }
+        await this._hueSetLight(light, {
+          onoff: scene.onoff !== false,
+          dim: scene.dim,
+          temperature: scene.temperature,
+        });
+        this.log(`[HUE] Cycle: scène ${next}/${count} appliquée à ${light.getName?.()}`);
+        return true;
+      });
   }
 
   // ═══════════════════════════════════════════════════════════════════════════
-  // v5.12.39: OTA flow cards (condition + manual discovery action)
+  // v5.12.42: OTA flow cards (condition + manual discovery action)
   // ═══════════════════════════════════════════════════════════════════════════
   _registerOtaFlowCards() {
     this.homey.flow.getConditionCard('ota_has_update')

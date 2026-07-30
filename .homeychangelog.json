@@ -1,6 +1,13 @@
 {
   "changelog": [
     {
+      "version": "5.12.42",
+      "date": "2026-07-30",
+      "channel": "stable",
+      "en": "Backport 9.0.379: OTA swBuildId real version, Hue batch 3.",
+      "fr": "Backport 9.0.379 : OTA version réelle swBuildId, batch Hue 3."
+    },
+    {
       "version": "5.12.41",
       "date": "2026-07-30",
       "channel": "stable",

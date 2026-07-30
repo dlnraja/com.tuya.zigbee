@@ -4,6 +4,16 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
+## [5.12.42] - 2026-07-30
+
+Stability line (branch `stable-v5`, production). Backports from master 9.0.379.
+
+### Added
+- OTA: real current firmware version from basic cluster (swBuildId) in Tuya MCU fallback.
+- Hue-style batch 3: `dim_to_level` (fade over time), `scene_cycle` (IKEA shortcut style).
+
+---
+
 ## [5.12.41] - 2026-07-30
 
 Stability line (branch `stable-v5`, production). Backports from master 9.0.378.
