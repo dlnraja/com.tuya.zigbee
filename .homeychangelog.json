@@ -1388,28 +1388,28 @@
     "en": "v9.0.359: chore: bump v9.0.359 — débloque le publish (9.0.358 déjà publiée en build 2689)"
   },
   "9.0.362": {
-    "en": "v9.0.361: `measure_temperature.probe` (external probe, DP38 — e.g. `_TZE284_hodyryli`, issue #513): probe temperature was shown 10x too low. `SmartDivisorManager` now knows `measure_temperature.probe` (temperature type, ×10 divisor, valid range), so the raw ×10 value is scaled before `ProductValueValidator` auto-correction. Regression test added (`test/smart-divisor-probe.test.js`)."
+    "en": "v9.0.361: 'measure_temperature.probe' (external probe, DP38 — e.g. '_TZE284_hodyryli', issue #513): probe temperature was shown 10x too low. 'SmartDivisorManager' now knows 'measure_temperature.probe' (temperature type, ×10 divisor, valid range), so the raw ×10 value is scaled before 'ProductValueValidator' auto-correction. Regression test added ('test/smart-divisor-probe.test.js')."
   },
   "9.0.363": {
-    "en": "v9.0.361: `measure_temperature.probe` (external probe, DP38 — e.g. `_TZE284_hodyryli`, issue #513): probe temperature was shown 10x too low. `SmartDivisorManager` now knows `measure_temperature.probe` (temperature type, ×10 divisor, valid range), so the raw ×10 value is scaled before `ProductValueValidator` auto-correction. Regression test added (`test/smart-divisor-probe.test.js`)."
+    "en": "v9.0.361: 'measure_temperature.probe' (external probe, DP38 — e.g. '_TZE284_hodyryli', issue #513): probe temperature was shown 10x too low. 'SmartDivisorManager' now knows 'measure_temperature.probe' (temperature type, ×10 divisor, valid range), so the raw ×10 value is scaled before 'ProductValueValidator' auto-correction. Regression test added ('test/smart-divisor-probe.test.js')."
   },
   "9.0.365": {
     "en": "v9.0.364: Smart scaling engine (dynamic divisors/multipliers):"
   },
   "9.0.366": {
-    "en": "v9.0.365: Battery estimation: the generic 0-50-scale doubling heuristic in `UnifiedBatteryHandler.normalizeZigbeeValue` misread genuinely discharged devices (a real 40 % report became 80 %). Doubling now applies only to curated manufacturers (`BATTERY_0_50_SCALE_MFRS`)., SOS button (`button_emergency_sos`) battery info: percentage and Tuya DP reports now go through the smart normalizer (ZCL 0-200,"
+    "en": "v9.0.365: Battery estimation: the generic 0-50-scale doubling heuristic in 'UnifiedBatteryHandler.normalizeZigbeeValue' misread genuinely discharged devices (a real 40 % report became 80 %). Doubling now applies only to curated manufacturers ('BATTERY_0_50_SCALE_MFRS')., SOS button ('button_emergency_sos') battery info: percentage and Tuya DP reports now go through the smart normalizer (ZCL 0-200,"
   },
   "9.0.370": {
-    "en": "v9.0.369: `AdaptiveDataParser.toHumidity`: magnitude-based scaling (≤100 = percent, ≤1000 = ×10, else ×100). The old default ÷100 misread both common encodings: raw 65 → 1 % and raw 650 → 7 %., `AdaptiveDataParser.toTemperature`: returns null instead of an impossible value (e.g. 215 °C) when no divisor yields a plausible temperature., Tests: all 31 test files verified individually; `manufacturerRe"
+    "en": "v9.0.369: 'AdaptiveDataParser.toHumidity': magnitude-based scaling (≤100 = percent, ≤1000 = ×10, else ×100). The old default ÷100 misread both common encodings: raw 65 → 1 % and raw 650 → 7 %., 'AdaptiveDataParser.toTemperature': returns null instead of an impossible value (e.g. 215 °C) when no divisor yields a plausible temperature., Tests: all 31 test files verified individually; 'manufacturerRe"
   },
   "9.0.372": {
-    "en": "v9.0.371: 10 drivers were broken at load time, `UniversalTuyaParser` fixed earlier (37 undefined `capability` shorthands)., Coherence: removed the duplicated `smartDivisorDetect` heuristic in `TuyaZigbeeDevice` — ZCL `measuredValue` is now parsed spec-exactly (0.01 units), Tuya DP scaling stays centralized in `SmartDivisorManager`., New audits: `drivers-smoke-test.js`, `js-syntax-audit.js`, `lib-s"
+    "en": "v9.0.371: 10 drivers were broken at load time, 'UniversalTuyaParser' fixed earlier (37 undefined 'capability' shorthands)., Coherence: removed the duplicated 'smartDivisorDetect' heuristic in 'TuyaZigbeeDevice' — ZCL 'measuredValue' is now parsed spec-exactly (0.01 units), Tuya DP scaling stays centralized in 'SmartDivisorManager'., New audits: 'drivers-smoke-test.js', 'js-syntax-audit.js', 'lib-s"
   },
   "9.0.374": {
-    "en": "v9.0.373: Unknown device prevention (case), Publish compactor, Added `_TZE204_kwi6bbk4` (ZHA source) to climate_sensor earlier this session."
+    "en": "v9.0.373: Unknown device prevention (case), Publish compactor, Added '_TZE204_kwi6bbk4' (ZHA source) to climate_sensor earlier this session."
   },
   "9.0.376": {
-    "en": "v9.0.375: Product reference database, Energy consumption reference, Flow condition `telemetry_is_estimated`, Fixed mfs_db routing gap: `_TZE284_hodyryli` was missing entirely."
+    "en": "v9.0.375: Product reference database, Energy consumption reference, Flow condition 'telemetry_is_estimated', Fixed mfs_db routing gap: '_TZE284_hodyryli' was missing entirely."
   },
   "9.0.377": {
     "en": "Stability improvements and Homey test publication retry after transient processing failure."
@@ -1418,9 +1418,6 @@
     "en": "v9.0.377: Temperature compensation was inverted, New test suites: 10 battery chemistry/health tests (17 profiles validated: sane curves, monotonic discharge, temp compensation) and 9 button press-type/gang tests (TS0044 contract, SOS button)."
   },
   "9.0.380": {
-    "en": "v9.0.379: OTA: real current firmware version read from the basic cluster (swBuildId/appVersion) in the Tuya MCU fallback — fewer false update notifications., Hue-style batch 3: `dim_to_level` (fade to brightness over time, Lutron-style), `scene_cycle` (cycle scene slots 1→2→3, IKEA shortcut style)., Publish ."
-  },
-  "9.0.381": {
-    "en": "v9.0.380: OTA notification with flash guidance (Tuya MCU → manufacturer app/Z2M, ZCL → local flash)., Hue-style batch 4: `cover_set_position` (precise blind position, IKEA style), `hue_all_off` (turn off every light in the app, Hue All Off style)."
+    "en": "v9.0.379: OTA: real current firmware version read from the basic cluster (swBuildId/appVersion) in the Tuya MCU fallback — fewer false update notifications., Hue-style batch 3: 'dim_to_level' (fade to brightness over time, Lutron-style), 'scene_cycle' (cycle scene slots 1→2→3, IKEA shortcut style)., Publish ."
   }
 }
