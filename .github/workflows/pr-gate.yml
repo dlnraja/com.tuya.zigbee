@@ -1,0 +1,39 @@
+# 🚦 PR Gate (v9.0.368)
+# Triggers: pull_request sur master et stable-v5 | Secrets: GITHUB_TOKEN only
+# Bloque les PRs qui: versions invalides/désynchronisées, conflits
+# Sacred Couple (mfr multi-drivers sans désambiguïsation PID),
+# ou régressions de routage (tests critiques).
+
+name: 🚦 PR Gate
+
+on:
+  pull_request:
+    branches: [master, stable-v5]
+
+permissions:
+  contents: read
+
+jobs:
+  gate:
+    name: 🚦 Version + Sacred Couple + routing
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: 📥 Checkout
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+
+      - name: 📦 Setup Node.js
+        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
+        with:
+          node-version: '22'
+          cache: npm
+
+      - name: 📦 Install deps
+        run: npm ci --prefer-offline --no-audit || npm install --no-audit
+
+      - name: 🚦 PR gate (version + Sacred Couple)
+        run: node tools/ci/pr-gate.js --branch=${{ github.base_ref }}
+
+      - name: 🧪 Critical routing tests
+        run: npx mocha test/critical/*.test.js --timeout 10000
