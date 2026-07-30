@@ -81,6 +81,27 @@
 - **Tuya Developer Platform** - developer.tuya.com
 - **Node.js Best Practices** - Node.js official documentation and community patterns
 
+## Licenses (SPDX)
+
+| Project | License | Usage |
+|---------|---------|-------|
+| JohanBendz/com.tuya.zigbee (upstream) | **MIT** | Origine du fork — attribution dans NOTICE |
+| Koenkk/zigbee-herdsman-converters (Z2M) | **MIT** | Données factuelles DPs/empreintes |
+| zigpy/zha-device-handlers (ZHA) | **Apache-2.0** | Quirks Tuya, IDs corrompus documentés |
+| dresden-elektronik/deconz-rest-plugin | **BSD-3-Clause** | DDF, Tuya Data Point Protocol |
+| jasonacox/tinytuya | **MIT** | Protocole local Tuya (WiFi) |
+| codetheweb/tuyapi | **MIT** | API locale Tuya |
+| make-all/tuya-local | **MIT** | Mappings DP (YAML) |
+| blakadder/zigbee | **MIT** | Base de données d'empreintes |
+| athombv (SDK3, zigbeedriver, zigbee-clusters) | **MIT** | Framework |
+| OpenHAB Zigbee binding | **EPL-2.0** | Recherche intervalles de reporting |
+| SmartThings Edge drivers | **Apache-2.0** | Patterns Tuya DP |
+
+> Voir **NOTICE** à la racine pour les attributions complètes. Les empreintes,
+> numéros de datapoint et comportements protocolaires sont des données
+> factuelles d'interopérabilité (non copyrightables) ; tout le code original
+> de ce dépôt est sous **MIT** (voir LICENSE).
+
 ## Inspiration
 - All community members who reported issues and requested devices
 - The Homey community forum contributors

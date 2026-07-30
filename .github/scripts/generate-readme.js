@@ -61,7 +61,7 @@ const readme = `# Tuya Unified Zigbee App for Homey
 [![Drivers](https://img.shields.io/badge/drivers-${dirs.length}-brightgreen)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![Flow Cards](https://img.shields.io/badge/flow%20cards-${fmt(flowTotal)}-blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![SDK](https://img.shields.io/badge/SDK-3-orange)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
-[![License](https://img.shields.io/badge/license-GPL--3.0-red)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/LICENSE)
+[![License](https://img.shields.io/badge/license-MIT-green)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/LICENSE)
 [![Homey](https://img.shields.io/badge/Homey-Pro-blueviolet)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 
 A community-driven Homey app that brings local control to Tuya Zigbee devices — no cloud, no internet needed. Covers switches, sensors, lights, thermostats, covers, locks, and more across **${dirs.length} drivers** and **${fmt(totalFp)}+ device fingerprints**.
@@ -348,14 +348,16 @@ A massive thank you to the maintainers and contributors of:
 
 ## License
 
-**GPL-3.0** - See [LICENSE](./LICENSE) file
+**MIT** - See [LICENSE](./LICENSE) file and [NOTICE](./NOTICE) for third-party attributions
 
 | Project | License |
 |---------|---------|
-| Zigbee2MQTT | GPL-3.0 |
+| JohanBendz/com.tuya.zigbee (upstream) | MIT |
+| Zigbee2MQTT (zigbee-herdsman-converters) | MIT |
 | ZHA | Apache-2.0 |
 | Blakadder | MIT |
-| deCONZ | BSD-3-Clause |
+| deCONZ REST plugin | BSD-3-Clause |
+| tinytuya / tuyapi | MIT |
 
 ---
 

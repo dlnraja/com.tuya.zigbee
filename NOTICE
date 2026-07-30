@@ -1,0 +1,48 @@
+NOTICE
+======
+
+Universal Tuya Zigbee Device App for Homey Pro
+Copyright (c) 2025-2026 Dylan Rajasekaram (dlnraja)
+
+This product includes software developed by third parties. In accordance with
+the licenses below, the following attributions are made:
+
+UPSTREAM PROJECT
+----------------
+This application is a fork of "com.tuya.zigbee" by Johan Bendz.
+  - Project : https://github.com/JohanBendz/com.tuya.zigbee
+  - License : MIT
+  - Copyright (c) Johan Bendz and contributors
+  The original MIT license permission notice is retained in LICENSE.
+
+THIRD-PARTY DATA & PATTERNS
+---------------------------
+This project uses factual device data (manufacturer fingerprints, datapoint
+definitions, cluster mappings) and protocol patterns derived from:
+
+  - zigbee-herdsman-converters (Zigbee2MQTT)
+    https://github.com/Koenkk/zigbee-herdsman-converters — MIT
+  - zha-device-handlers (ZHA / zigpy)
+    https://github.com/zigpy/zha-device-handlers — Apache License 2.0
+  - deCONZ REST plugin
+    https://github.com/dresden-elektronik/deconz-rest-plugin — BSD-3-Clause
+  - tinytuya (jasonacox) — MIT
+  - tuyapi (codetheweb) — MIT
+  - tuya-local (make-all) — MIT
+  - Blakadder Zigbee Device Compatibility Repository — MIT
+  - Athom BV: Homey SDK3, node-homey-zigbeedriver, node-zigbee-clusters — MIT
+  - OpenHAB Zigbee binding — EPL-2.0 (reporting interval research)
+  - SmartThings Edge drivers — Apache-2.0 (Tuya DP patterns)
+
+ICONS & ASSETS
+--------------
+  - athombv/homey-vectors-public (official Homey SVG vectors)
+  - Joolee/Homey-SVG-Icons (community capability icons)
+
+NOTE
+----
+Device fingerprints, datapoint numbers, and protocol behaviors are factual
+interoperability data and are not subject to copyright. All original code in
+this repository is licensed under MIT (see LICENSE). No code was copied from
+the projects above; implementations are original and inspired by documented
+protocol behavior.
