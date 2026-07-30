@@ -49,6 +49,9 @@ jobs:
       - name: 🧹 Apply safe moves
         run: node .github/scripts/repo-housekeeping.js --apply
 
+      - name: 📚 Refresh script registry
+        run: node .github/scripts/generate-script-registry.js
+
       - name: 💾 Commit moves (only if any)
         continue-on-error: true
         run: |

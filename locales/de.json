@@ -117,7 +117,25 @@
   "settings": {
     "power_source": {
       "label": "Stromquelle",
-      "hint": "Stromquelle manuell auswählen oder automatische Erkennung verwenden"
+      "hint": "Stromquelle manuell auswählen oder automatische Erkennung verwenden",
+      "values": {
+        "auto": {
+          "en": "Auto Detect",
+          "fr": "Détection Automatique"
+        },
+        "ac": {
+          "en": "AC Powered",
+          "fr": "Alimentation Secteur"
+        },
+        "dc": {
+          "en": "DC Powered",
+          "fr": "Alimentation DC"
+        },
+        "battery": {
+          "en": "Battery Powered",
+          "fr": "Sur Batterie"
+        }
+      }
     },
     "battery_type": {
       "label": "Batterietyp",
@@ -141,7 +159,21 @@
     },
     "optimization_mode": {
       "label": "Energieoptimierungsmodus",
-      "hint": "Balance zwischen Reaktionsfähigkeit und Batterielebensdauer"
+      "hint": "Balance zwischen Reaktionsfähigkeit und Batterielebensdauer",
+      "values": {
+        "performance": {
+          "en": "Performance (More responsive)",
+          "fr": "Performance (Plus réactif)"
+        },
+        "balanced": {
+          "en": "Balanced",
+          "fr": "Équilibré"
+        },
+        "power_saving": {
+          "en": "Power Saving (Longer battery)",
+          "fr": "Économie d'énergie (Batterie plus longue)"
+        }
+      }
     },
     "show_voltage": {
       "label": "Batteriespannung anzeigen",
