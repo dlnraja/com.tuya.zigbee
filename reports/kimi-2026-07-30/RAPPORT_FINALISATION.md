@@ -37,3 +37,29 @@ Le pipeline de publish comporte des gates plus profonds que la validation locale
 5. **Récurrence policy** : monitors temporal/activity ne committent plus d'état (cache CI).
 
 Résultat : `check-button-flow-routing` **0 erreur, 0 warning** ; 298/298 master, 209/209 stable ; publishes relancés.
+
+## OTA & smart features (session 2026-07-30 soir)
+
+### Refonte OTA (recherche Z2M/ZHA/zigbee-OTA)
+- **Fallback MCU Tuya** : la majorité des devices Tuya n'ont pas de cluster OTA ZCL (firmware via MCU) → code fabricant 4417 + matching par manufacturerName dans l'index public zigbee-OTA (Koenkk, gratuit).
+- **Vraie version courante** lue via swBuildId/appVersion (cluster basic) → moins de faux positifs.
+- **Contexte device** (modelId/manufacturerName) transmis dans toute la chaîne (restrictions par modèle effectives).
+- **Notifications dédupliquées** + guidance de flash (Tuya MCU → app constructeur/Z2M, ZCL → flash local).
+- 3 flow cards : trigger `ota_update_available`, condition `ota_has_update`, action `ota_run_discovery`.
+
+### Smart features constructeurs (style Philips Hue, IKEA, Lutron)
+- `hue_motion_lighting` (garde lux + **fenêtre heures calmes DND** + auto-off réarmé)
+- `hue_circadian_apply` (courbe jour/nuit complète)
+- `hue_wakeup` / `hue_sleep` (aube / crépuscule progressifs)
+- `scene_capture` / `scene_apply` / `scene_cycle` (slots 1-5, style bouton raccourci IKEA)
+- `dim_to_level` (fondu vers niveau, style Lutron)
+- `cover_set_position` (stores IKEA)
+- `hue_all_off` (bouton All Off de l'app Hue)
+
+### Durcissements pipeline publish (4 échecs successifs diagnostiqués)
+1. Arg flow `duration` réservé → `ramp_minutes`.
+2. Intégrité fingerprints.json ↔ composes (17 routes).
+3. Gates boutons (helpers, cartes obsolètes, voice-safety caps).
+4. Race bots auto-fix → rebase `-X theirs`.
+5. Bundle trop lourd → exclusion `product-reference.json` + audit report via `.homeyignore`.
+6. Backticks du changelog exécutés par l'extracteur → purgés.
