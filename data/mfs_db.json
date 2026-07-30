@@ -328788,5 +328788,17 @@
   "_TZ3000_flonmact": {
     "driverId": "climate_sensor",
     "source": "johan-full-dump-2026-07-29"
+  },
+  "_TZE2841000000_nhgdf6qr": {
+    "driverId": "soil_sensor",
+    "source": "zha-device-handlers-2026-07-30"
+  },
+  "_TZE2841000000_tgrzpqf4": {
+    "driverId": "soil_sensor",
+    "source": "zha-device-handlers-2026-07-30"
+  },
+  "_TZE204_kwi6bbk4": {
+    "driverId": "climate_sensor",
+    "source": "zha-device-handlers-2026-07-30"
   }
 }
