@@ -1382,5 +1382,8 @@
   },
   "9.0.376": {
     "en": "v9.0.375: Product reference database, Energy consumption reference, Flow condition `telemetry_is_estimated`, Fixed mfs_db routing gap: `_TZE284_hodyryli` was missing entirely."
+  },
+  "9.0.377": {
+    "en": "Stability improvements and Homey test publication retry after transient processing failure."
   }
 }
