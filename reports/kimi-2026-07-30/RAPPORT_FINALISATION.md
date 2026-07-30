@@ -63,3 +63,17 @@ Résultat : `check-button-flow-routing` **0 erreur, 0 warning** ; 298/298 master
 4. Race bots auto-fix → rebase `-X theirs`.
 5. Bundle trop lourd → exclusion `product-reference.json` + audit report via `.homeyignore`.
 6. Backticks du changelog exécutés par l'extracteur → purgés.
+
+## 🏁 VERDICTS PUBLISH (2026-07-30 23:20 UTC)
+
+- **MASTER — ✅ PUBLIÉ** : `com.dlnraja.tuya.zigbee@9.0.382` téléversé avec succès sur le canal test (run 30589716324, 9m42s).
+- **STABLE — ✅ Publish to Draft réussi** : la 5.12.43 est passée (run 30590255559 — Upstream Guard ✓, Pre-Validation ✓, Publish to Draft ✓) ; promotion vers le test en cours côté Athom (étape externe).
+
+### Chaîne complète des blocages résolus pour y arriver
+1. Arg flow `duration` réservé par Homey → `ramp_minutes`.
+2. Intégrité `fingerprints.json` ↔ composes (17 routes).
+3. Gates boutons (préfixes helpers, cartes gang obsolètes, voice-safety caps).
+4. Race pipeline ↔ bots auto-fix → `git pull --rebase -X theirs`.
+5. Bundle > limites → `.homeyignore` : `product-reference.json` + audit report exclus.
+6. Backticks du changelog exécutés par l'extracteur → purgés.
+7. **Format clé-version du `.homeychangelog.json`** (requis par `homey app publish` headless) → synchronisation des 2 formats.
