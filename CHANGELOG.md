@@ -4,6 +4,18 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
+## [5.12.34] - 2026-07-30
+
+Stability line (branch `stable-v5`, production). Minimal zero-regression backports from master 9.0.369.
+
+### Bug Fixes
+- `AdaptiveDataParser.toHumidity`: magnitude-based scaling (≤100 = percent, ≤1000 = ×10,
+  else ×100) — the old default ÷100 misread raw 65 → 1 % and raw 650 → 7 %.
+- `AdaptiveDataParser.toTemperature`: null instead of impossible values when no divisor fits.
+- New test suites: AdaptiveDataParser, TuyaDataPointsZ2M converters, DeviceFingerprintDB.
+
+---
+
 ## [5.12.33] - 2026-07-29
 
 Stability line (branch `stable-v5`, production). Minimal zero-regression backports from master.
