@@ -1,6 +1,13 @@
 {
   "changelog": [
     {
+      "version": "5.12.43",
+      "date": "2026-07-30",
+      "channel": "stable",
+      "en": "OTA flash guidance, Hue batch 4 (cover_set_position, hue_all_off).",
+      "fr": "Guidance flash OTA, batch Hue 4 (cover_set_position, hue_all_off)."
+    },
+    {
       "version": "5.12.42",
       "date": "2026-07-30",
       "channel": "stable",

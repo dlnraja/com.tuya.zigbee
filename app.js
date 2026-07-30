@@ -766,10 +766,49 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
         this.log(`[HUE] Cycle: scène ${next}/${count} appliquée à ${light.getName?.()}`);
         return true;
       });
+
+    // ── Volets : position précise (style stores IKEA) ────────────────────────
+    this.homey.flow.getActionCard('cover_set_position')
+      .registerRunListener(async (args) => {
+        const { cover, position = 50 } = args;
+        if (!cover) {return false;}
+        const target = Math.max(0, Math.min(100, position)) / 100;
+        const set = cover.safeSetCapabilityValue?.bind(cover);
+        if (cover.hasCapability?.('windowcoverings_set')) {
+          if (set) {await set('windowcoverings_set', target).catch(() => {});}
+          else {await cover.setCapabilityValue?.('windowcoverings_set', target).catch(() => {});}
+          this.log(`[HUE] Volet ${cover.getName?.()} → ${position}%`);
+          return true;
+        }
+        this.log(`[HUE] ${cover.getName?.()} n'a pas windowcoverings_set`);
+        return false;
+      });
+
+    // ── Tout éteindre (style bouton "All Off" de l'app Hue) ──────────────────
+    this.homey.flow.getActionCard('hue_all_off')
+      .registerRunListener(async () => {
+        let count = 0;
+        try {
+          const drivers = Object.values(this.homey.drivers?.getDrivers?.() || {});
+          for (const driver of drivers) {
+            for (const device of driver.getDevices?.() || []) {
+              const isLight = device.getClass?.() === 'light'
+                || (device.hasCapability?.('dim') && device.hasCapability?.('onoff'));
+              if (!isLight) {continue;}
+              await this._hueSetLight(device, { onoff: false });
+              count++;
+            }
+          }
+        } catch (err) {
+          this.error('[HUE] all_off error:', err.message);
+        }
+        this.log(`[HUE] Tout éteint: ${count} lumières`);
+        return true;
+      });
   }
 
   // ═══════════════════════════════════════════════════════════════════════════
-  // v5.12.42: OTA flow cards (condition + manual discovery action)
+  // v5.12.43: OTA flow cards (condition + manual discovery action)
   // ═══════════════════════════════════════════════════════════════════════════
   _registerOtaFlowCards() {
     this.homey.flow.getConditionCard('ota_has_update')

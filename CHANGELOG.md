@@ -4,6 +4,16 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
+## [5.12.43] - 2026-07-30
+
+Stability line (branch `stable-v5`, production). Backports from master.
+
+### Added
+- OTA notification with flash guidance (Tuya MCU vs ZCL).
+- Hue-style batch 4: `cover_set_position` (IKEA blinds style), `hue_all_off` (Hue All Off).
+
+---
+
 ## [5.12.42] - 2026-07-30
 
 Stability line (branch `stable-v5`, production). Backports from master 9.0.379.
