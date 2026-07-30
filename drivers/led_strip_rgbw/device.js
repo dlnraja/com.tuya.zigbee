@@ -1,6 +1,6 @@
 'use strict';
 // A8: NaN Safety - use safeDivide/safeMultiply
-  require('../../lib/devices/UnifiedLightBase');
+const UnifiedLightBase = require('../../lib/devices/UnifiedLightBase');
 
 class LEDStripRGBWDevice extends UnifiedLightBase {
 

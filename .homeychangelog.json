@@ -1,6 +1,13 @@
 {
   "changelog": [
     {
+      "version": "9.0.371",
+      "date": "2026-07-30",
+      "channel": "test",
+      "en": "10 drivers fixed at load time (bot-corrupted imports), ZCL measuredValue parsed spec-exactly, new smoke/syntax/dead-module audits.",
+      "fr": "10 drivers corrigés au chargement (imports corrompus par un bot), measuredValue ZCL parsé selon la spec, nouveaux audits smoke/syntaxe/modules morts."
+    },
+    {
       "version": "9.0.369",
       "date": "2026-07-30",
       "channel": "test",

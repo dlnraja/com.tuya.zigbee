@@ -4,6 +4,16 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
+## [9.0.371] - 2026-07-30
+
+### Fixed
+- **10 drivers were broken at load time** (bot-introduced corruption): bare `require()` without assignment for `UnifiedPlugBase`/`UnifiedLightBase`/`TuyaLocalDevice` (8 drivers), `constrequire` typo (`wifi_ewelink_th`), undefined `cap` shorthand (`device_air_purifier_plug`, `dimmer_wall_plug`). All 431 drivers now load cleanly (`tools/ci/drivers-smoke-test.js`).
+- `UniversalTuyaParser` fixed earlier (37 undefined `capability` shorthands).
+- Coherence: removed the duplicated `smartDivisorDetect` heuristic in `TuyaZigbeeDevice` — ZCL `measuredValue` is now parsed spec-exactly (0.01 units), Tuya DP scaling stays centralized in `SmartDivisorManager`.
+- New audits: `drivers-smoke-test.js`, `js-syntax-audit.js`, `lib-smoke-test.js`, `dead-module-audit.js`.
+
+---
+
 ## [9.0.369] - 2026-07-30
 
 ### Fixed
