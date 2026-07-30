@@ -1,6 +1,13 @@
 {
   "changelog": [
     {
+      "version": "9.0.377",
+      "date": "2026-07-30",
+      "channel": "test",
+      "en": "Temperature compensation inversion fixed (cold inflated battery estimates) + 10 battery profile tests + 9 button press-type tests.",
+      "fr": "Inversion de la compensation température corrigée (le froid gonflait les estimations batterie) + 10 tests profils batterie + 9 tests boutons."
+    },
+    {
       "version": "9.0.376",
       "date": "2026-07-30",
       "channel": "test",

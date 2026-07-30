@@ -4,6 +4,14 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
+## [9.0.377] - 2026-07-30
+
+### Fixed
+- **Temperature compensation was inverted** in `UnifiedBatteryHandler.calculateFromVoltage`: cold temperatures INCREASED the battery estimate (up to +9 % at -10 °C) instead of decreasing it — all chemistries have negative tempCoeff, so the formula must ADD it, not subtract. Found by the new battery-profile test suite.
+- New test suites: 10 battery chemistry/health tests (17 profiles validated: sane curves, monotonic discharge, temp compensation) and 9 button press-type/gang tests (TS0044 contract, SOS button).
+
+---
+
 ## [9.0.376] - 2026-07-30
 
 ### Added
