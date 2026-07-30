@@ -17,10 +17,12 @@
     { "type": "device", "name": "light", "title": { "en": "Light", "fr": "Lumière" } },
     { "type": "number", "name": "brightness", "title": { "en": "Brightness (%)", "fr": "Luminosité (%)" }, "min": 1, "max": 100, "placeholder": { "en": "80" } },
     { "type": "number", "name": "timeout", "title": { "en": "Auto-off after (min)", "fr": "Extinction après (min)" }, "min": 1, "max": 120, "placeholder": { "en": "5" } },
-    { "type": "number", "name": "lux_threshold", "title": { "en": "Only if lux below (0 = ignore)", "fr": "Seulement si lux sous (0 = ignorer)" }, "min": 0, "max": 100000, "placeholder": { "en": "0" } }
+    { "type": "number", "name": "lux_threshold", "title": { "en": "Only if lux below (0 = ignore)", "fr": "Seulement si lux sous (0 = ignorer)" }, "min": 0, "max": 100000, "placeholder": { "en": "0" } },
+    { "type": "text", "name": "quiet_start", "title": { "en": "Quiet hours start (HH:MM, optional)", "fr": "Début heures calmes (HH:MM, optionnel)" }, "placeholder": { "en": "22:00" } },
+    { "type": "text", "name": "quiet_end", "title": { "en": "Quiet hours end (HH:MM, optional)", "fr": "Fin heures calmes (HH:MM, optionnel)" }, "placeholder": { "en": "07:00" } }
   ],
   "titleFormatted": {
-    "en": "Hue-style: [[motion_sensor]] turns on [[light]] at [[brightness]]% for [[timeout]] min (lux < [[lux_threshold]])",
-    "fr": "Style Hue : [[motion_sensor]] allume [[light]] à [[brightness]]% pour [[timeout]] min (lux < [[lux_threshold]])"
+    "en": "Hue-style: [[motion_sensor]] turns on [[light]] at [[brightness]]% for [[timeout]] min (lux < [[lux_threshold]], quiet [[quiet_start]]-[[quiet_end]])",
+    "fr": "Style Hue : [[motion_sensor]] allume [[light]] à [[brightness]]% pour [[timeout]] min (lux < [[lux_threshold]], calme [[quiet_start]]-[[quiet_end]])"
   }
 }

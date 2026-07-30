@@ -425,6 +425,14 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
       this.error('⚠️ Hue-style flow cards failed (non-critical):', err.message);
     }
 
+    // v9.0.378: OTA flow cards (condition + discovery action)
+    try {
+      this._registerOtaFlowCards();
+      this.log('✅ OTA flow cards registered');
+    } catch (err) {
+      this.error('⚠️ OTA flow cards failed (non-critical):', err.message);
+    }
+
     // v9.1.0: Initialize feature modules and register their flow cards
     try {
       this.solarElevation = new SolarElevation({ homey: this.homey, logger: this.log.bind(this) });
@@ -583,8 +591,20 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
     // ── Éclairage activé par mouvement ───────────────────────────────────────
     this.homey.flow.getActionCard('hue_motion_lighting')
       .registerRunListener(async (args) => {
-        const { motion_sensor: sensor, light, brightness = 80, timeout = 5, lux_threshold = 0 } = args;
+        const { motion_sensor: sensor, light, brightness = 80, timeout = 5, lux_threshold = 0, quiet_start, quiet_end } = args;
         if (!sensor || !light) {return false;}
+
+        // Fenêtre heures calmes (DND) : "22:00"-"07:00" traverse minuit
+        if (quiet_start && quiet_end && /^\d{1,2}:\d{2}$/.test(quiet_start) && /^\d{1,2}:\d{2}$/.test(quiet_end)) {
+          const toMin = (s) => { const [h, m] = s.split(':').map(Number); return h * 60 + m; };
+          const now = new Date().getHours() * 60 + new Date().getMinutes();
+          const qs = toMin(quiet_start), qe = toMin(quiet_end);
+          const inQuiet = qs <= qe ? (now >= qs && now < qe) : (now >= qs || now < qe);
+          if (inQuiet) {
+            this.log(`[HUE] Motion ignoré: heures calmes ${quiet_start}-${quiet_end}`);
+            return false;
+          }
+        }
 
         if (lux_threshold > 0 && sensor.hasCapability?.('measure_luminance')) {
           const lux = sensor.getCapabilityValue?.('measure_luminance');
@@ -643,6 +663,93 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
         }, stepMs);
         this.log(`[HUE] Réveil démarré sur ${light.getName?.()}: ${steps} pas × ${Math.round(stepMs / 1000)}s`);
         return true;
+      });
+
+    // ── Routine coucher (simulation de crépuscule) ───────────────────────────
+    this.homey.flow.getActionCard('hue_sleep')
+      .registerRunListener(async (args) => {
+        const { light, ramp_minutes: duration = 15 } = args;
+        if (!light) {return false;}
+        const current = light.getCapabilityValue?.('dim');
+        const startDim = typeof current === 'number' && current > 0 ? current : 1;
+        const steps = Math.max(5, Math.min(30, duration));
+        const stepMs = (duration * 60 * 1000) / steps;
+        this.homey.clearInterval?.(light._hueWakeupTimer);
+        let step = 0;
+        light._hueWakeupTimer = this.homey.setInterval(async () => {
+          step++;
+          const dim = Math.max(0.01, startDim * (1 - step / steps));
+          await this._hueSetLight(light, { dim: Math.round(dim * 100) / 100 });
+          if (step >= steps) {
+            this.homey.clearInterval?.(light._hueWakeupTimer);
+            light._hueWakeupTimer = null;
+            await this._hueSetLight(light, { onoff: false });
+            this.log(`[HUE] Coucher terminé sur ${light.getName?.()}: OFF`);
+          }
+        }, stepMs);
+        this.log(`[HUE] Coucher démarré sur ${light.getName?.()}: ${steps} pas × ${Math.round(stepMs / 1000)}s`);
+        return true;
+      });
+
+    // ── Scènes : capture / application (style Hue) ───────────────────────────
+    this.homey.flow.getActionCard('scene_capture')
+      .registerRunListener(async (args) => {
+        const { light, slot = 1 } = args;
+        if (!light) {return false;}
+        const scene = {
+          onoff: light.getCapabilityValue?.('onoff'),
+          dim: light.getCapabilityValue?.('dim'),
+          temperature: light.getCapabilityValue?.('light_temperature'),
+          capturedAt: Date.now(),
+        };
+        await light.setStoreValue?.(`hue_scene_${slot}`, scene).catch(() => {});
+        this.log(`[HUE] Scène ${slot} capturée pour ${light.getName?.()}: ${JSON.stringify(scene)}`);
+        return true;
+      });
+
+    this.homey.flow.getActionCard('scene_apply')
+      .registerRunListener(async (args) => {
+        const { light, slot = 1 } = args;
+        if (!light) {return false;}
+        const scene = await light.getStoreValue?.(`hue_scene_${slot}`);
+        if (!scene) {
+          this.log(`[HUE] Slot ${slot} vide pour ${light.getName?.()}`);
+          return false;
+        }
+        await this._hueSetLight(light, {
+          onoff: scene.onoff !== false,
+          dim: scene.dim,
+          temperature: scene.temperature,
+        });
+        this.log(`[HUE] Scène ${slot} appliquée à ${light.getName?.()}`);
+        return true;
+      });
+  }
+
+  // ═══════════════════════════════════════════════════════════════════════════
+  // v9.0.378: OTA flow cards (condition + manual discovery action)
+  // ═══════════════════════════════════════════════════════════════════════════
+  _registerOtaFlowCards() {
+    this.homey.flow.getConditionCard('ota_has_update')
+      .registerRunListener(async (args) => {
+        try {
+          const device = args.device;
+          if (!device || !this.otaManager) {return false;}
+          const id = device.getData?.()?.id;
+          return !!(id && this.otaManager.discoveredUpdates?.has(id));
+        } catch (err) { return false; }
+      });
+
+    this.homey.flow.getActionCard('ota_run_discovery')
+      .registerRunListener(async () => {
+        try {
+          if (!this.otaManager) {return false;}
+          await this.otaManager.runFullDiscoveryScan();
+          return true;
+        } catch (err) {
+          this.error('[OTA] discovery failed:', err.message);
+          return false;
+        }
       });
   }
 

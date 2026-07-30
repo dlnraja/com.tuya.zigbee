@@ -1,0 +1,21 @@
+{
+  "id": "scene_apply",
+  "title": {
+    "en": "Apply scene",
+    "fr": "Appliquer la scène",
+    "nl": "Scène toepassen",
+    "de": "Szene anwenden"
+  },
+  "hint": {
+    "en": "Re-applies a scene previously captured with 'Capture scene'",
+    "fr": "Réapplique une scène précédemment capturée avec 'Capturer la scène'"
+  },
+  "args": [
+    { "type": "device", "name": "light", "title": { "en": "Light", "fr": "Lumière" } },
+    { "type": "number", "name": "slot", "title": { "en": "Slot (1-5)", "fr": "Slot (1-5)" }, "min": 1, "max": 5, "placeholder": { "en": "1" } }
+  ],
+  "titleFormatted": {
+    "en": "Apply scene slot [[slot]] to [[light]]",
+    "fr": "Appliquer le slot [[slot]] à [[light]]"
+  }
+}
