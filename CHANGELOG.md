@@ -4,6 +4,15 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
+## [9.0.379] - 2026-07-30
+
+### Added
+- OTA: real current firmware version read from the basic cluster (swBuildId/appVersion) in the Tuya MCU fallback — fewer false update notifications.
+- Hue-style batch 3: `dim_to_level` (fade to brightness over time, Lutron-style), `scene_cycle` (cycle scene slots 1→2→3, IKEA shortcut style).
+- Publish pipeline: rebase with `-X theirs` for generated files (bot races).
+
+---
+
 ## [9.0.378] - 2026-07-30
 
 ### Added

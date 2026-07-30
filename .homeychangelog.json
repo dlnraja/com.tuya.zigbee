@@ -1,6 +1,13 @@
 {
   "changelog": [
     {
+      "version": "9.0.379",
+      "date": "2026-07-30",
+      "channel": "test",
+      "en": "OTA real firmware version via swBuildId, Hue batch 3 (dim_to_level, scene_cycle), publish -X theirs.",
+      "fr": "OTA version réelle via swBuildId, batch Hue 3 (dim_to_level, scene_cycle), publish -X theirs."
+    },
+    {
       "version": "9.0.378",
       "date": "2026-07-30",
       "channel": "test",
