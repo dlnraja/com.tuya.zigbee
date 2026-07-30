@@ -1,6 +1,5 @@
 'use strict';
 // A8: NaN Safety - use safeDivide/safeMultiply
-  require('../../lib/utils/CaseInsensitiveMatcher');
 const { safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
 
 

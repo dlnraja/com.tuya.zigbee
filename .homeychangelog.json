@@ -1,6 +1,13 @@
 {
   "changelog": [
     {
+      "version": "5.12.35",
+      "date": "2026-07-30",
+      "channel": "stable",
+      "en": "Backport 9.0.371: 10 driver load-time fixes, ZCL spec-exact measuredValue parsing.",
+      "fr": "Backport 9.0.371 : 10 drivers corrigés au chargement, parsing ZCL conforme à la spec."
+    },
+    {
       "version": "5.12.34",
       "date": "2026-07-30",
       "channel": "stable",

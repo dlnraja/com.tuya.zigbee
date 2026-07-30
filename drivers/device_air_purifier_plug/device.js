@@ -127,7 +127,7 @@ const ENERGY_DEVICE_CONFIGS = {
     protocol: 'tuya',
     dpMap: {
       1: { cap: 'onoff', type: 'bool' },
-      6: { cap, internal: 'report_interval' },
+      6: { cap: null, internal: 'report_interval' },
       101: { cap: 'measure_power', smartDivisor: true },        // Total power
       102: { cap: 'measure_power.phase_a', smartDivisor: true },
       103: { cap: 'measure_power.phase_b', smartDivisor: true },
