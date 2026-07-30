@@ -1,0 +1,21 @@
+{
+  "id": "scene_cycle",
+  "title": {
+    "en": "Cycle to next scene (IKEA shortcut style)",
+    "fr": "Scène suivante (style bouton IKEA)",
+    "nl": "Volgende scène (IKEA-sneltoets-stijl)",
+    "de": "Nächste Szene (IKEA-Shortcut-Stil)"
+  },
+  "hint": {
+    "en": "Applies the next captured scene slot (1→2→3→1…) — like the IKEA shortcut button",
+    "fr": "Applique le slot de scène suivant (1→2→3→1…) — comme le bouton raccourci IKEA"
+  },
+  "args": [
+    { "type": "device", "name": "light", "title": { "en": "Light", "fr": "Lumière" } },
+    { "type": "number", "name": "slots", "title": { "en": "Number of slots (1-5)", "fr": "Nombre de slots (1-5)" }, "min": 1, "max": 5, "placeholder": { "en": "3" } }
+  ],
+  "titleFormatted": {
+    "en": "Cycle [[light]] to next scene ([[slots]] slots)",
+    "fr": "Scène suivante de [[light]] ([[slots]] slots)"
+  }
+}
