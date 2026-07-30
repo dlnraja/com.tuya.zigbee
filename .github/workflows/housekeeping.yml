@@ -1,0 +1,63 @@
+# 🧹 Repo Housekeeping (v9.0.368)
+# Triggers: cron: 41 3 * * 1 (weekly, Monday 03:41 UTC) + workflow_dispatch
+# Secrets: GITHUB_TOKEN only
+# Safely tidies the repo root: only unreferenced files matching explicit
+# rules are moved (git mv), everything else is skipped and reported.
+# Fully read-only when there is nothing safe to move.
+
+name: 🧹 Repo Housekeeping
+
+on:
+  schedule:
+    - cron: '41 3 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: repo-housekeeping
+  cancel-in-progress: false
+
+defaults:
+  run:
+    shell: bash
+
+env:
+  NODE_VERSION: '22'
+
+jobs:
+  tidy:
+    name: 🧹 Tidy repository root
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: 📥 Checkout
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 📦 Setup Node.js
+        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: 🧹 Dry-run report
+        run: node .github/scripts/repo-housekeeping.js
+
+      - name: 🧹 Apply safe moves
+        run: node .github/scripts/repo-housekeeping.js --apply
+
+      - name: 💾 Commit moves (only if any)
+        continue-on-error: true
+        run: |
+          git add -A
+          if ! git diff --staged --quiet; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git commit -m "🧹 housekeeping: rangement autonome $(date -u +%Y-%m-%d) [skip ci]"
+            bash scripts/ci/verified-git-push.sh master
+          else
+            echo "Nothing to tidy"
+          fi
