@@ -229,6 +229,8 @@ jobs:
           git diff --cached --quiet || git commit -m "v${{ steps.bump.outputs.version }}: ${D} drivers, ${F} fingerprints [skip ci]"
           git tag -f "v${{ steps.bump.outputs.version }}"
           BRANCH="${GITHUB_REF_NAME:-master}"
+          # v9.0.378: intégrer les commits concurrents (bots auto-fix) avant de pousser
+          git pull --rebase origin "$BRANCH" || git rebase --abort
           git push origin HEAD:"refs/heads/$BRANCH"
           git push origin -f "v${{ steps.bump.outputs.version }}"
         env:
