@@ -1,6 +1,13 @@
 {
   "changelog": [
     {
+      "version": "5.12.41",
+      "date": "2026-07-30",
+      "channel": "stable",
+      "en": "Backport 9.0.378: OTA overhaul + Hue batch 2 (sleep, scenes, DND).",
+      "fr": "Backport 9.0.378 : refonte OTA + batch Hue 2 (coucher, scènes, DND)."
+    },
+    {
       "version": "5.12.40",
       "date": "2026-07-30",
       "channel": "stable",

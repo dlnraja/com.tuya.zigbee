@@ -1,0 +1,21 @@
+{
+  "id": "scene_capture",
+  "title": {
+    "en": "Capture scene",
+    "fr": "Capturer la scène",
+    "nl": "Scène vastleggen",
+    "de": "Szene speichern"
+  },
+  "hint": {
+    "en": "Stores the light's current state (on/off, brightness, color temperature) in a slot to re-apply later with 'Apply scene'",
+    "fr": "Enregistre l'état actuel de la lumière (on/off, luminosité, température) dans un slot pour le réappliquer avec 'Appliquer la scène'"
+  },
+  "args": [
+    { "type": "device", "name": "light", "title": { "en": "Light", "fr": "Lumière" } },
+    { "type": "number", "name": "slot", "title": { "en": "Slot (1-5)", "fr": "Slot (1-5)" }, "min": 1, "max": 5, "placeholder": { "en": "1" } }
+  ],
+  "titleFormatted": {
+    "en": "Capture [[light]] state into scene slot [[slot]]",
+    "fr": "Capturer l'état de [[light]] dans le slot [[slot]]"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "id": "hue_sleep",
+  "title": {
+    "en": "Sleep routine (sunset simulation)",
+    "fr": "Routine coucher (simulation de crépuscule)",
+    "nl": "Slaaproutine (zonsondergangsimulatie)",
+    "de": "Schlafroutine (Sonnenuntergangssimulation)"
+  },
+  "hint": {
+    "en": "Gradually dims the light to 1% over the chosen duration, then turns it off",
+    "fr": "Diminue progressivement la lumière jusqu'à 1% sur la durée choisie, puis l'éteint",
+    "nl": "Dimt het licht geleidelijk naar 1% en schakelt daarna uit",
+    "de": "Dimmt das Licht schrittweise auf 1% und schaltet dann aus"
+  },
+  "args": [
+    { "type": "device", "name": "light", "title": { "en": "Light", "fr": "Lumière" } },
+    { "type": "number", "name": "ramp_minutes", "title": { "en": "Duration (min)", "fr": "Durée (min)" }, "min": 1, "max": 60, "placeholder": { "en": "15" } }
+  ],
+  "titleFormatted": {
+    "en": "Sleep: dim [[light]] to off over [[ramp_minutes]] min",
+    "fr": "Coucher : tamiser [[light]] jusqu'à extinction sur [[ramp_minutes]] min"
+  }
+}

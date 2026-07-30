@@ -1,0 +1,20 @@
+{
+  "id": "ota_has_update",
+  "title": {
+    "en": "Device !{{has|has no}} OTA update available",
+    "fr": "Device !{{a|n'a pas}} de MàJ OTA disponible",
+    "nl": "Apparaat !{{heeft|heeft geen}} OTA-update beschikbaar",
+    "de": "Gerät !{{hat|hat kein}} OTA-Update verfügbar"
+  },
+  "hint": {
+    "en": "True when the last OTA discovery scan found a newer firmware for this device",
+    "fr": "Vrai quand le dernier scan OTA a trouvé un firmware plus récent pour ce device"
+  },
+  "args": [
+    { "type": "device", "name": "device", "title": { "en": "Device", "fr": "Device" } }
+  ],
+  "titleFormatted": {
+    "en": "[[device]] !{{has|has no}} OTA update",
+    "fr": "[[device]] !{{a|n'a pas}} de MàJ OTA"
+  }
+}
