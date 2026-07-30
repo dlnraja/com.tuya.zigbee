@@ -623,7 +623,7 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
     // ── Routine réveil (simulation d'aube) ───────────────────────────────────
     this.homey.flow.getActionCard('hue_wakeup')
       .registerRunListener(async (args) => {
-        const { light, duration = 15, target = 100 } = args;
+        const { light, ramp_minutes: duration = 15, target = 100 } = args;
         if (!light) {return false;}
         const steps = Math.max(5, Math.min(30, duration));
         const stepMs = (duration * 60 * 1000) / steps;
