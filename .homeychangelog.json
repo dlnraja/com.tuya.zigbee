@@ -1,6 +1,13 @@
 {
   "changelog": [
     {
+      "version": "9.0.382",
+      "date": "2026-07-30",
+      "channel": "test",
+      "en": "Key-version changelog format (required by headless homey publish), OTA guidance, Hue batch 4.",
+      "fr": "Format clé-version du changelog (requis par homey publish headless), guidance OTA, batch Hue 4."
+    },
+    {
       "version": "9.0.381",
       "date": "2026-07-30",
       "channel": "test",
@@ -1458,5 +1465,9 @@
   "9.0.53": {
     "en": "CRITICAL: sdkVersion fix (Processing failed), Missing Capability Listener (setable:false), timer fallback, battery restore, duplicate method fix, HOBEIAN ZG-301Z, NFKD normalize, 87 fingerprints restored, Polos validator",
     "fr": "CRITIQUE: sdkVersion (Processing failed), Missing Capability Listener, fallback timer, batterie, HOBEIAN, NFKD, 87 fingerprints, Polos"
+  },
+  "9.0.382": {
+    "en": "Key-version changelog format (required by headless homey publish), OTA guidance, Hue batch 4.",
+    "fr": "Format clé-version du changelog (requis par homey publish headless), guidance OTA, batch Hue 4."
   }
 }
