@@ -4,6 +4,19 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
+## [5.12.37] - 2026-07-30
+
+Stability line (branch `stable-v5`, production). Minimal zero-regression backports from master 9.0.375.
+
+### Added
+- Product reference database (9027 fingerprints: vendor, model, battery types,
+  energy profile, variant groups) + energy consumption reference used by the
+  telemetry estimator.
+- Flow condition `telemetry_is_estimated` (distinguishes estimated vs measured values).
+- Fixed mfs_db routing gap for `_TZE284_hodyryli`.
+
+---
+
 ## [5.12.36] - 2026-07-30
 
 Stability line (branch `stable-v5`, production). Minimal zero-regression backports from master 9.0.373.

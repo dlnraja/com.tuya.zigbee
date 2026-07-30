@@ -1,6 +1,13 @@
 {
   "changelog": [
     {
+      "version": "5.12.37",
+      "date": "2026-07-30",
+      "channel": "stable",
+      "en": "Backport 9.0.375: product reference DB, energy consumption reference, telemetry_is_estimated condition.",
+      "fr": "Backport 9.0.375 : base de référence produits, référence de consommation, condition telemetry_is_estimated."
+    },
+    {
       "version": "5.12.36",
       "date": "2026-07-30",
       "channel": "stable",

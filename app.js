@@ -552,7 +552,20 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
         }
       });
 
-    // Action: Force clear ALL rooms
+    // v5.12.37 — Condition: value is estimated (telemetry origin)
+    this.homey.flow.getConditionCard('telemetry_is_estimated')
+      .registerRunListener(async (args) => {
+        try {
+          const device = args.device;
+          const capability = args.capability;
+          if (!device || !capability) {return false;}
+          const getStore = device.getStoreValue?.bind(device);
+          if (typeof getStore !== 'function') {return false;}
+          return (await getStore(`telemetry_${capability}_source`)) === 'estimated';
+        } catch (err) {
+          return false;
+        }
+      });
     this.homey.flow.getActionCard('virtual_presence_force_clear_all')
       .registerRunListener(async () => {
         try {
