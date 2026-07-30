@@ -1,6 +1,34 @@
 {
   "changelog": [
     {
+      "version": "5.12.33",
+      "date": "2026-07-30",
+      "channel": "stable",
+      "en": "Backports: fingerprints _TZ3000_flonmact (#183) and _TZE200_9xfjixapv (#395) re-added; IAS enrollment hardened (no zero CIE address, deferred retries for sleepy devices); natural_light flow filter fixed (ghost driver).",
+      "fr": "Backports : empreintes _TZ3000_flonmact (#183) et _TZE200_9xfjixapv (#395) ré-ajoutées ; enrôlement IAS durci (pas d'adresse CIE nulle, retries différés pour appareils endormis) ; filtre flow natural_light corrigé (driver fantôme)."
+    },
+    {
+      "version": "5.12.32",
+      "date": "2026-07-29",
+      "channel": "stable",
+      "en": "Battery estimation: 0-50 scale doubling restricted to curated manufacturers; SOS button battery smart normalization + ZCL 100mV voltage units; SOS button.1 capability listener.",
+      "fr": "Estimation batterie : doublement échelle 0-50 restreint aux fabricants curés ; batterie SOS normalisée + unités voltage ZCL 100mV ; listener capability button.1 SOS."
+    },
+    {
+      "version": "5.12.31",
+      "date": "2026-07-29",
+      "channel": "stable",
+      "en": "Smart scaling engine: prefix resolution for sub-capabilities, self-validating divisor cache, vvmbj46n battery 0-50→0-100%, smallest plausible divisor in ProductValueValidator.",
+      "fr": "Scaling intelligent : résolution par préfixe des sub-capabilities, cache diviseur auto-validant, batterie vvmbj46n 0-50→0-100%, plus petit diviseur plausible dans ProductValueValidator."
+    },
+    {
+      "version": "5.12.30",
+      "date": "2026-07-29",
+      "channel": "stable",
+      "en": "External probe (DP38) temperature 10x too low fixed (issue #513): SmartDivisorManager knows measure_temperature.probe. Publish-blocking -stable version suffix fixed.",
+      "fr": "Sonde externe (DP38) 10x trop basse corrigée (issue #513) : SmartDivisorManager connaît measure_temperature.probe. Suffixe de version -stable bloquant le publish corrigé."
+    },
+    {
       "version": "5.12.29",
       "date": "2026-07-27",
       "channel": "stable",

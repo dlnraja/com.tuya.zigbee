@@ -83091,7 +83091,7 @@
           {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=bulb_rgbw|driver_id=bulb_rgb_cct|driver_id=bulb_tunable_white|driver_id=led_strip"
+            "filter": "driver_id=bulb_rgbw|driver_id=led_controller_cct|driver_id=bulb_tunable_white|driver_id=led_strip"
           }
         ]
       },
@@ -83109,7 +83109,7 @@
           {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=bulb_rgbw|driver_id=bulb_rgb_cct|driver_id=bulb_tunable_white|driver_id=led_strip"
+            "filter": "driver_id=bulb_rgbw|driver_id=led_controller_cct|driver_id=bulb_tunable_white|driver_id=led_strip"
           }
         ]
       },
@@ -226934,7 +226934,10 @@
             "en": "Five tiles will be created, one for each channel of the device. Switch the unit on and off five times and hold for 5 seconds to enter pairing mode (the LED should flash red and blue)."
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_TZE200_FJJBHX9D",
+          "_tze200_fjjbhx9d"
+        ]
       },
       "version": "1.0.0",
       "capabilitiesOptions": {
