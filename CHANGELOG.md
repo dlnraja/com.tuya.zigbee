@@ -4,6 +4,17 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
+## [5.12.39] - 2026-07-30
+
+Stability line (branch `stable-v5`, production). Minimal zero-regression backports from master 9.0.377.
+
+### Bug Fixes
+- Temperature compensation inverted in battery voltage→percent conversion
+  (cold weather inflated the estimate by up to ~9 %). Found by the new
+  battery-profile test suite (backported with the button press-type tests).
+
+---
+
 ## [5.12.38] - 2026-07-30
 
 Stability line (branch `stable-v5`, production). Minimal zero-regression backports from master 9.0.376.

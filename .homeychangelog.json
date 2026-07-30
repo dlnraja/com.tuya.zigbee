@@ -1,6 +1,13 @@
 {
   "changelog": [
     {
+      "version": "5.12.39",
+      "date": "2026-07-30",
+      "channel": "stable",
+      "en": "Backport 9.0.377: temperature compensation inversion fix + battery/button test suites.",
+      "fr": "Backport 9.0.377 : inversion compensation température corrigée + suites de tests batterie/boutons."
+    },
+    {
       "version": "5.12.38",
       "date": "2026-07-30",
       "channel": "stable",
