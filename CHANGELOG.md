@@ -4,6 +4,15 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
+## [9.0.369] - 2026-07-30
+
+### Fixed
+- `AdaptiveDataParser.toHumidity`: magnitude-based scaling (≤100 = percent, ≤1000 = ×10, else ×100). The old default ÷100 misread both common encodings: raw 65 → 1 % and raw 650 → 7 %.
+- `AdaptiveDataParser.toTemperature`: returns null instead of an impossible value (e.g. 215 °C) when no divisor yields a plausible temperature.
+- Tests: all 31 test files verified individually; `manufacturerResolver` tests now counted by mocha (12); new suites: 14 TuyaDataPointsZ2M converter tests, 13 AdaptiveDataParser edge-case tests, 6 DeviceFingerprintDB tests (branch-agnostic).
+
+---
+
 ## [9.0.365] - 2026-07-29
 
 ### Fixed

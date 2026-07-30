@@ -1,5 +1,6 @@
 // test/critical/manufacturerResolver.test.js
-const { describe, it } = require('node:test');
+const testApi = global.describe && global.it ? global : require('node:test');
+const { describe, it } = testApi;
 const assert = require('node:assert');
 const ManufacturerResolver = require('../../lib/utils/manufacturerResolver');
 

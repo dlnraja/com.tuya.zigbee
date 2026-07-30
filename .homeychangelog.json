@@ -1,6 +1,13 @@
 {
   "changelog": [
     {
+      "version": "9.0.369",
+      "date": "2026-07-30",
+      "channel": "test",
+      "en": "Humidity scaling heuristic (magnitude-based: raw 65/650/6500 all read 65%), temperature rejects impossible values, 33 new parser tests, DeviceFingerprintDB test suite.",
+      "fr": "Heuristique humidité par magnitude (65/650/6500 lus 65%), rejet des températures impossibles, 33 nouveaux tests parsers, suite DeviceFingerprintDB."
+    },
+    {
       "version": "9.0.359",
       "date": "2026-07-29",
       "en": "fix: ghost drivers pruned from publish, climate probe DP38, resolve-collisions case fix, security untracking"
