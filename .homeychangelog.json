@@ -1362,5 +1362,8 @@
   },
   "9.0.372": {
     "en": "v9.0.371: 10 drivers were broken at load time, `UniversalTuyaParser` fixed earlier (37 undefined `capability` shorthands)., Coherence: removed the duplicated `smartDivisorDetect` heuristic in `TuyaZigbeeDevice` — ZCL `measuredValue` is now parsed spec-exactly (0.01 units), Tuya DP scaling stays centralized in `SmartDivisorManager`., New audits: `drivers-smoke-test.js`, `js-syntax-audit.js`, `lib-s"
+  },
+  "9.0.374": {
+    "en": "v9.0.373: Unknown device prevention (case), Publish compactor, Added `_TZE204_kwi6bbk4` (ZHA source) to climate_sensor earlier this session."
   }
 }
