@@ -1,0 +1,26 @@
+{
+  "id": "hue_motion_lighting",
+  "title": {
+    "en": "Motion-activated lighting (Hue-style)",
+    "fr": "Éclairage activé par mouvement (style Hue)",
+    "nl": "Bewegingsgeactiveerde verlichting (Hue-stijl)",
+    "de": "Bewegungsaktivierte Beleuchtung (Hue-Stil)"
+  },
+  "hint": {
+    "en": "Turn on a light when motion is detected (with lux + time guards), auto-off after timeout without motion",
+    "fr": "Allume une lumière sur mouvement (gardes lux + horaires), extinction auto après un délai sans mouvement",
+    "nl": "Schakel licht in bij beweging (lux- en tijdbeperking), auto-uit na time-out",
+    "de": "Licht bei Bewegung einschalten (Lux- und Zeitgrenzen), Auto-Aus nach Zeitablauf"
+  },
+  "args": [
+    { "type": "device", "name": "motion_sensor", "title": { "en": "Motion sensor", "fr": "Capteur de mouvement" } },
+    { "type": "device", "name": "light", "title": { "en": "Light", "fr": "Lumière" } },
+    { "type": "number", "name": "brightness", "title": { "en": "Brightness (%)", "fr": "Luminosité (%)" }, "min": 1, "max": 100, "placeholder": { "en": "80" } },
+    { "type": "number", "name": "timeout", "title": { "en": "Auto-off after (min)", "fr": "Extinction après (min)" }, "min": 1, "max": 120, "placeholder": { "en": "5" } },
+    { "type": "number", "name": "lux_threshold", "title": { "en": "Only if lux below (0 = ignore)", "fr": "Seulement si lux sous (0 = ignorer)" }, "min": 0, "max": 100000, "placeholder": { "en": "0" } }
+  ],
+  "titleFormatted": {
+    "en": "Hue-style: [[motion_sensor]] turns on [[light]] at [[brightness]]% for [[timeout]] min (lux < [[lux_threshold]])",
+    "fr": "Style Hue : [[motion_sensor]] allume [[light]] à [[brightness]]% pour [[timeout]] min (lux < [[lux_threshold]])"
+  }
+}

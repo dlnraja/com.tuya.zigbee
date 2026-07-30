@@ -1,0 +1,24 @@
+{
+  "id": "hue_wakeup",
+  "title": {
+    "en": "Wake-up routine (sunrise simulation)",
+    "fr": "Routine réveil (simulation d'aube)",
+    "nl": "Wekroutine (zonsopgangsimulatie)",
+    "de": "Aufwachroutine (Sonnenaufgangssimulation)"
+  },
+  "hint": {
+    "en": "Gradually raises the light brightness from 1% to the target over the chosen duration, then holds",
+    "fr": "Monte progressivement la luminosité de 1% à la cible sur la durée choisie, puis maintient",
+    "nl": "Verhoogt de helderheid geleidelijk van 1% naar het doel gedurende de gekozen duur",
+    "de": "Erhöht die Helligkeit schrittweise von 1% auf das Ziel über die gewählte Dauer"
+  },
+  "args": [
+    { "type": "device", "name": "light", "title": { "en": "Light", "fr": "Lumière" } },
+    { "type": "number", "name": "duration", "title": { "en": "Duration (min)", "fr": "Durée (min)" }, "min": 1, "max": 60, "placeholder": { "en": "15" } },
+    { "type": "number", "name": "target", "title": { "en": "Target brightness (%)", "fr": "Luminosité cible (%)" }, "min": 10, "max": 100, "placeholder": { "en": "100" } }
+  ],
+  "titleFormatted": {
+    "en": "Wake-up: ramp [[light]] to [[target]]% over [[duration]] min",
+    "fr": "Réveil : monter [[light]] à [[target]]% sur [[duration]] min"
+  }
+}

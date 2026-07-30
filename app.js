@@ -411,6 +411,14 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
       this.error('⚠️ Presence flow cards failed (non-critical):', err.message);
     }
 
+    // v5.12.38: Hue-style smart features (motion lighting, circadian, wake-up)
+    try {
+      this._registerHueStyleFlowCards();
+      this.log('✅ Hue-style flow cards registered');
+    } catch (err) {
+      this.error('⚠️ Hue-style flow cards failed (non-critical):', err.message);
+    }
+
     // v9.1.0: Initialize feature modules and register their flow cards
     try {
       this.solarElevation = new SolarElevation({ homey: this.homey, logger: this.log.bind(this) });
@@ -533,6 +541,104 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
   getErrorTranslator() { return this.errorTranslator; }
   getConfigValidator() { return this.configValidator; }
   getDPRegistry() { return this.dpRegistry; }
+
+  // ═══════════════════════════════════════════════════════════════════════════
+  // v5.12.38: HUE-STYLE SMART FEATURES (backport 9.0.376)
+  // Motion-activated lighting, circadian curve, wake-up sunrise simulation.
+  // ═══════════════════════════════════════════════════════════════════════════
+
+  async _hueSetLight(light, { onoff, dim, temperature } = {}) {
+    const set = async (cap, value) => {
+      if (value === undefined || !light.hasCapability?.(cap)) {return;}
+      const safe = light.safeSetCapabilityValue?.bind(light);
+      if (safe) {await safe(cap, value).catch(() => {});}
+      else {await light.setCapabilityValue?.(cap, value).catch(() => {});}
+    };
+    if (onoff !== undefined) {await set('onoff', onoff);}
+    if (dim !== undefined) {await set('dim', dim);}
+    if (temperature !== undefined) {await set('light_temperature', temperature);}
+  }
+
+  _hueCircadianCurve(date = new Date()) {
+    // light_temperature Homey: 0 = froid (6500K), 1 = chaud (2200K)
+    const h = date.getHours() + date.getMinutes() / 60;
+    if (h < 5) {return { dim: 0.1, temperature: 1.0 };}
+    if (h < 7) {return { dim: 0.3, temperature: 0.85 };}
+    if (h < 9) {return { dim: 0.6, temperature: 0.6 };}
+    if (h < 12) {return { dim: 0.9, temperature: 0.3 };}
+    if (h < 15) {return { dim: 1.0, temperature: 0.15 };}
+    if (h < 18) {return { dim: 0.85, temperature: 0.35 };}
+    if (h < 20) {return { dim: 0.6, temperature: 0.65 };}
+    if (h < 22) {return { dim: 0.35, temperature: 0.9 };}
+    return { dim: 0.15, temperature: 1.0 };
+  }
+
+  _registerHueStyleFlowCards() {
+    // ── Éclairage activé par mouvement ───────────────────────────────────────
+    this.homey.flow.getActionCard('hue_motion_lighting')
+      .registerRunListener(async (args) => {
+        const { motion_sensor: sensor, light, brightness = 80, timeout = 5, lux_threshold = 0 } = args;
+        if (!sensor || !light) {return false;}
+
+        if (lux_threshold > 0 && sensor.hasCapability?.('measure_luminance')) {
+          const lux = sensor.getCapabilityValue?.('measure_luminance');
+          if (typeof lux === 'number' && lux >= lux_threshold) {
+            this.log(`[HUE] Motion ignoré: lux ${lux} >= ${lux_threshold}`);
+            return false;
+          }
+        }
+        if (sensor.hasCapability?.('alarm_motion')) {
+          const motion = sensor.getCapabilityValue?.('alarm_motion');
+          if (motion === false) {return false;}
+        }
+
+        await this._hueSetLight(light, { onoff: true, dim: Math.max(1, Math.min(100, brightness)) / 100 });
+        this.log(`[HUE] Motion lighting: ${light.getName?.()} ON à ${brightness}%`);
+
+        this.homey.clearTimeout?.(light._hueMotionTimer);
+        light._hueMotionTimer = this.homey.setTimeout(async () => {
+          await this._hueSetLight(light, { onoff: false });
+          this.log(`[HUE] Motion lighting: ${light.getName?.()} OFF après ${timeout} min`);
+        }, Math.max(1, timeout) * 60 * 1000);
+        return true;
+      });
+
+    // ── Éclairage circadien ──────────────────────────────────────────────────
+    this.homey.flow.getActionCard('hue_circadian_apply')
+      .registerRunListener(async (args) => {
+        const { light } = args;
+        if (!light) {return false;}
+        const curve = this._hueCircadianCurve();
+        await this._hueSetLight(light, { onoff: true, dim: curve.dim, temperature: curve.temperature });
+        this.log(`[HUE] Circadien appliqué à ${light.getName?.()}: dim=${curve.dim} temp=${curve.temperature}`);
+        return true;
+      });
+
+    // ── Routine réveil (simulation d'aube) ───────────────────────────────────
+    this.homey.flow.getActionCard('hue_wakeup')
+      .registerRunListener(async (args) => {
+        const { light, duration = 15, target = 100 } = args;
+        if (!light) {return false;}
+        const steps = Math.max(5, Math.min(30, duration));
+        const stepMs = (duration * 60 * 1000) / steps;
+        const targetDim = Math.max(10, Math.min(100, target)) / 100;
+        this.homey.clearInterval?.(light._hueWakeupTimer);
+        let step = 0;
+        await this._hueSetLight(light, { onoff: true, dim: 0.01 });
+        light._hueWakeupTimer = this.homey.setInterval(async () => {
+          step++;
+          const dim = Math.min(targetDim, 0.01 + (targetDim - 0.01) * (step / steps));
+          await this._hueSetLight(light, { dim: Math.round(dim * 100) / 100 });
+          if (step >= steps) {
+            this.homey.clearInterval?.(light._hueWakeupTimer);
+            light._hueWakeupTimer = null;
+            this.log(`[HUE] Réveil terminé sur ${light.getName?.()}: ${targetDim * 100}%`);
+          }
+        }, stepMs);
+        this.log(`[HUE] Réveil démarré sur ${light.getName?.()}: ${steps} pas × ${Math.round(stepMs / 1000)}s`);
+        return true;
+      });
+  }
 
   /**
    * v9.1.0: Register app-level flow card listeners for Virtual Presence Detection.

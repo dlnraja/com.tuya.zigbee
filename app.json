@@ -1,7 +1,7 @@
 {
   "_comment": "Generated from .homeycompose/app.json. STABLE channel — only bug fixes applied.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.12.37",
+  "version": "5.12.38",
   "compatibility": ">=12.2.0",
   "platforms": [
     "local"
@@ -83168,6 +83168,166 @@
         ],
         "titleFormatted": {
           "en": "Run health prediction [[device]]"
+        }
+      },
+      {
+        "id": "hue_circadian_apply",
+        "title": {
+          "en": "Apply circadian lighting (Hue-style)",
+          "fr": "Appliquer l'éclairage circadien (style Hue)",
+          "nl": "Circadiaanse verlichting toepassen (Hue-stijl)",
+          "de": "Circadiane Beleuchtung anwenden (Hue-Stil)"
+        },
+        "hint": {
+          "en": "Computes color temperature and brightness from the time of day (warm-dim morning, cool-bright noon, warm-dim evening) and applies it to the light",
+          "fr": "Calcule température de couleur et luminosité selon l'heure (chaud-faible le matin, froid-fort à midi, chaud-faible le soir) et les applique à la lumière",
+          "nl": "Berekent kleurtemperatuur en helderheid op basis van het tijdstip en past ze toe",
+          "de": "Berechnet Farbtemperatur und Helligkeit nach Tageszeit und wendet sie an"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "light",
+            "title": {
+              "en": "Light",
+              "fr": "Lumière"
+            }
+          }
+        ],
+        "titleFormatted": {
+          "en": "Apply circadian curve to [[light]]",
+          "fr": "Appliquer la courbe circadienne à [[light]]"
+        }
+      },
+      {
+        "id": "hue_motion_lighting",
+        "title": {
+          "en": "Motion-activated lighting (Hue-style)",
+          "fr": "Éclairage activé par mouvement (style Hue)",
+          "nl": "Bewegingsgeactiveerde verlichting (Hue-stijl)",
+          "de": "Bewegungsaktivierte Beleuchtung (Hue-Stil)"
+        },
+        "hint": {
+          "en": "Turn on a light when motion is detected (with lux + time guards), auto-off after timeout without motion",
+          "fr": "Allume une lumière sur mouvement (gardes lux + horaires), extinction auto après un délai sans mouvement",
+          "nl": "Schakel licht in bij beweging (lux- en tijdbeperking), auto-uit na time-out",
+          "de": "Licht bei Bewegung einschalten (Lux- und Zeitgrenzen), Auto-Aus nach Zeitablauf"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "motion_sensor",
+            "title": {
+              "en": "Motion sensor",
+              "fr": "Capteur de mouvement"
+            }
+          },
+          {
+            "type": "device",
+            "name": "light",
+            "title": {
+              "en": "Light",
+              "fr": "Lumière"
+            }
+          },
+          {
+            "type": "number",
+            "name": "brightness",
+            "title": {
+              "en": "Brightness (%)",
+              "fr": "Luminosité (%)"
+            },
+            "min": 1,
+            "max": 100,
+            "placeholder": {
+              "en": "80"
+            }
+          },
+          {
+            "type": "number",
+            "name": "timeout",
+            "title": {
+              "en": "Auto-off after (min)",
+              "fr": "Extinction après (min)"
+            },
+            "min": 1,
+            "max": 120,
+            "placeholder": {
+              "en": "5"
+            }
+          },
+          {
+            "type": "number",
+            "name": "lux_threshold",
+            "title": {
+              "en": "Only if lux below (0 = ignore)",
+              "fr": "Seulement si lux sous (0 = ignorer)"
+            },
+            "min": 0,
+            "max": 100000,
+            "placeholder": {
+              "en": "0"
+            }
+          }
+        ],
+        "titleFormatted": {
+          "en": "Hue-style: [[motion_sensor]] turns on [[light]] at [[brightness]]% for [[timeout]] min (lux < [[lux_threshold]])",
+          "fr": "Style Hue : [[motion_sensor]] allume [[light]] à [[brightness]]% pour [[timeout]] min (lux < [[lux_threshold]])"
+        }
+      },
+      {
+        "id": "hue_wakeup",
+        "title": {
+          "en": "Wake-up routine (sunrise simulation)",
+          "fr": "Routine réveil (simulation d'aube)",
+          "nl": "Wekroutine (zonsopgangsimulatie)",
+          "de": "Aufwachroutine (Sonnenaufgangssimulation)"
+        },
+        "hint": {
+          "en": "Gradually raises the light brightness from 1% to the target over the chosen duration, then holds",
+          "fr": "Monte progressivement la luminosité de 1% à la cible sur la durée choisie, puis maintient",
+          "nl": "Verhoogt de helderheid geleidelijk van 1% naar het doel gedurende de gekozen duur",
+          "de": "Erhöht die Helligkeit schrittweise von 1% auf das Ziel über die gewählte Dauer"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "light",
+            "title": {
+              "en": "Light",
+              "fr": "Lumière"
+            }
+          },
+          {
+            "type": "number",
+            "name": "duration",
+            "title": {
+              "en": "Duration (min)",
+              "fr": "Durée (min)"
+            },
+            "min": 1,
+            "max": 60,
+            "placeholder": {
+              "en": "15"
+            }
+          },
+          {
+            "type": "number",
+            "name": "target",
+            "title": {
+              "en": "Target brightness (%)",
+              "fr": "Luminosité cible (%)"
+            },
+            "min": 10,
+            "max": 100,
+            "placeholder": {
+              "en": "100"
+            }
+          }
+        ],
+        "titleFormatted": {
+          "en": "Wake-up: ramp [[light]] to [[target]]% over [[duration]] min",
+          "fr": "Réveil : monter [[light]] à [[target]]% sur [[duration]] min"
         }
       },
       {
