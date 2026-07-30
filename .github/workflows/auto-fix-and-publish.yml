@@ -33,6 +33,10 @@ env:
   HOMEY_ZIGBEE_MAX_TOTAL_COMBOS: "60000"
   HOMEY_ZIGBEE_MAX_DRIVER_COMBOS: "10000"
 
+concurrency:
+  group: auto-fix-and-publish
+  cancel-in-progress: false
+
 jobs:
   auto-fix:
     runs-on: ubuntu-latest

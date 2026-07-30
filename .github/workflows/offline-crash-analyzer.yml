@@ -32,6 +32,10 @@ permissions:
   contents: read
   models: read  # optional --ai bonus analysis via GH Models
 
+concurrency:
+  group: offline-crash-analyzer
+  cancel-in-progress: false
+
 jobs:
   analyze:
     runs-on: ubuntu-latest

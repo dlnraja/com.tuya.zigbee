@@ -46,6 +46,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: fetch-diags
+  cancel-in-progress: false
+
 jobs:
   fetch-diags:
     runs-on: ubuntu-latest

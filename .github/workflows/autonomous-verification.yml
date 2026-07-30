@@ -23,6 +23,10 @@ on:
 permissions:
   contents: read
 
+concurrency:
+  group: autonomous-verification
+  cancel-in-progress: false
+
 jobs:
   verify:
     name: Run autonomous verification

@@ -18,6 +18,10 @@ on:
 permissions:
   contents: read
 
+concurrency:
+  group: build-error-diag
+  cancel-in-progress: false
+
 jobs:
   diagnose:
     name: 🔍 Extract real build error from dashboard

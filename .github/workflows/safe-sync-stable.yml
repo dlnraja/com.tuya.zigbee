@@ -19,6 +19,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: safe-sync-stable
+  cancel-in-progress: false
+
 jobs:
   safe-sync:
     name: Sync safe changes to stable-v5
