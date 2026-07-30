@@ -1,6 +1,13 @@
 {
   "changelog": [
     {
+      "version": "5.12.36",
+      "date": "2026-07-30",
+      "channel": "stable",
+      "en": "Backport 9.0.373: 7097 case variants (unknown device prevention), compactor case-group budget.",
+      "fr": "Backport 9.0.373 : 7097 variantes de casse (anti unknown device), budget compacteur par groupes."
+    },
+    {
       "version": "5.12.35",
       "date": "2026-07-30",
       "channel": "stable",
