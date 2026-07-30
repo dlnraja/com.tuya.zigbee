@@ -66,5 +66,16 @@ if (conflicts.length) {
   fail(`${conflicts.length} Sacred Couple conflict(s) — mfr revendiqué par plusieurs drivers sans désambiguïsation PID:\n  ${conflicts.slice(0, 10).join('\n  ')}`);
 } else {ok('aucun conflit Sacred Couple hors baseline');}
 
+// 4. i18n: locales complètes + pas de mojibake
+try {
+  const { audit } = require('./locale-completeness');
+  const problems = audit();
+  if (problems.length) {
+    fail(`locales: ${problems.map(p => `${p.locale}(${p.type}${p.count ? ':' + p.count : ''})`).join(', ')}`);
+  } else {ok('locales complètes, aucun mojibake');}
+} catch (e) {
+  console.log('⚠ locale-completeness indisponible:', e.message);
+}
+
 if (failures) {console.error(`\n✗ PR gate: ${failures} échec(s)`); process.exit(1);}
 console.log('\n✓ PR gate: OK');
