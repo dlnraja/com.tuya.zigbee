@@ -70,3 +70,6 @@ orphan_injection_report.json
 historical_mfs.json
 # P74.6: stable-v5 app.json artifact (committed by mistake in master)
 stable_app.json
+# v9.0.380: grosses références build-time only (hors bundle publish)
+data/product-reference.json
+FLOW_CARDS_AUDIT_REPORT.json
