@@ -1426,5 +1426,8 @@
   },
   "9.0.380": {
     "en": "v9.0.379: OTA: real current firmware version read from the basic cluster (swBuildId/appVersion) in the Tuya MCU fallback — fewer false update notifications., Hue-style batch 3: 'dim_to_level' (fade to brightness over time, Lutron-style), 'scene_cycle' (cycle scene slots 1→2→3, IKEA shortcut style)., Publish ."
+  },
+  "9.0.382": {
+    "en": "v9.0.381: chore: alignement version 9.0.381 + changelog [skip ci]"
   }
 }
