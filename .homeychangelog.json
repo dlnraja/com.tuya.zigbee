@@ -1427,7 +1427,36 @@
   "9.0.380": {
     "en": "v9.0.379: OTA: real current firmware version read from the basic cluster (swBuildId/appVersion) in the Tuya MCU fallback — fewer false update notifications., Hue-style batch 3: 'dim_to_level' (fade to brightness over time, Lutron-style), 'scene_cycle' (cycle scene slots 1→2→3, IKEA shortcut style)., Publish ."
   },
-  "9.0.382": {
-    "en": "v9.0.381: chore: alignement version 9.0.381 + changelog [skip ci]"
+  "9.0.381": {
+    "en": "Changelog backticks stripped (publish extractor fix), publish-size bundle excludes product-reference, version alignment.",
+    "fr": "Backticks du changelog retirés (fix extracteur publish), exclusion product-reference du bundle, alignement version."
+  },
+  "9.0.379": {
+    "en": "OTA real firmware version via swBuildId, Hue batch 3 (dim_to_level, scene_cycle), publish -X theirs.",
+    "fr": "OTA version réelle via swBuildId, batch Hue 3 (dim_to_level, scene_cycle), publish -X theirs."
+  },
+  "9.0.375": {
+    "en": "Product reference DB (9027 fingerprints: vendor/model/battery/energy/variants), energy consumption reference for the telemetry estimator, telemetry_is_estimated flow condition, mfs_db gap fix.",
+    "fr": "Base de référence produits (9027 empreintes : vendor/modèle/batterie/énergie/variants), référence de consommation pour l'estimateur, condition de flow telemetry_is_estimated, fix gap mfs_db."
+  },
+  "9.0.373": {
+    "en": "Case-variant completeness (4950 fingerprints, unknown device prevention) + publish compactor counts case groups (0 observed purged).",
+    "fr": "Complétude des casses (4950 empreintes, anti unknown device) + compacteur par groupes de casse (0 purge observée)."
+  },
+  "9.0.371": {
+    "en": "10 drivers fixed at load time (bot-corrupted imports), ZCL measuredValue parsed spec-exactly, new smoke/syntax/dead-module audits.",
+    "fr": "10 drivers corrigés au chargement (imports corrompus par un bot), measuredValue ZCL parsé selon la spec, nouveaux audits smoke/syntaxe/modules morts."
+  },
+  "9.0.369": {
+    "en": "Humidity scaling heuristic (magnitude-based: raw 65/650/6500 all read 65%), temperature rejects impossible values, 33 new parser tests, DeviceFingerprintDB test suite.",
+    "fr": "Heuristique humidité par magnitude (65/650/6500 lus 65%), rejet des températures impossibles, 33 nouveaux tests parsers, suite DeviceFingerprintDB."
+  },
+  "9.0.330": {
+    "en": "P80: +685 issue #439 FPs to generic_tuya, +135 mfrs to 7 orphan drivers (PR #512), enrich-orphan-drivers.js v4 cross-orphan safe",
+    "fr": "P80: +685 issue #439 FPs to generic_tuya, +135 mfrs to 7 orphan drivers (PR #512), enrich-orphan-drivers.js v4 cross-orphan safe"
+  },
+  "9.0.53": {
+    "en": "CRITICAL: sdkVersion fix (Processing failed), Missing Capability Listener (setable:false), timer fallback, battery restore, duplicate method fix, HOBEIAN ZG-301Z, NFKD normalize, 87 fingerprints restored, Polos validator",
+    "fr": "CRITIQUE: sdkVersion (Processing failed), Missing Capability Listener, fallback timer, batterie, HOBEIAN, NFKD, 87 fingerprints, Polos"
   }
 }
