@@ -4,6 +4,17 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
+## [5.12.38] - 2026-07-30
+
+Stability line (branch `stable-v5`, production). Minimal zero-regression backports from master 9.0.376.
+
+### Added
+- Hue-style smart features (3 flow action cards): `hue_motion_lighting`
+  (motion + lux guard + auto-off), `hue_circadian_apply` (time-of-day color
+  temperature/brightness curve), `hue_wakeup` (sunrise brightness ramp).
+
+---
+
 ## [5.12.37] - 2026-07-30
 
 Stability line (branch `stable-v5`, production). Minimal zero-regression backports from master 9.0.375.

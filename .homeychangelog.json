@@ -1,6 +1,13 @@
 {
   "changelog": [
     {
+      "version": "5.12.38",
+      "date": "2026-07-30",
+      "channel": "stable",
+      "en": "Backport 9.0.376: Hue-style motion lighting, circadian apply, wake-up ramp flow cards.",
+      "fr": "Backport 9.0.376 : éclairage sur mouvement, circadien, rampe réveil style Hue."
+    },
+    {
       "version": "5.12.37",
       "date": "2026-07-30",
       "channel": "stable",
