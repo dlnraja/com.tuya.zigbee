@@ -4,6 +4,19 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
+## [5.12.35] - 2026-07-30
+
+Stability line (branch `stable-v5`, production). Minimal zero-regression backports from master 9.0.371.
+
+### Bug Fixes
+- 10 drivers broken at load time (bot-introduced corruption): bare `require()`
+  without assignment (8 drivers), `constrequire` typo, undefined `cap` shorthand.
+  All 431 drivers verified loading cleanly (`tools/ci/drivers-smoke-test.js`).
+- Coherence: ZCL `measuredValue` now parsed spec-exactly (0.01 units) instead of
+  the duplicated ad-hoc divisor heuristic.
+
+---
+
 ## [5.12.34] - 2026-07-30
 
 Stability line (branch `stable-v5`, production). Minimal zero-regression backports from master 9.0.369.

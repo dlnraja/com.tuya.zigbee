@@ -1,6 +1,6 @@
 'use strict';
 // A8: NaN Safety - use safeDivide/safeMultiply
-  constrequire('../../lib/ewelink-local/EweLinkLocalDevice');
+const EweLinkLocalDevice = require('../../lib/ewelink-local/EweLinkLocalDevice');
 class D extends EweLinkLocalDevice{
   get stateMappings(){return{
     switch:{capability:'onoff',transform:v=>v==='on'},

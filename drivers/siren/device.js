@@ -3,7 +3,7 @@ const { safeParse } = require('../../lib/utils/tuyaUtils.js');
 const { boolean } = require('../../lib/converters/ValueConverterRegistry');
 
 // A8: NaN Safety - use safeDivide/safeMultiply
-  require('../../lib/devices/UnifiedPlugBase');
+const UnifiedPlugBase = require('../../lib/devices/UnifiedPlugBase');
 
 /**
  * 
