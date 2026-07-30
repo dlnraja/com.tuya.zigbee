@@ -1,6 +1,13 @@
 {
   "changelog": [
     {
+      "version": "5.12.40",
+      "date": "2026-07-30",
+      "channel": "stable",
+      "en": "Fingerprint integrity: 17 routes aligned with composes; flow arg duration renamed ramp_minutes.",
+      "fr": "Intégrité empreintes : 17 routes alignées avec les composes ; arg duration renommé ramp_minutes."
+    },
+    {
       "version": "5.12.39",
       "date": "2026-07-30",
       "channel": "stable",
