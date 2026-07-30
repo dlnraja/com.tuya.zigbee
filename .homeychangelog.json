@@ -1372,5 +1372,8 @@
   },
   "9.0.374": {
     "en": "v9.0.373: Unknown device prevention (case), Publish compactor, Added `_TZE204_kwi6bbk4` (ZHA source) to climate_sensor earlier this session."
+  },
+  "9.0.376": {
+    "en": "v9.0.375: Product reference database, Energy consumption reference, Flow condition `telemetry_is_estimated`, Fixed mfs_db routing gap: `_TZE284_hodyryli` was missing entirely."
   }
 }
