@@ -4,7 +4,7 @@
 [![Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdlnraja%2Fcom.tuya.zigbee%2Fmaster%2Fapp.json&query=%24.version&label=version&color=blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![Fingerprints](https://img.shields.io/badge/fingerprints-10,616+-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![Drivers](https://img.shields.io/badge/drivers-431-brightgreen)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
-[![Flow Cards](https://img.shields.io/badge/flow%20cards-4,846-blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
+[![Flow Cards](https://img.shields.io/badge/flow%20cards-4,847-blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![SDK](https://img.shields.io/badge/SDK-3-orange)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![License](https://img.shields.io/badge/license-MIT-green)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/LICENSE)
 [![Homey](https://img.shields.io/badge/Homey-Pro-blueviolet)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
@@ -15,7 +15,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 - **Local-only** — everything runs on your Homey, nothing goes to the cloud
 - **Hybrid mode** — auto-detects whether a device speaks Tuya DP or standard ZCL
 - **Smart battery** — voltage-based fallback when devices don't report percentage
-- **4,846+ flow cards** — triggers, conditions & actions in EN, FR, NL, DE
+- **4,847+ flow cards** — triggers, conditions & actions in EN, FR, NL, DE
 - **SDK3** — built on the latest Homey platform
 
 ---
@@ -34,11 +34,11 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.374 |
+| **App Version** | v9.0.376 |
 | **Device Fingerprints** | 10,616+ |
 | **Unique Product IDs** | 571 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
-| **Flow Cards** | 4,846 |
+| **Flow Cards** | 4,847 |
 | **Unique Capabilities** | 170 |
 | **SVG Icons** | 731 |
 | **Languages** | EN, FR, NL, DE |
@@ -102,6 +102,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 | Version | Changes |
 |---------|---------|
 | **vchangelog** | [object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object  |
+| **v9.0.376** | v9.0.375: Product reference database, Energy consumption reference, Flow condition `telemetry_is_estimated`, Fixed mf... |
 | **v9.0.374** | v9.0.373: Unknown device prevention (case), Publish compactor, Added `_TZE204_kwi6bbk4` (ZHA source) to climate_senso... |
 | **v9.0.372** | v9.0.371: 10 drivers were broken at load time, `UniversalTuyaParser` fixed earlier (37 undefined `capability` shortha... |
 | **v9.0.370** | v9.0.369: `AdaptiveDataParser.toHumidity`: magnitude-based scaling (≤100 = percent, ≤1000 = ×10, else ×100). The old ... |
@@ -115,7 +116,6 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 | **v9.0.358** | Stability improvements and Homey test publication retry after transient processing failure. |
 | **v9.0.357** | Stability improvements and Homey test publication retry after transient processing failure. |
 | **v9.0.356** | Stability improvements and Homey test publication retry after transient processing failure. |
-| **v9.0.355** | Stability improvements and Homey test publication retry after transient processing failure. |
 
 <!-- CHANGELOG_END -->
 
