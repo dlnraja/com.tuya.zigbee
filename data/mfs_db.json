@@ -144945,8 +144945,8 @@
     "modelIdsCount": 28
   },
   "_TZE200_FJJBHX9D": {
-    "driverId": "climate_sensor",
-    "source": "auto-sync",
+    "driverId": "wall_switch_5_gang_tuya",
+    "source": "bidir-fix-2026-07-30",
     "modelIds": [
       "01MINIZB",
       "BASICZBR3",
