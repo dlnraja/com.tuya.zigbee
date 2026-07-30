@@ -1,7 +1,7 @@
 {
   "_comment": "Generated from .homeycompose/app.json. STABLE channel — only bug fixes applied.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.12.41",
+  "version": "5.12.42",
   "compatibility": ">=12.2.0",
   "platforms": [
     "local"
@@ -83096,6 +83096,59 @@
         }
       },
       {
+        "id": "dim_to_level",
+        "title": {
+          "en": "Fade to brightness over time",
+          "fr": "Fondu vers une luminosité sur une durée",
+          "nl": "Fade naar helderheid over tijd",
+          "de": "Über Zeit auf Helligkeit dimmen"
+        },
+        "hint": {
+          "en": "Gradually fades the light from its current brightness to the target over the chosen duration",
+          "fr": "Fait passer progressivement la lumière de sa luminosité actuelle à la cible sur la durée choisie"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "light",
+            "title": {
+              "en": "Light",
+              "fr": "Lumière"
+            }
+          },
+          {
+            "type": "number",
+            "name": "target",
+            "title": {
+              "en": "Target brightness (%)",
+              "fr": "Luminosité cible (%)"
+            },
+            "min": 0,
+            "max": 100,
+            "placeholder": {
+              "en": "50"
+            }
+          },
+          {
+            "type": "number",
+            "name": "ramp_minutes",
+            "title": {
+              "en": "Duration (min)",
+              "fr": "Durée (min)"
+            },
+            "min": 0,
+            "max": 120,
+            "placeholder": {
+              "en": "5"
+            }
+          }
+        ],
+        "titleFormatted": {
+          "en": "Fade [[light]] to [[target]]% over [[ramp_minutes]] min",
+          "fr": "Fondu de [[light]] vers [[target]]% sur [[ramp_minutes]] min"
+        }
+      },
+      {
         "id": "energy_export_data",
         "title": {
           "en": "Export energy data"
@@ -83759,6 +83812,46 @@
         "titleFormatted": {
           "en": "Capture [[light]] state into scene slot [[slot]]",
           "fr": "Capturer l'état de [[light]] dans le slot [[slot]]"
+        }
+      },
+      {
+        "id": "scene_cycle",
+        "title": {
+          "en": "Cycle to next scene (IKEA shortcut style)",
+          "fr": "Scène suivante (style bouton IKEA)",
+          "nl": "Volgende scène (IKEA-sneltoets-stijl)",
+          "de": "Nächste Szene (IKEA-Shortcut-Stil)"
+        },
+        "hint": {
+          "en": "Applies the next captured scene slot (1→2→3→1…) — like the IKEA shortcut button",
+          "fr": "Applique le slot de scène suivant (1→2→3→1…) — comme le bouton raccourci IKEA"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "light",
+            "title": {
+              "en": "Light",
+              "fr": "Lumière"
+            }
+          },
+          {
+            "type": "number",
+            "name": "slots",
+            "title": {
+              "en": "Number of slots (1-5)",
+              "fr": "Nombre de slots (1-5)"
+            },
+            "min": 1,
+            "max": 5,
+            "placeholder": {
+              "en": "3"
+            }
+          }
+        ],
+        "titleFormatted": {
+          "en": "Cycle [[light]] to next scene ([[slots]] slots)",
+          "fr": "Scène suivante de [[light]] ([[slots]] slots)"
         }
       },
       {
