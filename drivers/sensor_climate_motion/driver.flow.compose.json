@@ -66,14 +66,14 @@
         "en": "Tamper alarm triggered",
         "fr": "Alarme anti-sabotage déclenchée",
         "nl": "Sabotage alarm geactiveerd",
-        "de": "Manipulationsalarm ausgelÃ¶st"
+        "de": "Manipulationsalarm ausgelöst"
       },
       "args": [],
       "titleFormatted": {
         "en": "Tamper alarm triggered",
         "fr": "Alarme anti-sabotage déclenchée",
         "nl": "Sabotage alarm geactiveerd",
-        "de": "Manipulationsalarm ausgelÃ¶st"
+        "de": "Manipulationsalarm ausgelöst"
       }
     },
     {
@@ -98,13 +98,13 @@
         "en": "Luminance changed",
         "fr": "Luminance changée",
         "nl": "Lichtsterkte veranderd",
-        "de": "Helligkeit geÃ¤ndert"
+        "de": "Helligkeit geändert"
       },
       "hint": {
         "en": "This card triggers when the luminance sensor reports a new value, independent of motion detection",
         "fr": "Cette carte se déclenche quand le capteur de luminance rapporte une nouvelle valeur, indépendamment de la détection de mouvement",
         "nl": "Deze kaart wordt geactiveerd wanneer de lichtsensor een nieuwe waarde rapporteert, onafhankelijk van bewegingsdetectie",
-        "de": "Diese Karte wird ausgelÃ¶st, wenn der Helligkeitssensor einen neuen Wert meldet, unabhÃ¤ngig von der Bewegungserkennung"
+        "de": "Diese Karte wird ausgelöst, wenn der Helligkeitssensor einen neuen Wert meldet, unabhängig von der Bewegungserkennung"
       },
       "tokens": [
         {
@@ -135,7 +135,7 @@
         "en": "Luminance changed",
         "fr": "Luminance changée",
         "nl": "Lichtsterkte veranderd",
-        "de": "Helligkeit geÃ¤ndert"
+        "de": "Helligkeit geändert"
       }
     },
     {

@@ -225,7 +225,7 @@
       "type": "dropdown",
       "label": {
         "en": "Energy Optimization Mode",
-        "fr": "Mode Optimisation Ã‰nergétique"
+        "fr": "Mode Optimisation Énergétique"
       },
       "value": "balanced",
       "values": [
@@ -240,20 +240,20 @@
           "id": "balanced",
           "label": {
             "en": "Balanced",
-            "fr": "Ã‰quilibré"
+            "fr": "Équilibré"
           }
         },
         {
           "id": "power_saving",
           "label": {
             "en": "Power Saving (Longer battery)",
-            "fr": "Ã‰conomie d'énergie (Batterie plus longue)"
+            "fr": "Économie d'énergie (Batterie plus longue)"
           }
         }
       ],
       "hint": {
         "en": "Balance between responsiveness and battery life",
-        "fr": "Ã‰quilibre entre réactivité et durée de vie de la batterie"
+        "fr": "Équilibre entre réactivité et durée de vie de la batterie"
       }
     },
     {
@@ -354,7 +354,7 @@
       "id": "ota_check",
       "title": {
         "en": "Check Zigbee OTA Update",
-        "fr": "Vérifier MÃJ OTA",
+        "fr": "Vérifier MàJ OTA",
         "nl": "Controleer op OTA-updates"
       }
     }

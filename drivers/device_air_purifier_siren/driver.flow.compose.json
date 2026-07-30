@@ -13,7 +13,7 @@
         "en": "Triggers when the siren starts sounding",
         "nl": "Triggert wanneer de sirene begint te loeien",
         "fr": "Se déclenche quand la sirène commence àsonner",
-        "de": "Wird ausgelÃ¶st, wenn die Sirene zu tÃ¶nen beginnt"
+        "de": "Wird ausgelöst, wenn die Sirene zu tönen beginnt"
       },
       "args": [],
       "titleFormatted": {
@@ -28,20 +28,20 @@
       "title": {
         "en": "Siren stopped",
         "nl": "Sirene gestopt",
-        "fr": "Sirène arrÃªtée",
+        "fr": "Sirène arrêtée",
         "de": "Sirene gestoppt"
       },
       "hint": {
         "en": "Triggers when the siren stops sounding",
         "nl": "Triggert wanneer de sirene stopt met loeien",
-        "fr": "Se déclenche quand la sirène arrÃªte de sonner",
-        "de": "Wird ausgelÃ¶st, wenn die Sirene aufhÃ¶rt zu tÃ¶nen"
+        "fr": "Se déclenche quand la sirène arrête de sonner",
+        "de": "Wird ausgelöst, wenn die Sirene aufhört zu tönen"
       },
       "args": [],
       "titleFormatted": {
         "en": "Siren stopped",
         "nl": "Sirene gestopt",
-        "fr": "Sirène arrÃªtée",
+        "fr": "Sirène arrêtée",
         "de": "Sirene gestoppt"
       }
     },
@@ -81,14 +81,14 @@
       "id": "device_air_purifier_siren_turned_off",
       "title": {
         "en": "Turned off",
-        "fr": "Ã‰teint",
+        "fr": "Éteint",
         "nl": "Uitgezet",
         "de": "Ausgeschaltet"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turned off",
-        "fr": "Ã‰teint",
+        "fr": "Éteint",
         "nl": "Uitgezet",
         "de": "Ausgeschaltet"
       }
@@ -117,14 +117,14 @@
         "en": "Siren !{{is|is not}} sounding",
         "nl": "Sirene !{{loeit|loeit niet}}",
         "fr": "Sirène !{{sonne|ne sonne pas}}",
-        "de": "Sirene !{{tÃ¶nt|tÃ¶nt nicht}}"
+        "de": "Sirene !{{tönt|tönt nicht}}"
       },
       "args": [],
       "titleFormatted": {
         "en": "Siren !{{is|is not}} sounding",
         "nl": "Sirene !{{loeit|loeit niet}}",
         "fr": "Sirène !{{sonne|ne sonne pas}}",
-        "de": "Sirene !{{tÃ¶nt|tÃ¶nt nicht}}"
+        "de": "Sirene !{{tönt|tönt nicht}}"
       }
     },
     {
@@ -199,7 +199,7 @@
         "en": "Set volume",
         "nl": "Volume instellen",
         "fr": "Régler le volume",
-        "de": "LautstÃ¤rke einstellen"
+        "de": "Lautstärke einstellen"
       },
       "args": [
         {
@@ -209,7 +209,7 @@
             "en": "Volume level",
             "nl": "Volumeniveau",
             "fr": "Niveau de volume",
-            "de": "LautstÃ¤rkestufe"
+            "de": "Lautstärkestufe"
           },
           "values": [
             {
@@ -246,7 +246,7 @@
         "en": "Set volume [[volume]]",
         "nl": "Volume instellen [[volume]]",
         "fr": "Régler le volume [[volume]]",
-        "de": "LautstÃ¤rke einstellen [[volume]]"
+        "de": "Lautstärke einstellen [[volume]]"
       }
     },
     {
@@ -309,8 +309,8 @@
             {
               "id": "1",
               "title": {
-                "en": "FÃ¼r Elise",
-                "fr": "Pour Ã‰lise"
+                "en": "Für Elise",
+                "fr": "Pour Élise"
               }
             },
             {
@@ -408,7 +408,7 @@
               "id": "15",
               "title": {
                 "en": "Evacuation Bell",
-                "fr": "Cloche Ã‰vacuation"
+                "fr": "Cloche Évacuation"
               }
             },
             {

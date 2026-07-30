@@ -20,14 +20,14 @@
       "id": "air_purifier_lcdtemphumidsensor_air_purifier_f6b7a",
       "title": {
         "en": "Turned off",
-        "fr": "Ã‰teint",
+        "fr": "Éteint",
         "nl": "Uitgezet",
         "de": "Ausgeschaltet"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turned off",
-        "fr": "Ã‰teint",
+        "fr": "Éteint",
         "nl": "Uitgezet",
         "de": "Ausgeschaltet"
       }
@@ -38,14 +38,14 @@
         "en": "PM2.5 changed",
         "fr": "PM2.5 changé",
         "nl": "PM2.5 gewijzigd",
-        "de": "PM2.5 geÃ¤ndert"
+        "de": "PM2.5 geändert"
       },
       "tokens": [
         {
           "name": "pm25",
           "type": "number",
           "title": {
-            "en": "PM2.5 (Âµg/mÂ³)"
+            "en": "PM2.5 (µg/m³)"
           },
           "example": 35
         }
@@ -55,7 +55,7 @@
         "en": "PM2.5 changed",
         "fr": "PM2.5 changé",
         "nl": "PM2.5 gewijzigd",
-        "de": "PM2.5 geÃ¤ndert"
+        "de": "PM2.5 geändert"
       }
     }
   ],
@@ -98,14 +98,14 @@
       "id": "air_purifier_lcdtemphumidsensor_air_purifier_6d7d1",
       "title": {
         "en": "Turn off",
-        "fr": "Ã‰teindre",
+        "fr": "Éteindre",
         "nl": "Uitzetten",
         "de": "Ausschalten"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turn off",
-        "fr": "Ã‰teindre",
+        "fr": "Éteindre",
         "nl": "Uitzetten",
         "de": "Ausschalten"
       }

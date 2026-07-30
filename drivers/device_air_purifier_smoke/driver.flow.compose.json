@@ -12,8 +12,8 @@
       "hint": {
         "en": "Triggers when smoke is detected - CRITICAL SAFETY ALERT",
         "nl": "Triggert wanneer rook wordt gedetecteerd - KRITIEKE VEILIGHEIDSMELDING",
-        "fr": "Se déclenche quand de la fumée est détectée - ALERTE DE SÃ‰CURITÃ‰ CRITIQUE",
-        "de": "Wird ausgelÃ¶st, wenn Rauch erkannt wird - KRITISCHE SICHERHEITSWARNUNG"
+        "fr": "Se déclenche quand de la fumée est détectée - ALERTE DE SÉCURITÉ CRITIQUE",
+        "de": "Wird ausgelöst, wenn Rauch erkannt wird - KRITISCHE SICHERHEITSWARNUNG"
       },
       "args": [],
       "titleFormatted": {
@@ -35,7 +35,7 @@
         "en": "Triggers when smoke is no longer detected",
         "nl": "Triggert wanneer er geen rook meer wordt gedetecteerd",
         "fr": "Se déclenche quand la fumée n'est plus détectée",
-        "de": "Wird ausgelÃ¶st, wenn kein Rauch mehr erkannt wird"
+        "de": "Wird ausgelöst, wenn kein Rauch mehr erkannt wird"
       },
       "args": [],
       "titleFormatted": {
@@ -57,7 +57,7 @@
         "en": "Triggers when the detector has been tampered with",
         "nl": "Triggert wanneer er met de detector is geknoeid",
         "fr": "Se déclenche quand le détecteur a été saboté",
-        "de": "Wird ausgelÃ¶st, wenn der Melder manipuliert wurde"
+        "de": "Wird ausgelöst, wenn der Melder manipuliert wurde"
       },
       "args": [],
       "titleFormatted": {
@@ -78,8 +78,8 @@
       "hint": {
         "en": "Triggers when battery drops below threshold - Replace battery soon!",
         "nl": "Triggert wanneer de batterij onder de drempel zakt - Vervang binnenkort de batterij!",
-        "fr": "Se déclenche quand la batterie passe sous le seuil - Remplacez la batterie bientÃ´t !",
-        "de": "Wird ausgelÃ¶st, wenn die Batterie unter den Schwellenwert fÃ¤llt - Batterie bald ersetzen!"
+        "fr": "Se déclenche quand la batterie passe sous le seuil - Remplacez la batterie bientôt !",
+        "de": "Wird ausgelöst, wenn die Batterie unter den Schwellenwert fällt - Batterie bald ersetzen!"
       },
       "args": [],
       "titleFormatted": {
@@ -95,20 +95,20 @@
         "en": "Test button pressed",
         "nl": "Testknop ingedrukt",
         "fr": "Bouton test pressé",
-        "de": "Testtaste gedrÃ¼ckt"
+        "de": "Testtaste gedrückt"
       },
       "hint": {
         "en": "Triggers when the test button is pressed on the detector",
         "nl": "Triggert wanneer de testknop op de detector wordt ingedrukt",
         "fr": "Se déclenche quand le bouton test est pressé sur le détecteur",
-        "de": "Wird ausgelÃ¶st, wenn die Testtaste am Melder gedrÃ¼ckt wird"
+        "de": "Wird ausgelöst, wenn die Testtaste am Melder gedrückt wird"
       },
       "args": [],
       "titleFormatted": {
         "en": "Test button pressed",
         "nl": "Testknop ingedrukt",
         "fr": "Bouton test pressé",
-        "de": "Testtaste gedrÃ¼ckt"
+        "de": "Testtaste gedrückt"
       }
     },
     {
@@ -133,14 +133,14 @@
         "en": "Temperature changed",
         "fr": "Température changée",
         "nl": "Temperatuur gewijzigd",
-        "de": "Temperatur geÃ¤ndert"
+        "de": "Temperatur geändert"
       },
       "args": [],
       "titleFormatted": {
         "en": "Temperature changed",
         "fr": "Température changée",
         "nl": "Temperatuur gewijzigd",
-        "de": "Temperatur geÃ¤ndert"
+        "de": "Temperatur geändert"
       }
     },
     {
@@ -149,14 +149,14 @@
         "en": "Humidity changed",
         "fr": "Humidité changée",
         "nl": "Vochtigheid gewijzigd",
-        "de": "Feuchtigkeit geÃ¤ndert"
+        "de": "Feuchtigkeit geändert"
       },
       "args": [],
       "titleFormatted": {
         "en": "Humidity changed",
         "fr": "Humidité changée",
         "nl": "Vochtigheid gewijzigd",
-        "de": "Feuchtigkeit geÃ¤ndert"
+        "de": "Feuchtigkeit geändert"
       }
     },
     {
@@ -199,7 +199,7 @@
         "en": "Battery !{{is|is not}} above",
         "nl": "Batterij !{{is|is niet}} boven",
         "fr": "Batterie !{{est|n'est pas}} au-dessus de",
-        "de": "Batterie !{{ist|ist nicht}} Ã¼ber"
+        "de": "Batterie !{{ist|ist nicht}} über"
       },
       "args": [
         {
@@ -217,7 +217,7 @@
         "en": "Battery !{{is|is not}} above [[threshold]]",
         "nl": "Batterij !{{is|is niet}} boven [[threshold]]",
         "fr": "Batterie !{{est|n'est pas}} au-dessus de [[threshold]]",
-        "de": "Batterie !{{ist|ist nicht}} Ã¼ber [[threshold]]"
+        "de": "Batterie !{{ist|ist nicht}} über [[threshold]]"
       }
     },
     {
@@ -266,7 +266,7 @@
         "en": "Triggers a test on the smoke detector (if supported by device)",
         "nl": "Start een test op de rookmelder (indien ondersteund door apparaat)",
         "fr": "Déclenche un test sur le détecteur de fumée (si supporté par l'appareil)",
-        "de": "LÃ¶st einen Test am Rauchmelder aus (falls vom GerÃ¤t unterstÃ¼tzt)"
+        "de": "Löst einen Test am Rauchmelder aus (falls vom Gerät unterstützt)"
       },
       "args": [],
       "titleFormatted": {

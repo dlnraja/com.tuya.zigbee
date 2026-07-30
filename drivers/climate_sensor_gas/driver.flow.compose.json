@@ -13,7 +13,7 @@
         "en": "Triggers when combustible gas is detected - evacuate immediately!",
         "nl": "Triggert wanneer brandbaar gas wordt gedetecteerd - evacueer onmiddellijk!",
         "fr": "Se déclenche quand du gaz combustible est détecté - évacuez immédiatement !",
-        "de": "Wird ausgelÃ¶st, wenn brennbares Gas erkannt wird - sofort evakuieren!"
+        "de": "Wird ausgelöst, wenn brennbares Gas erkannt wird - sofort evakuieren!"
       },
       "args": [],
       "titleFormatted": {
@@ -52,7 +52,7 @@
         "en": "Triggers when CO is detected - evacuate immediately!",
         "nl": "Triggert wanneer CO wordt gedetecteerd - evacueer onmiddellijk!",
         "fr": "Se déclenche quand du CO est détecté - évacuez immédiatement !",
-        "de": "Wird ausgelÃ¶st, wenn CO erkannt wird - sofort evakuieren!"
+        "de": "Wird ausgelöst, wenn CO erkannt wird - sofort evakuieren!"
       },
       "args": [],
       "titleFormatted": {
@@ -100,7 +100,7 @@
         "en": "Battery level changed",
         "nl": "Batterijniveau veranderd",
         "fr": "Niveau batterie changé",
-        "de": "Batteriestand geÃ¤ndert"
+        "de": "Batteriestand geändert"
       },
       "tokens": [
         {
@@ -120,7 +120,7 @@
         "en": "Battery level changed",
         "nl": "Batterijniveau veranderd",
         "fr": "Niveau batterie changé",
-        "de": "Batteriestand geÃ¤ndert"
+        "de": "Batteriestand geändert"
       }
     },
     {

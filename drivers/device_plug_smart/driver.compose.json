@@ -233,7 +233,7 @@
       "type": "dropdown",
       "label": {
         "en": "Energy Optimization Mode",
-        "fr": "Mode Optimisation Ã‰nergétique"
+        "fr": "Mode Optimisation Énergétique"
       },
       "value": "balanced",
       "values": [
@@ -248,20 +248,20 @@
           "id": "balanced",
           "label": {
             "en": "Balanced",
-            "fr": "Ã‰quilibré"
+            "fr": "Équilibré"
           }
         },
         {
           "id": "power_saving",
           "label": {
             "en": "Power Saving (Longer battery)",
-            "fr": "Ã‰conomie d'énergie (Batterie plus longue)"
+            "fr": "Économie d'énergie (Batterie plus longue)"
           }
         }
       ],
       "hint": {
         "en": "Balance between responsiveness and battery life",
-        "fr": "Ã‰quilibre entre réactivité et durée de vie de la batterie"
+        "fr": "Équilibre entre réactivité et durée de vie de la batterie"
       }
     },
     {
@@ -282,57 +282,57 @@
       "type": "dropdown",
       "label": {
         "en": "Power Measurement Scale",
-        "fr": "Ã‰chelle Mesure Puissance"
+        "fr": "Échelle Mesure Puissance"
       },
       "value": "1",
       "values": [
         {
           "id": "0.001",
           "label": {
-            "en": "Ã·1000 (mW  W)",
-            "fr": "Ã·1000 (mW  W)"
+            "en": "÷1000 (mW  W)",
+            "fr": "÷1000 (mW  W)"
           }
         },
         {
           "id": "0.01",
           "label": {
-            "en": "Ã·100",
-            "fr": "Ã·100"
+            "en": "÷100",
+            "fr": "÷100"
           }
         },
         {
           "id": "0.1",
           "label": {
-            "en": "Ã·10",
-            "fr": "Ã·10"
+            "en": "÷10",
+            "fr": "÷10"
           }
         },
         {
           "id": "1",
           "label": {
-            "en": "Ã—1 (Default)",
-            "fr": "Ã—1 (Par défaut)"
+            "en": "×1 (Default)",
+            "fr": "×1 (Par défaut)"
           }
         },
         {
           "id": "10",
           "label": {
-            "en": "Ã—10",
-            "fr": "Ã—10"
+            "en": "×10",
+            "fr": "×10"
           }
         },
         {
           "id": "100",
           "label": {
-            "en": "Ã—100",
-            "fr": "Ã—100"
+            "en": "×100",
+            "fr": "×100"
           }
         },
         {
           "id": "1000",
           "label": {
-            "en": "Ã—1000 (kW  W)",
-            "fr": "Ã—1000 (kW  W)"
+            "en": "×1000 (kW  W)",
+            "fr": "×1000 (kW  W)"
           }
         }
       ],
@@ -346,56 +346,56 @@
       "type": "dropdown",
       "label": {
         "en": "Energy Measurement Scale",
-        "fr": "Ã‰chelle Mesure Ã‰nergie"
+        "fr": "Échelle Mesure Énergie"
       },
       "value": "1",
       "values": [
         {
           "id": "0.001",
           "label": {
-            "en": "Ã·1000 (Wh  kWh)",
-            "fr": "Ã·1000 (Wh  kWh)"
+            "en": "÷1000 (Wh  kWh)",
+            "fr": "÷1000 (Wh  kWh)"
           }
         },
         {
           "id": "0.01",
           "label": {
-            "en": "Ã·100",
-            "fr": "Ã·100"
+            "en": "÷100",
+            "fr": "÷100"
           }
         },
         {
           "id": "0.1",
           "label": {
-            "en": "Ã·10",
-            "fr": "Ã·10"
+            "en": "÷10",
+            "fr": "÷10"
           }
         },
         {
           "id": "1",
           "label": {
-            "en": "Ã—1 (Default)",
-            "fr": "Ã—1 (Par défaut)"
+            "en": "×1 (Default)",
+            "fr": "×1 (Par défaut)"
           }
         },
         {
           "id": "10",
           "label": {
-            "en": "Ã—10",
-            "fr": "Ã—10"
+            "en": "×10",
+            "fr": "×10"
           }
         },
         {
           "id": "100",
           "label": {
-            "en": "Ã—100",
-            "fr": "Ã—100"
+            "en": "×100",
+            "fr": "×100"
           }
         }
       ],
       "hint": {
         "en": "Adjust if energy readings are way off (e.g., Christmas bulb more expensive than whole house).",
-        "fr": "Ajuster si les mesures d'énergie sont incorrectes (ex: ampoule NoÃ«l plus chère que toute la maison)."
+        "fr": "Ajuster si les mesures d'énergie sont incorrectes (ex: ampoule Noël plus chère que toute la maison)."
       }
     },
     {
@@ -421,22 +421,22 @@
             {
               "id": "0.1",
               "label": {
-                "en": "Ã·10",
-                "nl": "Ã·10"
+                "en": "÷10",
+                "nl": "÷10"
               }
             },
             {
               "id": "1",
               "label": {
-                "en": "Ã—1 (no scaling)",
-                "nl": "Ã—1 (geen schaling)"
+                "en": "×1 (no scaling)",
+                "nl": "×1 (geen schaling)"
               }
             },
             {
               "id": "10",
               "label": {
-                "en": "Ã—10",
-                "nl": "Ã—10"
+                "en": "×10",
+                "nl": "×10"
               }
             }
           ]
@@ -457,29 +457,29 @@
             {
               "id": "0.01",
               "label": {
-                "en": "Ã·100",
-                "nl": "Ã·100"
+                "en": "÷100",
+                "nl": "÷100"
               }
             },
             {
               "id": "0.1",
               "label": {
-                "en": "Ã·10 (default)",
-                "nl": "Ã·10 (standaard)"
+                "en": "÷10 (default)",
+                "nl": "÷10 (standaard)"
               }
             },
             {
               "id": "1",
               "label": {
-                "en": "Ã—1 (no scaling)",
-                "nl": "Ã—1 (geen schaling)"
+                "en": "×1 (no scaling)",
+                "nl": "×1 (geen schaling)"
               }
             },
             {
               "id": "10",
               "label": {
-                "en": "Ã—10",
-                "nl": "Ã—10"
+                "en": "×10",
+                "nl": "×10"
               }
             }
           ]
@@ -500,29 +500,29 @@
             {
               "id": "0.001",
               "label": {
-                "en": "Ã·1000 (mAA)",
-                "nl": "Ã·1000 (mAA)"
+                "en": "÷1000 (mAA)",
+                "nl": "÷1000 (mAA)"
               }
             },
             {
               "id": "0.01",
               "label": {
-                "en": "Ã·100",
-                "nl": "Ã·100"
+                "en": "÷100",
+                "nl": "÷100"
               }
             },
             {
               "id": "0.1",
               "label": {
-                "en": "Ã·10",
-                "nl": "Ã·10"
+                "en": "÷10",
+                "nl": "÷10"
               }
             },
             {
               "id": "1",
               "label": {
-                "en": "Ã—1",
-                "nl": "Ã—1"
+                "en": "×1",
+                "nl": "×1"
               }
             }
           ]
@@ -674,7 +674,7 @@
       "id": "ota_check",
       "title": {
         "en": "Check Zigbee OTA Update",
-        "fr": "Vérifier MÃJ OTA",
+        "fr": "Vérifier MàJ OTA",
         "nl": "Controleer op OTA-updates"
       }
     }

@@ -36,6 +36,21 @@ describe('i18n completeness (v9.0.368)', () => {
     walk(path.join(ROOT, '.homeycompose'));
     assert.deepStrictEqual(broken, [], broken.join(', '));
   });
+
+  it('no mojibake in drivers compose/flow JSON', function () {
+    if (typeof this.timeout === 'function') {this.timeout(60000);}
+    const broken = [];
+    for (const d of fs.readdirSync(path.join(ROOT, 'drivers'))) {
+      const dir = path.join(ROOT, 'drivers', d);
+      if (!fs.statSync(dir).isDirectory()) {continue;}
+      for (const f of fs.readdirSync(dir)) {
+        if (!f.endsWith('.json')) {continue;}
+        const p = path.join(dir, f);
+        if (MOJIBAKE.test(fs.readFileSync(p, 'utf8'))) {broken.push(p);}
+      }
+    }
+    assert.deepStrictEqual(broken, [], broken.slice(0, 10).join(', '));
+  });
 });
 
 describe('driver ↔ mfs_db coherence', () => {

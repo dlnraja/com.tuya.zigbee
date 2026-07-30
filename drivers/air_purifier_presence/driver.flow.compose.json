@@ -12,8 +12,8 @@
       "hint": {
         "en": "Triggers when the mmWave radar detects human presence (even stationary)",
         "nl": "Triggert wanneer de mmWave radar menselijke aanwezigheid detecteert (zelfs stilstaand)",
-        "fr": "Se déclenche quand le radar mmWave détecte une présence humaine (mÃªme immobile)",
-        "de": "Wird ausgelÃ¶st, wenn der mmWave-Radar menschliche Anwesenheit erkennt (auch stationÃ¤r)"
+        "fr": "Se déclenche quand le radar mmWave détecte une présence humaine (même immobile)",
+        "de": "Wird ausgelöst, wenn der mmWave-Radar menschliche Anwesenheit erkennt (auch stationär)"
       },
       "args": [],
       "titleFormatted": {
@@ -35,7 +35,7 @@
         "en": "Triggers when no human presence is detected for the configured timeout",
         "nl": "Triggert wanneer geen menselijke aanwezigheid wordt gedetecteerd gedurende de geconfigureerde timeout",
         "fr": "Se déclenche quand aucune présence humaine n'est détectée pendant le délai configuré",
-        "de": "Wird ausgelÃ¶st, wenn fÃ¼r die konfigurierte ZeitÃ¼berschreitung keine menschliche Anwesenheit erkannt wird"
+        "de": "Wird ausgelöst, wenn für die konfigurierte Zeitüberschreitung keine menschliche Anwesenheit erkannt wird"
       },
       "args": [],
       "titleFormatted": {
@@ -57,7 +57,7 @@
         "en": "Triggers when active motion is detected (walking, moving)",
         "nl": "Triggert wanneer actieve beweging wordt gedetecteerd (lopen, bewegen)",
         "fr": "Se déclenche quand un mouvement actif est détecté (marche, mouvement)",
-        "de": "Wird ausgelÃ¶st, wenn aktive Bewegung erkannt wird (Gehen, Bewegen)"
+        "de": "Wird ausgelöst, wenn aktive Bewegung erkannt wird (Gehen, Bewegen)"
       },
       "args": [],
       "titleFormatted": {
@@ -73,7 +73,7 @@
         "en": "Illuminance changed",
         "nl": "Lichtsterkte veranderd",
         "fr": "Luminosité changée",
-        "de": "Helligkeit geÃ¤ndert"
+        "de": "Helligkeit geändert"
       },
       "tokens": [
         {
@@ -93,7 +93,7 @@
         "en": "Illuminance changed",
         "nl": "Lichtsterkte veranderd",
         "fr": "Luminosité changée",
-        "de": "Helligkeit geÃ¤ndert"
+        "de": "Helligkeit geändert"
       }
     },
     {
@@ -102,7 +102,7 @@
         "en": "Detection distance changed",
         "nl": "Detectieafstand veranderd",
         "fr": "Distance de détection changée",
-        "de": "Erkennungsabstand geÃ¤ndert"
+        "de": "Erkennungsabstand geändert"
       },
       "tokens": [
         {
@@ -122,7 +122,7 @@
         "en": "Detection distance changed",
         "nl": "Detectieafstand veranderd",
         "fr": "Distance de détection changée",
-        "de": "Erkennungsabstand geÃ¤ndert"
+        "de": "Erkennungsabstand geändert"
       }
     },
     {
@@ -131,14 +131,14 @@
         "en": "Luminance changed",
         "fr": "Luminance changée",
         "nl": "Lichtsterkte gewijzigd",
-        "de": "Helligkeit geÃ¤ndert"
+        "de": "Helligkeit geändert"
       },
       "args": [],
       "titleFormatted": {
         "en": "Luminance changed",
         "fr": "Luminance changée",
         "nl": "Lichtsterkte gewijzigd",
-        "de": "Helligkeit geÃ¤ndert"
+        "de": "Helligkeit geändert"
       }
     },
     {
@@ -181,7 +181,7 @@
         "en": "Illuminance !{{is|is not}} above",
         "nl": "Lichtsterkte !{{is|is niet}} boven",
         "fr": "Luminosité !{{est|n'est pas}} au-dessus de",
-        "de": "Helligkeit !{{ist|ist nicht}} Ã¼ber"
+        "de": "Helligkeit !{{ist|ist nicht}} über"
       },
       "args": [
         {
@@ -199,7 +199,7 @@
         "en": "Illuminance !{{is|is not}} above [[lux]]",
         "nl": "Lichtsterkte !{{is|is niet}} boven [[lux]]",
         "fr": "Luminosité !{{est|n'est pas}} au-dessus de [[lux]]",
-        "de": "Helligkeit !{{ist|ist nicht}} Ã¼ber [[lux]]"
+        "de": "Helligkeit !{{ist|ist nicht}} über [[lux]]"
       }
     },
     {

@@ -20,14 +20,14 @@
       "id": "climate_sensor_switch_1gang_turned_off",
       "title": {
         "en": "Turned off",
-        "fr": "Ã‰teint",
+        "fr": "Éteint",
         "nl": "Uitgezet",
         "de": "Ausgeschaltet"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turned off",
-        "fr": "Ã‰teint",
+        "fr": "Éteint",
         "nl": "Uitgezet",
         "de": "Ausgeschaltet"
       }
@@ -200,14 +200,14 @@
         "en": "Power changed",
         "fr": "Puissance changée",
         "nl": "Vermogen gewijzigd",
-        "de": "Leistung geÃ¤ndert"
+        "de": "Leistung geändert"
       },
       "args": [],
       "titleFormatted": {
         "en": "Power changed",
         "fr": "Puissance changée",
         "nl": "Vermogen gewijzigd",
-        "de": "Leistung geÃ¤ndert"
+        "de": "Leistung geändert"
       }
     },
     {
@@ -272,14 +272,14 @@
       "id": "climate_sensor_switch_1gang_turn_off",
       "title": {
         "en": "Turn off",
-        "fr": "Ã‰teindre",
+        "fr": "Éteindre",
         "nl": "Uitzetten",
         "de": "Ausschalten"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turn off",
-        "fr": "Ã‰teindre",
+        "fr": "Éteindre",
         "nl": "Uitzetten",
         "de": "Ausschalten"
       }
@@ -316,7 +316,7 @@
       },
       "hint": {
         "en": "Control the switch LED indicator (DP15)",
-        "fr": "ContrÃ´le l'indicateur LED (DP15)",
+        "fr": "Contrôle l'indicateur LED (DP15)",
         "nl": "Beheer de LED indicator (DP15)",
         "de": "Steuert die LED-Anzeige (DP15)"
       },
@@ -332,7 +332,7 @@
               "id": "off",
               "title": {
                 "en": "Off",
-                "fr": "Ã‰teint",
+                "fr": "Éteint",
                 "nl": "Uit",
                 "de": "Aus"
               }
@@ -377,7 +377,7 @@
         "en": "Set LED color for ON or OFF state (DP103/104, requires colored backlight)",
         "fr": "Définir couleur LED pour état ON/OFF (DP103/104)",
         "nl": "Stel LED kleur in voor AAN/UIT (DP103/104)",
-        "de": "LED-Farbe fÃ¼r EIN/AUS setzen (DP103/104)"
+        "de": "LED-Farbe für EIN/AUS setzen (DP103/104)"
       },
       "args": [
         {
@@ -391,7 +391,7 @@
               "id": "on",
               "title": {
                 "en": "ON state",
-                "fr": "Ã‰tat ON",
+                "fr": "État ON",
                 "nl": "AAN staat",
                 "de": "EIN-Zustand"
               }
@@ -400,7 +400,7 @@
               "id": "off",
               "title": {
                 "en": "OFF state",
-                "fr": "Ã‰tat OFF",
+                "fr": "État OFF",
                 "nl": "UIT staat",
                 "de": "AUS-Zustand"
               }
@@ -438,7 +438,7 @@
                 "en": "Green",
                 "fr": "Vert",
                 "nl": "Groen",
-                "de": "GrÃ¼n"
+                "de": "Grün"
               }
             },
             {
@@ -447,7 +447,7 @@
                 "en": "White",
                 "fr": "Blanc",
                 "nl": "Wit",
-                "de": "WeiÃŸ"
+                "de": "Weiß"
               }
             },
             {
@@ -483,7 +483,7 @@
                 "en": "Warm White",
                 "fr": "Blanc Chaud",
                 "nl": "Warm Wit",
-                "de": "WarmweiÃŸ"
+                "de": "Warmweiß"
               }
             },
             {
