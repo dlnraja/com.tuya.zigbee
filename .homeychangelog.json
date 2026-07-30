@@ -1019,5 +1019,81 @@
   "5.12.13": {
     "en": "P77 + P78: battery/button enrichment analysis tools (3 new tools). P29.7 temporal-monitor refreshed. 137/137 stable tests passing. 431 drivers, 5712 fingerprints, 0 new collisions.",
     "fr": "P77 + P78: outils analyse enrichissement batteries/boutons (3 nouveaux outils). P29.7 temporal-monitor rafraîchi. 137/137 tests stable passants. 431 drivers, 5712 fingerprints, 0 collision."
+  },
+  "5.12.43": {
+    "en": "OTA flash guidance, Hue batch 4 (cover_set_position, hue_all_off).",
+    "fr": "Guidance flash OTA, batch Hue 4 (cover_set_position, hue_all_off)."
+  },
+  "5.12.42": {
+    "en": "Backport 9.0.379: OTA swBuildId real version, Hue batch 3.",
+    "fr": "Backport 9.0.379 : OTA version réelle swBuildId, batch Hue 3."
+  },
+  "5.12.41": {
+    "en": "Backport 9.0.378: OTA overhaul + Hue batch 2 (sleep, scenes, DND).",
+    "fr": "Backport 9.0.378 : refonte OTA + batch Hue 2 (coucher, scènes, DND)."
+  },
+  "5.12.40": {
+    "en": "Fingerprint integrity: 17 routes aligned with composes; flow arg duration renamed ramp_minutes.",
+    "fr": "Intégrité empreintes : 17 routes alignées avec les composes ; arg duration renommé ramp_minutes."
+  },
+  "5.12.39": {
+    "en": "Backport 9.0.377: temperature compensation inversion fix + battery/button test suites.",
+    "fr": "Backport 9.0.377 : inversion compensation température corrigée + suites de tests batterie/boutons."
+  },
+  "5.12.38": {
+    "en": "Backport 9.0.376: Hue-style motion lighting, circadian apply, wake-up ramp flow cards.",
+    "fr": "Backport 9.0.376 : éclairage sur mouvement, circadien, rampe réveil style Hue."
+  },
+  "5.12.37": {
+    "en": "Backport 9.0.375: product reference DB, energy consumption reference, telemetry_is_estimated condition.",
+    "fr": "Backport 9.0.375 : base de référence produits, référence de consommation, condition telemetry_is_estimated."
+  },
+  "5.12.36": {
+    "en": "Backport 9.0.373: 7097 case variants (unknown device prevention), compactor case-group budget.",
+    "fr": "Backport 9.0.373 : 7097 variantes de casse (anti unknown device), budget compacteur par groupes."
+  },
+  "5.12.35": {
+    "en": "Backport 9.0.371: 10 driver load-time fixes, ZCL spec-exact measuredValue parsing.",
+    "fr": "Backport 9.0.371 : 10 drivers corrigés au chargement, parsing ZCL conforme à la spec."
+  },
+  "5.12.34": {
+    "en": "Backport 9.0.369: humidity magnitude scaling, temperature null-on-impossible, new parser test suites.",
+    "fr": "Backport 9.0.369 : scaling humidité par magnitude, température null si impossible, nouvelles suites de tests parsers."
+  },
+  "5.12.33": {
+    "en": "Backports: fingerprints _TZ3000_flonmact (#183) and _TZE200_9xfjixapv (#395) re-added; IAS enrollment hardened (no zero CIE address, deferred retries for sleepy devices); natural_light flow filter fixed (ghost driver).",
+    "fr": "Backports : empreintes _TZ3000_flonmact (#183) et _TZE200_9xfjixapv (#395) ré-ajoutées ; enrôlement IAS durci (pas d'adresse CIE nulle, retries différés pour appareils endormis) ; filtre flow natural_light corrigé (driver fantôme)."
+  },
+  "5.12.32": {
+    "en": "Battery estimation: 0-50 scale doubling restricted to curated manufacturers; SOS button battery smart normalization + ZCL 100mV voltage units; SOS button.1 capability listener.",
+    "fr": "Estimation batterie : doublement échelle 0-50 restreint aux fabricants curés ; batterie SOS normalisée + unités voltage ZCL 100mV ; listener capability button.1 SOS."
+  },
+  "5.12.31": {
+    "en": "Smart scaling engine: prefix resolution for sub-capabilities, self-validating divisor cache, vvmbj46n battery 0-50→0-100%, smallest plausible divisor in ProductValueValidator.",
+    "fr": "Scaling intelligent : résolution par préfixe des sub-capabilities, cache diviseur auto-validant, batterie vvmbj46n 0-50→0-100%, plus petit diviseur plausible dans ProductValueValidator."
+  },
+  "5.12.30": {
+    "en": "External probe (DP38) temperature 10x too low fixed (issue #513): SmartDivisorManager knows measure_temperature.probe. Publish-blocking -stable version suffix fixed.",
+    "fr": "Sonde externe (DP38) 10x trop basse corrigée (issue #513) : SmartDivisorManager connaît measure_temperature.probe. Suffixe de version -stable bloquant le publish corrigé."
+  },
+  "5.12.29": {
+    "en": "Stable-v5 stability backports from master: fixed broken onDeleted() chain (issue #513, guarded super.onDeleted() in 5 classes), added 37 _destroyed guards across 29 files to prevent crashes after device deletion, P52 sync of safe changes. Minimal, zero-regression production line.",
+    "fr": "Stable-v5 stability backports from master: fixed broken onDeleted() chain (issue #513, guarded super.onDeleted() in 5 classes), added 37 _destroyed guards across 29 files to prevent crashes after device deletion, P52 sync of safe changes. Minimal, zero-regression production line."
+  },
+  "5.12.16": {
+    "en": "P82-stable: TuyaNormalizer v10.0.0 ULTIMATE - case-insensitive matching library (NFKD + accents + multi-PID + variants + scoring) synced from master. Fixes potential #513-style issues on stable.",
+    "fr": "P82-stable: TuyaNormalizer v10.0.0 ULTIMATE - case-insensitive matching library (NFKD + accents + multi-PID + variants + scoring) synced from master. Fixes potential #513-style issues on stable."
+  },
+  "5.12.15": {
+    "en": "P80-stable-fix: revert 5 orphan drivers creating 35+ Sacred Couple collisions on stable (switch_1gang catch-all has more mfrs than master). Kept issue #439 FPs (685) + flood_sensor + temphumidsensor5 + led_controller_rgb + relay_board_4_channel + switch_usb_dongle. 0 new collisions.",
+    "fr": "P80-stable-fix: revert 5 orphan drivers creating 35+ Sacred Couple collisions on stable (switch_1gang catch-all has more mfrs than master). Kept issue #439 FPs (685) + flood_sensor + temphumidsensor5 + led_controller_rgb + relay_board_4_channel + switch_usb_dongle. 0 new collisions."
+  },
+  "5.12.14": {
+    "en": "P80-stable: treat issue #439 (+685 generic_tuya FPs) + PR #512 orphan enrichment (+135 mfrs v4, +147 mfrs v7). 0 new Sacred Couple collisions.",
+    "fr": "P80-stable: treat issue #439 (+685 generic_tuya FPs) + PR #512 orphan enrichment (+135 mfrs v4, +147 mfrs v7). 0 new Sacred Couple collisions."
+  },
+  "9.0.53": {
+    "en": "CRITICAL: sdkVersion fix (Processing failed), Missing Capability Listener (setable:false), timer fallback, battery restore, duplicate method fix, HOBEIAN ZG-301Z, NFKD normalize, 87 fingerprints restored, Polos validator",
+    "fr": "CRITIQUE: sdkVersion (Processing failed), Missing Capability Listener, fallback timer, batterie, HOBEIAN, NFKD, 87 fingerprints, Polos"
   }
 }
