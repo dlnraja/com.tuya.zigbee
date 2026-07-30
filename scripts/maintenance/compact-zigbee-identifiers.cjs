@@ -2,20 +2,45 @@
 'use strict';
 
 /**
- * Publish-only Zigbee identifier compactor.
+ * Publish-only Zigbee identifier compactor (evidence-prioritized).
  *
  * Athom expands manufacturerName x productId for each Zigbee driver while
  * processing a build. Broad catch-all drivers can create tens of thousands of
  * combinations and inflate the upload payload. Keep source manifests complete,
  * but cap the generated publish manifest.
+ *
+ * When data/mfs_db.json (observed real-world devices) is available, compaction
+ * is prioritized instead of order-blind:
+ *   1. productIds are first reduced to the ones actually observed with the
+ *      driver's manufacturers in mfs_db (never emptied);
+ *   2. manufacturers are kept by priority: (a) observed in mfs_db, sorted by
+ *      confidence desc, then (b) speculative ones in original order;
+ *   3. an observed manufacturer is never dropped while a speculative one is
+ *      kept — observed are only cut when the budget cannot hold them all;
+ *   4. drivers whose manufacturers are all synthetic (or missing) are rescued
+ *      with real manufacturers pointing at them in mfs_db (driverHint /
+ *      driverMapping / top-level driverId) instead of being dropped.
+ *
+ * Without mfs_db.json the legacy order-based truncation applies unchanged.
  */
 
 const fs = require('fs');
 const path = require('path');
 
-const DEFAULT_MAX_DRIVER_COMBOS = 500;
+// Legacy budgets (no mfs_db available): historical behavior.
+const DEFAULT_MAX_DRIVER_COMBOS = 350;
 const DEFAULT_MAX_TOTAL_COMBOS = 20000;
-const SYNTHETIC_MANUFACTURER_RE = /unknown|dummy|placeholder|needs_device_assignment|^_generic_|^_GENERIC_|^_hybrid_|^_HYBRID_|^_master_|^_MASTER_/;
+// Prioritized budgets (mfs_db available): sized so that every observed
+// manufacturer survives — measured 2026-07-28: 31 capped drivers keep all
+// 3.7k observed mfrs at ~31.4k total combos and a 3.3 MB app.json.
+const PRIORITIZED_MAX_DRIVER_COMBOS = 10000;
+const PRIORITIZED_MAX_TOTAL_COMBOS = 60000;
+// Above this per-driver combo count (and only when mfs_db is available),
+// productIds are reduced to the ones actually observed with the driver's
+// manufacturers — this shrinks the cross-product without losing any real pair.
+const DEFAULT_PID_REDUCE_OVER = 350;
+const SYNTHETIC_MANUFACTURER_RE = /unknown|dummy|placeholder|needs_device_assignment|needs_exact_fingerprint|migrated_to|^_generic_|^_GENERIC_|^_hybrid_|^_HYBRID_|^_master_|^_MASTER_|^_disabled_|^_DISABLED_/;
+const MFS_DB_META_KEYS = new Set(['_meta', 'sources', 'devices', 'driverMapping', 'stats', 'diff']);
 
 function uniqStrings(values) {
   const out = [];
@@ -42,15 +67,139 @@ function isSyntheticManufacturer(value) {
   return typeof value === 'string' && SYNTHETIC_MANUFACTURER_RE.test(value);
 }
 
+function defaultMfsDbPath() {
+  return path.join(__dirname, '..', '..', 'data', 'mfs_db.json');
+}
+
+/**
+ * Load and index data/mfs_db.json. Returns null (with a warning) when the
+ * file is missing or unreadable — callers then fall back to legacy behavior.
+ * Index shape: {
+ *   byMfr: Map<lowerMfr, { manufacturerId, modelIds, confidence }>,
+ *   byDriver: Map<driverId, Set<lowerMfr>>,
+ * }
+ */
+function loadMfsDatabase(dbPath) {
+  const file = dbPath || process.env.HOMEY_MFS_DB_PATH || defaultMfsDbPath();
+  let raw;
+  try {
+    raw = JSON.parse(fs.readFileSync(file, 'utf8'));
+  } catch (e) {
+    console.warn(`[compact] mfs_db unavailable at ${file} (${e.code || e.message}) — falling back to order-based truncation`);
+    return null;
+  }
+  return indexMfsDatabase(raw, file);
+}
+
+function indexMfsDatabase(raw, file) {
+  const byMfr = new Map();
+  const byDriver = new Map();
+  const addDriverLink = (driverId, lowerMfr) => {
+    if (!driverId) return;
+    let set = byDriver.get(driverId);
+    if (!set) {
+      set = new Set();
+      byDriver.set(driverId, set);
+    }
+    set.add(lowerMfr);
+  };
+
+  // Primary source: devices object (carries confidence + driverHint).
+  for (const [key, info] of Object.entries(raw.devices || {})) {
+    if (!info || typeof info !== 'object') continue;
+    const lower = String(info.manufacturerId || key).toLowerCase();
+    byMfr.set(lower, {
+      manufacturerId: info.manufacturerId || key,
+      modelIds: uniqStrings(info.modelIds),
+      confidence: typeof info.confidence === 'number' ? info.confidence : 0,
+    });
+    addDriverLink(info.driverHint, lower);
+  }
+
+  // Secondary source: driverMapping { driverId: { manufacturerIds: [] } }.
+  for (const [driverId, mapping] of Object.entries(raw.driverMapping || {})) {
+    for (const mfr of uniqStrings(mapping && mapping.manufacturerIds)) {
+      addDriverLink(driverId, mfr.toLowerCase());
+    }
+  }
+
+  // Tertiary source: top-level mfr keys ({ driverId, modelIds, source }).
+  for (const [key, info] of Object.entries(raw)) {
+    if (MFS_DB_META_KEYS.has(key) || !info || typeof info !== 'object') continue;
+    const lower = key.toLowerCase();
+    if (!byMfr.has(lower)) {
+      byMfr.set(lower, {
+        manufacturerId: key,
+        modelIds: uniqStrings(info.modelIds),
+        confidence: 0,
+      });
+    }
+    addDriverLink(info.driverId, lower);
+  }
+
+  return { byMfr, byDriver, path: file };
+}
+
+/**
+ * Real manufacturers pointing at a driver in mfs_db, best first.
+ */
+function rescueCandidates(db, driverId) {
+  const linked = db.byDriver.get(driverId);
+  if (!linked || linked.size === 0) return [];
+  const out = [];
+  for (const lower of linked) {
+    const info = db.byMfr.get(lower);
+    if (!info) continue; // linked via driverMapping but unknown device entry
+    if (isSyntheticManufacturer(info.manufacturerId)) continue;
+    out.push(info);
+  }
+  out.sort((a, b) => b.confidence - a.confidence);
+  return out;
+}
+
 function compactZigbeeIdentifiers(manifest, opts = {}) {
-  const maxDriverCombos = Number(opts.maxDriverCombos || process.env.HOMEY_ZIGBEE_MAX_DRIVER_COMBOS || DEFAULT_MAX_DRIVER_COMBOS);
-  const maxTotalCombos = Number(opts.maxTotalCombos || process.env.HOMEY_ZIGBEE_MAX_TOTAL_COMBOS || DEFAULT_MAX_TOTAL_COMBOS);
+  let db;
+  if (Object.prototype.hasOwnProperty.call(opts, 'mfsDb')) {
+    // Accept either an indexed db ({ byMfr, byDriver }) or raw mfs_db JSON.
+    db = opts.mfsDb && !(opts.mfsDb.byMfr instanceof Map)
+      ? indexMfsDatabase(opts.mfsDb)
+      : opts.mfsDb;
+  } else {
+    db = loadMfsDatabase(opts.mfsDbPath);
+  }
+  const hasDb = !!(db && db.byMfr && db.byMfr.size > 0);
+  const maxDriverCombos = Number(
+    opts.maxDriverCombos
+    || process.env.HOMEY_ZIGBEE_MAX_DRIVER_COMBOS
+    || (hasDb ? PRIORITIZED_MAX_DRIVER_COMBOS : DEFAULT_MAX_DRIVER_COMBOS),
+  );
+  const maxTotalCombos = Number(
+    opts.maxTotalCombos
+    || process.env.HOMEY_ZIGBEE_MAX_TOTAL_COMBOS
+    || (hasDb ? PRIORITIZED_MAX_TOTAL_COMBOS : DEFAULT_MAX_TOTAL_COMBOS),
+  );
   const pruneSynthetic = opts.pruneSynthetic !== false && process.env.HOMEY_ZIGBEE_PRUNE_SYNTHETIC !== '0';
+  const pidReduceOver = hasDb
+    ? Number(
+      opts.pidReduceOver !== undefined
+        ? opts.pidReduceOver
+        : (process.env.HOMEY_ZIGBEE_PID_REDUCE_OVER !== undefined
+          ? process.env.HOMEY_ZIGBEE_PID_REDUCE_OVER
+          : DEFAULT_PID_REDUCE_OVER),
+    )
+    : Infinity;
+  const verbose = opts.verbose === true || process.env.COMPACT_VERBOSE === '1';
+
   const changes = [];
   const prunedDrivers = [];
+  const rescuedDrivers = [];
+  const observedDropped = [];
+  const logLines = [];
   let beforeTotal = 0;
   let afterTotal = 0;
   let filteredSyntheticManufacturers = 0;
+  let observedBefore = 0;
+  let observedKept = 0;
 
   const nextDrivers = [];
 
@@ -61,7 +210,7 @@ function compactZigbeeIdentifiers(manifest, opts = {}) {
     }
 
     let manufacturers = uniqStrings(driver.zigbee.manufacturerName);
-    const products = uniqStrings(driver.zigbee.productId);
+    let products = uniqStrings(driver.zigbee.productId);
     const before = manufacturers.length * products.length;
     beforeTotal += before;
 
@@ -71,55 +220,200 @@ function compactZigbeeIdentifiers(manifest, opts = {}) {
       filteredSyntheticManufacturers += syntheticCount;
 
       if (realManufacturers.length === 0) {
-        prunedDrivers.push({
-          id: driver.id,
-          manufacturers: manufacturers.length,
-          products: products.length,
-          reason: manufacturers.length === 0 ? 'missing-manufacturer' : 'synthetic-manufacturer',
-        });
-        continue;
-      }
-
-      if (syntheticCount > 0) {
-        driver.zigbee.manufacturerName = realManufacturers;
+        // All manufacturers synthetic (or none): before dropping the driver,
+        // re-attach real manufacturers that mfs_db maps to it.
+        const rescue = hasDb ? rescueCandidates(db, driver.id) : [];
+        if (rescue.length > 0) {
+          manufacturers = rescue.map(info => info.manufacturerId);
+          if (products.length === 0) {
+            products = uniqStrings(rescue.flatMap(info => info.modelIds));
+          }
+          if (products.length === 0) {
+            prunedDrivers.push({
+              id: driver.id,
+              manufacturers: rescue.length,
+              products: 0,
+              reason: 'missing-product',
+              rescue: 'no-observed-product-id',
+            });
+            logLines.push(`[compact] pruned ${driver.id}: missing-product (rescued ${rescue.length} mfr(s) but no observed productId)`);
+            continue;
+          }
+          rescuedDrivers.push({ id: driver.id, manufacturers: manufacturers.length });
+        } else {
+          const reason = manufacturers.length === 0 ? 'missing-manufacturer' : 'synthetic-manufacturer';
+          prunedDrivers.push({
+            id: driver.id,
+            manufacturers: manufacturers.length,
+            products: products.length,
+            reason,
+            rescue: hasDb ? 'no-mfs-db-match' : 'no-mfs-db',
+          });
+          logLines.push(`[compact] pruned ${driver.id}: ${reason} (${hasDb ? 'no mfs_db match' : 'mfs_db unavailable'}), mfr=${manufacturers.length}, product=${products.length}`);
+          continue;
+        }
+      } else if (syntheticCount > 0) {
         manufacturers = realManufacturers;
       }
     }
 
-    const candidate = manufacturers.length * products.length;
-    if (candidate > maxDriverCombos && manufacturers.length > 0 && products.length > 0) {
-      let nextManufacturers = manufacturers;
-      let nextProducts = products;
+    // Classify manufacturers by evidence.
+    // v9.0.373: case-variant groups — both cases of the same fingerprint are
+    // the SAME device: they count once for budget purposes and are never
+    // split (drop or keep all variants of a group together).
+    const variantGroups = new Map(); // lowercaseKey -> [variants in original order]
+    for (const v of manufacturers) {
+      const k = v.toLowerCase();
+      if (!variantGroups.has(k)) {variantGroups.set(k, []);}
+      variantGroups.get(k).push(v);
+    }
 
-      if (products.length > maxDriverCombos) {
+    let observed = [];
+    let speculative = manufacturers;
+    let observedKeys = [];
+    let speculativeKeys = [];
+    if (hasDb) {
+      observed = manufacturers
+        .filter(value => db.byMfr.has(value.toLowerCase()))
+        .sort((a, b) => db.byMfr.get(b.toLowerCase()).confidence - db.byMfr.get(a.toLowerCase()).confidence);
+      speculative = manufacturers.filter(value => !db.byMfr.has(value.toLowerCase()));
+      observedKeys = [...variantGroups.keys()]
+        .filter(k => db.byMfr.has(k))
+        .sort((a, b) => db.byMfr.get(b).confidence - db.byMfr.get(a).confidence);
+      speculativeKeys = [...variantGroups.keys()].filter(k => !db.byMfr.has(k));
+    }
+    observedBefore += observed.length;
+
+    // 1) Reduce productIds to the ones actually observed with the driver's
+    //    manufacturers in mfs_db. Applies above a low threshold so that broad
+    //    drivers stop inflating the total combination count; the productId
+    //    list is never emptied (fallback: original list).
+    let nextProducts = products;
+    if (hasDb && observed.length > 0 && products.length > 0
+        && variantGroups.size * products.length > pidReduceOver) {
+      const observedPidSet = new Set();
+      for (const mfr of observed) {
+        for (const pid of db.byMfr.get(mfr.toLowerCase()).modelIds) {
+          if (products.includes(pid)) observedPidSet.add(pid);
+        }
+      }
+      if (observedPidSet.size > 0) {
+        nextProducts = products.filter(pid => observedPidSet.has(pid));
+      }
+    }
+
+    // Budget: DEVICE count (case-variant groups) × pids — case variants are free
+    const candidate = variantGroups.size * nextProducts.length;
+    if (candidate > maxDriverCombos && manufacturers.length > 0 && nextProducts.length > 0) {
+      let nextManufacturers;
+
+      if (hasDb) {
+        if (nextProducts.length > maxDriverCombos) {
+          // Pathological: pids alone exceed the budget.
+          nextManufacturers = (observed.length > 0 ? observed : speculative).slice(0, 1);
+          nextProducts = nextProducts.slice(0, maxDriverCombos);
+        } else {
+          // 2) Truncate by DEVICE GROUP (never splits a case-variant group):
+          //    observed groups (confidence desc) first, speculative afterwards.
+          //    Emission order: all variants of kept observed groups first
+          //    (confidence desc), then variants of kept speculative groups.
+          const groupLimit = Math.max(1, Math.floor(maxDriverCombos / nextProducts.length));
+          const keptObservedKeys = observedKeys.slice(0, groupLimit);
+          const keptSpeculativeKeys = speculativeKeys.slice(0, Math.max(0, groupLimit - keptObservedKeys.length));
+          const keptKeys = new Set([...keptObservedKeys, ...keptSpeculativeKeys]);
+          nextManufacturers = [
+            ...keptObservedKeys.flatMap(k => variantGroups.get(k)),
+            ...keptSpeculativeKeys.flatMap(k => variantGroups.get(k)),
+          ];
+          const droppedKeys = observedKeys.slice(groupLimit);
+          if (droppedKeys.length > 0) {
+            observedDropped.push({
+              id: driver.id,
+              manufacturers: droppedKeys.flatMap(k => variantGroups.get(k)),
+            });
+          }
+        }
+      } else if (nextProducts.length > maxDriverCombos) {
         nextManufacturers = manufacturers.slice(0, 1);
-        nextProducts = products.slice(0, maxDriverCombos);
+        nextProducts = nextProducts.slice(0, maxDriverCombos);
       } else {
-        const manufacturerLimit = Math.max(1, Math.floor(maxDriverCombos / Math.max(1, products.length)));
-        nextManufacturers = manufacturers.slice(0, manufacturerLimit);
+        const groupLimit = Math.max(1, Math.floor(maxDriverCombos / Math.max(1, nextProducts.length)));
+        const keptKeys = new Set([...variantGroups.keys()].slice(0, groupLimit));
+        nextManufacturers = manufacturers.filter(v => keptKeys.has(v.toLowerCase()));
       }
 
       driver.zigbee.manufacturerName = nextManufacturers;
       driver.zigbee.productId = nextProducts;
 
-      const after = nextManufacturers.length * nextProducts.length;
-      changes.push({
+      const keptObservedCount = hasDb
+        ? nextManufacturers.filter(value => db.byMfr.has(value.toLowerCase())).length
+        : 0;
+      observedKept += keptObservedCount;
+
+      const after = new Set(nextManufacturers.map(v => v.toLowerCase())).size * nextProducts.length;
+      const change = {
         id: driver.id,
         before,
         after,
         manufacturers: `${manufacturers.length}->${nextManufacturers.length}`,
         products: `${products.length}->${nextProducts.length}`,
-      });
+        observed: hasDb ? `${keptObservedCount}/${observed.length}` : undefined,
+      };
+      changes.push(change);
+      logLines.push(
+        `[compact] ${driver.id}: mfrs ${manufacturers.length}→${nextManufacturers.length}`
+        + (hasDb ? ` (obs ${keptObservedCount}/${observed.length})` : '')
+        + `, pids ${products.length}→${nextProducts.length}, combos ${before}→${after}`,
+      );
       afterTotal += after;
     } else {
+      observedKept += observed.length;
       afterTotal += candidate;
+      const wasRescued = rescuedDrivers.some(r => r.id === driver.id);
+      if (wasRescued) {
+        logLines.push(`[compact] ${driver.id}: mfrs 0→${manufacturers.length} (obs ${observed.length}/${observed.length}), pids 0→${nextProducts.length}, combos 0→${candidate} (rescued)`);
+      } else if (nextProducts.length !== products.length) {
+        changes.push({
+          id: driver.id,
+          before,
+          after: candidate,
+          manufacturers: `${manufacturers.length}->${manufacturers.length}`,
+          products: `${products.length}->${nextProducts.length}`,
+          observed: hasDb ? `${observed.length}/${observed.length}` : undefined,
+        });
+        logLines.push(
+          `[compact] ${driver.id}: mfrs ${manufacturers.length}→${manufacturers.length}`
+          + (hasDb ? ` (obs ${observed.length}/${observed.length})` : '')
+          + `, pids ${products.length}→${nextProducts.length}, combos ${before}→${candidate}`,
+        );
+      }
+      driver.zigbee.manufacturerName = manufacturers;
+      driver.zigbee.productId = nextProducts;
+      nextDrivers.push(driver);
+      continue;
     }
 
     nextDrivers.push(driver);
   }
 
-  if (prunedDrivers.length > 0) {
+  if (prunedDrivers.length > 0 || rescuedDrivers.length > 0) {
     manifest.drivers = nextDrivers;
+  }
+
+  const droppedObservedCount = observedDropped.reduce((sum, item) => sum + item.manufacturers.length, 0);
+  logLines.push(
+    `[compact] summary: combos ${beforeTotal}→${afterTotal}, observed mfrs preserved ${observedKept}/${observedBefore}`
+    + `, drivers compacted=${changes.length}, rescued=${rescuedDrivers.length}, pruned=${prunedDrivers.length}`
+    + (droppedObservedCount > 0 ? `, OBSERVED DROPPED=${droppedObservedCount} (budget-forced)` : ''),
+  );
+  if (verbose) {
+    for (const item of observedDropped) {
+      logLines.push(`[compact]   ${item.id}: budget-forced observed drop: ${item.manufacturers.join(', ')}`);
+    }
+    for (const pruned of prunedDrivers) {
+      if (pruned.reason !== 'missing-product') continue;
+      logLines.push(`[compact]   ${pruned.id}: ${pruned.rescue}`);
+    }
   }
 
   return {
@@ -127,12 +421,20 @@ function compactZigbeeIdentifiers(manifest, opts = {}) {
     changes,
     pruned: prunedDrivers.length,
     prunedDrivers,
+    rescuedDrivers,
     filteredSyntheticManufacturers,
+    observedBefore,
+    observedKept,
+    observedDropped,
     beforeTotal,
     afterTotal,
     maxDriverCombos,
     maxTotalCombos,
+    pidReduceOver,
     pruneSynthetic,
+    mfsDbLoaded: hasDb,
+    mfsDbPath: hasDb ? db.path : undefined,
+    logLines,
     overTotalLimit: afterTotal > maxTotalCombos,
   };
 }
@@ -140,7 +442,7 @@ function compactZigbeeIdentifiers(manifest, opts = {}) {
 function compactManifestFile(file, opts = {}) {
   const manifest = JSON.parse(fs.readFileSync(file, 'utf8'));
   const result = compactZigbeeIdentifiers(manifest, opts);
-  if (result.changed > 0 || result.pruned > 0 || result.filteredSyntheticManufacturers > 0) {
+  if (result.changed > 0 || result.pruned > 0 || result.rescuedDrivers.length > 0 || result.filteredSyntheticManufacturers > 0) {
     fs.writeFileSync(file, JSON.stringify(manifest), 'utf8');
   }
   return result;
@@ -148,18 +450,9 @@ function compactManifestFile(file, opts = {}) {
 
 function logResult(file, result) {
   const rel = path.relative(process.cwd(), file) || file;
-  console.log(`[compact-zigbee] ${rel}: combos ${result.beforeTotal}->${result.afterTotal}, affected drivers=${result.changed}, pruned=${result.pruned}, synthetic mfr removed=${result.filteredSyntheticManufacturers}, max/driver=${result.maxDriverCombos}`);
-  for (const pruned of result.prunedDrivers.slice(0, 25)) {
-    console.log(`[compact-zigbee]   pruned ${pruned.id}: ${pruned.reason}, mfr=${pruned.manufacturers}, product=${pruned.products}`);
-  }
-  if (result.prunedDrivers.length > 25) {
-    console.log(`[compact-zigbee]   ... ${result.prunedDrivers.length - 25} more driver(s) pruned`);
-  }
-  for (const change of result.changes.slice(0, 25)) {
-    console.log(`[compact-zigbee]   ${change.id}: ${change.before}->${change.after} combos, mfr ${change.manufacturers}, product ${change.products}`);
-  }
-  if (result.changes.length > 25) {
-    console.log(`[compact-zigbee]   ... ${result.changes.length - 25} more driver(s) compacted`);
+  console.log(`[compact-zigbee] ${rel}: mfs_db=${result.mfsDbLoaded ? 'loaded' : 'absent (legacy mode)'}, max/driver=${result.maxDriverCombos}, max/total=${result.maxTotalCombos}`);
+  for (const line of result.logLines) {
+    console.log(line);
   }
 }
 
@@ -178,6 +471,9 @@ if (require.main === module) {
         console.error(`[compact-zigbee] FATAL: total Zigbee combinations ${result.afterTotal} exceed limit ${result.maxTotalCombos}`);
         failed = true;
       }
+      if (result.observedDropped.length > 0) {
+        console.error(`[compact-zigbee] WARNING: ${result.observedDropped.reduce((s, i) => s + i.manufacturers.length, 0)} observed manufacturer(s) dropped (budget-forced) in ${result.observedDropped.length} driver(s)`);
+      }
     } catch (e) {
       console.error(`[compact-zigbee] FATAL: ${file}: ${e.message}`);
       failed = true;
@@ -190,5 +486,7 @@ module.exports = {
   comboCount,
   compactManifestFile,
   compactZigbeeIdentifiers,
+  indexMfsDatabase,
   isSyntheticManufacturer,
+  loadMfsDatabase,
 };

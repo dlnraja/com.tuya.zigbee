@@ -4,6 +4,17 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
+## [5.12.36] - 2026-07-30
+
+Stability line (branch `stable-v5`, production). Minimal zero-regression backports from master 9.0.373.
+
+### Bug Fixes
+- Unknown device prevention: 7097 missing case variants added across 248 drivers
+  (Homey matches manufacturerName case-sensitively at pairing). Regression test included.
+- Publish compactor: budget counts case-variant groups — 0 observed manufacturer dropped.
+
+---
+
 ## [5.12.35] - 2026-07-30
 
 Stability line (branch `stable-v5`, production). Minimal zero-regression backports from master 9.0.371.
