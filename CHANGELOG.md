@@ -4,6 +4,17 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
+## [9.0.376] - 2026-07-30
+
+### Added
+- **Hue-style smart features as a Zigbee/Tuya overlay** (3 new flow action cards, registered app-level):
+  - `hue_motion_lighting` — motion-activated lighting with lux guard, brightness and auto-off timeout.
+  - `hue_circadian_apply` — applies a circadian curve (color temperature + brightness from time of day: warm-dim morning/evening, cool-bright noon) to any light.
+  - `hue_wakeup` — sunrise simulation: gradual brightness ramp from 1 % to target over a chosen duration.
+- Tests for the circadian curve contract and manifest presence.
+
+---
+
 ## [9.0.375] - 2026-07-30
 
 ### Added
