@@ -102,7 +102,7 @@
 - [🤖 AI Tool Behavior Synthesis — 2026-07-12](./AI_BEHAVIOR_SYNTHESIS_2026-07-12.md) — _2026-07-12_
 - [🔍 Rapport d'Analyse Globale — Universal Tuya Zigbee v8.5.0](./ANALYSIS_REPORT_v8.5.0.md) — _2026-07-10_
 - [📊 Dashboard JS Diagnostic Report — 2026-07-12 12:00](./DASHBOARD_DIAG_REPORT_2026-07-12.md) — _2026-07-12_
-- [🔍 Analyse des apps Homey Tuya/Zigbee — import intelligent des bonnes pratiques](./EXTERNAL_APPS_ANALYSIS.md)
+- [🔍 Analyse des apps Homey Tuya/Zigbee — import intelligent des bonnes pratiques](./EXTERNAL_APPS_ANALYSIS.md) — _2026-07-30_
 - [🌐 GLOBAL INVESTIGATION PLAN — Phoenix Sovereign AI Framework](./GLOBAL_INVESTIGATION_PLAN.md) — _2026-07-10_
 - [🔧 Gmail Diagnostics + Cross-Reference + Fix Report](./GMAIL_FIX_REPORT_2026-07-10.md) — _2026-07-12_
 - [🔍 MEGA-INVESTIGATION 2026-07-10 — Tuya Unified Zigbee (Dual-App)](./INVESTIGATION_2026-07-10.md) — _2026-07-12_
