@@ -42,6 +42,19 @@ jobs:
         with:
           node-version: '20'
 
+      - name: Restore activity state cache
+        continue-on-error: true
+        uses: actions/cache@caa296126883cff596d87d8935842f9db880ef25 # v5.1.0
+        with:
+          path: |
+            .github/state/activity-snapshot.json
+            .github/state/temporal-monitor-state.json
+            .github/state/temporal-monitor-report.json
+            .github/state/activity-cache.json
+          key: activity-monitor-state-${{ github.run_id }}
+          restore-keys: |
+            activity-monitor-state-
+
       - name: Run Activity Fetcher
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -85,12 +98,5 @@ jobs:
             echo "- Need investigation: $INVESTIGATE" >> $GITHUB_STEP_SUMMARY
           fi
 
-      - name: Commit State Updates
-        run: |
-          git config user.email "p30@homey-mavis.local"
-          git config user.name "Mavis P30"
-          git add -f .github/state/activity-snapshot.json .github/state/temporal-monitor-state.json .github/state/temporal-monitor-report.json .github/state/activity-cache.json 2>/dev/null || true
-          if [ -n "$(git status --porcelain)" ]; then
-            git commit -m "chore(P30): daily activity monitor [skip ci]" || true
-            git push || true
-          fi
+      # State persists via the cache step above (security policy: state files
+      # must never be committed to git — see security-scanner).

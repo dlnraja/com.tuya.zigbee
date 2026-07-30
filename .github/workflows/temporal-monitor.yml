@@ -40,6 +40,17 @@ jobs:
         with:
           node-version: '20'
 
+      - name: Restore monitor state cache
+        continue-on-error: true
+        uses: actions/cache@caa296126883cff596d87d8935842f9db880ef25 # v5.1.0
+        with:
+          path: |
+            .github/state/temporal-monitor-state.json
+            .github/state/temporal-monitor-report.json
+          key: temporal-monitor-state-${{ github.run_id }}
+          restore-keys: |
+            temporal-monitor-state-
+
       - name: Run Temporal Monitor
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -52,12 +63,5 @@ jobs:
           path: .github/state/temporal-monitor-report.json
           retention-days: 30
 
-      - name: Commit State Update
-        run: |
-          if [ -n "$(git status --porcelain .github/state/temporal-monitor-*.json)" ]; then
-            git config user.email "p29.7@homey-mavis.local"
-            git config user.name "Mavis P29.7"
-            git add .github/state/temporal-monitor-state.json .github/state/temporal-monitor-report.json
-            git commit -m "chore(P29.7): temporal monitor daily run [skip ci]" || true
-            git push || true
-          fi
+      # State persists via the cache step above (security policy: state files
+      # must never be committed to git — see security-scanner).
