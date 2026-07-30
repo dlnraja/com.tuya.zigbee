@@ -1,6 +1,13 @@
 {
   "changelog": [
     {
+      "version": "9.0.381",
+      "date": "2026-07-30",
+      "channel": "test",
+      "en": "Changelog backticks stripped (publish extractor fix), publish-size bundle excludes product-reference, version alignment.",
+      "fr": "Backticks du changelog retirés (fix extracteur publish), exclusion product-reference du bundle, alignement version."
+    },
+    {
       "version": "9.0.380",
       "date": "2026-07-30",
       "channel": "test",
