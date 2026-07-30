@@ -518,7 +518,6 @@
       "_TZ3000_JSFZKFTC",
       "_TZ3000_JU82PU2B",
       "_TZ3000_JYUPJ3FW",
-      "_TZ3000_KFU8ZAPD",
       "_TZ3000_KJ0NWDZ6",
       "_TZ3000_KTXQIYRA",
       "_TZ3000_KYBMSYJZ",
@@ -848,7 +847,6 @@
       "_TZE284_gaj531w3",
       "_TZE284_tgeqdjgk",
       "_TZE3000_PFC7I3KT",
-      "_tz3000_famkxci2",
       "_tz3000_sgb0xhwn",
       "_tz3000_v8gtiaed",
       "_tz3000_wzmuk9ai",
@@ -926,7 +924,7 @@
       "button.1"
     ],
     "proto": "ZCL",
-    "fpCount": 512
+    "fpCount": 510
   },
   {
     "id": "relay_board_2_channel",
@@ -1424,7 +1422,6 @@
       "_tz3000_obacbukl",
       "_tz3000_qous95zh",
       "_tz3000_qzjcsmar",
-      "_tz3000_tzvbimpq",
       "_tz3000_vzopcetz",
       "_tz3000_xr7itfxq",
       "_tz3210_2putqrmw",
@@ -1550,7 +1547,7 @@
       "measure_battery"
     ],
     "proto": "ZCL",
-    "fpCount": 246
+    "fpCount": 245
   },
   {
     "id": "dimmer_dual_channel",
@@ -1754,7 +1751,9 @@
       "_TZ3000_MJWG6A52",
       "_TZ3000_MUTFMN4U",
       "_TZ3000_NGSPH3OJ",
-      "_TZ3000_UYJMM0ET"
+      "_TZ3000_UYJMM0ET",
+      "_tz3000_famkxci2",
+      "_TZ3000_FAMKXCI2"
     ],
     "pids": [
       "TS0043",
@@ -1770,7 +1769,7 @@
       "measure_battery"
     ],
     "proto": "ZCL",
-    "fpCount": 6
+    "fpCount": 8
   },
   {
     "id": "dimmer_3gang",
@@ -1847,7 +1846,8 @@
       "_tz33000_d9yfgzur",
       "_tze204_e1hutaaj",
       "_tze284_c8ipbljq",
-      "_TZ3000_eqsair32"
+      "_TZ3000_eqsair32",
+      "_TZ3000_EQSAIR32"
     ],
     "pids": [
       "01MINIZB",
@@ -1916,7 +1916,7 @@
       "button.3"
     ],
     "proto": "EF00",
-    "fpCount": 45
+    "fpCount": 46
   },
   {
     "id": "handheld_remote_4_buttons",
@@ -2167,7 +2167,9 @@
       "_TZ3000_abrsvsou",
       "_TZ3000_4fjiwweb",
       "_TZ3000_kfu8zapd",
-      "_TZ3000_rco1yzb1"
+      "_TZ3000_KFU8ZAPD",
+      "_TZ3000_rco1yzb1",
+      "_TZ3000_RCO1YZB1"
     ],
     "pids": [
       "01MINIZB",
@@ -2226,7 +2228,7 @@
       "measure_battery"
     ],
     "proto": "EF00",
-    "fpCount": 12
+    "fpCount": 14
   },
   {
     "id": "dimmer_4ch",
@@ -2998,10 +3000,12 @@
   {
     "id": "blaster_remote",
     "name": "Blaster Remote",
-    "class": "remote",
+    "class": "other",
     "mfrs": [
       "_hybrid_blaster_remote_needs_device_assignment",
-      "_HYBRID_BLASTER_REMOTE_NEEDS_DEVICE_ASSIGNMENT"
+      "_HYBRID_BLASTER_REMOTE_NEEDS_DEVICE_ASSIGNMENT",
+      "_TZ3000_tzvbimpq",
+      "_TZ3000_TZVBIMPQ"
     ],
     "pids": [
       "TS0601",
@@ -3015,7 +3019,7 @@
       "button.1"
     ],
     "proto": "ZCL",
-    "fpCount": 2
+    "fpCount": 4
   },
   {
     "id": "boiler_switch_energy",
@@ -3738,6 +3742,8 @@
       "_TZ3000_T3VVHRMH",
       "_TZ3000_T6JRIFU5",
       "_TZ3000_TSGQXDB4",
+      "_TZE200_9XFJIXAPV",
+      "_TZ3000_FLONMACT",
       "_TZ3000_UNW0HPDV",
       "_TZ3000_USVKZKYN",
       "_TZ3000_UTWGOAUK",
@@ -3778,6 +3784,8 @@
       "_TZ3000_rdhukkmi",
       "_TZ3000_saiqcn0y",
       "_TZ3000_tsgqxdb4",
+      "_tze200_9xfjixapv",
+      "_tz3000_flonmact",
       "_TZ3000_v1w2k9dd",
       "_TZ3000_xr3htd96",
       "_TZ3000_y56pgpgs",
@@ -4426,7 +4434,6 @@
       "_tz3000_mq4wujmp",
       "_tz3000_nsa76jai",
       "_tz3000_t9qqxn70",
-      "_tz3000_ugi8ky6u",
       "_tz3000_vjhcenzo",
       "_tz3000_vn88ezar",
       "_tz3000_ww6drja5ts011f",
@@ -4484,7 +4491,9 @@
       "owon",
       "tuyatec-avtsqqbd",
       "tuyatec-w89thyfc",
-      "_TZ3000_ubuikmgo"
+      "_TZ3000_ubuikmgo",
+      "_TZE204_kwi6bbk4",
+      "_tze204_kwi6bbk4"
     ],
     "pids": [
       "01MINIZB",
@@ -4570,7 +4579,7 @@
       "button.1"
     ],
     "proto": "ZCL",
-    "fpCount": 855
+    "fpCount": 860
   },
   {
     "id": "climate_sensor_dimmer",
@@ -8274,7 +8283,7 @@
       "MLI",
       "MONOPRICE",
       "MULLER LICHT",
-      "MÃŒLLER LICHT",
+      "MÜLLER LICHT",
       "MÜLLER LICHT",
       "NAMRON",
       "NANOLEAF",
@@ -8346,7 +8355,6 @@
       "ZEN THERMOSTAT",
       "ZIGBEE ALLIANCE",
       "ZIGBEE2MQTT",
-      "_TZ3000_0dumfk2z",
       "_TZ3000_1MTKTXDK",
       "_TZ3000_1kmurvlx",
       "_TZ3000_589KQ4UL",
@@ -8620,7 +8628,8 @@
       "zigbee alliance",
       "zigbee2mqtt",
       "_TYST11_fzo2pocs",
-      "_TZE200_2hf7x9n3"
+      "_TZE200_2hf7x9n3",
+      "MÃŒLLER LICHT"
     ],
     "pids": [
       "TS0203",
@@ -12204,7 +12213,8 @@
       "Excellux",
       "TS0203",
       "TS0601",
-      "TY0203"
+      "TY0203",
+      "TS0207"
     ],
     "caps": [
       "alarm_contact",
@@ -13364,7 +13374,8 @@
       "_tz3000_gwkzibhs",
       "_tz3000_pzui3skt",
       "_tz3000_qja6nq5z",
-      "_TZ3000_ugi8ky6u"
+      "_TZ3000_ugi8ky6u",
+      "_TZ3000_UGI8KY6U"
     ],
     "pids": [
       "TS004F",
@@ -13382,7 +13393,7 @@
       "button.1"
     ],
     "proto": "EF00",
-    "fpCount": 7
+    "fpCount": 8
   },
   {
     "id": "smart_knob_switch",
@@ -14183,13 +14194,19 @@
       "_tze284_oitavov2",
       "_tze284_sgabhwa6",
       "_tze284_tgrzpqf4",
+      "A89G12C",
+      "a89g12c",
       "HOBEIAN",
       "hobeian",
       "Hobeian",
+      "_TZE284_ga1maeof",
+      "_tze284_ga1maeof",
       "_TZE284_awepdiwi",
       "_tze284_awepdiwi",
-      "_TZE284_ga1maeof",
-      "_tze284_ga1maeof"
+      "_TZE2841000000_nhgdf6qr",
+      "_tze2841000000_nhgdf6qr",
+      "_TZE2841000000_tgrzpqf4",
+      "_tze2841000000_tgrzpqf4"
     ],
     "pids": [
       "0x8040",
@@ -14251,7 +14268,7 @@
       "button.1"
     ],
     "proto": "ZCL",
-    "fpCount": 61
+    "fpCount": 67
   },
   {
     "id": "soilsensor",
@@ -14474,7 +14491,9 @@
       "_tz3000_rmhkdz0l",
       "_tz3000_zpjuqnco",
       "_tze200_0ble7ow3",
-      "_tze284_3qhgndv6"
+      "_tze284_3qhgndv6",
+      "_tz3000_0dumfk2z",
+      "_TZ3000_0DUMFK2Z"
     ],
     "pids": [
       "ZBPB10BK",
@@ -14489,7 +14508,7 @@
       "button.1"
     ],
     "proto": "EF00",
-    "fpCount": 15
+    "fpCount": 17
   },
   {
     "id": "sr_zs_switch",
@@ -16134,7 +16153,7 @@
       "measure_battery",
       "button.1"
     ],
-    "proto": "ZCL",
+    "proto": "EF00",
     "fpCount": 69
   },
   {
@@ -16712,8 +16731,8 @@
       "_TZE200_VZEKYI4C",
       "_TZE200_YOJQA8XN",
       "_tz3000_ixla93vd",
-      "_TZE200_RJXQSO4A",
-      "_TZE200_IKVNCLUO"
+      "_TZE200_IKVNCLUO",
+      "_TZE200_RJXQSO4A"
     ],
     "pids": [
       "TS0601_wirelesssw",

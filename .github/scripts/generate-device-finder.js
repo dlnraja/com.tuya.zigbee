@@ -18,3 +18,4 @@ fs.writeFileSync(path.join(OUT,'index.html'),generateHTML(drivers,app));
 console.log('Device Finder generated: '+OUT);
 try{require('./generate-wifi-page')();}catch(e){console.warn('WiFi page generation failed (non-fatal): '+e.message);}
 try{require('./generate-dashboards-page')();}catch(e){console.warn('Dashboards page generation failed (non-fatal): '+e.message);}
+try{require('./generate-inbox-page')();}catch(e){console.warn('Inbox page generation failed (non-fatal): '+e.message);}

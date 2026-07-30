@@ -97,17 +97,17 @@
 <body>
 
 <h1>Error Dashboard</h1>
-<p class="subtitle">Universal Tuya Zigbee - Codebase Anti-Pattern &amp; Error Scan | 2026-07-29 00:54:12</p>
+<p class="subtitle">Universal Tuya Zigbee - Codebase Anti-Pattern &amp; Error Scan | 2026-07-30 02:39:32</p>
 
 <div class="nav-links"><a href="master-dashboard.html">Master Dashboard</a> | <a href="coverage-dashboard.html">Coverage</a> | <a href="driver-dashboard.html">Drivers</a> | <a href="dependency-dashboard.html">Dependencies</a> | <span style="color:#f0f6fc;font-weight:600">Errors</span> | <a href="performance-dashboard.html">Performance</a></div>
 
 <div class="summary-bar">
 <div class="summary-item">
-  <div class="num" style="color:#f85149">889</div>
+  <div class="num" style="color:#f85149">909</div>
   <div class="label">Errors</div>
 </div>
 <div class="summary-item">
-  <div class="num" style="color:#d29922">255</div>
+  <div class="num" style="color:#d29922">259</div>
   <div class="label">Warnings</div>
 </div>
 <div class="summary-item">
@@ -115,27 +115,28 @@
   <div class="label">Info</div>
 </div>
 <div class="summary-item">
-  <div class="num" style="color:#3fb950">1,095</div>
+  <div class="num" style="color:#3fb950">1,119</div>
   <div class="label">Auto-Fixable</div>
 </div>
 <div class="summary-item">
-  <div class="num" style="color:#bc8cff">8</div>
+  <div class="num" style="color:#bc8cff">9</div>
   <div class="label">Rules Triggered</div>
 </div>
 </div>
 <div class="section">
-<h2>Rule Breakdown (8 rules triggered)</h2>
+<h2>Rule Breakdown (9 rules triggered)</h2>
 <div style="max-height:500px;overflow-y:auto">
 <table>
 <thead><tr><th>Rule</th><th>Severity</th><th>Category</th><th>Count</th><th>Fixable</th></tr></thead>
 <tbody>
-<tr><td><span style="font-family:monospace;color:#58a6ff">RAW_SET_CAPABILITY</span></td><td><span class="tag tag-red">error</span></td><td>lifecycle</td><td>406</td><td><span class="tag tag-green">AUTO-FIX</span></td></tr>
-<tr><td><span style="font-family:monospace;color:#58a6ff">MISSING_DESTROY_GUARD</span></td><td><span class="tag tag-red">error</span></td><td>lifecycle</td><td>386</td><td><span class="tag tag-green">AUTO-FIX</span></td></tr>
+<tr><td><span style="font-family:monospace;color:#58a6ff">RAW_SET_CAPABILITY</span></td><td><span class="tag tag-red">error</span></td><td>lifecycle</td><td>416</td><td><span class="tag tag-green">AUTO-FIX</span></td></tr>
+<tr><td><span style="font-family:monospace;color:#58a6ff">MISSING_DESTROY_GUARD</span></td><td><span class="tag tag-red">error</span></td><td>lifecycle</td><td>396</td><td><span class="tag tag-green">AUTO-FIX</span></td></tr>
 <tr><td><span style="font-family:monospace;color:#58a6ff">BANNED_WILDCARD_FP</span></td><td><span class="tag tag-red">error</span></td><td>fingerprint</td><td>42</td><td><span style="color:#8b949e">manual</span></td></tr>
 <tr><td><span style="font-family:monospace;color:#58a6ff">BANNED_ZB_MODELID</span></td><td><span class="tag tag-red">error</span></td><td>settings-key</td><td>27</td><td><span class="tag tag-green">AUTO-FIX</span></td></tr>
 <tr><td><span style="font-family:monospace;color:#58a6ff">BANNED_ZB_MANUFACTURERNAME</span></td><td><span class="tag tag-red">error</span></td><td>settings-key</td><td>21</td><td><span class="tag tag-green">AUTO-FIX</span></td></tr>
 <tr><td><span style="font-family:monospace;color:#58a6ff">BANNED_LINEAR_BATTERY</span></td><td><span class="tag tag-red">error</span></td><td>anti-pattern</td><td>7</td><td><span style="color:#8b949e">manual</span></td></tr>
-<tr><td><span style="font-family:monospace;color:#58a6ff">MISSING_MARK_APP_COMMAND</span></td><td><span class="tag tag-yellow">warning</span></td><td>bidirectional-sync</td><td>255</td><td><span class="tag tag-green">AUTO-FIX</span></td></tr>
+<tr><td><span style="font-family:monospace;color:#58a6ff">MISSING_MARK_APP_COMMAND</span></td><td><span class="tag tag-yellow">warning</span></td><td>bidirectional-sync</td><td>257</td><td><span class="tag tag-green">AUTO-FIX</span></td></tr>
+<tr><td><span style="font-family:monospace;color:#58a6ff">GLOBAL_SETTIMEOUT</span></td><td><span class="tag tag-yellow">warning</span></td><td>lifecycle</td><td>2</td><td><span class="tag tag-green">AUTO-FIX</span></td></tr>
 <tr><td><span style="font-family:monospace;color:#58a6ff">HARDCODED_DP_ID</span></td><td><span class="tag tag-blue">info</span></td><td>maintainability</td><td>133</td><td><span style="color:#8b949e">manual</span></td></tr>
 </tbody>
 </table>
@@ -149,22 +150,22 @@
       <div class="card">
         <div style="font-weight:600;color:#79c0ff">lifecycle</div>
         <div style="font-size:0.85em;margin:4px 0">
-          <span class="tag tag-red">792 E</span>
-          <span class="tag tag-yellow">0 W</span>
+          <span class="tag tag-red">812 E</span>
+          <span class="tag tag-yellow">2 W</span>
           <span class="tag tag-blue">0 I</span>
-          <span style="margin-left:8px;color:#8b949e">Total: 792</span>
+          <span style="margin-left:8px;color:#8b949e">Total: 814</span>
         </div>
-        <div class="bar" style="width:100%"><div class="bar-fill" style="width:62.02036021926391%;background:#f85149"></div></div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:62.56725595695619%;background:#f85149"></div></div>
       </div>
       <div class="card">
         <div style="font-weight:600;color:#79c0ff">bidirectional-sync</div>
         <div style="font-size:0.85em;margin:4px 0">
           <span class="tag tag-red">0 E</span>
-          <span class="tag tag-yellow">255 W</span>
+          <span class="tag tag-yellow">257 W</span>
           <span class="tag tag-blue">0 I</span>
-          <span style="margin-left:8px;color:#8b949e">Total: 255</span>
+          <span style="margin-left:8px;color:#8b949e">Total: 257</span>
         </div>
-        <div class="bar" style="width:100%"><div class="bar-fill" style="width:19.968676585747847%;background:#d29922"></div></div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:19.754035357417372%;background:#d29922"></div></div>
       </div>
       <div class="card">
         <div style="font-weight:600;color:#79c0ff">maintainability</div>
@@ -174,7 +175,7 @@
           <span class="tag tag-blue">133 I</span>
           <span style="margin-left:8px;color:#8b949e">Total: 133</span>
         </div>
-        <div class="bar" style="width:100%"><div class="bar-fill" style="width:10.415035238841034%;background:#58a6ff"></div></div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:10.222905457340508%;background:#58a6ff"></div></div>
       </div>
       <div class="card">
         <div style="font-weight:600;color:#79c0ff">settings-key</div>
@@ -184,7 +185,7 @@
           <span class="tag tag-blue">0 I</span>
           <span style="margin-left:8px;color:#8b949e">Total: 48</span>
         </div>
-        <div class="bar" style="width:100%"><div class="bar-fill" style="width:3.7588097102584186%;background:#f85149"></div></div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:3.689469638739431%;background:#f85149"></div></div>
       </div>
       <div class="card">
         <div style="font-weight:600;color:#79c0ff">fingerprint</div>
@@ -194,7 +195,7 @@
           <span class="tag tag-blue">0 I</span>
           <span style="margin-left:8px;color:#8b949e">Total: 42</span>
         </div>
-        <div class="bar" style="width:100%"><div class="bar-fill" style="width:3.288958496476116%;background:#f85149"></div></div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:3.2282859338970025%;background:#f85149"></div></div>
       </div>
       <div class="card">
         <div style="font-weight:600;color:#79c0ff">anti-pattern</div>
@@ -204,7 +205,7 @@
           <span class="tag tag-blue">0 I</span>
           <span style="margin-left:8px;color:#8b949e">Total: 7</span>
         </div>
-        <div class="bar" style="width:100%"><div class="bar-fill" style="width:0.548159749412686%;background:#f85149"></div></div>
+        <div class="bar" style="width:100%"><div class="bar-fill" style="width:0.5380476556495004%;background:#f85149"></div></div>
       </div>
     </div>
   
@@ -237,22 +238,22 @@
 <tr><td><span style="font-family:monospace;color:#58a6ff">drivers/smart_lcd_thermostat/driver.js</span></td><td>12</td><td>12</td><td>-</td><td>-</td></tr>
 <tr><td><span style="font-family:monospace;color:#58a6ff">drivers/switch_usb_dongle/driver.js</span></td><td>12</td><td>12</td><td>-</td><td>-</td></tr>
 <tr><td><span style="font-family:monospace;color:#58a6ff">drivers/universal_zigbee/driver.js</span></td><td>12</td><td>12</td><td>-</td><td>-</td></tr>
+<tr><td><span style="font-family:monospace;color:#58a6ff">drivers/air_purifier_curtain/driver.js</span></td><td>11</td><td>10</td><td>1</td><td>-</td></tr>
 <tr><td><span style="font-family:monospace;color:#58a6ff">drivers/contact_sensor/device.js</span></td><td>11</td><td>11</td><td>-</td><td>-</td></tr>
-<tr><td><span style="font-family:monospace;color:#58a6ff">drivers/sensor_contact_water/device.js</span></td><td>11</td><td>11</td><td>-</td><td>-</td></tr>
-<tr><td><span style="font-family:monospace;color:#58a6ff">drivers/contact_sensor_zigbee/device.js</span></td><td>10</td><td>10</td><td>-</td><td>-</td></tr>
+<tr><td><span style="font-family:monospace;color:#58a6ff">drivers/curtain_motor_tilt/driver.js</span></td><td>11</td><td>10</td><td>1</td><td>-</td></tr>
 </tbody>
 </table>
 </div>
 </div>
 <div class="section">
-<h2>All Findings (1277)</h2>
+<h2>All Findings (1301)</h2>
 
     <div class="filter-controls">
-      <button class="filter-btn active" onclick="filterHits('all')">All (1277)</button>
-      <button class="filter-btn" onclick="filterHits('error')">Errors (889)</button>
-      <button class="filter-btn" onclick="filterHits('warning')">Warnings (255)</button>
+      <button class="filter-btn active" onclick="filterHits('all')">All (1301)</button>
+      <button class="filter-btn" onclick="filterHits('error')">Errors (909)</button>
+      <button class="filter-btn" onclick="filterHits('warning')">Warnings (259)</button>
       <button class="filter-btn" onclick="filterHits('info')">Info (133)</button>
-      <button class="filter-btn" onclick="filterHits('fixable')">Fixable (1095)</button>
+      <button class="filter-btn" onclick="filterHits('fixable')">Fixable (1119)</button>
     </div>
     <div id="hits-list" class="error-list">
       
@@ -508,6 +509,127 @@
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Raw setCapabilityValue (use safeSetCapabilityValue)</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">return super.setCapabilityValue(capability, value);</div>
+      </div>
+      <div class="error-item hit-entry" data-severity="error" data-fixable="true" style="border-color:#da3633">
+        <span class="tag tag-red">error</span>
+        <span style="font-family:monospace;color:#58a6ff;margin-left:4px">MISSING_DESTROY_GUARD</span>
+        <span class="tag tag-green">AUTO-FIX</span>
+        <div style="margin-top:2px">
+          <span style="color:#58a6ff;font-family:monospace">drivers/air_purifier_curtain/driver.js</span>
+          <span style="color:#8b949e">:53</span>
+        </div>
+        <div style="color:#8b949e;font-size:0.85em;margin-top:1px">setCapabilityValue without _destroyed guard</div>
+        <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">await device.setCapabilityValue('windowcoverings_state', 'up');</div>
+      </div>
+      <div class="error-item hit-entry" data-severity="error" data-fixable="true" style="border-color:#da3633">
+        <span class="tag tag-red">error</span>
+        <span style="font-family:monospace;color:#58a6ff;margin-left:4px">MISSING_DESTROY_GUARD</span>
+        <span class="tag tag-green">AUTO-FIX</span>
+        <div style="margin-top:2px">
+          <span style="color:#58a6ff;font-family:monospace">drivers/air_purifier_curtain/driver.js</span>
+          <span style="color:#8b949e">:55</span>
+        </div>
+        <div style="color:#8b949e;font-size:0.85em;margin-top:1px">setCapabilityValue without _destroyed guard</div>
+        <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">device.setCapabilityValue('windowcoverings_state', 'down').catch(() =&gt; {});</div>
+      </div>
+      <div class="error-item hit-entry" data-severity="error" data-fixable="true" style="border-color:#da3633">
+        <span class="tag tag-red">error</span>
+        <span style="font-family:monospace;color:#58a6ff;margin-left:4px">MISSING_DESTROY_GUARD</span>
+        <span class="tag tag-green">AUTO-FIX</span>
+        <div style="margin-top:2px">
+          <span style="color:#58a6ff;font-family:monospace">drivers/air_purifier_curtain/driver.js</span>
+          <span style="color:#8b949e">:60</span>
+        </div>
+        <div style="color:#8b949e;font-size:0.85em;margin-top:1px">setCapabilityValue without _destroyed guard</div>
+        <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">await device.setCapabilityValue('windowcoverings_set', 0);</div>
+      </div>
+      <div class="error-item hit-entry" data-severity="error" data-fixable="true" style="border-color:#da3633">
+        <span class="tag tag-red">error</span>
+        <span style="font-family:monospace;color:#58a6ff;margin-left:4px">MISSING_DESTROY_GUARD</span>
+        <span class="tag tag-green">AUTO-FIX</span>
+        <div style="margin-top:2px">
+          <span style="color:#58a6ff;font-family:monospace">drivers/air_purifier_curtain/driver.js</span>
+          <span style="color:#8b949e">:64</span>
+        </div>
+        <div style="color:#8b949e;font-size:0.85em;margin-top:1px">setCapabilityValue without _destroyed guard</div>
+        <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">await device.setCapabilityValue('windowcoverings_state', 'idle');</div>
+      </div>
+      <div class="error-item hit-entry" data-severity="error" data-fixable="true" style="border-color:#da3633">
+        <span class="tag tag-red">error</span>
+        <span style="font-family:monospace;color:#58a6ff;margin-left:4px">MISSING_DESTROY_GUARD</span>
+        <span class="tag tag-green">AUTO-FIX</span>
+        <div style="margin-top:2px">
+          <span style="color:#58a6ff;font-family:monospace">drivers/air_purifier_curtain/driver.js</span>
+          <span style="color:#8b949e">:68</span>
+        </div>
+        <div style="color:#8b949e;font-size:0.85em;margin-top:1px">setCapabilityValue without _destroyed guard</div>
+        <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">await device.setCapabilityValue('windowcoverings_set', position / 100);</div>
+      </div>
+      <div class="error-item hit-entry" data-severity="error" data-fixable="true" style="border-color:#da3633">
+        <span class="tag tag-red">error</span>
+        <span style="font-family:monospace;color:#58a6ff;margin-left:4px">RAW_SET_CAPABILITY</span>
+        <span class="tag tag-green">AUTO-FIX</span>
+        <div style="margin-top:2px">
+          <span style="color:#58a6ff;font-family:monospace">drivers/air_purifier_curtain/driver.js</span>
+          <span style="color:#8b949e">:53</span>
+        </div>
+        <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Raw setCapabilityValue (use safeSetCapabilityValue)</div>
+        <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">await device.setCapabilityValue('windowcoverings_state', 'up');</div>
+      </div>
+      <div class="error-item hit-entry" data-severity="error" data-fixable="true" style="border-color:#da3633">
+        <span class="tag tag-red">error</span>
+        <span style="font-family:monospace;color:#58a6ff;margin-left:4px">RAW_SET_CAPABILITY</span>
+        <span class="tag tag-green">AUTO-FIX</span>
+        <div style="margin-top:2px">
+          <span style="color:#58a6ff;font-family:monospace">drivers/air_purifier_curtain/driver.js</span>
+          <span style="color:#8b949e">:55</span>
+        </div>
+        <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Raw setCapabilityValue (use safeSetCapabilityValue)</div>
+        <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">device.setCapabilityValue('windowcoverings_state', 'down').catch(() =&gt; {});</div>
+      </div>
+      <div class="error-item hit-entry" data-severity="error" data-fixable="true" style="border-color:#da3633">
+        <span class="tag tag-red">error</span>
+        <span style="font-family:monospace;color:#58a6ff;margin-left:4px">RAW_SET_CAPABILITY</span>
+        <span class="tag tag-green">AUTO-FIX</span>
+        <div style="margin-top:2px">
+          <span style="color:#58a6ff;font-family:monospace">drivers/air_purifier_curtain/driver.js</span>
+          <span style="color:#8b949e">:60</span>
+        </div>
+        <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Raw setCapabilityValue (use safeSetCapabilityValue)</div>
+        <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">await device.setCapabilityValue('windowcoverings_set', 0);</div>
+      </div>
+      <div class="error-item hit-entry" data-severity="error" data-fixable="true" style="border-color:#da3633">
+        <span class="tag tag-red">error</span>
+        <span style="font-family:monospace;color:#58a6ff;margin-left:4px">RAW_SET_CAPABILITY</span>
+        <span class="tag tag-green">AUTO-FIX</span>
+        <div style="margin-top:2px">
+          <span style="color:#58a6ff;font-family:monospace">drivers/air_purifier_curtain/driver.js</span>
+          <span style="color:#8b949e">:64</span>
+        </div>
+        <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Raw setCapabilityValue (use safeSetCapabilityValue)</div>
+        <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">await device.setCapabilityValue('windowcoverings_state', 'idle');</div>
+      </div>
+      <div class="error-item hit-entry" data-severity="error" data-fixable="true" style="border-color:#da3633">
+        <span class="tag tag-red">error</span>
+        <span style="font-family:monospace;color:#58a6ff;margin-left:4px">RAW_SET_CAPABILITY</span>
+        <span class="tag tag-green">AUTO-FIX</span>
+        <div style="margin-top:2px">
+          <span style="color:#58a6ff;font-family:monospace">drivers/air_purifier_curtain/driver.js</span>
+          <span style="color:#8b949e">:68</span>
+        </div>
+        <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Raw setCapabilityValue (use safeSetCapabilityValue)</div>
+        <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">await device.setCapabilityValue('windowcoverings_set', position / 100);</div>
+      </div>
+      <div class="error-item hit-entry" data-severity="warning" data-fixable="true" style="border-color:#9e6a03">
+        <span class="tag tag-yellow">warning</span>
+        <span style="font-family:monospace;color:#58a6ff;margin-left:4px">GLOBAL_SETTIMEOUT</span>
+        <span class="tag tag-green">AUTO-FIX</span>
+        <div style="margin-top:2px">
+          <span style="color:#58a6ff;font-family:monospace">drivers/air_purifier_curtain/driver.js</span>
+          <span style="color:#8b949e">:54</span>
+        </div>
+        <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Global setTimeout (use this.homey.setTimeout for device code)</div>
+        <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">device.homey.setTimeout(() =&gt; {</div>
       </div>
       <div class="error-item hit-entry" data-severity="warning" data-fixable="true" style="border-color:#9e6a03">
         <span class="tag tag-yellow">warning</span>
@@ -1213,6 +1335,28 @@
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Raw setCapabilityValue (use safeSetCapabilityValue)</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">await args.device.setCapabilityValue('onoff', !current).catch(() =&gt; {});</div>
       </div>
+      <div class="error-item hit-entry" data-severity="warning" data-fixable="true" style="border-color:#9e6a03">
+        <span class="tag tag-yellow">warning</span>
+        <span style="font-family:monospace;color:#58a6ff;margin-left:4px">MISSING_MARK_APP_COMMAND</span>
+        <span class="tag tag-green">AUTO-FIX</span>
+        <div style="margin-top:2px">
+          <span style="color:#58a6ff;font-family:monospace">drivers/button_emergency_sos/device.js</span>
+          <span style="color:#8b949e">:92</span>
+        </div>
+        <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Capability listener without markAppCommand()</div>
+        <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">this.registerCapabilityListener('button.1', async () =&gt; {</div>
+      </div>
+      <div class="error-item hit-entry" data-severity="warning" data-fixable="true" style="border-color:#9e6a03">
+        <span class="tag tag-yellow">warning</span>
+        <span style="font-family:monospace;color:#58a6ff;margin-left:4px">MISSING_MARK_APP_COMMAND</span>
+        <span class="tag tag-green">AUTO-FIX</span>
+        <div style="margin-top:2px">
+          <span style="color:#58a6ff;font-family:monospace">drivers/button_emergency_sos/device.js</span>
+          
+        </div>
+        <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Capability listener without markAppCommand()</div>
+        
+      </div>
       <div class="error-item hit-entry" data-severity="error" data-fixable="true" style="border-color:#da3633">
         <span class="tag tag-red">error</span>
         <span style="font-family:monospace;color:#58a6ff;margin-left:4px">MISSING_DESTROY_GUARD</span>
@@ -1751,6 +1895,127 @@
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Raw setCapabilityValue (use safeSetCapabilityValue)</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">await super.setCapabilityValue('measure_battery', parseFloat(battery)).catch(() =&gt; { });</div>
+      </div>
+      <div class="error-item hit-entry" data-severity="error" data-fixable="true" style="border-color:#da3633">
+        <span class="tag tag-red">error</span>
+        <span style="font-family:monospace;color:#58a6ff;margin-left:4px">MISSING_DESTROY_GUARD</span>
+        <span class="tag tag-green">AUTO-FIX</span>
+        <div style="margin-top:2px">
+          <span style="color:#58a6ff;font-family:monospace">drivers/curtain_motor_tilt/driver.js</span>
+          <span style="color:#8b949e">:54</span>
+        </div>
+        <div style="color:#8b949e;font-size:0.85em;margin-top:1px">setCapabilityValue without _destroyed guard</div>
+        <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">await device.setCapabilityValue('windowcoverings_state', 'up');</div>
+      </div>
+      <div class="error-item hit-entry" data-severity="error" data-fixable="true" style="border-color:#da3633">
+        <span class="tag tag-red">error</span>
+        <span style="font-family:monospace;color:#58a6ff;margin-left:4px">MISSING_DESTROY_GUARD</span>
+        <span class="tag tag-green">AUTO-FIX</span>
+        <div style="margin-top:2px">
+          <span style="color:#58a6ff;font-family:monospace">drivers/curtain_motor_tilt/driver.js</span>
+          <span style="color:#8b949e">:56</span>
+        </div>
+        <div style="color:#8b949e;font-size:0.85em;margin-top:1px">setCapabilityValue without _destroyed guard</div>
+        <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">device.setCapabilityValue('windowcoverings_state', 'down').catch(() =&gt; {});</div>
+      </div>
+      <div class="error-item hit-entry" data-severity="error" data-fixable="true" style="border-color:#da3633">
+        <span class="tag tag-red">error</span>
+        <span style="font-family:monospace;color:#58a6ff;margin-left:4px">MISSING_DESTROY_GUARD</span>
+        <span class="tag tag-green">AUTO-FIX</span>
+        <div style="margin-top:2px">
+          <span style="color:#58a6ff;font-family:monospace">drivers/curtain_motor_tilt/driver.js</span>
+          <span style="color:#8b949e">:61</span>
+        </div>
+        <div style="color:#8b949e;font-size:0.85em;margin-top:1px">setCapabilityValue without _destroyed guard</div>
+        <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">await device.setCapabilityValue('windowcoverings_set', 0);</div>
+      </div>
+      <div class="error-item hit-entry" data-severity="error" data-fixable="true" style="border-color:#da3633">
+        <span class="tag tag-red">error</span>
+        <span style="font-family:monospace;color:#58a6ff;margin-left:4px">MISSING_DESTROY_GUARD</span>
+        <span class="tag tag-green">AUTO-FIX</span>
+        <div style="margin-top:2px">
+          <span style="color:#58a6ff;font-family:monospace">drivers/curtain_motor_tilt/driver.js</span>
+          <span style="color:#8b949e">:65</span>
+        </div>
+        <div style="color:#8b949e;font-size:0.85em;margin-top:1px">setCapabilityValue without _destroyed guard</div>
+        <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">await device.setCapabilityValue('windowcoverings_state', 'idle');</div>
+      </div>
+      <div class="error-item hit-entry" data-severity="error" data-fixable="true" style="border-color:#da3633">
+        <span class="tag tag-red">error</span>
+        <span style="font-family:monospace;color:#58a6ff;margin-left:4px">MISSING_DESTROY_GUARD</span>
+        <span class="tag tag-green">AUTO-FIX</span>
+        <div style="margin-top:2px">
+          <span style="color:#58a6ff;font-family:monospace">drivers/curtain_motor_tilt/driver.js</span>
+          <span style="color:#8b949e">:69</span>
+        </div>
+        <div style="color:#8b949e;font-size:0.85em;margin-top:1px">setCapabilityValue without _destroyed guard</div>
+        <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">await device.setCapabilityValue('windowcoverings_set', position / 100);</div>
+      </div>
+      <div class="error-item hit-entry" data-severity="error" data-fixable="true" style="border-color:#da3633">
+        <span class="tag tag-red">error</span>
+        <span style="font-family:monospace;color:#58a6ff;margin-left:4px">RAW_SET_CAPABILITY</span>
+        <span class="tag tag-green">AUTO-FIX</span>
+        <div style="margin-top:2px">
+          <span style="color:#58a6ff;font-family:monospace">drivers/curtain_motor_tilt/driver.js</span>
+          <span style="color:#8b949e">:54</span>
+        </div>
+        <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Raw setCapabilityValue (use safeSetCapabilityValue)</div>
+        <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">await device.setCapabilityValue('windowcoverings_state', 'up');</div>
+      </div>
+      <div class="error-item hit-entry" data-severity="error" data-fixable="true" style="border-color:#da3633">
+        <span class="tag tag-red">error</span>
+        <span style="font-family:monospace;color:#58a6ff;margin-left:4px">RAW_SET_CAPABILITY</span>
+        <span class="tag tag-green">AUTO-FIX</span>
+        <div style="margin-top:2px">
+          <span style="color:#58a6ff;font-family:monospace">drivers/curtain_motor_tilt/driver.js</span>
+          <span style="color:#8b949e">:56</span>
+        </div>
+        <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Raw setCapabilityValue (use safeSetCapabilityValue)</div>
+        <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">device.setCapabilityValue('windowcoverings_state', 'down').catch(() =&gt; {});</div>
+      </div>
+      <div class="error-item hit-entry" data-severity="error" data-fixable="true" style="border-color:#da3633">
+        <span class="tag tag-red">error</span>
+        <span style="font-family:monospace;color:#58a6ff;margin-left:4px">RAW_SET_CAPABILITY</span>
+        <span class="tag tag-green">AUTO-FIX</span>
+        <div style="margin-top:2px">
+          <span style="color:#58a6ff;font-family:monospace">drivers/curtain_motor_tilt/driver.js</span>
+          <span style="color:#8b949e">:61</span>
+        </div>
+        <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Raw setCapabilityValue (use safeSetCapabilityValue)</div>
+        <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">await device.setCapabilityValue('windowcoverings_set', 0);</div>
+      </div>
+      <div class="error-item hit-entry" data-severity="error" data-fixable="true" style="border-color:#da3633">
+        <span class="tag tag-red">error</span>
+        <span style="font-family:monospace;color:#58a6ff;margin-left:4px">RAW_SET_CAPABILITY</span>
+        <span class="tag tag-green">AUTO-FIX</span>
+        <div style="margin-top:2px">
+          <span style="color:#58a6ff;font-family:monospace">drivers/curtain_motor_tilt/driver.js</span>
+          <span style="color:#8b949e">:65</span>
+        </div>
+        <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Raw setCapabilityValue (use safeSetCapabilityValue)</div>
+        <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">await device.setCapabilityValue('windowcoverings_state', 'idle');</div>
+      </div>
+      <div class="error-item hit-entry" data-severity="error" data-fixable="true" style="border-color:#da3633">
+        <span class="tag tag-red">error</span>
+        <span style="font-family:monospace;color:#58a6ff;margin-left:4px">RAW_SET_CAPABILITY</span>
+        <span class="tag tag-green">AUTO-FIX</span>
+        <div style="margin-top:2px">
+          <span style="color:#58a6ff;font-family:monospace">drivers/curtain_motor_tilt/driver.js</span>
+          <span style="color:#8b949e">:69</span>
+        </div>
+        <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Raw setCapabilityValue (use safeSetCapabilityValue)</div>
+        <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">await device.setCapabilityValue('windowcoverings_set', position / 100);</div>
+      </div>
+      <div class="error-item hit-entry" data-severity="warning" data-fixable="true" style="border-color:#9e6a03">
+        <span class="tag tag-yellow">warning</span>
+        <span style="font-family:monospace;color:#58a6ff;margin-left:4px">GLOBAL_SETTIMEOUT</span>
+        <span class="tag tag-green">AUTO-FIX</span>
+        <div style="margin-top:2px">
+          <span style="color:#58a6ff;font-family:monospace">drivers/curtain_motor_tilt/driver.js</span>
+          <span style="color:#8b949e">:55</span>
+        </div>
+        <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Global setTimeout (use this.homey.setTimeout for device code)</div>
+        <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">device.homey.setTimeout(() =&gt; {</div>
       </div>
       <div class="error-item hit-entry" data-severity="warning" data-fixable="true" style="border-color:#9e6a03">
         <span class="tag tag-yellow">warning</span>
@@ -4541,7 +4806,7 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">drivers/presence_sensor_radar/device.js</span>
-          <span style="color:#8b949e">:217</span>
+          <span style="color:#8b949e">:234</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Capability listener without markAppCommand()</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">this.registerCapabilityListener('onoff', async (value) =&gt; {</div>
@@ -13264,7 +13529,7 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">lib/battery/UnifiedBatteryHandler.js</span>
-          <span style="color:#8b949e">:1049</span>
+          <span style="color:#8b949e">:1054</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Wrong settings key zb_modelId (use zb_model_id)</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">const modelId = settings.zb_model_id || settings.zb_modelId || store.modelId || '';</div>
@@ -13275,7 +13540,7 @@
         <span class="tag tag-green">AUTO-FIX</span>
         <div style="margin-top:2px">
           <span style="color:#58a6ff;font-family:monospace">lib/battery/UnifiedBatteryHandler.js</span>
-          <span style="color:#8b949e">:1050</span>
+          <span style="color:#8b949e">:1055</span>
         </div>
         <div style="color:#8b949e;font-size:0.85em;margin-top:1px">Wrong settings key zb_manufacturerName (use zb_manufacturer_name)</div>
         <div style="color:#c9d1d9;background:#0d1117;padding:2px 6px;border-radius:3px;font-family:monospace;font-size:0.85em;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px">const mfr = settings.zb_manufacturer_name || settings.zb_manufacturerName || store.manufacturerName </div>
@@ -14321,7 +14586,7 @@
 </div>
 
 <pre>
-Generated: 2026-07-29 00:54:12
+Generated: 2026-07-30 02:39:32
 Universal Tuya Zigbee - Dashboard Suite
 </pre>
 </body>
