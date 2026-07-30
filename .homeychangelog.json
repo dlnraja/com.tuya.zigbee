@@ -1,6 +1,13 @@
 {
   "changelog": [
     {
+      "version": "9.0.375",
+      "date": "2026-07-30",
+      "channel": "test",
+      "en": "Product reference DB (9027 fingerprints: vendor/model/battery/energy/variants), energy consumption reference for the telemetry estimator, telemetry_is_estimated flow condition, mfs_db gap fix.",
+      "fr": "Base de référence produits (9027 empreintes : vendor/modèle/batterie/énergie/variants), référence de consommation pour l'estimateur, condition de flow telemetry_is_estimated, fix gap mfs_db."
+    },
+    {
       "version": "9.0.373",
       "date": "2026-07-30",
       "channel": "test",
