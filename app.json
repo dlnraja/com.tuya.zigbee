@@ -82901,6 +82901,46 @@
         }
       },
       {
+        "id": "cover_set_position",
+        "title": {
+          "en": "Set cover position (IKEA blinds style)",
+          "fr": "Positionner le volet (style stores IKEA)",
+          "nl": "Rolluikpositie instellen (IKEA-stijl)",
+          "de": "Rollladenposition einstellen (IKEA-Stil)"
+        },
+        "hint": {
+          "en": "Moves a cover/blind to a precise position (0% = closed, 100% = fully open)",
+          "fr": "Déplace un volet/store vers une position précise (0% = fermé, 100% = ouvert)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "cover",
+            "title": {
+              "en": "Cover",
+              "fr": "Volet"
+            }
+          },
+          {
+            "type": "number",
+            "name": "position",
+            "title": {
+              "en": "Position (%)",
+              "fr": "Position (%)"
+            },
+            "min": 0,
+            "max": 100,
+            "placeholder": {
+              "en": "50"
+            }
+          }
+        ],
+        "titleFormatted": {
+          "en": "Move [[cover]] to [[position]]%",
+          "fr": "Positionner [[cover]] à [[position]]%"
+        }
+      },
+      {
         "id": "dim_to_level",
         "title": {
           "en": "Fade to brightness over time",
@@ -83098,6 +83138,24 @@
         ],
         "titleFormatted": {
           "en": "Run health prediction [[device]]"
+        }
+      },
+      {
+        "id": "hue_all_off",
+        "title": {
+          "en": "All lights off (Hue-style)",
+          "fr": "Tout éteindre (style Hue)",
+          "nl": "Alle lampen uit (Hue-stijl)",
+          "de": "Alle Lichter aus (Hue-Stil)"
+        },
+        "hint": {
+          "en": "Turns off every light-capable device in the app (like the Hue app's All Off button)",
+          "fr": "Éteint tous les devices d'éclairage de l'app (comme le bouton 'Tout éteindre' de l'app Hue)"
+        },
+        "args": [],
+        "titleFormatted": {
+          "en": "All lights off",
+          "fr": "Tout éteindre"
         }
       },
       {

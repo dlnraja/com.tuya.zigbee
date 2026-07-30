@@ -1,6 +1,13 @@
 {
   "changelog": [
     {
+      "version": "9.0.380",
+      "date": "2026-07-30",
+      "channel": "test",
+      "en": "OTA flash guidance in notifications, Hue batch 4 (cover_set_position, hue_all_off).",
+      "fr": "Guidance flash dans les notifications OTA, batch Hue 4 (cover_set_position, hue_all_off)."
+    },
+    {
       "version": "9.0.379",
       "date": "2026-07-30",
       "channel": "test",
