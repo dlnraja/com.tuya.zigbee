@@ -258,13 +258,29 @@ function compactZigbeeIdentifiers(manifest, opts = {}) {
     }
 
     // Classify manufacturers by evidence.
+    // v9.0.373: case-variant groups — both cases of the same fingerprint are
+    // the SAME device: they count once for budget purposes and are never
+    // split (drop or keep all variants of a group together).
+    const variantGroups = new Map(); // lowercaseKey -> [variants in original order]
+    for (const v of manufacturers) {
+      const k = v.toLowerCase();
+      if (!variantGroups.has(k)) {variantGroups.set(k, []);}
+      variantGroups.get(k).push(v);
+    }
+
     let observed = [];
     let speculative = manufacturers;
+    let observedKeys = [];
+    let speculativeKeys = [];
     if (hasDb) {
       observed = manufacturers
         .filter(value => db.byMfr.has(value.toLowerCase()))
         .sort((a, b) => db.byMfr.get(b.toLowerCase()).confidence - db.byMfr.get(a.toLowerCase()).confidence);
       speculative = manufacturers.filter(value => !db.byMfr.has(value.toLowerCase()));
+      observedKeys = [...variantGroups.keys()]
+        .filter(k => db.byMfr.has(k))
+        .sort((a, b) => db.byMfr.get(b).confidence - db.byMfr.get(a).confidence);
+      speculativeKeys = [...variantGroups.keys()].filter(k => !db.byMfr.has(k));
     }
     observedBefore += observed.length;
 
@@ -274,7 +290,7 @@ function compactZigbeeIdentifiers(manifest, opts = {}) {
     //    list is never emptied (fallback: original list).
     let nextProducts = products;
     if (hasDb && observed.length > 0 && products.length > 0
-        && manufacturers.length * products.length > pidReduceOver) {
+        && variantGroups.size * products.length > pidReduceOver) {
       const observedPidSet = new Set();
       for (const mfr of observed) {
         for (const pid of db.byMfr.get(mfr.toLowerCase()).modelIds) {
@@ -286,7 +302,8 @@ function compactZigbeeIdentifiers(manifest, opts = {}) {
       }
     }
 
-    const candidate = manufacturers.length * nextProducts.length;
+    // Budget: DEVICE count (case-variant groups) × pids — case variants are free
+    const candidate = variantGroups.size * nextProducts.length;
     if (candidate > maxDriverCombos && manufacturers.length > 0 && nextProducts.length > 0) {
       let nextManufacturers;
 
@@ -296,24 +313,33 @@ function compactZigbeeIdentifiers(manifest, opts = {}) {
           nextManufacturers = (observed.length > 0 ? observed : speculative).slice(0, 1);
           nextProducts = nextProducts.slice(0, maxDriverCombos);
         } else {
-          // 2) Truncate manufacturers by priority: observed (confidence desc)
-          //    first, speculative afterwards. An observed mfr is only dropped
-          //    when the budget cannot hold them all.
-          const manufacturerLimit = Math.max(1, Math.floor(maxDriverCombos / nextProducts.length));
-          const keptObserved = observed.slice(0, manufacturerLimit);
-          const keptSpeculative = speculative.slice(0, Math.max(0, manufacturerLimit - keptObserved.length));
-          nextManufacturers = [...keptObserved, ...keptSpeculative];
-          const droppedObserved = observed.slice(manufacturerLimit);
-          if (droppedObserved.length > 0) {
-            observedDropped.push({ id: driver.id, manufacturers: droppedObserved });
+          // 2) Truncate by DEVICE GROUP (never splits a case-variant group):
+          //    observed groups (confidence desc) first, speculative afterwards.
+          //    Emission order: all variants of kept observed groups first
+          //    (confidence desc), then variants of kept speculative groups.
+          const groupLimit = Math.max(1, Math.floor(maxDriverCombos / nextProducts.length));
+          const keptObservedKeys = observedKeys.slice(0, groupLimit);
+          const keptSpeculativeKeys = speculativeKeys.slice(0, Math.max(0, groupLimit - keptObservedKeys.length));
+          const keptKeys = new Set([...keptObservedKeys, ...keptSpeculativeKeys]);
+          nextManufacturers = [
+            ...keptObservedKeys.flatMap(k => variantGroups.get(k)),
+            ...keptSpeculativeKeys.flatMap(k => variantGroups.get(k)),
+          ];
+          const droppedKeys = observedKeys.slice(groupLimit);
+          if (droppedKeys.length > 0) {
+            observedDropped.push({
+              id: driver.id,
+              manufacturers: droppedKeys.flatMap(k => variantGroups.get(k)),
+            });
           }
         }
       } else if (nextProducts.length > maxDriverCombos) {
         nextManufacturers = manufacturers.slice(0, 1);
         nextProducts = nextProducts.slice(0, maxDriverCombos);
       } else {
-        const manufacturerLimit = Math.max(1, Math.floor(maxDriverCombos / Math.max(1, nextProducts.length)));
-        nextManufacturers = manufacturers.slice(0, manufacturerLimit);
+        const groupLimit = Math.max(1, Math.floor(maxDriverCombos / Math.max(1, nextProducts.length)));
+        const keptKeys = new Set([...variantGroups.keys()].slice(0, groupLimit));
+        nextManufacturers = manufacturers.filter(v => keptKeys.has(v.toLowerCase()));
       }
 
       driver.zigbee.manufacturerName = nextManufacturers;
@@ -324,7 +350,7 @@ function compactZigbeeIdentifiers(manifest, opts = {}) {
         : 0;
       observedKept += keptObservedCount;
 
-      const after = nextManufacturers.length * nextProducts.length;
+      const after = new Set(nextManufacturers.map(v => v.toLowerCase())).size * nextProducts.length;
       const change = {
         id: driver.id,
         before,

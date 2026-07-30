@@ -4,6 +4,15 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
+## [9.0.373] - 2026-07-30
+
+### Fixed
+- **Unknown device prevention (case)**: Homey matches `manufacturerName` case-sensitively at pairing. Added the missing upper/lower variant for **4950 fingerprints** across 243 drivers (`tools/ci/case-variant-fixer.js`) — devices reporting in the other case no longer pair as "Unknown Zigbee device". Regression test enforces both-case completeness forever.
+- **Publish compactor**: budget now counts case-variant groups (same device) instead of raw cross-product — case variants are free and never split. This stopped the compactor from purging hundreds of *observed* manufacturers (including `_TZE284_hodyryli`, `flonmact`, `kwi6bbk4`) at the next publish: 0 observed dropped, 2.98 MB compacted.
+- Added `_TZE204_kwi6bbk4` (ZHA source) to climate_sensor earlier this session.
+
+---
+
 ## [9.0.371] - 2026-07-30
 
 ### Fixed

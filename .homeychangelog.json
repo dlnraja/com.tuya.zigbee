@@ -1,6 +1,13 @@
 {
   "changelog": [
     {
+      "version": "9.0.373",
+      "date": "2026-07-30",
+      "channel": "test",
+      "en": "Case-variant completeness (4950 fingerprints, unknown device prevention) + publish compactor counts case groups (0 observed purged).",
+      "fr": "Complétude des casses (4950 empreintes, anti unknown device) + compacteur par groupes de casse (0 purge observée)."
+    },
+    {
       "version": "9.0.371",
       "date": "2026-07-30",
       "channel": "test",
