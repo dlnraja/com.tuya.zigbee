@@ -76,7 +76,7 @@
         "en": "Triggers only when physical button turns ON gang 1",
         "fr": "Se déclenche uniquement quand le bouton physique allume gang 1",
         "nl": "Triggert alleen wanneer fysieke knop gang 1 inschakelt",
-        "de": "Wird nur ausgelÃ¶st, wenn physische Taste gang 1 einschaltet"
+        "de": "Wird nur ausgelöst, wenn physische Taste gang 1 einschaltet"
       },
       "args": [],
       "titleFormatted": {
@@ -154,14 +154,14 @@
       "id": "switch_2gang_turned_off_switch",
       "title": {
         "en": "Turned off",
-        "fr": "Ã‰teint",
+        "fr": "Éteint",
         "nl": "Uitgezet",
         "de": "Ausgeschaltet"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turned off",
-        "fr": "Ã‰teint",
+        "fr": "Éteint",
         "nl": "Uitgezet",
         "de": "Ausgeschaltet"
       }
@@ -172,14 +172,14 @@
         "en": "Power changed",
         "fr": "Puissance changée",
         "nl": "Vermogen gewijzigd",
-        "de": "Leistung geÃ¤ndert"
+        "de": "Leistung geändert"
       },
       "args": [],
       "titleFormatted": {
         "en": "Power changed",
         "fr": "Puissance changée",
         "nl": "Vermogen gewijzigd",
-        "de": "Leistung geÃ¤ndert"
+        "de": "Leistung geändert"
       }
     },
     {
@@ -308,14 +308,14 @@
       "id": "switch_2gang_turn_off_gang1_switch",
       "title": {
         "en": "Turn off gang 1",
-        "fr": "Ã‰teindre gang 1",
+        "fr": "Éteindre gang 1",
         "nl": "Gang 1 uitzetten",
         "de": "Gang 1 ausschalten"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turn off gang 1",
-        "fr": "Ã‰teindre gang 1",
+        "fr": "Éteindre gang 1",
         "nl": "Gang 1 uitzetten",
         "de": "Gang 1 ausschalten"
       }
@@ -340,14 +340,14 @@
       "id": "switch_2gang_turn_off_gang2_switch",
       "title": {
         "en": "Turn off gang 2",
-        "fr": "Ã‰teindre gang 2",
+        "fr": "Éteindre gang 2",
         "nl": "Gang 2 uitzetten",
         "de": "Gang 2 ausschalten"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turn off gang 2",
-        "fr": "Ã‰teindre gang 2",
+        "fr": "Éteindre gang 2",
         "nl": "Gang 2 uitzetten",
         "de": "Gang 2 ausschalten"
       }
@@ -416,14 +416,14 @@
       "id": "switch_2gang_turn_off_all_switch",
       "title": {
         "en": "Turn off all gangs",
-        "fr": "Ã‰teindre tous les gangs",
+        "fr": "Éteindre tous les gangs",
         "nl": "Alle gangs uitzetten",
         "de": "Alle Gangs ausschalten"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turn off all gangs",
-        "fr": "Ã‰teindre tous les gangs",
+        "fr": "Éteindre tous les gangs",
         "nl": "Alle gangs uitzetten",
         "de": "Alle Gangs ausschalten"
       }
@@ -438,7 +438,7 @@
       },
       "hint": {
         "en": "Control the switch LED indicator (requires Tuya DP15 support)",
-        "fr": "ContrÃ´le l'indicateur LED (nécessite Tuya DP15)",
+        "fr": "Contrôle l'indicateur LED (nécessite Tuya DP15)",
         "nl": "Beheer de schakelaar LED indicator (vereist Tuya DP15)",
         "de": "Steuert die Schalter-LED-Anzeige (erfordert Tuya DP15)"
       },
@@ -457,7 +457,7 @@
               "id": "off",
               "title": {
                 "en": "Off",
-                "fr": "Ã‰teint",
+                "fr": "Éteint",
                 "nl": "Uit",
                 "de": "Aus"
               }
@@ -510,14 +510,14 @@
       "id": "switch_2gang_turn_off_switch",
       "title": {
         "en": "Turn off",
-        "fr": "Ã‰teindre",
+        "fr": "Éteindre",
         "nl": "Uitzetten",
         "de": "Ausschalten"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turn off",
-        "fr": "Ã‰teindre",
+        "fr": "Éteindre",
         "nl": "Uitzetten",
         "de": "Ausschalten"
       }

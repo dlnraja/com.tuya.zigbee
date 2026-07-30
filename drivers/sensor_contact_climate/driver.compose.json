@@ -44,8 +44,8 @@
           "id": "temperature_calibration",
           "type": "number",
           "label": {
-            "en": "Temperature Offset (Â°C)",
-            "fr": "Décalage Température (Â°C)"
+            "en": "Temperature Offset (°C)",
+            "fr": "Décalage Température (°C)"
           },
           "value": 0,
           "min": -10,
@@ -87,13 +87,13 @@
             {
               "id": "1",
               "label": {
-                "en": "1 decimal (20.5Â°C)"
+                "en": "1 decimal (20.5°C)"
               }
             },
             {
               "id": "2",
               "label": {
-                "en": "2 decimals (20.53Â°C)"
+                "en": "2 decimals (20.53°C)"
               }
             }
           ]
@@ -123,7 +123,7 @@
             "en": "Select time sync format. Auto works for most devices. Change only if clock shows wrong time.",
             "fr": "Format de synchronisation. Auto fonctionne pour la plupart. Changer si l'heure affichée est incorrecte.",
             "nl": "Selecteer tijdsync formaat. Auto werkt voor de meeste apparaten.",
-            "de": "Zeitsync-Format wÃ¤hlen. Auto funktioniert fÃ¼r die meisten GerÃ¤te."
+            "de": "Zeitsync-Format wählen. Auto funktioniert für die meisten Geräte."
           },
           "values": [
             {
@@ -172,7 +172,7 @@
               "id": "tuya_extended",
               "label": {
                 "en": " Tuya Extended (9-byte + timezone)",
-                "fr": " Tuya Ã‰tendu (9 octets + fuseau)"
+                "fr": " Tuya Étendu (9 octets + fuseau)"
               }
             },
             {
@@ -212,7 +212,7 @@
             "en": "Override timezone. Use Auto to use Homey's timezone. Manual override for devices that don't handle DST.",
             "fr": "Forcer le fuseau. Auto utilise celui de Homey. Manuel pour appareils sans gestion heure d'été.",
             "nl": "Overschrijf tijdzone. Auto gebruikt Homey's tijdzone.",
-            "de": "Zeitzone Ã¼berschreiben. Auto verwendet Homey's Zeitzone."
+            "de": "Zeitzone überschreiben. Auto verwendet Homey's Zeitzone."
           },
           "values": [
             {
@@ -287,9 +287,9 @@
           "id": "alarm_temp_max",
           "type": "number",
           "label": {
-            "en": "Max Temperature Alarm (Â°C)",
-            "nl": "Max temperatuur alarm (Â°C)",
-            "fr": "Alarme température max (Â°C)"
+            "en": "Max Temperature Alarm (°C)",
+            "nl": "Max temperatuur alarm (°C)",
+            "fr": "Alarme température max (°C)"
           },
           "hint": {
             "en": "Device will trigger alarm when temperature exceeds this value (E002 cluster, not all devices support this)",
@@ -304,9 +304,9 @@
           "id": "alarm_temp_min",
           "type": "number",
           "label": {
-            "en": "Min Temperature Alarm (Â°C)",
-            "nl": "Min temperatuur alarm (Â°C)",
-            "fr": "Alarme température min (Â°C)"
+            "en": "Min Temperature Alarm (°C)",
+            "nl": "Min temperatuur alarm (°C)",
+            "fr": "Alarme température min (°C)"
           },
           "hint": {
             "en": "Device will trigger alarm when temperature drops below this value",
@@ -390,10 +390,10 @@
             "nl": "Temperatuur correctie"
           },
           "hint": {
-            "en": "Adjust sensor reading (Â±10Â°C)",
-            "nl": "Pas meetwaarde aan (Â±10Â°C)"
+            "en": "Adjust sensor reading (±10°C)",
+            "nl": "Pas meetwaarde aan (±10°C)"
           },
-          "units": "Â°C",
+          "units": "°C",
           "value": 0,
           "min": -10,
           "max": 10,
@@ -407,8 +407,8 @@
             "nl": "Luchtvochtigheid correctie"
           },
           "hint": {
-            "en": "Adjust sensor reading (Â±30%)",
-            "nl": "Pas meetwaarde aan (Â±30%)"
+            "en": "Adjust sensor reading (±30%)",
+            "nl": "Pas meetwaarde aan (±30%)"
           },
           "units": "%",
           "value": 0,
@@ -487,7 +487,7 @@
       "id": "ota_check",
       "title": {
         "en": "Check Zigbee OTA Update",
-        "fr": "Vérifier MÃJ OTA",
+        "fr": "Vérifier MàJ OTA",
         "nl": "Controleer op OTA-updates"
       }
     }

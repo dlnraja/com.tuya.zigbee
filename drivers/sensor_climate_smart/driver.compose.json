@@ -4,7 +4,7 @@
     "nl": "Slimme Klimaatsensor",
     "fr": "Capteur Climatique Intelligent",
     "de": "Intelligenter -Klimasensor",
-    "es": "Sensor ClimÃ¡tico Inteligente"
+    "es": "Sensor Climático Inteligente"
   },
   "class": "socket",
   "capabilities": [
@@ -111,7 +111,7 @@
       "id": "ota_check",
       "title": {
         "en": "Check Zigbee OTA Update",
-        "fr": "Vérifier MÃJ OTA",
+        "fr": "Vérifier MàJ OTA",
         "nl": "Controleer op OTA-updates"
       }
     }

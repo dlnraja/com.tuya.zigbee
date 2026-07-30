@@ -6,7 +6,7 @@
         "en": "Soil moisture changed",
         "nl": "Bodemvochtigheid veranderd",
         "fr": "Humidité sol changée",
-        "de": "Bodenfeuchtigkeit geÃ¤ndert"
+        "de": "Bodenfeuchtigkeit geändert"
       },
       "tokens": [
         {
@@ -26,7 +26,7 @@
         "en": "Soil moisture changed",
         "nl": "Bodemvochtigheid veranderd",
         "fr": "Humidité sol changée",
-        "de": "Bodenfeuchtigkeit geÃ¤ndert"
+        "de": "Bodenfeuchtigkeit geändert"
       }
     },
     {
@@ -35,17 +35,17 @@
         "en": "Soil temperature changed",
         "nl": "Bodemtemperatuur veranderd",
         "fr": "Température sol changée",
-        "de": "Bodentemperatur geÃ¤ndert"
+        "de": "Bodentemperatur geändert"
       },
       "tokens": [
         {
           "name": "temperature",
           "type": "number",
           "title": {
-            "en": "Temperature (Â°C)",
-            "nl": "Temperatuur (Â°C)",
-            "fr": "Température (Â°C)",
-            "de": "Temperatur (Â°C)"
+            "en": "Temperature (°C)",
+            "nl": "Temperatuur (°C)",
+            "fr": "Température (°C)",
+            "de": "Temperatur (°C)"
           },
           "example": 18
         }
@@ -55,7 +55,7 @@
         "en": "Soil temperature changed",
         "nl": "Bodemtemperatuur veranderd",
         "fr": "Température sol changée",
-        "de": "Bodentemperatur geÃ¤ndert"
+        "de": "Bodentemperatur geändert"
       }
     },
     {
@@ -71,7 +71,7 @@
         "en": "Triggers when soil moisture drops below the configured dry threshold",
         "nl": "Triggert wanneer de bodemvochtigheid onder de droge drempel zakt",
         "fr": "Se déclenche quand l'humidité du sol passe sous le seuil de sécheresse",
-        "de": "Wird ausgelÃ¶st, wenn die Bodenfeuchtigkeit unter den Trockenschwellenwert fÃ¤llt"
+        "de": "Wird ausgelöst, wenn die Bodenfeuchtigkeit unter den Trockenschwellenwert fällt"
       },
       "args": [],
       "titleFormatted": {
@@ -93,7 +93,7 @@
         "en": "Triggers when soil moisture rises above the configured wet threshold",
         "nl": "Triggert wanneer de bodemvochtigheid boven de natte drempel stijgt",
         "fr": "Se déclenche quand l'humidité du sol dépasse le seuil d'humidité",
-        "de": "Wird ausgelÃ¶st, wenn die Bodenfeuchtigkeit Ã¼ber den NÃ¤sseschwellenwert steigt"
+        "de": "Wird ausgelöst, wenn die Bodenfeuchtigkeit über den Nässeschwellenwert steigt"
       },
       "args": [],
       "titleFormatted": {
@@ -115,7 +115,7 @@
         "en": "Triggers when soil moisture is in the optimal range for plant growth",
         "nl": "Triggert wanneer de bodemvochtigheid in het optimale bereik voor plantengroei is",
         "fr": "Se déclenche quand l'humidité du sol est dans la plage optimale pour la croissance des plantes",
-        "de": "Wird ausgelÃ¶st, wenn die Bodenfeuchtigkeit im optimalen Bereich fÃ¼r Pflanzenwachstum liegt"
+        "de": "Wird ausgelöst, wenn die Bodenfeuchtigkeit im optimalen Bereich für Pflanzenwachstum liegt"
       },
       "args": [],
       "titleFormatted": {
@@ -134,10 +134,10 @@
         "de": "Frostwarnung"
       },
       "hint": {
-        "en": "Triggers when soil temperature drops below 2Â°C - protect your plants!",
-        "nl": "Triggert wanneer de bodemtemperatuur onder 2Â°C zakt - bescherm je planten!",
-        "fr": "Se déclenche quand la température du sol passe sous 2Â°C - protégez vos plantes !",
-        "de": "Wird ausgelÃ¶st, wenn die Bodentemperatur unter 2Â°C fÃ¤llt - schÃ¼tzen Sie Ihre Pflanzen!"
+        "en": "Triggers when soil temperature drops below 2°C - protect your plants!",
+        "nl": "Triggert wanneer de bodemtemperatuur onder 2°C zakt - bescherm je planten!",
+        "fr": "Se déclenche quand la température du sol passe sous 2°C - protégez vos plantes !",
+        "de": "Wird ausgelöst, wenn die Bodentemperatur unter 2°C fällt - schützen Sie Ihre Pflanzen!"
       },
       "args": [],
       "titleFormatted": {
@@ -153,7 +153,7 @@
         "en": "Battery level changed",
         "nl": "Batterijniveau veranderd",
         "fr": "Niveau batterie changé",
-        "de": "Batteriestand geÃ¤ndert"
+        "de": "Batteriestand geändert"
       },
       "tokens": [
         {
@@ -173,7 +173,7 @@
         "en": "Battery level changed",
         "nl": "Batterijniveau veranderd",
         "fr": "Niveau batterie changé",
-        "de": "Batteriestand geÃ¤ndert"
+        "de": "Batteriestand geändert"
       }
     },
     {
@@ -198,14 +198,14 @@
         "en": "Temperature changed",
         "fr": "Température changée",
         "nl": "Temperatuur gewijzigd",
-        "de": "Temperatur geÃ¤ndert"
+        "de": "Temperatur geändert"
       },
       "args": [],
       "titleFormatted": {
         "en": "Temperature changed",
         "fr": "Température changée",
         "nl": "Temperatuur gewijzigd",
-        "de": "Temperatur geÃ¤ndert"
+        "de": "Temperatur geändert"
       }
     },
     {
@@ -214,14 +214,14 @@
         "en": "Humidity changed",
         "fr": "Humidité changée",
         "nl": "Vochtigheid gewijzigd",
-        "de": "Feuchtigkeit geÃ¤ndert"
+        "de": "Feuchtigkeit geändert"
       },
       "args": [],
       "titleFormatted": {
         "en": "Humidity changed",
         "fr": "Humidité changée",
         "nl": "Vochtigheid gewijzigd",
-        "de": "Feuchtigkeit geÃ¤ndert"
+        "de": "Feuchtigkeit geändert"
       }
     },
     {
@@ -275,7 +275,7 @@
         "en": "Soil moisture !{{is|is not}} above",
         "nl": "Bodemvochtigheid !{{is|is niet}} boven",
         "fr": "Humidité sol !{{est|n'est pas}} au-dessus de",
-        "de": "Bodenfeuchtigkeit !{{ist|ist nicht}} Ã¼ber"
+        "de": "Bodenfeuchtigkeit !{{ist|ist nicht}} über"
       },
       "args": [
         {
@@ -293,7 +293,7 @@
         "en": "Soil moisture !{{is|is not}} above [[moisture]]",
         "nl": "Bodemvochtigheid !{{is|is niet}} boven [[moisture]]",
         "fr": "Humidité sol !{{est|n'est pas}} au-dessus de [[moisture]]",
-        "de": "Bodenfeuchtigkeit !{{ist|ist nicht}} Ã¼ber [[moisture]]"
+        "de": "Bodenfeuchtigkeit !{{ist|ist nicht}} über [[moisture]]"
       }
     },
     {
@@ -302,7 +302,7 @@
         "en": "Soil temperature !{{is|is not}} above",
         "nl": "Bodemtemperatuur !{{is|is niet}} boven",
         "fr": "Température sol !{{est|n'est pas}} au-dessus de",
-        "de": "Bodentemperatur !{{ist|ist nicht}} Ã¼ber"
+        "de": "Bodentemperatur !{{ist|ist nicht}} über"
       },
       "args": [
         {
@@ -320,7 +320,7 @@
         "en": "Soil temperature !{{is|is not}} above [[temp]]",
         "nl": "Bodemtemperatuur !{{is|is niet}} boven [[temp]]",
         "fr": "Température sol !{{est|n'est pas}} au-dessus de [[temp]]",
-        "de": "Bodentemperatur !{{ist|ist nicht}} Ã¼ber [[temp]]"
+        "de": "Bodentemperatur !{{ist|ist nicht}} über [[temp]]"
       }
     },
     {
@@ -345,7 +345,7 @@
         "en": "Battery !{{is|is not}} above",
         "nl": "Batterij !{{is|is niet}} boven",
         "fr": "Batterie !{{est|n'est pas}} au-dessus de",
-        "de": "Batterie !{{ist|ist nicht}} Ã¼ber"
+        "de": "Batterie !{{ist|ist nicht}} über"
       },
       "args": [
         {
@@ -363,7 +363,7 @@
         "en": "Battery !{{is|is not}} above [[threshold]]",
         "nl": "Batterij !{{is|is niet}} boven [[threshold]]",
         "fr": "Batterie !{{est|n'est pas}} au-dessus de [[threshold]]",
-        "de": "Batterie !{{ist|ist nicht}} Ã¼ber [[threshold]]"
+        "de": "Batterie !{{ist|ist nicht}} über [[threshold]]"
       }
     },
     {

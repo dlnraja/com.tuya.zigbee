@@ -12,8 +12,8 @@
           "name": "temperature",
           "type": "number",
           "title": {
-            "en": "Temperature (Â°C)",
-            "fr": "Température (Â°C)"
+            "en": "Temperature (°C)",
+            "fr": "Température (°C)"
           },
           "example": 22.5
         }
@@ -113,14 +113,14 @@
         "en": "Temperature changed",
         "fr": "Température changée",
         "nl": "Temperatuur gewijzigd",
-        "de": "Temperatur geÃ¤ndert"
+        "de": "Temperatur geändert"
       },
       "args": [],
       "titleFormatted": {
         "en": "Temperature changed",
         "fr": "Température changée",
         "nl": "Temperatuur gewijzigd",
-        "de": "Temperatur geÃ¤ndert"
+        "de": "Temperatur geändert"
       }
     }
   ],
@@ -129,7 +129,7 @@
       "id": "sensor_climate_temphumidsensor_temperature_above",
       "title": {
         "en": "Temperature is above",
-        "fr": "Température supérieure Ã"
+        "fr": "Température supérieure à"
       },
       "args": [
         {
@@ -153,7 +153,7 @@
       "id": "sensor_climate_temphumidsensor_temperature_below",
       "title": {
         "en": "Temperature is below",
-        "fr": "Température inférieure Ã"
+        "fr": "Température inférieure à"
       },
       "args": [
         {
@@ -177,7 +177,7 @@
       "id": "sensor_climate_temphumidsensor_humidity_above",
       "title": {
         "en": "Humidity is above",
-        "fr": "Humidité supérieure Ã"
+        "fr": "Humidité supérieure à"
       },
       "args": [
         {
@@ -201,7 +201,7 @@
       "id": "sensor_climate_temphumidsensor_humidity_below",
       "title": {
         "en": "Humidity is below",
-        "fr": "Humidité inférieure Ã"
+        "fr": "Humidité inférieure à"
       },
       "args": [
         {

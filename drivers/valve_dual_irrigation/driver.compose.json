@@ -3,7 +3,7 @@
     "en": "Smart Valve 2-Way",
     "fr": "Vanne Connectée 2 Voies",
     "nl": "Tweevoudige Irrigatieklep",
-    "de": "Zwei-Wege-BewÃ¤sserungsventil"
+    "de": "Zwei-Wege-Bewässerungsventil"
   },
   "class": "other",
   "capabilities": [
@@ -54,7 +54,7 @@
       "id": "ota_check",
       "title": {
         "en": "Check Zigbee OTA Update",
-        "fr": "Vérifier MÃJ OTA",
+        "fr": "Vérifier MàJ OTA",
         "nl": "Controleer op OTA-updates"
       }
     }

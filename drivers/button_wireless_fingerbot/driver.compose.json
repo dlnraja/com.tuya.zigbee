@@ -34,22 +34,22 @@
           },
           "hint": {
             "en": "Select the type of device connected to this module. Radiator will invert the ON/OFF logic.",
-            "fr": "Sélectionnez le type d'appareil connecté àce module. Radiateur inversera la logique MARCHE/ARRÃŠT."
+            "fr": "Sélectionnez le type d'appareil connecté àce module. Radiateur inversera la logique MARCHE/ARRÊT."
           },
           "value": "light",
           "values": [
             {
               "id": "light",
               "label": {
-                "en": " Ã‰clairage",
-                "fr": " Ã‰clairage"
+                "en": " Éclairage",
+                "fr": " Éclairage"
               }
             },
             {
               "id": "outdoor_light",
               "label": {
-                "en": " Ã‰clairage extérieur",
-                "fr": " Ã‰clairage extérieur"
+                "en": " Éclairage extérieur",
+                "fr": " Éclairage extérieur"
               }
             },
             {
@@ -139,8 +139,8 @@
             {
               "id": "pool",
               "label": {
-                "en": " Ã‰quipement piscine",
-                "fr": " Ã‰quipement piscine"
+                "en": " Équipement piscine",
+                "fr": " Équipement piscine"
               }
             },
             {
@@ -153,8 +153,8 @@
             {
               "id": "appliance",
               "label": {
-                "en": " Ã‰lectroménager",
-                "fr": " Ã‰lectroménager"
+                "en": " Électroménager",
+                "fr": " Électroménager"
               }
             },
             {
@@ -181,8 +181,8 @@
             {
               "id": "tv",
               "label": {
-                "en": " TV / Ã‰cran",
-                "fr": " TV / Ã‰cran"
+                "en": " TV / Écran",
+                "fr": " TV / Écran"
               }
             },
             {
@@ -217,7 +217,7 @@
           },
           "hint": {
             "en": "Force invert ON/OFF logic regardless of device type (advanced users only)",
-            "fr": "Forcer l'inversion de la logique MARCHE/ARRÃŠT indépendamment du type (utilisateurs avancés uniquement)"
+            "fr": "Forcer l'inversion de la logique MARCHE/ARRÊT indépendamment du type (utilisateurs avancés uniquement)"
           },
           "value": false
         }
@@ -389,7 +389,7 @@
       "type": "dropdown",
       "label": {
         "en": "Energy Optimization Mode",
-        "fr": "Mode Optimisation Ã‰nergétique"
+        "fr": "Mode Optimisation Énergétique"
       },
       "value": "balanced",
       "values": [
@@ -404,20 +404,20 @@
           "id": "balanced",
           "label": {
             "en": "Balanced",
-            "fr": "Ã‰quilibré"
+            "fr": "Équilibré"
           }
         },
         {
           "id": "power_saving",
           "label": {
             "en": "Power Saving (Longer battery)",
-            "fr": "Ã‰conomie d'énergie (Batterie plus longue)"
+            "fr": "Économie d'énergie (Batterie plus longue)"
           }
         }
       ],
       "hint": {
         "en": "Balance between responsiveness and battery life",
-        "fr": "Ã‰quilibre entre réactivité et durée de vie de la batterie"
+        "fr": "Équilibre entre réactivité et durée de vie de la batterie"
       }
     },
     {
@@ -643,7 +643,7 @@
     "nl": "Draadloze Fingerbot Knop",
     "fr": "Bouton Sans Fil Fingerbot",
     "de": "Drahtloser Fingerbot Knopf",
-    "es": "BotÃ³n InalÃ¡mbrico Fingerbot"
+    "es": "Botón Inalámbrico Fingerbot"
   },
   "platforms": [
     "local"
@@ -735,7 +735,7 @@
       "id": "ota_check",
       "title": {
         "en": "Check Zigbee OTA Update",
-        "fr": "Vérifier MÃJ OTA",
+        "fr": "Vérifier MàJ OTA",
         "nl": "Controleer op OTA-updates"
       }
     }

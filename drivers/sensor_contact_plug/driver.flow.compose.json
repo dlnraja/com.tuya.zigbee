@@ -13,7 +13,7 @@
         "en": "Triggers when the plug is turned on",
         "nl": "Triggert wanneer de stekker wordt ingeschakeld",
         "fr": "Se déclenche quand la prise est allumée",
-        "de": "Wird ausgelÃ¶st, wenn der Stecker eingeschaltet wird"
+        "de": "Wird ausgelöst, wenn der Stecker eingeschaltet wird"
       },
       "args": [],
       "titleFormatted": {
@@ -28,20 +28,20 @@
       "title": {
         "en": "Turned off",
         "nl": "Uitgeschakeld",
-        "fr": "Ã‰teint",
+        "fr": "Éteint",
         "de": "Ausgeschaltet"
       },
       "hint": {
         "en": "Triggers when the plug is turned off",
         "nl": "Triggert wanneer de stekker wordt uitgeschakeld",
         "fr": "Se déclenche quand la prise est éteinte",
-        "de": "Wird ausgelÃ¶st, wenn der Stecker ausgeschaltet wird"
+        "de": "Wird ausgelöst, wenn der Stecker ausgeschaltet wird"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turned off",
         "nl": "Uitgeschakeld",
-        "fr": "Ã‰teint",
+        "fr": "Éteint",
         "de": "Ausgeschaltet"
       }
     },
@@ -57,7 +57,7 @@
         "en": "Triggers when power is restored after an outage",
         "nl": "Triggert wanneer de stroom is hersteld na een stroomstoring",
         "fr": "Se déclenche quand l'alimentation est rétablie après une coupure",
-        "de": "Wird ausgelÃ¶st, wenn die Stromversorgung nach einem Ausfall wiederhergestellt wird"
+        "de": "Wird ausgelöst, wenn die Stromversorgung nach einem Ausfall wiederhergestellt wird"
       },
       "args": [],
       "titleFormatted": {
@@ -73,7 +73,7 @@
         "en": "Power consumption changed",
         "nl": "Stroomverbruik gewijzigd",
         "fr": "Consommation changée",
-        "de": "Stromverbrauch geÃ¤ndert"
+        "de": "Stromverbrauch geändert"
       },
       "tokens": [
         {
@@ -115,7 +115,7 @@
         "en": "Power consumption changed",
         "nl": "Stroomverbruik gewijzigd",
         "fr": "Consommation changée",
-        "de": "Stromverbrauch geÃ¤ndert"
+        "de": "Stromverbrauch geändert"
       }
     },
     {
@@ -125,7 +125,7 @@
         "en": "Power exceeds threshold",
         "nl": "Vermogen overschrijdt drempel",
         "fr": "Puissance dépasse seuil",
-        "de": "Leistung Ã¼berschreitet Schwelle"
+        "de": "Leistung überschreitet Schwelle"
       },
       "tokens": [
         {
@@ -152,7 +152,7 @@
         "en": "Power exceeds threshold [[threshold]]",
         "nl": "Vermogen overschrijdt drempel [[threshold]]",
         "fr": "Puissance dépasse seuil [[threshold]]",
-        "de": "Leistung Ã¼berschreitet Schwelle [[threshold]]"
+        "de": "Leistung überschreitet Schwelle [[threshold]]"
       }
     },
     {
@@ -212,14 +212,14 @@
       "title": {
         "en": "Turn off",
         "nl": "Uitschakelen",
-        "fr": "Ã‰teindre",
+        "fr": "Éteindre",
         "de": "Ausschalten"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turn off",
         "nl": "Uitschakelen",
-        "fr": "Ã‰teindre",
+        "fr": "Éteindre",
         "de": "Ausschalten"
       }
     },
@@ -245,7 +245,7 @@
         "en": "Turn on after delay",
         "nl": "Inschakelen na vertraging",
         "fr": "Allumer après délai",
-        "de": "Nach VerzÃ¶gerung einschalten"
+        "de": "Nach Verzögerung einschalten"
       },
       "args": [
         {
@@ -263,7 +263,7 @@
         "en": "Turn on after delay [[delay]]",
         "nl": "Inschakelen na vertraging [[delay]]",
         "fr": "Allumer après délai [[delay]]",
-        "de": "Nach VerzÃ¶gerung einschalten [[delay]]"
+        "de": "Nach Verzögerung einschalten [[delay]]"
       }
     },
     {
@@ -271,8 +271,8 @@
       "title": {
         "en": "Turn off after delay",
         "nl": "Uitschakelen na vertraging",
-        "fr": "Ã‰teindre après délai",
-        "de": "Nach VerzÃ¶gerung ausschalten"
+        "fr": "Éteindre après délai",
+        "de": "Nach Verzögerung ausschalten"
       },
       "args": [
         {
@@ -289,8 +289,8 @@
       "titleFormatted": {
         "en": "Turn off after delay [[delay]]",
         "nl": "Uitschakelen na vertraging [[delay]]",
-        "fr": "Ã‰teindre après délai [[delay]]",
-        "de": "Nach VerzÃ¶gerung ausschalten [[delay]]"
+        "fr": "Éteindre après délai [[delay]]",
+        "de": "Nach Verzögerung ausschalten [[delay]]"
       }
     },
     {
@@ -303,7 +303,7 @@
       },
       "hint": {
         "en": "Control the plug LED indicator (DP26/27)",
-        "fr": "ContrÃ´le l'indicateur LED",
+        "fr": "Contrôle l'indicateur LED",
         "nl": "Beheer de LED indicator",
         "de": "LED-Anzeige steuern"
       },

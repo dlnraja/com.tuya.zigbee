@@ -4,7 +4,7 @@
     "nl": "Draadloze Usb Afstandsbediening",
     "fr": "Bouton Télécommande Sans Fil Usb",
     "de": "Drahtlose Usb Fernbedienung",
-    "es": "BotÃ³n Remoto InalÃ¡mbrico Usb"
+    "es": "Botón Remoto Inalámbrico Usb"
   },
   "class": "socket",
   "capabilities": [
@@ -40,7 +40,7 @@
     "meter_power": {
       "title": {
         "en": "Energy",
-        "fr": "Ã‰nergie"
+        "fr": "Énergie"
       }
     },
     "button.1": {
@@ -80,7 +80,7 @@
           "id": "off",
           "label": {
             "en": "Off",
-            "fr": "Ã‰teint"
+            "fr": "Éteint"
           }
         },
         {
@@ -101,7 +101,7 @@
           "id": "previous",
           "label": {
             "en": "Previous State",
-            "fr": "Ã‰tat précédent"
+            "fr": "État précédent"
           }
         }
       ]
@@ -119,7 +119,7 @@
           "id": "off",
           "label": {
             "en": "Off",
-            "fr": "Ã‰teint"
+            "fr": "Éteint"
           }
         },
         {
@@ -217,7 +217,7 @@
       "id": "ota_check",
       "title": {
         "en": "Check Zigbee OTA Update",
-        "fr": "Vérifier MÃJ OTA",
+        "fr": "Vérifier MàJ OTA",
         "nl": "Controleer op OTA-updates"
       }
     }

@@ -6,21 +6,21 @@
       "title": {
         "en": "Door/window opened",
         "nl": "Deur/raam geopend",
-        "fr": "Porte/fenÃªtre ouverte",
-        "de": "TÃ¼r/Fenster geÃ¶ffnet"
+        "fr": "Porte/fenêtre ouverte",
+        "de": "Tür/Fenster geöffnet"
       },
       "hint": {
         "en": "Triggers when the magnet separates from the sensor",
         "nl": "Triggert wanneer de magneet van de sensor wordt gescheiden",
         "fr": "Se déclenche quand l'aimant se sépare du capteur",
-        "de": "Wird ausgelÃ¶st, wenn der Magnet vom Sensor getrennt wird"
+        "de": "Wird ausgelöst, wenn der Magnet vom Sensor getrennt wird"
       },
       "args": [],
       "titleFormatted": {
         "en": "Door/window opened",
         "nl": "Deur/raam geopend",
-        "fr": "Porte/fenÃªtre ouverte",
-        "de": "TÃ¼r/Fenster geÃ¶ffnet"
+        "fr": "Porte/fenêtre ouverte",
+        "de": "Tür/Fenster geöffnet"
       }
     },
     {
@@ -28,21 +28,21 @@
       "title": {
         "en": "Door/window closed",
         "nl": "Deur/raam gesloten",
-        "fr": "Porte/fenÃªtre fermée",
-        "de": "TÃ¼r/Fenster geschlossen"
+        "fr": "Porte/fenêtre fermée",
+        "de": "Tür/Fenster geschlossen"
       },
       "hint": {
         "en": "Triggers when the magnet contacts the sensor",
         "nl": "Triggert wanneer de magneet de sensor raakt",
         "fr": "Se déclenche quand l'aimant touche le capteur",
-        "de": "Wird ausgelÃ¶st, wenn der Magnet den Sensor berÃ¼hrt"
+        "de": "Wird ausgelöst, wenn der Magnet den Sensor berührt"
       },
       "args": [],
       "titleFormatted": {
         "en": "Door/window closed",
         "nl": "Deur/raam gesloten",
-        "fr": "Porte/fenÃªtre fermée",
-        "de": "TÃ¼r/Fenster geschlossen"
+        "fr": "Porte/fenêtre fermée",
+        "de": "Tür/Fenster geschlossen"
       }
     },
     {
@@ -57,7 +57,7 @@
         "en": "Triggers when the sensor has been tampered with",
         "nl": "Triggert wanneer er met de sensor is geknoeid",
         "fr": "Se déclenche quand le capteur a été saboté",
-        "de": "Wird ausgelÃ¶st, wenn der Sensor manipuliert wurde"
+        "de": "Wird ausgelöst, wenn der Sensor manipuliert wurde"
       },
       "args": [],
       "titleFormatted": {
@@ -73,7 +73,7 @@
         "en": "Battery level changed",
         "nl": "Batterijniveau veranderd",
         "fr": "Niveau batterie changé",
-        "de": "Batteriestand geÃ¤ndert"
+        "de": "Batteriestand geändert"
       },
       "tokens": [
         {
@@ -93,7 +93,7 @@
         "en": "Battery level changed",
         "nl": "Batterijniveau veranderd",
         "fr": "Niveau batterie changé",
-        "de": "Batteriestand geÃ¤ndert"
+        "de": "Batteriestand geändert"
       }
     },
     {
@@ -108,7 +108,7 @@
         "en": "Triggers when battery drops below threshold",
         "nl": "Triggert wanneer de batterij onder de drempel zakt",
         "fr": "Se déclenche quand la batterie passe sous le seuil",
-        "de": "Wird ausgelÃ¶st, wenn die Batterie unter den Schwellenwert fÃ¤llt"
+        "de": "Wird ausgelöst, wenn die Batterie unter den Schwellenwert fällt"
       },
       "args": [],
       "titleFormatted": {
@@ -130,7 +130,7 @@
         "en": "Triggers when the sensor has been open for the specified duration",
         "nl": "Triggert wanneer de sensor langer dan de opgegeven tijd open is",
         "fr": "Se déclenche quand le capteur est ouvert depuis la durée spécifiée",
-        "de": "Wird ausgelÃ¶st, wenn der Sensor lÃ¤nger als die angegebene Dauer offen ist"
+        "de": "Wird ausgelöst, wenn der Sensor länger als die angegebene Dauer offen ist"
       },
       "tokens": [
         {
@@ -159,14 +159,14 @@
         "en": "Contact changed",
         "fr": "Contact changé",
         "nl": "Contact gewijzigd",
-        "de": "Kontakt geÃ¤ndert"
+        "de": "Kontakt geändert"
       },
       "args": [],
       "titleFormatted": {
         "en": "Contact changed",
         "fr": "Contact changé",
         "nl": "Contact gewijzigd",
-        "de": "Kontakt geÃ¤ndert"
+        "de": "Kontakt geändert"
       }
     },
     {
@@ -192,15 +192,15 @@
       "title": {
         "en": "Door/window !{{is|is not}} open",
         "nl": "Deur/raam !{{is|is niet}} open",
-        "fr": "Porte/fenÃªtre !{{est|n'est pas}} ouverte",
-        "de": "TÃ¼r/Fenster !{{ist|ist nicht}} offen"
+        "fr": "Porte/fenêtre !{{est|n'est pas}} ouverte",
+        "de": "Tür/Fenster !{{ist|ist nicht}} offen"
       },
       "args": [],
       "titleFormatted": {
         "en": "Door/window !{{is|is not}} open",
         "nl": "Deur/raam !{{is|is niet}} open",
-        "fr": "Porte/fenÃªtre !{{est|n'est pas}} ouverte",
-        "de": "TÃ¼r/Fenster !{{ist|ist nicht}} offen"
+        "fr": "Porte/fenêtre !{{est|n'est pas}} ouverte",
+        "de": "Tür/Fenster !{{ist|ist nicht}} offen"
       }
     },
     {
@@ -209,7 +209,7 @@
         "en": "Battery !{{is|is not}} above",
         "nl": "Batterij !{{is|is niet}} boven",
         "fr": "Batterie !{{est|n'est pas}} au-dessus de",
-        "de": "Batterie !{{ist|ist nicht}} Ã¼ber"
+        "de": "Batterie !{{ist|ist nicht}} über"
       },
       "args": [
         {
@@ -227,7 +227,7 @@
         "en": "Battery !{{is|is not}} above [[threshold]]",
         "nl": "Batterij !{{is|is niet}} boven [[threshold]]",
         "fr": "Batterie !{{est|n'est pas}} au-dessus de [[threshold]]",
-        "de": "Batterie !{{ist|ist nicht}} Ã¼ber [[threshold]]"
+        "de": "Batterie !{{ist|ist nicht}} über [[threshold]]"
       }
     },
     {

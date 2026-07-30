@@ -76,12 +76,12 @@
       "id": "dimmer_wall_water_dimmer_wall_1gang_dimmer_1_e5cc9",
       "title": {
         "en": "Turned off",
-        "fr": "Ã‰teint"
+        "fr": "Éteint"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turned off",
-        "fr": "Ã‰teint"
+        "fr": "Éteint"
       }
     },
     {
@@ -127,14 +127,14 @@
       "id": "dimmer_wall_water_dimmer_wall_1gang_turned_off",
       "title": {
         "en": "Turned off",
-        "fr": "Ã‰teint",
+        "fr": "Éteint",
         "nl": "Uitgezet",
         "de": "Ausgeschaltet"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turned off",
-        "fr": "Ã‰teint",
+        "fr": "Éteint",
         "nl": "Uitgezet",
         "de": "Ausgeschaltet"
       }
@@ -145,14 +145,14 @@
         "en": "Power changed",
         "fr": "Puissance changée",
         "nl": "Vermogen gewijzigd",
-        "de": "Leistung geÃ¤ndert"
+        "de": "Leistung geändert"
       },
       "args": [],
       "titleFormatted": {
         "en": "Power changed",
         "fr": "Puissance changée",
         "nl": "Vermogen gewijzigd",
-        "de": "Leistung geÃ¤ndert"
+        "de": "Leistung geändert"
       }
     }
   ],
@@ -203,12 +203,12 @@
       "id": "dimmer_wall_water_dimmer_wall_1gang_dimmer_1_cd269",
       "title": {
         "en": "Turn off",
-        "fr": "Ã‰teindre"
+        "fr": "Éteindre"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turn off",
-        "fr": "Ã‰teindre"
+        "fr": "Éteindre"
       }
     },
     {
@@ -227,7 +227,7 @@
       "id": "dimmer_wall_water_dimmer_wall_1gang_dimmer_1_deef8",
       "title": {
         "en": "Set brightness to...",
-        "fr": "Régler la luminosité Ã..."
+        "fr": "Régler la luminosité à..."
       },
       "args": [
         {
@@ -246,7 +246,7 @@
       ],
       "titleFormatted": {
         "en": "Set brightness to... [[brightness]]",
-        "fr": "Régler la luminosité Ã... [[brightness]]"
+        "fr": "Régler la luminosité à... [[brightness]]"
       }
     },
     {
@@ -269,14 +269,14 @@
       "id": "dimmer_wall_water_dimmer_wall_1gang_turn_off",
       "title": {
         "en": "Turn off",
-        "fr": "Ã‰teindre",
+        "fr": "Éteindre",
         "nl": "Uitzetten",
         "de": "Ausschalten"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turn off",
-        "fr": "Ã‰teindre",
+        "fr": "Éteindre",
         "nl": "Uitzetten",
         "de": "Ausschalten"
       }

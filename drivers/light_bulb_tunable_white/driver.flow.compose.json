@@ -16,12 +16,12 @@
       "id": "light_bulb_tunable_white_turned_off",
       "title": {
         "en": "Turned off",
-        "fr": "Ã‰teint"
+        "fr": "Éteint"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turned off",
-        "fr": "Ã‰teint"
+        "fr": "Éteint"
       }
     },
     {
@@ -79,12 +79,12 @@
       "id": "light_bulb_tunable_white_turn_off",
       "title": {
         "en": "Turn off",
-        "fr": "Ã‰teindre"
+        "fr": "Éteindre"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turn off",
-        "fr": "Ã‰teindre"
+        "fr": "Éteindre"
       }
     },
     {
@@ -103,7 +103,7 @@
       "id": "light_bulb_tunable_white_set_dim",
       "title": {
         "en": "Set brightness to...",
-        "fr": "Régler la luminosité Ã..."
+        "fr": "Régler la luminosité à..."
       },
       "args": [
         {
@@ -122,7 +122,7 @@
       ],
       "titleFormatted": {
         "en": "Set brightness to... [[brightness]]",
-        "fr": "Régler la luminosité Ã... [[brightness]]"
+        "fr": "Régler la luminosité à... [[brightness]]"
       }
     }
   ]
