@@ -46,6 +46,10 @@ permissions:
   pull-requests: read
   actions: read
 
+concurrency:
+  group: recurrent-orchestrator
+  cancel-in-progress: false
+
 jobs:
   orchestrate:
     runs-on: ubuntu-latest

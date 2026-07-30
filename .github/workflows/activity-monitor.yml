@@ -24,6 +24,10 @@ permissions:
   pull-requests: read
   actions: read
 
+concurrency:
+  group: activity-monitor
+  cancel-in-progress: false
+
 jobs:
   fetch-activity:
     runs-on: ubuntu-latest

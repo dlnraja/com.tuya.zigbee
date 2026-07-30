@@ -22,6 +22,10 @@ permissions:
   contents: write
   issues: read
 
+concurrency:
+  group: temporal-monitor
+  cancel-in-progress: false
+
 jobs:
   temporal-monitor:
     runs-on: ubuntu-latest

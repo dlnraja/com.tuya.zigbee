@@ -22,6 +22,10 @@ on:
 permissions:
   contents: read
 
+concurrency:
+  group: shadow-policy-check
+  cancel-in-progress: false
+
 jobs:
   policy:
     runs-on: ubuntu-latest
