@@ -4,7 +4,7 @@
     "description": "MFS Unified Database - Manufacturer Fingerprint Schema",
     "generatedAt": "2026-06-19T20:58:49.880Z",
     "generator": "mfs-aggregator v1.0.0",
-    "lastUpdated": "2026-07-29T01:45:45.427Z",
+    "lastUpdated": "2026-07-29T12:45:27.570Z",
     "lastEnrichment": {
       "date": "2026-07-29T01:45:45.427Z",
       "addedToDevices": 0,
@@ -36900,8 +36900,8 @@
         "TS0601"
       ],
       "variants": [],
-      "deviceType": "sensor",
-      "driverHint": "soilsensor_2",
+      "deviceType": "soil_sensor",
+      "driverHint": "soil_sensor",
       "capabilities": [
         "measure_humidity.soil",
         "measure_temperature",
@@ -36928,7 +36928,8 @@
         "hubitat": 2
       },
       "confidence": 0.25,
-      "lastSeen": "2026-06-19T20:58:49.764Z"
+      "lastSeen": "2026-07-29T12:45:27.570Z",
+      "notes": "Remapped from disabled soilsensor_2 (migrated_to soil_sensor)"
     },
     "_hybrid_device_air_purifier_thermostat_needs_device_assignment": {
       "manufacturerId": "_hybrid_device_air_purifier_thermostat_needs_device_assignment",
@@ -73289,7 +73290,7 @@
       ],
       "variants": [],
       "deviceType": "soil_sensor",
-      "driverHint": "soilsensor_2",
+      "driverHint": "soil_sensor",
       "capabilities": [
         "measure_humidity",
         "measure_temperature",
@@ -73309,7 +73310,8 @@
         "hubitat": 2
       },
       "confidence": 0.25,
-      "lastSeen": "2026-06-19T20:58:49.764Z"
+      "lastSeen": "2026-07-29T12:45:27.570Z",
+      "notes": "Remapped from disabled soilsensor_2 (migrated_to soil_sensor)"
     },
     "_tze284_myd45weu": {
       "manufacturerId": "_tze284_myd45weu",
@@ -73318,7 +73320,7 @@
       ],
       "variants": [],
       "deviceType": "soil_sensor",
-      "driverHint": "soilsensor_2",
+      "driverHint": "soil_sensor",
       "capabilities": [
         "measure_humidity",
         "measure_temperature",
@@ -73338,7 +73340,8 @@
         "hubitat": 4
       },
       "confidence": 0.25,
-      "lastSeen": "2026-06-19T20:58:49.764Z"
+      "lastSeen": "2026-07-29T12:45:27.570Z",
+      "notes": "Remapped from disabled soilsensor_2 (migrated_to soil_sensor)"
     },
     "_hybrid_sensor_climate_presence_needs_device_assignment": {
       "manufacturerId": "_hybrid_sensor_climate_presence_needs_device_assignment",
@@ -80441,8 +80444,8 @@
         "TS0601"
       ],
       "variants": [],
-      "deviceType": "sensor",
-      "driverHint": "soilsensor_2",
+      "deviceType": "soil_sensor",
+      "driverHint": "soil_sensor",
       "capabilities": [
         "measure_temperature",
         "measure_humidity",
@@ -80459,7 +80462,8 @@
         "z2m": 1
       },
       "confidence": 0.17,
-      "lastSeen": "2026-06-19T20:58:49.736Z"
+      "lastSeen": "2026-07-29T12:45:27.570Z",
+      "notes": "Remapped from disabled soilsensor_2 (migrated_to soil_sensor)"
     },
     "_tze204_myd45weu": {
       "manufacturerId": "_tze204_myd45weu",
@@ -80467,8 +80471,8 @@
         "TS0601"
       ],
       "variants": [],
-      "deviceType": "sensor",
-      "driverHint": "soilsensor_2",
+      "deviceType": "soil_sensor",
+      "driverHint": "soil_sensor",
       "capabilities": [
         "measure_temperature",
         "measure_humidity",
@@ -80487,7 +80491,8 @@
         "hubitat": 2
       },
       "confidence": 0.25,
-      "lastSeen": "2026-06-19T20:58:49.764Z"
+      "lastSeen": "2026-07-29T12:45:27.570Z",
+      "notes": "Remapped from disabled soilsensor_2 (migrated_to soil_sensor)"
     },
     "a89g12c": {
       "manufacturerId": "a89g12c",
@@ -120634,51 +120639,14 @@
     },
     "soil_sensor": {
       "manufacturerIds": [
-        "_tze200_pay2byax",
-        "_tze284_o9ofysmo",
-        "_tze284_xc3vwx5a",
-        "_tze200_wqashyqo",
-        "_tze200_npj9bug3",
-        "_tze284_65gzcss7",
-        "_tze284_hdml1aav",
-        "_tze284_tgrzpqf4",
-        "_tze200_2se8efxh",
-        "_tze200_9cqcpkgb",
-        "_tze284_2se8efxh",
-        "_tze284_9cqcpkgb",
-        "a89g12c",
-        "_tze200_4xsypney",
-        "_tze200_9cv5tcgq",
-        "_tze200_a0gspfyz",
-        "_tze200_fqytfmyk",
-        "_tze200_fqytfymk",
-        "_tze200_znlldql1",
-        "_tze204_4xsypney",
-        "_tze204_a0gspfyz",
-        "_tze204_fqytfmyk",
-        "_tze204_fqytfymk",
-        "_tze284_0ints6w",
-        "_tze284_2nhqasjh",
-        "_tze284_4xsypney",
-        "_tze284_a0gspfyz",
-        "_tze284_aa03yzhs",
-        "_tze284_fqytfmyk",
-        "_tze284_fqytfymk",
-        "_tze284_npj9bug3",
-        "_tze284_oitavov2",
-        "_tze200_itp8dt7f",
-        "_tze21c_i2ij4rb3",
-        "_tze2841000000_hdml1aav",
-        "_tze200_sh8v7fhd",
-        "_tze204_sh8v7fhd",
-        "_tze204_pay2byax"
+        "_tze284_sgabhwa6",
+        "_tze200_myd45weu",
+        "_tze284_myd45weu",
+        "_tze284_g2e6cpnw",
+        "_tze204_myd45weu"
       ],
       "modelIds": [
-        "TS0601",
-        "TS0203",
-        "ZG-303Z",
-        "TS0201",
-        "BUTTON"
+        "TS0601"
       ],
       "deviceType": "sensor"
     },
@@ -124502,19 +124470,6 @@
       ],
       "deviceType": "sensor"
     },
-    "soilsensor_2": {
-      "manufacturerIds": [
-        "_tze284_sgabhwa6",
-        "_tze200_myd45weu",
-        "_tze284_myd45weu",
-        "_tze284_g2e6cpnw",
-        "_tze204_myd45weu"
-      ],
-      "modelIds": [
-        "TS0601"
-      ],
-      "deviceType": "sensor"
-    },
     "device_air_purifier_thermostat": {
       "manufacturerIds": [
         "_hybrid_device_air_purifier_thermostat_needs_device_assignment"
@@ -127840,7 +127795,7 @@
     "lastSacredCoupleEnrichment": "2026-07-13T23:57:58.590Z",
     "fingerprints": 5710,
     "lastUpdate": "2026-07-14",
-    "lastUpdated": "2026-07-29T05:44:34.828Z",
+    "lastUpdated": "2026-07-30T05:10:26.238Z",
     "totalModelIds": 62784,
     "multiPidMfrs": 3299,
     "variantMfrs": 82,
@@ -186583,13 +186538,14 @@
     "modelIdsCount": 1
   },
   "_tz3000_u3nv1jwk": {
-    "driverId": "remote_button_wireless_handheld",
+    "driverId": "button_wireless_4",
     "source": "auto-sync",
     "modelIds": [
-      "DISABLED_REMOTE_BUTTON_WIRELESS_HANDHELD"
+      "TS0044"
     ],
     "pid": "DISABLED_REMOTE_BUTTON_WIRELESS_HANDHELD",
-    "modelIdsCount": 1
+    "modelIdsCount": 1,
+    "note": "Remapped from disabled remote_button_wireless_handheld (forum Moes TS0044)"
   },
   "_GENERIC_REMOTE_BUTTON_WIRELESS_PLUG": {
     "driverId": "remote_button_wireless_plug",
@@ -328800,5 +328756,9 @@
   "_TZE204_kwi6bbk4": {
     "driverId": "climate_sensor",
     "source": "zha-device-handlers-2026-07-30"
+  },
+  "_TZE284_hodyryli": {
+    "driverId": "climate_sensor",
+    "source": "gap-fix-2026-07-30"
   }
 }
