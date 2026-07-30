@@ -1,0 +1,125 @@
+{
+  "timestamp": 1785393249687,
+  "data": {
+    "gh": {
+      "openIssues": [
+        {
+          "n": 513,
+          "t": "Bug report - Zigbee Climate sensor not installing",
+          "u": "finnamu",
+          "l": [
+            "bug",
+            "reopened-by-user"
+          ]
+        },
+        {
+          "n": 439,
+          "t": "[Auto] New Tuya devices found in zigbee2mqtt",
+          "u": "github-actions[bot]",
+          "l": [
+            "enhancement",
+            "new-fingerprint",
+            "auto-scan"
+          ]
+        }
+      ],
+      "recentComments": [
+        {
+          "n": "420",
+          "u": "github-actions[bot]",
+          "b": "⚠️ Auto-Fix pipeline failed. Check [run #30515266143](https://github.com/dlnraja/com.tuya.zigbee/actions/runs/30515266143)"
+        },
+        {
+          "n": "513",
+          "u": "dlnraja",
+          "b": "Fixed in **v9.0.361** (test channel) and **v5.12.30** (stable).\n\nRoot cause found: the external probe value (DP38, `measure_temperature.probe`) was missing from the smart-divisor table, so the raw ×10"
+        },
+        {
+          "n": "513",
+          "u": "finnamu",
+          "b": "Thank you!\nThe external probe temperature now shows, but a factor of 10 too low. Is it possible to adjust?"
+        },
+        {
+          "n": "420",
+          "u": "github-actions[bot]",
+          "b": "⚠️ Auto-Fix pipeline failed. Check [run #30458264063](https://github.com/dlnraja/com.tuya.zigbee/actions/runs/30458264063)"
+        },
+        {
+          "n": "513",
+          "u": "finnamu",
+          "b": "The Climate sensor has two temperature measurements; inside and outside. Installed v9.0.357 and the inside temperature and humidity are shown correctly. The outside temperature is missing. Is this pos"
+        },
+        {
+          "n": "513",
+          "u": "dlnraja",
+          "b": "<!-- diag-resolver -->\n### Auto-resolved by Diagnostic Resolver\n\nAll fingerprints in this issue found in **Tuya Unified Zigbee v9.0.348**:\n- `_TZE284_hodyryli` -> **climate_sensor**\n\n**Install:** http"
+        },
+        {
+          "n": "513",
+          "u": "dlnraja",
+          "b": "<!-- diag-resolver -->\n### Auto-resolved by Diagnostic Resolver\n\nAll fingerprints in this issue found in **Tuya Unified Zigbee v9.0.348**:\n- `_TZE284_hodyryli` -> **climate_sensor**\n\n**Install:** http"
+        },
+        {
+          "n": "513",
+          "u": "dlnraja",
+          "b": "<!-- diag-resolver -->\n### Auto-resolved by Diagnostic Resolver\n\nAll fingerprints in this issue found in **Tuya Unified Zigbee v9.0.348**:\n- `_TZE284_hodyryli` -> **climate_sensor**\n\n**Install:** http"
+        },
+        {
+          "n": "513",
+          "u": "dlnraja",
+          "b": "<!-- diag-resolver -->\n### Auto-resolved by Diagnostic Resolver\n\nAll fingerprints in this issue found in **Tuya Unified Zigbee v9.0.348**:\n- `_TZE284_hodyryli` -> **climate_sensor**\n\n**Install:** http"
+        },
+        {
+          "n": "513",
+          "u": "dlnraja",
+          "b": "<!-- diag-resolver -->\n### Auto-resolved by Diagnostic Resolver\n\nAll fingerprints in this issue found in **Tuya Unified Zigbee v9.0.348**:\n- `_TZE284_hodyryli` -> **climate_sensor**\n\n**Install:** http"
+        }
+      ]
+    },
+    "forum": [
+      {
+        "topicId": 140352,
+        "title": "",
+        "username": "dlnraja",
+        "createdAt": "2025-07-25T01:07:08.539Z",
+        "excerpt": ""
+      },
+      {
+        "topicId": 26439,
+        "title": "",
+        "username": "Peter_van_Werkhoven",
+        "createdAt": "2025-06-07T16:43:53.992Z",
+        "excerpt": ""
+      },
+      {
+        "topicId": 147569,
+        "title": "",
+        "username": "Peter_Kawa",
+        "createdAt": "2025-12-22T11:02:12.854Z",
+        "excerpt": ""
+      },
+      {
+        "topicId": 148530,
+        "title": "",
+        "username": "Jolink",
+        "createdAt": "2026-01-05T11:11:27.849Z",
+        "excerpt": ""
+      },
+      {
+        "topicId": 145056,
+        "title": "",
+        "username": "Thunder",
+        "createdAt": "2025-11-07T16:07:54.328Z",
+        "excerpt": ""
+      },
+      {
+        "topicId": 78790,
+        "title": "",
+        "username": "Thunder",
+        "createdAt": "2026-01-28T12:33:25.343Z",
+        "excerpt": ""
+      }
+    ],
+    "crashes": null
+  }
+}
