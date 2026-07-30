@@ -14,11 +14,11 @@
   },
   "args": [
     { "type": "device", "name": "light", "title": { "en": "Light", "fr": "Lumière" } },
-    { "type": "number", "name": "duration", "title": { "en": "Duration (min)", "fr": "Durée (min)" }, "min": 1, "max": 60, "placeholder": { "en": "15" } },
+    { "type": "number", "name": "ramp_minutes", "title": { "en": "Duration (min)", "fr": "Durée (min)" }, "min": 1, "max": 60, "placeholder": { "en": "15" } },
     { "type": "number", "name": "target", "title": { "en": "Target brightness (%)", "fr": "Luminosité cible (%)" }, "min": 10, "max": 100, "placeholder": { "en": "100" } }
   ],
   "titleFormatted": {
-    "en": "Wake-up: ramp [[light]] to [[target]]% over [[duration]] min",
-    "fr": "Réveil : monter [[light]] à [[target]]% sur [[duration]] min"
+    "en": "Wake-up: ramp [[light]] to [[target]]% over [[ramp_minutes]] min",
+    "fr": "Réveil : monter [[light]] à [[target]]% sur [[ramp_minutes]] min"
   }
 }

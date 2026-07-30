@@ -83300,7 +83300,7 @@
           },
           {
             "type": "number",
-            "name": "duration",
+            "name": "ramp_minutes",
             "title": {
               "en": "Duration (min)",
               "fr": "Durée (min)"
@@ -83326,8 +83326,8 @@
           }
         ],
         "titleFormatted": {
-          "en": "Wake-up: ramp [[light]] to [[target]]% over [[duration]] min",
-          "fr": "Réveil : monter [[light]] à [[target]]% sur [[duration]] min"
+          "en": "Wake-up: ramp [[light]] to [[target]]% over [[ramp_minutes]] min",
+          "fr": "Réveil : monter [[light]] à [[target]]% sur [[ramp_minutes]] min"
         }
       },
       {
