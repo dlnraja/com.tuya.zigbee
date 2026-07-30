@@ -140,7 +140,10 @@
         "en": "Five tiles will be created, one for each channel of the device. Switch the unit on and off five times and hold for 5 seconds to enter pairing mode (the LED should flash red and blue)."
       }
     },
-    "manufacturerName": []
+    "manufacturerName": [
+      "_TZE200_FJJBHX9D",
+      "_tze200_fjjbhx9d"
+    ]
   },
   "version": "1.0.0",
   "capabilitiesOptions": {
