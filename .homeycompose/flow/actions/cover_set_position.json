@@ -1,0 +1,21 @@
+{
+  "id": "cover_set_position",
+  "title": {
+    "en": "Set cover position (IKEA blinds style)",
+    "fr": "Positionner le volet (style stores IKEA)",
+    "nl": "Rolluikpositie instellen (IKEA-stijl)",
+    "de": "Rollladenposition einstellen (IKEA-Stil)"
+  },
+  "hint": {
+    "en": "Moves a cover/blind to a precise position (0% = closed, 100% = fully open)",
+    "fr": "Déplace un volet/store vers une position précise (0% = fermé, 100% = ouvert)"
+  },
+  "args": [
+    { "type": "device", "name": "cover", "title": { "en": "Cover", "fr": "Volet" } },
+    { "type": "number", "name": "position", "title": { "en": "Position (%)", "fr": "Position (%)" }, "min": 0, "max": 100, "placeholder": { "en": "50" } }
+  ],
+  "titleFormatted": {
+    "en": "Move [[cover]] to [[position]]%",
+    "fr": "Positionner [[cover]] à [[position]]%"
+  }
+}

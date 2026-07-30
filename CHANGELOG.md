@@ -4,6 +4,14 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
+## [9.0.380] - 2026-07-30
+
+### Added
+- OTA notification with flash guidance (Tuya MCU → manufacturer app/Z2M, ZCL → local flash).
+- Hue-style batch 4: `cover_set_position` (precise blind position, IKEA style), `hue_all_off` (turn off every light in the app, Hue All Off style).
+
+---
+
 ## [9.0.379] - 2026-07-30
 
 ### Added
