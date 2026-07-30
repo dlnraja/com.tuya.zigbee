@@ -1,0 +1,276 @@
+{
+  "capabilities": {
+    "measure_battery": {
+      "title": "Battery",
+      "units": "%"
+    },
+    "alarm_generic": {
+      "title": "Alarm"
+    },
+    "alarm_motion": {
+      "title": "Motion"
+    },
+    "alarm_contact": {
+      "title": "Contact"
+    },
+    "alarm_water": {
+      "title": "Water leak"
+    },
+    "alarm_smoke": {
+      "title": "Smoke"
+    },
+    "alarm_co": {
+      "title": "CO"
+    },
+    "alarm_co2": {
+      "title": "CO₂"
+    },
+    "alarm_tamper": {
+      "title": "Tamper"
+    },
+    "alarm_vibration": {
+      "title": "Vibration"
+    },
+    "onoff": {
+      "title": "Power"
+    },
+    "dim": {
+      "title": "Brightness",
+      "units": "%"
+    },
+    "light_hue": {
+      "title": "Hue"
+    },
+    "light_saturation": {
+      "title": "Saturation"
+    },
+    "light_temperature": {
+      "title": "Temperature"
+    },
+    "light_mode": {
+      "title": "Light mode"
+    },
+    "measure_temperature": {
+      "title": "Temperature",
+      "units": "°C"
+    },
+    "measure_humidity": {
+      "title": "Humidity",
+      "units": "%"
+    },
+    "measure_pressure": {
+      "title": "Pressure",
+      "units": "mbar"
+    },
+    "measure_co2": {
+      "title": "CO₂",
+      "units": "ppm"
+    },
+    "measure_pm25": {
+      "title": "PM2.5",
+      "units": "µg/m³"
+    },
+    "measure_voc": {
+      "title": "VOC",
+      "units": "ppb"
+    },
+    "measure_luminance": {
+      "title": "Luminance",
+      "units": "lux"
+    },
+    "measure_power": {
+      "title": "Power",
+      "units": "W"
+    },
+    "measure_voltage": {
+      "title": "Voltage",
+      "units": "V"
+    },
+    "measure_current": {
+      "title": "Current",
+      "units": "A"
+    },
+    "meter_power": {
+      "title": "Energy",
+      "units": "kWh"
+    },
+    "target_temperature": {
+      "title": "Target temperature",
+      "units": "°C"
+    },
+    "windowcoverings_state": {
+      "title": "Window coverings",
+      "values": {
+        "up": "Up",
+        "idle": "Idle",
+        "down": "Down"
+      }
+    },
+    "windowcoverings_set": {
+      "title": "Position",
+      "units": "%"
+    },
+    "button": {
+      "title": "Button"
+    }
+  },
+  "settings": {
+    "power_source": {
+      "label": "Fonte de alimentação",
+      "hint": "Selecione manualmente ou use a deteção automática",
+      "values": {
+        "auto": {
+          "en": "Auto Detect",
+          "fr": "Détection Automatique",
+          "de": "Automatisch erkennen",
+          "nl": "Automatisch detecteren",
+          "es": "Detección automática",
+          "pl": "Wykryj automatycznie",
+          "it": "Rilevamento automatico",
+          "sv": "Automatisk identifiering",
+          "no": "Automatisk gjenkjenning",
+          "da": "Automatisk registrering",
+          "ru": "Автоопределение",
+          "pt": "Deteção automática",
+          "cs": "Automatická detekce"
+        },
+        "ac": {
+          "en": "AC Powered",
+          "fr": "Alimentation Secteur",
+          "de": "Netzbetrieb",
+          "nl": "Netstroom",
+          "es": "Alimentación CA",
+          "pl": "Zasilanie sieciowe",
+          "it": "Alimentazione CA",
+          "sv": "Nätdriven",
+          "no": "Nettdrevet",
+          "da": "Netstrøm",
+          "ru": "Питание от сети",
+          "pt": "Alimentação CA",
+          "cs": "Napájení ze sítě"
+        },
+        "dc": {
+          "en": "DC Powered",
+          "fr": "Alimentation DC",
+          "de": "DC-Betrieb",
+          "nl": "Gelijkstroom",
+          "es": "Alimentación CC",
+          "pl": "Zasilanie DC",
+          "it": "Alimentazione CC",
+          "sv": "DC-driven",
+          "no": "DC-drevet",
+          "da": "DC-strøm",
+          "ru": "Питание DC",
+          "pt": "Alimentação CC",
+          "cs": "Napájení DC"
+        },
+        "battery": {
+          "en": "Battery Powered",
+          "fr": "Sur Batterie",
+          "de": "Batteriebetrieb",
+          "nl": "Op batterijen",
+          "es": "A batería",
+          "pl": "Zasilanie bateryjne",
+          "it": "A batteria",
+          "sv": "Batteridriven",
+          "no": "Batteridrevet",
+          "da": "Batteridrevet",
+          "ru": "От батареи",
+          "pt": "A bateria",
+          "cs": "Na baterie"
+        }
+      }
+    },
+    "battery_type": {
+      "label": "Battery Type",
+      "hint": "Select battery type manually or use auto-detection based on voltage"
+    },
+    "battery_low_threshold": {
+      "label": "Low Battery Threshold (%)",
+      "hint": "Trigger low battery warning when below this percentage"
+    },
+    "battery_critical_threshold": {
+      "label": "Critical Battery Threshold (%)",
+      "hint": "Trigger critical battery warning when below this percentage"
+    },
+    "enable_battery_notifications": {
+      "label": "Enable Battery Notifications",
+      "hint": "Send flow notifications for battery events"
+    },
+    "battery_report_interval": {
+      "label": "Battery Report Interval (hours)",
+      "hint": "How often to request battery status updates"
+    },
+    "optimization_mode": {
+      "label": "Modo de otimização de energia",
+      "hint": "Equilíbrio entre capacidade de resposta e duração da bateria",
+      "values": {
+        "performance": {
+          "en": "Performance (More responsive)",
+          "fr": "Performance (Plus réactif)",
+          "de": "Leistung (reaktionsschneller)",
+          "nl": "Prestaties (responsiever)",
+          "es": "Rendimiento (más receptivo)",
+          "pl": "Wydajność (szybsza reakcja)",
+          "it": "Prestazioni (più reattivo)",
+          "sv": "Prestanda (mer responsiv)",
+          "no": "Ytelse (mer responsiv)",
+          "da": "Ydelse (mere responsiv)",
+          "ru": "Производительность (быстрее)",
+          "pt": "Desempenho (mais reativo)",
+          "cs": "Výkon (rychlejší odezva)"
+        },
+        "balanced": {
+          "en": "Balanced",
+          "fr": "Équilibré",
+          "de": "Ausgewogen",
+          "nl": "Gebalanceerd",
+          "es": "Equilibrado",
+          "pl": "Zbalansowany",
+          "it": "Bilanciato",
+          "sv": "Balanserad",
+          "no": "Balansert",
+          "da": "Afbalanceret",
+          "ru": "Сбалансированный",
+          "pt": "Equilibrado",
+          "cs": "Vyvážený"
+        },
+        "power_saving": {
+          "en": "Power Saving (Longer battery)",
+          "fr": "Économie d'énergie (Batterie plus longue)",
+          "de": "Energiesparen (längere Batterie)",
+          "nl": "Energiebesparing (langere batterij)",
+          "es": "Ahorro de energía (más batería)",
+          "pl": "Oszczędzanie energii (dłuższa bateria)",
+          "it": "Risparmio energetico (batteria più lunga)",
+          "sv": "Energibesparing (längre batteri)",
+          "no": "Strømsparing (lengre batteri)",
+          "da": "Energibesparelse (længere batteri)",
+          "ru": "Энергосбережение (дольше батарея)",
+          "pt": "Poupança de energia (bateria mais longa)",
+          "cs": "Úspora energie (delší baterie)"
+        }
+      }
+    },
+    "show_voltage": {
+      "label": "Show Battery Voltage",
+      "hint": "Display raw battery voltage in device settings"
+    },
+    "enable_power_estimation": {
+      "label": "Enable Power Estimation",
+      "hint": "Estimate power consumption when real measurement is not available (AC/DC devices only)"
+    }
+  },
+  "tabs": {
+    "general": "General",
+    "advanced": "Advanced",
+    "about": "About"
+  },
+  "common": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "ok": "OK",
+    "delete": "Delete",
+    "edit": "Edit"
+  }
+}

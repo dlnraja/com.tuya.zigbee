@@ -117,7 +117,69 @@
   "settings": {
     "power_source": {
       "label": "Źródło zasilania",
-      "hint": "Wybierz źródło zasilania ręcznie lub użyj automatycznego wykrywania"
+      "hint": "Wybierz źródło ręcznie lub użyj wykrywania automatycznego",
+      "values": {
+        "auto": {
+          "en": "Auto Detect",
+          "fr": "Détection Automatique",
+          "de": "Automatisch erkennen",
+          "nl": "Automatisch detecteren",
+          "es": "Detección automática",
+          "pl": "Wykryj automatycznie",
+          "it": "Rilevamento automatico",
+          "sv": "Automatisk identifiering",
+          "no": "Automatisk gjenkjenning",
+          "da": "Automatisk registrering",
+          "ru": "Автоопределение",
+          "pt": "Deteção automática",
+          "cs": "Automatická detekce"
+        },
+        "ac": {
+          "en": "AC Powered",
+          "fr": "Alimentation Secteur",
+          "de": "Netzbetrieb",
+          "nl": "Netstroom",
+          "es": "Alimentación CA",
+          "pl": "Zasilanie sieciowe",
+          "it": "Alimentazione CA",
+          "sv": "Nätdriven",
+          "no": "Nettdrevet",
+          "da": "Netstrøm",
+          "ru": "Питание от сети",
+          "pt": "Alimentação CA",
+          "cs": "Napájení ze sítě"
+        },
+        "dc": {
+          "en": "DC Powered",
+          "fr": "Alimentation DC",
+          "de": "DC-Betrieb",
+          "nl": "Gelijkstroom",
+          "es": "Alimentación CC",
+          "pl": "Zasilanie DC",
+          "it": "Alimentazione CC",
+          "sv": "DC-driven",
+          "no": "DC-drevet",
+          "da": "DC-strøm",
+          "ru": "Питание DC",
+          "pt": "Alimentação CC",
+          "cs": "Napájení DC"
+        },
+        "battery": {
+          "en": "Battery Powered",
+          "fr": "Sur Batterie",
+          "de": "Batteriebetrieb",
+          "nl": "Op batterijen",
+          "es": "A batería",
+          "pl": "Zasilanie bateryjne",
+          "it": "A batteria",
+          "sv": "Batteridriven",
+          "no": "Batteridrevet",
+          "da": "Batteridrevet",
+          "ru": "От батареи",
+          "pt": "A bateria",
+          "cs": "Na baterie"
+        }
+      }
     },
     "battery_type": {
       "label": "Typ baterii",
@@ -141,7 +203,54 @@
     },
     "optimization_mode": {
       "label": "Tryb optymalizacji energii",
-      "hint": "Równowaga między responsywnością a czasem pracy baterii"
+      "hint": "Równowaga między responsywnością a czasem pracy baterii",
+      "values": {
+        "performance": {
+          "en": "Performance (More responsive)",
+          "fr": "Performance (Plus réactif)",
+          "de": "Leistung (reaktionsschneller)",
+          "nl": "Prestaties (responsiever)",
+          "es": "Rendimiento (más receptivo)",
+          "pl": "Wydajność (szybsza reakcja)",
+          "it": "Prestazioni (più reattivo)",
+          "sv": "Prestanda (mer responsiv)",
+          "no": "Ytelse (mer responsiv)",
+          "da": "Ydelse (mere responsiv)",
+          "ru": "Производительность (быстрее)",
+          "pt": "Desempenho (mais reativo)",
+          "cs": "Výkon (rychlejší odezva)"
+        },
+        "balanced": {
+          "en": "Balanced",
+          "fr": "Équilibré",
+          "de": "Ausgewogen",
+          "nl": "Gebalanceerd",
+          "es": "Equilibrado",
+          "pl": "Zbalansowany",
+          "it": "Bilanciato",
+          "sv": "Balanserad",
+          "no": "Balansert",
+          "da": "Afbalanceret",
+          "ru": "Сбалансированный",
+          "pt": "Equilibrado",
+          "cs": "Vyvážený"
+        },
+        "power_saving": {
+          "en": "Power Saving (Longer battery)",
+          "fr": "Économie d'énergie (Batterie plus longue)",
+          "de": "Energiesparen (längere Batterie)",
+          "nl": "Energiebesparing (langere batterij)",
+          "es": "Ahorro de energía (más batería)",
+          "pl": "Oszczędzanie energii (dłuższa bateria)",
+          "it": "Risparmio energetico (batteria più lunga)",
+          "sv": "Energibesparing (längre batteri)",
+          "no": "Strømsparing (lengre batteri)",
+          "da": "Energibesparelse (længere batteri)",
+          "ru": "Энергосбережение (дольше батарея)",
+          "pt": "Poupança de energia (bateria mais longa)",
+          "cs": "Úspora energie (delší baterie)"
+        }
+      }
     },
     "show_voltage": {
       "label": "Pokaż napięcie baterii",
