@@ -117,7 +117,25 @@
   "settings": {
     "power_source": {
       "label": "Strömkälla",
-      "hint": "Välj strömkälla manuellt eller använd automatisk detektering"
+      "hint": "Välj strömkälla manuellt eller använd automatisk detektering",
+      "values": {
+        "auto": {
+          "en": "Auto Detect",
+          "fr": "Détection Automatique"
+        },
+        "ac": {
+          "en": "AC Powered",
+          "fr": "Alimentation Secteur"
+        },
+        "dc": {
+          "en": "DC Powered",
+          "fr": "Alimentation DC"
+        },
+        "battery": {
+          "en": "Battery Powered",
+          "fr": "Sur Batterie"
+        }
+      }
     },
     "battery_type": {
       "label": "Batterityp",
@@ -141,7 +159,21 @@
     },
     "optimization_mode": {
       "label": "Energioptimeringsläge",
-      "hint": "Balans mellan respons och batteritid"
+      "hint": "Balans mellan respons och batteritid",
+      "values": {
+        "performance": {
+          "en": "Performance (More responsive)",
+          "fr": "Performance (Plus réactif)"
+        },
+        "balanced": {
+          "en": "Balanced",
+          "fr": "Équilibré"
+        },
+        "power_saving": {
+          "en": "Power Saving (Longer battery)",
+          "fr": "Économie d'énergie (Batterie plus longue)"
+        }
+      }
     },
     "show_voltage": {
       "label": "Visa batterispänning",
