@@ -43,3 +43,34 @@
 
 - Courbes de décharge batterie par chimie (ZHA battery quirks) — affiner `BatteryProfileDatabase`.
 - Intervalles de reporting par fabricant (certains Tuya ignorent configureReporting — forcer le polling, pattern Z2M `onEvent`) — candidat lot B.
+
+---
+
+## 🌐 Projets alternatifs (au-delà de Homey) — 2026-07-30
+
+Même méthode : extraction des données factuelles (empreintes, DPs, quirks),
+cross-référence avec nos drivers, import des gaps réels uniquement.
+
+| Projet | Licence | Méthode | Résultat |
+|---|---|---|---|
+| [zigpy/zha-device-handlers](https://github.com/zigpy/zha-device-handlers) (ZHA) | Apache-2.0 | clone shallow + extraction des 489 empreintes Tuya | **486/489 couvertes — 3 importées** (voir ci-dessous) |
+| [deCONZ REST plugin](https://github.com/dresden-elektronik/deconz-rest-plugin) | BSD | DDF devices Tuya (échantillon représentatif) | ✅ tout couvert |
+| OpenHAB zigbee binding | EPL-2.0 | via `BEST_PRACTICES_500.md` (intervalles reporting) | ✅ déjà intégré (v5.4) |
+| Hubitat drivers | OSS | courbes batterie CR2032 | ✅ déjà intégré (`AdaptiveDataParser.toBattery`) |
+| SmartThings Edge (Lua) | Apache-2.0 | patterns Tuya DP | ✅ déjà intégré |
+| Tasmota/ESPHome | GPL/MIT | côté firmware — hors scope app Homey | ⛔ non applicable |
+
+### Importé depuis ZHA (données factuelles, ré-implémentées)
+
+1. **IDs fabricant corrompus** — le firmware des sondes de sol Giex GX04
+   rapporte parfois `_TZE2841000000_nhgdf6qr` / `_TZE2841000000_tgrzpqf4`
+   (quirk documenté par ZHA). Ajoutés à `soil_sensor` + mfs_db :
+   ces devices appairaient en « Unknown Zigbee device » avant.
+2. `_TZE204_kwi6bbk4` — capteur température/humidité (famille 9yapgbuv/utkemkbs,
+   batterie DP3 enum low/medium/full) ajouté à `climate_sensor` + mfs_db.
+
+### Divergence notée (choix assumé)
+
+ZHA mappe la batterie enum de cette famille `{0: 50, 1: 100, 2: 200}` (échelle 0-200) ;
+nous gardons `{0: 10, 1: 50, 2: 100}` — plus conservateur sur le niveau bas
+(préfère alerter tôt qu'afficher une batterie optimiste).
