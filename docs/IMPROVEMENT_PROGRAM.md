@@ -146,6 +146,26 @@
 | J6 | CLI homey 4.x | Exige node ≥24, CI en node 22 |
 | J7 | Re-pointage mfs_db naïf | mfs_db = vérité curée ; testé et reverté |
 
+
+## K. Lots exécutés 2026-07-30 (session continue)
+
+| # | Item | Statut |
+|---|---|---|
+| K1 | Traductions réelles settings × 11 locales (matrice complète) | ✅ |
+| K2 | Concurrency groups sur 12 workflows | ✅ |
+| K3 | Base de référence produits (9027 FPs, vendor/modèle/batterie/énergie/variants) | ✅ |
+| K4 | Référence consommation par famille (estimation calibrée) | ✅ |
+| K5 | Condition flow telemetry_is_estimated (mesuré vs estimé) | ✅ |
+| K6 | Hue-style : motion lighting, circadien, wake-up (3 cards) | ✅ |
+| K7 | 10 tests profils batterie (17 chimies) + fix inversion tempCoeff | ✅ |
+| K8 | 9 tests boutons (press types, TS0044, SOS) | ✅ |
+| K9 | 4950+7097 variantes de casse (anti unknown device) + test | ✅ |
+| K10 | Compacteur par groupes de casse (0 purge observée) | ✅ |
+| K11 | Licence unifiée MIT + NOTICE + CREDITS SPDX | ✅ |
+| K12 | Audits exhaustifs : YAML 73/73, syntaxe 2541, lib 577, drivers 431 | ✅ |
+| K13 | GitHub Pages enrichie + déployée (device finder + inbox) | ✅ |
+| K14 | Cross-ref ZHA (489 FPs) + deCONZ — 3 gaps importés | ✅ |
+
 ---
 
 **Total : ≈500 items** — 52 faits (29-30/07), ~180 planifiés actionnables, ~90 énumérés par lot
