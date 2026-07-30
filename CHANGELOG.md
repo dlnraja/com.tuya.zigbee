@@ -4,6 +4,19 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
+## [5.12.40] - 2026-07-30
+
+Stability line (branch `stable-v5`, production).
+
+### Bug Fixes
+- Fingerprint integrity: 17 routes aligned between `lib/tuya/fingerprints.json`
+  and driver composes (community data verified: smoke_sensor, water_leak_sensor,
+  air_quality, contact_sensor, lcd sensors, plug_energy_monitor…).
+- Flow argument `duration` renamed `ramp_minutes` (Homey reserved name, blocked
+  the app-store audit).
+
+---
+
 ## [5.12.39] - 2026-07-30
 
 Stability line (branch `stable-v5`, production). Minimal zero-regression backports from master 9.0.377.
