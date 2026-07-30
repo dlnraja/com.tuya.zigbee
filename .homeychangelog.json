@@ -1392,5 +1392,8 @@
   },
   "9.0.377": {
     "en": "Stability improvements and Homey test publication retry after transient processing failure."
+  },
+  "9.0.378": {
+    "en": "v9.0.377: Temperature compensation was inverted, New test suites: 10 battery chemistry/health tests (17 profiles validated: sane curves, monotonic discharge, temp compensation) and 9 button press-type/gang tests (TS0044 contract, SOS button)."
   }
 }

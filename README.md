@@ -34,7 +34,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices ‚Ä
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.377 |
+| **App Version** | v9.0.378 |
 | **Device Fingerprints** | 10,616+ |
 | **Unique Product IDs** | 571 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
@@ -102,7 +102,8 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices ‚Ä
 | Version | Changes |
 |---------|---------|
 | **vchangelog** | [object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object  |
-| **v9.0.377** | v9.0.376: Hue-style smart features as a Zigbee/Tuya overlay, Tests for the circadian curve contract and manifest pres... |
+| **v9.0.378** | v9.0.377: Temperature compensation was inverted, New test suites: 10 battery chemistry/health tests (17 profiles vali... |
+| **v9.0.377** | Stability improvements and Homey test publication retry after transient processing failure. |
 | **v9.0.376** | v9.0.375: Product reference database, Energy consumption reference, Flow condition `telemetry_is_estimated`, Fixed mf... |
 | **v9.0.374** | v9.0.373: Unknown device prevention (case), Publish compactor, Added `_TZE204_kwi6bbk4` (ZHA source) to climate_senso... |
 | **v9.0.372** | v9.0.371: 10 drivers were broken at load time, `UniversalTuyaParser` fixed earlier (37 undefined `capability` shortha... |
@@ -115,7 +116,6 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices ‚Ä
 | **v9.0.360** | v9.0.359: chore: bump v9.0.359 ‚Äî d√©bloque le publish (9.0.358 d√©j√† publi√©e en build 2689) |
 | **v9.0.359** | v9.0.359: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.358** | Stability improvements and Homey test publication retry after transient processing failure. |
-| **v9.0.357** | Stability improvements and Homey test publication retry after transient processing failure. |
 
 <!-- CHANGELOG_END -->
 
