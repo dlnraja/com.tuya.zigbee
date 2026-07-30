@@ -1,6 +1,13 @@
 {
   "changelog": [
     {
+      "version": "5.12.34",
+      "date": "2026-07-30",
+      "channel": "stable",
+      "en": "Backport 9.0.369: humidity magnitude scaling, temperature null-on-impossible, new parser test suites.",
+      "fr": "Backport 9.0.369 : scaling humidité par magnitude, température null si impossible, nouvelles suites de tests parsers."
+    },
+    {
       "version": "5.12.33",
       "date": "2026-07-30",
       "channel": "stable",
