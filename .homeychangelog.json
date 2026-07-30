@@ -1342,5 +1342,8 @@
   },
   "9.0.366": {
     "en": "v9.0.365: Battery estimation: the generic 0-50-scale doubling heuristic in `UnifiedBatteryHandler.normalizeZigbeeValue` misread genuinely discharged devices (a real 40 % report became 80 %). Doubling now applies only to curated manufacturers (`BATTERY_0_50_SCALE_MFRS`)., SOS button (`button_emergency_sos`) battery info: percentage and Tuya DP reports now go through the smart normalizer (ZCL 0-200,"
+  },
+  "9.0.370": {
+    "en": "v9.0.369: `AdaptiveDataParser.toHumidity`: magnitude-based scaling (≤100 = percent, ≤1000 = ×10, else ×100). The old default ÷100 misread both common encodings: raw 65 → 1 % and raw 650 → 7 %., `AdaptiveDataParser.toTemperature`: returns null instead of an impossible value (e.g. 215 °C) when no divisor yields a plausible temperature., Tests: all 31 test files verified individually; `manufacturerRe"
   }
 }
