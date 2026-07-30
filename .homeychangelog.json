@@ -1352,5 +1352,8 @@
   },
   "9.0.370": {
     "en": "v9.0.369: `AdaptiveDataParser.toHumidity`: magnitude-based scaling (≤100 = percent, ≤1000 = ×10, else ×100). The old default ÷100 misread both common encodings: raw 65 → 1 % and raw 650 → 7 %., `AdaptiveDataParser.toTemperature`: returns null instead of an impossible value (e.g. 215 °C) when no divisor yields a plausible temperature., Tests: all 31 test files verified individually; `manufacturerRe"
+  },
+  "9.0.372": {
+    "en": "v9.0.371: 10 drivers were broken at load time, `UniversalTuyaParser` fixed earlier (37 undefined `capability` shorthands)., Coherence: removed the duplicated `smartDivisorDetect` heuristic in `TuyaZigbeeDevice` — ZCL `measuredValue` is now parsed spec-exactly (0.01 units), Tuya DP scaling stays centralized in `SmartDivisorManager`., New audits: `drivers-smoke-test.js`, `js-syntax-audit.js`, `lib-s"
   }
 }
