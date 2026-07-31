@@ -129,3 +129,21 @@ describe('P92.67 — cross-source deep fixes', () => {
     assert.ok(co.zigbee.manufacturerName.some((m) => /rjxqso4a/i.test(m)), 'MOES CO in co_sensor (with alarm_co)');
   });
 });
+
+describe('P92.73 — TS0601 flooding thermostats routing (z2m #17833)', () => {
+  it('flooding TRVs/thermostats are in thermostat drivers, not climate_sensor', () => {
+    const climate = JSON.parse(read('drivers/climate_sensor/driver.compose.json'));
+    const mfrs = climate.zigbee.manufacturerName.join(' ');
+    assert.ok(!/ye5jkfsb/i.test(mfrs), 'ye5jkfsb out of climate_sensor');
+    assert.ok(!/znzs7yaw/i.test(mfrs), 'znzs7yaw out of climate_sensor');
+    const rv = JSON.parse(read('drivers/radiator_valve/driver.compose.json'));
+    assert.ok(rv.zigbee.manufacturerName.some((m) => /ye5jkfsb/i.test(m)), 'TRV flooder in radiator_valve');
+    const wt = JSON.parse(read('drivers/wall_thermostat/driver.compose.json'));
+    assert.ok(wt.zigbee.manufacturerName.some((m) => /znzs7yaw/i.test(m)), 'BHT-006 flooder in wall_thermostat');
+    const db = JSON.parse(read('data/mfs_db.json'));
+    for (const k of Object.keys(db)) {
+      if (/ye5jkfsb/i.test(k)) assert.strictEqual(db[k].driverId, 'radiator_valve');
+      if (/znzs7yaw/i.test(k)) assert.strictEqual(db[k].driverId, 'wall_thermostat');
+    }
+  });
+});
