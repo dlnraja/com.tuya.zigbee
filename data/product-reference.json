@@ -1,6 +1,6 @@
 {
- "generated": "2026-07-30T04:20:28.426Z",
- "count": 9027,
+ "generated": "2026-07-31T00:12:13.102Z",
+ "count": 9043,
  "reference": {
   "_tze200_qpn5q17m": {
    "driverId": "air_purifier",
@@ -7956,7 +7956,8 @@
     "_TZ3210_j4pdtz9v",
     "_tz3210_j4pdtz9v",
     "_TZ3210_DSE8OGFY",
-    "_TZ3210_J4PDTZ9V"
+    "_TZ3210_J4PDTZ9V",
+    "_TZ3210_dse8ogfy"
    ]
   },
   "_TZ3210_7jnk7l3k": {
@@ -21941,7 +21942,8 @@
    "capabilities": null,
    "source": "auto-sync",
    "variants": [
-    "_tz3000_qaaysllp"
+    "_tz3000_qaaysllp",
+    "_TZ3000_qaaysllp"
    ]
   },
   "_TZ3000_QOGSNSXH": {
@@ -29855,7 +29857,8 @@
    "capabilities": null,
    "source": "auto-sync",
    "variants": [
-    "_tze200_jthf7vb6"
+    "_tze200_jthf7vb6",
+    "_TZE200_jthf7vb6"
    ]
   },
   "_TZE200_JWSJBXJS": {
@@ -36580,8 +36583,9 @@
    "variants": [
     "_tze200_8ygsuhe1",
     "_tze200_yvx5lh6k",
-    "_TZE200_yvx5lh6k",
-    "_TZE200_8YGSUHE1"
+    "_TZE200_8ygsuhe1",
+    "_TZE200_8YGSUHE1",
+    "_TZE200_yvx5lh6k"
    ]
   },
   "_TZE200_YWE90LT0": {
@@ -77413,7 +77417,8 @@
     "_tz3210_dse8ogfy",
     "_tz3210_j4pdtz9v",
     "_TZ3210_DSE8OGFY",
-    "_TZ3210_J4PDTZ9V"
+    "_TZ3210_J4PDTZ9V",
+    "_TZ3210_dse8ogfy"
    ]
   },
   "_tze284_rvnbnvw8": {
@@ -102141,6 +102146,7 @@
     "_tze200_d0yu2xgi",
     "_tyst11_d0yu2xgi",
     "_TYST11_D0YU2XGI",
+    "_TZE200_d0yu2xgi",
     "_TZE200_D0YU2XGI"
    ]
   },
@@ -102271,6 +102277,7 @@
     "_TYST11_d0yu2xgi",
     "_tyst11_d0yu2xgi",
     "_TYST11_D0YU2XGI",
+    "_TZE200_d0yu2xgi",
     "_TZE200_D0YU2XGI"
    ]
   },
@@ -103713,9 +103720,9 @@
    "variants": [
     "_TZE200_ntcy3xu1",
     "_tze200_ntcy3xu1",
+    "_TZE200_NTCY3XU1",
     "_TZE204_ntcy3xu1",
-    "_TZE204_NTCY3XU1",
-    "_TZE200_NTCY3XU1"
+    "_TZE204_NTCY3XU1"
    ]
   },
   "_TYZB01_mtunwanm": {
@@ -103794,7 +103801,7 @@
    "source": "auto-sync"
   },
   "_TZE200_ntcy3xu1": {
-   "driverId": "socket_power_strip_four_three",
+   "driverId": "smoke_detector_advanced",
    "modelIds": [],
    "vendor": "Tuya",
    "model": "YG400A",
@@ -103806,21 +103813,24 @@
     "https://zigbee.blakadder.com/assets/images/devices/tuya-yg400a.jpg",
     "https://www.zigbee2mqtt.io/images/devices/YG400A.jpg"
    ],
-   "batteries": [],
-   "batteryTypical": null,
+   "batteries": [
+    "CR2",
+    "CR123A"
+   ],
+   "batteryTypical": "CR2",
    "energy": {
-    "nominalW": 12,
-    "standbyW": 1.2
+    "nominalW": 0,
+    "standbyW": 0
    },
-   "deviceClass": "socket",
+   "deviceClass": "sensor",
    "capabilities": null,
-   "source": "auto-sync",
+   "source": "integrity-fix-2026-07-30",
    "variants": [
     "_tze204_ntcy3xu1",
     "_tze200_ntcy3xu1",
+    "_TZE200_NTCY3XU1",
     "_TZE204_ntcy3xu1",
-    "_TZE204_NTCY3XU1",
-    "_TZE200_NTCY3XU1"
+    "_TZE204_NTCY3XU1"
    ]
   },
   "_tze284_aao3yzhs": {
@@ -140971,11 +140981,12 @@
    "variants": [
     "_tz3210_wdexaypg",
     "_tz3210_3mpwqzuu",
+    "_TZ3000_7ysdnebc",
+    "_TZ3000_7YSDNEBC",
     "_TZ3210_3mpwqzuu",
     "_TZ3210_wdexaypg",
     "_TZ3210_3MPWQZUU",
-    "_TZ3210_WDEXAYPG",
-    "_TZ3000_7YSDNEBC"
+    "_TZ3210_WDEXAYPG"
    ]
   },
   "_tz3000_f3xka28j": {
@@ -142424,11 +142435,12 @@
    "variants": [
     "_tz3000_7ysdnebc",
     "_tz3210_3mpwqzuu",
+    "_TZ3000_7ysdnebc",
+    "_TZ3000_7YSDNEBC",
     "_TZ3210_3mpwqzuu",
     "_TZ3210_wdexaypg",
     "_TZ3210_3MPWQZUU",
-    "_TZ3210_WDEXAYPG",
-    "_TZ3000_7YSDNEBC"
+    "_TZ3210_WDEXAYPG"
    ]
   },
   "_tz3210_weaqkhab": {
@@ -143950,11 +143962,12 @@
    "variants": [
     "_tz3000_7ysdnebc",
     "_tz3210_wdexaypg",
+    "_TZ3000_7ysdnebc",
+    "_TZ3000_7YSDNEBC",
     "_TZ3210_3mpwqzuu",
     "_TZ3210_wdexaypg",
     "_TZ3210_3MPWQZUU",
-    "_TZ3210_WDEXAYPG",
-    "_TZ3000_7YSDNEBC"
+    "_TZ3210_WDEXAYPG"
    ]
   },
   "_tz3210_pagajpog": {
@@ -152648,8 +152661,9 @@
    "variants": [
     "_TZE200_YVX5LH6K",
     "_tze200_yvx5lh6k",
-    "_TZE200_yvx5lh6k",
-    "_TZE200_8YGSUHE1"
+    "_TZE200_8ygsuhe1",
+    "_TZE200_8YGSUHE1",
+    "_TZE200_yvx5lh6k"
    ]
   },
   "_tze284_81yrt3lo": {
@@ -159526,6 +159540,7 @@
     "_TYST11_d0yu2xgi",
     "_tze200_d0yu2xgi",
     "_TYST11_D0YU2XGI",
+    "_TZE200_d0yu2xgi",
     "_TZE200_D0YU2XGI"
    ]
   },
@@ -159661,7 +159676,7 @@
    ]
   },
   "_tz3000_qaaysllp": {
-   "driverId": "climate_sensor",
+   "driverId": null,
    "modelIds": [],
    "vendor": "Neo",
    "model": "NAS-TH02B",
@@ -159673,21 +159688,15 @@
     "https://zigbee.blakadder.com/assets/images/devices/neo-nas-th02b.jpg",
     "https://www.zigbee2mqtt.io/images/devices/NAS-TH02B.jpg"
    ],
-   "batteries": [
-    "AAA",
-    "CR2032",
-    "CR2450"
-   ],
-   "batteryTypical": "AAA",
-   "energy": {
-    "nominalW": null,
-    "standbyW": null
-   },
-   "deviceClass": "sensor",
+   "batteries": [],
+   "batteryTypical": null,
+   "energy": null,
+   "deviceClass": null,
    "capabilities": null,
    "source": "blakadder",
    "variants": [
-    "_TZ3000_QAAYSLLP"
+    "_TZ3000_QAAYSLLP",
+    "_TZ3000_qaaysllp"
    ]
   },
   "_tz3000_w0qqde0g": {
@@ -161295,7 +161304,8 @@
     "_tz3210_dse8ogfy",
     "_TZ3210_j4pdtz9v",
     "_TZ3210_DSE8OGFY",
-    "_TZ3210_J4PDTZ9V"
+    "_TZ3210_J4PDTZ9V",
+    "_TZ3210_dse8ogfy"
    ]
   },
   "_tz3000_8bxrzyxz": {
@@ -162485,8 +162495,9 @@
    "variants": [
     "_TZE200_YVX5LH6K",
     "_tze200_8ygsuhe1",
-    "_TZE200_yvx5lh6k",
-    "_TZE200_8YGSUHE1"
+    "_TZE200_8ygsuhe1",
+    "_TZE200_8YGSUHE1",
+    "_TZE200_yvx5lh6k"
    ]
   },
   "_tze200_ryfmq5rl": {
@@ -164411,7 +164422,7 @@
    ]
   },
   "_tze200_jthf7vb6": {
-   "driverId": "climate_sensor",
+   "driverId": null,
    "modelIds": [],
    "vendor": "Tuya",
    "model": "WLS-100z",
@@ -164423,21 +164434,15 @@
     "https://zigbee.blakadder.com/assets/images/devices/tuya-wls-100z.jpg",
     "https://www.zigbee2mqtt.io/images/devices/WLS-100z.jpg"
    ],
-   "batteries": [
-    "AAA",
-    "CR2032",
-    "CR2450"
-   ],
-   "batteryTypical": "AAA",
-   "energy": {
-    "nominalW": null,
-    "standbyW": null
-   },
-   "deviceClass": "sensor",
+   "batteries": [],
+   "batteryTypical": null,
+   "energy": null,
+   "deviceClass": null,
    "capabilities": null,
    "source": "blakadder",
    "variants": [
-    "_TZE200_JTHF7VB6"
+    "_TZE200_JTHF7VB6",
+    "_TZE200_jthf7vb6"
    ]
   },
   "_tz3000_xr3htd96": {
@@ -164569,7 +164574,7 @@
    ]
   },
   "_tze200_ntcy3xu1": {
-   "driverId": "switch_wireless",
+   "driverId": null,
    "modelIds": [],
    "vendor": "Tuya",
    "model": "YG400A",
@@ -164581,23 +164586,18 @@
     "https://zigbee.blakadder.com/assets/images/devices/tuya-yg400a.jpg",
     "https://www.zigbee2mqtt.io/images/devices/YG400A.jpg"
    ],
-   "batteries": [
-    "CR2032"
-   ],
-   "batteryTypical": "CR2032",
-   "energy": {
-    "nominalW": 0,
-    "standbyW": 0
-   },
-   "deviceClass": "sensor",
+   "batteries": [],
+   "batteryTypical": null,
+   "energy": null,
+   "deviceClass": null,
    "capabilities": null,
    "source": "blakadder",
    "variants": [
     "_tze204_ntcy3xu1",
     "_TZE200_ntcy3xu1",
+    "_TZE200_NTCY3XU1",
     "_TZE204_ntcy3xu1",
-    "_TZE204_NTCY3XU1",
-    "_TZE200_NTCY3XU1"
+    "_TZE204_NTCY3XU1"
    ]
   },
   "_tz3000_w3c7ouru": {
@@ -164797,7 +164797,7 @@
    ]
   },
   "_tze200_pay2byax": {
-   "driverId": "switch_wireless",
+   "driverId": null,
    "modelIds": [],
    "vendor": "Tuya",
    "model": "ZG-102ZL",
@@ -164809,15 +164809,10 @@
     "https://zigbee.blakadder.com/assets/images/devices/tuya-zg-102zl.jpg",
     "https://www.zigbee2mqtt.io/images/devices/ZG-102ZL.jpg"
    ],
-   "batteries": [
-    "CR2032"
-   ],
-   "batteryTypical": "CR2032",
-   "energy": {
-    "nominalW": 0,
-    "standbyW": 0
-   },
-   "deviceClass": "sensor",
+   "batteries": [],
+   "batteryTypical": null,
+   "energy": null,
+   "deviceClass": null,
    "capabilities": null,
    "source": "blakadder",
    "variants": [
@@ -167903,6 +167898,82 @@
    "capabilities": null,
    "source": "auto-sync"
   },
+  "_TZE200_8ygsuhe1": {
+   "driverId": "climate_sensor",
+   "modelIds": [
+    "TS0215A",
+    "TS0601",
+    "TS0601_wirelesssw"
+   ],
+   "vendor": "Tuya",
+   "model": "RSH-AirBox01",
+   "title": "Smart Air Box",
+   "category": "sensor",
+   "description": "Smart Air Box",
+   "productPage": "https://zigbee.blakadder.com/Tuya_RSH-AirBox01.html",
+   "imageCandidates": [
+    "https://zigbee.blakadder.com/assets/images/devices/tuya-rsh-airbox01.jpg",
+    "https://www.zigbee2mqtt.io/images/devices/RSH-AirBox01.jpg"
+   ],
+   "batteries": [
+    "AAA",
+    "CR2032",
+    "CR2450"
+   ],
+   "batteryTypical": "AAA",
+   "energy": {
+    "nominalW": null,
+    "standbyW": null
+   },
+   "deviceClass": "sensor",
+   "capabilities": null,
+   "source": "auto-sync",
+   "variants": [
+    "_TZE200_YVX5LH6K",
+    "_tze200_8ygsuhe1",
+    "_tze200_yvx5lh6k",
+    "_TZE200_8YGSUHE1",
+    "_TZE200_yvx5lh6k"
+   ]
+  },
+  "_TZE200_8YGSUHE1": {
+   "driverId": "climate_sensor",
+   "modelIds": [
+    "TS0215A",
+    "TS0601",
+    "TS0601_wirelesssw"
+   ],
+   "vendor": "Tuya",
+   "model": "RSH-AirBox01",
+   "title": "Smart Air Box",
+   "category": "sensor",
+   "description": "Smart Air Box",
+   "productPage": "https://zigbee.blakadder.com/Tuya_RSH-AirBox01.html",
+   "imageCandidates": [
+    "https://zigbee.blakadder.com/assets/images/devices/tuya-rsh-airbox01.jpg",
+    "https://www.zigbee2mqtt.io/images/devices/RSH-AirBox01.jpg"
+   ],
+   "batteries": [
+    "AAA",
+    "CR2032",
+    "CR2450"
+   ],
+   "batteryTypical": "AAA",
+   "energy": {
+    "nominalW": null,
+    "standbyW": null
+   },
+   "deviceClass": "sensor",
+   "capabilities": null,
+   "source": "auto-sync",
+   "variants": [
+    "_TZE200_YVX5LH6K",
+    "_tze200_8ygsuhe1",
+    "_tze200_yvx5lh6k",
+    "_TZE200_8ygsuhe1",
+    "_TZE200_yvx5lh6k"
+   ]
+  },
   "_TZE200_SH11H1F5": {
    "driverId": "bed_sensor",
    "modelIds": [],
@@ -168120,6 +168191,57 @@
     "standbyW": 0
    },
    "deviceClass": "sensor",
+   "capabilities": null,
+   "source": null
+  },
+  "_TZE200_seq9cm6u": {
+   "driverId": null,
+   "modelIds": [],
+   "vendor": null,
+   "model": null,
+   "title": null,
+   "category": null,
+   "description": null,
+   "productPage": null,
+   "imageCandidates": [],
+   "batteries": [],
+   "batteryTypical": null,
+   "energy": null,
+   "deviceClass": null,
+   "capabilities": null,
+   "source": null
+  },
+  "_tze200_seq9cm6u": {
+   "driverId": null,
+   "modelIds": [],
+   "vendor": null,
+   "model": null,
+   "title": null,
+   "category": null,
+   "description": null,
+   "productPage": null,
+   "imageCandidates": [],
+   "batteries": [],
+   "batteryTypical": null,
+   "energy": null,
+   "deviceClass": null,
+   "capabilities": null,
+   "source": null
+  },
+  "_TZE200_SEQ9CM6U": {
+   "driverId": null,
+   "modelIds": [],
+   "vendor": null,
+   "model": null,
+   "title": null,
+   "category": null,
+   "description": null,
+   "productPage": null,
+   "imageCandidates": [],
+   "batteries": [],
+   "batteryTypical": null,
+   "energy": null,
+   "deviceClass": null,
    "capabilities": null,
    "source": null
   },
@@ -174920,7 +175042,7 @@
    "source": null
   },
   "_tz3000_88iqnhvd": {
-   "driverId": "button_wireless_2",
+   "driverId": null,
    "modelIds": [],
    "vendor": null,
    "model": null,
@@ -174929,16 +175051,10 @@
    "description": "onoff, measure_power, meter_power, measure_current, measure_voltage",
    "productPage": null,
    "imageCandidates": [],
-   "batteries": [
-    "CR2032",
-    "CR2450"
-   ],
-   "batteryTypical": "CR2032",
-   "energy": {
-    "nominalW": null,
-    "standbyW": null
-   },
-   "deviceClass": "sensor",
+   "batteries": [],
+   "batteryTypical": null,
+   "energy": null,
+   "deviceClass": null,
    "capabilities": [
     "onoff",
     "measure_power",
@@ -182105,7 +182221,8 @@
     "_tz3210_dse8ogfy",
     "_TZ3210_j4pdtz9v",
     "_tz3210_j4pdtz9v",
-    "_TZ3210_J4PDTZ9V"
+    "_TZ3210_J4PDTZ9V",
+    "_TZ3210_dse8ogfy"
    ]
   },
   "_TZ3210_W0QQDE0G": {
@@ -183151,6 +183268,27 @@
    "deviceClass": "sensor",
    "capabilities": null,
    "source": null
+  },
+  "_TZ3000_yj6k7vfo": {
+   "driverId": "smart_button_switch",
+   "modelIds": [
+    "TS0041"
+   ],
+   "vendor": null,
+   "model": null,
+   "title": null,
+   "category": "remote",
+   "description": null,
+   "productPage": null,
+   "imageCandidates": [],
+   "batteries": [
+    "CR2032"
+   ],
+   "batteryTypical": "CR2032",
+   "energy": null,
+   "deviceClass": "remote",
+   "capabilities": [],
+   "source": "auto-sync"
   },
   "_TZE200_ZXX7MI77": {
    "driverId": "button_wireless_6",
@@ -186892,6 +187030,7 @@
     "_TZE200_YVX5LH6K",
     "_tze200_8ygsuhe1",
     "_tze200_yvx5lh6k",
+    "_TZE200_8ygsuhe1",
     "_TZE200_8YGSUHE1"
    ]
   },
@@ -190952,7 +191091,7 @@
    "source": null
   },
   "_tz3000_ww6drja5": {
-   "driverId": "climate_sensor",
+   "driverId": null,
    "modelIds": [],
    "vendor": null,
    "model": null,
@@ -190961,17 +191100,10 @@
    "description": null,
    "productPage": null,
    "imageCandidates": [],
-   "batteries": [
-    "AAA",
-    "CR2032",
-    "CR2450"
-   ],
-   "batteryTypical": "AAA",
-   "energy": {
-    "nominalW": null,
-    "standbyW": null
-   },
-   "deviceClass": "sensor",
+   "batteries": [],
+   "batteryTypical": null,
+   "energy": null,
+   "deviceClass": null,
    "capabilities": null,
    "source": null
   },
@@ -193996,7 +194128,7 @@
    "source": null
   },
   "_tze200_locansqn": {
-   "driverId": "climate_sensor",
+   "driverId": null,
    "modelIds": [],
    "vendor": null,
    "model": null,
@@ -194005,17 +194137,10 @@
    "description": "measure_temperature, measure_humidity, measure_battery, alarm_battery",
    "productPage": null,
    "imageCandidates": [],
-   "batteries": [
-    "AAA",
-    "CR2032",
-    "CR2450"
-   ],
-   "batteryTypical": "AAA",
-   "energy": {
-    "nominalW": null,
-    "standbyW": null
-   },
-   "deviceClass": "sensor",
+   "batteries": [],
+   "batteryTypical": null,
+   "energy": null,
+   "deviceClass": null,
    "capabilities": [
     "measure_temperature",
     "measure_humidity",
@@ -195537,7 +195662,7 @@
    "source": null
   },
   "_tze200_vvmbj46n": {
-   "driverId": "climate_sensor",
+   "driverId": null,
    "modelIds": [],
    "vendor": null,
    "model": null,
@@ -195546,17 +195671,10 @@
    "description": null,
    "productPage": null,
    "imageCandidates": [],
-   "batteries": [
-    "AAA",
-    "CR2032",
-    "CR2450"
-   ],
-   "batteryTypical": "AAA",
-   "energy": {
-    "nominalW": null,
-    "standbyW": null
-   },
-   "deviceClass": "sensor",
+   "batteries": [],
+   "batteryTypical": null,
+   "energy": null,
+   "deviceClass": null,
    "capabilities": null,
    "source": null
   },
@@ -203562,7 +203680,7 @@
    "source": null
   },
   "_tze284_vvmbj46n": {
-   "driverId": "climate_sensor",
+   "driverId": null,
    "modelIds": [],
    "vendor": null,
    "model": null,
@@ -203571,17 +203689,10 @@
    "description": null,
    "productPage": null,
    "imageCandidates": [],
-   "batteries": [
-    "AAA",
-    "CR2032",
-    "CR2450"
-   ],
-   "batteryTypical": "AAA",
-   "energy": {
-    "nominalW": null,
-    "standbyW": null
-   },
-   "deviceClass": "sensor",
+   "batteries": [],
+   "batteryTypical": null,
+   "energy": null,
+   "deviceClass": null,
    "capabilities": null,
    "source": null
   },
@@ -207357,6 +207468,33 @@
    "source": "auto-sync",
    "variants": [
     "_tz3000_85czd6fy"
+   ]
+  },
+  "_TZE200_PAY2BYAX": {
+   "driverId": null,
+   "modelIds": [],
+   "vendor": "Tuya",
+   "model": "ZG-102ZL",
+   "title": "Luminance Door Sensor",
+   "category": "sensor",
+   "description": "Luminance Door Sensor",
+   "productPage": "https://zigbee.blakadder.com/Tuya_ZG-102ZL.html",
+   "imageCandidates": [
+    "https://zigbee.blakadder.com/assets/images/devices/tuya-zg-102zl.jpg",
+    "https://www.zigbee2mqtt.io/images/devices/ZG-102ZL.jpg"
+   ],
+   "batteries": [],
+   "batteryTypical": null,
+   "energy": null,
+   "deviceClass": null,
+   "capabilities": null,
+   "source": "blakadder",
+   "variants": [
+    "_TZE200_N8DLJORX",
+    "_TZE200_pay2byax",
+    "_tze200_n8dljorx",
+    "_tze200_pay2byax",
+    "_TZE200_n8dljorx"
    ]
   },
   "_TYZB01_wpmo3ja3": {
@@ -213083,6 +213221,92 @@
     "_tz3000_92chsky7"
    ]
   },
+  "_TZ3000_7ysdnebc": {
+   "driverId": "wall_dimmer_tuya",
+   "modelIds": [
+    "TS0011",
+    "TS0052",
+    "TS0601",
+    "TS0601_dim1",
+    "TS1101",
+    "TS110E",
+    "TS110F",
+    "ZBMINI-DIM",
+    "ZBMINID"
+   ],
+   "vendor": "Tuya",
+   "model": "SMD-02Z",
+   "title": "Dimmer Module 2 Channel",
+   "category": "switch",
+   "description": "Dimmer Module 2 Channel",
+   "productPage": "https://zigbee.blakadder.com/Tuya_SMD-02Z.html",
+   "imageCandidates": [
+    "https://zigbee.blakadder.com/assets/images/devices/tuya-smd-02z.jpg",
+    "https://www.zigbee2mqtt.io/images/devices/SMD-02Z.jpg"
+   ],
+   "batteries": [],
+   "batteryTypical": null,
+   "energy": {
+    "nominalW": 9,
+    "standbyW": 0.3
+   },
+   "deviceClass": "light",
+   "capabilities": null,
+   "source": "auto-sync",
+   "variants": [
+    "_tz3000_7ysdnebc",
+    "_tz3210_wdexaypg",
+    "_tz3210_3mpwqzuu",
+    "_TZ3000_7YSDNEBC",
+    "_TZ3210_3mpwqzuu",
+    "_TZ3210_wdexaypg",
+    "_TZ3210_3MPWQZUU",
+    "_TZ3210_WDEXAYPG"
+   ]
+  },
+  "_TZ3000_7YSDNEBC": {
+   "driverId": "wall_dimmer_tuya",
+   "modelIds": [
+    "TS0011",
+    "TS0052",
+    "TS0601",
+    "TS0601_dim1",
+    "TS1101",
+    "TS110E",
+    "TS110F",
+    "ZBMINI-DIM",
+    "ZBMINID"
+   ],
+   "vendor": "Tuya",
+   "model": "SMD-02Z",
+   "title": "Dimmer Module 2 Channel",
+   "category": "switch",
+   "description": "Dimmer Module 2 Channel",
+   "productPage": "https://zigbee.blakadder.com/Tuya_SMD-02Z.html",
+   "imageCandidates": [
+    "https://zigbee.blakadder.com/assets/images/devices/tuya-smd-02z.jpg",
+    "https://www.zigbee2mqtt.io/images/devices/SMD-02Z.jpg"
+   ],
+   "batteries": [],
+   "batteryTypical": null,
+   "energy": {
+    "nominalW": 9,
+    "standbyW": 0.3
+   },
+   "deviceClass": "light",
+   "capabilities": null,
+   "source": "auto-sync",
+   "variants": [
+    "_tz3000_7ysdnebc",
+    "_tz3210_wdexaypg",
+    "_tz3210_3mpwqzuu",
+    "_TZ3000_7ysdnebc",
+    "_TZ3210_3mpwqzuu",
+    "_TZ3210_wdexaypg",
+    "_TZ3210_3MPWQZUU",
+    "_TZ3210_WDEXAYPG"
+   ]
+  },
   "_TZ3000_9HPXG1RF": {
    "driverId": "dimmer_ts110e",
    "modelIds": [],
@@ -216532,7 +216756,8 @@
     "_tz3210_dse8ogfy",
     "_TZ3210_j4pdtz9v",
     "_tz3210_j4pdtz9v",
-    "_TZ3210_DSE8OGFY"
+    "_TZ3210_DSE8OGFY",
+    "_TZ3210_dse8ogfy"
    ]
   },
   "_TZ3210_OKBSS9DY": {
@@ -216616,6 +216841,58 @@
    "deviceClass": "button",
    "capabilities": null,
    "source": null
+  },
+  "_TZ3210_dse8ogfy": {
+   "driverId": "button_wireless_2",
+   "modelIds": [
+    "TS0001",
+    "TS0002",
+    "TS0003",
+    "TS000F",
+    "TS0011",
+    "TS0012",
+    "TS0013",
+    "TS0014",
+    "TS0041",
+    "TS0042",
+    "TS0043",
+    "TS0044",
+    "TS0111",
+    "TS011F",
+    "TS0121",
+    "TS0215A",
+    "TS0601",
+    "TSO121"
+   ],
+   "vendor": "Tuya",
+   "model": "ADFB",
+   "title": "Adaprox Fingerbot",
+   "category": "remote",
+   "description": "Adaprox Fingerbot",
+   "productPage": "https://zigbee.blakadder.com/Tuya_ADFB.html",
+   "imageCandidates": [
+    "https://zigbee.blakadder.com/assets/images/devices/tuya-adfb.jpg",
+    "https://www.zigbee2mqtt.io/images/devices/ADFB.jpg"
+   ],
+   "batteries": [
+    "CR2032",
+    "CR2450"
+   ],
+   "batteryTypical": "CR2032",
+   "energy": {
+    "nominalW": null,
+    "standbyW": null
+   },
+   "deviceClass": "sensor",
+   "capabilities": null,
+   "source": "auto-sync",
+   "variants": [
+    "_tz3210_dse8ogfy",
+    "_TZ3210_j4pdtz9v",
+    "_tz3210_j4pdtz9v",
+    "_TZ3210_DSE8OGFY",
+    "_TZ3210_J4PDTZ9V"
+   ]
   },
   "_TZ3210_M2AX2XYK": {
    "driverId": "fingerbot_switch",
@@ -226606,6 +226883,30 @@
    "capabilities": null,
    "source": "auto-sync"
   },
+  "_TZ3000_qaaysllp": {
+   "driverId": null,
+   "modelIds": [],
+   "vendor": "Neo",
+   "model": "NAS-TH02B",
+   "title": "Temperature and Humidity Sensor with LCD screen",
+   "category": "sensor",
+   "description": "Temperature and Humidity Sensor with LCD screen",
+   "productPage": "https://zigbee.blakadder.com/Neo_NAS-TH02B.html",
+   "imageCandidates": [
+    "https://zigbee.blakadder.com/assets/images/devices/neo-nas-th02b.jpg",
+    "https://www.zigbee2mqtt.io/images/devices/NAS-TH02B.jpg"
+   ],
+   "batteries": [],
+   "batteryTypical": null,
+   "energy": null,
+   "deviceClass": null,
+   "capabilities": null,
+   "source": "blakadder",
+   "variants": [
+    "_TZ3000_QAAYSLLP",
+    "_tz3000_qaaysllp"
+   ]
+  },
   "_TZ2000_avdnvykf": {
    "driverId": "lcdtemphumidsensor",
    "modelIds": [
@@ -227032,6 +227333,62 @@
    },
    "deviceClass": "sensor",
    "capabilities": null,
+   "source": null
+  },
+  "_TZE200_vvmbj46n": {
+   "driverId": null,
+   "modelIds": [],
+   "vendor": null,
+   "model": null,
+   "title": null,
+   "category": null,
+   "description": null,
+   "productPage": null,
+   "imageCandidates": [],
+   "batteries": [],
+   "batteryTypical": null,
+   "energy": null,
+   "deviceClass": null,
+   "capabilities": null,
+   "source": null
+  },
+  "_TZE284_vvmbj46n": {
+   "driverId": null,
+   "modelIds": [],
+   "vendor": null,
+   "model": null,
+   "title": null,
+   "category": null,
+   "description": null,
+   "productPage": null,
+   "imageCandidates": [],
+   "batteries": [],
+   "batteryTypical": null,
+   "energy": null,
+   "deviceClass": null,
+   "capabilities": null,
+   "source": null
+  },
+  "_TZE200_locansqn": {
+   "driverId": null,
+   "modelIds": [],
+   "vendor": null,
+   "model": null,
+   "title": null,
+   "category": "sensor",
+   "description": "measure_temperature, measure_humidity, measure_battery, alarm_battery",
+   "productPage": null,
+   "imageCandidates": [],
+   "batteries": [],
+   "batteryTypical": null,
+   "energy": null,
+   "deviceClass": null,
+   "capabilities": [
+    "measure_temperature",
+    "measure_humidity",
+    "measure_battery",
+    "alarm_battery"
+   ],
    "source": null
   },
   "_TZ3000_yujem9ee": {
@@ -233220,6 +233577,172 @@
    },
    "deviceClass": "socket",
    "capabilities": null,
+   "source": "auto-sync"
+  },
+  "_TZ3000_88iqnhvd": {
+   "driverId": null,
+   "modelIds": [],
+   "vendor": null,
+   "model": null,
+   "title": null,
+   "category": "socket",
+   "description": "onoff, measure_power, meter_power, measure_current, measure_voltage",
+   "productPage": null,
+   "imageCandidates": [],
+   "batteries": [],
+   "batteryTypical": null,
+   "energy": null,
+   "deviceClass": null,
+   "capabilities": [
+    "onoff",
+    "measure_power",
+    "meter_power",
+    "measure_current",
+    "measure_voltage"
+   ],
+   "source": null
+  },
+  "_TZ3000_ww6drja5": {
+   "driverId": null,
+   "modelIds": [],
+   "vendor": null,
+   "model": null,
+   "title": null,
+   "category": null,
+   "description": null,
+   "productPage": null,
+   "imageCandidates": [],
+   "batteries": [],
+   "batteryTypical": null,
+   "energy": null,
+   "deviceClass": null,
+   "capabilities": null,
+   "source": null
+  },
+  "_TZ3000_wzmuk9ai": {
+   "driverId": "switch_1gang",
+   "modelIds": [
+    "01MINIZB",
+    "BASICZBR3",
+    "S26R2ZB",
+    "S31ZB",
+    "TS0001",
+    "TS0001_power",
+    "TS0001_switch",
+    "TS0001_switch_module",
+    "TS0002",
+    "TS0003",
+    "TS000F",
+    "TS0011",
+    "TS0012",
+    "TS0014",
+    "TS0041",
+    "TS0101",
+    "TS0111",
+    "TS011F",
+    "TS0601",
+    "TS0726",
+    "TS110E",
+    "TS130F",
+    "TS4100",
+    "ZBM5-1C-120",
+    "ZBM5-2C-120",
+    "ZBM5-3C-120",
+    "ZBMINI",
+    "ZBMINIL2",
+    "ZBMINIL2-R2",
+    "ZBMINIR",
+    "ZBMINIR2",
+    "ZBMINIR2-R2",
+    "ZG-301Z",
+    "ZG-302Z1"
+   ],
+   "vendor": null,
+   "model": null,
+   "title": null,
+   "category": "socket",
+   "description": "onoff, measure_power, meter_power, measure_current, measure_voltage",
+   "productPage": null,
+   "imageCandidates": [],
+   "batteries": [
+    "OTHER"
+   ],
+   "batteryTypical": "OTHER",
+   "energy": {
+    "nominalW": 3,
+    "standbyW": 0.4
+   },
+   "deviceClass": "socket",
+   "capabilities": [
+    "onoff",
+    "measure_power",
+    "meter_power",
+    "measure_current",
+    "measure_voltage"
+   ],
+   "source": "auto-sync"
+  },
+  "_TZ3000_WZMUK9AI": {
+   "driverId": "switch_1gang",
+   "modelIds": [
+    "01MINIZB",
+    "BASICZBR3",
+    "S26R2ZB",
+    "S31ZB",
+    "TS0001",
+    "TS0001_power",
+    "TS0001_switch",
+    "TS0001_switch_module",
+    "TS0002",
+    "TS0003",
+    "TS000F",
+    "TS0011",
+    "TS0012",
+    "TS0014",
+    "TS0041",
+    "TS0101",
+    "TS0111",
+    "TS011F",
+    "TS0601",
+    "TS0726",
+    "TS110E",
+    "TS130F",
+    "TS4100",
+    "ZBM5-1C-120",
+    "ZBM5-2C-120",
+    "ZBM5-3C-120",
+    "ZBMINI",
+    "ZBMINIL2",
+    "ZBMINIL2-R2",
+    "ZBMINIR",
+    "ZBMINIR2",
+    "ZBMINIR2-R2",
+    "ZG-301Z",
+    "ZG-302Z1"
+   ],
+   "vendor": null,
+   "model": null,
+   "title": null,
+   "category": "socket",
+   "description": "onoff, measure_power, meter_power, measure_current, measure_voltage",
+   "productPage": null,
+   "imageCandidates": [],
+   "batteries": [
+    "OTHER"
+   ],
+   "batteryTypical": "OTHER",
+   "energy": {
+    "nominalW": 3,
+    "standbyW": 0.4
+   },
+   "deviceClass": "socket",
+   "capabilities": [
+    "onoff",
+    "measure_power",
+    "meter_power",
+    "measure_current",
+    "measure_voltage"
+   ],
    "source": "auto-sync"
   },
   "_TZ3000_9VO5ICAU": {
@@ -247460,26 +247983,6 @@
    "capabilities": null,
    "source": null
   },
-  "_tze200_seq9cm6u": {
-   "driverId": "sensor_climate_contact",
-   "modelIds": [],
-   "vendor": null,
-   "model": null,
-   "title": null,
-   "category": null,
-   "description": null,
-   "productPage": null,
-   "imageCandidates": [],
-   "batteries": [],
-   "batteryTypical": null,
-   "energy": {
-    "nominalW": 0,
-    "standbyW": 0
-   },
-   "deviceClass": "sensor",
-   "capabilities": null,
-   "source": null
-  },
   "_TZE204_khoqss0a": {
    "driverId": "lock_smart",
    "modelIds": [
@@ -247506,26 +248009,6 @@
    "source": "auto-sync"
   },
   "_tze200_cxakecfo": {
-   "driverId": "sensor_climate_contact",
-   "modelIds": [],
-   "vendor": null,
-   "model": null,
-   "title": null,
-   "category": null,
-   "description": null,
-   "productPage": null,
-   "imageCandidates": [],
-   "batteries": [],
-   "batteryTypical": null,
-   "energy": {
-    "nominalW": 0,
-    "standbyW": 0
-   },
-   "deviceClass": "sensor",
-   "capabilities": null,
-   "source": null
-  },
-  "_TZE200_SEQ9CM6U": {
    "driverId": "sensor_climate_contact",
    "modelIds": [],
    "vendor": null,
@@ -256761,6 +257244,7 @@
     "_TYST11_d0yu2xgi",
     "_tze200_d0yu2xgi",
     "_tyst11_d0yu2xgi",
+    "_TZE200_d0yu2xgi",
     "_TZE200_D0YU2XGI"
    ]
   },
@@ -256843,6 +257327,114 @@
    "deviceClass": "other",
    "capabilities": null,
    "source": null
+  },
+  "_TZE200_d0yu2xgi": {
+   "driverId": "smoke_detector_advanced",
+   "modelIds": [
+    "GS361A-H04",
+    "HS1SA",
+    "HS3SA",
+    "JTYJ-GD-01LM/BW",
+    "NAS-SD02B0",
+    "PG-S11Z",
+    "SA12IZL",
+    "SD8SC_00.00.03.12TC",
+    "SMSZB-120",
+    "SSSQS01LM",
+    "TS0205",
+    "TS0601",
+    "YG400A",
+    "lumi.sensor_smoke"
+   ],
+   "vendor": "Neo",
+   "model": "NAS-AB02B0",
+   "title": "Siren with Temperature &amp; Humidity Sensor",
+   "category": "sensor",
+   "description": "onoff, measure_temperature, measure_humidity, alarm_battery, alarm_siren",
+   "productPage": "https://zigbee.blakadder.com/Neo_NAS-AB02B0.html",
+   "imageCandidates": [
+    "https://zigbee.blakadder.com/assets/images/devices/neo-nas-ab02b0.jpg",
+    "https://www.zigbee2mqtt.io/images/devices/NAS-AB02B0.jpg"
+   ],
+   "batteries": [
+    "CR2",
+    "CR123A"
+   ],
+   "batteryTypical": "CR2",
+   "energy": {
+    "nominalW": 0,
+    "standbyW": 0
+   },
+   "deviceClass": "sensor",
+   "capabilities": [
+    "onoff",
+    "measure_temperature",
+    "measure_humidity",
+    "alarm_battery",
+    "alarm_siren"
+   ],
+   "source": "auto-sync",
+   "variants": [
+    "_TYST11_d0yu2xgi",
+    "_tze200_d0yu2xgi",
+    "_tyst11_d0yu2xgi",
+    "_TYST11_D0YU2XGI",
+    "_TZE200_D0YU2XGI"
+   ]
+  },
+  "_TZE200_D0YU2XGI": {
+   "driverId": "smoke_detector_advanced",
+   "modelIds": [
+    "GS361A-H04",
+    "HS1SA",
+    "HS3SA",
+    "JTYJ-GD-01LM/BW",
+    "NAS-SD02B0",
+    "PG-S11Z",
+    "SA12IZL",
+    "SD8SC_00.00.03.12TC",
+    "SMSZB-120",
+    "SSSQS01LM",
+    "TS0205",
+    "TS0601",
+    "YG400A",
+    "lumi.sensor_smoke"
+   ],
+   "vendor": "Neo",
+   "model": "NAS-AB02B0",
+   "title": "Siren with Temperature &amp; Humidity Sensor",
+   "category": "sensor",
+   "description": "onoff, measure_temperature, measure_humidity, alarm_battery, alarm_siren",
+   "productPage": "https://zigbee.blakadder.com/Neo_NAS-AB02B0.html",
+   "imageCandidates": [
+    "https://zigbee.blakadder.com/assets/images/devices/neo-nas-ab02b0.jpg",
+    "https://www.zigbee2mqtt.io/images/devices/NAS-AB02B0.jpg"
+   ],
+   "batteries": [
+    "CR2",
+    "CR123A"
+   ],
+   "batteryTypical": "CR2",
+   "energy": {
+    "nominalW": 0,
+    "standbyW": 0
+   },
+   "deviceClass": "sensor",
+   "capabilities": [
+    "onoff",
+    "measure_temperature",
+    "measure_humidity",
+    "alarm_battery",
+    "alarm_siren"
+   ],
+   "source": "auto-sync",
+   "variants": [
+    "_TYST11_d0yu2xgi",
+    "_tze200_d0yu2xgi",
+    "_tyst11_d0yu2xgi",
+    "_TYST11_D0YU2XGI",
+    "_TZE200_d0yu2xgi"
+   ]
   },
   "_TZE200_4MA5PUFE": {
    "driverId": "smart_breaker",
@@ -257904,6 +258496,33 @@
    "deviceClass": "sensor",
    "capabilities": null,
    "source": null
+  },
+  "_TZE200_NTCY3XU1": {
+   "driverId": null,
+   "modelIds": [],
+   "vendor": "Tuya",
+   "model": "YG400A",
+   "title": "Smoke Alarm",
+   "category": "sensor",
+   "description": "Smoke Alarm",
+   "productPage": "https://zigbee.blakadder.com/Tuya_YG400A.html",
+   "imageCandidates": [
+    "https://zigbee.blakadder.com/assets/images/devices/tuya-yg400a.jpg",
+    "https://www.zigbee2mqtt.io/images/devices/YG400A.jpg"
+   ],
+   "batteries": [],
+   "batteryTypical": null,
+   "energy": null,
+   "deviceClass": null,
+   "capabilities": null,
+   "source": "blakadder",
+   "variants": [
+    "_tze204_ntcy3xu1",
+    "_TZE200_ntcy3xu1",
+    "_tze200_ntcy3xu1",
+    "_TZE204_ntcy3xu1",
+    "_TZE204_NTCY3XU1"
+   ]
   },
   "_TZE284_aoah6bv8": {
    "driverId": "smoke_sensor",
@@ -259626,8 +260245,8 @@
     "_tze204_ntcy3xu1",
     "_TZE200_ntcy3xu1",
     "_tze200_ntcy3xu1",
-    "_TZE204_NTCY3XU1",
-    "_TZE200_NTCY3XU1"
+    "_TZE200_NTCY3XU1",
+    "_TZE204_NTCY3XU1"
    ]
   },
   "_TZ3000_9TG32TRW": {
@@ -259740,8 +260359,8 @@
     "_tze204_ntcy3xu1",
     "_TZE200_ntcy3xu1",
     "_tze200_ntcy3xu1",
-    "_TZE204_ntcy3xu1",
-    "_TZE200_NTCY3XU1"
+    "_TZE200_NTCY3XU1",
+    "_TZE204_ntcy3xu1"
    ]
   },
   "_TZE284_GA1MAEOF": {
@@ -263801,7 +264420,7 @@
    "source": null
   },
   "_tz3000_0t4zjtia": {
-   "driverId": "switch_1gang",
+   "driverId": null,
    "modelIds": [],
    "vendor": null,
    "model": null,
@@ -263810,15 +264429,10 @@
    "description": null,
    "productPage": null,
    "imageCandidates": [],
-   "batteries": [
-    "OTHER"
-   ],
-   "batteryTypical": "OTHER",
-   "energy": {
-    "nominalW": 3,
-    "standbyW": 0.4
-   },
-   "deviceClass": "socket",
+   "batteries": [],
+   "batteryTypical": null,
+   "energy": null,
+   "deviceClass": null,
    "capabilities": null,
    "source": null
   },
@@ -267638,7 +268252,7 @@
    "source": null
   },
   "_tz3000_skueekg3": {
-   "driverId": "switch_1gang",
+   "driverId": null,
    "modelIds": [],
    "vendor": null,
    "model": null,
@@ -267647,15 +268261,10 @@
    "description": null,
    "productPage": null,
    "imageCandidates": [],
-   "batteries": [
-    "OTHER"
-   ],
-   "batteryTypical": "OTHER",
-   "energy": {
-    "nominalW": 3,
-    "standbyW": 0.4
-   },
-   "deviceClass": "socket",
+   "batteries": [],
+   "batteryTypical": null,
+   "energy": null,
+   "deviceClass": null,
    "capabilities": null,
    "source": null
   },
@@ -274474,69 +275083,6 @@
    "capabilities": null,
    "source": "auto-sync"
   },
-  "_TZ3000_WZMUK9AI": {
-   "driverId": "switch_1gang",
-   "modelIds": [
-    "01MINIZB",
-    "BASICZBR3",
-    "S26R2ZB",
-    "S31ZB",
-    "TS0001",
-    "TS0001_power",
-    "TS0001_switch",
-    "TS0001_switch_module",
-    "TS0002",
-    "TS0003",
-    "TS000F",
-    "TS0011",
-    "TS0012",
-    "TS0014",
-    "TS0041",
-    "TS0101",
-    "TS0111",
-    "TS011F",
-    "TS0601",
-    "TS0726",
-    "TS110E",
-    "TS130F",
-    "TS4100",
-    "ZBM5-1C-120",
-    "ZBM5-2C-120",
-    "ZBM5-3C-120",
-    "ZBMINI",
-    "ZBMINIL2",
-    "ZBMINIL2-R2",
-    "ZBMINIR",
-    "ZBMINIR2",
-    "ZBMINIR2-R2",
-    "ZG-301Z",
-    "ZG-302Z1"
-   ],
-   "vendor": null,
-   "model": null,
-   "title": null,
-   "category": "socket",
-   "description": "onoff, measure_power, meter_power, measure_current, measure_voltage",
-   "productPage": null,
-   "imageCandidates": [],
-   "batteries": [
-    "OTHER"
-   ],
-   "batteryTypical": "OTHER",
-   "energy": {
-    "nominalW": 3,
-    "standbyW": 0.4
-   },
-   "deviceClass": "socket",
-   "capabilities": [
-    "onoff",
-    "measure_power",
-    "meter_power",
-    "measure_current",
-    "measure_voltage"
-   ],
-   "source": "auto-sync"
-  },
   "_TZ3210_4WHIGL8I": {
    "driverId": "switch_1gang",
    "modelIds": [
@@ -280123,43 +280669,6 @@
     "_tze200_7hfcudw5"
    ]
   },
-  "_TZE200_8YGSUHE1": {
-   "driverId": "climate_sensor",
-   "modelIds": [
-    "TS0215A",
-    "TS0601",
-    "TS0601_wirelesssw"
-   ],
-   "vendor": "Tuya",
-   "model": "RSH-AirBox01",
-   "title": "Smart Air Box",
-   "category": "sensor",
-   "description": "Smart Air Box",
-   "productPage": "https://zigbee.blakadder.com/Tuya_RSH-AirBox01.html",
-   "imageCandidates": [
-    "https://zigbee.blakadder.com/assets/images/devices/tuya-rsh-airbox01.jpg",
-    "https://www.zigbee2mqtt.io/images/devices/RSH-AirBox01.jpg"
-   ],
-   "batteries": [
-    "AAA",
-    "CR2032",
-    "CR2450"
-   ],
-   "batteryTypical": "AAA",
-   "energy": {
-    "nominalW": null,
-    "standbyW": null
-   },
-   "deviceClass": "sensor",
-   "capabilities": null,
-   "source": "auto-sync",
-   "variants": [
-    "_TZE200_YVX5LH6K",
-    "_tze200_8ygsuhe1",
-    "_tze200_yvx5lh6k",
-    "_TZE200_yvx5lh6k"
-   ]
-  },
   "_TZE200_9QAYZQA8": {
    "driverId": "presence_sensor_ceiling",
    "modelIds": [],
@@ -280186,59 +280695,6 @@
    "source": "auto-sync",
    "variants": [
     "_tze200_9qayzqa8"
-   ]
-  },
-  "_TZE200_D0YU2XGI": {
-   "driverId": "smoke_detector_advanced",
-   "modelIds": [
-    "GS361A-H04",
-    "HS1SA",
-    "HS3SA",
-    "JTYJ-GD-01LM/BW",
-    "NAS-SD02B0",
-    "PG-S11Z",
-    "SA12IZL",
-    "SD8SC_00.00.03.12TC",
-    "SMSZB-120",
-    "SSSQS01LM",
-    "TS0205",
-    "TS0601",
-    "YG400A",
-    "lumi.sensor_smoke"
-   ],
-   "vendor": "Neo",
-   "model": "NAS-AB02B0",
-   "title": "Siren with Temperature &amp; Humidity Sensor",
-   "category": "sensor",
-   "description": "onoff, measure_temperature, measure_humidity, alarm_battery, alarm_siren",
-   "productPage": "https://zigbee.blakadder.com/Neo_NAS-AB02B0.html",
-   "imageCandidates": [
-    "https://zigbee.blakadder.com/assets/images/devices/neo-nas-ab02b0.jpg",
-    "https://www.zigbee2mqtt.io/images/devices/NAS-AB02B0.jpg"
-   ],
-   "batteries": [
-    "CR2",
-    "CR123A"
-   ],
-   "batteryTypical": "CR2",
-   "energy": {
-    "nominalW": 0,
-    "standbyW": 0
-   },
-   "deviceClass": "sensor",
-   "capabilities": [
-    "onoff",
-    "measure_temperature",
-    "measure_humidity",
-    "alarm_battery",
-    "alarm_siren"
-   ],
-   "source": "auto-sync",
-   "variants": [
-    "_TYST11_d0yu2xgi",
-    "_tze200_d0yu2xgi",
-    "_tyst11_d0yu2xgi",
-    "_TYST11_D0YU2XGI"
    ]
   },
   "_TZE200_DQ1MFJUG": {
@@ -280515,70 +280971,6 @@
    "source": "auto-sync",
    "variants": [
     "_tze200_nslr42tt"
-   ]
-  },
-  "_TZE200_NTCY3XU1": {
-   "driverId": "switch_wireless",
-   "modelIds": [],
-   "vendor": "Tuya",
-   "model": "YG400A",
-   "title": "Smoke Alarm",
-   "category": "sensor",
-   "description": "Smoke Alarm",
-   "productPage": "https://zigbee.blakadder.com/Tuya_YG400A.html",
-   "imageCandidates": [
-    "https://zigbee.blakadder.com/assets/images/devices/tuya-yg400a.jpg",
-    "https://www.zigbee2mqtt.io/images/devices/YG400A.jpg"
-   ],
-   "batteries": [
-    "CR2032"
-   ],
-   "batteryTypical": "CR2032",
-   "energy": {
-    "nominalW": 0,
-    "standbyW": 0
-   },
-   "deviceClass": "sensor",
-   "capabilities": null,
-   "source": "blakadder",
-   "variants": [
-    "_tze204_ntcy3xu1",
-    "_TZE200_ntcy3xu1",
-    "_tze200_ntcy3xu1",
-    "_TZE204_ntcy3xu1",
-    "_TZE204_NTCY3XU1"
-   ]
-  },
-  "_TZE200_PAY2BYAX": {
-   "driverId": "switch_wireless",
-   "modelIds": [],
-   "vendor": "Tuya",
-   "model": "ZG-102ZL",
-   "title": "Luminance Door Sensor",
-   "category": "sensor",
-   "description": "Luminance Door Sensor",
-   "productPage": "https://zigbee.blakadder.com/Tuya_ZG-102ZL.html",
-   "imageCandidates": [
-    "https://zigbee.blakadder.com/assets/images/devices/tuya-zg-102zl.jpg",
-    "https://www.zigbee2mqtt.io/images/devices/ZG-102ZL.jpg"
-   ],
-   "batteries": [
-    "CR2032"
-   ],
-   "batteryTypical": "CR2032",
-   "energy": {
-    "nominalW": 0,
-    "standbyW": 0
-   },
-   "deviceClass": "sensor",
-   "capabilities": null,
-   "source": "blakadder",
-   "variants": [
-    "_TZE200_N8DLJORX",
-    "_TZE200_pay2byax",
-    "_tze200_n8dljorx",
-    "_tze200_pay2byax",
-    "_TZE200_n8dljorx"
    ]
   },
   "_TZE200_T5P1VJ8R": {
@@ -288626,10 +289018,11 @@
     "_tz3000_7ysdnebc",
     "_tz3210_wdexaypg",
     "_tz3210_3mpwqzuu",
+    "_TZ3000_7ysdnebc",
+    "_TZ3000_7YSDNEBC",
     "_TZ3210_wdexaypg",
     "_TZ3210_3MPWQZUU",
-    "_TZ3210_WDEXAYPG",
-    "_TZ3000_7YSDNEBC"
+    "_TZ3210_WDEXAYPG"
    ]
   },
   "_TZ3210_k1msuvg6": {
@@ -288728,10 +289121,11 @@
     "_tz3000_7ysdnebc",
     "_tz3210_wdexaypg",
     "_tz3210_3mpwqzuu",
+    "_TZ3000_7ysdnebc",
+    "_TZ3000_7YSDNEBC",
     "_TZ3210_3mpwqzuu",
     "_TZ3210_3MPWQZUU",
-    "_TZ3210_WDEXAYPG",
-    "_TZ3000_7YSDNEBC"
+    "_TZ3210_WDEXAYPG"
    ]
   },
   "_TZ3210_weaqkhab": {
@@ -288867,10 +289261,11 @@
     "_tz3000_7ysdnebc",
     "_tz3210_wdexaypg",
     "_tz3210_3mpwqzuu",
+    "_TZ3000_7ysdnebc",
+    "_TZ3000_7YSDNEBC",
     "_TZ3210_3mpwqzuu",
     "_TZ3210_wdexaypg",
-    "_TZ3210_WDEXAYPG",
-    "_TZ3000_7YSDNEBC"
+    "_TZ3210_WDEXAYPG"
    ]
   },
   "_TZ3210_K1MSUVG6": {
@@ -288969,10 +289364,11 @@
     "_tz3000_7ysdnebc",
     "_tz3210_wdexaypg",
     "_tz3210_3mpwqzuu",
+    "_TZ3000_7ysdnebc",
+    "_TZ3000_7YSDNEBC",
     "_TZ3210_3mpwqzuu",
     "_TZ3210_wdexaypg",
-    "_TZ3210_3MPWQZUU",
-    "_TZ3000_7YSDNEBC"
+    "_TZ3210_3MPWQZUU"
    ]
   },
   "_TZ3210_WEAQKHAB": {
@@ -289044,48 +289440,6 @@
    "deviceClass": "light",
    "capabilities": null,
    "source": null
-  },
-  "_TZ3000_7YSDNEBC": {
-   "driverId": "wall_dimmer_tuya",
-   "modelIds": [
-    "TS0011",
-    "TS0052",
-    "TS0601",
-    "TS0601_dim1",
-    "TS1101",
-    "TS110E",
-    "TS110F",
-    "ZBMINI-DIM",
-    "ZBMINID"
-   ],
-   "vendor": "Tuya",
-   "model": "SMD-02Z",
-   "title": "Dimmer Module 2 Channel",
-   "category": "switch",
-   "description": "Dimmer Module 2 Channel",
-   "productPage": "https://zigbee.blakadder.com/Tuya_SMD-02Z.html",
-   "imageCandidates": [
-    "https://zigbee.blakadder.com/assets/images/devices/tuya-smd-02z.jpg",
-    "https://www.zigbee2mqtt.io/images/devices/SMD-02Z.jpg"
-   ],
-   "batteries": [],
-   "batteryTypical": null,
-   "energy": {
-    "nominalW": 9,
-    "standbyW": 0.3
-   },
-   "deviceClass": "light",
-   "capabilities": null,
-   "source": "auto-sync",
-   "variants": [
-    "_tz3000_7ysdnebc",
-    "_tz3210_wdexaypg",
-    "_tz3210_3mpwqzuu",
-    "_TZ3210_3mpwqzuu",
-    "_TZ3210_wdexaypg",
-    "_TZ3210_3MPWQZUU",
-    "_TZ3210_WDEXAYPG"
-   ]
   },
   "_TZ3000_F3XKA28J": {
    "driverId": "wall_dimmer_tuya",
@@ -292421,6 +292775,40 @@
    "deviceClass": "socket",
    "capabilities": null,
    "source": "auto-sync"
+  },
+  "_TZ3000_0t4zjtia": {
+   "driverId": null,
+   "modelIds": [],
+   "vendor": null,
+   "model": null,
+   "title": null,
+   "category": null,
+   "description": null,
+   "productPage": null,
+   "imageCandidates": [],
+   "batteries": [],
+   "batteryTypical": null,
+   "energy": null,
+   "deviceClass": null,
+   "capabilities": null,
+   "source": null
+  },
+  "_TZ3000_skueekg3": {
+   "driverId": null,
+   "modelIds": [],
+   "vendor": null,
+   "model": null,
+   "title": null,
+   "category": null,
+   "description": null,
+   "productPage": null,
+   "imageCandidates": [],
+   "batteries": [],
+   "batteryTypical": null,
+   "energy": null,
+   "deviceClass": null,
+   "capabilities": null,
+   "source": null
   },
   "_TZ3000_2MB38MF3": {
    "driverId": "wall_switch_1_gang",
@@ -296891,6 +297279,30 @@
    "deviceClass": "sensor",
    "capabilities": null,
    "source": null
+  },
+  "_TZE200_jthf7vb6": {
+   "driverId": null,
+   "modelIds": [],
+   "vendor": "Tuya",
+   "model": "WLS-100z",
+   "title": "Water Leak Sensor",
+   "category": "sensor",
+   "description": "Water Leak Sensor",
+   "productPage": "https://zigbee.blakadder.com/Tuya_WLS-100z.html",
+   "imageCandidates": [
+    "https://zigbee.blakadder.com/assets/images/devices/tuya-wls-100z.jpg",
+    "https://www.zigbee2mqtt.io/images/devices/WLS-100z.jpg"
+   ],
+   "batteries": [],
+   "batteryTypical": null,
+   "energy": null,
+   "deviceClass": null,
+   "capabilities": null,
+   "source": "blakadder",
+   "variants": [
+    "_TZE200_JTHF7VB6",
+    "_tze200_jthf7vb6"
+   ]
   },
   "_TYST11_qq9mpfhw": {
    "driverId": "water_leak_sensor_tuya",
