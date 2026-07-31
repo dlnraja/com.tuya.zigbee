@@ -109,6 +109,13 @@
         "nl": "Controleer op OTA-updates",
         "pl": "Sprawdź aktualizację OTA Zigbee"
       }
+    },
+    {
+      "id": "tuya_revive",
+      "title": {
+        "en": "Tuya Revive (device recovery)",
+        "fr": "Tuya Revive (récupération appareil)"
+      }
     }
   ],
   "id": "garage_door_opener",
