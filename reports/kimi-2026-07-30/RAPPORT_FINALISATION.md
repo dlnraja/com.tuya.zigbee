@@ -77,3 +77,20 @@ Résultat : `check-button-flow-routing` **0 erreur, 0 warning** ; 298/298 master
 5. Bundle > limites → `.homeyignore` : `product-reference.json` + audit report exclus.
 6. Backticks du changelog exécutés par l'extracteur → purgés.
 7. **Format clé-version du `.homeychangelog.json`** (requis par `homey app publish` headless) → synchronisation des 2 formats.
+
+## Lot H (qualité) + Lot I (data) — 2026-07-31
+
+### Lot H — Audit ESLint complet de lib/
+647 erreurs totales (dont ~450 no-unused-vars bénignes) → **51 erreurs critiques corrigées, 0 restante** :
+- Modules fantômes référencés après des passages de bots (imports supprimés) : TuyaDataPointParser, EnergyCapabilityDetector, EnrichedDPMappings, DriverMappingLoader, ExoticQuirkEngine, UnifiedBatteryHandler, DataQuery
+- Appels corrompus par bots : capabilities sans `this.`, `cluster.Promise.resolve(bind(...))`, `triggerCard.Promise.resolve(trigger(...))`
+- `SmartClusterEngine` : constructeur sans `super()` → crash garanti à l'instanciation
+- 7 clés d'objet dupliquées (écrasement silencieux de données)
+- `TuyaDeviceMixin` : switch avec 3× `case 1` → blocs température/eau morts, restructuré en contrôles par capability
+- `new Promise(async …)` anti-pattern, condition constante, getter dupliqué
+- **0 erreur dangereuse restante sur les 2 branches**, 577/576 lib + 431 drivers chargent propres
+
+### Lot I — Données & dashboards
+- Device Finder + WiFi + 6 dashboards + inbox régénérés (pages en ligne : v9.0.383)
+- product-reference : 9043 empreintes (1721 blakadder, 7288 batteries, 8273 énergie)
+- docs INDEX (156 docs) + registre (1057 scripts) rafraîchis
