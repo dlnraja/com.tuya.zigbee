@@ -34,7 +34,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.381 |
+| **App Version** | v9.0.384 |
 | **Device Fingerprints** | 10,668+ |
 | **Unique Product IDs** | 571 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
@@ -44,7 +44,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 | **Languages** | EN, FR, NL, DE |
 | **SDK Version** | 3 |
 | **Homey Compatibility** | >=12.2.0 |
-| **Last Updated** | 2026-07-30 |
+| **Last Updated** | 2026-07-31 |
 
 ### Top 20 Drivers by Fingerprint Count
 
@@ -102,20 +102,20 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 | Version | Changes |
 |---------|---------|
 | **vchangelog** | [object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object  |
-| **v9.0.381** | v9.0.380: OTA notification with flash guidance (Tuya MCU → manufacturer app/Z2M, ZCL → local flash)., Hue-style batch... |
+| **v9.0.384** | 51 critical ESLint errors fixed (phantom modules, this-less calls, missing super(), duplicate keys, dead switch cases). |
+| **v9.0.383** | 51 critical ESLint errors fixed (phantom modules, this-less calls, missing super(), duplicate keys, dead switch cases). |
+| **v9.0.382** | Key-version changelog format (required by headless homey publish), OTA guidance, Hue batch 4. |
+| **v9.0.381** | Changelog backticks stripped (publish extractor fix), publish-size bundle excludes product-reference, version alignment. |
 | **v9.0.380** | v9.0.379: OTA: real current firmware version read from the basic cluster (swBuildId/appVersion) in the Tuya MCU fallb... |
+| **v9.0.379** | OTA real firmware version via swBuildId, Hue batch 3 (dim_to_level, scene_cycle), publish -X theirs. |
 | **v9.0.378** | v9.0.377: Temperature compensation was inverted, New test suites: 10 battery chemistry/health tests (17 profiles vali... |
 | **v9.0.377** | Stability improvements and Homey test publication retry after transient processing failure. |
-| **v9.0.376** | v9.0.375: Product reference database, Energy consumption reference, Flow condition `telemetry_is_estimated`, Fixed mf... |
-| **v9.0.374** | v9.0.373: Unknown device prevention (case), Publish compactor, Added `_TZE204_kwi6bbk4` (ZHA source) to climate_senso... |
-| **v9.0.372** | v9.0.371: 10 drivers were broken at load time, `UniversalTuyaParser` fixed earlier (37 undefined `capability` shortha... |
-| **v9.0.370** | v9.0.369: `AdaptiveDataParser.toHumidity`: magnitude-based scaling (≤100 = percent, ≤1000 = ×10, else ×100). The old ... |
-| **v9.0.366** | v9.0.365: Battery estimation: the generic 0-50-scale doubling heuristic in `UnifiedBatteryHandler.normalizeZigbeeValu... |
-| **v9.0.365** | v9.0.364: Smart scaling engine (dynamic divisors/multipliers): |
-| **v9.0.363** | v9.0.361: `measure_temperature.probe` (external probe, DP38 — e.g. `_TZE284_hodyryli`, issue #513): probe temperature... |
-| **v9.0.362** | v9.0.361: `measure_temperature.probe` (external probe, DP38 — e.g. `_TZE284_hodyryli`, issue #513): probe temperature... |
-| **v9.0.361** | v9.0.359: chore: bump v9.0.359 — débloque le publish (9.0.358 déjà publiée en build 2689) |
-| **v9.0.360** | v9.0.359: chore: bump v9.0.359 — débloque le publish (9.0.358 déjà publiée en build 2689) |
+| **v9.0.376** | v9.0.375: Product reference database, Energy consumption reference, Flow condition 'telemetry_is_estimated', Fixed mf... |
+| **v9.0.375** | Product reference DB (9027 fingerprints: vendor/model/battery/energy/variants), energy consumption reference for the ... |
+| **v9.0.374** | v9.0.373: Unknown device prevention (case), Publish compactor, Added '_TZE204_kwi6bbk4' (ZHA source) to climate_senso... |
+| **v9.0.373** | Case-variant completeness (4950 fingerprints, unknown device prevention) + publish compactor counts case groups (0 ob... |
+| **v9.0.372** | v9.0.371: 10 drivers were broken at load time, 'UniversalTuyaParser' fixed earlier (37 undefined 'capability' shortha... |
+| **v9.0.371** | 10 drivers fixed at load time (bot-corrupted imports), ZCL measuredValue parsed spec-exactly, new smoke/syntax/dead-m... |
 
 <!-- CHANGELOG_END -->
 
@@ -357,4 +357,4 @@ A massive thank you to the maintainers and contributors of:
 
 **Made with love by Dylan Rajasekaram & the Zigbee community**
 
-*Last updated: 2026-07-30*
+*Last updated: 2026-07-31*
