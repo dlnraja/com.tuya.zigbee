@@ -494,6 +494,7 @@ function main() {
     topRecommendations: buildTopRecommendations(crashResults, diagResults),
   };
 
+  fs.mkdirSync(stateDir, { recursive: true }); // v10.17.3: state dir is untracked — absent on fresh CI
   fs.writeFileSync(outputFile, JSON.stringify(report, null, 2));
   console.log('');
   console.log('─'.repeat(60));
