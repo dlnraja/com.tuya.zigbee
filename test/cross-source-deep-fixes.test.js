@@ -17,6 +17,15 @@ const { describe, it } = testApi;
 const ROOT = path.join(__dirname, '..');
 const read = (p) => fs.readFileSync(path.join(ROOT, p), 'utf8');
 
+// v10.16.0: the live feed is a build artifact (untracked since P92.84) —
+// regenerate it once if absent so tests are self-sufficient on fresh clones.
+const FEED_DIR = path.join(ROOT, '.github', 'pages-build', 'data');
+if (!fs.existsSync(path.join(FEED_DIR, 'mfs_db_latest.json'))) {
+  try {
+    require('child_process').execSync('node .github/scripts/export-live-data-feed.js', { cwd: ROOT, stdio: 'pipe' });
+  } catch { /* export best-effort */ }
+}
+
 describe('P92.67 — cross-source deep fixes', () => {
 
   it('lifecycle: _destroyDevice runs cleanup even when _destroyed set early', () => {
