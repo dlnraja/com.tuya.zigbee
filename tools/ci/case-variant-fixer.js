@@ -22,6 +22,17 @@ const onlyDrivers = process.argv.slice(2).filter(a => !a.startsWith('-'));
 const TUYA_RX = /^_t[zy][a-z0-9]{4,}_/i; // _TZ3000_, _TZE200_, _TYZB01_, _TYST11_, variants longues
 const SYNTHETIC_RX = /_disabled|_dummy|_generic|_hybrid|_master|placeholder|needs_/i;
 
+/**
+ * Canonical Tuya form: prefix UPPERCASE + suffix lowercase
+ * (e.g. `_TZ3000_g9g2xnch`). This is the form MOST devices report
+ * at pairing time; full-upper/full-lower alone miss it.
+ */
+function tuyaCanonical(m) {
+  const match = String(m).match(/^(_t[zy][a-z0-9]+)_(.+)$/i);
+  if (!match) {return null;}
+  return `${match[1].toUpperCase()}_${match[2].toLowerCase()}`;
+}
+
 const report = { apply: APPLY, drivers: 0, added: 0, skippedSynthetic: 0, details: [] };
 
 for (const d of fs.readdirSync(path.join(ROOT, 'drivers'))) {
@@ -39,10 +50,11 @@ for (const d of fs.readdirSync(path.join(ROOT, 'drivers'))) {
     if (SYNTHETIC_RX.test(m)) {report.skippedSynthetic++; continue;}
     const up = m.toUpperCase();
     const lo = m.toLowerCase();
-    const hasUp = mfrs.some(x => x === up);
-    const hasLo = mfrs.some(x => x === lo);
-    if (!hasUp && up !== lo) {toAdd.push(up);}
-    if (!hasLo) {toAdd.push(lo);}
+    const canon = tuyaCanonical(m);
+    const hasExact = (v) => mfrs.some(x => x === v);
+    if (!hasExact(up) && up !== lo) {toAdd.push(up);}
+    if (!hasExact(lo)) {toAdd.push(lo);}
+    if (canon && !hasExact(canon) && canon !== up && canon !== lo) {toAdd.push(canon);}
   }
   if (!toAdd.length) {continue;}
 
