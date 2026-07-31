@@ -273,12 +273,15 @@ function buildPage(config) {
   } = config;
 
   const navDashboards = [
+    { id: 'home', label: '🔍 Device Finder', file: '../index.html' },
+    { id: 'hub', label: '📊 Hub', file: '../dashboards.html' },
     { id: 'master', label: 'Master Dashboard', file: 'master-dashboard.html' },
     { id: 'coverage', label: 'Coverage', file: 'coverage-dashboard.html' },
     { id: 'drivers', label: 'Drivers', file: 'driver-dashboard.html' },
     { id: 'dependencies', label: 'Dependencies', file: 'dependency-dashboard.html' },
     { id: 'errors', label: 'Errors', file: 'error-dashboard.html' },
     { id: 'performance', label: 'Performance', file: 'performance-dashboard.html' },
+    { id: 'inbox', label: '📥 Community Inbox', file: '../inbox.html' },
     ...dashboards
   ];
 
