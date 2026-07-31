@@ -1,6 +1,13 @@
 {
   "changelog": [
     {
+      "version": "5.12.44",
+      "date": "2026-07-31",
+      "channel": "stable",
+      "en": "Backport 9.0.383: 51 critical ESLint fixes.",
+      "fr": "Backport 9.0.383 : 51 corrections ESLint critiques."
+    },
+    {
       "version": "5.12.43",
       "date": "2026-07-30",
       "channel": "stable",
@@ -1095,5 +1102,9 @@
   "9.0.53": {
     "en": "CRITICAL: sdkVersion fix (Processing failed), Missing Capability Listener (setable:false), timer fallback, battery restore, duplicate method fix, HOBEIAN ZG-301Z, NFKD normalize, 87 fingerprints restored, Polos validator",
     "fr": "CRITIQUE: sdkVersion (Processing failed), Missing Capability Listener, fallback timer, batterie, HOBEIAN, NFKD, 87 fingerprints, Polos"
+  },
+  "5.12.44": {
+    "en": "Backport 9.0.383: 51 critical ESLint fixes.",
+    "fr": "Backport 9.0.383 : 51 corrections ESLint critiques."
   }
 }
