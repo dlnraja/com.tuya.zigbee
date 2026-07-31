@@ -1,6 +1,13 @@
 {
   "changelog": [
     {
+      "version": "5.12.46",
+      "date": "2026-07-31",
+      "channel": "stable",
+      "en": "Backport 9.0.387: DP send hardening.",
+      "fr": "Backport 9.0.387 : blindage envois DP."
+    },
+    {
       "version": "5.12.45",
       "date": "2026-07-31",
       "channel": "stable",
@@ -1117,5 +1124,9 @@
   "5.12.45": {
     "en": "Backport 9.0.385: OTA hardening.",
     "fr": "Backport 9.0.385 : blindage OTA."
+  },
+  "5.12.46": {
+    "en": "Backport 9.0.387: DP send hardening.",
+    "fr": "Backport 9.0.387 : blindage envois DP."
   }
 }
