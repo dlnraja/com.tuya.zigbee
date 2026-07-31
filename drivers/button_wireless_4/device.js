@@ -286,7 +286,11 @@ class Button4GangDevice extends ButtonDevice {
               : this._extractRawFrameData(json);
 
           // Proven TS0044 path: command 0xFD on cluster 0x0006, action in data[3].
-          if (Number(clusterId) === 0x0006 && data?.length >= 4 && [0, 1, 2].includes(data[3])) {
+          // v10.3.0 FIX (B9): check the ZCL command id (data[2]) — the old
+          // "any frame with data[3] in 0..2" test also matched OnOff attribute
+          // reports (cmd 0x0A, attrId 0x0000 → data[3]=0) and read responses
+          // (cmd 0x01), producing phantom presses.
+          if (Number(clusterId) === 0x0006 && data?.length === 4 && data[2] === 0xFD && [0, 1, 2].includes(data[3])) {
             const pressType = resolvePressType(data[3], 'TS0044-RAW');
             this.log(`[TS0044-RAW] EP${ep} data[3]=${data[3]} -> ${pressType}`);
             await this._triggerButton4Gang(ep, pressType);

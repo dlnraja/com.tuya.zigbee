@@ -1,15 +1,15 @@
 'use strict';
 
 const UnifiedSwitchBase = require('../../lib/devices/UnifiedSwitchBase');
-const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
-const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 
 /**
  * WALL SWITCH 2-GANG 1-WAY (BSEED) - v9.7.3 Unified Architecture
  * v9.7.3: Migrated to unified mixin architecture with sub-device support.
  * Each gang can be a separate Homey device (Sub-device architecture).
+ * v10.3.0 FIX (B10): Removed the redundant PhysicalButtonMixin + VirtualButtonMixin double wrap
+ * double wrap — UnifiedSwitchBase already inherits both via TuyaZigbeeDevice.
  */
-class WallSwitch2Gang1WayDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSwitchBase)) {
+class WallSwitch2Gang1WayDevice extends UnifiedSwitchBase {
 
   get mainsPowered() { return true; }
 
@@ -60,10 +60,14 @@ class WallSwitch2Gang1WayDevice extends PhysicalButtonMixin(VirtualButtonMixin(U
 
   /**
    * Filter physical button triggers to only process the gang assigned to this device.
+   * v10.3.0 FIX (B10): the primary instance now filters too when sub-devices
+   * are paired — previously it processed every gang, double-triggering flows
+   * alongside the owning sub-device.
    */
   triggerButtonPress(button, type = 'single', countOrOptions = {}, options = {}) {
-    if (this._isSubDevice && this._gangNumber !== undefined && button !== this._gangNumber) {
-      return; // Ignore events for other gangs
+    if (this._gangNumber !== undefined && button !== this._gangNumber
+      && (this._isSubDevice || this._hasPairedSubDevices())) {
+      return; // Ignore events for gangs owned by another (sub-)device
     }
     const tokens = typeof countOrOptions === 'number'
       ? { clicks: countOrOptions }
@@ -72,6 +76,17 @@ class WallSwitch2Gang1WayDevice extends PhysicalButtonMixin(VirtualButtonMixin(U
       tokens.source = options.source;
     }
     return this._triggerPhysicalFlow(button, type, { ...tokens, _internalTrigger: true });
+  }
+
+  /**
+   * v10.3.0 FIX (B10): True when sibling sub-devices (e.g. 'secondSwitch')
+   * are paired — the primary device must then ignore their gangs.
+   */
+  _hasPairedSubDevices() {
+    try {
+      return (this.driver?.getDevices?.() || [])
+        .some((d) => d !== this && Boolean(d.getData?.()?.subDeviceId));
+    } catch (_e) {return false;}
   }
 
   /**
