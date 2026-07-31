@@ -426,6 +426,12 @@ function summarize(matches) {
 // ─── DIAGNOSTIC ANALYSIS (raw text files) ───────────────────────
 function analyzeDiagnostics() {
   const results = [];
+  // v10.17.2 FIX: .github/state is untracked (security policy) — absent on
+  // fresh CI checkouts. Tolerate the missing directory instead of ENOENT.
+  if (!fs.existsSync(stateDir)) {
+    console.log('[offline-crash-analyzer] .github/state absent (checkout frais) — 0 diagnostic à analyser');
+    return results;
+  }
   const diagDirs = fs.readdirSync(stateDir).filter(d => d.startsWith('diagnostics') || d.startsWith('all-diagnostics') || d.startsWith('emails'));
 
   for (const d of diagDirs) {
