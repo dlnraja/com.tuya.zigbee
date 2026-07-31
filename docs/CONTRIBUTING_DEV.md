@@ -46,6 +46,11 @@ npx homey app validate   # validate niveau publish
 - `data/mfs_db.json` est la vérité curée par appareil ; les claims des drivers sont
   volontairement larges.
 - Le gate CI (`tools/ci/pr-gate.js`) bloque tout conflit hors baseline.
+- Toutes les comparaisons mfr/PID au runtime passent par `lib/utils/TuyaNormalizer.js`
+  (NFKD + cache LRU) — jamais de `toLowerCase()` brut sur un identifiant d'appareil.
+- Homey matche la casse **sensiblement** au pairing : chaque empreinte Tuya doit exister
+  en minuscule, MAJUSCULE et forme canonique (`_TZ3000_abc`) dans son driver — couvert
+  par `test/case-variants.test.js`.
 
 ## Outils utiles
 
@@ -56,6 +61,8 @@ npx homey app validate   # validate niveau publish
 | Réparer du mojibake | `node tools/ci/fix-mojibake.js` |
 | Requêter le knowledge graph | `node tools/ci/kg-query.js stats` |
 | Gate PR en local | `node tools/ci/pr-gate.js` |
+| Compléter les variantes de casse (pairing) | `node tools/ci/case-variant-fixer.js --apply` |
+| Dédupliquer mfs_db (casse) | `node tools/ci/mfs-db-dedupe.js --check` |
 | Rangement du dépôt | `node .github/scripts/repo-housekeeping.js` (dry-run) |
 
 ## CI/CD

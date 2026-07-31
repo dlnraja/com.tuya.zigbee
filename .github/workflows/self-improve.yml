@@ -61,6 +61,7 @@ jobs:
         run: |
           node tools/ci/case-variant-fixer.js || true
           node tools/ci/case-variant-fixer.js --apply || true
+          node tools/ci/mfs-db-dedupe.js --apply || true
 
       - name: 📚 Refresh docs index + script registry
         continue-on-error: true
