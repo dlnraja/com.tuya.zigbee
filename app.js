@@ -445,6 +445,19 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
       this.conditionEngine = new ConditionEngine(this.homey);
       this.predictiveHealthEngine = new PredictiveHealthEngine(this.homey);
       this.predictiveHealthEngine.start();
+
+      // v10.12.0 (P92.77): live data updates from our own GitHub Pages feed —
+      // new fingerprints land in the app daily without an app update.
+      try {
+        const LiveDataUpdater = require('./lib/dynamic/LiveDataUpdater');
+        this.liveDataUpdater = new LiveDataUpdater(this.homey, this.log.bind(this));
+        await this.liveDataUpdater.start();
+        const FingerprintMatcher = require('./lib/utils/fingerprint-matcher');
+        FingerprintMatcher.setOverlayProvider(() => this.liveDataUpdater?.getOverlay?.() || null);
+        this.log('✅ LiveDataUpdater started (gh-pages feed, 24h cycle)');
+      } catch (err) {
+        this.error('⚠️ LiveDataUpdater failed (non-critical, local data only):', err.message);
+      }
       this.networkTopologyCollector = new NetworkTopologyCollector(this.homey);
       this.solarElevation.startObserving();
 
@@ -978,6 +991,7 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
     try { if (this.analytics?.destroy) { this.analytics.destroy(); this.analytics = null; } } catch (e) {}
     try { if (this.healthMonitor?.destroy) { this.healthMonitor.destroy(); this.healthMonitor = null; } } catch (e) {}
     try { if (this.discovery?.stop) { await this.discovery.stop(); this.discovery = null; } } catch (e) {}
+    try { if (this.liveDataUpdater?.stop) { this.liveDataUpdater.stop(); this.liveDataUpdater = null; } } catch (e) {}
 
     // v9.1.0: Cleanup new feature modules
     try { if (this.groupManager?.destroy) { this.groupManager.destroy(); this.groupManager = null; } } catch (e) {}

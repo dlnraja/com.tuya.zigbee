@@ -55,6 +55,9 @@ jobs:
         continue-on-error: true
         run: node .github/scripts/device-finder-collect.js
 
+      - name: Export live data feed (P92.77 — app OTA-data)
+        run: node .github/scripts/export-live-data-feed.js
+
       - name: Generate Device Finder
         run: node .github/scripts/generate-device-finder.js
 
