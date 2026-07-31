@@ -274,6 +274,9 @@
       "maintenanceAction": true,
       "getable": false,
       "setable": false
+    },
+    "measure_power": {
+      "approximated": true
     }
   },
   "maintenanceActions": [

@@ -575,6 +575,26 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
 
   _hueCircadianCurve(date = new Date()) {
     // light_temperature Homey: 0 = froid (6500K), 1 = chaud (2200K)
+    // v10.7.0: delegate to REAL solar elevation when available (the 4
+    // parallel circadian curves in the repo were all time-based guesses;
+    // SolarElevation computes the actual sun position). Time buckets stay
+    // as fallback when the solar engine isn't initialized.
+    const solar = this.solarElevation;
+    if (solar && typeof solar.getElevation === 'function') {
+      try {
+        const elev = solar.getElevation(date); // degrés, <0 = nuit
+        if (typeof elev === 'number' && Number.isFinite(elev)) {
+          // Map élévation → dim/temp: nuit (<-6°) → très chaud/sombre,
+          // crépuscule (-6..6°) → transition, jour (>30°) → froid/lumineux.
+          const clamp01 = (x) => Math.max(0, Math.min(1, x));
+          const dayness = clamp01((elev + 6) / 36); // -6° → 0, 30° → 1
+          return {
+            dim: Math.round((0.1 + dayness * 0.9) * 100) / 100,
+            temperature: Math.round((1.0 - dayness * 0.85) * 100) / 100
+          };
+        }
+      } catch { /* fall through to time buckets */ }
+    }
     const h = date.getHours() + date.getMinutes() / 60;
     if (h < 5) {return { dim: 0.1, temperature: 1.0 };}
     if (h < 7) {return { dim: 0.3, temperature: 0.85 };}
@@ -794,6 +814,30 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
         }
         this.log(`[HUE] ${cover.getName?.()} n'a pas windowcoverings_set`);
         return false;
+      });
+
+    // ── Calibration fins de course (Tuya DP16, Quoya/Dooya) ────────────────
+    this.homey.flow.getActionCard('cover_limit_calibration')
+      .registerRunListener(async (args) => {
+        const { cover, command } = args;
+        if (!cover || !command) {return false;}
+        // z2m/Tuya convention: DP16 enum border — 0=up, 1=down, 2=up_delete,
+        // 3=down_delete, 4=remove_top_bottom
+        const DP16 = { set_upper: 0, set_lower: 1, delete_upper: 2, delete_lower: 3, remove_all: 4 };
+        const value = DP16[command];
+        if (value === undefined) {return false;}
+        try {
+          if (typeof cover._sendTuyaDP === 'function') {
+            await cover._sendTuyaDP(16, value, 'enum');
+            this.log(`[CURTAIN] DP16 limit calibration '${command}' (${value}) envoyé à ${cover.getName?.()}`);
+            return true;
+          }
+          this.log(`[CURTAIN] ${cover.getName?.()} ne supporte pas _sendTuyaDP`);
+          return false;
+        } catch (err) {
+          this.error('[CURTAIN] DP16 failed:', err.message);
+          return false;
+        }
       });
 
     // ── Tout éteindre (style bouton "All Off" de l'app Hue) ──────────────────
