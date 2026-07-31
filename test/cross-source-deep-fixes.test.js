@@ -191,3 +191,18 @@ describe('P92.75 — L99 enrichments', () => {
     assert.ok(src.includes('% 25 === 0'), 'throttled writes');
   });
 });
+
+describe('P92.76 — PredictiveHealthEngine data feed', () => {
+  it('UnifiedBatteryHandler feeds recordMetrics with real battery samples', () => {
+    const src = read('lib/battery/UnifiedBatteryHandler.js');
+    assert.ok(src.includes('recordMetrics'), 'engine fed');
+    assert.ok(src.includes('batteryPercent: smoothed'), 'real percent fed');
+  });
+  it('PredictiveHealthEngine is instantiated and its flow cards registered', () => {
+    const app = read('app.js');
+    assert.ok(app.includes('new PredictiveHealthEngine(this.homey)'), 'engine instantiated');
+    const ffc = read('lib/flow/FeatureFlowCards.js');
+    assert.ok(ffc.includes('health_failure_predicted'), 'failure card');
+    assert.ok(ffc.includes('health_battery_replacement_predicted'), 'battery card');
+  });
+});
