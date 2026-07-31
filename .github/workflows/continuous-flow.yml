@@ -80,7 +80,7 @@ jobs:
     env:
       DRY_RUN: ${{ github.event.inputs.mode != 'apply' && 'true' || 'false' }}
       MAX_MFRS: ${{ github.event.inputs.max_mfrs || '3' }}
-      NODE_VERSION: '20'
+      NODE_VERSION: '22'
 
     steps:
       - name: Checkout
