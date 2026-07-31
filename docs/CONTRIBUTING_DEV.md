@@ -65,5 +65,7 @@ npx homey app validate   # validate niveau publish
 - `housekeeping` (lundi 03:41 UTC) : rangement du dépôt + registre des scripts.
 - `community-inbox` (05:17 UTC) : digest issues/PRs/forum.
 - `pr-gate` : sur chaque PR (versions + Sacred Couple + tests de routage).
+- `dependabot` (lundi) : mises à jour npm + GitHub Actions, PRs auto-mergées par `smart-pr-merge`.
+- `self-improve` (mardi 02:53 UTC) : boucle d'auto-amélioration (product-reference, casse pairing, docs INDEX, registre scripts) — commit `[skip ci]` seulement si `npm test` vert.
 
 Voir `reports/kimi-2026-07-29/workflows-genealogy.md` pour l'historique complet.
