@@ -4,6 +4,18 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
+## [5.12.47] - 2026-07-31
+
+Stability line (branch `stable-v5`, production). Backports from master 9.0.388.
+
+### Bug Fixes
+- Central `_destroyed` guards on capability operations at the root class
+  (covers all ~800 lifecycle findings at once).
+- Linear battery formulas replaced by the non-linear CR2032 curve
+  (DataRecoveryManager, XiaomiSpecialHandler, BaseUnifiedDevice).
+
+---
+
 ## [5.12.46] - 2026-07-31
 
 Stability line (branch `stable-v5`, production). Backports from master 9.0.387.

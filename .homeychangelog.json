@@ -1,6 +1,13 @@
 {
   "changelog": [
     {
+      "version": "5.12.47",
+      "date": "2026-07-31",
+      "channel": "stable",
+      "en": "Backport 9.0.388: central guards + battery curves.",
+      "fr": "Backport 9.0.388 : gardes centrales + courbes batterie."
+    },
+    {
       "version": "5.12.46",
       "date": "2026-07-31",
       "channel": "stable",
@@ -1128,5 +1135,9 @@
   "5.12.46": {
     "en": "Backport 9.0.387: DP send hardening.",
     "fr": "Backport 9.0.387 : blindage envois DP."
+  },
+  "5.12.47": {
+    "en": "Backport 9.0.388: central guards + battery curves.",
+    "fr": "Backport 9.0.388 : gardes centrales + courbes batterie."
   }
 }
