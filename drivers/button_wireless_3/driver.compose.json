@@ -471,6 +471,21 @@
           }
         }
       ]
+    },
+    {
+      "id": "reverse_button_order",
+      "type": "checkbox",
+      "label": {
+        "en": "Reverse button order",
+        "fr": "Inverser l’ordre des boutons",
+        "nl": "Knopvolgorde omkeren",
+        "de": "Tastenreihenfolge umkehren"
+      },
+      "value": false,
+      "hint": {
+        "en": "Enable if your remote numbers buttons in reverse physical order (e.g. 3,4,2,1)",
+        "fr": "Activer si votre télécommande numérote les boutons dans l’ordre physique inverse (ex. 3,4,2,1)"
+      }
     }
   ],
   "pair": [
