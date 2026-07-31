@@ -14,8 +14,8 @@ const ClusterMap = require('./zigbee-cluster-map');
 // Au lieu de:
 // this.registerCapability('measure_battery', 'powerConfiguration'); // [ERROR] NaN error
 
-// Utilisez:
-this.registerCapability('measure_battery', ClusterMap.POWER_CONFIGURATION); // [OK] = 1
+// Utilisez (dans votre device, où `this` est un ZigBeeDevice) :
+// this.registerCapability('measure_battery', ClusterMap.POWER_CONFIGURATION); // [OK] = 1
 
 // ============================================
 // MÉTHODE 2: Utilisation de get()

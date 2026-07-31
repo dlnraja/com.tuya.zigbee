@@ -4,6 +4,18 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
+## [5.12.44] - 2026-07-31
+
+Stability line (branch `stable-v5`, production). Backports from master 9.0.383.
+
+### Bug Fixes
+- 51 critical ESLint errors fixed (phantom modules after bot passes, bot-corrupted
+  `this.`-less capability calls, `SmartClusterEngine` missing `super()`, 7 duplicate
+  object keys, dead switch cases in `TuyaDeviceMixin`, async promise executor,
+  `UniversalTuyaParser` shorthand crash, duplicated `fastInitMode`).
+
+---
+
 ## [5.12.43] - 2026-07-30
 
 Stability line (branch `stable-v5`, production). Backports from master.
