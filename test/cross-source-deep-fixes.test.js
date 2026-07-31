@@ -374,3 +374,22 @@ describe('P92.84 — PRD v1.1: segmented feeds + strict JSON cleaning', () => {
     assert.ok(src.includes('cf-connecting-ip'), 'IP-based limiting');
   });
 });
+
+describe('P92.85 — capabilities hygiene', () => {
+  it('dynamically-referenced custom caps are preserved (not deleted as static-dead)', () => {
+    for (const cap of ['measure_battery_health', 'measure_battery_cycles', 'text_battery_status', 'temperature_unit', 'tuya_dp_bitmap', 'button_open', 'button_close', 'button_stop', 'button_dim_up', 'button_dim_down']) {
+      assert.ok(fs.existsSync('.homeycompose/capabilities/' + cap + '.json'), cap + ' preserved (dynamic)');
+    }
+  });
+  it('truly orphan caps are removed', () => {
+    for (const cap of ['alarm_cleaning', 'alarm_tank_full', 'button_toggle', 'measure_maintenance_score', 'measure_soil_moisture']) {
+      assert.ok(!fs.existsSync('.homeycompose/capabilities/' + cap + '.json'), cap + ' removed (orphan)');
+    }
+  });
+  it('all 12 deleted workflows have live equivalents', () => {
+    const live = fs.readdirSync('.github/workflows').join(' ');
+    for (const wf of ['monthly-community-sync', 'blakadder-fetch', 'auto-fix-and-publish', 'auto-publish-on-push', 'autonomous-verification', 'ai-monthly-audit', 'community-inbox', 'auto-close-supported', 'upstream-guard', 'housekeeping']) {
+      assert.ok(live.includes(wf), wf + ' alive');
+    }
+  });
+});
