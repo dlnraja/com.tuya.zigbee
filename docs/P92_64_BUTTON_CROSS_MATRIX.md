@@ -93,15 +93,35 @@ Dedup en couches (le pattern gagnant — chaque suppression de couche dans l'his
 une régression visible) : **TSN ring-5 (5 s) → debounce profil (200-1200 ms/gang) → raw dedup
 350 ms → anti-trigger 500 ms/bouton → dedup virtuel/physique 2000 ms**.
 
-## 6. Backlog identifié (non implémenté, avec source)
+## 6. Backlog identifié
 
-- Désambiguïsation TS004F par `applicationVersion` (z2m #25053).
-- Listener attr 0x8004 pour refléter la bascule manuelle de mode dans les settings
-  (SCENE_MODE_RESEARCH ⚠️ #1) + setting override auto/dimmer/scène (⚠️ #2) + notification
-  utilisateur si le switch échoue (⚠️ #3).
-- Préférence « reverse button order » (certains remotes numérotent 3,4,2,1 — Hubitat).
+- ✅ FAIT (P92.65) : listener attr 0x8004 → bascule manuelle de mode synchronisée dans les settings ;
+  flag `scene_mode_switch_failed` persisté pour diagnostics ; préférence `reverse_button_order`
+  (Hubitat, remotes numérotées 3,4,2,1) sur les 5 drivers multi-boutons.
+- ✅ FAIT (P92.66) : **carte matrice dropdown** `button_matrix` (pattern Hue RWL022/Aqara) —
+  une carte, dropdowns bouton 1-8 × action single/double/long/triple/release, tirée au routeur
+  central + sur release ; `_tryCard` tolère device-cards ET app-cards (arg device).
+- Désambiguïsation TS004F par `applicationVersion` (z2m #25053) — toujours ouvert.
 - ACK ZCL default-response explicite si le SDK l'expose un jour (z2m #8149).
+
+## 8. Autres apps Homey (P92.66) — patterns vérifiés et verdict
+
+| App | Pattern | Chez nous |
+|---|---|---|
+| Hue (`com.philips.hue.zigbee` sdk3) | RWL022 : 1 carte dropdown 4 boutons × 4 actions ; RDM001 : set de cartes swappé selon setting mode (rocker/pushbutton) | ✅ matrice P92.66 ; ✅ `button_mode` + sync 0x8004 P92.65 |
+| Hue ROM001 | pressed-odd/even (position toggle) | backlog (faible valeur) |
+| Aqara (`com.xiaomi-mi`) | multistateInput presentValue 1/2/3/0/255 ; dual-card spécifique + générique tokens ; dedup lastKey 3 s ; write mode:1 au pairing (Opple) | ✅ générique `button_pressed` tokens + matrice ; ✅ dedup en couches ; ✅ write 0x8004 au pairing |
+| IKEA (athombv tradfri-example) | bound clusters ; long-press tiré AU RELEASE (move→store, stop→fire) | ✅ release synthèse + native (B12) |
+| Sonoff (`tech.sonoff`) | onOff commands → sémantique clicks | ✅ couvert (B1 mapping unifié) |
+| ubisys | inputs physiques comme triggers + programmation on-device | hors scope (actionneurs) |
+| ROBB smarrt | carte app-level multi-drivers + tokens | ✅ matrice app-level |
+| SDK Homey | capability `button` = virtuel UI uniquement, pas de trigger ; auto-cards non générées pour sous-capabilities | architecture conforme |
+
+**Scan exhaustif des forks (P92.66)** : 100 forks Johan comparés (43 divergents) + 10 forks
+dlnraja — seuls éléments récupérables déjà importés (packetninja : `_TZ3000_an5rjiwd`, cartes
+switch_4gang). theswim (custom_button_4_gang), IsaacNZ2, Stephan-de-Jong, baschte, AreAArseth :
+tous strictement plus anciens ou hors boutons. **Notre stack est le superset du réseau.**
 
 ## 7. Tests de non-régression
 
-`test/button-cross-source-enrichment.test.js` — 9 tests pinant chaque fix de ce document.
+`test/button-cross-source-enrichment.test.js` — 12 tests pinant chaque fix de ce document.
