@@ -24,6 +24,18 @@ function tuyaCanonical(m) {
   return match ? `${match[1].toUpperCase()}_${match[2].toLowerCase()}` : null;
 }
 
+function allCaseCombos(m) {
+  const match = String(m).match(/^(_t[zy][a-z0-9]+)_(.+)$/i);
+  if (!match) {return [String(m).toLowerCase(), String(m).toUpperCase()];}
+  const [, prefix, suffix] = match;
+  return [...new Set([
+    `${prefix.toLowerCase()}_${suffix.toLowerCase()}`,
+    `${prefix.toUpperCase()}_${suffix.toUpperCase()}`,
+    `${prefix.toUpperCase()}_${suffix.toLowerCase()}`,
+    `${prefix.toLowerCase()}_${suffix.toUpperCase()}`
+  ])];
+}
+
 describe('case-variant completeness (pairing, unknown device prevention)', () => {
   it('every Tuya fingerprint exists in both cases in every driver', function () {
     if (typeof this.timeout === 'function') {this.timeout(60000);}
@@ -68,6 +80,28 @@ describe('case-variant completeness (pairing, unknown device prevention)', () =>
     }
     assert.deepStrictEqual(missing, [],
       `${missing.length} variante(s) canonique(s) manquante(s):\n${missing.slice(0, 10).join('\n')}`);
+  });
+
+  it('every Tuya fingerprint has ALL 4 prefix/suffix case combos (any firmware case pairs)', function () {
+    if (typeof this.timeout === 'function') {this.timeout(60000);}
+    const app = require(path.join(ROOT, 'app.json'));
+    const missing = [];
+    for (const d of app.drivers) {
+      const mfrs = d.zigbee?.manufacturerName || [];
+      const exact = new Set(mfrs);
+      const seen = new Set();
+      for (const m of mfrs) {
+        const lc = String(m).toLowerCase();
+        if (seen.has(lc)) {continue;}
+        seen.add(lc);
+        if (!TUYA_RX.test(lc) || SYNTHETIC_RX.test(lc)) {continue;}
+        for (const v of allCaseCombos(lc)) {
+          if (!exact.has(v)) {missing.push(`${d.id}: ${m} (manque combo ${v})`);}
+        }
+      }
+    }
+    assert.deepStrictEqual(missing, [],
+      `${missing.length} combinaison(s) de casse manquante(s):\n${missing.slice(0, 10).join('\n')}`);
   });
 
   it('mfs_db has no case-duplicate keys (runtime matching is case-insensitive)', () => {
