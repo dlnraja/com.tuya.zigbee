@@ -64,6 +64,10 @@ jobs:
           node tools/ci/mfs-db-dedupe.js --apply || true
           node tools/ci/compose-mfsdb-class-guard.js || true
 
+      - name: 📦 Refresh native firmware updates (Homey 13.2+)
+        continue-on-error: true
+        run: node tools/ci/build-firmware-updates.js --apply || true
+
       - name: 📚 Refresh docs index + script registry
         continue-on-error: true
         run: |

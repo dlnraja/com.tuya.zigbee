@@ -916,5 +916,50 @@
       "getable": false,
       "setable": false
     }
+  },
+  "firmwareUpdates": {
+    "updates": [
+      {
+        "changelog": {
+          "en": "OEM Tuya firmware v87 (Koenkk zigbee-OTA, SHA512-verified)"
+        },
+        "device": {
+          "manufacturerName": [
+            "_TZE200_kds0pmmv"
+          ],
+          "productId": [
+            "014G2461",
+            "014G2463",
+            "SEA801-Zigbee",
+            "SPZB0001",
+            "SPZB0003",
+            "STZB402",
+            "STZB403",
+            "TRV601",
+            "TRV602",
+            "TRVZB",
+            "TS0601",
+            "TV01-ZB",
+            "TV02-ZB",
+            "Zen-01",
+            "eTRV0100",
+            "lumi.airrtc.agl001",
+            "lumi.airrtc.vrfegl01"
+          ]
+        },
+        "files": [
+          {
+            "fileVersion": 87,
+            "imageType": 5634,
+            "manufacturerCode": 4098,
+            "minHardwareVersion": 25715,
+            "maxHardwareVersion": 24427,
+            "size": 234174,
+            "name": "1615190575-si32_zg_uart_connect_sleep_ZS5_ty_OTA_1.1.7.bin",
+            "integrity": "sha256:33b0d573542f8eae8068d7a51b44108460f4bdeaf89c56017c7f6ec498e8f10b"
+          }
+        ]
+      }
+    ]
   }
 }
