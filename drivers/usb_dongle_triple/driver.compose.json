@@ -405,5 +405,42 @@
     }
   ],
   "id": "usb_dongle_triple",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "firmwareUpdates": {
+    "updates": [
+      {
+        "changelog": {
+          "en": "OEM Tuya firmware v78 (Koenkk zigbee-OTA, SHA512-verified)"
+        },
+        "device": {
+          "manufacturerName": [
+            "_TZ3000_cjrngdr3"
+          ],
+          "productId": [
+            "S26R2ZB",
+            "S31 Lite zb",
+            "S40LITE",
+            "S60ZBTPF",
+            "S60ZBTPG",
+            "TS0101",
+            "TS0111",
+            "TS011F",
+            "TS0601"
+          ]
+        },
+        "files": [
+          {
+            "fileVersion": 78,
+            "imageType": 54179,
+            "manufacturerCode": 4417,
+            "minHardwareVersion": 27502,
+            "maxHardwareVersion": 20256,
+            "size": 309954,
+            "name": "1686137326-oem_zg_tl8258_plug_OTA_1.0.14.bin",
+            "integrity": "sha256:0ff56922d99113a7fac2b9b4dfc89aab79c5c296d8ade41379881f80ee4cef27"
+          }
+        ]
+      }
+    ]
+  }
 }

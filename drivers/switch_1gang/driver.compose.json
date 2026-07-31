@@ -2704,5 +2704,67 @@
     }
   ],
   "id": "switch_1gang",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "firmwareUpdates": {
+    "updates": [
+      {
+        "changelog": {
+          "en": "OEM Tuya firmware v74 (Koenkk zigbee-OTA, SHA512-verified)"
+        },
+        "device": {
+          "manufacturerName": [
+            "_TZ3000_x3ewpzyr"
+          ],
+          "productId": [
+            "01MINIZB",
+            "BASICZBR3",
+            "S26R2ZB",
+            "S31ZB",
+            "TS0001",
+            "TS0001_power",
+            "TS0001_switch",
+            "TS0001_switch_module",
+            "TS0002",
+            "TS0003",
+            "TS000F",
+            "TS0011",
+            "TS0012",
+            "TS0014",
+            "TS0041",
+            "TS0101",
+            "TS0111",
+            "TS011F",
+            "TS0601",
+            "TS0726",
+            "TS110E",
+            "TS130F",
+            "TS4100",
+            "ZBM5-1C-120",
+            "ZBM5-2C-120",
+            "ZBM5-3C-120",
+            "ZBMINI",
+            "ZBMINIL2",
+            "ZBMINIL2-R2",
+            "ZBMINIR",
+            "ZBMINIR2",
+            "ZBMINIR2-R2",
+            "ZG-301Z",
+            "ZG-302Z1"
+          ]
+        },
+        "files": [
+          {
+            "fileVersion": 74,
+            "imageType": 54179,
+            "manufacturerCode": 4417,
+            "minHardwareVersion": 27502,
+            "maxHardwareVersion": 20256,
+            "size": 315986,
+            "name": "oem_tl8258_zg_breaker_OTA_1.0.10.bin",
+            "integrity": "sha256:0acae482487e643e858f1c6312f9435c6399cb674fed5eee77f4c3baebf9b4ab"
+          }
+        ]
+      }
+    ]
+  }
 }
