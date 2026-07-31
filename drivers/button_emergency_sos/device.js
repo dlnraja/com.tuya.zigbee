@@ -33,6 +33,22 @@ try {
  */
 class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
 
+  /**
+   * v10.3.0 FIX (B11): This class owns battery handling (_setupBattery,
+   * _updateBattery with UnifiedBatteryHandler normalization). BatteryRouter
+   * must not act as a third writer.
+   */
+  get _ownsBatteryHandling() { return true; }
+
+  /**
+   * v10.3.0 FIX (B7): No-op override so VirtualButtonMixin.initVirtualButtons
+   * (which checks for a "dedicated button capability router") does NOT
+   * register its asymmetric button.1 listener. This driver's own
+   * _registerButtonListener is the single button.1 listener — a second one
+   * would double-trigger the alarm.
+   */
+  _registerButtonCapabilityListeners() { /* intentionally empty — see _registerButtonListener */ }
+
   async onNodeInit({ zclNode }) {
     await this._safeInvoke(async () => {
       await super.onNodeInit({ zclNode });
@@ -307,6 +323,22 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
       await this.driver.triggerSOS(this, { source });
     }
 
+    // v10.3.0 FIX (B6): Physical presses must fire the same flow sets as a
+    // virtual UI press — pulse button.1 and fire the generic button_pressed
+    // card (the SOS-specific card above stays the primary signal).
+    if (this.hasCapability('button.1')) {
+      await this.safeSetCapabilityValue('button.1', true).catch(() => { });
+      this.homey.setTimeout(async () => {
+        if (this._destroyed) {return;}
+        await this.safeSetCapabilityValue('button.1', false).catch(() => { });
+      }, 500);
+    }
+    try {
+      await this.homey.flow.getDeviceTriggerCard('button_pressed')
+        .trigger(this, { button: '1', type: 'single' }, {})
+        .catch(() => { });
+    } catch (_e) { /* generic card not available for this driver */ }
+
     // Auto-reset
     if (this._resetTimeout) {this.homey.clearTimeout(this._resetTimeout);}
     this._resetTimeout = this.homey.setTimeout(async () => {
@@ -468,14 +500,30 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
 
   async onEndDeviceAnnounce() {
     this.log('[SOS] 📡 Device AWAKE (UDP-like Device Announce)');
+    // v10.3.0 FIX (B4): Run the parent handler (cluster rebind, scene-mode
+    // recovery) — this override used to shadow it.
+    try { await super.onEndDeviceAnnounce?.(); } catch (_e) {}
     try {
+      // v10.3.0 FIX (B5): capture activity timestamps BEFORE _updateActivity
+      // stamps "now", so the heuristic below can tell a real idle wake from
+      // an announce that follows a recent alarm.
+      const lastAlarm = this._lastTrigger || 0;
+      const lastActivity = this._lastActivity || 0;
       this._updateActivity();
-      
-      // Z2M Heuristics: Many TS0601 SOS buttons ONLY send Device Announce when pressed
-      // We treat this UDP-like MAC packet as an implicit physical alarm trigger
-      this.log('[SOS] 🚨 Device Announce intercepted - Triggering physical alarm fallback');
-      await this._handleAlarm({ source: 'device_announce_udp' });
-      
+
+      // Z2M Heuristics: Many TS0601 SOS buttons ONLY send Device Announce when pressed.
+      // v10.3.0 FIX (B5): this heuristic caused false alarms on every
+      // rejoin/power-cycle/pairing — it is now behind the
+      // 'sos_announce_heuristic' setting (default OFF) and only fires when no
+      // IAS/DP alarm arrived within the last 2s and the device was idle.
+      if (this.getSetting?.('sos_announce_heuristic') === true) {
+        const now = Date.now();
+        if (now - lastAlarm > 2000 && now - lastActivity > 30000) {
+          this.log('[SOS] 🚨 Device Announce heuristic enabled - Triggering physical alarm fallback');
+          await this._handleAlarm({ source: 'device_announce_udp' });
+        }
+      }
+
       await this._readBatteryNow();
       await this._verifyCieAddress();
     } catch (err) {
