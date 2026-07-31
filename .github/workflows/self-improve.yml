@@ -88,6 +88,15 @@ jobs:
           node scripts/ci/security-scanner.js 2>&1 | tail -8 >> $GITHUB_STEP_SUMMARY || true
           echo '```' >> $GITHUB_STEP_SUMMARY
 
+      - name: 🛡️ Backport candidates (master → stable, soak > 7j)
+        continue-on-error: true
+        run: |
+          echo "## 🛡️ Backport candidates" >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+          git clone --depth 1 --branch stable-v5 https://github.com/dlnraja/com.tuya.zigbee.git ../stable 2>/dev/null || true
+          node tools/ci/backport-candidates.js >> $GITHUB_STEP_SUMMARY 2>&1 || true
+          echo '```' >> $GITHUB_STEP_SUMMARY
+
       - name: 💾 Commit improvements (only when tests are green)
         if: steps.tests.outcome == 'success'
         continue-on-error: true

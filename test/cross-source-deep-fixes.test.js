@@ -206,3 +206,27 @@ describe('P92.76 — PredictiveHealthEngine data feed', () => {
     assert.ok(ffc.includes('health_battery_replacement_predicted'), 'battery card');
   });
 });
+
+describe('P92.78 — master doctrine enrichments', () => {
+  it('enigma report is opt-in via maintenance action and never auto-telemetries', () => {
+    const src = read('lib/tuya/TuyaZigbeeDevice.js');
+    assert.ok(src.includes('_generateIssueReport'), 'report generator');
+    assert.ok(src.includes('NO automatic telemetry'), 'privacy by design');
+    const b4 = JSON.parse(read('drivers/button_wireless_4/driver.compose.json'));
+    assert.ok((b4.maintenanceActions || []).some((a) => a.id === 'generate_issue_report'), 'declared');
+  });
+  it('live feed carries sourceBranch master', () => {
+    const feed = JSON.parse(read('.github/pages-build/data/mfs_db_latest.json'));
+    assert.strictEqual(feed.sourceBranch, 'master');
+  });
+  it('backport-candidates tool exists and runs (7-day soak)', () => {
+    const src = read('tools/ci/backport-candidates.js');
+    assert.ok(src.includes('SOAK_DAYS'), 'soak period');
+    assert.ok(fs.existsSync('.github/state/backport-candidates.json'), 'report generated');
+  });
+  it('master doctrine is documented', () => {
+    const doc = read('docs/CONTRIBUTING_DEV.md');
+    assert.ok(doc.includes('Doctrine des branches'), 'doctrine section');
+    assert.ok(doc.includes('protection de branche'), 'protection recommendation');
+  });
+});
