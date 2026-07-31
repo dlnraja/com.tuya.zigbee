@@ -7,7 +7,7 @@
   },
   "class": "fan",
   "capabilities": [
-    "dim.humidity",
+    "target_humidity",
     "measure_humidity",
     "measure_temperature",
     "measure_power",
@@ -26,18 +26,6 @@
         "de": "Strom"
       }
     },
-    "dim.humidity": {
-      "title": {
-        "en": "Target humidity",
-        "fr": "Humidité cible",
-        "nl": "Doel vochtigheid",
-        "de": "Ziel-Luftfeuchtigkeit"
-      },
-      "min": 30,
-      "max": 80,
-      "step": 5,
-      "units": "%"
-    },
     "measure_battery": {
       "title": {
         "en": "Battery",
@@ -53,6 +41,21 @@
       "maintenanceAction": true,
       "getable": false,
       "setable": false
+    },
+    "measure_power": {
+      "approximated": true
+    },
+    "target_humidity": {
+      "title": {
+        "en": "Target humidity",
+        "fr": "Humidité cible",
+        "nl": "Doel vochtigheid",
+        "de": "Ziel-Luftfeuchtigkeit"
+      },
+      "min": 30,
+      "max": 80,
+      "step": 5,
+      "units": "%"
     }
   },
   "energy": {},

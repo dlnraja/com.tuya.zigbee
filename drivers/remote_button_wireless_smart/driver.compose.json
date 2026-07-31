@@ -6,7 +6,7 @@
     "de": "Kabelloser Smart Fernbedienung",
     "es": "Botón Remoto Inalámbrico Inteligente"
   },
-  "class": "sensor",
+  "class": "button",
   "capabilities": [
     "button.1",
     "measure_battery"

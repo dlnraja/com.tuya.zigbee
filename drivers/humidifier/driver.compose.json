@@ -15,7 +15,7 @@
     "onoff",
     "dim",
     "measure_humidity",
-    "dim.humidity",
+    "target_humidity",
     "button.1"
   ],
   "capabilitiesOptions": {
@@ -28,15 +28,6 @@
       "max": 1,
       "step": 0.33
     },
-    "dim.humidity": {
-      "title": {
-        "en": "Target Humidity",
-        "fr": "Humidité Cible"
-      },
-      "min": 30,
-      "max": 80,
-      "step": 5
-    },
     "button.1": {
       "title": {
         "en": "Button 1",
@@ -45,6 +36,15 @@
       "maintenanceAction": true,
       "getable": false,
       "setable": false
+    },
+    "target_humidity": {
+      "title": {
+        "en": "Target Humidity",
+        "fr": "Humidité Cible"
+      },
+      "min": 30,
+      "max": 80,
+      "step": 5
     }
   },
   "zigbee": {
