@@ -527,7 +527,6 @@
       "_TZE204_C7EMYJOM",
       "_TZE204_CIRVGEP4",
       "_TZE204_D6I25BWG",
-      "_TZE204_DAPWRYY7",
       "_TZE204_DIKB3DP6",
       "_TZE204_DIKKIKA5",
       "_TZE204_DOHBHB5K",
@@ -870,7 +869,6 @@
       "_tze284_6kijc7nd",
       "_tze284_aao6qtcs",
       "_tze284_chbyv06x",
-      "_tze284_dapwryy7",
       "_tze284_dhke3p9w",
       "_tze284_ezqy5pvh",
       "_tze284_fncxk3ob",
@@ -1348,7 +1346,6 @@
       "_tze204_c2fmom5z",
       "_tze204_c7emyjom",
       "_tze204_d6i25bwg",
-      "_tze204_dapwryy7",
       "_tze204_dikb3dp6",
       "_tze204_dikkika5",
       "_tze204_dohbhb5k",
@@ -1697,7 +1694,6 @@
       "_TZE284_6KIJC7ND",
       "_TZE284_AAO6QTCS",
       "_TZE284_CHBYV06X",
-      "_TZE284_DAPWRYY7",
       "_TZE284_DHKE3P9W",
       "_TZE284_EZQY5PVH",
       "_TZE284_FNCXK3OB",
@@ -2201,6 +2197,13 @@
         "en": "Check Zigbee OTA Update",
         "fr": "Vérifier MàJ OTA",
         "nl": "Controleer op OTA-updates"
+      }
+    },
+    {
+      "id": "tuya_revive",
+      "title": {
+        "en": "Tuya Revive (device recovery)",
+        "fr": "Tuya Revive (récupération appareil)"
       }
     }
   ],

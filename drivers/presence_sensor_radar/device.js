@@ -46,7 +46,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
    */
   get mainsPowered() {
     const config = this._getRadarConfig();
-    if (config && config.mainsPowered) return true;
+    if (config && config.mainsPowered) {return true;}
     const mfr = (MfrHelper.getManufacturerName(this) || '').toLowerCase();
     return MAINS_POWERED_RADARS.has(mfr);
   }
@@ -86,6 +86,23 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       this._cachedRadarConfig = getSensorConfig(MfrHelper.getManufacturerName(this), this.getStoreValue('modelId'));
     }
     return this._cachedRadarConfig;
+  }
+
+  /**
+   * v8.0.1: Keep alarm_human (presence) in sync with alarm_motion.
+   * Forum bug (ka8l86iu): the device exposes motion but never presence.
+   * Root cause: ZCL occupancy (0x0406) updates in the base class only feed
+   * alarm_motion, while alarm_human was only set from DP reports. This
+   * driver treats presence ≡ motion (DP1 handler already sets both), so
+   * mirroring is consistent with the driver's own semantics.
+   */
+  async safeSetCapabilityValue(capability, value) {
+    const result = await super.safeSetCapabilityValue(capability, value);
+    if (capability === 'alarm_motion' && typeof value === 'boolean' &&
+        typeof this.hasCapability === 'function' && this.hasCapability('alarm_human')) {
+      await super.safeSetCapabilityValue('alarm_human', value).catch(() => {});
+    }
+    return result;
   }
 
   async onNodeInit({ zclNode }) {
@@ -272,6 +289,23 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     const config = this._getRadarConfig();
     const mapping = config.dpMap?.[dp];
 
+    // v10.9.0 (z2m/forum lesson): the ZY-M100-24GV3 firmware (_TZE204_ya4ft0w4)
+    // emits 0 values in endless loops (documented firmware bug, no update
+    // available). Drop 0-valued reports from THIS mfr on numeric DPs —
+    // a real 0 (nobody present) is still surfaced via absence timeout,
+    // not via the buggy stream.
+    if (rawValue === 0 || rawValue === '0') {
+      const mfr = String(this.getSetting?.('zb_manufacturer_name') || '').toLowerCase();
+      if (mfr === '_tze204_ya4ft0w4' && mapping && mapping.type !== 'bool') {
+        if (!this._zeroFilterLogCount) {this._zeroFilterLogCount = 0;}
+        this._zeroFilterLogCount++;
+        if (this._zeroFilterLogCount <= 3 || this._zeroFilterLogCount % 60 === 0) {
+          this.log(`[RADAR] 🛡️ Zero-value report dropped (ZY-M100 firmware bug, DP${dp})`);
+        }
+        return;
+      }
+    }
+
     if (mapping) {
       this._sendTimeSyncIfNeeded?.();
       this.updateRadioActivity?.();
@@ -289,6 +323,14 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     const config = this._getRadarConfig();
     const dp = parseInt(dpId, 10);
     const mapping = config.dpMap?.[dp];
+
+    // v10.9.0: same ZY-M100 zero-filter as _handleDP (both entry points)
+    if (value === 0 || value === '0') {
+      const mfr = String(this.getSetting?.('zb_manufacturer_name') || '').toLowerCase();
+      if (mfr === '_tze204_ya4ft0w4' && mapping && mapping.type !== 'bool') {
+        return;
+      }
+    }
 
     // 1. Process via static config if matched
     if (mapping) {
@@ -321,7 +363,15 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       // v9.7.6: Use enumMap from mapping if available (e.g., gkfbdvyx: {0:false, 1:true, 2:true})
       let presence;
       if (mapping.enumMap) {
-        presence = mapping.enumMap[value] !== undefined ? mapping.enumMap[value] : !!value;
+        if (typeof value === 'boolean') {
+          // v8.0.1: Bool frames are unambiguous per Z2M binary presence
+          // semantics (true = present). A numeric enumMap would silently
+          // invert booleans (enumMap[true] → enumMap["1"]) — forum bug
+          // ka8l86iu "motion but no presence".
+          presence = value;
+        } else {
+          presence = mapping.enumMap[value] !== undefined ? mapping.enumMap[value] : !!value;
+        }
         if (config.invertPresence) { presence = !presence; }
       } else {
         presence = transformPresence(value, mapping.type, config.invertPresence, config.configName);
@@ -343,7 +393,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
 
     // A2. Idea #21: Handle multi-zone presence DPs (alarm_motion.zone1/zone2/zone3)
     if (mapping.cap && mapping.cap.startsWith('alarm_motion.zone')) {
-      let presence = transformPresence(value, mapping.type, config.invertPresence, config.configName);
+      const presence = transformPresence(value, mapping.type, config.invertPresence, config.configName);
       if (presence !== null) {
         this.log(`[RADAR] Zone ${mapping.zone} presence: ${presence}`);
         return this.safeSetCapabilityValue(mapping.cap, presence).catch(() => {});
@@ -456,10 +506,10 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     }
 
     // 1. Time Sync
-    this.homey.setTimeout(() => { if (this._destroyed) return; this._sendTimeSync(zclNode); }, 2000);
+    this.homey.setTimeout(() => { if (this._destroyed) {return;} this._sendTimeSync(zclNode); }, 2000);
 
     // 2. DP Refresh
-    this.homey.setTimeout(() => { if (this._destroyed) return; this._requestDPRefresh(zclNode); }, 3000);
+    this.homey.setTimeout(() => { if (this._destroyed) {return;} this._requestDPRefresh(zclNode); }, 3000);
 
     if (this._getRadarConfig().needsPolling === false) {
       this.log('[RADAR] Periodic DP polling disabled by device profile');
@@ -515,7 +565,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
    */
   async _initMultiZoneCapabilities() {
     const config = this._getRadarConfig();
-    if (!config || !config.hasMultiZone) return;
+    if (!config || !config.hasMultiZone) {return;}
 
     // Zone presence capabilities (alarm_motion.zone1, zone2, zone3)
     const zoneCaps = [

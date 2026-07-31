@@ -143,6 +143,13 @@
         "en": "Check Zigbee OTA Update",
         "fr": "Vérifier mise à jour OTA Zigbee"
       }
+    },
+    {
+      "id": "tuya_revive",
+      "title": {
+        "en": "Tuya Revive (device recovery)",
+        "fr": "Tuya Revive (récupération appareil)"
+      }
     }
   ],
   "version": "1.0.0"
