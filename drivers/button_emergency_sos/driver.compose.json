@@ -144,6 +144,19 @@
             "en": "Toggle this setting to re-enroll the device. Press SOS button first to wake device.",
             "fr": "Basculer ce paramètre pour ré-inscrire l'appareil. Appuyez d'abord sur le bouton SOS pour réveiller l'appareil."
           }
+        },
+        {
+          "id": "sos_announce_heuristic",
+          "type": "checkbox",
+          "label": {
+            "en": "Treat Device Announce as SOS press (heuristic)",
+            "fr": "Traiter Device Announce comme appui SOS (heuristique)"
+          },
+          "value": false,
+          "hint": {
+            "en": "Only enable if your SOS button sends NOTHING else when pressed. May cause false alarms on rejoin/power-cycle.",
+            "fr": "N'activer que si votre bouton SOS n'envoie RIEN d'autre lors d'un appui. Peut causer de fausses alertes lors d'une reconnexion/mise sous tension."
+          }
         }
       ]
     },

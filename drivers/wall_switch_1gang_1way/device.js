@@ -1,8 +1,6 @@
 'use strict';
 
 const UnifiedSwitchBase = require('../../lib/devices/UnifiedSwitchBase');
-const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
-const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 const PowerSwitchFeaturesMixin = require('../../lib/mixins/PowerSwitchFeaturesMixin');
 
 /**
@@ -11,8 +9,11 @@ const PowerSwitchFeaturesMixin = require('../../lib/mixins/PowerSwitchFeaturesMi
  * Compatible with BSEED devices: _TZ3000_blhvsaqf, _TZ3000_ysdv91bk
  *
  * v9.8.0: Added PowerSwitchFeaturesMixin for DP 12 (power_on_state) and DP 2 (backlight_mode)
+ * v10.3.0 FIX (B10): Removed the redundant PhysicalButtonMixin + VirtualButtonMixin
+ * double wrap — UnifiedSwitchBase already inherits both via TuyaZigbeeDevice.
+ * The double wrap registered duplicate listeners on the same endpoints.
  */
-class WallSwitch1Gang1WayDevice extends PowerSwitchFeaturesMixin(PhysicalButtonMixin(VirtualButtonMixin(UnifiedSwitchBase))) {
+class WallSwitch1Gang1WayDevice extends PowerSwitchFeaturesMixin(UnifiedSwitchBase) {
 
   get mainsPowered() { return true; }
 
