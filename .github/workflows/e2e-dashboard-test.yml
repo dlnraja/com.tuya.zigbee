@@ -41,7 +41,7 @@ jobs:
       issues: write
       pull-requests: write
     env:
-      NODE_VERSION: '20'
+      NODE_VERSION: '22'
 
     steps:
       - name: Checkout master
