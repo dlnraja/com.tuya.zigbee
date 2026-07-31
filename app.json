@@ -83587,6 +83587,78 @@
         }
       },
       {
+        "id": "cover_limit_calibration",
+        "title": {
+          "en": "Calibrate cover limits (Tuya DP16)",
+          "fr": "Calibrer les fins de course du volet (Tuya DP16)",
+          "nl": "Eindposities rolluik kalibreren (Tuya DP16)",
+          "de": "Rolladen-Endlagen kalibrieren (Tuya DP16)"
+        },
+        "hint": {
+          "en": "Set or clear the upper/lower travel limits of a Tuya curtain motor (Quoya/Dooya). Move the cover to the desired position first, then run the matching action.",
+          "fr": "Définit ou supprime les fins de course haute/basse d'un moteur de volet Tuya (Quoya/Dooya). Placez d'abord le volet à la position voulue, puis lancez l'action correspondante."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "cover",
+            "title": {
+              "en": "Cover",
+              "fr": "Volet"
+            }
+          },
+          {
+            "type": "dropdown",
+            "name": "command",
+            "title": {
+              "en": "Command",
+              "fr": "Commande"
+            },
+            "values": [
+              {
+                "id": "set_upper",
+                "label": {
+                  "en": "Set UPPER limit here",
+                  "fr": "Définir fin de course HAUTE ici"
+                }
+              },
+              {
+                "id": "set_lower",
+                "label": {
+                  "en": "Set LOWER limit here",
+                  "fr": "Définir fin de course BASSE ici"
+                }
+              },
+              {
+                "id": "delete_upper",
+                "label": {
+                  "en": "Delete upper limit",
+                  "fr": "Supprimer fin de course haute"
+                }
+              },
+              {
+                "id": "delete_lower",
+                "label": {
+                  "en": "Delete lower limit",
+                  "fr": "Supprimer fin de course basse"
+                }
+              },
+              {
+                "id": "remove_all",
+                "label": {
+                  "en": "Remove ALL limits",
+                  "fr": "Supprimer TOUTES les fins de course"
+                }
+              }
+            ]
+          }
+        ],
+        "titleFormatted": {
+          "en": "Cover limit calibration [[command]] on [[cover]]",
+          "fr": "Calibration fin de course [[command]] sur [[cover]]"
+        }
+      },
+      {
         "id": "cover_set_position",
         "title": {
           "en": "Set cover position (IKEA blinds style)",
@@ -122933,6 +123005,9 @@
           "maintenanceAction": true,
           "getable": false,
           "setable": false
+        },
+        "measure_power": {
+          "approximated": true
         }
       },
       "maintenanceActions": [
@@ -125334,6 +125409,9 @@
           "maintenanceAction": true,
           "getable": false,
           "setable": false
+        },
+        "measure_power": {
+          "approximated": true
         }
       },
       "metadata": {
@@ -130943,7 +131021,7 @@
         "es": "1-Botones Controlador Inalámbrico",
         "da": "1-Knapper Trådløs Controller"
       },
-      "class": "sensor",
+      "class": "button",
       "capabilities": [
         "button.1",
         "measure_battery"
@@ -131419,7 +131497,7 @@
         "es": "2-Botones Controlador Inalámbrico",
         "da": "2-Knapper Trådløs Controller"
       },
-      "class": "sensor",
+      "class": "button",
       "capabilities": [
         "button.1",
         "button.2",
@@ -132597,7 +132675,7 @@
         "es": "Controlador Inalámbrico 3 Botones",
         "da": "3-Knaps Trådløs Controller"
       },
-      "class": "sensor",
+      "class": "button",
       "capabilities": [
         "button.1",
         "button.2",
@@ -133113,7 +133191,7 @@
         "es": "4-Botones Controlador Inalámbrico",
         "da": "4-Knapper Trådløs Controller"
       },
-      "class": "sensor",
+      "class": "button",
       "capabilities": [
         "button.1",
         "button.2",
@@ -133730,7 +133808,7 @@
         "es": "4-Botones Controlador Inalámbrico",
         "da": "4-Knapper Trådløs Controller"
       },
-      "class": "sensor",
+      "class": "button",
       "capabilities": [
         "button.1",
         "button.2",
@@ -134203,7 +134281,7 @@
         "es": "6-Botones Controlador Inalámbrico",
         "da": "6-Knapper Trådløs Controller"
       },
-      "class": "sensor",
+      "class": "button",
       "capabilities": [
         "button.1",
         "button.2",
@@ -134701,7 +134779,7 @@
         "es": "8-Botones Controlador Inalámbrico",
         "da": "8-Knapper Trådløs Controller"
       },
-      "class": "sensor",
+      "class": "button",
       "capabilities": [
         "button.1",
         "button.2",
@@ -135915,6 +135993,9 @@
           "setable": false,
           "maintenanceAction": true,
           "getable": false
+        },
+        "measure_power": {
+          "approximated": true
         }
       },
       "metadata": {
@@ -136565,6 +136646,9 @@
           "setable": false,
           "maintenanceAction": true,
           "getable": false
+        },
+        "measure_power": {
+          "approximated": true
         }
       },
       "maintenanceActions": [
@@ -136600,7 +136684,7 @@
         "de": "Drahtloser Szenenhybridschalter",
         "es": "BotÃ³n inalÃ¡mbrico de escena hÃ­brida"
       },
-      "class": "sensor",
+      "class": "button",
       "capabilities": [
         "button.1",
         "button.2",
@@ -137040,7 +137124,7 @@
         "de": "Intelligenter Funk-Taster",
         "es": "Botón inalámbrico inteligente"
       },
-      "class": "sensor",
+      "class": "button",
       "capabilities": [
         "button.1",
         "measure_battery"
@@ -138071,6 +138155,9 @@
           "setable": false,
           "maintenanceAction": true,
           "getable": false
+        },
+        "measure_power": {
+          "approximated": true
         }
       },
       "metadata": {
@@ -138932,7 +139019,7 @@
         "de": "Drahtloser Wandhybridknopf",
         "es": "BotÃ³n de pared inalÃ¡mbrico"
       },
-      "class": "sensor",
+      "class": "button",
       "capabilities": [
         "button.1",
         "button.2",
@@ -142670,6 +142757,9 @@
           "maintenanceAction": true,
           "getable": false,
           "setable": false
+        },
+        "measure_power": {
+          "approximated": true
         }
       },
       "maintenanceActions": [
@@ -143905,6 +143995,9 @@
           "maintenanceAction": true,
           "getable": false,
           "setable": false
+        },
+        "measure_power": {
+          "approximated": true
         }
       },
       "_pidConflictNotes": [
@@ -144005,6 +144098,9 @@
           "maintenanceAction": true,
           "getable": false,
           "setable": false
+        },
+        "measure_power": {
+          "approximated": true
         }
       },
       "subDevices": [],
@@ -145437,6 +145533,9 @@
           "maintenanceAction": true,
           "getable": false,
           "setable": false
+        },
+        "measure_power": {
+          "approximated": true
         }
       },
       "metadata": {
@@ -146857,6 +146956,9 @@
           "maintenanceAction": true,
           "getable": false,
           "setable": false
+        },
+        "measure_power": {
+          "approximated": true
         }
       },
       "_pidConflictNotes": [
@@ -147537,6 +147639,9 @@
           "maintenanceAction": true,
           "getable": false,
           "setable": false
+        },
+        "measure_power": {
+          "approximated": true
         }
       },
       "_pidConflictNotes": [
@@ -148226,6 +148331,9 @@
           "maintenanceAction": true,
           "getable": false,
           "setable": false
+        },
+        "measure_power": {
+          "approximated": true
         }
       },
       "metadata": {
@@ -151125,7 +151233,7 @@
         "onoff",
         "dim",
         "measure_humidity",
-        "dim.humidity",
+        "target_humidity",
         "measure_pm25",
         "button.1"
       ],
@@ -151962,6 +152070,9 @@
           "maintenanceAction": true,
           "getable": false,
           "setable": false
+        },
+        "measure_power": {
+          "approximated": true
         }
       },
       "maintenanceActions": [
@@ -155154,6 +155265,9 @@
           "maintenanceAction": true,
           "getable": false,
           "setable": false
+        },
+        "measure_power": {
+          "approximated": true
         }
       },
       "maintenanceActions": [
@@ -155475,6 +155589,9 @@
           "maintenanceAction": true,
           "getable": false,
           "setable": false
+        },
+        "measure_power": {
+          "approximated": true
         }
       },
       "maintenanceActions": [
@@ -156142,14 +156259,10 @@
         "meter_power",
         "measure_current",
         "measure_voltage",
-        "measure_battery",
         "child_lock",
         "button.1"
       ],
       "energy": {
-        "batteries": [
-          "CR2450"
-        ],
         "mains": true
       },
       "zigbee": {
@@ -156813,6 +156926,9 @@
           "maintenanceAction": true,
           "getable": false,
           "setable": false
+        },
+        "measure_power": {
+          "approximated": true
         }
       },
       "_pidConflictNotes": [
@@ -157498,6 +157614,9 @@
           "maintenanceAction": true,
           "getable": false,
           "setable": false
+        },
+        "measure_power": {
+          "approximated": true
         }
       },
       "_pidConflictNotes": [
@@ -158204,6 +158323,9 @@
           "maintenanceAction": true,
           "getable": false,
           "setable": false
+        },
+        "measure_power": {
+          "approximated": true
         }
       },
       "_pidConflictNotes": [
@@ -158888,6 +159010,9 @@
           "maintenanceAction": true,
           "getable": false,
           "setable": false
+        },
+        "measure_power": {
+          "approximated": true
         }
       }
     },
@@ -161304,6 +161429,9 @@
             "nl": "Batterij",
             "de": "Batterie"
           }
+        },
+        "measure_power": {
+          "approximated": true
         }
       },
       "maintenanceActions": [
@@ -161673,6 +161801,9 @@
             "nl": "Batterij",
             "de": "Batterie"
           }
+        },
+        "measure_power": {
+          "approximated": true
         }
       },
       "maintenanceActions": [
@@ -162537,6 +162668,9 @@
             "nl": "Batterij",
             "de": "Batterie"
           }
+        },
+        "measure_power": {
+          "approximated": true
         }
       },
       "maintenanceActions": [
@@ -162797,6 +162931,9 @@
             "nl": "Batterij",
             "de": "Batterie"
           }
+        },
+        "measure_power": {
+          "approximated": true
         }
       },
       "maintenanceActions": [
@@ -163435,6 +163572,9 @@
             "nl": "Batterij",
             "de": "Batterie"
           }
+        },
+        "measure_power": {
+          "approximated": true
         }
       },
       "metadata": {
@@ -163863,6 +164003,9 @@
             "nl": "Batterij",
             "de": "Batterie"
           }
+        },
+        "measure_power": {
+          "approximated": true
         }
       },
       "maintenanceActions": [
@@ -167867,6 +168010,9 @@
           "maintenanceAction": true,
           "getable": false,
           "setable": false
+        },
+        "measure_power": {
+          "approximated": true
         }
       },
       "metadata": {
@@ -170028,6 +170174,9 @@
           "maintenanceAction": true,
           "getable": false,
           "setable": false
+        },
+        "measure_power": {
+          "approximated": true
         }
       },
       "metadata": {
@@ -173693,7 +173842,7 @@
         "onoff",
         "dim",
         "measure_humidity",
-        "dim.humidity",
+        "target_humidity",
         "button.1"
       ],
       "capabilitiesOptions": {
@@ -174302,7 +174451,7 @@
       },
       "class": "fan",
       "capabilities": [
-        "dim.humidity",
+        "target_humidity",
         "measure_humidity",
         "measure_temperature",
         "measure_power",
@@ -174348,6 +174497,9 @@
           "maintenanceAction": true,
           "getable": false,
           "setable": false
+        },
+        "measure_power": {
+          "approximated": true
         }
       },
       "energy": {},
@@ -177459,6 +177611,9 @@
           "maintenanceAction": true,
           "getable": false,
           "setable": false
+        },
+        "measure_power": {
+          "approximated": true
         }
       },
       "maintenanceActions": [
@@ -182189,6 +182344,9 @@
           "maintenanceAction": true,
           "getable": false,
           "setable": false
+        },
+        "measure_power": {
+          "approximated": true
         }
       },
       "maintenanceActions": [
@@ -184134,6 +184292,9 @@
           "maintenanceAction": true,
           "getable": false,
           "setable": false
+        },
+        "measure_power": {
+          "approximated": true
         }
       },
       "metadata": {
@@ -185749,6 +185910,9 @@
           "maintenanceAction": true,
           "getable": false,
           "setable": false
+        },
+        "measure_power": {
+          "approximated": true
         }
       },
       "maintenanceActions": [
@@ -186455,6 +186619,9 @@
           "maintenanceAction": true,
           "getable": false,
           "setable": false
+        },
+        "measure_power": {
+          "approximated": true
         }
       },
       "_pidConflictNotes": [
@@ -187150,6 +187317,9 @@
           "maintenanceAction": true,
           "getable": false,
           "setable": false
+        },
+        "measure_power": {
+          "approximated": true
         }
       },
       "metadata": {
@@ -192060,7 +192230,7 @@
         "de": "Funkfernbedienung",
         "es": "Control remoto inalámbrico"
       },
-      "class": "sensor",
+      "class": "button",
       "capabilities": [
         "button.1",
         "button.2",
@@ -193225,6 +193395,9 @@
           "setable": false,
           "maintenanceAction": true,
           "getable": false
+        },
+        "measure_power": {
+          "approximated": true
         }
       },
       "metadata": {
@@ -193308,7 +193481,7 @@
         "de": "Funk-Fernbedienungstaste handgehalten",
         "es": "Botón remoto inalámbrico de mano"
       },
-      "class": "sensor",
+      "class": "button",
       "capabilities": [
         "button.1",
         "button.2",
@@ -194170,6 +194343,9 @@
           "setable": false,
           "maintenanceAction": true,
           "getable": false
+        },
+        "measure_power": {
+          "approximated": true
         }
       },
       "maintenanceActions": [
@@ -194228,7 +194404,7 @@
         "de": "Drahtlose Fernbedienung Szenen",
         "es": "BotÃ³n Remoto InalÃ¡mbrico Escena HÃ­brida"
       },
-      "class": "sensor",
+      "class": "button",
       "capabilities": [
         "button.1",
         "button.2",
@@ -194628,7 +194804,7 @@
         "de": "Kabelloser Smart Fernbedienung",
         "es": "BotÃ³n Remoto InalÃ¡mbrico Inteligente"
       },
-      "class": "sensor",
+      "class": "button",
       "capabilities": [
         "button.1",
         "measure_battery"
@@ -195684,7 +195860,7 @@
         "de": "Funk-Wandtaster",
         "es": "Botón inalámbrico de pared"
       },
-      "class": "sensor",
+      "class": "button",
       "capabilities": [
         "button.1",
         "measure_battery"
@@ -202736,6 +202912,9 @@
           "maintenanceAction": true,
           "getable": false,
           "setable": false
+        },
+        "measure_power": {
+          "approximated": true
         }
       },
       "_pidConflictNotes": [
@@ -215536,6 +215715,9 @@
           "setable": false,
           "maintenanceAction": true,
           "getable": false
+        },
+        "measure_power": {
+          "approximated": true
         }
       },
       "metadata": {
@@ -217784,6 +217966,9 @@
           "setable": false,
           "maintenanceAction": true,
           "getable": false
+        },
+        "measure_power": {
+          "approximated": true
         }
       },
       "metadata": {
@@ -218932,6 +219117,9 @@
           "setable": false,
           "maintenanceAction": true,
           "getable": false
+        },
+        "measure_power": {
+          "approximated": true
         }
       },
       "metadata": {
@@ -219922,6 +220110,9 @@
           "setable": false,
           "maintenanceAction": true,
           "getable": false
+        },
+        "measure_power": {
+          "approximated": true
         }
       },
       "metadata": {
@@ -221140,6 +221331,9 @@
           "setable": false,
           "maintenanceAction": true,
           "getable": false
+        },
+        "measure_power": {
+          "approximated": true
         }
       },
       "metadata": {
@@ -223207,6 +223401,9 @@
           "maintenanceAction": true,
           "getable": false,
           "setable": false
+        },
+        "measure_power": {
+          "approximated": true
         }
       },
       "metadata": {
@@ -229439,6 +229636,9 @@
           "maintenanceAction": true,
           "getable": false,
           "setable": false
+        },
+        "measure_power": {
+          "approximated": true
         }
       },
       "energy": {
@@ -244683,26 +244883,6 @@
       "uiComponent": "sensor",
       "icon": "/assets/cleaning.svg"
     },
-    "alarm_gas": {
-      "type": "boolean",
-      "title": {
-        "en": "Gas Alarm",
-        "nl": "Gasalarm",
-        "de": "Gasalarm",
-        "fr": "Alarme gaz"
-      },
-      "getable": true,
-      "setable": false,
-      "uiComponent": "sensor",
-      "uiQuickAction": false,
-      "insights": true,
-      "insightsTitleTrue": {
-        "en": "Gas detected"
-      },
-      "insightsTitleFalse": {
-        "en": "No gas detected"
-      }
-    },
     "alarm_human": {
       "type": "boolean",
       "title": {
@@ -244743,33 +244923,6 @@
       "getable": true,
       "setable": false,
       "uiComponent": "sensor"
-    },
-    "alarm_vibration": {
-      "type": "boolean",
-      "title": {
-        "en": "Vibration",
-        "fr": "Vibration",
-        "nl": "Trilling",
-        "de": "Vibration"
-      },
-      "getable": true,
-      "setable": false,
-      "uiComponent": "sensor",
-      "uiQuickAction": false,
-      "icon": "/assets/vibration.svg",
-      "insights": true,
-      "insightsTitleTrue": {
-        "en": "Vibration detected",
-        "fr": "Vibration détectée",
-        "nl": "Trilling gedetecteerd",
-        "de": "Vibration erkannt"
-      },
-      "insightsTitleFalse": {
-        "en": "No vibration",
-        "fr": "Pas de vibration",
-        "nl": "Geen trilling",
-        "de": "Keine Vibration"
-      }
     },
     "alarm_water_high": {
       "type": "boolean",
@@ -245232,23 +245385,6 @@
       "decimals": 1,
       "insights": true
     },
-    "measure_co": {
-      "type": "number",
-      "title": {
-        "en": "CO",
-        "nl": "CO",
-        "de": "CO",
-        "fr": "CO"
-      },
-      "units": {
-        "en": "ppm"
-      },
-      "getable": true,
-      "setable": false,
-      "uiComponent": "sensor",
-      "decimals": 0,
-      "insights": true
-    },
     "measure_conductivity": {
       "type": "number",
       "title": {
@@ -245297,24 +245433,6 @@
       "uiComponent": "sensor",
       "insights": true
     },
-    "measure_frequency": {
-      "type": "number",
-      "title": {
-        "en": "Frequency",
-        "fr": "Fréquence",
-        "nl": "Frequentie",
-        "de": "Frequenz"
-      },
-      "units": {
-        "en": "Hz"
-      },
-      "uiComponent": "sensor",
-      "icon": "/assets/capabilities/measure_frequency.svg",
-      "getable": true,
-      "setable": false,
-      "insights": true,
-      "decimals": 2
-    },
     "measure_maintenance_score": {
       "type": "number",
       "title": {
@@ -245330,36 +245448,6 @@
       "min": 0,
       "max": 100,
       "decimals": 0
-    },
-    "measure_pm10": {
-      "type": "number",
-      "title": {
-        "en": "PM10",
-        "nl": "PM10",
-        "de": "PM10",
-        "fr": "PM10"
-      },
-      "units": {
-        "en": "µg/m³"
-      },
-      "getable": true,
-      "setable": false,
-      "uiComponent": "sensor",
-      "decimals": 0,
-      "insights": true
-    },
-    "measure_pm25": {
-      "type": "number",
-      "title": {
-        "en": "PM2.5"
-      },
-      "units": {
-        "en": "µg/m³"
-      },
-      "getable": true,
-      "setable": false,
-      "uiComponent": "sensor",
-      "insights": true
     },
     "measure_power_factor": {
       "type": "number",
@@ -245505,23 +245593,6 @@
       "min": 0,
       "max": 100
     },
-    "measure_weight": {
-      "type": "number",
-      "title": {
-        "en": "Weight",
-        "nl": "Gewicht",
-        "de": "Gewicht",
-        "fr": "Poids"
-      },
-      "units": {
-        "en": "g"
-      },
-      "getable": true,
-      "setable": false,
-      "uiComponent": "sensor",
-      "decimals": 0,
-      "insights": true
-    },
     "onoff_1": {
       "type": "boolean",
       "title": {
@@ -245635,25 +245706,6 @@
         "en": "m"
       },
       "icon": "/drivers/radar_sensor/assets/distance.svg"
-    },
-    "target_humidity": {
-      "type": "number",
-      "title": {
-        "en": "Target Humidity",
-        "nl": "Doelluchtvochtigheid",
-        "de": "Ziel-Luftfeuchtigkeit",
-        "fr": "Humidité cible"
-      },
-      "units": {
-        "en": "%"
-      },
-      "getable": true,
-      "setable": true,
-      "uiComponent": "thermostat",
-      "min": 0,
-      "max": 100,
-      "step": 5,
-      "decimals": 0
     },
     "temp_calibration": {
       "type": "number",
@@ -245842,26 +245894,6 @@
       "setable": true,
       "uiComponent": null,
       "insights": true
-    },
-    "valve_position": {
-      "type": "number",
-      "title": {
-        "en": "Valve Position",
-        "fr": "Position Vanne"
-      },
-      "desc": {
-        "en": "Current valve opening percentage",
-        "fr": "Pourcentage d'ouverture de la vanne"
-      },
-      "units": {
-        "en": "%"
-      },
-      "getable": true,
-      "setable": false,
-      "uiComponent": "sensor",
-      "min": 0,
-      "max": 100,
-      "decimals": 0
     },
     "wifi_heater_mode": {
       "type": "enum",

@@ -7,7 +7,7 @@
   },
   "class": "fan",
   "capabilities": [
-    "dim.humidity",
+    "target_humidity",
     "measure_humidity",
     "measure_temperature",
     "measure_power",
@@ -53,6 +53,9 @@
       "maintenanceAction": true,
       "getable": false,
       "setable": false
+    },
+    "measure_power": {
+      "approximated": true
     }
   },
   "energy": {},

@@ -6,7 +6,7 @@
     "de": "Funk-Fernbedienungstaste handgehalten",
     "es": "Botón remoto inalámbrico de mano"
   },
-  "class": "sensor",
+  "class": "button",
   "capabilities": [
     "button.1",
     "button.2",
