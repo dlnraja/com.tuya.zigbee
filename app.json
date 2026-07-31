@@ -249537,17 +249537,6 @@
     }
   ],
   "capabilities": {
-    "alarm_cleaning": {
-      "type": "boolean",
-      "title": {
-        "en": "Cleaning reminder",
-        "nl": "Schoonmaakherinnering"
-      },
-      "getable": true,
-      "setable": false,
-      "uiComponent": "sensor",
-      "icon": "/assets/cleaning.svg"
-    },
     "alarm_human": {
       "type": "boolean",
       "title": {
@@ -249579,15 +249568,6 @@
       "setable": false,
       "uiComponent": "sensor",
       "icon": "/assets/icon.svg"
-    },
-    "alarm_tank_full": {
-      "type": "boolean",
-      "title": {
-        "en": "Tank Full"
-      },
-      "getable": true,
-      "setable": false,
-      "uiComponent": "sensor"
     },
     "alarm_water_high": {
       "type": "boolean",
@@ -249666,23 +249646,6 @@
       "uiComponent": "button",
       "insights": false
     },
-    "button_identify": {
-      "type": "boolean",
-      "title": {
-        "en": "Identify",
-        "nl": "Identificeren",
-        "de": "Identifizieren",
-        "fr": "Identifier"
-      },
-      "getable": false,
-      "setable": true,
-      "uiComponent": "button",
-      "icon": "/assets/capabilities/button_identify.svg",
-      "insights": false,
-      "desc": {
-        "en": "Identify device"
-      }
-    },
     "button_open": {
       "type": "boolean",
       "title": {
@@ -249701,103 +249664,6 @@
         "en": "Stop",
         "fr": "Arrêter",
         "nl": "Stoppen"
-      },
-      "getable": true,
-      "setable": true,
-      "uiComponent": "button",
-      "insights": false
-    },
-    "button_toggle": {
-      "type": "boolean",
-      "title": {
-        "en": "Toggle",
-        "nl": "Schakelen",
-        "de": "Umschalten",
-        "fr": "Basculer"
-      },
-      "getable": true,
-      "setable": true,
-      "uiComponent": "button",
-      "icon": "/assets/capabilities/button_toggle.svg",
-      "insights": false,
-      "desc": {
-        "en": "Toggle button"
-      }
-    },
-    "button_toggle_1": {
-      "type": "boolean",
-      "title": {
-        "en": "Toggle 1"
-      },
-      "getable": true,
-      "setable": true,
-      "uiComponent": "button",
-      "insights": false
-    },
-    "button_toggle_2": {
-      "type": "boolean",
-      "title": {
-        "en": "Toggle 2"
-      },
-      "getable": true,
-      "setable": true,
-      "uiComponent": "button",
-      "insights": false
-    },
-    "button_toggle_3": {
-      "type": "boolean",
-      "title": {
-        "en": "Toggle 3"
-      },
-      "getable": true,
-      "setable": true,
-      "uiComponent": "button",
-      "insights": false
-    },
-    "button_toggle_4": {
-      "type": "boolean",
-      "title": {
-        "en": "Toggle 4"
-      },
-      "getable": true,
-      "setable": true,
-      "uiComponent": "button",
-      "insights": false
-    },
-    "button_toggle_5": {
-      "type": "boolean",
-      "title": {
-        "en": "Toggle 5"
-      },
-      "getable": true,
-      "setable": true,
-      "uiComponent": "button",
-      "insights": false
-    },
-    "button_toggle_6": {
-      "type": "boolean",
-      "title": {
-        "en": "Toggle 6"
-      },
-      "getable": true,
-      "setable": true,
-      "uiComponent": "button",
-      "insights": false
-    },
-    "button_toggle_7": {
-      "type": "boolean",
-      "title": {
-        "en": "Toggle 7"
-      },
-      "getable": true,
-      "setable": true,
-      "uiComponent": "button",
-      "insights": false
-    },
-    "button_toggle_8": {
-      "type": "boolean",
-      "title": {
-        "en": "Toggle 8"
       },
       "getable": true,
       "setable": true,
@@ -250033,23 +249899,6 @@
       "insights": true,
       "min": 0
     },
-    "measure_battery_temperature": {
-      "type": "number",
-      "title": {
-        "en": "Battery Temperature",
-        "fr": "Température de la batterie",
-        "nl": "Batterijtemperatuur",
-        "de": "Batterietemperatur"
-      },
-      "units": {
-        "en": "°C"
-      },
-      "getable": true,
-      "setable": false,
-      "uiComponent": "sensor",
-      "decimals": 1,
-      "insights": true
-    },
     "measure_conductivity": {
       "type": "number",
       "title": {
@@ -250097,22 +249946,6 @@
       "setable": false,
       "uiComponent": "sensor",
       "insights": true
-    },
-    "measure_maintenance_score": {
-      "type": "number",
-      "title": {
-        "en": "Maintenance Score",
-        "fr": "Score Maintenance",
-        "nl": "Onderhoudsscore"
-      },
-      "uiComponent": "sensor",
-      "uiQuickAction": false,
-      "getable": true,
-      "setable": false,
-      "units": "pts",
-      "min": 0,
-      "max": 100,
-      "decimals": 0
     },
     "measure_power_factor": {
       "type": "number",
@@ -250184,29 +250017,6 @@
       "min": 0,
       "max": 100,
       "decimals": 0
-    },
-    "measure_soil_moisture": {
-      "type": "number",
-      "title": {
-        "en": "Soil Moisture",
-        "nl": "Bodemvocht",
-        "de": "Bodenfeuchtigkeit",
-        "fr": "Humidité du Sol"
-      },
-      "units": {
-        "en": "%"
-      },
-      "getable": true,
-      "setable": false,
-      "uiComponent": "sensor",
-      "icon": "/assets/capabilities/measure_soil_moisture.svg",
-      "insights": true,
-      "desc": {
-        "en": "Soil moisture percentage"
-      },
-      "min": 0,
-      "max": 100,
-      "step": 1
     },
     "measure_voc": {
       "type": "number",
