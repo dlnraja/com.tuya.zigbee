@@ -111,6 +111,20 @@ class IRRemoteDevice extends ZigBeeDevice {
 
   async sendIRCode(code) {
     if (!code) {return;}
+    // v10.8.0 (z2m ZS06 lesson): a spammed IR blaster can enter a transmit
+    // loop that kills the whole Zigbee network until reboot. Throttle IR
+    // sends to 1 per 500ms and serialize concurrent requests — a flow storm
+    // can no longer flood the device.
+    const now = Date.now();
+    if (now - (this._lastIRSend || 0) < 500) {
+      this.log('[IR-TX] 🛡️ Send throttled (anti-flood 500ms)');
+      return false;
+    }
+    if (this._pendingSend) {
+      this.log('[IR-TX] 🛡️ Send already in progress — dropping concurrent request');
+      return false;
+    }
+    this._lastIRSend = now;
     const msg = JSON.stringify({
       key_num: 1, delay: 300,
       key1: { num: 1, freq: 38000, type: 1, key_code: code }
