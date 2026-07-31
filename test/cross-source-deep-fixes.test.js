@@ -230,3 +230,20 @@ describe('P92.78 — master doctrine enrichments', () => {
     assert.ok(doc.includes('protection de branche'), 'protection recommendation');
   });
 });
+
+describe('P92.79 — AI quota visibility', () => {
+  it('quota report tool exists and warns at 80% of daily caps', () => {
+    const src = read('tools/ci/ai-quota-report.js');
+    assert.ok(src.includes('AI_GLOBAL_DAILY_CAP'), 'global cap');
+    assert.ok(src.includes('>= 80'), '80% warning threshold');
+  });
+  it('self-improve includes the AI quota report step', () => {
+    const wf = read('.github/workflows/self-improve.yml');
+    assert.ok(wf.includes('ai-quota-report.js'), 'quota step wired');
+  });
+  it('billing guard: paid providers blocked by default, daily caps enforced', () => {
+    const src = read('.github/scripts/ai-helper.js');
+    assert.ok(src.includes('AI_ALLOW_PAID'), 'paid opt-in');
+    assert.ok(src.includes('AI_GLOBAL_DAILY_CAP'), 'global daily cap');
+  });
+});

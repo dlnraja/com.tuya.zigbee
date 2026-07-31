@@ -97,6 +97,14 @@ jobs:
           node tools/ci/backport-candidates.js >> $GITHUB_STEP_SUMMARY 2>&1 || true
           echo '```' >> $GITHUB_STEP_SUMMARY
 
+      - name: 🤖 AI quota report (billing guard visibility)
+        continue-on-error: true
+        run: |
+          echo "## 🤖 AI quota (daily caps)" >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+          node tools/ci/ai-quota-report.js >> $GITHUB_STEP_SUMMARY 2>&1 || true
+          echo '```' >> $GITHUB_STEP_SUMMARY
+
       - name: 💾 Commit improvements (only when tests are green)
         if: steps.tests.outcome == 'success'
         continue-on-error: true
