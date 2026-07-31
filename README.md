@@ -34,7 +34,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.388 |
+| **App Version** | v9.0.389 |
 | **Device Fingerprints** | 10,671+ |
 | **Unique Product IDs** | 571 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
@@ -102,7 +102,8 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | Version | Changes |
 |---------|---------|
 | **vchangelog** | [object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object  |
-| **v9.0.388** | Flow DP send hardening + typed handler with per-type validation. |
+| **v9.0.389** | Central destroyed guards on capability ops, linear battery formulas eliminated. |
+| **v9.0.388** | Central destroyed guards on capability ops, linear battery formulas eliminated. |
 | **v9.0.387** | Flow DP send hardening + typed handler with per-type validation. |
 | **v9.0.386** | Full forum topic scan (2039 posts with images/links) + digest, sqcn0y re-added (purge), version alignment. |
 | **v9.0.385** | OTA hardening: SHA512 verified before flashing, header validation, download timeout + size cap, index schema validation. |
@@ -115,7 +116,6 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | **v9.0.378** | v9.0.377: Temperature compensation was inverted, New test suites: 10 battery chemistry/health tests (17 profiles vali... |
 | **v9.0.377** | Stability improvements and Homey test publication retry after transient processing failure. |
 | **v9.0.376** | v9.0.375: Product reference database, Energy consumption reference, Flow condition 'telemetry_is_estimated', Fixed mf... |
-| **v9.0.375** | Product reference DB (9027 fingerprints: vendor/model/battery/energy/variants), energy consumption reference for the ... |
 
 <!-- CHANGELOG_END -->
 
