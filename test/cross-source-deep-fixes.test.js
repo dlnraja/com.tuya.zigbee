@@ -274,3 +274,23 @@ describe('P92.80 — deleted tooling reimplemented + Z2M gap imports', () => {
     assert.ok(mixin.includes('_sendTuyaMagicPacket'), 'magic packet inline (MagicPacketRegistry superseded)');
   });
 });
+
+describe('P92.81 — AI DP extraction (raccourci Gemini, guarded)', () => {
+  it('extraction script truncates to 500 chars and validates output strictly', () => {
+    const src = read('.github/scripts/ai-dp-extract.js');
+    assert.ok(src.includes('BLOCK_CHARS = 500'), '500-char doctrine');
+    assert.ok(src.includes('validateExtraction'), 'strict validation');
+    assert.ok(src.includes('ai-helper'), 'guarded chain, no raw curl');
+    assert.ok(!src.includes('curl'), 'no unguarded API calls');
+  });
+  it('validation only accepts DP-numbered keys with enum|int|bool types', () => {
+    const src = read('.github/scripts/ai-dp-extract.js');
+    assert.ok(src.includes('/^\d{1,3}'+'$'+'/.test(k)') || src.includes('d{1,3}'), 'DP key regex');
+    assert.ok(src.includes('enum') && src.includes('int') && src.includes('bool'), 'type whitelist');
+  });
+  it('self-improve runs the extraction (weekly, quota-safe cadence)', () => {
+    const wf = read('.github/workflows/self-improve.yml');
+    assert.ok(wf.includes('ai-dp-extract.js'), 'step wired');
+    assert.ok(!wf.includes('*/6 * * *'), 'no 6h cron (quota doctrine)');
+  });
+});
