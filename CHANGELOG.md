@@ -4,6 +4,13 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
+## v9.0.385 (2026-07-31)
+
+### Security
+- **OTA hardening**: SHA512 from the zigbee-OTA index is now propagated through `checkUpdate` to the actual firmware download and **verified before flashing** (it was checked nowhere before); OTA image header validated at flash time (magic 0x0BEEF11E, manufacturer code match, imageType match when known, version strictly newer — never flash an unverified image); download guards: HTTPS-only (existing), 60s timeout, 2 MB size cap enforced during streaming; zigbee-OTA index schema validation (invalid entries dropped, empty/invalid index never replaces the cache). 12 new security tests.
+
+---
+
 ## v9.0.383 (2026-07-31)
 
 ### Fixed
