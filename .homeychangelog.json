@@ -1502,5 +1502,8 @@
   "9.0.385": {
     "en": "OTA hardening: SHA512 verified before flashing, header validation, download timeout + size cap, index schema validation.",
     "fr": "Blindage OTA : SHA512 vérifié avant flash, validation du header, timeout + limite de taille, validation du schéma de l'index."
+  },
+  "9.0.386": {
+    "en": "OTA hardening: SHA512 verified before flashing, header validation, download timeout + size cap, index schema validation."
   }
 }
