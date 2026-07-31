@@ -123,15 +123,10 @@ class SmartKnobRotaryDevice extends TuyaZigbeeDevice {
       const ep1 = zclNode.endpoints[1];
       if (ep1 && ep1.clusters[CLUSTER.POWER_CONFIGURATION.NAME]) {
         const powerCluster = ep1.clusters[CLUSTER.POWER_CONFIGURATION.NAME];
-        
-        // Configure battery reporting
-        await powerCluster.configureReporting({
-          batteryPercentageRemaining: {
-            minInterval: 3600,
-            maxInterval: 65534,
-            minChange: 1,
-          },
-        }).catch(err => this.log('Battery reporting config failed:', err.message));
+
+        // z2m #8072: DO NOT configureReporting on sleepy TS004x remotes —
+        // it makes them drop off the network hourly ("needs 2 presses",
+        // LED flashing, battery drain). Read once + passive reports only.
 
         // Read initial battery value
         const batteryStatus = await powerCluster.readAttributes(['batteryPercentageRemaining']).catch(() => null);
@@ -324,11 +319,21 @@ class SmartKnobRotaryDevice extends TuyaZigbeeDevice {
     if (this._destroyed) {return;}
     const delta = direction === 'up' ? stepSize / 254 : -(stepSize / 254);
     this._updateSimulatedBrightness(delta);
+    // v10.4.0 (ZHA ts004f): step_size encodes rotation speed — 13 = slow,
+    // 37 = fast. Expose it as a flow token so users can build speed-aware flows.
+    this._lastRotationSpeed = stepSize <= 20 ? 'slow' : stepSize >= 30 ? 'fast' : 'normal';
     if (direction === 'up') {
       await this._triggerRotateRight();
     } else {
       await this._triggerRotateLeft();
     }
+  }
+
+  _rotationTokens() {
+    return {
+      brightness: Math.round(this._simulatedBrightness * 100),
+      speed: this._lastRotationSpeed || 'normal'
+    };
   }
 
   _updateSimulatedBrightness(delta) {
@@ -346,7 +351,7 @@ class SmartKnobRotaryDevice extends TuyaZigbeeDevice {
     }
     const rotateLeftTrigger = (() => { try { return this.homey.flow.getDeviceTriggerCard('smart_knob_rotary_rotate_left', 'trigger'); } catch(e) { return null; } })();
     if (rotateLeftTrigger) {
-      await rotateLeftTrigger.trigger(this, { brightness: Math.round(this._simulatedBrightness * 100) }).catch(this.error);
+      await rotateLeftTrigger.trigger(this, this._rotationTokens()).catch(this.error);
     }
   }
 
@@ -358,7 +363,7 @@ class SmartKnobRotaryDevice extends TuyaZigbeeDevice {
     }
     const rotateRightTrigger = (() => { try { return this.homey.flow.getDeviceTriggerCard('smart_knob_rotary_rotate_right', 'trigger'); } catch(e) { return null; } })();
     if (rotateRightTrigger) {
-      await rotateRightTrigger.trigger(this, { brightness: Math.round(this._simulatedBrightness * 100) }).catch(this.error);
+      await rotateRightTrigger.trigger(this, this._rotationTokens()).catch(this.error);
     }
   }
 
