@@ -4,6 +4,13 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
+## v9.0.387 (2026-07-31)
+
+### Security
+- **Flow DP send hardening**: `tuya_dp_send` now validates the DP number (integer 1-255) and coerces values safely (bool, 32-bit signed integers, strings ≤ 255 chars — everything else rejected). `tuya_dp_send_typed` finally has a real handler (it was registered nowhere): strict per-type validation (bool/value/enum 0-255/string ≤255/raw hex ≤64 bytes/bitmap 32-bit). Audits clean: 0 npm vulnerabilities, no eval/Function, no non-HTTPS runtime calls, CI permissions minimal. 6 new security tests.
+
+---
+
 ## v9.0.385 (2026-07-31)
 
 ### Security
