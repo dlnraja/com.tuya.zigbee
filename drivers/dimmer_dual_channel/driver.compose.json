@@ -98,10 +98,6 @@
     "xlarge": "/drivers/dimmer_dual_channel/assets/images/xlarge.png"
   },
   "energy": {
-    "approximation": {
-      "usageOn": 60,
-      "usageOff": 0.5
-    },
     "batteries": [
       "CR2032"
     ]

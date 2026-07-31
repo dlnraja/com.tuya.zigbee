@@ -321,7 +321,8 @@
   },
   "energy": {
     "approximation": {
-      "usageConstant": 1500
+      "usageOn": 1500,
+      "usageOff": 0.3
     }
   },
   "flow": {

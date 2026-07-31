@@ -14,7 +14,8 @@
   ],
   "energy": {
     "approximation": {
-      "usageConstant": 0.5
+      "usageOn": 50,
+      "usageOff": 0.5
     }
   },
   "zigbee": {

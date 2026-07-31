@@ -290,9 +290,16 @@ class Button4GangDevice extends ButtonDevice {
           // "any frame with data[3] in 0..2" test also matched OnOff attribute
           // reports (cmd 0x0A, attrId 0x0000 → data[3]=0) and read responses
           // (cmd 0x01), producing phantom presses.
-          if (Number(clusterId) === 0x0006 && data?.length === 4 && data[2] === 0xFD && [0, 1, 2].includes(data[3])) {
-            const pressType = resolvePressType(data[3], 'TS0044-RAW');
-            this.log(`[TS0044-RAW] EP${ep} data[3]=${data[3]} -> ${pressType}`);
+          // v10.6.0 FIX: use the shared ZCL header parser — when the frame's
+          // manufacturer-specific bit (0x04) is set, the header is 5 bytes and
+          // cmdId lands at data[4] (payload at data[5]). The literal data[2]
+          // test silently missed presses on TS0044/TS004F mfr-bit variants.
+          const { parseZclHeader } = require('../../lib/zigbee/ZigbeeHelpers');
+          const hdr = data ? parseZclHeader(data) : null;
+          if (Number(clusterId) === 0x0006 && hdr && hdr.cmdId === 0xFD &&
+              data.length === hdr.payloadOffset + 1 && [0, 1, 2].includes(data[hdr.payloadOffset])) {
+            const pressType = resolvePressType(data[hdr.payloadOffset], 'TS0044-RAW');
+            this.log(`[TS0044-RAW] EP${ep} action=${data[hdr.payloadOffset]} -> ${pressType}${hdr.mfrCode !== null ? ` (mfr 0x${hdr.mfrCode.toString(16)})` : ''}`);
             await this._triggerButton4Gang(ep, pressType);
           } else if (Number(clusterId) === 0xE000) {
             let button = ep;

@@ -172,7 +172,12 @@ class SceneSwitch4Device extends ButtonDevice {
       const orig = zclNode.handleFrame.bind(zclNode);
       zclNode.handleFrame = async (epId, cId, f, m) => {
         if (cId === 57344 || cId === 0xE000) {
-          const d = f?.data;
+          // v10.6.0 FIX: `f` is a raw Buffer — `f.data` is undefined, this
+          // path was dead. Extract bytes the same way button_wireless_4 does.
+          const json = typeof f?.toJSON === 'function' ? f.toJSON() : f;
+          const d = Buffer.isBuffer(json?.data) ? json.data
+            : Array.isArray(json?.data) ? Buffer.from(json.data)
+            : Buffer.isBuffer(f) ? f : null;
           this.log(`[E000-S4-RAW] EP${epId} E000 frame`);
           let btn = epId;
           let pt = 'single';

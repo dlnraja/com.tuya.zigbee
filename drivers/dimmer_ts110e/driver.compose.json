@@ -49,10 +49,6 @@
     "small": "/drivers/dimmer_ts110e/assets/images/small.png"
   },
   "energy": {
-    "approximation": {
-      "usageOn": 5,
-      "usageOff": 0.5
-    },
     "batteries": [
       "CR2032"
     ]

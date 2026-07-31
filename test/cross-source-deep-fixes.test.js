@@ -1,0 +1,131 @@
+'use strict';
+
+/**
+ * Tests — P92.67 cross-source deep fixes (10 investigation reports)
+ * Pins the highest-blast-radius fixes from the full cross-reference program:
+ * lifecycle, ZCL header parsing, phantom presses, jitter, magic packet,
+ * DP registry, antispam, energy data, restored fingerprints.
+ */
+
+const assert = require('assert');
+const fs = require('fs');
+const path = require('path');
+
+const testApi = global.describe && global.it ? global : require('node:test');
+const { describe, it } = testApi;
+
+const ROOT = path.join(__dirname, '..');
+const read = (p) => fs.readFileSync(path.join(ROOT, p), 'utf8');
+
+describe('P92.67 — cross-source deep fixes', () => {
+
+  it('lifecycle: _destroyDevice runs cleanup even when _destroyed set early', () => {
+    const src = read('lib/tuya/TuyaZigbeeDevice.js');
+    assert.ok(src.includes('_destroyDeviceDone'), 'dedicated idempotence flag');
+    assert.ok(!/async _destroyDevice\(\) \{\s*if \(this\._destroyed\)/.test(src),
+      'guard no longer uses _destroyed (dead-code bug since v9.1.2)');
+  });
+
+  it('parseZclHeader: standard 3-byte and manufacturer-specific 5-byte headers', () => {
+    const { parseZclHeader } = require(path.join(ROOT, 'lib/zigbee/ZigbeeHelpers'));
+    // standard: fc=0x01, tsn=0x42, cmd=0xFD, payload=[0x01]
+    const std = parseZclHeader(Buffer.from([0x01, 0x42, 0xFD, 0x01]));
+    assert.strictEqual(std.cmdId, 0xFD);
+    assert.strictEqual(std.tsn, 0x42);
+    assert.strictEqual(std.mfrCode, null);
+    assert.strictEqual(std.payloadOffset, 3);
+    assert.strictEqual(std.clusterSpecific, true);
+    // mfr-specific: fc=0x05, mfrCode=0x115F LE, tsn=0x07, cmd=0xFD, payload=[0x02]
+    const mfr = parseZclHeader(Buffer.from([0x05, 0x5F, 0x11, 0x07, 0xFD, 0x02]));
+    assert.strictEqual(mfr.cmdId, 0xFD, 'cmdId must be read at offset 4 for mfr frames');
+    assert.strictEqual(mfr.mfrCode, 0x115F, 'manufacturer code is little-endian');
+    assert.strictEqual(mfr.payloadOffset, 5);
+    // global frame (fc=0x00 read response) — cmd 0x01 is NOT cluster-specific
+    const global = parseZclHeader(Buffer.from([0x08, 0x01, 0x01, 0x00]));
+    assert.strictEqual(global.clusterSpecific, false);
+  });
+
+  it('phantom presses: raw interceptors parse headers and require cluster-specific frames', () => {
+    const b4 = read('drivers/button_wireless_4/device.js');
+    assert.ok(b4.includes('parseZclHeader'), 'button_wireless_4 header-aware');
+    assert.ok(b4.includes('hdr.payloadOffset'), 'button_wireless_4 mfr-bit payload offset');
+    const ube = read('lib/mixins/UnifiedButtonEngine.js');
+    assert.ok(ube.includes('hdr.clusterSpecific'), 'UnifiedButtonEngine rejects global frames (phantom press fix)');
+    const pzao = read('drivers/wall_switch_4gang_1way/device.js');
+    assert.ok(pzao.includes('parseZclHeader'), 'PZAO interceptor repaired (was dead: frame.cmdId on Buffer)');
+    const knob = read('drivers/smart_knob_rotary/device.js');
+    assert.ok(knob.includes('parseZclHeader'), 'knob scene listener repaired (was dead: frame[0] vs cmdId)');
+  });
+
+  it('TuyaEF00Manager passive frame handles the 5-byte mfr header (offset 7)', () => {
+    const src = read('lib/tuya/TuyaEF00Manager.js');
+    assert.ok(src.includes('mfrBit ? 7 : 5'), 'offset 7 for mfr frames');
+  });
+
+  it('jitter: reconnection backoff and deferred init are desynchronized', () => {
+    const src = read('lib/tuya/TuyaZigbeeDevice.js');
+    assert.ok(src.includes('0.75 + Math.random() * 0.5'), 'backoff jitter ±25%');
+    assert.ok(src.includes('1000 + Math.floor(Math.random() * 10000)'), 'deferred init stagger 1-11s (boot storm fix)');
+  });
+
+  it('magic packet: re-sent on device announce (power-cut recovery)', () => {
+    const src = read('lib/tuya/TuyaZigbeeDevice.js');
+    assert.ok(src.includes('Magic packet re-sent after announce'), 'rejoin re-enchant');
+    assert.ok(src.includes('0xfffe'), 'attrReportingStatus in the read');
+  });
+
+  it('dp_registry.json (756 mfrs) is wired as a lookup tier in TuyaUniversalMapper', () => {
+    const src = read('lib/tuya/TuyaUniversalMapper.js');
+    assert.ok(src.includes('_getRegistryMapping'), 'registry tier present');
+    assert.ok(src.includes('dp_registry.json'), 'dead data now loaded');
+  });
+
+  it('bitmap DPs parse 1/2/4 bytes (ZHA parity)', () => {
+    const src = read('lib/tuya/TuyaDPParser.js');
+    assert.ok(src.includes('bitmapLen'), 'multi-byte bitmap');
+    assert.ok(src.includes('dataBuffer.length >= 4 ? 4'), '4-byte bitmaps supported');
+  });
+
+  it('telemetry: pure-default battery estimates are never written to measure_battery', () => {
+    const src = read('lib/utils/DeviceTelemetryEstimator.js');
+    assert.ok(src.includes("estimate.reason === 'profile-default:no-direct-report'"), 'fabrication guard');
+  });
+
+  it('OTA: performUpdate fails honestly when the SDK has no otaUpdate cluster', () => {
+    const src = read('lib/ota/OTAUpdateManager.js');
+    assert.ok(src.includes('OTA flashing is not supported on Homey'), 'honest guard');
+    assert.ok(src.includes('Current firmware version unknown'), 'no false-positive when version unparsable');
+    const repo = read('lib/ota/OTARepository.js');
+    assert.ok(repo.includes('_manifestCaches'), 'manifest cache keyed per URL');
+  });
+
+  it('antispam: virtual toggle throttled 300ms and TX rate limiter wired', () => {
+    const src = read('lib/mixins/VirtualButtonMixin.js');
+    assert.ok(src.includes('_virtualToggleLastTap'), '300ms leading throttle');
+    assert.ok(src.includes("canSendCommand('virtual_button')"), 'TX limiter no longer dead code');
+    const bd = read('lib/devices/ButtonDevice.js');
+    const listener = bd.slice(bd.indexOf('Button ${buttonNum} capability triggered'));
+    assert.ok(listener.indexOf('check BEFORE stamping') < listener.indexOf('lastVirtualPress[buttonNum] = now'),
+      'stamp after dedup check');
+  });
+
+  it('energy: battery drivers have no phantom approximation; bulbs use usageOn/Off', () => {
+    const bulb = JSON.parse(read('drivers/bulb_rgbw/driver.compose.json'));
+    assert.ok(bulb.energy.approximation.usageOn > 0, 'bulb has usageOn');
+    assert.ok(bulb.energy.approximation.usageConstant === undefined, 'no usageConstant on on/off device');
+    const btn = JSON.parse(read('drivers/button_wireless_smart/driver.compose.json'));
+    assert.ok(Array.isArray(btn.energy.batteries), 'button declares batteries');
+    assert.strictEqual(btn.energy.approximation, undefined, 'no phantom 0.5W consumer');
+  });
+
+  it('fingerprints: restored mfrs + Dooya re-route + CO detector re-route', () => {
+    const rgb = JSON.parse(read('drivers/rgb_wall_led_light/driver.compose.json'));
+    assert.ok(rgb.zigbee.manufacturerName.length > 0, 'rgb_wall_led_light no longer empty');
+    const climate = JSON.parse(read('drivers/climate_sensor/driver.compose.json'));
+    assert.ok(!climate.zigbee.manufacturerName.some((m) => /3ylew7b4/i.test(m)), 'Dooya out of climate_sensor');
+    const curtain = JSON.parse(read('drivers/curtain_motor/driver.compose.json'));
+    assert.ok(curtain.zigbee.manufacturerName.some((m) => /3ylew7b4/i.test(m)), 'Dooya in curtain_motor');
+    const co = JSON.parse(read('drivers/co_sensor/driver.compose.json'));
+    assert.ok(co.zigbee.manufacturerName.some((m) => /rjxqso4a/i.test(m)), 'MOES CO in co_sensor (with alarm_co)');
+  });
+});

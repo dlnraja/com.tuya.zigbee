@@ -85,7 +85,8 @@
   ],
   "energy": {
     "approximation": {
-      "usageConstant": 1
+      "usageOn": 1200,
+      "usageOff": 1
     }
   },
   "maintenanceActions": [

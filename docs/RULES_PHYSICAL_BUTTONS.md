@@ -40,7 +40,7 @@
 
 ## 5. Manufacturer Rules
 *   **Rule 5.1: Case Sensitivity**
-    *   ALWAYS use `.toLowerCase()` when matching `manufacturerName`.
+    *   ALWAYS route `manufacturerName`/`productId` comparisons through `lib/utils/TuyaNormalizer.js` (`normalize`, `equalsIgnoreCase`, `includesCI`, `findCI`) — never a bare `.toLowerCase()` on a device identifier (supersedes the historical rule; NFKD + LRU-cached since v10.1.0).
 *   **Rule 5.2: Generic Fallbacks**
     *   For `_TZ3000_` devices, prefer generic drivers but prune `onoff` if it's a battery remote.
 *   **Rule 5.3: Standard Initialization**

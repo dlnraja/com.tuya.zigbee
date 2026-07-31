@@ -26,7 +26,12 @@
     "small": "/{{driverAssetsPath}}/images/small.png"
   },
   "zigbee": {
-    "manufacturerName": [],
+    "manufacturerName": [
+      "_TZ3000_jowhpxop",
+      "_tz3000_jowhpxop",
+      "_TZ3000_JOWHPXOP",
+      "_tz3000_JOWHPXOP"
+    ],
     "productId": [
       "01MINIZB",
       "BASICZBR3",

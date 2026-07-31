@@ -53,10 +53,6 @@
     "zigbee"
   ],
   "energy": {
-    "approximation": {
-      "usageOn": 0.5,
-      "usageOff": 0
-    },
     "batteries": [
       "CR2032"
     ]
