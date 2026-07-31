@@ -1,4 +1,7 @@
 {
+  "5.12.48": {
+    "en": "Anti-flood protections: RX shedding with IAS exemption, IR send throttle."
+  },
   "changelog": [
     {
       "version": "5.12.47",
@@ -719,6 +722,17 @@
         {
           "type": "fix",
           "description": "Peter's devices + SOS fingerprint + LCD collision + security check"
+        }
+      ]
+    },
+    {
+      "version": "5.12.48",
+      "date": "2026-07-31",
+      "summary": "Anti-flood protections: RX shedding with IAS exemption, IR send throttle.",
+      "changes": [
+        {
+          "type": "fix",
+          "description": "RX flood shedding (IAS-exempt) + IR blaster send throttle 500ms"
         }
       ]
     }
