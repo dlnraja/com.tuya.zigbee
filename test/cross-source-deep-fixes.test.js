@@ -247,3 +247,30 @@ describe('P92.79 — AI quota visibility', () => {
     assert.ok(src.includes('AI_GLOBAL_DAILY_CAP'), 'global daily cap');
   });
 });
+
+describe('P92.80 — deleted tooling reimplemented + Z2M gap imports', () => {
+  it('z2m-gap-audit tool exists and produces a state report', () => {
+    const src = read('tools/ci/z2m-gap-audit.js');
+    assert.ok(src.includes('exposeHints'), 'expose hints');
+    assert.ok(fs.existsSync('.github/state/z2m-gap-audit.json'), 'state report');
+  });
+  it('Z2M-known TRV brand mfrs are claimed by radiator_valve', () => {
+    const rv = JSON.parse(read('drivers/radiator_valve/driver.compose.json'));
+    const mfrs = rv.zigbee.manufacturerName.join(' ').toLowerCase();
+    for (const b of ['thaleos', 'hy368', 'tv02-zigbee', 'tsl-trv-tv01zg', 'tesla smart']) {
+      assert.ok(mfrs.includes(b), b + ' claimed');
+    }
+  });
+  it('aoyan water leak + ZF24 corrupted-prefix presence are covered', () => {
+    const wl = JSON.parse(read('drivers/water_leak_sensor/driver.compose.json'));
+    assert.ok(wl.zigbee.manufacturerName.some((m) => /aoyan/i.test(m)), 'aoyan claimed');
+    const pr = JSON.parse(read('drivers/presence_sensor_radar/driver.compose.json'));
+    assert.ok(pr.zigbee.manufacturerName.some((m) => /tze28c1000000/i.test(m)), 'ZF24 claimed');
+  });
+  it('deleted functions survive elsewhere (workflows consolidated, magic packet inline)', () => {
+    assert.ok(fs.existsSync('.github/workflows/blakadder-fetch.yml'), 'z2m fetch workflow');
+    assert.ok(fs.existsSync('.github/workflows/monthly-community-sync.yml'), 'community sync');
+    const mixin = read('lib/mixins/PhysicalButtonMixin.js');
+    assert.ok(mixin.includes('_sendTuyaMagicPacket'), 'magic packet inline (MagicPacketRegistry superseded)');
+  });
+});

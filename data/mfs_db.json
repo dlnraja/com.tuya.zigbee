@@ -1,4 +1,13 @@
 {
+  "3012732": {
+    "driverId": "radiator_valve",
+    "source": "z2m-gap-audit-p92.80",
+    "modelIds": [
+      "TS0601_thermostat",
+      "TV02-Zigbee",
+      "TS0601"
+    ]
+  },
   "_meta": {
     "version": "1.0.0",
     "description": "MFS Unified Database - Manufacturer Fingerprint Schema",
@@ -328499,5 +328508,125 @@
       "TS0601"
     ],
     "note": "4-way relay: DP1-8 scenes, DP24-27 relays L1-L4, DP120-122 covers, DP133-148 lights"
+  },
+  "thaleos": {
+    "driverId": "radiator_valve",
+    "source": "z2m-gap-audit-p92.80",
+    "modelIds": [
+      "TS0601_thermostat",
+      "TV02-Zigbee",
+      "TS0601"
+    ]
+  },
+  "07732l": {
+    "driverId": "radiator_valve",
+    "source": "z2m-gap-audit-p92.80",
+    "modelIds": [
+      "TS0601_thermostat",
+      "TV02-Zigbee",
+      "TS0601"
+    ]
+  },
+  "p5630s": {
+    "driverId": "radiator_valve",
+    "source": "z2m-gap-audit-p92.80",
+    "modelIds": [
+      "TS0601_thermostat",
+      "TV02-Zigbee",
+      "TS0601"
+    ]
+  },
+  "emos": {
+    "driverId": "radiator_valve",
+    "source": "z2m-gap-audit-p92.80",
+    "modelIds": [
+      "TS0601_thermostat",
+      "TV02-Zigbee",
+      "TS0601"
+    ]
+  },
+  "hy368": {
+    "driverId": "radiator_valve",
+    "source": "z2m-gap-audit-p92.80",
+    "modelIds": [
+      "TS0601_thermostat",
+      "TV02-Zigbee",
+      "TS0601"
+    ]
+  },
+  "lsc smart connect": {
+    "driverId": "radiator_valve",
+    "source": "z2m-gap-audit-p92.80",
+    "modelIds": [
+      "TS0601_thermostat",
+      "TV02-Zigbee",
+      "TS0601"
+    ]
+  },
+  "tv02-zigbee": {
+    "driverId": "radiator_valve",
+    "source": "z2m-gap-audit-p92.80",
+    "modelIds": [
+      "TS0601_thermostat",
+      "TV02-Zigbee",
+      "TS0601"
+    ]
+  },
+  "tv01-zb": {
+    "driverId": "radiator_valve",
+    "source": "z2m-gap-audit-p92.80",
+    "modelIds": [
+      "TS0601_thermostat",
+      "TV02-Zigbee",
+      "TS0601"
+    ]
+  },
+  "tsl-trv-tv01zg": {
+    "driverId": "radiator_valve",
+    "source": "z2m-gap-audit-p92.80",
+    "modelIds": [
+      "TS0601_thermostat",
+      "TV02-Zigbee",
+      "TS0601"
+    ]
+  },
+  "tesla smart": {
+    "driverId": "radiator_valve",
+    "source": "z2m-gap-audit-p92.80",
+    "modelIds": [
+      "TS0601_thermostat",
+      "TV02-Zigbee",
+      "TS0601"
+    ]
+  },
+  "aoyan": {
+    "driverId": "water_leak_sensor",
+    "source": "z2m-gap-audit-p92.80",
+    "modelIds": [
+      "TS0207_water_leak_detector",
+      "ZG-204ZL",
+      "ZG-204ZM"
+    ]
+  },
+  "_tze28c1000000_twybxdzl": {
+    "driverId": "presence_sensor_radar",
+    "source": "z2m-gap-audit-p92.80",
+    "modelIds": [
+      "ZF24"
+    ]
+  },
+  "_tze28c1000000_hgeqeyuv": {
+    "driverId": "presence_sensor_radar",
+    "source": "z2m-gap-audit-p92.80",
+    "modelIds": [
+      "ZF24"
+    ]
+  },
+  "_tze28c1000000_pzm3wab5": {
+    "driverId": "presence_sensor_radar",
+    "source": "z2m-gap-audit-p92.80",
+    "modelIds": [
+      "ZF24"
+    ]
   }
 }
