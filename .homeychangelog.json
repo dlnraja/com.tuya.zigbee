@@ -1,6 +1,13 @@
 {
   "changelog": [
     {
+      "version": "9.0.386",
+      "date": "2026-07-31",
+      "channel": "test",
+      "en": "Full forum topic scan (2039 posts with images/links) + digest, sqcn0y re-added (purge), version alignment.",
+      "fr": "Scan complet du topic forum (2039 posts avec images/liens) + digest, sqcn0y ré-ajouté (purge), alignement version."
+    },
+    {
       "version": "9.0.385",
       "date": "2026-07-31",
       "channel": "test",
@@ -1504,6 +1511,7 @@
     "fr": "Blindage OTA : SHA512 vérifié avant flash, validation du header, timeout + limite de taille, validation du schéma de l'index."
   },
   "9.0.386": {
-    "en": "OTA hardening: SHA512 verified before flashing, header validation, download timeout + size cap, index schema validation."
+    "en": "Full forum topic scan (2039 posts with images/links) + digest, sqcn0y re-added (purge), version alignment.",
+    "fr": "Scan complet du topic forum (2039 posts avec images/liens) + digest, sqcn0y ré-ajouté (purge), alignement version."
   }
 }
