@@ -1,6 +1,13 @@
 {
   "changelog": [
     {
+      "version": "9.0.388",
+      "date": "2026-07-31",
+      "channel": "test",
+      "en": "Central destroyed guards on capability ops, linear battery formulas eliminated.",
+      "fr": "Gardes destroyed centrales sur les opérations capabilities, formules batterie linéaires éliminées."
+    },
+    {
       "version": "9.0.387",
       "date": "2026-07-31",
       "channel": "test",
@@ -1526,6 +1533,7 @@
     "fr": "Blindage des envois DP par flow + handler typé avec validation par type."
   },
   "9.0.388": {
-    "en": "Flow DP send hardening + typed handler with per-type validation."
+    "en": "Central destroyed guards on capability ops, linear battery formulas eliminated.",
+    "fr": "Gardes destroyed centrales sur les opérations capabilities, formules batterie linéaires éliminées."
   }
 }

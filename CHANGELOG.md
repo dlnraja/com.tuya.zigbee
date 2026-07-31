@@ -4,6 +4,15 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
+## v9.0.388 (2026-07-31)
+
+### Fixed
+- **Central `_destroyed` guards** on `safeSetCapabilityValue`, `addCapability` and `removeCapability` in `TuyaZigbeeDevice` — one guard at the root covers ALL call paths (raw `setCapabilityValue` routes through it), closing the entire class of ~800 lifecycle findings (post-deletion capability operations crashing or firing).
+- **Linear battery formulas eliminated** (banned pattern): `DataRecoveryManager` and `XiaomiSpecialHandler` now use the non-linear `UnifiedBatteryHandler` CR2032 curve; removed my linear fallback in `BaseUnifiedDevice` (UBH has its own safe fallback).
+- Verified: tolerant settings-key fallbacks (`zb_model_id || zb_modelId`) are intentional; 42 "wildcard fingerprint" findings are comment-text false positives.
+
+---
+
 ## v9.0.387 (2026-07-31)
 
 ### Security

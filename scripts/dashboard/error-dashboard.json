@@ -1,0 +1,109 @@
+{
+  "timestamp": "2026-07-31T01:39:42.504Z",
+  "total": 1301,
+  "errors": 909,
+  "warnings": 259,
+  "info": 133,
+  "fixable": 1119,
+  "byRule": {
+    "MISSING_MARK_APP_COMMAND": 257,
+    "MISSING_DESTROY_GUARD": 396,
+    "RAW_SET_CAPABILITY": 416,
+    "GLOBAL_SETTIMEOUT": 2,
+    "HARDCODED_DP_ID": 133,
+    "BANNED_WILDCARD_FP": 42,
+    "BANNED_LINEAR_BATTERY": 7,
+    "BANNED_ZB_MODELID": 27,
+    "BANNED_ZB_MANUFACTURERNAME": 21
+  },
+  "byCategory": {
+    "bidirectional-sync": 257,
+    "lifecycle": 814,
+    "maintainability": 133,
+    "fingerprint": 42,
+    "anti-pattern": 7,
+    "settings-key": 48
+  },
+  "topFiles": [
+    {
+      "file": "lib/battery/BatteryMasterEngine.js",
+      "count": 61
+    },
+    {
+      "file": "lib/registry/CentralizedDPRegistry.js",
+      "count": 23
+    },
+    {
+      "file": "lib/battery/UnifiedBatteryHandler.js",
+      "count": 16
+    },
+    {
+      "file": "lib/devices/BaseUnifiedDevice.js",
+      "count": 15
+    },
+    {
+      "file": "drivers/hvac_controller/driver.js",
+      "count": 14
+    },
+    {
+      "file": "drivers/radiator_valve_zigbee/driver.js",
+      "count": 14
+    },
+    {
+      "file": "lib/battery/BatteryCascadeEngine.js",
+      "count": 13
+    },
+    {
+      "file": "lib/battery/BatteryProfileDatabase.js",
+      "count": 13
+    },
+    {
+      "file": "drivers/rgb_bulb_E14/driver.js",
+      "count": 12
+    },
+    {
+      "file": "drivers/rgb_bulb_E27/driver.js",
+      "count": 12
+    },
+    {
+      "file": "drivers/rgb_ceiling_led_light/driver.js",
+      "count": 12
+    },
+    {
+      "file": "drivers/rgb_floor_led_light/driver.js",
+      "count": 12
+    },
+    {
+      "file": "drivers/rgb_led_light_bar/driver.js",
+      "count": 12
+    },
+    {
+      "file": "drivers/rgb_led_strip/driver.js",
+      "count": 12
+    },
+    {
+      "file": "drivers/rgb_led_strip_controller/driver.js",
+      "count": 12
+    },
+    {
+      "file": "drivers/rgb_mood_light/driver.js",
+      "count": 12
+    },
+    {
+      "file": "drivers/rgb_spot_GardenLight/driver.js",
+      "count": 12
+    },
+    {
+      "file": "drivers/rgb_spot_GU10/driver.js",
+      "count": 12
+    },
+    {
+      "file": "drivers/rgb_wall_led_light/driver.js",
+      "count": 12
+    },
+    {
+      "file": "drivers/smart_lcd_thermostat/driver.js",
+      "count": 12
+    }
+  ]
+}
