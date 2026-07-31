@@ -719,6 +719,17 @@
           "description": "Peter's devices + SOS fingerprint + LCD collision + security check"
         }
       ]
+    },
+    {
+      "version": "9.0.389",
+      "date": "2026-07-31",
+      "summary": "Self-improve weekly orchestrator + autonomous loop doc",
+      "changes": [
+        {
+          "type": "feature",
+          "description": "Weekly self-improve workflow chaining existing tools (product-reference, case fixer, docs index, script registry) gated by npm test"
+        }
+      ]
     }
   ],
   "5.12.0": {
