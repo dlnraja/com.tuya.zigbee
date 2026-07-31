@@ -105,6 +105,14 @@ jobs:
           node tools/ci/ai-quota-report.js >> $GITHUB_STEP_SUMMARY 2>&1 || true
           echo '```' >> $GITHUB_STEP_SUMMARY
 
+      - name: 🧠 AI DP extraction (500-char truncation, guarded chain)
+        continue-on-error: true
+        run: |
+          echo "## 🧠 AI DP extraction" >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+          node .github/scripts/ai-dp-extract.js >> $GITHUB_STEP_SUMMARY 2>&1 || true
+          echo '```' >> $GITHUB_STEP_SUMMARY
+
       - name: 💾 Commit improvements (only when tests are green)
         if: steps.tests.outcome == 'success'
         continue-on-error: true
