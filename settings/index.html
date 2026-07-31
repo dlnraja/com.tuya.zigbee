@@ -385,6 +385,13 @@
         <span class="sl"></span>
       </label>
     </div>
+    <div class="tr">
+      <div>
+        <b>Issue report endpoint (optional)</b><br>
+        <span style="font-size:11px;color:#666">Cloudflare Worker URL for automatic support reports. Empty = local-only (default, no network).</span>
+      </div>
+      <input type="text" id="ire" placeholder="https://….workers.dev" style="min-width:220px" onchange="setText('issue_report_endpoint',this.value)">
+    </div>
   </div>
 
   <div class="card" style="font-size:11px;color:#64748b;border-style:dashed;">
@@ -484,6 +491,14 @@
       if (!Homey) return;
       Homey.set(key, val, function(e) {
         if (e) { show('err-msg', 'Failed: ' + e.message); }
+      });
+    }
+
+    function setText(key, val) {
+      if (!Homey) return;
+      Homey.set(key, String(val || ''), function(e) {
+        if (e) { show('err-msg', 'Failed: ' + e.message); }
+        else { show('ok-msg', 'Saved'); }
       });
     }
 
@@ -611,6 +626,7 @@
       Homey.get('smartthings_client_id', function(e, v) { if (v) document.getElementById('st-cid').value = v; });
       Homey.get('smartthings_client_secret', function(e, v) { updateSTSecretStatus(!!v); });
       Homey.get('developer_debug_mode', function(e, v) { document.getElementById('dbg').checked = !!v; });
+      Homey.get('issue_report_endpoint', function(e, v) { if (v) document.getElementById('ire').value = v; });
       Homey.get('experimental_smart_adapt', function(e, v) { document.getElementById('sa').checked = !!v; });
       
       // Load and populate devices
