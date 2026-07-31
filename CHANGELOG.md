@@ -4,6 +4,13 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
+## v9.0.383 (2026-07-31)
+
+### Fixed
+- **51 critical ESLint errors fixed** (found by a full lib audit): phantom modules referenced after bot passes (`TuyaDataPointParser`, `EnergyCapabilityDetector`, `EnrichedDPMappings`, `DriverMappingLoader`, `ExoticQuirkEngine`, `UnifiedBatteryHandler`, `DataQuery`), bot-corrupted calls (`addCapability`/`removeCapability`/`setCapabilityValue` without `this.`, `cluster.Promise.resolve(bind(...))`, `triggerCard.Promise.resolve(trigger(...))`), `SmartClusterEngine` constructor missing `super()` (crashed on instantiation), 7 duplicate object keys silently overwriting data (LiFePO4, `_TZE204_lawxy9e2`, `_TZ3000_gwkzibhs`, `_TZE284_ltwbm23f`, SOIL_SENSOR, powerType, zemismart), `TuyaDeviceMixin` switch with 3× `case 1` (dead temperature/water blocks — restructured as capability-guarded checks), `new Promise(async ...)` anti-pattern, constant condition, duplicated `fastInitMode` getter.
+
+---
+
 ## v9.0.382 (2026-07-30)
 
 v9.0.381: chore: alignement version 9.0.381 + changelog [skip ci]

@@ -1,6 +1,13 @@
 {
   "changelog": [
     {
+      "version": "9.0.383",
+      "date": "2026-07-31",
+      "channel": "test",
+      "en": "51 critical ESLint errors fixed (phantom modules, this-less calls, missing super(), duplicate keys, dead switch cases).",
+      "fr": "51 erreurs ESLint critiques corrigées (modules fantômes, appels sans this, super() manquant, clés dupliquées, cases morts)."
+    },
+    {
       "version": "9.0.382",
       "date": "2026-07-30",
       "channel": "test",
@@ -1469,5 +1476,9 @@
   "9.0.382": {
     "en": "Key-version changelog format (required by headless homey publish), OTA guidance, Hue batch 4.",
     "fr": "Format clé-version du changelog (requis par homey publish headless), guidance OTA, batch Hue 4."
+  },
+  "9.0.383": {
+    "en": "51 critical ESLint errors fixed (phantom modules, this-less calls, missing super(), duplicate keys, dead switch cases).",
+    "fr": "51 erreurs ESLint critiques corrigées (modules fantômes, appels sans this, super() manquant, clés dupliquées, cases morts)."
   }
 }
