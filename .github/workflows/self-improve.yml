@@ -68,11 +68,12 @@ jobs:
         continue-on-error: true
         run: node tools/ci/build-firmware-updates.js --apply || true
 
-      - name: 📚 Refresh docs index + script registry
+      - name: 📚 Refresh docs index + script registry + README
         continue-on-error: true
         run: |
           node tools/ci/generate-docs-index.js || true
           node .github/scripts/generate-script-registry.js || true
+          node .github/scripts/generate-readme.js || true
 
       - name: 🧪 Full test suite (gate)
         id: tests
