@@ -788,7 +788,15 @@
       "_tze200_9CQCPKGB",
       "_tze200_DTZZIY1E",
       "_tze204_2AAELWXK",
-      "_tze204_3TOWULQD"
+      "_tze204_3TOWULQD",
+      "_tze204_dapwryy7",
+      "_TZE204_DAPWRYY7",
+      "_TZE204_dapwryy7",
+      "_tze204_DAPWRYY7",
+      "_tze284_dapwryy7",
+      "_TZE284_DAPWRYY7",
+      "_TZE284_dapwryy7",
+      "_tze284_DAPWRYY7"
     ],
     "productId": [
       "CK-BL702-MWS-01",
@@ -1678,6 +1686,15 @@
         "en": "Check Zigbee OTA Update",
         "fr": "Vérifier MàJ OTA",
         "nl": "Controleer op OTA-updates"
+      }
+    },
+    {
+      "id": "tuya_revive",
+      "title": {
+        "en": "Tuya Revive (device recovery)",
+        "fr": "Tuya Revive (récupération appareil)",
+        "nl": "Tuya Revive (apparaatherstel)",
+        "de": "Tuya Revive (Gerätewiederherstellung)"
       }
     }
   ],

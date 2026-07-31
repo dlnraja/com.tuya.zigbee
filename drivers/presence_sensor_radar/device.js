@@ -289,6 +289,23 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     const config = this._getRadarConfig();
     const mapping = config.dpMap?.[dp];
 
+    // v10.9.0 (z2m/forum lesson): the ZY-M100-24GV3 firmware (_TZE204_ya4ft0w4)
+    // emits 0 values in endless loops (documented firmware bug, no update
+    // available). Drop 0-valued reports from THIS mfr on numeric DPs —
+    // a real 0 (nobody present) is still surfaced via absence timeout,
+    // not via the buggy stream.
+    if (rawValue === 0 || rawValue === '0') {
+      const mfr = String(this.getSetting?.('zb_manufacturer_name') || '').toLowerCase();
+      if (mfr === '_tze204_ya4ft0w4' && mapping && mapping.type !== 'bool') {
+        if (!this._zeroFilterLogCount) {this._zeroFilterLogCount = 0;}
+        this._zeroFilterLogCount++;
+        if (this._zeroFilterLogCount <= 3 || this._zeroFilterLogCount % 60 === 0) {
+          this.log(`[RADAR] 🛡️ Zero-value report dropped (ZY-M100 firmware bug, DP${dp})`);
+        }
+        return;
+      }
+    }
+
     if (mapping) {
       this._sendTimeSyncIfNeeded?.();
       this.updateRadioActivity?.();
@@ -306,6 +323,14 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     const config = this._getRadarConfig();
     const dp = parseInt(dpId, 10);
     const mapping = config.dpMap?.[dp];
+
+    // v10.9.0: same ZY-M100 zero-filter as _handleDP (both entry points)
+    if (value === 0 || value === '0') {
+      const mfr = String(this.getSetting?.('zb_manufacturer_name') || '').toLowerCase();
+      if (mfr === '_tze204_ya4ft0w4' && mapping && mapping.type !== 'bool') {
+        return;
+      }
+    }
 
     // 1. Process via static config if matched
     if (mapping) {
