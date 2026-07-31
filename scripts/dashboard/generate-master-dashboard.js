@@ -156,12 +156,22 @@ function generateMasterDashboard(metrics) {
 
   const sections = [];
 
+  // v9.0.383: vrai total des empreintes revendiquées par les drivers (app.json),
+  // pas seulement la taille de mfs_db
+  let driverFpTotal = 0;
+  try {
+    const appJson = JSON.parse(fs.readFileSync(path.join(ROOT, 'app.json'), 'utf8'));
+    for (const d of appJson.drivers || []) {
+      driverFpTotal += (d.zigbee?.manufacturerName || []).length;
+    }
+  } catch { /* keep 0 */ }
+
   // === SECTION 1: Executive Summary ===
   sections.push(T.section('Executive Summary', `
     <div class="grid">
       ${T.metricCard('Project Health', health.score + '/100', health.score >= 80 ? 'Healthy' : health.score >= 60 ? 'Needs Attention' : 'Critical', health.score >= 80 ? T.THEME.green : health.score >= 60 ? T.THEME.yellow : T.THEME.red)}
       ${T.metricCard('Total Drivers', drivers.total, `${drivers.protocols.zigbee} Zigbee + ${drivers.protocols.wifi} WiFi`)}
-      ${T.metricCard('Fingerprints', fingerprints.totalDB.toLocaleString(), `${fingerprints.uniqueManufacturerNames} unique manufacturers`, T.THEME.green)}
+      ${T.metricCard('Fingerprint claims (drivers)', driverFpTotal.toLocaleString(), `entrées mfr dans app.json (variantes de casse incluses) · mfs_db: ${fingerprints.totalDB.toLocaleString()}`, T.THEME.green)}
       ${T.metricCard('Flow Cards', flowCards.total, `T: ${flowCards.byType.triggers} | C: ${flowCards.byType.conditions} | A: ${flowCards.byType.actions}`)}
       ${T.metricCard('Lines of Code', lib.totalLines.toLocaleString(), `${lib.totalFiles} library files`, T.THEME.blue)}
       ${T.metricCard('Unique Capabilities', drivers.uniqueCapabilities.length, 'Across all drivers')}
