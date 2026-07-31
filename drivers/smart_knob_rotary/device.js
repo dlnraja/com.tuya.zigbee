@@ -266,12 +266,17 @@ class SmartKnobRotaryDevice extends TuyaZigbeeDevice {
       const originalHandleFrame = endpoint.handleFrame?.bind(endpoint);
       endpoint.handleFrame = (clusterId, frame, meta) => {
         if (clusterId === 5 || clusterId === 0x0005) {
-          if (frame && frame.length >= 4) {
-            const cmdId = frame[0];
-            if (cmdId === 0x05) {
-              const sceneId = frame[3];
-              this._handleSceneCommand(sceneId);
-            }
+          // v10.6.0 FIX: `frame` is a raw Buffer with the full ZCL header —
+          // `frame[0]` is the frame CONTROL byte (0x01), never cmdId 0x05,
+          // so this listener never fired. Parse the header properly; a scenes
+          // recall payload is groupId(uint16) + sceneId(uint8).
+          const { parseZclHeader } = require('../../lib/zigbee/ZigbeeHelpers');
+          const data = Buffer.isBuffer(frame) ? frame
+            : Array.isArray(frame) ? Buffer.from(frame) : null;
+          const hdr = data ? parseZclHeader(data) : null;
+          if (hdr && hdr.cmdId === 0x05 && data.length >= hdr.payloadOffset + 3) {
+            const sceneId = data[hdr.payloadOffset + 2];
+            this._handleSceneCommand(sceneId);
           }
         }
         if (originalHandleFrame) {
