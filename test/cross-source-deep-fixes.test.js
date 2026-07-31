@@ -294,3 +294,25 @@ describe('P92.81 — AI DP extraction (raccourci Gemini, guarded)', () => {
     assert.ok(!wf.includes('*/6 * * *'), 'no 6h cron (quota doctrine)');
   });
 });
+
+describe('P92.82 — naive DP auto-guesser hardened (external review)', () => {
+  it('autoMap requires >=3 consistent samples before writing', () => {
+    const src = read('lib/utils/UnknownDPLogger.js');
+    assert.ok(src.includes('(seen.count || 0) < 3'), 'min 3 samples');
+    assert.ok(src.includes('spread'), 'consistency check');
+  });
+  it('capability choice is device-type aware (climate: humidity first; contact: contact first)', () => {
+    const src = read('lib/utils/UnknownDPLogger.js');
+    assert.ok(src.includes('deviceIsClimate'), 'climate-aware pct ordering');
+    assert.ok(src.includes('deviceIsContact'), 'contact-aware bool ordering');
+    const pctIdx = src.indexOf('deviceIsClimate');
+    const ordered = src.slice(pctIdx, pctIdx + 400);
+    assert.ok(ordered.includes('measure_humidity'), 'humidity preferred on climate devices');
+  });
+  it('no blind auto-merge: telemetry is opt-in only, matcher registry preferred', () => {
+    const revive = read('lib/tuya/TuyaZigbeeDevice.js');
+    assert.ok(revive.includes('NO automatic telemetry'), 'opt-in report (P92.78)');
+    const mapper = read('lib/tuya/TuyaUniversalMapper.js');
+    assert.ok(mapper.includes('_getRegistryMapping'), 'registry tier preferred over heuristics');
+  });
+});
