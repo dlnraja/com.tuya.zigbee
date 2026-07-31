@@ -133594,7 +133594,7 @@
     "modelIdsCount": 18
   },
   "_TZ3000_6l1pjfqe": {
-    "driverId": "button_wireless_2",
+    "driverId": "plug_energy_monitor",
     "source": "auto-sync",
     "modelIds": [
       "A11Z",
@@ -134815,7 +134815,7 @@
     "modelIdsCount": 18
   },
   "_TZ3000_46t1rvdu": {
-    "driverId": "button_wireless_2",
+    "driverId": "switch_1gang",
     "source": "auto-sync",
     "modelIds": [
       "01MINIZB",
@@ -137321,7 +137321,7 @@
     "modelIdsCount": 4
   },
   "_TZ3040_FWXUZCF4": {
-    "driverId": "button_wireless_4",
+    "driverId": "sensor_motion_presence",
     "source": "auto-sync",
     "modelIds": [
       "Excellux",
@@ -165279,7 +165279,7 @@
     "modelIdsCount": 4
   },
   "_TZB210_lmqquxus": {
-    "driverId": "curtain_motor_shutter",
+    "driverId": "light_bulb_rgb",
     "source": "auto-sync",
     "modelIds": [
       "E11-G13",
@@ -166873,7 +166873,7 @@
     "modelIdsCount": 4
   },
   "_TZE200_dhke3p9w": {
-    "driverId": "dimmer_wall_1gang",
+    "driverId": "climate_sensor",
     "source": "auto-sync",
     "modelIds": [
       "TS0203",
@@ -166885,7 +166885,7 @@
     "modelIdsCount": 4
   },
   "_TZE284_dhke3p9w": {
-    "driverId": "dimmer_wall_1gang",
+    "driverId": "climate_sensor",
     "source": "auto-sync",
     "modelIds": [
       "TS0203",
@@ -167722,7 +167722,7 @@
     "modelIdsCount": 17
   },
   "_TZ3000_t9qqxn70": {
-    "driverId": "dimmer_wall_1gang",
+    "driverId": "climate_sensor",
     "source": "auto-sync",
     "modelIds": [
       "TS0203",
@@ -167758,7 +167758,7 @@
     "modelIdsCount": 4
   },
   "_TZE200_nvodulvi": {
-    "driverId": "dimmer_wall_1gang",
+    "driverId": "climate_sensor",
     "source": "auto-sync",
     "modelIds": [
       "TS0203",
@@ -170598,7 +170598,7 @@
     "modelIdsCount": 50
   },
   "_tze284_kow4ok3t": {
-    "driverId": "generic_diy",
+    "driverId": "switch_4_gang_metering",
     "source": "auto-sync",
     "modelIds": [
       "0x8040",
@@ -171269,7 +171269,7 @@
     "modelIdsCount": 1
   },
   "_TZE284_2se8efxh": {
-    "driverId": "generic_diy",
+    "driverId": "water_leak_sensor",
     "source": "auto-sync",
     "modelIds": [
       "3315-S",
@@ -172068,7 +172068,7 @@
     "source": "auto-sync"
   },
   "_TZ3210_jaap6jeb": {
-    "driverId": "generic_tuya",
+    "driverId": "bulb_rgbw",
     "source": "auto-sync",
     "modelIds": [
       "3305-S",
@@ -177693,7 +177693,7 @@
     "modelIdsCount": 38
   },
   "_TZE204_dcnsggvz": {
-    "driverId": "plug_energy_monitor",
+    "driverId": "dimmer_wall_1gang",
     "source": "auto-sync",
     "modelIds": [
       "TS0001",
@@ -182374,7 +182374,7 @@
     "modelIdsCount": 23
   },
   "_TZE204_r0jdjrvi": {
-    "driverId": "presence_sensor_radar",
+    "driverId": "curtain_motor_tilt",
     "source": "auto-sync",
     "modelIds": [
       "CK-BL702-MWS-01",
@@ -212362,7 +212362,7 @@
     "source": "auto-sync"
   },
   "_tz3000_abrsvsou": {
-    "driverId": "switch_4_gang_metering",
+    "driverId": "button_wireless_4",
     "source": "auto-sync",
     "modelIds": [
       "TS0004"
@@ -212393,7 +212393,7 @@
     "modelIdsCount": 3
   },
   "_tz3000_4fjiwweb": {
-    "driverId": "switch_4_gang_metering",
+    "driverId": "button_wireless_4",
     "source": "auto-sync",
     "modelIds": [
       "TS0004"
@@ -212402,7 +212402,7 @@
     "modelIdsCount": 1
   },
   "_tz3000_uri7ongn": {
-    "driverId": "switch_4_gang_metering",
+    "driverId": "power_meter",
     "source": "auto-sync",
     "modelIds": [
       "TS0004"
@@ -212411,7 +212411,7 @@
     "modelIdsCount": 1
   },
   "_tz3000_qja6nq5z": {
-    "driverId": "switch_4_gang_metering",
+    "driverId": "smart_knob_rotary",
     "source": "auto-sync",
     "modelIds": [
       "ERS-10TZBVK-AA",
@@ -212435,7 +212435,7 @@
     "modelIdsCount": 3
   },
   "_tz3000_gwkzibhs": {
-    "driverId": "switch_4_gang_metering",
+    "driverId": "smart_knob_rotary",
     "source": "auto-sync",
     "modelIds": [
       "ERS-10TZBVK-AA",
@@ -212470,7 +212470,7 @@
     "modelIdsCount": 3
   },
   "_TZ3000_ugi8ky6u": {
-    "driverId": "switch_4_gang_metering",
+    "driverId": "smart_knob_rotary",
     "source": "auto-sync",
     "modelIds": [
       "ERS-10TZBVK-AA",
