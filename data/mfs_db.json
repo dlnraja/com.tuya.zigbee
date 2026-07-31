@@ -149944,40 +149944,14 @@
     "modelIdsCount": 28
   },
   "_TZE200_YE5JKFSB": {
-    "driverId": "climate_sensor",
+    "driverId": "radiator_valve",
     "source": "auto-sync",
     "modelIds": [
-      "CK-TLSR8656-SS5-01(7014)",
-      "Excellux",
-      "RH3052",
-      "SM0201",
-      "SNZB-02",
-      "SNZB-02B",
-      "SNZB-02D",
-      "SNZB-02DR2",
-      "SNZB-02LD",
-      "SNZB-02M",
-      "SNZB-02P",
-      "SNZB-02WD",
-      "TH01",
-      "THS317-ET",
-      "TS0201",
-      "TS0202",
-      "TS0222",
-      "TS0601",
-      "TS1201",
-      "TY0201",
-      "WSDCGQ01LM",
-      "WSDCGQ11LM",
-      "WSDCGQ12LM",
-      "ZG-227Z",
-      "ZG-227ZL",
-      "lumi.sensor_ht",
-      "lumi.sensor_ht.agl02",
-      "lumi.weather"
+      "TS0601"
     ],
     "pid": "CK-TLSR8656-SS5-01(7014)",
-    "modelIdsCount": 28
+    "modelIdsCount": 28,
+    "note": "TRV floodeur (z2m #17833) — RX shedding actif"
   },
   "_TZE200_YENBR4OM": {
     "driverId": "climate_sensor",
@@ -150628,40 +150602,14 @@
     "modelIdsCount": 28
   },
   "_TZE200_ZNZS7YAW": {
-    "driverId": "climate_sensor",
+    "driverId": "wall_thermostat",
     "source": "auto-sync",
     "modelIds": [
-      "CK-TLSR8656-SS5-01(7014)",
-      "Excellux",
-      "RH3052",
-      "SM0201",
-      "SNZB-02",
-      "SNZB-02B",
-      "SNZB-02D",
-      "SNZB-02DR2",
-      "SNZB-02LD",
-      "SNZB-02M",
-      "SNZB-02P",
-      "SNZB-02WD",
-      "TH01",
-      "THS317-ET",
-      "TS0201",
-      "TS0202",
-      "TS0222",
-      "TS0601",
-      "TS1201",
-      "TY0201",
-      "WSDCGQ01LM",
-      "WSDCGQ11LM",
-      "WSDCGQ12LM",
-      "ZG-227Z",
-      "ZG-227ZL",
-      "lumi.sensor_ht",
-      "lumi.sensor_ht.agl02",
-      "lumi.weather"
+      "TS0601"
     ],
     "pid": "CK-TLSR8656-SS5-01(7014)",
-    "modelIdsCount": 28
+    "modelIdsCount": 28,
+    "note": "BHT-006 floodeur (z2m #17833) — RX shedding actif"
   },
   "_TZE200_ZO0CFEKV": {
     "driverId": "climate_sensor",
@@ -155308,40 +155256,14 @@
     "modelIdsCount": 28
   },
   "_TZE204_YE5JKFSB": {
-    "driverId": "climate_sensor",
+    "driverId": "radiator_valve",
     "source": "auto-sync",
     "modelIds": [
-      "CK-TLSR8656-SS5-01(7014)",
-      "Excellux",
-      "RH3052",
-      "SM0201",
-      "SNZB-02",
-      "SNZB-02B",
-      "SNZB-02D",
-      "SNZB-02DR2",
-      "SNZB-02LD",
-      "SNZB-02M",
-      "SNZB-02P",
-      "SNZB-02WD",
-      "TH01",
-      "THS317-ET",
-      "TS0201",
-      "TS0202",
-      "TS0222",
-      "TS0601",
-      "TS1201",
-      "TY0201",
-      "WSDCGQ01LM",
-      "WSDCGQ11LM",
-      "WSDCGQ12LM",
-      "ZG-227Z",
-      "ZG-227ZL",
-      "lumi.sensor_ht",
-      "lumi.sensor_ht.agl02",
-      "lumi.weather"
+      "TS0601"
     ],
     "pid": "CK-TLSR8656-SS5-01(7014)",
-    "modelIdsCount": 28
+    "modelIdsCount": 28,
+    "note": "TRV floodeur (z2m #17833) — RX shedding actif"
   },
   "_TZE204_YJJDCQSQ": {
     "driverId": "climate_sensor",
@@ -159577,40 +159499,14 @@
     "modelIdsCount": 28
   },
   "_TZE284_YE5JKFSB": {
-    "driverId": "climate_sensor",
+    "driverId": "radiator_valve",
     "source": "auto-sync",
     "modelIds": [
-      "CK-TLSR8656-SS5-01(7014)",
-      "Excellux",
-      "RH3052",
-      "SM0201",
-      "SNZB-02",
-      "SNZB-02B",
-      "SNZB-02D",
-      "SNZB-02DR2",
-      "SNZB-02LD",
-      "SNZB-02M",
-      "SNZB-02P",
-      "SNZB-02WD",
-      "TH01",
-      "THS317-ET",
-      "TS0201",
-      "TS0202",
-      "TS0222",
-      "TS0601",
-      "TS1201",
-      "TY0201",
-      "WSDCGQ01LM",
-      "WSDCGQ11LM",
-      "WSDCGQ12LM",
-      "ZG-227Z",
-      "ZG-227ZL",
-      "lumi.sensor_ht",
-      "lumi.sensor_ht.agl02",
-      "lumi.weather"
+      "TS0601"
     ],
     "pid": "CK-TLSR8656-SS5-01(7014)",
-    "modelIdsCount": 28
+    "modelIdsCount": 28,
+    "note": "TRV floodeur (z2m #17833) — RX shedding actif"
   },
   "_TZE284_YJJDCQSQ": {
     "driverId": "climate_sensor",
