@@ -4,6 +4,16 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
+## [5.12.46] - 2026-07-31
+
+Stability line (branch `stable-v5`, production). Backports from master 9.0.387.
+
+### Security
+- Flow DP send hardening: DP number and value validation on tuya_dp_send,
+  real handler with per-type validation for tuya_dp_send_typed.
+
+---
+
 ## [5.12.45] - 2026-07-31
 
 Stability line (branch `stable-v5`, production). Backports from master 9.0.385.
