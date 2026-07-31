@@ -125,6 +125,15 @@
         "en": "Check Zigbee OTA Update",
         "fr": "Vérifier MàJ OTA"
       }
+    },
+    {
+      "id": "tuya_revive",
+      "title": {
+        "en": "Tuya Revive (device recovery)",
+        "fr": "Tuya Revive (récupération appareil)",
+        "nl": "Tuya Revive (apparaatherstel)",
+        "de": "Tuya Revive (Gerätewiederherstellung)"
+      }
     }
   ],
   "id": "hybrid_switch_sensor",

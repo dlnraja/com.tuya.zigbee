@@ -147,3 +147,32 @@ describe('P92.73 — TS0601 flooding thermostats routing (z2m #17833)', () => {
     }
   });
 });
+
+describe('P92.74 — To-Do cross-source enrichments', () => {
+  it('ZG-205Z presence sensor is not in climate_sensor', () => {
+    const climate = JSON.parse(read('drivers/climate_sensor/driver.compose.json'));
+    assert.ok(!/dapwryy7/i.test(climate.zigbee.manufacturerName.join(' ')));
+    const radar = JSON.parse(read('drivers/presence_sensor_radar/driver.compose.json'));
+    assert.ok(radar.zigbee.manufacturerName.some((m) => /dapwryy7/i.test(m)));
+  });
+  it('ZY-M100 zero-emission firmware filter is present on both DP entry points', () => {
+    const src = read('drivers/presence_sensor_radar/device.js');
+    assert.ok((src.match(/_tze204_ya4ft0w4/g) || []).length >= 2, 'filter on _handleDP + onTuyaDP');
+  });
+  it('battery queries are spaced to 4h for battery devices (ZC-LS02 lesson)', () => {
+    const src = read('lib/helpers/BatteryRouter.js');
+    assert.ok(src.includes('14400000'), '4h poll interval');
+  });
+  it('tuya_revive maintenance action exists and runs the 5-step sequence', () => {
+    const src = read('lib/tuya/TuyaZigbeeDevice.js');
+    assert.ok(src.includes('_tuyaReviveRoutine'), 'revive routine');
+    assert.ok(src.includes('Magic packet (re-enchant)'), 'magic packet step');
+    const b4 = JSON.parse(read('drivers/button_wireless_4/driver.compose.json'));
+    assert.ok((b4.maintenanceActions || []).some((a) => a.id === 'tuya_revive'), 'declared in drivers');
+  });
+  it('flood alert notification fires at most once per device per day', () => {
+    const src = read('lib/tuya/TuyaZigbeeDevice.js');
+    assert.ok(src.includes('last_flood_alert_at'), 'daily flood alert');
+    assert.ok(src.includes('86400000'), '24h window');
+  });
+});
