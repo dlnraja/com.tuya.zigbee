@@ -128,4 +128,20 @@ describe('P92.64 — button cross-source enrichment', () => {
         `${d} exposes the setting`);
     }
   });
+
+  it('Hue RWL022/Aqara: dropdown matrix card exists, covers all states, and is fired centrally', () => {
+    const card = JSON.parse(read('.homeycompose/flow/triggers/button_matrix.json'));
+    assert.strictEqual(card.id, 'button_matrix');
+    const actions = card.args.find((a) => a.name === 'action').values.map((v) => v.id);
+    for (const a of ['single', 'double', 'long', 'triple', 'release']) {
+      assert.ok(actions.includes(a), `matrix covers ${a}`);
+    }
+    const buttons = card.args.find((a) => a.name === 'button').values.map((v) => v.id);
+    assert.deepStrictEqual(buttons, ['1', '2', '3', '4', '5', '6', '7', '8']);
+    const src = read('lib/devices/ButtonDevice.js');
+    assert.ok(src.includes("'button_matrix'"), 'matrix fired from triggerButtonPress');
+    assert.ok(src.includes("action: 'release'"), 'matrix fired for hold-release');
+    // _tryCard must tolerate both device-card and app-card (device arg) semantics
+    assert.ok(src.includes('getTriggerCard(cardId)'), 'dual-semantics fallback in _tryCard');
+  });
 });
