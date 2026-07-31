@@ -34,7 +34,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.384 |
+| **App Version** | v9.0.386 |
 | **Device Fingerprints** | 10,668+ |
 | **Unique Product IDs** | 571 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
@@ -102,7 +102,9 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | Version | Changes |
 |---------|---------|
 | **vchangelog** | [object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object  |
-| **v9.0.384** | 51 critical ESLint errors fixed (phantom modules, this-less calls, missing super(), duplicate keys, dead switch cases). |
+| **v9.0.386** | OTA hardening: SHA512 verified before flashing, header validation, download timeout + size cap, index schema validation. |
+| **v9.0.385** | OTA hardening: SHA512 verified before flashing, header validation, download timeout + size cap, index schema validation. |
+| **v9.0.384** | Dashboards: navigation fixed (hub/finder/inbox links), precise fingerprint metric, version alignment. |
 | **v9.0.383** | 51 critical ESLint errors fixed (phantom modules, this-less calls, missing super(), duplicate keys, dead switch cases). |
 | **v9.0.382** | Key-version changelog format (required by headless homey publish), OTA guidance, Hue batch 4. |
 | **v9.0.381** | Changelog backticks stripped (publish extractor fix), publish-size bundle excludes product-reference, version alignment. |
@@ -114,8 +116,6 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | **v9.0.375** | Product reference DB (9027 fingerprints: vendor/model/battery/energy/variants), energy consumption reference for the ... |
 | **v9.0.374** | v9.0.373: Unknown device prevention (case), Publish compactor, Added '_TZE204_kwi6bbk4' (ZHA source) to climate_senso... |
 | **v9.0.373** | Case-variant completeness (4950 fingerprints, unknown device prevention) + publish compactor counts case groups (0 ob... |
-| **v9.0.372** | v9.0.371: 10 drivers were broken at load time, 'UniversalTuyaParser' fixed earlier (37 undefined 'capability' shortha... |
-| **v9.0.371** | 10 drivers fixed at load time (bot-corrupted imports), ZCL measuredValue parsed spec-exactly, new smoke/syntax/dead-m... |
 
 <!-- CHANGELOG_END -->
 
