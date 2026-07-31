@@ -1,6 +1,13 @@
 {
   "changelog": [
     {
+      "version": "9.0.384",
+      "date": "2026-07-31",
+      "channel": "test",
+      "en": "Dashboards: navigation fixed (hub/finder/inbox links), precise fingerprint metric, version alignment.",
+      "fr": "Dashboards : navigation corrigée (liens hub/finder/inbox), métrique empreintes précise, alignement version."
+    },
+    {
       "version": "9.0.383",
       "date": "2026-07-31",
       "channel": "test",
@@ -1482,6 +1489,7 @@
     "fr": "51 erreurs ESLint critiques corrigées (modules fantômes, appels sans this, super() manquant, clés dupliquées, cases morts)."
   },
   "9.0.384": {
-    "en": "51 critical ESLint errors fixed (phantom modules, this-less calls, missing super(), duplicate keys, dead switch cases)."
+    "en": "Dashboards: navigation fixed (hub/finder/inbox links), precise fingerprint metric, version alignment.",
+    "fr": "Dashboards : navigation corrigée (liens hub/finder/inbox), métrique empreintes précise, alignement version."
   }
 }
