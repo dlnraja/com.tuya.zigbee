@@ -129,6 +129,19 @@ async function main() {
 
   fs.mkdirSync(path.dirname(OUT), { recursive: true });
   fs.writeFileSync(OUT, JSON.stringify(results, null, 1));
+
+  // v10.17.0 (P92.88): quota-aware deferral — if the AI chain was exhausted
+  // (budgetAllows blocked every provider), the task is recorded as deferred
+  // and will be auto-resumed by the next self-improve run after cooldown.
+  try {
+    const qr = require('./quota-resume');
+    if (results.aiUnavailable > 0 || (blocks.length > 0 && results.extractions.length === 0 && results.skipped > 0)) {
+      qr.defer('ai-dp-extract', { blocks: blocks.length, reason: 'ai-chain exhausted or unavailable' });
+    } else if (results.extractions.length > 0) {
+      qr.complete('ai-dp-extract');
+    }
+  } catch { /* quota-resume optional */ }
+
   console.log(`[ai-dp-extract] ${results.extractions.length} extractions conservées | ${results.skipped} ignorées | aucune fusion automatique (revue curée requise)`);
 }
 

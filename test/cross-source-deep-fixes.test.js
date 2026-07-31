@@ -393,3 +393,21 @@ describe('P92.85 — capabilities hygiene', () => {
     }
   });
 });
+
+describe('P92.88 — quota-resume (deferral + autonomous resume)', () => {
+  it('defer/complete/processPending lifecycle works', () => {
+    const src = read('.github/scripts/quota-resume.js');
+    assert.ok(src.includes('processPending'), 'resume engine');
+    assert.ok(src.includes('canRun'), 'budget gate');
+    assert.ok(src.includes('quota-deferred.json'), 'state file');
+  });
+  it('ai-dp-extract defers when the AI chain is exhausted', () => {
+    const src = read('.github/scripts/ai-dp-extract.js');
+    assert.ok(src.includes('quota-resume'), 'deferral wired');
+    assert.ok(src.includes('defer('), 'defer call');
+  });
+  it('self-improve resumes deferred tasks first', () => {
+    const wf = read('.github/workflows/self-improve.yml');
+    assert.ok(wf.includes('Resume quota-deferred tasks'), 'resume step at start');
+  });
+});
