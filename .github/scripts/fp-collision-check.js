@@ -77,7 +77,11 @@ function collectCollisions() {
         // sensitive). This aligns with driver-conflict-audit.js (official) which
         // reports 0 mfr+pid duplicates — the previous lower-case logic produced
         // 3,274 false positives from case-only differences.
-        const key = `${String(mfr)}|${String(pid)}`;
+        // v10.17.4 (P92.89e): with the 4-combo case coverage (P92.62), every
+        // shared pair now appears as 4 case forms → 4x false "collisions".
+        // The collision key is case-NORMALIZED (lowercase): same underlying
+        // pair in the same drivers = ONE collision, whatever the case form.
+        const key = `${String(mfr).toLowerCase()}|${String(pid)}`;
         if (!map.has(key)) map.set(key, []);
         map.get(key).push(driverId);
       }
