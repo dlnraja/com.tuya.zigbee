@@ -110,4 +110,22 @@ describe('P92.64 — button cross-source enrichment', () => {
     assert.ok(src.includes('_lastRotationSpeed'), 'speed detection wired');
     assert.ok(src.includes("'slow'") && src.includes("'fast'"), 'slow/fast mapping (ZHA 13/37)');
   });
+
+  it('SCENE_MODE_RESEARCH #1: manual mode toggle (0x8004) is watched and synced', () => {
+    const src = read('lib/devices/ButtonDevice.js');
+    assert.ok(src.includes('_registerSceneModeAttributeListener'), 'mode attribute listener registered');
+    assert.ok(src.includes('Manual mode toggle detected'), 'manual toggle handled');
+    assert.ok(src.includes('scene_mode_switch_failed'), 'failure flag persisted for diagnostics (#3)');
+  });
+
+  it('Hubitat: reverse_button_order setting exists and remaps at the central router', () => {
+    const src = read('lib/devices/ButtonDevice.js');
+    assert.ok(src.includes("getSetting?.('reverse_button_order')"), 'setting read in triggerButtonPress');
+    assert.ok(src.includes('gangs + 1 - button'), 'reverse mapping formula');
+    for (const d of ['button_wireless_2', 'button_wireless_3', 'button_wireless_4', 'button_wireless_6', 'button_wireless_8']) {
+      const c = JSON.parse(read(`drivers/${d}/driver.compose.json`));
+      assert.ok((c.settings || []).some((s) => s.id === 'reverse_button_order'),
+        `${d} exposes the setting`);
+    }
+  });
 });
