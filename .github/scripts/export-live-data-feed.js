@@ -37,6 +37,7 @@ const payload = {
   version: `${app.version}.${new Date().toISOString().slice(0, 10).replace(/-/g, '')}`,
   generated: new Date().toISOString(),
   appVersion: app.version,
+  sourceBranch: 'master',
   devices
 };
 

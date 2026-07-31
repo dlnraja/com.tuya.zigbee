@@ -95,6 +95,15 @@
         "nl": "Tuya Revive (apparaatherstel)",
         "de": "Tuya Revive (Gerätewiederherstellung)"
       }
+    },
+    {
+      "id": "generate_issue_report",
+      "title": {
+        "en": "Generate support report (GitHub issue)",
+        "fr": "Générer rapport de support (issue GitHub)",
+        "nl": "Supportrapport genereren (GitHub issue)",
+        "de": "Supportbericht erstellen (GitHub Issue)"
+      }
     }
   ],
   "id": "smart_breaker",

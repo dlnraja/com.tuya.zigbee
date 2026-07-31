@@ -75,4 +75,18 @@ npx homey app validate   # validate niveau publish
 - `dependabot` (lundi) : mises à jour npm + GitHub Actions, PRs auto-mergées par `smart-pr-merge`.
 - `self-improve` (mardi 02:53 UTC) : boucle d'auto-amélioration (product-reference, casse pairing, docs INDEX, registre scripts) — commit `[skip ci]` seulement si `npm test` vert.
 
+## Doctrine des branches (P92.78)
+
+- **`master`** (canal test, v9.x) : le laboratoire — mapping DP adaptatif, drivers expérimentaux,
+  toutes les innovations. Chaque merge publie automatiquement sur le **canal test** (= nightly).
+- **`stable-v5`** (production, v5.12.x) : la forteresse — reçoit uniquement des backports
+  **après trempage sur master** (cible : correctifs vieux de > 7 jours sans régression),
+  via `safe-sync-stable` (composes, quotidien) et backports manuels lib/ guidés par
+  `node tools/ci/backport-candidates.js` (rapport hebdo dans self-improve).
+- **`gh-pages`** : le flux de données public — `data/mfs_db_latest.json` (export quotidien,
+  `sourceBranch: master`) consommé par `LiveDataUpdater` dans l'app (cycle 24 h).
+- **Recommandation repo** : activer la protection de branche sur `master` (status checks
+  pr-gate + tests obligatoires, revue pour les PRs humaines) — Settings > Branches.
+  Les bots de la boucle autonome utilisent déjà des commits `[skip ci]` validés par les tests.
+
 Voir `reports/kimi-2026-07-29/workflows-genealogy.md` pour l'historique complet.
