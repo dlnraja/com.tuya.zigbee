@@ -22,6 +22,18 @@
             "fr": "Luminosité %"
           },
           "example": 50
+        },
+        {
+          "name": "speed",
+          "type": "string",
+          "title": {
+            "en": "Rotation speed",
+            "fr": "Vitesse de rotation"
+          },
+          "example": {
+            "en": "slow, normal or fast",
+            "fr": "slow, normal ou fast"
+          }
         }
       ],
       "args": [],
@@ -54,6 +66,18 @@
             "fr": "Luminosité %"
           },
           "example": 50
+        },
+        {
+          "name": "speed",
+          "type": "string",
+          "title": {
+            "en": "Rotation speed",
+            "fr": "Vitesse de rotation"
+          },
+          "example": {
+            "en": "slow, normal or fast",
+            "fr": "slow, normal ou fast"
+          }
         }
       ],
       "args": [],
@@ -181,6 +205,18 @@
             "fr": "Luminosité %"
           },
           "example": 50
+        },
+        {
+          "name": "speed",
+          "type": "string",
+          "title": {
+            "en": "Rotation speed",
+            "fr": "Vitesse de rotation"
+          },
+          "example": {
+            "en": "slow, normal or fast",
+            "fr": "slow, normal ou fast"
+          }
         }
       ],
       "args": [],
@@ -210,6 +246,18 @@
             "fr": "Luminosité %"
           },
           "example": 50
+        },
+        {
+          "name": "speed",
+          "type": "string",
+          "title": {
+            "en": "Rotation speed",
+            "fr": "Vitesse de rotation"
+          },
+          "example": {
+            "en": "slow, normal or fast",
+            "fr": "slow, normal ou fast"
+          }
         }
       ],
       "args": [],

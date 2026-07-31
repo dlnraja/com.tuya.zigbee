@@ -255,6 +255,166 @@
         "nl": "Fysiek gang 4 UIT",
         "de": "Physisch gang 4 AUS"
       }
+    },
+    {
+      "id": "switch_4gang_physical_gang1_single",
+      "title": {
+        "en": "Gang 1 single press",
+        "fr": "Gang 1 appui simple",
+        "nl": "Gang 1 enkele druk",
+        "de": "Gang 1 einfacher Druck"
+      },
+      "args": []
+    },
+    {
+      "id": "switch_4gang_physical_gang1_double",
+      "title": {
+        "en": "Gang 1 double press",
+        "fr": "Gang 1 double appui",
+        "nl": "Gang 1 dubbele druk",
+        "de": "Gang 1 doppelter Druck"
+      },
+      "args": []
+    },
+    {
+      "id": "switch_4gang_physical_gang1_long",
+      "title": {
+        "en": "Gang 1 long press",
+        "fr": "Gang 1 appui long",
+        "nl": "Gang 1 lange druk",
+        "de": "Gang 1 langer Druck"
+      },
+      "args": []
+    },
+    {
+      "id": "switch_4gang_physical_gang1_triple",
+      "title": {
+        "en": "Gang 1 triple press",
+        "fr": "Gang 1 triple appui",
+        "nl": "Gang 1 driedubbele druk",
+        "de": "Gang 1 dreifacher Druck"
+      },
+      "args": []
+    },
+    {
+      "id": "switch_4gang_physical_gang2_single",
+      "title": {
+        "en": "Gang 2 single press",
+        "fr": "Gang 2 appui simple",
+        "nl": "Gang 2 enkele druk",
+        "de": "Gang 2 einfacher Druck"
+      },
+      "args": []
+    },
+    {
+      "id": "switch_4gang_physical_gang2_double",
+      "title": {
+        "en": "Gang 2 double press",
+        "fr": "Gang 2 double appui",
+        "nl": "Gang 2 dubbele druk",
+        "de": "Gang 2 doppelter Druck"
+      },
+      "args": []
+    },
+    {
+      "id": "switch_4gang_physical_gang2_long",
+      "title": {
+        "en": "Gang 2 long press",
+        "fr": "Gang 2 appui long",
+        "nl": "Gang 2 lange druk",
+        "de": "Gang 2 langer Druck"
+      },
+      "args": []
+    },
+    {
+      "id": "switch_4gang_physical_gang2_triple",
+      "title": {
+        "en": "Gang 2 triple press",
+        "fr": "Gang 2 triple appui",
+        "nl": "Gang 2 driedubbele druk",
+        "de": "Gang 2 dreifacher Druck"
+      },
+      "args": []
+    },
+    {
+      "id": "switch_4gang_physical_gang3_single",
+      "title": {
+        "en": "Gang 3 single press",
+        "fr": "Gang 3 appui simple",
+        "nl": "Gang 3 enkele druk",
+        "de": "Gang 3 einfacher Druck"
+      },
+      "args": []
+    },
+    {
+      "id": "switch_4gang_physical_gang3_double",
+      "title": {
+        "en": "Gang 3 double press",
+        "fr": "Gang 3 double appui",
+        "nl": "Gang 3 dubbele druk",
+        "de": "Gang 3 doppelter Druck"
+      },
+      "args": []
+    },
+    {
+      "id": "switch_4gang_physical_gang3_long",
+      "title": {
+        "en": "Gang 3 long press",
+        "fr": "Gang 3 appui long",
+        "nl": "Gang 3 lange druk",
+        "de": "Gang 3 langer Druck"
+      },
+      "args": []
+    },
+    {
+      "id": "switch_4gang_physical_gang3_triple",
+      "title": {
+        "en": "Gang 3 triple press",
+        "fr": "Gang 3 triple appui",
+        "nl": "Gang 3 driedubbele druk",
+        "de": "Gang 3 dreifacher Druck"
+      },
+      "args": []
+    },
+    {
+      "id": "switch_4gang_physical_gang4_single",
+      "title": {
+        "en": "Gang 4 single press",
+        "fr": "Gang 4 appui simple",
+        "nl": "Gang 4 enkele druk",
+        "de": "Gang 4 einfacher Druck"
+      },
+      "args": []
+    },
+    {
+      "id": "switch_4gang_physical_gang4_double",
+      "title": {
+        "en": "Gang 4 double press",
+        "fr": "Gang 4 double appui",
+        "nl": "Gang 4 dubbele druk",
+        "de": "Gang 4 doppelter Druck"
+      },
+      "args": []
+    },
+    {
+      "id": "switch_4gang_physical_gang4_long",
+      "title": {
+        "en": "Gang 4 long press",
+        "fr": "Gang 4 appui long",
+        "nl": "Gang 4 lange druk",
+        "de": "Gang 4 langer Druck"
+      },
+      "args": []
+    },
+    {
+      "id": "switch_4gang_physical_gang4_triple",
+      "title": {
+        "en": "Gang 4 triple press",
+        "fr": "Gang 4 triple appui",
+        "nl": "Gang 4 driedubbele druk",
+        "de": "Gang 4 dreifacher Druck"
+      },
+      "args": []
     }
   ],
   "conditions": [
