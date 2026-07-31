@@ -176,3 +176,18 @@ describe('P92.74 — To-Do cross-source enrichments', () => {
     assert.ok(src.includes('86400000'), '24h window');
   });
 });
+
+describe('P92.75 — L99 enrichments', () => {
+  it('manual WiFi pairing probes the TCP connection before creating the device', () => {
+    const src = read('lib/tuya-local/TuyaLocalDriver.js');
+    assert.ok(src.includes('_probeLocalKey'), 'probe method');
+    assert.ok(src.includes('Cannot reach device with these credentials'), 'clear error');
+    assert.ok(src.includes('8000'), '8s timeout');
+  });
+  it('Rx/Tx cumulative counters are persisted in store (throttled)', () => {
+    const src = read('lib/tuya/TuyaZigbeeDevice.js');
+    assert.ok(src.includes('stats_rx_total'), 'rx counter');
+    assert.ok(src.includes('stats_tx_total'), 'tx counter');
+    assert.ok(src.includes('% 25 === 0'), 'throttled writes');
+  });
+});
