@@ -15,6 +15,14 @@ const ROOT = path.join(__dirname, '..');
 const LiveDataUpdater = require(path.join(ROOT, 'lib/dynamic/LiveDataUpdater'));
 const FM = require(path.join(ROOT, 'lib/utils/fingerprint-matcher'));
 
+// v10.16.0: feed is an untracked build artifact — regenerate if absent.
+const FEED_DIR = path.join(ROOT, '.github', 'pages-build', 'data');
+if (!fs.existsSync(path.join(FEED_DIR, 'mfs_db_latest.json'))) {
+  try {
+    require('child_process').execSync('node .github/scripts/export-live-data-feed.js', { cwd: ROOT, stdio: 'pipe' });
+  } catch { /* best-effort */ }
+}
+
 function makeUpdater() {
   const store = new Map();
   const homey = {
