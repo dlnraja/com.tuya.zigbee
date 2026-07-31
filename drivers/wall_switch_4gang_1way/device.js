@@ -117,9 +117,17 @@ class WallSwitch4Gang1WayDevice extends UnifiedSwitchBase {
       const wrapper = async (...args) => {
         const [endpointId, clusterId, frame] = args;
         try {
+          // v10.6.0 FIX: `frame` is a raw Buffer with the FULL ZCL header —
+          // `frame.cmdId`/`json.cmdId` are undefined on Buffers, so this
+          // interceptor NEVER matched (dead since introduction). Parse the
+          // header properly (handles the manufacturer-specific 5-byte form).
+          const { parseZclHeader } = require('../../lib/zigbee/ZigbeeHelpers');
           const json = typeof frame?.toJSON === 'function' ? frame.toJSON() : frame;
-          const commandId = Number(json?.cmdId ?? json?.commandId ?? frame?.cmdId ?? frame?.commandId);
-          if (Number(clusterId) === 0x0006 && commandId === 0xFD) {
+          const data = Buffer.isBuffer(json?.data) ? json.data
+            : Array.isArray(json?.data) ? Buffer.from(json.data)
+            : Buffer.isBuffer(frame) ? frame : null;
+          const hdr = data ? parseZclHeader(data) : null;
+          if (Number(clusterId) === 0x0006 && hdr && hdr.cmdId === 0xFD) {
             const gang = Math.max(1, Math.min(4, Number(endpointId) || 1));
             this.log(`[PZAO-SCENE] Scene ${gang} command received`);
             await this.triggerButtonPress(gang, 'single', 1, { source: 'physical' });

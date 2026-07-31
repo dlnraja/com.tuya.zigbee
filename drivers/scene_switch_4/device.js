@@ -38,7 +38,7 @@ class SceneSwitch4Device extends ButtonDevice {
 
     for (let ep = 1; ep <= 4; ep++) {
       const endpoint = zclNode?.endpoints?.[ep];
-      if (!endpoint) continue;
+      if (!endpoint) {continue;}
 
       // Try registered tuyaE000 cluster
       const e000Cluster = endpoint.clusters?.tuyaE000 || endpoint.clusters?.[57344];
@@ -66,17 +66,17 @@ class SceneSwitch4Device extends ButtonDevice {
       const onOff = endpoint.clusters?.onOff || endpoint.clusters?.[6];
       if (onOff && typeof onOff.on === 'function') {
         onOff.on('commandOn', async () => {
-          if (this._isDeduped(ep, 'on')) return;
+          if (this._isDeduped(ep, 'on')) {return;}
           this.log(`[E000-S4] EP${ep} commandOn -> Button ${ep} single`);
           await this._triggerSceneSwitch4(ep, 'single');
         });
         onOff.on('commandOff', async () => {
-          if (this._isDeduped(ep, 'off')) return;
+          if (this._isDeduped(ep, 'off')) {return;}
           this.log(`[E000-S4] EP${ep} commandOff -> Button ${ep} double`);
           await this._triggerSceneSwitch4(ep, 'double');
         });
         onOff.on('commandToggle', async () => {
-          if (this._isDeduped(ep, 'toggle')) return;
+          if (this._isDeduped(ep, 'toggle')) {return;}
           this.log(`[E000-S4] EP${ep} commandToggle -> Button ${ep} long`);
           await this._triggerSceneSwitch4(ep, 'long');
         });
@@ -95,17 +95,17 @@ class SceneSwitch4Device extends ButtonDevice {
       const TuyaE000BoundCluster = require('../../lib/clusters/TuyaE000BoundCluster');
       for (let ep = 1; ep <= 4; ep++) {
         const endpoint = zclNode?.endpoints?.[ep];
-        if (!endpoint) continue;
+        if (!endpoint) {continue;}
         const bc = new TuyaE000BoundCluster({
           device: this,
           onButtonPress: async (button, pressType) => {
-            const btn = (button >= 1 && button <= 4) ? button : ep;
+            const btn = button >= 1 && button <= 4 ? button : ep;
             this.log(`[E000-S4] BoundCluster EP${ep} Button ${btn} ${pressType}`);
             await this._triggerSceneSwitch4(btn, pressType);
           }
         });
         bc.endpoint = ep;
-        if (!endpoint.bindings) endpoint.bindings = {};
+        if (!endpoint.bindings) {endpoint.bindings = {};}
         endpoint.bindings['tuyaE000'] = bc;
         this.log(`[E000-S4] BoundCluster EP${ep} ready`);
       }
@@ -119,7 +119,7 @@ class SceneSwitch4Device extends ButtonDevice {
    */
   async _setupTuyaDPButtonDetection(zclNode) {
     const endpoint = zclNode?.endpoints?.[1];
-    if (!endpoint?.clusters) return;
+    if (!endpoint?.clusters) {return;}
 
     const tuyaCluster = endpoint.clusters?.tuya ||
       endpoint.clusters?.manuSpecificTuya ||
@@ -132,7 +132,7 @@ class SceneSwitch4Device extends ButtonDevice {
     }
 
     const handleTuyaDP = (data) => {
-      if (!data) return;
+      if (!data) {return;}
       let dpId, value;
       if (data.dp !== undefined) {
         dpId = data.dp;
@@ -143,11 +143,11 @@ class SceneSwitch4Device extends ButtonDevice {
       } else if (Buffer.isBuffer(data) && data.length >= 5) {
         dpId = data[2];
         const len = data.readUInt16BE(4);
-        if (len === 1) value = data[6];
-        else if (len === 4) value = data.readInt32BE(6);
+        if (len === 1) {value = data[6];}
+        else if (len === 4) {value = data.readInt32BE(6);}
       }
 
-      if (dpId === undefined) return;
+      if (dpId === undefined) {return;}
 
       if (dpId >= 1 && dpId <= 4) {
         const pressType = resolvePressType(value, 'DP-S4');
@@ -168,11 +168,16 @@ class SceneSwitch4Device extends ButtonDevice {
    */
   async _setupRawFrameInterceptor(zclNode) {
     try {
-      if (!zclNode || typeof zclNode.handleFrame !== 'function') return;
+      if (!zclNode || typeof zclNode.handleFrame !== 'function') {return;}
       const orig = zclNode.handleFrame.bind(zclNode);
       zclNode.handleFrame = async (epId, cId, f, m) => {
         if (cId === 57344 || cId === 0xE000) {
-          const d = f?.data;
+          // v10.6.0 FIX: `f` is a raw Buffer — `f.data` is undefined, this
+          // path was dead. Extract bytes the same way button_wireless_4 does.
+          const json = typeof f?.toJSON === 'function' ? f.toJSON() : f;
+          const d = Buffer.isBuffer(json?.data) ? json.data
+            : Array.isArray(json?.data) ? Buffer.from(json.data)
+            : Buffer.isBuffer(f) ? f : null;
           this.log(`[E000-S4-RAW] EP${epId} E000 frame`);
           let btn = epId;
           let pt = 'single';
@@ -218,8 +223,8 @@ class SceneSwitch4Device extends ButtonDevice {
   _isDeduped(ep, cmd) {
     const now = Date.now();
     const key = `${ep}_${cmd}`;
-    if (now - (this._e000Dedup?.[key] || 0) < 500) return true;
-    if (!this._e000Dedup) this._e000Dedup = {};
+    if (now - (this._e000Dedup?.[key] || 0) < 500) {return true;}
+    if (!this._e000Dedup) {this._e000Dedup = {};}
     this._e000Dedup[key] = now;
     return false;
   }
