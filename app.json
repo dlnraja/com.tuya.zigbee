@@ -515,6 +515,193 @@
         }
       },
       {
+        "id": "button_matrix",
+        "title": {
+          "en": "Button action (matrix)",
+          "fr": "Action bouton (matrice)",
+          "nl": "Knopactie (matrix)",
+          "de": "Tastenaktion (Matrix)"
+        },
+        "hint": {
+          "en": "One card for every button and press type — pick the button and the action from the dropdowns (Hue RWL022 / Aqara pattern).",
+          "fr": "Une seule carte pour tous les boutons et types d'appui — choisissez le bouton et l'action dans les listes (pattern Hue RWL022 / Aqara)."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "capabilities=button.1,capabilities=button"
+          },
+          {
+            "type": "dropdown",
+            "name": "button",
+            "title": {
+              "en": "Button",
+              "fr": "Bouton",
+              "nl": "Knop",
+              "de": "Taste"
+            },
+            "values": [
+              {
+                "id": "1",
+                "label": {
+                  "en": "Button 1",
+                  "fr": "Bouton 1",
+                  "nl": "Knop 1",
+                  "de": "Taste 1"
+                }
+              },
+              {
+                "id": "2",
+                "label": {
+                  "en": "Button 2",
+                  "fr": "Bouton 2",
+                  "nl": "Knop 2",
+                  "de": "Taste 2"
+                }
+              },
+              {
+                "id": "3",
+                "label": {
+                  "en": "Button 3",
+                  "fr": "Bouton 3",
+                  "nl": "Knop 3",
+                  "de": "Taste 3"
+                }
+              },
+              {
+                "id": "4",
+                "label": {
+                  "en": "Button 4",
+                  "fr": "Bouton 4",
+                  "nl": "Knop 4",
+                  "de": "Taste 4"
+                }
+              },
+              {
+                "id": "5",
+                "label": {
+                  "en": "Button 5",
+                  "fr": "Bouton 5",
+                  "nl": "Knop 5",
+                  "de": "Taste 5"
+                }
+              },
+              {
+                "id": "6",
+                "label": {
+                  "en": "Button 6",
+                  "fr": "Bouton 6",
+                  "nl": "Knop 6",
+                  "de": "Taste 6"
+                }
+              },
+              {
+                "id": "7",
+                "label": {
+                  "en": "Button 7",
+                  "fr": "Bouton 7",
+                  "nl": "Knop 7",
+                  "de": "Taste 7"
+                }
+              },
+              {
+                "id": "8",
+                "label": {
+                  "en": "Button 8",
+                  "fr": "Bouton 8",
+                  "nl": "Knop 8",
+                  "de": "Taste 8"
+                }
+              }
+            ]
+          },
+          {
+            "type": "dropdown",
+            "name": "action",
+            "title": {
+              "en": "Action",
+              "fr": "Action",
+              "nl": "Actie",
+              "de": "Aktion"
+            },
+            "values": [
+              {
+                "id": "single",
+                "label": {
+                  "en": "Single press",
+                  "fr": "Appui simple",
+                  "nl": "Enkele druk",
+                  "de": "Einfacher Druck"
+                }
+              },
+              {
+                "id": "double",
+                "label": {
+                  "en": "Double press",
+                  "fr": "Double appui",
+                  "nl": "Dubbele druk",
+                  "de": "Doppelter Druck"
+                }
+              },
+              {
+                "id": "long",
+                "label": {
+                  "en": "Long press (hold)",
+                  "fr": "Appui long (maintenu)",
+                  "nl": "Lange druk",
+                  "de": "Langer Druck"
+                }
+              },
+              {
+                "id": "triple",
+                "label": {
+                  "en": "Triple press",
+                  "fr": "Triple appui",
+                  "nl": "Driedubbele druk",
+                  "de": "Dreifacher Druck"
+                }
+              },
+              {
+                "id": "release",
+                "label": {
+                  "en": "Released after hold",
+                  "fr": "Relâché après maintien",
+                  "nl": "Losgelaten",
+                  "de": "Losgelassen"
+                }
+              }
+            ]
+          }
+        ],
+        "tokens": [
+          {
+            "name": "button",
+            "type": "string",
+            "title": {
+              "en": "Button",
+              "fr": "Bouton"
+            },
+            "example": "1"
+          },
+          {
+            "name": "action",
+            "type": "string",
+            "title": {
+              "en": "Action",
+              "fr": "Action"
+            },
+            "example": "single"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Button [[button]] — [[action]] on [[device]]",
+          "fr": "Bouton [[button]] — [[action]] sur [[device]]",
+          "nl": "Knop [[button]] — [[action]] op [[device]]",
+          "de": "Taste [[button]] — [[action]] auf [[device]]"
+        }
+      },
+      {
         "id": "button_multi_press",
         "title": {
           "en": "Button multi-pressed",
