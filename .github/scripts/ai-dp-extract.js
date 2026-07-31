@@ -99,8 +99,13 @@ async function main() {
     try {
       const answer = await ai.callAI(truncated, PROMPT, { taskType: 'analyze', complexity: 'low' });
       if (!answer) {results.skipped++; continue;}
-      // Extract JSON from the answer (may be wrapped in markdown fences)
-      const jsonMatch = String(answer).match(/\{[\s\S]*\}/);
+      // v10.16.0 (PRD v1.1): strict JSON cleaning — LLMs wrap answers in
+      // markdown fences or add prose. Strip fences first, then extract the
+      // outermost JSON object, then schema-validate.
+      let text = String(answer).trim();
+      const fence = text.match(/```(?:json)?\s*([\s\S]*?)```/);
+      if (fence) {text = fence[1].trim();}
+      const jsonMatch = text.match(/\{[\s\S]*\}/);
       if (!jsonMatch) {results.skipped++; continue;}
       const parsed = JSON.parse(jsonMatch[0]);
       const valid = validateExtraction(parsed);

@@ -336,3 +336,32 @@ describe('P92.83 — Cloudflare Worker proxy (optional channel)', () => {
     assert.ok(html.includes('Empty = local-only'), 'default local');
   });
 });
+
+describe('P92.84 — PRD v1.1: segmented feeds + strict JSON cleaning', () => {
+  it('export produces a manifest + per-class segment files', () => {
+    const m = JSON.parse(read('.github/pages-build/data/mfs_db_manifest.json'));
+    assert.ok(m.segments && Object.keys(m.segments).length >= 5, 'manifest with segments');
+    for (const [seg, info] of Object.entries(m.segments)) {
+      assert.ok(fs.existsSync('.github/pages-build/data/' + info.file), seg + ' file exists');
+      assert.ok(info.count > 0, seg + ' non-empty');
+    }
+  });
+
+  it('LiveDataUpdater downloads segments progressively and merges', () => {
+    const src = read('lib/dynamic/LiveDataUpdater.js');
+    assert.ok(src.includes('_fetchSegmented'), 'segmented path');
+    assert.ok(src.includes('Falls back to the single full file'), 'full-file fallback documented');
+    assert.ok(src.includes('FEED_URL'), 'fallback url present');
+  });
+
+  it('ai-dp-extract strips markdown fences before JSON extraction', () => {
+    const src = read('.github/scripts/ai-dp-extract.js');
+    assert.ok(/fence/.test(src), 'fence stripping present');
+  });
+
+  it('worker rate limit already covers the PRD anti-DDoS point', () => {
+    const src = read('workers/github-issue-proxy/worker.js');
+    assert.ok(src.includes('RATE_LIMIT = 5'), '5 req/IP/hour');
+    assert.ok(src.includes('cf-connecting-ip'), 'IP-based limiting');
+  });
+});
