@@ -316,3 +316,23 @@ describe('P92.82 — naive DP auto-guesser hardened (external review)', () => {
     assert.ok(mapper.includes('_getRegistryMapping'), 'registry tier preferred over heuristics');
   });
 });
+
+describe('P92.83 — Cloudflare Worker proxy (optional channel)', () => {
+  it('worker validates payload strictly and rate-limits', () => {
+    const src = read('workers/github-issue-proxy/worker.js');
+    assert.ok(src.includes('RATE_LIMIT'), 'rate limit');
+    assert.ok(src.includes('MAX_BLOCK = 500'), '500-char blocks');
+    assert.ok(src.includes('env.GITHUB_PAT'), 'PAT only in Worker secret');
+    assert.ok(!src.includes('ghp_'), 'no PAT in code');
+  });
+  it('app channel is OFF by default (endpoint empty = zero egress)', () => {
+    const src = read('lib/tuya/TuyaZigbeeDevice.js');
+    assert.ok(src.includes('issue_report_endpoint'), 'endpoint setting');
+    assert.ok(src.includes('/report'), 'POST to proxy /report path');
+  });
+  it('settings page exposes the endpoint field (optional)', () => {
+    const html = read('settings/index.html');
+    assert.ok(html.includes('issue_report_endpoint'), 'setting field');
+    assert.ok(html.includes('Empty = local-only'), 'default local');
+  });
+});
