@@ -253,6 +253,13 @@
         "en": "Tuya Revive (device recovery)",
         "fr": "Tuya Revive (récupération appareil)"
       }
+    },
+    {
+      "id": "generate_issue_report",
+      "title": {
+        "en": "Generate support report (GitHub issue)",
+        "fr": "Générer rapport de support (issue GitHub)"
+      }
     }
   ],
   "id": "water_tank_monitor",
