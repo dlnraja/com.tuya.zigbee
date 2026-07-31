@@ -1,6 +1,13 @@
 {
   "changelog": [
     {
+      "version": "5.12.45",
+      "date": "2026-07-31",
+      "channel": "stable",
+      "en": "Backport 9.0.385: OTA hardening.",
+      "fr": "Backport 9.0.385 : blindage OTA."
+    },
+    {
       "version": "5.12.44",
       "date": "2026-07-31",
       "channel": "stable",
@@ -1106,5 +1113,9 @@
   "5.12.44": {
     "en": "Backport 9.0.383: 51 critical ESLint fixes.",
     "fr": "Backport 9.0.383 : 51 corrections ESLint critiques."
+  },
+  "5.12.45": {
+    "en": "Backport 9.0.385: OTA hardening.",
+    "fr": "Backport 9.0.385 : blindage OTA."
   }
 }

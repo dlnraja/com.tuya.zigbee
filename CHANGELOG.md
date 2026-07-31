@@ -4,6 +4,18 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
+## [5.12.45] - 2026-07-31
+
+Stability line (branch `stable-v5`, production). Backports from master 9.0.385.
+
+### Security
+- OTA hardening: SHA512 propagated and verified before flashing, OTA header
+  validated at flash time (magic/manufacturer/imageType/version), download
+  timeout 60s + 2 MB size cap, zigbee-OTA index schema validation.
+  12 new security tests.
+
+---
+
 ## [5.12.44] - 2026-07-31
 
 Stability line (branch `stable-v5`, production). Backports from master 9.0.383.
