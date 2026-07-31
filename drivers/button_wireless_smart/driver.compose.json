@@ -6,7 +6,7 @@
     "de": "Intelligenter Funk-Taster",
     "es": "Botón inalámbrico inteligente"
   },
-  "class": "sensor",
+  "class": "button",
   "capabilities": [
     "button.1",
     "measure_battery"

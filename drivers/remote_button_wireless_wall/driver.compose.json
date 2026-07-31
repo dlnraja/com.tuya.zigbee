@@ -6,7 +6,7 @@
     "de": "Funk-Wandtaster",
     "es": "Botón inalámbrico de pared"
   },
-  "class": "sensor",
+  "class": "button",
   "capabilities": [
     "button.1",
     "measure_battery"

@@ -692,6 +692,9 @@
       "setable": false,
       "maintenanceAction": true,
       "getable": false
+    },
+    "measure_power": {
+      "approximated": true
     }
   },
   "metadata": {
