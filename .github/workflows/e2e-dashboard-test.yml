@@ -73,6 +73,13 @@ jobs:
           EXIT=$?
           set -e
           echo "$OUTPUT" > /tmp/master-validate.txt
+          # Always show the last lines of the validator output on failure —
+          # without this the failure reason is invisible in CI logs.
+          if [ $EXIT -ne 0 ]; then
+            echo "::group::Validator output (tail)"
+            echo "$OUTPUT" | tail -30
+            echo "::endgroup::"
+          fi
           if [ $EXIT -ne 0 ]; then
             echo "::error::Master validation FAILED (exit $EXIT)"
             # Detect specific errors
