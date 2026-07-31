@@ -45,3 +45,31 @@ fs.mkdirSync(OUT_DIR, { recursive: true });
 fs.writeFileSync(path.join(OUT_DIR, 'mfs_db_latest.json'), JSON.stringify(payload));
 const kb = (fs.statSync(path.join(OUT_DIR, 'mfs_db_latest.json')).size / 1024).toFixed(0);
 console.log(`[live-feed] ${Object.keys(devices).length} fabricants exportés (${kb} Ko) → data/mfs_db_latest.json (v${payload.version})`);
+
+// v10.16.0 (PRD v1.1): SEGMENTED feeds by driver class — the Homey Pro has
+// limited RAM, so the app can download progressively instead of one ~1MB
+// blob. Category = driver class of the curated driverId.
+const classOf = {};
+for (const d of fs.readdirSync(path.join(ROOT, 'drivers'))) {
+  const p = path.join(ROOT, 'drivers', d, 'driver.compose.json');
+  if (!fs.existsSync(p)) {continue;}
+  try {
+    const c = JSON.parse(fs.readFileSync(p, 'utf8'));
+    classOf[d] = c.class || 'other';
+  } catch { /* skip */ }
+}
+const segments = {};
+for (const [mfr, entry] of Object.entries(devices)) {
+  const seg = classOf[entry.driverId] || 'other';
+  if (!segments[seg]) {segments[seg] = {};}
+  segments[seg][mfr] = entry;
+}
+const manifest = { version: payload.version, generated: payload.generated, segments: {} };
+for (const [seg, devs] of Object.entries(segments)) {
+  const segPayload = { ...payload, devices: devs };
+  const file = `mfs_db_${seg}.json`;
+  fs.writeFileSync(path.join(OUT_DIR, file), JSON.stringify(segPayload));
+  manifest.segments[seg] = { file, count: Object.keys(devs).length };
+}
+fs.writeFileSync(path.join(OUT_DIR, 'mfs_db_manifest.json'), JSON.stringify(manifest, null, 1));
+console.log(`[live-feed] segments: ${Object.entries(manifest.segments).map(([s, i]) => `${s}:${i.count}`).join(' ')}`);
