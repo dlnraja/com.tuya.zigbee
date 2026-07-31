@@ -1174,5 +1174,34 @@
     "// PID-CONFLICT-NOTE TS0111 shared with 8 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
     "// PID-CONFLICT-NOTE TS0014 shared with 7 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
     "// PID-CONFLICT-NOTE TSO121 shared with 2 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-  ]
+  ],
+  "firmwareUpdates": {
+    "updates": [
+      {
+        "changelog": {
+          "en": "OEM Tuya firmware v82 (TL8258 plug, Koenkk zigbee-OTA, SHA512-verified)"
+        },
+        "device": {
+          "manufacturerName": [
+            "_TZ3000_w0qqde0g"
+          ],
+          "productId": [
+            "TS0001",
+            "TS0002",
+            "TS0003"
+          ]
+        },
+        "files": [
+          {
+            "fileVersion": 82,
+            "imageType": 54179,
+            "manufacturerCode": 4417,
+            "size": 311026,
+            "name": "1730081189-oem_zg_tl8258_plug_OTA_1.1.2.bin",
+            "integrity": "sha256:4c16a0403e1633fa7098f91fcd378ebe4a7a76724f42b4e877a8ad8090213b0e"
+          }
+        ]
+      }
+    ]
+  }
 }
