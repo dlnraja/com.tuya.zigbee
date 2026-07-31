@@ -35,7 +35,7 @@ A **(mfr, pid)** pair = the canonical identity of a Zigbee device.
 
 > The user has been burned before by bot auto-publish reverting fixes — see P19 lessons in memory.
 >
-> **2026-07-27 — git history purge**: history was rewritten with `git-filter-repo` to remove sensitive/operational paths (see `HISTORY_PURGE.md`). The first visible commit is now the v9.0.192 snapshot (2026-07-10) and the `origin` remote was dropped by the purge — it must be re-added before any push.
+> **2026-07-27 — git history purge**: history was rewritten with `git-filter-repo` to remove sensitive/operational paths (see `reports/HISTORY_PURGE.md`). The first visible commit is now the v9.0.192 snapshot (2026-07-10) and the `origin` remote was dropped by the purge — it must be re-added before any push.
 
 ## Data Sources (15 external)
 

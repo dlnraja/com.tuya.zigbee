@@ -22,7 +22,7 @@ const fs = require('fs');
 const path = require('path');
 
 const ROOT = path.resolve(__dirname, '../..');
-const PLAN_FILE = path.join(ROOT, 'orphan_injection_plan.json');
+const PLAN_FILE = path.join(ROOT, 'reports', 'orphan_injection_plan.json');
 const DRIVERS_DIR = path.join(ROOT, 'drivers');
 
 const args = process.argv.slice(2);
@@ -134,7 +134,7 @@ function main() {
   log('═══════════════════════════════════════════════\n');
 
   // Sauvegarde du rapport
-  const reportPath = path.join(ROOT, 'orphan_injection_report.json');
+  const reportPath = path.join(ROOT, 'reports', 'orphan_injection_report.json');
   fs.writeFileSync(reportPath, JSON.stringify({
     timestamp: new Date().toISOString(),
     applied: APPLY,

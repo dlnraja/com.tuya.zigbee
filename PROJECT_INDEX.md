@@ -2,11 +2,11 @@
 
 > **Version**: 9.0.348 | **App ID**: `com.dlnraja.tuya.zigbee` (stable: `com.dlnraja.tuya.zigbee.stable`, branch `stable-v5` v5.12.29)
 > **430 drivers** (master; 431 on `stable-v5`) | **5,471 fingerprints** | **4,833 flow cards** | **186 capabilities** | **SDK v3**
-> **Audit 2026-07-27** : see [AUDIT_HOMEY_2026-07-27.md](AUDIT_HOMEY_2026-07-27.md) — all publish blockers resolved; git history purged on 2026-07-27 (see [HISTORY_PURGE.md](HISTORY_PURGE.md))
+> **Audit 2026-07-27** : see [AUDIT_HOMEY_2026-07-27.md](reports/AUDIT_HOMEY_2026-07-27.md) — all publish blockers resolved; git history purged on 2026-07-27 (see [HISTORY_PURGE.md](reports/HISTORY_PURGE.md))
 
 ⚠️ **ATTENTION AI AGENTS, LOCAL CLAUDE CODE, & ANTIGRAVITY SKILLS** ⚠️
 Before making ANY changes to this repository, you **MUST** execute the mandatory entry procedure:
-1. **Read [AUDIT_HOMEY_2026-07-27.md](AUDIT_HOMEY_2026-07-27.md)** — latest full audit (publish blockers, debt, security). Note: the former `.archive/root-cleanup-2026-05-28/AI_GLOBAL_ACTION_PLAN.md` was removed by the 2026-07-27 history purge.
+1. **Read [AUDIT_HOMEY_2026-07-27.md](reports/AUDIT_HOMEY_2026-07-27.md)** — latest full audit (publish blockers, debt, security). Note: the former `.archive/root-cleanup-2026-05-28/AI_GLOBAL_ACTION_PLAN.md` was removed by the 2026-07-27 history purge.
 2. **Read [GLOBAL_INVESTIGATION_PLAN.md](docs/GLOBAL_INVESTIGATION_PLAN.md)** — 22-section deep diagnostic methodology covering forums, logs, emails, and external Z2M/ZHA/Domoticz cross-references.
 3. **Understand the Single-MFR Multi-Variant Rule** — A single `manufacturerName` can map to dozens of different product variants (PIDs). Check `productId` combinations!
 4. **Leverage the Local Arsenal** — Use Antigravity Skills in `.agents/skills/` and local Claude Code tools for automated audits.
