@@ -159,15 +159,16 @@
     "fast-glob": "^3.3.3",
     "fs-extra": "^11.3.2",
     "glob": "^13.0.6",
-    "homey": "^3.12.2",
+    "homey": "^4.4.1",
+    "homey-lib": "^2.51.4",
+    "imap-simple": "^5.1.0",
     "imapflow": "^1.0.171",
     "js-yaml": "^4.1.1",
+    "mailparser": "^3.9.11",
     "mocha": "^10.8.2",
     "nyc": "^17.1.0",
     "pngjs": "^7.0.0",
     "puppeteer": "^24.24.0",
-    "sharp": "^0.34.4",
-    "imap-simple": "^5.1.0",
-    "mailparser": "^3.9.11"
+    "sharp": "^0.34.4"
   }
 }

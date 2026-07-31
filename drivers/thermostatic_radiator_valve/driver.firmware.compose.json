@@ -1,21 +1,31 @@
 {
-  "wakeInstruction": {
-    "en": "Wake up the radiator valve by pressing the menu button.",
-    "fr": "Réveillez le thermostat en appuyant sur le bouton menu.",
-    "nl": "Wake de radiatorthermostaat op door op de menuknop te drukken."
-  },
   "updates": [
     {
       "changelog": {
-        "en": "Initial OTA support for Tuya thermostatic radiator valves.",
-        "fr": "Support OTA initial pour les thermostats de radiateur Tuya.",
-        "nl": "Initiële OTA-ondersteuning voor Tuya radiatorthermostaten."
+        "en": "OEM Tuya firmware v87 (si32 UART TRV module, Koenkk zigbee-OTA, SHA512-verified)"
       },
       "device": {
-        "manufacturerName": "_TZE200_sur6q7ko",
-        "productId": ["TS0601"]
+        "manufacturerName": [
+          "_tze200_ckud7u2l"
+        ],
+        "productId": [
+          "TS0601"
+        ]
       },
-      "files": []
+      "files": [
+        {
+          "fileVersion": 87,
+          "imageType": 5634,
+          "manufacturerCode": 4098,
+          "size": 234174,
+          "name": "1615190575-si32_zg_uart_connect_sleep_ZS5_ty_OTA_1.1.7.bin",
+          "integrity": "sha256:33b0d573542f8eae8068d7a51b44108460f4bdeaf89c56017c7f6ec498e8f10b"
+        }
+      ]
     }
-  ]
+  ],
+  "wakeInstruction": {
+    "en": "Wake up the radiator valve by pressing the menu button.",
+    "fr": "Réveillez le thermostat en appuyant sur le bouton menu."
+  }
 }
