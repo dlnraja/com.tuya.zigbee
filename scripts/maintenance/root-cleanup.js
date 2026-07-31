@@ -26,7 +26,7 @@ const VERBOSE   = ARGS.has('--verbose') || ARGS.has('-v');
 const KEEP_FILES = new Set([
   'app.js', 'app.json', 'api.js', 'icon.svg',
   'package.json', 'package-lock.json',
-  'stable_app.json', 'driver-mapping-database.json',
+  'backups/stable_app.json', 'driver-mapping-database.json',
   'README.md', 'CHANGELOG.md', 'LICENSE',
   'CODE_OF_CONDUCT.md', 'CONTRIBUTING.md',
   'GLOBAL_IMPROVEMENT_PLAN.md', 'PROJECT_INDEX.md',

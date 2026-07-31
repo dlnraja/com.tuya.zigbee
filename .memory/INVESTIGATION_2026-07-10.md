@@ -182,7 +182,7 @@
 - H2: silent shell fail (no explicit error handler)
 - H3: `MODULE_NOT_FOUND` on `stable/scripts/ci/validate-all-yaml.js` (script doesn't exist in stable)
 - H4: `apply_patch verification failed` UTF-8 mojibake
-- **Action**: créer `PR_DRAFT_HEGEL_FIXES.md` (deliverable B) + `tools/ci/prevent-apply-patch-corruption.js` (deliverable C)
+- **Action**: créer `reports/PR_DRAFT_HEGEL_FIXES.md` (deliverable B) + `tools/ci/prevent-apply-patch-corruption.js` (deliverable C)
 - **App cible**: **both** (CI)
 
 #### L5 : Codex rate limit 100%
@@ -362,8 +362,8 @@
 
 ## 🎯 6 DELIVERABLES PRODUITS CETTE SESSION
 
-1. **Ce document** = `INVESTIGATION_2026-07-10.md` (master/docs/ + master/ + stable/docs/)
-2. **`PR_DRAFT_HEGEL_FIXES.md`** (4 fixes: UTF-8 mojibake, MODULE_NOT_FOUND, rg path, silent fail)
+1. **Ce document** = `reports/INVESTIGATION_2026-07-10.md` (master/docs/ + master/ + stable/docs/)
+2. **`reports/PR_DRAFT_HEGEL_FIXES.md`** (4 fixes: UTF-8 mojibake, MODULE_NOT_FOUND, rg path, silent fail)
 3. **`tools/ci/prevent-apply-patch-corruption.js`** (pre-commit hook anti-mojibake)
 4. **`tools/shadow-mode/`** (framework complet: runner, sources, variant-engine, state, dry-run)
 5. **Investigation des 4 surfaces** (Chromium extensions, Windows registry, Codex state, Hegel errors)

@@ -120,9 +120,9 @@ jobs:
             echo "STABLE_AVAILABLE=true" >> $GITHUB_OUTPUT
           else
             # Fallback: use the saved stable_app.json snapshot from master
-            if [ -f master/stable_app.json ]; then
+            if [ -f master/backups/stable_app.json ]; then
               echo "::warning::Could not checkout stable-v5 worktree, using stable_app.json from master"
-              cp master/stable_app.json stable/app.json
+              cp master/backups/stable_app.json stable/app.json
               if [ ! -f stable/package.json ]; then
                 printf '%s' '{"name":"com.dlnraja.tuya.zigbee.stable","version":"5.12.4","main":"app.js"}' > stable/package.json
               fi

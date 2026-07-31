@@ -340,7 +340,7 @@ if (issues.missingTokens.length > 0) {
 }
 
 // Sauvegarder rapport
-const reportFile = path.join(ROOT, 'FLOW_CARDS_AUDIT_REPORT.json');
+const reportFile = path.join(ROOT, 'reports', 'FLOW_CARDS_AUDIT_REPORT.json');
 fs.writeFileSync(reportFile, JSON.stringify({
   timestamp: new Date().toISOString(),
   stats,

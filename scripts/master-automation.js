@@ -53,7 +53,7 @@ const { execSync, spawnSync } = require('child_process');
 const ROOT        = path.resolve(__dirname, '..');
 const APP_JSON    = path.join(ROOT, 'app.json');
 const DRIVERS_DIR = path.join(ROOT, 'drivers');
-const STABLE_JSON = path.join(ROOT, 'stable_app.json');
+const STABLE_JSON = path.join(ROOT, 'backups', 'stable_app.json');
 const REPORTS_DIR = path.join(ROOT, 'docs', 'reports');
 
 const ARGS       = new Set(process.argv.slice(2));

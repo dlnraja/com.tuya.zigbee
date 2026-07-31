@@ -315,7 +315,7 @@ All CI workflows include a `security` job that validates:
 | Diagnostic History Rules | `docs/rules/DIAGNOSTIC_HISTORY_RULES.md` | Safe historical Gmail/Homey diagnostic recovery and gates |
 | Post-Promotion Protocol | `docs/rules/POST_PROMOTION_PROTOCOL.md` | Registry sync after release |
 | Project Index | `PROJECT_INDEX.md` | Full project structure overview |
-| Global Improvement Plan | `GLOBAL_IMPROVEMENT_PLAN.md` | Long-term improvement roadmap |
+| Global Improvement Plan | `reports/GLOBAL_IMPROVEMENT_PLAN.md` | Long-term improvement roadmap |
 | Workflow Guidelines | `.github/WORKFLOW_GUIDELINES.md` | GitHub Actions best practices |
 | Secrets Management | `.github/SECRETS.md` | Secret priority and management |
 
@@ -337,7 +337,7 @@ All CI workflows include a `security` job that validates:
 - [x] Intelligence engine : 16 nouveaux appareils Z2M, 6 FPs forum non supportés
 - [x] Patterns récurrents : 35× false battery alert, 18× pairing failure
 - [x] `docs/GITHUB_ISSUES_PR_ANALYSIS.md` mis à jour avec données fraîches
-- [x] `GLOBAL_IMPROVEMENT_PLAN.md` métriques mises à jour (413 drivers, 3296 FPs)
+- [x] `reports/GLOBAL_IMPROVEMENT_PLAN.md` métriques mises à jour (413 drivers, 3296 FPs)
 - [x] `PROJECT_INDEX.md` synchronisé
 
 ### 🔴 Sécurité (v8.5.2)

@@ -149,7 +149,7 @@
 - 2× other (TBD)
 
 ### D4.5 Action
-- All errors are documented in `INVESTIGATION_2026-07-10.md` + `PR_DRAFT_HEGEL_FIXES.md`
+- All errors are documented in `reports/INVESTIGATION_2026-07-10.md` + `reports/PR_DRAFT_HEGEL_FIXES.md`
 - No additional action needed
 - **Future improvement**: link logs_2.sqlite to state_5.sqlite via a session_id column (currently no linkage)
 

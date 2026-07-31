@@ -154,7 +154,7 @@ v9.0.381: chore: alignement version 9.0.381 + changelog [skip ci]
 
 ## [9.0.193 → 9.0.348] - 2026-07-12 → 2026-07-27
 
-Grouped entry — 156 version bumps, summarized by milestones (see `AUDIT_HOMEY_2026-07-27.md` for the final state).
+Grouped entry — 156 version bumps, summarized by milestones (see `reports/AUDIT_HOMEY_2026-07-27.md` for the final state).
 
 ### Milestones (P era)
 - **P52**: Stable branch sync (`stable-v5`).
@@ -168,7 +168,7 @@ Grouped entry — 156 version bumps, summarized by milestones (see `AUDIT_HOMEY_
 - **2026-07-13 → 2026-07-27**: 161 automated `auto-fix-all` commits (fingerprints, routing, manifest sync).
 
 ### Repository
-- **2026-07-27**: Git history rewritten with `git-filter-repo` to purge sensitive/operational paths (see `HISTORY_PURGE.md`). First visible commit is now the v9.0.192 snapshot (2026-07-10); the `origin` remote was dropped by the purge and must be re-added before push.
+- **2026-07-27**: Git history rewritten with `git-filter-repo` to purge sensitive/operational paths (see `reports/HISTORY_PURGE.md`). First visible commit is now the v9.0.192 snapshot (2026-07-10); the `origin` remote was dropped by the purge and must be re-added before push.
 
 ---
 
