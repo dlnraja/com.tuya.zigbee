@@ -118,7 +118,7 @@ if (fs.existsSync(homeyignorePath)) {
   const runtimeJsonFiles = [
     'data/fingerprints.json',
     'lib/tuya/fingerprints.json',
-    'driver-mapping-database.json',
+    'data/driver-mapping-database.json',
     '.homeychangelog.json',
   ];
   runtimeJsonFiles.forEach(f => {
@@ -141,7 +141,7 @@ if (fs.existsSync(homeyignorePath)) {
 const runtimeFiles = [
   ['data/fingerprints.json', 'DeviceFingerprintDB.js:83'],
   ['lib/tuya/fingerprints.json', 'tuya-engine/index.js:14'],
-  ['driver-mapping-database.json', 'DriverMappingLoader.js'],
+  ['data/driver-mapping-database.json', 'DriverMappingLoader.js'],
   ['.homeychangelog.json', 'Athom store changelog'],
   ['assets/images/small.png', 'Athom store'],
   ['assets/images/large.png', 'Athom store'],
