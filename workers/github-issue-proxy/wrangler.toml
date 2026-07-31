@@ -1,0 +1,12 @@
+name = "github-issue-proxy"
+main = "worker.js"
+compatibility_date = "2026-07-31"
+
+# Deploy:
+#   npm i -g wrangler
+#   wrangler login
+#   wrangler secret put GITHUB_PAT   # classic PAT, scope: public_repo issues only
+#   wrangler deploy
+#
+# The PAT must have ONLY the "issues: write" equivalent scope on
+# dlnraja/com.tuya.zigbee. Never commit the PAT anywhere.
