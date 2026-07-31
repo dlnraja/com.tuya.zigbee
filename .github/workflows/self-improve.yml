@@ -43,6 +43,28 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: ▶️ Resume quota-deferred tasks (P92.88)
+        continue-on-error: true
+        run: |
+          echo "## ▶️ Reprise des tâches différées (quota)" >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+          node -e "
+          (async () => {
+            const qr = require('./.github/scripts/quota-resume');
+            let ai = null;
+            try { ai = require('./.github/scripts/ai-helper'); } catch {}
+            const canRun = () => { try { return ai ? ai.budgetAllows('gemini') : false; } catch { return false; } };
+            await qr.processPending(async (task) => {
+              if (task.id === 'ai-dp-extract') {
+                require('child_process').execSync('node .github/scripts/ai-dp-extract.js', { stdio: 'inherit' });
+                return true;
+              }
+              return false;
+            }, canRun);
+          })();
+          " >> $GITHUB_STEP_SUMMARY 2>&1 || true
+          echo '```' >> $GITHUB_STEP_SUMMARY
+
       - name: 📦 Setup Node.js
         uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
         with:
