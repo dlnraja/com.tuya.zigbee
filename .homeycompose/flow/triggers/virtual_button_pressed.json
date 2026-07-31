@@ -24,6 +24,15 @@
         "fr": "Type d'action"
       },
       "example": "toggle"
+    },
+    {
+      "name": "correlationId",
+      "type": "string",
+      "title": {
+        "en": "Correlation ID",
+        "fr": "ID de corrélation"
+      },
+      "example": "a1b2c3"
     }
   ],
   "args": [

@@ -142712,7 +142712,7 @@
     "modelIdsCount": 28
   },
   "_TZE200_3YLEW7B4": {
-    "driverId": "climate_sensor",
+    "driverId": "curtain_motor",
     "source": "auto-sync",
     "modelIds": [
       "CK-TLSR8656-SS5-01(7014)",
@@ -165966,15 +165966,6 @@
       "TS0601"
     ],
     "pid": "TS0601",
-    "modelIdsCount": 1
-  },
-  "_TZE200_placeholder": {
-    "driverId": "device_air_purifier_climate",
-    "source": "auto-sync",
-    "modelIds": [
-      "TS0601_air_purifier"
-    ],
-    "pid": "TS0601_air_purifier",
     "modelIdsCount": 1
   },
   "_hybrid_device_air_purifier_din_needs_device_assignment": {

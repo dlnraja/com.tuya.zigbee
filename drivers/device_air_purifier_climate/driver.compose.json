@@ -55,9 +55,7 @@
         "fr": "Maintenez le bouton power pendant 5 secondes"
       }
     },
-    "manufacturerName": [
-      "_TZE200_placeholder"
-    ]
+    "manufacturerName": []
   },
   "images": {
     "small": "/drivers/air_purifier/assets/images/small.png",
@@ -70,10 +68,6 @@
     "zigbee"
   ],
   "energy": {
-    "approximation": {
-      "usageOn": 50,
-      "usageOff": 1
-    },
     "batteries": [
       "AAA",
       "AAA"

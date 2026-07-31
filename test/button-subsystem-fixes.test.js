@@ -161,7 +161,12 @@ describe('B8 — DP button vs battery exclusion', () => {
 
 describe('B9 — button_wireless_4 raw interceptor rejects reports', () => {
   it('only accepts the 0xFD command at the ZCL command id position', () => {
-    assert.match(raw4Src, /data\[2\] === 0xFD && \[0, 1, 2\]\.includes\(data\[3\]\)/);
+    // v10.6.0: superseded by the shared ZCL header parser — cmdId is read at
+    // the correct offset for BOTH 3-byte and 5-byte (mfr-specific) headers,
+    // and the payload is validated against the action range 0..2.
+    assert.match(raw4Src, /parseZclHeader/);
+    assert.match(raw4Src, /hdr\.cmdId === 0xFD/);
+    assert.match(raw4Src, /\[0, 1, 2\]\.includes\(data\[hdr\.payloadOffset\]\)/);
     assert.doesNotMatch(raw4Src, /data\.length >= 4 && \[0, 1, 2\]\.includes\(data\[3\]\)/);
   });
 });

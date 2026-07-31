@@ -2368,6 +2368,15 @@
               "fr": "Type d'action"
             },
             "example": "toggle"
+          },
+          {
+            "name": "correlationId",
+            "type": "string",
+            "title": {
+              "en": "Correlation ID",
+              "fr": "ID de corrélation"
+            },
+            "example": "a1b2c3"
           }
         ],
         "args": [
@@ -121746,10 +121755,6 @@
         "local"
       ],
       "energy": {
-        "approximation": {
-          "usageOn": 50,
-          "usageOff": 1
-        },
         "batteries": [
           "AAA",
           "AAA"
@@ -121814,9 +121819,6 @@
         "batteries": [
           "CR2450"
         ],
-        "approximation": {
-          "usageConstant": 0.5
-        },
         "mains": true
       },
       "subDevices": [],
@@ -122910,10 +122912,6 @@
         "local"
       ],
       "energy": {
-        "approximation": {
-          "usageOn": 50,
-          "usageOff": 1
-        },
         "batteries": [
           "AAA",
           "AAA"
@@ -123046,10 +123044,6 @@
         "zigbee"
       ],
       "energy": {
-        "approximation": {
-          "usageOn": 50,
-          "usageOff": 1
-        },
         "batteries": [
           "AAA",
           "AAA"
@@ -123680,9 +123674,6 @@
         "batteries": [
           "CR2450"
         ],
-        "approximation": {
-          "usageConstant": 0.5
-        },
         "mains": true
       },
       "pair": [
@@ -125226,10 +125217,6 @@
         }
       },
       "energy": {
-        "approximation": {
-          "usageOn": 1,
-          "usageOff": 0.5
-        },
         "batteries": [
           "AAA",
           "OTHER"
@@ -125811,10 +125798,7 @@
       "energy": {
         "batteries": [
           "CR2032"
-        ],
-        "approximation": {
-          "usageConstant": 0.3
-        }
+        ]
       },
       "subDevices": [],
       "zigbee": {
@@ -126152,7 +126136,8 @@
       ],
       "energy": {
         "approximation": {
-          "usageConstant": 0.5
+          "usageOn": 9,
+          "usageOff": 0.3
         }
       },
       "zigbee": {
@@ -126670,7 +126655,8 @@
       ],
       "energy": {
         "approximation": {
-          "usageConstant": 0.5
+          "usageOn": 9,
+          "usageOff": 0.3
         }
       },
       "zigbee": {
@@ -127043,9 +127029,6 @@
         "button.1"
       ],
       "energy": {
-        "approximation": {
-          "usageConstant": 0.5
-        },
         "batteries": [
           "OTHER"
         ]
@@ -127534,7 +127517,8 @@
       ],
       "energy": {
         "approximation": {
-          "usageConstant": 0.5
+          "usageOn": 9,
+          "usageOff": 0.3
         }
       },
       "zigbee": {
@@ -128028,9 +128012,6 @@
         "button.1"
       ],
       "energy": {
-        "approximation": {
-          "usageConstant": 6
-        },
         "batteries": [
           "CR2032"
         ],
@@ -128507,7 +128488,8 @@
       ],
       "energy": {
         "approximation": {
-          "usageConstant": 0.5
+          "usageOn": 12,
+          "usageOff": 0.4
         }
       },
       "zigbee": {
@@ -129146,7 +129128,8 @@
       ],
       "energy": {
         "approximation": {
-          "usageConstant": 0.5
+          "usageOn": 10,
+          "usageOff": 0.3
         }
       },
       "zigbee": {
@@ -129513,7 +129496,8 @@
       ],
       "energy": {
         "approximation": {
-          "usageConstant": 0.5
+          "usageOn": 9,
+          "usageOff": 0.3
         }
       },
       "zigbee": {
@@ -130604,10 +130588,7 @@
         "batteries": [
           "CR2032",
           "CR2450"
-        ],
-        "approximation": {
-          "usageConstant": 0.5
-        }
+        ]
       },
       "pair": [
         {
@@ -130686,10 +130667,7 @@
         "batteries": [
           "CR2032",
           "CR2450"
-        ],
-        "approximation": {
-          "usageConstant": 0.5
-        }
+        ]
       },
       "zigbee": {
         "manufacturerName": [
@@ -131175,10 +131153,7 @@
         "batteries": [
           "CR2032",
           "CR2450"
-        ],
-        "approximation": {
-          "usageConstant": 0.5
-        }
+        ]
       },
       "zigbee": {
         "manufacturerName": [
@@ -132602,10 +132577,7 @@
         "batteries": [
           "CR2032",
           "CR2450"
-        ],
-        "approximation": {
-          "usageConstant": 0.5
-        }
+        ]
       },
       "zigbee": {
         "manufacturerName": [
@@ -133130,10 +133102,7 @@
           "CR2032",
           "CR2450",
           "AAA"
-        ],
-        "approximation": {
-          "usageConstant": 0.5
-        }
+        ]
       },
       "zigbee": {
         "productId": [
@@ -133716,10 +133685,7 @@
           "CR2032",
           "CR2450",
           "AAA"
-        ],
-        "approximation": {
-          "usageConstant": 0.5
-        }
+        ]
       },
       "zigbee": {
         "productId": [
@@ -134208,10 +134174,7 @@
         "batteries": [
           "CR2450",
           "AAA"
-        ],
-        "approximation": {
-          "usageConstant": 0.5
-        }
+        ]
       },
       "zigbee": {
         "manufacturerName": [
@@ -134724,10 +134687,7 @@
         "batteries": [
           "AAA",
           "CR2450"
-        ],
-        "approximation": {
-          "usageConstant": 0.5
-        }
+        ]
       },
       "zigbee": {
         "manufacturerName": [
@@ -136585,9 +136545,6 @@
         "batteries": [
           "CR2450"
         ],
-        "approximation": {
-          "usageConstant": 0.5
-        },
         "mains": true
       },
       "zigbee": {
@@ -137010,10 +136967,7 @@
         "batteries": [
           "CR2032",
           "CR2450"
-        ],
-        "approximation": {
-          "usageConstant": 0.5
-        }
+        ]
       },
       "zigbee": {
         "manufacturerName": [
@@ -138504,9 +138458,6 @@
         "batteries": [
           "CR2450"
         ],
-        "approximation": {
-          "usageConstant": 0.5
-        },
         "mains": true
       },
       "images": {
@@ -138898,9 +138849,6 @@
         "batteries": [
           "CR2450"
         ],
-        "approximation": {
-          "usageConstant": 0.5
-        },
         "mains": true
       },
       "zigbee": {
@@ -139289,7 +139237,8 @@
       ],
       "energy": {
         "approximation": {
-          "usageConstant": 0.5
+          "usageOn": 50,
+          "usageOff": 0.5
         }
       },
       "zigbee": {
@@ -139902,7 +139851,6 @@
           "_TZE200_2VFXWENG",
           "_TZE200_3EJWXPMU",
           "_TZE200_3XFJP0AG",
-          "_TZE200_3YLEW7B4",
           "_TZE200_3yp57tby",
           "_TZE200_4AIJVCZQ",
           "_TZE200_4EEYEBRT",
@@ -140488,7 +140436,6 @@
           "_TZE284_qyflbnbj",
           "_TZE284_r731zlxk",
           "_TZE284_rccxox8p",
-          "_TZE284_rjxqso4a",
           "_TZE284_tdhnhhiy",
           "_TZE284_upagmta9",
           "_TZE284_utkemkbs",
@@ -140524,7 +140471,6 @@
           "_tze200_nvodulvi",
           "_tze200_oc7xqqbs",
           "_tze200_r731zlxk",
-          "_tze200_rjxqso4a",
           "_tze200_v9hkz2yn",
           "_tze200_ves1ycwx",
           "_tze200_vhy3iakz",
@@ -140561,7 +140507,6 @@
           "_tze284_fzo2pocs",
           "_tze284_mgstdyz3",
           "_tze284_mul9abs3",
-          "_tze284_rjxqso4a",
           "_tze284_uo8qcagc",
           "_tze284_v5xjyphj",
           "owon",
@@ -140745,7 +140690,6 @@
           "_tze200_2vfxweng",
           "_tze200_3ejwxpmu",
           "_tze200_3xfjp0ag",
-          "_tze200_3ylew7b4",
           "_TZE200_3YP57TBY",
           "_tze200_3yp57tby",
           "_tze200_4aijvczq",
@@ -141326,7 +141270,6 @@
           "_tze284_r731zlxk",
           "_TZE284_RCCXOX8P",
           "_tze284_rccxox8p",
-          "_TZE284_RJXQSO4A",
           "_TZE284_TDHNHHIY",
           "_tze284_tdhnhhiy",
           "_TZE284_VJPAEIH9",
@@ -141360,7 +141303,6 @@
           "_TZE200_NVODULVI",
           "_TZE200_OC7XQQBS",
           "_TZE200_R731ZLXK",
-          "_TZE200_RJXQSO4A",
           "_TZE200_V9HKZ2YN",
           "_TZE200_VES1YCWX",
           "_TZE200_VHY3IAKZ",
@@ -141495,7 +141437,6 @@
           "_TZE200_2vfxweng",
           "_TZE200_3ejwxpmu",
           "_TZE200_3xfjp0ag",
-          "_TZE200_3ylew7b4",
           "_TZE200_4aijvczq",
           "_TZE200_4eeyebrt",
           "_TZE200_5d3vhjro",
@@ -141943,7 +141884,6 @@
           "_TZE200_nvodulvi",
           "_TZE200_oc7xqqbs",
           "_TZE200_r731zlxk",
-          "_TZE200_rjxqso4a",
           "_TZE200_v9hkz2yn",
           "_TZE200_ves1ycwx",
           "_TZE200_vhy3iakz",
@@ -142133,7 +142073,6 @@
           "_tze200_2VFXWENG",
           "_tze200_3EJWXPMU",
           "_tze200_3XFJP0AG",
-          "_tze200_3YLEW7B4",
           "_tze200_3YP57TBY",
           "_tze200_4AIJVCZQ",
           "_tze200_4EEYEBRT",
@@ -142666,7 +142605,6 @@
           "_tze284_O9OFYSMO",
           "_tze284_R731ZLXK",
           "_tze284_RCCXOX8P",
-          "_tze284_RJXQSO4A",
           "_tze284_TDHNHHIY",
           "_tze284_VJPAEIH9",
           "_tze284_XC3VWX5A",
@@ -142695,7 +142633,6 @@
           "_tze200_NVODULVI",
           "_tze200_OC7XQQBS",
           "_tze200_R731ZLXK",
-          "_tze200_RJXQSO4A",
           "_tze200_V9HKZ2YN",
           "_tze200_VES1YCWX",
           "_tze200_VHY3IAKZ",
@@ -143270,10 +143207,7 @@
       "energy": {
         "batteries": [
           "AA"
-        ],
-        "approximation": {
-          "usageConstant": 0.5
-        }
+        ]
       },
       "settings": [
         {
@@ -144113,9 +144047,6 @@
         "batteries": [
           "CR2450"
         ],
-        "approximation": {
-          "usageConstant": 0.5
-        },
         "mains": true
       },
       "subDevices": [],
@@ -146761,7 +146692,15 @@
           "_tze200_PBDLRMFB",
           "_tze204_PBDLRMFB",
           "_tze204_L4DACCGA",
-          "_tze200_VAWY74YH"
+          "_tze200_VAWY74YH",
+          "_TZE284_rjxqso4a",
+          "_TZE284_RJXQSO4A",
+          "_tze284_rjxqso4a",
+          "_tze284_RJXQSO4A",
+          "_TZE200_rjxqso4a",
+          "_TZE200_RJXQSO4A",
+          "_tze200_rjxqso4a",
+          "_tze200_RJXQSO4A"
         ],
         "productId": [
           "TS0601_co",
@@ -146831,10 +146770,7 @@
           "CR2032",
           "CR1632",
           "AAA"
-        ],
-        "approximation": {
-          "usageConstant": 0.5
-        }
+        ]
       },
       "subDevices": [],
       "zigbee": {
@@ -147580,9 +147516,6 @@
         "batteries": [
           "CR2450"
         ],
-        "approximation": {
-          "usageConstant": 0.5
-        },
         "mains": true
       },
       "metadata": {
@@ -149492,9 +149425,6 @@
         "batteries": [
           "CR2450"
         ],
-        "approximation": {
-          "usageConstant": 0.5
-        },
         "mains": true
       },
       "subDevices": [],
@@ -150463,7 +150393,11 @@
           "_tze284_HBJWGKDH",
           "_tz3000_EHGOUYVU",
           "_tze284_NCC7UAHD",
-          "_tze200_RGEAPP2C"
+          "_tze200_RGEAPP2C",
+          "_TZE200_3ylew7b4",
+          "_TZE200_3YLEW7B4",
+          "_tze200_3ylew7b4",
+          "_tze200_3YLEW7B4"
         ],
         "productId": [
           "01MINIZB",
@@ -151970,9 +151904,7 @@
             "fr": "Maintenez le bouton power pendant 5 secondes"
           }
         },
-        "manufacturerName": [
-          "_TZE200_placeholder"
-        ]
+        "manufacturerName": []
       },
       "images": {
         "small": "/drivers/air_purifier/assets/images/small.png",
@@ -151985,10 +151917,6 @@
         "zigbee"
       ],
       "energy": {
-        "approximation": {
-          "usageOn": 50,
-          "usageOff": 1
-        },
         "batteries": [
           "AAA",
           "AAA"
@@ -152284,7 +152212,8 @@
       ],
       "energy": {
         "approximation": {
-          "usageConstant": 2
+          "usageOn": 1200,
+          "usageOff": 1
         }
       },
       "maintenanceActions": [
@@ -152428,9 +152357,6 @@
         "button.1"
       ],
       "energy": {
-        "approximation": {
-          "usageConstant": 12
-        },
         "mains": true,
         "batteries": [
           "CR2450"
@@ -152816,10 +152742,6 @@
         "local"
       ],
       "energy": {
-        "approximation": {
-          "usageOn": 50,
-          "usageOff": 1
-        },
         "batteries": [
           "AAA",
           "AAA"
@@ -153770,9 +153692,6 @@
         "batteries": [
           "CR2450"
         ],
-        "approximation": {
-          "usageConstant": 0.5
-        },
         "mains": true
       },
       "pair": [
@@ -153855,9 +153774,6 @@
         "batteries": [
           "CR2450"
         ],
-        "approximation": {
-          "usageConstant": 0.5
-        },
         "mains": true
       },
       "subDevices": [],
@@ -154223,9 +154139,6 @@
         "batteries": [
           "CR2450"
         ],
-        "approximation": {
-          "usageConstant": 0.5
-        },
         "mains": true
       },
       "zigbee": {
@@ -154264,7 +154177,12 @@
             ]
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_TZE284_nbv4tdaz",
+          "_tze284_nbv4tdaz",
+          "_TZE284_NBV4TDAZ",
+          "_tze284_NBV4TDAZ"
+        ]
       },
       "settings": [
         {
@@ -154586,9 +154504,6 @@
         "batteries": [
           "CR2450"
         ],
-        "approximation": {
-          "usageConstant": 0.5
-        },
         "mains": true
       },
       "zigbee": {
@@ -154951,7 +154866,8 @@
       ],
       "energy": {
         "approximation": {
-          "usageConstant": 1
+          "usageOn": 1200,
+          "usageOff": 1
         }
       },
       "maintenanceActions": [
@@ -154997,9 +154913,6 @@
         "batteries": [
           "CR2450"
         ],
-        "approximation": {
-          "usageConstant": 0.5
-        },
         "mains": true
       },
       "subDevices": [],
@@ -156749,10 +156662,7 @@
       "energy": {
         "batteries": [
           "AA"
-        ],
-        "approximation": {
-          "usageConstant": 2
-        }
+        ]
       },
       "maintenanceActions": [
         {
@@ -156841,10 +156751,7 @@
       "energy": {
         "batteries": [
           "AA"
-        ],
-        "approximation": {
-          "usageConstant": 2
-        }
+        ]
       },
       "maintenanceActions": [
         {
@@ -157155,10 +157062,7 @@
           "CR2032",
           "AAA",
           "AA"
-        ],
-        "approximation": {
-          "usageConstant": 0.5
-        }
+        ]
       },
       "zigbee": {
         "manufacturerName": [
@@ -158678,7 +158582,16 @@
         "mains": true
       },
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_TZ3000_BR3LAUKF",
+          "_TZ3000_pnzfdr9y",
+          "_tz3000_br3laukf",
+          "_TZ3000_br3laukf",
+          "_tz3000_BR3LAUKF",
+          "_tz3000_pnzfdr9y",
+          "_TZ3000_PNZFDR9Y",
+          "_tz3000_PNZFDR9Y"
+        ],
         "productId": [
           "CK-TLSR8656-SS5-01(7014)",
           "Excellux",
@@ -160057,10 +159970,7 @@
       "energy": {
         "batteries": [
           "AA"
-        ],
-        "approximation": {
-          "usageConstant": 0.5
-        }
+        ]
       },
       "zigbee": {
         "productId": [
@@ -160081,7 +159991,732 @@
             ]
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_tyst11_2atgpdho",
+          "_tyst11_c88teujp",
+          "_tyst11_ckud7u2l",
+          "_TYST11_CKUD7U2L",
+          "_tyst11_cwnjrr72",
+          "_TYST11_CZK78PTR",
+          "_tyst11_kfvq6avy",
+          "_TYST11_PS5V5JOR",
+          "_TYST11_YW7CAHQS",
+          "_tyst11_ywdxldoj",
+          "_tz3000_g9chy2ib",
+          "_TZ3210_5rta89nj",
+          "_TZE200_04yfvweb",
+          "_tze200_0hg58wyk",
+          "_TZE200_0HG58WYK",
+          "_TZE200_127x7wnl",
+          "_tze200_1ibpyhdc",
+          "_TZE200_2atgpdho",
+          "_TZE200_2ATGPDHO",
+          "_TZE200_2cs6g9i7",
+          "_tze200_2ekuz3dz",
+          "_TZE200_4eeyebrt",
+          "_tze200_4utwoz2",
+          "_tze200_4utwozi2",
+          "_tze200_68nvbi09",
+          "_tze200_68nvbio9",
+          "_tze200_6kijc7nd",
+          "_tze200_6rdj8dzm",
+          "_TZE200_6y7kyjga",
+          "_tze200_7yoranx2",
+          "_TZE200_7YORANX2",
+          "_TZE200_8daqwrsj",
+          "_TZE200_8thwkzxl",
+          "_TZE200_8whxpsiw",
+          "_TZE200_8WHXPSIW",
+          "_tze200_9mjy74mp",
+          "_TZE200_9sfg7gm0",
+          "_TZE200_9SFG7GM0",
+          "_tze200_9xfjixap",
+          "_TZE200_a1ovdobn",
+          "_TZE200_a4bpgplm",
+          "_TZE200_A4BPGPLM",
+          "_TZE200_awnadkan",
+          "_TZE200_b6wax7g0",
+          "_tze200_bjzrowv2",
+          "_tze200_bvrlmajk",
+          "_tze200_bvu2wnxz",
+          "_TZE200_c88teujp",
+          "_tze200_cf1sl3tj",
+          "_TZE200_CHYVMHAY",
+          "_TZE200_ckud7u2l",
+          "_TZE200_CKUD7U2L",
+          "_tze200_cpmgn2cf",
+          "_TZE200_cwnjrr72",
+          "_TZE200_CWNJRR72",
+          "_TZE200_czk78ptr",
+          "_tze200_d3z1ukqw",
+          "_TZE200_dv8abrrz",
+          "_TZE200_DZUQWSYG",
+          "_tze200_e9ba97vf",
+          "_TZE200_E9BA97VF",
+          "_TZE200_FHN3NEGR",
+          "_tze200_fsow0qsk",
+          "_TZE200_fsow0qsk",
+          "_tze200_g9a3awaj",
+          "_tze200_gtouvmvl",
+          "_TZE200_hdih4foa",
+          "_TZE200_hhrtiq0x",
+          "_TZE200_HUE3YFSN",
+          "_tze200_husqqvux",
+          "_tze200_hvaxb2tc",
+          "_TZE200_jeaxp72v",
+          "_tze200_jkfbph7l",
+          "_tze200_k1tumq4t",
+          "_tze200_kds0pmmv",
+          "_TZE200_kfvq6avy",
+          "_TZE200_KLY8GJLZ",
+          "_tze200_lhzapfg9",
+          "_tze200_lllliz3p",
+          "_tze200_lnbfnyxd",
+          "_TZE200_lrznf59v",
+          "_tze200_mudxchsu",
+          "_TZE200_nhyj64w2",
+          "_tze200_nw1r9hp6",
+          "_tze200_ow09xlxm",
+          "_TZE200_owwdxjbx",
+          "_tze200_p3dbf6qs",
+          "_TZE200_ps5v5jor",
+          "_TZE200_pvvbommb",
+          "_TZE200_PVVBOMMB",
+          "_tze200_pw7mji0l",
+          "_tze200_py4cm3he",
+          "_TZE200_qsoecqlk",
+          "_tze200_rk1wojce",
+          "_tze200_rndg81sf",
+          "_TZE200_rtrmfadk",
+          "_tze200_rufdtfyv",
+          "_tze200_rv6iuyxb",
+          "_tze200_rxntag7i",
+          "_tze200_rxq4iti9",
+          "_tze200_s5zhaolp",
+          "_TZE200_snfdqllf",
+          "_tze200_spyvfeti",
+          "_tze200_sur6q7ko",
+          "_tze200_suxywabt",
+          "_TZE200_tbgecldg",
+          "_tze200_vexa5o82",
+          "_tze200_viy9ihs7",
+          "_TZE200_vuqzj1ej",
+          "_TZE200_wem3gxyx",
+          "_tze200_wsbfwodu",
+          "_tze200_x9axofse",
+          "_TZE200_xby0s3ta",
+          "_TZE200_ye5jkfsb",
+          "_tze200_yqgbrdyo",
+          "_TZE200_YW7CAHQS",
+          "_tze200_ywdxldoj",
+          "_TZE200_YWDXLDOJ",
+          "_tze200_z1tyspqw",
+          "_TZE200_Z1TYSPQW",
+          "_TZE200_zion52ef",
+          "_TZE200_ZION52EF",
+          "_TZE200_zivfvd7h",
+          "_tze204_0hcjew5p",
+          "_TZE204_5slehgeo",
+          "_tze204_5toc8eks",
+          "_TZE204_6kijc7nd",
+          "_tze204_9mjy74mp",
+          "_tze204_9xfjixap",
+          "_tze204_aaeaifez",
+          "_TZE204_ca3i8m8p",
+          "_TZE204_cg8hdnjv",
+          "_TZE204_cmyc8g5i",
+          "_tze204_cvcu2p6e",
+          "_tze204_cvub6xbb",
+          "_TZE204_dsagrkvg",
+          "_TZE204_g2ki0ejr",
+          "_tze204_g9a3awaj",
+          "_TZE204_glk6viwg",
+          "_TZE204_goecjd1t",
+          "_tze204_gops3slb",
+          "_tze204_hvaxb2tc",
+          "_TZE204_ilzkxrav",
+          "_TZE204_lnxdk2ch",
+          "_tze204_lzriup1j",
+          "_TZE204_mhxn2jso",
+          "_TZE204_mwomyz5n",
+          "_tze204_o3x45p96",
+          "_tze204_ogx8u5z6",
+          "_TZE204_p1qrtljn",
+          "_tze204_pcdmj88b",
+          "_tze204_pw7mji0l",
+          "_tze204_qyr2m29i",
+          "_tze204_rtrmfadk",
+          "_TZE204_tagezcph",
+          "_TZE204_tbgecldg",
+          "_tze204_wc2w9t1s",
+          "_tze204_x1ovyvy1",
+          "_TZE204_xalsoe3m",
+          "_TZE204_xdtnpp1a",
+          "_tze204_xnbkhhdr",
+          "_tze284_1575pmw0",
+          "_tze284_1ratpdm5",
+          "_tze284_2fnssffc",
+          "_TZE284_5slehgeo",
+          "_TZE284_6kijc7nd",
+          "_TZE284_8zizsafo",
+          "_tze284_9ern5sfh",
+          "_TZE284_a1ovdobn",
+          "_TZE284_aaeaifez",
+          "_TZE284_agcxaw3f",
+          "_tze284_aoclfnxz",
+          "_tze284_c6wv4xyo",
+          "_tze284_cgr0rhza",
+          "_TZE284_cgr0rhza",
+          "_tze284_cvub6xbb",
+          "_tze284_gops3slb",
+          "_tze284_hvaxb2tc",
+          "_tze284_iilebqoo",
+          "_TZE284_khah2lkr",
+          "_TZE284_kyyu8rbj",
+          "_tze284_lnbfy",
+          "_TZE284_madl8ejv",
+          "_tze284_noixx2uz",
+          "_TZE284_nt4pquef",
+          "_tze284_o3x45p96",
+          "_tze284_ogx8u5z6",
+          "_tze284_p3dbf6qs",
+          "_tze284_pcdmj88b",
+          "_TZE284_r3szw0xr",
+          "_TZE284_roujjevx",
+          "_tze284_rv6iuyxb",
+          "_TZE284_tbgecldg",
+          "_tze284_xdtnpp1a",
+          "_tze284_xnbkhhdr",
+          "_TZE284_ymldrmzx",
+          "_TZE284_zm8zpwas",
+          "_TYST11_2ATGPDHO",
+          "_TYST11_2atgpdho",
+          "_tyst11_2ATGPDHO",
+          "_TYST11_C88TEUJP",
+          "_TYST11_c88teujp",
+          "_tyst11_C88TEUJP",
+          "_TYST11_ckud7u2l",
+          "_tyst11_CKUD7U2L",
+          "_TYST11_CWNJRR72",
+          "_TYST11_cwnjrr72",
+          "_tyst11_CWNJRR72",
+          "_tyst11_czk78ptr",
+          "_TYST11_czk78ptr",
+          "_tyst11_CZK78PTR",
+          "_TYST11_KFVQ6AVY",
+          "_TYST11_kfvq6avy",
+          "_tyst11_KFVQ6AVY",
+          "_tyst11_ps5v5jor",
+          "_TYST11_ps5v5jor",
+          "_tyst11_PS5V5JOR",
+          "_tyst11_yw7cahqs",
+          "_TYST11_yw7cahqs",
+          "_tyst11_YW7CAHQS",
+          "_TYST11_YWDXLDOJ",
+          "_TYST11_ywdxldoj",
+          "_tyst11_YWDXLDOJ",
+          "_TZ3000_G9CHY2IB",
+          "_TZ3000_g9chy2ib",
+          "_tz3000_G9CHY2IB",
+          "_tz3210_5rta89nj",
+          "_TZ3210_5RTA89NJ",
+          "_tz3210_5RTA89NJ",
+          "_tze200_04yfvweb",
+          "_TZE200_04YFVWEB",
+          "_tze200_04YFVWEB",
+          "_TZE200_0hg58wyk",
+          "_tze200_0HG58WYK",
+          "_tze200_127x7wnl",
+          "_TZE200_127X7WNL",
+          "_tze200_127X7WNL",
+          "_TZE200_1IBPYHDC",
+          "_TZE200_1ibpyhdc",
+          "_tze200_1IBPYHDC",
+          "_tze200_2atgpdho",
+          "_tze200_2ATGPDHO",
+          "_tze200_2cs6g9i7",
+          "_TZE200_2CS6G9I7",
+          "_tze200_2CS6G9I7",
+          "_TZE200_2EKUZ3DZ",
+          "_TZE200_2ekuz3dz",
+          "_tze200_2EKUZ3DZ",
+          "_tze200_4eeyebrt",
+          "_TZE200_4EEYEBRT",
+          "_tze200_4EEYEBRT",
+          "_TZE200_4UTWOZ2",
+          "_TZE200_4utwoz2",
+          "_tze200_4UTWOZ2",
+          "_TZE200_4UTWOZI2",
+          "_TZE200_4utwozi2",
+          "_tze200_4UTWOZI2",
+          "_TZE200_68NVBI09",
+          "_TZE200_68nvbi09",
+          "_tze200_68NVBI09",
+          "_TZE200_68NVBIO9",
+          "_TZE200_68nvbio9",
+          "_tze200_68NVBIO9",
+          "_TZE200_6KIJC7ND",
+          "_TZE200_6kijc7nd",
+          "_tze200_6KIJC7ND",
+          "_TZE200_6RDJ8DZM",
+          "_TZE200_6rdj8dzm",
+          "_tze200_6RDJ8DZM",
+          "_tze200_6y7kyjga",
+          "_TZE200_6Y7KYJGA",
+          "_tze200_6Y7KYJGA",
+          "_TZE200_7yoranx2",
+          "_tze200_7YORANX2",
+          "_tze200_8daqwrsj",
+          "_TZE200_8DAQWRSJ",
+          "_tze200_8DAQWRSJ",
+          "_tze200_8thwkzxl",
+          "_TZE200_8THWKZXL",
+          "_tze200_8THWKZXL",
+          "_tze200_8whxpsiw",
+          "_tze200_8WHXPSIW",
+          "_TZE200_9MJY74MP",
+          "_TZE200_9mjy74mp",
+          "_tze200_9MJY74MP",
+          "_tze200_9sfg7gm0",
+          "_tze200_9SFG7GM0",
+          "_TZE200_9XFJIXAP",
+          "_TZE200_9xfjixap",
+          "_tze200_9XFJIXAP",
+          "_tze200_a1ovdobn",
+          "_TZE200_A1OVDOBN",
+          "_tze200_A1OVDOBN",
+          "_tze200_a4bpgplm",
+          "_tze200_A4BPGPLM",
+          "_tze200_awnadkan",
+          "_TZE200_AWNADKAN",
+          "_tze200_AWNADKAN",
+          "_tze200_b6wax7g0",
+          "_TZE200_B6WAX7G0",
+          "_tze200_B6WAX7G0",
+          "_TZE200_BJZROWV2",
+          "_TZE200_bjzrowv2",
+          "_tze200_BJZROWV2",
+          "_TZE200_BVRLMAJK",
+          "_TZE200_bvrlmajk",
+          "_tze200_BVRLMAJK",
+          "_TZE200_BVU2WNXZ",
+          "_TZE200_bvu2wnxz",
+          "_tze200_BVU2WNXZ",
+          "_tze200_c88teujp",
+          "_TZE200_C88TEUJP",
+          "_tze200_C88TEUJP",
+          "_TZE200_CF1SL3TJ",
+          "_TZE200_cf1sl3tj",
+          "_tze200_CF1SL3TJ",
+          "_tze200_chyvmhay",
+          "_TZE200_chyvmhay",
+          "_tze200_CHYVMHAY",
+          "_tze200_ckud7u2l",
+          "_tze200_CKUD7U2L",
+          "_TZE200_CPMGN2CF",
+          "_TZE200_cpmgn2cf",
+          "_tze200_CPMGN2CF",
+          "_tze200_cwnjrr72",
+          "_tze200_CWNJRR72",
+          "_tze200_czk78ptr",
+          "_TZE200_CZK78PTR",
+          "_tze200_CZK78PTR",
+          "_TZE200_D3Z1UKQW",
+          "_TZE200_d3z1ukqw",
+          "_tze200_D3Z1UKQW",
+          "_tze200_dv8abrrz",
+          "_TZE200_DV8ABRRZ",
+          "_tze200_DV8ABRRZ",
+          "_tze200_dzuqwsyg",
+          "_TZE200_dzuqwsyg",
+          "_tze200_DZUQWSYG",
+          "_TZE200_e9ba97vf",
+          "_tze200_E9BA97VF",
+          "_tze200_fhn3negr",
+          "_TZE200_fhn3negr",
+          "_tze200_FHN3NEGR",
+          "_TZE200_FSOW0QSK",
+          "_tze200_FSOW0QSK",
+          "_TZE200_G9A3AWAJ",
+          "_TZE200_g9a3awaj",
+          "_tze200_G9A3AWAJ",
+          "_TZE200_GTOUVMVL",
+          "_TZE200_gtouvmvl",
+          "_tze200_GTOUVMVL",
+          "_tze200_hdih4foa",
+          "_TZE200_HDIH4FOA",
+          "_tze200_HDIH4FOA",
+          "_tze200_hhrtiq0x",
+          "_TZE200_HHRTIQ0X",
+          "_tze200_HHRTIQ0X",
+          "_tze200_hue3yfsn",
+          "_TZE200_hue3yfsn",
+          "_tze200_HUE3YFSN",
+          "_TZE200_HUSQQVUX",
+          "_TZE200_husqqvux",
+          "_tze200_HUSQQVUX",
+          "_TZE200_HVAXB2TC",
+          "_TZE200_hvaxb2tc",
+          "_tze200_HVAXB2TC",
+          "_tze200_jeaxp72v",
+          "_TZE200_JEAXP72V",
+          "_tze200_JEAXP72V",
+          "_TZE200_JKFBPH7L",
+          "_TZE200_jkfbph7l",
+          "_tze200_JKFBPH7L",
+          "_TZE200_K1TUMQ4T",
+          "_TZE200_k1tumq4t",
+          "_tze200_K1TUMQ4T",
+          "_TZE200_KDS0PMMV",
+          "_TZE200_kds0pmmv",
+          "_tze200_KDS0PMMV",
+          "_tze200_kfvq6avy",
+          "_TZE200_KFVQ6AVY",
+          "_tze200_KFVQ6AVY",
+          "_tze200_kly8gjlz",
+          "_TZE200_kly8gjlz",
+          "_tze200_KLY8GJLZ",
+          "_TZE200_LHZAPFG9",
+          "_TZE200_lhzapfg9",
+          "_tze200_LHZAPFG9",
+          "_TZE200_LLLLIZ3P",
+          "_TZE200_lllliz3p",
+          "_tze200_LLLLIZ3P",
+          "_TZE200_LNBFNYXD",
+          "_TZE200_lnbfnyxd",
+          "_tze200_LNBFNYXD",
+          "_tze200_lrznf59v",
+          "_TZE200_LRZNF59V",
+          "_tze200_LRZNF59V",
+          "_TZE200_MUDXCHSU",
+          "_TZE200_mudxchsu",
+          "_tze200_MUDXCHSU",
+          "_tze200_nhyj64w2",
+          "_TZE200_NHYJ64W2",
+          "_tze200_NHYJ64W2",
+          "_TZE200_NW1R9HP6",
+          "_TZE200_nw1r9hp6",
+          "_tze200_NW1R9HP6",
+          "_TZE200_OW09XLXM",
+          "_TZE200_ow09xlxm",
+          "_tze200_OW09XLXM",
+          "_tze200_owwdxjbx",
+          "_TZE200_OWWDXJBX",
+          "_tze200_OWWDXJBX",
+          "_TZE200_P3DBF6QS",
+          "_TZE200_p3dbf6qs",
+          "_tze200_P3DBF6QS",
+          "_tze200_ps5v5jor",
+          "_TZE200_PS5V5JOR",
+          "_tze200_PS5V5JOR",
+          "_tze200_pvvbommb",
+          "_tze200_PVVBOMMB",
+          "_TZE200_PW7MJI0L",
+          "_TZE200_pw7mji0l",
+          "_tze200_PW7MJI0L",
+          "_TZE200_PY4CM3HE",
+          "_TZE200_py4cm3he",
+          "_tze200_PY4CM3HE",
+          "_tze200_qsoecqlk",
+          "_TZE200_QSOECQLK",
+          "_tze200_QSOECQLK",
+          "_TZE200_RK1WOJCE",
+          "_TZE200_rk1wojce",
+          "_tze200_RK1WOJCE",
+          "_TZE200_RNDG81SF",
+          "_TZE200_rndg81sf",
+          "_tze200_RNDG81SF",
+          "_tze200_rtrmfadk",
+          "_TZE200_RTRMFADK",
+          "_tze200_RTRMFADK",
+          "_TZE200_RUFDTFYV",
+          "_TZE200_rufdtfyv",
+          "_tze200_RUFDTFYV",
+          "_TZE200_RV6IUYXB",
+          "_TZE200_rv6iuyxb",
+          "_tze200_RV6IUYXB",
+          "_TZE200_RXNTAG7I",
+          "_TZE200_rxntag7i",
+          "_tze200_RXNTAG7I",
+          "_TZE200_RXQ4ITI9",
+          "_TZE200_rxq4iti9",
+          "_tze200_RXQ4ITI9",
+          "_TZE200_S5ZHAOLP",
+          "_TZE200_s5zhaolp",
+          "_tze200_S5ZHAOLP",
+          "_tze200_snfdqllf",
+          "_TZE200_SNFDQLLF",
+          "_tze200_SNFDQLLF",
+          "_TZE200_SPYVFETI",
+          "_TZE200_spyvfeti",
+          "_tze200_SPYVFETI",
+          "_TZE200_SUR6Q7KO",
+          "_TZE200_sur6q7ko",
+          "_tze200_SUR6Q7KO",
+          "_TZE200_SUXYWABT",
+          "_TZE200_suxywabt",
+          "_tze200_SUXYWABT",
+          "_tze200_tbgecldg",
+          "_TZE200_TBGECLDG",
+          "_tze200_TBGECLDG",
+          "_TZE200_VEXA5O82",
+          "_TZE200_vexa5o82",
+          "_tze200_VEXA5O82",
+          "_TZE200_VIY9IHS7",
+          "_TZE200_viy9ihs7",
+          "_tze200_VIY9IHS7",
+          "_tze200_vuqzj1ej",
+          "_TZE200_VUQZJ1EJ",
+          "_tze200_VUQZJ1EJ",
+          "_tze200_wem3gxyx",
+          "_TZE200_WEM3GXYX",
+          "_tze200_WEM3GXYX",
+          "_TZE200_WSBFWODU",
+          "_TZE200_wsbfwodu",
+          "_tze200_WSBFWODU",
+          "_TZE200_X9AXOFSE",
+          "_TZE200_x9axofse",
+          "_tze200_X9AXOFSE",
+          "_tze200_xby0s3ta",
+          "_TZE200_XBY0S3TA",
+          "_tze200_XBY0S3TA",
+          "_tze200_ye5jkfsb",
+          "_TZE200_YE5JKFSB",
+          "_tze200_YE5JKFSB",
+          "_TZE200_YQGBRDYO",
+          "_TZE200_yqgbrdyo",
+          "_tze200_YQGBRDYO",
+          "_tze200_yw7cahqs",
+          "_TZE200_yw7cahqs",
+          "_tze200_YW7CAHQS",
+          "_TZE200_ywdxldoj",
+          "_tze200_YWDXLDOJ",
+          "_TZE200_z1tyspqw",
+          "_tze200_Z1TYSPQW",
+          "_tze200_zion52ef",
+          "_tze200_ZION52EF",
+          "_tze200_zivfvd7h",
+          "_TZE200_ZIVFVD7H",
+          "_tze200_ZIVFVD7H",
+          "_TZE204_0HCJEW5P",
+          "_TZE204_0hcjew5p",
+          "_tze204_0HCJEW5P",
+          "_tze204_5slehgeo",
+          "_TZE204_5SLEHGEO",
+          "_tze204_5SLEHGEO",
+          "_TZE204_5TOC8EKS",
+          "_TZE204_5toc8eks",
+          "_tze204_5TOC8EKS",
+          "_tze204_6kijc7nd",
+          "_TZE204_6KIJC7ND",
+          "_tze204_6KIJC7ND",
+          "_TZE204_9MJY74MP",
+          "_TZE204_9mjy74mp",
+          "_tze204_9MJY74MP",
+          "_TZE204_9XFJIXAP",
+          "_TZE204_9xfjixap",
+          "_tze204_9XFJIXAP",
+          "_TZE204_AAEAIFEZ",
+          "_TZE204_aaeaifez",
+          "_tze204_AAEAIFEZ",
+          "_tze204_ca3i8m8p",
+          "_TZE204_CA3I8M8P",
+          "_tze204_CA3I8M8P",
+          "_tze204_cg8hdnjv",
+          "_TZE204_CG8HDNJV",
+          "_tze204_CG8HDNJV",
+          "_tze204_cmyc8g5i",
+          "_TZE204_CMYC8G5I",
+          "_tze204_CMYC8G5I",
+          "_TZE204_CVCU2P6E",
+          "_TZE204_cvcu2p6e",
+          "_tze204_CVCU2P6E",
+          "_TZE204_CVUB6XBB",
+          "_TZE204_cvub6xbb",
+          "_tze204_CVUB6XBB",
+          "_tze204_dsagrkvg",
+          "_TZE204_DSAGRKVG",
+          "_tze204_DSAGRKVG",
+          "_tze204_g2ki0ejr",
+          "_TZE204_G2KI0EJR",
+          "_tze204_G2KI0EJR",
+          "_TZE204_G9A3AWAJ",
+          "_TZE204_g9a3awaj",
+          "_tze204_G9A3AWAJ",
+          "_tze204_glk6viwg",
+          "_TZE204_GLK6VIWG",
+          "_tze204_GLK6VIWG",
+          "_tze204_goecjd1t",
+          "_TZE204_GOECJD1T",
+          "_tze204_GOECJD1T",
+          "_TZE204_GOPS3SLB",
+          "_TZE204_gops3slb",
+          "_tze204_GOPS3SLB",
+          "_TZE204_HVAXB2TC",
+          "_TZE204_hvaxb2tc",
+          "_tze204_HVAXB2TC",
+          "_tze204_ilzkxrav",
+          "_TZE204_ILZKXRAV",
+          "_tze204_ILZKXRAV",
+          "_tze204_lnxdk2ch",
+          "_TZE204_LNXDK2CH",
+          "_tze204_LNXDK2CH",
+          "_TZE204_LZRIUP1J",
+          "_TZE204_lzriup1j",
+          "_tze204_LZRIUP1J",
+          "_tze204_mhxn2jso",
+          "_TZE204_MHXN2JSO",
+          "_tze204_MHXN2JSO",
+          "_tze204_mwomyz5n",
+          "_TZE204_MWOMYZ5N",
+          "_tze204_MWOMYZ5N",
+          "_TZE204_O3X45P96",
+          "_TZE204_o3x45p96",
+          "_tze204_O3X45P96",
+          "_TZE204_OGX8U5Z6",
+          "_TZE204_ogx8u5z6",
+          "_tze204_OGX8U5Z6",
+          "_tze204_p1qrtljn",
+          "_TZE204_P1QRTLJN",
+          "_tze204_P1QRTLJN",
+          "_TZE204_PCDMJ88B",
+          "_TZE204_pcdmj88b",
+          "_tze204_PCDMJ88B",
+          "_TZE204_PW7MJI0L",
+          "_TZE204_pw7mji0l",
+          "_tze204_PW7MJI0L",
+          "_TZE204_QYR2M29I",
+          "_TZE204_qyr2m29i",
+          "_tze204_QYR2M29I",
+          "_TZE204_RTRMFADK",
+          "_TZE204_rtrmfadk",
+          "_tze204_RTRMFADK",
+          "_tze204_tagezcph",
+          "_TZE204_TAGEZCPH",
+          "_tze204_TAGEZCPH",
+          "_tze204_tbgecldg",
+          "_TZE204_TBGECLDG",
+          "_tze204_TBGECLDG",
+          "_TZE204_WC2W9T1S",
+          "_TZE204_wc2w9t1s",
+          "_tze204_WC2W9T1S",
+          "_TZE204_X1OVYVY1",
+          "_TZE204_x1ovyvy1",
+          "_tze204_X1OVYVY1",
+          "_tze204_xalsoe3m",
+          "_TZE204_XALSOE3M",
+          "_tze204_XALSOE3M",
+          "_tze204_xdtnpp1a",
+          "_TZE204_XDTNPP1A",
+          "_tze204_XDTNPP1A",
+          "_TZE204_XNBKHHDR",
+          "_TZE204_xnbkhhdr",
+          "_tze204_XNBKHHDR",
+          "_TZE284_1575PMW0",
+          "_TZE284_1575pmw0",
+          "_tze284_1575PMW0",
+          "_TZE284_1RATPDM5",
+          "_TZE284_1ratpdm5",
+          "_tze284_1RATPDM5",
+          "_TZE284_2FNSSFFC",
+          "_TZE284_2fnssffc",
+          "_tze284_2FNSSFFC",
+          "_tze284_5slehgeo",
+          "_TZE284_5SLEHGEO",
+          "_tze284_5SLEHGEO",
+          "_tze284_6kijc7nd",
+          "_TZE284_6KIJC7ND",
+          "_tze284_6KIJC7ND",
+          "_tze284_8zizsafo",
+          "_TZE284_8ZIZSAFO",
+          "_tze284_8ZIZSAFO",
+          "_TZE284_9ERN5SFH",
+          "_TZE284_9ern5sfh",
+          "_tze284_9ERN5SFH",
+          "_tze284_a1ovdobn",
+          "_TZE284_A1OVDOBN",
+          "_tze284_A1OVDOBN",
+          "_tze284_aaeaifez",
+          "_TZE284_AAEAIFEZ",
+          "_tze284_AAEAIFEZ",
+          "_tze284_agcxaw3f",
+          "_TZE284_AGCXAW3F",
+          "_tze284_AGCXAW3F",
+          "_TZE284_AOCLFNXZ",
+          "_TZE284_aoclfnxz",
+          "_tze284_AOCLFNXZ",
+          "_TZE284_C6WV4XYO",
+          "_TZE284_c6wv4xyo",
+          "_tze284_C6WV4XYO",
+          "_TZE284_CGR0RHZA",
+          "_tze284_CGR0RHZA",
+          "_TZE284_CVUB6XBB",
+          "_TZE284_cvub6xbb",
+          "_tze284_CVUB6XBB",
+          "_TZE284_GOPS3SLB",
+          "_TZE284_gops3slb",
+          "_tze284_GOPS3SLB",
+          "_TZE284_HVAXB2TC",
+          "_TZE284_hvaxb2tc",
+          "_tze284_HVAXB2TC",
+          "_TZE284_IILEBQOO",
+          "_TZE284_iilebqoo",
+          "_tze284_IILEBQOO",
+          "_tze284_khah2lkr",
+          "_TZE284_KHAH2LKR",
+          "_tze284_KHAH2LKR",
+          "_tze284_kyyu8rbj",
+          "_TZE284_KYYU8RBJ",
+          "_tze284_KYYU8RBJ",
+          "_TZE284_LNBFY",
+          "_TZE284_lnbfy",
+          "_tze284_LNBFY",
+          "_tze284_madl8ejv",
+          "_TZE284_MADL8EJV",
+          "_tze284_MADL8EJV",
+          "_TZE284_NOIXX2UZ",
+          "_TZE284_noixx2uz",
+          "_tze284_NOIXX2UZ",
+          "_tze284_nt4pquef",
+          "_TZE284_NT4PQUEF",
+          "_tze284_NT4PQUEF",
+          "_TZE284_O3X45P96",
+          "_TZE284_o3x45p96",
+          "_tze284_O3X45P96",
+          "_TZE284_OGX8U5Z6",
+          "_TZE284_ogx8u5z6",
+          "_tze284_OGX8U5Z6",
+          "_TZE284_P3DBF6QS",
+          "_TZE284_p3dbf6qs",
+          "_tze284_P3DBF6QS",
+          "_TZE284_PCDMJ88B",
+          "_TZE284_pcdmj88b",
+          "_tze284_PCDMJ88B",
+          "_tze284_r3szw0xr",
+          "_TZE284_R3SZW0XR",
+          "_tze284_R3SZW0XR",
+          "_tze284_roujjevx",
+          "_TZE284_ROUJJEVX",
+          "_tze284_ROUJJEVX",
+          "_TZE284_RV6IUYXB",
+          "_TZE284_rv6iuyxb",
+          "_tze284_RV6IUYXB",
+          "_tze284_tbgecldg",
+          "_TZE284_TBGECLDG",
+          "_tze284_TBGECLDG",
+          "_TZE284_XDTNPP1A",
+          "_TZE284_xdtnpp1a",
+          "_tze284_XDTNPP1A",
+          "_TZE284_XNBKHHDR",
+          "_TZE284_xnbkhhdr",
+          "_tze284_XNBKHHDR",
+          "_tze284_ymldrmzx",
+          "_TZE284_YMLDRMZX",
+          "_tze284_YMLDRMZX",
+          "_tze284_zm8zpwas",
+          "_TZE284_ZM8ZPWAS",
+          "_tze284_ZM8ZPWAS"
+        ]
       },
       "settings": [
         {
@@ -160371,10 +161006,7 @@
       "energy": {
         "batteries": [
           "AA"
-        ],
-        "approximation": {
-          "usageConstant": 0.5
-        }
+        ]
       },
       "zigbee": {
         "manufacturerName": [
@@ -161265,10 +161897,6 @@
         }
       ],
       "energy": {
-        "approximation": {
-          "usageOn": 0,
-          "usageOff": 0
-        },
         "batteries": [
           "CR2032"
         ]
@@ -161383,10 +162011,6 @@
         "small": "//drivers/dimmer_1_gang/assets/images/small.png"
       },
       "energy": {
-        "approximation": {
-          "usageOn": 0,
-          "usageOff": 0
-        },
         "batteries": [
           "CR2032"
         ]
@@ -161495,10 +162119,6 @@
         "small": "//drivers/dimmer_1_gang_2/assets/images/small.png"
       },
       "energy": {
-        "approximation": {
-          "usageOn": 0,
-          "usageOff": 0
-        },
         "batteries": [
           "CR2032"
         ]
@@ -161600,10 +162220,6 @@
         "small": "//drivers/dimmer_1_gang_tuya/assets/images/small.png"
       },
       "energy": {
-        "approximation": {
-          "usageOn": 0,
-          "usageOff": 0
-        },
         "batteries": [
           "CR2032"
         ]
@@ -161718,10 +162334,6 @@
         "small": "//drivers/dimmer_2_gang/assets/images/small.png"
       },
       "energy": {
-        "approximation": {
-          "usageOn": 0,
-          "usageOff": 0
-        },
         "batteries": [
           "CR2032"
         ]
@@ -161886,10 +162498,6 @@
         "small": "//drivers/dimmer_2_gang_tuya/assets/images/small.png"
       },
       "energy": {
-        "approximation": {
-          "usageOn": 0,
-          "usageOff": 0
-        },
         "batteries": [
           "CR2032"
         ]
@@ -162119,10 +162727,6 @@
         "xlarge": "/drivers/dimmer_3gang/assets/images/xlarge.png"
       },
       "energy": {
-        "approximation": {
-          "usageOn": 60,
-          "usageOff": 0.5
-        },
         "batteries": [
           "CR2032"
         ]
@@ -162221,10 +162825,6 @@
         }
       },
       "energy": {
-        "approximation": {
-          "usageOn": 0,
-          "usageOff": 0
-        },
         "batteries": [
           "CR2032"
         ]
@@ -163133,10 +163733,6 @@
         "xlarge": "/drivers/dimmer_dual_channel/assets/images/xlarge.png"
       },
       "energy": {
-        "approximation": {
-          "usageOn": 60,
-          "usageOff": 0.5
-        },
         "batteries": [
           "CR2032"
         ]
@@ -163205,10 +163801,6 @@
         "small": "/drivers/dimmer_ts110e/assets/images/small.png"
       },
       "energy": {
-        "approximation": {
-          "usageOn": 5,
-          "usageOff": 0.5
-        },
         "batteries": [
           "CR2032"
         ]
@@ -165589,10 +166181,7 @@
           "AAA",
           "AA",
           "OTHER"
-        ],
-        "approximation": {
-          "usageConstant": 0.5
-        }
+        ]
       },
       "images": {
         "small": "/drivers/diy_custom_zigbee/assets/images/small.png",
@@ -166183,10 +166772,7 @@
         "batteries": [
           "AA",
           "AAA"
-        ],
-        "approximation": {
-          "usageConstant": 0.5
-        }
+        ]
       },
       "zigbee": {
         "manufacturerName": [
@@ -166506,9 +167092,6 @@
         "batteries": [
           "CR2450"
         ],
-        "approximation": {
-          "usageConstant": 0.5
-        },
         "mains": true
       },
       "zigbee": {
@@ -166875,10 +167458,7 @@
           "CR2032",
           "CR2450",
           "AAA"
-        ],
-        "approximation": {
-          "usageConstant": 0.1
-        }
+        ]
       },
       "zigbee": {
         "manufacturerName": [
@@ -166997,10 +167577,7 @@
         "batteries": [
           "OTHER",
           "OTHER"
-        ],
-        "approximation": {
-          "usageConstant": 0.5
-        }
+        ]
       },
       "zigbee": {
         "manufacturerName": [
@@ -167501,7 +168078,12 @@
         "small": "//drivers/doorwindowsensor_3/assets/images/small.png"
       },
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_TZ3000_jowhpxop",
+          "_tz3000_jowhpxop",
+          "_TZ3000_JOWHPXOP",
+          "_tz3000_JOWHPXOP"
+        ],
         "productId": [
           "01MINIZB",
           "BASICZBR3",
@@ -169496,7 +170078,8 @@
       ],
       "energy": {
         "approximation": {
-          "usageConstant": 2
+          "usageOn": 1200,
+          "usageOff": 1
         }
       },
       "maintenanceActions": [
@@ -170675,7 +171258,12 @@
             "en": "Turn the switch on/off 3 times quickly"
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_TZ3000_9ni6xxld",
+          "_tz3000_9ni6xxld",
+          "_TZ3000_9NI6XXLD",
+          "_tz3000_9NI6XXLD"
+        ]
       },
       "images": {
         "small": "/drivers/switch_4gang/assets/images/small.png",
@@ -171357,13 +171945,31 @@
           "AAA",
           "AA",
           "CR123A"
-        ],
-        "approximation": {
-          "usageConstant": 0.5
-        }
+        ]
       },
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_tz3000_uwkja6z1",
+          "_tz3000_yujkchbz",
+          "_tz3210_ddigca5n",
+          "_tz3210_jlf1nepw",
+          "_tz3210_rwmitwj4",
+          "_TZ3000_UWKJA6Z1",
+          "_TZ3000_uwkja6z1",
+          "_tz3000_UWKJA6Z1",
+          "_TZ3000_YUJKCHBZ",
+          "_TZ3000_yujkchbz",
+          "_tz3000_YUJKCHBZ",
+          "_TZ3210_DDIGCA5N",
+          "_TZ3210_ddigca5n",
+          "_tz3210_DDIGCA5N",
+          "_TZ3210_JLF1NEPW",
+          "_TZ3210_jlf1nepw",
+          "_tz3210_JLF1NEPW",
+          "_TZ3210_RWMITWJ4",
+          "_TZ3210_rwmitwj4",
+          "_tz3210_RWMITWJ4"
+        ],
         "productId": [
           "S26R2ZB",
           "S31 Lite zb",
@@ -172018,10 +172624,7 @@
           "CR2032",
           "AAA",
           "AA"
-        ],
-        "approximation": {
-          "usageConstant": 0.5
-        }
+        ]
       },
       "zigbee": {
         "manufacturerName": [
@@ -173268,7 +173871,8 @@
       },
       "energy": {
         "approximation": {
-          "usageConstant": 0.5
+          "usageOn": 1200,
+          "usageOff": 1
         }
       },
       "platforms": [
@@ -173662,7 +174266,8 @@
       ],
       "energy": {
         "approximation": {
-          "usageConstant": 5
+          "usageOn": 1200,
+          "usageOff": 1
         }
       },
       "maintenanceActions": [
@@ -174104,11 +174709,7 @@
         "batteries": [
           "AAA",
           "AAA"
-        ],
-        "approximation": {
-          "usageOn": 50,
-          "usageOff": 1
-        }
+        ]
       },
       "zigbee": {
         "manufacturerName": [
@@ -175444,10 +176045,7 @@
         "batteries": [
           "CR2450",
           "CR2032"
-        ],
-        "approximation": {
-          "usageConstant": 0.3
-        }
+        ]
       },
       "maintenanceActions": [
         {
@@ -177187,10 +177785,7 @@
           "AAA",
           "AA",
           "CR123A"
-        ],
-        "approximation": {
-          "usageConstant": 0.5
-        }
+        ]
       },
       "zigbee": {
         "manufacturerName": [
@@ -177515,9 +178110,6 @@
         "button.1"
       ],
       "energy": {
-        "approximation": {
-          "usageConstant": 0.5
-        },
         "batteries": [
           "OTHER"
         ]
@@ -177844,9 +178436,6 @@
         "button.1"
       ],
       "energy": {
-        "approximation": {
-          "usageConstant": 0.5
-        },
         "batteries": [
           "OTHER"
         ]
@@ -178243,9 +178832,6 @@
         "button.1"
       ],
       "energy": {
-        "approximation": {
-          "usageConstant": 9
-        },
         "mains": true,
         "batteries": [
           "CR2450"
@@ -178694,9 +179280,6 @@
         "button.1"
       ],
       "energy": {
-        "approximation": {
-          "usageConstant": 6
-        },
         "mains": true,
         "batteries": [
           "CR2450"
@@ -179304,9 +179887,6 @@
         "button.1"
       ],
       "energy": {
-        "approximation": {
-          "usageConstant": 6
-        },
         "mains": true,
         "batteries": [
           "CR2450"
@@ -179882,9 +180462,6 @@
         "button.1"
       ],
       "energy": {
-        "approximation": {
-          "usageConstant": 0.5
-        },
         "batteries": [
           "OTHER"
         ]
@@ -180477,9 +181054,6 @@
         "button.1"
       ],
       "energy": {
-        "approximation": {
-          "usageConstant": 9
-        },
         "mains": true,
         "batteries": [
           "CR2450"
@@ -180945,10 +181519,7 @@
       "energy": {
         "batteries": [
           "AA"
-        ],
-        "approximation": {
-          "usageConstant": 0.5
-        }
+        ]
       },
       "zigbee": {
         "manufacturerName": [
@@ -182557,10 +183128,7 @@
           "AAA",
           "AA",
           "CR123A"
-        ],
-        "approximation": {
-          "usageConstant": 0.5
-        }
+        ]
       },
       "subDevices": [],
       "zigbee": {
@@ -188014,7 +188582,8 @@
       ],
       "energy": {
         "approximation": {
-          "usageConstant": 1
+          "usageOn": 1,
+          "usageOff": 0.3
         }
       },
       "maintenanceActions": [
@@ -188909,10 +189478,7 @@
           "AA",
           "CR123A",
           "INTERNAL"
-        ],
-        "approximation": {
-          "usageConstant": 0.5
-        }
+        ]
       },
       "pair": [
         {
@@ -189776,7 +190342,8 @@
       },
       "energy": {
         "approximation": {
-          "usageConstant": 1500
+          "usageOn": 1500,
+          "usageOff": 0.3
         }
       },
       "flow": {
@@ -190030,10 +190597,7 @@
       "energy": {
         "batteries": [
           "AA"
-        ],
-        "approximation": {
-          "usageConstant": 0.5
-        }
+        ]
       },
       "zigbee": {
         "manufacturerName": [
@@ -191854,10 +192418,7 @@
         "batteries": [
           "CR2032",
           "CR2450"
-        ],
-        "approximation": {
-          "usageConstant": 0.5
-        }
+        ]
       },
       "zigbee": {
         "manufacturerName": [
@@ -193104,10 +193665,7 @@
           "CR2032",
           "CR2450",
           "AAA"
-        ],
-        "approximation": {
-          "usageConstant": 0.5
-        }
+        ]
       },
       "zigbee": {
         "manufacturerName": [
@@ -193999,9 +194557,6 @@
         "batteries": [
           "CR2450"
         ],
-        "approximation": {
-          "usageConstant": 0.5
-        },
         "mains": true
       },
       "images": {
@@ -194391,9 +194946,6 @@
         "batteries": [
           "CR2450"
         ],
-        "approximation": {
-          "usageConstant": 0.5
-        },
         "mains": true
       },
       "zigbee": {
@@ -195060,9 +195612,6 @@
         "batteries": [
           "CR2450"
         ],
-        "approximation": {
-          "usageConstant": 0.5
-        },
         "mains": true
       },
       "images": {
@@ -195445,10 +195994,7 @@
         "batteries": [
           "CR2032",
           "CR2450"
-        ],
-        "approximation": {
-          "usageConstant": 0.5
-        }
+        ]
       },
       "zigbee": {
         "manufacturerName": [
@@ -196777,7 +197323,16 @@
         }
       },
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_tz3000_5bsf8vaj",
+          "_tz3000_utagpnzs",
+          "_TZ3000_5BSF8VAJ",
+          "_TZ3000_5bsf8vaj",
+          "_tz3000_5BSF8VAJ",
+          "_TZ3000_UTAGPNZS",
+          "_TZ3000_utagpnzs",
+          "_tz3000_UTAGPNZS"
+        ],
         "productId": [
           "TS0505A"
         ],
@@ -197660,10 +198215,7 @@
           "CR2032",
           "CR2450",
           "AAA"
-        ],
-        "approximation": {
-          "usageConstant": 0.5
-        }
+        ]
       },
       "zigbee": {
         "productId": [
@@ -198973,9 +199525,6 @@
         "batteries": [
           "CR2450"
         ],
-        "approximation": {
-          "usageConstant": 0.5
-        },
         "mains": true
       },
       "subDevices": [],
@@ -199982,9 +200531,6 @@
         "batteries": [
           "CR2450"
         ],
-        "approximation": {
-          "usageConstant": 0.5
-        },
         "mains": true
       },
       "pair": [
@@ -203041,10 +203587,7 @@
           "AA",
           "CR123A",
           "INTERNAL"
-        ],
-        "approximation": {
-          "usageConstant": 0.5
-        }
+        ]
       },
       "pair": [
         {
@@ -203100,9 +203643,6 @@
         "batteries": [
           "CR2450"
         ],
-        "approximation": {
-          "usageConstant": 0.5
-        },
         "mains": true
       },
       "subDevices": [],
@@ -203502,10 +204042,7 @@
           "CR2032",
           "CR1632",
           "AAA"
-        ],
-        "approximation": {
-          "usageConstant": 0.5
-        }
+        ]
       },
       "subDevices": [],
       "settings": [
@@ -203861,9 +204398,6 @@
         "batteries": [
           "CR2450"
         ],
-        "approximation": {
-          "usageConstant": 0.5
-        },
         "mains": true
       },
       "subDevices": [],
@@ -205286,9 +205820,6 @@
         "batteries": [
           "CR2450"
         ],
-        "approximation": {
-          "usageConstant": 0.5
-        },
         "mains": true
       },
       "pair": [
@@ -206028,10 +206559,7 @@
           "AA",
           "CR123A",
           "INTERNAL"
-        ],
-        "approximation": {
-          "usageConstant": 0.5
-        }
+        ]
       },
       "pair": [
         {
@@ -207222,10 +207750,7 @@
           "AA",
           "CR123A",
           "INTERNAL"
-        ],
-        "approximation": {
-          "usageConstant": 0.5
-        }
+        ]
       },
       "pair": [
         {
@@ -207284,10 +207809,7 @@
           "AAA",
           "AA",
           "CR123A"
-        ],
-        "approximation": {
-          "usageConstant": 0.5
-        }
+        ]
       },
       "subDevices": [],
       "zigbee": {
@@ -208400,10 +208922,7 @@
           "AAA",
           "AA",
           "CR123A"
-        ],
-        "approximation": {
-          "usageConstant": 0.5
-        }
+        ]
       },
       "zigbee": {
         "productId": [
@@ -208719,10 +209238,7 @@
         "batteries": [
           "OTHER",
           "OTHER"
-        ],
-        "approximation": {
-          "usageConstant": 0.5
-        }
+        ]
       },
       "zigbee": {
         "manufacturerName": [
@@ -210366,7 +210882,28 @@
         "large": "//drivers/smart_garden_irrigation_control/assets/images/large.png"
       },
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_tyzb01_sqmd19i1",
+          "_tyzb01_ttvdudvx",
+          "_TZ3210_2dfy6tol",
+          "_TZ3210_EYMUNFFL",
+          "_TZ3210_tfxwxklq",
+          "_TYZB01_SQMD19I1",
+          "_TYZB01_sqmd19i1",
+          "_tyzb01_SQMD19I1",
+          "_TYZB01_TTVDUDVX",
+          "_TYZB01_ttvdudvx",
+          "_tyzb01_TTVDUDVX",
+          "_tz3210_2dfy6tol",
+          "_TZ3210_2DFY6TOL",
+          "_tz3210_2DFY6TOL",
+          "_tz3210_eymunffl",
+          "_TZ3210_eymunffl",
+          "_tz3210_EYMUNFFL",
+          "_tz3210_tfxwxklq",
+          "_TZ3210_TFXWXKLQ",
+          "_tz3210_TFXWXKLQ"
+        ],
         "productId": [
           "TS0011",
           "TS0049",
@@ -210997,10 +211534,7 @@
         "batteries": [
           "CR2032",
           "CR2450"
-        ],
-        "approximation": {
-          "usageConstant": 0.3
-        }
+        ]
       },
       "platforms": [
         "local"
@@ -212605,10 +213139,7 @@
         "batteries": [
           "CR2",
           "CR123A"
-        ],
-        "approximation": {
-          "usageConstant": 0.5
-        }
+        ]
       },
       "subDevices": [],
       "zigbee": {
@@ -214459,10 +214990,7 @@
         "batteries": [
           "CR2032",
           "AAA"
-        ],
-        "approximation": {
-          "usageConstant": 0.5
-        }
+        ]
       },
       "zigbee": {
         "productId": [
@@ -214521,10 +215049,6 @@
         "small": "//drivers/soilsensor/assets/images/small.png"
       },
       "energy": {
-        "approximation": {
-          "usageOn": 0,
-          "usageOff": 0
-        },
         "batteries": [
           "AA",
           "AA"
@@ -215514,10 +216038,6 @@
         "small": "//drivers/switch_1_gang/assets/images/small.png"
       },
       "energy": {
-        "approximation": {
-          "usageOn": 0,
-          "usageOff": 0
-        },
         "batteries": [
           "CR2032"
         ]
@@ -218521,10 +219041,6 @@
         "small": "//drivers/switch_2_gang/assets/images/small.png"
       },
       "energy": {
-        "approximation": {
-          "usageOn": 0,
-          "usageOff": 0
-        },
         "batteries": [
           "CR2032"
         ]
@@ -219736,10 +220252,6 @@
         "small": "//drivers/switch_3_gang/assets/images/small.png"
       },
       "energy": {
-        "approximation": {
-          "usageOn": 0,
-          "usageOff": 0
-        },
         "batteries": [
           "CR2032"
         ]
@@ -222106,9 +222618,6 @@
         }
       },
       "energy": {
-        "approximation": {
-          "usageConstant": 5
-        },
         "batteries": [
           "CR2032"
         ]
@@ -223027,10 +223536,6 @@
         "zigbee"
       ],
       "energy": {
-        "approximation": {
-          "usageOn": 0.5,
-          "usageOff": 0
-        },
         "batteries": [
           "CR2032"
         ]
@@ -224085,9 +224590,6 @@
         "button.5"
       ],
       "energy": {
-        "approximation": {
-          "usageConstant": 0.5
-        },
         "batteries": [
           "OTHER"
         ]
@@ -224847,9 +225349,6 @@
         }
       },
       "energy": {
-        "approximation": {
-          "usageConstant": 0.5
-        },
         "batteries": [
           "OTHER"
         ]
@@ -226457,9 +226956,6 @@
         "button.1"
       ],
       "energy": {
-        "approximation": {
-          "usageConstant": 0.5
-        },
         "batteries": [
           "CR2032"
         ]
@@ -227461,7 +227957,24 @@
             "it": "Tenere premuto il pulsante all'interno del vano batteria per cicrca 5 secondi finchè il LED non lampeggia rapidamente."
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_tze200_a8sdabtg",
+          "_tze200_qoy0ekbd",
+          "_tze204_a8sdabtg",
+          "_tze204_qoy0ekbd",
+          "_TZE200_A8SDABTG",
+          "_TZE200_a8sdabtg",
+          "_tze200_A8SDABTG",
+          "_TZE200_QOY0EKBD",
+          "_TZE200_qoy0ekbd",
+          "_tze200_QOY0EKBD",
+          "_TZE204_A8SDABTG",
+          "_TZE204_a8sdabtg",
+          "_tze204_A8SDABTG",
+          "_TZE204_QOY0EKBD",
+          "_TZE204_qoy0ekbd",
+          "_tze204_QOY0EKBD"
+        ]
       },
       "version": "1.0.0",
       "capabilitiesOptions": {
@@ -229188,9 +229701,6 @@
         "zigbee"
       ],
       "energy": {
-        "approximation": {
-          "usageConstant": 0.5
-        },
         "batteries": [
           "AA"
         ]
@@ -233898,10 +234408,6 @@
         "small": "//drivers/wall_switch_1_gang/assets/images/small.png"
       },
       "energy": {
-        "approximation": {
-          "usageOn": 0,
-          "usageOff": 0
-        },
         "batteries": [
           "CR2032"
         ]
@@ -234016,10 +234522,6 @@
         "small": "//drivers/wall_switch_1_gang_tuya/assets/images/small.png"
       },
       "energy": {
-        "approximation": {
-          "usageOn": 0,
-          "usageOff": 0
-        },
         "batteries": [
           "CR2032"
         ]
@@ -234268,10 +234770,6 @@
         "small": "//drivers/wall_switch_2_gang/assets/images/small.png"
       },
       "energy": {
-        "approximation": {
-          "usageOn": 0,
-          "usageOff": 0
-        },
         "batteries": [
           "CR2032"
         ]
@@ -234411,10 +234909,6 @@
         "button.2"
       ],
       "energy": {
-        "approximation": {
-          "usageOn": 100,
-          "usageOff": 1
-        },
         "batteries": [
           "CR2032"
         ]
@@ -234742,10 +235236,6 @@
         "small": "//drivers/wall_switch_3_gang/assets/images/small.png"
       },
       "energy": {
-        "approximation": {
-          "usageOn": 0,
-          "usageOff": 0
-        },
         "batteries": [
           "CR2032"
         ]
@@ -234927,10 +235417,6 @@
         "button.3"
       ],
       "energy": {
-        "approximation": {
-          "usageOn": 100,
-          "usageOff": 1
-        },
         "batteries": [
           "CR2032"
         ]
@@ -235307,10 +235793,6 @@
         "small": "//drivers/wall_switch_4_gang/assets/images/small.png"
       },
       "energy": {
-        "approximation": {
-          "usageOn": 0,
-          "usageOff": 0
-        },
         "batteries": [
           "CR2032"
         ]
@@ -235551,10 +236033,6 @@
         "small": "//drivers/wall_switch_4_gang_tuya/assets/images/small.png"
       },
       "energy": {
-        "approximation": {
-          "usageOn": 0,
-          "usageOff": 0
-        },
         "batteries": [
           "CR2032"
         ]
@@ -236150,10 +236628,6 @@
         "small": "//drivers/wall_switch_5_gang_tuya/assets/images/small.png"
       },
       "energy": {
-        "approximation": {
-          "usageOn": 0,
-          "usageOff": 0
-        },
         "batteries": [
           "CR2032"
         ]
@@ -236446,10 +236920,6 @@
         "small": "//drivers/wall_switch_6_gang_tuya/assets/images/small.png"
       },
       "energy": {
-        "approximation": {
-          "usageOn": 0,
-          "usageOff": 0
-        },
         "batteries": [
           "CR2032"
         ]
@@ -237128,10 +237598,7 @@
           "CR2032",
           "CR2450",
           "AAA"
-        ],
-        "approximation": {
-          "usageConstant": 0.5
-        }
+        ]
       },
       "subDevices": [],
       "zigbee": {
@@ -238227,10 +238694,7 @@
       "energy": {
         "batteries": [
           "AA"
-        ],
-        "approximation": {
-          "usageConstant": 0.5
-        }
+        ]
       },
       "zigbee": {
         "manufacturerName": [

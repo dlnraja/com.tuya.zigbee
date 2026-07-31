@@ -13,7 +13,16 @@
     }
   },
   "zigbee": {
-    "manufacturerName": [],
+    "manufacturerName": [
+      "_tz3000_5bsf8vaj",
+      "_tz3000_utagpnzs",
+      "_TZ3000_5BSF8VAJ",
+      "_TZ3000_5bsf8vaj",
+      "_tz3000_5BSF8VAJ",
+      "_TZ3000_UTAGPNZS",
+      "_TZ3000_utagpnzs",
+      "_tz3000_UTAGPNZS"
+    ],
     "productId": [
       "TS0505A"
     ],

@@ -20,10 +20,7 @@
   "energy": {
     "batteries": [
       "CR2032"
-    ],
-    "approximation": {
-      "usageConstant": 0.3
-    }
+    ]
   },
   "subDevices": [],
   "zigbee": {

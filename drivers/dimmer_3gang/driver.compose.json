@@ -128,10 +128,6 @@
     "xlarge": "/drivers/dimmer_3gang/assets/images/xlarge.png"
   },
   "energy": {
-    "approximation": {
-      "usageOn": 60,
-      "usageOff": 0.5
-    },
     "batteries": [
       "CR2032"
     ]

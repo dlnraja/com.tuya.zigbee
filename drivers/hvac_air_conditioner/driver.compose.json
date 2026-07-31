@@ -97,7 +97,8 @@
   },
   "energy": {
     "approximation": {
-      "usageConstant": 0.5
+      "usageOn": 1200,
+      "usageOff": 1
     }
   },
   "platforms": [
