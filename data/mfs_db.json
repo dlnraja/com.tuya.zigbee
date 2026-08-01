@@ -127804,7 +127804,7 @@
     "lastSacredCoupleEnrichment": "2026-07-13T23:57:58.590Z",
     "fingerprints": 5710,
     "lastUpdate": "2026-07-14",
-    "lastUpdated": "2026-07-31T03:45:16.292Z",
+    "lastUpdated": "2026-08-01T03:44:36.441Z",
     "totalModelIds": 62784,
     "multiPidMfrs": 3299,
     "variantMfrs": 82,
@@ -133595,7 +133595,7 @@
   },
   "_TZ3000_6l1pjfqe": {
     "driverId": "plug_energy_monitor",
-    "source": "auto-sync",
+    "source": "auto-sync|adjudicated-z2m-arbiter",
     "modelIds": [
       "A11Z",
       "A7Z",
@@ -134816,7 +134816,7 @@
   },
   "_TZ3000_46t1rvdu": {
     "driverId": "switch_1gang",
-    "source": "auto-sync",
+    "source": "auto-sync|adjudicated-z2m-arbiter",
     "modelIds": [
       "01MINIZB",
       "BASICZBR3",
@@ -137254,11 +137254,11 @@
   },
   "_tz3000_0ht8dnxj": {
     "driverId": "button_wireless_4",
-    "source": "auto-sync"
+    "source": "auto-sync|adjudicated-z2m-arbiter"
   },
   "_TZ3000_11PG3IMA": {
     "driverId": "button_wireless_4",
-    "source": "auto-sync"
+    "source": "auto-sync|adjudicated-z2m-arbiter"
   },
   "_TZ3000_A4XYCPRS": {
     "driverId": "button_wireless_4",
@@ -137278,11 +137278,11 @@
   },
   "_TZ3000_ET7AFZXZ": {
     "driverId": "button_wireless_4",
-    "source": "auto-sync"
+    "source": "auto-sync|adjudicated-z2m-arbiter"
   },
   "_TZ3000_NUOMBROO": {
     "driverId": "button_wireless_4",
-    "source": "auto-sync"
+    "source": "auto-sync|adjudicated-z2m-arbiter"
   },
   "_TZ3000_UFHTXR59": {
     "driverId": "button_wireless_4",
@@ -137322,7 +137322,7 @@
   },
   "_TZ3040_FWXUZCF4": {
     "driverId": "sensor_motion_presence",
-    "source": "auto-sync",
+    "source": "auto-sync|adjudicated-z2m-arbiter",
     "modelIds": [
       "Excellux",
       "SNZB-01M",
@@ -149959,7 +149959,8 @@
       "TS0601"
     ],
     "pid": "CK-TLSR8656-SS5-01(7014)",
-    "modelIdsCount": 28
+    "modelIdsCount": 28,
+    "note": "TRV floodeur (z2m #17833) — RX shedding actif"
   },
   "_TZE200_YENBR4OM": {
     "driverId": "climate_sensor",
@@ -150616,7 +150617,8 @@
       "TS0601"
     ],
     "pid": "CK-TLSR8656-SS5-01(7014)",
-    "modelIdsCount": 28
+    "modelIdsCount": 28,
+    "note": "BHT-006 floodeur (z2m #17833) — RX shedding actif"
   },
   "_TZE200_ZO0CFEKV": {
     "driverId": "climate_sensor",
@@ -155243,7 +155245,8 @@
       "TS0601"
     ],
     "pid": "CK-TLSR8656-SS5-01(7014)",
-    "modelIdsCount": 28
+    "modelIdsCount": 28,
+    "note": "TRV floodeur (z2m #17833) — RX shedding actif"
   },
   "_TZE204_YJJDCQSQ": {
     "driverId": "climate_sensor",
@@ -159485,7 +159488,8 @@
       "TS0601"
     ],
     "pid": "CK-TLSR8656-SS5-01(7014)",
-    "modelIdsCount": 28
+    "modelIdsCount": 28,
+    "note": "TRV floodeur (z2m #17833) — RX shedding actif"
   },
   "_TZE284_YJJDCQSQ": {
     "driverId": "climate_sensor",
@@ -164119,7 +164123,7 @@
   },
   "_TZE200_gubdgai2": {
     "driverId": "curtain_motor",
-    "source": "auto-sync",
+    "source": "auto-sync|adjudicated-z2m-arbiter",
     "modelIds": [
       "TS0203",
       "TS0601",
@@ -164131,7 +164135,7 @@
   },
   "_TZE200_nv6nxo0c": {
     "driverId": "curtain_motor",
-    "source": "auto-sync",
+    "source": "auto-sync|adjudicated-z2m-arbiter",
     "modelIds": [
       "01MINIZB",
       "BASICZBR3",
@@ -164173,7 +164177,7 @@
   },
   "_TZE204_bjzrowv2": {
     "driverId": "curtain_motor",
-    "source": "auto-sync",
+    "source": "auto-sync|adjudicated-z2m-arbiter",
     "modelIds": [
       "01MINIZB",
       "BASICZBR3",
@@ -164219,7 +164223,7 @@
   },
   "_TZE200_5zbp6j0u": {
     "driverId": "curtain_motor",
-    "source": "auto-sync",
+    "source": "auto-sync|adjudicated-z2m-arbiter",
     "modelIds": [
       "01MINIZB",
       "BASICZBR3",
@@ -164261,7 +164265,7 @@
   },
   "_TZE200_nkoabg8w": {
     "driverId": "curtain_motor",
-    "source": "auto-sync",
+    "source": "auto-sync|adjudicated-z2m-arbiter",
     "modelIds": [
       "01MINIZB",
       "BASICZBR3",
@@ -164303,7 +164307,7 @@
   },
   "_TZE200_xuzcvlku": {
     "driverId": "curtain_motor",
-    "source": "auto-sync",
+    "source": "auto-sync|adjudicated-z2m-arbiter",
     "modelIds": [
       "01MINIZB",
       "BASICZBR3",
@@ -164345,7 +164349,7 @@
   },
   "_TZE200_4vobcgd3": {
     "driverId": "curtain_motor",
-    "source": "auto-sync",
+    "source": "auto-sync|adjudicated-z2m-arbiter",
     "modelIds": [
       "01MINIZB",
       "BASICZBR3",
@@ -164387,7 +164391,7 @@
   },
   "_TZE200_nogaemzt": {
     "driverId": "curtain_motor",
-    "source": "auto-sync",
+    "source": "auto-sync|adjudicated-z2m-arbiter",
     "modelIds": [
       "01MINIZB",
       "BASICZBR3",
@@ -164429,7 +164433,7 @@
   },
   "_TZE200_r0jdjrvi": {
     "driverId": "curtain_motor",
-    "source": "auto-sync",
+    "source": "auto-sync|adjudicated-z2m-arbiter",
     "modelIds": [
       "01MINIZB",
       "BASICZBR3",
@@ -164471,7 +164475,7 @@
   },
   "_TZE200_pk0sfzvr": {
     "driverId": "curtain_motor",
-    "source": "auto-sync",
+    "source": "auto-sync|adjudicated-z2m-arbiter",
     "modelIds": [
       "01MINIZB",
       "BASICZBR3",
@@ -164513,7 +164517,7 @@
   },
   "_TZE200_fdtjuw7u": {
     "driverId": "curtain_motor",
-    "source": "auto-sync",
+    "source": "auto-sync|adjudicated-z2m-arbiter",
     "modelIds": [
       "01MINIZB",
       "BASICZBR3",
@@ -164555,7 +164559,7 @@
   },
   "_TZE200_zpzndjez": {
     "driverId": "curtain_motor",
-    "source": "auto-sync",
+    "source": "auto-sync|adjudicated-z2m-arbiter",
     "modelIds": [
       "01MINIZB",
       "BASICZBR3",
@@ -164597,7 +164601,7 @@
   },
   "_TZE200_wmcdj3aq": {
     "driverId": "curtain_motor",
-    "source": "auto-sync",
+    "source": "auto-sync|adjudicated-z2m-arbiter",
     "modelIds": [
       "01MINIZB",
       "BASICZBR3",
@@ -164639,7 +164643,7 @@
   },
   "_TZE200_cowvfni3": {
     "driverId": "curtain_motor",
-    "source": "auto-sync",
+    "source": "auto-sync|adjudicated-z2m-arbiter",
     "modelIds": [
       "01MINIZB",
       "BASICZBR3",
@@ -164681,7 +164685,7 @@
   },
   "_TZE200_rddyvrci": {
     "driverId": "curtain_motor",
-    "source": "auto-sync",
+    "source": "auto-sync|adjudicated-z2m-arbiter",
     "modelIds": [
       "01MINIZB",
       "BASICZBR3",
@@ -164723,7 +164727,7 @@
   },
   "_TZE200_nueqqe6k": {
     "driverId": "curtain_motor",
-    "source": "auto-sync",
+    "source": "auto-sync|adjudicated-z2m-arbiter",
     "modelIds": [
       "01MINIZB",
       "BASICZBR3",
@@ -164765,7 +164769,7 @@
   },
   "_TZE200_xaabybja": {
     "driverId": "curtain_motor",
-    "source": "auto-sync",
+    "source": "auto-sync|adjudicated-z2m-arbiter",
     "modelIds": [
       "01MINIZB",
       "BASICZBR3",
@@ -164807,7 +164811,7 @@
   },
   "_TZE200_rmymn92d": {
     "driverId": "curtain_motor",
-    "source": "auto-sync",
+    "source": "auto-sync|adjudicated-z2m-arbiter",
     "modelIds": [
       "01MINIZB",
       "BASICZBR3",
@@ -164849,7 +164853,7 @@
   },
   "_TZE200_3i3exuay": {
     "driverId": "curtain_motor",
-    "source": "auto-sync",
+    "source": "auto-sync|adjudicated-z2m-arbiter",
     "modelIds": [
       "01MINIZB",
       "BASICZBR3",
@@ -164891,7 +164895,7 @@
   },
   "_TZE200_hsgrhjpf": {
     "driverId": "curtain_motor",
-    "source": "auto-sync",
+    "source": "auto-sync|adjudicated-z2m-arbiter",
     "modelIds": [
       "01MINIZB",
       "BASICZBR3",
@@ -164933,7 +164937,7 @@
   },
   "_TZE204_1fuxihti": {
     "driverId": "curtain_motor",
-    "source": "auto-sync",
+    "source": "auto-sync|adjudicated-z2m-arbiter",
     "modelIds": [
       "01MINIZB",
       "BASICZBR3",
@@ -164975,7 +164979,7 @@
   },
   "_TZE200_axgvo9jh": {
     "driverId": "curtain_motor",
-    "source": "auto-sync",
+    "source": "auto-sync|adjudicated-z2m-arbiter",
     "modelIds": [
       "01MINIZB",
       "BASICZBR3",
@@ -165045,7 +165049,7 @@
   },
   "_TZE200_yia0p3tr": {
     "driverId": "curtain_motor",
-    "source": "auto-sync",
+    "source": "auto-sync|adjudicated-z2m-arbiter",
     "modelIds": [
       "01MINIZB",
       "BASICZBR3",
@@ -165280,7 +165284,7 @@
   },
   "_TZB210_lmqquxus": {
     "driverId": "light_bulb_rgb",
-    "source": "auto-sync",
+    "source": "auto-sync|adjudicated-z2m-arbiter",
     "modelIds": [
       "E11-G13",
       "E11-G14",
@@ -166419,7 +166423,7 @@
   },
   "_TZ3000_estfrmup": {
     "driverId": "dimmer_1_gang",
-    "source": "auto-sync"
+    "source": "auto-sync|adjudicated-z2m-arbiter"
   },
   "_TZ3210_c2iwsgbm": {
     "driverId": "dimmer_1_gang",
@@ -166539,7 +166543,7 @@
   },
   "_TZE200_bxoo2swd": {
     "driverId": "dimmer_2_gang",
-    "source": "auto-sync",
+    "source": "auto-sync|adjudicated-z2m-arbiter",
     "modelIds": [
       "01MINIZB",
       "BASICZBR3",
@@ -166850,7 +166854,7 @@
   },
   "_TZE204_rkbxtclc": {
     "driverId": "dimmer_wall_1gang",
-    "source": "auto-sync",
+    "source": "auto-sync|adjudicated-z2m-arbiter",
     "modelIds": [
       "TS0203",
       "TS0601",
@@ -166862,7 +166866,7 @@
   },
   "_TZE204_7ytnacie": {
     "driverId": "dimmer_wall_1gang",
-    "source": "auto-sync",
+    "source": "auto-sync|adjudicated-z2m-arbiter",
     "modelIds": [
       "TS0203",
       "TS0601",
@@ -166874,7 +166878,7 @@
   },
   "_TZE200_dhke3p9w": {
     "driverId": "climate_sensor",
-    "source": "auto-sync",
+    "source": "auto-sync|adjudicated-z2m-arbiter",
     "modelIds": [
       "TS0203",
       "TS0601",
@@ -166886,7 +166890,7 @@
   },
   "_TZE284_dhke3p9w": {
     "driverId": "climate_sensor",
-    "source": "auto-sync",
+    "source": "auto-sync|adjudicated-z2m-arbiter",
     "modelIds": [
       "TS0203",
       "TS0601",
@@ -167723,7 +167727,7 @@
   },
   "_TZ3000_t9qqxn70": {
     "driverId": "climate_sensor",
-    "source": "auto-sync",
+    "source": "auto-sync|adjudicated-z2m-arbiter",
     "modelIds": [
       "TS0203",
       "TS0601",
@@ -167735,7 +167739,7 @@
   },
   "_TZ3000_j6adk9id": {
     "driverId": "dimmer_wall_1gang",
-    "source": "auto-sync",
+    "source": "auto-sync|adjudicated-z2m-arbiter",
     "modelIds": [
       "TS0203",
       "TS0601",
@@ -167747,7 +167751,7 @@
   },
   "_TZE204_unsxl4ir": {
     "driverId": "dimmer_wall_1gang",
-    "source": "auto-sync",
+    "source": "auto-sync|adjudicated-z2m-arbiter",
     "modelIds": [
       "TS0203",
       "TS0601",
@@ -167759,7 +167763,7 @@
   },
   "_TZE200_nvodulvi": {
     "driverId": "climate_sensor",
-    "source": "auto-sync",
+    "source": "auto-sync|adjudicated-z2m-arbiter",
     "modelIds": [
       "TS0203",
       "TS0601",
@@ -168805,7 +168809,7 @@
   },
   "_TZ3000_pjb1ua0m": {
     "driverId": "doorwindowsensor_3",
-    "source": "auto-sync",
+    "source": "auto-sync|adjudicated-z2m-arbiter",
     "modelIds": [
       "01MINIZB",
       "BASICZBR3",
@@ -170599,7 +170603,7 @@
   },
   "_tze284_kow4ok3t": {
     "driverId": "switch_4_gang_metering",
-    "source": "auto-sync",
+    "source": "auto-sync|adjudicated-z2m-arbiter",
     "modelIds": [
       "0x8040",
       "BASICZBR3",
@@ -171270,7 +171274,7 @@
   },
   "_TZE284_2se8efxh": {
     "driverId": "water_leak_sensor",
-    "source": "auto-sync",
+    "source": "auto-sync|adjudicated-z2m-arbiter",
     "modelIds": [
       "3315-S",
       "3315-Seu",
@@ -172069,7 +172073,7 @@
   },
   "_TZ3210_jaap6jeb": {
     "driverId": "bulb_rgbw",
-    "source": "auto-sync",
+    "source": "auto-sync|adjudicated-z2m-arbiter",
     "modelIds": [
       "3305-S",
       "3325-S",
@@ -177694,7 +177698,7 @@
   },
   "_TZE204_dcnsggvz": {
     "driverId": "dimmer_wall_1gang",
-    "source": "auto-sync",
+    "source": "auto-sync|adjudicated-z2m-arbiter",
     "modelIds": [
       "TS0001",
       "TS0002",
@@ -182375,7 +182379,7 @@
   },
   "_TZE204_r0jdjrvi": {
     "driverId": "curtain_motor_tilt",
-    "source": "auto-sync",
+    "source": "auto-sync|adjudicated-z2m-arbiter",
     "modelIds": [
       "CK-BL702-MWS-01",
       "CK-BL702-MWS-01(7016)",
@@ -190881,7 +190885,7 @@
   },
   "_tz3000_pcqjmcud": {
     "driverId": "smart_knob_rotary",
-    "source": "auto-sync"
+    "source": "auto-sync|adjudicated-z2m-arbiter"
   },
   "_tz3000_uri7ber7": {
     "driverId": "smart_knob_switch",
@@ -212363,7 +212367,7 @@
   },
   "_tz3000_abrsvsou": {
     "driverId": "button_wireless_4",
-    "source": "auto-sync",
+    "source": "auto-sync|adjudicated-z2m-arbiter",
     "modelIds": [
       "TS0004"
     ],
@@ -212394,7 +212398,7 @@
   },
   "_tz3000_4fjiwweb": {
     "driverId": "button_wireless_4",
-    "source": "auto-sync",
+    "source": "auto-sync|adjudicated-z2m-arbiter",
     "modelIds": [
       "TS0004"
     ],
@@ -212403,7 +212407,7 @@
   },
   "_tz3000_uri7ongn": {
     "driverId": "power_meter",
-    "source": "auto-sync",
+    "source": "auto-sync|adjudicated-z2m-arbiter",
     "modelIds": [
       "TS0004"
     ],
@@ -212412,7 +212416,7 @@
   },
   "_tz3000_qja6nq5z": {
     "driverId": "smart_knob_rotary",
-    "source": "auto-sync",
+    "source": "auto-sync|adjudicated-z2m-arbiter",
     "modelIds": [
       "ERS-10TZBVK-AA",
       "TS0044",
@@ -212436,7 +212440,7 @@
   },
   "_tz3000_gwkzibhs": {
     "driverId": "smart_knob_rotary",
-    "source": "auto-sync",
+    "source": "auto-sync|adjudicated-z2m-arbiter",
     "modelIds": [
       "ERS-10TZBVK-AA",
       "TS0044",
@@ -212471,7 +212475,7 @@
   },
   "_TZ3000_ugi8ky6u": {
     "driverId": "smart_knob_rotary",
-    "source": "auto-sync",
+    "source": "auto-sync|adjudicated-z2m-arbiter",
     "modelIds": [
       "ERS-10TZBVK-AA",
       "TS0044",
@@ -212871,7 +212875,7 @@
   },
   "_TZE204_mpbki2zm": {
     "driverId": "thermostatic_radiator_valve",
-    "source": "auto-sync",
+    "source": "auto-sync|adjudicated-z2m-arbiter",
     "modelIds": [
       "PJ-1203A",
       "TS004F",
@@ -214750,8 +214754,8 @@
     "modelIdsCount": 3
   },
   "_tze284_eaet5qt5": {
-    "driverId": "valve_irrigation",
-    "source": "auto-sync",
+    "driverId": "valve_dual_irrigation",
+    "source": "auto-sync|adjudicated-z2m-arbiter",
     "modelIds": [
       "TS0601"
     ],
@@ -214759,8 +214763,8 @@
     "modelIdsCount": 1
   },
   "_tze284_fhvpaltk": {
-    "driverId": "valve_irrigation",
-    "source": "auto-sync",
+    "driverId": "valve_dual_irrigation",
+    "source": "auto-sync|adjudicated-z2m-arbiter",
     "modelIds": [
       "TS0601"
     ],
@@ -216467,7 +216471,7 @@
   },
   "_tze200_0nauxa0p": {
     "driverId": "wall_dimmer_tuya",
-    "source": "auto-sync"
+    "source": "auto-sync|adjudicated-z2m-arbiter"
   },
   "_tze200_6fjev1mn": {
     "driverId": "wall_dimmer_tuya",
@@ -216509,7 +216513,7 @@
   },
   "_tze200_ebwgzdqq": {
     "driverId": "wall_dimmer_tuya",
-    "source": "auto-sync"
+    "source": "auto-sync|adjudicated-z2m-arbiter"
   },
   "_tze200_ip2akl9w": {
     "driverId": "wall_dimmer_tuya",
@@ -216530,7 +216534,7 @@
   },
   "_tze200_la2c2uo9": {
     "driverId": "wall_dimmer_tuya",
-    "source": "auto-sync",
+    "source": "auto-sync|adjudicated-z2m-arbiter",
     "modelIds": [
       "TS0011",
       "TS0052",
@@ -216581,7 +216585,7 @@
   },
   "_tze200_swaamsoy": {
     "driverId": "wall_dimmer_tuya",
-    "source": "auto-sync",
+    "source": "auto-sync|adjudicated-z2m-arbiter",
     "modelIds": [
       "TS0011",
       "TS0052",
@@ -216615,7 +216619,7 @@
   },
   "_tze200_w4cryh2i": {
     "driverId": "wall_dimmer_tuya",
-    "source": "auto-sync"
+    "source": "auto-sync|adjudicated-z2m-arbiter"
   },
   "_tze200_whpb9yts": {
     "driverId": "wall_dimmer_tuya",
@@ -217035,7 +217039,7 @@
   },
   "_tze200_9cxuhakf": {
     "driverId": "wall_dimmer_tuya",
-    "source": "auto-sync"
+    "source": "auto-sync|adjudicated-z2m-arbiter"
   },
   "_tz3210_3mpwqzuu": {
     "driverId": "wall_dimmer_tuya",
@@ -217158,7 +217162,7 @@
   },
   "_tze200_e3oitdyu": {
     "driverId": "wall_dimmer_tuya",
-    "source": "auto-sync"
+    "source": "auto-sync|adjudicated-z2m-arbiter"
   },
   "_tze204_zenj4lxv": {
     "driverId": "wall_dimmer_tuya",
@@ -217196,7 +217200,7 @@
   },
   "_tze200_9i9dt8is": {
     "driverId": "wall_dimmer_tuya",
-    "source": "auto-sync"
+    "source": "auto-sync|adjudicated-z2m-arbiter"
   },
   "_tze200_nue3fvem": {
     "driverId": "wall_dimmer_tuya",
@@ -217234,27 +217238,27 @@
   },
   "_tze200_1agwnems": {
     "driverId": "wall_dimmer_tuya",
-    "source": "auto-sync"
+    "source": "auto-sync|adjudicated-z2m-arbiter"
   },
   "_tze200_3p5ydos3": {
     "driverId": "wall_dimmer_tuya",
-    "source": "auto-sync"
+    "source": "auto-sync|adjudicated-z2m-arbiter"
   },
   "_tze200_579lguh2": {
     "driverId": "wall_dimmer_tuya",
-    "source": "auto-sync"
+    "source": "auto-sync|adjudicated-z2m-arbiter"
   },
   "_tze200_ip2akl4w": {
     "driverId": "wall_dimmer_tuya",
-    "source": "auto-sync"
+    "source": "auto-sync|adjudicated-z2m-arbiter"
   },
   "_tze200_vucankjx": {
     "driverId": "wall_dimmer_tuya",
-    "source": "auto-sync"
+    "source": "auto-sync|adjudicated-z2m-arbiter"
   },
   "_tze200_a0syesf5": {
     "driverId": "wall_dimmer_tuya",
-    "source": "auto-sync"
+    "source": "auto-sync|adjudicated-z2m-arbiter"
   },
   "_tz3000_xfs39dbf": {
     "driverId": "wall_dimmer_tuya",
@@ -328502,7 +328506,8 @@
     "source": "z2m-issue-31397",
     "modelIds": [
       "TS0601"
-    ]
+    ],
+    "note": "4-way relay: DP1-8 scenes, DP24-27 relays L1-L4, DP120-122 covers, DP133-148 lights"
   },
   "thaleos": {
     "driverId": "radiator_valve",
