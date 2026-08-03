@@ -75,9 +75,10 @@ async function main(){
   if(pat){
     try{
       const opts={headers:{Authorization:'Bearer '+pat}};
-      const mr=await fetchWithRetry('https://api.athom.com/user/me/homey',opts,{retries:2,label:'list'});
+      const mr=await fetchWithRetry('https://api.athom.com/user/me',opts,{retries:2,label:'list'});
       if(!mr.ok) throw new Error('Homey list: '+mr.status);
-      const homeys=await mr.json();
+      const me=await mr.json();
+      const homeys=me.homeys||[];
       summary.sources.live_api=homeys.length;
       for(const h of homeys){
         const base='https://'+h.id+'.connect.athom.com/api';
