@@ -280,8 +280,8 @@
         }
       ],
       "titleFormatted": {
-        "en": "Run self test",
-        "fr": "Lancer l'auto-test"
+        "en": "Run self test [[test_type]]",
+        "fr": "Lancer l'auto-test [[test_type]]"
       }
     }
   ]
