@@ -197,6 +197,69 @@
         "nl": "Fysiek gang 3 UIT",
         "de": "Physisch gang 3 AUS"
       }
+    },
+    {
+      "id": "switch_3gang_gang1_scene",
+      "title": {
+        "en": "Gang 1 scene triggered"
+      },
+      "tokens": [
+        {
+          "name": "action",
+          "type": "string",
+          "title": {
+            "en": "Action"
+          },
+          "example": {
+            "en": "on"
+          }
+        }
+      ],
+      "titleFormatted": {
+        "en": "Gang 1 scene triggered"
+      }
+    },
+    {
+      "id": "switch_3gang_gang2_scene",
+      "title": {
+        "en": "Gang 2 scene triggered"
+      },
+      "tokens": [
+        {
+          "name": "action",
+          "type": "string",
+          "title": {
+            "en": "Action"
+          },
+          "example": {
+            "en": "on"
+          }
+        }
+      ],
+      "titleFormatted": {
+        "en": "Gang 2 scene triggered"
+      }
+    },
+    {
+      "id": "switch_3gang_gang3_scene",
+      "title": {
+        "en": "Gang 3 scene triggered"
+      },
+      "tokens": [
+        {
+          "name": "action",
+          "type": "string",
+          "title": {
+            "en": "Action"
+          },
+          "example": {
+            "en": "on"
+          }
+        }
+      ],
+      "titleFormatted": {
+        "en": "Gang 3 scene triggered"
+      }
     }
   ],
   "conditions": [

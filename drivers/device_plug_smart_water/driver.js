@@ -44,7 +44,7 @@ class PlugSmartDriver extends ZigBeeDriver {
     // END TRIGGERS
     // CONDITIONS
     try {
-      const card = this.homey.flow.getConditionCard('device_plug_plug_on');
+      const card = this.homey.flow.getConditionCard('device_plug_smart_water_plug_smart_is_on');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -55,7 +55,7 @@ class PlugSmartDriver extends ZigBeeDriver {
 
     // ACTIONS
     try {
-      const card = this.homey.flow.getActionCard('device_plug_plug_on');
+      const card = this.homey.flow.getActionCard('device_plug_smart_water_plug_smart_turn_on');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -66,7 +66,7 @@ class PlugSmartDriver extends ZigBeeDriver {
     } catch (err) { if (this.developerDebugMode) { this.error(`Action device_plug_smart_water_plug_smart_turn_on: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getActionCard('device_plug_plug_off');
+      const card = this.homey.flow.getActionCard('device_plug_smart_water_plug_smart_turn_off');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -77,7 +77,7 @@ class PlugSmartDriver extends ZigBeeDriver {
     } catch (err) { if (this.developerDebugMode) { this.error(`Action device_plug_smart_water_plug_smart_turn_off: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getActionCard('device_plug_plug_plug_plug_plug_plug_on_delay');
+      const card = this.homey.flow.getActionCard('device_plug_smart_water_plug_smart_turn_on_delay');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -88,7 +88,7 @@ class PlugSmartDriver extends ZigBeeDriver {
     } catch (err) { if (this.developerDebugMode) { this.error(`Action device_plug_smart_water_plug_smart_turn_on_delay: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getActionCard('device_plug_plug_off_delay');
+      const card = this.homey.flow.getActionCard('device_plug_smart_water_plug_smart_turn_off_delay');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -99,7 +99,7 @@ class PlugSmartDriver extends ZigBeeDriver {
     } catch (err) { if (this.developerDebugMode) { this.error(`Action device_plug_smart_water_plug_smart_turn_off_delay: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getActionCard('device_plug_plug_indicator');
+      const card = this.homey.flow.getActionCard('device_plug_smart_water_plug_smart_set_indicator');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -111,7 +111,7 @@ class PlugSmartDriver extends ZigBeeDriver {
     } catch (err) { if (this.developerDebugMode) { this.error(`Action device_plug_smart_water_plug_smart_set_indicator: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getActionCard('device_plug_plug_power_on');
+      const card = this.homey.flow.getActionCard('device_plug_smart_water_plug_smart_set_power_on');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}

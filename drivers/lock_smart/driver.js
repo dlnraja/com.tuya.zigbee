@@ -16,7 +16,7 @@ async onInit() {
 
     // CONDITIONS
     try {
-      const card = this.homey.flow.getConditionCard('lock_locked');
+      const card = this.homey.flow.getConditionCard('lock_smart_is_locked');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -26,11 +26,11 @@ async onInit() {
     } catch (err) { if (this.developerDebugMode) { this.error(`Condition lock_smart_is_locked: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getConditionCard('lock_active');
+      const card = this.homey.flow.getConditionCard('lock_smart_tamper_active');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
-          return args.device.getCapabilityValue('onoff') === true;
+          return args.device.getCapabilityValue('alarm_tamper') === true;
         });
       }
     } catch (err) { if (this.developerDebugMode) { this.error(`Condition lock_smart_tamper_active: ${err.message}`); } }

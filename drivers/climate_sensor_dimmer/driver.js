@@ -22,7 +22,7 @@ class Dimmer1gangDriver extends ZigBeeDriver {
 
   _registerFlowCards() {
     // TRIGGERS
-    const _triggerIds = ["climate_sensor_dimmer_dimmer_wall_1gang_physical_on","climate_sensor_dimmer_dimmer_wall_1gang_physical_off","climate_sensor_dimmer_dimmer_wall_1gang_physical_brightness_up","climate_sensor_dimmer_dimmer_wall_1gang_physical_brightness_down","climate_sensor_dimmer_dimmer_wall_1gang_dimmer_1gang_turned_on","climate_sensor_dimmer_dimmer_wall_1gang_dimmer_1gang_turned_off","climate_sensor_dimmer_dimmer_wall_1gang_dimmer_1gang_dim_changed","climate_sensor_dimmer_dimmer_wall_1gang_turned_on","climate_sensor_dimmer_dimmer_wall_1gang_turned_off","climate_sensor_dimmer_dimmer_wall_1gang_power_changed"];
+    const _triggerIds = ["climate_sensor_dimmer_wall_1gang_physical_on","climate_sensor_dimmer_wall_1gang_physical_off","climate_sensor_dimmer_wall_1gang_physical_br_d2d99","climate_sensor_dimmer_wall_1gang_physical_br_f339f","climate_sensor_dimmer_wall_1gang_dimmer_1gan_85e1d","climate_sensor_dimmer_wall_1gang_dimmer_1gan_f81b9","climate_sensor_dimmer_wall_1gang_dimmer_1gan_5e646","climate_sensor_dimmer_wall_1gang_turned_on","climate_sensor_dimmer_wall_1gang_turned_off","climate_sensor_dimmer_wall_1gang_power_changed"];
     for (const _tid of _triggerIds) {
       try {
         const _card = this._getFlowCard(_tid, "trigger");

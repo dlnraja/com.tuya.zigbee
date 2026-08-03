@@ -23,7 +23,7 @@ class PlugSmartDriver extends ZigBeeDriver {
 
   _registerFlowCards() {
     // TRIGGERS
-    const _triggerIds = ["climate_sensor_plug_plug_smart_turned_on","climate_sensor_plug_plug_smart_turned_off","climate_sensor_plug_plug_smart_power_restored","climate_sensor_plug_plug_smart_power_changed","climate_sensor_plug_plug_smart_power_threshold","climate_sensor_plug_plug_smart_battery_low"];
+    const _triggerIds = ["climate_sensor_plug_on","climate_sensor_plug_off","climate_sensor_plug_restored","climate_sensor_plug_changed","climate_sensor_plug_threshold","climate_sensor_plug_low"];
     for (const _tid of _triggerIds) {
       try {
         const _card = this._getFlowCard(_tid, "trigger");
@@ -71,7 +71,7 @@ class PlugSmartDriver extends ZigBeeDriver {
     } catch (err) { if (this.developerDebugMode) { this.error(`Action climate_sensor_plug_plug_smart_turn_off: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getActionCard('climate_sensor_plug_sensor_plug_sensor_plug_plug_on_delay');
+      const card = this.homey.flow.getActionCard('climate_sensor_plug_on_delay');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}

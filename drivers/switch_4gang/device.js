@@ -211,6 +211,14 @@ class Switch4GangDevice extends BaseClass {
       this.log(`[BSEED-4G] EP${epNum} attr listener registered`);
     }
 
+    // v10.6.2 FIX: register button.1..4 listeners — super.onNodeInit() is
+    // bypassed in ZCL-only mode, so UnifiedSwitchBase._registerButtonCapabilityListeners()
+    // never ran and pressing a maintenance button in the app UI logged
+    // "Missing Capability Listener: Button N" (diag Gmail 16/07/2026).
+    if (typeof this._registerButtonCapabilityListeners === 'function') {
+      this._registerButtonCapabilityListeners();
+    }
+
     await this.initVirtualButtons?.();
   }
 

@@ -1,0 +1,50 @@
+{
+  "conditions": [
+    {
+      "id": "soil_sensor_ec_conductivity_above",
+      "title": {
+        "en": "Conductivity (EC) !{{is|is not}} above",
+        "fr": "Conductivité (EC) !{{est|n'est pas}} au-dessus de"
+      },
+      "args": [
+        {
+          "name": "threshold",
+          "type": "number",
+          "min": 0,
+          "max": 10000,
+          "step": 10,
+          "placeholder": {
+            "en": "500"
+          }
+        }
+      ],
+      "titleFormatted": {
+        "en": "Conductivity (EC) !{{is|is not}} above [[threshold]]",
+        "fr": "Conductivité (EC) !{{est|n'est pas}} au-dessus de [[threshold]]"
+      }
+    },
+    {
+      "id": "soil_sensor_ec_battery_above",
+      "title": {
+        "en": "Battery level !{{is|is not}} above",
+        "fr": "Niveau de batterie !{{est|n'est pas}} au-dessus de"
+      },
+      "args": [
+        {
+          "name": "threshold",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "placeholder": {
+            "en": "20"
+          }
+        }
+      ],
+      "titleFormatted": {
+        "en": "Battery level !{{is|is not}} above [[threshold]]",
+        "fr": "Niveau de batterie !{{est|n'est pas}} au-dessus de [[threshold]]"
+      }
+    }
+  ]
+}

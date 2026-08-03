@@ -140,12 +140,12 @@ class curtain_module_2_gang extends UnifiedSwitchBase {
             this.setSettings({ reverse: attrs.motorReversal === "On" });
         }
 
-        const moveOpen = this.homey.flow.getActionCard("move_open_2gang");
+        const moveOpen = this.homey.flow.getActionCard("curtain_module_2_gang_move_open_2gang");
         moveOpen.registerRunListener(async (args, state) => {
             await this.zclNode.endpoints[endpoint].clusters.windowCovering[UP_OPEN]();
         });
 
-        const moveClose = this.homey.flow.getActionCard("move_close_2gang");
+        const moveClose = this.homey.flow.getActionCard("curtain_module_2_gang_move_close_2gang");
         moveClose.registerRunListener(async (args, state) => {
             await this.zclNode.endpoints[endpoint].clusters.windowCovering[
                 DOWN_CLOSE

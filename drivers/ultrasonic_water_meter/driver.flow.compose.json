@@ -1,0 +1,26 @@
+{
+  "conditions": [
+    {
+      "id": "ultrasonic_water_meter_fault_active",
+      "title": {
+        "en": "Fault !{{is|is not}} active",
+        "fr": "Défaut !{{actif|inactif}}"
+      },
+      "titleFormatted": {
+        "en": "Fault !{{is|is not}} active",
+        "fr": "Défaut !{{actif|inactif}}"
+      }
+    },
+    {
+      "id": "ultrasonic_water_meter_battery_low",
+      "title": {
+        "en": "Battery !{{is|is not}} low",
+        "fr": "Batterie !{{faible|normale}}"
+      },
+      "titleFormatted": {
+        "en": "Battery !{{is|is not}} low",
+        "fr": "Batterie !{{faible|normale}}"
+      }
+    }
+  ]
+}

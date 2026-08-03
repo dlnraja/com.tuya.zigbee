@@ -23,7 +23,7 @@ class PlugSmartDriver extends ZigBeeDriver {
 
   _registerFlowCards() {
     // TRIGGERS
-    const _triggerIds = ["device_plug_energy_monitor_plug_smart_turned_on","device_plug_energy_monitor_plug_smart_turned_off","device_plug_energy_monitor_plug_smart_power_restored","device_plug_energy_monitor_plug_smart_power_changed","device_plug_energy_monitor_plug_smart_power_threshold","device_plug_energy_monitor_plug_smart_battery_low"];
+    const _triggerIds = ["device_plug_energy_monitor_monitor_plug_on","device_plug_energy_monitor_monitor_plug_off","device_plug_energy_monitor_monitor_plug_restored","device_plug_energy_monitor_monitor_plug_changed","device_plug_energy_monitor_monitor_plug_threshold","device_plug_energy_monitor_monitor_plug_low"];
     for (const _tid of _triggerIds) {
       try {
         const _card = this._getFlowCard(_tid, "trigger");
@@ -38,7 +38,7 @@ class PlugSmartDriver extends ZigBeeDriver {
     // END TRIGGERS
     // CONDITIONS
     try {
-      const card = this.homey.flow.getConditionCard('device_plug_energy_monitor_plug_on');
+      const card = this.homey.flow.getConditionCard('device_plug_energy_monitor_monitor_plug_on');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -49,7 +49,7 @@ class PlugSmartDriver extends ZigBeeDriver {
 
     // ACTIONS
     try {
-      const card = this.homey.flow.getActionCard('device_plug_energy_monitor_plug_on');
+      const card = this.homey.flow.getActionCard('device_plug_energy_monitor_monitor_plug_on');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -60,7 +60,7 @@ class PlugSmartDriver extends ZigBeeDriver {
     } catch (err) { if (this.developerDebugMode) { this.error(`Action device_plug_energy_monitor_plug_smart_turn_on: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getActionCard('device_plug_energy_monitor_plug_off');
+      const card = this.homey.flow.getActionCard('device_plug_energy_monitor_monitor_plug_off');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -71,7 +71,7 @@ class PlugSmartDriver extends ZigBeeDriver {
     } catch (err) { if (this.developerDebugMode) { this.error(`Action device_plug_energy_monitor_plug_smart_turn_off: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getActionCard('device_plug_energy_monitor_plug_plug_energy_monitor_plug_plug_energy_monitor_plug_on_delay');
+      const card = this.homey.flow.getActionCard('device_plug_energy_monitor_monitor_plug_on_delay');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -82,7 +82,7 @@ class PlugSmartDriver extends ZigBeeDriver {
     } catch (err) { if (this.developerDebugMode) { this.error(`Action device_plug_energy_monitor_plug_smart_turn_on_delay: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getActionCard('device_plug_energy_monitor_plug_off_delay');
+      const card = this.homey.flow.getActionCard('device_plug_energy_monitor_monitor_plug_off_delay');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -93,7 +93,7 @@ class PlugSmartDriver extends ZigBeeDriver {
     } catch (err) { if (this.developerDebugMode) { this.error(`Action device_plug_energy_monitor_plug_smart_turn_off_delay: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getActionCard('device_plug_energy_monitor_plug_indicator');
+      const card = this.homey.flow.getActionCard('device_plug_energy_monitor_monitor_plug_indicator');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -105,7 +105,7 @@ class PlugSmartDriver extends ZigBeeDriver {
     } catch (err) { if (this.developerDebugMode) { this.error(`Action device_plug_energy_monitor_plug_smart_set_indicator: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getActionCard('device_plug_energy_monitor_plug_power_on');
+      const card = this.homey.flow.getActionCard('device_plug_energy_monitor_monitor_plug_power_on');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}

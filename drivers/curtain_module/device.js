@@ -116,12 +116,12 @@ class curtain_module extends ZigBeeDevice {
             await this.setSettings({ reverse: attrs.motorReversal === 'On' });
         }    
 
-        const moveOpen = this.homey.flow.getActionCard("move_open");
+        const moveOpen = this.homey.flow.getActionCard("curtain_module_move_open");
         moveOpen.registerRunListener(async (args, state) => {
             await this.zclNode.endpoints[1].clusters.windowCovering[UP_OPEN]();
         });
 
-        const moveClose = this.homey.flow.getActionCard("move_close");
+        const moveClose = this.homey.flow.getActionCard("curtain_module_move_close");
         moveClose.registerRunListener(async (args, state) => {
             await this.zclNode.endpoints[1].clusters.windowCovering[DOWN_CLOSE]();
         });

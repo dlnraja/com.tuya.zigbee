@@ -35,7 +35,10 @@ class WiFiLedStripDevice extends TuyaLocalDevice {
   }
 
   _registerCapabilityListeners() {
-    super._registerCapabilityListeners();
+    // TuyaLocalDevice (base) has no _registerCapabilityListeners — guard the super call.
+    if (typeof super._registerCapabilityListeners === 'function') {
+      super._registerCapabilityListeners();
+    }
     for (const cap of ['light_hue', 'light_saturation']) {
       if (this.hasCapability(cap)) {
         this.registerCapabilityListener(cap, async () => {

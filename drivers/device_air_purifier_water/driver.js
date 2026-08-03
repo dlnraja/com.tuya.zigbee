@@ -22,7 +22,7 @@ class WaterTankMonitorDriver extends Homey {
 
   _registerFlowCards() {
     // TRIGGERS
-    const _triggerIds = ["device_air_purifier_water_water_tank_monitor_state_changed","device_air_purifier_water_water_tank_monitor_level_changed","device_air_purifier_water_water_tank_monitor_low","device_air_purifier_water_water_tank_monitor_high"];
+    const _triggerIds = ["device_air_purifier_water_tank_monitor_state_0d1a2","device_air_purifier_water_tank_monitor_level_c099c","device_air_purifier_water_tank_monitor_low","device_air_purifier_water_tank_monitor_high"];
     for (const _tid of _triggerIds) {
       try {
         const _card = this._getFlowCard(_tid, "trigger");
@@ -37,7 +37,7 @@ class WaterTankMonitorDriver extends Homey {
     // END TRIGGERS
     // CONDITIONS
     try {
-      const card = this.homey.flow.getConditionCard('device_air_purifier_water_water_tank_monitor_level_above');
+      const card = this.homey.flow.getConditionCard('device_air_purifier_water_tank_monitor_level_above');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -48,7 +48,7 @@ class WaterTankMonitorDriver extends Homey {
     } catch (err) { if (this.developerDebugMode) { this.error(`Condition device_air_purifier_water_water_tank_monitor_level_above: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getConditionCard('device_air_purifier_water_water_tank_monitor_state_is');
+      const card = this.homey.flow.getConditionCard('device_air_purifier_water_tank_monitor_state_is');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}

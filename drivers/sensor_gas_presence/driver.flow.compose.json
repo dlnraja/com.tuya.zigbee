@@ -246,5 +246,43 @@
       }
     }
   ],
-  "actions": []
+  "actions": [
+    {
+      "id": "sensor_gas_presence_run_self_test",
+      "title": {
+        "en": "Run self test",
+        "fr": "Lancer l'auto-test"
+      },
+      "args": [
+        {
+          "name": "test_type",
+          "type": "dropdown",
+          "values": [
+            {
+              "id": "all",
+              "title": {
+                "en": "All"
+              }
+            },
+            {
+              "id": "gas",
+              "title": {
+                "en": "Gas"
+              }
+            },
+            {
+              "id": "co",
+              "title": {
+                "en": "CO"
+              }
+            }
+          ]
+        }
+      ],
+      "titleFormatted": {
+        "en": "Run self test",
+        "fr": "Lancer l'auto-test"
+      }
+    }
+  ]
 }

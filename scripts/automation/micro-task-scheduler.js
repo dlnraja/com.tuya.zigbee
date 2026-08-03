@@ -23,7 +23,7 @@
 'use strict';
 
 const fs = require('fs');
-const safeTimer = require('./utils/safe-timers') || require('../utils/safe-timers') || require('../../lib/utils/safe-timers') || require('../lib/utils/safe-timers') || require('./lib/utils/safe-timers') || require('../../../lib/utils/safe-timers');
+const safeTimer = require('../../lib/utils/safe-timers');
 const path = require('path');
 
 const PROGRESS_DIR = path.join(__dirname, '..', '..', '.github', 'state');

@@ -474,8 +474,13 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
    */
   _initFlowTriggers() {
     // v5.8.72: Safe flow card getter  prevents onNodeInit crash if card missing
+    // v9.0.394: Do NOT trigger the card here. The previous implementation
+    // fired each card once with empty tokens ({}) at init, causing
+    // "Could not trigger Flow card id soil_sensor_moisture_changed:
+    // Invalid value" (missing 'moisture' number token) and storing a
+    // Promise instead of the card.
     const safeGetTrigger = (id) => {
-      try { return this.homey.flow.getDeviceTriggerCard(id)?.trigger(this, {}, {}).catch((err) => this.error(err));}
+      try { return this.homey.flow.getDeviceTriggerCard(id); }
       catch (e) { this.log(`[SOIL]  Flow trigger '${id}' not available: ${e.message}`); return null; }
     };
 
@@ -510,6 +515,10 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
    * Trigger moisture-related flows
    */
   _triggerMoistureFlows(moisture) {
+    // v9.0.394: Guard token type - Homey rejects non-numeric 'moisture'
+    // tokens with "Could not trigger Flow card ...: Invalid value"
+    if (!Number.isFinite(moisture)) {return;}
+
     // Trigger: moisture changed
     if (this._flowTriggerMoistureChanged) {
       this._flowTriggerMoistureChanged.trigger(this, { moisture }).catch(this.error);

@@ -1,0 +1,15 @@
+{
+  "conditions": [
+    {
+      "id": "ultrasonic_heat_meter_battery_low",
+      "title": {
+        "en": "Battery !{{is|is not}} low",
+        "fr": "Batterie !{{faible|normale}}"
+      },
+      "titleFormatted": {
+        "en": "Battery !{{is|is not}} low",
+        "fr": "Batterie !{{faible|normale}}"
+      }
+    }
+  ]
+}

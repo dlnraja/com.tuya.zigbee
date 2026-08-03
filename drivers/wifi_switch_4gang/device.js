@@ -34,6 +34,21 @@ class WiFiSwitch4GangDevice extends TuyaLocalDevice {
         try { await this.addCapability(cap); } catch (e) { /* optional */ }
       }
     }
+    // v10.6.2 FIX: listeners for the declared button.1..4 maintenance buttons.
+    // TuyaLocalDevice only registers listeners for dpMappings capabilities, so
+    // pressing a button in the app UI logged "Missing Capability Listener:
+    // Button N" (diag Gmail 16/07/2026). Pressing button.N toggles Tuya DP N.
+    for (let gang = 1; gang <= 4; gang++) {
+      const cap = `button.${gang}`;
+      if (!this.hasCapability(cap)) {continue;}
+      this.registerCapabilityListener(cap, async () => {
+        const onoffCap = gang === 1 ? 'onoff' : `onoff.gang${gang}`;
+        const next = !this.getCapabilityValue(onoffCap);
+        this.log(`[WIFI-SWITCH-4G] ${cap} pressed (UI) — DP${gang} → ${next}`);
+        await this._setDP(gang, next);
+        return true;
+      });
+    }
     this.log('[WIFI-SWITCH-4G] Ready');
   }
 

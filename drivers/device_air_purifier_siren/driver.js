@@ -37,10 +37,10 @@ class TuyaSirenDriver extends ZigBeeDriver {
     // CONDITION: Siren is/is not sounding
     //
     try {
-      const sirenCondition = this.homey.flow.getConditionCard('device_air_purifier_siren_siren_is_sounding');
+      const sirenCondition = this.homey.flow.getConditionCard('device_air_purifier_siren_is_sounding');
 
       if (!sirenCondition) {
-        this.log('[FLOW] Condition device_air_purifier_siren_siren_is_sounding not defined in app.json - skipping');
+        this.log('[FLOW] Condition device_air_purifier_siren_is_sounding not defined in app.json - skipping');
       } else {
         sirenCondition.registerRunListener(async (args) => {
           const device = args.device;
@@ -62,10 +62,10 @@ class TuyaSirenDriver extends ZigBeeDriver {
     // ACTION: Turn on siren
     //
     try {
-      const turnOnAction = this.homey.flow.getActionCard('device_air_purifier_siren_siren_turn_on');
+      const turnOnAction = this.homey.flow.getActionCard('device_air_purifier_siren_turn_on');
 
       if (!turnOnAction) {
-        this.log('[FLOW] Action device_air_purifier_siren_siren_turn_on not defined in app.json - skipping');
+        this.log('[FLOW] Action device_air_purifier_siren_turn_on not defined in app.json - skipping');
       } else {
         turnOnAction.registerRunListener(async (args) => {
           const device = args.device;
@@ -97,10 +97,10 @@ class TuyaSirenDriver extends ZigBeeDriver {
     // ACTION: Turn off siren
     //
     try {
-      const turnOffAction = this.homey.flow.getActionCard('device_air_purifier_siren_siren_turn_off');
+      const turnOffAction = this.homey.flow.getActionCard('device_air_purifier_siren_turn_off');
 
       if (!turnOffAction) {
-        this.log('[FLOW] Action device_air_purifier_siren_siren_turn_off not defined in app.json - skipping');
+        this.log('[FLOW] Action device_air_purifier_siren_turn_off not defined in app.json - skipping');
       } else {
         turnOffAction.registerRunListener(async (args) => {
           const device = args.device;
@@ -132,10 +132,10 @@ class TuyaSirenDriver extends ZigBeeDriver {
     // ACTION: Set volume
     //
     try {
-      const setVolumeAction = this.homey.flow.getActionCard('device_air_purifier_siren_siren_set_volume');
+      const setVolumeAction = this.homey.flow.getActionCard('device_air_purifier_siren_set_volume');
 
       if (!setVolumeAction) {
-        this.log('[FLOW] Action device_air_purifier_siren_siren_set_volume not defined in app.json - skipping');
+        this.log('[FLOW] Action device_air_purifier_siren_set_volume not defined in app.json - skipping');
       } else {
         setVolumeAction.registerRunListener(async (args) => {
           const device = args.device;
@@ -169,10 +169,10 @@ class TuyaSirenDriver extends ZigBeeDriver {
     // ACTION: Set duration
     //
     try {
-      const setDurationAction = this.homey.flow.getActionCard('device_air_purifier_siren_siren_set_duration');
+      const setDurationAction = this.homey.flow.getActionCard('device_air_purifier_siren_set_duration');
 
       if (!setDurationAction) {
-        this.log('[FLOW] Action device_air_purifier_siren_siren_set_duration not defined in app.json - skipping');
+        this.log('[FLOW] Action device_air_purifier_siren_set_duration not defined in app.json - skipping');
       } else {
         setDurationAction.registerRunListener(async (args) => {
           const device = args.device;
@@ -204,10 +204,10 @@ class TuyaSirenDriver extends ZigBeeDriver {
     // ACTION: Set melody
     //
     try {
-      const setMelodyAction = this.homey.flow.getActionCard('device_air_purifier_siren_siren_set_melody');
+      const setMelodyAction = this.homey.flow.getActionCard('device_air_purifier_siren_set_melody');
 
       if (!setMelodyAction) {
-        this.log('[FLOW] Action device_air_purifier_siren_siren_set_melody not defined in app.json - skipping');
+        this.log('[FLOW] Action device_air_purifier_siren_set_melody not defined in app.json - skipping');
       } else {
         setMelodyAction.registerRunListener(async (args) => {
           const device = args.device;
