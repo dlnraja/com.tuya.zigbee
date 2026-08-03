@@ -40,20 +40,27 @@ class ValveDualIrrigationDriver extends ZigBeeDriver {
       }
     };
 
+    // v9.0.262 (P63.2): setCapabilityValue() alone only updates Homey state —
+    // SDK3 does NOT invoke capability listeners on programmatic sets, so the
+    // P63.1 run listeners updated the UI but the valve never actuated
+    // (forum #2102/#2105: "the right actions, but isn't working"). Route the
+    // command through the device's physical DP sender instead.
     const setValve = async (device, capability, value) => {
       if (!device) { return false; }
-      try {
-        if (typeof device.setCapabilityValue === 'function') {
-          await device.setCapabilityValue(capability, !!value);
-        }
-        if (typeof device.safeSetCapabilityValue === 'function') {
-          await device.safeSetCapabilityValue(capability, !!value).catch(() => {});
-        }
-        return true;
-      } catch (e) {
-        this.log('[Flow] setValve error:', e.message);
-        return false;
+      const dp = capability === 'onoff.valve_2' ? 2 : 1;
+      if (typeof device._sendValveDP === 'function') {
+        return device._sendValveDP(dp, capability, !!value);
       }
+      if (typeof device.sendDP === 'function') {
+        await device.sendDP(dp, !!value, 'bool');
+        await device.safeSetCapabilityValue?.(capability, !!value).catch(() => {});
+        return true;
+      }
+      if (typeof device.setCapabilityValue === 'function') {
+        await device.setCapabilityValue(capability, !!value);
+        return true;
+      }
+      return false;
     };
 
     reg('valve_dual_irrigation_valve_irrigation_turn_on', async ({ device }) => {
@@ -79,6 +86,24 @@ class ValveDualIrrigationDriver extends ZigBeeDriver {
       const current = typeof device.getCapabilityValue === 'function' ? !!device.getCapabilityValue(cap) : false;
       return setValve(device, cap, !current);
     });
+
+    // v9.0.262 (P63.2): the is_on condition card was declared in
+    // driver.flow.compose.json but had no run listener, so any flow using it
+    // failed. Wire it to the current valve state.
+    try {
+      const condition = this.homey.flow.getConditionCard('valve_dual_irrigation_valve_irrigation_is_on');
+      if (condition) {
+        condition.registerRunListener(async ({ device }) => {
+          if (!device) { return false; }
+          const cap = typeof device.hasCapability === 'function' && device.hasCapability('onoff.valve_1')
+            ? 'onoff.valve_1'
+            : 'onoff';
+          return typeof device.getCapabilityValue === 'function' ? !!device.getCapabilityValue(cap) : false;
+        });
+      }
+    } catch (e) {
+      this.log('[Flow]', 'valve_dual_irrigation_valve_irrigation_is_on', e.message);
+    }
   }
 
 }

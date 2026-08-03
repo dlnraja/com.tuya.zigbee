@@ -354,7 +354,8 @@ const SENSOR_CONFIGS = {
   'KA8L86IU_BATTERY': {
     configName: 'KA8L86IU_BATTERY',
     sensors: [
-      '_TZE200_ka8l86iu', '_tze200_ka8l86iu', '_TZE200_KA8L86IU',
+      '_TZE200_ka8l86iu', '_tze200_ka8l86iu', '_TZE200_KA8L86IU', '_tze200_KA8L86IU',
+      '_TZE284_ka8l86iu', '_tze284_ka8l86iu', '_TZE284_KA8L86IU', '_tze284_KA8L86IU',
       '_TZE200_zbfmvj13', '_tze200_zbfmvj13', '_TZE200_ZBFMVJ13',
     ],
     battery: true,
