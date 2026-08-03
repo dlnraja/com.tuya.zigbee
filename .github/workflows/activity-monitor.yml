@@ -12,9 +12,13 @@ name: Activity Monitor (P30)
 # Generates a snapshot for analysis and commits the cache.
 
 on:
-  schedule:
-    # Daily at 04:00 UTC (after shadow-mode at 03:00)
-    - cron: '0 4 * * *'
+  # Cron désactivé 2026-08-04 (audit no-op) : sous-ensemble strict du
+  # recurrent-orchestrator (03:30 — étapes 4, 7, 8 : fetch-all-activity,
+  # temporal-monitor, session-start). 0 commit, artifacts jamais téléchargés.
+  # Reste lançable via workflow_dispatch.
+  # schedule:
+  #   # Daily at 04:00 UTC (after shadow-mode at 03:00)
+  #   - cron: '0 4 * * *'
   workflow_dispatch:
 
 # Least privilege: push of the activity snapshot + read-only GH API scans

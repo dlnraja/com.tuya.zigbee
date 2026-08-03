@@ -5,9 +5,12 @@
 name: 🧠 Smart Update Orchestrator
 
 on:
-  schedule:
-    # Daily 01:30 UTC, after knowledge-graph runs but before mega-crawl
-    - cron: '30 1 * * *'
+  # Cron désactivé 2026-08-04 (audit no-op) : en schedule, le plan est calculé
+  # puis jeté (résumé de step uniquement, contents: read, aucun commit ni
+  # déclenchement — le trigger mega-crawl n'existe qu'en workflow_dispatch).
+  # schedule:
+  #   # Daily 01:30 UTC, after knowledge-graph runs but before mega-crawl
+  #   - cron: '30 1 * * *'
   workflow_dispatch:
     inputs:
       trigger:

@@ -4,9 +4,13 @@
 name: 🕷️ Mega Crawler
 
 on:
-  schedule:
-    # Daily at 02:00 UTC (before recurrent-orchestrator at 03:30)
-    - cron: '0 2 * * *'
+  # Cron désactivé 2026-08-04 (audit no-op) : le crawl ne commit rien
+  # (artifacts 7j jamais téléchargés, état perdu à chaque run) et ses sources
+  # sont déjà couvertes avec commits par blakadder-fetch, forum-poll,
+  # gmail-diagnostics et community-inbox. Reste lançable via workflow_dispatch.
+  # schedule:
+  #   # Daily at 02:00 UTC (before recurrent-orchestrator at 03:30)
+  #   - cron: '0 2 * * *'
   workflow_dispatch:
     inputs:
       only:

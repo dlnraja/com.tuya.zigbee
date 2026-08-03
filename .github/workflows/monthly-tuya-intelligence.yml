@@ -8,8 +8,12 @@ name: 🌙 Monthly Tuya Intelligence & URL Audit
 
 
 on:
-  schedule:
-    - cron: '9 1 1 * *' # Once a month on the 1st at 01:09 UTC (staggered: was 00:00)
+  # Cron désactivé 2026-08-04 (audit no-op) : le step "Commit and Push" échoue
+  # chaque mois (permissions: contents read → push 403 github-actions[bot],
+  # continue-on-error masque l'échec, run vert trompeur). Effet net zéro.
+  # Réactiver après passage à GH_PAT / verified-git-push.sh.
+  # schedule:
+  #   - cron: '9 1 1 * *' # Once a month on the 1st at 01:09 UTC (staggered: was 00:00)
   workflow_dispatch: # Allow manual trigger
 
 permissions:

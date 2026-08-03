@@ -12,9 +12,12 @@ name: Temporal Monitor (P29.7)
 # Generates a report with auto-fix candidates and needs-investigation items.
 
 on:
-  schedule:
-    # Daily at 06:00 UTC
-    - cron: '0 6 * * *'
+  # Cron désactivé 2026-08-04 (audit no-op) : temporal-monitor.js est déjà exécuté
+  # chaque jour par recurrent-orchestrator (03:30, étape 7). Artifact jamais
+  # téléchargé, 0 issue créée. Reste lançable via workflow_dispatch.
+  # schedule:
+  #   # Daily at 06:00 UTC
+  #   - cron: '0 6 * * *'
   workflow_dispatch:
 
 # Least privilege: push of the report + read-only GH issues scan
