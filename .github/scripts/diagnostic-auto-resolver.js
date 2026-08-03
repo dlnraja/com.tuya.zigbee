@@ -133,6 +133,44 @@ protocolNote+
 "**Troubleshooting:** https://github.com/"+OWN+"/wiki/Troubleshooting\n\n"+
 (fpResults.some(f=>f.protocol)?"> **Detected protocols:** "+fpResults.map(f=>f.protocol||"unknown").filter((v,i,a)=>a.indexOf(v)===i).join(", ")+"\n":"");
 }
+// v9.0.390: Anti-spam guard — dedup + escalation, decided from issue comments.
+// Returns {action:"post"|"skip"|"escalate",reason}. "escalate" = a human replied
+// after the last auto-resolved comment → label needs-maintainer, stop the cycle.
+function commentGuard(o){
+const labels=o.labels||[],fps=o.fps||[],appVer=o.appVer,owner=o.ownerLogin||"";
+if(labels.includes("reopened-by-user"))return{action:"skip",reason:"label reopened-by-user"};
+if(labels.includes("needs-maintainer"))return{action:"skip",reason:"label needs-maintainer"};
+// Fail-closed: without the comment history we cannot verify dedup — do not post.
+if(!Array.isArray(o.comments))return{action:"skip",reason:"comments unavailable (fail-closed)"};
+const cmts=o.comments;
+const isResolver=c=>(c.body||"").includes(TAG);
+const isBot=c=>isResolver(c)||(c.body||"").includes("<!-- tuya-reopen-bot -->")||(((c.user||{}).login)||"").includes("[bot]");
+const isOwner=c=>((c.user||{}).login||"")===owner;
+const lastHuman=cmts.filter(c=>!isBot(c)&&!isOwner(c)).pop();
+const lastOwner=cmts.filter(c=>isOwner(c)&&!isBot(c)).pop();
+const resolverCmts=cmts.filter(isResolver);
+const lastResolver=resolverCmts[resolverCmts.length-1];
+// Escalation: any human comment after the last auto-resolved → stop the cycle
+if(lastResolver&&lastHuman&&lastHuman.created_at>lastResolver.created_at)
+return{action:"escalate",reason:"human replied after auto-resolve"};
+// Maintainer took over the conversation
+if(lastOwner&&(!lastResolver||lastOwner.created_at>lastResolver.created_at)&&(!lastHuman||lastOwner.created_at>lastHuman.created_at))
+return{action:"skip",reason:"maintainer is handling"};
+// Last human word reports still broken (before any auto-resolve)
+if(lastHuman&&(!lastResolver||lastHuman.created_at>lastResolver.created_at)&&/\b(still|toujours|not fixed|encore)\b/i.test(lastHuman.body||""))
+return{action:"skip",reason:"latest human comment reports still broken"};
+// Dedup: max 1 auto-resolved comment per issue per app version. Repost only
+// when the app version changed or new fingerprints appeared.
+const verOf=c=>{const m=(c.body||"").match(/v(\d+\.\d+(?:\.\d+)?)/);return m?m[1]:null};
+const sameVer=resolverCmts.filter(c=>verOf(c)===appVer);
+if(sameVer.length){
+const covered=new Set();for(const c of sameVer)for(const f of exFP(c.body||""))covered.add(f);
+// A previous comment without fingerprints (e.g. KB fix) counts as resolved for
+// this version; the new-fingerprint exception only applies to fp-listing comments.
+if(!covered.size||!fps.some(f=>!covered.has(f)))return{action:"skip",reason:"already auto-resolved in v"+appVer};
+}
+return{action:"post",reason:"ok"};
+}
 async function main(){
 console.log("Diagnostic Auto-Resolver (Enhanced Multi-Protocol) v"+appVer);
 const idx=buildIdx();console.log("Indexed "+idx.size+" fingerprints/productIds");
@@ -141,43 +179,20 @@ const report={timestamp:new Date().toISOString(),processed:0,commented:0,closed:
 for(const repo of[OWN,UP]){
 const issues=await fetchOpen(repo,"issue");
 for(const iss of issues){
-if(st.commented.includes(iss.id))continue;
+// v9.0.390: st.commented no longer skips — it persisted forever and blocked legitimate reposts after an app version change. Dedup is comment-based now (commentGuard).
 const txt=iss.title+" "+iss.body;
 const fps=exFP(txt);const pids=exPID(txt);
 if(!fps.length&&!pids.length)continue;
-// v9.0.349: Never auto-resolve issues the user reopened or still reports broken
+// v9.0.390: Anti-spam guard — comment-based dedup + escalation (see commentGuard)
 const _labels=(iss.labels||[]).map(l=>typeof l==="string"?l:l&&l.name);
-if(_labels.includes("reopened-by-user")){console.log("Skip #"+iss.number+": label reopened-by-user");continue;}
-// v9.0.362: A human took over the conversation — never auto-resolve until maintainer acts
-if(_labels.includes("needs-maintainer")){console.log("Skip #"+iss.number+": label needs-maintainer");continue;}
 const _cmts=await ghGet("/repos/"+repo+"/issues/"+iss.number+"/comments?per_page=100");
-if(Array.isArray(_cmts)&&_cmts.length){
-const _isBot=c=>(c.body||"").includes(TAG)||(c.body||"").includes("<!-- tuya-reopen-bot -->")||(((c.user||{}).login)||"").includes("[bot]");
-const _isOwner=c=>((c.user||{}).login||"")===OWN.split("/")[0];
-const _humans=_cmts.filter(c=>!_isBot(c)&&!_isOwner(c));
-const _bots=_cmts.filter(_isBot);
-const _owners=_cmts.filter(c=>_isOwner(c)&&!_isBot(c));
-const _lastHuman=_humans[_humans.length-1];
-const _lastBot=_bots[_bots.length-1];
-const _lastOwner=_owners[_owners.length-1];
-if(_lastHuman&&(!_lastBot||_lastHuman.created_at>_lastBot.created_at)&&/\b(still|toujours|not fixed|encore)\b/i.test(_lastHuman.body||"")){
-console.log("Skip #"+iss.number+": latest human comment reports still broken");continue;
-}
-// v9.0.362: Comment-based dedup + escalation (state file is gitignored, cannot persist)
-const _handled=[_lastBot,_lastOwner].filter(Boolean).sort((a,b)=>a.created_at<b.created_at?-1:1).pop();
-if(_handled){
-if(_lastHuman&&_lastHuman.created_at>_handled.created_at){
-// Human replied after the bot/maintainer: stop auto-resolving, escalate once
-console.log("Escalate #"+iss.number+": human replied after auto-resolve");
+const _guard=commentGuard({comments:_cmts,labels:_labels,fps,appVer,ownerLogin:OWN.split("/")[0]});
+if(_guard.action==="escalate"){
+console.log("Escalate #"+iss.number+": "+_guard.reason);
 await ghPost("/repos/"+repo+"/issues/"+iss.number+"/labels",{labels:["needs-maintainer"]});
 continue;
 }
-if(_handled===_lastOwner){console.log("Skip #"+iss.number+": maintainer is handling");continue;}
-// Bot had the last word: skip if it already resolved for the current app version
-const _vm=(_lastBot.body||"").match(/Tuya Unified Zigbee v([\d.]+)/);
-if(_vm&&_vm[1]===appVer){console.log("Skip #"+iss.number+": already auto-resolved in v"+appVer);continue;}
-}
-}
+if(_guard.action==="skip"){console.log("Skip #"+iss.number+": "+_guard.reason);continue;}
 // v5.13.1: Correlate mfr+pid pairs for smarter resolution
 const fpPidPairs=[];
 for(const fp of fps){for(const pid of pids){fpPidPairs.push({mfr:fp,pid});}}
@@ -215,4 +230,4 @@ fs.writeFileSync(RF,JSON.stringify(report,null,2));
 console.log("Report:",report);
 }
 if(require.main===module)main().catch(e=>{console.error(e);process.exit(1)});
-module.exports={buildIdx,detectProtocol,detectSym};
+module.exports={buildIdx,detectProtocol,detectSym,commentGuard};

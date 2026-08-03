@@ -9,7 +9,8 @@
   ],
   "zigbee": {
     "productId": [
-      "TS0002"
+      "TS0002",
+      "TS011F"
     ],
     "endpoints": {
       "1": {
@@ -74,6 +75,10 @@
       "_TZ3000_3zofvcaa",
       "_TZ3000_jcspr0tp",
       "_TZ3000_lqb7lcq9",
+      "_TZ3210_lqb7lcq9",
+      "_TZ3210_LQB7LCQ9",
+      "_tz3210_lqb7lcq9",
+      "_tz3210_LQB7LCQ9",
       "_TZ3000_pvlvoxvt",
       "_TZ3000_qkixdnon",
       "_TZ3210_8n4dn1ne",
