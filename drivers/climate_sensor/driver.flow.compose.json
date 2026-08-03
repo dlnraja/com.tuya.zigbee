@@ -155,6 +155,22 @@
         "nl": "Batterijspanning veranderd",
         "de": "Batteriespannung geändert"
       }
+    },
+    {
+      "id": "climate_scene_triggered",
+      "title": {
+        "en": "Scene triggered",
+        "fr": "Scène déclenchée",
+        "nl": "Scène geactiveerd",
+        "de": "Szene ausgelöst"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Scene triggered",
+        "fr": "Scène déclenchée",
+        "nl": "Scène geactiveerd",
+        "de": "Szene ausgelöst"
+      }
     }
   ],
   "conditions": [

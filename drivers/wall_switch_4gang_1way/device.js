@@ -9,6 +9,11 @@ const ManufacturerNameHelper = require('../../lib/helpers/ManufacturerNameHelper
  * Each gang can be a separate Homey device (Sub-device architecture).
  * v10.3.0 FIX (B10): Removed the redundant PhysicalButtonMixin + VirtualButtonMixin double wrap
  * double wrap — UnifiedSwitchBase already inherits both via TuyaZigbeeDevice.
+ * v10.6.1 FIX (forum #2099): initPhysicalButtonDetection() was never called —
+ * UnifiedSwitchBase.onNodeInit does not chain to TuyaZigbeeDevice.onNodeInit
+ * (the only automatic caller), so _physicalButtonState stayed undefined and
+ * every physical-press flow (physical_gangN_on/off, gangN_scene) was dead for
+ * the Moes TS0014 (_TZ3000_mrduubod). Call it explicitly like switch_4gang does.
  */
 class WallSwitch4Gang1WayDevice extends UnifiedSwitchBase {
 
@@ -59,6 +64,10 @@ class WallSwitch4Gang1WayDevice extends UnifiedSwitchBase {
       this.log(`[WALL-4G] Initializing ${this._gangNumber > 1 ? 'Sub' : 'Primary'} Device (Gang ${this._gangNumber})`);
       await super.onNodeInit({ zclNode });
       await this._setupPzaoSceneInterceptor();
+      // v10.6.1 FIX (forum #2099): never called before — physical button flows were dead
+      if (typeof this.initPhysicalButtonDetection === 'function') {
+        await this.initPhysicalButtonDetection(zclNode);
+      }
       await this.initVirtualButtons();
       if (typeof this._registerButtonCapabilityListeners === 'function') {
         this._registerButtonCapabilityListeners();
