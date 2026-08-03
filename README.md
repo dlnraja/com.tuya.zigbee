@@ -37,7 +37,7 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.392 |
+| **App Version** | v9.0.393 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,339 |
 | **Pairing Variants** | 18,114 (4 case combos per fingerprint) |
@@ -106,6 +106,7 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.393** | Central destroyed guards on capability ops, linear battery formulas eliminated. |
 | **v9.0.392** | Central destroyed guards on capability ops, linear battery formulas eliminated. |
 | **v9.0.391** | Central destroyed guards on capability ops, linear battery formulas eliminated. |
 | **v9.0.390** | Central destroyed guards on capability ops, linear battery formulas eliminated. |
@@ -117,7 +118,6 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 | **v9.0.384** | Dashboards: navigation fixed (hub/finder/inbox links), precise fingerprint metric, version alignment. |
 | **v9.0.383** | 51 critical ESLint errors fixed (phantom modules, this-less calls, missing super(), duplicate keys, dead switch cases). |
 | **v9.0.382** | Key-version changelog format (required by headless homey publish), OTA guidance, Hue batch 4. |
-| **v9.0.381** | Changelog backticks stripped (publish extractor fix), publish-size bundle excludes product-reference, version alignment. |
 
 <!-- CHANGELOG_END -->
 
