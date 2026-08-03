@@ -11,9 +11,12 @@ on:
         description: 'Specific build ID to diagnose (optional — defaults to latest failed)'
         required: false
         default: ''
-  schedule:
-    # Run nightly at 02:17 UTC to capture the latest build error
-    - cron: '17 2 * * *'
+  # Cron désactivé 2026-08-04 (audit no-op) : screenshots Puppeteer vers un
+  # artifact jamais téléchargé, 0 action corrective ; la supervision des builds
+  # Athom est déjà assurée toutes les 6h par auto-fix-and-publish.
+  # schedule:
+  #   # Run nightly at 02:17 UTC to capture the latest build error
+  #   - cron: '17 2 * * *'
 
 permissions:
   contents: read

@@ -13,9 +13,12 @@ name: 🧠 Knowledge Graph Daily Sync
 # - ZERO external API usage (no GH, no Gmail, no Forum, no Blakadder)
 
 on:
-  schedule:
-    # Daily at 02:30 UTC (off-peak, after mega-crawl at 02:00)
-    - cron: '30 2 * * *'
+  # Cron désactivé 2026-08-04 (audit no-op) : le knowledge graph est rebuildé
+  # 1h15 plus tard par nightly-audit (build-knowledge-graph.js, 03:45).
+  # Artifact jamais téléchargé, 0 commit. Reste lançable via workflow_dispatch.
+  # schedule:
+  #   # Daily at 02:30 UTC (off-peak, after mega-crawl at 02:00)
+  #   - cron: '30 2 * * *'
   workflow_dispatch:
 
 permissions:
