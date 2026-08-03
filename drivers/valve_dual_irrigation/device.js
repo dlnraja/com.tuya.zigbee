@@ -94,8 +94,40 @@ class ValveDualIrrigationDevice extends BaseUnifiedDevice {
     }
 
     if (!mapping.capability || value === null || value === undefined) {return false;}
+
+    // Capture previous state so flow triggers fire only on real changes.
+    const previousValue = this.hasCapability?.(mapping.capability)
+      ? this.getCapabilityValue(mapping.capability)
+      : undefined;
+
     await this.safeSetCapabilityValue(mapping.capability, value);
+    this._fireDualValveFlowTriggers(mapping.capability, value, previousValue);
     return true;
+  }
+
+  /**
+   * Fire the driver flow triggers declared in driver.flow.compose.json
+   * (turned_on / turned_off / battery_low) when DP reports change the
+   * physical state. Without this the declared trigger cards never fired.
+   */
+  _fireDualValveFlowTriggers(capability, value, previousValue) {
+    try {
+      if (value === previousValue || typeof this.triggerFlowCard !== 'function') {return;}
+
+      if (capability === 'onoff.valve_1' || capability === 'onoff.valve_2') {
+        const cardId = value
+          ? 'valve_dual_irrigation_valve_irrigation_turned_on'
+          : 'valve_dual_irrigation_valve_irrigation_turned_off';
+        this.triggerFlowCard(cardId).catch(() => {});
+      } else if (capability === 'measure_battery' && typeof value === 'number') {
+        const wasLow = typeof previousValue === 'number' && previousValue <= 20;
+        if (value <= 20 && !wasLow) {
+          this.triggerFlowCard('valve_dual_irrigation_valve_irrigation_battery_low').catch(() => {});
+        }
+      }
+    } catch (err) {
+      this.log('[VALVE-2] Flow trigger failed:', err.message);
+    }
   }
 
   async onNodeInit({ zclNode }) {

@@ -34,6 +34,13 @@ const { SoilMoistureInference, BatteryInference } = require('../../lib/Intellige
  *   - DP102: illuminance lux
  *   - DP106: fertilizer_ec (advanced variants)
  *   - DP112: soil_fertility_ec (TZE284 specific)
+ *
+ *   PAIRING (forum 140352 #2101, blutch32): HOBEIAN ZG-303Z units with
+ *   swBuild 0129122025 expose only clusters [0,3,61184,1026,1029,1].
+ *   The driver manifest previously required clusters [0,4,5,60672,61184],
+ *   so these units paired as "unknown zigbee device". Manifest endpoints
+ *   were relaxed to [0,61184]; temp/humidity/battery are handled by the
+ *   universal ZCL handlers in TuyaUnifiedDevice (hybrid mode).
  */
 class SoilSensorDevice extends TuyaUnifiedDevice {
 
