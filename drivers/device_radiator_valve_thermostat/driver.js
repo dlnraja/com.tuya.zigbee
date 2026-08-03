@@ -35,7 +35,7 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
     } catch (err) { if (this.developerDebugMode) { this.error(`Condition device_radiator_valve_thermostat_hybrid_thermostat_tuya_dp_is_heating: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getConditionCard('device_radiator_valve_thermostat_thermostat_tuya_dp_temperature_above_target');
+      const card = this.homey.flow.getConditionCard('device_radiator_valve_thermostat_tuya_dp_tem_8fe99');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -46,7 +46,7 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
     } catch (err) { if (this.developerDebugMode) { this.error(`Condition device_radiator_valve_thermostat_thermostat_tuya_dp_temperature_above_target: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getConditionCard('device_radiator_valve_thermostat_thermostat_tuya_dp_temperature_below_target');
+      const card = this.homey.flow.getConditionCard('device_radiator_valve_thermostat_tuya_dp_tem_2da2f');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -56,7 +56,7 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
     } catch (err) { if (this.developerDebugMode) { this.error(`Condition device_radiator_valve_thermostat_thermostat_tuya_dp_temperature_below_target: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getConditionCard('device_radiator_valve_thermostat_thermostat_tuya_dp_mode_is');
+      const card = this.homey.flow.getConditionCard('device_radiator_valve_thermostat_tuya_dp_mode_is');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -66,7 +66,7 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
     } catch (err) { if (this.developerDebugMode) { this.error(`Condition device_radiator_valve_thermostat_thermostat_tuya_dp_mode_is: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getConditionCard('device_radiator_valve_thermostat_thermostat_tuya_dp_child_lock_is');
+      const card = this.homey.flow.getConditionCard('device_radiator_valve_thermostat_tuya_dp_chi_2c8e8');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -76,7 +76,7 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
     } catch (err) { if (this.developerDebugMode) { this.error(`Condition device_radiator_valve_thermostat_thermostat_tuya_dp_child_lock_is: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getConditionCard('device_radiator_valve_thermostat_thermostat_tuya_dp_is_on');
+      const card = this.homey.flow.getConditionCard('device_radiator_valve_thermostat_tuya_dp_is_on');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -87,7 +87,7 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
 
     // ACTIONS
     try {
-      const card = this.homey.flow.getActionCard('device_radiator_valve_thermostat_thermostat_tuya_dp_set_target_temperature');
+      const card = this.homey.flow.getActionCard('device_radiator_valve_thermostat_tuya_dp_set_01c72');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -98,7 +98,7 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
     } catch (err) { if (this.developerDebugMode) { this.error(`Action device_radiator_valve_thermostat_thermostat_tuya_dp_set_target_temperature: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getActionCard('device_radiator_valve_thermostat_thermostat_tuya_dp_set_mode');
+      const card = this.homey.flow.getActionCard('device_radiator_valve_thermostat_tuya_dp_set_mode');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -110,7 +110,7 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
     } catch (err) { if (this.developerDebugMode) { this.error(`Action device_radiator_valve_thermostat_thermostat_tuya_dp_set_mode: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getActionCard('device_radiator_valve_thermostat_thermostat_tuya_dp_increase_temperature');
+      const card = this.homey.flow.getActionCard('device_radiator_valve_thermostat_tuya_dp_inc_8b664');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -122,7 +122,7 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
     } catch (err) { if (this.developerDebugMode) { this.error(`Action device_radiator_valve_thermostat_thermostat_tuya_dp_increase_temperature: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getActionCard('device_radiator_valve_thermostat_thermostat_tuya_dp_decrease_temperature');
+      const card = this.homey.flow.getActionCard('device_radiator_valve_thermostat_tuya_dp_dec_6e5ef');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -134,7 +134,7 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
     } catch (err) { if (this.developerDebugMode) { this.error(`Action device_radiator_valve_thermostat_thermostat_tuya_dp_decrease_temperature: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getActionCard('device_radiator_valve_thermostat_thermostat_tuya_dp_set_child_lock');
+      const card = this.homey.flow.getActionCard('device_radiator_valve_thermostat_tuya_dp_set_fa7a8');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -146,7 +146,7 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
     } catch (err) { if (this.developerDebugMode) { this.error(`Action device_radiator_valve_thermostat_thermostat_tuya_dp_set_child_lock: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getActionCard('device_radiator_valve_thermostat_thermostat_tuya_dp_set_comfort_preset');
+      const card = this.homey.flow.getActionCard('device_radiator_valve_thermostat_tuya_dp_set_e140c');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -158,7 +158,7 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
     } catch (err) { if (this.developerDebugMode) { this.error(`Action device_radiator_valve_thermostat_thermostat_tuya_dp_set_comfort_preset: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getActionCard('device_radiator_valve_thermostat_thermostat_tuya_dp_schedule_on');
+      const card = this.homey.flow.getActionCard('device_radiator_valve_thermostat_tuya_dp_sch_b7ab8');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -169,7 +169,7 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
     } catch (err) { if (this.developerDebugMode) { this.error(`Action device_radiator_valve_thermostat_thermostat_tuya_dp_schedule_on: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getActionCard('device_radiator_valve_thermostat_thermostat_tuya_dp_schedule_off');
+      const card = this.homey.flow.getActionCard('device_radiator_valve_thermostat_tuya_dp_sch_7e2b1');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -180,7 +180,7 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
     } catch (err) { if (this.developerDebugMode) { this.error(`Action device_radiator_valve_thermostat_thermostat_tuya_dp_schedule_off: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getActionCard('device_radiator_valve_thermostat_thermostat_tuya_dp_turn_on');
+      const card = this.homey.flow.getActionCard('device_radiator_valve_thermostat_tuya_dp_turn_on');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -191,7 +191,7 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
     } catch (err) { if (this.developerDebugMode) { this.error(`Action device_radiator_valve_thermostat_thermostat_tuya_dp_turn_on: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getActionCard('device_radiator_valve_thermostat_thermostat_tuya_dp_turn_off');
+      const card = this.homey.flow.getActionCard('device_radiator_valve_thermostat_tuya_dp_turn_off');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -202,7 +202,7 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
     } catch (err) { if (this.developerDebugMode) { this.error(`Action device_radiator_valve_thermostat_thermostat_tuya_dp_turn_off: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getActionCard('device_radiator_valve_thermostat_thermostat_tuya_dp_toggle');
+      const card = this.homey.flow.getActionCard('device_radiator_valve_thermostat_tuya_dp_toggle');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -214,7 +214,7 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
     } catch (err) { if (this.developerDebugMode) { this.error(`Action device_radiator_valve_thermostat_thermostat_tuya_dp_toggle: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getActionCard('device_radiator_valve_thermostat_thermostat_tuya_dp_set_temperature');
+      const card = this.homey.flow.getActionCard('device_radiator_valve_thermostat_tuya_dp_set_b2909');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}

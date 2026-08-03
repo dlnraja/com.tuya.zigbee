@@ -72,6 +72,33 @@ class wall_switch_4_gang_tuya extends TuyaSpecificClusterDevice {
         }
       });
 
+      // v10.6.2 FIX: listeners for the declared button.1..4 maintenance buttons.
+      // TuyaSpecificClusterDevice registers no capability listeners for them, so
+      // pressing a button in the app UI logged "Missing Capability Listener:
+      // Button N" (diag Gmail 16/07/2026). Pressing button.N toggles Tuya DP N.
+      // Sub-devices only carry the onoff capability (hasCapability guard).
+      const gangDps = {
+        1: V1_MULTI_SWITCH_DATA_POINTS.onOffSwitchOne,
+        2: V1_MULTI_SWITCH_DATA_POINTS.onOffSwitchTwo,
+        3: V1_MULTI_SWITCH_DATA_POINTS.onOffSwitchThree,
+        4: V1_MULTI_SWITCH_DATA_POINTS.onOffSwitchFour,
+      };
+      for (const [gang, dp] of Object.entries(gangDps)) {
+        const cap = `button.${gang}`;
+        if (!this.hasCapability(cap)) {continue;}
+        this.registerCapabilityListener(cap, async () => {
+          const next = !this._dpStates?.[dp];
+          this.log(`${cap} pressed (UI) — DP${dp} → ${next}`);
+          try {
+            await this.writeBool(dp, next);
+          } catch (err) {
+            this.error(`Error when toggling DP${dp}:`, err);
+            throw err;
+          }
+          return true;
+        });
+      }
+
   }
 
   async _setupGang(zclNode, gangName, dpOnOff) {
@@ -95,6 +122,10 @@ class wall_switch_4_gang_tuya extends TuyaSpecificClusterDevice {
     const dataType = data.datatype;
     const { subDeviceId } = this.getData(); 
     this.log(`Processing DP ${dp}, Data Type: ${dataType}, Parsed Value:`, parsedValue);
+
+    // Track last known DP states (used by the button.N UI listeners)
+    this._dpStates = this._dpStates || {};
+    this._dpStates[dp] = parsedValue;
 
     // Differentiate between gangs by DP
     switch (dp) {

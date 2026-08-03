@@ -3,6 +3,7 @@ const { safeDivide } = require('../../lib/utils/tuyaUtils.js');
 // v5.12.8: WiFi Camera Device - Tuya IPC with local control + RTSP/snapshot streaming
 const Homey = require('homey');
 const TuyaCameraClient = require('../../lib/tuya-camera/TuyaCameraClient');
+const { safeSetCapabilityValue } = require('../../lib/utils/SafeCapability');
 
 // Tuya IPC DataPoints
 const DP = {
@@ -141,13 +142,13 @@ class WiFiCameraDevice extends Homey.Device {
       const now = Date.now();
       if (motion && now - this._lastMotionTime > 5000) {
         this._lastMotionTime = now;
-        this.safeSetCapabilityValue('alarm_motion', true).catch(() => {});
-        this.homey.setTimeout(() => { if (this._destroyed) {return;} this.safeSetCapabilityValue('alarm_motion', false).catch(() => {}); }, 30000);
+        safeSetCapabilityValue(this, 'alarm_motion', true).catch(() => {});
+        this.homey.setTimeout(() => { if (this._destroyed) {return;} safeSetCapabilityValue(this, 'alarm_motion', false).catch(() => {}); }, 30000);
       }
     }
 
     if (dps[DP.PRIVACY_MODE] !== undefined) {
-      this.safeSetCapabilityValue('onoff', !dps[DP.PRIVACY_MODE]).catch(() => {});
+      safeSetCapabilityValue(this, 'onoff', !dps[DP.PRIVACY_MODE]).catch(() => {});
     }
   }
 

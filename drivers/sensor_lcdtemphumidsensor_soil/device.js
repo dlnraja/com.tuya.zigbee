@@ -511,6 +511,10 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
    * Trigger moisture-related flows
    */
   _triggerMoistureFlows(moisture) {
+    // v9.0.394: Guard token type - Homey rejects non-numeric 'moisture'
+    // tokens with "Could not trigger Flow card ...: Invalid value"
+    if (!Number.isFinite(moisture)) {return;}
+
     // Trigger: moisture changed
     if (this._flowTriggerMoistureChanged) {
       this._flowTriggerMoistureChanged.trigger(this, { moisture }).catch(this.error);

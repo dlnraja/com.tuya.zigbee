@@ -15,14 +15,14 @@ class AirQualityCO2Driver extends ZigBeeDriver {
   _registerFlowCards() {
     const conditionCards = [
       {
-        id: 'air_quality_co2_co2_above',
+        id: 'air_quality_co2_above',
         fn: async (args) => {
           const co2 = args.device.getCapabilityValue('measure_co2') || 0;
           return co2 > (args.co2 || 1000);
         }
       },
       {
-        id: 'air_quality_co2_co2_below',
+        id: 'air_quality_co2_below',
         fn: async (args) => {
           const co2 = args.device.getCapabilityValue('measure_co2') || 0;
           return co2 < (args.co2 || 1000);

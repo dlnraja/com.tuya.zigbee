@@ -55,6 +55,16 @@ class SRZSSwitch extends TuyaSpecificClusterDevice {
                 return await this.handleOnOffCapability(zclNode, switchId, value);
             });
         }
+        // v10.6.2 FIX: button.1 is declared as a maintenance button in
+        // driver.compose.json; without a listener, pressing it in the app UI
+        // logged "Missing Capability Listener: Button 1" (diag Gmail 16/07/2026).
+        if (this.hasCapability('button.1')) {
+            this.registerCapabilityListener('button.1', async () => {
+                const next = !this.getCapabilityValue('onoff_1');
+                this.log(`button.1 pressed (UI) — toggling onoff_1 → ${next}`);
+                return await this.handleOnOffCapability(zclNode, SWITCH_CONFIG.FIRST_SWITCH_ID, next);
+            });
+        }
     }
 
     /**
@@ -256,7 +266,7 @@ class SRZSSwitch extends TuyaSpecificClusterDevice {
      */
       async registerActionCards() {
         // Register configurable switch action
-        this.homey.flow.getActionCard('set_switch_state')
+        this.homey.flow.getActionCard('sr_zs_switch_set_switch_state')
             .registerRunListener(async (args) => {
                 const switchId = args.switch;
                 const state = args.state === 'true';
@@ -279,7 +289,7 @@ class SRZSSwitch extends TuyaSpecificClusterDevice {
      */
     async registerConditionCards() {
         // Register configurable switch condition
-        this.homey.flow.getConditionCard('switch_is')
+        this.homey.flow.getConditionCard('sr_zs_switch_is')
             .registerRunListener(async (args, state) => {
                 const switchId = args.switch;
                 return this.getCapabilityValue(`onoff_${switchId}`);

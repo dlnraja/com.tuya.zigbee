@@ -3,6 +3,7 @@
 const Homey = require('homey');
 const VirtualPresenceDetector = require('../../lib/presence/VirtualPresenceDetector');
 const { PRESENCE_STATE } = require('../../lib/presence/VirtualPresenceDetector');
+const { safeSetCapabilityValue } = require('../../lib/utils/SafeCapability');
 
 /**
  * Virtual Presence Detector Device
@@ -152,7 +153,7 @@ class PresenceDetectorDevice extends Homey.Device {
   async safesetCapability(capability, value) {
     if (this._destroyed) {return;}
     try {
-      await this.safeSetCapabilityValue(capability, value);
+      await safeSetCapabilityValue(this, capability, value);
     } catch (err) {
       if (!this._destroyed) {
         this.error(`[PRESENCE_DEVICE] Failed to set ${capability}:`, err.message);

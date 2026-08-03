@@ -75,6 +75,25 @@ class switch_4_gang_metering extends UnifiedSwitchBase {
       });
     }
 
+    // v10.6.2 FIX: listeners for the declared button.1..4 maintenance buttons.
+    // This driver overrides onNodeInit() without calling super, so
+    // UnifiedSwitchBase._registerButtonCapabilityListeners() never ran and
+    // pressing a button in the app UI logged "Missing Capability Listener:
+    // Button N" (diag Gmail 16/07/2026). Pressing button.N toggles endpoint N.
+    // Sub-devices only carry the onoff capability (hasCapability guard).
+    for (let gang = 1; gang <= 4; gang++) {
+      const cap = `button.${gang}`;
+      if (!this.hasCapability(cap)) {continue;}
+      this.registerCapabilityListener(cap, async () => {
+        this.log(`[SWITCH-4G] ${cap} pressed (UI) — toggling endpoint ${gang}`);
+        const onOffCluster = zclNode.endpoints[gang]?.clusters?.onOff;
+        if (onOffCluster && typeof onOffCluster.toggle === 'function') {
+          await onOffCluster.toggle();
+        }
+        return true;
+      });
+    }
+
   }
 
   registerCapabilities(zclNode, options) {

@@ -1,0 +1,28 @@
+{
+  "triggers": [
+    {
+      "id": "smart_screen_switch_motion_detected",
+      "title": {
+        "en": "Motion detected",
+        "fr": "Mouvement détecté"
+      },
+      "titleFormatted": {
+        "en": "Motion detected",
+        "fr": "Mouvement détecté"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "id": "smart_screen_switch_motion_active",
+      "title": {
+        "en": "Motion !{{is|is not}} detected",
+        "fr": "Mouvement !{{détecté|non détecté}}"
+      },
+      "titleFormatted": {
+        "en": "Motion !{{is|is not}} detected",
+        "fr": "Mouvement !{{détecté|non détecté}}"
+      }
+    }
+  ]
+}

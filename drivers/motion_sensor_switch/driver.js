@@ -23,7 +23,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
 
   _registerFlowCards() {
     // TRIGGERS
-    const _triggerIds = ["motion_sensor_switch_switch_1gang_turned_on","motion_sensor_switch_switch_1gang_turned_off","motion_sensor_switch_switch_1gang_physical_on","motion_sensor_switch_switch_1gang_physical_off","motion_sensor_switch_switch_1gang_physical_single","motion_sensor_switch_switch_1gang_physical_double","motion_sensor_switch_switch_1gang_physical_long_press","motion_sensor_switch_switch_1gang_physical_triple","motion_sensor_switch_switch_1gang_battery_low","motion_sensor_switch_switch_1gang_power_changed","motion_sensor_switch_switch_1gang_gang1_scene"];
+    const _triggerIds = ["motion_sensor_switch_1gang_turned_on","motion_sensor_switch_1gang_turned_off","motion_sensor_switch_1gang_physical_on","motion_sensor_switch_1gang_physical_off","motion_sensor_switch_1gang_physical_single","motion_sensor_switch_1gang_physical_double","motion_sensor_switch_1gang_physical_long_press","motion_sensor_switch_1gang_physical_triple","motion_sensor_switch_1gang_battery_low","motion_sensor_switch_1gang_power_changed","motion_sensor_switch_1gang_gang1_scene"];
     for (const _tid of _triggerIds) {
       try {
         const _card = this._getFlowCard(_tid, "trigger");
@@ -38,18 +38,18 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
     // END TRIGGERS
     // CONDITIONS
     try {
-      const card = this.homey.flow.getConditionCard('motion_sensor_switch_switch_1gang_is_on');
+      const card = this.homey.flow.getConditionCard('motion_sensor_switch_1gang_is_on');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Condition motion_sensor_switch_switch_1gang_is_on: ${err.message}`); } }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition motion_sensor_switch_1gang_is_on: ${err.message}`); } }
 
     // ACTIONS
     try {
-      const card = this.homey.flow.getActionCard('motion_sensor_switch_switch_1gang_turn_on');
+      const card = this.homey.flow.getActionCard('motion_sensor_switch_1gang_turn_on');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -57,10 +57,10 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Action motion_sensor_switch_switch_1gang_turn_on: ${err.message}`); } }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action motion_sensor_switch_1gang_turn_on: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getActionCard('motion_sensor_switch_switch_1gang_turn_off');
+      const card = this.homey.flow.getActionCard('motion_sensor_switch_1gang_turn_off');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -68,10 +68,10 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Action motion_sensor_switch_switch_1gang_turn_off: ${err.message}`); } }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action motion_sensor_switch_1gang_turn_off: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getActionCard('motion_sensor_switch_switch_1gang_toggle');
+      const card = this.homey.flow.getActionCard('motion_sensor_switch_1gang_toggle');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -80,10 +80,10 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Action motion_sensor_switch_switch_1gang_toggle: ${err.message}`); } }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action motion_sensor_switch_1gang_toggle: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getActionCard('motion_sensor_switch_switch_1gang_set_backlight');
+      const card = this.homey.flow.getActionCard('motion_sensor_switch_1gang_set_backlight');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -91,10 +91,10 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Action motion_sensor_switch_switch_1gang_set_backlight: ${err.message}`); } }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action motion_sensor_switch_1gang_set_backlight: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getActionCard('motion_sensor_switch_switch_1gang_set_backlight_color');
+      const card = this.homey.flow.getActionCard('motion_sensor_switch_1gang_set_backlight_color');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -102,10 +102,10 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Action motion_sensor_switch_switch_1gang_set_backlight_color: ${err.message}`); } }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action motion_sensor_switch_1gang_set_backlight_color: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getActionCard('motion_sensor_switch_switch_1gang_set_backlight_brightness');
+      const card = this.homey.flow.getActionCard('motion_sensor_switch_1gang_set_backlight_bri_5ca78');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -113,34 +113,34 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Action motion_sensor_switch_switch_1gang_set_backlight_brightness: ${err.message}`); } }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action motion_sensor_switch_1gang_set_backlight_bri_5ca78: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getActionCard('motion_sensor_switch_switch_1gang_set_countdown');
+      const card = this.homey.flow.getActionCard('motion_sensor_switch_1gang_set_countdown');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
           // Generic action handler
-          this.log('[FLOW] Action motion_sensor_switch_switch_1gang_set_countdown triggered for', args.device.getName());
+          this.log('[FLOW] Action motion_sensor_switch_1gang_set_countdown triggered for', args.device.getName());
           return true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Action motion_sensor_switch_switch_1gang_set_countdown: ${err.message}`); } }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action motion_sensor_switch_1gang_set_countdown: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getActionCard('motion_sensor_switch_switch_1gang_set_child_lock');
+      const card = this.homey.flow.getActionCard('motion_sensor_switch_1gang_set_child_lock');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
           // Generic action handler
-          this.log('[FLOW] Action motion_sensor_switch_switch_1gang_set_child_lock triggered for', args.device.getName());
+          this.log('[FLOW] Action motion_sensor_switch_1gang_set_child_lock triggered for', args.device.getName());
           return true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Action motion_sensor_switch_switch_1gang_set_child_lock: ${err.message}`); } }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action motion_sensor_switch_1gang_set_child_lock: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getActionCard('motion_sensor_switch_switch_1gang_set_scene_mode');
+      const card = this.homey.flow.getActionCard('motion_sensor_switch_1gang_set_scene_mode');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -148,11 +148,10 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Action motion_sensor_switch_switch_1gang_set_scene_mode: ${err.message}`); } }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action motion_sensor_switch_1gang_set_scene_mode: ${err.message}`); } }
 
     this.log('[FLOW] All flow cards registered');
   }
 }
 
 module.exports = TuyaZigbeeDriver;
-

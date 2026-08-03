@@ -61,6 +61,119 @@
         "nl": "Temperatuur instellen [[temperature]]",
         "de": "Temperatur einstellen [[temperature]]"
       }
+    },
+    {
+      "id": "set_heating_mode",
+      "title": {
+        "en": "Set heating mode to [[mode]]",
+        "fr": "Régler mode chauffage sur [[mode]]"
+      },
+      "args": [
+        {
+          "type": "dropdown",
+          "name": "mode",
+          "values": [
+            {
+              "id": "confort",
+              "title": {
+                "en": "🏠 Confort"
+              }
+            },
+            {
+              "id": "eco",
+              "title": {
+                "en": "🌱 Éco"
+              }
+            },
+            {
+              "id": "confort_minus_1",
+              "title": {
+                "en": "🌡️ Confort -1°C"
+              }
+            },
+            {
+              "id": "confort_minus_2",
+              "title": {
+                "en": "❄️ Confort -2°C"
+              }
+            },
+            {
+              "id": "anti_freeze",
+              "title": {
+                "en": "🧊 Hors-Gel"
+              }
+            },
+            {
+              "id": "off",
+              "title": {
+                "en": "⛔ Arrêt"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "send_pilot_signal",
+      "title": {
+        "en": "Send pilot wire signal [[signal]]",
+        "fr": "Envoyer signal fil pilote [[signal]]"
+      },
+      "args": [
+        {
+          "type": "dropdown",
+          "name": "signal",
+          "values": [
+            {
+              "id": "confort",
+              "title": {
+                "en": "Confort (0V)"
+              }
+            },
+            {
+              "id": "eco",
+              "title": {
+                "en": "Éco (230V neg)"
+              }
+            },
+            {
+              "id": "anti_freeze",
+              "title": {
+                "en": "Hors-Gel (230V pos)"
+              }
+            },
+            {
+              "id": "off",
+              "title": {
+                "en": "Arrêt (230V alt)"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "set_temperature_offset",
+      "title": {
+        "en": "Set temperature offset",
+        "nl": "Temperatuur offset instellen",
+        "fr": "Définir offset température",
+        "de": "Temperatur-Offset einstellen"
+      },
+      "hint": {
+        "en": "Adjust the temperature reading by adding an offset value",
+        "nl": "Pas de temperatuurmeting aan door een offset toe te voegen"
+      },
+      "args": [
+        {
+          "name": "offset",
+          "type": "range",
+          "min": -5,
+          "max": 5,
+          "step": 0.5,
+          "label": "°C"
+        }
+      ]
     }
   ],
   "triggers": [
@@ -111,6 +224,40 @@
         "nl": "Temperatuur gewijzigd",
         "de": "Temperatur geändert"
       }
+    },
+    {
+      "id": "radiator_mode_changed",
+      "title": {
+        "en": "Heating mode changed",
+        "fr": "Mode chauffage changé"
+      },
+      "tokens": [
+        {
+          "name": "mode",
+          "type": "string",
+          "title": {
+            "en": "Mode"
+          },
+          "example": "confort"
+        }
+      ]
+    },
+    {
+      "id": "pilot_signal_sent",
+      "title": {
+        "en": "Pilot wire signal sent",
+        "fr": "Signal fil pilote envoyé"
+      },
+      "tokens": [
+        {
+          "name": "signal_type",
+          "type": "string",
+          "title": {
+            "en": "Signal Type"
+          },
+          "example": "confort"
+        }
+      ]
     }
   ],
   "conditions": [
@@ -129,6 +276,52 @@
         "nl": "Is !{{aan|uit}}",
         "de": "Ist !{{ein|aus}}"
       }
+    },
+    {
+      "id": "radiator_is_heating",
+      "title": {
+        "en": "Radiator !{{is|isn't}} heating",
+        "fr": "Radiateur !{{chauffe|ne chauffe pas}}"
+      }
+    },
+    {
+      "id": "heating_mode_is",
+      "title": {
+        "en": "Heating mode !{{is|isn't}} [[mode]]",
+        "fr": "Mode chauffage !{{est|n'est pas}} [[mode]]"
+      },
+      "args": [
+        {
+          "type": "dropdown",
+          "name": "mode",
+          "values": [
+            {
+              "id": "confort",
+              "title": {
+                "en": "Confort"
+              }
+            },
+            {
+              "id": "eco",
+              "title": {
+                "en": "Éco"
+              }
+            },
+            {
+              "id": "anti_freeze",
+              "title": {
+                "en": "Hors-Gel"
+              }
+            },
+            {
+              "id": "off",
+              "title": {
+                "en": "Arrêt"
+              }
+            }
+          ]
+        }
+      ]
     }
   ]
 }

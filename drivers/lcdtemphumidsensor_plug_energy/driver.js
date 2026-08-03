@@ -38,7 +38,7 @@ async onInit() {
     } catch (err) { if (this.developerDebugMode) { this.error(`Condition lcdtemphumidsensor_plug_energy_power_above: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getConditionCard('lcdtemphumidsensor_plug_energy_energy_above');
+      const card = this.homey.flow.getConditionCard('lcdtemphumidsensor_plug_energy_above');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}

@@ -57,7 +57,7 @@ class SmartSmokeDetectorAdvancedDriver extends ZigBeeDriver {
     // CONDITION: Smoke is/is not detected
     //
     try {
-      const smokeDetectedCondition = this.homey.flow.getConditionCard('device_air_purifier_smoke_smoke_detector_advanced_smoke_detected');
+      const smokeDetectedCondition = this.homey.flow.getConditionCard('device_air_purifier_smoke_detector_advanced__f6895');
 
       if (!smokeDetectedCondition) {
         this.log('[FLOW] Condition device_air_purifier_smoke_smoke_detector_advanced_smoke_detected not defined in app.json - skipping');
@@ -82,7 +82,7 @@ class SmartSmokeDetectorAdvancedDriver extends ZigBeeDriver {
     // CONDITION: Battery is/is not above threshold
     //
     try {
-      const batteryAboveCondition = this.homey.flow.getConditionCard('device_air_purifier_smoke_smoke_detector_advanced_battery_above');
+      const batteryAboveCondition = this.homey.flow.getConditionCard('device_air_purifier_smoke_detector_advanced__95c96');
 
       if (!batteryAboveCondition) {
         this.log('[FLOW] Condition device_air_purifier_smoke_smoke_detector_advanced_battery_above not defined in app.json - skipping');
@@ -109,7 +109,7 @@ class SmartSmokeDetectorAdvancedDriver extends ZigBeeDriver {
     // ACTION: Test the alarm
     //
     try {
-      const testAlarmAction = this.homey.flow.getActionCard('device_air_purifier_smoke_smoke_detector_advanced_test_alarm');
+      const testAlarmAction = this.homey.flow.getActionCard('device_air_purifier_smoke_detector_advanced__582f5');
 
       if (!testAlarmAction) {
         this.log('[FLOW] Action device_air_purifier_smoke_smoke_detector_advanced_test_alarm not defined in app.json - skipping');

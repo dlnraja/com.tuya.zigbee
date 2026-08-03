@@ -113,11 +113,10 @@ class ClimatePresenceHybridDevice extends UnifiedSensorBase {
     }
   }
   async _triggerPresenceFlows(detected) {
-    const prefix = 'sensor_climate_presence_';
-    const cardId = detected ? `${prefix  }sensor_presence_radar_presence_detected` : `${prefix  }sensor_presence_radar_presence_cleared`;
+    const cardId = detected ? 'sensor_climate_presence_sensor_presence_rada_34c19' : 'sensor_climate_presence_sensor_presence_rada_05404';
     try { await this.homey.flow.getDeviceTriggerCard(cardId).trigger(this, {}).catch(() => {}); } catch (e) {}
     if (detected) {
-      try { await this.homey.flow.getDeviceTriggerCard(`${prefix  }presence_sensor_radar_motion_detected`).trigger(this, {}).catch(() => {}); } catch (e) {}
+      try { await this.homey.flow.getDeviceTriggerCard('sensor_climate_presence_sensor_radar_motion__34acb').trigger(this, {}).catch(() => {}); } catch (e) {}
     }
   }
   async _setupZclClusters(zclNode) {
