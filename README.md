@@ -37,7 +37,7 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.395 |
+| **App Version** | v9.0.396 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,339 |
 | **Pairing Variants** | 18,114 (4 case combos per fingerprint) |
@@ -106,6 +106,7 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.396** | Central destroyed guards on capability ops, linear battery formulas eliminated. |
 | **v9.0.395** | Central destroyed guards on capability ops, linear battery formulas eliminated. |
 | **v9.0.394** | Central destroyed guards on capability ops, linear battery formulas eliminated. |
 | **v9.0.393** | Central destroyed guards on capability ops, linear battery formulas eliminated. |
@@ -117,7 +118,6 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 | **v9.0.387** | Flow DP send hardening + typed handler with per-type validation. |
 | **v9.0.386** | Full forum topic scan (2039 posts with images/links) + digest, sqcn0y re-added (purge), version alignment. |
 | **v9.0.385** | OTA hardening: SHA512 verified before flashing, header validation, download timeout + size cap, index schema validation. |
-| **v9.0.384** | Dashboards: navigation fixed (hub/finder/inbox links), precise fingerprint metric, version alignment. |
 
 <!-- CHANGELOG_END -->
 
