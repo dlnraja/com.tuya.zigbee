@@ -37,7 +37,7 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.390 |
+| **App Version** | v9.0.391 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,339 |
 | **Pairing Variants** | 18,114 (4 case combos per fingerprint) |
@@ -106,6 +106,7 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.391** | Central destroyed guards on capability ops, linear battery formulas eliminated. |
 | **v9.0.390** | Central destroyed guards on capability ops, linear battery formulas eliminated. |
 | **v9.0.389** | Central destroyed guards on capability ops, linear battery formulas eliminated. |
 | **v9.0.388** | Central destroyed guards on capability ops, linear battery formulas eliminated. |
@@ -117,7 +118,6 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 | **v9.0.382** | Key-version changelog format (required by headless homey publish), OTA guidance, Hue batch 4. |
 | **v9.0.381** | Changelog backticks stripped (publish extractor fix), publish-size bundle excludes product-reference, version alignment. |
 | **v9.0.380** | v9.0.379: OTA: real current firmware version read from the basic cluster (swBuildId/appVersion) in the Tuya MCU fallback — fewer false up… |
-| **v9.0.379** | OTA real firmware version via swBuildId, Hue batch 3 (dim_to_level, scene_cycle), publish -X theirs. |
 
 <!-- CHANGELOG_END -->
 
