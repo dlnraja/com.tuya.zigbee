@@ -1,6 +1,4 @@
 'use strict';
-const { safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
-
 
 const UnifiedPlugBase = require('../../lib/devices/UnifiedPlugBase');
 const EnergyJumpGuard = require('../../lib/tuya/EnergyJumpGuard');
@@ -36,27 +34,6 @@ class SmartPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedPlug
       101: { internal: true, type: 'power_factor', divisor: 10 },
       102: { internal: true, type: 'max_power_alert', writable: true }
     };
-  }
-
-  // v5.5.422: Apply user-defined scale to power/energy readings
-  _applyScale(value, capability) {
-    const powerScale = parseFloat(this.getSetting('power_scale')) || 1;
-    const energyScale = parseFloat(this.getSetting('meter_power_scale')) || parseFloat(this.getSetting('energy_scale')) || 1;
-    // For voltage, '0.1' is the dropdown default. We don't want to double-divide if we already pass v/10.
-    // Wait, the dropdown values are 0.01, 0.1, 1, 10.
-    // Let the base value from caller be the raw value, and we apply the scale directly if possible!
-    // But then default must match. Let's just multiply the base divided value by however it differs from 1.
-    
-    if (capability === 'measure_power') {return safeMultiply(value, powerScale);}
-    if (capability === 'meter_power') {return safeMultiply(value, energyScale);}
-    
-    const voltageScale = parseFloat(this.getSetting('voltage_scale')) || 0.1;
-    if (capability === 'measure_voltage') {return value * safeParse(voltageScale * 0.1);} 
-    
-    const currentScale = parseFloat(this.getSetting('current_scale')) || 0.001;
-    if (capability === 'measure_current') {return value * safeParse(currentScale * 0.001);}
-
-    return value;
   }
 
   get gangCount() { return 1; }
@@ -116,8 +93,11 @@ class SmartPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedPlug
     await super.onNodeInit({ zclNode });
     this.log('[PLUG] v5.6.0 - DPs: 1,7,9,17-21,101,102 | ZCL: 6,2820,1794,EF00');
 
-    // Setup ZCL energy monitoring (parent doesn't do this)
-    await this._setupEnergyMonitoring(zclNode);
+    // v5.6.2: ZCL energy listeners removed — UnifiedPlugBase._setupZCLMode
+    // already handles seMetering (÷100) and haElectricalMeasurement with the
+    // correct zclEnergyDivisors. The duplicate block here multiplied energy
+    // by ×1000 (forum #2092/#2093: ~660 kWh shown for ~1 kWh) and zeroed
+    // power/voltage on every ZCL report.
 
     // v5.6.0: Initialize bidirectional button support
     await this.initPhysicalButtonDetection(zclNode);
@@ -154,46 +134,6 @@ class SmartPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedPlug
     clearTimeout(this._appCommandTimeout);
     this._appCommandTimeout = this.homey.setTimeout(() => { if (this._destroyed) {return;} this._appCommandPending = false; }, 2000);
   }
-
-  async _setupEnergyMonitoring(zclNode) {
-    const ep1 = zclNode?.endpoints?.[1];
-    if (!ep1 ) {return;}
-
-    // Electrical Measurement cluster (0x0B04) - v5.5.422: Apply user scale
-    try {
-      const elec = ep1.clusters?.haElectricalMeasurement;if (elec?.on) {
-        elec.on('attr.activePower', (v) => {
-          if (this._destroyed) {return;}
-          const scaled = safeMultiply(this._applyScale(v, 10), 'measure_power');
-          this.safeSetCapabilityValue('measure_power', parseFloat(scaled)).catch(() => { });
-      });
-        elec.on('attr.rmsVoltage', (v) => {
-          if (this._destroyed) {return;}
-          const scaled = safeMultiply(this._applyScale(v, 10), 'measure_voltage');
-          this.safeSetCapabilityValue('measure_voltage', parseFloat(scaled)).catch(() => { });
-      });
-        elec.on('attr.rmsCurrent', (v) => {
-          if (this._destroyed) {return;}
-          const scaled = this._applyScale(v * 1000, 'measure_current' );
-          this.safeSetCapabilityValue('measure_current', parseFloat(scaled)).catch(() => { });
-      });
-        this.log('[PLUG]  ZCL Electrical Measurement configured (with scale support)');
-      }
-    } catch (e) { /* ignore */ }
-
-    // Metering cluster (0x0702) - v5.5.422: Apply user scale
-    try {
-      const meter = ep1.clusters?.seMetering;if (meter?.on) {
-        meter.on('attr.currentSummationDelivered', (v) => {
-          if (this._destroyed) {return;}
-          const scaled = this._applyScale(v * 1000, 'meter_power');
-          this.safeSetCapabilityValue('meter_power', parseFloat(scaled)).catch(() => { });
-      });
-        this.log('[PLUG]  ZCL Metering configured (with scale support)');
-      }
-    } catch (e) { /* ignore */ }
-  }
-
 
   async onDeleted() {
     this._destroyed = true;
