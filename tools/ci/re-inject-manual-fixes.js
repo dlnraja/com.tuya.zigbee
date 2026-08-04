@@ -194,7 +194,8 @@ const MANUAL_FIXES = [
     file: 'drivers/valvecontroller/driver.compose.json',
     description: 'P80: valvecontroller mfrs (other class orphan, TS0001/TS0111/TS011F)',
     match: (mfrs) => mfrs.includes('_TYZB01_4TLKSK8A'),
-    addIfMissing: ['_TYZB01_4TLKSK8A', '_TZE200_BXOO2SWD', '_TZ3000_hyarhbyx', '_TZ3000_gjrubzje', '_TZ3000_wpueorev'],
+    // P92.99: _TZE200_BXOO2SWD retiré — c'est un dimmer (dimmer_2_gang), pas une valve
+    addIfMissing: ['_TYZB01_4TLKSK8A', '_TZ3000_hyarhbyx', '_TZ3000_gjrubzje', '_TZ3000_wpueorev'],
     addAtTop: false,
     source: 'p80-orphan',
   },
@@ -203,7 +204,8 @@ const MANUAL_FIXES = [
     file: 'drivers/wall_switch_5_gang_tuya/driver.compose.json',
     description: 'P80: wall_switch_5_gang_tuya mfrs (socket orphan, TS0011/ZBMINI/etc.)',
     match: (mfrs) => mfrs.includes('_TZE200_7TDTQGWV'),
-    addIfMissing: ['_TZE200_7TDTQGWV', '_TYZB01_QEQVMVTI', '_TZ3000_aetquff4', '_TZ3000_hafsqare', '_TZE200_3P5YDOS3'],
+    // P92.99: _TZE200_3P5YDOS3 retiré — dimmer BSEED (wall_dimmer_tuya), pas un 5-gang
+    addIfMissing: ['_TZE200_7TDTQGWV', '_TYZB01_QEQVMVTI', '_TZ3000_aetquff4', '_TZ3000_hafsqare'],
     addAtTop: false,
     source: 'p80-orphan',
   },
@@ -235,15 +237,9 @@ const MANUAL_FIXES = [
     addAtTop: false,
     source: 'p80.5-orphan',
   },
-  {
-    id: 'p80.5-orphan-switch-usb-dongle',
-    file: 'drivers/switch_usb_dongle/driver.compose.json',
-    description: 'P80.5: switch_usb_dongle mfrs (socket orphan, TS0002)',
-    match: (mfrs) => mfrs.includes('_TZE200_BXOO2SWD'),
-    addIfMissing: ['_TZE200_BXOO2SWD', '_TZ3000_Itgngnqz', '_TZ3000_kgxej1dv', '_TZ3000_ywubfuvt'],
-    addAtTop: false,
-    source: 'p80.5-orphan',
-  },
+  // P92.99: entrée p80.5-switch-usb-dongle SUPPRIMÉE — ses 4 mfrs étaient des
+  // imports heuristiques erronés (switch_2gang/switch_3gang/dimmer_2_gang),
+  // sources des collisions TS011F du gate validate. Ne pas réintroduire.
   // P92.91: 9 SOS buttons TS0215A mis-routed to dimmer_wall_1gang by auto-import
   {
     id: 'p92.91-sos-ts0215a-emergency',
