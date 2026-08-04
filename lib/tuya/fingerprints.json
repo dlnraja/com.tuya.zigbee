@@ -2969,12 +2969,30 @@
     ]
   },
   "_TZ3000_kfu8zapd": {
-    "driverId": "switch_1gang",
-    "type": "switch",
-    "powerSource": "mains",
+    "driverId": "button_wireless_4",
+    "type": "remote",
+    "powerSource": "battery",
+    "batteryType": "CR2032",
     "modelIds": [
-      "TS0601"
-    ]
+      "TS0044",
+      "TS004F"
+    ],
+    "capabilities": [
+      "measure_battery"
+    ],
+    "clusters": [
+      0,
+      1,
+      6,
+      57344
+    ],
+    "endpoints": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "notes": "Moes TS0044 4-button scene remote (forum #2098-#2104, JohanBendz #1418): OnOff 0xFD action path, no scenes cluster on endpoints."
   },
   "_TZ3000_kkerjand": {
     "driverId": "power_meter",
@@ -45385,13 +45403,36 @@
     "confidence": 0.85
   },
   "_TZ3000_KFU8ZAPD": {
-    "driverId": "switch_1gang",
-    "type": "switch_1gang",
+    "driverId": "button_wireless_4",
+    "type": "button_wireless_4",
     "powerSource": "unknown",
     "modelIds": [
-      "TS0001"
+      "TS0044",
+      "TS004F"
     ],
-    "source": "driver-compose-2026-07-14",
+    "source": "driver-compose-2026-08-03",
+    "confidence": 0.85
+  },
+  "_tz3000_kfu8zapd": {
+    "driverId": "button_wireless_4",
+    "type": "button_wireless_4",
+    "powerSource": "unknown",
+    "modelIds": [
+      "TS0044",
+      "TS004F"
+    ],
+    "source": "driver-compose-2026-08-03",
+    "confidence": 0.85
+  },
+  "_tz3000_KFU8ZAPD": {
+    "driverId": "button_wireless_4",
+    "type": "button_wireless_4",
+    "powerSource": "unknown",
+    "modelIds": [
+      "TS0044",
+      "TS004F"
+    ],
+    "source": "driver-compose-2026-08-03",
     "confidence": 0.85
   },
   "_TZ3000_KJ0NWDZ6": {
