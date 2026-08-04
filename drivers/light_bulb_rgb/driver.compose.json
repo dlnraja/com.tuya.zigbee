@@ -28,16 +28,12 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_tz3000_6zvw8ham",
       "_tz3000_gn91mcmz",
-      "_tz3000_qzjcsmar",
       "_tz3210_0zabbfax",
       "_tz3210_5vbjzw54",
       "_tz3210_95txyzbx",
-      "_tz3210_emqmwtym",
       "_tz3290_gnl5a6a5",
       "_tzb210_aavhaadb",
-      "_tzb210_g01ie5wu",
       "_tzb210_quinzf3w",
       "_TZB210_lmqquxus",
       "_tz3210_778drfdt",
@@ -46,16 +42,12 @@
       "_tz3000_rnnzvseu",
       "_tz3210_quinzf3w",
       "_TZ3210_keabpigv",
-      "_TZ3000_6ZVW8HAM",
       "_TZ3000_GN91MCMZ",
-      "_TZ3000_QZJCSMAR",
       "_TZ3210_0ZABBFAX",
       "_TZ3210_5VBJZW54",
       "_TZ3210_95TXYZBX",
-      "_TZ3210_EMQMWTYM",
       "_TZ3290_GNL5A6A5",
       "_TZB210_AAVHAADB",
-      "_TZB210_G01IE5WU",
       "_TZB210_QUINZF3W",
       "_TZB210_LMQQUXUS",
       "_tzb210_lmqquxus",
@@ -493,34 +485,6 @@
       "hint": {
         "en": "Estimate power consumption when real measurement is not available (AC/DC devices only)",
         "fr": "Estimer la consommation quand la mesure réelle n'est pas disponible (appareils AC/DC seulement)"
-      }
-    },
-    {
-      "id": "enable_radio_sensing",
-      "type": "checkbox",
-      "label": {
-        "en": "Enable Radio Presence Sensing",
-        "fr": "Activer la Détection de Présence Radio"
-      },
-      "value": false,
-      "hint": {
-        "en": "Infer presence from Zigbee signal fluctuations (BETA)",
-        "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
-      }
-    },
-    {
-      "id": "radio_sensitivity",
-      "type": "number",
-      "label": {
-        "en": "Radio Presence Sensitivity",
-        "fr": "Sensibilité Présence Radio"
-      },
-      "value": 15,
-      "min": 5,
-      "max": 50,
-      "hint": {
-        "en": "LQI variance threshold (higher = less sensitive)",
-        "fr": "Seuil de variance LQI (plus haut = moins sensible)"
       }
     }
   ],

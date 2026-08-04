@@ -65,7 +65,26 @@ class VibrationSensorDevice extends UnifiedSensorBase {
         val = mapping.divisor ? value / mapping.divisor : value;
       }
       if (mapping.capability) {
-        return this.safeSetCapabilityValue(mapping.capability, val).catch(() => {});
+        // v5.12.58 (P92.125): vibration auto-reset — Tuya vibration sensors
+        // (TS0210 family) report vibration=true on shock but often NEVER
+        // report false. Optional setting `vibration_auto_reset` (seconds,
+        // 0 = disabled) returns the alarm to idle after the delay
+        // (forum Nicolas #1999).
+        return this.safeSetCapabilityValue(mapping.capability, val).then(() => {
+          if (mapping.capability === 'alarm_vibration' && val === true) {
+            const seconds = Number(this.getSetting?.('vibration_auto_reset')) || 0;
+            if (seconds > 0) {
+              if (this._vibrationResetTimer) {
+                (this.homey?.clearTimeout || clearTimeout)(this._vibrationResetTimer);
+              }
+              this._vibrationResetTimer = (this.homey?.setTimeout || setTimeout)(() => {
+                if (this._destroyed) { return; }
+                this.log(`[VIBRATION] ⏱️ auto-reset to idle after ${seconds}s`);
+                this.safeSetCapabilityValue('alarm_vibration', false).catch(() => {});
+              }, seconds * 1000);
+            }
+          }
+        }).catch(() => {});
       }
     }
 

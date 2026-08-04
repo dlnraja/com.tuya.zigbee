@@ -485,9 +485,10 @@ class IrBlasterDevice extends ZigBeeDevice {
       });
     }
 
-    // v5.12.51 (P92.119): named remote buttons — send the learned code
+    // v9.0.411 (P92.119): named remote buttons — send the learned code
     // stored under the same name when available, guidance log otherwise.
-    for (const key of ['mute', 'source', 'menu', 'enter']) {
+    // v5.12.56 (P92.124): extended to volume/channel AV keys.
+    for (const key of ['mute', 'source', 'menu', 'enter', 'volume_up', 'volume_down', 'channel_up', 'channel_down']) {
       const cap = `button.${key}`;
       if (!this.hasCapability(cap)) { continue; }
       try {

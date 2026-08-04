@@ -56,6 +56,30 @@ class EnergyMeter3PhaseDevice extends UnifiedPlugBase {
     }
 
     await super.onNodeInit({ zclNode });
+
+    // v5.12.56 (P92.124): per-phase power via haElectricalMeasurement on
+    // endpoints 1/2/3 → measure_power.phase1/2/3 (declared in the compose
+    // but never fed). Falls back silently on single-endpoint devices.
+    for (let ep = 1; ep <= 3; ep++) {
+      const cap = `measure_power.phase${ep}`;
+      if (!this.hasCapability(cap)) { continue; }
+      const cluster = zclNode.endpoints[ep] && zclNode.endpoints[ep].clusters
+        && (zclNode.endpoints[ep].clusters.electricalMeasurement
+          || zclNode.endpoints[ep].clusters.haElectricalMeasurement
+          || zclNode.endpoints[ep].clusters[0x0B04]);
+      if (cluster && typeof cluster.on === 'function') {
+        try {
+          cluster.on('attr.activePower', (v) => {
+            // haElectricalMeasurement activePower is in 0.1W units on most
+            // Tuya 3-phase meters (Z2M acPower divisor 10)
+            this.safeSetCapabilityValue(cap, v / 10).catch(() => {});
+          });
+          this.log(`[ENERGY-3PH] phase${ep} ZCL listener attached`);
+        } catch (e) {
+          this.log(`[ENERGY-3PH] phase${ep} listener failed: ${e.message}`);
+        }
+      }
+    }
     this.log('[ENERGY-3PH]  Ready');
   }
 

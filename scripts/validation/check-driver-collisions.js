@@ -18,6 +18,19 @@ const combinations = new Map();
 // Drivers that are allowed to have collisions (fallback/catch-all)
 const FALLBACK_DRIVERS = ['universal_fallback', 'generic_tuya', 'universal_zigbee', 'device_generic_tuya_universal'];
 
+// v5.12.57 (P92.124): documented exceptions — the checker computes the full
+// mfr×pid cartesian product per driver, which over-approximates. These pairs
+// share a brand whose REAL products use disjoint productIds:
+//  - HOBEIAN buttons (TS0041A/TS004F, TS0601 ZG-102ZL) → button_wireless_1
+//    (forum #1242, E001 raw path);
+//  - HOBEIAN water leaks (TS0207, ZG-222Z) → water_leak_sensor;
+//  no HOBEIAN×TS0001 or HOBEIAN×TS0601 water product exists, so the
+//  hobeian×TS0001 / hobeian×TS0601 intersections are theoretical only.
+const DOCUMENTED_EXCEPTIONS = [
+  { mfr: 'hobeian', pid: 'ts0001', drivers: ['button_wireless_1', 'water_leak_sensor'] },
+  { mfr: 'hobeian', pid: 'ts0601', drivers: ['button_wireless_1', 'water_leak_sensor'] },
+];
+
 // Invalid wildcard patterns that should never be used
 const INVALID_PATTERNS = [
   '_TZE200_', '_TZE204_', '_TZE284_', '_TZ3000_', '_TZ3210_',
@@ -53,11 +66,17 @@ fs.readdirSync(driversDir).filter(d =>
     }
     
     // Build combinations
+    // v5.12.56 (P92.124): case-insensitive key — case variants of the same
+    // fingerprint (_TZE200_x / _tze200_x / _TZE200_X) are intentional
+    // (case-variants coverage), not distinct collisions. Grouping them
+    // reveals the REAL collision set instead of inflating it ×4.
     mfrs.forEach(mfr => {
       pids.forEach(pid => {
-        const key = `${mfr}|${pid}`;
+        const key = `${String(mfr).toLowerCase()}|${String(pid).toLowerCase()}`;
         if (!combinations.has(key)) combinations.set(key, []);
-        combinations.get(key).push(driverName);
+        if (!combinations.get(key).includes(driverName)) {
+          combinations.get(key).push(driverName);
+        }
       });
     });
   } catch (e) {
@@ -73,6 +92,13 @@ combinations.forEach((drivers, key) => {
   
   if (realDrivers.length > 1) {
     const [mfr, pid] = key.split('|');
+    // v5.12.57: skip documented exceptions (disjoint real productIds)
+    const exempt = DOCUMENTED_EXCEPTIONS.some(e =>
+      e.mfr === mfr && e.pid === pid
+      && realDrivers.every(d => e.drivers.includes(d))
+      && e.drivers.every(d => realDrivers.includes(d))
+    );
+    if (exempt) { return; }
     collisions.push({ mfr, pid, drivers: realDrivers });
   }
 });

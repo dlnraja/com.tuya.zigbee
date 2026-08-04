@@ -65,26 +65,8 @@
       }
     },
     "manufacturerName": [
-      "_TZE284_o3x45p96",
       "_TZE284_P3DBF6QS",
-      "_TZE200_p3dbf6qs",
-      "_TZE284_rv6iuyxb",
-      "_TZE284_c6wv4xyo",
-      "_TZE284_hvaxb2tc",
-      "_TZE204_o3x45p96",
-      "_TZE284_O3X45P96",
-      "_tze284_o3x45p96",
-      "_tze284_p3dbf6qs",
-      "_TZE200_P3DBF6QS",
-      "_tze200_p3dbf6qs",
-      "_TZE284_RV6IUYXB",
-      "_tze284_rv6iuyxb",
-      "_TZE284_C6WV4XYO",
-      "_tze284_c6wv4xyo",
-      "_TZE284_HVAXB2TC",
-      "_tze284_hvaxb2tc",
-      "_TZE204_O3X45P96",
-      "_tze204_o3x45p96"
+      "_tze284_p3dbf6qs"
     ]
   },
   "settings": [
@@ -296,34 +278,6 @@
       "hint": {
         "en": "Estimate power consumption when real measurement is not available (AC/DC devices only)",
         "fr": "Estimer la consommation quand la mesure réelle n'est pas disponible (appareils AC/DC seulement)"
-      }
-    },
-    {
-      "id": "enable_radio_sensing",
-      "type": "checkbox",
-      "label": {
-        "en": "Enable Radio Presence Sensing",
-        "fr": "Activer la Détection de Présence Radio"
-      },
-      "value": false,
-      "hint": {
-        "en": "Infer presence from Zigbee signal fluctuations (BETA)",
-        "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
-      }
-    },
-    {
-      "id": "radio_sensitivity",
-      "type": "number",
-      "label": {
-        "en": "Radio Presence Sensitivity",
-        "fr": "Sensibilité Présence Radio"
-      },
-      "value": 15,
-      "min": 5,
-      "max": 50,
-      "hint": {
-        "en": "LQI variance threshold (higher = less sensitive)",
-        "fr": "Seuil de variance LQI (plus haut = moins sensible)"
       }
     }
   ],

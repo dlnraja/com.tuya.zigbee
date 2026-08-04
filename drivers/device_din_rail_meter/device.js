@@ -5,6 +5,21 @@ const UnifiedThermostatBase = require('../../lib/devices/UnifiedThermostatBase')
 class HVACDehumidifierDevice extends UnifiedThermostatBase {
   get mainsPowered() { return true; }
   get thermostatCapabilities() { return ['onoff', 'dim.humidity', 'measure_humidity']; }
+
+  /**
+   * EXTEND parent dpMappings with energy monitoring DPs
+   */
+  get dpMappings() {
+    const parentMappings = Object.getPrototypeOf(this).dpMappings || {};
+    return {
+      ...parentMappings,
+      17: { capability: 'measure_current', smartDivisor: true, unit: 'A' },
+      18: { capability: 'measure_power', smartDivisor: true, unit: 'W' },
+      19: { capability: 'measure_voltage', smartDivisor: true, unit: 'V' },
+      20: { capability: 'meter_power', smartDivisor: true, unit: 'kWh' },
+      23: { capability: 'meter_power.exported', divisor: 100, unit: 'kWh' } // v5.12.56 (P92.124): exported/solar energy (was declared, never mapped)
+    };
+  }
   async onNodeInit({ zclNode }) {
     // Auto-fix: Remove battery capabilities for mains-powered devices
     await this.removeCapability('measure_battery').catch(() => {});
@@ -18,7 +33,7 @@ class HVACDehumidifierDevice extends UnifiedThermostatBase {
       
       // Initial sync after 10 seconds (let device settle)
       this.homey.setTimeout(async () => {
-        if (this._destroyed) return;
+        if (this._destroyed) {return;}
         try {
           const result = await this._timeSync.sync({ force: true });
           if (result.success) {
@@ -34,7 +49,7 @@ class HVACDehumidifierDevice extends UnifiedThermostatBase {
       
       // Periodic sync every 6 hours
       this._timeSyncInterval = this.homey.setInterval(async () => {
-        if (this._destroyed) return;
+        if (this._destroyed) {return;}
         try {
           const result = await this._timeSync.sync();
           if (!result.success && result.reason === 'no_rtc') {

@@ -38,19 +38,25 @@ try {
       filesChecked++;
 
       const cards = [
-        ...(data.triggers || []),
-        ...(data.conditions || []),
-        ...(data.actions || []),
+        // v5.12.56 (P92.124): namespace by section — Homey flow cards live in
+        // separate namespaces per type (getDeviceTriggerCard / getConditionCard
+        // / getActionCard), so the same id as trigger+condition+action is
+        // LEGAL and intentional (e.g. xxx_on). Only duplicates within the
+        // SAME section are real collisions.
+        ...(data.triggers || []).map((c) => ({ ...c, __section: 'triggers' })),
+        ...(data.conditions || []).map((c) => ({ ...c, __section: 'conditions' })),
+        ...(data.actions || []).map((c) => ({ ...c, __section: 'actions' })),
       ];
 
       for (const card of cards) {
         if (!card.id) continue;
         cardsFound++;
 
-        if (!allCardIds.has(card.id)) {
-          allCardIds.set(card.id, []);
+        const key = `${card.__section}:${card.id}`;
+        if (!allCardIds.has(key)) {
+          allCardIds.set(key, []);
         }
-        allCardIds.get(card.id).push(entry.name);
+        allCardIds.get(key).push(entry.name);
       }
     } catch (e) {
       if (!JSON_OUTPUT) console.warn(`[check-flow-ids] Error parsing ${flowPath}: ${e.message}`);

@@ -136,9 +136,15 @@ class ValveDualIrrigationDevice extends BaseUnifiedDevice {
   }
 
   _isValveDPSendSuccess(result) {
-    if (result === true) {return true;}
-    if (!result || typeof result !== 'object') {return false;}
-    return result.success === true || result.status === 'success';
+    // v5.12.57 (P92.124): undefined/null = frame emitted fire-and-forget
+    // without error; transport failures reject. Treating undefined as
+    // failure made every valve command throw "not_sent" even when the
+    // valve actuated (forum #2102/#2105).
+    if (result === false) {return false;}
+    if (result && typeof result === 'object') {
+      return result.success === true || result.status === 'success';
+    }
+    return true;
   }
 
   // Override sendDP to keep dual-valve actions working across manager variants.
