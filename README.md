@@ -11,6 +11,7 @@
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
 A community-driven Homey app that brings **local control** to Tuya Zigbee devices — no cloud, no internet needed. Covers switches, sensors, lights, thermostats, covers, locks and more across **430 drivers** and **4,339 unique device fingerprints** (17,070 including case variants for bulletproof pairing).
+A community-driven Homey app that brings **local control** to Tuya Zigbee devices — no cloud, no internet needed. Covers switches, sensors, lights, thermostats, covers, locks and more across **430 drivers** and **4,339 unique device fingerprints** (17,093 including case variants for bulletproof pairing).
 
 **Key features:**
 - **Local-only** — everything runs on your Homey, nothing goes to the cloud
@@ -41,6 +42,7 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 | **Drivers** | 430 (380 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,339 |
 | **Pairing Variants** | 17,070 (4 case combos per fingerprint) |
+| **Pairing Variants** | 17,093 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 571 |
 | **Flow Cards** | 4,930 |
 | **Unique Capabilities** | 170 |
@@ -56,6 +58,7 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 | # | Driver | Fingerprints |
 |---|--------|-------------|
 | 1 | `climate_sensor` | 2,728 |
+| 1 | `climate_sensor` | 2,730 |
 | 2 | `switch_1gang` | 1,789 |
 | 3 | `button_wireless_2` | 866 |
 | 4 | `generic_tuya` | 760 |
@@ -64,6 +67,7 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 | 7 | `wall_dimmer_tuya` | 480 |
 | 8 | `device_radiator_valve` | 388 |
 | 9 | `sensor_contact_zigbee` | 342 |
+| 9 | `sensor_contact_zigbee` | 345 |
 | 10 | `switch_4gang` | 248 |
 | 11 | `curtain_motor` | 224 |
 | 12 | `motion_sensor` | 210 |
@@ -75,6 +79,7 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 | 18 | `switch_3gang` | 184 |
 | 19 | `dimmable_led_strip` | 180 |
 | 20 | `usb_dongle_triple` | 176 |
+| 20 | `soil_sensor` | 177 |
 
 ### Drivers by Device Class
 
