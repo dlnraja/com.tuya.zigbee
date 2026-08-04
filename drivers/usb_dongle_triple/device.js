@@ -2,6 +2,14 @@
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 
+// Energy scaling divisors — ZCL raw attributes; Tuya-DP drivers use smartDivisor: true via SmartDivisorManager
+const ENERGY_DIVISORS = {
+  measure_power: { divisor: 10 },
+  measure_voltage: { divisor: 10 },
+  measure_current: { divisor: 1000 },
+  meter_power: { divisor: 1000 }
+};
+
 /**
  * USB Dongle Triple (3-Port) - v5.8.73
  * Device: _TZ3000_mw1pqqqt / TS0003 (3-channel USB switch module)
@@ -129,13 +137,13 @@ class UsbDongleTripleDevice extends ZigBeeDevice {
 
     if (electrical) {
       electrical.on('attr.activePower', v => {
-        if (this.hasCapability('measure_power')) {this.safeSetCapabilityValue('measure_power', v / 10).catch(err => this.error('[USB_TRIPLE] Power update failed:', err.message));}
+        if (this.hasCapability('measure_power')) {this.safeSetCapabilityValue('measure_power', v / ENERGY_DIVISORS.measure_power.divisor).catch(err => this.error('[USB_TRIPLE] Power update failed:', err.message));}
       });
       electrical.on('attr.rmsVoltage', v => {
-        if (this.hasCapability('measure_voltage')) {this.safeSetCapabilityValue('measure_voltage', v / 10).catch(err => this.error('[USB_TRIPLE] Voltage update failed:', err.message));}
+        if (this.hasCapability('measure_voltage')) {this.safeSetCapabilityValue('measure_voltage', v / ENERGY_DIVISORS.measure_voltage.divisor).catch(err => this.error('[USB_TRIPLE] Voltage update failed:', err.message));}
       });
       electrical.on('attr.rmsCurrent', v => {
-        if (this.hasCapability('measure_current')) {this.safeSetCapabilityValue('measure_current', v / 1000).catch(err => this.error('[USB_TRIPLE] Current update failed:', err.message));}
+        if (this.hasCapability('measure_current')) {this.safeSetCapabilityValue('measure_current', v / ENERGY_DIVISORS.measure_current.divisor).catch(err => this.error('[USB_TRIPLE] Current update failed:', err.message));}
       });
       await electrical.configureReporting({
         activePower: { minInterval: 10, maxInterval: 300, minChange: 1 },
@@ -143,21 +151,21 @@ class UsbDongleTripleDevice extends ZigBeeDevice {
         rmsCurrent: { minInterval: 10, maxInterval: 300, minChange: 10 },
       }).catch(e => this.log('[USB_TRIPLE] electrical reporting failed:', e.message));
       electrical.readAttributes(['activePower', 'rmsVoltage', 'rmsCurrent']).then(d => {
-        if (d?.activePower != null && this.hasCapability('measure_power')) {this.safeSetCapabilityValue('measure_power', d.activePower / 10).catch(err => this.error('[USB_TRIPLE] Initial power update failed:', err.message));}
-        if (d?.rmsVoltage != null && this.hasCapability('measure_voltage')) {this.safeSetCapabilityValue('measure_voltage', d.rmsVoltage / 10).catch(err => this.error('[USB_TRIPLE] Initial voltage update failed:', err.message));}
-        if (d?.rmsCurrent != null && this.hasCapability('measure_current')) {this.safeSetCapabilityValue('measure_current', d.rmsCurrent / 1000).catch(err => this.error('[USB_TRIPLE] Initial current update failed:', err.message));}
+        if (d?.activePower != null && this.hasCapability('measure_power')) {this.safeSetCapabilityValue('measure_power', d.activePower / ENERGY_DIVISORS.measure_power.divisor).catch(err => this.error('[USB_TRIPLE] Initial power update failed:', err.message));}
+        if (d?.rmsVoltage != null && this.hasCapability('measure_voltage')) {this.safeSetCapabilityValue('measure_voltage', d.rmsVoltage / ENERGY_DIVISORS.measure_voltage.divisor).catch(err => this.error('[USB_TRIPLE] Initial voltage update failed:', err.message));}
+        if (d?.rmsCurrent != null && this.hasCapability('measure_current')) {this.safeSetCapabilityValue('measure_current', d.rmsCurrent / ENERGY_DIVISORS.measure_current.divisor).catch(err => this.error('[USB_TRIPLE] Initial current update failed:', err.message));}
       }).catch(() => {});
     }
 
     if (metering) {
       metering.on('attr.currentSummationDelivered', v => {
-        if (this.hasCapability('meter_power')) {this.safeSetCapabilityValue('meter_power', v / 1000).catch(err => this.error('[USB_TRIPLE] Energy update failed:', err.message));}
+        if (this.hasCapability('meter_power')) {this.safeSetCapabilityValue('meter_power', v / ENERGY_DIVISORS.meter_power.divisor).catch(err => this.error('[USB_TRIPLE] Energy update failed:', err.message));}
       });
       await metering.configureReporting({
         currentSummationDelivered: { minInterval: 60, maxInterval: 3600, minChange: 1 }
       }).catch(e => this.log('[USB_TRIPLE] metering reporting failed:', e.message));
       metering.readAttributes(['currentSummationDelivered']).then(d => {
-        if (d?.currentSummationDelivered != null && this.hasCapability('meter_power')) {this.safeSetCapabilityValue('meter_power', d.currentSummationDelivered / 1000).catch(err => this.error('[USB_TRIPLE] Initial energy update failed:', err.message));}
+        if (d?.currentSummationDelivered != null && this.hasCapability('meter_power')) {this.safeSetCapabilityValue('meter_power', d.currentSummationDelivered / ENERGY_DIVISORS.meter_power.divisor).catch(err => this.error('[USB_TRIPLE] Initial energy update failed:', err.message));}
       }).catch(() => {});
     }
   }

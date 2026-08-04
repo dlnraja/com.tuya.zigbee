@@ -6,6 +6,14 @@ const TuyaOnOffCluster = require('../../lib/TuyaOnOffCluster');
 
 Cluster.addCluster(TuyaOnOffCluster);
 
+// Energy scaling divisors — ZCL raw attributes; Tuya-DP drivers use smartDivisor: true via SmartDivisorManager
+const ENERGY_DIVISORS = {
+  meter_power: { divisor: 100 },
+  measure_power: { divisor: 100 },
+  measure_current: { divisor: 1000 },
+  measure_voltage: { divisor: 1 }
+};
+
 class smartplug extends ZigBeeDevice {
 
   async onNodeInit({zclNode}) {
@@ -72,8 +80,8 @@ class smartplug extends ZigBeeDevice {
 
     // meter_power
     this.registerCapability('meter_power', CLUSTER.METERING, {
-      reportParser: value => (value * this.meteringOffset)/100.0,
-      getParser: value => (value * this.meteringOffset)/100.0,
+      reportParser: value => (value * this.meteringOffset)/ENERGY_DIVISORS.meter_power.divisor,
+      getParser: value => (value * this.meteringOffset)/ENERGY_DIVISORS.meter_power.divisor,
       getOpts: {
         getOnStart: true,
         pollInterval: 300000
@@ -83,7 +91,7 @@ class smartplug extends ZigBeeDevice {
     // measure_power
     this.registerCapability('measure_power', CLUSTER.ELECTRICAL_MEASUREMENT, {
       reportParser: value => {
-        return (value * this.measureOffset)/100;
+        return (value * this.measureOffset)/ENERGY_DIVISORS.measure_power.divisor;
       },
       getOpts: {
         getOnStart: true,
@@ -93,7 +101,7 @@ class smartplug extends ZigBeeDevice {
 
     this.registerCapability('measure_current', CLUSTER.ELECTRICAL_MEASUREMENT, {
       reportParser: value => {
-        return value/1000;
+        return value/ENERGY_DIVISORS.measure_current.divisor;
       },
       getOpts: {
         getOnStart: true,
@@ -103,7 +111,7 @@ class smartplug extends ZigBeeDevice {
 
     this.registerCapability('measure_voltage', CLUSTER.ELECTRICAL_MEASUREMENT, {
       reportParser: value => {
-        return value;
+        return value/ENERGY_DIVISORS.measure_voltage.divisor;
       },
       getOpts: {
         getOnStart: true,

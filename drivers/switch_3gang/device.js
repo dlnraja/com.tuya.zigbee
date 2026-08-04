@@ -24,6 +24,20 @@ class Switch3GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
   get gangCount() { return 3; }
 
   /**
+   * EXTEND parent dpMappings with energy monitoring DPs
+   */
+  get dpMappings() {
+    const parentMappings = Object.getPrototypeOf(Object.getPrototypeOf(this)).dpMappings || {};
+    return {
+      ...parentMappings,
+      17: { capability: 'measure_current', smartDivisor: true, unit: 'A' },
+      18: { capability: 'measure_power', smartDivisor: true, unit: 'W' },
+      19: { capability: 'measure_voltage', smartDivisor: true, unit: 'V' },
+      20: { capability: 'meter_power', smartDivisor: true, unit: 'kWh' }
+    };
+  }
+
+  /**
    * v9.7.4: _setGangOnOff for flow card compatibility in ZCL-only mode.
    * When isZclOnlyDevice is true, super.onNodeInit() is bypassed, so
    * capability listeners from UnifiedSwitchBase may not be registered.

@@ -52,15 +52,9 @@
   "zigbee": {
     "manufacturerName": [
       "_TZ3000_g",
-      "_TZ3000_kjfzuycl",
-      "_TZ3000_rco1yzb1",
       "_tz3000_kjplyrn4",
       "_TZ3000_G",
       "_tz3000_g",
-      "_TZ3000_KJFZUYCL",
-      "_tz3000_kjfzuycl",
-      "_TZ3000_RCO1YZB1",
-      "_tz3000_rco1yzb1",
       "_TZ3000_KJPLYRN4"
     ],
     "productId": [
@@ -364,34 +358,6 @@
           }
         }
       ]
-    },
-    {
-      "id": "enable_radio_sensing",
-      "type": "checkbox",
-      "label": {
-        "en": "Enable Radio Presence Sensing",
-        "fr": "Activer la Détection de Présence Radio"
-      },
-      "value": false,
-      "hint": {
-        "en": "Infer presence from Zigbee signal fluctuations (BETA)",
-        "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
-      }
-    },
-    {
-      "id": "radio_sensitivity",
-      "type": "number",
-      "label": {
-        "en": "Radio Presence Sensitivity",
-        "fr": "Sensibilité Présence Radio"
-      },
-      "value": 15,
-      "min": 5,
-      "max": 50,
-      "hint": {
-        "en": "LQI variance threshold (higher = less sensitive)",
-        "fr": "Seuil de variance LQI (plus haut = moins sensible)"
-      }
     }
   ],
   "pair": [

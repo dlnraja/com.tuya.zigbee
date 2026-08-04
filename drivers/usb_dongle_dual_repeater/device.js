@@ -4,6 +4,14 @@ const { safeDivide, safeMultiply, safeParse } = require('../../lib/utils/tuyaUti
 
 const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
 
+// Energy scaling divisors — ZCL raw attributes; Tuya-DP drivers use smartDivisor: true via SmartDivisorManager
+const ENERGY_DIVISORS = {
+  meter_power: { divisor: 100 },    // currentSummationDelivered → kWh
+  measure_power: { divisor: 10 },   // activePower → W
+  measure_current: { divisor: 1000 }, // rmsCurrent → A
+  measure_voltage: { divisor: 10 }, // rmsVoltage → V
+};
+
 /**
  * USB Dongle Dual Repeater - v5.8.68
  * Device: _TZ3000_h1ipgkwn / TS0002 (XMSJ 2-port USB power switch)
@@ -175,19 +183,19 @@ class UsbDongleDualRepeaterDevice extends TuyaZigbeeDevice {
         this.log('[USB_DONGLE] Setting up haElectricalMeasurement listeners');
 
         electrical.on('attr.activePower', value => {
-          const power = safeDivide(value, 10);
+          const power = safeDivide(value, ENERGY_DIVISORS.measure_power.divisor);
           this.log('[USB_DONGLE] Power:', power, 'W');
           if (this.hasCapability('measure_power')) {this.safeSetCapabilityValue('measure_power', parseFloat(power)).catch(err => this.error('[USB_DONGLE] Power update failed:', err.message));}
       });
 
         electrical.on('attr.rmsVoltage', value => {
-          const voltage = safeDivide(value, 10);
+          const voltage = safeDivide(value, ENERGY_DIVISORS.measure_voltage.divisor);
           this.log('[USB_DONGLE] Voltage:', voltage, 'V');
           if (this.hasCapability('measure_voltage')) {this.safeSetCapabilityValue('measure_voltage', parseFloat(voltage)).catch(err => this.error('[USB_DONGLE] Voltage update failed:', err.message));}
       });
 
         electrical.on('attr.rmsCurrent', value => {
-          const current = safeDivide(value, 1000);
+          const current = safeDivide(value, ENERGY_DIVISORS.measure_current.divisor);
           this.log('[USB_DONGLE] Current:', current, 'A');
           if (this.hasCapability('measure_current')) {this.safeSetCapabilityValue('measure_current', parseFloat(current)).catch(err => this.error('[USB_DONGLE] Current update failed:', err.message));}
       });
@@ -201,14 +209,14 @@ class UsbDongleDualRepeaterDevice extends TuyaZigbeeDevice {
 
         electrical.readAttributes(['activePower', 'rmsVoltage', 'rmsCurrent']).then(data => {
           if (data?.activePower != null) {
-            const power = safeDivide(data.activePower, 10);if (this.hasCapability('measure_power')) {this.safeSetCapabilityValue('measure_power', parseFloat(power)).catch(err => this.error('[USB_DONGLE] Initial power update failed:', err.message));}
+            const power = safeDivide(data.activePower, ENERGY_DIVISORS.measure_power.divisor);if (this.hasCapability('measure_power')) {this.safeSetCapabilityValue('measure_power', parseFloat(power)).catch(err => this.error('[USB_DONGLE] Initial power update failed:', err.message));}
           }
           if (data?.rmsVoltage != null) {
-            const voltage = safeDivide(data.rmsVoltage, 10);
+            const voltage = safeDivide(data.rmsVoltage, ENERGY_DIVISORS.measure_voltage.divisor);
             if (this.hasCapability('measure_voltage')) {this.safeSetCapabilityValue('measure_voltage', parseFloat(voltage)).catch(err => this.error('[USB_DONGLE] Initial voltage update failed:', err.message));}
           }
           if (data?.rmsCurrent != null) {
-            const current = safeDivide(data.rmsCurrent, 1000);
+            const current = safeDivide(data.rmsCurrent, ENERGY_DIVISORS.measure_current.divisor);
             if (this.hasCapability('measure_current')) {this.safeSetCapabilityValue('measure_current', parseFloat(current)).catch(err => this.error('[USB_DONGLE] Initial current update failed:', err.message));}
           }
         }).catch(() => {});
@@ -218,7 +226,7 @@ class UsbDongleDualRepeaterDevice extends TuyaZigbeeDevice {
         this.log('[USB_DONGLE] Setting up metering listeners' );
 
         metering.on('attr.currentSummationDelivered', value => {
-          const kWh = safeDivide(value, 100);
+          const kWh = safeDivide(value, ENERGY_DIVISORS.meter_power.divisor);
           this.log('[USB_DONGLE] Energy:', kWh, 'kWh');
           if (this.hasCapability('meter_power')) {this.safeSetCapabilityValue('meter_power', parseFloat(kWh)).catch(err => this.error('[USB_DONGLE] Energy update failed:', err.message));}
         });
@@ -234,7 +242,7 @@ class UsbDongleDualRepeaterDevice extends TuyaZigbeeDevice {
 
         metering.readAttributes(['currentSummationDelivered']).then(data => {
           if (data?.currentSummationDelivered != null) {
-            const kWh = safeDivide(data.currentSummationDelivered, 100);
+            const kWh = safeDivide(data.currentSummationDelivered, ENERGY_DIVISORS.meter_power.divisor);
             if (this.hasCapability('meter_power')) {this.safeSetCapabilityValue('meter_power', parseFloat(kWh)).catch(err => this.error('[USB_DONGLE] Initial energy update failed:', err.message));}
           }
         }).catch(() => { });

@@ -2,6 +2,9 @@
 const { safeParse } = require('../../lib/utils/tuyaUtils.js');
 const UniversalZigbeeDevice = require('../../lib/UniversalZigbeeDevice');
 
+// Energy DP scaling is inherited from the base class: UniversalZigbeeDevice
+// instantiates SmartEnergyManager (lib/managers/SmartEnergyManager.js), which
+// scales Tuya energy DPs via AdaptiveDataParser (lib/utils/AdaptiveDataParser.js).
 class UniversalZigbeeDeviceSub extends UniversalZigbeeDevice {
   async onNodeInit({ zclNode }) {
     await super.onNodeInit({ zclNode });

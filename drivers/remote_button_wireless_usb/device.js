@@ -6,6 +6,14 @@ const { safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 
+// Energy scaling divisors — ZCL raw attributes; Tuya-DP drivers use smartDivisor: true via SmartDivisorManager
+const ENERGY_DIVISORS = {
+  meter_power: { divisor: 1000 },      // currentSummationDelivered raw Wh -> kWh
+  measure_power: { divisor: 0.1 },     // activePower raw 0.1W units -> W
+  measure_current: { divisor: 0.001 }, // rmsCurrent raw mA -> A
+  measure_voltage: { divisor: 0.1 },   // rmsVoltage raw 0.1V units -> V
+};
+
 /**
  * USB Dongle Dual Repeater - v5.8.68
  * Device: _TZ3000_h1ipgkwn / TS0002 (XMSJ 2-port USB power switch)
@@ -165,19 +173,19 @@ class UsbDongleDualRepeaterDevice extends PhysicalButtonMixin(VirtualButtonMixin
         this.log('[USB_DONGLE] Setting up haElectricalMeasurement listeners');
 
         electrical.on('attr.activePower', value => {
-          const power = safeMultiply(value, 10);
+          const power = safeMultiply(value, 1 / ENERGY_DIVISORS.measure_power.divisor);
           this.log('[USB_DONGLE] Power:', power, 'W');
           if (this.hasCapability('measure_power')) this.safeSetCapabilityValue('measure_power', parseFloat(power)).catch(this.error);
       });
 
         electrical.on('attr.rmsVoltage', value => {
-          const voltage = safeMultiply(value, 10);
+          const voltage = safeMultiply(value, 1 / ENERGY_DIVISORS.measure_voltage.divisor);
           this.log('[USB_DONGLE] Voltage:', voltage, 'V');
           if (this.hasCapability('measure_voltage')) this.safeSetCapabilityValue('measure_voltage', parseFloat(voltage)).catch(this.error);
       });
 
         electrical.on('attr.rmsCurrent', value => {
-          const current = value * 1000;
+          const current = value * (1 / ENERGY_DIVISORS.measure_current.divisor);
           this.log('[USB_DONGLE] Current:', current, 'A');
           if (this.hasCapability('measure_current')) this.safeSetCapabilityValue('measure_current', parseFloat(current)).catch(this.error);
       });
@@ -191,14 +199,14 @@ class UsbDongleDualRepeaterDevice extends PhysicalButtonMixin(VirtualButtonMixin
 
         electrical.readAttributes(['activePower', 'rmsVoltage', 'rmsCurrent']).then(data => {
           if (data?.activePower != null) {
-            const power = safeMultiply(data.activePower, 10);if (this.hasCapability('measure_power')) this.safeSetCapabilityValue('measure_power', parseFloat(power)).catch(this.error);
+            const power = safeMultiply(data.activePower, 1 / ENERGY_DIVISORS.measure_power.divisor);if (this.hasCapability('measure_power')) this.safeSetCapabilityValue('measure_power', parseFloat(power)).catch(this.error);
           }
           if (data?.rmsVoltage != null) {
-            const voltage = safeMultiply(data.rmsVoltage, 10);
+            const voltage = safeMultiply(data.rmsVoltage, 1 / ENERGY_DIVISORS.measure_voltage.divisor);
             if (this.hasCapability('measure_voltage')) this.safeSetCapabilityValue('measure_voltage', parseFloat(voltage)).catch(this.error);
           }
           if (data?.rmsCurrent != null) {
-            const current = data.rmsCurrent * 1000;
+            const current = data.rmsCurrent * (1 / ENERGY_DIVISORS.measure_current.divisor);
             if (this.hasCapability('measure_current')) this.safeSetCapabilityValue('measure_current', parseFloat(current)).catch(this.error);
           }
         }).catch(() => {});
@@ -208,7 +216,7 @@ class UsbDongleDualRepeaterDevice extends PhysicalButtonMixin(VirtualButtonMixin
         this.log('[USB_DONGLE] Setting up metering listeners' );
 
         metering.on('attr.currentSummationDelivered', value => {
-          const kWh = value / 1000;
+          const kWh = value / ENERGY_DIVISORS.meter_power.divisor;
           this.log('[USB_DONGLE] Energy:', kWh, 'kWh');
           if (this.hasCapability('meter_power')) this.safeSetCapabilityValue('meter_power', parseFloat(kWh)).catch(this.error);
       });
@@ -224,7 +232,7 @@ class UsbDongleDualRepeaterDevice extends PhysicalButtonMixin(VirtualButtonMixin
 
         metering.readAttributes(['currentSummationDelivered']).then(data => {
           if (data?.currentSummationDelivered != null) {
-            const kWh = data.currentSummationDelivered / 1000;if (this.hasCapability('meter_power')) this.safeSetCapabilityValue('meter_power', parseFloat(kWh)).catch(this.error);
+            const kWh = data.currentSummationDelivered / ENERGY_DIVISORS.meter_power.divisor;if (this.hasCapability('meter_power')) this.safeSetCapabilityValue('meter_power', parseFloat(kWh)).catch(this.error);
           }
         }).catch(() => {});
       }

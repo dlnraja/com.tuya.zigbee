@@ -8,6 +8,16 @@ const { CLUSTERS } = require('../../lib/constants/ZigbeeConstants.js');
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 const { CLUSTER } = require('zigbee-clusters');
 
+// Energy scaling divisors — ZCL raw attributes / Tuya DP raw values scaled below;
+// standard Tuya-DP drivers use smartDivisor: true via SmartDivisorManager
+const ENERGY_DIVISORS = {
+  meter_power: { divisor: 100 }, // DP1/DP6 raw: kWh * 100
+  measure_power: { divisor: 1 }, // DP18 raw: W (pass-through, power_scale setting applied separately)
+  measure_voltage: { divisor: 10 }, // DP19 raw: V * 10
+  measure_current: { divisor: 1000 }, // DP17/DP20 raw: A * 1000
+  metering_summation: { divisor: 1000 } // ZCL seMetering currentSummationDelivered
+};
+
 /**
  * DIN Rail Energy Meter Device
  *
@@ -58,13 +68,13 @@ class DinRailMeterDevice extends ZigBeeDevice {
       });
 
       emCluster.on('attr.rmsVoltage', (value) => {
-        const voltage = safeMultiply(value, 10);
+        const voltage = safeMultiply(value, ENERGY_DIVISORS.measure_voltage.divisor);
         this.log(`[EM] Voltage: ${voltage}V`);
         this.safeSetCapabilityValue('measure_voltage', voltage).catch(this.error);
       });
 
       emCluster.on('attr.rmsCurrent', (value) => {
-        const current = value * 1000;
+        const current = value * ENERGY_DIVISORS.measure_current.divisor;
         this.log(`[EM] Current: ${current}A`);
         this.safeSetCapabilityValue('measure_current', current).catch(this.error);
       });
@@ -75,7 +85,7 @@ class DinRailMeterDevice extends ZigBeeDevice {
       this.log('[METERING] Metering cluster found' );
 
       meteringCluster.on('attr.currentSummationDelivered', (value) => {
-        const energy = value * 1000;
+        const energy = value * ENERGY_DIVISORS.metering_summation.divisor;
         this.log(`[METERING] Energy: ${energy}kWh`);
         this.safeSetCapabilityValue('meter_power', energy).catch(this.error);
       });
@@ -114,14 +124,14 @@ class DinRailMeterDevice extends ZigBeeDevice {
 
     switch (dp) {
     case 1: //Total energy consumed (kWh*100)
-      const energy = value * 100;
+      const energy = value * ENERGY_DIVISORS.meter_power.divisor;
       this.log(`[DP1] Energy consumed: ${energy}kWh`);
       this.safeSetCapabilityValue('meter_power', energy).catch(this.error);
       break;
 
     case 6: //Total energy exported (kWh*100) - for bidirectional meters
       if (this._bidirectional && this.hasCapability('meter_power.exported')) {
-        const exported = value * 100;
+        const exported = value * ENERGY_DIVISORS.meter_power.divisor;
         this.log(`[DP6] Energy exported: ${exported}kWh`);
         this.safeSetCapabilityValue('meter_power.exported', exported).catch(this.error);
       }
@@ -134,19 +144,19 @@ class DinRailMeterDevice extends ZigBeeDevice {
       break;
 
     case 19: //Voltage (V*10)
-      const voltage = safeMultiply(value, 10);
+      const voltage = safeMultiply(value, ENERGY_DIVISORS.measure_voltage.divisor);
       this.log(`[DP19] Voltage: ${voltage}V`);
       this.safeSetCapabilityValue('measure_voltage', voltage).catch(this.error);
       break;
 
     case 20: //Current (A*1000)
-      const current = value * 1000;
+      const current = value * ENERGY_DIVISORS.measure_current.divisor;
       this.log(`[DP20] Current: ${current}A`);
       this.safeSetCapabilityValue('measure_current', current).catch(this.error);
       break;
 
     case 17: // Total current for some models
-      const totalCurrent = value * 1000;
+      const totalCurrent = value * ENERGY_DIVISORS.measure_current.divisor;
       this.log(`[DP17] Total current: ${totalCurrent}A`);
       this.safeSetCapabilityValue('measure_current', totalCurrent).catch(this.error);
       break;

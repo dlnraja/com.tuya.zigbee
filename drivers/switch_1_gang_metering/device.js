@@ -9,6 +9,14 @@ const TuyaOnOffCluster = require('../../lib/TuyaOnOffCluster');
 
 Cluster.addCluster(TuyaOnOffCluster);
 
+// Energy scaling divisors — ZCL raw attributes; Tuya-DP drivers use smartDivisor: true via SmartDivisorManager
+const ENERGY_DIVISORS = {
+  meter_power: { divisor: 100 },
+  measure_power: { divisor: 100 },
+  measure_current: { divisor: 1000 },
+  measure_voltage: { divisor: 1 }
+};
+
 class switch_1_gang_metering extends UnifiedSwitchBase {
 
   async onNodeInit({ zclNode }) {
@@ -59,8 +67,8 @@ class switch_1_gang_metering extends UnifiedSwitchBase {
 
     // Register meter_power capability
     this.registerCapability('meter_power', CLUSTER.METERING, {
-      reportParser: value => (value * this.meteringOffset) / 100.0,
-      getParser: value => (value * this.meteringOffset) / 100.0,
+      reportParser: value => (value * this.meteringOffset) / ENERGY_DIVISORS.meter_power.divisor,
+      getParser: value => (value * this.meteringOffset) / ENERGY_DIVISORS.meter_power.divisor,
       get: 'currentSummationDelivered',
       report: 'currentSummationDelivered',
       getOpts: {
@@ -73,7 +81,7 @@ class switch_1_gang_metering extends UnifiedSwitchBase {
     this.registerCapability('measure_power', CLUSTER.ELECTRICAL_MEASUREMENT, {
       get: 'activePower',
       report: 'activePower',
-      reportParser: value => (value * this.measureOffset) / 100,
+      reportParser: value => (value * this.measureOffset) / ENERGY_DIVISORS.measure_power.divisor,
       getOpts: {
         getOnStart: true,
         pollInterval: this.minReportPower,
@@ -84,7 +92,7 @@ class switch_1_gang_metering extends UnifiedSwitchBase {
     this.registerCapability('measure_current', CLUSTER.ELECTRICAL_MEASUREMENT, {
       get: 'rmsCurrent',
       report: 'rmsCurrent',
-      reportParser: value => value / 1000,
+      reportParser: value => value / ENERGY_DIVISORS.measure_current.divisor,
       getOpts: {
         getOnStart: true,
         pollInterval: this.minReportCurrent,
@@ -95,7 +103,7 @@ class switch_1_gang_metering extends UnifiedSwitchBase {
     this.registerCapability('measure_voltage', CLUSTER.ELECTRICAL_MEASUREMENT, {
       get: 'rmsVoltage',
       report: 'rmsVoltage',
-      reportParser: value => value,
+      reportParser: value => value / ENERGY_DIVISORS.measure_voltage.divisor,
       getOpts: {
         getOnStart: true,
         pollInterval: this.minReportVoltage,

@@ -7,6 +7,22 @@ const { CLUSTER } = require('zigbee-clusters');
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 
+// Energy scaling divisors — ZCL raw attributes; Tuya-DP drivers use smartDivisor: true via SmartDivisorManager
+const ZCL_ENERGY_DIVISORS = {
+  meter_power: { divisor: 1000 },
+  measure_power: { divisor: 10 },
+  measure_current: { divisor: 1000 },
+  measure_voltage: { divisor: 10 }
+};
+
+// Energy scaling divisors for the Tuya DP path (DP 17/18/19/101 raw values)
+const TUYA_DP_ENERGY_DIVISORS = {
+  meter_power: { divisor: 100 },
+  measure_power: { divisor: 1 },
+  measure_current: { divisor: 1000 },
+  measure_voltage: { divisor: 10 }
+};
+
 /**
  * 
  *       DIN RAIL SWITCH - v5.6.0 + Bidirectional Buttons                       
@@ -62,7 +78,7 @@ class DinRailSwitchDevice extends PhysicalButtonMixin(VirtualButtonMixin(ZigBeeD
       if (this.hasCapability('measure_power')) {
         emCluster.on('attr.activePower', (value) => {
           if (this._destroyed) return;
-          const power = safeMultiply(value, 10);
+          const power = safeMultiply(value, ZCL_ENERGY_DIVISORS.measure_power.divisor);
           this.safeSetCapabilityValue('measure_power', power).catch(this.error);
         });
       }
@@ -70,7 +86,7 @@ class DinRailSwitchDevice extends PhysicalButtonMixin(VirtualButtonMixin(ZigBeeD
       if (this.hasCapability('measure_voltage')) {
         emCluster.on('attr.rmsVoltage', (value) => {
           if (this._destroyed) return;
-          const voltage = safeMultiply(value, 10);
+          const voltage = safeMultiply(value, ZCL_ENERGY_DIVISORS.measure_voltage.divisor);
           this.safeSetCapabilityValue('measure_voltage', voltage).catch(this.error);
         });
       }
@@ -78,7 +94,7 @@ class DinRailSwitchDevice extends PhysicalButtonMixin(VirtualButtonMixin(ZigBeeD
       if (this.hasCapability('measure_current')) {
         emCluster.on('attr.rmsCurrent', (value) => {
           if (this._destroyed) return;
-          const current = value * 1000;
+          const current = value * ZCL_ENERGY_DIVISORS.measure_current.divisor;
           this.safeSetCapabilityValue('measure_current', current).catch(this.error);
         });
       }
@@ -88,7 +104,7 @@ class DinRailSwitchDevice extends PhysicalButtonMixin(VirtualButtonMixin(ZigBeeD
     if (meteringCluster && this.hasCapability('meter_power')) {
       meteringCluster.on('attr.currentSummationDelivered', (value) => {
         if (this._destroyed) return;
-        const energy = value * 1000;
+        const energy = value * ZCL_ENERGY_DIVISORS.meter_power.divisor;
         this.safeSetCapabilityValue('meter_power', energy).catch(this.error);
       });
     }
@@ -127,25 +143,25 @@ class DinRailSwitchDevice extends PhysicalButtonMixin(VirtualButtonMixin(ZigBeeD
     case 17: //Total current (A*1000)
     case 20:
       if (this.hasCapability('measure_current')) {
-        this.safeSetCapabilityValue('measure_current', value * 1000).catch(this.error);
+        this.safeSetCapabilityValue('measure_current', value * TUYA_DP_ENERGY_DIVISORS.measure_current.divisor).catch(this.error);
       }
       break;
 
     case 18: // Power (W)
       if (this.hasCapability('measure_power')) {
-        this.safeSetCapabilityValue('measure_power', value).catch(this.error);
+        this.safeSetCapabilityValue('measure_power', value * TUYA_DP_ENERGY_DIVISORS.measure_power.divisor).catch(this.error);
       }
       break;
 
     case 19: //Voltage (V*10)
       if (this.hasCapability('measure_voltage')) {
-        this.safeSetCapabilityValue('measure_voltage', safeMultiply(value, 10)).catch(this.error);
+        this.safeSetCapabilityValue('measure_voltage', safeMultiply(value, TUYA_DP_ENERGY_DIVISORS.measure_voltage.divisor)).catch(this.error);
       }
       break;
 
     case 101: //Energy (kWh*100)
       if (this.hasCapability('meter_power')) {
-        this.safeSetCapabilityValue('meter_power', value * 100).catch(this.error);
+        this.safeSetCapabilityValue('meter_power', value * TUYA_DP_ENERGY_DIVISORS.meter_power.divisor).catch(this.error);
       }
       break;
     }

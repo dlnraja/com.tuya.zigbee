@@ -413,6 +413,10 @@ async function main() {
 
   console.log(`\n${BOLD}${YELLOW}══════════════════════════════════════${RESET}`);
   console.log(`${BOLD}${totalIssues > 0 ? RED : GREEN}  RESULT: ${totalIssues > 0 ? '⚠  ISSUES FOUND' : '✓ CLEAN'}${RESET}`);
+  // v5.12.56 (P92.124): CI gates grep for the literal "PASSED"/"FAILED"
+  // token — print it explicitly (the audit workflow counted every run as
+  // a security FAIL because "CLEAN" never matched).
+  console.log(`${BOLD}${totalIssues > 0 ? RED : GREEN}  SECURITY SCAN ${totalIssues > 0 ? 'FAILED' : 'PASSED'}${RESET}`);
   console.log(`${BOLD}${YELLOW}══════════════════════════════════════${RESET}\n`);
 
   if (totalIssues > 0) {

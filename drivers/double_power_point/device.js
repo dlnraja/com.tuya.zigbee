@@ -6,6 +6,14 @@ const TuyaOnOffCluster = require('../../lib/TuyaOnOffCluster');
 
 Cluster.addCluster(TuyaOnOffCluster);
 
+// Energy scaling divisors — ZCL raw attributes; Tuya-DP drivers use smartDivisor: true via SmartDivisorManager
+const ENERGY_DIVISORS = {
+  meter_power: { divisor: 100 },
+  measure_power: { divisor: 100 },
+  measure_current: { divisor: 1000 },
+  measure_voltage: { divisor: 1 }
+};
+
 class doublepowerpoint extends ZigBeeDevice {
 
   async onNodeInit({ zclNode }) {
@@ -93,8 +101,58 @@ class doublepowerpoint extends ZigBeeDevice {
     }
 
     if (endpoint === 1) {
+      this.registerEnergyCapabilities(endpoint);
       await this.configureMeteringReporting(zclNode, endpoint);
     }
+  }
+
+  registerEnergyCapabilities(endpoint) {
+    // meter_power
+    this.registerCapability('meter_power', CLUSTER.METERING, {
+      endpoint,
+      reportParser: value => (value * this.meteringOffset) / ENERGY_DIVISORS.meter_power.divisor,
+      getParser: value => (value * this.meteringOffset) / ENERGY_DIVISORS.meter_power.divisor,
+      getOpts: {
+        getOnStart: true,
+        pollInterval: 300000,
+      },
+    });
+
+    // measure_power
+    this.registerCapability('measure_power', CLUSTER.ELECTRICAL_MEASUREMENT, {
+      endpoint,
+      reportParser: value => {
+        return (value * this.measureOffset) / ENERGY_DIVISORS.measure_power.divisor;
+      },
+      getOpts: {
+        getOnStart: true,
+        pollInterval: this.minReportPower,
+      },
+    });
+
+    // measure_current
+    this.registerCapability('measure_current', CLUSTER.ELECTRICAL_MEASUREMENT, {
+      endpoint,
+      reportParser: value => {
+        return value / ENERGY_DIVISORS.measure_current.divisor;
+      },
+      getOpts: {
+        getOnStart: true,
+        pollInterval: this.minReportCurrent,
+      },
+    });
+
+    // measure_voltage
+    this.registerCapability('measure_voltage', CLUSTER.ELECTRICAL_MEASUREMENT, {
+      endpoint,
+      reportParser: value => {
+        return value / ENERGY_DIVISORS.measure_voltage.divisor;
+      },
+      getOpts: {
+        getOnStart: true,
+        pollInterval: this.minReportVoltage,
+      },
+    });
   }
 
   async configureMeteringReporting(zclNode, endpoint) {

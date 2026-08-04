@@ -15,7 +15,9 @@
     "measure_power.phase2",
     "measure_power.phase3",
     "measure_battery",
-    "button.1"
+    "button.1",
+    "measure_power.phase_total",
+    "meter_power.exported"
   ],
   "energy": {
     "batteries": [
@@ -31,25 +33,20 @@
       "_tze200_d2zfgtij",
       "_tze200_s4sa1mcx",
       "_tze200_x8diwkqb",
-      "_tze204_d2zfgtij",
       "_tze204_jrcfsaa3",
-      "_tze204_s4sa1mcx",
       "_tze204_sdykkwsu",
-      "_tze204_x8diwkqb",
-      "_tze284_d2zfgtij",
-      "_tze284_s4sa1mcx",
-      "_tze284_x8diwkqb",
       "_TZE200_D2ZFGTIJ",
       "_TZE200_S4SA1MCX",
       "_TZE200_X8DIWKQB",
-      "_TZE204_D2ZFGTIJ",
       "_TZE204_JRCFSAA3",
-      "_TZE204_S4SA1MCX",
       "_TZE204_SDYKKWSU",
-      "_TZE204_X8DIWKQB",
-      "_TZE284_D2ZFGTIJ",
-      "_TZE284_S4SA1MCX",
-      "_TZE284_X8DIWKQB"
+      "_TZE204_jrcfsaa3",
+      "_TZE204_sdykkwsu",
+      "_tze200_D2ZFGTIJ",
+      "_tze200_S4SA1MCX",
+      "_tze200_X8DIWKQB",
+      "_tze204_JRCFSAA3",
+      "_tze204_SDYKKWSU"
     ],
     "productId": [
       "TS0601",
@@ -94,14 +91,18 @@
       "id": "tuya_revive",
       "title": {
         "en": "Tuya Revive (device recovery)",
-        "fr": "Tuya Revive (récupération appareil)"
+        "fr": "Tuya Revive (récupération appareil)",
+        "nl": "Tuya Revive (apparaatherstel)",
+        "de": "Tuya Revive (Gerätewiederherstellung)"
       }
     },
     {
       "id": "generate_issue_report",
       "title": {
         "en": "Generate support report (GitHub issue)",
-        "fr": "Générer rapport de support (issue GitHub)"
+        "fr": "Générer rapport de support (issue GitHub)",
+        "nl": "Supportrapport genereren (GitHub issue)",
+        "de": "Supportbericht erstellen (GitHub Issue)"
       }
     }
   ],

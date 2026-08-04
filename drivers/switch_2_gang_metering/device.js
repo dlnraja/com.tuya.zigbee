@@ -9,6 +9,14 @@ const TuyaOnOffCluster = require('../../lib/TuyaOnOffCluster');
 
 Cluster.addCluster(TuyaOnOffCluster);
 
+// Energy scaling divisors — ZCL raw attributes; Tuya-DP drivers use smartDivisor: true via SmartDivisorManager
+const ENERGY_DIVISORS = {
+  meter_power: { divisor: 100 },
+  measure_power: { divisor: 100 },
+  measure_current: { divisor: 1000 },
+  measure_voltage: { divisor: 1 }
+};
+
 class switch_2_gang_metering extends UnifiedSwitchBase {
 
   async onNodeInit({zclNode}) {
@@ -48,8 +56,8 @@ class switch_2_gang_metering extends UnifiedSwitchBase {
 
       // meter_power
       this.registerCapability('meter_power', CLUSTER.METERING, {
-        reportParser: value => (value * this.meteringOffset)/100.0,
-        getParser: value => (value * this.meteringOffset)/100.0,
+        reportParser: value => (value * this.meteringOffset)/ENERGY_DIVISORS.meter_power.divisor,
+        getParser: value => (value * this.meteringOffset)/ENERGY_DIVISORS.meter_power.divisor,
         get: 'currentSummationDelivered',
         report: 'currentSummationDelivered',
         getOpts: {
@@ -63,7 +71,7 @@ class switch_2_gang_metering extends UnifiedSwitchBase {
         get: 'activePower',
         report: 'activePower',
         reportParser: value => {
-          return (value * this.measureOffset)/100;
+          return (value * this.measureOffset)/ENERGY_DIVISORS.measure_power.divisor;
         },
         getOpts: {
           getOnStart: true,
@@ -75,7 +83,7 @@ class switch_2_gang_metering extends UnifiedSwitchBase {
         get: 'rmsCurrent',
         report: 'rmsCurrent',
         reportParser: value => {
-          return value/1000;
+          return value/ENERGY_DIVISORS.measure_current.divisor;
         },
         getOpts: {
           getOnStart: true,
@@ -87,7 +95,7 @@ class switch_2_gang_metering extends UnifiedSwitchBase {
         get: 'rmsVoltage',
         report: 'rmsVoltage',
         reportParser: value => {
-          return value;
+          return value/ENERGY_DIVISORS.measure_voltage.divisor;
         },
         getOpts: {
           getOnStart: true,

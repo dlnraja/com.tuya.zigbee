@@ -12,6 +12,12 @@ const { getModelId, getManufacturer } = require('../../lib/helpers/DeviceDataHel
  */
 class UniversalZigbeeDeviceSub extends UniversalZigbeeDevice {
 
+  // Energy DP scaling handled by SmartEnergyManager (lib/managers/SmartEnergyManager.js)
+  // via AdaptiveDataParser — per-DP divisor table + cached divisor detection for
+  // measure_power / meter_power / measure_voltage / measure_current.
+  // Initialized by UniversalZigbeeDevice.initManagers (this.smartEnergy), so this
+  // driver needs no local divisor logic.
+
   async onNodeInit({ zclNode }) {
     this.log('-------------------------------------------------------');
     this.log(` [UNIVERSAL DRIVER] UNLEASHING INTELLIGENCE ON: ${this.getName()}`);

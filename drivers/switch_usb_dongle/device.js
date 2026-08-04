@@ -3,6 +3,13 @@
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 
+// Energy scaling divisors — ZCL raw attributes; Tuya-DP drivers use smartDivisor: true via SmartDivisorManager.
+// This driver configures attribute reporting only; reported values are passed through unscaled (divisor: 1).
+const ENERGY_DIVISORS = {
+  meter_power: { divisor: 1 },   // seMetering currentSummationDelivered — pass-through
+  measure_power: { divisor: 1 }  // haElectricalMeasurement activePower — pass-through
+};
+
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
  * ║      SWITCH USB DONGLE - v8.1.0 (ZCL-Only 1-Port USB Relay/Repeater)        ║
@@ -119,6 +126,8 @@ class SwitchUsbDongleDevice extends PhysicalButtonMixin(ZigBeeDevice) {
 
   /**
    * Setup power measurement (if available)
+   * Scaling documented in ENERGY_DIVISORS (ZCL raw attributes, pass-through);
+   * Tuya-DP drivers use smartDivisor: true via SmartDivisorManager instead.
    */
   async _setupPowerMeasurement(zclNode) {
     const endpoint = zclNode?.endpoints?.[1];

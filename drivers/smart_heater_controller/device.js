@@ -36,6 +36,21 @@ class SmartHeaterControllerDevice extends UnifiedThermostatBase {
   // does not add a false measure_battery capability (fixes false-battery reports).
   get mainsPowered() { return true; }
 
+  /**
+   * EXTEND parent dpMappings with energy monitoring DPs.
+   * DP 6 (power, W) and DP 7 (energy, kWh) are intercepted by _handleDP()
+   * below; declaring them here with smartDivisor: true keeps the mapping
+   * layer consistent so SmartDivisorManager applies correct scaling.
+   */
+  get dpMappings() {
+    const parentMappings = Object.getPrototypeOf(this).dpMappings || {};
+    return {
+      ...parentMappings,
+      6: { capability: 'measure_power', smartDivisor: true, unit: 'W' },
+      7: { capability: 'meter_power', smartDivisor: true, unit: 'kWh' }
+    };
+  }
+
   async onNodeInit({ zclNode }) {
     // --- Homey Time Sync for TRV/LCD/Thermostat devices ---
     // Syncs the device clock with the Homey box time every 6 hours.
