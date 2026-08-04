@@ -5,13 +5,12 @@
 [![Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdlnraja%2Fcom.tuya.zigbee%2Fmaster%2Fapp.json&query=%24.version&label=version&color=blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![Drivers](https://img.shields.io/badge/drivers-431-brightgreen)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![Fingerprints](https://img.shields.io/badge/fingerprints-4,339%20unique-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
-[![Flow Cards](https://img.shields.io/badge/flow%20cards-4,916-blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
-[![Flow Cards](https://img.shields.io/badge/flow%20cards-4,920-blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
+[![Flow Cards](https://img.shields.io/badge/flow%20cards-4,933-blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![Native OTA](https://img.shields.io/badge/native%20OTA-6%20drivers-orange)](docs/P92_70_HOMEY_2026_OTA_NATIVE.md)
 [![SDK](https://img.shields.io/badge/SDK-3-orange)](https://apps.developer.homey.app/)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
-A community-driven Homey app that brings **local control** to Tuya Zigbee devices — no cloud, no internet needed. Covers switches, sensors, lights, thermostats, covers, locks and more across **431 drivers** and **4,339 unique device fingerprints** (18,042 including case variants for bulletproof pairing).
+A community-driven Homey app that brings **local control** to Tuya Zigbee devices — no cloud, no internet needed. Covers switches, sensors, lights, thermostats, covers, locks and more across **431 drivers** and **4,339 unique device fingerprints** (18,040 including case variants for bulletproof pairing).
 
 **Key features:**
 - **Local-only** — everything runs on your Homey, nothing goes to the cloud
@@ -19,8 +18,7 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 - **Hybrid protocol engine** — auto-detects Tuya DP (0xEF00) vs standard ZCL per device
 - **Bulletproof pairing** — every fingerprint exists in 4 case combinations; runtime matching is fully case-insensitive
 - **Smart battery** — non-linear per-chemistry curves, collapse-aware smoothing, no fabricated values
-- **4,916 flow cards** — triggers, conditions & actions in EN, FR, NL, DE
-- **4,920 flow cards** — triggers, conditions & actions in EN, FR, NL, DE
+- **4,933 flow cards** — triggers, conditions & actions in EN, FR, NL, DE
 - **Hue-style smart features** — motion lighting with quiet hours, circadian (real solar position), wake-up/sleep ramps, scene capture/cycle
 
 ---
@@ -39,19 +37,15 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.403 |
+| **App Version** | v9.0.404 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,339 |
-| **Pairing Variants** | 18,042 (4 case combos per fingerprint) |
+| **Pairing Variants** | 18,040 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 571 |
-| **Flow Cards** | 4,916 |
+| **Flow Cards** | 4,933 |
 | **Unique Capabilities** | 169 |
 | **Native OTA Drivers** | 6 |
-| **Test Suites** | 55 files |
-| **Flow Cards** | 4,920 |
-| **Unique Capabilities** | 169 |
-| **Native OTA Drivers** | 6 |
-| **Test Suites** | 56 files |
+| **Test Suites** | 59 files |
 | **SVG Icons** | 731 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
@@ -112,6 +106,7 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.404** | Central destroyed guards on capability ops, linear battery formulas eliminated. |
 | **v9.0.403** | Central destroyed guards on capability ops, linear battery formulas eliminated. |
 | **v9.0.402** | Central destroyed guards on capability ops, linear battery formulas eliminated. |
 | **v9.0.401** | Central destroyed guards on capability ops, linear battery formulas eliminated. |
@@ -123,7 +118,6 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 | **v9.0.395** | Central destroyed guards on capability ops, linear battery formulas eliminated. |
 | **v9.0.394** | Central destroyed guards on capability ops, linear battery formulas eliminated. |
 | **v9.0.393** | Central destroyed guards on capability ops, linear battery formulas eliminated. |
-| **v9.0.392** | Central destroyed guards on capability ops, linear battery formulas eliminated. |
 
 <!-- CHANGELOG_END -->
 
