@@ -13,6 +13,11 @@ on:
 permissions:
   contents: read
 
+# v9.0.419 (P92.126): mandatory bash default — integrity gate WFL_SHELL_MISSING
+defaults:
+  run:
+    shell: bash
+
 concurrency:
   group: pr-gate-${{ github.ref }}
   cancel-in-progress: true
