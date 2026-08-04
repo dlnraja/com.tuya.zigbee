@@ -1,0 +1,24 @@
+{
+  "id": "sensor_unsuppress",
+  "title": {
+    "en": "Lift sensor suppression",
+    "fr": "Lever la suspension du capteur",
+    "nl": "Onderdrukking sensor opheffen",
+    "de": "Sensor-Unterdrückung aufheben"
+  },
+  "hint": {
+    "en": "Re-enables a sensor's motion/presence flow triggers immediately",
+    "fr": "Réactive immédiatement les déclencheurs de mouvement/présence du capteur"
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "capabilities=alarm_motion|alarm_human|alarm_presence"
+    }
+  ],
+  "titleFormatted": {
+    "en": "Lift suppression of [[device]]",
+    "fr": "Lever la suspension de [[device]]"
+  }
+}

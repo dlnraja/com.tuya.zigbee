@@ -475,6 +475,12 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
       // Late-paired devices are registered when their driver adds them
       this.homey.on('device.create', (device) => this.availabilityManager.registerDevice(device));
 
+      // v9.0.402 (P92.105): sensor suppression manager (Hue-style mute)
+      const SensorSuppressionManager = require('./lib/managers/SensorSuppressionManager');
+      this.sensorSuppressionManager = new SensorSuppressionManager(this.homey, {
+        logger: (...a) => this.log(...a),
+      });
+
       // Register feature flow cards
       this.featureFlowCards = new FeatureFlowCards(this.homey);
       this.featureFlowCards.setSolarElevation(this.solarElevation);
@@ -486,6 +492,7 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
       this.featureFlowCards.setPredictiveHealthEngine(this.predictiveHealthEngine);
       this.featureFlowCards.setNetworkTopologyCollector(this.networkTopologyCollector);
       this.featureFlowCards.setAvailabilityManager(this.availabilityManager);
+      this.featureFlowCards.setSensorSuppressionManager(this.sensorSuppressionManager);
       this.featureFlowCards.registerAll();
       this.log('✅ Feature modules and flow cards initialized');
     } catch (err) {

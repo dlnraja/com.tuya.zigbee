@@ -1,0 +1,36 @@
+{
+  "id": "light_alert_blink",
+  "title": {
+    "en": "Blink light (alert)",
+    "fr": "Faire clignoter la lumière (alerte)",
+    "nl": "Lamp laten knipperen (alarm)",
+    "de": "Licht blinken lassen (Alarm)"
+  },
+  "hint": {
+    "en": "Blinks a light for the given duration — uses ZCL Identify when available, otherwise on/off pulses with state restore",
+    "fr": "Fait clignoter une lumière pendant la durée choisie — utilise le cluster ZCL Identify si disponible, sinon des impulsions on/off avec restauration d'état"
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "capabilities=onoff"
+    },
+    {
+      "name": "duration_seconds",
+      "type": "number",
+      "title": {
+        "en": "Duration (seconds)",
+        "fr": "Durée (secondes)"
+      },
+      "min": 1,
+      "max": 300,
+      "step": 1,
+      "value": 10
+    }
+  ],
+  "titleFormatted": {
+    "en": "Blink [[device]] for [[duration_seconds]] seconds",
+    "fr": "Faire clignoter [[device]] pendant [[duration_seconds]] secondes"
+  }
+}
