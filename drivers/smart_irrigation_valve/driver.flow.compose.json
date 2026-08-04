@@ -16,10 +16,10 @@
         }
       ],
       "titleFormatted": {
-        "en": "Turn on",
-        "fr": "Allumer",
-        "nl": "Aanzetten",
-        "de": "Einschalten"
+        "en": "Turn on [[device]]",
+        "fr": "Allumer [[device]]",
+        "nl": "Aanzetten [[device]]",
+        "de": "Einschalten [[device]]"
       }
     },
     {
@@ -38,10 +38,10 @@
         }
       ],
       "titleFormatted": {
-        "en": "Turn off",
-        "fr": "Éteindre",
-        "nl": "Uitschakelen",
-        "de": "Ausschalten"
+        "en": "Turn off [[device]]",
+        "fr": "Éteindre [[device]]",
+        "nl": "Uitschakelen [[device]]",
+        "de": "Ausschalten [[device]]"
       }
     }
   ],
@@ -62,10 +62,10 @@
         }
       ],
       "titleFormatted": {
-        "en": "Turned on",
-        "fr": "Allumé",
-        "nl": "Aangezet",
-        "de": "Eingeschaltet"
+        "en": "Turned on [[device]]",
+        "fr": "Allumé [[device]]",
+        "nl": "Aangezet [[device]]",
+        "de": "Eingeschaltet [[device]]"
       }
     },
     {
@@ -84,10 +84,10 @@
         }
       ],
       "titleFormatted": {
-        "en": "Turned off",
-        "fr": "Éteint",
-        "nl": "Uitgezet",
-        "de": "Ausgeschaltet"
+        "en": "Turned off [[device]]",
+        "fr": "Éteint [[device]]",
+        "nl": "Uitgezet [[device]]",
+        "de": "Ausgeschaltet [[device]]"
       }
     }
   ],
@@ -108,10 +108,10 @@
         }
       ],
       "titleFormatted": {
-        "en": "Fault is !{{active|inactive}}",
-        "fr": "Défaut !{{actif|inactif}}",
-        "nl": "Storing is !{{actief|inactief}}",
-        "de": "Fehler ist !{{aktiv|inaktiv}}"
+        "en": "Fault is !{{active|inactive}} [[device]]",
+        "fr": "Défaut !{{actif|inactif}} [[device]]",
+        "nl": "Storing is !{{actief|inactief}} [[device]]",
+        "de": "Fehler ist !{{aktiv|inaktiv}} [[device]]"
       }
     }
   ]
