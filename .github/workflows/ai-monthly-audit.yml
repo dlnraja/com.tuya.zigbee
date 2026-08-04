@@ -384,10 +384,10 @@ jobs:
           ANALYSIS_FILE="/tmp/ai-context/analysis.json"
           echo '{"summary":"Analysis pending","riskScore":0,"confidence":0}' > "$ANALYSIS_FILE"
 
-          # Build context blob for API call
+          # Build context blob for API call (|| true: cat gets SIGPIPE when head closes early)
           CONTEXT=$(cat /tmp/ai-context/knowledge_cache.json /tmp/ai-context/recent_commits.txt \
                     /tmp/ai-context/validation_results.txt /tmp/ai-context/core_rules.md 2>/dev/null | \
-                    head -c 15000)
+                    head -c 15000 || true)
 
           PROMPT=$(cat /tmp/ai-context/prompt.txt)
 
