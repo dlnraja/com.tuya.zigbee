@@ -128,7 +128,7 @@ jobs:
           # Mixin order check
           if [ -f scripts/validation/check-mixin-order.js ]; then
             node scripts/validation/check-mixin-order.js 2>&1 | tail -5 > /tmp/audit-validation/mixin.txt || true
-            MIXIN=$(grep -c "PASSED" /tmp/audit-validation/mixin.txt || echo "0")
+            MIXIN=$(grep -c "PASSED" /tmp/audit-validation/mixin.txt 2>/dev/null || true); MIXIN=${MIXIN:-0}
           else
             MIXIN=-1
             echo "SKIPPED - script not found" > /tmp/audit-validation/mixin.txt
@@ -138,7 +138,7 @@ jobs:
           # WiFi lifecycle check
           if [ -f scripts/validation/check-wifi-lifecycle.js ]; then
             node scripts/validation/check-wifi-lifecycle.js 2>&1 | tail -5 > /tmp/audit-validation/wifi.txt || true
-            WIFI=$(grep -c "PASSED" /tmp/audit-validation/wifi.txt || echo "0")
+            WIFI=$(grep -c "PASSED" /tmp/audit-validation/wifi.txt 2>/dev/null || true); WIFI=${WIFI:-0}
           else
             WIFI=-1
             echo "SKIPPED - script not found" > /tmp/audit-validation/wifi.txt
@@ -148,7 +148,7 @@ jobs:
           # Fingerprint health check
           if [ -f scripts/validation/check-fingerprint-health.js ]; then
             node scripts/validation/check-fingerprint-health.js 2>&1 | tail -5 > /tmp/audit-validation/fingerprint.txt || true
-            FP=$(grep -c "PASSED" /tmp/audit-validation/fingerprint.txt || echo "0")
+            FP=$(grep -c "PASSED" /tmp/audit-validation/fingerprint.txt 2>/dev/null || true); FP=${FP:-0}
           else
             FP=-1
             echo "SKIPPED - script not found" > /tmp/audit-validation/fingerprint.txt
@@ -158,7 +158,7 @@ jobs:
           # Flow card ID uniqueness
           if [ -f scripts/ci/check-flow-ids.js ]; then
             node scripts/ci/check-flow-ids.js 2>&1 | tail -5 > /tmp/audit-validation/flowids.txt || true
-            FLOW=$(grep -c "PASSED" /tmp/audit-validation/flowids.txt || echo "0")
+            FLOW=$(grep -c "PASSED" /tmp/audit-validation/flowids.txt 2>/dev/null || true); FLOW=${FLOW:-0}
           else
             FLOW=-1
             echo "SKIPPED - script not found" > /tmp/audit-validation/flowids.txt
@@ -168,7 +168,7 @@ jobs:
           # Security scan
           if [ -f scripts/ci/security-scanner.js ]; then
             node scripts/ci/security-scanner.js 2>&1 | tail -5 > /tmp/audit-validation/security.txt || true
-            SEC=$(grep -c "PASSED" /tmp/audit-validation/security.txt || echo "0")
+            SEC=$(grep -c "PASSED" /tmp/audit-validation/security.txt 2>/dev/null || true); SEC=${SEC:-0}
           else
             SEC=-1
             echo "SKIPPED - script not found" > /tmp/audit-validation/security.txt
@@ -178,7 +178,7 @@ jobs:
           # Syntax check (drivers only, fast)
           if [ -f scripts/validation/check-driver-health.js ]; then
             node scripts/validation/check-driver-health.js 2>&1 | tail -5 > /tmp/audit-validation/syntax.txt || true
-            SYNTAX=$(grep -c "PASSED" /tmp/audit-validation/syntax.txt || echo "0")
+            SYNTAX=$(grep -c "PASSED" /tmp/audit-validation/syntax.txt 2>/dev/null || true); SYNTAX=${SYNTAX:-0}
           else
             SYNTAX=-1
             echo "SKIPPED" > /tmp/audit-validation/syntax.txt
@@ -202,7 +202,7 @@ jobs:
           # Fingerprint collision analysis
           if [ -f scripts/validation/check-driver-collisions.js ]; then
             node scripts/validation/check-driver-collisions.js > /tmp/audit-validation/collisions.txt 2>&1 || true
-            COLL=$(grep -c "PASSED" /tmp/audit-validation/collisions.txt || echo "0")
+            COLL=$(grep -c "PASSED" /tmp/audit-validation/collisions.txt 2>/dev/null || true); COLL=${COLL:-0}
             collision_count=$(grep -oP 'COLLISIONS FOUND: \K\d+' /tmp/audit-validation/collisions.txt 2>/dev/null || echo "0")
             echo "collisions_passed=$COLL" >> $GITHUB_OUTPUT
             echo "collision_count=$collision_count" >> $GITHUB_OUTPUT
@@ -247,7 +247,8 @@ jobs:
           TOTAL_PASS=0
           TOTAL_FAIL=0
           for f in /tmp/audit-validation/*.txt; do
-            p=$(grep -c "PASSED" "$f" 2>/dev/null || echo "0")
+            # grep -c prints the count even on exit 1 — never append a second 0
+            p=$(grep -c "PASSED" "$f" 2>/dev/null | head -n1); p=${p:-0}
             TOTAL_PASS=$((TOTAL_PASS + p))
           done
           echo "total_passed=$TOTAL_PASS" >> $GITHUB_OUTPUT
