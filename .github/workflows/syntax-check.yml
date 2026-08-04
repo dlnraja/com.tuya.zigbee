@@ -45,10 +45,10 @@ jobs:
     timeout-minutes: 15
 
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
 
       - name: Setup Node.js
-        uses: actions/setup-node@v5
+        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
         with:
           cache: npm
           node-version: '22'
@@ -111,12 +111,14 @@ jobs:
             FAIL=1
           fi
 
-          # 5. titleFormatted with [[device]]
+          # 5. titleFormatted with [[device]] — WARNING ONLY (v9.0.421 P92.128):
+          # the Athom publish validator REQUIRES [[device]] in titleFormatted
+          # for device-arg cards ("Missing all args in titleFormatted"), so
+          # failing here would directly contradict the official validator.
           title_fmt=$(grep -r 'titleFormatted.*\[\[device\]\]' drivers/ --include="*.json" -l 2>/dev/null | wc -l || true)
           if [ "$title_fmt" -gt 0 ]; then
-            echo "❌ Found $title_fmt files with titleFormatted [[device]]:"
+            echo "⚠️  $title_fmt files with inline titleFormatted [[device]] (allowed — required by Athom validator for device-arg cards):"
             grep -r 'titleFormatted.*\[\[device\]\]' drivers/ --include="*.json" -l 2>/dev/null | sed 's/^/    /'
-            FAIL=1
           fi
 
           # 6. UTF-16 JSON loading (readFileSync 'utf8' forces V8 to decode; use Buffer for big JSON)
