@@ -1,33 +1,32 @@
 'use strict';
 const ZclBatteryMonitor = require('../../lib/battery/ZclBatteryMonitor');
+const { setupDoorWindowSensor, handleDoorWindowSettings } = require('../../lib/devices/DoorWindowContactHelper');
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
-const { CLUSTER } = require('zigbee-clusters');
 
+/**
+ * Door/Window contact sensor (IAS zone).
+ * v9.0.415 (P92.123): full IAS enrollment + initial read + invert setting
+ * via DoorWindowContactHelper — the bare listener-only version left
+ * devices un-enrolled (zoneState "notEnrolled"), so contact states never
+ * changed (forum Peter_van_Werkhoven #2108/#2114/#2118).
+ */
 class doorwindowsensor extends ZigBeeDevice {
-		
-	async onNodeInit({zclNode}) {
+
+  async onNodeInit({ zclNode }) {
     ZclBatteryMonitor.attach(this, zclNode);
-
-		this.printNode();
-
-		// alarm_contact
-    zclNode.endpoints[1].clusters[CLUSTER.IAS_ZONE.NAME].onZoneStatusChangeNotification = payload => {
-      this.onIASZoneStatusChangeNotification(payload);
-    }
-
-  }
-  
-  onIASZoneStatusChangeNotification({zoneStatus, extendedStatus, zoneId, delay,}) {
-    this.log('Door/Windows Sensor IASZoneStatusChangeNotification received:', zoneStatus, extendedStatus, zoneId, delay);
-    this.safeSetCapabilityValue('alarm_contact', zoneStatus.alarm1).catch(this.error);
-    this.safeSetCapabilityValue('alarm_battery', zoneStatus.battery).catch(this.error);
+    this.printNode();
+    await setupDoorWindowSensor(this, zclNode, { hasTamper: false });
   }
 
-	onDeleted(){
-	  super.onDeleted();
-		this.log("Door/Window Sensor removed")
-	}
+  async onSettings({ newSettings, changedKeys }) {
+    handleDoorWindowSettings(this, changedKeys || Object.keys(newSettings || {}));
+  }
+
+  onDeleted() {
+    super.onDeleted();
+    this.log('Door/Window Sensor removed');
+  }
 
 }
 

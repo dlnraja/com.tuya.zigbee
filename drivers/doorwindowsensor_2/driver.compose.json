@@ -67,5 +67,22 @@
       "getable": false,
       "setable": false
     }
-  }
+  },
+  "settings": [
+    {
+      "id": "invert_contact",
+      "type": "checkbox",
+      "label": {
+        "en": "Invert contact state",
+        "fr": "Inverser l’état du contact",
+        "nl": "Contactstatus omkeren"
+      },
+      "hint": {
+        "en": "Enable when open/close is reported reversed by this device.",
+        "fr": "Activer si ouvert/fermé est remonté à l’envers par ce capteur.",
+        "nl": "Inschakelen als open/dicht omgekeerd wordt gemeld."
+      },
+      "value": false
+    }
+  ]
 }
