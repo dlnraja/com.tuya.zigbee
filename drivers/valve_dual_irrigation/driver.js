@@ -42,17 +42,29 @@ class ValveDualIrrigationDriver extends ZigBeeDriver {
 
     const setValve = async (device, capability, value) => {
       if (!device) { return false; }
+      // v5.12.48 (backport P92.95, forum #2102): setCapabilityValue() alone does
+      // NOT send anything to the valve (SDK3 never invokes capability listeners
+      // for programmatic sets) — the flow actions were silent no-ops. Route
+      // through the physical DP send, and propagate send errors so the flow
+      // card fails visibly instead of pretending success.
+      const dp = capability === 'onoff.valve_2' ? 2 : 1;
       try {
+        if (typeof device._sendValveDP === 'function') {
+          await device._sendValveDP(dp, capability, !!value);
+          return true;
+        }
+        if (typeof device.sendDP === 'function') {
+          await device.sendDP(dp, Boolean(value), 'bool');
+          return true;
+        }
         if (typeof device.setCapabilityValue === 'function') {
           await device.setCapabilityValue(capability, !!value);
+          return true;
         }
-        if (typeof device.safeSetCapabilityValue === 'function') {
-          await device.safeSetCapabilityValue(capability, !!value).catch(() => {});
-        }
-        return true;
-      } catch (e) {
-        this.log('[Flow] setValve error:', e.message);
         return false;
+      } catch (e) {
+        this.error('[Flow] setValve DP send failed:', e.message);
+        throw e;
       }
     };
 

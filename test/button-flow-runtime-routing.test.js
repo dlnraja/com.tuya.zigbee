@@ -108,7 +108,8 @@ describe('button flow runtime routing guards', function() {
       assert.match(driverSource, /BaseZigBeeDriver/);
       assert.match(driverSource, /extends BaseZigBeeDriver/);
       assert.match(source, /this\._isSubDevice = Boolean\(subDeviceId\)/);
-      assert.match(source, /if \(this\._isSubDevice && this\._gangNumber !== undefined && button !== this\._gangNumber\)/);
+      // B10: le filtre couvre aussi le primary quand des sub-devices sont pairés
+      assert.match(source, /if \(this\._gangNumber !== undefined && button !== this\._gangNumber\s*&& \(this\._isSubDevice \|\| this\._hasPairedSubDevices\(\)\)\)/);
       assert.match(source, /const targetGang = this\._isSubDevice \? this\._gangNumber : gang/);
       assert.match(source, /_triggerPhysicalFlow\(button, type, \{ \.\.\.tokens, _internalTrigger: true \}\)/);
     }
