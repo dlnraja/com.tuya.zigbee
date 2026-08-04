@@ -1,0 +1,49 @@
+{
+  "id": "device_pulse",
+  "title": {
+    "en": "Pulse device (inching)",
+    "fr": "Impulsion sur l'appareil (inching)",
+    "nl": "Apparaat pulseren (inching)",
+    "de": "Gerät pulsen (Inching)"
+  },
+  "hint": {
+    "en": "Switches a device on (or off) for the given duration, then restores its previous state — like Tuya Smart Life inching mode for garage doors and momentary buttons",
+    "fr": "Active (ou désactive) un appareil pendant la durée choisie puis restaure son état précédent — comme le mode inching de Tuya Smart Life pour portes de garage et boutons momentanés"
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "capabilities=onoff"
+    },
+    {
+      "name": "duration_seconds",
+      "type": "number",
+      "title": {
+        "en": "Duration (seconds)",
+        "fr": "Durée (secondes)"
+      },
+      "min": 1,
+      "max": 3600,
+      "step": 1,
+      "value": 1
+    },
+    {
+      "name": "state",
+      "type": "dropdown",
+      "title": {
+        "en": "Pulse state",
+        "fr": "État de l'impulsion"
+      },
+      "values": [
+        { "id": "on", "title": { "en": "On", "fr": "Activé" } },
+        { "id": "off", "title": { "en": "Off", "fr": "Désactivé" } }
+      ],
+      "value": "on"
+    }
+  ],
+  "titleFormatted": {
+    "en": "Pulse [[device]] [[state]] for [[duration_seconds]] seconds",
+    "fr": "Impulsion [[state]] sur [[device]] pendant [[duration_seconds]] secondes"
+  }
+}

@@ -481,6 +481,12 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
         logger: (...a) => this.log(...a),
       });
 
+      // v9.0.403 (P92.106): presence simulation (Tuya random timing / Hue mimicking)
+      const PresenceSimulationManager = require('./lib/managers/PresenceSimulationManager');
+      this.presenceSimulationManager = new PresenceSimulationManager(this.homey, {
+        logger: (...a) => this.log(...a),
+      });
+
       // Register feature flow cards
       this.featureFlowCards = new FeatureFlowCards(this.homey);
       this.featureFlowCards.setSolarElevation(this.solarElevation);
@@ -493,6 +499,7 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
       this.featureFlowCards.setNetworkTopologyCollector(this.networkTopologyCollector);
       this.featureFlowCards.setAvailabilityManager(this.availabilityManager);
       this.featureFlowCards.setSensorSuppressionManager(this.sensorSuppressionManager);
+      this.featureFlowCards.setPresenceSimulationManager(this.presenceSimulationManager);
       this.featureFlowCards.registerAll();
       this.log('✅ Feature modules and flow cards initialized');
     } catch (err) {

@@ -1,0 +1,20 @@
+{
+  "id": "presence_simulation_is_active",
+  "title": {
+    "en": "Presence simulation !{{is|is not}} active",
+    "fr": "La simulation de présence !{{est|n'est pas}} active",
+    "nl": "Aanwezigheidssimulatie !{{is|is niet}} actief",
+    "de": "Anwesenheitssimulation !{{ist|ist nicht}} aktiv"
+  },
+  "hint": {
+    "en": "Checks if presence simulation is running on the device",
+    "fr": "Vérifie si la simulation de présence est en cours sur l'appareil"
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "capabilities=onoff"
+    }
+  ]
+}
