@@ -485,6 +485,27 @@ class IrBlasterDevice extends ZigBeeDevice {
       });
     }
 
+    // v5.12.51 (P92.119): named remote buttons — send the learned code
+    // stored under the same name when available, guidance log otherwise.
+    for (const key of ['mute', 'source', 'menu', 'enter']) {
+      const cap = `button.${key}`;
+      if (!this.hasCapability(cap)) { continue; }
+      try {
+        this.registerCapabilityListener(cap, async () => {
+          const code = (this._learnedCodes || {})[key];
+          if (code) {
+            this.log(`[IR] ${cap} → sending learned code "${key}"`);
+            await this.sendIRCode(code);
+          } else {
+            this.log(`[IR] ${cap}: no learned code named "${key}" — learn one first (no-op)`);
+          }
+          return true;
+        });
+      } catch (e) {
+        this.log(`[IR] could not register ${cap}: ${e.message}`);
+      }
+    }
+
     // Setup protocol selection capability if available
     if (this.hasCapability('ir_protocol')) {
       this.registerCapabilityListener('ir_protocol', async (protocol) => {

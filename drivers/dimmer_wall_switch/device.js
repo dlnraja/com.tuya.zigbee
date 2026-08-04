@@ -9,6 +9,48 @@ class DimmerWallSwitchDevice extends PhysicalButtonMixin(ZigBeeDevice) {
     await super.onNodeInit({ zclNode });
     this.log('Dimmer Wall Switch v5.9.12 Ready');
 
+    // v5.12.51 (P92.119): UI maintenance buttons — this driver extends
+    // ZigBeeDevice directly, so the universal TuyaZigbeeDevice button
+    // listeners do not apply here.
+    for (const [cap, epNum] of [['button.1', 1], ['button.toggle_1', 1], ['button.toggle_2', 2]]) {
+      if (!this.hasCapability(cap)) { continue; }
+      try {
+        this.registerCapabilityListener(cap, async () => {
+          this.log(`[BUTTON-UI] ${cap} pressed (virtual)`);
+          const cluster = zclNode.endpoints[epNum] && zclNode.endpoints[epNum].clusters
+            && zclNode.endpoints[epNum].clusters.onOff;
+          if (cluster && typeof cluster.toggle === 'function') {
+            await cluster.toggle();
+            const onoffCap = epNum === 1 ? 'onoff' : `onoff.gang${epNum}`;
+            if (this.hasCapability(onoffCap)) {
+              await this.setCapabilityValue(onoffCap, this.getCapabilityValue(onoffCap) !== true)
+                .catch(() => {});
+            }
+          } else {
+            this.log(`[BUTTON-UI] ${cap}: no onOff cluster on endpoint ${epNum} (no-op)`);
+          }
+          return true;
+        });
+      } catch (e) {
+        this.log(`[BUTTON-UI] could not register ${cap}: ${e.message}`);
+      }
+    }
+    if (this.hasCapability('button.identify')) {
+      try {
+        this.registerCapabilityListener('button.identify', async () => {
+          const idc = zclNode.endpoints[1] && zclNode.endpoints[1].clusters
+            && zclNode.endpoints[1].clusters.identify;
+          if (idc && typeof idc.identify === 'function') {
+            await idc.identify({ identifyTime: 5 }).catch(() => {});
+          }
+          this.log('[BUTTON-UI] button.identify pressed');
+          return true;
+        });
+      } catch (e) {
+        this.log(`[BUTTON-UI] could not register button.identify: ${e.message}`);
+      }
+    }
+
     const ep = zclNode.endpoints[1];
     if (ep && ep.clusters.levelControl) {
       ep.clusters.levelControl.on('attr.currentLevel', (value) => {
