@@ -180,6 +180,6 @@ This fetches all 2032 posts of topic 140352 in ~5 minutes with 100% success.
 
 - **GitHub issues**: https://github.com/dlnraja/com.tuya.zigbee/issues
 - **Forum**: https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352/
-- **Gmail (diagnostics)**: senetmarne@gmail.com
+- **Gmail (diagnostics)**: compte Gmail des diagnostics (secret repo `GMAIL_EMAIL`)
 - **PayPal**: paypal.me/dlnraja
 - **Revolut**: revolut.me/dylanoul
