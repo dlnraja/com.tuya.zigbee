@@ -1,0 +1,56 @@
+{
+  "id": "network_availability_report",
+  "title": {
+    "en": "Get availability report",
+    "fr": "Obtenir le rapport de disponibilité",
+    "nl": "Beschikbaarheidsrapport ophalen",
+    "de": "Verfügbarkeitsbericht abrufen"
+  },
+  "hint": {
+    "en": "Returns availability statistics for all devices (counts and unavailable device names)",
+    "fr": "Retourne les statistiques de disponibilité de tous les appareils (compteurs et noms des indisponibles)"
+  },
+  "args": [],
+  "tokens": [
+    {
+      "name": "total_devices",
+      "type": "number",
+      "title": {
+        "en": "Total devices",
+        "fr": "Appareils au total"
+      }
+    },
+    {
+      "name": "battery_devices",
+      "type": "number",
+      "title": {
+        "en": "Battery devices",
+        "fr": "Appareils sur batterie"
+      }
+    },
+    {
+      "name": "mains_devices",
+      "type": "number",
+      "title": {
+        "en": "Mains devices",
+        "fr": "Appareils sur secteur"
+      }
+    },
+    {
+      "name": "unavailable_count",
+      "type": "number",
+      "title": {
+        "en": "Unavailable count",
+        "fr": "Nombre d'indisponibles"
+      }
+    },
+    {
+      "name": "unavailable_names",
+      "type": "string",
+      "title": {
+        "en": "Unavailable device names",
+        "fr": "Noms des appareils indisponibles"
+      }
+    }
+  ]
+}

@@ -81,6 +81,29 @@
 - **Tuya Developer Platform** - developer.tuya.com
 - **Node.js Best Practices** - Node.js official documentation and community patterns
 
+## Smart Features Ecosystem (v9.0.4xx, P92.10x)
+- **zigbee2mqtt availability feature** — device online/offline monitoring with per-power-source timeouts, adapted as passive `DeviceAvailabilityManager` (flow triggers `device_became_unavailable` / `device_back_online`, condition, report action)
+- **ZHA availability timeouts** — mains/battery timeout model (2 h / 6 h), cross-checked against our 15 min / 24 h choice
+- **Philips Hue / Hue Zigbee app (JohanBendz sdk3)** — adaptive lighting, natural light emulation, wakeup ramps (`AdaptiveLightingManager`, `TransitionEngine`)
+- **SmartThings Edge drivers** — device health/watchdog patterns for predictive alerts (`PredictiveHealthEngine`)
+- **Hubitat Rule Machine** — generic condition/trigger composition inspiration (`ConditionEngine`, `condition_all_met`)
+- **openHAB Zigbee binding (EPL-2.0)** — attribute reporting intervals research
+- **Jeedom / Home Assistant** — availability and energy dashboard UX patterns
+
+## Community Forks & Contributors (audited 2026-08)
+- **packetninja/com.tuya.zigbee** — backlight control methods v5.5.929 (DP15/DP16/DP101-104, countdown DP7-9), Bseed switches — integrated
+- **ErnieV/com.tuya.zigbee** — Quoya M515EGBZTN curtain support (position inversion, DP16 upper/lower limits) + Zbeacon TS011F plug energy routing — integrated
+- **map1981/com.tuya.zigbee** — Dooya curtain driver exploration
+- **onesilop, MalmFredrik, arjanlemmers, MartijnEisses, macmonty, pixelwiese, Robsta86, pkuijpers, bmalkow** — forks audited for device additions
+- **finnamu** — climate sensor `_TZE284_hodyryli` case-sensitivity investigation (issue #513)
+- **Jocke_Wallen** — Moes TS0044 `_TZ3000_kfu8zapd` remote (forum #2098-2104)
+- **blutch32** — HOBEIAN ZG-303Z soil sensor pairing variants (forum #2101)
+- **Nigel_Scott** — HOBEIAN ZG-204ZP/ZK presence `_TZE200_ka8l86iu` (forum #2112, issue #382)
+- **Joep_Vullings** — Insoma 2-way irrigation valve `_TZE284_fhvpaltk` (forum #2102/#2105, issue #260)
+- **FrankP** — TS0042 2-button remote `_TZ3000_tzvbimpq` routing (forum #1689/#1745)
+- **thierry_arguimbau** — `_TZE204_dhotiauw` dual energy meter (forum #2115)
+- **Tobias-B, Lucas360, Rikjes, tlink, Or36, vikino, Cam, Haadeess, Lachee, Mikko_Vayrynen, Ronald_Bok, xfiler, DominikPL, robertklep** — diagnostic reports that drove crash fixes
+
 ## Licenses (SPDX)
 
 | Project | License | Usage |

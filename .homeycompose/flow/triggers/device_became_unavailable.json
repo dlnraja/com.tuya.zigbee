@@ -1,0 +1,39 @@
+{
+  "id": "device_became_unavailable",
+  "title": {
+    "en": "Device became unavailable",
+    "fr": "Appareil devenu indisponible",
+    "nl": "Apparaat onbeschikbaar geworden",
+    "de": "Gerät nicht mehr verfügbar"
+  },
+  "hint": {
+    "en": "Triggers when a device has been silent beyond its timeout (15 min mains, 24 h battery)",
+    "fr": "Se déclenche quand un appareil est silencieux au-delà de son délai (15 min secteur, 24 h batterie)"
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": ""
+    }
+  ],
+  "tokens": [
+    {
+      "name": "minutes_silent",
+      "type": "number",
+      "title": {
+        "en": "Minutes silent",
+        "fr": "Minutes de silence"
+      },
+      "example": 20
+    },
+    {
+      "name": "is_battery",
+      "type": "boolean",
+      "title": {
+        "en": "Is battery powered",
+        "fr": "Sur batterie"
+      }
+    }
+  ]
+}
