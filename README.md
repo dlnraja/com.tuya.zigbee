@@ -37,7 +37,7 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.411 |
+| **App Version** | v9.0.412 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,339 |
 | **Pairing Variants** | 18,040 (4 case combos per fingerprint) |
@@ -45,7 +45,7 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 | **Flow Cards** | 4,939 |
 | **Unique Capabilities** | 169 |
 | **Native OTA Drivers** | 6 |
-| **Test Suites** | 61 files |
+| **Test Suites** | 62 files |
 | **SVG Icons** | 731 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
@@ -106,6 +106,7 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.412** | Central destroyed guards on capability ops, linear battery formulas eliminated. |
 | **v9.0.411** | Central destroyed guards on capability ops, linear battery formulas eliminated. |
 | **v9.0.410** | Central destroyed guards on capability ops, linear battery formulas eliminated. |
 | **v9.0.409** | Central destroyed guards on capability ops, linear battery formulas eliminated. |
@@ -117,7 +118,6 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 | **v9.0.403** | Central destroyed guards on capability ops, linear battery formulas eliminated. |
 | **v9.0.402** | Central destroyed guards on capability ops, linear battery formulas eliminated. |
 | **v9.0.401** | Central destroyed guards on capability ops, linear battery formulas eliminated. |
-| **v9.0.400** | Central destroyed guards on capability ops, linear battery formulas eliminated. |
 
 <!-- CHANGELOG_END -->
 
