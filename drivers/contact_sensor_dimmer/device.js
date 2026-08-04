@@ -1,9 +1,11 @@
 'use strict';
+const ZclBatteryMonitor = require('../../lib/battery/ZclBatteryMonitor');
 const { safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 
 class ContactSensorDimmerDevice extends ZigBeeDevice {
   async onNodeInit({ zclNode }) {
+    ZclBatteryMonitor.attach(this, zclNode);
     await super.onNodeInit({ zclNode });
     this.log('Contact Sensor Dimmer v5.9.12 Ready');
   }

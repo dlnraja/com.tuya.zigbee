@@ -1,4 +1,5 @@
 'use strict';
+const ZclBatteryMonitor = require('../../lib/battery/ZclBatteryMonitor');
 
 const Homey = require('homey');
 const { ZigBeeDevice } = require('homey-zigbeedriver');
@@ -24,6 +25,7 @@ Cluster.addCluster(TuyaSpecificCluster);
 class ThermostaticRadiatorValve extends TuyaThermostatEnhancedMixin(TuyaSpecificClusterDevice) {
 
     async onNodeInit({ zclNode }) {
+    ZclBatteryMonitor.attach(this, zclNode);
 
         this.printNode();
 

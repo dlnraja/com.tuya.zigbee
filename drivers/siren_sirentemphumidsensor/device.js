@@ -1,4 +1,5 @@
 'use strict';
+const ZclBatteryMonitor = require('../../lib/battery/ZclBatteryMonitor');
 const { safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
 
 const { Cluster, BoundCluster } = require('zigbee-clusters');
@@ -145,6 +146,7 @@ class SirenTimeBoundCluster extends BoundCluster {
 
 class sensortemphumidsensor extends TuyaSpecificClusterDevice {
   async onNodeInit({ zclNode }) {
+    ZclBatteryMonitor.attach(this, zclNode);
     await super.onNodeInit({ zclNode });
     try {
       await this.configureAttributeReporting([

@@ -1,4 +1,5 @@
 'use strict';
+const ZclBatteryMonitor = require('../../lib/battery/ZclBatteryMonitor');
 
 const Homey = require('homey');
 const { ZigBeeDevice } = require('homey-zigbeedriver');
@@ -7,6 +8,7 @@ const { debug, CLUSTER } = require('zigbee-clusters');
 class pir_sensor_2 extends ZigBeeDevice {
 
 	async onNodeInit({zclNode}) {
+    ZclBatteryMonitor.attach(this, zclNode);
 
 		this.printNode();
 

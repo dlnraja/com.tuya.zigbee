@@ -1,4 +1,5 @@
 'use strict';
+const ZclBatteryMonitor = require('../../lib/battery/ZclBatteryMonitor');
 
 const { Cluster } = require('zigbee-clusters');
 const { ZigBeeDevice } = require('homey-zigbeedriver');
@@ -51,6 +52,7 @@ const getDataValue = (dpValue) => {
 class pir_mmwave_sensor extends ZigBeeDevice {
 
     async onNodeInit({ zclNode }) {
+    ZclBatteryMonitor.attach(this, zclNode);
         // Initialize transaction ID for Tuya commands
         this.transactionID = 0;
 
