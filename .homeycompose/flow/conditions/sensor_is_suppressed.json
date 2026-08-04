@@ -1,0 +1,20 @@
+{
+  "id": "sensor_is_suppressed",
+  "title": {
+    "en": "Sensor motion flows !{{are|are not}} suppressed",
+    "fr": "Les flows de mouvement du capteur !{{sont|ne sont pas}} suspendus",
+    "nl": "Bewegingsflows sensor !{{zijn|zijn niet}} onderdrukt",
+    "de": "Bewegungs-Flows des Sensors !{{sind|sind nicht}} unterdrückt"
+  },
+  "hint": {
+    "en": "Checks if a sensor's motion/presence flow triggers are currently muted",
+    "fr": "Vérifie si les déclencheurs de mouvement/présence du capteur sont actuellement coupés"
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "capabilities=alarm_motion|alarm_human|alarm_presence"
+    }
+  ]
+}
