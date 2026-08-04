@@ -1,0 +1,20 @@
+{
+  "id": "device_is_unavailable",
+  "title": {
+    "en": "Device !{{is|is not}} unavailable",
+    "fr": "Appareil !{{est|n'est pas}} indisponible",
+    "nl": "Apparaat !{{is|is niet}} onbeschikbaar",
+    "de": "Gerät !{{ist|ist nicht}} nicht verfügbar"
+  },
+  "hint": {
+    "en": "Checks if a device is currently marked unavailable (silent beyond timeout)",
+    "fr": "Vérifie si un appareil est actuellement marqué indisponible (silence au-delà du délai)"
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": ""
+    }
+  ]
+}

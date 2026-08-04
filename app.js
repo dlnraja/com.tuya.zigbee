@@ -461,6 +461,20 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
       this.networkTopologyCollector = new NetworkTopologyCollector(this.homey);
       this.solarElevation.startObserving();
 
+      // v9.0.401 (P92.104): availability monitoring (z2m-style, passive)
+      const DeviceAvailabilityManager = require('./lib/managers/DeviceAvailabilityManager');
+      this.availabilityManager = new DeviceAvailabilityManager(this.homey, {
+        logger: (...a) => this.log(...a),
+      });
+      for (const driver of Object.values(this.homey.drivers.getDrivers())) {
+        for (const device of driver.getDevices()) {
+          this.availabilityManager.registerDevice(device);
+        }
+      }
+      this.availabilityManager.start();
+      // Late-paired devices are registered when their driver adds them
+      this.homey.on('device.create', (device) => this.availabilityManager.registerDevice(device));
+
       // Register feature flow cards
       this.featureFlowCards = new FeatureFlowCards(this.homey);
       this.featureFlowCards.setSolarElevation(this.solarElevation);
@@ -471,6 +485,7 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
       this.featureFlowCards.setConditionEngine(this.conditionEngine);
       this.featureFlowCards.setPredictiveHealthEngine(this.predictiveHealthEngine);
       this.featureFlowCards.setNetworkTopologyCollector(this.networkTopologyCollector);
+      this.featureFlowCards.setAvailabilityManager(this.availabilityManager);
       this.featureFlowCards.registerAll();
       this.log('✅ Feature modules and flow cards initialized');
     } catch (err) {
