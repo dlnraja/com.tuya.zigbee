@@ -275,7 +275,7 @@ if (!fs.existsSync(fpPath)) {
 
 // ─── M07 — driver-mapping-database.json ──────────────────────────────────────
 section('M07 — driver-mapping-database.json (DriverMappingLoader.js)');
-const dmdPath = path.join(ROOT, 'driver-mapping-database.json');
+const dmdPath = path.join(ROOT, 'data', 'driver-mapping-database.json');
 if (!fs.existsSync(dmdPath)) {
   warn('M07', 'driver-mapping-database.json missing — DriverMappingLoader.js may fail at runtime');
 } else {
@@ -351,7 +351,7 @@ if (!fs.existsSync(homeyignorePath)) {
     'data/fingerprints.json',
     'lib/tuya/fingerprints.json',
     '.homeychangelog.json',
-    'driver-mapping-database.json',
+    'data/driver-mapping-database.json',
   ];
   RUNTIME_JSON.forEach(f => {
     if (ignoreLines.some(l => l === f || l === '/' + f)) {
