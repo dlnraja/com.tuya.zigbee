@@ -249,5 +249,24 @@
       "getable": false,
       "setable": false
     }
-  }
+  },
+  "settings": [
+    {
+      "id": "vibration_auto_reset",
+      "type": "number",
+      "label": {
+        "en": "Vibration auto-reset (seconds)",
+        "fr": "Retour à idle vibration (secondes)",
+        "nl": "Trilling auto-reset (seconden)"
+      },
+      "hint": {
+        "en": "Reset the vibration alarm to idle N seconds after the last shock (0 = disabled).",
+        "fr": "Remet l’alarme vibration au repos N secondes après le dernier choc (0 = désactivé).",
+        "nl": "Zet het trillingsalarm terug N seconden na de laatste schok (0 = uit)."
+      },
+      "value": 0,
+      "min": 0,
+      "max": 3600
+    }
+  ]
 }

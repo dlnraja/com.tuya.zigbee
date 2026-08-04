@@ -168,9 +168,17 @@ class ValveDualIrrigationDevice extends BaseUnifiedDevice {
   }
 
   _isValveDPSendSuccess(result) {
-    if (result === true) {return true;}
-    if (!result || typeof result !== 'object') {return false;}
-    return result.success === true || result.status === 'success';
+    // v9.0.417 (P92.124): undefined/null means the frame was EMITTED
+    // fire-and-forget without error (TuyaEF00Manager.sendDP resolves
+    // undefined on the raw-send path). A transport failure rejects the
+    // promise instead. Treating undefined as failure made every valve
+    // command throw "not_sent" even when the valve actuated — Joep's
+    // "right actions but isn't working" (forum #2102/#2105).
+    if (result === false) {return false;}
+    if (result && typeof result === 'object') {
+      return result.success === true || result.status === 'success';
+    }
+    return true;
   }
 
   // Override sendDP to keep dual-valve actions working across manager variants.
