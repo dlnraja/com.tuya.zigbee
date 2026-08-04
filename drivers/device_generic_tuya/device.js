@@ -37,7 +37,7 @@ class GenericTuyaDevice extends TuyaSpecificClusterDevice {
        capability,
        deviceId: this.getData()?.id || '',
      });
-     this.setCapabilityValue(capability, value).catch(err => this.error(`Failed to set ${capability}:`, err));
+     this.safeSetCapabilityValue(capability, value).catch(err => this.error(`Failed to set ${capability}:`, err));
   }
 }
 

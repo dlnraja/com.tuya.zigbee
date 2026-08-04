@@ -34,7 +34,7 @@ class DimmerWallSwitchDevice extends PhysicalButtonMixin(ZigBeeDevice) {
             await cluster.toggle();
             const onoffCap = epNum === 1 ? 'onoff' : `onoff.gang${epNum}`;
             if (this.hasCapability(onoffCap)) {
-              await this.setCapabilityValue(onoffCap, this.getCapabilityValue(onoffCap) !== true)
+              await this.safeSetCapabilityValue(onoffCap, this.getCapabilityValue(onoffCap) !== true)
                 .catch(() => {});
             }
           } else {
