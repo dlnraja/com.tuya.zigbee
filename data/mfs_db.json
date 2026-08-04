@@ -38886,18 +38886,15 @@
     "_tz3000_4fsgukof": {
       "manufacturerId": "_tz3000_4fsgukof",
       "modelIds": [
-        "TS0601_dim1",
-        "TS0601"
+        "TS0215A"
       ],
       "variants": [],
-      "deviceType": "light",
-      "driverHint": "dimmer_wall_1gang",
+      "deviceType": "remote",
+      "driverHint": "button_emergency_sos",
       "capabilities": [
-        "dim",
         "onoff",
-        "measure_power",
-        "countdown_remaining",
-        "power_on_behavior"
+        "measure_battery",
+        "alarm_battery"
       ],
       "powerSource": "mains",
       "sources": [
@@ -38911,23 +38908,23 @@
         "hubitat": 2
       },
       "confidence": 0.25,
-      "lastSeen": "2026-06-19T20:58:49.761Z"
+      "lastSeen": "2026-06-19T20:58:49.761Z",
+      "modelIdsCount": 1,
+      "pid": "TS0215A",
+      "driverId": "button_emergency_sos"
     },
     "_tz3000_wr2ucaj9": {
       "manufacturerId": "_tz3000_wr2ucaj9",
       "modelIds": [
-        "TS0601_dim1",
-        "TS0601"
+        "TS0215A"
       ],
       "variants": [],
-      "deviceType": "light",
-      "driverHint": "dimmer_wall_1gang",
+      "deviceType": "remote",
+      "driverHint": "button_emergency_sos",
       "capabilities": [
-        "dim",
         "onoff",
-        "measure_power",
-        "countdown_remaining",
-        "power_on_behavior"
+        "measure_battery",
+        "alarm_battery"
       ],
       "powerSource": "mains",
       "sources": [
@@ -38941,23 +38938,23 @@
         "hubitat": 2
       },
       "confidence": 0.25,
-      "lastSeen": "2026-06-19T20:58:49.761Z"
+      "lastSeen": "2026-06-19T20:58:49.761Z",
+      "modelIdsCount": 1,
+      "pid": "TS0215A",
+      "driverId": "button_emergency_sos"
     },
     "_tz3000_zsh6uat3": {
       "manufacturerId": "_tz3000_zsh6uat3",
       "modelIds": [
-        "TS0601_dim1",
-        "TS0601"
+        "TS0215A"
       ],
       "variants": [],
-      "deviceType": "light",
-      "driverHint": "dimmer_wall_1gang",
+      "deviceType": "remote",
+      "driverHint": "button_emergency_sos",
       "capabilities": [
-        "dim",
         "onoff",
-        "measure_power",
-        "countdown_remaining",
-        "power_on_behavior"
+        "measure_battery",
+        "alarm_battery"
       ],
       "powerSource": "mains",
       "sources": [
@@ -38971,23 +38968,23 @@
         "hubitat": 2
       },
       "confidence": 0.25,
-      "lastSeen": "2026-06-19T20:58:49.761Z"
+      "lastSeen": "2026-06-19T20:58:49.761Z",
+      "modelIdsCount": 1,
+      "pid": "TS0215A",
+      "driverId": "button_emergency_sos"
     },
     "_tz3000_pkfazisv": {
       "manufacturerId": "_tz3000_pkfazisv",
       "modelIds": [
-        "TS0601_dim1",
-        "TS0601"
+        "TS0215A"
       ],
       "variants": [],
-      "deviceType": "light",
-      "driverHint": "dimmer_wall_1gang",
+      "deviceType": "remote",
+      "driverHint": "button_emergency_sos",
       "capabilities": [
-        "dim",
         "onoff",
-        "measure_power",
-        "countdown_remaining",
-        "power_on_behavior"
+        "measure_battery",
+        "alarm_battery"
       ],
       "powerSource": "mains",
       "sources": [
@@ -39001,23 +38998,23 @@
         "hubitat": 2
       },
       "confidence": 0.25,
-      "lastSeen": "2026-06-19T20:58:49.761Z"
+      "lastSeen": "2026-06-19T20:58:49.761Z",
+      "modelIdsCount": 1,
+      "pid": "TS0215A",
+      "driverId": "button_emergency_sos"
     },
     "_tz3000_2izubafb": {
       "manufacturerId": "_tz3000_2izubafb",
       "modelIds": [
-        "TS0601_dim1",
-        "TS0601"
+        "TS0215A"
       ],
       "variants": [],
-      "deviceType": "light",
-      "driverHint": "dimmer_wall_1gang",
+      "deviceType": "remote",
+      "driverHint": "button_emergency_sos",
       "capabilities": [
-        "dim",
         "onoff",
-        "measure_power",
-        "countdown_remaining",
-        "power_on_behavior"
+        "measure_battery",
+        "alarm_battery"
       ],
       "powerSource": "mains",
       "sources": [
@@ -39031,7 +39028,10 @@
         "hubitat": 2
       },
       "confidence": 0.25,
-      "lastSeen": "2026-06-19T20:58:49.761Z"
+      "lastSeen": "2026-06-19T20:58:49.761Z",
+      "modelIdsCount": 1,
+      "pid": "TS0215A",
+      "driverId": "button_emergency_sos"
     },
     "_tze204_rkbxtclc": {
       "manufacturerId": "_tze204_rkbxtclc",
@@ -39733,18 +39733,15 @@
     "_tz3000_tj4pwzzm": {
       "manufacturerId": "_tz3000_tj4pwzzm",
       "modelIds": [
-        "TS0601_dim1",
-        "TS0601"
+        "TS0215A"
       ],
       "variants": [],
-      "deviceType": "light",
-      "driverHint": "dimmer_wall_1gang",
+      "deviceType": "remote",
+      "driverHint": "button_emergency_sos",
       "capabilities": [
-        "dim",
         "onoff",
-        "measure_power",
-        "countdown_remaining",
-        "power_on_behavior"
+        "measure_battery",
+        "alarm_battery"
       ],
       "powerSource": "mains",
       "sources": [
@@ -39758,23 +39755,23 @@
         "hubitat": 2
       },
       "confidence": 0.25,
-      "lastSeen": "2026-06-19T20:58:49.761Z"
+      "lastSeen": "2026-06-19T20:58:49.761Z",
+      "modelIdsCount": 1,
+      "pid": "TS0215A",
+      "driverId": "button_emergency_sos"
     },
     "_tz3000_ssp0maqm": {
       "manufacturerId": "_tz3000_ssp0maqm",
       "modelIds": [
-        "TS0601_dim1",
-        "TS0601"
+        "TS0215A"
       ],
       "variants": [],
-      "deviceType": "light",
-      "driverHint": "dimmer_wall_1gang",
+      "deviceType": "remote",
+      "driverHint": "button_emergency_sos",
       "capabilities": [
-        "dim",
         "onoff",
-        "measure_power",
-        "countdown_remaining",
-        "power_on_behavior"
+        "measure_battery",
+        "alarm_battery"
       ],
       "powerSource": "mains",
       "sources": [
@@ -39786,23 +39783,23 @@
         "z2m": 1
       },
       "confidence": 0.17,
-      "lastSeen": "2026-06-19T20:58:49.737Z"
+      "lastSeen": "2026-06-19T20:58:49.737Z",
+      "modelIdsCount": 1,
+      "pid": "TS0215A",
+      "driverId": "button_emergency_sos"
     },
     "_tz3000_p3fph1go": {
       "manufacturerId": "_tz3000_p3fph1go",
       "modelIds": [
-        "TS0601_dim1",
-        "TS0601"
+        "TS0215A"
       ],
       "variants": [],
-      "deviceType": "light",
-      "driverHint": "dimmer_wall_1gang",
+      "deviceType": "remote",
+      "driverHint": "button_emergency_sos",
       "capabilities": [
-        "dim",
         "onoff",
-        "measure_power",
-        "countdown_remaining",
-        "power_on_behavior"
+        "measure_battery",
+        "alarm_battery"
       ],
       "powerSource": "mains",
       "sources": [
@@ -39814,23 +39811,23 @@
         "z2m": 1
       },
       "confidence": 0.17,
-      "lastSeen": "2026-06-19T20:58:49.737Z"
+      "lastSeen": "2026-06-19T20:58:49.737Z",
+      "modelIdsCount": 1,
+      "pid": "TS0215A",
+      "driverId": "button_emergency_sos"
     },
     "_tz3000_9r5jaajv": {
       "manufacturerId": "_tz3000_9r5jaajv",
       "modelIds": [
-        "TS0601_dim1",
-        "TS0601"
+        "TS0215A"
       ],
       "variants": [],
-      "deviceType": "light",
-      "driverHint": "dimmer_wall_1gang",
+      "deviceType": "remote",
+      "driverHint": "button_emergency_sos",
       "capabilities": [
-        "dim",
         "onoff",
-        "measure_power",
-        "countdown_remaining",
-        "power_on_behavior"
+        "measure_battery",
+        "alarm_battery"
       ],
       "powerSource": "mains",
       "sources": [
@@ -39842,7 +39839,10 @@
         "z2m": 1
       },
       "confidence": 0.17,
-      "lastSeen": "2026-06-19T20:58:49.737Z"
+      "lastSeen": "2026-06-19T20:58:49.737Z",
+      "modelIdsCount": 1,
+      "pid": "TS0215A",
+      "driverId": "button_emergency_sos"
     },
     "_tz3000_g1glzzfk": {
       "manufacturerId": "_tz3000_g1glzzfk",
