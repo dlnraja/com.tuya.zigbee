@@ -2,6 +2,7 @@
 
 const UnifiedSensorBase = require('../../lib/devices/UnifiedSensorBase');
 const { boolean } = require('../../lib/converters/ValueConverterRegistry');
+const { safeSetTimeout, safeClearTimeout } = require('../../lib/utils/safe-timers');
 
 /**
  * Vibration Sensor Device - v8.0.0 MODERNIZED
@@ -75,9 +76,9 @@ class VibrationSensorDevice extends UnifiedSensorBase {
             const seconds = Number(this.getSetting?.('vibration_auto_reset')) || 0;
             if (seconds > 0) {
               if (this._vibrationResetTimer) {
-                (this.homey?.clearTimeout || clearTimeout)(this._vibrationResetTimer);
+                safeClearTimeout(this, this._vibrationResetTimer);
               }
-              this._vibrationResetTimer = (this.homey?.setTimeout || setTimeout)(() => {
+              this._vibrationResetTimer = safeSetTimeout(this, () => {
                 if (this._destroyed) { return; }
                 this.log(`[VIBRATION] ⏱️ auto-reset to idle after ${seconds}s`);
                 this.safeSetCapabilityValue('alarm_vibration', false).catch(() => {});

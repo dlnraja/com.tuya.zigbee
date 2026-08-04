@@ -10,6 +10,8 @@ const path = require('path');
 
 const DATA_DIR = path.join(__dirname, '../../data/community-sync');
 const DRIVERS_DIR = path.join(__dirname, '../../drivers');
+const ROOT = path.join(__dirname, '../..');
+const { claimedElsewhere } = require('../lib/fp-collision-guard');
 const DRY_RUN = process.argv.includes('--dry-run');
 
 function loadMissing() {
@@ -22,6 +24,15 @@ function patchDriver(driverName, field, value) {
   const cf = path.join(DRIVERS_DIR, driverName, 'driver.compose.json');
   if (!fs.existsSync(cf)) return false;
   try {
+    // P92.126 collision guard: never add a mfr another driver already claims
+    // (HOBEIAN is exempt — multi-driver by design, see fp-collision-guard.js)
+    if (field === 'manufacturerName') {
+      const owner = claimedElsewhere(ROOT, value, driverName);
+      if (owner) {
+        console.log('~ skip mfr ' + value + ' -> ' + driverName + ' (already claimed by ' + owner + ')');
+        return false;
+      }
+    }
     const data = JSON.parse(fs.readFileSync(cf, 'utf8'));
     if (!data.zigbee) return false;
     const arr = data.zigbee[field];

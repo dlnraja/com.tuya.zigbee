@@ -94,5 +94,8 @@
   "version": "1.0.0",
   "connectivity": [
     "zigbee"
-  ]
+  ],
+  "ui": {
+    "quickAction": "onoff"
+  }
 }

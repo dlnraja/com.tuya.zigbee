@@ -4,6 +4,7 @@ const path = require('path');
 const REPO_ROOT = path.resolve(__dirname, '../..');
 const MFS_DB_PATH = path.join(REPO_ROOT, 'data', 'mfs_db.json');
 const DRIVERS_DIR = path.join(REPO_ROOT, 'drivers');
+const { claimedElsewhere } = require('../lib/fp-collision-guard');
 
 function injectMFS() {
   if (!fs.existsSync(MFS_DB_PATH)) {
@@ -62,6 +63,12 @@ function injectMFS() {
 
     for (const mfr of mfrs) {
       if (!existingMfrs.has(mfr)) {
+        // P92.126 collision guard: skip mfrs another driver already claims
+        const owner = claimedElsewhere(REPO_ROOT, mfr, driverId);
+        if (owner) {
+          console.log(`[${driverId}] skip ${mfr} — already claimed by ${owner}`);
+          continue;
+        }
         compose.zigbee.manufacturerName.push(mfr);
         added++;
       }

@@ -1508,5 +1508,8 @@
     "// PID-CONFLICT-NOTE ZG-205ZL shared with 2 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
     "// PID-CONFLICT-NOTE ZG-302ZL shared with 2 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
     "// PID-CONFLICT-NOTE ZG-302ZM shared with 2 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-  ]
+  ],
+  "ui": {
+    "quickAction": "onoff"
+  }
 }
