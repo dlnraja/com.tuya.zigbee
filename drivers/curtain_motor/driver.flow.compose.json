@@ -369,6 +369,42 @@
         "en": "Stop",
         "fr": "Stop"
       }
+    },
+    {
+      "id": "curtain_motor_set_upper_limit",
+      "title": {
+        "en": "Set current position as upper limit",
+        "fr": "Définir la position actuelle comme limite haute"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Set current position as upper limit",
+        "fr": "Définir la position actuelle comme limite haute"
+      }
+    },
+    {
+      "id": "curtain_motor_set_lower_limit",
+      "title": {
+        "en": "Set current position as lower limit",
+        "fr": "Définir la position actuelle comme limite basse"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Set current position as lower limit",
+        "fr": "Définir la position actuelle comme limite basse"
+      }
+    },
+    {
+      "id": "curtain_motor_remove_limits",
+      "title": {
+        "en": "Remove position limits",
+        "fr": "Supprimer les limites de position"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Remove position limits",
+        "fr": "Supprimer les limites de position"
+      }
     }
   ]
 }

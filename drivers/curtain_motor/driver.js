@@ -84,6 +84,28 @@ async onInit() {
       }
     } catch (err) { if (this.developerDebugMode) { this.error(`Action curtain_motor_set_favorite: ${err.message}`); } }
 
+    // v9.0.400 (fork ErnieV, Quoya M515EGBZTN): limites haute/basse via DP16
+    // (border datapoint). 0=upper, 1=lower, 4=remove both. Real DP send.
+    const registerLimitAction = (id, dpValue) => {
+      try {
+        const card = this.homey.flow.getActionCard(id);
+        if (card) {
+          card.registerRunListener(async (args) => {
+            if (!args.device) {return false;}
+            if (typeof args.device._sendTuyaDP === 'function') {
+              await args.device._sendTuyaDP(16, dpValue, 'enum');
+              this.log(`[FLOW] ${id}: DP16=${dpValue} sent`);
+              return true;
+            }
+            return false;
+          });
+        }
+      } catch (err) { if (this.developerDebugMode) { this.error(`Action ${id}: ${err.message}`); } }
+    };
+    registerLimitAction('curtain_motor_set_upper_limit', 0);
+    registerLimitAction('curtain_motor_set_lower_limit', 1);
+    registerLimitAction('curtain_motor_remove_limits', 4);
+
     try {
       const card = this.homey.flow.getActionCard('curtain_motor_set_brightness');
       if (card) {
