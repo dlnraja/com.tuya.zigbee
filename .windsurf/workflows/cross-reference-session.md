@@ -16,4 +16,4 @@ description: Cross-reference all sources at each prompt
 4. Update MASTER_REFERENCE.md, USER_DEVICE_EXPECTATIONS.md, changelog
 5. Run 
 ode .github/scripts/generate-ai-changelog.js to update CHANGELOG.md, README.md, .homeychangelog.json
-6. Email: senetmarne@gmail.com (Outlook cloud) - user pastes relevant content
+6. Email: 9746898+dlnraja@users.noreply.github.com (Outlook cloud) - user pastes relevant content

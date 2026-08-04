@@ -9,7 +9,7 @@
 
 | Step | Action | Result |
 |---|---|---|
-| 1 | Updated `GMAIL_EMAIL` to `senetmarne@gmail.com` | ✓ |
+| 1 | Updated `GMAIL_EMAIL` to `9746898+dlnraja@users.noreply.github.com` | ✓ |
 | 2 | Triggered `gmail-token-keepalive.yml` strict | ✓ **PASSED** |
 | 3 | Triggered `gmail-diagnostics.yml` (max 5000, 30 days) | ✓ **PASSED** |
 | 4 | Downloaded artifact | ✓ **551 emails** |
@@ -98,7 +98,7 @@ All added to `driverMapping.generic_tuya`. Coverage: **1041/1050** (99.1%) FPs a
 
 | Secret | Status | Last updated |
 |---|---|---|
-| GMAIL_EMAIL | ✓ `senetmarne@gmail.com` | 2026-07-13 08:08 |
+| GMAIL_EMAIL | ✓ `9746898+dlnraja@users.noreply.github.com` | 2026-07-13 08:08 |
 | GMAIL_APP_PASSWORD | ✓ (still valid) | 2026-07-05 |
 | GMAIL_CLIENT_ID | ⚠️ Playground default (may not be needed) | 2026-07-13 08:02 |
 | GMAIL_CLIENT_SECRET | ❌ Invalid (I overwrote with bad value) | 2026-07-13 08:02 |

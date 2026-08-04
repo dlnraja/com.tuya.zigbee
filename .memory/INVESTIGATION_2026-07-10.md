@@ -1,7 +1,7 @@
 # 🔍 MEGA-INVESTIGATION 2026-07-10 — Tuya Unified Zigbee (Dual-App)
 
 > **Session Mavis**: `mvs_e7cd7397977c4571a373dc2350580aa1` | **Date**: 2026-07-10 17:30 UTC+2
-> **Auteur**: Dylan Rajasekaram (senetmarne@gmail.com, userID `llqWwMMeXA32`)
+> **Auteur**: Dylan Rajasekaram (9746898+dlnraja@users.noreply.github.com, userID `llqWwMMeXA32`)
 > **Plateforme**: Windows 11, Mavis 3.0.47, Codex 0.144.0-alpha.4 (rate-limited 100%)
 > **Sources croisées**: 23+ rapports docs/ + 16 skills Antigravity + 4 SQLites Codex + 3 PRs GitHub (#508, #509, #510) + 13 sessions Codex rollout + 7 workflows GHA + 90+ fingerprints canoniques
 

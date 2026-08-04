@@ -64,7 +64,7 @@ Write-Host "`n✓ Token: $($Token.Substring(0,7))*** (length $($Token.Length))" 
 Write-Host "`n=== CONFIG ===" -ForegroundColor Cyan
 & "C:\Users\Dell\Tools\gh\bin\gh.exe" auth login --with-token $Token 2>&1 | Out-String -Stream | Select-Object -First 3
 & git config --global user.name "Dylan Rajasekaram" 2>&1 | Out-Null
-& git config --global user.email "senetmarne@gmail.com" 2>&1 | Out-Null
+& git config --global user.email "9746898+dlnraja@users.noreply.github.com" 2>&1 | Out-Null
 Write-Host "  ✓ git + gh configured" -ForegroundColor Green
 
 # 3. Push
