@@ -1,0 +1,24 @@
+{
+  "id": "cascade_unlink",
+  "title": {
+    "en": "Unlink motion from light",
+    "fr": "Délier le mouvement de la lumière",
+    "nl": "Ontkoppel beweging van lamp",
+    "de": "Bewegung von Licht trennen"
+  },
+  "hint": {
+    "en": "Removes the path lighting link for this motion sensor",
+    "fr": "Supprime le lien d'éclairage de passage pour ce capteur de mouvement"
+  },
+  "args": [
+    {
+      "name": "motion_device",
+      "type": "device",
+      "filter": "capabilities=alarm_motion|alarm_human|alarm_presence"
+    }
+  ],
+  "titleFormatted": {
+    "en": "Unlink [[motion_device]]",
+    "fr": "Délier [[motion_device]]"
+  }
+}

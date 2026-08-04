@@ -1,0 +1,48 @@
+{
+  "id": "device_countdown_off",
+  "title": {
+    "en": "Countdown to OFF",
+    "fr": "Compte à rebours avant extinction",
+    "nl": "Aftellen naar UIT",
+    "de": "Countdown bis AUS"
+  },
+  "hint": {
+    "en": "Turns the device off after the given delay — native Tuya countdown DP when supported, software timer otherwise",
+    "fr": "Éteint l'appareil après le délai choisi — DP countdown Tuya natif si supporté, sinon minuteur logiciel"
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "capabilities=onoff"
+    },
+    {
+      "name": "duration_seconds",
+      "type": "number",
+      "title": {
+        "en": "Delay (seconds)",
+        "fr": "Délai (secondes)"
+      },
+      "min": 1,
+      "max": 86400,
+      "step": 1,
+      "value": 60
+    },
+    {
+      "name": "gang",
+      "type": "number",
+      "title": {
+        "en": "Gang",
+        "fr": "Canal"
+      },
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "value": 1
+    }
+  ],
+  "titleFormatted": {
+    "en": "Turn off [[device]] in [[duration_seconds]] seconds (gang [[gang]])",
+    "fr": "Éteindre [[device]] dans [[duration_seconds]] secondes (canal [[gang]])"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "id": "circadian_enable",
+  "title": {
+    "en": "Enable circadian lighting",
+    "fr": "Activer l'éclairage circadien",
+    "nl": "Circadiaanse verlichting inschakelen",
+    "de": "Zirkadiane Beleuchtung aktivieren"
+  },
+  "hint": {
+    "en": "Adapts white temperature and brightness of this light to the sun position (warm at dawn/dusk, cool at noon, fading smoothly)",
+    "fr": "Adapte la température de blanc et la luminosité de cette lumière à la position du soleil (chaud à l'aube/au crépuscule, froid à midi, en fondu)"
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "capabilities=light_color_temp|light_hue|dim"
+    }
+  ]
+}

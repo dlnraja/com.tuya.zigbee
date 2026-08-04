@@ -1,0 +1,20 @@
+{
+  "id": "cascade_is_linked",
+  "title": {
+    "en": "Motion !{{is|is not}} linked to path lighting",
+    "fr": "Le mouvement !{{est|n'est pas}} lié à l'éclairage de passage",
+    "nl": "Beweging !{{is|is niet}} gekoppeld aan padverlichting",
+    "de": "Bewegung !{{ist|ist nicht}} mit Wegbeleuchtung verknüpft"
+  },
+  "hint": {
+    "en": "Checks if a path lighting link exists for this motion sensor",
+    "fr": "Vérifie si un lien d'éclairage de passage existe pour ce capteur"
+  },
+  "args": [
+    {
+      "name": "motion_device",
+      "type": "device",
+      "filter": "capabilities=alarm_motion|alarm_human|alarm_presence"
+    }
+  ]
+}

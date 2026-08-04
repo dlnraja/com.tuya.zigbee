@@ -1,0 +1,48 @@
+{
+  "id": "light_smooth_dim",
+  "title": {
+    "en": "Smooth dim to level",
+    "fr": "Variation douce vers un niveau",
+    "nl": "Vloeiend dimmen naar niveau",
+    "de": "Sanft auf Stufe dimmen"
+  },
+  "hint": {
+    "en": "Dims smoothly to a brightness level over the given duration — native ZCL transition when supported, Tuya DP or software ramp otherwise",
+    "fr": "Varie doucement vers un niveau de luminosité sur la durée choisie — transition ZCL native si supportée, sinon DP Tuya ou rampe logicielle"
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "capabilities=dim"
+    },
+    {
+      "name": "target_percent",
+      "type": "number",
+      "title": {
+        "en": "Target (%)",
+        "fr": "Cible (%)"
+      },
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "value": 50
+    },
+    {
+      "name": "duration_seconds",
+      "type": "number",
+      "title": {
+        "en": "Duration (seconds)",
+        "fr": "Durée (secondes)"
+      },
+      "min": 0,
+      "max": 60,
+      "step": 1,
+      "value": 2
+    }
+  ],
+  "titleFormatted": {
+    "en": "Smooth dim [[device]] to [[target_percent]]% over [[duration_seconds]]s",
+    "fr": "Variation douce de [[device]] vers [[target_percent]]% en [[duration_seconds]]s"
+  }
+}

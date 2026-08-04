@@ -1,0 +1,20 @@
+{
+  "id": "circadian_is_enabled",
+  "title": {
+    "en": "Circadian lighting !{{is|is not}} enabled",
+    "fr": "L'éclairage circadien !{{est|n'est pas}} activé",
+    "nl": "Circadiaanse verlichting !{{is|is niet}} ingeschakeld",
+    "de": "Zirkadiane Beleuchtung !{{ist|ist nicht}} aktiviert"
+  },
+  "hint": {
+    "en": "Checks if circadian adaptation is enabled for this light",
+    "fr": "Vérifie si l'adaptation circadienne est activée pour cette lumière"
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "capabilities=light_color_temp|light_hue|dim"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "id": "circadian_apply_now",
+  "title": {
+    "en": "Apply circadian now",
+    "fr": "Appliquer le circadien maintenant",
+    "nl": "Circadiaan nu toepassen",
+    "de": "Zirkadian jetzt anwenden"
+  },
+  "hint": {
+    "en": "Immediately applies the sun-position targets to all enabled lights",
+    "fr": "Applique immédiatement les cibles solaires à toutes les lumières activées"
+  },
+  "args": []
+}

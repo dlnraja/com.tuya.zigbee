@@ -1,0 +1,53 @@
+{
+  "id": "cascade_link",
+  "title": {
+    "en": "Link motion to light (path lighting)",
+    "fr": "Lier le mouvement à une lumière (éclairage de passage)",
+    "nl": "Koppel beweging aan lamp (padverlichting)",
+    "de": "Bewegung mit Licht verknüpfen (Wegbeleuchtung)"
+  },
+  "hint": {
+    "en": "Turns the light on when motion is detected and off automatically after the delay without motion",
+    "fr": "Allume la lumière quand un mouvement est détecté et l'éteint automatiquement après le délai sans mouvement"
+  },
+  "args": [
+    {
+      "name": "motion_device",
+      "type": "device",
+      "filter": "capabilities=alarm_motion|alarm_human|alarm_presence"
+    },
+    {
+      "name": "light_device",
+      "type": "device",
+      "filter": "capabilities=onoff"
+    },
+    {
+      "name": "off_minutes",
+      "type": "number",
+      "title": {
+        "en": "Auto-off delay (minutes)",
+        "fr": "Délai d'extinction (minutes)"
+      },
+      "min": 1,
+      "max": 120,
+      "step": 1,
+      "value": 2
+    },
+    {
+      "name": "dim_percent",
+      "type": "number",
+      "title": {
+        "en": "Brightness (%)",
+        "fr": "Luminosité (%)"
+      },
+      "min": 1,
+      "max": 100,
+      "step": 1,
+      "value": 100
+    }
+  ],
+  "titleFormatted": {
+    "en": "Link [[motion_device]] to [[light_device]] (off after [[off_minutes]] min)",
+    "fr": "Lier [[motion_device]] à [[light_device]] (extinction après [[off_minutes]] min)"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "id": "circadian_disable",
+  "title": {
+    "en": "Disable circadian lighting",
+    "fr": "Désactiver l'éclairage circadien",
+    "nl": "Circadiaanse verlichting uitschakelen",
+    "de": "Zirkadiane Beleuchtung deaktivieren"
+  },
+  "hint": {
+    "en": "Stops sun-position adaptation for this light",
+    "fr": "Arrête l'adaptation à la position du soleil pour cette lumière"
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "capabilities=light_color_temp|light_hue|dim"
+    }
+  ]
+}

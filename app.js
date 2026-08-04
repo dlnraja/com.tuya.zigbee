@@ -487,6 +487,23 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
         logger: (...a) => this.log(...a),
       });
 
+      // v9.0.407 (P92.109): feature fallback router (native→DP→software, tous drivers)
+      const FeatureFallbackRouter = require('./lib/managers/FeatureFallbackRouter');
+      this.featureFallbackRouter = new FeatureFallbackRouter(this.homey, {
+        logger: (...a) => this.log(...a),
+      });
+
+      // v9.0.408 (P92.110): circadian solar engine + motion cascade (path lighting)
+      const CircadianEngine = require('./lib/managers/CircadianEngine');
+      this.circadianEngine = new CircadianEngine(this.homey, {
+        solarElevation: this.solarElevation,
+        logger: (...a) => this.log(...a),
+      });
+      const MotionCascadeManager = require('./lib/managers/MotionCascadeManager');
+      this.motionCascadeManager = new MotionCascadeManager(this.homey, {
+        logger: (...a) => this.log(...a),
+      });
+
       // Register feature flow cards
       this.featureFlowCards = new FeatureFlowCards(this.homey);
       this.featureFlowCards.setSolarElevation(this.solarElevation);
@@ -500,6 +517,9 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
       this.featureFlowCards.setAvailabilityManager(this.availabilityManager);
       this.featureFlowCards.setSensorSuppressionManager(this.sensorSuppressionManager);
       this.featureFlowCards.setPresenceSimulationManager(this.presenceSimulationManager);
+      this.featureFlowCards.setFeatureFallbackRouter(this.featureFallbackRouter);
+      this.featureFlowCards.setCircadianEngine(this.circadianEngine);
+      this.featureFlowCards.setMotionCascadeManager(this.motionCascadeManager);
       this.featureFlowCards.registerAll();
       this.log('✅ Feature modules and flow cards initialized');
     } catch (err) {

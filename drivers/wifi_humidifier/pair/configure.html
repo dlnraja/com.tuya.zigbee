@@ -24,6 +24,14 @@ details{margin-bottom:8px;font-size:11px}details summary{cursor:pointer;font-wei
 </style></head><body>
 <h2>Tuya WiFi Setup</h2>
 <p class="sub">Local-first LAN control. Cloud only if you choose key retrieval.</p>
+
+<!-- v9.0.406: ONE-CLICK AUTO-PAIR -->
+<div class="box" id="auto-box">
+<b>⚡ Automatic pairing (1 click)</b> — uses your saved IoT credentials, scans the LAN and prepares every device automatically. No forms, no QR.
+<button class="btn btn-p" id="btn-auto" onclick="doAutoPair()">⚡ Pair all my devices automatically</button>
+<div class="err" id="auto-err"></div><div class="ok" id="auto-ok"></div>
+</div>
+
 <div class="tabs">
 <div class="tab" data-t="ez">Easy Login</div>
 <div class="tab" data-t="sl">Smart Life Login</div>
@@ -123,6 +131,28 @@ function hide(id){document.getElementById(id).style.display='none'}
 function show(id,msg){var e=document.getElementById(id);e.textContent=msg;e.style.display='block'}
 function spin(id){var b=document.getElementById(id);b.disabled=true;b.dataset.orig=b.innerHTML;b.innerHTML='<span class="sp"></span>Scanning...'}
 function unspin(id){var b=document.getElementById(id);b.disabled=false;b.innerHTML=b.dataset.orig||'Scan'}
+
+function doAutoPair(){
+  hide('auto-err');hide('auto-ok');
+  var btn=document.getElementById('btn-auto');
+  btn.disabled=true;btn.innerHTML='<span class="sp"></span>Pairing in progress…';
+  H.emit('one_click_auto_pair',{},function(err,r){
+    btn.disabled=false;btn.innerHTML='⚡ Pair all my devices automatically';
+    if(err){show('auto-err',err.message||String(err));return}
+    if(!r||!r.success){
+      if(r&&r.error==='missing_credentials'){
+        show('auto-err','No saved IoT credentials. Use Smart Life Login below (one QR scan) or save Access ID/Secret in App Settings once.');
+      }else{
+        show('auto-err',(r&&(r.error||r.message))||'Auto-pair failed');
+      }
+      return;
+    }
+    if(!r.count){show('auto-err','No device found (cloud: '+(r.cloud_count||0)+', LAN: '+(r.lan_count||0)+'). Check that devices are powered and on the same network.');return}
+    done=true;
+    show('auto-ok','✅ '+r.count+' device(s) ready! Click Next to finish.');
+    if(typeof showView==='function'){try{showView('list_devices')}catch(e){}}
+  });
+}
 
 function doEasy(){
   var em=document.getElementById('ez_email').value.trim(),pw=document.getElementById('ez_pw').value.trim();
