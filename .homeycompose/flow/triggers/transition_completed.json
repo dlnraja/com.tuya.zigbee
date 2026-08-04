@@ -10,7 +10,7 @@
     {
       "name": "device",
       "type": "device",
-      "filter": "capabilities=onoff|dim"
+      "filter": "capabilities=onoff"
     }
   ],
   "tokens": [

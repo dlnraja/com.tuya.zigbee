@@ -38,7 +38,7 @@
     {
       "type": "device",
       "name": "device",
-      "filter": "capabilities=tuya_cluster_event|onoff"
+      "filter": "capabilities=tuya_cluster_event"
     }
   ],
   "titleFormatted": {

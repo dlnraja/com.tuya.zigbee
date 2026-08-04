@@ -52,7 +52,7 @@
     {
       "type": "device",
       "name": "device",
-      "filter": "capabilities=tuya_data_report|onoff|measure_temperature"
+      "filter": "capabilities=tuya_dp_value"
     },
     {
       "name": "dp",
