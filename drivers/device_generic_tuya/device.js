@@ -14,7 +14,7 @@ const ENERGY_DP_MAP = {
 class GenericTuyaDevice extends TuyaSpecificClusterDevice {
   async onNodeInit({ zclNode }) {
     await super.onNodeInit({ zclNode });
-    // v5.12.56 (P92.124): the DIY capabilities (tuya_dp_value/string/raw/
+    // v9.0.416 (P92.124): the DIY capabilities (tuya_dp_value/string/raw/
     // cluster_event) were declared but the bridge that serves them was
     // never instantiated — dead caps on the DIY driver itself.
     try {
@@ -37,7 +37,7 @@ class GenericTuyaDevice extends TuyaSpecificClusterDevice {
        capability,
        deviceId: this.getData()?.id || '',
      });
-     this.setCapabilityValue(capability, value).catch(err => this.error(`Failed to set ${capability}:`, err));
+     this.safeSetCapabilityValue(capability, value).catch(err => this.error(`Failed to set ${capability}:`, err));
   }
 }
 

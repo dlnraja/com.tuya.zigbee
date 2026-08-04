@@ -5,7 +5,7 @@ const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 
 class DimmerWallSwitchDevice extends PhysicalButtonMixin(ZigBeeDevice) {
 
-  // v5.12.51 (P92): Energy scaling note (CI gate check-energy-divisor).
+  // v9.0.411 (P92): Energy scaling note (CI gate check-energy-divisor).
   // This driver has no local Tuya-DP or ZCL energy code path: `measure_power`
   // is populated by Homey's approximated energy (driver.compose.json
   // capabilitiesOptions.measure_power "approximated": true). If ZCL energy
@@ -20,7 +20,7 @@ class DimmerWallSwitchDevice extends PhysicalButtonMixin(ZigBeeDevice) {
     await super.onNodeInit({ zclNode });
     this.log('Dimmer Wall Switch v5.9.12 Ready');
 
-    // v5.12.51 (P92.119): UI maintenance buttons — this driver extends
+    // v9.0.411 (P92.119): UI maintenance buttons — this driver extends
     // ZigBeeDevice directly, so the universal TuyaZigbeeDevice button
     // listeners do not apply here.
     for (const [cap, epNum] of [['button.1', 1], ['button.toggle_1', 1], ['button.toggle_2', 2]]) {
@@ -34,7 +34,7 @@ class DimmerWallSwitchDevice extends PhysicalButtonMixin(ZigBeeDevice) {
             await cluster.toggle();
             const onoffCap = epNum === 1 ? 'onoff' : `onoff.gang${epNum}`;
             if (this.hasCapability(onoffCap)) {
-              await this.setCapabilityValue(onoffCap, this.getCapabilityValue(onoffCap) !== true)
+              await this.safeSetCapabilityValue(onoffCap, this.getCapabilityValue(onoffCap) !== true)
                 .catch(() => {});
             }
           } else {
