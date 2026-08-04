@@ -115,7 +115,8 @@ describe('SmartLife/Tuya WiFi regressions', () => {
     await discovery.start();
     await discovery.stop();
 
-    assert.strictEqual(boundPorts, 3);
+    // 6666 (plaintext) + 6667 (ECB) + 6668 (GCM) + 7000 (legacy 3.1, TinyTuya)
+    assert.strictEqual(boundPorts, 4);
   });
 
   it('stamps manually paired Tuya WiFi devices as local-first ad-hoc without cloud fallback', () => {

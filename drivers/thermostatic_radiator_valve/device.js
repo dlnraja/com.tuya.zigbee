@@ -53,7 +53,7 @@ class ThermostaticRadiatorValve extends TuyaThermostatEnhancedMixin(TuyaSpecific
     setWindowOpen(state) {
         this.debug(`Window open action received on '${  this.getName()  }' Value:`, state);
         this.writeBool(THERMOSTAT_DATA_POINTS.windowDetection, state)
-            .catch(this.log);
+            .catch((err) => this.log('setWindowOpen failed:', err && err.message || err));
     }
 
     getWindowOpen() {

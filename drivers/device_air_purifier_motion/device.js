@@ -21,20 +21,29 @@ class AirPurifierDevice extends TuyaSpecificClusterDevice {
   handleTuyaDataReport(data) {
     if (!data || data.dp === null || data.dp === undefined) {return;}
     const v = data.data ?? data.value;
+    // v9.0.404: real flow card IDs (the previous ones did not exist; the pm25
+    // branch even referenced an out-of-scope `id` via the private _getFlowCard)
+    const CARD_ON = 'device_air_purifier_motion_air_purifier_moti_84e10';
+    const CARD_OFF = 'device_air_purifier_motion_air_purifier_moti_47f14';
+    const CARD_PM25 = 'device_air_purifier_motion_air_purifier_moti_19b0d';
+    const fire = (cardId, tokens = {}) => {
+      try {
+        this.homey.flow.getDeviceTriggerCard(cardId)?.trigger(this, tokens, {}).catch((err) => this.error(err));
+      } catch (e) { this.log('[FLOW]', cardId, e.message); }
+    };
     if (data.dp === DP.state) {
       const s = Boolean(v);
       if (this._lastOnoff !== s ) {
         this._lastOnoff = s;
         this['safeSetCapabilityValue']('onoff', s).catch(() => {});
-        const id = s ? 'air_purifier_turned_on' : 'air_purifier_turned_off';
-      this.homey.flow.getDeviceTriggerCard(id)?.trigger(this, {}, {}).catch((err) => this.error(err))
+        fire(s ? CARD_ON : CARD_OFF);
       }
     } else if (data.dp === DP.pm25) {
       const pm = typeof v === 'number' ? v : parseInt(v);
       if (this._lastPm25 !== pm) {
         this._lastPm25 = pm;
         this.safeSetCapabilityValue('measure_pm25', pm).catch(() => {});
-        this.homey.flow._getFlowCard(id).trigger(this, { pm25: pm }, {}).catch(() => {});
+        fire(CARD_PM25, { pm25: pm });
       }
     } else if (data.dp === DP.speed) {
       const spd = typeof v === 'number' ? v : parseInt(v);
