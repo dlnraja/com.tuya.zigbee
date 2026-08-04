@@ -123310,7 +123310,10 @@
         }
       ],
       "id": "air_purifier",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -123418,6 +123421,9 @@
           "_hybrid_air_purifier_climate_needs_device_assignment",
           "_HYBRID_AIR_PURIFIER_CLIMATE_NEEDS_DEVICE_ASSIGNMENT"
         ]
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -123820,6 +123826,9 @@
           "_GENERIC_AIR_PURIFIER_CONTACT",
           "_generic_air_purifier_contact"
         ]
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -123977,6 +123986,9 @@
             "fr": "Bouton 1"
           }
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -124356,6 +124368,9 @@
           "catchall": true,
           "reason": "Fallback for unmatched devices with PIDs: TS0601"
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -124460,6 +124475,9 @@
           "_hybrid_air_purifier_din_needs_device_assignment",
           "_HYBRID_AIR_PURIFIER_DIN_NEEDS_DEVICE_ASSIGNMENT"
         ]
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -124568,6 +124586,9 @@
           "_hybrid_air_purifier_lcdtemphumidsensor_needs_device_assignment",
           "_HYBRID_AIR_PURIFIER_LCDTEMPHUMIDSENSOR_NEEDS_DEVICE_ASSIGNMENT"
         ]
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -124702,6 +124723,9 @@
           "catchall": true,
           "reason": "Fallback for unmatched devices with PIDs: TS0601, TS0225, Excellux, TS0207, TS0001"
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -125356,7 +125380,10 @@
         "actions": []
       },
       "id": "air_purifier_presence",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -125597,6 +125624,9 @@
           "_GENERIC_AIR_PURIFIER_QUALITY",
           "_generic_air_purifier_quality"
         ]
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -125698,6 +125728,9 @@
           "_hybrid_air_purifier_siren_needs_device_assignment",
           "_HYBRID_AIR_PURIFIER_SIREN_NEEDS_DEVICE_ASSIGNMENT"
         ]
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -125992,6 +126025,9 @@
           "catchall": true,
           "reason": "Fallback for unmatched devices with PIDs: TS0601, TS0001"
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -126739,7 +126775,10 @@
         "actions": []
       },
       "id": "air_purifier_switch",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -127650,6 +127689,9 @@
           "catchall": true,
           "reason": "Fallback for unmatched devices with PIDs: TS0601, TS1201"
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -127724,7 +127766,10 @@
         "zigbee"
       ],
       "id": "boiler_switch_energy",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -128255,7 +128300,10 @@
         }
       ],
       "id": "bulb_dimmable",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -128649,6 +128697,9 @@
           "catchall": true,
           "reason": "Fallback for unmatched devices with PIDs: TS1101, TS110E, TS110F, TS0052"
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -129149,7 +129200,10 @@
         }
       ],
       "id": "bulb_rgb",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -129660,6 +129714,9 @@
           "catchall": true,
           "reason": "Fallback for unmatched devices with PIDs: TS0505B"
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -130123,6 +130180,9 @@
           "_hybrid_bulb_rgb_rgbw_needs_device_assignment",
           "_HYBRID_BULB_RGB_RGBW_NEEDS_DEVICE_ASSIGNMENT"
         ]
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -130576,7 +130636,10 @@
         }
       ],
       "id": "bulb_rgbw",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "id": "bulb_rgbw_universal",
@@ -130748,7 +130811,10 @@
           }
         }
       ],
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -131131,7 +131197,10 @@
         }
       ],
       "id": "bulb_tunable_white",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -131469,7 +131538,10 @@
         }
       ],
       "id": "bulb_white",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -137676,6 +137748,9 @@
           "_hybrid_button_wireless_fingerbot_needs_device_assignment",
           "_HYBRID_BUTTON_WIRELESS_FINGERBOT_NEEDS_DEVICE_ASSIGNMENT"
         ]
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -138310,7 +138385,10 @@
         }
       ],
       "id": "button_wireless_plug",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -139872,6 +139950,9 @@
           "_GENERIC_BUTTON_WIRELESS_SWITCH",
           "_generic_button_wireless_switch"
         ]
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -140177,6 +140258,9 @@
           "_GENERIC_BUTTON_WIRELESS_USB",
           "_generic_button_wireless_usb"
         ]
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -140558,6 +140642,9 @@
           "_hybrid_button_wireless_valve_needs_device_assignment",
           "_HYBRID_BUTTON_WIRELESS_VALVE_NEEDS_DEVICE_ASSIGNMENT"
         ]
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -140961,7 +141048,10 @@
         "actions": []
       },
       "id": "button_wireless_wall",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -141293,7 +141383,10 @@
         }
       ],
       "id": "ceiling_fan",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "id": "christmas_lights",
@@ -141376,6 +141469,9 @@
             "fr": "Bouton 1"
           }
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -144140,9 +144236,7 @@
           "_tze284_UO8QCAGC",
           "_tze284_V5XJYPHJ",
           "_tz3000_UBUIKMGO",
-          "_tze204_KWI6BBK4",
-          "_TYZB01_ujfk3xd9",
-          "_tyzb01_ujfk3xd9"
+          "_tze204_KWI6BBK4"
         ],
         "productId": [
           "01MINIZB",
@@ -145381,6 +145475,9 @@
           "catchall": true,
           "reason": "Fallback for unmatched devices with PIDs: TS0601, TS0201, Excellux"
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -146523,6 +146620,9 @@
         "measure_power": {
           "approximated": true
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -147221,7 +147321,10 @@
         "actions": []
       },
       "id": "climate_sensor_presence",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -148128,6 +148231,9 @@
           "_hybrid_climate_sensor_switch_needs_device_assignment",
           "_HYBRID_CLIMATE_SENSOR_SWITCH_NEEDS_DEVICE_ASSIGNMENT"
         ]
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -149475,6 +149581,9 @@
         "measure_power": {
           "approximated": true
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -150142,6 +150251,9 @@
         "measure_power": {
           "approximated": true
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -150885,6 +150997,9 @@
           "_hybrid_contact_sensor_switch_needs_device_assignment",
           "_HYBRID_CONTACT_SENSOR_SWITCH_NEEDS_DEVICE_ASSIGNMENT"
         ]
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -153482,6 +153597,9 @@
             "fr": "Bouton 1"
           }
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -153675,7 +153793,10 @@
         "cumulativeExportedCapability": "meter_power.exported"
       },
       "id": "device_air_purifier_din",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -153806,7 +153927,10 @@
       },
       "settings": [],
       "id": "device_air_purifier_floor",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -153925,7 +154049,10 @@
       },
       "settings": [],
       "id": "device_air_purifier_humidifier",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -154265,7 +154392,10 @@
         "actions": []
       },
       "id": "device_air_purifier_led",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -154382,6 +154512,9 @@
           "catchall": true,
           "reason": "Fallback for unmatched devices with PIDs: TS0601, TS0225, Excellux, TS0207, TS0001"
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -154696,7 +154829,10 @@
         "actions": []
       },
       "id": "device_air_purifier_plug",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -155352,7 +155488,10 @@
         "actions": []
       },
       "id": "device_air_purifier_presence",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -155722,7 +155861,10 @@
         "actions": []
       },
       "id": "device_air_purifier_quality",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -156077,6 +156219,9 @@
             "fr": "Bouton 1"
           }
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -156361,7 +156506,10 @@
         "actions": []
       },
       "id": "device_air_purifier_siren",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -156486,7 +156634,10 @@
       },
       "settings": [],
       "id": "device_air_purifier_smart",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -156816,6 +156967,9 @@
           "_GENERIC_DEVICE_AIR_PURIFIER_SMOKE",
           "_generic_device_air_purifier_smoke"
         ]
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -157110,6 +157264,9 @@
           "_GENERIC_DEVICE_AIR_PURIFIER_SOIL",
           "_generic_device_air_purifier_soil"
         ]
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -157209,6 +157366,9 @@
             "fr": "Bouton 1"
           }
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -157460,6 +157620,9 @@
           "_GENERIC_DEVICE_AIR_PURIFIER_WATER",
           "_generic_device_air_purifier_water"
         ]
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -158300,7 +158463,10 @@
         }
       ],
       "id": "device_floor_heating",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -158423,6 +158589,9 @@
           "_hybrid_device_floor_heating_thermostat_needs_device_assignment",
           "_HYBRID_DEVICE_FLOOR_HEATING_THERMOSTAT_NEEDS_DEVICE_ASSIGNMENT"
         ]
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -158530,6 +158699,9 @@
           "_GENERIC_DEVICE_GENERIC_DIY_UNIVERSAL",
           "_generic_device_generic_diy_universal"
         ]
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -158646,7 +158818,10 @@
         "actions": []
       },
       "settings": [],
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -159509,6 +159684,9 @@
         "measure_power": {
           "approximated": true
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -160179,6 +160357,9 @@
         "measure_power": {
           "approximated": true
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -160874,6 +161055,9 @@
         "measure_power": {
           "approximated": true
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -161547,6 +161731,9 @@
         "measure_power": {
           "approximated": true
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -162297,10 +162484,7 @@
           "_TZE200_bvu2wnxz",
           "_TZE200_hvaxb2tc",
           "_tze200_BVU2WNXZ",
-          "_tze200_HVAXB2TC",
-          "_TZE200_AOCLFNXZ",
-          "_TZE200_B6WAX7G0",
-          "_TZE200_2EKUZ3DZ"
+          "_tze200_HVAXB2TC"
         ],
         "productId": [
           "0x8040",
@@ -162720,6 +162904,9 @@
             "fr": "Bouton 1"
           }
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -162984,7 +163171,10 @@
       "_notes": [
         "// FIX-EMPTY-MFR-AGGREGATEERROR: 2026-07-12 — placeholder added to prevent server-side build crash"
       ],
-      "settings": []
+      "settings": [],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "class": "light",
@@ -163088,7 +163278,10 @@
         ]
       },
       "version": "1.0.0",
-      "settings": []
+      "settings": [],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -163195,7 +163388,10 @@
         "zigbee"
       ],
       "id": "dimmer_0_10v",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "id": "dimmer_1_gang",
@@ -163334,7 +163530,10 @@
           }
         }
       },
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "id": "dimmer_1_gang_2",
@@ -163432,7 +163631,10 @@
           "reason": "Fallback for unmatched devices with PIDs: TS110E, TS0601, TS0505B, TS0215A, TS0002, TS0003, TS0012, TS0013, TS0001, TS0726, TS0052"
         }
       },
-      "settings": []
+      "settings": [],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "id": "dimmer_1_gang_tuya",
@@ -163533,7 +163735,10 @@
           "reason": "Fallback for unmatched devices with PIDs: TS110F, TS110E, TS0052, TS0601, TS0505B, TS0215A, TS0002, TS0003, TS0012, TS0013, TS0001, TS0726"
         }
       },
-      "settings": []
+      "settings": [],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "id": "dimmer_2_gang",
@@ -163695,7 +163900,10 @@
         ]
       },
       "version": "1.0.0",
-      "settings": []
+      "settings": [],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "id": "dimmer_2_gang_tuya",
@@ -163845,7 +164053,10 @@
         }
       },
       "version": "1.0.0",
-      "settings": []
+      "settings": [],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -164001,7 +164212,10 @@
         }
       ],
       "id": "dimmer_3gang",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -164116,7 +164330,10 @@
         "zigbee"
       ],
       "id": "dimmer_4ch",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -164503,7 +164720,10 @@
         "actions": []
       },
       "id": "dimmer_air_purifier",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -164867,7 +165087,10 @@
         }
       },
       "id": "dimmer_bulb_dimmable",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -164999,7 +165222,10 @@
         }
       ],
       "id": "dimmer_dual_channel",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "id": "dimmer_ts110e",
@@ -165127,7 +165353,10 @@
         "conditions": [],
         "actions": []
       },
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -165710,7 +165939,10 @@
         }
       ],
       "id": "dimmer_wall_1gang",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -165996,6 +166228,9 @@
           "_tz3000_ga5shatp",
           "_tz3000_GA5SHATP"
         ]
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -166650,6 +166885,9 @@
           "_hybrid_dimmer_wall_switch_needs_device_assignment",
           "_HYBRID_DIMMER_WALL_SWITCH_NEEDS_DEVICE_ASSIGNMENT"
         ]
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -167032,6 +167270,9 @@
           "_hybrid_dimmer_wall_water_needs_device_assignment",
           "_HYBRID_DIMMER_WALL_WATER_NEEDS_DEVICE_ASSIGNMENT"
         ]
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -167407,7 +167648,10 @@
         }
       ],
       "id": "din_rail_switch",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -168034,7 +168278,10 @@
         }
       ],
       "id": "diy_custom_zigbee",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -169805,7 +170052,10 @@
             "max": 86400
           }
         }
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "id": "double_power_point_2",
@@ -169891,7 +170141,10 @@
         ]
       },
       "version": "1.0.0",
-      "settings": []
+      "settings": [],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -170075,7 +170328,10 @@
         "zigbee"
       ],
       "id": "energy_meter_din",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -170231,7 +170487,10 @@
         }
       ],
       "id": "fan_controller",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "id": "fingerbot",
@@ -170423,6 +170682,9 @@
             "fr": "Bouton 1"
           }
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -171179,7 +171441,10 @@
         "actions": []
       },
       "id": "fingerbot_switch",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -171508,7 +171773,10 @@
         }
       ],
       "id": "floor_heating_thermostat",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -173387,7 +173655,10 @@
         }
       ],
       "id": "gas_sensor_switch",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -173678,7 +173949,10 @@
         }
       ],
       "id": "gateway_zigbee_bridge",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -175286,7 +175560,10 @@
         }
       ],
       "id": "humidifier",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -175700,7 +175977,10 @@
         }
       ],
       "id": "hvac_air_conditioner",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -175827,7 +176107,10 @@
         }
       ],
       "id": "hvac_controller",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -176214,7 +176497,10 @@
         }
       ],
       "id": "hvac_dehumidifier",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -176385,7 +176671,10 @@
         }
       ],
       "id": "hybrid_fan_sensor",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -176539,7 +176828,10 @@
         }
       ],
       "id": "hybrid_garage_door_sensor",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -176706,7 +176998,10 @@
         }
       ],
       "id": "hybrid_heater_thermostat",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -176853,7 +177148,10 @@
         }
       ],
       "id": "hybrid_light_sensor",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -176991,7 +177289,10 @@
         }
       ],
       "id": "hybrid_light_windowcoverings",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -177341,7 +177642,10 @@
         }
       ],
       "id": "hybrid_switch_sensor",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -177747,7 +178051,10 @@
         }
       ],
       "id": "ir_blaster",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -177910,6 +178217,9 @@
             ]
           }
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -179072,7 +179382,10 @@
         }
       ],
       "id": "lcdtemphumidsensor_plug_energy",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -179187,7 +179500,10 @@
         }
       ],
       "id": "led_controller_cct",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -179291,7 +179607,10 @@
         }
       ],
       "id": "led_controller_dimmable",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -179391,7 +179710,10 @@
         }
       ],
       "id": "led_controller_rgb",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -179736,7 +180058,10 @@
         }
       ],
       "id": "led_strip",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -180077,7 +180402,10 @@
         }
       ],
       "id": "led_strip_advanced",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -180487,7 +180815,10 @@
         }
       ],
       "id": "led_strip_rgbw",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -180921,7 +181252,10 @@
         }
       },
       "id": "light_bulb_dimmable_tunable",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -181515,7 +181849,10 @@
         }
       },
       "id": "light_bulb_rgb",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -182078,7 +182415,10 @@
       "version": "1.0.0",
       "_notes": [
         "// FIX-EMPTY-MFR-AGGREGATEERROR: 2026-07-12 — placeholder added to prevent server-side build crash"
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -182686,7 +183026,10 @@
         }
       ],
       "id": "light_bulb_rgb_rgbw",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -183049,7 +183392,10 @@
         }
       },
       "id": "light_bulb_tunable_white",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -184011,7 +184357,10 @@
         }
       ],
       "id": "module_mini_switch",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -186076,7 +186425,10 @@
         "actions": []
       },
       "id": "motion_sensor_switch",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "id": "outdoor_2_socket",
@@ -186246,7 +186598,10 @@
             "max": 86400
           }
         }
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "id": "outdoor_plug",
@@ -186316,7 +186671,10 @@
           "reason": "Fallback for unmatched devices with PIDs: TS0101"
         }
       },
-      "settings": []
+      "settings": [],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -187006,7 +187364,10 @@
       "_notes": [
         "// FIX-EMPTY-MFR-AGGREGATEERROR: 2026-07-12 — placeholder added to prevent server-side build crash"
       ],
-      "settings": []
+      "settings": [],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -187680,7 +188041,10 @@
         }
       ],
       "id": "plug_energy_monitor",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -188392,6 +188756,9 @@
         "measure_power": {
           "approximated": true
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -189132,6 +189499,9 @@
           "_hybrid_plug_smart_switch_needs_device_assignment",
           "_HYBRID_PLUG_SMART_SWITCH_NEEDS_DEVICE_ASSIGNMENT"
         ]
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -189239,6 +189609,9 @@
             "fr": "Bouton 1"
           }
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -190374,7 +190747,10 @@
         }
       ],
       "id": "presence_sensor_ceiling",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -191322,7 +191698,10 @@
         }
       ],
       "id": "presence_sensor_radar",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "id": "radar_sensor",
@@ -192192,7 +192571,10 @@
         }
       ],
       "id": "radiator_controller",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -193312,7 +193694,10 @@
       "version": "1.0.0",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -193459,7 +193844,10 @@
         }
       ],
       "id": "radiator_wifi_tuya",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -193660,7 +194048,10 @@
           }
         }
       },
-      "settings": []
+      "settings": [],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "id": "relay_board_2_channel",
@@ -193759,7 +194150,10 @@
           }
         }
       },
-      "settings": []
+      "settings": [],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "id": "relay_board_4_channel",
@@ -193929,7 +194323,10 @@
           }
         }
       },
-      "settings": []
+      "settings": [],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "id": "remote_button_emergency_sos",
@@ -195340,6 +195737,9 @@
           "_hybrid_remote_button_wireless_fingerbot_needs_device_assignment",
           "_HYBRID_REMOTE_BUTTON_WIRELESS_FINGERBOT_NEEDS_DEVICE_ASSIGNMENT"
         ]
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -196272,6 +196672,9 @@
           "_GENERIC_REMOTE_BUTTON_WIRELESS_PLUG",
           "_generic_remote_button_wireless_plug"
         ]
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -197275,6 +197678,9 @@
           "_TZ3000_m0vaazab",
           "_tz3000_M0VAAZAB"
         ]
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -197653,6 +198059,9 @@
           "_hybrid_remote_button_wireless_valve_needs_device_assignment",
           "_HYBRID_REMOTE_BUTTON_WIRELESS_VALVE_NEEDS_DEVICE_ASSIGNMENT"
         ]
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -198236,7 +198645,10 @@
         }
       },
       "version": "1.0.0",
-      "settings": []
+      "settings": [],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "class": "light",
@@ -198327,7 +198739,10 @@
         }
       },
       "version": "1.0.0",
-      "settings": []
+      "settings": [],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "class": "light",
@@ -198405,7 +198820,10 @@
         }
       },
       "version": "1.0.0",
-      "settings": []
+      "settings": [],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "class": "light",
@@ -198483,7 +198901,10 @@
         }
       },
       "version": "1.0.0",
-      "settings": []
+      "settings": [],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "class": "light",
@@ -198562,7 +198983,10 @@
         }
       },
       "version": "1.0.0",
-      "settings": []
+      "settings": [],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "class": "light",
@@ -198651,7 +199075,10 @@
       "_notes": [
         "// FIX-EMPTY-MFR-AGGREGATEERROR: 2026-07-12 — placeholder added to prevent server-side build crash"
       ],
-      "settings": []
+      "settings": [],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "class": "light",
@@ -198740,7 +199167,10 @@
         }
       },
       "version": "1.0.0",
-      "settings": []
+      "settings": [],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "class": "light",
@@ -198822,7 +199252,10 @@
       "_notes": [
         "// FIX-EMPTY-MFR-AGGREGATEERROR: 2026-07-12 — placeholder added to prevent server-side build crash"
       ],
-      "settings": []
+      "settings": [],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "class": "light",
@@ -198901,7 +199334,10 @@
         }
       },
       "version": "1.0.0",
-      "settings": []
+      "settings": [],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "class": "light",
@@ -198979,7 +199415,10 @@
         }
       },
       "version": "1.0.0",
-      "settings": []
+      "settings": [],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "class": "light",
@@ -199064,7 +199503,10 @@
       "_notes": [
         "// FIX-EMPTY-MFR-AGGREGATEERROR: 2026-07-12 — placeholder added to prevent server-side build crash"
       ],
-      "settings": []
+      "settings": [],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -204717,6 +205159,9 @@
         "measure_power": {
           "approximated": true
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -208346,7 +208791,10 @@
         }
       ],
       "id": "sensor_illuminance_presence",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -211447,7 +211895,10 @@
         }
       ],
       "id": "siren",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "id": "siren_sirentemphumidsensor",
@@ -211569,7 +212020,10 @@
           }
         }
       ],
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "id": "sirentemphumidsensor",
@@ -211938,7 +212392,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "id": "slim_motion_sensor",
@@ -212250,7 +212707,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "id": "smart_air_detection_box",
@@ -212435,7 +212895,10 @@
         }
       ],
       "id": "smart_breaker",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "id": "smart_button_switch",
@@ -212810,7 +213273,10 @@
             "max": 99
           }
         }
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -212898,6 +213364,9 @@
             "fr": "Bouton 1"
           }
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -213142,7 +213611,10 @@
         }
       ],
       "id": "smart_heater_controller",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -213216,7 +213688,10 @@
         "zigbee"
       ],
       "id": "smart_irrigation_valve",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -213977,6 +214452,9 @@
             "fr": "Bouton 1"
           }
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -214615,7 +215093,10 @@
           }
         }
       },
-      "settings": []
+      "settings": [],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "id": "smartplug",
@@ -214845,7 +215326,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "id": "smartplug_2_socket",
@@ -215098,7 +215582,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -215932,7 +216419,10 @@
         }
       },
       "version": "1.0.0",
-      "settings": []
+      "settings": [],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "id": "socket_power_strip_four",
@@ -216109,7 +216599,10 @@
         }
       },
       "version": "1.0.0",
-      "settings": []
+      "settings": [],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "id": "socket_power_strip_four_three",
@@ -216259,7 +216752,10 @@
         }
       },
       "version": "1.0.0",
-      "settings": []
+      "settings": [],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "id": "socket_power_strip_four_two",
@@ -216436,7 +216932,10 @@
           "reason": "Fallback for unmatched devices with PIDs: TS0111, TS0101, TS0601, TS011F, S26R2ZB, S31 Lite zb, S40LITE, S60ZBTPF, S60ZBTPG"
         }
       },
-      "settings": []
+      "settings": [],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -216687,11 +217186,7 @@
           "_tze2841000000_TGRZPQF4",
           "HOBEIAN",
           "hobeian",
-          "Hobeian",
-          "_TZE284_awepdiwi",
-          "_tze284_awepdiwi",
-          "_TZE284_ga1maeof",
-          "_tze284_ga1maeof"
+          "Hobeian"
         ],
         "productId": [
           "0x8040",
@@ -217986,6 +218481,9 @@
           "_GENERIC_SWITCH",
           "_generic_switch"
         ]
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -218066,6 +218564,9 @@
             "de": "Batterie"
           }
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -218278,7 +218779,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "class": "socket",
@@ -220897,6 +221401,9 @@
             ]
           }
         ]
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -221000,8 +221507,7 @@
           "_tz3000_F09J9QJB",
           "_tyzb01_ANEIICMQ",
           "_tyzb01_ZSL6Z0PW",
-          "_tyzb01_NCUTBJDI",
-          "_TZ3000_v4l4b0lp"
+          "_tyzb01_NCUTBJDI"
         ]
       },
       "version": "1.0.0",
@@ -221027,7 +221533,10 @@
           }
         }
       },
-      "settings": []
+      "settings": [],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "id": "switch_2_gang_metering",
@@ -221226,7 +221735,10 @@
             "max": 86400
           }
         }
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "class": "socket",
@@ -222096,7 +222608,10 @@
         }
       ],
       "id": "switch_2gang",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "id": "switch_3_gang",
@@ -222238,7 +222753,10 @@
           }
         }
       },
-      "settings": []
+      "settings": [],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "class": "socket",
@@ -223143,7 +223661,10 @@
         }
       ],
       "id": "switch_3gang",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "id": "switch_4_gang_metering",
@@ -223426,7 +223947,10 @@
             "max": 86400
           }
         }
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "class": "socket",
@@ -224413,7 +224937,10 @@
         }
       ],
       "id": "switch_4gang",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -224728,7 +225255,10 @@
         }
       ],
       "id": "switch_dimmer_1gang",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -225036,6 +225566,9 @@
             "de": "Batterie"
           }
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -225357,7 +225890,10 @@
         }
       ],
       "id": "switch_plug_2",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -225477,7 +226013,10 @@
         }
       ],
       "id": "switch_temp_sensor",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "class": "socket",
@@ -225683,6 +226222,9 @@
         "batteries": [
           "CR2032"
         ]
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -226420,6 +226962,9 @@
           "_hybrid_switch_wall_needs_device_assignment",
           "_HYBRID_SWITCH_WALL_NEEDS_DEVICE_ASSIGNMENT"
         ]
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -227075,6 +227620,9 @@
           "_GENERIC_SWITCH_WALL_5GANG",
           "_generic_switch_wall_5gang"
         ]
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -227765,7 +228313,10 @@
         }
       ],
       "id": "switch_wall_6gang",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -228297,7 +228848,10 @@
         }
       ],
       "id": "switch_wall_7gang",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -228788,7 +229342,10 @@
         }
       ],
       "id": "switch_wall_8gang",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -228873,9 +229430,7 @@
           "_tze200_UEBOJRAA",
           "_tze200_VZEKYI4C",
           "_tze200_YOJQA8XN",
-          "_tz3000_IXLA93VD",
-          "_TZE200_RJXQSO4A",
-          "_TZE200_IKVNCLUO"
+          "_tz3000_IXLA93VD"
         ],
         "productId": [
           "TS0601_wirelesssw",
@@ -230283,7 +230838,10 @@
         }
       ],
       "id": "thermostat_4ch",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -230660,6 +231218,9 @@
             "fr": "Bouton 1"
           }
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -231246,7 +231807,10 @@
       "_notes": [
         "// FIX-EMPTY-MFR-AGGREGATEERROR: 2026-07-12 — placeholder added to prevent server-side build crash"
       ],
-      "settings": []
+      "settings": [],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "class": "light",
@@ -231323,7 +231887,10 @@
         }
       },
       "version": "1.0.0",
-      "settings": []
+      "settings": [],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "class": "light",
@@ -231400,7 +231967,10 @@
         }
       },
       "version": "1.0.0",
-      "settings": []
+      "settings": [],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "id": "tuya_dummy_device",
@@ -232158,7 +232728,10 @@
         "actions": []
       },
       "settings": [],
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -232406,7 +232979,10 @@
         }
       ],
       "id": "usb_dongle_dual_repeater",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -232867,6 +233443,9 @@
             ]
           }
         ]
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -233475,7 +234054,10 @@
         }
       ],
       "id": "usb_outlet_advanced",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -233789,7 +234371,10 @@
         }
       ],
       "id": "valve_irrigation",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -233883,6 +234468,9 @@
             "fr": "Bouton 1"
           }
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -233947,9 +234535,7 @@
           "_tz3000_wpueorev",
           "_TYZB01_4tlksk8a",
           "_tyzb01_4TLKSK8A",
-          "_tz3000_WPUEOREV",
-          "_TZ3000_hyarhbyx",
-          "_TZ3000_gjrubzje"
+          "_tz3000_WPUEOREV"
         ]
       },
       "version": "1.0.0",
@@ -233989,7 +234575,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -234738,7 +235327,10 @@
         }
       ],
       "id": "wall_dimmer_1gang_1way",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "id": "wall_dimmer_tuya",
@@ -235296,7 +235888,10 @@
         }
       },
       "version": "1.0.0",
-      "settings": []
+      "settings": [],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "id": "wall_remote_1_gang",
@@ -236533,7 +237128,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "id": "wall_switch_1_gang",
@@ -236644,7 +237242,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "id": "wall_switch_1_gang_tuya",
@@ -236744,7 +237345,10 @@
           }
         }
       },
-      "settings": []
+      "settings": [],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -236906,7 +237510,10 @@
         }
       ],
       "id": "wall_switch_1gang_1way",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "id": "wall_switch_2_gang",
@@ -237046,7 +237653,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -237377,6 +237987,9 @@
             "de": "Batterie"
           }
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -237555,7 +238168,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -237933,6 +238549,9 @@
             "de": "Batterie"
           }
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -238161,7 +238780,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "id": "wall_switch_4_gang_tuya",
@@ -238305,7 +238927,10 @@
           }
         }
       },
-      "settings": []
+      "settings": [],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -238749,6 +239374,9 @@
             "fr": "Bouton 4"
           }
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -238913,10 +239541,7 @@
           "_tze200_FJJBHX9D",
           "_tze200_MEXISFIK",
           "_tze200_P0GZBQCT",
-          "_tyzb01_QEQVMVTI",
-          "_TZE200_7TDTQGWV",
-          "_TZ3000_aetquff4",
-          "_TZ3000_hafsqare"
+          "_tyzb01_QEQVMVTI"
         ]
       },
       "version": "1.0.0",
@@ -238960,7 +239585,10 @@
           }
         }
       },
-      "settings": []
+      "settings": [],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "id": "wall_switch_6_gang_tuya",
@@ -239164,7 +239792,10 @@
           }
         }
       },
-      "settings": []
+      "settings": [],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -239339,7 +239970,10 @@
           }
         }
       },
-      "settings": []
+      "settings": [],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "id": "water_detector",
@@ -240561,7 +241195,10 @@
         }
       ],
       "id": "water_valve_garden",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -240942,7 +241579,10 @@
         }
       ],
       "id": "water_valve_smart",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -241270,6 +241910,9 @@
             "fr": "Bouton 1"
           }
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -241758,7 +242401,10 @@
         }
       ],
       "id": "wifi_camera",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -242074,6 +242720,9 @@
             "fr": "Bouton 1"
           }
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -242230,6 +242879,9 @@
             "fr": "Bouton 1"
           }
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -242681,6 +243333,9 @@
             "fr": "Bouton 1"
           }
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -242812,6 +243467,9 @@
             "fr": "Bouton 1"
           }
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -242959,7 +243617,10 @@
         }
       ],
       "id": "wifi_ewelink_fan",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -243090,6 +243751,9 @@
             "fr": "Bouton 1"
           }
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -243220,6 +243884,9 @@
             "fr": "Bouton 1"
           }
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -243353,6 +244020,9 @@
             "fr": "Bouton 1"
           }
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -243483,6 +244153,9 @@
             "fr": "Bouton 1"
           }
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -243624,7 +244297,10 @@
         }
       ],
       "id": "wifi_ewelink_switch_2ch",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -243777,7 +244453,10 @@
         }
       ],
       "id": "wifi_ewelink_switch_4ch",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -243907,6 +244586,9 @@
             "fr": "Bouton 1"
           }
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -244085,6 +244767,9 @@
             "fr": "Bouton 1"
           }
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -244415,6 +245100,9 @@
             "fr": "Bouton 1"
           }
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -244591,7 +245279,10 @@
         }
       ],
       "id": "wifi_heater",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -244749,6 +245440,9 @@
             "fr": "Bouton 1"
           }
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -244904,6 +245598,9 @@
             "fr": "Bouton 1"
           }
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -245064,6 +245761,9 @@
             "fr": "Bouton 1"
           }
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -245224,6 +245924,9 @@
             "fr": "Bouton 1"
           }
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -245385,6 +246088,9 @@
             "fr": "Bouton 1"
           }
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -245544,6 +246250,9 @@
             "fr": "Bouton 1"
           }
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -245725,7 +246434,10 @@
         }
       ],
       "id": "wifi_power_strip",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -246107,7 +246819,10 @@
         }
       ],
       "id": "wifi_robot_vacuum",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -246433,6 +247148,9 @@
             "fr": "Bouton 1"
           }
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -246563,6 +247281,9 @@
             "fr": "Bouton 1"
           }
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -246707,7 +247428,10 @@
         }
       ],
       "id": "wifi_sonoff_dualr3",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "pair": [
@@ -246837,6 +247561,9 @@
             "fr": "Bouton 1"
           }
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -246967,6 +247694,9 @@
             "fr": "Bouton 1"
           }
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -247097,6 +247827,9 @@
             "fr": "Bouton 1"
           }
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -247231,6 +247964,9 @@
             "fr": "Bouton 1"
           }
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -247361,6 +248097,9 @@
             "fr": "Bouton 1"
           }
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -247494,6 +248233,9 @@
             "fr": "Bouton 1"
           }
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -247624,6 +248366,9 @@
             "fr": "Bouton 1"
           }
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -247765,7 +248510,10 @@
         }
       ],
       "id": "wifi_sonoff_tx_2ch",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "pair": [
@@ -247912,7 +248660,10 @@
         }
       ],
       "id": "wifi_sonoff_tx_3ch",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -248068,6 +248819,9 @@
             "fr": "Bouton 1"
           }
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -248242,7 +248996,10 @@
         }
       ],
       "id": "wifi_switch_2gang",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -248429,7 +249186,10 @@
         }
       ],
       "id": "wifi_switch_3gang",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -248629,7 +249389,10 @@
         }
       ],
       "id": "wifi_switch_4gang",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -248788,6 +249551,9 @@
             "fr": "Bouton 1"
           }
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -249173,6 +249939,9 @@
             "fr": "Bouton 1"
           }
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {

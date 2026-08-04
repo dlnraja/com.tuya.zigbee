@@ -24,11 +24,18 @@ const FALLBACK_DRIVERS = ['universal_fallback', 'generic_tuya', 'universal_zigbe
 //  - HOBEIAN buttons (TS0041A/TS004F, TS0601 ZG-102ZL) → button_wireless_1
 //    (forum #1242, E001 raw path);
 //  - HOBEIAN water leaks (TS0207, ZG-222Z) → water_leak_sensor;
+//  - HOBEIAN soil (ZG-303Z) → soil_sensor; HOBEIAN contact (ZG-301Z) →
+//    sensor_contact_zigbee (Peter #2108, P61);
 //  no HOBEIAN×TS0001 or HOBEIAN×TS0601 water product exists, so the
 //  hobeian×TS0001 / hobeian×TS0601 intersections are theoretical only.
+//  Same for hobeian×TS0041A/TS004F: real HOBEIAN buttons are 1-gang TS0041A
+//  (button_wireless_1); the soil/contact drivers only share the bare-brand
+//  mfr via the cartesian over-approximation, never a real product.
 const DOCUMENTED_EXCEPTIONS = [
-  { mfr: 'hobeian', pid: 'ts0001', drivers: ['button_wireless_1', 'water_leak_sensor'] },
-  { mfr: 'hobeian', pid: 'ts0601', drivers: ['button_wireless_1', 'water_leak_sensor'] },
+  { mfr: 'hobeian', pid: 'ts0001', drivers: ['button_wireless_1', 'soil_sensor', 'water_leak_sensor'] },
+  { mfr: 'hobeian', pid: 'ts0601', drivers: ['button_wireless_1', 'sensor_contact_zigbee', 'soil_sensor', 'water_leak_sensor'] },
+  { mfr: 'hobeian', pid: 'ts0041a', drivers: ['button_wireless_1', 'soil_sensor'] },
+  { mfr: 'hobeian', pid: 'ts004f', drivers: ['button_wireless_1', 'sensor_contact_zigbee'] },
 ];
 
 // Invalid wildcard patterns that should never be used

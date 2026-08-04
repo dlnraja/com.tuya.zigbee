@@ -638,5 +638,8 @@
     }
   ],
   "id": "button_wireless_plug",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "ui": {
+    "quickAction": "onoff"
+  }
 }

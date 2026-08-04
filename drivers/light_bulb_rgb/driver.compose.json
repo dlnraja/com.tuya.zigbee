@@ -593,5 +593,8 @@
     }
   },
   "id": "light_bulb_rgb",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "ui": {
+    "quickAction": "onoff"
+  }
 }

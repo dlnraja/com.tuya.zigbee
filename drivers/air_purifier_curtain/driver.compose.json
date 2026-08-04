@@ -156,5 +156,8 @@
       "getable": false,
       "setable": false
     }
+  },
+  "ui": {
+    "quickAction": "onoff"
   }
 }

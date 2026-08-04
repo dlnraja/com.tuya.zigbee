@@ -1,4 +1,6 @@
 'use strict';
+const { attachTamperListener } = require('../../lib/devices/DoorWindowContactHelper');
+
 const { safeDivide, safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
 const UnifiedThermostatBase = require('../../lib/devices/UnifiedThermostatBase');
 
@@ -100,7 +102,9 @@ class HVACDehumidifierDevice extends UnifiedThermostatBase {
       this.log('Attribute reporting config failed (device may not support it):', err.message);
     }
 
-    await super.onNodeInit({ zclNode });this.log('[DEHUMIDIFIER]  Ready');
+    await super.onNodeInit({ zclNode });
+    // v9.0.418 (P92.126): tamper bit was never fed on this hybrid
+    try { attachTamperListener(this, zclNode); } catch (e) { this.log('[TAMPER] ⚠️ ' + e.message); }this.log('[DEHUMIDIFIER]  Ready');
   }
 
 

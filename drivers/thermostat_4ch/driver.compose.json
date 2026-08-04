@@ -117,5 +117,8 @@
     }
   ],
   "id": "thermostat_4ch",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "ui": {
+    "quickAction": "onoff"
+  }
 }

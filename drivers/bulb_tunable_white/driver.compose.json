@@ -382,5 +382,8 @@
     }
   ],
   "id": "bulb_tunable_white",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "ui": {
+    "quickAction": "onoff"
+  }
 }

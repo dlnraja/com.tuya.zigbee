@@ -764,5 +764,8 @@
     "actions": []
   },
   "id": "fingerbot_switch",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "ui": {
+    "quickAction": "onoff"
+  }
 }

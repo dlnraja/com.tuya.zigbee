@@ -116,5 +116,8 @@
       "catchall": true,
       "reason": "Fallback for unmatched devices with PIDs: TS0601, TS0225, Excellux, TS0207, TS0001"
     }
+  },
+  "ui": {
+    "quickAction": "onoff"
   }
 }

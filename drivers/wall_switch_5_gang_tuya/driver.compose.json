@@ -160,10 +160,7 @@
       "_tze200_FJJBHX9D",
       "_tze200_MEXISFIK",
       "_tze200_P0GZBQCT",
-      "_tyzb01_QEQVMVTI",
-      "_TZE200_7TDTQGWV",
-      "_TZ3000_aetquff4",
-      "_TZ3000_hafsqare"
+      "_tyzb01_QEQVMVTI"
     ]
   },
   "version": "1.0.0",
@@ -221,5 +218,8 @@
       "getable": false,
       "setable": false
     }
+  },
+  "ui": {
+    "quickAction": "onoff"
   }
 }

@@ -393,5 +393,8 @@
       "catchall": true,
       "reason": "Fallback for unmatched devices with PIDs: TS1101, TS110E, TS110F, TS0052"
     }
+  },
+  "ui": {
+    "quickAction": "onoff"
   }
 }

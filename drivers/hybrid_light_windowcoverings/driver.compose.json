@@ -137,5 +137,8 @@
     }
   ],
   "id": "hybrid_light_windowcoverings",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "ui": {
+    "quickAction": "onoff"
+  }
 }

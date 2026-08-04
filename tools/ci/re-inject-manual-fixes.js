@@ -40,6 +40,7 @@ const fs = require('fs');
 const path = require('path');
 
 const ROOT = path.resolve(__dirname, '..', '..');
+const { claimedElsewhere } = require('../../scripts/lib/fp-collision-guard');
 
 const MANUAL_FIXES = [
   {
@@ -353,11 +354,23 @@ function patchFix(fix) {
     return false;
   }
   const mfrs = j.zigbee.manufacturerName;
+  const targetDriver = path.basename(path.dirname(fp));
+  // P92.126 collision guard: skip mfrs another driver already claims
+  // (HOBEIAN exempt — multi-driver by design, see fp-collision-guard.js)
+  const guarded = fix.addIfMissing.filter(m => {
+    if (mfrs.some(x => x.toLowerCase() === m.toLowerCase())) return false; // already here (any case)
+    const owner = claimedElsewhere(ROOT, m, targetDriver);
+    if (owner) {
+      console.log(`  ~ ${fix.id}: skip ${m} — already claimed by ${owner}`);
+      return false;
+    }
+    return true;
+  });
   // P75.26: do NOT short-circuit on match() — the auto-fix-all bot can leave
   // the anchor mfr while removing siblings. We must always check addIfMissing.
   // Add missing fingerprints
   let added = 0;
-  for (const fp of fix.addIfMissing) {
+  for (const fp of guarded) {
     if (!mfrs.includes(fp)) {
       if (fix.addAtTop) {
         mfrs.unshift(fp);

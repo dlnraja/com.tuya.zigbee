@@ -146,5 +146,8 @@
     }
   ],
   "id": "wifi_sonoff_tx_3ch",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "ui": {
+    "quickAction": "onoff"
+  }
 }

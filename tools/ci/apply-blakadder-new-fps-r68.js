@@ -20,6 +20,7 @@ const path = require('path');
 
 const ROOT = path.resolve(__dirname, '..', '..');
 const DRIVERS = path.join(ROOT, 'drivers');
+const { claimedElsewhere } = require('../../scripts/lib/fp-collision-guard');
 
 /* 12 brand-new fingerprints not in any driver — target drivers chosen from Blakadder
    category + Z2M compatibility + existing driver conventions. */
@@ -105,6 +106,12 @@ for (const fp of NEW_FPS) {
   const lower = fp.mfr.toLowerCase();
   const existing = data.zigbee.manufacturerName.find(m => m.toLowerCase() === lower);
   if (existing) continue;
+  // P92.126 collision guard: skip if another driver already claims this mfr
+  const owner = claimedElsewhere(ROOT, fp.mfr, fp.driver);
+  if (owner) {
+    console.log(`~ skip ${fp.mfr} -> ${fp.driver} (already claimed by ${owner})`);
+    continue;
+  }
   // Add canonical case + lowercase variant
   data.zigbee.manufacturerName.push(fp.mfr);
   if (fp.mfr !== fp.mfr.toLowerCase()) {

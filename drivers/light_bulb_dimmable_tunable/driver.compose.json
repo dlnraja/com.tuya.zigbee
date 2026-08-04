@@ -433,5 +433,8 @@
     }
   },
   "id": "light_bulb_dimmable_tunable",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "ui": {
+    "quickAction": "onoff"
+  }
 }

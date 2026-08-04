@@ -1,4 +1,6 @@
 'use strict';
+const { attachTamperListener } = require('../../lib/devices/DoorWindowContactHelper');
+
 const { safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
 
 
@@ -105,6 +107,8 @@ class SmartPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedPlug
 
     // Parent handles onoff listener - DO NOT re-register
     await super.onNodeInit({ zclNode });
+    // v9.0.418 (P92.126): tamper bit was never fed on this hybrid
+    try { attachTamperListener(this, zclNode); } catch (e) { this.log('[TAMPER] ⚠️ ' + e.message); }
     this.log('[PLUG] v5.6.0 - DPs: 1,7,9,17-21,101,102 | ZCL: 6,2820,1794,EF00');
 
     // Setup ZCL energy monitoring (parent doesn't do this)

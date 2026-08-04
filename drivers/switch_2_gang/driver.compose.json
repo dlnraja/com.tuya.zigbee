@@ -99,8 +99,7 @@
       "_tz3000_F09J9QJB",
       "_tyzb01_ANEIICMQ",
       "_tyzb01_ZSL6Z0PW",
-      "_tyzb01_NCUTBJDI",
-      "_TZ3000_v4l4b0lp"
+      "_tyzb01_NCUTBJDI"
     ]
   },
   "version": "1.0.0",
@@ -131,5 +130,8 @@
       "getable": false,
       "setable": false
     }
+  },
+  "ui": {
+    "quickAction": "onoff"
   }
 }

@@ -452,5 +452,8 @@
       "setable": false,
       "maintenanceAction": true
     }
+  },
+  "ui": {
+    "quickAction": "onoff"
   }
 }

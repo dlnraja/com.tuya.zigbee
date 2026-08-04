@@ -405,5 +405,8 @@
     "actions": []
   },
   "id": "button_wireless_wall",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "ui": {
+    "quickAction": "onoff"
+  }
 }

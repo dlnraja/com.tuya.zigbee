@@ -220,5 +220,8 @@
       "maintenanceAction": true,
       "getable": false
     }
+  },
+  "ui": {
+    "quickAction": "onoff"
   }
 }

@@ -13,7 +13,7 @@
     "description": "MFS Unified Database - Manufacturer Fingerprint Schema",
     "generatedAt": "2026-06-19T20:58:49.880Z",
     "generator": "mfs-aggregator v1.0.0",
-    "lastUpdated": "2026-07-29T12:45:27.570Z",
+    "lastUpdated": "2026-08-04T16:12:27.658Z",
     "lastEnrichment": {
       "date": "2026-07-29T01:45:45.427Z",
       "addedToDevices": 0,
@@ -12471,7 +12471,7 @@
       ],
       "variants": [],
       "deviceType": "unknown",
-      "driverHint": "switch_wall_5gang",
+      "driverHint": "switch_1gang",
       "capabilities": [
         "onoff",
         "onoff.gang2",
@@ -120361,7 +120361,7 @@
       ],
       "variants": [],
       "deviceType": "sensor",
-      "driverHint": "ultrasonic_heat_meter",
+      "driverHint": "co_sensor",
       "capabilities": [
         "measure_temperature",
         "meter_power",
@@ -157033,7 +157033,7 @@
     "modelIdsCount": 28
   },
   "_TZE284_AWEPDIWI": {
-    "driverId": "soil_sensor",
+    "driverId": "climate_sensor",
     "source": "p64.4-stale-fix",
     "modelIds": [
       "CK-TLSR8656-SS5-01(7014)",
@@ -169437,7 +169437,7 @@
     "source": "auto-sync"
   },
   "_TZ3000_hafsqare": {
-    "driverId": "gas_sensor_switch",
+    "driverId": "switch_1gang",
     "source": "auto-sync",
     "modelIds": [
       "01MINIZB",
@@ -191734,7 +191734,7 @@
     "modelIdsCount": 5
   },
   "_TZE284_ga1maeof": {
-    "driverId": "soil_sensor",
+    "driverId": "soilsensor",
     "source": "p64.4-stale-fix",
     "modelIds": [
       "Arteco",
@@ -226680,7 +226680,7 @@
     "_tz3000_v4l4b0lp|ts0601": {
       "mfr": "_tz3000_v4l4b0lp",
       "pid": "ts0601",
-      "driver": "switch_1gang",
+      "driver": "switch_3gang",
       "sources": [
         "canonical",
         "mfs_db"
@@ -228632,7 +228632,7 @@
     "_tze200_2ekuz3dz|ts0601": {
       "mfr": "_tze200_2ekuz3dz",
       "pid": "ts0601",
-      "driver": "device_radiator_valve",
+      "driver": "wall_thermostat",
       "sources": [
         "canonical",
         "mfs_db"
@@ -230406,7 +230406,7 @@
     "_tze200_ikvncluo|ts0601": {
       "mfr": "_tze200_ikvncluo",
       "pid": "ts0601",
-      "driver": "dimmer_wall_1gang",
+      "driver": "presence_sensor_radar",
       "sources": [
         "canonical",
         "mfs_db"
@@ -235494,7 +235494,7 @@
     "_tze284_awepdiwi|ts0601": {
       "mfr": "_tze284_awepdiwi",
       "pid": "ts0601",
-      "driver": "soil_sensor",
+      "driver": "climate_sensor",
       "sources": [
         "canonical",
         "mfs_db",
@@ -237397,7 +237397,7 @@
     "_tz3000_hyarhbyx|ts0601": {
       "mfr": "_tz3000_hyarhbyx",
       "pid": "ts0601",
-      "driver": "illuminance_sensor",
+      "driver": "switch_1gang",
       "sources": [
         "canonical"
       ],
@@ -237714,7 +237714,7 @@
     "_tze200_b6wax7g0|ts0601": {
       "mfr": "_tze200_b6wax7g0",
       "pid": "ts0601",
-      "driver": "generic_tuya",
+      "driver": "smart_lcd_thermostat",
       "sources": [
         "canonical",
         "mfs_db"
@@ -243498,7 +243498,7 @@
     "_tz3000_hafsqare|ts0601": {
       "mfr": "_tz3000_hafsqare",
       "pid": "ts0601",
-      "driver": "switch_wall_5gang",
+      "driver": "switch_1gang",
       "sources": [
         "mfs_db"
       ],
@@ -243507,7 +243507,7 @@
     "_tz3000_hafsqare|ts0001": {
       "mfr": "_tz3000_hafsqare",
       "pid": "ts0001",
-      "driver": "switch_wall_5gang",
+      "driver": "switch_1gang",
       "sources": [
         "mfs_db"
       ],
@@ -243516,7 +243516,7 @@
     "_tz3000_hafsqare|ts0002": {
       "mfr": "_tz3000_hafsqare",
       "pid": "ts0002",
-      "driver": "switch_wall_5gang",
+      "driver": "switch_1gang",
       "sources": [
         "mfs_db"
       ],
@@ -243525,7 +243525,7 @@
     "_tz3000_hafsqare|ts0015": {
       "mfr": "_tz3000_hafsqare",
       "pid": "ts0015",
-      "driver": "switch_wall_5gang",
+      "driver": "switch_1gang",
       "sources": [
         "mfs_db"
       ],
@@ -243534,7 +243534,7 @@
     "_tz3000_hafsqare|ts0013": {
       "mfr": "_tz3000_hafsqare",
       "pid": "ts0013",
-      "driver": "switch_wall_5gang",
+      "driver": "switch_1gang",
       "sources": [
         "mfs_db",
         "user-data"
@@ -287758,7 +287758,7 @@
       "confidence": 0.95
     },
     "_TZE200_2ekuz3dz": {
-      "driverId": "device_radiator_valve",
+      "driverId": "wall_thermostat",
       "productIds": [
         "TS0601"
       ],
@@ -289135,7 +289135,7 @@
       "confidence": 0.95
     },
     "_TZE200_ikvncluo": {
-      "driverId": "dimmer_wall_1gang",
+      "driverId": "presence_sensor_radar",
       "productIds": [
         "TS0601"
       ],
@@ -293119,7 +293119,7 @@
       "confidence": 0.95
     },
     "_TZE284_awepdiwi": {
-      "driverId": "soil_sensor",
+      "driverId": "climate_sensor",
       "productIds": [
         "TS0601"
       ],
@@ -294445,7 +294445,7 @@
       "confidence": 0.95
     },
     "_TZ3000_hyarhbyx": {
-      "driverId": "illuminance_sensor",
+      "driverId": "switch_1gang",
       "productIds": [
         "TS0601"
       ],
@@ -294703,7 +294703,7 @@
       "confidence": 0.95
     },
     "_TZE200_b6wax7g0": {
-      "driverId": "generic_tuya",
+      "driverId": "smart_lcd_thermostat",
       "productIds": [
         "TS0601"
       ],
@@ -303721,7 +303721,7 @@
       "confidence": 0.95
     },
     "_tze200_rjxqso4a": {
-      "driverId": "climate_sensor",
+      "driverId": "co_sensor",
       "productIds": [
         "TS0201"
       ],
@@ -327365,7 +327365,7 @@
       ]
     },
     "_tyzb01_ujfk3xd9|ts0601": {
-      "driver": "climate_sensor",
+      "driver": "temphumidsensor5",
       "source": "blakadder-r68",
       "added": "2026-07-16T14:35:26.325Z"
     },

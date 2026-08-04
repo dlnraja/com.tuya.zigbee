@@ -376,5 +376,8 @@
     }
   ],
   "id": "presence_sensor_ceiling",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "ui": {
+    "quickAction": "onoff"
+  }
 }

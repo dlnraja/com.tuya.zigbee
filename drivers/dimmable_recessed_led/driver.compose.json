@@ -98,5 +98,8 @@
       "setOnDim": false
     }
   },
-  "class": "light"
+  "class": "light",
+  "ui": {
+    "quickAction": "onoff"
+  }
 }

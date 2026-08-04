@@ -510,5 +510,8 @@
       "catchall": true,
       "reason": "Fallback for unmatched devices with PIDs: TS0505B"
     }
+  },
+  "ui": {
+    "quickAction": "onoff"
   }
 }

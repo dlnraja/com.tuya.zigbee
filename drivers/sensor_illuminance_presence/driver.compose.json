@@ -711,5 +711,8 @@
     }
   ],
   "id": "sensor_illuminance_presence",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "ui": {
+    "quickAction": "onoff"
+  }
 }

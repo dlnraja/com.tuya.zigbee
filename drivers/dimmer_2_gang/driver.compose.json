@@ -163,5 +163,8 @@
       "_tze200_BXOO2SWD"
     ]
   },
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "ui": {
+    "quickAction": "onoff"
+  }
 }

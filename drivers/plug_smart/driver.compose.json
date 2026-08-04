@@ -711,5 +711,8 @@
     "measure_power": {
       "approximated": true
     }
+  },
+  "ui": {
+    "quickAction": "onoff"
   }
 }
