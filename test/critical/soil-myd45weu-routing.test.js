@@ -129,11 +129,26 @@ describe('TS0601 _TZE284/_TZE200_myd45weu soil sensor routing', () => {
       assert(source.capabilities.includes('measure_humidity.soil'), 'soil_sensor must expose soil moisture');
       assert(source.capabilities.includes('measure_battery'), 'soil_sensor must expose battery for sleepy TS0601 soil sensors');
       assert(source.capabilities.includes('measure_ec'), 'soil_sensor must expose EC');
-      for (const cluster of [0, 4, 5, 60672, 61184]) {
-        const clusters = source.zigbee?.endpoints?.['1']?.clusters || [];
-        assert(clusters.includes(cluster), `soil_sensor endpoint 1 must match issue #428 cluster ${cluster}`);
+      // Pairing filter semantics (Homey core): a device matches only when it
+      // implements ALL clusters declared here — declaring more clusters makes
+      // matching stricter, never looser. Forum 140352 #2101 (blutch32):
+      // HOBEIAN ZG-303Z units expose only [0,3,61184,1026,1029,1], so the
+      // manifest must not require 4/5/60672 (they paired as "unknown zigbee
+      // device"). Only the minimal Tuya set [0,61184] is mandatory.
+      const declaredClusters = source.zigbee?.endpoints?.['1']?.clusters || [];
+      for (const cluster of [0, 61184]) {
+        assert(declaredClusters.includes(cluster), `soil_sensor endpoint 1 must declare cluster ${cluster}`);
       }
     }
+
+    // app.json is regenerated from driver.compose.json at build time; the
+    // compose source is authoritative for the relaxed cluster filter.
+    const composeClusters = driverCompose('soil_sensor').zigbee?.endpoints?.['1']?.clusters || [];
+    const hobeianInterviewClusters = [0, 3, 61184, 1026, 1029, 1];
+    assert(
+      composeClusters.every(cluster => hobeianInterviewClusters.includes(cluster)),
+      `soil_sensor compose clusters [${composeClusters}] must fit the HOBEIAN ZG-303Z interview (forum #2101)`
+    );
 
     for (const source of [driverCompose('climate_sensor'), appDriver('climate_sensor')]) {
       for (const manufacturer of reportedVariants) {
