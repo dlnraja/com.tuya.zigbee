@@ -10,7 +10,6 @@
 [![SDK](https://img.shields.io/badge/SDK-3-orange)](https://apps.developer.homey.app/)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
-A community-driven Homey app that brings **local control** to Tuya Zigbee devices — no cloud, no internet needed. Covers switches, sensors, lights, thermostats, covers, locks and more across **430 drivers** and **4,339 unique device fingerprints** (17,070 including case variants for bulletproof pairing).
 A community-driven Homey app that brings **local control** to Tuya Zigbee devices — no cloud, no internet needed. Covers switches, sensors, lights, thermostats, covers, locks and more across **430 drivers** and **4,339 unique device fingerprints** (17,093 including case variants for bulletproof pairing).
 
 **Key features:**
@@ -41,7 +40,6 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 | **App Version** | v9.0.416 |
 | **Drivers** | 430 (380 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,339 |
-| **Pairing Variants** | 17,070 (4 case combos per fingerprint) |
 | **Pairing Variants** | 17,093 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 571 |
 | **Flow Cards** | 4,930 |
@@ -57,28 +55,25 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 
 | # | Driver | Fingerprints |
 |---|--------|-------------|
-| 1 | `climate_sensor` | 2,728 |
 | 1 | `climate_sensor` | 2,730 |
-| 2 | `switch_1gang` | 1,789 |
+| 2 | `switch_1gang` | 1,785 |
 | 3 | `button_wireless_2` | 866 |
 | 4 | `generic_tuya` | 760 |
 | 5 | `presence_sensor_radar` | 688 |
 | 6 | `radiator_valve` | 587 |
 | 7 | `wall_dimmer_tuya` | 480 |
 | 8 | `device_radiator_valve` | 388 |
-| 9 | `sensor_contact_zigbee` | 342 |
 | 9 | `sensor_contact_zigbee` | 345 |
 | 10 | `switch_4gang` | 248 |
 | 11 | `curtain_motor` | 224 |
 | 12 | `motion_sensor` | 210 |
 | 13 | `diy_custom_zigbee` | 205 |
-| 14 | `switch_2gang` | 200 |
+| 14 | `switch_2gang` | 204 |
 | 15 | `thermostat_tuya_dp` | 200 |
 | 16 | `water_leak_sensor_tuya` | 194 |
 | 17 | `dimmer_wall_1gang` | 184 |
 | 18 | `switch_3gang` | 184 |
 | 19 | `dimmable_led_strip` | 180 |
-| 20 | `usb_dongle_triple` | 176 |
 | 20 | `soil_sensor` | 177 |
 
 ### Drivers by Device Class
