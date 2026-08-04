@@ -10,7 +10,7 @@
 [![SDK](https://img.shields.io/badge/SDK-3-orange)](https://apps.developer.homey.app/)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
-A community-driven Homey app that brings **local control** to Tuya Zigbee devices — no cloud, no internet needed. Covers switches, sensors, lights, thermostats, covers, locks and more across **430 drivers** and **4,339 unique device fingerprints** (17,093 including case variants for bulletproof pairing).
+A community-driven Homey app that brings **local control** to Tuya Zigbee devices — no cloud, no internet needed. Covers switches, sensors, lights, thermostats, covers, locks and more across **430 drivers** and **4,339 unique device fingerprints** (17,076 including case variants for bulletproof pairing).
 
 **Key features:**
 - **Local-only** — everything runs on your Homey, nothing goes to the cloud
@@ -37,10 +37,10 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.416 |
+| **App Version** | v9.0.417 |
 | **Drivers** | 430 (380 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,339 |
-| **Pairing Variants** | 17,093 (4 case combos per fingerprint) |
+| **Pairing Variants** | 17,076 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 571 |
 | **Flow Cards** | 4,930 |
 | **Unique Capabilities** | 170 |
@@ -55,7 +55,7 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 
 | # | Driver | Fingerprints |
 |---|--------|-------------|
-| 1 | `climate_sensor` | 2,730 |
+| 1 | `climate_sensor` | 2,728 |
 | 2 | `switch_1gang` | 1,785 |
 | 3 | `button_wireless_2` | 866 |
 | 4 | `generic_tuya` | 760 |
@@ -74,7 +74,7 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 | 17 | `dimmer_wall_1gang` | 184 |
 | 18 | `switch_3gang` | 184 |
 | 19 | `dimmable_led_strip` | 180 |
-| 20 | `soil_sensor` | 177 |
+| 20 | `usb_dongle_triple` | 176 |
 
 ### Drivers by Device Class
 
@@ -106,6 +106,7 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.417** | Stability improvements and Homey test publication retry after transient processing failure. |
 | **v9.0.416** | Stability improvements and Homey test publication retry after transient processing failure. |
 | **v9.0.415** | Stability improvements and Homey test publication retry after transient processing failure. |
 | **v9.0.414** | Central destroyed guards on capability ops, linear battery formulas eliminated. |
@@ -117,7 +118,6 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 | **v9.0.408** | Central destroyed guards on capability ops, linear battery formulas eliminated. |
 | **v9.0.407** | Central destroyed guards on capability ops, linear battery formulas eliminated. |
 | **v9.0.406** | Central destroyed guards on capability ops, linear battery formulas eliminated. |
-| **v9.0.405** | Central destroyed guards on capability ops, linear battery formulas eliminated. |
 
 <!-- CHANGELOG_END -->
 
