@@ -596,7 +596,7 @@ jobs:
           # Recent commits
           echo "## Recent Commits (30 days)" >> "$REPORT_FILE"
           echo '```' >> "$REPORT_FILE"
-          git log --since="${{ steps.deltas.outputs.since }}" --oneline --no-merges | head -25 >> "$REPORT_FILE"
+          git log --since="${{ steps.deltas.outputs.since }}" --oneline --no-merges | head -25 >> "$REPORT_FILE" || true
           echo '```' >> "$REPORT_FILE"
 
           echo "Report generated: $REPORT_FILE"
