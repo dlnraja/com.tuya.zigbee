@@ -188717,7 +188717,1053 @@
           }
         }
       },
-      "settings": [],
+      "settings": [
+        {
+          "id": "power_source",
+          "type": "dropdown",
+          "label": {
+            "en": "Power Source",
+            "fr": "Source d'Alimentation"
+          },
+          "value": "auto",
+          "values": [
+            {
+              "id": "auto",
+              "label": {
+                "en": "Auto Detect",
+                "fr": "Détection Automatique"
+              }
+            },
+            {
+              "id": "ac",
+              "label": {
+                "en": "AC Powered",
+                "fr": "Alimentation Secteur"
+              }
+            },
+            {
+              "id": "dc",
+              "label": {
+                "en": "DC Powered",
+                "fr": "Alimentation DC"
+              }
+            },
+            {
+              "id": "battery",
+              "label": {
+                "en": "Battery Powered",
+                "fr": "Sur Batterie"
+              }
+            }
+          ],
+          "hint": {
+            "en": "Select power source manually or use auto-detection",
+            "fr": "Sélectionnez la source d'alimentation manuellement ou utilisez la détection automatique"
+          }
+        },
+        {
+          "id": "battery_type",
+          "type": "dropdown",
+          "label": {
+            "en": "Battery Type",
+            "fr": "Type de Batterie"
+          },
+          "value": "auto",
+          "values": [
+            {
+              "id": "auto",
+              "label": {
+                "en": "Auto Detect",
+                "fr": "Détection Automatique"
+              }
+            },
+            {
+              "id": "CR2032",
+              "label": {
+                "en": "CR2032",
+                "fr": "CR2032 (Pile Bouton 3V)"
+              }
+            },
+            {
+              "id": "CR2450",
+              "label": {
+                "en": "CR2450",
+                "fr": "CR2450 (Pile Bouton 3V)"
+              }
+            },
+            {
+              "id": "AAA",
+              "label": {
+                "en": "AAA",
+                "fr": "AAA"
+              }
+            },
+            {
+              "id": "AA",
+              "label": {
+                "en": "AA",
+                "fr": "AA"
+              }
+            },
+            {
+              "id": "CR123A",
+              "label": {
+                "en": "CR123A",
+                "fr": "CR123A"
+              }
+            }
+          ],
+          "hint": {
+            "en": "Select battery type manually or use auto-detection based on voltage",
+            "fr": "Sélectionnez le type de batterie manuellement ou utilisez la détection automatique basée sur la tension"
+          }
+        },
+        {
+          "id": "battery_low_threshold",
+          "type": "number",
+          "label": {
+            "en": "Low Battery Threshold",
+            "fr": "Seuil Batterie Faible (%)"
+          },
+          "value": 20,
+          "min": 0,
+          "max": 50,
+          "step": 5,
+          "hint": {
+            "en": "Trigger low battery warning when below this percentage",
+            "fr": "Déclencher l'alerte batterie faible en dessous de ce pourcentage"
+          }
+        },
+        {
+          "id": "battery_critical_threshold",
+          "type": "number",
+          "label": {
+            "en": "Critical Battery Threshold",
+            "fr": "Seuil Batterie Critique (%)"
+          },
+          "value": 10,
+          "min": 0,
+          "max": 30,
+          "step": 5,
+          "hint": {
+            "en": "Trigger critical battery warning when below this percentage",
+            "fr": "Déclencher l'alerte batterie critique en dessous de ce pourcentage"
+          }
+        },
+        {
+          "id": "enable_battery_notifications",
+          "type": "checkbox",
+          "label": {
+            "en": "Enable Battery Notifications",
+            "fr": "Activer Notifications Batterie"
+          },
+          "value": true,
+          "hint": {
+            "en": "Send flow notifications for battery events",
+            "fr": "Envoyer des notifications de flow pour les événements de batterie"
+          }
+        },
+        {
+          "id": "battery_report_interval",
+          "type": "number",
+          "label": {
+            "en": "Battery Report Interval",
+            "fr": "Intervalle Rapport Batterie (heures)"
+          },
+          "value": 24,
+          "min": 1,
+          "max": 168,
+          "step": 1,
+          "hint": {
+            "en": "How often to request battery status updates",
+            "fr": "Fréquence de demande des mises à jour d'état de batterie"
+          }
+        },
+        {
+          "id": "optimization_mode",
+          "type": "dropdown",
+          "label": {
+            "en": "Energy Optimization Mode",
+            "fr": "Mode Optimisation Énergétique"
+          },
+          "value": "balanced",
+          "values": [
+            {
+              "id": "performance",
+              "label": {
+                "en": "Performance (More responsive)",
+                "fr": "Performance (Plus réactif)"
+              }
+            },
+            {
+              "id": "balanced",
+              "label": {
+                "en": "Balanced",
+                "fr": "Équilibré"
+              }
+            },
+            {
+              "id": "power_saving",
+              "label": {
+                "en": "Power Saving (Longer battery)",
+                "fr": "Économie d'énergie (Batterie plus longue)"
+              }
+            }
+          ],
+          "hint": {
+            "en": "Balance between responsiveness and battery life",
+            "fr": "Équilibre entre réactivité et durée de vie de la batterie"
+          }
+        },
+        {
+          "id": "enable_power_estimation",
+          "type": "checkbox",
+          "label": {
+            "en": "Enable Power Estimation",
+            "fr": "Activer Estimation Puissance"
+          },
+          "value": true,
+          "hint": {
+            "en": "Estimate power consumption when real measurement is not available (AC/DC devices only)",
+            "fr": "Estimer la consommation quand la mesure réelle n'est pas disponible (appareils AC/DC seulement)"
+          }
+        },
+        {
+          "id": "invert_presence",
+          "type": "checkbox",
+          "label": {
+            "en": "Invert Presence Detection",
+            "fr": "Inverser Détection Présence"
+          },
+          "value": false,
+          "hint": {
+            "en": "Enable if presence shows active when room is empty and inactive when occupied (firmware bug workaround)",
+            "fr": "Activer si la présence indique actif quand la pièce est vide et inactif quand occupée (contournement bug firmware)"
+          }
+        },
+        {
+          "id": "motion_detection_mode",
+          "type": "dropdown",
+          "label": {
+            "en": "Motion Detection Mode",
+            "fr": "Mode de Détection",
+            "nl": "Bewegingsdetectie Modus",
+            "de": "Bewegungserkennungsmodus"
+          },
+          "value": "1",
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "PIR Only",
+                "fr": "PIR Uniquement",
+                "nl": "Alleen PIR",
+                "de": "Nur PIR"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "PIR + Radar (Recommended)",
+                "fr": "PIR + Radar (Recommandé)",
+                "nl": "PIR + Radar (Aanbevolen)",
+                "de": "PIR + Radar (Empfohlen)"
+              }
+            },
+            {
+              "id": "2",
+              "label": {
+                "en": "Radar Only",
+                "fr": "Radar Uniquement",
+                "nl": "Alleen Radar",
+                "de": "Nur Radar"
+              }
+            }
+          ],
+          "hint": {
+            "en": "ZG-204ZM: Select detection method (PIR for motion, Radar for presence)",
+            "fr": "ZG-204ZM: Sélectionner la méthode de détection (PIR pour mouvement, Radar pour présence)"
+          }
+        },
+        {
+          "id": "motion_detection_sensitivity",
+          "type": "number",
+          "label": {
+            "en": "Motion Sensitivity",
+            "fr": "Sensibilité Mouvement",
+            "nl": "Bewegingsgevoeligheid",
+            "de": "Bewegungsempfindlichkeit"
+          },
+          "value": 5,
+          "min": 0,
+          "max": 10,
+          "step": 1,
+          "hint": {
+            "en": "ZG-204ZM: PIR/Radar motion sensitivity (0=lowest, 10=highest)",
+            "fr": "ZG-204ZM: Sensibilité PIR/Radar (0=minimum, 10=maximum)"
+          }
+        },
+        {
+          "id": "large_motion_sensitivity",
+          "type": "number",
+          "label": {
+            "en": "Large Motion Sensitivity",
+            "fr": "Sensibilité Grand Mouvement"
+          },
+          "value": 5,
+          "min": 0,
+          "max": 10,
+          "step": 1,
+          "hint": {
+            "en": "ZG-204ZM: Sensitivity for detecting large movements like walking (0=lowest, 10=highest)",
+            "fr": "ZG-204ZM: Sensibilité pour détecter les grands mouvements comme marcher (0=min, 10=max)"
+          }
+        },
+        {
+          "id": "large_motion_distance",
+          "type": "number",
+          "label": {
+            "en": "Large Motion Distance",
+            "fr": "Distance Grand Mouvement"
+          },
+          "value": 10,
+          "min": 0,
+          "max": 10,
+          "step": 1,
+          "units": "m",
+          "hint": {
+            "en": "ZG-204ZM: Maximum distance for detecting large movements (0-10 meters)",
+            "fr": "ZG-204ZM: Distance maximale pour détecter les grands mouvements (0-10 mètres)"
+          }
+        },
+        {
+          "id": "static_detection_distance",
+          "type": "number",
+          "label": {
+            "en": "Static Detection Distance",
+            "fr": "Distance Détection Statique",
+            "nl": "Statische Detectie Afstand",
+            "de": "Statische Erkennungsdistanz"
+          },
+          "value": 6,
+          "min": 0,
+          "max": 6,
+          "step": 1,
+          "units": "m",
+          "hint": {
+            "en": "ZG-204ZM: Maximum distance for detecting stationary persons (0-6 meters)",
+            "fr": "ZG-204ZM: Distance maximale pour détecter les personnes immobiles (0-6 mètres)"
+          }
+        },
+        {
+          "id": "static_detection_sensitivity",
+          "type": "number",
+          "label": {
+            "en": "Static Detection Sensitivity",
+            "fr": "Sensibilité Détection Statique",
+            "nl": "Statische Detectie Gevoeligheid",
+            "de": "Statische Erkennungsempfindlichkeit"
+          },
+          "value": 5,
+          "min": 0,
+          "max": 10,
+          "step": 1,
+          "hint": {
+            "en": "ZG-204ZM: Sensitivity for detecting stationary persons (0=lowest, 10=highest)",
+            "fr": "ZG-204ZM: Sensibilité pour détecter les personnes immobiles (0=minimum, 10=maximum)"
+          }
+        },
+        {
+          "id": "small_detection_distance",
+          "type": "number",
+          "label": {
+            "en": "Small Motion Distance",
+            "fr": "Distance Petit Mouvement"
+          },
+          "value": 6,
+          "min": 0,
+          "max": 6,
+          "step": 1,
+          "units": "m",
+          "hint": {
+            "en": "ZG-204ZM: Maximum distance for detecting micro-movements like breathing (0-6 meters)",
+            "fr": "ZG-204ZM: Distance maximale pour détecter les micro-mouvements comme la respiration (0-6 mètres)"
+          }
+        },
+        {
+          "id": "small_detection_sensitivity",
+          "type": "number",
+          "label": {
+            "en": "Small Motion Sensitivity",
+            "fr": "Sensibilité Petit Mouvement"
+          },
+          "value": 5,
+          "min": 0,
+          "max": 10,
+          "step": 1,
+          "hint": {
+            "en": "ZG-204ZM: Sensitivity for detecting micro-movements like breathing (0=lowest, 10=highest)",
+            "fr": "ZG-204ZM: Sensibilité pour détecter les micro-mouvements (0=minimum, 10=maximum)"
+          }
+        },
+        {
+          "id": "fading_time",
+          "type": "number",
+          "label": {
+            "en": "Presence Keep Time",
+            "fr": "Temps de Maintien Présence",
+            "nl": "Aanwezigheid Vasthoudtijd",
+            "de": "Anwesenheit Haltezeit"
+          },
+          "value": 90,
+          "min": 0,
+          "max": 28800,
+          "step": 10,
+          "units": "s",
+          "hint": {
+            "en": "ZG-204ZM/ZV: How long presence stays active after last detection (seconds)",
+            "fr": "ZG-204ZM/ZV: Durée de maintien de la présence après dernière détection (secondes)"
+          }
+        },
+        {
+          "id": "illuminance_interval",
+          "type": "number",
+          "label": {
+            "en": "Illuminance Report Interval (s) — ZG-204ZV",
+            "fr": "Intervalle Rapport Luminosité (s) — ZG-204ZV",
+            "nl": "Verlichtingsrapport-interval (s) — ZG-204ZV",
+            "de": "Beleuchtungsbericht-Intervall (s) — ZG-204ZV"
+          },
+          "value": 30,
+          "min": 1,
+          "max": 720,
+          "step": 1,
+          "units": "s",
+          "hint": {
+            "en": "ZG-204ZV DP 107: how often the device reports illuminance (seconds)",
+            "fr": "ZG-204ZV DP 107: fréquence à laquelle l'appareil rapporte la luminosité (secondes)"
+          }
+        },
+        {
+          "id": "humidity_calibration",
+          "type": "number",
+          "label": {
+            "en": "Humidity Calibration (%) — ZG-204ZV",
+            "fr": "Calibration Humidité (%) — ZG-204ZV",
+            "nl": "Vochtigheidskalibratie (%) — ZG-204ZV",
+            "de": "Feuchtigkeitskalibrierung (%) — ZG-204ZV"
+          },
+          "value": 0,
+          "min": -30,
+          "max": 30,
+          "step": 1,
+          "units": "%",
+          "hint": {
+            "en": "ZG-204ZV DP 104: humidity calibration offset (added to reported value)",
+            "fr": "ZG-204ZV DP 104: décalage de calibration d'humidité (ajouté à la valeur rapportée)"
+          }
+        },
+        {
+          "id": "temperature_calibration",
+          "type": "number",
+          "label": {
+            "en": "Temperature Calibration (°C) — ZG-204ZV",
+            "fr": "Calibration Température (°C) — ZG-204ZV",
+            "nl": "Temperatuurkalibratie (°C) — ZG-204ZV",
+            "de": "Temperaturkalibrierung (°C) — ZG-204ZV"
+          },
+          "value": 0,
+          "min": -20,
+          "max": 20,
+          "step": 0.1,
+          "units": "°C",
+          "hint": {
+            "en": "ZG-204ZV DP 105: temperature calibration offset (added to reported value)",
+            "fr": "ZG-204ZV DP 105: décalage de calibration de température (ajouté à la valeur rapportée)"
+          }
+        },
+        {
+          "id": "temperature_unit",
+          "type": "dropdown",
+          "label": {
+            "en": "Temperature Unit — ZG-204ZV",
+            "fr": "Unité de Température — ZG-204ZV",
+            "nl": "Temperatuureenheid — ZG-204ZV",
+            "de": "Temperatureinheit — ZG-204ZV"
+          },
+          "value": "celsius",
+          "values": [
+            {
+              "id": "celsius",
+              "label": {
+                "en": "Celsius (°C)",
+                "fr": "Celsius (°C)"
+              }
+            },
+            {
+              "id": "fahrenheit",
+              "label": {
+                "en": "Fahrenheit (°F)",
+                "fr": "Fahrenheit (°F)"
+              }
+            }
+          ],
+          "hint": {
+            "en": "ZG-204ZV DP 109: temperature display unit",
+            "fr": "ZG-204ZV DP 109: unité d'affichage de la température"
+          }
+        },
+        {
+          "id": "radar_sensitivity",
+          "type": "number",
+          "label": {
+            "en": "Radar Sensitivity",
+            "fr": "Sensibilité Radar"
+          },
+          "value": 5,
+          "min": 1,
+          "max": 9,
+          "step": 1,
+          "hint": {
+            "en": "Radar detection sensitivity (1=lowest, 9=highest)",
+            "fr": "Sensibilité radar (1=min, 9=max)"
+          }
+        },
+        {
+          "id": "min_range",
+          "type": "number",
+          "label": {
+            "en": "Minimum Detection Range",
+            "fr": "Portée Minimale"
+          },
+          "value": 0,
+          "min": 0,
+          "max": 10,
+          "step": 0.5,
+          "units": "m",
+          "hint": {
+            "en": "Minimum detection range (0-10m)",
+            "fr": "Portée minimale de détection (0-10m)"
+          }
+        },
+        {
+          "id": "max_range",
+          "type": "number",
+          "label": {
+            "en": "Maximum Detection Range",
+            "fr": "Portée Maximale"
+          },
+          "value": 6,
+          "min": 0,
+          "max": 10,
+          "step": 0.5,
+          "units": "m",
+          "hint": {
+            "en": "Maximum detection range (0-10m)",
+            "fr": "Portée maximale de détection (0-10m)"
+          }
+        },
+        {
+          "id": "detection_delay",
+          "type": "number",
+          "label": {
+            "en": "Detection Delay",
+            "fr": "Délai de Détection"
+          },
+          "value": 1,
+          "min": 0,
+          "max": 10,
+          "step": 0.1,
+          "units": "s",
+          "hint": {
+            "en": "Delay before presence is reported (0-10s)",
+            "fr": "Délai avant signalement de présence (0-10s)"
+          }
+        },
+        {
+          "id": "sensitivity",
+          "type": "number",
+          "label": {
+            "en": "Radar Sensitivity",
+            "fr": "Sensibilité Radar",
+            "nl": "Radargevoeligheid",
+            "de": "Radarempfindlichkeit"
+          },
+          "value": 5,
+          "min": 0,
+          "max": 9,
+          "step": 1,
+          "hint": {
+            "en": "ZY-M100: Overall radar detection sensitivity (0=lowest, 9=highest)",
+            "fr": "ZY-M100: Sensibilité globale du radar (0=min, 9=max)"
+          }
+        },
+        {
+          "id": "near_distance",
+          "type": "number",
+          "label": {
+            "en": "Near Detection Distance",
+            "fr": "Distance Proche",
+            "nl": "Nabije Detectieafstand",
+            "de": "Nahe Erkennungsdistanz"
+          },
+          "value": 3,
+          "min": 0,
+          "max": 10,
+          "step": 0.5,
+          "units": "m",
+          "hint": {
+            "en": "ZY-M100: Near detection zone boundary (0-10m)",
+            "fr": "ZY-M100: Limite de la zone de détection proche (0-10m)"
+          }
+        },
+        {
+          "id": "far_distance",
+          "type": "number",
+          "label": {
+            "en": "Far Detection Distance",
+            "fr": "Distance Lointaine",
+            "nl": "Verre Detectieafstand",
+            "de": "Ferne Erkennungsdistanz"
+          },
+          "value": 6,
+          "min": 0,
+          "max": 10,
+          "step": 0.5,
+          "units": "m",
+          "hint": {
+            "en": "ZY-M100: Far detection zone boundary (0-10m)",
+            "fr": "ZY-M100: Limite de la zone de détection lointaine (0-10m)"
+          }
+        },
+        {
+          "id": "static_sensitivity",
+          "type": "number",
+          "label": {
+            "en": "Static Sensitivity",
+            "fr": "Sensibilité Statique",
+            "nl": "Statische Gevoeligheid",
+            "de": "Statische Empfindlichkeit"
+          },
+          "value": 5,
+          "min": 0,
+          "max": 10,
+          "step": 1,
+          "hint": {
+            "en": "ZY-M100: Sensitivity for detecting stationary persons (0=lowest, 10=highest)",
+            "fr": "ZY-M100: Sensibilité pour détecter les personnes immobiles (0=min, 10=max)"
+          }
+        },
+        {
+          "id": "motion_sensitivity",
+          "type": "number",
+          "label": {
+            "en": "Motion Sensitivity",
+            "fr": "Sensibilité Mouvement",
+            "nl": "Bewegingsgevoeligheid",
+            "de": "Bewegungsempfindlichkeit"
+          },
+          "value": 5,
+          "min": 0,
+          "max": 10,
+          "step": 1,
+          "hint": {
+            "en": "ZY-M100: Sensitivity for detecting moving persons (0=lowest, 10=highest)",
+            "fr": "ZY-M100: Sensibilité pour détecter les personnes en mouvement (0=min, 10=max)"
+          }
+        },
+        {
+          "id": "indicator",
+          "type": "checkbox",
+          "label": {
+            "en": "LED Indicator",
+            "fr": "Indicateur LED",
+            "nl": "LED Indicator",
+            "de": "LED-Anzeige"
+          },
+          "value": true,
+          "hint": {
+            "en": "Enable/disable the LED indicator on the sensor",
+            "fr": "Activer/désactiver l'indicateur LED"
+          }
+        },
+        {
+          "id": "time",
+          "type": "number",
+          "label": {
+            "en": "Time (s) — ZG-204ZM",
+            "fr": "Temps (s) — ZG-204ZM",
+            "nl": "Tijd (s) — ZG-204ZM",
+            "de": "Zeit (s) — ZG-204ZM"
+          },
+          "value": 0,
+          "min": 0,
+          "max": 28800,
+          "step": 1,
+          "units": "s",
+          "hint": {
+            "en": "Time setting (ZG-204ZM DP 114) — seconds before report",
+            "fr": "Réglage du temps (ZG-204ZM DP 114) — secondes avant rapport"
+          }
+        },
+        {
+          "id": "alarm_time",
+          "type": "number",
+          "label": {
+            "en": "Alarm Time (s) — ZG-204ZM",
+            "fr": "Temps d'alarme (s) — ZG-204ZM",
+            "nl": "Alarmtijd (s) — ZG-204ZM",
+            "de": "Alarmzeit (s) — ZG-204ZM"
+          },
+          "value": 30,
+          "min": 0,
+          "max": 28800,
+          "step": 1,
+          "units": "s",
+          "hint": {
+            "en": "Alarm duration (ZG-204ZM DP 115) — seconds of alarm output",
+            "fr": "Durée d'alarme (ZG-204ZM DP 115) — secondes de sortie d'alarme"
+          }
+        },
+        {
+          "id": "alarm_volume",
+          "type": "number",
+          "label": {
+            "en": "Alarm Volume (%) — ZG-204ZM",
+            "fr": "Volume d'alarme (%) — ZG-204ZM",
+            "nl": "Alarmvolume (%) — ZG-204ZM",
+            "de": "Alarmlautstärke (%) — ZG-204ZM"
+          },
+          "value": 50,
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "units": "%",
+          "hint": {
+            "en": "Alarm volume (ZG-204ZM DP 116) — 0=mute, 100=max",
+            "fr": "Volume d'alarme (ZG-204ZM DP 116) — 0=muet, 100=max"
+          }
+        },
+        {
+          "id": "working_mode",
+          "type": "dropdown",
+          "label": {
+            "en": "Working Mode — ZG-204ZM",
+            "fr": "Mode de fonctionnement — ZG-204ZM",
+            "nl": "Werkmodus — ZG-204ZM",
+            "de": "Arbeitsmodus — ZG-204ZM"
+          },
+          "value": "auto",
+          "values": [
+            {
+              "id": "auto",
+              "label": {
+                "en": "Auto (recommended)",
+                "fr": "Auto (recommandé)"
+              }
+            },
+            {
+              "id": "manual",
+              "label": {
+                "en": "Manual",
+                "fr": "Manuel"
+              }
+            }
+          ],
+          "hint": {
+            "en": "Working mode (ZG-204ZM DP 117) — auto uses auto1/2/3, manual uses user settings",
+            "fr": "Mode de fonctionnement (ZG-204ZM DP 117) — auto utilise auto1/2/3, manuel utilise les paramètres utilisateur"
+          }
+        },
+        {
+          "id": "anti_interference",
+          "type": "checkbox",
+          "label": {
+            "en": "Anti-Interference (ZG-204ZV/ZK)",
+            "fr": "Anti-Interférence (ZG-204ZV/ZK)",
+            "nl": "Anti-Interferentie (ZG-204ZV/ZK)",
+            "de": "Anti-Interferenz (ZG-204ZV/ZK)"
+          },
+          "value": false,
+          "hint": {
+            "en": "Enable anti-interference to reduce false presence triggers from Wi-Fi/RF noise (only for ZG-204ZV/ZK family mmWave sensors).",
+            "fr": "Active la fonction anti-interférence pour réduire les faux déclenchements de présence dus au bruit Wi-Fi/RF (uniquement pour la famille ZG-204ZV/ZK)."
+          }
+        },
+        {
+          "id": "shield_range",
+          "type": "number",
+          "min": 0,
+          "max": 8,
+          "unit": "m",
+          "label": {
+            "en": "Shield range",
+            "fr": "Portée de masquage",
+            "nl": "Afschermbereik"
+          },
+          "value": 0
+        },
+        {
+          "id": "detection_range",
+          "type": "number",
+          "min": 0,
+          "max": 8,
+          "unit": "m",
+          "label": {
+            "en": "Detection range",
+            "fr": "Portée de détection",
+            "nl": "Detectiebereik"
+          },
+          "value": 8
+        },
+        {
+          "id": "entry_filter_time",
+          "type": "number",
+          "min": 0,
+          "max": 10,
+          "unit": "s",
+          "label": {
+            "en": "Entry filter time",
+            "fr": "Filtre d’entrée (temps)",
+            "nl": "Toegangsfiltertijd"
+          },
+          "value": 0
+        },
+        {
+          "id": "departure_delay",
+          "type": "number",
+          "min": 0,
+          "max": 3600,
+          "unit": "s",
+          "label": {
+            "en": "Departure delay",
+            "fr": "Délai de départ",
+            "nl": "Vertrekvertraging"
+          },
+          "value": 0
+        },
+        {
+          "id": "entry_sensitivity",
+          "type": "number",
+          "min": 0,
+          "max": 9,
+          "label": {
+            "en": "Entry sensitivity",
+            "fr": "Sensibilité d’entrée",
+            "nl": "Toegangsgevoeligheid"
+          },
+          "value": 0
+        },
+        {
+          "id": "entry_distance_indentation",
+          "type": "number",
+          "min": 0,
+          "max": 8,
+          "unit": "m",
+          "label": {
+            "en": "Entry distance indentation",
+            "fr": "Indentation distance d’entrée",
+            "nl": "Toegangsafstand-inspringing"
+          },
+          "value": 0
+        },
+        {
+          "id": "breaker_mode",
+          "type": "dropdown",
+          "label": {
+            "en": "Breaker mode",
+            "fr": "Mode disjoncteur",
+            "nl": "Breakermodus"
+          },
+          "value": "standard",
+          "values": [
+            {
+              "id": "standard",
+              "label": {
+                "en": "Standard"
+              }
+            },
+            {
+              "id": "local",
+              "label": {
+                "en": "Local"
+              }
+            }
+          ]
+        },
+        {
+          "id": "status_indication",
+          "type": "dropdown",
+          "label": {
+            "en": "Status indication",
+            "fr": "Indication d’état",
+            "nl": "Statusindicatie"
+          },
+          "value": "0",
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "Off",
+                "fr": "Arrêt",
+                "nl": "Uit"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "On",
+                "fr": "Marche",
+                "nl": "Aan"
+              }
+            }
+          ]
+        },
+        {
+          "id": "illuminance_threshold",
+          "type": "number",
+          "min": 0,
+          "max": 420,
+          "unit": "lux",
+          "label": {
+            "en": "Illuminance threshold",
+            "fr": "Seuil de luminosité",
+            "nl": "Lichtdrempel"
+          },
+          "value": 0
+        },
+        {
+          "id": "breaker_polarity",
+          "type": "dropdown",
+          "label": {
+            "en": "Breaker polarity",
+            "fr": "Polarité disjoncteur",
+            "nl": "Breakerpolariteit"
+          },
+          "value": "NC",
+          "values": [
+            {
+              "id": "NC",
+              "label": {
+                "en": "NC (normally closed)",
+                "fr": "NF (normalement fermé)",
+                "nl": "NG (normaal gesloten)"
+              }
+            },
+            {
+              "id": "NO",
+              "label": {
+                "en": "NO (normally open)",
+                "fr": "NO (normalement ouvert)",
+                "nl": "NO (normaal open)"
+              }
+            }
+          ]
+        },
+        {
+          "id": "block_time",
+          "type": "number",
+          "min": 0,
+          "max": 10,
+          "unit": "s",
+          "label": {
+            "en": "Block time",
+            "fr": "Temps de blocage",
+            "nl": "Blokkeertijd"
+          },
+          "value": 0
+        },
+        {
+          "id": "sensor_mode",
+          "type": "dropdown",
+          "label": {
+            "en": "Sensor mode",
+            "fr": "Mode capteur",
+            "nl": "Sensormodus"
+          },
+          "value": "on",
+          "values": [
+            {
+              "id": "on",
+              "label": {
+                "en": "On",
+                "fr": "Marche",
+                "nl": "Aan"
+              }
+            },
+            {
+              "id": "off",
+              "label": {
+                "en": "Off",
+                "fr": "Arrêt",
+                "nl": "Uit"
+              }
+            },
+            {
+              "id": "occupied",
+              "label": {
+                "en": "Occupied",
+                "fr": "Occupé",
+                "nl": "Bezet"
+              }
+            },
+            {
+              "id": "unoccupied",
+              "label": {
+                "en": "Unoccupied",
+                "fr": "Inoccupé",
+                "nl": "Onbezet"
+              }
+            }
+          ]
+        },
+        {
+          "id": "motion_false_detection",
+          "type": "checkbox",
+          "label": {
+            "en": "Motion false detection filter",
+            "fr": "Filtre fausses détections mouvement",
+            "nl": "Filter valse bewegingsdetectie"
+          },
+          "value": false
+        },
+        {
+          "id": "micro_minimum_distance",
+          "type": "number",
+          "min": 0,
+          "max": 8,
+          "unit": "m",
+          "label": {
+            "en": "Micro minimum distance",
+            "fr": "Distance min micro-mouvements",
+            "nl": "Micro minimale afstand"
+          },
+          "value": 0
+        },
+        {
+          "id": "motionless_minimum_distance",
+          "type": "number",
+          "min": 0,
+          "max": 8,
+          "unit": "m",
+          "label": {
+            "en": "Static minimum distance",
+            "fr": "Distance min statique",
+            "nl": "Statische minimale afstand"
+          },
+          "value": 0
+        },
+        {
+          "id": "breathe_false_detection",
+          "type": "checkbox",
+          "label": {
+            "en": "Breathing false detection filter",
+            "fr": "Filtre fausses détections respiration",
+            "nl": "Filter valse ademhalingsdetectie"
+          },
+          "value": false
+        }
+      ],
       "images": {
         "small": "/drivers/presence_sensor_radar/assets/images/small.png",
         "large": "/drivers/presence_sensor_radar/assets/images/large.png",
