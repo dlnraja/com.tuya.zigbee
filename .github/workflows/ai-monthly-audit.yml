@@ -600,6 +600,8 @@ jobs:
           echo '```' >> "$REPORT_FILE"
 
           echo "Report generated: $REPORT_FILE"
+          echo "yyyymm=$(date +%Y-%m)" >> $GITHUB_OUTPUT
+          echo "monthyear=$(date '+%B %Y')" >> $GITHUB_OUTPUT
 
       # ──────────────────────────────────────────────
       # LAYER 7: Update Knowledge Cache
@@ -824,12 +826,12 @@ jobs:
         uses: peter-evans/create-pull-request@c5a7806660adbe173f04e3e038b0ccdcd758773c # v6.1.0
         with:
           token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
-          commit-message: 'ai: monthly audit $(date +%Y-%m) [skip ci]'
-          branch: ai/monthly-audit-$(date +%Y-%m)
+          commit-message: 'ai: monthly audit ${{ steps.report.outputs.yyyymm }} [skip ci]'
+          branch: ai/monthly-audit-${{ steps.report.outputs.yyyymm }}
           delete-branch: true
-          title: 'AI Monthly Audit - $(date +%B %Y) | Risk: ${{ steps.cache_update.outputs.cache_valid == ''true'' && ''Updated'' || ''Error'' }}'
+          title: 'AI Monthly Audit - ${{ steps.report.outputs.monthyear }} | Risk: ${{ steps.cache_update.outputs.cache_valid == ''true'' && ''Updated'' || ''Error'' }}'
           body: |
-            ## AI Monthly Audit — $(date +%B %Y)
+            ## AI Monthly Audit — ${{ steps.report.outputs.monthyear }}
 
             ### Delta Analysis
             - **Commits (30d)**: ${{ steps.deltas.outputs.commit_count }}
