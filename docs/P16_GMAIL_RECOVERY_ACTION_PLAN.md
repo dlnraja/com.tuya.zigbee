@@ -30,7 +30,7 @@ Both methods are completely broken. The diagnostic workflow tries IMAP first, th
 ### Step 1: Refresh `GMAIL_APP_PASSWORD`
 
 1. Go to https://myaccount.google.com/apppasswords
-2. Sign in with `senetmarne@gmail.com`
+2. Sign in with `9746898+dlnraja@users.noreply.github.com`
 3. Click "Select app" → "Mail" → "Other (Custom name)" → type `GHA Gmail Diagnostics`
 4. Click "Generate" — you'll get a 16-character password (xxxx xxxx xxxx xxxx)
 5. Copy it
@@ -49,7 +49,7 @@ Both methods are completely broken. The diagnostic workflow tries IMAP first, th
    - OAuth Client Secret: `GMAIL_CLIENT_SECRET` (from your existing secret)
 5. In "Step 1: Select & authorize APIs", find "Gmail API v1" → select `https://mail.google.com/`
 6. Click "Authorize APIs"
-7. Sign in with `senetmarne@gmail.com` if prompted
+7. Sign in with `9746898+dlnraja@users.noreply.github.com` if prompted
 8. Click "Allow"
 9. In "Step 2: Exchange authorization code for tokens", click "Exchange authorization code for tokens"
 10. Copy the `refresh_token` value

@@ -47,7 +47,7 @@ $env:GH_TOKEN = $Token
 # 2. Configure git
 Step "Configuration git"
 & $git config --global user.name "Dylan Rajasekaram" 2>&1 | Out-Null
-& $git config --global user.email "senetmarne@gmail.com" 2>&1 | Out-Null
+& $git config --global user.email "9746898+dlnraja@users.noreply.github.com" 2>&1 | Out-Null
 & $git config --global init.defaultBranch master 2>&1 | Out-Null
 & $git config --global core.autocrlf false 2>&1 | Out-Null
 & $git config --global core.fileMode false 2>&1 | Out-Null
