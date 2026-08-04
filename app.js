@@ -504,6 +504,14 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
         logger: (...a) => this.log(...a),
       });
 
+      // v9.0.409 (P92.113): home modes (Hubitat/SmartThings, transitions solaires)
+      const HomeModeManager = require('./lib/managers/HomeModeManager');
+      this.homeModeManager = new HomeModeManager(this.homey, {
+        solarElevation: this.solarElevation,
+        logger: (...a) => this.log(...a),
+      });
+      this.homeModeManager.start();
+
       // Register feature flow cards
       this.featureFlowCards = new FeatureFlowCards(this.homey);
       this.featureFlowCards.setSolarElevation(this.solarElevation);
@@ -520,6 +528,7 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
       this.featureFlowCards.setFeatureFallbackRouter(this.featureFallbackRouter);
       this.featureFlowCards.setCircadianEngine(this.circadianEngine);
       this.featureFlowCards.setMotionCascadeManager(this.motionCascadeManager);
+      this.featureFlowCards.setHomeModeManager(this.homeModeManager);
       this.featureFlowCards.registerAll();
       this.log('✅ Feature modules and flow cards initialized');
     } catch (err) {

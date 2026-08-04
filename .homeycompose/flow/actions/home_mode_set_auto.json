@@ -1,0 +1,43 @@
+{
+  "id": "home_mode_set_auto",
+  "title": {
+    "en": "Enable/disable automatic mode transitions",
+    "fr": "Activer/désactiver les transitions automatiques de mode",
+    "nl": "Automatische modusovergangen in-/uitschakelen",
+    "de": "Automatische Moduswechsel ein-/ausschalten"
+  },
+  "hint": {
+    "en": "Enables or disables sun-driven automatic mode transitions",
+    "fr": "Active ou désactive les transitions automatiques pilotées par le soleil"
+  },
+  "args": [
+    {
+      "name": "enabled",
+      "type": "dropdown",
+      "title": {
+        "en": "Automatic transitions",
+        "fr": "Transitions automatiques"
+      },
+      "values": [
+        {
+          "id": "true",
+          "title": {
+            "en": "Enabled",
+            "fr": "Activées"
+          }
+        },
+        {
+          "id": "false",
+          "title": {
+            "en": "Disabled",
+            "fr": "Désactivées"
+          }
+        }
+      ]
+    }
+  ],
+  "titleFormatted": {
+    "en": "Automatic mode transitions [[enabled]]",
+    "fr": "Transitions automatiques de mode [[enabled]]"
+  }
+}

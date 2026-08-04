@@ -1,0 +1,71 @@
+{
+  "id": "home_mode_changed",
+  "title": {
+    "en": "Home mode changed",
+    "fr": "Le mode de la maison a changé",
+    "nl": "Huismodus gewijzigd",
+    "de": "Hausmodus geändert"
+  },
+  "hint": {
+    "en": "Triggers when the home mode changes (day/evening/night/away)",
+    "fr": "Se déclenche quand le mode de la maison change (jour/soir/nuit/absent)"
+  },
+  "args": [
+    {
+      "name": "mode",
+      "type": "dropdown",
+      "title": {
+        "en": "Mode",
+        "fr": "Mode"
+      },
+      "values": [
+        {
+          "id": "day",
+          "title": {
+            "en": "Day",
+            "fr": "Jour"
+          }
+        },
+        {
+          "id": "evening",
+          "title": {
+            "en": "Evening",
+            "fr": "Soir"
+          }
+        },
+        {
+          "id": "night",
+          "title": {
+            "en": "Night",
+            "fr": "Nuit"
+          }
+        },
+        {
+          "id": "away",
+          "title": {
+            "en": "Away",
+            "fr": "Absent"
+          }
+        }
+      ]
+    }
+  ],
+  "tokens": [
+    {
+      "name": "mode",
+      "type": "string",
+      "title": {
+        "en": "New mode",
+        "fr": "Nouveau mode"
+      }
+    },
+    {
+      "name": "previous_mode",
+      "type": "string",
+      "title": {
+        "en": "Previous mode",
+        "fr": "Mode précédent"
+      }
+    }
+  ]
+}

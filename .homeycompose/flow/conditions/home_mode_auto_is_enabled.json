@@ -1,0 +1,14 @@
+{
+  "id": "home_mode_auto_is_enabled",
+  "title": {
+    "en": "Automatic mode transitions !{{are|are not}} enabled",
+    "fr": "Les transitions automatiques de mode !{{sont|ne sont pas}} activées",
+    "nl": "Automatische modusovergangen !{{zijn|zijn niet}} ingeschakeld",
+    "de": "Automatische Moduswechsel !{{sind|sind nicht}} aktiviert"
+  },
+  "hint": {
+    "en": "Checks if sun-driven automatic mode transitions are enabled",
+    "fr": "Vérifie si les transitions automatiques pilotées par le soleil sont activées"
+  },
+  "args": []
+}

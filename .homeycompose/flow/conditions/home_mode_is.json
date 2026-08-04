@@ -1,0 +1,57 @@
+{
+  "id": "home_mode_is",
+  "title": {
+    "en": "Home mode !{{is|is not}}",
+    "fr": "Le mode de la maison !{{est|n'est pas}}",
+    "nl": "Huismodus !{{is|is niet}}",
+    "de": "Hausmodus !{{ist|ist nicht}}"
+  },
+  "hint": {
+    "en": "Checks the current home mode",
+    "fr": "Vérifie le mode actuel de la maison"
+  },
+  "args": [
+    {
+      "name": "mode",
+      "type": "dropdown",
+      "title": {
+        "en": "Mode",
+        "fr": "Mode"
+      },
+      "values": [
+        {
+          "id": "day",
+          "title": {
+            "en": "Day",
+            "fr": "Jour"
+          }
+        },
+        {
+          "id": "evening",
+          "title": {
+            "en": "Evening",
+            "fr": "Soir"
+          }
+        },
+        {
+          "id": "night",
+          "title": {
+            "en": "Night",
+            "fr": "Nuit"
+          }
+        },
+        {
+          "id": "away",
+          "title": {
+            "en": "Away",
+            "fr": "Absent"
+          }
+        }
+      ]
+    }
+  ],
+  "titleFormatted": {
+    "en": "Home mode !{{is|is not}} [[mode]]",
+    "fr": "Le mode de la maison !{{est|n'est pas}} [[mode]]"
+  }
+}

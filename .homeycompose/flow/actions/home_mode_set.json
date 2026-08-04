@@ -1,0 +1,57 @@
+{
+  "id": "home_mode_set",
+  "title": {
+    "en": "Set home mode",
+    "fr": "Définir le mode de la maison",
+    "nl": "Huismodus instellen",
+    "de": "Hausmodus setzen"
+  },
+  "hint": {
+    "en": "Sets the home mode (manual choice wins over automatic transitions for 1 hour)",
+    "fr": "Définit le mode de la maison (le choix manuel prime sur les transitions automatiques pendant 1 heure)"
+  },
+  "args": [
+    {
+      "name": "mode",
+      "type": "dropdown",
+      "title": {
+        "en": "Mode",
+        "fr": "Mode"
+      },
+      "values": [
+        {
+          "id": "day",
+          "title": {
+            "en": "Day",
+            "fr": "Jour"
+          }
+        },
+        {
+          "id": "evening",
+          "title": {
+            "en": "Evening",
+            "fr": "Soir"
+          }
+        },
+        {
+          "id": "night",
+          "title": {
+            "en": "Night",
+            "fr": "Nuit"
+          }
+        },
+        {
+          "id": "away",
+          "title": {
+            "en": "Away",
+            "fr": "Absent"
+          }
+        }
+      ]
+    }
+  ],
+  "titleFormatted": {
+    "en": "Set home mode to [[mode]]",
+    "fr": "Définir le mode de la maison sur [[mode]]"
+  }
+}
