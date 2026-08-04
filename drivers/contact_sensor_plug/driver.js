@@ -72,7 +72,7 @@ class PlugSmartDriver extends ZigBeeDriver {
     } catch (err) { if (this.developerDebugMode) { this.error(`Action contact_sensor_plug_plug_smart_turn_off: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getActionCard('contact_sensor_plug_sensor_plug_sensor_plug_plug_on_delay');
+      const card = this.homey.flow.getActionCard('contact_sensor_plug_on_delay');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}

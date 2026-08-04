@@ -22,7 +22,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
 
   _registerFlowCards() {
     // TRIGGERS
-    const _triggerIds = ["dimmer_wall_switch_switch_2gang_gang1_turned_on","dimmer_wall_switch_switch_2gang_gang1_turned_off","dimmer_wall_switch_switch_2gang_gang2_turned_on","dimmer_wall_switch_switch_2gang_gang2_turned_off","dimmer_wall_switch_switch_2gang_physical_gang1_on","dimmer_wall_switch_switch_2gang_physical_gang1_off","dimmer_wall_switch_switch_2gang_physical_gang2_on","dimmer_wall_switch_switch_2gang_physical_gang2_off","dimmer_wall_switch_switch_2gang_turned_on","dimmer_wall_switch_switch_2gang_turned_off","dimmer_wall_switch_switch_2gang_power_changed","dimmer_wall_switch_switch_2gang_gang1_scene","dimmer_wall_switch_switch_2gang_gang2_scene"];
+    const _triggerIds = ["dimmer_wall_switch_2gang_gang1_turned_on","dimmer_wall_switch_2gang_gang1_turned_off","dimmer_wall_switch_2gang_gang2_turned_on","dimmer_wall_switch_2gang_gang2_turned_off","dimmer_wall_switch_2gang_physical_gang1_on","dimmer_wall_switch_2gang_physical_gang1_off","dimmer_wall_switch_2gang_physical_gang2_on","dimmer_wall_switch_2gang_physical_gang2_off","dimmer_wall_switch_2gang_turned_on","dimmer_wall_switch_2gang_turned_off","dimmer_wall_switch_2gang_power_changed","dimmer_wall_switch_2gang_gang1_scene","dimmer_wall_switch_2gang_gang2_scene"];
     for (const _tid of _triggerIds) {
       try {
         const _card = this._getFlowCard(_tid, "trigger");
@@ -37,38 +37,38 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
     // END TRIGGERS
     // CONDITIONS
     try {
-      const card = this.homey.flow.getConditionCard('dimmer_wall_switch_switch_2gang_gang1_is_on');
+      const card = this.homey.flow.getConditionCard('dimmer_wall_switch_2gang_gang1_is_on');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Condition dimmer_wall_switch_switch_2gang_gang1_is_on: ${err.message}`); } }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition dimmer_wall_switch_2gang_gang1_is_on: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getConditionCard('dimmer_wall_switch_switch_2gang_gang2_is_on');
+      const card = this.homey.flow.getConditionCard('dimmer_wall_switch_2gang_gang2_is_on');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Condition dimmer_wall_switch_switch_2gang_gang2_is_on: ${err.message}`); } }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition dimmer_wall_switch_2gang_gang2_is_on: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getConditionCard('dimmer_wall_switch_switch_2gang_is_on');
+      const card = this.homey.flow.getConditionCard('dimmer_wall_switch_2gang_is_on');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Condition dimmer_wall_switch_switch_2gang_is_on: ${err.message}`); } }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition dimmer_wall_switch_2gang_is_on: ${err.message}`); } }
 
     // ACTIONS
     try {
-      const card = this.homey.flow.getActionCard('dimmer_wall_switch_switch_2gang_turn_on_gang1');
+      const card = this.homey.flow.getActionCard('dimmer_wall_switch_2gang_turn_on_gang1');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -76,10 +76,10 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Action dimmer_wall_switch_switch_2gang_turn_on_gang1: ${err.message}`); } }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action dimmer_wall_switch_2gang_turn_on_gang1: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getActionCard('dimmer_wall_switch_switch_2gang_turn_off_gang1');
+      const card = this.homey.flow.getActionCard('dimmer_wall_switch_2gang_turn_off_gang1');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -87,10 +87,10 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Action dimmer_wall_switch_switch_2gang_turn_off_gang1: ${err.message}`); } }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action dimmer_wall_switch_2gang_turn_off_gang1: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getActionCard('dimmer_wall_switch_switch_2gang_turn_on_gang2');
+      const card = this.homey.flow.getActionCard('dimmer_wall_switch_2gang_turn_on_gang2');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -98,10 +98,10 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Action dimmer_wall_switch_switch_2gang_turn_on_gang2: ${err.message}`); } }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action dimmer_wall_switch_2gang_turn_on_gang2: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getActionCard('dimmer_wall_switch_switch_2gang_turn_off_gang2');
+      const card = this.homey.flow.getActionCard('dimmer_wall_switch_2gang_turn_off_gang2');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -109,10 +109,10 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Action dimmer_wall_switch_switch_2gang_turn_off_gang2: ${err.message}`); } }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action dimmer_wall_switch_2gang_turn_off_gang2: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getActionCard('dimmer_wall_switch_switch_2gang_toggle_gang1');
+      const card = this.homey.flow.getActionCard('dimmer_wall_switch_2gang_toggle_gang1');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -121,10 +121,10 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Action dimmer_wall_switch_switch_2gang_toggle_gang1: ${err.message}`); } }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action dimmer_wall_switch_2gang_toggle_gang1: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getActionCard('dimmer_wall_switch_switch_2gang_toggle_gang2');
+      const card = this.homey.flow.getActionCard('dimmer_wall_switch_2gang_toggle_gang2');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -133,10 +133,10 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Action dimmer_wall_switch_switch_2gang_toggle_gang2: ${err.message}`); } }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action dimmer_wall_switch_2gang_toggle_gang2: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getActionCard('dimmer_wall_switch_switch_2gang_turn_on_all');
+      const card = this.homey.flow.getActionCard('dimmer_wall_switch_2gang_turn_on_all');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -145,10 +145,10 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Action dimmer_wall_switch_switch_2gang_turn_on_all: ${err.message}`); } }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action dimmer_wall_switch_2gang_turn_on_all: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getActionCard('dimmer_wall_switch_switch_2gang_turn_off_all');
+      const card = this.homey.flow.getActionCard('dimmer_wall_switch_2gang_turn_off_all');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -157,10 +157,10 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Action dimmer_wall_switch_switch_2gang_turn_off_all: ${err.message}`); } }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action dimmer_wall_switch_2gang_turn_off_all: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getActionCard('dimmer_wall_switch_switch_2gang_set_backlight');
+      const card = this.homey.flow.getActionCard('dimmer_wall_switch_2gang_set_backlight');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -168,10 +168,10 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Action dimmer_wall_switch_switch_2gang_set_backlight: ${err.message}`); } }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action dimmer_wall_switch_2gang_set_backlight: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getActionCard('dimmer_wall_switch_switch_2gang_turn_on');
+      const card = this.homey.flow.getActionCard('dimmer_wall_switch_2gang_turn_on');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -179,10 +179,10 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Action dimmer_wall_switch_switch_2gang_turn_on: ${err.message}`); } }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action dimmer_wall_switch_2gang_turn_on: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getActionCard('dimmer_wall_switch_switch_2gang_turn_off');
+      const card = this.homey.flow.getActionCard('dimmer_wall_switch_2gang_turn_off');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -190,10 +190,10 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Action dimmer_wall_switch_switch_2gang_turn_off: ${err.message}`); } }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action dimmer_wall_switch_2gang_turn_off: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getActionCard('dimmer_wall_switch_switch_2gang_toggle');
+      const card = this.homey.flow.getActionCard('dimmer_wall_switch_2gang_toggle');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -202,10 +202,10 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Action dimmer_wall_switch_switch_2gang_toggle: ${err.message}`); } }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action dimmer_wall_switch_2gang_toggle: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getActionCard('dimmer_wall_switch_switch_2gang_set_scene_mode');
+      const card = this.homey.flow.getActionCard('dimmer_wall_switch_2gang_set_scene_mode');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -213,7 +213,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Action dimmer_wall_switch_switch_2gang_set_scene_mode: ${err.message}`); } }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action dimmer_wall_switch_2gang_set_scene_mode: ${err.message}`); } }
 
     this.log('[FLOW] All flow cards registered');
   }

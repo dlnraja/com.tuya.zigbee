@@ -140,6 +140,65 @@
         "nl": "Stoppen",
         "de": "Stoppen"
       }
+    },
+    {
+      "id": "curtain_calibrate",
+      "title": {
+        "en": "Calibrate",
+        "fr": "Calibrate"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Calibrate",
+        "fr": "Calibrate"
+      }
+    },
+    {
+      "id": "curtain_reset_position",
+      "title": {
+        "en": "Reset position",
+        "fr": "Reset position"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Reset position",
+        "fr": "Reset position"
+      }
+    },
+    {
+      "id": "curtain_hold",
+      "title": {
+        "en": "Hold (stop)",
+        "fr": "Hold (stop)"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Hold (stop)",
+        "fr": "Hold (stop)"
+      }
+    },
+    {
+      "id": "curtain_open_partial",
+      "title": {
+        "en": "Open partially",
+        "fr": "Open partially"
+      },
+      "args": [
+        {
+          "name": "position",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "placeholder": {
+            "en": "50"
+          }
+        }
+      ],
+      "titleFormatted": {
+        "en": "Open partially to [[position]]",
+        "fr": "Open partially to [[position]]"
+      }
     }
   ]
 }
