@@ -5,7 +5,13 @@
       "title": {
         "en": "Turn on"
       },
-      "args": [],
+      "args": [
+        {
+          "type": "device",
+          "name": "device",
+          "filter": "driver_id=valve_irrigation"
+        }
+      ],
       "titleFormatted": {
         "en": "Turn on"
       }
@@ -15,7 +21,13 @@
       "title": {
         "en": "Turn off"
       },
-      "args": [],
+      "args": [
+        {
+          "type": "device",
+          "name": "device",
+          "filter": "driver_id=valve_irrigation"
+        }
+      ],
       "titleFormatted": {
         "en": "Turn off"
       }
@@ -28,7 +40,13 @@
         "nl": "Wisselen",
         "de": "Umschalten"
       },
-      "args": [],
+      "args": [
+        {
+          "type": "device",
+          "name": "device",
+          "filter": "driver_id=valve_irrigation"
+        }
+      ],
       "titleFormatted": {
         "en": "Toggle",
         "fr": "Basculer",
@@ -46,7 +64,13 @@
         "nl": "Aangezet",
         "de": "Eingeschaltet"
       },
-      "args": [],
+      "args": [
+        {
+          "type": "device",
+          "name": "device",
+          "filter": "driver_id=valve_irrigation"
+        }
+      ],
       "titleFormatted": {
         "en": "Turned on",
         "fr": "Allumé",
@@ -62,7 +86,13 @@
         "nl": "Uitgezet",
         "de": "Ausgeschaltet"
       },
-      "args": [],
+      "args": [
+        {
+          "type": "device",
+          "name": "device",
+          "filter": "driver_id=valve_irrigation"
+        }
+      ],
       "titleFormatted": {
         "en": "Turned off",
         "fr": "Éteint",
@@ -78,7 +108,13 @@
         "nl": "Batterij laag",
         "de": "Batterie schwach"
       },
-      "args": [],
+      "args": [
+        {
+          "type": "device",
+          "name": "device",
+          "filter": "driver_id=valve_irrigation"
+        }
+      ],
       "titleFormatted": {
         "en": "Battery low",
         "fr": "Batterie faible",
@@ -96,7 +132,13 @@
         "nl": "Is !{{aan|uit}}",
         "de": "Ist !{{ein|aus}}"
       },
-      "args": [],
+      "args": [
+        {
+          "type": "device",
+          "name": "device",
+          "filter": "driver_id=valve_irrigation"
+        }
+      ],
       "titleFormatted": {
         "en": "Is !{{on|off}}",
         "fr": "Est !{{allumé|éteint}}",

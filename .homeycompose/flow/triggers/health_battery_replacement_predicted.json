@@ -10,7 +10,7 @@
     {
       "name": "device",
       "type": "device",
-      "filter": "capabilities=measure_battery|battery"
+      "filter": "capabilities=measure_battery"
     }
   ],
   "tokens": [

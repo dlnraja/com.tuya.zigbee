@@ -30,7 +30,7 @@
     {
       "type": "device",
       "name": "device",
-      "filter": "capabilities=tuya_dp_bitmap|onoff"
+      "filter": "capabilities=tuya_dp_bitmap"
     },
     {
       "name": "dp",

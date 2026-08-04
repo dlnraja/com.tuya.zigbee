@@ -26,14 +26,78 @@
         "de": "Taste"
       },
       "values": [
-        { "id": "1", "label": { "en": "Button 1", "fr": "Bouton 1", "nl": "Knop 1", "de": "Taste 1" } },
-        { "id": "2", "label": { "en": "Button 2", "fr": "Bouton 2", "nl": "Knop 2", "de": "Taste 2" } },
-        { "id": "3", "label": { "en": "Button 3", "fr": "Bouton 3", "nl": "Knop 3", "de": "Taste 3" } },
-        { "id": "4", "label": { "en": "Button 4", "fr": "Bouton 4", "nl": "Knop 4", "de": "Taste 4" } },
-        { "id": "5", "label": { "en": "Button 5", "fr": "Bouton 5", "nl": "Knop 5", "de": "Taste 5" } },
-        { "id": "6", "label": { "en": "Button 6", "fr": "Bouton 6", "nl": "Knop 6", "de": "Taste 6" } },
-        { "id": "7", "label": { "en": "Button 7", "fr": "Bouton 7", "nl": "Knop 7", "de": "Taste 7" } },
-        { "id": "8", "label": { "en": "Button 8", "fr": "Bouton 8", "nl": "Knop 8", "de": "Taste 8" } }
+        {
+          "id": "1",
+          "label": {
+            "en": "Button 1",
+            "fr": "Bouton 1",
+            "nl": "Knop 1",
+            "de": "Taste 1"
+          }
+        },
+        {
+          "id": "2",
+          "label": {
+            "en": "Button 2",
+            "fr": "Bouton 2",
+            "nl": "Knop 2",
+            "de": "Taste 2"
+          }
+        },
+        {
+          "id": "3",
+          "label": {
+            "en": "Button 3",
+            "fr": "Bouton 3",
+            "nl": "Knop 3",
+            "de": "Taste 3"
+          }
+        },
+        {
+          "id": "4",
+          "label": {
+            "en": "Button 4",
+            "fr": "Bouton 4",
+            "nl": "Knop 4",
+            "de": "Taste 4"
+          }
+        },
+        {
+          "id": "5",
+          "label": {
+            "en": "Button 5",
+            "fr": "Bouton 5",
+            "nl": "Knop 5",
+            "de": "Taste 5"
+          }
+        },
+        {
+          "id": "6",
+          "label": {
+            "en": "Button 6",
+            "fr": "Bouton 6",
+            "nl": "Knop 6",
+            "de": "Taste 6"
+          }
+        },
+        {
+          "id": "7",
+          "label": {
+            "en": "Button 7",
+            "fr": "Bouton 7",
+            "nl": "Knop 7",
+            "de": "Taste 7"
+          }
+        },
+        {
+          "id": "8",
+          "label": {
+            "en": "Button 8",
+            "fr": "Bouton 8",
+            "nl": "Knop 8",
+            "de": "Taste 8"
+          }
+        }
       ]
     },
     {
@@ -46,11 +110,51 @@
         "de": "Aktion"
       },
       "values": [
-        { "id": "single", "label": { "en": "Single press", "fr": "Appui simple", "nl": "Enkele druk", "de": "Einfacher Druck" } },
-        { "id": "double", "label": { "en": "Double press", "fr": "Double appui", "nl": "Dubbele druk", "de": "Doppelter Druck" } },
-        { "id": "long", "label": { "en": "Long press (hold)", "fr": "Appui long (maintenu)", "nl": "Lange druk", "de": "Langer Druck" } },
-        { "id": "triple", "label": { "en": "Triple press", "fr": "Triple appui", "nl": "Driedubbele druk", "de": "Dreifacher Druck" } },
-        { "id": "release", "label": { "en": "Released after hold", "fr": "Relâché après maintien", "nl": "Losgelaten", "de": "Losgelassen" } }
+        {
+          "id": "single",
+          "label": {
+            "en": "Single press",
+            "fr": "Appui simple",
+            "nl": "Enkele druk",
+            "de": "Einfacher Druck"
+          }
+        },
+        {
+          "id": "double",
+          "label": {
+            "en": "Double press",
+            "fr": "Double appui",
+            "nl": "Dubbele druk",
+            "de": "Doppelter Druck"
+          }
+        },
+        {
+          "id": "long",
+          "label": {
+            "en": "Long press (hold)",
+            "fr": "Appui long (maintenu)",
+            "nl": "Lange druk",
+            "de": "Langer Druck"
+          }
+        },
+        {
+          "id": "triple",
+          "label": {
+            "en": "Triple press",
+            "fr": "Triple appui",
+            "nl": "Driedubbele druk",
+            "de": "Dreifacher Druck"
+          }
+        },
+        {
+          "id": "release",
+          "label": {
+            "en": "Released after hold",
+            "fr": "Relâché après maintien",
+            "nl": "Losgelaten",
+            "de": "Losgelassen"
+          }
+        }
       ]
     }
   ],
@@ -58,13 +162,19 @@
     {
       "name": "button",
       "type": "string",
-      "title": { "en": "Button", "fr": "Bouton" },
+      "title": {
+        "en": "Button",
+        "fr": "Bouton"
+      },
       "example": "1"
     },
     {
       "name": "action",
       "type": "string",
-      "title": { "en": "Action", "fr": "Action" },
+      "title": {
+        "en": "Action",
+        "fr": "Action"
+      },
       "example": "single"
     }
   ],
