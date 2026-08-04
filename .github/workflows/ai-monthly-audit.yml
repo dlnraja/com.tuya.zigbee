@@ -89,25 +89,30 @@ jobs:
           COMMIT_COUNT=$(git log --since="$SINCE" --oneline 2>/dev/null | wc -l || echo "0")
           echo "commit_count=$COMMIT_COUNT" >> $GITHUB_OUTPUT
 
+          # Safe base revision: HEAD~N may not exist (shallow/purged history)
+          REV="HEAD~${COMMIT_COUNT:-50}"
+          git rev-parse --verify --quiet "$REV^{commit}" >/dev/null 2>&1 || REV="$(git rev-list --max-parents=0 HEAD | head -1)"
+          echo "base_rev=$REV" >> $GITHUB_OUTPUT
+
           # File change stats
-          CHANGED_FILES=$(git diff --name-only "HEAD~${COMMIT_COUNT:-50}" HEAD 2>/dev/null | wc -l || echo "0")
+          CHANGED_FILES=$(git diff --name-only "$REV" HEAD 2>/dev/null | wc -l || echo "0")
           echo "changed_files=$CHANGED_FILES" >> $GITHUB_OUTPUT
 
           # Insertion/deletion stats
-          STATS=$(git diff --stat "HEAD~${COMMIT_COUNT:-50}" HEAD 2>/dev/null | tail -1)
+          STATS=$(git diff --stat "$REV" HEAD 2>/dev/null | tail -1)
           INSERTIONS=$(echo "$STATS" | grep -oP '\d+(?= insertion)' || echo "0")
           DELETIONS=$(echo "$STATS" | grep -oP '\d+(?= deletion)' || echo "0")
           echo "insertions=$INSERTIONS" >> $GITHUB_OUTPUT
           echo "deletions=$DELETIONS" >> $GITHUB_OUTPUT
 
           # Extract unique new URLs from changed files
-          git diff "HEAD~${COMMIT_COUNT:-50}" HEAD -- '*.md' '*.js' '*.json' '*.yml' 2>/dev/null | \
+          git diff "$REV" HEAD -- '*.md' '*.js' '*.json' '*.yml' 2>/dev/null | \
             grep -oP 'https?://[^\s\)\">\x27]+' | sort -u > /tmp/new_urls.txt || true
           NEW_URLS=$(wc -l < /tmp/new_urls.txt)
           echo "new_urls=$NEW_URLS" >> $GITHUB_OUTPUT
 
           # Identify most-changed directories
-          git diff --name-only "HEAD~${COMMIT_COUNT:-50}" HEAD 2>/dev/null | \
+          git diff --name-only "$REV" HEAD 2>/dev/null | \
             awk -F/ '{if(NF>1) print $1"/"$2; else print $1}' | sort | uniq -c | sort -rn | head -10 > /tmp/hot_dirs.txt || true
 
           echo "delta_summary=Commits: $COMMIT_COUNT | Files: $CHANGED_FILES | +$INSERTIONS -$DELETIONS | URLs: $NEW_URLS" >> $GITHUB_OUTPUT
