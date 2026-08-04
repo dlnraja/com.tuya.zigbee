@@ -1,0 +1,118 @@
+{
+  "actions": [
+    {
+      "id": "smart_irrigation_valve_turn_on",
+      "title": {
+        "en": "Turn on",
+        "fr": "Allumer",
+        "nl": "Aanzetten",
+        "de": "Einschalten"
+      },
+      "args": [
+        {
+          "type": "device",
+          "name": "device",
+          "filter": "driver_id=smart_irrigation_valve"
+        }
+      ],
+      "titleFormatted": {
+        "en": "Turn on [[device]]",
+        "fr": "Allumer [[device]]",
+        "nl": "Aanzetten [[device]]",
+        "de": "Einschalten [[device]]"
+      }
+    },
+    {
+      "id": "smart_irrigation_valve_turn_off",
+      "title": {
+        "en": "Turn off",
+        "fr": "Éteindre",
+        "nl": "Uitschakelen",
+        "de": "Ausschalten"
+      },
+      "args": [
+        {
+          "type": "device",
+          "name": "device",
+          "filter": "driver_id=smart_irrigation_valve"
+        }
+      ],
+      "titleFormatted": {
+        "en": "Turn off [[device]]",
+        "fr": "Éteindre [[device]]",
+        "nl": "Uitschakelen [[device]]",
+        "de": "Ausschalten [[device]]"
+      }
+    }
+  ],
+  "triggers": [
+    {
+      "id": "smart_irrigation_valve_turned_on",
+      "title": {
+        "en": "Turned on",
+        "fr": "Allumé",
+        "nl": "Aangezet",
+        "de": "Eingeschaltet"
+      },
+      "args": [
+        {
+          "type": "device",
+          "name": "device",
+          "filter": "driver_id=smart_irrigation_valve"
+        }
+      ],
+      "titleFormatted": {
+        "en": "Turned on [[device]]",
+        "fr": "Allumé [[device]]",
+        "nl": "Aangezet [[device]]",
+        "de": "Eingeschaltet [[device]]"
+      }
+    },
+    {
+      "id": "smart_irrigation_valve_turned_off",
+      "title": {
+        "en": "Turned off",
+        "fr": "Éteint",
+        "nl": "Uitgezet",
+        "de": "Ausgeschaltet"
+      },
+      "args": [
+        {
+          "type": "device",
+          "name": "device",
+          "filter": "driver_id=smart_irrigation_valve"
+        }
+      ],
+      "titleFormatted": {
+        "en": "Turned off [[device]]",
+        "fr": "Éteint [[device]]",
+        "nl": "Uitgezet [[device]]",
+        "de": "Ausgeschaltet [[device]]"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "id": "smart_irrigation_valve_fault_active",
+      "title": {
+        "en": "Fault is !{{active|inactive}}",
+        "fr": "Défaut !{{actif|inactif}}",
+        "nl": "Storing is !{{actief|inactief}}",
+        "de": "Fehler ist !{{aktiv|inaktiv}}"
+      },
+      "args": [
+        {
+          "type": "device",
+          "name": "device",
+          "filter": "driver_id=smart_irrigation_valve"
+        }
+      ],
+      "titleFormatted": {
+        "en": "Fault is !{{active|inactive}} [[device]]",
+        "fr": "Défaut !{{actif|inactif}} [[device]]",
+        "nl": "Storing is !{{actief|inactief}} [[device]]",
+        "de": "Fehler ist !{{aktiv|inaktiv}} [[device]]"
+      }
+    }
+  ]
+}
