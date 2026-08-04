@@ -443,7 +443,7 @@ jobs:
                 "security": "${{ steps.validation.outputs.security_passed }}"
               }
             }
-            FALLBACK
+          FALLBACK
             echo "ai_engine=local-fallback" >> $GITHUB_OUTPUT
           fi
 
