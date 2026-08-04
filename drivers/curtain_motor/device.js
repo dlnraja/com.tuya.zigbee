@@ -53,6 +53,9 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
       10: { capability: null, internal: 'speed', writable: true },
       12: { capability: null, internal: 'backlight', writable: true },
       13: { capability: 'measure_battery', divisor: 1 },
+      // v9.0.400 (fork ErnieV, Quoya M515EGBZTN): DP16 border/limits —
+      // 0=set upper, 1=set lower, 2=delete upper, 3=delete lower, 4=remove both
+      16: { capability: null, internal: 'border_limits', writable: true },
       // v5.5.322: Luminance sensor (Eftychis #779 - curtain robot has lux sensor)
       14: { capability: 'measure_luminance', divisor: 1 },
       104: { capability: 'measure_luminance', divisor: 1 }, // Alternative DP for lux
