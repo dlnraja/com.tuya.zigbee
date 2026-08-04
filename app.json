@@ -146522,6 +146522,23 @@
             "nl": "Wissel open/gesloten om indien sensor omgekeerd rapporteert"
           },
           "value": false
+        },
+        {
+          "id": "illuminance_calibration",
+          "type": "number",
+          "label": {
+            "en": "Illuminance calibration (%)",
+            "fr": "Calibration luminosité (%)",
+            "nl": "Lichtsterkte kalibratie (%)"
+          },
+          "hint": {
+            "en": "Multiplier for the reported lux value (100 = unchanged).",
+            "fr": "Multiplicateur appliqué à la valeur lux (100 = inchangé).",
+            "nl": "Vermenigvuldiger voor lux (100 = ongewijzigd)."
+          },
+          "value": 100,
+          "min": 10,
+          "max": 1000
         }
       ],
       "images": {
@@ -167321,7 +167338,23 @@
       "_pidConflictNotes": [
         "// PID-CONFLICT-NOTE RH3001 shared with 3 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
       ],
-      "settings": []
+      "settings": [
+        {
+          "id": "invert_contact",
+          "type": "checkbox",
+          "label": {
+            "en": "Invert contact state",
+            "fr": "Inverser l’état du contact",
+            "nl": "Contactstatus omkeren"
+          },
+          "hint": {
+            "en": "Enable when open/close is reported reversed by this device.",
+            "fr": "Activer si ouvert/fermé est remonté à l’envers par ce capteur.",
+            "nl": "Inschakelen als open/dicht omgekeerd wordt gemeld."
+          },
+          "value": false
+        }
+      ]
     },
     {
       "id": "doorwindowsensor_2",
@@ -167399,7 +167432,23 @@
           }
         }
       },
-      "settings": []
+      "settings": [
+        {
+          "id": "invert_contact",
+          "type": "checkbox",
+          "label": {
+            "en": "Invert contact state",
+            "fr": "Inverser l’état du contact",
+            "nl": "Contactstatus omkeren"
+          },
+          "hint": {
+            "en": "Enable when open/close is reported reversed by this device.",
+            "fr": "Activer si ouvert/fermé est remonté à l’envers par ce capteur.",
+            "nl": "Inschakelen als open/dicht omgekeerd wordt gemeld."
+          },
+          "value": false
+        }
+      ]
     },
     {
       "id": "doorwindowsensor_3",
@@ -167519,7 +167568,23 @@
       "_pidConflictNotes": [
         "// PID-CONFLICT-NOTE TS0203 shared with 10 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
       ],
-      "settings": []
+      "settings": [
+        {
+          "id": "invert_contact",
+          "type": "checkbox",
+          "label": {
+            "en": "Invert contact state",
+            "fr": "Inverser l’état du contact",
+            "nl": "Contactstatus omkeren"
+          },
+          "hint": {
+            "en": "Enable when open/close is reported reversed by this device.",
+            "fr": "Activer si ouvert/fermé est remonté à l’envers par ce capteur.",
+            "nl": "Inschakelen als open/dicht omgekeerd wordt gemeld."
+          },
+          "value": false
+        }
+      ]
     },
     {
       "id": "doorwindowsensor_4",
@@ -167609,7 +167674,23 @@
         "// PID-CONFLICT-NOTE TS0203 shared with 10 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE DS01 shared with 3 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
       ],
-      "settings": []
+      "settings": [
+        {
+          "id": "invert_contact",
+          "type": "checkbox",
+          "label": {
+            "en": "Invert contact state",
+            "fr": "Inverser l’état du contact",
+            "nl": "Contactstatus omkeren"
+          },
+          "hint": {
+            "en": "Enable when open/close is reported reversed by this device.",
+            "fr": "Activer si ouvert/fermé est remonté à l’envers par ce capteur.",
+            "nl": "Inschakelen als open/dicht omgekeerd wordt gemeld."
+          },
+          "value": false
+        }
+      ]
     },
     {
       "id": "double_power_point",
@@ -212689,6 +212770,21 @@
             "min": 1,
             "max": 99
           }
+        },
+        {
+          "id": "invert_contact",
+          "type": "checkbox",
+          "label": {
+            "en": "Invert contact state",
+            "fr": "Inverser l’état du contact",
+            "nl": "Contactstatus omkeren"
+          },
+          "hint": {
+            "en": "Enable when open/close is reported reversed by this device.",
+            "fr": "Activer si ouvert/fermé est remonté à l’envers par ce capteur.",
+            "nl": "Inschakelen als open/dicht omgekeerd wordt gemeld."
+          },
+          "value": false
         }
       ]
     },

@@ -340,6 +340,23 @@
         "nl": "Wissel open/gesloten om indien sensor omgekeerd rapporteert"
       },
       "value": false
+    },
+    {
+      "id": "illuminance_calibration",
+      "type": "number",
+      "label": {
+        "en": "Illuminance calibration (%)",
+        "fr": "Calibration luminosité (%)",
+        "nl": "Lichtsterkte kalibratie (%)"
+      },
+      "hint": {
+        "en": "Multiplier for the reported lux value (100 = unchanged).",
+        "fr": "Multiplicateur appliqué à la valeur lux (100 = inchangé).",
+        "nl": "Vermenigvuldiger voor lux (100 = ongewijzigd)."
+      },
+      "value": 100,
+      "min": 10,
+      "max": 1000
     }
   ],
   "images": {

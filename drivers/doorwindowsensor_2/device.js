@@ -1,35 +1,29 @@
 'use strict';
 const ZclBatteryMonitor = require('../../lib/battery/ZclBatteryMonitor');
+const { setupDoorWindowSensor, handleDoorWindowSettings } = require('../../lib/devices/DoorWindowContactHelper');
 
-const Homey = require('homey');
 const { ZigBeeDevice } = require('homey-zigbeedriver');
-const { CLUSTER } = require('zigbee-clusters');
 
+/**
+ * Door/Window contact sensor with tamper (IAS zone).
+ * v5.12.55 (P92.123): enrollment + initial read + invert via shared helper.
+ */
 class doorwindowsensor2 extends ZigBeeDevice {
-		
-	async onNodeInit({zclNode}) {
+
+  async onNodeInit({ zclNode }) {
     ZclBatteryMonitor.attach(this, zclNode);
-
-		this.printNode();
-
-		// alarm_contact
-    zclNode.endpoints[1].clusters[CLUSTER.IAS_ZONE.NAME].onZoneStatusChangeNotification = payload => {
-      this.onIASZoneStatusChangeNotification(payload);
-    }
-
-  }
-  
-  onIASZoneStatusChangeNotification({zoneStatus, extendedStatus, zoneId, delay,}) {
-    this.log('IASZoneStatusChangeNotification received:', zoneStatus, extendedStatus, zoneId, delay);
-    this.safeSetCapabilityValue('alarm_contact', zoneStatus.alarm1).catch(this.error);
-    this.safeSetCapabilityValue('alarm_tamper', zoneStatus.tamper).catch(this.error);
-    this.safeSetCapabilityValue('alarm_battery', zoneStatus.battery).catch(this.error);
+    this.printNode();
+    await setupDoorWindowSensor(this, zclNode, { hasTamper: true });
   }
 
-	onDeleted(){
-	  super.onDeleted();
-		this.log("Door/Window Sensor removed")
-	}
+  async onSettings({ newSettings, changedKeys }) {
+    handleDoorWindowSettings(this, changedKeys || Object.keys(newSettings || {}));
+  }
+
+  onDeleted() {
+    super.onDeleted();
+    this.log('Door/Window Sensor removed');
+  }
 
 }
 
