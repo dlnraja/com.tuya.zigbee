@@ -46,7 +46,7 @@
     {
       "type": "device",
       "name": "device",
-      "filter": "capabilities=tuya_dp_value|onoff"
+      "filter": "capabilities=tuya_dp_value"
     }
   ],
   "titleFormatted": {

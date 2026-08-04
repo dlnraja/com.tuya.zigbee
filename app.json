@@ -1082,7 +1082,7 @@
           {
             "name": "device",
             "type": "device",
-            "filter": "capabilities=measure_battery|battery"
+            "filter": "capabilities=measure_battery"
           }
         ],
         "tokens": [
@@ -1131,8 +1131,7 @@
         "args": [
           {
             "name": "device",
-            "type": "device",
-            "filter": "capabilities=onoff|measure_temperature|measure_humidity"
+            "type": "device"
           }
         ],
         "tokens": [
@@ -1960,7 +1959,7 @@
           {
             "name": "device",
             "type": "device",
-            "filter": "capabilities=onoff|dim"
+            "filter": "capabilities=onoff"
           }
         ],
         "tokens": [
@@ -2037,7 +2036,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=tuya_dp_bitmap|onoff"
+            "filter": "capabilities=tuya_dp_bitmap"
           },
           {
             "name": "dp",
@@ -2094,7 +2093,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=tuya_cluster_event|onoff"
+            "filter": "capabilities=tuya_cluster_event"
           }
         ],
         "titleFormatted": {
@@ -2150,7 +2149,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=tuya_dp_value|onoff"
+            "filter": "capabilities=tuya_dp_value"
           }
         ],
         "titleFormatted": {
@@ -2194,7 +2193,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=tuya_data_report|onoff"
+            "filter": "capabilities=tuya_dp_value"
           },
           {
             "name": "dp",
@@ -2268,7 +2267,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=tuya_data_report|onoff|measure_temperature"
+            "filter": "capabilities=tuya_dp_value"
           },
           {
             "name": "dp",
@@ -2328,7 +2327,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=tuya_dp_raw|onoff"
+            "filter": "capabilities=tuya_dp_raw"
           },
           {
             "name": "dp",
