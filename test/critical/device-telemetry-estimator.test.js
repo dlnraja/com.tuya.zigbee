@@ -78,7 +78,7 @@ async function withEstimator(device, fn) {
 }
 
 describe('DeviceTelemetryEstimator', () => {
-  it('fills a missing battery with a marked estimate instead of leaving null', async () => {
+  it('never fabricates a battery from a pure default (cross-platform consensus v10.6.0)', async () => {
     const device = new FakeDevice({
       capabilities: ['measure_battery', 'alarm_battery'],
       values: { measure_battery: null, alarm_battery: null },
@@ -86,10 +86,14 @@ describe('DeviceTelemetryEstimator', () => {
     });
 
     await withEstimator(device, async () => {
-      assert.strictEqual(device.values.measure_battery, 50);
-      assert.strictEqual(device.values.alarm_battery, false);
+      // v10.6.0: a pure profile-default (no real value EVER seen) must NOT be
+      // written to the capability — z2m/ZHA leave it unknown; the estimate
+      // lives in store for diagnostics only.
+      assert.strictEqual(device.values.measure_battery, null);
+      assert.strictEqual(device.values.alarm_battery, null);
       assert.strictEqual(device.store.telemetry_battery_estimated, true);
-      assert.strictEqual(device.store.telemetry_measure_battery_source, 'estimated');
+      assert.strictEqual(device.store.telemetry_battery_estimate_reason, 'profile-default:no-direct-report');
+      assert.strictEqual(device.store.telemetry_estimated_battery_percent, 50);
     });
   });
 

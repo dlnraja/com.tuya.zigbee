@@ -58,6 +58,12 @@ class WallSwitch4Gang1WayDevice extends UnifiedSwitchBase {
       this._isSubDevice = Boolean(subDeviceId);
       this.log(`[WALL-4G] Initializing ${this._gangNumber > 1 ? 'Sub' : 'Primary'} Device (Gang ${this._gangNumber})`);
       await super.onNodeInit({ zclNode });
+      // v5.12.48 (backport P92.93, forum #2099): UnifiedSwitchBase.onNodeInit ne
+      // chaîne pas vers TuyaZigbeeDevice.onNodeInit — initPhysicalButtonDetection
+      // n'était jamais appelé → flows d'appui physique morts (Moes TS0014).
+      if (typeof this.initPhysicalButtonDetection === 'function') {
+        await this.initPhysicalButtonDetection(zclNode).catch(err => this.log(`[BUTTON-INIT] ⚠️ Physical error: ${err.message}`));
+      }
       await this._setupPzaoSceneInterceptor();
       await this.initVirtualButtons();
       if (typeof this._registerButtonCapabilityListeners === 'function') {
