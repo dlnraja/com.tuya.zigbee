@@ -5,6 +5,15 @@ const { safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 
+// Energy scaling divisors — ZCL raw attributes; Tuya-DP drivers use smartDivisor: true via SmartDivisorManager.
+// Multipliers are the exact inverses of the ZCL divisors, so results stay identical to the raw scaling.
+const ENERGY_SCALING = {
+  measure_power: { multiplier: 10 },      // activePower raw ×10 → W
+  measure_voltage: { multiplier: 10 },    // rmsVoltage raw ×10 → V
+  measure_current: { multiplier: 1000 },  // rmsCurrent raw ×1000 → A
+  meter_power: { divisor: 1000 },         // currentSummationDelivered raw ÷1000 → kWh
+};
+
 /**
  * USB Dongle Dual Repeater - v5.8.68
  * Device: _TZ3000_h1ipgkwn / TS0002 (XMSJ 2-port USB power switch)
@@ -164,19 +173,19 @@ class UsbDongleDualRepeaterDevice extends PhysicalButtonMixin(ZigBeeDevice) {
         this.log('[USB_DONGLE] Setting up haElectricalMeasurement listeners');
 
         electrical.on('attr.activePower', value => {
-          const power = safeMultiply(value, 10);
+          const power = safeMultiply(value, ENERGY_SCALING.measure_power.multiplier);
           this.log('[USB_DONGLE] Power:', power, 'W');
           if (this.hasCapability('measure_power')) {this.safeSetCapabilityValue('measure_power', parseFloat(power)).catch(this.error);}
       });
 
         electrical.on('attr.rmsVoltage', value => {
-          const voltage = safeMultiply(value, 10);
+          const voltage = safeMultiply(value, ENERGY_SCALING.measure_voltage.multiplier);
           this.log('[USB_DONGLE] Voltage:', voltage, 'V');
           if (this.hasCapability('measure_voltage')) {this.safeSetCapabilityValue('measure_voltage', parseFloat(voltage)).catch(this.error);}
       });
 
         electrical.on('attr.rmsCurrent', value => {
-          const current = value * 1000;
+          const current = value * ENERGY_SCALING.measure_current.multiplier;
           this.log('[USB_DONGLE] Current:', current, 'A');
           if (this.hasCapability('measure_current')) {this.safeSetCapabilityValue('measure_current', parseFloat(current)).catch(this.error);}
       });
@@ -190,14 +199,14 @@ class UsbDongleDualRepeaterDevice extends PhysicalButtonMixin(ZigBeeDevice) {
 
         electrical.readAttributes(['activePower', 'rmsVoltage', 'rmsCurrent']).then(data => {
           if (data?.activePower != null) {
-            const power = safeMultiply(data.activePower, 10);if (this.hasCapability('measure_power')) {this.safeSetCapabilityValue('measure_power', parseFloat(power)).catch(this.error);}
+            const power = safeMultiply(data.activePower, ENERGY_SCALING.measure_power.multiplier);if (this.hasCapability('measure_power')) {this.safeSetCapabilityValue('measure_power', parseFloat(power)).catch(this.error);}
           }
           if (data?.rmsVoltage != null) {
-            const voltage = safeMultiply(data.rmsVoltage, 10);
+            const voltage = safeMultiply(data.rmsVoltage, ENERGY_SCALING.measure_voltage.multiplier);
             if (this.hasCapability('measure_voltage')) {this.safeSetCapabilityValue('measure_voltage', parseFloat(voltage)).catch(this.error);}
           }
           if (data?.rmsCurrent != null) {
-            const current = data.rmsCurrent * 1000;
+            const current = data.rmsCurrent * ENERGY_SCALING.measure_current.multiplier;
             if (this.hasCapability('measure_current')) {this.safeSetCapabilityValue('measure_current', parseFloat(current)).catch(this.error);}
           }
         }).catch(() => {});
@@ -207,7 +216,7 @@ class UsbDongleDualRepeaterDevice extends PhysicalButtonMixin(ZigBeeDevice) {
         this.log('[USB_DONGLE] Setting up metering listeners' );
 
         metering.on('attr.currentSummationDelivered', value => {
-          const kWh = value / 1000;
+          const kWh = value / ENERGY_SCALING.meter_power.divisor;
           this.log('[USB_DONGLE] Energy:', kWh, 'kWh');
           if (this.hasCapability('meter_power')) {this.safeSetCapabilityValue('meter_power', parseFloat(kWh)).catch(this.error);}
       });
@@ -223,7 +232,7 @@ class UsbDongleDualRepeaterDevice extends PhysicalButtonMixin(ZigBeeDevice) {
 
         metering.readAttributes(['currentSummationDelivered']).then(data => {
           if (data?.currentSummationDelivered != null) {
-            const kWh = data.currentSummationDelivered / 1000;if (this.hasCapability('meter_power')) {this.safeSetCapabilityValue('meter_power', parseFloat(kWh)).catch(this.error);}
+            const kWh = data.currentSummationDelivered / ENERGY_SCALING.meter_power.divisor;if (this.hasCapability('meter_power')) {this.safeSetCapabilityValue('meter_power', parseFloat(kWh)).catch(this.error);}
           }
         }).catch(() => {});
       }

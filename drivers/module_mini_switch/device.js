@@ -5,6 +5,20 @@ const { setupSonoffEwelink, handleSonoffEwlSettings } = require('../../lib/mixin
 
 class ModuleMiniSwitchDevice extends PhysicalButtonMixin(UnifiedSwitchBase) {
   get gangCount() { return 1; }
+
+  /**
+   * EXTEND parent dpMappings with energy monitoring DPs
+   */
+  get dpMappings() {
+    const parentMappings = Object.getPrototypeOf(Object.getPrototypeOf(this)).dpMappings || {};
+    return {
+      ...parentMappings,
+      17: { capability: 'measure_current', smartDivisor: true, unit: 'A' },
+      18: { capability: 'measure_power', smartDivisor: true, unit: 'W' },
+      19: { capability: 'measure_voltage', smartDivisor: true, unit: 'V' },
+      20: { capability: 'meter_power', smartDivisor: true, unit: 'kWh' }
+    };
+  }
   async onNodeInit({ zclNode }) {
     // --- Attribute Reporting Configuration (auto-generated) ---
     try {

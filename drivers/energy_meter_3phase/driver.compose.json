@@ -15,7 +15,9 @@
     "measure_power.phase2",
     "measure_power.phase3",
     "measure_battery",
-    "button.1"
+    "button.1",
+    "measure_power.phase_total",
+    "meter_power.exported"
   ],
   "energy": {
     "batteries": [

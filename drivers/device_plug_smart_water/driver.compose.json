@@ -593,34 +593,6 @@
         "en": "Minimum power change in Watts to trigger a report",
         "fr": "Changement minimum en Watts pour déclencher un rapport"
       }
-    },
-    {
-      "id": "enable_radio_sensing",
-      "type": "checkbox",
-      "label": {
-        "en": "Enable Radio Presence Sensing",
-        "fr": "Activer la Détection de Présence Radio"
-      },
-      "value": false,
-      "hint": {
-        "en": "Infer presence from Zigbee signal fluctuations (BETA)",
-        "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
-      }
-    },
-    {
-      "id": "radio_sensitivity",
-      "type": "number",
-      "label": {
-        "en": "Radio Presence Sensitivity",
-        "fr": "Sensibilité Présence Radio"
-      },
-      "value": 15,
-      "min": 5,
-      "max": 50,
-      "hint": {
-        "en": "LQI variance threshold (higher = less sensitive)",
-        "fr": "Seuil de variance LQI (plus haut = moins sensible)"
-      }
     }
   ],
   "images": {

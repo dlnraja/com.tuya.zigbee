@@ -16706,82 +16706,6 @@
         }
       },
       {
-        "id": "device_air_purifier_climate_air_purifier_cli_87d70",
-        "title": {
-          "en": "Turned on",
-          "fr": "Allumé",
-          "nl": "Aangezet",
-          "de": "Eingeschaltet"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=device_air_purifier_climate"
-          }
-        ],
-        "titleFormatted": {
-          "en": "Turned on",
-          "fr": "Allumé",
-          "nl": "Aangezet",
-          "de": "Eingeschaltet"
-        }
-      },
-      {
-        "id": "device_air_purifier_climate_air_purifier_cli_19b6a",
-        "title": {
-          "en": "Turned off",
-          "fr": "Éteint",
-          "nl": "Uitgezet",
-          "de": "Ausgeschaltet"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=device_air_purifier_climate"
-          }
-        ],
-        "titleFormatted": {
-          "en": "Turned off",
-          "fr": "Éteint",
-          "nl": "Uitgezet",
-          "de": "Ausgeschaltet"
-        }
-      },
-      {
-        "id": "device_air_purifier_climate_air_purifier_cli_459aa",
-        "title": {
-          "en": "PM2.5 changed",
-          "fr": "PM2.5 changé",
-          "nl": "PM2.5 gewijzigd",
-          "de": "PM2.5 geändert"
-        },
-        "tokens": [
-          {
-            "name": "pm25",
-            "type": "number",
-            "title": {
-              "en": "PM2.5 (µg/m³)"
-            },
-            "example": 35
-          }
-        ],
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=device_air_purifier_climate"
-          }
-        ],
-        "titleFormatted": {
-          "en": "PM2.5 changed",
-          "fr": "PM2.5 changé",
-          "nl": "PM2.5 gewijzigd",
-          "de": "PM2.5 geändert"
-        }
-      },
-      {
         "id": "device_air_purifier_din_rail_meter_power_changed",
         "title": {
           "en": "Power changed",
@@ -71328,28 +71252,6 @@
         }
       },
       {
-        "id": "device_air_purifier_climate_air_purifier_cli_d851d",
-        "title": {
-          "en": "Is !{{on|off}}",
-          "fr": "Est !{{allumé|éteint}}",
-          "nl": "Is !{{aan|uit}}",
-          "de": "Ist !{{ein|aus}}"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=device_air_purifier_climate"
-          }
-        ],
-        "titleFormatted": {
-          "en": "Is !{{on|off}}",
-          "fr": "Est !{{allumé|éteint}}",
-          "nl": "Is !{{aan|uit}}",
-          "de": "Ist !{{ein|aus}}"
-        }
-      },
-      {
         "id": "device_air_purifier_din_rail_meter_power_above",
         "title": {
           "en": "Power !{{is|is not}} above"
@@ -93731,134 +93633,6 @@
           "fr": "Régler température [[temperature]]",
           "nl": "Temperatuur instellen [[temperature]]",
           "de": "Temperatur einstellen [[temperature]]"
-        }
-      },
-      {
-        "id": "device_air_purifier_climate_air_purifier_cli_d0d47",
-        "title": {
-          "en": "Turn on",
-          "fr": "Allumer",
-          "nl": "Aanzetten",
-          "de": "Einschalten"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=device_air_purifier_climate"
-          }
-        ],
-        "titleFormatted": {
-          "en": "Turn on",
-          "fr": "Allumer",
-          "nl": "Aanzetten",
-          "de": "Einschalten"
-        }
-      },
-      {
-        "id": "device_air_purifier_climate_air_purifier_cli_40d86",
-        "title": {
-          "en": "Turn off",
-          "fr": "Éteindre",
-          "nl": "Uitzetten",
-          "de": "Ausschalten"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=device_air_purifier_climate"
-          }
-        ],
-        "titleFormatted": {
-          "en": "Turn off",
-          "fr": "Éteindre",
-          "nl": "Uitzetten",
-          "de": "Ausschalten"
-        }
-      },
-      {
-        "id": "device_air_purifier_climate_air_purifier_cli_e30e0",
-        "title": {
-          "en": "Toggle",
-          "fr": "Basculer",
-          "nl": "Wisselen",
-          "de": "Umschalten"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=device_air_purifier_climate"
-          }
-        ],
-        "titleFormatted": {
-          "en": "Toggle",
-          "fr": "Basculer",
-          "nl": "Wisselen",
-          "de": "Umschalten"
-        }
-      },
-      {
-        "id": "device_air_purifier_climate_air_purifier_cli_060c3",
-        "title": {
-          "en": "Set fan speed",
-          "fr": "Régler vitesse",
-          "nl": "Snelheid instellen",
-          "de": "Geschwindigkeit einstellen"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=device_air_purifier_climate"
-          },
-          {
-            "name": "speed",
-            "type": "range",
-            "min": 0,
-            "max": 100,
-            "step": 10,
-            "label": "%",
-            "labelDecimals": 0
-          }
-        ],
-        "titleFormatted": {
-          "en": "Set fan speed [[speed]]",
-          "fr": "Régler vitesse [[speed]]",
-          "nl": "Snelheid instellen [[speed]]",
-          "de": "Geschwindigkeit einstellen [[speed]]"
-        }
-      },
-      {
-        "id": "device_air_purifier_climate_air_purifier_cli_58cbe",
-        "title": {
-          "en": "Set brightness",
-          "fr": "Régler luminosité",
-          "nl": "Helderheid instellen",
-          "de": "Helligkeit einstellen"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=device_air_purifier_climate"
-          },
-          {
-            "name": "brightness",
-            "type": "range",
-            "min": 0,
-            "max": 100,
-            "step": 1,
-            "label": "%",
-            "labelDecimals": 0
-          }
-        ],
-        "titleFormatted": {
-          "en": "Set brightness [[brightness]]",
-          "fr": "Régler luminosité [[brightness]]",
-          "nl": "Helderheid instellen [[brightness]]",
-          "de": "Helligkeit einstellen [[brightness]]"
         }
       },
       {
@@ -123922,34 +123696,6 @@
             "nl": "Wissel open/gesloten om indien sensor omgekeerd rapporteert"
           },
           "value": false
-        },
-        {
-          "id": "enable_radio_sensing",
-          "type": "checkbox",
-          "label": {
-            "en": "Enable Radio Presence Sensing",
-            "fr": "Activer la Détection de Présence Radio"
-          },
-          "value": false,
-          "hint": {
-            "en": "Infer presence from Zigbee signal fluctuations (BETA)",
-            "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
-          }
-        },
-        {
-          "id": "radio_sensitivity",
-          "type": "number",
-          "label": {
-            "en": "Radio Presence Sensitivity",
-            "fr": "Sensibilité Présence Radio"
-          },
-          "value": 15,
-          "min": 5,
-          "max": 50,
-          "hint": {
-            "en": "LQI variance threshold (higher = less sensitive)",
-            "fr": "Seuil de variance LQI (plus haut = moins sensible)"
-          }
         }
       ],
       "images": {
@@ -124196,36 +123942,7 @@
           }
         }
       ],
-      "settings": [
-        {
-          "id": "enable_radio_sensing",
-          "type": "checkbox",
-          "label": {
-            "en": "Enable Radio Presence Sensing",
-            "fr": "Activer la Détection de Présence Radio"
-          },
-          "value": false,
-          "hint": {
-            "en": "Infer presence from Zigbee signal fluctuations (BETA)",
-            "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
-          }
-        },
-        {
-          "id": "radio_sensitivity",
-          "type": "number",
-          "label": {
-            "en": "Radio Presence Sensitivity",
-            "fr": "Sensibilité Présence Radio"
-          },
-          "value": 15,
-          "min": 5,
-          "max": 50,
-          "hint": {
-            "en": "LQI variance threshold (higher = less sensitive)",
-            "fr": "Seuil de variance LQI (plus haut = moins sensible)"
-          }
-        }
-      ],
+      "settings": [],
       "id": "air_purifier_curtain",
       "version": "1.0.0",
       "connectivity": [
@@ -124538,34 +124255,6 @@
               }
             }
           ]
-        },
-        {
-          "id": "enable_radio_sensing",
-          "type": "checkbox",
-          "label": {
-            "en": "Enable Radio Presence Sensing",
-            "fr": "Activer la Détection de Présence Radio"
-          },
-          "value": false,
-          "hint": {
-            "en": "Infer presence from Zigbee signal fluctuations (BETA)",
-            "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
-          }
-        },
-        {
-          "id": "radio_sensitivity",
-          "type": "number",
-          "label": {
-            "en": "Radio Presence Sensitivity",
-            "fr": "Sensibilité Présence Radio"
-          },
-          "value": 15,
-          "min": 5,
-          "max": 50,
-          "hint": {
-            "en": "LQI variance threshold (higher = less sensitive)",
-            "fr": "Seuil de variance LQI (plus haut = moins sensible)"
-          }
         }
       ],
       "images": {
@@ -125846,34 +125535,6 @@
               }
             }
           ]
-        },
-        {
-          "id": "enable_radio_sensing",
-          "type": "checkbox",
-          "label": {
-            "en": "Enable Radio Presence Sensing",
-            "fr": "Activer la Détection de Présence Radio"
-          },
-          "value": false,
-          "hint": {
-            "en": "Infer presence from Zigbee signal fluctuations (BETA)",
-            "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
-          }
-        },
-        {
-          "id": "radio_sensitivity",
-          "type": "number",
-          "label": {
-            "en": "Radio Presence Sensitivity",
-            "fr": "Sensibilité Présence Radio"
-          },
-          "value": 15,
-          "min": 5,
-          "max": 50,
-          "hint": {
-            "en": "LQI variance threshold (higher = less sensitive)",
-            "fr": "Seuil de variance LQI (plus haut = moins sensible)"
-          }
         }
       ],
       "images": {
@@ -126017,36 +125678,7 @@
         "conditions": [],
         "actions": []
       },
-      "settings": [
-        {
-          "id": "enable_radio_sensing",
-          "type": "checkbox",
-          "label": {
-            "en": "Enable Radio Presence Sensing",
-            "fr": "Activer la Détection de Présence Radio"
-          },
-          "value": false,
-          "hint": {
-            "en": "Infer presence from Zigbee signal fluctuations (BETA)",
-            "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
-          }
-        },
-        {
-          "id": "radio_sensitivity",
-          "type": "number",
-          "label": {
-            "en": "Radio Presence Sensitivity",
-            "fr": "Sensibilité Présence Radio"
-          },
-          "value": 15,
-          "min": 5,
-          "max": 50,
-          "hint": {
-            "en": "LQI variance threshold (higher = less sensitive)",
-            "fr": "Seuil de variance LQI (plus haut = moins sensible)"
-          }
-        }
-      ],
+      "settings": [],
       "version": "1.0.0",
       "connectivity": [
         "zigbee"
@@ -126291,34 +125923,6 @@
               }
             }
           ]
-        },
-        {
-          "id": "enable_radio_sensing",
-          "type": "checkbox",
-          "label": {
-            "en": "Enable Radio Presence Sensing",
-            "fr": "Activer la Détection de Présence Radio"
-          },
-          "value": false,
-          "hint": {
-            "en": "Infer presence from Zigbee signal fluctuations (BETA)",
-            "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
-          }
-        },
-        {
-          "id": "radio_sensitivity",
-          "type": "number",
-          "label": {
-            "en": "Radio Presence Sensitivity",
-            "fr": "Sensibilité Présence Radio"
-          },
-          "value": 15,
-          "min": 5,
-          "max": 50,
-          "hint": {
-            "en": "LQI variance threshold (higher = less sensitive)",
-            "fr": "Seuil de variance LQI (plus haut = moins sensible)"
-          }
         }
       ],
       "images": {
@@ -127022,34 +126626,6 @@
               }
             }
           ]
-        },
-        {
-          "id": "enable_radio_sensing",
-          "type": "checkbox",
-          "label": {
-            "en": "Enable Radio Presence Sensing",
-            "fr": "Activer la Détection de Présence Radio"
-          },
-          "value": false,
-          "hint": {
-            "en": "Infer presence from Zigbee signal fluctuations (BETA)",
-            "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
-          }
-        },
-        {
-          "id": "radio_sensitivity",
-          "type": "number",
-          "label": {
-            "en": "Radio Presence Sensitivity",
-            "fr": "Sensibilité Présence Radio"
-          },
-          "value": 15,
-          "min": 5,
-          "max": 50,
-          "hint": {
-            "en": "LQI variance threshold (higher = less sensitive)",
-            "fr": "Seuil de variance LQI (plus haut = moins sensible)"
-          }
         }
       ],
       "name": {
@@ -128046,36 +127622,7 @@
         "conditions": [],
         "actions": []
       },
-      "settings": [
-        {
-          "id": "enable_radio_sensing",
-          "type": "checkbox",
-          "label": {
-            "en": "Enable Radio Presence Sensing",
-            "fr": "Activer la Détection de Présence Radio"
-          },
-          "value": false,
-          "hint": {
-            "en": "Infer presence from Zigbee signal fluctuations (BETA)",
-            "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
-          }
-        },
-        {
-          "id": "radio_sensitivity",
-          "type": "number",
-          "label": {
-            "en": "Radio Presence Sensitivity",
-            "fr": "Sensibilité Présence Radio"
-          },
-          "value": 15,
-          "min": 5,
-          "max": 50,
-          "hint": {
-            "en": "LQI variance threshold (higher = less sensitive)",
-            "fr": "Seuil de variance LQI (plus haut = moins sensible)"
-          }
-        }
-      ],
+      "settings": [],
       "id": "blaster_remote",
       "version": "1.0.0",
       "connectivity": [
@@ -130479,34 +130026,6 @@
             "en": "Estimate power consumption when real measurement is not available (AC/DC devices only)",
             "fr": "Estimer la consommation quand la mesure réelle n'est pas disponible (appareils AC/DC seulement)"
           }
-        },
-        {
-          "id": "enable_radio_sensing",
-          "type": "checkbox",
-          "label": {
-            "en": "Enable Radio Presence Sensing",
-            "fr": "Activer la Détection de Présence Radio"
-          },
-          "value": false,
-          "hint": {
-            "en": "Infer presence from Zigbee signal fluctuations (BETA)",
-            "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
-          }
-        },
-        {
-          "id": "radio_sensitivity",
-          "type": "number",
-          "label": {
-            "en": "Radio Presence Sensitivity",
-            "fr": "Sensibilité Présence Radio"
-          },
-          "value": 15,
-          "min": 5,
-          "max": 50,
-          "hint": {
-            "en": "LQI variance threshold (higher = less sensitive)",
-            "fr": "Seuil de variance LQI (plus haut = moins sensible)"
-          }
         }
       ],
       "images": {
@@ -131200,34 +130719,6 @@
           "hint": {
             "en": "Automatically adjust color temperature based on time of day",
             "fr": "Ajuste automatiquement la température de couleur au fil de la journée"
-          }
-        },
-        {
-          "id": "enable_radio_sensing",
-          "type": "checkbox",
-          "label": {
-            "en": "Enable Radio Presence Sensing",
-            "fr": "Activer la Détection de Présence Radio"
-          },
-          "value": false,
-          "hint": {
-            "en": "Infer presence from Zigbee signal fluctuations (BETA)",
-            "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
-          }
-        },
-        {
-          "id": "radio_sensitivity",
-          "type": "number",
-          "label": {
-            "en": "Radio Presence Sensitivity",
-            "fr": "Sensibilité Présence Radio"
-          },
-          "value": 15,
-          "min": 5,
-          "max": 50,
-          "hint": {
-            "en": "LQI variance threshold (higher = less sensitive)",
-            "fr": "Seuil de variance LQI (plus haut = moins sensible)"
           }
         },
         {
@@ -132979,8 +132470,8 @@
           "_tz3210_AMLEYEEJ",
           "_tz3000_MRPEVH8P",
           "HOBEIAN",
-          "Hobeian",
-          "hobeian"
+          "hobeian",
+          "Hobeian"
         ],
         "productId": [
           "TS0041",
@@ -133417,24 +132908,19 @@
           "TUYATEC-O6SNCwd6",
           "TUYATEC-nzrrvgco",
           "_TYZB01_2athzhfr",
-          "_TYZB01_4tlksk8a",
           "_TYZB01_6g8b7at8",
           "_TYZB01_6sadkhcy",
-          "_TYZB01_aneiicmq",
           "_TYZB01_b8cr31hp",
           "_TYZB01_bagt1e4o",
           "_TYZB01_digziiav",
           "_TYZB01_mqel1whf",
           "_TYZB01_mtlhqn48",
-          "_TYZB01_ncutbjdi",
           "_TYZB01_phjeraqq",
-          "_TYZB01_qeqvmvti",
           "_TYZB01_seqwasot",
           "_TYZB01_vzrytttn",
           "_TYZB01_xfpdrwvc",
           "_TYZB01_xiuox57i",
           "_TYZB01_ymcdbl3u",
-          "_TYZB01_zsl6z0pw",
           "_TZ3000_0zfrhq4i",
           "_TZ3000_0zrccfgx",
           "_TZ3000_1H2X4AKH",
@@ -133460,7 +132946,6 @@
           "_TZ3000_6eyydfyg",
           "_TZ3000_7ed9cqgi",
           "_TZ3000_7jx5ypra",
-          "_TZ3000_88IQNHVD",
           "_TZ3000_8nkb7mof",
           "_TZ3000_9hpxg80k",
           "_TZ3000_CPHMQ0Q7",
@@ -133614,10 +133099,8 @@
           "_TZE284_d4h8j2n6",
           "_TZE284_d7lpruvi",
           "_tyzb01_2athzhfr",
-          "_tyzb01_4tlksk8a",
           "_tyzb01_6g8b7at8",
           "_tyzb01_6sadkhcy",
-          "_tyzb01_aneiicmq",
           "_tyzb01_b3mgfu0d",
           "_tyzb01_b8cr31hp",
           "_tyzb01_digziiav",
@@ -133625,15 +133108,12 @@
           "_tyzb01_iuepbmpv",
           "_tyzb01_mqel1whf",
           "_tyzb01_mtlhqn48",
-          "_tyzb01_ncutbjdi",
           "_tyzb01_phjeraqq",
-          "_tyzb01_qeqvmvti",
           "_tyzb01_seqwasot",
           "_tyzb01_vzrytttn",
           "_tyzb01_xfpdrwvc",
           "_tyzb01_xiuox57i",
           "_tyzb01_ymcdbl3u",
-          "_tyzb01_zsl6z0pw",
           "_tyzb02_key8kk7r",
           "_tyzb02_keyjhapk",
           "_tz3000_5e235jpa",
@@ -133650,7 +133130,6 @@
           "_tz3000_vzopcetz",
           "_tz3000_xr7itfxq",
           "_tz3210_2putqrmw",
-          "_tz3210_dse8ogfy",
           "_tz3210_w0qqde0g",
           "_tz3400_key8kk7r",
           "_tze204_hkdl5fmv",
@@ -133658,25 +133137,20 @@
           "tuyatec-nzrrvgco",
           "tuyatec-o6sncwd6",
           "_TYZB01_2ATHZHFR",
-          "_TYZB01_4TLKSK8A",
           "_TYZB01_6G8B7AT8",
           "_TYZB01_6SADKHCY",
-          "_TYZB01_ANEIICMQ",
           "_TYZB01_B8CR31HP",
           "_TYZB01_BAGT1E4O",
           "_tyzb01_bagt1e4o",
           "_TYZB01_DIGZIIAV",
           "_TYZB01_MQEL1WHF",
           "_TYZB01_MTLHQN48",
-          "_TYZB01_NCUTBJDI",
           "_TYZB01_PHJERAQQ",
-          "_TYZB01_QEQVMVTI",
           "_TYZB01_SEQWASOT",
           "_TYZB01_VZRYTTTN",
           "_TYZB01_XFPDRWVC",
           "_TYZB01_XIUOX57I",
           "_TYZB01_YMCDBL3U",
-          "_TYZB01_ZSL6Z0PW",
           "_TZ3000_0ZFRHQ4I",
           "_tz3000_0zfrhq4i",
           "_TZ3000_0ZRCCFGX",
@@ -133725,7 +133199,6 @@
           "_tz3000_7ed9cqgi",
           "_TZ3000_7JX5YPRA",
           "_tz3000_7jx5ypra",
-          "_tz3000_88iqnhvd",
           "_TZ3000_8NKB7MOF",
           "_tz3000_8nkb7mof",
           "_TZ3000_9HPXG80K",
@@ -134042,14 +133515,12 @@
           "_TZ3000_VZOPCETZ",
           "_TZ3000_XR7ITFXQ",
           "_TZ3210_2PUTQRMW",
-          "_TZ3210_DSE8OGFY",
           "_TZ3210_W0QQDE0G",
           "_TZ3400_KEY8KK7R",
           "_TZE204_HKDL5FMV",
           "_TZN3000_CFNPRAB5",
           "_TZ3000_1h2x4akh",
           "_TZ3000_1obwwnmq",
-          "_TZ3000_88iqnhvd",
           "_TZ3000_cphmq0q7",
           "_TZ3000_dksbtrzs",
           "_TZ3000_e1f2g3h4",
@@ -134076,30 +133547,24 @@
           "_TZ3000_vzopcetz",
           "_TZ3000_xr7itfxq",
           "_TZ3210_2putqrmw",
-          "_TZ3210_dse8ogfy",
           "_TZ3210_w0qqde0g",
           "_TZ3400_key8kk7r",
           "_TZE204_hkdl5fmv",
           "_TZN3000_cfnprab5",
           "_tyzb01_2ATHZHFR",
-          "_tyzb01_4TLKSK8A",
           "_tyzb01_6G8B7AT8",
           "_tyzb01_6SADKHCY",
-          "_tyzb01_ANEIICMQ",
           "_tyzb01_B8CR31HP",
           "_tyzb01_BAGT1E4O",
           "_tyzb01_DIGZIIAV",
           "_tyzb01_MQEL1WHF",
           "_tyzb01_MTLHQN48",
-          "_tyzb01_NCUTBJDI",
           "_tyzb01_PHJERAQQ",
-          "_tyzb01_QEQVMVTI",
           "_tyzb01_SEQWASOT",
           "_tyzb01_VZRYTTTN",
           "_tyzb01_XFPDRWVC",
           "_tyzb01_XIUOX57I",
           "_tyzb01_YMCDBL3U",
-          "_tyzb01_ZSL6Z0PW",
           "_tz3000_0ZFRHQ4I",
           "_tz3000_0ZRCCFGX",
           "_tz3000_1H2X4AKH",
@@ -134125,7 +133590,6 @@
           "_tz3000_6EYYDFYG",
           "_tz3000_7ED9CQGI",
           "_tz3000_7JX5YPRA",
-          "_tz3000_88IQNHVD",
           "_tz3000_8NKB7MOF",
           "_tz3000_9HPXG80K",
           "_tz3000_CPHMQ0Q7",
@@ -134297,7 +133761,6 @@
           "_tz3000_VZOPCETZ",
           "_tz3000_XR7ITFXQ",
           "_tz3210_2PUTQRMW",
-          "_tz3210_DSE8OGFY",
           "_tz3210_W0QQDE0G",
           "_tz3400_KEY8KK7R",
           "_tze204_HKDL5FMV",
@@ -135559,8 +135022,6 @@
           "_TZ3000_4fjiwweb",
           "_TZ3000_kfu8zapd",
           "_TZ3000_KFU8ZAPD",
-          "_TZ3000_rco1yzb1",
-          "_TZ3000_RCO1YZB1",
           "_tz3000_m9n0o1p2",
           "_tz3000_u3nv1jwk",
           "_tz3000_uri7oadn",
@@ -135577,7 +135038,6 @@
           "_TZ3000_4FJIWWEB",
           "_tz3000_4fjiwweb",
           "_tz3000_kfu8zapd",
-          "_tz3000_rco1yzb1",
           "_TZ3000_m9n0o1p2",
           "_TZ3000_uri7oadn",
           "_tz3000_M9N0O1P2",
@@ -135590,7 +135050,6 @@
           "_tz3000_ABRSVSOU",
           "_tz3000_4FJIWWEB",
           "_tz3000_KFU8ZAPD",
-          "_tz3000_RCO1YZB1",
           "_TZ3000_an5rjiwd",
           "_TZ3000_AN5RJIWD",
           "_tz3000_an5rjiwd",
@@ -135610,7 +135069,11 @@
           "_tz3000_nuombroo",
           "_TZ3000_NUOMBROO",
           "_TZ3000_nuombroo",
-          "_tz3000_NUOMBROO"
+          "_tz3000_NUOMBROO",
+          "_TZ3000_rco1yzb1",
+          "_tz3000_rco1yzb1",
+          "_TZ3000_RCO1YZB1",
+          "_tz3000_RCO1YZB1"
         ]
       },
       "images": {
@@ -138075,34 +137538,6 @@
               }
             }
           ]
-        },
-        {
-          "id": "enable_radio_sensing",
-          "type": "checkbox",
-          "label": {
-            "en": "Enable Radio Presence Sensing",
-            "fr": "Activer la Détection de Présence Radio"
-          },
-          "value": false,
-          "hint": {
-            "en": "Infer presence from Zigbee signal fluctuations (BETA)",
-            "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
-          }
-        },
-        {
-          "id": "radio_sensitivity",
-          "type": "number",
-          "label": {
-            "en": "Radio Presence Sensitivity",
-            "fr": "Sensibilité Présence Radio"
-          },
-          "value": 15,
-          "min": 5,
-          "max": 50,
-          "hint": {
-            "en": "LQI variance threshold (higher = less sensitive)",
-            "fr": "Seuil de variance LQI (plus haut = moins sensible)"
-          }
         }
       ],
       "name": {
@@ -138287,7 +137722,6 @@
           "_TZ3000_waho4ber",
           "_TZ3000_cehuw1lw",
           "_TZ3000_uwkja6z1",
-          "_TZ3000_yujkchbz",
           "_TZ3210_xzhnra8x",
           "_tz3000_u5u4cakc",
           "_TZE200_nkjintbl",
@@ -138340,8 +137774,6 @@
           "_tz3000_cehuw1lw",
           "_TZ3000_UWKJA6Z1",
           "_tz3000_uwkja6z1",
-          "_TZ3000_YUJKCHBZ",
-          "_tz3000_yujkchbz",
           "_TZ3210_XZHNRA8X",
           "_tz3210_xzhnra8x",
           "_TZ3000_U5U4CAKC",
@@ -138383,7 +137815,6 @@
           "_tz3000_WAHO4BER",
           "_tz3000_CEHUW1LW",
           "_tz3000_UWKJA6Z1",
-          "_tz3000_YUJKCHBZ",
           "_tz3210_XZHNRA8X",
           "_tz3000_U5U4CAKC",
           "_tze200_NKJINTBL",
@@ -139235,34 +138666,6 @@
               }
             }
           ]
-        },
-        {
-          "id": "enable_radio_sensing",
-          "type": "checkbox",
-          "label": {
-            "en": "Enable Radio Presence Sensing",
-            "fr": "Activer la Détection de Présence Radio"
-          },
-          "value": false,
-          "hint": {
-            "en": "Infer presence from Zigbee signal fluctuations (BETA)",
-            "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
-          }
-        },
-        {
-          "id": "radio_sensitivity",
-          "type": "number",
-          "label": {
-            "en": "Radio Presence Sensitivity",
-            "fr": "Sensibilité Présence Radio"
-          },
-          "value": 15,
-          "min": 5,
-          "max": 50,
-          "hint": {
-            "en": "LQI variance threshold (higher = less sensitive)",
-            "fr": "Seuil de variance LQI (plus haut = moins sensible)"
-          }
         }
       ],
       "pair": [
@@ -140272,34 +139675,6 @@
               }
             }
           ]
-        },
-        {
-          "id": "enable_radio_sensing",
-          "type": "checkbox",
-          "label": {
-            "en": "Enable Radio Presence Sensing",
-            "fr": "Activer la Détection de Présence Radio"
-          },
-          "value": false,
-          "hint": {
-            "en": "Infer presence from Zigbee signal fluctuations (BETA)",
-            "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
-          }
-        },
-        {
-          "id": "radio_sensitivity",
-          "type": "number",
-          "label": {
-            "en": "Radio Presence Sensitivity",
-            "fr": "Sensibilité Présence Radio"
-          },
-          "value": 15,
-          "min": 5,
-          "max": 50,
-          "hint": {
-            "en": "LQI variance threshold (higher = less sensitive)",
-            "fr": "Seuil de variance LQI (plus haut = moins sensible)"
-          }
         }
       ],
       "name": {
@@ -140688,34 +140063,6 @@
               }
             }
           ]
-        },
-        {
-          "id": "enable_radio_sensing",
-          "type": "checkbox",
-          "label": {
-            "en": "Enable Radio Presence Sensing",
-            "fr": "Activer la Détection de Présence Radio"
-          },
-          "value": false,
-          "hint": {
-            "en": "Infer presence from Zigbee signal fluctuations (BETA)",
-            "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
-          }
-        },
-        {
-          "id": "radio_sensitivity",
-          "type": "number",
-          "label": {
-            "en": "Radio Presence Sensitivity",
-            "fr": "Sensibilité Présence Radio"
-          },
-          "value": 15,
-          "min": 5,
-          "max": 50,
-          "hint": {
-            "en": "LQI variance threshold (higher = less sensitive)",
-            "fr": "Seuil de variance LQI (plus haut = moins sensible)"
-          }
         },
         {
           "id": "button_mode",
@@ -141134,34 +140481,6 @@
               }
             }
           ]
-        },
-        {
-          "id": "enable_radio_sensing",
-          "type": "checkbox",
-          "label": {
-            "en": "Enable Radio Presence Sensing",
-            "fr": "Activer la Détection de Présence Radio"
-          },
-          "value": false,
-          "hint": {
-            "en": "Infer presence from Zigbee signal fluctuations (BETA)",
-            "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
-          }
-        },
-        {
-          "id": "radio_sensitivity",
-          "type": "number",
-          "label": {
-            "en": "Radio Presence Sensitivity",
-            "fr": "Sensibilité Présence Radio"
-          },
-          "value": 15,
-          "min": 5,
-          "max": 50,
-          "hint": {
-            "en": "LQI variance threshold (higher = less sensitive)",
-            "fr": "Seuil de variance LQI (plus haut = moins sensible)"
-          }
         }
       ],
       "pair": [
@@ -141587,34 +140906,6 @@
               }
             }
           ]
-        },
-        {
-          "id": "enable_radio_sensing",
-          "type": "checkbox",
-          "label": {
-            "en": "Enable Radio Presence Sensing",
-            "fr": "Activer la Détection de Présence Radio"
-          },
-          "value": false,
-          "hint": {
-            "en": "Infer presence from Zigbee signal fluctuations (BETA)",
-            "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
-          }
-        },
-        {
-          "id": "radio_sensitivity",
-          "type": "number",
-          "label": {
-            "en": "Radio Presence Sensitivity",
-            "fr": "Sensibilité Présence Radio"
-          },
-          "value": 15,
-          "min": 5,
-          "max": 50,
-          "hint": {
-            "en": "LQI variance threshold (higher = less sensitive)",
-            "fr": "Seuil de variance LQI (plus haut = moins sensible)"
-          }
         }
       ],
       "pair": [
@@ -142128,11 +141419,9 @@
           "_TYST11",
           "_TYST11_2dpplnsn",
           "_TYST11_8daqwrsj",
-          "_TYST11_czk78ptr",
           "_TYST11_hhrtiq0x",
           "_TYST11_jeaxp72v",
           "_TYST11_owwdxjbx",
-          "_TYST11_ps5v5jor",
           "_TYST11_udank5zs",
           "_TYST11_wv90ladg",
           "_TYST11_zivfvd7h",
@@ -142143,7 +141432,6 @@
           "_TYZB01_ZQVWKA4K",
           "_TYZB01_cbiezpds",
           "_TYZB01_fi5yftwv",
-          "_TYZB01_ujfk3xd9",
           "_TYZB01_zqvwka4k",
           "_TZ1800_LADPNGDX",
           "_TZ2000_LXVYCLN5",
@@ -142220,7 +141508,6 @@
           "_TZ3000_P26FLEK3",
           "_TZ3000_PIUENSVR",
           "_TZ3000_PVLVOXVT",
-          "_TZ3000_QAAYSLLP",
           "_TZ3000_QOGSNSXH",
           "_TZ3000_RCUQXKQ0",
           "_TZ3000_RDHUKKMI",
@@ -142238,7 +141525,6 @@
           "_TZ3000_V1W2K9DD",
           "_TZ3000_V4MEVIRN",
           "_TZ3000_VSJ5O7DM",
-          "_TZ3000_WW6DRJA5",
           "_TZ3000_XDO0HJ1K",
           "_TZ3000_XEUMNFF9",
           "_TZ3000_XR3HTD96",
@@ -142297,17 +141583,14 @@
           "_TZ3290_S6EZPA3J",
           "_TZ6210_DUV6FHWT",
           "_TZE200_01FVXAMO",
-          "_TZE200_04YFVWEB",
           "_TZE200_0U3BJ3RC",
           "_TZE200_0dvm9mva",
           "_TZE200_0u3bj3rc",
-          "_TZE200_127X7WNL",
           "_TZE200_1DRR8TAB",
           "_TZE200_1FUXIHTI",
           "_TZE200_1N2KYPHZ",
           "_TZE200_1OZGUK6X",
           "_TZE200_1VXGQFBA",
-          "_TZE200_2CS6G9I7",
           "_TZE200_2DPPLNSN",
           "_TZE200_2ODRMQWQ",
           "_TZE200_2VFXWENG",
@@ -142315,20 +141598,16 @@
           "_TZE200_3XFJP0AG",
           "_TZE200_3yp57tby",
           "_TZE200_4AIJVCZQ",
-          "_TZE200_4EEYEBRT",
           "_TZE200_5D3VHJRO",
           "_TZE200_6WI2MOPE",
-          "_TZE200_6Y7KYJGA",
           "_TZE200_78IOIAML",
           "_TZE200_7DEQ70B8",
           "_TZE200_7FQKPHOQ",
           "_TZE200_7P8UGV8D",
           "_TZE200_7SHYDDJ3",
           "_TZE200_86NBEW0J",
-          "_TZE200_8DAQWRSJ",
           "_TZE200_8EAZVZO6",
           "_TZE200_8PLY8MJJ",
-          "_TZE200_8THWKZXL",
           "_TZE200_8VXJ8KHV",
           "_TZE200_8ply8mjj",
           "_TZE200_8whu6kkr",
@@ -142338,8 +141617,6 @@
           "_TZE200_9YAPGBUV",
           "_TZE200_9yapgbuv",
           "_TZE200_A0GVBDGV",
-          "_TZE200_A1OVDOBN",
-          "_TZE200_A8SDABTG",
           "_TZE200_A8Z0G46U",
           "_TZE200_AAO6QTCS",
           "_TZE200_AUIN8MZR",
@@ -142355,7 +141632,6 @@
           "_TZE200_CIRVGEP4",
           "_TZE200_CLM4GDW4",
           "_TZE200_CXU0JKJK",
-          "_TZE200_CZK78PTR",
           "_TZE200_D9MZKHOQ",
           "_TZE200_DCNSGGV",
           "_TZE200_DHDSTCQC",
@@ -142366,7 +141642,6 @@
           "_TZE200_DNZ6YVL2",
           "_TZE200_DO5QY8ZO",
           "_TZE200_DRS6J6M5",
-          "_TZE200_DV8ABRRZ",
           "_TZE200_E2BEDVO9",
           "_TZE200_EANJJ2PA",
           "_TZE200_EDL8PZ1K",
@@ -142390,7 +141665,6 @@
           "_TZE200_H4CGNBZG",
           "_TZE200_HA0VWOEW",
           "_TZE200_HDIH4FOA",
-          "_TZE200_HHRTIQ0X",
           "_TZE200_HKTK6HZE",
           "_TZE200_HMABVY81",
           "_TZE200_HMQZFQML",
@@ -142403,10 +141677,8 @@
           "_TZE200_IVDC0KWL",
           "_TZE200_IWN0GPZZ",
           "_TZE200_J7SGD8PO",
-          "_TZE200_JEAXP72V",
           "_TZE200_JKBLJRI7",
           "_TZE200_JS3MGBJB",
-          "_TZE200_JTHF7VB6",
           "_TZE200_JWSJBXJS",
           "_TZE200_JXYHL4EQ",
           "_TZE200_KF2HBKO4",
@@ -142416,7 +141688,6 @@
           "_TZE200_LEAQTHQQ",
           "_TZE200_LHQTJWAX",
           "_TZE200_LLM0EPXG",
-          "_TZE200_LOCANSQN",
           "_TZE200_LVE3DVPY",
           "_TZE200_MBY4KBTQ",
           "_TZE200_MDE0UTNV",
@@ -142432,7 +141703,6 @@
           "_TZE200_N8DLJORX",
           "_TZE200_N9CLPSHT",
           "_TZE200_NA5QLZOW",
-          "_TZE200_NHYJ64W2",
           "_TZE200_NOJSJTJ2",
           "_TZE200_NUS5KK3N",
           "_TZE200_NVUPS4NH",
@@ -142441,17 +141711,14 @@
           "_TZE200_ODLLDRXX",
           "_TZE200_OGKDPGY2",
           "_TZE200_OISQYL4O",
-          "_TZE200_OWWDXJBX",
           "_TZE200_OYTI2UMS",
           "_TZE200_P2QZZAZI",
           "_TZE200_PBO8CJ0Z",
           "_TZE200_PL31AQF5",
-          "_TZE200_PS5V5JOR",
           "_TZE200_QANL25YU",
           "_TZE200_QHLXVE78",
           "_TZE200_QJP4YNVI",
           "_TZE200_QRZTC3EV",
-          "_TZE200_QSOECQLK",
           "_TZE200_QXYH4R7G",
           "_TZE200_QYFLBNBJ",
           "_TZE200_QYSS8GJY",
@@ -142461,16 +141728,13 @@
           "_TZE200_RD8CDSSD",
           "_TZE200_RLQAMJHP",
           "_TZE200_RSJ5PU8Y",
-          "_TZE200_RTRMFADK",
           "_TZE200_RYFMQ5RL",
           "_TZE200_S1XGTH2U",
           "_TZE200_SFQYHVPV",
-          "_TZE200_SNFDQLLF",
           "_TZE200_SNLOY4RW",
           "_TZE200_SQ6AFFPE",
           "_TZE200_STVGMDJZ",
           "_TZE200_T3XD7L44",
-          "_TZE200_TBGECLDG",
           "_TZE200_THBR5Z34",
           "_TZE200_TVIAYMWX",
           "_TZE200_TVRVDJ6O",
@@ -142494,12 +141758,10 @@
           "_TZE200_VRFECYKU",
           "_TZE200_VS0SKPUC",
           "_TZE200_VUQZJ1EJ",
-          "_TZE200_VVMBJ46N",
           "_TZE200_VZQTVLJM",
           "_TZE200_W6N8JEUU",
           "_TZE200_WDFURKOA",
           "_TZE200_WEHZA30A",
-          "_TZE200_WEM3GXYX",
           "_TZE200_WHKGQXSE",
           "_TZE200_WKTRYSAB",
           "_TZE200_WRMHP6B3",
@@ -142529,7 +141791,6 @@
           "_TZE200_YWE90LT0",
           "_TZE200_Z3U99QXT",
           "_TZE200_ZBFMVJ13",
-          "_TZE200_ZIVFVD7H",
           "_TZE200_ZLWR0RAF",
           "_TZE200_ZNPH9215",
           "_TZE200_ZO0CFEKV",
@@ -142539,7 +141800,6 @@
           "_TZE200_ZUZ7F94Z",
           "_TZE200_ZVO63CMO",
           "_TZE200_ZYRDRMNO",
-          "_TZE200_a8sdabtg",
           "_TZE200_auin8mzr",
           "_TZE200_c2fmom5z",
           "_TZE200_cirvgep4",
@@ -142556,7 +141816,6 @@
           "_TZE200_nnrfa68v",
           "_TZE200_nvups4nh",
           "_TZE200_pl31aqf5",
-          "_TZE200_qoy0ekbd",
           "_TZE200_qyflbnbj",
           "_TZE200_rccxox8p",
           "_TZE200_ryfmq5rl",
@@ -142587,7 +141846,6 @@
           "_TZE204_432ZHUWE",
           "_TZE204_4BJIXEFP",
           "_TZE204_58OF2PFN",
-          "_TZE204_5SLEHGEO",
           "_TZE204_6A4VXFNV",
           "_TZE204_6FK3GEWC",
           "_TZE204_6VWFJKCJ",
@@ -142617,7 +141875,6 @@
           "_TZE204_DOHBHB5K",
           "_TZE204_DPQSVDBI",
           "_TZE204_DQOLCPCP",
-          "_TZE204_DSAGRKVG",
           "_TZE204_DVOSYYCN",
           "_TZE204_DWCARSAT",
           "_TZE204_E9AJS4FT",
@@ -142625,12 +141882,10 @@
           "_TZE204_EDL8PZ1K",
           "_TZE204_EJH6OWWZ",
           "_TZE204_FHVDGEUH",
-          "_TZE204_G2KI0EJR",
           "_TZE204_G4AU0AFS",
           "_TZE204_G5XQOSU7",
           "_TZE204_HIITH90N",
           "_TZE204_IC7JTUTB",
-          "_TZE204_ILZKXRAV",
           "_TZE204_IUK8KUPI",
           "_TZE204_IWN0GPZZ",
           "_TZE204_IYKI9KJP",
@@ -142651,7 +141906,6 @@
           "_TZE204_MPG22JC1",
           "_TZE204_MRFFAAMU",
           "_TZE204_MUL9ABS3",
-          "_TZE204_MWOMYZ5N",
           "_TZE204_NCTI2PRO",
           "_TZE204_NH9M9EMK",
           "_TZE204_NLADMFVF",
@@ -142661,7 +141915,6 @@
           "_TZE204_OGKDPGY2",
           "_TZE204_OH8Y8PV8",
           "_TZE204_OQTPVX51",
-          "_TZE204_P1QRTLJN",
           "_TZE204_PTAQH9TK",
           "_TZE204_Q12RV9GJ",
           "_TZE204_Q22AVXBV",
@@ -142677,8 +141930,6 @@
           "_TZE204_SRMAHPWL",
           "_TZE204_SXM7L9X",
           "_TZE204_T9FFMDIN",
-          "_TZE204_TAGEZCPH",
-          "_TZE204_TBGECLDG",
           "_TZE204_TDHNHHIY",
           "_TZE204_TUHFX7TF",
           "_TZE204_TZREOBVU",
@@ -142712,7 +141963,6 @@
           "_TZE204_ZUEPXZCK",
           "_TZE204_ZXKWAZTM",
           "_TZE204_a4bpgplm",
-          "_TZE204_a8sdabtg",
           "_TZE204_ac0fhfiq",
           "_TZE204_ahwvlkpy",
           "_TZE204_ai4rqhky",
@@ -142725,7 +141975,6 @@
           "_TZE204_locansqn",
           "_TZE204_n8dljorx",
           "_TZE204_nvkl4dkf",
-          "_TZE204_qoy0ekbd",
           "_TZE204_qyflbnbj",
           "_TZE204_upagmta9",
           "_TZE204_utkemkbs",
@@ -142758,7 +142007,6 @@
           "_TZE284_4DOSADBH",
           "_TZE284_4HDBT6RN",
           "_TZE284_4cqhd2ha",
-          "_TZE284_5SLEHGEO",
           "_TZE284_5YS44KZO",
           "_TZE284_65gzcss7",
           "_TZE284_6FOPVB6V",
@@ -142776,13 +142024,10 @@
           "_TZE284_9ern5sfh",
           "_TZE284_9yapgbuv",
           "_TZE284_A14RJSLZ",
-          "_TZE284_A1OVDOBN",
           "_TZE284_A9OJZNJ8",
-          "_TZE284_AAEAIFEZ",
           "_TZE284_AAGRXLBD",
           "_TZE284_AAI5GRIX",
           "_TZE284_AC0FHFIQ",
-          "_TZE284_AGCXAW3F",
           "_TZE284_AI4RQHKY",
           "_TZE284_AJLU4CUD",
           "_TZE284_AJUASRMX",
@@ -142807,7 +142052,6 @@
           "_TZE284_K7P2Q5D9",
           "_TZE284_K7V0EQKE",
           "_TZE284_KDQRAZMY",
-          "_TZE284_KHAH2LKR",
           "_TZE284_KOBBCYUM",
           "_TZE284_KYYU8RBJ",
           "_TZE284_L8XIYYMQ",
@@ -142820,22 +142064,18 @@
           "_TZE284_NNHWCVBK",
           "_TZE284_NT4PQUEF",
           "_TZE284_NY94ONLB",
-          "_TZE284_P3DBF6QS",
           "_TZE284_PGLPVDAR",
           "_TZE284_Q22AVXBV",
           "_TZE284_QF5MZEWI",
           "_TZE284_QHLXVE78",
           "_TZE284_QOY0EKBD",
           "_TZE284_QYFLBNBJ",
-          "_TZE284_R3SZW0XR",
           "_TZE284_RCCGWZZ8",
-          "_TZE284_ROUJJEVX",
           "_TZE284_RQCUWLSA",
           "_TZE284_RS62ZXK8",
           "_TZE284_RZRRJKZ2",
           "_TZE284_S5VUAADG",
           "_TZE284_SONKAXRD",
-          "_TZE284_TBGECLDG",
           "_TZE284_TUHFX7TF",
           "_TZE284_TZREOBVU",
           "_TZE284_UAB532M0",
@@ -142848,7 +142088,6 @@
           "_TZE284_VIZXBHCO",
           "_TZE284_VJPAIH9F",
           "_TZE284_VMCGJA59",
-          "_TZE284_VVMBJ46N",
           "_TZE284_WBHAESPM",
           "_TZE284_WCKQZTDQ",
           "_TZE284_WDFURKOA",
@@ -142858,14 +142097,12 @@
           "_TZE284_XVYWZHMI",
           "_TZE284_Y4JQPRY8",
           "_TZE284_YJJDCQSQ",
-          "_TZE284_YMLDRMZX",
           "_TZE284_YYYYYYYY",
           "_TZE284_YZR43AYQ",
           "_TZE284_Z5JZ7WPO",
           "_TZE284_Z7A2JMYY",
           "_TZE284_ZELDAWJV",
           "_TZE284_ZJHOQBRD",
-          "_TZE284_ZM8ZPWAS",
           "_TZE284_ZNBL8DJ5",
           "_TZE284_ZNPH9215",
           "_TZE284_ZPVUSBTV",
@@ -142905,7 +142142,6 @@
           "_tyst11_fzo2pocs",
           "_tyst11_pisltm67",
           "_tyzb01_fi5yftwv",
-          "_tyzb01_ujfk3xd9",
           "_tz2000_a476raq2",
           "_tz3000_c8zfad4a",
           "_tz3000_f09j9qjb",
@@ -142930,7 +142166,6 @@
           "_tze200_ves1ycwx",
           "_tze200_vhy3iakz",
           "_tze204_0dvm9mva",
-          "_tze204_6kijc7nd",
           "_tze204_ai4rqhky",
           "_tze204_atdqo4nj",
           "_tze204_cirvgep4",
@@ -142946,9 +142181,7 @@
           "_tze204_ux5v4tgb",
           "_tze204_v9hkz2yn",
           "_tze204_ves1ycwx",
-          "_tze204_xalsoe3m",
           "_tze204_znbl8dj5",
-          "_tze284_6kijc7nd",
           "_tze284_aao6qtcs",
           "_tze284_chbyv06x",
           "_tze284_dhke3p9w",
@@ -142969,16 +142202,12 @@
           "_tyst11_2dpplnsn",
           "_TYST11_8DAQWRSJ",
           "_tyst11_8daqwrsj",
-          "_TYST11_CZK78PTR",
-          "_tyst11_czk78ptr",
           "_TYST11_HHRTIQ0X",
           "_tyst11_hhrtiq0x",
           "_TYST11_JEAXP72V",
           "_tyst11_jeaxp72v",
           "_TYST11_OWWDXJBX",
           "_tyst11_owwdxjbx",
-          "_TYST11_PS5V5JOR",
-          "_tyst11_ps5v5jor",
           "_TYST11_UDANK5ZS",
           "_tyst11_udank5zs",
           "_TYST11_WV90LADG",
@@ -142991,7 +142220,6 @@
           "_tyzb01_kvwjujy9",
           "_tyzb01_zqvwka4k",
           "_TYZB01_FI5YFTWV",
-          "_TYZB01_UJFK3XD9",
           "_tz1800_ladpngdx",
           "_tz2000_lxvycln5",
           "_tz2000_zsfvulde",
@@ -143062,7 +142290,6 @@
           "_tz3000_p26flek3",
           "_tz3000_piuensvr",
           "_tz3000_pvlvoxvt",
-          "_tz3000_qaaysllp",
           "_tz3000_qogsnsxh",
           "_tz3000_rcuqxkq0",
           "_tz3000_rdhukkmi",
@@ -143078,7 +142305,6 @@
           "_tz3000_v1w2k9dd",
           "_tz3000_v4mevirn",
           "_tz3000_vsj5o7dm",
-          "_tz3000_ww6drja5",
           "_tz3000_xdo0hj1k",
           "_tz3000_xeumnff9",
           "_tz3000_xr3htd96",
@@ -143122,17 +142348,14 @@
           "_tz3290_s6ezpa3j",
           "_tz6210_duv6fhwt",
           "_tze200_01fvxamo",
-          "_tze200_04yfvweb",
           "_tze200_0u3bj3rc",
           "_TZE200_0DVM9MVA",
           "_tze200_0dvm9mva",
-          "_tze200_127x7wnl",
           "_tze200_1drr8tab",
           "_tze200_1fuxihti",
           "_tze200_1n2kyphz",
           "_tze200_1ozguk6x",
           "_tze200_1vxgqfba",
-          "_tze200_2cs6g9i7",
           "_tze200_2dpplnsn",
           "_tze200_2odrmqwq",
           "_tze200_2vfxweng",
@@ -143141,20 +142364,16 @@
           "_TZE200_3YP57TBY",
           "_tze200_3yp57tby",
           "_tze200_4aijvczq",
-          "_tze200_4eeyebrt",
           "_tze200_5d3vhjro",
           "_tze200_6wi2mope",
-          "_tze200_6y7kyjga",
           "_tze200_78ioiaml",
           "_tze200_7deq70b8",
           "_tze200_7fqkphoq",
           "_tze200_7p8ugv8d",
           "_tze200_7shyddj3",
           "_tze200_86nbew0j",
-          "_tze200_8daqwrsj",
           "_tze200_8eazvzo6",
           "_tze200_8ply8mjj",
-          "_tze200_8thwkzxl",
           "_tze200_8vxj8khv",
           "_TZE200_8WHU6KKR",
           "_tze200_8whu6kkr",
@@ -143163,8 +142382,6 @@
           "_tze200_9xejegcy",
           "_tze200_9yapgbuv",
           "_tze200_a0gvbdgv",
-          "_tze200_a1ovdobn",
-          "_tze200_a8sdabtg",
           "_tze200_a8z0g46u",
           "_tze200_aao6qtcs",
           "_tze200_auin8mzr",
@@ -143179,7 +142396,6 @@
           "_tze200_c7emyjom",
           "_tze200_clm4gdw4",
           "_tze200_cxu0jkjk",
-          "_tze200_czk78ptr",
           "_tze200_d9mzkhoq",
           "_tze200_dcnsggv",
           "_tze200_dhdstcqc",
@@ -143190,7 +142406,6 @@
           "_tze200_dnz6yvl2",
           "_tze200_do5qy8zo",
           "_tze200_drs6j6m5",
-          "_tze200_dv8abrrz",
           "_tze200_e2bedvo9",
           "_tze200_eanjj2pa",
           "_tze200_edl8pz1k",
@@ -143214,7 +142429,6 @@
           "_tze200_h4cgnbzg",
           "_tze200_ha0vwoew",
           "_tze200_hdih4foa",
-          "_tze200_hhrtiq0x",
           "_tze200_hktk6hze",
           "_tze200_hmabvy81",
           "_tze200_hmqzfqml",
@@ -143227,10 +142441,8 @@
           "_tze200_ivdc0kwl",
           "_tze200_iwn0gpzz",
           "_tze200_j7sgd8po",
-          "_tze200_jeaxp72v",
           "_tze200_jkbljri7",
           "_tze200_js3mgbjb",
-          "_tze200_jthf7vb6",
           "_tze200_jwsjbxjs",
           "_tze200_jxyhl4eq",
           "_tze200_kf2hbko4",
@@ -143240,7 +142452,6 @@
           "_tze200_leaqthqq",
           "_tze200_lhqtjwax",
           "_tze200_llm0epxg",
-          "_tze200_locansqn",
           "_tze200_lve3dvpy",
           "_tze200_mby4kbtq",
           "_tze200_mde0utnv",
@@ -143256,7 +142467,6 @@
           "_tze200_n8dljorx",
           "_tze200_n9clpsht",
           "_tze200_na5qlzow",
-          "_tze200_nhyj64w2",
           "_tze200_nojsjtj2",
           "_tze200_nus5kk3n",
           "_tze200_nvups4nh",
@@ -143265,17 +142475,14 @@
           "_tze200_odlldrxx",
           "_tze200_ogkdpgy2",
           "_tze200_oisqyl4o",
-          "_tze200_owwdxjbx",
           "_tze200_oyti2ums",
           "_tze200_p2qzzazi",
           "_tze200_pbo8cj0z",
           "_tze200_pl31aqf5",
-          "_tze200_ps5v5jor",
           "_tze200_qanl25yu",
           "_tze200_qhlxve78",
           "_tze200_qjp4ynvi",
           "_tze200_qrztc3ev",
-          "_tze200_qsoecqlk",
           "_tze200_qxyh4r7g",
           "_tze200_qyflbnbj",
           "_tze200_qyss8gjy",
@@ -143285,16 +142492,13 @@
           "_tze200_rd8cdssd",
           "_tze200_rlqamjhp",
           "_tze200_rsj5pu8y",
-          "_tze200_rtrmfadk",
           "_tze200_ryfmq5rl",
           "_tze200_s1xgth2u",
           "_tze200_sfqyhvpv",
-          "_tze200_snfdqllf",
           "_tze200_snloy4rw",
           "_tze200_sq6affpe",
           "_tze200_stvgmdjz",
           "_tze200_t3xd7l44",
-          "_tze200_tbgecldg",
           "_tze200_thbr5z34",
           "_tze200_tviaymwx",
           "_tze200_tvrvdj6o",
@@ -143318,12 +142522,10 @@
           "_tze200_vrfecyku",
           "_tze200_vs0skpuc",
           "_tze200_vuqzj1ej",
-          "_tze200_vvmbj46n",
           "_tze200_vzqtvljm",
           "_tze200_w6n8jeuu",
           "_tze200_wdfurkoa",
           "_tze200_wehza30a",
-          "_tze200_wem3gxyx",
           "_tze200_whkgqxse",
           "_tze200_wktrysab",
           "_tze200_wrmhp6b3",
@@ -143353,7 +142555,6 @@
           "_tze200_ywe90lt0",
           "_tze200_z3u99qxt",
           "_tze200_zbfmvj13",
-          "_tze200_zivfvd7h",
           "_tze200_zlwr0raf",
           "_tze200_znph9215",
           "_tze200_zo0cfekv",
@@ -143371,8 +142572,6 @@
           "_tze200_nh9m9emk",
           "_TZE200_NNRFA68V",
           "_tze200_nnrfa68v",
-          "_TZE200_QOY0EKBD",
-          "_tze200_qoy0ekbd",
           "_TZE200_RCCXOX8P",
           "_tze200_rccxox8p",
           "_TZE200_UTWGIVDK",
@@ -143396,7 +142595,6 @@
           "_tze204_432zhuwe",
           "_tze204_4bjixefp",
           "_tze204_58of2pfn",
-          "_tze204_5slehgeo",
           "_tze204_6a4vxfnv",
           "_tze204_6fk3gewc",
           "_tze204_6vwfjkcj",
@@ -143427,7 +142625,6 @@
           "_tze204_dohbhb5k",
           "_tze204_dpqsvdbi",
           "_tze204_dqolcpcp",
-          "_tze204_dsagrkvg",
           "_tze204_dvosyycn",
           "_tze204_dwcarsat",
           "_tze204_e9ajs4ft",
@@ -143435,12 +142632,10 @@
           "_tze204_edl8pz1k",
           "_tze204_ejh6owwz",
           "_tze204_fhvdgeuh",
-          "_tze204_g2ki0ejr",
           "_tze204_g4au0afs",
           "_tze204_g5xqosu7",
           "_tze204_hiith90n",
           "_tze204_ic7jtutb",
-          "_tze204_ilzkxrav",
           "_tze204_iuk8kupi",
           "_tze204_iwn0gpzz",
           "_tze204_iyki9kjp",
@@ -143461,7 +142656,6 @@
           "_tze204_mpg22jc1",
           "_tze204_mrffaamu",
           "_tze204_mul9abs3",
-          "_tze204_mwomyz5n",
           "_tze204_ncti2pro",
           "_tze204_nh9m9emk",
           "_tze204_nladmfvf",
@@ -143471,7 +142665,6 @@
           "_tze204_ogkdpgy2",
           "_tze204_oh8y8pv8",
           "_tze204_oqtpvx51",
-          "_tze204_p1qrtljn",
           "_tze204_ptaqh9tk",
           "_tze204_q12rv9gj",
           "_tze204_q22avxbv",
@@ -143487,8 +142680,6 @@
           "_tze204_srmahpwl",
           "_tze204_sxm7l9x",
           "_tze204_t9ffmdin",
-          "_tze204_tagezcph",
-          "_tze204_tbgecldg",
           "_tze204_tdhnhhiy",
           "_tze204_tuhfx7tf",
           "_tze204_tzreobvu",
@@ -143523,8 +142714,6 @@
           "_tze204_zxkwaztm",
           "_TZE204_A4BPGPLM",
           "_tze204_a4bpgplm",
-          "_TZE204_A8SDABTG",
-          "_tze204_a8sdabtg",
           "_TZE204_AC0FHFIQ",
           "_tze204_ac0fhfiq",
           "_TZE204_AI4RQHKY",
@@ -143542,8 +142731,6 @@
           "_tze204_n8dljorx",
           "_TZE204_NVKL4DKF",
           "_tze204_nvkl4dkf",
-          "_TZE204_QOY0EKBD",
-          "_tze204_qoy0ekbd",
           "_TZE204_V6OSSQFY",
           "_tze204_v6ossqfy",
           "_TZE204_VJPAIH9F",
@@ -143574,7 +142761,6 @@
           "_tze284_4cqhd2ha",
           "_tze284_4dosadbh",
           "_tze284_4hdbt6rn",
-          "_tze284_5slehgeo",
           "_tze284_5ys44kzo",
           "_TZE284_65GZCSS7",
           "_tze284_65gzcss7",
@@ -143594,13 +142780,10 @@
           "_TZE284_9ERN5SFH",
           "_tze284_9ern5sfh",
           "_tze284_a14rjslz",
-          "_tze284_a1ovdobn",
           "_tze284_a9ojznj8",
-          "_tze284_aaeaifez",
           "_tze284_aagrxlbd",
           "_tze284_aai5grix",
           "_tze284_ac0fhfiq",
-          "_tze284_agcxaw3f",
           "_tze284_ai4rqhky",
           "_tze284_ajlu4cud",
           "_tze284_ajuasrmx",
@@ -143625,7 +142808,6 @@
           "_tze284_k7p2q5d9",
           "_tze284_k7v0eqke",
           "_tze284_kdqrazmy",
-          "_tze284_khah2lkr",
           "_tze284_kobbcyum",
           "_tze284_kyyu8rbj",
           "_tze284_l8xiyymq",
@@ -143638,22 +142820,18 @@
           "_tze284_nnhwcvbk",
           "_tze284_nt4pquef",
           "_tze284_ny94onlb",
-          "_tze284_p3dbf6qs",
           "_tze284_pglpvdar",
           "_tze284_q22avxbv",
           "_tze284_qf5mzewi",
           "_tze284_qhlxve78",
           "_tze284_qoy0ekbd",
           "_tze284_qyflbnbj",
-          "_tze284_r3szw0xr",
           "_tze284_rccgwzz8",
-          "_tze284_roujjevx",
           "_tze284_rqcuwlsa",
           "_tze284_rs62zxk8",
           "_tze284_rzrrjkz2",
           "_tze284_s5vuaadg",
           "_tze284_sonkaxrd",
-          "_tze284_tbgecldg",
           "_tze284_tuhfx7tf",
           "_tze284_tzreobvu",
           "_tze284_uab532m0",
@@ -143666,7 +142844,6 @@
           "_tze284_vizxbhco",
           "_tze284_vjpaih9f",
           "_tze284_vmcgja59",
-          "_tze284_vvmbj46n",
           "_tze284_wbhaespm",
           "_tze284_wckqztdq",
           "_tze284_wdfurkoa",
@@ -143676,14 +142853,12 @@
           "_tze284_xvywzhmi",
           "_tze284_y4jqpry8",
           "_tze284_yjjdcqsq",
-          "_tze284_ymldrmzx",
           "_tze284_yyyyyyyy",
           "_tze284_yzr43ayq",
           "_tze284_z5jz7wpo",
           "_tze284_z7a2jmyy",
           "_tze284_zeldawjv",
           "_tze284_zjhoqbrd",
-          "_tze284_zm8zpwas",
           "_tze284_znbl8dj5",
           "_tze284_znph9215",
           "_tze284_zpvusbtv",
@@ -143744,7 +142919,6 @@
           "_TZE200_VES1YCWX",
           "_TZE200_VHY3IAKZ",
           "_TZE204_0DVM9MVA",
-          "_TZE204_6KIJC7ND",
           "_TZE204_ATDQO4NJ",
           "_TZE204_EZQY5PVH",
           "_TZE204_FNCXK3OB",
@@ -143758,9 +142932,7 @@
           "_TZE204_UX5V4TGB",
           "_TZE204_V9HKZ2YN",
           "_TZE204_VES1YCWX",
-          "_TZE204_XALSOE3M",
           "_TZE204_ZNBL8DJ5",
-          "_TZE284_6KIJC7ND",
           "_TZE284_AAO6QTCS",
           "_TZE284_CHBYV06X",
           "_TZE284_DHKE3P9W",
@@ -143823,7 +142995,6 @@
           "_TZ3000_os0wy3vh",
           "_TZ3000_p26flek3",
           "_TZ3000_piuensvr",
-          "_TZ3000_qaaysllp",
           "_TZ3000_qogsnsxh",
           "_TZ3000_rcuqxkq0",
           "_TZ3000_sfhyve2g",
@@ -143837,7 +143008,6 @@
           "_TZ3000_utwgoauk",
           "_TZ3000_v4mevirn",
           "_TZ3000_vsj5o7dm",
-          "_TZ3000_ww6drja5",
           "_TZ3000_xdo0hj1k",
           "_TZ3000_xeumnff9",
           "_TZ3000_yupc0pb7",
@@ -143856,39 +143026,31 @@
           "_TZ3290_s6ezpa3j",
           "_TZ6210_duv6fhwt",
           "_TZE200_01fvxamo",
-          "_TZE200_04yfvweb",
-          "_TZE200_127x7wnl",
           "_TZE200_1drr8tab",
           "_TZE200_1fuxihti",
           "_TZE200_1n2kyphz",
           "_TZE200_1ozguk6x",
           "_TZE200_1vxgqfba",
-          "_TZE200_2cs6g9i7",
           "_TZE200_2dpplnsn",
           "_TZE200_2odrmqwq",
           "_TZE200_2vfxweng",
           "_TZE200_3ejwxpmu",
           "_TZE200_3xfjp0ag",
           "_TZE200_4aijvczq",
-          "_TZE200_4eeyebrt",
           "_TZE200_5d3vhjro",
           "_TZE200_6wi2mope",
-          "_TZE200_6y7kyjga",
           "_TZE200_78ioiaml",
           "_TZE200_7deq70b8",
           "_TZE200_7fqkphoq",
           "_TZE200_7p8ugv8d",
           "_TZE200_7shyddj3",
           "_TZE200_86nbew0j",
-          "_TZE200_8daqwrsj",
           "_TZE200_8eazvzo6",
-          "_TZE200_8thwkzxl",
           "_TZE200_8vxj8khv",
           "_TZE200_9dhenr94",
           "_TZE200_9m4kmbfu",
           "_TZE200_9xejegcy",
           "_TZE200_a0gvbdgv",
-          "_TZE200_a1ovdobn",
           "_TZE200_a8z0g46u",
           "_TZE200_aao6qtcs",
           "_TZE200_ax8a8ahx",
@@ -143901,7 +143063,6 @@
           "_TZE200_c7emyjom",
           "_TZE200_clm4gdw4",
           "_TZE200_cxu0jkjk",
-          "_TZE200_czk78ptr",
           "_TZE200_d9mzkhoq",
           "_TZE200_dcnsggv",
           "_TZE200_dhdstcqc",
@@ -143911,7 +143072,6 @@
           "_TZE200_dnz6yvl2",
           "_TZE200_do5qy8zo",
           "_TZE200_drs6j6m5",
-          "_TZE200_dv8abrrz",
           "_TZE200_e2bedvo9",
           "_TZE200_eanjj2pa",
           "_TZE200_edl8pz1k",
@@ -143934,7 +143094,6 @@
           "_TZE200_h4cgnbzg",
           "_TZE200_ha0vwoew",
           "_TZE200_hdih4foa",
-          "_TZE200_hhrtiq0x",
           "_TZE200_hktk6hze",
           "_TZE200_hmabvy81",
           "_TZE200_hmqzfqml",
@@ -143946,10 +143105,8 @@
           "_TZE200_iuk8kupi",
           "_TZE200_ivdc0kwl",
           "_TZE200_iwn0gpzz",
-          "_TZE200_jeaxp72v",
           "_TZE200_jkbljri7",
           "_TZE200_js3mgbjb",
-          "_TZE200_jthf7vb6",
           "_TZE200_jwsjbxjs",
           "_TZE200_jxyhl4eq",
           "_TZE200_kf2hbko4",
@@ -143959,7 +143116,6 @@
           "_TZE200_leaqthqq",
           "_TZE200_lhqtjwax",
           "_TZE200_llm0epxg",
-          "_TZE200_locansqn",
           "_TZE200_lve3dvpy",
           "_TZE200_mby4kbtq",
           "_TZE200_mde0utnv",
@@ -143971,7 +143127,6 @@
           "_TZE200_n5fxyyjw",
           "_TZE200_n9clpsht",
           "_TZE200_na5qlzow",
-          "_TZE200_nhyj64w2",
           "_TZE200_nojsjtj2",
           "_TZE200_nus5kk3n",
           "_TZE200_ny94onlb",
@@ -143979,16 +143134,13 @@
           "_TZE200_odlldrxx",
           "_TZE200_ogkdpgy2",
           "_TZE200_oisqyl4o",
-          "_TZE200_owwdxjbx",
           "_TZE200_oyti2ums",
           "_TZE200_p2qzzazi",
           "_TZE200_pbo8cj0z",
-          "_TZE200_ps5v5jor",
           "_TZE200_qanl25yu",
           "_TZE200_qhlxve78",
           "_TZE200_qjp4ynvi",
           "_TZE200_qrztc3ev",
-          "_TZE200_qsoecqlk",
           "_TZE200_qxyh4r7g",
           "_TZE200_qyss8gjy",
           "_TZE200_r5ksy7qo",
@@ -143997,13 +143149,10 @@
           "_TZE200_rd8cdssd",
           "_TZE200_rlqamjhp",
           "_TZE200_rsj5pu8y",
-          "_TZE200_rtrmfadk",
           "_TZE200_sfqyhvpv",
-          "_TZE200_snfdqllf",
           "_TZE200_snloy4rw",
           "_TZE200_sq6affpe",
           "_TZE200_stvgmdjz",
-          "_TZE200_tbgecldg",
           "_TZE200_thbr5z34",
           "_TZE200_tviaymwx",
           "_TZE200_tvrvdj6o",
@@ -144023,10 +143172,8 @@
           "_TZE200_vrcfo4i0",
           "_TZE200_vrfecyku",
           "_TZE200_vuqzj1ej",
-          "_TZE200_vvmbj46n",
           "_TZE200_wdfurkoa",
           "_TZE200_wehza30a",
-          "_TZE200_wem3gxyx",
           "_TZE200_whkgqxse",
           "_TZE200_wktrysab",
           "_TZE200_wrmhp6b3",
@@ -144053,7 +143200,6 @@
           "_TZE200_ywe90lt0",
           "_TZE200_z3u99qxt",
           "_TZE200_zbfmvj13",
-          "_TZE200_zivfvd7h",
           "_TZE200_zlwr0raf",
           "_TZE200_znph9215",
           "_TZE200_zo0cfekv",
@@ -144071,7 +143217,6 @@
           "_TZE204_432zhuwe",
           "_TZE204_4bjixefp",
           "_TZE204_58of2pfn",
-          "_TZE204_5slehgeo",
           "_TZE204_6a4vxfnv",
           "_TZE204_6fk3gewc",
           "_TZE204_6vwfjkcj",
@@ -144093,7 +143238,6 @@
           "_TZE204_dohbhb5k",
           "_TZE204_dpqsvdbi",
           "_TZE204_dqolcpcp",
-          "_TZE204_dsagrkvg",
           "_TZE204_dvosyycn",
           "_TZE204_dwcarsat",
           "_TZE204_e9ajs4ft",
@@ -144101,12 +143245,10 @@
           "_TZE204_edl8pz1k",
           "_TZE204_ejh6owwz",
           "_TZE204_fhvdgeuh",
-          "_TZE204_g2ki0ejr",
           "_TZE204_g4au0afs",
           "_TZE204_g5xqosu7",
           "_TZE204_hiith90n",
           "_TZE204_ic7jtutb",
-          "_TZE204_ilzkxrav",
           "_TZE204_iuk8kupi",
           "_TZE204_iwn0gpzz",
           "_TZE204_iyki9kjp",
@@ -144127,7 +143269,6 @@
           "_TZE204_mpg22jc1",
           "_TZE204_mrffaamu",
           "_TZE204_mul9abs3",
-          "_TZE204_mwomyz5n",
           "_TZE204_ncti2pro",
           "_TZE204_nh9m9emk",
           "_TZE204_nladmfvf",
@@ -144137,7 +143278,6 @@
           "_TZE204_ogkdpgy2",
           "_TZE204_oh8y8pv8",
           "_TZE204_oqtpvx51",
-          "_TZE204_p1qrtljn",
           "_TZE204_ptaqh9tk",
           "_TZE204_q12rv9gj",
           "_TZE204_q22avxbv",
@@ -144152,8 +143292,6 @@
           "_TZE204_srmahpwl",
           "_TZE204_sxm7l9x",
           "_TZE204_t9ffmdin",
-          "_TZE204_tagezcph",
-          "_TZE204_tbgecldg",
           "_TZE204_tdhnhhiy",
           "_TZE204_tuhfx7tf",
           "_TZE204_tzreobvu",
@@ -144194,7 +143332,6 @@
           "_TZE284_432zhuwe",
           "_TZE284_4dosadbh",
           "_TZE284_4hdbt6rn",
-          "_TZE284_5slehgeo",
           "_TZE284_5ys44kzo",
           "_TZE284_6fopvb6v",
           "_TZE284_6hrnp30w",
@@ -144204,13 +143341,10 @@
           "_TZE284_9m4kmbfu",
           "_TZE284_9xstqowh",
           "_TZE284_a14rjslz",
-          "_TZE284_a1ovdobn",
           "_TZE284_a9ojznj8",
-          "_TZE284_aaeaifez",
           "_TZE284_aagrxlbd",
           "_TZE284_aai5grix",
           "_TZE284_ac0fhfiq",
-          "_TZE284_agcxaw3f",
           "_TZE284_ai4rqhky",
           "_TZE284_ajlu4cud",
           "_TZE284_ap9owrsa",
@@ -144230,7 +143364,6 @@
           "_TZE284_iwyqtclw",
           "_TZE284_k7p2q5d9",
           "_TZE284_k7v0eqke",
-          "_TZE284_khah2lkr",
           "_TZE284_kobbcyum",
           "_TZE284_kyyu8rbj",
           "_TZE284_l8xiyymq",
@@ -144243,19 +143376,15 @@
           "_TZE284_nnhwcvbk",
           "_TZE284_nt4pquef",
           "_TZE284_ny94onlb",
-          "_TZE284_p3dbf6qs",
           "_TZE284_pglpvdar",
           "_TZE284_qhlxve78",
           "_TZE284_qoy0ekbd",
-          "_TZE284_r3szw0xr",
           "_TZE284_rccgwzz8",
-          "_TZE284_roujjevx",
           "_TZE284_rqcuwlsa",
           "_TZE284_rs62zxk8",
           "_TZE284_rzrrjkz2",
           "_TZE284_s5vuaadg",
           "_TZE284_sonkaxrd",
-          "_TZE284_tbgecldg",
           "_TZE284_tuhfx7tf",
           "_TZE284_tzreobvu",
           "_TZE284_uab532m0",
@@ -144266,7 +143395,6 @@
           "_TZE284_vizxbhco",
           "_TZE284_vjpaih9f",
           "_TZE284_vmcgja59",
-          "_TZE284_vvmbj46n",
           "_TZE284_wbhaespm",
           "_TZE284_wckqztdq",
           "_TZE284_wdfurkoa",
@@ -144274,14 +143402,12 @@
           "_TZE284_wwaeqnrf",
           "_TZE284_xvywzhmi",
           "_TZE284_y4jqpry8",
-          "_TZE284_ymldrmzx",
           "_TZE284_yyyyyyyy",
           "_TZE284_yzr43ayq",
           "_TZE284_z5jz7wpo",
           "_TZE284_z7a2jmyy",
           "_TZE284_zeldawjv",
           "_TZE284_zjhoqbrd",
-          "_TZE284_zm8zpwas",
           "_TZE284_znbl8dj5",
           "_TZE284_znph9215",
           "_TZE284_zpvusbtv",
@@ -144312,7 +143438,6 @@
           "_TZE200_ves1ycwx",
           "_TZE200_vhy3iakz",
           "_TZE204_0dvm9mva",
-          "_TZE204_6kijc7nd",
           "_TZE204_atdqo4nj",
           "_TZE204_ezqy5pvh",
           "_TZE204_fncxk3ob",
@@ -144326,9 +143451,7 @@
           "_TZE204_ux5v4tgb",
           "_TZE204_v9hkz2yn",
           "_TZE204_ves1ycwx",
-          "_TZE204_xalsoe3m",
           "_TZE204_znbl8dj5",
-          "_TZE284_6kijc7nd",
           "_TZE284_aao6qtcs",
           "_TZE284_chbyv06x",
           "_TZE284_dhke3p9w",
@@ -144341,11 +143464,9 @@
           "_TZE284_v5xjyphj",
           "_tyst11_2DPPLNSN",
           "_tyst11_8DAQWRSJ",
-          "_tyst11_CZK78PTR",
           "_tyst11_HHRTIQ0X",
           "_tyst11_JEAXP72V",
           "_tyst11_OWWDXJBX",
-          "_tyst11_PS5V5JOR",
           "_tyst11_UDANK5ZS",
           "_tyst11_WV90LADG",
           "_tyst11_ZIVFVD7H",
@@ -144355,7 +143476,6 @@
           "_tyzb01_KVWJUJY9",
           "_tyzb01_ZQVWKA4K",
           "_tyzb01_FI5YFTWV",
-          "_tyzb01_UJFK3XD9",
           "_tz1800_LADPNGDX",
           "_tz2000_LXVYCLN5",
           "_tz2000_ZSFVULDE",
@@ -144424,7 +143544,6 @@
           "_tz3000_P26FLEK3",
           "_tz3000_PIUENSVR",
           "_tz3000_PVLVOXVT",
-          "_tz3000_QAAYSLLP",
           "_tz3000_QOGSNSXH",
           "_tz3000_RCUQXKQ0",
           "_tz3000_RDHUKKMI",
@@ -144442,7 +143561,6 @@
           "_tz3000_V1W2K9DD",
           "_tz3000_V4MEVIRN",
           "_tz3000_VSJ5O7DM",
-          "_tz3000_WW6DRJA5",
           "_tz3000_XDO0HJ1K",
           "_tz3000_XEUMNFF9",
           "_tz3000_XR3HTD96",
@@ -144476,16 +143594,13 @@
           "_tz3290_S6EZPA3J",
           "_tz6210_DUV6FHWT",
           "_tze200_01FVXAMO",
-          "_tze200_04YFVWEB",
           "_tze200_0U3BJ3RC",
           "_tze200_0DVM9MVA",
-          "_tze200_127X7WNL",
           "_tze200_1DRR8TAB",
           "_tze200_1FUXIHTI",
           "_tze200_1N2KYPHZ",
           "_tze200_1OZGUK6X",
           "_tze200_1VXGQFBA",
-          "_tze200_2CS6G9I7",
           "_tze200_2DPPLNSN",
           "_tze200_2ODRMQWQ",
           "_tze200_2VFXWENG",
@@ -144493,20 +143608,16 @@
           "_tze200_3XFJP0AG",
           "_tze200_3YP57TBY",
           "_tze200_4AIJVCZQ",
-          "_tze200_4EEYEBRT",
           "_tze200_5D3VHJRO",
           "_tze200_6WI2MOPE",
-          "_tze200_6Y7KYJGA",
           "_tze200_78IOIAML",
           "_tze200_7DEQ70B8",
           "_tze200_7FQKPHOQ",
           "_tze200_7P8UGV8D",
           "_tze200_7SHYDDJ3",
           "_tze200_86NBEW0J",
-          "_tze200_8DAQWRSJ",
           "_tze200_8EAZVZO6",
           "_tze200_8PLY8MJJ",
-          "_tze200_8THWKZXL",
           "_tze200_8VXJ8KHV",
           "_tze200_8WHU6KKR",
           "_tze200_9DHENR94",
@@ -144514,8 +143625,6 @@
           "_tze200_9XEJEGCY",
           "_tze200_9YAPGBUV",
           "_tze200_A0GVBDGV",
-          "_tze200_A1OVDOBN",
-          "_tze200_A8SDABTG",
           "_tze200_A8Z0G46U",
           "_tze200_AAO6QTCS",
           "_tze200_AUIN8MZR",
@@ -144531,7 +143640,6 @@
           "_tze200_CIRVGEP4",
           "_tze200_CLM4GDW4",
           "_tze200_CXU0JKJK",
-          "_tze200_CZK78PTR",
           "_tze200_D9MZKHOQ",
           "_tze200_DCNSGGV",
           "_tze200_DHDSTCQC",
@@ -144542,7 +143650,6 @@
           "_tze200_DNZ6YVL2",
           "_tze200_DO5QY8ZO",
           "_tze200_DRS6J6M5",
-          "_tze200_DV8ABRRZ",
           "_tze200_E2BEDVO9",
           "_tze200_EANJJ2PA",
           "_tze200_EDL8PZ1K",
@@ -144566,7 +143673,6 @@
           "_tze200_H4CGNBZG",
           "_tze200_HA0VWOEW",
           "_tze200_HDIH4FOA",
-          "_tze200_HHRTIQ0X",
           "_tze200_HKTK6HZE",
           "_tze200_HMABVY81",
           "_tze200_HMQZFQML",
@@ -144579,10 +143685,8 @@
           "_tze200_IVDC0KWL",
           "_tze200_IWN0GPZZ",
           "_tze200_J7SGD8PO",
-          "_tze200_JEAXP72V",
           "_tze200_JKBLJRI7",
           "_tze200_JS3MGBJB",
-          "_tze200_JTHF7VB6",
           "_tze200_JWSJBXJS",
           "_tze200_JXYHL4EQ",
           "_tze200_KF2HBKO4",
@@ -144592,7 +143696,6 @@
           "_tze200_LEAQTHQQ",
           "_tze200_LHQTJWAX",
           "_tze200_LLM0EPXG",
-          "_tze200_LOCANSQN",
           "_tze200_LVE3DVPY",
           "_tze200_MBY4KBTQ",
           "_tze200_MDE0UTNV",
@@ -144608,7 +143711,6 @@
           "_tze200_N8DLJORX",
           "_tze200_N9CLPSHT",
           "_tze200_NA5QLZOW",
-          "_tze200_NHYJ64W2",
           "_tze200_NOJSJTJ2",
           "_tze200_NUS5KK3N",
           "_tze200_NVUPS4NH",
@@ -144617,17 +143719,14 @@
           "_tze200_ODLLDRXX",
           "_tze200_OGKDPGY2",
           "_tze200_OISQYL4O",
-          "_tze200_OWWDXJBX",
           "_tze200_OYTI2UMS",
           "_tze200_P2QZZAZI",
           "_tze200_PBO8CJ0Z",
           "_tze200_PL31AQF5",
-          "_tze200_PS5V5JOR",
           "_tze200_QANL25YU",
           "_tze200_QHLXVE78",
           "_tze200_QJP4YNVI",
           "_tze200_QRZTC3EV",
-          "_tze200_QSOECQLK",
           "_tze200_QXYH4R7G",
           "_tze200_QYFLBNBJ",
           "_tze200_QYSS8GJY",
@@ -144637,16 +143736,13 @@
           "_tze200_RD8CDSSD",
           "_tze200_RLQAMJHP",
           "_tze200_RSJ5PU8Y",
-          "_tze200_RTRMFADK",
           "_tze200_RYFMQ5RL",
           "_tze200_S1XGTH2U",
           "_tze200_SFQYHVPV",
-          "_tze200_SNFDQLLF",
           "_tze200_SNLOY4RW",
           "_tze200_SQ6AFFPE",
           "_tze200_STVGMDJZ",
           "_tze200_T3XD7L44",
-          "_tze200_TBGECLDG",
           "_tze200_THBR5Z34",
           "_tze200_TVIAYMWX",
           "_tze200_TVRVDJ6O",
@@ -144670,12 +143766,10 @@
           "_tze200_VRFECYKU",
           "_tze200_VS0SKPUC",
           "_tze200_VUQZJ1EJ",
-          "_tze200_VVMBJ46N",
           "_tze200_VZQTVLJM",
           "_tze200_W6N8JEUU",
           "_tze200_WDFURKOA",
           "_tze200_WEHZA30A",
-          "_tze200_WEM3GXYX",
           "_tze200_WHKGQXSE",
           "_tze200_WKTRYSAB",
           "_tze200_WRMHP6B3",
@@ -144705,7 +143799,6 @@
           "_tze200_YWE90LT0",
           "_tze200_Z3U99QXT",
           "_tze200_ZBFMVJ13",
-          "_tze200_ZIVFVD7H",
           "_tze200_ZLWR0RAF",
           "_tze200_ZNPH9215",
           "_tze200_ZO0CFEKV",
@@ -144719,7 +143812,6 @@
           "_tze200_HKDL0FMV",
           "_tze200_NH9M9EMK",
           "_tze200_NNRFA68V",
-          "_tze200_QOY0EKBD",
           "_tze200_RCCXOX8P",
           "_tze200_UTWGIVDK",
           "_tze200_WBHAESPM",
@@ -144736,7 +143828,6 @@
           "_tze204_432ZHUWE",
           "_tze204_4BJIXEFP",
           "_tze204_58OF2PFN",
-          "_tze204_5SLEHGEO",
           "_tze204_6A4VXFNV",
           "_tze204_6FK3GEWC",
           "_tze204_6VWFJKCJ",
@@ -144765,7 +143856,6 @@
           "_tze204_DOHBHB5K",
           "_tze204_DPQSVDBI",
           "_tze204_DQOLCPCP",
-          "_tze204_DSAGRKVG",
           "_tze204_DVOSYYCN",
           "_tze204_DWCARSAT",
           "_tze204_E9AJS4FT",
@@ -144773,12 +143863,10 @@
           "_tze204_EDL8PZ1K",
           "_tze204_EJH6OWWZ",
           "_tze204_FHVDGEUH",
-          "_tze204_G2KI0EJR",
           "_tze204_G4AU0AFS",
           "_tze204_G5XQOSU7",
           "_tze204_HIITH90N",
           "_tze204_IC7JTUTB",
-          "_tze204_ILZKXRAV",
           "_tze204_IUK8KUPI",
           "_tze204_IWN0GPZZ",
           "_tze204_IYKI9KJP",
@@ -144799,7 +143887,6 @@
           "_tze204_MPG22JC1",
           "_tze204_MRFFAAMU",
           "_tze204_MUL9ABS3",
-          "_tze204_MWOMYZ5N",
           "_tze204_NCTI2PRO",
           "_tze204_NH9M9EMK",
           "_tze204_NLADMFVF",
@@ -144809,7 +143896,6 @@
           "_tze204_OGKDPGY2",
           "_tze204_OH8Y8PV8",
           "_tze204_OQTPVX51",
-          "_tze204_P1QRTLJN",
           "_tze204_PTAQH9TK",
           "_tze204_Q12RV9GJ",
           "_tze204_Q22AVXBV",
@@ -144825,8 +143911,6 @@
           "_tze204_SRMAHPWL",
           "_tze204_SXM7L9X",
           "_tze204_T9FFMDIN",
-          "_tze204_TAGEZCPH",
-          "_tze204_TBGECLDG",
           "_tze204_TDHNHHIY",
           "_tze204_TUHFX7TF",
           "_tze204_TZREOBVU",
@@ -144860,7 +143944,6 @@
           "_tze204_ZUEPXZCK",
           "_tze204_ZXKWAZTM",
           "_tze204_A4BPGPLM",
-          "_tze204_A8SDABTG",
           "_tze204_AC0FHFIQ",
           "_tze204_AI4RQHKY",
           "_tze204_AUIN8MZR",
@@ -144870,7 +143953,6 @@
           "_tze204_LOCANSQN",
           "_tze204_N8DLJORX",
           "_tze204_NVKL4DKF",
-          "_tze204_QOY0EKBD",
           "_tze204_V6OSSQFY",
           "_tze204_VJPAIH9F",
           "_tze204_WBHAESPM",
@@ -144894,7 +143976,6 @@
           "_tze284_4CQHD2HA",
           "_tze284_4DOSADBH",
           "_tze284_4HDBT6RN",
-          "_tze284_5SLEHGEO",
           "_tze284_5YS44KZO",
           "_tze284_65GZCSS7",
           "_tze284_6FOPVB6V",
@@ -144910,13 +143991,10 @@
           "_tze284_9YAPGBUV",
           "_tze284_9ERN5SFH",
           "_tze284_A14RJSLZ",
-          "_tze284_A1OVDOBN",
           "_tze284_A9OJZNJ8",
-          "_tze284_AAEAIFEZ",
           "_tze284_AAGRXLBD",
           "_tze284_AAI5GRIX",
           "_tze284_AC0FHFIQ",
-          "_tze284_AGCXAW3F",
           "_tze284_AI4RQHKY",
           "_tze284_AJLU4CUD",
           "_tze284_AJUASRMX",
@@ -144941,7 +144019,6 @@
           "_tze284_K7P2Q5D9",
           "_tze284_K7V0EQKE",
           "_tze284_KDQRAZMY",
-          "_tze284_KHAH2LKR",
           "_tze284_KOBBCYUM",
           "_tze284_KYYU8RBJ",
           "_tze284_L8XIYYMQ",
@@ -144954,22 +144031,18 @@
           "_tze284_NNHWCVBK",
           "_tze284_NT4PQUEF",
           "_tze284_NY94ONLB",
-          "_tze284_P3DBF6QS",
           "_tze284_PGLPVDAR",
           "_tze284_Q22AVXBV",
           "_tze284_QF5MZEWI",
           "_tze284_QHLXVE78",
           "_tze284_QOY0EKBD",
           "_tze284_QYFLBNBJ",
-          "_tze284_R3SZW0XR",
           "_tze284_RCCGWZZ8",
-          "_tze284_ROUJJEVX",
           "_tze284_RQCUWLSA",
           "_tze284_RS62ZXK8",
           "_tze284_RZRRJKZ2",
           "_tze284_S5VUAADG",
           "_tze284_SONKAXRD",
-          "_tze284_TBGECLDG",
           "_tze284_TUHFX7TF",
           "_tze284_TZREOBVU",
           "_tze284_UAB532M0",
@@ -144982,7 +144055,6 @@
           "_tze284_VIZXBHCO",
           "_tze284_VJPAIH9F",
           "_tze284_VMCGJA59",
-          "_tze284_VVMBJ46N",
           "_tze284_WBHAESPM",
           "_tze284_WCKQZTDQ",
           "_tze284_WDFURKOA",
@@ -144992,14 +144064,12 @@
           "_tze284_XVYWZHMI",
           "_tze284_Y4JQPRY8",
           "_tze284_YJJDCQSQ",
-          "_tze284_YMLDRMZX",
           "_tze284_YYYYYYYY",
           "_tze284_YZR43AYQ",
           "_tze284_Z5JZ7WPO",
           "_tze284_Z7A2JMYY",
           "_tze284_ZELDAWJV",
           "_tze284_ZJHOQBRD",
-          "_tze284_ZM8ZPWAS",
           "_tze284_ZNBL8DJ5",
           "_tze284_ZNPH9215",
           "_tze284_ZPVUSBTV",
@@ -145045,7 +144115,6 @@
           "_tze200_VES1YCWX",
           "_tze200_VHY3IAKZ",
           "_tze204_0DVM9MVA",
-          "_tze204_6KIJC7ND",
           "_tze204_ATDQO4NJ",
           "_tze204_EZQY5PVH",
           "_tze204_FNCXK3OB",
@@ -145059,9 +144128,7 @@
           "_tze204_UX5V4TGB",
           "_tze204_V9HKZ2YN",
           "_tze204_VES1YCWX",
-          "_tze204_XALSOE3M",
           "_tze204_ZNBL8DJ5",
-          "_tze284_6KIJC7ND",
           "_tze284_AAO6QTCS",
           "_tze284_CHBYV06X",
           "_tze284_DHKE3P9W",
@@ -146209,34 +145276,6 @@
               }
             }
           ]
-        },
-        {
-          "id": "enable_radio_sensing",
-          "type": "checkbox",
-          "label": {
-            "en": "Enable Radio Presence Sensing",
-            "fr": "Activer la Détection de Présence Radio"
-          },
-          "value": false,
-          "hint": {
-            "en": "Infer presence from Zigbee signal fluctuations (BETA)",
-            "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
-          }
-        },
-        {
-          "id": "radio_sensitivity",
-          "type": "number",
-          "label": {
-            "en": "Radio Presence Sensitivity",
-            "fr": "Sensibilité Présence Radio"
-          },
-          "value": 15,
-          "min": 5,
-          "max": 50,
-          "hint": {
-            "en": "LQI variance threshold (higher = less sensitive)",
-            "fr": "Seuil de variance LQI (plus haut = moins sensible)"
-          }
         }
       ],
       "images": {
@@ -146356,9 +145395,6 @@
         "meter_power",
         "measure_voltage",
         "measure_current",
-        "measure_power.phase1",
-        "measure_power.phase2",
-        "measure_power.phase3",
         "measure_battery",
         "measure_temperature",
         "measure_humidity",
@@ -146722,34 +145758,6 @@
           "hint": {
             "en": "Estimate power consumption when real measurement is not available (AC/DC devices only)",
             "fr": "Estimer la consommation quand la mesure réelle n'est pas disponible (appareils AC/DC seulement)"
-          }
-        },
-        {
-          "id": "enable_radio_sensing",
-          "type": "checkbox",
-          "label": {
-            "en": "Enable Radio Presence Sensing",
-            "fr": "Activer la Détection de Présence Radio"
-          },
-          "value": false,
-          "hint": {
-            "en": "Infer presence from Zigbee signal fluctuations (BETA)",
-            "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
-          }
-        },
-        {
-          "id": "radio_sensitivity",
-          "type": "number",
-          "label": {
-            "en": "Radio Presence Sensitivity",
-            "fr": "Sensibilité Présence Radio"
-          },
-          "value": 15,
-          "min": 5,
-          "max": 50,
-          "hint": {
-            "en": "LQI variance threshold (higher = less sensitive)",
-            "fr": "Seuil de variance LQI (plus haut = moins sensible)"
           }
         }
       ],
@@ -147412,34 +146420,6 @@
           "hint": {
             "en": "Minimum power change in Watts to trigger a report",
             "fr": "Changement minimum en Watts pour déclencher un rapport"
-          }
-        },
-        {
-          "id": "enable_radio_sensing",
-          "type": "checkbox",
-          "label": {
-            "en": "Enable Radio Presence Sensing",
-            "fr": "Activer la Détection de Présence Radio"
-          },
-          "value": false,
-          "hint": {
-            "en": "Infer presence from Zigbee signal fluctuations (BETA)",
-            "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
-          }
-        },
-        {
-          "id": "radio_sensitivity",
-          "type": "number",
-          "label": {
-            "en": "Radio Presence Sensitivity",
-            "fr": "Sensibilité Présence Radio"
-          },
-          "value": 15,
-          "min": 5,
-          "max": 50,
-          "hint": {
-            "en": "LQI variance threshold (higher = less sensitive)",
-            "fr": "Seuil de variance LQI (plus haut = moins sensible)"
           }
         }
       ],
@@ -149017,34 +147997,6 @@
               }
             }
           ]
-        },
-        {
-          "id": "enable_radio_sensing",
-          "type": "checkbox",
-          "label": {
-            "en": "Enable Radio Presence Sensing",
-            "fr": "Activer la Détection de Présence Radio"
-          },
-          "value": false,
-          "hint": {
-            "en": "Infer presence from Zigbee signal fluctuations (BETA)",
-            "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
-          }
-        },
-        {
-          "id": "radio_sensitivity",
-          "type": "number",
-          "label": {
-            "en": "Radio Presence Sensitivity",
-            "fr": "Sensibilité Présence Radio"
-          },
-          "value": 15,
-          "min": 5,
-          "max": 50,
-          "hint": {
-            "en": "LQI variance threshold (higher = less sensitive)",
-            "fr": "Seuil de variance LQI (plus haut = moins sensible)"
-          }
         }
       ],
       "name": {
@@ -150056,34 +149008,6 @@
             "en": "Estimate power consumption when real measurement is not available (AC/DC devices only)",
             "fr": "Estimer la consommation quand la mesure réelle n'est pas disponible (appareils AC/DC seulement)"
           }
-        },
-        {
-          "id": "enable_radio_sensing",
-          "type": "checkbox",
-          "label": {
-            "en": "Enable Radio Presence Sensing",
-            "fr": "Activer la Détection de Présence Radio"
-          },
-          "value": false,
-          "hint": {
-            "en": "Infer presence from Zigbee signal fluctuations (BETA)",
-            "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
-          }
-        },
-        {
-          "id": "radio_sensitivity",
-          "type": "number",
-          "label": {
-            "en": "Radio Presence Sensitivity",
-            "fr": "Sensibilité Présence Radio"
-          },
-          "value": 15,
-          "min": 5,
-          "max": 50,
-          "hint": {
-            "en": "LQI variance threshold (higher = less sensitive)",
-            "fr": "Seuil de variance LQI (plus haut = moins sensible)"
-          }
         }
       ],
       "energy": {
@@ -150456,34 +149380,6 @@
             "nl": "Wissel open/gesloten om indien sensor omgekeerd rapporteert"
           },
           "value": false
-        },
-        {
-          "id": "enable_radio_sensing",
-          "type": "checkbox",
-          "label": {
-            "en": "Enable Radio Presence Sensing",
-            "fr": "Activer la Détection de Présence Radio"
-          },
-          "value": false,
-          "hint": {
-            "en": "Infer presence from Zigbee signal fluctuations (BETA)",
-            "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
-          }
-        },
-        {
-          "id": "radio_sensitivity",
-          "type": "number",
-          "label": {
-            "en": "Radio Presence Sensitivity",
-            "fr": "Sensibilité Présence Radio"
-          },
-          "value": 15,
-          "min": 5,
-          "max": 50,
-          "hint": {
-            "en": "LQI variance threshold (higher = less sensitive)",
-            "fr": "Seuil de variance LQI (plus haut = moins sensible)"
-          }
         }
       ],
       "images": {
@@ -151150,34 +150046,6 @@
           "hint": {
             "en": "Minimum power change in Watts to trigger a report",
             "fr": "Changement minimum en Watts pour déclencher un rapport"
-          }
-        },
-        {
-          "id": "enable_radio_sensing",
-          "type": "checkbox",
-          "label": {
-            "en": "Enable Radio Presence Sensing",
-            "fr": "Activer la Détection de Présence Radio"
-          },
-          "value": false,
-          "hint": {
-            "en": "Infer presence from Zigbee signal fluctuations (BETA)",
-            "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
-          }
-        },
-        {
-          "id": "radio_sensitivity",
-          "type": "number",
-          "label": {
-            "en": "Radio Presence Sensitivity",
-            "fr": "Sensibilité Présence Radio"
-          },
-          "value": 15,
-          "min": 5,
-          "max": 50,
-          "hint": {
-            "en": "LQI variance threshold (higher = less sensitive)",
-            "fr": "Seuil de variance LQI (plus haut = moins sensible)"
           }
         }
       ],
@@ -151885,34 +150753,6 @@
               }
             }
           ]
-        },
-        {
-          "id": "enable_radio_sensing",
-          "type": "checkbox",
-          "label": {
-            "en": "Enable Radio Presence Sensing",
-            "fr": "Activer la Détection de Présence Radio"
-          },
-          "value": false,
-          "hint": {
-            "en": "Infer presence from Zigbee signal fluctuations (BETA)",
-            "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
-          }
-        },
-        {
-          "id": "radio_sensitivity",
-          "type": "number",
-          "label": {
-            "en": "Radio Presence Sensitivity",
-            "fr": "Sensibilité Présence Radio"
-          },
-          "value": 15,
-          "min": 5,
-          "max": 50,
-          "hint": {
-            "en": "LQI variance threshold (higher = less sensitive)",
-            "fr": "Seuil de variance LQI (plus haut = moins sensible)"
-          }
         }
       ],
       "name": {
@@ -152320,34 +151160,6 @@
             "nl": "Wissel open/gesloten om indien sensor omgekeerd rapporteert"
           },
           "value": false
-        },
-        {
-          "id": "enable_radio_sensing",
-          "type": "checkbox",
-          "label": {
-            "en": "Enable Radio Presence Sensing",
-            "fr": "Activer la Détection de Présence Radio"
-          },
-          "value": false,
-          "hint": {
-            "en": "Infer presence from Zigbee signal fluctuations (BETA)",
-            "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
-          }
-        },
-        {
-          "id": "radio_sensitivity",
-          "type": "number",
-          "label": {
-            "en": "Radio Presence Sensitivity",
-            "fr": "Sensibilité Présence Radio"
-          },
-          "value": 15,
-          "min": 5,
-          "max": 50,
-          "hint": {
-            "en": "LQI variance threshold (higher = less sensitive)",
-            "fr": "Seuil de variance LQI (plus haut = moins sensible)"
-          }
         }
       ],
       "images": {
@@ -154658,36 +153470,7 @@
         "conditions": [],
         "actions": []
       },
-      "settings": [
-        {
-          "id": "enable_radio_sensing",
-          "type": "checkbox",
-          "label": {
-            "en": "Enable Radio Presence Sensing",
-            "fr": "Activer la Détection de Présence Radio"
-          },
-          "value": false,
-          "hint": {
-            "en": "Infer presence from Zigbee signal fluctuations (BETA)",
-            "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
-          }
-        },
-        {
-          "id": "radio_sensitivity",
-          "type": "number",
-          "label": {
-            "en": "Radio Presence Sensitivity",
-            "fr": "Sensibilité Présence Radio"
-          },
-          "value": 15,
-          "min": 5,
-          "max": 50,
-          "hint": {
-            "en": "LQI variance threshold (higher = less sensitive)",
-            "fr": "Seuil de variance LQI (plus haut = moins sensible)"
-          }
-        }
-      ],
+      "settings": [],
       "id": "device_air_purifier",
       "version": "1.0.0",
       "capabilitiesOptions": {
@@ -154698,115 +153481,6 @@
           }
         }
       }
-    },
-    {
-      "name": {
-        "en": "Device Air Purifier Climate",
-        "nl": "Device Air Purifier Climate",
-        "fr": "Device Air Purifier Climate"
-      },
-      "class": "fan",
-      "capabilities": [
-        "onoff",
-        "dim",
-        "measure_pm25",
-        "measure_temperature",
-        "measure_humidity",
-        "measure_battery",
-        "button.1"
-      ],
-      "capabilitiesOptions": {
-        "dim": {
-          "title": {
-            "en": "Fan Speed",
-            "fr": "Vitesse Ventilateur"
-          }
-        },
-        "measure_pm25": {
-          "title": {
-            "en": "PM2.5",
-            "fr": "PM2.5"
-          },
-          "units": "µg/m³"
-        },
-        "button.1": {
-          "title": {
-            "en": "Button 1",
-            "fr": "Bouton 1"
-          }
-        }
-      },
-      "zigbee": {
-        "productId": [
-          "TS0601_air_purifier"
-        ],
-        "endpoints": {
-          "1": {
-            "clusters": [
-              0
-            ]
-          }
-        },
-        "learnmode": {
-          "instruction": {
-            "en": "Press and hold the power button for 5 seconds",
-            "fr": "Maintenez le bouton power pendant 5 secondes"
-          }
-        },
-        "manufacturerName": []
-      },
-      "images": {
-        "small": "/drivers/air_purifier/assets/images/small.png",
-        "large": "/drivers/air_purifier/assets/images/large.png"
-      },
-      "platforms": [
-        "local"
-      ],
-      "connectivity": [
-        "zigbee"
-      ],
-      "energy": {
-        "batteries": [
-          "AAA",
-          "AAA"
-        ]
-      },
-      "maintenanceActions": [
-        {
-          "id": "ota_check",
-          "title": {
-            "en": "Check Zigbee OTA Update",
-            "fr": "Vérifier MàJ OTA",
-            "nl": "Controleer op OTA-updates"
-          }
-        },
-        {
-          "id": "tuya_revive",
-          "title": {
-            "en": "Tuya Revive (device recovery)",
-            "fr": "Tuya Revive (récupération appareil)",
-            "nl": "Tuya Revive (apparaatherstel)",
-            "de": "Tuya Revive (Gerätewiederherstellung)"
-          }
-        },
-        {
-          "id": "generate_issue_report",
-          "title": {
-            "en": "Generate support report (GitHub issue)",
-            "fr": "Générer rapport de support (issue GitHub)",
-            "nl": "Supportrapport genereren (GitHub issue)",
-            "de": "Supportbericht erstellen (GitHub Issue)"
-          }
-        }
-      ],
-      "flow": {
-        "triggers": [],
-        "conditions": [],
-        "actions": []
-      },
-      "settings": [],
-      "id": "device_air_purifier_climate",
-      "version": "1.0.0"
     },
     {
       "name": {
@@ -155512,34 +154186,6 @@
           "hint": {
             "en": "Estimate power consumption when real measurement is not available (AC/DC devices only)",
             "fr": "Estimer la consommation quand la mesure réelle n'est pas disponible (appareils AC/DC seulement)"
-          }
-        },
-        {
-          "id": "enable_radio_sensing",
-          "type": "checkbox",
-          "label": {
-            "en": "Enable Radio Presence Sensing",
-            "fr": "Activer la Détection de Présence Radio"
-          },
-          "value": false,
-          "hint": {
-            "en": "Infer presence from Zigbee signal fluctuations (BETA)",
-            "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
-          }
-        },
-        {
-          "id": "radio_sensitivity",
-          "type": "number",
-          "label": {
-            "en": "Radio Presence Sensitivity",
-            "fr": "Sensibilité Présence Radio"
-          },
-          "value": 15,
-          "min": 5,
-          "max": 50,
-          "hint": {
-            "en": "LQI variance threshold (higher = less sensitive)",
-            "fr": "Seuil de variance LQI (plus haut = moins sensible)"
           }
         }
       ],
@@ -157009,34 +155655,6 @@
               }
             }
           ]
-        },
-        {
-          "id": "enable_radio_sensing",
-          "type": "checkbox",
-          "label": {
-            "en": "Enable Radio Presence Sensing",
-            "fr": "Activer la Détection de Présence Radio"
-          },
-          "value": false,
-          "hint": {
-            "en": "Infer presence from Zigbee signal fluctuations (BETA)",
-            "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
-          }
-        },
-        {
-          "id": "radio_sensitivity",
-          "type": "number",
-          "label": {
-            "en": "Radio Presence Sensitivity",
-            "fr": "Sensibilité Présence Radio"
-          },
-          "value": 15,
-          "min": 5,
-          "max": 50,
-          "hint": {
-            "en": "LQI variance threshold (higher = less sensitive)",
-            "fr": "Seuil de variance LQI (plus haut = moins sensible)"
-          }
         }
       ],
       "images": {
@@ -157384,34 +156002,6 @@
             "en": "Estimate power consumption when real measurement is not available (AC/DC devices only)",
             "fr": "Estimer la consommation quand la mesure réelle n'est pas disponible (appareils AC/DC seulement)"
           }
-        },
-        {
-          "id": "enable_radio_sensing",
-          "type": "checkbox",
-          "label": {
-            "en": "Enable Radio Presence Sensing",
-            "fr": "Activer la Détection de Présence Radio"
-          },
-          "value": false,
-          "hint": {
-            "en": "Infer presence from Zigbee signal fluctuations (BETA)",
-            "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
-          }
-        },
-        {
-          "id": "radio_sensitivity",
-          "type": "number",
-          "label": {
-            "en": "Radio Presence Sensitivity",
-            "fr": "Sensibilité Présence Radio"
-          },
-          "value": 15,
-          "min": 5,
-          "max": 50,
-          "hint": {
-            "en": "LQI variance threshold (higher = less sensitive)",
-            "fr": "Seuil de variance LQI (plus haut = moins sensible)"
-          }
         }
       ],
       "images": {
@@ -157695,34 +156285,6 @@
           "hint": {
             "en": "How often to request battery status updates",
             "fr": "Fréquence de demande des mises àjour d'état de batterie"
-          }
-        },
-        {
-          "id": "enable_radio_sensing",
-          "type": "checkbox",
-          "label": {
-            "en": "Enable Radio Presence Sensing",
-            "fr": "Activer la Détection de Présence Radio"
-          },
-          "value": false,
-          "hint": {
-            "en": "Infer presence from Zigbee signal fluctuations (BETA)",
-            "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
-          }
-        },
-        {
-          "id": "radio_sensitivity",
-          "type": "number",
-          "label": {
-            "en": "Radio Presence Sensitivity",
-            "fr": "Sensibilité Présence Radio"
-          },
-          "value": 15,
-          "min": 5,
-          "max": 50,
-          "hint": {
-            "en": "LQI variance threshold (higher = less sensitive)",
-            "fr": "Seuil de variance LQI (plus haut = moins sensible)"
           }
         }
       ],
@@ -158161,34 +156723,6 @@
             "en": "Estimate power consumption when real measurement is not available (AC/DC devices only)",
             "fr": "Estimer la consommation quand la mesure réelle n'est pas disponible (appareils AC/DC seulement)"
           }
-        },
-        {
-          "id": "enable_radio_sensing",
-          "type": "checkbox",
-          "label": {
-            "en": "Enable Radio Presence Sensing",
-            "fr": "Activer la Détection de Présence Radio"
-          },
-          "value": false,
-          "hint": {
-            "en": "Infer presence from Zigbee signal fluctuations (BETA)",
-            "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
-          }
-        },
-        {
-          "id": "radio_sensitivity",
-          "type": "number",
-          "label": {
-            "en": "Radio Presence Sensitivity",
-            "fr": "Sensibilité Présence Radio"
-          },
-          "value": 15,
-          "min": 5,
-          "max": 50,
-          "hint": {
-            "en": "LQI variance threshold (higher = less sensitive)",
-            "fr": "Seuil de variance LQI (plus haut = moins sensible)"
-          }
         }
       ],
       "images": {
@@ -158505,34 +157039,6 @@
               }
             }
           ]
-        },
-        {
-          "id": "enable_radio_sensing",
-          "type": "checkbox",
-          "label": {
-            "en": "Enable Radio Presence Sensing",
-            "fr": "Activer la Détection de Présence Radio"
-          },
-          "value": false,
-          "hint": {
-            "en": "Infer presence from Zigbee signal fluctuations (BETA)",
-            "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
-          }
-        },
-        {
-          "id": "radio_sensitivity",
-          "type": "number",
-          "label": {
-            "en": "Radio Presence Sensitivity",
-            "fr": "Sensibilité Présence Radio"
-          },
-          "value": 15,
-          "min": 5,
-          "max": 50,
-          "hint": {
-            "en": "LQI variance threshold (higher = less sensitive)",
-            "fr": "Seuil de variance LQI (plus haut = moins sensible)"
-          }
         }
       ],
       "images": {
@@ -158691,36 +157197,7 @@
         "conditions": [],
         "actions": []
       },
-      "settings": [
-        {
-          "id": "enable_radio_sensing",
-          "type": "checkbox",
-          "label": {
-            "en": "Enable Radio Presence Sensing",
-            "fr": "Activer la Détection de Présence Radio"
-          },
-          "value": false,
-          "hint": {
-            "en": "Infer presence from Zigbee signal fluctuations (BETA)",
-            "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
-          }
-        },
-        {
-          "id": "radio_sensitivity",
-          "type": "number",
-          "label": {
-            "en": "Radio Presence Sensitivity",
-            "fr": "Sensibilité Présence Radio"
-          },
-          "value": 15,
-          "min": 5,
-          "max": 50,
-          "hint": {
-            "en": "LQI variance threshold (higher = less sensitive)",
-            "fr": "Seuil de variance LQI (plus haut = moins sensible)"
-          }
-        }
-      ],
+      "settings": [],
       "id": "device_air_purifier_thermostat",
       "version": "1.0.0",
       "capabilitiesOptions": {
@@ -160948,34 +159425,6 @@
             "en": "Minimum power change in Watts to trigger a report",
             "fr": "Changement minimum en Watts pour déclencher un rapport"
           }
-        },
-        {
-          "id": "enable_radio_sensing",
-          "type": "checkbox",
-          "label": {
-            "en": "Enable Radio Presence Sensing",
-            "fr": "Activer la Détection de Présence Radio"
-          },
-          "value": false,
-          "hint": {
-            "en": "Infer presence from Zigbee signal fluctuations (BETA)",
-            "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
-          }
-        },
-        {
-          "id": "radio_sensitivity",
-          "type": "number",
-          "label": {
-            "en": "Radio Presence Sensitivity",
-            "fr": "Sensibilité Présence Radio"
-          },
-          "value": 15,
-          "min": 5,
-          "max": 50,
-          "hint": {
-            "en": "LQI variance threshold (higher = less sensitive)",
-            "fr": "Seuil de variance LQI (plus haut = moins sensible)"
-          }
         }
       ],
       "images": {
@@ -161629,34 +160078,6 @@
             "en": "Minimum power change in Watts to trigger a report",
             "fr": "Changement minimum en Watts pour déclencher un rapport"
           }
-        },
-        {
-          "id": "enable_radio_sensing",
-          "type": "checkbox",
-          "label": {
-            "en": "Enable Radio Presence Sensing",
-            "fr": "Activer la Détection de Présence Radio"
-          },
-          "value": false,
-          "hint": {
-            "en": "Infer presence from Zigbee signal fluctuations (BETA)",
-            "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
-          }
-        },
-        {
-          "id": "radio_sensitivity",
-          "type": "number",
-          "label": {
-            "en": "Radio Presence Sensitivity",
-            "fr": "Sensibilité Présence Radio"
-          },
-          "value": 15,
-          "min": 5,
-          "max": 50,
-          "hint": {
-            "en": "LQI variance threshold (higher = less sensitive)",
-            "fr": "Seuil de variance LQI (plus haut = moins sensible)"
-          }
         }
       ],
       "images": {
@@ -161785,11 +160206,7 @@
       },
       "zigbee": {
         "manufacturerName": [
-          "_TZ3000_BR3LAUKF",
           "_TZ3000_pnzfdr9y",
-          "_tz3000_br3laukf",
-          "_TZ3000_br3laukf",
-          "_tz3000_BR3LAUKF",
           "_tz3000_pnzfdr9y",
           "_TZ3000_PNZFDR9Y",
           "_tz3000_PNZFDR9Y"
@@ -162378,34 +160795,6 @@
           "hint": {
             "en": "Minimum power change in Watts to trigger a report",
             "fr": "Changement minimum en Watts pour déclencher un rapport"
-          }
-        },
-        {
-          "id": "enable_radio_sensing",
-          "type": "checkbox",
-          "label": {
-            "en": "Enable Radio Presence Sensing",
-            "fr": "Activer la Détection de Présence Radio"
-          },
-          "value": false,
-          "hint": {
-            "en": "Infer presence from Zigbee signal fluctuations (BETA)",
-            "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
-          }
-        },
-        {
-          "id": "radio_sensitivity",
-          "type": "number",
-          "label": {
-            "en": "Radio Presence Sensitivity",
-            "fr": "Sensibilité Présence Radio"
-          },
-          "value": 15,
-          "min": 5,
-          "max": 50,
-          "hint": {
-            "en": "LQI variance threshold (higher = less sensitive)",
-            "fr": "Seuil de variance LQI (plus haut = moins sensible)"
           }
         }
       ],
@@ -163080,34 +161469,6 @@
             "en": "Minimum power change in Watts to trigger a report",
             "fr": "Changement minimum en Watts pour déclencher un rapport"
           }
-        },
-        {
-          "id": "enable_radio_sensing",
-          "type": "checkbox",
-          "label": {
-            "en": "Enable Radio Presence Sensing",
-            "fr": "Activer la Détection de Présence Radio"
-          },
-          "value": false,
-          "hint": {
-            "en": "Infer presence from Zigbee signal fluctuations (BETA)",
-            "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
-          }
-        },
-        {
-          "id": "radio_sensitivity",
-          "type": "number",
-          "label": {
-            "en": "Radio Presence Sensitivity",
-            "fr": "Sensibilité Présence Radio"
-          },
-          "value": 15,
-          "min": 5,
-          "max": 50,
-          "hint": {
-            "en": "LQI variance threshold (higher = less sensitive)",
-            "fr": "Seuil de variance LQI (plus haut = moins sensible)"
-          }
         }
       ],
       "images": {
@@ -163230,96 +161591,48 @@
           }
         },
         "manufacturerName": [
-          "_tyst11_2atgpdho",
-          "_tyst11_c88teujp",
-          "_tyst11_ckud7u2l",
-          "_TYST11_CKUD7U2L",
-          "_tyst11_cwnjrr72",
           "_TYST11_CZK78PTR",
-          "_tyst11_kfvq6avy",
           "_TYST11_PS5V5JOR",
-          "_TYST11_YW7CAHQS",
-          "_tyst11_ywdxldoj",
           "_tz3000_g9chy2ib",
-          "_TZ3210_5rta89nj",
           "_TZE200_04yfvweb",
           "_tze200_0hg58wyk",
           "_TZE200_0HG58WYK",
           "_TZE200_127x7wnl",
-          "_tze200_1ibpyhdc",
-          "_TZE200_2atgpdho",
-          "_TZE200_2ATGPDHO",
           "_TZE200_2cs6g9i7",
-          "_tze200_2ekuz3dz",
           "_TZE200_4eeyebrt",
           "_tze200_4utwoz2",
           "_tze200_4utwozi2",
           "_tze200_68nvbi09",
           "_tze200_68nvbio9",
-          "_tze200_6kijc7nd",
           "_tze200_6rdj8dzm",
           "_TZE200_6y7kyjga",
           "_tze200_7yoranx2",
           "_TZE200_7YORANX2",
           "_TZE200_8daqwrsj",
           "_TZE200_8thwkzxl",
-          "_TZE200_8whxpsiw",
-          "_TZE200_8WHXPSIW",
           "_tze200_9mjy74mp",
-          "_TZE200_9sfg7gm0",
-          "_TZE200_9SFG7GM0",
-          "_tze200_9xfjixap",
           "_TZE200_a1ovdobn",
           "_TZE200_a4bpgplm",
           "_TZE200_A4BPGPLM",
-          "_TZE200_awnadkan",
-          "_TZE200_b6wax7g0",
           "_tze200_bjzrowv2",
           "_tze200_bvrlmajk",
-          "_tze200_bvu2wnxz",
-          "_TZE200_c88teujp",
           "_tze200_cf1sl3tj",
-          "_TZE200_CHYVMHAY",
-          "_TZE200_ckud7u2l",
-          "_TZE200_CKUD7U2L",
           "_tze200_cpmgn2cf",
-          "_TZE200_cwnjrr72",
-          "_TZE200_CWNJRR72",
           "_TZE200_czk78ptr",
           "_tze200_d3z1ukqw",
           "_TZE200_dv8abrrz",
           "_TZE200_DZUQWSYG",
           "_tze200_e9ba97vf",
           "_TZE200_E9BA97VF",
-          "_TZE200_FHN3NEGR",
-          "_tze200_fsow0qsk",
-          "_TZE200_fsow0qsk",
-          "_tze200_g9a3awaj",
-          "_tze200_gtouvmvl",
-          "_TZE200_hdih4foa",
           "_TZE200_hhrtiq0x",
-          "_TZE200_HUE3YFSN",
-          "_tze200_husqqvux",
-          "_tze200_hvaxb2tc",
           "_TZE200_jeaxp72v",
           "_tze200_jkfbph7l",
-          "_tze200_k1tumq4t",
-          "_tze200_kds0pmmv",
-          "_TZE200_kfvq6avy",
-          "_TZE200_KLY8GJLZ",
           "_tze200_lhzapfg9",
-          "_tze200_lllliz3p",
-          "_tze200_lnbfnyxd",
-          "_TZE200_lrznf59v",
-          "_tze200_mudxchsu",
           "_TZE200_nhyj64w2",
           "_tze200_nw1r9hp6",
           "_tze200_ow09xlxm",
           "_TZE200_owwdxjbx",
-          "_tze200_p3dbf6qs",
           "_TZE200_ps5v5jor",
-          "_TZE200_pvvbommb",
-          "_TZE200_PVVBOMMB",
           "_tze200_pw7mji0l",
           "_tze200_py4cm3he",
           "_TZE200_qsoecqlk",
@@ -163330,51 +161643,26 @@
           "_tze200_rv6iuyxb",
           "_tze200_rxntag7i",
           "_tze200_rxq4iti9",
-          "_tze200_s5zhaolp",
           "_TZE200_snfdqllf",
           "_tze200_spyvfeti",
-          "_tze200_sur6q7ko",
           "_tze200_suxywabt",
           "_TZE200_tbgecldg",
           "_tze200_vexa5o82",
-          "_tze200_viy9ihs7",
-          "_TZE200_vuqzj1ej",
           "_TZE200_wem3gxyx",
           "_tze200_wsbfwodu",
           "_tze200_x9axofse",
-          "_TZE200_xby0s3ta",
           "_tze200_yqgbrdyo",
-          "_TZE200_YW7CAHQS",
-          "_tze200_ywdxldoj",
-          "_TZE200_YWDXLDOJ",
           "_tze200_z1tyspqw",
           "_TZE200_Z1TYSPQW",
-          "_TZE200_zion52ef",
-          "_TZE200_ZION52EF",
           "_TZE200_zivfvd7h",
-          "_tze204_0hcjew5p",
           "_TZE204_5slehgeo",
-          "_tze204_5toc8eks",
           "_TZE204_6kijc7nd",
           "_tze204_9mjy74mp",
-          "_tze204_9xfjixap",
-          "_tze204_aaeaifez",
-          "_TZE204_ca3i8m8p",
-          "_TZE204_cg8hdnjv",
-          "_TZE204_cmyc8g5i",
           "_tze204_cvcu2p6e",
-          "_tze204_cvub6xbb",
           "_TZE204_dsagrkvg",
           "_TZE204_g2ki0ejr",
-          "_tze204_g9a3awaj",
-          "_TZE204_glk6viwg",
-          "_TZE204_goecjd1t",
-          "_tze204_gops3slb",
           "_tze204_hvaxb2tc",
           "_TZE204_ilzkxrav",
-          "_TZE204_lnxdk2ch",
-          "_tze204_lzriup1j",
-          "_TZE204_mhxn2jso",
           "_TZE204_mwomyz5n",
           "_tze204_o3x45p96",
           "_tze204_ogx8u5z6",
@@ -163385,35 +161673,16 @@
           "_tze204_rtrmfadk",
           "_TZE204_tagezcph",
           "_TZE204_tbgecldg",
-          "_tze204_wc2w9t1s",
-          "_tze204_x1ovyvy1",
           "_TZE204_xalsoe3m",
-          "_TZE204_xdtnpp1a",
-          "_tze204_xnbkhhdr",
-          "_tze284_1575pmw0",
-          "_tze284_1ratpdm5",
-          "_tze284_2fnssffc",
           "_TZE284_5slehgeo",
           "_TZE284_6kijc7nd",
-          "_TZE284_8zizsafo",
-          "_tze284_9ern5sfh",
           "_TZE284_a1ovdobn",
           "_TZE284_aaeaifez",
           "_TZE284_agcxaw3f",
-          "_tze284_aoclfnxz",
           "_tze284_c6wv4xyo",
-          "_tze284_cgr0rhza",
-          "_TZE284_cgr0rhza",
-          "_tze284_cvub6xbb",
-          "_tze284_gops3slb",
           "_tze284_hvaxb2tc",
           "_tze284_iilebqoo",
           "_TZE284_khah2lkr",
-          "_TZE284_kyyu8rbj",
-          "_tze284_lnbfy",
-          "_TZE284_madl8ejv",
-          "_tze284_noixx2uz",
-          "_TZE284_nt4pquef",
           "_tze284_o3x45p96",
           "_tze284_ogx8u5z6",
           "_tze284_p3dbf6qs",
@@ -163422,42 +161691,17 @@
           "_TZE284_roujjevx",
           "_tze284_rv6iuyxb",
           "_TZE284_tbgecldg",
-          "_tze284_xdtnpp1a",
-          "_tze284_xnbkhhdr",
           "_TZE284_ymldrmzx",
           "_TZE284_zm8zpwas",
-          "_TYST11_2ATGPDHO",
-          "_TYST11_2atgpdho",
-          "_tyst11_2ATGPDHO",
-          "_TYST11_C88TEUJP",
-          "_TYST11_c88teujp",
-          "_tyst11_C88TEUJP",
-          "_TYST11_ckud7u2l",
-          "_tyst11_CKUD7U2L",
-          "_TYST11_CWNJRR72",
-          "_TYST11_cwnjrr72",
-          "_tyst11_CWNJRR72",
           "_tyst11_czk78ptr",
           "_TYST11_czk78ptr",
           "_tyst11_CZK78PTR",
-          "_TYST11_KFVQ6AVY",
-          "_TYST11_kfvq6avy",
-          "_tyst11_KFVQ6AVY",
           "_tyst11_ps5v5jor",
           "_TYST11_ps5v5jor",
           "_tyst11_PS5V5JOR",
-          "_tyst11_yw7cahqs",
-          "_TYST11_yw7cahqs",
-          "_tyst11_YW7CAHQS",
-          "_TYST11_YWDXLDOJ",
-          "_TYST11_ywdxldoj",
-          "_tyst11_YWDXLDOJ",
           "_TZ3000_G9CHY2IB",
           "_TZ3000_g9chy2ib",
           "_tz3000_G9CHY2IB",
-          "_tz3210_5rta89nj",
-          "_TZ3210_5RTA89NJ",
-          "_tz3210_5RTA89NJ",
           "_tze200_04yfvweb",
           "_TZE200_04YFVWEB",
           "_tze200_04YFVWEB",
@@ -163466,17 +161710,9 @@
           "_tze200_127x7wnl",
           "_TZE200_127X7WNL",
           "_tze200_127X7WNL",
-          "_TZE200_1IBPYHDC",
-          "_TZE200_1ibpyhdc",
-          "_tze200_1IBPYHDC",
-          "_tze200_2atgpdho",
-          "_tze200_2ATGPDHO",
           "_tze200_2cs6g9i7",
           "_TZE200_2CS6G9I7",
           "_tze200_2CS6G9I7",
-          "_TZE200_2EKUZ3DZ",
-          "_TZE200_2ekuz3dz",
-          "_tze200_2EKUZ3DZ",
           "_tze200_4eeyebrt",
           "_TZE200_4EEYEBRT",
           "_tze200_4EEYEBRT",
@@ -163492,9 +161728,6 @@
           "_TZE200_68NVBIO9",
           "_TZE200_68nvbio9",
           "_tze200_68NVBIO9",
-          "_TZE200_6KIJC7ND",
-          "_TZE200_6kijc7nd",
-          "_tze200_6KIJC7ND",
           "_TZE200_6RDJ8DZM",
           "_TZE200_6rdj8dzm",
           "_tze200_6RDJ8DZM",
@@ -163509,52 +161742,26 @@
           "_tze200_8thwkzxl",
           "_TZE200_8THWKZXL",
           "_tze200_8THWKZXL",
-          "_tze200_8whxpsiw",
-          "_tze200_8WHXPSIW",
           "_TZE200_9MJY74MP",
           "_TZE200_9mjy74mp",
           "_tze200_9MJY74MP",
-          "_tze200_9sfg7gm0",
-          "_tze200_9SFG7GM0",
-          "_TZE200_9XFJIXAP",
-          "_TZE200_9xfjixap",
-          "_tze200_9XFJIXAP",
           "_tze200_a1ovdobn",
           "_TZE200_A1OVDOBN",
           "_tze200_A1OVDOBN",
           "_tze200_a4bpgplm",
           "_tze200_A4BPGPLM",
-          "_tze200_awnadkan",
-          "_TZE200_AWNADKAN",
-          "_tze200_AWNADKAN",
-          "_tze200_b6wax7g0",
-          "_TZE200_B6WAX7G0",
-          "_tze200_B6WAX7G0",
           "_TZE200_BJZROWV2",
           "_TZE200_bjzrowv2",
           "_tze200_BJZROWV2",
           "_TZE200_BVRLMAJK",
           "_TZE200_bvrlmajk",
           "_tze200_BVRLMAJK",
-          "_TZE200_BVU2WNXZ",
-          "_TZE200_bvu2wnxz",
-          "_tze200_BVU2WNXZ",
-          "_tze200_c88teujp",
-          "_TZE200_C88TEUJP",
-          "_tze200_C88TEUJP",
           "_TZE200_CF1SL3TJ",
           "_TZE200_cf1sl3tj",
           "_tze200_CF1SL3TJ",
-          "_tze200_chyvmhay",
-          "_TZE200_chyvmhay",
-          "_tze200_CHYVMHAY",
-          "_tze200_ckud7u2l",
-          "_tze200_CKUD7U2L",
           "_TZE200_CPMGN2CF",
           "_TZE200_cpmgn2cf",
           "_tze200_CPMGN2CF",
-          "_tze200_cwnjrr72",
-          "_tze200_CWNJRR72",
           "_tze200_czk78ptr",
           "_TZE200_CZK78PTR",
           "_tze200_CZK78PTR",
@@ -163569,65 +161776,18 @@
           "_tze200_DZUQWSYG",
           "_TZE200_e9ba97vf",
           "_tze200_E9BA97VF",
-          "_tze200_fhn3negr",
-          "_TZE200_fhn3negr",
-          "_tze200_FHN3NEGR",
-          "_TZE200_FSOW0QSK",
-          "_tze200_FSOW0QSK",
-          "_TZE200_G9A3AWAJ",
-          "_TZE200_g9a3awaj",
-          "_tze200_G9A3AWAJ",
-          "_TZE200_GTOUVMVL",
-          "_TZE200_gtouvmvl",
-          "_tze200_GTOUVMVL",
-          "_tze200_hdih4foa",
-          "_TZE200_HDIH4FOA",
-          "_tze200_HDIH4FOA",
           "_tze200_hhrtiq0x",
           "_TZE200_HHRTIQ0X",
           "_tze200_HHRTIQ0X",
-          "_tze200_hue3yfsn",
-          "_TZE200_hue3yfsn",
-          "_tze200_HUE3YFSN",
-          "_TZE200_HUSQQVUX",
-          "_TZE200_husqqvux",
-          "_tze200_HUSQQVUX",
-          "_TZE200_HVAXB2TC",
-          "_TZE200_hvaxb2tc",
-          "_tze200_HVAXB2TC",
           "_tze200_jeaxp72v",
           "_TZE200_JEAXP72V",
           "_tze200_JEAXP72V",
           "_TZE200_JKFBPH7L",
           "_TZE200_jkfbph7l",
           "_tze200_JKFBPH7L",
-          "_TZE200_K1TUMQ4T",
-          "_TZE200_k1tumq4t",
-          "_tze200_K1TUMQ4T",
-          "_TZE200_KDS0PMMV",
-          "_TZE200_kds0pmmv",
-          "_tze200_KDS0PMMV",
-          "_tze200_kfvq6avy",
-          "_TZE200_KFVQ6AVY",
-          "_tze200_KFVQ6AVY",
-          "_tze200_kly8gjlz",
-          "_TZE200_kly8gjlz",
-          "_tze200_KLY8GJLZ",
           "_TZE200_LHZAPFG9",
           "_TZE200_lhzapfg9",
           "_tze200_LHZAPFG9",
-          "_TZE200_LLLLIZ3P",
-          "_TZE200_lllliz3p",
-          "_tze200_LLLLIZ3P",
-          "_TZE200_LNBFNYXD",
-          "_TZE200_lnbfnyxd",
-          "_tze200_LNBFNYXD",
-          "_tze200_lrznf59v",
-          "_TZE200_LRZNF59V",
-          "_tze200_LRZNF59V",
-          "_TZE200_MUDXCHSU",
-          "_TZE200_mudxchsu",
-          "_tze200_MUDXCHSU",
           "_tze200_nhyj64w2",
           "_TZE200_NHYJ64W2",
           "_tze200_NHYJ64W2",
@@ -163640,14 +161800,9 @@
           "_tze200_owwdxjbx",
           "_TZE200_OWWDXJBX",
           "_tze200_OWWDXJBX",
-          "_TZE200_P3DBF6QS",
-          "_TZE200_p3dbf6qs",
-          "_tze200_P3DBF6QS",
           "_tze200_ps5v5jor",
           "_TZE200_PS5V5JOR",
           "_tze200_PS5V5JOR",
-          "_tze200_pvvbommb",
-          "_tze200_PVVBOMMB",
           "_TZE200_PW7MJI0L",
           "_TZE200_pw7mji0l",
           "_tze200_PW7MJI0L",
@@ -163678,18 +161833,12 @@
           "_TZE200_RXQ4ITI9",
           "_TZE200_rxq4iti9",
           "_tze200_RXQ4ITI9",
-          "_TZE200_S5ZHAOLP",
-          "_TZE200_s5zhaolp",
-          "_tze200_S5ZHAOLP",
           "_tze200_snfdqllf",
           "_TZE200_SNFDQLLF",
           "_tze200_SNFDQLLF",
           "_TZE200_SPYVFETI",
           "_TZE200_spyvfeti",
           "_tze200_SPYVFETI",
-          "_TZE200_SUR6Q7KO",
-          "_TZE200_sur6q7ko",
-          "_tze200_SUR6Q7KO",
           "_TZE200_SUXYWABT",
           "_TZE200_suxywabt",
           "_tze200_SUXYWABT",
@@ -163699,12 +161848,6 @@
           "_TZE200_VEXA5O82",
           "_TZE200_vexa5o82",
           "_tze200_VEXA5O82",
-          "_TZE200_VIY9IHS7",
-          "_TZE200_viy9ihs7",
-          "_tze200_VIY9IHS7",
-          "_tze200_vuqzj1ej",
-          "_TZE200_VUQZJ1EJ",
-          "_tze200_VUQZJ1EJ",
           "_tze200_wem3gxyx",
           "_TZE200_WEM3GXYX",
           "_tze200_WEM3GXYX",
@@ -163714,93 +161857,38 @@
           "_TZE200_X9AXOFSE",
           "_TZE200_x9axofse",
           "_tze200_X9AXOFSE",
-          "_tze200_xby0s3ta",
-          "_TZE200_XBY0S3TA",
-          "_tze200_XBY0S3TA",
           "_TZE200_YQGBRDYO",
           "_TZE200_yqgbrdyo",
           "_tze200_YQGBRDYO",
-          "_tze200_yw7cahqs",
-          "_TZE200_yw7cahqs",
-          "_tze200_YW7CAHQS",
-          "_TZE200_ywdxldoj",
-          "_tze200_YWDXLDOJ",
           "_TZE200_z1tyspqw",
           "_tze200_Z1TYSPQW",
-          "_tze200_zion52ef",
-          "_tze200_ZION52EF",
           "_tze200_zivfvd7h",
           "_TZE200_ZIVFVD7H",
           "_tze200_ZIVFVD7H",
-          "_TZE204_0HCJEW5P",
-          "_TZE204_0hcjew5p",
-          "_tze204_0HCJEW5P",
           "_tze204_5slehgeo",
           "_TZE204_5SLEHGEO",
           "_tze204_5SLEHGEO",
-          "_TZE204_5TOC8EKS",
-          "_TZE204_5toc8eks",
-          "_tze204_5TOC8EKS",
           "_tze204_6kijc7nd",
           "_TZE204_6KIJC7ND",
           "_tze204_6KIJC7ND",
           "_TZE204_9MJY74MP",
           "_TZE204_9mjy74mp",
           "_tze204_9MJY74MP",
-          "_TZE204_9XFJIXAP",
-          "_TZE204_9xfjixap",
-          "_tze204_9XFJIXAP",
-          "_TZE204_AAEAIFEZ",
-          "_TZE204_aaeaifez",
-          "_tze204_AAEAIFEZ",
-          "_tze204_ca3i8m8p",
-          "_TZE204_CA3I8M8P",
-          "_tze204_CA3I8M8P",
-          "_tze204_cg8hdnjv",
-          "_TZE204_CG8HDNJV",
-          "_tze204_CG8HDNJV",
-          "_tze204_cmyc8g5i",
-          "_TZE204_CMYC8G5I",
-          "_tze204_CMYC8G5I",
           "_TZE204_CVCU2P6E",
           "_TZE204_cvcu2p6e",
           "_tze204_CVCU2P6E",
-          "_TZE204_CVUB6XBB",
-          "_TZE204_cvub6xbb",
-          "_tze204_CVUB6XBB",
           "_tze204_dsagrkvg",
           "_TZE204_DSAGRKVG",
           "_tze204_DSAGRKVG",
           "_tze204_g2ki0ejr",
           "_TZE204_G2KI0EJR",
           "_tze204_G2KI0EJR",
-          "_TZE204_G9A3AWAJ",
-          "_TZE204_g9a3awaj",
-          "_tze204_G9A3AWAJ",
-          "_tze204_glk6viwg",
-          "_TZE204_GLK6VIWG",
-          "_tze204_GLK6VIWG",
-          "_tze204_goecjd1t",
-          "_TZE204_GOECJD1T",
-          "_tze204_GOECJD1T",
-          "_TZE204_GOPS3SLB",
-          "_TZE204_gops3slb",
-          "_tze204_GOPS3SLB",
           "_TZE204_HVAXB2TC",
           "_TZE204_hvaxb2tc",
           "_tze204_HVAXB2TC",
           "_tze204_ilzkxrav",
           "_TZE204_ILZKXRAV",
           "_tze204_ILZKXRAV",
-          "_tze204_lnxdk2ch",
-          "_TZE204_LNXDK2CH",
-          "_tze204_LNXDK2CH",
-          "_TZE204_LZRIUP1J",
-          "_TZE204_lzriup1j",
-          "_tze204_LZRIUP1J",
-          "_tze204_mhxn2jso",
-          "_TZE204_MHXN2JSO",
-          "_tze204_MHXN2JSO",
           "_tze204_mwomyz5n",
           "_TZE204_MWOMYZ5N",
           "_tze204_MWOMYZ5N",
@@ -163831,42 +161919,15 @@
           "_tze204_tbgecldg",
           "_TZE204_TBGECLDG",
           "_tze204_TBGECLDG",
-          "_TZE204_WC2W9T1S",
-          "_TZE204_wc2w9t1s",
-          "_tze204_WC2W9T1S",
-          "_TZE204_X1OVYVY1",
-          "_TZE204_x1ovyvy1",
-          "_tze204_X1OVYVY1",
           "_tze204_xalsoe3m",
           "_TZE204_XALSOE3M",
           "_tze204_XALSOE3M",
-          "_tze204_xdtnpp1a",
-          "_TZE204_XDTNPP1A",
-          "_tze204_XDTNPP1A",
-          "_TZE204_XNBKHHDR",
-          "_TZE204_xnbkhhdr",
-          "_tze204_XNBKHHDR",
-          "_TZE284_1575PMW0",
-          "_TZE284_1575pmw0",
-          "_tze284_1575PMW0",
-          "_TZE284_1RATPDM5",
-          "_TZE284_1ratpdm5",
-          "_tze284_1RATPDM5",
-          "_TZE284_2FNSSFFC",
-          "_TZE284_2fnssffc",
-          "_tze284_2FNSSFFC",
           "_tze284_5slehgeo",
           "_TZE284_5SLEHGEO",
           "_tze284_5SLEHGEO",
           "_tze284_6kijc7nd",
           "_TZE284_6KIJC7ND",
           "_tze284_6KIJC7ND",
-          "_tze284_8zizsafo",
-          "_TZE284_8ZIZSAFO",
-          "_tze284_8ZIZSAFO",
-          "_TZE284_9ERN5SFH",
-          "_TZE284_9ern5sfh",
-          "_tze284_9ERN5SFH",
           "_tze284_a1ovdobn",
           "_TZE284_A1OVDOBN",
           "_tze284_A1OVDOBN",
@@ -163876,20 +161937,9 @@
           "_tze284_agcxaw3f",
           "_TZE284_AGCXAW3F",
           "_tze284_AGCXAW3F",
-          "_TZE284_AOCLFNXZ",
-          "_TZE284_aoclfnxz",
-          "_tze284_AOCLFNXZ",
           "_TZE284_C6WV4XYO",
           "_TZE284_c6wv4xyo",
           "_tze284_C6WV4XYO",
-          "_TZE284_CGR0RHZA",
-          "_tze284_CGR0RHZA",
-          "_TZE284_CVUB6XBB",
-          "_TZE284_cvub6xbb",
-          "_tze284_CVUB6XBB",
-          "_TZE284_GOPS3SLB",
-          "_TZE284_gops3slb",
-          "_tze284_GOPS3SLB",
           "_TZE284_HVAXB2TC",
           "_TZE284_hvaxb2tc",
           "_tze284_HVAXB2TC",
@@ -163899,21 +161949,6 @@
           "_tze284_khah2lkr",
           "_TZE284_KHAH2LKR",
           "_tze284_KHAH2LKR",
-          "_tze284_kyyu8rbj",
-          "_TZE284_KYYU8RBJ",
-          "_tze284_KYYU8RBJ",
-          "_TZE284_LNBFY",
-          "_TZE284_lnbfy",
-          "_tze284_LNBFY",
-          "_tze284_madl8ejv",
-          "_TZE284_MADL8EJV",
-          "_tze284_MADL8EJV",
-          "_TZE284_NOIXX2UZ",
-          "_TZE284_noixx2uz",
-          "_tze284_NOIXX2UZ",
-          "_tze284_nt4pquef",
-          "_TZE284_NT4PQUEF",
-          "_tze284_NT4PQUEF",
           "_TZE284_O3X45P96",
           "_TZE284_o3x45p96",
           "_tze284_O3X45P96",
@@ -163938,12 +161973,6 @@
           "_tze284_tbgecldg",
           "_TZE284_TBGECLDG",
           "_tze284_TBGECLDG",
-          "_TZE284_XDTNPP1A",
-          "_TZE284_xdtnpp1a",
-          "_tze284_XDTNPP1A",
-          "_TZE284_XNBKHHDR",
-          "_TZE284_xnbkhhdr",
-          "_tze284_XNBKHHDR",
           "_tze284_ymldrmzx",
           "_TZE284_YMLDRMZX",
           "_tze284_YMLDRMZX",
@@ -164261,24 +162290,12 @@
         "manufacturerName": [
           "_TZE200_BVU2WNXZ",
           "_TZE200_HVAXB2TC",
-          "_TZE200_AOCLFNXZ",
-          "_TZE200_B6WAX7G0",
-          "_TZE200_2EKUZ3DZ",
           "_tze200_bvu2wnxz",
           "_tze200_hvaxb2tc",
-          "_tze200_aoclfnxz",
-          "_tze200_b6wax7g0",
-          "_tze200_2ekuz3dz",
           "_TZE200_bvu2wnxz",
           "_TZE200_hvaxb2tc",
-          "_TZE200_aoclfnxz",
-          "_TZE200_b6wax7g0",
-          "_TZE200_2ekuz3dz",
           "_tze200_BVU2WNXZ",
-          "_tze200_HVAXB2TC",
-          "_tze200_AOCLFNXZ",
-          "_tze200_B6WAX7G0",
-          "_tze200_2EKUZ3DZ"
+          "_tze200_HVAXB2TC"
         ],
         "productId": [
           "0x8040",
@@ -164669,36 +162686,7 @@
         "conditions": [],
         "actions": []
       },
-      "settings": [
-        {
-          "id": "enable_radio_sensing",
-          "type": "checkbox",
-          "label": {
-            "en": "Enable Radio Presence Sensing",
-            "fr": "Activer la Détection de Présence Radio"
-          },
-          "value": false,
-          "hint": {
-            "en": "Infer presence from Zigbee signal fluctuations (BETA)",
-            "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
-          }
-        },
-        {
-          "id": "radio_sensitivity",
-          "type": "number",
-          "label": {
-            "en": "Radio Presence Sensitivity",
-            "fr": "Sensibilité Présence Radio"
-          },
-          "value": 15,
-          "min": 5,
-          "max": 50,
-          "hint": {
-            "en": "LQI variance threshold (higher = less sensitive)",
-            "fr": "Seuil de variance LQI (plus haut = moins sensible)"
-          }
-        }
-      ],
+      "settings": [],
       "id": "device_radiator_valve_thermostat",
       "version": "1.0.0",
       "connectivity": [
@@ -166423,34 +164411,6 @@
               }
             }
           ]
-        },
-        {
-          "id": "enable_radio_sensing",
-          "type": "checkbox",
-          "label": {
-            "en": "Enable Radio Presence Sensing",
-            "fr": "Activer la Détection de Présence Radio"
-          },
-          "value": false,
-          "hint": {
-            "en": "Infer presence from Zigbee signal fluctuations (BETA)",
-            "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
-          }
-        },
-        {
-          "id": "radio_sensitivity",
-          "type": "number",
-          "label": {
-            "en": "Radio Presence Sensitivity",
-            "fr": "Sensibilité Présence Radio"
-          },
-          "value": 15,
-          "min": 5,
-          "max": 50,
-          "hint": {
-            "en": "LQI variance threshold (higher = less sensitive)",
-            "fr": "Seuil de variance LQI (plus haut = moins sensible)"
-          }
         }
       ],
       "images": {
@@ -166809,34 +164769,6 @@
           "hint": {
             "en": "Estimate power consumption when real measurement is not available (AC/DC devices only)",
             "fr": "Estimer la consommation quand la mesure réelle n'est pas disponible (appareils AC/DC seulement)"
-          }
-        },
-        {
-          "id": "enable_radio_sensing",
-          "type": "checkbox",
-          "label": {
-            "en": "Enable Radio Presence Sensing",
-            "fr": "Activer la Détection de Présence Radio"
-          },
-          "value": false,
-          "hint": {
-            "en": "Infer presence from Zigbee signal fluctuations (BETA)",
-            "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
-          }
-        },
-        {
-          "id": "radio_sensitivity",
-          "type": "number",
-          "label": {
-            "en": "Radio Presence Sensitivity",
-            "fr": "Sensibilité Présence Radio"
-          },
-          "value": 15,
-          "min": 5,
-          "max": 50,
-          "hint": {
-            "en": "LQI variance threshold (higher = less sensitive)",
-            "fr": "Seuil de variance LQI (plus haut = moins sensible)"
           }
         }
       ],
@@ -168566,34 +166498,6 @@
               }
             }
           ]
-        },
-        {
-          "id": "enable_radio_sensing",
-          "type": "checkbox",
-          "label": {
-            "en": "Enable Radio Presence Sensing",
-            "fr": "Activer la Détection de Présence Radio"
-          },
-          "value": false,
-          "hint": {
-            "en": "Infer presence from Zigbee signal fluctuations (BETA)",
-            "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
-          }
-        },
-        {
-          "id": "radio_sensitivity",
-          "type": "number",
-          "label": {
-            "en": "Radio Presence Sensitivity",
-            "fr": "Sensibilité Présence Radio"
-          },
-          "value": 15,
-          "min": 5,
-          "max": 50,
-          "hint": {
-            "en": "LQI variance threshold (higher = less sensitive)",
-            "fr": "Seuil de variance LQI (plus haut = moins sensible)"
-          }
         }
       ],
       "name": {
@@ -169020,34 +166924,6 @@
               }
             }
           ]
-        },
-        {
-          "id": "enable_radio_sensing",
-          "type": "checkbox",
-          "label": {
-            "en": "Enable Radio Presence Sensing",
-            "fr": "Activer la Détection de Présence Radio"
-          },
-          "value": false,
-          "hint": {
-            "en": "Infer presence from Zigbee signal fluctuations (BETA)",
-            "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
-          }
-        },
-        {
-          "id": "radio_sensitivity",
-          "type": "number",
-          "label": {
-            "en": "Radio Presence Sensitivity",
-            "fr": "Sensibilité Présence Radio"
-          },
-          "value": 15,
-          "min": 5,
-          "max": 50,
-          "hint": {
-            "en": "LQI variance threshold (higher = less sensitive)",
-            "fr": "Seuil de variance LQI (plus haut = moins sensible)"
-          }
         }
       ],
       "images": {
@@ -170746,34 +168622,6 @@
             "en": "Estimate power consumption when real measurement is not available (AC/DC devices only)",
             "fr": "Estimer la consommation quand la mesure réelle n'est pas disponible (appareils AC/DC seulement)"
           }
-        },
-        {
-          "id": "enable_radio_sensing",
-          "type": "checkbox",
-          "label": {
-            "en": "Enable Radio Presence Sensing",
-            "fr": "Activer la Détection de Présence Radio"
-          },
-          "value": false,
-          "hint": {
-            "en": "Infer presence from Zigbee signal fluctuations (BETA)",
-            "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
-          }
-        },
-        {
-          "id": "radio_sensitivity",
-          "type": "number",
-          "label": {
-            "en": "Radio Presence Sensitivity",
-            "fr": "Sensibilité Présence Radio"
-          },
-          "value": 15,
-          "min": 5,
-          "max": 50,
-          "hint": {
-            "en": "LQI variance threshold (higher = less sensitive)",
-            "fr": "Seuil de variance LQI (plus haut = moins sensible)"
-          }
         }
       ],
       "images": {
@@ -172057,7 +169905,9 @@
         "measure_power.phase2",
         "measure_power.phase3",
         "measure_battery",
-        "button.1"
+        "button.1",
+        "measure_power.phase_total",
+        "meter_power.exported"
       ],
       "energy": {
         "batteries": [
@@ -173206,34 +171056,6 @@
               }
             }
           ]
-        },
-        {
-          "id": "enable_radio_sensing",
-          "type": "checkbox",
-          "label": {
-            "en": "Enable Radio Presence Sensing",
-            "fr": "Activer la Détection de Présence Radio"
-          },
-          "value": false,
-          "hint": {
-            "en": "Infer presence from Zigbee signal fluctuations (BETA)",
-            "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
-          }
-        },
-        {
-          "id": "radio_sensitivity",
-          "type": "number",
-          "label": {
-            "en": "Radio Presence Sensitivity",
-            "fr": "Sensibilité Présence Radio"
-          },
-          "value": 15,
-          "min": 5,
-          "max": 50,
-          "hint": {
-            "en": "LQI variance threshold (higher = less sensitive)",
-            "fr": "Seuil de variance LQI (plus haut = moins sensible)"
-          }
         }
       ],
       "name": {
@@ -175417,34 +173239,6 @@
             "en": "Estimate power consumption when real measurement is not available (AC/DC devices only)",
             "fr": "Estimer la consommation quand la mesure réelle n'est pas disponible (appareils AC/DC seulement)"
           }
-        },
-        {
-          "id": "enable_radio_sensing",
-          "type": "checkbox",
-          "label": {
-            "en": "Enable Radio Presence Sensing",
-            "fr": "Activer la Détection de Présence Radio"
-          },
-          "value": false,
-          "hint": {
-            "en": "Infer presence from Zigbee signal fluctuations (BETA)",
-            "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
-          }
-        },
-        {
-          "id": "radio_sensitivity",
-          "type": "number",
-          "label": {
-            "en": "Radio Presence Sensitivity",
-            "fr": "Sensibilité Présence Radio"
-          },
-          "value": 15,
-          "min": 5,
-          "max": 50,
-          "hint": {
-            "en": "LQI variance threshold (higher = less sensitive)",
-            "fr": "Seuil de variance LQI (plus haut = moins sensible)"
-          }
         }
       ],
       "name": {
@@ -175615,22 +173409,10 @@
       },
       "zigbee": {
         "manufacturerName": [
-          "_tz3000_uwkja6z1",
           "_tz3000_yujkchbz",
-          "_tz3210_ddigca5n",
-          "_tz3210_rwmitwj4",
-          "_TZ3000_UWKJA6Z1",
-          "_TZ3000_uwkja6z1",
-          "_tz3000_UWKJA6Z1",
           "_TZ3000_YUJKCHBZ",
           "_TZ3000_yujkchbz",
-          "_tz3000_YUJKCHBZ",
-          "_TZ3210_DDIGCA5N",
-          "_TZ3210_ddigca5n",
-          "_tz3210_DDIGCA5N",
-          "_TZ3210_RWMITWJ4",
-          "_TZ3210_rwmitwj4",
-          "_tz3210_RWMITWJ4"
+          "_tz3000_YUJKCHBZ"
         ],
         "productId": [
           "S26R2ZB",
@@ -175935,7 +173717,6 @@
           "WISER",
           "ZIG-A-ZIG-AH",
           "ZIGFRED",
-          "_TZ3000_9ni6xxld",
           "_TZ3000_xxxxxxxx",
           "_TZE200_hbnfokum",
           "_TZE204_0hb4rdnp",
@@ -175948,7 +173729,6 @@
           "_TZE284_4vbj3fxh",
           "_TZE284_bw4ayyeh",
           "_TZE284_mvtclclq",
-          "_TZE284_nbv4tdaz",
           "_tz3002_eda6eitk",
           "_tz3002_vsom92pp",
           "_tz3008_reatplte",
@@ -175970,7 +173750,6 @@
           "_tze284_4vbj3fxh",
           "_tze284_bw4ayyeh",
           "_tze284_mvtclclq",
-          "_tze284_nbv4tdaz",
           "bosch",
           "d5x84yu",
           "dln",
@@ -175991,8 +173770,6 @@
           "wiser",
           "zig-a-zig-ah",
           "zigfred",
-          "_TZ3000_9NI6XXLD",
-          "_tz3000_9ni6xxld",
           "_TZ3000_XXXXXXXX",
           "_tz3000_xxxxxxxx",
           "_TZE200_HBNFOKUM",
@@ -176013,7 +173790,6 @@
           "_TZE284_4VBJ3FXH",
           "_TZE284_BW4AYYEH",
           "_TZE284_MVTCLCLQ",
-          "_TZE284_NBV4TDAZ",
           "_TZ3002_EDA6EITK",
           "_TZ3002_VSOM92PP",
           "_TZ3008_REATPLTE",
@@ -176048,7 +173824,6 @@
           "_TZE200_a4bpgplm",
           "_TZE200_gne0e6mk",
           "_TZE200_spyvfeti",
-          "_tz3000_9NI6XXLD",
           "_tz3000_XXXXXXXX",
           "_tze200_HBNFOKUM",
           "_tze204_0HB4RDNP",
@@ -176061,7 +173836,6 @@
           "_tze284_4VBJ3FXH",
           "_tze284_BW4AYYEH",
           "_tze284_MVTCLCLQ",
-          "_tze284_NBV4TDAZ",
           "_tz3002_EDA6EITK",
           "_tz3002_VSOM92PP",
           "_tz3008_REATPLTE",
@@ -183036,34 +180810,6 @@
             "en": "Estimate power consumption when real measurement is not available (AC/DC devices only)",
             "fr": "Estimer la consommation quand la mesure réelle n'est pas disponible (appareils AC/DC seulement)"
           }
-        },
-        {
-          "id": "enable_radio_sensing",
-          "type": "checkbox",
-          "label": {
-            "en": "Enable Radio Presence Sensing",
-            "fr": "Activer la Détection de Présence Radio"
-          },
-          "value": false,
-          "hint": {
-            "en": "Infer presence from Zigbee signal fluctuations (BETA)",
-            "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
-          }
-        },
-        {
-          "id": "radio_sensitivity",
-          "type": "number",
-          "label": {
-            "en": "Radio Presence Sensitivity",
-            "fr": "Sensibilité Présence Radio"
-          },
-          "value": 15,
-          "min": 5,
-          "max": 50,
-          "hint": {
-            "en": "LQI variance threshold (higher = less sensitive)",
-            "fr": "Seuil de variance LQI (plus haut = moins sensible)"
-          }
         }
       ],
       "images": {
@@ -183683,34 +181429,6 @@
             "en": "Estimate power consumption when real measurement is not available (AC/DC devices only)",
             "fr": "Estimer la consommation quand la mesure réelle n'est pas disponible (appareils AC/DC seulement)"
           }
-        },
-        {
-          "id": "enable_radio_sensing",
-          "type": "checkbox",
-          "label": {
-            "en": "Enable Radio Presence Sensing",
-            "fr": "Activer la Détection de Présence Radio"
-          },
-          "value": false,
-          "hint": {
-            "en": "Infer presence from Zigbee signal fluctuations (BETA)",
-            "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
-          }
-        },
-        {
-          "id": "radio_sensitivity",
-          "type": "number",
-          "label": {
-            "en": "Radio Presence Sensitivity",
-            "fr": "Sensibilité Présence Radio"
-          },
-          "value": 15,
-          "min": 5,
-          "max": 50,
-          "hint": {
-            "en": "LQI variance threshold (higher = less sensitive)",
-            "fr": "Seuil de variance LQI (plus haut = moins sensible)"
-          }
         }
       ],
       "images": {
@@ -184270,34 +181988,6 @@
           "hint": {
             "en": "Estimate power consumption when real measurement is not available (AC/DC devices only)",
             "fr": "Estimer la consommation quand la mesure réelle n'est pas disponible (appareils AC/DC seulement)"
-          }
-        },
-        {
-          "id": "enable_radio_sensing",
-          "type": "checkbox",
-          "label": {
-            "en": "Enable Radio Presence Sensing",
-            "fr": "Activer la Détection de Présence Radio"
-          },
-          "value": false,
-          "hint": {
-            "en": "Infer presence from Zigbee signal fluctuations (BETA)",
-            "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
-          }
-        },
-        {
-          "id": "radio_sensitivity",
-          "type": "number",
-          "label": {
-            "en": "Radio Presence Sensitivity",
-            "fr": "Sensibilité Présence Radio"
-          },
-          "value": 15,
-          "min": 5,
-          "max": 50,
-          "hint": {
-            "en": "LQI variance threshold (higher = less sensitive)",
-            "fr": "Seuil de variance LQI (plus haut = moins sensible)"
           }
         }
       ],
@@ -185272,34 +182962,6 @@
           "hint": {
             "en": "Estimate power consumption when real measurement is not available (AC/DC devices only)",
             "fr": "Estimer la consommation quand la mesure réelle n'est pas disponible (appareils AC/DC seulement)"
-          }
-        },
-        {
-          "id": "enable_radio_sensing",
-          "type": "checkbox",
-          "label": {
-            "en": "Enable Radio Presence Sensing",
-            "fr": "Activer la Détection de Présence Radio"
-          },
-          "value": false,
-          "hint": {
-            "en": "Infer presence from Zigbee signal fluctuations (BETA)",
-            "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
-          }
-        },
-        {
-          "id": "radio_sensitivity",
-          "type": "number",
-          "label": {
-            "en": "Radio Presence Sensitivity",
-            "fr": "Sensibilité Présence Radio"
-          },
-          "value": 15,
-          "min": 5,
-          "max": 50,
-          "hint": {
-            "en": "LQI variance threshold (higher = less sensitive)",
-            "fr": "Seuil de variance LQI (plus haut = moins sensible)"
           }
         }
       ],
@@ -188296,34 +185958,6 @@
               }
             }
           ]
-        },
-        {
-          "id": "enable_radio_sensing",
-          "type": "checkbox",
-          "label": {
-            "en": "Enable Radio Presence Sensing",
-            "fr": "Activer la Détection de Présence Radio"
-          },
-          "value": false,
-          "hint": {
-            "en": "Infer presence from Zigbee signal fluctuations (BETA)",
-            "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
-          }
-        },
-        {
-          "id": "radio_sensitivity",
-          "type": "number",
-          "label": {
-            "en": "Radio Presence Sensitivity",
-            "fr": "Sensibilité Présence Radio"
-          },
-          "value": 15,
-          "min": 5,
-          "max": 50,
-          "hint": {
-            "en": "LQI variance threshold (higher = less sensitive)",
-            "fr": "Seuil de variance LQI (plus haut = moins sensible)"
-          }
         }
       ],
       "name": {
@@ -191363,34 +188997,6 @@
               }
             }
           ]
-        },
-        {
-          "id": "enable_radio_sensing",
-          "type": "checkbox",
-          "label": {
-            "en": "Enable Radio Presence Sensing",
-            "fr": "Activer la Détection de Présence Radio"
-          },
-          "value": false,
-          "hint": {
-            "en": "Infer presence from Zigbee signal fluctuations (BETA)",
-            "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
-          }
-        },
-        {
-          "id": "radio_sensitivity",
-          "type": "number",
-          "label": {
-            "en": "Radio Presence Sensitivity",
-            "fr": "Sensibilité Présence Radio"
-          },
-          "value": 15,
-          "min": 5,
-          "max": 50,
-          "hint": {
-            "en": "LQI variance threshold (higher = less sensitive)",
-            "fr": "Seuil de variance LQI (plus haut = moins sensible)"
-          }
         }
       ],
       "name": {
@@ -196562,14 +194168,10 @@
         "manufacturerName": [
           "SONOFF",
           "_tz3000_fa9mlvja",
-          "_tz3000_rco1yzb1",
           "sonoff",
           "_TZ3000_FA9MLVJA",
-          "_TZ3000_RCO1YZB1",
           "_TZ3000_fa9mlvja",
-          "_TZ3000_rco1yzb1",
-          "_tz3000_FA9MLVJA",
-          "_tz3000_RCO1YZB1"
+          "_tz3000_FA9MLVJA"
         ],
         "productId": [
           "TS0043",
@@ -197597,34 +195199,6 @@
               }
             }
           ]
-        },
-        {
-          "id": "enable_radio_sensing",
-          "type": "checkbox",
-          "label": {
-            "en": "Enable Radio Presence Sensing",
-            "fr": "Activer la Détection de Présence Radio"
-          },
-          "value": false,
-          "hint": {
-            "en": "Infer presence from Zigbee signal fluctuations (BETA)",
-            "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
-          }
-        },
-        {
-          "id": "radio_sensitivity",
-          "type": "number",
-          "label": {
-            "en": "Radio Presence Sensitivity",
-            "fr": "Sensibilité Présence Radio"
-          },
-          "value": 15,
-          "min": 5,
-          "max": 50,
-          "hint": {
-            "en": "LQI variance threshold (higher = less sensitive)",
-            "fr": "Seuil de variance LQI (plus haut = moins sensible)"
-          }
         }
       ],
       "name": {
@@ -198990,34 +196564,6 @@
               }
             }
           ]
-        },
-        {
-          "id": "enable_radio_sensing",
-          "type": "checkbox",
-          "label": {
-            "en": "Enable Radio Presence Sensing",
-            "fr": "Activer la Détection de Présence Radio"
-          },
-          "value": false,
-          "hint": {
-            "en": "Infer presence from Zigbee signal fluctuations (BETA)",
-            "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
-          }
-        },
-        {
-          "id": "radio_sensitivity",
-          "type": "number",
-          "label": {
-            "en": "Radio Presence Sensitivity",
-            "fr": "Sensibilité Présence Radio"
-          },
-          "value": 15,
-          "min": 5,
-          "max": 50,
-          "hint": {
-            "en": "LQI variance threshold (higher = less sensitive)",
-            "fr": "Seuil de variance LQI (plus haut = moins sensible)"
-          }
         }
       ],
       "pair": [
@@ -199431,34 +196977,6 @@
               }
             }
           ]
-        },
-        {
-          "id": "enable_radio_sensing",
-          "type": "checkbox",
-          "label": {
-            "en": "Enable Radio Presence Sensing",
-            "fr": "Activer la Détection de Présence Radio"
-          },
-          "value": false,
-          "hint": {
-            "en": "Infer presence from Zigbee signal fluctuations (BETA)",
-            "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
-          }
-        },
-        {
-          "id": "radio_sensitivity",
-          "type": "number",
-          "label": {
-            "en": "Radio Presence Sensitivity",
-            "fr": "Sensibilité Présence Radio"
-          },
-          "value": 15,
-          "min": 5,
-          "max": 50,
-          "hint": {
-            "en": "LQI variance threshold (higher = less sensitive)",
-            "fr": "Seuil de variance LQI (plus haut = moins sensible)"
-          }
         }
       ],
       "pair": [
@@ -199687,34 +197205,6 @@
               }
             }
           ]
-        },
-        {
-          "id": "enable_radio_sensing",
-          "type": "checkbox",
-          "label": {
-            "en": "Enable Radio Presence Sensing",
-            "fr": "Activer la Détection de Présence Radio"
-          },
-          "value": false,
-          "hint": {
-            "en": "Infer presence from Zigbee signal fluctuations (BETA)",
-            "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
-          }
-        },
-        {
-          "id": "radio_sensitivity",
-          "type": "number",
-          "label": {
-            "en": "Radio Presence Sensitivity",
-            "fr": "Sensibilité Présence Radio"
-          },
-          "value": 15,
-          "min": 5,
-          "max": 50,
-          "hint": {
-            "en": "LQI variance threshold (higher = less sensitive)",
-            "fr": "Seuil de variance LQI (plus haut = moins sensible)"
-          }
         }
       ],
       "images": {
@@ -200084,34 +197574,6 @@
               }
             }
           ]
-        },
-        {
-          "id": "enable_radio_sensing",
-          "type": "checkbox",
-          "label": {
-            "en": "Enable Radio Presence Sensing",
-            "fr": "Activer la Détection de Présence Radio"
-          },
-          "value": false,
-          "hint": {
-            "en": "Infer presence from Zigbee signal fluctuations (BETA)",
-            "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
-          }
-        },
-        {
-          "id": "radio_sensitivity",
-          "type": "number",
-          "label": {
-            "en": "Radio Presence Sensitivity",
-            "fr": "Sensibilité Présence Radio"
-          },
-          "value": 15,
-          "min": 5,
-          "max": 50,
-          "hint": {
-            "en": "LQI variance threshold (higher = less sensitive)",
-            "fr": "Seuil de variance LQI (plus haut = moins sensible)"
-          }
         }
       ],
       "pair": [
@@ -202761,19 +200223,15 @@
         "manufacturerName": [
           "_TZE200_aycxwiau",
           "_TZE200_cxakecfo",
-          "_tze200_seq9cm6u",
           "_TZE204_khoqss0a",
           "_TZE200_AYCXWIAU",
           "_tze200_aycxwiau",
           "_TZE200_CXAKECFO",
           "_tze200_cxakecfo",
-          "_TZE200_SEQ9CM6U",
           "_TZE204_KHOQSS0A",
           "_tze204_khoqss0a",
-          "_TZE200_seq9cm6u",
           "_tze200_AYCXWIAU",
           "_tze200_CXAKECFO",
-          "_tze200_SEQ9CM6U",
           "_tze204_KHOQSS0A"
         ],
         "productId": [
@@ -203701,34 +201159,6 @@
           "hint": {
             "en": "SNZB-02P humidity offset"
           }
-        },
-        {
-          "id": "enable_radio_sensing",
-          "type": "checkbox",
-          "label": {
-            "en": "Enable Radio Presence Sensing",
-            "fr": "Activer la Détection de Présence Radio"
-          },
-          "value": false,
-          "hint": {
-            "en": "Infer presence from Zigbee signal fluctuations (BETA)",
-            "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
-          }
-        },
-        {
-          "id": "radio_sensitivity",
-          "type": "number",
-          "label": {
-            "en": "Radio Presence Sensitivity",
-            "fr": "Sensibilité Présence Radio"
-          },
-          "value": 15,
-          "min": 5,
-          "max": 50,
-          "hint": {
-            "en": "LQI variance threshold (higher = less sensitive)",
-            "fr": "Seuil de variance LQI (plus haut = moins sensible)"
-          }
         }
       ],
       "images": {
@@ -204144,34 +201574,6 @@
           "hint": {
             "en": "Estimate power consumption when real measurement is not available (AC/DC devices only)",
             "fr": "Estimer la consommation quand la mesure réelle n'est pas disponible (appareils AC/DC seulement)"
-          }
-        },
-        {
-          "id": "enable_radio_sensing",
-          "type": "checkbox",
-          "label": {
-            "en": "Enable Radio Presence Sensing",
-            "fr": "Activer la Détection de Présence Radio"
-          },
-          "value": false,
-          "hint": {
-            "en": "Infer presence from Zigbee signal fluctuations (BETA)",
-            "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
-          }
-        },
-        {
-          "id": "radio_sensitivity",
-          "type": "number",
-          "label": {
-            "en": "Radio Presence Sensitivity",
-            "fr": "Sensibilité Présence Radio"
-          },
-          "value": 15,
-          "min": 5,
-          "max": 50,
-          "hint": {
-            "en": "LQI variance threshold (higher = less sensitive)",
-            "fr": "Seuil de variance LQI (plus haut = moins sensible)"
           }
         }
       ],
@@ -205581,34 +202983,6 @@
           }
         },
         {
-          "id": "enable_radio_sensing",
-          "type": "checkbox",
-          "label": {
-            "en": "Enable Radio Presence Sensing",
-            "fr": "Activer la Détection de Présence Radio"
-          },
-          "value": false,
-          "hint": {
-            "en": "Infer presence from Zigbee signal fluctuations (BETA)",
-            "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
-          }
-        },
-        {
-          "id": "radio_sensitivity",
-          "type": "number",
-          "label": {
-            "en": "Radio Presence Sensitivity",
-            "fr": "Sensibilité Présence Radio"
-          },
-          "value": 15,
-          "min": 5,
-          "max": 50,
-          "hint": {
-            "en": "LQI variance threshold (higher = less sensitive)",
-            "fr": "Seuil de variance LQI (plus haut = moins sensible)"
-          }
-        },
-        {
           "type": "group",
           "label": {
             "en": "Enhanced Features (v9.1)",
@@ -206150,34 +203524,6 @@
           "step": 1,
           "hint": {
             "en": "SNZB-02P humidity offset"
-          }
-        },
-        {
-          "id": "enable_radio_sensing",
-          "type": "checkbox",
-          "label": {
-            "en": "Enable Radio Presence Sensing",
-            "fr": "Activer la Détection de Présence Radio"
-          },
-          "value": false,
-          "hint": {
-            "en": "Infer presence from Zigbee signal fluctuations (BETA)",
-            "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
-          }
-        },
-        {
-          "id": "radio_sensitivity",
-          "type": "number",
-          "label": {
-            "en": "Radio Presence Sensitivity",
-            "fr": "Sensibilité Présence Radio"
-          },
-          "value": 15,
-          "min": 5,
-          "max": 50,
-          "hint": {
-            "en": "LQI variance threshold (higher = less sensitive)",
-            "fr": "Seuil de variance LQI (plus haut = moins sensible)"
           }
         }
       ],
@@ -207290,34 +204636,6 @@
             "en": "Minimum power change in Watts to trigger a report",
             "fr": "Changement minimum en Watts pour déclencher un rapport"
           }
-        },
-        {
-          "id": "enable_radio_sensing",
-          "type": "checkbox",
-          "label": {
-            "en": "Enable Radio Presence Sensing",
-            "fr": "Activer la Détection de Présence Radio"
-          },
-          "value": false,
-          "hint": {
-            "en": "Infer presence from Zigbee signal fluctuations (BETA)",
-            "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
-          }
-        },
-        {
-          "id": "radio_sensitivity",
-          "type": "number",
-          "label": {
-            "en": "Radio Presence Sensitivity",
-            "fr": "Sensibilité Présence Radio"
-          },
-          "value": 15,
-          "min": 5,
-          "max": 50,
-          "hint": {
-            "en": "LQI variance threshold (higher = less sensitive)",
-            "fr": "Seuil de variance LQI (plus haut = moins sensible)"
-          }
         }
       ],
       "images": {
@@ -208319,34 +205637,6 @@
             "nl": "Wissel open/gesloten om indien sensor omgekeerd rapporteert"
           },
           "value": false
-        },
-        {
-          "id": "enable_radio_sensing",
-          "type": "checkbox",
-          "label": {
-            "en": "Enable Radio Presence Sensing",
-            "fr": "Activer la Détection de Présence Radio"
-          },
-          "value": false,
-          "hint": {
-            "en": "Infer presence from Zigbee signal fluctuations (BETA)",
-            "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
-          }
-        },
-        {
-          "id": "radio_sensitivity",
-          "type": "number",
-          "label": {
-            "en": "Radio Presence Sensitivity",
-            "fr": "Sensibilité Présence Radio"
-          },
-          "value": 15,
-          "min": 5,
-          "max": 50,
-          "hint": {
-            "en": "LQI variance threshold (higher = less sensitive)",
-            "fr": "Seuil de variance LQI (plus haut = moins sensible)"
-          }
         }
       ],
       "images": {
@@ -208415,19 +205705,15 @@
       ],
       "zigbee": {
         "manufacturerName": [
-          "_tz3000_jowhpxop",
           "_tz3210_p68kms0l",
           "_tz3210_tgvtvdoc",
           "_tze200_u6x1zyv2",
-          "_TZ3000_JOWHPXOP",
           "_TZ3210_P68KMS0L",
           "_TZ3210_TGVTVDOC",
           "_TZE200_U6X1ZYV2",
-          "_TZ3000_jowhpxop",
           "_TZ3210_p68kms0l",
           "_TZ3210_tgvtvdoc",
           "_TZE200_u6x1zyv2",
-          "_tz3000_JOWHPXOP",
           "_tz3210_P68KMS0L",
           "_tz3210_TGVTVDOC",
           "_tze200_U6X1ZYV2"
@@ -208854,9 +206140,6 @@
       "subDevices": [],
       "zigbee": {
         "manufacturerName": [
-          "Hobeian",
-          "hobeian",
-          "HOBEIAN",
           "IMMAX",
           "Immax",
           "TUYATEC-0L6XAQMI",
@@ -208897,7 +206180,6 @@
           "_TZ3000_au1rjicn",
           "_TZ3000_au2o5e6q",
           "_TZ3000_bmg14ax2",
-          "_TZ3000_br3laukf",
           "_TZ3000_bzxloft",
           "_TZ3000_bzxlofth",
           "_TZ3000_cea5xugq",
@@ -208939,7 +206221,6 @@
           "_tz3000_au2o5e6q",
           "_tz3000_b7m9qda0",
           "_tz3000_bmg14ax2",
-          "_tz3000_br3laukf",
           "_tz3000_bzxloft",
           "_tz3000_bzxloft2",
           "_tz3000_bzxlofth",
@@ -209020,7 +206301,6 @@
           "_TZ3000_AU1RJICN",
           "_TZ3000_AU2O5E6Q",
           "_TZ3000_BMG14AX2",
-          "_TZ3000_BR3LAUKF",
           "_TZ3000_BZXLOFT",
           "_TZ3000_BZXLOFTH",
           "_TZ3000_CEA5XUGQ",
@@ -209141,7 +206421,6 @@
           "_tz3000_AU1RJICN",
           "_tz3000_AU2O5E6Q",
           "_tz3000_BMG14AX2",
-          "_tz3000_BR3LAUKF",
           "_tz3000_BZXLOFT",
           "_tz3000_BZXLOFTH",
           "_tz3000_CEA5XUGQ",
@@ -209512,34 +206791,6 @@
             "nl": "Wissel open/gesloten om indien sensor omgekeerd rapporteert"
           },
           "value": false
-        },
-        {
-          "id": "enable_radio_sensing",
-          "type": "checkbox",
-          "label": {
-            "en": "Enable Radio Presence Sensing",
-            "fr": "Activer la Détection de Présence Radio"
-          },
-          "value": false,
-          "hint": {
-            "en": "Infer presence from Zigbee signal fluctuations (BETA)",
-            "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
-          }
-        },
-        {
-          "id": "radio_sensitivity",
-          "type": "number",
-          "label": {
-            "en": "Radio Presence Sensitivity",
-            "fr": "Sensibilité Présence Radio"
-          },
-          "value": 15,
-          "min": 5,
-          "max": 50,
-          "hint": {
-            "en": "LQI variance threshold (higher = less sensitive)",
-            "fr": "Seuil de variance LQI (plus haut = moins sensible)"
-          }
         }
       ],
       "images": {
@@ -211309,34 +208560,6 @@
               }
             }
           ]
-        },
-        {
-          "id": "enable_radio_sensing",
-          "type": "checkbox",
-          "label": {
-            "en": "Enable Radio Presence Sensing",
-            "fr": "Activer la Détection de Présence Radio"
-          },
-          "value": false,
-          "hint": {
-            "en": "Infer presence from Zigbee signal fluctuations (BETA)",
-            "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
-          }
-        },
-        {
-          "id": "radio_sensitivity",
-          "type": "number",
-          "label": {
-            "en": "Radio Presence Sensitivity",
-            "fr": "Sensibilité Présence Radio"
-          },
-          "value": 15,
-          "min": 5,
-          "max": 50,
-          "hint": {
-            "en": "LQI variance threshold (higher = less sensitive)",
-            "fr": "Seuil de variance LQI (plus haut = moins sensible)"
-          }
         }
       ],
       "images": {
@@ -211485,34 +208708,6 @@
               }
             }
           ]
-        },
-        {
-          "id": "enable_radio_sensing",
-          "type": "checkbox",
-          "label": {
-            "en": "Enable Radio Presence Sensing",
-            "fr": "Activer la Détection de Présence Radio"
-          },
-          "value": false,
-          "hint": {
-            "en": "Infer presence from Zigbee signal fluctuations (BETA)",
-            "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
-          }
-        },
-        {
-          "id": "radio_sensitivity",
-          "type": "number",
-          "label": {
-            "en": "Radio Presence Sensitivity",
-            "fr": "Sensibilité Présence Radio"
-          },
-          "value": 15,
-          "min": 5,
-          "max": 50,
-          "hint": {
-            "en": "LQI variance threshold (higher = less sensitive)",
-            "fr": "Seuil de variance LQI (plus haut = moins sensible)"
-          }
         }
       ],
       "maintenanceActions": [
@@ -215544,26 +212739,10 @@
       },
       "zigbee": {
         "manufacturerName": [
-          "_tyzb01_sqmd19i1",
-          "_tyzb01_ttvdudvx",
-          "_TZ3210_2dfy6tol",
           "_TZ3210_EYMUNFFL",
-          "_TZ3210_tfxwxklq",
-          "_TYZB01_SQMD19I1",
-          "_TYZB01_sqmd19i1",
-          "_tyzb01_SQMD19I1",
-          "_TYZB01_TTVDUDVX",
-          "_TYZB01_ttvdudvx",
-          "_tyzb01_TTVDUDVX",
-          "_tz3210_2dfy6tol",
-          "_TZ3210_2DFY6TOL",
-          "_tz3210_2DFY6TOL",
           "_tz3210_eymunffl",
           "_TZ3210_eymunffl",
-          "_tz3210_EYMUNFFL",
-          "_tz3210_tfxwxklq",
-          "_TZ3210_TFXWXKLQ",
-          "_tz3210_TFXWXKLQ"
+          "_tz3210_EYMUNFFL"
         ],
         "productId": [
           "TS0011",
@@ -219384,13 +216563,6 @@
           "_tze284_tgrzpqf4",
           "A89G12C",
           "a89g12c",
-          "HOBEIAN",
-          "hobeian",
-          "Hobeian",
-          "_TZE284_ga1maeof",
-          "_tze284_ga1maeof",
-          "_TZE284_awepdiwi",
-          "_tze284_awepdiwi",
           "_TZE2841000000_nhgdf6qr",
           "_tze2841000000_nhgdf6qr",
           "_TZE2841000000_tgrzpqf4",
@@ -219441,8 +216613,6 @@
           "_TZE284_G2E6CPNW",
           "_TZE284_SGABHWA6",
           "_TZE284_TGRZPQF4",
-          "_TZE284_GA1MAEOF",
-          "_TZE284_AWEPDIWI",
           "_TZE2841000000_NHGDF6QR",
           "_TZE2841000000_TGRZPQF4",
           "_TZE200_4xsypney",
@@ -219505,8 +216675,6 @@
           "_tze284_G2E6CPNW",
           "_tze284_SGABHWA6",
           "_tze284_TGRZPQF4",
-          "_tze284_GA1MAEOF",
-          "_tze284_AWEPDIWI",
           "_tze2841000000_NHGDF6QR",
           "_tze2841000000_TGRZPQF4"
         ],
@@ -221184,7 +218352,6 @@
           "_TYZB02_KEYJQTHH",
           "_TZ3000_0AUSFOS0",
           "_TZ3000_0GHWHYPC",
-          "_TZ3000_0T4ZJTIA",
           "_TZ3000_18EJXRZK",
           "_TZ3000_1ADSS9DE",
           "_TZ3000_1hwjutgo",
@@ -221357,7 +218524,6 @@
           "_TZ3000_PF7SWKQP",
           "_TZ3000_PGQ7ORMG",
           "_TZ3000_PKEQINNT",
-          "_TZ3000_PNZFDR9Y",
           "_TZ3000_PRD023WY",
           "_TZ3000_Q68478X7",
           "_TZ3000_Q6A3TEPG",
@@ -221385,7 +218551,6 @@
           "_TZ3000_S0I14UBI",
           "_TZ3000_S678WAZD",
           "_TZ3000_SFC7Y1T8",
-          "_TZ3000_SKUEEKG3",
           "_TZ3000_SKUEEZT3",
           "_TZ3000_SSKGPXFO",
           "_TZ3000_SYOXTJF0",
@@ -221424,7 +218589,6 @@
           "_TZ3000_WKR3JQMR",
           "_TZ3000_WN65IXZ9",
           "_TZ3000_WOL32OLT",
-          "_TZ3000_WPUEOREV",
           "_TZ3000_WQCBZBAE",
           "_TZ3000_WRHHI5H2",
           "_TZ3000_WSSPGTCD",
@@ -221446,7 +218610,6 @@
           "_TZ3000_dershnvx",
           "_TZ3000_e98krvvk",
           "_TZ3000_ejwkn2h2",
-          "_TZ3000_eqsair32",
           "_TZ3000_g9g2xnch",
           "_TZ3000_h1jnz6l8",
           "_TZ3000_hbic3ka3",
@@ -221533,8 +218696,6 @@
           "_TZE200_XO3VPOAH",
           "_TZE200_afycb3cg",
           "_TZE200_amp6tsvy",
-          "_TZE200_bjzrowv2",
-          "_TZE200_dzuqwsyg",
           "_TZE200_fctwhugx",
           "_TZE200_fzo2pocs",
           "_TZE200_gbagoilo",
@@ -221617,7 +218778,6 @@
           "_TZE3000_PFC7I3KT",
           "_tz3000_sgb0xhwn",
           "_tz3000_v8gtiaed",
-          "_tz3000_wzmuk9ai",
           "_tz3210_4whigl8i",
           "_tz3210_c7nc9w3c",
           "_tz3210_ok0ggpk7",
@@ -221664,7 +218824,6 @@
           "_tyzb02_keyjqthh",
           "_tz3000_0ausfos0",
           "_tz3000_0ghwhypc",
-          "_tz3000_0t4zjtia",
           "_tz3000_18ejxrzk",
           "_tz3000_1adss9de",
           "_TZ3000_1HWJUTGO",
@@ -221841,7 +219000,6 @@
           "_tz3000_pf7swkqp",
           "_tz3000_pgq7ormg",
           "_tz3000_pkeqinnt",
-          "_tz3000_pnzfdr9y",
           "_tz3000_prd023wy",
           "_tz3000_q68478x7",
           "_tz3000_q6a3tepg",
@@ -221869,7 +219027,6 @@
           "_tz3000_s0i14ubi",
           "_tz3000_s678wazd",
           "_tz3000_sfc7y1t8",
-          "_tz3000_skueekg3",
           "_tz3000_skueezt3",
           "_tz3000_sskgpxfo",
           "_tz3000_syoxtjf0",
@@ -221908,7 +219065,6 @@
           "_tz3000_wkr3jqmr",
           "_tz3000_wn65ixz9",
           "_tz3000_wol32olt",
-          "_tz3000_wpueorev",
           "_tz3000_wqcbzbae",
           "_tz3000_wrhhi5h2",
           "_tz3000_wsspgtcd",
@@ -221937,8 +219093,6 @@
           "_tz3000_e98krvvk",
           "_TZ3000_EJWKN2H2",
           "_tz3000_ejwkn2h2",
-          "_TZ3000_EQSAIR32",
-          "_tz3000_eqsair32",
           "_TZ3000_H1JNZ6L8",
           "_tz3000_h1jnz6l8",
           "_TZ3000_HBIC3KA3",
@@ -222063,10 +219217,6 @@
           "_tze200_afycb3cg",
           "_TZE200_AMP6TSVY",
           "_tze200_amp6tsvy",
-          "_TZE200_BJZROWV2",
-          "_tze200_bjzrowv2",
-          "_TZE200_DZUQWSYG",
-          "_tze200_dzuqwsyg",
           "_TZE200_FCTWHUGX",
           "_tze200_fctwhugx",
           "_TZE200_FZO2POCS",
@@ -222175,7 +219325,6 @@
           "_tze3000_pfc7i3kt",
           "_TZ3000_SGB0XHWN",
           "_TZ3000_V8GTIAED",
-          "_TZ3000_WZMUK9AI",
           "_TZ3210_4WHIGL8I",
           "_TZ3210_C7NC9W3C",
           "_TZ3210_OK0GGPK7",
@@ -222222,7 +219371,6 @@
           "_TYZB02_keyjqthh",
           "_TZ3000_0ausfos0",
           "_TZ3000_0ghwhypc",
-          "_TZ3000_0t4zjtia",
           "_TZ3000_18ejxrzk",
           "_TZ3000_1adss9de",
           "_TZ3000_2ac",
@@ -222378,7 +219526,6 @@
           "_TZ3000_pf7swkqp",
           "_TZ3000_pgq7ormg",
           "_TZ3000_pkeqinnt",
-          "_TZ3000_pnzfdr9y",
           "_TZ3000_prd023wy",
           "_TZ3000_q68478x7",
           "_TZ3000_q6a3tepg",
@@ -222404,7 +219551,6 @@
           "_TZ3000_s0i14ubi",
           "_TZ3000_s678wazd",
           "_TZ3000_sfc7y1t8",
-          "_TZ3000_skueekg3",
           "_TZ3000_skueezt3",
           "_TZ3000_sskgpxfo",
           "_TZ3000_syoxtjf0",
@@ -222443,7 +219589,6 @@
           "_TZ3000_wkr3jqmr",
           "_TZ3000_wn65ixz9",
           "_TZ3000_wol32olt",
-          "_TZ3000_wpueorev",
           "_TZ3000_wqcbzbae",
           "_TZ3000_wrhhi5h2",
           "_TZ3000_wsspgtcd",
@@ -222518,7 +219663,6 @@
           "_TZE3000_pfc7i3kt",
           "_TZ3000_sgb0xhwn",
           "_TZ3000_v8gtiaed",
-          "_TZ3000_wzmuk9ai",
           "_TZ3210_4whigl8i",
           "_TZ3210_c7nc9w3c",
           "_TZ3210_ok0ggpk7",
@@ -222549,7 +219693,6 @@
           "_tyzb02_KEYJQTHH",
           "_tz3000_0AUSFOS0",
           "_tz3000_0GHWHYPC",
-          "_tz3000_0T4ZJTIA",
           "_tz3000_18EJXRZK",
           "_tz3000_1ADSS9DE",
           "_tz3000_1HWJUTGO",
@@ -222718,7 +219861,6 @@
           "_tz3000_PF7SWKQP",
           "_tz3000_PGQ7ORMG",
           "_tz3000_PKEQINNT",
-          "_tz3000_PNZFDR9Y",
           "_tz3000_PRD023WY",
           "_tz3000_Q68478X7",
           "_tz3000_Q6A3TEPG",
@@ -222746,7 +219888,6 @@
           "_tz3000_S0I14UBI",
           "_tz3000_S678WAZD",
           "_tz3000_SFC7Y1T8",
-          "_tz3000_SKUEEKG3",
           "_tz3000_SKUEEZT3",
           "_tz3000_SSKGPXFO",
           "_tz3000_SYOXTJF0",
@@ -222785,7 +219926,6 @@
           "_tz3000_WKR3JQMR",
           "_tz3000_WN65IXZ9",
           "_tz3000_WOL32OLT",
-          "_tz3000_WPUEOREV",
           "_tz3000_WQCBZBAE",
           "_tz3000_WRHHI5H2",
           "_tz3000_WSSPGTCD",
@@ -222807,7 +219947,6 @@
           "_tz3000_DERSHNVX",
           "_tz3000_E98KRVVK",
           "_tz3000_EJWKN2H2",
-          "_tz3000_EQSAIR32",
           "_tz3000_H1JNZ6L8",
           "_tz3000_HBIC3KA3",
           "_tz3000_HELYQDVS",
@@ -222886,8 +220025,6 @@
           "_tze200_XO3VPOAH",
           "_tze200_AFYCB3CG",
           "_tze200_AMP6TSVY",
-          "_tze200_BJZROWV2",
-          "_tze200_DZUQWSYG",
           "_tze200_FCTWHUGX",
           "_tze200_FZO2POCS",
           "_tze200_GO3TVSWY",
@@ -222961,7 +220098,6 @@
           "_tze3000_PFC7I3KT",
           "_tz3000_SGB0XHWN",
           "_tz3000_V8GTIAED",
-          "_tz3000_WZMUK9AI",
           "_tz3210_4WHIGL8I",
           "_tz3210_C7NC9W3C",
           "_tz3210_OK0GGPK7",
@@ -223839,15 +220975,12 @@
           "_TYZB01_ANEIICMQ",
           "_TYZB01_ZSL6Z0PW",
           "_TYZB01_NCUTBJDI",
-          "_TZ3000_v4l4b0lp",
           "_tyzb01_mtunwanm",
           "_TZ3000_F09J9QJB",
           "_tz3000_f09j9qjb",
           "_tyzb01_aneiicmq",
           "_tyzb01_zsl6z0pw",
           "_tyzb01_ncutbjdi",
-          "_TZ3000_V4L4B0LP",
-          "_tz3000_v4l4b0lp",
           "_TYZB01_mtunwanm",
           "_TYZB01_aneiicmq",
           "_TYZB01_zsl6z0pw",
@@ -223856,8 +220989,7 @@
           "_tz3000_F09J9QJB",
           "_tyzb01_ANEIICMQ",
           "_tyzb01_ZSL6Z0PW",
-          "_tyzb01_NCUTBJDI",
-          "_tz3000_V4L4B0LP"
+          "_tyzb01_NCUTBJDI"
         ]
       },
       "version": "1.0.0",
@@ -226408,7 +223540,6 @@
           "_TZ3000_RSYLFTHG",
           "_TZ3000_S6MA1NH4",
           "_TZ3000_SSUP6H68",
-          "_TZ3000_U3OUPGDY",
           "_TZ3000_UZ6IBHIB",
           "_TZ3000_WOPF2SOX",
           "_TZ3000_WWTNSHOL",
@@ -226474,7 +223605,6 @@
           "_tz3000_rsylfthg",
           "_tz3000_s6ma1nh4",
           "_tz3000_ssup6h68",
-          "_tz3000_u3oupgdy",
           "_tz3000_uz6ibhib",
           "_tz3000_wopf2sox",
           "_tz3000_wwtnshol",
@@ -226533,7 +223663,6 @@
           "_TZ3000_rsylfthg",
           "_TZ3000_s6ma1nh4",
           "_TZ3000_ssup6h68",
-          "_TZ3000_u3oupgdy",
           "_TZ3000_uz6ibhib",
           "_TZ3000_wopf2sox",
           "_TZ3000_wwtnshol",
@@ -226593,7 +223722,6 @@
           "_tz3000_RSYLFTHG",
           "_tz3000_S6MA1NH4",
           "_tz3000_SSUP6H68",
-          "_tz3000_U3OUPGDY",
           "_tz3000_UZ6IBHIB",
           "_tz3000_WOPF2SOX",
           "_tz3000_WWTNSHOL",
@@ -229149,34 +226277,6 @@
               }
             }
           ]
-        },
-        {
-          "id": "enable_radio_sensing",
-          "type": "checkbox",
-          "label": {
-            "en": "Enable Radio Presence Sensing",
-            "fr": "Activer la Détection de Présence Radio"
-          },
-          "value": false,
-          "hint": {
-            "en": "Infer presence from Zigbee signal fluctuations (BETA)",
-            "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
-          }
-        },
-        {
-          "id": "radio_sensitivity",
-          "type": "number",
-          "label": {
-            "en": "Radio Presence Sensitivity",
-            "fr": "Sensibilité Présence Radio"
-          },
-          "value": 15,
-          "min": 5,
-          "max": 50,
-          "hint": {
-            "en": "LQI variance threshold (higher = less sensitive)",
-            "fr": "Seuil de variance LQI (plus haut = moins sensible)"
-          }
         }
       ],
       "name": {
@@ -231695,9 +228795,7 @@
       "zigbee": {
         "manufacturerName": [
           "_TZE200_7HFCUDW5",
-          "_TZE200_8YGSUHE1",
           "_TZE200_9QAYZQA8",
-          "_TZE200_D0YU2XGI",
           "_TZE200_DQ1MFJUG",
           "_TZE200_GA1MAEOF",
           "_TZE200_GGEV5FSL",
@@ -231707,19 +228805,13 @@
           "_TZE200_LGSTEPHA",
           "_TZE200_M9SKFCTM",
           "_TZE200_NSLR42TT",
-          "_TZE200_NTCY3XU1",
-          "_TZE200_PAY2BYAX",
           "_TZE200_T5P1VJ8R",
           "_TZE200_UEBOJRAA",
           "_TZE200_VZEKYI4C",
           "_TZE200_YOJQA8XN",
           "_tz3000_ixla93vd",
-          "_TZE200_IKVNCLUO",
-          "_TZE200_RJXQSO4A",
           "_tze200_7hfcudw5",
-          "_tze200_8ygsuhe1",
           "_tze200_9qayzqa8",
-          "_tze200_d0yu2xgi",
           "_tze200_dq1mfjug",
           "_tze200_ga1maeof",
           "_tze200_ggev5fsl",
@@ -231729,19 +228821,13 @@
           "_tze200_lgstepha",
           "_tze200_m9skfctm",
           "_tze200_nslr42tt",
-          "_tze200_ntcy3xu1",
-          "_tze200_pay2byax",
           "_tze200_t5p1vj8r",
           "_tze200_uebojraa",
           "_tze200_vzekyi4c",
           "_tze200_yojqa8xn",
           "_TZ3000_IXLA93VD",
-          "_tze200_ikvncluo",
-          "_tze200_rjxqso4a",
           "_TZE200_7hfcudw5",
-          "_TZE200_8ygsuhe1",
           "_TZE200_9qayzqa8",
-          "_TZE200_d0yu2xgi",
           "_TZE200_dq1mfjug",
           "_TZE200_ga1maeof",
           "_TZE200_ggev5fsl",
@@ -231751,19 +228837,13 @@
           "_TZE200_lgstepha",
           "_TZE200_m9skfctm",
           "_TZE200_nslr42tt",
-          "_TZE200_ntcy3xu1",
-          "_TZE200_pay2byax",
           "_TZE200_t5p1vj8r",
           "_TZE200_uebojraa",
           "_TZE200_vzekyi4c",
           "_TZE200_yojqa8xn",
           "_TZ3000_ixla93vd",
-          "_TZE200_ikvncluo",
-          "_TZE200_rjxqso4a",
           "_tze200_7HFCUDW5",
-          "_tze200_8YGSUHE1",
           "_tze200_9QAYZQA8",
-          "_tze200_D0YU2XGI",
           "_tze200_DQ1MFJUG",
           "_tze200_GA1MAEOF",
           "_tze200_GGEV5FSL",
@@ -231773,15 +228853,11 @@
           "_tze200_LGSTEPHA",
           "_tze200_M9SKFCTM",
           "_tze200_NSLR42TT",
-          "_tze200_NTCY3XU1",
-          "_tze200_PAY2BYAX",
           "_tze200_T5P1VJ8R",
           "_tze200_UEBOJRAA",
           "_tze200_VZEKYI4C",
           "_tze200_YOJQA8XN",
-          "_tz3000_IXLA93VD",
-          "_tze200_IKVNCLUO",
-          "_tze200_RJXQSO4A"
+          "_tz3000_IXLA93VD"
         ],
         "productId": [
           "TS0601_wirelesssw",
@@ -236493,36 +233569,7 @@
         "conditions": [],
         "actions": []
       },
-      "settings": [
-        {
-          "id": "enable_radio_sensing",
-          "type": "checkbox",
-          "label": {
-            "en": "Enable Radio Presence Sensing",
-            "fr": "Activer la Détection de Présence Radio"
-          },
-          "value": false,
-          "hint": {
-            "en": "Infer presence from Zigbee signal fluctuations (BETA)",
-            "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
-          }
-        },
-        {
-          "id": "radio_sensitivity",
-          "type": "number",
-          "label": {
-            "en": "Radio Presence Sensitivity",
-            "fr": "Sensibilité Présence Radio"
-          },
-          "value": 15,
-          "min": 5,
-          "max": 50,
-          "hint": {
-            "en": "LQI variance threshold (higher = less sensitive)",
-            "fr": "Seuil de variance LQI (plus haut = moins sensible)"
-          }
-        }
-      ],
+      "settings": [],
       "id": "valve_dual_irrigation",
       "version": "1.0.0"
     },
@@ -236876,20 +233923,12 @@
         },
         "manufacturerName": [
           "_TYZB01_4TLKSK8A",
-          "_TZ3000_hyarhbyx",
-          "_TZ3000_gjrubzje",
           "_TZ3000_wpueorev",
           "_tyzb01_4tlksk8a",
-          "_TZ3000_HYARHBYX",
-          "_tz3000_hyarhbyx",
-          "_TZ3000_GJRUBZJE",
-          "_tz3000_gjrubzje",
           "_TZ3000_WPUEOREV",
           "_tz3000_wpueorev",
           "_TYZB01_4tlksk8a",
           "_tyzb01_4TLKSK8A",
-          "_tz3000_HYARHBYX",
-          "_tz3000_GJRUBZJE",
           "_tz3000_WPUEOREV"
         ]
       },
@@ -237712,7 +234751,6 @@
           "_TZ3210_wdexaypg",
           "_TZ3210_weaqkhab",
           "_TZE284_ip2akl4w",
-          "_tz3000_7ysdnebc",
           "_tz3000_f3xka28j",
           "_tz3000_fjgwfl3z",
           "_tz3000_hexqj6ls",
@@ -237737,7 +234775,6 @@
           "_tz3210_dfe8hwlq",
           "_tz3210_e5t9bfdv",
           "_tz3210_ejctepku",
-          "_tz3210_eymunffl",
           "_tz3210_f8dqbuze",
           "_tz3210_fxlkqwfl",
           "_tz3210_guijtl8k",
@@ -237828,7 +234865,6 @@
           "_TZ3210_WEAQKHAB",
           "_TZE284_IP2AKL4W",
           "_tze284_ip2akl4w",
-          "_TZ3000_7YSDNEBC",
           "_TZ3000_F3XKA28J",
           "_TZ3000_FJGWFL3Z",
           "_TZ3000_HEXQJ6LS",
@@ -237850,7 +234886,6 @@
           "_TZ3210_DFE8HWLQ",
           "_TZ3210_E5T9BFDV",
           "_TZ3210_EJCTEPKU",
-          "_TZ3210_EYMUNFFL",
           "_TZ3210_F8DQBUZE",
           "_TZ3210_FXLKQWFL",
           "_TZ3210_GUIJTL8K",
@@ -237928,7 +234963,6 @@
           "_TZE284_NQQYLYKC",
           "_TZE284_NZNS7UDM",
           "_TZE284_ZNVWZXKQ",
-          "_TZ3000_7ysdnebc",
           "_TZ3000_f3xka28j",
           "_TZ3000_fjgwfl3z",
           "_TZ3000_hexqj6ls",
@@ -237950,7 +234984,6 @@
           "_TZ3210_dfe8hwlq",
           "_TZ3210_e5t9bfdv",
           "_TZ3210_ejctepku",
-          "_TZ3210_eymunffl",
           "_TZ3210_f8dqbuze",
           "_TZ3210_fxlkqwfl",
           "_TZ3210_guijtl8k",
@@ -238036,7 +235069,6 @@
           "_tz3210_WDEXAYPG",
           "_tz3210_WEAQKHAB",
           "_tze284_IP2AKL4W",
-          "_tz3000_7YSDNEBC",
           "_tz3000_F3XKA28J",
           "_tz3000_FJGWFL3Z",
           "_tz3000_HEXQJ6LS",
@@ -238058,7 +235090,6 @@
           "_tz3210_DFE8HWLQ",
           "_tz3210_E5T9BFDV",
           "_tz3210_EJCTEPKU",
-          "_tz3210_EYMUNFFL",
           "_tz3210_F8DQBUZE",
           "_tz3210_FXLKQWFL",
           "_tz3210_GUIJTL8K",
@@ -241825,37 +238856,25 @@
           "_TZE200_FJJBHX9D",
           "_TZE200_MEXISFIK",
           "_TZE200_P0GZBQCT",
-          "_TZE200_7TDTQGWV",
           "_TYZB01_QEQVMVTI",
-          "_TZ3000_aetquff4",
-          "_TZ3000_hafsqare",
           "_tze200_aqnazj70",
           "_tze200_dfxkcots",
           "_tze200_fjjbhx9d",
           "_tze200_mexisfik",
           "_tze200_p0gzbqct",
-          "_tze200_7tdtqgwv",
           "_tyzb01_qeqvmvti",
-          "_TZ3000_AETQUFF4",
-          "_tz3000_aetquff4",
-          "_TZ3000_HAFSQARE",
-          "_tz3000_hafsqare",
           "_TZE200_aqnazj70",
           "_TZE200_dfxkcots",
           "_TZE200_fjjbhx9d",
           "_TZE200_mexisfik",
           "_TZE200_p0gzbqct",
-          "_TZE200_7tdtqgwv",
           "_TYZB01_qeqvmvti",
           "_tze200_AQNAZJ70",
           "_tze200_DFXKCOTS",
           "_tze200_FJJBHX9D",
           "_tze200_MEXISFIK",
           "_tze200_P0GZBQCT",
-          "_tze200_7TDTQGWV",
-          "_tyzb01_QEQVMVTI",
-          "_tz3000_AETQUFF4",
-          "_tz3000_HAFSQARE"
+          "_tyzb01_QEQVMVTI"
         ]
       },
       "version": "1.0.0",
@@ -242124,59 +239143,16 @@
       },
       "zigbee": {
         "manufacturerName": [
-          "_TZ3000_g9chy2ib",
-          "_TZE200_0hg58wyk",
           "_TZE200_2ekuz3dz",
-          "_TZE200_4utwoz2",
-          "_TZE200_4utwozi2",
-          "_TZE200_68nvbi09",
-          "_TZE200_68nvbio9",
-          "_TZE200_6rdj8dzm",
-          "_TZE200_7yoranx2",
-          "_TZE200_9mjy74mp",
           "_TZE200_aoclfnxz",
-          "_TZE200_bvrlmajk",
-          "_TZE200_bvu2wnxz",
-          "_TZE200_cf1sl3tj",
-          "_TZE200_cpmgn2cf",
-          "_TZE200_d3z1ukqw",
-          "_TZE200_e9ba97vf",
           "_TZE200_g9a3awaj",
-          "_TZE200_hvaxb2tc",
-          "_TZE200_jkfbph7l",
-          "_TZE200_lhzapfg9",
-          "_TZE200_nw1r9hp6",
-          "_TZE200_ow09xlxm",
-          "_TZE200_pw7mji0l",
-          "_TZE200_py4cm3he",
-          "_TZE200_rk1wojce",
-          "_TZE200_rndg81sf",
-          "_TZE200_rufdtfyv",
-          "_TZE200_rv6iuyxb",
-          "_TZE200_rxntag7i",
-          "_TZE200_rxq4iti9",
-          "_TZE200_suxywabt",
-          "_TZE200_vexa5o82",
           "_TZE200_viy9ihs7",
-          "_TZE200_wsbfwodu",
-          "_TZE200_x9axofse",
-          "_TZE200_yqgbrdyo",
-          "_TZE200_z1tyspqw",
           "_TZE204_0hcjew5p",
-          "_TZE204_9mjy74mp",
           "_TZE204_aoclfnxz",
-          "_TZE204_cvcu2p6e",
           "_TZE204_cvub6xbb",
           "_TZE204_g9a3awaj",
           "_TZE204_gops3slb",
-          "_TZE204_hvaxb2tc",
           "_TZE204_lzriup1j",
-          "_TZE204_o3x45p96",
-          "_TZE204_ogx8u5z6",
-          "_TZE204_pcdmj88b",
-          "_TZE204_pw7mji0l",
-          "_TZE204_qyr2m29i",
-          "_TZE204_rtrmfadk",
           "_TZE204_xnbkhhdr",
           "_TZE204_hpkusvom",
           "_TZE204_HPKUSVOM",
@@ -242187,19 +239163,11 @@
           "_TZE284_4CGMAGBA",
           "_tze284_4cgmagba",
           "_tze284_4CGMAGBA",
-          "_TZE284_c6wv4xyo",
           "_TZE284_cvub6xbb",
           "_TZE284_gops3slb",
-          "_TZE284_hvaxb2tc",
-          "_TZE284_iilebqoo",
-          "_TZE284_o3x45p96",
-          "_TZE284_ogx8u5z6",
-          "_TZE284_pcdmj88b",
-          "_TZE284_rv6iuyxb",
           "_TZE284_xnbkhhdr",
           "_tyst11_2ekuz3dz",
           "_tze200_9p5xmj5r",
-          "_tze200_a4bpgplm",
           "_tze200_aoclfnxz",
           "_tze200_ekd8x5dt",
           "_tze200_lzriup1j",
@@ -242207,137 +239175,36 @@
           "_tze204_2ekuz3dz",
           "_tze204_68nvbio9",
           "_tze204_aoclfnxz",
-          "_TZ3000_G9CHY2IB",
-          "_tz3000_g9chy2ib",
-          "_TZE200_0HG58WYK",
-          "_tze200_0hg58wyk",
           "_TZE200_2EKUZ3DZ",
           "_tze200_2ekuz3dz",
-          "_TZE200_4UTWOZ2",
-          "_tze200_4utwoz2",
-          "_TZE200_4UTWOZI2",
-          "_tze200_4utwozi2",
-          "_TZE200_68NVBI09",
-          "_tze200_68nvbi09",
-          "_TZE200_68NVBIO9",
-          "_tze200_68nvbio9",
-          "_TZE200_6RDJ8DZM",
-          "_tze200_6rdj8dzm",
-          "_TZE200_7YORANX2",
-          "_tze200_7yoranx2",
-          "_TZE200_9MJY74MP",
-          "_tze200_9mjy74mp",
           "_TZE200_AOCLFNXZ",
-          "_TZE200_BVRLMAJK",
-          "_tze200_bvrlmajk",
-          "_TZE200_BVU2WNXZ",
-          "_tze200_bvu2wnxz",
-          "_TZE200_CF1SL3TJ",
-          "_tze200_cf1sl3tj",
-          "_TZE200_CPMGN2CF",
-          "_tze200_cpmgn2cf",
-          "_TZE200_D3Z1UKQW",
-          "_tze200_d3z1ukqw",
-          "_TZE200_E9BA97VF",
-          "_tze200_e9ba97vf",
           "_TZE200_G9A3AWAJ",
           "_tze200_g9a3awaj",
-          "_TZE200_HVAXB2TC",
-          "_tze200_hvaxb2tc",
-          "_TZE200_JKFBPH7L",
-          "_tze200_jkfbph7l",
-          "_TZE200_LHZAPFG9",
-          "_tze200_lhzapfg9",
-          "_TZE200_NW1R9HP6",
-          "_tze200_nw1r9hp6",
-          "_TZE200_OW09XLXM",
-          "_tze200_ow09xlxm",
-          "_TZE200_PW7MJI0L",
-          "_tze200_pw7mji0l",
-          "_TZE200_PY4CM3HE",
-          "_tze200_py4cm3he",
-          "_TZE200_RK1WOJCE",
-          "_tze200_rk1wojce",
-          "_TZE200_RNDG81SF",
-          "_tze200_rndg81sf",
-          "_TZE200_RUFDTFYV",
-          "_tze200_rufdtfyv",
-          "_TZE200_RV6IUYXB",
-          "_tze200_rv6iuyxb",
-          "_TZE200_RXNTAG7I",
-          "_tze200_rxntag7i",
-          "_TZE200_RXQ4ITI9",
-          "_tze200_rxq4iti9",
-          "_TZE200_SUXYWABT",
-          "_tze200_suxywabt",
-          "_TZE200_VEXA5O82",
-          "_tze200_vexa5o82",
           "_TZE200_VIY9IHS7",
           "_tze200_viy9ihs7",
-          "_TZE200_WSBFWODU",
-          "_tze200_wsbfwodu",
-          "_TZE200_X9AXOFSE",
-          "_tze200_x9axofse",
-          "_TZE200_YQGBRDYO",
-          "_tze200_yqgbrdyo",
-          "_TZE200_Z1TYSPQW",
-          "_tze200_z1tyspqw",
           "_TZE204_0HCJEW5P",
           "_tze204_0hcjew5p",
-          "_TZE204_9MJY74MP",
-          "_tze204_9mjy74mp",
           "_TZE204_AOCLFNXZ",
-          "_TZE204_CVCU2P6E",
-          "_tze204_cvcu2p6e",
           "_TZE204_CVUB6XBB",
           "_tze204_cvub6xbb",
           "_TZE204_G9A3AWAJ",
           "_tze204_g9a3awaj",
           "_TZE204_GOPS3SLB",
           "_tze204_gops3slb",
-          "_TZE204_HVAXB2TC",
-          "_tze204_hvaxb2tc",
           "_TZE204_LZRIUP1J",
           "_tze204_lzriup1j",
-          "_TZE204_O3X45P96",
-          "_tze204_o3x45p96",
-          "_TZE204_OGX8U5Z6",
-          "_tze204_ogx8u5z6",
-          "_TZE204_PCDMJ88B",
-          "_tze204_pcdmj88b",
-          "_TZE204_PW7MJI0L",
-          "_tze204_pw7mji0l",
-          "_TZE204_QYR2M29I",
-          "_tze204_qyr2m29i",
-          "_TZE204_RTRMFADK",
-          "_tze204_rtrmfadk",
           "_TZE204_XNBKHHDR",
           "_tze204_xnbkhhdr",
           "_TZE284_AOCLFNXZ",
           "_tze284_aoclfnxz",
-          "_TZE284_C6WV4XYO",
-          "_tze284_c6wv4xyo",
           "_TZE284_CVUB6XBB",
           "_tze284_cvub6xbb",
           "_TZE284_GOPS3SLB",
           "_tze284_gops3slb",
-          "_TZE284_HVAXB2TC",
-          "_tze284_hvaxb2tc",
-          "_TZE284_IILEBQOO",
-          "_tze284_iilebqoo",
-          "_TZE284_O3X45P96",
-          "_tze284_o3x45p96",
-          "_TZE284_OGX8U5Z6",
-          "_tze284_ogx8u5z6",
-          "_TZE284_PCDMJ88B",
-          "_tze284_pcdmj88b",
-          "_TZE284_RV6IUYXB",
-          "_tze284_rv6iuyxb",
           "_TZE284_XNBKHHDR",
           "_tze284_xnbkhhdr",
           "_TYST11_2EKUZ3DZ",
           "_TZE200_9P5XMJ5R",
-          "_TZE200_A4BPGPLM",
           "_TZE200_EKD8X5DT",
           "_TZE200_LZRIUP1J",
           "_TZE200_PCDMJ88B",
@@ -242345,80 +239212,28 @@
           "_TZE204_68NVBIO9",
           "_TYST11_2ekuz3dz",
           "_TZE200_9p5xmj5r",
-          "_TZE200_a4bpgplm",
           "_TZE200_ekd8x5dt",
           "_TZE200_lzriup1j",
           "_TZE200_pcdmj88b",
           "_TZE204_2ekuz3dz",
           "_TZE204_68nvbio9",
-          "_tz3000_G9CHY2IB",
-          "_tze200_0HG58WYK",
           "_tze200_2EKUZ3DZ",
-          "_tze200_4UTWOZ2",
-          "_tze200_4UTWOZI2",
-          "_tze200_68NVBI09",
-          "_tze200_68NVBIO9",
-          "_tze200_6RDJ8DZM",
-          "_tze200_7YORANX2",
-          "_tze200_9MJY74MP",
           "_tze200_AOCLFNXZ",
-          "_tze200_BVRLMAJK",
-          "_tze200_BVU2WNXZ",
-          "_tze200_CF1SL3TJ",
-          "_tze200_CPMGN2CF",
-          "_tze200_D3Z1UKQW",
-          "_tze200_E9BA97VF",
           "_tze200_G9A3AWAJ",
-          "_tze200_HVAXB2TC",
-          "_tze200_JKFBPH7L",
-          "_tze200_LHZAPFG9",
-          "_tze200_NW1R9HP6",
-          "_tze200_OW09XLXM",
-          "_tze200_PW7MJI0L",
-          "_tze200_PY4CM3HE",
-          "_tze200_RK1WOJCE",
-          "_tze200_RNDG81SF",
-          "_tze200_RUFDTFYV",
-          "_tze200_RV6IUYXB",
-          "_tze200_RXNTAG7I",
-          "_tze200_RXQ4ITI9",
-          "_tze200_SUXYWABT",
-          "_tze200_VEXA5O82",
           "_tze200_VIY9IHS7",
-          "_tze200_WSBFWODU",
-          "_tze200_X9AXOFSE",
-          "_tze200_YQGBRDYO",
-          "_tze200_Z1TYSPQW",
           "_tze204_0HCJEW5P",
-          "_tze204_9MJY74MP",
           "_tze204_AOCLFNXZ",
-          "_tze204_CVCU2P6E",
           "_tze204_CVUB6XBB",
           "_tze204_G9A3AWAJ",
           "_tze204_GOPS3SLB",
-          "_tze204_HVAXB2TC",
           "_tze204_LZRIUP1J",
-          "_tze204_O3X45P96",
-          "_tze204_OGX8U5Z6",
-          "_tze204_PCDMJ88B",
-          "_tze204_PW7MJI0L",
-          "_tze204_QYR2M29I",
-          "_tze204_RTRMFADK",
           "_tze204_XNBKHHDR",
           "_tze284_AOCLFNXZ",
-          "_tze284_C6WV4XYO",
           "_tze284_CVUB6XBB",
           "_tze284_GOPS3SLB",
-          "_tze284_HVAXB2TC",
-          "_tze284_IILEBQOO",
-          "_tze284_O3X45P96",
-          "_tze284_OGX8U5Z6",
-          "_tze284_PCDMJ88B",
-          "_tze284_RV6IUYXB",
           "_tze284_XNBKHHDR",
           "_tyst11_2EKUZ3DZ",
           "_tze200_9P5XMJ5R",
-          "_tze200_A4BPGPLM",
           "_tze200_EKD8X5DT",
           "_tze200_LZRIUP1J",
           "_tze200_PCDMJ88B",
@@ -243764,7 +240579,6 @@
           "_TZE200_a7sghmms",
           "_TZE200_fphxkxue",
           "_TZE200_r32ctezx",
-          "_TZE200_spyvfeti",
           "_TZE200_vuwtqx0t",
           "_TZE204_4f2wexj6",
           "_TZE204_R32CTEZX",
@@ -243789,8 +240603,6 @@
           "_TZE200_A7SGHMMS",
           "_tze200_a7sghmms",
           "_TZE200_FPHXKXUE",
-          "_TZE200_SPYVFETI",
-          "_tze200_spyvfeti",
           "_TZE200_VUWTQX0T",
           "_tze200_vuwtqx0t",
           "_TZE204_4F2WEXJ6",
@@ -243825,7 +240637,6 @@
           "_tze200_YLTIVVZB",
           "_tze200_A7SGHMMS",
           "_tze200_FPHXKXUE",
-          "_tze200_SPYVFETI",
           "_tze200_VUWTQX0T",
           "_tze204_4F2WEXJ6",
           "_tze204_R32CTEZX",

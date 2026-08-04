@@ -24,9 +24,6 @@
   "subDevices": [],
   "zigbee": {
     "manufacturerName": [
-      "Hobeian",
-      "hobeian",
-      "HOBEIAN",
       "IMMAX",
       "Immax",
       "TUYATEC-0L6XAQMI",
@@ -67,7 +64,6 @@
       "_TZ3000_au1rjicn",
       "_TZ3000_au2o5e6q",
       "_TZ3000_bmg14ax2",
-      "_TZ3000_br3laukf",
       "_TZ3000_bzxloft",
       "_TZ3000_bzxlofth",
       "_TZ3000_cea5xugq",
@@ -109,7 +105,6 @@
       "_tz3000_au2o5e6q",
       "_tz3000_b7m9qda0",
       "_tz3000_bmg14ax2",
-      "_tz3000_br3laukf",
       "_tz3000_bzxloft",
       "_tz3000_bzxloft2",
       "_tz3000_bzxlofth",
@@ -190,7 +185,6 @@
       "_TZ3000_AU1RJICN",
       "_TZ3000_AU2O5E6Q",
       "_TZ3000_BMG14AX2",
-      "_TZ3000_BR3LAUKF",
       "_TZ3000_BZXLOFT",
       "_TZ3000_BZXLOFTH",
       "_TZ3000_CEA5XUGQ",
@@ -311,7 +305,6 @@
       "_tz3000_AU1RJICN",
       "_tz3000_AU2O5E6Q",
       "_tz3000_BMG14AX2",
-      "_tz3000_BR3LAUKF",
       "_tz3000_BZXLOFT",
       "_tz3000_BZXLOFTH",
       "_tz3000_CEA5XUGQ",
@@ -682,34 +675,6 @@
         "nl": "Wissel open/gesloten om indien sensor omgekeerd rapporteert"
       },
       "value": false
-    },
-    {
-      "id": "enable_radio_sensing",
-      "type": "checkbox",
-      "label": {
-        "en": "Enable Radio Presence Sensing",
-        "fr": "Activer la Détection de Présence Radio"
-      },
-      "value": false,
-      "hint": {
-        "en": "Infer presence from Zigbee signal fluctuations (BETA)",
-        "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
-      }
-    },
-    {
-      "id": "radio_sensitivity",
-      "type": "number",
-      "label": {
-        "en": "Radio Presence Sensitivity",
-        "fr": "Sensibilité Présence Radio"
-      },
-      "value": 15,
-      "min": 5,
-      "max": 50,
-      "hint": {
-        "en": "LQI variance threshold (higher = less sensitive)",
-        "fr": "Seuil de variance LQI (plus haut = moins sensible)"
-      }
     }
   ],
   "images": {

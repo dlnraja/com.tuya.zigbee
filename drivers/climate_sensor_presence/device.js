@@ -9,6 +9,9 @@ const { UnifiedSensorBase } = require('../../lib/devices/UnifiedSensorBase');
 const SENSOR_CONFIGS = require('../../lib/data/SensorConfigs');
 const IntelligentDPAutoDiscovery = require('../../lib/helpers/IntelligentDPAutoDiscovery');
 
+// Energy capabilities get SmartDivisorManager auto-scaling unless the config sets an explicit divisor
+const ENERGY_CAPS = ['measure_power', 'meter_power', 'measure_voltage', 'measure_current'];
+
 const MANUFACTURER_CONFIG_MAP = {};
 for (const [configName, config] of Object.entries(SENSOR_CONFIGS)) {
   for (const mfr of config.sensors) {
@@ -95,8 +98,10 @@ class ClimateSensorPresenceDevice extends UnifiedSensorBase {
           }
         };
       } else if (dpConfig.cap) {
+        const isEnergy = ENERGY_CAPS.some(c => dpConfig.cap === c || dpConfig.cap.startsWith(`${c}.`));
         mappings[dp] = {
           capability: dpConfig.cap,
+          ...(isEnergy && !dpConfig.divisor ? { smartDivisor: true } : {}),
           transform: (v) => safeDivide(v, dpConfig.divisor || 1)
         };
       }

@@ -7,6 +7,14 @@ const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 const { CLUSTER } = require('zigbee-clusters');
 const { includesCI } = require('../../lib/utils/CaseInsensitiveMatcher');
 
+// Energy scaling divisors — ZCL raw attributes; Tuya-DP drivers use smartDivisor: true via SmartDivisorManager
+const ENERGY_DIVISORS = {
+  measure_power: { divisor: 10 },
+  measure_voltage: { divisor: 10 },
+  measure_current: { divisor: 1000 },
+  meter_power: { divisor: 1000 }
+};
+
 const ZCL_ONLY_MANUFACTURERS_2G = [
   '_TZ3000_l9brjwau', '_TZ3000_blhvsaqf', '_TZ3000_ysdv91bk',
   '_TZ3000_hafsqare', '_TZ3000_e98krvvk', '_TZ3000_iedbgyxt'
@@ -46,15 +54,15 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
     const elecCluster = endpoint.clusters.electricalMeasurement || endpoint.clusters.haElectricalMeasurement || endpoint.clusters[0x0B04];
     if (elecCluster && typeof elecCluster.on === 'function') {
       elecCluster.on('attr.activePower', (value) => {
-        const watts = safeMultiply(value, 10);
+        const watts = safeMultiply(value, ENERGY_DIVISORS.measure_power.divisor);
         if (this.hasCapability('measure_power')) {this.safeSetCapabilityValue('measure_power', parseFloat(watts)).catch(() => { });}
       });
       elecCluster.on('attr.rmsVoltage', (value) => {
-        const volts = safeMultiply(value, 10);
+        const volts = safeMultiply(value, ENERGY_DIVISORS.measure_voltage.divisor);
         if (this.hasCapability('measure_voltage')) {this.safeSetCapabilityValue('measure_voltage', parseFloat(volts)).catch(() => { });}
       });
       elecCluster.on('attr.rmsCurrent', (value) => {
-        const amps = value * 1000;
+        const amps = value * ENERGY_DIVISORS.measure_current.divisor;
         if (this.hasCapability('measure_current')) {this.safeSetCapabilityValue('measure_current', parseFloat(amps)).catch(() => { });}
       });
       this._readElectricalAttributes(elecCluster);
@@ -63,7 +71,7 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
     const meteringCluster = endpoint.clusters.metering || endpoint.clusters.seMetering || endpoint.clusters[0x0702];
     if (meteringCluster && typeof meteringCluster.on === 'function') {
       meteringCluster.on('attr.currentSummationDelivered', (value) => {
-        const kwh = value / 1000;
+        const kwh = value / ENERGY_DIVISORS.meter_power.divisor;
         if (this.hasCapability('meter_power')) {this.safeSetCapabilityValue('meter_power', parseFloat(kwh)).catch(() => { });}
       });
       this._readMeteringAttributes(meteringCluster);
@@ -74,13 +82,13 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
     try {
       const attrs = await cluster.readAttributes(['activePower', 'rmsVoltage', 'rmsCurrent']).catch(() => ({}));
       if (attrs.activePower != null && this.hasCapability('measure_power')) {
-        this.safeSetCapabilityValue('measure_power', safeParse(attrs.activePower, 10)).catch(() => { });
+        this.safeSetCapabilityValue('measure_power', safeParse(attrs.activePower, ENERGY_DIVISORS.measure_power.divisor)).catch(() => { });
       }
       if (attrs.rmsVoltage != null && this.hasCapability('measure_voltage')) {
-        this.safeSetCapabilityValue('measure_voltage', safeParse(attrs.rmsVoltage, 10)).catch(() => { });
+        this.safeSetCapabilityValue('measure_voltage', safeParse(attrs.rmsVoltage, ENERGY_DIVISORS.measure_voltage.divisor)).catch(() => { });
       }
       if (attrs.rmsCurrent != null && this.hasCapability('measure_current')) {
-        this.safeSetCapabilityValue('measure_current', safeParse(attrs.rmsCurrent, 1000)).catch(() => { });
+        this.safeSetCapabilityValue('measure_current', safeParse(attrs.rmsCurrent, ENERGY_DIVISORS.measure_current.divisor)).catch(() => { });
       }
     } catch (e) {
       this.log('[SWITCH-2G] Initial electrical read failed:', e.message);
@@ -91,7 +99,7 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
     try {
       const attrs = await cluster.readAttributes(['currentSummationDelivered']).catch(() => ({}));
       if (attrs.currentSummationDelivered != null && this.hasCapability('meter_power')) {
-        this.safeSetCapabilityValue('meter_power', attrs.currentSummationDelivered / 1000).catch(() => { });
+        this.safeSetCapabilityValue('meter_power', attrs.currentSummationDelivered / ENERGY_DIVISORS.meter_power.divisor).catch(() => { });
       }
     } catch (e) {
       this.log('[SWITCH-2G] Initial metering read failed:', e.message);

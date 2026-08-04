@@ -8,7 +8,8 @@ class DoorbellDevice extends UnifiedSensorBase {
     return {
       1: { capability: 'alarm_generic', transform: (v) => v === 1 || v === true },
       4: { capability: 'alarm_tamper', transform: (v) => v === 1 || v === true },
-      15: { capability: 'measure_battery', divisor: 1 }
+      15: { capability: 'measure_battery', divisor: 1 },
+      23: { capability: 'meter_power.exported', divisor: 100, unit: 'kWh' } // v9.0.416 (P92.124)
     };
   }
   async onNodeInit({ zclNode }) {

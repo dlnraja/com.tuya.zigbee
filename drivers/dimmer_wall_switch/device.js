@@ -5,6 +5,17 @@ const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 
 class DimmerWallSwitchDevice extends PhysicalButtonMixin(ZigBeeDevice) {
 
+  // v9.0.411 (P92): Energy scaling note (CI gate check-energy-divisor).
+  // This driver has no local Tuya-DP or ZCL energy code path: `measure_power`
+  // is populated by Homey's approximated energy (driver.compose.json
+  // capabilitiesOptions.measure_power "approximated": true). If ZCL energy
+  // reporting is later wired via registerCapability, homey-zigbeedriver's
+  // system capability configs (lib/system/capabilities/meter_power/metering.js,
+  // measure_power|measure_current|measure_voltage/electricalMeasurement.js)
+  // apply scaling from the device-reported multiplier/divisor attributes
+  // (metering multiplier/divisor, acPowerMultiplier/acPowerDivisor, etc.) —
+  // factor = multiplier / divisor: default 1 when unread.
+
   async onNodeInit({ zclNode }) {
     await super.onNodeInit({ zclNode });
     this.log('Dimmer Wall Switch v5.9.12 Ready');

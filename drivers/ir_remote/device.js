@@ -29,6 +29,29 @@ class IrRemoteDevice extends Homey.Device {
       });
     }
 
+    // v9.0.416 (P92.124): onoff.ir_learn — puts the ASSOCIATED blaster in
+    // learn mode straight from the virtual remote (was a dead capability).
+    if (this.hasCapability('onoff.ir_learn')) {
+      this.registerCapabilityListener('onoff.ir_learn', async (value) => {
+        try {
+          const blasterId = this.getSetting('blaster_id');
+          const blaster = this.homey.drivers.getDriver('ir_blaster').getDevices()
+            .find((d) => d.getData().id === blasterId);
+          if (!blaster) { throw new Error('Associated IR Blaster not found'); }
+          if (value) {
+            this.log('[IR] ir_learn ON → blaster learn mode (30s)');
+            await blaster._enableAdvancedLearnMode(30);
+          } else if (typeof blaster._disableLearnMode === 'function') {
+            this.log('[IR] ir_learn OFF → blaster learn mode disabled');
+            await blaster._disableLearnMode();
+          }
+        } catch (e) {
+          this.log(`[IR] ir_learn failed: ${e.message}`);
+        }
+        return true;
+      });
+    }
+
     // Volume / Channel / Temp logic based on class
     this._initializeExtraCapabilities();
   }

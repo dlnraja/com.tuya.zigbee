@@ -5,6 +5,21 @@ const UnifiedThermostatBase = require('../../lib/devices/UnifiedThermostatBase')
 class HVACDehumidifierDevice extends UnifiedThermostatBase {
   get mainsPowered() { return true; }
   get thermostatCapabilities() { return ['onoff', 'dim.humidity', 'measure_humidity']; }
+
+  /**
+   * EXTEND parent dpMappings with energy monitoring DPs
+   */
+  get dpMappings() {
+    const parentMappings = Object.getPrototypeOf(this).dpMappings || {};
+    return {
+      ...parentMappings,
+      17: { capability: 'measure_current', smartDivisor: true, unit: 'A' },
+      18: { capability: 'measure_power', smartDivisor: true, unit: 'W' },
+      19: { capability: 'measure_voltage', smartDivisor: true, unit: 'V' },
+      20: { capability: 'meter_power', smartDivisor: true, unit: 'kWh' },
+      23: { capability: 'meter_power.exported', divisor: 100, unit: 'kWh' } // v9.0.416 (P92.124): exported/solar energy (was declared, never mapped)
+    };
+  }
   async onNodeInit({ zclNode }) {
     // Auto-fix: Remove battery capabilities for mains-powered devices
     await this.removeCapability('measure_battery').catch(() => {});
