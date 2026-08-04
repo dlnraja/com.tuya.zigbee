@@ -261,7 +261,7 @@ class EnergyMonitorPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
     if (!mc.readAttributes) {return;}
     // v9.0.98: Increased from 120s to 600s — battery drain prevention
     // 120s polling on a battery device causes excessive wake-ups
-    this._meterPoll = this.homey.setInterval(async () => {
+    this._meterPoll = (this.homey && typeof this.homey.setInterval === 'function' ? this.homey : globalThis).setInterval(async () => {
       if (this._destroyed) {return;}
       try {
         const a = await mc.readAttributes(['currentSummDelivered']).catch(() => null);

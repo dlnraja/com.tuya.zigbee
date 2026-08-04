@@ -232,7 +232,7 @@ class UsbDongleDualRepeaterDevice extends PhysicalButtonMixin(ZigBeeDevice) {
     } catch (err) {
       this.error('[USB_DONGLE] Failed to configure energy reporting, will retry:', err.message);
       // Retry 1 min plus tard si le Zigbee stack n'était pas prÃªt
-      this.homey.setTimeout(() => { if (this._destroyed) {return;} this._configureEnergyReporting(zclNode); }, 60 * 1000);
+      (this.homey && typeof this.homey.setTimeout === 'function' ? this.homey : globalThis).setTimeout(() => { if (this._destroyed) {return;} this._configureEnergyReporting(zclNode); }, 60 * 1000);
     }
   }
 

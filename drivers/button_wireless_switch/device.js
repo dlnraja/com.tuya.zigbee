@@ -127,7 +127,7 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
         this._lastCommandTime = Date.now();
         this._zclState.pending[epNum] = true;
         clearTimeout(this._zclState.timeout[epNum]);
-        this._zclState.timeout[epNum] = this.homey.setTimeout(() => { if (this._destroyed) {return;} this._zclState.pending[epNum] = false; }, 2000);
+        this._zclState.timeout[epNum] = (this.homey && typeof this.homey.setTimeout === 'function' ? this.homey : globalThis).setTimeout(() => { if (this._destroyed) {return;} this._zclState.pending[epNum] = false; }, 2000);
         
         const onOff = getOnOffCluster(epNum);
         if (onOff) {

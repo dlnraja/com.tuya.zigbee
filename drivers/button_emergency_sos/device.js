@@ -328,7 +328,7 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
     // card (the SOS-specific card above stays the primary signal).
     if (this.hasCapability('button.1')) {
       await this.safeSetCapabilityValue('button.1', true).catch(() => { });
-      this.homey.setTimeout(async () => {
+      (this.homey && typeof this.homey.setTimeout === 'function' ? this.homey : globalThis).setTimeout(async () => {
         if (this._destroyed) {return;}
         await this.safeSetCapabilityValue('button.1', false).catch(() => { });
       }, 500);
@@ -341,7 +341,7 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
 
     // Auto-reset
     if (this._resetTimeout) {this.homey.clearTimeout(this._resetTimeout);}
-    this._resetTimeout = this.homey.setTimeout(async () => {
+    this._resetTimeout = (this.homey && typeof this.homey.setTimeout === 'function' ? this.homey : globalThis).setTimeout(async () => {
       if (this._destroyed) {return;}
       await this.safeSetCapabilityValue('alarm_generic', false).catch(() => { });
       this.log('[SOS] alarm_generic reset');
@@ -414,7 +414,7 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
     try {
       const result = await Promise.race([
         powerCfg.readAttributes(['batteryPercentageRemaining', 'batteryVoltage']),
-        new Promise((_, r) => this.homey.setTimeout(() => { if (this._destroyed) {return;} r(new Error('Timeout')); }, 1500))
+        new Promise((_, r) => (this.homey && typeof this.homey.setTimeout === 'function' ? this.homey : globalThis).setTimeout(() => { if (this._destroyed) {return;} r(new Error('Timeout')); }, 1500))
       ]).catch(() => ({}));
 
       if (result.batteryPercentageRemaining !== undefined) {this._updateBattery(result.batteryPercentageRemaining, 'percentage');}
@@ -429,7 +429,7 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
    */
   _setupHeartbeatMonitor() {
     this._lastActivity = Date.now();
-    this._heartbeatInterval = this.homey.setInterval(() => {
+    this._heartbeatInterval = (this.homey && typeof this.homey.setInterval === 'function' ? this.homey : globalThis).setInterval(() => {
       if (this._destroyed) {return;}
       const hours = (Date.now() - this._lastActivity) / (1000 * 60 * 60);
       if (hours > 24) {
