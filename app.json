@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "9.0.419",
+  "version": "9.0.420",
   "compatibility": ">=12.2.0",
   "platforms": [
     "local"
@@ -141454,7 +141454,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/christmas_lights/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Push the F button on the Christmas Lights controller for aprox 5-10 seconds and release, lights should start to flash slowly."
           }
@@ -151466,7 +151466,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/curtain_module/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press the setup button for 10 seconds or power on/off 5 times to enter pairing mode (the LED should blink / device starts beeping)."
           }
@@ -151644,7 +151644,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/curtain_module_2_gang/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press the setup button for 10 seconds or power on/off 5 times to enter pairing mode (the LED should blink / device starts beeping)."
           }
@@ -152137,7 +152137,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/curtain_motor/assets/learnmode.svg",
+          "image": "{{driverAssetsPath}}/learnmode.svg",
           "instruction": {
             "en": "Follow the pairing instructions for your Smart Curtain Motor."
           }
@@ -152375,7 +152375,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/curtain_motor_shutter/assets/learnmode.svg",
+          "image": "{{driverAssetsPath}}/learnmode.svg",
           "instruction": {
             "en": "Follow the pairing instructions for your Smart Curtain Motor."
           }
@@ -153154,7 +153154,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/curtain_motor_wall/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Follow the pairing instructions for your Smart Curtain Motor."
           }
@@ -163160,7 +163160,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/dimmable_led_strip/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Power on to enter pairing mode."
           }
@@ -163236,7 +163236,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/dimmable_recessed_led/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Power on to enter pairing mode."
           }
@@ -163523,7 +163523,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/dimmer_1_gang/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode (the LED should blink green)."
           }
@@ -163613,7 +163613,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/dimmer_1_gang_2/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode (the LED should blink green)."
           }
@@ -163717,7 +163717,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/dimmer_1_gang_tuya/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press the reset switch rapidly 10 times until the unit make a continously beep sound to enter pairing mode."
           }
@@ -163878,7 +163878,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/dimmer_2_gang/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Two tiles will be created, one for each channel of the device. Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode (the LED should blink green)."
           }
@@ -164045,7 +164045,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/dimmer_2_gang_tuya/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Two tiles will be created, one for each channel of the device. Press the reset switch rapidly 10 times until the unit make a continously beep sound to enter pairing mode."
           }
@@ -169021,7 +169021,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/door_sensor/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the reset button for 5 seconds until the LED flashes.",
             "fr": "Maintenez le bouton de réinitialisation pendant 5 secondes jusqu'à ce que la LED clignote.",
@@ -169511,7 +169511,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/doorwindowsensor/assets/learn.svg",
+          "image": "{{driverAssetsPath}}/learn.svg",
           "instruction": {
             "en": "Insert a pin into the single hole on the side of the device and press it gently for aprox 10 seconds until the LED blinks rapidly."
           }
@@ -169588,7 +169588,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/doorwindowsensor_2/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Open the device and press the reset button gently for aprox 10 seconds until the LED blinks rapidly."
           }
@@ -169697,7 +169697,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/doorwindowsensor_3/assets/learn.svg",
+          "image": "{{driverAssetsPath}}/learn.svg",
           "instruction": {
             "en": "Insert a pin into the single hole on the side of the device and press it gently for aprox 10 seconds until the LED blinks rapidly."
           }
@@ -169795,7 +169795,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/doorwindowsensor_4/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Insert a pin into the single hole on the side of the device and press it gently for aprox 7 seconds until the LED blinks slowly."
           }
@@ -170511,7 +170511,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/fingerbot/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press the setup button inside the Finger Bot for approx 10 seconds to enter pairing mode."
           }
@@ -171562,7 +171562,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/flood_sensor/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Push the button for aprox 10 seconds until the LED blinks rapidly. If nothing happens; put two fingers against the detectors and repeat."
           }
@@ -175279,7 +175279,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/handheld_remote_4_buttons/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press the top button for aprox 10 seconds (Zigbee logo will start blinking)."
           }
@@ -185058,7 +185058,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/motion_sensor_2/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press the reset button for aprox 5 seconds until the LED blinks."
           }
@@ -186903,7 +186903,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/pir_mmwave_sensor/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press the reset button for aprox 5 seconds until the LED blinks."
           }
@@ -187121,7 +187121,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/pir_sensor_2/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press the reset button for aprox 5 seconds until the LED blinks."
           }
@@ -187205,7 +187205,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/pirsensor/assets/learn.svg",
+          "image": "{{driverAssetsPath}}/learn.svg",
           "instruction": {
             "en": "Insert a pin into the single hole on the side of the device and press it gently for aprox 10 seconds until the LED blinks rapidly."
           }
@@ -191697,7 +191697,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/radar_sensor/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the reset button for 6 seconds. When the indicator light flashes it is in pairing mode.",
             "nl": "Druk 6 seconden op de reset knop. Wacht tot de led gaat knipperen."
@@ -191856,7 +191856,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/radar_sensor_2/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the reset button for 6 seconds. When the indicator light flashes it is in pairing mode.",
             "nl": "Druk 6 seconden op de reset knop. Wacht tot de led gaat knipperen."
@@ -192061,7 +192061,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/radar_sensor_ceiling/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press and hold the reset button for 5 seconds. When the indicator light flashes it is in pairing mode."
           }
@@ -192163,7 +192163,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/radiator_controller/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Turn the switch on/off 3 times quickly",
             "fr": "Allumer/éteindre l'interrupteur 3 fois rapidement"
@@ -193965,7 +193965,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/relay_board_1_channel/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press the setup button combined with 1 channel button for 10 seconds (the LED should blink green)."
           }
@@ -194070,7 +194070,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/relay_board_2_channel/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Two tiles will be created, one for each channel of the device. Press the setup button combined with 1 channel button for 10 seconds (the LED should blink green)."
           }
@@ -194211,7 +194211,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/relay_board_4_channel/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Four tiles will be created, one for each channel of the device. Press the setup button combined with 1 channel button for 10 seconds (the LED should blink blue)."
           }
@@ -194324,7 +194324,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/remote_button_emergency_sos/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Push a pin gently into the reset hole on the backside of the unit for aprox 10 seconds until the led on the front blinks rapidly.",
             "fr": "Appuyez doucement avec un stylet dans le trou de réinitialisation sur l'arrière de l'unité pendant environ 10 secondes jusqu'à ce que la LED clignote rapidement."
@@ -198573,7 +198573,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/rgb_bulb_E14/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Power on to enter pairing mode."
           }
@@ -198667,7 +198667,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/rgb_bulb_E27/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Power on to enter pairing mode."
           }
@@ -198748,7 +198748,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/rgb_ceiling_led_light/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Power on to enter pairing mode."
           }
@@ -198829,7 +198829,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/rgb_floor_led_light/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Power on to enter pairing mode."
           }
@@ -198911,7 +198911,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/rgb_led_light_bar/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Power on to enter pairing mode."
           }
@@ -199000,7 +199000,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/rgb_led_strip/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Power on to enter pairing mode."
           }
@@ -199095,7 +199095,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/rgb_led_strip_controller/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press the setup button for 10 seconds to enter pairing mode (the LED should blink green)."
           }
@@ -199177,7 +199177,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/rgb_mood_light/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Power on to enter pairing mode."
           }
@@ -199262,7 +199262,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/rgb_spot_GU10/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Power on to enter pairing mode."
           }
@@ -199343,7 +199343,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/rgb_spot_GardenLight/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Power on to enter pairing mode."
           }
@@ -199428,7 +199428,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/rgb_wall_led_light/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Power on to enter pairing mode."
           }
@@ -212384,7 +212384,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/slim_motion_sensor/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press the reset button for aprox 5 seconds until the LED blinks."
           }
@@ -212697,7 +212697,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/smart_air_detection_box/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press the RESET pinhole on the side of the unit for 5 seconds until LED blinks."
           }
@@ -212905,7 +212905,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/smart_button_switch/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press the button for aprox 10 seconds (the LED should start blinking)."
           }
@@ -213051,7 +213051,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/smart_door_window_sensor/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Insert a pin into the single hole on the side of the device and press it gently for aprox 5 seconds until the LED blinks rapidly. If the pairing does not start, press the setup button again for 10-15 seconds until the led stops blinking and then try again."
           }
@@ -213166,7 +213166,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/smart_garden_irrigation_control/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Ensure the indicator light is flashing. If the indicator light isn't flashing: press and hold on/off buttons for 5 seconds until the indicator light starts to flashing.",
             "it": "Accertarsi che la spia lampeggi. Se la spia non lampeggia: tenere premuti i pulsanti di accensione/spegnimento per 5 secondi finché la spia non inizia a lampeggiare"
@@ -214009,7 +214009,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/smart_knob_switch/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press the side button for aprox 10 seconds (LED should start blinking).",
             "sv": "Håll ned sidoknappen ca 10 sekunder (LED-lampan ska börja blinka)."
@@ -214243,7 +214243,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/smart_motion_sensor/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Insert a pin into the single hole on the side of the device and press it gently for aprox 5 seconds until the LED blinks rapidly. If the pairing does not start, press the setup button again for 10-15 seconds until the led stops blinking and then try again."
           }
@@ -214431,7 +214431,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/smart_remote_1_button/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press the reset button for aprox 10 seconds (the LED should start blinking)."
           }
@@ -214530,7 +214530,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/smart_remote_1_button_2/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press the reset button for aprox 10 seconds (the LED should start blinking)."
           }
@@ -214634,7 +214634,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/smart_remote_4_buttons/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Push a pin gently into the reset hole on the backside of the unit for aprox 10 seconds until the led on the front blinks rapidly."
           }
@@ -214994,7 +214994,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/smart_switch/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press the setup button for approx 10 seconds to enter pairing mode (the LED should blink)."
           }
@@ -216086,7 +216086,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/smoke_sensor2/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press the RESET pinhole on the side of the unit for 5 seconds until LED blinks."
           }
@@ -216208,7 +216208,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/smoke_sensor3/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press the RESET pinhole on the side of the unit for 5 seconds until LED blinks."
           }
@@ -217475,7 +217475,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/soilsensor/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Hold the button for 5 seconds, the button will blink.",
             "nl": "Houd de knop 5 seconden ingedrukt, het knop zal knipperen."
@@ -217549,7 +217549,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/soilsensor_2/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Hold the button for 5 seconds, the button will blink.",
             "nl": "Houd de knop 5 seconden ingedrukt, het knop zal knipperen."
@@ -218458,7 +218458,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/switch_1_gang/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode (the LED should blink green)."
           }
@@ -218572,7 +218572,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/switch_1_gang_metering/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode (the LED should blink green)."
           }
@@ -221402,7 +221402,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/switch_2_gang/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Two tiles will be created, one for each channel of the device. Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode (the LED should blink green)."
           }
@@ -221558,7 +221558,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/switch_2_gang_metering/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Two tiles will be created, one for each channel of the device. Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode (the LED should blink green)."
           }
@@ -222638,7 +222638,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/switch_3_gang/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Three tiles will be created, one for each channel of the device. Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode (the LED should blink green)."
           }
@@ -223774,7 +223774,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/switch_4_gang_metering/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Four tiles will be created, one for each channel of the device. Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode (the LED should blink green)."
           }
@@ -230131,7 +230131,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/temphumidsensor2/assets/learn.svg",
+          "image": "{{driverAssetsPath}}/learn.svg",
           "instruction": {
             "en": "Insert a pin into the single hole on the side of the device and press it gently for aprox 10 seconds until the LED blinks rapidly."
           }
@@ -231323,7 +231323,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/thermostatic_radiator_valve/assets/images/moes_zigbee_3_pair.png",
+          "image": "{{driverAssetsPath}}/images/moes_zigbee_3_pair.png",
           "instruction": {
             "en": "Press 'Pair' button for 5 seconds until antenna symbol starts to blink."
           }
@@ -231717,7 +231717,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/tunable_bulb_E14/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Power on to enter pairing mode."
           }
@@ -231800,7 +231800,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/tunable_bulb_E27/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Power on to enter pairing mode."
           }
@@ -231880,7 +231880,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/tunable_spot_GU10/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Power on to enter pairing mode."
           }
@@ -234442,7 +234442,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/valvecontroller/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode (the LED should blink green)."
           }
@@ -234882,7 +234882,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/wall_curtain_switch/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Power on/off 5 times to enter pairing mode (the LED should blink / device starts beeping) or press the Pause-button 5sec until Open-button blinks."
           }
@@ -235801,7 +235801,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/wall_dimmer_tuya/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode (the LED should blink green)."
           }
@@ -235862,7 +235862,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/wall_remote_1_gang/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press the button for aprox 10 seconds (the LED should start blinking)."
           }
@@ -235980,7 +235980,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/wall_remote_2_gang/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press any button for approx 10 seconds (the LED should start blinking)."
           }
@@ -236098,7 +236098,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/wall_remote_3_gang/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press the left button for aprox 10 seconds (the LED should start blinking)."
           }
@@ -236238,7 +236238,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/wall_remote_4_gang/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press the lower left button for aprox 10 seconds (all LED should start blinking)."
           }
@@ -236410,7 +236410,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/wall_remote_4_gang_2/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press the lower left button for aprox 10 seconds (all LED should start blinking)."
           }
@@ -236562,7 +236562,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/wall_remote_4_gang_3/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press the lower left button for aprox 10 seconds (all LED should start blinking)."
           }
@@ -236720,7 +236720,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/wall_remote_6_gang/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press pair button for aprox 10 seconds."
           }
@@ -237110,7 +237110,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/wall_switch_1_gang/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press the button for 7 seconds (until LED starts blinking)."
           }
@@ -237238,7 +237238,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/wall_switch_1_gang_tuya/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Switch the unit on and off five times and then hold for 5 seconds to enter pairing mode (the LED should flash red and blue)."
           }
@@ -237515,7 +237515,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/wall_switch_2_gang/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "A tile for each button will be created. Remove the front and press the setup button for 10 seconds (the LED should start blinking)."
           }
@@ -238024,7 +238024,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/wall_switch_3_gang/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "A tile for each button will be created. Remove the front and press the setup button for 10 seconds (the LED should start blinking)."
           }
@@ -238630,7 +238630,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/wall_switch_4_gang/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "A tile for each button will be created. Press the first button (or the setup button if one exists) for 10 seconds (the LED should start blinking)."
           }
@@ -238806,7 +238806,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/wall_switch_4_gang_tuya/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Four tiles will be created, one for each channel of the device. Switch the unit on and off five times and hold for 5 seconds to enter pairing mode (the LED should flash red and blue)."
           }
@@ -239432,7 +239432,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/wall_switch_5_gang_tuya/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Five tiles will be created, one for each channel of the device. Switch the unit on and off five times and hold for 5 seconds to enter pairing mode (the LED should flash red and blue)."
           }
@@ -239659,7 +239659,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/wall_switch_6_gang_tuya/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Six tiles will be created, one for each channel of the device. Switch the unit on and off five times and hold for 5 seconds to enter pairing mode (the LED should flash red and blue)."
           }
@@ -239871,7 +239871,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/wall_thermostat/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Press the arrow down button for 8s when the thermostat is off."
           }
@@ -239972,7 +239972,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/water_detector/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Push the button for aprox 10 seconds until the LED blinks rapidly. If nothing happens; put two fingers against the detectors and repeat."
           }
@@ -240663,7 +240663,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/water_leak_sensor_tuya/assets/icon.svg",
+          "image": "{{driverAssetsPath}}/icon.svg",
           "instruction": {
             "en": "Push the button for aprox 10 seconds until the LED blinks rapidly. If nothing happens; put two fingers against the detectors and repeat."
           }
