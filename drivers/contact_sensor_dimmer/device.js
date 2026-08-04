@@ -1,4 +1,6 @@
 'use strict';
+const { attachTamperListener } = require('../../lib/devices/DoorWindowContactHelper');
+
 const ZclBatteryMonitor = require('../../lib/battery/ZclBatteryMonitor');
 const { safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
 const { ZigBeeDevice } = require('homey-zigbeedriver');
@@ -7,6 +9,8 @@ class ContactSensorDimmerDevice extends ZigBeeDevice {
   async onNodeInit({ zclNode }) {
     ZclBatteryMonitor.attach(this, zclNode);
     await super.onNodeInit({ zclNode });
+    // v5.12.59 (P92.126): tamper bit was never fed on this hybrid
+    try { attachTamperListener(this, zclNode); } catch (e) { this.log('[TAMPER] ⚠️ ' + e.message); }
     this.log('Contact Sensor Dimmer v5.9.12 Ready');
   }
 
@@ -36,17 +40,17 @@ class ContactSensorDimmerDevice extends ZigBeeDevice {
   }
 
   async _handleButtonPress(value) {
-    if (this._destroyed) return;
+    if (this._destroyed) {return;}
     this.log(`[CONTACT] Button pressed: ${value}`);
     try {
       await this._safeSetCapability('button', true).catch(() => { });
       this.homey.setTimeout(() => {
-        if (this._destroyed) return;
+        if (this._destroyed) {return;}
         this._safeSetCapability('button', false).catch(() => { });
       }, 500);
 
       const triggerCard = (() => {
-        try { return this.homey.flow.getDeviceTriggerCard('contact_button_pressed'); }
+        try { return this.homey.flow.getDeviceTriggerCard('contact_sensor_dimmer_button_pressed'); }
         catch (e) { return null; }
       })();
       

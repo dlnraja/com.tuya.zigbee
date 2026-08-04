@@ -1,4 +1,6 @@
 'use strict';
+const { attachTamperListener } = require('../../lib/devices/DoorWindowContactHelper');
+
 const { safeDivide, safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
 const UnifiedThermostatBase = require('../../lib/devices/UnifiedThermostatBase');
 
@@ -17,7 +19,7 @@ class HVACDehumidifierDevice extends UnifiedThermostatBase {
       18: { capability: 'measure_power', smartDivisor: true, unit: 'W' },
       19: { capability: 'measure_voltage', smartDivisor: true, unit: 'V' },
       20: { capability: 'meter_power', smartDivisor: true, unit: 'kWh' },
-      23: { capability: 'meter_power.exported', divisor: 100, unit: 'kWh' } // v5.12.56 (P92.124): exported/solar energy (was declared, never mapped)
+      23: { capability: 'meter_power.exported', divisor: 100, unit: 'kWh' } // v9.0.416 (P92.124): exported/solar energy (was declared, never mapped)
     };
   }
   async onNodeInit({ zclNode }) {
@@ -100,7 +102,9 @@ class HVACDehumidifierDevice extends UnifiedThermostatBase {
       this.log('Attribute reporting config failed (device may not support it):', err.message);
     }
 
-    await super.onNodeInit({ zclNode });this.log('[DEHUMIDIFIER]  Ready');
+    await super.onNodeInit({ zclNode });
+    // v5.12.59 (P92.126): tamper bit was never fed on this hybrid
+    try { attachTamperListener(this, zclNode); } catch (e) { this.log('[TAMPER] ⚠️ ' + e.message); }this.log('[DEHUMIDIFIER]  Ready');
   }
 
 

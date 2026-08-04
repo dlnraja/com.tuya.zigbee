@@ -704,5 +704,8 @@
     "// PID-CONFLICT-NOTE S60ZBTPG shared with 4 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
     "// PID-CONFLICT-NOTE S31 Lite zb shared with 4 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
     "// PID-CONFLICT-NOTE S40LITE shared with 4 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-  ]
+  ],
+  "ui": {
+    "quickAction": "onoff"
+  }
 }

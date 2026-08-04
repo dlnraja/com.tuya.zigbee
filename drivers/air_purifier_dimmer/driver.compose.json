@@ -374,5 +374,8 @@
       "catchall": true,
       "reason": "Fallback for unmatched devices with PIDs: TS0601"
     }
+  },
+  "ui": {
+    "quickAction": "onoff"
   }
 }

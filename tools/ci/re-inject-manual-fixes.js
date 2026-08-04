@@ -40,6 +40,7 @@ const fs = require('fs');
 const path = require('path');
 
 const ROOT = path.resolve(__dirname, '..', '..');
+const { claimedElsewhere } = require('../../scripts/lib/fp-collision-guard');
 
 const MANUAL_FIXES = [
   {
@@ -133,6 +134,211 @@ const MANUAL_FIXES = [
     addAtTop: true,
     source: 'p75.31-p61-restored',
   },
+  // P80: 685 missing mfrs from issue #439 auto-scan - go to generic_tuya
+  // The auto-publish bot often reverts mfr additions on driver.compose.json
+  // We re-add them here. The set is large but stable (it comes from issue body).
+  // Use a marker: if at least one of the new mfrs is present, treat as complete.
+  {
+    id: 'p80-issue-439-generic-tuya-fps',
+    file: 'drivers/generic_tuya/driver.compose.json',
+    description: 'P80: 685 mfrs from issue #439 (Zigbee2MQTT auto-scan, 2026-07-01)',
+    match: (mfrs) => mfrs.includes('_TYST11_fzo2pocs') && mfrs.includes('_TZE200_2hf7x9n3'),
+    addIfMissing: [
+      // Sample marker - the real bulk apply is via apply-issue-439-fps.js
+      // We only add 2 anchor mfrs to detect if the bot reverted. The full
+      // set is too large to put in this file. Re-run apply-issue-439-fps.js
+      // if these are missing.
+      '_TYST11_fzo2pocs', '_TZE200_2hf7x9n3',
+    ],
+    addAtTop: false,
+    source: 'p80-issue-439',
+  },
+  // P80: PR #512 orphan drivers - 7 drivers enriched (P80.5 v7 also covers more)
+  {
+    id: 'p80-orphan-device-radiator-valve-smart',
+    file: 'drivers/device_radiator_valve_smart/driver.compose.json',
+    description: 'P80: thermostat mfrs (Avatto, Beca, Moes TRV family) for HOBEIAN/TS0601',
+    match: (mfrs) => mfrs.includes('_TZE200_BVU2WNXZ'),
+    addIfMissing: ['_TZE200_BVU2WNXZ', '_TZE200_HVAXB2TC', '_TZE200_AOCLFNXZ', '_TZE200_B6WAX7G0', '_TZE200_2EKUZ3DZ'],
+    addAtTop: false,
+    source: 'p80-orphan',
+  },
+  {
+    id: 'p80-orphan-switch-2-gang',
+    file: 'drivers/switch_2_gang/driver.compose.json',
+    description: 'P80: switch_2_gang mfrs (socket orphan, TS0002/TS0003/TS0012/TS0013/TS011F)',
+    match: (mfrs) => mfrs.includes('_TYZB01_ANEIICMQ'),
+    addIfMissing: ['_TYZB01_ANEIICMQ', '_TYZB01_ZSL6Z0PW', '_TYZB01_NCUTBJDI', '_TZ3000_v4l4b0lp', '_TZ3000_f09j9qjb'],
+    addAtTop: false,
+    source: 'p80-orphan',
+  },
+  {
+    id: 'p80-orphan-switch-wireless',
+    file: 'drivers/switch_wireless/driver.compose.json',
+    description: 'P80: switch_wireless mfrs (sensor orphan, TS0215A/TS0601)',
+    match: (mfrs) => mfrs.includes('_TZE200_LGSTEPHA'),
+    addIfMissing: ['_TZE200_LGSTEPHA', '_TZE200_KAGKGK0I', '_TZE200_I0B1DBQU', '_TZE200_RJXQSO4A', '_TZE200_IKVNCLUO'],
+    addAtTop: false,
+    source: 'p80-orphan',
+  },
+  {
+    id: 'p80-orphan-temphumidsensor5',
+    file: 'drivers/temphumidsensor5/driver.compose.json',
+    description: 'P80: temphumidsensor5 mfrs (sensor orphan, TY0201/SNTZ003/TS0201)',
+    match: (mfrs) => mfrs.includes('_TYZB01_HJSGDKFL'),
+    addIfMissing: ['_TYZB01_HJSGDKFL', '_TYZB01_UJFK3XD9'],
+    addAtTop: false,
+    source: 'p80-orphan',
+  },
+  {
+    id: 'p80-orphan-valvecontroller',
+    file: 'drivers/valvecontroller/driver.compose.json',
+    description: 'P80: valvecontroller mfrs (other class orphan, TS0001/TS0111/TS011F)',
+    match: (mfrs) => mfrs.includes('_TYZB01_4TLKSK8A'),
+    // P92.99: _TZE200_BXOO2SWD retiré — c'est un dimmer (dimmer_2_gang), pas une valve
+    addIfMissing: ['_TYZB01_4TLKSK8A', '_TZ3000_hyarhbyx', '_TZ3000_gjrubzje', '_TZ3000_wpueorev'],
+    addAtTop: false,
+    source: 'p80-orphan',
+  },
+  {
+    id: 'p80-orphan-wall-switch-5-gang-tuya',
+    file: 'drivers/wall_switch_5_gang_tuya/driver.compose.json',
+    description: 'P80: wall_switch_5_gang_tuya mfrs (socket orphan, TS0011/ZBMINI/etc.)',
+    match: (mfrs) => mfrs.includes('_TZE200_7TDTQGWV'),
+    // P92.99: _TZE200_3P5YDOS3 retiré — dimmer BSEED (wall_dimmer_tuya), pas un 5-gang
+    addIfMissing: ['_TZE200_7TDTQGWV', '_TYZB01_QEQVMVTI', '_TZ3000_aetquff4', '_TZ3000_hafsqare'],
+    addAtTop: false,
+    source: 'p80-orphan',
+  },
+  {
+    id: 'p80-orphan-flood-sensor',
+    file: 'drivers/flood_sensor/driver.compose.json',
+    description: 'P80: flood_sensor mfr (sensor orphan, TS0207/RH3001)',
+    match: (mfrs) => mfrs.includes('_TZ3000_baeiitad'),
+    addIfMissing: ['_TZ3000_baeiitad'],
+    addAtTop: false,
+    source: 'p80-orphan',
+  },
+  // P80.5: enrich-orphan-drivers.js v7 - 3 more drivers covered
+  {
+    id: 'p80.5-orphan-led-controller-rgb',
+    file: 'drivers/led_controller_rgb/driver.compose.json',
+    description: 'P80.5: led_controller_rgb mfr (light orphan, TS0503/TS0504)',
+    match: (mfrs) => mfrs.includes('_TZ3000_iystcadi'),
+    addIfMissing: ['_TZ3000_iystcadi'],
+    addAtTop: false,
+    source: 'p80.5-orphan',
+  },
+  {
+    id: 'p80.5-orphan-relay-board-4-channel',
+    file: 'drivers/relay_board_4_channel/driver.compose.json',
+    description: 'P80.5: relay_board_4_channel mfrs (socket orphan, TS0004)',
+    match: (mfrs) => mfrs.includes('_TZ3000_imaccztn'),
+    addIfMissing: ['_TZ3000_imaccztn', '_TZ3000_u3oupgdy'],
+    addAtTop: false,
+    source: 'p80.5-orphan',
+  },
+  // P92.99: entrée p80.5-switch-usb-dongle SUPPRIMÉE — ses 4 mfrs étaient des
+  // imports heuristiques erronés (switch_2gang/switch_3gang/dimmer_2_gang),
+  // sources des collisions TS011F du gate validate. Ne pas réintroduire.
+  // P92.91: 9 SOS buttons TS0215A mis-routed to dimmer_wall_1gang by auto-import
+  {
+    id: 'p92.91-sos-ts0215a-emergency',
+    file: 'drivers/button_emergency_sos/driver.compose.json',
+    description: 'P92.91: 9 SOS TS0215A (Peter #2118) — re-routed from dimmer_wall_1gang',
+    match: (mfrs) => mfrs.includes('_TZ3000_4fsgukof'),
+    addIfMissing: [
+      '_TZ3000_4fsgukof', '_TZ3000_wr2ucaj9', '_TZ3000_zsh6uat3',
+      '_TZ3000_tj4pwzzm', '_TZ3000_2izubafb', '_TZ3000_pkfazisv',
+      '_TZ3000_ssp0maqm', '_TZ3000_p3fph1go', '_TZ3000_9r5jaajv',
+    ],
+    addAtTop: false,
+    source: 'p92.91-forum-2118',
+  },
+  // P92.96: TS0042 2-button remote mis-routed to blaster_remote (IR!)
+  {
+    id: 'p92.96-tzvbimpq-button-wireless-2',
+    file: 'drivers/button_wireless_2/driver.compose.json',
+    description: 'P92.96: _TZ3000_tzvbimpq TS0042 (FrankP #1689/#1745) — re-routed from blaster_remote',
+    match: (mfrs) => mfrs.includes('_TZ3000_tzvbimpq'),
+    addIfMissing: ['_TZ3000_tzvbimpq', '_TZ3000_TZVBIMPQ', '_tz3000_tzvbimpq', '_tz3000_TZVBIMPQ'],
+    addAtTop: false,
+    source: 'p92.96-forum-1689',
+  },
+  // P92.95: Moes TS0044 4-button remote (Jocke #2098/#2104)
+  {
+    id: 'p92.95-kfu8zapd-button-wireless-4',
+    file: 'drivers/button_wireless_4/driver.compose.json',
+    description: 'P92.95: _TZ3000_kfu8zapd TS0044 Moes remote (Jocke #2098)',
+    match: (mfrs) => mfrs.includes('_TZ3000_kfu8zapd'),
+    addIfMissing: ['_TZ3000_kfu8zapd', '_TZ3000_KFU8ZAPD', '_tz3000_kfu8zapd', '_tz3000_KFU8ZAPD'],
+    addAtTop: false,
+    source: 'p92.95-forum-2098',
+  },
+  // P92.91: issue #514 — 8 new z2m devices (anchors per driver)
+  {
+    id: 'p92.91-issue-514-button-wireless-4',
+    file: 'drivers/button_wireless_4/driver.compose.json',
+    description: 'P92.91 #514: _TZ3000_xffhmvhv (Nobø SWS-IZ TS004F)',
+    match: (mfrs) => mfrs.includes('_TZ3000_xffhmvhv'),
+    addIfMissing: ['_TZ3000_xffhmvhv', '_TZ3000_XFFHMVHV', '_tz3000_xffhmvhv', '_tz3000_XFFHMVHV'],
+    addAtTop: false,
+    source: 'p92.91-issue-514',
+  },
+  {
+    id: 'p92.91-issue-514-switch-usb-dongle',
+    file: 'drivers/switch_usb_dongle/driver.compose.json',
+    description: 'P92.91 #514: _TZ3210_lqb7lcq9 (Nova Digital SA-WK TS011F)',
+    match: (mfrs) => mfrs.includes('_TZ3210_lqb7lcq9'),
+    addIfMissing: ['_TZ3210_lqb7lcq9', '_TZ3210_LQB7LCQ9', '_tz3210_lqb7lcq9', '_tz3210_LQB7LCQ9'],
+    addAtTop: false,
+    source: 'p92.91-issue-514',
+  },
+  {
+    id: 'p92.91-issue-514-wall-thermostat',
+    file: 'drivers/wall_thermostat/driver.compose.json',
+    description: 'P92.91 #514: Beca BAC-001 + BHT-209-GCZB thermostats',
+    match: (mfrs) => mfrs.includes('_TZE204_hpkusvom'),
+    addIfMissing: ['_TZE204_hpkusvom', '_TZE284_4cgmagba'],
+    addAtTop: false,
+    source: 'p92.91-issue-514',
+  },
+  {
+    id: 'p92.91-issue-514-switch-3gang',
+    file: 'drivers/switch_3gang/driver.compose.json',
+    description: 'P92.91 #514: _TZE284_exfilann (Nova Digital TO-WK-2W/B)',
+    match: (mfrs) => mfrs.includes('_TZE284_exfilann'),
+    addIfMissing: ['_TZE284_exfilann', '_TZE284_EXFILANN', '_tze284_exfilann', '_tze284_EXFILANN'],
+    addAtTop: false,
+    source: 'p92.91-issue-514',
+  },
+  {
+    id: 'p92.91-issue-514-curtain-motor',
+    file: 'drivers/curtain_motor/driver.compose.json',
+    description: 'P92.91 #514: _TZE284_n73badib (Nova Digital ZBCMR-02)',
+    match: (mfrs) => mfrs.includes('_TZE284_n73badib'),
+    addIfMissing: ['_TZE284_n73badib', '_TZE284_N73BADIB', '_tze284_n73badib', '_tze284_N73BADIB'],
+    addAtTop: false,
+    source: 'p92.91-issue-514',
+  },
+  {
+    id: 'p92.91-issue-514-smoke-sensor',
+    file: 'drivers/smoke_sensor/driver.compose.json',
+    description: 'P92.91 #514: _TZE284_qvzsq3s2 (Tuya PA-44Z smoke)',
+    match: (mfrs) => mfrs.includes('_TZE284_qvzsq3s2'),
+    addIfMissing: ['_TZE284_qvzsq3s2', '_TZE284_QVZSQ3S2', '_tze284_qvzsq3s2', '_tze284_QVZSQ3S2'],
+    addAtTop: false,
+    source: 'p92.91-issue-514',
+  },
+  {
+    id: 'p92.91-issue-514-climate-sensor',
+    file: 'drivers/climate_sensor/driver.compose.json',
+    description: 'P92.91 #514: _TZE284_rjjsib2d (Novato ZSN-03P)',
+    match: (mfrs) => mfrs.includes('_TZE284_rjjsib2d'),
+    addIfMissing: ['_TZE284_rjjsib2d', '_TZE284_RJJSIB2D', '_tze284_rjjsib2d', '_tze284_RJJSIB2D'],
+    addAtTop: false,
+    source: 'p92.91-issue-514',
+  },
 ];
 
 function patchFix(fix) {
@@ -148,11 +354,23 @@ function patchFix(fix) {
     return false;
   }
   const mfrs = j.zigbee.manufacturerName;
+  const targetDriver = path.basename(path.dirname(fp));
+  // P92.126 collision guard: skip mfrs another driver already claims
+  // (HOBEIAN exempt — multi-driver by design, see fp-collision-guard.js)
+  const guarded = fix.addIfMissing.filter(m => {
+    if (mfrs.some(x => x.toLowerCase() === m.toLowerCase())) return false; // already here (any case)
+    const owner = claimedElsewhere(ROOT, m, targetDriver);
+    if (owner) {
+      console.log(`  ~ ${fix.id}: skip ${m} — already claimed by ${owner}`);
+      return false;
+    }
+    return true;
+  });
   // P75.26: do NOT short-circuit on match() — the auto-fix-all bot can leave
   // the anchor mfr while removing siblings. We must always check addIfMissing.
   // Add missing fingerprints
   let added = 0;
-  for (const fp of fix.addIfMissing) {
+  for (const fp of guarded) {
     if (!mfrs.includes(fp)) {
       if (fix.addAtTop) {
         mfrs.unshift(fp);

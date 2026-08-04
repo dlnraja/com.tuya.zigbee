@@ -654,5 +654,8 @@
     "actions": []
   },
   "id": "device_air_purifier_presence",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "ui": {
+    "quickAction": "onoff"
+  }
 }

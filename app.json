@@ -121743,7 +121743,10 @@
       "_pidConflictNotes": [
         "// PID-CONFLICT-NOTE TS0201 shared with 18 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE TS0601_air_purifier shared with 3 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -121851,6 +121854,9 @@
           "_hybrid_air_purifier_climate_needs_device_assignment",
           "_HYBRID_AIR_PURIFIER_CLIMATE_NEEDS_DEVICE_ASSIGNMENT"
         ]
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -122255,7 +122261,10 @@
       },
       "_pidConflictNotes": [
         "// PID-CONFLICT-NOTE Excellux shared with 30 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -122408,6 +122417,9 @@
             "fr": "Bouton 1"
           }
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -122783,6 +122795,9 @@
           "catchall": true,
           "reason": "Fallback for unmatched devices with PIDs: TS0601"
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -122883,6 +122898,9 @@
           "_hybrid_air_purifier_din_needs_device_assignment",
           "_HYBRID_AIR_PURIFIER_DIN_NEEDS_DEVICE_ASSIGNMENT"
         ]
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -122991,6 +123009,9 @@
           "_hybrid_air_purifier_lcdtemphumidsensor_needs_device_assignment",
           "_HYBRID_AIR_PURIFIER_LCDTEMPHUMIDSENSOR_NEEDS_DEVICE_ASSIGNMENT"
         ]
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -123141,7 +123162,10 @@
         "// PID-CONFLICT-NOTE TS000F shared with 9 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE TS0111 shared with 8 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE TS0001_fingerbot shared with 2 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -123794,7 +123818,10 @@
         "actions": []
       },
       "id": "air_purifier_presence",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -124031,6 +124058,9 @@
           "_GENERIC_AIR_PURIFIER_QUALITY",
           "_generic_air_purifier_quality"
         ]
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -124128,6 +124158,9 @@
           "_hybrid_air_purifier_siren_needs_device_assignment",
           "_HYBRID_AIR_PURIFIER_SIREN_NEEDS_DEVICE_ASSIGNMENT"
         ]
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -124421,7 +124454,10 @@
       },
       "_pidConflictNotes": [
         "// PID-CONFLICT-NOTE TS0001 shared with 35 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "class": "socket",
@@ -125164,7 +125200,10 @@
         "actions": []
       },
       "id": "air_purifier_switch",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -126051,7 +126090,10 @@
       },
       "_pidConflictNotes": [
         "// PID-CONFLICT-NOTE TS1201 shared with 5 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -126122,7 +126164,10 @@
         "zigbee"
       ],
       "id": "boiler_switch_energy",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -126612,7 +126657,10 @@
         "// PID-CONFLICT-NOTE TS1101 shared with 5 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE TS0501B shared with 4 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE TS0501A shared with 2 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -126995,7 +127043,10 @@
         "// PID-CONFLICT-NOTE TS110F shared with 9 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE TS0052 shared with 8 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE TS1101 shared with 5 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -127519,7 +127570,10 @@
         "// PID-CONFLICT-NOTE E11-G14 shared with 2 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE E11-G23 shared with 2 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE ZBT-ColorLight shared with 2 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -128018,7 +128072,10 @@
       },
       "_pidConflictNotes": [
         "// PID-CONFLICT-NOTE TS0505B shared with 19 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -128480,6 +128537,9 @@
           "_hybrid_bulb_rgb_rgbw_needs_device_assignment",
           "_HYBRID_BULB_RGB_RGBW_NEEDS_DEVICE_ASSIGNMENT"
         ]
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -128882,7 +128942,10 @@
         "// PID-CONFLICT-NOTE TS0505A shared with 13 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE TS0504B shared with 7 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE TS0504A shared with 3 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "id": "bulb_rgbw_universal",
@@ -129049,7 +129112,10 @@
         "// PID-CONFLICT-NOTE TS0505B shared with 19 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE TS0504B shared with 7 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE TS0503B shared with 5 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -129449,7 +129515,10 @@
         "// PID-CONFLICT-NOTE E12-N13 shared with 2 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE E12-N14 shared with 2 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE ZBT-CCTLight shared with 2 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -129783,7 +129852,10 @@
       "version": "1.0.0",
       "_pidConflictNotes": [
         "// PID-CONFLICT-NOTE TS0501 shared with 2 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -135664,6 +135736,9 @@
           "_hybrid_button_wireless_fingerbot_needs_device_assignment",
           "_HYBRID_BUTTON_WIRELESS_FINGERBOT_NEEDS_DEVICE_ASSIGNMENT"
         ]
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -136275,7 +136350,10 @@
         "// PID-CONFLICT-NOTE TS0121 shared with 11 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE TS000F shared with 9 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE TS0111 shared with 8 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -137842,7 +137920,10 @@
       },
       "_pidConflictNotes": [
         "// PID-CONFLICT-NOTE TS0215A shared with 28 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -138146,7 +138227,10 @@
       },
       "_pidConflictNotes": [
         "// PID-CONFLICT-NOTE TS011F shared with 43 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -138526,6 +138610,9 @@
           "_hybrid_button_wireless_valve_needs_device_assignment",
           "_HYBRID_BUTTON_WIRELESS_VALVE_NEEDS_DEVICE_ASSIGNMENT"
         ]
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -138930,7 +139017,10 @@
       "_pidConflictNotes": [
         "// PID-CONFLICT-NOTE TS0041 shared with 15 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE TS0042 shared with 13 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -139251,7 +139341,10 @@
         }
       ],
       "id": "ceiling_fan",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "id": "christmas_lights",
@@ -139330,7 +139423,10 @@
       },
       "_pidConflictNotes": [
         "// PID-CONFLICT-NOTE TS0504B shared with 7 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -142233,7 +142329,10 @@
       "_pidConflictNotes": [
         "// PID-CONFLICT-NOTE Excellux shared with 30 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE TS0201 shared with 18 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -143404,7 +143503,10 @@
       "_pidConflictNotes": [
         "// PID-CONFLICT-NOTE Excellux shared with 30 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE TS0201 shared with 18 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -144098,7 +144200,10 @@
         "actions": []
       },
       "id": "climate_sensor_presence",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -144997,6 +145102,9 @@
           "_hybrid_climate_sensor_switch_needs_device_assignment",
           "_HYBRID_CLIMATE_SENSOR_SWITCH_NEEDS_DEVICE_ASSIGNMENT"
         ]
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -146356,7 +146464,10 @@
       },
       "_pidConflictNotes": [
         "// PID-CONFLICT-NOTE Excellux shared with 30 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -147022,7 +147133,10 @@
       },
       "_pidConflictNotes": [
         "// PID-CONFLICT-NOTE Excellux shared with 30 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "class": "socket",
@@ -147764,7 +147878,10 @@
       },
       "_pidConflictNotes": [
         "// PID-CONFLICT-NOTE Excellux shared with 30 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -150247,6 +150364,9 @@
             "fr": "Bouton 1"
           }
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -150436,7 +150556,10 @@
         "cumulativeExportedCapability": "meter_power.exported"
       },
       "id": "device_air_purifier_din",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -150562,7 +150685,10 @@
       },
       "settings": [],
       "id": "device_air_purifier_floor",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -150677,7 +150803,10 @@
       },
       "settings": [],
       "id": "device_air_purifier_humidifier",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -151016,7 +151145,10 @@
         "actions": []
       },
       "id": "device_air_purifier_led",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -151138,7 +151270,10 @@
         "// PID-CONFLICT-NOTE TS0001 shared with 35 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE Excellux shared with 30 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE TS0225 shared with 19 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -151446,7 +151581,10 @@
       "version": "1.0.0",
       "_pidConflictNotes": [
         "// PID-CONFLICT-NOTE TS011F shared with 43 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -152101,7 +152239,10 @@
         "actions": []
       },
       "id": "device_air_purifier_presence",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -152470,7 +152611,10 @@
         "actions": []
       },
       "id": "device_air_purifier_quality",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -152825,7 +152969,10 @@
       },
       "_pidConflictNotes": [
         "// PID-CONFLICT-NOTE TS0601_air_purifier shared with 3 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -153108,7 +153255,10 @@
         "actions": []
       },
       "id": "device_air_purifier_siren",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -153228,7 +153378,10 @@
       },
       "settings": [],
       "id": "device_air_purifier_smart",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -153557,6 +153710,9 @@
           "_GENERIC_DEVICE_AIR_PURIFIER_SMOKE",
           "_generic_device_air_purifier_smoke"
         ]
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -153850,7 +154006,10 @@
       },
       "_pidConflictNotes": [
         "// PID-CONFLICT-NOTE TS0001 shared with 35 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -153945,6 +154104,9 @@
             "fr": "Bouton 1"
           }
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -154192,6 +154354,9 @@
           "_GENERIC_DEVICE_AIR_PURIFIER_WATER",
           "_generic_device_air_purifier_water"
         ]
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -155026,7 +155191,10 @@
         }
       ],
       "id": "device_floor_heating",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -155148,6 +155316,9 @@
           "_hybrid_device_floor_heating_thermostat_needs_device_assignment",
           "_HYBRID_DEVICE_FLOOR_HEATING_THERMOSTAT_NEEDS_DEVICE_ASSIGNMENT"
         ]
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -155255,6 +155426,9 @@
           "_GENERIC_DEVICE_GENERIC_DIY_UNIVERSAL",
           "_generic_device_generic_diy_universal"
         ]
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -155371,7 +155545,10 @@
         "actions": []
       },
       "settings": [],
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -156231,7 +156408,10 @@
         "// PID-CONFLICT-NOTE TS011F shared with 43 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE TS0002 shared with 27 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE TS0121 shared with 11 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -156900,7 +157080,10 @@
       },
       "_pidConflictNotes": [
         "// PID-CONFLICT-NOTE TS004F shared with 19 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -157592,7 +157775,10 @@
       },
       "_pidConflictNotes": [
         "// PID-CONFLICT-NOTE TS011F shared with 43 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -158259,6 +158445,9 @@
         "measure_power": {
           "approximated": true
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -159028,6 +159217,9 @@
             "fr": "Bouton 1"
           }
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -159116,7 +159308,10 @@
       "_pidConflictNotes": [
         "// PID-CONFLICT-NOTE TS0502B shared with 6 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
       ],
-      "settings": []
+      "settings": [],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "class": "light",
@@ -159190,7 +159385,10 @@
       "_pidConflictNotes": [
         "// PID-CONFLICT-NOTE TS0502B shared with 6 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
       ],
-      "settings": []
+      "settings": [],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -159301,7 +159499,10 @@
         "zigbee"
       ],
       "id": "dimmer_0_10v",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "id": "dimmer_1_gang",
@@ -159442,7 +159643,10 @@
         "// PID-CONFLICT-NOTE TS110E shared with 18 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE TS110F shared with 9 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE TS0052 shared with 8 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "id": "dimmer_1_gang_2",
@@ -159556,7 +159760,10 @@
         "// PID-CONFLICT-NOTE TS0012 shared with 12 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE TS0052 shared with 8 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
       ],
-      "settings": []
+      "settings": [],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "id": "dimmer_1_gang_tuya",
@@ -159674,7 +159881,10 @@
         "// PID-CONFLICT-NOTE TS110F shared with 9 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE TS0052 shared with 8 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
       ],
-      "settings": []
+      "settings": [],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "id": "dimmer_2_gang",
@@ -159842,7 +160052,10 @@
         "// PID-CONFLICT-NOTE TS110E shared with 18 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE TS110F shared with 9 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
       ],
-      "settings": []
+      "settings": [],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "id": "dimmer_2_gang_tuya",
@@ -159994,7 +160207,10 @@
         "// PID-CONFLICT-NOTE TS110E shared with 18 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE TS110F shared with 9 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
       ],
-      "settings": []
+      "settings": [],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -160148,7 +160364,10 @@
         }
       ],
       "id": "dimmer_3gang",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -160267,7 +160486,10 @@
         "zigbee"
       ],
       "id": "dimmer_4ch",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -160650,7 +160872,10 @@
         "actions": []
       },
       "id": "dimmer_air_purifier",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -161013,7 +161238,10 @@
       "version": "1.0.0",
       "_pidConflictNotes": [
         "// PID-CONFLICT-NOTE TS0052 shared with 8 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -161145,7 +161373,10 @@
       "version": "1.0.0",
       "_pidConflictNotes": [
         "// PID-CONFLICT-NOTE TS1101 shared with 5 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "id": "dimmer_ts110e",
@@ -161285,7 +161516,10 @@
         "// PID-CONFLICT-NOTE TS0505B shared with 19 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE TS0013 shared with 15 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE TS0012 shared with 12 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -161837,7 +162071,10 @@
         "// PID-CONFLICT-NOTE TS0601_dim1 shared with 2 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE ZBMINI-DIM shared with 2 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE ZBMINID shared with 2 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -162118,6 +162355,9 @@
           "_TZ3000_GA5SHATP",
           "_tz3000_ga5shatp"
         ]
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -162768,6 +163008,9 @@
           "_hybrid_dimmer_wall_switch_needs_device_assignment",
           "_HYBRID_DIMMER_WALL_SWITCH_NEEDS_DEVICE_ASSIGNMENT"
         ]
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -163146,6 +163389,9 @@
           "_hybrid_dimmer_wall_water_needs_device_assignment",
           "_HYBRID_DIMMER_WALL_WATER_NEEDS_DEVICE_ASSIGNMENT"
         ]
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -163488,7 +163734,10 @@
         }
       ],
       "id": "din_rail_switch",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -164114,7 +164363,10 @@
         }
       ],
       "id": "diy_custom_zigbee",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -165869,7 +166121,10 @@
             "max": 86400
           }
         }
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "id": "double_power_point_2",
@@ -165958,7 +166213,10 @@
       "_pidConflictNotes": [
         "// PID-CONFLICT-NOTE TS011F shared with 43 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
       ],
-      "settings": []
+      "settings": [],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -166136,7 +166394,10 @@
         "zigbee"
       ],
       "id": "energy_meter_din",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -166268,7 +166529,10 @@
         }
       ],
       "id": "fan_controller",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "id": "fingerbot",
@@ -166457,7 +166721,10 @@
         "// PID-CONFLICT-NOTE TS0011 shared with 14 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE TS000F shared with 9 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE TS0001_fingerbot shared with 2 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "class": "socket",
@@ -167210,7 +167477,10 @@
       "version": "1.0.0",
       "_pidConflictNotes": [
         "// PID-CONFLICT-NOTE TS0001 shared with 35 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -167512,7 +167782,10 @@
         }
       ],
       "id": "floor_heating_thermostat",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -169333,7 +169606,10 @@
         }
       ],
       "id": "gas_sensor_switch",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -169621,7 +169897,10 @@
         }
       ],
       "id": "gateway_zigbee_bridge",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -173071,7 +173350,10 @@
         }
       ],
       "id": "humidifier",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -173480,7 +173762,10 @@
         }
       ],
       "id": "hvac_air_conditioner",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -173598,7 +173883,10 @@
         }
       ],
       "id": "hvac_controller",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -173971,7 +174259,10 @@
         }
       ],
       "id": "hvac_dehumidifier",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -174142,7 +174433,10 @@
         }
       ],
       "id": "hybrid_fan_sensor",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -174290,7 +174584,10 @@
       "version": "1.0.0",
       "_pidConflictNotes": [
         "// PID-CONFLICT-NOTE TS0001 shared with 35 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -174448,7 +174745,10 @@
         }
       ],
       "id": "hybrid_heater_thermostat",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -174594,7 +174894,10 @@
         "// PID-CONFLICT-NOTE TS0041 shared with 15 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE TS0042 shared with 13 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE TS000F shared with 9 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -174730,7 +175033,10 @@
       "_pidConflictNotes": [
         "// PID-CONFLICT-NOTE TS0001 shared with 35 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE TS0002 shared with 27 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -175075,7 +175381,10 @@
         "// PID-CONFLICT-NOTE TS011F shared with 43 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE TS0001 shared with 35 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE TS0011 shared with 14 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -175540,7 +175849,10 @@
       "version": "1.0.0",
       "_pidConflictNotes": [
         "// PID-CONFLICT-NOTE TS1201 shared with 5 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -175693,6 +176005,9 @@
             ]
           }
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -176818,7 +177133,10 @@
         }
       ],
       "id": "lcdtemphumidsensor_plug_energy",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -176920,7 +177238,10 @@
       "version": "1.0.0",
       "_pidConflictNotes": [
         "// PID-CONFLICT-NOTE TS0502 shared with 2 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -177019,7 +177340,10 @@
         "// PID-CONFLICT-NOTE TS0501B shared with 4 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE TRI-C1ZR shared with 2 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE TRI-K1ZR shared with 2 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -177117,7 +177441,10 @@
       "_pidConflictNotes": [
         "// PID-CONFLICT-NOTE TS0503 shared with 2 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE TS0504 shared with 2 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -177460,7 +177787,10 @@
       "version": "1.0.0",
       "_pidConflictNotes": [
         "// PID-CONFLICT-NOTE TS0505B shared with 19 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -177796,7 +178126,10 @@
         }
       ],
       "id": "led_strip_advanced",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -178201,7 +178534,10 @@
         }
       ],
       "id": "led_strip_rgbw",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -178640,7 +178976,10 @@
         "// PID-CONFLICT-NOTE E12-N13 shared with 2 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE E12-N14 shared with 2 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE ZBT-CCTLight shared with 2 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -179232,7 +179571,10 @@
         "// PID-CONFLICT-NOTE E11-G14 shared with 2 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE E11-G23 shared with 2 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE ZBT-ColorLight shared with 2 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -179722,7 +180064,10 @@
       ],
       "_pidConflictNotes": [
         "// PID-CONFLICT-NOTE TS0505B shared with 19 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -180261,7 +180606,10 @@
       "_pidConflictNotes": [
         "// PID-CONFLICT-NOTE TS0505B shared with 19 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE TS0505A shared with 13 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -180620,7 +180968,10 @@
         "// PID-CONFLICT-NOTE TS0502A shared with 8 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE TS0502B shared with 6 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE TS0504A shared with 3 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -181563,7 +181914,10 @@
         "// PID-CONFLICT-NOTE ZBMINIR shared with 4 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE ZBMINIL2-R2 shared with 4 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE ZBMINIR2-R2 shared with 4 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -183516,7 +183870,10 @@
         "// PID-CONFLICT-NOTE TS0001 shared with 35 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE Excellux shared with 30 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE TS0225 shared with 19 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "id": "outdoor_2_socket",
@@ -183689,7 +184046,10 @@
             "max": 86400
           }
         }
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "id": "outdoor_plug",
@@ -183765,7 +184125,10 @@
         "// PID-CONFLICT-NOTE TS0101 shared with 9 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE TS0049 shared with 4 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
       ],
-      "settings": []
+      "settings": [],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -184429,7 +184792,10 @@
       "_pidConflictNotes": [
         "// PID-CONFLICT-NOTE TS011F shared with 43 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
       ],
-      "settings": []
+      "settings": [],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -185062,7 +185428,10 @@
         "// PID-CONFLICT-NOTE S31 Lite zb shared with 4 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE S40LITE shared with 4 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE TSO121 shared with 2 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -185767,7 +186136,10 @@
         "// PID-CONFLICT-NOTE S60ZBTPG shared with 4 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE S31 Lite zb shared with 4 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE S40LITE shared with 4 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "class": "socket",
@@ -186506,7 +186878,10 @@
       },
       "_pidConflictNotes": [
         "// PID-CONFLICT-NOTE TS011F shared with 43 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -186601,6 +186976,9 @@
             "fr": "Bouton 1"
           }
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -187693,7 +188071,10 @@
         "// PID-CONFLICT-NOTE TS0004 shared with 14 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE CK-BL702-MWS-01(7016) shared with 9 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE ZP-301Z shared with 8 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -188429,7 +188810,10 @@
         "// PID-CONFLICT-NOTE ZG-205ZL shared with 2 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE ZG-302ZL shared with 2 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE ZG-302ZM shared with 2 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "id": "radar_sensor",
@@ -189521,7 +189905,10 @@
         }
       ],
       "id": "radiator_controller",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -190354,7 +190741,10 @@
       "version": "1.0.0",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -190497,7 +190887,10 @@
         }
       ],
       "id": "radiator_wifi_tuya",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -190702,7 +191095,10 @@
           }
         }
       },
-      "settings": []
+      "settings": [],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "id": "relay_board_2_channel",
@@ -190801,7 +191197,10 @@
         "// PID-CONFLICT-NOTE TS011F shared with 43 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE TS0002 shared with 27 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
       ],
-      "settings": []
+      "settings": [],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "id": "relay_board_4_channel",
@@ -190965,7 +191364,10 @@
       "_pidConflictNotes": [
         "// PID-CONFLICT-NOTE TS0004 shared with 14 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
       ],
-      "settings": []
+      "settings": [],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "id": "remote_button_emergency_sos",
@@ -192377,6 +192779,9 @@
           "_hybrid_remote_button_wireless_fingerbot_needs_device_assignment",
           "_HYBRID_REMOTE_BUTTON_WIRELESS_FINGERBOT_NEEDS_DEVICE_ASSIGNMENT"
         ]
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -193308,7 +193713,10 @@
       "_pidConflictNotes": [
         "// PID-CONFLICT-NOTE TS011F shared with 43 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE TS0121 shared with 11 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -194310,7 +194718,10 @@
       },
       "_pidConflictNotes": [
         "// PID-CONFLICT-NOTE TS011F shared with 43 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -194687,6 +195098,9 @@
           "_hybrid_remote_button_wireless_valve_needs_device_assignment",
           "_HYBRID_REMOTE_BUTTON_WIRELESS_VALVE_NEEDS_DEVICE_ASSIGNMENT"
         ]
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -195269,7 +195683,10 @@
       "_pidConflictNotes": [
         "// PID-CONFLICT-NOTE TS0505A shared with 13 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
       ],
-      "settings": []
+      "settings": [],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "class": "light",
@@ -195359,7 +195776,10 @@
         "// PID-CONFLICT-NOTE TS0505A shared with 13 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE ZB-CL01 shared with 3 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
       ],
-      "settings": []
+      "settings": [],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "class": "light",
@@ -195438,7 +195858,10 @@
       "_pidConflictNotes": [
         "// PID-CONFLICT-NOTE TS0505B shared with 19 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
       ],
-      "settings": []
+      "settings": [],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "class": "light",
@@ -195518,7 +195941,10 @@
       "_pidConflictNotes": [
         "// PID-CONFLICT-NOTE TS0502A shared with 8 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
       ],
-      "settings": []
+      "settings": [],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "class": "light",
@@ -195600,7 +196026,10 @@
         "// PID-CONFLICT-NOTE TS0505B shared with 19 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE TS0505A shared with 13 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
       ],
-      "settings": []
+      "settings": [],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "class": "light",
@@ -195681,7 +196110,10 @@
       "_pidConflictNotes": [
         "// PID-CONFLICT-NOTE TS0505A shared with 13 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
       ],
-      "settings": []
+      "settings": [],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "class": "light",
@@ -195773,7 +196205,10 @@
         "// PID-CONFLICT-NOTE TS0503B shared with 5 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE TS0503A shared with 4 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
       ],
-      "settings": []
+      "settings": [],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "class": "light",
@@ -195856,7 +196291,10 @@
         "// PID-CONFLICT-NOTE TS0505B shared with 19 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE TS0505A shared with 13 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
       ],
-      "settings": []
+      "settings": [],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "class": "light",
@@ -195937,7 +196375,10 @@
         "// PID-CONFLICT-NOTE TS0505B shared with 19 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE TS0505A shared with 13 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
       ],
-      "settings": []
+      "settings": [],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "class": "light",
@@ -196016,7 +196457,10 @@
       "_pidConflictNotes": [
         "// PID-CONFLICT-NOTE TS0505A shared with 13 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
       ],
-      "settings": []
+      "settings": [],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "class": "light",
@@ -196097,7 +196541,10 @@
       "_pidConflictNotes": [
         "// PID-CONFLICT-NOTE TS0505A shared with 13 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
       ],
-      "settings": []
+      "settings": [],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -201703,7 +202150,10 @@
       },
       "_pidConflictNotes": [
         "// PID-CONFLICT-NOTE Excellux shared with 30 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -205221,7 +205671,10 @@
         "// PID-CONFLICT-NOTE CK-BL702-MWS-01(7016) shared with 9 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE ZP-301Z shared with 8 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE ZG-106Z shared with 2 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -208243,7 +208696,10 @@
       "version": "1.0.0",
       "_pidConflictNotes": [
         "// PID-CONFLICT-NOTE TS0216 shared with 2 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "id": "siren_sirentemphumidsensor",
@@ -208357,7 +208813,10 @@
           }
         }
       ],
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "id": "sirentemphumidsensor",
@@ -208722,7 +209181,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "id": "slim_motion_sensor",
@@ -209040,7 +209502,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "id": "smart_air_detection_box",
@@ -209214,7 +209679,10 @@
         }
       ],
       "id": "smart_breaker",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "id": "smart_button_switch",
@@ -209588,7 +210056,10 @@
             "max": 99
           }
         }
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -209672,6 +210143,9 @@
             "fr": "Bouton 1"
           }
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -209908,7 +210382,10 @@
         }
       ],
       "id": "smart_heater_controller",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -209981,7 +210458,10 @@
         "zigbee"
       ],
       "id": "smart_irrigation_valve",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -210711,6 +211191,9 @@
             "fr": "Bouton 1"
           }
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -211335,7 +211818,10 @@
           }
         }
       },
-      "settings": []
+      "settings": [],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "id": "smartplug",
@@ -211569,7 +212055,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "id": "smartplug_2_socket",
@@ -211825,7 +212314,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -212624,7 +213116,10 @@
         "// PID-CONFLICT-NOTE TS011F shared with 43 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE TS0115 shared with 3 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
       ],
-      "settings": []
+      "settings": [],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "id": "socket_power_strip_four",
@@ -212801,7 +213296,10 @@
         "// PID-CONFLICT-NOTE TS011F shared with 43 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE TS0115 shared with 3 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
       ],
-      "settings": []
+      "settings": [],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "id": "socket_power_strip_four_three",
@@ -212955,7 +213453,10 @@
         "// PID-CONFLICT-NOTE TS011F shared with 43 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE JZ-ZB-004 shared with 2 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
       ],
-      "settings": []
+      "settings": [],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "id": "socket_power_strip_four_two",
@@ -213142,7 +213643,10 @@
         "// PID-CONFLICT-NOTE S31 Lite zb shared with 4 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE S40LITE shared with 4 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
       ],
-      "settings": []
+      "settings": [],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -214636,7 +215140,10 @@
       "_pidConflictNotes": [
         "// PID-CONFLICT-NOTE TS011F shared with 43 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE TS0726 shared with 21 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "id": "switch_1_gang",
@@ -214735,7 +215242,10 @@
         "// PID-CONFLICT-NOTE TS0003 shared with 20 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE TS0011 shared with 14 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE TS000F shared with 9 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "id": "switch_1_gang_metering",
@@ -214950,7 +215460,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "class": "socket",
@@ -216743,7 +217256,10 @@
         "// PID-CONFLICT-NOTE TS4100 shared with 3 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE ZBM5-2C-120 shared with 3 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE ZBM5-3C-120 shared with 3 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "id": "switch_2_gang",
@@ -216865,7 +217381,10 @@
         "// PID-CONFLICT-NOTE TS0013 shared with 15 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE TS0012 shared with 12 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
       ],
-      "settings": []
+      "settings": [],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "id": "switch_2_gang_metering",
@@ -217067,7 +217586,10 @@
             "max": 86400
           }
         }
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "class": "socket",
@@ -217839,7 +218361,10 @@
         "// PID-CONFLICT-NOTE TS0003 shared with 20 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE TS0013 shared with 15 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE TS0012 shared with 12 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "id": "switch_3_gang",
@@ -217987,7 +218512,10 @@
         "// PID-CONFLICT-NOTE TS0003 shared with 20 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE TS0013 shared with 15 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
       ],
-      "settings": []
+      "settings": [],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "class": "socket",
@@ -218802,7 +219330,10 @@
         "// PID-CONFLICT-NOTE TS0043 shared with 16 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE TS0013 shared with 15 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE TS0040 shared with 4 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "id": "switch_4_gang_metering",
@@ -219070,7 +219601,10 @@
             "max": 86400
           }
         }
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "class": "socket",
@@ -219946,7 +220480,10 @@
         "// PID-CONFLICT-NOTE TS0004 shared with 14 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE TS0014 shared with 7 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE JZ-ZB-004 shared with 2 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -220256,7 +220793,10 @@
         }
       ],
       "id": "switch_dimmer_1gang",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -220560,6 +221100,9 @@
             "de": "Batterie"
           }
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -220877,7 +221420,10 @@
         }
       ],
       "id": "switch_plug_2",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -220997,7 +221543,10 @@
         }
       ],
       "id": "switch_temp_sensor",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "class": "socket",
@@ -221189,7 +221738,10 @@
       },
       "_pidConflictNotes": [
         "// PID-CONFLICT-NOTE TS0002 shared with 27 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "class": "socket",
@@ -221922,6 +222474,9 @@
           "_hybrid_switch_wall_needs_device_assignment",
           "_HYBRID_SWITCH_WALL_NEEDS_DEVICE_ASSIGNMENT"
         ]
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -222579,7 +223134,10 @@
       },
       "_pidConflictNotes": [
         "// PID-CONFLICT-NOTE TS0015 shared with 2 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -223265,7 +223823,10 @@
       "version": "1.0.0",
       "_pidConflictNotes": [
         "// PID-CONFLICT-NOTE TS0726 shared with 21 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -223783,7 +224344,10 @@
         }
       ],
       "id": "switch_wall_7gang",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -224262,7 +224826,10 @@
         }
       ],
       "id": "switch_wall_8gang",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -225719,7 +226286,10 @@
         }
       ],
       "id": "thermostat_4ch",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -225999,6 +226569,9 @@
             "fr": "Bouton 1"
           }
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -226491,7 +227064,10 @@
       "_pidConflictNotes": [
         "// PID-CONFLICT-NOTE TS0502A shared with 8 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
       ],
-      "settings": []
+      "settings": [],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "class": "light",
@@ -226569,7 +227145,10 @@
       "_pidConflictNotes": [
         "// PID-CONFLICT-NOTE TS0502A shared with 8 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
       ],
-      "settings": []
+      "settings": [],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "class": "light",
@@ -226648,7 +227227,10 @@
       "_pidConflictNotes": [
         "// PID-CONFLICT-NOTE TS0502A shared with 8 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
       ],
-      "settings": []
+      "settings": [],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "id": "tuya_dummy_device",
@@ -227448,7 +228030,10 @@
         "// PID-CONFLICT-NOTE TS0015 shared with 2 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE TS0209 shared with 2 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE TS0210 shared with 2 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -227691,7 +228276,10 @@
       "version": "1.0.0",
       "_pidConflictNotes": [
         "// PID-CONFLICT-NOTE TS0002 shared with 27 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -228031,7 +228619,10 @@
         "// PID-CONFLICT-NOTE S60ZBTPG shared with 4 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE S31 Lite zb shared with 4 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE S40LITE shared with 4 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -228611,7 +229202,10 @@
         "// PID-CONFLICT-NOTE TS0002 shared with 27 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE TS0121 shared with 11 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE TS0115 shared with 3 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -228878,7 +229472,10 @@
       "version": "1.0.0",
       "_pidConflictNotes": [
         "// PID-CONFLICT-NOTE TS0049 shared with 4 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -228967,7 +229564,10 @@
       },
       "_pidConflictNotes": [
         "// PID-CONFLICT-NOTE TS0001 shared with 35 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "id": "valvecontroller",
@@ -229067,7 +229667,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -229755,7 +230358,10 @@
         "// PID-CONFLICT-NOTE TS0501B shared with 4 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE TRI-C1ZR shared with 2 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE TRI-K1ZR shared with 2 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "id": "wall_dimmer_tuya",
@@ -230094,7 +230700,10 @@
         "// PID-CONFLICT-NOTE ZBMINI-DIM shared with 2 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE ZBMINID shared with 2 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
       ],
-      "settings": []
+      "settings": [],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "id": "wall_remote_1_gang",
@@ -231316,7 +231925,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "id": "wall_switch_1_gang",
@@ -231440,7 +232052,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "id": "wall_switch_1_gang_tuya",
@@ -231572,7 +232187,10 @@
         "// PID-CONFLICT-NOTE ZBM5-2C-120 shared with 3 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE ZBM5-3C-120 shared with 3 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
       ],
-      "settings": []
+      "settings": [],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -231731,7 +232349,10 @@
         "// PID-CONFLICT-NOTE TS0726 shared with 21 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE TS0003 shared with 20 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE TS0011 shared with 14 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "id": "wall_switch_2_gang",
@@ -231876,7 +232497,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -232208,7 +232832,10 @@
         "// PID-CONFLICT-NOTE TS0002 shared with 27 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE TS0042 shared with 13 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE TS0012 shared with 12 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "id": "wall_switch_3_gang",
@@ -232387,7 +233014,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -232767,7 +233397,10 @@
         "// PID-CONFLICT-NOTE TS0003 shared with 20 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE TS0043 shared with 16 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE TS0013 shared with 15 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "id": "wall_switch_4_gang",
@@ -232971,7 +233604,10 @@
             }
           ]
         }
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "id": "wall_switch_4_gang_tuya",
@@ -233118,7 +233754,10 @@
           }
         }
       },
-      "settings": []
+      "settings": [],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -233556,7 +234195,10 @@
         "// PID-CONFLICT-NOTE TS0726 shared with 21 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE TS0004 shared with 14 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE TS0014 shared with 7 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "id": "wall_switch_5_gang_tuya",
@@ -233770,7 +234412,10 @@
         "// PID-CONFLICT-NOTE ZBM5-2C-120 shared with 3 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
         "// PID-CONFLICT-NOTE ZBM5-3C-120 shared with 3 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
       ],
-      "settings": []
+      "settings": [],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "id": "wall_switch_6_gang_tuya",
@@ -233976,7 +234621,10 @@
           }
         }
       },
-      "settings": []
+      "settings": [],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -234266,7 +234914,10 @@
           }
         }
       },
-      "settings": []
+      "settings": [],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "id": "water_detector",
@@ -235396,7 +236047,10 @@
       "version": "1.0.0",
       "_pidConflictNotes": [
         "// PID-CONFLICT-NOTE TS0049 shared with 4 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-      ]
+      ],
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -235747,7 +236401,10 @@
         }
       ],
       "id": "water_valve_smart",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -236063,6 +236720,9 @@
             "fr": "Bouton 1"
           }
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -236543,7 +237203,10 @@
         }
       ],
       "id": "wifi_camera",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -236851,6 +237514,9 @@
             "fr": "Bouton 1"
           }
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -237003,6 +237669,9 @@
             "fr": "Bouton 1"
           }
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -237442,6 +238111,9 @@
             "fr": "Bouton 1"
           }
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -237569,6 +238241,9 @@
             "fr": "Bouton 1"
           }
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -237712,7 +238387,10 @@
         }
       ],
       "id": "wifi_ewelink_fan",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -237839,6 +238517,9 @@
             "fr": "Bouton 1"
           }
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -237965,6 +238646,9 @@
             "fr": "Bouton 1"
           }
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -238094,6 +238778,9 @@
             "fr": "Bouton 1"
           }
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -238220,6 +238907,9 @@
             "fr": "Bouton 1"
           }
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -238357,7 +239047,10 @@
         }
       ],
       "id": "wifi_ewelink_switch_2ch",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -238506,7 +239199,10 @@
         }
       ],
       "id": "wifi_ewelink_switch_4ch",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -238632,6 +239328,9 @@
             "fr": "Bouton 1"
           }
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -238806,6 +239505,9 @@
             "fr": "Bouton 1"
           }
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -239128,6 +239830,9 @@
             "fr": "Bouton 1"
           }
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -239300,7 +240005,10 @@
         }
       ],
       "id": "wifi_heater",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -239454,6 +240162,9 @@
             "fr": "Bouton 1"
           }
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -239605,6 +240316,9 @@
             "fr": "Bouton 1"
           }
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -239761,6 +240475,9 @@
             "fr": "Bouton 1"
           }
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -239917,6 +240634,9 @@
             "fr": "Bouton 1"
           }
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -240074,6 +240794,9 @@
             "fr": "Bouton 1"
           }
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -240229,6 +240952,9 @@
             "fr": "Bouton 1"
           }
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -240406,7 +241132,10 @@
         }
       ],
       "id": "wifi_power_strip",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -240784,7 +241513,10 @@
         }
       ],
       "id": "wifi_robot_vacuum",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -241102,6 +241834,9 @@
             "fr": "Bouton 1"
           }
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -241228,6 +241963,9 @@
             "fr": "Bouton 1"
           }
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -241368,7 +242106,10 @@
         }
       ],
       "id": "wifi_sonoff_dualr3",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "pair": [
@@ -241494,6 +242235,9 @@
             "fr": "Bouton 1"
           }
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -241620,6 +242364,9 @@
             "fr": "Bouton 1"
           }
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -241746,6 +242493,9 @@
             "fr": "Bouton 1"
           }
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -241876,6 +242626,9 @@
             "fr": "Bouton 1"
           }
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -242002,6 +242755,9 @@
             "fr": "Bouton 1"
           }
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -242131,6 +242887,9 @@
             "fr": "Bouton 1"
           }
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -242257,6 +243016,9 @@
             "fr": "Bouton 1"
           }
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -242394,7 +243156,10 @@
         }
       ],
       "id": "wifi_sonoff_tx_2ch",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "pair": [
@@ -242537,7 +243302,10 @@
         }
       ],
       "id": "wifi_sonoff_tx_3ch",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -242689,6 +243457,9 @@
             "fr": "Bouton 1"
           }
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -242859,7 +243630,10 @@
         }
       ],
       "id": "wifi_switch_2gang",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -243042,7 +243816,10 @@
         }
       ],
       "id": "wifi_switch_3gang",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -243238,7 +244015,10 @@
         }
       ],
       "id": "wifi_switch_4gang",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "ui": {
+        "quickAction": "onoff"
+      }
     },
     {
       "name": {
@@ -243393,6 +244173,9 @@
             "fr": "Bouton 1"
           }
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {
@@ -243774,6 +244557,9 @@
             "fr": "Bouton 1"
           }
         }
+      },
+      "ui": {
+        "quickAction": "onoff"
       }
     },
     {

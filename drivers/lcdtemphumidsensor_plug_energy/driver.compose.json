@@ -465,5 +465,8 @@
     }
   ],
   "id": "lcdtemphumidsensor_plug_energy",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "ui": {
+    "quickAction": "onoff"
+  }
 }
