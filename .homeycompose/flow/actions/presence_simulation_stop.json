@@ -1,0 +1,24 @@
+{
+  "id": "presence_simulation_stop",
+  "title": {
+    "en": "Stop presence simulation",
+    "fr": "Arrêter la simulation de présence",
+    "nl": "Aanwezigheidssimulatie stoppen",
+    "de": "Anwesenheitssimulation stoppen"
+  },
+  "hint": {
+    "en": "Stops the presence simulation and restores the device's original state",
+    "fr": "Arrête la simulation de présence et restaure l'état d'origine de l'appareil"
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "capabilities=onoff"
+    }
+  ],
+  "titleFormatted": {
+    "en": "Stop presence simulation on [[device]]",
+    "fr": "Arrêter la simulation de présence sur [[device]]"
+  }
+}
