@@ -1649,6 +1649,279 @@
         "en": "Enable anti-interference to reduce false presence triggers from Wi-Fi/RF noise (only for ZG-204ZV/ZK family mmWave sensors).",
         "fr": "Active la fonction anti-interférence pour réduire les faux déclenchements de présence dus au bruit Wi-Fi/RF (uniquement pour la famille ZG-204ZV/ZK)."
       }
+    },
+    {
+      "id": "shield_range",
+      "type": "number",
+      "min": 0,
+      "max": 8,
+      "unit": "m",
+      "label": {
+        "en": "Shield range",
+        "fr": "Portée de masquage",
+        "nl": "Afschermbereik"
+      },
+      "value": 0
+    },
+    {
+      "id": "detection_range",
+      "type": "number",
+      "min": 0,
+      "max": 8,
+      "unit": "m",
+      "label": {
+        "en": "Detection range",
+        "fr": "Portée de détection",
+        "nl": "Detectiebereik"
+      },
+      "value": 8
+    },
+    {
+      "id": "entry_filter_time",
+      "type": "number",
+      "min": 0,
+      "max": 10,
+      "unit": "s",
+      "label": {
+        "en": "Entry filter time",
+        "fr": "Filtre d’entrée (temps)",
+        "nl": "Toegangsfiltertijd"
+      },
+      "value": 0
+    },
+    {
+      "id": "departure_delay",
+      "type": "number",
+      "min": 0,
+      "max": 3600,
+      "unit": "s",
+      "label": {
+        "en": "Departure delay",
+        "fr": "Délai de départ",
+        "nl": "Vertrekvertraging"
+      },
+      "value": 0
+    },
+    {
+      "id": "entry_sensitivity",
+      "type": "number",
+      "min": 0,
+      "max": 9,
+      "label": {
+        "en": "Entry sensitivity",
+        "fr": "Sensibilité d’entrée",
+        "nl": "Toegangsgevoeligheid"
+      },
+      "value": 0
+    },
+    {
+      "id": "entry_distance_indentation",
+      "type": "number",
+      "min": 0,
+      "max": 8,
+      "unit": "m",
+      "label": {
+        "en": "Entry distance indentation",
+        "fr": "Indentation distance d’entrée",
+        "nl": "Toegangsafstand-inspringing"
+      },
+      "value": 0
+    },
+    {
+      "id": "breaker_mode",
+      "type": "dropdown",
+      "label": {
+        "en": "Breaker mode",
+        "fr": "Mode disjoncteur",
+        "nl": "Breakermodus"
+      },
+      "value": "standard",
+      "values": [
+        {
+          "id": "standard",
+          "label": {
+            "en": "Standard"
+          }
+        },
+        {
+          "id": "local",
+          "label": {
+            "en": "Local"
+          }
+        }
+      ]
+    },
+    {
+      "id": "status_indication",
+      "type": "dropdown",
+      "label": {
+        "en": "Status indication",
+        "fr": "Indication d’état",
+        "nl": "Statusindicatie"
+      },
+      "value": "0",
+      "values": [
+        {
+          "id": "0",
+          "label": {
+            "en": "Off",
+            "fr": "Arrêt",
+            "nl": "Uit"
+          }
+        },
+        {
+          "id": "1",
+          "label": {
+            "en": "On",
+            "fr": "Marche",
+            "nl": "Aan"
+          }
+        }
+      ]
+    },
+    {
+      "id": "illuminance_threshold",
+      "type": "number",
+      "min": 0,
+      "max": 420,
+      "unit": "lux",
+      "label": {
+        "en": "Illuminance threshold",
+        "fr": "Seuil de luminosité",
+        "nl": "Lichtdrempel"
+      },
+      "value": 0
+    },
+    {
+      "id": "breaker_polarity",
+      "type": "dropdown",
+      "label": {
+        "en": "Breaker polarity",
+        "fr": "Polarité disjoncteur",
+        "nl": "Breakerpolariteit"
+      },
+      "value": "NC",
+      "values": [
+        {
+          "id": "NC",
+          "label": {
+            "en": "NC (normally closed)",
+            "fr": "NF (normalement fermé)",
+            "nl": "NG (normaal gesloten)"
+          }
+        },
+        {
+          "id": "NO",
+          "label": {
+            "en": "NO (normally open)",
+            "fr": "NO (normalement ouvert)",
+            "nl": "NO (normaal open)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "block_time",
+      "type": "number",
+      "min": 0,
+      "max": 10,
+      "unit": "s",
+      "label": {
+        "en": "Block time",
+        "fr": "Temps de blocage",
+        "nl": "Blokkeertijd"
+      },
+      "value": 0
+    },
+    {
+      "id": "sensor_mode",
+      "type": "dropdown",
+      "label": {
+        "en": "Sensor mode",
+        "fr": "Mode capteur",
+        "nl": "Sensormodus"
+      },
+      "value": "on",
+      "values": [
+        {
+          "id": "on",
+          "label": {
+            "en": "On",
+            "fr": "Marche",
+            "nl": "Aan"
+          }
+        },
+        {
+          "id": "off",
+          "label": {
+            "en": "Off",
+            "fr": "Arrêt",
+            "nl": "Uit"
+          }
+        },
+        {
+          "id": "occupied",
+          "label": {
+            "en": "Occupied",
+            "fr": "Occupé",
+            "nl": "Bezet"
+          }
+        },
+        {
+          "id": "unoccupied",
+          "label": {
+            "en": "Unoccupied",
+            "fr": "Inoccupé",
+            "nl": "Onbezet"
+          }
+        }
+      ]
+    },
+    {
+      "id": "motion_false_detection",
+      "type": "checkbox",
+      "label": {
+        "en": "Motion false detection filter",
+        "fr": "Filtre fausses détections mouvement",
+        "nl": "Filter valse bewegingsdetectie"
+      },
+      "value": false
+    },
+    {
+      "id": "micro_minimum_distance",
+      "type": "number",
+      "min": 0,
+      "max": 8,
+      "unit": "m",
+      "label": {
+        "en": "Micro minimum distance",
+        "fr": "Distance min micro-mouvements",
+        "nl": "Micro minimale afstand"
+      },
+      "value": 0
+    },
+    {
+      "id": "motionless_minimum_distance",
+      "type": "number",
+      "min": 0,
+      "max": 8,
+      "unit": "m",
+      "label": {
+        "en": "Static minimum distance",
+        "fr": "Distance min statique",
+        "nl": "Statische minimale afstand"
+      },
+      "value": 0
+    },
+    {
+      "id": "breathe_false_detection",
+      "type": "checkbox",
+      "label": {
+        "en": "Breathing false detection filter",
+        "fr": "Filtre fausses détections respiration",
+        "nl": "Filter valse ademhalingsdetectie"
+      },
+      "value": false
     }
   ],
   "images": {
