@@ -247,8 +247,8 @@ jobs:
           TOTAL_PASS=0
           TOTAL_FAIL=0
           for f in /tmp/audit-validation/*.txt; do
-            # grep -c prints the count even on exit 1 — never append a second 0
-            p=$(grep -c "PASSED" "$f" 2>/dev/null | head -n1); p=${p:-0}
+            # grep -c prints the count even on exit 1 — swallow the exit code (pipefail)
+            p=$(grep -c "PASSED" "$f" 2>/dev/null || true); p=${p:-0}
             TOTAL_PASS=$((TOTAL_PASS + p))
           done
           echo "total_passed=$TOTAL_PASS" >> $GITHUB_OUTPUT
