@@ -10,7 +10,7 @@
 [![SDK](https://img.shields.io/badge/SDK-3-orange)](https://apps.developer.homey.app/)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
-A community-driven Homey app that brings **local control** to Tuya Zigbee devices — no cloud, no internet needed. Covers switches, sensors, lights, thermostats, covers, locks and more across **431 drivers** and **4,339 unique device fingerprints** (18,114 including case variants for bulletproof pairing).
+A community-driven Homey app that brings **local control** to Tuya Zigbee devices — no cloud, no internet needed. Covers switches, sensors, lights, thermostats, covers, locks and more across **431 drivers** and **4,339 unique device fingerprints** (18,041 including case variants for bulletproof pairing).
 
 **Key features:**
 - **Local-only** — everything runs on your Homey, nothing goes to the cloud
@@ -37,10 +37,10 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.397 |
+| **App Version** | v9.0.398 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,339 |
-| **Pairing Variants** | 18,114 (4 case combos per fingerprint) |
+| **Pairing Variants** | 18,041 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 571 |
 | **Flow Cards** | 4,900 |
 | **Unique Capabilities** | 169 |
@@ -49,7 +49,7 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 | **SVG Icons** | 731 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
-| **Last Updated** | 2026-08-03 |
+| **Last Updated** | 2026-08-04 |
 
 ### Top 20 Drivers by Fingerprint Count
 
@@ -67,14 +67,14 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 | 10 | `wall_thermostat` | 312 |
 | 11 | `switch_4gang` | 252 |
 | 12 | `curtain_motor` | 220 |
-| 13 | `dimmer_wall_1gang` | 220 |
-| 14 | `motion_sensor` | 210 |
-| 15 | `diy_custom_zigbee` | 205 |
-| 16 | `switch_2gang` | 200 |
-| 17 | `thermostat_tuya_dp` | 200 |
-| 18 | `water_leak_sensor_tuya` | 194 |
-| 19 | `soil_sensor` | 181 |
-| 20 | `dimmable_led_strip` | 180 |
+| 13 | `motion_sensor` | 210 |
+| 14 | `diy_custom_zigbee` | 205 |
+| 15 | `switch_2gang` | 200 |
+| 16 | `thermostat_tuya_dp` | 200 |
+| 17 | `water_leak_sensor_tuya` | 194 |
+| 18 | `dimmer_wall_1gang` | 184 |
+| 19 | `switch_3gang` | 184 |
+| 20 | `soil_sensor` | 181 |
 
 ### Drivers by Device Class
 
@@ -106,6 +106,7 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.398** | Central destroyed guards on capability ops, linear battery formulas eliminated. |
 | **v9.0.397** | Central destroyed guards on capability ops, linear battery formulas eliminated. |
 | **v9.0.396** | Central destroyed guards on capability ops, linear battery formulas eliminated. |
 | **v9.0.395** | Central destroyed guards on capability ops, linear battery formulas eliminated. |
@@ -117,7 +118,6 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 | **v9.0.389** | Central destroyed guards on capability ops, linear battery formulas eliminated. |
 | **v9.0.388** | Central destroyed guards on capability ops, linear battery formulas eliminated. |
 | **v9.0.387** | Flow DP send hardening + typed handler with per-type validation. |
-| **v9.0.386** | Full forum topic scan (2039 posts with images/links) + digest, sqcn0y re-added (purge), version alignment. |
 
 <!-- CHANGELOG_END -->
 
