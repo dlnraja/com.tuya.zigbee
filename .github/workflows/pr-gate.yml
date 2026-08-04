@@ -1,0 +1,54 @@
+# 🚦 PR Gate (v9.0.368)
+# Triggers: pull_request sur master et stable-v5 | Secrets: GITHUB_TOKEN only
+# Bloque les PRs qui: versions invalides/désynchronisées, conflits
+# Sacred Couple (mfr multi-drivers sans désambiguïsation PID),
+# ou régressions de routage (tests critiques).
+
+name: 🚦 PR Gate
+
+on:
+  pull_request:
+    branches: [master, stable-v5]
+
+permissions:
+  contents: read
+
+# v9.0.419 (P92.126): mandatory bash default — integrity gate WFL_SHELL_MISSING
+defaults:
+  run:
+    shell: bash
+
+concurrency:
+  group: pr-gate-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  gate:
+    name: 🚦 Version + Sacred Couple + routing
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: 📥 Checkout
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+
+      - name: 📦 Setup Node.js
+        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
+        with:
+          node-version: '22'
+          cache: npm
+
+      - name: 📦 Install deps
+        run: npm ci --prefer-offline --no-audit || npm install --no-audit
+
+      - name: 🚦 PR gate (version + Sacred Couple)
+        run: node tools/ci/pr-gate.js --branch=${{ github.base_ref }}
+
+      - name: 🔍 JS syntax audit (all repo files)
+        run: node tools/ci/js-syntax-audit.js
+
+      - name: 🔥 lib smoke-test (require every lib module)
+        run: node tools/ci/lib-smoke-test.js
+
+      - name: 🧪 Critical routing tests
+        run: npx mocha test/critical/*.test.js --timeout 10000
