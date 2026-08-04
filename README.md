@@ -38,6 +38,7 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 | Metric | Value |
 |--------|-------|
 | **App Version** | v9.0.417 |
+| **App Version** | v9.0.418 |
 | **Drivers** | 430 (380 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,339 |
 | **Pairing Variants** | 17,076 (4 case combos per fingerprint) |
@@ -106,6 +107,7 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.418** | Stability improvements and Homey test publication retry after transient processing failure. |
 | **v9.0.417** | Stability improvements and Homey test publication retry after transient processing failure. |
 | **v9.0.416** | Stability improvements and Homey test publication retry after transient processing failure. |
 | **v9.0.415** | Stability improvements and Homey test publication retry after transient processing failure. |
