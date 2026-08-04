@@ -47,7 +47,7 @@
     }
   ],
   "titleFormatted": {
-    "en": "Link [[motion_device]] to [[light_device]] (off after [[off_minutes]] min)",
-    "fr": "Lier [[motion_device]] à [[light_device]] (extinction après [[off_minutes]] min)"
+    "en": "Link [[motion_device]] to [[light_device]] at [[dim_percent]]% (off after [[off_minutes]] min)",
+    "fr": "Lier [[motion_device]] à [[light_device]] à [[dim_percent]]% (extinction après [[off_minutes]] min)"
   }
 }
