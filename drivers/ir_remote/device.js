@@ -11,10 +11,24 @@ class IrRemoteDevice extends Homey.Device {
 
   onInit() {
     this.log('Virtual IR Remote initialized');
-    
+
     // Register capability listeners
     this.registerCapabilityListener('onoff', this.onCapabilityOnOff.bind(this));
-    
+
+    // v9.0.411 (P92.119): IR test button — resend the Power command through
+    // the associated blaster as a connectivity test.
+    if (this.hasCapability('button.ir_test')) {
+      this.registerCapabilityListener('button.ir_test', async () => {
+        this.log('[IR] button.ir_test → sending Power as connectivity test');
+        try {
+          await this._sendRemoteCommand(this.getSetting('ir_brand'), this.getSetting('ir_category'), 'Power');
+        } catch (e) {
+          this.log(`[IR] ir_test failed: ${e.message}`);
+        }
+        return true;
+      });
+    }
+
     // Volume / Channel / Temp logic based on class
     this._initializeExtraCapabilities();
   }
