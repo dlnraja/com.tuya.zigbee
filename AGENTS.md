@@ -36,6 +36,11 @@ A **(mfr, pid)** pair = the canonical identity of a Zigbee device.
 > The user has been burned before by bot auto-publish reverting fixes — see P19 lessons in memory.
 >
 > **2026-07-27 — git history purge**: history was rewritten with `git-filter-repo` to remove sensitive/operational paths (see `reports/HISTORY_PURGE.md`). The first visible commit is now the v9.0.192 snapshot (2026-07-10) and the `origin` remote was dropped by the purge — it must be re-added before any push.
+>
+> **2026-08-04 — Stable vision (forum-driven)**: stable-v5 must differ from master on PURPOSE — master carries advanced features (flow engines, smart features), stable carries ONLY reliability. Forum sentiment analysis (2039 posts, topic 140352):
+> - **Best-perceived versions**: 7.4.9 (4👍/1👎), 5.5.256→5.5.270 (2👍/0), 5.7.15/16, 5.8.25/40, 5.11.25, 5.11.146, 9.0.258 (« no crashes anymore », Peter #2111)
+> - **Worst-perceived**: 5.11.152 (4👎, crashes), 7.4.6/7.4.1 (app crashes), 5.11.166, 5.11.138
+> - **Promotion policy**: backport a master fix to stable only if (1) it is a crash/reliability/data fix (never a feature), (2) it has run clean on the master Test channel without new forum crash reports, (3) tests are 100% green on both branches. Feature managers (availability, suppression, presence sim, circadian, cascade, fallback router…) are **master-only, forever**.
 
 ## Data Sources (15 external)
 
