@@ -35,8 +35,14 @@ async function main() {
   // would stay red forever.
   const DAY_MS = 24 * 3600 * 1000;
   const ageDays = (b) => (Date.now() - new Date(b.stateChangedAt || b.createdAt || 0).getTime()) / DAY_MS;
-  const crashed = recent.filter((b) => (b.crashes || 0) > 0 && ['test', 'live'].includes(b.state) && ageDays(b) <= 14);
-  const failed = recent.filter((b) => b.state === 'processing_failed' && ageDays(b) <= 7);
+  // The real question: "is the CURRENT channel build healthy?" — judge the
+  // newest build per channel, not sticky counters on superseded ones.
+  const latestByChannel = {};
+  for (const b of recent) {
+    if (['test', 'live'].includes(b.state) && !latestByChannel[b.state]) {latestByChannel[b.state] = b;}
+  }
+  const crashed = Object.values(latestByChannel).filter((b) => (b.crashes || 0) > 0 && ageDays(b) <= 14);
+  const failed = recent.filter((b) => b.state === 'processing_failed' && ageDays(b) <= 1);
 
   const lines = [
     '## Version Health (apps-api)',
