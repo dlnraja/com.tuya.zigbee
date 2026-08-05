@@ -1193,11 +1193,14 @@
     ]
   },
   "_TZ3000_2izubafb": {
-    "driverId": "bulb_dimmable",
-    "type": "light",
-    "powerSource": "mains",
+    "driverId": "button_emergency_sos",
+    "type": "remote",
+    "powerSource": "battery",
     "modelIds": [
-      "TS0601"
+      "TS0215A"
+    ],
+    "batteries": [
+      "CR2032"
     ]
   },
   "_TZ3000_2mbfxlzr": {
@@ -1330,11 +1333,14 @@
     ]
   },
   "_TZ3000_4fsgukof": {
-    "driverId": "bulb_dimmable",
-    "type": "light",
-    "powerSource": "mains",
+    "driverId": "button_emergency_sos",
+    "type": "remote",
+    "powerSource": "battery",
     "modelIds": [
-      "TS0601"
+      "TS0215A"
+    ],
+    "batteries": [
+      "CR2032"
     ]
   },
   "_TZ3000_4o16jdca": {
@@ -1754,11 +1760,14 @@
     ]
   },
   "_TZ3000_9r5jaajv": {
-    "driverId": "bulb_dimmable",
-    "type": "light",
-    "powerSource": "mains",
+    "driverId": "button_emergency_sos",
+    "type": "remote",
+    "powerSource": "battery",
     "modelIds": [
-      "TS0601"
+      "TS0215A"
+    ],
+    "batteries": [
+      "CR2032"
     ]
   },
   "_TZ3000_a4xycprs": {
@@ -3707,11 +3716,14 @@
     ]
   },
   "_TZ3000_p3fph1go": {
-    "driverId": "bulb_dimmable",
-    "type": "light",
-    "powerSource": "mains",
+    "driverId": "button_emergency_sos",
+    "type": "remote",
+    "powerSource": "battery",
     "modelIds": [
-      "TS0601"
+      "TS0215A"
+    ],
+    "batteries": [
+      "CR2032"
     ]
   },
   "_TZ3000_p6ju8myv": {
@@ -3755,11 +3767,14 @@
     ]
   },
   "_TZ3000_pkfazisv": {
-    "driverId": "bulb_dimmable",
-    "type": "light",
-    "powerSource": "mains",
+    "driverId": "button_emergency_sos",
+    "type": "remote",
+    "powerSource": "battery",
     "modelIds": [
-      "TS0601"
+      "TS0215A"
+    ],
+    "batteries": [
+      "CR2032"
     ]
   },
   "_TZ3000_pl5v1yyy": {
@@ -4237,11 +4252,14 @@
     ]
   },
   "_TZ3000_ssp0maqm": {
-    "driverId": "bulb_dimmable",
-    "type": "light",
-    "powerSource": "mains",
+    "driverId": "button_emergency_sos",
+    "type": "remote",
+    "powerSource": "battery",
     "modelIds": [
-      "TS0601"
+      "TS0215A"
+    ],
+    "batteries": [
+      "CR2032"
     ]
   },
   "_TZ3000_sznawwyw": {
@@ -4309,11 +4327,14 @@
     ]
   },
   "_TZ3000_tj4pwzzm": {
-    "driverId": "bulb_dimmable",
-    "type": "light",
-    "powerSource": "mains",
+    "driverId": "button_emergency_sos",
+    "type": "remote",
+    "powerSource": "battery",
     "modelIds": [
-      "TS0601"
+      "TS0215A"
+    ],
+    "batteries": [
+      "CR2032"
     ]
   },
   "_TZ3000_tqlv4ug4": {
@@ -4670,11 +4691,14 @@
     ]
   },
   "_TZ3000_wr2ucaj9": {
-    "driverId": "bulb_dimmable",
-    "type": "light",
-    "powerSource": "mains",
+    "driverId": "button_emergency_sos",
+    "type": "remote",
+    "powerSource": "battery",
     "modelIds": [
-      "TS0601"
+      "TS0215A"
+    ],
+    "batteries": [
+      "CR2032"
     ]
   },
   "_TZ3000_wr6g6olr": {
@@ -4870,11 +4894,14 @@
     ]
   },
   "_TZ3000_zsh6uat3": {
-    "driverId": "bulb_dimmable",
-    "type": "light",
-    "powerSource": "mains",
+    "driverId": "button_emergency_sos",
+    "type": "remote",
+    "powerSource": "battery",
     "modelIds": [
-      "TS0601"
+      "TS0215A"
+    ],
+    "batteries": [
+      "CR2032"
     ]
   },
   "_TZ3000_zv6x8bt2": {
@@ -54355,6 +54382,303 @@
     ],
     "productIds": [
       "TS0601"
+    ]
+  },
+  "_TZ3000_4FSGUKOF": {
+    "driverId": "button_emergency_sos",
+    "type": "remote",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0215A"
+    ],
+    "batteries": [
+      "CR2032"
+    ]
+  },
+  "_tz3000_4fsgukof": {
+    "driverId": "button_emergency_sos",
+    "type": "remote",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0215A"
+    ],
+    "batteries": [
+      "CR2032"
+    ]
+  },
+  "_tz3000_4FSGUKOF": {
+    "driverId": "button_emergency_sos",
+    "type": "remote",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0215A"
+    ],
+    "batteries": [
+      "CR2032"
+    ]
+  },
+  "_TZ3000_WR2UCAJ9": {
+    "driverId": "button_emergency_sos",
+    "type": "remote",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0215A"
+    ],
+    "batteries": [
+      "CR2032"
+    ]
+  },
+  "_tz3000_wr2ucaj9": {
+    "driverId": "button_emergency_sos",
+    "type": "remote",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0215A"
+    ],
+    "batteries": [
+      "CR2032"
+    ]
+  },
+  "_tz3000_WR2UCAJ9": {
+    "driverId": "button_emergency_sos",
+    "type": "remote",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0215A"
+    ],
+    "batteries": [
+      "CR2032"
+    ]
+  },
+  "_TZ3000_ZSH6UAT3": {
+    "driverId": "button_emergency_sos",
+    "type": "remote",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0215A"
+    ],
+    "batteries": [
+      "CR2032"
+    ]
+  },
+  "_tz3000_zsh6uat3": {
+    "driverId": "button_emergency_sos",
+    "type": "remote",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0215A"
+    ],
+    "batteries": [
+      "CR2032"
+    ]
+  },
+  "_tz3000_ZSH6UAT3": {
+    "driverId": "button_emergency_sos",
+    "type": "remote",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0215A"
+    ],
+    "batteries": [
+      "CR2032"
+    ]
+  },
+  "_TZ3000_TJ4PWZZM": {
+    "driverId": "button_emergency_sos",
+    "type": "remote",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0215A"
+    ],
+    "batteries": [
+      "CR2032"
+    ]
+  },
+  "_tz3000_tj4pwzzm": {
+    "driverId": "button_emergency_sos",
+    "type": "remote",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0215A"
+    ],
+    "batteries": [
+      "CR2032"
+    ]
+  },
+  "_tz3000_TJ4PWZZM": {
+    "driverId": "button_emergency_sos",
+    "type": "remote",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0215A"
+    ],
+    "batteries": [
+      "CR2032"
+    ]
+  },
+  "_TZ3000_2IZUBAFB": {
+    "driverId": "button_emergency_sos",
+    "type": "remote",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0215A"
+    ],
+    "batteries": [
+      "CR2032"
+    ]
+  },
+  "_tz3000_2izubafb": {
+    "driverId": "button_emergency_sos",
+    "type": "remote",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0215A"
+    ],
+    "batteries": [
+      "CR2032"
+    ]
+  },
+  "_tz3000_2IZUBAFB": {
+    "driverId": "button_emergency_sos",
+    "type": "remote",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0215A"
+    ],
+    "batteries": [
+      "CR2032"
+    ]
+  },
+  "_TZ3000_PKFAZISV": {
+    "driverId": "button_emergency_sos",
+    "type": "remote",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0215A"
+    ],
+    "batteries": [
+      "CR2032"
+    ]
+  },
+  "_tz3000_pkfazisv": {
+    "driverId": "button_emergency_sos",
+    "type": "remote",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0215A"
+    ],
+    "batteries": [
+      "CR2032"
+    ]
+  },
+  "_tz3000_PKFAZISV": {
+    "driverId": "button_emergency_sos",
+    "type": "remote",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0215A"
+    ],
+    "batteries": [
+      "CR2032"
+    ]
+  },
+  "_TZ3000_SSP0MAQM": {
+    "driverId": "button_emergency_sos",
+    "type": "remote",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0215A"
+    ],
+    "batteries": [
+      "CR2032"
+    ]
+  },
+  "_tz3000_ssp0maqm": {
+    "driverId": "button_emergency_sos",
+    "type": "remote",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0215A"
+    ],
+    "batteries": [
+      "CR2032"
+    ]
+  },
+  "_tz3000_SSP0MAQM": {
+    "driverId": "button_emergency_sos",
+    "type": "remote",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0215A"
+    ],
+    "batteries": [
+      "CR2032"
+    ]
+  },
+  "_TZ3000_P3FPH1GO": {
+    "driverId": "button_emergency_sos",
+    "type": "remote",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0215A"
+    ],
+    "batteries": [
+      "CR2032"
+    ]
+  },
+  "_tz3000_p3fph1go": {
+    "driverId": "button_emergency_sos",
+    "type": "remote",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0215A"
+    ],
+    "batteries": [
+      "CR2032"
+    ]
+  },
+  "_tz3000_P3FPH1GO": {
+    "driverId": "button_emergency_sos",
+    "type": "remote",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0215A"
+    ],
+    "batteries": [
+      "CR2032"
+    ]
+  },
+  "_TZ3000_9R5JAAJV": {
+    "driverId": "button_emergency_sos",
+    "type": "remote",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0215A"
+    ],
+    "batteries": [
+      "CR2032"
+    ]
+  },
+  "_tz3000_9r5jaajv": {
+    "driverId": "button_emergency_sos",
+    "type": "remote",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0215A"
+    ],
+    "batteries": [
+      "CR2032"
+    ]
+  },
+  "_tz3000_9R5JAAJV": {
+    "driverId": "button_emergency_sos",
+    "type": "remote",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0215A"
+    ],
+    "batteries": [
+      "CR2032"
     ]
   }
 }
