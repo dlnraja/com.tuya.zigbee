@@ -285,17 +285,37 @@ if (!fs.existsSync(dmdPath)) {
 // ─── M08 — Version consistency ───────────────────────────────────────────────
 section('M08 — Version consistency');
 const pkgPath = path.join(ROOT, 'package.json');
+const composePath = path.join(ROOT, '.homeycompose', 'app.json');
+// The publish bot bumps package.json/.homeycompose one patch AHEAD of the
+// committed app.json while a publish is in flight (app.json is recomposed
+// from .homeycompose at build time). The canonical version is therefore the
+// HIGHEST of the three manifests, and the fix syncs everything UP to it —
+// syncing pkg down would fight the bot's next release and recreate the
+// mismatch on the very next bot commit.
+const semverKey = (v) => String(v || '0.0.0').split('.').map((n) => parseInt(n, 10) || 0);
+const semverCmp = (a, b) => {
+  const pa = semverKey(a); const pb = semverKey(b);
+  for (let i = 0; i < 3; i++) { if (pa[i] !== pb[i]) {return pa[i] - pb[i];} }
+  return 0;
+};
 let pkg = null;
 if (fs.existsSync(pkgPath)) {
   try {
     pkg = JSON.parse(Buffer.from(fs.readFileSync(pkgPath)).toString('utf8'));
-    if (pkg.version !== app.version) {
-      fail('M08', `Version mismatch: app.json=${app.version} vs package.json=${pkg.version}`,
+    let compose = null;
+    try { compose = JSON.parse(Buffer.from(fs.readFileSync(composePath)).toString('utf8')); } catch (e) { /* compose optional */ }
+    const canonical = [app.version, pkg.version, compose && compose.version]
+      .filter(Boolean).sort(semverCmp).pop();
+    if (pkg.version !== app.version || (compose && compose.version !== app.version)) {
+      fail('M08', `Version mismatch: app.json=${app.version} vs package.json=${pkg.version}${compose ? ` vs .homeycompose=${compose.version}` : ''}`,
         () => {
-          const p = JSON.parse(Buffer.from(fs.readFileSync(pkgPath)).toString('utf8'));
-          const a = JSON.parse(Buffer.from(fs.readFileSync(appJsonPath)).toString('utf8'));
-          p.version = a.version;
-          fs.writeFileSync(pkgPath, JSON.stringify(p, null, 2), 'utf8');
+          for (const file of [appJsonPath, pkgPath, composePath]) {
+            if (!fs.existsSync(file)) {continue;}
+            const j = JSON.parse(Buffer.from(fs.readFileSync(file)).toString('utf8'));
+            j.version = canonical;
+            if (j.packages && j.packages['']) {j.packages[''].version = canonical;}
+            fs.writeFileSync(file, JSON.stringify(j, null, 2) + '\n', 'utf8');
+          }
         });
     } else {
       ok('M08', `Version consistent: ${app.version} (app.json = package.json)`);
