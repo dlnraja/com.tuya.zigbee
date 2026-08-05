@@ -15,7 +15,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 concurrency:
   group: agent-reach
@@ -74,11 +74,13 @@ jobs:
               json.dump(out, fh, indent=1)
           PY
 
-      - name: 💾 Commit state (if changed)
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add .github/state/agent-reach-health.json .github/state/forum-rss-crosscheck.json
-          git diff --cached --quiet || git commit -m "agent-reach: channel health + forum RSS cross-check [skip ci]"
-          git pull --rebase
-          git push
+      - name: 📤 Upload state artifacts
+        # .github/state is gitignored in this repo (volatile by design), so
+        # results ship as run artifacts instead of commits.
+        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v4
+        with:
+          name: agent-reach-state
+          path: |
+            .github/state/agent-reach-health.json
+            .github/state/forum-rss-crosscheck.json
+          retention-days: 30
