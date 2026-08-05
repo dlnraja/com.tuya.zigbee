@@ -54,6 +54,10 @@ async function refreshHomeyToken() {
     return null;
   }
 
+  // Mask FIRST: values exported via $GITHUB_ENV are printed verbatim in the
+  // env dump of every subsequent step's log — GitHub only auto-masks values
+  // coming from secrets.*. Register the mask before anything can echo it.
+  console.log(`::add-mask::${body.access_token}`);
   if (process.env.GITHUB_ENV) {
     fs.appendFileSync(process.env.GITHUB_ENV, `HOMEY_ACCOUNT_TOKEN=${body.access_token}\n`);
   }
