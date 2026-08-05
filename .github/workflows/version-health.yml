@@ -17,6 +17,10 @@ concurrency:
   group: version-health
   cancel-in-progress: false
 
+defaults:
+  run:
+    shell: bash
+
 jobs:
   version-health:
     name: 🩺 Crash/regression watch

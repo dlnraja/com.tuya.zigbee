@@ -21,6 +21,10 @@ concurrency:
   group: agent-reach
   cancel-in-progress: false
 
+defaults:
+  run:
+    shell: bash
+
 jobs:
   agent-reach:
     name: 🛰️ Agent Reach RSS cross-check + doctor
