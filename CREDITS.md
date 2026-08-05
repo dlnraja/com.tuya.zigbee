@@ -109,6 +109,15 @@
 - **thierry_arguimbau** — `_TZE204_dhotiauw` dual energy meter (forum #2115)
 - **Tobias-B, Lucas360, Rikjes, tlink, Or36, vikino, Cam, Haadeess, Lachee, Mikko_Vayrynen, Ronald_Bok, xfiler, DominikPL, robertklep** — diagnostic reports that drove crash fixes
 
+## Tooling & Free Data Channels (integrated 2026-08)
+- **Panniantong/agent-reach** (MIT) — free agent channel layer; its web channel routes to Jina Reader, RSS channel powers our forum RSS cross-check workflow (`agent-reach.yml`)
+- **Jina AI Reader** (r.jina.ai) — keyless free web reader, tier-1 fallback of `lib/scraper/reader-fallback.js`
+- **firecrawl/firecrawl-mcp-server** (MIT) — scrape/search; used as budget-capped tier-2 fallback (FIRECRAWL_DAILY_MAX, free tier protected) and keyless MCP endpoint
+- **Exa** (via mcporter MCP) — free keyless semantic search channel
+- **yt-dlp** — media metadata channel (Agent Reach backend)
+- **homey-api / Athom Apps API** — build/crash statistics, delegation token flow (mapped in `docs/HOMEY_DEV_PORTAL_MAP.md`)
+- **Kimi Code CLI + WebBridge** — autonomous CI repair, portal cartography, forum operations
+
 ## Licenses (SPDX)
 
 | Project | License | Usage |
