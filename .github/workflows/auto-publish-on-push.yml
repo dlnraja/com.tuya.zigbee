@@ -424,8 +424,26 @@ jobs:
           node scripts/maintenance/sanitize-manifest.cjs app.json .homeybuild/app.json || true
           node <<'NODE'
           const fs = require('fs');
+          // Self-healing version sync: take the HIGHEST version among the
+          // three manifests as canonical. bump-homey-version.js increments
+          // all of them, but a regenerated app.json can lag one patch behind
+          // (compose/pkg bumped, app.json rebuilt from a stale state) — which
+          // then trips the M08 pre-push gate and blocks every human push.
+          const semverKey = (v) => String(v || '0.0.0').split('.').map((n) => parseInt(n, 10) || 0);
+          const cmp = (a, b) => {
+            const pa = semverKey(a), pb = semverKey(b);
+            for (let i = 0; i < 3; i++) { if (pa[i] !== pb[i]) return pa[i] - pb[i]; }
+            return 0;
+          };
+          const candidates = ['app.json', '.homeycompose/app.json', 'package.json']
+            .filter((f) => fs.existsSync(f))
+            .map((f) => JSON.parse(fs.readFileSync(f, 'utf8')).version);
+          const version = candidates.sort(cmp).pop();
           const app = JSON.parse(fs.readFileSync('app.json', 'utf8'));
-          const version = app.version;
+          if (app.version !== version) {
+            app.version = version;
+            fs.writeFileSync('app.json', JSON.stringify(app, null, 2) + '\n');
+          }
           for (const file of ['package.json', 'package-lock.json']) {
             if (!fs.existsSync(file)) continue;
             const json = JSON.parse(fs.readFileSync(file, 'utf8'));
