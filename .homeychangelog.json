@@ -1020,6 +1020,9 @@
   "5.12.52": {
     "en": "Stability release: collision triage, energy divisors, tamper coverage, virtual energy estimation, quick actions, flow card crash fixes, battery listeners on buttons, canonical radar settings."
   },
+  "5.12.53": {
+    "en": "Publish pipeline fixes: firmwareUpdates aligned with compacted Zigbee identifiers (button_wireless_2 OTA), stable promote timeout raised to 25m, version manifests synchronized."
+  },
   "5.12.48": {
     "en": "Anti-flood protections: RX shedding with IAS exemption, IR send throttle."
   },
