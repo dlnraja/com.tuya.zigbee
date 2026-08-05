@@ -88,7 +88,36 @@ async function createClient({ log = () => {}, timeoutMs = DEFAULT_TIMEOUT_MS } =
   const AthomApi = loadAthomApi();
   const AthomAppsAPI = loadAthomAppsApi();
   log('  [HomeySDK] Requesting apps delegation token...');
-  const token = normalizeToken(await AthomApi.createDelegationToken({ audience: 'apps' }));
+  let token = null;
+  try {
+    token = normalizeToken(await AthomApi.createDelegationToken({ audience: 'apps' }));
+  } catch (error) {
+    log(`  [HomeySDK] SDK delegation failed: ${error.message}`);
+  }
+  if (!token && process.env.HOMEY_REFRESH_TOKEN) {
+    // Fallback chain (portal-cartography 2026-08-05): OAuth refresh token →
+    // account token → POST api.athom.com/delegation/token?audience=apps.
+    // Covers the case where HOMEY_PAT is a publish-only PAT that the SDK
+    // delegation rejects.
+    try {
+      log('  [HomeySDK] Trying HOMEY_REFRESH_TOKEN delegation fallback...');
+      const { refreshHomeyToken } = require('../../scripts/ci/homey-token-refresh');
+      const accountToken = await refreshHomeyToken();
+      if (accountToken) {
+        const res = await fetch('https://api.athom.com/delegation/token?audience=apps', {
+          method: 'POST',
+          headers: { 'Authorization': `Bearer ${accountToken}` },
+        });
+        if (res.ok) {
+          // Response is a raw JWT (JSON-encoded string) — strip quotes.
+          token = String(await res.text()).trim().replace(/^"|"$/g, '');
+          if (token) {log('  [HomeySDK] Delegation token obtained via refresh fallback');}
+        }
+      }
+    } catch (error) {
+      log(`  [HomeySDK] Refresh-token delegation fallback failed: ${error.message}`);
+    }
+  }
   if (!token) throw new Error('HomeySDK delegation token missing');
   log('  [HomeySDK] Delegation token obtained');
   return {
