@@ -1,0 +1,43 @@
+# 🩺 Version Health — crash/regression watcher (apps-api)
+# Weekly: pulls build states from the Athom Apps API and flags versions with
+# crashes on test/live or processing_failed builds. Complements the forum
+# sentiment tracking (AGENTS.md) with hard numbers from the store backend.
+
+name: 🩺 Version Health
+
+on:
+  schedule:
+    - cron: '27 5 * * 1,4'  # Monday & Thursday ~05:27 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: version-health
+  cancel-in-progress: false
+
+jobs:
+  version-health:
+    name: 🩺 Crash/regression watch
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: 📥 Checkout
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+
+      - name: 📦 Setup Node.js
+        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
+        with:
+          node-version: '22'
+          cache: npm
+
+      - name: 📦 Install deps
+        run: npm ci --prefer-offline --no-audit || npm install
+
+      - name: 🩺 Version health check
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+          HOMEY_REFRESH_TOKEN: ${{ secrets.HOMEY_REFRESH_TOKEN }}
+          GH_PAT: ${{ secrets.GH_PAT }}
+        run: node scripts/ci/version-health-check.js
