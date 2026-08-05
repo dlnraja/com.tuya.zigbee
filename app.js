@@ -156,6 +156,33 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
   async onInit() {
     this.initializeSettings();
 
+    // Backport (master 1d83dc504): wrap the flow-card getters so a single
+    // missing card id or an SDK without getDeviceActionCard cannot kill a
+    // driver's whole onInit. Failures are logged and return a no-op stub.
+    try {
+      const flow = this.homey.flow;
+      const noopCard = {
+        registerRunListener() { return this; },
+        registerArgumentAutocompleteListener() { return this; },
+        register() { return this; },
+        async trigger() { return false; },
+        async getValue() { return false; },
+      };
+      for (const m of ['getActionCard', 'getDeviceActionCard', 'getTriggerCard', 'getDeviceTriggerCard', 'getConditionCard', 'getDeviceConditionCard']) {
+        const orig = flow[m];
+        if (typeof orig !== 'function' || orig.__crashGuarded) {continue;}
+        const wrapped = (...args) => {
+          try { return orig.apply(flow, args); }
+          catch (e) {
+            this.log('[FLOW-GUARD]', m, args[0], e.message);
+            return noopCard;
+          }
+        };
+        wrapped.__crashGuarded = true;
+        flow[m] = wrapped;
+      }
+    } catch (e) { /* flow guard is best-effort */ }
+
     process.on('unhandledRejection', (reason, promise) => {
       try {
         this.error('UNHANDLED REJECTION at:', promise, 'reason:', reason);
