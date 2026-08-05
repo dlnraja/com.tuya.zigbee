@@ -63,6 +63,7 @@ All orchestrated via `tools/ci/mega-crawler.js` + GHA `mega-crawl.yml` (daily 02
 | 3 (Light) | Domoticz | `scripts/scanners/domoticz-scanner.js` |
 | 3 (Light) | Xiaomi MIoT | `scripts/scanners/xiaomi-miot-scanner.js` |
 | 3 (Light) | CSA-IoT | `scripts/scanners/csa-iot-scanner.js` |
+| Cross-check | Forum RSS feeds (Agent Reach) | GHA `agent-reach.yml` (weekly; `agent-reach doctor` health + feedparser cross-check vs the Discourse JSON scrapers) |
 
 ## Tools (CI/Analysis)
 
