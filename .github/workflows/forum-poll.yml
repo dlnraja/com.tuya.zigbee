@@ -44,6 +44,10 @@ jobs:
     name: 🌍 Poll Homey Forum
     runs-on: ubuntu-latest
     timeout-minutes: 15
+    env:
+      # Free reader fallback chain (Jina Reader keyless + Firecrawl if keyed)
+      FIRECRAWL_API_KEY: ${{ secrets.FIRECRAWL_API_KEY }}
+      SMART_FETCH_READER_FALLBACK: '1'
 
     steps:
       - name: 📥 Checkout

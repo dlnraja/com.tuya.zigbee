@@ -2,6 +2,7 @@
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
+const { safeSetCapabilityValue } = require('../../lib/utils/SafeCapability');
 
 // Energy scaling divisors — ZCL raw attributes; Tuya-DP drivers use smartDivisor: true via SmartDivisorManager
 const ENERGY_DIVISORS = {
@@ -154,7 +155,7 @@ class SwitchUsbDongleDevice extends PhysicalButtonMixin(ZigBeeDevice) {
         metering.on('attr.currentSummationDelivered', (value) => {
           const kwh = value / ENERGY_DIVISORS.meter_power.divisor;
           if (this.hasCapability('meter_power')) {
-            this.setCapabilityValue('meter_power', kwh).catch(() => {});
+            safeSetCapabilityValue(this, 'meter_power', kwh).catch(() => {});
           }
         });
       }
@@ -171,7 +172,7 @@ class SwitchUsbDongleDevice extends PhysicalButtonMixin(ZigBeeDevice) {
         electrical.on('attr.activePower', (value) => {
           const watts = value / ENERGY_DIVISORS.measure_power.divisor;
           if (this.hasCapability('measure_power')) {
-            this.setCapabilityValue('measure_power', watts).catch(() => {});
+            safeSetCapabilityValue(this, 'measure_power', watts).catch(() => {});
           }
         });
       }

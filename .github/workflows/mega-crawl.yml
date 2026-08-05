@@ -50,6 +50,11 @@ jobs:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       GH_PAT: ${{ secrets.GH_PAT }}
       GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+      # Free reader fallback chain (lib/scraper/reader-fallback.js):
+      # Jina Reader works keyless; FIRECRAWL_API_KEY (optional secret) adds
+      # the Firecrawl tier. SMART_FETCH_READER_FALLBACK=0 disables the chain.
+      FIRECRAWL_API_KEY: ${{ secrets.FIRECRAWL_API_KEY }}
+      SMART_FETCH_READER_FALLBACK: '1'
 
     steps:
       - name: 📥 Checkout

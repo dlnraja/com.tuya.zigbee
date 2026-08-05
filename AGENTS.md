@@ -75,6 +75,7 @@ All orchestrated via `tools/ci/mega-crawler.js` + GHA `mega-crawl.yml` (daily 02
 - `tools/ci/forum-fetch-140352.js` — paginate Discourse topic 140352
 - `tools/ci/mega-crawler.js` — orchestrate all 15 crawlers
 - `tools/ci/safe-timers.js` / `lib/utils/safe-timers.js` — race-condition-safe setTimeout
+- `lib/scraper/smart-fetch.js` + `lib/scraper/reader-fallback.js` — unified smart scraper; when the origin blocks a fetch, falls back to free readers (Jina Reader keyless, then Firecrawl if `FIRECRAWL_API_KEY` is set). Disable with `SMART_FETCH_READER_FALLBACK=0`.
 
 ## Key Files
 
