@@ -3,7 +3,7 @@
 const fs=require('fs'),path=require('path');
 const{fetchWithRetry}=require('./retry-helper');
 const privacy=require('./privacy-redactor');
-const TOKENS=[process.env.HOMEY_PAT_API,process.env.HOMEY_PAT].filter(Boolean);
+const TOKENS=[process.env.HOMEY_ACCOUNT_TOKEN,process.env.HOMEY_PAT_API,process.env.HOMEY_PAT].filter(Boolean);
 let PAT=null;
 const SUM=process.env.GITHUB_STEP_SUMMARY||null;
 const STATE=path.join(__dirname,'..','state');
@@ -43,16 +43,22 @@ function saveReport(report){
   const safe=privacy.redactObject(report);privacy.assertNoLeaks(safe,REPORT);
   fs.writeFileSync(REPORT,JSON.stringify(safe,null,2)+'\n');
 }
-if(!TOKENS.length){
+if(!TOKENS.length && !process.env.HOMEY_REFRESH_TOKEN){
   const report=baseReport();
   addIssue(report,'error','missing_homey_credential','Homey runtime diagnostics could not run because no credential is configured.');
   saveReport(report);
-  console.log('HOMEY_PAT_API/HOMEY_PAT not set - skip');
+  console.log('HOMEY_PAT_API/HOMEY_PAT/HOMEY_REFRESH_TOKEN not set - skip');
   process.exit(1);
 }
 async function main(){
   log('## Homey Device Diagnostics');
   const report=baseReport();
+  // Prefer a fresh OAuth account token when the refresh secret is configured
+  // (portal PATs cannot call the account API — they 401 on /user/me).
+  try{
+    const fresh=await require('../../scripts/ci/homey-token-refresh').refreshHomeyToken();
+    if(fresh)TOKENS.unshift(fresh);
+  }catch(e){log('token refresh skipped: '+e.message);}
   let me=null;
   for(const t of TOKENS){
     PAT=t;
@@ -68,10 +74,17 @@ async function main(){
     process.exit(1);
   }
   log('User: '+privacy.alias('homey-user',(me.id||me.email||me.firstname||'unknown')));
+  // The Athom account API embeds the Homey list directly in GET /user/me
+  // (me.homeys[]). There is no /user/me/homey endpoint — it 404s even with a
+  // full-scope token, which used to surface as a bogus "PAT scope" warning.
   let homeys=[];
-  try{homeys=await api('https://api.athom.com/user/me/homey');report.auth.canListHomeys=true;}catch(e){
-    addIssue(report,'warning','homey_list_failed','Cannot list Homeys through the current Homey credential: '+privacy.redact(e.message));
-    log('::warning::Cannot list Homeys: '+privacy.redact(e.message)+' (PAT scope may be limited)');
+  try{
+    const raw=Array.isArray(me.homeys)?me.homeys:[];
+    homeys=raw.map(h=>({ ...h, id: h.id||h._id }));
+    report.auth.canListHomeys=homeys.length>0;
+  }catch(e){
+    addIssue(report,'warning','homey_list_failed','Cannot list Homeys from the /user/me payload: '+privacy.redact(e.message));
+    log('::warning::Cannot list Homeys: '+privacy.redact(e.message));
   }
   if(!homeys||!homeys.length){
     addIssue(report,'warning','homey_runtime_unavailable','No Homeys were accessible, so live runtime crash/device diagnostics were not collected.');
