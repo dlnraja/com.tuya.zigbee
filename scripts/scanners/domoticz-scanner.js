@@ -59,7 +59,7 @@ function githubGet(urlPath) {
       hostname: 'api.github.com',
       path: urlPath,
       headers: GH_HEADERS,
-      timeout: 30000,
+      timeout: 15000,
     };
     https.get(opts, (res) => {
       let data = '';
@@ -78,7 +78,7 @@ function fetchRaw(url) {
   return new Promise((resolve, reject) => {
     https.get(url, {
       headers: { 'User-Agent': 'HomeyTuyaScanner/1.0' },
-      timeout: 30000,
+      timeout: 15000,
     }, (res) => {
       if (res.statusCode === 301 || res.statusCode === 302) {
         return fetchRaw(res.headers.location).then(resolve, reject);
@@ -271,9 +271,15 @@ async function scan() {
 
   const allDevices = [];
   const processedFiles = new Set();
+  // Global time budget: the mega-crawler kills crawlers at 900s (spawnSync
+  // ETIMEDOUT, no results written). Stop fetching early enough to always
+  // write partial results.
+  const DEADLINE = Date.now() + (Number(process.env.DOMOTICZ_TIME_BUDGET_S || 700) * 1000);
+  const timeLeft = () => Date.now() < DEADLINE;
 
   // Scan known repos
   for (const repoInfo of ZIGBEE_REPOS) {
+    if (!timeLeft()) { console.log('⏱️ Time budget reached — writing partial results'); break; }
     console.log(`\nScanning repo: ${repoInfo.owner}/${repoInfo.repo}`);
     try {
       // Get tree to find relevant files
@@ -290,13 +296,20 @@ async function scan() {
       console.log(`  Found ${relevantFiles.length} relevant files`);
 
       for (const file of relevantFiles.slice(0, 50)) {
+        if (!timeLeft()) { break; }
         const fileKey = `${repoInfo.owner}/${repoInfo.repo}/${file.path}`;
         if (processedFiles.has(fileKey)) continue;
         processedFiles.add(fileKey);
 
         try {
-          const rawUrl = `${DOMOTICZ_RAW}/${repoInfo.owner}/${repoInfo.repo}/${file.path}`;
-          const source = await fetchRaw(rawUrl);
+          // raw.githubusercontent needs the branch ref in the path — without
+          // it every fetch 404s and the repo scan yields nothing.
+          let source;
+          try {
+            source = await fetchRaw(`${DOMOTICZ_RAW}/${repoInfo.owner}/${repoInfo.repo}/main/${file.path}`);
+          } catch (_e) {
+            source = await fetchRaw(`${DOMOTICZ_RAW}/${repoInfo.owner}/${repoInfo.repo}/master/${file.path}`);
+          }
 
           let parsed;
           if (file.path.endsWith('.json')) {
@@ -334,6 +347,7 @@ async function scan() {
 
   // Search GitHub for more patterns
   for (const query of SEARCH_QUERIES) {
+    if (!timeLeft()) { console.log('⏱️ Time budget reached — skipping remaining searches'); break; }
     console.log(`\nSearching: "${query}"`);
     try {
       const searchResult = await githubGet(`/search/code?q=${encodeURIComponent(query)}&per_page=20`);
@@ -341,6 +355,7 @@ async function scan() {
       console.log(`  Found ${items.length} files`);
 
       for (const item of items) {
+        if (!timeLeft()) { break; }
         if (!item.path) continue;
         const fileKey = `${item.repository?.full_name}/${item.path}`;
         if (processedFiles.has(fileKey)) continue;
@@ -419,7 +434,11 @@ async function scan() {
 
 // ── Run if executed directly ─────────────────────────────────────────────
 if (require.main === module) {
-  scan().catch((e) => {
+  scan().then(() => {
+    // Sockets opened by https.get can keep the event loop alive after the
+    // results are written — exit explicitly so CI never hangs post-write.
+    process.exit(0);
+  }).catch((e) => {
     console.error('Domoticz Zigbee Scanner failed:', e.message);
     process.exit(1);
   });
