@@ -1,0 +1,84 @@
+# 🛰️ Agent Reach — free channel layer (RSS / web-readers / health)
+# Integrates Panniantong/agent-reach (https://github.com/Panniantong/agent-reach)
+# as a cross-check channel for the forum monitors: its RSS backend
+# (feedparser) parses the Homey community feeds independently from the
+# Discourse JSON scrapers, and `agent-reach doctor` gives a channel-health
+# signal. Web reading itself is covered by lib/scraper/reader-fallback.js
+# (Jina Reader — the same backend Agent Reach's web channel routes to).
+# Schedule: weekly Monday ~04:42 UTC + workflow_dispatch.
+
+name: 🛰️ Agent Reach Channels
+
+on:
+  schedule:
+    - cron: '42 4 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: agent-reach
+  cancel-in-progress: false
+
+jobs:
+  agent-reach:
+    name: 🛰️ Agent Reach RSS cross-check + doctor
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: 📥 Checkout
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 🐍 Setup Python
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: '3.12'
+
+      - name: 📦 Install Agent Reach (pinned commit)
+        run: |
+          # Pinned to a reviewed commit, not a floating branch.
+          pip install "https://github.com/Panniantong/agent-reach/archive/c1eecd61bf42.zip"
+
+      - name: 🩺 Channel health (doctor)
+        continue-on-error: true # doctor exits non-zero when any channel is down — that IS the report
+        run: |
+          mkdir -p .github/state
+          agent-reach doctor --json > .github/state/agent-reach-health.json || true
+          agent-reach doctor || true
+
+      - name: 📡 RSS cross-check (forum feeds via Agent Reach backend)
+        run: |
+          python - <<'PY'
+          import json, time
+          import feedparser
+
+          FEEDS = {
+              "posts": "https://community.homey.app/posts.rss",
+              "topic-140352": "https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352.rss",
+          }
+          out = {"fetchedAt": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()), "feeds": {}}
+          for name, url in FEEDS.items():
+              feed = feedparser.parse(url)
+              entries = [{
+                  "title": e.get("title", ""),
+                  "link": e.get("link", ""),
+                  "published": e.get("published", ""),
+                  "author": e.get("author", ""),
+              } for e in feed.entries[:25]]
+              out["feeds"][name] = {"count": len(feed.entries), "latest": entries}
+              print(f"{name}: {len(feed.entries)} entries")
+          with open(".github/state/forum-rss-crosscheck.json", "w") as fh:
+              json.dump(out, fh, indent=1)
+          PY
+
+      - name: 💾 Commit state (if changed)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .github/state/agent-reach-health.json .github/state/forum-rss-crosscheck.json
+          git diff --cached --quiet || git commit -m "agent-reach: channel health + forum RSS cross-check [skip ci]"
+          git pull --rebase
+          git push
