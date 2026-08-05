@@ -400,6 +400,41 @@ function compactZigbeeIdentifiers(manifest, opts = {}) {
     manifest.drivers = nextDrivers;
   }
 
+  // Keep OTA firmwareUpdates consistent with the (possibly compacted) zigbee
+  // identifier lists: homey-lib 'publish' validation rejects firmware updates
+  // whose productId/manufacturerName are no longer claimed by the driver.
+  let firmwareAligned = 0;
+  for (const driver of manifest.drivers || []) {
+    const fw = driver.firmwareUpdates;
+    if (!fw || !Array.isArray(fw.updates)) continue;
+    const pids = new Set((driver.zigbee && driver.zigbee.productId) || []);
+    const mfrsLc = new Set(((driver.zigbee && driver.zigbee.manufacturerName) || []).map((m) => String(m).toLowerCase()));
+    const kept = [];
+    for (const update of fw.updates) {
+      const dev = update && update.device;
+      if (!dev) { kept.push(update); continue; }
+      if (Array.isArray(dev.productId)) {
+        const next = dev.productId.filter((p) => pids.has(p));
+        if (next.length !== dev.productId.length) { dev.productId = next; firmwareAligned++; }
+      }
+      if (Array.isArray(dev.manufacturerName)) {
+        const next = dev.manufacturerName.filter((m) => mfrsLc.has(String(m).toLowerCase()));
+        if (next.length !== dev.manufacturerName.length) { dev.manufacturerName = next; firmwareAligned++; }
+      }
+      const emptyPids = Array.isArray(dev.productId) && dev.productId.length === 0;
+      const emptyMfrs = Array.isArray(dev.manufacturerName) && dev.manufacturerName.length === 0;
+      if (!emptyPids && !emptyMfrs) kept.push(update);
+    }
+    if (kept.length !== fw.updates.length) {
+      firmwareAligned++;
+      if (kept.length === 0) { delete driver.firmwareUpdates; }
+      else { fw.updates = kept; }
+    }
+  }
+  if (firmwareAligned > 0) {
+    logLines.push(`[compact] firmwareUpdates aligned to compacted identifiers (${firmwareAligned} change(s))`);
+  }
+
   const droppedObservedCount = observedDropped.reduce((sum, item) => sum + item.manufacturers.length, 0);
   logLines.push(
     `[compact] summary: combos ${beforeTotal}→${afterTotal}, observed mfrs preserved ${observedKept}/${observedBefore}`
@@ -423,6 +458,7 @@ function compactZigbeeIdentifiers(manifest, opts = {}) {
     prunedDrivers,
     rescuedDrivers,
     filteredSyntheticManufacturers,
+    firmwareAligned,
     observedBefore,
     observedKept,
     observedDropped,
@@ -442,7 +478,7 @@ function compactZigbeeIdentifiers(manifest, opts = {}) {
 function compactManifestFile(file, opts = {}) {
   const manifest = JSON.parse(fs.readFileSync(file, 'utf8'));
   const result = compactZigbeeIdentifiers(manifest, opts);
-  if (result.changed > 0 || result.pruned > 0 || result.rescuedDrivers.length > 0 || result.filteredSyntheticManufacturers > 0) {
+  if (result.changed > 0 || result.pruned > 0 || result.rescuedDrivers.length > 0 || result.filteredSyntheticManufacturers > 0 || result.firmwareAligned > 0) {
     fs.writeFileSync(file, JSON.stringify(manifest), 'utf8');
   }
   return result;
