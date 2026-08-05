@@ -30,8 +30,13 @@ async function main() {
     .sort((a, b) => b.id - a.id)
     .slice(0, RECENT_WINDOW);
 
-  const crashed = recent.filter((b) => (b.crashes || 0) > 0 && ['test', 'live'].includes(b.state));
-  const failed = recent.filter((b) => b.state === 'processing_failed');
+  // Only alert on FRESH signals — crash counters and processing_failed are
+  // cumulative/sticky on old builds, so without an age window the workflow
+  // would stay red forever.
+  const DAY_MS = 24 * 3600 * 1000;
+  const ageDays = (b) => (Date.now() - new Date(b.stateChangedAt || b.createdAt || 0).getTime()) / DAY_MS;
+  const crashed = recent.filter((b) => (b.crashes || 0) > 0 && ['test', 'live'].includes(b.state) && ageDays(b) <= 14);
+  const failed = recent.filter((b) => b.state === 'processing_failed' && ageDays(b) <= 7);
 
   const lines = [
     '## Version Health (apps-api)',
