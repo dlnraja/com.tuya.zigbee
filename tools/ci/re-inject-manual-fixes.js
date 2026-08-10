@@ -406,6 +406,26 @@ const MANUAL_FIXES = [
     addAtTop: false,
     source: 'p96-forum-2135',
   },
+  // Forum #2129 Welshsmarthome — Scolmore ClickSmart dual socket (no metering)
+  {
+    id: 'p96-hlla45kx-double-power-point-2',
+    file: 'drivers/double_power_point_2/driver.compose.json',
+    description: 'Forum #2129: _TYZB01_hlla45kx TS011F Scolmore ClickSmart 2G socket',
+    match: (mfrs) => mfrs.some((m) => /hlla45kx/i.test(m)),
+    addIfMissing: ['_TYZB01_hlla45kx', '_tyzb01_hlla45kx', '_TYZB01_HLLA45KX', '_tyzb01_HLLA45KX'],
+    addAtTop: false,
+    source: 'p96-forum-2129',
+  },
+  {
+    id: 'p96-hlla45kx-remove-button-wireless-2',
+    file: 'drivers/button_wireless_2/driver.compose.json',
+    description: 'Forum #2129: keep ClickSmart socket off button_wireless_2',
+    match: () => true,
+    addIfMissing: [],
+    removeIfPresent: ['_TYZB01_hlla45kx', '_tyzb01_hlla45kx', '_TYZB01_HLLA45KX', '_tyzb01_HLLA45KX'],
+    addAtTop: false,
+    source: 'p96-forum-2129',
+  },
   // Forum #2130 Kanbros — BSEED 2-gang touch switch
   {
     id: 'p94-w5xztuy7-switch-2gang',
