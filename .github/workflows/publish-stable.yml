@@ -227,6 +227,8 @@ jobs:
           APP_ID=$(node -p "require('./app.json').id" 2>/dev/null || echo "?")
           echo "## Stable Publish" >> $GITHUB_STEP_SUMMARY
           echo "v$VER | APP_ID: $APP_ID" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "> **APP_ID warning**: master and stable share \`com.dlnraja.tuya.zigbee\`. Promoting stable to Test overwrites the master Test slot (and vice versa). Prefer Live for production stable, or republish master last if Test must stay on 9.x." >> $GITHUB_STEP_SUMMARY
       - name: Full diagnostics sweep - sanitized
         if: always()
         continue-on-error: true

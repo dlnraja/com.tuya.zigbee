@@ -60,6 +60,17 @@ const FORBIDDEN = [
     driver: 'climate_sensor',
     mfrs: ['_TZE284_m1cvyneb'],
   },
+  // Forum #2133/#2131: specific devices must not collide with generic_tuya catch-all
+  {
+    id: 'p94-m1cvyneb-not-generic',
+    driver: 'generic_tuya',
+    mfrs: ['_TZE284_m1cvyneb'],
+  },
+  {
+    id: 'p94-imaccztn-not-generic',
+    driver: 'generic_tuya',
+    mfrs: ['_TZ3210_imaccztn'],
+  },
 ];
 
 /** Forbidden productIds on a driver. */
