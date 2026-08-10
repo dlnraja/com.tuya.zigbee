@@ -22,12 +22,7 @@ class temphumidsensor2 extends ZigBeeDevice {
 		// measure_humidity
 		zclNode.endpoints[1].clusters[CLUSTER.RELATIVE_HUMIDITY_MEASUREMENT.NAME]
 		.on('attr.measuredValue', this.onRelativeHumidityMeasuredAttributeReport.bind(this));
-
-		// measure_battery // alarm_battery
-		zclNode.endpoints[1].clusters[CLUSTER.POWER_CONFIGURATION.NAME]
-		.on('attr.batteryPercentageRemaining', this.handleBatteryPercentageReport.bind(this));
-
-	}
+}
 
 	onTemperatureMeasuredAttributeReport(measuredValue) {
 		const temperatureOffset = this.getSetting('temperature_offset') || 0;
@@ -41,13 +36,6 @@ class temphumidsensor2 extends ZigBeeDevice {
 		const parsedValue = this.getSetting('humidity_decimals') === '2' ? Math.round((measuredValue / 100) * 100) / 100 : Math.round((measuredValue / 100) * 10) / 10;
 		this.log('measure_humidity | relativeHumidity - measuredValue (humidity):', parsedValue, '+ humidity offset', humidityOffset);
 		this.safeSetCapabilityValue('measure_humidity', parsedValue + humidityOffset).catch(this.error);
-	}
-
-	handleBatteryPercentageReport(batteryPercentageRemaining) {
-		const batteryThreshold = this.getSetting('batteryThreshold') || 20;
-		this.log("measure_battery | powerConfiguration - batteryPercentageRemaining (%): ", batteryPercentageRemaining/2);
-		this.safeSetCapabilityValue('measure_battery', batteryPercentageRemaining/2).catch(this.error);
-		this.safeSetCapabilityValue('alarm_battery', batteryPercentageRemaining/2 < batteryThreshold ? true : false).catch(this.error);
 	}
 
 	onDeleted(){

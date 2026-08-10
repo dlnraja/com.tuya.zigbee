@@ -42,25 +42,13 @@ class smart_motion_sensor extends ZigBeeDevice {
 		// alarm_motion & alarm_tamper
 		zclNode.endpoints[1].clusters[CLUSTER.IAS_ZONE.NAME]
 		.on('attr.zoneStatus', this.onZoneStatusAttributeReport.bind(this));
-
-		// measure_battery // alarm_battery
-		zclNode.endpoints[1].clusters[CLUSTER.POWER_CONFIGURATION.NAME]
-		.on('attr.batteryPercentageRemaining', this.handleBatteryPercentageReport.bind(this));
-
-	}
+}
 
 	onZoneStatusAttributeReport(status) {
 		this.log("Motion status: ", status.alarm1);
 		this.log("Tamper status: ", status.tamper);
 		this.safeSetCapabilityValue('alarm_motion', status.alarm1).catch(this.error);
 		this.safeSetCapabilityValue('alarm_tamper', status.tamper).catch(this.error);
-	}
-
-	handleBatteryPercentageReport(batteryPercentageRemaining) {
-		const batteryThreshold = this.getSetting('batteryThreshold') || 20;
-		this.log("measure_battery | powerConfiguration - batteryPercentageRemaining (%): ", batteryPercentageRemaining/2);
-		this.safeSetCapabilityValue('measure_battery', batteryPercentageRemaining/2).catch(this.error);
-		this.safeSetCapabilityValue('alarm_battery', batteryPercentageRemaining/2 < batteryThreshold ? true : false).catch(this.error);
 	}
 
 	onDeleted(){

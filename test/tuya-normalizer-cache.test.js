@@ -52,9 +52,12 @@ describe('TuyaNormalizer — caseless core', () => {
     assert.strictEqual(TU.containsCI('_TZE204_cfnprab5', 'CFNPRAB5'), true);
   });
 
-  it('generateCaseVariants covers lower and upper forms', () => {
+  it('generateCaseVariants covers lower, upper, and canonical Tuya forms', () => {
     const variants = TU.generateCaseVariants('_TZ3000_G9g2xnch');
     assert.ok(variants.includes('_tz3000_g9g2xnch'), 'lower variant present');
     assert.ok(variants.includes('_TZ3000_G9G2XNCH'), 'upper variant present');
+    assert.ok(variants.includes('_TZ3000_g9g2xnch'), 'canonical prefix-upper/suffix-lower present');
+    const mixed = TU.generateCaseVariants('_tz3000_AbC123xy');
+    assert.ok(mixed.includes('_TZ3000_abc123xy'), 'mixed input yields canonical');
   });
 });
