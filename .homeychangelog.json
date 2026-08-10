@@ -1690,5 +1690,8 @@
   },
   "9.0.436": {
     "en": "Stability improvements and Homey test publication retry after transient processing failure."
+  },
+  "9.0.437": {
+    "en": "Retry Homey Test publish after Athom processing_failed (socket hang up) on 9.0.436; align app.json; harden verify-test-version fail-closed."
   }
 }
