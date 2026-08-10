@@ -120,7 +120,12 @@
     "skills:security": "node scripts/ci/security-scanner.js",
     "skills:prepush": "npm run precommit:full && npm test && npm run build-docs",
     "check:timer-context": "node scripts/validation/check-homey-timer-context.js",
-    "check:voice": "node scripts/validation/check-google-assistant-voice-safety.js"
+    "check:voice": "node scripts/validation/check-google-assistant-voice-safety.js",
+    "fix:case-variants": "node tools/ci/ensure-case-variants.js --apply",
+    "check:case-variants": "node tools/ci/ensure-case-variants.js",
+    "check:anti-bot": "node tools/ci/anti-bot-regression-gate.js",
+    "fix:re-inject": "node tools/ci/re-inject-manual-fixes.js",
+    "enrich:closed-loop": "node tools/ci/auto-enrich-closed-loop.js --skip-crawl"
   },
   "keywords": [
     "homey",

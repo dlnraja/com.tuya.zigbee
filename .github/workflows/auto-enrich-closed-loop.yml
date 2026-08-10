@@ -101,7 +101,7 @@ jobs:
           ARGS=""
           if [ "${{ inputs.skip_crawl }}" = "true" ]; then ARGS="$ARGS --skip-crawl"; fi
           if [ "${{ inputs.dry_run }}" = "true" ]; then ARGS="$ARGS --dry-run"; fi
-          echo "## 🔄 Auto-Enrich Closed Loop" >> $GITHUB_STEP_SUMMARY
+          echo "## 🔄 Auto-Enrich Closed Loop (P99 CI)" >> $GITHUB_STEP_SUMMARY
           echo '```' >> $GITHUB_STEP_SUMMARY
           node tools/ci/auto-enrich-closed-loop.js $ARGS 2>&1 | tee auto-enrich.log
           echo '```' >> $GITHUB_STEP_SUMMARY
@@ -113,6 +113,20 @@ jobs:
             echo '' >> $GITHUB_STEP_SUMMARY
             echo '```' >> $GITHUB_STEP_SUMMARY
           fi
+
+      # Defense in depth — also run outside the loop script so a partial
+      # loop still leaves manifests CI-safe before any follow-up jobs.
+      - name: "🔤 Ensure case variants (P99)"
+        if: always() && inputs.dry_run != true
+        run: node tools/ci/ensure-case-variants.js --apply
+
+      - name: "🔁 Re-inject manual fixes"
+        if: always() && inputs.dry_run != true
+        run: node tools/ci/re-inject-manual-fixes.js
+
+      - name: "🛡️ Anti-bot regression gate"
+        if: always()
+        run: node tools/ci/anti-bot-regression-gate.js
 
       - name: 📦 Upload artifacts
         if: always()

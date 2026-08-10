@@ -73,7 +73,10 @@ jobs:
       - name: Google Assistant / Alexa voice-safety gate
         run: npm run check:voice
 
-      # P96: same anti-regression path as auto-fix-and-publish (prevent false-green publishes)
+      # P96/P99: anti-regression + Homey case-sensitive compose coverage
+      - name: Ensure manufacturer case variants
+        run: node tools/ci/ensure-case-variants.js --apply
+
       - name: Re-inject manual driver fixes
         run: node tools/ci/re-inject-manual-fixes.js
 

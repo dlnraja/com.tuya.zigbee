@@ -61,6 +61,10 @@ jobs:
       - name: 🤖 Run auto-fix-all
         run: node scripts/validation/auto-fix-all.js || true
 
+      # P99: Homey compose matching is case-sensitive — ensure canonical+lower forms
+      - name: "🔤 Ensure manufacturer case variants (P99)"
+        run: node tools/ci/ensure-case-variants.js --apply
+
       # v9.0.262 (P63.3): Re-inject manual driver fixes (HOBEIAN P61 etc.)
       # AFTER the auto-fix-all has run, BEFORE the build/publish. The
       # auto-publish bot regenerates driver.compose.json from canonical
@@ -73,6 +77,17 @@ jobs:
       # P94+: hard-fail if bot reintroduced known wrong Sacred Couple routings
       # (complements re-inject repair with a detect gate before publish commit)
       - name: "🛡️ Anti-bot regression gate (P94+)"
+        run: node tools/ci/anti-bot-regression-gate.js
+
+      # Soft intelligent enrich (forum/johan proposals) — never dumps to generic_tuya
+      - name: "🧠 Bidirectional enrich (CI + sacred couple)"
+        continue-on-error: true
+        run: node tools/ci/bidirectional-enricher.js || true
+
+      - name: "🔁 Re-inject after enrich (keep manual overrides)"
+        run: node tools/ci/re-inject-manual-fixes.js
+
+      - name: "🛡️ Anti-bot gate (post-enrich)"
         run: node tools/ci/anti-bot-regression-gate.js
 
       - name: 📊 Dashboard monitor
@@ -109,7 +124,7 @@ jobs:
             done
           }
           stage_auto_fix_paths() {
-            for path in drivers lib app.json .homeycompose .homeychangelog.json CHANGELOG.md README.md docs .cursorrules AI_INSTRUCTIONS.md package.json package-lock.json data/mfs_db.json; do
+            for path in drivers lib app.json .homeycompose .homeychangelog.json CHANGELOG.md README.md docs .cursorrules AI_INSTRUCTIONS.md package.json package-lock.json data/mfs_db.json tools/ci; do
               [ -e "$path" ] && git add "$path"
             done
           }
