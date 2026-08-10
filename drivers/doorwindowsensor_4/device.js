@@ -7,7 +7,7 @@ const { CLUSTER } = require('zigbee-clusters');
 
 /**
  * Door/Window contact sensor (DS01 family, IAS zone).
- * v5.12.55 (P92.123): enrollment + initial read + invert via shared helper
+ * v9.0.415 (P92.123): enrollment + initial read + invert via shared helper
  * (the sensor's own interview showed zoneState "notEnrolled" / CIE 00:00...
  * — the root cause of frozen contact states). Battery percentage handling
  * preserved.
@@ -32,21 +32,8 @@ class doorwindowsensor_4 extends ZigBeeDevice {
     }
 
     // alarm_contact (+ alarm_battery from the zone battery bit)
+    // Battery % via ZclBatteryMonitor.attach (UnifiedBatteryHandler) — no naive /2 path
     await setupDoorWindowSensor(this, zclNode, { hasTamper: false });
-
-    // measure_battery // alarm_battery
-    const powerCluster = zclNode.endpoints[1] && zclNode.endpoints[1].clusters
-      && zclNode.endpoints[1].clusters[CLUSTER.POWER_CONFIGURATION.NAME];
-    if (powerCluster && typeof powerCluster.on === 'function') {
-      powerCluster.on('attr.batteryPercentageRemaining', this.handleBatteryPercentageReport.bind(this));
-    }
-  }
-
-  handleBatteryPercentageReport(batteryPercentageRemaining) {
-    const batteryThreshold = this.getSetting('batteryThreshold') || 20;
-    this.log('DS01 measure_battery | powerConfiguration - batteryPercentageRemaining (%): ', batteryPercentageRemaining / 2);
-    this.safeSetCapabilityValue('measure_battery', batteryPercentageRemaining / 2).catch(this.error);
-    this.safeSetCapabilityValue('alarm_battery', batteryPercentageRemaining / 2 < batteryThreshold).catch(this.error);
   }
 
   async onSettings({ newSettings, changedKeys }) {
