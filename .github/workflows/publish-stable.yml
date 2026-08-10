@@ -111,6 +111,26 @@ jobs:
           node scripts/maintenance/optimize-build-images.cjs
           node scripts/maintenance/optimize-build-svgs.cjs
           node scripts/maintenance/sanitize-manifest.cjs .homeybuild/app.json
+      # P94: Homey build regenerates app.json from .homeycompose; package.json can lag.
+      # Align package.json (+ root app.json) to built version before prepare-publish guard.
+      - name: Sync versions after Homey build
+        run: |
+          node -e '
+            const fs = require("fs");
+            const built = JSON.parse(fs.readFileSync(".homeybuild/app.json", "utf8"));
+            const v = built.version;
+            for (const f of ["package.json", "app.json", ".homeybuild/package.json"]) {
+              if (!fs.existsSync(f)) { console.log("skip missing", f); continue; }
+              const j = JSON.parse(fs.readFileSync(f, "utf8"));
+              if (j.version !== v) {
+                console.log("Align " + f + ": " + j.version + " -> " + v);
+                j.version = v;
+                fs.writeFileSync(f, JSON.stringify(j, null, 2) + "\n");
+              } else {
+                console.log("OK " + f + "=" + v);
+              }
+            }
+          '
       - name: Prepare Publish Directory
         run: npm run prepare-publish
       - name: Publish to Draft

@@ -1159,5 +1159,8 @@
   },
   "5.12.0": {
     "en": "v5.12.0: stable-v5 batch sync (drivers, FPs, flows, manifest) from master v9.0.240–v9.0.260."
+  },
+  "5.12.57": {
+    "en": "P94: forum fingerprint routing, energy guard, anti-bot re-inject sync (reliability)."
   }
 }
