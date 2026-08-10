@@ -47,6 +47,37 @@ async onInit() {
     reg('curtain_motor_tilt_close', async ({ device }) => { await device['setCapabilityValue']('windowcoverings_set', 0); return true; });
     reg('curtain_motor_tilt_stop', async ({ device }) => { await device['setCapabilityValue']('windowcoverings_stop', true); return true; });
 
+    // Actions — SDK3: getActionCard (getDeviceActionCard polyfilled in app.js)
+    const regDev = (id, fn) => { try {
+      const flow = this.homey.flow;
+      const card = (typeof flow.getActionCard === 'function' ? flow.getActionCard(id) : null)
+        || (typeof flow.getDeviceActionCard === 'function' ? flow.getDeviceActionCard(id) : null);
+      if (card && typeof card.registerRunListener === 'function') {
+        card.registerRunListener(fn);
+      }
+    } catch (e) { this.log('[Flow]', id, e.message); } };
+    regDev('curtain_calibrate', async ({ device }) => {
+      // Best-effort: cycle complet ouverture/fermeture (durée configurable)
+      const secs = Number(device.getSetting?.('calibration_time')) || 30;
+      await device.setCapabilityValue('windowcoverings_state', 'up');
+      device.homey.setTimeout(() => {
+        device.setCapabilityValue('windowcoverings_state', 'down').catch(() => {});
+      }, secs * 1000);
+      return true;
+    });
+    regDev('curtain_reset_position', async ({ device }) => {
+      await device.setCapabilityValue('windowcoverings_set', 0);
+      return true;
+    });
+    regDev('curtain_hold', async ({ device }) => {
+      await device.setCapabilityValue('windowcoverings_state', 'idle');
+      return true;
+    });
+    regDev('curtain_open_partial', async ({ device, position }) => {
+      await device.setCapabilityValue('windowcoverings_set', position / 100);
+      return true;
+    });
+
   }
 
 }

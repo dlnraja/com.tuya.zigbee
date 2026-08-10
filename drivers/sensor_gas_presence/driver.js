@@ -14,7 +14,7 @@ class PresenceSensorRadarDriver extends ZigBeeDriver {
 
   async onInit() {
     await super.onInit();
-    if (this._flowCardsRegistered) return;
+    if (this._flowCardsRegistered) {return;}
     this._flowCardsRegistered = true;
     this.log('PresenceSensorRadarDriver v5.5.580 initialized');
     this._registerFlowCards();
@@ -22,59 +22,79 @@ class PresenceSensorRadarDriver extends ZigBeeDriver {
 
   _registerFlowCards() {
     // TRIGGERS
-    const _triggerIds = ["sensor_gas_presence_presence_sensor_radar_presence_detected","sensor_gas_presence_presence_sensor_radar_presence_cleared","sensor_gas_presence_presence_sensor_radar_motion_detected","sensor_gas_presence_presence_sensor_radar_illuminance_changed","sensor_gas_presence_presence_sensor_radar_distance_changed","sensor_gas_presence_presence_sensor_radar_lux_changed","sensor_gas_presence_presence_sensor_radar_battery_low"];
+    const _triggerIds = ["sensor_gas_presence_sensor_radar_presence_detected","sensor_gas_presence_sensor_radar_presence_cleared","sensor_gas_presence_sensor_radar_motion_detected","sensor_gas_presence_sensor_radar_illuminance_d5fd1","sensor_gas_presence_sensor_radar_distance_changed","sensor_gas_presence_sensor_radar_lux_changed","sensor_gas_presence_sensor_radar_battery_low"];
     for (const _tid of _triggerIds) {
       try {
         const _card = this._getFlowCard(_tid, "trigger");
         if (_card) {
           _card.registerRunListener(async (args) => {
-            if (!args.device) return;
-            args.device.emit("flow:" + _tid, args);
+            if (!args.device) {return;}
+            args.device.emit(`flow:${  _tid}`, args);
           });
         }
-      } catch (_err) { this.error("Trigger " + _tid + ": " + _err.message); }
+      } catch (_err) { this.error(`Trigger ${  _tid  }: ${  _err.message}`); }
     }
     // END TRIGGERS
     // CONDITIONS
     try {
-      const card = this.homey.flow.getConditionCard('sensor_gas_presence_presence_sensor_radar_is_present');
+      const card = this.homey.flow.getConditionCard('sensor_gas_presence_sensor_radar_is_present');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           return args.device.getCapabilityValue('alarm_motion') === true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Condition sensor_gas_presence_presence_sensor_radar_is_present: ${err.message}`); }; }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition sensor_gas_presence_sensor_radar_is_present: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getConditionCard('sensor_gas_presence_presence_sensor_radar_illuminance_above');
+      const card = this.homey.flow.getConditionCard('sensor_gas_presence_sensor_radar_illuminance_above');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           return args.device.getCapabilityValue('alarm_motion') === true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Condition sensor_gas_presence_presence_sensor_radar_illuminance_above: ${err.message}`); }; }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition sensor_gas_presence_sensor_radar_illuminance_above: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getConditionCard('sensor_gas_presence_presence_sensor_radar_distance_within');
+      const card = this.homey.flow.getConditionCard('sensor_gas_presence_sensor_radar_distance_within');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           return args.device.getCapabilityValue('alarm_motion') === true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Condition sensor_gas_presence_presence_sensor_radar_distance_within: ${err.message}`); }; }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition sensor_gas_presence_sensor_radar_distance_within: ${err.message}`); } }
 
     try {
-      const card = this.homey.flow.getConditionCard('sensor_gas_presence_presence_sensor_radar_motion_active');
+      const card = this.homey.flow.getConditionCard('sensor_gas_presence_sensor_radar_motion_active');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           return args.device.getCapabilityValue('alarm_motion') === true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Condition sensor_gas_presence_presence_sensor_radar_motion_active: ${err.message}`); }; }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition sensor_gas_presence_sensor_radar_motion_active: ${err.message}`); } }
+
+    // ACTIONS
+    try {
+      const selfTestCard = (typeof this.homey.flow.getActionCard === 'function'
+        ? this.homey.flow.getActionCard('sensor_gas_presence_run_self_test')
+        : null)
+        || (typeof this.homey.flow.getDeviceActionCard === 'function'
+          ? this.homey.flow.getDeviceActionCard('sensor_gas_presence_run_self_test')
+          : null);
+      if (selfTestCard) {
+        selfTestCard.registerRunListener(async (args) => {
+          if (!args.device) {return false;}
+          if (typeof args.device.runSelfTest === 'function') {
+            return args.device.runSelfTest(args.test_type || 'all');
+          }
+          this.log(`[SELF-TEST] Not supported by device (requested: ${args.test_type || 'all'})`);
+          return false;
+        });
+      }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action sensor_gas_presence_run_self_test: ${err.message}`); }; }
 
     this.log('[FLOW] All flow cards registered');
   }

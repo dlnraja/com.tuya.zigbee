@@ -156,9 +156,8 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
   async onInit() {
     this.initializeSettings();
 
-    // Backport (master 1d83dc504): wrap the flow-card getters so a single
-    // missing card id or an SDK without getDeviceActionCard cannot kill a
-    // driver's whole onInit. Failures are logged and return a no-op stub.
+    // P100: wrap OR polyfill flow-card getters so a missing card id OR an SDK
+    // without getDeviceActionCard cannot kill a driver's whole onInit.
     try {
       const flow = this.homey.flow;
       const noopCard = {
@@ -170,8 +169,12 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
       };
       for (const m of ['getActionCard', 'getDeviceActionCard', 'getTriggerCard', 'getDeviceTriggerCard', 'getConditionCard', 'getDeviceConditionCard']) {
         const orig = flow[m];
-        if (typeof orig !== 'function' || orig.__crashGuarded) {continue;}
+        if (typeof orig === 'function' && orig.__crashGuarded) {continue;}
         const wrapped = (...args) => {
+          if (typeof orig !== 'function') {
+            this.log('[FLOW-GUARD]', m, args[0], 'not a function on this SDK — noop');
+            return noopCard;
+          }
           try { return orig.apply(flow, args); }
           catch (e) {
             this.log('[FLOW-GUARD]', m, args[0], e.message);
@@ -179,7 +182,7 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
           }
         };
         wrapped.__crashGuarded = true;
-        flow[m] = wrapped;
+        try { flow[m] = wrapped; } catch (_e) { /* flow methods may be non-writable */ }
       }
     } catch (e) { /* flow guard is best-effort */ }
 
