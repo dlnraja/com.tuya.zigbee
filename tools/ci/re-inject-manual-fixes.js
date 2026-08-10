@@ -38,6 +38,10 @@
 
 const fs = require('fs');
 const path = require('path');
+const {
+  includesCI,
+  mergeManufacturerCaseVariants,
+} = require('../../lib/utils/TuyaNormalizer');
 
 const ROOT = path.resolve(__dirname, '..', '..');
 const { claimedElsewhere } = require('../../scripts/lib/fp-collision-guard');
@@ -579,10 +583,9 @@ function patchFix(fix) {
   const mfrs = j.zigbee.manufacturerName;
   const targetDriver = path.basename(path.dirname(fp));
 
-  // P93: strip bot regressions / wrong-driver mfrs
+  // P93: strip bot regressions / wrong-driver mfrs (case-insensitive)
   if (Array.isArray(fix.removeIfPresent) && fix.removeIfPresent.length) {
-    const ban = new Set(fix.removeIfPresent.map((x) => String(x).toLowerCase()));
-    const kept = mfrs.filter((m) => !ban.has(String(m).toLowerCase()));
+    const kept = mfrs.filter((m) => !includesCI(fix.removeIfPresent, m));
     removed += mfrs.length - kept.length;
     if (kept.length !== mfrs.length) {
       j.zigbee.manufacturerName = kept;
@@ -595,7 +598,7 @@ function patchFix(fix) {
   // P92.126 collision guard: skip mfrs another driver already claims
   // (HOBEIAN exempt — multi-driver by design, see fp-collision-guard.js)
   const guarded = addList.filter((m) => {
-    if (liveMfrs.some((x) => x.toLowerCase() === m.toLowerCase())) return false;
+    if (includesCI(liveMfrs, m)) return false;
     const owner = claimedElsewhere(ROOT, m, targetDriver);
     if (owner) {
       console.log(`  ~ ${fix.id}: skip ${m} — already claimed by ${owner}`);
@@ -606,12 +609,22 @@ function patchFix(fix) {
   // P75.26: do NOT short-circuit on match() — the auto-fix-all bot can leave
   // the anchor mfr while removing siblings. We must always check addIfMissing.
   for (const m of guarded) {
-    if (!liveMfrs.includes(m)) {
+    if (!includesCI(liveMfrs, m)) {
       if (fix.addAtTop) liveMfrs.unshift(m);
       else liveMfrs.push(m);
       added++;
       changed = true;
     }
+  }
+
+  // P99: expand Homey-critical case forms for every injected / present fix mfr
+  const beforeVariants = liveMfrs.length;
+  const { list: withVariants, added: variantAdded } = mergeManufacturerCaseVariants(liveMfrs);
+  if (variantAdded > 0) {
+    j.zigbee.manufacturerName = withVariants;
+    added += variantAdded;
+    changed = true;
+    console.log(`  · ${fix.id}: +${variantAdded} case variants (${beforeVariants}→${withVariants.length})`);
   }
 
   if (!changed) {

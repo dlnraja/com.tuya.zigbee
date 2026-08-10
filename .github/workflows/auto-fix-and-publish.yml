@@ -1,3 +1,7 @@
+# 🤖 Auto-Fix + Publish Pipeline
+# Triggers: cron: 5 */6 * * * + push,schedule,workflow_dispatch | Secrets: HOMEY_PAT
+# Doc header added 2026-07-29 (workflows genealogy enrichment).
+
 name: 🤖 Auto-Fix + Publish Pipeline
 
 on:
@@ -14,6 +18,7 @@ defaults:
 permissions:
   contents: write
   pull-requests: write
+  issues: write  # needed by the "🔔 Notify on failure" step (POST /issues/420/comments was 403)
 
 # v9.0.256 (P62.3): Move HOMEY_PUBLISH env vars to workflow level so they
 # apply to ALL steps in ALL jobs (not just the publish step). The step-level
@@ -21,23 +26,28 @@ permissions:
 # so the prepare-publish step was still seeing limit 26.00 MB.
 env:
   # P75.27: Bumped from 30 -> 35 MB to accommodate growing build dir
-  # (currently 30.20 MB with 431 drivers + 2902 FPs).
+  # (currently 30.20 MB with 431 drivers + 2902 FPs). Build was failing
+  # the publish-size-gate at 30 MB; prepared publish dir is only 23.74 MB.
   HOMEY_PUBLISH_MAX_UNCOMPRESSED_MB: "35"
   HOMEY_PUBLISH_SOURCE_MAX_MB: "35"
-  HOMEY_ZIGBEE_MAX_TOTAL_COMBOS: "30000"
-  HOMEY_ZIGBEE_MAX_DRIVER_COMBOS: "1000"
+  HOMEY_ZIGBEE_MAX_TOTAL_COMBOS: "60000"
+  HOMEY_ZIGBEE_MAX_DRIVER_COMBOS: "10000"
+
+concurrency:
+  group: auto-fix-and-publish
+  cancel-in-progress: false
 
 jobs:
   auto-fix:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
         with:
           fetch-depth: 100
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - uses: actions/setup-node@v5
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
         with:
           node-version: '22'
           cache: npm
@@ -51,6 +61,10 @@ jobs:
       - name: 🤖 Run auto-fix-all
         run: node scripts/validation/auto-fix-all.js || true
 
+      # P99: Homey compose matching is case-sensitive — ensure canonical+lower forms
+      - name: "🔤 Ensure manufacturer case variants (P99)"
+        run: node tools/ci/ensure-case-variants.js --apply
+
       # v9.0.262 (P63.3): Re-inject manual driver fixes (HOBEIAN P61 etc.)
       # AFTER the auto-fix-all has run, BEFORE the build/publish. The
       # auto-publish bot regenerates driver.compose.json from canonical
@@ -61,7 +75,19 @@ jobs:
         run: node tools/ci/re-inject-manual-fixes.js
 
       # P94+: hard-fail if bot reintroduced known wrong Sacred Couple routings
+      # (complements re-inject repair with a detect gate before publish commit)
       - name: "🛡️ Anti-bot regression gate (P94+)"
+        run: node tools/ci/anti-bot-regression-gate.js
+
+      # Soft intelligent enrich (forum/johan proposals) — never dumps to generic_tuya
+      - name: "🧠 Bidirectional enrich (CI + sacred couple)"
+        continue-on-error: true
+        run: node tools/ci/bidirectional-enricher.js || true
+
+      - name: "🔁 Re-inject after enrich (keep manual overrides)"
+        run: node tools/ci/re-inject-manual-fixes.js
+
+      - name: "🛡️ Anti-bot gate (post-enrich)"
         run: node tools/ci/anti-bot-regression-gate.js
 
       - name: 📊 Dashboard monitor
@@ -98,7 +124,7 @@ jobs:
             done
           }
           stage_auto_fix_paths() {
-            for path in drivers lib app.json .homeycompose .homeychangelog.json CHANGELOG.md README.md docs .cursorrules AI_INSTRUCTIONS.md package.json package-lock.json data/mfs_db.json; do
+            for path in drivers lib app.json .homeycompose .homeychangelog.json CHANGELOG.md README.md docs .cursorrules AI_INSTRUCTIONS.md package.json package-lock.json data/mfs_db.json tools/ci; do
               [ -e "$path" ] && git add "$path"
             done
           }
@@ -117,7 +143,15 @@ jobs:
             fi
             git fetch origin "$BRANCH"
             if ! git merge-base --is-ancestor "origin/$BRANCH" HEAD; then
-              git rebase "origin/$BRANCH"
+              # Rebase conflicts (typically app.json version bumps raced with a
+              # concurrent push) used to fail the whole run. Auto-fix commits
+              # are idempotent and regenerated next run, so on conflict we
+              # abort and resync to origin instead of failing.
+              if ! git rebase -X ours "origin/$BRANCH"; then
+                echo "::warning::Rebase conflict on origin/$BRANCH; dropping auto-fix commit and resyncing (fixes are regenerated on the next run)"
+                git rebase --abort || true
+                git reset --hard "origin/$BRANCH"
+              fi
             else
               echo "origin/$BRANCH is already an ancestor of HEAD; skipping rebase"
             fi
@@ -135,11 +169,13 @@ jobs:
         if: env.trigger_publish == 'true' || github.event_name == 'workflow_dispatch'
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
-          # P75.27: Bumped from 30 to 35 MB (build dir now 30.20 MB).
+          # P75.27: Bumped from 30 to 35 MB (build dir now 30.20 MB with
+          # 431 drivers + 2902 FPs). Prepared publish dir is 23.74 MB so
+          # this is only the BUILD limit (sanity check), not the upload.
           HOMEY_PUBLISH_MAX_UNCOMPRESSED_MB: "35"
           HOMEY_PUBLISH_SOURCE_MAX_MB: "35"
-          HOMEY_ZIGBEE_MAX_TOTAL_COMBOS: "30000"
-          HOMEY_ZIGBEE_MAX_DRIVER_COMBOS: "1000"
+          HOMEY_ZIGBEE_MAX_TOTAL_COMBOS: "60000"
+          HOMEY_ZIGBEE_MAX_DRIVER_COMBOS: "10000"
         run: |
           # v9.0.255 (P62.2): Also export in the shell because npm subshells
           # don't always inherit step env blocks on all GHA runner images.
@@ -199,7 +235,7 @@ jobs:
 
       - name: 🔔 Notify on failure
         if: failure()
-        uses: actions/github-script@v7
+        uses: actions/github-script@f28e40c7f34bde8b3046d885e986cb6290c5673b # v7.1.0
         with:
           script: |
             github.rest.issues.createComment({

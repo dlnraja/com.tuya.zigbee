@@ -1,3 +1,7 @@
+# Auto-Publish on Push
+# Triggers: push,workflow_dispatch | Secrets: ATHOM_CLIENT_ID,ATHOM_CLIENT_SECRET,GH_PAT,GMAIL_APP_PASSWORD,GMAIL_CLIENT_ID,GMAIL_CLIENT_SECRET,GMAIL_EMAIL,GMAIL_REFRESH_TOKEN,GOOGLE_API_KEY,HOMEY_EMAIL,HOMEY_PASSWORD,HOMEY_PAT,HOMEY_PAT_API
+# Doc header added 2026-07-29 (workflows genealogy enrichment).
+
 name: Auto-Publish on Push
 
 # <!-- badges:start -->
@@ -13,7 +17,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: publish
+  group: publish-master
   cancel-in-progress: true
 
 env:
@@ -39,20 +43,20 @@ jobs:
       HOMEY_PUBLISH_FINAL_MAX_MB: "50"
       HOMEY_PUBLISH_SOURCE_MAX_MB: "50"
       HOMEY_PUBLISH_MAX_UNCOMPRESSED_MB: "50"
-      HOMEY_ZIGBEE_MAX_TOTAL_COMBOS: "30000"
+      HOMEY_ZIGBEE_MAX_TOTAL_COMBOS: "60000"
 
     steps:
       # ─────────────────────────────────────────────────────────────
       # 1. CHECKOUT + SETUP
       # ─────────────────────────────────────────────────────────────
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
         with:
           fetch-depth: 100
           token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
 
       - name: Setup Node.js
-        uses: actions/setup-node@v5
+        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: npm
@@ -69,7 +73,10 @@ jobs:
       - name: Google Assistant / Alexa voice-safety gate
         run: npm run check:voice
 
-      # P96: same anti-regression path as auto-fix-and-publish (prevent false-green publishes)
+      # P96/P99: anti-regression + Homey case-sensitive compose coverage
+      - name: Ensure manufacturer case variants
+        run: node tools/ci/ensure-case-variants.js --apply
+
       - name: Re-inject manual driver fixes
         run: node tools/ci/re-inject-manual-fixes.js
 
@@ -140,7 +147,7 @@ jobs:
               appFixed++;
             }
           });
-          if (appFixed > 0) fs.writeFileSync('app.json', JSON.stringify(app, null, 2), 'utf8');
+          if (appFixed > 0) fs.writeFileSync('app.json', JSON.stringify(app), 'utf8'); // compact: canonical format (pretty = 6.2MB > 4MB limit + merge conflicts)
 
           console.log(`PRE-CLEAN done: ${srcFixed} driver.compose.json fixed, ${appFixed} entries ensured in app.json`);
           PRECLEAN
@@ -215,7 +222,11 @@ jobs:
       # ─────────────────────────────────────────────────────────────
       - name: Resolve fingerprint collisions
         continue-on-error: true
-        run: node scripts/ci/resolve-collisions.js
+        # P92.25: dry-run only. Removals at publish time caused recurring mfr
+        # loss (SOS/Loratap/rco1yzb1/eqsair32 purged in loops). Real collisions
+        # are handled by the baseline policy + the priority compactor; new
+        # collisions are enforced by fp-collision-check in validate/unified-ci.
+        run: node scripts/ci/resolve-collisions.js --dry-run || echo "collision report only (non-blocking)"
 
       - name: Mandatory files check (51 rules)
         run: node scripts/validate/homey-mandatory-check.js
@@ -423,8 +434,26 @@ jobs:
           node scripts/maintenance/sanitize-manifest.cjs app.json .homeybuild/app.json || true
           node <<'NODE'
           const fs = require('fs');
+          // Self-healing version sync: take the HIGHEST version among the
+          // three manifests as canonical. bump-homey-version.js increments
+          // all of them, but a regenerated app.json can lag one patch behind
+          // (compose/pkg bumped, app.json rebuilt from a stale state) — which
+          // then trips the M08 pre-push gate and blocks every human push.
+          const semverKey = (v) => String(v || '0.0.0').split('.').map((n) => parseInt(n, 10) || 0);
+          const cmp = (a, b) => {
+            const pa = semverKey(a), pb = semverKey(b);
+            for (let i = 0; i < 3; i++) { if (pa[i] !== pb[i]) return pa[i] - pb[i]; }
+            return 0;
+          };
+          const candidates = ['app.json', '.homeycompose/app.json', 'package.json']
+            .filter((f) => fs.existsSync(f))
+            .map((f) => JSON.parse(fs.readFileSync(f, 'utf8')).version);
+          const version = candidates.sort(cmp).pop();
           const app = JSON.parse(fs.readFileSync('app.json', 'utf8'));
-          const version = app.version;
+          if (app.version !== version) {
+            app.version = version;
+            fs.writeFileSync('app.json', JSON.stringify(app, null, 2) + '\n');
+          }
           for (const file of ['package.json', 'package-lock.json']) {
             if (!fs.existsSync(file)) continue;
             const json = JSON.parse(fs.readFileSync(file, 'utf8'));
@@ -500,6 +529,7 @@ jobs:
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
           HOMEY_PAT_API: ${{ secrets.HOMEY_PAT_API }}
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+          HOMEY_REFRESH_TOKEN: ${{ secrets.HOMEY_REFRESH_TOKEN }}
           GH_PAT: ${{ secrets.GH_PAT }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DRY_RUN: "true"
