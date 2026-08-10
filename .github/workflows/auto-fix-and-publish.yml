@@ -84,6 +84,11 @@ jobs:
         continue-on-error: true
         run: node tools/ci/bidirectional-enricher.js || true
 
+      # P101: re-apply high-confidence #439 sacred-couple lot2 (idempotent)
+      - name: "🔀 Sacred-couple lot2 (#439 typed rehomes)"
+        continue-on-error: true
+        run: node tools/ci/apply-p101-sacred-lot2.js --apply || true
+
       - name: "🔁 Re-inject after enrich (keep manual overrides)"
         run: node tools/ci/re-inject-manual-fixes.js
 

@@ -1,6 +1,6 @@
 {
   "name": "com.dlnraja.tuya.zigbee",
-  "version": "9.0.448",
+  "version": "9.0.449",
   "description": "Tuya Unified Zigbee - Local-first control with AI automation",
   "main": "app.js",
   "scripts": {
@@ -127,7 +127,9 @@
     "fix:re-inject": "node tools/ci/re-inject-manual-fixes.js",
     "enrich:closed-loop": "node tools/ci/auto-enrich-closed-loop.js --skip-crawl",
     "check:gmail-crashes": "node tools/ci/gmail-crash-pattern-gate.js",
-    "check:gmail-crashes:json": "node tools/ci/gmail-crash-pattern-gate.js --json"
+    "check:gmail-crashes:json": "node tools/ci/gmail-crash-pattern-gate.js --json",
+    "fix:p101-lot2": "node tools/ci/apply-p101-sacred-lot2.js --apply",
+    "check:p101-lot2": "node tools/ci/apply-p101-sacred-lot2.js"
   },
   "keywords": [
     "homey",
