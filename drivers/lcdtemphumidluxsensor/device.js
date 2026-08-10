@@ -83,7 +83,10 @@ class LcdTempHumidLuxSensor extends ZigBeeDevice {
     const endpointOne = zclNode?.endpoints?.[1];
 
     if (!endpointOne) {
-      throw new Error('QAAYS sensor endpoint 1 is unavailable');
+      // Ne pas bloquer onNodeInit : sans endpoint 1, seules la luminosité et la
+      // batterie sont indisponibles ; température/humidité restent tentées sur
+      // l'endpoint de mesure. Un throw ici tuait l'init (risque zigbee-generic).
+      this.log('[QAAYS] Endpoint 1 unavailable — illuminance/battery bindings skipped');
     }
 
     if (this.isFirstInit()) {
@@ -164,7 +167,12 @@ class LcdTempHumidLuxSensor extends ZigBeeDevice {
     if (batteryPercentageRemaining === null || batteryPercentageRemaining === undefined) { return; }
     const raw = Number(batteryPercentageRemaining);
     if (!Number.isFinite(raw) || raw < 0 || raw === 0xFF) { return; }
-    const batteryPercentage = Math.max(0, Math.min(100, Math.round(raw / 2)));
+    const UnifiedBatteryHandler = require('../../lib/battery/UnifiedBatteryHandler');
+    const batteryPercentage = UnifiedBatteryHandler.normalizeZigbeeValue(raw, {
+      manufacturer: (this.getSetting && this.getSetting('zb_manufacturer_name')) || '',
+      batteryType: 'CR2032',
+    });
+    if (batteryPercentage == null) { return; }
     const batteryThreshold = Number(this.getSetting('batteryThreshold')) || 20;
     this.log('measure_battery | powerConfiguration:', batteryPercentage);
     this._setCapabilityIfPresent('measure_battery', batteryPercentage);

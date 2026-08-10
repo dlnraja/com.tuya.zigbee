@@ -1,4 +1,5 @@
 'use strict';
+const UnifiedBatteryHandler = require('../../lib/battery/UnifiedBatteryHandler');
 const CI = require('../../lib/utils/CaseInsensitiveMatcher');
 const { getManufacturer, getModelId } = require('../../lib/helpers/DeviceDataHelper');
 const { safeDivide, safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
@@ -127,7 +128,7 @@ class MotionPresenceHybridDevice extends UnifiedSensorBase {
     }
   }
   async _triggerPresenceFlows(detected) {
-    const cardId = detected ? 'sensor_motion_presence_presence_detected' : 'sensor_motion_presence_presence_cleared';
+    const cardId = detected ? 'sensor_motion_presence_detected' : 'sensor_motion_presence_cleared';
     try { await this.homey.flow.getDeviceTriggerCard(cardId).trigger(this, {}).catch(() => {}); } catch (e) {}
     if (detected) {
       try { await this.homey.flow.getDeviceTriggerCard('sensor_motion_presence_motion_detected').trigger(this, {}).catch(() => {}); } catch (e) {}
@@ -137,7 +138,7 @@ class MotionPresenceHybridDevice extends UnifiedSensorBase {
     const ep1 = zclNode?.endpoints?.[1];
     if (!ep1) {return;}
     const power = ep1.clusters?.genPowerCfg || ep1.clusters?.powerConfiguration;
-    if (power?.on) {power.on('attr.batteryPercentageRemaining', (v) => this.safeSetCapabilityValue('measure_battery', Math.round(v / 2)).catch(() => {}));}
+    if (power?.on) {power.on('attr.batteryPercentageRemaining', (v) => { const pct = UnifiedBatteryHandler.normalizeZigbeeValue(v, { manufacturer: (this.getSetting && this.getSetting('zb_manufacturer_name')) || '', batteryType: 'CR2032' }); if (pct != null) this.safeSetCapabilityValue('measure_battery', pct).catch(() => {}); });}
   }
   _setupTuyaDPListeners(zclNode) {
     const ep1 = zclNode?.endpoints?.[1];
