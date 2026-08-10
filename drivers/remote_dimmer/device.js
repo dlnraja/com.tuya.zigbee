@@ -87,7 +87,12 @@ class RemoteDimmerDevice extends PhysicalButtonMixin(VirtualButtonMixin(ZigBeeDe
       const powerCfg = zclNode.endpoints[1].clusters.powerConfiguration;
       if (powerCfg) {
         powerCfg.on('attr.batteryPercentageRemaining', (value) => {
-          const pct = Math.round(value / 2);
+          const UnifiedBatteryHandler = require('../../lib/battery/UnifiedBatteryHandler');
+          const pct = UnifiedBatteryHandler.normalizeZigbeeValue(value, {
+            manufacturer: (this.getSetting && this.getSetting('zb_manufacturer_name')) || '',
+            batteryType: 'CR2032',
+          });
+          if (pct == null) {return;}
           this.log('[RemoteDimmer] Battery:', pct, '%');
           this.safeSetCapabilityValue('measure_battery', pct).catch(this.error);
           this.safeSetCapabilityValue('alarm_battery', pct < 20).catch(this.error);

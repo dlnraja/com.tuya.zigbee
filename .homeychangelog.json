@@ -1705,5 +1705,9 @@
   },
   "9.0.441": {
     "en": "Retry Homey Test publish after Athom processing_failed (socket hang up) on 9.0.436; align app.json; harden verify-test-version fail-closed."
+  },
+  "9.0.442": {
+    "en": "L99 battery normalize batch + verify fail-closed on Athom processing_failed.",
+    "fr": "L99 lot batterie normalize + verify fail-closed sur Athom processing_failed."
   }
 }

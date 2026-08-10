@@ -167,7 +167,12 @@ class LcdTempHumidLuxSensor extends ZigBeeDevice {
     if (batteryPercentageRemaining === null || batteryPercentageRemaining === undefined) { return; }
     const raw = Number(batteryPercentageRemaining);
     if (!Number.isFinite(raw) || raw < 0 || raw === 0xFF) { return; }
-    const batteryPercentage = Math.max(0, Math.min(100, Math.round(raw / 2)));
+    const UnifiedBatteryHandler = require('../../lib/battery/UnifiedBatteryHandler');
+    const batteryPercentage = UnifiedBatteryHandler.normalizeZigbeeValue(raw, {
+      manufacturer: (this.getSetting && this.getSetting('zb_manufacturer_name')) || '',
+      batteryType: 'CR2032',
+    });
+    if (batteryPercentage == null) { return; }
     const batteryThreshold = Number(this.getSetting('batteryThreshold')) || 20;
     this.log('measure_battery | powerConfiguration:', batteryPercentage);
     this._setCapabilityIfPresent('measure_battery', batteryPercentage);

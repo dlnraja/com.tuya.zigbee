@@ -593,7 +593,10 @@ class MotionSensorDevice extends UnifiedSensorBase {
             }
             this._lastBatteryReportTime = now;
 
-            let battery = Math.round(data.batteryPercentageRemaining / 2);
+            let battery = UnifiedBatteryHandler
+              ? UnifiedBatteryHandler.normalizeZigbeeValue(data.batteryPercentageRemaining, { manufacturer: (this.getSetting && this.getSetting('zb_manufacturer_name')) || '', batteryType: 'CR2032' })
+              : Math.round(data.batteryPercentageRemaining / 2);
+            if (battery == null) {return;}
             // v5.5.317: Validate battery with inference
             battery = this._batteryInference?.validateBattery(battery) ?? battery;
             this.log(`[ZCL] 🔋 Battery: ${battery}%`);
@@ -1424,7 +1427,10 @@ class MotionSensorDevice extends UnifiedSensorBase {
 
       if (data?.batteryPercentageRemaining !== undefined && data.batteryPercentageRemaining !== 255) {
         this._lastBatteryReportTime = now;
-        const battery = Math.round(data.batteryPercentageRemaining / 2);
+        const battery = UnifiedBatteryHandler
+          ? UnifiedBatteryHandler.normalizeZigbeeValue(data.batteryPercentageRemaining, { manufacturer: (this.getSetting && this.getSetting('zb_manufacturer_name')) || '', batteryType: 'CR2032' })
+          : Math.round(data.batteryPercentageRemaining / 2);
+        if (battery == null) {return;}
         this.log(`[MOTION-BATTERY] 🔋 Battery: ${battery}% (raw: ${data.batteryPercentageRemaining})`);
         if (this.hasCapability('measure_battery')) {
           await this.safeSetCapabilityValue('measure_battery', parseFloat(battery)).catch(() => { });
