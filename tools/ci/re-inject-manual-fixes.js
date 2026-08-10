@@ -61,24 +61,51 @@ const MANUAL_FIXES = [
     addAtTop: false,
     source: 'p74-disabled',
   },
-  // P75.18-22: Forum-routing test mfrs (must be in driver, not just switch_1gang catch-all)
+  // P75.18-22 / P93: keep ONLY proven 4-button remotes here.
+  // P90/P91: xabckq1v + czuyt8lz → switch_1gang (Sacred Couple TS0601)
+  // P90: b3mgfu0d → button_wireless_2; abrsvsou/4fjiwweb → metering/relay (NOT 4-btn)
+  // The old list re-injected bot regressions every publish — fixed P93.
   {
     id: 'p75.18-button-wireless-4-mfrs',
     file: 'drivers/button_wireless_4/driver.compose.json',
-    description: 'P75.18-22: Forum-routing test mfrs (auto-fix-all reverts these)',
+    description: 'P75.18/P93: Moes/forum 4-button remotes only (no Sacred Couple collisions)',
     match: (mfrs) => mfrs.includes('_TZ3000_kfu8zapd'),
     addIfMissing: [
       '_TZ3000_u3nv1jwk',
       '_TZ3000_kfu8zapd',
-      '_TZ3000_xabckq1v',
-      '_TZ3000_czuyt8lz',
-      '_TZ3000_b3mgfu0d',
       '_TZ3000_rco1yzb1',
-      '_TZ3000_abrsvsou',
-      '_TZ3000_4fjiwweb',
+    ],
+    removeIfPresent: [
+      '_TZ3000_xabckq1v', '_tz3000_xabckq1v', '_TZ3000_XABCKQ1V', '_tz3000_XABCKQ1V',
+      '_TZ3000_czuyt8lz', '_tz3000_czuyt8lz', '_TZ3000_CZUYT8LZ', '_tz3000_CZUYT8LZ',
+      '_TZ3000_b3mgfu0d', '_tz3000_b3mgfu0d', '_TZ3000_B3MGFU0D', '_tz3000_B3MGFU0D',
+      '_TZ3000_abrsvsou', '_tz3000_abrsvsou', '_TZ3000_ABRSVSOU', '_tz3000_ABRSVSOU',
+      '_TZ3000_4fjiwweb', '_tz3000_4fjiwweb', '_TZ3000_4FJIWWEB', '_tz3000_4FJIWWEB',
     ],
     addAtTop: false,
-    source: 'p75.18-forum-routing',
+    source: 'p93-anti-regression',
+  },
+  {
+    id: 'p93-switch-1gang-sacred-xabckq1v-czuyt8lz',
+    file: 'drivers/switch_1gang/driver.compose.json',
+    description: 'P93: Sacred Couple TS0601 xabckq1v/czuyt8lz belong on switch_1gang (not button_wireless_4)',
+    match: (mfrs) => mfrs.includes('_TZ3000_xabckq1v') && mfrs.includes('_TZ3000_czuyt8lz'),
+    addIfMissing: [
+      '_TZ3000_xabckq1v', '_tz3000_xabckq1v',
+      '_TZ3000_czuyt8lz', '_tz3000_czuyt8lz',
+    ],
+    addAtTop: false,
+    source: 'p93-sacred-couple',
+  },
+  {
+    id: 'p93-gas-sensor-remove-zg222z-productid',
+    file: 'drivers/gas_sensor_switch/driver.compose.json',
+    description: 'P93: ZG-222Z is HOBEIAN water leak — must not be gas_sensor productId',
+    match: () => true,
+    addIfMissing: [],
+    removeProductIds: ['ZG-222Z'],
+    addAtTop: false,
+    source: 'p93-zg222z-routing',
   },
   {
     id: 'p75.18-smart-knob-rotary-mfrs',
@@ -336,8 +363,57 @@ const MANUAL_FIXES = [
     description: 'P92.91 #514: _TZE284_rjjsib2d (Novato ZSN-03P)',
     match: (mfrs) => mfrs.includes('_TZE284_rjjsib2d'),
     addIfMissing: ['_TZE284_rjjsib2d', '_TZE284_RJJSIB2D', '_tze284_rjjsib2d', '_tze284_RJJSIB2D'],
+    removeIfPresent: [
+      // Forum #2133: BSEED dimmer socket — must NOT stay on climate_sensor
+      '_TZE284_m1cvyneb', '_tze284_m1cvyneb', '_TZE284_M1CVYNEB', '_tze284_M1CVYNEB',
+    ],
     addAtTop: false,
     source: 'p92.91-issue-514',
+  },
+  // Forum #2133 PresentSky — BSEED dimmer wall socket was climate_sensor
+  {
+    id: 'p94-m1cvyneb-wall-dimmer-tuya',
+    file: 'drivers/wall_dimmer_tuya/driver.compose.json',
+    description: 'Forum #2133: _TZE284_m1cvyneb TS0601 BSEED dimmer socket',
+    match: (mfrs) => mfrs.includes('_TZE284_m1cvyneb'),
+    addIfMissing: ['_TZE284_m1cvyneb', '_tze284_m1cvyneb'],
+    addAtTop: false,
+    source: 'p94-forum-2133',
+  },
+  // Forum #2130 Kanbros — BSEED 2-gang touch switch
+  {
+    id: 'p94-w5xztuy7-switch-2gang',
+    file: 'drivers/switch_2gang/driver.compose.json',
+    description: 'Forum #2130: _TZ3000_w5xztuy7 TS0002 BSEED 2-gang',
+    match: (mfrs) => mfrs.includes('_TZ3000_w5xztuy7'),
+    addIfMissing: ['_TZ3000_w5xztuy7', '_tz3000_w5xztuy7'],
+    addAtTop: false,
+    source: 'p94-forum-2130',
+  },
+  // Forum #2131 TBoy — 4ch relay claimed by switch_4gang
+  {
+    id: 'p94-imaccztn-relay-board-4',
+    file: 'drivers/relay_board_4_channel/driver.compose.json',
+    description: 'Forum #2131: _TZ3210_imaccztn TS0004 4-channel relay board',
+    match: (mfrs) => mfrs.includes('_TZ3210_imaccztn') || mfrs.includes('_TZ3000_imaccztn'),
+    addIfMissing: [
+      '_TZ3210_imaccztn', '_tz3210_imaccztn',
+      '_TZ3000_imaccztn', '_tz3000_imaccztn', '_TZ3000_u3oupgdy',
+    ],
+    addAtTop: false,
+    source: 'p94-forum-2131',
+  },
+  {
+    id: 'p94-imaccztn-remove-switch-4gang',
+    file: 'drivers/switch_4gang/driver.compose.json',
+    description: 'Forum #2131: keep _TZ3210_imaccztn off switch_4gang (relay board)',
+    match: () => true,
+    addIfMissing: [],
+    removeIfPresent: [
+      '_TZ3210_imaccztn', '_tz3210_imaccztn', '_TZ3210_IMACCZTN', '_tz3210_IMACCZTN',
+    ],
+    addAtTop: false,
+    source: 'p94-forum-2131',
   },
 ];
 
@@ -349,16 +425,55 @@ function patchFix(fix) {
   }
   const content = fs.readFileSync(fp, 'utf8');
   const j = JSON.parse(content);
-  if (!j.zigbee || !Array.isArray(j.zigbee.manufacturerName)) {
-    console.log(`  ⚠️  ${fix.id}: no manufacturerName array`);
+  if (!j.zigbee) {
+    console.log(`  ⚠️  ${fix.id}: no zigbee block`);
     return false;
   }
+
+  let changed = false;
+  let added = 0;
+  let removed = 0;
+
+  // Optional productId removals (e.g. ZG-222Z mis-routed onto gas sensor)
+  if (Array.isArray(fix.removeProductIds) && Array.isArray(j.zigbee.productId)) {
+    const ban = new Set(fix.removeProductIds.map((x) => String(x).toUpperCase()));
+    const before = j.zigbee.productId.length;
+    j.zigbee.productId = j.zigbee.productId.filter((p) => !ban.has(String(p).toUpperCase()));
+    removed += before - j.zigbee.productId.length;
+    if (before !== j.zigbee.productId.length) changed = true;
+  }
+
+  // Fixes that only touch productId may omit manufacturerName
+  if (!Array.isArray(j.zigbee.manufacturerName)) {
+    if (!changed) {
+      console.log(`  ⚠️  ${fix.id}: no manufacturerName array`);
+      return false;
+    }
+    fs.writeFileSync(fp, JSON.stringify(j, null, 2) + '\n');
+    console.log(`  ✅ ${fix.id}: removed ${removed} productId(s) from source '${fix.source}'`);
+    return true;
+  }
+
   const mfrs = j.zigbee.manufacturerName;
   const targetDriver = path.basename(path.dirname(fp));
+
+  // P93: strip bot regressions / wrong-driver mfrs
+  if (Array.isArray(fix.removeIfPresent) && fix.removeIfPresent.length) {
+    const ban = new Set(fix.removeIfPresent.map((x) => String(x).toLowerCase()));
+    const kept = mfrs.filter((m) => !ban.has(String(m).toLowerCase()));
+    removed += mfrs.length - kept.length;
+    if (kept.length !== mfrs.length) {
+      j.zigbee.manufacturerName = kept;
+      changed = true;
+    }
+  }
+
+  const liveMfrs = j.zigbee.manufacturerName;
+  const addList = Array.isArray(fix.addIfMissing) ? fix.addIfMissing : [];
   // P92.126 collision guard: skip mfrs another driver already claims
   // (HOBEIAN exempt — multi-driver by design, see fp-collision-guard.js)
-  const guarded = fix.addIfMissing.filter(m => {
-    if (mfrs.some(x => x.toLowerCase() === m.toLowerCase())) return false; // already here (any case)
+  const guarded = addList.filter((m) => {
+    if (liveMfrs.some((x) => x.toLowerCase() === m.toLowerCase())) return false;
     const owner = claimedElsewhere(ROOT, m, targetDriver);
     if (owner) {
       console.log(`  ~ ${fix.id}: skip ${m} — already claimed by ${owner}`);
@@ -368,27 +483,23 @@ function patchFix(fix) {
   });
   // P75.26: do NOT short-circuit on match() — the auto-fix-all bot can leave
   // the anchor mfr while removing siblings. We must always check addIfMissing.
-  // Add missing fingerprints
-  let added = 0;
-  for (const fp of guarded) {
-    if (!mfrs.includes(fp)) {
-      if (fix.addAtTop) {
-        mfrs.unshift(fp);
-      } else {
-        mfrs.push(fp);
-      }
+  for (const m of guarded) {
+    if (!liveMfrs.includes(m)) {
+      if (fix.addAtTop) liveMfrs.unshift(m);
+      else liveMfrs.push(m);
       added++;
+      changed = true;
     }
   }
-  if (added === 0) {
-    if (fix.match(mfrs)) {
-      return false; // already complete
-    }
-    // match() returns false but no addIfMissing gaps: skip silently
+
+  if (!changed) {
+    if (typeof fix.match === 'function' && fix.match(liveMfrs)) return false;
     return false;
   }
   fs.writeFileSync(fp, JSON.stringify(j, null, 2) + '\n');
-  console.log(`  ✅ ${fix.id} (${fix.description}): added ${added} FP(s) from source '${fix.source}'`);
+  console.log(
+    `  ✅ ${fix.id} (${fix.description}): +${added} / -${removed} from source '${fix.source}'`
+  );
   return true;
 }
 
