@@ -37,7 +37,7 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.441 |
+| **App Version** | v9.0.443 |
 | **Drivers** | 430 (380 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,342 |
 | **Pairing Variants** | 17,061 (4 case combos per fingerprint) |
@@ -106,6 +106,8 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.443** | L99 battery normalize batch + verify fail-closed on Athom processing_failed. |
+| **v9.0.442** | L99 battery normalize batch + verify fail-closed on Athom processing_failed. |
 | **v9.0.441** | Retry Homey Test publish after Athom processing_failed (socket hang up) on 9.0.436; align app.json; harden verify-test-version fail-closed. |
 | **v9.0.440** | Retry Homey Test publish after Athom processing_failed (socket hang up) on 9.0.436; align app.json; harden verify-test-version fail-closed. |
 | **v9.0.439** | Retry Homey Test publish after Athom processing_failed (socket hang up) on 9.0.436; align app.json; harden verify-test-version fail-closed. |
@@ -116,8 +118,6 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 | **v9.0.434** | Stability improvements and Homey test publication retry after transient processing failure. |
 | **v9.0.433** | Stability improvements and Homey test publication retry after transient processing failure. |
 | **v9.0.432** | Stability improvements and Homey test publication retry after transient processing failure. |
-| **v9.0.431** | Stability improvements and Homey test publication retry after transient processing failure. |
-| **v9.0.430** | Stability improvements and Homey test publication retry after transient processing failure. |
 
 <!-- CHANGELOG_END -->
 
