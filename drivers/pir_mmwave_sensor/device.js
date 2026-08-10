@@ -88,7 +88,7 @@ class pir_mmwave_sensor extends ZigBeeDevice {
                 this.configureAttributeReporting(reportingPayload),
                 { name: 'configureAttributeReporting', timeoutMs: SleepyInit.ZCL_TIMEOUT_MS }
             ).then((res) => {
-                if (res && res !== 'timeout') this.log('Attribute reporting configured');
+                if (res && res !== 'timeout') {this.log('Attribute reporting configured');}
             });
         }
 
@@ -122,7 +122,7 @@ class pir_mmwave_sensor extends ZigBeeDevice {
             
             // Set up periodic battery reading since automatic reporting doesn't work
             this.batteryInterval = this.homey.setInterval(async () => {
-              if (this._destroyed) return;
+              if (this._destroyed) {return;}
                 try {
                     const battery = await zclNode.endpoints[1].clusters.powerConfiguration.readAttributes(['batteryPercentageRemaining']);
                     if (battery && battery.batteryPercentageRemaining !== undefined) {
@@ -148,10 +148,15 @@ class pir_mmwave_sensor extends ZigBeeDevice {
         this.safeSetCapabilityValue('alarm_motion', status.alarm1).catch(this.error);
     }
 
-    // Handle battery status attribute reports
+    // Handle battery status attribute reports via UnifiedBatteryHandler (not naive /2)
     handleBatteryPercentageReport(batteryPercentageRemaining) {
+        const UnifiedBatteryHandler = require('../../lib/battery/UnifiedBatteryHandler');
         const batteryThreshold = this.getSetting('batteryThreshold') || 20;
-        const batteryLevel = batteryPercentageRemaining / 2; // Convert to percentage
+        const batteryLevel = UnifiedBatteryHandler.normalizeZigbeeValue(batteryPercentageRemaining, {
+            manufacturer: this.getSetting?.('zb_manufacturer_name') || '',
+            batteryType: 'CR2032',
+        });
+        if (batteryLevel == null) {return;}
         this.log('🔋 Battery handler called! Raw value:', batteryPercentageRemaining, 'Converted:', batteryLevel, '%');
         this.safeSetCapabilityValue('measure_battery', batteryLevel).catch(this.error);
         this.safeSetCapabilityValue('alarm_battery', batteryLevel < batteryThreshold).catch(this.error);

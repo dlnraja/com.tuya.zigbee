@@ -7,7 +7,7 @@ const { CLUSTER } = require('zigbee-clusters');
 
 /**
  * Smart Door/Window sensor (TY0203 family, IAS zone) with tamper.
- * v5.12.55 (P92.123): enrollment + initial read + invert via shared helper —
+ * v9.0.415 (P92.123): enrollment + initial read + invert via shared helper —
  * the device's own interview (kept below) showed zoneState "notEnrolled"
  * with CIE 00:00:00:00:00:00:00:00, the root cause of frozen contacts.
  */
@@ -38,21 +38,8 @@ class smart_door_window_sensor extends ZigBeeDevice {
     }
 
     // alarm_contact & alarm_tamper & alarm_battery (+ enrollment + invert)
+    // Battery % via ZclBatteryMonitor.attach (UnifiedBatteryHandler) — no naive /2 path
     await setupDoorWindowSensor(this, zclNode, { hasTamper: true });
-
-    // measure_battery // alarm_battery
-    const powerCluster = zclNode.endpoints[1] && zclNode.endpoints[1].clusters
-      && zclNode.endpoints[1].clusters[CLUSTER.POWER_CONFIGURATION.NAME];
-    if (powerCluster && typeof powerCluster.on === 'function') {
-      powerCluster.on('attr.batteryPercentageRemaining', this.handleBatteryPercentageReport.bind(this));
-    }
-  }
-
-  handleBatteryPercentageReport(batteryPercentageRemaining) {
-    const batteryThreshold = this.getSetting('batteryThreshold') || 20;
-    this.log('measure_battery | powerConfiguration - batteryPercentageRemaining (%): ', batteryPercentageRemaining / 2);
-    this.safeSetCapabilityValue('measure_battery', batteryPercentageRemaining / 2).catch(this.error);
-    this.safeSetCapabilityValue('alarm_battery', batteryPercentageRemaining / 2 < batteryThreshold).catch(this.error);
   }
 
   async onSettings({ newSettings, changedKeys }) {
