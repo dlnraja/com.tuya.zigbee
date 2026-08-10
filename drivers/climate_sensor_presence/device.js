@@ -1,5 +1,6 @@
 'use strict';
 
+const UnifiedBatteryHandler = require('../../lib/battery/UnifiedBatteryHandler');
 const CI = require('../../lib/utils/CaseInsensitiveMatcher');
 const { getManufacturer, getModelId } = require('../../lib/helpers/DeviceDataHelper');
 const { safeDivide, safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
@@ -24,18 +25,18 @@ function getSensorConfig(manufacturerName, modelId = null) {
   if (CI.equalsCI(manufacturerName, 'HOBEIAN')) {
     const validModelId = modelId && !CI.equalsCI(modelId, 'null') && modelId.trim() !== '';
     if (validModelId) {
-      if (CI.equalsCI(modelId, 'ZG-204ZM')) return { ...SENSOR_CONFIGS.HOBEIAN_ZG204ZM, configName: 'HOBEIAN_ZG204ZM' };
-      if (CI.equalsCI(modelId, 'ZG-204ZV')) return { ...SENSOR_CONFIGS.ZG_204ZV_MULTISENSOR, configName: 'ZG_204ZV_MULTISENSOR' };
+      if (CI.equalsCI(modelId, 'ZG-204ZM')) {return { ...SENSOR_CONFIGS.HOBEIAN_ZG204ZM, configName: 'HOBEIAN_ZG204ZM' };}
+      if (CI.equalsCI(modelId, 'ZG-204ZV')) {return { ...SENSOR_CONFIGS.ZG_204ZV_MULTISENSOR, configName: 'ZG_204ZV_MULTISENSOR' };}
     }
   }
   const config = MANUFACTURER_CONFIG_MAP[mfrLower];
-  if (config) return config;
+  if (config) {return config;}
   return SENSOR_CONFIGS.DEFAULT;
 }
 
 function transformPresence(value, type, invertPresence = false) {
   let result;
-  if (value === null || value === undefined) return false;
+  if (value === null || value === undefined) {return false;}
   switch (type) {
     case 'presence_enum':
       result = value === 1 || value === 2;
@@ -57,7 +58,7 @@ class ClimateSensorPresenceDevice extends UnifiedSensorBase {
 
   _getSensorConfig() {
     const mfr = this._getManufacturerName();
-    if (this._sensorConfig) return this._sensorConfig;
+    if (this._sensorConfig) {return this._sensorConfig;}
     this._sensorConfig = getSensorConfig(mfr, getModelId(this));
     
     if (this._sensorConfig.configName === 'DEFAULT' && !this._dpAutoDiscovery) {
@@ -73,7 +74,7 @@ class ClimateSensorPresenceDevice extends UnifiedSensorBase {
       const discoveredMap = this._dpAutoDiscovery.getDynamicDPMap();
       const mergedMap = { ...config.dpMap };
       for (const [dpId, dpConfig] of Object.entries(discoveredMap)) {
-        if (!mergedMap[dpId]) mergedMap[dpId] = dpConfig;
+        if (!mergedMap[dpId]) {mergedMap[dpId] = dpConfig;}
       }
       return mergedMap;
     }
@@ -118,8 +119,8 @@ class ClimateSensorPresenceDevice extends UnifiedSensorBase {
   }
 
   _handleTuyaResponse(data) {
-    if (!data) return;
-    let dpId = data.dp || data.dpId || data.datapoint;
+    if (!data) {return;}
+    const dpId = data.dp || data.dpId || data.datapoint;
     const rawVal = this._parseBufferValue(data.value || data.data);
 
     if (this._intelGate && dpId !== undefined) {
@@ -130,7 +131,7 @@ class ClimateSensorPresenceDevice extends UnifiedSensorBase {
     const PRESENCE_DPS = [1, 104, 105, 112];
 
     if (PRESENCE_DPS.includes(dpId)) {
-      const presenceValue = transformPresence(rawVal, dpMap[dpId]?.type, (this.getSettings().invert_presence ?? this._getSensorConfig().invertPresence ?? false));
+      const presenceValue = transformPresence(rawVal, dpMap[dpId]?.type, this.getSettings().invert_presence ?? this._getSensorConfig().invertPresence ?? false);
       if (presenceValue !== null) {
         this._handlePresenceWithDebounce(presenceValue, dpId);
       }
@@ -139,10 +140,10 @@ class ClimateSensorPresenceDevice extends UnifiedSensorBase {
 
   _handlePresenceWithDebounce(presence, dpId) {
     const current = this.getCapabilityValue('alarm_motion');
-    if (presence === current) return;
+    if (presence === current) {return;}
 
     if (presence) {
-      if (this._intelGate) this._intelGate.process('alarm_motion', true);
+      if (this._intelGate) {this._intelGate.process('alarm_motion', true);}
       this.safeSetCapabilityValue('alarm_motion', true).catch(() => {});
       this._triggerPresenceFlows(true);
     } else {
@@ -152,9 +153,9 @@ class ClimateSensorPresenceDevice extends UnifiedSensorBase {
   }
 
   async _triggerPresenceFlows(detected) {
-    if (this._destroyed) return;
+    if (this._destroyed) {return;}
     const prefix = 'climate_sensor_presence_';
-    const cardId = detected ? prefix + 'sensor_presence_radar_presence_detected' : prefix + 'sensor_presence_radar_presence_cleared';
+    const cardId = detected ? `${prefix  }sensor_presence_radar_presence_detected` : `${prefix  }sensor_presence_radar_presence_cleared`;
 
     try {
       await this.homey.flow.getDeviceTriggerCard(cardId).trigger(this, {}).catch(() => {});
@@ -164,7 +165,7 @@ class ClimateSensorPresenceDevice extends UnifiedSensorBase {
 
     if (detected) {
       try {
-        await this.homey.flow.getDeviceTriggerCard(prefix + 'presence_sensor_radar_motion_detected').trigger(this, {}).catch(() => {});
+        await this.homey.flow.getDeviceTriggerCard(`${prefix  }presence_sensor_radar_motion_detected`).trigger(this, {}).catch(() => {});
       } catch (err) {
         this.error('[PRESENCE] Flow trigger error:', err.message);
       }
@@ -173,26 +174,27 @@ class ClimateSensorPresenceDevice extends UnifiedSensorBase {
 
   async _setupZclClusters(zclNode) {
     const ep1 = zclNode?.endpoints?.[1];
-    if (!ep1) return;
+    if (!ep1) {return;}
 
     const power = ep1.clusters?.genPowerCfg || ep1.clusters?.powerConfiguration;
     if (power?.on) {
       power.on('attr.batteryPercentageRemaining', (v) => {
-        if (!this._destroyed) this.safeSetCapabilityValue('measure_battery', Math.round(v / 2)).catch(() => {});
+        const pct = UnifiedBatteryHandler.normalizeZigbeeValue(v, { manufacturer: (this.getSetting && this.getSetting('zb_manufacturer_name')) || '', batteryType: 'CR2032' });
+        if (!this._destroyed && pct != null) {this.safeSetCapabilityValue('measure_battery', pct).catch(() => {});}
       });
     }
 
     const temp = ep1.clusters?.msTemperatureMeasurement;
     if (temp?.on) {
       temp.on('attr.measuredValue', (v) => {
-        if (!this._destroyed) this.safeSetCapabilityValue('measure_temperature', safeDivide(v, 100)).catch(() => {});
+        if (!this._destroyed) {this.safeSetCapabilityValue('measure_temperature', safeDivide(v, 100)).catch(() => {});}
       });
     }
 
     const hum = ep1.clusters?.msRelativeHumidity;
     if (hum?.on) {
       hum.on('attr.measuredValue', (v) => {
-        if (!this._destroyed) this.safeSetCapabilityValue('measure_humidity', safeDivide(v, 100)).catch(() => {});
+        if (!this._destroyed) {this.safeSetCapabilityValue('measure_humidity', safeDivide(v, 100)).catch(() => {});}
       });
     }
   }
@@ -208,8 +210,8 @@ class ClimateSensorPresenceDevice extends UnifiedSensorBase {
   }
 
   _parseBufferValue(data) {
-    if (typeof data === 'number') return data;
-    if (Buffer.isBuffer(data)) return data.readUIntBE(0, data.length);
+    if (typeof data === 'number') {return data;}
+    if (Buffer.isBuffer(data)) {return data.readUIntBE(0, data.length);}
     if (data && typeof data === 'object' && data.type === 'Buffer') {
       return Buffer.from(data.data).readUIntBE(0, data.data.length);
     }

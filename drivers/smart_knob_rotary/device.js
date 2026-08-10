@@ -1,4 +1,5 @@
 'use strict';
+const UnifiedBatteryHandler = require('../../lib/battery/UnifiedBatteryHandler');
 // A8: NaN Safety - use safeDivide/safeMultiply
 const CI = require('../../lib/utils/CaseInsensitiveMatcher');
 const { safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
@@ -131,7 +132,8 @@ class SmartKnobRotaryDevice extends TuyaZigbeeDevice {
         // Read initial battery value
         const batteryStatus = await powerCluster.readAttributes(['batteryPercentageRemaining']).catch(() => null);
         if (batteryStatus && batteryStatus.batteryPercentageRemaining !== undefined) {
-          const batteryValue = Math.round(batteryStatus.batteryPercentageRemaining  / 2);
+          const batteryValue = UnifiedBatteryHandler.normalizeZigbeeValue(batteryStatus.batteryPercentageRemaining, { manufacturer: (this.getSetting && this.getSetting('zb_manufacturer_name')) || '', batteryType: 'CR2032' });
+          if (batteryValue == null) {return;}
           await this.safeSetCapabilityValue('measure_battery', batteryValue).catch(this.error);
           this.log('Battery level:', batteryValue, '%');
         }

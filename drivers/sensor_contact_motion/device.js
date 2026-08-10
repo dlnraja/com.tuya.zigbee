@@ -593,7 +593,10 @@ class MotionSensorDevice extends UnifiedSensorBase {
             }
             this._lastBatteryReportTime = now;
 
-            let battery = Math.round(data.batteryPercentageRemaining / 2);
+            let battery = UnifiedBatteryHandler
+              ? UnifiedBatteryHandler.normalizeZigbeeValue(data.batteryPercentageRemaining, { manufacturer: (this.getSetting && this.getSetting('zb_manufacturer_name')) || '', batteryType: 'CR2032' })
+              : Math.round(data.batteryPercentageRemaining / 2);
+            if (battery == null) {return;}
             // v5.5.317: Validate battery with inference
             battery = this._batteryInference?.validateBattery(battery) ?? battery;
             this.log(`[ZCL] 🔋 Battery: ${battery}%`);
@@ -659,7 +662,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
         this.configureAttributeReporting(configureReportingPayload),
         { name: 'configureAttributeReporting', timeoutMs: SleepyInit.ZCL_TIMEOUT_MS }
       ).then((res) => {
-        if (res && res !== 'timeout') this.log('Attribute reporting configured successfully');
+        if (res && res !== 'timeout') {this.log('Attribute reporting configured successfully');}
       });
       // v5.5.228: Remove alarm_contact if wrongly added (motion sensors use alarm_motion only)
       if (this.hasCapability('alarm_contact')) {
@@ -968,7 +971,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
       // v5.8.32: Delayed cleanup - remove temp/humidity if no DP data received in 5 min
       // Fixes PIR-only variants (e.g. _TZE200_3towulqd ZG-204ZL) showing bogus values
       this._permissiveCleanupTimeout = this.homey.setTimeout(async () => {
-        if (this._destroyed) return;
+        if (this._destroyed) {return;}
         try {
           if (!this._hasReceivedTempDP && this.hasCapability('measure_temperature')) {
             const val = this.getCapabilityValue('measure_temperature');
@@ -1217,7 +1220,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
     };
 
     // Initial poll after 3 seconds
-    this.homey.setTimeout(async () => { if (this._destroyed) return; this.log('[MOTION-DP] 🔄 Initial DP poll...');
+    this.homey.setTimeout(async () => { if (this._destroyed) {return;} this.log('[MOTION-DP] 🔄 Initial DP poll...');
       // Request all DPs that might contain temp/humidity/battery
       await requestDP(3);   // Temperature (ZG-204ZV)
       await requestDP(4);   // Humidity or Battery
@@ -1235,7 +1238,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
     // Periodic poll every 5 minutes for variant devices
     if (isVariant) {
       this._dpPollingInterval = this.homey.setInterval(async () => {
-        if (this._destroyed) return;
+        if (this._destroyed) {return;}
         this.log('[MOTION-DP] 🔄 Periodic DP poll...');
         await requestDP(3);  // Temperature
         await requestDP(4);  // Humidity
@@ -1344,7 +1347,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
 
     // Auto-sleep after 10 seconds of inactivity
     clearTimeout(this._sleepTimer);
-    this._sleepTimer = this.homey.setTimeout(() => { if (this._destroyed) return; this._isDeviceAwake = false;
+    this._sleepTimer = this.homey.setTimeout(() => { if (this._destroyed) {return;} this._isDeviceAwake = false;
       this.log('[SLEEPY] 💤 Device assumed sleeping (timeout)'); }, 10000);
   }
 
@@ -1372,7 +1375,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
 
       const data = await Promise.race([
         cluster.readAttributes(attributes),
-        new Promise((_, reject) => this.homey.setTimeout(() => { if (this._destroyed) return; reject(new Error('Smart timeout')); }, timeout))
+        new Promise((_, reject) => this.homey.setTimeout(() => { if (this._destroyed) {return;} reject(new Error('Smart timeout')); }, timeout))
       ]);
 
       this._pendingZclReads.delete(readId);
@@ -1424,7 +1427,10 @@ class MotionSensorDevice extends UnifiedSensorBase {
 
       if (data?.batteryPercentageRemaining !== undefined && data.batteryPercentageRemaining !== 255) {
         this._lastBatteryReportTime = now;
-        const battery = Math.round(data.batteryPercentageRemaining / 2);
+        const battery = UnifiedBatteryHandler
+          ? UnifiedBatteryHandler.normalizeZigbeeValue(data.batteryPercentageRemaining, { manufacturer: (this.getSetting && this.getSetting('zb_manufacturer_name')) || '', batteryType: 'CR2032' })
+          : Math.round(data.batteryPercentageRemaining / 2);
+        if (battery == null) {return;}
         this.log(`[MOTION-BATTERY] 🔋 Battery: ${battery}% (raw: ${data.batteryPercentageRemaining})`);
         if (this.hasCapability('measure_battery')) {
           await this.safeSetCapabilityValue('measure_battery', parseFloat(battery)).catch(() => { });
@@ -1524,7 +1530,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
    * When PIR is unreliable, use lux changes to infer motion
    */
   async _handleLuxForMotionInference(lux) {
-    if (this._destroyed) return;
+    if (this._destroyed) {return;}
     if (!this._motionLuxInference) {return;}
 
     // Feed lux to inference engine
@@ -1601,7 +1607,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
     }
 
     this._luxReportTimer = this.homey.setInterval(() => {
-      if (this._destroyed) return;
+      if (this._destroyed) {return;}
       this._requestLuxUpdate();
     }, this._luxSmartReporting.luxReportInterval);
 
@@ -1656,7 +1662,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
    * Process smart lux update with intelligent reporting logic
    */
   async _processSmartLuxUpdate(luxValue) {
-    if (this._destroyed) return;
+    if (this._destroyed) {return;}
     const now = Date.now();
     const config = this._luxSmartReporting;
 
@@ -1737,7 +1743,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
    * v5.5.793: Enhanced cleanup on device destroy
    */
   async onDeleted() {
-    if (this._destroyed) return;
+    if (this._destroyed) {return;}
     this._destroyed = true;
     // v5.5.930: Clear DP polling interval
     if (this._dpPollingInterval) {

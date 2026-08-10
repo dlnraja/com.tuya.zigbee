@@ -171,6 +171,18 @@ async function sdkVerify(expectedVersion) {
       return false;
     }
 
+    const failedExpected = builds.find((build) => {
+      const state = String(build.state || '').toLowerCase();
+      return normalizeVersion(build.version) === normalizeVersion(expectedVersion)
+        && (state.includes('fail') || state === 'processing_failed');
+    });
+    if (failedExpected) {
+      const detail = failedExpected.failureDetail || failedExpected.stateMeta || failedExpected.state || 'failed';
+      const err = new Error(`Athom build v${expectedVersion} is ${failedExpected.state} (#${failedExpected.id || '?'}: ${detail})`);
+      err.code = 'ATHOM_PROCESSING_FAILED';
+      throw err;
+    }
+
     const latestText = result.latest
       ? `latest v${result.latest.version || '?'} ${result.latest.state || 'unknown'} #${result.latest.id || '?'}`
       : 'latest unavailable';
@@ -268,6 +280,9 @@ function dashboardFallback(expectedVersion) {
     return readDashboardReport(expectedVersion);
   } catch (error) {
     log(`Dashboard report read failed: ${error.message}`);
+    // Must rethrow terminal Athom failures — swallowing them caused 10× empty retries
+    // while Test stayed on the previous good build (socket hang up / processing_failed).
+    if (error.code === 'ATHOM_PROCESSING_FAILED') {throw error;}
     return false;
   }
 }
@@ -319,9 +334,12 @@ async function main() {
         }
       }
     } catch (e) {
-      // AggregateError or other transient error - don't fail the whole step
       lastError = e.message;
       log(`Verification error (attempt ${attempt}): ${e.message}`);
+      if (e.code === 'ATHOM_PROCESSING_FAILED') {
+        log('Fail-closed: Athom processing_failed is terminal for this version.');
+        process.exit(1);
+      }
       if (e.errors && Array.isArray(e.errors)) {
         // AggregateError - log all sub-errors
         for (const subErr of e.errors.slice(0, 5)) {

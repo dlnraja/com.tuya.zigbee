@@ -1174,5 +1174,9 @@
   },
   "5.12.61": {
     "en": "L99: EnergyJumpGuard wired, Moes 4-btn profile, canonical case variants, CI fail-closed publish promote."
+  },
+  "5.12.62": {
+    "en": "L99 battery normalize + verify fail-closed; retry after Athom socket hang up.",
+    "fr": "L99 batterie normalize + verify fail-closed; retry apres Athom socket hang up."
   }
 }
