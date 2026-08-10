@@ -82,6 +82,11 @@ const FORBIDDEN = [
     driver: 'generic_tuya',
     mfrs: ['_TZE204_jtbgusdc', '_TZE28C1000000_jtbgusdc', '_TZE204_o9gyszw2'],
   },
+  {
+    id: 'p96-hlla45kx-not-button2',
+    driver: 'button_wireless_2',
+    mfrs: ['_TYZB01_hlla45kx'],
+  },
 ];
 
 /** Forbidden productIds on a driver. */
@@ -119,6 +124,11 @@ const REQUIRED = [
     id: 'p96-jtbgusdc-dimmer2',
     driver: 'dimmer_2_gang_tuya',
     mfrs: ['_TZE204_jtbgusdc', '_TZE28C1000000_jtbgusdc'],
+  },
+  {
+    id: 'p96-hlla45kx-socket',
+    driver: 'double_power_point_2',
+    mfrs: ['_TYZB01_hlla45kx'],
   },
 ];
 
