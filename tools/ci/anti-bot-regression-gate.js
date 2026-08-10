@@ -87,6 +87,26 @@ const FORBIDDEN = [
     driver: 'button_wireless_2',
     mfrs: ['_TYZB01_hlla45kx'],
   },
+  {
+    id: 'p97-awepdiwi-not-climate',
+    driver: 'climate_sensor',
+    mfrs: ['_TZE284_awepdiwi'],
+  },
+  {
+    id: 'p97-pcdmj88b-not-wall-thermostat',
+    driver: 'wall_thermostat',
+    mfrs: ['_TZE284_pcdmj88b', '_TZE204_pcdmj88b'],
+  },
+  {
+    id: 'p96-hlla45kx-not-generic',
+    driver: 'generic_tuya',
+    mfrs: ['_TYZB01_hlla45kx'],
+  },
+  {
+    id: 'p97-dhotiauw-not-generic',
+    driver: 'generic_tuya',
+    mfrs: ['_TZE204_dhotiauw', '_TZE284_dhotiauw'],
+  },
 ];
 
 /** Forbidden productIds on a driver. */
@@ -129,6 +149,11 @@ const REQUIRED = [
     id: 'p96-hlla45kx-socket',
     driver: 'double_power_point_2',
     mfrs: ['_TYZB01_hlla45kx'],
+  },
+  {
+    id: 'p97-awepdiwi-soil',
+    driver: 'soil_sensor',
+    mfrs: ['_TZE284_awepdiwi'],
   },
 ];
 
