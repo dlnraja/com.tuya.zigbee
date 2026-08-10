@@ -10,7 +10,7 @@
 [![SDK](https://img.shields.io/badge/SDK-3-orange)](https://apps.developer.homey.app/)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
-A community-driven Homey app that brings **local control** to Tuya Zigbee devices — no cloud, no internet needed. Covers switches, sensors, lights, thermostats, covers, locks and more across **430 drivers** and **4,348 unique device fingerprints** (17,100 including case variants for bulletproof pairing).
+A community-driven Homey app that brings **local control** to Tuya Zigbee devices — no cloud, no internet needed. Covers switches, sensors, lights, thermostats, covers, locks and more across **430 drivers** and **4,348 unique device fingerprints** (17,101 including case variants for bulletproof pairing).
 
 **Key features:**
 - **Local-only** — everything runs on your Homey, nothing goes to the cloud
@@ -37,10 +37,10 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.447 |
+| **App Version** | v9.0.448 |
 | **Drivers** | 430 (380 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,348 |
-| **Pairing Variants** | 17,100 (4 case combos per fingerprint) |
+| **Pairing Variants** | 17,101 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 571 |
 | **Flow Cards** | 4,930 |
 | **Unique Capabilities** | 170 |
@@ -58,7 +58,7 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 | 1 | `climate_sensor` | 2,710 |
 | 2 | `switch_1gang` | 1,788 |
 | 3 | `button_wireless_2` | 862 |
-| 4 | `generic_tuya` | 703 |
+| 4 | `generic_tuya` | 704 |
 | 5 | `presence_sensor_radar` | 696 |
 | 6 | `radiator_valve` | 587 |
 | 7 | `wall_dimmer_tuya` | 482 |
@@ -106,7 +106,8 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 
 | Version | Changes |
 |---------|---------|
-| **v9.0.447** | L99 battery normalize batch + verify fail-closed on Athom processing_failed. |
+| **v9.0.448** | Crash hardening from , read-only error guard, getDiscoveries safe call, crash-pattern CI gate. |
+| **v9.0.447** | Crash hardening from Gmail/diag logs: flow-card polyfill, read-only error guard, getDiscoveries safe call, crash-pattern CI gate. |
 | **v9.0.446** | L99 battery normalize batch + verify fail-closed on Athom processing_failed. |
 | **v9.0.445** | L99 battery normalize batch + verify fail-closed on Athom processing_failed. |
 | **v9.0.444** | L99 battery normalize batch + verify fail-closed on Athom processing_failed. |
@@ -117,7 +118,6 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 | **v9.0.439** | Retry Homey Test publish after Athom processing_failed (socket hang up) on 9.0.436; align app.json; harden verify-test-version fail-closed. |
 | **v9.0.438** | Retry Homey Test publish after Athom processing_failed (socket hang up) on 9.0.436; align app.json; harden verify-test-version fail-closed. |
 | **v9.0.437** | Retry Homey Test publish after Athom processing_failed (socket hang up) on 9.0.436; align app.json; harden verify-test-version fail-closed. |
-| **v9.0.436** | Stability improvements and Homey test publication retry after transient processing failure. |
 
 <!-- CHANGELOG_END -->
 
