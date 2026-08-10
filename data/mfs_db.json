@@ -130895,7 +130895,8 @@
   },
   "_tz3000_8utxxtzr": {
     "driverId": "button_emergency_sos",
-    "source": "auto-sync"
+    "source": "p98-sacred-couple",
+    "pid": "TS0215A"
   },
   "ts0041": {
     "driverId": "button_wireless",
@@ -132096,8 +132097,8 @@
     "modelIdsCount": 18
   },
   "_tyzb01_hlla45kx": {
-    "driverId": "button_wireless_2",
-    "source": "auto-sync",
+    "driverId": "double_power_point_2",
+    "source": "p98-sacred-couple",
     "modelIds": [
       "TS0001",
       "TS0002",
@@ -132118,7 +132119,7 @@
       "TS0601",
       "TSO121"
     ],
-    "pid": "TS0001",
+    "pid": "TS011F",
     "modelIdsCount": 18
   },
   "_tyzb01_iuepbmpv": {
@@ -168834,8 +168835,9 @@
     "modelIdsCount": 2
   },
   "_tze204_d2zfgtij": {
-    "driverId": "energy_meter_3phase",
-    "source": "auto-sync"
+    "driverId": "energy_meter_din",
+    "source": "p98-sacred-couple",
+    "pid": "TS0601"
   },
   "_tze204_jrcfsaa3": {
     "driverId": "energy_meter_3phase",
@@ -168849,7 +168851,8 @@
   },
   "_tze204_s4sa1mcx": {
     "driverId": "energy_meter_3phase",
-    "source": "auto-sync"
+    "source": "p98-sacred-couple",
+    "pid": "TS0601"
   },
   "_tze204_sdykkwsu": {
     "driverId": "energy_meter_3phase",
@@ -169925,8 +169928,8 @@
     "modelIdsCount": 50
   },
   "_tz3210_imaccztn": {
-    "driverId": "generic_diy",
-    "source": "auto-sync",
+    "driverId": "relay_board_4_channel",
+    "source": "p98-sacred-couple",
     "modelIds": [
       "JZ-ZB-004",
       "TS0004",
@@ -169945,7 +169948,7 @@
       "TS0726",
       "TS1002"
     ],
-    "pid": "JZ-ZB-004",
+    "pid": "TS0004",
     "modelIdsCount": 16
   },
   "_tz3210_vbfp8eyv": {
@@ -170880,8 +170883,8 @@
     "modelIdsCount": 52
   },
   "_tze200_9p5xmj5r": {
-    "driverId": "generic_diy",
-    "source": "auto-sync",
+    "driverId": "curtain_motor",
+    "source": "p98-sacred-couple",
     "modelIds": [
       "0x8040",
       "BASICZBR3",
@@ -170935,7 +170938,7 @@
       "eTRV0101",
       "eTRV0103"
     ],
-    "pid": "0x8040",
+    "pid": "TS0601",
     "modelIdsCount": 51
   },
   "_tze200_9sfg7gm0": {
@@ -214650,14 +214653,14 @@
     "modelIdsCount": 3
   },
   "_tze200_jt50ea5d": {
-    "driverId": "valve_irrigation",
-    "source": "auto-sync",
+    "driverId": "ultrasonic_heat_meter",
+    "source": "p98-sacred-couple",
     "modelIds": [
       "TS0049",
       "TS0601",
       "TS0601_irrigation"
     ],
-    "pid": "TS0049",
+    "pid": "TS0601",
     "modelIdsCount": 3
   },
   "_tze200_wt9agwf3": {

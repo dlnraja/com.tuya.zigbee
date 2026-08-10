@@ -107,6 +107,32 @@ const FORBIDDEN = [
     driver: 'generic_tuya',
     mfrs: ['_TZE204_dhotiauw', '_TZE284_dhotiauw'],
   },
+  // P98 sacred-couple rehomes — never dump back into generic/wrong class
+  {
+    id: 'p98-pftj0i7z-not-generic',
+    driver: 'generic_tuya',
+    mfrs: ['_TZ3000_pftj0i7z'],
+  },
+  {
+    id: 'p98-8utxxtzr-not-generic',
+    driver: 'generic_tuya',
+    mfrs: ['_TZ3000_8utxxtzr'],
+  },
+  {
+    id: 'p98-jt50ea5d-not-irrigation',
+    driver: 'valve_irrigation',
+    mfrs: ['_TZE200_jt50ea5d'],
+  },
+  {
+    id: 'p98-9p5xmj5r-not-wall-thermostat',
+    driver: 'wall_thermostat',
+    mfrs: ['_TZE200_9p5xmj5r'],
+  },
+  {
+    id: 'p98-bgtzm4ny-not-switch1',
+    driver: 'switch_1gang',
+    mfrs: ['_TZ3000_bgtzm4ny', '_TZ3000_5tqxpine'],
+  },
 ];
 
 /** Forbidden productIds on a driver. */
@@ -154,6 +180,26 @@ const REQUIRED = [
     id: 'p97-awepdiwi-soil',
     driver: 'soil_sensor',
     mfrs: ['_TZE284_awepdiwi'],
+  },
+  {
+    id: 'p98-pftj0i7z-btn4',
+    driver: 'button_wireless_4',
+    mfrs: ['_TZ3000_pftj0i7z'],
+  },
+  {
+    id: 'p98-8utxxtzr-sos',
+    driver: 'button_emergency_sos',
+    mfrs: ['_TZ3000_8utxxtzr'],
+  },
+  {
+    id: 'p98-jt50ea5d-heat',
+    driver: 'ultrasonic_heat_meter',
+    mfrs: ['_TZE200_jt50ea5d'],
+  },
+  {
+    id: 'p98-9p5xmj5r-curtain',
+    driver: 'curtain_motor',
+    mfrs: ['_TZE200_9p5xmj5r'],
   },
 ];
 
