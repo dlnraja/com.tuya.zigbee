@@ -1165,5 +1165,8 @@
   },
   "5.12.58": {
     "en": "Retry Homey Test publish after Athom processing_failed (socket hang up) on 5.12.57; harden verify-test-version fail-closed."
+  },
+  "5.12.59": {
+    "en": "P95: remove generic_tuya collisions for BSEED dimmer (#2133) and 4ch relay (#2131); harden anti-bot/re-inject; APP_ID Test overwrite warning."
   }
 }
