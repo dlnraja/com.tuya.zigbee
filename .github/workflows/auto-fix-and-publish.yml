@@ -70,6 +70,11 @@ jobs:
       - name: "🔁 Re-inject manual driver fixes (P63.3)"
         run: node tools/ci/re-inject-manual-fixes.js
 
+      # P94+: hard-fail if bot reintroduced known wrong Sacred Couple routings
+      # (complements re-inject repair with a detect gate before publish commit)
+      - name: "🛡️ Anti-bot regression gate (P94+)"
+        run: node tools/ci/anti-bot-regression-gate.js
+
       - name: 📊 Dashboard monitor
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
