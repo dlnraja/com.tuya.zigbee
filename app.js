@@ -162,11 +162,12 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
   async onInit() {
     this.initializeSettings();
 
-    // v9.0.428 crash guard: wrap the flow-card getters so a single missing
-    // card id or an SDK without getDeviceActionCard cannot kill a driver's
+    // v10.2.1 crash guard: wrap OR polyfill flow-card getters so a missing
+    // card id OR an SDK without getDeviceActionCard cannot kill a driver's
     // whole onInit ("Initializing Driver X: TypeError … is not a function").
-    // One guard here covers all 430+ drivers that call this.homey.flow.*
-    // directly. Failures are logged and return a no-op stub card.
+    // Gmail crash logs (Aug 2026): curtain_motor_tilt / radiator_controller /
+    // ir_blaster still called getDeviceActionCard when it was undefined —
+    // previous guard only wrapped existing methods and skipped missing ones.
     try {
       const flow = this.homey.flow;
       const noopCard = {
@@ -178,8 +179,12 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
       };
       for (const m of ['getActionCard', 'getDeviceActionCard', 'getTriggerCard', 'getDeviceTriggerCard', 'getConditionCard', 'getDeviceConditionCard']) {
         const orig = flow[m];
-        if (typeof orig !== 'function' || orig.__crashGuarded) {continue;}
+        if (typeof orig === 'function' && orig.__crashGuarded) {continue;}
         const wrapped = (...args) => {
+          if (typeof orig !== 'function') {
+            this.log('[FLOW-GUARD]', m, args[0], 'not a function on this SDK — noop');
+            return noopCard;
+          }
           try { return orig.apply(flow, args); }
           catch (e) {
             this.log('[FLOW-GUARD]', m, args[0], e.message);
@@ -187,7 +192,7 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
           }
         };
         wrapped.__crashGuarded = true;
-        flow[m] = wrapped;
+        try { flow[m] = wrapped; } catch (_e) { /* flow methods may be non-writable */ }
       }
     } catch (e) { /* flow guard is best-effort */ }
 

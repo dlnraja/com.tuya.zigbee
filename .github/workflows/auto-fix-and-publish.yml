@@ -90,10 +90,22 @@ jobs:
       - name: "🛡️ Anti-bot gate (post-enrich)"
         run: node tools/ci/anti-bot-regression-gate.js
 
+      - name: "📧 Gmail/dashboard crash pattern gate (P100)"
+        continue-on-error: true
+        run: |
+          node tools/ci/gmail-crash-pattern-gate.js || true
+          node .github/scripts/privacy-redactor.js .github/state/gmail-crash-patterns.json || true
+
       - name: 📊 Dashboard monitor
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
         run: timeout 30 node scripts/automation/dashboard-monitor.js --latest || true
+
+      - name: "📧 Re-scan crash patterns after dashboard carto"
+        continue-on-error: true
+        run: |
+          node tools/ci/gmail-crash-pattern-gate.js || true
+          node .github/scripts/privacy-redactor.js .github/state/gmail-crash-patterns.json .github/state/dashboard-monitor-report.json || true
 
       - name: 📋 Check processing_failed builds
         id: processing_check

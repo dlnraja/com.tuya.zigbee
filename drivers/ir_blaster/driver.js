@@ -282,7 +282,15 @@ async onInit() {
         'OK/Enter': 'tv_ok',
         'Back': 'tv_back'
       };
-      const card = this.homey.flow.getDeviceActionCard('ir_blaster_send_tv_command');
+      const card = (typeof this.homey.flow.getActionCard === 'function'
+        ? this.homey.flow.getActionCard('ir_blaster_send_tv_command')
+        : null)
+        || (typeof this.homey.flow.getDeviceActionCard === 'function'
+          ? this.homey.flow.getDeviceActionCard('ir_blaster_send_tv_command')
+          : null);
+      if (!card || typeof card.registerRunListener !== 'function') {
+        this.log('[TV] ir_blaster_send_tv_command card unavailable');
+      } else {
       card.registerRunListener(async (args) => {
         const d = args.device;
         if (!d) {return false;}
@@ -308,6 +316,7 @@ async onInit() {
         return false;
       });
       this.log(' ir_blaster_send_tv_command registered');
+      }
     } catch (e) {
       this.log(' ir_blaster_send_tv_command:', e.message);
     }

@@ -125,7 +125,9 @@
     "check:case-variants": "node tools/ci/ensure-case-variants.js",
     "check:anti-bot": "node tools/ci/anti-bot-regression-gate.js",
     "fix:re-inject": "node tools/ci/re-inject-manual-fixes.js",
-    "enrich:closed-loop": "node tools/ci/auto-enrich-closed-loop.js --skip-crawl"
+    "enrich:closed-loop": "node tools/ci/auto-enrich-closed-loop.js --skip-crawl",
+    "check:gmail-crashes": "node tools/ci/gmail-crash-pattern-gate.js",
+    "check:gmail-crashes:json": "node tools/ci/gmail-crash-pattern-gate.js --json"
   },
   "keywords": [
     "homey",

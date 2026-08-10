@@ -52,6 +52,13 @@ jobs:
         if: always()
         run: node .github/scripts/privacy-redactor.js diagnostics .github/state/diagnostics-report.json .github/state/homey-device-report.json
 
+      - name: "P100 Crash pattern gate (gmail + carto summary)"
+        if: always()
+        continue-on-error: true
+        run: |
+          node tools/ci/gmail-crash-pattern-gate.js || true
+          node .github/scripts/privacy-redactor.js .github/state/gmail-crash-patterns.json || true
+
       - name: Commit diagnostics
         continue-on-error: true
         if: always()
@@ -59,8 +66,8 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           if [ -d "diagnostics" ] && [ "$(ls -A diagnostics/ 2>/dev/null)" ]; then
-            node .github/scripts/privacy-redactor.js diagnostics .github/state/diagnostics-report.json .github/state/homey-device-report.json
-            git add diagnostics/
+            node .github/scripts/privacy-redactor.js diagnostics .github/state/diagnostics-report.json .github/state/homey-device-report.json .github/state/gmail-crash-patterns.json
+            git add diagnostics/ .github/state/gmail-crash-patterns.json 2>/dev/null || true
             if ! git diff --staged --quiet; then
               git commit -m "Diagnostics update $(date -u +%Y-%m-%d) [skip ci]"
               bash scripts/ci/verified-git-push.sh master

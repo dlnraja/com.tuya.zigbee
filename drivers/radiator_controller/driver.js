@@ -15,35 +15,65 @@ class RadiatorControllerDriver extends ZigBeeDriver {
     this.log('RadiatorControllerDriver v5.5.476 initialized');
 
     // Triggers (déclenchés depuis device.js)
-    this._radiatorModeChangedCard = this.homey.flow.getDeviceTriggerCard('radiator_mode_changed');
-    this._pilotSignalSentCard = this.homey.flow.getDeviceTriggerCard('pilot_signal_sent');
+    try {
+      const flow = this.homey.flow;
+      this._radiatorModeChangedCard = (typeof flow.getDeviceTriggerCard === 'function'
+        ? flow.getDeviceTriggerCard('radiator_mode_changed')
+        : null)
+        || (typeof flow.getTriggerCard === 'function'
+          ? flow.getTriggerCard('radiator_mode_changed')
+          : null);
+      this._pilotSignalSentCard = (typeof flow.getDeviceTriggerCard === 'function'
+        ? flow.getDeviceTriggerCard('pilot_signal_sent')
+        : null)
+        || (typeof flow.getTriggerCard === 'function'
+          ? flow.getTriggerCard('pilot_signal_sent')
+          : null);
+    } catch (e) {
+      this.log('[Flow] triggers', e.message);
+    }
 
-    // Conditions
-    this.homey.flow.getDeviceConditionCard('radiator_is_heating')
-      .registerRunListener(async ({ device }) => {
-        return !!device.currentMode && device.currentMode !== 'off';
-      });
+    // Conditions — SDK3-safe getters
+    const regCond = (id, fn) => {
+      try {
+        const flow = this.homey.flow;
+        const card = (typeof flow.getConditionCard === 'function' ? flow.getConditionCard(id) : null)
+          || (typeof flow.getDeviceConditionCard === 'function' ? flow.getDeviceConditionCard(id) : null);
+        if (card && typeof card.registerRunListener === 'function') {
+          card.registerRunListener(fn);
+        }
+      } catch (e) {
+        this.log('[Flow]', id, e.message);
+      }
+    };
+    regCond('radiator_is_heating', async ({ device }) => {
+      return !!device.currentMode && device.currentMode !== 'off';
+    });
+    regCond('heating_mode_is', async ({ device, mode }) => {
+      return device.currentMode === mode;
+    });
 
-    this.homey.flow.getDeviceConditionCard('heating_mode_is')
-      .registerRunListener(async ({ device, mode }) => {
-        return device.currentMode === mode;
-      });
-
-    // Actions
-    this.homey.flow.getDeviceActionCard('set_heating_mode')
-      .registerRunListener(async ({ device, mode }) => {
-        return device._setHeatingMode(mode);
-      });
-
-    this.homey.flow.getDeviceActionCard('send_pilot_signal')
-      .registerRunListener(async ({ device, signal }) => {
-        return device._sendPilotWireSignal(signal);
-      });
-
-    this.homey.flow.getDeviceActionCard('set_temperature_offset')
-      .registerRunListener(async ({ device, offset }) => {
-        return device._setTemperatureOffset(offset);
-      });
+    // Actions — prefer getActionCard; fall back via app.js FLOW-GUARD polyfill
+    const regAction = (id, fn) => {
+      try {
+        const flow = this.homey.flow;
+        const getter = (typeof flow.getActionCard === 'function' && flow.getActionCard)
+          || (typeof flow.getDeviceActionCard === 'function' && flow.getDeviceActionCard);
+        if (typeof getter !== 'function') {
+          this.log('[Flow] no action-card getter for', id);
+          return;
+        }
+        const card = getter.call(flow, id);
+        if (card && typeof card.registerRunListener === 'function') {
+          card.registerRunListener(fn);
+        }
+      } catch (e) {
+        this.log('[Flow]', id, e.message);
+      }
+    };
+    regAction('set_heating_mode', async ({ device, mode }) => device._setHeatingMode(mode));
+    regAction('send_pilot_signal', async ({ device, signal }) => device._sendPilotWireSignal(signal));
+    regAction('set_temperature_offset', async ({ device, offset }) => device._setTemperatureOffset(offset));
   }
 }
 

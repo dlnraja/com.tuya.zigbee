@@ -106,14 +106,16 @@ jobs:
         run: |
           node .github/scripts/privacy-redactor.js .github/state/diagnostics-state.json .github/state/diagnostics-report.json .github/state/gmail-token-health.json .github/state/diagnostics-crossref.yml diagnostics
           npm run check:diag-history
+          node tools/ci/gmail-crash-pattern-gate.js || true
+          node .github/scripts/privacy-redactor.js .github/state/gmail-crash-patterns.json || true
 
       - name: Commit and Push changes
         if: always()
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          node .github/scripts/privacy-redactor.js .github/state/diagnostics-state.json .github/state/diagnostics-report.json .github/state/gmail-token-health.json .github/state/diagnostics-crossref.yml diagnostics
-          git add .github/state/diagnostics-state.json .github/state/diagnostics-report.json .github/state/gmail-token-health.json .github/state/diagnostics-crossref.yml 2>/dev/null || true
+          node .github/scripts/privacy-redactor.js .github/state/diagnostics-state.json .github/state/diagnostics-report.json .github/state/gmail-token-health.json .github/state/diagnostics-crossref.yml .github/state/gmail-crash-patterns.json diagnostics
+          git add .github/state/diagnostics-state.json .github/state/diagnostics-report.json .github/state/gmail-token-health.json .github/state/diagnostics-crossref.yml .github/state/gmail-crash-patterns.json 2>/dev/null || true
           if ! git diff --staged --quiet; then
             git commit -m "chore: update diagnostics report from Gmail [skip ci]"
             bash scripts/ci/verified-git-push.sh master

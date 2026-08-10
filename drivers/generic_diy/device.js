@@ -151,8 +151,21 @@ class GenericDIYDevice extends ZigBeeDevice {
   // 
 
   _registerFlowActions() {
+    const regAction = (id, fn) => {
+      try {
+        const flow = this.homey.flow;
+        const card = (typeof flow.getActionCard === 'function' ? flow.getActionCard(id) : null)
+          || (typeof flow.getDeviceActionCard === 'function' ? flow.getDeviceActionCard(id) : null);
+        if (card && typeof card.registerRunListener === 'function') {
+          card.registerRunListener(fn);
+        }
+      } catch (e) {
+        this.log('[Flow]', id, e && e.message);
+      }
+    };
+
     // Identify
-    this.homey.flow.getDeviceActionCard('generic_diy_identify')?.registerRunListener(async () => {
+    regAction('generic_diy_identify', async () => {
       const ep = this.zclNode?.endpoints?.[1];
       if (ep?.clusters?.identify) {
         await ep.clusters.identify.identify({ identifyTime: 5 });
@@ -161,21 +174,21 @@ class GenericDIYDevice extends ZigBeeDevice {
     });
 
     // Turn ON endpoint
-    this.homey.flow.getDeviceActionCard('generic_diy_turn_on_endpoint')?.registerRunListener(async ({ endpoint } ) => {
+    regAction('generic_diy_turn_on_endpoint', async ({ endpoint } ) => {
       const ep = this.zclNode?.endpoints?.[endpoint];
       if (ep?.clusters?.onOff) {await ep.clusters.onOff.setOn();}
       return true;
     });
 
     // Turn OFF endpoint
-    this.homey.flow.getDeviceActionCard('generic_diy_turn_off_endpoint')?.registerRunListener(async ({ endpoint } ) => {
+    regAction('generic_diy_turn_off_endpoint', async ({ endpoint } ) => {
       const ep = this.zclNode?.endpoints?.[endpoint];
       if (ep?.clusters?.onOff) {await ep.clusters.onOff.setOff();}
       return true;
     });
 
     // Set Dim Level
-    this.homey.flow.getDeviceActionCard('generic_diy_set_dim')?.registerRunListener(async ({ level } ) => {
+    regAction('generic_diy_set_dim', async ({ level } ) => {
       const ep = this.zclNode?.endpoints?.[1];
       if (ep?.clusters?.levelControl) {
         await ep.clusters.levelControl.moveToLevel({ level: safeMultiply(Math.round(level), 254), transitionTime: 0 });

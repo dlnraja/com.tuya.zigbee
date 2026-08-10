@@ -78,7 +78,12 @@ class PresenceSensorRadarDriver extends ZigBeeDriver {
 
     // ACTIONS
     try {
-      const selfTestCard = this.homey.flow.getDeviceActionCard('sensor_gas_presence_run_self_test');
+      const selfTestCard = (typeof this.homey.flow.getActionCard === 'function'
+        ? this.homey.flow.getActionCard('sensor_gas_presence_run_self_test')
+        : null)
+        || (typeof this.homey.flow.getDeviceActionCard === 'function'
+          ? this.homey.flow.getDeviceActionCard('sensor_gas_presence_run_self_test')
+          : null);
       if (selfTestCard) {
         selfTestCard.registerRunListener(async (args) => {
           if (!args.device) {return false;}

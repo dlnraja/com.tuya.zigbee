@@ -47,12 +47,14 @@ async onInit() {
     reg('curtain_motor_tilt_close', async ({ device }) => { await device['setCapabilityValue']('windowcoverings_set', 0); return true; });
     reg('curtain_motor_tilt_stop', async ({ device }) => { await device['setCapabilityValue']('windowcoverings_stop', true); return true; });
 
-    // Actions définies inline dans driver.compose.json (flow.actions)
-    // Guarded: on some SDK3 runtimes getDeviceActionCard is unavailable or a
-    // card id is missing — an unguarded throw here kills the whole driver
-    // init ("Initializing Driver curtain_motor_tilt: TypeError …" crash).
+    // Actions — SDK3: getActionCard (getDeviceActionCard polyfilled in app.js)
     const regDev = (id, fn) => { try {
-      this.homey.flow.getDeviceActionCard(id).registerRunListener(fn);
+      const flow = this.homey.flow;
+      const card = (typeof flow.getActionCard === 'function' ? flow.getActionCard(id) : null)
+        || (typeof flow.getDeviceActionCard === 'function' ? flow.getDeviceActionCard(id) : null);
+      if (card && typeof card.registerRunListener === 'function') {
+        card.registerRunListener(fn);
+      }
     } catch (e) { this.log('[Flow]', id, e.message); } };
     regDev('curtain_calibrate', async ({ device }) => {
       // Best-effort: cycle complet ouverture/fermeture (durée configurable)

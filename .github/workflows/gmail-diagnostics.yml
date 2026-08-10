@@ -125,13 +125,20 @@ jobs:
         run: node .github/scripts/privacy-redactor.js .github/state/diagnostics-state.json .github/state/diagnostics-report.json .github/state/gmail-token-health.json .github/state/diagnostics-crossref.yml diagnostics
       - name: Diagnostic history gate
         run: npm run check:diag-history
+      - name: "P100 Gmail crash pattern cross-ref (emails + carto/dashboard)"
+        if: always()
+        continue-on-error: true
+        run: |
+          node tools/ci/gmail-crash-pattern-gate.js || true
+          node tools/ci/cross-ref-gmail-fps-v2.js || true
+          node .github/scripts/privacy-redactor.js .github/state/gmail-crash-patterns.json .github/state/gmail-unique-fps.json || true
       - name: Commit state
         continue-on-error: true
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          node .github/scripts/privacy-redactor.js .github/state/diagnostics-state.json .github/state/diagnostics-report.json .github/state/gmail-token-health.json .github/state/diagnostics-crossref.yml diagnostics
-          git add .github/state/diagnostics-state.json .github/state/diagnostics-report.json .github/state/gmail-token-health.json 2>/dev/null || true
+          node .github/scripts/privacy-redactor.js .github/state/diagnostics-state.json .github/state/diagnostics-report.json .github/state/gmail-token-health.json .github/state/diagnostics-crossref.yml .github/state/gmail-crash-patterns.json diagnostics
+          git add .github/state/diagnostics-state.json .github/state/diagnostics-report.json .github/state/gmail-token-health.json .github/state/gmail-crash-patterns.json 2>/dev/null || true
           COUNT=$(node -p "try{JSON.parse(require('fs').readFileSync('.github/state/diagnostics-report.json')).count||0}catch(e){0}")
           VER=$(node -p "require('./app.json').version" 2>/dev/null || echo "?")
           if ! git diff --staged --quiet; then
@@ -240,5 +247,6 @@ jobs:
           path: |
             .github/state/diagnostics-report.json
             .github/state/diagnostics-crossref.yml
+            .github/state/gmail-crash-patterns.json
             diagnostics/summary.json
           retention-days: 30
