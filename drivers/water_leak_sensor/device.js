@@ -131,6 +131,14 @@ const WATER_SENSOR_PROFILES = {
     hasTamper: true,
     notes: 'HOBEIAN branded'
   },
+  // P93: explicit lowercase alias — some interviews report manufacturerName as "hobeian"
+  // (forum #2090/#2111 "no data" when profile match failed before IAS enroll)
+  'hobeian': {
+    type: 'ias_zone', productId: 'ZG-222Z',
+    iasAlarmBit: 'both',
+    hasTamper: true,
+    notes: 'HOBEIAN branded (lowercase)'
+  },
   'default': {
     type: 'hybrid',
     iasAlarmBit: 'both',
