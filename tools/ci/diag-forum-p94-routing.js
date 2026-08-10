@@ -52,10 +52,11 @@ let bad = 0;
 for (const c of checks) {
   const hits = find(c.mfr);
   const drivers = hits.map((h) => h.driver);
-  const ok = drivers.includes(c.expect);
+  const ok = drivers.includes(c.expect) && drivers.every((d) => d === c.expect);
   if (!ok) bad++;
+  const note = drivers.length > 1 ? ' COLLISION' : '';
   console.log(
-    `${ok ? 'OK' : 'BAD'} ${c.forum} ${c.mfr} expect=${c.expect} got=[${drivers.join(', ') || 'NONE'}]`
+    `${ok ? 'OK' : 'BAD'}${note} ${c.forum} ${c.mfr} expect=${c.expect} got=[${drivers.join(', ') || 'NONE'}]`
   );
 }
 

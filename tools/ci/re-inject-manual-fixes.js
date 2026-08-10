@@ -415,6 +415,19 @@ const MANUAL_FIXES = [
     addAtTop: false,
     source: 'p94-forum-2131',
   },
+  {
+    id: 'p94-remove-collisions-from-generic-tuya',
+    file: 'drivers/generic_tuya/driver.compose.json',
+    description: 'Forum #2133/#2131: keep routed FPs out of generic_tuya (TS0601 collision)',
+    match: () => true,
+    addIfMissing: [],
+    removeIfPresent: [
+      '_TZE284_m1cvyneb', '_tze284_m1cvyneb', '_TZE284_M1CVYNEB', '_tze284_M1CVYNEB',
+      '_TZ3210_imaccztn', '_tz3210_imaccztn', '_TZ3210_IMACCZTN', '_tz3210_IMACCZTN',
+    ],
+    addAtTop: false,
+    source: 'p94-forum-collision',
+  },
 ];
 
 function patchFix(fix) {
