@@ -32,6 +32,15 @@ class LightSensorOutdoorDevice extends TuyaZigbeeDevice {
       this.log('Attribute reporting config failed (device may not support it):', err.message);
     }
 
+    // P98: dpMappings MUST be set before super.onNodeInit so EF00Manager sees them
+    // P88: SmarterCurry Luminance Sensor (_TZE284_aaeasoll) uses DP 2 for illuminance
+    // per Z2M PR #12347 (https://github.com/Koenkk/zigbee-herdsman-converters/pull/12347)
+    this.dpMappings = {
+      1: { capability: 'measure_luminance', divisor: 1 },
+      2: { capability: 'measure_luminance', divisor: 1 },
+      4: { capability: 'measure_battery', divisor: 1 },
+    };
+
     await super.onNodeInit({ zclNode });
 
     const ep1 = zclNode?.endpoints?.[1];
@@ -44,20 +53,14 @@ class LightSensorOutdoorDevice extends TuyaZigbeeDevice {
       });
     }
 
-    // v5.13.20: Assign dpMappings directly to device for EF00Manager visibility
-    // P88: SmarterCurry Luminance Sensor (_TZE284_aaeasoll) uses DP 2 for illuminance
-    // per Z2M PR #12347 (https://github.com/Koenkk/zigbee-herdsman-converters/pull/12347)
-    this.dpMappings = {
-      1: { capability: 'measure_luminance', divisor: 1 },
-      2: { capability: 'measure_luminance', divisor: 1 },  // P88: SmarterCurry (PR #12347)
-      4: { capability: 'measure_battery', divisor: 1 },
-    };
-
-    // Battery via power configuration
+    // Battery via power configuration (ZCL batteryPercentageRemaining is 0–200 = %×2)
     const power = ep1?.clusters?.powerConfiguration || ep1?.clusters?.[1];
     if (power?.on) {
       power.on('attr.batteryPercentageRemaining', (val) => {
-        const pct = Math.min(100, Math.round(val));
+        const raw = Number(val);
+        const pct = Number.isFinite(raw)
+          ? Math.min(100, Math.max(0, Math.round(raw > 100 ? raw / 2 : raw)))
+          : 0;
         this.safeSetCapabilityValue('measure_battery', pct).catch(() => {});
       });
     }

@@ -11,8 +11,7 @@
     "zigbee"
   ],
   "capabilities": [
-    "onoff",
-    "button.1"
+    "onoff"
   ],
   "images": {
     "large": "/{{driverAssetsPath}}/images/large.png",
