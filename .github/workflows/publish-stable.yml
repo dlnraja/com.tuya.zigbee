@@ -1,7 +1,3 @@
-# 🚀 Publish Stable to Test
-# Triggers: push,workflow_dispatch | Secrets: GH_PAT,GMAIL_APP_PASSWORD,GMAIL_CLIENT_ID,GMAIL_CLIENT_SECRET,GMAIL_EMAIL,GMAIL_REFRESH_TOKEN,GOOGLE_API_KEY,HOMEY_EMAIL,HOMEY_PASSWORD,HOMEY_PAT,HOMEY_PAT_API
-# Doc header added 2026-07-29 (workflows genealogy enrichment).
-
 name: "🚀 Publish Stable to Test"
 
 # <!-- badges:start -->
@@ -39,8 +35,8 @@ env:
   # exceeding the default 20,000 limit. 30,000 gives headroom.
   # v5.12.1 (P59 sync): stable has 30,211 combos (more than master due to
   # driver differences over time). 35,000 covers stable with headroom.
-  HOMEY_ZIGBEE_MAX_TOTAL_COMBOS: "60000"
-  HOMEY_ZIGBEE_MAX_DRIVER_COMBOS: "10000"
+  HOMEY_ZIGBEE_MAX_TOTAL_COMBOS: "35000"
+  HOMEY_ZIGBEE_MAX_DRIVER_COMBOS: "1000"
 
 jobs:
   upstream-guard:
@@ -62,10 +58,10 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+      - uses: actions/checkout@v5
         with:
           fetch-depth: 1
-      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
+      - uses: actions/setup-node@v5
         with:
           node-version: '22'
           cache: npm
@@ -94,10 +90,10 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
-      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+      - uses: actions/checkout@v5
         with:
           fetch-depth: 1
-      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
+      - uses: actions/setup-node@v5
         with:
           node-version: '22'
           cache: npm
@@ -115,6 +111,26 @@ jobs:
           node scripts/maintenance/optimize-build-images.cjs
           node scripts/maintenance/optimize-build-svgs.cjs
           node scripts/maintenance/sanitize-manifest.cjs .homeybuild/app.json
+      # P94: Homey build regenerates app.json from .homeycompose; package.json can lag.
+      # Align package.json (+ root app.json) to built version before prepare-publish guard.
+      - name: Sync versions after Homey build
+        run: |
+          node -e '
+            const fs = require("fs");
+            const built = JSON.parse(fs.readFileSync(".homeybuild/app.json", "utf8"));
+            const v = built.version;
+            for (const f of ["package.json", "app.json", ".homeybuild/package.json"]) {
+              if (!fs.existsSync(f)) { console.log("skip missing", f); continue; }
+              const j = JSON.parse(fs.readFileSync(f, "utf8"));
+              if (j.version !== v) {
+                console.log("Align " + f + ": " + j.version + " -> " + v);
+                j.version = v;
+                fs.writeFileSync(f, JSON.stringify(j, null, 2) + "\n");
+              } else {
+                console.log("OK " + f + "=" + v);
+              }
+            }
+          '
       - name: Prepare Publish Directory
         run: npm run prepare-publish
       - name: Publish to Draft
@@ -168,8 +184,8 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 25
     steps:
-      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
-      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         with:
           node-version: '22'
           cache: npm
