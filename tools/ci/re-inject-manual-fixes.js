@@ -366,6 +366,14 @@ const MANUAL_FIXES = [
     removeIfPresent: [
       // Forum #2133: BSEED dimmer socket — must NOT stay on climate_sensor
       '_TZE284_m1cvyneb', '_tze284_m1cvyneb', '_TZE284_M1CVYNEB', '_tze284_M1CVYNEB',
+      // Forum #2135: Avatto ZDMS16-2 2ch dimmer — must NOT stay on climate_sensor
+      '_TZE204_jtbgusdc', '_tze204_jtbgusdc', '_TZE204_JTBGUSDC', '_tze204_JTBGUSDC',
+      '_TZE284_jtbgusdc', '_tze284_jtbgusdc', '_TZE284_JTBGUSDC', '_tze284_JTBGUSDC',
+      '_TZE200_jtbgusdc', '_tze200_jtbgusdc',
+      '_TZE28C1000000_jtbgusdc', '_tze28c1000000_jtbgusdc',
+      '_TZE204_o9gyszw2', '_tze204_o9gyszw2', '_TZE204_O9GYSZW2',
+      '_TZE284_o9gyszw2', '_tze284_o9gyszw2',
+      '_TZE28C1000000_o9gyszw2', '_tze28c1000000_o9gyszw2',
     ],
     addAtTop: false,
     source: 'p92.91-issue-514',
@@ -379,6 +387,24 @@ const MANUAL_FIXES = [
     addIfMissing: ['_TZE284_m1cvyneb', '_tze284_m1cvyneb'],
     addAtTop: false,
     source: 'p94-forum-2133',
+  },
+  // Forum #2135 RoyceRoy — Avatto ZDMS16-2 2-gang dimmer (Z2M avatto.ts)
+  {
+    id: 'p96-jtbgusdc-dimmer-2-gang-tuya',
+    file: 'drivers/dimmer_2_gang_tuya/driver.compose.json',
+    description: 'Forum #2135: _TZE28C1000000_jtbgusdc / _TZE204_jtbgusdc Avatto ZDMS16-2',
+    match: (mfrs) => mfrs.some((m) => /jtbgusdc|o9gyszw2/i.test(m)),
+    addIfMissing: [
+      '_TZE204_jtbgusdc', '_tze204_jtbgusdc', '_TZE204_JTBGUSDC',
+      '_TZE284_jtbgusdc', '_tze284_jtbgusdc',
+      '_TZE200_jtbgusdc', '_tze200_jtbgusdc',
+      '_TZE28C1000000_jtbgusdc', '_tze28c1000000_jtbgusdc',
+      '_TZE204_o9gyszw2', '_tze204_o9gyszw2',
+      '_TZE284_o9gyszw2', '_tze284_o9gyszw2',
+      '_TZE28C1000000_o9gyszw2', '_tze28c1000000_o9gyszw2',
+    ],
+    addAtTop: false,
+    source: 'p96-forum-2135',
   },
   // Forum #2130 Kanbros — BSEED 2-gang touch switch
   {
@@ -424,6 +450,9 @@ const MANUAL_FIXES = [
     removeIfPresent: [
       '_TZE284_m1cvyneb', '_tze284_m1cvyneb', '_TZE284_M1CVYNEB', '_tze284_M1CVYNEB',
       '_TZ3210_imaccztn', '_tz3210_imaccztn', '_TZ3210_IMACCZTN', '_tz3210_IMACCZTN',
+      '_TZE204_jtbgusdc', '_tze204_jtbgusdc', '_TZE284_jtbgusdc', '_tze284_jtbgusdc',
+      '_TZE28C1000000_jtbgusdc', '_tze28c1000000_jtbgusdc',
+      '_TZE204_o9gyszw2', '_tze204_o9gyszw2', '_TZE28C1000000_o9gyszw2',
     ],
     addAtTop: false,
     source: 'p94-forum-collision',

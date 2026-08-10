@@ -60,6 +60,12 @@ const FORBIDDEN = [
     driver: 'climate_sensor',
     mfrs: ['_TZE284_m1cvyneb'],
   },
+  // Forum #2135: Avatto ZDMS16-2 must not be climate sensor
+  {
+    id: 'p96-jtbgusdc-not-climate',
+    driver: 'climate_sensor',
+    mfrs: ['_TZE204_jtbgusdc', '_TZE284_jtbgusdc', '_TZE28C1000000_jtbgusdc', '_TZE204_o9gyszw2'],
+  },
   // Forum #2133/#2131: specific devices must not collide with generic_tuya catch-all
   {
     id: 'p94-m1cvyneb-not-generic',
@@ -70,6 +76,11 @@ const FORBIDDEN = [
     id: 'p94-imaccztn-not-generic',
     driver: 'generic_tuya',
     mfrs: ['_TZ3210_imaccztn'],
+  },
+  {
+    id: 'p96-jtbgusdc-not-generic',
+    driver: 'generic_tuya',
+    mfrs: ['_TZE204_jtbgusdc', '_TZE28C1000000_jtbgusdc', '_TZE204_o9gyszw2'],
   },
 ];
 
@@ -103,6 +114,11 @@ const REQUIRED = [
     id: 'p94-imaccztn-relay',
     driver: 'relay_board_4_channel',
     mfrs: ['_TZ3210_imaccztn'],
+  },
+  {
+    id: 'p96-jtbgusdc-dimmer2',
+    driver: 'dimmer_2_gang_tuya',
+    mfrs: ['_TZE204_jtbgusdc', '_TZE28C1000000_jtbgusdc'],
   },
 ];
 
