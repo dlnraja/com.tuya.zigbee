@@ -53,13 +53,17 @@ class UniversalWirelessButtonDevice extends ButtonDevice {
         this.log('[BUTTON-WIRELESS] 🔋 Forcing initial battery read...');
         const attrs = await Promise.race([
           powerCluster.readAttributes(['batteryPercentageRemaining', 'batteryVoltage']),
-          new Promise((_, rej) => this.homey.setTimeout(() => { if (this._destroyed) return; rej(new Error('timeout')); }, 2000))
+          new Promise((_, rej) => this.homey.setTimeout(() => { if (this._destroyed) {return;} rej(new Error('timeout')); }, 2000))
         ]).catch(() => null);
         
         if (attrs?.batteryPercentageRemaining !== undefined && attrs.batteryPercentageRemaining !== 255) {
-          const battery = Math.round(attrs.batteryPercentageRemaining / 2);
+          const UnifiedBatteryHandler = require('../../lib/battery/UnifiedBatteryHandler');
+          const battery = UnifiedBatteryHandler.normalizeZigbeeValue(attrs.batteryPercentageRemaining, {
+            manufacturer: this.getSetting?.('zb_manufacturer_name') || '',
+            batteryType: 'CR2032',
+          });
           this.log(`[BUTTON-WIRELESS] 🔋 Battery: ${battery}%`);
-          if (this.hasCapability('measure_battery')) {
+          if (battery != null && this.hasCapability('measure_battery')) {
             await this.safeSetCapabilityValue('measure_battery', battery).catch(() => { });
           }
         }
