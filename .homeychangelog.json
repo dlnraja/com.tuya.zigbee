@@ -1162,5 +1162,8 @@
   },
   "5.12.57": {
     "en": "P94: forum fingerprint routing, energy guard, anti-bot re-inject sync (reliability)."
+  },
+  "5.12.58": {
+    "en": "Retry Homey Test publish after Athom processing_failed (socket hang up) on 5.12.57; harden verify-test-version fail-closed."
   }
 }

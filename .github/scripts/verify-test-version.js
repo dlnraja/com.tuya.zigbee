@@ -215,6 +215,13 @@ function readDashboardReport(expectedVersion) {
   if (failedCurrent) {
     const detail = failedCurrent.failureDetail || failedCurrent.stateMeta || 'no failure detail returned by Athom API';
     log(`Dashboard monitor reports v${expectedVersion} ${failedCurrent.state} build #${failedCurrent.id || '?'} (${detail})`);
+    const state = String(failedCurrent.state || '').toLowerCase();
+    if (state.includes('fail') || state === 'processing_failed') {
+      // Terminal Athom state — further polling will not recover this build.
+      const err = new Error(`Athom build v${expectedVersion} is ${state} (#${failedCurrent.id || '?'}: ${detail})`);
+      err.code = 'ATHOM_PROCESSING_FAILED';
+      throw err;
+    }
   }
 
   const latestText = latest
@@ -306,6 +313,10 @@ async function main() {
       } catch (e) {
         lastError = e.message;
         log(`Dashboard fallback error (attempt ${attempt}): ${e.message}`);
+        if (e.code === 'ATHOM_PROCESSING_FAILED') {
+          log('Fail-closed: Athom processing_failed is terminal for this version.');
+          process.exit(1);
+        }
       }
     } catch (e) {
       // AggregateError or other transient error - don't fail the whole step
@@ -324,17 +335,15 @@ async function main() {
     }
   }
 
-  // Don't fail the workflow if we can't verify - the publish itself succeeded
-  // The user complaint is about the app NOT being in the test channel, but
-  // sometimes Athom's API is just slow. Log the error and exit 0.
+  // Fail hard when Test channel confirmation never arrives. Soft-exit here
+  // greenwashed Athom processing_failed (e.g. socket hang up) as workflow success.
   log(`v${version} was not confirmed on the Homey test channel after ${maxAttempts} attempts`);
   if (lastError) {
     log(`Last error: ${lastError}`);
-    log(`NOTE: This is usually a transient API error. The publish may have succeeded but verification timed out.`);
+    log(`NOTE: If Athom shows processing_failed, bump version and republish; do not treat GHA green as live Test.`);
     log(`Check the actual app at https://tools.developer.homey.app/apps/app/${APP}`);
   }
-  // Exit 0 - publish itself succeeded, verify is best-effort
-  process.exit(0);
+  process.exit(1);
 }
 
 main().catch(error => {
