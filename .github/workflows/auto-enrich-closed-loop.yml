@@ -1,3 +1,7 @@
+# 🔄 Auto-Enrich Closed Loop (P69)
+# Triggers: cron: 0 */4 * * * + workflow_dispatch | Secrets: GH_PAT,GMAIL_APP_PASSWORD,GMAIL_CLIENT_ID,GMAIL_CLIENT_SECRET,GMAIL_EMAIL,GMAIL_REFRESH_TOKEN,HOMEY_PAT,HOMEY_PAT_API
+# Doc header added 2026-07-29 (workflows genealogy enrichment).
+
 name: 🔄 Auto-Enrich Closed Loop (P69)
 
 on:
@@ -40,8 +44,8 @@ env:
   NODE_VERSION: '22'
   HOMEY_PUBLISH_MAX_UNCOMPRESSED_MB: "30"
   HOMEY_PUBLISH_SOURCE_MAX_MB: "30"
-  HOMEY_ZIGBEE_MAX_TOTAL_COMBOS: "30000"
-  HOMEY_ZIGBEE_MAX_DRIVER_COMBOS: "1000"
+  HOMEY_ZIGBEE_MAX_TOTAL_COMBOS: "60000"
+  HOMEY_ZIGBEE_MAX_DRIVER_COMBOS: "10000"
 
 jobs:
   closed-loop:
@@ -61,13 +65,13 @@ jobs:
 
     steps:
       - name: 📥 Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
         with:
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: 📦 Setup Node.js
-        uses: actions/setup-node@v5
+        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: npm
@@ -82,7 +86,7 @@ jobs:
 
       # P55: restore scanner cache
       - name: 📥 Restore scanner caches
-        uses: actions/cache@v4
+        uses: actions/cache@caa296126883cff596d87d8935842f9db880ef25 # v5.1.0
         with:
           path: |
             .cache/scanner-blobs/
@@ -97,7 +101,7 @@ jobs:
           ARGS=""
           if [ "${{ inputs.skip_crawl }}" = "true" ]; then ARGS="$ARGS --skip-crawl"; fi
           if [ "${{ inputs.dry_run }}" = "true" ]; then ARGS="$ARGS --dry-run"; fi
-          echo "## 🔄 Auto-Enrich Closed Loop" >> $GITHUB_STEP_SUMMARY
+          echo "## 🔄 Auto-Enrich Closed Loop (P99 CI)" >> $GITHUB_STEP_SUMMARY
           echo '```' >> $GITHUB_STEP_SUMMARY
           node tools/ci/auto-enrich-closed-loop.js $ARGS 2>&1 | tee auto-enrich.log
           echo '```' >> $GITHUB_STEP_SUMMARY
@@ -110,9 +114,23 @@ jobs:
             echo '```' >> $GITHUB_STEP_SUMMARY
           fi
 
+      # Defense in depth — also run outside the loop script so a partial
+      # loop still leaves manifests CI-safe before any follow-up jobs.
+      - name: "🔤 Ensure case variants (P99)"
+        if: always() && inputs.dry_run != true
+        run: node tools/ci/ensure-case-variants.js --apply
+
+      - name: "🔁 Re-inject manual fixes"
+        if: always() && inputs.dry_run != true
+        run: node tools/ci/re-inject-manual-fixes.js
+
+      - name: "🛡️ Anti-bot regression gate"
+        if: always()
+        run: node tools/ci/anti-bot-regression-gate.js
+
       - name: 📦 Upload artifacts
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5.0.0
         with:
           name: auto-enrich-loop
           path: |
@@ -124,7 +142,7 @@ jobs:
       # Auto-PR if loop discovered new FPs
       - name: 🔀 Open PR if changes
         if: steps.loop.outputs.committed == 'true' && github.event_name != 'pull_request'
-        uses: actions/github-script@v7
+        uses: actions/github-script@f28e40c7f34bde8b3046d885e986cb6290c5673b # v7.1.0
         with:
           script: |
             const fs = require('fs');

@@ -16,6 +16,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const { includesCI } = require('../../lib/utils/TuyaNormalizer');
 
 const args = process.argv.slice(2);
 let ROOT = process.cwd();
@@ -31,13 +32,12 @@ function loadCompose(driverId) {
 
 function hasMfr(compose, mfr) {
   const list = (compose && compose.zigbee && compose.zigbee.manufacturerName) || [];
-  const target = String(mfr).toLowerCase();
-  return list.some((m) => String(m).toLowerCase() === target);
+  return includesCI(list, mfr);
 }
 
 function hasPid(compose, pid) {
   const list = (compose && compose.zigbee && compose.zigbee.productId) || [];
-  return list.some((p) => String(p).toUpperCase() === String(pid).toUpperCase());
+  return includesCI(list, pid);
 }
 
 /** Forbidden placements: driver must NOT contain these mfrs (case-insensitive). */

@@ -28,6 +28,11 @@
 
 const fs = require('fs');
 const path = require('path');
+const {
+  includesCI,
+  mergeManufacturerCaseVariants,
+  normalize,
+} = require('../../lib/utils/TuyaNormalizer');
 
 const ROOT = path.resolve(__dirname, '..', '..');
 const MASTER_DIR = ROOT; // current dir
@@ -78,35 +83,62 @@ function loadProposals() {
   return all;
 }
 
-function applyMfrToDriver(driverId, mfr) {
+function applyMfrToDriver(driverId, mfr, productId) {
   const cpPath = path.join(MASTER_DIR, 'drivers', driverId, 'driver.compose.json');
   if (!fs.existsSync(cpPath)) return { ok: false, reason: 'driver missing' };
   const j = JSON.parse(fs.readFileSync(cpPath, 'utf8'));
   if (!j.zigbee) j.zigbee = {};
   if (!j.zigbee.manufacturerName) j.zigbee.manufacturerName = [];
-  if (j.zigbee.manufacturerName.includes(mfr)) return { ok: false, reason: 'already present' };
-  j.zigbee.manufacturerName.push(mfr);
-  fs.writeFileSync(cpPath, JSON.stringify(j, null, 2), 'utf8');
-  return { ok: true };
+  if (!j.zigbee.productId) j.zigbee.productId = [];
+
+  const already = includesCI(j.zigbee.manufacturerName, mfr);
+  const { list, added } = mergeManufacturerCaseVariants(j.zigbee.manufacturerName, mfr);
+  j.zigbee.manufacturerName = list;
+
+  let pidAdded = 0;
+  if (productId && !includesCI(j.zigbee.productId, productId)) {
+    j.zigbee.productId.push(productId);
+    pidAdded = 1;
+  }
+
+  if (already && added === 0 && pidAdded === 0) {
+    return { ok: false, reason: 'already present (CI)' };
+  }
+  fs.writeFileSync(cpPath, `${JSON.stringify(j, null, 2)}\n`, 'utf8');
+  return { ok: true, addedVariants: added, pidAdded };
 }
 
-function applyMfrToStableDriver(driverId, mfr) {
+function applyMfrToStableDriver(driverId, mfr, productId) {
   const cpPath = path.join(STABLE_DIR, 'drivers', driverId, 'driver.compose.json');
   if (!fs.existsSync(cpPath)) return { ok: false, reason: 'stable driver missing' };
   const j = JSON.parse(fs.readFileSync(cpPath, 'utf8'));
   if (!j.zigbee) j.zigbee = {};
   if (!j.zigbee.manufacturerName) j.zigbee.manufacturerName = [];
-  if (j.zigbee.manufacturerName.includes(mfr)) return { ok: false, reason: 'already in stable' };
-  j.zigbee.manufacturerName.push(mfr);
-  fs.writeFileSync(cpPath, JSON.stringify(j, null, 2), 'utf8');
-  return { ok: true };
+  if (!j.zigbee.productId) j.zigbee.productId = [];
+
+  const already = includesCI(j.zigbee.manufacturerName, mfr);
+  const { list, added } = mergeManufacturerCaseVariants(j.zigbee.manufacturerName, mfr);
+  j.zigbee.manufacturerName = list;
+
+  let pidAdded = 0;
+  if (productId && !includesCI(j.zigbee.productId, productId)) {
+    j.zigbee.productId.push(productId);
+    pidAdded = 1;
+  }
+
+  if (already && added === 0 && pidAdded === 0) {
+    return { ok: false, reason: 'already in stable (CI)' };
+  }
+  fs.writeFileSync(cpPath, `${JSON.stringify(j, null, 2)}\n`, 'utf8');
+  return { ok: true, addedVariants: added, pidAdded };
 }
 
 function updateCanonical(mfr, driverId, type) {
   const fp = JSON.parse(fs.readFileSync(CANONICAL_DB, 'utf8'));
-  if (fp[mfr]) {
-    if (fp[mfr].driverId === driverId) return false; // already correct
-    fp[mfr].driverId = driverId;
+  const key = Object.keys(fp).find((k) => normalize(k) === normalize(mfr)) || mfr;
+  if (fp[key]) {
+    if (fp[key].driverId === driverId) return false; // already correct
+    fp[key].driverId = driverId;
   } else {
     fp[mfr] = { driverId, type: type || 'device', powerSource: 'unknown', modelIds: [] };
   }
@@ -115,7 +147,7 @@ function updateCanonical(mfr, driverId, type) {
 }
 
 function main() {
-  console.log('Bidirectional Enricher v1.0.0\n');
+  console.log('Bidirectional Enricher v1.1.0 (case-insensitive + sacred couple)\n');
   console.log('Master:', MASTER_DIR);
   console.log('Stable:', STABLE_DIR, fs.existsSync(STABLE_DIR) ? '(exists)' : '(NOT FOUND)');
   console.log();
@@ -141,12 +173,13 @@ function main() {
   // Apply to master: all applicable
   const masterResults = { ok: 0, skipped: 0, failed: 0, drivers: new Set() };
   for (const p of applicable) {
-    const r = applyMfrToDriver(p.proposedDriver, p.mfr);
+    const pid = p.productId || p.pid || (Array.isArray(p.productIds) ? p.productIds[0] : null);
+    const r = applyMfrToDriver(p.proposedDriver, p.mfr, pid);
     if (r.ok) {
       masterResults.ok++;
       masterResults.drivers.add(p.proposedDriver);
       updateCanonical(p.mfr, p.proposedDriver, 'device');
-    } else if (r.reason === 'already present') {
+    } else if (String(r.reason || '').includes('already')) {
       masterResults.skipped++;
     } else {
       masterResults.failed++;
@@ -161,11 +194,12 @@ function main() {
   const stableResults = { ok: 0, skipped: 0, failed: 0, drivers: new Set() };
   if (fs.existsSync(STABLE_DIR)) {
     for (const p of functional) {
-      const r = applyMfrToStableDriver(p.proposedDriver, p.mfr);
+      const pid = p.productId || p.pid || (Array.isArray(p.productIds) ? p.productIds[0] : null);
+      const r = applyMfrToStableDriver(p.proposedDriver, p.mfr, pid);
       if (r.ok) {
         stableResults.ok++;
         stableResults.drivers.add(p.proposedDriver);
-      } else if (r.reason === 'already in stable') {
+      } else if (String(r.reason || '').includes('already')) {
         stableResults.skipped++;
       } else {
         stableResults.failed++;
