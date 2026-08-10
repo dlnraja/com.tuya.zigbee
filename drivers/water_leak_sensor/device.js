@@ -131,6 +131,13 @@ const WATER_SENSOR_PROFILES = {
     hasTamper: true,
     notes: 'HOBEIAN branded'
   },
+  // P93: explicit lowercase alias — forum #2090/#2111
+  'hobeian': {
+    type: 'ias_zone', productId: 'ZG-222Z',
+    iasAlarmBit: 'both',
+    hasTamper: true,
+    notes: 'HOBEIAN branded (lowercase)'
+  },
   'default': {
     type: 'hybrid',
     iasAlarmBit: 'both',
