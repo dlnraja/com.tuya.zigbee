@@ -1178,5 +1178,8 @@
   "5.12.62": {
     "en": "L99 battery normalize + verify fail-closed; retry after Athom socket hang up.",
     "fr": "L99 batterie normalize + verify fail-closed; retry apres Athom socket hang up."
+  },
+  "5.12.63": {
+    "en": "Backport P100 crash harden: flow-card polyfill, read-only error guard, getDiscoveries safe call."
   }
 }

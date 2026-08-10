@@ -267,6 +267,60 @@ async onInit() {
       }
     }
 
+    // v9.x: Send TV Command (inline card from driver.compose.json)
+    // Mappe la commande sur un code appris, sinon sur la bibliothèque IRDB par marque.
+    try {
+      const tvCommandMap = {
+        'Power': 'tv_power',
+        'Volume Up': 'tv_vol_up',
+        'Volume Down': 'tv_vol_down',
+        'Mute': 'tv_mute',
+        'Channel Up': 'tv_ch_up',
+        'Channel Down': 'tv_ch_down',
+        'Source': 'tv_input',
+        'Menu': 'tv_menu',
+        'OK/Enter': 'tv_ok',
+        'Back': 'tv_back'
+      };
+      const card = (typeof this.homey.flow.getActionCard === 'function'
+        ? this.homey.flow.getActionCard('ir_blaster_send_tv_command')
+        : null)
+        || (typeof this.homey.flow.getDeviceActionCard === 'function'
+          ? this.homey.flow.getDeviceActionCard('ir_blaster_send_tv_command')
+          : null);
+      if (!card || typeof card.registerRunListener !== 'function') {
+        this.log('[TV] ir_blaster_send_tv_command card unavailable');
+      } else {
+      card.registerRunListener(async (args) => {
+        const d = args.device;
+        if (!d) {return false;}
+        const { brand, command } = args;
+
+        // 1) Code appris correspondant à la commande
+        const learnedKey = tvCommandMap[command];
+        if (learnedKey && d._learnedCodes && d._learnedCodes[learnedKey]) {
+          await d.sendIRCode(d._learnedCodes[learnedKey]);
+          return true;
+        }
+
+        // 2) Bibliothèque IRDB par marque
+        if (IRCodeLibrary && brand) {
+          const c = IRCodeLibrary.getCode(brand, 'tv', command);
+          if (c?.code) {
+            await d.sendIRCode(c.code);
+            return true;
+          }
+        }
+
+        this.log(`[TV] No code for "${command}" (brand: ${brand || 'n/a'}) - teach it first`);
+        return false;
+      });
+      this.log(' ir_blaster_send_tv_command registered');
+      }
+    } catch (e) {
+      this.log(' ir_blaster_send_tv_command:', e.message);
+    }
+
     this.log('Action registration complete');
   }
 
