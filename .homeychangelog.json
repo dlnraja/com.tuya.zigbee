@@ -1181,5 +1181,8 @@
   },
   "5.12.63": {
     "en": "Backport P100 crash harden: flow-card polyfill, read-only error guard, getDiscoveries safe call."
+  },
+  "5.12.64": {
+    "en": "Backport P101: #439 sacred-couple lot2 + getDeviceById/catch harden."
   }
 }

@@ -165,21 +165,16 @@ const MANUAL_FIXES = [
     addAtTop: true,
     source: 'p75.31-p61-restored',
   },
-  // P80: 685 missing mfrs from issue #439 auto-scan - go to generic_tuya
-  // The auto-publish bot often reverts mfr additions on driver.compose.json
-  // We re-add them here. The set is large but stable (it comes from issue body).
-  // Use a marker: if at least one of the new mfrs is present, treat as complete.
+  // P80: #439 bulk dump into generic_tuya is OBSOLETE for typed couples.
+  // P98/P101 sacred-couple rehomes own those mfrs. Keep a soft anchor only
+  // for still-ambiguous leftovers (never re-add typed curtain/switch couples).
   {
     id: 'p80-issue-439-generic-tuya-fps',
     file: 'drivers/generic_tuya/driver.compose.json',
-    description: 'P80: 685 mfrs from issue #439 (Zigbee2MQTT auto-scan, 2026-07-01)',
-    match: (mfrs) => mfrs.includes('_TYST11_fzo2pocs') && mfrs.includes('_TZE200_2hf7x9n3'),
+    description: 'P80/#439 leftovers: ambiguous mfrs only (typed couples owned by P101)',
+    match: (mfrs) => mfrs.includes('_TZ3000_1kmurvlx') || mfrs.includes('_TZ3210_6smingw0'),
     addIfMissing: [
-      // Sample marker - the real bulk apply is via apply-issue-439-fps.js
-      // We only add 2 anchor mfrs to detect if the bot reverted. The full
-      // set is too large to put in this file. Re-run apply-issue-439-fps.js
-      // if these are missing.
-      '_TYST11_fzo2pocs', '_TZE200_2hf7x9n3',
+      '_TZ3000_1kmurvlx', '_TZ3210_6smingw0',
     ],
     addAtTop: false,
     source: 'p80-issue-439',

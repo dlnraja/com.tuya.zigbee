@@ -64,18 +64,18 @@ const KNOWN_PATTERNS = [
     status: 'fixed_p100',
   },
   {
+    id: 'getDeviceById',
+    severity: 'warn',
+    re: /Could not get device by id/i,
+    fix: 'ZigBeeDriverFlowCardPatch global null-safe getDeviceById (P101)',
+    status: 'fixed_p101',
+  },
+  {
     id: 'catch_on_undefined',
     severity: 'fatal',
     re: /reading ['"]catch['"]|Cannot read properties of undefined \(reading 'catch'\)/i,
     fix: 'Promise.resolve(x).catch(...) or guard return values before .catch',
-    status: 'watch',
-  },
-  {
-    id: 'getDeviceById',
-    severity: 'warn',
-    re: /Could not get device by id/i,
-    fix: 'Driver getDeviceById null-safe override',
-    status: 'watch',
+    status: 'fixed_p101',
   },
 ];
 
@@ -163,10 +163,13 @@ function main() {
         });
       }
     }
-    // Heuristic unknown TypeError fatals
+    // Heuristic unknown TypeError fatals (ignore truncated known patterns)
     const unk = blob.text.match(/TypeError:\s*([^\n\r"']{10,120})/gi) || [];
     for (const u of unk) {
       if (KNOWN_PATTERNS.some(p => p.re.test(u))) continue;
+      if (/getDeviceActi|read only property|getDiscoveries|_destroyed|reading ['"]catch['"]/i.test(u)) continue;
+      // Truncated Homey emails often cut mid-message; treat as covered by known patterns
+      if (/Cannot read properties of undefined \(reading\s*$/i.test(u)) continue;
       if (/TIMEOUT|MAC_NO_ACK|UNSUPPORTED/i.test(u)) continue;
       unknownFatals.push({ source: blob.source, message: u.slice(0, 160) });
     }

@@ -133,6 +133,33 @@ const FORBIDDEN = [
     driver: 'switch_1gang',
     mfrs: ['_TZ3000_bgtzm4ny', '_TZ3000_5tqxpine'],
   },
+  // P101 lot2 — typed rehomes must never bounce back to generic_tuya
+  {
+    id: 'p101-lot2-not-generic',
+    driver: 'generic_tuya',
+    mfrs: [
+      '_TZ3002_eda6eitk', '_TZ3002_vsom92pp',
+      '_TZE200_0hb4rdnp', '_TZE200_gne0e6mk',
+      '_TZE200_2imwyigp', '_TZE204_2imwyigp', '_TZE200_2hf7x9n3',
+      '_TZE200_rqhnxkqu', '_TZE284_hyssaqjk',
+      '_TZ3218_sgbsg6mr',
+      '_TZE204_xu4a5rhj', '_TYST11_fzo2pocs',
+      '_TZE284_d2zfgtij', '_TZE284_s4sa1mcx',
+      '_TZE204_x8diwkqb', '_TZE284_x8diwkqb',
+      '_TZE204_lawxy9e2', '_TZE204_2jnoy8dj',
+      '_TZE200_xixlazkg',
+    ],
+  },
+  {
+    id: 'p101-2hf7x9n3-not-switch1',
+    driver: 'switch_1gang',
+    mfrs: ['_TZE200_2hf7x9n3'],
+  },
+  {
+    id: 'p101-fzo2pocs-not-climate',
+    driver: 'climate_sensor',
+    mfrs: ['_TYST11_fzo2pocs'],
+  },
 ];
 
 /** Forbidden productIds on a driver. */
@@ -200,6 +227,36 @@ const REQUIRED = [
     id: 'p98-9p5xmj5r-curtain',
     driver: 'curtain_motor',
     mfrs: ['_TZE200_9p5xmj5r'],
+  },
+  {
+    id: 'p101-fzo2pocs-curtain',
+    driver: 'curtain_motor',
+    mfrs: ['_TYST11_fzo2pocs'],
+  },
+  {
+    id: 'p101-2hf7x9n3-switch3',
+    driver: 'switch_3gang',
+    mfrs: ['_TZE200_2hf7x9n3'],
+  },
+  {
+    id: 'p101-forum-u3nv1jwk-btn4',
+    driver: 'button_wireless_4',
+    mfrs: ['_TZ3000_u3nv1jwk'],
+  },
+  {
+    id: 'p101-forum-aaeasoll-lux',
+    driver: 'light_sensor_outdoor',
+    mfrs: ['_TZE284_aaeasoll'],
+  },
+  {
+    id: 'p101-forum-fhvpaltk-valve',
+    driver: 'valve_dual_irrigation',
+    mfrs: ['_TZE284_fhvpaltk'],
+  },
+  {
+    id: 'p101-forum-mrduubod-sw4',
+    driver: 'wall_switch_4gang_1way',
+    mfrs: ['_TZ3000_mrduubod'],
   },
 ];
 
