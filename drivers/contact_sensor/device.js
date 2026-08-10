@@ -173,12 +173,13 @@ class ContactSensorDevice extends UnifiedSensorBase {
     this._lastBatteryReportTime = 0; // v5.5.793: Battery throttling
 
     // v5.5.344: Get manufacturer for problematic device detection
-    const mfr = this.getSetting('zb_manufacturer_name') || this.getData()?.manufacturerName || '';this._isProblematicSensor = [
+    const mfr = this.getSetting('zb_manufacturer_name') || this.getData()?.manufacturerName || '';
+    this._isProblematicSensor = includesCI([
       '_TZ3000_bpkijo14',
       '_TZ3000_x8q36xwf',
       '_TZ3000_402jjyro',
       '_TZ3000_n2egfsli'
-    ].includes(mfr);
+    ], mfr);
 
     // v5.5.506: Forum fix Lasse_K - HOBEIAN ZG-102Z reports inverted by default
     // v5.5.713: Expanded list of sensors that report inverted by default

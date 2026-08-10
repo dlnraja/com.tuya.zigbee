@@ -1171,5 +1171,8 @@
   },
   "5.12.60": {
     "en": "Retry Homey Test after Athom processing_failed on 5.12.59 (socket hang up during concurrent master publish)."
+  },
+  "5.12.61": {
+    "en": "L99: EnergyJumpGuard wired, Moes 4-btn profile, canonical case variants, CI fail-closed publish promote."
   }
 }

@@ -6,7 +6,7 @@ name: "🚀 Publish Stable to Test"
 
 
 concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
+  group: publish-stable-v5
   cancel-in-progress: true
 
 on:
@@ -180,9 +180,10 @@ jobs:
   promote:
     name: "Promote to Test"
     needs: [pre-validation, publish]
-    if: always() && needs.pre-validation.result == 'success'
+    # Only promote when draft publish succeeded (avoid false-green on failed upload)
+    if: needs.publish.result == 'success'
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    timeout-minutes: 35
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-node@v5
@@ -191,7 +192,8 @@ jobs:
           cache: npm
       - run: npm ci --prefer-offline --no-audit || npm install
       - name: Wait for Athom draft processing
-        run: sleep 120
+        # Athom often needs >2min; concurrent uploads previously caused socket hang up
+        run: sleep 180
       - name: Install Puppeteer
         continue-on-error: true
         run: npm install puppeteer --no-save
