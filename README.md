@@ -10,7 +10,7 @@
 [![SDK](https://img.shields.io/badge/SDK-3-orange)](https://apps.developer.homey.app/)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
-A community-driven Homey app that brings **local control** to Tuya Zigbee devices — no cloud, no internet needed. Covers switches, sensors, lights, thermostats, covers, locks and more across **430 drivers** and **4,347 unique device fingerprints** (17,053 including case variants for bulletproof pairing).
+A community-driven Homey app that brings **local control** to Tuya Zigbee devices — no cloud, no internet needed. Covers switches, sensors, lights, thermostats, covers, locks and more across **430 drivers** and **4,347 unique device fingerprints** (17,049 including case variants for bulletproof pairing).
 
 **Key features:**
 - **Local-only** — everything runs on your Homey, nothing goes to the cloud
@@ -37,10 +37,10 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.445 |
+| **App Version** | v9.0.446 |
 | **Drivers** | 430 (380 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,347 |
-| **Pairing Variants** | 17,053 (4 case combos per fingerprint) |
+| **Pairing Variants** | 17,049 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 571 |
 | **Flow Cards** | 4,930 |
 | **Unique Capabilities** | 170 |
@@ -55,25 +55,25 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 
 | # | Driver | Fingerprints |
 |---|--------|-------------|
-| 1 | `climate_sensor` | 2,704 |
-| 2 | `switch_1gang` | 1,787 |
+| 1 | `climate_sensor` | 2,708 |
+| 2 | `switch_1gang` | 1,783 |
 | 3 | `button_wireless_2` | 862 |
-| 4 | `generic_tuya` | 760 |
-| 5 | `presence_sensor_radar` | 688 |
+| 4 | `generic_tuya` | 696 |
+| 5 | `presence_sensor_radar` | 696 |
 | 6 | `radiator_valve` | 587 |
 | 7 | `wall_dimmer_tuya` | 481 |
 | 8 | `device_radiator_valve` | 380 |
 | 9 | `sensor_contact_zigbee` | 345 |
-| 10 | `switch_4gang` | 244 |
-| 11 | `curtain_motor` | 224 |
+| 10 | `curtain_motor` | 252 |
+| 11 | `switch_4gang` | 248 |
 | 12 | `motion_sensor` | 210 |
 | 13 | `diy_custom_zigbee` | 205 |
 | 14 | `switch_2gang` | 205 |
 | 15 | `thermostat_tuya_dp` | 200 |
 | 16 | `water_leak_sensor_tuya` | 194 |
-| 17 | `dimmer_wall_1gang` | 184 |
-| 18 | `soil_sensor` | 184 |
-| 19 | `switch_3gang` | 184 |
+| 17 | `switch_3gang` | 188 |
+| 18 | `dimmer_wall_1gang` | 184 |
+| 19 | `soil_sensor` | 184 |
 | 20 | `dimmable_led_strip` | 180 |
 
 ### Drivers by Device Class
@@ -106,6 +106,7 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.446** | L99 battery normalize batch + verify fail-closed on Athom processing_failed. |
 | **v9.0.445** | L99 battery normalize batch + verify fail-closed on Athom processing_failed. |
 | **v9.0.444** | L99 battery normalize batch + verify fail-closed on Athom processing_failed. |
 | **v9.0.443** | L99 battery normalize batch + verify fail-closed on Athom processing_failed. |
@@ -117,7 +118,6 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 | **v9.0.437** | Retry Homey Test publish after Athom processing_failed (socket hang up) on 9.0.436; align app.json; harden verify-test-version fail-closed. |
 | **v9.0.436** | Stability improvements and Homey test publication retry after transient processing failure. |
 | **v9.0.435** | Stability improvements and Homey test publication retry after transient processing failure. |
-| **v9.0.434** | Stability improvements and Homey test publication retry after transient processing failure. |
 
 <!-- CHANGELOG_END -->
 
