@@ -37,7 +37,7 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.480 |
+| **App Version** | v9.0.482 |
 | **Drivers** | 430 (380 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,365 |
 | **Pairing Variants** | 16,935 (4 case combos per fingerprint) |
@@ -106,7 +106,9 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 
 | Version | Changes |
 |---------|---------|
-| **v9.0.480** | v9.0.478: fix(P117): unbound catch crash sweep + rain/contact/soil/gas rehomes + settings timeout (v9.0.477) |
+| **v9.0.482** | Hardened bed sensor settings/battery, IR learn stickiness, mains radar phantoms, CI unbound/double-division gates. |
+| **v9.0.481** | Hardened bed sensor settings/battery, IR learn stickiness, mains radar phantoms, CI unbound/double-division gates. |
+| **v9.0.480** | Hardened bed sensor settings/battery, IR learn stickiness, mains radar phantoms, CI unbound/double-division gates. |
 | **v9.0.479** | v9.0.478: fix(P117): unbound catch crash sweep + rain/contact/soil/gas rehomes + settings timeout (v9.0.477) |
 | **v9.0.477** | v9.0.476: v9.0.476: 430 drivers, 3832 FPs [skip ci] |
 | **v9.0.475** | v9.0.474: fix(P114): multi-source enrich automation + DeviceIO RX/TX + FP reinforce (v9.0.474) |
@@ -116,8 +118,6 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 | **v9.0.467** | v9.0.466: fix: remove rebase conflict markers from version manifests (v9.0.466) |
 | **v9.0.465** | v9.0.464: feat(P108): silent forum enrich, contact flows, RF coexistence, anti AI-paste (v9.0.464) |
 | **v9.0.463** | Integral cross-version enrich: SmartDivisor in EF00, IASZoneEnhanced+L14, sleepy passive force, MCUFormatDatabase negotiate. |
-| **v9.0.462** | Integral cross-version enrich: SmartDivisor in EF00, IASZoneEnhanced+L14, sleepy passive force, MCUFormatDatabase negotiate. |
-| **v9.0.461** | Integral cross-version enrich: SmartDivisor in EF00, IASZoneEnhanced+L14, sleepy passive force, MCUFormatDatabase negotiate. |
 
 <!-- CHANGELOG_END -->
 
