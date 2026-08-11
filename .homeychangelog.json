@@ -1,6 +1,13 @@
 {
   "changelog": [
     {
+      "version": "9.0.462",
+      "date": "2026-08-11",
+      "channel": "test",
+      "en": "Integral cross-version enrich: SmartDivisor in EF00, IASZoneEnhanced+L14, sleepy passive force, MCUFormatDatabase negotiate.",
+      "fr": "Enrichissement transversal versions: SmartDivisor EF00, IASZoneEnhanced+L14, passive sleepy force, MCUFormatDatabase."
+    },
+    {
       "version": "9.0.461",
       "date": "2026-08-11",
       "channel": "test",
@@ -1819,6 +1826,9 @@
     "en": "Max multi-method I/O coverage: DP/ZCL/IAS/raw fallbacks, quirk-guided init for more device families, expanded magic packet profiles."
   },
   "9.0.461": {
+    "en": "Integral cross-version enrich: SmartDivisor in EF00, IASZoneEnhanced+L14, sleepy passive force, MCUFormatDatabase negotiate."
+  },
+  "9.0.462": {
     "en": "Integral cross-version enrich: SmartDivisor in EF00, IASZoneEnhanced+L14, sleepy passive force, MCUFormatDatabase negotiate."
   }
 }
