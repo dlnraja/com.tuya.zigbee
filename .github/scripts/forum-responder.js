@@ -264,10 +264,19 @@ async function batchAI(postInfos,ver,threadCtx){
 }
 
 async function main(){
-  let dry=true; // Forced read-only guard (no forum writing allowed)
+  // P108 / T157628: default is NEVER post. Silent enrichment only.
+  // FORUM_AUTO_POST must be explicitly "1" AND dry flag cleared by maintainer to live-post.
+  let dry = process.env.FORUM_AUTO_POST !== '1';
+  if (dry) {
+    console.log('FORUM_AUTO_POST!=1 → forced dry-run (T157628 silent-first / no AI paste)');
+  }
+  dry = true; // Hard lock: keep blocked until policy re-approved by maintainer
   const tids=(process.env.FORUM_TOPICS||'140352').split(',').map(Number);
   // IMPORTANT: Only reply on OUR OWN thread (140352). Never post on other people's threads!
-  const replyTids=new Set((process.env.REPLY_TOPICS||'140352').split(',').map(Number));
+  const replyTids=new Set((process.env.REPLY_TOPICS||'140352').split(',').map(Number).filter(n=>n===140352));
+  if ([...replyTids].some(n=>n!==140352)) {
+    console.error('BLOCKED: illegal REPLY_TOPICS — forcing 140352-only');
+  }
   let ver='?';try{ver=JSON.parse(fs.readFileSync(path.join(__dirname,'..','..','app.json'),'utf8')).version}catch{}
   console.log('=== Forum Responder v'+ver+' (edit-or-reply, anti-spam) ===');
   console.log(dry?'DRY':'LIVE','| v'+ver);

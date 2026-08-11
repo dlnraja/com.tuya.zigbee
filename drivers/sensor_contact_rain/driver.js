@@ -62,7 +62,7 @@ class LonsonhoContactSensorDriver extends ZigBeeDriver {
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
-          return args.device.getCapabilityValue('onoff') === true;
+          return args.device.getCapabilityValue('alarm_contact') === true;
         });
       }
     } catch (err) { if (this.developerDebugMode) { this.error(`Condition sensor_contact_rain_contact_sensor_contact_open: ${err.message}`); } }
@@ -72,7 +72,7 @@ class LonsonhoContactSensorDriver extends ZigBeeDriver {
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
-          return args.device.getCapabilityValue('onoff') === true;
+          return args.device.getCapabilityValue('alarm_tamper') === true;
         });
       }
     } catch (err) { if (this.developerDebugMode) { this.error(`Condition sensor_contact_rain_contact_sensor_tamper_active: ${err.message}`); } }

@@ -177,10 +177,15 @@ Do NOT remove just because mfr appears in another driver with different productI
 - Memory: idempotent listeners, clear timeouts in `onDeleted()`/`onUninit()`
 - NO v2 patterns: `this.homey.zigbee.getDevice()`, global Manager*
 
-## FORUM POSTING — ABSOLUTE RULE
-- Bot must ONLY post on T140352. REPLY_TOPICS must be '140352' only
-- FORUM_TOPICS can include other threads for READ-ONLY scanning
-- Never add T26439 (Johan), T146735 (Tuya) to REPLY_TOPICS
+## FORUM POSTING — ABSOLUTE RULE (P108 / T157628)
+- **Default: do NOT post on the forum.** Prefer silent code/CI enrichment.
+- Bot must ONLY ever be allowed on T140352 — and even there auto-post is **forced dry-run**.
+- REPLY_TOPICS must be '140352' only. Never add T26439, T146735, T89271, T43287, T157628.
+- FORUM_TOPICS may include other threads for READ-ONLY scanning (`forum-silent-multi-scan.js`).
+- **Never paste unchecked AI answers** into Homey Community (community mandate T157628).
+- If a human draft is explicitly requested: humanize hard (Dylan voice), verify FPs, run `reply-quality-gate` + `forum-ai-paste-gate`.
+- Scan everything → implement silently → credit only own sources in public text.
+- See `docs/rules/FORUM_SILENT_HUMANIZE.md` and `docs/responses/FORUM_STYLE_GUIDE.md`.
 
 ## CI SEMANTIC LINTER — SAFETY
 - NEVER auto-modify driver files — report-only

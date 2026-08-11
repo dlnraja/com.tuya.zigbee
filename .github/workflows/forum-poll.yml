@@ -89,6 +89,35 @@ jobs:
             echo '```' >> $GITHUB_STEP_SUMMARY
           fi
 
+      # READ-ONLY: scan own + satellite threads. NEVER posts. Prefer silent enrichment (T157628).
+      - name: 🔇 Silent multi-topic forum scan
+        if: always()
+        continue-on-error: true
+        timeout-minutes: 10
+        env:
+          SMART_FETCH_READER_FALLBACK: '1'
+          FIRECRAWL_API_KEY: ${{ secrets.FIRECRAWL_API_KEY }}
+          REPLY_TOPICS: '140352'
+          FORUM_AUTO_POST: '0'
+        run: |
+          echo "## 🔇 Silent multi-topic scan (no replies / no AI paste)" >> $GITHUB_STEP_SUMMARY
+          MAX="${{ inputs.max_posts || '40' }}"
+          if [ -f tools/ci/forum-silent-multi-scan.js ]; then
+            node tools/ci/forum-silent-multi-scan.js --max="$MAX" 2>&1 | tee forum-silent-multi.log || echo "SILENT_SCAN_SKIP"
+          else
+            echo "forum-silent-multi-scan.js missing — skip"
+          fi
+          if [ -f tools/ci/forum-ai-paste-gate.js ]; then
+            node tools/ci/forum-ai-paste-gate.js --scan-defaults || echo "AI_PASTE_GATE_WARN"
+          fi
+          if [ -f .github/state/forum/multi-silent-digest.json ]; then
+            echo "### Digest totals" >> $GITHUB_STEP_SUMMARY
+            echo '```json' >> $GITHUB_STEP_SUMMARY
+            node -e "const d=require('./.github/state/forum/multi-silent-digest.json'); console.log(JSON.stringify({totals:d.totals,topics:d.topics.map(t=>({id:t.id,scanned:t.scanned,actionable:(t.actionable||[]).length,newFP:(t.newFPs||[]).length,err:t.error})},null,2))" >> $GITHUB_STEP_SUMMARY
+            echo '```' >> $GITHUB_STEP_SUMMARY
+          fi
+          echo "Policy: FORUM_AUTO_POST=0 — implement silently, never paste unchecked AI." >> $GITHUB_STEP_SUMMARY
+
       - name: 📦 Upload artifacts
         if: always()
         uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5.0.0
@@ -97,5 +126,6 @@ jobs:
           path: |
             .github/state/forum/
             forum-poll.log
+            forum-silent-multi.log
           if-no-files-found: warn
           retention-days: 7

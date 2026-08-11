@@ -1,3 +1,9 @@
+<!--
+DEPRECATED FOR AUTO-POST (P108 / T157628).
+Do NOT paste this template unchecked into Homey Community.
+Prefer silent app enrichment. See docs/rules/FORUM_SILENT_HUMANIZE.md
+-->
+
 # :house: Tuya Unified Zigbee v5.11.138
 
 > **188+ drivers** · **4,700+ fingerprints** · SDK3 · Updated 2026-03-25

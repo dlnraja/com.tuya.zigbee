@@ -54,11 +54,11 @@ const FORBIDDEN = [
     driver: 'switch_4gang',
     mfrs: ['_TZ3210_imaccztn'],
   },
-  // Forum #2133: BSEED dimmer must not be climate sensor
+  // Forum silent-scan: BSEED dimmer family must not be climate sensor
   {
     id: 'p94-m1cvyneb-not-climate',
     driver: 'climate_sensor',
-    mfrs: ['_TZE284_m1cvyneb'],
+    mfrs: ['_TZE284_m1cvyneb', '_TZE204_m1cvyneb', '_TZE200_m1cvyneb'],
   },
   // Forum #2135: Avatto ZDMS16-2 must not be climate sensor
   {
@@ -66,11 +66,11 @@ const FORBIDDEN = [
     driver: 'climate_sensor',
     mfrs: ['_TZE204_jtbgusdc', '_TZE284_jtbgusdc', '_TZE28C1000000_jtbgusdc', '_TZE204_o9gyszw2'],
   },
-  // Forum #2133/#2131: specific devices must not collide with generic_tuya catch-all
+  // Forum silent-scan: specific devices must not collide with generic_tuya catch-all
   {
     id: 'p94-m1cvyneb-not-generic',
     driver: 'generic_tuya',
-    mfrs: ['_TZE284_m1cvyneb'],
+    mfrs: ['_TZE284_m1cvyneb', '_TZE204_m1cvyneb', '_TZE200_m1cvyneb'],
   },
   {
     id: 'p94-imaccztn-not-generic',
@@ -250,7 +250,12 @@ const REQUIRED = [
   {
     id: 'p94-m1cvyneb-dimmer',
     driver: 'wall_dimmer_tuya',
-    mfrs: ['_TZE284_m1cvyneb'],
+    mfrs: ['_TZE284_m1cvyneb', '_TZE204_m1cvyneb', '_TZE200_m1cvyneb'],
+  },
+  {
+    id: 'p108-wkr3jqmr-switch4',
+    driver: 'switch_4gang',
+    mfrs: ['_TZ3000_wkr3jqmr'],
   },
   {
     id: 'p94-imaccztn-relay',

@@ -1,3 +1,10 @@
+<!--
+DEPRECATED FOR AUTO-POST (P108 / T157628).
+Do NOT paste this template unchecked into Homey Community.
+Prefer silent app enrichment. Manual first-post edits only by maintainer,
+after human rewrite (short Dylan voice) + forum-ai-paste-gate.
+-->
+
 # Tuya Unified Zigbee — v{{VERSION}}
 
 > **The largest Tuya Zigbee app for Homey Pro** — {{DRIVERS}} drivers, {{FINGERPRINTS}}+ fingerprints, {{FLOW_CARDS}} flow cards.

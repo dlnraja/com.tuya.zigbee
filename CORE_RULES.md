@@ -1,7 +1,7 @@
 # CORE RULES — Tuya Unified Zigbee for Homey Pro
 > Single source of truth for all AI agents, developers, and CI/CD pipelines
 > Version: 5.0.0 | Last Updated: 2026-06-18 (Documentation Finalizer v8.0)
-> Rules: R1-R61 (61 enrichment rules) + CP1-CP10 (10 crash prevention rules) + IC1-IC4 (4 image conformity rules) + FM1-FM3 (3 forum/multi-manufacturer rules)
+> Rules: R1-R61 (61 enrichment rules) + CP1-CP10 (10 crash prevention rules) + IC1-IC4 (4 image conformity rules) + FM1-FM4 (4 forum/multi-manufacturer rules)
 
 ## 🎯 Vision
 **LOCAL-FIRST** — 100% local execution on Homey Pro. Zero cloud calls during normal operation.
@@ -1023,18 +1023,19 @@ manufacturerName: ['_TZE200_abc123']
 // This is NOT a collision - it's correct multi-product support
 ```
 
-## 🏭 Forum & Multi-Manufacturer Rules (FM1-FM3)
+## 🏭 Forum & Multi-Manufacturer Rules (FM1-FM4)
 
 ### FM1: Forum-Based Device Addition Workflow
 ```js
 // REQUIRED - Follow this structured workflow for forum-reported devices:
-// 1. MONITOR: Watch Homey Community Forum for device requests
+// 1. MONITOR: Watch Homey Community Forum for device requests (READ-ONLY by default)
 // 2. EXTRACT: Get model ID, manufacturer name, productId from posts
 // 3. CROSS-REF: Check Z2M/ZHA databases for DP mappings
 // 4. VERIFY: Ensure manufacturerName + productId not in another driver
 // 5. ADD: Fingerprint to appropriate driver with CaseInsensitiveMatcher
 // 6. VALIDATE: Run check-fingerprint-health.js
-// 7. DOCUMENT: Add to CHANGELOG.md with forum issue reference
+// 7. DOCUMENT: Changelog with GENERIC wording only (no external-thread attribution)
+// 8. DO NOT paste AI answers on the forum — implement silently (T157628)
 
 // Example forum report:
 // "I have a _TZE204_clrdrnya TS0601 motion sensor that doesn't work"
@@ -1087,6 +1088,18 @@ productId: ['TS0002']
 
 // ANTI-PATTERN: Using wildcards
 manufacturerName: ['_TZE200_*']  // BANNED - causes false matches
+```
+
+### FM4: Silent-First + Humanize (T157628 / P108)
+```js
+// REQUIRED — Homey community: stop pasting unchecked AI answers
+// 1. Default: DO NOT post on Discourse. Enrich drivers/workflows silently.
+// 2. REPLY_TOPICS = '140352' only; auto-post scripts stay forced dry-run.
+// 3. Never paste raw LLM walls (headers, emoji spam, "Happy to help", invented scripts).
+// 4. If a maintainer explicitly wants a draft: Dylan voice + verify sacred couples.
+// 5. Gates: tools/ci/forum-ai-paste-gate.js + .github/scripts/reply-quality-gate.js
+// 6. Scan: tools/ci/forum-silent-multi-scan.js (140352,146735,26439,89271,43287,157628)
+// Full doctrine: docs/rules/FORUM_SILENT_HUMANIZE.md
 ```
 
 ### R49: Predictive Health Engine (v9.0.53)

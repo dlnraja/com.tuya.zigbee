@@ -57,6 +57,16 @@ class LightSensorOutdoorDevice extends TuyaZigbeeDevice {
 
     await super.onNodeInit({ zclNode });
 
+    // Sleepy illuminance sensors often miss the first report — arm passive + soft query.
+    try {
+      if (this.io && typeof this.io.runInterviewCompensation === 'function') {
+        await this.io.runInterviewCompensation({
+          queryAll: false,
+          sleepyPassive: true,
+        }).catch(() => {});
+      }
+    } catch (_e) { /* non-fatal */ }
+
     const ep1 = zclNode?.endpoints?.[1];
 
     // Standard illuminance measurement cluster (0x0400)
@@ -65,6 +75,16 @@ class LightSensorOutdoorDevice extends TuyaZigbeeDevice {
       illum.on('attr.measuredValue', (val) => {
         this.safeSetCapabilityValue('measure_luminance', zclMeasuredValueToLux(val)).catch(() => {});
       });
+    }
+
+    // Soft read after bind (many outdoor lux sensors only answer once awake)
+    if (illum && typeof illum.readAttributes === 'function') {
+      try {
+        const attrs = await illum.readAttributes(['measuredValue']).catch(() => null);
+        if (attrs && attrs.measuredValue != null) {
+          await this.safeSetCapabilityValue('measure_luminance', zclMeasuredValueToLux(attrs.measuredValue));
+        }
+      } catch (_e) { /* sleepy — wait for report */ }
     }
 
     // Battery via power configuration (ZCL batteryPercentageRemaining is 0–200 = %×2)

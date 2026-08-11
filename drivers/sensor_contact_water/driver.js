@@ -41,7 +41,7 @@ async onInit() {
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
-          return args.device.getCapabilityValue('onoff') === true;
+          return args.device.getCapabilityValue('alarm_contact') === true;
         });
       }
     } catch (err) { if (this.developerDebugMode) { this.error(`Condition sensor_contact_water_contact_open: ${err.message}`); } }
@@ -51,7 +51,7 @@ async onInit() {
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
-          return args.device.getCapabilityValue('onoff') === true;
+          return args.device.getCapabilityValue('alarm_tamper') === true;
         });
       }
     } catch (err) { if (this.developerDebugMode) { this.error(`Condition sensor_contact_water_tamper_active: ${err.message}`); } }

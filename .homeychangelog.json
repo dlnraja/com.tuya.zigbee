@@ -1,6 +1,20 @@
 {
   "changelog": [
     {
+      "version": "9.0.464",
+      "date": "2026-08-11",
+      "channel": "test",
+      "en": "Improved contact sensor flows and status; legacy Tuya I/O resilience; RF Zigbee/Wi-Fi coexistence guidance; silent community scan + anti AI-paste automations.",
+      "fr": "Flows contact et statut ameliores; resilience I/O Tuya legacy; coexistence RF Zigbee/Wi-Fi; scan silencieux + anti-collage IA."
+    },
+    {
+      "version": "9.0.463",
+      "date": "2026-08-11",
+      "channel": "test",
+      "en": "Improved contact sensor flows and status; legacy Tuya I/O resilience; RF Zigbee/Wi-Fi coexistence guidance; silent community scan + anti AI-paste automations.",
+      "fr": "Flows contact et statut ameliores; resilience I/O Tuya legacy; coexistence RF Zigbee/Wi-Fi; scan silencieux + anti-collage IA."
+    },
+    {
       "version": "9.0.462",
       "date": "2026-08-11",
       "channel": "test",

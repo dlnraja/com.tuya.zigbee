@@ -427,6 +427,27 @@
   "id": "contact_sensor",
   "version": "1.0.0",
   "capabilitiesOptions": {
+    "alarm_contact": {
+      "title": {
+        "en": "Contact (open)",
+        "nl": "Contact (open)",
+        "fr": "Contact (ouvert)",
+        "de": "Kontakt (offen)"
+      },
+      "insights": true,
+      "insightsTitleTrue": {
+        "en": "Opened",
+        "nl": "Geopend",
+        "fr": "Ouvert",
+        "de": "Geöffnet"
+      },
+      "insightsTitleFalse": {
+        "en": "Closed",
+        "nl": "Gesloten",
+        "fr": "Fermé",
+        "de": "Geschlossen"
+      }
+    },
     "button.1": {
       "title": {
         "en": "Button 1",

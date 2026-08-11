@@ -88,10 +88,27 @@ function validateReply(replyText, originalPostText) {
   } catch {}
 
   // 5b. Detect internal tech / robotic patterns that leak backend
-  const bannedTerms = /\b(?:AI|LLM|GPT|bot|auto[- ]?respond|automation|pipeline|workflow|cron|GitHub Actions?|SPA|single[- ]page|data[- ]?query|algorithm|ensemble|machine.learning|neural|NLP|scraping|fork.integrat|language.model|artificial.intelligence|Discourse API|API key|OAuth|IMAP|token.rotation)\b/gi;
+  const bannedTerms = /\b(?:AI|LLM|GPT|bot|auto[- ]?respond|automation|pipeline|workflow|cron|GitHub Actions?|SPA|single[- ]page|data[- ]?query|algorithm|ensemble|machine.learning|neural|NLP|scraping|fork.integrat|language.model|artificial.intelligence|Discourse API|API key|OAuth|IMAP|token.rotation|as an AI|ChatGPT|Claude)\b/gi;
   const leaks = replyText.match(bannedTerms) || [];
   for (const leak of [...new Set(leaks.map(l => l.toLowerCase()))]) {
     warnings.push(`LEAK: Reply contains banned internal term "${leak}" — will be stripped`);
+  }
+
+  // 5c. T157628 anti AI-paste / dehumanization heuristics
+  if (/(?:Happy to help|Let me know if you|Feel free to|Hope this helps|Best regards|Kind regards)/i.test(replyText)) {
+    warnings.push('AI-PASTE: Corporate closer — rewrite in Dylan voice or do not post');
+  }
+  if ((replyText.match(/^#{1,3}\s+/gm) || []).length >= 2) {
+    warnings.push('AI-PASTE: Markdown header wall — flatten to plain short text');
+  }
+  if ((replyText.match(/^\s*[-*•]\s+/gm) || []).length >= 6) {
+    warnings.push('AI-PASTE: Bullet wall — human replies stay short');
+  }
+  if (replyText.length > 1200) {
+    warnings.push('AI-PASTE: Reply too long (>1200) — shorten drastically or skip posting');
+  }
+  if (/^(?:Hi(?:\s+there)?|Hello(?:\s+everyone)?)[,!]?\s/i.test(replyText.trim())) {
+    warnings.push('AI-PASTE: Greeting opener — start mid-thought like a real forum reply');
   }
 
   // 6. Auto-correct if warnings found

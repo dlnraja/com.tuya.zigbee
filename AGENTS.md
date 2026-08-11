@@ -143,6 +143,11 @@ All orchestrated via `tools/ci/mega-crawler.js` + GHA `mega-crawl.yml` (daily 02
 
 ## When Reading Discourse / Homey Community Forum
 
+**Default: silent enrichment — do not reply on the forum.** Fix the app and workflows instead.
+Community mandate: never paste unchecked AI answers
+(https://community.homey.app/t/stop-pasting-unchecked-ai-answers-in-the-homey-community/157628).
+Auto forum posters are forced dry-run. `REPLY_TOPICS=140352` only if a maintainer ever re-enables posting.
+
 **No Puppeteer needed!** A simple browser User-Agent bypasses all rate limits:
 
 ```js
@@ -166,6 +171,13 @@ Note: the response is at `data.post_stream.posts`, NOT `data.posts`. (P53 discov
 
 This fetches all 2032 posts of topic 140352 in ~5 minutes with 100% success.
 
+- Silent multi-topic scan: `node tools/ci/forum-silent-multi-scan.js`
+  (topics 140352, 146735, 26439, 89271, 43287, 157628, 157859 — READ-ONLY except policy on 140352).
+- RF coexistence (Zigbee/Thread ≠ Wi-Fi numbering): `docs/guides/RF_CHANNEL_COEXISTENCE.md`
+  · `lib/utils/rf-channel-coexistence.js` · smoke `tools/ci/rf-channel-coexistence-smoke.js`
+- AI-paste gate: `node tools/ci/forum-ai-paste-gate.js --scan-defaults`
+- Voice: `docs/responses/FORUM_STYLE_GUIDE.md` · doctrine: `docs/rules/FORUM_SILENT_HUMANIZE.md`
+
 ## Don't Do
 
 - **Don't** push to `stable-v5` directly. Wait for master to be verified.
@@ -173,6 +185,8 @@ This fetches all 2032 posts of topic 140352 in ~5 minutes with 100% success.
 - **Don't** add mfrs to a driver that doesn't match its device class.
 - **Don't** use `setTimeout` directly in device.js — use `safeSetTimeout` from `lib/utils/safe-timers.js`.
 - **Don't** leak GitHub PATs, Gmail passwords, or Homey tokens in commits or logs.
+- **Don't** paste unchecked AI answers into Homey Community (T157628).
+- **Don't** auto-reply on satellite forum threads; prefer silent code enrichment.
 
 ## Lessons from Memory
 

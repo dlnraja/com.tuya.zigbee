@@ -91,23 +91,32 @@ After `getForumAuth()`, ALWAYS call `refreshCsrf()` or all POST/PUT/DELETE get 4
 ### 9. Large state files
 `comprehensive-scan.json` (~22MB) is in `.gitignore`. Always `git reset HEAD` if staged.
 
-### 10. REPLY_TOPICS — CRITICAL (updated v5.12.14)
-**Bot must ONLY post on T140352** (our own thread). NEVER post on other people's threads.
+### 10. REPLY_TOPICS — CRITICAL (updated P108 / T157628)
+**Default: do NOT post.** Prefer silent code/CI enrichment from all scanned threads.
+**If posting is ever re-enabled, bot may ONLY post on T140352** (our own thread). NEVER post on other people's threads.
 ```yaml
 env:
   REPLY_TOPICS: "140352"
+  FORUM_AUTO_POST: "0"   # keep dry-run / blocked
 ```
-**ALL scripts that post to forum — verified T140352 only:**
+**ALL scripts that post to forum — verified T140352 only + forced dry-run:**
 | Script | Guard |
 |--------|-------|
-| `forum-responder.js` | `REPLY_TOPICS` env (default='140352') |
-| `forum-respond-requests.js` | `REPLY_TOPIC` env + skip guard |
-| `post-forum-update.js` | `.filter(t=>t===140352)` hardcode |
+| `forum-responder.js` | `REPLY_TOPICS` + `dry=true` forced + postReply blocked |
+| `forum-respond-requests.js` | DEPRECATED |
+| `post-forum-update.js` | Forced dry-run return at top of `main()` |
 | `post-lasse-reply.js` | `topic_id:140352` hardcode |
 | `update-forum-first-post.js` | `TOPIC=140352` hardcode |
 | `forum-updater.js` | `TOPIC=140352` hardcode |
 | `monthly-comprehensive.js` | `postToForum(140352,...)` |
 | `github-issue-manager.js` | `topic_id:140352` hardcode |
+
+**Anti AI-paste (Homey T157628):**
+- Never paste unchecked LLM answers into Homey Community
+- Humanize rare drafts (`docs/responses/FORUM_STYLE_GUIDE.md`)
+- Gate: `node tools/ci/forum-ai-paste-gate.js --scan-defaults`
+- Doctrine: `docs/rules/FORUM_SILENT_HUMANIZE.md`
+- Silent multi-scan: `tools/ci/forum-silent-multi-scan.js` (wired in `forum-poll.yml`, `auto-enrich-closed-loop.yml`, `fetch-diags.yml`)
 
 **BUG FIXED v5.12.14:** `post-forum-update.js` had default `FORUM_TOPICS='140352,26439,146735'`
 which caused bot to post release updates on OTHER people's threads (T26439, T146735).
@@ -117,6 +126,8 @@ Fix: hardcoded `.filter(t=>t===140352)` safety net — even if env overridden, o
 `REPLY_TOPICS: '140352,26439'` which allowed the bot to post replies on JohanBendz's thread (T26439).
 Fix: changed REPLY_TOPICS to '140352' in both workflows. FORUM_TOPICS may still include 26439 for
 READ-ONLY scanning, but REPLY_TOPICS must ONLY be '140352'.
+
+**P108:** Auto-post remains blocked; satellite threads (146735, 26439, 89271, 43287, 157628) are scan-only.
 
 ### 12. Copilot Semantic Linter — SAFETY RULES
 The original `gh copilot suggest` approach was **dangerous**: it would echo raw Copilot output
@@ -458,18 +469,23 @@ After `getForumAuth()`, ALWAYS call `refreshCsrf()` or all POST/PUT/DELETE get 4
 ### 9. Large state files
 `comprehensive-scan.json` (~22MB) is in `.gitignore`. Always `git reset HEAD` if staged.
 
-### 10. REPLY_TOPICS  CRITICAL (updated v5.12.14)
-**Bot must ONLY post on T140352** (our own thread). NEVER post on other people's threads.
+### 10. REPLY_TOPICS  CRITICAL (updated P108 / T157628)
+**Default: do NOT post.** Prefer silent enrichment. Auto-post forced dry-run.
+**If ever re-enabled, bot may ONLY post on T140352.** NEVER post on other people's threads.
 ```yaml
 env:
   REPLY_TOPICS: "140352"
+  FORUM_AUTO_POST: "0"
 ```
+See section 10 at top of this file for full T157628 anti AI-paste + silent-scan tooling.
+Duplicate historical notes retained below for genealogy.
+
 **ALL scripts that post to forum  verified T140352 only:**
 | Script | Guard |
 |--------|-------|
-| `forum-responder.js` | `REPLY_TOPICS` env (default='140352') |
-| `forum-respond-requests.js` | `REPLY_TOPIC` env + skip guard |
-| `post-forum-update.js` | `.filter(t=>t===140352)` hardcode |
+| `forum-responder.js` | `REPLY_TOPICS` + forced dry-run + postReply blocked |
+| `forum-respond-requests.js` | DEPRECATED |
+| `post-forum-update.js` | Forced dry-run at top of main() |
 | `post-lasse-reply.js` | `topic_id:140352` hardcode |
 | `update-forum-first-post.js` | `TOPIC=140352` hardcode |
 | `forum-updater.js` | `TOPIC=140352` hardcode |

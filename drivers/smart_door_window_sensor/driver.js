@@ -16,7 +16,7 @@ class SmartDoorWindowSensorDriver extends Driver {
 
       this.homey.flow.getConditionCard('smart_door_window_sensor_alarm_contact_active')?.registerRunListener(async (args) => {
         if (!args.device) {return false;}
-        return true; // TODO: implement condition for smart_door_window_sensor_alarm_contact_active
+        return args.device.getCapabilityValue('alarm_contact') === true;
       });
   }
 }

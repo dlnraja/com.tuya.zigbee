@@ -67,25 +67,39 @@ const PREVIEW = ARGS.includes('--preview');
 function inferCard(card) {
   const id = card.id || '';
   const args = card.args || [];
+  // Contact / door / window open state (never map to onoff) — FIRST
+  if (/alarm_contact_active|contact_open|is_open|door.*open|window.*open|sensor_opened/.test(id)
+      && !/turn_on|set_/.test(id)) {
+    return { capability: 'alarm_contact', value: true, type: 'condition' };
+  }
+  if (/is_closed|contact_closed|door.*closed|window.*closed/.test(id) && !/set_/.test(id)) {
+    return { capability: 'alarm_contact', value: false, type: 'condition' };
+  }
+  if (/tamper_active|alarm_tamper|tamper_true/.test(id)) {
+    return { capability: 'alarm_tamper', value: true, type: 'condition' };
+  }
+  // is_on / is_off (switches) before turn_on/off action heuristics
+  if (/_is_on$|^is_on$/.test(id)) {
+    return { capability: 'onoff', value: true, type: 'condition' };
+  }
+  if (/_is_off$|^is_off$/.test(id)) {
+    return { capability: 'onoff', value: false, type: 'condition' };
+  }
   // Common patterns
   // turn_on / turn_off / toggle
-  if (/turn_on|turn-on|on$/i.test(id) && !/on_gang|on_switch|on_button/.test(id)) {
+  if (/turn_on|turn-on|_turn_on$/i.test(id) && !/on_gang|on_switch|on_button|contact|alarm|tamper|is_on|is_off|is_open|is_closed/.test(id)) {
     return { capability: 'onoff', value: true, type: 'action' };
   }
-  if (/turn_off|turn-off|off$/i.test(id) && !/off_gang|off_switch|off_button/.test(id)) {
+  if (/turn_off|turn-off|_turn_off$/i.test(id) && !/off_gang|off_switch|off_button|contact|alarm|tamper|is_on|is_off|is_open|is_closed/.test(id)) {
     return { capability: 'onoff', value: false, type: 'action' };
   }
-  if (/toggle/i.test(id)) {
+  if (/toggle/i.test(id) && !/contact|alarm|tamper/.test(id)) {
     return { capability: 'onoff', value: 'toggle', type: 'action' };
   }
   // set_dim / set_brightness / set_position
   const setMatch = id.match(/set_(\w+)$/);
   if (setMatch) {
     return { capability: setMatch[1], value: 'args', argName: args[0]?.name, type: 'action' };
-  }
-  // is_open / is_on / is_closed
-  if (id.startsWith('is_') || id.includes('_is_')) {
-    return { capability: id.replace(/^.*_is_/, ''), value: 'args', type: 'condition' };
   }
   // X_above / X_below
   const aboveBelow = id.match(/^(.+?)_(above|below|over|under)$/);

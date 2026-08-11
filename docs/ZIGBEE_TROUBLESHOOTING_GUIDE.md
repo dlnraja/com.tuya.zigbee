@@ -30,19 +30,26 @@
 
 ### 1.2 Interférences WiFi (Canaux 2.4GHz)
 
-**Problème :** Le WiFi et Zigbee partagent la bande 2.4GHz. Les canaux qui se chevauchent causent des interférences.
+**Problème :** Le WiFi et Zigbee/Thread partagent la bande 2.4GHz. Les **numéros de canaux ne sont pas comparables** (numérotation IEEE 802.15.4 ≠ Wi‑Fi).
 
-**Canaux WiFi vs Zigbee :**
-| WiFi Channel | Fréquence | Zigbee Channels affectés |
-|--------------|-----------|-------------------------|
-| 1 | 2.412 GHz | 11-14 |
-| 6 | 2.437 GHz | 15-18 |
-| 11 | 2.462 GHz | 19-22 |
+Exemple : Thread/Zigbee **15** ≈ 2425 MHz (~2 MHz). Wi‑Fi **1** ≈ 2412 (2402–2422) — proche du bord haut. Wi‑Fi **11** ≈ 2462 (2452–2472) — bien plus loin. Choisir Wi‑Fi « 1 » parce que le chiffre semble éloigné de « 15 » est une erreur classique.
+
+**Chevauchements typiques (Wi‑Fi 20 MHz) :**
+| WiFi Channel | Fréquence (centre) | Zigbee/Thread canaux à risque |
+|--------------|--------------------|-------------------------------|
+| 1 | 2.412 GHz | 11–14 (15 près du bord) |
+| 6 | 2.437 GHz | 16–19 |
+| 11 | 2.462 GHz | 21–24 |
 
 **Solutions :**
-1. Canal Zigbee 11 ou 25-26 (hors bande WiFi courante)
-2. Vérifier: https://tools.developer.homey.app/zigbee
-3. Éloigner Homey des routeurs WiFi
+1. Préférer Zigbee/Thread **15 / 20 / 25** si le Wi‑Fi est sur 1 / 6 / 11
+2. Préférer Wi‑Fi **20 MHz** (pas 40 MHz) sur 2.4 GHz quand coexistence critique
+3. Vérifier: https://tools.developer.homey.app/tools/zigbee — **ne changez pas** le canal Homey à la légère
+4. Après un changement de canal Zigbee : tenter **Maintenance → Repair** (garde les flows) avant remove/re-pair
+5. RSSI seul ≠ qualité (bruit, retries, lien asymétrique)
+6. Éloigner Homey des AP Wi‑Fi ; renforcer le mesh (prises/routers secteur)
+
+Helper code : `lib/utils/rf-channel-coexistence.js` · guide : `docs/guides/RF_CHANNEL_COEXISTENCE.md`
 
 ---
 
@@ -347,19 +354,26 @@ Pour signaler un problème :
 
 ### 1.2 Interférences WiFi (Canaux 2.4GHz)
 
-**Problème :** Le WiFi et Zigbee partagent la bande 2.4GHz. Les canaux qui se chevauchent causent des interférences.
+**Problème :** Le WiFi et Zigbee/Thread partagent la bande 2.4GHz. Les **numéros de canaux ne sont pas comparables** (numérotation IEEE 802.15.4 ≠ Wi‑Fi).
 
-**Canaux WiFi vs Zigbee :**
-| WiFi Channel | Fréquence | Zigbee Channels affectés |
-|--------------|-----------|-------------------------|
-| 1 | 2.412 GHz | 11-14 |
-| 6 | 2.437 GHz | 15-18 |
-| 11 | 2.462 GHz | 19-22 |
+Exemple : Thread/Zigbee **15** ≈ 2425 MHz (~2 MHz). Wi‑Fi **1** ≈ 2412 (2402–2422) — proche du bord haut. Wi‑Fi **11** ≈ 2462 (2452–2472) — bien plus loin. Choisir Wi‑Fi « 1 » parce que le chiffre semble éloigné de « 15 » est une erreur classique.
+
+**Chevauchements typiques (Wi‑Fi 20 MHz) :**
+| WiFi Channel | Fréquence (centre) | Zigbee/Thread canaux à risque |
+|--------------|--------------------|-------------------------------|
+| 1 | 2.412 GHz | 11–14 (15 près du bord) |
+| 6 | 2.437 GHz | 16–19 |
+| 11 | 2.462 GHz | 21–24 |
 
 **Solutions :**
-1. Canal Zigbee 11 ou 25-26 (hors bande WiFi courante)
-2. Vérifier: https://tools.developer.homey.app/zigbee
-3. Éloigner Homey des routeurs WiFi
+1. Préférer Zigbee/Thread **15 / 20 / 25** si le Wi‑Fi est sur 1 / 6 / 11
+2. Préférer Wi‑Fi **20 MHz** (pas 40 MHz) sur 2.4 GHz quand coexistence critique
+3. Vérifier: https://tools.developer.homey.app/tools/zigbee — **ne changez pas** le canal Homey à la légère
+4. Après un changement de canal Zigbee : tenter **Maintenance → Repair** (garde les flows) avant remove/re-pair
+5. RSSI seul ≠ qualité (bruit, retries, lien asymétrique)
+6. Éloigner Homey des AP Wi‑Fi ; renforcer le mesh (prises/routers secteur)
+
+Helper code : `lib/utils/rf-channel-coexistence.js` · guide : `docs/guides/RF_CHANNEL_COEXISTENCE.md`
 
 ---
 

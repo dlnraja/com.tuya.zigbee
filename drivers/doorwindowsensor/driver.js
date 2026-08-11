@@ -16,7 +16,7 @@ class DoorwindowsensorDriver extends Driver {
 
       this.homey.flow.getConditionCard('doorwindowsensor_alarm_contact_active')?.registerRunListener(async (args) => {
         if (!args.device) {return false;}
-        return true; // TODO: implement condition for doorwindowsensor_alarm_contact_active
+        return args.device.getCapabilityValue('alarm_contact') === true;
       });
   }
 }

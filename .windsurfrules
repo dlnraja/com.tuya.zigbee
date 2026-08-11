@@ -449,12 +449,18 @@ this.homey.settings.get('key');             // ManagerSettings
 - All descendant forks of dlnraja/com.tuya.zigbee
 - → Code: YES | Logs: YES | Changelog: YES | Forum: YES (merge with last post)
 
-### Forum Ghostwriter Rules:
-- If last poster = dlnraja: AI edits/merges into existing post (organic fusion)
-- If last poster = someone else: AI creates new reply (only on T140352)
+### Forum Ghostwriter Rules (P108 / T157628):
+- **DEFAULT: do NOT post.** Prefer silent code/CI enrichment from all threads.
+- Never paste unchecked AI answers into Homey Community (T157628).
+- Auto-post scripts forced dry-run (`FORUM_AUTO_POST=0`).
+- REPLY_TOPICS = 140352 only if a maintainer explicitly re-enables posting.
+- If last poster = dlnraja and maintainer posts: edit/merge into existing post
 - NEVER consecutive bot posts — always merge with own last post
-- Ghostwriter tone: casual, like a dev editing their own post ("edit: just pushed...")
+- Humanize: casual Dylan voice, short, imperfect EN OK — see docs/responses/FORUM_STYLE_GUIDE.md
 - NEVER expose: automation, bots, AI, pipelines, Johan, upstream sync
+- Gates: tools/ci/forum-ai-paste-gate.js + .github/scripts/reply-quality-gate.js
+- Silent scan: tools/ci/forum-silent-multi-scan.js (incl. 43287, 157628, 157859 READ-ONLY)
+- RF coexistence helper: lib/utils/rf-channel-coexistence.js (Zigbee/Thread ≠ Wi-Fi channel numbers)
 
 ## DYNAMIC APP PROMOTION & INTELLIGENT TOOLS
 

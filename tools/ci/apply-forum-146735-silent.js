@@ -55,6 +55,21 @@ const KNOWN_ROUTES = [
     driver: 'dimmer_2_gang_tuya',
     forbidDrivers: ['climate_sensor', 'generic_tuya'],
   },
+  // Silent multi-thread reinforcement (typed drivers only; never generic_tuya)
+  {
+    id: 'm1cvyneb-wall-dimmer',
+    mfrs: ['_TZE204_m1cvyneb', '_TZE200_m1cvyneb', '_TZE284_m1cvyneb'],
+    pids: ['TS0601'],
+    driver: 'wall_dimmer_tuya',
+    forbidDrivers: ['climate_sensor', 'generic_tuya', 'wall_thermostat'],
+  },
+  {
+    id: 'clrdrnya-presence',
+    mfrs: ['_TZE204_clrdrnya', '_TZE200_clrdrnya', '_TZE284_clrdrnya'],
+    pids: ['TS0601'],
+    driver: 'presence_sensor_radar',
+    forbidDrivers: ['motion_sensor', 'generic_tuya', 'climate_sensor'],
+  },
 ];
 
 /** Heuristic PID → preferred typed driver candidates (first existing wins). */

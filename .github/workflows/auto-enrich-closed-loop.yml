@@ -159,6 +159,28 @@ jobs:
           node tools/ci/forum-fetch-146735.js || echo "146735 fetch failed (non-blocking)"
           node tools/ci/apply-forum-146735-silent.js || echo "146735 apply dry-run failed (non-blocking)"
 
+      # READ-ONLY multi-topic (140352+146735+26439+89271+43287+157628). Never replies.
+      - name: "Forum silent multi-topic scan (P108 / T157628)"
+        if: always()
+        continue-on-error: true
+        timeout-minutes: 10
+        env:
+          SMART_FETCH_READER_FALLBACK: "1"
+          FIRECRAWL_API_KEY: ${{ secrets.FIRECRAWL_API_KEY }}
+          REPLY_TOPICS: "140352"
+          FORUM_AUTO_POST: "0"
+        run: |
+          if [ ! -f tools/ci/forum-silent-multi-scan.js ]; then
+            echo "forum-silent-multi-scan.js missing — skip"
+            exit 0
+          fi
+          node tools/ci/forum-silent-multi-scan.js --max=40 || echo "silent multi-scan failed (non-blocking)"
+          node tools/ci/forum-ai-paste-gate.js --scan-defaults || echo "ai-paste gate warn"
+          if [ -f .github/state/forum/multi-silent-digest.json ]; then
+            echo "Silent multi-scan digest written (FORUM_AUTO_POST=0)"
+            node -e "const d=require('./.github/state/forum/multi-silent-digest.json'); console.log(JSON.stringify(d.totals))"
+          fi
+
       - name: "📧 Diag protocol gate (crash + sacred-couple cross-ref + dry apply)"
         if: always()
         continue-on-error: true

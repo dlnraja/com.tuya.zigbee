@@ -4,10 +4,14 @@
 // (mfr, pid) pairs, and diff against the local fingerprint catalog.
 const fs = require('fs');
 const path = require('path');
-const { SmartFetcher } = require('./lib/scraper/smart-fetch');
+const { SmartFetcher } = require(path.resolve(__dirname, '..', '..', 'lib', 'scraper', 'smart-fetch'));
 
+// READ-ONLY satellite threads (+ own 140352 for FP diff). Never posts/replies.
 const TOPICS = [
+  { id: 140352, slug: 'app-pro-universal-tuya-zigbee-device-app-test' },
+  { id: 146735, slug: 'app-tuya-smart-life-smart-living' },
   { id: 26439, slug: 'app-pro-tuya-zigbee-app' },
+  { id: 89271, slug: 'device-request-archive' },
   { id: 156792, slug: 'tuya-zigbee-finger-bot' },
   { id: 149230, slug: 'app-pro-tuya-zigbee-garage-door-opener' },
   { id: 155212, slug: 'zemismart-1-2-3-phase-energy-meters-now-work-with-homey-pro' },
