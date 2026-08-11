@@ -2,7 +2,6 @@
   "class": "socket",
   "capabilities": [
     "onoff",
-    "measure_battery",
     "measure_power",
     "meter_power",
     "measure_voltage",
@@ -672,13 +671,6 @@
     "zigbee"
   ],
   "capabilitiesOptions": {
-    "measure_battery": {
-      "title": {
-        "en": "Battery",
-        "fr": "Batterie"
-      },
-      "preventInsights": false
-    },
     "button.toggle": {
       "title": {
         "en": "toggle"
@@ -720,9 +712,6 @@
     }
   },
   "energy": {
-    "batteries": [
-      "CR2450"
-    ],
     "mains": true
   },
   "pair": [

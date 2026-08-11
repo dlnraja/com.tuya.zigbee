@@ -9,7 +9,6 @@
   "class": "sensor",
   "capabilities": [
     "alarm_contact",
-    "measure_battery",
     "alarm_tamper",
     "measure_luminance",
     "dim",
@@ -18,9 +17,6 @@
     "button.1"
   ],
   "energy": {
-    "batteries": [
-      "CR2450"
-    ],
     "mains": true
   },
   "subDevices": [],

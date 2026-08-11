@@ -14,14 +14,10 @@
     "measure_current",
     "onoff",
     "dim",
-    "measure_battery",
     "button.1"
   ],
   "energy": {
-    "batteries": [
-      "AAA",
-      "AAA"
-    ]
+    "mains": true
   },
   "settings": [
     {
@@ -217,14 +213,6 @@
       "maintenanceAction": true,
       "getable": false,
       "setable": false
-    },
-    "measure_battery": {
-      "title": {
-        "en": "Battery",
-        "fr": "Batterie",
-        "nl": "Batterij",
-        "de": "Batterie"
-      }
     },
     "measure_power": {
       "approximated": true

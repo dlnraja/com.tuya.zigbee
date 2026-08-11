@@ -12,14 +12,10 @@
     "light_temperature",
     "light_mode",
     "onoff",
-    "measure_battery",
     "button.1"
   ],
   "energy": {
-    "mains": true,
-    "batteries": [
-      "CR2450"
-    ]
+    "mains": true
   },
   "zigbee": {
     "manufacturerName": [

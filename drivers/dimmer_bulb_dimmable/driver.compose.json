@@ -12,16 +12,12 @@
     "light_temperature",
     "light_mode",
     "onoff",
-    "measure_battery",
     "measure_power",
     "power_on_behavior",
     "button.1"
   ],
   "energy": {
-    "mains": true,
-    "batteries": [
-      "CR2450"
-    ]
+    "mains": true
   },
   "zigbee": {
     "productId": [
@@ -311,14 +307,6 @@
       "maintenanceAction": true,
       "getable": false,
       "setable": false
-    },
-    "measure_battery": {
-      "title": {
-        "en": "Battery",
-        "fr": "Batterie",
-        "nl": "Batterij",
-        "de": "Batterie"
-      }
     },
     "measure_power": {
       "approximated": true

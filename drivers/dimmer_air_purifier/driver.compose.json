@@ -9,14 +9,10 @@
     "dim",
     "onoff",
     "measure_power",
-    "measure_battery",
     "measure_pm25",
     "button.1"
   ],
   "energy": {
-    "batteries": [
-      "CR2450"
-    ],
     "mains": true
   },
   "zigbee": {
@@ -339,14 +335,6 @@
       "maintenanceAction": true,
       "getable": false,
       "setable": false
-    },
-    "measure_battery": {
-      "title": {
-        "en": "Battery",
-        "fr": "Batterie",
-        "nl": "Batterij",
-        "de": "Batterie"
-      }
     },
     "measure_power": {
       "approximated": true

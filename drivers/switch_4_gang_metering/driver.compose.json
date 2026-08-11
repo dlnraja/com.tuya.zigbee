@@ -16,7 +16,6 @@
     "meter_power",
     "measure_current",
     "measure_voltage",
-    "measure_battery",
     "button.1",
     "button.2",
     "button.3",
@@ -34,14 +33,6 @@
       "maintenanceAction": true,
       "getable": false,
       "setable": false
-    },
-    "measure_battery": {
-      "title": {
-        "en": "Battery",
-        "fr": "Batterie",
-        "nl": "Batterij",
-        "de": "Batterie"
-      }
     },
     "button.2": {
       "title": {
@@ -206,9 +197,7 @@
   },
   "version": "1.0.0",
   "energy": {
-    "batteries": [
-      "CR2032"
-    ]
+    "mains": true
   },
   "ui": {
     "quickAction": "onoff"

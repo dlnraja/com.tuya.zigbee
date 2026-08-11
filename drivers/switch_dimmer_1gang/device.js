@@ -1,8 +1,6 @@
 'use strict';
 
 const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
-const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
-const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 
 const DP = {
   state: 1,
@@ -14,8 +12,9 @@ const DP = {
 
 /**
  * SwitchDimmer1GangDevice - v5.13.6 Hardened Architecture
+ * P115: TuyaZigbeeDevice already includes Physical+Virtual button mixins.
  */
-class SwitchDimmer1GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(TuyaZigbeeDevice)) {
+class SwitchDimmer1GangDevice extends TuyaZigbeeDevice {
 
   get mainsPowered() { return true; }
   get gangCount() { return 1; }

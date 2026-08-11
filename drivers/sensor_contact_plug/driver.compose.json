@@ -13,7 +13,6 @@
     "meter_power",
     "measure_current",
     "measure_voltage",
-    "measure_battery",
     "alarm_contact",
     "alarm_tamper",
     "measure_luminance",
@@ -21,9 +20,6 @@
     "button.1"
   ],
   "energy": {
-    "batteries": [
-      "CR2450"
-    ],
     "mains": true
   },
   "zigbee": {

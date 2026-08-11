@@ -10,7 +10,6 @@
     "button.toggle_1",
     "button.toggle_2",
     "button.identify",
-    "measure_battery",
     "button.1",
     "button.2"
   ],
@@ -591,9 +590,6 @@
     }
   },
   "energy": {
-    "batteries": [
-      "CR2450"
-    ],
     "mains": true
   },
   "pair": [

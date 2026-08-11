@@ -15,7 +15,6 @@
     "alarm_motion",
     "alarm_contact",
     "alarm_water",
-    "measure_battery",
     "measure_power",
     "measure_voltage",
     "measure_current",
@@ -72,10 +71,7 @@
     "zigbee"
   ],
   "energy": {
-    "mains": true,
-    "batteries": [
-      "CR2450"
-    ]
+    "mains": true
   },
   "zigbee": {
     "manufacturerName": [

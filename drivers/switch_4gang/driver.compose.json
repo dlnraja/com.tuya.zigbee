@@ -12,7 +12,6 @@
     "button.toggle_3",
     "button.toggle_4",
     "button.identify",
-    "measure_battery",
     "button.1",
     "button.2",
     "button.3",
@@ -933,14 +932,6 @@
       "getable": false,
       "setable": false
     },
-    "measure_battery": {
-      "title": {
-        "en": "Battery",
-        "fr": "Batterie",
-        "nl": "Batterij",
-        "de": "Batterie"
-      }
-    },
     "button.toggle_1": {
       "setable": false,
       "maintenanceAction": true,
@@ -982,9 +973,7 @@
     }
   },
   "energy": {
-    "batteries": [
-      "OTHER"
-    ]
+    "mains": true
   },
   "pair": [
     {

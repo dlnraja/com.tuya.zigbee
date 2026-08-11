@@ -13,14 +13,10 @@
     "meter_power",
     "measure_current",
     "measure_voltage",
-    "measure_battery",
     "child_lock",
     "button.1"
   ],
   "energy": {
-    "batteries": [
-      "CR2450"
-    ],
     "mains": true
   },
   "settings": [

@@ -10,7 +10,6 @@
     "onoff",
     "measure_power",
     "meter_power",
-    "measure_battery",
     "button.1"
   ],
   "zigbee": {
@@ -48,9 +47,7 @@
     "zigbee"
   ],
   "energy": {
-    "batteries": [
-      "OTHER"
-    ]
+    "mains": true
   },
   "settings": [
     {
@@ -298,14 +295,6 @@
       "maintenanceAction": true,
       "getable": false,
       "setable": false
-    },
-    "measure_battery": {
-      "title": {
-        "en": "Battery",
-        "fr": "Batterie",
-        "nl": "Batterij",
-        "de": "Batterie"
-      }
     }
   },
   "ui": {

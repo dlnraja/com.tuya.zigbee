@@ -1,6 +1,13 @@
 {
   "changelog": [
     {
+      "version": "9.0.475",
+      "date": "2026-08-11",
+      "channel": "test",
+      "en": "Fixed ghost button flows and phantom battery Energy tiles; no more fake battery percentages on mains devices.",
+      "fr": "Correction flux boutons fantomes et tuiles Energie batterie fantome; plus de faux pourcentages batterie sur appareils secteur."
+    },
+    {
       "version": "9.0.474",
       "date": "2026-08-11",
       "channel": "test",

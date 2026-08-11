@@ -1,6 +1,6 @@
 {
   "name": "com.dlnraja.tuya.zigbee",
-  "version": "9.0.474",
+  "version": "9.0.475",
   "description": "Tuya Unified Zigbee - Local-first control with AI automation",
   "main": "app.js",
   "scripts": {
@@ -131,6 +131,8 @@
     "enrich:closed-loop": "node tools/ci/auto-enrich-closed-loop.js --skip-crawl",
     "enrich:multi-source": "node tools/ci/multi-source-enrich-orchestrator.js",
     "enrich:multi-source:apply": "node tools/ci/multi-source-enrich-orchestrator.js --apply",
+    "fix:phantom-battery": "node tools/ci/strip-phantom-battery-mains.js",
+    "fix:phantom-battery:apply": "node tools/ci/strip-phantom-battery-mains.js --apply",
     "enrich:infer": "node tools/ci/infer-enrich-from-incomplete.js",
     "enrich:infer:apply": "node tools/ci/infer-enrich-from-incomplete.js --apply",
     "check:gmail-crashes": "node tools/ci/gmail-crash-pattern-gate.js",

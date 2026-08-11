@@ -14,7 +14,6 @@
     "meter_power",
     "measure_voltage",
     "measure_current",
-    "measure_battery",
     "button.1",
     "button.2"
   ],
@@ -41,12 +40,6 @@
       "title": {
         "en": "Current",
         "fr": "Courant"
-      }
-    },
-    "measure_battery": {
-      "title": {
-        "en": "Battery",
-        "fr": "Batterie"
       }
     },
     "measure_power": {
@@ -79,9 +72,6 @@
     }
   },
   "energy": {
-    "batteries": [
-      "CR2450"
-    ],
     "mains": true
   },
   "settings": [

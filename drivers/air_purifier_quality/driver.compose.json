@@ -15,7 +15,6 @@
     "measure_voc",
     "measure_formaldehyde",
     "alarm_generic",
-    "measure_battery",
     "onoff",
     "dim",
     "measure_power",
@@ -67,9 +66,6 @@
     }
   },
   "energy": {
-    "batteries": [
-      "CR2450"
-    ],
     "mains": true
   },
   "settings": [

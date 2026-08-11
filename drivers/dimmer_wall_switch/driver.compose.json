@@ -10,7 +10,6 @@
     "button.toggle_1",
     "button.toggle_2",
     "button.identify",
-    "measure_battery",
     "dim",
     "button.1"
   ],
@@ -561,14 +560,6 @@
       "getable": false,
       "setable": false
     },
-    "measure_battery": {
-      "title": {
-        "en": "Battery",
-        "fr": "Batterie",
-        "nl": "Batterij",
-        "de": "Batterie"
-      }
-    },
     "measure_power": {
       "approximated": true
     }
@@ -585,9 +576,6 @@
     }
   },
   "energy": {
-    "batteries": [
-      "CR2450"
-    ],
     "mains": true
   },
   "pair": [

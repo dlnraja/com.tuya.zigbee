@@ -11,15 +11,11 @@
     "dim",
     "onoff",
     "measure_power",
-    "measure_battery",
     "measure_temperature",
     "measure_humidity",
     "button.1"
   ],
   "energy": {
-    "batteries": [
-      "CR2450"
-    ],
     "mains": true
   },
   "settings": [
