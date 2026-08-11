@@ -1,10 +1,6 @@
 {
   "name": "com.dlnraja.tuya.zigbee",
-<<<<<<< HEAD
-  "version": "9.0.465",
-=======
   "version": "9.0.466",
->>>>>>> 3acdb85b1 (feat(P109): historical docs/impl enrich — dimmer DeviceIO, RF CI, silent multi-apply (v9.0.466))
   "description": "Tuya Unified Zigbee - Local-first control with AI automation",
   "main": "app.js",
   "scripts": {
