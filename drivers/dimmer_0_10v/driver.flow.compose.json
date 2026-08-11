@@ -1,0 +1,104 @@
+{
+  "triggers": [
+    {
+      "id": "dimmer_0_10v_turned_on",
+      "title": {
+        "en": "Turned on",
+        "fr": "Allumé"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Turned on",
+        "fr": "Allumé"
+      }
+    },
+    {
+      "id": "dimmer_0_10v_turned_off",
+      "title": {
+        "en": "Turned off",
+        "fr": "Éteint"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Turned off",
+        "fr": "Éteint"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "id": "dimmer_0_10v_is_on",
+      "title": {
+        "en": "Is turned !{{on|off}}",
+        "fr": "Est !{{allumé|éteint}}"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Is turned !{{on|off}}",
+        "fr": "Est !{{allumé|éteint}}"
+      }
+    }
+  ],
+  "actions": [
+    {
+      "id": "dimmer_0_10v_turn_on",
+      "title": {
+        "en": "Turn on",
+        "fr": "Allumer"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn on",
+        "fr": "Allumer"
+      }
+    },
+    {
+      "id": "dimmer_0_10v_turn_off",
+      "title": {
+        "en": "Turn off",
+        "fr": "Éteindre"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn off",
+        "fr": "Éteindre"
+      }
+    },
+    {
+      "id": "dimmer_0_10v_toggle",
+      "title": {
+        "en": "Toggle",
+        "fr": "Basculer"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Toggle",
+        "fr": "Basculer"
+      }
+    },
+    {
+      "id": "dimmer_0_10v_set_dim",
+      "title": {
+        "en": "Set dim level",
+        "fr": "Régler la luminosité"
+      },
+      "args": [
+        {
+          "name": "dim",
+          "type": "range",
+          "min": 0,
+          "max": 1,
+          "step": 0.01,
+          "label": {
+            "en": "Level",
+            "fr": "Niveau"
+          }
+        }
+      ],
+      "titleFormatted": {
+        "en": "Set dim to [[dim]]",
+        "fr": "Régler dim à [[dim]]"
+      }
+    }
+  ]
+}

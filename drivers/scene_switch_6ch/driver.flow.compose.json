@@ -1,0 +1,78 @@
+{
+  "triggers": [
+    {
+      "id": "scene_switch_6ch_button_1_pressed",
+      "title": {
+        "en": "Button 1 pressed",
+        "fr": "Bouton 1 pressé"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 1 pressed",
+        "fr": "Bouton 1 pressé"
+      }
+    },
+    {
+      "id": "scene_switch_6ch_button_2_pressed",
+      "title": {
+        "en": "Button 2 pressed",
+        "fr": "Bouton 2 pressé"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 2 pressed",
+        "fr": "Bouton 2 pressé"
+      }
+    },
+    {
+      "id": "scene_switch_6ch_button_3_pressed",
+      "title": {
+        "en": "Button 3 pressed",
+        "fr": "Bouton 3 pressé"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 3 pressed",
+        "fr": "Bouton 3 pressé"
+      }
+    },
+    {
+      "id": "scene_switch_6ch_button_4_pressed",
+      "title": {
+        "en": "Button 4 pressed",
+        "fr": "Bouton 4 pressé"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 4 pressed",
+        "fr": "Bouton 4 pressé"
+      }
+    },
+    {
+      "id": "scene_switch_6ch_button_5_pressed",
+      "title": {
+        "en": "Button 5 pressed",
+        "fr": "Bouton 5 pressé"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 5 pressed",
+        "fr": "Bouton 5 pressé"
+      }
+    },
+    {
+      "id": "scene_switch_6ch_button_6_pressed",
+      "title": {
+        "en": "Button 6 pressed",
+        "fr": "Bouton 6 pressé"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 6 pressed",
+        "fr": "Bouton 6 pressé"
+      }
+    }
+  ],
+  "conditions": [],
+  "actions": []
+}

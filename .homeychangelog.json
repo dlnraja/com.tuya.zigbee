@@ -1,6 +1,13 @@
 {
   "changelog": [
     {
+      "version": "9.0.456",
+      "date": "2026-08-11",
+      "channel": "test",
+      "en": "Universal flow-card heuristics, driver-mapping repair, DeviceIO on legacy Tuya/light bases, WiFi I/O channel, missing flow compose for 4 drivers.",
+      "fr": "Heuristiques Flow universelles, mapping drivers réparé, DeviceIO sur bases Tuya/light legacy, canal WiFi I/O, compose Flow manquant pour 4 drivers."
+    },
+    {
       "version": "9.0.455",
       "date": "2026-08-11",
       "channel": "test",
@@ -1767,5 +1774,8 @@
   },
   "9.0.455": {
     "en": "Improved device wake/handshake and interview recovery; added contact sensor fingerprints from incomplete-source cross-check."
+  },
+  "9.0.456": {
+    "en": "Universal flow-card heuristics, driver-mapping repair, DeviceIO on legacy Tuya/light bases, WiFi I/O channel, missing flow compose for 4 drivers."
   }
 }

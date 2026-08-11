@@ -119,6 +119,14 @@ async function main() {
   assert.ok(tx && typeof tx.ok === 'boolean');
   const rx = await io.receiveWithFallback({ kind: 'dp', dp: 1 });
   assert.ok(rx && typeof rx.ok === 'boolean');
+  assert.strictEqual(typeof io.resolveWifi, 'function');
+  const wifi = await io.resolveWifi({});
+  assert.ok(wifi && typeof wifi.ok === 'boolean');
+
+  const { buildPhysicalFlowCandidates, resolveFlowCardId } = require(path.join(ROOT, 'lib', 'flow', 'FlowCardHeuristics'));
+  const cands = buildPhysicalFlowCandidates('switch_2gang', 1, 'on', { gangCount: 2 });
+  assert.ok(Array.isArray(cands) && cands.length > 0);
+  assert.strictEqual(typeof resolveFlowCardId(cands, new Set(cands)), 'string');
 
   // Battery fuse with capability present — still safe without UBH profile crash
   device.hasCapability = (c) => c === 'measure_battery';
