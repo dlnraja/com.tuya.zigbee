@@ -4,13 +4,13 @@
 
 [![Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdlnraja%2Fcom.tuya.zigbee%2Fmaster%2Fapp.json&query=%24.version&label=version&color=blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![Drivers](https://img.shields.io/badge/drivers-430-brightgreen)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
-[![Fingerprints](https://img.shields.io/badge/fingerprints-4,365%20unique-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
+[![Fingerprints](https://img.shields.io/badge/fingerprints-4,363%20unique-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![Flow Cards](https://img.shields.io/badge/flow%20cards-4,954-blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![Native OTA](https://img.shields.io/badge/native%20OTA-6%20drivers-orange)](docs/P92_70_HOMEY_2026_OTA_NATIVE.md)
 [![SDK](https://img.shields.io/badge/SDK-3-orange)](https://apps.developer.homey.app/)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
-A community-driven Homey app that brings **local control** to Tuya Zigbee devices — no cloud, no internet needed. Covers switches, sensors, lights, thermostats, covers, locks and more across **430 drivers** and **4,365 unique device fingerprints** (16,945 including case variants for bulletproof pairing).
+A community-driven Homey app that brings **local control** to Tuya Zigbee devices — no cloud, no internet needed. Covers switches, sensors, lights, thermostats, covers, locks and more across **430 drivers** and **4,363 unique device fingerprints** (16,927 including case variants for bulletproof pairing).
 
 **Key features:**
 - **Local-only** — everything runs on your Homey, nothing goes to the cloud
@@ -37,10 +37,10 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.477 |
+| **App Version** | v9.0.479 |
 | **Drivers** | 430 (380 Zigbee + 50 WiFi) |
-| **Unique Fingerprints** | 4,365 |
-| **Pairing Variants** | 16,945 (4 case combos per fingerprint) |
+| **Unique Fingerprints** | 4,363 |
+| **Pairing Variants** | 16,927 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 573 |
 | **Flow Cards** | 4,954 |
 | **Unique Capabilities** | 170 |
@@ -55,7 +55,7 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 
 | # | Driver | Fingerprints |
 |---|--------|-------------|
-| 1 | `climate_sensor` | 2,672 |
+| 1 | `climate_sensor` | 2,668 |
 | 2 | `switch_1gang` | 1,812 |
 | 3 | `button_wireless_2` | 790 |
 | 4 | `presence_sensor_radar` | 714 |
@@ -67,13 +67,13 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 | 10 | `curtain_motor` | 292 |
 | 11 | `switch_4gang` | 262 |
 | 12 | `switch_2gang` | 228 |
-| 13 | `switch_3gang` | 216 |
-| 14 | `motion_sensor` | 210 |
+| 13 | `motion_sensor` | 210 |
+| 14 | `switch_3gang` | 208 |
 | 15 | `diy_custom_zigbee` | 206 |
 | 16 | `water_leak_sensor_tuya` | 194 |
 | 17 | `thermostat_tuya_dp` | 192 |
 | 18 | `dimmer_wall_1gang` | 184 |
-| 19 | `soil_sensor` | 184 |
+| 19 | `soil_sensor` | 182 |
 | 20 | `dimmable_led_strip` | 180 |
 
 ### Drivers by Device Class
@@ -106,6 +106,7 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.479** | v9.0.478: fix(P117): unbound catch crash sweep + rain/contact/soil/gas rehomes + settings timeout (v9.0.477) |
 | **v9.0.477** | v9.0.476: v9.0.476: 430 drivers, 3832 FPs [skip ci] |
 | **v9.0.475** | v9.0.474: fix(P114): multi-source enrich automation + DeviceIO RX/TX + FP reinforce (v9.0.474) |
 | **v9.0.473** | Stability improvements and Homey test publication retry. |
@@ -117,7 +118,6 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 | **v9.0.462** | Integral cross-version enrich: SmartDivisor in EF00, IASZoneEnhanced+L14, sleepy passive force, MCUFormatDatabase negotiate. |
 | **v9.0.461** | Integral cross-version enrich: SmartDivisor in EF00, IASZoneEnhanced+L14, sleepy passive force, MCUFormatDatabase negotiate. |
 | **v9.0.460** | Max multi-method I/O coverage: DP/ZCL/IAS/raw fallbacks, quirk-guided init for more device families, expanded magic packet profiles. |
-| **v9.0.459** | Max multi-method I/O coverage: DP/ZCL/IAS/raw fallbacks, quirk-guided init for more device families, expanded magic packet profiles. |
 
 <!-- CHANGELOG_END -->
 

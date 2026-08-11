@@ -1959,5 +1959,8 @@
   },
   "9.0.477": {
     "en": "v9.0.476: v9.0.476: 430 drivers, 3832 FPs [skip ci]"
+  },
+  "9.0.479": {
+    "en": "v9.0.478: fix(P117): unbound catch crash sweep + rain/contact/soil/gas rehomes + settings timeout (v9.0.477)"
   }
 }
