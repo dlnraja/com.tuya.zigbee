@@ -1,6 +1,20 @@
 {
   "changelog": [
     {
+      "version": "9.0.468",
+      "date": "2026-08-11",
+      "channel": "test",
+      "en": "Improved Tuya MCU time sync and battery DP routing; corrected mispaired climate fingerprints; safer temperature scaling fallback.",
+      "fr": "Sync horloge MCU Tuya et routage batterie ameliores; empreintes climate mal appariees corrigees; fallback temperature plus sur."
+    },
+    {
+      "version": "9.0.467",
+      "date": "2026-08-11",
+      "channel": "test",
+      "en": "Improved Tuya MCU time sync and battery DP routing; corrected mispaired climate fingerprints; safer temperature scaling fallback.",
+      "fr": "Sync horloge MCU Tuya et routage batterie ameliores; empreintes climate mal appariees corrigees; fallback temperature plus sur."
+    },
+    {
       "version": "9.0.466",
       "date": "2026-08-11",
       "channel": "test",
