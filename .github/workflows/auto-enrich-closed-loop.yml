@@ -114,6 +114,33 @@ jobs:
             echo '```' >> $GITHUB_STEP_SUMMARY
           fi
 
+      - name: "🌐 Multi-source enrich orchestrator (P114)"
+        if: always()
+        continue-on-error: true
+        timeout-minutes: 12
+        env:
+          FORUM_AUTO_POST: "0"
+          REPLY_TOPICS: "140352"
+          SMART_FETCH_READER_FALLBACK: "1"
+          FIRECRAWL_API_KEY: ${{ secrets.FIRECRAWL_API_KEY }}
+        run: |
+          if [ ! -f tools/ci/multi-source-enrich-orchestrator.js ]; then
+            echo "multi-source orchestrator missing — skip"
+            exit 0
+          fi
+          if [ "${{ inputs.dry_run }}" = "true" ]; then
+            node tools/ci/multi-source-enrich-orchestrator.js --skip-scan || true
+          else
+            # Known routes + sacred lots only (no blind Johan truncations)
+            node tools/ci/multi-source-enrich-orchestrator.js --apply || true
+          fi
+          if [ -f .github/state/multi-source/enrich-report.json ]; then
+            echo "### Multi-source enrich" >> $GITHUB_STEP_SUMMARY
+            echo '```json' >> $GITHUB_STEP_SUMMARY
+            node -e "const j=require('./.github/state/multi-source/enrich-report.json'); console.log(JSON.stringify({mode:j.mode,ok:j.ok,phases:j.phases.map(p=>({name:p.name,ok:p.ok}))},null,2))" >> $GITHUB_STEP_SUMMARY
+            echo '```' >> $GITHUB_STEP_SUMMARY
+          fi
+
       - name: "🔍 Infer-enrich from incomplete"
         if: always()
         continue-on-error: true
@@ -236,6 +263,7 @@ jobs:
           name: auto-enrich-loop
           path: |
             .github/state/auto-enrich/
+            .github/state/multi-source/
             .github/state/gmail-crash-patterns.json
             .github/state/gmail-fps-crossref-v2.json
             .github/state/sacred-couple-dry-gate.json

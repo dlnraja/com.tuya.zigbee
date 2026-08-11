@@ -1,6 +1,20 @@
 {
   "changelog": [
     {
+      "version": "9.0.474",
+      "date": "2026-08-11",
+      "channel": "test",
+      "en": "Multi-source enrich automation; reinforced curtain/gas/dimmer/radar/thermostat fingerprints; stronger DeviceIO RX/TX fallbacks.",
+      "fr": "Automatisation enrichissement multi-sources; empreintes rideau/gaz/dimmer/radar/thermostat renforcees; fallbacks DeviceIO RX/TX plus robustes."
+    },
+    {
+      "version": "9.0.473",
+      "date": "2026-08-11",
+      "channel": "test",
+      "en": "Multi-source enrich automation; reinforced curtain/gas/dimmer/radar/thermostat fingerprints; stronger DeviceIO RX/TX fallbacks.",
+      "fr": "Automatisation enrichissement multi-sources; empreintes rideau/gaz/dimmer/radar/thermostat renforcees; fallbacks DeviceIO RX/TX plus robustes."
+    },
+    {
       "version": "9.0.472",
       "date": "2026-08-11",
       "channel": "test",

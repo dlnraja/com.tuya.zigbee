@@ -60,6 +60,55 @@ const KNOWN_ROUTES = [
     pids: ['TS0002'],
     driver: 'switch_2gang',
   },
+  // P114 — reinforce high-confidence sacred couples from lot2/lot3 + crash digests
+  {
+    id: 'bxoo2swd-wall-dimmer',
+    mfrs: ['_TZE204_bxoo2swd', '_TZE200_bxoo2swd', '_TZE284_bxoo2swd'],
+    pids: ['TS0601'],
+    driver: 'wall_dimmer_tuya',
+  },
+  {
+    id: 'xtrnjaoz-curtain',
+    mfrs: ['_TZE200_xtrnjaoz', '_TZE204_xtrnjaoz', '_TZE284_xtrnjaoz'],
+    pids: ['TS0601'],
+    driver: 'curtain_motor',
+  },
+  {
+    id: '1youk3hj-radar',
+    mfrs: ['_TZE204_1youk3hj', '_TZE200_1youk3hj', '_TZE284_1youk3hj'],
+    pids: ['TS0601'],
+    driver: 'presence_sensor_radar',
+  },
+  {
+    id: 'chbyv06x-gas',
+    mfrs: ['_TZE200_chbyv06x', '_TZE204_chbyv06x', '_TZE284_chbyv06x'],
+    pids: ['TS0601'],
+    driver: 'gas_sensor',
+  },
+  {
+    id: 'fzo2pocs-curtain',
+    mfrs: ['_TYST11_fzo2pocs', '_TZE200_fzo2pocs', '_TZE204_fzo2pocs'],
+    pids: ['TS0601'],
+    driver: 'curtain_motor',
+  },
+  {
+    id: 'xu4a5rhj-curtain',
+    mfrs: ['_TZE204_xu4a5rhj', '_TZE200_xu4a5rhj', '_TZE284_xu4a5rhj'],
+    pids: ['TS0601'],
+    driver: 'curtain_motor',
+  },
+  {
+    id: 'xixlazkg-thermostat',
+    mfrs: ['_TZE200_xixlazkg', '_TZE204_xixlazkg', '_TZE284_xixlazkg'],
+    pids: ['TS0601'],
+    driver: 'wall_thermostat',
+  },
+  {
+    id: 'lawxy9e2-ceiling-fan',
+    mfrs: ['_TZE204_lawxy9e2', '_TZE200_lawxy9e2', '_TZE284_lawxy9e2'],
+    pids: ['TS0601'],
+    driver: 'ceiling_fan',
+  },
 ];
 
 function loadJson(fp) {

@@ -122,6 +122,19 @@ function phaseApplyBlakadder() {
   }
 }
 
+/** P114: forum routes + sacred lots + blakadder + collision dry gate */
+function phaseMultiSourceEnrich() {
+  if (skipCommit) { log('  skipped (--skip-commit)'); return { skipped: true }; }
+  const args = ['--skip-scan'];
+  if (!dryRun) args.push('--apply');
+  try {
+    const out = runNode('tools/ci/multi-source-enrich-orchestrator.js', args.join(' '));
+    return { output: String(out).slice(-600), applied: !dryRun };
+  } catch (e) {
+    return { softError: e.message.slice(0, 400) };
+  }
+}
+
 function phaseBidirectionalEnrich() {
   if (skipCommit) return { skipped: true };
   try {
@@ -217,6 +230,7 @@ function phasePublishSafe() {
 runPhase('1-crawl', phaseCrawl);
 runPhase('2-cross-ref', phaseCrossRef);
 runPhase('3-apply-blakadder', phaseApplyBlakadder);
+runPhase('3a-multi-source-enrich', phaseMultiSourceEnrich);
 runPhase('3b-bidirectional-enrich', phaseBidirectionalEnrich);
 runPhase('3c-ensure-case-variants', phaseEnsureCaseVariants);
 runPhase('3d-re-inject', phaseReInject);
