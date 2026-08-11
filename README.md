@@ -10,7 +10,7 @@
 [![SDK](https://img.shields.io/badge/SDK-3-orange)](https://apps.developer.homey.app/)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
-A community-driven Homey app that brings **local control** to Tuya Zigbee devices — no cloud, no internet needed. Covers switches, sensors, lights, thermostats, covers, locks and more across **430 drivers** and **4,357 unique device fingerprints** (16,923 including case variants for bulletproof pairing).
+A community-driven Homey app that brings **local control** to Tuya Zigbee devices — no cloud, no internet needed. Covers switches, sensors, lights, thermostats, covers, locks and more across **430 drivers** and **4,357 unique device fingerprints** (16,921 including case variants for bulletproof pairing).
 
 **Key features:**
 - **Local-only** — everything runs on your Homey, nothing goes to the cloud
@@ -38,9 +38,10 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 | Metric | Value |
 |--------|-------|
 | **App Version** | v9.0.471 |
+| **App Version** | v9.0.472 |
 | **Drivers** | 430 (380 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,357 |
-| **Pairing Variants** | 16,923 (4 case combos per fingerprint) |
+| **Pairing Variants** | 16,921 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 573 |
 | **Flow Cards** | 4,954 |
 | **Unique Capabilities** | 170 |
@@ -60,7 +61,7 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 | 3 | `button_wireless_2` | 790 |
 | 4 | `presence_sensor_radar` | 712 |
 | 5 | `radiator_valve` | 601 |
-| 6 | `wall_dimmer_tuya` | 488 |
+| 6 | `wall_dimmer_tuya` | 490 |
 | 7 | `generic_tuya` | 484 |
 | 8 | `device_radiator_valve` | 380 |
 | 9 | `sensor_contact_zigbee` | 345 |
@@ -107,6 +108,7 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 | Version | Changes |
 |---------|---------|
 | **v9.0.471** | v9.0.470: fix(P111): harden , timers, forum inbox bridge (v9.0.470) |
+| **v9.0.472** | v9.0.471: fix(P112): resume backlog — collision baseline, valve button, airbox, DP dimmer, enrich scan (v9.0.471) |
 | **v9.0.469** | v9.0.468: fix(P110): audit follow-up — time sync, MCU helper, battery DP, climate FP rehome (v9.0.468) |
 | **v9.0.467** | v9.0.466: fix: remove rebase conflict markers from version manifests (v9.0.466) |
 | **v9.0.465** | v9.0.464: feat(P108): silent forum enrich, contact flows, RF coexistence, anti AI-paste (v9.0.464) |
