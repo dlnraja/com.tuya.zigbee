@@ -161,6 +161,9 @@ jobs:
           fi
           echo "✅ app.json size OK: $size bytes"
 
+      - name: Flow card uniqueness gate
+        run: node tools/ci/flow-card-dup-gate.js
+
       - name: Validate Homey SDK3 compliance
         run: |
           npx homey app validate --level=publish || echo "⚠️ Homey CLI not available in CI, skipping"

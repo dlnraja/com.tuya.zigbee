@@ -1,6 +1,6 @@
 {
   "name": "com.dlnraja.tuya.zigbee",
-  "version": "9.0.469",
+  "version": "9.0.470",
   "description": "Tuya Unified Zigbee - Local-first control with AI automation",
   "main": "app.js",
   "scripts": {
@@ -148,6 +148,7 @@
     "forum:silent-scan": "node tools/ci/forum-silent-multi-scan.js",
     "forum:silent-apply": "node tools/ci/apply-forum-silent-multi.js",
     "check:forum-ai-paste": "node tools/ci/forum-ai-paste-gate.js --scan-defaults",
+    "check:flow-dups": "node tools/ci/flow-card-dup-gate.js",
     "check:bare-zigbee:update": "node tools/ci/lint-bare-zigbee-device.js --update-baseline",
     "enrich:quirks": "node scripts/maintenance/build-protocol-quirk-table.js"
   },

@@ -111,6 +111,33 @@ async function poll() {
   fs.writeFileSync(path.join(STATE_DIR, 'latest.json'), JSON.stringify(result, null, 2));
   fs.writeFileSync(path.join(STATE_DIR, 'new-fps.json'), JSON.stringify({ newFPs: result.newFPs, count: result.newFPs.length, timestamp: result.timestamp }, null, 2));
 
+  // Bridge for community-inbox-digest.js (reads forum-activity-data.json at state root)
+  try {
+    const bridge = {
+      source: 'forum-poll',
+      topicId: result.topicId || topicId,
+      timestamp: result.timestamp,
+      recentPosts: (result.posts || []).map((p) => ({
+        id: p.postId,
+        postNumber: p.postNumber,
+        username: p.username,
+        createdAt: p.createdAt,
+        excerpt: p.excerpt,
+        fps: p.fps || [],
+      })),
+      newPosts: result.newPosts || [],
+      allFPs: result.allFPs || [],
+      newFPs: result.newFPs || [],
+    };
+    fs.mkdirSync(path.dirname(path.join(ROOT, '.github', 'state', 'forum-activity-data.json')), { recursive: true });
+    fs.writeFileSync(
+      path.join(ROOT, '.github', 'state', 'forum-activity-data.json'),
+      JSON.stringify(bridge, null, 2),
+    );
+  } catch (bridgeErr) {
+    console.warn('[forum-poll] bridge write skipped:', bridgeErr.message);
+  }
+
   // Update last-seen
   const newLastState = { posts: { ...lastState.posts } };
   for (const p of result.posts) newLastState.posts[p.postId] = { postNumber: p.postNumber, createdAt: p.createdAt };

@@ -1,6 +1,20 @@
 {
   "changelog": [
     {
+      "version": "9.0.470",
+      "date": "2026-08-11",
+      "channel": "test",
+      "en": "Workflow hardening: unique flow card gate, safer timers, forum inbox bridge, CI npm install gaps filled.",
+      "fr": "Durcissement workflows: gate flow cards uniques, timers plus surs, pont forum→inbox, npm install CI complete."
+    },
+    {
+      "version": "9.0.469",
+      "date": "2026-08-11",
+      "channel": "test",
+      "en": "Workflow hardening: unique flow card gate, safer timers, forum inbox bridge, CI npm install gaps filled.",
+      "fr": "Durcissement workflows: gate flow cards uniques, timers plus surs, pont forum→inbox, npm install CI complete."
+    },
+    {
       "version": "9.0.468",
       "date": "2026-08-11",
       "channel": "test",

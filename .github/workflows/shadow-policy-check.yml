@@ -35,6 +35,14 @@ jobs:
       - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
         with:
           node-version: 22
+          cache: npm
+      - name: Install deps
+        run: |
+          if [ -f package.json ]; then
+            npm ci --prefer-offline --no-audit || npm install --no-audit
+          else
+            echo "No package.json"
+          fi
       - name: Enforce read-only upstream policy
         run: |
           node --check .github/scripts/github-shadow-policy.js

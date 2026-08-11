@@ -83,6 +83,9 @@ jobs:
       - name: Normalize Homey manifest before validation
         run: npm run fix:generated-flow-args
 
+      - name: 🃏 Flow card uniqueness gate
+        run: node tools/ci/flow-card-dup-gate.js
+
       - name: 🏠 Homey Validate
         run: npx homey app validate --level publish
 

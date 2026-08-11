@@ -70,14 +70,22 @@ async function enrichIssue(iss) {
 }
 
 function loadForumPosts() {
-  try {
-    const f = JSON.parse(fs.readFileSync(path.join(SD, "forum-activity-data.json"), "utf8"));
-    const posts = f.recentPosts || [];
-    // Posts from users that came AFTER the last maintainer post = unanswered
-    let lastOwnerIdx = -1;
-    posts.forEach((p, i) => { if (p.username === OWNER) lastOwnerIdx = i; });
-    return posts.filter((p, i) => p.username !== OWNER && i > lastOwnerIdx);
-  } catch { return null; }
+  const candidates = [
+    path.join(SD, "forum-activity-data.json"),
+    path.join(SD, "forum", "latest.json"),
+  ];
+  for (const fp of candidates) {
+    try {
+      const f = JSON.parse(fs.readFileSync(fp, "utf8"));
+      const posts = f.recentPosts || f.posts || [];
+      if (!Array.isArray(posts) || posts.length === 0) continue;
+      // Posts from users that came AFTER the last maintainer post = unanswered
+      let lastOwnerIdx = -1;
+      posts.forEach((p, i) => { if (p.username === OWNER) lastOwnerIdx = i; });
+      return posts.filter((p, i) => p.username !== OWNER && i > lastOwnerIdx);
+    } catch { /* try next */ }
+  }
+  return null;
 }
 
 async function main() {

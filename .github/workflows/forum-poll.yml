@@ -125,6 +125,7 @@ jobs:
           name: forum-poll
           path: |
             .github/state/forum/
+            .github/state/forum-activity-data.json
             forum-poll.log
             forum-silent-multi.log
           if-no-files-found: warn

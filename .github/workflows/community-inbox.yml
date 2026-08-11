@@ -2,6 +2,7 @@
 # Triggers: cron: 17 5 * * * + workflow_dispatch | Secrets: GITHUB_TOKEN only
 # Generates reports/community-inbox.md — unified daily view of open issues,
 # PRs and unanswered forum posts. Read-only against GitHub.
+# P111: npm ci + forum-poll artifact → forum-activity-data bridge
 
 name: 📥 Community Inbox
 
@@ -13,6 +14,7 @@ on:
 
 permissions:
   contents: write
+  actions: read
 
 concurrency:
   group: community-inbox
@@ -41,6 +43,57 @@ jobs:
         uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
         with:
           node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+
+      - name: 📦 Install deps
+        run: |
+          if [ -f package.json ]; then
+            npm ci --prefer-offline --no-audit || npm install --no-audit
+          else
+            echo "No package.json"
+          fi
+
+      - name: 📥 Download latest forum-poll artifact
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          mkdir -p .github/state/forum
+          if ! command -v gh >/dev/null 2>&1; then
+            echo "gh CLI unavailable"
+            exit 0
+          fi
+          RUN_ID=$(gh run list --workflow=forum-poll.yml --branch=master --status=success --limit 1 --json databaseId -q '.[0].databaseId' || true)
+          if [ -z "$RUN_ID" ]; then
+            echo "No successful forum-poll run found"
+            exit 0
+          fi
+          gh run download "$RUN_ID" -n forum-poll -D .github/state/forum-poll-art || exit 0
+          if [ -d .github/state/forum-poll-art/.github/state/forum ]; then
+            cp -a .github/state/forum-poll-art/.github/state/forum/. .github/state/forum/ || true
+          elif [ -d .github/state/forum-poll-art/forum ]; then
+            cp -a .github/state/forum-poll-art/forum/. .github/state/forum/ || true
+          elif [ -d .github/state/forum-poll-art ]; then
+            cp -a .github/state/forum-poll-art/. .github/state/forum/ || true
+          fi
+          if [ -f .github/state/forum/latest.json ] && [ ! -f .github/state/forum-activity-data.json ]; then
+            node -e "
+              const fs=require('fs');
+              const latest=JSON.parse(fs.readFileSync('.github/state/forum/latest.json','utf8'));
+              const bridge={
+                source:'forum-poll-artifact',
+                topicId: latest.topicId,
+                timestamp: latest.timestamp || new Date().toISOString(),
+                recentPosts: (latest.posts||[]).map(p=>({
+                  id:p.postId||p.id, postNumber:p.postNumber, username:p.username,
+                  createdAt:p.createdAt||p.created_at, excerpt:p.excerpt, fps:p.fps||[]
+                })),
+                newPosts: latest.newPosts||[], allFPs: latest.allFPs||[], newFPs: latest.newFPs||[]
+              };
+              fs.writeFileSync('.github/state/forum-activity-data.json', JSON.stringify(bridge,null,2));
+              console.log('bridged forum-activity-data.json posts=', bridge.recentPosts.length);
+            " || true
+          fi
 
       - name: 📥 Build digest
         env:
