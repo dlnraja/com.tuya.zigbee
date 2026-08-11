@@ -53,6 +53,9 @@ concurrency:
   group: delete-johan-comments
   cancel-in-progress: true
 
+permissions:
+  contents: read
+
 jobs:
   delete:
     runs-on: ubuntu-latest

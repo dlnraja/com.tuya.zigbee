@@ -20,8 +20,18 @@ on:
     branches: [master, main]
     paths:
       - 'drivers/*/driver.compose.json'
+      - 'app.json'
+      - 'package.json'
+      - '.homeychangelog.json'
+      - 'README.md'
       - '.github/scripts/generate-device-finder.js'
       - '.github/scripts/device-finder-*.js'
+      - '.github/scripts/generate-dashboards-page.js'
+      - '.github/scripts/generate-wifi-page.js'
+      - '.github/scripts/generate-inbox-page.js'
+      - '.github/scripts/generate-readme.js'
+      - '.github/pages-build/**'
+      - '.github/workflows/deploy-pages.yml'
 
 permissions:
   contents: read

@@ -59,6 +59,12 @@ on:
       - 'lib/tuya/fingerprints.json'
       - 'package.json'
 
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+  actions: read
+
 # Cancel previous runs to save resources
 concurrency:
   group: continuous-flow
