@@ -1,6 +1,13 @@
 {
   "changelog": [
     {
+      "version": "9.0.455",
+      "date": "2026-08-11",
+      "channel": "test",
+      "en": "Improved device wake/handshake and interview recovery; added contact sensor fingerprints from incomplete-source cross-check.",
+      "fr": "Amélioration handshake/wake device et récupération interview; empreintes contact depuis cross-check sources incomplètes."
+    },
+    {
       "version": "9.0.453",
       "date": "2026-08-11",
       "channel": "test",
@@ -1757,5 +1764,8 @@
   },
   "9.0.454": {
     "en": "P102 I/O facade publish fix: irrigation Flow cards use implicit device args (Homey validate)."
+  },
+  "9.0.455": {
+    "en": "Improved device wake/handshake and interview recovery; added contact sensor fingerprints from incomplete-source cross-check."
   }
 }
