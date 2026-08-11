@@ -1,6 +1,13 @@
 {
   "changelog": [
     {
+      "version": "9.0.476",
+      "date": "2026-08-11",
+      "channel": "test",
+      "en": "Improved cross-project reimpl: quirk battery DPs, IAS siren I/O, energy jump guard on all bases, sleepy wake battery probe.",
+      "fr": "Reimpl multi-projets amelioree: DPs batterie quirks, I/O sirene IAS, garde saut energie sur toutes bases, probe batterie au reveil."
+    },
+    {
       "version": "9.0.475",
       "date": "2026-08-11",
       "channel": "test",

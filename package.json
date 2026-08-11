@@ -133,6 +133,7 @@
     "enrich:multi-source:apply": "node tools/ci/multi-source-enrich-orchestrator.js --apply",
     "fix:phantom-battery": "node tools/ci/strip-phantom-battery-mains.js",
     "fix:phantom-battery:apply": "node tools/ci/strip-phantom-battery-mains.js --apply",
+    "check:cross-project-reimpl": "node tools/ci/cross-project-better-reimpl.js",
     "enrich:infer": "node tools/ci/infer-enrich-from-incomplete.js",
     "enrich:infer:apply": "node tools/ci/infer-enrich-from-incomplete.js --apply",
     "check:gmail-crashes": "node tools/ci/gmail-crash-pattern-gate.js",

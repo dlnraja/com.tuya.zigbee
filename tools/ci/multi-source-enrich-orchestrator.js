@@ -148,6 +148,8 @@ phase('10-case-variants', () => {
   return runNode('tools/ci/ensure-case-variants.js', args, true);
 });
 
+phase('10b-cross-project-reimpl-gate', () => runNode('tools/ci/cross-project-better-reimpl.js', [], true));
+
 // Aggregate source coverage from state files
 phase('11-coverage-snapshot', () => {
   const snapshot = {};
