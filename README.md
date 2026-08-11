@@ -10,7 +10,6 @@
 [![SDK](https://img.shields.io/badge/SDK-3-orange)](https://apps.developer.homey.app/)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
-A community-driven Homey app that brings **local control** to Tuya Zigbee devices — no cloud, no internet needed. Covers switches, sensors, lights, thermostats, covers, locks and more across **430 drivers** and **4,354 unique device fingerprints** (16,929 including case variants for bulletproof pairing).
 A community-driven Homey app that brings **local control** to Tuya Zigbee devices — no cloud, no internet needed. Covers switches, sensors, lights, thermostats, covers, locks and more across **430 drivers** and **4,354 unique device fingerprints** (16,925 including case variants for bulletproof pairing).
 
 **Key features:**
@@ -38,11 +37,7 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.456 |
-| **Drivers** | 430 (380 Zigbee + 50 WiFi) |
-| **Unique Fingerprints** | 4,354 |
-| **Pairing Variants** | 16,929 (4 case combos per fingerprint) |
-| **App Version** | v9.0.457 |
+| **App Version** | v9.0.459 |
 | **Drivers** | 430 (380 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,354 |
 | **Pairing Variants** | 16,925 (4 case combos per fingerprint) |
@@ -111,7 +106,8 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 
 | Version | Changes |
 |---------|---------|
-| **v9.0.456** | Improved device wake/handshake and interview recovery; added contact sensor fingerprints from incomplete-source cross-check. |
+| **v9.0.459** | Historical restore: MCU magic packet registry, EventDedup on capability updates, flow runListener guards, safe-timers on button mixins. |
+| **v9.0.458** | Historical restore: MCU magic packet registry, EventDedup on capability updates, flow runListener guards, safe-timers on button mixins. |
 | **v9.0.457** | Universal flow-card heuristics, driver-mapping repair, DeviceIO on legacy Tuya/light bases, WiFi I/O channel, missing flow compose for 4 … |
 | **v9.0.456** | Universal flow-card heuristics, driver-mapping repair, DeviceIO on legacy Tuya/light bases, WiFi I/O channel, missing flow compose for 4 … |
 | **v9.0.455** | Improved device wake/handshake and interview recovery; added contact sensor fingerprints from incomplete-source cross-check. |
@@ -122,9 +118,6 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 | **v9.0.450** |  |
 | **v9.0.449** | P101: #439 sacred-couple lot2 rehomes + global getDeviceById/catch harden. |
 | **v9.0.448** | Crash hardening from , read-only error guard, getDiscoveries safe call, crash-pattern CI gate. |
-| **v9.0.447** | Crash hardening from Gmail/diag logs: flow-card polyfill, read-only error guard, getDiscoveries safe call, crash-pattern CI gate. |
-| **v9.0.446** | L99 battery normalize batch + verify fail-closed on Athom processing_failed. |
-| **v9.0.445** | L99 battery normalize batch + verify fail-closed on Athom processing_failed. |
 
 <!-- CHANGELOG_END -->
 
