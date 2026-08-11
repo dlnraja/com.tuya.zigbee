@@ -1857,5 +1857,8 @@
   },
   "9.0.465": {
     "en": "v9.0.464: feat(P108): silent forum enrich, contact flows, RF coexistence, anti AI-paste (v9.0.464)"
+  },
+  "9.0.467": {
+    "en": "v9.0.466: fix: remove rebase conflict markers from version manifests (v9.0.466)"
   }
 }
