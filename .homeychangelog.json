@@ -1,6 +1,12 @@
 {
   "changelog": [
     {
+      "version": "5.12.67",
+      "date": "2026-08-11",
+      "channel": "stable",
+      "en": "Reliability: improved device wake/handshake recovery and interview compensation."
+    },
+    {
       "version": "5.12.66",
       "date": "2026-08-11",
       "channel": "stable",
@@ -1204,5 +1210,8 @@
   },
   "5.12.66": {
     "en": "P102 reliability republish after Athom processing_failed on 5.12.65 (socket hang up)."
+  },
+  "5.12.67": {
+    "en": "Reliability: improved device wake/handshake recovery and interview compensation."
   }
 }
