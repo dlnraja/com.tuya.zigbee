@@ -1,6 +1,13 @@
 {
   "changelog": [
     {
+      "version": "9.0.472",
+      "date": "2026-08-11",
+      "channel": "test",
+      "en": "Smoke sensors on DeviceIO/IAS path; stronger Tuya cluster compensation; publish+diag monitoring relaunched.",
+      "fr": "Detecteurs fumee sur chemin DeviceIO/IAS; compensation cluster Tuya renforcee; publish+diag relances."
+    },
+    {
       "version": "9.0.471",
       "date": "2026-08-11",
       "channel": "test",

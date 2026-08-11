@@ -1,6 +1,6 @@
 {
-  "updated": "2026-08-11T00:26:39.182Z",
-  "note": "Legacy bare ZigBeeDevice drivers still migrating to TuyaZigbeeDevice/Unified*. New drivers MUST NOT be added here.",
+  "updated": "2026-08-11T03:50:00.000Z",
+  "note": "Legacy bare ZigBeeDevice drivers still migrating to TuyaZigbeeDevice/Unified*. New drivers MUST NOT be added here. P113: smoke_sensor + smoke_sensor3 migrated off allowlist.",
   "drivers": [
     "blaster_remote",
     "curtain_module",
@@ -20,8 +20,6 @@
     "smartPlug_DinRail",
     "smart_garden_irrigation_control",
     "smart_switch",
-    "smoke_sensor",
-    "smoke_sensor3",
     "socket_power_strip_four",
     "socket_power_strip_four_three",
     "socket_power_strip_four_two",
