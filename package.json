@@ -155,7 +155,9 @@
     "check:forum-ai-paste": "node tools/ci/forum-ai-paste-gate.js --scan-defaults",
     "check:flow-dups": "node tools/ci/flow-card-dup-gate.js",
     "check:bare-zigbee:update": "node tools/ci/lint-bare-zigbee-device.js --update-baseline",
-    "enrich:quirks": "node scripts/maintenance/build-protocol-quirk-table.js"
+    "enrich:quirks": "node scripts/maintenance/build-protocol-quirk-table.js",
+    "triage:bot-issues": "node tools/ci/auto-bot-issue-triage.js",
+    "triage:bot-issues:dry": "node tools/ci/auto-bot-issue-triage.js --dry-run"
   },
   "keywords": [
     "homey",

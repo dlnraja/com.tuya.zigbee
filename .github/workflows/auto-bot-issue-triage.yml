@@ -1,0 +1,110 @@
+# P119 — Auto Bot Issue Triage & Close
+# Treats [Auto]/auto-scan/github-actions issues: extract FPs → state → comment → close.
+# Human issues are NEVER closed by this workflow.
+
+name: Auto Bot Issue Triage
+
+on:
+  schedule:
+    # Daily 04:45 UTC — after blakadder (04:15), before community-inbox (05:17)
+    - cron: '45 4 * * *'
+  issues:
+    types: [opened, labeled, reopened]
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Dry run (no comment/close)'
+        type: boolean
+        default: false
+      issue:
+        description: 'Optional single issue number'
+        type: string
+        default: ''
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: auto-bot-issue-triage
+  cancel-in-progress: false
+
+defaults:
+  run:
+    shell: bash
+
+env:
+  NODE_VERSION: '22'
+
+jobs:
+  triage:
+    name: Treat & close bot issues
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    # Skip human issues on event triggers; always run on schedule/dispatch
+    if: |
+      github.event_name != 'issues' ||
+      startsWith(github.event.issue.title, '[Auto]') ||
+      contains(join(github.event.issue.labels.*.name, ','), 'auto-scan') ||
+      github.event.issue.user.login == 'github-actions[bot]'
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+
+      - run: npm ci --prefer-offline --no-audit || npm install
+
+      - name: Triage bot issues
+        id: triage
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+          ALLOW_BOT_ISSUE_CLOSE: 'true'
+          DRY_RUN: ${{ inputs.dry_run || 'false' }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: |
+          ARGS=()
+          if [ "${{ inputs.dry_run }}" = "true" ]; then ARGS+=(--dry-run); fi
+          ISSUE="${{ inputs.issue }}"
+          if [ -n "$ISSUE" ]; then ARGS+=(--issue="$ISSUE"); fi
+          # On issues event, prefer the triggering issue
+          if [ "${{ github.event_name }}" = "issues" ] && [ -z "$ISSUE" ]; then
+            ARGS+=(--issue="${{ github.event.issue.number }}")
+          fi
+          node tools/ci/auto-bot-issue-triage.js "${ARGS[@]}"
+
+      - name: Commit candidate state
+        continue-on-error: true
+        if: always() && (inputs.dry_run != true)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .github/state/bot-auto-scan-candidates.json .github/state/bot-issue-triage-report.json || true
+          if git diff --cached --quiet; then
+            echo "No state changes"
+          else
+            git pull --rebase origin master || true
+            git commit -m "auto: bot issue triage state [skip ci]"
+            bash scripts/ci/verified-git-push.sh master
+          fi
+
+      - name: Summary
+        if: always()
+        run: |
+          echo "## Auto Bot Issue Triage" >> "$GITHUB_STEP_SUMMARY"
+          if [ -f .github/state/bot-issue-triage-report.json ]; then
+            node -e "
+              const r=require('./.github/state/bot-issue-triage-report.json');
+              console.log('- Scanned:', r.scanned);
+              console.log('- Bot matched:', r.botMatched);
+              console.log('- Closed:', (r.closed||[]).join(', ')||'(none)');
+              console.log('- Missing mfrs queued:', (require('./.github/state/bot-auto-scan-candidates.json').missingMfrs||[]).length);
+            " >> "$GITHUB_STEP_SUMMARY" 2>/dev/null || true
+          fi

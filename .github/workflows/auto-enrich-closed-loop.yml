@@ -154,6 +154,27 @@ jobs:
 
       # Defense in depth — also run outside the loop script so a partial
       # loop still leaves manifests CI-safe before any follow-up jobs.
+      - name: "🤖 Bot issue triage (P119)"
+        if: always()
+        continue-on-error: true
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+          ALLOW_BOT_ISSUE_CLOSE: 'true'
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          DRY_RUN: ${{ inputs.dry_run || 'false' }}
+        run: |
+          if [ "${{ inputs.dry_run }}" = "true" ]; then
+            node tools/ci/auto-bot-issue-triage.js --dry-run || true
+          else
+            node tools/ci/auto-bot-issue-triage.js || true
+          fi
+          if [ -f .github/state/bot-auto-scan-candidates.json ]; then
+            echo "### Bot auto-scan candidates" >> $GITHUB_STEP_SUMMARY
+            node -e "const j=require('./.github/state/bot-auto-scan-candidates.json'); console.log('- missingMfrs:', (j.missingMfrs||[]).length);" >> $GITHUB_STEP_SUMMARY
+          fi
+
       - name: "🔤 Ensure case variants (P99)"
         if: always() && inputs.dry_run != true
         run: node tools/ci/ensure-case-variants.js --apply

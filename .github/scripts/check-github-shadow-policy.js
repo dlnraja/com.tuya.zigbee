@@ -67,6 +67,10 @@ assert.strictEqual(policy.apiMutationAllowed('/repos/JohanBendz/com.tuya.zigbee/
 assert.strictEqual(policy.apiMutationAllowed('/repos/JohanBendz/com.tuya.zigbee/pulls/1/reviews','POST',{event:'COMMENT'}),false);
 assert.strictEqual(policy.apiMutationAllowed('/repos/JohanBendz/com.tuya.zigbee/pulls/1/merge','PUT',{}),false);
 assert.strictEqual(policy.apiMutationAllowed('/repos/dlnraja/com.tuya.zigbee/issues/1','PATCH',{state:'closed'}),false);
+process.env.ALLOW_BOT_ISSUE_CLOSE = 'true';
+assert.strictEqual(policy.apiMutationAllowed('/repos/dlnraja/com.tuya.zigbee/issues/1','PATCH',{state:'closed'}),true);
+assert.strictEqual(policy.apiMutationAllowed('/repos/JohanBendz/com.tuya.zigbee/issues/1','PATCH',{state:'closed'}),false);
+delete process.env.ALLOW_BOT_ISSUE_CLOSE;
 assert.strictEqual(policy.apiMutationAllowed('/repos/dlnraja/com.tuya.zigbee/pulls/1/merge','PUT',{}),true);
 assert.strictEqual(policy.apiMutationAllowed('/repos/dlnraja/com.tuya.zigbee/issues/1/comments','POST',{body:'x'}),true);
 

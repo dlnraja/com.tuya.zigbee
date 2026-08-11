@@ -1,5 +1,5 @@
 # Universal Tuya Zigbee - Batch Analyze & Respond
-# Responses and labels remain available on dlnraja. State transitions are manual.
+# P119: daily schedule + bot triage first. Human issue closes stay manual (shadow).
 # JohanBendz is a strict read-only evidence source.
 
 name: "Batch Analyze & Respond"
@@ -10,6 +10,9 @@ name: "Batch Analyze & Respond"
 
 
 on:
+  schedule:
+    # Daily 05:45 UTC — after bot-issue triage (04:45) and community-inbox (05:17)
+    - cron: '45 5 * * *'
   workflow_dispatch:
     inputs:
       dry_run:
@@ -74,6 +77,23 @@ jobs:
           echo "fps=$F" >> $GITHUB_OUTPUT
           echo "App v$V — $D drivers — $F fingerprints"
 
+      - name: "Bot/[Auto] treat & close first"
+        id: bot_triage
+        continue-on-error: true
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+          ALLOW_BOT_ISSUE_CLOSE: 'true'
+          DRY_RUN: ${{ inputs.dry_run || 'false' }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: |
+          if [ "${{ inputs.dry_run }}" = "true" ]; then
+            node tools/ci/auto-bot-issue-triage.js --dry-run
+          else
+            node tools/ci/auto-bot-issue-triage.js
+          fi
+
       - name: "Process dlnraja issues & PRs"
         id: own_repo
         continue-on-error: true
@@ -97,6 +117,8 @@ jobs:
           INCLUDE_CLOSED: ${{ inputs.include_closed || 'false' }}
           FORCE_REPROCESS: ${{ inputs.force_reprocess || 'false' }}
           REPOS: "dlnraja/com.tuya.zigbee"
+          # Bot closes only via auto-bot-issue-triage; keep manager shadow-safe for humans
+          ALLOW_BOT_ISSUE_CLOSE: 'false'
         run: node .github/scripts/github-issue-manager.js
 
       - name: "Process JohanBendz issues & PRs"

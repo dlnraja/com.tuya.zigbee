@@ -122,7 +122,10 @@ All orchestrated via `tools/ci/mega-crawler.js` + GHA `mega-crawl.yml` (daily 02
 - Blakadder: **daily 04:00 UTC** (`blakadder-fetch.yml`)
 - Gmail: **daily** (`gmail-diagnostics.yml`)
 - Recurrent orchestrator: **daily 03:30 UTC** (`recurrent-orchestrator.yml`)
-- Stale issues: **weekly** (`stale.yml`)
+- Stale issues: **weekly** (`stale.yml`) — mark only, never close
+- Bot/[Auto] issues: **daily 04:45 UTC** (`auto-bot-issue-triage.yml`) — treat FPs → close
+- Batch analyze & respond: **daily 05:45 UTC** (`auto-close-supported.yml`) — labels/comments; human closes stay manual
+- Monthly Z2M scan: **1st 00:43 UTC** (`monthly-scan.yml`) — upsert auto-scan issue then immediate bot triage/close
 
 ## When Asked to Add a New Source
 

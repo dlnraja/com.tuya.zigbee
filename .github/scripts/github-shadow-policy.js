@@ -2,8 +2,10 @@
 
 const PROTECTED_UPSTREAM = 'johanbendz/com.tuya.zigbee';
 const OWN_REPO = 'dlnraja/com.tuya.zigbee';
-// Own-repository close/reopen transitions remain manual. Verified PR merges on
-// dlnraja stay available; every merge on the protected upstream is still denied.
+// Own-repository close/reopen stays manual for human issues/PRs.
+// P119: bot/[Auto] closes are allowed only when ALLOW_BOT_ISSUE_CLOSE=true
+// (see tools/ci/auto-bot-issue-triage.js). Verified PR merges on dlnraja stay
+// available; every merge on the protected upstream is still denied.
 const FORBIDDEN_STATE_ACTIONS = new Set(['close', 'reopen']);
 
 function normalizeRepo(value = '') {
@@ -40,7 +42,18 @@ function mutationAllowed(repoOrTarget, action = 'write') {
   const repo = repoFromTarget(repoOrTarget);
   if (isProtectedUpstream(repo)) return false;
   if (process.env.READ_ONLY_SHADOW === 'true' && repo !== OWN_REPO) return false;
-  if (FORBIDDEN_STATE_ACTIONS.has(String(action).toLowerCase())) return false;
+  const act = String(action).toLowerCase();
+  if (FORBIDDEN_STATE_ACTIONS.has(act)) {
+    // P119 — explicit bot-issue close gate (own repo only; never upstream)
+    if (
+      act === 'close'
+      && repo === OWN_REPO
+      && process.env.ALLOW_BOT_ISSUE_CLOSE === 'true'
+    ) {
+      return true;
+    }
+    return false;
+  }
   return true;
 }
 
