@@ -1,6 +1,13 @@
 {
   "changelog": [
     {
+      "version": "9.0.458",
+      "date": "2026-08-11",
+      "channel": "test",
+      "en": "Historical restore: MCU magic packet registry, EventDedup on capability updates, flow runListener guards, safe-timers on button mixins.",
+      "fr": "Restauration historique: registre magic MCU, EventDedup sur capabilities, garde runListener Flow, safe-timers mixins boutons."
+    },
+    {
       "version": "9.0.456",
       "date": "2026-08-11",
       "channel": "test",
@@ -1780,5 +1787,8 @@
   },
   "9.0.457": {
     "en": "Universal flow-card heuristics, driver-mapping repair, DeviceIO on legacy Tuya/light bases, WiFi I/O channel, missing flow compose for 4 drivers."
+  },
+  "9.0.458": {
+    "en": "Historical restore: MCU magic packet registry, EventDedup on capability updates, flow runListener guards, safe-timers on button mixins."
   }
 }
