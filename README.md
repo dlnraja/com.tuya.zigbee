@@ -106,7 +106,7 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 
 | Version | Changes |
 |---------|---------|
-| **v9.0.461** | Max multi-method I/O coverage: DP/ZCL/IAS/raw fallbacks, quirk-guided init for more device families, expanded magic packet profiles. |
+| **v9.0.461** | Integral cross-version enrich: SmartDivisor in EF00, IASZoneEnhanced+L14, sleepy passive force, MCUFormatDatabase negotiate. |
 | **v9.0.460** | Max multi-method I/O coverage: DP/ZCL/IAS/raw fallbacks, quirk-guided init for more device families, expanded magic packet profiles. |
 | **v9.0.459** | Max multi-method I/O coverage: DP/ZCL/IAS/raw fallbacks, quirk-guided init for more device families, expanded magic packet profiles. |
 | **v9.0.458** | Historical restore: MCU magic packet registry, EventDedup on capability updates, flow runListener guards, safe-timers on button mixins. |
