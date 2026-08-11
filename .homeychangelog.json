@@ -1,6 +1,20 @@
 {
   "changelog": [
     {
+      "version": "9.0.460",
+      "date": "2026-08-11",
+      "channel": "test",
+      "en": "Max multi-method I/O coverage: DP/ZCL/IAS/raw fallbacks, quirk-guided init for more device families, expanded magic packet profiles.",
+      "fr": "Couverture I/O multi-methodes max: fallbacks DP/ZCL/IAS/raw, init quirk elargi, profils magic packet etendus."
+    },
+    {
+      "version": "9.0.459",
+      "date": "2026-08-11",
+      "channel": "test",
+      "en": "Max multi-method I/O coverage: DP/ZCL/IAS/raw fallbacks, quirk-guided init for more device families, expanded magic packet profiles.",
+      "fr": "Couverture I/O multi-methodes max: fallbacks DP/ZCL/IAS/raw, init quirk elargi, profils magic packet etendus."
+    },
+    {
       "version": "9.0.458",
       "date": "2026-08-11",
       "channel": "test",
@@ -1792,6 +1806,9 @@
     "en": "Historical restore: MCU magic packet registry, EventDedup on capability updates, flow runListener guards, safe-timers on button mixins."
   },
   "9.0.459": {
-    "en": "Historical restore: MCU magic packet registry, EventDedup on capability updates, flow runListener guards, safe-timers on button mixins."
+    "en": "Max multi-method I/O coverage: DP/ZCL/IAS/raw fallbacks, quirk-guided init for more device families, expanded magic packet profiles."
+  },
+  "9.0.460": {
+    "en": "Max multi-method I/O coverage: DP/ZCL/IAS/raw fallbacks, quirk-guided init for more device families, expanded magic packet profiles."
   }
 }
