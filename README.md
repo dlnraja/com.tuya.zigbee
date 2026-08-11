@@ -37,8 +37,7 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.475 |
-| **App Version** | v9.0.476 |
+| **App Version** | v9.0.477 |
 | **Drivers** | 430 (380 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,365 |
 | **Pairing Variants** | 16,945 (4 case combos per fingerprint) |
@@ -107,8 +106,8 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.477** | v9.0.476: v9.0.476: 430 drivers, 3832 FPs [skip ci] |
 | **v9.0.475** | v9.0.474: fix(P114): multi-source enrich automation + DeviceIO RX/TX + FP reinforce (v9.0.474) |
-| **v9.0.476** | v9.0.475: fix(P115): ghost button markAppCommand + strip phantom battery Energy tiles (v9.0.475) |
 | **v9.0.473** | Stability improvements and Homey test publication retry. |
 | **v9.0.471** | v9.0.470: fix(P111): harden , timers, forum inbox bridge (v9.0.470) |
 | **v9.0.469** | v9.0.468: fix(P110): audit follow-up — time sync, MCU helper, battery DP, climate FP rehome (v9.0.468) |
@@ -119,7 +118,6 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 | **v9.0.461** | Integral cross-version enrich: SmartDivisor in EF00, IASZoneEnhanced+L14, sleepy passive force, MCUFormatDatabase negotiate. |
 | **v9.0.460** | Max multi-method I/O coverage: DP/ZCL/IAS/raw fallbacks, quirk-guided init for more device families, expanded magic packet profiles. |
 | **v9.0.459** | Max multi-method I/O coverage: DP/ZCL/IAS/raw fallbacks, quirk-guided init for more device families, expanded magic packet profiles. |
-| **v9.0.458** | Historical restore: MCU magic packet registry, EventDedup on capability updates, flow runListener guards, safe-timers on button mixins. |
 
 <!-- CHANGELOG_END -->
 
