@@ -114,6 +114,17 @@ jobs:
             echo '```' >> $GITHUB_STEP_SUMMARY
           fi
 
+      - name: "🔍 Infer-enrich from incomplete"
+        if: always()
+        continue-on-error: true
+        run: |
+          if [ "${{ inputs.dry_run }}" = "true" ]; then
+            node tools/ci/infer-enrich-from-incomplete.js --dry-run || true
+          else
+            node tools/ci/infer-enrich-from-incomplete.js --dry-run || true
+            node tools/ci/infer-enrich-from-incomplete.js --apply || true
+          fi
+
       # Defense in depth — also run outside the loop script so a partial
       # loop still leaves manifests CI-safe before any follow-up jobs.
       - name: "🔤 Ensure case variants (P99)"
@@ -128,6 +139,55 @@ jobs:
         if: always()
         run: node tools/ci/anti-bot-regression-gate.js
 
+      - name: "🛡️ Regression lessons gate (MUST-KEEP fatals)"
+        if: always()
+        run: node tools/ci/regression-lessons-gate.js
+
+      # READ-ONLY scan of cloud Smart Life thread (never posts/replies)
+      - name: "Forum 146735 READ-ONLY silent scan"
+        if: always()
+        continue-on-error: true
+        timeout-minutes: 8
+        env:
+          SMART_FETCH_READER_FALLBACK: "1"
+          FIRECRAWL_API_KEY: ${{ secrets.FIRECRAWL_API_KEY }}
+        run: |
+          if [ ! -f tools/ci/forum-fetch-146735.js ]; then
+            echo "forum-fetch-146735.js missing — skip"
+            exit 0
+          fi
+          node tools/ci/forum-fetch-146735.js || echo "146735 fetch failed (non-blocking)"
+          node tools/ci/apply-forum-146735-silent.js || echo "146735 apply dry-run failed (non-blocking)"
+
+      - name: "📧 Diag protocol gate (crash + sacred-couple cross-ref + dry apply)"
+        if: always()
+        continue-on-error: true
+        timeout-minutes: 8
+        run: |
+          npm run check:diag-protocol || true
+          node .github/scripts/privacy-redactor.js \
+            .github/state/gmail-crash-patterns.json \
+            .github/state/gmail-unique-fps.json \
+            .github/state/gmail-fps-crossref-v2.json \
+            .github/state/sacred-couple-dry-gate.json || true
+
+      - name: "🕷️ Light Z2M/ZHA sync (best-effort, OOM-safe)"
+        if: always() && inputs.skip_crawl != true
+        continue-on-error: true
+        timeout-minutes: 8
+        env:
+          NODE_OPTIONS: "--max-old-space-size=2048"
+          GH_PAT: ${{ secrets.GH_PAT }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          FIRECRAWL_API_KEY: ${{ secrets.FIRECRAWL_API_KEY }}
+          SMART_FETCH_READER_FALLBACK: "1"
+        run: |
+          if [ ! -f tools/ci/mega-crawler.js ]; then
+            echo "mega-crawler missing — skip light sync"
+            exit 0
+          fi
+          timeout 200 npm run sync:z2m-zha:light || echo "z2m/zha light sync skipped/failed (non-blocking)"
+
       - name: 📦 Upload artifacts
         if: always()
         uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5.0.0
@@ -135,6 +195,9 @@ jobs:
           name: auto-enrich-loop
           path: |
             .github/state/auto-enrich/
+            .github/state/gmail-crash-patterns.json
+            .github/state/gmail-fps-crossref-v2.json
+            .github/state/sacred-couple-dry-gate.json
             auto-enrich.log
           if-no-files-found: warn
           retention-days: 14

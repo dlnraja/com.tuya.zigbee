@@ -112,6 +112,40 @@
     },
     "button": {
       "title": "Knap"
+    },
+    "alarm_battery": {
+      "title": "Lavt batteri"
+    },
+    "alarm_sos": {
+      "title": "SOS"
+    },
+    "alarm_emergency": {
+      "title": "Nødsituation"
+    },
+    "alarm_siren": {
+      "title": "Sirene"
+    },
+    "text_battery_status": {
+      "title": "Batteristatus"
+    },
+    "measure_battery_health": {
+      "title": "Batterisundhed",
+      "units": "%"
+    },
+    "button_open": {
+      "title": "Åbn"
+    },
+    "button_close": {
+      "title": "Luk"
+    },
+    "button_stop": {
+      "title": "Stop"
+    },
+    "button_dim_up": {
+      "title": "Lysere"
+    },
+    "button_dim_down": {
+      "title": "Dæmp"
     }
   },
   "settings": {
@@ -271,6 +305,112 @@
     "cancel": "Annuller",
     "ok": "OK",
     "delete": "Slet",
-    "edit": "Rediger"
+    "edit": "Rediger",
+    "retry": "Prøv igen",
+    "close": "Luk",
+    "yes": "Ja",
+    "no": "Nej",
+    "loading": "Indlæser…",
+    "unavailable": "Utilgængelig",
+    "online": "Online",
+    "offline": "Offline",
+    "unknown": "Ukendt",
+    "enabled": "Aktiveret",
+    "disabled": "Deaktiveret"
+  },
+  "errors": {
+    "unknown": "Der opstod en ukendt fejl",
+    "command_failed": "Kommando mislykkedes. Enheden svarede ikke eller afviste anmodningen.",
+    "unavailable": "Denne funktion er i øjeblikket utilgængelig",
+    "device_unavailable": "Enheden er utilgængelig. Tjek strøm og Zigbee-rækkevidde.",
+    "timeout": "Enheden svarede ikke i tide",
+    "not_ready": "Enheden er ikke klar endnu. Prøv igen om et øjeblik.",
+    "pairing_failed": "Parring mislykkedes. Nulstil enheden og prøv igen.",
+    "invalid_setting": "Ugyldig indstillingsværdi",
+    "battery_read_failed": "Kunne ikke læse batteristatus"
+  },
+  "warnings": {
+    "battery_low": "Lavt batteri — udskift snart",
+    "battery_critical": "Kritisk batteri — udskift straks",
+    "device_unavailable": "Enhed utilgængelig",
+    "device_offline": "Enheden ser ud til at være offline",
+    "weak_signal": "Svagt Zigbee-signal — gå tættere på en router",
+    "pairing_incomplete": "Parring kan være ufuldstændig — åbn enheden igen eller par på ny"
+  },
+  "pairing": {
+    "title": "Parring",
+    "instruction_generic": "Sæt enheden i parringstilstand, og vent til Homey finder den.",
+    "instruction_battery": "Indsæt friske batterier, og hold reset-/parringsknappen, indtil LED'en blinker.",
+    "instruction_mains": "Tænd enheden, og tryk på reset-/parringsknappen, indtil LED'en blinker.",
+    "instruction_sos": "Hold SOS-knappen inde, indtil LED'en blinker hurtigt.",
+    "wait_interview": "Interviewer enheden… dette kan tage op til et minut.",
+    "success": "Enheden blev parret",
+    "failed": "Parring mislykkedes",
+    "timeout": "Parring fik timeout. Nulstil enheden og prøv igen.",
+    "tip_router": "Placer en netdrevet Zigbee-router i nærheden for mere pålidelig parring."
+  },
+  "diagnostics": {
+    "title": "Diagnostik",
+    "collecting": "Indsamler diagnostik…",
+    "export_hint": "Del denne diagnostik, når du rapporterer et problem.",
+    "last_seen": "Sidst set",
+    "signal_strength": "Signalstyrke",
+    "battery_voltage": "Batterispænding",
+    "battery_level": "Batteriniveau",
+    "no_data": "Ingen diagnostikdata tilgængelige endnu",
+    "manufacturer": "Producent",
+    "product_id": "Produkt-ID",
+    "unavailable": "Diagnostik utilgængelig"
+  },
+  "buttons": {
+    "pressed": "Knap trykket",
+    "single_press": "Enkelt tryk",
+    "double_press": "Dobbelttryk",
+    "long_press": "Langt tryk",
+    "held": "Knap holdt",
+    "released": "Knap slippet",
+    "gang": "Kanal __n__",
+    "physical": "Fysisk knap",
+    "virtual": "Virtuel knap",
+    "scene": "Sceneknap"
+  },
+  "sos": {
+    "title": "SOS / Nødsituation",
+    "triggered": "SOS udløst",
+    "cleared": "SOS nulstillet",
+    "emergency_pressed": "Nødknap trykket",
+    "help": "Brug SOS-flows til panik- eller hjælpealarmer fra nødknapper."
+  },
+  "scenes": {
+    "title": "Scener",
+    "activated": "Scene aktiveret",
+    "recalled": "Scene hentet",
+    "help": "Sceneknapper kan udløse Homey Flows uden at skifte et relæ."
+  },
+  "flow": {
+    "battery_low": {
+      "title": "Batteriet blev lavt"
+    },
+    "battery_critical": {
+      "title": "Batteriet blev kritisk"
+    },
+    "button_pressed": {
+      "title": "En knap blev trykket"
+    },
+    "button_long_press": {
+      "title": "En knap blev langt trykket"
+    },
+    "sos_triggered": {
+      "title": "SOS / nødsituation blev udløst"
+    },
+    "scene_activated": {
+      "title": "En scene blev aktiveret"
+    },
+    "device_unavailable": {
+      "title": "Enheden blev utilgængelig"
+    },
+    "device_available": {
+      "title": "Enheden er tilgængelig igen"
+    }
   }
 }

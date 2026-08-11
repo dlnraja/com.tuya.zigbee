@@ -1,23 +1,23 @@
 {
   "capabilities": {
     "measure_battery": {
-      "title": "Battery",
+      "title": "Baterie",
       "units": "%"
     },
     "alarm_generic": {
       "title": "Alarm"
     },
     "alarm_motion": {
-      "title": "Motion"
+      "title": "Pohyb"
     },
     "alarm_contact": {
-      "title": "Contact"
+      "title": "Kontakt"
     },
     "alarm_water": {
-      "title": "Water leak"
+      "title": "Únik vody"
     },
     "alarm_smoke": {
-      "title": "Smoke"
+      "title": "Kouř"
     },
     "alarm_co": {
       "title": "CO"
@@ -26,40 +26,40 @@
       "title": "CO₂"
     },
     "alarm_tamper": {
-      "title": "Tamper"
+      "title": "Sabotáž"
     },
     "alarm_vibration": {
-      "title": "Vibration"
+      "title": "Vibrace"
     },
     "onoff": {
-      "title": "Power"
+      "title": "Napájení"
     },
     "dim": {
-      "title": "Brightness",
+      "title": "Jas",
       "units": "%"
     },
     "light_hue": {
-      "title": "Hue"
+      "title": "Odstín"
     },
     "light_saturation": {
-      "title": "Saturation"
+      "title": "Sytost"
     },
     "light_temperature": {
-      "title": "Temperature"
+      "title": "Teplota"
     },
     "light_mode": {
-      "title": "Light mode"
+      "title": "Režim světla"
     },
     "measure_temperature": {
-      "title": "Temperature",
+      "title": "Teplota",
       "units": "°C"
     },
     "measure_humidity": {
-      "title": "Humidity",
+      "title": "Vlhkost",
       "units": "%"
     },
     "measure_pressure": {
-      "title": "Pressure",
+      "title": "Tlak",
       "units": "mbar"
     },
     "measure_co2": {
@@ -75,49 +75,83 @@
       "units": "ppb"
     },
     "measure_luminance": {
-      "title": "Luminance",
+      "title": "Osvětlení",
       "units": "lux"
     },
     "measure_power": {
-      "title": "Power",
+      "title": "Výkon",
       "units": "W"
     },
     "measure_voltage": {
-      "title": "Voltage",
+      "title": "Napětí",
       "units": "V"
     },
     "measure_current": {
-      "title": "Current",
+      "title": "Proud",
       "units": "A"
     },
     "meter_power": {
-      "title": "Energy",
+      "title": "Energie",
       "units": "kWh"
     },
     "target_temperature": {
-      "title": "Target temperature",
+      "title": "Cílová teplota",
       "units": "°C"
     },
     "windowcoverings_state": {
-      "title": "Window coverings",
+      "title": "Žaluzie",
       "values": {
-        "up": "Up",
-        "idle": "Idle",
-        "down": "Down"
+        "up": "Nahoru",
+        "idle": "Nečinné",
+        "down": "Dolů"
       }
     },
     "windowcoverings_set": {
-      "title": "Position",
+      "title": "Pozice",
       "units": "%"
     },
     "button": {
-      "title": "Button"
+      "title": "Tlačítko"
+    },
+    "alarm_battery": {
+      "title": "Slabá baterie"
+    },
+    "alarm_sos": {
+      "title": "SOS"
+    },
+    "alarm_emergency": {
+      "title": "Nouze"
+    },
+    "alarm_siren": {
+      "title": "Siréna"
+    },
+    "text_battery_status": {
+      "title": "Stav baterie"
+    },
+    "measure_battery_health": {
+      "title": "Zdraví baterie",
+      "units": "%"
+    },
+    "button_open": {
+      "title": "Otevřít"
+    },
+    "button_close": {
+      "title": "Zavřít"
+    },
+    "button_stop": {
+      "title": "Stop"
+    },
+    "button_dim_up": {
+      "title": "Zvýšit jas"
+    },
+    "button_dim_down": {
+      "title": "Snížit jas"
     }
   },
   "settings": {
     "power_source": {
       "label": "Zdroj napájení",
-      "hint": "Vyberte zdroj ručně nebo použijte automatickou detekci",
+      "hint": "Vyberte zdroj napájení ručně nebo použijte automatickou detekci",
       "values": {
         "auto": {
           "en": "Auto Detect",
@@ -182,28 +216,28 @@
       }
     },
     "battery_type": {
-      "label": "Battery Type",
-      "hint": "Select battery type manually or use auto-detection based on voltage"
+      "label": "Typ baterie",
+      "hint": "Vyberte typ baterie ručně nebo použijte automatickou detekci podle napětí"
     },
     "battery_low_threshold": {
-      "label": "Low Battery Threshold (%)",
-      "hint": "Trigger low battery warning when below this percentage"
+      "label": "Práh slabé baterie (%)",
+      "hint": "Spustit varování o slabé baterii pod tímto procentem"
     },
     "battery_critical_threshold": {
-      "label": "Critical Battery Threshold (%)",
-      "hint": "Trigger critical battery warning when below this percentage"
+      "label": "Práh kritické baterie (%)",
+      "hint": "Spustit varování o kritické baterii pod tímto procentem"
     },
     "enable_battery_notifications": {
-      "label": "Enable Battery Notifications",
-      "hint": "Send flow notifications for battery events"
+      "label": "Povolit oznámení o baterii",
+      "hint": "Odesílat flow oznámení pro události baterie"
     },
     "battery_report_interval": {
-      "label": "Battery Report Interval (hours)",
-      "hint": "How often to request battery status updates"
+      "label": "Interval hlášení baterie (hodiny)",
+      "hint": "Jak často žádat o aktualizace stavu baterie"
     },
     "optimization_mode": {
-      "label": "Režim optimalizace energie",
-      "hint": "Rovnováha mezi odezvou a výdrží baterie",
+      "label": "Režim energetické optimalizace",
+      "hint": "Vyvážení mezi odezvou a výdrží baterie",
       "values": {
         "performance": {
           "en": "Performance (More responsive)",
@@ -253,24 +287,130 @@
       }
     },
     "show_voltage": {
-      "label": "Show Battery Voltage",
-      "hint": "Display raw battery voltage in device settings"
+      "label": "Zobrazit napětí baterie",
+      "hint": "Zobrazit surové napětí baterie v nastavení zařízení"
     },
     "enable_power_estimation": {
-      "label": "Enable Power Estimation",
-      "hint": "Estimate power consumption when real measurement is not available (AC/DC devices only)"
+      "label": "Povolit odhad spotřeby",
+      "hint": "Odhadnout spotřebu, pokud není dostupná skutečná měření (pouze AC/DC zařízení)"
     }
   },
   "tabs": {
-    "general": "General",
-    "advanced": "Advanced",
-    "about": "About"
+    "general": "Obecné",
+    "advanced": "Pokročilé",
+    "about": "O aplikaci"
   },
   "common": {
-    "save": "Save",
-    "cancel": "Cancel",
+    "save": "Uložit",
+    "cancel": "Zrušit",
     "ok": "OK",
-    "delete": "Delete",
-    "edit": "Edit"
+    "delete": "Smazat",
+    "edit": "Upravit",
+    "retry": "Zkusit znovu",
+    "close": "Zavřít",
+    "yes": "Ano",
+    "no": "Ne",
+    "loading": "Načítání…",
+    "unavailable": "Nedostupné",
+    "online": "Online",
+    "offline": "Offline",
+    "unknown": "Neznámé",
+    "enabled": "Zapnuto",
+    "disabled": "Vypnuto"
+  },
+  "errors": {
+    "unknown": "Došlo k neznámé chybě",
+    "command_failed": "Příkaz selhal. Zařízení neodpovědělo nebo požadavek odmítlo.",
+    "unavailable": "Tato funkce je momentálně nedostupná",
+    "device_unavailable": "Zařízení je nedostupné. Zkontrolujte napájení a dosah Zigbee.",
+    "timeout": "Zařízení neodpovědělo včas",
+    "not_ready": "Zařízení ještě není připraveno. Zkuste to za chvíli znovu.",
+    "pairing_failed": "Párování selhalo. Resetujte zařízení a zkuste to znovu.",
+    "invalid_setting": "Neplatná hodnota nastavení",
+    "battery_read_failed": "Nepodařilo se načíst stav baterie"
+  },
+  "warnings": {
+    "battery_low": "Slabá baterie — brzy vyměnit",
+    "battery_critical": "Kritická baterie — vyměnit okamžitě",
+    "device_unavailable": "Zařízení nedostupné",
+    "device_offline": "Zařízení se zdá být offline",
+    "weak_signal": "Slabý Zigbee signál — přibližte se k routeru",
+    "pairing_incomplete": "Párování může být neúplné — znovu otevřete zařízení nebo spárujte znovu"
+  },
+  "pairing": {
+    "title": "Párování",
+    "instruction_generic": "Přepněte zařízení do režimu párování a počkejte, až je Homey najde.",
+    "instruction_battery": "Vložte nové baterie a držte tlačítko reset/párování, dokud LED nebliká.",
+    "instruction_mains": "Zapněte zařízení a stiskněte tlačítko reset/párování, dokud LED nebliká.",
+    "instruction_sos": "Držte tlačítko SOS, dokud LED rychle nebliká.",
+    "wait_interview": "Probíhá interview zařízení… může to trvat až minutu.",
+    "success": "Zařízení úspěšně spárováno",
+    "failed": "Párování selhalo",
+    "timeout": "Časový limit párování vypršel. Resetujte zařízení a zkuste to znovu.",
+    "tip_router": "Umístěte poblíž síťově napájený Zigbee router pro spolehlivější párování."
+  },
+  "diagnostics": {
+    "title": "Diagnostika",
+    "collecting": "Sběr diagnostiky…",
+    "export_hint": "Sdílejte tuto diagnostiku při hlášení problému.",
+    "last_seen": "Naposledy viděno",
+    "signal_strength": "Síla signálu",
+    "battery_voltage": "Napětí baterie",
+    "battery_level": "Úroveň baterie",
+    "no_data": "Zatím nejsou k dispozici žádná diagnostická data",
+    "manufacturer": "Výrobce",
+    "product_id": "ID produktu",
+    "unavailable": "Diagnostika nedostupná"
+  },
+  "buttons": {
+    "pressed": "Tlačítko stisknuto",
+    "single_press": "Jedno stisknutí",
+    "double_press": "Dvojité stisknutí",
+    "long_press": "Dlouhé stisknutí",
+    "held": "Tlačítko drženo",
+    "released": "Tlačítko uvolněno",
+    "gang": "Kanál __n__",
+    "physical": "Fyzické tlačítko",
+    "virtual": "Virtuální tlačítko",
+    "scene": "Scénické tlačítko"
+  },
+  "sos": {
+    "title": "SOS / Nouze",
+    "triggered": "SOS spuštěno",
+    "cleared": "SOS zrušeno",
+    "emergency_pressed": "Nouzové tlačítko stisknuto",
+    "help": "Použijte SOS flow pro panické nebo asistenční upozornění z nouzových tlačítek."
+  },
+  "scenes": {
+    "title": "Scény",
+    "activated": "Scéna aktivována",
+    "recalled": "Scéna vyvolána",
+    "help": "Scénická tlačítka mohou spouštět Homey Flows bez přepínání relé."
+  },
+  "flow": {
+    "battery_low": {
+      "title": "Baterie se stala slabou"
+    },
+    "battery_critical": {
+      "title": "Baterie se stala kritickou"
+    },
+    "button_pressed": {
+      "title": "Bylo stisknuto tlačítko"
+    },
+    "button_long_press": {
+      "title": "Tlačítko bylo dlouze stisknuto"
+    },
+    "sos_triggered": {
+      "title": "SOS / nouze bylo spuštěno"
+    },
+    "scene_activated": {
+      "title": "Scéna byla aktivována"
+    },
+    "device_unavailable": {
+      "title": "Zařízení se stalo nedostupným"
+    },
+    "device_available": {
+      "title": "Zařízení je opět dostupné"
+    }
   }
 }

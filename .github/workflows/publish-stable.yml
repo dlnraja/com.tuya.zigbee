@@ -69,6 +69,8 @@ jobs:
         run: npm ci --prefer-offline --no-audit || npm install
       - name: Crash regression guard - Homey timer context
         run: npm run check:timer-context
+      - name: Regression lessons gate (MUST-KEEP fatals)
+        run: node tools/ci/regression-lessons-gate.js
       - name: Google Assistant / Alexa voice-safety gate
         run: npm run check:voice
       - name: SDK3 Validation

@@ -112,6 +112,40 @@
     },
     "button": {
       "title": "Bouton"
+    },
+    "alarm_battery": {
+      "title": "Batterie faible"
+    },
+    "alarm_sos": {
+      "title": "SOS"
+    },
+    "alarm_emergency": {
+      "title": "Urgence"
+    },
+    "alarm_siren": {
+      "title": "Sirène"
+    },
+    "text_battery_status": {
+      "title": "État de la batterie"
+    },
+    "measure_battery_health": {
+      "title": "Santé de la batterie",
+      "units": "%"
+    },
+    "button_open": {
+      "title": "Ouvrir"
+    },
+    "button_close": {
+      "title": "Fermer"
+    },
+    "button_stop": {
+      "title": "Arrêter"
+    },
+    "button_dim_up": {
+      "title": "Augmenter la luminosité"
+    },
+    "button_dim_down": {
+      "title": "Diminuer la luminosité"
     }
   },
   "settings": {
@@ -271,6 +305,112 @@
     "cancel": "Annuler",
     "ok": "OK",
     "delete": "Supprimer",
-    "edit": "Modifier"
+    "edit": "Modifier",
+    "retry": "Réessayer",
+    "close": "Fermer",
+    "yes": "Oui",
+    "no": "Non",
+    "loading": "Chargement…",
+    "unavailable": "Indisponible",
+    "online": "En ligne",
+    "offline": "Hors ligne",
+    "unknown": "Inconnu",
+    "enabled": "Activé",
+    "disabled": "Désactivé"
+  },
+  "errors": {
+    "unknown": "Une erreur inconnue s'est produite",
+    "command_failed": "Commande échouée. L'appareil n'a pas répondu ou a rejeté la demande.",
+    "unavailable": "Cette fonctionnalité est actuellement indisponible",
+    "device_unavailable": "Appareil indisponible. Vérifiez l'alimentation et la portée Zigbee.",
+    "timeout": "L'appareil n'a pas répondu à temps",
+    "not_ready": "L'appareil n'est pas encore prêt. Réessayez dans un instant.",
+    "pairing_failed": "Appairage échoué. Réinitialisez l'appareil et réessayez.",
+    "invalid_setting": "Valeur de paramètre invalide",
+    "battery_read_failed": "Impossible de lire l'état de la batterie"
+  },
+  "warnings": {
+    "battery_low": "Batterie faible — à remplacer bientôt",
+    "battery_critical": "Batterie critique — à remplacer immédiatement",
+    "device_unavailable": "Appareil indisponible",
+    "device_offline": "L'appareil semble hors ligne",
+    "weak_signal": "Signal Zigbee faible — rapprochez-vous d'un routeur",
+    "pairing_incomplete": "L'appairage est peut-être incomplet — rouvrez l'appareil ou réappareillez"
+  },
+  "pairing": {
+    "title": "Appairage",
+    "instruction_generic": "Mettez l'appareil en mode appairage, puis attendez que Homey le trouve.",
+    "instruction_battery": "Insérez des piles neuves, puis maintenez le bouton reset/appairage jusqu'à ce que la LED clignote.",
+    "instruction_mains": "Allumez l'appareil, puis appuyez sur le bouton reset/appairage jusqu'à ce que la LED clignote.",
+    "instruction_sos": "Maintenez le bouton SOS enfoncé jusqu'à ce que la LED clignote rapidement.",
+    "wait_interview": "Interrogation de l'appareil… cela peut prendre jusqu'à une minute.",
+    "success": "Appareil appairé avec succès",
+    "failed": "Échec de l'appairage",
+    "timeout": "Délai d'appairage dépassé. Réinitialisez l'appareil et réessayez.",
+    "tip_router": "Placez un routeur Zigbee alimenté à proximité pour un appairage plus fiable."
+  },
+  "diagnostics": {
+    "title": "Diagnostics",
+    "collecting": "Collecte des diagnostics…",
+    "export_hint": "Partagez ces diagnostics lors du signalement d'un problème.",
+    "last_seen": "Dernière activité",
+    "signal_strength": "Force du signal",
+    "battery_voltage": "Tension de la batterie",
+    "battery_level": "Niveau de batterie",
+    "no_data": "Aucune donnée de diagnostic disponible pour le moment",
+    "manufacturer": "Fabricant",
+    "product_id": "ID produit",
+    "unavailable": "Diagnostics indisponibles"
+  },
+  "buttons": {
+    "pressed": "Bouton pressé",
+    "single_press": "Appui simple",
+    "double_press": "Appui double",
+    "long_press": "Appui long",
+    "held": "Bouton maintenu",
+    "released": "Bouton relâché",
+    "gang": "Voie __n__",
+    "physical": "Bouton physique",
+    "virtual": "Bouton virtuel",
+    "scene": "Bouton de scène"
+  },
+  "sos": {
+    "title": "SOS / Urgence",
+    "triggered": "SOS déclenché",
+    "cleared": "SOS annulé",
+    "emergency_pressed": "Bouton d'urgence pressé",
+    "help": "Utilisez les flows SOS pour les alertes de panique ou d'assistance depuis les boutons d'urgence."
+  },
+  "scenes": {
+    "title": "Scènes",
+    "activated": "Scène activée",
+    "recalled": "Scène rappelée",
+    "help": "Les boutons de scène peuvent déclencher des Flows Homey sans basculer un relais."
+  },
+  "flow": {
+    "battery_low": {
+      "title": "La batterie est devenue faible"
+    },
+    "battery_critical": {
+      "title": "La batterie est devenue critique"
+    },
+    "button_pressed": {
+      "title": "Un bouton a été pressé"
+    },
+    "button_long_press": {
+      "title": "Un bouton a été maintenu longtemps"
+    },
+    "sos_triggered": {
+      "title": "SOS / urgence a été déclenché"
+    },
+    "scene_activated": {
+      "title": "Une scène a été activée"
+    },
+    "device_unavailable": {
+      "title": "L'appareil est devenu indisponible"
+    },
+    "device_available": {
+      "title": "L'appareil est à nouveau disponible"
+    }
   }
 }

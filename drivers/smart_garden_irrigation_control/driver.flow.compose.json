@@ -14,8 +14,8 @@
         }
       ],
       "titleFormatted": {
-        "en": "Turned on [[device]]",
-        "fr": "Allume [[device]]"
+        "en": "Turned on",
+        "fr": "Allume"
       }
     },
     {
@@ -32,8 +32,8 @@
         }
       ],
       "titleFormatted": {
-        "en": "Turned off [[device]]",
-        "fr": "Eteint [[device]]"
+        "en": "Turned off",
+        "fr": "Eteint"
       }
     },
     {
@@ -52,10 +52,10 @@
         }
       ],
       "titleFormatted": {
-        "en": "Battery low [[device]]",
-        "fr": "Batterie faible [[device]]",
-        "nl": "Batterij laag [[device]]",
-        "de": "Batterie schwach [[device]]"
+        "en": "Battery low",
+        "fr": "Batterie faible",
+        "nl": "Batterij laag",
+        "de": "Batterie schwach"
       }
     }
   ],
@@ -74,8 +74,8 @@
         }
       ],
       "titleFormatted": {
-        "en": "Is turned !{{on|off}} [[device]]",
-        "fr": "Est !{{allume|eteint}} [[device]]"
+        "en": "Is turned !{{on|off}}",
+        "fr": "Est !{{allume|eteint}}"
       }
     }
   ],
@@ -94,8 +94,8 @@
         }
       ],
       "titleFormatted": {
-        "en": "Turn on [[device]]",
-        "fr": "Allumer [[device]]"
+        "en": "Turn on",
+        "fr": "Allumer"
       }
     },
     {
@@ -112,8 +112,8 @@
         }
       ],
       "titleFormatted": {
-        "en": "Turn off [[device]]",
-        "fr": "Eteindre [[device]]"
+        "en": "Turn off",
+        "fr": "Eteindre"
       }
     },
     {
@@ -130,8 +130,8 @@
         }
       ],
       "titleFormatted": {
-        "en": "Toggle [[device]]",
-        "fr": "Basculer [[device]]"
+        "en": "Toggle",
+        "fr": "Basculer"
       }
     }
   ]

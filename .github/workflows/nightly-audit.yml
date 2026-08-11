@@ -51,6 +51,11 @@ jobs:
           echo "## 🩺 Regression audit (P57)" >> $GITHUB_STEP_SUMMARY
           node tools/ci/audit-regressions.js >> $GITHUB_STEP_SUMMARY 2>&1
 
+      - name: 🛡️ Regression lessons gate (MUST-KEEP fatals)
+        run: |
+          echo "## 🛡️ Regression lessons gate" >> $GITHUB_STEP_SUMMARY
+          node tools/ci/regression-lessons-gate.js >> $GITHUB_STEP_SUMMARY 2>&1
+
       - name: 🌊 Data flooding detection (P57)
         run: |
           echo "## 🌊 Data flooding detection (P57)" >> $GITHUB_STEP_SUMMARY

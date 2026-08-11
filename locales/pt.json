@@ -1,23 +1,23 @@
 {
   "capabilities": {
     "measure_battery": {
-      "title": "Battery",
+      "title": "Bateria",
       "units": "%"
     },
     "alarm_generic": {
-      "title": "Alarm"
+      "title": "Alarme"
     },
     "alarm_motion": {
-      "title": "Motion"
+      "title": "Movimento"
     },
     "alarm_contact": {
-      "title": "Contact"
+      "title": "Contacto"
     },
     "alarm_water": {
-      "title": "Water leak"
+      "title": "Fuga de água"
     },
     "alarm_smoke": {
-      "title": "Smoke"
+      "title": "Fumo"
     },
     "alarm_co": {
       "title": "CO"
@@ -26,40 +26,40 @@
       "title": "CO₂"
     },
     "alarm_tamper": {
-      "title": "Tamper"
+      "title": "Violação"
     },
     "alarm_vibration": {
-      "title": "Vibration"
+      "title": "Vibração"
     },
     "onoff": {
-      "title": "Power"
+      "title": "Alimentação"
     },
     "dim": {
-      "title": "Brightness",
+      "title": "Brilho",
       "units": "%"
     },
     "light_hue": {
-      "title": "Hue"
+      "title": "Matiz"
     },
     "light_saturation": {
-      "title": "Saturation"
+      "title": "Saturação"
     },
     "light_temperature": {
-      "title": "Temperature"
+      "title": "Temperatura"
     },
     "light_mode": {
-      "title": "Light mode"
+      "title": "Modo de luz"
     },
     "measure_temperature": {
-      "title": "Temperature",
+      "title": "Temperatura",
       "units": "°C"
     },
     "measure_humidity": {
-      "title": "Humidity",
+      "title": "Humidade",
       "units": "%"
     },
     "measure_pressure": {
-      "title": "Pressure",
+      "title": "Pressão",
       "units": "mbar"
     },
     "measure_co2": {
@@ -71,53 +71,87 @@
       "units": "µg/m³"
     },
     "measure_voc": {
-      "title": "VOC",
+      "title": "COV",
       "units": "ppb"
     },
     "measure_luminance": {
-      "title": "Luminance",
+      "title": "Luminância",
       "units": "lux"
     },
     "measure_power": {
-      "title": "Power",
+      "title": "Potência",
       "units": "W"
     },
     "measure_voltage": {
-      "title": "Voltage",
+      "title": "Tensão",
       "units": "V"
     },
     "measure_current": {
-      "title": "Current",
+      "title": "Corrente",
       "units": "A"
     },
     "meter_power": {
-      "title": "Energy",
+      "title": "Energia",
       "units": "kWh"
     },
     "target_temperature": {
-      "title": "Target temperature",
+      "title": "Temperatura alvo",
       "units": "°C"
     },
     "windowcoverings_state": {
-      "title": "Window coverings",
+      "title": "Estores",
       "values": {
-        "up": "Up",
-        "idle": "Idle",
-        "down": "Down"
+        "up": "Cima",
+        "idle": "Parado",
+        "down": "Baixo"
       }
     },
     "windowcoverings_set": {
-      "title": "Position",
+      "title": "Posição",
       "units": "%"
     },
     "button": {
-      "title": "Button"
+      "title": "Botão"
+    },
+    "alarm_battery": {
+      "title": "Bateria fraca"
+    },
+    "alarm_sos": {
+      "title": "SOS"
+    },
+    "alarm_emergency": {
+      "title": "Emergência"
+    },
+    "alarm_siren": {
+      "title": "Sirene"
+    },
+    "text_battery_status": {
+      "title": "Estado da bateria"
+    },
+    "measure_battery_health": {
+      "title": "Saúde da bateria",
+      "units": "%"
+    },
+    "button_open": {
+      "title": "Abrir"
+    },
+    "button_close": {
+      "title": "Fechar"
+    },
+    "button_stop": {
+      "title": "Parar"
+    },
+    "button_dim_up": {
+      "title": "Aumentar brilho"
+    },
+    "button_dim_down": {
+      "title": "Diminuir brilho"
     }
   },
   "settings": {
     "power_source": {
       "label": "Fonte de alimentação",
-      "hint": "Selecione manualmente ou use a deteção automática",
+      "hint": "Selecione a fonte de alimentação manualmente ou use a deteção automática",
       "values": {
         "auto": {
           "en": "Auto Detect",
@@ -182,28 +216,28 @@
       }
     },
     "battery_type": {
-      "label": "Battery Type",
-      "hint": "Select battery type manually or use auto-detection based on voltage"
+      "label": "Tipo de bateria",
+      "hint": "Selecione o tipo de bateria manualmente ou use a deteção automática com base na tensão"
     },
     "battery_low_threshold": {
-      "label": "Low Battery Threshold (%)",
-      "hint": "Trigger low battery warning when below this percentage"
+      "label": "Limiar de bateria fraca (%)",
+      "hint": "Disparar aviso de bateria fraca abaixo desta percentagem"
     },
     "battery_critical_threshold": {
-      "label": "Critical Battery Threshold (%)",
-      "hint": "Trigger critical battery warning when below this percentage"
+      "label": "Limiar de bateria crítica (%)",
+      "hint": "Disparar aviso de bateria crítica abaixo desta percentagem"
     },
     "enable_battery_notifications": {
-      "label": "Enable Battery Notifications",
-      "hint": "Send flow notifications for battery events"
+      "label": "Ativar notificações de bateria",
+      "hint": "Enviar notificações de flow para eventos de bateria"
     },
     "battery_report_interval": {
-      "label": "Battery Report Interval (hours)",
-      "hint": "How often to request battery status updates"
+      "label": "Intervalo de relatório da bateria (horas)",
+      "hint": "Com que frequência solicitar atualizações do estado da bateria"
     },
     "optimization_mode": {
-      "label": "Modo de otimização de energia",
-      "hint": "Equilíbrio entre capacidade de resposta e duração da bateria",
+      "label": "Modo de otimização energética",
+      "hint": "Equilíbrio entre reatividade e autonomia da bateria",
       "values": {
         "performance": {
           "en": "Performance (More responsive)",
@@ -253,24 +287,130 @@
       }
     },
     "show_voltage": {
-      "label": "Show Battery Voltage",
-      "hint": "Display raw battery voltage in device settings"
+      "label": "Mostrar tensão da bateria",
+      "hint": "Mostrar a tensão bruta da bateria nas definições do dispositivo"
     },
     "enable_power_estimation": {
-      "label": "Enable Power Estimation",
-      "hint": "Estimate power consumption when real measurement is not available (AC/DC devices only)"
+      "label": "Ativar estimativa de potência",
+      "hint": "Estimar o consumo quando a medição real não estiver disponível (apenas dispositivos CA/CC)"
     }
   },
   "tabs": {
-    "general": "General",
-    "advanced": "Advanced",
-    "about": "About"
+    "general": "Geral",
+    "advanced": "Avançado",
+    "about": "Acerca de"
   },
   "common": {
-    "save": "Save",
-    "cancel": "Cancel",
+    "save": "Guardar",
+    "cancel": "Cancelar",
     "ok": "OK",
-    "delete": "Delete",
-    "edit": "Edit"
+    "delete": "Eliminar",
+    "edit": "Editar",
+    "retry": "Tentar novamente",
+    "close": "Fechar",
+    "yes": "Sim",
+    "no": "Não",
+    "loading": "A carregar…",
+    "unavailable": "Indisponível",
+    "online": "Online",
+    "offline": "Offline",
+    "unknown": "Desconhecido",
+    "enabled": "Ativado",
+    "disabled": "Desativado"
+  },
+  "errors": {
+    "unknown": "Ocorreu um erro desconhecido",
+    "command_failed": "Comando falhou. O dispositivo não respondeu ou rejeitou o pedido.",
+    "unavailable": "Esta funcionalidade está indisponível de momento",
+    "device_unavailable": "Dispositivo indisponível. Verifique a alimentação e o alcance Zigbee.",
+    "timeout": "O dispositivo não respondeu a tempo",
+    "not_ready": "O dispositivo ainda não está pronto. Tente novamente dentro de momentos.",
+    "pairing_failed": "Emparelhamento falhou. Reinicie o dispositivo e tente novamente.",
+    "invalid_setting": "Valor de definição inválido",
+    "battery_read_failed": "Não foi possível ler o estado da bateria"
+  },
+  "warnings": {
+    "battery_low": "Bateria fraca — substituir em breve",
+    "battery_critical": "Bateria crítica — substituir imediatamente",
+    "device_unavailable": "Dispositivo indisponível",
+    "device_offline": "O dispositivo parece estar offline",
+    "weak_signal": "Sinal Zigbee fraco — aproxime-se de um router",
+    "pairing_incomplete": "O emparelhamento pode estar incompleto — reabra o dispositivo ou volte a emparelhar"
+  },
+  "pairing": {
+    "title": "Emparelhamento",
+    "instruction_generic": "Coloque o dispositivo em modo de emparelhamento e aguarde que o Homey o encontre.",
+    "instruction_battery": "Insira baterias novas e mantenha premido o botão de reset/emparelhar até o LED piscar.",
+    "instruction_mains": "Ligue o dispositivo e prima o botão de reset/emparelhar até o LED piscar.",
+    "instruction_sos": "Mantenha premido o botão SOS até o LED piscar rapidamente.",
+    "wait_interview": "A entrevistar o dispositivo… isto pode demorar até um minuto.",
+    "success": "Dispositivo emparelhado com sucesso",
+    "failed": "Emparelhamento falhou",
+    "timeout": "Tempo de emparelhamento esgotado. Reinicie o dispositivo e tente novamente.",
+    "tip_router": "Coloque um router Zigbee alimentado por rede por perto para um emparelhamento mais fiável."
+  },
+  "diagnostics": {
+    "title": "Diagnósticos",
+    "collecting": "A recolher diagnósticos…",
+    "export_hint": "Partilhe estes diagnósticos ao reportar um problema.",
+    "last_seen": "Última vez visto",
+    "signal_strength": "Intensidade do sinal",
+    "battery_voltage": "Tensão da bateria",
+    "battery_level": "Nível da bateria",
+    "no_data": "Ainda não há dados de diagnóstico disponíveis",
+    "manufacturer": "Fabricante",
+    "product_id": "ID do produto",
+    "unavailable": "Diagnósticos indisponíveis"
+  },
+  "buttons": {
+    "pressed": "Botão premido",
+    "single_press": "Pressão simples",
+    "double_press": "Dupla pressão",
+    "long_press": "Pressão longa",
+    "held": "Botão mantido",
+    "released": "Botão largado",
+    "gang": "Canal __n__",
+    "physical": "Botão físico",
+    "virtual": "Botão virtual",
+    "scene": "Botão de cena"
+  },
+  "sos": {
+    "title": "SOS / Emergência",
+    "triggered": "SOS acionado",
+    "cleared": "SOS limpo",
+    "emergency_pressed": "Botão de emergência premido",
+    "help": "Use flows SOS para alertas de pânico ou assistência a partir de botões de emergência."
+  },
+  "scenes": {
+    "title": "Cenas",
+    "activated": "Cena ativada",
+    "recalled": "Cena recuperada",
+    "help": "Os botões de cena podem ativar Flows Homey sem comutar um relé."
+  },
+  "flow": {
+    "battery_low": {
+      "title": "A bateria ficou fraca"
+    },
+    "battery_critical": {
+      "title": "A bateria ficou crítica"
+    },
+    "button_pressed": {
+      "title": "Foi premido um botão"
+    },
+    "button_long_press": {
+      "title": "Foi feita uma pressão longa num botão"
+    },
+    "sos_triggered": {
+      "title": "SOS / emergência foi acionado"
+    },
+    "scene_activated": {
+      "title": "Uma cena foi ativada"
+    },
+    "device_unavailable": {
+      "title": "O dispositivo ficou indisponível"
+    },
+    "device_available": {
+      "title": "O dispositivo voltou a ficar disponível"
+    }
   }
 }

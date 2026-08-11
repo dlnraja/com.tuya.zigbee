@@ -83,6 +83,9 @@ jobs:
       - name: Anti-bot regression gate
         run: node tools/ci/anti-bot-regression-gate.js
 
+      - name: Regression lessons gate (MUST-KEEP fatals)
+        run: node tools/ci/regression-lessons-gate.js
+
       # ─────────────────────────────────────────────────────────────
       # 2. CHECK SECRETS
       # ─────────────────────────────────────────────────────────────

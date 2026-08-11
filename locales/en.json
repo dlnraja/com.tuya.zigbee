@@ -112,6 +112,40 @@
     },
     "button": {
       "title": "Button"
+    },
+    "alarm_battery": {
+      "title": "Low battery"
+    },
+    "alarm_sos": {
+      "title": "SOS"
+    },
+    "alarm_emergency": {
+      "title": "Emergency"
+    },
+    "alarm_siren": {
+      "title": "Siren"
+    },
+    "text_battery_status": {
+      "title": "Battery status"
+    },
+    "measure_battery_health": {
+      "title": "Battery health",
+      "units": "%"
+    },
+    "button_open": {
+      "title": "Open"
+    },
+    "button_close": {
+      "title": "Close"
+    },
+    "button_stop": {
+      "title": "Stop"
+    },
+    "button_dim_up": {
+      "title": "Dim up"
+    },
+    "button_dim_down": {
+      "title": "Dim down"
     }
   },
   "settings": {
@@ -271,6 +305,112 @@
     "cancel": "Cancel",
     "ok": "OK",
     "delete": "Delete",
-    "edit": "Edit"
+    "edit": "Edit",
+    "retry": "Retry",
+    "close": "Close",
+    "yes": "Yes",
+    "no": "No",
+    "loading": "Loading…",
+    "unavailable": "Unavailable",
+    "online": "Online",
+    "offline": "Offline",
+    "unknown": "Unknown",
+    "enabled": "Enabled",
+    "disabled": "Disabled"
+  },
+  "errors": {
+    "unknown": "An unknown error occurred",
+    "command_failed": "Command failed. The device did not respond or rejected the request.",
+    "unavailable": "This feature is currently unavailable",
+    "device_unavailable": "Device is unavailable. Check power and Zigbee range.",
+    "timeout": "The device did not respond in time",
+    "not_ready": "Device is not ready yet. Try again in a moment.",
+    "pairing_failed": "Pairing failed. Reset the device and try again.",
+    "invalid_setting": "Invalid setting value",
+    "battery_read_failed": "Could not read battery status"
+  },
+  "warnings": {
+    "battery_low": "Battery low — replace soon",
+    "battery_critical": "Battery critical — replace immediately",
+    "device_unavailable": "Device unavailable",
+    "device_offline": "Device appears offline",
+    "weak_signal": "Weak Zigbee signal — move closer to a router",
+    "pairing_incomplete": "Pairing may be incomplete — reopen the device or repair"
+  },
+  "pairing": {
+    "title": "Pairing",
+    "instruction_generic": "Put the device in pairing mode, then wait until Homey finds it.",
+    "instruction_battery": "Insert fresh batteries, then hold the reset/pair button until the LED blinks.",
+    "instruction_mains": "Power on the device, then press the reset/pair button until the LED blinks.",
+    "instruction_sos": "Press and hold the SOS button until the LED blinks rapidly.",
+    "wait_interview": "Interviewing the device… this can take up to a minute.",
+    "success": "Device paired successfully",
+    "failed": "Pairing failed",
+    "timeout": "Pairing timed out. Reset the device and retry.",
+    "tip_router": "Place a mains-powered Zigbee router nearby for more reliable pairing."
+  },
+  "diagnostics": {
+    "title": "Diagnostics",
+    "collecting": "Collecting diagnostics…",
+    "export_hint": "Share these diagnostics when reporting an issue.",
+    "last_seen": "Last seen",
+    "signal_strength": "Signal strength",
+    "battery_voltage": "Battery voltage",
+    "battery_level": "Battery level",
+    "no_data": "No diagnostic data available yet",
+    "manufacturer": "Manufacturer",
+    "product_id": "Product ID",
+    "unavailable": "Diagnostics unavailable"
+  },
+  "buttons": {
+    "pressed": "Button pressed",
+    "single_press": "Single press",
+    "double_press": "Double press",
+    "long_press": "Long press",
+    "held": "Button held",
+    "released": "Button released",
+    "gang": "Gang __n__",
+    "physical": "Physical button",
+    "virtual": "Virtual button",
+    "scene": "Scene button"
+  },
+  "sos": {
+    "title": "SOS / Emergency",
+    "triggered": "SOS triggered",
+    "cleared": "SOS cleared",
+    "emergency_pressed": "Emergency button pressed",
+    "help": "Use SOS flows for panic or assistance alerts from emergency buttons."
+  },
+  "scenes": {
+    "title": "Scenes",
+    "activated": "Scene activated",
+    "recalled": "Scene recalled",
+    "help": "Scene buttons can trigger Homey Flows without toggling a relay."
+  },
+  "flow": {
+    "battery_low": {
+      "title": "The battery became low"
+    },
+    "battery_critical": {
+      "title": "The battery became critical"
+    },
+    "button_pressed": {
+      "title": "A button was pressed"
+    },
+    "button_long_press": {
+      "title": "A button was long-pressed"
+    },
+    "sos_triggered": {
+      "title": "SOS / emergency was triggered"
+    },
+    "scene_activated": {
+      "title": "A scene was activated"
+    },
+    "device_unavailable": {
+      "title": "The device became unavailable"
+    },
+    "device_available": {
+      "title": "The device became available again"
+    }
   }
 }

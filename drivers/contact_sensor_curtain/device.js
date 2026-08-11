@@ -3,9 +3,9 @@ const { attachTamperListener } = require('../../lib/devices/DoorWindowContactHel
 
 const ZclBatteryMonitor = require('../../lib/battery/ZclBatteryMonitor');
 const { safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
-const { ZigBeeDevice } = require('homey-zigbeedriver');
+const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
 
-class ContactSensorCurtainDevice extends ZigBeeDevice {
+class ContactSensorCurtainDevice extends TuyaZigbeeDevice {
   async onNodeInit({ zclNode }) {
     ZclBatteryMonitor.attach(this, zclNode);
     await super.onNodeInit({ zclNode });

@@ -112,6 +112,40 @@
     },
     "button": {
       "title": "Knop"
+    },
+    "alarm_battery": {
+      "title": "Lage batterij"
+    },
+    "alarm_sos": {
+      "title": "SOS"
+    },
+    "alarm_emergency": {
+      "title": "Noodgeval"
+    },
+    "alarm_siren": {
+      "title": "Sirene"
+    },
+    "text_battery_status": {
+      "title": "Batterijstatus"
+    },
+    "measure_battery_health": {
+      "title": "Batterijgezondheid",
+      "units": "%"
+    },
+    "button_open": {
+      "title": "Openen"
+    },
+    "button_close": {
+      "title": "Sluiten"
+    },
+    "button_stop": {
+      "title": "Stoppen"
+    },
+    "button_dim_up": {
+      "title": "Feller"
+    },
+    "button_dim_down": {
+      "title": "Dimmen"
     }
   },
   "settings": {
@@ -271,6 +305,112 @@
     "cancel": "Annuleren",
     "ok": "OK",
     "delete": "Verwijderen",
-    "edit": "Bewerken"
+    "edit": "Bewerken",
+    "retry": "Opnieuw",
+    "close": "Sluiten",
+    "yes": "Ja",
+    "no": "Nee",
+    "loading": "Laden…",
+    "unavailable": "Niet beschikbaar",
+    "online": "Online",
+    "offline": "Offline",
+    "unknown": "Onbekend",
+    "enabled": "Ingeschakeld",
+    "disabled": "Uitgeschakeld"
+  },
+  "errors": {
+    "unknown": "Er is een onbekende fout opgetreden",
+    "command_failed": "Opdracht mislukt. Het apparaat reageerde niet of wees het verzoek af.",
+    "unavailable": "Deze functie is momenteel niet beschikbaar",
+    "device_unavailable": "Apparaat is niet beschikbaar. Controleer voeding en Zigbee-bereik.",
+    "timeout": "Het apparaat reageerde niet op tijd",
+    "not_ready": "Apparaat is nog niet gereed. Probeer het zo opnieuw.",
+    "pairing_failed": "Koppelen mislukt. Reset het apparaat en probeer opnieuw.",
+    "invalid_setting": "Ongeldige instellingswaarde",
+    "battery_read_failed": "Batterijstatus kon niet worden gelezen"
+  },
+  "warnings": {
+    "battery_low": "Batterij bijna leeg — binnenkort vervangen",
+    "battery_critical": "Batterij kritiek — onmiddellijk vervangen",
+    "device_unavailable": "Apparaat niet beschikbaar",
+    "device_offline": "Apparaat lijkt offline",
+    "weak_signal": "Zwak Zigbee-signaal — ga dichter bij een router",
+    "pairing_incomplete": "Koppelen mogelijk onvolledig — open het apparaat opnieuw of koppel opnieuw"
+  },
+  "pairing": {
+    "title": "Koppelen",
+    "instruction_generic": "Zet het apparaat in koppelmodus en wacht tot Homey het vindt.",
+    "instruction_battery": "Plaats verse batterijen en houd de reset/koppelknop ingedrukt tot de LED knippert.",
+    "instruction_mains": "Schakel het apparaat in en druk op de reset/koppelknop tot de LED knippert.",
+    "instruction_sos": "Houd de SOS-knop ingedrukt tot de LED snel knippert.",
+    "wait_interview": "Apparaat wordt geïnterviewd… dit kan tot een minuut duren.",
+    "success": "Apparaat succesvol gekoppeld",
+    "failed": "Koppelen mislukt",
+    "timeout": "Koppelen time-out. Reset het apparaat en probeer opnieuw.",
+    "tip_router": "Plaats een netgevoede Zigbee-router in de buurt voor betrouwbaarder koppelen."
+  },
+  "diagnostics": {
+    "title": "Diagnostiek",
+    "collecting": "Diagnostiek verzamelen…",
+    "export_hint": "Deel deze diagnostiek bij het melden van een probleem.",
+    "last_seen": "Laatst gezien",
+    "signal_strength": "Signaalsterkte",
+    "battery_voltage": "Batterijspanning",
+    "battery_level": "Batterijniveau",
+    "no_data": "Nog geen diagnostische gegevens beschikbaar",
+    "manufacturer": "Fabrikant",
+    "product_id": "Product-ID",
+    "unavailable": "Diagnostiek niet beschikbaar"
+  },
+  "buttons": {
+    "pressed": "Knop ingedrukt",
+    "single_press": "Enkele druk",
+    "double_press": "Dubbele druk",
+    "long_press": "Lange druk",
+    "held": "Knop vastgehouden",
+    "released": "Knop losgelaten",
+    "gang": "Kanaal __n__",
+    "physical": "Fysieke knop",
+    "virtual": "Virtuele knop",
+    "scene": "Scèneknop"
+  },
+  "sos": {
+    "title": "SOS / Noodgeval",
+    "triggered": "SOS geactiveerd",
+    "cleared": "SOS gewist",
+    "emergency_pressed": "Noodknop ingedrukt",
+    "help": "Gebruik SOS-flows voor paniek- of hulpalarmen vanaf noodknoppen."
+  },
+  "scenes": {
+    "title": "Scènes",
+    "activated": "Scène geactiveerd",
+    "recalled": "Scène opgeroepen",
+    "help": "Scèneknoppen kunnen Homey Flows starten zonder een relais te schakelen."
+  },
+  "flow": {
+    "battery_low": {
+      "title": "De batterij werd laag"
+    },
+    "battery_critical": {
+      "title": "De batterij werd kritiek"
+    },
+    "button_pressed": {
+      "title": "Er werd op een knop gedrukt"
+    },
+    "button_long_press": {
+      "title": "Een knop werd lang ingedrukt"
+    },
+    "sos_triggered": {
+      "title": "SOS / noodgeval werd geactiveerd"
+    },
+    "scene_activated": {
+      "title": "Een scène werd geactiveerd"
+    },
+    "device_unavailable": {
+      "title": "Het apparaat werd niet beschikbaar"
+    },
+    "device_available": {
+      "title": "Het apparaat is weer beschikbaar"
+    }
   }
 }

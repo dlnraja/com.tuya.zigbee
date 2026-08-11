@@ -112,6 +112,40 @@
     },
     "button": {
       "title": "Knapp"
+    },
+    "alarm_battery": {
+      "title": "Lågt batteri"
+    },
+    "alarm_sos": {
+      "title": "SOS"
+    },
+    "alarm_emergency": {
+      "title": "Nödsituation"
+    },
+    "alarm_siren": {
+      "title": "Siren"
+    },
+    "text_battery_status": {
+      "title": "Batteristatus"
+    },
+    "measure_battery_health": {
+      "title": "Batterihälsa",
+      "units": "%"
+    },
+    "button_open": {
+      "title": "Öppna"
+    },
+    "button_close": {
+      "title": "Stäng"
+    },
+    "button_stop": {
+      "title": "Stopp"
+    },
+    "button_dim_up": {
+      "title": "Ljusa upp"
+    },
+    "button_dim_down": {
+      "title": "Dimma ner"
     }
   },
   "settings": {
@@ -271,6 +305,112 @@
     "cancel": "Avbryt",
     "ok": "OK",
     "delete": "Radera",
-    "edit": "Redigera"
+    "edit": "Redigera",
+    "retry": "Försök igen",
+    "close": "Stäng",
+    "yes": "Ja",
+    "no": "Nej",
+    "loading": "Laddar…",
+    "unavailable": "Otillgänglig",
+    "online": "Online",
+    "offline": "Offline",
+    "unknown": "Okänd",
+    "enabled": "Aktiverad",
+    "disabled": "Inaktiverad"
+  },
+  "errors": {
+    "unknown": "Ett okänt fel har inträffat",
+    "command_failed": "Kommandot misslyckades. Enheten svarade inte eller avvisade begäran.",
+    "unavailable": "Denna funktion är för närvarande otillgänglig",
+    "device_unavailable": "Enheten är otillgänglig. Kontrollera strömförsörjning och Zigbee-räckvidd.",
+    "timeout": "Enheten svarade inte i tid",
+    "not_ready": "Enheten är inte redo ännu. Försök igen om en stund.",
+    "pairing_failed": "Parkoppling misslyckades. Återställ enheten och försök igen.",
+    "invalid_setting": "Ogiltigt inställningsvärde",
+    "battery_read_failed": "Kunde inte läsa batteristatus"
+  },
+  "warnings": {
+    "battery_low": "Lågt batteri — byt snart",
+    "battery_critical": "Kritiskt batteri — byt omedelbart",
+    "device_unavailable": "Enhet otillgänglig",
+    "device_offline": "Enheten verkar vara offline",
+    "weak_signal": "Svag Zigbee-signal — gå närmare en router",
+    "pairing_incomplete": "Parkopplingen kan vara ofullständig — öppna enheten igen eller parkoppla på nytt"
+  },
+  "pairing": {
+    "title": "Parkoppling",
+    "instruction_generic": "Sätt enheten i parkopplingsläge och vänta tills Homey hittar den.",
+    "instruction_battery": "Sätt i nya batterier och håll reset-/parkopplingsknappen tills LED:en blinkar.",
+    "instruction_mains": "Slå på enheten och tryck på reset-/parkopplingsknappen tills LED:en blinkar.",
+    "instruction_sos": "Håll SOS-knappen intryckt tills LED:en blinkar snabbt.",
+    "wait_interview": "Enheten intervjuas… detta kan ta upp till en minut.",
+    "success": "Enheten parkopplades",
+    "failed": "Parkoppling misslyckades",
+    "timeout": "Parkopplingen tog timeout. Återställ enheten och försök igen.",
+    "tip_router": "Placera en nätansluten Zigbee-router i närheten för mer tillförlitlig parkoppling."
+  },
+  "diagnostics": {
+    "title": "Diagnostik",
+    "collecting": "Samlar diagnostik…",
+    "export_hint": "Dela denna diagnostik när du rapporterar ett problem.",
+    "last_seen": "Senast sedd",
+    "signal_strength": "Signalstyrka",
+    "battery_voltage": "Batterispänning",
+    "battery_level": "Batterinivå",
+    "no_data": "Ingen diagnostikdata tillgänglig ännu",
+    "manufacturer": "Tillverkare",
+    "product_id": "Produkt-ID",
+    "unavailable": "Diagnostik otillgänglig"
+  },
+  "buttons": {
+    "pressed": "Knapp tryckt",
+    "single_press": "Enkelt tryck",
+    "double_press": "Dubbeltryck",
+    "long_press": "Långt tryck",
+    "held": "Knapp hållen",
+    "released": "Knapp släppt",
+    "gang": "Kanal __n__",
+    "physical": "Fysisk knapp",
+    "virtual": "Virtuell knapp",
+    "scene": "Scenknapp"
+  },
+  "sos": {
+    "title": "SOS / Nödsituation",
+    "triggered": "SOS utlöst",
+    "cleared": "SOS återställd",
+    "emergency_pressed": "Nödknapp tryckt",
+    "help": "Använd SOS-flöden för panik- eller hjälplarm från nödknappar."
+  },
+  "scenes": {
+    "title": "Scener",
+    "activated": "Scen aktiverad",
+    "recalled": "Scen återkallad",
+    "help": "Scenknappar kan utlösa Homey Flows utan att växla ett relä."
+  },
+  "flow": {
+    "battery_low": {
+      "title": "Batteriet blev lågt"
+    },
+    "battery_critical": {
+      "title": "Batteriet blev kritiskt"
+    },
+    "button_pressed": {
+      "title": "En knapp trycktes"
+    },
+    "button_long_press": {
+      "title": "En knapp hölls länge"
+    },
+    "sos_triggered": {
+      "title": "SOS / nödsituation utlöstes"
+    },
+    "scene_activated": {
+      "title": "En scen aktiverades"
+    },
+    "device_unavailable": {
+      "title": "Enheten blev otillgänglig"
+    },
+    "device_available": {
+      "title": "Enheten är tillgänglig igen"
+    }
   }
 }

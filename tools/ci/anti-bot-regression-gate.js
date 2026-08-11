@@ -80,7 +80,10 @@ const FORBIDDEN = [
   {
     id: 'p96-jtbgusdc-not-generic',
     driver: 'generic_tuya',
-    mfrs: ['_TZE204_jtbgusdc', '_TZE28C1000000_jtbgusdc', '_TZE204_o9gyszw2'],
+    mfrs: [
+      '_TZE204_jtbgusdc', '_TZE284_jtbgusdc', '_TZE28C1000000_jtbgusdc',
+      '_TZE204_o9gyszw2', '_TZE284_o9gyszw2', '_TZE28C1000000_o9gyszw2',
+    ],
   },
   {
     id: 'p96-hlla45kx-not-button2',
@@ -160,6 +163,67 @@ const FORBIDDEN = [
     driver: 'climate_sensor',
     mfrs: ['_TYST11_fzo2pocs'],
   },
+  // P102 lot3 — typed rehomes must never bounce back to generic / wrong class
+  {
+    id: 'p102-lot3-not-generic',
+    driver: 'generic_tuya',
+    mfrs: [
+      '_TZE204_trwaxi57', '_TZE28C1000000_81yrt3lo', '_TZE20C_xbexmf8h',
+      '_TYST11_udank5zs', '_TZE200_udank5zs', '_TZE284_udank5zs',
+      '_TYST11_wv90ladg', '_TZE200_wv90ladg',
+      '_TYST11_2dpplnsn', '_TZE200_2dpplnsn', '_TZE204_2dpplnsn',
+      '_TYST11_pisltm67', '_TZE200_pisltm67', '_TZE204_pisltm67',
+      '_TZ3000_l8fsgo6p',
+      '_TZE200_byzdayie', '_TZE204_byzdayie', '_TZE200_fsb6zw01', '_TZE200_ewxhg6o9',
+      '_TZE200_bkkmqmyo', '_TZE204_bkkmqmyo', '_TZE200_eaac7dkw',
+      '_TZE200_lsanae15', '_TZE204_lsanae15', '_TZE200_nkjintbl',
+      '_TZE204_muvkrjr5', '_TZE200_hkdl5fmv',
+      '_TZ3000_fisb3ajo', '_TZ3000_aa5t61rh', '_TZ3000_rul9yxcc',
+      '_TZ3000_ji4araar', '_TZ3000_prits6g4', '_TZ3000_tqlv4ug4', '_TZ3210_tqlv4ug4',
+      '_TZ3000_qmi1cfuq', '_TZ3000_4o16jdca', '_TZ3000_lvhy15ix', '_TZ3000_odzoiovu',
+      '_TZE200_44af8vyi', '_TZE200_bjawzodf', '_TZE200_bq5c8xfe',
+      '_TZE200_d7lpruvi', '_TZE204_d7lpruvi', '_TZE284_d7lpruvi',
+      // forum sacred couples
+      '_TZ3000_u3nv1jwk', '_TZE284_aaeasoll', '_TZE284_fhvpaltk',
+      '_TZ3000_mrduubod', '_TZE200_clrdrnya', '_TZE204_clrdrnya',
+    ],
+  },
+  {
+    id: 'p102-tyst11-not-climate',
+    driver: 'climate_sensor',
+    mfrs: [
+      '_TYST11_udank5zs', '_TZE200_udank5zs', '_TZE284_udank5zs',
+      '_TYST11_wv90ladg', '_TZE200_wv90ladg',
+      '_TYST11_2dpplnsn', '_TZE200_2dpplnsn', '_TZE204_2dpplnsn',
+      '_TYST11_pisltm67', '_TZ3000_l8fsgo6p',
+    ],
+  },
+  {
+    id: 'p102-pisltm67-not-thermostat-dp',
+    driver: 'thermostat_tuya_dp',
+    mfrs: ['_TYST11_pisltm67', '_TZE200_pisltm67', '_TZE204_pisltm67'],
+  },
+  {
+    id: 'p102-din-not-btn-plug',
+    driver: 'button_wireless_plug',
+    mfrs: [
+      '_TZE200_byzdayie', '_TZE204_byzdayie', '_TZE200_fsb6zw01', '_TZE200_ewxhg6o9',
+      '_TZE200_bkkmqmyo', '_TZE204_bkkmqmyo', '_TZE200_eaac7dkw',
+      '_TZE200_lsanae15', '_TZE204_lsanae15', '_TZE200_nkjintbl',
+    ],
+  },
+  {
+    id: 'p102-switches-not-btn2',
+    driver: 'button_wireless_2',
+    mfrs: [
+      '_TZE204_muvkrjr5', '_TZE200_hkdl5fmv',
+      '_TZ3000_fisb3ajo', '_TZ3000_aa5t61rh', '_TZ3000_rul9yxcc',
+      '_TZ3000_ji4araar', '_TZ3000_prits6g4', '_TZ3000_tqlv4ug4', '_TZ3210_tqlv4ug4',
+      '_TZ3000_qmi1cfuq', '_TZ3000_4o16jdca', '_TZ3000_lvhy15ix', '_TZ3000_odzoiovu',
+      '_TZE200_44af8vyi', '_TZE200_bjawzodf', '_TZE200_bq5c8xfe',
+      '_TZE200_d7lpruvi', '_TZE204_d7lpruvi', '_TZE284_d7lpruvi',
+    ],
+  },
 ];
 
 /** Forbidden productIds on a driver. */
@@ -196,7 +260,10 @@ const REQUIRED = [
   {
     id: 'p96-jtbgusdc-dimmer2',
     driver: 'dimmer_2_gang_tuya',
-    mfrs: ['_TZE204_jtbgusdc', '_TZE28C1000000_jtbgusdc'],
+    mfrs: [
+      '_TZE204_jtbgusdc', '_TZE284_jtbgusdc', '_TZE200_jtbgusdc', '_TZE28C1000000_jtbgusdc',
+      '_TZE204_o9gyszw2', '_TZE284_o9gyszw2', '_TZE28C1000000_o9gyszw2',
+    ],
   },
   {
     id: 'p96-hlla45kx-socket',
@@ -257,6 +324,71 @@ const REQUIRED = [
     id: 'p101-forum-mrduubod-sw4',
     driver: 'wall_switch_4gang_1way',
     mfrs: ['_TZ3000_mrduubod'],
+  },
+  {
+    id: 'p102-forum-clrdrnya-radar',
+    driver: 'presence_sensor_radar',
+    mfrs: ['_TZE200_clrdrnya', '_TZE204_clrdrnya'],
+  },
+  {
+    id: 'p102-trwaxi57-curtain',
+    driver: 'curtain_motor',
+    mfrs: ['_TZE204_trwaxi57'],
+  },
+  {
+    id: 'p102-81yrt3lo-clamp',
+    driver: 'power_clamp_meter',
+    mfrs: ['_TZE28C1000000_81yrt3lo'],
+  },
+  {
+    id: 'p102-xbexmf8h-wall-curtain',
+    driver: 'wall_curtain_switch',
+    mfrs: ['_TZE20C_xbexmf8h'],
+  },
+  {
+    id: 'p102-udank5zs-curtain',
+    driver: 'curtain_motor',
+    mfrs: ['_TYST11_udank5zs', '_TZE200_udank5zs'],
+  },
+  {
+    id: 'p102-wv90ladg-thermostat',
+    driver: 'wall_thermostat',
+    mfrs: ['_TYST11_wv90ladg', '_TZE200_wv90ladg'],
+  },
+  {
+    id: 'p102-2dpplnsn-trv',
+    driver: 'radiator_valve',
+    mfrs: ['_TYST11_2dpplnsn', '_TZE200_2dpplnsn'],
+  },
+  {
+    id: 'p102-pisltm67-lux',
+    driver: 'light_sensor_outdoor',
+    mfrs: ['_TYST11_pisltm67', '_TZE200_pisltm67'],
+  },
+  {
+    id: 'p102-byzdayie-din',
+    driver: 'energy_meter_din',
+    mfrs: ['_TZE200_byzdayie'],
+  },
+  {
+    id: 'p102-muvkrjr5-radar',
+    driver: 'presence_sensor_radar',
+    mfrs: ['_TZE204_muvkrjr5'],
+  },
+  {
+    id: 'p102-fisb3ajo-sw2',
+    driver: 'switch_2gang',
+    mfrs: ['_TZ3000_fisb3ajo', '_TZ3000_aa5t61rh'],
+  },
+  {
+    id: 'p102-ji4araar-sw1',
+    driver: 'switch_1gang',
+    mfrs: ['_TZ3000_ji4araar', '_TZ3000_l8fsgo6p'],
+  },
+  {
+    id: 'p102-4o16jdca-sw3',
+    driver: 'switch_3gang',
+    mfrs: ['_TZ3000_4o16jdca', '_TZ3000_lvhy15ix'],
   },
 ];
 

@@ -112,6 +112,40 @@
     },
     "button": {
       "title": "Botón"
+    },
+    "alarm_battery": {
+      "title": "Batería baja"
+    },
+    "alarm_sos": {
+      "title": "SOS"
+    },
+    "alarm_emergency": {
+      "title": "Emergencia"
+    },
+    "alarm_siren": {
+      "title": "Sirena"
+    },
+    "text_battery_status": {
+      "title": "Estado de la batería"
+    },
+    "measure_battery_health": {
+      "title": "Salud de la batería",
+      "units": "%"
+    },
+    "button_open": {
+      "title": "Abrir"
+    },
+    "button_close": {
+      "title": "Cerrar"
+    },
+    "button_stop": {
+      "title": "Detener"
+    },
+    "button_dim_up": {
+      "title": "Subir brillo"
+    },
+    "button_dim_down": {
+      "title": "Bajar brillo"
     }
   },
   "settings": {
@@ -271,6 +305,112 @@
     "cancel": "Cancelar",
     "ok": "OK",
     "delete": "Eliminar",
-    "edit": "Editar"
+    "edit": "Editar",
+    "retry": "Reintentar",
+    "close": "Cerrar",
+    "yes": "Sí",
+    "no": "No",
+    "loading": "Cargando…",
+    "unavailable": "No disponible",
+    "online": "En línea",
+    "offline": "Fuera de línea",
+    "unknown": "Desconocido",
+    "enabled": "Activado",
+    "disabled": "Desactivado"
+  },
+  "errors": {
+    "unknown": "Se ha producido un error desconocido",
+    "command_failed": "Comando fallido. El dispositivo no respondió o rechazó la solicitud.",
+    "unavailable": "Esta función no está disponible actualmente",
+    "device_unavailable": "Dispositivo no disponible. Compruebe la alimentación y el alcance Zigbee.",
+    "timeout": "El dispositivo no respondió a tiempo",
+    "not_ready": "El dispositivo aún no está listo. Inténtelo de nuevo en un momento.",
+    "pairing_failed": "Emparejamiento fallido. Reinicie el dispositivo e inténtelo de nuevo.",
+    "invalid_setting": "Valor de ajuste no válido",
+    "battery_read_failed": "No se pudo leer el estado de la batería"
+  },
+  "warnings": {
+    "battery_low": "Batería baja — reemplazar pronto",
+    "battery_critical": "Batería crítica — reemplazar de inmediato",
+    "device_unavailable": "Dispositivo no disponible",
+    "device_offline": "El dispositivo parece estar fuera de línea",
+    "weak_signal": "Señal Zigbee débil — acérquese a un router",
+    "pairing_incomplete": "El emparejamiento puede estar incompleto — reabra el dispositivo o vuelva a emparejar"
+  },
+  "pairing": {
+    "title": "Emparejamiento",
+    "instruction_generic": "Ponga el dispositivo en modo de emparejamiento y espere a que Homey lo encuentre.",
+    "instruction_battery": "Inserte baterías nuevas y mantenga pulsado el botón de reset/emparejar hasta que el LED parpadee.",
+    "instruction_mains": "Encienda el dispositivo y pulse el botón de reset/emparejar hasta que el LED parpadee.",
+    "instruction_sos": "Mantenga pulsado el botón SOS hasta que el LED parpadee rápidamente.",
+    "wait_interview": "Entrevistando el dispositivo… esto puede tardar hasta un minuto.",
+    "success": "Dispositivo emparejado correctamente",
+    "failed": "Emparejamiento fallido",
+    "timeout": "Tiempo de emparejamiento agotado. Reinicie el dispositivo e inténtelo de nuevo.",
+    "tip_router": "Coloque un router Zigbee con alimentación de red cerca para un emparejamiento más fiable."
+  },
+  "diagnostics": {
+    "title": "Diagnósticos",
+    "collecting": "Recopilando diagnósticos…",
+    "export_hint": "Comparta estos diagnósticos al informar de un problema.",
+    "last_seen": "Última vez visto",
+    "signal_strength": "Intensidad de la señal",
+    "battery_voltage": "Voltaje de la batería",
+    "battery_level": "Nivel de batería",
+    "no_data": "Aún no hay datos de diagnóstico disponibles",
+    "manufacturer": "Fabricante",
+    "product_id": "ID de producto",
+    "unavailable": "Diagnósticos no disponibles"
+  },
+  "buttons": {
+    "pressed": "Botón pulsado",
+    "single_press": "Pulsación simple",
+    "double_press": "Doble pulsación",
+    "long_press": "Pulsación larga",
+    "held": "Botón mantenido",
+    "released": "Botón soltado",
+    "gang": "Canal __n__",
+    "physical": "Botón físico",
+    "virtual": "Botón virtual",
+    "scene": "Botón de escena"
+  },
+  "sos": {
+    "title": "SOS / Emergencia",
+    "triggered": "SOS activado",
+    "cleared": "SOS desactivado",
+    "emergency_pressed": "Botón de emergencia pulsado",
+    "help": "Use flows SOS para alertas de pánico o asistencia desde botones de emergencia."
+  },
+  "scenes": {
+    "title": "Escenas",
+    "activated": "Escena activada",
+    "recalled": "Escena recuperada",
+    "help": "Los botones de escena pueden activar Flows de Homey sin conmutar un relé."
+  },
+  "flow": {
+    "battery_low": {
+      "title": "La batería se ha vuelto baja"
+    },
+    "battery_critical": {
+      "title": "La batería se ha vuelto crítica"
+    },
+    "button_pressed": {
+      "title": "Se pulsó un botón"
+    },
+    "button_long_press": {
+      "title": "Se mantuvo pulsado un botón"
+    },
+    "sos_triggered": {
+      "title": "Se activó SOS / emergencia"
+    },
+    "scene_activated": {
+      "title": "Se activó una escena"
+    },
+    "device_unavailable": {
+      "title": "El dispositivo dejó de estar disponible"
+    },
+    "device_available": {
+      "title": "El dispositivo volvió a estar disponible"
+    }
   }
 }

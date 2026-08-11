@@ -1,6 +1,6 @@
 'use strict';
 
-const { ZigBeeDevice } = require('homey-zigbeedriver');
+const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 const { safeSetCapabilityValue } = require('../../lib/utils/SafeCapability');
 
@@ -22,7 +22,7 @@ const ENERGY_DIVISORS = {
  * ║  - Physical button detection via PhysicalButtonMixin                        ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
-class SwitchUsbDongleDevice extends PhysicalButtonMixin(ZigBeeDevice) {
+class SwitchUsbDongleDevice extends PhysicalButtonMixin(TuyaZigbeeDevice) {
 
   get mainsPowered() { return true; }
 

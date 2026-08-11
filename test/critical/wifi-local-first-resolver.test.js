@@ -90,6 +90,25 @@ describe('LocalFirstResolver - resolveWiFiTransport', () => {
     });
     assert.strictEqual(d.transport, TRANSPORT_CLOUD);
   });
+
+  it('refuses CLOUD when rate-limited even if fallback opted in', () => {
+    const d = resolveWiFiTransport({
+      deviceId: 'abc', localKey: null,
+      policy: { cloudFallback: true }, hasCloudCredentials: true,
+      cloudRateLimited: true,
+    });
+    assert.strictEqual(d.transport, TRANSPORT_NONE);
+    assert.ok(d.reason.includes('rate-limited'));
+  });
+
+  it('keeps LAN when credentials exist even if cloud is unhealthy', () => {
+    const d = resolveWiFiTransport({
+      deviceId: 'abc', localKey: 'k', ip: '192.168.1.10',
+      cloudUnhealthy: true,
+    });
+    assert.strictEqual(d.transport, TRANSPORT_LAN);
+    assert.ok(d.reason.includes('LAN-only'));
+  });
 });
 
 describe('LocalFirstResolver - resolveLanFailureAction', () => {
@@ -108,6 +127,16 @@ describe('LocalFirstResolver - resolveLanFailureAction', () => {
     const a = resolveLanFailureAction({ policy: { cloudFallback: true }, hasCloudCredentials: true });
     assert.strictEqual(a.action, 'cloud_status');
     assert.ok(a.reason.includes('control stays local'));
+  });
+
+  it('skips cloud status snapshot when cloud is rate-limited', () => {
+    const a = resolveLanFailureAction({
+      policy: { cloudFallback: true },
+      hasCloudCredentials: true,
+      cloudRateLimited: true,
+    });
+    assert.strictEqual(a.action, 'stay_local');
+    assert.ok(a.reason.includes('rate-limited'));
   });
 });
 

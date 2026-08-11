@@ -1,6 +1,6 @@
 {
   "name": "com.dlnraja.tuya.zigbee",
-  "version": "9.0.450",
+  "version": "9.0.451",
   "description": "Tuya Unified Zigbee - Local-first control with AI automation",
   "main": "app.js",
   "scripts": {
@@ -124,12 +124,27 @@
     "fix:case-variants": "node tools/ci/ensure-case-variants.js --apply",
     "check:case-variants": "node tools/ci/ensure-case-variants.js",
     "check:anti-bot": "node tools/ci/anti-bot-regression-gate.js",
+    "check:bare-zigbee": "node tools/ci/bare-zigbee-device-gate.js",
+    "check:regression-lessons": "node tools/ci/regression-lessons-gate.js",
+    "check:regression-lessons:json": "node tools/ci/regression-lessons-gate.js --json",
     "fix:re-inject": "node tools/ci/re-inject-manual-fixes.js",
     "enrich:closed-loop": "node tools/ci/auto-enrich-closed-loop.js --skip-crawl",
+    "enrich:infer": "node tools/ci/infer-enrich-from-incomplete.js",
+    "enrich:infer:apply": "node tools/ci/infer-enrich-from-incomplete.js --apply",
     "check:gmail-crashes": "node tools/ci/gmail-crash-pattern-gate.js",
     "check:gmail-crashes:json": "node tools/ci/gmail-crash-pattern-gate.js --json",
+    "build:gmail-fps": "node tools/ci/build-gmail-unique-fps.js",
+    "check:gmail-fps-crossref": "node tools/ci/build-gmail-unique-fps.js && node tools/ci/cross-ref-gmail-fps-v2.js",
+    "check:sacred-couple-dry": "node tools/ci/sacred-couple-dry-gate.js",
+    "check:diag-protocol": "npm run check:gmail-crashes && npm run check:gmail-fps-crossref && npm run check:sacred-couple-dry",
+    "check:reliability": "npm run check:regression-lessons && npm run check:anti-bot && npm run check:timer-context",
+    "sync:z2m-zha:light": "node tools/ci/mega-crawler.js --only=z2m --timeout=150 && node tools/ci/mega-crawler.js --only=zha --timeout=150",
     "fix:p101-lot2": "node tools/ci/apply-p101-sacred-lot2.js --apply",
-    "check:p101-lot2": "node tools/ci/apply-p101-sacred-lot2.js"
+    "check:p101-lot2": "node tools/ci/apply-p101-sacred-lot2.js",
+    "io:smoke": "node tools/ci/device-io-facade-smoke.js",
+    "check:io": "npm run io:smoke",
+    "check:bare-zigbee:update": "node tools/ci/lint-bare-zigbee-device.js --update-baseline",
+    "enrich:quirks": "node scripts/maintenance/build-protocol-quirk-table.js"
   },
   "keywords": [
     "homey",

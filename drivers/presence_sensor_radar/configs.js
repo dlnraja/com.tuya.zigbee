@@ -52,6 +52,8 @@ const SENSOR_CONFIGS = {
       '_TZE204_lyetpprm', '_TZE200_lyetpprm',
       '_TZE204_wukb7rhc', '_TZE200_wukb7rhc',
       '_TZE204_jva8ink8', '_TZE200_jva8ink8',
+      // P102: SZR07U 24GHz (Z2M) — presence + fading_time
+      '_TZE204_muvkrjr5', '_TZE200_muvkrjr5',
     ],
     battery: false,
     mainsPowered: true,
@@ -72,6 +74,7 @@ const SENSOR_CONFIGS = {
       12: { cap: 'measure_luminance', type: 'lux_direct' },
       101: { cap: null, setting: 'static_sensitivity', min: 0, max: 10 },
       102: { cap: null, setting: 'motion_sensitivity', min: 0, max: 10 },
+      105: { cap: null, setting: 'fading_time', min: 0, max: 28800 },
     }
   },
 

@@ -77,6 +77,27 @@ const KNOWN_PATTERNS = [
     fix: 'Promise.resolve(x).catch(...) or guard return values before .catch',
     status: 'fixed_p101',
   },
+  {
+    id: 'registerRunListenerasync_typo',
+    severity: 'fatal',
+    re: /registerRunListenerasync\s+is not a function|card\.registerRunListenerasync/i,
+    fix: 'registerRunListener(async ...) — never concatenate async into the method name (P19)',
+    status: 'fixed_p19',
+  },
+  {
+    id: 'settimeout_destroyed',
+    severity: 'fatal',
+    re: /setTimeout is not a function|Cannot read properties of undefined \(reading 'setTimeout'\)/i,
+    fix: 'safeSetTimeout(this, cb, ms) from lib/utils/safe-timers.js (P19)',
+    status: 'fixed_p19',
+  },
+  {
+    id: 'onDeleted_null',
+    severity: 'fatal',
+    re: /reading ['_"]_onDeleted['_"]|Cannot read properties of null \(reading '_onDeleted'\)/i,
+    fix: 'Null-safe device teardown; avoid stale node refs after unpair (stable crash era)',
+    status: 'watch',
+  },
 ];
 
 function readJson(p) {
@@ -167,7 +188,7 @@ function main() {
     const unk = blob.text.match(/TypeError:\s*([^\n\r"']{10,120})/gi) || [];
     for (const u of unk) {
       if (KNOWN_PATTERNS.some(p => p.re.test(u))) continue;
-      if (/getDeviceActi|read only property|getDiscoveries|_destroyed|reading ['"]catch['"]/i.test(u)) continue;
+      if (/getDeviceActi|read only property|getDiscoveries|_destroyed|reading ['"]catch['"]|registerRunListenerasync|setTimeout is not|reading ['_"]_onDeleted/i.test(u)) continue;
       // Truncated Homey emails often cut mid-message; treat as covered by known patterns
       if (/Cannot read properties of undefined \(reading\s*$/i.test(u)) continue;
       if (/TIMEOUT|MAC_NO_ACK|UNSUPPORTED/i.test(u)) continue;

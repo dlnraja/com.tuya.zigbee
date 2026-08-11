@@ -2,15 +2,16 @@
 const ZclBatteryMonitor = require('../../lib/battery/ZclBatteryMonitor');
 const { setupDoorWindowSensor, handleDoorWindowSettings } = require('../../lib/devices/DoorWindowContactHelper');
 
-const { ZigBeeDevice } = require('homey-zigbeedriver');
+const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
 
 /**
  * Door/Window contact sensor with tamper (IAS zone).
  * v9.0.415 (P92.123): enrollment + initial read + invert via shared helper.
  */
-class doorwindowsensor2 extends ZigBeeDevice {
+class doorwindowsensor2 extends TuyaZigbeeDevice {
 
   async onNodeInit({ zclNode }) {
+    await super.onNodeInit({ zclNode }).catch(() => {});
     ZclBatteryMonitor.attach(this, zclNode);
     this.printNode();
     await setupDoorWindowSensor(this, zclNode, { hasTamper: true });

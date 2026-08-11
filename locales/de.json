@@ -112,6 +112,40 @@
     },
     "button": {
       "title": "Taste"
+    },
+    "alarm_battery": {
+      "title": "Niedriger Batteriestand"
+    },
+    "alarm_sos": {
+      "title": "SOS"
+    },
+    "alarm_emergency": {
+      "title": "Notfall"
+    },
+    "alarm_siren": {
+      "title": "Sirene"
+    },
+    "text_battery_status": {
+      "title": "Batteriestatus"
+    },
+    "measure_battery_health": {
+      "title": "Batteriezustand",
+      "units": "%"
+    },
+    "button_open": {
+      "title": "Öffnen"
+    },
+    "button_close": {
+      "title": "Schließen"
+    },
+    "button_stop": {
+      "title": "Stopp"
+    },
+    "button_dim_up": {
+      "title": "Heller"
+    },
+    "button_dim_down": {
+      "title": "Dunkler"
     }
   },
   "settings": {
@@ -271,6 +305,112 @@
     "cancel": "Abbrechen",
     "ok": "OK",
     "delete": "Löschen",
-    "edit": "Bearbeiten"
+    "edit": "Bearbeiten",
+    "retry": "Erneut versuchen",
+    "close": "Schließen",
+    "yes": "Ja",
+    "no": "Nein",
+    "loading": "Laden…",
+    "unavailable": "Nicht verfügbar",
+    "online": "Online",
+    "offline": "Offline",
+    "unknown": "Unbekannt",
+    "enabled": "Aktiviert",
+    "disabled": "Deaktiviert"
+  },
+  "errors": {
+    "unknown": "Ein unbekannter Fehler ist aufgetreten",
+    "command_failed": "Befehl fehlgeschlagen. Das Gerät hat nicht geantwortet oder die Anfrage abgelehnt.",
+    "unavailable": "Diese Funktion ist derzeit nicht verfügbar",
+    "device_unavailable": "Gerät nicht verfügbar. Prüfen Sie Stromversorgung und Zigbee-Reichweite.",
+    "timeout": "Das Gerät hat nicht rechtzeitig geantwortet",
+    "not_ready": "Gerät ist noch nicht bereit. Bitte gleich erneut versuchen.",
+    "pairing_failed": "Kopplung fehlgeschlagen. Gerät zurücksetzen und erneut versuchen.",
+    "invalid_setting": "Ungültiger Einstellungswert",
+    "battery_read_failed": "Batteriestatus konnte nicht gelesen werden"
+  },
+  "warnings": {
+    "battery_low": "Batterie schwach — bald ersetzen",
+    "battery_critical": "Batterie kritisch — sofort ersetzen",
+    "device_unavailable": "Gerät nicht verfügbar",
+    "device_offline": "Gerät scheint offline zu sein",
+    "weak_signal": "Schwaches Zigbee-Signal — näher an einen Router bringen",
+    "pairing_incomplete": "Kopplung möglicherweise unvollständig — Gerät erneut öffnen oder neu koppeln"
+  },
+  "pairing": {
+    "title": "Kopplung",
+    "instruction_generic": "Versetzen Sie das Gerät in den Kopplungsmodus und warten Sie, bis Homey es findet.",
+    "instruction_battery": "Legen Sie frische Batterien ein und halten Sie die Reset-/Kopplungstaste, bis die LED blinkt.",
+    "instruction_mains": "Schalten Sie das Gerät ein und drücken Sie die Reset-/Kopplungstaste, bis die LED blinkt.",
+    "instruction_sos": "Halten Sie die SOS-Taste gedrückt, bis die LED schnell blinkt.",
+    "wait_interview": "Gerät wird interviewt… dies kann bis zu einer Minute dauern.",
+    "success": "Gerät erfolgreich gekoppelt",
+    "failed": "Kopplung fehlgeschlagen",
+    "timeout": "Kopplung abgelaufen. Gerät zurücksetzen und erneut versuchen.",
+    "tip_router": "Platzieren Sie einen netzbetriebenen Zigbee-Router in der Nähe für zuverlässigere Kopplung."
+  },
+  "diagnostics": {
+    "title": "Diagnose",
+    "collecting": "Diagnosedaten werden erfasst…",
+    "export_hint": "Teilen Sie diese Diagnosedaten beim Melden eines Problems.",
+    "last_seen": "Zuletzt gesehen",
+    "signal_strength": "Signalstärke",
+    "battery_voltage": "Batteriespannung",
+    "battery_level": "Batteriestand",
+    "no_data": "Noch keine Diagnosedaten verfügbar",
+    "manufacturer": "Hersteller",
+    "product_id": "Produkt-ID",
+    "unavailable": "Diagnose nicht verfügbar"
+  },
+  "buttons": {
+    "pressed": "Taste gedrückt",
+    "single_press": "Einfacher Druck",
+    "double_press": "Doppeldruck",
+    "long_press": "Langer Druck",
+    "held": "Taste gehalten",
+    "released": "Taste losgelassen",
+    "gang": "Kanal __n__",
+    "physical": "Physische Taste",
+    "virtual": "Virtuelle Taste",
+    "scene": "Szenentaste"
+  },
+  "sos": {
+    "title": "SOS / Notfall",
+    "triggered": "SOS ausgelöst",
+    "cleared": "SOS zurückgesetzt",
+    "emergency_pressed": "Notruftaste gedrückt",
+    "help": "Nutzen Sie SOS-Flows für Panik- oder Hilfewarnungen von Notfalltasten."
+  },
+  "scenes": {
+    "title": "Szenen",
+    "activated": "Szene aktiviert",
+    "recalled": "Szene abgerufen",
+    "help": "Szenentasten können Homey Flows auslösen, ohne ein Relais zu schalten."
+  },
+  "flow": {
+    "battery_low": {
+      "title": "Die Batterie ist schwach geworden"
+    },
+    "battery_critical": {
+      "title": "Die Batterie ist kritisch geworden"
+    },
+    "button_pressed": {
+      "title": "Eine Taste wurde gedrückt"
+    },
+    "button_long_press": {
+      "title": "Eine Taste wurde lange gedrückt"
+    },
+    "sos_triggered": {
+      "title": "SOS / Notfall wurde ausgelöst"
+    },
+    "scene_activated": {
+      "title": "Eine Szene wurde aktiviert"
+    },
+    "device_unavailable": {
+      "title": "Das Gerät ist nicht mehr verfügbar"
+    },
+    "device_available": {
+      "title": "Das Gerät ist wieder verfügbar"
+    }
   }
 }

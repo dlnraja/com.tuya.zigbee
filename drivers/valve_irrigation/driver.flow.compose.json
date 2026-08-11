@@ -13,7 +13,7 @@
         }
       ],
       "titleFormatted": {
-        "en": "Turn on [[device]]"
+        "en": "Turn on"
       }
     },
     {
@@ -29,7 +29,7 @@
         }
       ],
       "titleFormatted": {
-        "en": "Turn off [[device]]"
+        "en": "Turn off"
       }
     },
     {
@@ -48,10 +48,10 @@
         }
       ],
       "titleFormatted": {
-        "en": "Toggle [[device]]",
-        "fr": "Basculer [[device]]",
-        "nl": "Wisselen [[device]]",
-        "de": "Umschalten [[device]]"
+        "en": "Toggle",
+        "fr": "Basculer",
+        "nl": "Wisselen",
+        "de": "Umschalten"
       }
     }
   ],
@@ -72,10 +72,10 @@
         }
       ],
       "titleFormatted": {
-        "en": "Turned on [[device]]",
-        "fr": "Allumé [[device]]",
-        "nl": "Aangezet [[device]]",
-        "de": "Eingeschaltet [[device]]"
+        "en": "Turned on",
+        "fr": "Allumé",
+        "nl": "Aangezet",
+        "de": "Eingeschaltet"
       }
     },
     {
@@ -94,10 +94,10 @@
         }
       ],
       "titleFormatted": {
-        "en": "Turned off [[device]]",
-        "fr": "Éteint [[device]]",
-        "nl": "Uitgezet [[device]]",
-        "de": "Ausgeschaltet [[device]]"
+        "en": "Turned off",
+        "fr": "Éteint",
+        "nl": "Uitgezet",
+        "de": "Ausgeschaltet"
       }
     },
     {
@@ -116,10 +116,10 @@
         }
       ],
       "titleFormatted": {
-        "en": "Battery low [[device]]",
-        "fr": "Batterie faible [[device]]",
-        "nl": "Batterij laag [[device]]",
-        "de": "Batterie schwach [[device]]"
+        "en": "Battery low",
+        "fr": "Batterie faible",
+        "nl": "Batterij laag",
+        "de": "Batterie schwach"
       }
     }
   ],
@@ -140,10 +140,10 @@
         }
       ],
       "titleFormatted": {
-        "en": "Is !{{on|off}} [[device]]",
-        "fr": "Est !{{allumé|éteint}} [[device]]",
-        "nl": "Is !{{aan|uit}} [[device]]",
-        "de": "Ist !{{ein|aus}} [[device]]"
+        "en": "Is !{{on|off}}",
+        "fr": "Est !{{allumé|éteint}}",
+        "nl": "Is !{{aan|uit}}",
+        "de": "Ist !{{ein|aus}}"
       }
     }
   ]
