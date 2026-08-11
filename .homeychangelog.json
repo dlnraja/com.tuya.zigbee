@@ -1932,5 +1932,8 @@
   },
   "9.0.473": {
     "en": "Stability improvements and Homey test publication retry."
+  },
+  "9.0.475": {
+    "en": "v9.0.474: fix(P114): multi-source enrich automation + DeviceIO RX/TX + FP reinforce (v9.0.474)"
   }
 }

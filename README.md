@@ -4,13 +4,13 @@
 
 [![Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdlnraja%2Fcom.tuya.zigbee%2Fmaster%2Fapp.json&query=%24.version&label=version&color=blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![Drivers](https://img.shields.io/badge/drivers-430-brightgreen)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
-[![Fingerprints](https://img.shields.io/badge/fingerprints-4,357%20unique-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
+[![Fingerprints](https://img.shields.io/badge/fingerprints-4,365%20unique-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![Flow Cards](https://img.shields.io/badge/flow%20cards-4,954-blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![Native OTA](https://img.shields.io/badge/native%20OTA-6%20drivers-orange)](docs/P92_70_HOMEY_2026_OTA_NATIVE.md)
 [![SDK](https://img.shields.io/badge/SDK-3-orange)](https://apps.developer.homey.app/)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
-A community-driven Homey app that brings **local control** to Tuya Zigbee devices — no cloud, no internet needed. Covers switches, sensors, lights, thermostats, covers, locks and more across **430 drivers** and **4,357 unique device fingerprints** (16,921 including case variants for bulletproof pairing).
+A community-driven Homey app that brings **local control** to Tuya Zigbee devices — no cloud, no internet needed. Covers switches, sensors, lights, thermostats, covers, locks and more across **430 drivers** and **4,365 unique device fingerprints** (16,945 including case variants for bulletproof pairing).
 
 **Key features:**
 - **Local-only** — everything runs on your Homey, nothing goes to the cloud
@@ -37,10 +37,10 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.473 |
+| **App Version** | v9.0.475 |
 | **Drivers** | 430 (380 Zigbee + 50 WiFi) |
-| **Unique Fingerprints** | 4,357 |
-| **Pairing Variants** | 16,921 (4 case combos per fingerprint) |
+| **Unique Fingerprints** | 4,365 |
+| **Pairing Variants** | 16,945 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 573 |
 | **Flow Cards** | 4,954 |
 | **Unique Capabilities** | 170 |
@@ -58,13 +58,13 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 | 1 | `climate_sensor` | 2,672 |
 | 2 | `switch_1gang` | 1,812 |
 | 3 | `button_wireless_2` | 790 |
-| 4 | `presence_sensor_radar` | 712 |
+| 4 | `presence_sensor_radar` | 714 |
 | 5 | `radiator_valve` | 601 |
-| 6 | `wall_dimmer_tuya` | 490 |
+| 6 | `wall_dimmer_tuya` | 492 |
 | 7 | `generic_tuya` | 484 |
 | 8 | `device_radiator_valve` | 380 |
 | 9 | `sensor_contact_zigbee` | 345 |
-| 10 | `curtain_motor` | 282 |
+| 10 | `curtain_motor` | 292 |
 | 11 | `switch_4gang` | 262 |
 | 12 | `switch_2gang` | 228 |
 | 13 | `switch_3gang` | 216 |
@@ -106,7 +106,8 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 
 | Version | Changes |
 |---------|---------|
-| **v9.0.473** | v9.0.472: v9.0.472: 430 drivers, 3824 FPs [skip ci] |
+| **v9.0.475** | v9.0.474: fix(P114): multi-source enrich automation + DeviceIO RX/TX + FP reinforce (v9.0.474) |
+| **v9.0.473** | Stability improvements and Homey test publication retry. |
 | **v9.0.471** | v9.0.470: fix(P111): harden , timers, forum inbox bridge (v9.0.470) |
 | **v9.0.469** | v9.0.468: fix(P110): audit follow-up — time sync, MCU helper, battery DP, climate FP rehome (v9.0.468) |
 | **v9.0.467** | v9.0.466: fix: remove rebase conflict markers from version manifests (v9.0.466) |
@@ -117,7 +118,6 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 | **v9.0.460** | Max multi-method I/O coverage: DP/ZCL/IAS/raw fallbacks, quirk-guided init for more device families, expanded magic packet profiles. |
 | **v9.0.459** | Max multi-method I/O coverage: DP/ZCL/IAS/raw fallbacks, quirk-guided init for more device families, expanded magic packet profiles. |
 | **v9.0.458** | Historical restore: MCU magic packet registry, EventDedup on capability updates, flow runListener guards, safe-timers on button mixins. |
-| **v9.0.457** | Universal flow-card heuristics, driver-mapping repair, DeviceIO on legacy Tuya/light bases, WiFi I/O channel, missing flow compose for 4 … |
 
 <!-- CHANGELOG_END -->
 
