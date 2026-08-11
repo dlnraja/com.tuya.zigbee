@@ -13969,12 +13969,13 @@
     ]
   },
   "_TZE204_jtbgusdc": {
-    "driverId": "generic_tuya",
-    "type": "other",
+    "driverId": "dimmer_2_gang_tuya",
+    "type": "dimmer",
     "powerSource": "unknown",
     "modelIds": [
       "TS0601"
-    ]
+    ],
+    "notes": "Forum #2135 Avatto ZDMS16-2 2ch dimmer (Z2M)"
   },
   "_TZE204_mpbki2zm-TS0601": {
     "driverId": "generic_tuya",
@@ -22590,14 +22591,15 @@
     "confidence": 0.85
   },
   "_TZE204_JTBGUSDC": {
-    "driverId": "climate_sensor",
-    "type": "climate_sensor",
+    "driverId": "dimmer_2_gang_tuya",
+    "type": "dimmer",
     "powerSource": "unknown",
     "modelIds": [
-      "TS0201"
+      "TS0601"
     ],
     "source": "driver-compose-2026-07-14",
-    "confidence": 0.85
+    "confidence": 0.85,
+    "notes": "Forum #2135 Avatto ZDMS16-2 2ch dimmer (Z2M)"
   },
   "_TZE204_K7V0EQKE": {
     "driverId": "climate_sensor",
@@ -24600,14 +24602,15 @@
     "confidence": 0.85
   },
   "_TZE284_jtbgusdc": {
-    "driverId": "climate_sensor",
-    "type": "climate_sensor",
+    "driverId": "dimmer_2_gang_tuya",
+    "type": "dimmer",
     "powerSource": "unknown",
     "modelIds": [
-      "TS0201"
+      "TS0601"
     ],
     "source": "driver-compose-2026-07-14",
-    "confidence": 0.85
+    "confidence": 0.85,
+    "notes": "Forum #2135 Avatto ZDMS16-2 2ch dimmer (Z2M)"
   },
   "_TZE284_r731zlxk": {
     "driverId": "climate_sensor",
@@ -54680,5 +54683,14 @@
     "batteries": [
       "CR2032"
     ]
+  },
+  "_TZE28C1000000_jtbgusdc": {
+    "driverId": "dimmer_2_gang_tuya",
+    "type": "dimmer",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0601"
+    ],
+    "notes": "Forum #2135 Avatto ZDMS16-2 TZE28C prefix"
   }
 }
