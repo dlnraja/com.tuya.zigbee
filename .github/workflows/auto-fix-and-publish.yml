@@ -83,6 +83,9 @@ jobs:
       - name: "🔌 P102 DeviceIOFacade smoke"
         run: npm run io:smoke
 
+      - name: "📡 P109 RF coexistence smoke"
+        run: npm run check:rf
+
       - name: "🧱 P102 bare ZigBeeDevice gate"
         run: npm run check:bare-zigbee
 

@@ -10,7 +10,7 @@ Improve the Homey app, workflows, and automations from **all** forum signals —
 | ID | Rule |
 |----|------|
 | FS1 | Default = **no forum reply**. Implement silently in code/CI. |
-| FS2 | `REPLY_TOPICS=140352` only; never reply on 26439 / 146735 / 89271 / 43287 / 157628 / others. |
+| FS2 | `REPLY_TOPICS=140352` only; never reply on 26439 / 146735 / 89271 / 43287 / 157628 / 157859 / others. |
 | FS3 | Never paste raw / unchecked LLM output to Discourse (T157628). |
 | FS4 | Any rare draft must pass humanize style + `reply-quality-gate` + `forum-ai-paste-gate`. |
 | FS5 | Auto-post scripts forced dry-run (`forum-responder.js`, `post-forum-update.js`). |
@@ -19,10 +19,12 @@ Improve the Homey app, workflows, and automations from **all** forum signals —
 
 ## Tooling
 - `tools/ci/forum-silent-multi-scan.js` — multi-topic silent digest
+- `tools/ci/apply-forum-silent-multi.js` — dry-run sacred-couple reinforce from digests
 - `tools/ci/forum-ai-paste-gate.js` — anti AI-paste detector
+- `lib/utils/rf-channel-coexistence.js` — Zigbee/Thread ≠ Wi-Fi numbering
 - `.github/scripts/reply-quality-gate.js` — factual + human-leak checks
 - `.github/scripts/forum-responder.js` — dry-run only
-- Workflows: `forum-poll.yml`, `auto-enrich-closed-loop.yml`, `fetch-diags.yml`
+- Workflows: `forum-poll.yml`, `auto-enrich-closed-loop.yml`, `fetch-diags.yml`, `auto-fix-and-publish.yml` (`check:rf`)
 
 ## Voice
 See `docs/responses/FORUM_STYLE_GUIDE.md`.

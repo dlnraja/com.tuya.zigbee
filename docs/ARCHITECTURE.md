@@ -1,27 +1,45 @@
 # Architecture Overview
 
 > Tuya Unified Zigbee for Homey Pro
-> Version: 9.0.53 | Last Updated: 2026-06-18
+> Version: 9.0.464+ | Last Updated: 2026-08-11 (P109 historical enrich)
 
 ## Project Overview
 
-The Tuya Unified Zigbee app is a comprehensive Homey SDK3 application supporting **429 drivers** (378 Zigbee + 51 WiFi) for Tuya-compatible smart home devices. It implements an **11-layer Zigbee pipeline**, **23 time sync formats**, and **42 utility modules** for maximum device compatibility and reliability.
+The Tuya Unified Zigbee app is a comprehensive Homey SDK3 application supporting **430 drivers** for Tuya-compatible smart home devices. It implements an **11-layer Zigbee pipeline**, plus a **Device I/O compensation façade** (P102–P108), **23 time sync formats**, SmartDivisor, UnifiedBatteryHandler, and silent forum/RF enrichment automations.
 
 ### Key Statistics
 | Metric | Value |
 |--------|-------|
-| Total drivers | 429 |
-| Zigbee drivers | 378 |
-| WiFi drivers | 51 |
-| Fingerprints | 4,304 |
-| Flow cards | 4,138 |
-| Unique capabilities | 156 |
+| Total drivers | ~430 |
+| Fingerprints | 3800+ (case variants) |
 | Time sync formats | 23 |
 | MCU protocol versions | 5 (v3.1-v3.5) |
-| Pipeline layers | 11 |
-| Lib files | 468 |
-| Scripts | 93 |
-| Workflows | 40 |
+| Pipeline layers | 11 (+ DeviceIO compensation) |
+
+---
+
+## Device I/O Compensation (P102–P108)
+
+Runtime layer that compensates Homey interview gaps (missing 0xEF00, sleepy devices, IAS):
+
+| Module | Role |
+|--------|------|
+| `lib/io/DeviceIOFacade.js` | Unified sendDP / requestDP / ZCL / raw / IAS / interview |
+| `lib/io/HomeyCompensationLayer.js` | Interview repair, MCU negotiate, passive listen |
+| `lib/io/ProtocolFallbackChain.js` | Multi-method cascades |
+| `lib/tuya/MagicPacketRegistry.js` | Era magic packets |
+| `lib/tuya/MCUVersionHelper.js` | MCU version heuristics |
+| `lib/tuya/TuyaTimeSyncFormats.js` | 23 time-sync formats |
+| `lib/managers/SmartDivisorManager.js` | Anti double-division |
+| `lib/utils/rf-channel-coexistence.js` | Zigbee/Thread ≠ Wi-Fi channel numbers |
+
+Legacy bases (`lib/TuyaSpecificClusterDevice.js`, wall/dimmer_tuya drivers) call `_ensureTuyaIo` + `_resolveTuyaCluster` so “paired but mute” devices recover.
+
+Silent CI: `forum-silent-multi-scan.js`, `forum-ai-paste-gate.js`, `apply-forum-silent-multi.js`, `npm run check:rf` / `io:smoke`.
+
+Reports: `reports/UNIVERSAL_LAYER_FLOW_HEURISTIC_P104.md` … `FORUM_SILENT_MULTI_ENRICH_P108.md`, `RF_COEXISTENCE_ENRICH_P108.md`.
+
+Doctrine: `docs/rules/FORUM_SILENT_HUMANIZE.md` · RF guide: `docs/guides/RF_CHANNEL_COEXISTENCE.md`.
 
 ---
 

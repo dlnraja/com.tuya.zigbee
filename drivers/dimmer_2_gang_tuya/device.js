@@ -1,10 +1,10 @@
-const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
-const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 'use strict';
 
+const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
+const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 const { debug, Cluster } = require('zigbee-clusters');
 const TuyaSpecificCluster = require('../../lib/TuyaSpecificCluster');
-const TuyaSpecificClusterDevice = require("../../lib/TuyaSpecificClusterDevice");
+const TuyaSpecificClusterDevice = require('../../lib/TuyaSpecificClusterDevice');
 const { getDataValue } = require('../../lib/TuyaHelpers');
 const { V1_MULTI_GANG_DIMMER_SWITCH_DATA_POINTS } = require('../../lib/TuyaDataPoints');
 
@@ -12,14 +12,18 @@ Cluster.addCluster(TuyaSpecificCluster);
 
 class dimmer_2_gang_tuya extends TuyaSpecificClusterDevice {
 
+  get mainsPowered() { return true; }
+
   async onNodeInit({ zclNode }) {
     this.printNode();
-/*     debug(true);
-    this.enableDebug(); */
-  
+
+    if (typeof this._ensureTuyaIo === 'function') {
+      await this._ensureTuyaIo(zclNode);
+    }
+
     const { subDeviceId } = this.getData();
     this.log('Sub device ID:', subDeviceId);
-  
+
     // Setup capability listeners and event handlers for each gang
     if (this.isSubDevice()) {
       // Subdevice (Second Gang)
@@ -28,26 +32,35 @@ class dimmer_2_gang_tuya extends TuyaSpecificClusterDevice {
       // Main device (First Gang)
       await this._setupGang(zclNode, 'first gang', V1_MULTI_GANG_DIMMER_SWITCH_DATA_POINTS.onOffGangOne, V1_MULTI_GANG_DIMMER_SWITCH_DATA_POINTS.brightnessGangOne);
     }
-  
+
     // Attach event listeners only once per physical device
     if (!this.hasListenersAttached) {
-      zclNode.endpoints[1].clusters.tuya.on("reporting", async (value) => {
-        try {
-          await this.processDatapoint(value);
-        } catch (err) {
-          this.error('Error processing datapoint:', err);
-        }
-      });
-  
-      zclNode.endpoints[1].clusters.tuya.on("response", async (value) => {
-        try {
-          await this.processDatapoint(value);
-        } catch (err) {
-          this.error('Error processing datapoint:', err);
-        }
-      });
-  
-      this.hasListenersAttached = true;
+      const tuya = (typeof this._resolveTuyaCluster === 'function'
+        ? this._resolveTuyaCluster(zclNode)
+        : null)
+        || zclNode?.endpoints?.[1]?.clusters?.tuya
+        || zclNode?.endpoints?.[1]?.clusters?.[0xEF00];
+
+      if (tuya?.on) {
+        tuya.on('reporting', async (value) => {
+          try {
+            await this.processDatapoint(value);
+          } catch (err) {
+            this.error('Error processing datapoint:', err);
+          }
+        });
+
+        tuya.on('response', async (value) => {
+          try {
+            await this.processDatapoint(value);
+          } catch (err) {
+            this.error('Error processing datapoint:', err);
+          }
+        });
+        this.hasListenersAttached = true;
+      } else {
+        this.log('[DIMMER2] Tuya cluster missing after compensation — passive RX via DeviceIO');
+      }
     }
   }  
 

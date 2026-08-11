@@ -1,6 +1,10 @@
 {
   "id": "com.dlnraja.tuya.zigbee",
+<<<<<<< HEAD
   "version": "9.0.465",
+=======
+  "version": "9.0.466",
+>>>>>>> 3acdb85b1 (feat(P109): historical docs/impl enrich — dimmer DeviceIO, RF CI, silent multi-apply (v9.0.466))
   "compatibility": ">=12.2.0",
   "platforms": [
     "local"

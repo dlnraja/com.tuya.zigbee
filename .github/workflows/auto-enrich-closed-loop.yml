@@ -176,6 +176,9 @@ jobs:
           fi
           node tools/ci/forum-silent-multi-scan.js --max=40 || echo "silent multi-scan failed (non-blocking)"
           node tools/ci/forum-ai-paste-gate.js --scan-defaults || echo "ai-paste gate warn"
+          if [ -f tools/ci/apply-forum-silent-multi.js ]; then
+            node tools/ci/apply-forum-silent-multi.js || echo "silent multi apply dry-run warn"
+          fi
           if [ -f .github/state/forum/multi-silent-digest.json ]; then
             echo "Silent multi-scan digest written (FORUM_AUTO_POST=0)"
             node -e "const d=require('./.github/state/forum/multi-silent-digest.json'); console.log(JSON.stringify(d.totals))"

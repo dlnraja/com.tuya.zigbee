@@ -1098,7 +1098,7 @@ manufacturerName: ['_TZE200_*']  // BANNED - causes false matches
 // 3. Never paste raw LLM walls (headers, emoji spam, "Happy to help", invented scripts).
 // 4. If a maintainer explicitly wants a draft: Dylan voice + verify sacred couples.
 // 5. Gates: tools/ci/forum-ai-paste-gate.js + .github/scripts/reply-quality-gate.js
-// 6. Scan: tools/ci/forum-silent-multi-scan.js (140352,146735,26439,89271,43287,157628)
+// 6. Scan: tools/ci/forum-silent-multi-scan.js (140352,146735,26439,89271,43287,157628,157859)
 // Full doctrine: docs/rules/FORUM_SILENT_HUMANIZE.md
 ```
 
