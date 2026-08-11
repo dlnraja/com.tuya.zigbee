@@ -37,7 +37,7 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.459 |
+| **App Version** | v9.0.461 |
 | **Drivers** | 430 (380 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,354 |
 | **Pairing Variants** | 16,925 (4 case combos per fingerprint) |
@@ -106,7 +106,9 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 
 | Version | Changes |
 |---------|---------|
-| **v9.0.459** | Historical restore: MCU magic packet registry, EventDedup on capability updates, flow runListener guards, safe-timers on button mixins. |
+| **v9.0.461** | Max multi-method I/O coverage: DP/ZCL/IAS/raw fallbacks, quirk-guided init for more device families, expanded magic packet profiles. |
+| **v9.0.460** | Max multi-method I/O coverage: DP/ZCL/IAS/raw fallbacks, quirk-guided init for more device families, expanded magic packet profiles. |
+| **v9.0.459** | Max multi-method I/O coverage: DP/ZCL/IAS/raw fallbacks, quirk-guided init for more device families, expanded magic packet profiles. |
 | **v9.0.458** | Historical restore: MCU magic packet registry, EventDedup on capability updates, flow runListener guards, safe-timers on button mixins. |
 | **v9.0.457** | Universal flow-card heuristics, driver-mapping repair, DeviceIO on legacy Tuya/light bases, WiFi I/O channel, missing flow compose for 4 … |
 | **v9.0.456** | Universal flow-card heuristics, driver-mapping repair, DeviceIO on legacy Tuya/light bases, WiFi I/O channel, missing flow compose for 4 … |
@@ -116,8 +118,6 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 | **v9.0.452** | P102 Unified Driver I/O: DeviceIOFacade + Homey interview compensation + bare ZigBeeDevice gate + exotic profile hooks. |
 | **v9.0.451** | P102 Unified Driver I/O: DeviceIOFacade + Homey interview compensation + bare ZigBeeDevice gate + exotic profile hooks. |
 | **v9.0.450** |  |
-| **v9.0.449** | P101: #439 sacred-couple lot2 rehomes + global getDeviceById/catch harden. |
-| **v9.0.448** | Crash hardening from , read-only error guard, getDiscoveries safe call, crash-pattern CI gate. |
 
 <!-- CHANGELOG_END -->
 
