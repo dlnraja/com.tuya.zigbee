@@ -2,7 +2,7 @@
 const ZclBatteryMonitor = require('../../lib/battery/ZclBatteryMonitor');
 const { setupDoorWindowSensor, handleDoorWindowSettings } = require('../../lib/devices/DoorWindowContactHelper');
 
-const { ZigBeeDevice } = require('homey-zigbeedriver');
+const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
 const { CLUSTER } = require('zigbee-clusters');
 
 /**
@@ -12,9 +12,10 @@ const { CLUSTER } = require('zigbee-clusters');
  * — the root cause of frozen contact states). Battery percentage handling
  * preserved.
  */
-class doorwindowsensor_4 extends ZigBeeDevice {
+class doorwindowsensor_4 extends TuyaZigbeeDevice {
 
   async onNodeInit({ zclNode }) {
+    await super.onNodeInit({ zclNode }).catch(() => {});
     ZclBatteryMonitor.attach(this, zclNode);
     this.printNode();
 

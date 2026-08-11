@@ -1,13 +1,14 @@
 'use strict';
 const ZclBatteryMonitor = require('../../lib/battery/ZclBatteryMonitor');
 
-const { ZigBeeDevice } = require('homey-zigbeedriver');
+const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
 const { debug, CLUSTER } = require('zigbee-clusters');
 const SleepyInit = require('../../lib/utils/SleepyDeviceInit');
 
-class smart_motion_sensor extends ZigBeeDevice {
+class smart_motion_sensor extends TuyaZigbeeDevice {
 
 	async onNodeInit({ zclNode }) {
+    await super.onNodeInit({ zclNode }).catch(() => {});
     ZclBatteryMonitor.attach(this, zclNode);
 
 		this.printNode();

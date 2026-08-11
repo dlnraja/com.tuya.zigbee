@@ -1,8 +1,8 @@
 'use strict';
 
-const { ZigBeeDevice } = require('homey-zigbeedriver');
+const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
 
-class ZigbeeRepeaterDevice extends ZigBeeDevice {
+class ZigbeeRepeaterDevice extends TuyaZigbeeDevice {
   async onNodeInit({ zclNode }) {
     await this._safeInvoke(async () => { await super.onNodeInit({ zclNode  });
       this.log('[REPEATER] Zigbee signal repeater initialized');

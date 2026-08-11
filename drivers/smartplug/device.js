@@ -1,6 +1,6 @@
 'use strict';
 
-const { ZigBeeDevice } = require('homey-zigbeedriver');
+const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
 const { CLUSTER, Cluster, ZCLDataTypes} = require('zigbee-clusters');
 const TuyaOnOffCluster = require('../../lib/TuyaOnOffCluster');
 
@@ -14,9 +14,10 @@ const ENERGY_DIVISORS = {
   measure_voltage: { divisor: 1 }
 };
 
-class smartplug extends ZigBeeDevice {
+class smartplug extends TuyaZigbeeDevice {
 
   async onNodeInit({zclNode}) {
+    await super.onNodeInit({ zclNode }).catch(() => {});
 
     this.printNode();
 
@@ -27,11 +28,11 @@ class smartplug extends ZigBeeDevice {
     this.minReportVoltage = this.getSetting('minReportVoltage') * 1000;
 
     if (!this.hasCapability('measure_current')) {
-      await this.addCapability('measure_current').catch(this.error);;
+      await this.addCapability('measure_current').catch(this.error);
     }
 
     if (!this.hasCapability('measure_voltage')) {
-      await this.addCapability('measure_voltage').catch(this.error);;
+      await this.addCapability('measure_voltage').catch(this.error);
     }
 
     // onOff

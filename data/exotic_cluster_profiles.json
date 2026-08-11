@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "note": "P102 Phase 4 — profile-driven exotic clusters. Opt-in via DeviceIOFacade.applyExoticProfile(id).",
+  "profiles": {
+    "zosung_ir": {
+      "clusters": ["0xE004", "0xED00"],
+      "actions": ["subscribeIrBinder"],
+      "drivers": ["ir_blaster", "blaster_remote"]
+    },
+    "e001_switch_settings": {
+      "clusters": ["0xE001"],
+      "attrs": ["switchMode", "backlightMode", "moesStartUpOnOff"],
+      "actions": ["writeE00x"],
+      "drivers": ["switch_1gang", "switch_2gang", "switch_3gang", "switch_4gang"]
+    },
+    "multistate_scenes": {
+      "clusters": ["multistateInput"],
+      "actions": ["fuseScene", "fuseButton"],
+      "drivers": ["button_wireless", "scene_switch"]
+    },
+    "window_covering": {
+      "clusters": ["windowCovering"],
+      "actions": ["coverCalibration"],
+      "drivers": ["curtain_motor", "curtain_module"]
+    },
+    "energy_meter": {
+      "clusters": ["electricalMeasurement", "metering"],
+      "actions": ["configureReporting", "startReportingPollFallback"],
+      "drivers": ["energy_meter_3phase", "energy_meter_din", "plug"]
+    }
+  }
+}

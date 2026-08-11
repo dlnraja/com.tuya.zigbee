@@ -1,13 +1,12 @@
 'use strict';
 
-const { ZigBeeDevice } = require('homey-zigbeedriver');
+const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
 const { CLUSTER, Cluster, ZCLDataTypes} = require('zigbee-clusters');
 const TuyaOnOffCluster = require('../../lib/TuyaOnOffCluster');
 
 Cluster.addCluster(TuyaOnOffCluster);
 
 // Energy scaling divisors — ZCL raw attributes; Tuya-DP drivers use smartDivisor: true via SmartDivisorManager
-// (device-reported acPowerMultiplier/acPowerDivisor and metering multiplier/divisor are not used; see commented-out block below)
 const ENERGY_DIVISORS = {
   meter_power: { divisor: 100 },
   measure_power: { divisor: 100 },
@@ -15,9 +14,10 @@ const ENERGY_DIVISORS = {
   measure_voltage: { divisor: 1 }
 };
 
-class wall_socket extends ZigBeeDevice {
+class wall_socket extends TuyaZigbeeDevice {
 
   async onNodeInit({zclNode}) {
+    await super.onNodeInit({ zclNode }).catch(() => {});
 
     this.printNode();
 
@@ -28,11 +28,11 @@ class wall_socket extends ZigBeeDevice {
     this.minReportVoltage = this.getSetting('minReportVoltage') * 1000;
 
     if (!this.hasCapability('measure_current')) {
-      await this.addCapability('measure_current').catch(this.error);;
+      await this.addCapability('measure_current').catch(this.error);
     }
 
     if (!this.hasCapability('measure_voltage')) {
-      await this.addCapability('measure_voltage').catch(this.error);;
+      await this.addCapability('measure_voltage').catch(this.error);
     }
 
     // onOff

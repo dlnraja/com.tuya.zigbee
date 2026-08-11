@@ -1,13 +1,13 @@
 'use strict';
 
-const { ZigBeeDevice } = require('homey-zigbeedriver');
+const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
+const { safeSetCapabilityValue } = require('../../lib/utils/SafeCapability');
 
-// Energy scaling divisors — ZCL raw attributes; Tuya-DP drivers use smartDivisor: true via SmartDivisorManager.
-// This driver configures attribute reporting only; reported values are passed through unscaled (divisor: 1).
+// Energy scaling divisors — ZCL raw attributes; Tuya-DP drivers use smartDivisor: true via SmartDivisorManager
 const ENERGY_DIVISORS = {
-  meter_power: { divisor: 1 },   // seMetering currentSummationDelivered — pass-through
-  measure_power: { divisor: 1 }  // haElectricalMeasurement activePower — pass-through
+  meter_power: { divisor: 100 },   // seMetering currentSummationDelivered → kWh
+  measure_power: { divisor: 10 }   // haElectricalMeasurement activePower → W
 };
 
 /**
@@ -22,7 +22,7 @@ const ENERGY_DIVISORS = {
  * ║  - Physical button detection via PhysicalButtonMixin                        ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
-class SwitchUsbDongleDevice extends PhysicalButtonMixin(ZigBeeDevice) {
+class SwitchUsbDongleDevice extends PhysicalButtonMixin(TuyaZigbeeDevice) {
 
   get mainsPowered() { return true; }
 
@@ -126,15 +126,17 @@ class SwitchUsbDongleDevice extends PhysicalButtonMixin(ZigBeeDevice) {
 
   /**
    * Setup power measurement (if available)
-   * Scaling documented in ENERGY_DIVISORS (ZCL raw attributes, pass-through);
-   * Tuya-DP drivers use smartDivisor: true via SmartDivisorManager instead.
+   * Scaling uses ENERGY_DIVISORS (ZCL raw attributes); Tuya-DP drivers
+   * use smartDivisor: true via SmartDivisorManager instead.
    */
   async _setupPowerMeasurement(zclNode) {
     const endpoint = zclNode?.endpoints?.[1];
     if (!endpoint?.clusters) {return;}
 
-    const hasMetering = !!(endpoint.clusters.seMetering || endpoint.clusters.metering || endpoint.clusters[0x0702]);
-    const hasElectrical = !!(endpoint.clusters.haElectricalMeasurement || endpoint.clusters.electricalMeasurement || endpoint.clusters[0x0B04]);
+    const metering = endpoint.clusters.seMetering || endpoint.clusters.metering || endpoint.clusters[0x0702];
+    const electrical = endpoint.clusters.haElectricalMeasurement || endpoint.clusters.electricalMeasurement || endpoint.clusters[0x0B04];
+    const hasMetering = !!metering;
+    const hasElectrical = !!electrical;
 
     if (!hasMetering && !hasElectrical) {return;}
 
@@ -148,6 +150,14 @@ class SwitchUsbDongleDevice extends PhysicalButtonMixin(ZigBeeDevice) {
           maxInterval: 3600,
           minChange: 1
         });
+
+        // Raw summation → kWh via named divisor
+        metering.on('attr.currentSummationDelivered', (value) => {
+          const kwh = value / ENERGY_DIVISORS.meter_power.divisor;
+          if (this.hasCapability('meter_power')) {
+            safeSetCapabilityValue(this, 'meter_power', kwh).catch(() => {});
+          }
+        });
       }
       if (hasElectrical) {
         configs.push({
@@ -156,6 +166,14 @@ class SwitchUsbDongleDevice extends PhysicalButtonMixin(ZigBeeDevice) {
           minInterval: 10,
           maxInterval: 300,
           minChange: 5
+        });
+
+        // Raw activePower → W via named divisor
+        electrical.on('attr.activePower', (value) => {
+          const watts = value / ENERGY_DIVISORS.measure_power.divisor;
+          if (this.hasCapability('measure_power')) {
+            safeSetCapabilityValue(this, 'measure_power', watts).catch(() => {});
+          }
         });
       }
       if (configs.length > 0) {

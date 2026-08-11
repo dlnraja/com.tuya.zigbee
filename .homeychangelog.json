@@ -1,6 +1,13 @@
 {
   "changelog": [
     {
+      "version": "5.12.65",
+      "date": "2026-08-11",
+      "channel": "stable",
+      "en": "P102 reliability backport: DeviceIOFacade + Homey interview compensation + bare ZigBeeDevice inherit migration.",
+      "fr": "Backport fiabilité P102: façade I/O + compensation interview Homey."
+    },
+    {
       "version": "5.12.47",
       "date": "2026-07-31",
       "channel": "stable",
@@ -1184,5 +1191,8 @@
   },
   "5.12.64": {
     "en": "Backport P101: #439 sacred-couple lot2 + getDeviceById/catch harden."
+  },
+  "5.12.65": {
+    "en": "P102 reliability backport: DeviceIOFacade + Homey interview compensation + bare ZigBeeDevice inherit migration."
   }
 }

@@ -1,6 +1,6 @@
 'use strict';
 
-const { ZigBeeDevice } = require('homey-zigbeedriver');
+const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
 const { CLUSTER, Cluster, ZCLDataTypes} = require('zigbee-clusters');
 const TuyaOnOffCluster = require('../../lib/TuyaOnOffCluster');
 
@@ -14,9 +14,10 @@ const ENERGY_DIVISORS = {
   measure_voltage: { divisor: 1 }
 };
 
-class outdoor2socket_1 extends ZigBeeDevice {
+class outdoor2socket_1 extends TuyaZigbeeDevice {
 
   async onNodeInit({zclNode}) {
+    await super.onNodeInit({ zclNode }).catch(() => {});
 
     await zclNode.endpoints[1].clusters.basic.readAttributes(['manufacturerName', 'zclVersion', 'appVersion', 'modelId', 'powerSource', 'attributeReportingStatus'])
     .catch(err => {
