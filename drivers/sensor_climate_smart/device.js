@@ -51,7 +51,7 @@ class SmartScenePanelDevice extends TuyaZigbeeDevice {
       const g = dp - 23;
       const cap = `onoff.gang${g}`;
       if (this.hasCapability(cap)) {
-        this.safeSetCapabilityValue(cap, !!value).catch(this.error);
+        this.safeSetCapabilityValue(cap, !!value).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
       }
       // IDs hachés (sha1) définis dans driver.flow.compose.json
       const switchCardIds = {

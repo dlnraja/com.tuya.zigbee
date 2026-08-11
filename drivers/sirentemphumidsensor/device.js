@@ -223,10 +223,10 @@ class sensortemphumidsensor extends TuyaSpecificClusterDevice {
       this.log('onoff:', value);
       await this.writeBool(dataPoints.ALARM, value);
 
-      this.homey.setTimeout(() => { if (this._destroyed) {return;} this.queryAll().catch(this.error); }, 1200);
+      this.homey.setTimeout(() => { if (this._destroyed) {return;} this.queryAll().catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} })); }, 1200);
       });
 
-    this.homey.setTimeout(() => { if (this._destroyed) {return;} this.bootstrap().catch(this.error); }, 5000);
+    this.homey.setTimeout(() => { if (this._destroyed) {return;} this.bootstrap().catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} })); }, 5000);
   }
 
   _registerTimeBoundCluster(zclNode) {
@@ -249,27 +249,27 @@ class sensortemphumidsensor extends TuyaSpecificClusterDevice {
     }
 
     tuyaCluster.on('response', data => {
-      this.processTuyaMessage('response', data).catch(this.error);
+      this.processTuyaMessage('response', data).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
       });
 
     tuyaCluster.on('reporting', data => {
-      this.processTuyaMessage('reporting', data).catch(this.error);
+      this.processTuyaMessage('reporting', data).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
       });
 
     tuyaCluster.on('datapoint', data => {
-      this.processTuyaMessage('datapoint', data).catch(this.error);
+      this.processTuyaMessage('datapoint', data).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
       });
 
     tuyaCluster.on('reportingConfiguration', data => {
-      this.processTuyaMessage('reportingConfiguration', data).catch(this.error);
+      this.processTuyaMessage('reportingConfiguration', data).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
       });
 
     tuyaCluster.on('mcuSyncTime', data => {
-      this.onTuyaTimeSync(data).catch(this.error);
+      this.onTuyaTimeSync(data).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
       });
 
     tuyaCluster.on('mcuVersionRsp', data => {
-      this.onMcuVersionResponse(data).catch(this.error);
+      this.onMcuVersionResponse(data).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
       });
   }
 
@@ -376,7 +376,7 @@ class sensortemphumidsensor extends TuyaSpecificClusterDevice {
         sequenceNumber: data?.sequenceNumber ?? data?.payloadSize ?? 0,
       });
 
-      this.homey.setTimeout(() => { if (this._destroyed) {return;} this.queryAll().catch(this.error); }, 500);
+      this.homey.setTimeout(() => { if (this._destroyed) {return;} this.queryAll().catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} })); }, 500);
     } catch (error) {
       this.error('Failed to respond to Tuya timeSync request', error );
     }
@@ -391,7 +391,7 @@ class sensortemphumidsensor extends TuyaSpecificClusterDevice {
       this.log('[Tuya mcuVersionResponse 0x11] versionByte=', versionByte);
     }
 
-    this.homey.setTimeout(() => { if (this._destroyed) {return;} this.queryAll().catch(this.error); }, 500);
+    this.homey.setTimeout(() => { if (this._destroyed) {return;} this.queryAll().catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} })); }, 500);
   }
 
   async processTuyaMessage(source, data) {
@@ -501,7 +501,7 @@ class sensortemphumidsensor extends TuyaSpecificClusterDevice {
       humidityOffset,
     );
 
-    this.safeSetCapabilityValue('measure_humidity', parsedValue + humidityOffset).catch(this.error);
+    this.safeSetCapabilityValue('measure_humidity', parsedValue + humidityOffset).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
   }
 
   reportTemperatureCapacity(measuredValue) {
@@ -515,19 +515,19 @@ class sensortemphumidsensor extends TuyaSpecificClusterDevice {
       temperatureOffset,
     );
 
-    this.safeSetCapabilityValue('measure_temperature', parsedValue + temperatureOffset).catch(this.error);
+    this.safeSetCapabilityValue('measure_temperature', parsedValue + temperatureOffset).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
   }
 
   /*   reportBatteryPercentageCapacity(measuredValue) {
     const parsedValue = Number(measuredValue);
 
     this.log('measure_battery | battery percentage remaining:', parsedValue, '%');
-    this.safeSetCapabilityValue('measure_battery', parsedValue).catch(this.error);
+    this.safeSetCapabilityValue('measure_battery', parsedValue).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
   } */
 
   reportAlarmBatteryCapacity(measuredValue) {
     this.log('alarm_battery | battery alarm:', measuredValue);
-    this.safeSetCapabilityValue('alarm_battery', measuredValue).catch(this.error);
+    this.safeSetCapabilityValue('alarm_battery', measuredValue).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
   }
 
   async onSettings({ newSettings, changedKeys }) {

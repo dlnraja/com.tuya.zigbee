@@ -25,15 +25,15 @@ class SceneSwitch3Driver extends ZigBeeDriver {
   }
 
   triggerButtonPressed(device, button) {
-    return this._buttonPressedTrigger.trigger(device, { button }, { button }).catch(this.error);
+    return this._buttonPressedTrigger.trigger(device, { button }, { button }).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
   }
 
   triggerButtonDoublePressed(device, button) {
-    return this._buttonDoubleTrigger.trigger(device, { button }, { button }).catch(this.error);
+    return this._buttonDoubleTrigger.trigger(device, { button }, { button }).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
   }
 
   triggerButtonLongPressed(device, button) {
-    return this._buttonLongTrigger.trigger(device, { button }, { button }).catch(this.error);
+    return this._buttonLongTrigger.trigger(device, { button }, { button }).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
   }
 
 }

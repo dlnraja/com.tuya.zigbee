@@ -182,7 +182,7 @@ class RainSensorDevice extends UnifiedSensorBase {
         this.log(`[RAIN-IAS] Zone status: raw=${parsed.raw} alarm1=${parsed.alarm1} alarm2=${parsed.alarm2} raining=${raining}`);
 
         if (this.hasCapability('alarm_water')) {
-          this.safeSetCapabilityValue('alarm_water', raining).catch(this.error);
+          this.safeSetCapabilityValue('alarm_water', raining).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
         }
       };
 
@@ -192,7 +192,7 @@ class RainSensorDevice extends UnifiedSensorBase {
         this.log(`[RAIN-IAS] Zone attr status: ${status} raining=${raining}`);
 
         if (this.hasCapability('alarm_water')) {
-          this.safeSetCapabilityValue('alarm_water', raining).catch(this.error);
+          this.safeSetCapabilityValue('alarm_water', raining).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
         }
       });
 

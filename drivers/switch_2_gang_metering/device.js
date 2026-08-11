@@ -30,11 +30,11 @@ class switch_2_gang_metering extends UnifiedSwitchBase {
     this.minReportVoltage = this.getSetting('minReportVoltage') * 1000;
 
     if (!this.hasCapability('measure_current')) {
-      await this.addCapability('measure_current').catch(this.error);
+      await this.addCapability('measure_current').catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
     }
 
     if (!this.hasCapability('measure_voltage')) {
-      await this.addCapability('measure_voltage').catch(this.error);
+      await this.addCapability('measure_voltage').catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
     }
 
     const { subDeviceId } = this.getData();

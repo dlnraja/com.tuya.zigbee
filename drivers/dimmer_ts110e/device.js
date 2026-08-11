@@ -83,7 +83,7 @@ class TuyaDimmerTS110E extends ZigBeeDevice {
                 const maxB = this.getSetting("maxBrightness") || 1000;
                 const homeyDimValue = Math.max(0, Math.min(1, ((parsedValue - minB) * (1 - 0)) / (maxB - minB) + 0));
                 
-                this['safeSetCapabilityValue']('dim', homeyDimValue).catch(this.error);
+                this['safeSetCapabilityValue']('dim', homeyDimValue).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
       });
             
             // Attempt to sync the slider state on start

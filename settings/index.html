@@ -519,11 +519,25 @@
 
     function populateDevices() {
       if (!Homey) return;
-      
+
+      var oldSel = document.getElementById('device-old');
+      var newSel = document.getElementById('device-new');
+      if (oldSel) oldSel.innerHTML = '<option value="">Loading devices…</option>';
+      if (newSel) newSel.innerHTML = '<option value="">Loading devices…</option>';
+
+      // P117: timeout so settings never spin forever (#380 / forum empty page)
+      var settled = false;
+      var timer = setTimeout(function() {
+        if (settled) return;
+        settled = true;
+        if (oldSel) oldSel.innerHTML = '<option value="">Timeout loading devices</option>';
+        if (newSel) newSel.innerHTML = '<option value="">Timeout loading devices</option>';
+      }, 12000);
+
       Homey.api('GET', '/devices', {}, function(err, devices) {
-        var oldSel = document.getElementById('device-old');
-        var newSel = document.getElementById('device-new');
-        
+        if (settled) return;
+        settled = true;
+        clearTimeout(timer);
         if (err) {
           console.error('Failed to get devices:', err);
           oldSel.innerHTML = '<option value="">Error loading devices</option>';

@@ -75,11 +75,11 @@ class smoke_sensor2 extends TuyaSpecificClusterDevice {
       case dataPoints.tsSmokeAlarm:
         this.log(`present state: ${ value}`);
         var smokeAlarm = value === 0 ? true : false;
-        this.safeSetCapabilityValue('alarm_smoke', Boolean(smokeAlarm)).catch(this.error);
+        this.safeSetCapabilityValue('alarm_smoke', Boolean(smokeAlarm)).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
         break;
 
       case dataPoints.tsTamperAlert:
-        this.safeSetCapabilityValue('alarm_tamper', Boolean(value)).catch(this.error);
+        this.safeSetCapabilityValue('alarm_tamper', Boolean(value)).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
         break;
 
       case dataPoints.tsBatteryState: {
@@ -87,8 +87,8 @@ class smoke_sensor2 extends TuyaSpecificClusterDevice {
         // breaks made a low battery (0) report 90%)
         const batteryPerc = BATTERY_STATE_PERCENT[value] ?? 90;
         this.log("measure_battery | powerConfiguration - batteryPercentageRemaining (%): ", batteryPerc);
-        this.safeSetCapabilityValue('alarm_battery', value === 0).catch(this.error);
-        this.safeSetCapabilityValue('measure_battery', batteryPerc).catch(this.error);
+        this.safeSetCapabilityValue('alarm_battery', value === 0).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
+        this.safeSetCapabilityValue('measure_battery', batteryPerc).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
         break;
       }
 
@@ -98,7 +98,7 @@ class smoke_sensor2 extends TuyaSpecificClusterDevice {
         const temperatureOffset = this.getSetting('temperature_offset') || 0;
         this.log('measure_temperature | value:', value / 10.0, '+ offset', temperatureOffset);
         await this._ensureClimateCapability('measure_temperature');
-        this.safeSetCapabilityValue('measure_temperature', value / 10.0 + temperatureOffset).catch(this.error);
+        this.safeSetCapabilityValue('measure_temperature', value / 10.0 + temperatureOffset).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
         break;
       }
 
@@ -106,7 +106,7 @@ class smoke_sensor2 extends TuyaSpecificClusterDevice {
         const humidityOffset = this.getSetting('humidity_offset') || 0;
         this.log('measure_humidity | value:', value, '+ offset', humidityOffset);
         await this._ensureClimateCapability('measure_humidity');
-        this.safeSetCapabilityValue('measure_humidity', value + humidityOffset).catch(this.error);
+        this.safeSetCapabilityValue('measure_humidity', value + humidityOffset).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
         break;
       }
 

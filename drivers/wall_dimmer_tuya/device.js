@@ -125,12 +125,12 @@ class wall_dimmer_tuya extends TuyaSpecificClusterDevice {
     switch (dp) {
       case V1_SINGLE_GANG_DIMMER_SWITCH_DATA_POINTS.onOff:
         this.log('Received on/off:', parsedValue);
-        await this['safeSetCapabilityValue']('onoff', parsedValue === true || parsedValue === 1).catch(this.error);
+        await this['safeSetCapabilityValue']('onoff', parsedValue === true || parsedValue === 1).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
         break;
 
       case V1_SINGLE_GANG_DIMMER_SWITCH_DATA_POINTS.brightness:
         this.log('Received dim level:', parsedValue);
-        await this['safeSetCapabilityValue']('dim', parsedValue / 1000).catch(this.error);
+        await this['safeSetCapabilityValue']('dim', parsedValue / 1000).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
         break;
 
       default:

@@ -74,8 +74,8 @@ class lcdtemphumidsensor3 extends TuyaSpecificClusterDevice {
         parsedValue = measuredValue;
         this.log("measure_battery | powerConfiguration - batteryPercentageRemaining (%): ", parsedValue);
 
-        this.safeSetCapabilityValue('measure_battery', parsedValue).catch(this.error);
-        this.safeSetCapabilityValue('alarm_battery', parsedValue < batteryThreshold).catch(this.error);
+        this.safeSetCapabilityValue('measure_battery', parsedValue).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
+        this.safeSetCapabilityValue('alarm_battery', parsedValue < batteryThreshold).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
         break;
 
       case dataPoints.currentHumidity:
@@ -85,7 +85,7 @@ class lcdtemphumidsensor3 extends TuyaSpecificClusterDevice {
         parsedValue = measuredValue > 100 ? measuredValue / 10 : measuredValue;
         this.log('measure_humidity | relativeHumidity - measuredValue (humidity):', parsedValue, '+ humidity offset', humidityOffset);
 
-        this.safeSetCapabilityValue('measure_humidity', parsedValue + humidityOffset).catch(this.error);
+        this.safeSetCapabilityValue('measure_humidity', parsedValue + humidityOffset).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
         break;
 
       case dataPoints.currentTemperature:
@@ -93,7 +93,7 @@ class lcdtemphumidsensor3 extends TuyaSpecificClusterDevice {
         parsedValue = measuredValue/10;
         this.log('measure_temperature | temperatureMeasurement - measuredValue (temperature):', parsedValue, '+ temperature offset', temperatureOffset);
 
-        this.safeSetCapabilityValue('measure_temperature', parsedValue + temperatureOffset).catch(this.error);
+        this.safeSetCapabilityValue('measure_temperature', parsedValue + temperatureOffset).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
         break;
     }
   }

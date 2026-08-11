@@ -173,10 +173,10 @@ class sensortemphumidsensor extends TuyaSpecificClusterDevice {
 
     this.registerCapabilityListener('onoff', async value => {
       await this.writeBool(dataPoints.ALARM, value);
-      this.homey.setTimeout(() => { if (this._destroyed) {return;} this.queryAll().catch(this.error); }, 1200);
+      this.homey.setTimeout(() => { if (this._destroyed) {return;} this.queryAll().catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} })); }, 1200);
     });
 
-    this.homey.setTimeout(() => { if (this._destroyed) {return;} this.bootstrap().catch(this.error); }, 5000);
+    this.homey.setTimeout(() => { if (this._destroyed) {return;} this.bootstrap().catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} })); }, 5000);
   }
 
   _registerTimeBoundCluster(zclNode) {
@@ -192,11 +192,11 @@ class sensortemphumidsensor extends TuyaSpecificClusterDevice {
     const tuyaCluster = zclNode?.endpoints?.[1]?.clusters?.tuya;
     if (!tuyaCluster) {return;}
 
-    tuyaCluster.on('response', data => this.processTuyaMessage('response', data).catch(this.error));
-    tuyaCluster.on('reporting', data => this.processTuyaMessage('reporting', data).catch(this.error));
-    tuyaCluster.on('datapoint', data => this.processTuyaMessage('datapoint', data).catch(this.error));
-    tuyaCluster.on('timeSync', data => this.onTuyaTimeSync(data).catch(this.error));
-    tuyaCluster.on('mcuVersionResponse', data => this.onMcuVersionResponse(data).catch(this.error));
+    tuyaCluster.on('response', data => this.processTuyaMessage('response', data).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} })));
+    tuyaCluster.on('reporting', data => this.processTuyaMessage('reporting', data).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} })));
+    tuyaCluster.on('datapoint', data => this.processTuyaMessage('datapoint', data).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} })));
+    tuyaCluster.on('timeSync', data => this.onTuyaTimeSync(data).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} })));
+    tuyaCluster.on('mcuVersionResponse', data => this.onMcuVersionResponse(data).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} })));
   }
 
   async ensureCapability(capabilityId) {
@@ -249,12 +249,12 @@ class sensortemphumidsensor extends TuyaSpecificClusterDevice {
       payload.writeUInt32BE(localSeconds >>> 0, 4);
       const tuya = this.zclNode?.endpoints?.[1]?.clusters?.tuya;
       if (tuya) {await tuya.timeSync({ payload });}
-      this.homey.setTimeout(() => { if (this._destroyed) {return;} this.queryAll().catch(this.error); }, 500);
+      this.homey.setTimeout(() => { if (this._destroyed) {return;} this.queryAll().catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} })); }, 500);
     } catch (error) { }
   }
 
   async onMcuVersionResponse(data) {
-    this.homey.setTimeout(() => { if (this._destroyed) {return;} this.queryAll().catch(this.error); }, 500);
+    this.homey.setTimeout(() => { if (this._destroyed) {return;} this.queryAll().catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} })); }, 500);
   }
 
   async processTuyaMessage(source, data) {
@@ -301,16 +301,16 @@ class sensortemphumidsensor extends TuyaSpecificClusterDevice {
 
   reportHumidityCapacity(measuredValue) {
     const offset = Number(this.getSetting('humidity_offset') || 0);
-    this._safeSetCapability('measure_humidity', Number(measuredValue) + offset).catch(this.error);
+    this._safeSetCapability('measure_humidity', Number(measuredValue) + offset).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
   }
 
   reportTemperatureCapacity(measuredValue) {
     const offset = Number(this.getSetting('temperature_offset') || 0);
-    this._safeSetCapability('measure_temperature', (Number(measuredValue) / 10) + offset).catch(this.error);
+    this._safeSetCapability('measure_temperature', (Number(measuredValue) / 10) + offset).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
   }
 
   reportAlarmBatteryCapacity(measuredValue) {
-    this.safeSetCapabilityValue('alarm_battery', measuredValue).catch(this.error);
+    this.safeSetCapabilityValue('alarm_battery', measuredValue).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
   }
 
   async onSettings({ newSettings, changedKeys }) {

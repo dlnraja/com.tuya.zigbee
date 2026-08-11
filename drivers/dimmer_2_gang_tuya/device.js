@@ -167,7 +167,7 @@ class dimmer_2_gang_tuya extends TuyaSpecificClusterDevice {
         this.log('Received on/off for first gang:', parsedValue);
         // Only update Gang 1 (main device)
         if (!this.isSubDevice()) {
-          await this['safeSetCapabilityValue']('onoff', parsedValue === true || parsedValue === 1).catch(this.error);
+          await this['safeSetCapabilityValue']('onoff', parsedValue === true || parsedValue === 1).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
         }
         break;
 
@@ -175,7 +175,7 @@ class dimmer_2_gang_tuya extends TuyaSpecificClusterDevice {
         this.log('Received on/off for second gang:', parsedValue);
         // Only update Gang 2 (subdevice)
         if (this.isSubDevice()) {
-          await this['safeSetCapabilityValue']('onoff', parsedValue === true || parsedValue === 1).catch(this.error);
+          await this['safeSetCapabilityValue']('onoff', parsedValue === true || parsedValue === 1).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
         }
         break;
 
@@ -183,7 +183,7 @@ class dimmer_2_gang_tuya extends TuyaSpecificClusterDevice {
         this.log('Received dim level for first gang:', parsedValue);
         // Only update Gang 1 (main device)
         if (!this.isSubDevice()) {
-          await this['safeSetCapabilityValue']('dim', parsedValue / 1000).catch(this.error);
+          await this['safeSetCapabilityValue']('dim', parsedValue / 1000).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
         }
         break;
 
@@ -191,7 +191,7 @@ class dimmer_2_gang_tuya extends TuyaSpecificClusterDevice {
         this.log('Received dim level for second gang:', parsedValue);
         // Only update Gang 2 (subdevice)
         if (this.isSubDevice()) {
-          await this['safeSetCapabilityValue']('dim', parsedValue / 1000).catch(this.error);
+          await this['safeSetCapabilityValue']('dim', parsedValue / 1000).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
         }
         break;
 

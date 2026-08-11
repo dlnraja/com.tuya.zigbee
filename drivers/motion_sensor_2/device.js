@@ -82,14 +82,14 @@ class motion_sensor_2 extends TuyaZigbeeDevice {
   // Handle motion status alarms
   async onZoneStatusChangeNotification({ zoneStatus }) {
     this.log('Motion status:', zoneStatus.alarm1);
-    await this.safeSetCapabilityValue('alarm_motion', zoneStatus.alarm1).catch(this.error);
+    await this.safeSetCapabilityValue('alarm_motion', zoneStatus.alarm1).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
   }
 
   // Handle illuminance attribute reports
   async onIlluminanceMeasuredAttributeReport(measuredValue) {
     const luxValue = Math.round(Math.pow(10, (measuredValue - 1) / 10000));
     this.log('measure_luminance | Illuminance (lux):', luxValue);
-    await this.safeSetCapabilityValue('measure_luminance', luxValue).catch(this.error);
+    await this.safeSetCapabilityValue('measure_luminance', luxValue).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
   }
 
   // Process Tuya-specific data (if any)

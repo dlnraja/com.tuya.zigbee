@@ -33,7 +33,7 @@ class SmartKnobRotaryDevice extends TuyaZigbeeDevice {
 
     // Set initial dim value
     if (this.hasCapability('dim')) {
-      await this.safeSetCapabilityValue('dim', this._simulatedBrightness).catch(this.error);
+      await this.safeSetCapabilityValue('dim', this._simulatedBrightness).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
     }
 
     // v5.5.976: Enable TS004F scene mode (critical for button events)
@@ -134,7 +134,7 @@ class SmartKnobRotaryDevice extends TuyaZigbeeDevice {
         if (batteryStatus && batteryStatus.batteryPercentageRemaining !== undefined) {
           const batteryValue = UnifiedBatteryHandler.normalizeZigbeeValue(batteryStatus.batteryPercentageRemaining, { manufacturer: (this.getSetting && this.getSetting('zb_manufacturer_name')) || '', batteryType: 'CR2032' });
           if (batteryValue == null) {return;}
-          await this.safeSetCapabilityValue('measure_battery', batteryValue).catch(this.error);
+          await this.safeSetCapabilityValue('measure_battery', batteryValue).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
           this.log('Battery level:', batteryValue, '%');
         }
       }
@@ -346,39 +346,39 @@ class SmartKnobRotaryDevice extends TuyaZigbeeDevice {
   _updateSimulatedBrightness(delta) {
     this._simulatedBrightness = Math.max(0, Math.min(1, this._simulatedBrightness + delta));
     if (this.hasCapability('dim')) {
-      this.safeSetCapabilityValue('dim', this._simulatedBrightness).catch(this.error);
+      this.safeSetCapabilityValue('dim', this._simulatedBrightness).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
     }
     this.log('Simulated brightness:', Math.round(this._simulatedBrightness * 100), '%');
   }
 
   async _triggerRotateLeft() {
     if (this.hasCapability('button.rotate_left')) {
-      await this.safeSetCapabilityValue('button.rotate_left', true).catch(this.error);
-      this.homey.setTimeout(() => { if (this._destroyed) {return;} this.safeSetCapabilityValue('button.rotate_left', false).catch(this.error); }, 100);
+      await this.safeSetCapabilityValue('button.rotate_left', true).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
+      this.homey.setTimeout(() => { if (this._destroyed) {return;} this.safeSetCapabilityValue('button.rotate_left', false).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} })); }, 100);
     }
     const rotateLeftTrigger = (() => { try { return this.homey.flow.getDeviceTriggerCard('smart_knob_rotary_rotate_left', 'trigger'); } catch(e) { return null; } })();
     if (rotateLeftTrigger) {
-      await rotateLeftTrigger.trigger(this, this._rotationTokens()).catch(this.error);
+      await rotateLeftTrigger.trigger(this, this._rotationTokens()).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
     }
   }
 
   async _triggerRotateRight() {
     if (this._destroyed) {return;}
     if (this.hasCapability('button.rotate_right')) {
-      await this.safeSetCapabilityValue('button.rotate_right', true).catch(this.error);
-      this.homey.setTimeout(() => { if (this._destroyed) {return;} this.safeSetCapabilityValue('button.rotate_right', false).catch(this.error); }, 100);
+      await this.safeSetCapabilityValue('button.rotate_right', true).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
+      this.homey.setTimeout(() => { if (this._destroyed) {return;} this.safeSetCapabilityValue('button.rotate_right', false).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} })); }, 100);
     }
     const rotateRightTrigger = (() => { try { return this.homey.flow.getDeviceTriggerCard('smart_knob_rotary_rotate_right', 'trigger'); } catch(e) { return null; } })();
     if (rotateRightTrigger) {
-      await rotateRightTrigger.trigger(this, this._rotationTokens()).catch(this.error);
+      await rotateRightTrigger.trigger(this, this._rotationTokens()).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
     }
   }
 
   async _triggerButtonPress(action) {
     if (this._destroyed) {return;}
     if (this.hasCapability('button.press')) {
-      await this.safeSetCapabilityValue('button.press', true).catch(this.error);
-      this.homey.setTimeout(() => { if (this._destroyed) {return;} this.safeSetCapabilityValue('button.press', false).catch(this.error); }, 100);
+      await this.safeSetCapabilityValue('button.press', true).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
+      this.homey.setTimeout(() => { if (this._destroyed) {return;} this.safeSetCapabilityValue('button.press', false).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} })); }, 100);
     }
     try {
       const genericTrigger = (() => { try { return this.homey.flow.getDeviceTriggerCard('smart_knob_rotary_pressed', 'trigger'); } catch(e) { return null; } })();

@@ -91,7 +91,7 @@ class DimmerWall1GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(Light
       if (isPhysical) {
         const id = v ? 'dimmer_wall_1gang_physical_on' : 'dimmer_wall_1gang_physical_off';
         const trigger = this.homey.flow.getDeviceTriggerCard(id);
-        if (trigger) {trigger.trigger(this).catch(this.error);}
+        if (trigger) {trigger.trigger(this).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));}
       }
     } else if (dpId === 2 || dpId === 101) {
       const dim = this.getCapabilityValue('dim');
@@ -101,7 +101,7 @@ class DimmerWall1GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(Light
       if (isPhysical && oldDim !== null) {
         const id = increased ? 'dimmer_wall_1gang_physical_brightness_up' : 'dimmer_wall_1gang_physical_brightness_down';
         const trigger = this.homey.flow.getDeviceTriggerCard(id);
-        if (trigger) {trigger.trigger(this, { brightness: Math.round(dim * 100) }).catch(this.error);}
+        if (trigger) {trigger.trigger(this, { brightness: Math.round(dim * 100) }).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));}
       }
     }
   }

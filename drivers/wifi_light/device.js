@@ -73,8 +73,8 @@ class WiFiLightDevice extends TuyaLocalDevice {
           const v = parseInt(hex.substring(8, 12), 16);
 
           if (h >= 0 && h <= 360 && s >= 0 && s <= 1000 && v >= 0 && v <= 1000) {
-            await this.safeSetCapabilityValue('light_hue', safeDivide(h, 360)).catch(this.error);
-            await this.safeSetCapabilityValue('light_saturation', safeDivide(s, 1000)).catch(this.error);
+            await this.safeSetCapabilityValue('light_hue', safeDivide(h, 360)).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
+            await this.safeSetCapabilityValue('light_saturation', safeDivide(s, 1000)).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
             this.log(`[WIFI-LIGHT] DP24 color parsed: H=${h} S=${s} V=${v}`);
           }
         } catch (e) {

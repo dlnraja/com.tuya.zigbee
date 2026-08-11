@@ -165,10 +165,10 @@ class sensortemphumidsensor extends TuyaSpecificClusterDevice {
 
     this.registerCapabilityListener('onoff', async value => {
       await this.writeBool(dataPoints.ALARM, value);
-      this.homey.setTimeout(() => { if (this._destroyed) {return;} this.queryAll().catch(this.error); }, 1200);
+      this.homey.setTimeout(() => { if (this._destroyed) {return;} this.queryAll().catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} })); }, 1200);
     });
 
-    this.homey.setTimeout(() => { if (this._destroyed) {return;} this.bootstrap().catch(this.error); }, 5000);
+    this.homey.setTimeout(() => { if (this._destroyed) {return;} this.bootstrap().catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} })); }, 5000);
   }
 
   _registerTimeBoundCluster(zclNode) {
@@ -183,9 +183,9 @@ class sensortemphumidsensor extends TuyaSpecificClusterDevice {
   _registerTuyaListeners(zclNode) {
     const tuyaCluster = zclNode?.endpoints?.[1]?.clusters?.tuya;
     if (!tuyaCluster) {return;}
-    tuyaCluster.on('response', data => this.processTuyaMessage('response', data).catch(this.error));
-    tuyaCluster.on('reporting', data => this.processTuyaMessage('reporting', data).catch(this.error));
-    tuyaCluster.on('datapoint', data => this.processTuyaMessage('datapoint', data).catch(this.error));
+    tuyaCluster.on('response', data => this.processTuyaMessage('response', data).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} })));
+    tuyaCluster.on('reporting', data => this.processTuyaMessage('reporting', data).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} })));
+    tuyaCluster.on('datapoint', data => this.processTuyaMessage('datapoint', data).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} })));
     tuyaCluster.on('mcuSyncTime', data => this.onTuyaTimeSync(data).catch(error => this.error(error)));
     tuyaCluster.on('mcuVersionRsp', data => this.onMcuVersionResponse(data).catch(error => this.error(error)));
   }
@@ -237,12 +237,12 @@ class sensortemphumidsensor extends TuyaSpecificClusterDevice {
         localTime: localSeconds,
         sequenceNumber: data?.sequenceNumber ?? data?.payloadSize ?? 0,
       });
-      this.homey.setTimeout(() => { if (this._destroyed) {return;} this.queryAll().catch(this.error); }, 500);
+      this.homey.setTimeout(() => { if (this._destroyed) {return;} this.queryAll().catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} })); }, 500);
     } catch (error) { this.error('Failed to respond to Tuya timeSync request', error); }
   }
 
   async onMcuVersionResponse(data) {
-    this.homey.setTimeout(() => { if (this._destroyed) {return;} this.queryAll().catch(this.error); }, 500);
+    this.homey.setTimeout(() => { if (this._destroyed) {return;} this.queryAll().catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} })); }, 500);
   }
 
   async processTuyaMessage(source, data) {

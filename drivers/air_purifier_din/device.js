@@ -79,7 +79,7 @@ class DinRailSwitchDevice extends PhysicalButtonMixin(VirtualButtonMixin(ZigBeeD
         emCluster.on('attr.activePower', (value) => {
           if (this._destroyed) {return;}
           const power = safeMultiply(value, ZCL_ENERGY_DIVISORS.measure_power.divisor);
-          this.safeSetCapabilityValue('measure_power', power).catch(this.error);
+          this.safeSetCapabilityValue('measure_power', power).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
         });
       }
 
@@ -87,7 +87,7 @@ class DinRailSwitchDevice extends PhysicalButtonMixin(VirtualButtonMixin(ZigBeeD
         emCluster.on('attr.rmsVoltage', (value) => {
           if (this._destroyed) {return;}
           const voltage = safeMultiply(value, ZCL_ENERGY_DIVISORS.measure_voltage.divisor);
-          this.safeSetCapabilityValue('measure_voltage', voltage).catch(this.error);
+          this.safeSetCapabilityValue('measure_voltage', voltage).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
         });
       }
 
@@ -95,7 +95,7 @@ class DinRailSwitchDevice extends PhysicalButtonMixin(VirtualButtonMixin(ZigBeeD
         emCluster.on('attr.rmsCurrent', (value) => {
           if (this._destroyed) {return;}
           const current = value * ZCL_ENERGY_DIVISORS.measure_current.divisor;
-          this.safeSetCapabilityValue('measure_current', current).catch(this.error);
+          this.safeSetCapabilityValue('measure_current', current).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
         });
       }
     }
@@ -105,7 +105,7 @@ class DinRailSwitchDevice extends PhysicalButtonMixin(VirtualButtonMixin(ZigBeeD
       meteringCluster.on('attr.currentSummationDelivered', (value) => {
         if (this._destroyed) {return;}
         const energy = value * ZCL_ENERGY_DIVISORS.meter_power.divisor;
-        this.safeSetCapabilityValue('meter_power', energy).catch(this.error);
+        this.safeSetCapabilityValue('meter_power', energy).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
       });
     }
   }
@@ -137,31 +137,31 @@ class DinRailSwitchDevice extends PhysicalButtonMixin(VirtualButtonMixin(ZigBeeD
     switch (dp) {
     case 1: //On/Off state
     case 16:
-      this.safeSetCapabilityValue('onoff', !!value).catch(this.error);
+      this.safeSetCapabilityValue('onoff', !!value).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
       break;
 
     case 17: //Total current (A*1000)
     case 20:
       if (this.hasCapability('measure_current')) {
-        this.safeSetCapabilityValue('measure_current', value * TUYA_DP_ENERGY_DIVISORS.measure_current.divisor).catch(this.error);
+        this.safeSetCapabilityValue('measure_current', value * TUYA_DP_ENERGY_DIVISORS.measure_current.divisor).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
       }
       break;
 
     case 18: // Power (W)
       if (this.hasCapability('measure_power')) {
-        this.safeSetCapabilityValue('measure_power', value * TUYA_DP_ENERGY_DIVISORS.measure_power.divisor).catch(this.error);
+        this.safeSetCapabilityValue('measure_power', value * TUYA_DP_ENERGY_DIVISORS.measure_power.divisor).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
       }
       break;
 
     case 19: //Voltage (V*10)
       if (this.hasCapability('measure_voltage')) {
-        this.safeSetCapabilityValue('measure_voltage', safeMultiply(value, TUYA_DP_ENERGY_DIVISORS.measure_voltage.divisor)).catch(this.error);
+        this.safeSetCapabilityValue('measure_voltage', safeMultiply(value, TUYA_DP_ENERGY_DIVISORS.measure_voltage.divisor)).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
       }
       break;
 
     case 101: //Energy (kWh*100)
       if (this.hasCapability('meter_power')) {
-        this.safeSetCapabilityValue('meter_power', value * TUYA_DP_ENERGY_DIVISORS.meter_power.divisor).catch(this.error);
+        this.safeSetCapabilityValue('meter_power', value * TUYA_DP_ENERGY_DIVISORS.meter_power.divisor).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
       }
       break;
     }
