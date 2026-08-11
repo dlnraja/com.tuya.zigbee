@@ -1,6 +1,13 @@
 {
   "changelog": [
     {
+      "version": "9.0.471",
+      "date": "2026-08-11",
+      "channel": "test",
+      "en": "Resumed backlog: collision baseline refresh, dual-valve button, airbox smartParse, Tuya DP dimmer routing, enrich forum thread scan.",
+      "fr": "Reprise backlog: baseline collisions, bouton valve dual, airbox smartParse, dimmer DP Tuya, scan forum enrich."
+    },
+    {
       "version": "9.0.470",
       "date": "2026-08-11",
       "channel": "test",

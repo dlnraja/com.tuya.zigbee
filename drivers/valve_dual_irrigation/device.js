@@ -155,6 +155,20 @@ class ValveDualIrrigationDevice extends BaseUnifiedDevice {
       await this._sendValveDP(2, 'onoff.valve_2', value);
       });
 
+    // P112: button.1 was declared but never wired (Joep #2102/#2105).
+    // Treat as a one-shot "pulse valve 1 on" scene button through L14.
+    if (typeof this.hasCapability === 'function' && this.hasCapability('button.1')) {
+      this.registerCapabilityListener('button.1', async () => {
+        if (this._destroyed) {return false;}
+        this.log('[VALVE-2] button.1 pressed — pulse valve 1');
+        await this._sendValveDP(1, 'onoff.valve_1', true);
+        if (typeof this.safeSetCapabilityValue === 'function') {
+          await this.safeSetCapabilityValue('button.1', true).catch(() => {});
+        }
+        return true;
+      });
+    }
+
     this.log('[VALVE-2]  Ready (Dual Engine v7.4.4)');
   }
 

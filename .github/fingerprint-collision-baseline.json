@@ -1,4364 +1,1590 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-31T22:58:24.309Z",
+  "generatedAt": "2026-08-11T03:37:57.719Z",
   "description": "Known historical fingerprint collisions. CI fails only for collisions not listed here.",
   "collisions": [
     {
-      "key": "_tyst11_2atgpdho|TS0601",
+      "key": "_tz3000_12sxjap4|TS0505A",
       "drivers": [
-        "device_radiator_valve",
-        "thermostatic_radiator_valve"
+        "led_strip_rgbw",
+        "rgb_bulb_E27"
       ]
     },
     {
-      "key": "_tyst11_c88teujp|TS0601",
+      "key": "_tz3000_12sxjap4|TS0505B",
       "drivers": [
-        "device_radiator_valve",
-        "smart_lcd_thermostat"
+        "led_strip_rgbw",
+        "rgb_bulb_E27"
       ]
     },
     {
-      "key": "_tyst11_ckud7u2l|TS0601",
+      "key": "_tz3000_12sxjap4|ZB-CL01",
       "drivers": [
-        "device_radiator_valve",
-        "thermostatic_radiator_valve"
+        "led_strip_rgbw",
+        "rgb_bulb_E27"
       ]
     },
     {
-      "key": "_tyst11_cwnjrr72|TS0601",
+      "key": "_tz3000_5fkufhn1|TS0601",
       "drivers": [
-        "device_radiator_valve",
-        "thermostatic_radiator_valve"
+        "hybrid_light_windowcoverings",
+        "tunable_bulb_E14"
       ]
     },
     {
-      "key": "_tyst11_czk78ptr|TS0601",
+      "key": "_tz3000_evag0pvn|TS0601",
       "drivers": [
-        "climate_sensor",
-        "device_radiator_valve"
+        "bulb_rgbw",
+        "hybrid_light_windowcoverings"
       ]
     },
     {
-      "key": "_tyst11_kfvq6avy|TS0601",
+      "key": "_tz3000_g1glzzfk|TS0601",
       "drivers": [
-        "device_radiator_valve",
-        "thermostatic_radiator_valve"
+        "dimmer_wall_1gang",
+        "tunable_bulb_E14"
       ]
     },
     {
-      "key": "_tyst11_ps5v5jor|TS0601",
+      "key": "_tz3000_hlijwsai|TS0505A",
       "drivers": [
-        "climate_sensor",
-        "device_radiator_valve"
+        "led_strip_rgbw",
+        "rgb_bulb_E27"
       ]
     },
     {
-      "key": "_tyst11_yw7cahqs|TS0601",
+      "key": "_tz3000_hlijwsai|TS0505B",
       "drivers": [
-        "device_radiator_valve",
-        "thermostat_tuya_dp"
+        "led_strip_rgbw",
+        "rgb_bulb_E27"
       ]
     },
     {
-      "key": "_tyst11_ywdxldoj|TS0601",
+      "key": "_tz3000_hlijwsai|ZB-CL01",
       "drivers": [
-        "device_radiator_valve",
-        "thermostatic_radiator_valve"
+        "led_strip_rgbw",
+        "rgb_bulb_E27"
       ]
     },
     {
-      "key": "_tyzb01_4tlksk8a|TS0001",
+      "key": "_tz3000_jd3z4yig|TS0601",
       "drivers": [
-        "button_wireless_2",
-        "valvecontroller"
-      ]
-    },
-    {
-      "key": "_tyzb01_4tlksk8a|TS0111",
-      "drivers": [
-        "button_wireless_2",
-        "valvecontroller"
-      ]
-    },
-    {
-      "key": "_tyzb01_4tlksk8a|TS011F",
-      "drivers": [
-        "button_wireless_2",
-        "valvecontroller"
-      ]
-    },
-    {
-      "key": "_tyzb01_aneiicmq|TS0002",
-      "drivers": [
-        "button_wireless_2",
-        "switch_2_gang"
-      ]
-    },
-    {
-      "key": "_tyzb01_aneiicmq|TS0003",
-      "drivers": [
-        "button_wireless_2",
-        "switch_2_gang"
-      ]
-    },
-    {
-      "key": "_tyzb01_aneiicmq|TS0012",
-      "drivers": [
-        "button_wireless_2",
-        "switch_2_gang"
-      ]
-    },
-    {
-      "key": "_tyzb01_aneiicmq|TS0013",
-      "drivers": [
-        "button_wireless_2",
-        "switch_2_gang"
-      ]
-    },
-    {
-      "key": "_tyzb01_aneiicmq|TS011F",
-      "drivers": [
-        "button_wireless_2",
-        "switch_2_gang"
-      ]
-    },
-    {
-      "key": "_tyzb01_ncutbjdi|TS0002",
-      "drivers": [
-        "button_wireless_2",
-        "switch_2_gang"
-      ]
-    },
-    {
-      "key": "_tyzb01_ncutbjdi|TS0003",
-      "drivers": [
-        "button_wireless_2",
-        "switch_2_gang"
-      ]
-    },
-    {
-      "key": "_tyzb01_ncutbjdi|TS0012",
-      "drivers": [
-        "button_wireless_2",
-        "switch_2_gang"
-      ]
-    },
-    {
-      "key": "_tyzb01_ncutbjdi|TS0013",
-      "drivers": [
-        "button_wireless_2",
-        "switch_2_gang"
-      ]
-    },
-    {
-      "key": "_tyzb01_ncutbjdi|TS011F",
-      "drivers": [
-        "button_wireless_2",
-        "switch_2_gang"
-      ]
-    },
-    {
-      "key": "_tyzb01_qeqvmvti|01MINIZB",
-      "drivers": [
-        "button_wireless_2",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tyzb01_qeqvmvti|BASICZBR3",
-      "drivers": [
-        "button_wireless_2",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tyzb01_qeqvmvti|S26R2ZB",
-      "drivers": [
-        "button_wireless_2",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tyzb01_qeqvmvti|S31ZB",
-      "drivers": [
-        "button_wireless_2",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tyzb01_qeqvmvti|TS0001_power",
-      "drivers": [
-        "button_wireless_2",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tyzb01_qeqvmvti|TS0001_switch",
-      "drivers": [
-        "button_wireless_2",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tyzb01_qeqvmvti|TS0001_switch_module",
-      "drivers": [
-        "button_wireless_2",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tyzb01_qeqvmvti|TS000F",
-      "drivers": [
-        "button_wireless_2",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tyzb01_qeqvmvti|TS0011",
-      "drivers": [
-        "button_wireless_2",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tyzb01_qeqvmvti|TS0101",
-      "drivers": [
-        "button_wireless_2",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tyzb01_qeqvmvti|TS0601",
-      "drivers": [
-        "button_wireless_2",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tyzb01_qeqvmvti|TS0726",
-      "drivers": [
-        "button_wireless_2",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tyzb01_qeqvmvti|TS4100",
-      "drivers": [
-        "button_wireless_2",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tyzb01_qeqvmvti|ZBM5-1C-120",
-      "drivers": [
-        "button_wireless_2",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tyzb01_qeqvmvti|ZBM5-2C-120",
-      "drivers": [
-        "button_wireless_2",
-        "wall_switch_5_gang_tuya"
+        "christmas_lights",
+        "rgb_led_strip"
       ]
     },
     {
-      "key": "_tyzb01_qeqvmvti|ZBM5-3C-120",
+      "key": "_tz3000_keabpigv|TS0502A",
       "drivers": [
-        "button_wireless_2",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tyzb01_qeqvmvti|ZBMINI",
-      "drivers": [
-        "button_wireless_2",
-        "wall_switch_5_gang_tuya"
+        "led_strip_rgbw",
+        "light_bulb_tunable_white"
       ]
     },
     {
-      "key": "_tyzb01_qeqvmvti|ZBMINIL2",
+      "key": "_tz3000_keabpigv|TS0502B",
       "drivers": [
-        "button_wireless_2",
-        "wall_switch_5_gang_tuya"
+        "led_strip_rgbw",
+        "light_bulb_tunable_white"
       ]
     },
     {
-      "key": "_tyzb01_qeqvmvti|ZBMINIL2-R2",
+      "key": "_tz3000_keabpigv|TS0503A",
       "drivers": [
-        "button_wireless_2",
-        "wall_switch_5_gang_tuya"
+        "led_strip_rgbw",
+        "light_bulb_tunable_white"
       ]
     },
     {
-      "key": "_tyzb01_qeqvmvti|ZBMINIR",
+      "key": "_tz3000_keabpigv|TS0504A",
       "drivers": [
-        "button_wireless_2",
-        "wall_switch_5_gang_tuya"
+        "led_strip_rgbw",
+        "light_bulb_tunable_white"
       ]
     },
     {
-      "key": "_tyzb01_qeqvmvti|ZBMINIR2",
+      "key": "_tz3000_obacbukl|TS0503A",
       "drivers": [
         "button_wireless_2",
-        "wall_switch_5_gang_tuya"
+        "tunable_bulb_E14"
       ]
     },
     {
-      "key": "_tyzb01_qeqvmvti|ZBMINIR2-R2",
+      "key": "_tz3000_obacbukl|TS0601",
       "drivers": [
         "button_wireless_2",
-        "wall_switch_5_gang_tuya"
+        "tunable_bulb_E14"
       ]
     },
     {
-      "key": "_tyzb01_qeqvmvti|ZG-302Z1",
+      "key": "_tz3000_qeuvnohg|TS0601",
       "drivers": [
         "button_wireless_2",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tyzb01_sqmd19i1|TS0601",
-      "drivers": [
-        "smart_garden_irrigation_control",
-        "water_leak_sensor"
-      ]
-    },
-    {
-      "key": "_tyzb01_ttvdudvx|TS0601",
-      "drivers": [
-        "smart_garden_irrigation_control",
-        "water_leak_sensor"
-      ]
-    },
-    {
-      "key": "_tyzb01_ujfk3xd9|CK-TLSR8656-SS5-01(7014)",
-      "drivers": [
-        "climate_sensor",
-        "temphumidsensor5"
-      ]
-    },
-    {
-      "key": "_tyzb01_ujfk3xd9|RH3052",
-      "drivers": [
-        "climate_sensor",
-        "temphumidsensor5"
-      ]
-    },
-    {
-      "key": "_tyzb01_ujfk3xd9|SNTZ003",
-      "drivers": [
-        "climate_sensor",
-        "temphumidsensor5"
-      ]
-    },
-    {
-      "key": "_tyzb01_ujfk3xd9|TS0201",
-      "drivers": [
-        "climate_sensor",
-        "temphumidsensor5"
-      ]
-    },
-    {
-      "key": "_tyzb01_ujfk3xd9|TY0201",
-      "drivers": [
-        "climate_sensor",
-        "temphumidsensor5"
-      ]
-    },
-    {
-      "key": "_tyzb01_ujfk3xd9|ZG-227Z",
-      "drivers": [
-        "climate_sensor",
-        "temphumidsensor5"
+        "lcdtemphumidsensor_plug_energy"
       ]
     },
     {
-      "key": "_tyzb01_zsl6z0pw|TS0002",
+      "key": "_tz3000_qqjaziws|TS0601",
       "drivers": [
-        "button_wireless_2",
-        "switch_2_gang"
+        "dimmable_led_strip",
+        "rgb_led_strip_controller"
       ]
     },
     {
-      "key": "_tyzb01_zsl6z0pw|TS0003",
+      "key": "_tz3000_rylaozuc|TS0601",
       "drivers": [
-        "button_wireless_2",
-        "switch_2_gang"
+        "hybrid_light_windowcoverings",
+        "tunable_bulb_E14"
       ]
     },
     {
-      "key": "_tyzb01_zsl6z0pw|TS0012",
+      "key": "_tz3000_sosdczdl|TS0601",
       "drivers": [
-        "button_wireless_2",
-        "switch_2_gang"
+        "bulb_rgbw",
+        "hybrid_light_windowcoverings"
       ]
     },
     {
-      "key": "_tyzb01_zsl6z0pw|TS0013",
+      "key": "_tz3000_vzopcetz|TS0503A",
       "drivers": [
         "button_wireless_2",
-        "switch_2_gang"
+        "tunable_bulb_E14"
       ]
     },
     {
-      "key": "_tyzb01_zsl6z0pw|TS011F",
+      "key": "_tz3000_vzopcetz|TS0601",
       "drivers": [
         "button_wireless_2",
-        "switch_2_gang"
-      ]
-    },
-    {
-      "key": "_tz3000_0t4zjtia|TS0001",
-      "drivers": [
-        "switch_1gang",
-        "wall_switch_1gang_1way"
-      ]
-    },
-    {
-      "key": "_tz3000_0t4zjtia|TS0002",
-      "drivers": [
-        "switch_1gang",
-        "wall_switch_1gang_1way"
-      ]
-    },
-    {
-      "key": "_tz3000_0t4zjtia|TS0003",
-      "drivers": [
-        "switch_1gang",
-        "wall_switch_1gang_1way"
-      ]
-    },
-    {
-      "key": "_tz3000_0t4zjtia|TS0011",
-      "drivers": [
-        "switch_1gang",
-        "wall_switch_1gang_1way"
-      ]
-    },
-    {
-      "key": "_tz3000_0t4zjtia|TS011F",
-      "drivers": [
-        "switch_1gang",
-        "wall_switch_1gang_1way"
-      ]
-    },
-    {
-      "key": "_tz3000_0t4zjtia|TS0601",
-      "drivers": [
-        "switch_1gang",
-        "wall_switch_1gang_1way"
+        "tunable_bulb_E14"
       ]
     },
     {
-      "key": "_tz3000_0t4zjtia|TS0726",
+      "key": "_tz3000_wkr3jqmr|01MINIZB",
       "drivers": [
         "switch_1gang",
-        "wall_switch_1gang_1way"
-      ]
-    },
-    {
-      "key": "_tz3000_7ysdnebc|TS0601",
-      "drivers": [
-        "dimmer_dual_channel",
-        "wall_dimmer_tuya"
-      ]
-    },
-    {
-      "key": "_tz3000_7ysdnebc|TS1101",
-      "drivers": [
-        "dimmer_dual_channel",
-        "wall_dimmer_tuya"
-      ]
-    },
-    {
-      "key": "_tz3000_88iqnhvd|01MINIZB",
-      "drivers": [
-        "button_wireless_2",
-        "plug_energy_monitor"
-      ]
-    },
-    {
-      "key": "_tz3000_88iqnhvd|A11Z",
-      "drivers": [
-        "button_wireless_2",
-        "plug_energy_monitor"
-      ]
-    },
-    {
-      "key": "_tz3000_88iqnhvd|A7Z",
-      "drivers": [
-        "button_wireless_2",
-        "plug_energy_monitor"
-      ]
-    },
-    {
-      "key": "_tz3000_88iqnhvd|BASICZBR3",
-      "drivers": [
-        "button_wireless_2",
-        "plug_energy_monitor"
-      ]
-    },
-    {
-      "key": "_tz3000_88iqnhvd|CK-BL702-SWP-01(7020)",
-      "drivers": [
-        "button_wireless_2",
-        "plug_energy_monitor"
-      ]
-    },
-    {
-      "key": "_tz3000_88iqnhvd|E1603/E1702/E1708",
-      "drivers": [
-        "button_wireless_2",
-        "plug_energy_monitor"
-      ]
-    },
-    {
-      "key": "_tz3000_88iqnhvd|HY0104",
-      "drivers": [
-        "button_wireless_2",
-        "plug_energy_monitor"
-      ]
-    },
-    {
-      "key": "_tz3000_88iqnhvd|HY0105",
-      "drivers": [
-        "button_wireless_2",
-        "plug_energy_monitor"
-      ]
-    },
-    {
-      "key": "_tz3000_88iqnhvd|JZ-ZB-005",
-      "drivers": [
-        "button_wireless_2",
-        "plug_energy_monitor"
-      ]
-    },
-    {
-      "key": "_tz3000_88iqnhvd|LSPA9",
-      "drivers": [
-        "button_wireless_2",
-        "plug_energy_monitor"
-      ]
-    },
-    {
-      "key": "_tz3000_88iqnhvd|lumi.plug.macn01",
-      "drivers": [
-        "button_wireless_2",
-        "plug_energy_monitor"
-      ]
-    },
-    {
-      "key": "_tz3000_88iqnhvd|lumi.plug.maeu01",
-      "drivers": [
-        "button_wireless_2",
-        "plug_energy_monitor"
-      ]
-    },
-    {
-      "key": "_tz3000_88iqnhvd|lumi.plug.mmeu01",
-      "drivers": [
-        "button_wireless_2",
-        "plug_energy_monitor"
-      ]
-    },
-    {
-      "key": "_tz3000_88iqnhvd|S26R2ZB",
-      "drivers": [
-        "button_wireless_2",
-        "plug_energy_monitor"
-      ]
-    },
-    {
-      "key": "_tz3000_88iqnhvd|S31 Lite zb",
-      "drivers": [
-        "button_wireless_2",
-        "plug_energy_monitor"
-      ]
-    },
-    {
-      "key": "_tz3000_88iqnhvd|S31ZB",
-      "drivers": [
-        "button_wireless_2",
-        "plug_energy_monitor"
-      ]
-    },
-    {
-      "key": "_tz3000_88iqnhvd|S40LITE",
-      "drivers": [
-        "button_wireless_2",
-        "plug_energy_monitor"
-      ]
-    },
-    {
-      "key": "_tz3000_88iqnhvd|S40ZBTPB",
-      "drivers": [
-        "button_wireless_2",
-        "plug_energy_monitor"
-      ]
-    },
-    {
-      "key": "_tz3000_88iqnhvd|S40ZBTPF",
-      "drivers": [
-        "button_wireless_2",
-        "plug_energy_monitor"
-      ]
-    },
-    {
-      "key": "_tz3000_88iqnhvd|S40ZBTPG",
-      "drivers": [
-        "button_wireless_2",
-        "plug_energy_monitor"
-      ]
-    },
-    {
-      "key": "_tz3000_88iqnhvd|S60ZBTPE",
-      "drivers": [
-        "button_wireless_2",
-        "plug_energy_monitor"
-      ]
-    },
-    {
-      "key": "_tz3000_88iqnhvd|S60ZBTPF",
-      "drivers": [
-        "button_wireless_2",
-        "plug_energy_monitor"
-      ]
-    },
-    {
-      "key": "_tz3000_88iqnhvd|S60ZBTPF-R2",
-      "drivers": [
-        "button_wireless_2",
-        "plug_energy_monitor"
-      ]
-    },
-    {
-      "key": "_tz3000_88iqnhvd|S60ZBTPG",
-      "drivers": [
-        "button_wireless_2",
-        "plug_energy_monitor"
-      ]
-    },
-    {
-      "key": "_tz3000_88iqnhvd|SA-028-1",
-      "drivers": [
-        "button_wireless_2",
-        "plug_energy_monitor"
-      ]
-    },
-    {
-      "key": "_tz3000_88iqnhvd|SA-029-1",
-      "drivers": [
-        "button_wireless_2",
-        "plug_energy_monitor"
-      ]
-    },
-    {
-      "key": "_tz3000_88iqnhvd|SP 120",
-      "drivers": [
-        "button_wireless_2",
-        "plug_energy_monitor"
-      ]
-    },
-    {
-      "key": "_tz3000_88iqnhvd|SP 220",
-      "drivers": [
-        "button_wireless_2",
-        "plug_energy_monitor"
-      ]
-    },
-    {
-      "key": "_tz3000_88iqnhvd|SP 222",
-      "drivers": [
-        "button_wireless_2",
-        "plug_energy_monitor"
-      ]
-    },
-    {
-      "key": "_tz3000_88iqnhvd|SP-EUC01",
-      "drivers": [
-        "button_wireless_2",
-        "plug_energy_monitor"
-      ]
-    },
-    {
-      "key": "_tz3000_88iqnhvd|SP-EUC02",
-      "drivers": [
-        "button_wireless_2",
-        "plug_energy_monitor"
-      ]
-    },
-    {
-      "key": "_tz3000_88iqnhvd|SPM01",
-      "drivers": [
-        "button_wireless_2",
-        "plug_energy_monitor"
-      ]
-    },
-    {
-      "key": "_tz3000_88iqnhvd|SPMZBR2",
-      "drivers": [
-        "button_wireless_2",
-        "plug_energy_monitor"
-      ]
-    },
-    {
-      "key": "_tz3000_88iqnhvd|TRADFRI control outlet",
-      "drivers": [
-        "button_wireless_2",
-        "plug_energy_monitor"
-      ]
-    },
-    {
-      "key": "_tz3000_88iqnhvd|TS0001",
-      "drivers": [
-        "button_wireless_2",
-        "plug_energy_monitor"
-      ]
-    },
-    {
-      "key": "_tz3000_88iqnhvd|TS0001_power",
-      "drivers": [
-        "button_wireless_2",
-        "plug_energy_monitor"
-      ]
-    },
-    {
-      "key": "_tz3000_88iqnhvd|TS0001_switch",
-      "drivers": [
-        "button_wireless_2",
-        "plug_energy_monitor"
-      ]
-    },
-    {
-      "key": "_tz3000_88iqnhvd|TS0001_switch_module",
-      "drivers": [
-        "button_wireless_2",
-        "plug_energy_monitor"
-      ]
-    },
-    {
-      "key": "_tz3000_88iqnhvd|TS0002",
-      "drivers": [
-        "button_wireless_2",
-        "plug_energy_monitor"
-      ]
-    },
-    {
-      "key": "_tz3000_88iqnhvd|TS0003",
-      "drivers": [
-        "button_wireless_2",
-        "plug_energy_monitor"
-      ]
-    },
-    {
-      "key": "_tz3000_88iqnhvd|TS000F",
-      "drivers": [
-        "button_wireless_2",
-        "plug_energy_monitor"
-      ]
-    },
-    {
-      "key": "_tz3000_88iqnhvd|TS0011",
-      "drivers": [
-        "button_wireless_2",
-        "plug_energy_monitor"
-      ]
-    },
-    {
-      "key": "_tz3000_88iqnhvd|TS0012",
-      "drivers": [
-        "button_wireless_2",
-        "plug_energy_monitor"
-      ]
-    },
-    {
-      "key": "_tz3000_88iqnhvd|TS0013",
-      "drivers": [
-        "button_wireless_2",
-        "plug_energy_monitor"
-      ]
-    },
-    {
-      "key": "_tz3000_88iqnhvd|TS0014",
-      "drivers": [
-        "button_wireless_2",
-        "plug_energy_monitor"
-      ]
-    },
-    {
-      "key": "_tz3000_88iqnhvd|TS0041",
-      "drivers": [
-        "button_wireless_2",
-        "plug_energy_monitor"
-      ]
-    },
-    {
-      "key": "_tz3000_88iqnhvd|TS0042",
-      "drivers": [
-        "button_wireless_2",
-        "plug_energy_monitor"
-      ]
-    },
-    {
-      "key": "_tz3000_88iqnhvd|TS0043",
-      "drivers": [
-        "button_wireless_2",
-        "plug_energy_monitor"
-      ]
-    },
-    {
-      "key": "_tz3000_88iqnhvd|TS0044",
-      "drivers": [
-        "button_wireless_2",
-        "plug_energy_monitor"
-      ]
-    },
-    {
-      "key": "_tz3000_88iqnhvd|TS0101",
-      "drivers": [
-        "button_wireless_2",
-        "plug_energy_monitor"
-      ]
-    },
-    {
-      "key": "_tz3000_88iqnhvd|TS0111",
-      "drivers": [
-        "button_wireless_2",
-        "plug_energy_monitor"
-      ]
-    },
-    {
-      "key": "_tz3000_88iqnhvd|TS011F",
-      "drivers": [
-        "button_wireless_2",
-        "plug_energy_monitor"
-      ]
-    },
-    {
-      "key": "_tz3000_88iqnhvd|TS0121",
-      "drivers": [
-        "button_wireless_2",
-        "plug_energy_monitor"
-      ]
-    },
-    {
-      "key": "_tz3000_88iqnhvd|TS0215A",
-      "drivers": [
-        "button_wireless_2",
-        "plug_energy_monitor"
-      ]
-    },
-    {
-      "key": "_tz3000_88iqnhvd|TS0505B",
-      "drivers": [
-        "button_wireless_2",
-        "plug_energy_monitor"
-      ]
-    },
-    {
-      "key": "_tz3000_88iqnhvd|TS0601",
-      "drivers": [
-        "button_wireless_2",
-        "plug_energy_monitor"
-      ]
-    },
-    {
-      "key": "_tz3000_88iqnhvd|TS0726",
-      "drivers": [
-        "button_wireless_2",
-        "plug_energy_monitor"
-      ]
-    },
-    {
-      "key": "_tz3000_88iqnhvd|TS1101",
-      "drivers": [
-        "button_wireless_2",
-        "plug_energy_monitor"
-      ]
-    },
-    {
-      "key": "_tz3000_88iqnhvd|TS110E",
-      "drivers": [
-        "button_wireless_2",
-        "plug_energy_monitor"
-      ]
-    },
-    {
-      "key": "_tz3000_88iqnhvd|TS110F",
-      "drivers": [
-        "button_wireless_2",
-        "plug_energy_monitor"
-      ]
-    },
-    {
-      "key": "_tz3000_88iqnhvd|TS130F",
-      "drivers": [
-        "button_wireless_2",
-        "plug_energy_monitor"
-      ]
-    },
-    {
-      "key": "_tz3000_88iqnhvd|TS4100",
-      "drivers": [
-        "button_wireless_2",
-        "plug_energy_monitor"
-      ]
-    },
-    {
-      "key": "_tz3000_88iqnhvd|TSO121",
-      "drivers": [
-        "button_wireless_2",
-        "plug_energy_monitor"
-      ]
-    },
-    {
-      "key": "_tz3000_88iqnhvd|Z111PL0H-1JX",
-      "drivers": [
-        "button_wireless_2",
-        "plug_energy_monitor"
-      ]
-    },
-    {
-      "key": "_tz3000_88iqnhvd|ZBM5-1C-120",
-      "drivers": [
-        "button_wireless_2",
-        "plug_energy_monitor"
-      ]
-    },
-    {
-      "key": "_tz3000_88iqnhvd|ZBM5-2C-120",
-      "drivers": [
-        "button_wireless_2",
-        "plug_energy_monitor"
-      ]
-    },
-    {
-      "key": "_tz3000_88iqnhvd|ZBM5-3C-120",
-      "drivers": [
-        "button_wireless_2",
-        "plug_energy_monitor"
-      ]
-    },
-    {
-      "key": "_tz3000_88iqnhvd|ZBMINI",
-      "drivers": [
-        "button_wireless_2",
-        "plug_energy_monitor"
-      ]
-    },
-    {
-      "key": "_tz3000_88iqnhvd|ZBMINIL2",
-      "drivers": [
-        "button_wireless_2",
-        "plug_energy_monitor"
-      ]
-    },
-    {
-      "key": "_tz3000_88iqnhvd|ZBMINIL2-R2",
-      "drivers": [
-        "button_wireless_2",
-        "plug_energy_monitor"
-      ]
-    },
-    {
-      "key": "_tz3000_88iqnhvd|ZBMINIR",
-      "drivers": [
-        "button_wireless_2",
-        "plug_energy_monitor"
-      ]
-    },
-    {
-      "key": "_tz3000_88iqnhvd|ZBMINIR2",
-      "drivers": [
-        "button_wireless_2",
-        "plug_energy_monitor"
-      ]
-    },
-    {
-      "key": "_tz3000_88iqnhvd|ZBMINIR2-R2",
-      "drivers": [
-        "button_wireless_2",
-        "plug_energy_monitor"
-      ]
-    },
-    {
-      "key": "_tz3000_88iqnhvd|ZG-301Z",
-      "drivers": [
-        "button_wireless_2",
-        "plug_energy_monitor"
-      ]
-    },
-    {
-      "key": "_tz3000_88iqnhvd|ZG-302Z1",
-      "drivers": [
-        "button_wireless_2",
-        "plug_energy_monitor"
-      ]
-    },
-    {
-      "key": "_tz3000_aetquff4|01MINIZB",
-      "drivers": [
-        "switch_1gang",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tz3000_aetquff4|BASICZBR3",
-      "drivers": [
-        "switch_1gang",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tz3000_aetquff4|S26R2ZB",
-      "drivers": [
-        "switch_1gang",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tz3000_aetquff4|S31ZB",
-      "drivers": [
-        "switch_1gang",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tz3000_aetquff4|TS0001_power",
-      "drivers": [
-        "switch_1gang",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tz3000_aetquff4|TS0001_switch",
-      "drivers": [
-        "switch_1gang",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tz3000_aetquff4|TS0001_switch_module",
-      "drivers": [
-        "switch_1gang",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tz3000_aetquff4|TS000F",
-      "drivers": [
-        "switch_1gang",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tz3000_aetquff4|TS0011",
-      "drivers": [
-        "switch_1gang",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tz3000_aetquff4|TS0101",
-      "drivers": [
-        "switch_1gang",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tz3000_aetquff4|TS0601",
-      "drivers": [
-        "switch_1gang",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tz3000_aetquff4|TS0726",
-      "drivers": [
-        "switch_1gang",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tz3000_aetquff4|TS4100",
-      "drivers": [
-        "switch_1gang",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tz3000_aetquff4|ZBM5-1C-120",
-      "drivers": [
-        "switch_1gang",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tz3000_aetquff4|ZBM5-2C-120",
-      "drivers": [
-        "switch_1gang",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tz3000_aetquff4|ZBM5-3C-120",
-      "drivers": [
-        "switch_1gang",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tz3000_aetquff4|ZBMINI",
-      "drivers": [
-        "switch_1gang",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tz3000_aetquff4|ZBMINIL2",
-      "drivers": [
-        "switch_1gang",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tz3000_aetquff4|ZBMINIL2-R2",
-      "drivers": [
-        "switch_1gang",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tz3000_aetquff4|ZBMINIR",
-      "drivers": [
-        "switch_1gang",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tz3000_aetquff4|ZBMINIR2",
-      "drivers": [
-        "switch_1gang",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tz3000_aetquff4|ZBMINIR2-R2",
-      "drivers": [
-        "switch_1gang",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tz3000_aetquff4|ZG-302Z1",
-      "drivers": [
-        "switch_1gang",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tz3000_br3laukf|Excellux",
-      "drivers": [
-        "device_plug_smart",
-        "sensor_contact_zigbee"
-      ]
-    },
-    {
-      "key": "_tz3000_br3laukf|TS0049",
-      "drivers": [
-        "device_plug_smart",
-        "outdoor_plug"
-      ]
-    },
-    {
-      "key": "_tz3000_br3laukf|TS0101",
-      "drivers": [
-        "device_plug_smart",
-        "outdoor_plug"
-      ]
-    },
-    {
-      "key": "_tz3000_br3laukf|TS0601",
-      "drivers": [
-        "device_plug_smart",
-        "sensor_contact_zigbee"
-      ]
-    },
-    {
-      "key": "_tz3000_eqsair32|01MINIZB",
-      "drivers": [
-        "switch_1gang",
-        "switch_3gang"
-      ]
-    },
-    {
-      "key": "_tz3000_eqsair32|BASICZBR3",
-      "drivers": [
-        "switch_1gang",
-        "switch_3gang"
-      ]
-    },
-    {
-      "key": "_tz3000_eqsair32|S26R2ZB",
-      "drivers": [
-        "switch_1gang",
-        "switch_3gang"
-      ]
-    },
-    {
-      "key": "_tz3000_eqsair32|S31ZB",
-      "drivers": [
-        "switch_1gang",
-        "switch_3gang"
-      ]
-    },
-    {
-      "key": "_tz3000_eqsair32|TS0001",
-      "drivers": [
-        "switch_1gang",
-        "switch_3gang"
-      ]
-    },
-    {
-      "key": "_tz3000_eqsair32|TS0001_power",
-      "drivers": [
-        "switch_1gang",
-        "switch_3gang"
-      ]
-    },
-    {
-      "key": "_tz3000_eqsair32|TS0001_switch",
-      "drivers": [
-        "switch_1gang",
-        "switch_3gang"
-      ]
-    },
-    {
-      "key": "_tz3000_eqsair32|TS0001_switch_module",
-      "drivers": [
-        "switch_1gang",
-        "switch_3gang"
-      ]
-    },
-    {
-      "key": "_tz3000_eqsair32|TS0002",
-      "drivers": [
-        "switch_1gang",
-        "switch_3gang"
-      ]
-    },
-    {
-      "key": "_tz3000_eqsair32|TS0003",
-      "drivers": [
-        "switch_1gang",
-        "switch_3gang"
-      ]
-    },
-    {
-      "key": "_tz3000_eqsair32|TS0011",
-      "drivers": [
-        "switch_1gang",
-        "switch_3gang"
-      ]
-    },
-    {
-      "key": "_tz3000_eqsair32|TS0012",
-      "drivers": [
-        "switch_1gang",
-        "switch_3gang"
-      ]
-    },
-    {
-      "key": "_tz3000_eqsair32|TS0014",
-      "drivers": [
-        "switch_1gang",
-        "switch_3gang"
-      ]
-    },
-    {
-      "key": "_tz3000_eqsair32|TS0041",
-      "drivers": [
-        "switch_1gang",
-        "switch_3gang"
-      ]
-    },
-    {
-      "key": "_tz3000_eqsair32|TS0101",
-      "drivers": [
-        "switch_1gang",
-        "switch_3gang"
-      ]
-    },
-    {
-      "key": "_tz3000_eqsair32|TS0111",
-      "drivers": [
-        "switch_1gang",
-        "switch_3gang"
-      ]
-    },
-    {
-      "key": "_tz3000_eqsair32|TS011F",
-      "drivers": [
-        "switch_1gang",
-        "switch_3gang"
-      ]
-    },
-    {
-      "key": "_tz3000_eqsair32|TS0203",
-      "drivers": [
-        "switch_1gang",
-        "switch_3gang"
-      ]
-    },
-    {
-      "key": "_tz3000_eqsair32|TS0601",
-      "drivers": [
-        "switch_1gang",
-        "switch_3gang"
-      ]
-    },
-    {
-      "key": "_tz3000_eqsair32|TS0726",
-      "drivers": [
-        "switch_1gang",
-        "switch_3gang"
-      ]
-    },
-    {
-      "key": "_tz3000_eqsair32|TS110E",
-      "drivers": [
-        "switch_1gang",
-        "switch_3gang"
-      ]
-    },
-    {
-      "key": "_tz3000_eqsair32|TS130F",
-      "drivers": [
-        "switch_1gang",
-        "switch_3gang"
-      ]
-    },
-    {
-      "key": "_tz3000_eqsair32|TS4100",
-      "drivers": [
-        "switch_1gang",
-        "switch_3gang"
-      ]
-    },
-    {
-      "key": "_tz3000_eqsair32|ZBM5-1C-120",
-      "drivers": [
-        "switch_1gang",
-        "switch_3gang"
-      ]
-    },
-    {
-      "key": "_tz3000_eqsair32|ZBM5-2C-120",
-      "drivers": [
-        "switch_1gang",
-        "switch_3gang"
-      ]
-    },
-    {
-      "key": "_tz3000_eqsair32|ZBM5-3C-120",
-      "drivers": [
-        "switch_1gang",
-        "switch_3gang"
-      ]
-    },
-    {
-      "key": "_tz3000_eqsair32|ZBMINI",
-      "drivers": [
-        "switch_1gang",
-        "switch_3gang"
-      ]
-    },
-    {
-      "key": "_tz3000_eqsair32|ZBMINIL2",
-      "drivers": [
-        "switch_1gang",
-        "switch_3gang"
-      ]
-    },
-    {
-      "key": "_tz3000_eqsair32|ZBMINIL2-R2",
-      "drivers": [
-        "switch_1gang",
-        "switch_3gang"
-      ]
-    },
-    {
-      "key": "_tz3000_eqsair32|ZBMINIR",
-      "drivers": [
-        "switch_1gang",
-        "switch_3gang"
-      ]
-    },
-    {
-      "key": "_tz3000_eqsair32|ZBMINIR2",
-      "drivers": [
-        "switch_1gang",
-        "switch_3gang"
-      ]
-    },
-    {
-      "key": "_tz3000_eqsair32|ZBMINIR2-R2",
-      "drivers": [
-        "switch_1gang",
-        "switch_3gang"
-      ]
-    },
-    {
-      "key": "_tz3000_eqsair32|ZG-301Z",
-      "drivers": [
-        "switch_1gang",
-        "switch_3gang"
-      ]
-    },
-    {
-      "key": "_tz3000_eqsair32|ZG-302Z1",
-      "drivers": [
-        "switch_1gang",
-        "switch_3gang"
-      ]
-    },
-    {
-      "key": "_tz3000_g9chy2ib|TS0601",
-      "drivers": [
-        "device_radiator_valve",
-        "wall_thermostat"
-      ]
-    },
-    {
-      "key": "_tz3000_gjrubzje|TS0001",
-      "drivers": [
-        "switch_1gang",
-        "valvecontroller"
-      ]
-    },
-    {
-      "key": "_tz3000_gjrubzje|TS0111",
-      "drivers": [
-        "switch_1gang",
-        "valvecontroller"
-      ]
-    },
-    {
-      "key": "_tz3000_gjrubzje|TS011F",
-      "drivers": [
-        "switch_1gang",
-        "valvecontroller"
-      ]
-    },
-    {
-      "key": "_tz3000_hafsqare|01MINIZB",
-      "drivers": [
-        "switch_1gang",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tz3000_hafsqare|BASICZBR3",
-      "drivers": [
-        "switch_1gang",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tz3000_hafsqare|S26R2ZB",
-      "drivers": [
-        "switch_1gang",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tz3000_hafsqare|S31ZB",
-      "drivers": [
-        "switch_1gang",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tz3000_hafsqare|TS0001_power",
-      "drivers": [
-        "switch_1gang",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tz3000_hafsqare|TS0001_switch",
-      "drivers": [
-        "switch_1gang",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tz3000_hafsqare|TS0001_switch_module",
-      "drivers": [
-        "switch_1gang",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tz3000_hafsqare|TS000F",
-      "drivers": [
-        "switch_1gang",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tz3000_hafsqare|TS0011",
-      "drivers": [
-        "switch_1gang",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tz3000_hafsqare|TS0101",
-      "drivers": [
-        "switch_1gang",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tz3000_hafsqare|TS0601",
-      "drivers": [
-        "switch_1gang",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tz3000_hafsqare|TS0726",
-      "drivers": [
-        "switch_1gang",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tz3000_hafsqare|TS4100",
-      "drivers": [
-        "switch_1gang",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tz3000_hafsqare|ZBM5-1C-120",
-      "drivers": [
-        "switch_1gang",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tz3000_hafsqare|ZBM5-2C-120",
-      "drivers": [
-        "switch_1gang",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tz3000_hafsqare|ZBM5-3C-120",
-      "drivers": [
-        "switch_1gang",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tz3000_hafsqare|ZBMINI",
-      "drivers": [
-        "switch_1gang",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tz3000_hafsqare|ZBMINIL2",
-      "drivers": [
-        "switch_1gang",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tz3000_hafsqare|ZBMINIL2-R2",
-      "drivers": [
-        "switch_1gang",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tz3000_hafsqare|ZBMINIR",
-      "drivers": [
-        "switch_1gang",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tz3000_hafsqare|ZBMINIR2",
-      "drivers": [
-        "switch_1gang",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tz3000_hafsqare|ZBMINIR2-R2",
-      "drivers": [
-        "switch_1gang",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tz3000_hafsqare|ZG-302Z1",
-      "drivers": [
-        "switch_1gang",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tz3000_hyarhbyx|TS0001",
-      "drivers": [
-        "switch_1gang",
-        "valvecontroller"
-      ]
-    },
-    {
-      "key": "_tz3000_hyarhbyx|TS0111",
-      "drivers": [
-        "switch_1gang",
-        "valvecontroller"
-      ]
-    },
-    {
-      "key": "_tz3000_hyarhbyx|TS011F",
-      "drivers": [
-        "switch_1gang",
-        "valvecontroller"
-      ]
-    },
-    {
-      "key": "_tz3000_itgngnqz|TS0002",
-      "drivers": [
-        "switch_2gang",
-        "switch_usb_dongle"
-      ]
-    },
-    {
-      "key": "_tz3000_jowhpxop|TS0203",
-      "drivers": [
-        "doorwindowsensor_3",
-        "sensor_contact_rain"
-      ]
-    },
-    {
-      "key": "_tz3000_jowhpxop|TS0601",
-      "drivers": [
-        "doorwindowsensor_3",
-        "sensor_contact_rain"
-      ]
-    },
-    {
-      "key": "_tz3000_kgxej1dv|TS0002",
-      "drivers": [
-        "switch_2gang",
-        "switch_usb_dongle"
-      ]
-    },
-    {
-      "key": "_tz3000_pnzfdr9y|TS0101",
-      "drivers": [
-        "device_plug_smart",
-        "switch_1gang"
-      ]
-    },
-    {
-      "key": "_tz3000_pnzfdr9y|TS011F",
-      "drivers": [
-        "device_plug_smart",
-        "switch_1gang"
-      ]
-    },
-    {
-      "key": "_tz3000_pnzfdr9y|TS0601",
-      "drivers": [
-        "device_plug_smart",
-        "switch_1gang"
-      ]
-    },
-    {
-      "key": "_tz3000_qaaysllp|Excellux",
-      "drivers": [
-        "climate_sensor",
-        "lcdtemphumidluxsensor"
-      ]
-    },
-    {
-      "key": "_tz3000_qaaysllp|TS0201",
-      "drivers": [
-        "climate_sensor",
-        "lcdtemphumidluxsensor"
-      ]
-    },
-    {
-      "key": "_tz3000_qaaysllp|TS0222",
-      "drivers": [
-        "climate_sensor",
-        "lcdtemphumidluxsensor"
-      ]
-    },
-    {
-      "key": "_tz3000_qaaysllp|TS0601",
-      "drivers": [
-        "climate_sensor",
-        "lcdtemphumidluxsensor"
-      ]
-    },
-    {
-      "key": "_tz3000_rco1yzb1|TS011F",
-      "drivers": [
-        "button_wireless_4",
-        "remote_button_wireless"
-      ]
-    },
-    {
-      "key": "_tz3000_rco1yzb1|TS0601",
-      "drivers": [
-        "button_wireless_4",
-        "remote_button_wireless"
-      ]
-    },
-    {
-      "key": "_tz3000_skueekg3|TS0001",
-      "drivers": [
-        "switch_1gang",
-        "wall_switch_1gang_1way"
-      ]
-    },
-    {
-      "key": "_tz3000_skueekg3|TS0002",
-      "drivers": [
-        "switch_1gang",
-        "wall_switch_1gang_1way"
-      ]
-    },
-    {
-      "key": "_tz3000_skueekg3|TS0003",
-      "drivers": [
-        "switch_1gang",
-        "wall_switch_1gang_1way"
-      ]
-    },
-    {
-      "key": "_tz3000_skueekg3|TS0011",
-      "drivers": [
-        "switch_1gang",
-        "wall_switch_1gang_1way"
-      ]
-    },
-    {
-      "key": "_tz3000_skueekg3|TS011F",
-      "drivers": [
-        "switch_1gang",
-        "wall_switch_1gang_1way"
-      ]
-    },
-    {
-      "key": "_tz3000_skueekg3|TS0601",
-      "drivers": [
-        "switch_1gang",
-        "wall_switch_1gang_1way"
-      ]
-    },
-    {
-      "key": "_tz3000_skueekg3|TS0726",
-      "drivers": [
-        "switch_1gang",
-        "wall_switch_1gang_1way"
-      ]
-    },
-    {
-      "key": "_tz3000_u3oupgdy|TS0004",
-      "drivers": [
-        "relay_board_4_channel",
         "switch_4gang"
       ]
     },
     {
-      "key": "_tz3000_uwkja6z1|TS0111",
-      "drivers": [
-        "button_wireless_plug",
-        "gateway_zigbee_bridge"
-      ]
-    },
-    {
-      "key": "_tz3000_uwkja6z1|TS011F",
-      "drivers": [
-        "button_wireless_plug",
-        "gateway_zigbee_bridge"
-      ]
-    },
-    {
-      "key": "_tz3000_uwkja6z1|TS0601",
-      "drivers": [
-        "button_wireless_plug",
-        "gateway_zigbee_bridge"
-      ]
-    },
-    {
-      "key": "_tz3000_v4l4b0lp|TS0002",
-      "drivers": [
-        "switch_2_gang",
-        "switch_3gang"
-      ]
-    },
-    {
-      "key": "_tz3000_v4l4b0lp|TS0003",
-      "drivers": [
-        "switch_2_gang",
-        "switch_3gang"
-      ]
-    },
-    {
-      "key": "_tz3000_v4l4b0lp|TS0012",
-      "drivers": [
-        "switch_2_gang",
-        "switch_3gang"
-      ]
-    },
-    {
-      "key": "_tz3000_v4l4b0lp|TS0013",
-      "drivers": [
-        "switch_2_gang",
-        "switch_3gang"
-      ]
-    },
-    {
-      "key": "_tz3000_v4l4b0lp|TS011F",
-      "drivers": [
-        "switch_2_gang",
-        "switch_3gang"
-      ]
-    },
-    {
-      "key": "_tz3000_wpueorev|TS0001",
+      "key": "_tz3000_wkr3jqmr|BASICZBR3",
       "drivers": [
         "switch_1gang",
-        "valvecontroller"
+        "switch_4gang"
       ]
     },
     {
-      "key": "_tz3000_wpueorev|TS0111",
+      "key": "_tz3000_wkr3jqmr|S26R2ZB",
       "drivers": [
         "switch_1gang",
-        "valvecontroller"
+        "switch_4gang"
       ]
     },
     {
-      "key": "_tz3000_wpueorev|TS011F",
+      "key": "_tz3000_wkr3jqmr|S31ZB",
       "drivers": [
         "switch_1gang",
-        "valvecontroller"
+        "switch_4gang"
       ]
     },
     {
-      "key": "_tz3000_ww6drja5|01MINIZB",
+      "key": "_tz3000_wkr3jqmr|TS0001",
       "drivers": [
-        "climate_sensor",
-        "plug_energy_monitor"
+        "switch_1gang",
+        "switch_4gang"
       ]
     },
     {
-      "key": "_tz3000_ww6drja5|BASICZBR3",
+      "key": "_tz3000_wkr3jqmr|TS0001_power",
       "drivers": [
-        "climate_sensor",
-        "plug_energy_monitor"
+        "switch_1gang",
+        "switch_4gang"
       ]
     },
     {
-      "key": "_tz3000_ww6drja5|S26R2ZB",
+      "key": "_tz3000_wkr3jqmr|TS0001_switch",
       "drivers": [
-        "climate_sensor",
-        "plug_energy_monitor"
+        "switch_1gang",
+        "switch_4gang"
       ]
     },
     {
-      "key": "_tz3000_ww6drja5|S31ZB",
+      "key": "_tz3000_wkr3jqmr|TS0001_switch_module",
       "drivers": [
-        "climate_sensor",
-        "plug_energy_monitor"
+        "switch_1gang",
+        "switch_4gang"
       ]
     },
     {
-      "key": "_tz3000_ww6drja5|TS0001_power",
+      "key": "_tz3000_wkr3jqmr|TS0002",
       "drivers": [
-        "climate_sensor",
-        "plug_energy_monitor"
+        "switch_1gang",
+        "switch_4gang"
       ]
     },
     {
-      "key": "_tz3000_ww6drja5|TS0001_switch",
+      "key": "_tz3000_wkr3jqmr|TS0003",
       "drivers": [
-        "climate_sensor",
-        "plug_energy_monitor"
+        "switch_1gang",
+        "switch_4gang"
       ]
     },
     {
-      "key": "_tz3000_ww6drja5|TS0001_switch_module",
+      "key": "_tz3000_wkr3jqmr|TS000F",
       "drivers": [
-        "climate_sensor",
-        "plug_energy_monitor"
+        "switch_1gang",
+        "switch_4gang"
       ]
     },
     {
-      "key": "_tz3000_ww6drja5|TS000F",
+      "key": "_tz3000_wkr3jqmr|TS0011",
       "drivers": [
-        "climate_sensor",
-        "plug_energy_monitor"
+        "switch_1gang",
+        "switch_4gang"
       ]
     },
     {
-      "key": "_tz3000_ww6drja5|TS0011",
+      "key": "_tz3000_wkr3jqmr|TS0012",
       "drivers": [
-        "climate_sensor",
-        "plug_energy_monitor"
+        "switch_1gang",
+        "switch_4gang"
       ]
     },
     {
-      "key": "_tz3000_ww6drja5|TS0101",
+      "key": "_tz3000_wkr3jqmr|TS0014",
       "drivers": [
-        "climate_sensor",
-        "plug_energy_monitor"
+        "switch_1gang",
+        "switch_4gang"
       ]
     },
     {
-      "key": "_tz3000_ww6drja5|TS0215A",
+      "key": "_tz3000_wkr3jqmr|TS0041",
       "drivers": [
-        "climate_sensor",
-        "plug_energy_monitor"
+        "switch_1gang",
+        "switch_4gang"
       ]
     },
     {
-      "key": "_tz3000_ww6drja5|TS0601",
+      "key": "_tz3000_wkr3jqmr|TS0101",
       "drivers": [
-        "climate_sensor",
-        "plug_energy_monitor"
+        "switch_1gang",
+        "switch_4gang"
       ]
     },
     {
-      "key": "_tz3000_ww6drja5|TS0726",
+      "key": "_tz3000_wkr3jqmr|TS0111",
       "drivers": [
-        "climate_sensor",
-        "plug_energy_monitor"
+        "switch_1gang",
+        "switch_4gang"
       ]
     },
     {
-      "key": "_tz3000_ww6drja5|TS110E",
+      "key": "_tz3000_wkr3jqmr|TS011F",
       "drivers": [
-        "climate_sensor",
-        "plug_energy_monitor"
+        "switch_1gang",
+        "switch_4gang"
       ]
     },
     {
-      "key": "_tz3000_ww6drja5|TS4100",
+      "key": "_tz3000_wkr3jqmr|TS0203",
       "drivers": [
-        "climate_sensor",
-        "plug_energy_monitor"
+        "switch_1gang",
+        "switch_4gang"
       ]
     },
     {
-      "key": "_tz3000_ww6drja5|ZBM5-1C-120",
+      "key": "_tz3000_wkr3jqmr|TS0601",
       "drivers": [
-        "climate_sensor",
-        "plug_energy_monitor"
+        "switch_1gang",
+        "switch_4gang"
       ]
     },
     {
-      "key": "_tz3000_ww6drja5|ZBM5-2C-120",
+      "key": "_tz3000_wkr3jqmr|TS0726",
       "drivers": [
-        "climate_sensor",
-        "plug_energy_monitor"
+        "switch_1gang",
+        "switch_4gang"
       ]
     },
     {
-      "key": "_tz3000_ww6drja5|ZBM5-3C-120",
+      "key": "_tz3000_wkr3jqmr|TS110E",
       "drivers": [
-        "climate_sensor",
-        "plug_energy_monitor"
+        "switch_1gang",
+        "switch_4gang"
       ]
     },
     {
-      "key": "_tz3000_ww6drja5|ZBMINI",
+      "key": "_tz3000_wkr3jqmr|TS130F",
       "drivers": [
-        "climate_sensor",
-        "plug_energy_monitor"
+        "switch_1gang",
+        "switch_4gang"
       ]
     },
     {
-      "key": "_tz3000_ww6drja5|ZBMINIL2",
+      "key": "_tz3000_wkr3jqmr|TS4100",
       "drivers": [
-        "climate_sensor",
-        "plug_energy_monitor"
+        "switch_1gang",
+        "switch_4gang"
       ]
     },
     {
-      "key": "_tz3000_ww6drja5|ZBMINIL2-R2",
+      "key": "_tz3000_wkr3jqmr|ZBM5-1C-120",
       "drivers": [
-        "climate_sensor",
-        "plug_energy_monitor"
+        "switch_1gang",
+        "switch_4gang"
       ]
     },
     {
-      "key": "_tz3000_ww6drja5|ZBMINIR",
+      "key": "_tz3000_wkr3jqmr|ZBM5-2C-120",
       "drivers": [
-        "climate_sensor",
-        "plug_energy_monitor"
+        "switch_1gang",
+        "switch_4gang"
       ]
     },
     {
-      "key": "_tz3000_ww6drja5|ZBMINIR2",
+      "key": "_tz3000_wkr3jqmr|ZBM5-3C-120",
       "drivers": [
-        "climate_sensor",
-        "plug_energy_monitor"
+        "switch_1gang",
+        "switch_4gang"
       ]
     },
     {
-      "key": "_tz3000_ww6drja5|ZBMINIR2-R2",
+      "key": "_tz3000_wkr3jqmr|ZBMINI",
       "drivers": [
-        "climate_sensor",
-        "plug_energy_monitor"
+        "switch_1gang",
+        "switch_4gang"
       ]
     },
     {
-      "key": "_tz3000_ww6drja5|ZG-302Z1",
+      "key": "_tz3000_wkr3jqmr|ZBMINIL2",
       "drivers": [
-        "climate_sensor",
-        "plug_energy_monitor"
+        "switch_1gang",
+        "switch_4gang"
       ]
     },
     {
-      "key": "_tz3000_wzmuk9ai|01MINIZB",
+      "key": "_tz3000_wkr3jqmr|ZBMINIL2-R2",
       "drivers": [
-        "plug_energy_monitor",
-        "switch_1gang"
+        "switch_1gang",
+        "switch_4gang"
       ]
     },
     {
-      "key": "_tz3000_wzmuk9ai|BASICZBR3",
+      "key": "_tz3000_wkr3jqmr|ZBMINIR",
       "drivers": [
-        "plug_energy_monitor",
-        "switch_1gang"
+        "switch_1gang",
+        "switch_4gang"
       ]
     },
     {
-      "key": "_tz3000_wzmuk9ai|S26R2ZB",
+      "key": "_tz3000_wkr3jqmr|ZBMINIR2",
       "drivers": [
-        "plug_energy_monitor",
-        "switch_1gang"
+        "switch_1gang",
+        "switch_4gang"
       ]
     },
     {
-      "key": "_tz3000_wzmuk9ai|S31ZB",
+      "key": "_tz3000_wkr3jqmr|ZBMINIR2-R2",
       "drivers": [
-        "plug_energy_monitor",
-        "switch_1gang"
+        "switch_1gang",
+        "switch_4gang"
       ]
     },
     {
-      "key": "_tz3000_wzmuk9ai|TS0001",
+      "key": "_tz3000_wkr3jqmr|ZG-301Z",
       "drivers": [
-        "plug_energy_monitor",
-        "switch_1gang"
+        "switch_1gang",
+        "switch_4gang"
       ]
     },
     {
-      "key": "_tz3000_wzmuk9ai|TS0001_power",
+      "key": "_tz3000_wkr3jqmr|ZG-302Z1",
       "drivers": [
-        "plug_energy_monitor",
-        "switch_1gang"
+        "switch_1gang",
+        "switch_4gang"
       ]
     },
     {
-      "key": "_tz3000_wzmuk9ai|TS0001_switch",
+      "key": "_tz3000_xwh1e22x|TS0601",
       "drivers": [
-        "plug_energy_monitor",
-        "switch_1gang"
-      ]
-    },
-    {
-      "key": "_tz3000_wzmuk9ai|TS0001_switch_module",
-      "drivers": [
-        "plug_energy_monitor",
-        "switch_1gang"
-      ]
-    },
-    {
-      "key": "_tz3000_wzmuk9ai|TS0002",
-      "drivers": [
-        "plug_energy_monitor",
-        "switch_1gang"
-      ]
-    },
-    {
-      "key": "_tz3000_wzmuk9ai|TS0003",
-      "drivers": [
-        "plug_energy_monitor",
-        "switch_1gang"
-      ]
-    },
-    {
-      "key": "_tz3000_wzmuk9ai|TS000F",
-      "drivers": [
-        "plug_energy_monitor",
-        "switch_1gang"
-      ]
-    },
-    {
-      "key": "_tz3000_wzmuk9ai|TS0011",
-      "drivers": [
-        "plug_energy_monitor",
-        "switch_1gang"
-      ]
-    },
-    {
-      "key": "_tz3000_wzmuk9ai|TS0012",
-      "drivers": [
-        "plug_energy_monitor",
-        "switch_1gang"
-      ]
-    },
-    {
-      "key": "_tz3000_wzmuk9ai|TS0014",
-      "drivers": [
-        "plug_energy_monitor",
-        "switch_1gang"
-      ]
-    },
-    {
-      "key": "_tz3000_wzmuk9ai|TS0041",
-      "drivers": [
-        "plug_energy_monitor",
-        "switch_1gang"
-      ]
-    },
-    {
-      "key": "_tz3000_wzmuk9ai|TS0101",
-      "drivers": [
-        "plug_energy_monitor",
-        "switch_1gang"
-      ]
-    },
-    {
-      "key": "_tz3000_wzmuk9ai|TS0111",
-      "drivers": [
-        "plug_energy_monitor",
-        "switch_1gang"
-      ]
-    },
-    {
-      "key": "_tz3000_wzmuk9ai|TS011F",
-      "drivers": [
-        "plug_energy_monitor",
-        "switch_1gang"
-      ]
-    },
-    {
-      "key": "_tz3000_wzmuk9ai|TS0601",
-      "drivers": [
-        "plug_energy_monitor",
-        "switch_1gang"
-      ]
-    },
-    {
-      "key": "_tz3000_wzmuk9ai|TS0726",
-      "drivers": [
-        "plug_energy_monitor",
-        "switch_1gang"
-      ]
-    },
-    {
-      "key": "_tz3000_wzmuk9ai|TS110E",
-      "drivers": [
-        "plug_energy_monitor",
-        "switch_1gang"
-      ]
-    },
-    {
-      "key": "_tz3000_wzmuk9ai|TS130F",
-      "drivers": [
-        "plug_energy_monitor",
-        "switch_1gang"
-      ]
-    },
-    {
-      "key": "_tz3000_wzmuk9ai|TS4100",
-      "drivers": [
-        "plug_energy_monitor",
-        "switch_1gang"
-      ]
-    },
-    {
-      "key": "_tz3000_wzmuk9ai|ZBM5-1C-120",
-      "drivers": [
-        "plug_energy_monitor",
-        "switch_1gang"
-      ]
-    },
-    {
-      "key": "_tz3000_wzmuk9ai|ZBM5-2C-120",
-      "drivers": [
-        "plug_energy_monitor",
-        "switch_1gang"
-      ]
-    },
-    {
-      "key": "_tz3000_wzmuk9ai|ZBM5-3C-120",
-      "drivers": [
-        "plug_energy_monitor",
-        "switch_1gang"
-      ]
-    },
-    {
-      "key": "_tz3000_wzmuk9ai|ZBMINI",
-      "drivers": [
-        "plug_energy_monitor",
-        "switch_1gang"
-      ]
-    },
-    {
-      "key": "_tz3000_wzmuk9ai|ZBMINIL2",
-      "drivers": [
-        "plug_energy_monitor",
-        "switch_1gang"
-      ]
-    },
-    {
-      "key": "_tz3000_wzmuk9ai|ZBMINIL2-R2",
-      "drivers": [
-        "plug_energy_monitor",
-        "switch_1gang"
-      ]
-    },
-    {
-      "key": "_tz3000_wzmuk9ai|ZBMINIR",
-      "drivers": [
-        "plug_energy_monitor",
-        "switch_1gang"
-      ]
-    },
-    {
-      "key": "_tz3000_wzmuk9ai|ZBMINIR2",
-      "drivers": [
-        "plug_energy_monitor",
-        "switch_1gang"
-      ]
-    },
-    {
-      "key": "_tz3000_wzmuk9ai|ZBMINIR2-R2",
-      "drivers": [
-        "plug_energy_monitor",
-        "switch_1gang"
-      ]
-    },
-    {
-      "key": "_tz3000_wzmuk9ai|ZG-301Z",
-      "drivers": [
-        "plug_energy_monitor",
-        "switch_1gang"
-      ]
-    },
-    {
-      "key": "_tz3000_wzmuk9ai|ZG-302Z1",
-      "drivers": [
-        "plug_energy_monitor",
-        "switch_1gang"
+        "bulb_rgbw",
+        "smart_irrigation_valve"
       ]
     },
     {
       "key": "_tz3000_yujkchbz|TS0111",
       "drivers": [
         "button_wireless_plug",
-        "gateway_zigbee_bridge"
+        "usb_dongle_triple"
       ]
     },
     {
       "key": "_tz3000_yujkchbz|TS011F",
       "drivers": [
         "button_wireless_plug",
-        "gateway_zigbee_bridge"
+        "usb_dongle_triple"
       ]
     },
     {
       "key": "_tz3000_yujkchbz|TS0601",
       "drivers": [
         "button_wireless_plug",
-        "gateway_zigbee_bridge"
+        "usb_dongle_triple"
       ]
     },
     {
-      "key": "_tz3000_ywubfuvt|TS0002",
+      "key": "_tz3000_zw7wr5uo|TS0601",
       "drivers": [
-        "switch_2gang",
-        "switch_usb_dongle"
+        "hybrid_light_windowcoverings",
+        "tunable_bulb_E14"
       ]
     },
     {
-      "key": "_tz3210_2dfy6tol|TS0011",
+      "key": "_tz3210_09hzmirw|TS0601",
       "drivers": [
-        "smart_garden_irrigation_control",
-        "switch_1gang"
+        "dimmer_wall_1gang",
+        "tunable_bulb_E14"
       ]
     },
     {
-      "key": "_tz3210_2dfy6tol|TS0101",
+      "key": "_tz3210_4ubylghk|TS0601",
       "drivers": [
-        "smart_garden_irrigation_control",
-        "switch_1gang"
+        "light_bulb_dimmable_tunable",
+        "rgb_led_strip"
       ]
     },
     {
-      "key": "_tz3210_2dfy6tol|TS0601",
+      "key": "_tz3210_bfwvfyx1|TS0601",
       "drivers": [
-        "smart_garden_irrigation_control",
-        "switch_1gang"
+        "dimmable_led_strip",
+        "rgb_spot_GU10"
       ]
     },
     {
-      "key": "_tz3210_2dfy6tol|TS110E",
+      "key": "_tz3210_c0s1xloa|TS0601",
       "drivers": [
-        "smart_garden_irrigation_control",
-        "switch_1gang"
+        "dimmable_led_strip",
+        "light_bulb_rgb_rgbw"
       ]
     },
     {
-      "key": "_tz3210_5rta89nj|TS0601",
+      "key": "_tz3210_c2iwpxf1|TS0601",
       "drivers": [
-        "device_radiator_valve",
+        "dimmer_wall_1gang",
+        "tunable_bulb_E14"
+      ]
+    },
+    {
+      "key": "_tz3210_cieijuw1|TS0601",
+      "drivers": [
+        "dimmable_led_strip",
+        "light_bulb_rgb_rgbw"
+      ]
+    },
+    {
+      "key": "_tz3210_dn5higyl|TS0601",
+      "drivers": [
+        "dimmable_led_strip",
+        "light_bulb_rgb_rgbw"
+      ]
+    },
+    {
+      "key": "_tz3210_dwzfzfjc|TS0601",
+      "drivers": [
+        "dimmable_led_strip",
+        "light_bulb_rgb_rgbw"
+      ]
+    },
+    {
+      "key": "_tz3210_hicxa0rh|TS0601",
+      "drivers": [
+        "dimmable_led_strip",
+        "light_bulb_rgb_rgbw"
+      ]
+    },
+    {
+      "key": "_tz3210_hxtfthp5|TS0601",
+      "drivers": [
+        "dimmable_led_strip",
+        "light_bulb_rgb_rgbw"
+      ]
+    },
+    {
+      "key": "_tz3210_ifga63rg|TS0601",
+      "drivers": [
+        "dimmable_led_strip",
+        "light_bulb_rgb_rgbw"
+      ]
+    },
+    {
+      "key": "_tz3210_it1u8ahz|TS0601",
+      "drivers": [
+        "dimmable_led_strip",
+        "light_bulb_rgb_rgbw"
+      ]
+    },
+    {
+      "key": "_tz3210_iw0zkcu8|TS0601",
+      "drivers": [
+        "dimmable_led_strip",
+        "light_bulb_rgb_rgbw"
+      ]
+    },
+    {
+      "key": "_tz3210_jaap6jeb|Excellux",
+      "drivers": [
+        "contact_sensor",
+        "motion_sensor"
+      ]
+    },
+    {
+      "key": "_tz3210_jaap6jeb|TS0203",
+      "drivers": [
+        "contact_sensor",
+        "motion_sensor"
+      ]
+    },
+    {
+      "key": "_tz3210_jaap6jeb|TS0601",
+      "drivers": [
+        "bulb_rgbw",
+        "contact_sensor",
+        "motion_sensor"
+      ]
+    },
+    {
+      "key": "_tz3210_jd3z4yig|TS0601",
+      "drivers": [
+        "christmas_lights",
+        "rgb_led_strip"
+      ]
+    },
+    {
+      "key": "_tz3210_jicmoite|TS0601",
+      "drivers": [
+        "dimmable_led_strip",
+        "light_bulb_rgb_rgbw"
+      ]
+    },
+    {
+      "key": "_tz3210_jjqdqxfq|TS0601",
+      "drivers": [
+        "dimmable_led_strip",
+        "light_bulb_rgb_rgbw"
+      ]
+    },
+    {
+      "key": "_tz3210_jtifm80b|TS0601",
+      "drivers": [
+        "dimmer_wall_1gang",
+        "tunable_bulb_E14"
+      ]
+    },
+    {
+      "key": "_tz3210_keabpigv|TS0503A",
+      "drivers": [
+        "light_bulb_rgb",
+        "light_bulb_tunable_white"
+      ]
+    },
+    {
+      "key": "_tz3210_ljoasixl|TS0601",
+      "drivers": [
+        "dimmable_led_strip",
+        "light_bulb_rgb_rgbw"
+      ]
+    },
+    {
+      "key": "_tz3210_ngqk6jia|TS0601",
+      "drivers": [
+        "tunable_bulb_E14",
         "wall_dimmer_tuya"
       ]
     },
     {
-      "key": "_tz3210_ddigca5n|S26R2ZB",
+      "key": "_tz3210_p9ao60da|TS0601",
       "drivers": [
-        "gateway_zigbee_bridge",
-        "usb_dongle_triple"
+        "led_controller_cct",
+        "tunable_bulb_E14"
       ]
     },
     {
-      "key": "_tz3210_ddigca5n|S31 Lite zb",
+      "key": "_tz3210_r0xgkft5|TS0601",
       "drivers": [
-        "gateway_zigbee_bridge",
-        "usb_dongle_triple"
+        "led_controller_cct",
+        "rgb_mood_light"
       ]
     },
     {
-      "key": "_tz3210_ddigca5n|S40LITE",
+      "key": "_tz3210_r5afgmkl|TS0601",
       "drivers": [
-        "gateway_zigbee_bridge",
-        "usb_dongle_triple"
+        "dimmable_led_strip",
+        "light_bulb_rgb_rgbw"
       ]
     },
     {
-      "key": "_tz3210_ddigca5n|S60ZBTPF",
+      "key": "_tz3210_rcggc0ys|TS0601",
       "drivers": [
-        "gateway_zigbee_bridge",
-        "usb_dongle_triple"
+        "dimmable_led_strip",
+        "light_bulb_rgb_rgbw"
       ]
     },
     {
-      "key": "_tz3210_ddigca5n|S60ZBTPG",
+      "key": "_tz3210_sln7ah6r|TS0601",
       "drivers": [
-        "gateway_zigbee_bridge",
-        "usb_dongle_triple"
+        "dimmable_led_strip",
+        "light_bulb_rgb_rgbw"
       ]
     },
     {
-      "key": "_tz3210_ddigca5n|TS0101",
+      "key": "_tz3210_sroezl0s|TS0601",
       "drivers": [
-        "gateway_zigbee_bridge",
-        "usb_dongle_triple"
+        "bulb_rgbw",
+        "tunable_bulb_E14"
       ]
     },
     {
-      "key": "_tz3210_ddigca5n|TS0111",
+      "key": "_tz3210_vbfp8eyv|TS011F",
       "drivers": [
-        "gateway_zigbee_bridge",
-        "usb_dongle_triple"
+        "button_wireless_4",
+        "vibration_sensor"
       ]
     },
     {
-      "key": "_tz3210_ddigca5n|TS011F",
+      "key": "_tz3210_vbfp8eyv|TS0601",
       "drivers": [
-        "gateway_zigbee_bridge",
-        "usb_dongle_triple"
+        "button_wireless_4",
+        "vibration_sensor"
       ]
     },
     {
-      "key": "_tz3210_ddigca5n|TS0601",
+      "key": "_tz3210_wxa85bwk|TS0601",
       "drivers": [
-        "gateway_zigbee_bridge",
-        "usb_dongle_triple"
+        "dimmable_led_strip",
+        "light_bulb_rgb_rgbw"
       ]
     },
     {
-      "key": "_tz3210_dse8ogfy|TS0001",
+      "key": "_tz3210_z1vlyufu|TS0601",
       "drivers": [
-        "button_wireless_2",
-        "fingerbot"
+        "dimmable_led_strip",
+        "light_bulb_rgb_rgbw"
       ]
     },
     {
-      "key": "_tz3210_dse8ogfy|TS0001_fingerbot",
+      "key": "_tz3210_zdrhqmo0|TS0601",
       "drivers": [
-        "button_wireless_2",
-        "fingerbot"
-      ]
-    },
-    {
-      "key": "_tz3210_dse8ogfy|TS0003",
-      "drivers": [
-        "button_wireless_2",
-        "fingerbot"
-      ]
-    },
-    {
-      "key": "_tz3210_dse8ogfy|TS000F",
-      "drivers": [
-        "button_wireless_2",
-        "fingerbot"
-      ]
-    },
-    {
-      "key": "_tz3210_dse8ogfy|TS0011",
-      "drivers": [
-        "button_wireless_2",
-        "fingerbot"
-      ]
-    },
-    {
-      "key": "_tz3210_dse8ogfy|TS011F",
-      "drivers": [
-        "button_wireless_2",
-        "fingerbot"
-      ]
-    },
-    {
-      "key": "_tz3210_eymunffl|TS0011",
-      "drivers": [
-        "smart_garden_irrigation_control",
+        "tunable_bulb_E14",
         "wall_dimmer_tuya"
       ]
     },
     {
-      "key": "_tz3210_eymunffl|TS0052",
+      "key": "_tz3210_zrvxvydd|TS0601",
       "drivers": [
-        "smart_garden_irrigation_control",
-        "wall_dimmer_tuya"
+        "dimmable_led_strip",
+        "light_bulb_rgb_rgbw"
       ]
     },
     {
-      "key": "_tz3210_eymunffl|TS0601",
+      "key": "_tz3290_7v1k4vufotpowp9z|TS0601",
       "drivers": [
-        "smart_garden_irrigation_control",
-        "wall_dimmer_tuya"
+        "button_wireless_4",
+        "ir_remote"
       ]
     },
     {
-      "key": "_tz3210_eymunffl|TS0601_dim1",
+      "key": "_tz3290_ot6ewjvmejq5ekhl|TS0601",
       "drivers": [
-        "smart_garden_irrigation_control",
-        "wall_dimmer_tuya"
+        "button_wireless_4",
+        "ir_remote"
       ]
     },
     {
-      "key": "_tz3210_eymunffl|TS1101",
+      "key": "_tzb210_0bkzabht|TS0601",
       "drivers": [
-        "smart_garden_irrigation_control",
-        "wall_dimmer_tuya"
+        "dimmer_wall_1gang",
+        "tunable_bulb_E14"
       ]
     },
     {
-      "key": "_tz3210_eymunffl|TS110E",
+      "key": "_tzb210_6eed09b9|TS0601",
       "drivers": [
-        "smart_garden_irrigation_control",
-        "wall_dimmer_tuya"
+        "dimmable_led_strip",
+        "light_bulb_rgb_rgbw"
       ]
     },
     {
-      "key": "_tz3210_eymunffl|TS110F",
+      "key": "_tzb210_ayx58ft5|TS0601",
       "drivers": [
-        "smart_garden_irrigation_control",
-        "wall_dimmer_tuya"
+        "dimmer_wall_1gang",
+        "tunable_bulb_E14"
       ]
     },
     {
-      "key": "_tz3210_eymunffl|ZBMINI-DIM",
+      "key": "_tzb210_eiwanbeb|TS0601",
       "drivers": [
-        "smart_garden_irrigation_control",
-        "wall_dimmer_tuya"
+        "dimmer_wall_1gang",
+        "tunable_bulb_E14"
       ]
     },
     {
-      "key": "_tz3210_eymunffl|ZBMINID",
+      "key": "_tzb210_endmggws|TS0601",
       "drivers": [
-        "smart_garden_irrigation_control",
-        "wall_dimmer_tuya"
+        "dimmable_led_strip",
+        "led_controller_cct"
       ]
     },
     {
-      "key": "_tz3210_jlf1nepw|S26R2ZB",
+      "key": "_tzb210_lnnkh3f9|TS0601",
       "drivers": [
-        "gateway_zigbee_bridge",
-        "usb_dongle_triple"
+        "dimmable_led_strip",
+        "light_bulb_rgb_rgbw"
       ]
     },
     {
-      "key": "_tz3210_jlf1nepw|S31 Lite zb",
+      "key": "_tzb210_rwy5hexp|TS0601",
       "drivers": [
-        "gateway_zigbee_bridge",
-        "usb_dongle_triple"
+        "dimmable_led_strip",
+        "light_bulb_rgb_rgbw"
       ]
     },
     {
-      "key": "_tz3210_jlf1nepw|S40LITE",
+      "key": "_tzb210_zmppwawa|TS0601",
       "drivers": [
-        "gateway_zigbee_bridge",
-        "usb_dongle_triple"
+        "dimmable_led_strip",
+        "light_bulb_rgb_rgbw"
       ]
     },
     {
-      "key": "_tz3210_jlf1nepw|S60ZBTPF",
+      "key": "_tze200_7bztmfm1|TS0601",
       "drivers": [
-        "gateway_zigbee_bridge",
-        "usb_dongle_triple"
-      ]
-    },
-    {
-      "key": "_tz3210_jlf1nepw|S60ZBTPG",
-      "drivers": [
-        "gateway_zigbee_bridge",
-        "usb_dongle_triple"
-      ]
-    },
-    {
-      "key": "_tz3210_jlf1nepw|TS0101",
-      "drivers": [
-        "gateway_zigbee_bridge",
-        "usb_dongle_triple"
-      ]
-    },
-    {
-      "key": "_tz3210_jlf1nepw|TS0111",
-      "drivers": [
-        "gateway_zigbee_bridge",
-        "usb_dongle_triple"
-      ]
-    },
-    {
-      "key": "_tz3210_jlf1nepw|TS011F",
-      "drivers": [
-        "gateway_zigbee_bridge",
-        "usb_dongle_triple"
-      ]
-    },
-    {
-      "key": "_tz3210_jlf1nepw|TS0601",
-      "drivers": [
-        "gateway_zigbee_bridge",
-        "usb_dongle_triple"
-      ]
-    },
-    {
-      "key": "_tz3210_rwmitwj4|S26R2ZB",
-      "drivers": [
-        "gateway_zigbee_bridge",
-        "usb_dongle_triple"
-      ]
-    },
-    {
-      "key": "_tz3210_rwmitwj4|S31 Lite zb",
-      "drivers": [
-        "gateway_zigbee_bridge",
-        "usb_dongle_triple"
-      ]
-    },
-    {
-      "key": "_tz3210_rwmitwj4|S40LITE",
-      "drivers": [
-        "gateway_zigbee_bridge",
-        "usb_dongle_triple"
-      ]
-    },
-    {
-      "key": "_tz3210_rwmitwj4|S60ZBTPF",
-      "drivers": [
-        "gateway_zigbee_bridge",
-        "usb_dongle_triple"
-      ]
-    },
-    {
-      "key": "_tz3210_rwmitwj4|S60ZBTPG",
-      "drivers": [
-        "gateway_zigbee_bridge",
-        "usb_dongle_triple"
-      ]
-    },
-    {
-      "key": "_tz3210_rwmitwj4|TS0101",
-      "drivers": [
-        "gateway_zigbee_bridge",
-        "usb_dongle_triple"
-      ]
-    },
-    {
-      "key": "_tz3210_rwmitwj4|TS0111",
-      "drivers": [
-        "gateway_zigbee_bridge",
-        "usb_dongle_triple"
-      ]
-    },
-    {
-      "key": "_tz3210_rwmitwj4|TS011F",
-      "drivers": [
-        "gateway_zigbee_bridge",
-        "usb_dongle_triple"
-      ]
-    },
-    {
-      "key": "_tz3210_rwmitwj4|TS0601",
-      "drivers": [
-        "gateway_zigbee_bridge",
-        "usb_dongle_triple"
-      ]
-    },
-    {
-      "key": "_tz3210_tfxwxklq|TS0011",
-      "drivers": [
-        "smart_garden_irrigation_control",
-        "switch_1gang"
-      ]
-    },
-    {
-      "key": "_tz3210_tfxwxklq|TS0101",
-      "drivers": [
-        "smart_garden_irrigation_control",
-        "switch_1gang"
-      ]
-    },
-    {
-      "key": "_tz3210_tfxwxklq|TS0601",
-      "drivers": [
-        "smart_garden_irrigation_control",
-        "switch_1gang"
-      ]
-    },
-    {
-      "key": "_tz3210_tfxwxklq|TS110E",
-      "drivers": [
-        "smart_garden_irrigation_control",
-        "switch_1gang"
-      ]
-    },
-    {
-      "key": "_tze200_04yfvweb|TS0601",
-      "drivers": [
-        "climate_sensor",
-        "device_radiator_valve"
-      ]
-    },
-    {
-      "key": "_tze200_0hg58wyk|TS0601",
-      "drivers": [
-        "device_radiator_valve",
-        "wall_thermostat"
-      ]
-    },
-    {
-      "key": "_tze200_127x7wnl|TS0601",
-      "drivers": [
-        "climate_sensor",
-        "device_radiator_valve"
-      ]
-    },
-    {
-      "key": "_tze200_1ibpyhdc|TS0601",
-      "drivers": [
-        "device_radiator_valve",
-        "presence_sensor_radar"
-      ]
-    },
-    {
-      "key": "_tze200_2atgpdho|TS0601",
-      "drivers": [
-        "device_radiator_valve",
-        "thermostatic_radiator_valve"
-      ]
-    },
-    {
-      "key": "_tze200_2cs6g9i7|TS0601",
-      "drivers": [
-        "climate_sensor",
-        "device_radiator_valve"
-      ]
-    },
-    {
-      "key": "_tze200_2ekuz3dz|TS0601",
-      "drivers": [
-        "device_radiator_valve",
-        "device_radiator_valve_smart",
-        "wall_thermostat"
-      ]
-    },
-    {
-      "key": "_tze200_4eeyebrt|TS0601",
-      "drivers": [
-        "climate_sensor",
-        "device_radiator_valve"
-      ]
-    },
-    {
-      "key": "_tze200_4utwoz2|TS0601",
-      "drivers": [
-        "device_radiator_valve",
-        "wall_thermostat"
-      ]
-    },
-    {
-      "key": "_tze200_4utwozi2|TS0601",
-      "drivers": [
-        "device_radiator_valve",
-        "wall_thermostat"
-      ]
-    },
-    {
-      "key": "_tze200_68nvbi09|TS0601",
-      "drivers": [
-        "device_radiator_valve",
-        "wall_thermostat"
-      ]
-    },
-    {
-      "key": "_tze200_68nvbio9|TS0601",
-      "drivers": [
-        "device_radiator_valve",
-        "wall_thermostat"
-      ]
-    },
-    {
-      "key": "_tze200_6kijc7nd|TS0601",
-      "drivers": [
-        "device_radiator_valve",
-        "thermostatic_radiator_valve"
-      ]
-    },
-    {
-      "key": "_tze200_6rdj8dzm|TS0601",
-      "drivers": [
-        "device_radiator_valve",
-        "wall_thermostat"
-      ]
-    },
-    {
-      "key": "_tze200_6y7kyjga|TS0601",
-      "drivers": [
-        "climate_sensor",
-        "device_radiator_valve"
-      ]
-    },
-    {
-      "key": "_tze200_7tdtqgwv|01MINIZB",
-      "drivers": [
-        "switch_1gang",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tze200_7tdtqgwv|BASICZBR3",
-      "drivers": [
-        "switch_1gang",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tze200_7tdtqgwv|S26R2ZB",
-      "drivers": [
-        "switch_1gang",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tze200_7tdtqgwv|S31ZB",
-      "drivers": [
-        "switch_1gang",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tze200_7tdtqgwv|TS0001_power",
-      "drivers": [
-        "switch_1gang",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tze200_7tdtqgwv|TS0001_switch",
-      "drivers": [
-        "switch_1gang",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tze200_7tdtqgwv|TS0001_switch_module",
-      "drivers": [
-        "switch_1gang",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tze200_7tdtqgwv|TS000F",
-      "drivers": [
-        "switch_1gang",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tze200_7tdtqgwv|TS0011",
-      "drivers": [
-        "switch_1gang",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tze200_7tdtqgwv|TS0101",
-      "drivers": [
-        "switch_1gang",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tze200_7tdtqgwv|TS0601",
-      "drivers": [
-        "switch_1gang",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tze200_7tdtqgwv|TS0726",
-      "drivers": [
-        "switch_1gang",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tze200_7tdtqgwv|TS4100",
-      "drivers": [
-        "switch_1gang",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tze200_7tdtqgwv|ZBM5-1C-120",
-      "drivers": [
-        "switch_1gang",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tze200_7tdtqgwv|ZBM5-2C-120",
-      "drivers": [
-        "switch_1gang",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tze200_7tdtqgwv|ZBM5-3C-120",
-      "drivers": [
-        "switch_1gang",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tze200_7tdtqgwv|ZBMINI",
-      "drivers": [
-        "switch_1gang",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tze200_7tdtqgwv|ZBMINIL2",
-      "drivers": [
-        "switch_1gang",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tze200_7tdtqgwv|ZBMINIL2-R2",
-      "drivers": [
-        "switch_1gang",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tze200_7tdtqgwv|ZBMINIR",
-      "drivers": [
-        "switch_1gang",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tze200_7tdtqgwv|ZBMINIR2",
-      "drivers": [
-        "switch_1gang",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tze200_7tdtqgwv|ZBMINIR2-R2",
-      "drivers": [
-        "switch_1gang",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tze200_7tdtqgwv|ZG-302Z1",
-      "drivers": [
-        "switch_1gang",
-        "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "key": "_tze200_7yoranx2|TS0601",
-      "drivers": [
-        "device_radiator_valve",
-        "wall_thermostat"
-      ]
-    },
-    {
-      "key": "_tze200_8daqwrsj|TS0601",
-      "drivers": [
-        "climate_sensor",
-        "device_radiator_valve"
-      ]
-    },
-    {
-      "key": "_tze200_8thwkzxl|TS0601",
-      "drivers": [
-        "climate_sensor",
-        "device_radiator_valve"
+        "device_air_purifier_plug",
+        "smart_air_detection_box"
       ]
     },
     {
       "key": "_tze200_8whxpsiw|TS0601",
       "drivers": [
-        "device_radiator_valve",
+        "button_wireless_4",
         "thermostat_tuya_dp"
-      ]
-    },
-    {
-      "key": "_tze200_8ygsuhe1|TS0601",
-      "drivers": [
-        "air_quality_comprehensive",
-        "switch_wireless"
-      ]
-    },
-    {
-      "key": "_tze200_9mjy74mp|TS0601",
-      "drivers": [
-        "device_radiator_valve",
-        "wall_thermostat"
       ]
     },
     {
       "key": "_tze200_9sfg7gm0|TS0601",
       "drivers": [
-        "device_radiator_valve",
+        "button_wireless_4",
         "thermostat_tuya_dp"
       ]
     },
     {
-      "key": "_tze200_9xfjixap|TS0601",
+      "key": "_tze200_ggev5fsl|TS0601",
       "drivers": [
-        "device_radiator_valve",
-        "thermostatic_radiator_valve"
-      ]
-    },
-    {
-      "key": "_tze200_a1ovdobn|TS0601",
-      "drivers": [
-        "climate_sensor",
-        "device_radiator_valve"
-      ]
-    },
-    {
-      "key": "_tze200_a4bpgplm|TS0601",
-      "drivers": [
-        "device_radiator_valve",
-        "wall_thermostat"
-      ]
-    },
-    {
-      "key": "_tze200_a8sdabtg|SNTZ003",
-      "drivers": [
-        "climate_sensor",
-        "temphumidsensor3"
-      ]
-    },
-    {
-      "key": "_tze200_aoclfnxz|TS0601",
-      "drivers": [
-        "device_radiator_valve_smart",
-        "wall_thermostat"
-      ]
-    },
-    {
-      "key": "_tze200_awnadkan|TS0601",
-      "drivers": [
-        "device_radiator_valve",
-        "radiator_valve"
-      ]
-    },
-    {
-      "key": "_tze200_b6wax7g0|TS0601",
-      "drivers": [
-        "device_radiator_valve",
-        "device_radiator_valve_smart",
-        "smart_lcd_thermostat"
-      ]
-    },
-    {
-      "key": "_tze200_bjzrowv2|TS0601",
-      "drivers": [
-        "device_radiator_valve",
-        "switch_1gang"
-      ]
-    },
-    {
-      "key": "_tze200_bvrlmajk|TS0601",
-      "drivers": [
-        "device_radiator_valve",
-        "wall_thermostat"
-      ]
-    },
-    {
-      "key": "_tze200_bvu2wnxz|TS0601",
-      "drivers": [
-        "device_radiator_valve",
-        "device_radiator_valve_smart",
-        "wall_thermostat"
-      ]
-    },
-    {
-      "key": "_tze200_bxoo2swd|TS0002",
-      "drivers": [
-        "dimmer_2_gang",
-        "switch_usb_dongle"
-      ]
-    },
-    {
-      "key": "_tze200_c88teujp|TS0601",
-      "drivers": [
-        "device_radiator_valve",
-        "smart_lcd_thermostat"
-      ]
-    },
-    {
-      "key": "_tze200_cf1sl3tj|TS0601",
-      "drivers": [
-        "device_radiator_valve",
-        "wall_thermostat"
-      ]
-    },
-    {
-      "key": "_tze200_chyvmhay|TS0601",
-      "drivers": [
-        "device_radiator_valve",
-        "thermostat_tuya_dp"
-      ]
-    },
-    {
-      "key": "_tze200_ckud7u2l|TS0601",
-      "drivers": [
-        "device_radiator_valve",
-        "thermostatic_radiator_valve"
-      ]
-    },
-    {
-      "key": "_tze200_cpmgn2cf|TS0601",
-      "drivers": [
-        "device_radiator_valve",
-        "wall_thermostat"
-      ]
-    },
-    {
-      "key": "_tze200_cwnjrr72|TS0601",
-      "drivers": [
-        "device_radiator_valve",
-        "thermostatic_radiator_valve"
-      ]
-    },
-    {
-      "key": "_tze200_czk78ptr|TS0601",
-      "drivers": [
-        "climate_sensor",
-        "device_radiator_valve"
-      ]
-    },
-    {
-      "key": "_tze200_d0yu2xgi|TS0601",
-      "drivers": [
-        "siren_sirentemphumidsensor",
+        "sensor_gas_presence",
         "switch_wireless"
       ]
     },
     {
-      "key": "_tze200_d3z1ukqw|TS0601",
+      "key": "_tze200_hbnfokum|Excellux",
       "drivers": [
-        "device_radiator_valve",
-        "wall_thermostat"
+        "button_wireless_4",
+        "motion_sensor_switch"
       ]
     },
     {
-      "key": "_tze200_dv8abrrz|TS0601",
+      "key": "_tze200_hbnfokum|TS0001",
       "drivers": [
-        "climate_sensor",
-        "device_radiator_valve"
+        "button_wireless_4",
+        "motion_sensor_switch"
       ]
     },
     {
-      "key": "_tze200_dzuqwsyg|TS0601",
+      "key": "_tze200_hbnfokum|TS0225",
       "drivers": [
-        "device_radiator_valve",
-        "switch_1gang"
+        "button_wireless_4",
+        "motion_sensor_switch"
       ]
     },
     {
-      "key": "_tze200_e9ba97vf|TS0601",
+      "key": "_tze200_hbnfokum|TS0601",
       "drivers": [
-        "device_radiator_valve",
-        "wall_thermostat"
+        "button_wireless_4",
+        "motion_sensor_switch"
       ]
     },
     {
-      "key": "_tze200_fhn3negr|TS0601",
+      "key": "_tze200_kzm5w4iz|TS0215A",
       "drivers": [
-        "device_radiator_valve",
-        "thermostat_tuya_dp"
-      ]
-    },
-    {
-      "key": "_tze200_fsow0qsk|TS0601",
-      "drivers": [
-        "device_radiator_valve",
-        "radiator_valve"
-      ]
-    },
-    {
-      "key": "_tze200_g9a3awaj|TS0601",
-      "drivers": [
-        "device_radiator_valve",
-        "wall_thermostat"
-      ]
-    },
-    {
-      "key": "_tze200_gtouvmvl|TS0601",
-      "drivers": [
-        "device_radiator_valve",
-        "thermostatic_radiator_valve"
-      ]
-    },
-    {
-      "key": "_tze200_hdih4foa|TS0601",
-      "drivers": [
-        "climate_sensor",
-        "device_radiator_valve"
-      ]
-    },
-    {
-      "key": "_tze200_hhrtiq0x|TS0601",
-      "drivers": [
-        "climate_sensor",
-        "device_radiator_valve"
-      ]
-    },
-    {
-      "key": "_tze200_hue3yfsn|TS0601",
-      "drivers": [
-        "device_radiator_valve",
-        "thermostat_tuya_dp"
-      ]
-    },
-    {
-      "key": "_tze200_husqqvux|TS0601",
-      "drivers": [
-        "device_radiator_valve",
-        "radiator_valve"
-      ]
-    },
-    {
-      "key": "_tze200_hvaxb2tc|TS0601",
-      "drivers": [
-        "device_radiator_valve",
-        "device_radiator_valve_smart",
-        "wall_thermostat"
-      ]
-    },
-    {
-      "key": "_tze200_ikvncluo|TS0215A",
-      "drivers": [
-        "presence_sensor_radar",
+        "button_emergency_sos",
         "switch_wireless"
       ]
     },
     {
-      "key": "_tze200_ikvncluo|TS0601",
+      "key": "_tze200_kzm5w4iz|TS0601",
       "drivers": [
-        "presence_sensor_radar",
+        "button_emergency_sos",
         "switch_wireless"
-      ]
-    },
-    {
-      "key": "_tze200_ikvncluo|TS0601_wirelesssw",
-      "drivers": [
-        "presence_sensor_radar",
-        "switch_wireless"
-      ]
-    },
-    {
-      "key": "_tze200_jeaxp72v|TS0601",
-      "drivers": [
-        "climate_sensor",
-        "device_radiator_valve"
-      ]
-    },
-    {
-      "key": "_tze200_jkfbph7l|TS0601",
-      "drivers": [
-        "device_radiator_valve",
-        "wall_thermostat"
-      ]
-    },
-    {
-      "key": "_tze200_jthf7vb6|TS0601",
-      "drivers": [
-        "climate_sensor",
-        "water_leak_sensor"
-      ]
-    },
-    {
-      "key": "_tze200_k1tumq4t|TS0601",
-      "drivers": [
-        "device_radiator_valve",
-        "radiator_valve"
-      ]
-    },
-    {
-      "key": "_tze200_kds0pmmv|TS0601",
-      "drivers": [
-        "device_radiator_valve",
-        "radiator_valve"
-      ]
-    },
-    {
-      "key": "_tze200_kfvq6avy|TS0601",
-      "drivers": [
-        "device_radiator_valve",
-        "thermostatic_radiator_valve"
-      ]
-    },
-    {
-      "key": "_tze200_kly8gjlz|TS0601",
-      "drivers": [
-        "device_radiator_valve",
-        "thermostatic_radiator_valve"
-      ]
-    },
-    {
-      "key": "_tze200_lhzapfg9|TS0601",
-      "drivers": [
-        "device_radiator_valve",
-        "wall_thermostat"
-      ]
-    },
-    {
-      "key": "_tze200_lllliz3p|TS0601",
-      "drivers": [
-        "device_radiator_valve",
-        "radiator_valve"
-      ]
-    },
-    {
-      "key": "_tze200_lnbfnyxd|TS0601",
-      "drivers": [
-        "device_radiator_valve",
-        "radiator_valve"
-      ]
-    },
-    {
-      "key": "_tze200_locansqn|Excellux",
-      "drivers": [
-        "climate_sensor",
-        "lcdtemphumidsensor"
-      ]
-    },
-    {
-      "key": "_tze200_locansqn|TS0201",
-      "drivers": [
-        "climate_sensor",
-        "lcdtemphumidsensor"
-      ]
-    },
-    {
-      "key": "_tze200_locansqn|TS0601",
-      "drivers": [
-        "climate_sensor",
-        "lcdtemphumidsensor"
-      ]
-    },
-    {
-      "key": "_tze200_locansqn|TY0201",
-      "drivers": [
-        "climate_sensor",
-        "lcdtemphumidsensor"
-      ]
-    },
-    {
-      "key": "_tze200_lrznf59v|TS0601",
-      "drivers": [
-        "device_radiator_valve",
-        "radiator_valve"
-      ]
-    },
-    {
-      "key": "_tze200_mudxchsu|TS0601",
-      "drivers": [
-        "device_radiator_valve",
-        "radiator_valve"
-      ]
-    },
-    {
-      "key": "_tze200_nhyj64w2|TS0601",
-      "drivers": [
-        "climate_sensor",
-        "device_radiator_valve"
-      ]
-    },
-    {
-      "key": "_tze200_ntcy3xu1|TS0601",
-      "drivers": [
-        "smoke_detector_advanced",
-        "switch_wireless"
-      ]
-    },
-    {
-      "key": "_tze200_nw1r9hp6|TS0601",
-      "drivers": [
-        "device_radiator_valve",
-        "wall_thermostat"
-      ]
-    },
-    {
-      "key": "_tze200_ow09xlxm|TS0601",
-      "drivers": [
-        "device_radiator_valve",
-        "wall_thermostat"
-      ]
-    },
-    {
-      "key": "_tze200_owwdxjbx|TS0601",
-      "drivers": [
-        "climate_sensor",
-        "device_radiator_valve"
-      ]
-    },
-    {
-      "key": "_tze200_p3dbf6qs|TS0601",
-      "drivers": [
-        "device_radiator_valve",
-        "radiator_valve"
-      ]
-    },
-    {
-      "key": "_tze200_pay2byax|TS0601",
-      "drivers": [
-        "contact_sensor",
-        "switch_wireless"
-      ]
-    },
-    {
-      "key": "_tze200_ps5v5jor|TS0601",
-      "drivers": [
-        "climate_sensor",
-        "device_radiator_valve"
-      ]
-    },
-    {
-      "key": "_tze200_pvvbommb|TS0601",
-      "drivers": [
-        "device_radiator_valve",
-        "thermostat_tuya_dp"
-      ]
-    },
-    {
-      "key": "_tze200_pw7mji0l|TS0601",
-      "drivers": [
-        "device_radiator_valve",
-        "wall_thermostat"
-      ]
-    },
-    {
-      "key": "_tze200_py4cm3he|TS0601",
-      "drivers": [
-        "device_radiator_valve",
-        "wall_thermostat"
-      ]
-    },
-    {
-      "key": "_tze200_qoy0ekbd|SNTZ003",
-      "drivers": [
-        "climate_sensor",
-        "temphumidsensor3"
-      ]
-    },
-    {
-      "key": "_tze200_qsoecqlk|TS0601",
-      "drivers": [
-        "climate_sensor",
-        "device_radiator_valve"
-      ]
-    },
-    {
-      "key": "_tze200_rjxqso4a|TS0601",
-      "drivers": [
-        "co_sensor",
-        "switch_wireless"
-      ]
-    },
-    {
-      "key": "_tze200_rk1wojce|TS0601",
-      "drivers": [
-        "device_radiator_valve",
-        "wall_thermostat"
-      ]
-    },
-    {
-      "key": "_tze200_rndg81sf|TS0601",
-      "drivers": [
-        "device_radiator_valve",
-        "wall_thermostat"
-      ]
-    },
-    {
-      "key": "_tze200_rtrmfadk|TS0601",
-      "drivers": [
-        "climate_sensor",
-        "device_radiator_valve"
-      ]
-    },
-    {
-      "key": "_tze200_rufdtfyv|TS0601",
-      "drivers": [
-        "device_radiator_valve",
-        "wall_thermostat"
-      ]
-    },
-    {
-      "key": "_tze200_rv6iuyxb|TS0601",
-      "drivers": [
-        "device_radiator_valve",
-        "wall_thermostat"
-      ]
-    },
-    {
-      "key": "_tze200_rxntag7i|TS0601",
-      "drivers": [
-        "device_radiator_valve",
-        "wall_thermostat"
-      ]
-    },
-    {
-      "key": "_tze200_rxq4iti9|TS0601",
-      "drivers": [
-        "device_radiator_valve",
-        "wall_thermostat"
-      ]
-    },
-    {
-      "key": "_tze200_s5zhaolp|TS0601",
-      "drivers": [
-        "device_radiator_valve",
-        "hybrid_heater_thermostat"
-      ]
-    },
-    {
-      "key": "_tze200_seq9cm6u|TS0601",
-      "drivers": [
-        "bed_sensor",
-        "sensor_climate_contact"
-      ]
-    },
-    {
-      "key": "_tze200_snfdqllf|TS0601",
-      "drivers": [
-        "climate_sensor",
-        "device_radiator_valve"
       ]
     },
     {
       "key": "_tze200_spyvfeti|TS0601",
       "drivers": [
         "device_radiator_valve",
-        "water_valve_smart"
+        "device_radiator_valve_smart"
       ]
     },
     {
-      "key": "_tze200_sur6q7ko|TS0601",
+      "key": "_tze200_u6x1zyv2|Excellux",
       "drivers": [
-        "device_radiator_valve",
+        "contact_sensor",
+        "sensor_contact_rain"
+      ]
+    },
+    {
+      "key": "_tze200_u6x1zyv2|TS0203",
+      "drivers": [
+        "contact_sensor",
+        "sensor_contact_rain"
+      ]
+    },
+    {
+      "key": "_tze200_u6x1zyv2|TS0207",
+      "drivers": [
+        "contact_sensor",
+        "sensor_contact_rain"
+      ]
+    },
+    {
+      "key": "_tze200_u6x1zyv2|TS0601",
+      "drivers": [
+        "contact_sensor",
+        "sensor_contact_rain"
+      ]
+    },
+    {
+      "key": "_tze200_u6x1zyv2|TY0203",
+      "drivers": [
+        "contact_sensor",
+        "sensor_contact_rain"
+      ]
+    },
+    {
+      "key": "_tze200_vrcfo4i0|Excellux",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor"
+      ]
+    },
+    {
+      "key": "_tze200_vrcfo4i0|TS0203",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor"
+      ]
+    },
+    {
+      "key": "_tze200_vrcfo4i0|TS0601",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor"
+      ]
+    },
+    {
+      "key": "_tze204_7bztmfm1|TS0601",
+      "drivers": [
+        "device_air_purifier_plug",
+        "smart_air_detection_box"
+      ]
+    },
+    {
+      "key": "_tze204_eaulras5|CK-BL702-MWS-01",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze204_eaulras5|CK-BL702-MWS-01(7016)",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze204_eaulras5|CK-TLSR8656-SS5-01(7014)",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze204_eaulras5|Excellux",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze204_eaulras5|lumi.sensor_ht",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze204_eaulras5|lumi.sensor_ht.agl02",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze204_eaulras5|lumi.weather",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze204_eaulras5|MG1_5RZ",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze204_eaulras5|RH3052",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze204_eaulras5|SM0201",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze204_eaulras5|SZLMR10",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze204_eaulras5|TH01",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze204_eaulras5|THS317-ET",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze204_eaulras5|TS0004",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze204_eaulras5|TS0201",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze204_eaulras5|TS0202",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze204_eaulras5|TS0203",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze204_eaulras5|TS0215A",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze204_eaulras5|TS0222",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze204_eaulras5|TS0225",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze204_eaulras5|TS0601",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze204_eaulras5|TS0601_wirelesssw",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze204_eaulras5|TS110E",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze204_eaulras5|TS1201",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze204_eaulras5|TY0201",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze204_eaulras5|WSDCGQ01LM",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze204_eaulras5|WSDCGQ11LM",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze204_eaulras5|WSDCGQ12LM",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze204_eaulras5|ZG-204ZE",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze204_eaulras5|ZG-204ZH",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze204_eaulras5|ZG-204ZK",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze204_eaulras5|ZG-204ZL",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze204_eaulras5|ZG-204ZM",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze204_eaulras5|ZG-204ZQ",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze204_eaulras5|ZG-204ZV",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze204_eaulras5|ZG-205Z",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze204_eaulras5|ZG-205ZL",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze204_eaulras5|ZG-227Z",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze204_eaulras5|ZG-227ZL",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze204_eaulras5|ZG-302ZL",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze204_eaulras5|ZG-302ZM",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze204_eaulras5|ZP-301Z",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze204_iadro9bf|CK-BL702-MWS-01",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze204_iadro9bf|CK-BL702-MWS-01(7016)",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze204_iadro9bf|CK-TLSR8656-SS5-01(7014)",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze204_iadro9bf|Excellux",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze204_iadro9bf|lumi.sensor_ht",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze204_iadro9bf|lumi.sensor_ht.agl02",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze204_iadro9bf|lumi.weather",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze204_iadro9bf|MG1_5RZ",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze204_iadro9bf|RH3052",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze204_iadro9bf|SM0201",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze204_iadro9bf|SZLMR10",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze204_iadro9bf|TH01",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze204_iadro9bf|THS317-ET",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze204_iadro9bf|TS0004",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze204_iadro9bf|TS0201",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze204_iadro9bf|TS0202",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze204_iadro9bf|TS0203",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze204_iadro9bf|TS0215A",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze204_iadro9bf|TS0222",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze204_iadro9bf|TS0225",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze204_iadro9bf|TS0601",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze204_iadro9bf|TS0601_wirelesssw",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze204_iadro9bf|TS110E",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze204_iadro9bf|TS1201",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze204_iadro9bf|TY0201",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze204_iadro9bf|WSDCGQ01LM",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze204_iadro9bf|WSDCGQ11LM",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze204_iadro9bf|WSDCGQ12LM",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze204_iadro9bf|ZG-204ZE",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze204_iadro9bf|ZG-204ZH",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze204_iadro9bf|ZG-204ZK",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze204_iadro9bf|ZG-204ZL",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze204_iadro9bf|ZG-204ZM",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze204_iadro9bf|ZG-204ZQ",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze204_iadro9bf|ZG-204ZV",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze204_iadro9bf|ZG-205Z",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze204_iadro9bf|ZG-205ZL",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze204_iadro9bf|ZG-227Z",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze204_iadro9bf|ZG-227ZL",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze204_iadro9bf|ZG-302ZL",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze204_iadro9bf|ZG-302ZM",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze204_iadro9bf|ZP-301Z",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_tze204_mvtclclq|BASICZBR3",
+      "drivers": [
+        "button_wireless_4",
         "radiator_valve"
       ]
     },
     {
-      "key": "_tze200_suxywabt|TS0601",
+      "key": "_tze204_mvtclclq|S26R2ZB",
       "drivers": [
-        "device_radiator_valve",
-        "wall_thermostat"
-      ]
-    },
-    {
-      "key": "_tze200_tbgecldg|TS0601",
-      "drivers": [
-        "climate_sensor",
-        "device_radiator_valve"
-      ]
-    },
-    {
-      "key": "_tze200_vexa5o82|TS0601",
-      "drivers": [
-        "device_radiator_valve",
-        "wall_thermostat"
-      ]
-    },
-    {
-      "key": "_tze200_viy9ihs7|TS0601",
-      "drivers": [
-        "device_radiator_valve",
-        "wall_thermostat"
-      ]
-    },
-    {
-      "key": "_tze200_vuqzj1ej|TS0601",
-      "drivers": [
-        "climate_sensor",
-        "device_radiator_valve"
-      ]
-    },
-    {
-      "key": "_tze200_vvmbj46n|Excellux",
-      "drivers": [
-        "climate_sensor",
-        "lcdtemphumidsensor"
-      ]
-    },
-    {
-      "key": "_tze200_vvmbj46n|TS0201",
-      "drivers": [
-        "climate_sensor",
-        "lcdtemphumidsensor"
-      ]
-    },
-    {
-      "key": "_tze200_vvmbj46n|TS0601",
-      "drivers": [
-        "climate_sensor",
-        "lcdtemphumidsensor"
-      ]
-    },
-    {
-      "key": "_tze200_vvmbj46n|TY0201",
-      "drivers": [
-        "climate_sensor",
-        "lcdtemphumidsensor"
-      ]
-    },
-    {
-      "key": "_tze200_wem3gxyx|TS0601",
-      "drivers": [
-        "climate_sensor",
-        "device_radiator_valve"
-      ]
-    },
-    {
-      "key": "_tze200_wsbfwodu|TS0601",
-      "drivers": [
-        "device_radiator_valve",
-        "wall_thermostat"
-      ]
-    },
-    {
-      "key": "_tze200_x9axofse|TS0601",
-      "drivers": [
-        "device_radiator_valve",
-        "wall_thermostat"
-      ]
-    },
-    {
-      "key": "_tze200_xby0s3ta|TS0601",
-      "drivers": [
-        "device_radiator_valve",
-        "thermostat_tuya_dp"
-      ]
-    },
-    {
-      "key": "_tze200_yqgbrdyo|TS0601",
-      "drivers": [
-        "device_radiator_valve",
-        "wall_thermostat"
-      ]
-    },
-    {
-      "key": "_tze200_yw7cahqs|TS0601",
-      "drivers": [
-        "device_radiator_valve",
-        "thermostat_tuya_dp"
-      ]
-    },
-    {
-      "key": "_tze200_ywdxldoj|TS0601",
-      "drivers": [
-        "device_radiator_valve",
-        "thermostatic_radiator_valve"
-      ]
-    },
-    {
-      "key": "_tze200_z1tyspqw|TS0601",
-      "drivers": [
-        "device_radiator_valve",
-        "wall_thermostat"
-      ]
-    },
-    {
-      "key": "_tze200_zion52ef|TS0601",
-      "drivers": [
-        "device_radiator_valve",
-        "thermostat_4ch"
-      ]
-    },
-    {
-      "key": "_tze200_zivfvd7h|TS0601",
-      "drivers": [
-        "climate_sensor",
-        "device_radiator_valve"
-      ]
-    },
-    {
-      "key": "_tze204_0hcjew5p|TS0601",
-      "drivers": [
-        "device_radiator_valve",
-        "wall_thermostat"
-      ]
-    },
-    {
-      "key": "_tze204_5slehgeo|TS0601",
-      "drivers": [
-        "climate_sensor",
-        "device_radiator_valve"
-      ]
-    },
-    {
-      "key": "_tze204_5toc8eks|TS0601",
-      "drivers": [
-        "device_radiator_valve",
-        "hybrid_heater_thermostat"
-      ]
-    },
-    {
-      "key": "_tze204_6kijc7nd|TS0601",
-      "drivers": [
-        "climate_sensor",
-        "device_radiator_valve"
-      ]
-    },
-    {
-      "key": "_tze204_9mjy74mp|TS0601",
-      "drivers": [
-        "device_radiator_valve",
-        "wall_thermostat"
-      ]
-    },
-    {
-      "key": "_tze204_9xfjixap|TS0601",
-      "drivers": [
-        "device_radiator_valve",
-        "thermostatic_radiator_valve"
-      ]
-    },
-    {
-      "key": "_tze204_a8sdabtg|SNTZ003",
-      "drivers": [
-        "climate_sensor",
-        "temphumidsensor3"
-      ]
-    },
-    {
-      "key": "_tze204_aaeaifez|TS0601",
-      "drivers": [
-        "device_radiator_valve",
-        "thermostatic_radiator_valve"
-      ]
-    },
-    {
-      "key": "_tze204_ca3i8m8p|TS0601",
-      "drivers": [
-        "device_radiator_valve",
+        "button_wireless_4",
         "radiator_valve"
       ]
     },
     {
-      "key": "_tze204_cg8hdnjv|TS0601",
+      "key": "_tze204_mvtclclq|S31ZB",
       "drivers": [
-        "device_radiator_valve",
+        "button_wireless_4",
         "radiator_valve"
       ]
     },
     {
-      "key": "_tze204_cmyc8g5i|TS0601",
+      "key": "_tze204_mvtclclq|TS0002",
       "drivers": [
-        "device_radiator_valve",
+        "button_wireless_4",
+        "usb_outlet_advanced"
+      ]
+    },
+    {
+      "key": "_tze204_mvtclclq|TS011F",
+      "drivers": [
+        "button_wireless_4",
+        "usb_outlet_advanced"
+      ]
+    },
+    {
+      "key": "_tze204_mvtclclq|TS0601",
+      "drivers": [
+        "button_wireless_4",
+        "radiator_valve",
+        "usb_outlet_advanced"
+      ]
+    },
+    {
+      "key": "_tze204_mvtclclq|ZBMINI",
+      "drivers": [
+        "button_wireless_4",
         "radiator_valve"
       ]
     },
     {
-      "key": "_tze204_cvcu2p6e|TS0601",
+      "key": "_tze204_mvtclclq|ZBMINIL2",
       "drivers": [
-        "device_radiator_valve",
-        "wall_thermostat"
-      ]
-    },
-    {
-      "key": "_tze204_cvub6xbb|TS0601",
-      "drivers": [
-        "device_radiator_valve",
-        "wall_thermostat"
-      ]
-    },
-    {
-      "key": "_tze204_dsagrkvg|TS0601",
-      "drivers": [
-        "climate_sensor",
-        "device_radiator_valve"
-      ]
-    },
-    {
-      "key": "_tze204_g2ki0ejr|TS0601",
-      "drivers": [
-        "climate_sensor",
-        "device_radiator_valve"
-      ]
-    },
-    {
-      "key": "_tze204_g9a3awaj|TS0601",
-      "drivers": [
-        "device_radiator_valve",
-        "wall_thermostat"
-      ]
-    },
-    {
-      "key": "_tze204_glk6viwg|TS0601",
-      "drivers": [
-        "device_radiator_valve",
+        "button_wireless_4",
         "radiator_valve"
       ]
     },
     {
-      "key": "_tze204_goecjd1t|TS0601",
+      "key": "_tze284_bw4ayyeh|Excellux",
       "drivers": [
-        "device_radiator_valve",
-        "radiator_valve"
+        "button_wireless_4",
+        "motion_sensor_switch"
       ]
     },
     {
-      "key": "_tze204_gops3slb|TS0601",
+      "key": "_tze284_bw4ayyeh|TS0001",
       "drivers": [
-        "device_radiator_valve",
-        "wall_thermostat"
+        "button_wireless_4",
+        "motion_sensor_switch"
       ]
     },
     {
-      "key": "_tze204_hvaxb2tc|TS0601",
+      "key": "_tze284_bw4ayyeh|TS0225",
       "drivers": [
-        "device_radiator_valve",
-        "wall_thermostat"
+        "button_wireless_4",
+        "motion_sensor_switch"
       ]
     },
     {
-      "key": "_tze204_ilzkxrav|TS0601",
+      "key": "_tze284_bw4ayyeh|TS0601",
       "drivers": [
-        "climate_sensor",
-        "device_radiator_valve"
+        "button_wireless_4",
+        "motion_sensor_switch"
       ]
     },
     {
-      "key": "_tze204_lnxdk2ch|TS0601",
+      "key": "_tze284_mvtclclq|TS0002",
       "drivers": [
-        "device_radiator_valve",
-        "radiator_valve"
+        "button_wireless_4",
+        "usb_outlet_advanced"
       ]
     },
     {
-      "key": "_tze204_lzriup1j|TS0601",
+      "key": "_tze284_mvtclclq|TS011F",
       "drivers": [
-        "device_radiator_valve",
-        "wall_thermostat"
+        "button_wireless_4",
+        "usb_outlet_advanced"
       ]
     },
     {
-      "key": "_tze204_mhxn2jso|TS0601",
+      "key": "_tze284_mvtclclq|TS0601",
       "drivers": [
-        "climate_sensor",
-        "device_radiator_valve"
-      ]
-    },
-    {
-      "key": "_tze204_mwomyz5n|TS0601",
-      "drivers": [
-        "climate_sensor",
-        "device_radiator_valve"
-      ]
-    },
-    {
-      "key": "_tze204_o3x45p96|TS0601",
-      "drivers": [
-        "device_radiator_valve",
-        "wall_thermostat"
-      ]
-    },
-    {
-      "key": "_tze204_ogx8u5z6|TS0601",
-      "drivers": [
-        "device_radiator_valve",
-        "wall_thermostat"
-      ]
-    },
-    {
-      "key": "_tze204_p1qrtljn|TS0601",
-      "drivers": [
-        "climate_sensor",
-        "device_radiator_valve"
-      ]
-    },
-    {
-      "key": "_tze204_pcdmj88b|TS0601",
-      "drivers": [
-        "device_radiator_valve",
-        "wall_thermostat"
-      ]
-    },
-    {
-      "key": "_tze204_pw7mji0l|TS0601",
-      "drivers": [
-        "device_radiator_valve",
-        "wall_thermostat"
-      ]
-    },
-    {
-      "key": "_tze204_qoy0ekbd|SNTZ003",
-      "drivers": [
-        "climate_sensor",
-        "temphumidsensor3"
-      ]
-    },
-    {
-      "key": "_tze204_qyr2m29i|TS0601",
-      "drivers": [
-        "device_radiator_valve",
-        "wall_thermostat"
-      ]
-    },
-    {
-      "key": "_tze204_rtrmfadk|TS0601",
-      "drivers": [
-        "device_radiator_valve",
-        "wall_thermostat"
-      ]
-    },
-    {
-      "key": "_tze204_tagezcph|TS0601",
-      "drivers": [
-        "climate_sensor",
-        "device_radiator_valve"
-      ]
-    },
-    {
-      "key": "_tze204_tbgecldg|TS0601",
-      "drivers": [
-        "climate_sensor",
-        "device_radiator_valve"
-      ]
-    },
-    {
-      "key": "_tze204_wc2w9t1s|TS0601",
-      "drivers": [
-        "device_radiator_valve",
-        "thermostatic_radiator_valve"
-      ]
-    },
-    {
-      "key": "_tze204_x1ovyvy1|TS0601",
-      "drivers": [
-        "device_radiator_valve",
-        "hybrid_sensor_thermostat"
-      ]
-    },
-    {
-      "key": "_tze204_xalsoe3m|TS0601",
-      "drivers": [
-        "climate_sensor",
-        "device_radiator_valve"
-      ]
-    },
-    {
-      "key": "_tze204_xdtnpp1a|TS0601",
-      "drivers": [
-        "device_radiator_valve",
-        "radiator_valve"
-      ]
-    },
-    {
-      "key": "_tze204_xnbkhhdr|TS0601",
-      "drivers": [
-        "device_radiator_valve",
-        "wall_thermostat"
-      ]
-    },
-    {
-      "key": "_tze284_1575pmw0|TS0601",
-      "drivers": [
-        "device_radiator_valve",
-        "hybrid_heater_thermostat"
-      ]
-    },
-    {
-      "key": "_tze284_1ratpdm5|TS0601",
-      "drivers": [
-        "device_radiator_valve",
-        "hybrid_heater_thermostat"
-      ]
-    },
-    {
-      "key": "_tze284_2fnssffc|TS0601",
-      "drivers": [
-        "device_radiator_valve",
-        "thermostatic_radiator_valve"
-      ]
-    },
-    {
-      "key": "_tze284_5slehgeo|TS0601",
-      "drivers": [
-        "climate_sensor",
-        "device_radiator_valve"
-      ]
-    },
-    {
-      "key": "_tze284_6kijc7nd|TS0601",
-      "drivers": [
-        "climate_sensor",
-        "device_radiator_valve"
-      ]
-    },
-    {
-      "key": "_tze284_8zizsafo|TS0601",
-      "drivers": [
-        "device_radiator_valve",
-        "valve_irrigation"
-      ]
-    },
-    {
-      "key": "_tze284_9ern5sfh|TS0601",
-      "drivers": [
-        "climate_sensor",
-        "device_radiator_valve"
-      ]
-    },
-    {
-      "key": "_tze284_a1ovdobn|TS0601",
-      "drivers": [
-        "climate_sensor",
-        "device_radiator_valve"
-      ]
-    },
-    {
-      "key": "_tze284_aaeaifez|TS0601",
-      "drivers": [
-        "climate_sensor",
-        "device_radiator_valve"
-      ]
-    },
-    {
-      "key": "_tze284_agcxaw3f|TS0601",
-      "drivers": [
-        "climate_sensor",
-        "device_radiator_valve"
-      ]
-    },
-    {
-      "key": "_tze284_aoclfnxz|TS0601",
-      "drivers": [
-        "device_radiator_valve",
-        "wall_thermostat"
-      ]
-    },
-    {
-      "key": "_tze284_awepdiwi|BASICZBR3",
-      "drivers": [
-        "climate_sensor",
-        "soil_sensor"
-      ]
-    },
-    {
-      "key": "_tze284_awepdiwi|CK-TLSR8656-SS5-01(7014)",
-      "drivers": [
-        "climate_sensor",
-        "soil_sensor"
-      ]
-    },
-    {
-      "key": "_tze284_awepdiwi|lumi.sensor_ht",
-      "drivers": [
-        "climate_sensor",
-        "soil_sensor"
-      ]
-    },
-    {
-      "key": "_tze284_awepdiwi|lumi.sensor_ht.agl02",
-      "drivers": [
-        "climate_sensor",
-        "soil_sensor"
-      ]
-    },
-    {
-      "key": "_tze284_awepdiwi|lumi.weather",
-      "drivers": [
-        "climate_sensor",
-        "soil_sensor"
-      ]
-    },
-    {
-      "key": "_tze284_awepdiwi|RH3052",
-      "drivers": [
-        "climate_sensor",
-        "soil_sensor"
-      ]
-    },
-    {
-      "key": "_tze284_awepdiwi|S26R2ZB",
-      "drivers": [
-        "climate_sensor",
-        "soil_sensor"
-      ]
-    },
-    {
-      "key": "_tze284_awepdiwi|S31ZB",
-      "drivers": [
-        "climate_sensor",
-        "soil_sensor"
-      ]
-    },
-    {
-      "key": "_tze284_awepdiwi|SM0201",
-      "drivers": [
-        "climate_sensor",
-        "soil_sensor"
-      ]
-    },
-    {
-      "key": "_tze284_awepdiwi|TH01",
-      "drivers": [
-        "climate_sensor",
-        "soil_sensor"
-      ]
-    },
-    {
-      "key": "_tze284_awepdiwi|THS317-ET",
-      "drivers": [
-        "climate_sensor",
-        "soil_sensor"
-      ]
-    },
-    {
-      "key": "_tze284_awepdiwi|TS0201",
-      "drivers": [
-        "climate_sensor",
-        "soil_sensor"
-      ]
-    },
-    {
-      "key": "_tze284_awepdiwi|TS0202",
-      "drivers": [
-        "climate_sensor",
-        "soil_sensor"
-      ]
-    },
-    {
-      "key": "_tze284_awepdiwi|TS0222",
-      "drivers": [
-        "climate_sensor",
-        "soil_sensor"
-      ]
-    },
-    {
-      "key": "_tze284_awepdiwi|TS0601",
-      "drivers": [
-        "climate_sensor",
-        "soil_sensor"
-      ]
-    },
-    {
-      "key": "_tze284_awepdiwi|TS1201",
-      "drivers": [
-        "climate_sensor",
-        "soil_sensor"
-      ]
-    },
-    {
-      "key": "_tze284_awepdiwi|TY0201",
-      "drivers": [
-        "climate_sensor",
-        "soil_sensor"
-      ]
-    },
-    {
-      "key": "_tze284_awepdiwi|WSDCGQ01LM",
-      "drivers": [
-        "climate_sensor",
-        "soil_sensor"
-      ]
-    },
-    {
-      "key": "_tze284_awepdiwi|WSDCGQ11LM",
-      "drivers": [
-        "climate_sensor",
-        "soil_sensor"
-      ]
-    },
-    {
-      "key": "_tze284_awepdiwi|WSDCGQ12LM",
-      "drivers": [
-        "climate_sensor",
-        "soil_sensor"
-      ]
-    },
-    {
-      "key": "_tze284_awepdiwi|ZBMINI",
-      "drivers": [
-        "climate_sensor",
-        "soil_sensor"
-      ]
-    },
-    {
-      "key": "_tze284_awepdiwi|ZBMINIL2",
-      "drivers": [
-        "climate_sensor",
-        "soil_sensor"
-      ]
-    },
-    {
-      "key": "_tze284_c6wv4xyo|TS0601",
-      "drivers": [
-        "device_radiator_valve",
-        "wall_thermostat"
-      ]
-    },
-    {
-      "key": "_tze284_cgr0rhza|TS0601",
-      "drivers": [
-        "device_radiator_valve",
-        "radiator_valve"
-      ]
-    },
-    {
-      "key": "_tze284_cvub6xbb|TS0601",
-      "drivers": [
-        "device_radiator_valve",
-        "wall_thermostat"
-      ]
-    },
-    {
-      "key": "_tze284_ga1maeof|TS0601",
-      "drivers": [
-        "soil_sensor",
-        "soilsensor"
-      ]
-    },
-    {
-      "key": "_tze284_gops3slb|TS0601",
-      "drivers": [
-        "device_radiator_valve",
-        "wall_thermostat"
-      ]
-    },
-    {
-      "key": "_tze284_hvaxb2tc|TS0601",
-      "drivers": [
-        "device_radiator_valve",
-        "wall_thermostat"
-      ]
-    },
-    {
-      "key": "_tze284_iilebqoo|TS0601",
-      "drivers": [
-        "device_radiator_valve",
-        "wall_thermostat"
-      ]
-    },
-    {
-      "key": "_tze284_khah2lkr|TS0601",
-      "drivers": [
-        "climate_sensor",
-        "device_radiator_valve"
-      ]
-    },
-    {
-      "key": "_tze284_kyyu8rbj|TS0601",
-      "drivers": [
-        "climate_sensor",
-        "device_radiator_valve"
-      ]
-    },
-    {
-      "key": "_tze284_lnbfy|TS0601",
-      "drivers": [
-        "device_radiator_valve",
-        "hybrid_heater_thermostat"
-      ]
-    },
-    {
-      "key": "_tze284_madl8ejv|TS0601",
-      "drivers": [
-        "climate_sensor",
-        "device_radiator_valve"
-      ]
-    },
-    {
-      "key": "_tze284_noixx2uz|TS0601",
-      "drivers": [
-        "device_radiator_valve",
-        "thermostatic_radiator_valve"
-      ]
-    },
-    {
-      "key": "_tze284_nt4pquef|TS0601",
-      "drivers": [
-        "climate_sensor",
-        "device_radiator_valve"
-      ]
-    },
-    {
-      "key": "_tze284_o3x45p96|TS0601",
-      "drivers": [
-        "device_radiator_valve",
-        "wall_thermostat"
-      ]
-    },
-    {
-      "key": "_tze284_ogx8u5z6|TS0601",
-      "drivers": [
-        "device_radiator_valve",
-        "wall_thermostat"
-      ]
-    },
-    {
-      "key": "_tze284_p3dbf6qs|TS0601",
-      "drivers": [
-        "climate_sensor",
-        "device_radiator_valve"
-      ]
-    },
-    {
-      "key": "_tze284_pcdmj88b|TS0601",
-      "drivers": [
-        "device_radiator_valve",
-        "wall_thermostat"
-      ]
-    },
-    {
-      "key": "_tze284_r3szw0xr|TS0601",
-      "drivers": [
-        "climate_sensor",
-        "device_radiator_valve"
-      ]
-    },
-    {
-      "key": "_tze284_roujjevx|TS0601",
-      "drivers": [
-        "climate_sensor",
-        "device_radiator_valve"
-      ]
-    },
-    {
-      "key": "_tze284_rv6iuyxb|TS0601",
-      "drivers": [
-        "device_radiator_valve",
-        "wall_thermostat"
-      ]
-    },
-    {
-      "key": "_tze284_tbgecldg|TS0601",
-      "drivers": [
-        "climate_sensor",
-        "device_radiator_valve"
-      ]
-    },
-    {
-      "key": "_tze284_vvmbj46n|Excellux",
-      "drivers": [
-        "climate_sensor",
-        "lcdtemphumidsensor"
-      ]
-    },
-    {
-      "key": "_tze284_vvmbj46n|TS0201",
-      "drivers": [
-        "climate_sensor",
-        "lcdtemphumidsensor"
-      ]
-    },
-    {
-      "key": "_tze284_vvmbj46n|TS0601",
-      "drivers": [
-        "climate_sensor",
-        "lcdtemphumidsensor"
-      ]
-    },
-    {
-      "key": "_tze284_vvmbj46n|TY0201",
-      "drivers": [
-        "climate_sensor",
-        "lcdtemphumidsensor"
-      ]
-    },
-    {
-      "key": "_tze284_xdtnpp1a|TS0601",
-      "drivers": [
-        "device_radiator_valve",
-        "thermostatic_radiator_valve"
-      ]
-    },
-    {
-      "key": "_tze284_xnbkhhdr|TS0601",
-      "drivers": [
-        "device_radiator_valve",
-        "wall_thermostat"
-      ]
-    },
-    {
-      "key": "_tze284_ymldrmzx|TS0601",
-      "drivers": [
-        "climate_sensor",
-        "device_radiator_valve"
-      ]
-    },
-    {
-      "key": "_tze284_zm8zpwas|TS0601",
-      "drivers": [
-        "climate_sensor",
-        "device_radiator_valve"
+        "button_wireless_4",
+        "usb_outlet_advanced"
       ]
     },
     {
@@ -4390,6 +1616,13 @@
         "sensor_contact_zigbee",
         "soil_sensor",
         "water_leak_sensor"
+      ]
+    },
+    {
+      "key": "sonoff|TS0601",
+      "drivers": [
+        "bulb_rgbw",
+        "remote_button_wireless"
       ]
     }
   ]
