@@ -6,13 +6,7 @@
         "en": "Turned on",
         "fr": "Allume"
       },
-      "args": [
-        {
-          "type": "device",
-          "name": "device",
-          "filter": "driver_id=smart_garden_irrigation_control"
-        }
-      ],
+      "args": [],
       "titleFormatted": {
         "en": "Turned on",
         "fr": "Allume"
@@ -24,13 +18,7 @@
         "en": "Turned off",
         "fr": "Eteint"
       },
-      "args": [
-        {
-          "type": "device",
-          "name": "device",
-          "filter": "driver_id=smart_garden_irrigation_control"
-        }
-      ],
+      "args": [],
       "titleFormatted": {
         "en": "Turned off",
         "fr": "Eteint"
@@ -44,13 +32,7 @@
         "nl": "Batterij laag",
         "de": "Batterie schwach"
       },
-      "args": [
-        {
-          "type": "device",
-          "name": "device",
-          "filter": "driver_id=smart_garden_irrigation_control"
-        }
-      ],
+      "args": [],
       "titleFormatted": {
         "en": "Battery low",
         "fr": "Batterie faible",
@@ -66,13 +48,7 @@
         "en": "Is turned !{{on|off}}",
         "fr": "Est !{{allume|eteint}}"
       },
-      "args": [
-        {
-          "type": "device",
-          "name": "device",
-          "filter": "driver_id=smart_garden_irrigation_control"
-        }
-      ],
+      "args": [],
       "titleFormatted": {
         "en": "Is turned !{{on|off}}",
         "fr": "Est !{{allume|eteint}}"
@@ -86,13 +62,7 @@
         "en": "Turn on",
         "fr": "Allumer"
       },
-      "args": [
-        {
-          "type": "device",
-          "name": "device",
-          "filter": "driver_id=smart_garden_irrigation_control"
-        }
-      ],
+      "args": [],
       "titleFormatted": {
         "en": "Turn on",
         "fr": "Allumer"
@@ -104,13 +74,7 @@
         "en": "Turn off",
         "fr": "Eteindre"
       },
-      "args": [
-        {
-          "type": "device",
-          "name": "device",
-          "filter": "driver_id=smart_garden_irrigation_control"
-        }
-      ],
+      "args": [],
       "titleFormatted": {
         "en": "Turn off",
         "fr": "Eteindre"
@@ -122,13 +86,7 @@
         "en": "Toggle",
         "fr": "Basculer"
       },
-      "args": [
-        {
-          "type": "device",
-          "name": "device",
-          "filter": "driver_id=smart_garden_irrigation_control"
-        }
-      ],
+      "args": [],
       "titleFormatted": {
         "en": "Toggle",
         "fr": "Basculer"

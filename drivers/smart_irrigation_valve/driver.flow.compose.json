@@ -8,13 +8,7 @@
         "nl": "Aanzetten",
         "de": "Einschalten"
       },
-      "args": [
-        {
-          "type": "device",
-          "name": "device",
-          "filter": "driver_id=smart_irrigation_valve"
-        }
-      ],
+      "args": [],
       "titleFormatted": {
         "en": "Turn on",
         "fr": "Allumer",
@@ -30,13 +24,7 @@
         "nl": "Uitschakelen",
         "de": "Ausschalten"
       },
-      "args": [
-        {
-          "type": "device",
-          "name": "device",
-          "filter": "driver_id=smart_irrigation_valve"
-        }
-      ],
+      "args": [],
       "titleFormatted": {
         "en": "Turn off",
         "fr": "Éteindre",
@@ -54,13 +42,7 @@
         "nl": "Aangezet",
         "de": "Eingeschaltet"
       },
-      "args": [
-        {
-          "type": "device",
-          "name": "device",
-          "filter": "driver_id=smart_irrigation_valve"
-        }
-      ],
+      "args": [],
       "titleFormatted": {
         "en": "Turned on",
         "fr": "Allumé",
@@ -76,13 +58,7 @@
         "nl": "Uitgezet",
         "de": "Ausgeschaltet"
       },
-      "args": [
-        {
-          "type": "device",
-          "name": "device",
-          "filter": "driver_id=smart_irrigation_valve"
-        }
-      ],
+      "args": [],
       "titleFormatted": {
         "en": "Turned off",
         "fr": "Éteint",
@@ -100,13 +76,7 @@
         "nl": "Storing is !{{actief|inactief}}",
         "de": "Fehler ist !{{aktiv|inaktiv}}"
       },
-      "args": [
-        {
-          "type": "device",
-          "name": "device",
-          "filter": "driver_id=smart_irrigation_valve"
-        }
-      ],
+      "args": [],
       "titleFormatted": {
         "en": "Fault is !{{active|inactive}}",
         "fr": "Défaut !{{actif|inactif}}",

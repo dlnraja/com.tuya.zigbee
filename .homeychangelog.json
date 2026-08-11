@@ -1,6 +1,13 @@
 {
   "changelog": [
     {
+      "version": "9.0.453",
+      "date": "2026-08-11",
+      "channel": "test",
+      "en": "P102 I/O facade publish fix: irrigation Flow cards use implicit device args (Homey validate).",
+      "fr": "P102 facade I/O: correction Flow irrigation (args device implicites) pour validation Homey."
+    },
+    {
       "version": "9.0.388",
       "date": "2026-07-31",
       "channel": "test",
@@ -1744,5 +1751,8 @@
   },
   "9.0.452": {
     "en": "P102 Unified Driver I/O: DeviceIOFacade + Homey interview compensation + bare ZigBeeDevice gate + exotic profile hooks."
+  },
+  "9.0.453": {
+    "en": "P102 I/O facade publish fix: irrigation Flow cards use implicit device args (Homey validate)."
   }
 }
