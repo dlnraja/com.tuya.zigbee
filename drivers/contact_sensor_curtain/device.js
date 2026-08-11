@@ -3,13 +3,13 @@ const { attachTamperListener } = require('../../lib/devices/DoorWindowContactHel
 
 const ZclBatteryMonitor = require('../../lib/battery/ZclBatteryMonitor');
 const { safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
-const { ZigBeeDevice } = require('homey-zigbeedriver');
+const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
 
-class ContactSensorCurtainDevice extends ZigBeeDevice {
+class ContactSensorCurtainDevice extends TuyaZigbeeDevice {
   async onNodeInit({ zclNode }) {
     ZclBatteryMonitor.attach(this, zclNode);
     await super.onNodeInit({ zclNode });
-    // v5.12.59 (P92.126): tamper bit was never fed on this hybrid
+    // v9.0.418 (P92.126): tamper bit was never fed on this hybrid
     try { attachTamperListener(this, zclNode); } catch (e) { this.log('[TAMPER] ⚠️ ' + e.message); }
     this.log('Contact Sensor Curtain v5.9.12 Ready');
   }

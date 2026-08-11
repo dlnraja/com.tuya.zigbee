@@ -1,9 +1,9 @@
 'use strict';
 const { safeParse, safeMultiply } = require('../../lib/utils/tuyaUtils.js');
-const { ZigBeeDevice } = require('homey-zigbeedriver');
+const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 
-class DimmerWallSwitchDevice extends PhysicalButtonMixin(ZigBeeDevice) {
+class DimmerWallSwitchDevice extends PhysicalButtonMixin(TuyaZigbeeDevice) {
 
   // v9.0.411 (P92): Energy scaling note (CI gate check-energy-divisor).
   // This driver has no local Tuya-DP or ZCL energy code path: `measure_power`

@@ -1,11 +1,12 @@
 'use strict';
 
-const { ZigBeeDevice } = require('homey-zigbeedriver');
+const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
 const { debug, CLUSTER } = require('zigbee-clusters');
 
-class plug extends ZigBeeDevice {
+class plug extends TuyaZigbeeDevice {
 		
 	async onNodeInit({zclNode}) {
+    await super.onNodeInit({ zclNode }).catch(() => {});
 
     this.printNode();
 

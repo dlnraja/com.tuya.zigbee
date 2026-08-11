@@ -35,11 +35,25 @@ class LightSensorOutdoorDevice extends TuyaZigbeeDevice {
     // P98: dpMappings MUST be set before super.onNodeInit so EF00Manager sees them
     // P88: SmarterCurry Luminance Sensor (_TZE284_aaeasoll) uses DP 2 for illuminance
     // per Z2M PR #12347 (https://github.com/Koenkk/zigbee-herdsman-converters/pull/12347)
-    this.dpMappings = {
-      1: { capability: 'measure_luminance', divisor: 1 },
-      2: { capability: 'measure_luminance', divisor: 1 },
-      4: { capability: 'measure_battery', divisor: 1 },
-    };
+    // P102: S-LUX-ZB (_TYST11/_TZE200/_TZE204_pisltm67) — DP1=brightness_level enum,
+    // DP2=illuminance (raw lx), DP3=battery% (Z2M S-LUX-ZB / issue #8036).
+    const mfr = String(
+      this.getSetting?.('zb_manufacturer_name')
+      || this.getData?.()?.manufacturerName
+      || '',
+    ).toLowerCase();
+    const isSlux = mfr.includes('pisltm67');
+    this.dpMappings = isSlux
+      ? {
+        2: { capability: 'measure_luminance', divisor: 1 },
+        3: { capability: 'measure_battery', divisor: 1 },
+        4: { capability: 'measure_battery', divisor: 1 },
+      }
+      : {
+        1: { capability: 'measure_luminance', divisor: 1 },
+        2: { capability: 'measure_luminance', divisor: 1 },
+        4: { capability: 'measure_battery', divisor: 1 },
+      };
 
     await super.onNodeInit({ zclNode });
 

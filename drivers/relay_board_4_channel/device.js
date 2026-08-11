@@ -1,6 +1,6 @@
 'use strict';
 
-const { ZigBeeDevice } = require('homey-zigbeedriver');
+const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
 const { CLUSTER } = require('zigbee-clusters');
 
 /**
@@ -8,8 +8,9 @@ const { CLUSTER } = require('zigbee-clusters');
  * P98: fix onDeleted ReferenceError, drop phantom button.1 listener gap,
  * and drive flows via triggerCapabilityListener so ZCL OnOff is actually sent.
  */
-class RelayBoard4ChannelDevice extends ZigBeeDevice {
+class RelayBoard4ChannelDevice extends TuyaZigbeeDevice {
   async onNodeInit({ zclNode }) {
+    await super.onNodeInit({ zclNode }).catch(() => {});
     this.printNode();
 
     const { subDeviceId } = this.getData();
