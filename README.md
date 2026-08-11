@@ -10,7 +10,7 @@
 [![SDK](https://img.shields.io/badge/SDK-3-orange)](https://apps.developer.homey.app/)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
-A community-driven Homey app that brings **local control** to Tuya Zigbee devices — no cloud, no internet needed. Covers switches, sensors, lights, thermostats, covers, locks and more across **430 drivers** and **4,348 unique device fingerprints** (17,065 including case variants for bulletproof pairing).
+A community-driven Homey app that brings **local control** to Tuya Zigbee devices — no cloud, no internet needed. Covers switches, sensors, lights, thermostats, covers, locks and more across **430 drivers** and **4,348 unique device fingerprints** (17,061 including case variants for bulletproof pairing).
 
 **Key features:**
 - **Local-only** — everything runs on your Homey, nothing goes to the cloud
@@ -37,10 +37,10 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.450 |
+| **App Version** | v9.0.452 |
 | **Drivers** | 430 (380 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,348 |
-| **Pairing Variants** | 17,065 (4 case combos per fingerprint) |
+| **Pairing Variants** | 17,061 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 571 |
 | **Flow Cards** | 4,930 |
 | **Unique Capabilities** | 170 |
@@ -55,23 +55,23 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 
 | # | Driver | Fingerprints |
 |---|--------|-------------|
-| 1 | `climate_sensor` | 2,706 |
-| 2 | `switch_1gang` | 1,784 |
-| 3 | `button_wireless_2` | 862 |
-| 4 | `presence_sensor_radar` | 696 |
-| 5 | `generic_tuya` | 628 |
-| 6 | `radiator_valve` | 587 |
+| 1 | `climate_sensor` | 2,690 |
+| 2 | `switch_1gang` | 1,808 |
+| 3 | `button_wireless_2` | 786 |
+| 4 | `presence_sensor_radar` | 700 |
+| 5 | `generic_tuya` | 616 |
+| 6 | `radiator_valve` | 599 |
 | 7 | `wall_dimmer_tuya` | 482 |
 | 8 | `device_radiator_valve` | 380 |
 | 9 | `sensor_contact_zigbee` | 345 |
-| 10 | `curtain_motor` | 260 |
+| 10 | `curtain_motor` | 276 |
 | 11 | `switch_4gang` | 254 |
-| 12 | `motion_sensor` | 210 |
-| 13 | `switch_2gang` | 210 |
-| 14 | `diy_custom_zigbee` | 206 |
-| 15 | `switch_3gang` | 204 |
-| 16 | `thermostat_tuya_dp` | 200 |
-| 17 | `water_leak_sensor_tuya` | 194 |
+| 12 | `switch_2gang` | 226 |
+| 13 | `switch_3gang` | 216 |
+| 14 | `motion_sensor` | 210 |
+| 15 | `diy_custom_zigbee` | 206 |
+| 16 | `water_leak_sensor_tuya` | 194 |
+| 17 | `thermostat_tuya_dp` | 192 |
 | 18 | `dimmer_wall_1gang` | 184 |
 | 19 | `soil_sensor` | 184 |
 | 20 | `dimmable_led_strip` | 180 |
@@ -106,7 +106,9 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 
 | Version | Changes |
 |---------|---------|
-| **v9.0.450** | P101: #439 sacred-couple lot2 rehomes + global getDeviceById/catch harden. |
+| **v9.0.452** | P102 Unified Driver I/O: DeviceIOFacade + Homey interview compensation + bare ZigBeeDevice gate + exotic profile hooks. |
+| **v9.0.451** | P102 Unified Driver I/O: DeviceIOFacade + Homey interview compensation + bare ZigBeeDevice gate + exotic profile hooks. |
+| **v9.0.450** |  |
 | **v9.0.449** | P101: #439 sacred-couple lot2 rehomes + global getDeviceById/catch harden. |
 | **v9.0.448** | Crash hardening from , read-only error guard, getDiscoveries safe call, crash-pattern CI gate. |
 | **v9.0.447** | Crash hardening from Gmail/diag logs: flow-card polyfill, read-only error guard, getDiscoveries safe call, crash-pattern CI gate. |
@@ -116,8 +118,6 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 | **v9.0.443** | L99 battery normalize batch + verify fail-closed on Athom processing_failed. |
 | **v9.0.442** | L99 battery normalize batch + verify fail-closed on Athom processing_failed. |
 | **v9.0.441** | Retry Homey Test publish after Athom processing_failed (socket hang up) on 9.0.436; align app.json; harden verify-test-version fail-closed. |
-| **v9.0.440** | Retry Homey Test publish after Athom processing_failed (socket hang up) on 9.0.436; align app.json; harden verify-test-version fail-closed. |
-| **v9.0.439** | Retry Homey Test publish after Athom processing_failed (socket hang up) on 9.0.436; align app.json; harden verify-test-version fail-closed. |
 
 <!-- CHANGELOG_END -->
 
