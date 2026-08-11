@@ -10,7 +10,7 @@
 [![SDK](https://img.shields.io/badge/SDK-3-orange)](https://apps.developer.homey.app/)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
-A community-driven Homey app that brings **local control** to Tuya Zigbee devices — no cloud, no internet needed. Covers switches, sensors, lights, thermostats, covers, locks and more across **430 drivers** and **4,357 unique device fingerprints** (16,933 including case variants for bulletproof pairing).
+A community-driven Homey app that brings **local control** to Tuya Zigbee devices — no cloud, no internet needed. Covers switches, sensors, lights, thermostats, covers, locks and more across **430 drivers** and **4,357 unique device fingerprints** (16,923 including case variants for bulletproof pairing).
 
 **Key features:**
 - **Local-only** — everything runs on your Homey, nothing goes to the cloud
@@ -37,10 +37,10 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.467 |
+| **App Version** | v9.0.469 |
 | **Drivers** | 430 (380 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,357 |
-| **Pairing Variants** | 16,933 (4 case combos per fingerprint) |
+| **Pairing Variants** | 16,923 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 573 |
 | **Flow Cards** | 4,956 |
 | **Unique Capabilities** | 170 |
@@ -55,16 +55,16 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 
 | # | Driver | Fingerprints |
 |---|--------|-------------|
-| 1 | `climate_sensor` | 2,692 |
+| 1 | `climate_sensor` | 2,672 |
 | 2 | `switch_1gang` | 1,812 |
 | 3 | `button_wireless_2` | 790 |
-| 4 | `presence_sensor_radar` | 708 |
+| 4 | `presence_sensor_radar` | 712 |
 | 5 | `radiator_valve` | 601 |
 | 6 | `wall_dimmer_tuya` | 488 |
 | 7 | `generic_tuya` | 484 |
 | 8 | `device_radiator_valve` | 380 |
 | 9 | `sensor_contact_zigbee` | 345 |
-| 10 | `curtain_motor` | 278 |
+| 10 | `curtain_motor` | 282 |
 | 11 | `switch_4gang` | 262 |
 | 12 | `switch_2gang` | 228 |
 | 13 | `switch_3gang` | 216 |
@@ -106,6 +106,7 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.469** | v9.0.468: fix(P110): audit follow-up — time sync, MCU helper, battery DP, climate FP rehome (v9.0.468) |
 | **v9.0.467** | v9.0.466: fix: remove rebase conflict markers from version manifests (v9.0.466) |
 | **v9.0.465** | v9.0.464: feat(P108): silent forum enrich, contact flows, RF coexistence, anti AI-paste (v9.0.464) |
 | **v9.0.463** | Integral cross-version enrich: SmartDivisor in EF00, IASZoneEnhanced+L14, sleepy passive force, MCUFormatDatabase negotiate. |
@@ -117,7 +118,6 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 | **v9.0.457** | Universal flow-card heuristics, driver-mapping repair, DeviceIO on legacy Tuya/light bases, WiFi I/O channel, missing flow compose for 4 … |
 | **v9.0.456** | Universal flow-card heuristics, driver-mapping repair, DeviceIO on legacy Tuya/light bases, WiFi I/O channel, missing flow compose for 4 … |
 | **v9.0.455** | Improved device wake/handshake and interview recovery; added contact sensor fingerprints from incomplete-source cross-check. |
-| **v9.0.454** | P102 I/O facade publish fix: irrigation Flow cards use implicit device args (Homey validate). |
 
 <!-- CHANGELOG_END -->
 
