@@ -37,7 +37,7 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.461 |
+| **App Version** | v9.0.463 |
 | **Drivers** | 430 (380 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,354 |
 | **Pairing Variants** | 16,925 (4 case combos per fingerprint) |
@@ -106,6 +106,8 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.463** | Integral cross-version enrich: SmartDivisor in EF00, IASZoneEnhanced+L14, sleepy passive force, MCUFormatDatabase negotiate. |
+| **v9.0.462** | Integral cross-version enrich: SmartDivisor in EF00, IASZoneEnhanced+L14, sleepy passive force, MCUFormatDatabase negotiate. |
 | **v9.0.461** | Integral cross-version enrich: SmartDivisor in EF00, IASZoneEnhanced+L14, sleepy passive force, MCUFormatDatabase negotiate. |
 | **v9.0.460** | Max multi-method I/O coverage: DP/ZCL/IAS/raw fallbacks, quirk-guided init for more device families, expanded magic packet profiles. |
 | **v9.0.459** | Max multi-method I/O coverage: DP/ZCL/IAS/raw fallbacks, quirk-guided init for more device families, expanded magic packet profiles. |
@@ -116,8 +118,6 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 | **v9.0.454** | P102 I/O facade publish fix: irrigation Flow cards use implicit device args (Homey validate). |
 | **v9.0.453** | P102 I/O facade publish fix: irrigation Flow cards use implicit device args (Homey validate). |
 | **v9.0.452** | P102 Unified Driver I/O: DeviceIOFacade + Homey interview compensation + bare ZigBeeDevice gate + exotic profile hooks. |
-| **v9.0.451** | P102 Unified Driver I/O: DeviceIOFacade + Homey interview compensation + bare ZigBeeDevice gate + exotic profile hooks. |
-| **v9.0.450** |  |
 
 <!-- CHANGELOG_END -->
 
