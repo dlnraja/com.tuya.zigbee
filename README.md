@@ -5,7 +5,7 @@
 [![Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdlnraja%2Fcom.tuya.zigbee%2Fmaster%2Fapp.json&query=%24.version&label=version&color=blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![Drivers](https://img.shields.io/badge/drivers-430-brightgreen)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![Fingerprints](https://img.shields.io/badge/fingerprints-4,357%20unique-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
-[![Flow Cards](https://img.shields.io/badge/flow%20cards-4,956-blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
+[![Flow Cards](https://img.shields.io/badge/flow%20cards-4,954-blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![Native OTA](https://img.shields.io/badge/native%20OTA-6%20drivers-orange)](docs/P92_70_HOMEY_2026_OTA_NATIVE.md)
 [![SDK](https://img.shields.io/badge/SDK-3-orange)](https://apps.developer.homey.app/)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
@@ -18,7 +18,7 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 - **Hybrid protocol engine** — auto-detects Tuya DP (0xEF00) vs standard ZCL per device
 - **Bulletproof pairing** — every fingerprint exists in 4 case combinations; runtime matching is fully case-insensitive
 - **Smart battery** — non-linear per-chemistry curves, collapse-aware smoothing, no fabricated values
-- **4,956 flow cards** — triggers, conditions & actions in EN, FR, NL, DE
+- **4,954 flow cards** — triggers, conditions & actions in EN, FR, NL, DE
 - **Hue-style smart features** — motion lighting with quiet hours, circadian (real solar position), wake-up/sleep ramps, scene capture/cycle
 
 ---
@@ -37,12 +37,12 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.469 |
+| **App Version** | v9.0.471 |
 | **Drivers** | 430 (380 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,357 |
 | **Pairing Variants** | 16,923 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 573 |
-| **Flow Cards** | 4,956 |
+| **Flow Cards** | 4,954 |
 | **Unique Capabilities** | 170 |
 | **Native OTA Drivers** | 6 |
 | **Test Suites** | 65 files |
@@ -106,6 +106,7 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.471** | v9.0.470: fix(P111): harden , timers, forum inbox bridge (v9.0.470) |
 | **v9.0.469** | v9.0.468: fix(P110): audit follow-up — time sync, MCU helper, battery DP, climate FP rehome (v9.0.468) |
 | **v9.0.467** | v9.0.466: fix: remove rebase conflict markers from version manifests (v9.0.466) |
 | **v9.0.465** | v9.0.464: feat(P108): silent forum enrich, contact flows, RF coexistence, anti AI-paste (v9.0.464) |
@@ -117,7 +118,6 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 | **v9.0.458** | Historical restore: MCU magic packet registry, EventDedup on capability updates, flow runListener guards, safe-timers on button mixins. |
 | **v9.0.457** | Universal flow-card heuristics, driver-mapping repair, DeviceIO on legacy Tuya/light bases, WiFi I/O channel, missing flow compose for 4 … |
 | **v9.0.456** | Universal flow-card heuristics, driver-mapping repair, DeviceIO on legacy Tuya/light bases, WiFi I/O channel, missing flow compose for 4 … |
-| **v9.0.455** | Improved device wake/handshake and interview recovery; added contact sensor fingerprints from incomplete-source cross-check. |
 
 <!-- CHANGELOG_END -->
 
