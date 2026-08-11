@@ -1,1 +1,46 @@
-[]
+[
+  {
+    "id": "radar_sensitivity",
+    "type": "number",
+    "label": { "en": "Radar sensitivity", "fr": "Sensibilité radar" },
+    "value": 7,
+    "min": 0,
+    "max": 9
+  },
+  {
+    "id": "detection_range",
+    "type": "number",
+    "label": { "en": "Detection range", "fr": "Portée de détection" },
+    "hint": { "en": "Meters (device stores cm/100)" },
+    "value": 6,
+    "min": 0,
+    "max": 8,
+    "units": { "en": "m" }
+  },
+  {
+    "id": "departure_delay",
+    "type": "number",
+    "label": { "en": "Departure delay", "fr": "Délai de départ" },
+    "value": 30,
+    "min": 0,
+    "max": 3600,
+    "units": { "en": "s" }
+  },
+  {
+    "id": "entry_sensitivity",
+    "type": "number",
+    "label": { "en": "Entry sensitivity", "fr": "Sensibilité d'entrée" },
+    "value": 7,
+    "min": 0,
+    "max": 9
+  },
+  {
+    "id": "illuminance_threshold",
+    "type": "number",
+    "label": { "en": "Illuminance threshold", "fr": "Seuil d'éclairement" },
+    "value": 50,
+    "min": 0,
+    "max": 420,
+    "units": { "en": "lux" }
+  }
+]

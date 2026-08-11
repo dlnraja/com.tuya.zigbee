@@ -224,6 +224,12 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     }
 
     if (this.mainsPowered) {
+      // P120: always strip phantom energy/climate caps on mains radars (clrdrnya / MTG075)
+      for (const phantom of ['measure_battery', 'alarm_battery', 'measure_temperature', 'measure_humidity']) {
+        if (this.hasCapability(phantom)) {
+          await this.removeCapability(phantom).catch(e => this.log(`[RADAR] Could not strip phantom ${phantom}: ${e.message}`));
+        }
+      }
       await this.setStoreValue('powerSource', 'mains').catch(() => {});
       await this.setStoreValue('battery', false).catch(() => {});
     }

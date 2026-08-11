@@ -673,6 +673,9 @@ class IrBlasterDevice extends ZigBeeDevice {
     }
 
     try {
+      // P120: set learn-guard flags on legacy path too (FrankP #1443 / stickiness)
+      this._learnModeActive = true;
+      this._learnModeStartTime = Date.now();
       this.log('Sending IR learn command to cluster 0xE004...');
 
       // v5.11.17: Use stored cluster instance (includes manual fallback)
@@ -693,6 +696,9 @@ class IrBlasterDevice extends ZigBeeDevice {
       }
 
       this['safeSetCapabilityValue']('onoff', true).catch(() => { });
+      if (this.hasCapability('button.learn_ir')) {
+        await this.safeSetCapabilityValue('button.learn_ir', true).catch(() => { });
+      }
       this.log('Learn mode enabled - point remote at device and press button');
 
       // Initialize receive buffer for learned code
@@ -719,6 +725,7 @@ class IrBlasterDevice extends ZigBeeDevice {
       this.driver.learningStartedTrigger?.trigger(this, {}, {}).catch(() => { });
 
     } catch (err) {
+      this._learnModeActive = false;
       this.error('Failed to enable learn mode:', err);
       throw err;
     }

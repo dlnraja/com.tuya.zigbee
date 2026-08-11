@@ -1964,6 +1964,9 @@
     "en": "v9.0.478: fix(P117): unbound catch crash sweep + rain/contact/soil/gas rehomes + settings timeout (v9.0.477)"
   },
   "9.0.480": {
-    "en": "v9.0.478: fix(P117): unbound catch crash sweep + rain/contact/soil/gas rehomes + settings timeout (v9.0.477)"
+    "en": "Hardened bed sensor settings/battery, IR learn stickiness, mains radar phantoms, CI unbound/double-division gates."
+  },
+  "9.0.481": {
+    "en": "Hardened bed sensor settings/battery, IR learn stickiness, mains radar phantoms, CI unbound/double-division gates."
   }
 }

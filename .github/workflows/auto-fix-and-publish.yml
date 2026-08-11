@@ -89,6 +89,13 @@ jobs:
       - name: "🧱 P102 bare ZigBeeDevice gate"
         run: npm run check:bare-zigbee
 
+      - name: "🧷 P117 unbound .catch(this.error) gate"
+        run: node tools/ci/fix-unbound-catch-this-error.js --gate
+
+      - name: "➗ P120 adaptive double-division soft gate"
+        continue-on-error: true
+        run: node tools/ci/adaptive-double-division-gate.js
+
       # Soft intelligent enrich (forum/johan proposals) — never dumps to generic_tuya
       - name: "🧠 Bidirectional enrich (CI + sacred couple)"
         continue-on-error: true

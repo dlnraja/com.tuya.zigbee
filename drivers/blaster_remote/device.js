@@ -6,6 +6,7 @@ const ZosungIRTransmitCluster = require('../../lib/clusters/ZosungIRTransmitClus
 const ZosungIRControlCluster = require('../../lib/clusters/ZosungIRControlCluster');
 const ZosungIRTransmitBoundCluster = require('../../lib/clusters/ZosungIRTransmitBoundCluster');
 const ZosungIRControlBoundCluster = require('../../lib/clusters/ZosungIRControlBoundCluster');
+const { safeSetTimeout, safeClearTimeout } = require('../../lib/utils/safe-timers');
 
 // Ensure clusters are registered
 try { Cluster.addCluster(ZosungIRTransmitCluster); } catch (e) { /* Cluster may already be registered */ }
@@ -216,16 +217,24 @@ class IRRemoteDevice extends ZigBeeDevice {
 
   async startLearn() {
     this.log('[IR-RX] Start learning...');
-    return new Promise((resolve, reject) => {
-      this._learnBuffer = { seq: 0, length: 0, chunks: new Map(), data: '', resolve };
+    this._learnModeActive = true;
+    this._learnModeStartTime = Date.now();
+    if (this.hasCapability('button.learn_ir')) {
+      await this.safeSetCapabilityValue('button.learn_ir', true).catch(() => {});
+    }
 
-      clearTimeout(this._learnTimeout);
-      this._learnTimeout = this.homey.setTimeout(() => {
+    return new Promise((resolve, reject) => {
+      this._learnBuffer = { seq: 0, length: 0, chunks: new Map(), data: '', resolve, reject };
+
+      safeClearTimeout(this, this._learnTimeout);
+      this._learnTimeout = safeSetTimeout(this, async () => {
         if (this._destroyed) {return;}
         if (this._learnBuffer) {
-          this.log('[IR-RX] Learn timeout');
+          this.log('[IR-RX] Learn timeout — stopping study mode');
+          const rej = this._learnBuffer.reject;
           this._learnBuffer = null;
-          reject(new Error('Learn timeout'));
+          await this._stopLearnMode().catch(() => {});
+          if (typeof rej === 'function') {rej(new Error('Learn timeout'));}
         }
       }, 30000);
 
@@ -241,6 +250,24 @@ class IRRemoteDevice extends ZigBeeDevice {
       }
       this.log('[IR-RX] Learn command sent  point remote at device');
     });
+  }
+
+  async _stopLearnMode() {
+    this._learnModeActive = false;
+    safeClearTimeout(this, this._learnTimeout);
+    this._learnTimeout = null;
+    if (this.hasCapability('button.learn_ir')) {
+      await this.safeSetCapabilityValue('button.learn_ir', false).catch(() => {});
+    }
+    try {
+      const ep = this._zclNode?.endpoints?.[1];
+      const ctrl = ep?.clusters?.zosungIRControl || ep?.clusters?.[0xE004];
+      if (ctrl?.IRLearn) {
+        await ctrl.IRLearn({ data: Buffer.from(JSON.stringify({ study: 1 })) });
+      }
+    } catch (e) {
+      this.log('[IR-RX] stop learn err:', e.message);
+    }
   }
 
   // Device starts sending learned IR code
@@ -281,7 +308,8 @@ class IRRemoteDevice extends ZigBeeDevice {
   // Device finished sending learned code
   _onDoneSending(data) {
     this.log('[IR-RX] doneSending received');
-    clearTimeout(this._learnTimeout);
+    safeClearTimeout(this, this._learnTimeout);
+    this._learnTimeout = null;
 
     // ACK
     const ep = this._zclNode.endpoints[1];
@@ -318,6 +346,9 @@ class IRRemoteDevice extends ZigBeeDevice {
       if (this._learnBuffer.resolve) {this._learnBuffer.resolve(keyCode);}
       this._learnBuffer = null;
     }
+
+    // Always exit study mode + pulse button false (P120 stickiness fix)
+    this._stopLearnMode().catch(() => {});
   }
 
   _onLearnStatus(data) {

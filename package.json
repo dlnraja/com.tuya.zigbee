@@ -1,6 +1,6 @@
 {
   "name": "com.dlnraja.tuya.zigbee",
-  "version": "9.0.480",
+  "version": "9.0.481",
   "description": "Tuya Unified Zigbee - Local-first control with AI automation",
   "main": "app.js",
   "scripts": {
@@ -157,7 +157,9 @@
     "check:bare-zigbee:update": "node tools/ci/lint-bare-zigbee-device.js --update-baseline",
     "enrich:quirks": "node scripts/maintenance/build-protocol-quirk-table.js",
     "triage:bot-issues": "node tools/ci/auto-bot-issue-triage.js",
-    "triage:bot-issues:dry": "node tools/ci/auto-bot-issue-triage.js --dry-run"
+    "triage:bot-issues:dry": "node tools/ci/auto-bot-issue-triage.js --dry-run",
+    "check:unbound-catch": "node tools/ci/fix-unbound-catch-this-error.js --gate",
+    "check:double-division": "node tools/ci/adaptive-double-division-gate.js"
   },
   "keywords": [
     "homey",

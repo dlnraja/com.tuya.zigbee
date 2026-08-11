@@ -1,6 +1,12 @@
 'use strict';
 
 const { UnifiedSensorBase } = require('../../lib/devices/UnifiedSensorBase');
+const {
+  safeSetTimeout,
+  safeClearTimeout,
+  safeSetInterval,
+  safeClearInterval,
+} = require('../../lib/utils/safe-timers');
 
 /**
  * Bed Sensor Device - Pressure-based occupancy detection
@@ -62,20 +68,38 @@ class BedSensorDevice extends UnifiedSensorBase {
    */
   _handleBatteryDP(dp, value) {
     if (dp === 4) {
-      // Binary battery: 0=depleted, 1=OK
-      // Also handle normal 0-100% values
-      let batteryValue;
+      // Binary battery: 0=depleted, 1=OK — never invent fake % (P115/P120)
       if (value === 0) {
-        batteryValue = 10; // depleted -> 10%
-      } else if (value === 1) {
-        batteryValue = 100; // OK -> 100%
-      } else if (typeof value === 'number' && value >= 0 && value <= 100) {
-        batteryValue = value; // normal percentage
-      } else {
-        batteryValue = 100; // fallback
+        this.log('[BED] Battery DP4: depleted (0) → alarm only, no fake %');
+        if (!this._destroyed && this.hasCapability('alarm_battery')) {
+          this.safeSetCapabilityValue('alarm_battery', true).catch(() => {});
+        }
+        this._lastDPReceived = true;
+        return;
       }
-      this.log(`[BED] Battery DP4: raw=${value} -> ${batteryValue}%`);
-      if (!this._destroyed) {this.safeSetCapabilityValue('measure_battery', batteryValue).catch(() => {});}
+      if (value === 1) {
+        this.log('[BED] Battery DP4: OK (1) → 100%');
+        if (!this._destroyed) {
+          if (this.hasCapability('alarm_battery')) {
+            this.safeSetCapabilityValue('alarm_battery', false).catch(() => {});
+          }
+          this.safeSetCapabilityValue('measure_battery', 100).catch(() => {});
+        }
+        this._lastDPReceived = true;
+        return;
+      }
+      if (typeof value === 'number' && value >= 0 && value <= 100) {
+        this.log(`[BED] Battery DP4: raw=${value}%`);
+        if (!this._destroyed) {
+          this.safeSetCapabilityValue('measure_battery', value).catch(() => {});
+          if (this.hasCapability('alarm_battery')) {
+            this.safeSetCapabilityValue('alarm_battery', value <= 10).catch(() => {});
+          }
+        }
+        this._lastDPReceived = true;
+        return;
+      }
+      this.log(`[BED] Battery DP4: ignored unknown raw=${value}`);
       this._lastDPReceived = true;
       return;
     }
@@ -132,7 +156,7 @@ class BedSensorDevice extends UnifiedSensorBase {
    */
   _setupDPolling() {
     // Delayed initial query (3s after init)
-    this._initQueryTimeout = this.homey.setTimeout(async () => {
+    this._initQueryTimeout = safeSetTimeout(this, async () => {
       if (this._destroyed) {return;}
       try {
         this.log('[BED] Requesting initial DP data...');
@@ -145,7 +169,7 @@ class BedSensorDevice extends UnifiedSensorBase {
           } else if (typeof this.requestDP === 'function') {
             await this.requestDP(dp).catch(() => {});
           }
-          await new Promise(r => this.homey.setTimeout(r, 500)); // 500ms between requests
+          await new Promise((r) => safeSetTimeout(this, r, 500));
         }
       } catch (err) {
         this.error('[BED] Initial DP query failed:', err.message);
@@ -153,9 +177,10 @@ class BedSensorDevice extends UnifiedSensorBase {
     }, 3000);
 
     // Periodic polling every 30 seconds (stops after first data received)
-    this._pollInterval = this.homey.setInterval(async () => {
+    this._pollInterval = safeSetInterval(this, async () => {
       if (this._destroyed || this._lastDPReceived) {
-        clearInterval(this._pollInterval);
+        safeClearInterval(this, this._pollInterval);
+        this._pollInterval = null;
         return;
       }
       try {
@@ -174,12 +199,15 @@ class BedSensorDevice extends UnifiedSensorBase {
   async onSettings({ oldSettings, newSettings, changedKeys }) {
     await super.onSettings({ oldSettings, newSettings, changedKeys });
 
-    // Handle settings changes for DP9 (sensitivity), DP102, DP103
+    // DP9 sensitivity, DP101 interval, DP102/103 presence timings (aligned with settings compose)
     for (const key of changedKeys) {
       if (key === 'sensitivity') {
         const enumMap = { low: 0, middle: 1, high: 2 };
         const value = enumMap[newSettings.sensitivity] ?? 1;
         await this._sendSettingDP(9, value, 'enum');
+      }
+      if (key === 'interval_time') {
+        await this._sendSettingDP(101, newSettings.interval_time, 'value');
       }
       if (key === 'presence_delay') {
         await this._sendSettingDP(102, newSettings.presence_delay, 'value');
@@ -207,14 +235,20 @@ class BedSensorDevice extends UnifiedSensorBase {
 
   async onUninit() {
     this._destroyed = true;
-    if (this._initQueryTimeout) {clearTimeout(this._initQueryTimeout);}
-    if (this._pollInterval) {clearInterval(this._pollInterval);}
+    safeClearTimeout(this, this._initQueryTimeout);
+    this._initQueryTimeout = null;
+    safeClearInterval(this, this._pollInterval);
+    this._pollInterval = null;
     this.log('[BED] Bed Sensor uninitialized');
     await super.onUninit();
   }
 
   async onDeleted() {
     this._destroyed = true;
+    safeClearTimeout(this, this._initQueryTimeout);
+    this._initQueryTimeout = null;
+    safeClearInterval(this, this._pollInterval);
+    this._pollInterval = null;
     this.log('[BED] Bed Sensor deleted');
     await super.onDeleted();
   }

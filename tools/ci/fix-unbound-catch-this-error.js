@@ -69,3 +69,11 @@ fs.writeFileSync(
 console.log(`P117 unbound catch: ${report.length} files, ${report.reduce((a, b) => a + b.hits, 0)} hits ${APPLY ? 'APPLIED' : '(dry-run)'}`);
 for (const r of report.slice(0, 15)) console.log(`  ${r.file} x${r.hits}`);
 if (report.length > 15) console.log(`  … +${report.length - 15} more`);
+
+// Gate mode: fail CI when residual unbound catches remain (unless --apply)
+const GATE = process.argv.includes('--gate') || process.env.UNBOUND_CATCH_GATE === '1';
+if (GATE && !APPLY && report.reduce((a, b) => a + b.hits, 0) > 0) {
+  console.error('[unbound-catch-gate] FAIL — residual .catch(this.error) hits');
+  process.exit(1);
+}
+if (GATE) console.log('[unbound-catch-gate] PASS');
