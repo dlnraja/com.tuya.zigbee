@@ -2,7 +2,8 @@
 /**
  * P117 — Sacred-couple rehomes from forum/Gmail/GitHub triage.
  * - rain FPs → rain_sensor
- * - contact 2imwyigp out of switch_3gang (+ drop TS0203 from switch)
+ * - contact 2imwyigp on contact_sensor (TS0203) AND keep on switch_3gang (TS0601)
+ *   Sacred couple: same mfr OK in both drivers; only drop TS0203 from switch_3gang
  * - soil hdml1aav out of climate, fix garbled mfr
  * - gas truncated chbyv06 removed from gas_detector (keep chbyv06x on gas_sensor)
  *
@@ -90,11 +91,16 @@ for (const mfr of ['_TZ3210_p68kms0l', '_TZ3210_tgvtvdoc']) {
   report.push({ action: 'rain-rehome', mfr, added: a, removedFromContactRain: r });
 }
 
-// 2) Contact vs switch_3gang
+// 2) Contact TS0203 + Switch TS0601 share mfr 2imwyigp (sacred couple — dual OK)
 for (const mfr of ['_TZE200_2imwyigp', '_TZE204_2imwyigp']) {
-  const a = ensureMfr('contact_sensor', mfr, ['TS0203']);
-  const r = removeMfr('switch_3gang', mfr);
-  report.push({ action: 'contact-rehome', mfr, added: a, removedFromSwitch: r });
+  const aContact = ensureMfr('contact_sensor', mfr, ['TS0203']);
+  const aSwitch = ensureMfr('switch_3gang', mfr, ['TS0601']);
+  report.push({
+    action: 'contact-switch-dual-home',
+    mfr,
+    contactAdded: aContact,
+    switchAdded: aSwitch,
+  });
 }
 report.push({ action: 'switch_3gang-drop-TS0203', removed: removePid('switch_3gang', 'TS0203') });
 
