@@ -10,7 +10,7 @@
 [![SDK](https://img.shields.io/badge/SDK-3-orange)](https://apps.developer.homey.app/)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
-A community-driven Homey app that brings **local control** to Tuya Zigbee devices — no cloud, no internet needed. Covers switches, sensors, lights, thermostats, covers, locks and more across **430 drivers** and **4,354 unique device fingerprints** (16,965 including case variants for bulletproof pairing).
+A community-driven Homey app that brings **local control** to Tuya Zigbee devices — no cloud, no internet needed. Covers switches, sensors, lights, thermostats, covers, locks and more across **430 drivers** and **4,354 unique device fingerprints** (16,929 including case variants for bulletproof pairing).
 
 **Key features:**
 - **Local-only** — everything runs on your Homey, nothing goes to the cloud
@@ -37,10 +37,10 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.454 |
+| **App Version** | v9.0.456 |
 | **Drivers** | 430 (380 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,354 |
-| **Pairing Variants** | 16,965 (4 case combos per fingerprint) |
+| **Pairing Variants** | 16,929 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 573 |
 | **Flow Cards** | 4,930 |
 | **Unique Capabilities** | 170 |
@@ -59,8 +59,8 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 | 2 | `switch_1gang` | 1,812 |
 | 3 | `button_wireless_2` | 790 |
 | 4 | `presence_sensor_radar` | 706 |
-| 5 | `radiator_valve` | 599 |
-| 6 | `generic_tuya` | 496 |
+| 5 | `radiator_valve` | 601 |
+| 6 | `generic_tuya` | 484 |
 | 7 | `wall_dimmer_tuya` | 484 |
 | 8 | `device_radiator_valve` | 380 |
 | 9 | `sensor_contact_zigbee` | 345 |
@@ -106,6 +106,8 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.456** | Improved device wake/handshake and interview recovery; added contact sensor fingerprints from incomplete-source cross-check. |
+| **v9.0.455** | Improved device wake/handshake and interview recovery; added contact sensor fingerprints from incomplete-source cross-check. |
 | **v9.0.454** | P102 I/O facade publish fix: irrigation Flow cards use implicit device args (Homey validate). |
 | **v9.0.453** | P102 I/O facade publish fix: irrigation Flow cards use implicit device args (Homey validate). |
 | **v9.0.452** | P102 Unified Driver I/O: DeviceIOFacade + Homey interview compensation + bare ZigBeeDevice gate + exotic profile hooks. |
@@ -116,8 +118,6 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 | **v9.0.447** | Crash hardening from Gmail/diag logs: flow-card polyfill, read-only error guard, getDiscoveries safe call, crash-pattern CI gate. |
 | **v9.0.446** | L99 battery normalize batch + verify fail-closed on Athom processing_failed. |
 | **v9.0.445** | L99 battery normalize batch + verify fail-closed on Athom processing_failed. |
-| **v9.0.444** | L99 battery normalize batch + verify fail-closed on Athom processing_failed. |
-| **v9.0.443** | L99 battery normalize batch + verify fail-closed on Athom processing_failed. |
 
 <!-- CHANGELOG_END -->
 
