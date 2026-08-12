@@ -189,6 +189,11 @@ const FORBIDDEN = [
     driver: 'socket_power_strip',
     mfrs: ['_TZ3000_oxslv1c9'],
   },
+  {
+    id: 'p126-iadro9bf-not-climate',
+    driver: 'climate_sensor',
+    mfrs: ['_TZE204_iadro9bf', '_TZE200_iadro9bf', '_TZE284_iadro9bf'],
+  },
   // P102 lot3 — typed rehomes must never bounce back to generic / wrong class
   {
     id: 'p102-lot3-not-generic',
@@ -258,6 +263,12 @@ const FORBIDDEN_PIDS = [
     id: 'p93-zg222z-not-gas',
     driver: 'gas_sensor_switch',
     pids: ['ZG-222Z'],
+  },
+  {
+    // P126: dual-home 2imwyigp — contact owns TS0203 only; switch_3gang owns TS0601
+    id: 'p126-contact-no-TS0601',
+    driver: 'contact_sensor',
+    pids: ['TS0601'],
   },
 ];
 
@@ -360,6 +371,11 @@ const REQUIRED = [
     id: 'p102-forum-clrdrnya-radar',
     driver: 'presence_sensor_radar',
     mfrs: ['_TZE200_clrdrnya', '_TZE204_clrdrnya'],
+  },
+  {
+    id: 'p126-iadro9bf-presence',
+    driver: 'presence_sensor_radar',
+    mfrs: ['_TZE204_iadro9bf'],
   },
   {
     id: 'p102-trwaxi57-curtain',

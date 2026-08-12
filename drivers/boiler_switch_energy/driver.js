@@ -6,31 +6,70 @@ class BoilerSwitchEnergyDriver extends ZigBeeDriver {
 
   async onInit() {
     await super.onInit();
+    if (this._flowCardsRegistered) { return; }
+    this._flowCardsRegistered = true;
     this.log('BoilerSwitchEnergyDriver initialized');
     this._registerFlowCards();
   }
 
   /**
-   * v9.0.253 (P62): Wrap getDeviceTriggerCard/getConditionCard calls
-   * to handle the "Invalid Flow Card ID" case gracefully. Previously
-   * the driver would call these without try/catch on the wrapper
-   * (only inside), causing 4x crash logs:
-   *   - "Invalid Flow Card ID: boiler_switch_energy_turned_on" (4x)
-   *   - "Invalid Flow Card ID: boiler_switch_energy_turned_off" (4x)
-   *   - "boiler_switch_energy_turned_on" (4x)
-   *   - "boiler_switch_energy_turned_off" (4x)
-   *
-   * The flow cards are NOT declared in any driver.flow.compose.json
-   * (we checked — the driver dir has no such file). So we skip
-   * registration entirely. This is the cleanest fix: don't try to
-   * register flow cards that don't exist.
+   * P126: flow.compose exists — register run listeners (CI flow-card watchdog).
    */
   _registerFlowCards() {
-    // No flow cards to register. The driver is a placeholder for
-    // Sacred Couple routing (mfrs are placeholder, see mfs_db.json).
-    // Future P62+ work: add a driver.flow.compose.json with the
-    // proper flow cards if users request them.
-    this.log('[FLOW] Boiler switch energy: no flow cards to register (placeholder driver)');
+    const setOnOff = async (device, value) => {
+      if (!device) { return false; }
+      if (typeof device.safeSetCapabilityValue === 'function') {
+        await device.safeSetCapabilityValue('onoff', value).catch(() => {});
+      } else {
+        await device.setCapabilityValue('onoff', value).catch(() => {});
+      }
+      return true;
+    };
+
+    try {
+      const card = this.homey.flow.getConditionCard('boiler_switch_energy_is_on');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) { return false; }
+          return args.device.getCapabilityValue('onoff') === true;
+        });
+      }
+    } catch (err) {
+      this.log(`[FLOW] condition is_on: ${err.message}`);
+    }
+
+    try {
+      const card = this.homey.flow.getActionCard('boiler_switch_energy_turn_on');
+      if (card) {
+        card.registerRunListener(async (args) => setOnOff(args.device, true));
+      }
+    } catch (err) {
+      this.log(`[FLOW] action turn_on: ${err.message}`);
+    }
+
+    try {
+      const card = this.homey.flow.getActionCard('boiler_switch_energy_turn_off');
+      if (card) {
+        card.registerRunListener(async (args) => setOnOff(args.device, false));
+      }
+    } catch (err) {
+      this.log(`[FLOW] action turn_off: ${err.message}`);
+    }
+
+    try {
+      const card = this.homey.flow.getActionCard('boiler_switch_energy_toggle');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) { return false; }
+          const current = args.device.getCapabilityValue('onoff');
+          return setOnOff(args.device, !current);
+        });
+      }
+    } catch (err) {
+      this.log(`[FLOW] action toggle: ${err.message}`);
+    }
+
+    this.log('[FLOW] Boiler switch energy flow cards registered');
   }
 }
 

@@ -1991,6 +1991,9 @@
     "en": "P125: fix CI fingerprint collisions (xu4a5rhj/lawxy9e2/contact TS0601), migrate humidifier/dimmer/radiator/double_power_point."
   },
   "9.0.489": {
-    "en": "Stability improvements and Homey test publication retry after transient processing failure."
+    "en": "P126: boiler flow listeners (CI), iadro9bf presence-only, DIN meter+curtain TuyaZigbeeDevice + energy divisor fixes."
+  },
+  "9.0.490": {
+    "en": "P126: boiler flow listeners (CI), iadro9bf presence-only, DIN meter+curtain TuyaZigbeeDevice + energy divisor fixes."
   }
 }

@@ -1,10 +1,8 @@
 {
-  "updated": "2026-08-12T11:45:00.000Z",
-  "note": "Legacy bare ZigBeeDevice drivers still migrating. P125: humidifier, dimmer_ts110e, radiator_controller, double_power_point migrated off allowlist.",
+  "updated": "2026-08-12T11:50:00.000Z",
+  "note": "Legacy bare ZigBeeDevice leftovers. P126: device_air_purifier_din + curtain_module migrated.",
   "drivers": [
     "blaster_remote",
-    "curtain_module",
-    "device_air_purifier_din",
     "ir_blaster",
     "led_controller_dimmable",
     "pir_mmwave_sensor",
