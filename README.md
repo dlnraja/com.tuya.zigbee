@@ -4,13 +4,14 @@
 
 [![Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdlnraja%2Fcom.tuya.zigbee%2Fmaster%2Fapp.json&query=%24.version&label=version&color=blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![Drivers](https://img.shields.io/badge/drivers-430-brightgreen)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
-[![Fingerprints](https://img.shields.io/badge/fingerprints-4,365%20unique-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
+[![Fingerprints](https://img.shields.io/badge/fingerprints-4,366%20unique-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![Flow Cards](https://img.shields.io/badge/flow%20cards-4,954-blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![Native OTA](https://img.shields.io/badge/native%20OTA-6%20drivers-orange)](docs/P92_70_HOMEY_2026_OTA_NATIVE.md)
 [![SDK](https://img.shields.io/badge/SDK-3-orange)](https://apps.developer.homey.app/)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
 A community-driven Homey app that brings **local control** to Tuya Zigbee devices — no cloud, no internet needed. Covers switches, sensors, lights, thermostats, covers, locks and more across **430 drivers** and **4,365 unique device fingerprints** (16,935 including case variants for bulletproof pairing).
+A community-driven Homey app that brings **local control** to Tuya Zigbee devices — no cloud, no internet needed. Covers switches, sensors, lights, thermostats, covers, locks and more across **430 drivers** and **4,366 unique device fingerprints** (16,925 including case variants for bulletproof pairing).
 
 **Key features:**
 - **Local-only** — everything runs on your Homey, nothing goes to the cloud
@@ -43,6 +44,10 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 | **Drivers** | 430 (380 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,365 |
 | **Pairing Variants** | 16,935 (4 case combos per fingerprint) |
+| **App Version** | v9.0.489 |
+| **Drivers** | 430 (380 Zigbee + 50 WiFi) |
+| **Unique Fingerprints** | 4,366 |
+| **Pairing Variants** | 16,925 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 573 |
 | **Flow Cards** | 4,954 |
 | **Unique Capabilities** | 170 |
@@ -57,7 +62,7 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 
 | # | Driver | Fingerprints |
 |---|--------|-------------|
-| 1 | `climate_sensor` | 2,660 |
+| 1 | `climate_sensor` | 2,652 |
 | 2 | `switch_1gang` | 1,804 |
 | 3 | `button_wireless_2` | 790 |
 | 4 | `presence_sensor_radar` | 714 |
@@ -111,6 +116,8 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 | **v9.0.485** | Multi-source sweep: curtain/switch sacred fix, mmWave phantoms, EF00 generic safety, . |
 | **v9.0.487** | P123: migrate thin bare ZigBeeDevice drivers to TuyaZigbeeDevice, siren IAS via DeviceIOFacade, harden double-division gate. |
 | **v9.0.488** | P124: migrate thin bare ZigBee drivers, fix clrdrnya radar collision, LCD lux ZCL /100 scaling. |
+| **v9.0.489** | P125: fix CI fingerprint collisions (xu4a5rhj/lawxy9e2/contact TS0601), migrate humidifier/dimmer/radiator/double_power_point. |
+| **v9.0.488** | P125: fix CI fingerprint collisions (xu4a5rhj/lawxy9e2/contact TS0601), migrate humidifier/dimmer/radiator/double_power_point. |
 | **v9.0.487** | P124: migrate thin bare ZigBee drivers, fix clrdrnya radar collision, LCD lux ZCL /100 scaling. |
 | **v9.0.486** | P123: migrate thin bare ZigBeeDevice drivers to TuyaZigbeeDevice, siren IAS via DeviceIOFacade, harden double-division gate. |
 | **v9.0.485** | P123: migrate thin bare ZigBeeDevice drivers to TuyaZigbeeDevice, siren IAS via DeviceIOFacade, harden double-division gate. |
