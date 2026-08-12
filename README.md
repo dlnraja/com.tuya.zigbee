@@ -12,6 +12,7 @@
 
 A community-driven Homey app that brings **local control** to Tuya Zigbee devices — no cloud, no internet needed. Covers switches, sensors, lights, thermostats, covers, locks and more across **430 drivers** and **4,365 unique device fingerprints** (16,935 including case variants for bulletproof pairing).
 A community-driven Homey app that brings **local control** to Tuya Zigbee devices — no cloud, no internet needed. Covers switches, sensors, lights, thermostats, covers, locks and more across **430 drivers** and **4,366 unique device fingerprints** (16,925 including case variants for bulletproof pairing).
+A community-driven Homey app that brings **local control** to Tuya Zigbee devices — no cloud, no internet needed. Covers switches, sensors, lights, thermostats, covers, locks and more across **430 drivers** and **4,366 unique device fingerprints** (16,921 including case variants for bulletproof pairing).
 
 **Key features:**
 - **Local-only** — everything runs on your Homey, nothing goes to the cloud
@@ -38,9 +39,7 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.485 |
-| **App Version** | v9.0.487 |
-| **App Version** | v9.0.488 |
+| **App Version** | v9.0.491 |
 | **Drivers** | 430 (380 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,365 |
 | **Pairing Variants** | 16,935 (4 case combos per fingerprint) |
@@ -48,6 +47,8 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 | **Drivers** | 430 (380 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,366 |
 | **Pairing Variants** | 16,925 (4 case combos per fingerprint) |
+| **Unique Fingerprints** | 4,366 |
+| **Pairing Variants** | 16,921 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 573 |
 | **Flow Cards** | 4,954 |
 | **Unique Capabilities** | 170 |
@@ -63,6 +64,7 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 | # | Driver | Fingerprints |
 |---|--------|-------------|
 | 1 | `climate_sensor` | 2,652 |
+| 1 | `climate_sensor` | 2,648 |
 | 2 | `switch_1gang` | 1,804 |
 | 3 | `button_wireless_2` | 790 |
 | 4 | `presence_sensor_radar` | 714 |
@@ -117,6 +119,9 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 | **v9.0.487** | P123: migrate thin bare ZigBeeDevice drivers to TuyaZigbeeDevice, siren IAS via DeviceIOFacade, harden double-division gate. |
 | **v9.0.488** | P124: migrate thin bare ZigBee drivers, fix clrdrnya radar collision, LCD lux ZCL /100 scaling. |
 | **v9.0.489** | P125: fix CI fingerprint collisions (xu4a5rhj/lawxy9e2/contact TS0601), migrate humidifier/dimmer/radiator/double_power_point. |
+| **v9.0.491** | P126: boiler flow listeners (CI), iadro9bf presence-only, DIN meter+curtain TuyaZigbeeDevice + energy divisor fixes. |
+| **v9.0.490** | P126: boiler flow listeners (CI), iadro9bf presence-only, DIN meter+curtain TuyaZigbeeDevice + energy divisor fixes. |
+| **v9.0.489** | P126: boiler flow listeners (CI), iadro9bf presence-only, DIN meter+curtain TuyaZigbeeDevice + energy divisor fixes. |
 | **v9.0.488** | P125: fix CI fingerprint collisions (xu4a5rhj/lawxy9e2/contact TS0601), migrate humidifier/dimmer/radiator/double_power_point. |
 | **v9.0.487** | P124: migrate thin bare ZigBee drivers, fix clrdrnya radar collision, LCD lux ZCL /100 scaling. |
 | **v9.0.486** | P123: migrate thin bare ZigBeeDevice drivers to TuyaZigbeeDevice, siren IAS via DeviceIOFacade, harden double-division gate. |
@@ -126,9 +131,6 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 | **v9.0.482** | Enrich pass: dual-home sacred couples (contact/switch), soil/gas cleanup, multi-source re-apply, publish Test. |
 | **v9.0.481** | Hardened bed sensor settings/battery, IR learn stickiness, mains radar phantoms, CI unbound/double-division gates. |
 | **v9.0.480** | Hardened bed sensor settings/battery, IR learn stickiness, mains radar phantoms, CI unbound/double-division gates. |
-| **v9.0.479** | v9.0.478: fix(P117): unbound catch crash sweep + rain/contact/soil/gas rehomes + settings timeout (v9.0.477) |
-| **v9.0.477** | v9.0.476: v9.0.476: 430 drivers, 3832 FPs [skip ci] |
-| **v9.0.475** | v9.0.474: fix(P114): multi-source enrich automation + DeviceIO RX/TX + FP reinforce (v9.0.474) |
 
 <!-- CHANGELOG_END -->
 
