@@ -1,7 +1,7 @@
 'use strict';
 
-const { ZigBeeDevice } = require('homey-zigbeedriver');
-const { CLUSTER, Cluster, ZCLDataTypes } = require('zigbee-clusters');
+const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
+const { CLUSTER, Cluster } = require('zigbee-clusters');
 const TuyaOnOffCluster = require('../../lib/TuyaOnOffCluster');
 
 Cluster.addCluster(TuyaOnOffCluster);
@@ -14,31 +14,33 @@ const ENERGY_DIVISORS = {
   measure_voltage: { divisor: 1 }
 };
 
-class doublepowerpoint extends ZigBeeDevice {
+/**
+ * P125 — TuyaZigbeeDevice (L14) + mainsPowered (twin of double_power_point_2)
+ */
+class doublepowerpoint extends TuyaZigbeeDevice {
+
+  get mainsPowered() { return true; }
 
   async onNodeInit({ zclNode }) {
+    await super.onNodeInit({ zclNode });
     const { subDeviceId } = this.getData();
 
     this.printNode();
     this.log('Device data: ', subDeviceId);
 
-    // Determine endpoint based on subDeviceId
+    if (this.hasCapability('measure_battery')) {
+      await this.removeCapability('measure_battery').catch(() => {});
+    }
+
     const endpoint = subDeviceId === 'socketTwo' ? 2 : 1;
     this.log(`Registering capabilities for endpoint ${endpoint}`);
 
-    // Initialize reporting settings from the device settings
     this.initializeReportingSettings();
-
-    // Ensure required capabilities are added
     await this.ensureCapabilities();
 
-    // Register capabilities based on the endpoint
     try {
       await this.readBasicAttributes(zclNode, endpoint);
-
-      // Register capabilities for both endpoints
       await this.registerCapabilities(zclNode, { endpoint });
-
     } catch (error) {
       this.error(`Error registering capabilities for endpoint ${endpoint}:`, error);
     }

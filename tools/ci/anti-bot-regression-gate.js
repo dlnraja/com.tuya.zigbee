@@ -174,6 +174,21 @@ const FORBIDDEN = [
     driver: 'motion_sensor_radar_mmwave',
     mfrs: ['_TZE200_clrdrnya', '_TZE204_clrdrnya', '_TZE284_clrdrnya'],
   },
+  {
+    id: 'p125-xu4a5rhj-not-climate',
+    driver: 'climate_sensor',
+    mfrs: ['_TZE200_xu4a5rhj', '_TZE204_xu4a5rhj', '_TZE284_xu4a5rhj'],
+  },
+  {
+    id: 'p125-lawxy9e2-not-climate',
+    driver: 'climate_sensor',
+    mfrs: ['_TZE200_lawxy9e2', '_TZE204_lawxy9e2', '_TZE284_lawxy9e2'],
+  },
+  {
+    id: 'p125-oxslv1c9-not-socket-strip',
+    driver: 'socket_power_strip',
+    mfrs: ['_TZ3000_oxslv1c9'],
+  },
   // P102 lot3 — typed rehomes must never bounce back to generic / wrong class
   {
     id: 'p102-lot3-not-generic',

@@ -1,19 +1,17 @@
 'use strict';
 
-const { ZigBeeDevice } = require('homey-zigbeedriver');
-const { Cluster } = require('zigbee-clusters');
+const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
 const ZigbeeTimeSync = require('../../lib/ZigbeeTimeSync');
+const { safeSetTimeout } = require('../../lib/utils/safe-timers');
 
 /**
- * Radiator Controller Device - v5.6.0
- * Specialized for electric radiators with pilot wire (French standard)
+ * Radiator Controller — P125: TuyaZigbeeDevice + safeSetTimeout + mainsPowered
  */
-class RadiatorControllerDevice extends ZigBeeDevice {
+class RadiatorControllerDevice extends TuyaZigbeeDevice {
 
   get mainsPowered() { return true; }
 
   async onNodeInit({ zclNode }) {
-    // Auto-fix: Remove battery capabilities for mains-powered devices
     await this.removeCapability('measure_battery').catch(() => {});
     await this.removeCapability('alarm_battery').catch(() => {});
     await super.onNodeInit({ zclNode });
@@ -21,8 +19,11 @@ class RadiatorControllerDevice extends ZigBeeDevice {
 
     try {
       this._timeSync = new ZigbeeTimeSync(this, { throttleMs: 6 * 60 * 60 * 1000 });
-      this.homey.setTimeout(async () => { if (this._destroyed) {return;} const result = await this._timeSync.sync({ force: true }).catch(() => ({ success: false }));
-        if (result.success) {this.log('[TimeSync] Initial sync successful');} }, 10000);
+      safeSetTimeout(this, async () => {
+        if (this._destroyed) { return; }
+        const result = await this._timeSync.sync({ force: true }).catch(() => ({ success: false }));
+        if (result.success) { this.log('[TimeSync] Initial sync successful'); }
+      }, 10000);
     } catch (e) {
       this.log('[TimeSync] Init failed:', e.message);
     }

@@ -1,26 +1,25 @@
 'use strict';
-const { safeDivide, safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
+const { safeMultiply } = require('../../lib/utils/tuyaUtils.js');
 
-const { ZigBeeDevice } = require('homey-zigbeedriver');
+const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
 
 /**
- * Smart Humidifier Device
+ * Smart Humidifier — P125: TuyaZigbeeDevice (L14) + mainsPowered
  *
- * DP mappings (typical):
- * DP1: On/Off
- * DP2: Target humidity (30-80%)
- * DP3: Current humidity
- * DP5: Mist level (low/medium/high)
- * DP12: Water shortage alarm
+ * DP1: On/Off | DP2: Target humidity | DP3: Current humidity
+ * DP5: Mist level | DP12: Water shortage
  */
-class HumidifierDevice extends ZigBeeDevice {
+class HumidifierDevice extends TuyaZigbeeDevice {
 
-  // v9.0.74: This device is mains-powered. Declare it so UnifiedBatteryHandler
-  // does not add a false measure_battery capability (fixes false-battery reports).
   get mainsPowered() { return true; }
 
   async onNodeInit({ zclNode }) {
+    await super.onNodeInit({ zclNode });
     this.log('Smart Humidifier initializing...');
+
+    if (this.hasCapability('measure_battery')) {
+      await this.removeCapability('measure_battery').catch(() => {});
+    }
 
     await this._setupTuyaDP(zclNode);
 
@@ -29,22 +28,21 @@ class HumidifierDevice extends ZigBeeDevice {
 
   async _setupTuyaDP(zclNode) {
     const ep1 = zclNode.endpoints[1];
-    if (!ep1) {return;}
+    if (!ep1) { return; }
 
     const tuyaCluster = ep1.clusters?.tuya || ep1.clusters?.[61184];
-    if (!tuyaCluster) {return;}
+    if (!tuyaCluster) { return; }
 
-    this.log('[TUYA] DP cluster found' );
+    this.log('[TUYA] DP cluster found');
 
-    // Register capability listeners
     this.registerCapabilityListener('onoff', async (value) => {
-      await tuyaCluster.datapoint({ dp: 1, datatype: 1, value: value });
-      });
+      await tuyaCluster.datapoint({ dp: 1, datatype: 1, value });
+    });
 
     this.registerCapabilityListener('dim', async (value) => {
-      const level =Math.round(value); // 0=off, 1=low, 2=medium, 3=high
+      const level = Math.round(value);
       await tuyaCluster.datapoint({ dp: 5, datatype: 4, value: level });
-      });
+    });
 
     if (this.hasCapability('dim.humidity')) {
       this.registerCapabilityListener('dim.humidity', async (value) => {
@@ -58,37 +56,35 @@ class HumidifierDevice extends ZigBeeDevice {
   }
 
   _handleDP(dp, value) {
-    if (dp === undefined) {return;}
+    if (dp === undefined) { return; }
     this.log(`[DP${dp}] = ${value}`);
 
     switch (dp) {
-    case 1: //On/Off
-      this['safeSetCapabilityValue']('onoff', !!value).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
+    case 1:
+      this.safeSetCapabilityValue('onoff', !!value).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
       break;
-
-    case 2: // Target humidity
+    case 2:
       if (this.hasCapability('dim.humidity')) {
         this.safeSetCapabilityValue('dim.humidity', value).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
       }
       break;
-
-    case 3: // Current humidity
+    case 3:
       if (this.hasCapability('measure_humidity')) {
         this.safeSetCapabilityValue('measure_humidity', value).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
       }
       break;
-
-    case 5: // Mist level (0-3)
+    case 5: {
       const dim = safeMultiply(value, 3);
-      this['safeSetCapabilityValue']('dim', dim).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
+      this.safeSetCapabilityValue('dim', dim).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
       break;
-
-    case 12: // Water shortage
+    }
+    case 12:
       this.log(`Water shortage alarm: ${value}`);
+      break;
+    default:
       break;
     }
   }
-
 
   async onDeleted() {
     this._destroyed = true;
@@ -98,4 +94,3 @@ class HumidifierDevice extends ZigBeeDevice {
 }
 
 module.exports = HumidifierDevice;
-

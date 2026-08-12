@@ -103,6 +103,8 @@ for (const mfr of ['_TZE200_2imwyigp', '_TZE204_2imwyigp']) {
   });
 }
 report.push({ action: 'switch_3gang-drop-TS0203', removed: removePid('switch_3gang', 'TS0203') });
+// P125: contact must not advertise TS0601 (cartesian collision with switch_3gang dual-home)
+report.push({ action: 'contact_sensor-drop-TS0601', removed: removePid('contact_sensor', 'TS0601') });
 
 // 3) Soil hdml1aav
 {

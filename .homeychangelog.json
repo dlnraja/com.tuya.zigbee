@@ -1986,5 +1986,8 @@
   },
   "9.0.487": {
     "en": "P124: migrate thin bare ZigBee drivers, fix clrdrnya radar collision, LCD lux ZCL /100 scaling."
+  },
+  "9.0.488": {
+    "en": "P125: fix CI fingerprint collisions (xu4a5rhj/lawxy9e2/contact TS0601), migrate humidifier/dimmer/radiator/double_power_point."
   }
 }
