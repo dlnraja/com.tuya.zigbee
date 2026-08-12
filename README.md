@@ -38,6 +38,7 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 | Metric | Value |
 |--------|-------|
 | **App Version** | v9.0.485 |
+| **App Version** | v9.0.487 |
 | **Drivers** | 430 (380 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,365 |
 | **Pairing Variants** | 16,941 (4 case combos per fingerprint) |
@@ -107,6 +108,9 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 | Version | Changes |
 |---------|---------|
 | **v9.0.485** | Multi-source sweep: curtain/switch sacred fix, mmWave phantoms, EF00 generic safety, . |
+| **v9.0.487** | P123: migrate thin bare ZigBeeDevice drivers to TuyaZigbeeDevice, siren IAS via DeviceIOFacade, harden double-division gate. |
+| **v9.0.486** | P123: migrate thin bare ZigBeeDevice drivers to TuyaZigbeeDevice, siren IAS via DeviceIOFacade, harden double-division gate. |
+| **v9.0.485** | P123: migrate thin bare ZigBeeDevice drivers to TuyaZigbeeDevice, siren IAS via DeviceIOFacade, harden double-division gate. |
 | **v9.0.484** | Multi-source sweep: curtain/switch sacred fix, mmWave phantoms, EF00 generic safety, workflow harden. |
 | **v9.0.483** | Added Blakadder contact couples (n2egfsli, oxslv1c9, hdtmulpn, n8dljorx). |
 | **v9.0.482** | Enrich pass: dual-home sacred couples (contact/switch), soil/gas cleanup, multi-source re-apply, publish Test. |
