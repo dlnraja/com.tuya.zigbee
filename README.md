@@ -10,7 +10,7 @@
 [![SDK](https://img.shields.io/badge/SDK-3-orange)](https://apps.developer.homey.app/)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
-A community-driven Homey app that brings **local control** to Tuya Zigbee devices — no cloud, no internet needed. Covers switches, sensors, lights, thermostats, covers, locks and more across **430 drivers** and **4,365 unique device fingerprints** (16,943 including case variants for bulletproof pairing).
+A community-driven Homey app that brings **local control** to Tuya Zigbee devices — no cloud, no internet needed. Covers switches, sensors, lights, thermostats, covers, locks and more across **430 drivers** and **4,365 unique device fingerprints** (16,941 including case variants for bulletproof pairing).
 
 **Key features:**
 - **Local-only** — everything runs on your Homey, nothing goes to the cloud
@@ -37,10 +37,10 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.484 |
+| **App Version** | v9.0.485 |
 | **Drivers** | 430 (380 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,365 |
-| **Pairing Variants** | 16,943 (4 case combos per fingerprint) |
+| **Pairing Variants** | 16,941 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 573 |
 | **Flow Cards** | 4,954 |
 | **Unique Capabilities** | 170 |
@@ -49,14 +49,14 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 | **SVG Icons** | 730 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
-| **Last Updated** | 2026-08-11 |
+| **Last Updated** | 2026-08-12 |
 
 ### Top 20 Drivers by Fingerprint Count
 
 | # | Driver | Fingerprints |
 |---|--------|-------------|
 | 1 | `climate_sensor` | 2,660 |
-| 2 | `switch_1gang` | 1,812 |
+| 2 | `switch_1gang` | 1,804 |
 | 3 | `button_wireless_2` | 790 |
 | 4 | `presence_sensor_radar` | 714 |
 | 5 | `radiator_valve` | 601 |
@@ -106,7 +106,8 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 
 | Version | Changes |
 |---------|---------|
-| **v9.0.484** | Added Blakadder contact couples (n2egfsli, oxslv1c9, hdtmulpn, n8dljorx). |
+| **v9.0.485** | Multi-source sweep: curtain/switch sacred fix, mmWave phantoms, EF00 generic safety, . |
+| **v9.0.484** | Multi-source sweep: curtain/switch sacred fix, mmWave phantoms, EF00 generic safety, workflow harden. |
 | **v9.0.483** | Added Blakadder contact couples (n2egfsli, oxslv1c9, hdtmulpn, n8dljorx). |
 | **v9.0.482** | Enrich pass: dual-home sacred couples (contact/switch), soil/gas cleanup, multi-source re-apply, publish Test. |
 | **v9.0.481** | Hardened bed sensor settings/battery, IR learn stickiness, mains radar phantoms, CI unbound/double-division gates. |
@@ -117,7 +118,6 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 | **v9.0.473** | Stability improvements and Homey test publication retry. |
 | **v9.0.471** | v9.0.470: fix(P111): harden , timers, forum inbox bridge (v9.0.470) |
 | **v9.0.469** | v9.0.468: fix(P110): audit follow-up — time sync, MCU helper, battery DP, climate FP rehome (v9.0.468) |
-| **v9.0.467** | v9.0.466: fix: remove rebase conflict markers from version manifests (v9.0.466) |
 
 <!-- CHANGELOG_END -->
 
