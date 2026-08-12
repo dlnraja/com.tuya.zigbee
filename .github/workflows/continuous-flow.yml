@@ -246,6 +246,7 @@ jobs:
 
   post-comment:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     needs: enrich
     if: github.event_name == 'push' && needs.enrich.result == 'success'
     permissions:

@@ -28,6 +28,10 @@ concurrency:
   group: ai-monthly-audit
   cancel-in-progress: true
 
+defaults:
+  run:
+    shell: bash
+
 env:
   CACHE_FILE: .ai/KNOWLEDGE_CACHE.json
   REPORT_DIR: .ai/audit-reports

@@ -25,6 +25,10 @@ concurrency:
   group: build-error-diag
   cancel-in-progress: false
 
+defaults:
+  run:
+    shell: bash
+
 jobs:
   diagnose:
     name: 🔍 Extract real build error from dashboard

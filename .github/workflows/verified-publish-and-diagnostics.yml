@@ -95,6 +95,7 @@ jobs:
   analyze-diagnostics:
     name: 📧 Analyse des Crashs & Dump Emails
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     needs: verify-and-lint
     if: ${{ github.event.inputs.run_diagnostics == 'true' }}
     steps:
@@ -134,6 +135,7 @@ jobs:
   build-and-publish:
     name: 🚀 Build & Publish Test Channel
     runs-on: ubuntu-latest
+    timeout-minutes: 45
     needs: verify-and-lint
     steps:
       - name: Checkout Code

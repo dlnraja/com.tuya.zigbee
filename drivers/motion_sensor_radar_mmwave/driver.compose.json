@@ -9,21 +9,9 @@
   "capabilities": [
     "alarm_motion",
     "measure_luminance.distance",
-    "measure_temperature",
-    "measure_humidity",
     "measure_luminance",
-    "measure_battery",
     "button.1"
   ],
-  "energy": {
-    "batteries": [
-      "CR2032",
-      "CR2450",
-      "AAA",
-      "AA",
-      "CR123A"
-    ]
-  },
   "subDevices": [],
   "zigbee": {
     "manufacturerName": [
@@ -58,7 +46,13 @@
       "_tze204_1IBPYHON",
       "_tze284_0WFZACEL",
       "_tze284_ZY6WJM01",
-      "_tze284_GNPFLCOQ"
+      "_tze284_GNPFLCOQ",
+      "_TZE200_clrdrnya",
+      "_TZE204_clrdrnya",
+      "_TZE284_clrdrnya",
+      "_tze200_clrdrnya",
+      "_tze204_clrdrnya",
+      "_tze284_clrdrnya"
     ],
     "endpoints": {
       "1": {

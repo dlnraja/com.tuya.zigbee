@@ -163,6 +163,11 @@ const FORBIDDEN = [
     driver: 'climate_sensor',
     mfrs: ['_TYST11_fzo2pocs'],
   },
+  {
+    id: 'p122-fzo2pocs-not-switch1',
+    driver: 'switch_1gang',
+    mfrs: ['_TZE200_fzo2pocs', '_TZE204_fzo2pocs', '_TYST11_fzo2pocs'],
+  },
   // P102 lot3 — typed rehomes must never bounce back to generic / wrong class
   {
     id: 'p102-lot3-not-generic',
