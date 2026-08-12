@@ -1,11 +1,9 @@
 'use strict';
 
-const { ZigBeeDevice } = require('homey-zigbeedriver');
+const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
 const { CLUSTER } = require('zigbee-clusters');
 
-// Energy scaling divisors — this ZCL-only driver performs no raw attribute
-// scaling (pass-through = divisor 1); measure_power is approximated by Homey
-// and Tuya-DP drivers use smartDivisor: true via SmartDivisorManager.
+// Energy scaling divisors — ZCL pass-through (Homey approximation / SmartDivisor on DP paths)
 const ENERGY_DIVISORS = {
   measure_power: { divisor: 1 },
   meter_power: { divisor: 1 },
@@ -13,30 +11,36 @@ const ENERGY_DIVISORS = {
   measure_voltage: { divisor: 1 },
 };
 
-class doublepowerpoint2 extends ZigBeeDevice {
+/**
+ * P124 — TuyaZigbeeDevice (L14) + mainsPowered
+ */
+class doublepowerpoint2 extends TuyaZigbeeDevice {
+
+  get mainsPowered() { return true; }
 
   async onNodeInit({ zclNode }) {
-
+    await super.onNodeInit({ zclNode });
     this.printNode();
+
+    if (this.hasCapability('measure_battery')) {
+      await this.removeCapability('measure_battery').catch(() => {});
+    }
 
     const { subDeviceId } = this.getData();
     this.log('Device data: ', subDeviceId);
 
-    // Determine endpoint based on subDeviceId
     const endpoint = subDeviceId === 'socketTwo' ? 2 : 1;
 
-    // Register the onOff capability for the correct endpoint
     this.registerCapability('onoff', CLUSTER.ON_OFF, {
-      endpoint: endpoint,
+      endpoint,
       getOpts: {
-        getOnStart: true,   // Get current state on startup
-        getOnOnline: true,  // Get current state when the device comes online
-      }
+        getOnStart: true,
+        getOnOnline: true,
+      },
     });
 
     if (!this.isSubDevice()) {
       try {
-        // Read basic attributes for the first endpoint (main device)
         await zclNode.endpoints[1].clusters.basic.readAttributes(['manufacturerName', 'zclVersion', 'appVersion', 'modelId', 'powerSource', 'attributeReportingStatus']);
         this.log('Basic attributes read successfully');
       } catch (err) {
@@ -44,7 +48,6 @@ class doublepowerpoint2 extends ZigBeeDevice {
       }
     }
 
-    // Attempt to configure instant reporting for the onOff attribute
     try {
       await zclNode.endpoints[endpoint].clusters.onOff.configureReporting({
         attribute: 'onOff',
@@ -54,25 +57,20 @@ class doublepowerpoint2 extends ZigBeeDevice {
       });
       this.log('Configured instant reporting for onOff');
     } catch (error) {
-      // If reporting fails, log the error and set up fallback polling
       this.error('Failed to configure onOff reporting, setting up fallback polling', error);
-
-      // Set fallback polling for the onOff capability
       this.setCapabilityOptions('onoff', {
         getOpts: {
           getOnStart: true,
-          pollInterval: 60000, // Poll every 60 seconds as a fallback
+          pollInterval: 60000,
         },
       });
     }
-
   }
 
   onDeleted() {
-    super.onDeleted();
-    this.log(`Double Power Point removed`);
+    this.log('Double Power Point removed');
+    if (typeof super.onDeleted === 'function') super.onDeleted();
   }
-
 }
 
 module.exports = doublepowerpoint2;

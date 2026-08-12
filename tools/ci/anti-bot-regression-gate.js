@@ -168,6 +168,12 @@ const FORBIDDEN = [
     driver: 'switch_1gang',
     mfrs: ['_TZE200_fzo2pocs', '_TZE204_fzo2pocs', '_TYST11_fzo2pocs'],
   },
+  {
+    // P124: clrdrnya sacred couple stays on presence_sensor_radar only (not mmWave twin)
+    id: 'p124-clrdrnya-not-mmwave',
+    driver: 'motion_sensor_radar_mmwave',
+    mfrs: ['_TZE200_clrdrnya', '_TZE204_clrdrnya', '_TZE284_clrdrnya'],
+  },
   // P102 lot3 — typed rehomes must never bounce back to generic / wrong class
   {
     id: 'p102-lot3-not-generic',

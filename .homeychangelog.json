@@ -1983,5 +1983,8 @@
   },
   "9.0.486": {
     "en": "P123: migrate thin bare ZigBeeDevice drivers to TuyaZigbeeDevice, siren IAS via DeviceIOFacade, harden double-division gate."
+  },
+  "9.0.487": {
+    "en": "P124: migrate thin bare ZigBee drivers, fix clrdrnya radar collision, LCD lux ZCL /100 scaling."
   }
 }

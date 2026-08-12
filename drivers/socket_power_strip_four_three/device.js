@@ -1,36 +1,42 @@
 'use strict';
 
-const Homey = require('homey');
-const { ZigBeeDevice } = require('homey-zigbeedriver');
-const { debug, CLUSTER } = require('zigbee-clusters');
+const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
+const { CLUSTER } = require('zigbee-clusters');
 
-class socket_power_strip_four_three extends ZigBeeDevice {
-		
-	async onNodeInit({zclNode}) {
+/**
+ * P124 — TuyaZigbeeDevice (L14) + mainsPowered strip phantom battery
+ */
+class socket_power_strip_four_three extends TuyaZigbeeDevice {
 
-		this.printNode();
+  get mainsPowered() { return true; }
 
-        const { subDeviceId } = this.getData();
-        this.log("Device data: ", subDeviceId);
+  async onNodeInit({ zclNode }) {
+    await super.onNodeInit({ zclNode });
+    this.printNode();
 
-        this.registerCapability('onoff', CLUSTER.ON_OFF, {
-            endpoint: subDeviceId === 'socket2' ? 2 : subDeviceId === 'socket3' ? 3 : subDeviceId === 'socket4' ? 4 : 1,
+    if (this.hasCapability('measure_battery')) {
+      await this.removeCapability('measure_battery').catch(() => {});
+    }
+
+    const { subDeviceId } = this.getData();
+    this.log('Device data: ', subDeviceId);
+
+    this.registerCapability('onoff', CLUSTER.ON_OFF, {
+      endpoint: subDeviceId === 'socket2' ? 2 : subDeviceId === 'socket3' ? 3 : subDeviceId === 'socket4' ? 4 : 1,
+    });
+
+    if (!this.isSubDevice()) {
+      await zclNode.endpoints[1].clusters.basic.readAttributes(['manufacturerName', 'zclVersion', 'appVersion', 'modelId', 'powerSource', 'attributeReportingStatus'])
+        .catch((err) => {
+          this.error('Error when reading device attributes ', err);
         });
-
-        if (!this.isSubDevice()) {
-            await zclNode.endpoints[1].clusters.basic.readAttributes(['manufacturerName', 'zclVersion', 'appVersion', 'modelId', 'powerSource', 'attributeReportingStatus'])
-            .catch(err => {
-                this.error('Error when reading device attributes ', err);
-            });
-        }
-
+    }
   }
 
-	onDeleted(){
-	  super.onDeleted();
-		this.log("Power Strip removed")
-	}
-
+  onDeleted() {
+    this.log('Power Strip removed');
+    if (typeof super.onDeleted === 'function') super.onDeleted();
+  }
 }
 
 module.exports = socket_power_strip_four_three;

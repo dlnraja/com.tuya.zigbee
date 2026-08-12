@@ -99,29 +99,25 @@ for (const mfr of ['_TZE200_fzo2pocs', '_TZE204_fzo2pocs', '_TYST11_fzo2pocs']) 
   report.push({ action: 'curtain-drop-ZBMINI', removed: rem });
 }
 
-// 3) mmWave: strip phantom caps + add clrdrnya
+// 3) mmWave: strip phantom climate/battery caps (clrdrnya stays on presence_sensor_radar — P124)
 {
   const { f, j } = load('motion_sensor_radar_mmwave');
   const phantoms = new Set(['measure_temperature', 'measure_humidity', 'measure_battery']);
   const beforeCaps = (j.capabilities || []).length;
   j.capabilities = (j.capabilities || []).filter((c) => !phantoms.has(c));
   if (j.energy?.batteries) delete j.energy;
-  let added = 0;
+  // P124: remove any clrdrnya variants that may have been added earlier
+  const drop = new Set([
+    '_tze200_clrdrnya', '_tze204_clrdrnya', '_tze284_clrdrnya',
+  ]);
   j.zigbee = j.zigbee || {};
-  j.zigbee.manufacturerName = j.zigbee.manufacturerName || [];
-  for (const mfr of ['_TZE200_clrdrnya', '_TZE204_clrdrnya', '_TZE284_clrdrnya']) {
-    for (const v of variants(mfr)) {
-      if (!j.zigbee.manufacturerName.some((x) => String(x).toLowerCase() === v.toLowerCase())) {
-        j.zigbee.manufacturerName.push(v);
-        added += 1;
-      }
-    }
-  }
+  j.zigbee.manufacturerName = (j.zigbee.manufacturerName || []).filter(
+    (m) => !drop.has(String(m).toLowerCase()),
+  );
   save(f, j);
   report.push({
-    action: 'mmwave-phantoms-clrdrnya',
+    action: 'mmwave-phantoms-no-clrdrnya',
     capsRemoved: beforeCaps - (j.capabilities || []).length,
-    mfrAdded: added,
   });
 }
 

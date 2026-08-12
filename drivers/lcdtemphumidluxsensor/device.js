@@ -1,10 +1,13 @@
 'use strict';
 const ZclBatteryMonitor = require('../../lib/battery/ZclBatteryMonitor');
 
-const { ZigBeeDevice } = require('homey-zigbeedriver');
+const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
 const { Cluster, CLUSTER } = require('zigbee-clusters');
 
-class LcdTempHumidLuxSensor extends ZigBeeDevice {
+/**
+ * P124 — TuyaZigbeeDevice (L14); ZCL temp/humidity always /100
+ */
+class LcdTempHumidLuxSensor extends TuyaZigbeeDevice {
 
   _ensureMeasurementEndpoint(zclNode) {
     const endpoints = zclNode?.endpoints;
@@ -66,17 +69,15 @@ class LcdTempHumidLuxSensor extends ZigBeeDevice {
 
   async _setCapabilityIfPresent(capabilityId, value) {
     if (!this.hasCapability(capabilityId) || !Number.isFinite(value)) { return; }
-    const setter = typeof this.safeSetCapabilityValue === 'function'
-      ? this.safeSetCapabilityValue.bind(this)
-      : this.setCapabilityValue.bind(this);
     try {
-      await setter(capabilityId, value);
+      await this.safeSetCapabilityValue(capabilityId, value);
     } catch (err) {
       this.error(err);
     }
   }
 
   async onNodeInit({ zclNode }) {
+    await super.onNodeInit({ zclNode });
     ZclBatteryMonitor.attach(this, zclNode);
     this._zclNode = zclNode;
     const endpointTwo = this._ensureMeasurementEndpoint(zclNode);
@@ -104,8 +105,8 @@ class LcdTempHumidLuxSensor extends ZigBeeDevice {
 
     const temperatureCluster = endpointTwo?.clusters?.[CLUSTER.TEMPERATURE_MEASUREMENT.NAME];
     const humidityCluster = endpointTwo?.clusters?.[CLUSTER.RELATIVE_HUMIDITY_MEASUREMENT.NAME];
-    const illuminanceCluster = endpointOne.clusters?.[CLUSTER.ILLUMINANCE_MEASUREMENT.NAME];
-    const powerCluster = endpointOne.clusters?.[CLUSTER.POWER_CONFIGURATION.NAME];
+    const illuminanceCluster = endpointOne?.clusters?.[CLUSTER.ILLUMINANCE_MEASUREMENT.NAME];
+    const powerCluster = endpointOne?.clusters?.[CLUSTER.POWER_CONFIGURATION.NAME];
 
     this._bindAttribute(
       temperatureCluster,
@@ -137,9 +138,10 @@ class LcdTempHumidLuxSensor extends ZigBeeDevice {
     const raw = Number(measuredValue);
     if (!Number.isFinite(raw)) { return; }
     const temperatureOffset = Number(this.getSetting('temperature_offset')) || 0;
+    // ZCL TemperatureMeasurement is always centi-degrees (/100)
     const parsedValue = this.getSetting('temperature_decimals') === '2'
-      ? Math.round(raw) / 100
-      : Math.round(raw / 10) / 10;
+      ? Math.round((raw / 100) * 100) / 100
+      : Math.round((raw / 100) * 10) / 10;
     this.log('measure_temperature | temperatureMeasurement:', parsedValue, '+ offset', temperatureOffset);
     this._setCapabilityIfPresent('measure_temperature', parsedValue + temperatureOffset);
   }
@@ -148,9 +150,10 @@ class LcdTempHumidLuxSensor extends ZigBeeDevice {
     const raw = Number(measuredValue);
     if (!Number.isFinite(raw)) { return; }
     const humidityOffset = Number(this.getSetting('humidity_offset')) || 0;
+    // ZCL RelativeHumidity is always /100
     const parsedValue = this.getSetting('humidity_decimals') === '2'
-      ? Math.round(raw) / 100
-      : Math.round(raw / 10) / 10;
+      ? Math.round((raw / 100) * 100) / 100
+      : Math.round((raw / 100) * 10) / 10;
     this.log('measure_humidity | relativeHumidity:', parsedValue, '+ offset', humidityOffset);
     this._setCapabilityIfPresent('measure_humidity', parsedValue + humidityOffset);
   }
@@ -178,10 +181,8 @@ class LcdTempHumidLuxSensor extends ZigBeeDevice {
     this._setCapabilityIfPresent('measure_battery', batteryPercentage);
 
     if (this.hasCapability('alarm_battery')) {
-      const setter = typeof this.safeSetCapabilityValue === 'function'
-        ? this.safeSetCapabilityValue.bind(this)
-        : this.setCapabilityValue.bind(this);
-      setter('alarm_battery', batteryPercentage < batteryThreshold).catch((err) => this.error(err));
+      this.safeSetCapabilityValue('alarm_battery', batteryPercentage < batteryThreshold)
+        .catch((err) => this.error(err));
     }
   }
 
@@ -193,7 +194,7 @@ class LcdTempHumidLuxSensor extends ZigBeeDevice {
     }
     this._attributeBindings = [];
     this.log('LCD temperature, humidity and luminance sensor removed');
-    super.onDeleted();
+    if (typeof super.onDeleted === 'function') super.onDeleted();
   }
 
 }
