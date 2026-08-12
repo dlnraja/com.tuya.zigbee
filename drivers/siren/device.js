@@ -132,17 +132,23 @@ class SirenDevice extends UnifiedPlugBase {
     try { await this._sendTuyaDP(104, !!value, 'bool'); } catch (e) {}
     await super._setOnOff?.(value );
 
-    // Also trigger IAS WD if available
-    if (this._iasWd?.startWarning) {
-      try {
+    // Also trigger IAS WD if available (prefer DeviceIOFacade multi-path)
+    try {
+      if (this.io && typeof this.io.startWarning === 'function') {
+        if (value) {
+          await this.io.startWarning({ duration: 30, strobeDutyCycle: 50, strobeLevel: 1 });
+        } else {
+          await this.io.stopWarning();
+        }
+      } else if (this._iasWd?.startWarning) {
         await this._iasWd.startWarning({
           warningMode: value ? 1 : 0,
           warningDuration: value ? 30 : 0,
           strobeDutyCycle: value ? 50 : 0,
           strobeLevel: value ? 1 : 0
         });
-      } catch (e) { /* ignore */ }
-    }
+      }
+    } catch (e) { /* ignore */ }
   }
 
   async _sendTuyaDP(dp, value, type) {

@@ -1,6 +1,6 @@
 'use strict';
 
-const { ZigBeeDevice } = require('homey-zigbeedriver');
+const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
 
 // Energy scaling divisors — ZCL raw attributes; Tuya-DP drivers use smartDivisor: true via SmartDivisorManager
 const ENERGY_DIVISORS = {
@@ -11,15 +11,21 @@ const ENERGY_DIVISORS = {
 };
 
 /**
- * USB Dongle Triple (3-Port) - v5.8.73
+ * USB Dongle Triple (3-Port) - P123: TuyaZigbeeDevice + mainsPowered
  * Device: _TZ3000_mw1pqqqt / TS0003 (3-channel USB switch module)
- * Based on usb_dongle_dual_repeater pattern, extended for 3 ports
  * EP1 = USB Port 1 (onoff + energy), EP2 = USB Port 2, EP3 = USB Port 3
  */
-class UsbDongleTripleDevice extends ZigBeeDevice {
+class UsbDongleTripleDevice extends TuyaZigbeeDevice {
+
+  get mainsPowered() { return true; }
 
   async onNodeInit({ zclNode }) {
     await super.onNodeInit({ zclNode });
+
+    if (this.hasCapability('measure_battery')) {
+      await this.removeCapability('measure_battery').catch(() => {});
+    }
+
     // --- Attribute Reporting Configuration (auto-generated) ---
     try {
       await this.configureAttributeReporting([

@@ -1,6 +1,6 @@
 {
-  "updated": "2026-08-11T05:45:00.000Z",
-  "note": "Legacy bare ZigBeeDevice drivers still migrating to TuyaZigbeeDevice/Unified*. New drivers MUST NOT be added here. P120: smart_switch migrated off allowlist.",
+  "updated": "2026-08-12T11:30:00.000Z",
+  "note": "Legacy bare ZigBeeDevice drivers still migrating to TuyaZigbeeDevice/Unified*. New drivers MUST NOT be added here. P123: lcdtemphumidsensor_2, fan_controller, usb_dongle_triple, switch_temp_sensor migrated off allowlist.",
   "drivers": [
     "blaster_remote",
     "curtain_module",
@@ -9,10 +9,8 @@
     "dimmer_ts110e",
     "double_power_point",
     "double_power_point_2",
-    "fan_controller",
     "ir_blaster",
     "lcdtemphumidluxsensor",
-    "lcdtemphumidsensor_2",
     "led_controller_dimmable",
     "pir_mmwave_sensor",
     "power_clamp_meter",
@@ -21,8 +19,6 @@
     "smart_garden_irrigation_control",
     "socket_power_strip_four",
     "socket_power_strip_four_three",
-    "socket_power_strip_four_two",
-    "switch_temp_sensor",
-    "usb_dongle_triple"
+    "socket_power_strip_four_two"
   ]
 }

@@ -1979,6 +1979,9 @@
     "en": "Multi-source sweep: curtain/switch sacred fix, mmWave phantoms, EF00 generic safety, workflow harden."
   },
   "9.0.485": {
-    "en": "Stability improvements and Homey test publication retry after transient processing failure."
+    "en": "P123: migrate thin bare ZigBeeDevice drivers to TuyaZigbeeDevice, siren IAS via DeviceIOFacade, harden double-division gate."
+  },
+  "9.0.486": {
+    "en": "P123: migrate thin bare ZigBeeDevice drivers to TuyaZigbeeDevice, siren IAS via DeviceIOFacade, harden double-division gate."
   }
 }

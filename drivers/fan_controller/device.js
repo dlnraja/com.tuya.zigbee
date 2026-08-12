@@ -1,40 +1,41 @@
 'use strict';
 
-const { ZigBeeDevice } = require('homey-zigbeedriver');
+const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
 const { CLUSTER } = require('zigbee-clusters');
 
 /**
- * Fan Speed Controller Device
+ * Fan Speed Controller Device — P123: TuyaZigbeeDevice (L14) + mainsPowered
  *
- * Supports on/off and multi-speed control
  * DP mappings:
  * DP1: On/Off
  * DP3: Speed (0-4 typically: off, low, medium, high, turbo)
  * DP6: Mode (normal, sleep, natural, etc)
  */
-class FanControllerDevice extends ZigBeeDevice {
+class FanControllerDevice extends TuyaZigbeeDevice {
 
-  // v9.0.74: This device is mains-powered. Declare it so UnifiedBatteryHandler
-  // does not add a false measure_battery capability (fixes false-battery reports).
   get mainsPowered() { return true; }
 
   async onNodeInit({ zclNode }) {
     try {
       await super.onNodeInit({ zclNode });
       this.log('Fan Controller initializing...');
-      
+
       this._zclNode = zclNode;
-      
+
+      if (this.hasCapability('measure_battery')) {
+        await this.removeCapability('measure_battery').catch(() => {});
+      }
+
       if (this.hasCapability('onoff')) {
         this.registerCapability('onoff', CLUSTER.ON_OFF);
       }
       if (this.hasCapability('dim')) {
         this.registerCapability('dim', CLUSTER.LEVEL_CONTROL);
       }
-      
+
       await this._setupTuyaDP(zclNode);
       await this._registerFlowCards();
-      
+
       this.log('Fan Controller initialized');
     } catch (err) {
       this.error('Fan Controller initialization failed:', err.message);

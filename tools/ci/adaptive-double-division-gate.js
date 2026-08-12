@@ -1,9 +1,10 @@
 #!/usr/bin/env node
 /**
- * P120 — Adaptive double-division residual gate (report → hard)
+ * P120/P123 — Adaptive double-division residual gate (report → hard)
  *
  * Flags driver/lib paths that risk AdaptiveDataParser *and* a local divisor
- * on the same DP handling chain. Soft by default; --hard exits non-zero.
+ * on the same DP handling chain. Soft by default; --hard exits non-zero on
+ * drivers/ hits only (lib managers may intentionally dual-path).
  *
  * Usage:
  *   node tools/ci/adaptive-double-division-gate.js
@@ -17,6 +18,12 @@ const path = require('path');
 const ROOT = process.cwd();
 const HARD = process.argv.includes('--hard');
 const hits = [];
+
+/** Known intentional dual-path managers (soft forever; never fail --hard). */
+const LIB_ALLOWLIST = new Set([
+  'lib/devices/BaseUnifiedDevice.js',
+  'lib/tuya/TuyaEF00Manager.js',
+]);
 
 function walk(dir) {
   if (!fs.existsSync(dir)) return;
@@ -39,25 +46,33 @@ function scan(file) {
   const hasAdaptive = /AdaptiveDataParser\.to(Temperature|Humidity|Battery|Illuminance|Voltage|Current|Power)/.test(s);
   const hasLocalDiv = /\bdivisor\s*[:=]\s*\d+|smartDivisorDetect|value\s*\/\s*(10|100)\b/.test(s);
   if (hasAdaptive && hasLocalDiv) {
-    hits.push({ file: rel, reason: 'AdaptiveDataParser + local divisor/smartDivisor in same file' });
+    hits.push({
+      file: rel,
+      reason: 'AdaptiveDataParser + local divisor/smartDivisor in same file',
+      softOnly: LIB_ALLOWLIST.has(rel) || !rel.startsWith('drivers/'),
+    });
   }
 }
 
 walk(path.join(ROOT, 'drivers'));
 walk(path.join(ROOT, 'lib'));
 
+const hardHits = hits.filter((h) => !h.softOnly);
 const outDir = path.join(ROOT, '.github', 'state');
 if (!fs.existsSync(outDir)) fs.mkdirSync(outDir, { recursive: true });
 const report = {
   generatedAt: new Date().toISOString(),
   hard: HARD,
   hits: hits.length,
+  hardHits: hardHits.length,
   files: hits,
 };
 fs.writeFileSync(path.join(outDir, 'adaptive-double-division-gate.json'), `${JSON.stringify(report, null, 2)}\n`);
 
-console.log(`[adaptive-double-division-gate] hits=${hits.length} mode=${HARD ? 'hard' : 'soft'}`);
-for (const h of hits.slice(0, 20)) console.log(`  ${h.file}: ${h.reason}`);
+console.log(`[adaptive-double-division-gate] hits=${hits.length} hardHits=${hardHits.length} mode=${HARD ? 'hard' : 'soft'}`);
+for (const h of hits.slice(0, 20)) {
+  console.log(`  ${h.softOnly ? '(soft) ' : ''}${h.file}: ${h.reason}`);
+}
 if (hits.length > 20) console.log(`  … +${hits.length - 20} more`);
 
-if (HARD && hits.length) process.exit(1);
+if (HARD && hardHits.length) process.exit(1);

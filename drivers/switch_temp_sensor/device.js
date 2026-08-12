@@ -1,11 +1,11 @@
 'use strict';
 
-const { ZigBeeDevice } = require('homey-zigbeedriver');
+const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
 const { smartParse } = require('../../lib/managers/SmartDivisorManager');
 const { CLUSTER } = require('zigbee-clusters');
 
 /**
- * Switch with Temperature Sensor - v5.5.402 (Rolp forum fix)
+ * Switch with Temperature Sensor - P123: TuyaZigbeeDevice (L14) + mainsPowered
  *
  * Device: _TZ3218_7fiyo3kv / TS000F
  * Features: Switch + Temperature + Humidity sensor
@@ -29,18 +29,24 @@ const CLUSTER_TUYA_E002 = 57346;  // 0xE002 - Temperature/Humidity
 const CLUSTER_TEMP = 1026;        // 0x0402 - ZCL Temperature
 const CLUSTER_HUMIDITY = 1029;    // 0x0405 - ZCL Humidity
 
-class SwitchTempSensorDevice extends ZigBeeDevice {
+class SwitchTempSensorDevice extends TuyaZigbeeDevice {
+
+  get mainsPowered() { return true; }
 
   async onNodeInit({ zclNode }) {
     await super.onNodeInit({ zclNode });
     this.log('═══════════════════════════════════════════════════════════');
-    this.log('Switch with Temperature Sensor v5.5.402 (Rolp forum fix)');
+    this.log('Switch with Temperature Sensor (P123 L14)');
     this.log('═══════════════════════════════════════════════════════════');
     this.log('ManufacturerName:', this.getSetting('zb_manufacturer_name'));
     this.log('ModelId:', this.getSetting('zb_model_id'));
 
     // Store zclNode reference
     this.zclNode = zclNode;
+
+    if (this.hasCapability('measure_battery')) {
+      await this.removeCapability('measure_battery').catch(() => {});
+    }
 
     // Log available clusters for debugging
     this._logAvailableClusters(zclNode);
