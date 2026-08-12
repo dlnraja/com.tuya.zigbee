@@ -1977,5 +1977,8 @@
   },
   "9.0.484": {
     "en": "Multi-source sweep: curtain/switch sacred fix, mmWave phantoms, EF00 generic safety, workflow harden."
+  },
+  "9.0.485": {
+    "en": "Stability improvements and Homey test publication retry after transient processing failure."
   }
 }
