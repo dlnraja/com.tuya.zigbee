@@ -1,6 +1,13 @@
 {
   "changelog": [
     {
+      "version": "9.0.497",
+      "date": "2026-08-14",
+      "channel": "test",
+      "en": "Hardened TS004F remote routing against publish re-inject bot; remotes stay on 4-button driver.",
+      "fr": "Routage remotes TS004F renforce contre le re-inject bot a la publication; restent sur driver 4 boutons."
+    },
+    {
       "version": "9.0.496",
       "date": "2026-08-14",
       "channel": "test",

@@ -49,9 +49,10 @@ Recursive dump → cross-ref → fix → verify → ship after P128 (v9.0.495 on
 | #516 humidity | CLOSED (prior) |
 
 ## Version / publish
-- **v9.0.496** (this ship)
+- **v9.0.497** (recurse: publish failed because `re-inject-manual-fixes.js` still applied inverted P93 TS004F rules; flipped + re-shipped)
+- Prior attempt: v9.0.496 (`2a737b8a8`) — Unified CI green; Auto-Publish failed on anti-bot after reinject
 - Test install: https://homey.app/a/com.dlnraja.tuya.zigbee/test/
-- Dispatch: `auto-publish-on-push.yml` on `master` after push
+- Publish run (recurse): dispatch after push of v9.0.497
 
 ## Deferrals
 - `ir_blaster`, `smartPlug_DinRail` bare leftovers (fat)

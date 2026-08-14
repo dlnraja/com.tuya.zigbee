@@ -4,6 +4,13 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
+## v9.0.497 (2026-08-14)
+
+### Fixed
+- **Publish re-inject**: flipped inverted P93 rules that stripped Moes/Lidl TS004F remotes from `button_wireless_4` during auto-publish (anti-bot now matches Z2M/ZHA).
+
+---
+
 ## v9.0.496 (2026-08-14)
 
 ### Fixed
