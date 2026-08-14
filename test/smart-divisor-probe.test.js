@@ -58,6 +58,24 @@ describe('SmartDivisorManager — measure_temperature.probe (issue #513)', () =>
     assert.strictEqual(result.correction, null);
   });
 
+  it('hot-water raw 550 → 55°C via smartParse (DP38)', () => {
+    clearDivisorCache();
+    const val = smartParse(550, 38, {
+      manufacturerName: MFR,
+      capability: 'measure_temperature.probe',
+      deviceId: 'test-probe-hot',
+    });
+    assert.strictEqual(val, 55);
+  });
+
+  it('validator prefers ÷10 for raw 550 (55°C), not ÷100 (5.5°C)', () => {
+    const result = ProductValueValidator.validateAndCorrect(
+      550, 'measure_temperature.probe', 'climate_sensor'
+    );
+    assert.strictEqual(result.correctedValue, 55);
+    assert.strictEqual(result.divisorApplied, 10);
+  });
+
   it('does not regress internal temperature (DP1)', () => {
     clearDivisorCache();
     const val = smartParse(215, 1, {

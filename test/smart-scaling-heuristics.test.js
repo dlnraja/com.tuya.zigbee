@@ -99,4 +99,16 @@ describe('ProductValueValidator — smallest plausible divisor', () => {
     const after = ProductValueValidator.PRODUCT_RULES.climate_sensor['measure_temperature.probe'].possibleDivisors;
     assert.deepStrictEqual(after, before);
   });
+
+  it('hot-water probe raw 530 → 53°C (÷10), not 5.3 (÷100) — GH #513', () => {
+    const r = ProductValueValidator.validateAndCorrect(530, 'measure_temperature.probe', 'climate_sensor');
+    assert.strictEqual(r.correctedValue, 53);
+    assert.strictEqual(r.divisorApplied, 10);
+  });
+
+  it('already-scaled 53°C is left untouched', () => {
+    const r = ProductValueValidator.validateAndCorrect(53, 'measure_temperature.probe', 'climate_sensor');
+    assert.strictEqual(r.correctedValue, 53);
+    assert.strictEqual(r.correction, null);
+  });
 });

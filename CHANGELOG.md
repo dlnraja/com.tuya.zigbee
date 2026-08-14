@@ -4,6 +4,13 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
+## v9.0.494 (2026-08-14)
+
+### Fixed
+- **GH #513 ZT08 / `_TZE284_hodyryli`**: probe and indoor temperatures above ~50°C were shown ÷10 (53°C → 5.3°C) because ProductValueValidator preferred the indoor-typical max of 50. Smallest in-range divisor wins; hot-water probes keep ×10. DP3 `battery_state` enum 0/1/2 now maps to 10/50/100% (was 2% vs 100%).
+
+---
+
 ## v9.0.388 (2026-07-31)
 
 ### Fixed

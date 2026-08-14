@@ -2,6 +2,9 @@
 
 const UnifiedSensorBase = require('../../lib/devices/UnifiedSensorBase');
 const { ClimateInference, BatteryInference } = require('../../lib/IntelligentSensorInference');
+const { containsCI } = require('../../lib/utils/CaseInsensitiveMatcher');
+
+const BATTERY_STATE_ENUM = { 0: 10, 1: 50, 2: 100 };
 
 /**
  * Climate Sensor Device - v8.0.0 MODERNIZED
@@ -15,9 +18,11 @@ class ClimateSensorDevice extends UnifiedSensorBase {
     // Initialize specialized climate inference (psychrometric validation)
     this._climateInference = new ClimateInference(this, {
       maxTempJump: 5,
-      maxHumidityJump: 15
+      maxHumidityJump: 15,
+      minTemp: -40,
+      maxTemp: 100
     });
-    
+
     this._batteryInference = new BatteryInference(this);
 
     // Parent handles standard sensor logic and v8 discovery initialization
@@ -26,14 +31,25 @@ class ClimateSensorDevice extends UnifiedSensorBase {
     this.log('[CLIMATE] ✅ Ready');
   }
 
+  _manufacturerName() {
+    try {
+      const MfrHelper = require('../../lib/helpers/ManufacturerNameHelper');
+      const m = MfrHelper.getManufacturerName(this);
+      if (m) {return m;}
+    } catch (_) { /* optional */ }
+    return this.getManufacturerName?.()
+      || this.getSetting?.('zb_manufacturer_name')
+      || this.getStoreValue?.('manufacturerName')
+      || '';
+  }
+
   get sensorCapabilities() {
     return ['measure_temperature', 'measure_humidity', 'measure_battery', 'measure_voltage', 'measure_luminance'];
   }
 
   get dpMappings() {
-    // Device-specific DP overrides for luminance-only sensors
-    const mfr = this.getManufacturerName?.() || '';
-    if (mfr.includes('AAEASOLL') || mfr.includes('aaeasoll')) {
+    const mfr = this._manufacturerName();
+    if (containsCI(mfr, 'AAEASOLL')) {
       return {
         2: { capability: 'measure_luminance', divisor: 1 },
         3: { capability: 'measure_battery', divisor: 1 },
@@ -41,9 +57,20 @@ class ClimateSensorDevice extends UnifiedSensorBase {
       };
     }
 
+    // ZT08 / _TZE284_hodyryli (GH #513): Z2M datapoints
+    // DP1 temp×10, DP2 humidity raw 0-100, DP3 battery_state 0/1/2 → 10/50/100, DP38 probe×10
+    if (containsCI(mfr, 'hodyryli')) {
+      return {
+        1: { capability: 'measure_temperature', smartDivisor: true, useInference: true },
+        2: { capability: 'measure_humidity', smartDivisor: true, useInference: true },
+        3: { capability: 'measure_battery', transform: (v) => BATTERY_STATE_ENUM[Number(v)] ?? v },
+        38: { capability: 'measure_temperature.probe', smartDivisor: true, dynamicAdd: true }
+      };
+    }
+
     return {
       1: { capability: 'measure_temperature', smartDivisor: true, useInference: true },
-      2: { capability: 'measure_humidity', divisor: 1, useInference: true },
+      2: { capability: 'measure_humidity', smartDivisor: true, useInference: true },
       3: { capability: 'measure_battery', divisor: 1 },
       4: { capability: 'measure_battery', divisor: 1 },
       5: { capability: 'measure_luminance', divisor: 1 },
@@ -69,10 +96,12 @@ class ClimateSensorDevice extends UnifiedSensorBase {
           .catch((e) => this.log(`[CLIMATE] ⚠️ Could not add ${mapping.capability}: ${e.message}`));
       }
       let val;
-      if (mapping.smartDivisor === true) {
+      if (typeof mapping.transform === 'function') {
+        val = mapping.transform(value);
+      } else if (mapping.smartDivisor === true) {
         const { smartParse } = require('../../lib/managers/SmartDivisorManager');
         val = smartParse(value, dpId, {
-          manufacturerName: this.getSetting('zb_manufacturer_name') || '',
+          manufacturerName: this.getSetting('zb_manufacturer_name') || this._manufacturerName() || '',
           capability: mapping.capability,
           deviceId: this.getData()?.id || '',
         });
