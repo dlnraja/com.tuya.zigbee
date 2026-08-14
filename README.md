@@ -38,6 +38,7 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 | Metric | Value |
 |--------|-------|
 | **App Version** | v9.0.499 |
+| **App Version** | v9.0.500 |
 | **Drivers** | 430 (380 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,366 |
 | **Pairing Variants** | 16,917 (4 case combos per fingerprint) |
@@ -107,6 +108,8 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 | Version | Changes |
 |---------|---------|
 | **v9.0.499** | v9.0.497: fix(P129b): stop publish reinject from stripping TS004F remotes (v9.0.497) |
+| **v9.0.500** | P131: patch missing actuator flow registerRunListener on 21 drivers; fan_controller flow ownership fix. |
+| **v9.0.499** | P131: patch missing actuator flow registerRunListener on 21 drivers; fan_controller flow ownership fix. |
 | **v9.0.498** | v9.0.497: fix(P129b): stop publish reinject from stripping TS004F remotes (v9.0.497) |
 | **v9.0.496** | v9.0.496: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.495** | P128: climate probe temps above ~50C no longer shown 10x too low; ZT08 battery_state 0/1/2 maps to 10/50/100% (GH#513). |
