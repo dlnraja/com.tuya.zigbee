@@ -1,7 +1,7 @@
 # Weekly Sovereign Loop
 
-Generated: 2026-08-14T14:18:20.069Z
-Version: **9.0.505** · Branch: `master`
+Generated: 2026-08-14T14:35:50.476Z
+Version: **9.0.506** · Branch: `master`
 
 ## Quota policy
 - Cursor Automation = thin weekly brain (read report → bounded reliability fixes)
@@ -20,6 +20,7 @@ Version: **9.0.505** · Branch: `master`
 - HTTP: **200** OK
 
 ## Recent workflow runs
+- [in_progress] Weekly Sovereign Loop (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/31810271224
 - [success] Fetch Homey Diagnostics (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/31806485193
 - [success] Autonomous Verification (P37) (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/31806246794
 - [success] 🤖 Auto-Fix + Publish Pipeline (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/31804739401
@@ -27,7 +28,6 @@ Version: **9.0.505** · Branch: `master`
 - [success] 🩹 Publish Self-Heal (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/31802412649
 - [failure] 🔍 Validate Homey App (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/31801173136
 - [success] Gmail Diagnostics Auto-Analysis (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/31800915804
-- [skipped] Auto-Reopen on Comment (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/31799148388
 
 ## Open issues
 - #513 Bug report - Zigbee Climate sensor not installing
