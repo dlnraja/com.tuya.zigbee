@@ -4,13 +4,13 @@
 
 [![Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdlnraja%2Fcom.tuya.zigbee%2Fmaster%2Fapp.json&query=%24.version&label=version&color=blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![Drivers](https://img.shields.io/badge/drivers-431-brightgreen)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
-[![Fingerprints](https://img.shields.io/badge/fingerprints-4,365%20unique-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
+[![Fingerprints](https://img.shields.io/badge/fingerprints-4,368%20unique-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![Flow Cards](https://img.shields.io/badge/flow%20cards-4,954-blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![Native OTA](https://img.shields.io/badge/native%20OTA-6%20drivers-orange)](docs/P92_70_HOMEY_2026_OTA_NATIVE.md)
 [![SDK](https://img.shields.io/badge/SDK-3-orange)](https://apps.developer.homey.app/)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
-A community-driven Homey app that brings **local control** to Tuya Zigbee devices — no cloud, no internet needed. Covers switches, sensors, lights, thermostats, covers, locks and more across **431 drivers** and **4,365 unique device fingerprints** (16,915 including case variants for bulletproof pairing).
+A community-driven Homey app that brings **local control** to Tuya Zigbee devices — no cloud, no internet needed. Covers switches, sensors, lights, thermostats, covers, locks and more across **431 drivers** and **4,368 unique device fingerprints** (16,958 including case variants for bulletproof pairing).
 
 **Key features:**
 - **Local-only** — everything runs on your Homey, nothing goes to the cloud
@@ -37,10 +37,10 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.503 |
+| **App Version** | v9.0.505 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
-| **Unique Fingerprints** | 4,365 |
-| **Pairing Variants** | 16,915 (4 case combos per fingerprint) |
+| **Unique Fingerprints** | 4,368 |
+| **Pairing Variants** | 16,958 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 573 |
 | **Flow Cards** | 4,954 |
 | **Unique Capabilities** | 170 |
@@ -55,7 +55,7 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 
 | # | Driver | Fingerprints |
 |---|--------|-------------|
-| 1 | `climate_sensor` | 2,644 |
+| 1 | `climate_sensor` | 2,681 |
 | 2 | `switch_1gang` | 1,800 |
 | 3 | `button_wireless_2` | 788 |
 | 4 | `presence_sensor_radar` | 714 |
@@ -67,7 +67,7 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 | 10 | `curtain_motor` | 292 |
 | 11 | `switch_4gang` | 262 |
 | 12 | `switch_2gang` | 228 |
-| 13 | `switch_3gang` | 216 |
+| 13 | `switch_3gang` | 218 |
 | 14 | `motion_sensor` | 210 |
 | 15 | `diy_custom_zigbee` | 206 |
 | 16 | `water_leak_sensor_tuya` | 194 |
@@ -106,6 +106,8 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.505** | Added community climate/motion/switch fingerprints from monthly sync; ZT08 stays on dedicated driver. |
+| **v9.0.504** | Added community climate/motion/switch fingerprints from monthly sync; ZT08 stays on dedicated driver. |
 | **v9.0.503** | Dedicated ZT08 climate driver for pairing (#513), DIN rail plug on hardened base. |
 | **v9.0.502** | Maintenance bump. |
 | **v9.0.501** | Improved sensor flow conditions and actuator Homey UI classes. Hybrid heater flows use capability listeners. |
@@ -116,8 +118,6 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 | **v9.0.495** | P128: climate probe temps above ~50C no longer shown 10x too low; ZT08 battery_state 0/1/2 maps to 10/50/100% (GH#513). |
 | **v9.0.494** | P128: climate probe temps above ~50C no longer shown 10x too low; ZT08 battery_state 0/1/2 maps to 10/50/100% (GH#513). |
 | **v9.0.493** | P127: humidity X10 fix (GH#516), fingerprints sacred-couple repair, thin bare ZigBee migrations, anti-bot+Unified CI gates |
-| **v9.0.492** | P127: humidity X10 fix (GH#516), fingerprints sacred-couple repair, thin bare ZigBee migrations, anti-bot+Unified CI gates |
-| **v9.0.491** | P126: boiler flow listeners (CI), iadro9bf presence-only, DIN meter+curtain TuyaZigbeeDevice + energy divisor fixes. |
 
 <!-- CHANGELOG_END -->
 
