@@ -1,6 +1,14 @@
 {
+  "9.0.502": {
+    "en": "Improved sensor flow conditions and actuator Homey UI classes. Hybrid heater flows use capability listeners.",
+    "fr": "Amélioration des conditions Flow capteurs et des classes UI actionneurs."
+  },
+  "9.0.501": {
+    "en": "Improved sensor flow conditions and actuator Homey UI classes. Hybrid heater flows use capability listeners.",
+    "fr": "Amélioration des conditions Flow capteurs et des classes UI actionneurs. Flows chauffage hybride via listeners de capacités."
+  },
   "9.0.500": {
-    "en": "Improved lock flow TX path, multi-gang onoff resolution, thermostat temp UI range, and flow-handler heuristics."
+    "en": "P131: patch missing actuator flow registerRunListener on 21 drivers; fan_controller flow ownership fix."
   },
   "changelog": [
     {
@@ -2035,9 +2043,6 @@
     "en": "v9.0.497: fix(P129b): stop publish reinject from stripping TS004F remotes (v9.0.497)"
   },
   "9.0.499": {
-    "en": "P131: patch missing actuator flow registerRunListener on 21 drivers; fan_controller flow ownership fix."
-  },
-  "9.0.500": {
     "en": "P131: patch missing actuator flow registerRunListener on 21 drivers; fan_controller flow ownership fix."
   }
 }
