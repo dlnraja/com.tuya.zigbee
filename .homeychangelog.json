@@ -2046,5 +2046,8 @@
   },
   "9.0.503": {
     "en": "Dedicated ZT08 climate driver for pairing (#513), DIN rail plug on hardened base."
+  },
+  "9.0.504": {
+    "en": "Added community climate/motion/switch fingerprints from monthly sync; ZT08 stays on dedicated driver."
   }
 }
