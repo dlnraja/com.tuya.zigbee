@@ -1,4 +1,4 @@
-# 📥 Community Inbox — 2026-08-14 06:42 UTC
+# 📥 Community Inbox — 2026-08-14 09:58 UTC
 
 Généré par `.github/scripts/community-inbox-digest.js` (workflow `community-inbox.yml`).
 
@@ -10,7 +10,7 @@ Généré par `.github/scripts/community-inbox-digest.js` (workflow `community-i
 
 ## 🔴 Issues à traiter
 
-- [#513](https://github.com/dlnraja/com.tuya.zigbee/issues/513) — Bug report - Zigbee Climate sensor not installing _(🔴 escaladé, maj 2026-08-13)_
+- [#513](https://github.com/dlnraja/com.tuya.zigbee/issues/513) — Bug report - Zigbee Climate sensor not installing _(🔴 escaladé, maj 2026-08-14)_
 
 ## 🌍 Forum — posts sans réponse
 
