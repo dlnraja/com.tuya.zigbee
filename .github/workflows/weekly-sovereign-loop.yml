@@ -1,0 +1,105 @@
+# Weekly Sovereign Loop (P136) — quota-safe autopilot backbone
+# Heavy work on GitHub Actions free minutes. Cursor Automation (weekly) only reads the report
+# and applies bounded reliability fixes — does NOT re-run mega crawls.
+
+name: Weekly Sovereign Loop
+
+on:
+  schedule:
+    # Sundays 06:00 UTC — once/week, staggered from daily mega-crawl (02:00) / P32 (03:30)
+    - cron: '0 6 * * 0'
+  workflow_dispatch:
+    inputs:
+      dispatch_sources:
+        description: 'Also dispatch mega-crawl / gmail / forum / triage / publish-diagnose / safe-sync / self-improve'
+        type: boolean
+        default: true
+
+concurrency:
+  group: weekly-sovereign-loop
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  actions: write
+  issues: read
+  pull-requests: read
+  checks: read
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  sovereign:
+    name: Weekly loop + report
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Checkout
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
+        with:
+          node-version: '22'
+
+      - name: Ensure state dirs
+        run: mkdir -p .github/state reports
+
+      - name: Run weekly sovereign loop
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # Prefer GH_PAT for workflow_dispatch of other workflows when available
+          GH_PAT: ${{ secrets.GH_PAT }}
+        run: |
+          if [ -n "${GH_PAT:-}" ]; then
+            export GH_TOKEN="$GH_PAT"
+          fi
+          ARGS=""
+          if [ "${{ github.event_name }}" = "schedule" ] || [ "${{ inputs.dispatch_sources }}" = "true" ]; then
+            ARGS="--dispatch"
+          fi
+          # Soft-fail overall so the report always uploads; Cursor brain reads recommendations
+          set +e
+          node tools/ci/weekly-sovereign-loop.js $ARGS
+          CODE=$?
+          set -e
+          echo "loop_exit=$CODE" >> "$GITHUB_OUTPUT"
+          exit 0
+        id: loop
+
+      - name: Upload weekly report
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: weekly-sovereign-loop
+          path: |
+            reports/WEEKLY_SOVEREIGN_LOOP.md
+            .github/state/weekly-sovereign-loop.json
+          if-no-files-found: warn
+
+      - name: Commit report if changed
+        continue-on-error: true
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add reports/WEEKLY_SOVEREIGN_LOOP.md .github/state/weekly-sovereign-loop.json || true
+          if git diff --cached --quiet; then
+            echo "No report changes"
+            exit 0
+          fi
+          git pull --rebase origin master || true
+          git commit -m "chore(P136): weekly sovereign loop report [skip ci]"
+          git push origin HEAD:master || true
+
+      - name: Summary
+        run: |
+          {
+            echo "## Weekly Sovereign Loop"
+            echo ""
+            if [ -f reports/WEEKLY_SOVEREIGN_LOOP.md ]; then
+              head -n 80 reports/WEEKLY_SOVEREIGN_LOOP.md
+            else
+              echo "Report missing"
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
