@@ -1,8 +1,6 @@
 # Weekly Sovereign Loop
 
-Generated: 2026-08-14T15:43:06.009Z
-Generated: 2026-08-14T15:24:31.435Z
-Generated: 2026-08-14T15:21:54.510Z
+Generated: 2026-08-14T15:53:38.131Z
 Version: **9.0.506** · Branch: `master`
 
 ## Quota policy
@@ -21,33 +19,30 @@ Version: **9.0.506** · Branch: `master`
 - URL: https://homey.app/a/com.dlnraja.tuya.zigbee/test/
 - HTTP: **200** OK
 
+## Dispatches
+- ❌ `mega-crawl.yml` — workflow not found
+- ❌ `gmail-diagnostics.yml` — workflow not found
+- ❌ `forum-poll.yml` — workflow not found
+- ❌ `auto-bot-issue-triage.yml` — workflow not found
+- ❌ `publish-diagnose.yml` — workflow not found
+- ❌ `safe-sync-stable.yml` — workflow not found
+- ❌ `self-improve.yml` — workflow not found
+
 ## Recent workflow runs
-- [in_progress] Weekly Sovereign Loop (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/31815844453
-- [success] 🔄 Self-Improve (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/31814356540
-- [success] Safe Sync master → stable-v5 (P52) (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/31814354924
-- [success] 🔬 Publish Diagnose (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/31814352922
-- [success] Auto Bot Issue Triage (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/31814350997
-- [success] 🌍 Forum Poll (P69) (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/31814348921
-- [success] Gmail Diagnostics Auto-Analysis (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/31814347082
-- [in_progress] 🕷️ Mega Crawler (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/31814345344
-- [in_progress] Weekly Sovereign Loop (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/31814314445
-- [success] 🌍 Forum Poll (P69) (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/31812925202
-- [success] 🔄 Self-Improve (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/31810306083
-- [success] Safe Sync master → stable-v5 (P52) (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/31810304446
-- [success] 🔬 Publish Diagnose (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/31810302742
-- [success] Auto Bot Issue Triage (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/31810300986
-- [success] 🌍 Forum Poll (P69) (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/31810299189
-- [success] Gmail Diagnostics Auto-Analysis (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/31810297560
-- [success] 🕷️ Mega Crawler (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/31810295897
-- [success] Weekly Sovereign Loop (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/31810271224
-- [success] Fetch Homey Diagnostics (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/31806485193
+- [in_progress] Weekly Sovereign Loop (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/31816453009
+- [success] 🔄 Self-Improve (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/31815985791
+- [success] Safe Sync master → stable-v5 (P52) (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/31815984235
+- [success] 🔬 Publish Diagnose (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/31815982689
+- [success] Auto Bot Issue Triage (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/31815981162
+- [success] 🌍 Forum Poll (P69) (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/31815979470
+- [in_progress] Gmail Diagnostics Auto-Analysis (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/31815977846
+- [pending] 🕷️ Mega Crawler (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/31815976100
+- [success] Weekly Sovereign Loop (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/31815951427
+- [success] 🔄 Self-Improve (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/31815887856
 
 ## Publish / validate related
-- [success] 🔬 Publish Diagnose — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/31810302742
-- [success] Fetch Homey Diagnostics — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/31806485193
-- [success] 🤖 Auto-Fix + Publish Pipeline — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/31804739401
-- [success] 🩹 Publish Self-Heal — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/31802412649
-- [failure] 🔍 Validate Homey App — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/31801173136
+- [success] 🔬 Publish Diagnose — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/31815982689
+- [success] 🔬 Publish Diagnose — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/31815883513
 
 ## Open issues
 - #513 Bug report - Zigbee Climate sensor not installing
@@ -58,6 +53,7 @@ Version: **9.0.506** · Branch: `master`
 ## Cursor brain — do this week (max)
 - **P1**: Human issues remain open — verify FP/runtime fixes silently; do not mass-close needs-maintainer.
   - #513 Bug report - Zigbee Climate sensor not installing
+- **P1**: Some workflow dispatches failed (check GH_PAT / workflow names): mega-crawl.yml, gmail-diagnostics.yml, forum-poll.yml, auto-bot-issue-triage.yml, publish-diagnose.yml, safe-sync-stable.yml, self-improve.yml
 
 ## Hard stops
 - Do NOT paste unchecked AI to Homey forum
