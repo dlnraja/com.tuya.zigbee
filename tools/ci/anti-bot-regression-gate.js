@@ -42,11 +42,17 @@ function hasPid(compose, pid) {
 
 /** Forbidden placements: driver must NOT contain these mfrs (case-insensitive). */
 const FORBIDDEN = [
-  // P90/P93: bot put metering/button mfrs on 4-button remote
+  // P129: TS004F remotes must NOT live on 1-gang switch catch-all
   {
-    id: 'p93-button4-bot-mfrs',
-    driver: 'button_wireless_4',
+    id: 'p129-ts004f-not-switch1',
+    driver: 'switch_1gang',
     mfrs: ['_TZ3000_xabckq1v', '_TZ3000_czuyt8lz', '_TZ3000_b3mgfu0d', '_TZ3000_abrsvsou', '_TZ3000_4fjiwweb'],
+  },
+  // P133 / GH #513: ZT08 LCD climate uses thin dedicated driver
+  {
+    id: 'p133-hodyryli-not-climate',
+    driver: 'climate_sensor',
+    mfrs: ['_TZE284_hodyryli'],
   },
   // Forum #2131: relay fingerprint must not stay on switch_4gang
   {
@@ -173,10 +179,23 @@ const FORBIDDEN_PIDS = [
 
 /** Required placements (must be present). */
 const REQUIRED = [
+  // P129: sacred couples are mfr+TS004F → button_wireless_4
   {
-    id: 'p93-sacred-switch1',
-    driver: 'switch_1gang',
-    mfrs: ['_TZ3000_xabckq1v', '_TZ3000_czuyt8lz'],
+    id: 'p129-ts004f-btn4',
+    driver: 'button_wireless_4',
+    mfrs: [
+      '_TZ3000_xabckq1v',
+      '_TZ3000_czuyt8lz',
+      '_TZ3000_b3mgfu0d',
+      '_TZ3000_abrsvsou',
+      '_TZ3000_4fjiwweb',
+    ],
+  },
+  // P133 / GH #513
+  {
+    id: 'p133-hodyryli-zt08',
+    driver: 'climate_sensor_zt08',
+    mfrs: ['_TZE284_hodyryli'],
   },
   {
     id: 'p94-w5xztuy7-switch2',

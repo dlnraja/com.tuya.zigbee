@@ -1,0 +1,59 @@
+{
+  "id": "climate_sensor_zt08",
+  "name": {
+    "en": "ZT08 Climate Sensor (LCD)",
+    "fr": "Capteur climatique ZT08 (LCD)",
+    "nl": "ZT08 klimaatsensor (LCD)",
+    "de": "ZT08 Klimasensor (LCD)"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "measure_temperature",
+    "measure_humidity",
+    "measure_battery",
+    "button.1"
+  ],
+  "capabilitiesOptions": {
+    "measure_temperature.probe": {
+      "title": {
+        "en": "Probe Temperature",
+        "fr": "Température Sonde",
+        "nl": "Sonde Temperatuur",
+        "de": "Sondentemperatur"
+      }
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  },
+  "energy": {
+    "batteries": ["AAA", "CR2032", "CR2450"]
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_TZE284_hodyryli",
+      "_TZE284_HODYRYLI",
+      "_tze284_hodyryli",
+      "_tze284_HODYRYLI"
+    ],
+    "productId": ["TS0601"],
+    "endpoints": {
+      "1": {
+        "clusters": [0, 4, 5, 61184, 60672],
+        "bindings": [61184]
+      }
+    }
+  },
+  "images": {
+    "small": "/drivers/climate_sensor_zt08/assets/images/small.png",
+    "large": "/drivers/climate_sensor_zt08/assets/images/large.png"
+  },
+  "platforms": ["local"],
+  "connectivity": ["zigbee"]
+}
