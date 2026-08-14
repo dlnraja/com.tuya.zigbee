@@ -10,8 +10,6 @@
 [![SDK](https://img.shields.io/badge/SDK-3-orange)](https://apps.developer.homey.app/)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
-A community-driven Homey app that brings **local control** to Tuya Zigbee devices — no cloud, no internet needed. Covers switches, sensors, lights, thermostats, covers, locks and more across **430 drivers** and **4,365 unique device fingerprints** (16,935 including case variants for bulletproof pairing).
-A community-driven Homey app that brings **local control** to Tuya Zigbee devices — no cloud, no internet needed. Covers switches, sensors, lights, thermostats, covers, locks and more across **430 drivers** and **4,366 unique device fingerprints** (16,925 including case variants for bulletproof pairing).
 A community-driven Homey app that brings **local control** to Tuya Zigbee devices — no cloud, no internet needed. Covers switches, sensors, lights, thermostats, covers, locks and more across **430 drivers** and **4,366 unique device fingerprints** (16,921 including case variants for bulletproof pairing).
 
 **Key features:**
@@ -39,14 +37,8 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.491 |
+| **App Version** | v9.0.493 |
 | **Drivers** | 430 (380 Zigbee + 50 WiFi) |
-| **Unique Fingerprints** | 4,365 |
-| **Pairing Variants** | 16,935 (4 case combos per fingerprint) |
-| **App Version** | v9.0.489 |
-| **Drivers** | 430 (380 Zigbee + 50 WiFi) |
-| **Unique Fingerprints** | 4,366 |
-| **Pairing Variants** | 16,925 (4 case combos per fingerprint) |
 | **Unique Fingerprints** | 4,366 |
 | **Pairing Variants** | 16,921 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 573 |
@@ -57,13 +49,12 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 | **SVG Icons** | 730 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
-| **Last Updated** | 2026-08-12 |
+| **Last Updated** | 2026-08-14 |
 
 ### Top 20 Drivers by Fingerprint Count
 
 | # | Driver | Fingerprints |
 |---|--------|-------------|
-| 1 | `climate_sensor` | 2,652 |
 | 1 | `climate_sensor` | 2,648 |
 | 2 | `switch_1gang` | 1,804 |
 | 3 | `button_wireless_2` | 790 |
@@ -115,10 +106,8 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 
 | Version | Changes |
 |---------|---------|
-| **v9.0.485** | Multi-source sweep: curtain/switch sacred fix, mmWave phantoms, EF00 generic safety, . |
-| **v9.0.487** | P123: migrate thin bare ZigBeeDevice drivers to TuyaZigbeeDevice, siren IAS via DeviceIOFacade, harden double-division gate. |
-| **v9.0.488** | P124: migrate thin bare ZigBee drivers, fix clrdrnya radar collision, LCD lux ZCL /100 scaling. |
-| **v9.0.489** | P125: fix CI fingerprint collisions (xu4a5rhj/lawxy9e2/contact TS0601), migrate humidifier/dimmer/radiator/double_power_point. |
+| **v9.0.493** | P127: humidity X10 fix (GH#516), fingerprints sacred-couple repair, thin bare ZigBee migrations, anti-bot+Unified CI gates |
+| **v9.0.492** | P127: humidity X10 fix (GH#516), fingerprints sacred-couple repair, thin bare ZigBee migrations, anti-bot+Unified CI gates |
 | **v9.0.491** | P126: boiler flow listeners (CI), iadro9bf presence-only, DIN meter+curtain TuyaZigbeeDevice + energy divisor fixes. |
 | **v9.0.490** | P126: boiler flow listeners (CI), iadro9bf presence-only, DIN meter+curtain TuyaZigbeeDevice + energy divisor fixes. |
 | **v9.0.489** | P126: boiler flow listeners (CI), iadro9bf presence-only, DIN meter+curtain TuyaZigbeeDevice + energy divisor fixes. |
@@ -129,8 +118,6 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 | **v9.0.484** | Multi-source sweep: curtain/switch sacred fix, mmWave phantoms, EF00 generic safety, workflow harden. |
 | **v9.0.483** | Added Blakadder contact couples (n2egfsli, oxslv1c9, hdtmulpn, n8dljorx). |
 | **v9.0.482** | Enrich pass: dual-home sacred couples (contact/switch), soil/gas cleanup, multi-source re-apply, publish Test. |
-| **v9.0.481** | Hardened bed sensor settings/battery, IR learn stickiness, mains radar phantoms, CI unbound/double-division gates. |
-| **v9.0.480** | Hardened bed sensor settings/battery, IR learn stickiness, mains radar phantoms, CI unbound/double-division gates. |
 
 <!-- CHANGELOG_END -->
 
