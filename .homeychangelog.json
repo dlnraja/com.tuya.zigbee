@@ -1219,5 +1219,8 @@
   },
   "5.12.69": {
     "en": "Hardened Homey compensation timers for CI lifecycle gate."
+  },
+  "5.12.70": {
+    "en": "Stop publish reinject from stripping TS004F remotes off button_wireless_4."
   }
 }
