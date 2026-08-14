@@ -1,6 +1,6 @@
 # Weekly Sovereign Loop
 
-Generated: 2026-08-14T15:24:31.435Z
+Generated: 2026-08-14T15:43:06.009Z
 Version: **9.0.506** · Branch: `master`
 
 ## Quota policy
@@ -20,14 +20,14 @@ Version: **9.0.506** · Branch: `master`
 - HTTP: **200** OK
 
 ## Recent workflow runs
-- [in_progress] Weekly Sovereign Loop (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/31814314445
-- [success] 🌍 Forum Poll (P69) (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/31812925202
-- [success] 🔄 Self-Improve (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/31810306083
-- [success] Safe Sync master → stable-v5 (P52) (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/31810304446
-- [success] 🔬 Publish Diagnose (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/31810302742
-- [success] Auto Bot Issue Triage (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/31810300986
-- [success] 🌍 Forum Poll (P69) (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/31810299189
-- [success] Gmail Diagnostics Auto-Analysis (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/31810297560
+- [in_progress] Weekly Sovereign Loop (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/31815844453
+- [success] 🔄 Self-Improve (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/31814356540
+- [success] Safe Sync master → stable-v5 (P52) (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/31814354924
+- [success] 🔬 Publish Diagnose (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/31814352922
+- [success] Auto Bot Issue Triage (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/31814350997
+- [success] 🌍 Forum Poll (P69) (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/31814348921
+- [success] Gmail Diagnostics Auto-Analysis (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/31814347082
+- [in_progress] 🕷️ Mega Crawler (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/31814345344
 
 ## Open issues
 - #513 Bug report - Zigbee Climate sensor not installing
