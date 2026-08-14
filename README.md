@@ -37,7 +37,7 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.498 |
+| **App Version** | v9.0.499 |
 | **Drivers** | 430 (380 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,366 |
 | **Pairing Variants** | 16,917 (4 case combos per fingerprint) |
@@ -106,6 +106,7 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.499** | v9.0.497: fix(P129b): stop publish reinject from stripping TS004F remotes (v9.0.497) |
 | **v9.0.498** | v9.0.497: fix(P129b): stop publish reinject from stripping TS004F remotes (v9.0.497) |
 | **v9.0.496** | v9.0.496: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.495** | P128: climate probe temps above ~50C no longer shown 10x too low; ZT08 battery_state 0/1/2 maps to 10/50/100% (GH#513). |
@@ -117,7 +118,6 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 | **v9.0.489** | P126: boiler flow listeners (CI), iadro9bf presence-only, DIN meter+curtain TuyaZigbeeDevice + energy divisor fixes. |
 | **v9.0.488** | P125: fix CI fingerprint collisions (xu4a5rhj/lawxy9e2/contact TS0601), migrate humidifier/dimmer/radiator/double_power_point. |
 | **v9.0.487** | P124: migrate thin bare ZigBee drivers, fix clrdrnya radar collision, LCD lux ZCL /100 scaling. |
-| **v9.0.486** | P123: migrate thin bare ZigBeeDevice drivers to TuyaZigbeeDevice, siren IAS via DeviceIOFacade, harden double-division gate. |
 
 <!-- CHANGELOG_END -->
 
