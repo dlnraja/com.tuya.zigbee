@@ -6,8 +6,8 @@
 
 | Metric | Value |
 |--------|-------|
-| Version | v9.0.502 |
-| Drivers | 430 |
+| Version | v9.0.503 |
+| Drivers | 431 |
 | Fingerprints | 16,915 |
 | Last Updated | 2026-08-14 |
 
@@ -16,7 +16,7 @@
 | Category | Count |
 |----------|-------|
 | socket | 119 |
-| sensor | 101 |
+| sensor | 102 |
 | light | 61 |
 | other | 30 |
 | button | 26 |
