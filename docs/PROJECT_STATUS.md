@@ -6,21 +6,20 @@
 
 | Metric | Value |
 |--------|-------|
-| Version | v9.0.499 |
-| Version | v9.0.500 |
+| Version | v9.0.501 |
 | Drivers | 430 |
-| Fingerprints | 16,917 |
+| Fingerprints | 16,915 |
 | Last Updated | 2026-08-14 |
 
 ## Drivers by Category
 
 | Category | Count |
 |----------|-------|
-| socket | 117 |
-| sensor | 102 |
+| socket | 119 |
+| sensor | 101 |
 | light | 61 |
 | other | 30 |
-| button | 27 |
+| button | 26 |
 | thermostat | 26 |
 | remote | 18 |
 | fan | 16 |
