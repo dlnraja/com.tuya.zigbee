@@ -10,7 +10,7 @@
 [![SDK](https://img.shields.io/badge/SDK-3-orange)](https://apps.developer.homey.app/)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
-A community-driven Homey app that brings **local control** to Tuya Zigbee devices — no cloud, no internet needed. Covers switches, sensors, lights, thermostats, covers, locks and more across **431 drivers** and **4,368 unique device fingerprints** (16,958 including case variants for bulletproof pairing).
+A community-driven Homey app that brings **local control** to Tuya Zigbee devices — no cloud, no internet needed. Covers switches, sensors, lights, thermostats, covers, locks and more across **431 drivers** and **4,368 unique device fingerprints** (17,189 including case variants for bulletproof pairing).
 
 **Key features:**
 - **Local-only** — everything runs on your Homey, nothing goes to the cloud
@@ -37,11 +37,10 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.504 |
 | **App Version** | v9.0.506 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,368 |
-| **Pairing Variants** | 16,958 (4 case combos per fingerprint) |
+| **Pairing Variants** | 17,189 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 573 |
 | **Flow Cards** | 4,954 |
 | **Unique Capabilities** | 170 |
@@ -56,25 +55,25 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 
 | # | Driver | Fingerprints |
 |---|--------|-------------|
-| 1 | `climate_sensor` | 2,681 |
-| 2 | `switch_1gang` | 1,800 |
-| 3 | `button_wireless_2` | 788 |
-| 4 | `presence_sensor_radar` | 714 |
-| 5 | `radiator_valve` | 601 |
-| 6 | `wall_dimmer_tuya` | 492 |
+| 1 | `climate_sensor` | 2,687 |
+| 2 | `switch_1gang` | 1,804 |
+| 3 | `button_wireless_2` | 790 |
+| 4 | `presence_sensor_radar` | 726 |
+| 5 | `radiator_valve` | 603 |
+| 6 | `wall_dimmer_tuya` | 504 |
 | 7 | `generic_tuya` | 484 |
 | 8 | `device_radiator_valve` | 380 |
 | 9 | `sensor_contact_zigbee` | 345 |
-| 10 | `curtain_motor` | 292 |
-| 11 | `switch_4gang` | 262 |
-| 12 | `switch_2gang` | 228 |
-| 13 | `switch_3gang` | 218 |
+| 10 | `curtain_motor` | 308 |
+| 11 | `switch_4gang` | 270 |
+| 12 | `switch_2gang` | 232 |
+| 13 | `switch_3gang` | 220 |
 | 14 | `motion_sensor` | 210 |
 | 15 | `diy_custom_zigbee` | 206 |
 | 16 | `water_leak_sensor_tuya` | 194 |
-| 17 | `thermostat_tuya_dp` | 192 |
-| 18 | `dimmer_wall_1gang` | 184 |
-| 19 | `soil_sensor` | 184 |
+| 17 | `soil_sensor` | 193 |
+| 18 | `thermostat_tuya_dp` | 192 |
+| 19 | `dimmer_wall_1gang` | 184 |
 | 20 | `dimmable_led_strip` | 180 |
 
 ### Drivers by Device Class
