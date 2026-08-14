@@ -2007,5 +2007,8 @@
   },
   "9.0.494": {
     "en": "P128: climate probe temps above ~50C no longer shown 10x too low; ZT08 battery_state 0/1/2 maps to 10/50/100% (GH#513)."
+  },
+  "9.0.495": {
+    "en": "P128: climate probe temps above ~50C no longer shown 10x too low; ZT08 battery_state 0/1/2 maps to 10/50/100% (GH#513)."
   }
 }

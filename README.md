@@ -37,7 +37,7 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.493 |
+| **App Version** | v9.0.495 |
 | **Drivers** | 430 (380 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,366 |
 | **Pairing Variants** | 16,921 (4 case combos per fingerprint) |
@@ -45,7 +45,7 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 | **Flow Cards** | 4,954 |
 | **Unique Capabilities** | 170 |
 | **Native OTA Drivers** | 6 |
-| **Test Suites** | 65 files |
+| **Test Suites** | 66 files |
 | **SVG Icons** | 730 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
@@ -106,6 +106,8 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.495** | P128: climate probe temps above ~50C no longer shown 10x too low; ZT08 battery_state 0/1/2 maps to 10/50/100% (GH#513). |
+| **v9.0.494** | P128: climate probe temps above ~50C no longer shown 10x too low; ZT08 battery_state 0/1/2 maps to 10/50/100% (GH#513). |
 | **v9.0.493** | P127: humidity X10 fix (GH#516), fingerprints sacred-couple repair, thin bare ZigBee migrations, anti-bot+Unified CI gates |
 | **v9.0.492** | P127: humidity X10 fix (GH#516), fingerprints sacred-couple repair, thin bare ZigBee migrations, anti-bot+Unified CI gates |
 | **v9.0.491** | P126: boiler flow listeners (CI), iadro9bf presence-only, DIN meter+curtain TuyaZigbeeDevice + energy divisor fixes. |
@@ -116,8 +118,6 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 | **v9.0.486** | P123: migrate thin bare ZigBeeDevice drivers to TuyaZigbeeDevice, siren IAS via DeviceIOFacade, harden double-division gate. |
 | **v9.0.485** | P123: migrate thin bare ZigBeeDevice drivers to TuyaZigbeeDevice, siren IAS via DeviceIOFacade, harden double-division gate. |
 | **v9.0.484** | Multi-source sweep: curtain/switch sacred fix, mmWave phantoms, EF00 generic safety, workflow harden. |
-| **v9.0.483** | Added Blakadder contact couples (n2egfsli, oxslv1c9, hdtmulpn, n8dljorx). |
-| **v9.0.482** | Enrich pass: dual-home sacred couples (contact/switch), soil/gas cleanup, multi-source re-apply, publish Test. |
 
 <!-- CHANGELOG_END -->
 
