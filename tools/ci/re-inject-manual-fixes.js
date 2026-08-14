@@ -65,20 +65,15 @@ const MANUAL_FIXES = [
     addAtTop: false,
     source: 'p74-disabled',
   },
-  // P75.18-22 / P93: keep ONLY proven 4-button remotes here.
-  // P90/P91: xabckq1v + czuyt8lz → switch_1gang (Sacred Couple TS0601)
-  // P90: b3mgfu0d → button_wireless_2; abrsvsou/4fjiwweb → metering/relay (NOT 4-btn)
-  // The old list re-injected bot regressions every publish — fixed P93.
+  // P129: Z2M/ZHA confirm mfr+TS004F are 4-button remotes (not switch_1gang).
+  // P93 wrongly parked xabckq1v/czuyt8lz on switch_1gang (no TS004F productId there).
+  // Order: strip wrong homes FIRST, then inject into button_wireless_4 (collision guard).
   {
-    id: 'p75.18-button-wireless-4-mfrs',
-    file: 'drivers/button_wireless_4/driver.compose.json',
-    description: 'P75.18/P93: Moes/forum 4-button remotes only (no Sacred Couple collisions)',
-    match: (mfrs) => mfrs.includes('_TZ3000_kfu8zapd'),
-    addIfMissing: [
-      '_TZ3000_u3nv1jwk',
-      '_TZ3000_kfu8zapd',
-      '_TZ3000_rco1yzb1',
-    ],
+    id: 'p129-switch-1gang-remove-ts004f-remotes',
+    file: 'drivers/switch_1gang/driver.compose.json',
+    description: 'P129: TS004F remotes must not dual-home on switch_1gang catch-all',
+    match: () => true,
+    addIfMissing: [],
     removeIfPresent: [
       '_TZ3000_xabckq1v', '_tz3000_xabckq1v', '_TZ3000_XABCKQ1V', '_tz3000_XABCKQ1V',
       '_TZ3000_czuyt8lz', '_tz3000_czuyt8lz', '_TZ3000_CZUYT8LZ', '_tz3000_CZUYT8LZ',
@@ -87,19 +82,25 @@ const MANUAL_FIXES = [
       '_TZ3000_4fjiwweb', '_tz3000_4fjiwweb', '_TZ3000_4FJIWWEB', '_tz3000_4FJIWWEB',
     ],
     addAtTop: false,
-    source: 'p93-anti-regression',
+    source: 'p129-ts004f-routing',
   },
   {
-    id: 'p93-switch-1gang-sacred-xabckq1v-czuyt8lz',
-    file: 'drivers/switch_1gang/driver.compose.json',
-    description: 'P93: Sacred Couple TS0601 xabckq1v/czuyt8lz belong on switch_1gang (not button_wireless_4)',
-    match: (mfrs) => mfrs.includes('_TZ3000_xabckq1v') && mfrs.includes('_TZ3000_czuyt8lz'),
+    id: 'p129-button-wireless-4-ts004f-mfrs',
+    file: 'drivers/button_wireless_4/driver.compose.json',
+    description: 'P129: Moes/Lidl/ZHA TS004F 4-button remotes (forum-routing + Z2M)',
+    match: (mfrs) => mfrs.includes('_TZ3000_kfu8zapd') && mfrs.includes('_TZ3000_xabckq1v'),
     addIfMissing: [
-      '_TZ3000_xabckq1v', '_tz3000_xabckq1v',
-      '_TZ3000_czuyt8lz', '_tz3000_czuyt8lz',
+      '_TZ3000_u3nv1jwk',
+      '_TZ3000_kfu8zapd',
+      '_TZ3000_rco1yzb1',
+      '_TZ3000_xabckq1v', '_tz3000_xabckq1v', '_TZ3000_XABCKQ1V', '_tz3000_XABCKQ1V',
+      '_TZ3000_czuyt8lz', '_tz3000_czuyt8lz', '_TZ3000_CZUYT8LZ', '_tz3000_CZUYT8LZ',
+      '_TZ3000_b3mgfu0d', '_tz3000_b3mgfu0d', '_TZ3000_B3MGFU0D', '_tz3000_B3MGFU0D',
+      '_TZ3000_abrsvsou', '_tz3000_abrsvsou', '_TZ3000_ABRSVSOU', '_tz3000_ABRSVSOU',
+      '_TZ3000_4fjiwweb', '_tz3000_4fjiwweb', '_TZ3000_4FJIWWEB', '_tz3000_4FJIWWEB',
     ],
     addAtTop: false,
-    source: 'p93-sacred-couple',
+    source: 'p129-ts004f-routing',
   },
   {
     id: 'p93-gas-sensor-remove-zg222z-productid',
