@@ -43,6 +43,23 @@ Dual-layer design so **Cursor quota stays thin** and **GitHub Actions** does the
 - `.github/workflows/weekly-sovereign-loop.yml`
 - Report: `reports/WEEKLY_SOVEREIGN_LOOP.md` (written by the weekly job)
 
+## Manual run
+
+```bash
+gh workflow run weekly-sovereign-loop.yml --ref master -f dispatch_sources=true
+```
+
+Local (no dispatches):
+
+```bash
+node tools/ci/weekly-sovereign-loop.js
+```
+
 ## Homey Test URL
 
 `https://homey.app/a/com.dlnraja.tuya.zigbee/test/`
+
+## Cursor Automation
+
+Name: **Weekly Sovereign Brain** — Sundays ~10:00 UTC, repo `dlnraja/com.tuya.zigbee` / `master`.
+Reads `@reports/WEEKLY_SOVEREIGN_LOOP.md`, applies ≤3 reliability fixes, never mega-crawls.

@@ -38,6 +38,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GH_PAT || github.token }}
 
       - name: Setup Node.js
         uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
@@ -49,12 +52,13 @@ jobs:
 
       - name: Run weekly sovereign loop
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          # Prefer GH_PAT for workflow_dispatch of other workflows when available
           GH_PAT: ${{ secrets.GH_PAT }}
+          GITHUB_TOKEN: ${{ github.token }}
         run: |
           if [ -n "${GH_PAT:-}" ]; then
             export GH_TOKEN="$GH_PAT"
+          else
+            export GH_TOKEN="$GITHUB_TOKEN"
           fi
           ARGS=""
           if [ "${{ github.event_name }}" = "schedule" ] || [ "${{ inputs.dispatch_sources }}" = "true" ]; then
@@ -66,6 +70,7 @@ jobs:
           CODE=$?
           set -e
           echo "loop_exit=$CODE" >> "$GITHUB_OUTPUT"
+          echo "loop_exit=$CODE" >> "$GITHUB_ENV"
           exit 0
         id: loop
 
@@ -89,8 +94,9 @@ jobs:
             echo "No report changes"
             exit 0
           fi
-          git pull --rebase origin master || true
-          git commit -m "chore(P136): weekly sovereign loop report [skip ci]"
+          # Commit BEFORE pull — avoids "index contains uncommitted changes" rebase failure
+          git commit -m "chore(P136): weekly sovereign loop report [skip ci]" || true
+          git pull --rebase --autostash origin master || true
           git push origin HEAD:master || true
 
       - name: Summary
@@ -98,8 +104,10 @@ jobs:
           {
             echo "## Weekly Sovereign Loop"
             echo ""
+            echo "loop_exit=\`${loop_exit:-n/a}\`"
+            echo ""
             if [ -f reports/WEEKLY_SOVEREIGN_LOOP.md ]; then
-              head -n 80 reports/WEEKLY_SOVEREIGN_LOOP.md
+              head -n 100 reports/WEEKLY_SOVEREIGN_LOOP.md
             else
               echo "Report missing"
             fi
