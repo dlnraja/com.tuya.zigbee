@@ -1,10 +1,8 @@
 {
-  "updated": "2026-08-14T06:30:00.000Z",
-  "note": "Legacy bare ZigBeeDevice leftovers. P127: led_controller_dimmable + pir_mmwave_sensor + switch_wireless + remote_dimmer migrated.",
+  "updated": "2026-08-14T10:05:00.000Z",
+  "note": "Legacy bare ZigBeeDevice leftovers. P129: blaster_remote + power_clamp_meter migrated to TuyaZigbeeDevice.",
   "drivers": [
-    "blaster_remote",
     "ir_blaster",
-    "power_clamp_meter",
     "smartPlug_DinRail"
   ]
 }

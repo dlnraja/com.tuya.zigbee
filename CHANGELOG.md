@@ -4,6 +4,15 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
+## v9.0.496 (2026-08-14)
+
+### Fixed
+- **TS004F Moes/Lidl remotes**: restored sacred couples (`_TZ3000_xabckq1v` / `czuyt8lz` / `b3mgfu0d` / `abrsvsou` / `4fjiwweb` + TS004F) on `button_wireless_4`; removed wrong-class dual-homes on switch/relay/2-button drivers. Anti-bot gate updated so bots cannot re-poison.
+- **BatteryRouter P115 test**: critical suite no longer expects a fake 50% estimate before the first DP report.
+- **Bare ZigBeeDevice leftovers**: `blaster_remote` and `power_clamp_meter` now extend `TuyaZigbeeDevice` (L14 path); IR send timeout uses `safeSetTimeout`.
+
+---
+
 ## v9.0.494 (2026-08-14)
 
 ### Fixed

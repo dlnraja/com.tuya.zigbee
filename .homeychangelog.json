@@ -1,6 +1,13 @@
 {
   "changelog": [
     {
+      "version": "9.0.496",
+      "date": "2026-08-14",
+      "channel": "test",
+      "en": "Restored Moes/Lidl TS004F remotes to 4-button driver; migrated IR remote and CT clamp off bare ZigBeeDevice; battery unknown until first report.",
+      "fr": "Remotes TS004F Moes/Lidl restaures sur driver 4 boutons; IR remote et pince CT migres hors ZigBeeDevice nu; batterie inconnue jusqu au premier rapport."
+    },
+    {
       "version": "9.0.478",
       "date": "2026-08-11",
       "channel": "test",

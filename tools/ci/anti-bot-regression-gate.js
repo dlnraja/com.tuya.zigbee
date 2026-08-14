@@ -42,11 +42,21 @@ function hasPid(compose, pid) {
 
 /** Forbidden placements: driver must NOT contain these mfrs (case-insensitive). */
 const FORBIDDEN = [
-  // P90/P93: bot put metering/button mfrs on 4-button remote
+  // P129: TS004F 4-button remotes (Z2M/ZHA) must NOT live on 1-gang switch catch-all
   {
-    id: 'p93-button4-bot-mfrs',
-    driver: 'button_wireless_4',
+    id: 'p129-ts004f-not-switch1',
+    driver: 'switch_1gang',
     mfrs: ['_TZ3000_xabckq1v', '_TZ3000_czuyt8lz', '_TZ3000_b3mgfu0d', '_TZ3000_abrsvsou', '_TZ3000_4fjiwweb'],
+  },
+  {
+    id: 'p129-ts004f-not-button2',
+    driver: 'button_wireless_2',
+    mfrs: ['_TZ3000_b3mgfu0d'],
+  },
+  {
+    id: 'p129-ts004f-not-relay4',
+    driver: 'relay_board_4_channel',
+    mfrs: ['_TZ3000_abrsvsou', '_TZ3000_4fjiwweb'],
   },
   // Forum #2131: relay fingerprint must not stay on switch_4gang
   {
@@ -289,10 +299,19 @@ const FORBIDDEN_PIDS = [
 
 /** Required placements (must be present). */
 const REQUIRED = [
+  // P129: sacred couples are mfr+TS004F → button_wireless_4 (not switch_1gang)
   {
-    id: 'p93-sacred-switch1',
-    driver: 'switch_1gang',
-    mfrs: ['_TZ3000_xabckq1v', '_TZ3000_czuyt8lz'],
+    id: 'p129-ts004f-btn4',
+    driver: 'button_wireless_4',
+    mfrs: [
+      '_TZ3000_xabckq1v',
+      '_TZ3000_czuyt8lz',
+      '_TZ3000_b3mgfu0d',
+      '_TZ3000_abrsvsou',
+      '_TZ3000_4fjiwweb',
+      '_TZ3000_kfu8zapd',
+      '_TZ3000_rco1yzb1',
+    ],
   },
   {
     id: 'p94-w5xztuy7-switch2',
@@ -516,12 +535,22 @@ const FP_REQUIRED = [
   { mfr: '_tze200_pcdmj88b', driverId: 'thermostatic_radiator_valve' },
   { mfr: '_TZE200_clrdrnya', driverId: 'presence_sensor_radar' },
   { mfr: '_TZE204_clrdrnya', driverId: 'presence_sensor_radar' },
+  { mfr: '_TZ3000_xabckq1v', driverId: 'button_wireless_4' },
+  { mfr: '_TZ3000_czuyt8lz', driverId: 'button_wireless_4' },
+  { mfr: '_TZ3000_b3mgfu0d', driverId: 'button_wireless_4' },
+  { mfr: '_TZ3000_abrsvsou', driverId: 'button_wireless_4' },
+  { mfr: '_TZ3000_4fjiwweb', driverId: 'button_wireless_4' },
 ];
 const FP_FORBIDDEN_DRIVERS = {
   iadro9bf: ['climate_sensor', 'generic_tuya'],
   imaccztn: ['switch_4gang', 'bulb_dimmable', 'generic_tuya'],
   pcdmj88b: ['wall_thermostat', 'device_radiator_valve'],
   clrdrnya: ['motion_sensor_radar_mmwave', 'climate_sensor'],
+  xabckq1v: ['switch_1gang', 'relay_board_4_channel'],
+  czuyt8lz: ['switch_1gang'],
+  b3mgfu0d: ['switch_1gang'],
+  abrsvsou: ['relay_board_4_channel', 'switch_1gang'],
+  '4fjiwweb': ['relay_board_4_channel', 'switch_1gang'],
 };
 
 if (fs.existsSync(FP_PATH)) {
