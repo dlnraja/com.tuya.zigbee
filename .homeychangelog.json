@@ -1,8 +1,4 @@
 {
-  "9.0.502": {
-    "en": "Improved sensor flow conditions and actuator Homey UI classes. Hybrid heater flows use capability listeners.",
-    "fr": "Amélioration des conditions Flow capteurs et des classes UI actionneurs."
-  },
   "9.0.501": {
     "en": "Improved sensor flow conditions and actuator Homey UI classes. Hybrid heater flows use capability listeners.",
     "fr": "Amélioration des conditions Flow capteurs et des classes UI actionneurs. Flows chauffage hybride via listeners de capacités."
@@ -2044,5 +2040,11 @@
   },
   "9.0.499": {
     "en": "P131: patch missing actuator flow registerRunListener on 21 drivers; fan_controller flow ownership fix."
+  },
+  "9.0.502": {
+    "en": "Maintenance bump."
+  },
+  "9.0.503": {
+    "en": "Dedicated ZT08 climate driver for pairing (#513), DIN rail plug on hardened base."
   }
 }

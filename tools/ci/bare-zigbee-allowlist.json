@@ -1,8 +1,7 @@
 {
-  "updated": "2026-08-14T10:05:00.000Z",
-  "note": "Legacy bare ZigBeeDevice leftovers. P129: blaster_remote + power_clamp_meter migrated to TuyaZigbeeDevice.",
+  "updated": "2026-08-14T11:02:17.377Z",
+  "note": "Legacy bare ZigBeeDevice leftovers. P133: smartPlug_DinRail migrated; ir_blaster remains.",
   "drivers": [
-    "ir_blaster",
-    "smartPlug_DinRail"
+    "ir_blaster"
   ]
 }
