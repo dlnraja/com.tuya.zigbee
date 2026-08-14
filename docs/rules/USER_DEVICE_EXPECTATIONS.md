@@ -5913,3 +5913,21 @@ _TZ3000_l9brjwau, _TZ3000_blhvsaqf, _TZ3000_ysdv91bk, _TZ3000_hafsqare, _TZ3000_
 | vision + TS0207 | JohanBendz/com.tuya.zigbee#1380 | device_request |
 | vision + generic | JohanBendz/com.tuya.zigbee#1380 | device_request |
 | _TZ3000_ + generic | JohanBendz/com.tuya.zigbee#1380 | device_request |
+
+
+## Auto-discovered from GitHub (2026-08-14)
+
+| Fingerprint | Source | Type |
+|---|---|---|
+| _TZE284_hodyryli + SENSOR | dlnraja/com.tuya.zigbee#513 | bug_report |
+| _TZE284_ + SENSOR | dlnraja/com.tuya.zigbee#513 | bug_report |
+| _TZE284_HODYRYLI + SENSOR | dlnraja/com.tuya.zigbee#513 | bug_report |
+| _tze284_hodyryli + SENSOR | dlnraja/com.tuya.zigbee#513 | bug_report |
+| _tze284_HODYRYLI + SENSOR | dlnraja/com.tuya.zigbee#513 | bug_report |
+| tuya + SENSOR | dlnraja/com.tuya.zigbee#513 | bug_report |
+| TUYA + SENSOR | dlnraja/com.tuya.zigbee#513 | bug_report |
+| _TZE284 + SENSOR | dlnraja/com.tuya.zigbee#513 | bug_report |
+| _tze284 + SENSOR | dlnraja/com.tuya.zigbee#513 | bug_report |
+| _tze + SENSOR | dlnraja/com.tuya.zigbee#513 | bug_report |
+| _tze284_ + SENSOR | dlnraja/com.tuya.zigbee#513 | bug_report |
+| _TZE + SENSOR | dlnraja/com.tuya.zigbee#513 | bug_report |
