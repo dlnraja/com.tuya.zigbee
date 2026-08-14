@@ -1216,5 +1216,8 @@
   },
   "5.12.68": {
     "en": "Improved pairing for ZT08 climate sensor, TS004F remotes, and presence radar fingerprints."
+  },
+  "5.12.69": {
+    "en": "Hardened Homey compensation timers for CI lifecycle gate."
   }
 }
