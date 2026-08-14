@@ -83,7 +83,8 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add reports/WEEKLY_SOVEREIGN_LOOP.md .github/state/weekly-sovereign-loop.json || true
+          # .github/state/** is gitignored — only commit the markdown report Cursor reads
+          git add reports/WEEKLY_SOVEREIGN_LOOP.md || true
           if git diff --cached --quiet; then
             echo "No report changes"
             exit 0
