@@ -6,7 +6,7 @@
     "de": "Szenenschalter 2-fach",
     "es": "Interruptor de escena 2 grupos"
   },
-  "class": "sensor",
+  "class": "button",
   "capabilities": [
     "button.1",
     "button.2",

@@ -1,12 +1,11 @@
 'use strict';
 
-const { Driver } = require('homey');
+const { ZigBeeDriver } = require('homey-zigbeedriver');
 
-class FingerprintLockDriver extends Driver {
-  /**
-   * v7.0.12: Defensive getDeviceById override to prevent crashes during deserialization.
-   * If a device cannot be found (e.g. removed while flow is triggering), return null instead of throwing.
-   */
+/**
+ * P132: Use lock()/unlock() (LockControlMixin) instead of raw setCapabilityValue.
+ */
+class FingerprintLockDriver extends ZigBeeDriver {
   getDeviceById(id) {
     try {
       return super.getDeviceById(id);
@@ -16,23 +15,40 @@ class FingerprintLockDriver extends Driver {
     }
   }
 
-async onInit() {
+  async onInit() {
     await super.onInit();
-    if (this._flowCardsRegistered) {return;}
+    if (this._flowCardsRegistered) { return; }
     this._flowCardsRegistered = true;
+    this.log('Fingerprint Lock driver initialized (P132)');
 
-    this.log('Fingerprint Lock driver initialized');
-    // v5.13.3: Flow card handlers
-    const r=(i,fn)=>{try{this.homey.flow.getActionCard(i).registerRunListener(fn);
-  
-  
-  
-  
-  
-  
-  }catch(e){this.log('[Flow]',i,e.message);}};
-    r('fingerprint_lock_lock',async({device})=>{await device['setCapabilityValue']('locked',true);return true;});
-    r('fingerprint_lock_unlock',async({device})=>{await device['setCapabilityValue']('locked',false);return true;});
+    const reg = (id, fn) => {
+      try {
+        const card = this.homey.flow.getActionCard(id);
+        if (card) { card.registerRunListener(fn); }
+      } catch (e) {
+        this.log('[Flow]', id, e.message);
+      }
+    };
+
+    reg('fingerprint_lock_lock', async ({ device }) => {
+      if (!device) { return false; }
+      if (typeof device.lock === 'function') {
+        await device.lock().catch(() => {});
+      } else if (typeof device.triggerCapabilityListener === 'function') {
+        await device.triggerCapabilityListener('locked', true).catch(() => {});
+      }
+      return true;
+    });
+
+    reg('fingerprint_lock_unlock', async ({ device }) => {
+      if (!device) { return false; }
+      if (typeof device.unlock === 'function') {
+        await device.unlock().catch(() => {});
+      } else if (typeof device.triggerCapabilityListener === 'function') {
+        await device.triggerCapabilityListener('locked', false).catch(() => {});
+      }
+      return true;
+    });
   }
 }
 

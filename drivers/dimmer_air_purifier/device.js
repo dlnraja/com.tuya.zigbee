@@ -1,8 +1,22 @@
 'use strict';
-const { safeParse } = require('../../lib/utils/tuyaUtils.js');
-const TuyaSpecificClusterDevice = require('../../lib/tuya/TuyaSpecificClusterDevice');
-class DimmerAirPurifierDevice extends TuyaSpecificClusterDevice {
-  async onNodeInit({ zclNode }) { await super.onNodeInit({ zclNode }); }
-  handleTuyaDataReport(data) { this.log('DP:', data.dp, data.value); }
+
+const UnifiedLightBase = require('../../lib/devices/UnifiedLightBase');
+
+/**
+ * P130: Was log-only DP dump — rebase on UnifiedLightBase for controllable onoff/dim.
+ */
+class DimmerAirPurifierDevice extends UnifiedLightBase {
+  get lightCapabilities() {
+    return ['onoff', 'dim', 'measure_power', 'measure_pm25'];
+  }
+
+  get dpMappings() {
+    return {
+      ...super.dpMappings,
+      2: { capability: 'measure_pm25', smartDivisor: true },
+      22: { capability: 'measure_pm25', smartDivisor: true },
+    };
+  }
 }
+
 module.exports = DimmerAirPurifierDevice;

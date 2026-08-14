@@ -1,4 +1,7 @@
 {
+  "9.0.500": {
+    "en": "Improved lock flow TX path, multi-gang onoff resolution, thermostat temp UI range, and flow-handler heuristics."
+  },
   "changelog": [
     {
       "version": "9.0.497",

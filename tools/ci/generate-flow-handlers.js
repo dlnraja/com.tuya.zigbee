@@ -86,6 +86,60 @@ function inferCard(card) {
     return { capability: 'onoff', value: false, type: 'condition' };
   }
   // Common patterns
+  // Cover open / close
+  if (/move_open|_open$|open_cover|cover_open/i.test(id) && !/is_open|contact|door|window/.test(id)) {
+    return { capability: 'windowcoverings_set', value: 1, type: 'action' };
+  }
+  if (/move_close|_close$|close_cover|cover_close/i.test(id) && !/is_closed|contact|door|window/.test(id)) {
+    return { capability: 'windowcoverings_set', value: 0, type: 'action' };
+  }
+  // Child lock
+  if (/enable_child_lock|child_lock_on|lock_child/i.test(id)) {
+    return { capability: 'child_lock', value: true, type: 'action' };
+  }
+  if (/disable_child_lock|child_lock_off|unlock_child/i.test(id)) {
+    return { capability: 'child_lock', value: false, type: 'action' };
+  }
+  // Per-gang on/off (wifi multi-channel)
+  const gangOn = id.match(/turn_on_gang(\d+)/i);
+  if (gangOn) {
+    const g = Number(gangOn[1]);
+    return { capability: g <= 1 ? 'onoff' : `onoff.${g}`, value: true, type: 'action' };
+  }
+  const gangOff = id.match(/turn_off_gang(\d+)/i);
+  if (gangOff) {
+    const g = Number(gangOff[1]);
+    return { capability: g <= 1 ? 'onoff' : `onoff.${g}`, value: false, type: 'action' };
+  }
+  const gangToggle = id.match(/toggle_gang(\d+)/i);
+  if (gangToggle) {
+    const g = Number(gangToggle[1]);
+    return { capability: g <= 1 ? 'onoff' : `onoff.${g}`, value: 'toggle', type: 'action' };
+  }
+  // Lock / unlock
+  if (/_lock$|^lock_/i.test(id) && !/child_lock|unlock/.test(id)) {
+    return { capability: 'locked', value: true, type: 'action' };
+  }
+  if (/unlock/i.test(id)) {
+    return { capability: 'locked', value: false, type: 'action' };
+  }
+  // Feed / button press actions
+  if (/_feed$|manual_feed|press_button/i.test(id)) {
+    return { capability: 'button', value: true, type: 'action' };
+  }
+  // Alarm capability conditions
+  if (/alarm_smoke_active|smoke_detected/.test(id)) {
+    return { capability: 'alarm_smoke', value: true, type: 'condition' };
+  }
+  if (/alarm_water_active|water_detected|leak_detected/.test(id)) {
+    return { capability: 'alarm_water', value: true, type: 'condition' };
+  }
+  if (/alarm_motion_active|has_presence|motion_detected/.test(id)) {
+    return { capability: 'alarm_motion', value: true, type: 'condition' };
+  }
+  if (/contact_open|door_open|window_open/.test(id) && !/turn_on|set_/.test(id)) {
+    return { capability: 'alarm_contact', value: true, type: 'condition' };
+  }
   // turn_on / turn_off / toggle
   if (/turn_on|turn-on|_turn_on$/i.test(id) && !/on_gang|on_switch|on_button|contact|alarm|tamper|is_on|is_off|is_open|is_closed/.test(id)) {
     return { capability: 'onoff', value: true, type: 'action' };
@@ -173,7 +227,8 @@ function buildHandlers(flowData) {
     } else {
       lines.push(`      this.homey.flow.getActionCard('${cardId}')?.registerRunListener(async (args) => {`);
       lines.push(`        if (!args.device) return false;`);
-      lines.push(`        return true; // TODO: implement action for ${cardId}`);
+      lines.push(`        this.log?.('[FLOW] Unmapped action ${cardId} — no-op');`);
+      lines.push(`        return true;`);
       lines.push(`      });`);
     }
   }

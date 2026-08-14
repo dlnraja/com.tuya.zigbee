@@ -44,17 +44,32 @@ class HybridHeaterThermostatDevice extends UnifiedSensorBase {
 
     await super.onNodeInit({ zclNode });
 
-    // Register heater on/off listener
+    // P130: sendTuyaDataPoint never existed — DeviceIOFacade / sendTuyaCommand dual-path
+    this._sendHeaterDp = async (dp, value, type = 'value') => {
+      if (this.io && typeof this.io.sendDP === 'function') {
+        try {
+          const ok = await this.io.sendDP(dp, value, { type });
+          if (ok) { return true; }
+        } catch (err) {
+          this.log(`[HYBRID_HEATER_THERMOSTAT] io.sendDP(${dp}) failed: ${err.message}`);
+        }
+      }
+      if (typeof this.sendTuyaCommand === 'function') {
+        await this.sendTuyaCommand(dp, value, type);
+        return true;
+      }
+      throw new Error('No Tuya TX path available');
+    };
+
     this.registerCapabilityListener('onoff', async (value) => {
       this.log(`[HYBRID_HEATER_THERMOSTAT] Heater ${value ? 'ON' : 'OFF'}`);
       try {
-        await this.sendTuyaDataPoint(1, value ? 1 : 0, 'value');
+        await this._sendHeaterDp(1, !!value, 'bool');
       } catch (err) {
         this.error(`[HYBRID_HEATER_THERMOSTAT] Failed to set onoff: ${err.message}`);
       }
     });
 
-    // Register target_temperature listener
     this.registerCapabilityListener('target_temperature', async (value) => {
       this.log(`[HYBRID_HEATER_THERMOSTAT] Setting target temp: ${value}°C`);
       const minSP = this.getSetting('min_set_point') || 5;
@@ -64,19 +79,18 @@ class HybridHeaterThermostatDevice extends UnifiedSensorBase {
         return;
       }
       try {
-        await this.sendTuyaDataPoint(2, value, 'value');
+        await this._sendHeaterDp(2, value, 'value');
       } catch (err) {
         this.error(`[HYBRID_HEATER_THERMOSTAT] Failed to set target temp: ${err.message}`);
       }
     });
 
-    // Register thermostat_mode listener
     this.registerCapabilityListener('thermostat_mode', async (value) => {
       this.log(`[HYBRID_HEATER_THERMOSTAT] Setting mode: ${value}`);
-      const modeMap = { 'auto': 0, 'heat': 1, 'cool': 2, 'off': 3 };
+      const modeMap = { auto: 0, heat: 1, cool: 2, off: 3 };
       const dpValue = modeMap[value] ?? 0;
       try {
-        await this.sendTuyaDataPoint(4, dpValue, 'value');
+        await this._sendHeaterDp(4, dpValue, 'enum');
       } catch (err) {
         this.error(`[HYBRID_HEATER_THERMOSTAT] Failed to set mode: ${err.message}`);
       }

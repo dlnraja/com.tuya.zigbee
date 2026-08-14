@@ -6,7 +6,7 @@
     "de": "Szenenschalter 6-fach",
     "es": "Interruptor de escena 6 botones"
   },
-  "class": "sensor",
+  "class": "button",
   "capabilities": [
     "button.1",
     "button.2",

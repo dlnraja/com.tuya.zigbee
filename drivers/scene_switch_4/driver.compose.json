@@ -6,7 +6,7 @@
     "de": "Szenenschalter 4-fach",
     "es": "Interruptor de escena 4 botones"
   },
-  "class": "sensor",
+  "class": "button",
   "capabilities": [
     "button.1",
     "button.2",

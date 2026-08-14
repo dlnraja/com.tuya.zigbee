@@ -5,7 +5,7 @@
     "nl": "Slimme Draaiknop",
     "de": "Intelligenter Drehknopf"
   },
-  "class": "sensor",
+  "class": "button",
   "capabilities": [
     "button.rotate_left",
     "button.rotate_right",

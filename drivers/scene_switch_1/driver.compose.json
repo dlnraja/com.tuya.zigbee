@@ -6,7 +6,7 @@
     "de": "Szenenschalter 1-fach",
     "es": "Interruptor de escena 1 botón"
   },
-  "class": "sensor",
+  "class": "button",
   "capabilities": [
     "button.1",
     "measure_battery"

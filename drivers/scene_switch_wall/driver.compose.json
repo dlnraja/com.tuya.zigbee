@@ -6,7 +6,7 @@
     "de": "Szenenschalter Wand",
     "es": "Interruptor de escena de pared"
   },
-  "class": "sensor",
+  "class": "button",
   "capabilities": [
     "button.1",
     "button.2",

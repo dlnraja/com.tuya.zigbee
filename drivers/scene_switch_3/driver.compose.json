@@ -6,7 +6,7 @@
     "de": "Szenenschalter 3-fach",
     "es": "Interruptor de escena 3 grupos"
   },
-  "class": "sensor",
+  "class": "button",
   "capabilities": [
     "button.1",
     "button.2",
