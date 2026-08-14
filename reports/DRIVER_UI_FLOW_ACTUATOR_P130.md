@@ -1,4 +1,4 @@
-# DRIVER_UI_FLOW_ACTUATOR_P130 — 2026-08-14
+﻿# DRIVER_UI_FLOW_ACTUATOR_P130 — 2026-08-14
 
 Continues after P128/P129 (TS004F). Mid-pass overlap: **P131** (v9.0.499 flow listeners) and **P132** (v9.0.500 lock TX / UI class / heater DP). This ship completes remaining sensor condition stubs + hybrid heater flow listeners as **v9.0.501**.
 
@@ -25,7 +25,7 @@ Cannot redesign UI for all 430 drivers in one pass. Maximized:
 | Dead `xlarge.png` refs (fleet) | 242 — **deferred** (regenerate via `generate-driver-images.js` later) |
 | Gates | anti-bot PASS · adaptive-double-division hard PASS · unbound-catch 0 · fp-collision 0 · bare-zigbee 0 violations · gmail-crash ok |
 
-## What was fixed (this pass + retained from P131 overlap)
+## What was fixed (this pass + retained from P131/P132 overlap)
 
 ### Shared infrastructure
 - `lib/flow/ActuatorFlowHelper.js` — `triggerCapabilityListener` + sync + gang/cover helpers
@@ -35,7 +35,7 @@ Cannot redesign UI for all 430 drivers in one pass. Maximized:
 
 ### High-impact device TX
 - `climate_sensor_dimmer`, `dimmer_air_purifier` — rebase onto `UnifiedLightBase` (were log-only)
-- `hybrid_heater_thermostat` — replace non-existent `sendTuyaDataPoint` with `_sendHeaterDp` (IO façade)
+- `hybrid_heater_thermostat` — replace non-existent `sendTuyaDataPoint` with `_sendHeaterDp` (IO façade) + flow listeners
 - `lock_smart`, `fingerprint_lock` — LockControlMixin + flow uses `lock()`/`unlock()`; condition reads `locked` not `onoff`
 
 ### Flow cards (P131 + P130)
@@ -59,7 +59,8 @@ Curtains, siren, Sonoff multi-gang WiFi, wall thermostat child-lock, pet feeder 
 
 ## Verify & ship
 
-- Version: **9.0.501** (P132 carried 9.0.500 infrastructure)
+- Version: **9.0.501**
+- Commit: `d2af07d22`
 - Branch: `master` only (no stable-v5 push)
 - Forum: silent enrich only
-- Related: P131 flow listeners · P132 lock/gang/heater TX · this P130 report + sensor conditions + hybrid flow hardening
+- Related: P131 flow listeners · P132 lock/gang/heater TX · this P130 sensor conditions + hybrid flow hardening
