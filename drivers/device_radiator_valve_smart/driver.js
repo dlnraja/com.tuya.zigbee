@@ -4,6 +4,26 @@ const { ZigBeeDriver } = require('homey-zigbeedriver');
 
 class RadiatorValveDriver extends ZigBeeDriver {
 async onInit() {
+    /* P131-AUTO-FLOW-LISTENERS */
+
+    try {
+      const __card = this.homey.flow.getActionCard('device_radiator_valve_smart_set_target_temperature');
+      if (__card) {
+        __card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          const raw = args.temperature ?? args.brightness ?? args.dim ?? args.value ?? args.speed;
+          if (raw === undefined) return false;
+          if (typeof args.device.safeSetCapabilityValue === 'function') {
+            await args.device.safeSetCapabilityValue('target_temperature', raw).catch(() => {});
+          } else {
+            await args.device.setCapabilityValue('target_temperature', raw).catch(() => {});
+          }
+          return true;
+        });
+      }
+    } catch (e) { this.error('[FLOW] device_radiator_valve_smart_set_target_temperature:', e.message); }
+    /* P131-AUTO-FLOW-LISTENERS-END */
+
     await super.onInit();
     if (this._flowCardsRegistered) {return;}
     this._flowCardsRegistered = true;

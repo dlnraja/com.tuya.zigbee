@@ -34,7 +34,7 @@ class FanControllerDevice extends TuyaZigbeeDevice {
       }
 
       await this._setupTuyaDP(zclNode);
-      await this._registerFlowCards();
+      // P131: flow listeners in driver.js
 
       this.log('Fan Controller initialized');
     } catch (err) {

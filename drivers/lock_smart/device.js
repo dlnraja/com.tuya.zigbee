@@ -1,7 +1,9 @@
 'use strict';
-const { UnifiedSensorBase } = require('../../lib/devices/UnifiedSensorBase');
 
-class LockSmartDevice extends UnifiedSensorBase {
+const { UnifiedSensorBase } = require('../../lib/devices/UnifiedSensorBase');
+const LockControlMixin = require('../../lib/mixins/LockControlMixin');
+
+class LockSmartDevice extends LockControlMixin(UnifiedSensorBase) {
   get mainsPowered() { return false; }
   get sensorCapabilities() { return ['locked', 'measure_battery', 'alarm_tamper']; }
   get dpMappings() {
@@ -12,11 +14,11 @@ class LockSmartDevice extends UnifiedSensorBase {
       9: { capability: 'alarm_tamper', transform: (v) => !!v },
       10: { capability: 'measure_battery', divisor: 1 },
       13: { capability: 'alarm_tamper', transform: (v) => !!v },
-      35: { capability: 'alarm_tamper', transform: (v) => !!v }
+      35: { capability: 'alarm_tamper', transform: (v) => !!v },
     };
   }
+
   async onNodeInit({ zclNode }) {
-    // --- Attribute Reporting Configuration (auto-generated) ---
     try {
       await this.configureAttributeReporting([
         {
@@ -25,7 +27,7 @@ class LockSmartDevice extends UnifiedSensorBase {
           minInterval: 3600,
           maxInterval: 43200,
           minChange: 2,
-        }
+        },
       ]);
       this.log('Attribute reporting configured successfully');
     } catch (err) {
@@ -33,10 +35,9 @@ class LockSmartDevice extends UnifiedSensorBase {
     }
 
     await super.onNodeInit({ zclNode });
-    this._registerCapabilityListeners(); // rule-12a injected
-    this.log('[LOCK]  Ready');
+    this._registerLockControl();
+    this.log('[LOCK] Ready (P130 lock TX path)');
   }
-
 
   async onDeleted() {
     this._destroyed = true;
@@ -44,16 +45,13 @@ class LockSmartDevice extends UnifiedSensorBase {
     this.log('Device deleted, cleaning up');
   }
 
-  /**
-   * v7.4.6: Refresh state when device announces itself (rejoin/wakeup)
-   */
   async onEndDeviceAnnounce() {
     this.log('[REJOIN] Device announced itself, refreshing state...');
-    if (typeof this._updateLastSeen === 'function') {this._updateLastSeen();}
-    // Proactive data recovery if supported
+    if (typeof this._updateLastSeen === 'function') { this._updateLastSeen(); }
     if (this._dataRecoveryManager) {
-       this._dataRecoveryManager?.forceRecovery?.();
+      this._dataRecoveryManager?.forceRecovery?.();
     }
   }
 }
+
 module.exports = LockSmartDevice;

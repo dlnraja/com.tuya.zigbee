@@ -4,6 +4,73 @@ const { ZigBeeDriver } = require('homey-zigbeedriver');
 
 class SmartScenePanelDriver extends ZigBeeDriver {
   async onInit() {
+    /* P131-AUTO-FLOW-LISTENERS */
+
+    try {
+      const __card = this.homey.flow.getActionCard('smart_scene_panel_set_switch_1');
+      if (__card) {
+        __card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          const v = !!(args.value ?? args.state ?? args.onoff);
+          if (typeof args.device.safeSetCapabilityValue === 'function') {
+            await args.device.safeSetCapabilityValue('onoff', v).catch(() => {});
+          } else {
+            await args.device.setCapabilityValue('onoff', v).catch(() => {});
+          }
+          return true;
+        });
+      }
+    } catch (e) { this.error('[FLOW] smart_scene_panel_set_switch_1:', e.message); }
+
+    try {
+      const __card = this.homey.flow.getActionCard('smart_scene_panel_set_switch_2');
+      if (__card) {
+        __card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          const v = !!(args.value ?? args.state ?? args.onoff);
+          if (typeof args.device.safeSetCapabilityValue === 'function') {
+            await args.device.safeSetCapabilityValue('onoff.2', v).catch(() => {});
+          } else {
+            await args.device.setCapabilityValue('onoff.2', v).catch(() => {});
+          }
+          return true;
+        });
+      }
+    } catch (e) { this.error('[FLOW] smart_scene_panel_set_switch_2:', e.message); }
+
+    try {
+      const __card = this.homey.flow.getActionCard('smart_scene_panel_set_switch_3');
+      if (__card) {
+        __card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          const v = !!(args.value ?? args.state ?? args.onoff);
+          if (typeof args.device.safeSetCapabilityValue === 'function') {
+            await args.device.safeSetCapabilityValue('onoff.3', v).catch(() => {});
+          } else {
+            await args.device.setCapabilityValue('onoff.3', v).catch(() => {});
+          }
+          return true;
+        });
+      }
+    } catch (e) { this.error('[FLOW] smart_scene_panel_set_switch_3:', e.message); }
+
+    try {
+      const __card = this.homey.flow.getActionCard('smart_scene_panel_set_switch_4');
+      if (__card) {
+        __card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          const v = !!(args.value ?? args.state ?? args.onoff);
+          if (typeof args.device.safeSetCapabilityValue === 'function') {
+            await args.device.safeSetCapabilityValue('onoff.4', v).catch(() => {});
+          } else {
+            await args.device.setCapabilityValue('onoff.4', v).catch(() => {});
+          }
+          return true;
+        });
+      }
+    } catch (e) { this.error('[FLOW] smart_scene_panel_set_switch_4:', e.message); }
+    /* P131-AUTO-FLOW-LISTENERS-END */
+
     this.log('SmartScenePanelDriver initialized');
 
     // Scene activated trigger with scene filter

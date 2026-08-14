@@ -5,6 +5,25 @@ const { ZigBeeDriver } = require('homey-zigbeedriver');
 
 class PlugSmartDriver extends ZigBeeDriver {
 async onInit() {
+    /* P131-AUTO-FLOW-LISTENERS */
+
+    try {
+      const __card = this.homey.flow.getActionCard('plug_smart_toggle');
+      if (__card) {
+        __card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          const v = !args.device.getCapabilityValue('onoff');
+          if (typeof args.device.safeSetCapabilityValue === 'function') {
+            await args.device.safeSetCapabilityValue('onoff', v).catch(() => {});
+          } else {
+            await args.device.setCapabilityValue('onoff', v).catch(() => {});
+          }
+          return true;
+        });
+      }
+    } catch (e) { this.error('[FLOW] plug_smart_toggle:', e.message); }
+    /* P131-AUTO-FLOW-LISTENERS-END */
+
     await super.onInit();
     if (this._flowCardsRegistered) {return;}
     this._flowCardsRegistered = true;

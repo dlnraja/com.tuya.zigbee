@@ -2030,5 +2030,8 @@
   },
   "9.0.498": {
     "en": "v9.0.497: fix(P129b): stop publish reinject from stripping TS004F remotes (v9.0.497)"
+  },
+  "9.0.499": {
+    "en": "P131: patch missing actuator flow registerRunListener on 21 drivers; fan_controller flow ownership fix."
   }
 }

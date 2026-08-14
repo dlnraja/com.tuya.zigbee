@@ -1,125 +1,77 @@
 'use strict';
-const { safeMultiply } = require('../../lib/utils/tuyaUtils.js');
 
 const { ZigBeeDriver } = require('homey-zigbeedriver');
+const { registerOnoffFlowCards, setActuatorCapability } = require('../../lib/flow/ActuatorFlowHelper');
+const { safeSetTimeout } = require('../../lib/utils/safe-timers');
 
 /**
- * v5.5.570: CRITICAL FIX - Flow card run listeners were missing
+ * P130: Restore real getActionCard wiring (was stubbed with `const card = null`).
  */
 class PlugSmartDriver extends ZigBeeDriver {
-  /**
-   * v7.0.12: Defensive getDeviceById override to prevent crashes during deserialization.
-   * If a device cannot be found (e.g. removed while flow is triggering), return null instead of throwing.
-   */
   getDeviceById(id) {
     try {
       return super.getDeviceById(id);
     } catch (err) {
       this.error(`[CRASH-PREVENTION] Could not get device by id: ${id} - ${err.message}`);
       return null;
-      }
     }
-  async onInit() {
-    await super.onInit();
-    if (this._flowCardsRegistered) {return;}
-    this._flowCardsRegistered = true;
-
-    this.log('PlugSmartDriver v5.5.570 initialized');
-    this._registerFlowCards();
-  
-  
-  
-  
-  
-  
-  
   }
 
-  _registerFlowCards() {
-    // CONDITION: Plug is/is not on
-    try {
-      const card = null;
-      if (card) {
-        card.registerRunListener(async (args) => {
-          if (!args.device) {return false;}
-          return args.device.getCapabilityValue('onoff') === true;
-        });
-        this.log('[FLOW]  plug_smart_is_on');
-      }
-    } catch (err) { this.log(`[FLOW]  ${err.message}`); }
+  async onInit() {
+    await super.onInit();
+    if (this._flowCardsRegistered) { return; }
+    this._flowCardsRegistered = true;
 
-    // ACTION: Turn on
-    try {
-      const card = null;
-      if (card) {
+    registerOnoffFlowCards(this, 'device_plug_smart');
+
+    const regDelay = (id, value) => {
+      try {
+        const card = this.homey.flow.getActionCard(id);
+        if (!card) { return; }
         card.registerRunListener(async (args) => {
-          if (!args.device) {return false;}
-          await args.device._setGangOnOff(1, true).catch(() => {});
-          await args.device.setCapabilityValue('onoff', true).catch(() => {});
+          if (!args.device) { return false; }
+          const delayMs = Number(args.delay || 10) * 1000;
+          safeSetTimeout(args.device, () => {
+            setActuatorCapability(args.device, 'onoff', value).catch(() => {});
+          }, delayMs);
           return true;
         });
-        this.log('[FLOW]  plug_smart_turn_on');
+      } catch (err) {
+        this.log(`[FLOW] ${id}: ${err.message}`);
       }
-    } catch (err) { this.log(`[FLOW]  ${err.message}`); }
+    };
 
-    // ACTION: Turn off
+    regDelay('device_plug_smart_turn_on_delay', true);
+    regDelay('device_plug_smart_turn_off_delay', false);
+
     try {
-      const card = null;
+      const card = this.homey.flow.getActionCard('device_plug_smart_set_indicator');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) {return false;}
-          await args.device._setGangOnOff(1, false).catch(() => {});
-          await args.device.setCapabilityValue('onoff', false).catch(() => {});
+          if (!args.device) { return false; }
+          if (args.device.hasCapability?.('indicator_mode')) {
+            return setActuatorCapability(args.device, 'indicator_mode', args.mode ?? args.value);
+          }
           return true;
         });
-        this.log('[FLOW]  plug_smart_turn_off');
       }
-    } catch (err) { this.log(`[FLOW]  ${err.message}`); }
+    } catch (_) { /* optional */ }
 
-    // ACTION: Toggle
     try {
-      const card = null;
+      const card = this.homey.flow.getActionCard('device_plug_smart_set_power_on');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) {return false;}
-          const current = args.device.getCapabilityValue('onoff');
-          await args.device._setGangOnOff(1, !current).catch(() => {});
-          await args.device.setCapabilityValue('onoff', !current).catch(() => {});
+          if (!args.device) { return false; }
+          if (args.device.hasCapability?.('power_on_behavior')) {
+            return setActuatorCapability(args.device, 'power_on_behavior', args.mode ?? args.value);
+          }
           return true;
         });
-        this.log('[FLOW]  plug_smart_toggle');
       }
-    } catch (err) { this.log(`[FLOW]  ${err.message}`); }
+    } catch (_) { /* optional */ }
 
-    // ACTION: Turn on after delay
-    try {
-      const card = null;
-      if (card) {
-        card.registerRunListener(async (args) => {
-          if (!args.device) {return false;}
-          const delay = args.delay || 10 * 1000;
-          this.homey.setTimeout(() => args.device['setCapabilityValue']('onoff', true).catch(() => {}), delay);
-          return true;
-        });
-        this.log('[FLOW]  plug_smart_turn_on_delay');
-      }
-    } catch (err) { this.log(`[FLOW]  ${err.message}`); }
-
-    // ACTION: Turn off after delay
-    try {
-      const card = null;
-      if (card) {
-        card.registerRunListener(async (args) => {
-          if (!args.device) {return false;}
-          const delay = args.delay || 10 * 1000;
-          this.homey.setTimeout(() => args.device['setCapabilityValue']('onoff', false).catch(() => {}), delay);
-          return true;
-        });
-        this.log('[FLOW]  plug_smart_turn_off_delay');
-      }
-    } catch (err) { this.log(`[FLOW]  ${err.message}`); }
-
-    this.log('[FLOW]  Smart plug flow cards registered');
-    }
+    this.log('[FLOW] Smart plug flow cards registered (P130)');
+  }
 }
+
 module.exports = PlugSmartDriver;

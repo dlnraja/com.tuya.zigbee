@@ -3,62 +3,70 @@
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
 class LockSmartDriver extends ZigBeeDriver {
-async onInit() {
+  async onInit() {
     await super.onInit();
-    if (this._flowCardsRegistered) {return;}
+    if (this._flowCardsRegistered) { return; }
     this._flowCardsRegistered = true;
-    this.log('LockSmartDriver v5.5.574 initialized');
+    this.log('LockSmartDriver initialized (P130)');
     this._registerFlowCards();
   }
 
   _registerFlowCards() {
-    // TRIGGERS
-
-    // CONDITIONS
     try {
       const card = this.homey.flow.getConditionCard('lock_smart_is_locked');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) {return false;}
-          return args.device.getCapabilityValue('onoff') === true;
+          if (!args.device) { return false; }
+          return args.device.getCapabilityValue('locked') === true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Condition lock_smart_is_locked: ${err.message}`); } }
+    } catch (err) {
+      this.log(`[FLOW] lock_smart_is_locked: ${err.message}`);
+    }
 
     try {
       const card = this.homey.flow.getConditionCard('lock_smart_tamper_active');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) {return false;}
+          if (!args.device) { return false; }
           return args.device.getCapabilityValue('alarm_tamper') === true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Condition lock_smart_tamper_active: ${err.message}`); } }
+    } catch (err) {
+      this.log(`[FLOW] lock_smart_tamper_active: ${err.message}`);
+    }
 
-    // ACTIONS
     try {
       const card = this.homey.flow.getActionCard('lock_smart_unlock');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) {return false;}
-          if (typeof args.device.unlock === 'function') {await args.device.unlock().catch(() => {});}
+          if (!args.device) { return false; }
+          if (typeof args.device.unlock === 'function') {
+            await args.device.unlock().catch(() => {});
+          }
           return true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Action lock_smart_unlock: ${err.message}`); } }
+    } catch (err) {
+      this.log(`[FLOW] lock_smart_unlock: ${err.message}`);
+    }
 
     try {
       const card = this.homey.flow.getActionCard('lock_smart_lock');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) {return false;}
-          if (typeof args.device.lock === 'function') {await args.device.lock().catch(() => {});}
+          if (!args.device) { return false; }
+          if (typeof args.device.lock === 'function') {
+            await args.device.lock().catch(() => {});
+          }
           return true;
         });
       }
-    } catch (err) { if (this.developerDebugMode) { this.error(`Action lock_smart_lock: ${err.message}`); } }
+    } catch (err) {
+      this.log(`[FLOW] lock_smart_lock: ${err.message}`);
+    }
 
-    this.log('[FLOW] All flow cards registered');
+    this.log('[FLOW] Lock smart flow cards registered (P130)');
   }
 }
 
