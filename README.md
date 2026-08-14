@@ -38,6 +38,7 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 | Metric | Value |
 |--------|-------|
 | **App Version** | v9.0.504 |
+| **App Version** | v9.0.506 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,368 |
 | **Pairing Variants** | 16,958 (4 case combos per fingerprint) |
@@ -106,7 +107,8 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 
 | Version | Changes |
 |---------|---------|
-| **v9.0.505** | Added community climate/motion/switch fingerprints from monthly sync; ZT08 stays on dedicated driver. |
+| **v9.0.506** | Dual-app reliability sync report and refreshed Homey dashboards (health 93/100). |
+| **v9.0.505** | Dual-app reliability sync report and refreshed Homey dashboards (health 93/100). |
 | **v9.0.504** | Added community climate/motion/switch fingerprints from monthly sync; ZT08 stays on dedicated driver. |
 | **v9.0.503** | Dedicated ZT08 climate driver for pairing (#513), DIN rail plug on hardened base. |
 | **v9.0.502** | Maintenance bump. |
@@ -117,7 +119,6 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 | **v9.0.496** | v9.0.496: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.495** | P128: climate probe temps above ~50C no longer shown 10x too low; ZT08 battery_state 0/1/2 maps to 10/50/100% (GH#513). |
 | **v9.0.494** | P128: climate probe temps above ~50C no longer shown 10x too low; ZT08 battery_state 0/1/2 maps to 10/50/100% (GH#513). |
-| **v9.0.493** | P127: humidity X10 fix (GH#516), fingerprints sacred-couple repair, thin bare ZigBee migrations, anti-bot+Unified CI gates |
 
 <!-- CHANGELOG_END -->
 
