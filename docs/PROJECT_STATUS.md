@@ -17,12 +17,12 @@
 | Category | Count |
 |----------|-------|
 | socket | 117 |
-| sensor | 112 |
+| sensor | 102 |
 | light | 61 |
 | other | 30 |
+| button | 27 |
 | thermostat | 26 |
 | remote | 18 |
-| button | 17 |
 | fan | 16 |
 | windowcoverings | 11 |
 | lock | 5 |

@@ -82,12 +82,12 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 | Class | Count |
 |-------|-------|
 | socket | 117 |
-| sensor | 112 |
+| sensor | 102 |
 | light | 61 |
 | other | 30 |
+| button | 27 |
 | thermostat | 26 |
 | remote | 18 |
-| button | 17 |
 | fan | 16 |
 | windowcoverings | 11 |
 | lock | 5 |
@@ -109,6 +109,7 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 |---------|---------|
 | **v9.0.499** | v9.0.497: fix(P129b): stop publish reinject from stripping TS004F remotes (v9.0.497) |
 | **v9.0.500** | P131: patch missing actuator flow registerRunListener on 21 drivers; fan_controller flow ownership fix. |
+| **v9.0.500** | Improved lock flow TX path, multi-gang onoff resolution, thermostat temp UI range, and flow-handler heuristics. |
 | **v9.0.499** | P131: patch missing actuator flow registerRunListener on 21 drivers; fan_controller flow ownership fix. |
 | **v9.0.498** | v9.0.497: fix(P129b): stop publish reinject from stripping TS004F remotes (v9.0.497) |
 | **v9.0.496** | v9.0.496: automated publish, manifest sync, and Homey test promotion. |
@@ -120,7 +121,6 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 | **v9.0.490** | P126: boiler flow listeners (CI), iadro9bf presence-only, DIN meter+curtain TuyaZigbeeDevice + energy divisor fixes. |
 | **v9.0.489** | P126: boiler flow listeners (CI), iadro9bf presence-only, DIN meter+curtain TuyaZigbeeDevice + energy divisor fixes. |
 | **v9.0.488** | P125: fix CI fingerprint collisions (xu4a5rhj/lawxy9e2/contact TS0601), migrate humidifier/dimmer/radiator/double_power_point. |
-| **v9.0.487** | P124: migrate thin bare ZigBee drivers, fix clrdrnya radar collision, LCD lux ZCL /100 scaling. |
 
 <!-- CHANGELOG_END -->
 
