@@ -1,11 +1,9 @@
 {
-  "updated": "2026-08-12T11:50:00.000Z",
-  "note": "Legacy bare ZigBeeDevice leftovers. P126: device_air_purifier_din + curtain_module migrated.",
+  "updated": "2026-08-14T06:30:00.000Z",
+  "note": "Legacy bare ZigBeeDevice leftovers. P127: led_controller_dimmable + pir_mmwave_sensor + switch_wireless + remote_dimmer migrated.",
   "drivers": [
     "blaster_remote",
     "ir_blaster",
-    "led_controller_dimmable",
-    "pir_mmwave_sensor",
     "power_clamp_meter",
     "smartPlug_DinRail"
   ]

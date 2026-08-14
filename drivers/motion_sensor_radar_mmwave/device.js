@@ -9,8 +9,7 @@ const IntelligentPresenceInference = require('../../lib/sensors/IntelligentPrese
  * These devices report battery DP values but are actually mains-powered.
  */
 const MAINS_POWERED_RADARS = new Set([
-  '_tze204_clrdrnya',
-  '_tze200_clrdrnya',
+  // P124/P127: clrdrnya sacred couple lives on presence_sensor_radar only
   '_tze200_lyetpprm',
   '_tze204_lyetpprm',
   '_tze200_wukb7rhc',

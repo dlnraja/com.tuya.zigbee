@@ -111,6 +111,18 @@ jobs:
         run: |
           node .github/scripts/fp-collision-check.js --baseline .github/fingerprint-collision-baseline.json
 
+      - name: 🛡️ Anti-bot regression gate (P127)
+        run: node tools/ci/anti-bot-regression-gate.js
+
+      - name: 🛡️ Bare ZigBeeDevice gate
+        run: npm run check:bare-zigbee
+
+      - name: 🛡️ Unbound catch(this.error) gate
+        run: node tools/ci/fix-unbound-catch-this-error.js --gate
+
+      - name: 🛡️ Adaptive double-division gate (hard)
+        run: node tools/ci/adaptive-double-division-gate.js --hard
+
       - name: 🌌 ZERO DEFECT ARCHITECT AUDIT
         run: node scripts/maintenance/zero-defect-architect-audit.js
       

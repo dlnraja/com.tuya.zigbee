@@ -52,7 +52,17 @@ const FORBIDDEN = [
   {
     id: 'p94-imaccztn-not-switch4',
     driver: 'switch_4gang',
-    mfrs: ['_TZ3210_imaccztn'],
+    mfrs: ['_TZ3210_imaccztn', '_TZ3000_imaccztn'],
+  },
+  {
+    id: 'p127-imaccztn-not-bulb',
+    driver: 'bulb_dimmable',
+    mfrs: ['_TZ3000_imaccztn', '_TZ3210_imaccztn'],
+  },
+  {
+    id: 'p127-pcdmj88b-not-device-radiator',
+    driver: 'device_radiator_valve',
+    mfrs: ['_TZE200_pcdmj88b', '_TZE204_pcdmj88b', '_TZE284_pcdmj88b'],
   },
   // Forum silent-scan: BSEED dimmer family must not be climate sensor
   {
@@ -98,7 +108,12 @@ const FORBIDDEN = [
   {
     id: 'p97-pcdmj88b-not-wall-thermostat',
     driver: 'wall_thermostat',
-    mfrs: ['_TZE284_pcdmj88b', '_TZE204_pcdmj88b'],
+    mfrs: ['_TZE284_pcdmj88b', '_TZE204_pcdmj88b', '_TZE200_pcdmj88b'],
+  },
+  {
+    id: 'p127-iadro9bf-not-generic',
+    driver: 'generic_tuya',
+    mfrs: ['_TZE204_iadro9bf', '_TZE200_iadro9bf', '_TZE284_iadro9bf'],
   },
   {
     id: 'p96-hlla45kx-not-generic',
@@ -297,7 +312,12 @@ const REQUIRED = [
   {
     id: 'p94-imaccztn-relay',
     driver: 'relay_board_4_channel',
-    mfrs: ['_TZ3210_imaccztn'],
+    mfrs: ['_TZ3210_imaccztn', '_TZ3000_imaccztn'],
+  },
+  {
+    id: 'p127-pcdmj88b-trv',
+    driver: 'thermostatic_radiator_valve',
+    mfrs: ['_TZE284_pcdmj88b', '_TZE204_pcdmj88b', '_TZE200_pcdmj88b'],
   },
   {
     id: 'p96-jtbgusdc-dimmer2',
@@ -370,12 +390,12 @@ const REQUIRED = [
   {
     id: 'p102-forum-clrdrnya-radar',
     driver: 'presence_sensor_radar',
-    mfrs: ['_TZE200_clrdrnya', '_TZE204_clrdrnya'],
+    mfrs: ['_TZE200_clrdrnya', '_TZE204_clrdrnya', '_TZE284_clrdrnya'],
   },
   {
     id: 'p126-iadro9bf-presence',
     driver: 'presence_sensor_radar',
-    mfrs: ['_TZE204_iadro9bf'],
+    mfrs: ['_TZE204_iadro9bf', '_TZE284_iadro9bf'],
   },
   {
     id: 'p102-trwaxi57-curtain',
@@ -482,8 +502,60 @@ for (const rule of REQUIRED) {
   }
 }
 
+// P127: secondary DB must not re-poison sacred couples (lib/tuya/fingerprints.json)
+const FP_PATH = path.join(ROOT, 'lib', 'tuya', 'fingerprints.json');
+const FP_REQUIRED = [
+  { mfr: '_TZE204_iadro9bf', driverId: 'presence_sensor_radar' },
+  { mfr: '_TZE284_iadro9bf', driverId: 'presence_sensor_radar' },
+  { mfr: '_tze204_iadro9bf', driverId: 'presence_sensor_radar' },
+  { mfr: '_TZ3210_imaccztn', driverId: 'relay_board_4_channel' },
+  { mfr: '_tz3210_imaccztn', driverId: 'relay_board_4_channel' },
+  { mfr: '_TZ3000_imaccztn', driverId: 'relay_board_4_channel' },
+  { mfr: '_TZE284_pcdmj88b', driverId: 'thermostatic_radiator_valve' },
+  { mfr: '_TZE204_pcdmj88b', driverId: 'thermostatic_radiator_valve' },
+  { mfr: '_tze200_pcdmj88b', driverId: 'thermostatic_radiator_valve' },
+  { mfr: '_TZE200_clrdrnya', driverId: 'presence_sensor_radar' },
+  { mfr: '_TZE204_clrdrnya', driverId: 'presence_sensor_radar' },
+];
+const FP_FORBIDDEN_DRIVERS = {
+  iadro9bf: ['climate_sensor', 'generic_tuya'],
+  imaccztn: ['switch_4gang', 'bulb_dimmable', 'generic_tuya'],
+  pcdmj88b: ['wall_thermostat', 'device_radiator_valve'],
+  clrdrnya: ['motion_sensor_radar_mmwave', 'climate_sensor'],
+};
+
+if (fs.existsSync(FP_PATH)) {
+  let fpDb = {};
+  try {
+    fpDb = JSON.parse(fs.readFileSync(FP_PATH));
+  } catch (e) {
+    failures.push(`FP-DB parse error: ${e.message}`);
+  }
+  for (const rule of FP_REQUIRED) {
+    const entry = fpDb[rule.mfr];
+    if (!entry) {
+      notes.push(`skip fp-required ${rule.mfr}: missing key`);
+      continue;
+    }
+    if (String(entry.driverId) !== rule.driverId) {
+      failures.push(`FP-REQUIRED ${rule.mfr}: driverId=${entry.driverId} want ${rule.driverId}`);
+    }
+  }
+  for (const [key, entry] of Object.entries(fpDb)) {
+    const low = String(key).toLowerCase();
+    for (const [needle, badDrivers] of Object.entries(FP_FORBIDDEN_DRIVERS)) {
+      if (!low.includes(needle)) continue;
+      if (badDrivers.includes(String(entry.driverId))) {
+        failures.push(`FP-FORBIDDEN ${key}: driverId=${entry.driverId} (poison)`);
+      }
+    }
+  }
+} else {
+  notes.push('skip fp-db: lib/tuya/fingerprints.json missing');
+}
+
 console.log('═══════════════════════════════════════════════');
-console.log('  Anti-bot regression gate (P94+)');
+console.log('  Anti-bot regression gate (P94+/P127)');
 console.log(`  root: ${ROOT}`);
 console.log('═══════════════════════════════════════════════');
 for (const n of notes) console.log(`  ~ ${n}`);

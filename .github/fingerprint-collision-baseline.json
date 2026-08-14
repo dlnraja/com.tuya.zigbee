@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-11T03:37:57.719Z",
+  "generatedAt": "2026-08-14T06:39:01.056Z",
   "description": "Known historical fingerprint collisions. CI fails only for collisions not listed here.",
   "collisions": [
     {
@@ -546,7 +546,6 @@
       "key": "_tz3210_jaap6jeb|TS0601",
       "drivers": [
         "bulb_rgbw",
-        "contact_sensor",
         "motion_sensor"
       ]
     },
@@ -852,13 +851,6 @@
       ]
     },
     {
-      "key": "_tze200_u6x1zyv2|TS0601",
-      "drivers": [
-        "contact_sensor",
-        "sensor_contact_rain"
-      ]
-    },
-    {
       "key": "_tze200_u6x1zyv2|TY0203",
       "drivers": [
         "contact_sensor",
@@ -874,13 +866,6 @@
     },
     {
       "key": "_tze200_vrcfo4i0|TS0203",
-      "drivers": [
-        "climate_sensor",
-        "contact_sensor"
-      ]
-    },
-    {
-      "key": "_tze200_vrcfo4i0|TS0601",
       "drivers": [
         "climate_sensor",
         "contact_sensor"
@@ -1182,300 +1167,6 @@
     },
     {
       "key": "_tze204_eaulras5|ZP-301Z",
-      "drivers": [
-        "climate_sensor",
-        "presence_sensor_radar"
-      ]
-    },
-    {
-      "key": "_tze204_iadro9bf|CK-BL702-MWS-01",
-      "drivers": [
-        "climate_sensor",
-        "presence_sensor_radar"
-      ]
-    },
-    {
-      "key": "_tze204_iadro9bf|CK-BL702-MWS-01(7016)",
-      "drivers": [
-        "climate_sensor",
-        "presence_sensor_radar"
-      ]
-    },
-    {
-      "key": "_tze204_iadro9bf|CK-TLSR8656-SS5-01(7014)",
-      "drivers": [
-        "climate_sensor",
-        "presence_sensor_radar"
-      ]
-    },
-    {
-      "key": "_tze204_iadro9bf|Excellux",
-      "drivers": [
-        "climate_sensor",
-        "presence_sensor_radar"
-      ]
-    },
-    {
-      "key": "_tze204_iadro9bf|lumi.sensor_ht",
-      "drivers": [
-        "climate_sensor",
-        "presence_sensor_radar"
-      ]
-    },
-    {
-      "key": "_tze204_iadro9bf|lumi.sensor_ht.agl02",
-      "drivers": [
-        "climate_sensor",
-        "presence_sensor_radar"
-      ]
-    },
-    {
-      "key": "_tze204_iadro9bf|lumi.weather",
-      "drivers": [
-        "climate_sensor",
-        "presence_sensor_radar"
-      ]
-    },
-    {
-      "key": "_tze204_iadro9bf|MG1_5RZ",
-      "drivers": [
-        "climate_sensor",
-        "presence_sensor_radar"
-      ]
-    },
-    {
-      "key": "_tze204_iadro9bf|RH3052",
-      "drivers": [
-        "climate_sensor",
-        "presence_sensor_radar"
-      ]
-    },
-    {
-      "key": "_tze204_iadro9bf|SM0201",
-      "drivers": [
-        "climate_sensor",
-        "presence_sensor_radar"
-      ]
-    },
-    {
-      "key": "_tze204_iadro9bf|SZLMR10",
-      "drivers": [
-        "climate_sensor",
-        "presence_sensor_radar"
-      ]
-    },
-    {
-      "key": "_tze204_iadro9bf|TH01",
-      "drivers": [
-        "climate_sensor",
-        "presence_sensor_radar"
-      ]
-    },
-    {
-      "key": "_tze204_iadro9bf|THS317-ET",
-      "drivers": [
-        "climate_sensor",
-        "presence_sensor_radar"
-      ]
-    },
-    {
-      "key": "_tze204_iadro9bf|TS0004",
-      "drivers": [
-        "climate_sensor",
-        "presence_sensor_radar"
-      ]
-    },
-    {
-      "key": "_tze204_iadro9bf|TS0201",
-      "drivers": [
-        "climate_sensor",
-        "presence_sensor_radar"
-      ]
-    },
-    {
-      "key": "_tze204_iadro9bf|TS0202",
-      "drivers": [
-        "climate_sensor",
-        "presence_sensor_radar"
-      ]
-    },
-    {
-      "key": "_tze204_iadro9bf|TS0203",
-      "drivers": [
-        "climate_sensor",
-        "presence_sensor_radar"
-      ]
-    },
-    {
-      "key": "_tze204_iadro9bf|TS0215A",
-      "drivers": [
-        "climate_sensor",
-        "presence_sensor_radar"
-      ]
-    },
-    {
-      "key": "_tze204_iadro9bf|TS0222",
-      "drivers": [
-        "climate_sensor",
-        "presence_sensor_radar"
-      ]
-    },
-    {
-      "key": "_tze204_iadro9bf|TS0225",
-      "drivers": [
-        "climate_sensor",
-        "presence_sensor_radar"
-      ]
-    },
-    {
-      "key": "_tze204_iadro9bf|TS0601",
-      "drivers": [
-        "climate_sensor",
-        "presence_sensor_radar"
-      ]
-    },
-    {
-      "key": "_tze204_iadro9bf|TS0601_wirelesssw",
-      "drivers": [
-        "climate_sensor",
-        "presence_sensor_radar"
-      ]
-    },
-    {
-      "key": "_tze204_iadro9bf|TS110E",
-      "drivers": [
-        "climate_sensor",
-        "presence_sensor_radar"
-      ]
-    },
-    {
-      "key": "_tze204_iadro9bf|TS1201",
-      "drivers": [
-        "climate_sensor",
-        "presence_sensor_radar"
-      ]
-    },
-    {
-      "key": "_tze204_iadro9bf|TY0201",
-      "drivers": [
-        "climate_sensor",
-        "presence_sensor_radar"
-      ]
-    },
-    {
-      "key": "_tze204_iadro9bf|WSDCGQ01LM",
-      "drivers": [
-        "climate_sensor",
-        "presence_sensor_radar"
-      ]
-    },
-    {
-      "key": "_tze204_iadro9bf|WSDCGQ11LM",
-      "drivers": [
-        "climate_sensor",
-        "presence_sensor_radar"
-      ]
-    },
-    {
-      "key": "_tze204_iadro9bf|WSDCGQ12LM",
-      "drivers": [
-        "climate_sensor",
-        "presence_sensor_radar"
-      ]
-    },
-    {
-      "key": "_tze204_iadro9bf|ZG-204ZE",
-      "drivers": [
-        "climate_sensor",
-        "presence_sensor_radar"
-      ]
-    },
-    {
-      "key": "_tze204_iadro9bf|ZG-204ZH",
-      "drivers": [
-        "climate_sensor",
-        "presence_sensor_radar"
-      ]
-    },
-    {
-      "key": "_tze204_iadro9bf|ZG-204ZK",
-      "drivers": [
-        "climate_sensor",
-        "presence_sensor_radar"
-      ]
-    },
-    {
-      "key": "_tze204_iadro9bf|ZG-204ZL",
-      "drivers": [
-        "climate_sensor",
-        "presence_sensor_radar"
-      ]
-    },
-    {
-      "key": "_tze204_iadro9bf|ZG-204ZM",
-      "drivers": [
-        "climate_sensor",
-        "presence_sensor_radar"
-      ]
-    },
-    {
-      "key": "_tze204_iadro9bf|ZG-204ZQ",
-      "drivers": [
-        "climate_sensor",
-        "presence_sensor_radar"
-      ]
-    },
-    {
-      "key": "_tze204_iadro9bf|ZG-204ZV",
-      "drivers": [
-        "climate_sensor",
-        "presence_sensor_radar"
-      ]
-    },
-    {
-      "key": "_tze204_iadro9bf|ZG-205Z",
-      "drivers": [
-        "climate_sensor",
-        "presence_sensor_radar"
-      ]
-    },
-    {
-      "key": "_tze204_iadro9bf|ZG-205ZL",
-      "drivers": [
-        "climate_sensor",
-        "presence_sensor_radar"
-      ]
-    },
-    {
-      "key": "_tze204_iadro9bf|ZG-227Z",
-      "drivers": [
-        "climate_sensor",
-        "presence_sensor_radar"
-      ]
-    },
-    {
-      "key": "_tze204_iadro9bf|ZG-227ZL",
-      "drivers": [
-        "climate_sensor",
-        "presence_sensor_radar"
-      ]
-    },
-    {
-      "key": "_tze204_iadro9bf|ZG-302ZL",
-      "drivers": [
-        "climate_sensor",
-        "presence_sensor_radar"
-      ]
-    },
-    {
-      "key": "_tze204_iadro9bf|ZG-302ZM",
-      "drivers": [
-        "climate_sensor",
-        "presence_sensor_radar"
-      ]
-    },
-    {
-      "key": "_tze204_iadro9bf|ZP-301Z",
       "drivers": [
         "climate_sensor",
         "presence_sensor_radar"

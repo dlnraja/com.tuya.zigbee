@@ -4,7 +4,7 @@ const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 const { safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
 
 
-const { ZigBeeDevice } = require('homey-zigbeedriver');
+const UnifiedSwitchBase = require('../../lib/devices/UnifiedSwitchBase');
 
 // Energy scaling divisors — ZCL raw attributes; Tuya-DP drivers use smartDivisor: true via SmartDivisorManager
 const ENERGY_DIVISORS = {
@@ -24,9 +24,15 @@ const ENERGY_DIVISORS = {
  * - Energy monitoring on endpoint 1 (metering 0x0702 + electricalMeasurement 0x0B04)
  * - Power-on behavior via moesStartUpOnOff attribute
  */
-class UsbDongleDualRepeaterDevice extends PhysicalButtonMixin(VirtualButtonMixin(ZigBeeDevice)) {
+class UsbDongleDualRepeaterDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSwitchBase)) {
+
+  get mainsPowered() { return true; }
 
   async onNodeInit({ zclNode }) {
+    await super.onNodeInit({ zclNode });
+    if (this.hasCapability('measure_battery')) {
+      await this.removeCapability('measure_battery').catch(() => {});
+    }
     // --- Attribute Reporting Configuration (auto-generated) ---
     try {
       await this.configureAttributeReporting([
