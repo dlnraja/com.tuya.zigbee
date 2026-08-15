@@ -46,7 +46,8 @@ const DEFAULT_TOPICS = [
 ];
 
 const UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36';
-const MFR_RE = /_T[YZ][A-Z0-9]{3,6}_[A-Za-z0-9]{6,16}/gi;
+// Include _TZE28C1000000_* (Z2M #32305 Avatto prefix) — old {3,6} missed it.
+const MFR_RE = /_T[YZ](?:E200|E204|E284|E28[0-9A-Z]*|ZB\d{2}|Z3000|Z3002|Z3210|Z3218|ST11)[_-][A-Za-z0-9]+/gi;
 const PID_RE = /\bTS\d{4}[A-Z]?\b/g;
 const ISSUE_RE = /\b(?:crash|timeout|battery|button|dimmer|cover|curtain|blind|thermostat|TRV|scale|divisor|kWh|unavailable|offline|no.?data|not.?work|wrong.?driver|unknown|lux|luminance|SOS|presence|soil|irrigation|flow)\b/gi;
 

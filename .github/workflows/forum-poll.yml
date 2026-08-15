@@ -22,7 +22,7 @@ on:
         description: 'Max posts to fetch per topic'
         required: false
         type: string
-        default: '20'
+        default: '40'
 
 permissions:
   contents: write
@@ -74,7 +74,7 @@ jobs:
         id: poll
         run: |
           TOPIC="${{ inputs.topic_id || '140352' }}"
-          MAX="${{ inputs.max_posts || '20' }}"
+          MAX="${{ inputs.max_posts || '40' }}"
           echo "## 🌍 Forum Poll" >> $GITHUB_STEP_SUMMARY
           echo "Topic ID: $TOPIC, Max posts: $MAX" >> $GITHUB_STEP_SUMMARY
           echo '```' >> $GITHUB_STEP_SUMMARY

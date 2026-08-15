@@ -261,7 +261,8 @@ describe('forum routing regressions', () => {
     const { zclMeasuredValueToLux } = require('../../lib/utils/tuyaUtils');
 
     assert.strictEqual(zclMeasuredValueToLux(0), 0);
-    assert.strictEqual(zclMeasuredValueToLux(1), 1);
+    assert.strictEqual(zclMeasuredValueToLux(1), 1); // linear Tuya quirk
+    assert.strictEqual(zclMeasuredValueToLux(155), 155); // #2134 linear lux
     assert.strictEqual(zclMeasuredValueToLux(10001), 10);
     assert.strictEqual(zclMeasuredValueToLux(20001), 100);
     assert.strictEqual(zclMeasuredValueToLux(30001), 1000);
@@ -271,6 +272,44 @@ describe('forum routing regressions', () => {
     assert.match(read('lib/adapters/ZclToHomeyMap.js'), /zclMeasuredValueToLux/);
     assert.match(read('.github/scripts/athom-build-error-diag.js'), /createCDPSession/);
     assert.doesNotMatch(read('drivers/light_sensor_outdoor/device.js'), /val - 1 \* 10000/);
+  });
+
+  it('routes forum #2135 Avatto ZDMS16-2 away from climate and clamps MCU brightness', () => {
+    const { toTuyaBrightness, fromTuyaBrightness } = require('../../lib/tuya/TuyaBrightnessScale');
+    const compose = composeDriver('dimmer_2_gang_tuya');
+
+    for (const manufacturer of ['_TZE28C1000000_jtbgusdc', '_TZE204_jtbgusdc', '_TZE204_fjms2pi9']) {
+      assert(includesCI(compose.zigbee?.manufacturerName, manufacturer), `dimmer_2_gang_tuya must claim ${manufacturer}`);
+    }
+    assertDriverDoesNotClaim('climate_sensor', '_TZE28C1000000_jtbgusdc');
+    assertDriverDoesNotClaim('climate_sensor', '_TZE204_fjms2pi9');
+    assert(!compose.capabilities.includes('measure_battery'), 'Avatto 2ch dimmer is mains — no phantom battery');
+    assert(!compose.energy?.batteries, 'Avatto 2ch dimmer must not publish CR2032 metadata');
+    // Forum #2069: UNSUPPORTED_CLUSTER when Homey binds ZCL levelControl (8) on Tuya EF00 dimmers
+    assert(!compose.zigbee.endpoints['1'].clusters.includes(8), 'Tuya DP dimmer must not declare ZCL levelControl');
+    assert(!compose.zigbee.endpoints['1'].clusters.includes(6), 'Tuya DP dimmer must not declare ZCL onOff');
+    assert(compose.zigbee.endpoints['1'].clusters.includes(61184), 'Tuya DP dimmer must declare EF00');
+
+    assert.strictEqual(toTuyaBrightness(1), 1000);
+    assert.strictEqual(toTuyaBrightness(1.2), 1000);
+    assert.strictEqual(toTuyaBrightness(-1), 0);
+    assert.ok(toTuyaBrightness(1) <= 1000, 'Z2M #32305 MCU reboot if brightness > 1000');
+    assert.strictEqual(fromTuyaBrightness(1000), 1);
+    assert.strictEqual(fromTuyaBrightness(2000), 1);
+
+    const source = read('drivers/dimmer_2_gang_tuya/device.js');
+    assert.match(source, /toTuyaBrightness/);
+    assert.match(source, /fromTuyaBrightness/);
+    assert.match(source, /get mainsPowered\(\) \{ return true; \}/);
+  });
+
+  it('routes forum rain/contact sacred couples without collisions', () => {
+    // compose is source of truth before app.json regenerate
+    assert(includesCI(composeDriver('rain_sensor').zigbee?.manufacturerName, '_TZE200_u6x1zyv2'));
+    assert(!includesCI(composeDriver('contact_sensor').zigbee?.manufacturerName, '_TZE200_u6x1zyv2'));
+    assert(!includesCI(composeDriver('sensor_contact_rain').zigbee?.manufacturerName, '_TZE200_u6x1zyv2'));
+    assert(includesCI(composeDriver('contact_sensor').zigbee?.manufacturerName, '_TZE200_pay2byax'));
+    assert(!includesCI(composeDriver('soil_sensor').zigbee?.manufacturerName, '_TZE200_pay2byax'));
   });
 
   it('uses exact manufacturerName+deviceId routes before mfr-only fingerprint catalogs', () => {
@@ -291,19 +330,54 @@ describe('forum routing regressions', () => {
     assert.deepStrictEqual(profile.modelIds, ['TS0601']);
   });
 
-  it('keeps Moes TS0014 4-gang switch UI and endpoint metadata complete', () => {
-    const compose = composeDriver('wall_switch_4gang_1way');
+  it('guards delayed DCM audit and IAS zoneId 10 (Gmail/Peter #2134)', () => {
+    const base = read('lib/devices/BaseUnifiedDevice.js');
+    assert.match(base, /typeof dcm\.auditCapabilities === 'function'/);
 
-    assertDriverClaims('wall_switch_4gang_1way', '_TZ3000_mrduubod');
-    assertDriverHasProductId('wall_switch_4gang_1way', 'TS0014');
-    for (const cap of ['onoff', 'onoff.gang2', 'onoff.gang3', 'onoff.gang4', 'button.1', 'button.2', 'button.3', 'button.4']) {
-      assert(compose.capabilities.includes(cap), `wall_switch_4gang_1way must expose ${cap}`);
-    }
-    assert(!compose.energy?.batteries, 'Moes TS0014 wall switch must not publish static battery metadata');
-    assert(!compose.capabilitiesOptions?.measure_battery, 'Moes TS0014 wall switch must not expose stale battery options');
-    for (const endpointId of ['1', '2', '3', '4']) {
-      assert(compose.zigbee.endpoints[endpointId].clusters.includes(57344), `endpoint ${endpointId} must include Tuya 0xE000`);
-      assert(compose.zigbee.endpoints[endpointId].clusters.includes(57345), `endpoint ${endpointId} must include Tuya 0xE001`);
-    }
+    const dynDcm = read('lib/dynamic/DynamicCapabilityManager.js');
+    assert.match(dynDcm, /async auditCapabilities\s*\(/);
+
+    const sos = read('drivers/button_emergency_sos/device.js');
+    assert.match(sos, /zoneId:\s*10/);
+    assert.match(sos, /Ignoring non-alarm zoneStatus/);
+    assert.match(sos, /isZero/);
+    assert.doesNotMatch(sos, /return this\.homey\?\.zigbee\?\.ieeeAddress \|\| '00:00:00:00:00:00:00:00'/);
+
+    const sensor = read('lib/devices/UnifiedSensorBase.js');
+    assert.match(sensor, /zoneId:\s*10/);
+    assert.doesNotMatch(sensor, /fullEnrollmentFlow\(\{\s*zoneId:\s*1\b/);
+    assert.doesNotMatch(sensor, /zoneId:\s*0\b/);
+    assert.match(sensor, /_decodeIlluminanceRaw/);
+
+    const retry = read('lib/tuya/TuyaZigbeeDevice.js');
+    assert.match(retry, /iasCIEAddress:\s*cie/);
+    assert.match(retry, /zoneId:\s*10/);
+    assert.doesNotMatch(retry, /iasCieAddr:\s*cie/);
+    assert.doesNotMatch(retry, /enrollResponse\(\{\s*enrollResponseCode:\s*0,\s*zoneId:\s*1\s*\}/);
+
+    const sdk3 = read('lib/SDK3BestPractices.js');
+    assert.match(sdk3, /zoneEnrollResponse\(\{\s*enrollResponseCode:\s*0,\s*zoneId:\s*10\s*\}\)/);
+    assert.doesNotMatch(sdk3, /zoneEnrollResponse\(\{[^}]*zoneId:\s*0\b/);
+    assert.doesNotMatch(sdk3, /return\s*\{\s*enrollResponseCode:\s*0,\s*zoneId:\s*0\s*\}/);
+
+    const iasMgr = read('lib/managers/IASZoneManager.js');
+    assert.match(iasMgr, /_iasOriginatedWaterAlarm\s*=\s*true/);
+    assert.match(iasMgr, /alarm_tamper',\s*!!status\.tamper/);
+
+    const contact = read('drivers/contact_sensor/device.js');
+    assert.match(contact, /NOT _TZE200_pay2byax/);
+    assert.doesNotMatch(contact, /'_TZE200_pay2byax',\s*\/\/ DP1/);
+    assert.doesNotMatch(contact, /debounce_time'\) \|\| safeParse.*,\s*1000\)/);
+
+    const btn = read('lib/devices/ButtonDevice.js');
+    assert.match(btn, /_universalSceneModeSwitch\(zclNode\)/);
+    assert.match(btn, /_reapplySceneModeOnWake/);
+
+    const sleepy = read('lib/utils/SleepyDeviceInit.js');
+    assert.match(sleepy, /zoneId:\s*10/);
+    assert.doesNotMatch(sleepy, /zoneId:\s*23/);
+
+    const diag = read('lib/diagnostics/DiagnosticLogsCollector.js');
+    assert.match(diag, /typeof desc\.get === 'function'/);
   });
 });

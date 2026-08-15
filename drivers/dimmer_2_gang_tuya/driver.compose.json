@@ -13,7 +13,6 @@
   "capabilities": [
     "onoff",
     "dim",
-    "measure_battery",
     "button.1",
     "button.2"
   ],
@@ -32,14 +31,6 @@
       "getable": false,
       "setable": false
     },
-    "measure_battery": {
-      "title": {
-        "en": "Battery",
-        "fr": "Batterie",
-        "nl": "Batterij",
-        "de": "Batterie"
-      }
-    },
     "button.2": {
       "title": {
         "en": "Button 2",
@@ -53,11 +44,6 @@
   "images": {
     "large": "/{{driverAssetsPath}}/images/large.png",
     "small": "/{{driverAssetsPath}}/images/small.png"
-  },
-  "energy": {
-    "batteries": [
-      "CR2032"
-    ]
   },
   "zigbee": {
     "manufacturerName": [
@@ -96,7 +82,21 @@
       "_TZE284_O9GYSZW2",
       "_tze284_O9GYSZW2",
       "_TZE28C1000000_O9GYSZW2",
-      "_tze28c1000000_O9GYSZW2"
+      "_tze28c1000000_O9GYSZW2",
+      "_TZE204_fjms2pi9",
+      "_tze204_fjms2pi9",
+      "_TZE204_FJMS2PI9",
+      "_tze204_FJMS2PI9",
+      "_TZE284_fjms2pi9",
+      "_tze284_fjms2pi9",
+      "_TZE284_FJMS2PI9",
+      "_tze284_FJMS2PI9",
+      "_TZE200_fjms2pi9",
+      "_tze200_fjms2pi9",
+      "_TZE28C1000000_fjms2pi9",
+      "_tze28c1000000_fjms2pi9",
+      "_TZE28C1000000_FJMS2PI9",
+      "_tze28c1000000_FJMS2PI9"
     ],
     "productId": [
       "01MINIZB",
@@ -142,13 +142,9 @@
           0,
           4,
           5,
-          6,
-          8,
           61184
         ],
         "bindings": [
-          6,
-          8,
           25,
           10
         ]

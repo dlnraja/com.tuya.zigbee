@@ -32,7 +32,7 @@ const KNOWN_ROUTES = [
   },
   {
     id: 'jtbgusdc-dimmer2',
-    mfrs: ['_TZE204_jtbgusdc', '_TZE284_jtbgusdc', '_TZE200_jtbgusdc', '_TZE28C1000000_jtbgusdc'],
+    mfrs: ['_TZE204_jtbgusdc', '_TZE284_jtbgusdc', '_TZE200_jtbgusdc', '_TZE28C1000000_jtbgusdc', '_TZE204_fjms2pi9', '_TZE284_fjms2pi9', '_TZE28C1000000_fjms2pi9'],
     pids: ['TS0601'],
     driver: 'dimmer_2_gang_tuya',
   },

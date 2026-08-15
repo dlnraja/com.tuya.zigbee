@@ -90,7 +90,7 @@ const FORBIDDEN = [
   {
     id: 'p96-jtbgusdc-not-climate',
     driver: 'climate_sensor',
-    mfrs: ['_TZE204_jtbgusdc', '_TZE284_jtbgusdc', '_TZE28C1000000_jtbgusdc', '_TZE204_o9gyszw2'],
+    mfrs: ['_TZE204_jtbgusdc', '_TZE284_jtbgusdc', '_TZE28C1000000_jtbgusdc', '_TZE204_o9gyszw2', '_TZE204_fjms2pi9'],
   },
   // Forum silent-scan: specific devices must not collide with generic_tuya catch-all
   {
@@ -109,6 +109,7 @@ const FORBIDDEN = [
     mfrs: [
       '_TZE204_jtbgusdc', '_TZE284_jtbgusdc', '_TZE28C1000000_jtbgusdc',
       '_TZE204_o9gyszw2', '_TZE284_o9gyszw2', '_TZE28C1000000_o9gyszw2',
+      '_TZE204_fjms2pi9', '_TZE284_fjms2pi9', '_TZE28C1000000_fjms2pi9',
     ],
   },
   {
@@ -140,6 +141,26 @@ const FORBIDDEN = [
     id: 'p97-dhotiauw-not-generic',
     driver: 'generic_tuya',
     mfrs: ['_TZE204_dhotiauw', '_TZE284_dhotiauw'],
+  },
+  {
+    id: 'p98-myd45weu-not-wall-switch-4',
+    driver: 'wall_switch_4_gang',
+    mfrs: ['_TZE200_myd45weu', '_TZE204_myd45weu', '_TZE284_myd45weu'],
+  },
+  {
+    id: 'p98-u6x1zyv2-not-contact',
+    driver: 'contact_sensor',
+    mfrs: ['_TZE200_u6x1zyv2', '_TZE204_u6x1zyv2'],
+  },
+  {
+    id: 'p98-u6x1zyv2-not-contact-rain',
+    driver: 'sensor_contact_rain',
+    mfrs: ['_TZE200_u6x1zyv2'],
+  },
+  {
+    id: 'p98-pay2byax-not-soil',
+    driver: 'soil_sensor',
+    mfrs: ['_TZE200_pay2byax', '_TZE204_pay2byax'],
   },
   // P98 sacred-couple rehomes — never dump back into generic/wrong class
   {
@@ -356,6 +377,7 @@ const REQUIRED = [
     mfrs: [
       '_TZE204_jtbgusdc', '_TZE284_jtbgusdc', '_TZE200_jtbgusdc', '_TZE28C1000000_jtbgusdc',
       '_TZE204_o9gyszw2', '_TZE284_o9gyszw2', '_TZE28C1000000_o9gyszw2',
+      '_TZE204_fjms2pi9', '_TZE284_fjms2pi9', '_TZE28C1000000_fjms2pi9',
     ],
   },
   {
@@ -367,6 +389,21 @@ const REQUIRED = [
     id: 'p97-awepdiwi-soil',
     driver: 'soil_sensor',
     mfrs: ['_TZE284_awepdiwi'],
+  },
+  {
+    id: 'p98-myd45weu-soil',
+    driver: 'soil_sensor',
+    mfrs: ['_TZE200_myd45weu', '_TZE204_myd45weu', '_TZE284_myd45weu'],
+  },
+  {
+    id: 'p98-u6x1zyv2-rain',
+    driver: 'rain_sensor',
+    mfrs: ['_TZE200_u6x1zyv2', '_TZE204_u6x1zyv2'],
+  },
+  {
+    id: 'p98-pay2byax-contact',
+    driver: 'contact_sensor',
+    mfrs: ['_TZE200_pay2byax'],
   },
   {
     id: 'p98-pftj0i7z-btn4',

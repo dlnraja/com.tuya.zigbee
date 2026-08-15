@@ -1,0 +1,31 @@
+{
+  "id": "battery_percent_below",
+  "title": {
+    "en": "Battery percentage is below [[threshold]]%",
+    "fr": "Pourcentage batterie inférieur à [[threshold]]%",
+    "nl": "Batterijpercentage is onder [[threshold]]%"
+  },
+  "hint": {
+    "en": "True when measure_battery is below the threshold (works for any battery device).",
+    "fr": "Vrai si measure_battery est sous le seuil (tous appareils batterie)."
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "capabilities=measure_battery"
+    },
+    {
+      "name": "threshold",
+      "type": "number",
+      "title": {
+        "en": "Threshold (%)",
+        "fr": "Seuil (%)"
+      },
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "value": 20
+    }
+  ]
+}

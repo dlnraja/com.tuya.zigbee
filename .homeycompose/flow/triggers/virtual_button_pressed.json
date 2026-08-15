@@ -39,7 +39,7 @@
     {
       "type": "device",
       "name": "device",
-      "filter": "capabilities=button.1,capabilities=button"
+      "filter": "capabilities=button.1,capabilities=button,capabilities=onoff,capabilities=button.toggle"
     }
   ],
   "titleFormatted": {

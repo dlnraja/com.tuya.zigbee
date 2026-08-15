@@ -169,7 +169,14 @@ class ContactSensorDevice extends UnifiedSensorBase {
     const userReverse = this.getSetting('reverse_alarm') || false;
     this._invertContact = userInvert || userReverse;
     this._userExplicitInvert = this._invertContact;
-    this._debounceMs = (this.getSetting('debounce_time') || safeParse(DEBOUNCE.DEFAULT_MS,1000), 1000);
+    // Debounce setting must be honored (comma-operator previously forced 1000ms)
+    {
+      const rawDebounce = this.getSetting('debounce_time');
+      const parsed = Number(rawDebounce);
+      this._debounceMs = Number.isFinite(parsed) && parsed > 0
+        ? parsed
+        : safeParse(DEBOUNCE.DEFAULT_MS, 1000);
+    }
     this._lastBatteryReportTime = 0; // v5.5.793: Battery throttling
 
     // v5.5.344: Get manufacturer for problematic device detection
@@ -197,7 +204,8 @@ class ContactSensorDevice extends UnifiedSensorBase {
       '_TZ3000_bzxloft2',  // Known inverted (forum reports)
       '_TZ3000_yxqnffam',  // Known inverted (forum reports)
       '_TZ3000_996rpfy6',  // v5.5.908: blutch32 forum - TS0203 always "no" fix
-      '_TZE200_pay2byax',  // DP1 inverse converter: raw 0=closed, raw 1=open
+      // NOT _TZE200_pay2byax — DP1 transform already maps open/closed; listing
+      // it here double-inverted IAS/DP and made Invert/Logica appear broken (#2134).
     ].some(id => includesCI(mfr, id));
     // v5.12.3: XOR  default inversion + user invert cancel each other out
     this._invertedByDefault = invertedByDefault;
@@ -215,6 +223,11 @@ class ContactSensorDevice extends UnifiedSensorBase {
     // Parent handles EVERYTHING: Tuya DP, ZCL, IAS Zone, battery
     await super.onNodeInit({ zclNode });
     this._registerCapabilityListeners(); // rule-12a injected
+
+    // Forum #2134: seed tamper so UI is not stuck on "-"
+    if (this.hasCapability('alarm_tamper') && this.getCapabilityValue('alarm_tamper') == null) {
+      await this.safeSetCapabilityValue('alarm_tamper', false).catch(() => {});
+    }
 
     await setupSonoffSensor(this, zclNode);
     this.log('[CONTACT] v5.11.106 - DPs: 1,2,3,4,5,15,101 | ZCL: IAS,PWR,EF00 | SONOFF: tamper');

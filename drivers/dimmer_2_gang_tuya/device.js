@@ -1,12 +1,11 @@
 'use strict';
 
-const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
-const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
-const { debug, Cluster } = require('zigbee-clusters');
+const { Cluster } = require('zigbee-clusters');
 const TuyaSpecificCluster = require('../../lib/TuyaSpecificCluster');
 const TuyaSpecificClusterDevice = require('../../lib/TuyaSpecificClusterDevice');
 const { getDataValue } = require('../../lib/TuyaHelpers');
 const { V1_MULTI_GANG_DIMMER_SWITCH_DATA_POINTS } = require('../../lib/TuyaDataPoints');
+const { toTuyaBrightness, fromTuyaBrightness } = require('../../lib/tuya/TuyaBrightnessScale');
 
 Cluster.addCluster(TuyaSpecificCluster);
 
@@ -16,6 +15,15 @@ class dimmer_2_gang_tuya extends TuyaSpecificClusterDevice {
 
   async onNodeInit({ zclNode }) {
     this.printNode();
+
+    if (this.mainsPowered) {
+      if (this.hasCapability('measure_battery')) {
+        await this.removeCapability('measure_battery').catch(() => {});
+      }
+      if (this.hasCapability('alarm_battery')) {
+        await this.removeCapability('alarm_battery').catch(() => {});
+      }
+    }
 
     if (typeof this._ensureTuyaIo === 'function') {
       await this._ensureTuyaIo(zclNode);
@@ -86,7 +94,8 @@ class dimmer_2_gang_tuya extends TuyaSpecificClusterDevice {
       });
 
       this.registerCapabilityListener('dim', async (value) => {
-        const brightness = Math.floor(value * 1000); // Scale to 0-1000
+        if (typeof this.markAppCommand === 'function') {this.markAppCommand();}
+        const brightness = toTuyaBrightness(value); // 0-1000, MCU-safe (Z2M #32305)
         this.log(`brightness first gang:`, brightness);
         try {
           // If dim value is greater than 0 and the device is off, turn it on
@@ -126,7 +135,8 @@ class dimmer_2_gang_tuya extends TuyaSpecificClusterDevice {
       });
 
       this.registerCapabilityListener('dim', async (value) => {
-        const brightness = Math.floor(value * 1000); // Scale to 0-1000
+        if (typeof this.markAppCommand === 'function') {this.markAppCommand();}
+        const brightness = toTuyaBrightness(value); // 0-1000, MCU-safe (Z2M #32305)
         this.log(`brightness second gang:`, brightness);
         try {
           // If dim value is greater than 0 and the device is off, turn it on
@@ -183,7 +193,7 @@ class dimmer_2_gang_tuya extends TuyaSpecificClusterDevice {
         this.log('Received dim level for first gang:', parsedValue);
         // Only update Gang 1 (main device)
         if (!this.isSubDevice()) {
-          await this['safeSetCapabilityValue']('dim', parsedValue / 1000).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
+          await this['safeSetCapabilityValue']('dim', fromTuyaBrightness(parsedValue)).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
         }
         break;
 
@@ -191,7 +201,7 @@ class dimmer_2_gang_tuya extends TuyaSpecificClusterDevice {
         this.log('Received dim level for second gang:', parsedValue);
         // Only update Gang 2 (subdevice)
         if (this.isSubDevice()) {
-          await this['safeSetCapabilityValue']('dim', parsedValue / 1000).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
+          await this['safeSetCapabilityValue']('dim', fromTuyaBrightness(parsedValue)).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
         }
         break;
 

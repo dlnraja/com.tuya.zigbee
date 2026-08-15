@@ -158,16 +158,27 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
     const iasZone = ep1?.clusters?.iasZone;
     if (!iasZone) {return;}
 
-    // Enrollment
-    iasZone.onZoneEnrollRequest = async () => {
-      this.log('[SOS] Zone Enroll Request received');
+    // Align with IASZoneManager / Homey "Peter pattern": zoneId 10 + proactive
+    // enroll response. zoneId 0 left SOS buttons stuck at "Laatste waarde onbekend"
+    // with battery "?" (forum #2134).
+    const sendEnrollResponse = async (why) => {
       try {
-        await iasZone.zoneEnrollResponse({ enrollResponseCode: 0, zoneId: 0 });
-        this.log('[SOS] ✅ Enroll Response sent (zoneId: 0)');
+        await iasZone.zoneEnrollResponse({ enrollResponseCode: 0, zoneId: 10 });
+        this.log(`[SOS] ✅ Enroll Response sent (${why}, zoneId: 10)`);
+        this._enrollmentPending = false;
       } catch (e) {
         this.error('[SOS] Enroll response failed:', e.message);
       }
     };
+
+    // Listener BEFORE proactive response (must be sync-assign, no await gap)
+    iasZone.onZoneEnrollRequest = () => {
+      this.log('[SOS] Zone Enroll Request received');
+      sendEnrollResponse('request');
+    };
+    if (typeof iasZone.on === 'function') {
+      iasZone.on('zoneEnrollRequest', () => sendEnrollResponse('event'));
+    }
 
     // CIE Address Setup
     try {
@@ -184,6 +195,9 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
     } catch (e) {
       this.error('[SOS] CIE Address setup failed:', e.message);
     }
+
+    // Proactive enrollment (SDK best practice — do not wait for request)
+    await sendEnrollResponse('proactive');
 
     // Alarm Listeners
     iasZone.onZoneStatusChangeNotification = (payload) => this._handleAlarm(payload);
@@ -306,13 +320,32 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
     if (this._destroyed) {return;}
     this._updateActivity();
 
+    // Gate on alarm bits for zoneStatus reports — clear/keep-alive must NOT
+    // fire SOS (or re-write CIE). ACE / DP / announce / command sources pass.
+    const src = payload && payload.source ? String(payload.source) : '';
+    const allowWithoutAlarmBit = /ace|dp|device_announce|command|tuya|virtual/i.test(src);
+    if (!allowWithoutAlarmBit) {
+      const zs = payload?.zoneStatus !== undefined ? payload.zoneStatus : payload;
+      let alarm = false;
+      if (zs && typeof zs === 'object') {
+        alarm = !!(zs.alarm1 || zs.alarm2
+          || (typeof zs.get === 'function' && (zs.get('alarm1') || zs.get('alarm2'))));
+      } else if (typeof zs === 'number' && Number.isFinite(zs)) {
+        alarm = (zs & 0x03) !== 0;
+      }
+      if (!alarm) {
+        this.log('[SOS] Ignoring non-alarm zoneStatus (clear/keep-alive)');
+        return;
+      }
+    }
+
     const now = Date.now();
     if (now - this._lastTrigger < 2000) {return;}
     this._lastTrigger = now;
 
     this.log('[SOS] SOS BUTTON PRESSED!', JSON.stringify(payload));
 
-    // Wake up actions
+    // Wake up actions — battery yes; CIE only if we have a real IEEE
     this._readBatteryNow().catch(() => {});
     this._verifyCieAddress().catch(() => {});
 
@@ -362,6 +395,28 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
       if (attrs.batteryPercentageRemaining !== undefined) {this._updateBattery(attrs.batteryPercentageRemaining, 'percentage');}
       if (attrs.batteryVoltage !== undefined) {this._updateBattery(attrs.batteryVoltage, 'voltage');}
     });
+
+    // Forum #2134 (Peter): SOS tiles showed battery "?" / "Laatste waarde onbekend"
+    // because listeners alone never populate measure_battery until a press wake.
+    // Force an immediate read + sleepy retry, and request reporting when supported.
+    await this._readBatteryNow().catch(() => {});
+    try {
+      if (typeof powerCfg.configureReporting === 'function') {
+        await powerCfg.configureReporting([{
+          attribute: 'batteryPercentageRemaining',
+          minimumReportInterval: 3600,
+          maximumReportInterval: 21600,
+          reportableChange: 2,
+        }]).catch(() => {});
+      }
+    } catch (_e) { /* optional */ }
+
+    const timerApi = (this.homey && typeof this.homey.setTimeout === 'function') ? this.homey : globalThis;
+    this._batteryRetryTimer = timerApi.setTimeout(() => {
+      this._batteryRetryTimer = null;
+      if (this._destroyed) {return;}
+      this._readBatteryNow().catch(() => {});
+    }, 8000);
   }
 
   async _updateBattery(value, type) {
@@ -489,13 +544,22 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
   }
 
   async _getCoordinatorIeee() {
+    // NEVER return/write the zero CIE — that actively breaks IAS enrollment
+    // (forum #2134 Peter: SOS stuck "Laatste waarde onbekend" / battery "?").
+    const isZero = (ieee) => {
+      if (!ieee) {return true;}
+      const hex = String(ieee).replace(/[:\-0x]/gi, '');
+      return !hex || /^0+$/.test(hex);
+    };
     if (IEEEAddressManager) {
       try {
         if (!this._ieeeManager) {this._ieeeManager = new IEEEAddressManager(this);}
-        return await this._ieeeManager.getCoordinatorIeeeAddress();
-      } catch (e) { }
+        const ieee = await this._ieeeManager.getCoordinatorIeeeAddress();
+        if (!isZero(ieee)) {return ieee;}
+      } catch (e) { /* fall through */ }
     }
-    return this.homey?.zigbee?.ieeeAddress || '00:00:00:00:00:00:00:00';
+    const fallback = this.homey?.zigbee?.ieeeAddress;
+    return isZero(fallback) ? null : fallback;
   }
 
   async onEndDeviceAnnounce() {
@@ -534,10 +598,18 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
   onUninit() {
     if (this._resetTimeout) {this.homey.clearTimeout(this._resetTimeout);}
     if (this._heartbeatInterval) {this.homey.clearInterval(this._heartbeatInterval);}
+    if (this._batteryRetryTimer) {
+      try { this.homey.clearTimeout(this._batteryRetryTimer); } catch (_e) { /* noop */ }
+      this._batteryRetryTimer = null;
+    }
   }
 
   async onDeleted() {
     this._destroyed = true;
+    if (this._batteryRetryTimer) {
+      try { this.homey.clearTimeout(this._batteryRetryTimer); } catch (_e) { /* noop */ }
+      this._batteryRetryTimer = null;
+    }
     await super.onDeleted();
     this.log('[SOS] Device deleted');
   }

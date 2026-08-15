@@ -98,6 +98,27 @@ const KNOWN_PATTERNS = [
     fix: 'Null-safe device teardown; avoid stale node refs after unpair (stable crash era)',
     status: 'watch',
   },
+  {
+    id: 'dcm_auditCapabilities_missing',
+    severity: 'fatal',
+    re: /auditCapabilities\s+is not a function/i,
+    fix: 'Guard typeof auditCapabilities; add method on lib/dynamic/DynamicCapabilityManager',
+    status: 'fixed_p108',
+  },
+  {
+    id: 'capability_ref_undefined',
+    severity: 'fatal',
+    re: /ReferenceError:\s*capability is not defined|capability is not defined/i,
+    fix: 'Never use bare identifier capability outside param/local binding',
+    status: 'watch',
+  },
+  {
+    id: 'health_battery_token_undefined',
+    severity: 'warn',
+    re: /health_battery_replacement_predicted.*current_battery|Invalid value for token current_battery/i,
+    fix: 'FeatureFlowCards: Number.isFinite tokens for battery trigger',
+    status: 'fixed_p108',
+  },
 ];
 
 function readJson(p) {

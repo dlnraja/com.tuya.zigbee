@@ -216,6 +216,15 @@ class WaterLeakSensorDevice extends UnifiedSensorBase {
       this._invertAlarm = this.getSetting('invert_alarm') || false;
       await super.onNodeInit({ zclNode });
 
+      // Forum #2134: Homey shows "-" for Sabotagealarm until first report —
+      // seed false so UI is known (not "unknown").
+      if (this.hasCapability('alarm_tamper') && this.getCapabilityValue('alarm_tamper') == null) {
+        await this.safeSetCapabilityValue('alarm_tamper', false).catch(() => {});
+      }
+      if (this.hasCapability('alarm_water') && this.getCapabilityValue('alarm_water') == null) {
+        await this.safeSetCapabilityValue('alarm_water', false).catch(() => {});
+      }
+
       // IAS Zone enrollment
       try {
         const iasManager = new IASZoneManager(this);

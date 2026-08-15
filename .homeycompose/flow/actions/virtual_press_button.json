@@ -1,0 +1,31 @@
+{
+  "id": "virtual_press_button",
+  "title": {
+    "en": "Virtually press button [[gang]]",
+    "fr": "Appuyer virtuellement sur le bouton [[gang]]",
+    "nl": "Virtueel knop [[gang]] indrukken"
+  },
+  "hint": {
+    "en": "Simulates a UI / flow button press on the device (same path as Homey app tile).",
+    "fr": "Simule un appui UI/flow (même chemin que la tuile Homey)."
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "capabilities=button.1,capabilities=button,capabilities=onoff,capabilities=alarm_generic"
+    },
+    {
+      "name": "gang",
+      "type": "number",
+      "title": {
+        "en": "Button / gang",
+        "fr": "Bouton / canal"
+      },
+      "min": 1,
+      "max": 8,
+      "step": 1,
+      "value": 1
+    }
+  ]
+}
