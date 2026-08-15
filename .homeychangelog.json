@@ -1299,5 +1299,8 @@
   "5.12.81": {
     "en": "Reliability BOTH: generic_tuya capability crash fix; MTG284 clrdrnya relay DP map.",
     "fr": "Fiabilite BOTH: crash capability generic_tuya; map relay MTG284 clrdrnya."
+  },
+  "5.12.82": {
+    "en": "Stability improvements and Homey test publication retry after transient processing failure."
   }
 }
