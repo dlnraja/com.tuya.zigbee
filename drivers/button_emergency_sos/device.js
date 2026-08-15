@@ -160,18 +160,28 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
     const iasZone = ep1?.clusters?.iasZone;
     if (!iasZone) {return;}
 
-    // Enrollment
-    iasZone.onZoneEnrollRequest = async () => {
-      this.log('[SOS] Zone Enroll Request received');
+    // BOTH reliability (Peter #2134/#2137): zoneId 10 + proactive enroll.
+    // zoneId 0 left SOS stuck at "Laatste waarde onbekend" / battery "?".
+    // No AlarmPolarityManager on stable — raw IAS only.
+    const sendEnrollResponse = async (why) => {
       try {
-        await iasZone.zoneEnrollResponse({ enrollResponseCode: 0, zoneId: 0 });
-        this.log('[SOS] ✅ Enroll Response sent (zoneId: 0)');
+        await iasZone.zoneEnrollResponse({ enrollResponseCode: 0, zoneId: 10 });
+        this.log(`[SOS] ✅ Enroll Response sent (${why}, zoneId: 10)`);
+        this._enrollmentPending = false;
       } catch (e) {
         this.error('[SOS] Enroll response failed:', e.message);
       }
     };
 
-    // CIE Address Setup
+    iasZone.onZoneEnrollRequest = () => {
+      this.log('[SOS] Zone Enroll Request received');
+      sendEnrollResponse('request');
+    };
+    if (typeof iasZone.on === 'function') {
+      iasZone.on('zoneEnrollRequest', () => sendEnrollResponse('event'));
+    }
+
+    // CIE Address Setup — never write zero IEEE
     try {
       const ieeeAddress = await this._getCoordinatorIeee();
       if (ieeeAddress) {
@@ -187,9 +197,10 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
       this.error('[SOS] CIE Address setup failed:', e.message);
     }
 
-    // Alarm Listeners
+    await sendEnrollResponse('proactive');
+
     iasZone.onZoneStatusChangeNotification = (payload) => this._handleAlarm(payload);
-    
+
     if (typeof iasZone.on === 'function') {
       iasZone.on('attr.zoneStatus', (status) => this._handleAlarm({ zoneStatus: status }));
       iasZone.on('command', (cmd, payload) => {
@@ -308,29 +319,43 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
     if (this._destroyed) {return;}
     this._updateActivity();
 
+    // BOTH: gate keep-alive zoneStatus (no AlarmPolarity on stable — raw bits).
+    const src = payload && payload.source ? String(payload.source) : '';
+    const allowWithoutAlarmBit = /ace|dp|device_announce|command|tuya|virtual/i.test(src);
+    if (!allowWithoutAlarmBit) {
+      const zs = payload?.zoneStatus !== undefined ? payload.zoneStatus : payload;
+      let rawAlarm = false;
+      if (zs && typeof zs === 'object') {
+        rawAlarm = !!(zs.alarm1 || zs.alarm2
+          || (typeof zs.get === 'function' && (zs.get('alarm1') || zs.get('alarm2'))));
+      } else if (typeof zs === 'number' && Number.isFinite(zs)) {
+        rawAlarm = (zs & 0x03) !== 0;
+      }
+      if (!rawAlarm) {
+        this.log('[SOS] Ignoring non-alarm zoneStatus keep-alive');
+        return;
+      }
+    }
+
     const now = Date.now();
     if (now - this._lastTrigger < 2000) {return;}
     this._lastTrigger = now;
 
     this.log('[SOS] SOS BUTTON PRESSED!', JSON.stringify(payload));
 
-    // Wake up actions
     this._readBatteryNow().catch(() => {});
     this._verifyCieAddress().catch(() => {});
 
-    // Set capability and trigger flow with source info
     await this.safeSetCapabilityValue('alarm_generic', true).catch(() => { });
     if (this.driver?.triggerSOS) {
       const source = (payload && payload.source) || 'unknown';
       await this.driver.triggerSOS(this, { source });
     }
 
-    // v10.3.0 FIX (B6): Physical presses must fire the same flow sets as a
-    // virtual UI press — pulse button.1 and fire the generic button_pressed
-    // card (the SOS-specific card above stays the primary signal).
+    const { safeSetTimeout, safeClearTimeout } = require('../../lib/utils/safe-timers');
     if (this.hasCapability('button.1')) {
       await this.safeSetCapabilityValue('button.1', true).catch(() => { });
-      this.homey.setTimeout(async () => {
+      safeSetTimeout(this, async () => {
         if (this._destroyed) {return;}
         await this.safeSetCapabilityValue('button.1', false).catch(() => { });
       }, 500);
@@ -341,9 +366,8 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
         .catch(() => { });
     } catch (_e) { /* generic card not available for this driver */ }
 
-    // Auto-reset
-    if (this._resetTimeout) {this.homey.clearTimeout(this._resetTimeout);}
-    this._resetTimeout = this.homey.setTimeout(async () => {
+    if (this._resetTimeout) {safeClearTimeout(this, this._resetTimeout);}
+    this._resetTimeout = safeSetTimeout(this, async () => {
       if (this._destroyed) {return;}
       await this.safeSetCapabilityValue('alarm_generic', false).catch(() => { });
       this.log('[SOS] alarm_generic reset');
@@ -364,6 +388,26 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
       if (attrs.batteryPercentageRemaining !== undefined) {this._updateBattery(attrs.batteryPercentageRemaining, 'percentage');}
       if (attrs.batteryVoltage !== undefined) {this._updateBattery(attrs.batteryVoltage, 'voltage');}
     });
+
+    // BOTH (Peter #2134): force wake read so tiles are not stuck on battery "?"
+    await this._readBatteryNow().catch(() => {});
+    try {
+      if (typeof powerCfg.configureReporting === 'function') {
+        await powerCfg.configureReporting([{
+          attribute: 'batteryPercentageRemaining',
+          minimumReportInterval: 3600,
+          maximumReportInterval: 21600,
+          reportableChange: 2,
+        }]).catch(() => {});
+      }
+    } catch (_e) { /* optional */ }
+
+    const { safeSetTimeout } = require('../../lib/utils/safe-timers');
+    this._batteryRetryTimer = safeSetTimeout(this, () => {
+      this._batteryRetryTimer = null;
+      if (this._destroyed) {return;}
+      this._readBatteryNow().catch(() => {});
+    }, 30000);
   }
 
   async _updateBattery(value, type) {
@@ -416,7 +460,10 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
     try {
       const result = await Promise.race([
         powerCfg.readAttributes(['batteryPercentageRemaining', 'batteryVoltage']),
-        new Promise((_, r) => this.homey.setTimeout(() => { if (this._destroyed) {return;} r(new Error('Timeout')); }, 1500))
+        new Promise((_, r) => {
+          const timerApi = (this.homey && typeof this.homey.setTimeout === 'function') ? this.homey : globalThis;
+          timerApi.setTimeout(() => { if (this._destroyed) {return;} r(new Error('Timeout')); }, 1500);
+        })
       ]).catch(() => ({}));
 
       if (result.batteryPercentageRemaining !== undefined) {this._updateBattery(result.batteryPercentageRemaining, 'percentage');}
@@ -491,13 +538,21 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
   }
 
   async _getCoordinatorIeee() {
+    // BOTH: NEVER write zero CIE — breaks IAS (Peter #2134).
+    const isZero = (ieee) => {
+      if (!ieee) {return true;}
+      const hex = String(ieee).replace(/[:\-0x]/gi, '');
+      return !hex || /^0+$/.test(hex);
+    };
     if (IEEEAddressManager) {
       try {
         if (!this._ieeeManager) {this._ieeeManager = new IEEEAddressManager(this);}
-        return await this._ieeeManager.getCoordinatorIeeeAddress();
-      } catch (e) { }
+        const ieee = await this._ieeeManager.getCoordinatorIeeeAddress();
+        if (!isZero(ieee)) {return ieee;}
+      } catch (e) { /* fall through */ }
     }
-    return this.homey?.zigbee?.ieeeAddress || '00:00:00:00:00:00:00:00';
+    const fallback = this.homey?.zigbee?.ieeeAddress;
+    return isZero(fallback) ? null : fallback;
   }
 
   async onEndDeviceAnnounce() {
@@ -534,12 +589,24 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
   }
 
   onUninit() {
-    if (this._resetTimeout) {this.homey.clearTimeout(this._resetTimeout);}
-    if (this._heartbeatInterval) {this.homey.clearInterval(this._heartbeatInterval);}
+    const { safeClearTimeout } = require('../../lib/utils/safe-timers');
+    if (this._resetTimeout) {safeClearTimeout(this, this._resetTimeout); this._resetTimeout = null;}
+    if (this._batteryRetryTimer) {safeClearTimeout(this, this._batteryRetryTimer); this._batteryRetryTimer = null;}
+    if (this._heartbeatInterval) {
+      try {
+        if (this.homey && typeof this.homey.clearInterval === 'function') {
+          this.homey.clearInterval(this._heartbeatInterval);
+        }
+      } catch (_e) { /* destroyed */ }
+      this._heartbeatInterval = null;
+    }
   }
 
   async onDeleted() {
     this._destroyed = true;
+    const { safeClearTimeout } = require('../../lib/utils/safe-timers');
+    if (this._batteryRetryTimer) {safeClearTimeout(this, this._batteryRetryTimer); this._batteryRetryTimer = null;}
+    if (this._resetTimeout) {safeClearTimeout(this, this._resetTimeout); this._resetTimeout = null;}
     await super.onDeleted();
     this.log('[SOS] Device deleted');
   }
