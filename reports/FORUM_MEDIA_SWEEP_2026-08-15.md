@@ -1,46 +1,49 @@
-# Forum silent media sweep — 2026-08-15
+# Forum silent media sweep — 2026-08-15 (resume after timeout)
 
-Policy: silent enrich only (no forum replies). Sources: T140352, T26439, T89271, T146735, T43287, T157628, T157859.
+Policy: silent enrich only (no forum replies). Topics: 140352, 146735, 26439, 89271, 43287, 157628, 157859.
 
-## Scan summary
+## Scan
 
-| Topic | Scanned | Actionable | New FPs | Media/FP rich |
-|-------|---------|------------|---------|---------------|
-| 140352 | 100 | 54 | 0 | 60 |
-| 146735 | 100 | 22 | 0 | — |
-| 26439 | 100 | 26 | 0 | 41 |
-| 89271 | 100 | 67 | 0 | 50 |
-| 43287 | 100 | 28 | 0 | — |
-| 157628 | 5 | 2 | 0 | — |
-| 157859 | 21 | 4 | 0 | — |
+| Topic | Scanned | Actionable / rich | New FPs | Gaps |
+|-------|---------|-------------------|---------|------|
+| 140352 | 100 / 40 | 54 / 28 | 0 | 0 |
+| 146735 | 100 | 22 | 0 | 0 |
+| 26439 | 100 / 40 | 26 / 20 | 0 | 0 |
+| 89271 | 100 / 40 | 67 / 27 | 0 | 0 |
+| 43287 | 100 | 28 | 0 | 0 |
+| 157628 | 5 | 2 | 0 | 0 |
+| 157859 | 21 | 4 | 0 | 0 |
 
 Artifacts: `.github/state/forum/multi-silent-digest.json`, `forum-media-deep.json`.
 
-## Recent T140352 (images / links / diags)
+## Image / URL analysis (T140352)
 
-| # | User | Media / links | Sacred couple | Verdict |
-|---|------|---------------|---------------|---------|
-| 2120/2132 | RoyceRoy | WhatsApp imgs | `_TZE204_clrdrnya`+TS0601 | OK → `presence_sensor_radar` (settings ask = MASTER feature later) |
-| 2121/2134/2137 | Peter | many screenshots | diags `9b0b5d26…`, `f1e5b12d…`, `634f7b19…` | Crash class already hard-fixed on stable ≥5.12.81 / master; update Test + repair |
-| 2122 | blutch32 | contact/soil imgs | diag `517c1a34…` | Soil/contact already fixed earlier |
-| 2129 | Welshsmarthome | socket photo (Scolmore Click) | no mfr in text | Need interview mfr+pid (image alone insufficient) |
-| 2131 | TBoy | — | `_TZ3210_imaccztn`+TS0004 | OK → `relay_board_4_channel` (not switch_4gang); re-pair after Test update |
-| 2133/2138 | PresentSky | interview + diag `f20dc4f0…` | `_TZE284_m1cvyneb`+TS0601 | OK → `wall_dimmer_tuya` only; stale climate pair — remove + re-add as dimmer |
-| 2135 | RoyceRoy | **AliExpress PDF manual** | `_TZE28C1000000_jtbgusdc`+TS0601 | OK → `dimmer_2_gang_tuya` |
-| 2139 | Dijker | tip link | — | formatting tip only |
+| # | User | Media | Sacred couple | Verdict |
+|---|------|-------|---------------|---------|
+| 2129 | Welshsmarthome | Socket photo → Homey Zigbee Device Info | **`_TYZB01_hlla45kx` + `TS011F`** (router) | Already on `double_power_point_2`. Update Test → pair **Double Power Point**. |
+| 2130 | Kanbros | text + FP | `_TZ3000_w5xztuy7` + TS0002 | On `switch_2gang`; **P139**: forced **ZCL-only** (both gangs). |
+| 2131 | TBoy | text | `_TZ3210_imaccztn` + TS0004 | OK → `relay_board_4_channel` (not switch_4gang). |
+| 2132 | RoyceRoy | manual screenshot | `_TZE204_clrdrnya` + TS0601 | Settings already in `presence_sensor_radar` (breaker/status/illuminance). |
+| 2133/2138 | PresentSky | BSEED product URL + interview | `_TZE284_m1cvyneb` + TS0601 | OK → `wall_dimmer_tuya` only; remove stale climate pair + re-add. |
+| 2135 | RoyceRoy | AliExpress PDF | `_TZE28C1000000_jtbgusdc` + TS0601 | OK → `dimmer_2_gang_tuya`. |
+| 2137 | Peter | crash screenshots + diag `634f7b19…` | — | Reliability already on Test ≥9.0.528 / stable ≥5.12.82; update + repair. |
+| 2140 | Mike_Nono | opinion only | — | No FP / no code action. |
 
-## Johan / archive cross-check
+## Johan / archive (links)
 
-- `_TZE284_nt4pquef` + TS0601 advertised as **SGS02Z soil** (Z2M/ZHA) but lived on `climate_sensor` → **moved to `soil_sensor`** + anti-bot/re-inject guards (P138).
+- `_TZE284_nt4pquef` / `_TZE284_aao3yzhs` soil (Z2M/ZHA issues) → `soil_sensor` (P138 already shipped).
+- Bed presence `seq9cm6u` → `bed_sensor`.
 
-## Gmail
+## Code changes this pass
 
-- Local secrets missing; GHA `gmail-diagnostics` re-triggered.
-- Last local crash gate: `verdict: ok`, `unknownFatals: []`.
+1. `drivers/switch_2gang/device.js` — add `_TZ3000_w5xztuy7` to `ZCL_ONLY_MANUFACTURERS_2G`.
+2. `.cursorrules` — BSEED ZCL list updated.
+3. `test/critical/forum-routing-regressions.test.js` — #2129 / #2130 asserts.
 
-## User actions (no forum auto-reply)
+## User actions (no auto-reply)
 
-1. PresentSky: remove device, update Test, pair as **wall dimmer** (`wall_dimmer_tuya`).
-2. TBoy: update Test, pair as **4-channel relay board**.
-3. Peter: update Test ≥5.12.82 (stable) or latest master Test once Athom accepts a build after 9.0.524.
-4. Welshsmarthome: post interview `manufacturerName` + `productId`.
+1. Welshsmarthome: Test update → pair as **Double Power Point** (`_TYZB01_hlla45kx` + TS011F).
+2. Kanbros: Test update → remove/re-pair **2-gang switch** (ZCL-only both channels).
+3. PresentSky: remove climate-paired dimmer → pair as **wall dimmer**.
+4. TBoy: pair as **4-channel relay board**.
+5. Peter: update to latest Test / stable and re-check SOS after repair.

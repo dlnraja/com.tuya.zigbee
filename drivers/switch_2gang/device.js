@@ -24,10 +24,12 @@ const { includesCI } = require('../../lib/utils/CaseInsensitiveMatcher');
  */
 
 // ZCL-Only manufacturers (no Tuya DP) - forum: Pieter_Pessers BSEED 2-gang
+// P139: _TZ3000_w5xztuy7 (Kanbros #2130) — TS0002 touch 2-gang; only EP1 worked
+// until forced into multi-endpoint ZCL onOff path (same family as other BSEED).
 const ZCL_ONLY_MANUFACTURERS_2G = [
   '_TZ3000_l9brjwau', '_TZ3000_blhvsaqf', '_TZ3000_ysdv91bk',
   '_TZ3000_hafsqare', '_TZ3000_e98krvvk', '_TZ3000_iedbgyxt',
-  '_TZ3000_cauq1okq'
+  '_TZ3000_cauq1okq', '_TZ3000_w5xztuy7',
 ];
 
 class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSwitchBase)) {
