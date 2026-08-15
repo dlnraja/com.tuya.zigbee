@@ -1,0 +1,27 @@
+---
+description: Dual-app master vs stable-v5 — never full copy-paste; respect each track purpose
+alwaysApply: true
+---
+
+# Dual-App Vision (master ≠ stable-v5)
+
+Two tracks, **different goals**. Never wholesale sync.
+
+| Track | Branch | Purpose |
+|-------|--------|---------|
+| Preview / advanced | `master` | Features + soak. Free-scrape, smart polarity, experimental cascades OK. |
+| Production / LTS | `stable-v5` | **Reliability only** after soak. No feature managers by default. |
+
+## Before every change
+1. Classify: `BOTH` (crash/security/timer/SDK3) | `MASTER_ONLY` (feature/scrape/smart-learn) | `STABLE_ONLY` (identity/publish).
+2. Fix on **master** first for `BOTH`.
+3. Backport to **stable-v5** surgically (adapt to stable code) — **never** copy App ID / version / whole trees.
+4. Protect identity: `.homeycompose/app.json`, `package.json`, `app.json` per track.
+
+## MASTER_ONLY (examples)
+AlarmPolarity smart-learn, free-scrape / diag orchestrator, CapabilityCommandRouter `parallelDiscover`, multichannel/AVE, mega feature managers.
+
+## BOTH (examples)
+SOS `async _registerButtonCapabilityListeners` + `Promise.resolve(…).catch`, `safe-timers` instead of detached `homey.clearTimeout`, IAS `zoneId: 10`, `typeof auditCapabilities === 'function'`.
+
+Full doctrine: `docs/rules/DUAL_APP_VISION.md` · `docs/rules/CROSS_APP_PROMPT_RULES.md`.

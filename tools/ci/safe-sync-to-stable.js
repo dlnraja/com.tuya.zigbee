@@ -37,17 +37,31 @@ const SAFE_FILES = [
   'data/mfs_db.json',                              // mfs DB
 ];
 
-// DANGEROUS files to NEVER sync (new architecture)
+// DANGEROUS files to NEVER sync (new architecture / MASTER_ONLY features)
 const DANGEROUS_FILES = [
   'lib/multichannel/',                            // Multi-channel architecture
   'lib/autonomous/',                              // Autonomous verification
   'lib/security/SecurityGuard.js',                // Security guard
+  'lib/managers/AlarmPolarityManager.js',         // Smart polarity learn (MASTER_ONLY until promoted)
+  'lib/zigbee/CapabilityCommandRouter.js',        // parallelDiscover cascades (MASTER_ONLY)
+  'lib/scraper/FreeScrapeStack.js',               // Free scrape cascade
+  'tools/ci/free-scrape-crossref.js',
   'tools/ci/daily-digest.js',                     // Daily digest
   'tools/ci/recurrent-orchestrator.js',           // Orchestrator (it has AVE)
+  'scripts/ci/diag-investigate-orchestrator.js',  // Diag scrape chain
   '.github/workflows/autonomous-verification.yml', // AVE workflow
   '.github/workflows/recurrent-orchestrator.yml',   // Orchestrator workflow
+  '.github/workflows/free-scrape-crossref.yml',
   'docs/P37_',                                    // P37 docs
   'docs/P38_',                                    // P38 docs
+];
+
+// BOTH (reliability) — cherry-pick surgically; do NOT use this array for blind copy.
+// Examples: SOS async listener, Promise.resolve().catch on button init, safe-timers, IAS zoneId 10.
+const BOTH_RELIABILITY_HINTS = [
+  'drivers/button_emergency_sos/device.js', // async _registerButtonCapabilityListeners
+  'lib/tuya/TuyaZigbeeDevice.js',             // Promise.resolve(listeners).catch
+  'lib/utils/safe-timers.js',
 ];
 
 // Check current state

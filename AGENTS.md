@@ -31,7 +31,9 @@ A **(mfr, pid)** pair = the canonical identity of a Zigbee device.
 | Branch | Purpose | Rule |
 |--------|---------|------|
 | **`master`** | Dev/preview, new features, experiments, new FPs | Push freely. Auto-publish to Test channel. |
-| **`stable-v5`** | Production, zero bugs, zero crashes | **Only** backport from master after master has been verified. |
+| **`stable-v5`** | Production, zero bugs, zero crashes | **Only** surgical reliability backports from master after soak. **Never** full-tree copy-paste. |
+
+> Canonical doctrine: [`docs/rules/DUAL_APP_VISION.md`](docs/rules/DUAL_APP_VISION.md) · cross-prompt: [`docs/rules/CROSS_APP_PROMPT_RULES.md`](docs/rules/CROSS_APP_PROMPT_RULES.md).
 
 > The user has been burned before by bot auto-publish reverting fixes — see P19 lessons in memory.
 >
@@ -40,7 +42,8 @@ A **(mfr, pid)** pair = the canonical identity of a Zigbee device.
 > **2026-08-04 — Stable vision (forum-driven)**: stable-v5 must differ from master on PURPOSE — master carries advanced features (flow engines, smart features), stable carries ONLY reliability. Forum sentiment analysis (2039 posts, topic 140352):
 > - **Best-perceived versions**: 7.4.9 (4👍/1👎), 5.5.256→5.5.270 (2👍/0), 5.7.15/16, 5.8.25/40, 5.11.25, 5.11.146, 9.0.258 (« no crashes anymore », Peter #2111)
 > - **Worst-perceived**: 5.11.152 (4👎, crashes), 7.4.6/7.4.1 (app crashes), 5.11.166, 5.11.138
-> - **Promotion policy**: backport a master fix to stable only if (1) it is a crash/reliability/data fix (never a feature), (2) it has run clean on the master Test channel without new forum crash reports, (3) tests are 100% green on both branches. Feature managers (availability, suppression, presence sim, circadian, cascade, fallback router…) are **master-only, forever**.
+> - **Promotion policy**: backport a master fix to stable only if (1) it is a crash/reliability/data fix (never a feature), (2) it has run clean on the master Test channel without new forum crash reports, (3) tests are 100% green on both branches. Feature managers (availability, suppression, presence sim, circadian, cascade, fallback router, free-scrape, AlarmPolarity smart-learn, CapabilityCommandRouter parallelDiscover…) are **master-only, forever** unless a human explicitly promotes them.
+> - **Shared App ID warning**: if both tracks publish the same Homey App ID, **Publish Stable → Test** can overwrite master Test (e.g. 5.12.70 replacing 9.0.x). Prefer distinct store IDs or never promote stable onto the shared Test slot while soaking master.
 
 ## Data Sources (15 external)
 
