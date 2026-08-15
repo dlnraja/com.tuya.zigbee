@@ -10,7 +10,7 @@
 [![SDK](https://img.shields.io/badge/SDK-3-orange)](https://apps.developer.homey.app/)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
-A community-driven Homey app that brings **local control** to Tuya Zigbee devices — no cloud, no internet needed. Covers switches, sensors, lights, thermostats, covers, locks and more across **431 drivers** and **4,371 unique device fingerprints** (17,086 including case variants for bulletproof pairing).
+A community-driven Homey app that brings **local control** to Tuya Zigbee devices — no cloud, no internet needed. Covers switches, sensors, lights, thermostats, covers, locks and more across **431 drivers** and **4,371 unique device fingerprints** (17,084 including case variants for bulletproof pairing).
 
 **Key features:**
 - **Local-only** — everything runs on your Homey, nothing goes to the cloud
@@ -40,7 +40,7 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 | **App Version** | v9.0.524 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,371 |
-| **Pairing Variants** | 17,086 (4 case combos per fingerprint) |
+| **Pairing Variants** | 17,084 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 573 |
 | **Flow Cards** | 4,974 |
 | **Unique Capabilities** | 170 |
