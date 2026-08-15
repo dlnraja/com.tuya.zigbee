@@ -1,6 +1,13 @@
 {
   "changelog": [
     {
+      "version": "5.12.81",
+      "date": "2026-08-15",
+      "channel": "stable",
+      "en": "Reliability BOTH: generic_tuya capability crash fix; MTG284 clrdrnya relay DP map.",
+      "fr": "Fiabilite BOTH: crash capability generic_tuya; map relay MTG284 clrdrnya."
+    },
+    {
       "version": "5.12.80",
       "date": "2026-08-15",
       "channel": "stable",
@@ -1288,5 +1295,9 @@
   "5.12.80": {
     "en": "P102 Athom republish after processing_failed on 5.12.78/79 (socket hang up). Lower Zigbee combo budget for publish processing.",
     "fr": "Republication P102 apres processing_failed 5.12.78/79. Budget combos Zigbee reduit pour Athom."
+  },
+  "5.12.81": {
+    "en": "Reliability BOTH: generic_tuya capability crash fix; MTG284 clrdrnya relay DP map.",
+    "fr": "Fiabilite BOTH: crash capability generic_tuya; map relay MTG284 clrdrnya."
   }
 }
