@@ -4,13 +4,13 @@
 
 [![Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdlnraja%2Fcom.tuya.zigbee%2Fmaster%2Fapp.json&query=%24.version&label=version&color=blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![Drivers](https://img.shields.io/badge/drivers-431-brightgreen)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
-[![Fingerprints](https://img.shields.io/badge/fingerprints-4,368%20unique-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
-[![Flow Cards](https://img.shields.io/badge/flow%20cards-4,954-blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
+[![Fingerprints](https://img.shields.io/badge/fingerprints-4,372%20unique-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
+[![Flow Cards](https://img.shields.io/badge/flow%20cards-4,956-blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![Native OTA](https://img.shields.io/badge/native%20OTA-6%20drivers-orange)](docs/P92_70_HOMEY_2026_OTA_NATIVE.md)
 [![SDK](https://img.shields.io/badge/SDK-3-orange)](https://apps.developer.homey.app/)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
-A community-driven Homey app that brings **local control** to Tuya Zigbee devices — no cloud, no internet needed. Covers switches, sensors, lights, thermostats, covers, locks and more across **431 drivers** and **4,368 unique device fingerprints** (17,189 including case variants for bulletproof pairing).
+A community-driven Homey app that brings **local control** to Tuya Zigbee devices — no cloud, no internet needed. Covers switches, sensors, lights, thermostats, covers, locks and more across **431 drivers** and **4,372 unique device fingerprints** (17,193 including case variants for bulletproof pairing).
 
 **Key features:**
 - **Local-only** — everything runs on your Homey, nothing goes to the cloud
@@ -18,7 +18,7 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 - **Hybrid protocol engine** — auto-detects Tuya DP (0xEF00) vs standard ZCL per device
 - **Bulletproof pairing** — every fingerprint exists in 4 case combinations; runtime matching is fully case-insensitive
 - **Smart battery** — non-linear per-chemistry curves, collapse-aware smoothing, no fabricated values
-- **4,954 flow cards** — triggers, conditions & actions in EN, FR, NL, DE
+- **4,956 flow cards** — triggers, conditions & actions in EN, FR, NL, DE
 - **Hue-style smart features** — motion lighting with quiet hours, circadian (real solar position), wake-up/sleep ramps, scene capture/cycle
 
 ---
@@ -39,17 +39,17 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 |--------|-------|
 | **App Version** | v9.0.506 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
-| **Unique Fingerprints** | 4,368 |
-| **Pairing Variants** | 17,189 (4 case combos per fingerprint) |
+| **Unique Fingerprints** | 4,372 |
+| **Pairing Variants** | 17,193 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 573 |
-| **Flow Cards** | 4,954 |
+| **Flow Cards** | 4,956 |
 | **Unique Capabilities** | 170 |
 | **Native OTA Drivers** | 6 |
-| **Test Suites** | 66 files |
+| **Test Suites** | 68 files |
 | **SVG Icons** | 731 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
-| **Last Updated** | 2026-08-14 |
+| **Last Updated** | 2026-08-15 |
 
 ### Top 20 Drivers by Fingerprint Count
 
@@ -71,8 +71,8 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 | 14 | `motion_sensor` | 210 |
 | 15 | `diy_custom_zigbee` | 206 |
 | 16 | `water_leak_sensor_tuya` | 194 |
-| 17 | `soil_sensor` | 193 |
-| 18 | `thermostat_tuya_dp` | 192 |
+| 17 | `thermostat_tuya_dp` | 192 |
+| 18 | `soil_sensor` | 189 |
 | 19 | `dimmer_wall_1gang` | 184 |
 | 20 | `dimmable_led_strip` | 180 |
 
