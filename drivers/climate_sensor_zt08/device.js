@@ -4,6 +4,7 @@ const UnifiedSensorBase = require('../../lib/devices/UnifiedSensorBase');
 const GlobalTimeSyncEngine = require('../../lib/tuya/GlobalTimeSyncEngine');
 const UnifiedBatteryHandler = require('../../lib/battery/UnifiedBatteryHandler');
 const { ClimateInference, BatteryInference } = require('../../lib/IntelligentSensorInference');
+const { safeSetTimeout, safeClearTimeout } = require('../../lib/utils/safe-timers');
 
 /**
  * P133 / GH #513 — Dedicated thin driver for ZT08 LCD climate
@@ -43,7 +44,7 @@ class ClimateSensorZt08Device extends UnifiedSensorBase {
     try {
       this._timeSyncEngine = new GlobalTimeSyncEngine(this);
       this._timeSyncEngine.setupListener(zclNode);
-      this._initialTimeSyncTimer = this.homey.setTimeout(async () => {
+      this._initialTimeSyncTimer = safeSetTimeout(this, async () => {
         if (this._destroyed) { return; }
         await this._timeSyncEngine.syncTime(zclNode).catch(() => {});
       }, 5000);
@@ -53,6 +54,23 @@ class ClimateSensorZt08Device extends UnifiedSensorBase {
     }
 
     this.log('[ZT08] Ready (P133 dedicated #513 driver)');
+  }
+
+  onUninit() {
+    if (this._initialTimeSyncTimer) {
+      safeClearTimeout(this, this._initialTimeSyncTimer);
+      this._initialTimeSyncTimer = null;
+    }
+    try { this._timeSyncEngine?.destroy?.(); } catch (_e) { /* noop */ }
+    if (typeof super.onUninit === 'function') { return super.onUninit(); }
+  }
+
+  async onDeleted() {
+    if (this._initialTimeSyncTimer) {
+      safeClearTimeout(this, this._initialTimeSyncTimer);
+      this._initialTimeSyncTimer = null;
+    }
+    return super.onDeleted?.();
   }
 
   onTuyaDP(dpId, value) {
