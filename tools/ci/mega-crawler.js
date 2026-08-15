@@ -83,6 +83,14 @@ const CRAWLERS = [
     desc: 'Crawl Homey community forum topic 140352 + related',
   },
   {
+    id: 'free-scrape',
+    name: 'Free scrape stack (Jina/Microlink/Wayback/Crawl4AI?/Firecrawl budget)',
+    cmd: 'node tools/ci/free-scrape-crossref.js --topic=140352 --focus=2134',
+    weight: 'medium',
+    estimated: '90s',
+    desc: 'Keyless-first multi-source cross-ref (forum + Z2M + GitHub + Reddit)',
+  },
+  {
     id: 'z2m',
     name: 'Zigbee2MQTT converters',
     cmd: 'node scripts/sync/crawl-z2m.js 2>&1 || echo "Z2M_SKIP"',

@@ -133,7 +133,7 @@ describe('B6/B7 — SOS capability/flow parity and single listener', () => {
   });
 
   it('blocks the mixin asymmetric button.1 listener via a no-op router override', () => {
-    assert.match(sosSrc, /_registerButtonCapabilityListeners\(\) \{ \/\* intentionally empty/);
+    assert.match(sosSrc, /async _registerButtonCapabilityListeners\(\) \{ \/\* intentionally empty/);
   });
 });
 

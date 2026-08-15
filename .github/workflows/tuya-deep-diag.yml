@@ -123,10 +123,36 @@ jobs:
           GH_PAT: ${{ secrets.GH_PAT }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          node scripts/ci/homey-token-refresh.js || true
           node scripts/automation/dashboard-monitor.js --latest || true
           node scripts/automation/version-intelligence-report.js || true
           node .github/scripts/homey-device-diagnostics.js || true
           node .github/scripts/collect-diagnostics.js || true
+
+      - name: Fetch Homey app-diag by UUID (report_id)
+        if: ${{ github.event.inputs.report_id != '' }}
+        continue-on-error: true
+        timeout-minutes: 12
+        env:
+          HOMEY_REFRESH_TOKEN: ${{ secrets.HOMEY_REFRESH_TOKEN }}
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+          HOMEY_PAT_API: ${{ secrets.HOMEY_PAT_API }}
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+          GH_PAT: ${{ secrets.GH_PAT }}
+          HOMEY_DIAG_UUID: ${{ github.event.inputs.report_id }}
+          HOMEY_DIAG_PUPPETEER: "1"
+          TARGET_APP_ID: com.dlnraja.tuya.zigbee
+          GMAIL_EMAIL: ${{ secrets.GMAIL_EMAIL }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          GMAIL_CLIENT_ID: ${{ secrets.GMAIL_CLIENT_ID }}
+          GMAIL_CLIENT_SECRET: ${{ secrets.GMAIL_CLIENT_SECRET }}
+          GMAIL_REFRESH_TOKEN: ${{ secrets.GMAIL_REFRESH_TOKEN }}
+        run: |
+          npm install puppeteer --no-save
+          node scripts/ci/fetch-homey-app-diag-by-uuid.js "$HOMEY_DIAG_UUID" || true
+          node scripts/ci/scan-homey-crashes-for-uuid.js "$HOMEY_DIAG_UUID" --puppeteer || true
+          node scripts/ci/gmail-search-diag-uuid.js "$HOMEY_DIAG_UUID" || true
 
       - name: Athom Developer Dashboard full diag
         continue-on-error: true
@@ -145,7 +171,7 @@ jobs:
 
       - name: Privacy gate
         if: always()
-        run: node .github/scripts/privacy-redactor.js diagnostics .github/state/diagnostics-report.json .github/state/diagnostics-crossref.yml .github/state/homey-device-report.json .github/state/dashboard-monitor-report.json screenshots/full-diag-report.json
+        run: node .github/scripts/privacy-redactor.js diagnostics .github/state/diagnostics-report.json .github/state/diagnostics-crossref.yml .github/state/homey-device-report.json .github/state/dashboard-monitor-report.json screenshots/full-diag-report.json .github/state/homey-app-diag
 
       - name: Diagnostic history gate
         if: always()
@@ -162,6 +188,7 @@ jobs:
             .github/state/homey-device-report.json
             .github/state/dashboard-monitor-report.json
             .github/state/version-intelligence-report.json
+            .github/state/homey-app-diag/
             docs/WORKING_VERSIONS_REFERENCE.md
             screenshots/full-diag-report.json
           if-no-files-found: warn

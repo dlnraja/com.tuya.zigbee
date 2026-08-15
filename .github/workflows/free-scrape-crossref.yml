@@ -1,0 +1,97 @@
+# Free Scrape Cross-Ref — keyless-first intelligence harvest
+# Uses Jina/Microlink/AllOrigins/Wayback (+ optional Crawl4AI/Firecrawl budget).
+# Silent enrichment only — NEVER posts to Homey Community.
+
+name: Free Scrape Cross-Ref
+
+on:
+  schedule:
+    # Staggered from mega-crawl (02:00) — 02:45 UTC
+    - cron: '45 2 * * *'
+  workflow_dispatch:
+    inputs:
+      topic:
+        description: 'Homey forum topic id'
+        required: false
+        default: '140352'
+      focus:
+        description: 'Focus post number'
+        required: false
+        default: '2134'
+      queries:
+        description: 'Comma-separated search queries'
+        required: false
+        default: 'Tuya SOS Homey,UNSUPPORTED_CLUSTER dimmer,water leak IAS'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: free-scrape-crossref
+  cancel-in-progress: true
+
+defaults:
+  run:
+    shell: bash
+
+env:
+  NODE_VERSION: '22'
+  SMART_FETCH_READER_FALLBACK: '1'
+  FIRECRAWL_DAILY_MAX: '5'
+
+jobs:
+  crossref:
+    name: Free multi-source cross-ref
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+
+      - name: Install deps (lightweight)
+        run: npm ci --prefer-offline --no-audit --ignore-scripts || npm install --ignore-scripts
+
+      - name: Restore scraper cache
+        uses: actions/cache@v4
+        with:
+          path: .cache/scraper-cache
+          key: free-scrape-${{ github.run_id }}
+          restore-keys: |
+            free-scrape-
+
+      - name: Run free scrape cross-ref
+        env:
+          FIRECRAWL_API_KEY: ${{ secrets.FIRECRAWL_API_KEY }}
+          CRAWL4AI_URL: ${{ secrets.CRAWL4AI_URL }}
+        run: |
+          node tools/ci/free-scrape-crossref.js \
+            --topic="${{ github.event.inputs.topic || '140352' }}" \
+            --focus="${{ github.event.inputs.focus || '2134' }}" \
+            --queries="${{ github.event.inputs.queries || 'Tuya SOS Homey,UNSUPPORTED_CLUSTER dimmer,water leak IAS' }}"
+
+      - name: Upload report artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: free-scrape-crossref
+          path: |
+            .github/state/free-scrape/
+            .cache/scraper-cache/_firecrawl-budget.json
+          if-no-files-found: warn
+          retention-days: 14
+
+      - name: Summarize
+        if: always()
+        run: |
+          if [ -f .github/state/free-scrape/dashboard-snippet.json ]; then
+            echo "## Free scrape cross-ref" >> "$GITHUB_STEP_SUMMARY"
+            echo '```json' >> "$GITHUB_STEP_SUMMARY"
+            cat .github/state/free-scrape/dashboard-snippet.json >> "$GITHUB_STEP_SUMMARY"
+            echo '```' >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "No dashboard snippet produced" >> "$GITHUB_STEP_SUMMARY"
+          fi

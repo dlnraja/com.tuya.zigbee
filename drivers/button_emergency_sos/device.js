@@ -47,7 +47,11 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
    * _registerButtonListener is the single button.1 listener — a second one
    * would double-trigger the alarm.
    */
-  _registerButtonCapabilityListeners() { /* intentionally empty — see _registerButtonListener */ }
+  // Must stay async: TuyaZigbeeDevice.onNodeInit does
+  // `await this._registerButtonCapabilityListeners().catch(...)`.
+  // A sync empty override returns undefined → "reading 'catch'" and aborts IAS/battery init
+  // (Peter diag f1e5b12d on build 2756 / v9.0.434).
+  async _registerButtonCapabilityListeners() { /* intentionally empty — see _registerButtonListener */ }
 
   async onNodeInit({ zclNode }) {
     await this._safeInvoke(async () => {

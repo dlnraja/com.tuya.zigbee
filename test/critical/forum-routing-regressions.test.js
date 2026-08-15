@@ -286,9 +286,11 @@ describe('forum routing regressions', () => {
     assert(!compose.capabilities.includes('measure_battery'), 'Avatto 2ch dimmer is mains — no phantom battery');
     assert(!compose.energy?.batteries, 'Avatto 2ch dimmer must not publish CR2032 metadata');
     // Forum #2069: UNSUPPORTED_CLUSTER when Homey binds ZCL levelControl (8) on Tuya EF00 dimmers
-    assert(!compose.zigbee.endpoints['1'].clusters.includes(8), 'Tuya DP dimmer must not declare ZCL levelControl');
-    assert(!compose.zigbee.endpoints['1'].clusters.includes(6), 'Tuya DP dimmer must not declare ZCL onOff');
-    assert(compose.zigbee.endpoints['1'].clusters.includes(61184), 'Tuya DP dimmer must declare EF00');
+    const clusters = compose.zigbee?.endpoints?.['1']?.clusters || [];
+    assert.ok(clusters.includes(61184), 'EF00 required');
+    assert.ok(!clusters.includes(6) && !clusters.includes(8), 'no ZCL onOff/levelControl on EF00-only dimmer');
+    assert.match(read('lib/zigbee/CapabilityCommandRouter.js'), /writeCapabilityWithFallbacks/);
+    assert.match(read('lib/zigbee/CapabilityCommandRouter.js'), /parallelDiscover/);
 
     assert.strictEqual(toTuyaBrightness(1), 1000);
     assert.strictEqual(toTuyaBrightness(1.2), 1000);

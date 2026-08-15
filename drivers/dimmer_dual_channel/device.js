@@ -4,7 +4,6 @@ const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 
 const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
 const { CLUSTER } = require('zigbee-clusters');
-const { isUnsupportedError } = require('../../lib/zigbee/UnsupportedRegistry');
 
 /**
  * DimmerDualChannelDevice - v5.3.90
@@ -18,9 +17,8 @@ const { isUnsupportedError } = require('../../lib/zigbee/UnsupportedRegistry');
  * "2-channel dimmer" are TS0601 Tuya-DP devices (no levelControl/onOff on
  * endpoint 2), and even ZCL variants reject commands on a missing cluster
  * (forum JohnLundin #2069: red UNSUPPORTED_CLUSTER banner on every touch).
- * Every command now cascades: ZCL endpoint cluster → Tuya DP
- * (canonical 2ch dimmer map: DP1 state L1, DP2 bright L1 0-1000,
- *  DP3 state L2, DP4 bright L2 0-1000).
+ * Every command now cascades via CapabilityCommandRouter:
+ * ZCL named → ZCL raw/numeric → Tuya DP (parallel discover on first write).
  */
 class DimmerDualChannelDevice extends PhysicalButtonMixin(VirtualButtonMixin(TuyaZigbeeDevice)) {
 
@@ -83,50 +81,36 @@ class DimmerDualChannelDevice extends PhysicalButtonMixin(VirtualButtonMixin(Tuy
   }
 
   async _setChannelOnOff(zclNode, channel, value) {
-    const cluster = zclNode.endpoints[channel] && zclNode.endpoints[channel].clusters
-      && (zclNode.endpoints[channel].clusters.onOff || zclNode.endpoints[channel].clusters.genOnOff);
-    if (cluster) {
-      try {
-        await (value ? cluster.setOn() : cluster.setOff());
-        await this.safeSetCapabilityValue(channel === 1 ? 'onoff' : 'onoff.channel2', value).catch(() => {});
-        return true;
-      } catch (e) {
-        if (!isUnsupportedError(e)) { throw e; } // transient: surface it
-        this.log(`[DIMMER-DUAL] CH${channel} onOff unsupported → DP fallback`);
-      }
-    }
-    const dp = this._dpFor(channel, 'onoff');
-    const sent = await this._sendDpFallback(dp, Boolean(value), 'bool');
-    if (sent !== false) {
-      await this.safeSetCapabilityValue(channel === 1 ? 'onoff' : 'onoff.channel2', value).catch(() => {});
+    const { writeCapabilityWithFallbacks } = require('../../lib/zigbee/CapabilityCommandRouter');
+    const cap = channel === 1 ? 'onoff' : 'onoff.channel2';
+    const r = await writeCapabilityWithFallbacks(this, cap, value, {
+      endpoint: channel,
+      dpId: this._dpFor(channel, 'onoff'),
+      dpType: 'bool',
+      parallelDiscover: true,
+    });
+    if (r.ok) {
+      await this.safeSetCapabilityValue(cap, value).catch(() => {});
       return true;
     }
-    throw new Error(`channel${channel}_onoff_unreachable`);
+    throw r.error || new Error(`channel${channel}_onoff_unreachable`);
   }
 
   async _setChannelDim(zclNode, channel, value) {
+    const { writeCapabilityWithFallbacks } = require('../../lib/zigbee/CapabilityCommandRouter');
     const dimValue = Math.min(1, Math.max(0, Number(value) || 0));
-    const cluster = zclNode.endpoints[channel] && zclNode.endpoints[channel].clusters
-      && (zclNode.endpoints[channel].clusters.levelControl || zclNode.endpoints[channel].clusters.genLevelCtrl);
-    if (cluster) {
-      try {
-        await cluster.moveToLevel({ level: Math.round(dimValue * 254), transitionTime: 10 });
-        await this.safeSetCapabilityValue(channel === 1 ? 'dim' : 'dim.channel2', dimValue).catch(() => {});
-        return true;
-      } catch (e) {
-        if (!isUnsupportedError(e)) { throw e; }
-        this.log(`[DIMMER-DUAL] CH${channel} levelControl unsupported → DP fallback`);
-      }
-    }
-    // Tuya 2ch dimmer brightness DPs use the 0-1000 range
-    const dp = this._dpFor(channel, 'dim');
-    const dpValue = Math.max(10, Math.round(dimValue * 1000));
-    const sent = await this._sendDpFallback(dp, dpValue, 'value');
-    if (sent !== false) {
-      await this.safeSetCapabilityValue(channel === 1 ? 'dim' : 'dim.channel2', dimValue).catch(() => {});
+    const cap = channel === 1 ? 'dim' : 'dim.channel2';
+    const r = await writeCapabilityWithFallbacks(this, cap, dimValue, {
+      endpoint: channel,
+      dpId: this._dpFor(channel, 'dim'),
+      dpType: 'value',
+      parallelDiscover: true,
+    });
+    if (r.ok) {
+      await this.safeSetCapabilityValue(cap, dimValue).catch(() => {});
       return true;
     }
-    throw new Error(`channel${channel}_dim_unreachable`);
+    throw r.error || new Error(`channel${channel}_dim_unreachable`);
   }
 
   /** Mirror ZCL attribute reports into capabilities (state sync). */
