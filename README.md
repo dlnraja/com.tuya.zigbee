@@ -10,7 +10,7 @@
 [![SDK](https://img.shields.io/badge/SDK-3-orange)](https://apps.developer.homey.app/)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
-A community-driven Homey app that brings **local control** to Tuya Zigbee devices — no cloud, no internet needed. Covers switches, sensors, lights, thermostats, covers, locks and more across **431 drivers** and **4,371 unique device fingerprints** (17,144 including case variants for bulletproof pairing).
+A community-driven Homey app that brings **local control** to Tuya Zigbee devices — no cloud, no internet needed. Covers switches, sensors, lights, thermostats, covers, locks and more across **431 drivers** and **4,371 unique device fingerprints** (17,146 including case variants for bulletproof pairing).
 
 **Key features:**
 - **Local-only** — everything runs on your Homey, nothing goes to the cloud
@@ -37,10 +37,10 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.520 |
+| **App Version** | v9.0.521 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,371 |
-| **Pairing Variants** | 17,144 (4 case combos per fingerprint) |
+| **Pairing Variants** | 17,146 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 573 |
 | **Flow Cards** | 4,974 |
 | **Unique Capabilities** | 170 |
@@ -55,7 +55,7 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 
 | # | Driver | Fingerprints |
 |---|--------|-------------|
-| 1 | `climate_sensor` | 2,675 |
+| 1 | `climate_sensor` | 2,677 |
 | 2 | `switch_1gang` | 1,804 |
 | 3 | `button_wireless_2` | 790 |
 | 4 | `presence_sensor_radar` | 726 |
@@ -106,6 +106,7 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.521** | Reliability: generic_tuya capability crash fix; MTG284 clrdrnya relay DP map (radar family). |
 | **v9.0.520** | Reliability: generic_tuya capability crash fix; MTG284 clrdrnya relay DP map (radar family). |
 | **v9.0.519** | Reliability: generic_tuya capability crash fix; MTG284 clrdrnya relay DP map (radar family). |
 | **v9.0.518** | Reliability: generic_tuya capability crash fix; MTG284 clrdrnya relay DP map (radar family). |
@@ -117,7 +118,6 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 | **v9.0.512** | Stability improvements and Homey test publication retry after transient processing failure. |
 | **v9.0.511** | Stability improvements and Homey test publication retry after transient processing failure. |
 | **v9.0.510** | Stability improvements and Homey test publication retry after transient processing failure. |
-| **v9.0.509** | Stability improvements and Homey test publication retry after transient processing failure. |
 
 <!-- CHANGELOG_END -->
 
