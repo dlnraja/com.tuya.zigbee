@@ -365,6 +365,18 @@ describe('forum routing regressions', () => {
     const iasMgr = read('lib/managers/IASZoneManager.js');
     assert.match(iasMgr, /_iasOriginatedWaterAlarm\s*=\s*true/);
     assert.match(iasMgr, /alarm_tamper',\s*!!status\.tamper/);
+    assert.match(iasMgr, /safeSetTimeout/);
+    assert.doesNotMatch(iasMgr, /this\.homey\.setTimeout\(/);
+    assert.doesNotMatch(iasMgr, /device\.homey\.setTimeout\(/);
+
+    // Peter #2137 / UUID 634f7b19 — SOS sync no-op + .catch on undefined aborted init
+    assert.match(sos, /async _registerButtonCapabilityListeners\(\)/);
+    assert.match(retry, /Promise\.resolve\(this\._registerButtonCapabilityListeners\(\)\)/);
+
+    const energy = read('lib/managers/SmartEnergyManager.js');
+    assert.match(energy, /safeSetTimeout\(this\.device/);
+    assert.match(energy, /safeClearTimeout\(this\.device/);
+    assert.doesNotMatch(energy, /homey\?\.clearTimeout\s*\|\|\s*clearTimeout/);
 
     const contact = read('drivers/contact_sensor/device.js');
     assert.match(contact, /NOT _TZE200_pay2byax/);

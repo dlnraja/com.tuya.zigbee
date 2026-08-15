@@ -2055,5 +2055,8 @@
   },
   "9.0.506": {
     "en": "Dual-app reliability sync report and refreshed Homey dashboards (health 93/100)."
+  },
+  "9.0.507": {
+    "en": "Improved SOS button init, IAS enrollment timers, and energy audit stability. Fixed crash loop on capability audit."
   }
 }
