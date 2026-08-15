@@ -95,8 +95,8 @@ const KNOWN_PATTERNS = [
     id: 'onDeleted_null',
     severity: 'fatal',
     re: /reading ['_"]_onDeleted['_"]|Cannot read properties of null \(reading '_onDeleted'\)/i,
-    fix: 'Null-safe device teardown; avoid stale node refs after unpair (stable crash era)',
-    status: 'watch',
+    fix: 'Call super.onDeleted after _destroyed; TuyaZigbeeDevice/UnifiedSensorBase v9.0.349 guards',
+    status: 'fixed_p349',
   },
   {
     id: 'dcm_auditCapabilities_missing',
