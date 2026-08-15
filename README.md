@@ -57,7 +57,7 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 |---|--------|-------------|
 | 1 | `climate_sensor` | 2,663 |
 | 2 | `switch_1gang` | 1,804 |
-| 3 | `button_wireless_2` | 790 |
+| 3 | `button_wireless_2` | 774 |
 | 4 | `presence_sensor_radar` | 726 |
 | 5 | `radiator_valve` | 603 |
 | 6 | `wall_dimmer_tuya` | 504 |
@@ -65,9 +65,9 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 | 8 | `device_radiator_valve` | 380 |
 | 9 | `sensor_contact_zigbee` | 345 |
 | 10 | `curtain_motor` | 308 |
-| 11 | `switch_4gang` | 270 |
-| 12 | `switch_2gang` | 232 |
-| 13 | `switch_3gang` | 220 |
+| 11 | `switch_4gang` | 274 |
+| 12 | `switch_2gang` | 240 |
+| 13 | `switch_3gang` | 224 |
 | 14 | `motion_sensor` | 210 |
 | 15 | `diy_custom_zigbee` | 206 |
 | 16 | `water_leak_sensor_tuya` | 194 |
