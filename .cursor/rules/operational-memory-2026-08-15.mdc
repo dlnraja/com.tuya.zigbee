@@ -41,8 +41,8 @@ alwaysApply: true
 | `_TZE284_hodyryli`+TS0601 | `climate_sensor_zt08` | GH #513 |
 
 ## Open work
-- **Issue #513** open — awaiting user verify on Test ≥9.0.528 (ZT08; temp=0 follow-up if persists).
-- Gmail (fresh `31911087154`): **verdict ok**, 0 unknown fatals, 9/9 FPs in drivers, 0 new FP. Report: `reports/GMAIL_CRASH_SWEEP_2026-08-15.md`. Local IMAP usually missing — use GHA.
+- **Issue #513** open — P140 (ZT08 DP17 + unix_1970 + inference unlock from 0°C) shipping; user retest after next Test build (>9.0.531).
+- Gmail: **verdict ok**, 0 unknown fatals. Report: `reports/GMAIL_CRASH_SWEEP_2026-08-15.md`.
 - AlarmPolarity smart-learn / free-scrape / parallelDiscover = **MASTER_ONLY**.
 
 ## Commands
