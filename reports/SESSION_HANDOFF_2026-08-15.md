@@ -27,6 +27,8 @@
 | IASZoneManager `safeSetTimeout` | PR #519 → stable |
 | Strip `TS0041` from door/window catchall pids | master + stable (#519) |
 | SOS zoneId **10**, CIE zero-guard, safe timers, battery wake | PR #520 → **5.12.76** |
+| Contact/water debounce safeSetTimeout | master + PR #521 → **5.12.77** |
+| Session handoff file | eports/SESSION_HANDOFF_2026-08-15.md |
 | `water_leak_sensor_tuya` IAS enroll path | PR #520 → stable (+ master already) |
 | Dual-app docs + CROSS_APP “Peter = BOTH” rule | master |
 | AlarmPolarityManager (contact/SOS/water invert UI) | **master only** |
