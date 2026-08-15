@@ -43,6 +43,17 @@ const DEFAULT_TOPICS = [
   { id: 157628, name: 'stop-ai-paste', replyAllowed: false },
   // RF coexistence education (Zigbee/Thread vs Wi-Fi numbering) — READ-ONLY
   { id: 157859, name: 'rf-channels-coexistence', replyAllowed: false },
+  // Satellite Tuya / Zigbee threads — silent enrich only
+  { id: 106779, name: 'tuya-inc-official', replyAllowed: false },
+  { id: 21313, name: 'tuya-cloud', replyAllowed: false },
+  { id: 156053, name: 'tuya-unknown-gang-switches', replyAllowed: false },
+  { id: 156792, name: 'tuya-finger-bot', replyAllowed: false },
+  { id: 149230, name: 'tuya-garage-door', replyAllowed: false },
+  { id: 155212, name: 'zemismart-energy-meters', replyAllowed: false },
+  { id: 154092, name: 'zemismart-hello', replyAllowed: false },
+  { id: 156967, name: 'moes-official', replyAllowed: false },
+  { id: 150690, name: 'relax-moes-zigbee', replyAllowed: false },
+  { id: 99614, name: 'nous-energy', replyAllowed: false },
 ];
 
 const UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36';

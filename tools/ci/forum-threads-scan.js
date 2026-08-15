@@ -17,9 +17,15 @@ const TOPICS = [
   { id: 155212, slug: 'zemismart-1-2-3-phase-energy-meters-now-work-with-homey-pro' },
   { id: 99614, slug: 'app-pro-nous-save-energy-increase-security-and-comfort' },
   { id: 106779, slug: 'app-tuya-connect-any-tuya-device-with-homey-by-tuya-inc' },
+  { id: 21313, slug: 'app-pro-tuya-cloud-this-app-allows-you-to-connect-homey-to-the-tuya-cloud' },
+  { id: 156053, slug: 'tuya-zigbee-2-gang-3-gang-switches-detected-as-unknown-devices-in-homey' },
+  { id: 154092, slug: 'hello-from-zemismart' },
+  { id: 156967, slug: 'app-pro-moes-unlock-full-potential-of-your-moes-zigbee-devices' },
+  { id: 150690, slug: 'app-pro-relax-moes-zigbee' },
 ];
+// Prefer sacred-couple-safe mfr capture (same as forum-silent-multi-scan)
+const MFR_RE = /_T[YZ](?:E200|E204|E284|E28[0-9A-Z]*|ZB\d{2}|Z3000|Z3002|Z3210|Z3218|ST11)[_-][A-Za-z0-9]+/gi;
 const SINCE = new Date('2026-05-01');
-const MFR_RE = /_T[YZ][A-Z0-9]{3,5}_[A-Za-z0-9]{6,10}/g;
 const PID_RE = /\bTS\d{4}[A-Z]?\b/g;
 
 const fetcher = new SmartFetcher({

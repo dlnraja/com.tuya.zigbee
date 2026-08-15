@@ -11,10 +11,11 @@ alwaysApply: true
 - Never full-tree sync. Classify BOTH | MASTER_ONLY | STABLE_ONLY.
 
 ## Homey Test live truth (last verified)
-- Master Homey Test: **v9.0.531** confirmed on test (Auto-Publish `31911574815`, SDK + dashboard `test #2848`).
-- Tip/code: **9.0.531**. Stable tip: **5.12.82**.
+- Master Homey Test: **v9.0.531** last confirmed healthy; tip now **9.0.532** (P139 + ZT08) publishing.
+- Tip/code: **9.0.532**. Stable tip: **5.12.82**.
 - **9.0.530** hit Athom `processing_failed` (`socket hang up`) — superseded; do **not** spam republish (P139).
 - Historical: 9.0.525 / 9.0.526 same transient class.
+- **P139 hardening**: Auto-Publish `cancel-in-progress: false` (do not kill mid Athom draft/promote).
 
 ## P139 — Athom transient (DO NOT LOOP)
 - Scripts: `.github/scripts/processing-failure-republish-check.js`, `athom-processing-failure-retry.js`.
@@ -42,6 +43,7 @@ alwaysApply: true
 
 ## Open work
 - **Issue #513** open — P140 (ZT08 DP17 + unix_1970 + inference unlock from 0°C) shipping; user retest after next Test build (>9.0.531).
+- Forum multi-thread sweep 2026-08-16: **0 new FPs**; misrouted TYZB01 wall switches → switch_2/3/4gang. Report: `reports/FORUM_MULTI_THREAD_SWEEP_2026-08-16.md`.
 - Gmail: **verdict ok**, 0 unknown fatals. Report: `reports/GMAIL_CRASH_SWEEP_2026-08-15.md`.
 - AlarmPolarity smart-learn / free-scrape / parallelDiscover = **MASTER_ONLY**.
 
