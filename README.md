@@ -37,7 +37,7 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.509 |
+| **App Version** | v9.0.510 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,372 |
 | **Pairing Variants** | 17,193 (4 case combos per fingerprint) |
@@ -106,6 +106,7 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.510** | Stability improvements and Homey test publication retry after transient processing failure. |
 | **v9.0.509** | Stability improvements and Homey test publication retry after transient processing failure. |
 | **v9.0.508** | Improved SOS button init, IAS enrollment timers, and energy audit stability. Fixed crash loop on capability audit. |
 | **v9.0.507** | Improved SOS button init, IAS enrollment timers, and energy audit stability. Fixed crash loop on capability audit. |
@@ -117,7 +118,6 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 | **v9.0.501** | Improved sensor flow conditions and actuator Homey UI classes. Hybrid heater flows use capability listeners. |
 | **v9.0.500** | P131: patch missing actuator flow registerRunListener on 21 drivers; fan_controller flow ownership fix. |
 | **v9.0.499** | P131: patch missing actuator flow registerRunListener on 21 drivers; fan_controller flow ownership fix. |
-| **v9.0.498** | v9.0.497: fix(P129b): stop publish reinject from stripping TS004F remotes (v9.0.497) |
 
 <!-- CHANGELOG_END -->
 
