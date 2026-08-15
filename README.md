@@ -45,7 +45,7 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 | **Flow Cards** | 4,956 |
 | **Unique Capabilities** | 170 |
 | **Native OTA Drivers** | 6 |
-| **Test Suites** | 68 files |
+| **Test Suites** | 70 files |
 | **SVG Icons** | 731 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
