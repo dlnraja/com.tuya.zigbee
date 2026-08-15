@@ -149,16 +149,36 @@ function resolveConflict(conflict, drivers) {
     return removals;
   }
 
+  // Rule 1.4: hard sacred-couple owners (always win vs climate catch-all)
+  // PresentSky / wall 6-gang: _TZE200_8eazvzo6 must stay on switch_wall_6gang.
+  const HARD_OWNERS = {
+    '_tze200_8eazvzo6': 'switch_wall_6gang',
+    '_tze204_8eazvzo6': 'switch_wall_6gang',
+  };
+  const hardOwner = HARD_OWNERS[String(mfr).toLowerCase()];
+  if (hardOwner && drvNames.includes(hardOwner)) {
+    for (const loser of drvNames) {
+      if (loser === hardOwner) continue;
+      removals.push({
+        driver: loser,
+        mfr,
+        reason: `hard owner ${hardOwner} for ${mfr}`,
+      });
+    }
+    return removals;
+  }
+
   // Rule 1.5: climate_sensor is a catch-all — loses to ANY specialized driver
   // climate_sensor has TS0601 which matches almost everything via cartesian product
   if (drvNames.includes('climate_sensor') && drvNames.length === 2) {
     const other = drvNames.find(d => d !== 'climate_sensor');
     const otherCat = drivers.get(other)?.category || 'unknown';
     // climate_sensor loses to everything except diy/unknown
+    // Always strip climate when the other side is a real device class (esp. switch).
     if (otherCat !== 'diy' && otherCat !== 'unknown') {
       const planned = removalCounts.get('climate_sensor') || 0;
       const csCount = drivers.get('climate_sensor')?.mfrs?.size || 0;
-      if (csCount - planned - 1 >= 3) {
+      if (csCount - planned - 1 >= 1) {
         removals.push({ driver: 'climate_sensor', mfr, reason: 'climate_sensor catch-all loses to ' + otherCat + '(' + other + ')' });
         removalCounts.set('climate_sensor', planned + 1);
         return removals;
