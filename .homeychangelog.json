@@ -1,6 +1,13 @@
 {
   "changelog": [
     {
+      "version": "5.12.79",
+      "date": "2026-08-15",
+      "channel": "stable",
+      "en": "P102 reliability republish after Athom processing_failed on 5.12.78 (socket hang up). Includes ZT08 safe timers + Athom changelog keys.",
+      "fr": "Republication fiabilite P102 apres processing_failed Athom sur 5.12.78. Inclut timers ZT08 + cles changelog Athom."
+    },
+    {
       "version": "5.12.78",
       "date": "2026-08-15",
       "channel": "stable",
@@ -1266,5 +1273,9 @@
   "5.12.75": {
     "en": "Reliability: guard DCM auditCapabilities + safe IAS timers; stop TS0041 matching door/window sensors.",
     "fr": "Fiabilite: garde auditCapabilities DCM + timers IAS; TS0041 hors door/window."
+  },
+  "5.12.79": {
+    "en": "P102 reliability republish after Athom processing_failed on 5.12.78 (socket hang up). Includes ZT08 safe timers + Athom changelog keys.",
+    "fr": "Republication fiabilite P102 apres processing_failed Athom sur 5.12.78. Inclut timers ZT08 + cles changelog Athom."
   }
 }
