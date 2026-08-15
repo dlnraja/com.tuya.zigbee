@@ -748,3 +748,28 @@ Order: `fix-flow-cards`  `revert-battery-conflicts`  `fix-empty-caps`  `validate
 - NEVER assume all variants have same features
 - Use runtime capability detection in device.js
 - Example: `if (this.hasCapability('measure_power'))` before setup
+
+---
+
+## M. Athom `processing_failed` / socket hang up (P139)
+
+Master and stable share App ID `com.dlnraja.tuya.zigbee`. The Homey **Test**
+slot is therefore a single shared channel.
+
+### Do NOT
+1. Bump patch + republish in a loop when Athom returns `processing_failed` with
+   `socket hang up` / ECONNRESET / 502–504 — that is Athom processor/network,
+   not a version bug (see 9.0.525 / 9.0.526 while Test stayed on 9.0.524).
+2. Let Publish Self-Heal re-run **Publish Stable → Test** after a master
+   failure — that overwrites master Test with stable.
+3. Force a recovery bump on bare `workflow_dispatch` of Auto-Fix.
+
+### Do
+1. Keep Test on the last **healthy** build; wait for Athom or one human publish.
+2. `processing-failure-republish-check.js`: refuse Auto-Fix recovery when the
+   failure is transient, especially if a healthy Test build already exists.
+3. `athom-processing-failure-retry.js`: skip self-heal when Test is healthy or
+   the failure is transient; if a rare non-transient heal runs, trigger
+   **Auto-Publish on Push** (master) only — never Publish Stable→Test.
+4. `verify-test-version.js` stays fail-closed for the *expected* version
+   (do not greenwash a failed upload).

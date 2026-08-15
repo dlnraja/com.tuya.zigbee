@@ -1,6 +1,15 @@
 #!/usr/bin/env node
 "use strict";
 
+/**
+ * Decide whether Auto-Fix should bump+republish after Athom processing_failed.
+ *
+ * P139: Transient Athom processor/network errors (socket hang up, ECONNRESET,
+ * 502/503/504) are NOT fixed by bumping patch versions in a loop. When the
+ * shared App ID already has a healthy Test build, refuse recovery publish so
+ * Test stays on the last good version (e.g. 9.0.524 while 525/526 fail).
+ */
+
 const fs = require("fs");
 const path = require("path");
 
@@ -17,6 +26,7 @@ const ROOT = process.cwd();
 const REPORT_PATH = path.join(ROOT, ".github", "state", "dashboard-monitor-report.json");
 const FAILED_STATES = new Set(["processing_failed", "error", "failed", "revoked"]);
 const TRANSIENT_RE = /socket hang up|econnreset|econnaborted|etimedout|fetch failed|network|timeout|temporar|502|503|504/i;
+const HEALTHY_TEST_STATES = new Set(["test"]);
 
 function readJson(file) {
   return JSON.parse(fs.readFileSync(file, "utf8"));
@@ -52,6 +62,132 @@ function setOutput(name, value) {
 
 function setEnv(name, value) {
   append(process.env.GITHUB_ENV, `${name}=${clean(value, 1000)}`);
+}
+
+function listBuilds(report) {
+  if (Array.isArray(report.latestBuilds) && report.latestBuilds.length) return report.latestBuilds;
+  if (report.latestBuild) return [report.latestBuild];
+  return [];
+}
+
+function findHealthyTest(report) {
+  return listBuilds(report).find((b) => HEALTHY_TEST_STATES.has(String(b?.state || "")));
+}
+
+function decidePublishRecovery({ appVersion, report, now = Date.now(), maxAgeMs = 30 * 60 * 1000 }) {
+  const changelogDefault = "Stability improvements and Homey test publication retry.";
+
+  if (!report || typeof report !== "object") {
+    return {
+      triggerPublish: false,
+      requiresBump: false,
+      transient: false,
+      reason: "Dashboard report missing; publish recovery disabled.",
+      changelog: changelogDefault,
+    };
+  }
+
+  const ts = Date.parse(report.timestamp || "");
+  if (!Number.isFinite(ts) || now - ts > maxAgeMs) {
+    return {
+      triggerPublish: false,
+      requiresBump: false,
+      transient: false,
+      reason: `Dashboard report stale or invalid (${report.timestamp || "missing"}).`,
+      changelog: changelogDefault,
+    };
+  }
+
+  const builds = listBuilds(report);
+  const latest = report.latestBuild || builds[0] || null;
+  if (!latest) {
+    return {
+      triggerPublish: false,
+      requiresBump: false,
+      transient: false,
+      reason: "No builds found in the dashboard report.",
+      changelog: changelogDefault,
+    };
+  }
+
+  const latestState = String(latest.state || "");
+  const latestVersion = String(latest.version || "");
+  const latestDetail = normalizeText(
+    latest.failureDetail || latest.stateMeta || latest.error || latest.errorMessage || report.currentStatus?.latestFailureDetail,
+  );
+  const failed = FAILED_STATES.has(latestState);
+  const currentVersion = !latestVersion || latestVersion === String(appVersion || "");
+  const transient = TRANSIENT_RE.test(latestDetail);
+  const healthyTest = findHealthyTest(report);
+
+  if (!failed) {
+    return {
+      triggerPublish: false,
+      requiresBump: false,
+      transient: false,
+      latestState,
+      latestVersion,
+      latestDetail,
+      reason: "Latest Athom build is not failed.",
+      changelog: changelogDefault,
+    };
+  }
+
+  // P139: shared App ID — if Test already has a healthy build, Athom transient
+  // processor errors must NOT trigger bump→republish loops (525/526 socket hang up
+  // while Test stayed on 524). Republishing only adds more failed drafts.
+  if (transient && healthyTest) {
+    return {
+      triggerPublish: false,
+      requiresBump: false,
+      transient: true,
+      latestState,
+      latestVersion,
+      latestDetail,
+      reason: `Athom transient ${latestState} (${latestDetail || "network/processor"}) for v${latestVersion || "?"}, but Test already has healthy v${healthyTest.version} (#${healthyTest.id || "?"}). Refusing republish loop (shared App ID).`,
+      changelog: changelogDefault,
+    };
+  }
+
+  if (transient && !healthyTest) {
+    // Still refuse automatic bump spam: without a healthy Test signal, wait for
+    // a human / scheduled single self-heal rather than Auto-Fix every push.
+    return {
+      triggerPublish: false,
+      requiresBump: false,
+      transient: true,
+      latestState,
+      latestVersion,
+      latestDetail,
+      reason: `Athom transient ${latestState} (${latestDetail || "network/processor"}) — not fixable by patch bump. Skip Auto-Fix republish; wait for Athom or a single manual publish.`,
+      changelog: changelogDefault,
+    };
+  }
+
+  if (!currentVersion) {
+    return {
+      triggerPublish: false,
+      requiresBump: false,
+      transient,
+      latestState,
+      latestVersion,
+      latestDetail,
+      reason: `Latest failed build v${latestVersion} does not match app.json v${appVersion}; avoiding stale republish.`,
+      changelog: changelogDefault,
+    };
+  }
+
+  // Non-transient failure for the current version — allow one recovery bump.
+  return {
+    triggerPublish: true,
+    requiresBump: true,
+    transient: false,
+    latestState,
+    latestVersion,
+    latestDetail,
+    reason: "Latest Athom build failed for the current version (non-transient); bumping patch before recovery publish.",
+    changelog: "Stability improvements and Homey test build recovery.",
+  };
 }
 
 function publishDecision(decision) {
@@ -94,92 +230,21 @@ function main() {
   const maxAgeMs = Number.isFinite(parsedMaxAge) && parsedMaxAge >= 0 ? parsedMaxAge : 30 * 60 * 1000;
 
   if (!fs.existsSync(REPORT_PATH)) {
-    publishDecision({
-      triggerPublish: false,
-      requiresBump: false,
-      transient: false,
-      reason: "Dashboard report missing; publish recovery disabled.",
-      changelog: "Stability improvements and Homey test publication retry.",
-    });
+    publishDecision(decidePublishRecovery({ appVersion, report: null }));
     return;
   }
 
   const report = readJson(REPORT_PATH);
-  const ts = Date.parse(report.timestamp || "");
-  if (!Number.isFinite(ts) || Date.now() - ts > maxAgeMs) {
-    publishDecision({
-      triggerPublish: false,
-      requiresBump: false,
-      transient: false,
-      reason: `Dashboard report stale or invalid (${report.timestamp || "missing"}).`,
-      changelog: "Stability improvements and Homey test publication retry.",
-    });
-    return;
-  }
-
-  const latest = report.latestBuild || (Array.isArray(report.latestBuilds) ? report.latestBuilds[0] : null);
-  if (!latest) {
-    publishDecision({
-      triggerPublish: false,
-      requiresBump: false,
-      transient: false,
-      reason: "No builds found in the dashboard report.",
-      changelog: "Stability improvements and Homey test publication retry.",
-    });
-    return;
-  }
-
-  const latestState = String(latest.state || "");
-  const latestVersion = String(latest.version || "");
-  const latestDetail = normalizeText(
-    latest.failureDetail || latest.stateMeta || latest.error || latest.errorMessage || report.currentStatus?.latestFailureDetail,
-  );
-  const failed = FAILED_STATES.has(latestState);
-  const currentVersion = !latestVersion || latestVersion === appVersion;
-  const transient = TRANSIENT_RE.test(latestDetail);
-
-  if (!failed) {
-    publishDecision({
-      triggerPublish: false,
-      requiresBump: false,
-      transient: false,
-      latestState,
-      latestVersion,
-      latestDetail,
-      reason: "Latest Athom build is not failed.",
-      changelog: "Stability improvements and Homey test publication retry.",
-    });
-    return;
-  }
-
-  if (!currentVersion) {
-    publishDecision({
-      triggerPublish: false,
-      requiresBump: false,
-      transient,
-      latestState,
-      latestVersion,
-      latestDetail,
-      reason: `Latest failed build v${latestVersion} does not match app.json v${appVersion}; avoiding stale republish.`,
-      changelog: "Stability improvements and Homey test publication retry.",
-    });
-    return;
-  }
-
-  publishDecision({
-    triggerPublish: true,
-    requiresBump: true,
-    transient,
-    latestState,
-    latestVersion,
-    latestDetail,
-    reason: transient
-      ? "Latest Athom build failed with a transient processor/network error; bumping patch before republish."
-      : "Latest Athom build failed for the current version; bumping patch before recovery publish.",
-    changelog: transient
-      ? "Stability improvements and Homey test publication retry after transient processing failure."
-      : "Stability improvements and Homey test build recovery.",
-  });
+  publishDecision(decidePublishRecovery({ appVersion, report, maxAgeMs }));
 }
 
-main();
+if (require.main === module) {
+  main();
+}
+
+module.exports = {
+  decidePublishRecovery,
+  findHealthyTest,
+  TRANSIENT_RE,
+  FAILED_STATES,
+};

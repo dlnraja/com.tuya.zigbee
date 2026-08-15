@@ -140,5 +140,9 @@ jobs:
             echo ""
             echo "- Reason: ${{ steps.probe.outputs.reason }}"
             echo "- Failed build: #${{ steps.probe.outputs.latest_build_id }} v${{ steps.probe.outputs.latest_version }} (${{ steps.probe.outputs.latest_state }}, ${{ steps.probe.outputs.failure_age_hours }}h old)"
+            echo ""
+            echo "P139: Prefer Auto-Publish on Push (master Test soak). Do **not**"
+            echo "run Publish Stable→Test here — shared App ID would overwrite master Test."
           } >> $GITHUB_STEP_SUMMARY
-          gh workflow run "🚀 Publish Stable to Test" --ref stable-v5 2>&1 | tee -a $GITHUB_STEP_SUMMARY || true
+          # Shared App ID: only re-trigger master Auto-Publish, never Publish Stable→Test.
+          gh workflow run "Auto-Publish on Push" --ref master 2>&1 | tee -a $GITHUB_STEP_SUMMARY || true

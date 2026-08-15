@@ -173,7 +173,9 @@ jobs:
         run: node .github/scripts/processing-failure-republish-check.js
 
       - name: 🔁 Bump version for Homey recovery publish
-        if: env.publish_recovery_requires_bump == 'true' || github.event_name == 'workflow_dispatch'
+        # P139: only bump when recovery checker says so — never on bare
+        # workflow_dispatch (that caused patch spam on socket hang up).
+        if: env.publish_recovery_requires_bump == 'true'
         env:
           BUMP_LEVEL: patch
           HOMEY_CHANGELOG: ${{ env.publish_recovery_changelog || 'Stability improvements and Homey test publication retry.' }}

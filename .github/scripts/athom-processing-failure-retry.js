@@ -35,6 +35,7 @@ const https = require('https');
 const ROOT = process.cwd();
 const FAILED_STATES = new Set(['processing_failed', 'error', 'failed', 'revoked']);
 const ACTIVE_STATES = new Set(['test', 'approved', 'published', 'building', 'processing', 'uploading', 'draft']);
+const TRANSIENT_RE = /socket hang up|econnreset|econnaborted|etimedout|fetch failed|network|timeout|temporar|502|503|504/i;
 const MIN_FAILURE_AGE_MS = 6 * 60 * 60 * 1000;
 const RETRY_WINDOW_MS = 24 * 60 * 60 * 1000;
 const MARKER_PATH = process.env.SELF_HEAL_MARKER
@@ -179,6 +180,33 @@ async function main() {
     return;
   }
 
+  const failureDetail = String(
+    latest.failureDetail || latest.stateMeta || latest.error || latest.errorMessage || '',
+  );
+  const transient = TRANSIENT_RE.test(failureDetail);
+
+  // P139: shared App ID — if ANY recent build is already on Test, do not
+  // republish (especially not Publish Stable→Test which can overwrite master).
+  const healthyTest = builds.find((b) => String(b.state || '') === 'test');
+  if (healthyTest) {
+    publish({
+      retry: false,
+      reason: `Test channel already has healthy v${healthyTest.version || '?'} (#${buildId(healthyTest)}); refusing self-heal republish (shared App ID; latest failure=${state}${transient ? ', transient' : ''}).`,
+      latest,
+    });
+    return;
+  }
+
+  // P139: socket hang up / Athom processor flakes are not fixed by more uploads.
+  if (transient) {
+    publish({
+      retry: false,
+      reason: `Latest failure is Athom-transient (${failureDetail || 'socket hang up'}); bump/republish loops do not help. Wait for Athom or a single human-triggered publish.`,
+      latest,
+    });
+    return;
+  }
+
   // 4. Failure older than 6h?
   const failedAt = buildTime(latest);
   if (!failedAt) {
@@ -209,7 +237,7 @@ async function main() {
   writeMarker();
   publish({
     retry: true,
-    reason: `Latest build #${buildId(latest)} v${latest.version || '?'} is ${state} for ${ageHours}h (>6h), no newer active build — re-triggering publish.`,
+    reason: `Latest build #${buildId(latest)} v${latest.version || '?'} is ${state} for ${ageHours}h (>6h), no healthy Test build — single self-heal re-trigger.`,
     latest,
     ageHours,
   });
