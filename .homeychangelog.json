@@ -1,6 +1,13 @@
 {
   "changelog": [
     {
+      "version": "5.12.78",
+      "date": "2026-08-15",
+      "channel": "stable",
+      "en": "Reliability BOTH: ZT08 safe time-sync timers; Athom changelog keys so Test publish works (5.12.75-77 crash class).",
+      "fr": "Fiabilite BOTH: timers ZT08 safe; cles changelog Athom pour publier Test (classe crash 5.12.75-77)."
+    },
+    {
       "version": "5.12.77",
       "date": "2026-08-15",
       "channel": "stable",
@@ -1243,5 +1250,21 @@
   },
   "5.12.70": {
     "en": "Stop publish reinject from stripping TS004F remotes off button_wireless_4."
+  },
+  "5.12.78": {
+    "en": "Reliability BOTH: ZT08 safe time-sync timers; Athom changelog keys so Test publish works (5.12.75-77 crash class).",
+    "fr": "Fiabilite BOTH: timers ZT08 safe; cles changelog Athom pour publier Test (classe crash 5.12.75-77)."
+  },
+  "5.12.77": {
+    "en": "Reliability BOTH: contact/water debounce timers use safeSetTimeout (Peter crash class).",
+    "fr": "Fiabilite BOTH: timers debounce contact/eau via safeSetTimeout."
+  },
+  "5.12.76": {
+    "en": "Reliability BOTH: SOS zoneId 10 + CIE zero-guard + safe timers + battery wake; water_leak_sensor_tuya IAS path.",
+    "fr": "Fiabilite BOTH: SOS zoneId 10 + garde CIE + timers safe; chemin IAS water_leak."
+  },
+  "5.12.75": {
+    "en": "Reliability: guard DCM auditCapabilities + safe IAS timers; stop TS0041 matching door/window sensors.",
+    "fr": "Fiabilite: garde auditCapabilities DCM + timers IAS; TS0041 hors door/window."
   }
 }
