@@ -7,7 +7,7 @@
 
 | Track | Branch | Homey Test |
 |-------|--------|------------|
-| Preview | `master` | **9.0.517** Auto-Publish ✅ |
+| Preview | `master` | **9.0.518** (code + Buffer/L99 on top of bot bump) |
 | Stable | `stable-v5` | **5.12.81** ✅ (#525) |
 
 Peter #2137 (v5.12.70 Gecrasht) → update to **≥5.12.81**.

@@ -7,7 +7,7 @@
 
 | Track | Version | Homey Test |
 |-------|---------|------------|
-| `master` | **9.0.517** | Auto-Publish **success** (after 9.0.516 Athom hang) |
+| `master` | **9.0.518** | Bot bump + L99 Buffer/Syntax fix on top of 9.0.517 Auto-Publish ✅ |
 | `stable-v5` | **5.12.81** | Publish Stable **success** (#525/#526) |
 
 **Peter (#2137):** was v5.12.70 crashed → update Test to **≥5.12.81**.
