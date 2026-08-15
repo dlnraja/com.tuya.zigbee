@@ -132,7 +132,7 @@ run('Blakadder FP integration', 'node tools/ci/apply-blakadder-new-fps-r68.js');
 
 // 11b. Resolve FP collisions after Blakadder (climate catch-all must lose to switches)
 // Prevents auto-fix-all from reintroducing pairs like _TZE200_8eazvzo6 in climate_sensor.
-run('FP conflict resolve', 'node scripts/automation/fix-fingerprint-conflicts.js');
+run('FP conflict resolve', 'node scripts/automation/fix-fingerprint-conflicts.js --soft-exit');
 
 // 12. P68v2: Fix cross-driver flow card ID collisions
 run('Flow card dup v2', 'node tools/ci/fix-flow-card-dups-r68v2.js');
