@@ -2061,5 +2061,8 @@
   },
   "9.0.508": {
     "en": "Improved SOS button init, IAS enrollment timers, and energy audit stability. Fixed crash loop on capability audit."
+  },
+  "9.0.509": {
+    "en": "Stability improvements and Homey test publication retry after transient processing failure."
   }
 }
