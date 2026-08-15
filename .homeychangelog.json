@@ -1,6 +1,13 @@
 {
   "changelog": [
     {
+      "version": "5.12.75",
+      "date": "2026-08-15",
+      "channel": "stable",
+      "en": "Reliability: guard DCM auditCapabilities + safe IAS timers; stop TS0041 wireless buttons matching door/window sensors (Peter #2137).",
+      "fr": "Fiabilite: garde auditCapabilities DCM + timers IAS safe; TS0041 boutons ne matchent plus les capteurs porte/fenetre (Peter #2137)."
+    },
+    {
       "version": "5.12.67",
       "date": "2026-08-11",
       "channel": "stable",
