@@ -1,6 +1,7 @@
 'use strict';
 const { safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
 const { includesCI } = require('../../lib/utils/CaseInsensitiveMatcher');
+const { safeSetTimeout, safeClearTimeout } = require('../../lib/utils/safe-timers');
 
 
 const { UnifiedSensorBase } = require('../../lib/devices/UnifiedSensorBase');
@@ -321,11 +322,11 @@ class ContactSensorDevice extends UnifiedSensorBase {
 
         // Clear existing timer
         if (state.timer) {
-          this.homey.clearTimeout(state.timer);
+          safeClearTimeout(this, state.timer);
         }
 
         // Set timer to apply after debounce window
-        state.timer = this.homey.setTimeout(async () => {
+        state.timer = safeSetTimeout(this, async () => {
           if (this._destroyed) {return;}
           this.log(`[CONTACT]  Debounce complete - applying: ${finalValue}`);
           state.lastValue = finalValue;
@@ -355,11 +356,11 @@ class ContactSensorDevice extends UnifiedSensorBase {
           this.log('[CONTACT]  Problematic sensor: openclosed change - applying extended debounce');
 
           if (state.timer) {
-            this.homey.clearTimeout(state.timer);
+            safeClearTimeout(this, state.timer);
           }
 
           // Double debounce for problematic openclosed transitions
-          state.timer = this.homey.setTimeout(async () => {
+          state.timer = safeSetTimeout(this, async () => {
             if (this._destroyed) {return;}
             this.log(`[CONTACT]  Extended debounce complete - applying: ${finalValue}`);
             state.lastValue = finalValue;
@@ -382,7 +383,7 @@ class ContactSensorDevice extends UnifiedSensorBase {
 
       // Clear any pending timer
       if (state.timer) {
-        this.homey.clearTimeout(state.timer);
+        safeClearTimeout(this, state.timer);
         state.timer = null;
       }
 
@@ -417,7 +418,7 @@ class ContactSensorDevice extends UnifiedSensorBase {
   async onUninit() {
     this.log('[CONTACT] onUninit - cleaning up...');
     if (this._contactState?.timer) {
-      this.homey.clearTimeout(this._contactState.timer);
+      safeClearTimeout(this, this._contactState.timer);
       this._contactState.timer = null;
     }
     if (super.onUninit) {
@@ -433,7 +434,7 @@ class ContactSensorDevice extends UnifiedSensorBase {
     if (this._destroyed) {return;}
     this._destroyed = true;
     if (this._contactState?.timer) {
-      this.homey.clearTimeout(this._contactState.timer );
+      safeClearTimeout(this, this._contactState.timer);
       this._contactState.timer = null;
     }
     await super.onDeleted?.();
