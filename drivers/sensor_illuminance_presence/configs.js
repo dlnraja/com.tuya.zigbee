@@ -113,6 +113,7 @@ const SENSOR_CONFIGS = {
       '_TZE204_mtoaryre', '_TZE200_mp902om5',
       '_TZE204_pfayrzcw', '_TZE284_4qznlkbu',
       '_TZE200_clrdrnya', '_TZE200_sbyx0lm6',
+      '_TZE284_clrdrnya',
     ],
     battery: false,
     mainsPowered: true,
