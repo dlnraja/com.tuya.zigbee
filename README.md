@@ -10,7 +10,7 @@
 [![SDK](https://img.shields.io/badge/SDK-3-orange)](https://apps.developer.homey.app/)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
-A community-driven Homey app that brings **local control** to Tuya Zigbee devices — no cloud, no internet needed. Covers switches, sensors, lights, thermostats, covers, locks and more across **431 drivers** and **4,371 unique device fingerprints** (17,084 including case variants for bulletproof pairing).
+A community-driven Homey app that brings **local control** to Tuya Zigbee devices — no cloud, no internet needed. Covers switches, sensors, lights, thermostats, covers, locks and more across **431 drivers** and **4,371 unique device fingerprints** (17,082 including case variants for bulletproof pairing).
 
 **Key features:**
 - **Local-only** — everything runs on your Homey, nothing goes to the cloud
@@ -37,11 +37,11 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.526 |
+| **App Version** | v9.0.527 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,371 |
-| **Pairing Variants** | 17,084 (4 case combos per fingerprint) |
-| **Unique Product IDs** | 573 |
+| **Pairing Variants** | 17,082 (4 case combos per fingerprint) |
+| **Unique Product IDs** | 575 |
 | **Flow Cards** | 4,974 |
 | **Unique Capabilities** | 170 |
 | **Native OTA Drivers** | 6 |
@@ -55,7 +55,7 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 
 | # | Driver | Fingerprints |
 |---|--------|-------------|
-| 1 | `climate_sensor` | 2,667 |
+| 1 | `climate_sensor` | 2,663 |
 | 2 | `switch_1gang` | 1,804 |
 | 3 | `button_wireless_2` | 790 |
 | 4 | `presence_sensor_radar` | 726 |
@@ -72,7 +72,7 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 | 15 | `diy_custom_zigbee` | 206 |
 | 16 | `water_leak_sensor_tuya` | 194 |
 | 17 | `thermostat_tuya_dp` | 192 |
-| 18 | `soil_sensor` | 189 |
+| 18 | `soil_sensor` | 191 |
 | 19 | `dimmer_wall_1gang` | 184 |
 | 20 | `dimmable_led_strip` | 180 |
 
@@ -106,6 +106,7 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.527** | Reliability: generic_tuya capability crash fix; MTG284 clrdrnya relay DP map (radar family). |
 | **v9.0.526** | Reliability: generic_tuya capability crash fix; MTG284 clrdrnya relay DP map (radar family). |
 | **v9.0.525** | Reliability: generic_tuya capability crash fix; MTG284 clrdrnya relay DP map (radar family). |
 | **v9.0.524** | Reliability: generic_tuya capability crash fix; MTG284 clrdrnya relay DP map (radar family). |
@@ -117,7 +118,6 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 | **v9.0.518** | Reliability: generic_tuya capability crash fix; MTG284 clrdrnya relay DP map (radar family). |
 | **v9.0.517** | Reliability: generic_tuya capability crash fix; MTG284 clrdrnya relay DP map (radar family). |
 | **v9.0.516** | Reliability: generic_tuya capability crash fix; MTG284 clrdrnya relay DP map (radar family). |
-| **v9.0.515** | Reliability: generic_tuya capability crash fix; MTG284 clrdrnya relay DP map (radar family). |
 
 <!-- CHANGELOG_END -->
 
