@@ -37,7 +37,7 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.513 |
+| **App Version** | v9.0.514 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,372 |
 | **Pairing Variants** | 17,193 (4 case combos per fingerprint) |
@@ -106,6 +106,7 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.514** | Stability improvements and Homey test publication retry after transient processing failure. |
 | **v9.0.513** | Stability improvements and Homey test publication retry after transient processing failure. |
 | **v9.0.512** | Stability improvements and Homey test publication retry after transient processing failure. |
 | **v9.0.511** | Stability improvements and Homey test publication retry after transient processing failure. |
@@ -117,7 +118,6 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 | **v9.0.505** | Dual-app reliability sync report and refreshed Homey dashboards (health 93/100). |
 | **v9.0.504** | Added community climate/motion/switch fingerprints from monthly sync; ZT08 stays on dedicated driver. |
 | **v9.0.503** | Dedicated ZT08 climate driver for pairing (#513), DIN rail plug on hardened base. |
-| **v9.0.502** | Maintenance bump. |
 
 <!-- CHANGELOG_END -->
 
