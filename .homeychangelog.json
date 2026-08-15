@@ -1,6 +1,13 @@
 {
   "changelog": [
     {
+      "version": "5.12.76",
+      "date": "2026-08-15",
+      "channel": "stable",
+      "en": "Reliability BOTH: SOS zoneId 10 + CIE zero-guard + safe timers + battery wake; water_leak_sensor_tuya IAS path (Peter #2134/#2137).",
+      "fr": "Fiabilite BOTH: SOS zoneId 10 + garde CIE zero + timers safe + batterie; chemin IAS water_leak_sensor_tuya (Peter #2134/#2137)."
+    },
+    {
       "version": "5.12.75",
       "date": "2026-08-15",
       "channel": "stable",
