@@ -26,8 +26,11 @@ node tools/ci/mega-crawler.js --only=free-scrape
 
 Outputs (gitignored under `.github/state/`):
 
-- `free-scrape/crossref-report.json`
+- `free-scrape/crossref-report.json` — sources, merged extracts, `sacredCouples` routing
 - `free-scrape/dashboard-snippet.json`
+- `free-scrape/diag-hints.json` — UUIDs for `scripts/ci/fetch-homey-app-diag-by-uuid.js`
+
+`structuredExtract()` never classifies `TS####` as manufacturers (sacred-couple mfr ≠ pid).
 
 ## GitHub Actions
 

@@ -393,5 +393,16 @@ describe('forum routing regressions', () => {
 
     const diag = read('lib/diagnostics/DiagnosticLogsCollector.js');
     assert.match(diag, /typeof desc\.get === 'function'/);
+
+    // Forum #2131 TBoy — relay must expose gang caps + gang flow actions (not multi-tile only)
+    const relayCompose = read('drivers/relay_board_4_channel/driver.compose.json');
+    assert.match(relayCompose, /"onoff\.gang2"/);
+    assert.match(relayCompose, /_TZ3210_imaccztn/);
+    assert.doesNotMatch(relayCompose, /"secondSwitch"/);
+    const relayFlows = read('drivers/relay_board_4_channel/driver.flow.compose.json');
+    assert.match(relayFlows, /relay_board_4_channel_turn_on_gang2/);
+    assert.match(relayFlows, /relay_board_4_channel_turn_on_gang4/);
+    const relayDev = read('drivers/relay_board_4_channel/device.js');
+    assert.match(relayDev, /get gangCount\(\) \{ return 4; \}/);
   });
 });

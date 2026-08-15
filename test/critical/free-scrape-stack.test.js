@@ -18,8 +18,17 @@ describe('FreeScrapeStack', () => {
     assert.ok(e.diagnosticCodes.includes('f1e5b12d-5f69-4311-aaa7-b8bef967667c'));
     assert.ok(e.manufacturers.some((m) => /pay2byax/i.test(m)));
     assert.ok(e.productIds.includes('TS0203') || e.productIds.includes('ZG-222Z'));
+    // ProductIds must never leak into manufacturers (TS#### false positives)
+    assert.ok(!e.manufacturers.some((m) => /^TS\d/i.test(m)));
     assert.ok(e.issues.includes('UNSUPPORTED_CLUSTER'));
     assert.ok(e.urls.some((u) => u.includes('140352')));
+  });
+
+  it('keeps _TZE28C* sacred mfrs out of productId bucket', () => {
+    const e = structuredExtract('_TZE28C1000000_jtbgusdc TS0601 Avatto dimmer');
+    assert.ok(e.manufacturers.some((m) => /jtbgusdc/i.test(m)));
+    assert.ok(e.productIds.includes('TS0601'));
+    assert.ok(!e.manufacturers.includes('TS0601'));
   });
 
   it('builds source template URLs', () => {

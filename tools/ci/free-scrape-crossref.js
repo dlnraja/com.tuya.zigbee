@@ -32,7 +32,7 @@ const {
 
 const args = process.argv.slice(2);
 const topicId = Number((args.find((a) => a.startsWith('--topic=')) || '--topic=140352').split('=')[1]);
-const focusPost = Number((args.find((a) => a.startsWith('--focus=')) || '--focus=2134').split('=')[1]);
+const focusPost = Number((args.find((a) => a.startsWith('--focus=')) || '--focus=2137').split('=')[1]);
 const queryArg = args.find((a) => a.startsWith('--queries='));
 const queries = queryArg
   ? queryArg.slice('--queries='.length).split(',').map((s) => s.trim()).filter(Boolean)
@@ -42,6 +42,8 @@ const queries = queryArg
     'UNSUPPORTED_CLUSTER dimmer Tuya Homey',
     'TS0215A zigbee2mqtt',
     'ZG-222Z water leak',
+    '_TZ3210_imaccztn TS0004',
+    '_TZE284_m1cvyneb dimmer',
   ];
 
 function ensureDir(d) {
@@ -87,6 +89,66 @@ function localDriverHits(tokens) {
   return hits.slice(0, 40);
 }
 
+/** Sacred-couple (mfr+pid) routing — prefer same-source pairs, else mfr∩pid global. */
+function sacredCoupleRouting(mfrs, pids, perSource = []) {
+  const driversDir = path.join(ROOT, 'drivers');
+  const couples = [];
+  const seen = new Set();
+  if (!fs.existsSync(driversDir)) {return couples;}
+
+  const driverIndex = [];
+  for (const d of fs.readdirSync(driversDir)) {
+    const f = path.join(driversDir, d, 'driver.compose.json');
+    if (!fs.existsSync(f)) {continue;}
+    let j;
+    try { j = JSON.parse(fs.readFileSync(f, 'utf8')); } catch (_e) { continue; }
+    driverIndex.push({
+      driver: d,
+      class: j.class || null,
+      capabilities: (j.capabilities || []).slice(0, 12),
+      zmLower: (j?.zigbee?.manufacturerName || []).map((x) => String(x).toLowerCase()),
+      zpUpper: (j?.zigbee?.productId || []).map((x) => String(x).toUpperCase()),
+    });
+  }
+
+  const pairCandidates = [];
+  for (const src of perSource) {
+    const em = (src?.extractPreview?.mfrs || src?.extracted?.manufacturers || []).filter((m) => /^_TZ/i.test(m));
+    const ep = (src?.extractPreview?.pids || src?.extracted?.productIds || []).filter((p) => /^TS\d|^ZG-/i.test(p));
+    for (const m of em) {
+      for (const p of ep) {pairCandidates.push({ mfr: m, pid: p, via: 'same_source' });}
+    }
+  }
+  // Fallback: cartesian of top global tokens (capped)
+  if (!pairCandidates.length) {
+    for (const m of (mfrs || []).slice(0, 20)) {
+      for (const p of (pids || []).slice(0, 15)) {
+        if (/^_TZ/i.test(m) && /^TS\d|^ZG-/i.test(p)) {pairCandidates.push({ mfr: m, pid: p, via: 'global' });}
+      }
+    }
+  }
+
+  for (const { mfr, pid, via } of pairCandidates) {
+    for (const di of driverIndex) {
+      if (!di.zmLower.includes(String(mfr).toLowerCase())) {continue;}
+      if (!di.zpUpper.includes(String(pid).toUpperCase())) {continue;}
+      const key = `${mfr}|${pid}|${di.driver}`;
+      if (seen.has(key)) {continue;}
+      seen.add(key);
+      couples.push({
+        mfr,
+        pids: [String(pid).toUpperCase()],
+        driver: di.driver,
+        class: di.class,
+        capabilities: di.capabilities,
+        verdict: 'sacred_couple_hit',
+        via,
+      });
+    }
+  }
+  return couples.slice(0, 80);
+}
+
 async function main() {
   ensureDir(OUT_DIR);
   const started = Date.now();
@@ -107,9 +169,15 @@ async function main() {
     ],
   };
 
+  // Harvest recent forum posts around focus (±3) for sacred couples / diags
+  const recentPosts = [];
+  for (let p = Math.max(1, focusPost - 3); p <= focusPost + 1; p++) {
+    recentPosts.push(`https://community.homey.app/t/${topicId}/${p}.json`);
+  }
+
   const urls = [
     SOURCE_TEMPLATES.forumTopic(topicId),
-    `https://community.homey.app/t/${topicId}/${focusPost}.json`,
+    ...recentPosts,
     'https://raw.githubusercontent.com/Koenkk/zigbee-herdsman-converters/master/src/devices/tuya.ts',
     'https://api.github.com/search/issues?q=repo:Koenkk/zigbee2mqtt+TS0215A&per_page=5',
     'https://api.github.com/search/issues?q=repo:dlnraja/com.tuya.zigbee+UNSUPPORTED_CLUSTER&per_page=5',
@@ -155,6 +223,11 @@ async function main() {
     ...report.merged.manufacturers,
     ...report.merged.productIds,
   ].slice(0, 30));
+  report.sacredCouples = sacredCoupleRouting(
+    report.merged.manufacturers,
+    report.merged.productIds,
+    report.sources,
+  );
 
   // Focus post text if Discourse JSON succeeded
   const focus = results.find((r) => r.ok && r.url.includes(`/${focusPost}.json`));
@@ -173,6 +246,14 @@ async function main() {
     }
   }
 
+  // Hint file for fetch-homey-app-diag-by-uuid / tuya-deep-diag (gitignored state)
+  const diagHints = {
+    generatedAt: report.generatedAt,
+    diagnosticCodes: report.merged.diagnosticCodes,
+    note: 'Pass each UUID to: node scripts/ci/fetch-homey-app-diag-by-uuid.js <uuid>',
+  };
+  fs.writeFileSync(path.join(OUT_DIR, 'diag-hints.json'), JSON.stringify(diagHints, null, 2));
+
   report.elapsedMs = Date.now() - started;
   report.okCount = results.filter((r) => r.ok).length;
   report.failCount = results.filter((r) => !r.ok).length;
@@ -190,12 +271,19 @@ async function main() {
     topPids: report.merged.productIds.slice(0, 15),
     diags: report.merged.diagnosticCodes,
     localDriverHits: report.localDrivers.slice(0, 12),
+    sacredCouples: report.sacredCouples.slice(0, 12),
   };
   fs.writeFileSync(path.join(OUT_DIR, 'dashboard-snippet.json'), JSON.stringify(dash, null, 2));
 
   console.log(`[free-scrape] done ok=${report.okCount} fail=${report.failCount} → ${reportPath}`);
   if (report.focusPostExtract?.diagnosticCodes?.length) {
     console.log(`[free-scrape] focus #${focusPost} diags:`, report.focusPostExtract.diagnosticCodes.join(', '));
+  }
+  if (report.sacredCouples.length) {
+    console.log(`[free-scrape] sacred couples: ${report.sacredCouples.length} hits`);
+  }
+  if (report.merged.diagnosticCodes.length) {
+    console.log(`[free-scrape] diag hints → ${path.join(OUT_DIR, 'diag-hints.json')}`);
   }
 }
 
