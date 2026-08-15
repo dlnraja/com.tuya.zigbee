@@ -1,6 +1,13 @@
 {
   "changelog": [
     {
+      "version": "5.12.77",
+      "date": "2026-08-15",
+      "channel": "stable",
+      "en": "Reliability BOTH: contact/water debounce timers use safeSetTimeout (Peter crash class).",
+      "fr": "Fiabilite BOTH: timers debounce contact/eau via safeSetTimeout."
+    },
+    {
       "version": "5.12.76",
       "date": "2026-08-15",
       "channel": "stable",
