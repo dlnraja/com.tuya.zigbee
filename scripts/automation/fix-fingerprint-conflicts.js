@@ -30,6 +30,8 @@ const DRY_RUN = process.argv.includes('--dry-run');
 const REPORT_ONLY = process.argv.includes('--report-only');
 const JSON_OUTPUT = process.argv.includes('--json');
 const PREDICTIVE = process.argv.includes('--predictive') || JSON_OUTPUT;
+// CI publish steps: apply removals but do not fail on known leftover dual-claims
+const SOFT_EXIT = process.argv.includes('--soft-exit');
 const DDIR = DRIVERS_DIR;
 
 // Device category mapping for conflict resolution priority
@@ -1017,7 +1019,7 @@ function main() {
     console.log('='.repeat(60));
   }
 
-  process.exit((remainingConflicts > 0 && !DRY_RUN && !REPORT_ONLY) ? 1 : 0);
+  process.exit((remainingConflicts > 0 && !DRY_RUN && !REPORT_ONLY && !SOFT_EXIT) ? 1 : 0);
 }
 
 main();

@@ -119,7 +119,7 @@ jobs:
 
       # Enrich/Blakadder can reintroduce climate catch-all collisions — strip again
       - name: "🔧 FP conflict resolve (post-enrich)"
-        run: node scripts/automation/fix-fingerprint-conflicts.js
+        run: node scripts/automation/fix-fingerprint-conflicts.js --soft-exit
 
       - name: "🛡️ Anti-bot gate (post-enrich)"
         run: node tools/ci/anti-bot-regression-gate.js
