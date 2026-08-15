@@ -187,6 +187,70 @@
     {
       "type": "group",
       "label": {
+        "en": "Alarm polarity",
+        "fr": "Polarité alarme",
+        "nl": "Alarm polariteit"
+      },
+      "children": [
+        {
+          "id": "alarm_polarity",
+          "type": "dropdown",
+          "label": {
+            "en": "Signal polarity",
+            "fr": "Polarité du signal",
+            "nl": "Signaalpolariteit"
+          },
+          "value": "auto",
+          "values": [
+            {
+              "id": "auto",
+              "label": {
+                "en": "Auto (lists + smart learn)",
+                "fr": "Auto (listes + apprentissage)",
+                "nl": "Auto (lijsten + slim leren)"
+              }
+            },
+            {
+              "id": "normal",
+              "label": {
+                "en": "Normal (alarm bit = press)",
+                "fr": "Normal (bit alarme = appui)",
+                "nl": "Normaal (alarmbit = druk)"
+              }
+            },
+            {
+              "id": "inverted",
+              "label": {
+                "en": "Inverted (flip press signal)",
+                "fr": "Inversé (inverser l’appui)",
+                "nl": "Omgekeerd (druksignaal omdraaien)"
+              }
+            }
+          ],
+          "hint": {
+            "en": "Auto uses curated SOS lists and learns if only clear keep-alives arrive. Use Inverted if presses never trigger.",
+            "fr": "Auto utilise les listes SOS et apprend si seuls des keep-alive arrivent. Inversé si les appuis ne déclenchent jamais."
+          }
+        },
+        {
+          "id": "invert_sos",
+          "type": "checkbox",
+          "label": {
+            "en": "Invert SOS signal (XOR toggle)",
+            "fr": "Inverser signal SOS (bascule XOR)",
+            "nl": "SOS-signaal omkeren (XOR)"
+          },
+          "value": false,
+          "hint": {
+            "en": "Toggles against Auto list default. Prefer Signal polarity = Inverted for a hard flip.",
+            "fr": "Bascule XOR sur Auto. Préférer Polarité = Inversé pour forcer."
+          }
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "label": {
         "en": "🔧 Maintenance",
         "fr": "🔧 Maintenance"
       },

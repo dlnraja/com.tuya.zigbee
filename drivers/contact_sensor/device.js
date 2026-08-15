@@ -188,31 +188,16 @@ class ContactSensorDevice extends UnifiedSensorBase {
       '_TZ3000_n2egfsli'
     ], mfr);
 
-    // v5.5.506: Forum fix Lasse_K - HOBEIAN ZG-102Z reports inverted by default
-    // v5.5.713: Expanded list of sensors that report inverted by default
-    // v5.5.776: REMOVED HOBEIAN - Lasse_K forum Jan 2026 confirms ZG-102Z works correctly WITHOUT inversion
-    // These sensors report closed=alarm, open=no alarm (inverted from standard)
-    // v5.5.908: Added _TZ3000_996rpfy6 (blutch32 forum - always shows no)
-    const invertedByDefault = [
-      // v5.12.1: REMOVED HOBEIAN  Lasse_K #1592 'always ja': standard TS0203 IAS bit0=1=open maps directly to alarm_contact=true, no inversion needed
-      // 'HOBEIAN',  
-      '_TZ3000_26fmupbb',  // Known inverted
-      '_TZ3000_n2egfsli',  // Known inverted
-      '_TZ3000_oxslv1c9',  // Known inverted
-      '_TZ3000_402jjyro',  // Known inverted
-      '_TZ3000_2mbfxlzr',  // Known inverted
-      '_TZ3000_bzxloft2',  // Known inverted (forum reports)
-      '_TZ3000_yxqnffam',  // Known inverted (forum reports)
-      '_TZ3000_996rpfy6',  // v5.5.908: blutch32 forum - TS0203 always "no" fix
-      // NOT _TZE200_pay2byax — DP1 transform already maps open/closed; listing
-      // it here double-inverted IAS/DP and made Invert/Logica appear broken (#2134).
-    ].some(id => includesCI(mfr, id));
+    // Polarity lists + smart learn live in AlarmPolarityManager
+    const { resolvePolarity } = require('../../lib/managers/AlarmPolarityManager');
+    const pol = resolvePolarity(this, 'contact');
+    const invertedByDefault = !!pol.listedInvert && !pol.listedNormal;
     // v5.12.3: XOR  default inversion + user invert cancel each other out
     this._invertedByDefault = invertedByDefault;
     if (invertedByDefault) {
       this._invertContact = !(userInvert || userReverse);
       this._userExplicitInvert = false;
-      this.log(`[CONTACT] Sensor ${mfr} invertedByDefault=true userInvert=${userInvert} => _invertContact=${this._invertContact}`);
+      this.log(`[CONTACT] Sensor ${mfr} invertedByDefault=true userInvert=${userInvert} => _invertContact=${this._invertContact} (${pol.reason})`);
     }
 
     if (this._isProblematicSensor) {
@@ -238,8 +223,16 @@ class ContactSensorDevice extends UnifiedSensorBase {
    * v5.5.344: Handle settings changes
    */
   async onSettings({ oldSettings, newSettings, changedKeys }) {
+    if (changedKeys.includes('alarm_polarity')
+      || changedKeys.includes('invert_contact')
+      || changedKeys.includes('reverse_alarm')) {
+      try {
+        const { resetLearning } = require('../../lib/managers/AlarmPolarityManager');
+        resetLearning(this);
+      } catch (_e) { /* ignore */ }
+    }
     // v5.8.98: Handle both invert_contact and reverse_alarm (were separate, now unified)
-    if (changedKeys.includes('invert_contact') || changedKeys.includes('reverse_alarm')) {
+    if (changedKeys.includes('invert_contact') || changedKeys.includes('reverse_alarm') || changedKeys.includes('alarm_polarity')) {
       const inv = changedKeys.includes('invert_contact') ? newSettings.invert_contact : this.getSetting('invert_contact') || false;
       const rev = changedKeys.includes('reverse_alarm') ? newSettings.reverse_alarm : this.getSetting('reverse_alarm') || false;
       if (this._invertedByDefault) {

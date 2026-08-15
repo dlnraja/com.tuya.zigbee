@@ -334,6 +334,46 @@
       }
     },
     {
+      "id": "alarm_polarity",
+      "type": "dropdown",
+      "label": {
+        "en": "Alarm polarity",
+        "fr": "Polarité alarme",
+        "nl": "Alarm polariteit"
+      },
+      "value": "auto",
+      "values": [
+        {
+          "id": "auto",
+          "label": {
+            "en": "Auto (lists + smart learn)",
+            "fr": "Auto (listes + apprentissage)",
+            "nl": "Auto (lijsten + slim leren)"
+          }
+        },
+        {
+          "id": "normal",
+          "label": {
+            "en": "Normal (alarm bit = alarm)",
+            "fr": "Normal (bit alarme = alarme)",
+            "nl": "Normaal (alarmbit = alarm)"
+          }
+        },
+        {
+          "id": "inverted",
+          "label": {
+            "en": "Inverted (flip signal)",
+            "fr": "Inversé (inverser le signal)",
+            "nl": "Omgekeerd (signaal omdraaien)"
+          }
+        }
+      ],
+      "hint": {
+        "en": "Auto uses curated normal/inverted device lists and learns from idle timing. Pick Inverted if the tile stays open when closed.",
+        "fr": "Auto utilise les listes d’appareils et apprend selon l’inactivité. Choisir Inversé si la tuile reste ouverte quand fermée."
+      }
+    },
+    {
       "id": "invert_contact",
       "type": "checkbox",
       "label": {
@@ -342,8 +382,8 @@
       },
       "value": false,
       "hint": {
-        "en": "Enable if sensor reports OPEN when CLOSED and vice versa",
-        "fr": "Activer si le capteur signale OUVERT quand FERMÉ et vice versa"
+        "en": "Toggle against Auto polarity (XOR). Prefer Alarm polarity = Inverted for a hard flip.",
+        "fr": "Bascule XOR sur Auto. Préférer Polarité = Inversé pour forcer."
       }
     },
     {

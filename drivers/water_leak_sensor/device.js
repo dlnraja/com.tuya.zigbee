@@ -310,11 +310,17 @@ class WaterLeakSensorDevice extends UnifiedSensorBase {
   }
 
   async onSettings({ oldSettings, newSettings, changedKeys }) {
-    if (changedKeys.includes('invert_alarm')) {
-      this._invertAlarm = newSettings.invert_alarm;
-      this.log(`[WATER] Invert setting changed to: ${this._invertAlarm}`);
+    if (changedKeys.includes('alarm_polarity') || changedKeys.includes('invert_alarm')) {
+      try {
+        const { resetLearning } = require('../../lib/managers/AlarmPolarityManager');
+        resetLearning(this);
+      } catch (_e) { /* ignore */ }
+    }
+    if (changedKeys.includes('invert_alarm') || changedKeys.includes('alarm_polarity')) {
+      this._invertAlarm = !!(newSettings.invert_alarm ?? this.getSetting('invert_alarm'));
+      this.log(`[WATER] Invert/polarity changed invert=${this._invertAlarm} polarity=${newSettings.alarm_polarity || this.getSetting('alarm_polarity')}`);
       const current = this.getCapabilityValue('alarm_water');
-      if (current !== null) {
+      if (current !== null && changedKeys.includes('invert_alarm')) {
         await super.setCapabilityValue('alarm_water', !current).catch(() => { });
       }
     }

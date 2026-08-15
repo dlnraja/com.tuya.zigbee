@@ -85,7 +85,7 @@ const CRAWLERS = [
   {
     id: 'free-scrape',
     name: 'Free scrape stack (Jina/Microlink/Wayback/Crawl4AI?/Firecrawl budget)',
-    cmd: 'node tools/ci/free-scrape-crossref.js --topic=140352 --focus=2137',
+    cmd: 'node scripts/ci/diag-investigate-orchestrator.js --full --skip-fetch --focus=2137',
     weight: 'medium',
     estimated: '90s',
     desc: 'Keyless-first multi-source cross-ref (forum + Z2M + GitHub + Reddit)',

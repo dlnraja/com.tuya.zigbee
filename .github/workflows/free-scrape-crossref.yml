@@ -17,11 +17,20 @@ on:
       focus:
         description: 'Focus post number'
         required: false
-        default: '2134'
+        default: '2137'
       queries:
         description: 'Comma-separated search queries'
         required: false
-        default: 'Tuya SOS Homey,UNSUPPORTED_CLUSTER dimmer,water leak IAS'
+        default: 'Tuya SOS Homey,UNSUPPORTED_CLUSTER dimmer,water leak IAS,invert alarm polarity'
+      fetch_diags:
+        description: 'After scrape, fetch Homey/Gmail for harvested diag UUIDs (needs secrets)'
+        type: boolean
+        default: false
+        required: false
+      max_uuids:
+        description: 'Max diagnostic UUIDs to fetch when fetch_diags=true'
+        required: false
+        default: '5'
 
 permissions:
   contents: write
@@ -70,8 +79,29 @@ jobs:
         run: |
           node tools/ci/free-scrape-crossref.js \
             --topic="${{ github.event.inputs.topic || '140352' }}" \
-            --focus="${{ github.event.inputs.focus || '2134' }}" \
-            --queries="${{ github.event.inputs.queries || 'Tuya SOS Homey,UNSUPPORTED_CLUSTER dimmer,water leak IAS' }}"
+            --focus="${{ github.event.inputs.focus || '2137' }}" \
+            --queries="${{ github.event.inputs.queries || 'Tuya SOS Homey,UNSUPPORTED_CLUSTER dimmer,water leak IAS,invert alarm polarity' }}"
+
+      - name: Optional Homey/Gmail fetch for harvested diag UUIDs
+        if: ${{ github.event.inputs.fetch_diags == true || github.event.inputs.fetch_diags == 'true' }}
+        continue-on-error: true
+        timeout-minutes: 15
+        env:
+          HOMEY_REFRESH_TOKEN: ${{ secrets.HOMEY_REFRESH_TOKEN }}
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+          HOMEY_PAT_API: ${{ secrets.HOMEY_PAT_API }}
+          GMAIL_EMAIL: ${{ secrets.GMAIL_EMAIL }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          GMAIL_CLIENT_ID: ${{ secrets.GMAIL_CLIENT_ID }}
+          GMAIL_CLIENT_SECRET: ${{ secrets.GMAIL_CLIENT_SECRET }}
+          GMAIL_REFRESH_TOKEN: ${{ secrets.GMAIL_REFRESH_TOKEN }}
+          DIAG_MAX_UUIDS: ${{ github.event.inputs.max_uuids || '5' }}
+        run: node scripts/ci/diag-investigate-orchestrator.js --fetch-diags --max-uuids="${{ github.event.inputs.max_uuids || '5' }}"
+
+      - name: Diag scripts self-test (inventory smoke)
+        if: always()
+        continue-on-error: true
+        run: node scripts/ci/diag-investigate-orchestrator.js --self-test
 
       - name: Upload report artifact
         if: always()
@@ -80,6 +110,8 @@ jobs:
           name: free-scrape-crossref
           path: |
             .github/state/free-scrape/
+            .github/state/diag-orchestrator/
+            .github/state/homey-app-diag/
             .cache/scraper-cache/_firecrawl-budget.json
           if-no-files-found: warn
           retention-days: 14

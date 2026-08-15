@@ -324,23 +324,29 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
     if (this._destroyed) {return;}
     this._updateActivity();
 
+    const { applyPolarity, observeRaw } = require('../../lib/managers/AlarmPolarityManager');
+
     // Gate on alarm bits for zoneStatus reports — clear/keep-alive must NOT
     // fire SOS (or re-write CIE). ACE / DP / announce / command sources pass.
+    // Polarity-aware: inverted OEMs press with alarm1=0 → still fire.
     const src = payload && payload.source ? String(payload.source) : '';
     const allowWithoutAlarmBit = /ace|dp|device_announce|command|tuya|virtual/i.test(src);
     if (!allowWithoutAlarmBit) {
       const zs = payload?.zoneStatus !== undefined ? payload.zoneStatus : payload;
-      let alarm = false;
+      let rawAlarm = false;
       if (zs && typeof zs === 'object') {
-        alarm = !!(zs.alarm1 || zs.alarm2
+        rawAlarm = !!(zs.alarm1 || zs.alarm2
           || (typeof zs.get === 'function' && (zs.get('alarm1') || zs.get('alarm2'))));
       } else if (typeof zs === 'number' && Number.isFinite(zs)) {
-        alarm = (zs & 0x03) !== 0;
+        rawAlarm = (zs & 0x03) !== 0;
       }
-      if (!alarm) {
-        this.log('[SOS] Ignoring non-alarm zoneStatus (clear/keep-alive)');
+      observeRaw(this, rawAlarm, 'sos');
+      const { value: logicalAlarm, meta } = applyPolarity(this, rawAlarm, 'sos');
+      if (!logicalAlarm) {
+        this.log(`[SOS] Ignoring non-alarm zoneStatus (raw=${rawAlarm}, ${meta.reason})`);
         return;
       }
+      this.log(`[SOS] zoneStatus press accepted (raw=${rawAlarm}, ${meta.reason})`);
     }
 
     const now = Date.now();
@@ -365,7 +371,8 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
     // card (the SOS-specific card above stays the primary signal).
     if (this.hasCapability('button.1')) {
       await this.safeSetCapabilityValue('button.1', true).catch(() => { });
-      (this.homey && typeof this.homey.setTimeout === 'function' ? this.homey : globalThis).setTimeout(async () => {
+      const { safeSetTimeout } = require('../../lib/utils/safe-timers');
+      safeSetTimeout(this, async () => {
         if (this._destroyed) {return;}
         await this.safeSetCapabilityValue('button.1', false).catch(() => { });
       }, 500);
@@ -377,8 +384,9 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
     } catch (_e) { /* generic card not available for this driver */ }
 
     // Auto-reset
-    if (this._resetTimeout) {this.homey.clearTimeout(this._resetTimeout);}
-    this._resetTimeout = (this.homey && typeof this.homey.setTimeout === 'function' ? this.homey : globalThis).setTimeout(async () => {
+    const { safeSetTimeout, safeClearTimeout } = require('../../lib/utils/safe-timers');
+    if (this._resetTimeout) {safeClearTimeout(this, this._resetTimeout);}
+    this._resetTimeout = safeSetTimeout(this, async () => {
       if (this._destroyed) {return;}
       await this.safeSetCapabilityValue('alarm_generic', false).catch(() => { });
       this.log('[SOS] alarm_generic reset');
@@ -529,6 +537,14 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
    */
   async onSettings({ oldSettings, newSettings, changedKeys }) {
     this.log('[SOS] Settings changed:', changedKeys);
+
+    if (changedKeys.includes('alarm_polarity') || changedKeys.includes('invert_sos')) {
+      try {
+        const { resetLearning } = require('../../lib/managers/AlarmPolarityManager');
+        resetLearning(this);
+        this.log('[SOS] Polarity learning reset');
+      } catch (_e) { /* ignore */ }
+    }
 
     for (const key of changedKeys) {
       if (key === 'refresh_battery' && newSettings.refresh_battery === true) {

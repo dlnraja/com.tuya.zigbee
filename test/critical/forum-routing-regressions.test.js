@@ -373,6 +373,17 @@ describe('forum routing regressions', () => {
     assert.match(sos, /async _registerButtonCapabilityListeners\(\)/);
     assert.match(retry, /Promise\.resolve\(this\._registerButtonCapabilityListeners\(\)\)/);
 
+    // Alarm polarity — curated lists + setting + smart learn (SOS/contact/water)
+    const polarity = read('lib/managers/AlarmPolarityManager.js');
+    assert.match(polarity, /INVERTED_POLARITY/);
+    assert.match(polarity, /NORMAL_POLARITY/);
+    assert.match(polarity, /observeRaw/);
+    assert.match(polarity, /alarm_polarity/);
+    assert.match(sos, /applyPolarity\(this, rawAlarm, 'sos'\)/);
+    assert.match(read('drivers/button_emergency_sos/driver.compose.json'), /"id": "alarm_polarity"/);
+    assert.match(read('drivers/contact_sensor/driver.compose.json'), /"id": "alarm_polarity"/);
+    assert.match(read('drivers/water_leak_sensor/driver.compose.json'), /"id": "alarm_polarity"/);
+
     const energy = read('lib/managers/SmartEnergyManager.js');
     assert.match(energy, /safeSetTimeout\(this\.device/);
     assert.match(energy, /safeClearTimeout\(this\.device/);

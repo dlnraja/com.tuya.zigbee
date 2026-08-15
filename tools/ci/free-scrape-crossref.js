@@ -246,11 +246,73 @@ async function main() {
     }
   }
 
-  // Hint file for fetch-homey-app-diag-by-uuid / tuya-deep-diag (gitignored state)
+  // Polarity list hits for SOS / contact / water (AlarmPolarityManager)
+  try {
+    const polarity = require('../../lib/managers/AlarmPolarityManager');
+    const blob = [
+      JSON.stringify(report.focusPostExtract || {}),
+      JSON.stringify(report.merged || {}),
+      queries.join(' '),
+      (report.sources || []).map((s) => JSON.stringify(s.extractPreview || {})).join(' '),
+    ].join(' ').toLowerCase();
+    const want = {
+      contact: /contact|open|closed|invert|polarity/.test(blob),
+      water: /water|leak|wet|dry/.test(blob),
+      sos: /sos|emergency|panic|button/.test(blob),
+    };
+    const hits = [];
+    const seen = new Set();
+    const candidates = new Set([
+      ...(report.merged.manufacturers || []),
+      ...(polarity.INVERTED_POLARITY || []).map((e) => String(e).split('|')[0]),
+      ...(polarity.NORMAL_POLARITY || []).map((e) => String(e).split('|')[0]),
+    ]);
+    for (const mfr of candidates) {
+      if (!mfr || String(mfr).length < 4) {continue;}
+      // Only keep curated mfrs that appear in harvest blob OR harvested manufacturer list
+      const inHarvest = (report.merged.manufacturers || []).some((m) => String(m).toLowerCase() === String(mfr).toLowerCase())
+        || blob.includes(String(mfr).toLowerCase());
+      if (!inHarvest && !(report.merged.manufacturers || []).length) {continue;}
+      if (!inHarvest) {continue;}
+      const fake = {
+        getSetting: () => 'auto',
+        getStoreValue: () => null,
+        getData: () => ({ manufacturerName: mfr }),
+      };
+      for (const profile of ['contact', 'water', 'sos']) {
+        if (!want[profile] && !(report.merged.diagnosticCodes || []).length) {continue;}
+        const meta = polarity.resolvePolarity(fake, profile);
+        if (!(meta.listedInvert || meta.listedNormal)) {continue;}
+        const key = `${mfr}|${profile}`;
+        if (seen.has(key)) {continue;}
+        seen.add(key);
+        hits.push({
+          mfr,
+          profile,
+          shouldInvert: meta.shouldInvert,
+          reason: meta.reason,
+        });
+      }
+    }
+    report.polarityHints = {
+      profilesDetected: want,
+      listHits: hits.slice(0, 40),
+      curatedInvertedCount: (polarity.INVERTED_POLARITY || []).length,
+      curatedNormalCount: (polarity.NORMAL_POLARITY || []).length,
+      settingAdvice: 'Device settings → Alarm polarity: auto | normal | inverted',
+    };
+    fs.writeFileSync(path.join(OUT_DIR, 'polarity-hints.json'), JSON.stringify(report.polarityHints, null, 2));
+  } catch (e) {
+    report.polarityHints = { error: e.message };
+  }
+
+  // Hint file for fetch-homey-app-diag-by-uuid / tuya-deep-diag / orchestrator
   const diagHints = {
     generatedAt: report.generatedAt,
     diagnosticCodes: report.merged.diagnosticCodes,
     note: 'Pass each UUID to: node scripts/ci/fetch-homey-app-diag-by-uuid.js <uuid>',
+    orchestrator: 'node scripts/ci/diag-investigate-orchestrator.js --fetch-diags',
+    polarityHints: 'polarity-hints.json',
   };
   fs.writeFileSync(path.join(OUT_DIR, 'diag-hints.json'), JSON.stringify(diagHints, null, 2));
 
@@ -272,6 +334,7 @@ async function main() {
     diags: report.merged.diagnosticCodes,
     localDriverHits: report.localDrivers.slice(0, 12),
     sacredCouples: report.sacredCouples.slice(0, 12),
+    polarityHits: (report.polarityHints?.listHits || []).slice(0, 8),
   };
   fs.writeFileSync(path.join(OUT_DIR, 'dashboard-snippet.json'), JSON.stringify(dash, null, 2));
 

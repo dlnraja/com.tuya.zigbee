@@ -345,18 +345,58 @@
       }
     },
     {
+      "id": "alarm_polarity",
+      "type": "dropdown",
+      "label": {
+        "en": "Alarm polarity",
+        "fr": "Polarité alarme",
+        "nl": "Alarm polariteit"
+      },
+      "value": "auto",
+      "values": [
+        {
+          "id": "auto",
+          "label": {
+            "en": "Auto (lists + smart learn)",
+            "fr": "Auto (listes + apprentissage)",
+            "nl": "Auto (lijsten + slim leren)"
+          }
+        },
+        {
+          "id": "normal",
+          "label": {
+            "en": "Normal (alarm bit = wet)",
+            "fr": "Normal (bit alarme = mouillé)",
+            "nl": "Normaal (alarmbit = nat)"
+          }
+        },
+        {
+          "id": "inverted",
+          "label": {
+            "en": "Inverted (flip wet/dry)",
+            "fr": "Inversé (inverser mouillé/sec)",
+            "nl": "Omgekeerd (nat/droog omdraaien)"
+          }
+        }
+      ],
+      "hint": {
+        "en": "Auto uses curated device lists and learns from dry idle time. Use Inverted if wet/dry is reversed.",
+        "fr": "Auto utilise les listes et apprend sur le temps sec. Inversé si mouillé/sec est inversé."
+      }
+    },
+    {
       "id": "invert_alarm",
       "type": "checkbox",
       "label": {
-        "en": "🔄 Invert Water Alarm",
-        "fr": "🔄 Inverser Alarme Eau",
-        "nl": "🔄 Inverteer Wateralarm",
-        "de": "🔄 Wasseralarm Invertieren"
+        "en": "Invert Water Alarm",
+        "fr": "Inverser Alarme Eau",
+        "nl": "Inverteer Wateralarm",
+        "de": "Wasseralarm Invertieren"
       },
       "value": false,
       "hint": {
-        "en": "Enable if water detection shows opposite state (wet=dry, dry=wet). Lasse_K forum fix.",
-        "fr": "Activer si la détection d'eau affiche l'état inverse (mouillé=sec, sec=mouillé)"
+        "en": "XOR toggle against Auto polarity. Prefer Alarm polarity = Inverted for a hard flip. (Lasse_K forum)",
+        "fr": "Bascule XOR sur Auto. Préférer Polarité = Inversé pour forcer."
       }
     }
   ],
