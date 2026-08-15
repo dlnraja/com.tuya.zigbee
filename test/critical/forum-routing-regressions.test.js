@@ -390,9 +390,11 @@ describe('forum routing regressions', () => {
     assert.doesNotMatch(energy, /homey\?\.clearTimeout\s*\|\|\s*clearTimeout/);
 
     const contact = read('drivers/contact_sensor/device.js');
-    assert.match(contact, /NOT _TZE200_pay2byax/);
+    // pay2byax inverted polarity lives in AlarmPolarityManager — not hardcoded here
+    assert.match(polarity, /_TZE200_pay2byax/);
     assert.doesNotMatch(contact, /'_TZE200_pay2byax',\s*\/\/ DP1/);
     assert.doesNotMatch(contact, /debounce_time'\) \|\| safeParse.*,\s*1000\)/);
+    assert.match(contact, /resolvePolarity\(this, 'contact'\)/);
 
     const btn = read('lib/devices/ButtonDevice.js');
     assert.match(btn, /_universalSceneModeSwitch\(zclNode\)/);

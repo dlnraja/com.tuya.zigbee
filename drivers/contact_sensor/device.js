@@ -189,17 +189,15 @@ class ContactSensorDevice extends UnifiedSensorBase {
       '_TZ3000_n2egfsli'
     ], mfr);
 
-    // Polarity lists + smart learn live in AlarmPolarityManager
+    // Polarity lists + smart learn + alarm_polarity setting → AlarmPolarityManager
     const { resolvePolarity } = require('../../lib/managers/AlarmPolarityManager');
     const pol = resolvePolarity(this, 'contact');
     const invertedByDefault = !!pol.listedInvert && !pol.listedNormal;
-    // v5.12.3: XOR  default inversion + user invert cancel each other out
     this._invertedByDefault = invertedByDefault;
-    if (invertedByDefault) {
-      this._invertContact = !(userInvert || userReverse);
-      this._userExplicitInvert = false;
-      this.log(`[CONTACT] Sensor ${mfr} invertedByDefault=true userInvert=${userInvert} => _invertContact=${this._invertContact} (${pol.reason})`);
-    }
+    // shouldInvert already includes curated lists, smart learn, XOR checkboxes, explicit mode
+    this._invertContact = !!pol.shouldInvert;
+    this._userExplicitInvert = !!(userInvert || userReverse) && pol.mode === 'auto' && !invertedByDefault;
+    this.log(`[CONTACT] Sensor ${mfr} polarity invert=${this._invertContact} reason=${pol.reason} mode=${pol.mode}`);
 
     if (this._isProblematicSensor) {
       this.log(`[CONTACT]  Problematic sensor detected (${mfr}) - extended debounce enabled`);
@@ -232,31 +230,29 @@ class ContactSensorDevice extends UnifiedSensorBase {
         resetLearning(this);
       } catch (_e) { /* ignore */ }
     }
-    // v5.8.98: Handle both invert_contact and reverse_alarm (were separate, now unified)
+    // v5.8.98: Handle invert_contact / reverse_alarm / alarm_polarity via manager
     if (changedKeys.includes('invert_contact') || changedKeys.includes('reverse_alarm') || changedKeys.includes('alarm_polarity')) {
-      const inv = changedKeys.includes('invert_contact') ? newSettings.invert_contact : this.getSetting('invert_contact') || false;
-      const rev = changedKeys.includes('reverse_alarm') ? newSettings.reverse_alarm : this.getSetting('reverse_alarm') || false;
-      if (this._invertedByDefault) {
-        this._invertContact = !(inv || rev);
-        this._userExplicitInvert = false;
-      } else {
-        this._invertContact = inv || rev;
-        this._userExplicitInvert = this._invertContact;
-      }
-      this.log(`[CONTACT] Invert setting changed to: ${this._invertContact} (invert=${inv}, reverse=${rev})`);
-      // Toggle current displayed state  use super to bypass invert override
+      const prevGet = this.getSetting.bind(this);
+      this.getSetting = (k) => (Object.prototype.hasOwnProperty.call(newSettings, k)
+        ? newSettings[k]
+        : prevGet(k));
+      const { resolvePolarity } = require('../../lib/managers/AlarmPolarityManager');
+      const pol = resolvePolarity(this, 'contact');
+      this.getSetting = prevGet;
+      this._invertContact = !!pol.shouldInvert;
+      this._invertedByDefault = !!pol.listedInvert && !pol.listedNormal;
+      this._userExplicitInvert = !!(newSettings.invert_contact || newSettings.reverse_alarm
+        || this.getSetting('invert_contact') || this.getSetting('reverse_alarm'))
+        && pol.mode === 'auto' && !this._invertedByDefault;
+      this.log(`[CONTACT] Invert/polarity → ${this._invertContact} (${pol.reason})`);
+      // Toggle current displayed state when user explicitly flips polarity
       const current = this.getCapabilityValue('alarm_contact');
       if (current !== null) {
         const newValue = !current;
-        await super.setCapabilityValue('alarm_contact', newValue).catch(() => { });
-        // v5.11.16: CRITICAL FIX (Lasse_K #1401-1403/#1426 "stops responding")
-        // Reset confirmedValue to match new capability state, otherwise the
-        // setCapabilityValue override's duplicate filter blocks next IAS event
+        await super.setCapabilityValue('alarm_contact', newValue).catch(() => {});
+        // Reset confirmedValue so next IAS event is not blocked (Lasse_K #1401)
         if (this._contactState) {
           if (this._invertedByDefault) {
-            // v5.12.4: For invertedByDefault devices, clear confirmedValue so next DP
-            // event always passes duplicate filter  avoids stuck state when user
-            // toggles invert (XOR cancels default, raw values become wrong)
             this._contactState.confirmedValue = null;
             this._contactState.lastValue = null;
           } else {

@@ -213,7 +213,13 @@ class WaterLeakSensorDevice extends UnifiedSensorBase {
   async onNodeInit({ zclNode }) {
     await this._safeInvoke(async () => {
       this._deviceProfile = this._getDeviceProfile();
-      this._invertAlarm = this.getSetting('invert_alarm') || false;
+      // AlarmPolarityManager: curated lists + smart learn + setting (auto|normal|inverted)
+      const { resolvePolarity } = require('../../lib/managers/AlarmPolarityManager');
+      const pol = resolvePolarity(this, 'water');
+      const userInv = !!this.getSetting('invert_alarm');
+      // For DP path: mirror resolvePolarity.shouldInvert (lists/learn XOR checkbox)
+      this._invertAlarm = !!pol.shouldInvert;
+      this.log(`[WATER] polarity mode=${pol.mode} invert=${this._invertAlarm} reason=${pol.reason} userCheckbox=${userInv}`);
       await super.onNodeInit({ zclNode });
 
       // Forum #2134: Homey shows "-" for Sabotagealarm until first report —
@@ -317,10 +323,18 @@ class WaterLeakSensorDevice extends UnifiedSensorBase {
       } catch (_e) { /* ignore */ }
     }
     if (changedKeys.includes('invert_alarm') || changedKeys.includes('alarm_polarity')) {
-      this._invertAlarm = !!(newSettings.invert_alarm ?? this.getSetting('invert_alarm'));
-      this.log(`[WATER] Invert/polarity changed invert=${this._invertAlarm} polarity=${newSettings.alarm_polarity || this.getSetting('alarm_polarity')}`);
+      const { resolvePolarity } = require('../../lib/managers/AlarmPolarityManager');
+      // resolvePolarity reads getSetting — temporarily apply newSettings for resolve
+      const prevGet = this.getSetting.bind(this);
+      this.getSetting = (k) => (Object.prototype.hasOwnProperty.call(newSettings, k)
+        ? newSettings[k]
+        : prevGet(k));
+      const pol = resolvePolarity(this, 'water');
+      this.getSetting = prevGet;
+      this._invertAlarm = !!pol.shouldInvert;
+      this.log(`[WATER] Invert/polarity changed invert=${this._invertAlarm} reason=${pol.reason}`);
       const current = this.getCapabilityValue('alarm_water');
-      if (current !== null && changedKeys.includes('invert_alarm')) {
+      if (current !== null && (changedKeys.includes('invert_alarm') || changedKeys.includes('alarm_polarity'))) {
         await super.setCapabilityValue('alarm_water', !current).catch(() => { });
       }
     }

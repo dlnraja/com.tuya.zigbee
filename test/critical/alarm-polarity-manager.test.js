@@ -113,4 +113,59 @@ describe('AlarmPolarityManager', () => {
     assert.ok(/n2egfsli/i.test(meta.mfr));
     assert.ok(meta.listedInvert);
   });
+
+  it('listPolarityCatalog exposes normal and inverted catalogs', () => {
+    const { listPolarityCatalog } = require('../../lib/managers/AlarmPolarityManager');
+    const cat = listPolarityCatalog();
+    assert.ok(cat.normal.length >= 5);
+    assert.ok(cat.inverted.length >= 8);
+    assert.ok(cat.modes.includes('auto'));
+  });
+
+  it('SOS smart learn marks inverted on sticky raw-true idle', async () => {
+    const d = mockDevice({ mfr: '_TZ3000_unknownsos', pid: 'TS0215A' });
+    const started = Date.now() - 25 * 60 * 1000;
+    d._store[STORE_KEY] = {
+      profile: 'sos',
+      startedAt: started,
+      samples: 0,
+      rawTrue: 0,
+      rawFalse: 0,
+      clearEvents: 0,
+      alarmEvents: 0,
+      transitions: 0,
+      pulseCount: 0,
+      lastRaw: true,
+      lastChangeAt: started,
+      stickyTrueMs: 16 * 60 * 1000,
+      stickyFalseMs: 0,
+      inverted: null,
+      decidedAt: null,
+      confidence: null,
+    };
+    for (let i = 0; i < 6; i++) {
+      observeRaw(d, true, 'sos');
+    }
+    const st = d.getStoreValue(STORE_KEY);
+    assert.strictEqual(st.inverted, true);
+    assert.ok(st.confidence >= 0.6);
+  });
+
+  it('curated normal list blocks weak invert learn', () => {
+    const d = mockDevice({
+      mfr: 'HOBEIAN',
+      pid: 'TS0203',
+      store: {
+        [STORE_KEY]: {
+          profile: 'contact',
+          inverted: true,
+          confidence: 0.4,
+          decidedAt: Date.now(),
+        },
+      },
+    });
+    const meta = resolvePolarity(d, 'contact');
+    assert.strictEqual(meta.shouldInvert, false);
+    assert.match(meta.reason, /curated_normal/);
+  });
 });

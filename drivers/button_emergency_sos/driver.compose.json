@@ -228,8 +228,8 @@
             }
           ],
           "hint": {
-            "en": "Auto uses curated SOS lists and learns if only clear keep-alives arrive. Use Inverted if presses never trigger.",
-            "fr": "Auto utilise les listes SOS et apprend si seuls des keep-alive arrivent. Inversé si les appuis ne déclenchent jamais."
+            "en": "Auto: curated normal/inverted SOS lists + smart timing (sticky idle vs short press). Choose Inverted to force reverse; Normal to force no flip.",
+            "fr": "Auto: listes SOS normal/inversé + timing intelligent (idle collé vs appui court). Inversé force l’inversion; Normal force aucun flip."
           }
         },
         {
