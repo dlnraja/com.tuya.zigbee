@@ -283,6 +283,11 @@ describe('forum routing regressions', () => {
     }
     assertDriverDoesNotClaim('climate_sensor', '_TZE28C1000000_jtbgusdc');
     assertDriverDoesNotClaim('climate_sensor', '_TZE204_fjms2pi9');
+    // Switch wall 6gang ownership — auto-fix-all/Blakadder must NOT rehome into climate
+    assertDriverDoesNotClaim('climate_sensor', '_TZE200_8eazvzo6');
+    assertDriverDoesNotClaim('climate_sensor', '_tze200_8eazvzo6');
+    assert(includesCI(composeDriver('switch_wall_6gang').zigbee?.manufacturerName, '_TZE200_8eazvzo6'),
+      'switch_wall_6gang must own _TZE200_8eazvzo6');
     assert(!compose.capabilities.includes('measure_battery'), 'Avatto 2ch dimmer is mains — no phantom battery');
     assert(!compose.energy?.batteries, 'Avatto 2ch dimmer must not publish CR2032 metadata');
     // Forum #2069: UNSUPPORTED_CLUSTER when Homey binds ZCL levelControl (8) on Tuya EF00 dimmers
