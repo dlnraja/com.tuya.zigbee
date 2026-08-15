@@ -75,7 +75,8 @@ class TuyaWaterLeakSensor extends TuyaSpecificClusterDevice {
         }, 5 * 60 * 1000);
 
         // Periodically read battery status every hour
-        this.batteryInterval = this.homey.setInterval(async () => {
+        const timerApi = (this.homey && typeof this.homey.setInterval === 'function') ? this.homey : globalThis;
+        this.batteryInterval = timerApi.setInterval(async () => {
           if (this._destroyed) {return;}
             try {
                 await zclNode.endpoints[1].clusters.tuya.read({ dp: 14 });

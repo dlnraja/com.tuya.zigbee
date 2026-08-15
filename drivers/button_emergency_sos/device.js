@@ -616,19 +616,32 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
   }
 
   onUninit() {
-    if (this._resetTimeout) {this.homey.clearTimeout(this._resetTimeout);}
-    if (this._heartbeatInterval) {this.homey.clearInterval(this._heartbeatInterval);}
+    const { safeClearTimeout } = require('../../lib/utils/safe-timers');
+    if (this._resetTimeout) {safeClearTimeout(this, this._resetTimeout); this._resetTimeout = null;}
+    if (this._heartbeatInterval) {
+      try {
+        if (this.homey && typeof this.homey.clearInterval === 'function') {
+          this.homey.clearInterval(this._heartbeatInterval);
+        }
+      } catch (_e) { /* destroyed */ }
+      this._heartbeatInterval = null;
+    }
     if (this._batteryRetryTimer) {
-      try { this.homey.clearTimeout(this._batteryRetryTimer); } catch (_e) { /* noop */ }
+      safeClearTimeout(this, this._batteryRetryTimer);
       this._batteryRetryTimer = null;
     }
   }
 
   async onDeleted() {
     this._destroyed = true;
+    const { safeClearTimeout } = require('../../lib/utils/safe-timers');
     if (this._batteryRetryTimer) {
-      try { this.homey.clearTimeout(this._batteryRetryTimer); } catch (_e) { /* noop */ }
+      safeClearTimeout(this, this._batteryRetryTimer);
       this._batteryRetryTimer = null;
+    }
+    if (this._resetTimeout) {
+      safeClearTimeout(this, this._resetTimeout);
+      this._resetTimeout = null;
     }
     await super.onDeleted();
     this.log('[SOS] Device deleted');

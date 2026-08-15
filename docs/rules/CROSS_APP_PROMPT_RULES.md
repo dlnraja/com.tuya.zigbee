@@ -21,6 +21,7 @@ Cross-app propagation rules:
 - Never destabilize `stable-v5` with experimental WiFi, telemetry, radar, broad fallback, free-scrape stacks, AlarmPolarity smart-learn, or migration-heavy behavior unless explicitly approved.
 - Always reuse stable fixes for buttons, battery, flows, pairing, endpoint mapping, lifecycle guards, and SDK3 validation when they apply to `master`.
 - Always backport low-risk crash fixes, security redaction, timer/IAS guards, and capability listener abort fixes from `master` to `stable-v5` when compatible (**surgical**).
+- **Forum users on Test (e.g. Peter):** OCR/version may show `5.12.x` (stable) while discussion is about “the app”. When in doubt, treat crash/IAS/SOS/contact/water/timer bugs as **`BOTH`** and improve **both** tracks systematically — never assume they are on master-only.
 - When a prompt mentions a user bug, forum post, crash email, PR, or diagnostic log, compare the root cause against both tracks and record the cross-app decision.
 - When writing a public reply, do not expose internal branch mechanics unless it helps the user choose the correct app/test channel.
 - Warn if stable publish to **Test** would overwrite master Test on a shared App ID.
