@@ -11,10 +11,10 @@ alwaysApply: true
 - Never full-tree sync. Classify BOTH | MASTER_ONLY | STABLE_ONLY.
 
 ## Homey Test live truth (last verified)
-- Master Test was confirmed **v9.0.528 on test** (Auto-Publish run `31907131763`).
-- Tip then auto-bumped toward **9.0.529** — watch Auto-Publish; do **not** spam republish.
-- Stable tip: **5.12.82**.
-- Historical: 9.0.525 / 9.0.526 `processing_failed` (`socket hang up`) — Athom flake, not fixed by patch loops. Test had stayed on 9.0.524 until 9.0.528 succeeded.
+- Master Homey Test: **v9.0.531** confirmed on test (Auto-Publish `31911574815`, SDK + dashboard `test #2848`).
+- Tip/code: **9.0.531**. Stable tip: **5.12.82**.
+- **9.0.530** hit Athom `processing_failed` (`socket hang up`) — superseded; do **not** spam republish (P139).
+- Historical: 9.0.525 / 9.0.526 same transient class.
 
 ## P139 — Athom transient (DO NOT LOOP)
 - Scripts: `.github/scripts/processing-failure-republish-check.js`, `athom-processing-failure-retry.js`.
