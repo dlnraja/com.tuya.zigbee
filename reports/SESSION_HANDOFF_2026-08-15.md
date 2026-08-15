@@ -1,61 +1,58 @@
-# SESSION HANDOFF — 2026-08-15 (L99 investigation resume)
+# SESSION HANDOFF — 2026-08-15 (night resume ~23:12 CET)
 
-> Dual-app BOTH when in doubt (Peter may be on stable). Silent forum (T157628).
-> Full synthesis: `reports/L99_INVESTIGATION_2026-08-15.md`
+> Dual-app BOTH when in doubt. Silent forum (T157628). Shared App ID = one Test slot.
+> Cursor rule: `.cursor/rules/operational-memory-2026-08-15.mdc` (alwaysApply).
+> Transcript: [Peter dual-app](6eb1e32a-de4c-43bd-bb0a-cffbe381b9a3)
 
 ## Live versions
 
-| Track | Branch | Homey Test |
-|-------|--------|------------|
-| Preview | `master` | **9.0.518** (code + Buffer/L99 on top of bot bump) |
-| Stable | `stable-v5` | **5.12.81** ✅ (#525) |
+| Track | Branch | Code tip | Homey Test (last OK) |
+|-------|--------|----------|----------------------|
+| Preview | `master` | **9.0.529** (bot bump in flight) | **9.0.528** confirmed on test (`31907131763`) |
+| Stable | `stable-v5` | **5.12.82** | 5.12.82 (Publish Stable OK earlier) |
 
-Peter #2137 (v5.12.70 Gecrasht) → update to **≥5.12.81**.
+App ID (both): `com.dlnraja.tuya.zigbee`.
 
-## Done (do not redo)
+## Done this evening (do not redo)
 
 | Item | Ref |
 |------|-----|
-| Peter crash class SOS/DCM/IAS/contact/water/ZT08 | #518–#522 |
-| Athom hang republish + combo budget | #523–#524 → 5.12.80 |
-| `capability is not defined` + radar TZE284 | #525 → 5.12.81 |
-| stable `pr-gate.js` missing | #526 |
-| FP collisions climate catchall | master 9.0.517 |
-| FreeScrapeStack TITAN utf8→Buffer | L99 syntax fix |
-| `onDeleted_null` gate | fixed_p349 (code already guarded) |
+| Publish size Auto-Fix 35→50 MB | `34741fc91` |
+| Forum soil `nt4pquef` → soil_sensor | `da9404698` |
+| Soft-exit FP conflict resolve | earlier |
+| Homey Test **9.0.528** promote | Auto-Publish `31907131763` |
+| Forum media sweep + image OCR Welsh `#2129` | `reports/FORUM_MEDIA_SWEEP_2026-08-15.md` |
+| BSEED `w5xztuy7` ZCL-only (both gangs) | `5eeccc3eb` |
+| **P139** stop socket-hang republish loops | `c73657de5` |
+| Stable surgical #527–#529 | clusterUtils, js-syntax-audit, UTF-8 snapshot |
+| Gmail crash gate | known fatals only; `unknownFatals: []` when last checked |
 
-## Multi-source (2026-08-15 evening)
+## P139 doctrine (Athom)
 
-Full report: `reports/MULTI_SOURCE_FORUM_INVESTIGATION_2026-08-15.md`  
-Forum 7 topics · Gmail gate ok · GH Pages live · #513 ZT08 · PresentSky re-pair · climate `8eazvzo6` collision cleared.
+- `processing_failed` + `socket hang up` ≠ fixable by patch bump spam.
+- Keep Test on last **healthy** build; wait Athom or one human publish.
+- Self-heal must **not** Publish Stable→Test over master Test.
+- Code: `processing-failure-republish-check.js`, `athom-processing-failure-retry.js`, WORKFLOW_GUIDELINES **§M**.
 
-## Waiting list
+## Forum / images / URLs (silent)
 
-### P0
-- [x] Stable Test 5.12.81
-- [x] Master Auto-Publish 9.0.517→518
-- [x] Syntax Check / Buffer FreeScrapeStack
-- [x] FP collisions 0 new (strip climate `8eazvzo6`)
-- [ ] Unified CI green after collision push
-- [ ] Shared App ID awareness (Test flips between tracks)
+0 new FP gaps. Couples already owned (see cursor rule table). User actions only: re-pair PresentSky dimmer, Welsh Double Power Point, Kanbros after Test update, TBoy relay board.
 
-### P1
+## Open
+
 | Item | Status |
 |------|--------|
-| Forum FPs #2130–2135 | OK |
-| GH #513 / #420 | done |
-| Gmail local secrets | GHA only |
-| auto-heal-radar stub | MASTER_ONLY optional |
-
-### Doctrine
-Sacred Couple · BOTH crashes · no full-tree · no AI forum paste
+| GH **#513** ZT08 hodyryli | Open — verify on ≥9.0.528; temp=0 if persists |
+| Auto-Publish for 9.0.529 | Watch — do not spam if Athom flakes |
+| Open PRs | none |
 
 ## Commands
 ```bash
-npm run diag:self-test
-npm run check:gmail-crashes:json
-node .github/scripts/fp-collision-check.js --baseline .github/fingerprint-collision-baseline.json
+git pull --ff-only origin master
+gh run list --repo dlnraja/com.tuya.zigbee --limit 12
+node tools/ci/gmail-crash-pattern-gate.js --json
+node tools/ci/anti-bot-regression-gate.js
+node tools/ci/forum-silent-multi-scan.js --max=40
 ```
 
-Transcripts: [Peter dual-app](6eb1e32a-de4c-43bd-bb0a-cffbe381b9a3) · [AI recovery Aug10](73f0d460-25f5-46a5-a062-6177e0bf227f)
-Updated: 2026-08-15T16:10Z L99
+Updated: 2026-08-15T21:12Z

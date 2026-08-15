@@ -1,0 +1,57 @@
+---
+description: Live operational memory (Homey Test, P139, forum silent) — read every session
+alwaysApply: true
+---
+
+# Operational memory — com.dlnraja.tuya.zigbee (audit 2026-08-15 ~23:12 CET)
+
+## Dual-app + shared App ID
+- `master` = preview/soak (~9.0.x). `stable-v5` = reliability LTS (~5.12.x).
+- **Same Homey App ID** `com.dlnraja.tuya.zigbee` → Publish Stable→Test **overwrites** master Test.
+- Never full-tree sync. Classify BOTH | MASTER_ONLY | STABLE_ONLY.
+
+## Homey Test live truth (last verified)
+- Master Test was confirmed **v9.0.528 on test** (Auto-Publish run `31907131763`).
+- Tip then auto-bumped toward **9.0.529** — watch Auto-Publish; do **not** spam republish.
+- Stable tip: **5.12.82**.
+- Historical: 9.0.525 / 9.0.526 `processing_failed` (`socket hang up`) — Athom flake, not fixed by patch loops. Test had stayed on 9.0.524 until 9.0.528 succeeded.
+
+## P139 — Athom transient (DO NOT LOOP)
+- Scripts: `.github/scripts/processing-failure-republish-check.js`, `athom-processing-failure-retry.js`.
+- Transient (`socket hang up`, ECONNRESET, 502–504) → **refuse** Auto-Fix bump/republish if Test healthy (or even without).
+- Self-heal must **not** run Publish Stable→Test after master failure; prefer Auto-Publish master only, rate-limited.
+- Docs: `.github/WORKFLOW_GUIDELINES.md` section **M**.
+- Publish size: Auto-Fix / enrich gates **50 MB** (prepared dir ~37 MB).
+
+## Forum silent (T157628)
+- Default: **no forum posts**. Scan → code/CI only. `REPLY_TOPICS=140352` only if human asks.
+- Media sweep: `tools/ci/forum-media-deep-scan.js` + `forum-silent-multi-scan.js`.
+- Report: `reports/FORUM_MEDIA_SWEEP_2026-08-15.md`.
+
+### Sacred couples (recent) — already routed
+| Couple | Driver | Note |
+|--------|--------|------|
+| `_TYZB01_hlla45kx`+TS011F | `double_power_point_2` | Welsh #2129 image OCR |
+| `_TZ3000_w5xztuy7`+TS0002 | `switch_2gang` **ZCL-only** | Kanbros #2130 P139 |
+| `_TZ3210_imaccztn`+TS0004 | `relay_board_4_channel` | TBoy #2131 |
+| `_TZE284_m1cvyneb`+TS0601 | `wall_dimmer_tuya` | PresentSky — re-pair |
+| `_TZE204_clrdrnya`+TS0601 | `presence_sensor_radar` | settings already present |
+| `_TZE28C1000000_jtbgusdc`+TS0601 | `dimmer_2_gang_tuya` | Royce PDF |
+| `_TZE284_nt4pquef`+TS0601 | `soil_sensor` | not climate |
+| `_TZE284_hodyryli`+TS0601 | `climate_sensor_zt08` | GH #513 |
+
+## Open work
+- **Issue #513** open — awaiting user verify on Test ≥9.0.528 (ZT08; temp=0 follow-up if persists).
+- Gmail: use GHA artifacts; local IMAP often missing. Crash gate should stay `verdict: ok`.
+- AlarmPolarity smart-learn / free-scrape / parallelDiscover = **MASTER_ONLY**.
+
+## Commands
+```bash
+gh run list --repo dlnraja/com.tuya.zigbee --limit 12
+node tools/ci/gmail-crash-pattern-gate.js --json
+node tools/ci/forum-media-deep-scan.js --max=40 --topics=140352,26439,89271
+node tools/ci/anti-bot-regression-gate.js
+```
+
+## Handoff file
+Refresh `reports/SESSION_HANDOFF_2026-08-15.md` when versions/Test change.
