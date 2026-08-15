@@ -1,20 +1,20 @@
-# Forum silent media sweep — 2026-08-15 (resume after timeout)
+# Forum silent media sweep — 2026-08-15 (re-scan 21:16 CET)
 
 Policy: silent enrich only (no forum replies). Topics: 140352, 146735, 26439, 89271, 43287, 157628, 157859.
 
-## Scan
+## Scan (fresh)
 
 | Topic | Scanned | Actionable / rich | New FPs | Gaps |
 |-------|---------|-------------------|---------|------|
-| 140352 | 100 / 40 | 54 / 28 | 0 | 0 |
-| 146735 | 100 | 22 | 0 | 0 |
-| 26439 | 100 / 40 | 26 / 20 | 0 | 0 |
-| 89271 | 100 / 40 | 67 / 27 | 0 | 0 |
-| 43287 | 100 | 28 | 0 | 0 |
-| 157628 | 5 | 2 | 0 | 0 |
-| 157859 | 21 | 4 | 0 | 0 |
+| 140352 | 80 / 50 | 37 / 36 | 0 | 0 |
+| 146735 | 80 / 50 | 20 / 22 | 0 | 0 |
+| 26439 | 80 / 50 | 24 / 25 | 0 | 0 |
+| 89271 | 80 / 50 | 53 / 31 | 0 | 0 |
+| 43287 | 80 / 50 | 18 / 32 | 0 | 0 |
+| 157628 | 5 | 2 / 3 | 0 | 0 |
+| 157859 | 21 | 4 / 11 | 0 | 0 |
 
-Artifacts: `.github/state/forum/multi-silent-digest.json`, `forum-media-deep.json`.
+T140352 last post still **#2140** (2026-08-15T18:22Z) — no newer messages. Artifacts refreshed under `.github/state/forum/`.
 
 ## Image / URL analysis (T140352)
 

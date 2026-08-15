@@ -42,7 +42,7 @@ alwaysApply: true
 
 ## Open work
 - **Issue #513** open — awaiting user verify on Test ≥9.0.528 (ZT08; temp=0 follow-up if persists).
-- Gmail: use GHA artifacts; local IMAP often missing. Crash gate should stay `verdict: ok`.
+- Gmail (fresh `31911087154`): **verdict ok**, 0 unknown fatals, 9/9 FPs in drivers, 0 new FP. Report: `reports/GMAIL_CRASH_SWEEP_2026-08-15.md`. Local IMAP usually missing — use GHA.
 - AlarmPolarity smart-learn / free-scrape / parallelDiscover = **MASTER_ONLY**.
 
 ## Commands
