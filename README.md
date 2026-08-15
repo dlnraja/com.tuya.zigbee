@@ -38,6 +38,7 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 | Metric | Value |
 |--------|-------|
 | **App Version** | v9.0.529 |
+| **App Version** | v9.0.528 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,371 |
 | **Pairing Variants** | 17,082 (4 case combos per fingerprint) |
@@ -45,7 +46,7 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 | **Flow Cards** | 4,974 |
 | **Unique Capabilities** | 170 |
 | **Native OTA Drivers** | 6 |
-| **Test Suites** | 71 files |
+| **Test Suites** | 72 files |
 | **SVG Icons** | 731 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
@@ -118,6 +119,7 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 | **v9.0.520** | Reliability: generic_tuya capability crash fix; MTG284 clrdrnya relay DP map (radar family). |
 | **v9.0.519** | Reliability: generic_tuya capability crash fix; MTG284 clrdrnya relay DP map (radar family). |
 | **v9.0.518** | Reliability: generic_tuya capability crash fix; MTG284 clrdrnya relay DP map (radar family). |
+| **v9.0.517** | Reliability: generic_tuya capability crash fix; MTG284 clrdrnya relay DP map (radar family). |
 
 <!-- CHANGELOG_END -->
 
