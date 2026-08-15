@@ -7,10 +7,10 @@
 
 | Track | Branch | Target Test version |
 |-------|--------|---------------------|
-| Preview | `master` | **9.0.512+** (ZT08 timers pushed) |
-| Stable | `stable-v5` | **5.12.78** (PR #522: Athom changelog keys + ZT08) |
+| Preview | `master` | **9.0.515** (capability crash + radar TZE284) |
+| Stable | `stable-v5` | **5.12.80** on Test (#524) ✅ |
 
-Peter OCR #2137 = **v5.12.70 Gecrasht** → tell him to update to **≥5.12.78**.
+Peter OCR #2137 = **v5.12.70 Gecrasht** → update Homey to **≥5.12.80** (Test channel).
 
 ## Done (do not redo)
 
@@ -20,17 +20,21 @@ Peter OCR #2137 = **v5.12.70 Gecrasht** → tell him to update to **≥5.12.78**
 | DCM auditCapabilities + IAS safe timers + TS0041 door misroute | #519 → 5.12.75 |
 | SOS zoneId 10 + CIE zero-guard + water_tuya IAS | #520 → 5.12.76 |
 | Contact/water debounce safe timers | #521 → 5.12.77 |
-| Athom changelog keys + ZT08 safe timers | #522 → **5.12.78** (unblocks Publish Stable) |
-| ZT08 safe timers on master | `1b926ab42` |
+| Athom changelog keys + ZT08 safe timers | #522 → 5.12.78 (draft OK; Athom processing_failed) |
+| P102 republish after socket hang up | #523 → 5.12.79 (Athom hung again) |
+| 5.12.80 + tighter Zigbee combo budget | #524 |
+| ZT08 safe timers on master | pushed; Auto-Publish OK (Test ~9.0.514) |
 | Dual-app Peter=BOTH rule | `docs/rules/CROSS_APP_PROMPT_RULES.md` |
 | AlarmPolarity | **MASTER_ONLY** (not on stable) |
 
 ## Waiting list
 
 ### P0 BOTH
-- [ ] Confirm Publish Stable→Test shipped **5.12.78** (was failing: Missing changelog Athom keys)
-- [ ] Confirm master Auto-Publish **≥9.0.512**
+- [x] Confirm Publish Stable→Test shipped **5.12.80** (78/79 Athom `processing_failed`; 80 OK)
+- [x] Master Auto-Publish OK (**9.0.514** was on Test; shared App ID → **5.12.80** now on Test)
 - [ ] Gmail `capability is not defined` — still WATCH
+- [ ] Shared App ID: stable→Test overwrote master Test — next master publish will flip back
+- [x] Athom hang resolved via 5.12.80 + tighter Zigbee combo budget (#524)
 
 ### P1 Forum (verify / silent)
 | Post | Couple | Status |
@@ -39,8 +43,8 @@ Peter OCR #2137 = **v5.12.70 Gecrasht** → tell him to update to **≥5.12.78**
 | #2131 TBoy | `_TZ3210_imaccztn` TS0004 | **OK** in `relay_board_4_channel` |
 | #2133 PresentSky | `_TZE284_m1cvyneb` TS0601 | **OK** in `wall_dimmer_tuya` — re-pair |
 | #2135 Royce | `_TZE28C1000000_jtbgusdc` | **OK** in `dimmer_2_gang_tuya` |
-| #2137 Peter | update to **5.12.78** | await user |
-| GH #513 ZT08 | SmartDivisor + timers | timers BOTH done; divisor follow-up |
+| #2137 Peter | update to **5.12.80** | tell user |
+| GH #513 ZT08 | SmartDivisor + timers | dedicated driver + KNOWN_DIVISORS + timers BOTH |
 | GH #420 radar | `_TZE204_clrdrnya` | investigate auto-fix fail |
 
 ### Doctrine
@@ -59,4 +63,4 @@ npm run forum:silent-scan
 ```
 
 Transcript: [Peter dual-app arc](6eb1e32a-de4c-43bd-bb0a-cffbe381b9a3)
-Updated: 2026-08-15T13:57Z (PR #522 merged; Publish Stable running)
+Updated: 2026-08-15T15:00Z (diag resume: capability crash + radar)

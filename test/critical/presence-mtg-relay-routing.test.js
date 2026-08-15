@@ -20,6 +20,7 @@ const RELAY_MANUFACTURERS = [
   '_TZE284_4qznlkbu',
   '_TZE200_clrdrnya',
   '_TZE200_sbyx0lm6',
+  '_TZE284_clrdrnya',
 ];
 
 function readJson(relativePath) {

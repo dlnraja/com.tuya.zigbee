@@ -208,16 +208,14 @@ class GenericTuyaDevice extends AutoAdaptiveDevice {
       101: { capability: 'measure_battery', parser: v => Math.min(100, Math.max(0, v)), confidence: 1 },
       105: { capability: 'measure_battery', parser: v => Math.min(100, Math.max(0, v)), confidence: 1 },
 
-      // Temperature (CONFIDENCE: 0)
-      1: { capability: 'measure_temperature', parser: v => safeMultiply(v, 10), confidence: 1 }, // Some devices
+      // Temperature (CONFIDENCE: 0) — DP1 must stay climate; do not overwrite with motion
+      // (duplicate key previously made DP1 always alarm_motion and broke catch-all climate).
+      1: { capability: 'measure_temperature', parser: v => safeMultiply(v, 10), confidence: 1 },
       3: { capability: 'measure_temperature', parser: v => safeMultiply(v, 10), confidence: 0 }, // Soil sensor
 
       // Humidity (CONFIDENCE: 0)
       2: { capability: 'measure_humidity', parser: v => v, confidence: 0 },
       5: { capability: 'measure_humidity', parser: v => v, confidence: 0 }, // Soil moisture
-
-      // Motion/Presence (CONFIDENCE: 0)
-      1: { capability: 'alarm_motion', parser: v => !!v, confidence: 0 },
 
       // Voltage (CONFIDENCE: 1 - USB/Mains devices)
       247: { capability: 'measure_voltage', parser: v => v * 1000, confidence: 1 },
@@ -230,7 +228,12 @@ class GenericTuyaDevice extends AutoAdaptiveDevice {
       return;
     }
 
-    const { parser, confidence } = mapping;
+    const { capability, parser, confidence, internal } = mapping;
+    // DP14 battery_low is internal-only (no Homey cap). Missing capability binding
+    // previously threw ReferenceError: capability is not defined (Gmail WATCH).
+    if (internal || !capability || typeof parser !== 'function') {
+      return;
+    }
     const confidenceLabel = ['Official', 'Community', 'Heuristic'][confidence];
 
     // Add capability if missing

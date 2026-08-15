@@ -109,8 +109,8 @@ const KNOWN_PATTERNS = [
     id: 'capability_ref_undefined',
     severity: 'fatal',
     re: /ReferenceError:\s*capability is not defined|capability is not defined/i,
-    fix: 'Never use bare identifier capability outside param/local binding',
-    status: 'watch',
+    fix: 'generic_tuya._autoMapDP: destructure capability + skip internal mappings',
+    status: 'fixed_p136',
   },
   {
     id: 'health_battery_token_undefined',
@@ -232,7 +232,7 @@ function main() {
     patternCounts: counts,
     hits: uniqueHits,
     unknownFatals: unknownFatals.slice(0, 40),
-    knownFixed: KNOWN_PATTERNS.filter(p => p.status === 'fixed_p100').map(p => p.id),
+    knownFixed: KNOWN_PATTERNS.filter(p => String(p.status || '').startsWith('fixed_')).map(p => p.id),
     watch: KNOWN_PATTERNS.filter(p => p.status === 'watch').map(p => p.id),
     verdict: unknownFatals.length === 0 ? 'ok' : 'review_unknown',
   };

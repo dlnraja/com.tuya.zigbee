@@ -22,6 +22,7 @@ const MTG_RELAY_RADARS = [
   '_tze284_4qznlkbu',
   '_tze200_clrdrnya',
   '_tze200_sbyx0lm6',
+  '_tze284_clrdrnya',
 ];
 
 const MAINS_POWERED_RADARS = new Set([

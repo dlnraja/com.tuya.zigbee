@@ -2079,5 +2079,9 @@
   },
   "9.0.514": {
     "en": "Stability improvements and Homey test publication retry after transient processing failure."
+  },
+  "9.0.515": {
+    "en": "Reliability: generic_tuya capability crash fix; MTG284 clrdrnya relay DP map (radar family).",
+    "fr": "Fiabilite: crash capability generic_tuya; carte DP relay MTG284 clrdrnya."
   }
 }
