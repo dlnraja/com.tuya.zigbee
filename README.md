@@ -45,7 +45,7 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 | **Flow Cards** | 4,974 |
 | **Unique Capabilities** | 170 |
 | **Native OTA Drivers** | 6 |
-| **Test Suites** | 70 files |
+| **Test Suites** | 71 files |
 | **SVG Icons** | 731 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
@@ -106,7 +106,7 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 
 | Version | Changes |
 |---------|---------|
-| **v9.0.509** | Improved SOS button init, IAS enrollment timers, and energy audit stability. Fixed crash loop on capability audit. |
+| **v9.0.509** | Stability improvements and Homey test publication retry after transient processing failure. |
 | **v9.0.508** | Improved SOS button init, IAS enrollment timers, and energy audit stability. Fixed crash loop on capability audit. |
 | **v9.0.507** | Improved SOS button init, IAS enrollment timers, and energy audit stability. Fixed crash loop on capability audit. |
 | **v9.0.506** | Dual-app reliability sync report and refreshed Homey dashboards (health 93/100). |
