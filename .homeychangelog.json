@@ -1,6 +1,13 @@
 {
   "changelog": [
     {
+      "version": "5.12.80",
+      "date": "2026-08-15",
+      "channel": "stable",
+      "en": "P102 Athom republish after processing_failed on 5.12.78/79 (socket hang up). Lower Zigbee combo budget for publish processing.",
+      "fr": "Republication P102 apres processing_failed 5.12.78/79. Budget combos Zigbee reduit pour Athom."
+    },
+    {
       "version": "5.12.79",
       "date": "2026-08-15",
       "channel": "stable",
@@ -1277,5 +1284,9 @@
   "5.12.79": {
     "en": "P102 reliability republish after Athom processing_failed on 5.12.78 (socket hang up). Includes ZT08 safe timers + Athom changelog keys.",
     "fr": "Republication fiabilite P102 apres processing_failed Athom sur 5.12.78. Inclut timers ZT08 + cles changelog Athom."
+  },
+  "5.12.80": {
+    "en": "P102 Athom republish after processing_failed on 5.12.78/79 (socket hang up). Lower Zigbee combo budget for publish processing.",
+    "fr": "Republication P102 apres processing_failed 5.12.78/79. Budget combos Zigbee reduit pour Athom."
   }
 }
