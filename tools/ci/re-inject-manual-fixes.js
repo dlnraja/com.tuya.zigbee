@@ -379,6 +379,8 @@ const MANUAL_FIXES = [
       // PresentSky / wall 6-gang — must NOT reclaim on climate_sensor
       '_TZE200_8eazvzo6', '_tze200_8eazvzo6', '_TZE200_8EAZVZO6',
       '_TZE204_8eazvzo6', '_tze204_8eazvzo6', '_TZE204_8EAZVZO6',
+      // Forum soil SGS02Z — must NOT reclaim on climate_sensor
+      '_TZE284_nt4pquef', '_tze284_nt4pquef', '_TZE284_NT4PQUEF',
     ],
     addAtTop: false,
     source: 'p92.91-issue-514',

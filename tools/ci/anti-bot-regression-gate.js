@@ -70,6 +70,12 @@ const FORBIDDEN = [
     driver: 'climate_sensor',
     mfrs: ['_TZE200_8eazvzo6', '_TZE204_8eazvzo6'],
   },
+  // Forum T26439 #5491 / Z2M SGS02Z — soil FP must not stay on climate catch-all
+  {
+    id: 'p138-nt4pquef-not-climate',
+    driver: 'climate_sensor',
+    mfrs: ['_TZE284_nt4pquef'],
+  },
   // Forum #2131: relay fingerprint must not stay on switch_4gang
   {
     id: 'p94-imaccztn-not-switch4',
@@ -400,6 +406,12 @@ const REQUIRED = [
     id: 'p98-myd45weu-soil',
     driver: 'soil_sensor',
     mfrs: ['_TZE200_myd45weu', '_TZE204_myd45weu', '_TZE284_myd45weu'],
+  },
+  // Forum T26439 #5491 / Z2M SGS02Z — soil must own nt4pquef
+  {
+    id: 'p138-nt4pquef-soil',
+    driver: 'soil_sensor',
+    mfrs: ['_TZE284_nt4pquef'],
   },
   {
     id: 'p98-u6x1zyv2-rain',
