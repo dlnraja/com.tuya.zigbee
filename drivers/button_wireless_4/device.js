@@ -25,7 +25,11 @@ class Button4GangDevice extends ButtonDevice {
     this.buttonCount = 4;
     this.gangCount = 4;
 
-    await Promise.resolve().then(() => super.onNodeInit({ zclNode })).catch(err => this.error('[INIT] Error:', err.message));
+    await Promise.resolve()
+      .then(() => super.onNodeInit({ zclNode }))
+      .catch((err) => {
+        try { this.log('[INIT] Error: ' + (err && err.message)); } catch (_e) { /* ignore */ }
+      });
 
     // v10.1.2: E000 + LevelControl cluster detection for TS0044/TS004F devices
     await this._setupE000Detection(zclNode);

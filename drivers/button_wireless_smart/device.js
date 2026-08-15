@@ -27,7 +27,11 @@ class Button1GangDevice extends ButtonDevice {
     this.buttonCount = detected;
     this.log(`[BUTTON_WIRELESS_SMART] Auto-detected ${this.buttonCount} endpoint(s) for ${this.getData()?.id || 'unknown'}`);
 
-    await Promise.resolve().then(() => super.onNodeInit({ zclNode })).catch(err => this.error('[INIT] Error:', err.message));
+    await Promise.resolve()
+      .then(() => super.onNodeInit({ zclNode }))
+      .catch((err) => {
+        try { this.log('[INIT] Error: ' + (err && err.message)); } catch (_e) { /* ignore */ }
+      });
 
     this.log('[BUTTON_WIRELESS_SMART] v10.1.0 initialized via ButtonDevice');
   }

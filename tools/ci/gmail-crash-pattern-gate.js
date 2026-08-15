@@ -113,11 +113,11 @@ const KNOWN_PATTERNS = [
     status: 'fixed_p136',
   },
   {
-    id: 'health_battery_token_undefined',
-    severity: 'warn',
-    re: /health_battery_replacement_predicted.*current_battery|Invalid value for token current_battery/i,
-    fix: 'FeatureFlowCards: Number.isFinite tokens for battery trigger',
-    status: 'fixed_p108',
+    id: 'clusterutils_destroyed_unbound',
+    severity: 'fatal',
+    re: /clusterUtils\.js:.*_destroyed|Timeout\._onTimeout \(\/app\/lib\/utils\/clusterUtils\.js/i,
+    fix: 'clusterUtils free functions must not close over this; use globalThis.setTimeout only',
+    status: 'fixed_p137',
   },
 ];
 
