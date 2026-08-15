@@ -17,8 +17,11 @@ permissions:
   contents: write
 
 concurrency:
+  # P139: NEVER cancel an in-flight Athom publish/promote. Cancelling mid-draft
+  # leaves orphan builds and amplifies processing_failed / socket hang up races
+  # when the next push starts another upload against the same App ID.
   group: publish-master
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 env:
   NODE_VERSION: "22"

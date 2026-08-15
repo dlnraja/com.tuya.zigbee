@@ -773,3 +773,6 @@ slot is therefore a single shared channel.
    **Auto-Publish on Push** (master) only — never Publish Stable→Test.
 4. `verify-test-version.js` stays fail-closed for the *expected* version
    (do not greenwash a failed upload).
+5. Auto-Publish / Auto Publish workflows use `cancel-in-progress: false` on the
+   publish concurrency group — cancelling mid-draft/promote causes orphan Athom
+   builds and socket hang up races on the next upload.

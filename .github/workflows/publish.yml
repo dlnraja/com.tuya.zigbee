@@ -20,8 +20,9 @@ on:
 permissions:
   contents: write
 concurrency:
+  # P139: queue publishes; do not cancel mid Athom processing
   group: publish
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 env:
   NODE_VERSION: "22"

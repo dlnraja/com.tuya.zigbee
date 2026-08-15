@@ -358,7 +358,8 @@ async function main() {
   log(`v${version} was not confirmed on the Homey test channel after ${maxAttempts} attempts`);
   if (lastError) {
     log(`Last error: ${lastError}`);
-    log(`NOTE: If Athom shows processing_failed, bump version and republish; do not treat GHA green as live Test.`);
+    log(`NOTE (P139): If Athom shows processing_failed / socket hang up, do NOT bump-loop republish.`);
+    log(`Keep the last healthy Test build; wait for Athom or one human Auto-Publish.`);
     log(`Check the actual app at https://tools.developer.homey.app/apps/app/${APP}`);
   }
   process.exit(1);
