@@ -24,13 +24,19 @@ Peter #2137 (v5.12.70 Gecrasht) → update to **≥5.12.81**.
 | FreeScrapeStack TITAN utf8→Buffer | L99 syntax fix |
 | `onDeleted_null` gate | fixed_p349 (code already guarded) |
 
+## Multi-source (2026-08-15 evening)
+
+Full report: `reports/MULTI_SOURCE_FORUM_INVESTIGATION_2026-08-15.md`  
+Forum 7 topics · Gmail gate ok · GH Pages live · #513 ZT08 · PresentSky re-pair · climate `8eazvzo6` collision cleared.
+
 ## Waiting list
 
 ### P0
 - [x] Stable Test 5.12.81
-- [x] Master Auto-Publish 9.0.517
-- [x] Unified CI green / FP collisions 0 new
-- [ ] Syntax Check green after FreeScrapeStack Buffer fix (push)
+- [x] Master Auto-Publish 9.0.517→518
+- [x] Syntax Check / Buffer FreeScrapeStack
+- [x] FP collisions 0 new (strip climate `8eazvzo6`)
+- [ ] Unified CI green after collision push
 - [ ] Shared App ID awareness (Test flips between tracks)
 
 ### P1
