@@ -37,7 +37,7 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.516 |
+| **App Version** | v9.0.517 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,372 |
 | **Pairing Variants** | 17,193 (4 case combos per fingerprint) |
@@ -106,6 +106,7 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.517** | Reliability: generic_tuya capability crash fix; MTG284 clrdrnya relay DP map (radar family). |
 | **v9.0.516** | Reliability: generic_tuya capability crash fix; MTG284 clrdrnya relay DP map (radar family). |
 | **v9.0.515** | Reliability: generic_tuya capability crash fix; MTG284 clrdrnya relay DP map (radar family). |
 | **v9.0.514** | Stability improvements and Homey test publication retry after transient processing failure. |
@@ -117,7 +118,6 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 | **v9.0.508** | Improved SOS button init, IAS enrollment timers, and energy audit stability. Fixed crash loop on capability audit. |
 | **v9.0.507** | Improved SOS button init, IAS enrollment timers, and energy audit stability. Fixed crash loop on capability audit. |
 | **v9.0.506** | Dual-app reliability sync report and refreshed Homey dashboards (health 93/100). |
-| **v9.0.505** | Dual-app reliability sync report and refreshed Homey dashboards (health 93/100). |
 
 <!-- CHANGELOG_END -->
 
