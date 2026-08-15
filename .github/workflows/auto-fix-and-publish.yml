@@ -25,11 +25,11 @@ permissions:
 # env block doesn't propagate to the npm subshell on all GHA runner images,
 # so the prepare-publish step was still seeing limit 26.00 MB.
 env:
-  # P75.27: Bumped from 30 -> 35 MB to accommodate growing build dir
-  # (currently 30.20 MB with 431 drivers + 2902 FPs). Build was failing
-  # the publish-size-gate at 30 MB; prepared publish dir is only 23.74 MB.
-  HOMEY_PUBLISH_MAX_UNCOMPRESSED_MB: "35"
-  HOMEY_PUBLISH_SOURCE_MAX_MB: "35"
+  # P138: Align with Auto-Publish / publish-stable (50). Prepared dir is now
+  # ~37 MB uncompressed (gzipped ~18 MB); the old 35 MB gate false-failed CI
+  # while Athom still accepts the tarball. prepare-publish.js default is 50.
+  HOMEY_PUBLISH_MAX_UNCOMPRESSED_MB: "50"
+  HOMEY_PUBLISH_SOURCE_MAX_MB: "50"
   HOMEY_ZIGBEE_MAX_TOTAL_COMBOS: "60000"
   HOMEY_ZIGBEE_MAX_DRIVER_COMBOS: "10000"
 
@@ -240,11 +240,9 @@ jobs:
         if: env.trigger_publish == 'true' || github.event_name == 'workflow_dispatch'
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
-          # P75.27: Bumped from 30 to 35 MB (build dir now 30.20 MB with
-          # 431 drivers + 2902 FPs). Prepared publish dir is 23.74 MB so
-          # this is only the BUILD limit (sanity check), not the upload.
-          HOMEY_PUBLISH_MAX_UNCOMPRESSED_MB: "35"
-          HOMEY_PUBLISH_SOURCE_MAX_MB: "35"
+          # P138: Match workflow-level 50 MB (prepared dir ~37 MB uncompressed).
+          HOMEY_PUBLISH_MAX_UNCOMPRESSED_MB: "50"
+          HOMEY_PUBLISH_SOURCE_MAX_MB: "50"
           HOMEY_ZIGBEE_MAX_TOTAL_COMBOS: "60000"
           HOMEY_ZIGBEE_MAX_DRIVER_COMBOS: "10000"
         run: |
