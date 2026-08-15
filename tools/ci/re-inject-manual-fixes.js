@@ -376,6 +376,9 @@ const MANUAL_FIXES = [
       '_TZE28C1000000_o9gyszw2', '_tze28c1000000_o9gyszw2',
       '_TZE204_fjms2pi9', '_tze204_fjms2pi9', '_TZE284_fjms2pi9', '_tze284_fjms2pi9',
       '_TZE28C1000000_fjms2pi9', '_tze28c1000000_fjms2pi9',
+      // PresentSky / wall 6-gang — must NOT reclaim on climate_sensor
+      '_TZE200_8eazvzo6', '_tze200_8eazvzo6', '_TZE200_8EAZVZO6',
+      '_TZE204_8eazvzo6', '_tze204_8eazvzo6', '_TZE204_8EAZVZO6',
     ],
     addAtTop: false,
     source: 'p92.91-issue-514',

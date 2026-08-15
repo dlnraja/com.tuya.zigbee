@@ -80,6 +80,9 @@ jobs:
       - name: Re-inject manual driver fixes
         run: node tools/ci/re-inject-manual-fixes.js
 
+      - name: FP conflict resolve (post re-inject)
+        run: node scripts/automation/fix-fingerprint-conflicts.js
+
       - name: Anti-bot regression gate
         run: node tools/ci/anti-bot-regression-gate.js
 

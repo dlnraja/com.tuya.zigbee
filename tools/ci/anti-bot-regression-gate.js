@@ -64,6 +64,12 @@ const FORBIDDEN = [
     driver: 'climate_sensor',
     mfrs: ['_TZE284_hodyryli'],
   },
+  // PresentSky wall 6-gang — climate catch-all must never reclaim this switch FP
+  {
+    id: 'p137-8eazvzo6-not-climate',
+    driver: 'climate_sensor',
+    mfrs: ['_TZE200_8eazvzo6', '_TZE204_8eazvzo6'],
+  },
   // Forum #2131: relay fingerprint must not stay on switch_4gang
   {
     id: 'p94-imaccztn-not-switch4',

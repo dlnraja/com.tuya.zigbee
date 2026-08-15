@@ -117,6 +117,10 @@ jobs:
       - name: "🔁 Re-inject after enrich (keep manual overrides)"
         run: node tools/ci/re-inject-manual-fixes.js
 
+      # Enrich/Blakadder can reintroduce climate catch-all collisions — strip again
+      - name: "🔧 FP conflict resolve (post-enrich)"
+        run: node scripts/automation/fix-fingerprint-conflicts.js
+
       - name: "🛡️ Anti-bot gate (post-enrich)"
         run: node tools/ci/anti-bot-regression-gate.js
 
