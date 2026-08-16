@@ -92,14 +92,16 @@ Reports in [`reports/kimi-2026-07-29/`](reports/kimi-2026-07-29/):
 ### App IDs
 | App | App ID | Purpose |
 |-----|--------|---------|
-| **Main** | `com.dlnraja.tuya.zigbee` | Production + Test channel |
-| **Stable** | `com.dlnraja.tuya.zigbee.stable` | Parallel stable version |
+| **Main (master 9.0.x)** | `com.dlnraja.tuya.zigbee` | Preview / Test soak |
+| **Stable (stable-v5 5.12.x)** | `com.dlnraja.tuya.zigbee` (**same App ID**) | LTS reliability — Publish Stable→Test overwrites master Test |
+
+> There is **no** live `com.dlnraja.tuya.zigbee.stable` store slot. Soak-guard must skip draft+promote while Test is 9.x.
 
 ### Branches
 | Branch | Purpose | Push Target |
 |--------|---------|-------------|
-| `master` | Latest stable code | Production |
-| `stable-v5` | Stable version | Test channel + stable app |
+| `master` | Preview / soak (features + reliability) | Auto-Publish → Homey Test |
+| `stable-v5` | LTS reliability only | Publish Stable (soak-first; skip draft while Test is 9.x) |
 | `SDK3` (upstream) | JohanBendz upstream | Sync source |
 
 ### Version Bump Order

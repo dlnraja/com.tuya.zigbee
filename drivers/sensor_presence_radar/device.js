@@ -1,6 +1,6 @@
 'use strict';
 const CI = require('../../lib/utils/CaseInsensitiveMatcher');
-const { safeSetTimeout, safeClearTimeout, isDestroyed } = require('../../lib/utils/safe-timers');
+const { safeSetTimeout, safeClearTimeout, safeSetInterval, safeClearInterval, isDestroyed } = require('../../lib/utils/safe-timers');
 const { getManufacturer, getModelId } = require('../../lib/helpers/DeviceDataHelper');
 const SleepyInit = require('../../lib/utils/SleepyDeviceInit');
 
@@ -2139,11 +2139,11 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
   _startEnrollmentCheck() {
     // Clear any existing interval
     if (this._enrollmentCheckInterval) {
-      clearInterval(this._enrollmentCheckInterval);
+      safeClearInterval(this, this._enrollmentCheckInterval);
     }
 
     // Check every 5 minutes if enrollment is still valid
-    this._enrollmentCheckInterval = this.homey.setInterval(async () => {
+    this._enrollmentCheckInterval = safeSetInterval(this, async () => {
       if (this._destroyed) {return;}
       if (!this._iasZoneCluster) {return;}
 
@@ -2303,7 +2303,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
 
     // Clear any existing interval
     if (this._pollingInterval) {
-      clearInterval(this._pollingInterval);
+      safeClearInterval(this, this._pollingInterval);
     }
 
     // v5.5.304: Send initial time sync if needed (like Tuya gateway)
@@ -2315,7 +2315,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     let luxPollCounter = 0;
 
     // Poll at configured interval
-    this._pollingInterval = this.homey.setInterval(async () => { if (this._destroyed) {return;} try {
+    this._pollingInterval = safeSetInterval(this, async () => { if (this._destroyed) {return;} try {
         const now = Date.now();
         const timeSinceLastPresence = now - (this._lastPresenceUpdate || 0);
 
@@ -2571,19 +2571,19 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
   _cleanupTimers() {
     // Clear polling interval
     if (this._pollingInterval) {
-      clearInterval(this._pollingInterval);
+      safeClearInterval(this, this._pollingInterval);
       this._pollingInterval = null;
     }
 
     // Clear enrollment check interval
     if (this._enrollmentCheckInterval) {
-      clearInterval(this._enrollmentCheckInterval);
+      safeClearInterval(this, this._enrollmentCheckInterval);
       this._enrollmentCheckInterval = null;
     }
 
     // Clear any pending debounce timers
     if (this._presenceDebounceTimer) {
-      clearTimeout(this._presenceDebounceTimer);
+      safeClearTimeout(this, this._presenceDebounceTimer);
       this._presenceDebounceTimer = null;
     }
 

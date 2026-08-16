@@ -1,18 +1,10 @@
-# SESSION HANDOFF — 2026-08-16 (~23:15 CET)
+# SESSION HANDOFF — 2026-08-16 (~23:20 CET)
 
-> Dual-app BOTH when in doubt. Silent forum (T157628). Shared App ID = one Test slot.
+> Shared App ID. Silent forum. Soak-first skip draft verified ×3.
 
-## Live versions
+| Track | Tip | Homey Test |
+|-------|-----|------------|
+| master | P199 presence/contact timer clears + identity docs | 9.0.565+ soak |
+| stable-v5 | P199 timer backport; soak-first | do not overwrite 9.x |
 
-| Track | Branch | Tip | Homey Test |
-|-------|--------|-----|------------|
-| Preview | `master` | P198 Auto-Fix race + curtain timers + forum-silent crawler | **9.0.565+** |
-| Stable | `stable-v5` | P198 curtain timers + Auto-Fix race; soak-first skip draft | do not overwrite 9.x |
-
-App ID (both): `com.dlnraja.tuya.zigbee`
-
-## Verified
-
-- Publish Stable soak-first skip draft: green twice
-- Auto-Fix race hardening: push retry + per-branch concurrency
-- Open issues/PRs: none
+Open issues/PRs: none.

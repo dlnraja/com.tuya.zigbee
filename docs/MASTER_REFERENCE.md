@@ -28,8 +28,8 @@
 | Champ | Valeur |
 |-------|--------|
 | **Nom** | Tuya Unified Zigbee |
-| **App ID (master)** | `com.dlnraja.tuya.zigbee` |
-| **App ID (stable)** | `com.dlnraja.tuya.zigbee.stable` |
+| **App ID (master)** | `com.dlnraja.tuya.zigbee` (9.0.x preview) |
+| **App ID (stable)** | `com.dlnraja.tuya.zigbee` (**shared** — 5.12.x LTS; no live `.stable` store slot) |
 | **Auteur** | Dylan L.N. Raja (dlnraja) |
 | **License** | MIT / GPL-3.0 |
 | **SDK** | Homey SDK3 |
@@ -70,7 +70,7 @@
 
 ```
 master (com.dlnraja.tuya.zigbee)          ← Branche principale, 429 drivers
-  ├── stable-v5 (com.dlnraja.tuya.zigbee.stable)  ← 228 drivers Zigbee only
+  ├── stable-v5 (same App ID `com.dlnraja.tuya.zigbee`, 5.12.x LTS)
   ├── masterwlan                              ← Branche expérimentale WiFi
   ├── auto/johan-sdk3-sync                    ← Sync automatique Johan SDK3
   ├── auto/driver-maintenance                 ← Maintenance automatique

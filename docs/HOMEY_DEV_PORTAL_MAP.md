@@ -9,7 +9,7 @@ CI/CD scripts that talk to Athom services.
 |---|---|---|
 | Home | `/` | Overview + doc links |
 | My Account | `/me` | Profile |
-| My Apps | `/apps` | App list: `com.dlnraja.tuya.zigbee` + `com.dlnraja.tuya.zigbee.stable` |
+| My Apps | `/apps` | App list: both tracks share `com.dlnraja.tuya.zigbee` (master 9.0.x / stable-v5 5.12.x) |
 | App detail | `/apps/app/{appId}` | Local/Cloud installs graph, **Builds table** (state Draft/Test/Live, crashes), per-build actions SUBMISSION / INSTALL |
 | My API Clients | `/api/clients` | OAuth clients |
 | My Webhooks | `/webhooks` | Webhooks *into* Homey apps (not CI notifications) |
