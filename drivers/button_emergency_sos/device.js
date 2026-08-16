@@ -9,6 +9,8 @@ try {
   // UnifiedBatteryHandler not available - will use fallback
 }
 
+const { normalizeZclBatteryVoltagePercent } = require('../../lib/battery/zcl-percent');
+
 let IEEEAddressManager = null;
 try {
   IEEEAddressManager = require('../../lib/managers/IEEEAddressManager');
@@ -453,13 +455,10 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
         : (value > 100 ? Math.round(value / 2) : value);
       if (percent === null || percent === undefined) {return;}
     } else {
-      // ZCL batteryVoltage is in 100mV units (30 = 3.0V); tolerate mV (3000)
-      // and plain volts (3.0) too — the previous code read 3.0V as "30V".
-      let voltage = typeof value === 'number' ? value : parseFloat(value);
-      if (isNaN(voltage)) {return;}
-      if (voltage > 300) {voltage = voltage / 1000;}      // mV
-      else if (voltage >= 10) {voltage = voltage / 10;}   // ZCL 100mV units
-      percent = UnifiedBatteryHandler.calculateFromVoltage(voltage, '3V_2100');
+      // Unit detection (V / 100mV / mV) plus the non-linear curve both live in
+      // the shared helper, so a coin cell reads the same here as anywhere else.
+      percent = normalizeZclBatteryVoltagePercent(value, { batteryType: '3V_2100' });
+      if (percent === null) {return;}
     }
 
     if (percent >= 0 && percent <= 100) {

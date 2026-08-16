@@ -138,6 +138,12 @@ function codeOnlyLines(source) {
   return out;
 }
 
+// ---------------------------------------------------------------------------
+// B5 — the ZCL batteryVoltage unit is not fixed in practice: devices report
+//      volts, 100mV steps or millivolts. A hardcoded divisor guesses wrong.
+// ---------------------------------------------------------------------------
+const HARDCODED_VOLTAGE_UNIT = /batteryVoltage[\w.?\])\s]*\/\s*(?:10|100|1000)\b/;
+
 function scanSource(file) {
   if (isExempt(file)) return;
   const lines = codeOnlyLines(fs.readFileSync(file, 'utf8'));
@@ -165,6 +171,11 @@ function scanSource(file) {
           'linear voltage-to-percent formula — use UnifiedBatteryHandler discharge curves');
         break;
       }
+    }
+
+    if (HARDCODED_VOLTAGE_UNIT.test(text) && !HELPER_TOKENS.some((t) => text.includes(t))) {
+      addFinding('B5', 'warn', rel(file), line,
+        'batteryVoltage scaled by a hardcoded unit divisor — remotes reporting mV read ten times too high; use normalizeZclBatteryVoltagePercent');
     }
   });
 }
@@ -218,6 +229,18 @@ function scanCompose() {
     if (caps.includes('alarm_generic') && fs.existsSync(devicePath) && !drivesAlarmGeneric(devicePath)) {
       addFinding('C1', 'error', rel(devicePath), 0,
         `${driver} declares alarm_generic but neither device.js nor its base class drives it — the alarm can never fire`);
+    }
+
+    if (fs.existsSync(devicePath)) {
+      const src = fs.readFileSync(devicePath, 'utf8');
+      const runtimeCaps = new Set();
+      for (const match of src.matchAll(/addCapability\(\s*['"]([\w.]+)['"]\s*\)/g)) {
+        if (!caps.includes(match[1])) runtimeCaps.add(match[1]);
+      }
+      for (const cap of runtimeCaps) {
+        addFinding('C2', 'warn', rel(devicePath), 0,
+          `${driver} adds "${cap}" at runtime but the manifest does not declare it — Homey has no title, unit or energy metadata for it`);
+      }
     }
 
     const pids = (compose.zigbee && compose.zigbee.productId) || [];
