@@ -71,6 +71,14 @@ const STATE = {
   APPROVED: 'approved',
   PROCESSING: 'processing',
   READY: 'ready',
+  // Athom's current success-after-upload state. The CLI used to emit
+  // `ready`; the Apps API now parks a processed build at `draft` until
+  // a later step sets the channel to `test` / `live`. Waiting for
+  // `ready` after `draft` is why 9.0.562 #2884 timed out and skipped
+  // promotion even though Athom had already accepted the archive.
+  DRAFT: 'draft',
+  TEST: 'test',
+  LIVE: 'live',
   REVOKED: 'revoked',
   // Athom reports server-side build failures as one of these terminal
   // states. Treating them as failures (instead of timing out after 180s)
@@ -78,6 +86,8 @@ const STATE = {
   PROCESSING_FAILED: 'processing_failed',
   ERROR: 'error',
 };
+
+const SUCCESS_STATES = new Set([STATE.READY, STATE.DRAFT, STATE.TEST, STATE.LIVE]);
 
 // Terminal failure states: any of these means the build is dead, do not keep polling.
 const FAILURE_STATES = new Set([STATE.REVOKED, STATE.PROCESSING_FAILED, STATE.ERROR]);
@@ -185,7 +195,7 @@ async function pollBuildState(api, token, buildId, { timeoutMs = 180000, interva
       log(`Build #${id} state: ${state} (approved=${b?.approved})`);
       last = state;
     }
-    if (state === STATE.READY) return b;
+    if (SUCCESS_STATES.has(state)) return b;
     // Terminal failure states (revoked / processing_failed / error) OR
     // an explicit error/feedback object: exit fast with a clear message.
     if (FAILURE_STATES.has(state) || b?.error) {

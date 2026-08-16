@@ -16,9 +16,10 @@
 
 const fs = require('fs');
 const path = require('path');
-const { includesCI } = require('../../lib/utils/TuyaNormalizer');
+const { includesCI, pairingCaseVariants, normalize } = require('../../lib/utils/TuyaNormalizer');
 
 const args = process.argv.slice(2);
+const STRIP = args.includes('--strip');
 let ROOT = process.cwd();
 for (let i = 0; i < args.length; i++) {
   if (args[i] === '--root') ROOT = path.resolve(args[++i]);
@@ -584,6 +585,54 @@ const failures = [];
 const notes = [];
 
 FORBIDDEN.push(...forbiddenFromRegistry());
+
+/**
+ * After enrichers re-inject a forbidden mfr, strip every pairing-case form
+ * from that driver's compose before the check runs. The gate stays the
+ * single source of truth; --strip is the repair half of detect+repair.
+ */
+function stripForbiddenPlacements() {
+  const stripped = [];
+  const seen = new Set();
+  for (const rule of FORBIDDEN) {
+    const fp = path.join(ROOT, 'drivers', rule.driver, 'driver.compose.json');
+    if (!fs.existsSync(fp)) continue;
+    let compose;
+    try {
+      compose = JSON.parse(fs.readFileSync(fp, 'utf8'));
+    } catch {
+      notes.push(`strip skip ${rule.id}: unreadable compose`);
+      continue;
+    }
+    const list = compose && compose.zigbee && compose.zigbee.manufacturerName;
+    if (!Array.isArray(list) || !list.length) continue;
+    const ban = new Set();
+    for (const mfr of rule.mfrs || []) {
+      ban.add(normalize(mfr));
+      for (const v of pairingCaseVariants(mfr)) ban.add(normalize(v));
+    }
+    const next = list.filter((m) => !ban.has(normalize(m)));
+    if (next.length === list.length) continue;
+    const key = `${rule.driver}:${fp}`;
+    compose.zigbee.manufacturerName = next;
+    fs.writeFileSync(fp, `${JSON.stringify(compose, null, 2)}\n`, 'utf8');
+    const removed = list.length - next.length;
+    if (!seen.has(key)) {
+      seen.add(key);
+      stripped.push(`${rule.driver}: -${removed} (${rule.id})`);
+    }
+  }
+  return stripped;
+}
+
+if (STRIP) {
+  const stripped = stripForbiddenPlacements();
+  if (stripped.length) {
+    notes.push(`stripped ${stripped.length} forbidden placement(s): ${stripped.join('; ')}`);
+  } else {
+    notes.push('strip: nothing to remove');
+  }
+}
 
 for (const rule of FORBIDDEN) {
   const compose = loadCompose(rule.driver);

@@ -122,7 +122,7 @@ jobs:
         run: node scripts/automation/fix-fingerprint-conflicts.js --soft-exit
 
       - name: "🛡️ Anti-bot gate (post-enrich)"
-        run: node tools/ci/anti-bot-regression-gate.js
+        run: node tools/ci/anti-bot-regression-gate.js --strip
 
       - name: "🛡️ Regression lessons gate (MUST-KEEP fatals)"
         run: node tools/ci/regression-lessons-gate.js

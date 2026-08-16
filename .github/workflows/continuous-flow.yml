@@ -224,6 +224,10 @@ jobs:
           if-no-files-found: ignore
           retention-days: 14
 
+      - name: "🛡️ Anti-bot strip after enrich"
+        if: always()
+        run: node tools/ci/anti-bot-regression-gate.js --strip
+
       - name: Commit state (apply only)
         if: github.event.inputs.mode == 'apply' && success()
         run: |

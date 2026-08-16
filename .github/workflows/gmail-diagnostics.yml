@@ -151,7 +151,7 @@ jobs:
         run: |
           node tools/ci/infer-enrich-from-incomplete.js --apply || true
           node tools/ci/ensure-case-variants.js --apply || true
-          node tools/ci/anti-bot-regression-gate.js || true
+          node tools/ci/anti-bot-regression-gate.js --strip || true
 
       - name: "Light Z2M/ZHA sync (best-effort, OOM-safe)"
         if: always()

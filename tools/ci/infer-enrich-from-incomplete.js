@@ -27,6 +27,7 @@ const {
   mergeManufacturerCaseVariants,
   pairingCaseVariants,
 } = require('../../lib/utils/TuyaNormalizer');
+const { isForbiddenPlacement } = require('../../lib/pairing/UserMisattributionRegistry');
 
 const args = process.argv.slice(2);
 const APPLY = args.includes('--apply');
@@ -634,6 +635,9 @@ function checkNeedsCaseVariants(driverId, mfr) {
 // ─── Apply (HIGH only) ────────────────────────────────────────────────────────
 
 function applyRehome(mfr, pid, targetDriver) {
+  if (isForbiddenPlacement(mfr, targetDriver)) {
+    throw new Error(`registry forbids ${mfr} on ${targetDriver}`);
+  }
   const result = {
     target: targetDriver,
     addedVariants: 0,
@@ -721,6 +725,13 @@ function main() {
     };
 
     if (scored.status === 'high') {
+      if (scored.proposedDriver && isForbiddenPlacement(c.mfr, scored.proposedDriver)) {
+        skipped_ambiguous.push({
+          ...row,
+          reasons: [...(row.reasons || []), 'registry_forbidden'],
+        });
+        continue;
+      }
       const doApply = APPLY && !args.includes('--dry-run') && scored.proposedDriver;
       if (doApply) {
         if (applied.filter((a) => a.applied).length >= APPLY_MAX) {

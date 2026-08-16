@@ -7,7 +7,7 @@
 
 | Track | Branch | Code tip | Homey Test |
 |-------|--------|----------|------------|
-| Preview | `master` | **P168** class-scale sacred couples (pending Auto-Publish) | soak **≥9.0.541** OOM; tip was **9.0.544+** |
+| Preview | `master` | **P192** OTA+re-inject+draft poll | Test still **9.0.558**; draft **9.0.562 #2884** waiting promote |
 | Stable | `stable-v5` | PR #530 lineage | do **not** overwrite master Test while soaking |
 
 App ID: `com.dlnraja.tuya.zigbee` · https://homey.app/a/com.dlnraja.tuya.zigbee/test/

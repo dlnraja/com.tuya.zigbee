@@ -186,7 +186,7 @@ jobs:
 
       - name: "🛡️ Anti-bot regression gate"
         if: always()
-        run: node tools/ci/anti-bot-regression-gate.js
+        run: node tools/ci/anti-bot-regression-gate.js --strip
 
       - name: "🛡️ Regression lessons gate (MUST-KEEP fatals)"
         if: always()
