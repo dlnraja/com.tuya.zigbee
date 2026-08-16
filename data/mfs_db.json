@@ -32,7 +32,7 @@
       "realMfrsAdded": 5,
       "details": "tmp/synthetic-resolution.json + tmp/pruned21-resolution.json"
     },
-    "lastAlignedAt": "2026-08-16T17:23:23.273Z",
+    "lastAlignedAt": "2026-08-16T17:34:12.560Z",
     "alignTool": "align-mfs-db-intelligent@P169"
   },
   "sources": {
@@ -185447,8 +185447,7 @@
     "driverId": "remote_button_wireless",
     "source": "registry:p189-smart-button-knob-not-wall4gang",
     "modelIds": [
-      "TS0044",
-      "TS004F"
+      "TS0043"
     ],
     "pid": "TS0043",
     "modelIdsCount": 5
@@ -211801,11 +211800,10 @@
     "modelIdsCount": 2
   },
   "_tz3000_ixla93vd": {
-    "driverId": "remote_button_wireless",
+    "driverId": "switch_wireless",
     "source": "registry:p189-smart-button-knob-not-wall4gang",
     "modelIds": [
-      "TS0044",
-      "TS004F"
+      "TS0601"
     ],
     "pid": "TS0215A",
     "modelIdsCount": 3

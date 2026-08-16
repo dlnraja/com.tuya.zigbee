@@ -372,13 +372,27 @@
       }
     },
     {
-      "id": "p189-smart-button-knob-not-wall4gang",
-      "mfr": ["_TZ3000_fa9mlvja", "_TZ3000_ixla93vd"],
-      "productId": ["TS0044", "TS004F"],
+      "id": "p189-smart-button-fa9mlvja-not-wall4gang",
+      "mfr": ["_TZ3000_fa9mlvja"],
+      "productId": ["TS0043"],
       "canonicalDriver": "remote_button_wireless",
       "forbiddenDrivers": ["wall_switch_4_gang"],
       "protocol": "zcl",
-      "notes": "z2m IH-K663 smart button and ERS-10TZBVK-AA smart knob. Battery remotes, not mains 4-gang wall switches.",
+      "notes": "z2m IH-K663 smart button. A battery remote, not a mains 4-gang wall switch.",
+      "sources": ["z2m-herdsman", "P189"],
+      "tracks": {
+        "master": { "static": true, "dynamic": true },
+        "stable": { "static": true, "dynamic": false }
+      }
+    },
+    {
+      "id": "p189-smart-knob-ixla93vd-not-wall4gang",
+      "mfr": ["_TZ3000_ixla93vd"],
+      "productId": ["TS0601"],
+      "canonicalDriver": "switch_wireless",
+      "forbiddenDrivers": ["wall_switch_4_gang"],
+      "protocol": "zcl",
+      "notes": "z2m ERS-10TZBVK-AA smart knob. A battery remote, not a mains 4-gang wall switch. Herdsman suggests smart_knob as the better long-term home.",
       "sources": ["z2m-herdsman", "P189"],
       "tracks": {
         "master": { "static": true, "dynamic": true },
