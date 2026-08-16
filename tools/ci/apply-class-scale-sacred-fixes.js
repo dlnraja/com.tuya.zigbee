@@ -136,34 +136,21 @@ for (const r of lightRules) {
   }
 }
 
-// 4) mfs_db align for registry (object map only)
+// 4) mfs_db + registry↔compose — delegated to intelligent aligner
 let mfsChanged = 0;
 try {
-  const reg = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'user-misattribution-registry.json'), 'utf8'));
-  const dbPath = path.join(ROOT, 'data', 'mfs_db.json');
-  const raw = fs.readFileSync(dbPath);
-  const db = JSON.parse(raw);
-  if (db && typeof db === 'object' && !Array.isArray(db)) {
-    const keys = Object.keys(db);
-    for (const c of reg.cases || []) {
-      const canon = c.canonicalDriver;
-      const pids = c.productId || [];
-      for (const m of c.mfr || []) {
-        const key = keys.find((k) => norm(k) === norm(m));
-        if (!key) continue;
-        const entry = db[key];
-        if (!entry || typeof entry !== 'object') continue;
-        if (entry.driverId !== canon) {
-          entry.driverId = canon;
-          mfsChanged += 1;
-        }
-        if (pids.length) entry.modelIds = [...pids];
-      }
-    }
-    if (APPLY && mfsChanged) {
-      fs.writeFileSync(dbPath, `${JSON.stringify(db, null, 2)}\n`);
-    }
-  }
+  const { spawnSync } = require('child_process');
+  const args = [path.join(__dirname, 'align-mfs-db-intelligent.js')];
+  if (APPLY) args.push('--apply');
+  const r = spawnSync(
+    process.execPath,
+    args,
+    { cwd: ROOT, encoding: 'utf8' },
+  );
+  const out = `${r.stdout || ''}${r.stderr || ''}`;
+  const m = out.match(/changes=(\d+)/);
+  mfsChanged = m ? Number(m[1]) : 0;
+  log.push({ action: 'align_mfs_db_intelligent', mfsChanged, status: r.status });
 } catch (e) {
   log.push({ action: 'mfs_align_err', err: String(e.message) });
 }

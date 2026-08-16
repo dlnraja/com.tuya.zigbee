@@ -1,0 +1,463 @@
+{
+  "timestamp": "2026-08-16T12:56:33.163Z",
+  "gate": "align-mfs-db-intelligent",
+  "apply": false,
+  "check": true,
+  "changeCount": 0,
+  "skippedCount": 30,
+  "highSeverityCount": 0,
+  "byAction": {},
+  "changes": [],
+  "skipped": [
+    {
+      "reason": "unclaimed_no_compose",
+      "mfr": "_tze20x_xxxxxxxx",
+      "curated": "air_purifier"
+    },
+    {
+      "reason": "unclaimed_no_compose",
+      "mfr": "_TZ3210_DDIGCA5N",
+      "curated": "bulb_rgb"
+    },
+    {
+      "reason": "unclaimed_no_compose",
+      "mfr": "_TZ3210_JLF1NEPW",
+      "curated": "bulb_rgb"
+    },
+    {
+      "reason": "unclaimed_no_compose",
+      "mfr": "_TZ3210_RWMITWJ4",
+      "curated": "bulb_rgb"
+    },
+    {
+      "reason": "pair_conflict_ambiguous",
+      "mfr": "_TZ3000_8uaoilu9",
+      "curated": "curtain_motor_shutter",
+      "foreign": [
+        "rgb_floor_led_light",
+        "dimmable_led_strip"
+      ],
+      "modelIds": [
+        "TS0301",
+        "TS0502A",
+        "TS0601",
+        "TS0726"
+      ]
+    },
+    {
+      "reason": "unclaimed_multi",
+      "mfr": "_TZ3000_8uaoilu9",
+      "curated": "curtain_motor_shutter",
+      "claimers": [
+        "dimmable_led_strip",
+        "rgb_floor_led_light"
+      ]
+    },
+    {
+      "reason": "pair_conflict_ambiguous",
+      "mfr": "_TZ3000_odygigth",
+      "curated": "curtain_motor_shutter",
+      "foreign": [
+        "rgb_bulb_E14",
+        "dimmable_led_strip"
+      ],
+      "modelIds": [
+        "TS0301",
+        "TS0505A",
+        "TS0601",
+        "TS0726"
+      ]
+    },
+    {
+      "reason": "unclaimed_multi",
+      "mfr": "_TZ3000_odygigth",
+      "curated": "curtain_motor_shutter",
+      "claimers": [
+        "dimmable_led_strip",
+        "rgb_bulb_E14"
+      ]
+    },
+    {
+      "reason": "pair_conflict_ambiguous",
+      "mfr": "_TZ3000_gek6snaj",
+      "curated": "curtain_motor_shutter",
+      "foreign": [
+        "rgb_led_light_bar",
+        "dimmable_led_strip"
+      ],
+      "modelIds": [
+        "TS0301",
+        "TS0505A",
+        "TS0505B",
+        "TS0601",
+        "TS0726"
+      ]
+    },
+    {
+      "reason": "unclaimed_multi",
+      "mfr": "_TZ3000_gek6snaj",
+      "curated": "curtain_motor_shutter",
+      "claimers": [
+        "dimmable_led_strip",
+        "rgb_led_light_bar"
+      ]
+    },
+    {
+      "reason": "unclaimed_multi",
+      "mfr": "_TZ3000_ysdv91bk",
+      "curated": "gas_sensor_switch",
+      "claimers": [
+        "switch_1gang",
+        "switch_wall_7gang"
+      ]
+    },
+    {
+      "reason": "unclaimed_no_compose",
+      "mfr": "_tz3000_o1jzcxou",
+      "curated": "gateway_zigbee_bridge"
+    },
+    {
+      "reason": "unclaimed_no_compose",
+      "mfr": "legrand",
+      "curated": "generic_diy"
+    },
+    {
+      "reason": "unclaimed_no_compose",
+      "mfr": "schneider electric",
+      "curated": "generic_diy"
+    },
+    {
+      "reason": "unclaimed_no_compose",
+      "mfr": "danfoss",
+      "curated": "generic_diy"
+    },
+    {
+      "reason": "pair_conflict_ambiguous",
+      "mfr": "_tze200_2imwyigp",
+      "curated": "generic_diy",
+      "foreign": [
+        "switch_3gang",
+        "contact_sensor"
+      ],
+      "modelIds": [
+        "0x8040",
+        "BASICZBR3",
+        "BSP-EZ2",
+        "BSP-FZ2",
+        "BUTTON",
+        "Battery switch, 1 button",
+        "Battery switch, 2 buttons",
+        "CC2530",
+        "CC2531",
+        "CC2652",
+        "CUSTOM",
+        "DIY",
+        "EFEKTA",
+        "ESP32",
+        "MAKER",
+        "PTVO",
+        "RELAY",
+        "ROUTER",
+        "S26R2ZB",
+        "S31ZB",
+        "S40ZBTPB",
+        "SENSOR",
+        "SNZB-01",
+        "SNZB-01P",
+        "SNZB-02",
+        "SNZB-02P",
+        "SNZB-03",
+        "SNZB-03P",
+        "SNZB-04",
+        "SNZB-04P",
+        "SNZB-06P",
+        "SNZB-09P",
+        "SWITCH",
+        "TRV001",
+        "TRV003",
+        "TS0026",
+        "TS0041A",
+        "TS0044",
+        "TS0052",
+        "TS0105",
+        "TS0224",
+        "TS0901",
+        "ZBMINI",
+        "ZBMINIL2",
+        "ZIGSTAR",
+        "eT093WRG",
+        "eT093WRO",
+        "eTRV0100",
+        "eTRV0101",
+        "eTRV0103"
+      ]
+    },
+    {
+      "reason": "unclaimed_multi",
+      "mfr": "_tze200_2imwyigp",
+      "curated": "generic_diy",
+      "claimers": [
+        "contact_sensor",
+        "switch_3gang"
+      ]
+    },
+    {
+      "reason": "pair_conflict_ambiguous",
+      "mfr": "_TZE204_2imwyigp",
+      "curated": "generic_diy",
+      "foreign": [
+        "switch_3gang",
+        "contact_sensor"
+      ],
+      "modelIds": [
+        "0x8040",
+        "BASICZBR3",
+        "BSP-EZ2",
+        "BSP-FZ2",
+        "BUTTON",
+        "Battery switch, 1 button",
+        "Battery switch, 2 buttons",
+        "CC2530",
+        "CC2531",
+        "CC2652",
+        "CUSTOM",
+        "DIY",
+        "EFEKTA",
+        "ESP32",
+        "MAKER",
+        "PTVO",
+        "RELAY",
+        "ROUTER",
+        "S26R2ZB",
+        "S31ZB",
+        "S40ZBTPB",
+        "SENSOR",
+        "SNZB-01",
+        "SNZB-01P",
+        "SNZB-02",
+        "SNZB-02P",
+        "SNZB-03",
+        "SNZB-03P",
+        "SNZB-04",
+        "SNZB-04P",
+        "SNZB-06P",
+        "SNZB-09P",
+        "SWITCH",
+        "TRV001",
+        "TRV003",
+        "TS0026",
+        "TS0041A",
+        "TS0044",
+        "TS0052",
+        "TS0105",
+        "TS0203",
+        "TS0224",
+        "TS0601",
+        "TS0601_generic",
+        "TS0603",
+        "TS0901",
+        "ZBMINI",
+        "ZBMINIL2",
+        "ZIGSTAR",
+        "eT093WRG",
+        "eT093WRO",
+        "eTRV0100",
+        "eTRV0101",
+        "eTRV0103"
+      ]
+    },
+    {
+      "reason": "unclaimed_multi",
+      "mfr": "_TZE204_2imwyigp",
+      "curated": "generic_diy",
+      "claimers": [
+        "contact_sensor",
+        "switch_3gang"
+      ]
+    },
+    {
+      "reason": "pair_conflict_ambiguous",
+      "mfr": "_TZ3000_iystcadi",
+      "curated": "led_controller_cct",
+      "foreign": [
+        "led_controller_dimmable",
+        "led_controller_rgb"
+      ],
+      "modelIds": [
+        "TRI-C1ZR",
+        "TRI-K1ZR",
+        "TS0501B",
+        "TS0503",
+        "TS0504",
+        "TS0601_led"
+      ]
+    },
+    {
+      "reason": "unclaimed_multi",
+      "mfr": "_TZ3000_iystcadi",
+      "curated": "led_controller_cct",
+      "claimers": [
+        "dimmable_led_strip",
+        "led_controller_dimmable",
+        "led_controller_rgb"
+      ]
+    },
+    {
+      "reason": "pair_conflict_ambiguous",
+      "mfr": "_tzb210_g01ie5wu",
+      "curated": "light_bulb_rgb",
+      "foreign": [
+        "wall_dimmer_1gang_1way",
+        "wall_dimmer_tuya"
+      ],
+      "modelIds": [
+        "E11-G13",
+        "E11-G14",
+        "E11-G23",
+        "EDM-1ZBA-EU",
+        "GL-C-006",
+        "LCT001",
+        "LCT002",
+        "LCT003",
+        "LCT007",
+        "LCT010",
+        "LCT011",
+        "LCT012",
+        "LCT014",
+        "LCT015",
+        "LCT016",
+        "RB 185 C",
+        "RB 285 C",
+        "TRI-C1ZR",
+        "TRI-K1ZR",
+        "TS0011",
+        "TS004F",
+        "TS0052",
+        "TS0501B",
+        "TS0503A",
+        "TS0503B",
+        "TS0504B",
+        "TS0505A",
+        "TS0505B",
+        "TS0601",
+        "TS0601_dim1",
+        "TS1101",
+        "TS110E",
+        "TS110F",
+        "ZB-CL01",
+        "ZBMINI-DIM",
+        "ZBMINID",
+        "ZBT-ColorLight"
+      ]
+    },
+    {
+      "reason": "unclaimed_multi",
+      "mfr": "_tzb210_g01ie5wu",
+      "curated": "light_bulb_rgb",
+      "claimers": [
+        "wall_dimmer_1gang_1way",
+        "wall_dimmer_tuya"
+      ]
+    },
+    {
+      "reason": "unclaimed_multi",
+      "mfr": "_tz3000_dd8wwzcy",
+      "curated": "plug_energy_monitor",
+      "claimers": [
+        "climate_sensor",
+        "device_plug_energy"
+      ]
+    },
+    {
+      "reason": "pair_conflict_ambiguous",
+      "mfr": "_TZ3000_lf56vpxj",
+      "curated": "sensor_motion_presence",
+      "foreign": [
+        "sensor_climate_motion",
+        "slim_motion_sensor"
+      ],
+      "modelIds": [
+        "Excellux",
+        "TS0001",
+        "TS0202",
+        "TS0225",
+        "TS0601"
+      ]
+    },
+    {
+      "reason": "unclaimed_multi",
+      "mfr": "_TZ3000_lf56vpxj",
+      "curated": "sensor_motion_presence",
+      "claimers": [
+        "sensor_climate_motion",
+        "slim_motion_sensor"
+      ]
+    },
+    {
+      "reason": "unclaimed_no_compose",
+      "mfr": "_TZE204_pay2byax",
+      "curated": "soil_sensor"
+    },
+    {
+      "reason": "unclaimed_multi",
+      "mfr": "_TZE200_aqnazj70",
+      "curated": "switch_4gang",
+      "claimers": [
+        "wall_switch_4_gang",
+        "wall_switch_5_gang_tuya"
+      ]
+    },
+    {
+      "reason": "pair_conflict_ambiguous",
+      "mfr": "_tz3000_f09j9qjb",
+      "curated": "wall_switch_3gang_1way",
+      "foreign": [
+        "climate_sensor",
+        "switch_2_gang"
+      ],
+      "modelIds": [
+        "CK-TLSR8656-SS5-01(7014)",
+        "Excellux",
+        "RH3052",
+        "SM0201",
+        "SNZB-02",
+        "SNZB-02B",
+        "SNZB-02D",
+        "SNZB-02DR2",
+        "SNZB-02LD",
+        "SNZB-02M",
+        "SNZB-02P",
+        "SNZB-02WD",
+        "TH01",
+        "THS317-ET",
+        "TS0003",
+        "TS0013",
+        "TS0043",
+        "TS0201",
+        "TS0202",
+        "TS0222",
+        "TS0601",
+        "TS1201",
+        "TY0201",
+        "WSDCGQ01LM",
+        "WSDCGQ11LM",
+        "WSDCGQ12LM",
+        "ZG-227Z",
+        "ZG-227ZL",
+        "lumi.sensor_ht",
+        "lumi.sensor_ht.agl02",
+        "lumi.weather"
+      ]
+    },
+    {
+      "reason": "unclaimed_multi",
+      "mfr": "_tz3000_f09j9qjb",
+      "curated": "wall_switch_3gang_1way",
+      "claimers": [
+        "climate_sensor",
+        "switch_2_gang"
+      ]
+    }
+  ],
+  "highSeverity": []
+}

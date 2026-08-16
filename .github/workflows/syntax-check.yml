@@ -167,6 +167,9 @@ jobs:
       - name: Homey heap JSON size gate (P148/P157)
         run: node tools/ci/homey-heap-json-gate.js
 
+      - name: Intelligent mfs_db alignment check (P169)
+        run: node tools/ci/align-mfs-db-intelligent.js --check
+
       - name: Sacred couple registry audit (P151)
         run: node tools/ci/audit-sacred-couple.js --from-registry
 

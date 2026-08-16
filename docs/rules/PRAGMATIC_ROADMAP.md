@@ -33,6 +33,8 @@ Store name: **Universal Tuya** (Zigbee in description/tags). Not “Unified Engi
 ## Commands
 
 ```bash
+node tools/ci/align-mfs-db-intelligent.js --check
+node tools/ci/align-mfs-db-intelligent.js --apply
 node tools/ci/audit-sacred-couple.js --from-registry
 node tools/ci/audit-sacred-couple-by-class.js
 node tools/ci/dual-claim-compose-gate.js
@@ -44,7 +46,8 @@ node tools/ci/gmail-crash-pattern-gate.js --json
 
 Layer contracts: `docs/architecture/LAYERS_ENERGY_BUTTONS_FLOWS.md` (energy → buttons → flows, one pass at a time).  
 Heap / sleepy: `reports/P156_RC_LIVEDATA_SLEEPY_FACTCHECK_2026-08-16.md` · `reports/P157_HEAP_SLEEPY_PREVENTION_2026-08-16.md`  
-Class scale: `reports/P168_CLASS_SCALE_SACRED_COUPLE_2026-08-16.md` · `tools/ci/audit-sacred-couple-by-class.js`
+Class scale: `reports/P168_CLASS_SCALE_SACRED_COUPLE_2026-08-16.md` · `tools/ci/audit-sacred-couple-by-class.js`  
+mfs_db align: `reports/P169_MFS_DB_INTELLIGENT_ALIGN_2026-08-16.md` · `tools/ci/align-mfs-db-intelligent.js`
 
 ## Dual-app
 

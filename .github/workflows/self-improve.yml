@@ -84,6 +84,7 @@ jobs:
           node tools/ci/case-variant-fixer.js || true
           node tools/ci/case-variant-fixer.js --apply || true
           node tools/ci/mfs-db-dedupe.js --apply || true
+          node tools/ci/align-mfs-db-intelligent.js --apply || true
           node tools/ci/compose-mfsdb-class-guard.js || true
 
       - name: 📦 Refresh native firmware updates (Homey 13.2+)
