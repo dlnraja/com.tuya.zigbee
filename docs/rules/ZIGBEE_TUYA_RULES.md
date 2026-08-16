@@ -92,8 +92,11 @@ To prevent devices from pairing as "Zigbee Generic Device", follow these rules:
 - Multi-gang: onoff.1, onoff.2, etc.
 
 ## 4. Energy & Battery
-- Dual power devices: mains + battery backup
-- Do NOT remove measure_battery from mains devices
+- Dual power devices: mains + battery backup keep `measure_battery`, because the
+  backup cell is real and its charge is worth reporting
+- Pure mains devices MUST strip `measure_battery` in `onNodeInit` (see
+  `get mainsPowered()`), otherwise the tile shows a battery that does not exist.
+  Their manifest must also carry no `energy.batteries`
 - BVB filter for invalid readings
 
 ## 5. Time Sync
@@ -109,7 +112,7 @@ To prevent devices from pairing as "Zigbee Generic Device", follow these rules:
 | 26 | NaN Guard (safeParse) |
 | 27 | Flow card IDs globally unique |
 | 28 | Clean ALL refs when removing drivers |
-| 29 | [[device]] in ALL language variants |
+| 29 | A `titleFormatted` string must be provided in ALL language variants — but it must NEVER contain `[[device]]`, which forces Homey to show a manual device picker |
 | 30 | No wildcards in manufacturerName |
 | 31 | TuyaZigbeeDevice from lib/tuya/ |
 | 32 | Settings keys use snake_case |

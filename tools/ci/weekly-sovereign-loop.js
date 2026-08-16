@@ -182,6 +182,7 @@ function main() {
   report.gates.heapJson = nodeGate('tools/ci/homey-heap-json-gate.js');
   report.gates.maxCoverage = nodeGate('tools/ci/max-coverage-investigate.js');
   report.gates.batteryButton = nodeGate('tools/ci/battery-button-intelligence-gate.js');
+  report.gates.rulesMatrix = nodeGate('tools/ci/rules-enforcement-matrix.js');
 
   report.homeyTest = checkHomeyTestPage();
   report.runs = recentRuns(15);

@@ -292,6 +292,21 @@ const composePath = path.join(ROOT, '.homeycompose', 'app.json');
 // HIGHEST of the three manifests, and the fix syncs everything UP to it —
 // syncing pkg down would fight the bot's next release and recreate the
 // mismatch on the very next bot commit.
+/**
+ * Re-emits JSON in the same shape the file already had. The generated root
+ * app.json is one compact line (~3.6 MB); pretty-printing it inflates the file
+ * to ~6.5 MB and turns a one-character version bump into a 251k-line diff,
+ * while still passing the size gate because that gate measures the compacted
+ * form. package.json and .homeycompose/app.json are genuinely 2-space indented.
+ */
+const reserializeLike = (original, value) => {
+  const body = original.replace(/^\uFEFF/, '');
+  const indentMatch = body.match(/^\{\r?\n(\s+)"/);
+  if (!indentMatch) return JSON.stringify(value);
+  const trailingNewline = /\r?\n$/.test(body) ? '\n' : '';
+  return JSON.stringify(value, null, indentMatch[1].length) + trailingNewline;
+};
+
 const semverKey = (v) => String(v || '0.0.0').split('.').map((n) => parseInt(n, 10) || 0);
 const semverCmp = (a, b) => {
   const pa = semverKey(a); const pb = semverKey(b);
@@ -311,10 +326,11 @@ if (fs.existsSync(pkgPath)) {
         () => {
           for (const file of [appJsonPath, pkgPath, composePath]) {
             if (!fs.existsSync(file)) {continue;}
-            const j = JSON.parse(Buffer.from(fs.readFileSync(file)).toString('utf8'));
+            const raw = Buffer.from(fs.readFileSync(file)).toString('utf8');
+            const j = JSON.parse(raw);
             j.version = canonical;
             if (j.packages && j.packages['']) {j.packages[''].version = canonical;}
-            fs.writeFileSync(file, JSON.stringify(j, null, 2) + '\n', 'utf8');
+            fs.writeFileSync(file, reserializeLike(raw, j), 'utf8');
           }
         });
     } else {
