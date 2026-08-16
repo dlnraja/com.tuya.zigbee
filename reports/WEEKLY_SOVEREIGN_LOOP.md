@@ -1,7 +1,7 @@
 # Weekly Sovereign Loop
 
-Generated: 2026-08-14T15:53:38.131Z
-Version: **9.0.506** · Branch: `master`
+Generated: 2026-08-16T06:55:37.175Z
+Version: **9.0.533** · Branch: `master`
 
 ## Quota policy
 - Cursor Automation = thin weekly brain (read report → bounded reliability fixes)
@@ -29,31 +29,33 @@ Version: **9.0.506** · Branch: `master`
 - ❌ `self-improve.yml` — workflow not found
 
 ## Recent workflow runs
-- [in_progress] Weekly Sovereign Loop (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/31816453009
-- [success] 🔄 Self-Improve (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/31815985791
-- [success] Safe Sync master → stable-v5 (P52) (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/31815984235
-- [success] 🔬 Publish Diagnose (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/31815982689
-- [success] Auto Bot Issue Triage (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/31815981162
-- [success] 🌍 Forum Poll (P69) (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/31815979470
-- [in_progress] Gmail Diagnostics Auto-Analysis (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/31815977846
-- [pending] 🕷️ Mega Crawler (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/31815976100
-- [success] Weekly Sovereign Loop (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/31815951427
-- [success] 🔄 Self-Improve (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/31815887856
+- [in_progress] 🤖 Auto-Fix + Publish Pipeline (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/31932523816
+- [in_progress] Weekly Sovereign Loop (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/31932466478
+- [success] Gmail Diagnostics Auto-Analysis (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/31931085493
+- [skipped] Auto-Reopen on Comment (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/31930551208
+- [cancelled] Batch Analyze & Respond (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/31930389689
+- [success] 📥 Community Inbox (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/31929592931
+- [success] Auto Bot Issue Triage (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/31928154173
+- [success] Safe Sync master → stable-v5 (P52) (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/31927812010
+- [success] 🗂️ Blakadder Integration (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/31927503224
+- [success] 🔄 Auto-Enrich Closed Loop (P69) (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/31927084901
 
 ## Publish / validate related
-- [success] 🔬 Publish Diagnose — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/31815982689
-- [success] 🔬 Publish Diagnose — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/31815883513
+- [in_progress] 🤖 Auto-Fix + Publish Pipeline — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/31932523816
+- [success] 🩹 Publish Self-Heal — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/31926815965
 
 ## Open issues
 - #513 Bug report - Zigbee Climate sensor not installing
 
 ## Open PRs
-- none
+- #530 fix(stable): P139 + ZT08 DP17 + TYZB01 switch routes — https://github.com/dlnraja/com.tuya.zigbee/pull/530
 
 ## Cursor brain — do this week (max)
 - **P1**: Human issues remain open — verify FP/runtime fixes silently; do not mass-close needs-maintainer.
   - #513 Bug report - Zigbee Climate sensor not installing
 - **P1**: Some workflow dispatches failed (check GH_PAT / workflow names): mega-crawl.yml, gmail-diagnostics.yml, forum-poll.yml, auto-bot-issue-triage.yml, publish-diagnose.yml, safe-sync-stable.yml, self-improve.yml
+- **P1**: Open non-draft PRs — review for reliability merges on master only.
+  - https://github.com/dlnraja/com.tuya.zigbee/pull/530
 
 ## Hard stops
 - Do NOT paste unchecked AI to Homey forum
