@@ -19,13 +19,53 @@ function pushSourceIssues(summary,source,issues,level){
 }
 
 function buildIdx(){
-  const idx=new Map();
+  const idx=new Map(); // key = lowercase mfr
   try{for(const d of fs.readdirSync(DDIR)){try{
-    const c=JSON.parse(fs.readFileSync(path.join(DDIR,d,'driver.compose.json'),'utf8'));
-    for(const m of(c.zigbee?.manufacturerName||[]))
-      {if(!idx.has(m))idx.set(m,[]);if(!idx.get(m).includes(d))idx.get(m).push(d)}
+    const c=JSON.parse(fs.readFileSync(path.join(DDIR,d,'driver.compose.json')));
+    for(const m of(c.zigbee?.manufacturerName||[])){
+      const key=String(m).toLowerCase();
+      if(!idx.has(key))idx.set(key,[]);
+      if(!idx.get(key).includes(d))idx.get(key).push(d);
+    }
   }catch{}}}catch{}
   return idx;
+}
+
+/** Resolve forum/OCR near-miss FPs (e.g. trailing 'a') against known drivers. */
+function resolveKnownFp(fp, idx){
+  if(!fp)return null;
+  const key=String(fp).toLowerCase();
+  if(idx.has(key))return {fp, matched:true, drivers:idx.get(key)};
+  const candidates=new Set();
+  // Drop last char (common OCR trailing vowel)
+  if(fp.length>14){
+    const trimmed=fp.slice(0,-1);
+    if(idx.has(trimmed.toLowerCase())) candidates.add(trimmed);
+  }
+  // Collapse doubled letter in suffix (_…aa… / …xx)
+  const m=fp.match(/^(_T[A-Za-z0-9]+_)([a-z0-9]+)$/i);
+  if(m){
+    const pref=m[1];
+    const suf=m[2];
+    for(let i=0;i<suf.length-1;i++){
+      if(suf[i]===suf[i+1]){
+        const collapsed=pref+suf.slice(0,i)+suf.slice(i+1);
+        if(idx.has(collapsed.toLowerCase())) candidates.add(collapsed);
+      }
+    }
+    // Drop one char at each suffix position (single OCR insert)
+    if(suf.length>=7 && suf.length<=12){
+      for(let i=0;i<suf.length;i++){
+        const dropped=pref+suf.slice(0,i)+suf.slice(i+1);
+        if(idx.has(dropped.toLowerCase())) candidates.add(dropped);
+      }
+    }
+  }
+  if(candidates.size){
+    const canon=[...candidates][0];
+    return {fp:canon, matched:true, drivers:idx.get(canon.toLowerCase()), ocrFrom:fp};
+  }
+  return {fp, matched:false, drivers:[]};
 }
 
 async function main(){
@@ -45,8 +85,11 @@ async function main(){
   if(gmailR?.diagnostics){
     summary.sources.gmail=gmailR.diagnostics.length;
     for(const d of gmailR.diagnostics){
-      if(d.fps?.mfr?.length) for(const fp of d.fps.mfr)
-        if(!idx.has(fp)) summary.unmatchedFPs.push({fp,source:'gmail',subj:(d.subj||'').slice(0,60)});
+      if(d.fps?.mfr?.length) for(const fp of d.fps.mfr){
+        const resolved=resolveKnownFp(fp, idx);
+        if(!resolved.matched) summary.unmatchedFPs.push({fp,source:'gmail',subj:(d.subj||'').slice(0,60)});
+        else if(resolved.ocrFrom) summary.ocrResolved=(summary.ocrResolved||[]).concat([{from:resolved.ocrFrom,to:resolved.fp,drivers:resolved.drivers}]);
+      }
       if(d.errs?.length) summary.errors.push(...d.errs.map(e=>({err:e,source:'gmail'})));
     }
   }
@@ -94,10 +137,13 @@ async function main(){
           const report={id:anonId(d.id),name:privacy.alias('device',d.name||d.id),mfr,model,driver:drv,
             online:!!d.available,
             caps:d.capabilitiesObj?Object.keys(d.capabilitiesObj).sort():[],
-            warning:d.warning||null,matched:idx.has(mfr),
-            drivers:idx.get(mfr)||[],multiDriver:(idx.get(mfr)||[]).length>1};
+            warning:d.warning||null,matched:idx.has(String(mfr).toLowerCase()),
+            drivers:idx.get(String(mfr).toLowerCase())||[],multiDriver:(idx.get(String(mfr).toLowerCase())||[]).length>1};
           saveJ(path.join(RD,anonId(d.id)+'.json'),report);
-          if(!idx.has(mfr)&&mfr) summary.unmatchedFPs.push({fp:mfr,model,name:privacy.alias('device',d.name||d.id),source:'live_api'});
+          if(mfr && !idx.has(String(mfr).toLowerCase())){
+            const resolved=resolveKnownFp(mfr, idx);
+            if(!resolved.matched) summary.unmatchedFPs.push({fp:mfr,model,name:privacy.alias('device',d.name||d.id),source:'live_api'});
+          }
         }
       }
     }catch(e){console.error('Live API:',privacy.redact(e.message))}

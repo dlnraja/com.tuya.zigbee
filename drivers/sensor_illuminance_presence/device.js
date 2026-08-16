@@ -8,14 +8,13 @@ const { UniversalDPSender } = require('../../lib/tuya/UniversalDPSender');
 
 const MTG_RELAY_RADARS = new Set([
   '_tze204_sbyx0lm6',
-  '_tze204_clrdrnya',
+  // P202: clrdrnya → presence_sensor_radar only (GH #420)
   '_tze204_dtzziy1e',
   '_tze204_iaeejhvf',
   '_tze204_mtoaryre',
   '_tze200_mp902om5',
   '_tze204_pfayrzcw',
   '_tze284_4qznlkbu',
-  '_tze200_clrdrnya',
   '_tze200_sbyx0lm6',
 ]);
 

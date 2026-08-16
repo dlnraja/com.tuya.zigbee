@@ -335,9 +335,24 @@ jobs:
         uses: actions/github-script@f28e40c7f34bde8b3046d885e986cb6290c5673b # v7.1.0
         with:
           script: |
-            github.rest.issues.createComment({
+            // P202: never hardcode a closed issue (was spam-commenting #420 on every Auto-Fix failure)
+            const url = `${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`;
+            const body = `⚠️ Auto-Fix pipeline failed. Check [run #${context.runId}](${url})`;
+            core.summary.addRaw(body).write();
+            core.warning(body);
+            // Optional: comment only on an OPEN issue whose body mentions AutofixNotify, else skip
+            const { data: issues } = await github.rest.issues.listForRepo({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              issue_number: 420,
-              body: `⚠️ Auto-Fix pipeline failed. Check [run #${context.runId}](${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId})`
+              state: 'open',
+              labels: 'autofix-notify',
+              per_page: 1,
             });
+            if (issues.length) {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issues[0].number,
+                body,
+              });
+            }
