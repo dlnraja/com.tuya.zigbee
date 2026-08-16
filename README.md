@@ -37,7 +37,7 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.533 |
+| **App Version** | v9.0.534 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,371 |
 | **Pairing Variants** | 17,082 (4 case combos per fingerprint) |
@@ -49,7 +49,7 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 | **SVG Icons** | 731 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
-| **Last Updated** | 2026-08-15 |
+| **Last Updated** | 2026-08-16 |
 
 ### Top 20 Drivers by Fingerprint Count
 
@@ -106,6 +106,7 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.534** | Stability improvements and Homey test publication retry after transient processing failure. |
 | **v9.0.533** | Stability improvements and Homey test publication retry after transient processing failure. |
 | **v9.0.532** | Stability improvements and Homey test publication retry after transient processing failure. |
 | **v9.0.531** | Stability improvements and Homey test publication retry after transient processing failure. |
@@ -117,7 +118,6 @@ A community-driven Homey app that brings **local control** to Tuya Zigbee device
 | **v9.0.525** | Reliability: generic_tuya capability crash fix; MTG284 clrdrnya relay DP map (radar family). |
 | **v9.0.524** | Reliability: generic_tuya capability crash fix; MTG284 clrdrnya relay DP map (radar family). |
 | **v9.0.523** | Reliability: generic_tuya capability crash fix; MTG284 clrdrnya relay DP map (radar family). |
-| **v9.0.522** | Reliability: generic_tuya capability crash fix; MTG284 clrdrnya relay DP map (radar family). |
 
 <!-- CHANGELOG_END -->
 
