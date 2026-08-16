@@ -17,13 +17,13 @@ The repository maintains two parallel, completely independent app environments t
 
 | App ID | Branch | Intended Audience | Versioning Style | Test Channel URL |
 | :--- | :--- | :--- | :--- | :--- |
-| `com.dlnraja.tuya.zigbee` | `master` | Experimental / Beta Test Users | `7.x.x` (e.g., `7.5.38`) | [Tuya Unified Beta](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) |
-| `com.dlnraja.tuya.zigbee.stable` | `stable-v5` | Production / Stable Users | `5.x.x` (e.g., `5.11.216`) | [Tuya Unified Stable](https://homey.app/a/com.dlnraja.tuya.zigbee.stable/test/) |
+| `com.dlnraja.tuya.zigbee` | `master` | Preview / soak (features) | `9.0.x` | [Universal Tuya Test](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) |
+| `com.dlnraja.tuya.zigbee` | `stable-v5` | Production / LTS (reliability) | `5.12.x` | **Same App ID** — Publish Stable→Test overwrites master Test |
 
 ### ⚠️ Critical Dual-App Publishing Rules:
-1. **Hermetic Branch Separation**: Modifications meant for the stable experience must be made on `stable-v5` and published under the `com.dlnraja.tuya.zigbee.stable` ID. Ground-breaking features (like custom clusters, telemetry, and advanced radar integrations) are developed on `master` under `com.dlnraja.tuya.zigbee`.
-2. **Manifest Ingestion**: `app.json` in `master` must NEVER have its ID changed to stable, and vice versa. Always double-check `app.json` before committing!
-3. **Migration Integrity**: Never force an update that breaks existing device pairings. The `stable-v5` app must remain fully backwards-compatible with standard Homey Zigbee interfaces.
+1. **Shared App ID**: both tracks publish `com.dlnraja.tuya.zigbee`. There is **no** live `com.dlnraja.tuya.zigbee.stable` store slot. Promoting stable 5.12.x to Test overwrites soaking master 9.0.x. Soak-guard must skip draft+promote while Test is 9.x unless `force_test`.
+2. **Hermetic Branch Separation**: reliability-only on `stable-v5`; features stay on `master`. Never copy App ID / version / store metadata between tracks.
+3. **Migration Integrity**: Never force an update that breaks existing device pairings. The `stable-v5` track must remain backwards-compatible with standard Homey Zigbee interfaces.
 
 ### 🧭 Cross-App Prompt Mandate:
 Every prompt, AI automation, issue reply, PR review, diagnostic summary, and code investigation must evaluate the impact on **both** app tracks before answering or changing code. Universal fixes (crash prevention, security redaction, diagnostics, SDK3 validation, publish verification, battery handling, physical buttons, endpoint mapping, and flow reliability) are cross-app candidates by default. The agent must explicitly decide whether the finding should be applied to `master`, `stable-v5`, both, or intentionally kept on one track, while preserving branch isolation and never copying App IDs, version metadata, store URLs, or release-only settings across tracks.

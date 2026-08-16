@@ -21,6 +21,7 @@ const path = require('path');
 const ROOT = path.resolve(__dirname, '..', '..');
 const DRIVERS = path.join(ROOT, 'drivers');
 const { claimedElsewhere } = require('../../scripts/lib/fp-collision-guard');
+const { isForbiddenPlacement } = require('../../lib/pairing/UserMisattributionRegistry');
 
 /* 12 brand-new fingerprints not in any driver — target drivers chosen from Blakadder
    category + Z2M compatibility + existing driver conventions. */
@@ -110,6 +111,10 @@ for (const fp of NEW_FPS) {
   const owner = claimedElsewhere(ROOT, fp.mfr, fp.driver);
   if (owner) {
     console.log(`~ skip ${fp.mfr} -> ${fp.driver} (already claimed by ${owner})`);
+    continue;
+  }
+  if (isForbiddenPlacement(fp.mfr, fp.driver)) {
+    console.log(`~ skip ${fp.mfr} -> ${fp.driver} (forbidden placement)`);
     continue;
   }
   // Add canonical case + lowercase variant

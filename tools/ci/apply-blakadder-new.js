@@ -21,6 +21,7 @@ const path = require('path');
 
 const ROOT = path.resolve(__dirname, '..', '..');
 const ONLY_PATH = path.join(ROOT, '.github', 'state', 'blakadder', 'blakadder-only.json');
+const { isForbiddenPlacement } = require('../../lib/pairing/UserMisattributionRegistry');
 
 const args = process.argv.slice(2);
 const APPLY = args.includes('--apply');
@@ -121,6 +122,11 @@ function main() {
       if (hasMfr(json, mfrLower)) {
         skipped++;
         report.push({ driver, mfr: c.mfr, action: 'skipped (already present)', vendor: c.vendor, model: c.model });
+        continue;
+      }
+      if (isForbiddenPlacement(c.mfr, driver)) {
+        skipped++;
+        report.push({ driver, mfr: c.mfr, action: 'skipped (forbidden placement)', vendor: c.vendor, model: c.model });
         continue;
       }
       if (APPLY) {

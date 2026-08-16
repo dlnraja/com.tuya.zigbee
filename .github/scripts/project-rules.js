@@ -60,7 +60,7 @@ const PROJECT_RULES = [
 '',
 '### CROSS-APP PROMPT RULE (ALWAYS ACTIVE)',
 '- Every AI prompt, automation result, PR review, issue reply, forum reply, diagnostic summary, and code plan must evaluate both maintained app tracks before responding or patching.',
-'- Tracks: master / com.dlnraja.tuya.zigbee and stable-v5 / com.dlnraja.tuya.zigbee.stable.',
+'- Tracks: master (9.0.x preview) and stable-v5 (5.12.x LTS). BOTH share App ID com.dlnraja.tuya.zigbee — Publish Stable→Test overwrites master Test.',
 '- Security, CI, publish verification, diagnostics, crash prevention, SDK3 validation, battery, physical button, endpoint mapping, pairing, and flow reliability fixes are cross-app candidates by default.',
 '- Always decide: master-only, stable-only, or both. Never copy App IDs, versions, publish secrets, store URLs, or branch-specific release metadata across tracks.',
 '',
@@ -140,7 +140,7 @@ const PROJECT_RULES = [
 
 const CROSS_APP_PROMPT_RULE = [
   'CROSS-APP PROMPT RULE: evaluate both maintained app tracks before responding or patching.',
-  'Tracks: master/com.dlnraja.tuya.zigbee and stable-v5/com.dlnraja.tuya.zigbee.stable.',
+  'Tracks: master 9.0.x and stable-v5 5.12.x, shared App ID com.dlnraja.tuya.zigbee (Publish Stable→Test overwrites soak).',
   'Classify the finding as master-only, stable-only, or both; cross-app candidates include security, CI, publish verification, diagnostics, crash, SDK3, battery, button, endpoint, pairing, and flow fixes.',
   'Never copy App IDs, versions, publish secrets, store URLs, or branch-specific release metadata across tracks.',
 ].join(' ');

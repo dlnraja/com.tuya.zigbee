@@ -185,8 +185,8 @@ const mindset = {
 
 | App ID | Branch | Intended Audience | Versioning | CI/CD |
 |--------|--------|-------------------|------------|-------|
-| `com.dlnraja.tuya.zigbee` | `master` | Experimental / Beta | `7.x.x` | auto-publish-on-push.yml |
-| `com.dlnraja.tuya.zigbee.stable` | `stable-v5` | Production / Stable | `5.11.x` | publish-stable.yml |
+| `com.dlnraja.tuya.zigbee` | `master` | Preview / soak | `9.0.x` | auto-publish-on-push.yml |
+| `com.dlnraja.tuya.zigbee` | `stable-v5` | Production / LTS | `5.12.x` | publish-stable.yml (soak-first; do not overwrite 9.x Test) |
 
 ### CRITICAL INVESTIGATION RULES FOR BRANCHES:
 
@@ -233,13 +233,12 @@ const branchRules = {
 
 ```bash
 # ALWAYS verify app.json before any commit!
-grep "com.dlnraja.tuya.zigbee" .homeycompose/app.json
+grep '"id"' .homeycompose/app.json
 
-# On stable-v5 branch, should be:
-# "id": "com.dlnraja.tuya.zigbee.stable"
-
-# On master branch, should be:
+# BOTH tracks currently share:
 # "id": "com.dlnraja.tuya.zigbee"
+# Do not invent com.dlnraja.tuya.zigbee.stable — that store slot is not live.
+# Publish Stable→Test overwrites master 9.0.x soak. Use soak-guard / force_test.
 ```
 
 ---

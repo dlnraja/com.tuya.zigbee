@@ -160,7 +160,11 @@ function phaseReInject() {
 }
 
 function phaseAntiBotGate() {
-  // Always run — hard fail closed for known bot regressions
+  // Enrichers can re-place forbidden mfrs; strip first, then detect.
+  // Hard-fail only if a regression remains after repair.
+  if (!dryRun) {
+    runNode('tools/ci/anti-bot-regression-gate.js', '--strip');
+  }
   const out = runNode('tools/ci/anti-bot-regression-gate.js');
   return { output: String(out).slice(-300) };
 }

@@ -85,6 +85,11 @@ jobs:
             echo "No package.json"
           fi
 
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
       # P55: restore scanner cache
       - name: 📥 Restore scanner caches
         uses: actions/cache@caa296126883cff596d87d8935842f9db880ef25 # v5.1.0

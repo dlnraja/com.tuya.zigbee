@@ -1,6 +1,6 @@
 # PROJECT_INDEX.md - Unified Smart Home Engine (Local-First) Reference Guide
 
-> **Version**: 9.0.348 | **App ID**: `com.dlnraja.tuya.zigbee` (stable: `com.dlnraja.tuya.zigbee.stable`, branch `stable-v5` v5.12.29)
+> **Version**: 9.0.x | **App ID**: `com.dlnraja.tuya.zigbee` (shared with `stable-v5` 5.12.x — Publish Stable→Test overwrites master Test)
 > **430 drivers** (master; 431 on `stable-v5`) | **5,471 fingerprints** | **4,833 flow cards** | **186 capabilities** | **SDK v3**
 > **Audit 2026-07-27** : see [AUDIT_HOMEY_2026-07-27.md](reports/AUDIT_HOMEY_2026-07-27.md) — all publish blockers resolved; git history purged on 2026-07-27 (see [HISTORY_PURGE.md](reports/HISTORY_PURGE.md))
 

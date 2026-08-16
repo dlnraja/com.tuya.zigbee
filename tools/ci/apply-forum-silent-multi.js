@@ -21,6 +21,7 @@ const DIGEST = path.join(STATE, 'multi-silent-digest.json');
 const NEW_FPS = path.join(STATE, 'multi-silent-new-fps.json');
 const REPORT = path.join(STATE, 'multi-silent-apply-report.json');
 const APPLY = process.argv.includes('--apply');
+const { isForbiddenPlacement } = require('../../lib/pairing/UserMisattributionRegistry');
 
 /** High-confidence typed routes only (sacred couple). */
 const KNOWN_ROUTES = [
@@ -123,6 +124,9 @@ function caseVariants(mfr) {
 }
 
 function ensureCouple(driver, mfr, pid) {
+  if (isForbiddenPlacement(mfr, driver)) {
+    return { ok: false, reason: 'forbidden-placement' };
+  }
   const fp = path.join(ROOT, 'drivers', driver, 'driver.compose.json');
   if (!fs.existsSync(fp)) {return { ok: false, reason: 'missing-driver' };}
   const json = JSON.parse(fs.readFileSync(fp, 'utf8'));

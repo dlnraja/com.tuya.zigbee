@@ -11,8 +11,8 @@ alwaysApply: true
 - Never full-tree sync. Classify BOTH | MASTER_ONLY | STABLE_ONLY.
 
 ## Homey Test live truth (last verified)
-- Master Homey Test: **v9.0.563** (P193 Auto-Publish succeeded).
-- Stable tip: `01606ba6f` soak guard (P195). Last Publish Stable **failed at Draft** (`Missing changelog for v5.12.83`) — promote skipped, Test not overwritten.
+- Master Homey Test: **v9.0.564** (Auto-Publish after P194/P196). Do not overwrite with 5.12.
+- Stable tip: soak-first skip **draft** (P197) on top of `144c00959` changelog seed. Promote already skipped while Test is 9.x.
 - **9.0.530** hit Athom `processing_failed` (`socket hang up`) — superseded; do **not** spam republish (P139).
 - **P139 hardening**: Auto-Publish `cancel-in-progress: false` (do not kill mid Athom draft/promote).
 - Store name: **Universal Tuya Zigbee** (P142 — dropped “Unified Smart Home Engine”).
@@ -47,6 +47,7 @@ alwaysApply: true
 - **Issue #513 CLOSED** — Finnamu confirmed values OK on 9.0.533 (ZT08 DP17 + unix_1970).
 - Open GitHub issues/PRs: **none**.
 - P194 OTA/WiFi local-first is master-only (bins in `assets/firmware/`, no plug image on buttons).
+- P197: Auto-Enrich strip-then-gate; Blakadder/forum appliers use `isForbiddenPlacement`; live docs no longer invent `com.dlnraja.tuya.zigbee.stable`.
 - Next cleanup: remaining `_hybrid_*_needs_device_assignment` / `_GENERIC_*` placeholders (M09 warn).
 - AlarmPolarity smart-learn / free-scrape / parallelDiscover = **MASTER_ONLY**.
 

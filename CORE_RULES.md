@@ -25,8 +25,8 @@
 ### R0: Cross-App Prompt Benefit
 Every prompt, diagnosis, PR review, issue reply, forum reply, and automation plan must consider both maintained app tracks:
 
-- `master` / `com.dlnraja.tuya.zigbee`
-- `stable-v5` / `com.dlnraja.tuya.zigbee.stable`
+- `master` / `com.dlnraja.tuya.zigbee` (9.0.x preview)
+- `stable-v5` / **same App ID** `com.dlnraja.tuya.zigbee` (5.12.x LTS — do not overwrite 9.x Test)
 
 Universal fixes for security, CI, publish verification, crash prevention, SDK3 validation, battery handling, physical buttons, endpoint mapping, and flow reliability are cross-app candidates by default. Always record whether the change should be master-only, stable-only, or propagated to both. Never copy App IDs, version metadata, publish secrets, or branch-specific store links across tracks.
 
