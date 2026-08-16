@@ -164,6 +164,20 @@
       }
     },
     {
+      "id": "switch-4gang-wkr3jqmr",
+      "mfr": ["_TZ3000_wkr3jqmr", "_tz3000_wkr3jqmr"],
+      "productId": ["TS0004"],
+      "canonicalDriver": "switch_4gang",
+      "forbiddenDrivers": ["switch_1gang", "switch_2gang", "switch_3gang"],
+      "protocol": "zcl",
+      "notes": "ZHA #2538 ZG-003-RF 4-gang — not 1-gang (P168 class scale).",
+      "sources": ["zha#2538", "P168"],
+      "tracks": {
+        "master": { "static": true, "dynamic": true },
+        "stable": { "static": true, "dynamic": false }
+      }
+    },
+    {
       "id": "din-relay-vbfp8eyv-qeuvnohg",
       "mfr": ["_TZ3210_vbfp8eyv", "_TZ3000_qeuvnohg", "_TZ3000_ky0fq4ho", "_TZ3000_8bxrzyxz"],
       "productId": ["TS011F"],

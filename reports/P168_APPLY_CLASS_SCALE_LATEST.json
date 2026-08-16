@@ -1,0 +1,341 @@
+{
+  "apply": true,
+  "logCount": 54,
+  "mfsChanged": 9,
+  "byAction": {
+    "strip_false_mains": 24,
+    "gang_lock": 1,
+    "light_exclusive": 29
+  },
+  "log": [
+    {
+      "action": "strip_false_mains",
+      "d": "air_purifier_contact",
+      "class": "sensor"
+    },
+    {
+      "action": "strip_false_mains",
+      "d": "air_purifier_curtain",
+      "class": "windowcoverings"
+    },
+    {
+      "action": "strip_false_mains",
+      "d": "air_purifier_presence",
+      "class": "sensor"
+    },
+    {
+      "action": "strip_false_mains",
+      "d": "button_wireless_scene",
+      "class": "button"
+    },
+    {
+      "action": "strip_false_mains",
+      "d": "button_wireless_valve",
+      "class": "socket"
+    },
+    {
+      "action": "strip_false_mains",
+      "d": "button_wireless_wall",
+      "class": "button"
+    },
+    {
+      "action": "strip_false_mains",
+      "d": "climate_sensor_gas",
+      "class": "sensor"
+    },
+    {
+      "action": "strip_false_mains",
+      "d": "contact_sensor_curtain",
+      "class": "windowcoverings"
+    },
+    {
+      "action": "strip_false_mains",
+      "d": "contact_sensor_zigbee",
+      "class": "sensor"
+    },
+    {
+      "action": "strip_false_mains",
+      "d": "device_air_purifier_presence",
+      "class": "sensor"
+    },
+    {
+      "action": "strip_false_mains",
+      "d": "device_air_purifier_quality",
+      "class": "sensor"
+    },
+    {
+      "action": "strip_false_mains",
+      "d": "device_air_purifier_smoke",
+      "class": "sensor"
+    },
+    {
+      "action": "strip_false_mains",
+      "d": "door_controller_garage",
+      "class": "lock"
+    },
+    {
+      "action": "strip_false_mains",
+      "d": "remote_button_wireless_scene",
+      "class": "button"
+    },
+    {
+      "action": "strip_false_mains",
+      "d": "remote_button_wireless_smart",
+      "class": "button"
+    },
+    {
+      "action": "strip_false_mains",
+      "d": "remote_button_wireless_valve",
+      "class": "socket"
+    },
+    {
+      "action": "strip_false_mains",
+      "d": "sensor_climate_lcdtemphumidsensor",
+      "class": "sensor"
+    },
+    {
+      "action": "strip_false_mains",
+      "d": "sensor_climate_motion",
+      "class": "sensor"
+    },
+    {
+      "action": "strip_false_mains",
+      "d": "sensor_climate_presence",
+      "class": "sensor"
+    },
+    {
+      "action": "strip_false_mains",
+      "d": "sensor_climate_temphumidsensor",
+      "class": "sensor"
+    },
+    {
+      "action": "strip_false_mains",
+      "d": "sensor_contact_climate",
+      "class": "sensor"
+    },
+    {
+      "action": "strip_false_mains",
+      "d": "sensor_contact_rain",
+      "class": "sensor"
+    },
+    {
+      "action": "strip_false_mains",
+      "d": "sensor_gas_presence",
+      "class": "sensor"
+    },
+    {
+      "action": "strip_false_mains",
+      "d": "sensor_lcdtemphumidsensor_temphumidsensor",
+      "class": "sensor"
+    },
+    {
+      "action": "gang_lock",
+      "mfr": "_TZ3000_wkr3jqmr",
+      "keep": "switch_4gang",
+      "stripped": 4
+    },
+    {
+      "action": "light_exclusive",
+      "mfr": "_TZ3000_jd3z4yig",
+      "from": "christmas_lights",
+      "keep": "rgb_led_strip",
+      "n": 4
+    },
+    {
+      "action": "light_exclusive",
+      "mfr": "_TZ3210_jd3z4yig",
+      "from": "christmas_lights",
+      "keep": "rgb_led_strip",
+      "n": 4
+    },
+    {
+      "action": "light_exclusive",
+      "mfr": "_TZ3000_qqjaziws",
+      "from": "dimmable_led_strip",
+      "keep": "rgb_led_strip_controller",
+      "n": 4
+    },
+    {
+      "action": "light_exclusive",
+      "mfr": "_TZ3210_sroezl0s",
+      "from": "tunable_bulb_E14",
+      "keep": "bulb_rgbw",
+      "n": 4
+    },
+    {
+      "action": "light_exclusive",
+      "mfr": "_TZ3000_keabpigv",
+      "from": "light_bulb_tunable_white",
+      "keep": "led_strip_rgbw",
+      "n": 4
+    },
+    {
+      "action": "light_exclusive",
+      "mfr": "_TZ3000_12sxjap4",
+      "from": "rgb_bulb_E27",
+      "keep": "led_strip_rgbw",
+      "n": 4
+    },
+    {
+      "action": "light_exclusive",
+      "mfr": "_TZ3000_hlijwsai",
+      "from": "rgb_bulb_E27",
+      "keep": "led_strip_rgbw",
+      "n": 4
+    },
+    {
+      "action": "light_exclusive",
+      "mfr": "_tz3210_c0s1xloa",
+      "from": "dimmable_led_strip",
+      "keep": "light_bulb_rgb_rgbw",
+      "n": 4
+    },
+    {
+      "action": "light_exclusive",
+      "mfr": "_tz3210_cieijuw1",
+      "from": "dimmable_led_strip",
+      "keep": "light_bulb_rgb_rgbw",
+      "n": 4
+    },
+    {
+      "action": "light_exclusive",
+      "mfr": "_tz3210_dn5higyl",
+      "from": "dimmable_led_strip",
+      "keep": "light_bulb_rgb_rgbw",
+      "n": 4
+    },
+    {
+      "action": "light_exclusive",
+      "mfr": "_tz3210_dwzfzfjc",
+      "from": "dimmable_led_strip",
+      "keep": "light_bulb_rgb_rgbw",
+      "n": 4
+    },
+    {
+      "action": "light_exclusive",
+      "mfr": "_tz3210_hicxa0rh",
+      "from": "dimmable_led_strip",
+      "keep": "light_bulb_rgb_rgbw",
+      "n": 4
+    },
+    {
+      "action": "light_exclusive",
+      "mfr": "_tz3210_hxtfthp5",
+      "from": "dimmable_led_strip",
+      "keep": "light_bulb_rgb_rgbw",
+      "n": 4
+    },
+    {
+      "action": "light_exclusive",
+      "mfr": "_tz3210_ifga63rg",
+      "from": "dimmable_led_strip",
+      "keep": "light_bulb_rgb_rgbw",
+      "n": 4
+    },
+    {
+      "action": "light_exclusive",
+      "mfr": "_tz3210_it1u8ahz",
+      "from": "dimmable_led_strip",
+      "keep": "light_bulb_rgb_rgbw",
+      "n": 4
+    },
+    {
+      "action": "light_exclusive",
+      "mfr": "_tz3210_iw0zkcu8",
+      "from": "dimmable_led_strip",
+      "keep": "light_bulb_rgb_rgbw",
+      "n": 4
+    },
+    {
+      "action": "light_exclusive",
+      "mfr": "_tz3210_jicmoite",
+      "from": "dimmable_led_strip",
+      "keep": "light_bulb_rgb_rgbw",
+      "n": 4
+    },
+    {
+      "action": "light_exclusive",
+      "mfr": "_tz3210_jjqdqxfq",
+      "from": "dimmable_led_strip",
+      "keep": "light_bulb_rgb_rgbw",
+      "n": 4
+    },
+    {
+      "action": "light_exclusive",
+      "mfr": "_tz3210_ljoasixl",
+      "from": "dimmable_led_strip",
+      "keep": "light_bulb_rgb_rgbw",
+      "n": 4
+    },
+    {
+      "action": "light_exclusive",
+      "mfr": "_tz3210_r5afgmkl",
+      "from": "dimmable_led_strip",
+      "keep": "light_bulb_rgb_rgbw",
+      "n": 4
+    },
+    {
+      "action": "light_exclusive",
+      "mfr": "_tz3210_rcggc0ys",
+      "from": "dimmable_led_strip",
+      "keep": "light_bulb_rgb_rgbw",
+      "n": 4
+    },
+    {
+      "action": "light_exclusive",
+      "mfr": "_tz3210_sln7ah6r",
+      "from": "dimmable_led_strip",
+      "keep": "light_bulb_rgb_rgbw",
+      "n": 4
+    },
+    {
+      "action": "light_exclusive",
+      "mfr": "_tz3210_wxa85bwk",
+      "from": "dimmable_led_strip",
+      "keep": "light_bulb_rgb_rgbw",
+      "n": 4
+    },
+    {
+      "action": "light_exclusive",
+      "mfr": "_tz3210_z1vlyufu",
+      "from": "dimmable_led_strip",
+      "keep": "light_bulb_rgb_rgbw",
+      "n": 4
+    },
+    {
+      "action": "light_exclusive",
+      "mfr": "_tz3210_zrvxvydd",
+      "from": "dimmable_led_strip",
+      "keep": "light_bulb_rgb_rgbw",
+      "n": 4
+    },
+    {
+      "action": "light_exclusive",
+      "mfr": "_tzb210_6eed09b9",
+      "from": "dimmable_led_strip",
+      "keep": "light_bulb_rgb_rgbw",
+      "n": 4
+    },
+    {
+      "action": "light_exclusive",
+      "mfr": "_tzb210_lnnkh3f9",
+      "from": "dimmable_led_strip",
+      "keep": "light_bulb_rgb_rgbw",
+      "n": 4
+    },
+    {
+      "action": "light_exclusive",
+      "mfr": "_tzb210_rwy5hexp",
+      "from": "dimmable_led_strip",
+      "keep": "light_bulb_rgb_rgbw",
+      "n": 4
+    },
+    {
+      "action": "light_exclusive",
+      "mfr": "_tzb210_zmppwawa",
+      "from": "dimmable_led_strip",
+      "keep": "light_bulb_rgb_rgbw",
+      "n": 4
+    }
+  ]
+}

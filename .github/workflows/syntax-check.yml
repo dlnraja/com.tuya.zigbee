@@ -167,6 +167,18 @@ jobs:
       - name: Homey heap JSON size gate (P148/P157)
         run: node tools/ci/homey-heap-json-gate.js
 
+      - name: Sacred couple registry audit (P151)
+        run: node tools/ci/audit-sacred-couple.js --from-registry
+
+      - name: Dual-claim compose gate (P167/P168)
+        run: node tools/ci/dual-claim-compose-gate.js
+
+      - name: Class-scale sacred couple audit (P168)
+        run: node tools/ci/audit-sacred-couple-by-class.js
+
+      - name: Energy compose gate
+        run: node tools/ci/energy-compose-gate.js
+
       - name: Validate Homey SDK3 compliance
         run: |
           npx homey app validate --level=publish || echo "⚠️ Homey CLI not available in CI, skipping"

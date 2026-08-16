@@ -1,0 +1,47 @@
+{
+  "timestamp": "2026-08-16T12:47:42.721Z",
+  "gate": "audit-sacred-couple-by-class",
+  "apply": false,
+  "scanned": 431,
+  "classes": {
+    "socket": 117,
+    "sensor": 108,
+    "light": 60,
+    "other": 30,
+    "button": 26,
+    "thermostat": 26,
+    "remote": 18,
+    "fan": 13,
+    "windowcoverings": 11,
+    "lock": 5,
+    "doorbell": 4,
+    "garagedoor": 4,
+    "heater": 4,
+    "curtain": 2,
+    "camera": 1,
+    "vacuumcleaner": 1,
+    "speaker": 1
+  },
+  "crossClassAbsurd": [],
+  "crossClassOther": [],
+  "sameClassDual": [],
+  "energy": [
+    {
+      "driver": "ultrasonic_heat_meter",
+      "class": "sensor",
+      "family": "sensor",
+      "issues": [
+        {
+          "code": "mains_batteries_with_power",
+          "severity": "warn"
+        }
+      ]
+    }
+  ],
+  "counts": {
+    "crossClassAbsurd": 0,
+    "crossClassOther": 0,
+    "sameClassDual": 0,
+    "energyIssues": 1
+  }
+}

@@ -1,4 +1,4 @@
-# SESSION HANDOFF — 2026-08-16 (~14:40 CET)
+# SESSION HANDOFF — 2026-08-16 (~15:00 CET)
 
 > Dual-app BOTH when in doubt. Silent forum (T157628). Shared App ID = one Test slot.
 > Compass: `docs/rules/PRAGMATIC_ROADMAP.md` (internal only).
@@ -7,34 +7,33 @@
 
 | Track | Branch | Code tip | Homey Test |
 |-------|--------|----------|------------|
-| Preview | `master` | tip + **P167** dual-claim/energy (pending Auto-Publish bump) | soak **≥9.0.541** (OOM LiveData); tip was **9.0.543+** |
+| Preview | `master` | **P168** class-scale sacred couples (pending Auto-Publish) | soak **≥9.0.541** OOM; tip was **9.0.544+** |
 | Stable | `stable-v5` | PR #530 lineage | do **not** overwrite master Test while soaking |
 
 App ID: `com.dlnraja.tuya.zigbee` · https://homey.app/a/com.dlnraja.tuya.zigbee/test/
 
 ## Priority
 
-**doublons > GitHub docs > surgical refactor** — no forum roadmap, no Z2M substitution myth.
+**doublons > GitHub docs > surgical refactor**
 
-## Just shipped (this session)
+## Just shipped
 
-- **P167** — absurd dual-claims + mains phantom batteries (`reports/P167_DUAL_CLAIM_BATTERY_TRIAGE_2026-08-16.md`)
-- Refuse ledgers P154, P159–P166 (no auto-* packs)
-- Heap gate already on CI (`homey-heap-json-gate.js`)
+- **P168** — all 17 Homey classes audited; **0** `_TZ*` dual-claim conflicts
+- Tools: `audit-sacred-couple-by-class.js`, `apply-class-scale-sacred-fixes.js`
+- CI: registry + dual-claim + class-scale + energy in `syntax-check.yml`
+- False `energy.mains` stripped on 24 battery-primary drivers
 
 ## User leftovers
 
 - Peter: Test **≥9.0.541**, new diag only if still OOM
-- PresentSky: re-pair dimmer if still climate
-- Dual-claim gate: **48** warn remaining (light/strip overlaps — next surgical pass)
-- Stable backport of OOM/registry/P167 **after** soak only
+- Re-pair if device landed on wrong tile before P167/P168
+- Stable backport of compose locks **after** soak only
 
 ## Commands
 
 ```bash
 node tools/ci/audit-sacred-couple.js --from-registry
+node tools/ci/audit-sacred-couple-by-class.js
 node tools/ci/dual-claim-compose-gate.js
 node tools/ci/energy-compose-gate.js
-node tools/ci/homey-heap-json-gate.js
-node tools/ci/gmail-crash-pattern-gate.js --json
 ```
