@@ -14,6 +14,7 @@ try {
 
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
+const { safeSetInterval, safeClearInterval, safeSetTimeout } = require('../../lib/utils/safe-timers');
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
@@ -127,10 +128,10 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
    * Checks every 5 minutes if device is responsive
    */
   _startHealthMonitor() {
-    // Clear any existing interval
-    if (this._healthInterval) {clearInterval(this._healthInterval);}
+    // Clear any existing interval (must match Homey timer API)
+    if (this._healthInterval) {safeClearInterval(this, this._healthInterval); this._healthInterval = null;}
 
-    this._healthInterval = this.homey.setInterval(async () => {
+    this._healthInterval = safeSetInterval(this, async () => {
       if (this._destroyed) return;
       // Skip if device had recent successful communication
       if (Date.now() - (this._lastCommSuccess || 0) < 300000) {return;}
@@ -159,7 +160,7 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
   async onDeleted() {
     if (this._destroyed) return;
     this._destroyed = true;
-    if (this._healthInterval) {clearInterval(this._healthInterval);}
+    if (this._healthInterval) {safeClearInterval(this, this._healthInterval); this._healthInterval = null;}
     await super.onDeleted?.();
   }
 
@@ -228,7 +229,7 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
       // Set button capability to trigger flows
       await this._safeSetCapability('button', true);
       // Reset after short delay
-      this.homey.setTimeout(() => { if (this._destroyed) return; this._safeSetCapability('button', false); }, 500);
+      safeSetTimeout(this, () => { if (this._destroyed) return; this._safeSetCapability('button', false); }, 500);
 
       // Trigger flow card if available
       const triggerCard = this.homey.flow.getDeviceTriggerCard('curtain_motor_shutter_button_pressed');
