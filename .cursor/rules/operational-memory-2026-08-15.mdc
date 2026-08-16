@@ -11,8 +11,8 @@ alwaysApply: true
 - Never full-tree sync. Classify BOTH | MASTER_ONLY | STABLE_ONLY.
 
 ## Homey Test live truth (last verified)
-- Master Homey Test: **v9.0.564** (Auto-Publish after P194/P196). Do not overwrite with 5.12.
-- Stable tip: soak-first skip **draft** (P197) on top of `144c00959` changelog seed. Promote already skipped while Test is 9.x.
+- Master Homey Test: **v9.0.564+** (Auto-Publish after P197). Do not overwrite with 5.12.
+- Stable tip: soak-first skip **draft** verified green (`31972114911`); branding **Universal Tuya** (`0fb4ac816`).
 - **9.0.530** hit Athom `processing_failed` (`socket hang up`) — superseded; do **not** spam republish (P139).
 - **P139 hardening**: Auto-Publish `cancel-in-progress: false` (do not kill mid Athom draft/promote).
 - Store name: **Universal Tuya Zigbee** (P142 — dropped “Unified Smart Home Engine”).
