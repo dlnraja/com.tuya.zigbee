@@ -159,6 +159,27 @@ const { knownModels, modelEvidence } = (() => {
   return { knownModels: models, modelEvidence: evidence };
 })();
 
+/**
+ * zigbee-herdsman is the only local source that did NOT learn its device list
+ * from our own manifests. mfs_db aggregates `local`, meaning it reads modelIds
+ * back out of driver.compose.json — so using it to judge a placement is
+ * circular, as P188 found the hard way. Where herdsman knows a manufacturer,
+ * its vendor/model/description is the deciding evidence.
+ */
+const herdsmanByMfr = (() => {
+  const map = new Map();
+  try {
+    const herd = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'z2m_herdsman_cache.json')));
+    const devices = herd.devices || [];
+    for (const [mfr, idx] of Object.entries(herd.byMfr || {})) {
+      const seen = [...new Set((idx || []).map((i) => devices[i]).filter(Boolean)
+        .map((d) => `${d.vendor}/${d.model} — ${d.description}`))];
+      if (seen.length) map.set(mfr.toLowerCase(), seen);
+    }
+  } catch (err) { /* optional evidence source */ }
+  return map;
+})();
+
 const rows = [...mentions.entries()].map(([mfr, entry]) => {
   const drivers = [...(driverByMfr.get(mfr) || [])].sort();
   const models = knownModels.get(mfr) || [];
@@ -174,6 +195,7 @@ const rows = [...mentions.entries()].map(([mfr, entry]) => {
     drivers,
     classes: [...new Set(drivers.map((d) => driverMeta.get(d)?.class).filter(Boolean))].sort(),
     knownModels: models,
+    herdsman: herdsmanByMfr.get(mfr) || [],
     evidence: (() => {
       const e = modelEvidence.get(mfr);
       return e ? { sources: [...e.sources], confidence: e.confidence } : { sources: [], confidence: 0 };
@@ -255,9 +277,13 @@ const md = [
   'The `matches` column shows which of its observed modelIds each driver actually claims —',
   'when every driver matches something distinct, the spread is the sacred-couple case working as intended.',
   '',
-  '| manufacturerName | classes | placements (driver → matched modelIds) |',
-  '|---|---|---|',
-  ...classSpread.slice(0, 40).map((r) => `| \`${r.mfr}\` | ${r.classes.join(', ')} | ${r.placements.map((p) => `${p.driver} → ${p.matches.join('/') || 'none'}`).join('; ')} |`),
+  'The zigbee-herdsman column is the only evidence that did not come from our own',
+  'manifests. When it names a single device type, a driver of a different class holding',
+  'the same manufacturer is a misattribution, whatever mfs_db says.',
+  '',
+  '| manufacturerName | classes | zigbee-herdsman says | placements |',
+  '|---|---|---|---|',
+  ...classSpread.slice(0, 40).map((r) => `| \`${r.mfr}\` | ${r.classes.join(', ')} | ${r.herdsman.join('<br>') || '—'} | ${r.placements.map((p) => `${p.driver} → ${p.matches.join('/') || 'none'}`).join('; ')} |`),
   '',
 ].join('\n');
 

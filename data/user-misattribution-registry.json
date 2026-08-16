@@ -314,6 +314,76 @@
         "master": { "static": true, "dynamic": true },
         "stable": { "static": true, "dynamic": false }
       }
+    },
+    {
+      "id": "p189-usb-wall-outlet-not-climate",
+      "mfr": ["_TZ3000_3zofvcaa", "_TZ3000_lqb7lcq9", "_TZ3000_pvlvoxvt", "_TZ3210_8n4dn1ne", "_TZ3210_urjf5u18"],
+      "productId": ["TS011F"],
+      "canonicalDriver": "switch_usb_dongle",
+      "forbiddenDrivers": ["climate_sensor"],
+      "protocol": "zcl",
+      "notes": "z2m TS011F_2_gang_2_usb_wall — 2 gang 2 usb wall outlet. No temperature or humidity endpoint; the climate catch-all had claimed it.",
+      "sources": ["z2m-herdsman", "P189"],
+      "tracks": {
+        "master": { "static": true, "dynamic": true },
+        "stable": { "static": true, "dynamic": false }
+      }
+    },
+    {
+      "id": "p189-ts0207-repeater-not-motion",
+      "mfr": ["_TZ3000_5k5vh43t", "_TZ3000_gszjt2xx", "_TZ3000_misw04hq", "_TZ3000_nkkl7uzv", "_TZ3000_nlsszmzl", "_TZ3000_ufttklsz", "_TZ3000_wlquqiiz", "_TZ3000_m0vaazab"],
+      "productId": ["TS0207"],
+      "canonicalDriver": "zigbee_repeater",
+      "forbiddenDrivers": ["motion_sensor", "remote_button_wireless_usb"],
+      "protocol": "zcl",
+      "notes": "z2m TS0207_repeater — a range extender with no IAS zone and no motion capability.",
+      "sources": ["z2m-herdsman", "P189"],
+      "tracks": {
+        "master": { "static": true, "dynamic": true },
+        "stable": { "static": true, "dynamic": false }
+      }
+    },
+    {
+      "id": "p189-mg-zg03w-3gang-not-contact",
+      "mfr": ["_TZE200_2imwyigp"],
+      "productId": ["TS0601"],
+      "canonicalDriver": "switch_3gang",
+      "forbiddenDrivers": ["contact_sensor"],
+      "protocol": "tuya_ef00",
+      "notes": "z2m MG-ZG03W — 3 gang switch, not a door/window sensor.",
+      "sources": ["z2m-herdsman", "P189"],
+      "tracks": {
+        "master": { "static": true, "dynamic": true },
+        "stable": { "static": true, "dynamic": false }
+      }
+    },
+    {
+      "id": "p189-scene-remotes-not-switch1",
+      "mfr": ["_TZ3000_g9g2xnch", "_TZ3000_r0o2dahu"],
+      "productId": ["TS004F"],
+      "canonicalDriver": "smart_knob",
+      "forbiddenDrivers": ["switch_1gang"],
+      "protocol": "zcl",
+      "notes": "z2m YSR-MINI-Z 2-in-1 dimming/scene remote and TS004F_6_button. Battery remotes, not mains 1-gang switches.",
+      "sources": ["z2m-herdsman", "P189"],
+      "tracks": {
+        "master": { "static": true, "dynamic": true },
+        "stable": { "static": true, "dynamic": false }
+      }
+    },
+    {
+      "id": "p189-smart-button-knob-not-wall4gang",
+      "mfr": ["_TZ3000_fa9mlvja", "_TZ3000_ixla93vd"],
+      "productId": ["TS0044", "TS004F"],
+      "canonicalDriver": "remote_button_wireless",
+      "forbiddenDrivers": ["wall_switch_4_gang"],
+      "protocol": "zcl",
+      "notes": "z2m IH-K663 smart button and ERS-10TZBVK-AA smart knob. Battery remotes, not mains 4-gang wall switches.",
+      "sources": ["z2m-herdsman", "P189"],
+      "tracks": {
+        "master": { "static": true, "dynamic": true },
+        "stable": { "static": true, "dynamic": false }
+      }
     }
   ]
 }

@@ -32,7 +32,7 @@
       "realMfrsAdded": 5,
       "details": "tmp/synthetic-resolution.json + tmp/pruned21-resolution.json"
     },
-    "lastAlignedAt": "2026-08-16T17:10:37.600Z",
+    "lastAlignedAt": "2026-08-16T17:23:23.273Z",
     "alignTool": "align-mfs-db-intelligent@P169"
   },
   "sources": {
@@ -138690,37 +138690,10 @@
     "modelIdsCount": 28
   },
   "_TZ3000_3ZOFVCAA": {
-    "driverId": "climate_sensor",
-    "source": "auto-sync",
+    "driverId": "switch_usb_dongle",
+    "source": "registry:p189-usb-wall-outlet-not-climate",
     "modelIds": [
-      "CK-TLSR8656-SS5-01(7014)",
-      "Excellux",
-      "RH3052",
-      "SM0201",
-      "SNZB-02",
-      "SNZB-02B",
-      "SNZB-02D",
-      "SNZB-02DR2",
-      "SNZB-02LD",
-      "SNZB-02M",
-      "SNZB-02P",
-      "SNZB-02WD",
-      "TH01",
-      "THS317-ET",
-      "TS0201",
-      "TS0202",
-      "TS0222",
-      "TS0601",
-      "TS1201",
-      "TY0201",
-      "WSDCGQ01LM",
-      "WSDCGQ11LM",
-      "WSDCGQ12LM",
-      "ZG-227Z",
-      "ZG-227ZL",
-      "lumi.sensor_ht",
-      "lumi.sensor_ht.agl02",
-      "lumi.weather"
+      "TS011F"
     ],
     "pid": "CK-TLSR8656-SS5-01(7014)",
     "modelIdsCount": 28
@@ -140274,37 +140247,10 @@
     "modelIdsCount": 28
   },
   "_TZ3000_LQB7LCQ9": {
-    "driverId": "climate_sensor",
-    "source": "auto-sync",
+    "driverId": "switch_usb_dongle",
+    "source": "registry:p189-usb-wall-outlet-not-climate",
     "modelIds": [
-      "CK-TLSR8656-SS5-01(7014)",
-      "Excellux",
-      "RH3052",
-      "SM0201",
-      "SNZB-02",
-      "SNZB-02B",
-      "SNZB-02D",
-      "SNZB-02DR2",
-      "SNZB-02LD",
-      "SNZB-02M",
-      "SNZB-02P",
-      "SNZB-02WD",
-      "TH01",
-      "THS317-ET",
-      "TS0201",
-      "TS0202",
-      "TS0222",
-      "TS0601",
-      "TS1201",
-      "TY0201",
-      "WSDCGQ01LM",
-      "WSDCGQ11LM",
-      "WSDCGQ12LM",
-      "ZG-227Z",
-      "ZG-227ZL",
-      "lumi.sensor_ht",
-      "lumi.sensor_ht.agl02",
-      "lumi.weather"
+      "TS011F"
     ],
     "pid": "CK-TLSR8656-SS5-01(7014)",
     "modelIdsCount": 28
@@ -140670,37 +140616,10 @@
     "modelIdsCount": 28
   },
   "_TZ3000_PVLVOXVT": {
-    "driverId": "climate_sensor",
-    "source": "auto-sync",
+    "driverId": "switch_usb_dongle",
+    "source": "registry:p189-usb-wall-outlet-not-climate",
     "modelIds": [
-      "CK-TLSR8656-SS5-01(7014)",
-      "Excellux",
-      "RH3052",
-      "SM0201",
-      "SNZB-02",
-      "SNZB-02B",
-      "SNZB-02D",
-      "SNZB-02DR2",
-      "SNZB-02LD",
-      "SNZB-02M",
-      "SNZB-02P",
-      "SNZB-02WD",
-      "TH01",
-      "THS317-ET",
-      "TS0201",
-      "TS0202",
-      "TS0222",
-      "TS0601",
-      "TS1201",
-      "TY0201",
-      "WSDCGQ01LM",
-      "WSDCGQ11LM",
-      "WSDCGQ12LM",
-      "ZG-227Z",
-      "ZG-227ZL",
-      "lumi.sensor_ht",
-      "lumi.sensor_ht.agl02",
-      "lumi.weather"
+      "TS011F"
     ],
     "pid": "CK-TLSR8656-SS5-01(7014)",
     "modelIdsCount": 28
@@ -141714,37 +141633,10 @@
     "modelIdsCount": 28
   },
   "_TZ3210_8N4DN1NE": {
-    "driverId": "climate_sensor",
-    "source": "auto-sync",
+    "driverId": "switch_usb_dongle",
+    "source": "registry:p189-usb-wall-outlet-not-climate",
     "modelIds": [
-      "CK-TLSR8656-SS5-01(7014)",
-      "Excellux",
-      "RH3052",
-      "SM0201",
-      "SNZB-02",
-      "SNZB-02B",
-      "SNZB-02D",
-      "SNZB-02DR2",
-      "SNZB-02LD",
-      "SNZB-02M",
-      "SNZB-02P",
-      "SNZB-02WD",
-      "TH01",
-      "THS317-ET",
-      "TS0201",
-      "TS0202",
-      "TS0222",
-      "TS0601",
-      "TS1201",
-      "TY0201",
-      "WSDCGQ01LM",
-      "WSDCGQ11LM",
-      "WSDCGQ12LM",
-      "ZG-227Z",
-      "ZG-227ZL",
-      "lumi.sensor_ht",
-      "lumi.sensor_ht.agl02",
-      "lumi.weather"
+      "TS011F"
     ],
     "pid": "CK-TLSR8656-SS5-01(7014)",
     "modelIdsCount": 28
@@ -141894,37 +141786,10 @@
     "modelIdsCount": 28
   },
   "_TZ3210_URJF5U18": {
-    "driverId": "climate_sensor",
-    "source": "auto-sync",
+    "driverId": "switch_usb_dongle",
+    "source": "registry:p189-usb-wall-outlet-not-climate",
     "modelIds": [
-      "CK-TLSR8656-SS5-01(7014)",
-      "Excellux",
-      "RH3052",
-      "SM0201",
-      "SNZB-02",
-      "SNZB-02B",
-      "SNZB-02D",
-      "SNZB-02DR2",
-      "SNZB-02LD",
-      "SNZB-02M",
-      "SNZB-02P",
-      "SNZB-02WD",
-      "TH01",
-      "THS317-ET",
-      "TS0201",
-      "TS0202",
-      "TS0222",
-      "TS0601",
-      "TS1201",
-      "TY0201",
-      "WSDCGQ01LM",
-      "WSDCGQ11LM",
-      "WSDCGQ12LM",
-      "ZG-227Z",
-      "ZG-227ZL",
-      "lumi.sensor_ht",
-      "lumi.sensor_ht.agl02",
-      "lumi.weather"
+      "TS011F"
     ],
     "pid": "CK-TLSR8656-SS5-01(7014)",
     "modelIdsCount": 28
@@ -170457,59 +170322,10 @@
     "modelIdsCount": 51
   },
   "_tze200_2imwyigp": {
-    "driverId": "generic_diy",
-    "source": "auto-sync",
+    "driverId": "switch_3gang",
+    "source": "registry:p189-mg-zg03w-3gang-not-contact",
     "modelIds": [
-      "0x8040",
-      "BASICZBR3",
-      "BSP-EZ2",
-      "BSP-FZ2",
-      "BUTTON",
-      "Battery switch, 1 button",
-      "Battery switch, 2 buttons",
-      "CC2530",
-      "CC2531",
-      "CC2652",
-      "CUSTOM",
-      "DIY",
-      "EFEKTA",
-      "ESP32",
-      "MAKER",
-      "PTVO",
-      "RELAY",
-      "ROUTER",
-      "S26R2ZB",
-      "S31ZB",
-      "S40ZBTPB",
-      "SENSOR",
-      "SNZB-01",
-      "SNZB-01P",
-      "SNZB-02",
-      "SNZB-02P",
-      "SNZB-03",
-      "SNZB-03P",
-      "SNZB-04",
-      "SNZB-04P",
-      "SNZB-06P",
-      "SNZB-09P",
-      "SWITCH",
-      "TRV001",
-      "TRV003",
-      "TS0026",
-      "TS0041A",
-      "TS0044",
-      "TS0052",
-      "TS0105",
-      "TS0224",
-      "TS0901",
-      "ZBMINI",
-      "ZBMINIL2",
-      "ZIGSTAR",
-      "eT093WRG",
-      "eT093WRO",
-      "eTRV0100",
-      "eTRV0101",
-      "eTRV0103"
+      "TS0601"
     ],
     "pid": "0x8040",
     "modelIdsCount": 50
@@ -185629,13 +185445,10 @@
   },
   "_tz3000_fa9mlvja": {
     "driverId": "remote_button_wireless",
-    "source": "auto-sync",
+    "source": "registry:p189-smart-button-knob-not-wall4gang",
     "modelIds": [
-      "TS0043",
-      "TS011F",
-      "TS0121",
-      "TS0215A",
-      "TS0601"
+      "TS0044",
+      "TS004F"
     ],
     "pid": "TS0043",
     "modelIdsCount": 5
@@ -185707,11 +185520,10 @@
     "modelIdsCount": 2
   },
   "_tz3000_m0vaazab": {
-    "driverId": "remote_button_wireless_usb",
-    "source": "auto-sync",
+    "driverId": "zigbee_repeater",
+    "source": "registry:p189-ts0207-repeater-not-motion",
     "modelIds": [
-      "TS011F",
-      "TS0601"
+      "TS0207"
     ],
     "pid": "TS011F",
     "modelIdsCount": 2
@@ -194924,43 +194736,10 @@
     "modelIdsCount": 34
   },
   "_TZ3000_G9G2XNCH": {
-    "driverId": "switch_1gang",
-    "source": "auto-sync",
+    "driverId": "smart_knob",
+    "source": "registry:p189-scene-remotes-not-switch1",
     "modelIds": [
-      "01MINIZB",
-      "BASICZBR3",
-      "S26R2ZB",
-      "S31ZB",
-      "TS0001",
-      "TS0001_power",
-      "TS0001_switch",
-      "TS0001_switch_module",
-      "TS0002",
-      "TS0003",
-      "TS000F",
-      "TS0011",
-      "TS0012",
-      "TS0014",
-      "TS0041",
-      "TS0101",
-      "TS0111",
-      "TS011F",
-      "TS0601",
-      "TS0726",
-      "TS110E",
-      "TS130F",
-      "TS4100",
-      "ZBM5-1C-120",
-      "ZBM5-2C-120",
-      "ZBM5-3C-120",
-      "ZBMINI",
-      "ZBMINIL2",
-      "ZBMINIL2-R2",
-      "ZBMINIR",
-      "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "TS004F"
     ],
     "pid": "01MINIZB",
     "modelIdsCount": 34
@@ -198834,43 +198613,10 @@
     "modelIdsCount": 34
   },
   "_TZ3000_R0O2DAHU": {
-    "driverId": "switch_1gang",
-    "source": "auto-sync",
+    "driverId": "smart_knob",
+    "source": "registry:p189-scene-remotes-not-switch1",
     "modelIds": [
-      "01MINIZB",
-      "BASICZBR3",
-      "S26R2ZB",
-      "S31ZB",
-      "TS0001",
-      "TS0001_power",
-      "TS0001_switch",
-      "TS0001_switch_module",
-      "TS0002",
-      "TS0003",
-      "TS000F",
-      "TS0011",
-      "TS0012",
-      "TS0014",
-      "TS0041",
-      "TS0101",
-      "TS0111",
-      "TS011F",
-      "TS0601",
-      "TS0726",
-      "TS110E",
-      "TS130F",
-      "TS4100",
-      "ZBM5-1C-120",
-      "ZBM5-2C-120",
-      "ZBM5-3C-120",
-      "ZBMINI",
-      "ZBMINIL2",
-      "ZBMINIL2-R2",
-      "ZBMINIR",
-      "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "TS004F"
     ],
     "pid": "01MINIZB",
     "modelIdsCount": 34
@@ -212055,12 +211801,11 @@
     "modelIdsCount": 2
   },
   "_tz3000_ixla93vd": {
-    "driverId": "switch_wireless",
-    "source": "auto-sync",
+    "driverId": "remote_button_wireless",
+    "source": "registry:p189-smart-button-knob-not-wall4gang",
     "modelIds": [
-      "TS0215A",
-      "TS0601",
-      "TS0601_wirelesssw"
+      "TS0044",
+      "TS004F"
     ],
     "pid": "TS0215A",
     "modelIdsCount": 3
@@ -219800,7 +219545,7 @@
   },
   "_tz3000_5k5vh43t": {
     "driverId": "zigbee_repeater",
-    "source": "auto-sync",
+    "source": "registry:p189-ts0207-repeater-not-motion",
     "modelIds": [
       "TS0207"
     ],
@@ -219809,7 +219554,7 @@
   },
   "_tz3000_ufttklsz": {
     "driverId": "zigbee_repeater",
-    "source": "auto-sync",
+    "source": "registry:p189-ts0207-repeater-not-motion",
     "modelIds": [
       "TS0207"
     ],
@@ -219818,7 +219563,7 @@
   },
   "_tz3000_gszjt2xx": {
     "driverId": "zigbee_repeater",
-    "source": "auto-sync",
+    "source": "registry:p189-ts0207-repeater-not-motion",
     "modelIds": [
       "TS0207"
     ],
@@ -219827,7 +219572,7 @@
   },
   "_tz3000_nkkl7uzv": {
     "driverId": "zigbee_repeater",
-    "source": "auto-sync",
+    "source": "registry:p189-ts0207-repeater-not-motion",
     "modelIds": [
       "TS0207"
     ],
@@ -219836,7 +219581,7 @@
   },
   "_tz3000_nlsszmzl": {
     "driverId": "zigbee_repeater",
-    "source": "auto-sync",
+    "source": "registry:p189-ts0207-repeater-not-motion",
     "modelIds": [
       "TS0207"
     ],
@@ -219845,7 +219590,7 @@
   },
   "_tz3000_misw04hq": {
     "driverId": "zigbee_repeater",
-    "source": "auto-sync",
+    "source": "registry:p189-ts0207-repeater-not-motion",
     "modelIds": [
       "TS0207"
     ],
@@ -219854,7 +219599,7 @@
   },
   "_tz3000_wlquqiiz": {
     "driverId": "zigbee_repeater",
-    "source": "auto-sync",
+    "source": "registry:p189-ts0207-repeater-not-motion",
     "modelIds": [
       "TS0207"
     ],
