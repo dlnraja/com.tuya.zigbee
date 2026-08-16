@@ -46,6 +46,7 @@ const RULES = [
   { id: 'Z6', domain: 'zigbee', rule: 'Marketing model names (ZG-*) are not Zigbee productIds; keep them but never rely on them', source: 'data/marketing-model-alias-registry.json', enforcedBy: 'tools/ci/battery-button-intelligence-gate.js', signature: "'F1'" },
   { id: 'Z7', domain: 'zigbee', rule: 'Manufacturer matching goes through CaseInsensitiveMatcher, not manual toLowerCase', source: '.github/CONTRIBUTING.md', unenforced: 'no gate scans for ad-hoc toLowerCase on manufacturer strings' },
   { id: 'Z8', domain: 'zigbee', rule: 'Fingerprints removed from a driver must be justified; bulk enrichment must not silently delete identity data', source: 'reports/ (Cluster A/F, 94 commits)', enforcedBy: 'tools/ci/anti-bot-regression-gate.js' },
+  { id: 'Z9', domain: 'zigbee', rule: 'Every manufacturerName a user reported in an issue, on the forum or in a crash diagnostic must be claimed by some driver', source: 'reports/P184_CROSS_SOURCE_TRIAGE_2026-08-16.md', enforcedBy: 'tools/ci/cross-source-user-report-triage.js', signature: 'humanGaps' },
 
   // ── Battery ──────────────────────────────────────────────────────────────
   { id: 'B1', domain: 'battery', rule: 'Linear voltage-to-percent formulas are banned; use the non-linear discharge curves', source: '.cursorrules', enforcedBy: 'tools/ci/battery-button-intelligence-gate.js', signature: "'B3'" },

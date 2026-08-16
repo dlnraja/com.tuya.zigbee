@@ -1,8 +1,8 @@
 # Rules Enforcement Matrix
 
-Generated: 2026-08-16T15:24:04.828Z
+Generated: 2026-08-16T15:33:28.974Z
 
-Machine-checkable rules tracked: **47** — enforced **36**, unenforced **11**, broken references **0** (coverage **77%**).
+Machine-checkable rules tracked: **48** — enforced **37**, unenforced **11**, broken references **0** (coverage **77%**).
 
 A rule is "broken" when the gate it names has been renamed, deleted, or no longer contains the check.
 
@@ -16,6 +16,7 @@ A rule is "broken" when the gate it names has been renamed, deleted, or no longe
 | Z6 | zigbee | Marketing model names (ZG-*) are not Zigbee productIds; keep them but never rely on them | enforced | `tools/ci/battery-button-intelligence-gate.js` |
 | Z7 | zigbee | Manufacturer matching goes through CaseInsensitiveMatcher, not manual toLowerCase | unenforced | no gate scans for ad-hoc toLowerCase on manufacturer strings |
 | Z8 | zigbee | Fingerprints removed from a driver must be justified; bulk enrichment must not silently delete identity data | enforced | `tools/ci/anti-bot-regression-gate.js` |
+| Z9 | zigbee | Every manufacturerName a user reported in an issue, on the forum or in a crash diagnostic must be claimed by some driver | enforced | `tools/ci/cross-source-user-report-triage.js` |
 | B1 | battery | Linear voltage-to-percent formulas are banned; use the non-linear discharge curves | enforced | `tools/ci/battery-button-intelligence-gate.js` |
 | B2 | battery | ZCL batteryPercentageRemaining is 0-200 and must be normalized, never used raw | enforced | `tools/ci/battery-button-intelligence-gate.js` |
 | B3 | battery | A battery transform must not be a no-op that pins the capability to a constant | enforced | `tools/ci/battery-button-intelligence-gate.js` |

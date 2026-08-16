@@ -183,6 +183,7 @@ function main() {
   report.gates.maxCoverage = nodeGate('tools/ci/max-coverage-investigate.js');
   report.gates.batteryButton = nodeGate('tools/ci/battery-button-intelligence-gate.js');
   report.gates.rulesMatrix = nodeGate('tools/ci/rules-enforcement-matrix.js');
+  report.gates.userTriage = nodeGate('tools/ci/cross-source-user-report-triage.js', ['--fetch']);
 
   report.homeyTest = checkHomeyTestPage();
   report.runs = recentRuns(15);
