@@ -32,7 +32,7 @@
       "realMfrsAdded": 5,
       "details": "tmp/synthetic-resolution.json + tmp/pruned21-resolution.json"
     },
-    "lastAlignedAt": "2026-08-16T17:34:12.560Z",
+    "lastAlignedAt": "2026-08-16T17:42:47.192Z",
     "alignTool": "align-mfs-db-intelligent@P169"
   },
   "sources": {
@@ -132137,27 +132137,10 @@
     "modelIdsCount": 18
   },
   "_tz3000_n2egfsli": {
-    "driverId": "button_wireless_2",
-    "source": "auto-sync",
+    "driverId": "contact_sensor",
+    "source": "registry:p190-contact-n2egfsli-not-button",
     "modelIds": [
-      "TS0001",
-      "TS0002",
-      "TS0003",
-      "TS000F",
-      "TS0011",
-      "TS0012",
-      "TS0013",
-      "TS0014",
-      "TS0041",
-      "TS0042",
-      "TS0043",
-      "TS0044",
-      "TS0111",
-      "TS011F",
-      "TS0121",
-      "TS0215A",
-      "TS0601",
-      "TSO121"
+      "TS0203"
     ],
     "pid": "TS0001",
     "modelIdsCount": 18,
@@ -164886,15 +164869,10 @@
     "modelIdsCount": 3
   },
   "_TZ3210_dwytrmda": {
-    "driverId": "dimmer_1_gang",
-    "source": "couple-exclusive",
+    "driverId": "wall_curtain_switch",
+    "source": "registry:p190-ts130f-curtain-not-climate-or-dimmer",
     "modelIds": [
-      "TS0052",
-      "TS0301",
-      "TS0601",
-      "TS0726",
-      "TS110E",
-      "TS110F"
+      "TS130F"
     ],
     "pid": "TS0052",
     "modelIdsCount": 6
@@ -165203,37 +165181,10 @@
     "modelIdsCount": 3
   },
   "_TZ3210_ol1uhvza": {
-    "driverId": "climate_sensor",
-    "source": "couple-exclusive",
+    "driverId": "wall_curtain_switch",
+    "source": "registry:p190-ts130f-curtain-not-climate-or-dimmer",
     "modelIds": [
-      "CK-TLSR8656-SS5-01(7014)",
-      "Excellux",
-      "RH3052",
-      "SM0201",
-      "SNZB-02",
-      "SNZB-02B",
-      "SNZB-02D",
-      "SNZB-02DR2",
-      "SNZB-02LD",
-      "SNZB-02M",
-      "SNZB-02P",
-      "SNZB-02WD",
-      "TH01",
-      "THS317-ET",
-      "TS0201",
-      "TS0202",
-      "TS0222",
-      "TS0601",
-      "TS1201",
-      "TY0201",
-      "WSDCGQ01LM",
-      "WSDCGQ11LM",
-      "WSDCGQ12LM",
-      "ZG-227Z",
-      "ZG-227ZL",
-      "lumi.sensor_ht",
-      "lumi.sensor_ht.agl02",
-      "lumi.weather"
+      "TS130F"
     ],
     "pid": "CK-TLSR8656-SS5-01(7014)",
     "modelIdsCount": 28
@@ -168843,11 +168794,10 @@
     "modelIdsCount": 2
   },
   "_tz3000_vd43bbfq": {
-    "driverId": "fingerprint_lock",
-    "source": "auto-sync",
+    "driverId": "curtain_module",
+    "source": "registry:p190-ts130f-curtain-vd43bbfq-not-lock",
     "modelIds": [
-      "TS0601",
-      "TS0601_lock"
+      "TS130F"
     ],
     "pid": "TS0601",
     "modelIdsCount": 2
@@ -211547,10 +211497,10 @@
     "modelIdsCount": 1
   },
   "_tz3000_uri7ongn": {
-    "driverId": "relay_board_4_channel",
-    "source": "couple-exclusive",
+    "driverId": "smart_knob",
+    "source": "registry:p190-ers10-knob-uri7ongn-ixla93vd",
     "modelIds": [
-      "TS0004"
+      "TS004F"
     ],
     "pid": "TS0004",
     "modelIdsCount": 1
@@ -211800,10 +211750,10 @@
     "modelIdsCount": 2
   },
   "_tz3000_ixla93vd": {
-    "driverId": "switch_wireless",
+    "driverId": "smart_knob",
     "source": "registry:p189-smart-button-knob-not-wall4gang",
     "modelIds": [
-      "TS0601"
+      "TS004F"
     ],
     "pid": "TS0215A",
     "modelIdsCount": 3

@@ -386,14 +386,56 @@
       }
     },
     {
-      "id": "p189-smart-knob-ixla93vd-not-wall4gang",
-      "mfr": ["_TZ3000_ixla93vd"],
-      "productId": ["TS0601"],
-      "canonicalDriver": "switch_wireless",
-      "forbiddenDrivers": ["wall_switch_4_gang"],
+      "id": "p190-ers10-knob-uri7ongn-ixla93vd",
+      "mfr": ["_TZ3000_uri7ongn", "_TZ3000_ixla93vd"],
+      "productId": ["TS004F"],
+      "canonicalDriver": "smart_knob",
+      "forbiddenDrivers": ["power_meter", "relay_board_4_channel", "switch_wireless", "wall_switch_4_gang"],
       "protocol": "zcl",
-      "notes": "z2m ERS-10TZBVK-AA smart knob. A battery remote, not a mains 4-gang wall switch. Herdsman suggests smart_knob as the better long-term home.",
-      "sources": ["z2m-herdsman", "P189"],
+      "notes": "z2m ERS-10TZBVK-AA smart knob (zigbeeModel ZG-101ZD, TS004F, CR2032). Battery rotary remote — never an energy meter, relay board or mains wall switch. power_meter also declares TS004F, so leaving it there is a live dual-claim.",
+      "sources": ["z2m-herdsman", "johan-enrichment", "P190"],
+      "tracks": {
+        "master": { "static": true, "dynamic": true },
+        "stable": { "static": true, "dynamic": false }
+      }
+    },
+    {
+      "id": "p190-ts130f-curtain-not-climate-or-dimmer",
+      "mfr": ["_TZ3210_ol1uhvza", "_TZ3210_dwytrmda"],
+      "productId": ["TS130F"],
+      "canonicalDriver": "wall_curtain_switch",
+      "forbiddenDrivers": ["climate_sensor", "dimmer_1_gang"],
+      "protocol": "zcl",
+      "notes": "TS130F curtain switch module per Johan enrichment and product-reference (deviceClass windowcoverings). Not a climate sensor and not a dimmer.",
+      "sources": ["z2m-herdsman", "johan-enrichment", "P190"],
+      "tracks": {
+        "master": { "static": true, "dynamic": true },
+        "stable": { "static": true, "dynamic": false }
+      }
+    },
+    {
+      "id": "p190-ts130f-curtain-vd43bbfq-not-lock",
+      "mfr": ["_TZ3000_vd43bbfq"],
+      "productId": ["TS130F"],
+      "canonicalDriver": "curtain_module",
+      "forbiddenDrivers": ["fingerprint_lock"],
+      "protocol": "zcl",
+      "notes": "TS130F curtain module per data/fingerprints.json and Johan enrichment. The lock placement came from an mfs_db record reading TS0601_lock back out of our own manifests.",
+      "sources": ["z2m-herdsman", "johan-enrichment", "P190"],
+      "tracks": {
+        "master": { "static": true, "dynamic": true },
+        "stable": { "static": true, "dynamic": false }
+      }
+    },
+    {
+      "id": "p190-contact-n2egfsli-not-button",
+      "mfr": ["_TZ3000_n2egfsli"],
+      "productId": ["TS0203"],
+      "canonicalDriver": "contact_sensor",
+      "forbiddenDrivers": ["button_wireless_2"],
+      "protocol": "zcl",
+      "notes": "Johan enrichment lists TS0203/RH3001/SNZB-04 with alarm_contact. The button_wireless_2 claim traces to a driver-compose derived record, i.e. circular.",
+      "sources": ["z2m-herdsman", "johan-enrichment", "P190"],
       "tracks": {
         "master": { "static": true, "dynamic": true },
         "stable": { "static": true, "dynamic": false }

@@ -22,37 +22,61 @@
   ],
   "capabilitiesOptions": {
     "onoff": {
-      "title": { "en": "Channel 1", "fr": "Canal 1" }
+      "title": {
+        "en": "Channel 1",
+        "fr": "Canal 1"
+      }
     },
     "onoff.gang2": {
-      "title": { "en": "Channel 2", "fr": "Canal 2" }
+      "title": {
+        "en": "Channel 2",
+        "fr": "Canal 2"
+      }
     },
     "onoff.gang3": {
-      "title": { "en": "Channel 3", "fr": "Canal 3" }
+      "title": {
+        "en": "Channel 3",
+        "fr": "Canal 3"
+      }
     },
     "onoff.gang4": {
-      "title": { "en": "Channel 4", "fr": "Canal 4" }
+      "title": {
+        "en": "Channel 4",
+        "fr": "Canal 4"
+      }
     },
     "button.1": {
-      "title": { "en": "Button 1", "fr": "Bouton 1" },
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
       "maintenanceAction": true,
       "getable": false,
       "setable": false
     },
     "button.2": {
-      "title": { "en": "Button 2", "fr": "Bouton 2" },
+      "title": {
+        "en": "Button 2",
+        "fr": "Bouton 2"
+      },
       "maintenanceAction": true,
       "getable": false,
       "setable": false
     },
     "button.3": {
-      "title": { "en": "Button 3", "fr": "Bouton 3" },
+      "title": {
+        "en": "Button 3",
+        "fr": "Bouton 3"
+      },
       "maintenanceAction": true,
       "getable": false,
       "setable": false
     },
     "button.4": {
-      "title": { "en": "Button 4", "fr": "Bouton 4" },
+      "title": {
+        "en": "Button 4",
+        "fr": "Bouton 4"
+      },
       "maintenanceAction": true,
       "getable": false,
       "setable": false
@@ -74,20 +98,45 @@
     ],
     "endpoints": {
       "1": {
-        "clusters": [0, 4, 5, 6],
-        "bindings": [6]
+        "clusters": [
+          0,
+          4,
+          5,
+          6
+        ],
+        "bindings": [
+          6
+        ]
       },
       "2": {
-        "clusters": [4, 5, 6],
-        "bindings": [6]
+        "clusters": [
+          4,
+          5,
+          6
+        ],
+        "bindings": [
+          6
+        ]
       },
       "3": {
-        "clusters": [4, 5, 6],
-        "bindings": [6]
+        "clusters": [
+          4,
+          5,
+          6
+        ],
+        "bindings": [
+          6
+        ]
       },
       "4": {
-        "clusters": [4, 5, 6],
-        "bindings": [6]
+        "clusters": [
+          4,
+          5,
+          6
+        ],
+        "bindings": [
+          6
+        ]
       }
     },
     "learnmode": {
@@ -100,18 +149,14 @@
       "_TZ3000_imaccztn",
       "_tz3000_imaccztn",
       "_tz3000_mmkbptmx",
-      "_tz3000_uri7ongn",
       "_TZ3000_u3oupgdy",
       "_TZ3000_IMACCZTN",
       "_TZ3000_MMKBPTMX",
-      "_TZ3000_URI7ONGN",
       "_TZ3000_U3OUPGDY",
       "_tz3000_u3oupgdy",
       "_TZ3000_mmkbptmx",
-      "_TZ3000_uri7ongn",
       "_tz3000_IMACCZTN",
       "_tz3000_MMKBPTMX",
-      "_tz3000_URI7ONGN",
       "_tz3000_U3OUPGDY",
       "_TZ3210_imaccztn",
       "_tz3210_imaccztn",
