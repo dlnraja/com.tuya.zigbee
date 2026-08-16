@@ -8,14 +8,10 @@
   },
   "class": "socket",
   "capabilities": [
-    "onoff",
     "measure_power",
     "meter_power",
     "measure_voltage",
-    "measure_current",
-    "dim",
-    "measure_pm25",
-    "button.1"
+    "measure_current"
   ],
   "capabilitiesOptions": {
     "measure_power": {
@@ -100,11 +96,11 @@
       }
     },
     "manufacturerName": [
-      "_hybrid_air_purifier_din_needs_device_assignment",
-      "_HYBRID_AIR_PURIFIER_DIN_NEEDS_DEVICE_ASSIGNMENT"
+      "_DEPRECATED_AIR_PURIFIER_HYBRID_DO_NOT_PAIR"
     ]
   },
   "ui": {
     "quickAction": "onoff"
-  }
+  },
+  "deprecated": true
 }

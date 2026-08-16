@@ -8,13 +8,9 @@
   },
   "class": "fan",
   "capabilities": [
-    "onoff",
-    "dim",
-    "measure_pm25",
     "measure_battery",
     "measure_luminance",
-    "alarm_motion",
-    "button.1"
+    "alarm_motion"
   ],
   "capabilitiesOptions": {
     "dim": {
@@ -72,8 +68,7 @@
       }
     },
     "manufacturerName": [
-      "_HYBRID_AIR_PURIFIER_MOTION_NEEDS_DEVICE_ASSIGNMENT",
-      "_hybrid_air_purifier_motion_needs_device_assignment"
+      "_DEPRECATED_AIR_PURIFIER_HYBRID_DO_NOT_PAIR"
     ]
   },
   "images": {
@@ -136,5 +131,6 @@
   },
   "ui": {
     "quickAction": "onoff"
-  }
+  },
+  "deprecated": true
 }

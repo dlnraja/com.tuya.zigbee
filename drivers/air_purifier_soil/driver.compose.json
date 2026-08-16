@@ -15,11 +15,7 @@
     "measure_battery",
     "alarm_water",
     "measure_ec",
-    "measure_conductivity",
-    "onoff",
-    "dim",
-    "measure_pm25",
-    "button.1"
+    "measure_conductivity"
   ],
   "capabilitiesOptions": {
     "measure_humidity.soil": {
@@ -284,8 +280,7 @@
       }
     },
     "manufacturerName": [
-      "_hybrid_air_purifier_soil_needs_device_assignment",
-      "_HYBRID_AIR_PURIFIER_SOIL_NEEDS_DEVICE_ASSIGNMENT"
+      "_DEPRECATED_AIR_PURIFIER_HYBRID_DO_NOT_PAIR"
     ]
   },
   "metadata": {
@@ -296,5 +291,6 @@
   },
   "ui": {
     "quickAction": "onoff"
-  }
+  },
+  "deprecated": true
 }

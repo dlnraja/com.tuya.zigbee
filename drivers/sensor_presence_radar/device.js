@@ -281,7 +281,7 @@ function transformLux(rawValue, type, manufacturerName = '', deviceId = null) {
   oscState.history.push({ value: lux, time: Date.now() });
   if (oscState.history.length > 5) {oscState.history.shift();}
 
-  // Detect oscillation pattern: 30â†’2000â†’30 within 30 seconds
+  // Detect oscillation pattern: 30->2000->30 within 30 seconds
   if (oscState.history.length >= 3) {
     const recent = oscState.history.slice(-3);
     const hasLowValue = recent.some(r => r.value < 100);
@@ -294,7 +294,7 @@ function transformLux(rawValue, type, manufacturerName = '', deviceId = null) {
         const stableValue = recent.find(r => r.value < 100)?.value || 30;oscState.locked = true;
         oscState.lockedValue = stableValue;
         oscState.lockTime = Date.now();
-        _moduleLog(`[LUX] ðŸ”’ OSCILLATION DETECTED: Locking to ${stableValue} lux (pattern: ${recent.map(r => r.value).join('â†’')})`);
+        _moduleLog(`[LUX] ðŸ”’ OSCILLATION DETECTED: Locking to ${stableValue} lux (pattern: ${recent.map(r => r.value).join('->')})`);
       }
     }
   }
@@ -363,7 +363,7 @@ function transformLux(rawValue, type, manufacturerName = '', deviceId = null) {
   // v5.5.320: HARD CLAMP for ZY-M100 series (Ronny #760: lux showing 2200 when max is 2000)
   // These sensors are confirmed 0-2000 lux range - anything above is sensor noise
   if (lux > maxLux && isZYM100Series) {
-    _moduleLog(`[LUX-FIX] ðŸ”’ Hard clamp for ZY-M100: ${lux} â†’ ${maxLux} lux`);
+    _moduleLog(`[LUX-FIX] ðŸ”’ Hard clamp for ZY-M100: ${lux} -> ${maxLux} lux`);
     lux = maxLux;
   } else if (lux > maxLux) {
     // For other sensors, still allow higher values but warn
@@ -484,7 +484,7 @@ function transformDistance(value, divisor = 100, manufacturerName = '', deviceId
     
     // Cache the learned divisor for this device
     if (effectiveDivisor !== divisor) {
-      _moduleLog(`[DISTANCE-FIX] 🔧 Auto-detected divisor for ${manufacturerName}: ${divisor} â†’ ${effectiveDivisor}`);
+      _moduleLog(`[DISTANCE-FIX] 🔧 Auto-detected divisor for ${manufacturerName}: ${divisor} -> ${effectiveDivisor}`);
       distanceDivisorCache.set(cacheKey, effectiveDivisor);
     }
   }
@@ -541,7 +541,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     const settings = this.getSettings() || {};
     const modelId = getModelId(this);
     this._sensorConfig = getSensorConfig(mfr, modelId);
-    this.log(`[RADAR] ðŸ” ManufacturerName: "${mfr}", ModelId: "${modelId}" â†’ config: ${this._sensorConfig.configName || 'DEFAULT'}`);
+    this.log(`[RADAR] ðŸ” ManufacturerName: "${mfr}", ModelId: "${modelId}" -> config: ${this._sensorConfig.configName || 'DEFAULT'}`);
 
     // v5.5.364: Initialize auto-discovery for DEFAULT/unknown devices
     if (this._sensorConfig.configName === 'DEFAULT') {
@@ -786,19 +786,19 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     this._lastPresenceUpdate = 0;
 
     // v5.8.65: Detect Tuya DP cluster availability (Pete's _TZE200_3towulqd has NO cluster CLUSTERS.TUYA_EF00!)
-    // If no Tuya DP cluster â†’ noIasMotion MUST be overridden, IAS Zone is the ONLY motion source
+    // If no Tuya DP cluster -> noIasMotion MUST be overridden, IAS Zone is the ONLY motion source
     const ep1Check = zclNode?.endpoints?.[1];
     this._hasTuyaDPCluster = !!(ep1Check?.clusters?.tuya || ep1Check?.clusters?.[CLUSTERS.TUYA_EF00] ||
       ep1Check?.clusters?.['tuya'] || ep1Check?.clusters?.['CLUSTERS.TUYA_EF00'] || ep1Check?.clusters?.manuSpecificTuya);
     if (!this._hasTuyaDPCluster && config.noIasMotion) {
       this.log('[RADAR] âšï¸ v5.8.65: Device has NO Tuya DP cluster (CLUSTERS.TUYA_EF00) but noIasMotion=true!');
-      this.log('[RADAR] âšï¸ Overriding noIasMotionâ†’false: IAS Zone is the ONLY motion source');
+      this.log('[RADAR] âšï¸ Overriding noIasMotion->false: IAS Zone is the ONLY motion source');
       config.noIasMotion = false;
       this._noIasMotionOverride = false;
       // v5.8.88: ZCL-only variant has no temp/humidity clusters either (Pete's _TZE200_3towulqd interview)
       // Override multisensor config flags to prevent orphan capabilities
       if (!config.noTemperature || !config.noHumidity) {
-        this.log('[RADAR] âšï¸ v5.8.88: ZCL-only device â†’ forcing noTemperature=true, noHumidity=true');
+        this.log('[RADAR] âšï¸ v5.8.88: ZCL-only device -> forcing noTemperature=true, noHumidity=true');
         config.noTemperature = true;
         config.noHumidity = true;
       }
@@ -831,7 +831,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       if (!this.hasCapability('measure_battery')) {
         try {
           await this.addCapability('measure_battery');
-          this.log('[RADAR] ✅ Added measure_battery');
+          this.log('[RADAR]  Added measure_battery');
         } catch (e) { /* ignore */ }
       }
 
@@ -889,7 +889,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
         }
       }, 5000);
 
-      this.log('[RADAR] ✅ Battery sensor ready (passive mode)');
+      this.log('[RADAR]  Battery sensor ready (passive mode)');
       return;
     }
 
@@ -899,7 +899,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       await super.onNodeInit({ zclNode });
     this._registerCapabilityListeners(); // rule-12a injected
       await this._setupZclClusters(zclNode);
-      this.log('[RADAR] ✅ PIR sensor ready (ZCL mode)');
+      this.log('[RADAR]  PIR sensor ready (ZCL mode)');
       return;
     }    await super.onNodeInit({ zclNode });
     await this._setupZclClusters(zclNode);    // This was missing and caused presence not to work on TZE284 devices
@@ -966,14 +966,14 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     if (hasLuxDP && !this.hasCapability('measure_luminance')) {
       try {
         await this.addCapability('measure_luminance');
-        this.log('[RADAR] ✅ Added measure_luminance (config supports it)');
+        this.log('[RADAR]  Added measure_luminance (config supports it)');
       } catch (e) { /* ignore */ }
     }
     
     if (hasDistanceDP && !this.hasCapability('measure_luminance.distance')) {
       try {
         await this.addCapability('measure_luminance.distance');
-        this.log('[RADAR] ✅ Added measure_luminance.distance (config supports it)');
+        this.log('[RADAR]  Added measure_luminance.distance (config supports it)');
       } catch (e) { /* ignore */ }
     }
     
@@ -1037,7 +1037,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       this._startPresencePolling(zclNode);
     }
 
-    this.log('[RADAR] ✅ Radar presence sensor ready (full mode)');
+    this.log('[RADAR]  Radar presence sensor ready (full mode)');
   }
 
   /**
@@ -1062,7 +1062,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       });
           } catch (e) { /* ignore */ }
         }
-        this.log('[RADAR] ✅ Passive Tuya listener configured (all events)');
+        this.log('[RADAR]  Passive Tuya listener configured (all events)');
       }
     } catch (e) { /* ignore */ }    try {
       if (zclNode?.on) {
@@ -1080,11 +1080,11 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
         occCluster.on('attr.occupancy', (v) => {
           const rawOccupied = (v & 0x01) !== 0;
           const occupied = this._applyPresenceInversion(rawOccupied);
-          this.log(`[RADAR] Occupancy: raw=${rawOccupied} â†’ ${occupied}`);
+          this.log(`[RADAR] Occupancy: raw=${rawOccupied} -> ${occupied}`);
           this.safeSetCapabilityValue('alarm_motion', occupied).catch(() => { });
           this._triggerPresenceFlows(occupied);
       });
-        this.log('[RADAR] ✅ Passive occupancy listener configured');
+        this.log('[RADAR]  Passive occupancy listener configured');
       }
     } catch (e) { /* ignore */ }
 
@@ -1098,10 +1098,10 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
           const raw = (sn & 0x03) !== 0;
           const motion = this._applyPresenceInversion(raw );
           if (permissiveConfig.noIasMotion && this._hasTuyaDPCluster !== false) {
-            this.log(`[RADAR] IAS zoneStatus: ${sn} â†’ SKIPPED (noIasMotion, has Tuya DP)`);
+            this.log(`[RADAR] IAS zoneStatus: ${sn} -> SKIPPED (noIasMotion, has Tuya DP)`);
             return;
           }
-          this.log(`[RADAR] IAS zoneStatus: ${sn} â†’ ${motion}`);
+          this.log(`[RADAR] IAS zoneStatus: ${sn} -> ${motion}`);
           this.safeSetCapabilityValue('alarm_motion', motion).catch(() => {});
           this._triggerPresenceFlows(motion);
       });
@@ -1110,15 +1110,15 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
             const s = p?.zoneStatus ?? p?.data?.[0] ?? 0;
             const motion = this._applyPresenceInversion((s & 0x03) !== 0);
             if (permissiveConfig.noIasMotion && this._hasTuyaDPCluster !== false) {
-              this.log(`[RADAR] IAS notification: ${s} â†’ SKIPPED (noIasMotion, has Tuya DP)`);
+              this.log(`[RADAR] IAS notification: ${s} -> SKIPPED (noIasMotion, has Tuya DP)`);
               return;
             }
-            this.log(`[RADAR] IAS notification: ${s} â†’ ${motion}`);
+            this.log(`[RADAR] IAS notification: ${s} -> ${motion}`);
             this.safeSetCapabilityValue('alarm_motion', motion).catch(() => {});
             this._triggerPresenceFlows(motion);
           };
         }
-        this.log('[RADAR] ✅ Passive IAS Zone listener configured');
+        this.log('[RADAR]  Passive IAS Zone listener configured');
       }
     } catch (e) { /* ignore */ }
 
@@ -1199,7 +1199,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     
     if (invertPresence ) {
       const inverted = !occupied;
-      this.log(`[RADAR] ðŸ”„ ZCL presence inversion: ${occupied} â†’ ${inverted}`);
+      this.log(`[RADAR] ðŸ”„ ZCL presence inversion: ${occupied} -> ${inverted}`);
       return inverted;
     }
     return occupied;
@@ -1207,7 +1207,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
 
   /**
    * v5.5.277: Parse Buffer data to integer value
-   * Ronny fix: data.data was Buffer [0,0,13,70] â†’ need to parse to 3398
+   * Ronny fix: data.data was Buffer [0,0,13,70] -> need to parse to 3398
    */
   _parseBufferValue(data) {
     // Already a number
@@ -1353,7 +1353,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
         else if (dpType === 2 && dpLen === 4) {value = bytes.readUInt32BE(6);} // Value
         else if (dpType === 4 && dpLen === 1) {value = bytes[6];} // Enum
         else {value = bytes[6];}
-        this.log(`[RADAR] 🔧 Parsed raw frame: DP${dp} type=${dpType} len=${dpLen} value=${value}`);
+        this.log(`[RADAR]  Parsed raw frame: DP${dp} type=${dpType} len=${dpLen} value=${value}`);
         dpId = dp;
         data = { dp, value, dpType, raw: true };
       }
@@ -1374,7 +1374,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       this._loggedStaticDps = this._loggedStaticDps || {};
       if (!this._loggedStaticDps[dpId]) {
         this._loggedStaticDps[dpId] = true;
-        this.log(`[RADAR] 📋 DP${dpId} has static mapping â†’ ${staticMapping.cap}, skipping auto-discovery`);
+        this.log(`[RADAR] 📋 DP${dpId} has static mapping -> ${staticMapping.cap}, skipping auto-discovery`);
       }
     } else {
       // v5.5.364: AUTO-DISCOVERY - Feed all DPs to learning engine for unknown devices
@@ -1385,7 +1385,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
         // Try to apply auto-discovered mapping
         const discovered = this._dpAutoDiscovery.applyDiscoveredValue(dpId, rawVal);
         if (discovered && discovered.confidence >= 70) {
-          this.log(`[AUTO-DISCOVERY] ✨ DP${dpId} â†’ ${discovered.capability} = ${discovered.value} (confidence: ${discovered.confidence}%)`);
+          this.log(`[AUTO-DISCOVERY]  DP${dpId} -> ${discovered.capability} = ${discovered.value} (confidence: ${discovered.confidence}%)`);
 
           // Apply to capability
           if (this.hasCapability(discovered.capability)) {
@@ -1440,9 +1440,9 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
           // Ignore small changes to prevent flow triggers
           return;
         }
-        this.log(`[RADAR-LUX] â˜€ï¸ DP${dpId} â†’ ${finalLux} lux (change: ${changePercent.toFixed(1)}%)`);
+        this.log(`[RADAR-LUX] â˜€ï¸ DP${dpId} -> ${finalLux} lux (change: ${changePercent.toFixed(1)}%)`);
       } else {
-        this.log(`[RADAR-LUX] â˜€ï¸ DP${dpId} â†’ ${finalLux} lux`);
+        this.log(`[RADAR-LUX] â˜€ï¸ DP${dpId} -> ${finalLux} lux`);
       }
       
       this.safeSetCapabilityValue('measure_luminance', parseFloat(finalLux)).catch(() => { });
@@ -1461,7 +1461,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       const { smartParse } = require('../../lib/managers/SmartDivisorManager');
       const temp = smartParse(rawTemp, dpId, { manufacturerName: this.getSetting('zb_manufacturer_name') || '', capability: 'measure_temperature', deviceId: this.getData()?.id || '', defaultDivisor: 10 });
       if (temp >= -40 && temp <= 80) {
-        this.log(`[RADAR] ðŸŒ¡ï¸ DP${dpId} â†’ temperature = ${temp}Â°C (raw: ${rawTemp}, Ã·${divisor})`);
+        this.log(`[RADAR] ðŸŒ¡ï¸ DP${dpId} -> temperature = ${temp}Â°C (raw: ${rawTemp}, Ã·${divisor})`);
         this.safeSetCapabilityValue('measure_temperature', temp).catch(() => { });
       } else {
         this.log(`[RADAR] âšï¸ DP${dpId} temperature out of range: ${temp}Â°C (raw: ${rawTemp})`);
@@ -1473,7 +1473,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       const rawHumid = this._parseBufferValue(data.value || data.data );
       const divisor = dpMap[dpId].divisor || 1;
       const multiplier = dpMap[dpId].multiplier || 1;
-      // v5.5.987: Peter #1265 - Support multiplier for humidity (9% â†’ 90%)
+      // v5.5.987: Peter #1265 - Support multiplier for humidity (9% -> 90%)
       // v5.11.26: Auto-fix out-of-range - some variants report Ã—10 (700=70%)
       // while others report Ã·10 (9=90%), so multiplier:10 doesn't work for all
       let humidity = safeDivide(Math.round(rawHumid, divisor), multiplier);
@@ -1481,7 +1481,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
         humidity = Math.round(rawHumid);
       }
       if (humidity >= 0 && humidity <= 100) {
-        this.log(`[RADAR] ðŸ’§ DP${dpId} â†’ humidity = ${humidity}% (raw: ${rawHumid}, Ã·${divisor}, Ã—${multiplier})`);
+        this.log(`[RADAR] ðŸ’§ DP${dpId} -> humidity = ${humidity}% (raw: ${rawHumid}, Ã·${divisor}, Ã—${multiplier})`);
         this.safeSetCapabilityValue('measure_humidity', humidity).catch(() => { });
       } else {
         this.log(`[RADAR] âšï¸ DP${dpId} humidity out of range: ${humidity}% (raw: ${rawHumid})`);
@@ -1505,7 +1505,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
         
         // Only update if: significant change (>5%) OR enough time passed OR first report
         if (batteryChange >= 5 || (now - lastBatteryUpdate) > throttleMs || lastBatteryUpdate === 0) {
-          this.log(`[RADAR] ðŸ”‹ DP${dpId} â†’ battery = ${battery}% (change: ${batteryChange}%)`);
+          this.log(`[RADAR] ðŸ”‹ DP${dpId} -> battery = ${battery}% (change: ${batteryChange}%)`);
           this.safeSetCapabilityValue('measure_battery', battery).catch(() => { });
           this._lastBatteryUpdate = now;
         } else {
@@ -1735,7 +1735,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     } else {
       // Value changed - reset stuck detection
       if (this._motionThrottle.stuckMode) {
-        this.log(`[RADAR] ✅ STUCK MODE CLEARED: value changed from ${this._motionThrottle.lastValue} to ${presence}`);
+        this.log(`[RADAR]  STUCK MODE CLEARED: value changed from ${this._motionThrottle.lastValue} to ${presence}`);
       }
       this._motionThrottle.consecutiveSame = 0;
       this._motionThrottle.stuckMode = false;
@@ -1795,7 +1795,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
             this.safeSetCapabilityValue('measure_battery', battery).catch(() => { });
           }
         });
-        this.log('[RADAR] ✅ PowerConfiguration cluster configured (5min throttle + 5% minChange)');
+        this.log('[RADAR]  PowerConfiguration cluster configured (5min throttle + 5% minChange)');
       }
     } catch (e) { /* ignore */ }
 
@@ -1843,7 +1843,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
           lastLuxValue = roundedLux;
           this.safeSetCapabilityValue('measure_luminance', roundedLux).catch(() => { });
       });
-        this.log('[RADAR] ✅ Illuminance cluster configured (30s throttle + 15% minChange)');
+        this.log('[RADAR]  Illuminance cluster configured (30s throttle + 15% minChange)');
       }
     } catch (e) { /* ignore */ }
 
@@ -1860,7 +1860,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
             this.safeSetCapabilityValue('measure_temperature', temp).catch(() => { });
           }
         });
-        this.log('[RADAR] ✅ Temperature cluster (0x0402) configured - ZG-204ZV fix');
+        this.log('[RADAR]  Temperature cluster (0x0402) configured - ZG-204ZV fix');
       }
     } catch (e) { /* ignore */ }
 
@@ -1876,7 +1876,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
             this.safeSetCapabilityValue('measure_humidity', humidity).catch(() => { });
           }
         });
-        this.log('[RADAR] ✅ Humidity cluster (0x0405) configured - ZG-204ZV fix');
+        this.log('[RADAR]  Humidity cluster (0x0405) configured - ZG-204ZV fix');
       }
     } catch (e) { /* ignore */ }
 
@@ -1886,11 +1886,11 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
         occCluster.on('attr.occupancy', (v) => {
           const rawOccupied = (v & 0x01) !== 0;
           const occupied = this._applyPresenceInversion(rawOccupied);
-          this.log(`[RADAR] Occupancy: raw=${rawOccupied} â†’ ${occupied}`);
+          this.log(`[RADAR] Occupancy: raw=${rawOccupied} -> ${occupied}`);
           this.safeSetCapabilityValue('alarm_motion', occupied).catch(() => { });
           this._triggerPresenceFlows(occupied);
       });
-        this.log('[RADAR] ✅ Occupancy cluster configured (with inversion support)');
+        this.log('[RADAR]  Occupancy cluster configured (with inversion support)');
       }
     } catch (e) { /* ignore */ }
 
@@ -1933,7 +1933,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
         const attrs = await iasZone.readAttributes(['zoneState', 'zoneType', 'zoneStatus', 'zoneId']);
         this.log(`[RADAR] IAS Zone current: zoneState=${attrs?.zoneState}, zoneType=${attrs?.zoneType}, zoneId = ${attrs?.zoneId}`);currentState = attrs?.zoneState;currentZoneId = attrs?.zoneId;// If already enrolled (zoneState=1 and zoneId != 255), just setup listeners
         if ((currentState === 1 || currentState === 'enrolled') && currentZoneId !== 255) {
-          this.log('[RADAR] ✅ IAS Zone already enrolled - setting up listeners only');
+          this.log('[RADAR]  IAS Zone already enrolled - setting up listeners only');
           await this._setupIASZoneListeners(iasZone);
           return;
         }
@@ -1963,7 +1963,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       for (let attempt = 1; attempt <= 3; attempt++) {
         try {
           await iasZone.writeAttributes({ iasCieAddress: homeyIeee });
-          this.log(`[RADAR] ✅ Wrote IAS CIE address (attempt ${attempt})`);
+          this.log(`[RADAR]  Wrote IAS CIE address (attempt ${attempt})`);
           break;
         } catch (e) {
           this.log(`[RADAR] âšï¸ Could not write IAS CIE (attempt ${attempt}): ${e.message}`);
@@ -1980,7 +1980,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
         try {
           if (iasZone.zoneEnrollResponse) {
             await iasZone.zoneEnrollResponse({ enrollResponseCode: 0, zoneId: 1 });
-            this.log(`[RADAR] ✅ IAS Zone enrollment response sent (attempt ${attempt})`);
+            this.log(`[RADAR]  IAS Zone enrollment response sent (attempt ${attempt})`);
             break;
           }
         } catch (e) {
@@ -1994,7 +1994,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       try {
         const verifyAttrs = await iasZone.readAttributes(['zoneState', 'zoneId']);
         this.log(`[RADAR] ðŸ” Verify enrollment: zoneState=${verifyAttrs?.zoneState}, zoneId = ${verifyAttrs?.zoneId}`);if (verifyAttrs?.zoneState === 1 || verifyAttrs?.zoneState === 'enrolled') {
-          this.log('[RADAR] ✅ IAS Zone enrollment VERIFIED');} else {
+          this.log('[RADAR]  IAS Zone enrollment VERIFIED');} else {
           this.log('[RADAR] âšï¸ IAS Zone enrollment NOT verified - will retry on next init' );
         }
       } catch (e) {
@@ -2007,7 +2007,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       // Step 8: Start periodic enrollment check for devices that lose enrollment
       this._startEnrollmentCheck();
 
-      this.log('[RADAR] ✅ IAS Zone enrollment complete');
+      this.log('[RADAR]  IAS Zone enrollment complete');
     } catch (error) {
       this.log(`[RADAR] âŒ IAS Zone enrollment failed: ${error.message}`);
     }
@@ -2023,7 +2023,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
         try {
           if (iasZone.zoneEnrollResponse) {
             await iasZone.zoneEnrollResponse({ enrollResponseCode: 0, zoneId: 1 });
-            this.log('[RADAR] ✅ Sent zoneEnrollResponse (success, zoneId=1)');
+            this.log('[RADAR]  Sent zoneEnrollResponse (success, zoneId=1)');
           }
         } catch (err) {
           this.log(`[RADAR] âšï¸ zoneEnrollResponse failed: ${err.message}`);
@@ -2035,7 +2035,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       if (iasZone.on) {
         iasZone.on('zoneEnrollRequest', enrollHandler);
       }
-      this.log('[RADAR] ✅ zoneEnrollRequest handler configured');
+      this.log('[RADAR]  zoneEnrollRequest handler configured');
     } catch (e) {
       this.log(`[RADAR] âšï¸ Could not setup enrollRequest handler: ${e.message}`);
     }
@@ -2107,7 +2107,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       }
     });
 
-    this.log('[RADAR] ✅ IAS Zone status listeners configured');
+    this.log('[RADAR]  IAS Zone status listeners configured');
   }
 
   /**
@@ -2123,7 +2123,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       // Try to enroll again
       if (iasZone.zoneEnrollResponse) {
         await iasZone.zoneEnrollResponse({ enrollResponseCode: 0, zoneId: 1 });
-        this.log('[RADAR] ✅ Re-enrollment response sent');
+        this.log('[RADAR]  Re-enrollment response sent');
       }
     } catch (e) {
       this.log(`[RADAR] âšï¸ Re-enrollment failed: ${e.message}`);
@@ -2155,7 +2155,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       }
     },5 * 60 * 1000); // 5 minutes
 
-    this.log('[RADAR] ✅ Periodic enrollment check started');
+    this.log('[RADAR]  Periodic enrollment check started');
   }
 
   /**
@@ -2178,7 +2178,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       if (basicCluster && typeof basicCluster.readAttributes === 'function') {
         try {
           await basicCluster.readAttributes(['manufacturerName', 'modelId', 'powerSource']);
-          this.log('[RADAR] ✅ Basic cluster read (magic packet step 1)');
+          this.log('[RADAR]  Basic cluster read (magic packet step 1)');
         } catch (e) {
           this.log('[RADAR] âšï¸ Basic cluster read failed:', e.message);
         }
@@ -2191,7 +2191,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
         if (typeof tuyaCluster.mcuVersionRequest === 'function') {
           try {
             await tuyaCluster.mcuVersionRequest({});
-            this.log('[RADAR] ✅ MCU Version Request sent');
+            this.log('[RADAR]  MCU Version Request sent');
           } catch (e) { /* ignore */ }
         }
 
@@ -2199,14 +2199,14 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
         if (typeof tuyaCluster.dataQuery === 'function') {
           try {
             await tuyaCluster.dataQuery({});
-            this.log('[RADAR] ✅ Data Query sent');
+            this.log('[RADAR]  Data Query sent');
           } catch (e) { /* ignore */ }
         }
       } else {
         this.log('[RADAR] â„¹ï¸ No Tuya cluster found - device may use IAS Zone only');
       }
 
-      this.log('[RADAR] ✅ Magic packet sequence complete' );
+      this.log('[RADAR]  Magic packet sequence complete' );
     } catch (e) {
       this.log('[RADAR] âšï¸ Magic packet error:', e.message);
     }
@@ -2221,7 +2221,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     const ep1 = zclNode?.endpoints?.[1];
     if (!ep1) {return;}
 
-    this.log('[RADAR] 🔧 Setting up Tuya DP listeners for mains-powered sensor...' );
+    this.log('[RADAR]  Setting up Tuya DP listeners for mains-powered sensor...' );
 
     // Try multiple cluster access methods
     const tuyaCluster = ep1.clusters?.tuya ||
@@ -2231,7 +2231,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       ep1.clusters?.manuSpecificTuya;
 
     if (tuyaCluster) {
-      this.log('[RADAR] ✅ Found Tuya cluster');
+      this.log('[RADAR]  Found Tuya cluster');
 
       // Listen for all possible event types
       const events = ['response', 'reporting', 'datapoint', 'report', 'data', 'set'];
@@ -2242,7 +2242,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
               this.log(`[RADAR] 📡 Tuya ${event} event received`);
               this._handleTuyaResponse(data);
       });
-            this.log(`[RADAR] ✅ Listening for Tuya '${event}' events`);
+            this.log(`[RADAR]  Listening for Tuya '${event}' events`);
           }
         } catch (e) { /* ignore */ }
       }
@@ -2264,7 +2264,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
         const { Cluster } = require('zigbee-clusters');
         const TuyaCluster = Cluster.getCluster(CLUSTERS.TUYA_EF00);
         if (TuyaCluster && ep1.bind) {
-          this.log('[RADAR] 🔧 Attempting direct EF00 cluster bind' );
+          this.log('[RADAR]  Attempting direct EF00 cluster bind' );
         }
       } catch (e) { /* ignore */ }
     }
@@ -2281,7 +2281,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       }
     } catch (e) { /* ignore */ }
 
-    this.log('[RADAR] ✅ Tuya DP listeners configured for mains-powered sensor');
+    this.log('[RADAR]  Tuya DP listeners configured for mains-powered sensor');
   }
 
   /**
@@ -2513,7 +2513,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     await super.onSettings({ oldSettings, newSettings, changedKeys }).catch(e => this.error('[RADAR] super.onSettings error:', e.message));
 
     const config = this._getSensorConfig();
-    const dpMap = config?.dpMap || {};// Build reverse map: setting_name â†’ { dp, divisor, type }
+    const dpMap = config?.dpMap || {};// Build reverse map: setting_name -> { dp, divisor, type }
     const settingToDp = {};
     for (const [dpStr, info] of Object.entries(dpMap)) {
       if (info.setting) {
@@ -2536,7 +2536,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
           if (mapping.min !== undefined) {val = Math.max(mapping.min, val);}
           if (mapping.max !== undefined) {val = Math.min(mapping.max, val);}
           await this.tuyaEF00Manager.sendDP(mapping.dp, val, 'value');
-          this.log(`[RADAR] [SETTINGS] ✅ ${key}=${val} â†’ DP${mapping.dp}`);
+          this.log(`[RADAR] [SETTINGS]  ${key}=${val} -> DP${mapping.dp}`);
         } else if (settingToDp[key] && !this.tuyaEF00Manager) {
           this.log(`[RADAR] [SETTINGS] âšï¸ ${key}: Tuya manager not available (battery device may be sleeping)`);
         }

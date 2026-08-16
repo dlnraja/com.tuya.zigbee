@@ -1,16 +1,12 @@
 {
   "class": "socket",
   "capabilities": [
-    "onoff",
     "measure_power",
     "meter_power",
     "measure_voltage",
     "measure_current",
     "button.toggle",
-    "button.identify",
-    "dim",
-    "measure_pm25",
-    "button.1"
+    "button.identify"
   ],
   "zigbee": {
     "productId": [
@@ -31,8 +27,7 @@
       }
     },
     "manufacturerName": [
-      "_TZ3000_dummy1781425895945",
-      "_tz3000_dummy1781425895945"
+      "_DEPRECATED_AIR_PURIFIER_HYBRID_DO_NOT_PAIR"
     ]
   },
   "images": {
@@ -745,5 +740,6 @@
   "version": "1.0.0",
   "ui": {
     "quickAction": "onoff"
-  }
+  },
+  "deprecated": true
 }

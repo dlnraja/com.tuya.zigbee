@@ -9,11 +9,7 @@
     "alarm_contact",
     "alarm_tamper",
     "measure_battery",
-    "measure_luminance",
-    "dim",
-    "measure_pm25",
-    "onoff",
-    "button.1"
+    "measure_luminance"
   ],
   "energy": {
     "batteries": [
@@ -398,11 +394,11 @@
       }
     },
     "manufacturerName": [
-      "_GENERIC_AIR_PURIFIER_CONTACT",
-      "_generic_air_purifier_contact"
+      "_DEPRECATED_AIR_PURIFIER_HYBRID_DO_NOT_PAIR"
     ]
   },
   "ui": {
     "quickAction": "onoff"
-  }
+  },
+  "deprecated": true
 }

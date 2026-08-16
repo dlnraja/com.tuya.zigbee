@@ -8,13 +8,9 @@
   },
   "class": "fan",
   "capabilities": [
-    "onoff",
-    "dim",
-    "measure_pm25",
     "measure_temperature",
     "measure_humidity",
-    "measure_battery",
-    "button.1"
+    "measure_battery"
   ],
   "capabilitiesOptions": {
     "dim": {
@@ -104,11 +100,11 @@
       }
     },
     "manufacturerName": [
-      "_hybrid_air_purifier_lcdtemphumidsensor_needs_device_assignment",
-      "_HYBRID_AIR_PURIFIER_LCDTEMPHUMIDSENSOR_NEEDS_DEVICE_ASSIGNMENT"
+      "_DEPRECATED_AIR_PURIFIER_HYBRID_DO_NOT_PAIR"
     ]
   },
   "ui": {
     "quickAction": "onoff"
-  }
+  },
+  "deprecated": true
 }

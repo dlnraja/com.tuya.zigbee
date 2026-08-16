@@ -8,11 +8,7 @@
   },
   "class": "light",
   "capabilities": [
-    "dim",
-    "onoff",
-    "measure_power",
-    "measure_pm25",
-    "button.1"
+    "measure_power"
   ],
   "energy": {
     "mains": true
@@ -365,8 +361,7 @@
       }
     },
     "manufacturerName": [
-      "_hybrid_air_purifier_dimmer_needs_device_assignment",
-      "_HYBRID_AIR_PURIFIER_DIMMER_NEEDS_DEVICE_ASSIGNMENT"
+      "_DEPRECATED_AIR_PURIFIER_HYBRID_DO_NOT_PAIR"
     ]
   },
   "metadata": {
@@ -377,5 +372,6 @@
   },
   "ui": {
     "quickAction": "onoff"
-  }
+  },
+  "deprecated": true
 }

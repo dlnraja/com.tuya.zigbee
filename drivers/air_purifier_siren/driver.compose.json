@@ -9,15 +9,11 @@
   },
   "class": "other",
   "capabilities": [
-    "onoff",
     "measure_temperature",
     "measure_humidity",
     "alarm_siren",
     "alarm_motion",
-    "alarm_generic",
-    "dim",
-    "measure_pm25",
-    "button.1"
+    "alarm_generic"
   ],
   "capabilitiesOptions": {
     "onoff": {
@@ -93,11 +89,11 @@
       }
     },
     "manufacturerName": [
-      "_hybrid_air_purifier_siren_needs_device_assignment",
-      "_HYBRID_AIR_PURIFIER_SIREN_NEEDS_DEVICE_ASSIGNMENT"
+      "_DEPRECATED_AIR_PURIFIER_HYBRID_DO_NOT_PAIR"
     ]
   },
   "ui": {
     "quickAction": "onoff"
-  }
+  },
+  "deprecated": true
 }

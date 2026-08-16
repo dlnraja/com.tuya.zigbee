@@ -223,7 +223,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
       for (const pattern of profile.patterns) {
         if (containsCI(mfr, pattern)) {
           if (!this._profileMatchLogged) {
-            this.log(`[MOTION-DP] 🎯 Matched profile: ${profileName} (pattern: ${pattern})`);
+            this.log(`[MOTION-DP]  Matched profile: ${profileName} (pattern: ${pattern})`);
             this._profileMatchLogged = true;
           }
           return { name: profileName, ...profile };
@@ -241,7 +241,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
         || this.getData()?.modelId || '';
       if (modelId === 'TS0601' || modelId.startsWith('TS06')) {
         if (!this._variantProfileLogged) {
-          this.log(`[MOTION-DP] ⚠️ Blank manufacturer name with modelId=${modelId} → using PERMISSIVE_VARIANT`);
+          this.log(`[MOTION-DP]  Blank manufacturer name with modelId=${modelId} → using PERMISSIVE_VARIANT`);
           this._variantProfileLogged = true;
         }
         return { 
@@ -258,7 +258,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
 
     // Default profile
     if (!this._defaultProfileLogged) {
-      this.log('[MOTION-DP] ℹ️ Using default DP profile');
+      this.log('[MOTION-DP] ℹ Using default DP profile');
       this._defaultProfileLogged = true;
     }
     return { name: 'DEFAULT', dp4: 'measure_battery', dp5: 'measure_temperature', 
@@ -288,9 +288,9 @@ class MotionSensorDevice extends UnifiedSensorBase {
     if (!this.hasCapability(capabilityName)) {
       try {
         await this.addCapability(capabilityName);
-        this.log(`[MOTION-DYNAMIC] ✅ Added ${capabilityName} from DP${dpId} (variant device)`);
+        this.log(`[MOTION-DYNAMIC]  Added ${capabilityName} from DP${dpId} (variant device)`);
       } catch (err) {
-        this.log(`[MOTION-DYNAMIC] ⚠️ Failed to add ${capabilityName}:`, err.message);
+        this.log(`[MOTION-DYNAMIC]  Failed to add ${capabilityName}:`, err.message);
       }
     }
   }
@@ -512,7 +512,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
               // v5.5.793: Apply calibration offset if available
               const offset = this.getSetting?.('temp_offset') || 0;
               temp = Math.round((temp + offset) * 10) / 10;
-              this.log(`[ZCL] 🌡️ Temperature: ${temp}°C (raw: ${data.measuredValue})`);
+              this.log(`[ZCL] 🌡 Temperature: ${temp}°C (raw: ${data.measuredValue})`);
               this._registerZigbeeHit?.();
               this._lastTempSource = 'ZCL';
               // v5.8.7: Permissive - auto-add capability from ZCL data
@@ -520,7 +520,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
                 {this.addCapability('measure_temperature').catch(() => {});}
               await this.safeSetCapabilityValue('measure_temperature', parseFloat(temp)).catch(() => { });
             } else {
-              this.log(`[ZCL] ⚠️ Temperature out of range: ${temp}°C (raw: ${data.measuredValue})`);
+              this.log(`[ZCL]  Temperature out of range: ${temp}°C (raw: ${data.measuredValue})`);
             }
           }
         }
@@ -548,7 +548,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
                 {this.addCapability('measure_humidity').catch(() => {});}
               await this.safeSetCapabilityValue('measure_humidity', parseFloat(hum)).catch(() => { });
             } else {
-              this.log(`[ZCL] ⚠️ Humidity out of range: ${hum}% (raw: ${data.measuredValue})`);
+              this.log(`[ZCL]  Humidity out of range: ${hum}% (raw: ${data.measuredValue})`);
             }
           }
         }
@@ -561,7 +561,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
             const lux = Math.round(Math.pow(10, (data.measuredValue - 1) / 10000));
             // v5.5.793: Validate lux range
             if (lux >= VALIDATION.LUX_MIN && lux <= VALIDATION.LUX_MAX) {
-              this.log(`[ZCL] 💡 Luminance: ${lux} lux`);
+              this.log(`[ZCL]  Luminance: ${lux} lux`);
               this._registerZigbeeHit?.();
               // v5.8.7: Permissive - auto-add capability from ZCL data
               if (!this.hasCapability('measure_luminance'))
@@ -571,7 +571,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
               // v5.5.317: Feed lux to motion inference engine
               this._handleLuxForMotionInference(lux);
             } else {
-              this.log(`[ZCL] ⚠️ Illuminance out of range: ${lux} lux`);
+              this.log(`[ZCL]  Illuminance out of range: ${lux} lux`);
             }
           }
         }
@@ -667,7 +667,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
       // v5.5.228: Remove alarm_contact if wrongly added (motion sensors use alarm_motion only)
       if (this.hasCapability('alarm_contact')) {
       await this.removeCapability('alarm_contact').catch(() => { });
-      this.log('[MOTION] ⚠️ Removed incorrect alarm_contact capability');
+      this.log('[MOTION]  Removed incorrect alarm_contact capability');
       }
       // v5.5.892: FORUM FIX (Peter_van_Werkhoven #1211)
       // Remove "distance" capability that was incorrectly showing on ZG-204ZV
@@ -676,7 +676,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
       for (const cap of orphanCaps) {
       if (this.hasCapability(cap)) {
       await this.removeCapability(cap).catch(() => { });
-      this.log(`[MOTION] ⚠️ Removed orphan capability: ${cap}`);
+      this.log(`[MOTION]  Removed orphan capability: ${cap}`);
       }
       }
       // v5.5.113: Detect available clusters BEFORE super.onNodeInit
@@ -692,7 +692,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
       const iasManager = new IASZoneManager(this);
       await iasManager.enrollIASZone();
       } catch (e) {
-      this.log(`[MOTION] ⚠️ IAS enrollment error (non-critical): ${e.message}`);
+      this.log(`[MOTION]  IAS enrollment error (non-critical): ${e.message}`);
       }
       // v5.5.299: Initialize sleepy device state tracking
       this._isDeviceAwake = false;
@@ -736,10 +736,10 @@ class MotionSensorDevice extends UnifiedSensorBase {
       this.log('[MOTION] 📡 ZCL-only variant: non-blocking cluster binding initiated');
       }
       }
-      this.log('[MOTION] v5.8.8 ✅ Motion sensor ready');
+      this.log('[MOTION] v5.8.8  Motion sensor ready');
       this.log('[MOTION] Manufacturer:', this.getSetting('zb_manufacturer_name') || 'unknown');
       this.log(`[MOTION] Clusters: temp=${this._hasTemperatureCluster}, hum=${this._hasHumidityCluster}, lux=${this._hasIlluminanceCluster}, batt=${this._hasPowerConfigCluster}`);
-      if (this._isZclOnlyVariant) {this.log('[MOTION] ⚡ ZCL-only variant active');}
+      if (this._isZclOnlyVariant) {this.log('[MOTION]  ZCL-only variant active');}
     }, 'onNodeInit');
   }
 
@@ -829,17 +829,17 @@ class MotionSensorDevice extends UnifiedSensorBase {
         // Fall through to normal cluster detection below
       }
     } else if (isPirOnly) {
-      this.log(`[MOTION-CLUSTERS] ⚠️ Confirmed PIR-only device: ${manufacturerName}`);
+      this.log(`[MOTION-CLUSTERS]  Confirmed PIR-only device: ${manufacturerName}`);
       this._hasTemperatureCluster = false;
       this._hasHumidityCluster = false;
       // Only remove if NOT a variant
       if (this.hasCapability('measure_temperature')) {
         await this.removeCapability('measure_temperature').catch(() => { });
-        this.log('[MOTION-CLUSTERS] ✅ Removed measure_temperature (confirmed PIR-only)');
+        this.log('[MOTION-CLUSTERS]  Removed measure_temperature (confirmed PIR-only)');
       }
       if (this.hasCapability('measure_humidity')) {
         await this.removeCapability('measure_humidity').catch(() => { });
-        this.log('[MOTION-CLUSTERS] ✅ Removed measure_humidity (confirmed PIR-only)');
+        this.log('[MOTION-CLUSTERS]  Removed measure_humidity (confirmed PIR-only)');
       }
       return;
     }
@@ -888,14 +888,14 @@ class MotionSensorDevice extends UnifiedSensorBase {
     if (this._hasTemperatureCluster) {
       if (!this.hasCapability('measure_temperature')) {
         await this.addCapability('measure_temperature').catch(() => { });
-        this.log('[MOTION-CLUSTERS] ✅ Added measure_temperature (cluster detected)');
+        this.log('[MOTION-CLUSTERS]  Added measure_temperature (cluster detected)');
       }
     }
 
     if (this._hasHumidityCluster) {
       if (!this.hasCapability('measure_humidity')) {
         await this.addCapability('measure_humidity').catch(() => { });
-        this.log('[MOTION-CLUSTERS] ✅ Added measure_humidity (cluster detected)');
+        this.log('[MOTION-CLUSTERS]  Added measure_humidity (cluster detected)');
       }
     }
 
@@ -903,7 +903,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
     if (this._hasIlluminanceCluster) {
       if (!this.hasCapability('measure_luminance')) {
         await this.addCapability('measure_luminance').catch(() => { });
-        this.log('[MOTION-CLUSTERS] ✅ Added measure_luminance (illuminanceMeasurement cluster detected)');
+        this.log('[MOTION-CLUSTERS]  Added measure_luminance (illuminanceMeasurement cluster detected)');
       }
     }
 
@@ -911,7 +911,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
     if (this._hasPowerConfigCluster) {
       if (!this.hasCapability('measure_battery')) {
         await this.addCapability('measure_battery').catch(() => { });
-        this.log('[MOTION-CLUSTERS] ✅ Added measure_battery (powerConfiguration cluster detected)');
+        this.log('[MOTION-CLUSTERS]  Added measure_battery (powerConfiguration cluster detected)');
       }
     }
 
@@ -920,11 +920,11 @@ class MotionSensorDevice extends UnifiedSensorBase {
     if (!this._isVariantDevice) {
       if (!this._hasTemperatureCluster && this.hasCapability('measure_temperature')) {
         await this.removeCapability('measure_temperature').catch(() => {});
-        this.log('[MOTION-CLUSTERS] 🗑️ Removed stale measure_temperature (no cluster, not variant)');
+        this.log('[MOTION-CLUSTERS]  Removed stale measure_temperature (no cluster, not variant)');
       }
       if (!this._hasHumidityCluster && this.hasCapability('measure_humidity')) {
         await this.removeCapability('measure_humidity').catch(() => {});
-        this.log('[MOTION-CLUSTERS] 🗑️ Removed stale measure_humidity (no cluster, not variant)');
+        this.log('[MOTION-CLUSTERS]  Removed stale measure_humidity (no cluster, not variant)');
       }
     }
 
@@ -933,7 +933,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
     this.log(`[MOTION-CLUSTERS] Illuminance ZCL: ${this._hasIlluminanceCluster}`);
     this.log(`[MOTION-CLUSTERS] PowerConfig ZCL: ${this._hasPowerConfigCluster}`);
     if (this._isZclOnlyVariant) {
-      this.log('[MOTION-CLUSTERS] ⚡ ZCL-only variant (no Tuya DP) - using ZCL clusters for all data');
+      this.log('[MOTION-CLUSTERS]  ZCL-only variant (no Tuya DP) - using ZCL clusters for all data');
     }
   }
 
@@ -953,19 +953,19 @@ class MotionSensorDevice extends UnifiedSensorBase {
       // Add all capabilities that might be present (device will populate from DPs)
       if (!this.hasCapability('measure_temperature')) {
         await this.addCapability('measure_temperature').catch(() => {});
-        this.log('[MOTION-DP] ✅ Added measure_temperature (permissive)');
+        this.log('[MOTION-DP]  Added measure_temperature (permissive)');
       }
       if (!this.hasCapability('measure_humidity')) {
         await this.addCapability('measure_humidity').catch(() => {});
-        this.log('[MOTION-DP] ✅ Added measure_humidity (permissive)');
+        this.log('[MOTION-DP]  Added measure_humidity (permissive)');
       }
       if (!this.hasCapability('measure_luminance')) {
         await this.addCapability('measure_luminance').catch(() => {});
-        this.log('[MOTION-DP] ✅ Added measure_luminance (permissive)');
+        this.log('[MOTION-DP]  Added measure_luminance (permissive)');
       }
       if (!this.hasCapability('measure_battery')) {
         await this.addCapability('measure_battery').catch(() => {});
-        this.log('[MOTION-DP] ✅ Added measure_battery (permissive)');
+        this.log('[MOTION-DP]  Added measure_battery (permissive)');
       }
 
       // v5.8.32: Delayed cleanup - remove temp/humidity if no DP data received in 5 min
@@ -977,18 +977,18 @@ class MotionSensorDevice extends UnifiedSensorBase {
             const val = this.getCapabilityValue('measure_temperature');
             if (val === 0 || val === null) {
               await this.removeCapability('measure_temperature').catch(() => {});
-              this.log('[MOTION-DP] 🗑️ Permissive cleanup: removed measure_temperature (no DP in 5min)');
+              this.log('[MOTION-DP]  Permissive cleanup: removed measure_temperature (no DP in 5min)');
             }
           }
           if (!this._hasReceivedHumidityDP && this.hasCapability('measure_humidity')) {
             const val = this.getCapabilityValue('measure_humidity');
             if (val === 0 || val === null || val === 10) {
               await this.removeCapability('measure_humidity').catch(() => {});
-              this.log('[MOTION-DP] 🗑️ Permissive cleanup: removed measure_humidity (no DP in 5min)');
+              this.log('[MOTION-DP]  Permissive cleanup: removed measure_humidity (no DP in 5min)');
             }
           }
         } catch (e) {
-          this.log('[MOTION-DP] ⚠️ Permissive cleanup error:', e.message);
+          this.log('[MOTION-DP]  Permissive cleanup error:', e.message);
         }
       }, 5 * 60 * 1000);
 
@@ -1003,49 +1003,49 @@ class MotionSensorDevice extends UnifiedSensorBase {
       // Ensure battery is present (all variants have battery)
       if (!this.hasCapability('measure_battery')) {
         await this.addCapability('measure_battery').catch(() => {});
-        this.log('[MOTION-DP] ✅ Added measure_battery (universal)');
+        this.log('[MOTION-DP]  Added measure_battery (universal)');
       }
       return;
     }
     
     // v5.5.925: Only remove for CONFIRMED PIR-only (non-variant) devices
     if (profile.isPirOnly && profile.name === 'ZG204ZL_PIR_ONLY' && !this._isVariantDevice) {
-      this.log('[MOTION-DP] 🔧 Confirmed PIR-only device - checking capabilities');
+      this.log('[MOTION-DP]  Confirmed PIR-only device - checking capabilities');
       // Even for PIR-only, don't remove if device has reported these DPs
       if (!this._hasReceivedTempDP) {
         if (this.hasCapability('measure_temperature')) {
           await this.removeCapability('measure_temperature').catch(() => {});
-          this.log('[MOTION-DP] ❌ Removed measure_temperature (no DP received)');
+          this.log('[MOTION-DP]  Removed measure_temperature (no DP received)');
         }
       }
       if (!this._hasReceivedHumidityDP) {
         if (this.hasCapability('measure_humidity')) {
           await this.removeCapability('measure_humidity').catch(() => {});
-          this.log('[MOTION-DP] ❌ Removed measure_humidity (no DP received)');
+          this.log('[MOTION-DP]  Removed measure_humidity (no DP received)');
         }
       }
       if (!this.hasCapability('measure_battery')) {
         await this.addCapability('measure_battery').catch(() => {});
-        this.log('[MOTION-DP] ✅ Added measure_battery (Tuya DP4)');
+        this.log('[MOTION-DP]  Added measure_battery (Tuya DP4)');
       }
       return;
     }
 
     // FANTEM/IMMAX profiles: DP5=temp, DP6=humidity, DP4=battery
     if (profile.name === 'FANTEM' || profile.name === 'IMMAX') {
-      this.log(`[MOTION-DP] 🌡️ ${profile.name} detected - adding Tuya DP capabilities`);
+      this.log(`[MOTION-DP] 🌡 ${profile.name} detected - adding Tuya DP capabilities`);
       
       if (!this.hasCapability('measure_temperature')) {
         await this.addCapability('measure_temperature').catch(() => {});
-        this.log('[MOTION-DP] ✅ Added measure_temperature (Tuya DP5)');
+        this.log('[MOTION-DP]  Added measure_temperature (Tuya DP5)');
       }
       if (!this.hasCapability('measure_humidity')) {
         await this.addCapability('measure_humidity').catch(() => {});
-        this.log('[MOTION-DP] ✅ Added measure_humidity (Tuya DP6)');
+        this.log('[MOTION-DP]  Added measure_humidity (Tuya DP6)');
       }
       if (!this.hasCapability('measure_battery')) {
         await this.addCapability('measure_battery').catch(() => {});
-        this.log('[MOTION-DP] ✅ Added measure_battery (Tuya DP4)');
+        this.log('[MOTION-DP]  Added measure_battery (Tuya DP4)');
       }
     }
   }
@@ -1074,7 +1074,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
             enrollResponseCode: 0, // Success
             zoneId: 23
           });
-          this.log('[MOTION-IAS] ✅ Zone Enroll Response sent (device-initiated)');
+          this.log('[MOTION-IAS]  Zone Enroll Response sent (device-initiated)');
         } catch (err) {
           this.log('[MOTION-IAS] Zone enroll response error:', err.message);
         }
@@ -1086,7 +1086,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
         const homeyIeeeAddress = this.homey.zigbee?.getNetwork?.()?.ieeeAddress;
         if (homeyIeeeAddress) {
           await iasCluster.writeAttributes({ iasCieAddress: homeyIeeeAddress });
-          this.log('[MOTION-IAS] ✅ CIE address written:', homeyIeeeAddress);
+          this.log('[MOTION-IAS]  CIE address written:', homeyIeeeAddress);
         }
       })(), { name: 'writeCieAddress' });
 
@@ -1159,10 +1159,10 @@ class MotionSensorDevice extends UnifiedSensorBase {
           enrollResponseCode: 0,
           zoneId: 23
         });
-        this.log('[MOTION-IAS] ✅ Zone Enroll Response sent');
+        this.log('[MOTION-IAS]  Zone Enroll Response sent');
       })(), { name: 'zoneEnrollResponse' });
 
-      this.log('[MOTION-IAS] ✅ Motion detection via IAS Zone configured');
+      this.log('[MOTION-IAS]  Motion detection via IAS Zone configured');
     } catch (err) {
       this.log('[MOTION-IAS] Setup error:', err.message);
     }
@@ -1263,7 +1263,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
     if (!ep1) {return;}
 
     const clusters = ep1.clusters || {};
-    this.log('[MOTION-AWAKE] 🌡️ Device awake - reading temp/humidity NOW');
+    this.log('[MOTION-AWAKE] 🌡 Device awake - reading temp/humidity NOW');
     this.log(`[MOTION-AWAKE] Available clusters: ${Object.keys(clusters).join(', ')}`);
 
     // v5.5.107: Find temperature cluster with ALL possible names
@@ -1277,11 +1277,11 @@ class MotionSensorDevice extends UnifiedSensorBase {
 
     if (tempCluster?.readAttributes) {
       try {
-        this.log('[MOTION-AWAKE] 🌡️ Smart temperature read while device is awake...');
+        this.log('[MOTION-AWAKE] 🌡 Smart temperature read while device is awake...');
         const data = await this._smartZclRead(tempCluster, ['measuredValue'], 3000);
         if (data?.measuredValue !== undefined && data.measuredValue !== -32768 && data.measuredValue !== 0x8000) {
           const temp = smartParse(data.measuredValue, null, { capability: 'measure_temperature' });
-          this.log(`[MOTION-AWAKE] 🌡️ Temperature: ${temp}°C (raw: ${data.measuredValue})`);
+          this.log(`[MOTION-AWAKE] 🌡 Temperature: ${temp}°C (raw: ${data.measuredValue})`);
           // Auto-add capability if needed
           if (!this.hasCapability('measure_temperature')) {
             await this.addCapability('measure_temperature').catch(() => { });
@@ -1359,14 +1359,14 @@ class MotionSensorDevice extends UnifiedSensorBase {
     timeout = timeout || this.zclTimeout;
 
     if (!this._isDeviceAwake && Date.now() - this._lastWakeTime > 30000) {
-      this.log(`[SLEEPY] ⏭️ Skipping ZCL read - device sleeping (${attributes.join(', ')})`);
+      this.log(`[SLEEPY] ⏭ Skipping ZCL read - device sleeping (${attributes.join(', ')})`);
       return null;
     }
 
     const readId = `${cluster.name || cluster.constructor.name}_${attributes.join('_')}`;
     try {
       if (this._pendingZclReads.has(readId)) {
-        this.log(`[SLEEPY] ⏯️ ZCL read already pending: ${readId}`);
+        this.log(`[SLEEPY] ⏯ ZCL read already pending: ${readId}`);
         return null;
       }
 
@@ -1379,11 +1379,11 @@ class MotionSensorDevice extends UnifiedSensorBase {
       ]);
 
       this._pendingZclReads.delete(readId);
-      this.log(`[SLEEPY] ✅ ZCL read success: ${readId}`);
+      this.log(`[SLEEPY]  ZCL read success: ${readId}`);
       return data;
     } catch (err) {
       this._pendingZclReads.delete(readId);
-      this.log(`[SLEEPY] ⚠️ ZCL read failed: ${err.message}`);
+      this.log(`[SLEEPY]  ZCL read failed: ${err.message}`);
       return null;
     }
   }
@@ -1421,7 +1421,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
       const throttleMs = MotionSensorDevice.BATTERY_THROTTLE_MS;
 
       if (now - lastBatteryReport < throttleMs) {
-        this.log('[MOTION-BATTERY] ⏱️ Battery report throttled (spam prevention)');
+        this.log('[MOTION-BATTERY] ⏱ Battery report throttled (spam prevention)');
         return;
       }
 
@@ -1476,7 +1476,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
             minChange: 50         // Report if change >= 0.5°C
           }
         });
-        this.log('[MOTION-REPORTING] ✅ Temperature reporting configured');
+        this.log('[MOTION-REPORTING]  Temperature reporting configured');
       } catch (e) {
         this.log('[MOTION-REPORTING] Temperature reporting failed (device may not support)');
       }
@@ -1493,7 +1493,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
             minChange: 100        // Report if change >= 1%
           }
         });
-        this.log('[MOTION-REPORTING] ✅ Humidity reporting configured');
+        this.log('[MOTION-REPORTING]  Humidity reporting configured');
       } catch (e) {
         this.log('[MOTION-REPORTING] Humidity reporting failed (device may not support)');
       }
@@ -1513,7 +1513,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
             minChange: 50          // Report if change >= 50 lux
           }
         });
-        this.log('[MOTION-REPORTING] ✅ Illuminance reporting configured (30s-5min, 50lux change)');
+        this.log('[MOTION-REPORTING]  Illuminance reporting configured (30s-5min, 50lux change)');
       } catch (e) {
         this.log('[MOTION-REPORTING] Illuminance reporting failed:', e.message);
       }
@@ -1574,7 +1574,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
 
         if (this._pirFailCount >= 5 && !this._useMotionInference) {
           this._useMotionInference = true;
-          this.log('[MOTION-INFER] ⚠️ PIR appears stuck - enabling lux-based motion inference');
+          this.log('[MOTION-INFER]  PIR appears stuck - enabling lux-based motion inference');
         }
       }
     } else {
@@ -1583,7 +1583,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
 
       if (this._pirFailCount === 0 && this._useMotionInference) {
         this._useMotionInference = false;
-        this.log('[MOTION-INFER] ✅ PIR working again - disabling lux-based inference');
+        this.log('[MOTION-INFER]  PIR working again - disabling lux-based inference');
       }
     }
 
@@ -1654,7 +1654,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
       }
 
     } catch (err) {
-      this.log('[LUX-SMART] ⚠️ Error requesting lux update:', err.message);
+      this.log('[LUX-SMART]  Error requesting lux update:', err.message);
     }
   }
 
@@ -1668,7 +1668,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
 
     // Validate lux value
     if (luxValue < 0 || luxValue > 100000) {
-      this.log(`[LUX-SMART] ⚠️ Invalid lux value: ${luxValue}`);
+      this.log(`[LUX-SMART]  Invalid lux value: ${luxValue}`);
       return;
     }
 
@@ -1703,7 +1703,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
     }
 
     if (shouldReport) {
-      this.log(`[LUX-SMART] 💡 Smart lux update: ${luxValue} lux (${reason})`);
+      this.log(`[LUX-SMART]  Smart lux update: ${luxValue} lux (${reason})`);
       await this.safeSetCapabilityValue('measure_luminance', parseFloat(luxValue)).catch(() => { });
 
       config.lastLuxValue = luxValue;
@@ -1793,7 +1793,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
           this.log(`[MOTION] [SETTINGS] Sending DP${mapping.dp}=${val} (${key})`);
           if (this.tuyaEF00Manager?.sendDP) {
             await this.tuyaEF00Manager.sendDP(mapping.dp, val, mapping.type);
-            this.log(`[MOTION] [SETTINGS] ✅ Applied ${key}=${val} via TuyaEF00Manager`);
+            this.log(`[MOTION] [SETTINGS]  Applied ${key}=${val} via TuyaEF00Manager`);
           } else {
             const ep = this.zclNode?.endpoints?.[1];
             const tuyaCluster = ep?.clusters?.tuya || ep?.clusters?.[61184] || ep?.clusters?.[0xEF00];
@@ -1804,9 +1804,9 @@ class MotionSensorDevice extends UnifiedSensorBase {
               dpBuf.writeUInt16BE(1, 2);
               dpBuf.writeUInt8(val, 4);
               await tuyaCluster.dataRequest({ data: dpBuf });
-              this.log(`[MOTION] [SETTINGS] ✅ Applied ${key}=${val} via cluster`);
+              this.log(`[MOTION] [SETTINGS]  Applied ${key}=${val} via cluster`);
             } else {
-              this.log(`[MOTION] [SETTINGS] ⚠️ No Tuya method to send DP${mapping.dp} (sleepy device - will apply on next wake)`);
+              this.log(`[MOTION] [SETTINGS]  No Tuya method to send DP${mapping.dp} (sleepy device - will apply on next wake)`);
             }
           }
         }
@@ -1837,7 +1837,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
     if (super.onUninit) {
       await super.onUninit();
     }
-    this.log('[MOTION] ✅ Cleanup complete');
+    this.log('[MOTION]  Cleanup complete');
   }
 
 }

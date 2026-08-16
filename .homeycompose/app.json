@@ -6,54 +6,57 @@
     "local"
   ],
   "name": {
-    "en": "Unified Smart Home Engine",
-    "nl": "Unified Smart Home Engine",
-    "de": "Unified Smart Home Engine",
-    "fr": "Unified Smart Home Engine"
+    "en": "Universal Tuya Zigbee",
+    "nl": "Universal Tuya Zigbee",
+    "de": "Universal Tuya Zigbee",
+    "fr": "Universal Tuya Zigbee"
   },
   "description": {
-    "en": "High-performance local-first control for Tuya, eWeLink, SmartThings and compatible devices",
-    "nl": "Hoogwaardige lokale bediening voor Tuya, eWeLink, SmartThings en compatibele apparaten",
-    "de": "Leistungsstarke lokale Steuerung fuer Tuya, eWeLink, SmartThings und kompatible Geraete",
-    "fr": "Controle local haute performance pour Tuya, eWeLink, SmartThings et appareils compatibles"
+    "en": "Local Zigbee control for Tuya and compatible devices on Homey Pro — switches, sensors, lights, thermostats, covers and more. No cloud required.",
+    "nl": "Lokale Zigbee-bediening voor Tuya en compatibele apparaten op Homey Pro — schakelaars, sensoren, lampen, thermostaten, gordijnen en meer. Geen cloud nodig.",
+    "de": "Lokale Zigbee-Steuerung fuer Tuya und kompatible Geraete auf Homey Pro — Schalter, Sensoren, Lampen, Thermostate, Rolllaeden und mehr. Keine Cloud noetig.",
+    "fr": "Controle Zigbee local pour appareils Tuya et compatibles sur Homey Pro — interrupteurs, capteurs, lumieres, thermostats, volets et plus. Sans cloud."
   },
   "tags": {
     "en": [
-      "unified",
-      "smartthings",
-      "ewelink",
-      "sonoff",
-      "smart home",
+      "tuya",
+      "zigbee",
+      "local",
       "switch",
       "sensor",
-      "local-first"
+      "thermostat",
+      "curtain",
+      "homey"
     ],
     "nl": [
-      "unified",
-      "smartthings",
-      "ewelink",
-      "sonoff",
+      "tuya",
+      "zigbee",
+      "lokaal",
       "schakelaar",
       "sensor",
-      "local-first"
+      "thermostaat",
+      "gordijn",
+      "homey"
     ],
     "de": [
-      "unified",
-      "smartthings",
-      "ewelink",
-      "sonoff",
+      "tuya",
+      "zigbee",
+      "lokal",
       "schalter",
       "sensor",
-      "local-first"
+      "thermostat",
+      "vorhang",
+      "homey"
     ],
     "fr": [
-      "unified",
-      "smartthings",
-      "ewelink",
-      "sonoff",
+      "tuya",
+      "zigbee",
+      "local",
       "interrupteur",
       "capteur",
-      "local-first"
+      "thermostat",
+      "volet",
+      "homey"
     ]
   },
   "category": "appliances",

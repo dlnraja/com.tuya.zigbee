@@ -20,6 +20,7 @@ const DRIVERS_DIR = path.join(ROOT, 'drivers');
 const APP_JSON = path.join(ROOT, 'app.json');
 
 console.log('=== RESTORE MASTER-ONLY HYBRID MFs ===\n');
+console.log('P142: skip deprecated air_purifier_* hybrids (synthetic pairing spam).\n');
 
 // Charger tous les compose files
 const allCompose = {};
@@ -29,9 +30,13 @@ fs.readdirSync(DRIVERS_DIR).forEach(dir => {
   try { allCompose[dir] = JSON.parse(fs.readFileSync(cp, 'utf8')); } catch (e) { /* skip */ }
 });
 
-// Identifier les drivers vides
+// Identifier les drivers vides — never revive deprecated / placeholder hybrids
 const emptyDrivers = Object.entries(allCompose)
-  .filter(([, c]) => c.zigbee && (!c.zigbee.manufacturerName || c.zigbee.manufacturerName.length === 0))
+  .filter(([id, c]) => {
+    if (c.deprecated) return false;
+    if (/^air_purifier_/.test(id)) return false;
+    return c.zigbee && (!c.zigbee.manufacturerName || c.zigbee.manufacturerName.length === 0);
+  })
   .map(([id]) => id);
 
 console.log(`Drivers vides à restaurer: ${emptyDrivers.length}`);

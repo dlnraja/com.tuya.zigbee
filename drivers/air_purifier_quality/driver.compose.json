@@ -11,14 +11,10 @@
     "measure_co2",
     "measure_temperature",
     "measure_humidity",
-    "measure_pm25",
     "measure_voc",
     "measure_formaldehyde",
     "alarm_generic",
-    "onoff",
-    "dim",
-    "measure_power",
-    "button.1"
+    "measure_power"
   ],
   "subDevices": [],
   "capabilitiesOptions": {
@@ -233,11 +229,11 @@
       }
     },
     "manufacturerName": [
-      "_GENERIC_AIR_PURIFIER_QUALITY",
-      "_generic_air_purifier_quality"
+      "_DEPRECATED_AIR_PURIFIER_HYBRID_DO_NOT_PAIR"
     ]
   },
   "ui": {
     "quickAction": "onoff"
-  }
+  },
+  "deprecated": true
 }
