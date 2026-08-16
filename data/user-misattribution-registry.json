@@ -126,7 +126,7 @@
       "mfr": ["_TZE284_nt4pquef", "_tze284_nt4pquef"],
       "productId": ["TS0601"],
       "canonicalDriver": "soil_sensor",
-      "forbiddenDrivers": ["climate_sensor", "climate_sensor_zt08", "air_purifier_soil"],
+      "forbiddenDrivers": ["climate_sensor", "climate_sensor_zt08", "climate_sensor_energy", "sensor_climate_temphumidsensor", "air_purifier_soil"],
       "protocol": "tuya_ef00",
       "notes": "Soil moisture — not climate LCD. DP mapping per P141.",
       "sources": ["forum-140352", "P141"],
@@ -267,6 +267,49 @@
       "protocol": "zcl",
       "notes": "Z2M Lidl/Livarno RGB+CCT bulb (TS0505B). Was dual-claimed with wall_dimmer via shared TS0601 productId — strip mfr from dimmer/strip.",
       "sources": ["z2m#12090", "dual-claim-compose-gate", "P177"],
+      "tracks": {
+        "master": { "static": true, "dynamic": true },
+        "stable": { "static": true, "dynamic": false }
+      }
+    },
+    {
+      "id": "hobeian-zg303z-soil",
+      "mfr": [
+        "HOBEIAN",
+        "hobeian",
+        "_TZE200_wqashyqo",
+        "_tze200_wqashyqo"
+      ],
+      "productId": ["ZG-303Z", "TS0601"],
+      "canonicalDriver": "soil_sensor",
+      "forbiddenDrivers": [
+        "climate_sensor",
+        "climate_sensor_energy",
+        "sensor_climate_temphumidsensor",
+        "soilsensor_2"
+      ],
+      "protocol": "tuya_ef00",
+      "notes": "HOBEIAN ZG-303Z / _TZE200_wqashyqo soil. nt4pquef stays on case soil-nt4pquef (TS0601 only) to avoid registry flip-flop.",
+      "sources": ["z2m-ZG-303Z", "forum-blutch32", "P178"],
+      "tracks": {
+        "master": { "static": true, "dynamic": true },
+        "stable": { "static": true, "dynamic": false }
+      }
+    },
+    {
+      "id": "curtain-r0jdjrvi-tilt",
+      "mfr": [
+        "_TZE204_r0jdjrvi",
+        "_tze204_r0jdjrvi",
+        "_TZE204_R0JDJRVI",
+        "_tze204_R0JDJRVI"
+      ],
+      "productId": ["TS0601", "TS0601_curtain_tilt"],
+      "canonicalDriver": "curtain_motor_tilt",
+      "forbiddenDrivers": ["plug", "curtain_motor", "switch_1gang"],
+      "protocol": "tuya_ef00",
+      "notes": "Curtain/tilt motor — never a plug. _TZE200_r0jdjrvi stays on curtain_motor.",
+      "sources": ["johan#1374", "forum", "P178"],
       "tracks": {
         "master": { "static": true, "dynamic": true },
         "stable": { "static": true, "dynamic": false }

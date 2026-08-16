@@ -24,10 +24,11 @@ Store name: **Universal Tuya** (Zigbee in description/tags). Not “Unified Engi
 | # | Action | Status |
 |---|--------|--------|
 | 1 | Publish tip + soak Peter OOM (`96c19859` → 9.0.541+) | Tip **9.0.543+**; RC fact-check `reports/P156_RC_LIVEDATA_SLEEPY_FACTCHECK_2026-08-16.md` |
-| 2 | Sacred couples / anti dual-claim | **P168–P169 + P177** — iystcadi→`light_bulb_rgb_led`; `max-coverage-investigate.js` |
-| 3 | Enrich `user-misattribution-registry` from forum | Ongoing (P149–P152, P177) |
+| 2 | Sacred couples / anti dual-claim | **P168–P169 + P177–P178** — iystcadi, ZG-303Z soil, r0jdjrvi curtain; 0 dual-claims |
+| 3 | Enrich `user-misattribution-registry` from forum | Ongoing (P149–P152, P177–P178) |
 | 4 | Short GitHub docs (sacred couple, dual-app, troubleshooting) | Done / maintain |
 | 5 | Critical modules progressive harden | Continuous |
+| 6 | Integral A+B+C pass | **P178** — align apply + forum device locks + Peter soak checklist |
 | — | Auto enrich-KB / bidi mfs sync / QuotaManager / auto-PR | **Refuse P171–P176** — use mega-crawl + P169/P170 + P177 |
 
 ## Commands
@@ -54,7 +55,8 @@ Heap / sleepy: `reports/P156_RC_LIVEDATA_SLEEPY_FACTCHECK_2026-08-16.md` · `rep
 Class scale: `reports/P168_CLASS_SCALE_SACRED_COUPLE_2026-08-16.md` · `tools/ci/audit-sacred-couple-by-class.js`  
 mfs_db align: `reports/P169_MFS_DB_INTELLIGENT_ALIGN_2026-08-16.md` · `tools/ci/align-mfs-db-intelligent.js`  
 Local diag KB: `data/error-patterns.json` · `data/device-knowledge-base.json` · `tools/ci/analyze-diag-locally.js` (P170 — no auto-PR)  
-Max free investigate: `tools/ci/max-coverage-investigate.js` (P177) · weekly `weekly-sovereign-loop.yml` · daily `mega-crawl.yml`
+Max free investigate: `tools/ci/max-coverage-investigate.js` (P177) · weekly `weekly-sovereign-loop.yml` · daily `mega-crawl.yml`  
+Integral pass: `reports/P178_INTEGRAL_ABC_PASS_2026-08-16.md`
 
 ## Dual-app
 

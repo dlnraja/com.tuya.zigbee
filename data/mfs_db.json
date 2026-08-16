@@ -32,7 +32,7 @@
       "realMfrsAdded": 5,
       "details": "tmp/synthetic-resolution.json + tmp/pruned21-resolution.json"
     },
-    "lastAlignedAt": "2026-08-16T12:55:22.455Z",
+    "lastAlignedAt": "2026-08-16T14:00:15.131Z",
     "alignTool": "align-mfs-db-intelligent@P169"
   },
   "sources": {
@@ -141858,8 +141858,8 @@
     "modelIdsCount": 28
   },
   "_TZ3210_PWAUW3G2": {
-    "driverId": "climate_sensor",
-    "source": "auto-sync",
+    "driverId": "light_bulb_rgb_led",
+    "source": "compose-exclusive",
     "modelIds": [
       "CK-TLSR8656-SS5-01(7014)",
       "Excellux",
@@ -162546,36 +162546,10 @@
   },
   "_TZE200_wqashyqo": {
     "driverId": "soil_sensor",
-    "source": "compose-exclusive",
+    "source": "registry:hobeian-zg303z-soil",
     "modelIds": [
-      "CK-TLSR8656-SS5-01(7014)",
-      "Excellux",
-      "RH3052",
-      "SM0201",
-      "SNZB-02",
-      "SNZB-02B",
-      "SNZB-02D",
-      "SNZB-02DR2",
-      "SNZB-02LD",
-      "SNZB-02M",
-      "SNZB-02P",
-      "SNZB-02WD",
-      "TH01",
-      "THS317-ET",
-      "TS0201",
-      "TS0202",
-      "TS0222",
-      "TS0601",
-      "TS1201",
-      "TY0201",
-      "WSDCGQ01LM",
-      "WSDCGQ11LM",
-      "WSDCGQ12LM",
-      "ZG-227Z",
-      "ZG-227ZL",
-      "lumi.sensor_ht",
-      "lumi.sensor_ht.agl02",
-      "lumi.weather"
+      "ZG-303Z",
+      "TS0601"
     ],
     "pid": "CK-TLSR8656-SS5-01(7014)",
     "modelIdsCount": 28
@@ -172666,10 +172640,10 @@
     "modelIdsCount": 1
   },
   "_tz3210_iystcadi": {
-    "driverId": "led_strip_advanced",
-    "source": "couple-exclusive",
+    "driverId": "light_bulb_rgb_led",
+    "source": "registry:rgb-bulb-iystcadi-ts0505b",
     "modelIds": [
-      "TS0601_strip_adv"
+      "TS0505B"
     ],
     "pid": "TS0601_strip_adv",
     "modelIdsCount": 1
@@ -181873,31 +181847,10 @@
   },
   "_TZE204_r0jdjrvi": {
     "driverId": "curtain_motor_tilt",
-    "source": "auto-sync|adjudicated-z2m-arbiter",
+    "source": "registry:curtain-r0jdjrvi-tilt",
     "modelIds": [
-      "CK-BL702-MWS-01",
-      "CK-BL702-MWS-01(7016)",
-      "MG1_5RZ",
-      "SNZB-06P",
-      "SNZB-06P24",
-      "SZLMR10",
-      "TS0004",
-      "TS0203",
-      "TS0225",
       "TS0601",
-      "TS110E",
-      "ZG-204ZE",
-      "ZG-204ZH",
-      "ZG-204ZK",
-      "ZG-204ZL",
-      "ZG-204ZM",
-      "ZG-204ZQ",
-      "ZG-204ZV",
-      "ZG-205Z",
-      "ZG-205ZL",
-      "ZG-302ZL",
-      "ZG-302ZM",
-      "ZP-301Z"
+      "TS0601_curtain_tilt"
     ],
     "pid": "CK-BL702-MWS-01",
     "modelIdsCount": 23
@@ -186099,9 +186052,13 @@
     "modelIdsCount": 3
   },
   "HOBEIAN": {
-    "driverId": "water_leak_sensor",
-    "source": "auto-sync|fixed-p61",
-    "addedAt": "2026-07-15T00:00:00.000Z"
+    "driverId": "soil_sensor",
+    "source": "registry:hobeian-zg303z-soil",
+    "addedAt": "2026-07-15T00:00:00.000Z",
+    "modelIds": [
+      "ZG-303Z",
+      "TS0601"
+    ]
   },
   "_hybrid_scene_switch_6ch_needs_device_assignment": {
     "driverId": "scene_switch_6ch",
