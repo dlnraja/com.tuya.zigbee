@@ -10,6 +10,7 @@ const { CLUSTERS } = require('../../lib/constants/ZigbeeConstants.js');
 
 
 const { UnifiedSensorBase } = require('../../lib/devices/UnifiedSensorBase');
+const { normalizeZclBatteryPercent, manufacturerOf } = require('../../lib/battery/zcl-percent');
 
 // v5.5.306: Module-level logger for standalone functions (replaces console.log)
 const _moduleLog = (msg) => { /* logged via device.log in callers */ };
@@ -869,9 +870,11 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
           if (powerCluster?.readAttributes) {
             const attrs = await powerCluster.readAttributes(['batteryPercentageRemaining', 'batteryVoltage']);
             if (attrs?.batteryPercentageRemaining !== undefined && attrs.batteryPercentageRemaining !== 255) {
-              const battery = Math.min(100, Math.round(attrs.batteryPercentageRemaining));
-              this.log(`[RADAR] ðŸ”‹ Battery read: ${attrs.batteryPercentageRemaining} -> ${battery}%`);
-              this.safeSetCapabilityValue('measure_battery', battery).catch(() => {});
+              const battery = normalizeZclBatteryPercent(attrs.batteryPercentageRemaining, { manufacturer: manufacturerOf(this) });
+              if (battery != null) {
+                this.log(`[RADAR] Battery read: ${attrs.batteryPercentageRemaining} -> ${battery}%`);
+                this.safeSetCapabilityValue('measure_battery', battery).catch(() => {});
+              }
             } else if (attrs?.batteryVoltage && !this.getCapabilityValue('measure_battery')) {
               const battery = Math.min(100, Math.max(0, Math.round(attrs.batteryVoltage - safeMultiply(20, 10))));
               this.log(`[RADAR] ðŸ”‹ Battery voltage: ${attrs.batteryVoltage/10}V -> ${battery}%`);

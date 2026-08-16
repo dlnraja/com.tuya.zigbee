@@ -1,0 +1,74 @@
+{
+  "_meta": {
+    "id": "marketing-model-alias-registry",
+    "version": 1,
+    "generated": "2026-08-16",
+    "purpose": "Separate marketing / Zigbee2MQTT model names from the real Zigbee identity so enrichment never writes an alias into driver.compose.json productId.",
+    "doctrine": "The pairing key is the sacred couple (manufacturerName, modelId) exactly as the device reports it. A vendor model name such as ZG-204ZM is a catalogue label: the hardware reports _TZE200_tyffvoij / TS0601. Writing the label as a productId can never match, and it widens the cartesian claim surface of the driver it sits in.",
+    "relationship": "N:N:N - one manufacturerName has many productIds, one (mfr,pid) couple maps to several marketing names, and one marketing name covers several couples.",
+    "evidence": [
+      "data/z2m_cache.json",
+      "data/zg204_investigation.json"
+    ],
+    "consumers": [
+      "tools/ci/battery-button-intelligence-gate.js (rule F1)"
+    ]
+  },
+  "vendors": {
+    "HOBEIAN": {
+      "reportsBrandAsManufacturerName": false,
+      "note": "HOBEIAN hardware reports Tuya-style manufacturerName prefixes (_TZE200_/_TZE204_/_TZE284_). A literal 'HOBEIAN' manufacturerName entry never matches a real device.",
+      "aliases": {
+        "ZG-204ZL": {
+          "modelId": "TS0601",
+          "manufacturerNames": ["_TZE200_3towulqd"],
+          "description": "PIR motion + lux illuminance, no mmWave",
+          "currentDriver": "presence_sensor_radar",
+          "suggestedDriver": "motion_sensor",
+          "triage": "open - radar-only settings (distance, zones, sensitivity) have no backing DP on this PIR-only unit; needs human confirmation before rerouting because moving a fingerprint changes where new pairings land"
+        },
+        "ZG-204ZM": {
+          "modelId": "TS0601",
+          "manufacturerNames": ["_TZE200_2aaelwxk", "_TZE200_kb5noeto", "_TZE200_tyffvoij"],
+          "description": "PIR + 24GHz mmWave + lux; v1/v2/v3 hardware revisions share the marketing name",
+          "currentDriver": "presence_sensor_radar",
+          "alsoSoldAs": ["ZG-204ZS"],
+          "triage": "ok"
+        },
+        "ZG-204ZP": {
+          "modelId": "TS0601",
+          "manufacturerNames": ["_TZE200_ka8l86iu"],
+          "description": "24GHz mmWave only, CR2450, no PIR and no lux",
+          "currentDriver": "presence_sensor_radar",
+          "alsoSoldAs": ["ZG-204ZK"],
+          "triage": "ok"
+        },
+        "ZG-204ZX": {
+          "modelId": "TS0601",
+          "manufacturerNames": ["_TZE200_w0ap83qu"],
+          "description": "PIR + mmWave + lux variant",
+          "currentDriver": "presence_sensor_radar",
+          "triage": "ok"
+        },
+        "ZG-303Z": {
+          "modelId": "TS0601",
+          "manufacturerNames": [
+            "_TZE200_myd45weu",
+            "_TZE284_myd45weu",
+            "_TZE284_aao3yzhs",
+            "_TZE284_2nhqasjh",
+            "_TZE284_awepdiwi",
+            "_TZE284_ga1maeof",
+            "_TZE284_g2e6cpnw",
+            "_TZE284_sgabhwa6",
+            "_TZE284_0ints6wl",
+            "_TZE284_tgrzpqf4"
+          ],
+          "description": "Soil moisture + temperature + EC + battery; sub-variants ZG-303L and ZG-303B share the couples",
+          "currentDriver": "soil_sensor",
+          "triage": "ok"
+        }
+      }
+    }
+  }
+}

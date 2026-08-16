@@ -41,9 +41,9 @@ class LCDTempHumidSensorDevice extends UnifiedSensorBase {
 
       // Battery
       // v5.12.3: DP3 battery enum for _TZE200_vvmbj46n (TH05Z: 0=low, 1=medium, 2=high)
-      3: { capability: 'measure_battery', divisor: 1, transform: (v) => v === 0 ? 10 : v === 1 ? 50 : v >= 2 ? 100 : Math.min(Math.max(v * 0) * 100) },
-      4: { capability: 'measure_battery', divisor: 1, transform: (v) => Math.min(Math.max(v * 0) * 100) },
-      15: { capability: 'measure_battery', divisor: 1, transform: (v) => Math.min(Math.max(v * 0) * 100) },
+      3: { capability: 'measure_battery', divisor: 1, transform: (v) => v === 0 ? 10 : v === 1 ? 50 : v >= 2 ? 100 : Math.min(100, Math.max(0, Math.round(v))) },
+      4: { capability: 'measure_battery', divisor: 1, transform: (v) => Math.min(100, Math.max(0, Math.round(v))) },
+      15: { capability: 'measure_battery', divisor: 1, transform: (v) => Math.min(100, Math.max(0, Math.round(v))) },
     };
   }
 

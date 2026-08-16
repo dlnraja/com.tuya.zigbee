@@ -8,6 +8,7 @@ const { CLUSTERS } = require('../../lib/constants/ZigbeeConstants.js');
 
 const TuyaUnifiedDevice = require('../../lib/devices/TuyaUnifiedDevice');
 const BatteryCalculator = require('../../lib/battery/BatteryCalculator');
+const { normalizeZclBatteryPercent, manufacturerOf } = require('../../lib/battery/zcl-percent');
 const { getAppVersionPrefixed } = require('../../lib/utils/AppVersion');
 const { SoilMoistureInference, BatteryInference } = require('../../lib/IntelligentSensorInference');
 
@@ -241,10 +242,12 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
         requireReporting: false,
         attributeReport: (data) => {
           if (data.batteryPercentageRemaining !== undefined) {
-            const battery = Math.round(data.batteryPercentageRemaining);
-            this.log(`[ZCL]  Battery: ${battery}%`);
-            this._registerZigbeeHit?.();
-            this.safeSetCapabilityValue('measure_battery', parseFloat(battery)).catch(() => { });
+            const battery = normalizeZclBatteryPercent(data.batteryPercentageRemaining, { manufacturer: manufacturerOf(this) });
+            if (battery != null) {
+              this.log(`[ZCL]  Battery: ${battery}%`);
+              this._registerZigbeeHit?.();
+              this.safeSetCapabilityValue('measure_battery', battery).catch(() => { });
+            }
           }
         }
       }

@@ -4,6 +4,7 @@ const { safeDivide, safeMultiply, safeParse } = require('../../lib/utils/tuyaUti
 const { CLUSTERS } = require('../../lib/constants/ZigbeeConstants.js');
 
 const { UnifiedSensorBase } = require('../../lib/devices/UnifiedSensorBase');
+const { normalizeZclBatteryPercent, manufacturerOf } = require('../../lib/battery/zcl-percent');
 const TuyaTimeManager = require('../../lib/TuyaTimeManager');
 const TuyaDeviceClassifier = require('../../lib/TuyaDeviceClassifier');
 const TuyaEpochDetector = require('../../lib/TuyaEpochDetector');
@@ -261,8 +262,8 @@ return Math.min(100, safeMultiply(v, 2)); // Fallback: treat as raw with x2
       // BATTERY ALTERNATE DPs (HOBEIAN and some other sensors)
       // v5.5.710: Fix for HOBEIAN temp/humidity sensors using DP101 for battery
       // 
-      101: { capability: 'measure_battery', transform: (v) => Math.min(Math.max(v * 0) * 100) },
-      102: { capability: 'measure_battery', transform: (v) => Math.min(Math.max(v * 0) * 100) },
+      101: { capability: 'measure_battery', transform: (v) => Math.min(100, Math.max(0, Math.round(v))) },
+      102: { capability: 'measure_battery', transform: (v) => Math.min(100, Math.max(0, Math.round(v))) },
     };
   }
 
@@ -430,7 +431,8 @@ return Math.min(100, safeMultiply(v, 2)); // Fallback: treat as raw with x2
             }
             this._lastBatteryReportTime = now;
             
-            let battery = Math.round(data.batteryPercentageRemaining);
+            let battery = normalizeZclBatteryPercent(data.batteryPercentageRemaining, { manufacturer: manufacturerOf(this) });
+            if (battery == null) { return; }
             battery = Math.max(VALIDATION.BATTERY_MIN, Math.min(VALIDATION.BATTERY_MAX, battery));
             
             // v5.5.793: Validate with inference engine
@@ -1215,9 +1217,11 @@ return Math.min(100, safeMultiply(v, 2)); // Fallback: treat as raw with x2
       try {
         const attrs = await powerCfg.readAttributes(['batteryPercentageRemaining', 'batteryVoltage']).catch(() => ({}));
         if (attrs.batteryPercentageRemaining !== undefined) {
-          const battery = Math.round(attrs.batteryPercentageRemaining);
-          this.log(`[ZCL-READ]  Battery: ${battery}%`);
-          await this.safeSetCapabilityValue('measure_battery', parseFloat(Math.max(0, Math.min(100, battery)))).catch(() => { });
+          const battery = normalizeZclBatteryPercent(attrs.batteryPercentageRemaining, { manufacturer: manufacturerOf(this) });
+          if (battery != null) {
+            this.log(`[ZCL-READ]  Battery: ${battery}%`);
+            await this.safeSetCapabilityValue('measure_battery', battery).catch(() => { });
+          }
         }
       } catch (e) {
         this.log('[ZCL-READ] Battery read failed:', e.message);
