@@ -36,11 +36,14 @@ const JOBS = [
     id: 'issue-439',
     script: 'tools/ci/apply-issue-439-fps.js',
     args: [],
+    // Prefer state artifact when present; script itself also soft-falls back (P204)
+    optionalInput: null,
   },
   {
     id: 'canonical-gaps',
     script: 'tools/ci/apply-canonical-gaps-final.js',
     args: ['--dry'],
+    optionalInput: '.github/state/mfr-pid-cross-ref.json',
   },
 ];
 

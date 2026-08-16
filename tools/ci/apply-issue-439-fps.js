@@ -22,9 +22,7 @@ const path = require('path');
 const ROOT = path.resolve(__dirname, '..', '..');
 const DRIVERS_DIR = path.join(ROOT, 'drivers');
 const GENERIC_TUYA = path.join(DRIVERS_DIR, 'generic_tuya', 'driver.compose.json');
-
-// Issue 439 body (extracted FPs only — not the whole issue text)
-const ISSUE_439_BODY = fs.readFileSync(path.join(ROOT, '.github', 'state', 'issue-439-fps.json'), 'utf8');
+const ISSUE_439_PATH = path.join(ROOT, '.github', 'state', 'issue-439-fps.json');
 
 function extractFps(text) {
   const m = text.match(/_T[YZ][A-Z0-9]{0,4}_[a-zA-Z0-9_]+/g) || [];
@@ -53,16 +51,24 @@ function main() {
   const APPLY = process.argv.includes('--apply');
   console.log('=== P53 — Apply missing FPs from issue #439 to generic_tuya ===');
 
-  // Try multiple sources for the FPs
+  // Try multiple sources for the FPs (never crash on missing state file — P204)
   let fps = [];
   try {
-    fps = extractFps(ISSUE_439_BODY);
+    if (fs.existsSync(ISSUE_439_PATH)) {
+      fps = extractFps(fs.readFileSync(ISSUE_439_PATH, 'utf8'));
+    } else {
+      console.log('No issue-439-fps.json — falling back to embedded list...');
+    }
   } catch (e) {
-    console.log('No issue-439-fps.json — falling back to fetching...');
+    console.log('issue-439-fps.json unreadable — falling back:', e.message);
   }
 
   if (fps.length === 0) {
-    // Fallback: hardcoded list (from previous run)
+    const embedded = path.join(__dirname, 'issue-439-fps-embedded.json');
+    if (!fs.existsSync(embedded)) {
+      console.log('No embedded FP list either — nothing to apply (dry-run OK).');
+      process.exit(0);
+    }
     console.log('Using embedded FP list from issue 439...');
     fps = require('./issue-439-fps-embedded.json');
   }

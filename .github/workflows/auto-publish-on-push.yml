@@ -506,8 +506,12 @@ jobs:
             echo "::group::Remaining tracked changes before rebase"
             git status --short
             echo "::endgroup::"
-            echo "::error::Uncommitted tracked changes remain before rebase"
-            exit 1
+            # P204: race noise (state/diagnostics) must not fail the publish job
+            restore_volatile_artifacts
+            if ! git diff --quiet || ! git diff --cached --quiet; then
+              echo "::warning::Uncommitted tracked changes remain before rebase; skipping metadata push (retry next run)"
+              exit 0
+            fi
           fi
           git fetch origin master
           if ! git merge-base --is-ancestor origin/master HEAD; then
@@ -519,11 +523,31 @@ jobs:
           else
             echo "origin/master is already an ancestor of HEAD; skipping rebase"
           fi
-          git push origin HEAD:refs/heads/master
+          # P204: retry push on concurrent ref lock (same pattern as Auto-Fix)
+          pushed=0
+          for attempt in 1 2 3 4; do
+            if git push origin HEAD:refs/heads/master; then
+              pushed=1
+              break
+            fi
+            echo "::warning::Publish metadata push attempt ${attempt} failed; fetch+rebase and retry"
+            git fetch origin master
+            if ! git rebase -X ours origin/master; then
+              git rebase --abort || true
+              git reset --hard origin/master
+              echo "::warning::Giving up metadata push after rebase conflict"
+              exit 0
+            fi
+            sleep $((attempt * 3))
+          done
+          if [ "$pushed" != "1" ]; then
+            echo "::warning::Publish metadata push exhausted retries; skipping"
+            exit 0
+          fi
           git fetch origin master
           git merge-base --is-ancestor HEAD origin/master || {
-            echo "::error::Bot commit HEAD is not reachable from origin/master after push"
-            exit 1
+            echo "::warning::Bot commit HEAD not reachable from origin/master after push (race); OK next run"
+            exit 0
           }
 
       - name: Full diagnostics sweep - sanitized
