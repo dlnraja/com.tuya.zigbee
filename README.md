@@ -15,7 +15,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 - Case-insensitive fingerprint matching so pairing is reliable across OEM variants
 - Battery curves by chemistry (no linear `%` guesses)
 - Flow cards for physical buttons, sensors, and actuators (EN, FR, NL, DE)
-- Optional native Zigbee OTA for 6 drivers (Homey v13.2.0+)
+- Optional native Zigbee OTA for 5 drivers (Homey v13.2.0+)
 
 ---
 
@@ -33,14 +33,14 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.563 |
+| **App Version** | v9.0.564 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,367 |
 | **Pairing Variants** | 16,600 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 575 |
 | **Flow Cards** | 4,974 |
 | **Unique Capabilities** | 170 |
-| **Native OTA Drivers** | 6 |
+| **Native OTA Drivers** | 5 |
 | **Test Suites** | 72 files |
 | **SVG Icons** | 731 |
 | **Languages** | EN, FR, NL, DE |
@@ -102,6 +102,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.564** | Stability improvements and Homey test publication retry after transient processing failure. |
 | **v9.0.563** | Stability improvements and Homey test publication retry after transient processing failure. |
 | **v9.0.562** | Stability improvements and Homey test publication retry after transient processing failure. |
 | **v9.0.561** | Stability improvements and Homey test publication retry after transient processing failure. |
@@ -113,7 +114,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.555** | Stability improvements and Homey test publication retry after transient processing failure. |
 | **v9.0.554** | Stability improvements and Homey test publication retry after transient processing failure. |
 | **v9.0.553** | Stability improvements and Homey test publication retry after transient processing failure. |
-| **v9.0.552** | Stability improvements and Homey test publication retry after transient processing failure. |
 
 <!-- CHANGELOG_END -->
 
