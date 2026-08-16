@@ -24,15 +24,17 @@ Store name: **Universal Tuya** (Zigbee in description/tags). Not “Unified Engi
 | # | Action | Status |
 |---|--------|--------|
 | 1 | Publish tip + soak Peter OOM (`96c19859` → 9.0.541+) | Tip **9.0.543+**; RC fact-check `reports/P156_RC_LIVEDATA_SLEEPY_FACTCHECK_2026-08-16.md` |
-| 2 | Sacred couples / anti dual-claim | **P168–P169 done** — 0 `_TZ*` dual-claims; `align-mfs-db-intelligent` CI; refuse mfs-SSOT auto-PR pack (P171) |
-| 3 | Enrich `user-misattribution-registry` from forum | Ongoing (P149–P152) |
+| 2 | Sacred couples / anti dual-claim | **P168–P169 + P177** — iystcadi→`light_bulb_rgb_led`; `max-coverage-investigate.js` |
+| 3 | Enrich `user-misattribution-registry` from forum | Ongoing (P149–P152, P177) |
 | 4 | Short GitHub docs (sacred couple, dual-app, troubleshooting) | Done / maintain |
 | 5 | Critical modules progressive harden | Continuous |
-| — | Auto enrich-KB / bidi mfs sync / QuotaManager / auto-PR | **Refuse P172** — use mega-crawl + P169/P170 |
+| — | Auto enrich-KB / bidi mfs sync / QuotaManager / auto-PR | **Refuse P171–P176** — use mega-crawl + P169/P170 + P177 |
 
 ## Commands
 
 ```bash
+node tools/ci/max-coverage-investigate.js
+node tools/ci/max-coverage-investigate.js --with-scan
 node tools/ci/analyze-diag-locally.js --stdin
 node tools/ci/align-mfs-db-intelligent.js --check
 node tools/ci/align-mfs-db-intelligent.js --apply
@@ -43,13 +45,16 @@ node tools/ci/energy-compose-gate.js
 node tools/ci/layer-pass-audit.js
 node tools/ci/homey-heap-json-gate.js
 node tools/ci/gmail-crash-pattern-gate.js --json
+node tools/ci/multi-source-enrich-orchestrator.js
+node tools/ci/apply-blakadder-new.js
 ```
 
 Layer contracts: `docs/architecture/LAYERS_ENERGY_BUTTONS_FLOWS.md` (energy → buttons → flows, one pass at a time).  
 Heap / sleepy: `reports/P156_RC_LIVEDATA_SLEEPY_FACTCHECK_2026-08-16.md` · `reports/P157_HEAP_SLEEPY_PREVENTION_2026-08-16.md`  
 Class scale: `reports/P168_CLASS_SCALE_SACRED_COUPLE_2026-08-16.md` · `tools/ci/audit-sacred-couple-by-class.js`  
 mfs_db align: `reports/P169_MFS_DB_INTELLIGENT_ALIGN_2026-08-16.md` · `tools/ci/align-mfs-db-intelligent.js`  
-Local diag KB: `data/error-patterns.json` · `data/device-knowledge-base.json` · `tools/ci/analyze-diag-locally.js` (P170 — no auto-PR)
+Local diag KB: `data/error-patterns.json` · `data/device-knowledge-base.json` · `tools/ci/analyze-diag-locally.js` (P170 — no auto-PR)  
+Max free investigate: `tools/ci/max-coverage-investigate.js` (P177) · weekly `weekly-sovereign-loop.yml` · daily `mega-crawl.yml`
 
 ## Dual-app
 

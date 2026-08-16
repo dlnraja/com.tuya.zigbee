@@ -150,6 +150,11 @@ phase('10-case-variants', () => {
 
 phase('10b-cross-project-reimpl-gate', () => runNode('tools/ci/cross-project-better-reimpl.js', [], true));
 
+phase('10c-dual-claim-compose-gate', () => runNode('tools/ci/dual-claim-compose-gate.js', [], true));
+
+phase('10d-align-mfs-db-intelligent-check', () =>
+  runNode('tools/ci/align-mfs-db-intelligent.js', ['--check'], true));
+
 // Aggregate source coverage from state files
 phase('11-coverage-snapshot', () => {
   const snapshot = {};

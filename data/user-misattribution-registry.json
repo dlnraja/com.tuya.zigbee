@@ -246,6 +246,31 @@
         "master": { "static": true, "dynamic": true },
         "stable": { "static": true, "dynamic": false }
       }
+    },
+    {
+      "id": "rgb-bulb-iystcadi-ts0505b",
+      "mfr": [
+        "_TZ3210_iystcadi",
+        "_tz3210_iystcadi",
+        "_TZ3210_IYSTCADI",
+        "_tz3210_IYSTCADI"
+      ],
+      "productId": ["TS0505B"],
+      "canonicalDriver": "light_bulb_rgb_led",
+      "forbiddenDrivers": [
+        "wall_dimmer_tuya",
+        "led_strip_advanced",
+        "dimmable_led_strip",
+        "led_controller_rgb"
+      ],
+      "notProductIds": ["TS0601", "TS0601_dim1", "TS0601_strip_adv"],
+      "protocol": "zcl",
+      "notes": "Z2M Lidl/Livarno RGB+CCT bulb (TS0505B). Was dual-claimed with wall_dimmer via shared TS0601 productId — strip mfr from dimmer/strip.",
+      "sources": ["z2m#12090", "dual-claim-compose-gate", "P177"],
+      "tracks": {
+        "master": { "static": true, "dynamic": true },
+        "stable": { "static": true, "dynamic": false }
+      }
     }
   ]
 }
