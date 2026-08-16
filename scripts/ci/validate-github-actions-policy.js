@@ -113,6 +113,10 @@ function validateWorkflow(file) {
     addError(file, 'workflow must not close a PR as merged; use gh pr merge plus commit reachability verification');
   }
 
+  if (/gh\s+workflow\s+run\s+["']🚀 Publish Stable to Test["']/.test(content)) {
+    addError(file, 'must not re-trigger Publish Stable→Test (shared App ID overwrites master Test)');
+  }
+
   const jobs = doc.jobs && typeof doc.jobs === 'object' ? doc.jobs : {};
   for (const [jobName, job] of Object.entries(jobs)) {
     if (!job || typeof job !== 'object') continue;
