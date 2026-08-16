@@ -32,7 +32,7 @@
       "realMfrsAdded": 5,
       "details": "tmp/synthetic-resolution.json + tmp/pruned21-resolution.json"
     },
-    "lastAlignedAt": "2026-08-16T17:42:47.192Z",
+    "lastAlignedAt": "2026-08-16T18:41:52.496Z",
     "alignTool": "align-mfs-db-intelligent@P169"
   },
   "sources": {
@@ -164803,23 +164803,19 @@
     "modelIdsCount": 3
   },
   "_TZ3000_e3vhyirx": {
-    "driverId": "curtain_motor_shutter",
-    "source": "auto-sync",
+    "driverId": "wall_curtain_switch",
+    "source": "registry:p191-ts130f-curtain-quartet-not-shutter-catchall",
     "modelIds": [
-      "TS0301",
-      "TS0601",
-      "TS0726"
+      "TS130F"
     ],
     "pid": "TS0301",
     "modelIdsCount": 3
   },
   "_TZ3000_femsaaua": {
-    "driverId": "curtain_motor_shutter",
-    "source": "auto-sync",
+    "driverId": "wall_curtain_switch",
+    "source": "registry:p191-ts130f-curtain-quartet-not-shutter-catchall",
     "modelIds": [
-      "TS0301",
-      "TS0601",
-      "TS0726"
+      "TS130F"
     ],
     "pid": "TS0301",
     "modelIdsCount": 3
@@ -164847,12 +164843,10 @@
     "modelIdsCount": 3
   },
   "_TZ3000_jwv3cwak": {
-    "driverId": "curtain_motor_shutter",
-    "source": "auto-sync",
+    "driverId": "wall_curtain_switch",
+    "source": "registry:p191-ts130f-curtain-quartet-not-shutter-catchall",
     "modelIds": [
-      "TS0301",
-      "TS0601",
-      "TS0726"
+      "TS130F"
     ],
     "pid": "TS0301",
     "modelIdsCount": 3
@@ -164911,12 +164905,10 @@
     "modelIdsCount": 3
   },
   "_TZ3000_1dd0d5yi": {
-    "driverId": "curtain_motor_shutter",
-    "source": "auto-sync",
+    "driverId": "wall_curtain_switch",
+    "source": "registry:p191-ts130f-curtain-quartet-not-shutter-catchall",
     "modelIds": [
-      "TS0301",
-      "TS0601",
-      "TS0726"
+      "TS130F"
     ],
     "pid": "TS0301",
     "modelIdsCount": 3
@@ -170461,59 +170453,9 @@
   },
   "_tze200_a4bpgplm": {
     "driverId": "device_radiator_valve",
-    "source": "compose-exclusive",
+    "source": "registry:p191-trv-a4bpgplm-not-generic-diy",
     "modelIds": [
-      "0x8040",
-      "BASICZBR3",
-      "BSP-EZ2",
-      "BSP-FZ2",
-      "BUTTON",
-      "Battery switch, 1 button",
-      "Battery switch, 2 buttons",
-      "CC2530",
-      "CC2531",
-      "CC2652",
-      "CUSTOM",
-      "DIY",
-      "EFEKTA",
-      "ESP32",
-      "MAKER",
-      "PTVO",
-      "RELAY",
-      "ROUTER",
-      "S26R2ZB",
-      "S31ZB",
-      "S40ZBTPB",
-      "SENSOR",
-      "SNZB-01",
-      "SNZB-01P",
-      "SNZB-02",
-      "SNZB-02P",
-      "SNZB-03",
-      "SNZB-03P",
-      "SNZB-04",
-      "SNZB-04P",
-      "SNZB-06P",
-      "SNZB-09P",
-      "SWITCH",
-      "TRV001",
-      "TRV003",
-      "TS0026",
-      "TS0041A",
-      "TS0044",
-      "TS0052",
-      "TS0105",
-      "TS0224",
-      "TS0601",
-      "TS0901",
-      "ZBMINI",
-      "ZBMINIL2",
-      "ZIGSTAR",
-      "eT093WRG",
-      "eT093WRO",
-      "eTRV0100",
-      "eTRV0101",
-      "eTRV0103"
+      "TS0601"
     ],
     "pid": "0x8040",
     "modelIdsCount": 51
@@ -173062,46 +173004,10 @@
     "modelIdsCount": 23
   },
   "_tzb210_g01ie5wu": {
-    "driverId": "light_bulb_rgb",
-    "source": "auto-sync",
+    "driverId": "wall_dimmer_1gang_1way",
+    "source": "registry:p191-ts0501b-dimmer-g01ie5wu",
     "modelIds": [
-      "E11-G13",
-      "E11-G14",
-      "E11-G23",
-      "EDM-1ZBA-EU",
-      "GL-C-006",
-      "LCT001",
-      "LCT002",
-      "LCT003",
-      "LCT007",
-      "LCT010",
-      "LCT011",
-      "LCT012",
-      "LCT014",
-      "LCT015",
-      "LCT016",
-      "RB 185 C",
-      "RB 285 C",
-      "TRI-C1ZR",
-      "TRI-K1ZR",
-      "TS0011",
-      "TS004F",
-      "TS0052",
-      "TS0501B",
-      "TS0503A",
-      "TS0503B",
-      "TS0504B",
-      "TS0505A",
-      "TS0505B",
-      "TS0601",
-      "TS0601_dim1",
-      "TS1101",
-      "TS110E",
-      "TS110F",
-      "ZB-CL01",
-      "ZBMINI-DIM",
-      "ZBMINID",
-      "ZBT-ColorLight"
+      "TS0501B"
     ],
     "pid": "E11-G13",
     "modelIdsCount": 37

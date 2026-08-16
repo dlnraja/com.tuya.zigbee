@@ -1,6 +1,6 @@
 # Cross-source user report triage
 
-Generated: 2026-08-16T17:43:02.526Z
+Generated: 2026-08-16T18:42:08.411Z
 
 Sources: 100 GitHub issues, 60 pull requests, forum scan present, Gmail diagnostics present.
 
@@ -47,9 +47,3 @@ the same manufacturer is a misattribution, whatever mfs_db says.
 
 | manufacturerName | classes | zigbee-herdsman says | placements |
 |---|---|---|---|
-| `_tzb210_g01ie5wu` | light, socket | Tuya/TS0501B_dimmer_2 — Zigbee dimmer | wall_dimmer_1gang_1way → TS004F; wall_dimmer_tuya → TS0601_dim1/TS0601 |
-| `_tze200_a4bpgplm` | other, thermostat | Tuya/TS0601_thermostat_1 — Thermostatic radiator valve | device_radiator_valve → TS0601; generic_diy → BUTTON |
-| `_tz3000_1dd0d5yi` | curtain, windowcoverings | Moes/MS-108ZR — Zigbee + RF curtain switch module | curtain_motor_shutter → TS0301/TS0601; wall_curtain_switch → TS130F |
-| `_tz3000_femsaaua` | curtain, windowcoverings | — | curtain_motor_shutter → TS0301/TS0601; wall_curtain_switch → TS130F |
-| `_tz3000_e3vhyirx` | curtain, windowcoverings | — | curtain_motor_shutter → TS0301/TS0601; wall_curtain_switch → TS130F |
-| `_tz3000_jwv3cwak` | curtain, windowcoverings | — | curtain_motor_shutter → TS0301/TS0601; wall_curtain_switch → TS130F |

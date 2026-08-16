@@ -440,6 +440,48 @@
         "master": { "static": true, "dynamic": true },
         "stable": { "static": true, "dynamic": false }
       }
+    },
+    {
+      "id": "p191-ts130f-curtain-quartet-not-shutter-catchall",
+      "mfr": ["_TZ3000_1dd0d5yi", "_TZ3000_femsaaua", "_TZ3000_e3vhyirx", "_TZ3000_jwv3cwak"],
+      "productId": ["TS130F"],
+      "canonicalDriver": "wall_curtain_switch",
+      "forbiddenDrivers": ["curtain_motor_shutter"],
+      "protocol": "zcl",
+      "notes": "Johan enrichment gives TS130F for all four (Moes MS-108ZR family, plus LoraTap and Nous rebrands). curtain_motor_shutter does not even declare TS130F, so the placement can never match; its 50-entry productId list has accumulated Hue bulbs, Xiaomi weather sensors and temperature sensors and should not grow further.",
+      "sources": ["z2m-herdsman", "johan-enrichment", "P191"],
+      "tracks": {
+        "master": { "static": true, "dynamic": true },
+        "stable": { "static": true, "dynamic": false }
+      }
+    },
+    {
+      "id": "p191-ts0501b-dimmer-g01ie5wu",
+      "mfr": ["_TZB210_g01ie5wu"],
+      "productId": ["TS0501B"],
+      "canonicalDriver": "wall_dimmer_1gang_1way",
+      "forbiddenDrivers": ["wall_dimmer_tuya"],
+      "protocol": "zcl",
+      "notes": "z2m TS0501B_dimmer_2. wall_dimmer_1gang_1way declares TS0501B; wall_dimmer_tuya does not, so that placement cannot match.",
+      "sources": ["z2m-herdsman", "johan-enrichment", "P191"],
+      "tracks": {
+        "master": { "static": true, "dynamic": true },
+        "stable": { "static": true, "dynamic": false }
+      }
+    },
+    {
+      "id": "p191-trv-a4bpgplm-not-generic-diy",
+      "mfr": ["_TZE200_a4bpgplm"],
+      "productId": ["TS0601"],
+      "canonicalDriver": "device_radiator_valve",
+      "forbiddenDrivers": ["generic_diy"],
+      "protocol": "tuya_ef00",
+      "notes": "z2m TRV06 family thermostatic radiator valve. generic_diy is the DIY catch-all (CC2530, PTVO, ESP32) and does not declare TS0601 — a commercial Tuya TRV does not belong there.",
+      "sources": ["z2m-herdsman", "johan-enrichment", "P191"],
+      "tracks": {
+        "master": { "static": true, "dynamic": true },
+        "stable": { "static": true, "dynamic": false }
+      }
     }
   ]
 }
