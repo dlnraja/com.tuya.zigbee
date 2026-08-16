@@ -106,7 +106,7 @@
     "check:json": "node scripts/validate/homey-mandatory-check.js --json",
     "check:athom": "node scripts/validate/validate-app-json.js",
     "check:precommit": "node .githooks/pre-commit",
-    "check:yaml": "node scripts/ci/validate-all-yaml.js --json && node scripts/ci/validate-github-actions-policy.js",
+    "check:yaml": "node scripts/ci/validate-all-yaml.js --json && node scripts/ci/validate-github-actions-policy.js && node tools/ci/workflow-estate-gate.js",
     "check:actions": "node scripts/ci/validate-github-actions-policy.js",
     "check:flows": "node scripts/ci/check-flow-ids.js --json",
     "check:homey-guidelines": "node scripts/ci/homey-online-guidelines-audit.js",

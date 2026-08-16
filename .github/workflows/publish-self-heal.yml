@@ -46,14 +46,14 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          # Look for runs of "🚀 Publish Stable to Test" that are stuck > 90 min
-          # (normal publish takes 5-10 min; > 90 min = stuck)
+          # P139/P193: watch master Auto-Publish only. Never cancel/re-run
+          # Publish Stable→Test — shared App ID would overwrite the 9.0.x soak.
           STUCK_RUNS=$(gh run list \
-            --workflow "🚀 Publish Stable to Test" \
+            --workflow "Auto-Publish on Push" \
             --limit 5 \
             --json databaseId,status,createdAt,updatedAt \
             | python3 scripts/ci/find-stuck-runs.py)
-          echo "## 🔍 Stuck publish runs (>90 min in_progress)" >> $GITHUB_STEP_SUMMARY
+          echo "## 🔍 Stuck Auto-Publish runs (>90 min in_progress)" >> $GITHUB_STEP_SUMMARY
           echo "$STUCK_RUNS" >> $GITHUB_STEP_SUMMARY
           echo "stuck_runs=$STUCK_RUNS" >> $GITHUB_OUTPUT
 
@@ -62,19 +62,20 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          echo "## 🛑 Cancelling stuck runs" >> $GITHUB_STEP_SUMMARY
+          echo "## 🛑 Cancelling stuck Auto-Publish runs" >> $GITHUB_STEP_SUMMARY
           for run_id in $(echo "${{ steps.find.outputs.stuck_runs }}" | awk '{print $1}'); do
             echo "- Cancelling $run_id" >> $GITHUB_STEP_SUMMARY
             gh run cancel "$run_id" 2>&1 || true
           done
 
-      - name: 🔁 Re-trigger publish-stable
+      - name: 🔁 Re-trigger Auto-Publish (master only)
         if: steps.find.outputs.stuck_runs != 'OK'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          echo "## 🔁 Re-triggering publish" >> $GITHUB_STEP_SUMMARY
-          gh workflow run "🚀 Publish Stable to Test" --ref stable-v5 2>&1 | tee -a $GITHUB_STEP_SUMMARY
+          echo "## 🔁 Re-triggering Auto-Publish on Push (master)" >> $GITHUB_STEP_SUMMARY
+          echo "P139: never workflow-run Publish Stable→Test from self-heal." >> $GITHUB_STEP_SUMMARY
+          gh workflow run "Auto-Publish on Push" --ref master 2>&1 | tee -a $GITHUB_STEP_SUMMARY
 
       - name: ✅ All good
         if: steps.find.outputs.stuck_runs == 'OK'

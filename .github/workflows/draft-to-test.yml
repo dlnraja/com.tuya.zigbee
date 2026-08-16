@@ -26,7 +26,7 @@ permissions:
 
 concurrency:
   group: promote-to-test-${{ inputs.branch || 'master' }}
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 env:
   NODE_OPTIONS: "--dns-result-order=ipv4first"

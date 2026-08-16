@@ -7,7 +7,7 @@
 
 | Track | Branch | Code tip | Homey Test |
 |-------|--------|----------|------------|
-| Preview | `master` | **P192** OTA+re-inject+draft poll | Test still **9.0.558**; draft **9.0.562 #2884** waiting promote |
+| Preview | `master` | **P193** workflow estate + soak guard | Test still **9.0.558**; draft **9.0.562 #2884** |
 | Stable | `stable-v5` | PR #530 lineage | do **not** overwrite master Test while soaking |
 
 App ID: `com.dlnraja.tuya.zigbee` · https://homey.app/a/com.dlnraja.tuya.zigbee/test/
