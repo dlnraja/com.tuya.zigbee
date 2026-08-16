@@ -45,16 +45,16 @@ A **(mfr, pid)** pair = the canonical identity of a Zigbee device.
 > - **Promotion policy**: backport a master fix to stable only if (1) it is a crash/reliability/data fix (never a feature), (2) it has run clean on the master Test channel without new forum crash reports, (3) tests are 100% green on both branches. Feature managers (availability, suppression, presence sim, circadian, cascade, fallback router, free-scrape, AlarmPolarity smart-learn, CapabilityCommandRouter parallelDiscover…) are **master-only, forever** unless a human explicitly promotes them.
 > - **Shared App ID warning**: if both tracks publish the same Homey App ID, **Publish Stable → Test** can overwrite master Test (e.g. 5.12.70 replacing 9.0.x). Prefer distinct store IDs or never promote stable onto the shared Test slot while soaking master.
 
-## Data Sources (15 external)
+## Data Sources (15 external + free-scrape / forum-silent in mega)
 
-All orchestrated via `tools/ci/mega-crawler.js` + GHA `mega-crawl.yml` (daily 02:00 UTC).
+Orchestrated via `tools/ci/mega-crawler.js` + GHA `mega-crawl.yml` (**workflow_dispatch only** — cron disabled 2026-08-04; daily coverage is `blakadder-fetch`, `forum-poll`, `gmail-diagnostics`, `auto-enrich-closed-loop`).
 
 | Tier | Source | Script |
 |------|--------|--------|
 | 1 (Heavy) | zigbee.blakadder.com | `scripts/sync/crawl-blakadder.js` |
 | 1 (Heavy) | JohanBendz issues/PRs | `tools/ci/johan-dump.js` |
-| 1 (Heavy) | Gmail crash logs | `tools/ci/gmail-diagnostics.js` (via GHA `gmail-diagnostics.yml`) |
-| 1 (Heavy) | Homey forum topic 140352 | `tools/ci/forum-fetch-140352.js` |
+| 1 (Heavy) | Gmail crash logs | `tools/ci/gmail-diagnostics.js` → `.github/scripts/fetch-gmail-diagnostics.js` |
+| 1 (Heavy) | Homey forum topic 140352 | `tools/ci/forum-fetch-140352.js` (+ silent: `forum-silent-multi-scan.js`) |
 | 1 (Heavy) | Z2M converters | `scripts/sync/crawl-z2m.js` |
 | 1 (Heavy) | ZHA quirks | `scripts/sync/crawl-zha.js` |
 | 2 (Medium) | deCONZ | `scripts/sync/crawl-deconz.js` |
@@ -70,8 +70,9 @@ All orchestrated via `tools/ci/mega-crawler.js` + GHA `mega-crawl.yml` (daily 02
 
 ## Tools (CI/Analysis)
 
-- `tools/ci/blakadder-fetch.js` — extended Blakadder fetcher (alt variant)
 - `tools/ci/blakadder-cross-ref.js` — cross-ref Blakadder vs mfs_db/Johan/Gmail/drivers
+- `scripts/sync/crawl-blakadder.js` — canonical Blakadder crawl (CI `blakadder-fetch.yml`)
+- `tools/ci/gmail-diagnostics.js` — thin wrapper → `.github/scripts/fetch-gmail-diagnostics.js`
 - `tools/ci/apply-blakadder-new.js` — apply new candidates (dry-run by default)
 - `tools/ci/apply-mfr-pid-cross-ref.js` — Sacred Couple applier
 - `tools/ci/add-sacred-couples.js` — Sacred Couple builder
@@ -121,7 +122,7 @@ All orchestrated via `tools/ci/mega-crawler.js` + GHA `mega-crawl.yml` (daily 02
 
 ## Cron / Schedule Strategy
 
-- Source crawlers: **daily 02:00 UTC** (`mega-crawl.yml`)
+- Source crawlers: **dispatch-only** `mega-crawl.yml` (cron off; use blakadder/forum/gmail/enrich for daily commits)
 - Blakadder: **daily 04:00 UTC** (`blakadder-fetch.yml`)
 - Gmail: **daily** (`gmail-diagnostics.yml`)
 - Recurrent orchestrator: **daily 03:30 UTC** (`recurrent-orchestrator.yml`)

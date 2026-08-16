@@ -1,5 +1,6 @@
 'use strict';
 const { safeDivide, safeMultiply } = require('../../lib/utils/tuyaUtils.js');
+const { safeSetInterval, safeClearInterval, safeClearTimeout } = require('../../lib/utils/safe-timers');
 
 const UnifiedPlugBase = require('../../lib/devices/UnifiedPlugBase');
 const { getDeviceConfig, transformDpValue, ENERGY_CONFIGS } = require('../../lib/configs/IntelligentDeviceConfig');
@@ -413,7 +414,7 @@ class EnergyMonitorPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
         }
         // v5.11.26: Poll metering  many TS011F don't auto-report energy
         if (mc.readAttributes) {
-          this._meterPoll = this.homey.setInterval(async () => {
+          this._meterPoll = safeSetInterval(this, async () => {
             if (this._destroyed) {return;}
             try {
               const a = await mc.readAttributes(['currentSummDelivered']).catch(() => null);
@@ -422,7 +423,7 @@ class EnergyMonitorPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
                 await this.safeSetCapabilityValue('meter_power', parseFloat(e)).catch(() => { });
               }
             } catch (_) {}
-          }); // v5.12.12: increased from 60s to 120s
+          }, 120000); // v5.12.12: increased from 60s to 120s
         }
         // v5.12.5: also try configureReporting for metering
         if (mc.configureReporting) {
@@ -439,12 +440,23 @@ class EnergyMonitorPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
 
   async onDeleted() {
     this._destroyed = true;
+    if (this._meterPoll) { safeClearInterval(this, this._meterPoll); this._meterPoll = null; }
+    if (this._interval) { safeClearInterval(this, this._interval); this._interval = null; }
+    if (this._timer) { safeClearTimeout(this, this._timer); this._timer = null; }
+    if (this._pollInterval) { safeClearInterval(this, this._pollInterval); this._pollInterval = null; }
     await super.onDeleted();
-    // Clean up timers to prevent memory leaks
-    if (this._interval) { clearInterval(this._interval); this._interval = null; }
-    if (this._timer) { clearTimeout(this._timer); this._timer = null; }
-    if (this._pollInterval) { clearInterval(this._pollInterval); this._pollInterval = null; }
     this.log('Device deleted, cleaning up');
+  }
+
+  async onUninit() {
+    this._destroyed = true;
+    if (this._meterPoll) { safeClearInterval(this, this._meterPoll); this._meterPoll = null; }
+    if (this._interval) { safeClearInterval(this, this._interval); this._interval = null; }
+    if (this._timer) { safeClearTimeout(this, this._timer); this._timer = null; }
+    if (this._pollInterval) { safeClearInterval(this, this._pollInterval); this._pollInterval = null; }
+    if (typeof super.onUninit === 'function') {
+      await super.onUninit();
+    }
   }
 }
 

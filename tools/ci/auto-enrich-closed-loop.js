@@ -69,7 +69,7 @@ function phaseCrawl() {
     { id: 'blakadder', cmd: 'node tools/ci/mega-crawler.js --only=blakadder --timeout=300' },
     { id: 'johan', cmd: 'node tools/ci/johan-dump.js --no-auth 2>&1 || node tools/ci/johan-dump.js' },
     { id: 'gmail', cmd: 'node tools/ci/gmail-diagnostics.js --max 100 2>&1 || echo GMAIL_SKIP' },
-    { id: 'forum', cmd: 'node tools/ci/forum-integration.js 2>&1 || echo FORUM_SKIP' },
+    { id: 'forum', cmd: 'node tools/ci/forum-silent-multi-scan.js --max=40 2>&1 || echo FORUM_SKIP' },
     { id: 'z2m', cmd: 'node scripts/sync/crawl-z2m.js 2>&1 || echo Z2M_SKIP' },
     { id: 'zha', cmd: 'node scripts/sync/crawl-zha.js 2>&1 || echo ZHA_SKIP' },
   ];

@@ -1,15 +1,15 @@
-# SESSION HANDOFF — 2026-08-16 (~23:35 CET)
+# SESSION HANDOFF — 2026-08-16 (~23:40 CET)
 
-> Shared App ID. Silent forum. Soak-first skip draft verified ×3+.
+> Shared App ID. Silent forum. Soak-first skip draft verified.
 
 | Track | Tip | Homey Test |
 |-------|-----|------------|
-| master | P200 timer API match (27 drivers safe-timers) | 9.0.565+ → Auto-Publish next |
-| stable-v5 | P200 surgical timer backport; soak-first | do not overwrite 9.x |
+| master | P201 crawler wiring + meterPoll/wifi onUninit | 9.0.565+ → Auto-Publish |
+| stable-v5 | P201 surgical meterPoll/wifi + gmail wrapper | soak-skip; do not overwrite 9.x |
 
-## Latest pass
-- **P200 BOTH**: `clearTimeout` vs `homey.setTimeout` on `_appCommandTimeout` / `_zclState.timeout` → `safeClearTimeout`/`safeSetTimeout` (27 drivers each track).
-- Tests: `test/critical/p200-homey-timer-api-match.test.js`
-- Report: `reports/P200_TIMER_API_MATCH_2026-08-16.md`
+## Latest
+- **P201**: gmail wrapper, mega forum-fetch-140352, meterPoll 120s+clear, wifi_camera onUninit, identity docs.
+- Audits: scrapers vs workflows, architecture drift, code gaps (subagents).
+- Report: `reports/P201_CRAWLER_METERPOLL_2026-08-16.md`
 
 Open issues/PRs: none.

@@ -1060,17 +1060,15 @@ Key skills frequently used in this engine:
 
 
 ### 3. Dual App & Dual Branch Architecture
-The repository deploys **two separate applications** to the Homey store. You must understand the split:
-1. **App 1: "Tuya Unified Zigbee"** (Test/Production channel)
-   - **Branch**: `master`
+The repository deploys **one Homey App ID** on two purpose-split branches:
+1. **Preview / soak** (`master`)
    - **App ID**: `com.dlnraja.tuya.zigbee`
-   - **CI/CD Auto-Publish**: `auto-publish-on-push.yml` (on push to master) and `daily-promote-to-test.yml`
-2. **App 2: "Tuya Unified Zigbee (Stable)"** (Parallel stable fallback)
-   - **Branch**: `stable-v5`
-   - **App ID**: `com.dlnraja.tuya.zigbee.stable`
-   - **CI/CD Auto-Publish**: `publish-stable.yml` (on push to stable-v5)
+   - **CI/CD Auto-Publish**: `auto-publish-on-push.yml` (on push to master)
+2. **Production / LTS** (`stable-v5`)
+   - **Same App ID**: `com.dlnraja.tuya.zigbee` (there is **no** live `com.dlnraja.tuya.zigbee.stable` store slot)
+   - **CI/CD**: `publish-stable.yml` — soak-guard skips draft+promote while Homey Test is 9.x
 
-*Rule: If a fix is made on `master`, it MUST often be ported to `stable-v5` (via `git cherry-pick` or manual patch) and pushed to both branches to ensure both apps are synced.*
+*Rule: Reliability fixes land on `master` first, then surgical backport to `stable-v5`. Never full-tree sync. Never promote stable onto Test while master 9.x is soaking.*
 
 ### 4. Data Collection & Orchestration Scripts (How to fetch updates)
 This repository contains a massive suite of Node.js scripts to pull external data. If you are asked to "fetch latest issues", "check emails", or "sync the forum", **DO NOT WRITE NEW SCRIPTS**. Execute the existing ones:

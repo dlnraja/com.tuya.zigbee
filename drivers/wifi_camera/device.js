@@ -309,6 +309,15 @@ class WiFiCameraDevice extends Homey.Device {
     await super.onDeleted();
   }
 
+  async onUninit() {
+    this._destroyed = true;
+    this._stopTimers();
+    this._destroyLocalConnection();
+    if (typeof super.onUninit === 'function') {
+      await super.onUninit();
+    }
+  }
+
   _registerFlowCards() {
     try {
       const privacyCard = (() => { try { return this.homey.flow.getActionCard('wifi_camera_set_privacy'); } catch (e) { return null; } })();

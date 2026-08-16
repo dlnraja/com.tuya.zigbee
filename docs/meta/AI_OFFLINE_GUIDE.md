@@ -7,42 +7,38 @@
 
 ## 🗺️ 1. Project Philosophy & Dual-Track Separation
 
-This repository operates on a strict **Dual-Track, Dual-Application** framework to support both high-performance laboratory incubation and hyper-stable mainstream distribution.
+This repository operates on a strict **Dual-Track** framework (shared Homey App ID, different purpose per branch).
 
 ```mermaid
 graph TD
-    %% Define Tracks
-    subgraph Innovative Track (master branch)
-        A1[App ID: com.dlnraja.tuya.zigbee] --> B1[v7.5.x Innovative Engine]
-        B1 --> C1[323+ Laboratory Drivers Fleet]
+    subgraph Preview Track (master branch)
+        A1[App ID: com.dlnraja.tuya.zigbee] --> B1[v9.0.x Preview / Soak]
+        B1 --> C1[430+ Laboratory Drivers Fleet]
         C1 --> D1[O1 Dynamic Fingerprints Database]
         D1 --> E1[Adaptive Routing & Hybrid Protocols]
     end
 
-    subgraph Stable Track (stable-v5 branch)
-        A2[App ID: com.dlnraja.tuya.zigbee.stable] --> B2[v5.11.x Production Core]
-        B2 --> C2[50 High-Traffic Core Drivers]
+    subgraph LTS Track (stable-v5 branch)
+        A2[Same App ID: com.dlnraja.tuya.zigbee] --> B2[v5.12.x Reliability Core]
+        B2 --> C2[Surgical reliability backports only]
         C2 --> D2[Static Manifest Fingerprints]
-        D2 --> E2[Minimal Memory Footprint <3.2MB]
+        D2 --> E2[Soak-guard: skip Test while 9.x soaks]
     end
-
-    %% Sync Pipeline
-    master_branch -.->|monthly-sync-master-stable.yml| stable_branch
 ```
 
 ### 📋 Track Specifications Matrix
 
-| Dimension | Innovative Track (`master`) | Stable Track (`stable-v5`) |
+| Dimension | Preview Track (`master`) | LTS Track (`stable-v5`) |
 | :--- | :--- | :--- |
-| **Application ID** | `com.dlnraja.tuya.zigbee` | `com.dlnraja.tuya.zigbee.stable` |
-| **App Name** | `Tuya Unified` | `Tuya Unified Stable` |
-| **Version Scope** | `v7.x.x` (Currently `7.5.9`) | `v5.11.x` |
+| **Application ID** | `com.dlnraja.tuya.zigbee` | `com.dlnraja.tuya.zigbee` (shared — **no** live `.stable` slot) |
+| **App Name** | `Universal Tuya` | `Universal Tuya` |
+| **Version Scope** | `v9.0.x` | `v5.12.x` |
 | **Target Audience** | Power users, testers, early-adopters | General public, zero-hassle home setups |
-| **Driver Volume** | **323+ drivers** (Experimental fleet) | **50 drivers** (Highly audited Core fleet) |
-| **Engine Footprint** | Dynamic capability discovery & Zosung IR | Pre-compiled static matching (<3.2MB) |
+| **Driver Volume** | **430+ drivers** (Experimental fleet) | Reliability-first fleet (surgical backports) |
+| **Engine Footprint** | Dynamic capability discovery & advanced managers | Reliability-only (no feature-manager promotion by default) |
 
 > [!IMPORTANT]
-> **Git Protection Guard**: When merging core bugfixes from `master` to `stable-v5`, the files `.homeycompose/app.json`, `package.json`, and `app.json` **MUST** be protected from being overwritten to prevent App ID and version pollution across the tracks!
+> **Shared App ID**: Promoting stable 5.12.x onto Homey Test **overwrites** soaking master 9.0.x. `publish-stable.yml` soak-guard must skip draft+promote while Test is 9.x unless `force_test`. Never full-tree sync identity files across tracks.
 
 ---
 
