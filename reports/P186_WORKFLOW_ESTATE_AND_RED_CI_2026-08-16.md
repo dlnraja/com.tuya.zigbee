@@ -54,6 +54,43 @@ device_assignment` family but had never been taught about this newer sentinel,
 so it failed on **every single push** after P142. One regex entry fixes it;
 the check now reports 0 new collisions.
 
+### Cause C — un-applied mfs_db drift (blocked `syntax-check`)
+
+`syntax-check.yml` failed on `align-mfs-db-intelligent.js --check`: two
+high-severity `driverHint` drifts had accumulated without being applied.
+Applying them produced a two-line change to `data/mfs_db.json`.
+
+That apply also strips the manufacturer from the misattributed driver — and the
+tool **strips without adding to the canonical driver**. It removed
+`_TZ3000_qeuvnohg` from `lcdtemphumidsensor_plug_energy` and left it claimed by
+nobody, even though the registry names `din_rail_switch` as its home and that
+driver already carries `TS011F` plus a sibling manufacturer from the same case.
+
+The Z9 rule added in P184 caught it immediately: `humanGaps` went from 0 to 1 for
+a manufacturer that appears in the forum scan. Coverage restored on
+`din_rail_switch`; back to 0.
+
+### Correction to P185
+
+P185 called `_tz3210_jaap6jeb` a legitimate multi-class manufacturer because
+mfs_db lists both `TS0203` and `TS0601` for it. That evidence is **circular**:
+`mfs-aggregator.js` derives modelIds from `productIds[0]` of every driver listing
+the manufacturer, so mfs_db learned `TS0203` from the `contact_sensor` placement
+being audited. The curated registry pins it to `bulb_rgbw`/`TS0505B`, and that
+decision stands.
+
+The lesson generalises: for any manufacturer whose mfs_db evidence is
+`sources: ["local"]`, the modelId list cannot validate a placement — it was read
+back out of the manifests.
+
+### Verified outcome
+
+| Workflow | before | after |
+|---|---|---|
+| 🛡️ Unified CI/CD Orchestrator | 26 failures / 27 runs | **success** |
+| 🔍 Syntax Check & SDK3 Validation | 8 failures / 22 runs | **success** |
+| code-quality, Deploy Pages, Auto-Fix+Publish, continuous-flow | green | green |
+
 ## 2. Local replay of the CI gate sequence
 
 Replayed the sixteen gates of the "Universal Validation" job locally, skipping

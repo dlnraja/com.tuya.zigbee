@@ -1,6 +1,6 @@
 # Cross-source user report triage
 
-Generated: 2026-08-16T16:07:28.592Z
+Generated: 2026-08-16T16:38:02.784Z
 
 Sources: 100 GitHub issues, 60 pull requests, forum scan present, Gmail diagnostics present.
 
@@ -51,7 +51,6 @@ when every driver matches something distinct, the spread is the sacred-couple ca
 | `_tz3000_pvlvoxvt` | sensor, socket | climate_sensor → TS0201/TS0601; switch_usb_dongle → TS0002 |
 | `_tz3000_r0o2dahu` | button, socket | smart_knob → none; switch_1gang → TS0001/TS0601 |
 | `_tz3210_8n4dn1ne` | sensor, socket | climate_sensor → TS0201/TS0601; switch_usb_dongle → TS0002 |
-| `_tz3210_jaap6jeb` | light, sensor | bulb_rgbw → TS0601; contact_sensor → TS0203 |
 | `_tz3210_urjf5u18` | sensor, socket | climate_sensor → TS0201/TS0601; switch_usb_dongle → TS0002 |
 | `_tzb210_g01ie5wu` | light, socket | wall_dimmer_1gang_1way → TS004F; wall_dimmer_tuya → TS0601_dim1/TS0601 |
 | `_tze200_2imwyigp` | sensor, socket | contact_sensor → TS0203; switch_3gang → TS0601 |
