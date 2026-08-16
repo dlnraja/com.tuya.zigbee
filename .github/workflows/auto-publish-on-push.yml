@@ -89,6 +89,9 @@ jobs:
       - name: Anti-bot regression gate
         run: node tools/ci/anti-bot-regression-gate.js
 
+      - name: Homey heap JSON size gate (P148/P157)
+        run: node tools/ci/homey-heap-json-gate.js
+
       - name: Regression lessons gate (MUST-KEEP fatals)
         run: node tools/ci/regression-lessons-gate.js
 
