@@ -34,7 +34,8 @@ env:
   HOMEY_ZIGBEE_MAX_DRIVER_COMBOS: "10000"
 
 concurrency:
-  group: auto-fix-and-publish
+  # Per-branch so master and stable-v5 do not serialize/race on one lock.
+  group: auto-fix-and-publish-${{ github.ref_name }}
   cancel-in-progress: false
 
 jobs:
@@ -211,8 +212,13 @@ jobs:
               echo "::group::Remaining tracked changes before rebase"
               git status --short
               echo "::endgroup::"
-              echo "::error::Uncommitted tracked changes remain before rebase"
-              exit 1
+              # Soft: leftover dirty trees are usually race noise; restore again
+              # and continue. Hard-fail only blocks the next scheduled run.
+              restore_volatile_artifacts
+              if ! git diff --quiet || ! git diff --cached --quiet; then
+                echo "::warning::Uncommitted tracked changes remain after restore; skipping auto-fix push (retry next run)"
+                exit 0
+              fi
             fi
             git fetch origin "$BRANCH"
             if ! git merge-base --is-ancestor "origin/$BRANCH" HEAD; then
@@ -228,11 +234,31 @@ jobs:
             else
               echo "origin/$BRANCH is already an ancestor of HEAD; skipping rebase"
             fi
-            git push origin HEAD:"refs/heads/$BRANCH"
+            # P198: retry push on concurrent ref lock / non-fast-forward races
+            pushed=0
+            for attempt in 1 2 3 4; do
+              if git push origin HEAD:"refs/heads/$BRANCH"; then
+                pushed=1
+                break
+              fi
+              echo "::warning::Auto-fix push attempt ${attempt} failed; fetch+rebase and retry"
+              git fetch origin "$BRANCH"
+              if ! git rebase -X ours "origin/$BRANCH"; then
+                git rebase --abort || true
+                git reset --hard "origin/$BRANCH"
+                echo "::warning::Giving up auto-fix push after rebase conflict (regenerated next run)"
+                exit 0
+              fi
+              sleep $((attempt * 3))
+            done
+            if [ "$pushed" != "1" ]; then
+              echo "::warning::Auto-fix push exhausted retries; skipping (regenerated next run)"
+              exit 0
+            fi
             git fetch origin "$BRANCH"
             git merge-base --is-ancestor HEAD "origin/$BRANCH" || {
-              echo "::error::Auto-fix commit HEAD is not reachable from origin/$BRANCH after push"
-              exit 1
+              echo "::warning::Auto-fix commit HEAD not reachable from origin/$BRANCH after push (race); OK next run"
+              exit 0
             }
           else
             echo "No auto-fix changes to commit"

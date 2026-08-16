@@ -83,6 +83,14 @@ const CRAWLERS = [
     desc: 'Crawl Homey community forum topic 140352 + related',
   },
   {
+    id: 'forum-silent',
+    name: 'Forum silent multi-topic (T157628 READ-ONLY)',
+    cmd: 'node tools/ci/forum-silent-multi-scan.js --max=40 2>&1 || echo "FORUM_SKIP"',
+    weight: 'medium',
+    estimated: '60s',
+    desc: 'Silent scan 140352+satellites; never posts',
+  },
+  {
     id: 'free-scrape',
     name: 'Free scrape stack (Jina/Microlink/Wayback/Crawl4AI?/Firecrawl budget)',
     cmd: 'node scripts/ci/diag-investigate-orchestrator.js --full --skip-fetch --focus=2137',
