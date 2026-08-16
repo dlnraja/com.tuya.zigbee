@@ -341,7 +341,10 @@
     "zigbee"
   ],
   "zigbee": {
-    "manufacturerName": [],
+    "manufacturerName": [
+      "_hybrid_sensor_contact_rain_needs_device_assignment",
+      "_HYBRID_SENSOR_CONTACT_RAIN_NEEDS_DEVICE_ASSIGNMENT"
+    ],
     "productId": [
       "Excellux",
       "TS0203",
