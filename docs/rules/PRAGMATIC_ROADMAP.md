@@ -24,7 +24,7 @@ Store name: **Universal Tuya** (Zigbee in description/tags). Not “Unified Engi
 | # | Action | Status |
 |---|--------|--------|
 | 1 | Publish tip + soak Peter OOM (`96c19859` → 9.0.541+) | Tip **9.0.543+**; RC fact-check `reports/P156_RC_LIVEDATA_SLEEPY_FACTCHECK_2026-08-16.md` |
-| 2 | Sacred couples / anti dual-claim | **P168 done** — 0 `_TZ*` dual-claims; class audit + CI gates |
+| 2 | Sacred couples / anti dual-claim | **P168–P169 done** — 0 `_TZ*` dual-claims; `align-mfs-db-intelligent` CI; refuse mfs-SSOT auto-PR pack (P171) |
 | 3 | Enrich `user-misattribution-registry` from forum | Ongoing (P149–P152) |
 | 4 | Short GitHub docs (sacred couple, dual-app, troubleshooting) | Done / maintain |
 | 5 | Critical modules progressive harden | Continuous |
