@@ -7,7 +7,7 @@ return page(drivers,t,v,R);
 };
 function page(D,t,v,R){return`<!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Device Finder - Tuya Unified Zigbee v${v}</title>
+<title>Device Finder — Universal Tuya v${v}</title>
 <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2/dist/tailwind.min.css" rel="stylesheet">
 <style>
 :root{--bg:#0f172a;--card:#1e293b;--accent:#3b82f6;--green:#10b981;--text:#e2e8f0;--muted:#94a3b8}
@@ -42,9 +42,9 @@ function page(D,t,v,R){return`<!DOCTYPE html>
 .footer{text-align:center;padding:2rem;color:var(--muted);font-size:.875rem}
 .footer a{color:var(--accent);text-decoration:none}
 </style></head><body>
-<div class="hero"><h1>🔍 Device Finder</h1>
-<p>Tuya Unified Zigbee v${v} — Find your device instantly</p>
-<p><a href="wifi.html" style="color:var(--accent)">📡 WiFi Devices — local-first Tuya WiFi</a> · <a href="dashboards.html" style="color:var(--accent)">📊 Dashboards</a> · <a href="inbox.html" style="color:var(--accent)">📥 Community Inbox</a></p>
+<div class="hero"><h1>Device Finder</h1>
+<p>Universal Tuya v${v} — local Zigbee fingerprints for Homey Pro</p>
+<p><a href="wifi.html" style="color:var(--accent)">WiFi Devices</a> · <a href="dashboards.html" style="color:var(--accent)">Dashboards</a> · <a href="inbox.html" style="color:var(--accent)">Community Inbox</a></p>
 <div class="stats">
 <div class="stat"><b>${D.length}</b>Drivers</div>
 <div class="stat"><b>${t.toLocaleString()}</b>Fingerprints</div>
@@ -58,8 +58,8 @@ function page(D,t,v,R){return`<!DOCTYPE html>
 </div>
 <div class="grid" id="grid">${D.map(d=>card(d,R)).join('')}</div>
 <div class="footer">
-<p>Generated ${new Date().toISOString().split('T')[0]} | <a href="wifi.html">📡 WiFi Devices</a> | <a href="dashboards.html">📊 Dashboards</a> | <a href="inbox.html">📥 Community Inbox</a> | <a href="${R}">GitHub</a> | <a href="https://homey.app/a/com.dlnraja.tuya.zigbee/test/">Install Test</a> | <a href="https://community.homey.app/t/140352">Forum</a></p>
-<p>Data auto-updated daily by CI/CD pipeline</p>
+<p>Generated ${new Date().toISOString().split('T')[0]} | <a href="wifi.html">WiFi</a> | <a href="dashboards.html">Dashboards</a> | <a href="inbox.html">Inbox</a> | <a href="${R}">GitHub</a> | <a href="https://homey.app/a/com.dlnraja.tuya.zigbee/test/">Install Test</a> | <a href="https://community.homey.app/t/140352">Forum</a></p>
+<p>Updated by Pages deploy — pair by manufacturerName + productId (sacred couple)</p>
 </div>
 <script>${js()}</script>
 </body></html>`;}
@@ -76,8 +76,8 @@ return '<div class="card" data-d="'+d.id+'" data-c="'+d.class+'" data-s="'+[d.id
 +'<div class="fps">'+fps+pids+'</div>'
 +'<div>'+caps+'</div>'
 +'<div class="actions">'
-+'<button class="btn btn-info" onclick="toggleDetail(this)">ℹ Details</button>'
-+'<a class="btn btn-bug" href="'+bugUrl+'" target="_blank">🐛 Report Bug</a>'
++'<button class="btn btn-info" onclick="toggleDetail(this)">Details</button>'
++'<a class="btn btn-bug" href="'+bugUrl+'" target="_blank">Report Bug</a>'
 +'<a class="btn btn-info" href="'+R+'/tree/master/drivers/'+d.id+'" target="_blank">📁 Source</a>'
 +'</div>'
 +'<div class="detail">'
@@ -86,7 +86,7 @@ return '<div class="card" data-d="'+d.id+'" data-c="'+d.class+'" data-s="'+[d.id
 +'<br><b>Capabilities:</b> '+d.caps.join(', ')
 +'<br><b>Protocol:</b> '+d.proto
 +'<br><b>Driver ID:</b> <code>'+d.id+'</code>'
-+'<br><br><a class="btn btn-info" href="https://www.zigbee2mqtt.io/search.html?q='+encodeURIComponent(d.mfrs[0]||d.name)+'" target="_blank" rel="noopener">📡 Z2M</a> '
++'<br><br><a class="btn btn-info" href="https://www.zigbee2mqtt.io/search.html?q='+encodeURIComponent(d.mfrs[0]||d.name)+'" target="_blank" rel="noopener">Z2M</a> '
 +'<a class="btn btn-info" href="https://zigbee.blakadder.com/'+encodeURIComponent((d.pids[0]||'').replace(/[^a-zA-Z0-9]/g,''))+'.html" target="_blank" rel="noopener">📋 Blakadder</a> '
 +'<a class="btn btn-info" href="https://www.aliexpress.com/w/wholesale-tuya+zigbee+'+encodeURIComponent(d.name.replace(/[_()]/g,' '))+'.html" target="_blank" rel="noopener">🛒 AliExpress</a>'
 +'</div></div>';

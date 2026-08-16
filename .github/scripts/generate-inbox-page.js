@@ -15,7 +15,7 @@ module.exports = function generateInboxPage() {
 
   let md = '';
   try {md = fs.readFileSync(SRC, 'utf8');}
-  catch {md = '# 📥 Community Inbox\n\nPas encore de digest — le workflow `community-inbox` le génère chaque jour.\n';}
+  catch {md = '# Community Inbox\n\nNo digest yet — the `community-inbox` workflow generates it daily.\n';}
 
   // mini-markdown → HTML (titres, listes, liens, gras)
   const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
@@ -35,7 +35,7 @@ module.exports = function generateInboxPage() {
 
   const page = `<!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Community Inbox - Tuya Unified Zigbee</title>
+<title>Community Inbox — Universal Tuya</title>
 <style>
 :root{--bg:#0d1117;--card:#161b22;--border:#30363d;--text:#e6edf3;--muted:#8b949e;--brand:#00b38f}
 *{box-sizing:border-box}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--text);margin:0;padding:24px}
@@ -50,11 +50,11 @@ nav{margin-bottom:1.5rem}nav a{margin-right:1rem;font-size:.9rem}
 footer{margin-top:2rem;color:var(--muted);font-size:.8rem;border-top:1px solid var(--border);padding-top:1rem}
 </style></head><body><main>
 <nav>
-<a href="index.html">🔍 Device Finder</a>
-<a href="wifi.html">📡 WiFi</a>
-<a href="dashboards.html">📊 Dashboards</a>
-<a href="https://github.com/dlnraja/com.tuya.zigbee/issues">🐛 Issues</a>
-<a href="https://community.homey.app/t/140352">💬 Forum</a>
+<a href="index.html">Device Finder</a>
+<a href="wifi.html">WiFi</a>
+<a href="dashboards.html">Dashboards</a>
+<a href="https://github.com/dlnraja/com.tuya.zigbee/issues">Issues</a>
+<a href="https://community.homey.app/t/140352">Forum</a>
 </nav>
 ${html}
 <footer>Generated from reports/community-inbox.md — updated daily by the community-inbox workflow.</footer>

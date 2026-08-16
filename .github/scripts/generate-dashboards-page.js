@@ -76,9 +76,9 @@ a{color:var(--accent)}
 </head>
 <body>
 <header>
-<h1>📊 Project Dashboards</h1>
-<p class="sub">Live health metrics for Universal Tuya Zigbee — regenerated on every Pages deploy</p>
-<p class="sub"><a href="index.html">← Device Finder</a> · <a href="wifi.html">📡 WiFi Devices</a></p>
+<h1>Project Dashboards</h1>
+<p class="sub">Live health metrics for Universal Tuya — regenerated on every Pages deploy</p>
+<p class="sub"><a href="index.html">Device Finder</a> · <a href="wifi.html">WiFi Devices</a></p>
 </header>
 <main>
 <div class="grid">

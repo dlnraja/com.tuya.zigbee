@@ -78,12 +78,12 @@ function page(data) {
   const R = 'https://github.com/dlnraja/com.tuya.zigbee';
   return `<!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>WiFi Devices - Tuya Unified Zigbee v${v}</title>
+<title>WiFi Devices — Universal Tuya v${v}</title>
 <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2/dist/tailwind.min.css" rel="stylesheet">
 <style>
 :root{--bg:#0f172a;--card:#1e293b;--accent:#3b82f6;--green:#10b981;--text:#e2e8f0;--muted:#94a3b8}
 *{box-sizing:border-box}body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--text);margin:0}
-.hero{background:linear-gradient(135deg,#3b2f5f,#0f172a);padding:2rem;text-align:center}
+.hero{background:linear-gradient(135deg,#1e3a5f,#0f172a);padding:2rem;text-align:center}
 .hero h1{font-size:2rem;margin:0}.hero p{color:var(--muted);margin:.5rem 0}
 .stats{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin:1rem 0}
 .stat{background:var(--card);border-radius:.5rem;padding:.75rem 1.5rem;text-align:center}
@@ -116,15 +116,15 @@ pre.schema{background:#0f172a;border:1px solid #334155;border-radius:.5rem;paddi
 .nav{max-width:1400px;margin:0 auto;padding:1rem 1rem 0;font-size:.875rem}
 .nav a{color:var(--accent);text-decoration:none}
 </style></head><body>
-<div class="hero"><h1>📡 WiFi Devices</h1>
-<p>Tuya Unified Zigbee v${v} — Local-first Tuya WiFi, no cloud required in operation</p>
+<div class="hero"><h1>WiFi Devices</h1>
+<p>Universal Tuya v${v} — local-first Tuya WiFi (no cloud required in operation)</p>
 <div class="stats">
 <div class="stat"><b>${data.wifi.length}</b>WiFi Drivers</div>
 <div class="stat"><b>${nTuya}</b>Tuya LAN (local-first)</div>
 <div class="stat"><b>${(tl.totalDevices || 0).toLocaleString()}</b>tuya-local devices catalogued</div>
 <div class="stat"><b>${(tl.totalDpMappings || 0).toLocaleString()}</b>DP mappings</div>
 </div>
-<p><a href="index.html" style="color:var(--accent)">🔍 ← Back to Device Finder (${data.drivers.length} drivers, ${data.totalFPs.toLocaleString()} fingerprints)</a></p>
+<p><a href="index.html" style="color:var(--accent)">Device Finder (${data.drivers.length} drivers, ${data.totalFPs.toLocaleString()} fingerprints)</a></p>
 </div>
 
 <div class="section" id="user">

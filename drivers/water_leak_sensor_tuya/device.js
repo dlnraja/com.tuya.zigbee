@@ -10,6 +10,7 @@ const {
   safeSetInterval,
   safeClearInterval,
 } = require('../../lib/utils/safe-timers');
+const { tuyaDpToPercent } = require('../../lib/battery/BatteryMasterEngine');
 
 Cluster.addCluster(TuyaSpecificCluster);
 
@@ -98,19 +99,28 @@ class TuyaWaterLeakSensor extends TuyaSpecificClusterDevice {
         this._receivedDpData = true;
 
         if (data.dp === 15) {
-            // Set the value of the 'measure_battery' capability.
-            this.safeSetCapabilityValue('measure_battery', data.data.readUInt32BE(0)).catch(() => {});
+            // DP15 battery percent — normalize 0-50 / 0-100 / 0-200 (ZCL-style) scales
+            const raw = Buffer.isBuffer(data.data)
+              ? (data.data.length >= 4 ? data.data.readUInt32BE(0) : data.data.readUIntBE(0, data.data.length))
+              : data.data;
+            const mfr = this.getSetting?.('zb_manufacturer_name')
+              || this.getData?.()?.manufacturerName
+              || '';
+            // Tuya DP15 uses ZCL-like 0–200; 200 means full, not a dead sentinel
+            const pct = tuyaDpToPercent(15, raw, {
+              manufacturer: mfr,
+              treat200AsSentinel: false,
+            });
+            if (pct != null) {
+              this.safeSetCapabilityValue('measure_battery', pct).catch(() => {});
+            }
         } else if (data.dp === 14) {
-            // Set the value of the 'alarm_battery' capability.
             this.safeSetCapabilityValue('alarm_battery', data.data.readUInt8(0) !== 0).catch(() => {});
         }
 
         if (data.dp === 101) {
-            // Set the value of the 'alarm_water' capability
-            this.log('Received a response or report for dp 101, updating capability...');
             if (this._destroyed) {return;}
             this.safeSetCapabilityValue('alarm_water', data.data.readUInt8(0) === 1).catch(() => {});
-            this.log('Capability has been updated.');
         }
     }
     
