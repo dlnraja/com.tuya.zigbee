@@ -359,8 +359,8 @@ describe('P92.84 — PRD v1.1: segmented feeds + strict JSON cleaning', () => {
   it('LiveDataUpdater downloads segments progressively and merges', () => {
     const src = read('lib/dynamic/LiveDataUpdater.js');
     assert.ok(src.includes('_fetchSegmented'), 'segmented path');
-    assert.ok(src.includes('Falls back to the single full file'), 'full-file fallback documented');
     assert.ok(src.includes('FEED_URL'), 'fallback url present');
+    assert.ok(src.includes('MAX_STORE_CHARS') || src.includes('heap'), 'heap/store safety');
   });
 
   it('ai-dp-extract strips markdown fences before JSON extraction', () => {

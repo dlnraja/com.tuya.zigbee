@@ -33,10 +33,19 @@ function makeUpdater() {
 
 describe('P92.77 — LiveDataUpdater', () => {
 
-  it('validates the real exported feed', () => {
+  it('validates the real exported feed (after overlay cap)', () => {
     const feed = JSON.parse(fs.readFileSync(path.join(ROOT, '.github/pages-build/data/mfs_db_latest.json'), 'utf8'));
     const u = makeUpdater();
-    assert.strictEqual(u._validatePayload(feed), true);
+    const capped = u._capPayload(feed);
+    assert.ok(Object.keys(capped.devices).length <= 1500, 'overlay entry cap');
+    assert.strictEqual(u._validatePayload(capped), true);
+  });
+
+  it('rejects oversized overlays for Homey settings safety', () => {
+    const u = makeUpdater();
+    const devices = {};
+    for (let i = 0; i < 1600; i++) devices[`_TZ3000_${String(i).padStart(8, '0')}`] = { driverId: 'switch_1gang' };
+    assert.strictEqual(u._validatePayload({ version: '1', devices }), false);
   });
 
   it('rejects schema violations (bad driverId, __proto__, oversize modelIds)', () => {
