@@ -156,5 +156,34 @@
       "getable": false,
       "setable": false
     }
+  },
+  "firmwareUpdates": {
+    "updates": [
+      {
+        "changelog": {
+          "en": "OEM Tuya firmware v71 (Koenkk zigbee-OTA, SHA512-verified)"
+        },
+        "device": {
+          "manufacturerName": [
+            "_TZ3000_1dd0d5yi"
+          ],
+          "productId": [
+            "TS130F"
+          ]
+        },
+        "files": [
+          {
+            "fileVersion": 71,
+            "imageType": 5634,
+            "manufacturerCode": 4098,
+            "minHardwareVersion": 25715,
+            "maxHardwareVersion": 24427,
+            "size": 222762,
+            "name": "1662693814-oem_mg21_zg_nh_win_cover_relay_OTA_1.0.7.bin",
+            "integrity": "sha256:d0611939f48a1c6953104d7d2f8752366a45e16da3fe54d082be277bec9e97a5"
+          }
+        ]
+      }
+    ]
   }
 }
