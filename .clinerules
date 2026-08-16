@@ -1,11 +1,11 @@
 # 🤖 Cline / Roo Code Project Rules
 
 > [!IMPORTANT]
-> **CRITICAL FIRST STEP:** You MUST read the [AI_CONTEXT_MANDATE.md](file:///c:/Users/HP/Desktop/homey%20app/tuya_repair/AI_CONTEXT_MANDATE.md) file at the very start of your session to fully digest the architecture, dual-app branch splits, and features.
+> **CRITICAL FIRST STEP:** You MUST read the [AI_CONTEXT_MANDATE.md](AI_CONTEXT_MANDATE.md) file at the very start of your session to fully digest the architecture, dual-app branch splits, and features.
 > 
-> **MANDATORY SECOND STEP:** Then read [GLOBAL_INVESTIGATION_PLAN.md](file:///c:/Users/HP/Desktop/homey%20app/tuya_repair/docs/GLOBAL_INVESTIGATION_PLAN.md) — the complete 22-section investigation methodology for deep diagnostic, cross-referencing forums/emails/GitHub/Z2M/ZHA, bug hunting, and prevention scripting. Every AI agent MUST follow this framework before making any code changes.
+> **MANDATORY SECOND STEP:** Then read [GLOBAL_INVESTIGATION_PLAN.md](docs/GLOBAL_INVESTIGATION_PLAN.md) — the complete 22-section investigation methodology for deep diagnostic, cross-referencing forums/emails/GitHub/Z2M/ZHA, bug hunting, and prevention scripting. Every AI agent MUST follow this framework before making any code changes.
 > 
-> **MANDATORY THIRD STEP:** Read [ARCHITECTURE_AI.md](file:///c:/Users/HP/Desktop/homey%20app/tuya_repair/docs/ARCHITECTURE_AI.md) to understand the 3 AI layers — IDE Locale (Windows/Claude Code), GitHub Actions (workflows/ai-helper/secrets), and Homey Runtime (SDK3, zero cloud). Every AI agent MUST distinguish these layers before making automation or runtime code changes.
+> **MANDATORY THIRD STEP:** Read [ARCHITECTURE_AI.md](docs/ARCHITECTURE_AI.md) to understand the 3 AI layers — IDE Locale (Windows/Claude Code), GitHub Actions (workflows/ai-helper/secrets), and Homey Runtime (SDK3, zero cloud). Every AI agent MUST distinguish these layers before making automation or runtime code changes.
 
 ## ⚠️ CRITICAL PROVIDER GUARD
 **CRITICAL: Always provide a brief explanation or thought process in plain text before using any tool or executing a command. Never send a message containing only a tool call. This is required to prevent API 400 errors with the Moonshot/Kimi provider.**
@@ -17,7 +17,7 @@
 1. **Fingerprints Rule**: `manufacturerName` + `productId` (combined) must BOTH match.
    - It is normal for the same `manufacturerName` to exist in multiple drivers with different `productId`s.
    - **NO WILDCARDS** in `manufacturerName` (e.g., `_TZE284_*` is strictly forbidden).
-   - All comparisons must be case-insensitive using the custom utility [CaseInsensitiveMatcher.js](file:///c:/Users/HP/Desktop/homey%20app/tuya_repair/lib/utils/CaseInsensitiveMatcher.js). Manual `.toLowerCase()` is forbidden.
+   - All comparisons must be case-insensitive using the custom utility [CaseInsensitiveMatcher.js](lib/utils/CaseInsensitiveMatcher.js). Manual `.toLowerCase()` is forbidden.
    - Setting keys must be `zb_model_id` (not `zb_modelId`) and `zb_manufacturer_name` (not `zb_manufacturerName`).
    - **Layer 11: Backlight Value Representation Check**: Backlight settings must use string representation (`"off"`, `"normal"`, `"inverted"`) instead of numeric comparisons. Direct comparisons against numbers (e.g., `=== 0`, `=== 1`, `=== 2` or as strings `'0'`, `'1'`, `'2'`) are strictly forbidden. Use ternary operators to map string states to DP integers when sending commands.
    - **BSEED 3-Gang ZCL Routing (Issue #170)**: Ensure `_TZ3000_v4l4b0lp` is registered inside the `ZCL_ONLY_MANUFACTURERS_3G` array in `drivers/switch_3gang/device.js` to force routing over standard ZCL Clusters (OnOff) instead of Tuya custom DP (0xEF00) mode, ensuring sub-capability flow cards are bound correctly.
@@ -56,7 +56,7 @@
    - **Smart Divisors**: Use `smartDivisorDetect()` for measure_temperature and measure_humidity in device classes. Do NOT hardcode `value / 100` or `value / 10` manually.
 
 4. **Local Tuya WiFi Architecture Rule**:
-   - Do **NOT** instantiate raw `tuyapi` directly in device classes. Always use the robust [TuyaLocalClient.js](file:///c:/Users/HP/Desktop/homey%20app/tuya_repair/lib/tuya-local/TuyaLocalClient.js) wrapper instead.
+   - Do **NOT** instantiate raw `tuyapi` directly in device classes. Always use the robust [TuyaLocalClient.js](lib/tuya-local/TuyaLocalClient.js) wrapper instead.
    - Ensure a minimal command queue delay of `200ms` between sequential DP updates to prevent over-flooding Tuya's microcontrollers.
    - Always implement standard Homey SDK3 lifecycle hooks: `onUninit()` and `onDeleted()`. Ensure they cleanly release resources (TCP sockets, event listeners, and timers) using `_destroyDevice()` to prevent memory leaks during app reloads or device disables.
 
@@ -69,10 +69,10 @@
    - **Internet Research & Indexing**: For web scraping and file tracing without active MCP search servers, always utilize `.github/scripts/internet-research-tool.js`.
 
 6. **Bundle Size Limit (< 7MB)**:
-   - Always exclude `.github/`, `scripts/`, `docs/`, `tmp/`, and `.git/` via [.homeyignore](file:///c:/Users/HP/Desktop/homey%20app/tuya_repair/.homeyignore).
+   - Always exclude `.github/`, `scripts/`, `docs/`, `tmp/`, and `.git/` via [.homeyignore](.homeyignore).
 
 7. **Post-Promotion Documentation & Registry Synchronization Rule (MANDATORY)**:
-   - **Mandatory Protocol**: Refer to [POST_PROMOTION_PROTOCOL.md](file:///c:/Users/HP/Desktop/homey%20app/tuya_repair/docs/rules/POST_PROMOTION_PROTOCOL.md) for the mandatory recursive audit, enrichment loop, and technical safeguards (Layer 12 compliance).
+   - **Mandatory Protocol**: Refer to [POST_PROMOTION_PROTOCOL.md](docs/rules/POST_PROMOTION_PROTOCOL.md) for the mandatory recursive audit, enrichment loop, and technical safeguards (Layer 12 compliance).
 
 ---
 
@@ -83,14 +83,14 @@
 
 ## 🔗 IMPORTANT REFERENCE FILES
 
-- **Global Plan**: [GLOBAL_IMPROVEMENT_PLAN.md](file:///c:/Users/HP/Desktop/homey%20app/tuya_repair/GLOBAL_IMPROVEMENT_PLAN.md)
-- **Project Index**: [PROJECT_INDEX.md](file:///c:/Users/HP/Desktop/homey%20app/tuya_repair/PROJECT_INDEX.md)
-- **Architectural Rules**: [ARCHITECTURAL_RULES.md](file:///c:/Users/HP/Desktop/homey%20app/tuya_repair/docs/ARCHITECTURAL_RULES.md)
-- **Development Rules**: [DEVELOPMENT_RULES.md](file:///c:/Users/HP/Desktop/homey%20app/tuya_repair/docs/rules/DEVELOPMENT_RULES.md)
-- **Zigbee/Tuya Specifics**: [ZIGBEE_TUYA_RULES.md](file:///c:/Users/HP/Desktop/homey%20app/tuya_repair/docs/rules/ZIGBEE_TUYA_RULES.md)
-- **Critical Mistakes to Avoid**: [CRITICAL_MISTAKES.md](file:///c:/Users/HP/Desktop/homey%20app/tuya_repair/docs/rules/CRITICAL_MISTAKES.md)
-- **Global Investigation Plan (22 sections)**: [GLOBAL_INVESTIGATION_PLAN.md](file:///c:/Users/HP/Desktop/homey%20app/tuya_repair/docs/GLOBAL_INVESTIGATION_PLAN.md) — Mandatory deep diagnostic methodology for cross-referencing manufacturers, DP mappings, forums, emails, Z2M/ZHA, GitHub PRs/Issues, and Antigravity skills integration.
-- **AI Architecture (3 layers)**: [ARCHITECTURE_AI.md](file:///c:/Users/HP/Desktop/homey%20app/tuya_repair/docs/ARCHITECTURE_AI.md) — Distinguishes IDE Locale AI, GitHub Actions AI, and Homey Runtime AI.
+- **Global Plan**: [GLOBAL_IMPROVEMENT_PLAN.md](reports/GLOBAL_IMPROVEMENT_PLAN.md)
+- **Project Index**: [PROJECT_INDEX.md](PROJECT_INDEX.md)
+- **Architectural Rules**: [ARCHITECTURAL_RULES.md](docs/ARCHITECTURAL_RULES.md)
+- **Development Rules**: [DEVELOPMENT_RULES.md](docs/rules/DEVELOPMENT_RULES.md)
+- **Zigbee/Tuya Specifics**: [ZIGBEE_TUYA_RULES.md](docs/rules/ZIGBEE_TUYA_RULES.md)
+- **Critical Mistakes to Avoid**: [CRITICAL_MISTAKES.md](docs/rules/CRITICAL_MISTAKES.md)
+- **Global Investigation Plan (22 sections)**: [GLOBAL_INVESTIGATION_PLAN.md](docs/GLOBAL_INVESTIGATION_PLAN.md) — Mandatory deep diagnostic methodology for cross-referencing manufacturers, DP mappings, forums, emails, Z2M/ZHA, GitHub PRs/Issues, and Antigravity skills integration.
+- **AI Architecture (3 layers)**: [ARCHITECTURE_AI.md](docs/ARCHITECTURE_AI.md) — Distinguishes IDE Locale AI, GitHub Actions AI, and Homey Runtime AI.
 
 \n
 
