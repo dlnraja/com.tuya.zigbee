@@ -137,6 +137,10 @@ jobs:
               }
             }
           '
+      - name: Ensure changelog for current and next patch
+        env:
+          HOMEY_CHANGELOG: 'Reliability improvements.'
+        run: node .github/scripts/ensure-next-changelog.js
       - name: Prepare Publish Directory
         run: npm run prepare-publish
       - name: Publish to Draft
