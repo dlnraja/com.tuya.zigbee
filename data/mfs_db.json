@@ -219389,36 +219389,45 @@
     "modelIdsCount": 19
   },
   "_tz3000_k4ej3ww2": {
-    "driverId": "water_leak_sensor_tuya",
-    "source": "auto-sync",
+    "manufacturerId": "_tz3000_k4ej3ww2",
+    "driverId": "water_leak_sensor",
+    "source": "p146-sacred-couple",
     "modelIds": [
-      "3315-S",
-      "3315-Seu",
-      "CK-TLSR8656-SS5-01(7019)",
-      "HS1WL",
-      "LS21001",
-      "SJCGQ11LM",
-      "SJCGQ12LM",
-      "SJCGQ13LM",
-      "SNZB-05",
-      "SNZB-05P",
-      "SQ510A",
-      "TS0601",
-      "ZG-222Z",
-      "ZG-223Z",
-      "_tz3000_eit6l5",
-      "_tz3000_k4ej3ww2",
-      "_tz3000_kyb656no",
-      "lumi.sensor_wleak.aq1",
-      "q9mpfhw"
+      "TS0207"
     ],
-    "pid": "3315-S",
-    "modelIdsCount": 19,
+    "pid": "TS0207",
+    "modelIdsCount": 1,
     "variants": [
       "_TZ3000_k4ej3ww2",
-      "_tz3000_k4ej3ww2"
+      "_tz3000_k4ej3ww2",
+      "_TZ3000_K4EJ3WW2",
+      "_tz3000_K4EJ3WW2"
     ],
-    "variantsCount": 2,
+    "variantsCount": 4,
+    "deviceType": "water_leak",
+    "protocol": "ias_zone",
+    "clusters": [
+      0,
+      1,
+      3,
+      1280
+    ],
+    "retailNames": [
+      "HOBEIAN ZG-222ZA",
+      "HOBEIAN ZG-222Z",
+      "Aubess IH-K665",
+      "IH-K665"
+    ],
+    "forbiddenDrivers": [
+      "water_leak_sensor_tuya",
+      "water_detector",
+      "gas_sensor_switch",
+      "contact_sensor",
+      "climate_sensor"
+    ],
+    "notes": "IAS-only sacred couple. Never EF00/tuya water driver.",
+    "confidence": 0.99,
+    "updatedAt": "2026-08-16T10:57:41.796Z",
     "addedAt": "2026-06-26T14:42:09.191Z"
   },
   "_tz3000_kyb656no": {
@@ -328487,5 +328496,47 @@
     "modelIds": [
       "ZF24"
     ]
+  },
+  "_TZ3000_k4ej3ww2": {
+    "manufacturerId": "_TZ3000_k4ej3ww2",
+    "driverId": "water_leak_sensor",
+    "source": "p146-sacred-couple",
+    "modelIds": [
+      "TS0207"
+    ],
+    "pid": "TS0207",
+    "modelIdsCount": 1,
+    "variants": [
+      "_TZ3000_k4ej3ww2",
+      "_tz3000_k4ej3ww2",
+      "_TZ3000_K4EJ3WW2",
+      "_tz3000_K4EJ3WW2"
+    ],
+    "variantsCount": 4,
+    "deviceType": "water_leak",
+    "protocol": "ias_zone",
+    "clusters": [
+      0,
+      1,
+      3,
+      1280
+    ],
+    "retailNames": [
+      "HOBEIAN ZG-222ZA",
+      "HOBEIAN ZG-222Z",
+      "Aubess IH-K665",
+      "IH-K665"
+    ],
+    "forbiddenDrivers": [
+      "water_leak_sensor_tuya",
+      "water_detector",
+      "gas_sensor_switch",
+      "contact_sensor",
+      "climate_sensor"
+    ],
+    "notes": "IAS-only sacred couple. Never EF00/tuya water driver.",
+    "confidence": 0.99,
+    "updatedAt": "2026-08-16T10:57:41.796Z",
+    "addedAt": "2026-06-26T14:42:09.191Z"
   }
 }

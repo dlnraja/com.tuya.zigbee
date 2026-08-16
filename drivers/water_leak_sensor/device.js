@@ -55,7 +55,21 @@ const WATER_SENSOR_PROFILES = {
     model: 'ZG-222Z/ZG-222ZA',
     iasAlarmBit: 'both',
     hasTamper: true,
-    notes: 'HOBEIAN water leak'
+    notes: 'HOBEIAN/Aubess IAS water leak — sacred couple; never EF00 tuya driver'
+  },
+  '_tz3000_k4ej3ww2': {
+    type: 'ias_zone', productId: 'TS0207', brand: 'HOBEIAN',
+    model: 'ZG-222Z/ZG-222ZA',
+    iasAlarmBit: 'both',
+    hasTamper: true,
+    notes: 'case variant of _TZ3000_k4ej3ww2'
+  },
+  '_TZ3000_K4EJ3WW2': {
+    type: 'ias_zone', productId: 'TS0207', brand: 'HOBEIAN',
+    model: 'ZG-222Z/ZG-222ZA',
+    iasAlarmBit: 'both',
+    hasTamper: true,
+    notes: 'case variant of _TZ3000_k4ej3ww2'
   },
   '_TZ3000_85czd6fy': {
     type: 'ias_zone', productId: 'TS0207',
