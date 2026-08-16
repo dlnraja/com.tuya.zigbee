@@ -43,6 +43,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **Native OTA Drivers** | 5 |
 | **Test Suites** | 75 files |
 | **Test Suites** | 76 files |
+| **Test Suites** | 77 files |
 | **SVG Icons** | 731 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
