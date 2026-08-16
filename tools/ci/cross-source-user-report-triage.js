@@ -133,8 +133,39 @@ for (const entry of fs.readdirSync(DRIVERS_DIR, { withFileTypes: true })) {
   }
 }
 
+// mfs_db records the modelIds a manufacturer has actually been observed
+// reporting. A driver listing that manufacturer while sharing none of those
+// modelIds describes a couple that cannot exist, which separates a genuine
+// multi-product manufacturer from a placement left behind by bulk enrichment.
+// mfs_db keys the same manufacturer under several case variants, so the model
+// lists must be UNIONED. Overwriting instead loses observations and invents
+// impossible placements — the same last-write-wins trap fixed for the
+// misattribution registry in P179.
+const { knownModels, modelEvidence } = (() => {
+  const models = new Map();
+  const evidence = new Map();
+  try {
+    const db = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'mfs_db.json')));
+    for (const [key, rec] of Object.entries(db.devices || {})) {
+      const k = key.toLowerCase();
+      const merged = new Set([...(models.get(k) || []), ...(rec.modelIds || [])]);
+      models.set(k, [...merged]);
+      const prev = evidence.get(k) || { sources: new Set(), confidence: 0 };
+      for (const s of rec.sources || []) prev.sources.add(s);
+      prev.confidence = Math.max(prev.confidence, Number(rec.confidence) || 0);
+      evidence.set(k, prev);
+    }
+  } catch (err) { /* optional evidence source */ }
+  return { knownModels: models, modelEvidence: evidence };
+})();
+
 const rows = [...mentions.entries()].map(([mfr, entry]) => {
   const drivers = [...(driverByMfr.get(mfr) || [])].sort();
+  const models = knownModels.get(mfr) || [];
+  const placements = drivers.map((d) => {
+    const pids = driverMeta.get(d)?.pids || [];
+    return { driver: d, class: driverMeta.get(d)?.class, matches: models.filter((m) => pids.includes(m)) };
+  });
   return {
     mfr,
     human: entry.human,
@@ -142,6 +173,13 @@ const rows = [...mentions.entries()].map(([mfr, entry]) => {
     driverCount: drivers.length,
     drivers,
     classes: [...new Set(drivers.map((d) => driverMeta.get(d)?.class).filter(Boolean))].sort(),
+    knownModels: models,
+    evidence: (() => {
+      const e = modelEvidence.get(mfr);
+      return e ? { sources: [...e.sources], confidence: e.confidence } : { sources: [], confidence: 0 };
+    })(),
+    placements,
+    impossible: models.length ? placements.filter((p) => !p.matches.length).map((p) => p.driver) : [],
     sources: Object.fromEntries([...entry.sources].map(([s, refs]) => [s, [...refs].slice(0, 6)])),
   };
 });
@@ -153,6 +191,7 @@ const botGaps = rows.filter((r) => !r.human && !r.covered);
 // socket showing as a motion sensor, so class spread is the useful signal.
 const classSpread = rows.filter((r) => r.classes.length > 1)
   .sort((a, b) => b.classes.length - a.classes.length || b.driverCount - a.driverCount);
+const impossiblePlacements = rows.filter((r) => r.impossible.length);
 
 const summary = {
   generatedAt: new Date().toISOString(),
@@ -168,8 +207,10 @@ const summary = {
     humanReportedGaps: humanGaps.length,
     botHarvestedGaps: botGaps.length,
     multiClassManufacturers: classSpread.length,
+    impossiblePlacements: impossiblePlacements.length,
   },
   humanGaps,
+  impossiblePlacements,
   classSpread: classSpread.slice(0, 40),
 };
 
@@ -194,14 +235,29 @@ const md = [
       ...humanGaps.map((r) => `| \`${r.mfr}\` | ${Object.entries(r.sources).map(([s, refs]) => `${s} ${refs.join(' ')}`).join('; ')} |`)].join('\n')
     : 'None. Every manufacturer a user reported is claimed by at least one driver.',
   '',
+  '## Placements with no observed modelId overlap',
+  '',
+  'A driver lists this manufacturer but shares none of the modelIds mfs_db has seen it',
+  'report, so on current evidence the couple cannot occur. Harmless today — it simply',
+  'never matches — but it widens the driver\'s claim surface for nothing.',
+  '',
+  'Read the evidence column before acting: mfs_db is aggregated from crawlers and a',
+  'single low-confidence `local` source can mean the model list is merely incomplete.',
+  '',
+  impossiblePlacements.length
+    ? ['| manufacturerName | observed modelIds | evidence | no overlap in | matched elsewhere |', '|---|---|---|---|---|',
+      ...impossiblePlacements.map((r) => `| \`${r.mfr}\` | ${r.knownModels.join(', ')} | ${r.evidence.sources.join('/') || 'none'} (conf ${r.evidence.confidence.toFixed(2)}) | ${r.impossible.join(', ')} | ${r.placements.filter((p) => p.matches.length).map((p) => `${p.driver} (${p.matches.join('/')})`).join(', ') || '—'} |`)].join('\n')
+    : 'None.',
+  '',
   '## Manufacturers spanning several device classes',
   '',
   'One manufacturer legitimately covers several products, so this is not an error list.',
-  'It is the shortlist to check first when a user reports "my socket paired as a motion sensor".',
+  'The `matches` column shows which of its observed modelIds each driver actually claims —',
+  'when every driver matches something distinct, the spread is the sacred-couple case working as intended.',
   '',
-  '| manufacturerName | classes | drivers |',
+  '| manufacturerName | classes | placements (driver → matched modelIds) |',
   '|---|---|---|',
-  ...classSpread.slice(0, 40).map((r) => `| \`${r.mfr}\` | ${r.classes.join(', ')} | ${r.driverCount} |`),
+  ...classSpread.slice(0, 40).map((r) => `| \`${r.mfr}\` | ${r.classes.join(', ')} | ${r.placements.map((p) => `${p.driver} → ${p.matches.join('/') || 'none'}`).join('; ')} |`),
   '',
 ].join('\n');
 
@@ -211,13 +267,13 @@ fs.writeFileSync(REPORT_MD, md);
 if (AS_JSON) {
   process.stdout.write(`${JSON.stringify(summary, null, 2)}\n`);
 } else {
-  console.log('[triage] mentioned=%d human=%d humanGaps=%d botGaps=%d multiClass=%d',
-    rows.length, humanRows.length, humanGaps.length, botGaps.length, classSpread.length);
+  console.log('[triage] mentioned=%d human=%d humanGaps=%d botGaps=%d multiClass=%d impossible=%d',
+    rows.length, humanRows.length, humanGaps.length, botGaps.length, classSpread.length, impossiblePlacements.length);
   for (const r of humanGaps) {
     console.log(`  GAP ${r.mfr} — ${Object.entries(r.sources).map(([s, refs]) => `${s}:${refs.join(',')}`).join(' ')}`);
   }
-  for (const r of classSpread.slice(0, 10)) {
-    console.log(`  SPREAD ${r.mfr} -> ${r.classes.join('/')} across ${r.driverCount} drivers`);
+  for (const r of impossiblePlacements) {
+    console.log(`  NO-OVERLAP ${r.mfr} in ${r.impossible.join(',')} — observed ${r.knownModels.join('/')} (sources: ${r.evidence.sources.join(',') || 'none'})`);
   }
   console.log('[triage] report: reports/CROSS_SOURCE_USER_TRIAGE.md');
 }
