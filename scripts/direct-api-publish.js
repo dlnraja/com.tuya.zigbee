@@ -71,6 +71,9 @@ const STATE = {
   APPROVED: 'approved',
   PROCESSING: 'processing',
   READY: 'ready',
+  DRAFT: 'draft',
+  TEST: 'test',
+  LIVE: 'live',
   REVOKED: 'revoked',
   // Athom reports server-side build failures as one of these terminal
   // states. Treating them as failures (instead of timing out after 180s)
@@ -78,6 +81,8 @@ const STATE = {
   PROCESSING_FAILED: 'processing_failed',
   ERROR: 'error',
 };
+
+const SUCCESS_STATES = new Set([STATE.READY, STATE.DRAFT, STATE.TEST, STATE.LIVE]);
 
 // Terminal failure states: any of these means the build is dead, do not keep polling.
 const FAILURE_STATES = new Set([STATE.REVOKED, STATE.PROCESSING_FAILED, STATE.ERROR]);
@@ -183,7 +188,7 @@ async function pollBuildState(api, token, buildId, { timeoutMs = 180000, interva
       log(`Build #${buildId} state: ${state} (approved=${b?.approved})`);
       last = state;
     }
-    if (state === STATE.READY) return b;
+    if (SUCCESS_STATES.has(state)) return b;
     // Terminal failure states (revoked / processing_failed / error) OR
     // an explicit error/feedback object: exit fast with a clear message.
     if (FAILURE_STATES.has(state) || b?.error) {
