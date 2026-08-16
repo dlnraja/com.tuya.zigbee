@@ -4,6 +4,7 @@ const UnifiedSensorBase = require('../../lib/devices/UnifiedSensorBase');
 const { safeSetCapabilityValue } = require('../../lib/utils/SafeCapability');
 const IASZoneManager = require('../../lib/managers/IASZoneManager');
 const SleepyInit = require('../../lib/utils/SleepyDeviceInit');
+const { safeSetTimeout, safeClearTimeout, safeSetInterval, safeClearInterval } = require('../../lib/utils/safe-timers');
 
 let UnifiedBatteryHandler = null;
 try { UnifiedBatteryHandler = require('../../lib/battery/UnifiedBatteryHandler'); } catch (e) { /* optional */ }
@@ -1237,7 +1238,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
 
     // Periodic poll every 5 minutes for variant devices
     if (isVariant) {
-      this._dpPollingInterval = this.homey.setInterval(async () => {
+      this._dpPollingInterval = safeSetInterval(this, async () => {
         if (this._destroyed) {return;}
         this.log('[MOTION-DP] 🔄 Periodic DP poll...');
         await requestDP(3);  // Temperature
@@ -1346,8 +1347,8 @@ class MotionSensorDevice extends UnifiedSensorBase {
     this.log('[SLEEPY] 🔔 Device marked as awake');
 
     // Auto-sleep after 10 seconds of inactivity
-    clearTimeout(this._sleepTimer);
-    this._sleepTimer = this.homey.setTimeout(() => { if (this._destroyed) {return;} this._isDeviceAwake = false;
+    safeClearTimeout(this, this._sleepTimer);
+    this._sleepTimer = safeSetTimeout(this, () => { if (this._destroyed) {return;} this._isDeviceAwake = false;
       this.log('[SLEEPY] 💤 Device assumed sleeping (timeout)'); }, 10000);
   }
 
@@ -1603,10 +1604,10 @@ class MotionSensorDevice extends UnifiedSensorBase {
 
     // Clear any existing timer
     if (this._luxReportTimer) {
-      clearInterval(this._luxReportTimer);
+      safeClearInterval(this, this._luxReportTimer);
     }
 
-    this._luxReportTimer = this.homey.setInterval(() => {
+    this._luxReportTimer = safeSetInterval(this, () => {
       if (this._destroyed) {return;}
       this._requestLuxUpdate();
     }, this._luxSmartReporting.luxReportInterval);
@@ -1747,17 +1748,17 @@ class MotionSensorDevice extends UnifiedSensorBase {
     this._destroyed = true;
     // v5.5.930: Clear DP polling interval
     if (this._dpPollingInterval) {
-      clearInterval(this._dpPollingInterval);
+      safeClearInterval(this, this._dpPollingInterval);
       this._dpPollingInterval = null;
     }
     // Clear lux reporting timer
     if (this._luxReportTimer) {
-      clearInterval(this._luxReportTimer);
+      safeClearInterval(this, this._luxReportTimer);
       this._luxReportTimer = null;
     }
     // Clear sleep timer
     if (this._sleepTimer) {
-      clearTimeout(this._sleepTimer);
+      safeClearTimeout(this, this._sleepTimer);
       this._sleepTimer = null;
     }
     // v5.8.32: Clear permissive cleanup timer
@@ -1823,15 +1824,15 @@ class MotionSensorDevice extends UnifiedSensorBase {
     this.log('[MOTION] onUninit - cleaning up...');
     // v5.5.930: Clear DP polling interval
     if (this._dpPollingInterval) {
-      clearInterval(this._dpPollingInterval);
+      safeClearInterval(this, this._dpPollingInterval);
       this._dpPollingInterval = null;
     }
     if (this._luxReportTimer) {
-      clearInterval(this._luxReportTimer);
+      safeClearInterval(this, this._luxReportTimer);
       this._luxReportTimer = null;
     }
     if (this._sleepTimer) {
-      clearTimeout(this._sleepTimer);
+      safeClearTimeout(this, this._sleepTimer);
       this._sleepTimer = null;
     }
     if (super.onUninit) {
