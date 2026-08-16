@@ -1,4 +1,6 @@
 'use strict';
+
+const { safeSetTimeout, safeClearTimeout } = require('../../lib/utils/safe-timers');
 const { safeParse } = require('../../lib/utils/tuyaUtils.js');
 const { smartParse } = require('../../lib/managers/SmartDivisorManager');
 
@@ -470,7 +472,7 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
     this._destroyed = true;
     if (this._zclState?.timeout) {
       for (const epNum of [1, 2]) {
-        if (this._zclState.timeout[epNum]) {this.homey.clearTimeout(this._zclState.timeout[epNum]);}
+        if (this._zclState.timeout[epNum]) {this.homey.safeClearTimeout(this, this._zclState.timeout[epNum]);}
       }
     }
     for (const timerName of ['_electricalReportingRetryTimer', '_meteringReportingRetryTimer']) {

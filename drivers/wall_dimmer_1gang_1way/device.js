@@ -1,6 +1,8 @@
+'use strict';
+
+const { safeSetTimeout, safeClearTimeout } = require('../../lib/utils/safe-timers');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
-'use strict';
 
 // P24.7: Safe import for TuyaSpecificClusterDevice (crash-resilient)
 const { safeExtends } = require('../../lib/utils/ClassExtendsGuard');
@@ -349,9 +351,9 @@ class WallDimmer1Gang1Way extends TuyaSpecificClusterDevice {
   _markAppCommand() {
     this._appCommandPending = true;
     if (this._appCommandTimeout) {
-      clearTimeout(this._appCommandTimeout);
+      safeClearTimeout(this, this._appCommandTimeout);
     }
-    this._appCommandTimeout = this.homey.setTimeout(() => { if (this._destroyed) return; this._appCommandPending = false; }, 2000);
+    this._appCommandTimeout = safeSetTimeout(this, () => { if (this._destroyed) return; this._appCommandPending = false; }, 2000);
   }
 
   onDeleted() {

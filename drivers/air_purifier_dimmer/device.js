@@ -1,4 +1,6 @@
 'use strict';
+
+const { safeSetTimeout, safeClearTimeout } = require('../../lib/utils/safe-timers');
 const { safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
 const UnifiedLightBase = require('../../lib/devices/UnifiedLightBase');
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
@@ -26,8 +28,8 @@ class DimmerWall1GangDevice extends VirtualButtonMixin(UnifiedLightBase) {
 
   _markAppCommand() {
     this._appCommandPending = true;
-    clearTimeout(this._appCommandTimeout);
-    this._appCommandTimeout = this.homey.setTimeout(() => { if (this._destroyed) return; this._appCommandPending = false; }, 2000);
+    safeClearTimeout(this, this._appCommandTimeout);
+    this._appCommandTimeout = safeSetTimeout(this, () => { if (this._destroyed) return; this._appCommandPending = false; }, 2000);
   }
 
   async _setOnOff(value) { this._markAppCommand(); return super._setOnOff(value); }
@@ -61,7 +63,7 @@ class DimmerWall1GangDevice extends VirtualButtonMixin(UnifiedLightBase) {
   }
 
   onDeleted() {
-    clearTimeout(this._appCommandTimeout);
+    safeClearTimeout(this, this._appCommandTimeout);
     if (typeof super.onDeleted === 'function') super.onDeleted();
   }
 }
