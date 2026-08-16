@@ -169,6 +169,8 @@ async function packDirectory(appPath) {
 }
 
 async function pollBuildState(api, token, buildId, { timeoutMs = 180000, intervalMs = 5000 } = {}) {
+  // homey-api getBuild requires buildId as string (number throws type validation).
+  const id = String(buildId);
   const deadline = Date.now() + timeoutMs;
   let last = null;
   while (Date.now() < deadline) {
@@ -176,32 +178,33 @@ async function pollBuildState(api, token, buildId, { timeoutMs = 180000, interva
       $token: token,
       $timeout: API_TIMEOUT_MS,
       appId: APP_ID,
-      buildId,
+      buildId: id,
     });
     const state = b?.state;
     if (state !== last) {
-      log(`Build #${buildId} state: ${state} (approved=${b?.approved})`);
+      log(`Build #${id} state: ${state} (approved=${b?.approved})`);
       last = state;
     }
     if (state === STATE.READY) return b;
     // Terminal failure states (revoked / processing_failed / error) OR
     // an explicit error/feedback object: exit fast with a clear message.
     if (FAILURE_STATES.has(state) || b?.error) {
-      throw new Error(`Build #${buildId} FAILED: state=${state} error=${JSON.stringify(b?.error || b?.feedback || {})}`);
+      throw new Error(`Build #${id} FAILED: state=${state} error=${JSON.stringify(b?.error || b?.feedback || {})}`);
     }
     // If approved but not yet ready, keep polling.
     await new Promise((res) => setTimeout(res, intervalMs));
   }
-  throw new Error(`Timed out waiting for build #${buildId} (last state: ${last})`);
+  throw new Error(`Timed out waiting for build #${id} (last state: ${last})`);
 }
 
 async function setChannel(api, token, buildId, channel) {
-  log(`Setting build #${buildId} channel to "${channel}"...`);
+  const id = String(buildId);
+  log(`Setting build #${id} channel to "${channel}"...`);
   const res = await api.updateBuildChannel({
     $token: token,
     $timeout: API_TIMEOUT_MS,
     appId: APP_ID,
-    buildId,
+    buildId: id,
     channel,
   });
   log('Channel update result:', JSON.stringify(res));
@@ -361,7 +364,8 @@ async function main() {
     readme,
   });
 
-  const { url, method, headers, buildId } = created;
+  const { url, method, headers } = created;
+  const buildId = created?.buildId != null ? String(created.buildId) : null;
   if (!url || !buildId) {
     err('createBuild did not return an upload URL:', JSON.stringify(created));
     process.exit(1);
