@@ -184,6 +184,7 @@ function main() {
   report.gates.batteryButton = nodeGate('tools/ci/battery-button-intelligence-gate.js');
   report.gates.rulesMatrix = nodeGate('tools/ci/rules-enforcement-matrix.js');
   report.gates.userTriage = nodeGate('tools/ci/cross-source-user-report-triage.js', ['--fetch']);
+  report.gates.moduleLoad = nodeGate('tools/ci/module-load-health.js');
 
   report.homeyTest = checkHomeyTestPage();
   report.runs = recentRuns(15);

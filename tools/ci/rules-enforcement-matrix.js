@@ -72,8 +72,9 @@ const RULES = [
   { id: 'S2', domain: 'sdk3', rule: 'No console.log in driver code', source: 'CORE_RULES.md', enforcedBy: 'scripts/ci/zero-defect-control.js' },
   { id: 'S3', domain: 'sdk3', rule: 'Zigbee devices must not be left as a bare ZigBeeDevice without the hardening base', source: 'CORE_RULES.md', enforcedBy: 'tools/ci/bare-zigbee-device-gate.js' },
   { id: 'S4', domain: 'sdk3', rule: 'Large JSON databases are parsed from a Buffer, never from a utf8 string, to survive the 64MB heap', source: '.cursorrules', enforcedBy: 'tools/ci/homey-heap-json-gate.js' },
-  { id: 'S5', domain: 'sdk3', rule: 'Two modules must not share a basename at different paths (class extends undefined)', source: 'git history signature S18', unenforced: 'dead-module-audit reports orphans but not duplicate basenames' },
+  { id: 'S5', domain: 'sdk3', rule: 'Two modules must not share a basename at different paths (class extends undefined)', source: 'git history signature S18', enforcedBy: 'tools/ci/module-load-health.js', signature: 'duplicateBasenames' },
   { id: 'S6', domain: 'sdk3', rule: 'Every JS file must parse', source: '.cursorrules', enforcedBy: 'scripts/PRE_COMMIT_CHECKS.js' },
+  { id: 'S7', domain: 'sdk3', rule: 'Every runtime module must load, not merely parse: a base class that resolves to undefined or a module object crashes the app at startup', source: 'reports/P187_JS_CODEBASE_LOAD_HEALTH_2026-08-16.md', enforcedBy: 'tools/ci/module-load-health.js', signature: 'isEnvironmental' },
 
   // ── Manifest / publish ───────────────────────────────────────────────────
   { id: 'P1', domain: 'publish', rule: 'app.json, package.json and .homeycompose/app.json must agree on version', source: 'scripts/validate/homey-mandatory-check.js', enforcedBy: 'scripts/validate/homey-mandatory-check.js', signature: 'M08' },

@@ -1,8 +1,8 @@
 # Rules Enforcement Matrix
 
-Generated: 2026-08-16T15:33:28.974Z
+Generated: 2026-08-16T17:02:16.694Z
 
-Machine-checkable rules tracked: **48** — enforced **37**, unenforced **11**, broken references **0** (coverage **77%**).
+Machine-checkable rules tracked: **49** — enforced **39**, unenforced **10**, broken references **0** (coverage **80%**).
 
 A rule is "broken" when the gate it names has been renamed, deleted, or no longer contains the check.
 
@@ -36,8 +36,9 @@ A rule is "broken" when the gate it names has been renamed, deleted, or no longe
 | S2 | sdk3 | No console.log in driver code | enforced | `scripts/ci/zero-defect-control.js` |
 | S3 | sdk3 | Zigbee devices must not be left as a bare ZigBeeDevice without the hardening base | enforced | `tools/ci/bare-zigbee-device-gate.js` |
 | S4 | sdk3 | Large JSON databases are parsed from a Buffer, never from a utf8 string, to survive the 64MB heap | enforced | `tools/ci/homey-heap-json-gate.js` |
-| S5 | sdk3 | Two modules must not share a basename at different paths (class extends undefined) | unenforced | dead-module-audit reports orphans but not duplicate basenames |
+| S5 | sdk3 | Two modules must not share a basename at different paths (class extends undefined) | enforced | `tools/ci/module-load-health.js` |
 | S6 | sdk3 | Every JS file must parse | enforced | `scripts/PRE_COMMIT_CHECKS.js` |
+| S7 | sdk3 | Every runtime module must load, not merely parse: a base class that resolves to undefined or a module object crashes the app at startup | enforced | `tools/ci/module-load-health.js` |
 | P1 | publish | app.json, package.json and .homeycompose/app.json must agree on version | enforced | `scripts/validate/homey-mandatory-check.js` |
 | P2 | publish | The generated app.json stays compactly serialized; auto-fixes must preserve its formatting | enforced | `scripts/validate/homey-mandatory-check.js` |
 | P3 | publish | app.json stays under 4MB compacted; publish bundle under its own ceiling | enforced | `scripts/ci/publish-size-gate.cjs` |

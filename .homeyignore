@@ -1,4 +1,8 @@
 # P74: exclude operational/tooling from Homey build
+# The `*.tmp` patterns below only match a file EXTENSION. The scratch directory
+# `tmp/` (405 MB, 13k files) was not excluded by anything and would have been
+# pulled into .homeybuild by `homey app build`.
+tmp
 # P74.6: global *.bak files (catches lib/tuya/fingerprints.json.bak.*)
 **/*.bak.*
 **/*.bak
