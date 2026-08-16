@@ -11,10 +11,9 @@ alwaysApply: true
 - Never full-tree sync. Classify BOTH | MASTER_ONLY | STABLE_ONLY.
 
 ## Homey Test live truth (last verified)
-- Master Homey Test: **v9.0.541** build #2862 (P148 LiveData OOM fix + P149 diag gate). Finnamu #513 ZT08 OK earlier on 9.0.533.
-- Stable: PR **#530 MERGED** (P139 + ZT08 DP17 + TYZB01 routes) — do not overwrite master Test while soaking.
+- Master Homey Test: **v9.0.563** (P193 Auto-Publish succeeded).
+- Stable tip: `01606ba6f` soak guard (P195). Last Publish Stable **failed at Draft** (`Missing changelog for v5.12.83`) — promote skipped, Test not overwritten.
 - **9.0.530** hit Athom `processing_failed` (`socket hang up`) — superseded; do **not** spam republish (P139).
-- Historical: 9.0.525 / 9.0.526 same transient class.
 - **P139 hardening**: Auto-Publish `cancel-in-progress: false` (do not kill mid Athom draft/promote).
 - Store name: **Universal Tuya Zigbee** (P142 — dropped “Unified Smart Home Engine”).
 - Docs map: `.github/CONTRIBUTING.md` · `docs/guides/USER_TROUBLESHOOTING.md` · `docs/architecture/LAYERS_CAPABILITY_PROTOCOL.md` · `docs/rules/PRAGMATIC_ROADMAP.md` (P152).
@@ -23,6 +22,7 @@ alwaysApply: true
 - Scripts: `.github/scripts/processing-failure-republish-check.js`, `athom-processing-failure-retry.js`.
 - Transient (`socket hang up`, ECONNRESET, 502–504) → **refuse** Auto-Fix bump/republish if Test healthy (or even without).
 - Self-heal must **not** run Publish Stable→Test after master failure; prefer Auto-Publish master only, rate-limited.
+- Homey CLI headless publish auto-bumps: seed next changelog via `ensure-next-changelog.js` (P196).
 - Docs: `.github/WORKFLOW_GUIDELINES.md` section **M**.
 - Publish size: Auto-Fix / enrich gates **50 MB** (prepared dir ~37 MB).
 
@@ -45,9 +45,9 @@ alwaysApply: true
 
 ## Open work
 - **Issue #513 CLOSED** — Finnamu confirmed values OK on 9.0.533 (ZT08 DP17 + unix_1970).
-- P142 pushed: deprecate synthetic `air_purifier_*` hybrids; README de-hype. Report: `reports/QUALITY_VISION_FORUM_P142_2026-08-16.md`.
-- Forum: **0 new FPs**; TYZB01 → switch_2/3/4gang ZCL-only (P141). Peter SOS/contact soak; PresentSky re-pair dimmer.
-- Next cleanup: remaining `_hybrid_*_needs_device_assignment` / `_GENERIC_*` placeholders (M09 warn ~212).
+- Open GitHub issues/PRs: **none**.
+- P194 OTA/WiFi local-first is master-only (bins in `assets/firmware/`, no plug image on buttons).
+- Next cleanup: remaining `_hybrid_*_needs_device_assignment` / `_GENERIC_*` placeholders (M09 warn).
 - AlarmPolarity smart-learn / free-scrape / parallelDiscover = **MASTER_ONLY**.
 
 ## Commands
@@ -56,6 +56,8 @@ gh run list --repo dlnraja/com.tuya.zigbee --limit 12
 node tools/ci/gmail-crash-pattern-gate.js --json
 node tools/ci/forum-media-deep-scan.js --max=40 --topics=140352,26439,89271
 node tools/ci/anti-bot-regression-gate.js
+node tools/ci/firmware-updates-gate.js
+node tools/ci/wifi-local-first-gate.js
 ```
 
 ## Handoff file

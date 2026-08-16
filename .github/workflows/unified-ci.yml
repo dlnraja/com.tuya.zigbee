@@ -114,6 +114,15 @@ jobs:
       - name: 🛡️ Anti-bot regression gate (P127)
         run: node tools/ci/anti-bot-regression-gate.js
 
+      - name: 🛡️ Firmware / OTA path gate
+        run: node tools/ci/firmware-updates-gate.js
+
+      - name: 🛡️ WiFi local-first gate
+        run: node tools/ci/wifi-local-first-gate.js
+
+      - name: 🛡️ Energy compose gate
+        run: node tools/ci/energy-compose-gate.js
+
       - name: 🛡️ Bare ZigBeeDevice gate
         run: npm run check:bare-zigbee
 

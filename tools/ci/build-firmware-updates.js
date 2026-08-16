@@ -1,23 +1,27 @@
 #!/usr/bin/env node
 'use strict';
 /**
- * build-firmware-updates.js (P92.70)
+ * build-firmware-updates.js (P92.70 / P194)
  * Generates Homey NATIVE Zigbee firmware updates (firmware v13.2.0+ feature):
  * for every OEM Tuya image in the Koenkk/zigbee-OTA index that matches one
  * of OUR curated fingerprints (mfs_db), download the image (SHA512-verified
  * against the index — same hardening as lib/ota), validate the OTA header
  * (magic 0x0BEEF11E — same as lib/ota), compute the sha256 integrity, ship
- * the file in drivers/<id>/firmware/ and inject a `firmwareUpdates` block
- * into driver.compose.json (format validated by homey-lib ≥2.51:
- *   { updates: [{ changelog:{en}, device:{manufacturerName[],productId[]},
- *                 files:[{fileVersion,imageType,manufacturerCode,size,name,
- *                         integrity,minFileVersion,maxFileVersion,
- *                         minHardwareVersion,maxHardwareVersion}] }] })
+ * the file in drivers/<id>/assets/firmware/ and inject a `firmwareUpdates`
+ * block into driver.compose.json (homey-lib ≥2.51).
+ *
+ * Homey resolves files[].name as a basename under assets/firmware/ — never
+ * write bins to the driver root (that failed Homey Validate on wall_curtain_switch).
  *
  * Safety:
  *  - pvvx/community replacement firmwares are EXCLUDED (not OEM updates).
  *  - device.manufacturerName/productId are intersected with the driver's own
  *    zigbee lists (homey-lib requires them to be subsets).
+ *  - productIds stay class-tight (image couple only). Never dump the whole
+ *    driver productId list (brick risk: plug image + TS0041/TS130F).
+ *  - Driver routing uses the misattribution registry + exclusive compose
+ *    claim. mfs_db.driverId is a last resort and is refused on class mismatch
+ *    (plug image on button_*, cover image off curtain/cover).
  *  - DRY-RUN by default; --apply to write.
  *
  * Usage: node tools/ci/build-firmware-updates.js [--apply]
@@ -26,12 +30,17 @@ const fs = require('fs');
 const path = require('path');
 const https = require('https');
 const crypto = require('crypto');
+const { lookup, isForbiddenPlacement } = require('../../lib/pairing/UserMisattributionRegistry');
 
 const ROOT = path.join(__dirname, '..', '..');
 const APPLY = process.argv.includes('--apply');
 const INDEX_URL = 'https://raw.githubusercontent.com/Koenkk/zigbee-OTA/master/index.json';
 const TUYA_MFR_CODES = new Set([4417, 4098]);
 const MAX_IMAGE_BYTES = 2 * 1024 * 1024;
+const BUTTON_DRIVERS = /^(button_|remote_|sos_|scene_switch)/;
+const PLUG_IMAGE = /plug|breaker/i;
+const COVER_IMAGE = /cover|curtain|win_cover/i;
+const TRV_IMAGE = /uart_connect_sleep|trv|valve/i;
 
 function get(url, asBuffer = false, redirects = 0) {
   return new Promise((resolve, reject) => {
@@ -63,7 +72,6 @@ function sha512(buf) {return crypto.createHash('sha512').update(buf).digest('hex
 function sha256(buf) {return crypto.createHash('sha256').update(buf).digest('hex');}
 
 function parseOtaHeader(buf) {
-  // Zigbee OTA header (spec 07-5123): magic 0x0BEEF11E LE at offset 0
   if (buf.length < 56 || buf.readUInt32LE(0) !== 0x0BEEF11E) {return null;}
   return {
     headerVersion: buf.readUInt16LE(4),
@@ -79,52 +87,122 @@ function parseOtaHeader(buf) {
   };
 }
 
+function isWideDriver(id) {
+  return /generic|hybrid|needs_device_assignment|_GENERIC_/i.test(id);
+}
+
+function classMismatch(driverId, fileName) {
+  if (PLUG_IMAGE.test(fileName) && BUTTON_DRIVERS.test(driverId)) {return true;}
+  if (COVER_IMAGE.test(fileName) && !/curtain|cover|shutter/.test(driverId)) {return true;}
+  if (TRV_IMAGE.test(fileName) && !/radiator_valve|thermostatic|trv/.test(driverId)) {return true;}
+  return false;
+}
+
+function classPids(fileName) {
+  if (PLUG_IMAGE.test(fileName)) {return ['TS011F', 'TS0111', 'TS0121', 'TS0001'];}
+  if (COVER_IMAGE.test(fileName)) {return ['TS130F'];}
+  if (TRV_IMAGE.test(fileName)) {return ['TS0601'];}
+  return [];
+}
+
+function loadDriverIndex() {
+  const driversDir = path.join(ROOT, 'drivers');
+  const index = [];
+  for (const id of fs.readdirSync(driversDir)) {
+    const composePath = path.join(driversDir, id, 'driver.compose.json');
+    if (!fs.existsSync(composePath)) {continue;}
+    let compose;
+    try { compose = JSON.parse(fs.readFileSync(composePath, 'utf8')); } catch { continue; }
+    index.push({
+      id,
+      composePath,
+      compose,
+      mfrs: new Set((compose.zigbee && compose.zigbee.manufacturerName || []).map(String)),
+      pids: new Set((compose.zigbee && compose.zigbee.productId || []).map(String)),
+    });
+  }
+  return index;
+}
+
+function resolveDriverForOta(mfr, fileName, entry, drivers) {
+  const usable = (id) => {
+    if (!id) {return false;}
+    if (isForbiddenPlacement(mfr, id) || isWideDriver(id) || classMismatch(id, fileName)) {return false;}
+    const d = drivers.find((x) => x.id === id);
+    return !!(d && d.mfrs.has(mfr));
+  };
+
+  const rec = lookup(mfr);
+  if (rec && usable(rec.canonicalDriver)) {return rec.canonicalDriver;}
+
+  const claimants = drivers.filter((d) => d.mfrs.has(mfr) && usable(d.id)).map((d) => d.id);
+  if (claimants.length === 1) {return claimants[0];}
+
+  if (COVER_IMAGE.test(fileName)) {
+    const hit = claimants.find((id) => /curtain|cover|shutter/.test(id));
+    if (hit) {return hit;}
+  }
+  if (PLUG_IMAGE.test(fileName)) {
+    const hit = claimants.find((id) => /plug|socket|switch_1gang|usb_dongle|din_rail/.test(id));
+    if (hit) {return hit;}
+  }
+  if (TRV_IMAGE.test(fileName)) {
+    const hit = claimants.find((id) => /radiator_valve|thermostatic/.test(id));
+    if (hit) {return hit;}
+  }
+  if (usable(entry && entry.driverId)) {return entry.driverId;}
+  return null;
+}
+
+function tightProductIds(entry, driverPids, fileName) {
+  const hinted = classPids(fileName).filter((p) => driverPids.has(p));
+  const fromEntry = (entry.modelIds || []).filter((p) => driverPids.has(p));
+  if (hinted.length) {
+    const overlap = fromEntry.filter((p) => hinted.includes(p));
+    return overlap.length ? overlap : hinted;
+  }
+  return fromEntry;
+}
+
 async function main() {
   const index = JSON.parse(await get(INDEX_URL));
   const db = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'mfs_db.json'), 'utf8'));
-  const dbLower = new Map(Object.keys(db).map(k => [k.toLowerCase(), k]));
+  const dbLower = new Map(Object.keys(db).map((k) => [k.toLowerCase(), k]));
+  const drivers = loadDriverIndex();
 
-  // OEM Tuya images matching our curated fingerprints (pvvx excluded: their
-  // fileVersion 20459521 = community replacement firmware, not OEM update)
-  const candidates = index.filter(img => {
+  const candidates = index.filter((img) => {
     if (!TUYA_MFR_CODES.has(img.manufacturerCode)) {return false;}
-    if (img.fileVersion === 20459521) {return false;} // pvvx community firmware
+    if (img.fileVersion === 20459521) {return false;}
     if (!Array.isArray(img.manufacturerName) || !img.manufacturerName.length) {return false;}
-    return img.manufacturerName.some(m => dbLower.has(String(m).toLowerCase()));
+    return img.manufacturerName.some((m) => dbLower.has(String(m).toLowerCase()));
   });
 
   console.log(`[firmware-updates] ${candidates.length} image(s) OEM Tuya correspondant à nos empreintes`);
   const report = { generated: new Date().toISOString(), apply: APPLY, drivers: [], skipped: [] };
 
   for (const img of candidates) {
-    const mfr = img.manufacturerName.find(m => dbLower.has(String(m).toLowerCase()));
+    const mfr = img.manufacturerName.find((m) => dbLower.has(String(m).toLowerCase()));
     const dbKey = dbLower.get(String(mfr).toLowerCase());
-    const entry = db[dbKey];
-    const driverId = entry.driverId;
-    const composePath = path.join(ROOT, 'drivers', driverId, 'driver.compose.json');
-    if (!fs.existsSync(composePath)) {
-      report.skipped.push({ mfr, driverId, reason: 'driver.compose.json absent' });
+    const entry = db[dbKey] || {};
+    const fileName = path.basename(new URL(img.url).pathname);
+    const driverId = resolveDriverForOta(mfr, fileName, entry, drivers);
+    if (!driverId) {
+      report.skipped.push({ mfr, driverId: entry.driverId || null, reason: 'no safe driver route (registry/class)' });
       continue;
     }
-    const compose = JSON.parse(fs.readFileSync(composePath, 'utf8'));
-    const driverMfrs = new Set((compose.zigbee?.manufacturerName || []).map(x => String(x)));
-    const driverPids = new Set((compose.zigbee?.productId || []).map(x => String(x)));
-
-    // device.manufacturerName: ONLY the exact mfr(s) of this image present in the driver
-    const deviceMfrs = img.manufacturerName.filter(m => driverMfrs.has(String(m)));
+    const driver = drivers.find((d) => d.id === driverId);
+    const compose = driver.compose;
+    const deviceMfrs = img.manufacturerName.filter((m) => driver.mfrs.has(String(m)));
     if (!deviceMfrs.length) {
       report.skipped.push({ mfr, driverId, reason: 'mfr absent du compose du driver' });
       continue;
     }
-    // device.productId: modelIds of the curated entry ∩ driver pids (fallback: all driver pids)
-    const modelIds = (entry.modelIds || []).filter(p => driverPids.has(p));
-    const devicePids = modelIds.length ? modelIds : [...driverPids].slice(0, 5);
+    const devicePids = tightProductIds(entry, driver.pids, fileName);
     if (!devicePids.length) {
-      report.skipped.push({ mfr, driverId, reason: 'aucun productId compatible' });
+      report.skipped.push({ mfr, driverId, reason: 'aucun productId class-tight compatible' });
       continue;
     }
 
-    // Download + verify
     let buf;
     try {
       buf = await get(img.url, true);
@@ -146,7 +224,6 @@ async function main() {
       continue;
     }
 
-    const fileName = path.basename(new URL(img.url).pathname);
     const entry2 = {
       driverId, mfrs: deviceMfrs, pids: devicePids, fileName,
       fileVersion: header.fileVersion, imageType: header.imageType,
@@ -155,15 +232,15 @@ async function main() {
     };
 
     if (APPLY) {
-      // homey-lib 2.51: files[].name cannot include subdirectories —
-      // the firmware file must sit in the DRIVER ROOT.
-      const fwPath = path.join(ROOT, 'drivers', driverId, fileName);
-      fs.writeFileSync(fwPath, buf);
+      const fwDir = path.join(ROOT, 'drivers', driverId, 'assets', 'firmware');
+      fs.mkdirSync(fwDir, { recursive: true });
+      fs.writeFileSync(path.join(fwDir, fileName), buf);
+      const staleRoot = path.join(ROOT, 'drivers', driverId, fileName);
+      if (fs.existsSync(staleRoot)) {fs.unlinkSync(staleRoot);}
 
       compose.firmwareUpdates = compose.firmwareUpdates || { updates: [] };
-      // idempotent: replace any existing update for the same imageType
       compose.firmwareUpdates.updates = (compose.firmwareUpdates.updates || [])
-        .filter(u => !(u.files || []).some(f => f.imageType === header.imageType && f.manufacturerCode === header.manufacturerCode));
+        .filter((u) => !(u.files || []).some((f) => f.imageType === header.imageType && f.manufacturerCode === header.manufacturerCode));
       compose.firmwareUpdates.updates.push({
         changelog: { en: `OEM Tuya firmware v${header.fileVersion} (Koenkk zigbee-OTA, SHA512-verified)` },
         device: { manufacturerName: deviceMfrs, productId: devicePids },
@@ -171,17 +248,16 @@ async function main() {
           fileVersion: header.fileVersion,
           imageType: header.imageType,
           manufacturerCode: header.manufacturerCode,
-          // homey-lib 2.51 schema: optional version/hardware bounds only when known
           ...(img.minFileVersion ? { minFileVersion: img.minFileVersion } : {}),
           ...(img.maxFileVersion ? { maxFileVersion: img.maxFileVersion } : {}),
           ...(header.minimumHardwareVersion ? { minHardwareVersion: header.minimumHardwareVersion } : {}),
           ...(header.maximumHardwareVersion ? { maxHardwareVersion: header.maximumHardwareVersion } : {}),
           size: buf.length,
-          name: fileName, // homey-lib 2.51: basename only, no subdirectories
-          integrity: `sha256:${sha256(buf)}` // schema: "<algo>:<hex>"
+          name: fileName,
+          integrity: `sha256:${sha256(buf)}`
         }]
       });
-      fs.writeFileSync(composePath, JSON.stringify(compose, null, 2) + '\n');
+      fs.writeFileSync(driver.composePath, JSON.stringify(compose, null, 2) + '\n');
       entry2.applied = true;
     }
     report.drivers.push(entry2);
@@ -189,8 +265,10 @@ async function main() {
   }
 
   for (const s of report.skipped) {console.log(`  ✗ ${s.mfr} (${s.driverId}): ${s.reason}`);}
-  fs.writeFileSync(path.join(ROOT, '.github', 'state', 'firmware-updates-report.json'), JSON.stringify(report, null, 1));
+  const stateDir = path.join(ROOT, '.github', 'state');
+  fs.mkdirSync(stateDir, { recursive: true });
+  fs.writeFileSync(path.join(stateDir, 'firmware-updates-report.json'), JSON.stringify(report, null, 1));
   console.log(`[firmware-updates] mode=${APPLY ? 'APPLY' : 'DRY-RUN'} | drivers: ${report.drivers.length} | skipped: ${report.skipped.length}`);
 }
 
-main().catch(err => {console.error(err.message); process.exit(1);});
+main().catch((err) => {console.error(err.message); process.exit(1);});

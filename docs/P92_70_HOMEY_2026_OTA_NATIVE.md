@@ -27,10 +27,11 @@ Format exact (vérifié dans le validateur officiel `homey-lib/lib/App/index.js`
   **exclut les firmwares communautaires pvvx** (fileVersion 20459521 — ce sont des
   remplacements, pas des mises à jour constructeur), télécharge avec **vérif SHA512**
   (durcissement déjà en place), valide le header, calcule le sha256.
-- **6 drivers équipés** (images OEM réelles, ~1,5 Mo total) :
+- **5 drivers équipés** (images OEM réelles, bins in `assets/firmware/`) :
   `radiator_valve` (si32 TRV v87), `thermostatic_radiator_valve` (même module, `_TZE200_ckud7u2l`),
-  `curtain_motor_shutter` (MG21 cover relay v71), `switch_1gang` (TL8258 breaker v74),
-  `button_wireless_2` (TL8258 plug v82), `usb_dongle_triple` (TL8258 plug v78).
+  `wall_curtain_switch` (MG21 cover relay v71), `switch_1gang` (TL8258 breaker v74),
+  `usb_dongle_triple` (TL8258 plug v78). Plug images are never attached to `button_*`.
+  ProductIds stay class-tight (TS130F / TS0601 / TS011F) — never the whole driver list.
 - 2 placeholders historiques invalides (`plug`, `rain_sensor`, `files: []`) **supprimés** —
   aucune image n'existe pour ces appareils (vérifié dans tout l'index) : promesse non
   livrable = pas d'entrée. Le générateur les ajoutera automatiquement si des images paraissent.

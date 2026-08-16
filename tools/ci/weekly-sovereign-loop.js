@@ -186,6 +186,8 @@ function main() {
   report.gates.userTriage = nodeGate('tools/ci/cross-source-user-report-triage.js', ['--fetch']);
   report.gates.moduleLoad = nodeGate('tools/ci/module-load-health.js');
   report.gates.workflowEstate = nodeGate('tools/ci/workflow-estate-gate.js');
+  report.gates.firmwareUpdates = nodeGate('tools/ci/firmware-updates-gate.js');
+  report.gates.wifiLocalFirst = nodeGate('tools/ci/wifi-local-first-gate.js');
 
   report.homeyTest = checkHomeyTestPage();
   report.runs = recentRuns(15);

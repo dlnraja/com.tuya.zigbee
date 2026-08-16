@@ -79,8 +79,16 @@ jobs:
         continue-on-error: true
         run: npm install puppeteer athom-api --no-save
 
+      - name: Shared App ID soak guard
+        id: soak
+        if: (inputs.branch || 'master') == 'stable-v5'
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+        run: node .github/scripts/refuse-stable-test-overwrite.js
+
       - name: "Tier 1: Promote via Browser (Puppeteer)"
         id: promote_puppeteer
+        if: steps.soak.outputs.skip != 'true'
         continue-on-error: true
         timeout-minutes: 8
         env:
@@ -91,7 +99,7 @@ jobs:
         run: node .github/scripts/auto-promote-puppeteer.js
 
       - name: "Tier 2: Promote via OAuth (headless)"
-        if: steps.promote_puppeteer.outcome != 'success'
+        if: steps.soak.outputs.skip != 'true' && steps.promote_puppeteer.outcome != 'success'
         id: promote_oauth
         continue-on-error: true
         timeout-minutes: 5
@@ -104,7 +112,7 @@ jobs:
         run: node .github/scripts/auto-promote-oauth.js
 
       - name: "Tier 3: Promote via API (PAT fallback)"
-        if: steps.promote_puppeteer.outcome != 'success' && steps.promote_oauth.outcome != 'success'
+        if: steps.soak.outputs.skip != 'true' && steps.promote_puppeteer.outcome != 'success' && steps.promote_oauth.outcome != 'success'
         id: promote_api
         continue-on-error: true
         env:
@@ -119,6 +127,7 @@ jobs:
 
       - name: Verify draft promotion result
         id: verify_test
+        if: steps.soak.outputs.skip != 'true'
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
         run: |
@@ -130,7 +139,7 @@ jobs:
           node .github/scripts/verify-test-version.js
 
       - name: Post update to Homey Community Forum
-        if: steps.promote_puppeteer.outcome == 'success' || steps.promote_oauth.outcome == 'success' || steps.promote_api.outcome == 'success'
+        if: steps.soak.outputs.skip != 'true' && (steps.promote_puppeteer.outcome == 'success' || steps.promote_oauth.outcome == 'success' || steps.promote_api.outcome == 'success')
         continue-on-error: true
         env:
           HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}

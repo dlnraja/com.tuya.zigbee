@@ -107,6 +107,8 @@
     "check:athom": "node scripts/validate/validate-app-json.js",
     "check:precommit": "node .githooks/pre-commit",
     "check:yaml": "node scripts/ci/validate-all-yaml.js --json && node scripts/ci/validate-github-actions-policy.js && node tools/ci/workflow-estate-gate.js",
+    "check:firmware": "node tools/ci/firmware-updates-gate.js",
+    "check:wifi-local": "node tools/ci/wifi-local-first-gate.js",
     "check:actions": "node scripts/ci/validate-github-actions-policy.js",
     "check:flows": "node scripts/ci/check-flow-ids.js --json",
     "check:homey-guidelines": "node scripts/ci/homey-online-guidelines-audit.js",

@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * Tests — P92.70 native Homey Zigbee firmware updates (v13.2.0+)
+ * Tests — P92.70 / P194 native Homey Zigbee firmware updates (v13.2.0+)
  */
 
 const assert = require('assert');
@@ -13,24 +13,44 @@ const testApi = global.describe && global.it ? global : require('node:test');
 const { describe, it } = testApi;
 
 const ROOT = path.join(__dirname, '..');
-const DRIVERS_WITH_FW = [
-  'usb_dongle_triple', 'radiator_valve', 'curtain_motor_shutter',
-  'switch_1gang', 'button_wireless_2', 'thermostatic_radiator_valve'
-];
+const DRIVERS = path.join(ROOT, 'drivers');
 
-describe('P92.70 — native firmware updates', () => {
+function readJson(file) {
+  try { return JSON.parse(fs.readFileSync(file, 'utf8')); } catch { return null; }
+}
+
+function discoverFirmwareDrivers() {
+  const found = [];
+  for (const id of fs.readdirSync(DRIVERS)) {
+    const compose = readJson(path.join(DRIVERS, id, 'driver.compose.json'));
+    const fw = readJson(path.join(DRIVERS, id, 'driver.firmware.compose.json'));
+    const updates = []
+      .concat((compose && compose.firmwareUpdates && compose.firmwareUpdates.updates) || [])
+      .concat((fw && fw.updates) || []);
+    if (updates.length) {found.push({ id, compose, updates });}
+  }
+  return found;
+}
+
+describe('P92.70 / P194 — native firmware updates', () => {
+
+  it('discovers at least the known safe OTA drivers', () => {
+    const ids = discoverFirmwareDrivers().map((d) => d.id);
+    for (const required of ['usb_dongle_triple', 'radiator_valve', 'wall_curtain_switch', 'switch_1gang', 'thermostatic_radiator_valve']) {
+      assert.ok(ids.includes(required), `${required} still ships firmwareUpdates`);
+    }
+    assert.ok(!ids.includes('button_wireless_2'), 'plug image must not sit on button_wireless_2');
+    assert.ok(!ids.includes('curtain_motor_shutter'), 'cover image lives on wall_curtain_switch');
+  });
 
   it('every firmwareUpdates entry matches the homey-lib 2.51 schema', () => {
-    for (const d of DRIVERS_WITH_FW) {
-      const app = require(path.join(ROOT, 'app.json'));
-      const driver = app.drivers.find((x) => x.id === d);
-      assert.ok(driver.firmwareUpdates, `${d} has firmwareUpdates`);
-      for (const u of driver.firmwareUpdates.updates) {
-        assert.ok(u.changelog && (typeof u.changelog.en === 'string'), `${d}: changelog.en`);
-        assert.ok(Array.isArray(u.files) && u.files.length >= 1, `${d}: >=1 file`);
+    for (const d of discoverFirmwareDrivers()) {
+      for (const u of d.updates) {
+        assert.ok(u.changelog && (typeof u.changelog.en === 'string'), `${d.id}: changelog.en`);
+        assert.ok(Array.isArray(u.files) && u.files.length >= 1, `${d.id}: >=1 file`);
         for (const f of u.files) {
-          assert.strictEqual(f.name, path.basename(f.name), `${d}: name is basename only`);
-          assert.match(f.integrity, /^sha256:[0-9a-f]{64}$/, `${d}: integrity sha256:<hex>`);
+          assert.strictEqual(f.name, path.basename(f.name), `${d.id}: name is basename only`);
+          assert.match(f.integrity, /^sha256:[0-9a-f]{64}$/, `${d.id}: integrity sha256:<hex>`);
           assert.strictEqual(typeof f.fileVersion, 'number');
           assert.strictEqual(typeof f.imageType, 'number');
           assert.strictEqual(typeof f.manufacturerCode, 'number');
@@ -41,18 +61,15 @@ describe('P92.70 — native firmware updates', () => {
   });
 
   it('firmware files exist in drivers/<id>/assets/firmware/ with matching integrity + header', () => {
-    const app = require(path.join(ROOT, 'app.json'));
-    for (const d of DRIVERS_WITH_FW) {
-      const driver = app.drivers.find((x) => x.id === d);
-      for (const u of driver.firmwareUpdates.updates) {
+    for (const d of discoverFirmwareDrivers()) {
+      for (const u of d.updates) {
         for (const f of u.files) {
-          const fp = path.join(ROOT, 'drivers', d, 'assets', 'firmware', f.name);
+          const fp = path.join(DRIVERS, d.id, 'assets', 'firmware', f.name);
           assert.ok(fs.existsSync(fp), `${fp} exists`);
           const buf = fs.readFileSync(fp);
           const sha = crypto.createHash('sha256').update(buf).digest('hex');
-          assert.strictEqual(f.integrity, `sha256:${sha}`, `${d}/${f.name}: integrity matches`);
-          assert.strictEqual(buf.length, f.size, `${d}/${f.name}: size matches`);
-          // OTA header: magic + real manufacturerCode/imageType/fileVersion
+          assert.strictEqual(f.integrity, `sha256:${sha}`, `${d.id}/${f.name}: integrity matches`);
+          assert.strictEqual(buf.length, f.size, `${d.id}/${f.name}: size matches`);
           assert.strictEqual(buf.readUInt32LE(0), 0x0BEEF11E, 'OTA magic');
           assert.strictEqual(buf.readUInt16LE(10), f.manufacturerCode, 'header mfr code');
           assert.strictEqual(buf.readUInt16LE(12), f.imageType, 'header imageType');
@@ -63,18 +80,28 @@ describe('P92.70 — native firmware updates', () => {
   });
 
   it('device manufacturerName/productId are strict subsets of the driver zigbee lists', () => {
-    const app = require(path.join(ROOT, 'app.json'));
-    for (const d of DRIVERS_WITH_FW) {
-      const driver = app.drivers.find((x) => x.id === d);
-      const mfrs = new Set(driver.zigbee.manufacturerName);
-      const pids = new Set(driver.zigbee.productId);
-      for (const u of driver.firmwareUpdates.updates) {
+    for (const d of discoverFirmwareDrivers()) {
+      const mfrs = new Set((d.compose.zigbee && d.compose.zigbee.manufacturerName) || []);
+      const pids = new Set((d.compose.zigbee && d.compose.zigbee.productId) || []);
+      for (const u of d.updates) {
         for (const m of [].concat(u.device.manufacturerName)) {
-          assert.ok(mfrs.has(m), `${d}: ${m} in driver manufacturerName`);
+          assert.ok(mfrs.has(m), `${d.id}: ${m} in driver manufacturerName`);
         }
         for (const p of [].concat(u.device.productId)) {
-          assert.ok(pids.has(p), `${d}: ${p} in driver productId`);
+          assert.ok(pids.has(p), `${d.id}: ${p} in driver productId`);
         }
+      }
+    }
+  });
+
+  it('plug/breaker images do not advertise button or cover productIds', () => {
+    const banned = new Set(['TS0041', 'TS0042', 'TS0043', 'TS0044', 'TS004F', 'TS0215A', 'TS130F']);
+    for (const d of discoverFirmwareDrivers()) {
+      for (const u of d.updates) {
+        const name = String(((u.files || [])[0] || {}).name || '').toLowerCase();
+        if (!/plug|breaker/.test(name)) {continue;}
+        const bad = [].concat(u.device.productId || []).filter((p) => banned.has(p));
+        assert.deepStrictEqual(bad, [], `${d.id}: plug image must not target ${bad.join(',')}`);
       }
     }
   });
@@ -82,6 +109,7 @@ describe('P92.70 — native firmware updates', () => {
   it('pvvx community firmwares are excluded (fileVersion 20459521)', () => {
     const src = fs.readFileSync(path.join(ROOT, 'tools/ci/build-firmware-updates.js'), 'utf8');
     assert.ok(src.includes('20459521'), 'pvvx exclusion present in generator');
+    assert.ok(src.includes('assets') && src.includes('firmware'), 'generator writes assets/firmware');
   });
 
   it('generator is wired into self-improve and placeholders are gone', () => {

@@ -73,8 +73,14 @@
           "label": {
             "en": "Protocol"
           },
-          "value": "3.3",
+          "value": "auto",
           "values": [
+            {
+              "id": "auto",
+              "label": {
+                "en": "Auto (3.1-3.5)"
+              }
+            },
             {
               "id": "3.1",
               "label": {

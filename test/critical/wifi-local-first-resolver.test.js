@@ -19,7 +19,7 @@ const originalLoad = Module._load;
 Module._load = function patchedLoad(request, parent, isMain) {
   if (request === '../tuya-local/TuyaLocalClient') {
     return class TuyaLocalClientMock {
-      constructor(opts) { this.opts = opts; this.handlers = {}; }
+      constructor(opts) { this.opts = opts; this.ip = opts.ip; this.handlers = {}; }
       on(evt, fn) { this.handlers[evt] = fn; }
       async setDPs(dps) { this.lastDps = dps; }
       async connect() { this.connected = true; }
@@ -29,7 +29,7 @@ Module._load = function patchedLoad(request, parent, isMain) {
   if (request === '../tuya-local/TuyaUDPDiscovery') {
     return class TuyaUDPDiscoveryMock {
       constructor() { this.handlers = {}; }
-      on() {}
+      on(evt, fn) { this.handlers[evt] = fn; }
       getDevice() { return null; }
       async start() { this.started = true; }
       async stop() { this.stopped = true; }
@@ -177,5 +177,18 @@ describe('LocalWiFiTuyaBridge - local-first sessions', () => {
     bridge.sessions.set('dev3', { handlers: {} });
     bridge._onData('dev3', { 1: false });
     assert.strictEqual(received.length, 1); // no event after destroy
+  });
+
+  it('refreshes session IP when UDP discovery reports a new address', async () => {
+    const homey = mockHomey();
+    const bridge = new LocalWiFiTuyaBridge(homey);
+    await bridge.startDiscovery();
+    await bridge.registerDevice('dev1', 'key123', '192.168.1.5');
+    const client = bridge.sessions.get('dev1');
+    assert.strictEqual(client.ip, '192.168.1.5');
+    bridge._discovery.handlers['device-updated']({ deviceId: 'dev1', ip: '192.168.1.80' });
+    assert.strictEqual(client.ip, '192.168.1.80');
+    assert.strictEqual(bridge.devices.get('dev1').ip, '192.168.1.80');
+    assert.ok(homey.logs.some((l) => l.includes('Session IP refreshed') && l.includes('192.168.1.80')));
   });
 });

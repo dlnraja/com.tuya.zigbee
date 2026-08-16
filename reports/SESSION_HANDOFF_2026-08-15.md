@@ -1,39 +1,34 @@
-# SESSION HANDOFF — 2026-08-16 (~15:00 CET)
+# SESSION HANDOFF — 2026-08-16 (~21:50 CET)
 
 > Dual-app BOTH when in doubt. Silent forum (T157628). Shared App ID = one Test slot.
 > Compass: `docs/rules/PRAGMATIC_ROADMAP.md` (internal only).
+> Prompts: `docs/rules/CROSS_APP_PROMPT_RULES.md` · `.windsurf/workflows/per-prompt-yaml-improvement.md`
 
 ## Live versions
 
 | Track | Branch | Code tip | Homey Test |
 |-------|--------|----------|------------|
-| Preview | `master` | **P193** workflow estate + soak guard | Test still **9.0.558**; draft **9.0.562 #2884** |
-| Stable | `stable-v5` | PR #530 lineage | do **not** overwrite master Test while soaking |
+| Preview | `master` | P193 + local P194/P196 | **9.0.563** |
+| Stable | `stable-v5` | `01606ba6f` P195 soak | do **not** overwrite 9.0 Test |
 
 App ID: `com.dlnraja.tuya.zigbee` · https://homey.app/a/com.dlnraja.tuya.zigbee/test/
 
-## Priority
+## Cross-app
 
-**doublons > GitHub docs > surgical refactor**
-
-## Just shipped
-
-- **P168** — all 17 Homey classes audited; **0** `_TZ*` dual-claim conflicts
-- Tools: `audit-sacred-couple-by-class.js`, `apply-class-scale-sacred-fixes.js`
-- CI: registry + dual-claim + class-scale + energy in `syntax-check.yml`
-- False `energy.mains` stripped on 24 battery-primary drivers
-
-## User leftovers
-
-- Peter: Test **≥9.0.541**, new diag only if still OOM
-- Re-pair if device landed on wrong tile before P167/P168
-- Stable backport of compose locks **after** soak only
+| Item | Class | Status |
+|------|-------|--------|
+| Soak guard / self-heal / draft poller | BOTH | on master + stable P195 |
+| Missing changelog 5.12.83 (CLI auto-bump) | BOTH | P196 `ensure-next-changelog.js` |
+| OTA path + tight productIds | BOTH | P194 master; do not mass-copy bins to stable unless Validate fails |
+| WiFi protocol auto / IP refresh | MASTER_ONLY | P194 local |
+| Open issues / PRs | — | none |
+| Human-reported unclaimed mfrs | — | 0 |
 
 ## Commands
 
 ```bash
-node tools/ci/audit-sacred-couple.js --from-registry
-node tools/ci/audit-sacred-couple-by-class.js
-node tools/ci/dual-claim-compose-gate.js
+node tools/ci/firmware-updates-gate.js
+node tools/ci/wifi-local-first-gate.js
 node tools/ci/energy-compose-gate.js
+node tools/ci/anti-bot-regression-gate.js
 ```
