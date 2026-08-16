@@ -1,0 +1,132 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2026-08-16",
+  "description": "Local-first crash/diag symptom catalog for CI (no AI tokens). autoFixable=true means a known in-tree fix path exists — NOT auto-PR. OOM root cause is LiveData settings overlay (P148/P156), not fingerprints.json size.",
+  "patterns": [
+    {
+      "id": "ERR_OOM_HEAP_LIMIT",
+      "severity": "critical",
+      "keywords": [
+        "FATAL ERROR: Reached heap limit",
+        "Allocation failed - JavaScript heap out of memory",
+        "JavaScript heap out of memory",
+        "Ineffective mark-compacts near heap limit"
+      ],
+      "regex": "heap limit|JavaScript heap out of memory|Allocation failed",
+      "rootCause": "Homey Pro ~64MB heap: LiveDataUpdater merged oversized GitHub Pages fingerprint segments into Homey settings (live_data_overlay), not a multi-MB data/fingerprints.json boot load (tip fingerprints ≈15KB; mfs_db is .homeyignore'd).",
+      "suggestedFix": "LiveDataUpdater caps (overlay ≤1500, store ≤~180KB), version gate before segments, clear bad store, heap skip (P148). Tip Test ≥9.0.541.",
+      "autoFixable": false,
+      "fixAction": "verify_livedata_caps",
+      "status": "fixed_p148",
+      "codeRefs": ["lib/dynamic/LiveDataUpdater.js", "tools/ci/homey-heap-json-gate.js"]
+    },
+    {
+      "id": "ERR_IAS_SLEEPY_TIMEOUT",
+      "severity": "high",
+      "keywords": [
+        "DP recovery failed",
+        "IAS Zone timeout",
+        "Tuya DP query timeout on sleepy device",
+        "DATA-RECOVERY"
+      ],
+      "regex": "timeout.*IAS|DP.*recovery.*fail|DATA-RECOVERY|sleepy",
+      "rootCause": "Aggressive EF00/COMMON_DPS polling on sleepy IAS battery devices that only wake on zone notifications.",
+      "suggestedFix": "DataRecoveryManager: skip aggressive EF00 on IAS without EF00; no COMMON_DPS on sleepy (P148/P157).",
+      "autoFixable": false,
+      "fixAction": "skip_ias_polling",
+      "status": "fixed_p148",
+      "codeRefs": ["lib/tuya/DataRecoveryManager.js"]
+    },
+    {
+      "id": "ERR_DESTROYED_DEVICE_TIMER",
+      "severity": "medium",
+      "keywords": [
+        "Cannot read properties of undefined (reading 'setTimeout')",
+        "this.homey.setTimeout is not a function",
+        "setTimeout is not a function"
+      ],
+      "regex": "setTimeout.*(undefined|is not a function)|homey\\.setTimeout is not a function",
+      "rootCause": "Native/homey timer on destroyed device instance.",
+      "suggestedFix": "safeSetTimeout / safeSetInterval / isDestroyed from lib/utils/safe-timers.js",
+      "autoFixable": false,
+      "fixAction": "use_safe_timers",
+      "status": "fixed_p19",
+      "codeRefs": ["lib/utils/safe-timers.js"]
+    },
+    {
+      "id": "ERR_UNBOUND_DESTROYED",
+      "severity": "critical",
+      "keywords": [
+        "Cannot read properties of undefined (reading '_destroyed')",
+        "reading '_destroyed'"
+      ],
+      "regex": "reading ['_\"]_destroyed['_\"]",
+      "rootCause": "Unbound this.error / this.log passed to .catch after destroy.",
+      "suggestedFix": "_boundError/_boundLog; never unbound this.error to .catch",
+      "autoFixable": false,
+      "fixAction": "use_bound_error",
+      "status": "fixed_p100",
+      "codeRefs": ["lib/TuyaZigbeeDevice.js"]
+    },
+    {
+      "id": "ERR_CATCH_ON_UNDEFINED",
+      "severity": "critical",
+      "keywords": [
+        "Cannot read properties of undefined (reading 'catch')",
+        "reading 'catch'"
+      ],
+      "regex": "reading ['\"]catch['\"]",
+      "rootCause": "Calling .catch on non-Promise (sync void override).",
+      "suggestedFix": "Promise.resolve(x).catch(...) or async listeners (SOS P139)",
+      "autoFixable": false,
+      "fixAction": "promise_resolve_catch",
+      "status": "fixed_p139",
+      "codeRefs": ["drivers/sos_emergency_button_cr2032/device.js"]
+    },
+    {
+      "id": "ERR_CAPABILITY_NOT_FOUND",
+      "severity": "medium",
+      "keywords": [
+        "Cannot set capability value",
+        "Capability not found",
+        "setCapabilityValue failed"
+      ],
+      "regex": "setCapabilityValue.*failed|Capability not found",
+      "rootCause": "Capability missing from compose or device mid-destroy.",
+      "suggestedFix": "safeSetCapabilityValue() / L14 path on TuyaZigbeeDevice",
+      "autoFixable": false,
+      "fixAction": "use_safe_capability_setter",
+      "status": "hardened_l14",
+      "codeRefs": ["lib/TuyaZigbeeDevice.js"]
+    },
+    {
+      "id": "ERR_AUDIT_CAPABILITIES",
+      "severity": "critical",
+      "keywords": ["auditCapabilities is not a function"],
+      "regex": "auditCapabilities\\s+is not a function",
+      "rootCause": "DynamicCapabilityManager missing auditCapabilities on older stable builds.",
+      "suggestedFix": "typeof guard + method on DCM (stable backport)",
+      "autoFixable": false,
+      "fixAction": "guard_audit_capabilities",
+      "status": "fixed_p108",
+      "codeRefs": ["lib/dynamic/DynamicCapabilityManager.js"]
+    },
+    {
+      "id": "ERR_ZIGBEE_ROUTE_FULL",
+      "severity": "high",
+      "keywords": [
+        "Route error",
+        "No network route",
+        "MAC channel access failure",
+        "Zigbee queue full"
+      ],
+      "regex": "Route error|No network route|queue full|MAC channel access",
+      "rootCause": "Mesh saturation; often aggressive polling of sleepy devices or RF coexistence.",
+      "suggestedFix": "Skip sleepy DP blast; RF coexistence guide (Zigbee 15/20/25 vs Wi-Fi 1/6/11). Not FeatureFallbackRouter auto-cache.",
+      "autoFixable": false,
+      "fixAction": "review_polling_and_rf",
+      "status": "ops_guidance",
+      "codeRefs": ["docs/guides/RF_CHANNEL_COEXISTENCE.md", "lib/tuya/DataRecoveryManager.js"]
+    }
+  ]
+}

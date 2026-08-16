@@ -30,11 +30,12 @@ const path = require('path');
 
 const ROOT = path.join(__dirname, '..', '..');
 const OUT = path.join(ROOT, '.github', 'state', 'gmail-crash-patterns.json');
+const ERROR_PATTERNS_PATH = path.join(ROOT, 'data', 'error-patterns.json');
 const args = process.argv.slice(2);
 const STRICT = args.includes('--strict');
 const JSON_MODE = args.includes('--json');
 
-const KNOWN_PATTERNS = [
+const KNOWN_PATTERNS_EMBEDDED = [
   {
     id: 'flow_getDeviceActionCard',
     severity: 'fatal',
@@ -128,6 +129,39 @@ const KNOWN_PATTERNS = [
   },
 ];
 
+function loadExternalPatterns() {
+  try {
+    if (!fs.existsSync(ERROR_PATTERNS_PATH)) return [];
+    const raw = JSON.parse(fs.readFileSync(ERROR_PATTERNS_PATH, 'utf8'));
+    const list = raw.patterns || raw;
+    if (!Array.isArray(list)) return [];
+    return list.map((p) => ({
+      id: p.id,
+      severity: p.severity === 'critical' ? 'fatal' : (p.severity || 'warn'),
+      re: p.regex ? new RegExp(p.regex, 'i') : null,
+      keywords: p.keywords || [],
+      fix: p.suggestedFix || p.fixAction || '',
+      status: p.status || 'catalog',
+    })).filter((p) => p.id && (p.re || p.keywords.length));
+  } catch {
+    return [];
+  }
+}
+
+const KNOWN_PATTERNS = (() => {
+  const external = loadExternalPatterns();
+  const seen = new Set(KNOWN_PATTERNS_EMBEDDED.map((p) => p.id));
+  const merged = [...KNOWN_PATTERNS_EMBEDDED];
+  for (const p of external) {
+    if (seen.has(p.id)) continue;
+    // Also skip if embedded already covers same heap OOM via heap_oom_live_data
+    if (p.id === 'ERR_OOM_HEAP_LIMIT' && seen.has('heap_oom_live_data')) continue;
+    merged.push(p);
+    seen.add(p.id);
+  }
+  return merged;
+})();
+
 function readJson(p) {
   try {
     if (!fs.existsSync(p)) return null;
@@ -201,6 +235,19 @@ function extractSacredHints(text) {
   };
 }
 
+function patternMatches(pat, text) {
+  if (pat.re) {
+    try {
+      if (pat.re.test(text)) return true;
+    } catch { /* ignore */ }
+  }
+  if (Array.isArray(pat.keywords) && pat.keywords.length) {
+    const lower = text.toLowerCase();
+    return pat.keywords.some((k) => lower.includes(String(k).toLowerCase()));
+  }
+  return false;
+}
+
 function main() {
   const blobs = collectTextBlobs();
   const hits = [];
@@ -209,7 +256,7 @@ function main() {
 
   for (const blob of blobs) {
     for (const pat of KNOWN_PATTERNS) {
-      if (pat.re.test(blob.text)) {
+      if (patternMatches(pat, blob.text)) {
         counts[pat.id] += 1;
         hits.push({
           pattern: pat.id,

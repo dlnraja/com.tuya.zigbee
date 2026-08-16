@@ -1,0 +1,111 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2026-08-16",
+  "description": "Local device knowledge keyed by sacred couple (mfr+productId) when known. Bare productId alone is ambiguous — prefer couples. Workarounds map to existing in-tree managers (not invent Homey self-repair).",
+  "devices": [
+    {
+      "mfr": "_TZE200_7hfcudw5",
+      "productId": ["TS0601"],
+      "name": "Tuya PIR motion (EF00)",
+      "type": "sensor",
+      "canonicalDriverHint": "motion_sensor",
+      "dpMapping": {
+        "occupancy": 1,
+        "battery": 4,
+        "sensitivity": 101
+      },
+      "knownHardwareFlaws": ["battery_reports_sudden_drops", "lqi_fluctuates_wildly"],
+      "requiredWorkarounds": ["battery_moving_average", "lqi_hysteresis"],
+      "sources": ["community-kb", "P170"]
+    },
+    {
+      "mfr": "_TZE200_b2u1drdv",
+      "productId": ["TS0601"],
+      "name": "Tuya door/window contact (EF00)",
+      "type": "sensor",
+      "canonicalDriverHint": "contact_sensor",
+      "dpMapping": {
+        "contact": 1,
+        "battery": 2
+      },
+      "knownHardwareFlaws": ["rapid_state_bouncing", "sleepy_ias_polling_timeout"],
+      "requiredWorkarounds": ["debounce_filter_2000ms", "skip_ias_polling"],
+      "sources": ["community-kb", "P170"]
+    },
+    {
+      "mfr": "_TZ3000_k4ej3ww2",
+      "productId": ["TS0207"],
+      "name": "HOBEIAN/Aubess water leak IAS",
+      "type": "sensor",
+      "canonicalDriverHint": "water_leak_sensor",
+      "protocol": "ias_zone",
+      "knownHardwareFlaws": ["sleepy_passive_reporting", "cartesian_phantom_ts0601"],
+      "requiredWorkarounds": ["skip_ias_polling", "ias_only_pairing"],
+      "sources": ["z2m#17685", "P151"]
+    },
+    {
+      "mfr": "_TZ3000_wkr3jqmr",
+      "productId": ["TS0004"],
+      "name": "ZG-003-RF 4-gang switch",
+      "type": "switch",
+      "canonicalDriverHint": "switch_4gang",
+      "knownHardwareFlaws": [],
+      "requiredWorkarounds": ["gang_count_lock"],
+      "sources": ["zha#2538", "P168"]
+    }
+  ],
+  "productIdHints": {
+    "TS0001": {
+      "name": "1-gang switch module family (mfr-dependent)",
+      "type": "switch",
+      "note": "Sacred couple required — TS0001 alone is not unique",
+      "knownHardwareFlaws": ["power_outage_memory_loss"],
+      "requiredWorkarounds": ["state_restore_on_rejoin"]
+    },
+    "TS0601": {
+      "name": "Tuya MCU catch-all modelId (many device classes)",
+      "type": "ambiguous",
+      "note": "NEVER route by TS0601 alone — always pair with manufacturerName",
+      "knownHardwareFlaws": ["dp_firmware_mismatch_across_oems"],
+      "requiredWorkarounds": ["sacred_couple_routing"]
+    }
+  },
+  "workarounds": {
+    "battery_moving_average": {
+      "description": "Smooth battery spikes — use UnifiedBatteryHandler / SmartBatteryManager EMA (not linear (V-2.5)/0.5).",
+      "codeRefs": ["lib/battery/UnifiedBatteryHandler.js", "lib/managers/SmartBatteryManager.js"]
+    },
+    "lqi_hysteresis": {
+      "description": "Ops/mesh — prefer RF coexistence; no Homey runtime self-mutating LQI bot.",
+      "codeRefs": ["docs/guides/RF_CHANNEL_COEXISTENCE.md"]
+    },
+    "debounce_filter_2000ms": {
+      "description": "Contact debounce — AlarmPolarity / physical button mixins use sliding windows.",
+      "codeRefs": ["lib/mixins/PhysicalButtonMixin.js"]
+    },
+    "skip_ias_polling": {
+      "description": "Skip aggressive EF00 recovery on sleepy IAS.",
+      "codeRefs": ["lib/tuya/DataRecoveryManager.js"]
+    },
+    "ias_only_pairing": {
+      "description": "Lock water leak to IAS driver; registry forbiddenDrivers.",
+      "codeRefs": ["data/user-misattribution-registry.json", "drivers/water_leak_sensor/"]
+    },
+    "gang_count_lock": {
+      "description": "Compose exclusivity for gang count (mfr+pid).",
+      "codeRefs": ["tools/ci/align-mfs-db-intelligent.js", "data/user-misattribution-registry.json"]
+    },
+    "sacred_couple_routing": {
+      "description": "Always match manufacturerName + productId together.",
+      "codeRefs": ["tools/ci/audit-sacred-couple.js", "docs/rules/PRAGMATIC_ROADMAP.md"]
+    },
+    "state_restore_on_rejoin": {
+      "description": "Power-on behavior via ZCL / DP14 where supported — not Homey invent APIs.",
+      "codeRefs": ["lib/devices/UnifiedSwitchBase.js"]
+    },
+    "dp_fallback_routing": {
+      "description": "Use SmartDivisorManager / known DP maps — do not invent FeatureFallbackRouter auto-cache on Homey.",
+      "codeRefs": ["lib/managers/SmartDivisorManager.js"]
+    }
+  }
+}
