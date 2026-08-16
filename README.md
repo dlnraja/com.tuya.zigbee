@@ -33,7 +33,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.550 |
+| **App Version** | v9.0.551 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,366 |
 | **Pairing Variants** | 16,720 (4 case combos per fingerprint) |
@@ -102,6 +102,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.551** | Stability improvements and Homey test publication retry after transient processing failure. |
 | **v9.0.550** | Stability improvements and Homey test publication retry after transient processing failure. |
 | **v9.0.549** | Stability improvements and Homey test publication retry after transient processing failure. |
 | **v9.0.548** | Stability improvements and Homey test publication retry after transient processing failure. |
@@ -113,7 +114,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.542** | Stability improvements and Homey test publication retry after transient processing failure. |
 | **v9.0.541** | Stability improvements and Homey test publication retry after transient processing failure. |
 | **v9.0.540** | Stability improvements and Homey test publication retry after transient processing failure. |
-| **v9.0.539** | Stability improvements and Homey test publication retry after transient processing failure. |
 
 <!-- CHANGELOG_END -->
 
