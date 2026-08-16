@@ -38,12 +38,13 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.546 |
+| **App Version** | v9.0.547 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,363 |
 | **Pairing Variants** | 16,810 (4 case combos per fingerprint) |
 | **Unique Fingerprints** | 4,362 |
 | **Pairing Variants** | 16,806 (4 case combos per fingerprint) |
+| **Pairing Variants** | 16,742 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 575 |
 | **Flow Cards** | 4,974 |
 | **Unique Capabilities** | 170 |
@@ -58,13 +59,13 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | # | Driver | Fingerprints |
 |---|--------|-------------|
-| 1 | `climate_sensor` | 2,663 |
+| 1 | `climate_sensor` | 2,659 |
 | 2 | `switch_1gang` | 1,800 |
 | 3 | `button_wireless_2` | 758 |
 | 4 | `presence_sensor_radar` | 722 |
 | 5 | `radiator_valve` | 599 |
 | 6 | `wall_dimmer_tuya` | 504 |
-| 7 | `generic_tuya` | 484 |
+| 7 | `generic_tuya` | 420 |
 | 8 | `device_radiator_valve` | 380 |
 | 9 | `sensor_contact_zigbee` | 345 |
 | 10 | `curtain_motor` | 308 |
@@ -109,6 +110,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.547** | Stability improvements and Homey test publication retry after transient processing failure. |
 | **v9.0.546** | Stability improvements and Homey test publication retry after transient processing failure. |
 | **v9.0.545** | Stability improvements and Homey test publication retry after transient processing failure. |
 | **v9.0.544** | Stability improvements and Homey test publication retry after transient processing failure. |
@@ -120,7 +122,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.538** | Stability improvements and Homey test publication retry after transient processing failure. |
 | **v9.0.537** | Stability improvements and Homey test publication retry after transient processing failure. |
 | **v9.0.536** | Stability improvements and Homey test publication retry after transient processing failure. |
-| **v9.0.535** | Stability improvements and Homey test publication retry after transient processing failure. |
 
 <!-- CHANGELOG_END -->
 
