@@ -67,7 +67,11 @@
         "fr": "Maintenez le bouton power pendant 5 secondes"
       }
     },
-    "manufacturerName": []
+    "manufacturerName": [
+      "_DEPRECATED_AIR_PURIFIER_HYBRID_DO_NOT_PAIR",
+      "_deprecated_air_purifier_hybrid_do_not_pair",
+      "_deprecated_air_purifier_hybrid_do_not_pair"
+    ]
   },
   "images": {
     "small": "/drivers/air_purifier/assets/images/small.png",
@@ -123,12 +127,9 @@
   "version": "1.0.0",
   "metadata": {
     "driver": {
-      "catchall": true,
-      "reason": "Fallback for unmatched devices with PIDs: TS0601, TS0225, Excellux, TS0207, TS0001"
+      "reason": "Deprecated hybrid — sentinel only, do not pair"
     }
   },
-  "ui": {
-    "quickAction": "onoff"
-  },
+  "ui": {},
   "deprecated": true
 }

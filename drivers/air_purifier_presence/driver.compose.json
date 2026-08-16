@@ -57,7 +57,11 @@
         ]
       }
     },
-    "manufacturerName": []
+    "manufacturerName": [
+      "_DEPRECATED_AIR_PURIFIER_HYBRID_DO_NOT_PAIR",
+      "_deprecated_air_purifier_hybrid_do_not_pair",
+      "_deprecated_air_purifier_hybrid_do_not_pair"
+    ]
   },
   "settings": [
     {
@@ -648,8 +652,6 @@
   },
   "id": "air_purifier_presence",
   "version": "1.0.0",
-  "ui": {
-    "quickAction": "onoff"
-  },
+  "ui": {},
   "deprecated": true
 }
