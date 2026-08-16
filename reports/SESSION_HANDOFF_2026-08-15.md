@@ -1,4 +1,4 @@
-# SESSION HANDOFF — 2026-08-16 (~01:20 CET)
+# SESSION HANDOFF — 2026-08-16 (~11:45 CET)
 
 > Dual-app BOTH when in doubt. Silent forum (T157628). Shared App ID = one Test slot.
 > Cursor rule: `.cursor/rules/operational-memory-2026-08-15.mdc` (alwaysApply).
@@ -7,42 +7,43 @@
 
 | Track | Branch | Code tip | Homey Test |
 |-------|--------|----------|------------|
-| Preview | `master` | tip + **P140 ZT08 DP17** (pending publish) | **9.0.531** ✅ until next Auto-Publish |
-| Stable | `stable-v5` | **5.12.82** | 5.12.82 |
+| Preview | `master` | **9.0.534** + P142 branding push in flight | was **9.0.533** (Finnamu OK); Auto-Publish P142 → next |
+| Stable | `stable-v5` | **PR #530 MERGED** (P139 + ZT08 DP17 + TYZB01) | tip after merge publish |
 
 App ID (both): `com.dlnraja.tuya.zigbee`.
 
-## Just shipped locally (push next) — GH #513 / P140
-Root cause of ZT08 temp=0 after ZT08 driver pair (Finnamu on 9.0.505):
-1. MCU needs **Unix-1970** `mcuSyncTime` then **DP17=false ~500ms** (Z2M #29627) — was missing.
-2. `guessFormat` wrongly preferred `tuya_dual_2000` for hodyryli — fixed → `z2m_dual_1970`.
-3. ClimateInference could lock on MCU **0°C** and smooth away the first real reading — fixed.
+## Finalized this session
 
-Files: `drivers/climate_sensor_zt08/device.js`, `lib/tuya/GlobalTimeSyncEngine.js`, `TuyaTimeSyncFormats.js`, `MCUFormatDatabase.js`, `lib/IntelligentSensorInference.js`, `test/issue-513-hodyryli-scale.test.js`.
-
-## Sources status
-
-| Source | Result |
-|--------|--------|
-| Homey Test | **9.0.531** (last verified) |
-| Gmail gate | verdict **ok**, unknown=0 |
-| Forum silent | 0 new FPs |
-| Open issues | **#513** — awaiting retest after P140 publish |
-
-## Athom / P139
-- Do not spam republish on `socket hang up` / `processing_failed` if Test healthy.
-- Never Publish Stable→Test to heal master.
+| Item | Status |
+|------|--------|
+| P140 ZT08 / GH **#513** | **CLOSED** — Finnamu: values correct on 9.0.533 |
+| P141 TYZB01 ZCL-only + nt4pquef DP2 | Shipped on master |
+| P142 anti-slop branding | Pushed: name **Universal Tuya Zigbee**, 12 `air_purifier_*` deprecated, quieter logs |
+| Stable PR **#530** | **MERGED** → `a61b999` |
+| Forum silent scan | 0 new FPs |
+| Auto-Publish | P142 run `31939879443` in progress — do **not** spam if Athom hang (P139) |
 
 ## User-action leftovers (no code)
-- PresentSky: re-pair dimmer as `wall_dimmer_tuya`
-- Welsh / Kanbros / Peter: update Test ≥9.0.531
+
+- PresentSky: re-pair dimmer as `wall_dimmer_tuya` if still climate
+- Peter #2137: update Test tip after P142 publish; SOS/contact retest
+- Other hybrid placeholders (`_hybrid_*_needs_device_assignment` on non-purifier drivers) remain M09 warnings — next cleanup wave
+
+## Vision (keep)
+
+```
+Universal Tuya Zigbee
+master = soak / Test | stable-v5 = reliability only
+Sacred Couple | silent forum | no AI paste
+```
 
 ## Commands
 ```bash
-git pull --ff-only origin master
-gh run list --repo dlnraja/com.tuya.zigbee --limit 12
+gh run list --repo dlnraja/com.tuya.zigbee --workflow="Auto-Publish on Push" --limit 5
 node --test test/issue-513-hodyryli-scale.test.js
-node tools/ci/gmail-crash-pattern-gate.js
+node tools/ci/forum-silent-multi-scan.js --max=40
 ```
 
-Updated: 2026-08-16T01:20Z
+Reports: `reports/QUALITY_VISION_FORUM_P142_2026-08-16.md`, `reports/SACRED_COUPLE_DEEP_INVESTIGATION_2026-08-16.md`
+
+Updated: 2026-08-16T09:45Z
