@@ -1,6 +1,8 @@
+'use strict';
+
+const { safeSetTimeout, safeClearTimeout } = require('../../lib/utils/safe-timers');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
-'use strict';
 const { safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 const UnifiedSwitchBase = require('../../lib/devices/UnifiedSwitchBase');
@@ -18,8 +20,8 @@ class Dimmer3GangDevice extends UnifiedSwitchBase {
 
   _markAppCommand() {
     this._appCommandPending = true;
-    if (this._appCommandTimeout) {clearTimeout(this._appCommandTimeout);}
-    this._appCommandTimeout = this.homey.setTimeout(() => { if (this._destroyed) return; this._appCommandPending = false; }, 2000);
+    if (this._appCommandTimeout) {safeClearTimeout(this, this._appCommandTimeout);}
+    this._appCommandTimeout = safeSetTimeout(this, () => { if (this._destroyed) return; this._appCommandPending = false; }, 2000);
   }
 
   async _registerCapabilityListeners() {
@@ -44,7 +46,7 @@ class Dimmer3GangDevice extends UnifiedSwitchBase {
   }
 
   onDeleted() {
-    if (this._appCommandTimeout) {clearTimeout(this._appCommandTimeout);}
+    if (this._appCommandTimeout) {safeClearTimeout(this, this._appCommandTimeout);}
     if (typeof super.onDeleted === 'function') {super.onDeleted();}
   }
 }
