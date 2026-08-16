@@ -11,13 +11,46 @@ Prefer editing these modules over copying logic into every `device.js`.
 | L1 Lexers / parsers | DP id/type/length/value; ZCL attrs | Tuya DP decode in EF00 managers |
 | L2 Translators | Scale, polarity, units | `SmartDivisorManager`, `UnifiedBatteryHandler`, polarity settings |
 | L3 Protocol route | DP vs ZCL vs proprietary overlay | `IntelligentProtocolRouter`, `ProtocolAutoOptimizer`, `ZigbeeProtocolComplete` |
+| L3b Redundancy | Compensate unsupported / interview gaps; confirm I/O | `CrossLayerRedundancy`, `UnsupportedRegistry`, `FallbackChains`, `SmartDataValidator`, `ReceptionManager`, `HomeyCompensationLayer` / `ProtocolFallbackChain` |
+| L3c RX/TX bus | Inventaire + enchaînement tous chemins | **`ProtocolRxTxChain`** (`device.tx` / `device.rx`) — DP, ZCL, tuya_bound, cluster_bound, raw, MCU, IAS, magic |
 | L4 Time / MCU | Epoch + format guess | `lib/tuya/GlobalTimeSyncEngine`, `TuyaTimeSyncFormats` |
-| L5 Capability write | L14 sanity + anti-flood | **`safeSetCapabilityValue()`** on `TuyaZigbeeDevice` |
+| L5 Capability write | L14 sanity + anti-flood | **`safeSetCapabilityValue(cap, value, { source })`** on `TuyaZigbeeDevice` |
 | L6 UI / flows | Virtual ↔ physical, flow cards | `VirtualButtonMixin`, `PhysicalButtonMixin`, `FeatureFlowCards`, `driver.flow.compose.json` |
 
 **Spine base (required for L3–L6):** `lib/tuya/TuyaZigbeeDevice.js`
 
-**Soft attach for lineages that skip Unified* bases:** `lib/layers/UniversalLayerBootstrap.js` (called from `TuyaZigbeeDevice.onNodeInit`) — ProtocolAutoOptimizer + IntelligentProtocolRouter + EF00 time sync when missing.
+**Soft attach for lineages that skip Unified* bases:** `lib/layers/UniversalLayerBootstrap.js` (called from `TuyaZigbeeDevice.onNodeInit`) — ProtocolAutoOptimizer + IntelligentProtocolRouter + EF00 time sync + **CrossLayerRedundancy**.
+
+### Cross-layer redundancy (P207)
+
+Goal: make ZCL↔DP↔raw↔IAS redundant so interview “unsupported”, incomplete Homey clusters, and crash/diag noise do not kill a driver.
+
+| Access point | Role |
+|--------------|------|
+| `device.confirmInbound(cap, value, source, confidence)` | Multi-source agree → L14 write |
+| `device.confirmOutbound(cap, expected, opts)` | Optimistic UI + soft peer confirm |
+| `device.unsupportedRegistry` | Negative cache for `UNSUPPORTED_ATTRIBUTE` |
+| `device.readSensorWithFallbacks(...)` | named ZCL → numeric raw → DP |
+| `safeSetCapabilityValue(cap, val, { source })` | Bookkeep source into SmartCap / RX dedup |
+
+### Protocol RX/TX chain (P208)
+
+All protocol entry points are inventoried and cascaded:
+
+| Path | TX | RX | Notes |
+|------|----|----|--------|
+| `tuya_dp` | ✓ | ✓ | EF00 sendDP / requestDP / query_all |
+| `zcl` | ✓ | ✓ | writeZcl / readZcl / attr reports |
+| `tuya_bound` | ✓ | ✓ | 0xE000 / E001 / E002 / ED00 / E004 |
+| `cluster_bound` | ✓ | ✓ | bindCluster + configureReporting |
+| `raw_frame` / `raw_value` | ✓ | ✓ | sendRaw + unhandled frames |
+| `mcu` / `magic` | ✓ | ✓ | MCU version, magic handshake, query_all |
+| `ias` | | ✓ | 0x0500 / 0x0501 zone status |
+| `ui` | ✓ | | Homey UI / virtual |
+
+API: `await this.tx({ kind:'dp', dp:1, value:true, capability:'onoff' })` · `await this.rx({ capability, cluster, attrs })` · `this.protocolRxTx.inventory()`.
+
+Wire new parsers to `confirmInbound` / `this.tx` / `this.rx` instead of bare `setCapabilityValue`.
 
 ### Driver lineage coverage (P206)
 

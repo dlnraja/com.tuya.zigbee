@@ -4,12 +4,13 @@
 
 | Track | Tip | Homey Test |
 |-------|-----|------------|
-| master | P205 energy/battery/button flows + P206 layer coverage | Auto-Publish after push |
-| stable-v5 | P204 clrdrnya misattr | soak-skip; do not overwrite 9.x |
+| master | P205–P208 RX/TX protocol chain | **9.0.570**; P207/P208 local until push |
+| stable-v5 | P204 | soak-skip; do not overwrite 9.x |
 
 ## Latest
-- **P205**: L14 battery writers, app-level `button_pressed`, physical_gang codegen (~86 drivers), FeatureFlowCards energy/battery, VirtualEnergyMeterMixin on switch base.
-- **P206**: UniversalLayerBootstrap; lights/TSC/DIY/IR → `TuyaZigbeeDevice`; orphan time engine re-export; `layer-coverage-gate.js`.
-- Reports: `reports/P205_ENERGY_BATTERY_BUTTON_FLOWS_2026-08-17.md`, `reports/P206_UNIVERSAL_LAYER_COVERAGE_2026-08-17.md`
+- **P205–P206**: L14 flows + UniversalLayerBootstrap spine.
+- **P207**: CrossLayerRedundancy (confirmInbound/Outbound, SmartCap, unsupported).
+- **P208**: ProtocolRxTxChain — inventaire + cascade DP / ZCL / tuya_bound / cluster_bound / raw / MCU / IAS / magic; PFC strategies étendues; raw frame `noteRx`.
+- Reports: `P207_*`, `P208_PROTOCOL_RXTX_CHAIN_2026-08-17.md`
 
 Open issues/PRs: none.

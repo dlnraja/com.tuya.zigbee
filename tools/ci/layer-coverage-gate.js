@@ -66,6 +66,48 @@ must(
   /safeSetCapabilityValue/.test(read('lib/tuya/TuyaSpecificClusterDevice.js')),
 );
 
+must(
+  'CrossLayerRedundancy exists',
+  fs.existsSync(path.join(ROOT, 'lib/layers/CrossLayerRedundancy.js')),
+);
+
+must(
+  'UniversalLayerBootstrap attaches CrossLayerRedundancy',
+  /attachCrossLayerRedundancy/.test(read('lib/layers/UniversalLayerBootstrap.js')),
+);
+
+must(
+  'CrossLayer exposes confirmInbound/confirmOutbound',
+  /confirmInbound/.test(read('lib/layers/CrossLayerRedundancy.js'))
+    && /confirmOutbound/.test(read('lib/layers/CrossLayerRedundancy.js')),
+);
+
+must(
+  'safeSetCapabilityValue accepts meta.source',
+  /meta\.source/.test(read('lib/tuya/TuyaZigbeeDevice.js')),
+);
+
+must(
+  'ProtocolRxTxChain exists',
+  fs.existsSync(path.join(ROOT, 'lib/layers/ProtocolRxTxChain.js')),
+);
+
+must(
+  'UniversalLayerBootstrap attaches ProtocolRxTxChain',
+  /attachProtocolRxTxChain/.test(read('lib/layers/UniversalLayerBootstrap.js')),
+);
+
+must(
+  'PFC includes tuya_bound + ias strategies',
+  /tuya_bound_cluster/.test(read('lib/io/ProtocolFallbackChain.js'))
+    && /ias_zone/.test(read('lib/io/ProtocolFallbackChain.js')),
+);
+
+must(
+  'Raw frame notes protocolRxTx',
+  /protocolRxTx\?\.noteRx/.test(read('lib/tuya/TuyaZigbeeDevice.js')),
+);
+
 const failed = checks.filter(c => !c.ok);
 const json = process.argv.includes('--json');
 
