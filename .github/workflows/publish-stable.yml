@@ -90,9 +90,34 @@ jobs:
       - name: Sanitize generated manifest after validation
         run: node scripts/maintenance/sanitize-manifest.cjs app.json .homeybuild/app.json
 
+  soak:
+    name: "Shared App ID soak guard"
+    needs: upstream-guard
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    outputs:
+      skip: ${{ steps.soak.outputs.skip }}
+      reason: ${{ steps.soak.outputs.reason }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci --prefer-offline --no-audit || npm install
+      - name: Shared App ID soak guard
+        id: soak
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+          STABLE_FORCE_TEST: ${{ github.event.inputs.force_test || 'false' }}
+        run: node .github/scripts/refuse-stable-test-overwrite.js
+
   publish:
     name: "Publish to Draft"
-    needs: pre-validation
+    needs: [pre-validation, soak]
+    if: needs.soak.outputs.skip != 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
@@ -187,11 +212,26 @@ jobs:
           fi
           echo "Draft publish completed"
 
+  soak-summary:
+    name: "Soak decision"
+    needs: [soak, pre-validation]
+    if: always() && needs.soak.result == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Record soak decision
+        run: |
+          echo "## Shared App ID soak" >> "$GITHUB_STEP_SUMMARY"
+          echo "skip=${{ needs.soak.outputs.skip }} reason=${{ needs.soak.outputs.reason }}" >> "$GITHUB_STEP_SUMMARY"
+          if [ "${{ needs.soak.outputs.skip }}" = "true" ]; then
+            echo "Draft upload skipped so 5.12.x cannot overwrite soaking 9.0 Test." >> "$GITHUB_STEP_SUMMARY"
+          fi
+
   promote:
     name: "Promote to Test"
-    needs: [pre-validation, publish]
-    # Only promote when draft publish succeeded (avoid false-green on failed upload)
-    if: needs.publish.result == 'success'
+    needs: [pre-validation, publish, soak]
+    # Skip entirely while master 9.0.x occupies the shared Test slot.
+    if: needs.soak.outputs.skip != 'true' && needs.publish.result == 'success'
     runs-on: ubuntu-latest
     timeout-minutes: 35
     steps:
