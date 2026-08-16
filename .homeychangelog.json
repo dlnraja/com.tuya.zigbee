@@ -1302,5 +1302,8 @@
   },
   "5.12.82": {
     "en": "Stability improvements and Homey test publication retry after transient processing failure."
+  },
+  "5.12.83": {
+    "en": "Reliability: skip Test overwrite while 9.0 soaks; treat Athom draft as published."
   }
 }
