@@ -1,16 +1,17 @@
-# SESSION HANDOFF — 2026-08-17
+# SESSION HANDOFF — 2026-08-17 (P210)
 
-> Shared App ID. Silent forum. Soak-first skip draft verified.
+> Shared App ID. Silent forum. Dual-track: master=smart, stable=reliability-only.
 
 | Track | Tip | Homey Test |
 |-------|-----|------------|
-| master | P205–P208 RX/TX protocol chain | **9.0.570**; P207/P208 local until push |
-| stable-v5 | P204 | soak-skip; do not overwrite 9.x |
+| master | P209 battery multi-protocol + P210 sweep (mfs clrdrnya, CI gates) | Auto-Publish after push |
+| stable-v5 | P204 tip — no feature copycat | soak-skip; do not overwrite 9.x Test |
 
-## Latest
-- **P205–P206**: L14 flows + UniversalLayerBootstrap spine.
-- **P207**: CrossLayerRedundancy (confirmInbound/Outbound, SmartCap, unsupported).
-- **P208**: ProtocolRxTxChain — inventaire + cascade DP / ZCL / tuya_bound / cluster_bound / raw / MCU / IAS / magic; PFC strategies étendues; raw frame `noteRx`.
-- Reports: `P207_*`, `P208_PROTOCOL_RXTX_CHAIN_2026-08-17.md`
+## Pipeline (user request)
+Search → list → cross-ref Z2M/Homey → design `P210_REGRESSION_SWEEP_DESIGN` → implement wave1 → push/publish/monitor.
 
-Open issues/PRs: none.
+## Latest code
+- P207–P208 on remote; P209 MultiProtocolBatteryPercent + CI gates + mfs align clrdrnya → TS0601 only.
+- Reports: P209_*, P210_REGRESSION_SWEEP_DESIGN_*
+
+Open issues/PRs: none critical.

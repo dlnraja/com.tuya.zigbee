@@ -182,6 +182,19 @@ jobs:
       - name: Energy compose gate
         run: node tools/ci/energy-compose-gate.js
 
+      # P210: layer / L14 / multi-protocol battery regression gates
+      - name: Layer coverage gate (P206–P209)
+        run: node tools/ci/layer-coverage-gate.js
+
+      - name: L14 capability writers gate (P205)
+        run: node tools/ci/l14-capability-writers-gate.js
+
+      - name: Critical layer + battery tests (P206–P209)
+        run: |
+          node --test test/critical/layer-coverage.test.js
+          node --test test/critical/multi-protocol-battery.test.js
+          node --test test/critical/energy-battery-button-flows.test.js
+
       - name: Validate Homey SDK3 compliance
         run: |
           npx homey app validate --level=publish || echo "⚠️ Homey CLI not available in CI, skipping"

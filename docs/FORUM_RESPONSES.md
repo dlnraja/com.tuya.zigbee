@@ -83,15 +83,16 @@ Si vous découvrez d'autres vulnérabilités, merci de nous contacter directemen
 ```
 📢 Deux versions coexistent :
 
-🔬 **master (v8.x)** — Version expérimentale/beta
-   - Nouvelles features, radar, télémetrie avancée
-   - ID App: com.dlnraja.tuya.zigbee
+🔬 **master (v9.x)** — Preview / soak (features OK)
+   - Nouvelles features, couches protocole, télémetrie
+   - ID App: `com.dlnraja.tuya.zigbee` (Homey Test)
 
-✅ **stable-v5 (v5.x)** — Version stable de production
-   - Support large, fiable, 100% rétrocompatible
-   - ID App: com.dlnraja.tuya.zigbee.stable
+✅ **stable-v5 (v5.12.x)** — Reliability LTS
+   - Fiabilité only (pas de feature managers)
+   - **Même** Homey App ID `com.dlnraja.tuya.zigbee` — Publish Stable→Test
+     écrase le slot Test de master. Prefer Live pour stable; Test = soak master.
 
-Choisissez celle qui correspond à votre niveau de risque préféré.
+Choisissez master Test pour les nouveautés, stable Live pour la prod prudente.
 ```
 
 ---
@@ -115,9 +116,11 @@ Les déploiements futurs devraient passer sans problème. Merci de votre patienc
 ## Dual Release Guard Explanation
 
 ```
-ℹ️ Note technique : Les releases sur master et stable-v5 sont totalement indépendantes.
+ℹ️ Note technique : master et stable-v5 ont des BUTS différents (features vs fiabilité).
 
-- master (com.dlnraja.tuya.zigbee) : v7.x / v8.x
-- stable-v5 (com.dlnraja.tuya.zigbee.stable) : v5.x
+- master : v9.x preview — Auto-Publish → Homey Test
+- stable-v5 : v5.12.x LTS — reliability only; backport chirurgical (BOTH), jamais full-tree copy
 
-Chaque branche possède son propre app.json, ses propres workflows CI/CD, et sa propre pipeline de publication. Les deux peuvent être publiées en parallèle sans conflit.
+⚠️ Même App ID Homey `com.dlnraja.tuya.zigbee` : ne pas publier stable sur Test
+pendant un soak master (sinon écrasement). Il n'existe pas de store ID
+`com.dlnraja.tuya.zigbee.stable` live.

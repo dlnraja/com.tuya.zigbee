@@ -108,6 +108,21 @@ must(
   /protocolRxTx\?\.noteRx/.test(read('lib/tuya/TuyaZigbeeDevice.js')),
 );
 
+must(
+  'MultiProtocolBatteryPercent exists',
+  fs.existsSync(path.join(ROOT, 'lib/battery/MultiProtocolBatteryPercent.js')),
+);
+
+must(
+  'SmartBatteryManager routes measure_battery via MultiProtocol',
+  /MultiProtocolBatteryPercent/.test(read('lib/managers/SmartBatteryManager.js')),
+);
+
+must(
+  'CrossLayer attaches multi-protocol battery',
+  /attachMultiProtocolBattery/.test(read('lib/layers/CrossLayerRedundancy.js')),
+);
+
 const failed = checks.filter(c => !c.ok);
 const json = process.argv.includes('--json');
 

@@ -32,7 +32,7 @@
       "realMfrsAdded": 5,
       "details": "tmp/synthetic-resolution.json + tmp/pruned21-resolution.json"
     },
-    "lastAlignedAt": "2026-08-16T18:41:52.496Z",
+    "lastAlignedAt": "2026-08-16T23:16:30.256Z",
     "alignTool": "align-mfs-db-intelligent@P169"
   },
   "sources": {
@@ -219462,31 +219462,9 @@
   },
   "_tze200_clrdrnya": {
     "driverId": "presence_sensor_radar",
-    "source": "auto-sync",
+    "source": "registry:presence-radar-clrdrnya",
     "modelIds": [
-      "CK-BL702-MWS-01",
-      "CK-BL702-MWS-01(7016)",
-      "MG1_5RZ",
-      "SNZB-06P",
-      "SNZB-06P24",
-      "SZLMR10",
-      "TS0004",
-      "TS0203",
-      "TS0225",
-      "TS0601",
-      "TS110E",
-      "ZG-204ZE",
-      "ZG-204ZH",
-      "ZG-204ZK",
-      "ZG-204ZL",
-      "ZG-204ZM",
-      "ZG-204ZQ",
-      "ZG-204ZV",
-      "ZG-205Z",
-      "ZG-205ZL",
-      "ZG-302ZL",
-      "ZG-302ZM",
-      "ZP-301Z"
+      "TS0601"
     ],
     "pid": "CK-BL702-MWS-01",
     "modelIdsCount": 23,

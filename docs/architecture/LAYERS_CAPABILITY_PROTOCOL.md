@@ -69,6 +69,9 @@ Gate: `node tools/ci/layer-coverage-gate.js` · test: `test/critical/layer-cover
 
 - **Never** linear `(V - 2.5) / 0.5`.
 - Prefer `BatteryMasterEngine` / `UnifiedBatteryHandler` (`normalizeZigbeeValue`, `tuyaDpToPercent`, anti-flood).
+- **Multi-protocol % (P209):** `lib/battery/MultiProtocolBatteryPercent.js` — single normalize+commit for ZCL / Tuya DP / WiFi / IAS·ACE (`acl`) / voltage / raw / MCU.
+  - API: `device.ingestBatteryPercent(raw, { protocol: 'zcl'|'tuya-dp'|'wifi'|'ias'|'voltage'|… })`
+  - Commits via `confirmInbound` → L14; SmartBatteryManager + UnifiedBatteryHandler route through it.
 - ZCL `batteryPercentageRemaining` is often 0–200 → divide by 2 inside normalizer.
 - Mains devices: `get mainsPowered() { return true; }` and strip phantom `measure_battery`.
 - Writers must use `safeSetCapabilityValue` (see P205 / `tools/ci/l14-capability-writers-gate.js`).
