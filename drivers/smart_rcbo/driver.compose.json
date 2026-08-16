@@ -13,7 +13,6 @@
     "meter_power",
     "measure_current",
     "measure_voltage",
-    "measure_battery",
     "button.1"
   ],
   "zigbee": {
@@ -51,11 +50,6 @@
   "connectivity": [
     "zigbee"
   ],
-  "energy": {
-    "batteries": [
-      "OTHER"
-    ]
-  },
   "maintenanceActions": [
     {
       "id": "ota_check",

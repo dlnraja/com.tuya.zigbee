@@ -1,4 +1,4 @@
-# SESSION HANDOFF — 2026-08-16 (~14:00 CET)
+# SESSION HANDOFF — 2026-08-16 (~14:40 CET)
 
 > Dual-app BOTH when in doubt. Silent forum (T157628). Shared App ID = one Test slot.
 > Compass: `docs/rules/PRAGMATIC_ROADMAP.md` (internal only).
@@ -7,8 +7,8 @@
 
 | Track | Branch | Code tip | Homey Test |
 |-------|--------|----------|------------|
-| Preview | `master` | **9.0.541+** (P150–P152 docs/registry) | **v9.0.541** build #2862 **test** |
-| Stable | `stable-v5` | PR #530 lineage | do not overwrite master Test while soaking |
+| Preview | `master` | tip + **P167** dual-claim/energy (pending Auto-Publish bump) | soak **≥9.0.541** (OOM LiveData); tip was **9.0.543+** |
+| Stable | `stable-v5` | PR #530 lineage | do **not** overwrite master Test while soaking |
 
 App ID: `com.dlnraja.tuya.zigbee` · https://homey.app/a/com.dlnraja.tuya.zigbee/test/
 
@@ -16,15 +16,18 @@ App ID: `com.dlnraja.tuya.zigbee` · https://homey.app/a/com.dlnraja.tuya.zigbee
 
 **doublons > GitHub docs > surgical refactor** — no forum roadmap, no Z2M substitution myth.
 
-## Shipped P142–P152
+## Just shipped (this session)
 
-See `reports/P152_PRAGMATIC_ROADMAP_EXEC_2026-08-16.md`.
+- **P167** — absurd dual-claims + mains phantom batteries (`reports/P167_DUAL_CLAIM_BATTERY_TRIAGE_2026-08-16.md`)
+- Refuse ledgers P154, P159–P166 (no auto-* packs)
+- Heap gate already on CI (`homey-heap-json-gate.js`)
 
 ## User leftovers
 
-- Peter: install **9.0.541**, new diag if still OOM
+- Peter: Test **≥9.0.541**, new diag only if still OOM
 - PresentSky: re-pair dimmer if still climate
-- Dual-claim gate: 60 warn — triage lights/switches next (not big-bang)
+- Dual-claim gate: **48** warn remaining (light/strip overlaps — next surgical pass)
+- Stable backport of OOM/registry/P167 **after** soak only
 
 ## Commands
 
@@ -32,5 +35,6 @@ See `reports/P152_PRAGMATIC_ROADMAP_EXEC_2026-08-16.md`.
 node tools/ci/audit-sacred-couple.js --from-registry
 node tools/ci/dual-claim-compose-gate.js
 node tools/ci/energy-compose-gate.js
+node tools/ci/homey-heap-json-gate.js
 node tools/ci/gmail-crash-pattern-gate.js --json
 ```

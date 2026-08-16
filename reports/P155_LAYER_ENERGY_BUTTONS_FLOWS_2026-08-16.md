@@ -41,6 +41,6 @@ Implement/harden **one feature family at a time**. Re-study regressions vs tip.
 
 ## Next layer sessions
 
-1. Dual-claim triage (lights/buttons) — compose
-2. Remaining battery+power generics (`device_generic_*`, `climate_sensor_energy`) — case-by-case
+1. Dual-claim triage (lights/buttons) — **done P167** (60→48; light/strip leftovers remain)
+2. Remaining battery+power — **P167** stripped clear mains + climate phantom power; generics/`ultrasonic_heat_meter` left
 3. Stable backport of timer/energy harden after soak

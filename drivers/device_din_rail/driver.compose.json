@@ -10,7 +10,6 @@
   "capabilities": [
     "alarm_motion",
     "alarm_contact",
-    "measure_battery",
     "alarm_generic",
     "alarm_tamper",
     "measure_power",
@@ -20,12 +19,6 @@
     "meter_power.exported",
     "button.1"
   ],
-  "energy": {
-    "batteries": [
-      "OTHER",
-      "OTHER"
-    ]
-  },
   "zigbee": {
     "manufacturerName": [
       "_tz3000_gzvniqjb",

@@ -162,6 +162,76 @@
         "master": { "static": true, "dynamic": true },
         "stable": { "static": true, "dynamic": false }
       }
+    },
+    {
+      "id": "din-relay-vbfp8eyv-qeuvnohg",
+      "mfr": ["_TZ3210_vbfp8eyv", "_TZ3000_qeuvnohg", "_TZ3000_ky0fq4ho", "_TZ3000_8bxrzyxz"],
+      "productId": ["TS011F"],
+      "canonicalDriver": "din_rail_switch",
+      "forbiddenDrivers": ["button_wireless_4", "button_wireless_2", "vibration_sensor", "presence_sensor_radar", "lcdtemphumidsensor_plug_energy"],
+      "protocol": "zcl",
+      "notes": "Z2M TS011F_din_smart_relay(+polling). Not wireless button / vibration / radar.",
+      "sources": ["z2m-herdsman", "P167"],
+      "tracks": {
+        "master": { "static": true, "dynamic": true },
+        "stable": { "static": true, "dynamic": false }
+      }
+    },
+    {
+      "id": "led-strip-obacbukl",
+      "mfr": ["_TZ3000_obacbukl"],
+      "productId": ["TS0503A"],
+      "canonicalDriver": "led_strip_rgbw",
+      "forbiddenDrivers": ["button_wireless_2", "tunable_bulb_E14"],
+      "protocol": "zcl",
+      "notes": "Blakadder/Z2M LED strip controller — not button or E14 CCT.",
+      "sources": ["blakadder", "z2m", "P167"],
+      "tracks": {
+        "master": { "static": true, "dynamic": true },
+        "stable": { "static": true, "dynamic": false }
+      }
+    },
+    {
+      "id": "usb-switch-mvtclclq",
+      "mfr": ["_TZE284_mvtclclq", "_TZE204_mvtclclq"],
+      "productId": ["TS0601"],
+      "canonicalDriver": "usb_outlet_advanced",
+      "forbiddenDrivers": ["button_wireless_4", "radiator_valve"],
+      "protocol": "tuya_ef00",
+      "notes": "Z2M DS-1450WN USB/plug switch with power — not TRV or wireless button.",
+      "sources": ["z2m#31275", "P167"],
+      "tracks": {
+        "master": { "static": true, "dynamic": true },
+        "stable": { "static": true, "dynamic": false }
+      }
+    },
+    {
+      "id": "rgb-bulb-jaap6jeb",
+      "mfr": ["_TZ3210_jaap6jeb"],
+      "productId": ["TS0505B"],
+      "canonicalDriver": "bulb_rgbw",
+      "forbiddenDrivers": ["contact_sensor", "motion_sensor"],
+      "protocol": "zcl",
+      "notes": "LEDEPLY SG45-E26 RGB+CCT — not door/motion sensor.",
+      "sources": ["z2m-herdsman", "P167"],
+      "tracks": {
+        "master": { "static": true, "dynamic": true },
+        "stable": { "static": true, "dynamic": false }
+      }
+    },
+    {
+      "id": "plug-vzopcetz-1obwwnmq",
+      "mfr": ["_TZ3000_vzopcetz", "_TZ3000_1obwwnmq"],
+      "productId": ["TS011F"],
+      "canonicalDriver": "device_plug_energy_monitor",
+      "forbiddenDrivers": ["button_wireless_2", "tunable_bulb_E14"],
+      "protocol": "zcl",
+      "notes": "Johan/Silvercrest TS011F strip/plug — not button or E14 bulb.",
+      "sources": ["johan", "P167"],
+      "tracks": {
+        "master": { "static": true, "dynamic": true },
+        "stable": { "static": true, "dynamic": false }
+      }
     }
   ]
 }

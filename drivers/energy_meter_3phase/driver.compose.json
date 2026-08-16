@@ -14,17 +14,10 @@
     "measure_power.phase1",
     "measure_power.phase2",
     "measure_power.phase3",
-    "measure_battery",
     "button.1",
     "measure_power.phase_total",
     "meter_power.exported"
   ],
-  "energy": {
-    "batteries": [
-      "AAA",
-      "AAA"
-    ]
-  },
   "zigbee": {
     "manufacturerName": [
       "_TZE200_d2zfgtij",

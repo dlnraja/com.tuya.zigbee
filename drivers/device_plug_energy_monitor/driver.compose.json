@@ -632,7 +632,8 @@
   "zigbee": {
     "productId": [
       "TS0601",
-      "TS004F"
+      "TS004F",
+      "TS011F"
     ],
     "endpoints": {
       "1": {
@@ -643,7 +644,9 @@
     },
     "manufacturerName": [
       "_hybrid_device_plug_energy_monitor_needs_device_assignment",
-      "_HYBRID_DEVICE_PLUG_ENERGY_MONITOR_NEEDS_DEVICE_ASSIGNMENT"
+      "_HYBRID_DEVICE_PLUG_ENERGY_MONITOR_NEEDS_DEVICE_ASSIGNMENT",
+      "_TZ3000_vzopcetz",
+      "_TZ3000_1obwwnmq"
     ]
   },
   "metadata": {
