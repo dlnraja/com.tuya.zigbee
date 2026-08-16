@@ -15,16 +15,6 @@
     "meter_power",
     "button.1"
   ],
-  "energy": {
-    "batteries": [
-      "CR2032",
-      "CR2450",
-      "AAA",
-      "AA",
-      "CR123A",
-      "INTERNAL"
-    ]
-  },
   "zigbee": {
     "manufacturerName": [
       "_tz3000_dkgxjjn1",

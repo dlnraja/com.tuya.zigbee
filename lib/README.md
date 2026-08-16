@@ -1,7 +1,7 @@
 # `lib/` — runtime building blocks
 
 Prefer these modules over copying logic into every `drivers/*/device.js`.  
-Map: [`docs/architecture/LAYERS_CAPABILITY_PROTOCOL.md`](../docs/architecture/LAYERS_CAPABILITY_PROTOCOL.md)
+Map: [`docs/architecture/LAYERS_CAPABILITY_PROTOCOL.md`](../docs/architecture/LAYERS_CAPABILITY_PROTOCOL.md) · [`LAYERS_ENERGY_BUTTONS_FLOWS.md`](../docs/architecture/LAYERS_ENERGY_BUTTONS_FLOWS.md)
 
 ## Where to change what
 

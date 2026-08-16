@@ -19,7 +19,7 @@ Prefer editing these modules over copying logic into every `device.js`.
 - Prefer `BatteryMasterEngine` (`normalizeZigbeeValue`, `tuyaDpToPercent`, anti-flood).
 - ZCL `batteryPercentageRemaining` is often 0–200 → divide by 2 inside normalizer.
 - Mains devices: `get mainsPowered() { return true; }` and strip phantom `measure_battery`.
-- Virtual estimates (no hardware meter): `VirtualEnergyMeterMixin` — never overwrite real power; no compose `energy.approximation` with `measure_power`/`meter_power`.
+- Virtual estimates (no hardware meter): `VirtualEnergyMeterMixin` — never overwrite real power; no compose `energy.approximation` with `measure_power`/`meter_power`. Detail: [`LAYERS_ENERGY_BUTTONS_FLOWS.md`](LAYERS_ENERGY_BUTTONS_FLOWS.md).
 - Live fingerprint OTA overlay: `LiveDataUpdater` (CI Pages feed) — capped store; must not OOM Homey heap (P148).
 
 ## Buttons (multi-gang, app + wall)

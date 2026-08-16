@@ -201,11 +201,6 @@
   ],
   "id": "switch_usb_dongle",
   "version": "1.0.0",
-  "energy": {
-    "batteries": [
-      "CR2032"
-    ]
-  },
   "ui": {
     "quickAction": "onoff"
   }

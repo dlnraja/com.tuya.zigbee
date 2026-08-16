@@ -36,8 +36,11 @@ Store name: **Universal Tuya** (Zigbee in description/tags). Not “Unified Engi
 node tools/ci/audit-sacred-couple.js --from-registry
 node tools/ci/dual-claim-compose-gate.js
 node tools/ci/energy-compose-gate.js
+node tools/ci/layer-pass-audit.js
 node tools/ci/gmail-crash-pattern-gate.js --json
 ```
+
+Layer contracts: `docs/architecture/LAYERS_ENERGY_BUTTONS_FLOWS.md` (energy → buttons → flows, one pass at a time).
 
 ## Dual-app
 

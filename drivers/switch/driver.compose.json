@@ -579,11 +579,6 @@
       "reason": "Fallback for unmatched devices with PIDs: TS0601, TS011F, TS0726"
     }
   },
-  "energy": {
-    "batteries": [
-      "OTHER"
-    ]
-  },
   "pair": [
     {
       "id": "list_devices",
