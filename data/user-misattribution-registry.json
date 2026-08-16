@@ -151,13 +151,19 @@
     },
     {
       "id": "presence-radar-clrdrnya",
-      "mfr": ["_TZE204_clrdrnya", "_tze204_clrdrnya", "_TZE284_clrdrnya"],
+      "mfr": ["_TZE204_clrdrnya", "_tze204_clrdrnya", "_TZE284_clrdrnya", "_TZE200_clrdrnya", "_tze200_clrdrnya"],
       "productId": ["TS0601"],
       "canonicalDriver": "presence_sensor_radar",
-      "forbiddenDrivers": ["motion_sensor", "climate_sensor", "air_purifier_presence"],
+      "forbiddenDrivers": [
+        "motion_sensor",
+        "motion_sensor_radar_mmwave",
+        "sensor_illuminance_presence",
+        "climate_sensor",
+        "air_purifier_presence"
+      ],
       "protocol": "tuya_ef00",
-      "notes": "mmWave presence radar — not PIR motion / climate hybrid.",
-      "sources": ["forum-140352", "P139"],
+      "notes": "MTG235-ZB-RL mmWave + relay — presence_sensor_radar only (GH #420).",
+      "sources": ["forum-140352", "github#420", "P139", "P204"],
       "tracks": {
         "master": { "static": true, "dynamic": true },
         "stable": { "static": true, "dynamic": false }
