@@ -118,7 +118,17 @@ class ContactSensorDevice extends UnifiedSensorBase {
       // Report interval (some models)
       10: { setting: 'report_interval' },
       // v5.11.102: Luminance (lux) for _TZE200_pay2byax ZG-102ZL variant
-      101: { capability: 'measure_luminance', divisor: 1 },
+      101: {
+        capability: 'measure_luminance',
+        divisor: 1,
+        transform: (v) => {
+          const num = typeof v === 'number' ? v : parseFloat(v);
+          if (!Number.isFinite(num) || num < 0) {return null;}
+          return typeof this._applyLuxCalibration === 'function'
+            ? this._applyLuxCalibration(num)
+            : num;
+        },
+      },
     };
   }
 

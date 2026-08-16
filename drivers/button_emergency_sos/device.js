@@ -111,7 +111,7 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
     try {
       this.registerCapabilityListener('button.1', async () => {
         this.log('[SOS] Virtual button press (app UI)');
-        await this._handleAlarm({ source: 'virtual-button' });
+        await this._fireAlarm({ source: 'virtual-button' });
       });
       this.log('[SOS] ✅ button.1 capability listener registered');
     } catch (e) {
@@ -130,9 +130,9 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
     if (IasAceBoundCluster && typeof ep1.bind === 'function') {
       try {
         const boundCluster = new IasAceBoundCluster({
-          onEmergency: () => this._handleAlarm({ source: 'iasAce-bound-emergency' }),
-          onFire: () => this._handleAlarm({ source: 'iasAce-bound-fire' }),
-          onPanic: () => this._handleAlarm({ source: 'iasAce-bound-panic' })
+          onEmergency: () => this._fireAlarm({ source: 'iasAce-bound-emergency' }),
+          onFire: () => this._fireAlarm({ source: 'iasAce-bound-fire' }),
+          onPanic: () => this._fireAlarm({ source: 'iasAce-bound-panic' })
         });
         ep1.bind('iasAce', boundCluster);
         this.log('[SOS] ✅ IasAceBoundCluster bound');
@@ -148,7 +148,7 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
         this.log('[SOS] IAS ACE command:', cmd, payload);
         const cmdLower = (cmd || '').toString().toLowerCase();
         if (['emergency', 'panic', 'fire', 'sos', '02', '03', '04'].includes(cmdLower)) {
-          this._handleAlarm({ source: 'iasAce-command', command: cmd });
+          this._fireAlarm({ source: 'iasAce-command', command: cmd });
         }
       });
     }
@@ -204,13 +204,13 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
     await sendEnrollResponse('proactive');
 
     // Alarm Listeners
-    iasZone.onZoneStatusChangeNotification = (payload) => this._handleAlarm(payload);
+    iasZone.onZoneStatusChangeNotification = (payload) => this._fireAlarm(payload);
     
     if (typeof iasZone.on === 'function') {
-      iasZone.on('attr.zoneStatus', (status) => this._handleAlarm({ zoneStatus: status }));
+      iasZone.on('attr.zoneStatus', (status) => this._fireAlarm({ zoneStatus: status }));
       iasZone.on('command', (cmd, payload) => {
         this.log('[SOS] IAS Zone command:', cmd, payload);
-        this._handleAlarm({ source: 'iasZone-command', command: cmd, ...payload });
+        this._fireAlarm({ source: 'iasZone-command', command: cmd, ...payload });
       });
     }
   }
@@ -260,12 +260,12 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
     if (dp === 1 || dp === 14 || (dp === 101 && typeof value !== 'number')) {
       // Tuya DP might send 1, true, 'true', or even 0/false depending on button release/press
       // For SOS buttons, any payload on these DPs usually means a press event
-      this._handleAlarm({ source: 'tuya-dp', dp, value });
+      this._fireAlarm({ source: 'tuya-dp', dp, value });
     }
 
     // Button Actions (DP13)
     if (dp === 13) {
-      this._handleAlarm({ source: 'tuya-dp13', value });
+      this._fireAlarm({ source: 'tuya-dp13', value });
     }
   }
 
@@ -279,13 +279,13 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
     // genOnOff
     const onOff = ep1.clusters?.onOff || ep1.clusters?.genOnOff;
     if (onOff && typeof onOff.on === 'function') {
-      onOff.on('command', (cmd) => this._handleAlarm({ source: 'onOff', command: cmd }));
+      onOff.on('command', (cmd) => this._fireAlarm({ source: 'onOff', command: cmd }));
     }
 
     // multistateInput
     const ms = ep1.clusters?.multistateInput || ep1.clusters?.genMultistateInput;
     if (ms && typeof ms.on === 'function') {
-      ms.on('attr.presentValue', (v) => this._handleAlarm({ source: 'multistate', value: v }));
+      ms.on('attr.presentValue', (v) => this._fireAlarm({ source: 'multistate', value: v }));
     }
   }
 
@@ -303,14 +303,14 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
         cluster.on('attr', (name, value) => {
           const alarmClusters = ['iaszone', 'iasace', '1280', '1281'];
           if (alarmClusters.some(c => clusterName.toLowerCase().includes(c))) {
-            this._handleAlarm({ source: 'global-attr', cluster: clusterName, attr: name, value });
+            this._fireAlarm({ source: 'global-attr', cluster: clusterName, attr: name, value });
           }
         });
 
         cluster.on('command', (cmd, payload) => {
           const alarmClusters = ['iaszone', 'iasace', '1280', '1281'];
           if (alarmClusters.some(c => clusterName.toLowerCase().includes(c))) {
-            this._handleAlarm({ source: 'global-cmd', cluster: clusterName, command: cmd, ...payload });
+            this._fireAlarm({ source: 'global-cmd', cluster: clusterName, command: cmd, ...payload });
           }
         });
       }
@@ -320,6 +320,12 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
   /**
    * Alarm Handling
    */
+  _fireAlarm(payload) {
+    return Promise.resolve(this._handleAlarm(payload)).catch((e) => {
+      this.error('[SOS] _handleAlarm failed:', e?.message || e);
+    });
+  }
+
   async _handleAlarm(payload) {
     if (this._destroyed) {return;}
     this._updateActivity();
@@ -423,8 +429,8 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
       }
     } catch (_e) { /* optional */ }
 
-    const timerApi = (this.homey && typeof this.homey.setTimeout === 'function') ? this.homey : globalThis;
-    this._batteryRetryTimer = timerApi.setTimeout(() => {
+    const { safeSetTimeout } = require('../../lib/utils/safe-timers');
+    this._batteryRetryTimer = safeSetTimeout(this, () => {
       this._batteryRetryTimer = null;
       if (this._destroyed) {return;}
       this._readBatteryNow().catch(() => {});
@@ -496,11 +502,12 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
    */
   _setupHeartbeatMonitor() {
     this._lastActivity = Date.now();
-    this._heartbeatInterval = (this.homey && typeof this.homey.setInterval === 'function' ? this.homey : globalThis).setInterval(() => {
+    const { safeSetInterval } = require('../../lib/utils/safe-timers');
+    this._heartbeatInterval = safeSetInterval(this, () => {
       if (this._destroyed) {return;}
       const hours = (Date.now() - this._lastActivity) / (1000 * 60 * 60);
       if (hours > 24) {
-        this.log('[SOS] ⚠️ No activity for', Math.round(hours), 'hours');
+        this.log('[SOS] No activity for', Math.round(hours), 'hours');
         if (hours > 48) {this.setUnavailable('Device not responding').catch(() => { });}
       }
     }, 3600000);
@@ -604,7 +611,7 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
         const now = Date.now();
         if (now - lastAlarm > 2000 && now - lastActivity > 30000) {
           this.log('[SOS] 🚨 Device Announce heuristic enabled - Triggering physical alarm fallback');
-          await this._handleAlarm({ source: 'device_announce_udp' });
+          await this._fireAlarm({ source: 'device_announce_udp' });
         }
       }
 
@@ -616,14 +623,10 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
   }
 
   onUninit() {
-    const { safeClearTimeout } = require('../../lib/utils/safe-timers');
+    const { safeClearTimeout, safeClearInterval } = require('../../lib/utils/safe-timers');
     if (this._resetTimeout) {safeClearTimeout(this, this._resetTimeout); this._resetTimeout = null;}
     if (this._heartbeatInterval) {
-      try {
-        if (this.homey && typeof this.homey.clearInterval === 'function') {
-          this.homey.clearInterval(this._heartbeatInterval);
-        }
-      } catch (_e) { /* destroyed */ }
+      safeClearInterval(this, this._heartbeatInterval);
       this._heartbeatInterval = null;
     }
     if (this._batteryRetryTimer) {
@@ -634,10 +637,14 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
 
   async onDeleted() {
     this._destroyed = true;
-    const { safeClearTimeout } = require('../../lib/utils/safe-timers');
+    const { safeClearTimeout, safeClearInterval } = require('../../lib/utils/safe-timers');
     if (this._batteryRetryTimer) {
       safeClearTimeout(this, this._batteryRetryTimer);
       this._batteryRetryTimer = null;
+    }
+    if (this._heartbeatInterval) {
+      safeClearInterval(this, this._heartbeatInterval);
+      this._heartbeatInterval = null;
     }
     if (this._resetTimeout) {
       safeClearTimeout(this, this._resetTimeout);

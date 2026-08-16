@@ -56,7 +56,6 @@
       "ZG-222Z",
       "ZG-223Z",
       "_tz3000_eit6l5",
-      "_tz3000_k4ej3ww2",
       "_tz3000_kyb656no",
       "lumi.sensor_wleak.aq1",
       "q9mpfhw"
@@ -72,7 +71,11 @@
       "1": {
         "clusters": [
           0,
-          6
+          1,
+          1280
+        ],
+        "bindings": [
+          1280
         ]
       }
     },
@@ -84,6 +87,9 @@
       "_TYZB01_sqmd19i1",
       "_TYZB01_ttvdudvx",
       "_TZ3000_gsat0axs",
+      "_TZ3000_k4ej3ww2",
+      "_tz3000_k4ej3ww2",
+      "_TZ3000_K4EJ3WW2",
       "_TZ3000_pattern",
       "_TZ3000_xk5udnd6",
       "_TZ3000_zojh9vz7",
