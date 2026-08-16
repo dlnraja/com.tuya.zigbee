@@ -545,8 +545,45 @@ const REQUIRED = [
   },
 ];
 
+/**
+ * data/user-misattribution-registry.json already records, per case, the driver a
+ * couple belongs to and the drivers it must never appear in. Until now this gate
+ * carried its own hand-maintained FORBIDDEN list, so a case added to the registry
+ * was not actually defended — which is how auto-fix-all was able to re-add
+ * _TZ3210_jaap6jeb to contact_sensor and _TZ3000_qeuvnohg to
+ * lcdtemphumidsensor_plug_energy roughly twenty minutes after they were removed.
+ * Deriving the rules from the registry makes it one source of truth.
+ */
+function forbiddenFromRegistry() {
+  const file = path.join(ROOT, 'data', 'user-misattribution-registry.json');
+  if (!fs.existsSync(file)) return [];
+  let parsed;
+  try {
+    parsed = JSON.parse(fs.readFileSync(file, 'utf8'));
+  } catch (err) {
+    notes.push(`registry unreadable: ${err.message}`);
+    return [];
+  }
+  const cases = Array.isArray(parsed) ? parsed
+    : Array.isArray(parsed.cases) ? parsed.cases
+      : Object.values(parsed).find(Array.isArray) || [];
+
+  const rules = [];
+  for (const c of cases) {
+    if (!c || !Array.isArray(c.forbiddenDrivers) || !c.forbiddenDrivers.length) continue;
+    const mfrs = [].concat(c.mfr || c.mfrs || []).filter(Boolean);
+    if (!mfrs.length) continue;
+    for (const driver of c.forbiddenDrivers) {
+      rules.push({ id: `registry:${c.id || 'case'}:${driver}`, driver, mfrs });
+    }
+  }
+  return rules;
+}
+
 const failures = [];
 const notes = [];
+
+FORBIDDEN.push(...forbiddenFromRegistry());
 
 for (const rule of FORBIDDEN) {
   const compose = loadCompose(rule.driver);
