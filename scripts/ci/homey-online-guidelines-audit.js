@@ -302,6 +302,10 @@ function auditDriver(driverId, driver, report) {
   const manifest = driver.compose || driver.app;
   const appDriver = driver.app || {};
   const compose = driver.compose || {};
+  // P142/P143: deprecated hybrids stay for paired devices but must not block publish
+  if (compose.deprecated === true || appDriver.deprecated === true) {
+    return;
+  }
   const caps = new Set([...(appDriver.capabilities || []), ...(compose.capabilities || [])]);
   const driverClass = manifest.class || appDriver.class;
   const driverDir = path.join(DRIVERS_DIR, driverId);

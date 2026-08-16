@@ -1,63 +1,71 @@
-# App quality vision + forum synthesis (P142) — 2026-08-16
+# App quality vision + forum synthesis (P142→P143) — 2026-08-16
 
 Silent enrichment only (T157628). No forum posts.
 
 ## What users mean by “AI slop / messy”
 
-| Signal | Evidence | Response this session |
-|--------|----------|------------------------|
-| Fake product name | Store showed **Unified Smart Home Engine**; forum quotes it (#2131) | Renamed to **Universal Tuya Zigbee** |
-| Marketing soup tags | eWeLink / SmartThings / Sonoff on a Zigbee Tuya app | Tags → tuya, zigbee, local, switch, sensor… |
-| Nonsense pairing list | `Air Purifier Soil/Contact/Dimmer…` with `_NEEDS_DEVICE_ASSIGNMENT` / `_dummy*` / `_GENERIC_*` | **12 hybrid drivers `deprecated: true`**, phantom `onoff`/`dim`/`pm25` stripped, placeholders removed |
-| Hype README | “Bulletproof”, “Hue-style”, badge wall | README generator de-hyped |
-| Chatty bot logs | Emoji spam in radar/contact diags | Emoji stripped from `this.log` / `this.error` lines |
-| Hybrid MF revive | `restore-master-only-hybrid-mfs.js` refilled junk FPs | Script **skips** deprecated `air_purifier_*` |
+| Signal | Evidence | Response |
+|--------|----------|----------|
+| Fake product name | Store showed **Unified Smart Home Engine** (#2131) | Renamed → **Universal Tuya** (Zigbee kept in description; App Store discourages protocol words in the *name*) |
+| Marketing soup tags | eWeLink / SmartThings / Sonoff | Tags → tuya, zigbee, local, switch, sensor… |
+| Nonsense pairing list | `Air Purifier Soil/Contact/Dimmer…` + `_NEEDS_DEVICE_ASSIGNMENT` | **12 hybrids `deprecated: true`**, class→`sensor` where needed, phantom caps stripped |
+| Hype README | “Bulletproof”, “Hue-style” | README generator de-hyped |
+| Chatty bot logs | Emoji spam | Stripped from radar/contact `this.log` |
+| Hybrid MF revive | `restore-master-only-hybrid-mfs.js` | Skips deprecated `air_purifier_*` |
+| Publish blocked | Guidelines ERROR: fan/light without primary UI cap | Fixed: class=`sensor` + audit skips `deprecated` |
 
-## Forum themes (fresh silent scan, max 80–100/topic)
+## Forum themes
 
-Scan: `.github/state/forum/multi-silent-digest.json` — **0 new FPs**. Pain is reliability + wrong driver, not missing fingerprints.
+Silent scan: **0 new FPs**. Pain = reliability + wrong driver.
 
-### Still open / soak (do not spam republish)
+### Closed / shipped
 
-1. **Peter #2137** — crashes + SOS mute on some units → stay on Test ≥9.0.532 / stable ≥5.12.82; IAS/SOS path soak
-2. **ZT08 #513** — P140 DP17 + unix_1970 — retest after Test >9.0.531
-3. **Contact lux / polarity** (#2121–#2122) — settings invert exists; further reporting soak
-4. **Water leak ZG-222Z** (#2111) — pair OK, wet silent → IAS follow-up
-5. **PresentSky dimmer** — FP on `wall_dimmer_tuya`; **re-pair** if still climate
-6. **Smart Life cloud** (T146735) — out of Zigbee scope
+| Item | Status |
+|------|--------|
+| **ZT08 #513** | **CLOSED** — Finnamu OK on 9.0.533 |
+| TYZB01 TS001x ZCL-only | P141 shipped |
+| Kanbros `w5xztuy7` ZCL-only | P139 |
+| Soil `nt4pquef` DP2=light | P141 |
+| Peter SOS harden | **P143** `_fireAlarm` + safe-timers |
+| Water leak HOBEIAN IAS | **P143** clusters 0/1/1280 + mfr `k4ej3ww2` |
+| Contact lux DP101 | **P143** no battery-steal + calibration |
 
-### Already shipped recently (credit silently)
+### Still user / soak
 
-- TYZB01 TS001x → switch_2/3/4gang + ZCL-only + no phantom watts (P141)
-- Kanbros `_TZ3000_w5xztuy7` ZCL-only (P139)
-- P139 Athom: do not cancel mid-publish
-- Soil `nt4pquef` DP2 = light not moisture
+1. **Peter #2137** — update Test tip after successful Auto-Publish; Repair SOS; polarity Inverted if mute
+2. **PresentSky dimmer** — **re-pair only** (FP already on `wall_dimmer_tuya`)
+3. **Water / contact** — retest after tip with P143
+4. **Smart Life cloud** (T146735) — out of Zigbee scope
 
-## Product vision (keep this)
+## Product vision (keep)
 
 ```
-Universal Tuya Zigbee
-├── master  → soak features + new FPs (Test channel)
+Universal Tuya
+├── master  → soak features + new FPs (Test)
 └── stable-v5 → crash-only backports (Live / LTS)
 Sacred Couple = (manufacturerName + productId)
-Forum = scan everything → fix code → almost never reply
-Pairing list = real devices only (no hybrid templates)
-Store copy = plain English, no Engine / Unified / multi-brand soup
+Forum = scan → fix code → almost never reply
+Pairing = real devices only (deprecated hybrids hidden)
+Store copy = plain English, no Engine / Unified soup
 ```
 
-## Files touched (P142)
+## Publish unblock (this follow-up)
 
-- `.homeycompose/app.json` + `app.json` — name, description, tags
-- `drivers/air_purifier_*/driver.compose.json` (12) — deprecated + cleanup
-- `drivers/air_purifier/driver.compose.json` — drop `xxxxxxxx` placeholders
-- `scripts/restore-master-only-hybrid-mfs.js` — skip hybrids
-- `.github/scripts/generate-readme.js` + `README.md`
-- `drivers/sensor_presence_radar/device.js`, `drivers/sensor_contact_motion/device.js` — quieter logs
+P142 Auto-Publish failed at **Sanitize / guidelines audit**:
+`DRIVER_PRIMARY_UI_CAPABILITY_REQUIRED` on deprecated `air_purifier_*` (fan/light without onoff/dim).
 
-## Next soak checklist
+Fixes now:
+- hybrid `class` → `sensor` where needed
+- guidelines audit **skips `deprecated` drivers**
+- store name **Universal Tuya** (short descriptions)
 
-- [ ] Homey Test build after push shows **Universal Tuya Zigbee**
-- [ ] Pairing UI: no “Air Purifier Soil/Contact/…” for new adds
-- [ ] Peter retest SOS/contact on tip
-- [ ] Finnamu ZT08 retest (#513)
+## Soak checklist
+
+- [x] Code tip name = **Universal Tuya** (compose + app.json)
+- [x] 12/12 `air_purifier_*` deprecated in app.json
+- [x] Guidelines audit: **0 errors**
+- [ ] Homey Test channel shows new name (needs successful Auto-Publish)
+- [ ] Pairing UI: no Air Purifier Soil/Contact for new adds
+- [ ] Peter SOS/contact retest
+- [x] Finnamu ZT08 (#513 closed)
 - [ ] PresentSky re-pair dimmer

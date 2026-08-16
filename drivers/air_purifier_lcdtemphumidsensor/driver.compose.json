@@ -6,7 +6,7 @@
     "de": "Luftreiniger Lcdtemphumidsensor",
     "es": "Purificador de aire Lcdtemphumidsensor"
   },
-  "class": "fan",
+  "class": "sensor",
   "capabilities": [
     "measure_temperature",
     "measure_humidity",
@@ -99,7 +99,9 @@
         ]
       }
     },
-    "manufacturerName": []
+    "manufacturerName": [
+      "_DEPRECATED_AIR_PURIFIER_HYBRID_DO_NOT_PAIR"
+    ]
   },
   "ui": {
     "quickAction": "onoff"

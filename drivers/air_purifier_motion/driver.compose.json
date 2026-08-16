@@ -6,7 +6,7 @@
     "de": "Hybrider Luftreiniger mit Bewegungsmelder",
     "es": "Purificador de aire y sensor de movimiento"
   },
-  "class": "fan",
+  "class": "sensor",
   "capabilities": [
     "measure_battery",
     "measure_luminance",
@@ -67,7 +67,9 @@
         "fr": "Maintenez le bouton power pendant 5 secondes"
       }
     },
-    "manufacturerName": []
+    "manufacturerName": [
+      "_DEPRECATED_AIR_PURIFIER_HYBRID_DO_NOT_PAIR"
+    ]
   },
   "images": {
     "small": "/drivers/air_purifier/assets/images/small.png",

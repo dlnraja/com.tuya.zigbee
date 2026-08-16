@@ -6,7 +6,7 @@
     "de": "Dimmer Luftreiniger",
     "es": "Atenuador Purificador de Aire"
   },
-  "class": "light",
+  "class": "sensor",
   "capabilities": [
     "measure_power"
   ],
@@ -360,7 +360,9 @@
         ]
       }
     },
-    "manufacturerName": []
+    "manufacturerName": [
+      "_DEPRECATED_AIR_PURIFIER_HYBRID_DO_NOT_PAIR"
+    ]
   },
   "metadata": {
     "driver": {

@@ -6,16 +6,16 @@
     "local"
   ],
   "name": {
-    "en": "Universal Tuya Zigbee",
-    "nl": "Universal Tuya Zigbee",
-    "de": "Universal Tuya Zigbee",
-    "fr": "Universal Tuya Zigbee"
+    "en": "Universal Tuya",
+    "nl": "Universal Tuya",
+    "de": "Universal Tuya",
+    "fr": "Universal Tuya"
   },
   "description": {
-    "en": "Local Zigbee control for Tuya and compatible devices on Homey Pro — switches, sensors, lights, thermostats, covers and more. No cloud required.",
-    "nl": "Lokale Zigbee-bediening voor Tuya en compatibele apparaten op Homey Pro — schakelaars, sensoren, lampen, thermostaten, gordijnen en meer. Geen cloud nodig.",
-    "de": "Lokale Zigbee-Steuerung fuer Tuya und kompatible Geraete auf Homey Pro — Schalter, Sensoren, Lampen, Thermostate, Rolllaeden und mehr. Keine Cloud noetig.",
-    "fr": "Controle Zigbee local pour appareils Tuya et compatibles sur Homey Pro — interrupteurs, capteurs, lumieres, thermostats, volets et plus. Sans cloud."
+    "en": "Local Zigbee control for Tuya devices on Homey Pro — switches, sensors, lights, thermostats and covers.",
+    "nl": "Lokale Zigbee-bediening voor Tuya-apparaten op Homey Pro.",
+    "de": "Lokale Zigbee-Steuerung fuer Tuya-Geraete auf Homey Pro.",
+    "fr": "Controle Zigbee local pour appareils Tuya sur Homey Pro."
   },
   "tags": {
     "en": [
