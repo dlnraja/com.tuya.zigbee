@@ -3,7 +3,7 @@ description: Live operational memory (Homey Test, P139, forum silent) — read e
 alwaysApply: true
 ---
 
-# Operational memory — com.dlnraja.tuya.zigbee (audit 2026-08-15 ~23:12 CET)
+# Operational memory — com.dlnraja.tuya.zigbee (audit 2026-08-16)
 
 ## Dual-app + shared App ID
 - `master` = preview/soak (~9.0.x). `stable-v5` = reliability LTS (~5.12.x).
@@ -11,12 +11,13 @@ alwaysApply: true
 - Never full-tree sync. Classify BOTH | MASTER_ONLY | STABLE_ONLY.
 
 ## Homey Test live truth (last verified)
-- Master Homey Test: **v9.0.533** confirmed by Finnamu (#513 ZT08 OK); code tip **9.0.534** + P142 branding Auto-Publish in flight.
-- Stable: PR **#530 MERGED** (P139 + ZT08 DP17 + TYZB01 routes).
+- Master Homey Test: **v9.0.541** build #2862 (P148 LiveData OOM fix + P149 diag gate). Finnamu #513 ZT08 OK earlier on 9.0.533.
+- Stable: PR **#530 MERGED** (P139 + ZT08 DP17 + TYZB01 routes) — do not overwrite master Test while soaking.
 - **9.0.530** hit Athom `processing_failed` (`socket hang up`) — superseded; do **not** spam republish (P139).
 - Historical: 9.0.525 / 9.0.526 same transient class.
 - **P139 hardening**: Auto-Publish `cancel-in-progress: false` (do not kill mid Athom draft/promote).
 - Store name: **Universal Tuya Zigbee** (P142 — dropped “Unified Smart Home Engine”).
+- Docs map: `.github/CONTRIBUTING.md` · `docs/guides/USER_TROUBLESHOOTING.md` · `docs/architecture/LAYERS_CAPABILITY_PROTOCOL.md` · `docs/rules/PRAGMATIC_ROADMAP.md` (P152).
 
 ## P139 — Athom transient (DO NOT LOOP)
 - Scripts: `.github/scripts/processing-failure-republish-check.js`, `athom-processing-failure-retry.js`.

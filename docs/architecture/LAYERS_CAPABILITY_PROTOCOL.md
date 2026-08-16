@@ -50,6 +50,10 @@ Misattribution cases: `data/user-misattribution-registry.json` (+ matcher force)
 
 Do **not** auto-generate Homey `Homey.Driver` skeletons from Z2M search into PRs without sacred-couple review.
 
+User troubleshooting: [`docs/guides/USER_TROUBLESHOOTING.md`](../guides/USER_TROUBLESHOOTING.md)  
+Contribute: [`.github/CONTRIBUTING.md`](../../.github/CONTRIBUTING.md) · [`docs/CONTRIBUTING.md`](../CONTRIBUTING.md)  
+`lib/` map: [`lib/README.md`](../../lib/README.md)
+
 ## Anti-slop checklist
 
 - No marketing banners / emoji walls in runtime logs or public Pages heroes.

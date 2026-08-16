@@ -1,47 +1,35 @@
 # Contributing Guide
 
-## How to Report a Device Issue
+Full rules: **[`.github/CONTRIBUTING.md`](../.github/CONTRIBUTING.md)**  
+Troubleshooting: **[`guides/USER_TROUBLESHOOTING.md`](guides/USER_TROUBLESHOOTING.md)**  
+Layers: **[`architecture/LAYERS_CAPABILITY_PROTOCOL.md`](architecture/LAYERS_CAPABILITY_PROTOCOL.md)**
 
-### 1. Get Device Interview
-1. Open Homey Developer Tools: `https://developer.homey.app`
-2. Go to Devices -> Select your device
-3. Copy the full interview JSON
+## How to report a device issue
 
-### 2. Include Required Info
-- `manufacturerName` and `modelId`
-- Physical device type (sensor, switch, plug, etc.)
-- Expected behavior vs actual behavior
-- Homey app version
+1. Homey diagnostic **Log ID** (Apps → Universal Tuya → Diagnostics).
+2. Sacred couple: `manufacturerName` (`_TZxxxx…`) + `productId` / modelId (`TSxxxx`).
+3. Expected vs actual (wrong driver, missing cap, crash, battery).
+4. App version (prefer Homey **Test** tip).
 
-### 3. Submit Issue
-Use the GitHub issue template with your device interview.
+Use `.github/ISSUE_TEMPLATE/` — do not paste unchecked AI walls.
 
----
-
-## How to Test
+## Local checks
 
 ```bash
-# Install dependencies
-npm install
-
-# Validate app
-npx homey app validate
-
-# Run locally
-npx homey app run
+npm ci
+node --check drivers/**/device.js   # or targeted paths
+node tools/ci/gmail-crash-pattern-gate.js --json
 ```
 
----
+Push runs pre-commit / pre-push gates (mandatory files, publish size, security).
 
-## Driver Structure
+## Driver layout
 
 ```
-drivers/
-  my_device/
-    driver.compose.json   <- Device fingerprints
-    driver.js             <- Driver logic
-    device.js             <- Device logic
-    driver.flow.compose.json <- Flow cards
+drivers/<id>/
+  driver.compose.json   # zigbee fingerprints + capabilities (static pairing)
+  device.js             # thin — prefer mixins / BatteryMasterEngine / safeSetCapabilityValue
+  driver.flow.compose.json
 ```
 
 ---
@@ -95,3 +83,4 @@ card.registerRunListener(this._safeDeviceHandler(async (args) => {
 
 Check [Device Finder](https://dlnraja.github.io/com.tuya.zigbee/) to see if your device is already supported.
 Each device card includes a bug report button that creates a pre-filled issue.
+Identity is always **mfr + productId**. See dual-app rules in `.github/CONTRIBUTING.md`.

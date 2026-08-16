@@ -1,49 +1,36 @@
-# SESSION HANDOFF — 2026-08-16 (~11:45 CET)
+# SESSION HANDOFF — 2026-08-16 (~14:00 CET)
 
 > Dual-app BOTH when in doubt. Silent forum (T157628). Shared App ID = one Test slot.
-> Cursor rule: `.cursor/rules/operational-memory-2026-08-15.mdc` (alwaysApply).
+> Compass: `docs/rules/PRAGMATIC_ROADMAP.md` (internal only).
 
 ## Live versions
 
 | Track | Branch | Code tip | Homey Test |
 |-------|--------|----------|------------|
-| Preview | `master` | **9.0.534** + P142 branding push in flight | was **9.0.533** (Finnamu OK); Auto-Publish P142 → next |
-| Stable | `stable-v5` | **PR #530 MERGED** (P139 + ZT08 DP17 + TYZB01) | tip after merge publish |
+| Preview | `master` | **9.0.541+** (P150–P152 docs/registry) | **v9.0.541** build #2862 **test** |
+| Stable | `stable-v5` | PR #530 lineage | do not overwrite master Test while soaking |
 
-App ID (both): `com.dlnraja.tuya.zigbee`.
+App ID: `com.dlnraja.tuya.zigbee` · https://homey.app/a/com.dlnraja.tuya.zigbee/test/
 
-## Finalized this session
+## Priority
 
-| Item | Status |
-|------|--------|
-| P140 ZT08 / GH **#513** | **CLOSED** — Finnamu: values correct on 9.0.533 |
-| P141 TYZB01 ZCL-only + nt4pquef DP2 | Shipped on master |
-| P142 anti-slop branding | Pushed: name **Universal Tuya Zigbee**, 12 `air_purifier_*` deprecated, quieter logs |
-| Stable PR **#530** | **MERGED** → `a61b999` |
-| Forum silent scan | 0 new FPs |
-| Auto-Publish | P142 run `31939879443` in progress — do **not** spam if Athom hang (P139) |
+**doublons > GitHub docs > surgical refactor** — no forum roadmap, no Z2M substitution myth.
 
-## User-action leftovers (no code)
+## Shipped P142–P152
 
-- PresentSky: re-pair dimmer as `wall_dimmer_tuya` if still climate
-- Peter #2137: update Test tip after P142 publish; SOS/contact retest
-- Other hybrid placeholders (`_hybrid_*_needs_device_assignment` on non-purifier drivers) remain M09 warnings — next cleanup wave
+See `reports/P152_PRAGMATIC_ROADMAP_EXEC_2026-08-16.md`.
 
-## Vision (keep)
+## User leftovers
 
-```
-Universal Tuya Zigbee
-master = soak / Test | stable-v5 = reliability only
-Sacred Couple | silent forum | no AI paste
-```
+- Peter: install **9.0.541**, new diag if still OOM
+- PresentSky: re-pair dimmer if still climate
+- Dual-claim gate: 60 warn — triage lights/switches next (not big-bang)
 
 ## Commands
+
 ```bash
-gh run list --repo dlnraja/com.tuya.zigbee --workflow="Auto-Publish on Push" --limit 5
-node --test test/issue-513-hodyryli-scale.test.js
-node tools/ci/forum-silent-multi-scan.js --max=40
+node tools/ci/audit-sacred-couple.js --from-registry
+node tools/ci/dual-claim-compose-gate.js
+node tools/ci/energy-compose-gate.js
+node tools/ci/gmail-crash-pattern-gate.js --json
 ```
-
-Reports: `reports/QUALITY_VISION_FORUM_P142_2026-08-16.md`, `reports/SACRED_COUPLE_DEEP_INVESTIGATION_2026-08-16.md`
-
-Updated: 2026-08-16T09:45Z

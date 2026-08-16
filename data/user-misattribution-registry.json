@@ -92,6 +92,76 @@
         "master": { "static": true, "dynamic": true },
         "stable": { "static": true, "dynamic": false }
       }
+    },
+    {
+      "id": "kanbros-bseed-2gang-w5xztuy7",
+      "mfr": ["_TZ3000_w5xztuy7", "_tz3000_w5xztuy7"],
+      "productId": ["TS0002"],
+      "canonicalDriver": "switch_2gang",
+      "forbiddenDrivers": ["switch_2gang_metering", "dimmer_2_gang_tuya", "wall_dimmer_tuya"],
+      "protocol": "zcl",
+      "notes": "Kanbros #2130 — ZCL-only 2-gang; no EF00 / no metering phantoms.",
+      "sources": ["forum-140352", "P139", "P141"],
+      "tracks": {
+        "master": { "static": true, "dynamic": true },
+        "stable": { "static": true, "dynamic": false }
+      }
+    },
+    {
+      "id": "welsh-double-outlet-hlla45kx",
+      "mfr": ["_TYZB01_hlla45kx", "_tyzb01_hlla45kx"],
+      "productId": ["TS011F"],
+      "canonicalDriver": "double_power_point_2",
+      "forbiddenDrivers": ["socket", "smartplug", "switch_1gang"],
+      "protocol": "zcl",
+      "notes": "Welsh #2129 — double power point, not generic socket.",
+      "sources": ["forum-140352", "P139"],
+      "tracks": {
+        "master": { "static": true, "dynamic": true },
+        "stable": { "static": true, "dynamic": false }
+      }
+    },
+    {
+      "id": "soil-nt4pquef",
+      "mfr": ["_TZE284_nt4pquef", "_tze284_nt4pquef"],
+      "productId": ["TS0601"],
+      "canonicalDriver": "soil_sensor",
+      "forbiddenDrivers": ["climate_sensor", "climate_sensor_zt08", "air_purifier_soil"],
+      "protocol": "tuya_ef00",
+      "notes": "Soil moisture — not climate LCD. DP mapping per P141.",
+      "sources": ["forum-140352", "P141"],
+      "tracks": {
+        "master": { "static": true, "dynamic": true },
+        "stable": { "static": true, "dynamic": false }
+      }
+    },
+    {
+      "id": "zt08-hodyryli",
+      "mfr": ["_TZE284_hodyryli", "_tze284_hodyryli"],
+      "productId": ["TS0601"],
+      "canonicalDriver": "climate_sensor_zt08",
+      "forbiddenDrivers": ["climate_sensor", "soil_sensor"],
+      "protocol": "tuya_ef00",
+      "notes": "ZT08 weather — unix_1970 time sync + DP17 commit (GH #513).",
+      "sources": ["forum-140352", "github#513", "P140"],
+      "tracks": {
+        "master": { "static": true, "dynamic": true },
+        "stable": { "static": true, "dynamic": false }
+      }
+    },
+    {
+      "id": "presence-radar-clrdrnya",
+      "mfr": ["_TZE204_clrdrnya", "_tze204_clrdrnya", "_TZE284_clrdrnya"],
+      "productId": ["TS0601"],
+      "canonicalDriver": "presence_sensor_radar",
+      "forbiddenDrivers": ["motion_sensor", "climate_sensor", "air_purifier_presence"],
+      "protocol": "tuya_ef00",
+      "notes": "mmWave presence radar — not PIR motion / climate hybrid.",
+      "sources": ["forum-140352", "P139"],
+      "tracks": {
+        "master": { "static": true, "dynamic": true },
+        "stable": { "static": true, "dynamic": false }
+      }
     }
   ]
 }

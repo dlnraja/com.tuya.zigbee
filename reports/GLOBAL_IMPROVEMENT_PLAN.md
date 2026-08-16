@@ -1,10 +1,13 @@
-# 🌍 GLOBAL IMPROVEMENT PLAN — Phoenix Sovereign Unified Engine v9.0.0+
+# GLOBAL IMPROVEMENT PLAN (historical)
 
-*Historical document (metrics dated 2026-05-26) — superseded by [AUDIT_HOMEY_2026-07-27.md](AUDIT_HOMEY_2026-07-27.md).*
-> **Branch**: `master` (Experimental/Beta) + `stable-v5` (Production/Stable)  
-> **App ID**: `com.dlnraja.tuya.zigbee` (Stable app: `com.dlnraja.tuya.zigbee.stable`)  
-> **Status**: ACTIVE & SECURED | **Zero-Defect Publish Quality Gate**: 100% Passed  
-> **Metrics (2026-05-26)**: 413 drivers | 12766 fingerprints | 4038 flows | 13 open issues | 16 new Z2M devices | 22 dotfiles audited | 5 AI governance configs
+> **Superseded as day-to-day compass by** [`docs/rules/PRAGMATIC_ROADMAP.md`](../docs/rules/PRAGMATIC_ROADMAP.md)  
+> Product name: **Universal Tuya** — not “Unified Engine”.  
+> Keep this file for archaeology only; do not execute its marketing / big-bang sections.
+
+*Metrics below dated 2026-05-26 — see also [AUDIT_HOMEY_2026-07-27.md](AUDIT_HOMEY_2026-07-27.md).*
+> **Branch**: `master` (preview/Test) + `stable-v5` (production)  
+> **App ID**: `com.dlnraja.tuya.zigbee`  
+> **Live compass**: sacred couples > GitHub docs > surgical refactor — silent code, no forum roadmaps (T157628).
 
 ---
 

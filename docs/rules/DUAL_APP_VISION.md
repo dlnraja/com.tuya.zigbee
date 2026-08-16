@@ -16,7 +16,7 @@ Two Homey apps / tracks, one monorepo:
 
 ## Purpose (do not blur)
 
-### master — Unified Smart Home Engine (advanced)
+### master — Universal Tuya preview / Test (advanced)
 - New fingerprints, drivers, flow engines, smart managers
 - Free-scrape / diag orchestrators / AlarmPolarity **smart learn**
 - CapabilityCommandRouter parallel discover, experimental cascades
