@@ -28,7 +28,7 @@ Store name: **Universal Tuya** (Zigbee in description/tags). Not “Unified Engi
 | 3 | Enrich `user-misattribution-registry` from forum | Ongoing (P149–P152) |
 | 4 | Short GitHub docs (sacred couple, dual-app, troubleshooting) | Done / maintain |
 | 5 | Critical modules progressive harden | Continuous |
-| — | Post forum roadmap IA | **No** |
+| — | Auto enrich-KB / bidi mfs sync / QuotaManager / auto-PR | **Refuse P172** — use mega-crawl + P169/P170 |
 
 ## Commands
 
