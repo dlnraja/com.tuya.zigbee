@@ -123,6 +123,21 @@ must(
   /attachMultiProtocolBattery/.test(read('lib/layers/CrossLayerRedundancy.js')),
 );
 
+must(
+  'LayerSignalFusion exists',
+  fs.existsSync(path.join(ROOT, 'lib/layers/LayerSignalFusion.js')),
+);
+
+must(
+  'confirmInbound uses LayerSignalFusion',
+  /LayerSignalFusion/.test(read('lib/layers/CrossLayerRedundancy.js')),
+);
+
+must(
+  'safeSetCapabilityValue gates meta.source via fusion',
+  /LayerSignalFusion/.test(read('lib/tuya/TuyaZigbeeDevice.js')),
+);
+
 const failed = checks.filter(c => !c.ok);
 const json = process.argv.includes('--json');
 

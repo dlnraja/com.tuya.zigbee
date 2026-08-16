@@ -21,6 +21,22 @@ Prefer editing these modules over copying logic into every `device.js`.
 
 **Soft attach for lineages that skip Unified* bases:** `lib/layers/UniversalLayerBootstrap.js` (called from `TuyaZigbeeDevice.onNodeInit`) — ProtocolAutoOptimizer + IntelligentProtocolRouter + EF00 time sync + **CrossLayerRedundancy**.
 
+### Cross-layer signal fusion (P211)
+
+When the **same** capability arrives on two protocol layers (ZCL + DP, IAS + DP, …):
+
+| Guard | Behaviour |
+|-------|-----------|
+| Cross-layer echo | Soft-equal value within window → **one** Homey write; second marked agree |
+| Same-layer spam | Identical repeat → drop |
+| Phantom block | `estimated` / `cached` cannot overwrite fresh hardware |
+| Priority hold | Lower-trust source cannot thrash higher-trust inside the window |
+
+Module: `lib/layers/LayerSignalFusion.js` — used by `confirmInbound` and `safeSetCapabilityValue({ source })`.
+ReceptionManager soft-dedups cross-channel; EventDedup window extended (soft numeric).
+
+Wire parsers to `confirmInbound(cap, value, source)` so fusion + SmartCap + L14 all see the source tag.
+
 ### Cross-layer redundancy (P207)
 
 Goal: make ZCL↔DP↔raw↔IAS redundant so interview “unsupported”, incomplete Homey clusters, and crash/diag noise do not kill a driver.
