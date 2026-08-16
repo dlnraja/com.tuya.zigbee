@@ -1,6 +1,6 @@
 # Cross-source user report triage
 
-Generated: 2026-08-16T16:38:02.784Z
+Generated: 2026-08-16T17:10:52.610Z
 
 Sources: 100 GitHub issues, 60 pull requests, forum scan present, Gmail diagnostics present.
 
