@@ -33,7 +33,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.566 |
+| **App Version** | v9.0.567 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,367 |
 | **Pairing Variants** | 16,600 (4 case combos per fingerprint) |
@@ -42,6 +42,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **Unique Capabilities** | 170 |
 | **Native OTA Drivers** | 5 |
 | **Test Suites** | 75 files |
+| **Test Suites** | 76 files |
 | **SVG Icons** | 731 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
@@ -102,6 +103,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.567** | Stability improvements and Homey test publication retry after transient processing failure. |
 | **v9.0.566** | Stability improvements and Homey test publication retry after transient processing failure. |
 | **v9.0.565** | Stability improvements and Homey test publication retry after transient processing failure. |
 | **v9.0.564** | Stability improvements and Homey test publication retry after transient processing failure. |
@@ -113,7 +115,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.558** | Stability improvements and Homey test publication retry after transient processing failure. |
 | **v9.0.557** | Stability improvements and Homey test publication retry after transient processing failure. |
 | **v9.0.556** | Stability improvements and Homey test publication retry after transient processing failure. |
-| **v9.0.555** | Stability improvements and Homey test publication retry after transient processing failure. |
 
 <!-- CHANGELOG_END -->
 
