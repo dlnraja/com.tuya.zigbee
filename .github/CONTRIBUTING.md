@@ -17,6 +17,22 @@ Do not compare manufacturer strings with `===` only. Use `CaseInsensitiveMatcher
 - No `*` wildcards in `manufacturerName` (SDK3).
 - Known mis-routes: `data/user-misattribution-registry.json`.
 
+### How Homey picks a driver (important)
+
+Homey does **not** use the device tile the user taps during pairing as the final driver.
+
+1. The Zigbee interview reports `manufacturerName` + `productId` (model ID).
+2. Homey matches that couple against each driver’s `driver.compose.json` lists.
+3. The matching driver is bound — even if the user opened pairing under “motion sensor”, “IKEA bulb”, etc.
+
+So a wall socket that “appears as motion” usually means the **manifest lists that couple on the wrong driver** (dual-claim / hybrid / placeholder), not that the user picked badly.
+
+**What we do:** fix sacred couples, strip dual-claims, enrich the misattribution registry, ask for re-pair after the tip.  
+**What we do not do:** runtime “try several drivers and pick the best” (Homey SDK3 cannot), Z2M-style converter substitution, or promising a custom Change-driver UI.
+
+Gates: `node tools/ci/audit-sacred-couple.js --from-registry` · `node tools/ci/dual-claim-compose-gate.js`  
+User FAQ: `docs/guides/USER_TROUBLESHOOTING.md`
+
 ### Dual-app tracks
 | Branch | Purpose |
 |--------|---------|
@@ -50,4 +66,18 @@ Internal compass (not for forum): `docs/rules/PRAGMATIC_ROADMAP.md`.
 1. Sacred couples / dual-claims / deprecated hybrids (manifest pairing — not Z2M substitution).
 2. Short GitHub docs (this file + issue/PR templates already ship).
 3. Surgical module harden (battery, buttons, IAS, energy, LiveData) — never global rewrite.
+
+## Next steps (corrected)
+
+**Do**
+- Keep shipping pairing locks (compose + misattribution registry).
+- Soak Peter’s heap crash on Homey Test **9.0.541+** (new diagnostic if it still crashes).
+- Let Auto-Publish land Test builds; do not spam Athom on transient `processing_failed`.
+
+**Do not**
+- Publish emoji / “Unified Engine” / community roadmap posts on Homey Community (T157628).
+- Overwrite repo docs with fake Homey SDK2 `driver.js` guides or Z2M “try many drivers after pair” tutorials.
+- Promise runtime driver substitution — Homey binds from the manifest couple only.
+
+If a **human** forum reply is needed later: short English, Dylan’s voice, topic **140352** only — not this CONTRIBUTING text pasted as a wall.
 

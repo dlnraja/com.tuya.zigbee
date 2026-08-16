@@ -4,7 +4,7 @@ Practical fixes for the issues people report most on Homey Test. Prefer **re-pai
 
 ## Wrong device type after pairing
 
-Homey matches **`(manufacturerName + productId)`** (sacred couple). Picking the wrong tile in the UI often still ends on the driver that owns that couple.
+Homey matches **`(manufacturerName + productId)`** (sacred couple). The tile you tap in the pairing list does **not** choose the driver — Homey binds from those IDs in the app manifest. A wall socket that “comes in as motion” means the couple was listed on the wrong driver (or dual-claimed), not that you picked badly.
 
 | Example | Canonical driver | Action |
 |---------|------------------|--------|

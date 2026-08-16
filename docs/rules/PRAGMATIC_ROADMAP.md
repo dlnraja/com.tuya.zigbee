@@ -46,4 +46,19 @@ node tools/ci/gmail-crash-pattern-gate.js --json
 | `master` | Static compose + dynamic registry / overlays (capped) |
 | `stable-v5` | Static reliability only after soak |
 
-One-liner: **doublons > doc > refactor** — silent code; this file is a compass, not a community message.
+## Homey pairing (Mike_Nono ↔ smarthomesven, T140352 #2162–#2163)
+
+**smarthomesven is correct:** the tile the user taps at pair time does **not** choose the driver. Homey binds via **`manufacturerName` + `productId`** from the Zigbee interview against each driver’s compose lists.
+
+**Mike’s frustration is still valid** when the *manifest* is wrong: same couple listed on a nonsense driver (socket FP on a motion driver, etc.) → Homey will land on that driver no matter what tile was clicked.
+
+### What we do (and do not)
+
+| Do | Do not |
+|----|--------|
+| Fix sacred couples / strip dual-claims | Runtime “try 5 drivers then pick best” (Homey cannot) |
+| Misattribution registry + re-pair | Custom Change-driver UI as product promise |
+| Z2M/ZHA/forum research → compose | Copy Z2M converter substitution into SDK3 |
+
+Silent code only — this exchange is a compass, not a forum reply draft.
+

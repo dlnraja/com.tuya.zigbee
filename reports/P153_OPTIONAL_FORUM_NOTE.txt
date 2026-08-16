@@ -1,0 +1,9 @@
+Optional human forum note (140352 only — paste manually if Dylan asks). Not for auto-post.
+
+--- Mike / pairing ---
+
+Quick note on pairing: Homey does not use the tile you tap to pick the final driver. It matches manufacturerName + productId from the device against the app. If a socket ends up as motion, that couple was listed on the wrong driver in the manifest — we fix those locks in the Test builds and you usually need to remove + re-pair once after the update. There is no way for the app to “try five drivers” after pair like some other hubs.
+
+--- Peter (if still needed) ---
+
+@Peter_van_Werkhoven thanks for the diagnostic. 96c19859 was a heap OOM from the live fingerprint feed. Please install Test 9.0.541 or newer and send a new diagnostic only if it still crashes.
