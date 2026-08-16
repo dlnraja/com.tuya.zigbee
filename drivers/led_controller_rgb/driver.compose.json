@@ -51,11 +51,6 @@
   "connectivity": [
     "zigbee"
   ],
-  "energy": {
-    "batteries": [
-      "OTHER"
-    ]
-  },
   "capabilitiesOptions": {
     "onoff": {
       "setOnDim": true

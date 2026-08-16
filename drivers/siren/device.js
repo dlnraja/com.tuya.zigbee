@@ -113,6 +113,20 @@ class SirenDevice extends UnifiedPlugBase {
     this.log('[SIREN]  Ready');
   }
 
+  /**
+   * `alarm_generic` mirrors the sounding state. The siren reports it through
+   * whichever of DP1/13/104 its firmware uses, all of which land on `onoff`,
+   * so mirroring here covers every variant. driver.js `siren_is_sounding`
+   * reads both capabilities and would otherwise only ever see `onoff`.
+   */
+  async safeSetCapabilityValue(capability, value) {
+    const result = await super.safeSetCapabilityValue(capability, value);
+    if (capability === 'onoff' && this.hasCapability('alarm_generic')) {
+      await super.safeSetCapabilityValue('alarm_generic', !!value).catch(() => {});
+    }
+    return result;
+  }
+
   async _setupIasWD(zclNode) {
     const ep1 = zclNode?.endpoints?.[1];
     try {

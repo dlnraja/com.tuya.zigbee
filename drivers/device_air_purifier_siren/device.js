@@ -108,6 +108,19 @@ class SirenDevice extends UnifiedPlugBase {
     this.log('[SIREN]  Ready');
   }
 
+  /**
+   * `alarm_generic` mirrors the sounding state. driver.js writes it from its
+   * turn-on / turn-off actions and reads it in `siren_is_sounding`, but nothing
+   * propagated the device-reported state (DP1/13/104 -> onoff) back to it.
+   */
+  async safeSetCapabilityValue(capability, value) {
+    const result = await super.safeSetCapabilityValue(capability, value);
+    if (capability === 'onoff' && this.hasCapability('alarm_generic')) {
+      await super.safeSetCapabilityValue('alarm_generic', !!value).catch(() => {});
+    }
+    return result;
+  }
+
   async _setupIasWD(zclNode) {
     const ep1 = zclNode?.endpoints?.[1];
     try {

@@ -12,8 +12,7 @@
     "measure_temperature",
     "measure_humidity",
     "alarm_siren",
-    "alarm_motion",
-    "alarm_generic"
+    "alarm_motion"
   ],
   "capabilitiesOptions": {
     "onoff": {

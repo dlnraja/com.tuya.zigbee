@@ -259,7 +259,22 @@ class sensortemphumidsensor extends TuyaSpecificClusterDevice {
     case dataPoints.VOLUME: await this.setSettings({ alarmvolume: String(measuredValue) }).catch(() => {}); break;
     case dataPoints.DURATION: await this.setSettings({ alarmsoundtime: measuredValue }).catch(() => {}); break;
     case dataPoints.MELODY: await this.setSettings({ alarmtune: String(measuredValue) }).catch(() => {}); break;
+    case dataPoints.TEMP_ALARM: this.handleThresholdAlarm('temperature', measuredValue); break;
+    case dataPoints.HUM_ALARM: this.handleThresholdAlarm('humidity', measuredValue); break;
     }
+  }
+
+  /**
+   * DP113/114 report a threshold enum where 0 means "cancelled" and any other
+   * value is an active lower/upper breach. `alarm_generic` stays true while
+   * either channel is breached, which is what the declared capability is for.
+   */
+  handleThresholdAlarm(channel, measuredValue) {
+    if (this._destroyed || !this.hasCapability('alarm_generic')) {return;}
+    this._thresholdAlarms = this._thresholdAlarms || {};
+    this._thresholdAlarms[channel] = Number(measuredValue) !== 0;
+    const active = Object.values(this._thresholdAlarms).some(Boolean);
+    this.safeSetCapabilityValue('alarm_generic', active).catch(() => {});
   }
 
   handlePowerMode(measuredValue) {

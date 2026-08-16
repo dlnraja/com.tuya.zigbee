@@ -7,7 +7,6 @@
   },
   "class": "socket",
   "capabilities": [
-    "alarm_generic",
     "measure_power",
     "measure_voltage",
     "measure_current",
