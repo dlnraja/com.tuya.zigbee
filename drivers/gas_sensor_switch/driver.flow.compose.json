@@ -583,6 +583,70 @@
       "titleFormatted": {
         "en": "Gang 4 scene triggered"
       }
+    },
+    {
+      "id": "gas_sensor_switch_physical_gang1_on",
+      "title": {
+        "en": "Physical gang 1 on",
+        "fr": "Physical gang 1 on"
+      },
+      "args": []
+    },
+    {
+      "id": "gas_sensor_switch_physical_gang1_off",
+      "title": {
+        "en": "Physical gang 1 off",
+        "fr": "Physical gang 1 off"
+      },
+      "args": []
+    },
+    {
+      "id": "gas_sensor_switch_physical_gang2_on",
+      "title": {
+        "en": "Physical gang 2 on",
+        "fr": "Physical gang 2 on"
+      },
+      "args": []
+    },
+    {
+      "id": "gas_sensor_switch_physical_gang2_off",
+      "title": {
+        "en": "Physical gang 2 off",
+        "fr": "Physical gang 2 off"
+      },
+      "args": []
+    },
+    {
+      "id": "gas_sensor_switch_physical_gang3_on",
+      "title": {
+        "en": "Physical gang 3 on",
+        "fr": "Physical gang 3 on"
+      },
+      "args": []
+    },
+    {
+      "id": "gas_sensor_switch_physical_gang3_off",
+      "title": {
+        "en": "Physical gang 3 off",
+        "fr": "Physical gang 3 off"
+      },
+      "args": []
+    },
+    {
+      "id": "gas_sensor_switch_physical_gang4_on",
+      "title": {
+        "en": "Physical gang 4 on",
+        "fr": "Physical gang 4 on"
+      },
+      "args": []
+    },
+    {
+      "id": "gas_sensor_switch_physical_gang4_off",
+      "title": {
+        "en": "Physical gang 4 off",
+        "fr": "Physical gang 4 off"
+      },
+      "args": []
     }
   ],
   "conditions": [

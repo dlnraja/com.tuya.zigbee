@@ -46,5 +46,23 @@
         "fr": "Niveau de batterie !{{est|n'est pas}} au-dessus de [[threshold]]"
       }
     }
+  ],
+  "triggers": [
+    {
+      "id": "soil_sensor_ec_physical_on",
+      "title": {
+        "en": "Physical button on",
+        "fr": "Physical button on"
+      },
+      "args": []
+    },
+    {
+      "id": "soil_sensor_ec_physical_off",
+      "title": {
+        "en": "Physical button off",
+        "fr": "Physical button off"
+      },
+      "args": []
+    }
   ]
 }

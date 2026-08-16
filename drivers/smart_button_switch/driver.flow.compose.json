@@ -59,6 +59,22 @@
         "fr": "Bouton relâché",
         "en": "Button released"
       }
+    },
+    {
+      "id": "smart_button_switch_physical_on",
+      "title": {
+        "en": "Physical button on",
+        "fr": "Physical button on"
+      },
+      "args": []
+    },
+    {
+      "id": "smart_button_switch_physical_off",
+      "title": {
+        "en": "Physical button off",
+        "fr": "Physical button off"
+      },
+      "args": []
     }
   ],
   "conditions": [],

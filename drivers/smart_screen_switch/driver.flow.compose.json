@@ -10,6 +10,22 @@
         "en": "Motion detected",
         "fr": "Mouvement détecté"
       }
+    },
+    {
+      "id": "smart_screen_switch_physical_on",
+      "title": {
+        "en": "Physical button on",
+        "fr": "Physical button on"
+      },
+      "args": []
+    },
+    {
+      "id": "smart_screen_switch_physical_off",
+      "title": {
+        "en": "Physical button off",
+        "fr": "Physical button off"
+      },
+      "args": []
     }
   ],
   "conditions": [

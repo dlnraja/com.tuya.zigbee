@@ -231,6 +231,22 @@
       "titleFormatted": {
         "en": "Gang 1 scene triggered"
       }
+    },
+    {
+      "id": "switch_wall_physical_on",
+      "title": {
+        "en": "Physical button on",
+        "fr": "Physical button on"
+      },
+      "args": []
+    },
+    {
+      "id": "switch_wall_physical_off",
+      "title": {
+        "en": "Physical button off",
+        "fr": "Physical button off"
+      },
+      "args": []
     }
   ],
   "conditions": [

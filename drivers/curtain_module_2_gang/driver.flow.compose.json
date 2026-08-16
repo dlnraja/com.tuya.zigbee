@@ -25,6 +25,23 @@
       }
     }
   ],
-  "triggers": [],
+  "triggers": [
+    {
+      "id": "curtain_module_2_gang_physical_on",
+      "title": {
+        "en": "Physical button on",
+        "fr": "Physical button on"
+      },
+      "args": []
+    },
+    {
+      "id": "curtain_module_2_gang_physical_off",
+      "title": {
+        "en": "Physical button off",
+        "fr": "Physical button off"
+      },
+      "args": []
+    }
+  ],
   "conditions": []
 }

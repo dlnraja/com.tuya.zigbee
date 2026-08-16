@@ -175,6 +175,22 @@
         "nl": "Lichtsterkte gewijzigd",
         "de": "Helligkeit geändert"
       }
+    },
+    {
+      "id": "curtain_motor_wall_physical_on",
+      "title": {
+        "en": "Physical button on",
+        "fr": "Physical button on"
+      },
+      "args": []
+    },
+    {
+      "id": "curtain_motor_wall_physical_off",
+      "title": {
+        "en": "Physical button off",
+        "fr": "Physical button off"
+      },
+      "args": []
     }
   ],
   "actions": [

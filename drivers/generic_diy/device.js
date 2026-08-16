@@ -2,7 +2,7 @@
 const { safeDivide, safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
 
 
-const { ZigBeeDevice } = require('homey-zigbeedriver');
+const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
 const CapabilityManagerMixin = require('../../lib/mixins/CapabilityManagerMixin');
 const ManufacturerNameHelper = require('../../lib/helpers/ManufacturerNameHelper');
 
@@ -34,7 +34,7 @@ const CLUSTER_MAP = {
 
 const BUTTON_PRESS = { SINGLE: 1, DOUBLE: 2, LONG: 3 };
 
-class GenericDIYDevice extends ZigBeeDevice {
+class GenericDIYDevice extends TuyaZigbeeDevice {
 
   constructor(...args) {
     super(...args);

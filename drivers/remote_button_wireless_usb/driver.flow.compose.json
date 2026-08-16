@@ -85,6 +85,22 @@
         "nl": "Vermogen gewijzigd",
         "de": "Leistung geändert"
       }
+    },
+    {
+      "id": "remote_button_wireless_usb_physical_on",
+      "title": {
+        "en": "Physical button on",
+        "fr": "Physical button on"
+      },
+      "args": []
+    },
+    {
+      "id": "remote_button_wireless_usb_physical_off",
+      "title": {
+        "en": "Physical button off",
+        "fr": "Physical button off"
+      },
+      "args": []
     }
   ],
   "conditions": [

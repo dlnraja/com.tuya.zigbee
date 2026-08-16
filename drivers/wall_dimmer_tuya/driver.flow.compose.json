@@ -46,6 +46,22 @@
         "en": "Brightness changed",
         "fr": "Luminosite changee"
       }
+    },
+    {
+      "id": "wall_dimmer_tuya_physical_on",
+      "title": {
+        "en": "Physical button on",
+        "fr": "Physical button on"
+      },
+      "args": []
+    },
+    {
+      "id": "wall_dimmer_tuya_physical_off",
+      "title": {
+        "en": "Physical button off",
+        "fr": "Physical button off"
+      },
+      "args": []
     }
   ],
   "conditions": [

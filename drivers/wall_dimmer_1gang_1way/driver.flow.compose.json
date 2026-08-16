@@ -105,6 +105,22 @@
       "titleFormatted": {
         "en": "Turned off physically - gang 1"
       }
+    },
+    {
+      "id": "wall_dimmer_1gang_1way_physical_on",
+      "title": {
+        "en": "Physical button on",
+        "fr": "Physical button on"
+      },
+      "args": []
+    },
+    {
+      "id": "wall_dimmer_1gang_1way_physical_off",
+      "title": {
+        "en": "Physical button off",
+        "fr": "Physical button off"
+      },
+      "args": []
     }
   ],
   "actions": [

@@ -1,0 +1,31 @@
+{
+  "id": "energy_power_above",
+  "title": {
+    "en": "Power is above [[threshold]] W",
+    "fr": "Puissance supérieure à [[threshold]] W",
+    "nl": "Vermogen is boven [[threshold]] W"
+  },
+  "hint": {
+    "en": "True when measure_power is above the threshold.",
+    "fr": "Vrai si measure_power est au-dessus du seuil."
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "capabilities=measure_power"
+    },
+    {
+      "name": "threshold",
+      "type": "number",
+      "title": {
+        "en": "Threshold (W)",
+        "fr": "Seuil (W)"
+      },
+      "min": 0,
+      "max": 100000,
+      "step": 1,
+      "value": 50
+    }
+  ]
+}

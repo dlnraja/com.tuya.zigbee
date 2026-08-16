@@ -46,6 +46,22 @@
         "en": "Humidity changed",
         "fr": "Humidité changée"
       }
+    },
+    {
+      "id": "climate_sensor_device_physical_on",
+      "title": {
+        "en": "Physical button on",
+        "fr": "Physical button on"
+      },
+      "args": []
+    },
+    {
+      "id": "climate_sensor_device_physical_off",
+      "title": {
+        "en": "Physical button off",
+        "fr": "Physical button off"
+      },
+      "args": []
     }
   ]
 }

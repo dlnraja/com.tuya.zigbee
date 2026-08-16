@@ -131,6 +131,22 @@
         "en": "Scene button pressed",
         "fr": "Bouton scène appuyé"
       }
+    },
+    {
+      "id": "remote_dimmer_physical_on",
+      "title": {
+        "en": "Physical button on",
+        "fr": "Physical button on"
+      },
+      "args": []
+    },
+    {
+      "id": "remote_dimmer_physical_off",
+      "title": {
+        "en": "Physical button off",
+        "fr": "Physical button off"
+      },
+      "args": []
     }
   ],
   "conditions": [],

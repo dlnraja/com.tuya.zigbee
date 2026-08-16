@@ -231,6 +231,22 @@
       "titleFormatted": {
         "en": "Gang 1 scene triggered"
       }
+    },
+    {
+      "id": "contact_sensor_switch_physical_on",
+      "title": {
+        "en": "Physical button on",
+        "fr": "Physical button on"
+      },
+      "args": []
+    },
+    {
+      "id": "contact_sensor_switch_physical_off",
+      "title": {
+        "en": "Physical button off",
+        "fr": "Physical button off"
+      },
+      "args": []
     }
   ],
   "conditions": [

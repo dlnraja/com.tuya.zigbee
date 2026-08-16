@@ -1,5 +1,22 @@
 {
-  "triggers": [],
+  "triggers": [
+    {
+      "id": "wifi_water_valve_physical_on",
+      "title": {
+        "en": "Physical button on",
+        "fr": "Physical button on"
+      },
+      "args": []
+    },
+    {
+      "id": "wifi_water_valve_physical_off",
+      "title": {
+        "en": "Physical button off",
+        "fr": "Physical button off"
+      },
+      "args": []
+    }
+  ],
   "conditions": [],
   "actions": []
 }

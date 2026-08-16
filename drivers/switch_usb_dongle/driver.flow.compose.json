@@ -52,6 +52,22 @@
         "en": "USB Port 2 is turned off",
         "fr": "Le port USB 2 est éteint"
       }
+    },
+    {
+      "id": "switch_usb_dongle_physical_on",
+      "title": {
+        "en": "Physical button on",
+        "fr": "Physical button on"
+      },
+      "args": []
+    },
+    {
+      "id": "switch_usb_dongle_physical_off",
+      "title": {
+        "en": "Physical button off",
+        "fr": "Physical button off"
+      },
+      "args": []
     }
   ],
   "conditions": [

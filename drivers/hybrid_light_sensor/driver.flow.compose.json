@@ -35,6 +35,22 @@
         "en": "Button pressed",
         "fr": "Bouton appuyé"
       }
+    },
+    {
+      "id": "hybrid_light_sensor_physical_on",
+      "title": {
+        "en": "Physical button on",
+        "fr": "Physical button on"
+      },
+      "args": []
+    },
+    {
+      "id": "hybrid_light_sensor_physical_off",
+      "title": {
+        "en": "Physical button off",
+        "fr": "Physical button off"
+      },
+      "args": []
     }
   ],
   "conditions": [

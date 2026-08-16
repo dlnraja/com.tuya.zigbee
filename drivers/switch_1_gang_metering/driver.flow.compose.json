@@ -23,6 +23,22 @@
         "en": "Turned off",
         "fr": "Eteint"
       }
+    },
+    {
+      "id": "switch_1_gang_metering_physical_on",
+      "title": {
+        "en": "Physical button on",
+        "fr": "Physical button on"
+      },
+      "args": []
+    },
+    {
+      "id": "switch_1_gang_metering_physical_off",
+      "title": {
+        "en": "Physical button off",
+        "fr": "Physical button off"
+      },
+      "args": []
     }
   ],
   "conditions": [

@@ -43,6 +43,22 @@
       "titleFormatted": {
         "en": "Button [[button]]"
       }
+    },
+    {
+      "id": "wall_remote_4_gang_2_physical_on",
+      "title": {
+        "en": "Physical button on",
+        "fr": "Physical button on"
+      },
+      "args": []
+    },
+    {
+      "id": "wall_remote_4_gang_2_physical_off",
+      "title": {
+        "en": "Physical button off",
+        "fr": "Physical button off"
+      },
+      "args": []
     }
   ]
 }

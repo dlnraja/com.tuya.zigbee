@@ -85,6 +85,38 @@
         "nl": "Batterij laag",
         "de": "Batterie schwach"
       }
+    },
+    {
+      "id": "valve_irrigation_physical_gang1_on",
+      "title": {
+        "en": "Physical gang 1 on",
+        "fr": "Physical gang 1 on"
+      },
+      "args": []
+    },
+    {
+      "id": "valve_irrigation_physical_gang1_off",
+      "title": {
+        "en": "Physical gang 1 off",
+        "fr": "Physical gang 1 off"
+      },
+      "args": []
+    },
+    {
+      "id": "valve_irrigation_physical_gang2_on",
+      "title": {
+        "en": "Physical gang 2 on",
+        "fr": "Physical gang 2 on"
+      },
+      "args": []
+    },
+    {
+      "id": "valve_irrigation_physical_gang2_off",
+      "title": {
+        "en": "Physical gang 2 off",
+        "fr": "Physical gang 2 off"
+      },
+      "args": []
     }
   ],
   "conditions": [

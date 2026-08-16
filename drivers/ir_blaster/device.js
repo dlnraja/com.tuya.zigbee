@@ -1,6 +1,6 @@
 'use strict';
 
-const { ZigBeeDevice } = require('homey-zigbeedriver');
+const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
 const { CLUSTER } = require('zigbee-clusters');
 
 // v5.8.52: Import Zosung clusters (registered at app startup in registerClusters.js)
@@ -78,7 +78,7 @@ const LEARNING_STATES = {
  * Learn: 0xE004 cmd 0x00 {"study":0} -> device LED on -> receive IR -> 0xED00 sequence
  * Send:  0xED00 cmd 0x00 (start) -> 0x02/0x03 (data chunks) -> 0x04/0x05 (done) -> IR emitted
  */
-class IrBlasterDevice extends ZigBeeDevice {
+class IrBlasterDevice extends TuyaZigbeeDevice {
 
   _getDeviceIdentity(zclNode = this._zclNode) {
     const data = this.getData?.() || {};

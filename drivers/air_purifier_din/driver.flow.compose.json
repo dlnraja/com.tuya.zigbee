@@ -153,6 +153,22 @@
         "nl": "Vermogen gewijzigd",
         "de": "Leistung geändert"
       }
+    },
+    {
+      "id": "air_purifier_din_physical_on",
+      "title": {
+        "en": "Physical button on",
+        "fr": "Physical button on"
+      },
+      "args": []
+    },
+    {
+      "id": "air_purifier_din_physical_off",
+      "title": {
+        "en": "Physical button off",
+        "fr": "Physical button off"
+      },
+      "args": []
     }
   ],
   "conditions": [

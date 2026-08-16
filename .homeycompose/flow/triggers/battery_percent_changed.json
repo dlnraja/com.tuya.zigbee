@@ -1,0 +1,30 @@
+{
+  "id": "battery_percent_changed",
+  "title": {
+    "en": "Battery percentage changed",
+    "fr": "Pourcentage batterie modifié",
+    "nl": "Batterijpercentage gewijzigd"
+  },
+  "hint": {
+    "en": "Fires when measure_battery updates (token: percent).",
+    "fr": "Déclenché quand measure_battery change (jeton: percent)."
+  },
+  "tokens": [
+    {
+      "name": "percent",
+      "type": "number",
+      "title": {
+        "en": "Percent",
+        "fr": "Pourcentage"
+      },
+      "example": 42
+    }
+  ],
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "capabilities=measure_battery"
+    }
+  ]
+}

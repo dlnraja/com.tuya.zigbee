@@ -235,6 +235,38 @@
       "titleFormatted": {
         "en": "Dynamic card switch_2gang_gangx_scene_b4ab3"
       }
+    },
+    {
+      "id": "switch_physical_gang1_on",
+      "title": {
+        "en": "Physical gang 1 on",
+        "fr": "Physical gang 1 on"
+      },
+      "args": []
+    },
+    {
+      "id": "switch_physical_gang1_off",
+      "title": {
+        "en": "Physical gang 1 off",
+        "fr": "Physical gang 1 off"
+      },
+      "args": []
+    },
+    {
+      "id": "switch_physical_gang2_on",
+      "title": {
+        "en": "Physical gang 2 on",
+        "fr": "Physical gang 2 on"
+      },
+      "args": []
+    },
+    {
+      "id": "switch_physical_gang2_off",
+      "title": {
+        "en": "Physical gang 2 off",
+        "fr": "Physical gang 2 off"
+      },
+      "args": []
     }
   ],
   "conditions": [

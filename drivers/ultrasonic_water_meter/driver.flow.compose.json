@@ -22,5 +22,23 @@
         "fr": "Batterie !{{faible|normale}}"
       }
     }
+  ],
+  "triggers": [
+    {
+      "id": "ultrasonic_water_meter_physical_on",
+      "title": {
+        "en": "Physical button on",
+        "fr": "Physical button on"
+      },
+      "args": []
+    },
+    {
+      "id": "ultrasonic_water_meter_physical_off",
+      "title": {
+        "en": "Physical button off",
+        "fr": "Physical button off"
+      },
+      "args": []
+    }
   ]
 }
