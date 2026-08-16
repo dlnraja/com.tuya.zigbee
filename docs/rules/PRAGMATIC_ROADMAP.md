@@ -23,7 +23,7 @@ Store name: **Universal Tuya** (Zigbee in description/tags). Not “Unified Engi
 
 | # | Action | Status |
 |---|--------|--------|
-| 1 | Publish tip + soak Peter OOM (`96c19859` → 9.0.541+) | Tip **9.0.541** Test #2862; soak open |
+| 1 | Publish tip + soak Peter OOM (`96c19859` → 9.0.541+) | Tip **9.0.543+**; RC fact-check `reports/P156_RC_LIVEDATA_SLEEPY_FACTCHECK_2026-08-16.md` |
 | 2 | Sacred couples / anti dual-claim | Ongoing — registry + `audit-sacred-couple.js` + `dual-claim-compose-gate.js` |
 | 3 | Enrich `user-misattribution-registry` from forum | Ongoing (P149–P152) |
 | 4 | Short GitHub docs (sacred couple, dual-app, troubleshooting) | Done / maintain |
@@ -37,10 +37,12 @@ node tools/ci/audit-sacred-couple.js --from-registry
 node tools/ci/dual-claim-compose-gate.js
 node tools/ci/energy-compose-gate.js
 node tools/ci/layer-pass-audit.js
+node tools/ci/homey-heap-json-gate.js
 node tools/ci/gmail-crash-pattern-gate.js --json
 ```
 
-Layer contracts: `docs/architecture/LAYERS_ENERGY_BUTTONS_FLOWS.md` (energy → buttons → flows, one pass at a time).
+Layer contracts: `docs/architecture/LAYERS_ENERGY_BUTTONS_FLOWS.md` (energy → buttons → flows, one pass at a time).  
+Heap / sleepy: `reports/P156_RC_LIVEDATA_SLEEPY_FACTCHECK_2026-08-16.md` · `reports/P157_HEAP_SLEEPY_PREVENTION_2026-08-16.md`
 
 ## Dual-app
 
