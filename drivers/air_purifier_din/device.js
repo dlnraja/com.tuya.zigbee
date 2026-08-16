@@ -6,7 +6,7 @@ const UnifiedSwitchBase = require('../../lib/devices/UnifiedSwitchBase');
 const { CLUSTER } = require('zigbee-clusters');
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
-const { safeSetTimeout } = require('../../lib/utils/safe-timers');
+const { safeSetTimeout, safeClearTimeout } = require('../../lib/utils/safe-timers');
 
 // Energy scaling divisors — ZCL raw attributes; Tuya-DP drivers use smartDivisor: true via SmartDivisorManager
 const ZCL_ENERGY_DIVISORS = {
@@ -70,7 +70,7 @@ class DinRailSwitchDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
 
   _markAppCommand() {
     this._appCommandPending = true;
-    clearTimeout(this._appCommandTimeout);
+    safeClearTimeout(this, this._appCommandTimeout);
     this._appCommandTimeout = safeSetTimeout(this, () => { if (this._destroyed) {return;} this._appCommandPending = false; }, 2000);
   }
 

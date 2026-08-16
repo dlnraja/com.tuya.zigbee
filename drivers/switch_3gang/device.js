@@ -1,4 +1,6 @@
 'use strict';
+
+const { safeSetTimeout, safeClearTimeout } = require('../../lib/utils/safe-timers');
 const UnifiedSwitchBase = require('../../lib/devices/UnifiedSwitchBase');
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
@@ -163,8 +165,8 @@ class Switch3GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
         this._lastCommandedGang = epNum;
         this._lastCommandTime = Date.now();
         this._zclState.pending[epNum] = true;
-        clearTimeout(this._zclState.timeout[epNum]);
-        this._zclState.timeout[epNum] = this.homey.setTimeout(() => { if (this._destroyed) {return;} this._zclState.pending[epNum] = false; }, 2000);
+        safeClearTimeout(this, this._zclState.timeout[epNum]);
+        this._zclState.timeout[epNum] = safeSetTimeout(this, () => { if (this._destroyed) {return;} this._zclState.pending[epNum] = false; }, 2000);
         
         // v5.11.29: Use writeAttributes instead of setOn/setOff (Z2M #27167, ZHA #2443)
         // TS0726 FW broadcasts ZCL commands to all EPs but routes attr writes per-EP
@@ -316,7 +318,7 @@ class Switch3GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
   onDeleted() {
     if (this._zclState?.timeout) {
       for (const epNum of [1, 2, 3]) {
-        if (this._zclState.timeout[epNum]) {clearTimeout(this._zclState.timeout[epNum]);}
+        if (this._zclState.timeout[epNum]) {safeClearTimeout(this, this._zclState.timeout[epNum]);}
       }
     }
     if (super.onDeleted) {super.onDeleted();}

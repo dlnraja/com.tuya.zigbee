@@ -1,4 +1,6 @@
 'use strict';
+
+const { safeSetTimeout, safeClearTimeout } = require('../../lib/utils/safe-timers');
 const { safeParse, safeMultiply } = require('../../lib/utils/tuyaUtils.js');
 
 const UnifiedSwitchBase = require('../../lib/devices/UnifiedSwitchBase');
@@ -134,7 +136,7 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
         this._lastCommandedGang = epNum;
         this._lastCommandTime = Date.now();
         this._zclState.pending[epNum] = true;
-        clearTimeout(this._zclState.timeout[epNum]);
+        safeClearTimeout(this, this._zclState.timeout[epNum]);
         this._zclState.timeout[epNum] = (this.homey && typeof this.homey.setTimeout === 'function' ? this.homey : globalThis).setTimeout(() => { if (this._destroyed) {return;} this._zclState.pending[epNum] = false; }, 2000);
         
         const onOff = getOnOffCluster(epNum);
@@ -229,7 +231,7 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
   onDeleted() {
     if (this._zclState?.timeout) {
       for (const epNum of [1, 2]) {
-        if (this._zclState.timeout[epNum]) {clearTimeout(this._zclState.timeout[epNum]);}
+        if (this._zclState.timeout[epNum]) {safeClearTimeout(this, this._zclState.timeout[epNum]);}
       }
     }
     super.onDeleted?.();

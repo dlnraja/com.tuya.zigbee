@@ -1,4 +1,6 @@
 'use strict';
+
+const { safeSetTimeout, safeClearTimeout } = require('../../lib/utils/safe-timers');
 const UnifiedSwitchBase = require('../../lib/devices/UnifiedSwitchBase');
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 const { includesCI } = require('../../lib/utils/CaseInsensitiveMatcher');
@@ -87,8 +89,8 @@ class Switch7GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
       const capName = epNum === 1 ? 'onoff' : `onoff.gang${epNum}`;
       this.registerCapabilityListener(capName, async (value) => {
         this._zclState.pending[epNum] = true;
-        clearTimeout(this._zclState.timeout[epNum]);
-        this._zclState.timeout[epNum] = this.homey.setTimeout(() => { if (this._destroyed) {return;} this._zclState.pending[epNum] = false; }, 2000);
+        safeClearTimeout(this, this._zclState.timeout[epNum]);
+        this._zclState.timeout[epNum] = safeSetTimeout(this, () => { if (this._destroyed) {return;} this._zclState.pending[epNum] = false; }, 2000);
         const onOff = getOnOffCluster(epNum);
         if (onOff) {await onOff[value ? 'setOn' : 'setOff']();}
         return true;
@@ -155,7 +157,7 @@ class Switch7GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
   onDeleted() {
     if (this._zclState?.timeout) {
       for (let i = 1; i <= 7; i++) {
-        if (this._zclState.timeout[i]) {clearTimeout(this._zclState.timeout[i]);}
+        if (this._zclState.timeout[i]) {safeClearTimeout(this, this._zclState.timeout[i]);}
       }
     }
     super.onDeleted?.();

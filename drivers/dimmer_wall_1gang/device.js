@@ -1,5 +1,7 @@
 'use strict';
 
+const { safeSetTimeout, safeClearTimeout } = require('../../lib/utils/safe-timers');
+
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 const LightBase = require('../../lib/devices/UnifiedLightBase');
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
@@ -71,8 +73,8 @@ class DimmerWall1GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(Light
 
   _markAppCommand() {
     this._appCommandPending = true;
-    clearTimeout(this._appCommandTimeout);
-    this._appCommandTimeout = this.homey.setTimeout(() => { if (this._destroyed) {return;} this._appCommandPending = false; }, 2000);
+    safeClearTimeout(this, this._appCommandTimeout);
+    this._appCommandTimeout = safeSetTimeout(this, () => { if (this._destroyed) {return;} this._appCommandPending = false; }, 2000);
   }
 
   _setOnOff(value) { this._markAppCommand(); return super._setOnOff(value); }
@@ -119,7 +121,7 @@ class DimmerWall1GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(Light
   }
 
   onDeleted() {
-    clearTimeout(this._appCommandTimeout);
+    safeClearTimeout(this, this._appCommandTimeout);
     if (super.onDeleted) {super.onDeleted();}
   }
 }

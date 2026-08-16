@@ -1,5 +1,7 @@
 'use strict';
 
+const { safeSetTimeout, safeClearTimeout } = require('../../lib/utils/safe-timers');
+
 let UnifiedSwitchBase;
 try {
   UnifiedSwitchBase = require('../../lib/devices/UnifiedSwitchBase');
@@ -130,8 +132,8 @@ class Switch4GangDevice extends BaseClass {
         this._lastCommandedGang = epNum;
         this._lastCommandTime = Date.now();
         this._zclState.pending[epNum] = true;
-        clearTimeout(this._zclState.timeout[epNum]);
-        this._zclState.timeout[epNum] = this.homey.setTimeout(() => { if (this._destroyed) {return;} this._zclState.pending[epNum] = false; }, 2000);
+        safeClearTimeout(this, this._zclState.timeout[epNum]);
+        this._zclState.timeout[epNum] = safeSetTimeout(this, () => { if (this._destroyed) {return;} this._zclState.pending[epNum] = false; }, 2000);
         
         const onOff = getOnOffCluster(epNum);
         if (onOff && typeof onOff.writeAttributes === 'function') {
@@ -274,7 +276,7 @@ class Switch4GangDevice extends BaseClass {
   onDeleted() {
     if (this._zclState?.timeout) {
       for (const epNum in this._zclState.timeout) {
-        if (this._zclState.timeout[epNum]) {clearTimeout(this._zclState.timeout[epNum]);}
+        if (this._zclState.timeout[epNum]) {safeClearTimeout(this, this._zclState.timeout[epNum]);}
       }
     }
     super.onDeleted?.();
