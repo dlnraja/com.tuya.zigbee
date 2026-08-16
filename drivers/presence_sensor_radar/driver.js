@@ -42,10 +42,10 @@ class PresenceSensorRadarDriver extends ZigBeeDriver {
             if (!args.device) {return false;}
             return fn(args);
           });
-          this.log(`[FLOW] ✅ Condition ${id} registered`);
+          this.log(`[FLOW] Condition ${id} registered`);
         }
       } catch (err) {
-        if (this.developerDebugMode) { this.error(`[FLOW] ⚠️ Condition ${id} registration error: ${err.message}`); }
+        if (this.developerDebugMode) { this.error(`[FLOW] Condition ${id} registration error: ${err.message}`); }
       }
     }
 

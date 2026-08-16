@@ -1,6 +1,17 @@
-# App quality vision + forum synthesis (P142→P143) — 2026-08-16
+# App quality vision + forum synthesis (P142→P145) — 2026-08-16
 
 Silent enrichment only (T157628). No forum posts.
+
+## Status checklist (tip)
+
+| Change | Effect | Tip status |
+|--------|--------|------------|
+| Name → **Universal Tuya** (Zigbee in description/tags) | Clear, honest store identity | OK — Athom discourages protocol words *in the name* |
+| Description / tags recentered Tuya Zigbee | End multi-brand soup | OK |
+| 12 `air_purifier_*` → `deprecated` + sentinel mfrs | Out of useful pairing | OK (sentinels re-asserted when auto-fix emptied them) |
+| README de-hyped | Less marketing | OK |
+| Radar/contact logs without emoji | Readable diags | OK (radar leftovers stripped) |
+| Hybrid MF restore scripts skip these drivers | Prevent regression | OK (`restore-master-only-hybrid-mfs` + `restore-hybrid-drivers`) |
 
 ## What users mean by “AI slop / messy”
 

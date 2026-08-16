@@ -139,6 +139,12 @@ emptyDrivers.forEach(driverId => {
   }
   
   if (!compose.zigbee) return;
+
+  // P142: never revive deprecated synthetic air_purifier_* hybrids
+  if (compose.deprecated === true || /^air_purifier_/.test(driverId)) {
+    console.log(`  skip ${driverId}: deprecated / P142 hybrid`);
+    return;
+  }
   
   // Chercher les MFs: d'abord stable-v5, puis DB
   let mfs = getStableMFs(driverId);

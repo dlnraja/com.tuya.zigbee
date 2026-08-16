@@ -175,7 +175,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
           bound++;
         }
       }
-      this.log(`[RADAR] 📡 Cluster binding initiated (${bound} clusters)`);
+      this.log(`[RADAR] Cluster binding initiated (${bound} clusters)`);
     } catch (e) {
       this.log('[RADAR] Cluster binding skipped:', e.message);
     }
@@ -310,7 +310,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
         if (!this._zeroFilterLogCount) {this._zeroFilterLogCount = 0;}
         this._zeroFilterLogCount++;
         if (this._zeroFilterLogCount <= 3 || this._zeroFilterLogCount % 60 === 0) {
-          this.log(`[RADAR] 🛡️ Zero-value report dropped (ZY-M100 firmware bug, DP${dp})`);
+          this.log(`[RADAR] Zero-value report dropped (ZY-M100 firmware bug, DP${dp})`);
         }
         return;
       }
@@ -622,7 +622,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
         value = this._toRadarDPValue(value, dpConfig);
         const dpType = this._getRadarDPType(dpConfig);
         
-        this.log(`[RADAR] ⚙️ Syncing ${key} → DP${dpId} value=${value}`);
+        this.log(`[RADAR] Syncing ${key} → DP${dpId} value=${value}`);
         const sent = await this._sendRadarDP(parseInt(dpId, 10), value, dpType);
         if (!sent) {
           this.error(`[RADAR] Failed syncing ${key} to DP${dpId}`);
