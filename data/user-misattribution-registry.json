@@ -54,6 +54,44 @@
         "master": { "static": true, "dynamic": true },
         "stable": { "static": true, "dynamic": false }
       }
+    },
+    {
+      "id": "presentsky-bseed-dimmer-m1cvyneb",
+      "mfr": [
+        "_TZE284_m1cvyneb",
+        "_tze284_m1cvyneb",
+        "_TZE204_m1cvyneb",
+        "_TZE200_m1cvyneb"
+      ],
+      "productId": ["TS0601"],
+      "canonicalDriver": "wall_dimmer_tuya",
+      "forbiddenDrivers": [
+        "climate_sensor",
+        "climate_sensor_temperature",
+        "thermostat",
+        "air_purifier_climate"
+      ],
+      "protocol": "tuya_ef00",
+      "notes": "PresentSky / forum: wall dimmer wrongly paired as temperature sensor. Re-pair required after FP lock.",
+      "sources": ["forum-140352", "diag-f20dc4f0", "P139", "P149"],
+      "tracks": {
+        "master": { "static": true, "dynamic": true },
+        "stable": { "static": true, "dynamic": false }
+      }
+    },
+    {
+      "id": "tboy-relay-4ch-imaccztn",
+      "mfr": ["_TZ3210_imaccztn", "_tz3210_imaccztn"],
+      "productId": ["TS0004"],
+      "canonicalDriver": "relay_board_4_channel",
+      "forbiddenDrivers": ["switch_4gang", "switch_1gang", "socket"],
+      "protocol": "zcl",
+      "notes": "TBoy #2131 — 4-channel relay board, not a simple switch.",
+      "sources": ["forum-140352", "P139", "P149"],
+      "tracks": {
+        "master": { "static": true, "dynamic": true },
+        "stable": { "static": true, "dynamic": false }
+      }
     }
   ]
 }

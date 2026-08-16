@@ -119,6 +119,13 @@ const KNOWN_PATTERNS = [
     fix: 'clusterUtils free functions must not close over this; use globalThis.setTimeout only',
     status: 'fixed_p137',
   },
+  {
+    id: 'heap_oom_live_data',
+    severity: 'fatal',
+    re: /JavaScript heap out of memory|Ineffective mark-compacts near heap limit|Reached heap limit Allocation failed/i,
+    fix: 'LiveDataUpdater: cap overlay (1500), store ≤180KB, manifest version check before segments, heap skip (P148)',
+    status: 'fixed_p148',
+  },
 ];
 
 function readJson(p) {
@@ -141,6 +148,15 @@ function collectTextBlobs() {
     path.join(ROOT, 'tmp', 'gmail-art', '.github', 'state', 'diagnostics-report.json'),
     path.join(ROOT, 'tmp', 'gmail-art', 'diagnostics', 'summary.json'),
   ];
+
+  // Homey App Store crash dumps (manual Log IDs)
+  const diagDir = path.join(ROOT, '.github', 'state', 'homey-app-diag');
+  if (fs.existsSync(diagDir)) {
+    for (const name of fs.readdirSync(diagDir)) {
+      if (!name.endsWith('.sanitized.json') && !name.endsWith('.raw-stack.txt')) continue;
+      candidates.push(path.join(diagDir, name));
+    }
+  }
 
   for (const p of candidates) {
     if (!fs.existsSync(p)) continue;
