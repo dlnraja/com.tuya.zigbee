@@ -17,10 +17,12 @@ const { includesCI } = require('../../lib/utils/CaseInsensitiveMatcher');
  * 4-GANG SWITCH - v5.9.23
  */
 
+// P141: _TYZB01_bagt1e4o + TS0014 — Oz Smart Things 4-gang; EndDevice, ZCL OnOff only.
 const ZCL_ONLY_MANUFACTURERS_4G = [
   '_TZ3002_pzao9ls1', '_TZ3002_vaq2bfcu', '_TZ3000_blhvsaqf',
   '_TZ3000_ysdv91bk', '_TZ3000_hafsqare', '_TZ3000_e98krvvk',
-  '_TZ3000_qkixdnon', '_TZ3000_xk5udnd6', '_TZ3000_bseed'
+  '_TZ3000_qkixdnon', '_TZ3000_xk5udnd6', '_TZ3000_bseed',
+  '_TYZB01_bagt1e4o',
 ];
 
 const BaseClass = typeof UnifiedSwitchBase === 'function' 
@@ -89,6 +91,12 @@ class Switch4GangDevice extends BaseClass {
 
   async _initZclOnlyMode(zclNode) {
     await this._migrateCapabilities().catch(() => {});
+    // P141: TS001x ZCL-only — no electricalMeasurement; strip phantom energy caps
+    for (const phantom of ['measure_power', 'measure_voltage', 'measure_current', 'meter_power']) {
+      if (this.hasCapability(phantom)) {
+        await this.removeCapability(phantom).catch(e => this.log(`[BSEED-4G] strip ${phantom}: ${e.message}`));
+      }
+    }
 
     const cs = (ep) => { try { return this.getCapabilityValue(ep === 1 ? 'onoff' : `onoff.gang${ep}`); } catch { return null; } };
     this._zclState = {

@@ -26,10 +26,13 @@ const { includesCI } = require('../../lib/utils/CaseInsensitiveMatcher');
 // ZCL-Only manufacturers (no Tuya DP) - forum: Pieter_Pessers BSEED 2-gang
 // P139: _TZ3000_w5xztuy7 (Kanbros #2130) — TS0002 touch 2-gang; only EP1 worked
 // until forced into multi-endpoint ZCL onOff path (same family as other BSEED).
+// P141: TYZB01 TS0012 family (Oz/Lonsonho/Moes) — pure multi-EP OnOff (0/4/5/6),
+// EndDevice even with neutral; no 0xEF00 / no electricalMeasurement (Z2M TS0012).
 const ZCL_ONLY_MANUFACTURERS_2G = [
   '_TZ3000_l9brjwau', '_TZ3000_blhvsaqf', '_TZ3000_ysdv91bk',
   '_TZ3000_hafsqare', '_TZ3000_e98krvvk', '_TZ3000_iedbgyxt',
   '_TZ3000_cauq1okq', '_TZ3000_w5xztuy7',
+  '_TYZB01_6g8b7at8', '_TYZB01_vzrytttn',
 ];
 
 class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSwitchBase)) {
@@ -320,6 +323,12 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
    */
   async _initZclOnlyMode(zclNode) {
     await this._migrateCapabilities().catch(e => this.log(`[BSEED-2G] ⚠️ Migrate: ${e.message}`));
+    // P141: TS001x / BSEED ZCL-only have no 0x0B04/0x0702 — strip phantom energy UI
+    for (const phantom of ['measure_power', 'measure_voltage', 'measure_current', 'meter_power']) {
+      if (this.hasCapability(phantom)) {
+        await this.removeCapability(phantom).catch(e => this.log(`[BSEED-2G] strip ${phantom}: ${e.message}`));
+      }
+    }
 
     this._registerCapabilityListeners();
 

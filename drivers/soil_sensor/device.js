@@ -111,7 +111,22 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
   get dpMappings() {
     return {
       1: { capability: 'measure_temperature', smartDivisor: true },
-      2: { capability: 'measure_humidity.soil', divisor: 1 }, // Alt moisture (Z2M DP mapping)
+      // Most soils: DP2 = alt moisture. SGS02Z `_TZE284_nt4pquef`: DP2 = illuminance enum (Z2M).
+      2: {
+        capability: 'measure_humidity.soil',
+        divisor: 1,
+        transform: (value) => {
+          const mfr = (this.getSetting?.('zb_manufacturer_name') || '').toLowerCase();
+          if (mfr.includes('nt4pquef')) {
+            const lux = { 0: 10, 1: 50, 2: 200, 3: 500, 4: 1000 }[value];
+            if (lux != null && this.hasCapability('measure_luminance')) {
+              this.safeSetCapabilityValue('measure_luminance', lux).catch(() => {});
+            }
+            return null; // do not treat illuminance enum as soil %
+          }
+          return value;
+        },
+      },
       3: {
         capability: 'measure_humidity.soil',
         transform: (value) => this.isSgabhwa6Variant ? safeDivide(value, 10) : value,

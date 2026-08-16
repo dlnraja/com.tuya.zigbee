@@ -14,10 +14,12 @@ const { includesCI } = require('../../lib/utils/CaseInsensitiveMatcher');
 
 // ZCL-Only manufacturers (no Tuya DP) - forum: Pieter_Pessers BSEED 3-gang
 // Issue #170: _TZ3000_v4l4b0lp TS0003 confirmed ZCL-only (OnOff per EP, no Tuya DP 0xEF00)
+// P141: _TYZB01_mqel1whf + TS0013 — Lonsonho/Oz L+N 3-gang; EndDevice, ZCL OnOff only.
 const ZCL_ONLY_MANUFACTURERS_3G = [
   '_TZ3000_qkixdnon', '_TZ3000_blhvsaqf', '_TZ3000_ysdv91bk',
   '_TZ3000_hafsqare', '_TZ3000_e98krvvk', '_TZ3000_iedbgyxt',
-  '_TZ3000_v4l4b0lp', '_TZ3000_iol4bl2y'
+  '_TZ3000_v4l4b0lp', '_TZ3000_iol4bl2y',
+  '_TYZB01_mqel1whf',
 ];
 
 class Switch3GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSwitchBase)) {
@@ -131,6 +133,13 @@ class Switch3GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
     };
     this._zclNode = zclNode;
     this._isZclOnlyMode = true; // v5.5.993: Flag for VirtualButtonMixin direct ZCL
+
+    // P141: TS001x ZCL-only — no electricalMeasurement; strip phantom energy caps
+    for (const phantom of ['measure_power', 'measure_voltage', 'measure_current', 'meter_power']) {
+      if (this.hasCapability(phantom)) {
+        await this.removeCapability(phantom).catch(e => this.log(`[BSEED-3G] strip ${phantom}: ${e.message}`));
+      }
+    }
 
     // v5.9.23: GROUP ISOLATION — remove all Zigbee group memberships per EP
     await this._removeGroupMemberships(zclNode);
