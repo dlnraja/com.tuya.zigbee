@@ -2245,5 +2245,8 @@
   },
   "9.0.569": {
     "en": "Stability improvements and Homey test publication retry after transient processing failure."
+  },
+  "9.0.570": {
+    "en": "Energy/battery/button flows and universal layer coverage; Athom republish after 9.0.569 processing_failed."
   }
 }
