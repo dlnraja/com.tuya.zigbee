@@ -1,5 +1,6 @@
 'use strict';
 const { safeDivide, safeMultiply } = require('../../lib/utils/tuyaUtils.js');
+const { safeSetInterval, safeClearInterval, safeClearTimeout } = require('../../lib/utils/safe-timers');
 
 const UnifiedPlugBase = require('../../lib/devices/UnifiedPlugBase');
 const { getDeviceConfig, transformDpValue, ENERGY_CONFIGS } = require('../../lib/configs/IntelligentDeviceConfig');
@@ -144,7 +145,7 @@ const ENERGY_DEVICE_CONFIGS = {
 // Build manufacturer -> config lookup
 const ENERGY_CONFIG_MAP = {};
 for (const [configName, config] of Object.entries(ENERGY_DEVICE_CONFIGS)) {
-  for (const mfr of (config.sensors || [])) {
+  for (const mfr of config.sensors || []) {
     ENERGY_CONFIG_MAP[mfr] = { ...config, configName };
   }
 }
@@ -339,7 +340,7 @@ class EnergyMonitorPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
    */
   async _setupZclEnergy(zclNode, config) {
     const ep1 = zclNode?.endpoints?.[1];
-    if (!ep1 ) return;
+    if (!ep1 ) {return;}
 
     const zclAttrs = config.zclAttrs || {};
 
@@ -401,7 +402,7 @@ class EnergyMonitorPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
       const mc = ep1.clusters?.metering || ep1.clusters?.seMetering;
       const baseEDiv = zclAttrs.energy?.divisor || 100;const parseE = (v) => {
         const raw = typeof v === 'object' ? v[0] || 0 : v;
-        const eScale = parseFloat(this.getSetting?.('meter_power_scale')) || 1;return safeDivide(((raw, safeMultiply)(baseEDiv)), eScale);
+        const eScale = parseFloat(this.getSetting?.('meter_power_scale')) || 1;return safeDivide((raw, safeMultiply)(baseEDiv), eScale);
       };
       if (mc && zclAttrs.energy) {
         if (mc.on) {
@@ -413,8 +414,8 @@ class EnergyMonitorPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
         }
         // v5.11.26: Poll metering  many TS011F don't auto-report energy
         if (mc.readAttributes) {
-          this._meterPoll = this.homey.setInterval(async () => {
-            if (this._destroyed) return;
+          this._meterPoll = safeSetInterval(this, async () => {
+            if (this._destroyed) {return;}
             try {
               const a = await mc.readAttributes(['currentSummDelivered']).catch(() => null);
               if (a?.currentSummDelivered !== undefined) {
@@ -422,7 +423,7 @@ class EnergyMonitorPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
                 await this.safeSetCapabilityValue('meter_power', parseFloat(e)).catch(() => { });
               }
             } catch (_) {}
-          }); // v5.12.12: increased from 60s to 120s
+          }, 120000); // v5.12.12: increased from 60s to 120s
         }
         // v5.12.5: also try configureReporting for metering
         if (mc.configureReporting) {
@@ -439,12 +440,23 @@ class EnergyMonitorPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
 
   async onDeleted() {
     this._destroyed = true;
+    if (this._meterPoll) { safeClearInterval(this, this._meterPoll); this._meterPoll = null; }
+    if (this._interval) { safeClearInterval(this, this._interval); this._interval = null; }
+    if (this._timer) { safeClearTimeout(this, this._timer); this._timer = null; }
+    if (this._pollInterval) { safeClearInterval(this, this._pollInterval); this._pollInterval = null; }
     await super.onDeleted();
-    // Clean up timers to prevent memory leaks
-    if (this._interval) { clearInterval(this._interval); this._interval = null; }
-    if (this._timer) { clearTimeout(this._timer); this._timer = null; }
-    if (this._pollInterval) { clearInterval(this._pollInterval); this._pollInterval = null; }
     this.log('Device deleted, cleaning up');
+  }
+
+  async onUninit() {
+    this._destroyed = true;
+    if (this._meterPoll) { safeClearInterval(this, this._meterPoll); this._meterPoll = null; }
+    if (this._interval) { safeClearInterval(this, this._interval); this._interval = null; }
+    if (this._timer) { safeClearTimeout(this, this._timer); this._timer = null; }
+    if (this._pollInterval) { safeClearInterval(this, this._pollInterval); this._pollInterval = null; }
+    if (typeof super.onUninit === 'function') {
+      await super.onUninit();
+    }
   }
 }
 

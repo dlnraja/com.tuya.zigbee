@@ -3,6 +3,8 @@ const { safeDivide } = require('../../lib/utils/tuyaUtils.js');
 // v5.12.8: WiFi Camera Device - Tuya IPC with local control + RTSP/snapshot streaming
 const Homey = require('homey');
 const TuyaCameraClient = require('../../lib/tuya-camera/TuyaCameraClient');
+const { safeSetCapabilityValue } = require('../../lib/utils/SafeCapability');
+const { safeSetTimeout, safeClearTimeout, safeSetInterval, safeClearInterval } = require('../../lib/utils/safe-timers');
 
 // Tuya IPC DataPoints
 const DP = {
@@ -32,6 +34,7 @@ class WiFiCameraDevice extends Homey.Device {
 
   async onInit() {
     this.log('[WIFI-CAM] Initializing:', this.getName());
+    this._destroyed = false;
     this._cloudClient = null;
     this._video = null;
     this._image = null;
@@ -87,7 +90,7 @@ class WiFiCameraDevice extends Homey.Device {
         id: s.device_id,
         key: s.local_key,
         ip: s.ip || undefined,
-        version: s.protocol_version || '3.4',
+        version: (!s.protocol_version || s.protocol_version === 'auto') ? '3.3' : s.protocol_version,
         issueRefreshOnConnect: true,
       });
       this._tuyaDevice.on('connected', () => {
@@ -116,10 +119,10 @@ class WiFiCameraDevice extends Homey.Device {
   }
 
   _scheduleReconnect() {
-    if (this._destroyed) return;
-    if (this._reconnectTimer) {this.homey.clearTimeout(this._reconnectTimer);}
-    this._reconnectTimer = this.homey.setTimeout(async () => {
-      if (this._destroyed) return;
+    if (this._destroyed) {return;}
+    if (this._reconnectTimer) {safeClearTimeout(this, this._reconnectTimer);}
+    this._reconnectTimer = safeSetTimeout(this, async () => {
+      if (this._destroyed) {return;}
       if (this._tuyaDevice && !this._tuyaDevice.isConnected()) {
         try {
           await this._tuyaDevice.find({ timeout: 10000 });
@@ -132,8 +135,8 @@ class WiFiCameraDevice extends Homey.Device {
   }
 
   _onDPData(data) {
-    if (this._destroyed) {return;}
     if (!data || !data.dps) {return;}
+    if (this._destroyed) {return;}
     const dps = data.dps;
     
     if (dps[DP.MOTION_ALARM] !== undefined || dps[DP_ALT.MOTION_ALARM] !== undefined) {
@@ -141,13 +144,13 @@ class WiFiCameraDevice extends Homey.Device {
       const now = Date.now();
       if (motion && now - this._lastMotionTime > 5000) {
         this._lastMotionTime = now;
-        this.safeSetCapabilityValue('alarm_motion', true).catch(() => {});
-        this.homey.setTimeout(() => { if (this._destroyed) return; this.safeSetCapabilityValue('alarm_motion', false).catch(() => {}); }, 30000);
+        safeSetCapabilityValue(this, 'alarm_motion', true).catch(() => {});
+        safeSetTimeout(this, () => { if (this._destroyed) {return;} safeSetCapabilityValue(this, 'alarm_motion', false).catch(() => {}); }, 30000);
       }
     }
 
     if (dps[DP.PRIVACY_MODE] !== undefined) {
-      this.safeSetCapabilityValue('onoff', !dps[DP.PRIVACY_MODE]).catch(() => {});
+      safeSetCapabilityValue(this, 'onoff', !dps[DP.PRIVACY_MODE]).catch(() => {});
     }
   }
 
@@ -191,8 +194,10 @@ class WiFiCameraDevice extends Homey.Device {
   }
 
   _startRTSPRefresh() {
-    if (this._rtspRefreshTimer) {clearInterval(this._rtspRefreshTimer);}
-    this._rtspRefreshTimer = this.homey.setInterval(() => {
+    if (this._destroyed) {return;}
+    if (this._rtspRefreshTimer) {safeClearInterval(this, this._rtspRefreshTimer);}
+    this._rtspRefreshTimer = safeSetInterval(this, () => {
+      if (this._destroyed) {return;}
       this._allocateCloudRTSP().catch(e => this.error(e));
     }, RTSP_REFRESH_INTERVAL);
   }
@@ -281,12 +286,12 @@ class WiFiCameraDevice extends Homey.Device {
   }
 
   _stopTimers() {
-    if (this._rtspRefreshTimer) { clearInterval(this._rtspRefreshTimer); this._rtspRefreshTimer = null; }
-    if (this._snapshotTimer) { clearInterval(this._snapshotTimer); this._snapshotTimer = null; }
+    if (this._rtspRefreshTimer) { safeClearInterval(this, this._rtspRefreshTimer); this._rtspRefreshTimer = null; }
+    if (this._snapshotTimer) { safeClearInterval(this, this._snapshotTimer); this._snapshotTimer = null; }
   }
 
   _destroyLocalConnection() {
-    if (this._reconnectTimer) {clearTimeout(this._reconnectTimer);}
+    if (this._reconnectTimer) {safeClearTimeout(this, this._reconnectTimer); this._reconnectTimer = null;}
     if (this._tuyaDevice) {
       try {
         this._tuyaDevice.removeAllListeners();
@@ -298,9 +303,19 @@ class WiFiCameraDevice extends Homey.Device {
   }
 
   async onDeleted() {
-    await super.onDeleted();
+    this._destroyed = true;
     this._stopTimers();
     this._destroyLocalConnection();
+    await super.onDeleted();
+  }
+
+  async onUninit() {
+    this._destroyed = true;
+    this._stopTimers();
+    this._destroyLocalConnection();
+    if (typeof super.onUninit === 'function') {
+      await super.onUninit();
+    }
   }
 
   _registerFlowCards() {
@@ -314,7 +329,7 @@ class WiFiCameraDevice extends Homey.Device {
       const ptzCard = (() => { try { return this.homey.flow.getActionCard('wifi_camera_ptz_move'); } catch (e) { return null; } })();
       if (ptzCard) {ptzCard.registerRunListener(async (args) => {
         await this._setDP(DP.PTZ_CONTROL, args.direction);
-        this.homey.setTimeout(() => { if (this._destroyed) return; this._setDP(DP.PTZ_STOP, true).catch(() => {}); }, 1000);
+        safeSetTimeout(this, () => { if (this._destroyed) {return;} this._setDP(DP.PTZ_STOP, true).catch(() => {}); }, 1000);
       });}
     } catch (e) { this.error('[WIFI-CAM] Flow card registration:', e.message); }
   }
