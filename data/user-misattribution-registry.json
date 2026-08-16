@@ -289,7 +289,7 @@
         "soilsensor_2"
       ],
       "protocol": "tuya_ef00",
-      "notes": "HOBEIAN ZG-303Z / _TZE200_wqashyqo soil. nt4pquef stays on case soil-nt4pquef (TS0601 only) to avoid registry flip-flop.",
+      "notes": "HOBEIAN ZG-303Z / _TZE200_wqashyqo soil. Bare HOBEIAN brand stripped from non-ZG drivers (P179). nt4pquef stays on soil-nt4pquef.",
       "sources": ["z2m-ZG-303Z", "forum-blutch32", "P178"],
       "tracks": {
         "master": { "static": true, "dynamic": true },

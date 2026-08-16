@@ -86,6 +86,7 @@ jobs:
           node tools/ci/mfs-db-dedupe.js --apply || true
           node tools/ci/align-mfs-db-intelligent.js --apply || true
           node tools/ci/compose-mfsdb-class-guard.js || true
+          node tools/ci/max-coverage-investigate.js || true
 
       - name: 📦 Refresh native firmware updates (Homey 13.2+)
         continue-on-error: true

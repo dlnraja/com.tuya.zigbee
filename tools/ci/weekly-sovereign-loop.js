@@ -177,6 +177,10 @@ function main() {
   report.gates.bareZigbee = nodeGate('tools/ci/bare-zigbee-device-gate.js');
   report.gates.doubleDivision = nodeGate('tools/ci/adaptive-double-division-gate.js', ['--hard']);
   report.gates.voice = nodeGate('scripts/validation/check-google-assistant-voice-safety.js');
+  report.gates.dualClaim = nodeGate('tools/ci/dual-claim-compose-gate.js', ['--strict']);
+  report.gates.alignMfs = nodeGate('tools/ci/align-mfs-db-intelligent.js', ['--check']);
+  report.gates.heapJson = nodeGate('tools/ci/homey-heap-json-gate.js');
+  report.gates.maxCoverage = nodeGate('tools/ci/max-coverage-investigate.js');
 
   report.homeyTest = checkHomeyTestPage();
   report.runs = recentRuns(15);

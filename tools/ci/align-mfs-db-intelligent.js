@@ -178,15 +178,34 @@ function enforceRegistryCompose(registry, changes, highSeverity) {
   }
 }
 
+function sortedPids(list) {
+  return [...new Set([].concat(list || []).map(String).filter(Boolean))].sort((a, b) =>
+    a.localeCompare(b));
+}
+
+function fmtSide(v) {
+  if (v == null) return '';
+  if (typeof v === 'object') {
+    try {
+      return JSON.stringify(v);
+    } catch {
+      return String(v);
+    }
+  }
+  return String(v);
+}
+
 function align(db, compose, registry) {
   const changes = [];
   const skipped = [];
   const highSeverity = [];
 
-  // --- Priority 1: registry → mfs_db locks ---
+  // --- Priority 1: registry → mfs_db locks (merge multi-case same mfr) ---
+  /** @type {Map<string, {canon:string, pids:string[], caseIds:string[]}>} */
+  const registryByMfr = new Map();
   for (const c of registry.cases || []) {
     const canon = c.canonicalDriver;
-    const pids = [].concat(c.productId || []).filter(Boolean);
+    const pids = sortedPids(c.productId);
     if (!canon || !compose.driverExists.has(canon)) {
       skipped.push({ reason: 'registry_driver_missing', caseId: c.id, canon });
       continue;
@@ -194,49 +213,71 @@ function align(db, compose, registry) {
     for (const m of [].concat(c.mfr || [])) {
       const nm = norm(m);
       if (!nm || SYNTHETIC_RX.test(m)) continue;
-      let key = findDbKey(db, nm);
-      if (!key) {
-        key = preferredMfrKey([m, ...(compose.mfrCasings.get(nm) || [])]);
-        ensureEntry(db, key);
-        changes.push({
-          severity: 'high',
-          action: 'create_from_registry',
-          mfr: key,
-          driverId: canon,
-          modelIds: pids,
-          caseId: c.id,
-        });
-        highSeverity.push(`missing mfs entry for registry ${c.id}`);
+      if (!registryByMfr.has(nm)) {
+        registryByMfr.set(nm, { canon, pids: [...pids], caseIds: [c.id], sample: m });
+      } else {
+        const agg = registryByMfr.get(nm);
+        // Prefer first canonical; union productIds; never flip-flop last-wins
+        if (agg.canon !== canon) {
+          skipped.push({
+            reason: 'registry_mfr_multi_canon',
+            mfr: nm,
+            keep: agg.canon,
+            ignore: canon,
+            caseIds: [...agg.caseIds, c.id],
+          });
+        }
+        agg.pids = sortedPids([...agg.pids, ...pids]);
+        if (!agg.caseIds.includes(c.id)) agg.caseIds.push(c.id);
       }
-      const entry = ensureEntry(db, key);
-      const before = { driverId: entry.driverId, modelIds: [...(entry.modelIds || [])] };
-      let dirty = false;
-      if (entry.driverId !== canon) {
-        entry.driverId = canon;
+    }
+  }
+
+  for (const [nm, agg] of registryByMfr) {
+    const canon = agg.canon;
+    const pids = sortedPids(agg.pids);
+    let key = findDbKey(db, nm);
+    if (!key) {
+      key = preferredMfrKey([agg.sample, ...(compose.mfrCasings.get(nm) || [])]);
+      ensureEntry(db, key);
+      changes.push({
+        severity: 'high',
+        action: 'create_from_registry',
+        mfr: key,
+        driverId: canon,
+        modelIds: pids,
+        caseId: agg.caseIds.join('+'),
+      });
+      highSeverity.push(`missing mfs entry for registry ${agg.caseIds.join('+')}`);
+    }
+    const entry = ensureEntry(db, key);
+    const before = { driverId: entry.driverId, modelIds: sortedPids(entry.modelIds) };
+    let dirty = false;
+    if (entry.driverId !== canon) {
+      entry.driverId = canon;
+      dirty = true;
+    }
+    if (pids.length) {
+      const next = pids;
+      if (JSON.stringify(sortedPids(entry.modelIds)) !== JSON.stringify(next)) {
+        entry.modelIds = next;
         dirty = true;
       }
-      if (pids.length) {
-        const next = [...pids];
-        if (JSON.stringify(entry.modelIds || []) !== JSON.stringify(next)) {
-          entry.modelIds = next;
-          dirty = true;
-        }
-      }
-      entry.source = entry.source || 'user-misattribution-registry';
-      if (!String(entry.source).includes('registry')) {
-        entry.source = `registry:${c.id}`;
-      }
-      if (dirty) {
-        changes.push({
-          severity: 'high',
-          action: 'registry_force',
-          mfr: key,
-          from: before,
-          to: { driverId: entry.driverId, modelIds: entry.modelIds },
-          caseId: c.id,
-        });
-        highSeverity.push(`registry drift ${key} → ${canon}`);
-      }
+    }
+    entry.source = entry.source || 'user-misattribution-registry';
+    if (!String(entry.source).includes('registry')) {
+      entry.source = `registry:${agg.caseIds[0]}`;
+    }
+    if (dirty) {
+      changes.push({
+        severity: 'high',
+        action: 'registry_force',
+        mfr: key,
+        from: before,
+        to: { driverId: entry.driverId, modelIds: sortedPids(entry.modelIds) },
+        caseId: agg.caseIds.join('+'),
+      });
+      highSeverity.push(`registry drift ${key} → ${canon}`);
     }
   }
 
@@ -467,7 +508,9 @@ function main() {
     console.log(`align-mfs-db-intelligent: changes=${summary.changeCount} skipped=${summary.skippedCount} high=${summary.highSeverityCount} (${APPLY ? 'APPLIED' : 'dry-run'})`);
     console.log('byAction:', JSON.stringify(summary.byAction));
     for (const c of changes.slice(0, 40)) {
-      console.log(`  [${c.severity}] ${c.action} ${c.mfr || c.drop || ''} ${c.from ? `${c.from}→` : ''}${c.to || c.keep || c.driverId || ''}`);
+      const from = c.from != null ? `${fmtSide(c.from)}→` : '';
+      const to = fmtSide(c.to != null ? c.to : (c.keep || c.driverId || ''));
+      console.log(`  [${c.severity}] ${c.action} ${c.mfr || c.drop || ''} ${from}${to}`);
     }
     if (changes.length > 40) console.log(`  ... +${changes.length - 40} more`);
     if (skipped.length) {

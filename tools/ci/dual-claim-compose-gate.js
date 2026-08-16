@@ -14,6 +14,7 @@
  *   node tools/ci/dual-claim-compose-gate.js
  *   node tools/ci/dual-claim-compose-gate.js --json
  *   node tools/ci/dual-claim-compose-gate.js --strict
+ *   node tools/ci/dual-claim-compose-gate.js --include-brands  # also scan HOBEIAN/SONOFF brand labels
  *   node tools/ci/dual-claim-compose-gate.js --root C:/path/to/repo
  *
  * Exit 0 by default (warn mode)
@@ -27,6 +28,7 @@ const args = process.argv.slice(2);
 let ROOT = path.join(__dirname, '..', '..');
 const JSON_MODE = args.includes('--json');
 const STRICT = args.includes('--strict');
+const INCLUDE_BRANDS = args.includes('--include-brands');
 for (let i = 0; i < args.length; i++) {
   if (args[i] === '--root') ROOT = path.resolve(args[++i]);
 }
@@ -37,7 +39,7 @@ const TOP_N = 25;
 /** Skip pure brand / deprecated catch-alls (not Tuya sacred-couple style IDs). */
 function isSkippedMfr(mfrLower) {
   if (!mfrLower) return true;
-  if (mfrLower === 'hobeian' || mfrLower === 'sonoff') return true;
+  if (!INCLUDE_BRANDS && (mfrLower === 'hobeian' || mfrLower === 'sonoff')) return true;
   if (mfrLower.startsWith('lumi.')) return true;
   if (mfrLower.startsWith('_deprecated')) return true;
   return false;
