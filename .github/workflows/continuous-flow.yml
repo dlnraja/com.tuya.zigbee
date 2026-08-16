@@ -233,7 +233,10 @@ jobs:
           if git diff --cached --quiet; then
             echo "No changes to commit"
           else
-            git commit -m "continuous-flow: apply enrichments (run ${{ github.run_id }})"
+            # [skip ci] keeps this out of the publish pipeline, and the rebase
+            # avoids losing the race against the other scheduled writers.
+            git commit -m "continuous-flow: apply enrichments (run ${{ github.run_id }}) [skip ci]"
+            git pull --rebase --autostash origin "${GITHUB_REF_NAME}" || true
             git push
           fi
 

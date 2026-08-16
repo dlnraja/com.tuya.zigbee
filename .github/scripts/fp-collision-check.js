@@ -24,7 +24,11 @@ const EXEMPT_DRIVERS = new Set([
   'universal_zigbee'
 ]);
 
-const EXEMPT_KEY_RE = /_hybrid_.*_needs_device_assignment|_master_.*_needs_device_assignment|_stable_v5_.*_needs_device_assignment|_tz3000_unknown|_tze200_placeholder_generic/i;
+// Synthetic sentinels exist precisely so that no hardware ever matches them, so
+// two drivers sharing one is not a collision — it is the deprecation marker
+// working. `_deprecated_..._do_not_pair` was missing here and failed CI on every
+// push once the air_purifier hybrids were retired.
+const EXEMPT_KEY_RE = /_hybrid_.*_needs_device_assignment|_master_.*_needs_device_assignment|_stable_v5_.*_needs_device_assignment|_deprecated_.*_do_not_pair|_tz3000_unknown|_tze200_placeholder_generic/i;
 
 function parseArgs(argv) {
   const args = { baseline: null, writeBaseline: null, json: false };

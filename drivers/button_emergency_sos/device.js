@@ -91,8 +91,13 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
     }, 'onNodeInit');
   }
 
+  /**
+   * `alarm_battery` is deliberately absent: Homey guidelines reject a driver
+   * exposing it alongside `measure_battery`, and the low-battery signal already
+   * reaches flows through the driver's battery_low trigger.
+   */
   async _ensureCapabilities() {
-    const caps = ['alarm_generic', 'measure_battery', 'alarm_battery'];
+    const caps = ['alarm_generic', 'measure_battery'];
     for (const cap of caps) {
       if (!this.hasCapability(cap)) {
         await this.addCapability(cap).catch(() => { });

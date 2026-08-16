@@ -13,9 +13,10 @@ on:
   schedule:
     - cron: '0 9 * * *'  # Daily 09:00 UTC — keep Device Finder updated
   workflow_dispatch:
-  workflow_run:
-    workflows: ["🌌 UNIFIED ENGINE — Daily Galaxy Orchestrator"]
-    types: [completed]
+  # A workflow_run on "UNIFIED ENGINE — Daily Galaxy Orchestrator" used to sit
+  # here, but no workflow carries that name, so the trigger could never fire.
+  # The daily schedule plus the path filter below already cover every case it
+  # was meant to catch.
   push:
     branches: [master, main]
     paths:
