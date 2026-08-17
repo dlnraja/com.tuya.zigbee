@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-16T23:17:17.439Z",
+  "timestamp": "2026-08-17T23:48:45.673Z",
   "gate": "align-mfs-db-intelligent",
   "apply": false,
   "check": true,
@@ -9,6 +9,22 @@
   "byAction": {},
   "changes": [],
   "skipped": [
+    {
+      "reason": "registry_bare_brand_multi_canon",
+      "mfr": "hobeian",
+      "canon": "soil_sensor",
+      "caseIds": [
+        "hobeian-zg303z-soil"
+      ]
+    },
+    {
+      "reason": "registry_bare_brand_multi_canon",
+      "mfr": "hobeian",
+      "canon": "switch_2gang",
+      "caseIds": [
+        "p217-hobeian-zg305z-usb-2gang"
+      ]
+    },
     {
       "reason": "unclaimed_no_compose",
       "mfr": "_tze20x_xxxxxxxx",
@@ -278,57 +294,6 @@
       "claimers": [
         "wall_switch_4_gang",
         "wall_switch_5_gang_tuya"
-      ]
-    },
-    {
-      "reason": "pair_conflict_ambiguous",
-      "mfr": "_tz3000_f09j9qjb",
-      "curated": "wall_switch_3gang_1way",
-      "foreign": [
-        "climate_sensor",
-        "switch_2_gang"
-      ],
-      "modelIds": [
-        "CK-TLSR8656-SS5-01(7014)",
-        "Excellux",
-        "RH3052",
-        "SM0201",
-        "SNZB-02",
-        "SNZB-02B",
-        "SNZB-02D",
-        "SNZB-02DR2",
-        "SNZB-02LD",
-        "SNZB-02M",
-        "SNZB-02P",
-        "SNZB-02WD",
-        "TH01",
-        "THS317-ET",
-        "TS0003",
-        "TS0013",
-        "TS0043",
-        "TS0201",
-        "TS0202",
-        "TS0222",
-        "TS0601",
-        "TS1201",
-        "TY0201",
-        "WSDCGQ01LM",
-        "WSDCGQ11LM",
-        "WSDCGQ12LM",
-        "ZG-227Z",
-        "ZG-227ZL",
-        "lumi.sensor_ht",
-        "lumi.sensor_ht.agl02",
-        "lumi.weather"
-      ]
-    },
-    {
-      "reason": "unclaimed_multi",
-      "mfr": "_tz3000_f09j9qjb",
-      "curated": "wall_switch_3gang_1way",
-      "claimers": [
-        "climate_sensor",
-        "switch_2_gang"
       ]
     }
   ],

@@ -200,9 +200,11 @@ function align(db, compose, registry) {
   const skipped = [];
   const highSeverity = [];
 
-  // --- Priority 1: registry → mfs_db locks (merge multi-case same mfr) ---
-  /** @type {Map<string, {canon:string, pids:string[], caseIds:string[]}>} */
-  const registryByMfr = new Map();
+  // --- Priority 1: registry → mfs_db locks (per mfr+canonicalDriver, not bare-brand union) ---
+  // WHY: HOBEIAN/Wing span multiple drivers — merging all registry pids onto one mfs row
+  // wrongly injects ZG-305Z onto soil_sensor (P217).
+  /** @type {Map<string, {canon:string, pids:string[], caseIds:string[], sample:string, nm:string}>} */
+  const registryRows = new Map();
   for (const c of registry.cases || []) {
     const canon = c.canonicalDriver;
     const pids = sortedPids(c.productId);
@@ -213,32 +215,45 @@ function align(db, compose, registry) {
     for (const m of [].concat(c.mfr || [])) {
       const nm = norm(m);
       if (!nm || SYNTHETIC_RX.test(m)) continue;
-      if (!registryByMfr.has(nm)) {
-        registryByMfr.set(nm, { canon, pids: [...pids], caseIds: [c.id], sample: m });
+      const rowKey = `${nm}|${canon}`;
+      if (!registryRows.has(rowKey)) {
+        registryRows.set(rowKey, { canon, pids: [...pids], caseIds: [c.id], sample: m, nm });
       } else {
-        const agg = registryByMfr.get(nm);
-        // Prefer first canonical; union productIds; never flip-flop last-wins
-        if (agg.canon !== canon) {
-          skipped.push({
-            reason: 'registry_mfr_multi_canon',
-            mfr: nm,
-            keep: agg.canon,
-            ignore: canon,
-            caseIds: [...agg.caseIds, c.id],
-          });
-        }
-        agg.pids = sortedPids([...agg.pids, ...pids]);
-        if (!agg.caseIds.includes(c.id)) agg.caseIds.push(c.id);
+        const row = registryRows.get(rowKey);
+        row.pids = sortedPids([...row.pids, ...pids]);
+        if (!row.caseIds.includes(c.id)) row.caseIds.push(c.id);
       }
     }
   }
 
-  for (const [nm, agg] of registryByMfr) {
-    const canon = agg.canon;
-    const pids = sortedPids(agg.pids);
+  /** @type {Map<string, Set<string>>} */
+  const canonByNorm = new Map();
+  for (const row of registryRows.values()) {
+    if (!canonByNorm.has(row.nm)) canonByNorm.set(row.nm, new Set());
+    canonByNorm.get(row.nm).add(row.canon);
+  }
+
+  function isOemMfr(m) {
+    return /^_[TZ]/i.test(String(m || ''));
+  }
+
+  for (const row of registryRows.values()) {
+    const { canon, nm, sample } = row;
+    const pids = sortedPids(row.pids);
+    const multiCanon = (canonByNorm.get(nm)?.size || 0) > 1;
+    if (multiCanon && !isOemMfr(sample)) {
+      skipped.push({
+        reason: 'registry_bare_brand_multi_canon',
+        mfr: nm,
+        canon,
+        caseIds: row.caseIds,
+      });
+      continue;
+    }
+
     let key = findDbKey(db, nm);
     if (!key) {
-      key = preferredMfrKey([agg.sample, ...(compose.mfrCasings.get(nm) || [])]);
+      key = preferredMfrKey([sample, ...(compose.mfrCasings.get(nm) || [])]);
       ensureEntry(db, key);
       changes.push({
         severity: 'high',
@@ -246,9 +261,9 @@ function align(db, compose, registry) {
         mfr: key,
         driverId: canon,
         modelIds: pids,
-        caseId: agg.caseIds.join('+'),
+        caseId: row.caseIds.join('+'),
       });
-      highSeverity.push(`missing mfs entry for registry ${agg.caseIds.join('+')}`);
+      highSeverity.push(`missing mfs entry for registry ${row.caseIds.join('+')}`);
     }
     const entry = ensureEntry(db, key);
     const before = { driverId: entry.driverId, modelIds: sortedPids(entry.modelIds) };
@@ -258,7 +273,9 @@ function align(db, compose, registry) {
       dirty = true;
     }
     if (pids.length) {
-      const next = pids;
+      const next = multiCanon && isOemMfr(sample)
+        ? sortedPids([...(entry.modelIds || []), ...pids])
+        : pids;
       if (JSON.stringify(sortedPids(entry.modelIds)) !== JSON.stringify(next)) {
         entry.modelIds = next;
         dirty = true;
@@ -266,7 +283,7 @@ function align(db, compose, registry) {
     }
     entry.source = entry.source || 'user-misattribution-registry';
     if (!String(entry.source).includes('registry')) {
-      entry.source = `registry:${agg.caseIds[0]}`;
+      entry.source = `registry:${row.caseIds[0]}`;
     }
     if (dirty) {
       changes.push({
@@ -275,7 +292,7 @@ function align(db, compose, registry) {
         mfr: key,
         from: before,
         to: { driverId: entry.driverId, modelIds: sortedPids(entry.modelIds) },
-        caseId: agg.caseIds.join('+'),
+        caseId: row.caseIds.join('+'),
       });
       highSeverity.push(`registry drift ${key} → ${canon}`);
     }
