@@ -22,6 +22,9 @@ Two tracks, **different goals**. Never wholesale sync.
 AlarmPolarity smart-learn, free-scrape / diag orchestrator, CapabilityCommandRouter `parallelDiscover`, multichannel/AVE, mega feature managers.
 
 ## BOTH (examples)
-SOS `async _registerButtonCapabilityListeners` + `Promise.resolve(…).catch`, `safe-timers` instead of detached `homey.clearTimeout`, IAS `zoneId: 10`, `typeof auditCapabilities === 'function'`.
+SOS `async _registerButtonCapabilityListeners` + `Promise.resolve(…).catch`, `safe-timers` instead of detached `homey.clearTimeout`, IAS `zoneId: 10`, `typeof auditCapabilities === 'function'`, sacred-couple FP locks + misattribution registry, MCU brightness clamp (`TuyaBrightnessScale`), Poll Control skip on sleepy, `onUninit` teardown, battery no-invent.
+
+## MASTER_ONLY (HomeSuite-derived reminder)
+`DeviceAvailabilityManager` last-seen persist / boot grace, `device_rejoined` flow extras, ZigbeeCommandPacer, inching UI re-push — soak on master; do not dump onto stable.
 
 Full doctrine: `docs/rules/DUAL_APP_VISION.md` · `docs/rules/CROSS_APP_PROMPT_RULES.md`.

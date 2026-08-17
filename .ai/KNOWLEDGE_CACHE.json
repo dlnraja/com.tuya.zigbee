@@ -1,11 +1,12 @@
 {
-  "version": "8.0",
-  "lastUpdated": "2026-06-18T12:00:00Z",
-  "lastAudit": "2026-06-18T12:00:00Z",
-  "auditEngine": "documentation-finalizer-v8.0",
+  "version": "8.1",
+  "lastUpdated": "2026-08-17T17:40:00Z",
+  "lastAudit": "2026-08-17T17:40:00Z",
+  "auditEngine": "session-p2138-homesuite-knowledge-sync",
   "project": {
     "name": "com.dlnraja.tuya.zigbee",
-    "version": "9.0.40",
+    "version": "9.0.583",
+    "stableVersion": "5.12.85",
     "drivers": 430,
     "zigbeeDrivers": 379,
     "wifiDrivers": 51,
@@ -51,7 +52,11 @@
       "Wildcards in manufacturerName arrays (_TZE200_* FORBIDDEN)",
       "Empty manufacturerName arrays [] - causes AggregateError",
       "Using deprecated HybridSwitchBase - use UnifiedSwitchBase instead",
-      "Missing positionInvert check on curtain/cover devices"
+      "Missing positionInvert check on curtain/cover devices",
+      "Unclamped Tuya MCU brightness (write >1000 can reboot MCU — use TuyaBrightnessScale)",
+      "Skipping super.onNodeInit on TuyaSpecificClusterDevice drivers (misses misattr + IO layers)",
+      "Fixing compose only while leaving mfs_db/new_fingerprints/compound DB polluted (enrichers re-inject)",
+      "Declaring interview-only exotic clusters (e.g. 0xED00) in compose bindings"
     ]
   },
   "localFirstRules": {
@@ -150,7 +155,11 @@
       {"id": "AP11", "pattern": "Missing markAppCommand()", "fix": "Call before physical commands", "frequency": "medium"},
       {"id": "AP12", "pattern": "Double-division bug", "fix": "Use SmartDivisorManager; don't divide in both parser and mappings", "frequency": "low"},
       {"id": "AP13", "pattern": "Using deprecated HybridSwitchBase", "fix": "Use UnifiedSwitchBase directly", "frequency": "low"},
-      {"id": "AP14", "pattern": "Missing positionInvert check on curtains", "fix": "Check cover profile for positionInvert quirk", "frequency": "low"}
+      {"id": "AP14", "pattern": "Missing positionInvert check on curtains", "fix": "Check cover profile for positionInvert quirk", "frequency": "low"},
+      {"id": "AP15", "pattern": "Unclamped Tuya dimmer brightness", "fix": "Use toTuyaBrightness()/fromTuyaBrightness() — never write >1000", "frequency": "high"},
+      {"id": "AP16", "pattern": "Compose FP fixed but mfs_db/new_fingerprints still wrong", "fix": "Lock compose + compound DeviceFingerprintDB + mfs_db couples + new_fingerprints + misattribution registry", "frequency": "high"},
+      {"id": "AP17", "pattern": "Expect Homey to hot-swap drivers after FP fix", "fix": "User must remove + re-pair; setUnavailable misattr hint only", "frequency": "high"},
+      {"id": "AP18", "pattern": "TuyaSpecificClusterDevice skips super.onNodeInit", "fix": "Always await super.onNodeInit({ zclNode }) before driver-specific wiring", "frequency": "medium"}
     ],
     "mandatory": [
       "11-layer Zigbee pipeline must be respected (L0-L11)",
@@ -164,7 +173,10 @@
       "WiFi devices: super.onDeleted() is MANDATORY",
       "Presence detection: use PresenceConfidenceScorer for multi-factor scoring",
       "Battery health: use BatteryHealthIntelligence for degradation tracking",
-      "Device groups: use DeviceGroupManager for coordinated actions"
+      "Device groups: use DeviceGroupManager for coordinated actions",
+      "MCU dimmers: clamp brightness 0-1000 via TuyaBrightnessScale",
+      "Sacred-couple locks must cover compose + catalogs + registry forbiddenDrivers",
+      "Dual-app: classify BOTH | MASTER_ONLY | STABLE_ONLY before every change"
     ],
     "naming": [
       "Settings: zb_model_id, zb_manufacturer_name (snake_case with zb_ prefix)",
@@ -380,7 +392,7 @@
     "analyzed": 9,
     "keyPatterns": {
       "johanBendz": "TuyaSpecificClusterDevice, DP constants, sub-devices",
-      "gpmachado": "Cluster registry, availability manager, rejoin detection, error utils",
+      "gpmachado": "com.gpm.homesuite (GPL-3.0, ideas only): availability last-seen persist, rejoin vs timeout, onUninit teardown, Poll Control skip, settings-over-dump, inching/power-on/backlight, sacred couples",
       "andiwirz": "Protocol auto-detect, DP discovery tool",
       "rebtor": "TuyAPI local control",
       "drenso": "TypeScript, OAuth2",
@@ -388,8 +400,11 @@
     }
   },
   "forumFindings": {
-    "lastUpdated": "2026-06-18",
+    "lastUpdated": "2026-08-17",
     "issuesProcessed": [
+      {"id": "#2138", "description": "BSEED Click socket-insert dimmer paired as climate; interview EF00+0xED00", "status": "resolved_code", "version": "v9.0.583", "action": "re-pair wall_dimmer_tuya"},
+      {"id": "#2133", "description": "PresentSky BSEED dimmer wrong driver", "status": "resolved_code", "version": "v9.0.583"},
+      {"id": "#2135", "description": "Avatto 2ch dimmer MCU brightness >1000 reboot", "status": "resolved_code", "version": "v9.0.x", "note": "TuyaBrightnessScale"},
       {"id": "#2091", "description": "Device routing fix", "status": "resolved", "version": "v9.0.40"},
       {"id": "#5472", "description": "Flow card integrity fix", "status": "resolved", "version": "v9.0.40"},
       {"id": "#2090", "description": "HOBEIAN water leak sensor ZG-222Z", "status": "resolved", "version": "v9.0.22"},
@@ -399,12 +414,15 @@
       {"id": "#417", "description": "Fingerprint additions", "status": "resolved", "version": "v9.0.35"}
     ],
     "deviceAdditions": [
+      {"device": "BSEED Click Zigbee dimmer socket insert", "driver": "wall_dimmer_tuya", "reporter": "PresentSky", "forumId": "#2133/#2138", "couple": "_TZE284_m1cvyneb+TS0601"},
       {"device": "HOBEIAN ZG-222Z water leak sensor", "driver": "water_leak_sensor", "reporter": "Peter", "forumId": "#2090"},
       {"device": "MMWave radar motion sensor", "driver": "motion_sensor_radar_mmwave", "reporter": "Community", "forumId": "#420"},
       {"device": "Bed sensor", "driver": "bed_sensor", "reporter": "Community", "forumId": "#383"},
       {"device": "Rain sensor _TZ3210_tgvtvdoc", "driver": "rain_sensor", "reporter": "Community", "forumId": "#388"}
     ],
     "bugFixes": [
+      {"issue": "mfs_db routed m1cvyneb to climate/soil/universal", "fix": "P2138 catalog lock + compound DeviceFingerprintDB + anti-bot", "version": "v9.0.583"},
+      {"issue": "Wall dimmer skipped super.onNodeInit / unclamped brightness", "fix": "device.js harden + TuyaBrightnessScale", "version": "v9.0.583"},
       {"issue": "Fingerbot fingerprint collisions", "fix": "Reverted conflicting fingerprints with plug and button_wireless_2", "version": "v9.0.40"},
       {"issue": "Driver compose JSON inconsistencies", "fix": "Forum analysis - driver compose fixes and improvements", "version": "v9.0.40"},
       {"issue": "Protection scripts missing", "fix": "Added protection scripts + flow card integrity validation", "version": "v9.0.40"}
@@ -413,7 +431,48 @@
       "Forum users report device model IDs that don't match existing fingerprints",
       "Multi-manufacturer support: same device model sold under different brands",
       "One manufacturer can have thousands of device variants with different productIds",
-      "Community reports help identify misclassified devices (rain vs water_leak, climate vs presence)"
+      "Community reports help identify misclassified devices (rain vs water_leak, climate vs presence)",
+      "Compose FP lock alone is insufficient if mfs_db/new_fingerprints still point elsewhere",
+      "Homey never hot-swaps drivers — FP fixes require remove + re-pair",
+      "Tuya MCU dimmers reboot if brightness write exceeds 1000"
+    ]
+  },
+  "recentDiscoveries": {
+    "lastUpdated": "2026-08-17",
+    "masterVersion": "9.0.583",
+    "stableVersion": "5.12.85",
+    "homesuite": {
+      "repo": "gpmachado/com.gpm.homesuite",
+      "license": "GPL-3.0",
+      "policy": "ideas only — original MIT reimplementation; no code copy",
+      "both": ["onUninit teardown", "Poll Control skip sleepy", "ZclDefaultResponsePolicy waitForResponse quirks", "battery no-invent", "sacred couple FP locks"],
+      "masterOnly": ["DeviceAvailabilityManager last-seen + boot grace", "device_rejoined", "ZigbeeCommandPacer", "inching UI re-push"]
+    },
+    "sacredCouples": [
+      {"mfr": "_TZE284_m1cvyneb", "pid": "TS0601", "driver": "wall_dimmer_tuya", "forbid": ["climate_sensor", "soil_sensor", "zigbee_universal", "generic_tuya", "ir_blaster"], "z2m": "TS0601_dimmer_1_gang_1", "report": "reports/P2138_BSEED_WALL_DIMMER_2026-08-17.md"},
+      {"mfr": "_TZE28C1000000_jtbgusdc", "pid": "TS0601", "driver": "dimmer_2_gang_tuya", "note": "MCU brightness clamp"},
+      {"mfr": "_TZ3000_okaz9tjs", "pid": "TS011F", "driver": "plug_energy_monitor"},
+      {"mfr": "_TZ3000_fgwhjm9j", "pid": "TS011F", "driver": "plug_energy_monitor"}
+    ],
+    "dimmerMcu": {
+      "brightnessScale": "0-1000",
+      "helper": "lib/tuya/TuyaBrightnessScale.js",
+      "risk": "MCU reboot if write >1000 (Z2M #32305)"
+    },
+    "sacredCoupleDoctrine": {
+      "rule": "Identity is always (manufacturerName + productId). One mfr can own many pids/variants/device names.",
+      "never": ["route by mfr alone when pid is known", "invent unverified pid couples", "assume TS0201 because another mfr shares the prefix"],
+      "runtime": "getDriverId(mfr,pid) refuses mfr-catalog hits when pid not in modelIds; compound DeviceFingerprintDB wins first",
+      "example": "_TZE284_m1cvyneb+TS0601=wall_dimmer; same mfr+TS0201=null (no invented couple)"
+    },
+    "catalogLockChecklist": [
+      "drivers/*/driver.compose.json",
+      "lib/DeviceFingerprintDB.js compound keys (mfr|pid)",
+      "data/mfs_db.json sacred couples (not mfr-only hints)",
+      "lib/data/new_fingerprints.json modelIds must list ONLY verified pids",
+      "lib/tuya/fingerprints.json + data/fingerprints.json",
+      "data/user-misattribution-registry.json forbiddenDrivers",
+      "tools/ci/anti-bot-regression-gate.js"
     ]
   },
   "z2mPatterns": {
@@ -540,7 +599,7 @@
     "communityContributors": [
       {"name": "AreAArseth/com.hobeian", "contribution": "Hobeian Zigbee devices"},
       {"name": "drenso/com.tuya2", "contribution": "TypeScript Tuya cloud app (OAuth2 patterns)"},
-      {"name": "gpmachado", "contribution": "Cluster registry, availability manager, rejoin detection"},
+      {"name": "gpmachado", "contribution": "com.gpm.homesuite studied (GPL-3.0, no code copied): availability last-seen, rejoin, onUninit teardown, Poll Control skip, settings-over-dump, inching; P2138 dual-app classification"},
       {"name": "andiwirz", "contribution": "Protocol auto-detect, DP discovery tool"},
       {"name": "rebtor", "contribution": "TuyAPI local control"},
       {"name": "jurgenheine", "contribution": "Cloud API patterns"},
@@ -583,7 +642,9 @@
       "v9.0.44: Documentation v7.0 - KNOWLEDGE_CACHE v7.0, CORE_RULES v4.0 (R1-R58), 4 new docs",
       "v9.0.45: Forum analysis fixes - fingerbot collision revert, driver compose improvements",
       "v9.0.46: Device Capabilities flow cards - generic capability watch, historical value, zone setter",
-      "v9.0.47: Z2M/ZHA pattern alignment - 7 new converters, 5 fault bitmap types"
+      "v9.0.47: Z2M/ZHA pattern alignment - 7 new converters, 5 fault bitmap types",
+      "v9.0.582: HomeSuite-inspired reliability (last-seen, Poll Control skip, onUninit teardown) — MIT reimplementation",
+      "v9.0.583 / P2138: BSEED m1cvyneb wall_dimmer lock across catalogs + MCU brightness clamp + re-pair guidance"
     ],
     "stats30Days": {
       "commits": 50,

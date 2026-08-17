@@ -1,0 +1,48 @@
+{
+  "id": "device_rejoined",
+  "title": {
+    "en": "Device came back after a power cut",
+    "fr": "L'appareil est revenu après une coupure",
+    "nl": "Apparaat terug na stroomstoring",
+    "de": "Gerät nach Stromausfall zurück"
+  },
+  "hint": {
+    "en": "Fires on the boot dump after a short or long outage, even if Homey never marked the device unavailable.",
+    "fr": "Se déclenche sur le dump de boot après une coupure courte ou longue, même si Homey n'a pas marqué l'appareil indisponible."
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": ""
+    }
+  ],
+  "tokens": [
+    {
+      "name": "gap_seconds",
+      "type": "number",
+      "title": {
+        "en": "Seconds it was silent",
+        "fr": "Secondes de silence"
+      },
+      "example": 8
+    },
+    {
+      "name": "is_battery",
+      "type": "boolean",
+      "title": {
+        "en": "Is battery powered",
+        "fr": "Sur batterie"
+      }
+    },
+    {
+      "name": "reason",
+      "type": "string",
+      "title": {
+        "en": "Rejoin reason",
+        "fr": "Raison de la reprise"
+      },
+      "example": "boot_dump"
+    }
+  ]
+}

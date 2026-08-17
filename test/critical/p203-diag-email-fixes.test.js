@@ -40,9 +40,13 @@ describe('P203 diag email deep fixes', () => {
     assert(reg.includes('_TZE284_m1cvyneb'));
     assert(reg.includes('"canonicalDriver": "wall_dimmer_tuya"'));
     assert(reg.includes('climate_sensor'));
+    assert(reg.includes('soil_sensor'));
+    assert(reg.includes('zigbee_universal'));
     const compose = read('drivers/wall_dimmer_tuya/driver.compose.json');
     assert(compose.includes('_TZE284_m1cvyneb'));
     assert(!fs.existsSync(path.join(ROOT, 'drivers/climate_sensor/driver.compose.json'))
       || !read('drivers/climate_sensor/driver.compose.json').includes('m1cvyneb'));
+    const { getDriverId } = require('../../lib/tuya/DeviceFingerprintDB');
+    assert.strictEqual(getDriverId('_TZE284_m1cvyneb', 'TS0601'), 'wall_dimmer_tuya');
   });
 });

@@ -1,12 +1,11 @@
 'use strict';
 
-const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
-const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
-const { debug, Cluster } = require('zigbee-clusters');
+const { Cluster } = require('zigbee-clusters');
 const TuyaSpecificCluster = require('../../lib/TuyaSpecificCluster');
-const TuyaSpecificClusterDevice = require("../../lib/TuyaSpecificClusterDevice");
+const TuyaSpecificClusterDevice = require('../../lib/TuyaSpecificClusterDevice');
 const { getDataValue } = require('../../lib/TuyaHelpers');
 const { V1_SINGLE_GANG_DIMMER_SWITCH_DATA_POINTS } = require('../../lib/TuyaDataPoints');
+const { toTuyaBrightness, fromTuyaBrightness } = require('../../lib/tuya/TuyaBrightnessScale');
 
 Cluster.addCluster(TuyaSpecificCluster);
 
@@ -17,7 +16,16 @@ class wall_dimmer_tuya extends TuyaSpecificClusterDevice {
   get mainsPowered() { return true; }
 
   async onNodeInit({ zclNode }) {
-    this.printNode();
+    await super.onNodeInit({ zclNode });
+
+    if (this.mainsPowered) {
+      if (this.hasCapability('measure_battery')) {
+        await this.removeCapability('measure_battery').catch(() => {});
+      }
+      if (this.hasCapability('alarm_battery')) {
+        await this.removeCapability('alarm_battery').catch(() => {});
+      }
+    }
 
     // Forum silent-scan: BSEED/Tuya wall dimmers pair but stay mute when Homey
     // interview misses 0xEF00 — compensate before attaching listeners.
@@ -74,8 +82,8 @@ class wall_dimmer_tuya extends TuyaSpecificClusterDevice {
   }
 
   async _setupGang(zclNode) {
-    // Register capability listeners
     this.registerCapabilityListener('onoff', async (value) => {
+      if (typeof this.markAppCommand === 'function') {this.markAppCommand();}
       this.log('onoff:', value);
       try {
         await this.writeBool(V1_SINGLE_GANG_DIMMER_SWITCH_DATA_POINTS.onOff, value);
@@ -86,21 +94,19 @@ class wall_dimmer_tuya extends TuyaSpecificClusterDevice {
     });
 
     this.registerCapabilityListener('dim', async (value) => {
-      const brightness = Math.floor(value * 1000); // Scale to 0-1000
+      if (typeof this.markAppCommand === 'function') {this.markAppCommand();}
+      const brightness = toTuyaBrightness(value); // 0-1000, MCU-safe
       this.log('brightness:', brightness);
-      
+
       try {
-        // If dim value is greater than 0 and the device is off, turn it on
         if (brightness > 0 && !this.getCapabilityValue('onoff')) {
           this.log('Dim level is greater than 0, turning on device');
           await this.writeBool(V1_SINGLE_GANG_DIMMER_SWITCH_DATA_POINTS.onOff, true);
           await this['safeSetCapabilityValue']('onoff', true);
         }
-    
-        // Set the brightness
+
         await this.writeData32(V1_SINGLE_GANG_DIMMER_SWITCH_DATA_POINTS.brightness, brightness);
-    
-        // Turning off device if dim level is 0
+
         if (brightness === 0) {
           this.log('Dim level is 0, turning off device');
           await this.writeBool(V1_SINGLE_GANG_DIMMER_SWITCH_DATA_POINTS.onOff, false);
@@ -111,11 +117,8 @@ class wall_dimmer_tuya extends TuyaSpecificClusterDevice {
         throw err;
       }
     });
-    
-    
   }
 
-  // Process DP reports and update Homey accordingly
   async processDatapoint(data) {
     const dp = data.dp;
     const parsedValue = getDataValue(data);
@@ -130,7 +133,14 @@ class wall_dimmer_tuya extends TuyaSpecificClusterDevice {
 
       case V1_SINGLE_GANG_DIMMER_SWITCH_DATA_POINTS.brightness:
         this.log('Received dim level:', parsedValue);
-        await this['safeSetCapabilityValue']('dim', parsedValue / 1000).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
+        await this['safeSetCapabilityValue']('dim', fromTuyaBrightness(parsedValue)).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
+        break;
+
+      case V1_SINGLE_GANG_DIMMER_SWITCH_DATA_POINTS.countdown:
+      case V1_SINGLE_GANG_DIMMER_SWITCH_DATA_POINTS.powerOnBehavior:
+      case V1_SINGLE_GANG_DIMMER_SWITCH_DATA_POINTS.backlightMode:
+      case V1_SINGLE_GANG_DIMMER_SWITCH_DATA_POINTS.minimumBrightness:
+        this.log('Informational DP (no Homey capability):', dp, parsedValue);
         break;
 
       default:

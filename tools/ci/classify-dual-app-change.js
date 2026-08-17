@@ -12,6 +12,7 @@
 const MASTER_ONLY = [
   /AlarmPolarity|polarity.?learn|FreeScrape|free-scrape|diag-investigate-orchestrator/i,
   /CapabilityCommandRouter|parallelDiscover|multichannel|autonomous|AVE|circadian/i,
+  /ZigbeeCommandPacer|ReconnectBurstCoalescer|endpointCapability|ZclClusterLexicon|contributor-repo-dump/i,
   /presence.?sim|fallback.?router|mega-crawler/i,
 ];
 

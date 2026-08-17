@@ -135,4 +135,62 @@ describe('CapabilityCommandRouter UNSUPPORTED_CLUSTER cascade', () => {
       assert.ok(!c.includes(8), `${id} must not declare levelControl cluster 8`);
     }
   });
+
+  it('maps onoff.gang2 / onoff.2 to endpoint 2 and DP 2, never DP1', () => {
+    const { _endpointFor, _dpIdFor } = require('../../lib/zigbee/CapabilityCommandRouter');
+    assert.strictEqual(_endpointFor('onoff.gang2'), 2);
+    assert.strictEqual(_endpointFor('onoff.2'), 2);
+    assert.strictEqual(_endpointFor('onoff'), 1);
+    assert.strictEqual(_dpIdFor('onoff.gang2'), 2);
+    assert.strictEqual(_dpIdFor('onoff.2'), 2);
+    assert.strictEqual(_dpIdFor('onoff.gang5'), 5);
+    assert.strictEqual(_dpIdFor('onoff'), 1);
+    assert.notStrictEqual(_dpIdFor('onoff.gang2'), 1);
+  });
+
+  it('parallel discover on gang 2 does not fire leftover EF00 DP1', async () => {
+    const device = makeDevice();
+    const ep2 = {
+      setOn: async () => { device.zclCalls.push('ep2.setOn'); },
+      setOff: async () => { device.zclCalls.push('ep2.setOff'); },
+    };
+    device.zclNode.endpoints[2] = { clusters: { onOff: ep2, genOnOff: ep2 } };
+
+    const r = await writeCapabilityWithFallbacks(device, 'onoff.gang2', true, {
+      endpoint: 2,
+      parallelDiscover: true,
+    });
+    assert.strictEqual(r.ok, true);
+    assert.strictEqual(r.via, 'zcl-named');
+    assert.ok(device.zclCalls.includes('ep2.setOn'));
+    assert.strictEqual(device.dpSent.length, 0, 'must not race Tuya DP on gang 2');
+  });
+
+  it('skips Tuya DP entirely on zcl_only devices', async () => {
+    const device = makeDevice();
+    device._manufacturerConfig = { protocol: 'zcl_only' };
+    device._isPureTuyaDP = false;
+    const r = await writeCapabilityWithFallbacks(device, 'onoff', true, { parallelDiscover: true });
+    assert.strictEqual(r.ok, true);
+    assert.strictEqual(r.via, 'zcl-named');
+    assert.strictEqual(device.dpSent.length, 0);
+  });
+
+  it('skips leftover EF00 on multi-gang ZCL even when the cluster is present', async () => {
+    const device = makeDevice();
+    device.gangCount = 2;
+    device._isPureTuyaDP = false;
+    const ep2 = {
+      setOn: async () => { device.zclCalls.push('ep2.setOn'); },
+      setOff: async () => { device.zclCalls.push('ep2.setOff'); },
+    };
+    device.zclNode.endpoints[2] = { clusters: { onOff: ep2, genOnOff: ep2 } };
+    const r = await writeCapabilityWithFallbacks(device, 'onoff.gang2', true, {
+      endpoint: 2,
+      dpId: 2,
+    });
+    assert.strictEqual(r.ok, true);
+    assert.strictEqual(r.via, 'zcl-named');
+    assert.strictEqual(device.dpSent.length, 0);
+  });
 });

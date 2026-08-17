@@ -16,6 +16,7 @@ Do not compare manufacturer strings with `===` only. Use `CaseInsensitiveMatcher
 - Same `(mfr, pid)` in two drivers = pairing conflict.
 - No `*` wildcards in `manufacturerName` (SDK3).
 - Known mis-routes: `data/user-misattribution-registry.json`.
+- When locking a couple, update **compose + compound DeviceFingerprintDB + mfs_db + new_fingerprints + registry** together (P2138) — compose-only edits get re-polluted by enrichers.
 
 ### How Homey picks a driver (important)
 
@@ -30,14 +31,14 @@ So a wall socket that “appears as motion” usually means the **manifest lists
 **What we do:** fix sacred couples, strip dual-claims, enrich the misattribution registry, ask for re-pair after the tip.  
 **What we do not do:** runtime “try several drivers and pick the best” (Homey SDK3 cannot), Z2M-style converter substitution, or promising a custom Change-driver UI.
 
-Gates: `node tools/ci/audit-sacred-couple.js --from-registry` · `node tools/ci/dual-claim-compose-gate.js`  
-User FAQ: `docs/guides/USER_TROUBLESHOOTING.md`
+Gates: `node tools/ci/audit-sacred-couple.js --from-registry` · `node tools/ci/dual-claim-compose-gate.js` · `node tools/ci/anti-bot-regression-gate.js`  
+User FAQ: `docs/guides/USER_TROUBLESHOOTING.md` · BSEED dimmer: `reports/P2138_BSEED_WALL_DIMMER_2026-08-17.md`
 
 ### Dual-app tracks
 | Branch | Purpose |
 |--------|---------|
-| `master` | Preview / soak (~9.0.x Homey Test) |
-| `stable-v5` | LTS reliability only — surgical backports, never full-tree sync |
+| `master` | Preview / soak (~9.0.x Homey Test) — tip **9.0.583+** |
+| `stable-v5` | LTS reliability only (~5.12.x) — tip **5.12.85+**; surgical backports; never full-tree sync; never Publish→Test while 9.0 soaks |
 
 Classify: `BOTH` | `MASTER_ONLY` | `STABLE_ONLY`.
 
@@ -50,6 +51,7 @@ Default: **do not** paste AI answers (T157628). Silent code fixes. If a human po
 - Timers: `safeSetTimeout` / `safeSetInterval` from `lib/utils/safe-timers.js`.
 - Battery: `BatteryMasterEngine` / non-linear profiles — ban `(V-2.5)/0.5`.
 - Live FP overlay: `LiveDataUpdater` must stay heap-capped (Homey ~64MB).
+- Tuya MCU dimmers: clamp brightness with `lib/tuya/TuyaBrightnessScale.js` (0–1000; >1000 can reboot MCU).
 
 ## Submission
 1. Fork → feature branch.
@@ -61,6 +63,10 @@ Bug template: `.github/ISSUE_TEMPLATE/`.
 Architecture: `docs/architecture/LAYERS_CAPABILITY_PROTOCOL.md` · Troubleshooting: `docs/guides/USER_TROUBLESHOOTING.md`.  
 Internal compass (not for forum): `docs/rules/PRAGMATIC_ROADMAP.md`.
 
+## Thanks
+
+Study-only (no code copied): [gpmachado/com.gpm.homesuite](https://github.com/gpmachado/com.gpm.homesuite) (GPL-3.0) — availability last-seen, rejoin, `onUninit` teardown, Poll Control skip, settings-over-dump, inching. Full list: `CREDITS.md` / `NOTICE`.
+
 ## Priority (internal)
 
 1. Sacred couples / dual-claims / deprecated hybrids (manifest pairing — not Z2M substitution).
@@ -70,7 +76,7 @@ Internal compass (not for forum): `docs/rules/PRAGMATIC_ROADMAP.md`.
 ## Next steps (corrected)
 
 **Do**
-- Keep shipping pairing locks (compose + misattribution registry).
+- Keep shipping pairing locks (compose + catalogs + misattribution registry).
 - Soak Peter’s heap crash on Homey Test **9.0.541+** (new diagnostic if it still crashes).
 - Let Auto-Publish land Test builds; do not spam Athom on transient `processing_failed`.
 
@@ -80,4 +86,3 @@ Internal compass (not for forum): `docs/rules/PRAGMATIC_ROADMAP.md`.
 - Promise runtime driver substitution — Homey binds from the manifest couple only.
 
 If a **human** forum reply is needed later: short English, Dylan’s voice, topic **140352** only — not this CONTRIBUTING text pasted as a wall.
-

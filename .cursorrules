@@ -125,24 +125,42 @@ When encountering an unknown device, the system uses 6 heuristics to rank time f
 `_TZ3000_hafsqare`, `_TZ3000_e98krvvk`, `_TZ3000_iedbgyxt`,
 `_TZ3000_cauq1okq`, `_TZ3000_w5xztuy7`
 
+## BSEED / Tuya EF00 Wall Dimmer (P2138)
+- Sacred couple: `_TZE284_m1cvyneb` (+ TZE204/TZE200) + `TS0601` → **`wall_dimmer_tuya` only**
+- Forbidden: `climate_sensor`, `soil_sensor`, `zigbee_universal`, `generic_tuya`, `ir_blaster`
+- Interview may show proprietary `0xED00` — do **not** add it to compose clusters/bindings
+- Brightness MCU scale is **0–1000**: always use `lib/tuya/TuyaBrightnessScale.js` (`toTuyaBrightness` / `fromTuyaBrightness`). Writing >1000 can reboot the MCU (Z2M #32305)
+- Stale climate pairing → user must **remove + re-pair** (Homey cannot hot-swap drivers)
+- Lock catalogs too: compose + `DeviceFingerprintDB` compound keys + `mfs_db` + `new_fingerprints.json` + misattribution registry (enrichers re-inject otherwise)
+
 ## Tuya DP Protocol
 - Cluster: 0xEF00 | DP1-8: gangs | DP14: power-on | DP15: backlight
 - Types: 0=Raw, 1=Bool, 2=Value, 3=String, 4=Enum, 5=Bitmap
+- 1-gang EF00 dimmers (BSEED insert): DP1 on/off, DP2 brightness 0–1000, DP6 countdown, DP21 backlight
 
 ## Key Files
 - `lib/devices/UnifiedSwitchBase.js` - Base switch class
 - `lib/mixins/PhysicalButtonMixin.js` - Physical detection
 - `drivers/{type}/driver.flow.compose.json` - Flow definitions
 
-## CRITICAL: Fingerprint Matching
-**manufacturerName CAN appear in MULTIPLE drivers** - this is NORMAL!
+## CRITICAL: Fingerprint Matching (Sacred Couple Doctrine)
+**One manufacturerName can map to MANY devices** — different productIds, variants, OEM labels, and device names. That is NORMAL.
 
-### Fingerprint = manufacturerName + productId (COMBINED)
+### Fingerprint = manufacturerName + productId (COMBINED) — never mfr alone
 ```
 _TZ3000_abc + TS0001 → switch_1gang
 _TZ3000_abc + TS0002 → switch_2gang  (SAME mfr, different productId = OK!)
 _TZ3000_abc + TS0003 → switch_3gang
+_TZE284_m1cvyneb + TS0601 → wall_dimmer_tuya   (verified Z2M couple)
+_TZE284_m1cvyneb + TS0201 → NOT a known couple (do NOT invent)
 ```
+
+### Rules
+- Always investigate and lock the **(mfr, pid)** couple. Cross-ref Z2M/ZHA/forum/email on the pair.
+- A single mfr may have multiple modelIds in `mfs_db` **only** when each pid is a verified couple to its driver.
+- Never invent a second pid for a mfr just to “cover climate” or clear a collision.
+- Runtime `getDriverId(mfr, pid)` must refuse mfr-only catalog hits when `pid` is present but not in `modelIds`.
+- Same OEM / TZE200/204/284 prefix siblings are separate couples until verified.
 
 ### When to REMOVE a fingerprint
 Only if SAME manufacturerName + SAME productId in WRONG driver.
@@ -150,7 +168,7 @@ Do NOT remove just because mfr appears in another driver with different productI
 
 ### Common Multi-Driver Manufacturers
 - `_TZ3000_*` - Makes 1-gang, 2-gang, 3-gang variants
-- `_TZE200_*` / `_TZE204_*` - Tuya DP across sensors, TRVs, covers
+- `_TZE200_*` / `_TZE204_*` / `_TZE284_*` - Tuya DP across sensors, TRVs, covers, dimmers
 - Same OEM = different productIds for different device types
 
 ## GITHUB ACTIONS / YML WORKFLOW RULES

@@ -27898,19 +27898,16 @@
     "_tze284_m1cvyneb": {
       "manufacturerId": "_tze284_m1cvyneb",
       "modelIds": [
-        "TS0201",
         "TS0601"
       ],
       "variants": [],
-      "deviceType": "sensor",
-      "driverHint": "climate_sensor",
+      "deviceType": "dimmer",
+      "driverHint": "wall_dimmer_tuya",
       "capabilities": [
-        "measure_temperature",
-        "measure_humidity",
-        "measure_battery",
-        "alarm_battery"
+        "onoff",
+        "dim"
       ],
-      "powerSource": "battery",
+      "powerSource": "mains",
       "sources": [
         "local",
         "z2m"
@@ -27919,7 +27916,7 @@
         "local": 1,
         "z2m": 1
       },
-      "confidence": 0.17,
+      "confidence": 0.99,
       "lastSeen": "2026-06-19T20:58:49.736Z"
     },
     "_tze284_madl8ejv": {
@@ -235031,12 +235028,12 @@
     "_tze284_m1cvyneb|ts0601": {
       "mfr": "_tze284_m1cvyneb",
       "pid": "ts0601",
-      "driver": "soil_sensor",
+      "driver": "wall_dimmer_tuya",
       "sources": [
         "canonical",
         "mfs_db"
       ],
-      "confidence": 0.95
+      "confidence": 0.99
     },
     "_tze284_madl8ejv|ts0601": {
       "mfr": "_tze284_madl8ejv",
@@ -248484,15 +248481,6 @@
     "_tze284_locansqn|ts0601": {
       "mfr": "_tze284_locansqn",
       "pid": "ts0601",
-      "driver": "climate_sensor",
-      "sources": [
-        "mfs_db"
-      ],
-      "confidence": 0.17
-    },
-    "_tze284_m1cvyneb|ts0201": {
-      "mfr": "_tze284_m1cvyneb",
-      "pid": "ts0201",
       "driver": "climate_sensor",
       "sources": [
         "mfs_db"
@@ -292550,12 +292538,12 @@
       "confidence": 0.95
     },
     "_TZE284_m1cvyneb": {
-      "driverId": "soil_sensor",
+      "driverId": "wall_dimmer_tuya",
       "productIds": [
         "TS0601"
       ],
       "source": "fingerprints-2026-07-14",
-      "confidence": 0.95
+      "confidence": 0.99
     },
     "_TZE284_madl8ejv": {
       "driverId": "device_radiator_valve",

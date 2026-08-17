@@ -110,6 +110,30 @@ const KNOWN_ROUTES = [
     pids: ['TS0601'],
     driver: 'ceiling_fan',
   },
+  {
+    id: 'jjdkhueq-switch2',
+    mfrs: ['_TZ3000_jjdkhueq'],
+    pids: ['TS0002'],
+    driver: 'switch_2gang',
+  },
+  {
+    id: 'ok0ggpk7-switch3',
+    mfrs: ['_TZ3000_ok0ggpk7', '_TZ3000_f09j9qjb', '_TZ3000_vjhcenzo'],
+    pids: ['TS0003'],
+    driver: 'switch_3gang',
+  },
+  {
+    id: 'shkxsgis-switch4-tuya',
+    mfrs: ['_TZE200_shkxsgis', '_TZE204_shkxsgis', '_TZE284_shkxsgis', '_TZE204_aagrxlbd', '_TZE284_aagrxlbd'],
+    pids: ['TS0601'],
+    driver: 'wall_switch_4_gang_tuya',
+  },
+  {
+    id: 'r731zlxk-switch6-tuya',
+    mfrs: ['_TZE200_r731zlxk', '_TZE204_r731zlxk', '_TZE284_r731zlxk'],
+    pids: ['TS0601'],
+    driver: 'wall_switch_6_gang_tuya',
+  },
 ];
 
 function loadJson(fp) {

@@ -60,6 +60,7 @@
       "mfr": [
         "_TZE284_m1cvyneb",
         "_tze284_m1cvyneb",
+        "_TZE284_M1CVYNEB",
         "_TZE204_m1cvyneb",
         "_TZE200_m1cvyneb"
       ],
@@ -69,10 +70,14 @@
         "climate_sensor",
         "climate_sensor_temperature",
         "thermostat",
-        "air_purifier_climate"
+        "air_purifier_climate",
+        "soil_sensor",
+        "zigbee_universal",
+        "generic_tuya",
+        "ir_blaster"
       ],
       "protocol": "tuya_ef00",
-      "notes": "PresentSky / forum: wall dimmer wrongly paired as temperature sensor. Re-pair required after FP lock.",
+      "notes": "BSEED Click 1-gang EF00 dimmer insert. Stale climate pairing cannot be swapped at runtime — remove and re-add as wall dimmer.",
       "sources": ["forum-140352", "diag-f20dc4f0", "P139", "P149"],
       "tracks": {
         "master": { "static": true, "dynamic": true },
@@ -514,6 +519,193 @@
       ],
       "notes": "Battery CR2032 sticky 3-button wall remote. Must not pair as 2-gang. Single/double/long press via PhysicalButtonMixin.",
       "sources": ["z2m", "forum-140352-2168", "aliexpress-3055457170131038"],
+      "tracks": {
+        "master": { "static": true, "dynamic": true },
+        "stable": { "static": true, "dynamic": false }
+      }
+    },
+    {
+      "id": "novadigital-ts0002-jjdkhueq",
+      "mfr": ["_TZ3000_jjdkhueq", "_tz3000_jjdkhueq"],
+      "productId": ["TS0002"],
+      "canonicalDriver": "switch_2gang",
+      "forbiddenDrivers": ["switch_1gang", "climate_sensor", "switch_3gang"],
+      "protocol": "zcl",
+      "retailNames": ["NovaDigital 2-gang", "Zemismart 2-gang"],
+      "notes": "Mains 2-gang TS0002. Do not steal onto 1-gang or climate catch-all.",
+      "sources": ["z2m", "forum-140352-2173"],
+      "tracks": {
+        "master": { "static": true, "dynamic": true },
+        "stable": { "static": true, "dynamic": false }
+      }
+    },
+    {
+      "id": "novadigital-ts0003-ok0ggpk7",
+      "mfr": ["_TZ3000_ok0ggpk7", "_tz3000_ok0ggpk7"],
+      "productId": ["TS0003"],
+      "canonicalDriver": "switch_3gang",
+      "forbiddenDrivers": ["switch_1gang", "climate_sensor", "switch_2gang", "switch_2_gang", "generic_tuya"],
+      "protocol": "zcl",
+      "retailNames": ["NovaDigital NFZB-03"],
+      "notes": "Z2M sibling of _TZ3000_fawk5xjv. switch_1gang also lists TS0003 so this mfr must not live there.",
+      "sources": ["z2m-28204", "forum-140352-2173"],
+      "tracks": {
+        "master": { "static": true, "dynamic": true },
+        "stable": { "static": true, "dynamic": false }
+      }
+    },
+    {
+      "id": "novadigital-ts0003-f09j9qjb",
+      "mfr": ["_TZ3000_f09j9qjb", "_tz3000_f09j9qjb"],
+      "productId": ["TS0003"],
+      "canonicalDriver": "switch_3gang",
+      "forbiddenDrivers": ["switch_2_gang", "switch_2gang", "climate_sensor", "switch_1gang"],
+      "protocol": "zcl",
+      "notes": "3-gang ZCL. Climate compose lists TS0601 so this mfr on climate would steal pairing.",
+      "sources": ["forum-140352-2173"],
+      "tracks": {
+        "master": { "static": true, "dynamic": true },
+        "stable": { "static": true, "dynamic": false }
+      }
+    },
+    {
+      "id": "novadigital-ts0003-vjhcenzo",
+      "mfr": ["_TZ3000_vjhcenzo", "_tz3000_vjhcenzo"],
+      "productId": ["TS0003"],
+      "canonicalDriver": "switch_3gang",
+      "forbiddenDrivers": ["climate_sensor", "switch_1gang", "switch_2gang"],
+      "protocol": "zcl",
+      "notes": "3-gang ZCL, not a climate sensor.",
+      "sources": ["forum-140352-2173"],
+      "tracks": {
+        "master": { "static": true, "dynamic": true },
+        "stable": { "static": true, "dynamic": false }
+      }
+    },
+    {
+      "id": "novadigital-ts0601-4gang-aagrxlbd",
+      "mfr": [
+        "_TZE204_aagrxlbd",
+        "_tze204_aagrxlbd",
+        "_TZE284_aagrxlbd",
+        "_tze284_aagrxlbd"
+      ],
+      "productId": ["TS0601"],
+      "canonicalDriver": "wall_switch_4_gang_tuya",
+      "forbiddenDrivers": ["climate_sensor", "din_rail_meter", "switch_4gang"],
+      "protocol": "tuya_ef00",
+      "retailNames": ["NovaDigital TB26-4"],
+      "notes": "4-gang MCU DP1-4. climate_sensor also declares TS0601.",
+      "sources": ["z2m-herdsman-7133", "forum-140352-2173"],
+      "tracks": {
+        "master": { "static": true, "dynamic": true },
+        "stable": { "static": true, "dynamic": false }
+      }
+    },
+    {
+      "id": "zemismart-ts0601-4gang-shkxsgis",
+      "mfr": [
+        "_TZE200_shkxsgis",
+        "_tze200_shkxsgis",
+        "_TZE204_shkxsgis",
+        "_tze204_shkxsgis",
+        "_TZE284_shkxsgis",
+        "_tze284_shkxsgis"
+      ],
+      "productId": ["TS0601"],
+      "canonicalDriver": "wall_switch_4_gang_tuya",
+      "forbiddenDrivers": ["climate_sensor", "din_rail_meter", "switch_4gang"],
+      "protocol": "tuya_ef00",
+      "notes": "4-gang MCU DP1-4. din_rail_meter previously stole the TZE204 sibling.",
+      "sources": ["forum-140352-2173"],
+      "tracks": {
+        "master": { "static": true, "dynamic": true },
+        "stable": { "static": true, "dynamic": false }
+      }
+    },
+    {
+      "id": "zemismart-ts0601-6gang-r731zlxk",
+      "mfr": [
+        "_TZE200_r731zlxk",
+        "_tze200_r731zlxk",
+        "_TZE204_r731zlxk",
+        "_tze204_r731zlxk",
+        "_TZE284_r731zlxk",
+        "_tze284_r731zlxk"
+      ],
+      "productId": ["TS0601"],
+      "canonicalDriver": "wall_switch_6_gang_tuya",
+      "forbiddenDrivers": ["climate_sensor", "switch_wall_6gang"],
+      "protocol": "tuya_ef00",
+      "retailNames": ["Zemismart TB26-6"],
+      "notes": "6-gang MCU DP1-6 + DP14 power-on. climate_sensor also declares TS0601.",
+      "sources": ["z2m-11975", "forum-140352-2173"],
+      "tracks": {
+        "master": { "static": true, "dynamic": true },
+        "stable": { "static": true, "dynamic": false }
+      }
+    },
+    {
+      "id": "interview-ts0043-bczr4e10",
+      "mfr": ["_TZ3000_bczr4e10", "_tz3000_bczr4e10"],
+      "productId": ["TS0043"],
+      "canonicalDriver": "button_wireless_3",
+      "forbiddenDrivers": ["switch_3gang", "switch_4gang", "switch_2gang"],
+      "protocol": "zcl",
+      "notes": "INT-170: interview has 4 OnOff endpoints + EP custom 0xE000. ProductId TS0043 is a battery remote, not a wall switch.",
+      "sources": ["DEVICE_INTERVIEWS INT-170", "desktop-interview-2026-01-31"],
+      "tracks": {
+        "master": { "static": true, "dynamic": true },
+        "stable": { "static": true, "dynamic": false }
+      }
+    },
+    {
+      "id": "cfnprab5-power-strip-not-remote",
+      "mfr": ["_TZ3000_cfnprab5", "_tz3000_cfnprab5", "_TZ3000_CFNPRAB5"],
+      "productId": ["TS011F"],
+      "canonicalDriver": "socket_power_strip_four_three",
+      "forbiddenDrivers": ["button_wireless_2", "button_wireless_4", "climate_sensor"],
+      "protocol": "zcl",
+      "notes": "4-outlet + USB strip. Same mfr must not pair as a 2-button remote.",
+      "tracks": {
+        "master": { "static": true, "dynamic": true },
+        "stable": { "static": true, "dynamic": false }
+      }
+    },
+    {
+      "id": "lwthnp7j-zcl-4gang",
+      "mfr": ["_TZ3000_lwthnp7j", "_tz3000_lwthnp7j", "_TZ3000_LWTHNP7J"],
+      "productId": ["TS0004"],
+      "canonicalDriver": "switch_4gang",
+      "forbiddenDrivers": ["wall_switch_4_gang_tuya", "climate_sensor", "button_wireless_4"],
+      "protocol": "zcl",
+      "notes": "ZCL 4-gang (not EF00 TS0601).",
+      "tracks": {
+        "master": { "static": true, "dynamic": true },
+        "stable": { "static": true, "dynamic": false }
+      }
+    },
+    {
+      "id": "okaz9tjs-ts011f-metering-plug",
+      "mfr": ["_TZ3000_okaz9tjs", "_tz3000_okaz9tjs", "_TZ3000_OKAZ9TJS"],
+      "productId": ["TS011F"],
+      "canonicalDriver": "plug_energy_monitor",
+      "forbiddenDrivers": ["button_wireless_plug", "button_wireless_2", "climate_sensor"],
+      "protocol": "zcl",
+      "notes": "Metering TS011F plug, not a wireless button.",
+      "tracks": {
+        "master": { "static": true, "dynamic": true },
+        "stable": { "static": true, "dynamic": false }
+      }
+    },
+    {
+      "id": "fgwhjm9j-ts011f-metering-plug",
+      "mfr": ["_TZ3210_fgwhjm9j", "_tz3210_fgwhjm9j", "_TZ3210_FGWHJM9J"],
+      "productId": ["TS011F"],
+      "canonicalDriver": "plug_energy_monitor",
+      "forbiddenDrivers": ["climate_sensor", "button_wireless_plug"],
+      "protocol": "zcl",
+      "notes": "TZ3210 TS011F metering plug, not a climate sensor.",
       "tracks": {
         "master": { "static": true, "dynamic": true },
         "stable": { "static": true, "dynamic": false }

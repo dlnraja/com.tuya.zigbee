@@ -91,6 +91,14 @@ const CRAWLERS = [
     desc: 'Silent scan 140352+satellites; never posts',
   },
   {
+    id: 'contributor-dump',
+    name: 'Contributor Zigbee repos (HomeSuite / Johan READ-ONLY)',
+    cmd: 'node tools/ci/contributor-repo-dump.js 2>&1 || echo "SKIP"',
+    weight: 'low',
+    estimated: '45s',
+    desc: 'Cluster/jitter/retry intel from sibling Homey Zigbee repos — no code copy',
+  },
+  {
     id: 'free-scrape',
     name: 'Free scrape stack (Jina/Microlink/Wayback/Crawl4AI?/Firecrawl budget)',
     cmd: 'node scripts/ci/diag-investigate-orchestrator.js --full --skip-fetch --focus=2137',

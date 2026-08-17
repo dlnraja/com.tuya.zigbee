@@ -25,10 +25,12 @@ Store name: **Universal Tuya** (Zigbee in description/tags). Not “Unified Engi
 |---|--------|--------|
 | 1 | Publish tip + soak Peter OOM (`96c19859` → 9.0.541+) | Tip **9.0.543+**; RC fact-check `reports/P156_RC_LIVEDATA_SLEEPY_FACTCHECK_2026-08-16.md` |
 | 2 | Sacred couples / anti dual-claim | **P168–P169 + P177–P178** — iystcadi, ZG-303Z soil, r0jdjrvi curtain; 0 dual-claims |
-| 3 | Enrich `user-misattribution-registry` from forum | Ongoing (P149–P152, P177–P178) |
+| 3 | Enrich `user-misattribution-registry` from forum | Ongoing (P149–P152, P177–P178, **P2138**) |
 | 4 | Short GitHub docs (sacred couple, dual-app, troubleshooting) | Done / maintain |
 | 5 | Critical modules progressive harden | Continuous |
 | 6 | Integral A+B+C pass | **P178** — align apply + forum device locks + Peter soak checklist |
+| 7 | HomeSuite reliability soak (last-seen, Poll Control, onUninit) | Master **9.0.582+**; stable surgical BOTH @ **5.12.84+** |
+| 8 | BSEED dimmer catalog lock + MCU brightness clamp | **P2138** / master **9.0.583** / stable **5.12.85** — `reports/P2138_BSEED_WALL_DIMMER_2026-08-17.md` |
 | — | Auto enrich-KB / bidi mfs sync / QuotaManager / auto-PR | **Refuse P171–P176** — use mega-crawl + P169/P170 + P177 |
 
 ## Commands
@@ -78,6 +80,8 @@ Integral pass: `reports/P178_INTEGRAL_ABC_PASS_2026-08-16.md`
 | Fix sacred couples / strip dual-claims | Runtime “try 5 drivers then pick best” (Homey cannot) |
 | Misattribution registry + re-pair | Custom Change-driver UI as product promise |
 | Z2M/ZHA/forum research → compose | Copy Z2M converter substitution into SDK3 |
+| Lock **compose + mfs_db + compound DB + new_fingerprints** together | Compose-only FP edit (enrichers re-pollute) |
+| Clamp MCU dimmer brightness 0–1000 | Raw `value * 1000` without clamp (MCU reboot) |
 
 Silent code only — this exchange is a compass, not a forum reply draft.
 

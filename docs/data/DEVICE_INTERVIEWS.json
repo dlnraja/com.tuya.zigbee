@@ -1,7 +1,7 @@
 {
   "version": "5.11.25",
   "lastUpdated": "2026-02-26",
-  "totalInterviews": 186,
+  "totalInterviews": 188,
   "sources": [
     "Homey Community Forum (pages 1-68)",
     "GitHub Issues/PRs (JohanBendz & dlnraja)",
@@ -477,6 +477,36 @@
         "source": "GitHub Issue #1326",
         "status": "supported",
         "driver": "plug_smart"
+      },
+      {
+        "id": "INT-2172",
+        "deviceName": "Tuya ZCL multi-gang wall switch (power-restore burst)",
+        "manufacturerName": "_TZ3000_*",
+        "productId": "TS0002",
+        "source": "Forum #2172 Gabriel_Pedrosa_Mach",
+        "status": "fixed",
+        "driver": "switch_2gang",
+        "protocol": "zcl_only",
+        "symptoms": [
+          "Power restore dumps backlight/power-on/switch-mode in one burst",
+          "Homey settings must win over the boot dump",
+          "Does not apply to EF00 TS0601"
+        ],
+        "fix": {
+          "applied": true,
+          "version": "9.0.575",
+          "description": "ZclSwitchConfigPolicy + ReconnectBurstCoalescer afterBurst re-force Homey settings"
+        }
+      },
+      {
+        "id": "INT-2173",
+        "deviceName": "NovaDigital/Zemismart 2/3/4/6-gang pairing table",
+        "manufacturerName": "_TZ3000_jjdkhueq",
+        "productId": "TS0002",
+        "source": "Forum #2173 Gabriel_Pedrosa_Mach / Zemismart_Official",
+        "status": "fixed",
+        "driver": "switch_2gang",
+        "notes": "Sacred-couple routing: TS0002/TS0003 ZCL vs TS0601 EF00 4/6-gang. Counting EP242 as a gang caused re-pair mis-ID (9.0.578)."
       }
     ],
 

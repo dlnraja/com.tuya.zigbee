@@ -34,6 +34,16 @@ definitions, cluster mappings) and protocol patterns derived from:
   - OpenHAB Zigbee binding — EPL-2.0 (reporting interval research)
   - SmartThings Edge drivers — Apache-2.0 (Tuya DP patterns)
 
+STUDIED REPOSITORIES (NO CODE COPIED)
+-------------------------------------
+  - gpmachado/com.gpm.homesuite (GPL-3.0)
+    https://github.com/gpmachado/com.gpm.homesuite
+    Personal Homey app for Zemismart / NovaDigital / Sonoff hardware.
+    Ideas only (availability last-seen persist, rejoin vs timeout,
+    onUninit teardown, Poll Control skip on sleepy nodes, settings over
+    ZCL dump, inching/power-on/backlight). Implementations in this tree
+    are original MIT code. Do not copy HomeSuite sources.
+
 ICONS & ASSETS
 --------------
   - athombv/homey-vectors-public (official Homey SVG vectors)

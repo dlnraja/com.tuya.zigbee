@@ -96,18 +96,25 @@ describe('TuyaMagicPacket', () => {
     assert.deepStrictEqual(MAGIC_ATTRIBUTES, [0x0004, 0x0000, 0x0001, 0x0005, 0x0007, 0xfffe]);
   });
 
-  it('is idempotent — sent once, then skipped (persisted)', async () => {
+  it('is idempotent in-memory, but a persisted store flag does not skip a new session', async () => {
     const device = makeDevice();
     const behavior = { calls: [] };
     await sendTuyaMagicPacket(device, makeZcl(behavior), 1);
     await sendTuyaMagicPacket(device, makeZcl(behavior), 1);
     assert.strictEqual(behavior.calls.length, 1);
-    // fresh module-level call with persisted flag: still skipped
     const device2 = makeDevice();
     device2.setStoreValue('tuya_magic_packet_sent', true);
     const ok = await sendTuyaMagicPacket(device2, makeZcl(behavior), 1);
     assert.strictEqual(ok, true);
-    assert.strictEqual(behavior.calls.length, 1);
+    assert.strictEqual(behavior.calls.length, 2);
+  });
+
+  it('force re-sends after announce even in the same session', async () => {
+    const device = makeDevice();
+    const behavior = { calls: [] };
+    await sendTuyaMagicPacket(device, makeZcl(behavior), 1);
+    await sendTuyaMagicPacket(device, makeZcl(behavior), 1, { force: true });
+    assert.strictEqual(behavior.calls.length, 2);
   });
 
   it('never throws on failure and does not mark as sent', async () => {

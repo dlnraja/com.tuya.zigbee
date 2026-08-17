@@ -26,6 +26,17 @@ This registry documents the specialized AI skills and agents integrated into the
 | **`skill-check`** | Validation | Validating new skills against the agentskills specification. |
 | **`tmux`** | Terminal Multiplexing | Managing persistent remote maintenance sessions. |
 
+## Session memory (agents)
+
+Before coding, also read:
+
+1. `.cursor/rules/operational-memory-2026-08-15.mdc` — live Test tip + sacred couples
+2. `.ai/KNOWLEDGE_CACHE.json` → `recentDiscoveries` (P2138 + HomeSuite classification)
+3. `reports/SESSION_HANDOFF_2026-08-15.md`
+4. `docs/rules/DUAL_APP_VISION.md` — BOTH vs MASTER_ONLY
+
+MCU dimmers: clamp brightness via `lib/tuya/TuyaBrightnessScale.js`. Fingerprint locks must cover compose + catalogs + registry.
+
 ## 🛠️ Usage Instructions for AI Agents
 
 As an AI agent interacting with this repository, you **MUST** prioritize using these skills for their respective domains. 

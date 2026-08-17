@@ -1,8 +1,41 @@
 {
-  "version": "1.0.0",
-  "lastUpdated": "2026-08-16",
+  "version": "1.0.1",
+  "lastUpdated": "2026-08-17",
   "description": "Local device knowledge keyed by sacred couple (mfr+productId) when known. Bare productId alone is ambiguous — prefer couples. Workarounds map to existing in-tree managers (not invent Homey self-repair).",
   "devices": [
+    {
+      "mfr": "_TZE284_m1cvyneb",
+      "productId": ["TS0601"],
+      "name": "BSEED Click Zigbee dimmer socket insert (EF00)",
+      "type": "dimmer",
+      "canonicalDriverHint": "wall_dimmer_tuya",
+      "siblings": ["_TZE204_m1cvyneb", "_TZE200_m1cvyneb"],
+      "dpMapping": {
+        "onoff": 1,
+        "brightness": 2,
+        "countdown": 6,
+        "backlight": 21
+      },
+      "knownHardwareFlaws": [
+        "paired_as_climate_when_catalog_polluted",
+        "mcu_reboots_if_brightness_gt_1000",
+        "interview_shows_0xED00_not_for_compose_bind"
+      ],
+      "requiredWorkarounds": [
+        "sacred_couple_routing",
+        "mcu_brightness_clamp_0_1000",
+        "remove_and_repair_after_fp_lock",
+        "strip_phantom_battery"
+      ],
+      "forbiddenDrivers": [
+        "climate_sensor",
+        "soil_sensor",
+        "zigbee_universal",
+        "generic_tuya",
+        "ir_blaster"
+      ],
+      "sources": ["forum-140352-2133-2138", "z2m-TS0601_dimmer_1_gang_1", "diag-f20dc4f0", "P2138"]
+    },
     {
       "mfr": "_TZE200_7hfcudw5",
       "productId": ["TS0601"],
@@ -96,8 +129,20 @@
       "codeRefs": ["tools/ci/align-mfs-db-intelligent.js", "data/user-misattribution-registry.json"]
     },
     "sacred_couple_routing": {
-      "description": "Always match manufacturerName + productId together.",
-      "codeRefs": ["tools/ci/audit-sacred-couple.js", "docs/rules/PRAGMATIC_ROADMAP.md"]
+      "description": "Always match manufacturerName + productId together; lock compose + catalogs + registry.",
+      "codeRefs": ["tools/ci/audit-sacred-couple.js", "docs/rules/PRAGMATIC_ROADMAP.md", "reports/P2138_BSEED_WALL_DIMMER_2026-08-17.md"]
+    },
+    "mcu_brightness_clamp_0_1000": {
+      "description": "Tuya MCU dimmers reboot if brightness write >1000.",
+      "codeRefs": ["lib/tuya/TuyaBrightnessScale.js", "drivers/wall_dimmer_tuya/device.js", "drivers/dimmer_2_gang_tuya/device.js"]
+    },
+    "remove_and_repair_after_fp_lock": {
+      "description": "Homey cannot hot-swap drivers; remove + re-add after sacred couple fix.",
+      "codeRefs": ["docs/guides/USER_TROUBLESHOOTING.md", "lib/tuya/TuyaZigbeeDevice.js"]
+    },
+    "strip_phantom_battery": {
+      "description": "Mains devices must strip measure_battery / alarm_battery if wrongly added.",
+      "codeRefs": ["drivers/wall_dimmer_tuya/device.js"]
     },
     "state_restore_on_rejoin": {
       "description": "Power-on behavior via ZCL / DP14 where supported — not Homey invent APIs.",

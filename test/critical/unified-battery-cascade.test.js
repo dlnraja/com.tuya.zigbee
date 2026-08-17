@@ -81,7 +81,7 @@ describe('unified battery cascade', function() {
     assert.strictEqual(handler.lastVoltage, 3);
   });
 
-  it('uses a marked 50 percent estimate when no real battery value exists yet', function() {
+  it('leaves battery unknown when no real value exists yet (P115)', function() {
     const values = {};
     const store = {};
     const device = {
@@ -102,9 +102,9 @@ describe('unified battery cascade', function() {
 
     handler._setDefaultBattery();
 
-    assert.strictEqual(values.measure_battery, 50);
-    assert.strictEqual(store.last_battery_estimated, true);
-    assert.strictEqual(store.last_battery_source, 'estimated-default');
+    assert.strictEqual(values.measure_battery, undefined);
+    assert.strictEqual(store.last_battery_estimated, undefined);
+    assert.strictEqual(store.last_battery_source, undefined);
   });
 
   it('replaces estimated battery state with real Tuya DP metadata', function() {

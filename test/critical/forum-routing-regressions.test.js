@@ -288,10 +288,15 @@ describe('forum routing regressions', () => {
     assertDriverDoesNotClaim('climate_sensor', '_tze200_8eazvzo6');
     assert(includesCI(composeDriver('switch_wall_6gang').zigbee?.manufacturerName, '_TZE200_8eazvzo6'),
       'switch_wall_6gang must own _TZE200_8eazvzo6');
-    // Forum #2133 PresentSky BSEED dimmer — must stay on wall_dimmer_tuya
+    // Forum #2133/#2138 PresentSky BSEED dimmer — must stay on wall_dimmer_tuya
     assert(includesCI(composeDriver('wall_dimmer_tuya').zigbee?.manufacturerName, '_TZE284_m1cvyneb'),
       'wall_dimmer_tuya must own _TZE284_m1cvyneb');
     assertDriverDoesNotClaim('climate_sensor', '_TZE284_m1cvyneb');
+    assertDriverDoesNotClaim('soil_sensor', '_TZE284_m1cvyneb');
+    assert.match(read('drivers/wall_dimmer_tuya/device.js'), /toTuyaBrightness/);
+    assert.match(read('drivers/wall_dimmer_tuya/device.js'), /await super\.onNodeInit/);
+    const { getDriverId } = require('../../lib/tuya/DeviceFingerprintDB');
+    assert.strictEqual(getDriverId('_TZE284_m1cvyneb', 'TS0601'), 'wall_dimmer_tuya');
     // Forum T26439 #5491 / Z2M SGS02Z soil — must not stay on climate catch-all
     assert(includesCI(composeDriver('soil_sensor').zigbee?.manufacturerName, '_TZE284_nt4pquef'),
       'soil_sensor must own _TZE284_nt4pquef');

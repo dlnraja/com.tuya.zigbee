@@ -2256,6 +2256,36 @@
     "en": "Smarter dual-layer updates (no duplicate energy/button spam), quieter Zigbee time polling on battery remotes, and 3-button scene remotes pairing on the correct driver."
   },
   "9.0.573": {
-    "en": "Smarter dual-layer updates (no duplicate energy/button spam), quieter Zigbee time polling on battery remotes, and 3-button scene remotes pairing on the correct driver."
+    "en": "Hardened multi-gang isolation and command pacing; quieter 0x0001 battery polls on remotes; cluster-aware forum/contributor dumps; power-restore rejoin detection."
+  },
+  "9.0.574": {
+    "en": "Corrected pairing for several 2/3/4/6-gang wall switches that were landing on climate or the wrong gang count."
+  },
+  "9.0.575": {
+    "en": "After a power cut, ZCL switches keep the Homey backlight and power-on settings instead of trusting the boot dump."
+  },
+  "9.0.576": {
+    "en": "Stopped multi-gang switches from toggling the wrong relay after a re-pair; commands stay on their own endpoint and unused Tuya DP is not probed."
+  },
+  "9.0.577": {
+    "en": "Multi-gang Tuya switches keep per-relay control after a power cut or re-pair, and silent Tuya MCU wall switches stay reachable."
+  },
+  "9.0.578": {
+    "en": "Pairing no longer treats the Zigbee Green Power endpoint as an extra gang, so 2-gang switches and button remotes keep the right driver after a re-pair."
+  },
+  "9.0.579": {
+    "en": "Scene/event mode is applied only on remotes that actually have it (TS004F). 3-button scene remotes keep per-endpoint presses, and wall switches keep their own switch type."
+  },
+  "9.0.580": {
+    "en": "Mains switches fire a power-cut rejoin flow even after a short outage, 4-gang ZCL boards stay on the 4-gang driver, and 4-outlet strips no longer pair as a 2-button remote."
+  },
+  "9.0.581": {
+    "en": "Improved battery percentage for wireless remotes (Zigbee, Tuya DP, and hybrid): real reports only, CR2032 curves, and no fake 50/100% while the cell is still unknown."
+  },
+  "9.0.582": {
+    "en": "Mains devices keep last-seen across app restart, sleepy sensors skip Poll Control binds, and switch settings including inching are re-applied after a power cut. Metering plugs pair on the plug driver."
+  },
+  "9.0.583": {
+    "en": "Wall dimmers keep the correct driver fingerprint, clamp brightness so the MCU does not reboot, and strip phantom battery after a wrong climate pairing. Sacred couples stay mfr+productId only."
   }
 }

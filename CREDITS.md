@@ -19,7 +19,7 @@
 ## Community Contributors
 - **AreAArseth/com.hobeian** - Hobeian Zigbee devices
 - **drenso/com.tuya2** - TypeScript Tuya cloud app (OAuth2 patterns)
-- **gpmachado** - Cluster registry, availability manager, rejoin detection
+- **gpmachado** (`gpmachado/com.gpm.homesuite`, GPL-3.0, ideas only — no code copied) — availability last-seen persist + 5 min boot grace, rejoin vs timeout, lifecycle `onUninit` teardown, Poll Control skip on sleepy nodes, Homey settings over ZCL dump, jitter/TX pacing, inching/power-on/backlight re-apply, interview-driven sacred couples. Dual-app tags in `.ai/KNOWLEDGE_CACHE.json` → `recentDiscoveries.homesuite`.
 - **andiwirz** - Protocol auto-detect, DP discovery tool
 - **rebtor** - TuyAPI local control
 - **jurgenheine** - Cloud API patterns
@@ -61,6 +61,7 @@
 - **Joolee/Homey-SVG-Icons** - Community SVG capability icons
 - **codetheweb/tuyapi** - Node.js Tuya local API
 - **blakadder/zigbee** - Cross-platform Zigbee device database
+- **gpmachado/com.gpm.homesuite** - GPL-3.0 study only (no code copied): availability, rejoin, onUninit teardown, Poll Control skip
 
 ## Device Database
 - **zigbee.blakadder.com** - Cross-platform device fingerprints
@@ -100,7 +101,7 @@
 - **ErnieV/com.tuya.zigbee** — Quoya M515EGBZTN curtain support (position inversion, DP16 upper/lower limits) + Zbeacon TS011F plug energy routing — integrated
 - **map1981/com.tuya.zigbee** — Dooya curtain driver exploration
 - **onesilop, MalmFredrik, arjanlemmers, MartijnEisses, macmonty, pixelwiese, Robsta86, pkuijpers, bmalkow** — forks audited for device additions
-- **finnamu** — climate sensor `_TZE284_hodyryli` case-sensitivity investigation (issue #513)
+- **gpmachado/com.gpm.homesuite** (GPL-3.0, studied — original reimplementation only) — Zemismart/NovaDigital/Sonoff field behaviour: availability last-seen, rejoin, onUninit teardown, Poll Control skip, settings-over-dump
 - **Jocke_Wallen** — Moes TS0044 `_TZ3000_kfu8zapd` remote (forum #2098-2104)
 - **blutch32** — HOBEIAN ZG-303Z soil sensor pairing variants (forum #2101)
 - **Nigel_Scott** — HOBEIAN ZG-204ZP/ZK presence `_TZE200_ka8l86iu` (forum #2112, issue #382)
@@ -133,6 +134,7 @@
 | athombv (SDK3, zigbeedriver, zigbee-clusters) | **MIT** | Framework |
 | OpenHAB Zigbee binding | **EPL-2.0** | Recherche intervalles de reporting |
 | SmartThings Edge drivers | **Apache-2.0** | Patterns Tuya DP |
+| gpmachado/com.gpm.homesuite | **GPL-3.0** | Study only — no code copied; behaviour reimplemented under MIT |
 
 > Voir **NOTICE** à la racine pour les attributions complètes. Les empreintes,
 > numéros de datapoint et comportements protocolaires sont des données

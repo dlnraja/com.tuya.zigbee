@@ -26,6 +26,7 @@
 const fs = require('fs');
 const path = require('path');
 const { SmartFetcher } = require(path.resolve(__dirname, '..', '..', 'lib', 'scraper', 'smart-fetch'));
+const { extractForumSignals } = require('./forum-signal-extract');
 
 const ROOT = path.resolve(__dirname, '..', '..');
 const STATE_DIR = path.join(ROOT, '.github', 'state', 'forum');
@@ -43,6 +44,7 @@ const DEFAULT_TOPICS = [
   { id: 157628, name: 'stop-ai-paste', replyAllowed: false },
   // RF coexistence education (Zigbee/Thread vs Wi-Fi numbering) — READ-ONLY
   { id: 157859, name: 'rf-channels-coexistence', replyAllowed: false },
+  { id: 155646, name: 'homesuite-reliability', replyAllowed: false },
   // Satellite Tuya / Zigbee threads — silent enrich only
   { id: 106779, name: 'tuya-inc-official', replyAllowed: false },
   { id: 21313, name: 'tuya-cloud', replyAllowed: false },
@@ -57,10 +59,6 @@ const DEFAULT_TOPICS = [
 ];
 
 const UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36';
-// Include _TZE28C1000000_* (Z2M #32305 Avatto prefix) — old {3,6} missed it.
-const MFR_RE = /_T[YZ](?:E200|E204|E284|E28[0-9A-Z]*|ZB\d{2}|Z3000|Z3002|Z3210|Z3218|ST11)[_-][A-Za-z0-9]+/gi;
-const PID_RE = /\bTS\d{4}[A-Z]?\b/g;
-const ISSUE_RE = /\b(?:crash|timeout|battery|button|dimmer|cover|curtain|blind|thermostat|TRV|scale|divisor|kWh|unavailable|offline|no.?data|not.?work|wrong.?driver|unknown|lux|luminance|SOS|presence|soil|irrigation|flow)\b/gi;
 
 const args = process.argv.slice(2);
 const maxPosts = (() => {
@@ -146,11 +144,9 @@ function analyzePosts(posts, localMfrs) {
   const newFPs = new Map();
 
   for (const p of posts) {
-    const text = String(p.cooked || p.raw || '').replace(/<[^>]+>/g, ' ');
-    const mfrs = [...new Set((text.match(MFR_RE) || []).map((m) => m.toUpperCase()))];
-    const pids = [...new Set(text.match(PID_RE) || [])];
-    const issues = [...new Set((text.match(ISSUE_RE) || []).map((s) => s.toLowerCase()))];
-    if (!mfrs.length && !issues.length) {continue;}
+    const text = String(p.cooked || p.raw || '');
+    const { mfrs, pids, issues, clusters } = extractForumSignals(text);
+    if (!mfrs.length && !issues.length && !clusters.length) {continue;}
 
     for (const m of mfrs) {
       if (!localMfrs.has(m.toLowerCase())) {
@@ -164,7 +160,7 @@ function analyzePosts(posts, localMfrs) {
       }
     }
 
-    if (issues.length || mfrs.length) {
+    if (issues.length || mfrs.length || clusters.length) {
       actionable.push({
         post_number: p.post_number,
         username: p.username,
@@ -172,7 +168,8 @@ function analyzePosts(posts, localMfrs) {
         mfrs,
         pids,
         issues,
-        excerpt: text.replace(/\s+/g, ' ').trim().slice(0, 220),
+        clusters,
+        excerpt: text.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim().slice(0, 220),
       });
     }
   }

@@ -112,6 +112,16 @@ const FORBIDDEN = [
     mfrs: ['_TZE284_m1cvyneb', '_TZE204_m1cvyneb', '_TZE200_m1cvyneb'],
   },
   {
+    id: 'p94-m1cvyneb-not-soil',
+    driver: 'soil_sensor',
+    mfrs: ['_TZE284_m1cvyneb', '_TZE204_m1cvyneb', '_TZE200_m1cvyneb'],
+  },
+  {
+    id: 'p94-m1cvyneb-not-universal',
+    driver: 'zigbee_universal',
+    mfrs: ['_TZE284_m1cvyneb', '_TZE204_m1cvyneb', '_TZE200_m1cvyneb'],
+  },
+  {
     id: 'p94-imaccztn-not-generic',
     driver: 'generic_tuya',
     mfrs: ['_TZ3210_imaccztn'],

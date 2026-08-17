@@ -164,9 +164,32 @@ must(
 );
 
 must(
+  'TuyaEF00Manager does not invent 100% battery on DP timeout',
+  !/setCapabilityValue\?\.\('measure_battery', 100\)/.test(read('lib/tuya/TuyaEF00Manager.js')),
+);
+
+must(
+  'UnifiedBatteryHandler does not invent 50% default',
+  !/using marked 50% estimate/.test(read('lib/battery/UnifiedBatteryHandler.js')),
+);
+
+must(
   'battery-reporting-manager writes via _writeBatteryPercent',
   /_writeBatteryPercent/.test(read('lib/utils/battery-reporting-manager.js'))
     && !/setCapabilityValue\('measure_battery'/.test(read('lib/utils/battery-reporting-manager.js')),
+);
+
+must(
+  'battery-reporting-manager does not blindly divide ZCL by 2',
+  !/Math\.min\(100, Math\.max\(0, (?:value|battery\.batteryPercentageRemaining) \/ 2\)\)/.test(
+    read('lib/utils/battery-reporting-manager.js')
+  ),
+);
+
+must(
+  'battery-reader does not invent 100% battery',
+  !/fallback_100/.test(read('lib/utils/battery-reader.js'))
+    && !/new_device_assumption/.test(read('lib/utils/battery-reader.js')),
 );
 
 must(
@@ -187,6 +210,103 @@ must(
 must(
   'VirtualButtonMixin commits UI via commitCapability',
   /commitCapability/.test(read('lib/mixins/VirtualButtonMixin.js')),
+);
+
+must(
+  'ReconnectBurstCoalescer exists',
+  fs.existsSync(path.join(ROOT, 'lib/layers/ReconnectBurstCoalescer.js')),
+);
+
+must(
+  'UnifiedSwitchBase isolates onoff endpoints',
+  /capabilityForOnOffEndpoint/.test(read('lib/devices/UnifiedSwitchBase.js')),
+);
+
+must(
+  'CapabilityCommandRouter skips DP race on gang>=2',
+  /endpointId > 1/.test(read('lib/zigbee/CapabilityCommandRouter.js'))
+    && /skipDp/.test(read('lib/zigbee/CapabilityCommandRouter.js')),
+);
+
+must(
+  'PhysicalButtonMixin skips group 0 on multi-gang relays',
+  /groupsCluster && !isMultiGangRelay/.test(read('lib/mixins/PhysicalButtonMixin.js')),
+);
+
+must(
+  'Tuya magic packet is not skipped after app restart',
+  /Do NOT skip on a persisted store/.test(read('lib/zigbee/TuyaMagicPacket.js'))
+    && /force: true/.test(read('lib/devices/UnifiedSwitchBase.js')),
+);
+
+must(
+  'PhysicalButtonMixin announce rebinds all gangs and calls super',
+  /super\.onEndDeviceAnnounce/.test(read('lib/mixins/PhysicalButtonMixin.js'))
+    && /Math\.max\(Number\(this\.gangCount\)/.test(read('lib/mixins/PhysicalButtonMixin.js')),
+);
+
+must(
+  'Interview classifier ignores Green Power EP242',
+  fs.existsSync(path.join(ROOT, 'lib/utils/interviewEndpoints.js'))
+    && /GREEN_POWER_ENDPOINT = 242/.test(read('lib/utils/interviewEndpoints.js')),
+);
+
+must(
+  'ZclClusterLexicon covers Time and PowerCfg',
+  /0x000A/.test(read('lib/zigbee/ZclClusterLexicon.js'))
+    && /0x0001/.test(read('lib/zigbee/ZclClusterLexicon.js')),
+);
+
+must(
+  'ZclSwitchConfigPolicy prefers Homey settings over ZCL dump',
+  fs.existsSync(path.join(ROOT, 'lib/zigbee/ZclSwitchConfigPolicy.js')),
+);
+
+must(
+  'DeviceOperatingMode skips 0x8004 on TS0041/42/43 endpoint remotes',
+  fs.existsSync(path.join(ROOT, 'lib/zigbee/DeviceOperatingMode.js'))
+    && /endpoint_remote/.test(read('lib/zigbee/DeviceOperatingMode.js'))
+    && /writeSceneAttr: false/.test(read('lib/zigbee/DeviceOperatingMode.js')),
+);
+
+must(
+  'Power-cut rejoin fires a flow trigger independent of unavailable timeout',
+  /device_rejoined/.test(read('lib/flow/FeatureFlowCards.js'))
+    && /noteBootDump/.test(read('lib/managers/DeviceAvailabilityManager.js')),
+);
+
+must(
+  'PowerClusterPolicy exists',
+  fs.existsSync(path.join(ROOT, 'lib/zigbee/PowerClusterPolicy.js')),
+);
+
+must(
+  'PollControlPolicy exists',
+  fs.existsSync(path.join(ROOT, 'lib/zigbee/PollControlPolicy.js')),
+);
+
+must(
+  'DeviceIOFacade skips pollControl bind on sleepy',
+  /PollControlPolicy/.test(read('lib/io/DeviceIOFacade.js'))
+    && /skip pollControl/.test(read('lib/io/DeviceIOFacade.js')),
+);
+
+must(
+  'Availability restores last_seen after restart',
+  /avail_last_seen_ts/.test(read('lib/managers/DeviceAvailabilityManager.js'))
+    && /BOOT_GRACE_MS/.test(read('lib/managers/DeviceAvailabilityManager.js')),
+);
+
+must(
+  'TuyaZigbeeDevice onUninit tears down via _destroyDevice',
+  /async onUninit\(/.test(read('lib/tuya/TuyaZigbeeDevice.js'))
+    && /_destroyDevice\(/.test(read('lib/tuya/TuyaZigbeeDevice.js')),
+);
+
+must(
+  'UnifiedSwitchBase tears down on onUninit not only onDeleted',
+  /async onUninit\(/.test(read('lib/devices/UnifiedSwitchBase.js'))
+    && /_teardownSwitchResources/.test(read('lib/devices/UnifiedSwitchBase.js')),
 );
 
 const failed = checks.filter(c => !c.ok);

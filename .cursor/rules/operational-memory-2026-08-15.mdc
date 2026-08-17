@@ -3,7 +3,7 @@ description: Live operational memory (Homey Test, P139, forum silent) — read e
 alwaysApply: true
 ---
 
-# Operational memory — com.dlnraja.tuya.zigbee (audit 2026-08-16)
+# Operational memory — com.dlnraja.tuya.zigbee (audit 2026-08-17)
 
 ## Dual-app + shared App ID
 - `master` = preview/soak (~9.0.x). `stable-v5` = reliability LTS (~5.12.x).
@@ -11,12 +11,12 @@ alwaysApply: true
 - Never full-tree sync. Classify BOTH | MASTER_ONLY | STABLE_ONLY.
 
 ## Homey Test live truth (last verified)
-- Master Homey Test: **v9.0.564+** (Auto-Publish after P197). Do not overwrite with 5.12.
-- Stable tip: soak-first skip **draft** verified green (`31972114911`); branding **Universal Tuya** (`0fb4ac816`).
+- Master tip (repo): **v9.0.583** (P2138 BSEED dimmer + HomeSuite reliability through 9.0.582). Do not overwrite with 5.12.
+- Stable tip (worktree): **5.12.85** — soak-first; **never** promote onto shared Test while 9.0 soaks.
 - **9.0.530** hit Athom `processing_failed` (`socket hang up`) — superseded; do **not** spam republish (P139).
 - **P139 hardening**: Auto-Publish `cancel-in-progress: false` (do not kill mid Athom draft/promote).
 - Store name: **Universal Tuya Zigbee** (P142 — dropped “Unified Smart Home Engine”).
-- Docs map: `.github/CONTRIBUTING.md` · `docs/guides/USER_TROUBLESHOOTING.md` · `docs/architecture/LAYERS_CAPABILITY_PROTOCOL.md` · `docs/rules/PRAGMATIC_ROADMAP.md` (P152).
+- Docs map: `.github/CONTRIBUTING.md` · `docs/guides/USER_TROUBLESHOOTING.md` · `docs/architecture/LAYERS_CAPABILITY_PROTOCOL.md` · `docs/rules/PRAGMATIC_ROADMAP.md` · `reports/P2138_BSEED_WALL_DIMMER_2026-08-17.md`.
 
 ## P139 — Athom transient (DO NOT LOOP)
 - Scripts: `.github/scripts/processing-failure-republish-check.js`, `athom-processing-failure-retry.js`.
@@ -37,19 +37,34 @@ alwaysApply: true
 | `_TYZB01_hlla45kx`+TS011F | `double_power_point_2` | Welsh #2129 image OCR |
 | `_TZ3000_w5xztuy7`+TS0002 | `switch_2gang` **ZCL-only** | Kanbros #2130 P139 |
 | `_TZ3210_imaccztn`+TS0004 | `relay_board_4_channel` | TBoy #2131 |
-| `_TZE284_m1cvyneb`+TS0601 | `wall_dimmer_tuya` | PresentSky — re-pair |
+| `_TZE284_m1cvyneb`+TS0601 | `wall_dimmer_tuya` | PresentSky #2133/#2138 — **re-pair**; MCU brightness clamp; forbid climate/soil/universal |
 | `_TZE204_clrdrnya`+TS0601 | `presence_sensor_radar` | settings already present |
-| `_TZE28C1000000_jtbgusdc`+TS0601 | `dimmer_2_gang_tuya` | Royce PDF |
+| `_TZE28C1000000_jtbgusdc`+TS0601 | `dimmer_2_gang_tuya` | Royce / Z2M #32305 brightness clamp |
 | `_TZE284_nt4pquef`+TS0601 | `soil_sensor` | not climate |
 | `_TZE284_hodyryli`+TS0601 | `climate_sensor_zt08` | GH #513 |
+| `_TZ3000_okaz9tjs` / `fgwhjm9j`+TS011F | `plug_energy_monitor` | HomeSuite field couples |
+
+## Catalog hygiene (P2138 + sacred couple matrix)
+- **One MFS ≠ one device.** A manufacturer can have many productIds, OEM labels, variants, and device names. Always lock **(mfr + pid)** couples.
+- Homey pairing uses **compose** sacred couples — but `mfs_db` / `new_fingerprints.json` / compound `DeviceFingerprintDB` can **re-inject** wrong drivers via enrichers + runtime adaptation.
+- Always lock **all** of: compose, registry `forbiddenDrivers`, compound DB (`mfr|pid`), `mfs_db` couples, `lib/tuya/fingerprints.json` with **verified modelIds only**.
+- Never invent a second pid (e.g. fake TS0201) to “fix” a climate collision for a TS0601-only silicon.
+- Runtime: `getDriverId(mfr, pid)` refuses mfr-only catalog when pid is not in `modelIds`.
+- Tuya MCU dimmers: brightness **0–1000 clamped** (`lib/tuya/TuyaBrightnessScale.js`). Never write >1000.
+- Do **not** declare interview-only exotic clusters (e.g. `0xED00`) in compose bindings.
+
+## HomeSuite (gpmachado) — classification reminder
+- GPL-3.0 **ideas only** — no code copy. Credits: `CREDITS.md` / `NOTICE`.
+- BOTH: onUninit teardown, Poll Control skip sleepy, default-response quirks, battery no-invent, FP locks.
+- MASTER_ONLY: DeviceAvailabilityManager last-seen, `device_rejoined`, TX pacer, inching UI extras.
 
 ## Open work
 - **Issue #513 CLOSED** — Finnamu confirmed values OK on 9.0.533 (ZT08 DP17 + unix_1970).
 - Open GitHub issues/PRs: **none**.
-- P194 OTA/WiFi local-first is master-only (bins in `assets/firmware/`, no plug image on buttons).
-- P197: Auto-Enrich strip-then-gate; Blakadder/forum appliers use `isForbiddenPlacement`; live docs no longer invent `com.dlnraja.tuya.zigbee.stable`.
-- Next cleanup: remaining `_hybrid_*_needs_device_assignment` / `_GENERIC_*` placeholders (M09 warn).
+- Peter SOS/smartbutton leftover (#2137/#2167) — still no press reports.
+- P194 OTA/WiFi local-first is master-only.
 - AlarmPolarity smart-learn / free-scrape / parallelDiscover = **MASTER_ONLY**.
+- Next cleanup: remaining `_hybrid_*_needs_device_assignment` / `_GENERIC_*` placeholders (M09 warn).
 
 ## Commands
 ```bash
@@ -57,6 +72,7 @@ gh run list --repo dlnraja/com.tuya.zigbee --limit 12
 node tools/ci/gmail-crash-pattern-gate.js --json
 node tools/ci/forum-media-deep-scan.js --max=40 --topics=140352,26439,89271
 node tools/ci/anti-bot-regression-gate.js
+node --test test/critical/p2138-bseed-wall-dimmer.test.js
 node tools/ci/firmware-updates-gate.js
 node tools/ci/wifi-local-first-gate.js
 ```

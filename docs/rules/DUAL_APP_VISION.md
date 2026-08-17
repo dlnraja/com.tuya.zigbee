@@ -45,7 +45,7 @@ Before coding, classify:
 2. Must have run clean on master Test without new crash reports
 3. Cherry-pick / surgical file edit — adapt to stable code shape (no blind paste)
 4. Never copy: App ID, version, store changelog identity, master-only `lib/multichannel|autonomous|…`, free-scrape stack, AlarmPolarityManager smart-learn, CapabilityCommandRouter parallelDiscover
-5. **Do** backport: SOS `async` + `Promise.resolve(…).catch`, `safe-timers` usage, IAS `zoneId: 10`, null guards (`auditCapabilities`, `this.error`), energy timer detach fixes
+5. **Do** backport: SOS `async` + `Promise.resolve(…).catch`, `safe-timers` usage, IAS `zoneId: 10`, null guards (`auditCapabilities`, `this.error`), energy timer detach fixes, sacred-couple FP locks, MCU brightness clamp, Poll Control skip on sleepy, `onUninit` teardown, battery no-invent
 
 ## Anti-patterns
 
@@ -53,6 +53,11 @@ Before coding, classify:
 - P52 “safe sync” of huge JSON dumps without reading purpose
 - Porting AlarmPolarity “auto learn” to stable before soak + human OK
 - Mentioning branch mechanics in Homey forum replies (silent enrichment)
+- Porting HomeSuite **feature** managers (availability last-seen UI, rejoin flow cards, TX pacer) to stable without human promotion — those stay MASTER_ONLY
+
+## HomeSuite study note (2026-08)
+
+`gpmachado/com.gpm.homesuite` is GPL-3.0. We study behaviour and reimplement under MIT — **never copy sources**. Credits: `CREDITS.md` / `NOTICE`. Classification cheat-sheet lives in `.ai/KNOWLEDGE_CACHE.json` → `recentDiscoveries.homesuite`.
 
 ## Agent checklist
 

@@ -8,11 +8,16 @@ Homey matches **`(manufacturerName + productId)`** (sacred couple). The tile you
 
 | Example | Canonical driver | Action |
 |---------|------------------|--------|
-| `_TZE284_m1cvyneb` + `TS0601` | `wall_dimmer_tuya` | Remove climate-paired device → re-pair as wall dimmer |
+| `_TZE284_m1cvyneb` + `TS0601` | `wall_dimmer_tuya` | Remove climate/soil-paired device → update Test → re-add as **Wall Dimmer**. Interview shows EF00 (dimmer MCU), not temp clusters. Brightness is clamped 0–1000 so the MCU does not reboot. |
 | `_TZ3210_imaccztn` + `TS0004` | `relay_board_4_channel` | Re-pair as relay board (not 4-gang switch) |
 | `_TZ3000_k4ej3ww2` + `TS0207` | `water_leak_sensor` (IAS) | Not the Tuya-DP water driver |
+| `_TZE28C1000000_jtbgusdc` + `TS0601` | `dimmer_2_gang_tuya` | Avatto 2-ch dimmer — not climate; brightness clamp required |
 
-Registry: `data/user-misattribution-registry.json`.
+Registry: `data/user-misattribution-registry.json`. Deep write-up: `reports/P2138_BSEED_WALL_DIMMER_2026-08-17.md`.
+
+### Dimmer mute after correct pairing
+
+If on/off or dim still does nothing on an EF00 wall dimmer: confirm Test ≥ **9.0.583**, that the device is on `wall_dimmer_tuya` (not climate), and that the Zigbee interview includes cluster **61184 / 0xEF00**. Proprietary `0xED00` can appear in the interview — Homey does not need it declared in the driver compose.
 
 ## Many duplicate drivers in the list
 
