@@ -699,6 +699,62 @@
       }
     },
     {
+      "id": "p217-wfxuhoea-loratap-garage",
+      "mfr": ["_TZE200_wfxuhoea", "_tze200_wfxuhoea", "_TZE204_wfxuhoea", "_tze204_wfxuhoea"],
+      "productId": ["TS0601"],
+      "canonicalDriver": "garage_door",
+      "forbiddenDrivers": ["button_wireless_plug", "plug_energy_monitor", "air_purifier_plug", "climate_sensor"],
+      "protocol": "tuya_ef00",
+      "notes": "LoraTap garage opener (JohanBendz #1442). Z2M GARAGE family — not a wireless plug.",
+      "sources": ["JohanBendz#1442", "z2m-garage"],
+      "tracks": {
+        "master": { "static": true, "dynamic": true },
+        "stable": { "static": true, "dynamic": false }
+      }
+    },
+    {
+      "id": "p217-k6fvknrr-ts011f-double-outlet",
+      "mfr": ["_TZ3000_k6fvknrr", "_tz3000_k6fvknrr", "_TZ3000_K6FVKNRR"],
+      "productId": ["TS011F"],
+      "canonicalDriver": "double_power_point_2",
+      "forbiddenDrivers": ["switch_1gang", "plug_energy_monitor", "plug_smart"],
+      "protocol": "zcl",
+      "notes": "2-endpoint TS011F without metering clusters (JohanBendz PR #1437).",
+      "sources": ["JohanBendz#1437"],
+      "tracks": {
+        "master": { "static": true, "dynamic": true },
+        "stable": { "static": true, "dynamic": false }
+      }
+    },
+    {
+      "id": "p217-wing-ts0203-contact",
+      "mfr": ["Wing", "wing", "WING"],
+      "productId": ["TS0203"],
+      "canonicalDriver": "contact_sensor",
+      "forbiddenDrivers": ["water_leak_sensor"],
+      "protocol": "ias_zone",
+      "notes": "Wing brand door/window reports manufacturerName Wing (JohanBendz PR #1439).",
+      "sources": ["JohanBendz#1439"],
+      "tracks": {
+        "master": { "static": true, "dynamic": true },
+        "stable": { "static": true, "dynamic": false }
+      }
+    },
+    {
+      "id": "p217-hobeian-zg305z-usb-2gang",
+      "mfr": ["HOBEIAN", "hobeian", "Hobeian"],
+      "productId": ["ZG-305Z"],
+      "canonicalDriver": "switch_2gang",
+      "forbiddenDrivers": ["button_wireless_2"],
+      "protocol": "zcl",
+      "notes": "HOBEIAN ZG-305Z MHCOZY dual USB-C switch (JohanBendz PR #1435). Unique pid avoids TS0601 cartesian with other HOBEIAN sensors.",
+      "sources": ["JohanBendz#1435"],
+      "tracks": {
+        "master": { "static": true, "dynamic": true },
+        "stable": { "static": true, "dynamic": false }
+      }
+    },
+    {
       "id": "fgwhjm9j-ts011f-metering-plug",
       "mfr": ["_TZ3210_fgwhjm9j", "_tz3210_fgwhjm9j", "_TZ3210_FGWHJM9J"],
       "productId": ["TS011F"],

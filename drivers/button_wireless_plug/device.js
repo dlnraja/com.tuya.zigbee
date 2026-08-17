@@ -67,7 +67,7 @@ const ENERGY_DEVICE_CONFIGS = {
     }
   },
   'TUYA_BLITZWOLF': {
-    sensors: ['_TZE200_nkjintbl', '_TZE200_wfxuhoea', '_TZE204_nkjintbl'],
+    sensors: ['_TZE200_nkjintbl', '_TZE204_nkjintbl'],
     protocol: 'tuya',
     dpMap: {
       1: { cap: 'onoff', type: 'bool' },

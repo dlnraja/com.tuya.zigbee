@@ -108,7 +108,7 @@ const ENERGY_DEVICE_CONFIGS = {
   // Type E: BlitzWolf / Nous style (different DP order)
   'TUYA_BLITZWOLF': {
     sensors: [
-      '_TZE200_nkjintbl', '_TZE200_wfxuhoea', '_TZE204_nkjintbl',
+      '_TZE200_nkjintbl', '_TZE204_nkjintbl',
     ],
     protocol: 'tuya',
     dpMap: {

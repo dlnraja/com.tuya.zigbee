@@ -123,6 +123,9 @@ jobs:
       - name: 🛡️ P2138 sacred-couple matrix gate
         run: node tools/ci/p2138-sacred-couple-matrix-gate.js
 
+      - name: 🛡️ P217 fork harvest sacred-couple gate
+        run: node tools/ci/p217-fork-harvest-gate.js
+
       - name: 🛡️ P214 intelligent ZCL/EF00 adaptation gate
         run: node tools/ci/p214-intelligent-protocol-gate.js
 

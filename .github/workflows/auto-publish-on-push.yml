@@ -92,6 +92,9 @@ jobs:
       - name: P2138 sacred-couple matrix gate
         run: node tools/ci/p2138-sacred-couple-matrix-gate.js
 
+      - name: P217 fork harvest sacred-couple gate
+        run: node tools/ci/p217-fork-harvest-gate.js
+
       - name: Sacred couple registry audit
         run: node tools/ci/audit-sacred-couple.js --from-registry
 
@@ -372,7 +375,9 @@ jobs:
 
       - name: Wait for Athom draft processing
         if: steps.pub.outcome == 'success'
-        run: sleep 180
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+        run: node .github/scripts/wait-athom-draft-ready.js
 
       - name: Install Puppeteer (draft → test promotion)
         if: steps.check_pat.outputs.has_pat == 'true'

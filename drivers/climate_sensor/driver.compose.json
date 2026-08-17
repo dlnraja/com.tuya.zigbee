@@ -33,6 +33,9 @@
   },
   "zigbee": {
     "manufacturerName": [
+      "WING",
+      "wing",
+      "Wing",
       "TUYATEC-HaoiuWzy",
       "TUYATEC-1uxx9cci",
       "TUYATEC-riuj5xzs",
@@ -2711,7 +2714,9 @@
       "ZP-301Z",
       "lumi.sensor_ht",
       "lumi.sensor_ht.agl02",
-      "lumi.weather"
+      "lumi.weather",
+      "ZTH11-3.0",
+      "ZTH13-3.0"
     ],
     "endpoints": {
       "1": {

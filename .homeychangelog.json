@@ -2293,5 +2293,8 @@
   },
   "9.0.585": {
     "en": "Wall dimmers keep the correct driver fingerprint, clamp brightness so the MCU does not reboot, and strip phantom battery after a wrong climate pairing. Sacred couples stay mfr+productId only."
+  },
+  "9.0.586": {
+    "en": "Garage openers, dual outlets, Wing contacts and HOBEIAN USB switches keep the correct driver. Curtain motors that ignore position writes use open/stop/close instead. Battery 100% stays 100%."
   }
 }
