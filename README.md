@@ -36,7 +36,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **App Version** | v9.0.585 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,371 |
-| **Pairing Variants** | 16,601 (4 case combos per fingerprint) |
+| **Pairing Variants** | 16,604 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 577 |
 | **Flow Cards** | 5,175 |
 | **Unique Capabilities** | 170 |
@@ -51,7 +51,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | # | Driver | Fingerprints |
 |---|--------|-------------|
-| 1 | `climate_sensor` | 2,603 |
+| 1 | `climate_sensor` | 2,606 |
 | 2 | `switch_1gang` | 1,784 |
 | 3 | `button_wireless_2` | 740 |
 | 4 | `presence_sensor_radar` | 722 |
