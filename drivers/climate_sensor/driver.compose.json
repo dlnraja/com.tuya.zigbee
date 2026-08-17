@@ -33,6 +33,9 @@
   },
   "zigbee": {
     "manufacturerName": [
+      "Wing",
+      "wing",
+      "WING",
       "TUYATEC-HaoiuWzy",
       "TUYATEC-1uxx9cci",
       "TUYATEC-riuj5xzs",
@@ -2638,6 +2641,8 @@
       "_tz3000_XYZ"
     ],
     "productId": [
+      "ZTH13-3.0",
+      "ZTH11-3.0",
       "01MINIZB",
       "BASICZBR3",
       "CK-BL702-MWS-01",
@@ -2711,9 +2716,7 @@
       "ZP-301Z",
       "lumi.sensor_ht",
       "lumi.sensor_ht.agl02",
-      "lumi.weather",
-      "ZTH11-3.0",
-      "ZTH13-3.0"
+      "lumi.weather"
     ],
     "endpoints": {
       "1": {

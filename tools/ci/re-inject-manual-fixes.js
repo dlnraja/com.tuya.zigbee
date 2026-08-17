@@ -660,6 +660,16 @@ const MANUAL_FIXES = [
     addAtTop: true,
     source: 'p217-johan-1439',
   },
+  {
+    id: 'p217-wing-climate-zth',
+    file: 'drivers/climate_sensor/driver.compose.json',
+    description: 'P217 Johan #1429/#1422: Wing ZTH11/ZTH13 climate — keep pids at top (combo compact)',
+    match: (mfrs) => Array.isArray(mfrs) && mfrs.some((m) => String(m).toLowerCase() === 'wing'),
+    addIfMissing: ['Wing', 'wing', 'WING'],
+    addProductIds: ['ZTH11-3.0', 'ZTH13-3.0'],
+    addAtTop: true,
+    source: 'p217-johan-1429',
+  },
 ];
 
 function patchFix(fix) {
@@ -688,15 +698,24 @@ function patchFix(fix) {
     if (before !== j.zigbee.productId.length) changed = true;
   }
 
-  // P217: ensure unique pids (ZG-305Z, TS0203) survive conflict resolve
+  // P217: ensure unique pids survive conflict resolve / combo compact
   if (Array.isArray(fix.addProductIds)) {
     if (!Array.isArray(j.zigbee.productId)) j.zigbee.productId = [];
-    const have = new Set(j.zigbee.productId.map((p) => String(p).toUpperCase()));
+    const list = j.zigbee.productId;
+    const upper = (p) => String(p).toUpperCase();
     for (const pid of fix.addProductIds) {
-      const key = String(pid).toUpperCase();
-      if (have.has(key)) continue;
-      j.zigbee.productId.push(pid);
-      have.add(key);
+      const key = upper(pid);
+      const idx = list.findIndex((p) => upper(p) === key);
+      if (idx >= 0) {
+        if (fix.addAtTop && idx > 0) {
+          const [kept] = list.splice(idx, 1);
+          list.unshift(kept);
+          changed = true;
+        }
+        continue;
+      }
+      if (fix.addAtTop) list.unshift(pid);
+      else list.push(pid);
       added++;
       changed = true;
     }

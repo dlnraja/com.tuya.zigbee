@@ -12,9 +12,7 @@
  * (scripts/validation/check-driver-collisions.js) treats mfr×pid as a full
  * cartesian product, so the same mfr in two drivers almost always collides.
  *
- * EXCEPTION: 'hobeian' is intentionally multi-driver (pid-disambiguated via
- * ZG-xxx productIds — see DOCUMENTED_EXCEPTIONS in check-driver-collisions.js
- * and scripts/diag/hobeian-consistency-check.js). It is never blocked.
+ * EXCEPTION: 'hobeian' and 'wing' are intentionally multi-driver (pid-disambiguated).
  *
  * Fallback/catch-all drivers are excluded from the "other drivers" set: they
  * intentionally duplicate fingerprints and must not block targeted additions.
@@ -24,7 +22,7 @@ const fs = require('fs');
 const path = require('path');
 
 const FALLBACK_DRIVERS = ['universal_fallback', 'generic_tuya', 'universal_zigbee', 'device_generic_tuya_universal'];
-const MULTI_DRIVER_MFRS = new Set(['hobeian']);
+const MULTI_DRIVER_MFRS = new Set(['hobeian', 'wing']);
 
 let _index = null; // Map<baseLower, Set<driverId>>
 

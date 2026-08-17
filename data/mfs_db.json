@@ -137941,23 +137941,13 @@
     "modelIdsCount": 10
   },
   "_TZE200_wfxuhoea": {
-    "driverId": "button_wireless_plug",
-    "source": "auto-sync",
+    "driverId": "garage_door",
+    "source": "p217-sacred-couple",
     "modelIds": [
-      "TS0001",
-      "TS0002",
-      "TS0003",
-      "TS000F",
-      "TS0011",
-      "TS0012",
-      "TS0013",
-      "TS0111",
-      "TS011F",
-      "TS0121",
       "TS0601"
     ],
-    "pid": "TS0001",
-    "modelIdsCount": 11
+    "pid": "TS0601",
+    "modelIdsCount": 1
   },
   "_TZE204_nkjintbl": {
     "driverId": "button_wireless_plug",
@@ -188524,39 +188514,13 @@
     "modelIdsCount": 27
   },
   "_TZE204_wfxuhoea": {
-    "driverId": "sensor_contact_zigbee",
-    "source": "auto-sync",
+    "driverId": "garage_door",
+    "source": "p217-sacred-couple",
     "modelIds": [
-      "3300-S",
-      "3320-L",
-      "CK-TLSR8656-SS5-01(7003)",
-      "DS01",
-      "DoorWindow-Sensor-ZB3.0",
-      "E1603/E1702",
-      "Excellux",
-      "MCCGQ01LM",
-      "MCCGQ11LM",
-      "MCCGQ12LM",
-      "MCCGQ14LM",
-      "MCT-340 E",
-      "RH3001",
-      "SNZB-04",
-      "SNZB-04P",
-      "SNZB-04PR2",
-      "SNZB-04R2",
-      "TRADFRI open/close remote",
-      "TS0021",
-      "TS0203",
-      "TS0601",
-      "ZG-102Z",
-      "ZG-102ZL",
-      "lumi.magnet.ac01",
-      "lumi.magnet.agl02",
-      "lumi.sensor_magnet",
-      "lumi.sensor_magnet.aq2"
+      "TS0601"
     ],
-    "pid": "3300-S",
-    "modelIdsCount": 27
+    "pid": "TS0601",
+    "modelIdsCount": 1
   },
   "_TZE200_2m38mh6k": {
     "driverId": "sensor_contact_zigbee",
@@ -200797,46 +200761,13 @@
     "modelIdsCount": 34
   },
   "_TZ3000_k6fvknrr": {
-    "driverId": "switch_1gang",
-    "source": "auto-sync",
+    "driverId": "double_power_point_2",
+    "source": "p217-sacred-couple",
     "modelIds": [
-      "01MINIZB",
-      "BASICZBR3",
-      "S26R2ZB",
-      "S31ZB",
-      "TS0001",
-      "TS0001_power",
-      "TS0001_switch",
-      "TS0001_switch_module",
-      "TS0002",
-      "TS0003",
-      "TS000F",
-      "TS0011",
-      "TS0012",
-      "TS0014",
-      "TS0041",
-      "TS0101",
-      "TS0111",
-      "TS011F",
-      "TS0601",
-      "TS0726",
-      "TS110E",
-      "TS130F",
-      "TS4100",
-      "ZBM5-1C-120",
-      "ZBM5-2C-120",
-      "ZBM5-3C-120",
-      "ZBMINI",
-      "ZBMINIL2",
-      "ZBMINIL2-R2",
-      "ZBMINIR",
-      "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "TS011F"
     ],
-    "pid": "01MINIZB",
-    "modelIdsCount": 34
+    "pid": "TS011F",
+    "modelIdsCount": 1
   },
   "_TZ3000_lnggrqqi": {
     "driverId": "switch_1gang",
@@ -327633,5 +327564,59 @@
     "modelIds": [
       "TS0601"
     ]
+  },
+  "_tze200_wfxuhoea": {
+    "driverId": "garage_door",
+    "source": "p217-sacred-couple",
+    "modelIds": [
+      "TS0601"
+    ],
+    "pid": "TS0601",
+    "modelIdsCount": 1
+  },
+  "_tze204_wfxuhoea": {
+    "driverId": "garage_door",
+    "source": "p217-sacred-couple",
+    "modelIds": [
+      "TS0601"
+    ],
+    "pid": "TS0601",
+    "modelIdsCount": 1
+  },
+  "_tz3000_k6fvknrr": {
+    "driverId": "double_power_point_2",
+    "source": "p217-sacred-couple",
+    "modelIds": [
+      "TS011F"
+    ],
+    "pid": "TS011F",
+    "modelIdsCount": 1
+  },
+  "Wing": {
+    "driverId": "contact_sensor",
+    "source": "p217-sacred-couple",
+    "modelIds": [
+      "TS0203"
+    ],
+    "pid": "TS0203",
+    "modelIdsCount": 1
+  },
+  "wing": {
+    "driverId": "contact_sensor",
+    "source": "p217-sacred-couple",
+    "modelIds": [
+      "TS0203"
+    ],
+    "pid": "TS0203",
+    "modelIdsCount": 1
+  },
+  "WING": {
+    "driverId": "contact_sensor",
+    "source": "p217-sacred-couple",
+    "modelIds": [
+      "TS0203"
+    ],
+    "pid": "TS0203",
+    "modelIdsCount": 1
   }
 }
