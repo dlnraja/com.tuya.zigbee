@@ -105,6 +105,11 @@ const cover = fs.readFileSync(path.join(ROOT, 'lib/devices/UnifiedCoverBase.js')
 if (cover.includes('_isDooyaDp1CommandMotor')) ok('UnifiedCoverBase has Dooya DP1 command path');
 else fail('UnifiedCoverBase missing Dooya DP1 command helper');
 
+const conflictSrc = fs.readFileSync(path.join(ROOT, 'scripts/automation/fix-fingerprint-conflicts.js'), 'utf8');
+if (conflictSrc.includes('isPidDisambiguatedBrand') && /hobeian/.test(conflictSrc)) {
+  ok('conflict resolver skips pid-disambiguated brands (HOBEIAN/Wing)');
+} else fail('fix-fingerprint-conflicts.js missing HOBEIAN/Wing skip');
+
 if (failures.length) {
   console.error(`\nP217 FAIL (${failures.length})`);
   process.exit(1);

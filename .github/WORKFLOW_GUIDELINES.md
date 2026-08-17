@@ -183,9 +183,10 @@ Only content from these sources MAY be mentioned:
 ## D. Draft → Test Promotion
 
 Standard 3-tier Puppeteer pattern (ALL workflows must use):
-1. **Tier 1**: `npm install puppeteer --no-save` + `node .github/scripts/auto-promote-puppeteer.js`
-2. **Tier 2**: `node .github/scripts/auto-publish-draft.js` (API fallback)
-3. **Tier 3**: sleep 30s then re-run Puppeteer script
+1. **Wait**: `node .github/scripts/wait-athom-draft-ready.js` (poll ≤4 min; fail-closed on `processing_failed` — never `sleep 180` alone)
+2. **Tier 1**: `npm install puppeteer --no-save` + `node .github/scripts/auto-promote-puppeteer.js`
+3. **Tier 2**: `node .github/scripts/auto-publish-draft.js` (API fallback)
+4. **Tier 3**: sleep 30s then re-run Puppeteer script
 
 **TRAP**: Promote step MUST be in job with checkout + node + npm. A bare summary job will silently fail!
 **TRAP**: Puppeteer needs `npm install puppeteer --no-save` before running.
@@ -555,9 +556,10 @@ Only content from these sources MAY be mentioned:
 ## D. Draft  Test Promotion
 
 Standard 3-tier Puppeteer pattern (ALL workflows must use):
-1. **Tier 1**: `npm install puppeteer --no-save` + `node .github/scripts/auto-promote-puppeteer.js`
-2. **Tier 2**: `node .github/scripts/auto-publish-draft.js` (API fallback)
-3. **Tier 3**: sleep 30s then re-run Puppeteer script
+1. **Wait**: `node .github/scripts/wait-athom-draft-ready.js` (poll ≤4 min; fail-closed on `processing_failed` — never `sleep 180` alone)
+2. **Tier 1**: `npm install puppeteer --no-save` + `node .github/scripts/auto-promote-puppeteer.js`
+3. **Tier 2**: `node .github/scripts/auto-publish-draft.js` (API fallback)
+4. **Tier 3**: sleep 30s then re-run Puppeteer script
 
 **TRAP**: Promote step MUST be in job with checkout + node + npm. A bare summary job will silently fail!
 **TRAP**: Puppeteer needs `npm install puppeteer --no-save` before running.
@@ -776,6 +778,9 @@ slot is therefore a single shared channel.
 5. Auto-Publish / Auto Publish workflows use `cancel-in-progress: false` on the
    publish concurrency group — cancelling mid-draft/promote causes orphan Athom
    builds and socket hang up races on the next upload.
+6. Auto-Fix+Publish must **not** Homey-publish from `stable-v5` (`github.ref_name != 'stable-v5'`).
+   P217: `fix-fingerprint-conflicts.js` must not strip pid-disambiguated brands
+   (`HOBEIAN`, `Wing`); re-inject after conflict resolve; anti-bot REQUIRED for HOBEIAN on `switch_2gang`.
 
 ---
 

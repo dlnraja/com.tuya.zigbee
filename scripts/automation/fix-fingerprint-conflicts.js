@@ -141,9 +141,22 @@ function findConflicts(drivers) {
 // Safety: track how many mfrs each driver will have after removals
 const removalCounts = new Map(); // driver -> count of planned removals
 
+// P217: brand names are pid-disambiguated (HOBEIAN ZG-305Z vs ZG-303Z, Wing TS0203 vs ZTH).
+// Cartesian HOBEIAN×TS0601 is theoretical; Auto-Publish 32063635335 stripped HOBEIAN
+// from switch_2gang because sensor (55) beats switch (40) by exactly 15.
+const MULTI_DRIVER_BRANDS = new Set(['hobeian', 'wing']);
+function isPidDisambiguatedBrand(mfr) {
+  return MULTI_DRIVER_BRANDS.has(String(mfr || '').toLowerCase());
+}
+
 function resolveConflict(conflict, drivers) {
   const { mfr, pid, drivers: drvNames } = conflict;
   const removals = []; // [{driver, mfr}]
+
+  // WHY: never remove a pid-disambiguated brand; real pairing uses unique productIds.
+  if (isPidDisambiguatedBrand(mfr)) {
+    return [];
+  }
 
   // Rule 1: generic_diy loses to diy_custom_zigbee
   if (drvNames.includes('generic_diy') && drvNames.includes('diy_custom_zigbee')) {
@@ -1022,7 +1035,11 @@ function main() {
   process.exit((remainingConflicts > 0 && !DRY_RUN && !REPORT_ONLY && !SOFT_EXIT) ? 1 : 0);
 }
 
-main();
+if (require.main === module) {
+  main();
+}
+
+module.exports = { MULTI_DRIVER_BRANDS, isPidDisambiguatedBrand, resolveConflict };
 
 
 

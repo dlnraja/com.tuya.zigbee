@@ -6,11 +6,12 @@ Silent enrichment from JohanBendz PRs/issues and sister forks. No forum posts. N
 
 | Finding | Track | Why |
 |---------|-------|-----|
-| Sacred-couple reroutes (garage, double outlet, Wing contact, HOBEIAN USB 2ch) | **MASTER_ONLY** first (new/moved FPs) | Pairing identity; soak on 9.0.x before stable |
-| TS0203 pid default contact (not water leak) | **BOTH** candidate | Wrong pid default misroutes every unknown TS0203 |
-| Dooya DP1 command on position set | **BOTH** candidate | Reliability: motor never moved on DP2 |
+| Sacred-couple reroutes (garage, double outlet, Wing contact, HOBEIAN USB 2ch) | **BOTH** | Pairing identity / wrong driver |
+| TS0203 pid default contact (not water leak) | **BOTH** | Wrong pid default misroutes every unknown TS0203 |
+| Dooya DP1 command on position set | **BOTH** | Reliability: motor never moved on DP2 |
+| Draft wait (`wait-athom-draft-ready.js`) + soak-guard | **BOTH** | Publish process |
+| HOBEIAN skip in `fix-fingerprint-conflicts.js` | **BOTH** | Auto-Publish 32063635335 stripped HOBEIAN from switch_2gang |
 | HomeSuite feature managers (last-seen UI, rejoin cards, TX pacer) | **MASTER_ONLY** | Already on master; do not dump onto stable |
-| HomeSuite onUninit / Poll Control skip / battery no-invent | **BOTH** | Already soaked (9.0.582 / 5.12.84) |
 
 ## Sources scanned (read-only)
 
@@ -39,3 +40,11 @@ Alternatives: gpmachado/com.gpm.homesuite (GPL-3.0 ideas only), AreAArseth/com.h
 ## Cartesian note
 
 Adding brand `HOBEIAN` to `switch_2gang` is required for Homey pairing of `ZG-305Z`. `switch_2gang` also lists `TS0601`, so `HOBEIAN+TS0601` can appear as a second match beside soil/contact drivers. Runtime `getDriverId(HOBEIAN, ZG-305Z)` is exact; `HOBEIAN+TS0601` stays on existing soil/climate compound keys.
+
+## Publish failure (2026-08-17)
+
+Auto-Publish `32063635335` died in **2m24s** at anti-bot:
+
+`REQUIRED p217-hobeian-zg305z-switch2: HOBEIAN missing from drivers/switch_2gang`
+
+Cause: `fix-fingerprint-conflicts.js` scores sensor (55) vs switch (40) and removed the brand. Fix: skip `hobeian`/`wing` in the resolver, re-inject after conflict resolve, do not Homey-publish from Auto-Fix on `stable-v5`.

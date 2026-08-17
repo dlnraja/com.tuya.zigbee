@@ -33,9 +33,11 @@ const FALLBACK_DRIVERS = ['universal_fallback', 'generic_tuya', 'universal_zigbe
 //  mfr via the cartesian over-approximation, never a real product.
 const DOCUMENTED_EXCEPTIONS = [
   { mfr: 'hobeian', pid: 'ts0001', drivers: ['button_wireless_1', 'soil_sensor', 'water_leak_sensor'] },
-  { mfr: 'hobeian', pid: 'ts0601', drivers: ['button_wireless_1', 'sensor_contact_zigbee', 'soil_sensor', 'water_leak_sensor'] },
+  { mfr: 'hobeian', pid: 'ts0601', drivers: ['button_wireless_1', 'sensor_contact_zigbee', 'soil_sensor', 'water_leak_sensor', 'switch_2gang'] },
   { mfr: 'hobeian', pid: 'ts0041a', drivers: ['button_wireless_1', 'soil_sensor'] },
   { mfr: 'hobeian', pid: 'ts004f', drivers: ['button_wireless_1', 'sensor_contact_zigbee'] },
+  { mfr: 'hobeian', pid: 'ts0002', drivers: ['switch_2gang'] },
+  { mfr: 'hobeian', pid: 'zg-305z', drivers: ['switch_2gang'] },
 ];
 
 // Invalid wildcard patterns that should never be used

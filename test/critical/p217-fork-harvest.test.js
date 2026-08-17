@@ -69,4 +69,15 @@ describe('P217 fork harvest sacred couples', () => {
     assert(src.includes('3ylew7b4'));
     assert(src.includes('skip DP2 position write'));
   });
+
+  it('does not let conflict resolve strip HOBEIAN from switch_2gang', () => {
+    const { isPidDisambiguatedBrand, resolveConflict } = require('../../scripts/automation/fix-fingerprint-conflicts');
+    assert.strictEqual(isPidDisambiguatedBrand('HOBEIAN'), true);
+    assert.strictEqual(isPidDisambiguatedBrand('Wing'), true);
+    const removals = resolveConflict(
+      { mfr: 'hobeian', pid: 'TS0601', drivers: ['switch_2gang', 'soil_sensor', 'water_leak_sensor'] },
+      new Map()
+    );
+    assert.deepStrictEqual(removals, []);
+  });
 });

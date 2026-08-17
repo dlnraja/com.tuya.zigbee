@@ -1306,7 +1306,20 @@
         "button_wireless_1",
         "sensor_contact_zigbee",
         "soil_sensor",
-        "water_leak_sensor"
+        "water_leak_sensor",
+        "switch_2gang"
+      ]
+    },
+    {
+      "key": "hobeian|TS0002",
+      "drivers": [
+        "switch_2gang"
+      ]
+    },
+    {
+      "key": "hobeian|ZG-305Z",
+      "drivers": [
+        "switch_2gang"
       ]
     },
     {

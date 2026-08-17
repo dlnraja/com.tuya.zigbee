@@ -125,8 +125,15 @@ jobs:
       - name: "🔧 FP conflict resolve (post-enrich)"
         run: node scripts/automation/fix-fingerprint-conflicts.js --soft-exit
 
+      # P217: conflict resolve must not win over HOBEIAN/Wing sacred couples
+      - name: "🔁 Re-inject after conflict resolve"
+        run: node tools/ci/re-inject-manual-fixes.js
+
       - name: "🛡️ Anti-bot gate (post-enrich)"
         run: node tools/ci/anti-bot-regression-gate.js --strip
+
+      - name: "🛡️ P217 fork harvest sacred-couple gate"
+        run: node tools/ci/p217-fork-harvest-gate.js
 
       - name: "🛡️ P2138 sacred-couple matrix gate"
         run: node tools/ci/p2138-sacred-couple-matrix-gate.js
@@ -271,7 +278,9 @@ jobs:
           fi
 
       - name: 🚀 Publish if needed
-        if: env.trigger_publish == 'true' || github.event_name == 'workflow_dispatch'
+        # P193/P217: never Homey-publish 5.12 from this workflow while master 9.0 soaks
+        # the shared App ID Test slot. Stable drafts go through publish-stable.yml.
+        if: (env.trigger_publish == 'true' || github.event_name == 'workflow_dispatch') && github.ref_name != 'stable-v5'
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
           # P138: Match workflow-level 50 MB (prepared dir ~37 MB uncompressed).

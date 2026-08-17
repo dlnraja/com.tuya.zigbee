@@ -86,6 +86,10 @@ jobs:
       - name: FP conflict resolve (post re-inject)
         run: node scripts/automation/fix-fingerprint-conflicts.js --soft-exit
 
+      # P217: conflict resolve used to strip HOBEIAN from switch_2gang; re-apply locks.
+      - name: Re-inject after conflict resolve
+        run: node tools/ci/re-inject-manual-fixes.js
+
       - name: Anti-bot regression gate
         run: node tools/ci/anti-bot-regression-gate.js
 

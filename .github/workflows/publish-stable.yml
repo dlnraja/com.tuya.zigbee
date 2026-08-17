@@ -251,8 +251,9 @@ jobs:
         run: node .github/scripts/refuse-stable-test-overwrite.js
       - name: Wait for Athom draft processing
         if: steps.soak.outputs.skip != 'true'
-        # Athom often needs >2min; concurrent uploads previously caused socket hang up
-        run: sleep 180
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+        run: node .github/scripts/wait-athom-draft-ready.js
       - name: Install Puppeteer
         if: steps.soak.outputs.skip != 'true'
         continue-on-error: true
