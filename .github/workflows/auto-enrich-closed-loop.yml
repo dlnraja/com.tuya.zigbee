@@ -193,6 +193,10 @@ jobs:
         if: always()
         run: node tools/ci/anti-bot-regression-gate.js --strip
 
+      - name: "🛡️ P2138 sacred-couple matrix gate"
+        if: always()
+        run: node tools/ci/p2138-sacred-couple-matrix-gate.js
+
       - name: "🛡️ Regression lessons gate (MUST-KEEP fatals)"
         if: always()
         run: node tools/ci/regression-lessons-gate.js

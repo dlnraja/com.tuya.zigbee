@@ -50,6 +50,12 @@ jobs:
       - name: Ensure state dirs
         run: mkdir -p .github/state reports
 
+      - name: Install deps (for matrix gate)
+        run: npm ci --prefer-offline --no-audit || npm install --no-audit
+
+      - name: P2138 sacred-couple matrix gate
+        run: node tools/ci/p2138-sacred-couple-matrix-gate.js
+
       - name: Run weekly sovereign loop
         env:
           GH_PAT: ${{ secrets.GH_PAT }}

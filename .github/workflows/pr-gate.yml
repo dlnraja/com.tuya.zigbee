@@ -1,7 +1,8 @@
-# 🚦 PR Gate (v9.0.368)
+# 🚦 PR Gate (v9.0.584+)
 # Triggers: pull_request sur master et stable-v5 | Secrets: GITHUB_TOKEN only
 # Bloque les PRs qui: versions invalides/désynchronisées, conflits
 # Sacred Couple (mfr multi-drivers sans désambiguïsation PID),
+# P2138 matrix (mfr+pid only — no invent), anti-bot locks,
 # ou régressions de routage (tests critiques).
 
 name: 🚦 PR Gate
@@ -50,5 +51,25 @@ jobs:
       - name: 🔥 lib smoke-test (require every lib module)
         run: node tools/ci/lib-smoke-test.js
 
-      - name: 🧪 Critical routing tests
+      - name: 🛡️ Anti-bot regression gate
+        run: node tools/ci/anti-bot-regression-gate.js
+
+      - name: 🛡️ P2138 sacred-couple matrix gate
+        run: node tools/ci/p2138-sacred-couple-matrix-gate.js
+
+      - name: 🛡️ P214 intelligent ZCL/EF00 adaptation gate
+        run: node tools/ci/p214-intelligent-protocol-gate.js
+
+      - name: 🛡️ P216 ZCL battery half-percent gate
+        run: node tools/ci/p216-zcl-battery-half-percent-gate.js
+
+      - name: 🛡️ Layer coverage gate
+        run: node tools/ci/layer-coverage-gate.js
+
+      - name: 🧪 Critical routing tests (mocha)
         run: npx mocha test/critical/*.test.js --timeout 10000
+
+      - name: 🧪 P2138 + Poll Control (node:test)
+        run: |
+          node --test test/critical/p2138-bseed-wall-dimmer.test.js
+          node --test test/critical/poll-control-policy.test.js

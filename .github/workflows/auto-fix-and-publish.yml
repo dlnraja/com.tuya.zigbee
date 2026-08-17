@@ -80,6 +80,9 @@ jobs:
       - name: "🛡️ Anti-bot regression gate (P94+)"
         run: node tools/ci/anti-bot-regression-gate.js
 
+      - name: "🛡️ P2138 sacred-couple matrix gate"
+        run: node tools/ci/p2138-sacred-couple-matrix-gate.js
+
       # P102: Device I/O façade smoke + bare ZigBeeDevice gate
       - name: "🔌 P102 DeviceIOFacade smoke"
         run: npm run io:smoke
@@ -124,6 +127,9 @@ jobs:
 
       - name: "🛡️ Anti-bot gate (post-enrich)"
         run: node tools/ci/anti-bot-regression-gate.js --strip
+
+      - name: "🛡️ P2138 sacred-couple matrix gate"
+        run: node tools/ci/p2138-sacred-couple-matrix-gate.js
 
       - name: "🛡️ Regression lessons gate (MUST-KEEP fatals)"
         run: node tools/ci/regression-lessons-gate.js

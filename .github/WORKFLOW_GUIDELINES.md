@@ -776,3 +776,55 @@ slot is therefore a single shared channel.
 5. Auto-Publish / Auto Publish workflows use `cancel-in-progress: false` on the
    publish concurrency group — cancelling mid-draft/promote causes orphan Athom
    builds and socket hang up races on the next upload.
+
+---
+
+## N. Sacred couple matrix / P2138 / HomeSuite reliability (2026-08-17)
+
+### Doctrine (never invent)
+- Identity is always **manufacturerName + productId** (Sacred Couple).
+- One MFS can ship many PIDs / variants / marketing names — **mfr alone is ambiguous**.
+- Catalog / heuristic / registry must **refuse** a driver when `pid` is missing from
+  that mfr’s `modelIds` (example: `_TZE284_m1cvyneb` + `TS0201` → **null**, not climate).
+- `PRODUCT_ID_DEFAULTS['TS0201'].driver` must stay **`null`** (requires mfr).
+
+### Locked couple (P2138 PresentSky BSEED Click)
+| Couple | Driver | Forbidden |
+|--------|--------|-----------|
+| `*_m1cvyneb` + `TS0601` | `wall_dimmer_tuya` | climate / soil / zigbee_universal / generic / ir_blaster |
+| Same mfr + other PID | *(no invent)* | do not force dimmer or climate |
+
+Brightness MCU scale: `lib/tuya/TuyaBrightnessScale.js` (Homey 0–1 ↔ Tuya 0–1000, clamp).
+
+### Mandatory CI gate
+```bash
+node tools/ci/p2138-sacred-couple-matrix-gate.js
+node tools/ci/anti-bot-regression-gate.js
+node tools/ci/audit-sacred-couple.js --from-registry
+node tools/ci/layer-coverage-gate.js
+node --test test/critical/p2138-bseed-wall-dimmer.test.js
+node --test test/critical/poll-control-policy.test.js
+```
+
+### Workflows that MUST run the matrix gate (hard fail)
+- `syntax-check.yml`, `unified-ci.yml`, `pr-gate.yml`, `validate.yml`
+- `code-quality.yml`, `auto-publish-on-push.yml`
+- `auto-fix-and-publish.yml`, `auto-enrich-closed-loop.yml`, `continuous-flow.yml`
+
+Enrich / Blakadder / forum appliers must call anti-bot **after** apply; matrix gate
+catches invent regressions anti-bot alone might miss (wrong-PID catalog force).
+
+### Dual-app classification
+- **BOTH**: wall_dimmer harden, brightness clamp, fingerprint refuse-wrong-pid,
+  Poll Control skip sleepy, battery no-invent, compose FP locks.
+- **MASTER_ONLY**: command pacer, reconnect coalescer, availability last-seen,
+  `device_rejoined`, free-scrape / smart-learn.
+- Never Publish Stable→Test while master 9.0.x soaks (shared App ID).
+
+### Catalog lock checklist (when adding a sacred couple)
+1. `drivers/*/driver.compose.json` (static Homey match)
+2. `lib/DeviceFingerprintDB.js` compound key `mfr|pid`
+3. `lib/tuya/DeviceFingerprintDB` / fingerprints (`modelIds` exact)
+4. `data/mfs_db.json` (no false couples)
+5. `data/user-misattribution-registry.json` + anti-bot forbid list
+6. Critical test + matrix gate entry if high-risk misroute

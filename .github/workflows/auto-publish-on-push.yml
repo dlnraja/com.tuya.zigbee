@@ -89,6 +89,15 @@ jobs:
       - name: Anti-bot regression gate
         run: node tools/ci/anti-bot-regression-gate.js
 
+      - name: P2138 sacred-couple matrix gate
+        run: node tools/ci/p2138-sacred-couple-matrix-gate.js
+
+      - name: Sacred couple registry audit
+        run: node tools/ci/audit-sacred-couple.js --from-registry
+
+      - name: Layer coverage gate
+        run: node tools/ci/layer-coverage-gate.js
+
       - name: Homey heap JSON size gate (P148/P157)
         run: node tools/ci/homey-heap-json-gate.js
 

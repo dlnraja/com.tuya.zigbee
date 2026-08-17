@@ -100,6 +100,12 @@ jobs:
         run: |
           node .github/scripts/fp-collision-check.js --baseline .github/fingerprint-collision-baseline.json
 
+      - name: 🛡️ Anti-bot regression gate
+        run: node tools/ci/anti-bot-regression-gate.js
+
+      - name: 🛡️ P2138 sacred-couple matrix gate
+        run: node tools/ci/p2138-sacred-couple-matrix-gate.js
+
       - name: 🖼️ Driver Images Pre-Check
         run: |
           MISS=0

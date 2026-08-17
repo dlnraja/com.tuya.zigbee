@@ -118,6 +118,12 @@ jobs:
           fi
           echo "✓ All driver.compose.json files valid"
 
+      - name: Anti-bot + P2138 sacred-couple matrix
+        id: sacred
+        run: |
+          node tools/ci/anti-bot-regression-gate.js
+          node tools/ci/p2138-sacred-couple-matrix-gate.js
+
       - name: Driver health check
         id: health
         run: |
@@ -137,6 +143,7 @@ jobs:
             echo ""
             echo "- Lint: ${{ steps.lint.outcome == 'success' && '✅' || '⚠️' }}"
             echo "- JSON: ${{ steps.json.outcome == 'success' && '✅' || '❌' }}"
+            echo "- Sacred: ${{ steps.sacred.outcome == 'success' && '✅' || '❌' }}"
             echo "- Health: ${{ steps.health.outcome == 'success' && '✅' || '⚠️' }}"
             echo ""
             echo "**Run**: ${{ github.run_id }}"

@@ -1,0 +1,20 @@
+---
+description: Ask WHY/HOW/WHO/WHEN before every feature or non-obvious line; enrich docs/workflows/rules from answers
+alwaysApply: true
+---
+
+# WHY interrogation (P215)
+
+Before implementing or changing anything non-trivial, answer:
+
+1. **Pourquoi** — why this feature / this line / this shape?
+2. **Comment** — runtime path (ZCL, EF00, settings, CI)?
+3. **Pour qui** — Homey user, CI bot, master-only, or BOTH?
+4. **Quand** — pair, RX, TX, enrich cron, publish?
+5. **Contre quoi** — what regresses if removed? → gate or test.
+
+Device work: always lock **manufacturerName + productId**. Search Z2M/ZHA/forum/Google by the couple — never invent a pid.
+
+Use answers to enrich: code `// WHY:` comments, `.github/workflows`, `WORKFLOW_GUIDELINES`, `.cursorrules`, knowledge cache, interview DB.
+
+Full doctrine: `docs/rules/WHY_INTERROGATION.md`.

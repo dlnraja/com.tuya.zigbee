@@ -402,9 +402,10 @@
   "forumFindings": {
     "lastUpdated": "2026-08-17",
     "issuesProcessed": [
-      {"id": "#2138", "description": "BSEED Click socket-insert dimmer paired as climate; interview EF00+0xED00", "status": "resolved_code", "version": "v9.0.583", "action": "re-pair wall_dimmer_tuya"},
+      {"id": "#2138", "description": "BSEED Click socket-insert dimmer paired as climate; interview EF00+0xED00", "status": "resolved_code", "version": "v9.0.583", "action": "re-pair wall_dimmer_tuya", "externalValidation": "Z2M #28658 + TS0601_dimmer_1_gang_1 DP1/2/6/21"},
       {"id": "#2133", "description": "PresentSky BSEED dimmer wrong driver", "status": "resolved_code", "version": "v9.0.583"},
       {"id": "#2135", "description": "Avatto 2ch dimmer MCU brightness >1000 reboot", "status": "resolved_code", "version": "v9.0.x", "note": "TuyaBrightnessScale"},
+      {"id": "P214", "description": "Intelligent ZCL↔EF00 detect for all Unified* + bootstrap", "status": "resolved_code", "version": "v9.0.x"},
       {"id": "#2091", "description": "Device routing fix", "status": "resolved", "version": "v9.0.40"},
       {"id": "#5472", "description": "Flow card integrity fix", "status": "resolved", "version": "v9.0.40"},
       {"id": "#2090", "description": "HOBEIAN water leak sensor ZG-222Z", "status": "resolved", "version": "v9.0.22"},
@@ -423,6 +424,8 @@
     "bugFixes": [
       {"issue": "mfs_db routed m1cvyneb to climate/soil/universal", "fix": "P2138 catalog lock + compound DeviceFingerprintDB + anti-bot", "version": "v9.0.583"},
       {"issue": "Wall dimmer skipped super.onNodeInit / unclamped brightness", "fix": "device.js harden + TuyaBrightnessScale", "version": "v9.0.583"},
+      {"issue": "Wall dimmer missing backlight/power-on/light_type settings vs Z2M", "fix": "driver.settings.compose + onSettings DP4/14/21", "version": "v9.0.x"},
+      {"issue": "Blind ZCL battery /2 turns 100% into 50%", "fix": "normalizeZclBatteryPercent on UnifiedSensor/BaseUnified/hot paths (P216)", "version": "v9.0.x"},
       {"issue": "Fingerbot fingerprint collisions", "fix": "Reverted conflicting fingerprints with plug and button_wireless_2", "version": "v9.0.40"},
       {"issue": "Driver compose JSON inconsistencies", "fix": "Forum analysis - driver compose fixes and improvements", "version": "v9.0.40"},
       {"issue": "Protection scripts missing", "fix": "Added protection scripts + flow card integrity validation", "version": "v9.0.40"}
@@ -430,11 +433,13 @@
     "patterns": [
       "Forum users report device model IDs that don't match existing fingerprints",
       "Multi-manufacturer support: same device model sold under different brands",
-      "One manufacturer can have thousands of device variants with different productIds",
       "Community reports help identify misclassified devices (rain vs water_leak, climate vs presence)",
       "Compose FP lock alone is insufficient if mfs_db/new_fingerprints still point elsewhere",
       "Homey never hot-swaps drivers — FP fixes require remove + re-pair",
-      "Tuya MCU dimmers reboot if brightness write exceeds 1000"
+      "Tuya MCU dimmers reboot if brightness write exceeds 1000",
+      "Always Google/Z2M/ZHA search by exact manufacturerName+productId couple — never modelId alone",
+      "Z2M #28658 interview matches Homey #2138 clusters 0,4,5,61184,60672 appVersion 78",
+      "ZCL batteryPercentageRemaining: spec 0-200 half-percent; Tuya often 0-100 already — never blind /2 (100→50)"
     ]
   },
   "recentDiscoveries": {

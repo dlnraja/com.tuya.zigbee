@@ -8,6 +8,12 @@
 >
 > **MANDATORY THIRD STEP:** Read [docs/ARCHITECTURE_AI.md](docs/ARCHITECTURE_AI.md) — 3 AI layers: IDE Locale, GitHub Actions, Homey Runtime (SDK3, zero cloud).
 
+## CRITICAL FIRST STEPS
+1. Read `AI_CONTEXT_MANDATE.md`
+2. Read `docs/GLOBAL_INVESTIGATION_PLAN.md`
+3. Read `docs/ARCHITECTURE_AI.md`
+4. **P215:** For every feature / non-obvious line, answer Pourquoi / Comment / Pour qui / Quand / Contre quoi — see `docs/rules/WHY_INTERROGATION.md`. Use answers to enrich workflows, rules, docs, catalogs.
+
 ## Project Context
 Homey Pro app for 4200+ Tuya Zigbee devices. Hybrid protocol: Tuya DP (0xEF00) + ZCL clusters.
 
@@ -188,6 +194,10 @@ Do NOT remove just because mfr appears in another driver with different productI
 10. `GITHUB_TOKEN` auto-provided; `GH_PAT` for cross-repo access
 11. Guard missing secrets: `if [ -z "$SECRET" ]; then exit 0; fi`
 12. Git commits: always `git pull --rebase origin master || true` before push
+13. After enrich/apply/anti-bot: run `node tools/ci/p2138-sacred-couple-matrix-gate.js` (mfr+pid only — no invent; see WORKFLOW_GUIDELINES §N)
+14. Dual-app: classify BOTH | MASTER_ONLY | STABLE_ONLY before backport; never Publish Stable→Test while 9.0 soaks
+15. Protocol: all drivers adapt ZCL↔EF00 via `IntelligentProtocolDetect` (HYBRID listen + cascade TX); never force EF00 on sacred `zcl_only` (BSEED)
+17. P216: never blindly `/2` ZCL `batteryPercentageRemaining` — Tuya 0–100 stays 100%; spec 0–200 uses `/2`. Use `normalizeZclBatteryPercent()`.
 
 ## SDK v3 OFFICIAL RULES (apps-sdk-v3.developer.homey.app)
 - Managers via `this.homey.<managerId>`: `this.homey.drivers`, `this.homey.flow`, `this.homey.settings`

@@ -228,6 +228,10 @@ jobs:
         if: always()
         run: node tools/ci/anti-bot-regression-gate.js --strip
 
+      - name: "🛡️ P2138 sacred-couple matrix gate"
+        if: always()
+        run: node tools/ci/p2138-sacred-couple-matrix-gate.js
+
       - name: Commit state (apply only)
         if: github.event.inputs.mode == 'apply' && success()
         run: |

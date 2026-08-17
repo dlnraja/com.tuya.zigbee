@@ -81,6 +81,9 @@ jobs:
           cat cross-ref.log >> $GITHUB_STEP_SUMMARY
           echo '```' >> $GITHUB_STEP_SUMMARY
 
+      - name: 🛡️ P2138 sacred-couple matrix (no invent)
+        run: node tools/ci/p2138-sacred-couple-matrix-gate.js
+
       - name: 📦 Upload artifacts
         uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5.0.0
         with:

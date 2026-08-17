@@ -13,13 +13,15 @@ const MASTER_ONLY = [
   /AlarmPolarity|polarity.?learn|FreeScrape|free-scrape|diag-investigate-orchestrator/i,
   /CapabilityCommandRouter|parallelDiscover|multichannel|autonomous|AVE|circadian/i,
   /ZigbeeCommandPacer|ReconnectBurstCoalescer|endpointCapability|ZclClusterLexicon|contributor-repo-dump/i,
-  /presence.?sim|fallback.?router|mega-crawler/i,
+  /presence.?sim|fallback.?router|mega-crawler|device_rejoined|availability.?last.?seen/i,
 ];
 
 const BOTH = [
   /safe-?timers|Promise\.resolve\(.*_registerButton|async _registerButtonCapabilityListeners/i,
   /zoneId:\s*10|auditCapabilities|homey\?\.clearTimeout|IAS.?enroll|crash|guard/i,
   /fix\(runtime\)|fix\(crash\)|fix\(timer\)|fix\(ias\)/i,
+  /TuyaBrightnessScale|wall_dimmer_tuya|m1cvyneb|PollControl|getDriverId|sacred.?couple|p2138/i,
+  /DeviceFingerprintDB|PRODUCT_ID_DEFAULTS|modelIds|no.?invent|brightness.?clamp/i,
 ];
 
 const STABLE_ONLY = [

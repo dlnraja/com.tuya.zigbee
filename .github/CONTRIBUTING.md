@@ -31,7 +31,9 @@ So a wall socket that “appears as motion” usually means the **manifest lists
 **What we do:** fix sacred couples, strip dual-claims, enrich the misattribution registry, ask for re-pair after the tip.  
 **What we do not do:** runtime “try several drivers and pick the best” (Homey SDK3 cannot), Z2M-style converter substitution, or promising a custom Change-driver UI.
 
-Gates: `node tools/ci/audit-sacred-couple.js --from-registry` · `node tools/ci/dual-claim-compose-gate.js` · `node tools/ci/anti-bot-regression-gate.js`  
+Gates: `node tools/ci/audit-sacred-couple.js --from-registry` · `node tools/ci/dual-claim-compose-gate.js` · `node tools/ci/anti-bot-regression-gate.js` · `node tools/ci/p2138-sacred-couple-matrix-gate.js` · `node tools/ci/layer-coverage-gate.js`
+
+**Sacred couple:** always `manufacturerName` + `productId`. One MFS → many PIDs/variants — never invent a couple (e.g. m1cvyneb+TS0201). See `.github/WORKFLOW_GUIDELINES.md` §N.  
 User FAQ: `docs/guides/USER_TROUBLESHOOTING.md` · BSEED dimmer: `reports/P2138_BSEED_WALL_DIMMER_2026-08-17.md`
 
 ### Dual-app tracks

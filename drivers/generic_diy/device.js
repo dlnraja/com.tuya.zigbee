@@ -1,5 +1,6 @@
 'use strict';
 const { safeDivide, safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
+const { normalizeZclBatteryPercent } = require('../../lib/battery/zcl-percent');
 
 
 const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
@@ -273,7 +274,7 @@ class GenericDIYDevice extends TuyaZigbeeDevice {
       }
       // Battery
       else if (clusterId === 0x0001) {
-        cluster.on(`attr.${map.attr}`, (v) => this._safeSetCapability(cap, v / 2).catch(() => { }));
+        cluster.on(`attr.${map.attr}`, (v) => this._safeSetCapability(cap, normalizeZclBatteryPercent(v) ?? 0).catch(() => { }));
       }
       // Contact
       else if (clusterId === 0x0500) {

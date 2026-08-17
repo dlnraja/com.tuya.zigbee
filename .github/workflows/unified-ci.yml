@@ -114,6 +114,30 @@ jobs:
       - name: 🛡️ Anti-bot regression gate (P127)
         run: node tools/ci/anti-bot-regression-gate.js
 
+      - name: 🛡️ Sacred couple registry audit (P151)
+        run: node tools/ci/audit-sacred-couple.js --from-registry
+
+      - name: 🛡️ Dual-claim compose gate (P167/P168)
+        run: node tools/ci/dual-claim-compose-gate.js
+
+      - name: 🛡️ P2138 sacred-couple matrix gate
+        run: node tools/ci/p2138-sacred-couple-matrix-gate.js
+
+      - name: 🛡️ P214 intelligent ZCL/EF00 adaptation gate
+        run: node tools/ci/p214-intelligent-protocol-gate.js
+
+      - name: 🛡️ P216 ZCL battery half-percent gate
+        run: node tools/ci/p216-zcl-battery-half-percent-gate.js
+
+      - name: 🛡️ Layer coverage gate (P206–P209)
+        run: node tools/ci/layer-coverage-gate.js
+
+      - name: 🧪 P2138 + Poll Control critical tests
+        run: |
+          node --test test/critical/p2138-bseed-wall-dimmer.test.js
+          node --test test/critical/poll-control-policy.test.js
+          node --test test/critical/p214-intelligent-protocol-detect.test.js
+
       - name: 🛡️ Firmware / OTA path gate
         run: node tools/ci/firmware-updates-gate.js
 

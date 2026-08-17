@@ -137,14 +137,70 @@ class wall_dimmer_tuya extends TuyaSpecificClusterDevice {
         break;
 
       case V1_SINGLE_GANG_DIMMER_SWITCH_DATA_POINTS.countdown:
-      case V1_SINGLE_GANG_DIMMER_SWITCH_DATA_POINTS.powerOnBehavior:
-      case V1_SINGLE_GANG_DIMMER_SWITCH_DATA_POINTS.backlightMode:
+        this.log('Countdown DP6:', parsedValue);
+        break;
+
+      case V1_SINGLE_GANG_DIMMER_SWITCH_DATA_POINTS.powerOnBehavior: {
+        const map = { 0: 'off', 1: 'on', 2: 'previous' };
+        const key = map[Number(parsedValue)];
+        if (key && typeof this.setSettings === 'function') {
+          await this.setSettings({ power_on_behavior: key }).catch(() => {});
+        }
+        break;
+      }
+
+      case V1_SINGLE_GANG_DIMMER_SWITCH_DATA_POINTS.backlightMode: {
+        // Strings only — Layer 11 / .cursorrules
+        const map = { 0: 'off', 1: 'normal', 2: 'inverted' };
+        const key = map[Number(parsedValue)];
+        if (key && typeof this.setSettings === 'function') {
+          await this.setSettings({ backlight_mode: key }).catch(() => {});
+        }
+        break;
+      }
+
+      case V1_SINGLE_GANG_DIMMER_SWITCH_DATA_POINTS.typeOfLightSource: {
+        const map = { 0: 'led', 1: 'incandescent', 2: 'halogen' };
+        const key = map[Number(parsedValue)];
+        if (key && typeof this.setSettings === 'function') {
+          await this.setSettings({ light_type: key }).catch(() => {});
+        }
+        break;
+      }
+
       case V1_SINGLE_GANG_DIMMER_SWITCH_DATA_POINTS.minimumBrightness:
-        this.log('Informational DP (no Homey capability):', dp, parsedValue);
+        this.log('Informational DP (min brightness):', parsedValue);
         break;
 
       default:
         this.log('Unhandled DP:', dp, 'with value:', parsedValue);
+    }
+  }
+
+  /**
+   * Z2M TS0601_dimmer_1_gang_1 + #28658: DP14 power-on, DP4 light type, DP21 backlight.
+   * Backlight values MUST stay strings (off/normal/inverted).
+   */
+  async onSettings({ newSettings, changedKeys }) {
+    if (typeof this.markAppCommand === 'function') {this.markAppCommand();}
+    const keys = changedKeys || Object.keys(newSettings || {});
+
+    if (keys.includes('backlight_mode')) {
+      const mode = String(newSettings.backlight_mode || 'normal');
+      const enumVal = mode === 'off' ? 0 : mode === 'inverted' ? 2 : 1;
+      await this.writeEnum(V1_SINGLE_GANG_DIMMER_SWITCH_DATA_POINTS.backlightMode, enumVal);
+    }
+
+    if (keys.includes('power_on_behavior')) {
+      const mode = String(newSettings.power_on_behavior || 'previous');
+      const enumVal = mode === 'off' ? 0 : mode === 'on' ? 1 : 2;
+      await this.writeEnum(V1_SINGLE_GANG_DIMMER_SWITCH_DATA_POINTS.powerOnBehavior, enumVal);
+    }
+
+    if (keys.includes('light_type')) {
+      const mode = String(newSettings.light_type || 'led');
+      const enumVal = mode === 'incandescent' ? 1 : mode === 'halogen' ? 2 : 0;
+      await this.writeEnum(V1_SINGLE_GANG_DIMMER_SWITCH_DATA_POINTS.typeOfLightSource, enumVal);
     }
   }
 

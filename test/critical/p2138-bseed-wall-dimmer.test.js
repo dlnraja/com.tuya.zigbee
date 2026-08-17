@@ -81,10 +81,22 @@ describe('P2138 BSEED wall dimmer m1cvyneb', () => {
     assert.match(src, /toTuyaBrightness/);
     assert.match(src, /fromTuyaBrightness/);
     assert.match(src, /markAppCommand/);
+    assert.match(src, /onSettings/);
+    assert.match(src, /backlight_mode/);
     assert.doesNotMatch(src, /Math\.floor\(value \* 1000\)/);
 
     assert.strictEqual(toTuyaBrightness(1), 1000);
     assert.strictEqual(toTuyaBrightness(1.2), 1000);
     assert.strictEqual(fromTuyaBrightness(500), 0.5);
+  });
+
+  it('exposes Z2M-aligned settings (backlight / power-on / light type)', () => {
+    const settings = read('drivers/wall_dimmer_tuya/driver.settings.compose.json');
+    assert.match(settings, /"id": "backlight_mode"/);
+    assert.match(settings, /"id": "off"/);
+    assert.match(settings, /"id": "normal"/);
+    assert.match(settings, /"id": "inverted"/);
+    assert.match(settings, /"id": "power_on_behavior"/);
+    assert.match(settings, /"id": "light_type"/);
   });
 });

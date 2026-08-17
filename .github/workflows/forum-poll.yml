@@ -118,6 +118,10 @@ jobs:
           fi
           echo "Policy: FORUM_AUTO_POST=0 — implement silently, never paste unchecked AI." >> $GITHUB_STEP_SUMMARY
 
+      - name: 🛡️ P2138 sacred-couple matrix (checkout integrity)
+        if: always()
+        run: node tools/ci/p2138-sacred-couple-matrix-gate.js
+
       - name: 📦 Upload artifacts
         if: always()
         uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5.0.0

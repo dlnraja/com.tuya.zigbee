@@ -152,6 +152,7 @@ jobs:
           node tools/ci/infer-enrich-from-incomplete.js --apply || true
           node tools/ci/ensure-case-variants.js --apply || true
           node tools/ci/anti-bot-regression-gate.js --strip || true
+          node tools/ci/p2138-sacred-couple-matrix-gate.js || true
 
       - name: "Light Z2M/ZHA sync (best-effort, OOM-safe)"
         if: always()

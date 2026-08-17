@@ -10,7 +10,7 @@ Prefer editing these modules over copying logic into every `device.js`.
 | L0 Raw TX/RX | Cluster frames, EF00 payloads | `zigbee-clusters`, `lib/TuyaSpecificCluster*`, `lib/io/DeviceIOFacade` |
 | L1 Lexers / parsers | DP id/type/length/value; ZCL attrs | Tuya DP decode in EF00 managers |
 | L2 Translators | Scale, polarity, units | `SmartDivisorManager`, `UnifiedBatteryHandler`, polarity settings |
-| L3 Protocol route | DP vs ZCL vs proprietary overlay | `IntelligentProtocolRouter`, `ProtocolAutoOptimizer`, `ZigbeeProtocolComplete` |
+| L3 Protocol route | DP vs ZCL vs proprietary overlay | `IntelligentProtocolDetect`, `IntelligentProtocolRouter`, `ProtocolAutoOptimizer`, `ZigbeeProtocolComplete` |
 | L3b Redundancy | Compensate unsupported / interview gaps; confirm I/O | `CrossLayerRedundancy`, `UnsupportedRegistry`, `FallbackChains`, `SmartDataValidator`, `ReceptionManager`, `HomeyCompensationLayer` / `ProtocolFallbackChain` |
 | L3c RX/TX bus | Inventaire + enchaînement tous chemins | **`ProtocolRxTxChain`** (`device.tx` / `device.rx`) — DP, ZCL, tuya_bound, cluster_bound, raw, MCU, IAS, magic |
 | L4 Time / MCU | Epoch + format guess | `lib/tuya/GlobalTimeSyncEngine`, `TuyaTimeSyncFormats` |
@@ -19,7 +19,22 @@ Prefer editing these modules over copying logic into every `device.js`.
 
 **Spine base (required for L3–L6):** `lib/tuya/TuyaZigbeeDevice.js`
 
-**Soft attach for lineages that skip Unified* bases:** `lib/layers/UniversalLayerBootstrap.js` (called from `TuyaZigbeeDevice.onNodeInit`) — ProtocolAutoOptimizer + IntelligentProtocolRouter + EF00 time sync + **CrossLayerRedundancy**.
+**Soft attach for lineages that skip Unified* bases:** `lib/layers/UniversalLayerBootstrap.js` (called from `TuyaZigbeeDevice.onNodeInit`) — **IntelligentProtocolDetect** + ProtocolAutoOptimizer + IntelligentProtocolRouter + EF00 soft-attach + EF00 time sync + **CrossLayerRedundancy** + ProtocolRxTxChain.
+
+### Intelligent ZCL ↔ EF00 detection (P214)
+
+Single source of truth: `lib/protocol/IntelligentProtocolDetect.js` — used by all Unified* `_detectProtocol()` and by bootstrap for bare drivers.
+
+| Priority | Rule | Result |
+|----------|------|--------|
+| 1 | Sacred / profile `zcl_only` (BSEED wall switches) | ZCL only — never force EF00 |
+| 2 | EF00 + useful ZCL clusters | **HYBRID** listen; TX via cascade |
+| 3 | EF00 only | `TUYA_DP` |
+| 4 | ZCL only | `ZCL` |
+| 5 | `TS0601` without EF00 but with ZCL | ZCL escape (PIR / IAS variants) |
+| 6 | Ambiguous `_TZE*` / `TS060x` | HYBRID listen until optimizer learns |
+
+Gates: `node tools/ci/p214-intelligent-protocol-gate.js` · `test/critical/p214-intelligent-protocol-detect.test.js`
 
 ### Cross-layer signal fusion (P211)
 
@@ -88,7 +103,7 @@ Gate: `node tools/ci/layer-coverage-gate.js` · test: `test/critical/layer-cover
 - **Multi-protocol % (P209):** `lib/battery/MultiProtocolBatteryPercent.js` — single normalize+commit for ZCL / Tuya DP / WiFi / IAS·ACE (`acl`) / voltage / raw / MCU.
   - API: `device.ingestBatteryPercent(raw, { protocol: 'zcl'|'tuya-dp'|'wifi'|'ias'|'voltage'|… })`
   - Commits via `confirmInbound` → L14; SmartBatteryManager + UnifiedBatteryHandler route through it.
-- ZCL `batteryPercentageRemaining` is often 0–200 → divide by 2 inside normalizer.
+- ZCL `batteryPercentageRemaining` is **spec 0–200 (0.5% steps)**. Many Tuya/IKEA devices already send **0–100**. Blind `/2` turns 100% into 50%. Always use `normalizeZclBatteryPercent()` (`lib/battery/zcl-percent.js`): ≤100 keep, 101–200 ÷2, 200→100%, 255→null.
 - Mains devices: `get mainsPowered() { return true; }` and strip phantom `measure_battery`.
 - Writers must use `safeSetCapabilityValue` (see P205 / `tools/ci/l14-capability-writers-gate.js`).
 - Virtual estimates (no hardware meter): `VirtualEnergyMeterMixin` — never overwrite real power; no compose `energy.approximation` with `measure_power`/`meter_power`. Detail: [`LAYERS_ENERGY_BUTTONS_FLOWS.md`](LAYERS_ENERGY_BUTTONS_FLOWS.md).

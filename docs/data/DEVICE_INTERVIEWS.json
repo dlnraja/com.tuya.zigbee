@@ -479,6 +479,32 @@
         "driver": "plug_smart"
       },
       {
+        "id": "INT-2138",
+        "deviceName": "BSEED Click Series Zigbee dimmer socket insert",
+        "manufacturerName": "_TZE284_m1cvyneb",
+        "productId": "TS0601",
+        "source": "Forum #2133/#2138 PresentSky + Z2M #28658",
+        "status": "supported",
+        "driver": "wall_dimmer_tuya",
+        "protocol": "tuya_dp",
+        "interview": {
+          "clusters": [0, 4, 5, 61184, 60672],
+          "ep242": "green_power_ignore",
+          "appVersion": 78,
+          "power": "mains_router"
+        },
+        "dps": {
+          "1": "onoff",
+          "2": "dim/0-1000",
+          "6": "countdown",
+          "14": "power_on_behavior",
+          "4": "light_type",
+          "21": "backlight_mode"
+        },
+        "forbid": ["climate_sensor", "soil_sensor", "zigbee_universal", "generic_tuya"],
+        "userAction": "remove_and_repair"
+      },
+      {
         "id": "INT-2172",
         "deviceName": "Tuya ZCL multi-gang wall switch (power-restore burst)",
         "manufacturerName": "_TZ3000_*",

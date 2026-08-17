@@ -52,13 +52,19 @@ Landed on master ~9.0.582 (credits in `CREDITS.md` / `NOTICE`):
 - Peter SOS/smartbutton #2137 / #2167 — still open (not this pass)
 - Do **not** auto-reply on #2138 unless human asks for a draft
 
-## Commands
-```bash
-node tools/ci/anti-bot-regression-gate.js
-node --test test/critical/p2138-bseed-wall-dimmer.test.js
-node tools/ci/layer-coverage-gate.js
-gh run list --repo dlnraja/com.tuya.zigbee --limit 12
-```
+## P214 — Intelligent ZCL ↔ EF00 (session)
+
+- `lib/protocol/IntelligentProtocolDetect.js` is the single detect order for all Unified* + bootstrap.
+- Sacred BSEED `zcl_only` beats any “force DP” heuristic.
+- Soft-attach `TuyaEF00Manager` only when EF00 / MCU heuristics warrant it.
+- Gate: `tools/ci/p214-intelligent-protocol-gate.js`
+
+## Session re-audit improvement (same day)
+
+- Wall dimmer settings aligned with Z2M #28658: backlight (strings), power-on, light type.
+- Full reflection: `reports/SESSION_REFLECTION_2026-08-17.md`
+- Interview INT-2138 added to `docs/data/DEVICE_INTERVIEWS.json`
+
 
 ## Docs / knowledge touched this pass
 - `.ai/KNOWLEDGE_CACHE.json`
