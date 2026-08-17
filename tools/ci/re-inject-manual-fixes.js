@@ -537,6 +537,74 @@ const MANUAL_FIXES = [
     addAtTop: false,
     source: 'p94-forum-collision',
   },
+  {
+    id: 'p217-hobeian-zg305z-switch-2gang',
+    file: 'drivers/switch_2gang/driver.compose.json',
+    description: 'P217 Johan #1435: HOBEIAN ZG-305Z MHCOZY 2-gang USB switch',
+    match: (mfrs) => Array.isArray(mfrs) && mfrs.some((m) => String(m).toLowerCase() === 'hobeian'),
+    addIfMissing: ['HOBEIAN', 'hobeian', 'Hobeian'],
+    addProductIds: ['ZG-305Z'],
+    addAtTop: true,
+    source: 'p217-johan-1435',
+  },
+  {
+    id: 'p217-hobeian-zg305z-remove-button2',
+    file: 'drivers/button_wireless_2/driver.compose.json',
+    description: 'P217: ZG-305Z is a 2-gang switch, not a 2-button remote',
+    match: () => true,
+    addIfMissing: [],
+    removeProductIds: ['ZG-305Z'],
+    addAtTop: false,
+    source: 'p217-johan-1435',
+  },
+  {
+    id: 'p217-wfxuhoea-garage-door',
+    file: 'drivers/garage_door/driver.compose.json',
+    description: 'P217 Johan #1442: LoraTap garage _TZE200_wfxuhoea TS0601',
+    match: (mfrs) => Array.isArray(mfrs) && mfrs.some((m) => /wfxuhoea/i.test(m)),
+    addIfMissing: ['_TZE200_wfxuhoea', '_tze200_wfxuhoea', '_TZE204_wfxuhoea', '_tze204_wfxuhoea'],
+    addAtTop: true,
+    source: 'p217-johan-1442',
+  },
+  {
+    id: 'p217-wfxuhoea-remove-button-plug',
+    file: 'drivers/button_wireless_plug/driver.compose.json',
+    description: 'P217: keep wfxuhoea off wireless plug',
+    match: () => true,
+    addIfMissing: [],
+    removeIfPresent: ['_TZE200_wfxuhoea', '_tze200_wfxuhoea', '_TZE204_wfxuhoea', '_tze204_wfxuhoea'],
+    addAtTop: false,
+    source: 'p217-johan-1442',
+  },
+  {
+    id: 'p217-k6fvknrr-double-power-point-2',
+    file: 'drivers/double_power_point_2/driver.compose.json',
+    description: 'P217 Johan PR #1437: _TZ3000_k6fvknrr TS011F dual outlet',
+    match: (mfrs) => Array.isArray(mfrs) && mfrs.some((m) => /k6fvknrr/i.test(m)),
+    addIfMissing: ['_TZ3000_k6fvknrr', '_tz3000_k6fvknrr'],
+    addAtTop: false,
+    source: 'p217-johan-1437',
+  },
+  {
+    id: 'p217-k6fvknrr-remove-switch-1gang',
+    file: 'drivers/switch_1gang/driver.compose.json',
+    description: 'P217: keep k6fvknrr off 1-gang catch-all',
+    match: () => true,
+    addIfMissing: [],
+    removeIfPresent: ['_TZ3000_k6fvknrr', '_tz3000_k6fvknrr'],
+    addAtTop: false,
+    source: 'p217-johan-1437',
+  },
+  {
+    id: 'p217-wing-contact-sensor',
+    file: 'drivers/contact_sensor/driver.compose.json',
+    description: 'P217 Johan PR #1439: Wing TS0203 door/window',
+    match: (mfrs) => Array.isArray(mfrs) && mfrs.some((m) => String(m).toLowerCase() === 'wing'),
+    addIfMissing: ['Wing', 'wing', 'WING'],
+    addProductIds: ['TS0203'],
+    addAtTop: true,
+    source: 'p217-johan-1439',
+  },
 ];
 
 function patchFix(fix) {
@@ -563,6 +631,19 @@ function patchFix(fix) {
     j.zigbee.productId = j.zigbee.productId.filter((p) => !ban.has(String(p).toUpperCase()));
     removed += before - j.zigbee.productId.length;
     if (before !== j.zigbee.productId.length) changed = true;
+  }
+
+  if (Array.isArray(fix.addProductIds)) {
+    if (!Array.isArray(j.zigbee.productId)) j.zigbee.productId = [];
+    const have = new Set(j.zigbee.productId.map((p) => String(p).toUpperCase()));
+    for (const pid of fix.addProductIds) {
+      const key = String(pid).toUpperCase();
+      if (have.has(key)) continue;
+      j.zigbee.productId.push(pid);
+      have.add(key);
+      added++;
+      changed = true;
+    }
   }
 
   // Fixes that only touch productId may omit manufacturerName

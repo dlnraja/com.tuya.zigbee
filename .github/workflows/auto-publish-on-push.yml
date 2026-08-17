@@ -80,8 +80,17 @@ jobs:
       - name: Re-inject manual driver fixes
         run: node tools/ci/re-inject-manual-fixes.js
 
+      - name: FP conflict resolve (post re-inject)
+        run: node scripts/automation/fix-fingerprint-conflicts.js --soft-exit
+
+      - name: Re-inject after conflict resolve
+        run: node tools/ci/re-inject-manual-fixes.js
+
       - name: Anti-bot regression gate
         run: node tools/ci/anti-bot-regression-gate.js
+
+      - name: P217 fork harvest sacred-couple gate
+        run: node tools/ci/p217-fork-harvest-gate.js
 
       # ─────────────────────────────────────────────────────────────
       # 2. CHECK SECRETS
