@@ -667,6 +667,7 @@ const MANUAL_FIXES = [
     match: (mfrs) => Array.isArray(mfrs) && mfrs.some((m) => String(m).toLowerCase() === 'wing'),
     addIfMissing: ['Wing', 'wing', 'WING'],
     addProductIds: ['ZTH11-3.0', 'ZTH13-3.0'],
+    removeProductIds: ['TS0203'],
     addAtTop: true,
     source: 'p217-johan-1429',
   },
