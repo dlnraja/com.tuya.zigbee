@@ -89,6 +89,16 @@ const FORBIDDEN = [
     mfrs: ['_TZE204_jtbgusdc', '_TZE28C1000000_jtbgusdc', '_TZE204_o9gyszw2'],
   },
   {
+    id: 'p217-wfxuhoea-not-button-plug',
+    driver: 'button_wireless_plug',
+    mfrs: ['_TZE200_wfxuhoea', '_TZE204_wfxuhoea'],
+  },
+  {
+    id: 'p217-k6fvknrr-not-switch1',
+    driver: 'switch_1gang',
+    mfrs: ['_TZ3000_k6fvknrr'],
+  },
+  {
     id: 'p96-hlla45kx-not-button2',
     driver: 'button_wireless_2',
     mfrs: ['_TYZB01_hlla45kx'],
@@ -221,6 +231,26 @@ const REQUIRED = [
     id: 'p96-hlla45kx-socket',
     driver: 'double_power_point_2',
     mfrs: ['_TYZB01_hlla45kx'],
+  },
+  {
+    id: 'p217-k6fvknrr-double-outlet',
+    driver: 'double_power_point_2',
+    mfrs: ['_TZ3000_k6fvknrr'],
+  },
+  {
+    id: 'p217-wfxuhoea-garage',
+    driver: 'garage_door',
+    mfrs: ['_TZE200_wfxuhoea', '_TZE204_wfxuhoea'],
+  },
+  {
+    id: 'p217-wing-contact',
+    driver: 'contact_sensor',
+    mfrs: ['Wing'],
+  },
+  {
+    id: 'p217-hobeian-zg305z-switch2',
+    driver: 'switch_2gang',
+    mfrs: ['HOBEIAN'],
   },
   {
     id: 'p97-awepdiwi-soil',

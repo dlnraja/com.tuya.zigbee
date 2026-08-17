@@ -476,6 +476,46 @@
       }
     },
     {
+      "id": "p217-wfxuhoea-loratap-garage",
+      "mfr": ["_TZE200_wfxuhoea", "_tze200_wfxuhoea", "_TZE204_wfxuhoea"],
+      "productId": ["TS0601"],
+      "canonicalDriver": "garage_door",
+      "forbiddenDrivers": ["button_wireless_plug"],
+      "protocol": "tuya_ef00",
+      "notes": "LoraTap garage opener. Not a wireless plug.",
+      "tracks": { "master": { "static": true, "dynamic": true }, "stable": { "static": true, "dynamic": false } }
+    },
+    {
+      "id": "p217-k6fvknrr-ts011f-double-outlet",
+      "mfr": ["_TZ3000_k6fvknrr", "_tz3000_k6fvknrr"],
+      "productId": ["TS011F"],
+      "canonicalDriver": "double_power_point_2",
+      "forbiddenDrivers": ["switch_1gang"],
+      "protocol": "zcl",
+      "notes": "2-endpoint TS011F without metering.",
+      "tracks": { "master": { "static": true, "dynamic": true }, "stable": { "static": true, "dynamic": false } }
+    },
+    {
+      "id": "p217-wing-ts0203-contact",
+      "mfr": ["Wing", "wing", "WING"],
+      "productId": ["TS0203"],
+      "canonicalDriver": "contact_sensor",
+      "forbiddenDrivers": ["water_leak_sensor"],
+      "protocol": "ias_zone",
+      "notes": "Wing brand door/window.",
+      "tracks": { "master": { "static": true, "dynamic": true }, "stable": { "static": true, "dynamic": false } }
+    },
+    {
+      "id": "p217-hobeian-zg305z-usb-2gang",
+      "mfr": ["HOBEIAN", "hobeian", "Hobeian"],
+      "productId": ["ZG-305Z"],
+      "canonicalDriver": "switch_2gang",
+      "forbiddenDrivers": ["button_wireless_2"],
+      "protocol": "zcl",
+      "notes": "HOBEIAN ZG-305Z dual USB switch.",
+      "tracks": { "master": { "static": true, "dynamic": true }, "stable": { "static": true, "dynamic": false } }
+    },
+    {
       "id": "p191-trv-a4bpgplm-not-generic-diy",
       "mfr": ["_TZE200_a4bpgplm"],
       "productId": ["TS0601"],

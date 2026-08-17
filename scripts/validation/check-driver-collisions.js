@@ -28,7 +28,8 @@ const FALLBACK_DRIVERS = ['universal_fallback', 'generic_tuya', 'universal_zigbe
 //  hobeian×TS0001 / hobeian×TS0601 intersections are theoretical only.
 const DOCUMENTED_EXCEPTIONS = [
   { mfr: 'hobeian', pid: 'ts0001', drivers: ['button_wireless_1', 'water_leak_sensor'] },
-  { mfr: 'hobeian', pid: 'ts0601', drivers: ['button_wireless_1', 'water_leak_sensor'] },
+  { mfr: 'hobeian', pid: 'ts0601', drivers: ['button_wireless_1', 'water_leak_sensor', 'switch_2gang'] },
+  { mfr: 'hobeian', pid: 'zg-305z', drivers: ['switch_2gang'] },
 ];
 
 // Invalid wildcard patterns that should never be used

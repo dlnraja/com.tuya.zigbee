@@ -1305,5 +1305,8 @@
   },
   "5.12.83": {
     "en": "Reliability: skip Test overwrite while 9.0 soaks; treat Athom draft as published."
+  },
+  "5.12.84": {
+    "en": "Garage openers, dual outlets, Wing contacts and HOBEIAN USB switches keep the correct driver. Curtain motors that ignore position writes use open/stop/close. Battery 100% stays 100%."
   }
 }

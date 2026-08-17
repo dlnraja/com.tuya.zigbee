@@ -88,8 +88,17 @@ jobs:
       - name: "🔁 Re-inject after enrich (keep manual overrides)"
         run: node tools/ci/re-inject-manual-fixes.js
 
+      - name: "🔧 FP conflict resolve (post-enrich)"
+        run: node scripts/automation/fix-fingerprint-conflicts.js --soft-exit
+
+      - name: "🔁 Re-inject after conflict resolve"
+        run: node tools/ci/re-inject-manual-fixes.js
+
       - name: "🛡️ Anti-bot gate (post-enrich)"
         run: node tools/ci/anti-bot-regression-gate.js
+
+      - name: "🛡️ P217 fork harvest sacred-couple gate"
+        run: node tools/ci/p217-fork-harvest-gate.js
 
       - name: 📊 Dashboard monitor
         env:
@@ -103,7 +112,8 @@ jobs:
         run: node .github/scripts/processing-failure-republish-check.js
 
       - name: 🔁 Bump version for Homey recovery publish
-        if: env.publish_recovery_requires_bump == 'true' || github.event_name == 'workflow_dispatch'
+        # P139: only bump when recovery checker says so — never on bare workflow_dispatch
+        if: env.publish_recovery_requires_bump == 'true'
         env:
           BUMP_LEVEL: patch
           HOMEY_CHANGELOG: ${{ env.publish_recovery_changelog || 'Stability improvements and Homey test publication retry.' }}
@@ -190,7 +200,8 @@ jobs:
           fi
 
       - name: 🚀 Publish if needed
-        if: env.trigger_publish == 'true' || github.event_name == 'workflow_dispatch'
+        # P193/P217: never Homey-publish 5.12 from this workflow while master 9.0 soaks Test.
+        if: (env.trigger_publish == 'true' || github.event_name == 'workflow_dispatch') && github.ref_name != 'stable-v5'
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
           # P75.27: Bumped from 30 to 35 MB (build dir now 30.20 MB with

@@ -59,6 +59,9 @@ for (const dir of driverDirs) {
 }
 
 // Determine which driver to remove from
+// P217: same brands live on several drivers via disjoint productIds.
+const PID_DISAMBIGUATED_BRANDS = new Set(['hobeian', 'wing']);
+
 const PRIMARY_DRIVERS = [
   'switch_2gang', 'button_wireless_plug', 'button_wireless_2', 'climate_sensor',
   'device_din_rail', 'presence_sensor_radar', 'switch_1gang'
@@ -76,6 +79,7 @@ for (const [key, entries] of fpMap) {
   const uniqueDrivers = [...new Set(entries.map(e => e.driver))];
   if (uniqueDrivers.length > 1) {
     const [mfr, pid] = key.split('|');
+    if (PID_DISAMBIGUATED_BRANDS.has(String(mfr).toLowerCase())) continue;
 
     // Pick the victim driver. Some TS0601 families need explicit ownership because
     // broad fallback drivers can otherwise win by directory order.
