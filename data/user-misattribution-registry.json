@@ -488,6 +488,36 @@
         "master": { "static": true, "dynamic": true },
         "stable": { "static": true, "dynamic": false }
       }
+    },
+    {
+      "id": "zemismart-ts0043-3btn-sticky",
+      "mfr": [
+        "_TZ3000_a7ouggvs",
+        "_tz3000_a7ouggvs",
+        "_TZ3000_qzjcsmar",
+        "_tz3000_qzjcsmar"
+      ],
+      "productId": ["TS0043"],
+      "canonicalDriver": "button_wireless_3",
+      "forbiddenDrivers": [
+        "button_wireless_2",
+        "button_wireless_1",
+        "button_wireless_4",
+        "scene_switch_wall",
+        "switch_1gang"
+      ],
+      "protocol": "zcl",
+      "energy": { "batteries": ["CR2032"] },
+      "retailNames": [
+        "Zemismart ZB-L03C-H",
+        "Zemismart 3-button wireless scene switch"
+      ],
+      "notes": "Battery CR2032 sticky 3-button wall remote. Must not pair as 2-gang. Single/double/long press via PhysicalButtonMixin.",
+      "sources": ["z2m", "forum-140352-2168", "aliexpress-3055457170131038"],
+      "tracks": {
+        "master": { "static": true, "dynamic": true },
+        "stable": { "static": true, "dynamic": false }
+      }
     }
   ]
 }

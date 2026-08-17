@@ -1,25 +1,22 @@
-# SESSION HANDOFF — 2026-08-17 (P210 closed)
+# SESSION HANDOFF — 2026-08-17 (P212 local → commit)
 
 > Shared App ID. Silent forum. Dual-track: master=smart, stable=reliability-only.
 
 | Track | Tip | Homey Test |
 |-------|-----|------------|
-| master | P210 on `9fc20b45e` + publish sync `c09ddf090` | **v9.0.571** Test `#2900` ✅ |
-| stable-v5 | No P207–P210 copycat (MASTER_ONLY layers/battery) | soak-skip; do not overwrite 9.x Test |
+| master | **P212** commitCapability + energy/buttons + 0x000A quiet + TS0043 | Auto-Publish after push |
+| stable-v5 | No P207–P212 copycat (MASTER_ONLY layers) | soak-skip; do not overwrite 9.x Test |
 
-## Pipeline (done)
-Search → list → cross-ref Z2M/Homey → design → implement wave1 → push → Auto-Publish success → Syntax Check green.
+## P212 (MASTER_ONLY)
+- Funnel: EF00 / IAS / mixin / battery / energy / virtual buttons → `commitCapability` → fusion + L14
+- No invented 15% / 100% battery
+- Estimated W/kWh cannot overwrite fresh ZCL power
+- Button ZCL+DP echo suppressed (280 ms)
+- Time cluster 0x000A: respond on request; no poll on sleepy remotes/sensors
+- Zemismart TS0043 (`_TZ3000_a7ouggvs`, `_TZ3000_qzjcsmar`) → `button_wireless_3` (was wrongly on 2-gang)
+- `_TZ3000_k4ej3ww2`+TS0207 stays `water_leak_sensor` (already locked)
 
-## Live truth
-- Auto-Publish: https://github.com/dlnraja/com.tuya.zigbee/actions/runs/31978944027 (success)
-- Syntax Check: https://github.com/dlnraja/com.tuya.zigbee/actions/runs/31978944003 (success — clrdrnya mfs fixed)
-- Install: https://homey.app/a/com.dlnraja.tuya.zigbee/test/
+## Forum (silent)
+Do not auto-post. Drafts for #2168/#2169 stay in the chat only.
 
-## Shipped (MASTER_ONLY)
-- P207 CrossLayerRedundancy · P208 ProtocolRxTxChain · P209 MultiProtocolBatteryPercent
-- P210: mfs `_tze200_clrdrnya`→TS0601 only; CI layer/L14/critical tests; docs dual-app ID fix
-
-## Stable
-Surgical BOTH only if a crash/timer/SDK3 delta appears — **not** feature tree sync.
-
-Open issues/PRs: none critical.
+Open issues/PRs: none critical. Peter crash class already on tip (P203); no new diag in this pass.

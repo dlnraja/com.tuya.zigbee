@@ -138,6 +138,57 @@ must(
   /LayerSignalFusion/.test(read('lib/tuya/TuyaZigbeeDevice.js')),
 );
 
+must(
+  'commitCapability funnel exists',
+  fs.existsSync(path.join(ROOT, 'lib/layers/commitCapability.js')),
+);
+
+must(
+  'TuyaEF00Manager uses commitCapability',
+  /commitCapabilityCatch/.test(read('lib/tuya/TuyaEF00Manager.js')),
+);
+
+must(
+  'IASZoneManager uses commitCapability',
+  /commitCapabilityCatch/.test(read('lib/managers/IASZoneManager.js')),
+);
+
+must(
+  'IASZoneManager does not invent 15% battery',
+  !/Battery set to 15%/.test(read('lib/managers/IASZoneManager.js')),
+);
+
+must(
+  'TuyaDeviceMixin does not invent 100% battery',
+  !/Setting default battery \(100%\)/.test(read('lib/mixins/TuyaDeviceMixin.js')),
+);
+
+must(
+  'battery-reporting-manager writes via _writeBatteryPercent',
+  /_writeBatteryPercent/.test(read('lib/utils/battery-reporting-manager.js'))
+    && !/setCapabilityValue\('measure_battery'/.test(read('lib/utils/battery-reporting-manager.js')),
+);
+
+must(
+  'TimeClusterPolicy exists',
+  fs.existsSync(path.join(ROOT, 'lib/zigbee/TimeClusterPolicy.js')),
+);
+
+must(
+  'TuyaTimeSync respects TimeClusterPolicy',
+  /TimeClusterPolicy/.test(read('lib/tuya/TuyaTimeSync.js')),
+);
+
+must(
+  'VirtualEnergyMeterMixin marks estimated source',
+  /source: 'estimated'/.test(read('lib/mixins/VirtualEnergyMeterMixin.js')),
+);
+
+must(
+  'VirtualButtonMixin commits UI via commitCapability',
+  /commitCapability/.test(read('lib/mixins/VirtualButtonMixin.js')),
+);
+
 const failed = checks.filter(c => !c.ok);
 const json = process.argv.includes('--json');
 

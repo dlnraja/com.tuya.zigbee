@@ -76,4 +76,19 @@ describe('LayerSignalFusion P211', () => {
     const next = fusion.decide(d, 'alarm_contact', true, 'tuya-dp');
     assert.equal(next.commit, true);
   });
+
+  it('suppresses ZCL then DP button echo and estimated power phantoms', () => {
+    const d = mockDevice();
+    fusion.reset(d);
+    assert.equal(fusion.decide(d, 'button.1', true, 'zcl').commit, true);
+    const echo = fusion.decide(d, 'button.1', true, 'tuya-dp');
+    assert.equal(echo.commit, false);
+    assert.equal(echo.echo, true);
+
+    fusion.reset(d);
+    assert.equal(fusion.decide(d, 'measure_power', 42, 'zcl').commit, true);
+    const ph = fusion.decide(d, 'measure_power', 40, 'estimated');
+    assert.equal(ph.commit, false);
+    assert.equal(ph.phantom, true);
+  });
 });

@@ -50,9 +50,9 @@ const FORBIDDEN = [
     mfrs: ['_TZ3000_xabckq1v', '_TZ3000_czuyt8lz', '_TZ3000_b3mgfu0d', '_TZ3000_abrsvsou', '_TZ3000_4fjiwweb'],
   },
   {
-    id: 'p129-ts004f-not-button2',
+    id: 'p212-ts0043-not-button2',
     driver: 'button_wireless_2',
-    mfrs: ['_TZ3000_b3mgfu0d'],
+    mfrs: ['_TZ3000_a7ouggvs', '_TZ3000_qzjcsmar'],
   },
   {
     id: 'p129-ts004f-not-relay4',
@@ -358,6 +358,11 @@ const REQUIRED = [
       '_TZ3000_kfu8zapd',
       '_TZ3000_rco1yzb1',
     ],
+  },
+  {
+    id: 'p212-ts0043-btn3',
+    driver: 'button_wireless_3',
+    mfrs: ['_TZ3000_a7ouggvs', '_TZ3000_qzjcsmar'],
   },
   {
     id: 'p94-w5xztuy7-switch2',
@@ -693,6 +698,8 @@ const FP_REQUIRED = [
   { mfr: '_TZ3000_b3mgfu0d', driverId: 'button_wireless_4' },
   { mfr: '_TZ3000_abrsvsou', driverId: 'button_wireless_4' },
   { mfr: '_TZ3000_4fjiwweb', driverId: 'button_wireless_4' },
+  { mfr: '_TZ3000_a7ouggvs', driverId: 'button_wireless_3' },
+  { mfr: '_TZ3000_qzjcsmar', driverId: 'button_wireless_3' },
 ];
 const FP_FORBIDDEN_DRIVERS = {
   iadro9bf: ['climate_sensor', 'generic_tuya'],
@@ -704,6 +711,8 @@ const FP_FORBIDDEN_DRIVERS = {
   b3mgfu0d: ['switch_1gang'],
   abrsvsou: ['relay_board_4_channel', 'switch_1gang'],
   '4fjiwweb': ['relay_board_4_channel', 'switch_1gang'],
+  a7ouggvs: ['button_wireless_2', 'switch_1gang'],
+  qzjcsmar: ['button_wireless_2', 'switch_1gang'],
 };
 
 if (fs.existsSync(FP_PATH)) {

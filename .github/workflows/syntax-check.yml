@@ -194,6 +194,8 @@ jobs:
           node --test test/critical/layer-coverage.test.js
           node --test test/critical/multi-protocol-battery.test.js
           node --test test/critical/layer-signal-fusion.test.js
+          node --test test/critical/commit-capability.test.js
+          node --test test/critical/time-cluster-policy.test.js
           node --test test/critical/energy-battery-button-flows.test.js
 
       - name: Validate Homey SDK3 compliance
