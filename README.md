@@ -4,11 +4,11 @@
 
 [![Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdlnraja%2Fcom.tuya.zigbee%2Fmaster%2Fapp.json&query=%24.version&label=version&color=blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![Drivers](https://img.shields.io/badge/drivers-431-brightgreen)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
-[![Fingerprints](https://img.shields.io/badge/fingerprints-4,370%20unique-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
+[![Fingerprints](https://img.shields.io/badge/fingerprints-4,371%20unique-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![SDK](https://img.shields.io/badge/SDK-3-orange)](https://apps.developer.homey.app/)
 [![License](https://img.shields.io/badge/license-GPL--3.0-green)](LICENSE)
 
-Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, sensors, lights, thermostats, covers, valves — **431 drivers**, **4,370 unique fingerprints**. No cloud required.
+Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, sensors, lights, thermostats, covers, valves — **431 drivers**, **4,371 unique fingerprints**. No cloud required.
 
 **What it does:**
 - Talks to devices on your Homey Zigbee mesh (Tuya DP `0xEF00` and standard ZCL)
@@ -35,13 +35,13 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 |--------|-------|
 | **App Version** | v9.0.585 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
-| **Unique Fingerprints** | 4,370 |
-| **Pairing Variants** | 16,596 (4 case combos per fingerprint) |
-| **Unique Product IDs** | 575 |
+| **Unique Fingerprints** | 4,371 |
+| **Pairing Variants** | 16,599 (4 case combos per fingerprint) |
+| **Unique Product IDs** | 577 |
 | **Flow Cards** | 5,175 |
 | **Unique Capabilities** | 170 |
 | **Native OTA Drivers** | 5 |
-| **Test Suites** | 95 files |
+| **Test Suites** | 96 files |
 | **SVG Icons** | 731 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
@@ -52,14 +52,14 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | # | Driver | Fingerprints |
 |---|--------|-------------|
 | 1 | `climate_sensor` | 2,603 |
-| 2 | `switch_1gang` | 1,788 |
+| 2 | `switch_1gang` | 1,784 |
 | 3 | `button_wireless_2` | 740 |
 | 4 | `presence_sensor_radar` | 722 |
 | 5 | `radiator_valve` | 599 |
 | 6 | `wall_dimmer_tuya` | 496 |
 | 7 | `generic_tuya` | 420 |
 | 8 | `device_radiator_valve` | 380 |
-| 9 | `sensor_contact_zigbee` | 344 |
+| 9 | `sensor_contact_zigbee` | 340 |
 | 10 | `curtain_motor` | 308 |
 | 11 | `switch_4gang` | 277 |
 | 12 | `switch_2gang` | 244 |
@@ -102,6 +102,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.586** | Garage openers, dual outlets, Wing contacts and HOBEIAN USB switches keep the correct driver. Curtain motors that ignore position writes … |
 | **v9.0.585** | Wall dimmers keep the correct driver fingerprint, clamp brightness so the MCU does not reboot, and strip phantom battery after a wrong cl… |
 | **v9.0.584** | Wall dimmers keep the correct driver fingerprint, clamp brightness so the MCU does not reboot, and strip phantom battery after a wrong cl… |
 | **v9.0.583** | Wall dimmers keep the correct driver fingerprint, clamp brightness so the MCU does not reboot, and strip phantom battery after a wrong cl… |
@@ -113,7 +114,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.577** | Multi-gang Tuya switches keep per-relay control after a power cut or re-pair, and silent Tuya MCU wall switches stay reachable. |
 | **v9.0.576** | Stopped multi-gang switches from toggling the wrong relay after a re-pair; commands stay on their own endpoint and unused Tuya DP is not … |
 | **v9.0.575** | After a power cut, ZCL switches keep the Homey backlight and power-on settings instead of trusting the boot dump. |
-| **v9.0.574** | Corrected pairing for several 2/3/4/6-gang wall switches that were landing on climate or the wrong gang count. |
 
 <!-- CHANGELOG_END -->
 
