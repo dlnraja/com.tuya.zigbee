@@ -295,7 +295,26 @@
             "en": "This wall unit",
             "nl": "Dit wandapparaat",
             "fr": "Cet interrupteur mural",
-            "de": "Diese Wandeinheit"
+            "de": "Diese Wandeinheit",
+            "it": "Questa unità a parete",
+            "es": "Esta unidad de pared",
+            "sv": "Denna väggenhet",
+            "pt": "Esta unidade de parede"
+          },
+          "value": "—"
+        },
+        {
+          "id": "traffic_stats",
+          "type": "label",
+          "label": {
+            "en": "Network activity",
+            "nl": "Netwerkactiviteit",
+            "fr": "Activité réseau",
+            "de": "Netzwerkaktivität",
+            "it": "Attività di rete",
+            "es": "Actividad de red",
+            "sv": "Nätverksaktivitet",
+            "pt": "Atividade de rede"
           },
           "value": "—"
         }

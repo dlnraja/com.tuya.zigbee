@@ -42,6 +42,7 @@ describe('P2182 TB25 wall-switch settings', () => {
       for (const c of g.children || []) {ids.push(c.id);}
     }
     assert.ok(ids.includes('connected_siblings'));
+    assert.ok(ids.includes('traffic_stats'));
     assert.ok(ids.includes('inching'));
     assert.ok(ids.includes('backlight_mode'));
     assert.ok(!ids.includes('countdown'));

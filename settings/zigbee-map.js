@@ -132,7 +132,8 @@
       ['Online', st.online || 0],
       ['Offline', st.offline || 0],
       ['Weak', st.weak || 0],
-      ['Avg LQI', st.averageLqi == null ? '—' : st.averageLqi]
+      ['Avg LQI', st.averageLqi == null ? '—' : st.averageLqi],
+      ['Busiest', st.busiestName ? (st.busiestName + ' ' + (st.busiestRx24h || 0) + '/24h') : '—']
     ];
     var html = '';
     for (var i = 0; i < chips.length; i++) {
@@ -158,6 +159,7 @@
       (n.rssi != null ? ' · RSSI ' + n.rssi + ' dBm' : '') + '<br>' +
       (n.battery != null ? ('Battery: ' + n.battery + '%<br>') : '') +
       'Last seen: ' + fmtAgo(n.lastSeen) +
+      (n.rxLastHour != null ? (' · RX ' + n.rxLastHour + '/1h · ' + (n.rxLast24h || 0) + '/24h') : '') +
       (n.parentKind ? ' · link: ' + n.parentKind : '') +
       (hidden ? '<br>Children: ' + hidden + (collapsed[n.id] ? ' (folded)' : '') : '');
   }
@@ -166,7 +168,7 @@
     var tb = document.querySelector('#mesh-avail tbody');
     if (!tb) return;
     if (!av || !av.rows || !av.rows.length) {
-      tb.innerHTML = '<tr><td colspan="4">No availability samples yet (open this page after devices have reported).</td></tr>';
+      tb.innerHTML = '<tr><td colspan="6">No availability samples yet (open this page after devices have reported).</td></tr>';
       return;
     }
     var html = '';
@@ -175,6 +177,8 @@
       html += '<tr>' +
         '<td>' + escapeHtml(r.name) + (r.isBattery ? ' · batt' : '') + '</td>' +
         '<td>' + fmtAgo(r.lastSeen) + '</td>' +
+        '<td>' + (r.rxLastHour || 0) + '</td>' +
+        '<td>' + (r.rxLast24h || 0) + '</td>' +
         '<td>' + (r.rejoins || 0) + '</td>' +
         '<td class="' + (r.unavailable ? 'mesh-off' : '') + '">' + (r.unavailable ? 'offline' : 'ok') + '</td>' +
         '</tr>';

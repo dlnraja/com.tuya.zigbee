@@ -205,4 +205,25 @@ describe('DeviceAvailabilityManager', () => {
     assert.ok(typeof snap.rows[0].name === 'string');
     mgr.destroy();
   });
+
+  it('counts RX frames for last hour / 24h and names the busiest device', () => {
+    const mgr = new DeviceAvailabilityManager(null);
+    mgr.registerDevice(fakeDevice('quiet', ['onoff']));
+    mgr.registerDevice(fakeDevice('chatty', ['onoff']));
+    for (let i = 0; i < 5; i++) {mgr.markSeen('chatty');}
+    mgr.markSeen('quiet');
+    const traffic = mgr.getTrafficSummary();
+    assert.strictEqual(traffic.busiest.id, 'chatty');
+    assert.strictEqual(traffic.busiest.lastHour, 5);
+    assert.strictEqual(traffic.busiest.last24h, 5);
+    const snap = mgr.getSettingsSnapshot();
+    assert.strictEqual(snap.rows.find((r) => r.id === 'chatty').rxLastHour, 5);
+    assert.match(mgr.formatTrafficLabel('quiet'), /RX 1\/1h/);
+    const chatty = mgr._devices.get('chatty');
+    chatty.rxSlot -= 2;
+    mgr.markSeen('chatty');
+    assert.strictEqual(mgr._rxLastHour(chatty), 1);
+    assert.ok(mgr._rxLast24h(chatty) >= 6);
+    mgr.destroy();
+  });
 });
