@@ -32,7 +32,7 @@
       "realMfrsAdded": 5,
       "details": "tmp/synthetic-resolution.json + tmp/pruned21-resolution.json"
     },
-    "lastAlignedAt": "2026-08-17T23:37:48.768Z",
+    "lastAlignedAt": "2026-08-18T16:13:48.206Z",
     "alignTool": "align-mfs-db-intelligent@P169"
   },
   "sources": {
@@ -208222,25 +208222,6 @@
     "pid": "TS0002",
     "modelIdsCount": 11
   },
-  "_TZ3000_KGXEJ1DV": {
-    "driverId": "switch_2gang",
-    "source": "auto-sync",
-    "modelIds": [
-      "TS0002",
-      "TS0002_power",
-      "TS0002_switch_module",
-      "TS0003",
-      "TS0012",
-      "TS0013",
-      "TS011F",
-      "TS0601",
-      "TS0726",
-      "ZG-302Z2",
-      "ZG-305Z"
-    ],
-    "pid": "TS0002",
-    "modelIdsCount": 11
-  },
   "_TZ3000_KPATQ5PQ": {
     "driverId": "switch_2gang",
     "source": "auto-sync",
@@ -208470,25 +208451,6 @@
     "modelIdsCount": 11
   },
   "_TZ3000_YW8Z2AXP": {
-    "driverId": "switch_2gang",
-    "source": "auto-sync",
-    "modelIds": [
-      "TS0002",
-      "TS0002_power",
-      "TS0002_switch_module",
-      "TS0003",
-      "TS0012",
-      "TS0013",
-      "TS011F",
-      "TS0601",
-      "TS0726",
-      "ZG-302Z2",
-      "ZG-305Z"
-    ],
-    "pid": "TS0002",
-    "modelIdsCount": 11
-  },
-  "_TZ3000_YWUBFUVT": {
     "driverId": "switch_2gang",
     "source": "auto-sync",
     "modelIds": [
@@ -216125,30 +216087,18 @@
   },
   "_tz3000_ovyaisip": {
     "driverId": "wall_switch_1gang_1way",
-    "source": "auto-sync",
+    "source": "registry:zemismart-ts0001-tb25-1",
     "modelIds": [
-      "TS0001",
-      "TS0002",
-      "TS0003",
-      "TS0011",
-      "TS011F",
-      "TS0601",
-      "TS0726"
+      "TS0001"
     ],
     "pid": "TS0001",
     "modelIdsCount": 7
   },
   "_tz3000_pk8tgtdb": {
     "driverId": "wall_switch_1gang_1way",
-    "source": "auto-sync",
+    "source": "registry:zemismart-ts0001-tb25-1",
     "modelIds": [
-      "TS0001",
-      "TS0002",
-      "TS0003",
-      "TS0011",
-      "TS011F",
-      "TS0601",
-      "TS0726"
+      "TS0001"
     ],
     "pid": "TS0001",
     "modelIdsCount": 7
@@ -327285,13 +327235,6 @@
       "TS0004"
     ]
   },
-  "_tz3000_jjdkhueq": {
-    "driverId": "wall_switch_2gang_1way",
-    "source": "registry:novadigital-ts0002-jjdkhueq",
-    "modelIds": [
-      "TS0002"
-    ]
-  },
   "_TZ3000_ywubfuvt": {
     "driverId": "wall_switch_2gang_1way",
     "source": "registry:novadigital-ts0002-ywubfuvt",
@@ -327299,21 +327242,7 @@
       "TS0002"
     ]
   },
-  "_tz3000_ywubfuvt": {
-    "driverId": "wall_switch_2gang_1way",
-    "source": "registry:novadigital-ts0002-ywubfuvt",
-    "modelIds": [
-      "TS0002"
-    ]
-  },
   "_TZ3000_kgxej1dv": {
-    "driverId": "wall_switch_2gang_1way",
-    "source": "registry:novadigital-ts0002-kgxej1dv",
-    "modelIds": [
-      "TS0002"
-    ]
-  },
-  "_tz3000_kgxej1dv": {
     "driverId": "wall_switch_2gang_1way",
     "source": "registry:novadigital-ts0002-kgxej1dv",
     "modelIds": [

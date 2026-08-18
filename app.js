@@ -116,6 +116,7 @@ const UserFriendlyErrors = require('./lib/errors/UserFriendlyErrors');
 const { TestFramework } = require('./lib/testing');
 const ConfigSchemaValidator = require('./lib/validation/ConfigSchemaValidator');
 const CentralizedDPRegistry = require('./lib/registry/CentralizedDPRegistry');
+const BootBudget = require('./lib/performance/BootBudget');
 
 class TuyaUnifiedZigbeeApp extends Homey.App {
   _flowCardsRegistered = false;
@@ -219,12 +220,7 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
     this.log('✅ CapabilityManager initialized');
 
     this.identificationDatabase = new DeviceIdentificationDatabase(this.homey);
-    try {
-      await this.identificationDatabase.buildDatabase();
-      this.log('✅ Intelligent Device Identification Database built');
-    } catch (err) {
-      this.error('⚠️ Device ID Database build failed (non-critical):', err.message);
-    }
+    this.log(`⏭️ ID database deferred (${BootBudget.heapUsedMb()} MB heap) — devices start first`);
 
     try {
       registerCustomClusters(this);
@@ -251,16 +247,14 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
 
     try {
       this.analytics = new AdvancedAnalytics(this.homey);
-      await this.analytics.initialize();
-      this.log('✅ Advanced Analytics initialized');
+      this.log('⏭️ Analytics insights deferred (boot budget)');
     } catch (err) {
       this.error('⚠️ Analytics failed (non-critical):', err.message);
     }
 
     try {
       this.discovery = new SmartDeviceDiscovery(this.homey);
-      await this.discovery.initialize();
-      this.log('✅ Smart Device Discovery initialized');
+      this.log('⏭️ Smart discovery deferred (boot budget)');
     } catch (err) {
       this.error('⚠️ Discovery failed (non-critical):', err.message);
     }
@@ -297,14 +291,7 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
 
     try {
       this.otaManager = new OTAUpdateManager(this.homey);
-      this.log('✅ OTA Update Manager initialized');
-      // Idea #42: Start automatic Z2M OTA firmware update discovery (6h interval)
-      try {
-        this.otaManager.startAutoDiscovery(6 * 60 * 60 * 1000);
-        this.log('✅ OTA Auto-Discovery started (6h interval)');
-      } catch (e) {
-        this.log('⚠️ OTA Auto-Discovery failed to start (non-critical):', e.message);
-      }
+      this.log('✅ OTA Update Manager initialized (auto-discovery deferred)');
     } catch (err) { this.error('⚠️ OTA Manager failed:', err.message); }
 
     try {
@@ -318,33 +305,9 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
 
     try {
       this._tuyaUDPDiscovery = new TuyaUDPDiscovery({ log: this.log.bind(this) });
-
-      const updateDeviceIP = async (info) => {
-        try {
-          const drivers = Object.values(this.homey.drivers.getDrivers());
-          for (const driver of drivers) {
-            const devices = driver.getDevices() || [];
-            for (const device of devices) {
-              const settings = device.getSettings();
-              if (settings && settings.device_id === info.deviceId) {
-                if (settings.ip_address !== info.ip) {
-                  this.log(`🔄 [SMART-HEAL] IP change: ${settings.ip_address} -> ${info.ip}`);
-                  await device.setSettings({ ip_address: info.ip }).catch(e => this.error('[SMART-HEAL] Settings update failed', e));
-                }
-              }
-            }
-          }
-        } catch (err) {
-          this.error('[SMART-HEAL] Error updating IP:', err.message);
-        }
-      };
-
-      this._tuyaUDPDiscovery.on('device-updated', updateDeviceIP);
-      this._tuyaUDPDiscovery.on('device-found', updateDeviceIP);
-      await this._tuyaUDPDiscovery.start();
-      this.log('✅ Tuya WiFi UDP Discovery started (ports 6666/6667/6668)');
+      this.log('⏭️ Tuya WiFi UDP discovery deferred (Zigbee devices start first)');
     } catch (err) {
-      this.log('⚠️ Tuya UDP Discovery failed (non-critical):', err.message);
+      this.log('⚠️ Tuya UDP Discovery init failed (non-critical):', err.message);
     }
 
     try {
@@ -367,51 +330,6 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
       this.log('✅ L12-L14 Architectural Layers initialized');
     } catch (err) {
       this.error('❌ Failed to initialize architectural layers:', err.message);
-    }
-
-    // v9.1.0: Initialize new feature modules (Ideas #41, #44, #86, #87, #96, #98, #99)
-    try {
-      this.groupManager = new DeviceGroupManager(this.homey);
-      await this.groupManager.initialize();
-      this.log('✅ Device Group Manager initialized (Idea #41)');
-    } catch (err) {
-      this.error('⚠️ GroupManager failed (non-critical):', err.message);
-    }
-
-    try {
-      this.healthDashboard = new DeviceHealthDashboard(this.homey, this.healthMonitor);
-      this.log('✅ Device Health Dashboard initialized (Idea #44)');
-    } catch (err) {
-      this.error('⚠️ HealthDashboard failed (non-critical):', err.message);
-    }
-
-    try {
-      this.pairingWizard = new AutoDetectionPairingWizard(this.homey);
-      this.log('✅ Auto-Detection Pairing Wizard initialized (Idea #86)');
-    } catch (err) {
-      this.error('⚠️ PairingWizard failed (non-critical):', err.message);
-    }
-
-    try {
-      this.errorTranslator = new UserFriendlyErrors();
-      this.log('✅ User-Friendly Error Translator initialized (Idea #87)');
-    } catch (err) {
-      this.error('⚠️ ErrorTranslator failed (non-critical):', err.message);
-    }
-
-    try {
-      this.configValidator = new ConfigSchemaValidator();
-      this.log('✅ Config Schema Validator initialized (Idea #98)');
-    } catch (err) {
-      this.error('⚠️ ConfigValidator failed (non-critical):', err.message);
-    }
-
-    try {
-      this.dpRegistry = new CentralizedDPRegistry();
-      const stats = this.dpRegistry.getStats();
-      this.log(`✅ Centralized DP Registry initialized (Idea #99): ${stats.totalDPs} DPs, ${Object.keys(stats.byDeviceType).length} device types`);
-    } catch (err) {
-      this.error('⚠️ DPRegistry failed (non-critical):', err.message);
     }
 
     try {
@@ -441,18 +359,12 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
     }
 
     try {
-      await this.initializeInsights();
-    } catch (err) { this.error('⚠️ Insights failed:', err.message); }
-
-    // v9.1.0: Virtual Presence Detection System (no dedicated sensor required)
-    try {
       this._registerPresenceFlowCards();
       this.log('✅ Virtual Presence Detection flow cards registered');
     } catch (err) {
       this.error('⚠️ Presence flow cards failed (non-critical):', err.message);
     }
 
-    // v9.0.376: Hue-style smart features (motion lighting, circadian, wake-up)
     try {
       this._registerHueStyleFlowCards();
       this.log('✅ Hue-style flow cards registered');
@@ -460,7 +372,6 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
       this.error('⚠️ Hue-style flow cards failed (non-critical):', err.message);
     }
 
-    // v9.0.378: OTA flow cards (condition + discovery action)
     try {
       this._registerOtaFlowCards();
       this.log('✅ OTA flow cards registered');
@@ -468,35 +379,161 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
       this.error('⚠️ OTA flow cards failed (non-critical):', err.message);
     }
 
-    // v9.1.0: Initialize feature modules and register their flow cards
+    // WHY: Peter #2183 — 93.8 MB + greyed Flows. Let sleepy devices finish
+    // onNodeInit before MASTER_ONLY engines, UDP, and catalog scans.
+    this._scheduleDeferredMasterFeatures();
+
+    this.log(`✅ Tuya Unified Zigbee App initialized (${BootBudget.heapUsedMb()} MB heap)`);
+    this._scanForPhantomDevices();
+    this._clearMigrationQueue();
+  }
+
+  _scheduleDeferredMasterFeatures() {
+    if (this._heavyInitTimer || this._heavyInitStarted) {return;}
+    const delay = BootBudget.DEFER_MS;
+    this.log(`⏭️ Heavy features in ${Math.round(delay / 1000)}s (boot budget)`);
+    try {
+      this._heavyInitTimer = this.homey.setTimeout(() => {
+        this._heavyInitTimer = null;
+        this._initDeferredMasterFeatures().catch((err) => {
+          this.error('⚠️ Deferred features failed (non-critical):', err.message);
+        });
+      }, delay);
+    } catch (err) {
+      this.error('⚠️ Could not schedule deferred features:', err.message);
+    }
+  }
+
+  async _initDeferredMasterFeatures() {
+    if (this._destroyed || this._heavyInitStarted) {return;}
+    this._heavyInitStarted = true;
+    const allowHeavy = BootBudget.shouldStartHeavyFeatures();
+    this.log(`[BOOT-BUDGET] deferred pass heap=${BootBudget.heapUsedMb()} MB heavy=${allowHeavy}`);
+
+    if (allowHeavy) {
+      try {
+        await this.identificationDatabase?.buildDatabase?.();
+        this.log('✅ Intelligent Device Identification Database built');
+      } catch (err) {
+        this.error('⚠️ Device ID Database build failed (non-critical):', err.message);
+      }
+
+      try {
+        await this.analytics?.initialize?.();
+        this.log('✅ Advanced Analytics initialized');
+      } catch (err) {
+        this.error('⚠️ Analytics failed (non-critical):', err.message);
+      }
+
+      try {
+        await this.discovery?.initialize?.();
+        this.log('✅ Smart Device Discovery initialized');
+      } catch (err) {
+        this.error('⚠️ Discovery failed (non-critical):', err.message);
+      }
+
+      try {
+        this.otaManager?.startAutoDiscovery?.(6 * 60 * 60 * 1000);
+        this.log('✅ OTA Auto-Discovery started (6h interval)');
+      } catch (e) {
+        this.log('⚠️ OTA Auto-Discovery failed to start (non-critical):', e.message);
+      }
+
+      try {
+        this.groupManager = new DeviceGroupManager(this.homey);
+        await this.groupManager.initialize();
+        this.log('✅ Device Group Manager initialized');
+      } catch (err) {
+        this.error('⚠️ GroupManager failed (non-critical):', err.message);
+      }
+
+      try {
+        this.healthDashboard = new DeviceHealthDashboard(this.homey, this.healthMonitor);
+        this.log('✅ Device Health Dashboard initialized');
+      } catch (err) {
+        this.error('⚠️ HealthDashboard failed (non-critical):', err.message);
+      }
+
+      try {
+        this.pairingWizard = new AutoDetectionPairingWizard(this.homey);
+        this.errorTranslator = new UserFriendlyErrors();
+        this.configValidator = new ConfigSchemaValidator();
+        this.dpRegistry = new CentralizedDPRegistry();
+      } catch (err) {
+        this.error('⚠️ Pairing/DP helpers failed (non-critical):', err.message);
+      }
+
+      try {
+        await this.initializeInsights();
+      } catch (err) { this.error('⚠️ Insights failed:', err.message); }
+
+      try {
+        if (this._tuyaUDPDiscovery && typeof this._tuyaUDPDiscovery.start === 'function') {
+          const updateDeviceIP = async (info) => {
+            try {
+              const drivers = Object.values(this.homey.drivers.getDrivers());
+              for (const driver of drivers) {
+                const devices = driver.getDevices() || [];
+                for (const device of devices) {
+                  const settings = device.getSettings();
+                  if (settings && settings.device_id === info.deviceId) {
+                    if (settings.ip_address !== info.ip) {
+                      this.log(`🔄 [SMART-HEAL] IP change: ${settings.ip_address} -> ${info.ip}`);
+                      await device.setSettings({ ip_address: info.ip }).catch((e) => this.error('[SMART-HEAL] Settings update failed', e));
+                    }
+                  }
+                }
+              }
+            } catch (err) {
+              this.error('[SMART-HEAL] Error updating IP:', err.message);
+            }
+          };
+          this._tuyaUDPDiscovery.on('device-updated', updateDeviceIP);
+          this._tuyaUDPDiscovery.on('device-found', updateDeviceIP);
+          await this._tuyaUDPDiscovery.start();
+          this.log('✅ Tuya WiFi UDP Discovery started (ports 6666/6667/6668/7000)');
+        }
+      } catch (err) {
+        this.log('⚠️ Tuya UDP Discovery failed (non-critical):', err.message);
+      }
+    } else {
+      this.log('⏭️ Skipping catalog/UDP/analytics — heap still high');
+    }
+
     try {
       this.solarElevation = new SolarElevation({ homey: this.homey, logger: this.log.bind(this) });
       this.transitionEngine = new TransitionEngine({ homey: this.homey });
       this.energyHistoryStore = new EnergyHistoryStore(this.homey);
-      await this.energyHistoryStore.initialize();
+      if (allowHeavy) {
+        await this.energyHistoryStore.initialize();
+      }
       this.tariffCalculator = new TariffCalculator({ logger: this.log.bind(this) });
       this.scheduleManager = new ScheduleManager(this.homey);
-      this.scheduleManager.start();
+      if (allowHeavy) {this.scheduleManager.start();}
       this.conditionEngine = new ConditionEngine(this.homey);
       this.predictiveHealthEngine = new PredictiveHealthEngine(this.homey);
-      this.predictiveHealthEngine.start();
+      if (allowHeavy) {this.predictiveHealthEngine.start();}
 
-      // v10.12.0 (P92.77): live data updates from our own GitHub Pages feed —
-      // new fingerprints land in the app daily without an app update.
-      try {
-        const LiveDataUpdater = require('./lib/dynamic/LiveDataUpdater');
-        this.liveDataUpdater = new LiveDataUpdater(this.homey, this.log.bind(this));
-        await this.liveDataUpdater.start();
-        const FingerprintMatcher = require('./lib/utils/fingerprint-matcher');
-        FingerprintMatcher.setOverlayProvider(() => this.liveDataUpdater?.getOverlay?.() || null);
-        this.log('✅ LiveDataUpdater started (gh-pages feed, 24h cycle)');
-      } catch (err) {
-        this.error('⚠️ LiveDataUpdater failed (non-critical, local data only):', err.message);
+      if (allowHeavy) {
+        try {
+          const LiveDataUpdater = require('./lib/dynamic/LiveDataUpdater');
+          this.liveDataUpdater = new LiveDataUpdater(this.homey, this.log.bind(this));
+          await this.liveDataUpdater.start();
+          const FingerprintMatcher = require('./lib/utils/fingerprint-matcher');
+          FingerprintMatcher.setOverlayProvider(() => this.liveDataUpdater?.getOverlay?.() || null);
+          this.log('✅ LiveDataUpdater started (gh-pages feed, 24h cycle)');
+        } catch (err) {
+          this.error('⚠️ LiveDataUpdater failed (non-critical, local data only):', err.message);
+        }
+      } else {
+        this.log('⏭️ LiveDataUpdater skipped (heap budget)');
       }
-      this.networkTopologyCollector = new NetworkTopologyCollector(this.homey);
-      this.solarElevation.startObserving();
 
-      // v9.0.401 (P92.104): availability monitoring (z2m-style, passive)
+      this.networkTopologyCollector = new NetworkTopologyCollector(this.homey);
+      if (allowHeavy && this.solarElevation.startObserving) {
+        this.solarElevation.startObserving();
+      }
+
       const DeviceAvailabilityManager = require('./lib/managers/DeviceAvailabilityManager');
       this.availabilityManager = new DeviceAvailabilityManager(this.homey, {
         logger: (...a) => this.log(...a),
@@ -507,28 +544,23 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
         }
       }
       this.availabilityManager.start();
-      // Late-paired devices are registered when their driver adds them
       this.homey.on('device.create', (device) => this.availabilityManager.registerDevice(device));
 
-      // v9.0.402 (P92.105): sensor suppression manager (Hue-style mute)
       const SensorSuppressionManager = require('./lib/managers/SensorSuppressionManager');
       this.sensorSuppressionManager = new SensorSuppressionManager(this.homey, {
         logger: (...a) => this.log(...a),
       });
 
-      // v9.0.403 (P92.106): presence simulation (Tuya random timing / Hue mimicking)
       const PresenceSimulationManager = require('./lib/managers/PresenceSimulationManager');
       this.presenceSimulationManager = new PresenceSimulationManager(this.homey, {
         logger: (...a) => this.log(...a),
       });
 
-      // v9.0.407 (P92.109): feature fallback router (native→DP→software, tous drivers)
       const FeatureFallbackRouter = require('./lib/managers/FeatureFallbackRouter');
       this.featureFallbackRouter = new FeatureFallbackRouter(this.homey, {
         logger: (...a) => this.log(...a),
       });
 
-      // v9.0.408 (P92.110): circadian solar engine + motion cascade (path lighting)
       const CircadianEngine = require('./lib/managers/CircadianEngine');
       this.circadianEngine = new CircadianEngine(this.homey, {
         solarElevation: this.solarElevation,
@@ -539,15 +571,13 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
         logger: (...a) => this.log(...a),
       });
 
-      // v9.0.409 (P92.113): home modes (Hubitat/SmartThings, transitions solaires)
       const HomeModeManager = require('./lib/managers/HomeModeManager');
       this.homeModeManager = new HomeModeManager(this.homey, {
         solarElevation: this.solarElevation,
         logger: (...a) => this.log(...a),
       });
-      this.homeModeManager.start();
+      if (allowHeavy) {this.homeModeManager.start();}
 
-      // Register feature flow cards
       this.featureFlowCards = new FeatureFlowCards(this.homey);
       this.featureFlowCards.setSolarElevation(this.solarElevation);
       this.featureFlowCards.setTransitionEngine(this.transitionEngine);
@@ -565,14 +595,10 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
       this.featureFlowCards.setMotionCascadeManager(this.motionCascadeManager);
       this.featureFlowCards.setHomeModeManager(this.homeModeManager);
       this.featureFlowCards.registerAll();
-      this.log('✅ Feature modules and flow cards initialized');
+      this.log('✅ Feature modules and flow cards initialized (deferred)');
     } catch (err) {
       this.error('⚠️ Feature modules failed (non-critical):', err.message);
     }
-
-    this.log('✅ Tuya Unified Zigbee App has been initialized');
-    this._scanForPhantomDevices();
-    this._clearMigrationQueue();
   }
 
   async _clearMigrationQueue() {
@@ -1080,6 +1106,12 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
   async onUninit() {
     this._destroyed = true;
     this.log('⚠️ App uninitializing...');
+    try {
+      if (this._heavyInitTimer) {
+        this.homey.clearTimeout(this._heavyInitTimer);
+        this._heavyInitTimer = null;
+      }
+    } catch (e) {}
     try { if (this._tuyaUDPDiscovery) { await this._tuyaUDPDiscovery.stop(); this._tuyaUDPDiscovery = null; } } catch (e) {}
     try { if (this.analytics?.destroy) { this.analytics.destroy(); this.analytics = null; } } catch (e) {}
     try { if (this.healthMonitor?.destroy) { this.healthMonitor.destroy(); this.healthMonitor = null; } } catch (e) {}

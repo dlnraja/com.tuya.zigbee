@@ -2310,6 +2310,6 @@
     "en": "SOS and scene buttons fire Homey Flows on press. Two-gang wall switches get a separate tile per gang. ZCL multi-gang switches ignore leftover Tuya cluster so gangs do not cross-link after re-pair. Switch commands retry a missed ack after 350 ms. Water leak sensors stay enrolled after sleep. Zemismart TB25 1/2/3/4/6-gang units stay on the matching switch driver."
   },
   "9.0.591": {
-    "en": "ZCL multi-gang switches ignore leftover Tuya cluster so gangs do not cross-link after re-pair. Zemismart TB25 1/2/3/4/6-gang units stay on the matching switch driver."
+    "en": "Lower boot memory so sleepy SOS, scene, leak and contact sensors can start and Flows stay enabled. Heavy extras wait one minute. ZCL multi-gang switches ignore leftover Tuya cluster. Zemismart TB25 1/2/3/4/6-gang units stay on the matching switch driver."
   }
 }
