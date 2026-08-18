@@ -67,7 +67,7 @@ Internal compass (not for forum): `docs/rules/PRAGMATIC_ROADMAP.md`.
 
 ## Thanks
 
-Study-only (no code copied): [gpmachado/com.gpm.homesuite](https://github.com/gpmachado/com.gpm.homesuite) (GPL-3.0) — availability last-seen, rejoin, `onUninit` teardown, Poll Control skip, settings-over-dump, inching. Full list: `CREDITS.md` / `NOTICE`.
+Study-only (no code copied): [gpmachado/com.gpm.homesuite](https://github.com/gpmachado/com.gpm.homesuite) (GPL-3.0) — availability last-seen, rejoin, `onUninit` teardown, Poll Control skip, settings-over-dump, inching, settings-as-labels, jitter / no mesh flood. Full list: `CREDITS.md` / `NOTICE`. Zigbee settings spider: Z2M LQI colour bands (ideas) + Homey Community route-map lesson (no neighbor table on Pro 2023).
 
 ## Priority (internal)
 

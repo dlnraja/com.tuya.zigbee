@@ -450,8 +450,10 @@
       "repo": "gpmachado/com.gpm.homesuite",
       "license": "GPL-3.0",
       "policy": "ideas only — original MIT reimplementation; no code copy",
+      "studiedAt": "2026-08-18",
+      "readmeIdeas": ["settings-as-labels", "connected-devices grouping", "rejoin-history settings tab", "hide dead firmware settings", "jitter / no thundering herd", "Poll Control skip SNZB-02", "radar chatty mesh (no configureReporting)"],
       "both": ["onUninit teardown", "Poll Control skip sleepy", "ZclDefaultResponsePolicy waitForResponse quirks", "battery no-invent", "sacred couple FP locks"],
-      "masterOnly": ["DeviceAvailabilityManager last-seen + boot grace", "device_rejoined", "ZigbeeCommandPacer", "inching UI re-push"]
+      "masterOnly": ["DeviceAvailabilityManager last-seen + boot grace", "device_rejoined", "ZigbeeCommandPacer", "inching UI re-push", "settings Zigbee spider map (passive, no ZDO)"]
     },
     "sacredCouples": [
       {"mfr": "_TZE284_m1cvyneb", "pid": "TS0601", "driver": "wall_dimmer_tuya", "forbid": ["climate_sensor", "soil_sensor", "zigbee_universal", "generic_tuya", "ir_blaster"], "z2m": "TS0601_dimmer_1_gang_1", "report": "reports/P2138_BSEED_WALL_DIMMER_2026-08-17.md"},
@@ -608,7 +610,7 @@
     "communityContributors": [
       {"name": "AreAArseth/com.hobeian", "contribution": "Hobeian Zigbee devices"},
       {"name": "drenso/com.tuya2", "contribution": "TypeScript Tuya cloud app (OAuth2 patterns)"},
-      {"name": "gpmachado", "contribution": "com.gpm.homesuite studied (GPL-3.0, no code copied): availability last-seen, rejoin, onUninit teardown, Poll Control skip, settings-over-dump, inching; P2138 dual-app classification"},
+      {"name": "gpmachado", "contribution": "com.gpm.homesuite studied (GPL-3.0, no code copied): availability last-seen, rejoin, onUninit teardown, Poll Control skip, settings-over-dump, inching, settings-as-labels, connected-devices grouping, jitter; P2138 dual-app classification"},
       {"name": "andiwirz", "contribution": "Protocol auto-detect, DP discovery tool"},
       {"name": "rebtor", "contribution": "TuyAPI local control"},
       {"name": "jurgenheine", "contribution": "Cloud API patterns"},

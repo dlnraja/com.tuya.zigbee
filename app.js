@@ -160,6 +160,7 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
   networkTopologyCollector = null;
 
   async onInit() {
+    this.homey.__tuyaApp = this;
     this.initializeSettings();
 
     // v10.2.1 crash guard: wrap OR polyfill flow-card getters so a missing
@@ -1112,6 +1113,7 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
     this.conditionEngine = null;
     this.predictiveHealthEngine = null;
     this.networkTopologyCollector = null;
+    try { this.homey.__tuyaApp = null; } catch (e) {}
 
     this.flowCardManager = null;
     this.capabilityManager = null;

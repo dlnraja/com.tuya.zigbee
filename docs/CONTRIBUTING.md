@@ -15,7 +15,7 @@ Use `.github/ISSUE_TEMPLATE/` — do not paste unchecked AI walls.
 
 ## Thanks
 
-[gpmachado/com.gpm.homesuite](https://github.com/gpmachado/com.gpm.homesuite) (GPL-3.0) was studied for field behaviour. We reimplement under MIT — no HomeSuite sources in this tree. See `CREDITS.md` and `NOTICE`. Knowledge cache: `.ai/KNOWLEDGE_CACHE.json` → `recentDiscoveries`.
+[gpmachado/com.gpm.homesuite](https://github.com/gpmachado/com.gpm.homesuite) (GPL-3.0) was studied for field behaviour (availability, rejoin, Poll Control skip, settings-as-labels, no dead settings, jitter). We reimplement under MIT — no HomeSuite sources in this tree. See `CREDITS.md` and `NOTICE`. Knowledge cache: `.ai/KNOWLEDGE_CACHE.json` → `recentDiscoveries`.
 
 BSEED wall dimmer (`_TZE284_m1cvyneb`+TS0601): `reports/P2138_BSEED_WALL_DIMMER_2026-08-17.md` · troubleshooting: `guides/USER_TROUBLESHOOTING.md`.
 

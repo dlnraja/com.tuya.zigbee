@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <title>Tuya Unified Settings</title>
   <script type="text/javascript" src="/homey.js" data-origin="settings"></script>
+  <script src="zigbee-map.js"></script>
   <style>
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -265,6 +266,40 @@
       from { opacity: 0; transform: translateY(4px); }
       to { opacity: 1; transform: translateY(0); }
     }
+
+    .mesh-card h3 { margin: 0 0 4px 0; font-size: 15px; color: #1e293b; }
+    .mesh-toolbar { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0; }
+    .mesh-toolbar .btn { padding: 7px 10px; font-size: 11px; }
+    .mesh-stats { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0 10px; }
+    .mesh-chip { background: #f1f5f9; border-radius: 999px; padding: 4px 10px; font-size: 11px; color: #334155; }
+    .mesh-chip b { color: #0f172a; }
+    .mesh-stage {
+      position: relative;
+      height: 420px;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at center, rgba(0,168,112,0.06), transparent 55%),
+        #0f172a;
+    }
+    #mesh-svg { width: 100%; height: 100%; cursor: grab; touch-action: none; }
+    .mesh-web { fill: none; stroke: rgba(148,163,184,0.18); stroke-width: 1; }
+    .mesh-edge { fill: none; }
+    .mesh-label { font-size: 9px; fill: #e2e8f0; text-anchor: middle; pointer-events: none; }
+    .mesh-badge { font-size: 8px; fill: #f8fafc; text-anchor: middle; pointer-events: none; font-weight: 700; }
+    .mesh-detail {
+      margin-top: 8px;
+      font-size: 11px;
+      color: #475569;
+      min-height: 48px;
+    }
+    .mesh-msg { font-size: 11px; color: #64748b; margin-top: 6px; }
+    .mesh-msg.err { color: #b91c1c; }
+    .mesh-legend { display: flex; flex-wrap: wrap; gap: 10px; font-size: 10px; color: #64748b; margin-top: 8px; }
+    .mesh-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 4px; vertical-align: middle; }
+    .mesh-fs { position: fixed; inset: 8px; z-index: 40; margin: 0; max-height: none; overflow: auto; }
+    .mesh-fs .mesh-stage { height: calc(100vh - 220px); }
   </style>
 </head>
 <body>
@@ -275,6 +310,36 @@
     <b>Links</b><br>
     <a href="https://github.com/dlnraja/com.tuya.zigbee/issues" target="_blank">Report Issue</a> |
     <a href="https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352" target="_blank">Forum</a>
+  </div>
+
+  <div class="card mesh-card" id="mesh-card">
+    <h3>Zigbee mesh — spider map</h3>
+    <p style="font-size:11px;color:#64748b;margin-bottom:8px;">
+      Retractable toile d’araignée of <b>this app’s</b> paired devices (Homey in the center).
+      Homey Pro 2023 does not expose the full neighbor table to apps, so links use last-hop LQI
+      plus zone-router grouping (dashed = inferred). Click a parent to fold its children.
+    </p>
+    <div class="mesh-toolbar">
+      <button class="btn" id="btn-mesh-refresh">Refresh</button>
+      <button class="btn btn-c" id="btn-mesh-expand">Expand</button>
+      <button class="btn btn-c" id="btn-mesh-fold">Fold sensors</button>
+      <button class="btn btn-c" id="btn-mesh-retract">Retract</button>
+      <button class="btn btn-c" id="btn-mesh-fs">Full</button>
+    </div>
+    <div class="mesh-stats" id="mesh-stats"></div>
+    <div class="mesh-stage">
+      <svg id="mesh-svg" viewBox="0 0 720 560" xmlns="http://www.w3.org/2000/svg"></svg>
+    </div>
+    <div class="mesh-legend">
+      <span><i class="mesh-dot" style="background:#e11d48"></i>Homey</span>
+      <span><i class="mesh-dot" style="background:#2563eb"></i>Router</span>
+      <span><i class="mesh-dot" style="background:#fde68a"></i>End device</span>
+      <span><i class="mesh-dot" style="background:#22c55e"></i>LQI ≥200</span>
+      <span><i class="mesh-dot" style="background:#f59e0b"></i>LQI 100–149</span>
+      <span><i class="mesh-dot" style="background:#ef4444"></i>LQI &lt;50</span>
+    </div>
+    <div class="mesh-detail" id="mesh-detail"></div>
+    <div class="mesh-msg" id="mesh-msg"></div>
   </div>
 
   <!-- Flow Repair & Replacement Tool (Martijn Poppen Automation) -->
@@ -645,6 +710,7 @@
       
       // Load and populate devices
       populateDevices();
+      try { if (window.TuyaZigbeeMap) window.TuyaZigbeeMap.init(Homey); } catch (x) {}
     }
   </script>
 </body>

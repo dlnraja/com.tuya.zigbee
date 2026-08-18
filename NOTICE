@@ -41,8 +41,21 @@ STUDIED REPOSITORIES (NO CODE COPIED)
     Personal Homey app for Zemismart / NovaDigital / Sonoff hardware.
     Ideas only (availability last-seen persist, rejoin vs timeout,
     onUninit teardown, Poll Control skip on sleepy nodes, settings over
-    ZCL dump, inching/power-on/backlight). Implementations in this tree
+    ZCL dump, jitter / no thundering herd, inching/power-on/backlight,
+    settings-as-labels, connected-devices grouping, hide dead firmware
+    options, rejoin-history settings tab). Implementations in this tree
     are original MIT code. Do not copy HomeSuite sources.
+    HomeSuite’s own NOTICE credits StyraHem / s-dimaio (Homey.Sonoff.Zigbee)
+    and JohanBendz — listed here as study provenance, not as copied code.
+
+  - Koenkk/zigbee2mqtt network map (MIT, ideas only)
+    LQI quality colour bands and coordinator / router / end-device roles.
+    This app does not copy Z2M frontend or run ZDO Mgmt_LQI scans.
+
+  - Homey Community “Zigbee Route map” (Martijn Poppen)
+    Last-used routes exist on Homey Pro 2016–2019 only; Homey Pro 2023
+    does not expose an app-visible neighbor table. Our settings spider
+    is therefore a retractable inferred layout of this app’s devices.
 
 ICONS & ASSETS
 --------------

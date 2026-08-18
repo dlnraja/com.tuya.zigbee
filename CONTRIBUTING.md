@@ -12,6 +12,7 @@ Quick rules:
 - Forum: silent by default (T157628).
 
 Thanks (study-only, no code copied): `gpmachado/com.gpm.homesuite` — see `CREDITS.md`.  
+Mesh map credits: Zigbee2MQTT LQI bands (ideas) · Homey Community route-map (Pro 2023 has no neighbor table).  
 Knowledge: `.ai/KNOWLEDGE_CACHE.json` → `recentDiscoveries` · BSEED dimmer: `reports/P2138_BSEED_WALL_DIMMER_2026-08-17.md`.
 
 Bug reports: `.github/ISSUE_TEMPLATE/` · include Homey diagnostic Log ID + `_TZxxxx` + `TSxxxx`.

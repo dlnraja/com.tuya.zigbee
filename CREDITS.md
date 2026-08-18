@@ -19,7 +19,7 @@
 ## Community Contributors
 - **AreAArseth/com.hobeian** - Hobeian Zigbee devices
 - **drenso/com.tuya2** - TypeScript Tuya cloud app (OAuth2 patterns)
-- **gpmachado** (`gpmachado/com.gpm.homesuite`, GPL-3.0, ideas only — no code copied) — availability last-seen persist + 5 min boot grace, rejoin vs timeout, lifecycle `onUninit` teardown, Poll Control skip on sleepy nodes, Homey settings over ZCL dump, jitter/TX pacing, inching/power-on/backlight re-apply, interview-driven sacred couples. Dual-app tags in `.ai/KNOWLEDGE_CACHE.json` → `recentDiscoveries.homesuite`.
+- **gpmachado** (`gpmachado/com.gpm.homesuite`, GPL-3.0, ideas only — no code copied) — availability last-seen persist + boot grace, rejoin vs timeout (`device_rejoined`), lifecycle `onUninit` teardown, Poll Control skip on sleepy nodes, Homey settings over ZCL dump, jitter/TX pacing (no thundering herd), inching/power-on/backlight re-apply, interview-driven sacred couples, settings-as-labels, connected-devices grouping, rejoin-history settings tab, hide dead firmware settings. Dual-app tags in `.ai/KNOWLEDGE_CACHE.json` → `recentDiscoveries.homesuite`. HomeSuite itself credits **StyraHem / s-dimaio** (Homey.Sonoff.Zigbee) and JohanBendz — acknowledged as HomeSuite’s upstream, not copied here.
 - **andiwirz** - Protocol auto-detect, DP discovery tool
 - **rebtor** - TuyAPI local control
 - **jurgenheine** - Cloud API patterns
@@ -61,7 +61,7 @@
 - **Joolee/Homey-SVG-Icons** - Community SVG capability icons
 - **codetheweb/tuyapi** - Node.js Tuya local API
 - **blakadder/zigbee** - Cross-platform Zigbee device database
-- **gpmachado/com.gpm.homesuite** - GPL-3.0 study only (no code copied): availability, rejoin, onUninit teardown, Poll Control skip
+- **gpmachado/com.gpm.homesuite** - GPL-3.0 study only (no code copied): availability, rejoin, onUninit teardown, Poll Control skip, settings-as-labels, connected-devices grouping, jitter / no mesh flood
 
 ## Device Database
 - **zigbee.blakadder.com** - Cross-platform device fingerprints
@@ -72,7 +72,8 @@
 ## Advanced Feature Inspirations
 - **Bayesian presence scoring** - Academic research on multi-sensor fusion for occupancy detection
 - **Battery health monitoring** - NASA Battery Health Management research (capacity fade, RUL estimation)
-- **Zigbee mesh topology** - Zigbee Alliance mesh networking specifications
+- **Zigbee mesh topology** - Zigbee Alliance mesh networking specifications; **Zigbee2MQTT** network map (LQI colour bands, coordinator/router/end-device roles, graphviz map_options) — ideas only
+- **Homey Community** thread “Zigbee Route map” (Martijn Poppen `com.homey.map.mesh`) — last-used routes on Homey Pro 2016–2019 only; **not available on Homey Pro 2023**, so this app’s settings spider is a passive last-hop / inferred layout, not a ZDO neighbor dump
 - **Energy monitoring** - Smart meter standards (DLMS/COSEM) for consumption tracking
 - **Signal triangulation** - Indoor positioning research using RSSI-based localization
 

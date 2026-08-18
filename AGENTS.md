@@ -103,7 +103,8 @@ Orchestrated via `tools/ci/mega-crawler.js` + GHA `mega-crawl.yml` (**workflow_d
 | `tools/ci/` | All CI/diagnostic/analysis tools |
 | `scripts/sync/` | Source crawlers (blakadder, z2m, zha, deconz) |
 | `scripts/scanners/` | Scanners (tinytuya, hubitat, etc.) |
-| `.github/workflows/` | 54 GHA workflows (see `reports/kimi-2026-07-28/workflows-audit.md`) |
+| `settings/index.html` + `settings/zigbee-map.js` | App Settings UI including retractable Zigbee spider map |
+| `lib/features/ZigbeeMeshMap.js` | Passive mesh snapshot for GET `/zigbee-map` (no ZDO flood) |
 | `.github/state/` | Per-source state (gitignored, populated by crawlers) |
 
 ## Common Bug Patterns to Watch

@@ -31,6 +31,30 @@ module.exports = {
   },
 
   /**
+   * WHY: Settings spider map (Z2M-style) for this app's Zigbee devices.
+   * HOW: Passive snapshot — last-hop LQI/RSSI already on zclNode; no ZDO Mgmt_LQI.
+   * WHO: MASTER_ONLY Homey settings page. Homey Pro 2023 has no app-visible route table.
+   * WHEN: User opens App Settings and taps Refresh.
+   * AGAINST: Active neighbor scans (mesh flood on sleepy battery nodes).
+   */
+  async getZigbeeMap({ homey }) {
+    const ZigbeeMeshMap = require('./lib/features/ZigbeeMeshMap');
+    try {
+      const app = homey.__tuyaApp;
+      const snapshot = ZigbeeMeshMap.buildSnapshot(homey, {
+        availabilityManager: app && app.availabilityManager,
+      });
+      if (app && app.networkTopologyCollector) {
+        ZigbeeMeshMap.ingestCollector(app.networkTopologyCollector, snapshot);
+      }
+      return snapshot;
+    } catch (err) {
+      homey.error('[ZigbeeMeshMap] snapshot failed:', err);
+      throw new Error(`Zigbee map failed: ${err.message}`);
+    }
+  },
+
+  /**
    * Search and replace old device references with new ones
    * inside triggers, conditions, and actions of all Flows and Advanced Flows.
    * Uses native Homey SDK3 ManagerFlow APIs.

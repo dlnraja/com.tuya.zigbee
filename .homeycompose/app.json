@@ -102,6 +102,10 @@
     "replaceDevice": {
       "method": "POST",
       "path": "/replace"
+    },
+    "getZigbeeMap": {
+      "method": "GET",
+      "path": "/zigbee-map"
     }
   }
 }
