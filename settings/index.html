@@ -300,11 +300,15 @@
     .mesh-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 4px; vertical-align: middle; }
     .mesh-fs { position: fixed; inset: 8px; z-index: 40; margin: 0; max-height: none; overflow: auto; }
     .mesh-fs .mesh-stage { height: calc(100vh - 220px); }
+    .mesh-table { width: 100%; border-collapse: collapse; font-size: 11px; margin-top: 8px; }
+    .mesh-table th, .mesh-table td { text-align: left; padding: 6px 4px; border-bottom: 1px solid #f1f5f9; }
+    .mesh-table th { color: #64748b; font-size: 10px; text-transform: uppercase; letter-spacing: 0.4px; }
+    .mesh-off { color: #b91c1c; font-weight: 600; }
   </style>
 </head>
 <body>
   <h1>Tuya Unified Zigbee + WiFi</h1>
-  <p>100% Local Control | 138 drivers | 5,579 fingerprints</p>
+  <p>Local Zigbee + WiFi on Homey Pro. Settings include a retractable mesh spider map.</p>
 
   <div class="card">
     <b>Links</b><br>
@@ -340,6 +344,16 @@
     </div>
     <div class="mesh-detail" id="mesh-detail"></div>
     <div class="mesh-msg" id="mesh-msg"></div>
+    <h3 style="margin-top:14px;font-size:14px;">Last seen / rejoins</h3>
+    <p style="font-size:11px;color:#64748b;margin-bottom:6px;">
+      Passive availability (no extra Zigbee pings). Rejoins count power-restore bursts on mains devices.
+    </p>
+    <div style="overflow:auto;max-height:240px;">
+      <table class="mesh-table" id="mesh-avail">
+        <thead><tr><th>Device</th><th>Seen</th><th>Rejoins</th><th>State</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
   </div>
 
   <!-- Flow Repair & Replacement Tool (Martijn Poppen Automation) -->

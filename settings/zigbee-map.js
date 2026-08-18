@@ -162,6 +162,26 @@
       (hidden ? '<br>Children: ' + hidden + (collapsed[n.id] ? ' (folded)' : '') : '');
   }
 
+  function renderAvail(av) {
+    var tb = document.querySelector('#mesh-avail tbody');
+    if (!tb) return;
+    if (!av || !av.rows || !av.rows.length) {
+      tb.innerHTML = '<tr><td colspan="4">No availability samples yet (open this page after devices have reported).</td></tr>';
+      return;
+    }
+    var html = '';
+    for (var i = 0; i < av.rows.length; i++) {
+      var r = av.rows[i];
+      html += '<tr>' +
+        '<td>' + escapeHtml(r.name) + (r.isBattery ? ' · batt' : '') + '</td>' +
+        '<td>' + fmtAgo(r.lastSeen) + '</td>' +
+        '<td>' + (r.rejoins || 0) + '</td>' +
+        '<td class="' + (r.unavailable ? 'mesh-off' : '') + '">' + (r.unavailable ? 'offline' : 'ok') + '</td>' +
+        '</tr>';
+    }
+    tb.innerHTML = html;
+  }
+
   function escapeHtml(s) {
     return String(s || '').replace(/[&<>"']/g, function (c) {
       return ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c];
@@ -297,6 +317,7 @@
       renderStats();
       renderSvg();
       renderDetail(nodeById(selectedId));
+      renderAvail(snapshot.availability);
       setMsg((snapshot.note || '') + (snapshot.inferred ? '  Links may be inferred.' : ''));
     });
   }

@@ -4,6 +4,13 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
+## v9.0.587 (2026-08-18)
+
+### Added
+- **Settings spider map** (master-only): retractable Zigbee toile d'araignée of this app's devices, last-seen / rejoin table. Passive last-hop LQI (Homey Pro 2023 has no neighbor table). HomeSuite studied for settings-as-labels ideas (GPL-3.0, no code copied).
+
+---
+
 ## v9.0.497 (2026-08-14)
 
 ### Fixed

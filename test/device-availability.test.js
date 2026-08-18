@@ -193,4 +193,16 @@ describe('DeviceAvailabilityManager', () => {
     assert.ok(Number(store[LAST_SEEN_STORE_KEY]) > 0);
     mgr.destroy();
   });
+
+  it('exports a serializable settings snapshot without device objects', () => {
+    const mgr = new DeviceAvailabilityManager(null);
+    mgr.registerDevice(fakeDevice('a', ['onoff']));
+    mgr.registerDevice(fakeDevice('b', ['measure_battery']));
+    const snap = mgr.getSettingsSnapshot();
+    assert.strictEqual(snap.total_devices, 2);
+    assert.strictEqual(snap.rows.length, 2);
+    assert.ok(!snap.rows[0].device);
+    assert.ok(typeof snap.rows[0].name === 'string');
+    mgr.destroy();
+  });
 });

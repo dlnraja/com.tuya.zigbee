@@ -38,7 +38,13 @@ module.exports = {
    * AGAINST: Active neighbor scans (mesh flood on sleepy battery nodes).
    */
   async getZigbeeMap({ homey }) {
-    const ZigbeeMeshMap = require('./lib/features/ZigbeeMeshMap');
+    let ZigbeeMeshMap;
+    try {
+      ZigbeeMeshMap = require('./lib/features/ZigbeeMeshMap');
+    } catch (err) {
+      homey.error('[ZigbeeMeshMap] module missing:', err);
+      throw new Error('Zigbee map module unavailable');
+    }
     try {
       const app = homey.__tuyaApp;
       const snapshot = ZigbeeMeshMap.buildSnapshot(homey, {
