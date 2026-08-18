@@ -1,0 +1,50 @@
+'use strict';
+
+/**
+ * P2182 — TB25 / NovaDigital wall-switch settings (Gabriel #2182).
+ * Ideas only from field notes: sibling labels, EP1-only config, rejoin
+ * re-apply, pulse/inching. No countdown. No invented 606/808/ZMS-206 pids.
+ */
+
+const assert = require('assert');
+const fs = require('fs');
+const path = require('path');
+const testApi = global.describe && global.it ? global : require('node:test');
+const { describe, it } = testApi;
+
+const ROOT = path.join(__dirname, '..', '..');
+const { isConfigSettingKey } = require('../../lib/zigbee/ZclSwitchConfigPolicy');
+
+describe('P2182 TB25 wall-switch settings', () => {
+  it('treats backlight/switch_mode/inching as EP1 config keys', () => {
+    assert.strictEqual(isConfigSettingKey('backlight_mode'), true);
+    assert.strictEqual(isConfigSettingKey('switch_mode'), true);
+    assert.strictEqual(isConfigSettingKey('inching'), true);
+    assert.strictEqual(isConfigSettingKey('connected_siblings'), false);
+  });
+
+  it('UnifiedSwitchBase skips sub-device config writes and re-applies on rejoin', () => {
+    const src = fs.readFileSync(path.join(ROOT, 'lib/devices/UnifiedSwitchBase.js'), 'utf8');
+    assert.match(src, /_isSwitchSubDevice/);
+    assert.match(src, /skip \$\{key\} on sub-device/);
+    assert.match(src, /onEndDeviceAnnounce/);
+    assert.match(src, /_pushConfiguredSwitchSettings\('rejoin'\)/);
+    assert.match(src, /_refreshConnectedSwitchLabels/);
+  });
+
+  it('2-gang subdevice driver declares sibling label + inching, no countdown', () => {
+    const compose = JSON.parse(fs.readFileSync(
+      path.join(ROOT, 'drivers/wall_switch_2gang_1way/driver.compose.json'),
+      'utf8'
+    ));
+    const ids = [];
+    for (const g of compose.settings || []) {
+      for (const c of g.children || []) {ids.push(c.id);}
+    }
+    assert.ok(ids.includes('connected_siblings'));
+    assert.ok(ids.includes('inching'));
+    assert.ok(ids.includes('backlight_mode'));
+    assert.ok(!ids.includes('countdown'));
+    assert.ok(compose.devices && compose.devices.secondSwitch);
+  });
+});

@@ -310,6 +310,28 @@
           ]
         }
       ]
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "Connected switches",
+        "nl": "Gekoppelde schakelaars",
+        "fr": "Interrupteurs liés",
+        "de": "Verbundene Schalter"
+      },
+      "children": [
+        {
+          "id": "connected_siblings",
+          "type": "label",
+          "label": {
+            "en": "This wall unit",
+            "nl": "Dit wandapparaat",
+            "fr": "Cet interrupteur mural",
+            "de": "Diese Wandeinheit"
+          },
+          "value": "—"
+        }
+      ]
     }
   ],
   "maintenanceActions": [

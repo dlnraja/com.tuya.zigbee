@@ -278,6 +278,68 @@
           ]
         }
       ]
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "Connected switches",
+        "nl": "Gekoppelde schakelaars",
+        "fr": "Interrupteurs liés",
+        "de": "Verbundene Schalter"
+      },
+      "children": [
+        {
+          "id": "connected_siblings",
+          "type": "label",
+          "label": {
+            "en": "This wall unit",
+            "nl": "Dit wandapparaat",
+            "fr": "Cet interrupteur mural",
+            "de": "Diese Wandeinheit"
+          },
+          "value": "—"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "Pulse / inching",
+        "nl": "Puls / inching",
+        "fr": "Impulsion / inching",
+        "de": "Impuls / Inching"
+      },
+      "children": [
+        {
+          "id": "inching",
+          "type": "checkbox",
+          "label": {
+            "en": "Pulse mode (auto-off)",
+            "nl": "Pulsmodus (automatisch uit)",
+            "fr": "Mode impulsion (extinction auto)",
+            "de": "Impulsmodus (Auto-Aus)"
+          },
+          "hint": {
+            "en": "Change LED and pulse only on the main gang tile. Homey Flows cover timers/countdowns.",
+            "nl": "LED en puls alleen op de hoofdtegel. Timers via Flows.",
+            "fr": "LED et impulsion uniquement sur la tuile principale. Les minuteries passent par les Flows."
+          },
+          "value": false
+        },
+        {
+          "id": "inching_duration",
+          "type": "number",
+          "label": {
+            "en": "Pulse duration (seconds)",
+            "nl": "Pulsduur (seconden)",
+            "fr": "Durée d'impulsion (secondes)",
+            "de": "Impulsdauer (Sekunden)"
+          },
+          "value": 60,
+          "min": 1,
+          "max": 3600
+        }
+      ]
     }
   ],
   "maintenanceActions": [

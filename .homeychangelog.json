@@ -2314,5 +2314,8 @@
   },
   "9.0.592": {
     "en": "Lower boot memory so sleepy SOS, scene, leak and contact sensors can start and Flows stay enabled. Heavy extras wait one minute. ZCL multi-gang switches ignore leftover Tuya cluster. Zemismart TB25 1/2/3/4/6-gang units stay on the matching switch driver."
+  },
+  "9.0.593": {
+    "en": "Two-gang wall switches show linked gang names in settings. LED and switch mode stay on the main tile. After a power cut the configured LED state is pushed again. Optional pulse/inching; use Flows for countdown timers."
   }
 }
