@@ -118,9 +118,15 @@ const KNOWN_ROUTES = [
   },
   {
     id: 'ok0ggpk7-switch3',
-    mfrs: ['_TZ3000_ok0ggpk7', '_TZ3000_f09j9qjb', '_TZ3000_vjhcenzo'],
+    mfrs: ['_TZ3000_ok0ggpk7', '_TZ3000_f09j9qjb', '_TZ3000_vjhcenzo', '_TZ3000_yervjnlj', '_TZ3000_eqsair32', '_TZ3000_qxcnwv26', '_TZ3000_fawk5xjv'],
     pids: ['TS0003'],
-    driver: 'switch_3gang',
+    driver: 'wall_switch_3gang_1way',
+  },
+  {
+    id: 'lwthnp7j-switch4-zcl',
+    mfrs: ['_TZ3000_lwthnp7j'],
+    pids: ['TS0004'],
+    driver: 'wall_switch_4gang_1way',
   },
   {
     id: 'shkxsgis-switch4-tuya',
@@ -133,6 +139,12 @@ const KNOWN_ROUTES = [
     mfrs: ['_TZE200_r731zlxk', '_TZE204_r731zlxk', '_TZE284_r731zlxk'],
     pids: ['TS0601'],
     driver: 'wall_switch_6_gang_tuya',
+  },
+  {
+    id: '7fiyo3kv-switch-temp',
+    mfrs: ['_TZ3218_7fiyo3kv', '_TZ3218_ya5d6wth'],
+    pids: ['TS000F'],
+    driver: 'switch_temp_sensor',
   },
 ];
 

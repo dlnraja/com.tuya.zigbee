@@ -8,7 +8,7 @@
   "class": "socket",
   "capabilities": [
     "onoff",
-    "measure_battery",
+    "measure_temperature",
     "button.1"
   ],
   "capabilitiesOptions": {
@@ -52,26 +52,32 @@
   "connectivity": [
     "zigbee"
   ],
-  "energy": {
-    "batteries": [
-      "CR2032"
-    ]
-  },
   "zigbee": {
     "manufacturerName": [
-      "_hybrid_switch_temp_sensor_needs_device_assignment",
-      "_HYBRID_SWITCH_TEMP_SENSOR_NEEDS_DEVICE_ASSIGNMENT"
+      "_TZ3218_7fiyo3kv",
+      "_tz3218_7fiyo3kv",
+      "_TZ3218_7FIYO3KV",
+      "_TZ3218_ya5d6wth",
+      "_tz3218_ya5d6wth",
+      "_TZ3218_YA5D6WTH"
     ],
     "productId": [
-      "TS0601_tempswitch"
+      "TS000F"
     ],
     "endpoints": {
       "1": {
         "clusters": [
           0,
-          1,
-          1026,
-          1029,
+          3,
+          4,
+          5,
+          6,
+          57344,
+          57345,
+          61184
+        ],
+        "bindings": [
+          6,
           61184
         ]
       }

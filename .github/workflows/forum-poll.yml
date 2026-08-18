@@ -118,6 +118,34 @@ jobs:
           fi
           echo "Policy: FORUM_AUTO_POST=0 — implement silently, never paste unchecked AI." >> $GITHUB_STEP_SUMMARY
 
+      - name: 🔇 Forum PM read-only (SSO, never POST)
+        if: always()
+        continue-on-error: true
+        timeout-minutes: 10
+        env:
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+          DISCOURSE_API_KEY: ${{ secrets.DISCOURSE_API_KEY }}
+          DISCOURSE_USERNAME: dlnraja
+          FORUM_USERNAME: dlnraja
+          FORUM_AUTO_POST: '0'
+          DRY_RUN: 'true'
+          FORUM_PM_MAX_THREADS: '20'
+        run: |
+          echo "## 🔇 Forum private messages (read-only)" >> "$GITHUB_STEP_SUMMARY"
+          if [ -z "${HOMEY_EMAIL:-}" ] && [ -z "${DISCOURSE_API_KEY:-}" ]; then
+            echo "No HOMEY_EMAIL or DISCOURSE_API_KEY — skip PM harvest"
+            exit 0
+          fi
+          if [ -f tools/ci/forum-pm-read-only.js ]; then
+            node tools/ci/forum-pm-read-only.js
+          else
+            echo "forum-pm-read-only.js missing — skip"
+          fi
+          if [ -f .github/state/forum/pm-inbox.json ]; then
+            echo "PM harvest written (never posted)" >> "$GITHUB_STEP_SUMMARY"
+          fi
+
       - name: 🛡️ P2138 sacred-couple matrix (checkout integrity)
         if: always()
         run: node tools/ci/p2138-sacred-couple-matrix-gate.js

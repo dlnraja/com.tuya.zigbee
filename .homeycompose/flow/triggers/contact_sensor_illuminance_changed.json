@@ -20,9 +20,5 @@
       "type": "device",
       "filter": "driver_id=contact_sensor"
     }
-  ],
-  "titleFormatted": {
-    "en": "[[device]] illuminance changed",
-    "fr": "Luminosité modifiée pour [[device]]"
-  }
+  ]
 }

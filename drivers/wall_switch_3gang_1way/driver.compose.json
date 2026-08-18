@@ -65,32 +65,35 @@
       "_TZ3000_1LOM3MYX",
       "_TZ3000_1lom3myx",
       "_tz3000_1LOM3MYX",
-      "_tz3000_YERVJNLJ"
+      "_tz3000_YERVJNLJ",
+      "_TZ3000_vjhcenzo",
+      "_tz3000_vjhcenzo",
+      "_TZ3000_VJHCENZO",
+      "_tz3000_VJHCENZO",
+      "_TZ3000_qxcnwv26",
+      "_tz3000_qxcnwv26",
+      "_TZ3000_QXCNWV26",
+      "_tz3000_QXCNWV26",
+      "_TZ3000_eqsair32",
+      "_tz3000_eqsair32",
+      "_TZ3000_EQSAIR32",
+      "_tz3000_EQSAIR32",
+      "_TZ3000_f09j9qjb",
+      "_tz3000_f09j9qjb",
+      "_TZ3000_F09J9QJB",
+      "_tz3000_F09J9QJB",
+      "_TZ3000_fawk5xjv",
+      "_tz3000_fawk5xjv",
+      "_TZ3000_FAWK5XJV",
+      "_tz3000_FAWK5XJV",
+      "_TZ3000_ok0ggpk7",
+      "_tz3000_ok0ggpk7",
+      "_TZ3000_OK0GGPK7",
+      "_tz3000_OK0GGPK7"
     ],
     "productId": [
-      "CK-TLSR8656-SS5-01(7014)",
-      "Excellux",
-      "RH3052",
-      "SM0201",
-      "TH01",
-      "THS317-ET",
       "TS0003",
-      "TS0013",
-      "TS0043",
-      "TS0201",
-      "TS0202",
-      "TS0222",
-      "TS0601",
-      "TS1201",
-      "TY0201",
-      "WSDCGQ01LM",
-      "WSDCGQ11LM",
-      "WSDCGQ12LM",
-      "ZG-227Z",
-      "ZG-227ZL",
-      "lumi.sensor_ht",
-      "lumi.sensor_ht.agl02",
-      "lumi.weather"
+      "TS0013"
     ],
     "endpoints": {
       "1": {
@@ -330,6 +333,57 @@
             "de": "Diese Wandeinheit"
           },
           "value": "—"
+        },
+        {
+          "id": "traffic_stats",
+          "type": "label",
+          "label": {
+            "en": "Network activity",
+            "nl": "Netwerkactiviteit",
+            "fr": "Activité réseau",
+            "de": "Netzwerkaktivität"
+          },
+          "value": "—"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "Pulse / inching",
+        "nl": "Puls / inching",
+        "fr": "Impulsion / inching",
+        "de": "Impuls / Inching"
+      },
+      "children": [
+        {
+          "id": "inching",
+          "type": "checkbox",
+          "label": {
+            "en": "Pulse mode (auto-off)",
+            "nl": "Pulsmodus (automatisch uit)",
+            "fr": "Mode impulsion (extinction auto)",
+            "de": "Impulsmodus (Auto-Aus)"
+          },
+          "hint": {
+            "en": "Change LED and pulse only on the main gang tile. Homey Flows cover timers/countdowns.",
+            "nl": "LED en puls alleen op de hoofdtegel. Timers via Flows.",
+            "fr": "LED et impulsion uniquement sur la tuile principale. Les minuteries passent par les Flows."
+          },
+          "value": false
+        },
+        {
+          "id": "inching_duration",
+          "type": "number",
+          "label": {
+            "en": "Pulse duration (seconds)",
+            "nl": "Pulsduur (seconden)",
+            "fr": "Durée d'impulsion (secondes)",
+            "de": "Impulsdauer (Sekunden)"
+          },
+          "value": 60,
+          "min": 1,
+          "max": 3600
         }
       ]
     }

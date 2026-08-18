@@ -48,4 +48,50 @@ describe('P2182 TB25 wall-switch settings', () => {
     assert.ok(!ids.includes('countdown'));
     assert.ok(compose.devices && compose.devices.secondSwitch);
   });
+
+  it('3-gang subdevice driver is TS0003/TS0013 only and has sibling + inching, no countdown', () => {
+    const compose = JSON.parse(fs.readFileSync(
+      path.join(ROOT, 'drivers/wall_switch_3gang_1way/driver.compose.json'),
+      'utf8'
+    ));
+    const ids = [];
+    for (const g of compose.settings || []) {
+      for (const c of g.children || []) {ids.push(c.id);}
+    }
+    assert.deepStrictEqual([...(compose.zigbee.productId || [])].sort(), ['TS0003', 'TS0013'].sort());
+    assert.ok(!compose.zigbee.productId.includes('TS0601'));
+    assert.ok(ids.includes('connected_siblings'));
+    assert.ok(ids.includes('traffic_stats'));
+    assert.ok(ids.includes('inching'));
+    assert.ok(!ids.includes('countdown'));
+    assert.ok(compose.devices && compose.devices.secondSwitch && compose.devices.thirdSwitch);
+  });
+
+  it('forum PM harvest scripts never POST replies', () => {
+    const readOnly = fs.readFileSync(path.join(ROOT, 'tools/ci/forum-pm-read-only.js'), 'utf8');
+    const scanner = fs.readFileSync(path.join(ROOT, '.github/scripts/forum-pm-scanner.js'), 'utf8');
+    assert.doesNotMatch(readOnly, /method:\s*['"]POST['"]/);
+    assert.doesNotMatch(scanner, /FORUM\+'\/posts'/);
+    assert.match(readOnly, /read-only-never-post/);
+  });
+
+  it('4-gang ZCL wall driver is TS0004 family only and has sibling + inching', () => {
+    const compose = JSON.parse(fs.readFileSync(
+      path.join(ROOT, 'drivers/wall_switch_4gang_1way/driver.compose.json'),
+      'utf8'
+    ));
+    const ids = [];
+    for (const g of compose.settings || []) {
+      for (const c of g.children || []) {ids.push(c.id);}
+    }
+    const pids = compose.zigbee.productId || [];
+    assert.ok(pids.includes('TS0004'));
+    assert.ok(pids.includes('TS0726'));
+    assert.ok(!pids.includes('TS0601'));
+    assert.ok(!pids.includes('TS0001'));
+    assert.ok(ids.includes('connected_siblings'));
+    assert.ok(ids.includes('inching'));
+    assert.ok(!ids.includes('countdown'));
+    assert.ok(compose.devices && compose.devices.fourthSwitch);
+  });
 });

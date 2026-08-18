@@ -16,9 +16,5 @@
       "type": "device",
       "filter": "capabilities=alarm_motion|alarm_human|alarm_presence"
     }
-  ],
-  "titleFormatted": {
-    "en": "Lift suppression of [[device]]",
-    "fr": "Lever la suspension de [[device]]"
-  }
+  ]
 }

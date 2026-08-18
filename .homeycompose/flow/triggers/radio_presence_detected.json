@@ -14,9 +14,5 @@
       "type": "device",
       "filter": "capabilities=measure_presence_confidence,capabilities=alarm_presence"
     }
-  ],
-  "titleFormatted": {
-    "en": "Radio Presence Sensing Detected [[device]]",
-    "fr": "Présence Radio Détectée (Inferred) [[device]]"
-  }
+  ]
 }

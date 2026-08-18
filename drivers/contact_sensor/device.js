@@ -452,9 +452,26 @@ class ContactSensorDevice extends UnifiedSensorBase {
   async onEndDeviceAnnounce() {
     this.log('[REJOIN] Device announced itself, refreshing state...');
     if (typeof this._updateLastSeen === 'function') {this._updateLastSeen();}
-    // Proactive data recovery if supported
-    if (this._dataRecoveryManager) {
-       this._dataRecoveryManager?.forceRecovery?.();
+    // WHY: Peter #2183 windows showed lux (DP101) but contact Flows stayed
+    // grey — announce used to skip parent IAS re-attach and force Tuya recovery.
+    try {
+      await this._reattachIasOnWake();
+    } catch (err) {
+      this.log(`[CONTACT] IAS re-attach on wake failed: ${err.message}`);
+    }
+    try {
+      const BootBudget = require('../../lib/performance/BootBudget');
+      const ep1 = this.zclNode?.endpoints?.[1];
+      const hasEf00 = !!(ep1?.clusters?.tuya
+        || ep1?.clusters?.manuSpecificTuya
+        || ep1?.clusters?.[61184]
+        || ep1?.clusters?.[0xEF00]);
+      if (hasEf00 && BootBudget.shouldTxSleepy(this) && this._dataRecoveryManager) {
+        this._dataRecoveryManager.forceRecovery?.();
+      }
+    } catch (_e) { /* IAS-only contacts have no EF00 recovery */ }
+    if (typeof super.onEndDeviceAnnounce === 'function') {
+      await super.onEndDeviceAnnounce();
     }
   }
 }

@@ -25,5 +25,25 @@ describe('P2183 boot budget (Peter memory / greyed Flows)', () => {
     assert.doesNotMatch(onInit, /_tuyaUDPDiscovery\.start/);
     assert.doesNotMatch(onInit, /energyHistoryStore\.initialize/);
     assert.match(appJs, /async _initDeferredMasterFeatures/);
+    assert.match(appJs, /_scheduleDeferredMasterFeaturesRetry/);
+    assert.match(appJs, /adaptiveCacheMemory/);
+    assert.doesNotMatch(onInit, /_scanForPhantomDevices\(\)/);
+  });
+
+  it('retries heavy engines later instead of dropping features', () => {
+    const appJs = fs.readFileSync(path.join(__dirname, '..', '..', 'app.js'), 'utf8');
+    assert.match(appJs, /RETRY_MS/);
+    assert.match(appJs, /Deferred feature engines started \(retry/);
+    assert.match(appJs, /Availability scan skipped/);
+  });
+
+  it('scales cache down under heap pressure without removing the optimizer', () => {
+    assert.strictEqual(BootBudget.adaptiveCacheMemory(10 * 1024 * 1024), 8 * 1024 * 1024);
+    assert.strictEqual(BootBudget.adaptiveCacheMemory(30 * 1024 * 1024), 4 * 1024 * 1024);
+    assert.strictEqual(BootBudget.adaptiveCacheMemory(50 * 1024 * 1024), 2 * 1024 * 1024);
+    assert.strictEqual(BootBudget.isHeapCritical(52 * 1024 * 1024), true);
+    assert.strictEqual(BootBudget.shouldTxSleepy({ mainsPowered: true }, 10 * 1024 * 1024), true);
+    assert.strictEqual(BootBudget.shouldTxSleepy({ mainsPowered: false }, 10 * 1024 * 1024), false);
+    assert.strictEqual(BootBudget.shouldTxSleepy({ mainsPowered: true }, 60 * 1024 * 1024), false);
   });
 });

@@ -6,7 +6,9 @@ const{fetchWithRetry}=require('./retry-helper');
 const{loadFingerprints,extractMfrFromText}=require('./load-fingerprints');
 const{callAI}=require('./ai-helper');
 const U=process.env.FORUM_USERNAME||'dlnraja';
-const DRY=process.env.DRY_RUN==='true';
+// T157628: default NEVER post. Historical path posted PM replies.
+const DRY=true;
+const ALLOW_POST=false;
 const SD=path.join(__dirname,'..','state');
 const SF=path.join(SD,'forum-pm-state.json');
 const DD=path.join(SD,'pm-diagnostics');
@@ -17,8 +19,8 @@ function isDiag(t){return/diagnostic|crash.log|interview|zigbee.*(log|error)|DP\
 
 async function main(){
   console.log('## Forum PM Scanner');
-  const auth=DRY?null:await getForumAuth().catch(()=>null);
-  if(!auth&&!DRY){console.log('No forum auth');return}
+  const auth=await getForumAuth().catch(()=>null);
+  if(!auth){console.log('No forum auth');return}
   const fps=loadFingerprints();const st=loadState();
   const ver=require(path.join(__dirname,'..','..','app.json')).version;
   const h=auth?.type==='apikey'?{'User-Api-Key':auth.key}:auth?{'X-CSRF-Token':auth.csrf,'X-Requested-With':'XMLHttpRequest',Cookie:fmtCk(auth.cookies)}:{};
@@ -43,11 +45,8 @@ async function main(){
           if(found.length)msg+='**Supported** in v'+ver+': '+found.join(', ')+'\n\n';
           if(miss.length)msg+='**Not yet supported:** '+miss.join(', ')+'\nLogged for next release.\n\n';
           msg+='If you need more help, feel free to open a [GitHub issue](https://github.com/dlnraja/com.tuya.zigbee/issues/new).';
-          if(!DRY&&auth){
-            const rh=auth.type==='apikey'?{'Content-Type':'application/json','User-Api-Key':auth.key}:{'Content-Type':'application/json','X-CSRF-Token':auth.csrf,'X-Requested-With':'XMLHttpRequest',Cookie:fmtCk(auth.cookies)};
-            await fetchWithRetry(FORUM+'/posts',{method:'POST',headers:rh,body:JSON.stringify({topic_id:t.id,raw:msg})},{retries:2,label:'pmReply'}).catch(e=>console.log('Reply err:',e.message));
-            replied++;
-          }
+          console.log('PM draft only (no POST, T157628) topic',t.id,'user',p.username);
+          void ALLOW_POST;void DRY;void msg;
         }
         if(isDiag(txt)){
           diag++;

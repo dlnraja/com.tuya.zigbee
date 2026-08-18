@@ -593,8 +593,8 @@
       "id": "novadigital-ts0003-ok0ggpk7",
       "mfr": ["_TZ3000_ok0ggpk7", "_tz3000_ok0ggpk7"],
       "productId": ["TS0003"],
-      "canonicalDriver": "switch_3gang",
-      "forbiddenDrivers": ["switch_1gang", "climate_sensor", "switch_2gang", "switch_2_gang", "generic_tuya"],
+      "canonicalDriver": "wall_switch_3gang_1way",
+      "forbiddenDrivers": ["switch_1gang", "climate_sensor", "switch_2gang", "switch_2_gang", "generic_tuya", "switch_3gang"],
       "protocol": "zcl",
       "retailNames": ["NovaDigital NFZB-03", "Zemismart TB25-3"],
       "notes": "Z2M sibling of _TZ3000_fawk5xjv. switch_1gang also lists TS0003 so this mfr must not live there. Retail TB25-n from field; 606/808/ZMS-206 SKUs not locked until mfr+pid confirmed.",
@@ -608,8 +608,8 @@
       "id": "novadigital-ts0003-f09j9qjb",
       "mfr": ["_TZ3000_f09j9qjb", "_tz3000_f09j9qjb"],
       "productId": ["TS0003"],
-      "canonicalDriver": "switch_3gang",
-      "forbiddenDrivers": ["switch_2_gang", "switch_2gang", "climate_sensor", "switch_1gang"],
+      "canonicalDriver": "wall_switch_3gang_1way",
+      "forbiddenDrivers": ["switch_2_gang", "switch_2gang", "climate_sensor", "switch_1gang", "switch_3gang"],
       "protocol": "zcl",
       "retailNames": ["Zemismart TB25-3"],
       "notes": "3-gang ZCL. Climate compose lists TS0601 so this mfr on climate would steal pairing.",
@@ -623,11 +623,71 @@
       "id": "novadigital-ts0003-vjhcenzo",
       "mfr": ["_TZ3000_vjhcenzo", "_tz3000_vjhcenzo"],
       "productId": ["TS0003"],
-      "canonicalDriver": "switch_3gang",
-      "forbiddenDrivers": ["climate_sensor", "switch_1gang", "switch_2gang"],
+      "canonicalDriver": "wall_switch_3gang_1way",
+      "forbiddenDrivers": ["climate_sensor", "switch_1gang", "switch_2gang", "switch_3gang"],
       "protocol": "zcl",
       "retailNames": ["Zemismart TB25-3"],
       "notes": "3-gang ZCL, not a climate sensor.",
+      "sources": ["forum-140352-2173", "forum-140352-2182"],
+      "tracks": {
+        "master": { "static": true, "dynamic": true },
+        "stable": { "static": true, "dynamic": false }
+      }
+    },
+    {
+      "id": "novadigital-ts0003-eqsair32",
+      "mfr": ["_TZ3000_eqsair32", "_tz3000_eqsair32"],
+      "productId": ["TS0003"],
+      "canonicalDriver": "wall_switch_3gang_1way",
+      "forbiddenDrivers": ["climate_sensor", "switch_1gang", "switch_2gang", "switch_3gang"],
+      "protocol": "zcl",
+      "retailNames": ["Zemismart TB25-3"],
+      "notes": "3-gang ZCL wall; sub-device tiles. TZ3000 only.",
+      "sources": ["forum-140352-2173", "forum-140352-2182"],
+      "tracks": {
+        "master": { "static": true, "dynamic": true },
+        "stable": { "static": true, "dynamic": false }
+      }
+    },
+    {
+      "id": "novadigital-ts0003-qxcnwv26",
+      "mfr": ["_TZ3000_qxcnwv26", "_tz3000_qxcnwv26"],
+      "productId": ["TS0003"],
+      "canonicalDriver": "wall_switch_3gang_1way",
+      "forbiddenDrivers": ["climate_sensor", "switch_1gang", "switch_2gang", "switch_3gang"],
+      "protocol": "zcl",
+      "retailNames": ["Zemismart TB25-3"],
+      "notes": "3-gang ZCL wall; sub-device tiles.",
+      "sources": ["forum-140352-2173", "forum-140352-2182"],
+      "tracks": {
+        "master": { "static": true, "dynamic": true },
+        "stable": { "static": true, "dynamic": false }
+      }
+    },
+    {
+      "id": "novadigital-ts0003-fawk5xjv",
+      "mfr": ["_TZ3000_fawk5xjv", "_tz3000_fawk5xjv"],
+      "productId": ["TS0003"],
+      "canonicalDriver": "wall_switch_3gang_1way",
+      "forbiddenDrivers": ["climate_sensor", "switch_1gang", "switch_2gang", "switch_3gang"],
+      "protocol": "zcl",
+      "retailNames": ["Zemismart TB25-3"],
+      "notes": "TZ3000 3-gang. _TZ3210_fawk5xjv is a different couple — do not move.",
+      "sources": ["forum-140352-2173", "forum-140352-2182"],
+      "tracks": {
+        "master": { "static": true, "dynamic": true },
+        "stable": { "static": true, "dynamic": false }
+      }
+    },
+    {
+      "id": "novadigital-ts0003-yervjnlj",
+      "mfr": ["_TZ3000_yervjnlj", "_tz3000_yervjnlj"],
+      "productId": ["TS0003"],
+      "canonicalDriver": "wall_switch_3gang_1way",
+      "forbiddenDrivers": ["climate_sensor", "switch_1gang", "switch_2gang", "switch_3gang"],
+      "protocol": "zcl",
+      "retailNames": ["Zemismart TB25-3"],
+      "notes": "Already on wall_switch_3gang_1way; keep TS0003/TS0013 only.",
       "sources": ["forum-140352-2173", "forum-140352-2182"],
       "tracks": {
         "master": { "static": true, "dynamic": true },
@@ -729,8 +789,8 @@
       "id": "lwthnp7j-zcl-4gang",
       "mfr": ["_TZ3000_lwthnp7j", "_tz3000_lwthnp7j", "_TZ3000_LWTHNP7J"],
       "productId": ["TS0004"],
-      "canonicalDriver": "switch_4gang",
-      "forbiddenDrivers": ["wall_switch_4_gang_tuya", "climate_sensor", "button_wireless_4"],
+      "canonicalDriver": "wall_switch_4gang_1way",
+      "forbiddenDrivers": ["wall_switch_4_gang_tuya", "climate_sensor", "button_wireless_4", "switch_4gang"],
       "protocol": "zcl",
       "notes": "ZCL 4-gang (not EF00 TS0601).",
       "tracks": {
@@ -802,6 +862,37 @@
       "protocol": "zcl",
       "notes": "HOBEIAN ZG-305Z MHCOZY dual USB-C switch (JohanBendz PR #1435). Unique pid avoids TS0601 cartesian with other HOBEIAN sensors.",
       "sources": ["JohanBendz#1435"],
+      "tracks": {
+        "master": { "static": true, "dynamic": true },
+        "stable": { "static": true, "dynamic": false }
+      }
+    },
+    {
+      "id": "pm-rolp-tz3218-7fiyo3kv-ts000f-switch-temp",
+      "mfr": [
+        "_TZ3218_7fiyo3kv",
+        "_tz3218_7fiyo3kv",
+        "_TZ3218_7FIYO3KV",
+        "_TZ3218_ya5d6wth",
+        "_tz3218_ya5d6wth",
+        "_TZ3218_YA5D6WTH"
+      ],
+      "productId": ["TS000F"],
+      "canonicalDriver": "switch_temp_sensor",
+      "forbiddenDrivers": [
+        "switch_1gang",
+        "switch_1_gang",
+        "zigbee_universal",
+        "climate_sensor",
+        "generic_tuya"
+      ],
+      "protocol": "hybrid",
+      "retailNames": [
+        "Mumubiz TYZGTH1CH-D1RF",
+        "MHCOZY TYZGTH16A-D1RF"
+      ],
+      "notes": "Mains 1-gang switch with DS18B20 probe (ZCL onoff + EF00 DP102). Pairing as switch_1gang hid temperature.",
+      "sources": ["z2m-herdsman", "JohanBendz#1176", "forum-pm-147692"],
       "tracks": {
         "master": { "static": true, "dynamic": true },
         "stable": { "static": true, "dynamic": false }

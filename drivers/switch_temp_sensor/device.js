@@ -146,7 +146,7 @@ class SwitchTempSensorDevice extends TuyaZigbeeDevice {
       const temp = typeof value === 'number' ? smartParse(value, null, { capability: 'measure_temperature' }) : value;
       this._setTemperature(temp);
     } else if (attr === 1 || attr === 'humidity') {
-      const hum = typeof value === 'number' ? smartParse(value, null, { capability: 'measure_temperature' }) : value;
+      const hum = typeof value === 'number' ? smartParse(value, null, { capability: 'measure_humidity' }) : value;
       this._setHumidity(hum);
     }
   }
@@ -201,7 +201,7 @@ class SwitchTempSensorDevice extends TuyaZigbeeDevice {
         this.log('✅ Found ZCL Humidity cluster');
         humCluster.on('attr', (attr, value) => {
           if (attr === 'measuredValue') {
-            this._setHumidity(smartParse(value, null, { capability: 'measure_temperature' }));
+            this._setHumidity(smartParse(value, null, { capability: 'measure_humidity' }));
           }
         });
       }

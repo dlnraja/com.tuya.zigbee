@@ -99,44 +99,17 @@
       "_tz3002_PZAO9LS1",
       "_tz3000_2EI1FKWB",
       "_tz3000_HY5LGGKG",
-      "_tz3000_MRDUUBOD"
+      "_tz3000_MRDUUBOD",
+      "_TZ3000_lwthnp7j",
+      "_tz3000_lwthnp7j",
+      "_TZ3000_LWTHNP7J",
+      "_tz3000_LWTHNP7J"
     ],
     "productId": [
-      "01MINIZB",
-      "BASICZBR3",
-      "S26R2ZB",
-      "S31ZB",
-      "TS0001",
-      "TS0001_power",
-      "TS0001_switch",
-      "TS0001_switch_module",
-      "TS0002",
-      "TS0003",
       "TS0004",
-      "TS000F",
-      "TS0011",
-      "TS0012",
       "TS0014",
-      "TS0041",
-      "TS0101",
-      "TS0111",
-      "TS011F",
-      "TS0601",
-      "TS0726",
-      "TS110E",
-      "TS130F",
-      "TS4100",
-      "ZBM5-1C-120",
-      "ZBM5-2C-120",
-      "ZBM5-3C-120",
-      "ZBMINI",
-      "ZBMINIL2",
-      "ZBMINIL2-R2",
-      "ZBMINIR",
-      "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "TS000F",
+      "TS0726"
     ],
     "endpoints": {
       "1": {
@@ -381,6 +354,79 @@
               }
             }
           ]
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "Connected switches",
+        "nl": "Gekoppelde schakelaars",
+        "fr": "Interrupteurs liés",
+        "de": "Verbundene Schalter"
+      },
+      "children": [
+        {
+          "id": "connected_siblings",
+          "type": "label",
+          "label": {
+            "en": "This wall unit",
+            "nl": "Dit wandapparaat",
+            "fr": "Cet interrupteur mural",
+            "de": "Diese Wandeinheit"
+          },
+          "value": "—"
+        },
+        {
+          "id": "traffic_stats",
+          "type": "label",
+          "label": {
+            "en": "Network activity",
+            "nl": "Netwerkactiviteit",
+            "fr": "Activité réseau",
+            "de": "Netzwerkaktivität"
+          },
+          "value": "—"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "Pulse / inching",
+        "nl": "Puls / inching",
+        "fr": "Impulsion / inching",
+        "de": "Impuls / Inching"
+      },
+      "children": [
+        {
+          "id": "inching",
+          "type": "checkbox",
+          "label": {
+            "en": "Pulse mode (auto-off)",
+            "nl": "Pulsmodus (automatisch uit)",
+            "fr": "Mode impulsion (extinction auto)",
+            "de": "Impulsmodus (Auto-Aus)"
+          },
+          "hint": {
+            "en": "Change LED and pulse only on the main gang tile. Homey Flows cover timers/countdowns.",
+            "nl": "LED en puls alleen op de hoofdtegel. Timers via Flows.",
+            "fr": "LED et impulsion uniquement sur la tuile principale. Les minuteries passent par les Flows."
+          },
+          "value": false
+        },
+        {
+          "id": "inching_duration",
+          "type": "number",
+          "label": {
+            "en": "Pulse duration (seconds)",
+            "nl": "Pulsduur (seconden)",
+            "fr": "Durée d'impulsion (secondes)",
+            "de": "Impulsdauer (Sekunden)"
+          },
+          "value": 60,
+          "min": 1,
+          "max": 3600
         }
       ]
     }

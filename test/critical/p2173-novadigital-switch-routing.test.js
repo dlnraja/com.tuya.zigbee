@@ -35,14 +35,17 @@ describe('P2173 NovaDigital/Zemismart switch routing', () => {
     assert.strictEqual(lookup('_TZ3000_jjdkhueq', 'TS0002').canonicalDriver, 'wall_switch_2gang_1way');
   });
 
-  it('moves ok0ggpk7 / f09j9qjb / vjhcenzo onto switch_3gang', () => {
-    for (const mfr of ['_TZ3000_ok0ggpk7', '_TZ3000_f09j9qjb', '_TZ3000_vjhcenzo']) {
-      assert.strictEqual(hasMfr('switch_3gang', mfr), true, `${mfr} missing on switch_3gang`);
+  it('moves TB25-3 TZ3000 couples onto wall_switch_3gang_1way (sub-device tiles)', () => {
+    for (const mfr of ['_TZ3000_ok0ggpk7', '_TZ3000_f09j9qjb', '_TZ3000_vjhcenzo', '_TZ3000_eqsair32', '_TZ3000_qxcnwv26', '_TZ3000_fawk5xjv', '_TZ3000_yervjnlj']) {
+      assert.strictEqual(hasMfr('wall_switch_3gang_1way', mfr), true, `${mfr} missing on wall_switch_3gang_1way`);
+      assert.strictEqual(hasMfr('switch_3gang', mfr), false, `${mfr} still on catch-all switch_3gang`);
       assert.strictEqual(hasMfr('climate_sensor', mfr), false, `${mfr} still on climate`);
     }
     assert.strictEqual(hasMfr('switch_1gang', '_TZ3000_ok0ggpk7'), false);
     assert.strictEqual(hasMfr('switch_2_gang', '_TZ3000_f09j9qjb'), false);
     assert.strictEqual(isForbiddenPlacement('_TZ3000_ok0ggpk7', 'switch_1gang'), true);
+    assert.strictEqual(isForbiddenPlacement('_TZ3000_ok0ggpk7', 'switch_3gang'), true);
+    assert.strictEqual(lookup('_TZ3000_ok0ggpk7', 'TS0003').canonicalDriver, 'wall_switch_3gang_1way');
   });
 
   it('routes 4-gang MCU couples onto wall_switch_4_gang_tuya', () => {
@@ -74,9 +77,10 @@ describe('P2173 NovaDigital/Zemismart switch routing', () => {
     assert.strictEqual(lookup('_TZ3000_cfnprab5', 'TS011F').canonicalDriver, 'socket_power_strip_four_three');
   });
 
-  it('routes ZCL 4-gang lwthnp7j onto switch_4gang', () => {
-    assert.strictEqual(hasMfr('switch_4gang', '_TZ3000_lwthnp7j'), true);
-    assert.strictEqual(lookup('_TZ3000_lwthnp7j', 'TS0004').canonicalDriver, 'switch_4gang');
+  it('routes ZCL 4-gang lwthnp7j onto wall_switch_4gang_1way (sub-device tiles)', () => {
+    assert.strictEqual(hasMfr('wall_switch_4gang_1way', '_TZ3000_lwthnp7j'), true);
+    assert.strictEqual(hasMfr('switch_4gang', '_TZ3000_lwthnp7j'), false);
+    assert.strictEqual(lookup('_TZ3000_lwthnp7j', 'TS0004').canonicalDriver, 'wall_switch_4gang_1way');
   });
 
   it('records TB25 retail aliases without inventing 606/808/ZMS-206 pids', () => {

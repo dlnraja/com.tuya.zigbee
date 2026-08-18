@@ -16,9 +16,5 @@
       "type": "device",
       "filter": "capabilities=onoff"
     }
-  ],
-  "titleFormatted": {
-    "en": "Stop presence simulation on [[device]]",
-    "fr": "Arrêter la simulation de présence sur [[device]]"
-  }
+  ]
 }

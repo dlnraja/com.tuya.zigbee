@@ -181,9 +181,12 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
         this.log(`[SOS] ✅ Enroll Response sent (${why}, zoneId: 10)`);
         this._enrollmentPending = false;
       } catch (e) {
-        this.error('[SOS] Enroll response failed:', e.message);
+        this._enrollmentPending = true;
+        // Sleepy buttons time out at boot (e181bc15). Retry on announce — do not flood stderr.
+        this.log('[SOS] Enroll response deferred (sleepy):', e.message);
       }
     };
+    this._sendIasEnrollResponse = sendEnrollResponse;
 
     // Listener BEFORE proactive response (must be sync-assign, no await gap)
     iasZone.onZoneEnrollRequest = () => {
@@ -622,6 +625,9 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
         }
       }
 
+      if (this._enrollmentPending && typeof this._sendIasEnrollResponse === 'function') {
+        await this._sendIasEnrollResponse('announce');
+      }
       await this._readBatteryNow();
       await this._verifyCieAddress();
     } catch (err) {

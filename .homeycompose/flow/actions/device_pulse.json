@@ -36,14 +36,22 @@
         "fr": "État de l'impulsion"
       },
       "values": [
-        { "id": "on", "title": { "en": "On", "fr": "Activé" } },
-        { "id": "off", "title": { "en": "Off", "fr": "Désactivé" } }
+        {
+          "id": "on",
+          "title": {
+            "en": "On",
+            "fr": "Activé"
+          }
+        },
+        {
+          "id": "off",
+          "title": {
+            "en": "Off",
+            "fr": "Désactivé"
+          }
+        }
       ],
       "value": "on"
     }
-  ],
-  "titleFormatted": {
-    "en": "Pulse [[device]] [[state]] for [[duration_seconds]] seconds",
-    "fr": "Impulsion [[state]] sur [[device]] pendant [[duration_seconds]] secondes"
-  }
+  ]
 }

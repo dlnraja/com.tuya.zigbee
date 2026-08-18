@@ -117,6 +117,7 @@ env:
 - Gate: `node tools/ci/forum-ai-paste-gate.js --scan-defaults`
 - Doctrine: `docs/rules/FORUM_SILENT_HUMANIZE.md`
 - Silent multi-scan: `tools/ci/forum-silent-multi-scan.js` (wired in `forum-poll.yml`, `auto-enrich-closed-loop.yml`, `fetch-diags.yml`)
+- Private inbox harvest (SSO `HOMEY_EMAIL`/`HOMEY_PASSWORD`, **never POST**): `tools/ci/forum-pm-read-only.js` + dispatch-only `.github/workflows/forum-pm-read.yml`. Do not use `forum-pm-scanner.js` for replies.
 
 **BUG FIXED v5.12.14:** `post-forum-update.js` had default `FORUM_TOPICS='140352,26439,146735'`
 which caused bot to post release updates on OTHER people's threads (T26439, T146735).

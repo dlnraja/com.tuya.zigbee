@@ -260,7 +260,10 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
     }
 
     try {
-      this.optimizer = new PerformanceOptimizer({ maxCacheSize: 1000, maxCacheMemory: 10 * 1024 * 1024 });
+      this.optimizer = new PerformanceOptimizer({
+        maxCacheSize: BootBudget.adaptiveCacheSize(),
+        maxCacheMemory: BootBudget.adaptiveCacheMemory(),
+      });
       this.log('✅ Performance Optimizer initialized');
     } catch (err) { this.error('⚠️ Optimizer failed:', err.message); }
 
@@ -384,7 +387,6 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
     this._scheduleDeferredMasterFeatures();
 
     this.log(`✅ Tuya Unified Zigbee App initialized (${BootBudget.heapUsedMb()} MB heap)`);
-    this._scanForPhantomDevices();
     this._clearMigrationQueue();
   }
 
@@ -404,11 +406,34 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
     }
   }
 
-  async _initDeferredMasterFeatures() {
-    if (this._destroyed || this._heavyInitStarted) {return;}
+  _scheduleDeferredMasterFeaturesRetry() {
+    if (this._heavyRetryScheduled || this._destroyed) {return;}
+    this._heavyRetryScheduled = true;
+    const delay = BootBudget.RETRY_MS;
+    this.log(`⏭️ Heavy features retry in ${Math.round(delay / 1000)}s (heap still high)`);
+    try {
+      this._heavyRetryTimer = this.homey.setTimeout(() => {
+        this._heavyRetryTimer = null;
+        this._initDeferredMasterFeatures({ retry: true }).catch((err) => {
+          this.error('⚠️ Deferred features retry failed (non-critical):', err.message);
+        });
+      }, delay);
+    } catch (err) {
+      this.log('⚠️ Could not schedule heavy-feature retry:', err.message);
+    }
+  }
+
+  async _initDeferredMasterFeatures(opts = {}) {
+    if (this._destroyed) {return;}
+    const retry = opts.retry === true;
+    if (this._heavyInitStarted && !retry) {return;}
     this._heavyInitStarted = true;
     const allowHeavy = BootBudget.shouldStartHeavyFeatures();
-    this.log(`[BOOT-BUDGET] deferred pass heap=${BootBudget.heapUsedMb()} MB heavy=${allowHeavy}`);
+    this.log(`[BOOT-BUDGET] deferred pass heap=${BootBudget.heapUsedMb()} MB heavy=${allowHeavy} retry=${retry}`);
+
+    if (!allowHeavy && !retry) {
+      this._scheduleDeferredMasterFeaturesRetry();
+    }
 
     if (allowHeavy) {
       try {
@@ -501,6 +526,39 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
     }
 
     try {
+      if (retry && this.featureFlowCards) {
+        if (allowHeavy) {
+          try { this.scheduleManager?.start?.(); } catch (_e) { /* already started */ }
+          try { this.predictiveHealthEngine?.start?.(); } catch (_e) { /* already started */ }
+          try { this.homeModeManager?.start?.(); } catch (_e) { /* already started */ }
+          try { this.solarElevation?.startObserving?.(); } catch (_e) { /* already started */ }
+          if (this.availabilityManager && !this._availabilityStarted) {
+            for (const driver of Object.values(this.homey.drivers.getDrivers())) {
+              for (const device of driver.getDevices()) {
+                this.availabilityManager.registerDevice(device);
+              }
+            }
+            this.availabilityManager.start();
+            this._availabilityStarted = true;
+          }
+          if (!this.liveDataUpdater) {
+            try {
+              const LiveDataUpdater = require('./lib/dynamic/LiveDataUpdater');
+              this.liveDataUpdater = new LiveDataUpdater(this.homey, this.log.bind(this));
+              await this.liveDataUpdater.start();
+              const FingerprintMatcher = require('./lib/utils/fingerprint-matcher');
+              FingerprintMatcher.setOverlayProvider(() => this.liveDataUpdater?.getOverlay?.() || null);
+              this.log('✅ LiveDataUpdater started (retry pass)');
+            } catch (err) {
+              this.log('⚠️ LiveDataUpdater retry skipped:', err.message);
+            }
+          }
+          this.log('✅ Deferred feature engines started (retry, heap recovered)');
+        }
+        await this._scanForPhantomDevices();
+        return;
+      }
+
       this.solarElevation = new SolarElevation({ homey: this.homey, logger: this.log.bind(this) });
       this.transitionEngine = new TransitionEngine({ homey: this.homey });
       this.energyHistoryStore = new EnergyHistoryStore(this.homey);
@@ -529,6 +587,39 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
         this.log('⏭️ LiveDataUpdater skipped (heap budget)');
       }
 
+      if (retry && this.featureFlowCards) {
+        if (allowHeavy) {
+          try { this.scheduleManager?.start?.(); } catch (_e) { /* already started */ }
+          try { this.predictiveHealthEngine?.start?.(); } catch (_e) { /* already started */ }
+          try { this.homeModeManager?.start?.(); } catch (_e) { /* already started */ }
+          try { this.solarElevation?.startObserving?.(); } catch (_e) { /* already started */ }
+          if (this.availabilityManager && !this._availabilityStarted) {
+            for (const driver of Object.values(this.homey.drivers.getDrivers())) {
+              for (const device of driver.getDevices()) {
+                this.availabilityManager.registerDevice(device);
+              }
+            }
+            this.availabilityManager.start();
+            this._availabilityStarted = true;
+          }
+          if (!this.liveDataUpdater) {
+            try {
+              const LiveDataUpdater = require('./lib/dynamic/LiveDataUpdater');
+              this.liveDataUpdater = new LiveDataUpdater(this.homey, this.log.bind(this));
+              await this.liveDataUpdater.start();
+              const FingerprintMatcher = require('./lib/utils/fingerprint-matcher');
+              FingerprintMatcher.setOverlayProvider(() => this.liveDataUpdater?.getOverlay?.() || null);
+              this.log('✅ LiveDataUpdater started (retry pass)');
+            } catch (err) {
+              this.log('⚠️ LiveDataUpdater retry skipped:', err.message);
+            }
+          }
+          this.log('✅ Deferred feature engines started (retry, heap recovered)');
+        }
+        await this._scanForPhantomDevices();
+        return;
+      }
+
       this.networkTopologyCollector = new NetworkTopologyCollector(this.homey);
       if (allowHeavy && this.solarElevation.startObserving) {
         this.solarElevation.startObserving();
@@ -538,12 +629,17 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
       this.availabilityManager = new DeviceAvailabilityManager(this.homey, {
         logger: (...a) => this.log(...a),
       });
-      for (const driver of Object.values(this.homey.drivers.getDrivers())) {
-        for (const device of driver.getDevices()) {
-          this.availabilityManager.registerDevice(device);
+      if (allowHeavy) {
+        for (const driver of Object.values(this.homey.drivers.getDrivers())) {
+          for (const device of driver.getDevices()) {
+            this.availabilityManager.registerDevice(device);
+          }
         }
+        this.availabilityManager.start();
+        this._availabilityStarted = true;
+      } else {
+        this.log('⏭️ Availability scan skipped (heap budget) — retry later');
       }
-      this.availabilityManager.start();
       this.homey.on('device.create', (device) => this.availabilityManager.registerDevice(device));
 
       const SensorSuppressionManager = require('./lib/managers/SensorSuppressionManager');
@@ -596,6 +692,8 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
       this.featureFlowCards.setHomeModeManager(this.homeModeManager);
       this.featureFlowCards.registerAll();
       this.log('✅ Feature modules and flow cards initialized (deferred)');
+      try { BootBudget.maybeGc(); } catch (_e) { /* best-effort */ }
+      await this._scanForPhantomDevices();
     } catch (err) {
       this.error('⚠️ Feature modules failed (non-critical):', err.message);
     }

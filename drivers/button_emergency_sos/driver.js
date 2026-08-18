@@ -35,7 +35,7 @@ class SosEmergencyButtonDriver extends ZigBeeDriver {
           this.log(`[FLOW] ${cardId} card not found in app manifest`);
         }
       } catch (e) {
-        this.error(`[FLOW] ${cardId} registration error:`, e.message);
+        this.log(`[FLOW] ${cardId} registration skipped:`, e.message);
       }
     }
   }
@@ -86,7 +86,7 @@ class SosEmergencyButtonDriver extends ZigBeeDriver {
         await card.trigger(device, tokens, state);
         this.log(`[FLOW] ${cardId} triggered successfully`);
       } catch (e) {
-        this.error(`[FLOW] ${cardId} trigger error:`, e.message);
+        this.log(`[FLOW] ${cardId} trigger skipped:`, e.message);
       }
     } else {
       // Fallback: re-fetch card from runtime
@@ -99,7 +99,7 @@ class SosEmergencyButtonDriver extends ZigBeeDriver {
           this.log(`[FLOW] ${cardId} card not available`);
         }
       } catch (e) {
-        this.error(`[FLOW] ${cardId} fallback error:`, e.message);
+        this.log(`[FLOW] ${cardId} fallback skipped:`, e.message);
       }
     }
   }

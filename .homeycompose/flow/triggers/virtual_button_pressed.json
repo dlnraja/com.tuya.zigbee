@@ -41,11 +41,5 @@
       "name": "device",
       "filter": "capabilities=button.1,capabilities=button,capabilities=onoff,capabilities=button.toggle"
     }
-  ],
-  "titleFormatted": {
-    "en": "Virtual button pressed in app [[device]]",
-    "fr": "Bouton virtuel appuyé dans l'app [[device]]",
-    "nl": "Virtuele knop ingedrukt in app [[device]]",
-    "de": "Virtuelle Taste in App gedrückt [[device]]"
-  }
+  ]
 }

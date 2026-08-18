@@ -16,8 +16,10 @@ class SmartIrrigationValveDriver extends ZigBeeDriver {
     for (const id of triggers) {
       try {
         this.homey.flow.getDeviceTriggerCard(id);
-      } catch (e) {
-        this.error(`Trigger ${id} registration error: ${e.message}`);
+      } catch (_e) {
+        // Gmail 2026-08-01: getDeviceTriggerCard throws "Invalid Flow Card ID"
+        // when Homey compiled the card as an app trigger. Probe only; never error.
+        try { this.homey.flow.getTriggerCard(id); } catch (__e) { /* optional card */ }
       }
     }
 

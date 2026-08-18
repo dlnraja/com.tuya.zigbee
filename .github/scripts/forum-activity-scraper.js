@@ -82,7 +82,7 @@ async function getUserActivity(auth){
 // 4. Get private messages
 async function getPrivateMessages(auth){
   console.log('== Private Messages ==');
-  if(!auth||auth.type!=='apikey'){console.log('  Skipping PMs (need API key)');return[]}
+  if(!auth){console.log('  Skipping PMs (need session SSO or API key)');return[]}
   const msgs=[];
   for(const box of['inbox','sent']){
     const d=await forumGet('/topics/private-messages/'+USERNAME+'.json?filter='+box,auth);

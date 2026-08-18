@@ -3556,7 +3556,7 @@
   },
   {
     "manufacturerName": "_TZ3000_ok0ggpk7",
-    "driverId": "zigbee_universal",
+    "driverId": "wall_switch_3gang_1way",
     "type": "other",
     "powerSource": "unknown",
     "modelIds": [
@@ -3574,7 +3574,7 @@
   },
   {
     "manufacturerName": "_TZ3000_fawk5xjv",
-    "driverId": "zigbee_universal",
+    "driverId": "wall_switch_3gang_1way",
     "type": "other",
     "powerSource": "unknown",
     "modelIds": [
@@ -7834,7 +7834,7 @@
   },
   {
     "manufacturerName": "_TZ3000_qxcnwv26",
-    "driverId": "zigbee_universal",
+    "driverId": "wall_switch_3gang_1way",
     "type": "other",
     "powerSource": "unknown",
     "modelIds": [
@@ -9103,18 +9103,18 @@
   },
   {
     "manufacturerName": "_TZ3218_7fiyo3kv",
-    "driverId": "zigbee_universal",
-    "type": "other",
-    "powerSource": "unknown",
+    "driverId": "switch_temp_sensor",
+    "type": "switch",
+    "powerSource": "mains",
     "modelIds": [
       "TS000F"
     ]
   },
   {
     "manufacturerName": "_TZ3218_ya5d6wth",
-    "driverId": "zigbee_universal",
-    "type": "other",
-    "powerSource": "unknown",
+    "driverId": "switch_temp_sensor",
+    "type": "switch",
+    "powerSource": "mains",
     "modelIds": [
       "TS000F"
     ]

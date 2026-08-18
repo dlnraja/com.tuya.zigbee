@@ -1,0 +1,72 @@
+# Forum PM read-only harvest (T157628)
+# Triggers: workflow_dispatch only | Secrets: HOMEY_EMAIL, HOMEY_PASSWORD
+# (optional DISCOURSE_API_KEY). NEVER posts. Artifact only.
+
+name: 🔇 Forum PM read-only
+
+on:
+  workflow_dispatch:
+    inputs:
+      max_threads:
+        description: 'Max private threads to fetch (default 20)'
+        required: false
+        type: string
+        default: '20'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: forum-pm-read
+  cancel-in-progress: true
+
+defaults:
+  run:
+    shell: bash
+
+env:
+  NODE_VERSION: '22'
+
+jobs:
+  harvest:
+    name: Read private messages (no replies)
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+
+      - name: Install deps
+        run: npm ci --prefer-offline --no-audit || npm install --no-audit
+
+      - name: Harvest inbox (read-only)
+        continue-on-error: true
+        env:
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+          DISCOURSE_API_KEY: ${{ secrets.DISCOURSE_API_KEY }}
+          DISCOURSE_USERNAME: dlnraja
+          FORUM_USERNAME: dlnraja
+          FORUM_AUTO_POST: '0'
+          DRY_RUN: 'true'
+          FORUM_PM_MAX_THREADS: ${{ inputs.max_threads || '20' }}
+        run: |
+          echo "## 🔇 Forum PM read-only" >> "$GITHUB_STEP_SUMMARY"
+          if [ -z "$HOMEY_EMAIL" ] && [ -z "$DISCOURSE_API_KEY" ]; then
+            echo "No HOMEY_EMAIL or DISCOURSE_API_KEY — skip"
+            exit 0
+          fi
+          node tools/ci/forum-pm-read-only.js
+
+      - name: Upload redacted artifact
+        if: always()
+        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5.0.0
+        with:
+          name: forum-pm-read-only
+          path: .github/state/forum/pm-inbox.json
+          if-no-files-found: warn
+          retention-days: 7

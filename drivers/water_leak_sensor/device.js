@@ -251,27 +251,15 @@ class WaterLeakSensorDevice extends UnifiedSensorBase {
 
       // Initialize IAS Alarm Fallback
       this._iasFallback = new IASAlarmFallback(this, {
-        pollInterval: 30000,
+        pollInterval: 6 * 60 * 60 * 1000,
         useTuyaMirror: true
       });
       await this._iasFallback.init().catch(e => {
         this.log(`[WATER] IAS Fallback init failed: ${e.message}`);
       });
 
-      // Force initial alarm state read
-      await this._forceInitialAlarmRead(zclNode);
-
-      // Delayed secondary read for sleepy sensors
-      this._secondaryAlarmReadTimer = this.homey.setTimeout(async () => {
-        this._secondaryAlarmReadTimer = null;
-        if (this._destroyed) {return;}
-        try {
-          this.log('[WATER] Delayed secondary alarm read (5s post-init)');
-          await this._forceInitialAlarmRead(zclNode);
-        } catch (e) {
-          this.log(`[WATER] Secondary read failed: ${e.message}`);
-        }
-      }, 5000);
+      // Sleepy: do not force a second 5s IAS read at boot (e181bc15 timeouts).
+      // Wake/rejoin path re-attaches listeners and reads while the node is up.
     }, 'onNodeInit');
   }
 
@@ -283,8 +271,12 @@ class WaterLeakSensorDevice extends UnifiedSensorBase {
   async onEndDeviceAnnounce() {
     this.log('[WATER] wake/rejoin — re-attach IAS Zone listener');
     try {
-      const iasManager = new IASZoneManager(this);
-      await iasManager.enrollIASZone();
+      if (typeof this._reattachIasOnWake === 'function') {
+        await this._reattachIasOnWake();
+      } else {
+        const iasManager = new IASZoneManager(this);
+        await iasManager.enrollIASZone();
+      }
     } catch (err) {
       this.log(`[WATER] IAS re-enroll on wake failed: ${err.message}`);
     }
@@ -297,6 +289,19 @@ class WaterLeakSensorDevice extends UnifiedSensorBase {
     try {
       await this._forceInitialAlarmRead(this.zclNode);
     } catch (_e) { /* sleepy read is best-effort */ }
+    if (this._secondaryAlarmReadTimer) {
+      try { this.homey.clearTimeout(this._secondaryAlarmReadTimer); } catch (_e) { /* ignore */ }
+    }
+    this._secondaryAlarmReadTimer = this.homey.setTimeout(async () => {
+      this._secondaryAlarmReadTimer = null;
+      if (this._destroyed) {return;}
+      try {
+        this.log('[WATER] Delayed secondary alarm read (5s post-wake)');
+        await this._forceInitialAlarmRead(this.zclNode);
+      } catch (e) {
+        this.log(`[WATER] Secondary read failed: ${e.message}`);
+      }
+    }, 5000);
   }
 
   async _forceInitialAlarmRead(zclNode) {
