@@ -36,12 +36,12 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **App Version** | v9.0.589 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,371 |
-| **Pairing Variants** | 16,604 (4 case combos per fingerprint) |
+| **Pairing Variants** | 16,601 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 577 |
 | **Flow Cards** | 5,175 |
 | **Unique Capabilities** | 170 |
 | **Native OTA Drivers** | 5 |
-| **Test Suites** | 97 files |
+| **Test Suites** | 99 files |
 | **SVG Icons** | 731 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
@@ -62,8 +62,8 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | 9 | `sensor_contact_zigbee` | 340 |
 | 10 | `curtain_motor` | 308 |
 | 11 | `switch_4gang` | 277 |
-| 12 | `switch_2gang` | 246 |
-| 13 | `switch_3gang` | 236 |
+| 12 | `switch_3gang` | 236 |
+| 13 | `switch_2gang` | 234 |
 | 14 | `diy_custom_zigbee` | 206 |
 | 15 | `thermostat_tuya_dp` | 192 |
 | 16 | `soil_sensor` | 191 |
@@ -102,6 +102,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.590** | SOS and scene buttons fire Homey Flows on press. Two-gang wall switches get a separate tile per gang (rename, quick action, voice). Switc… |
 | **v9.0.589** | App Settings shows a retractable Zigbee spider map of this app's devices, with last-seen and rejoin counts. Links use last-hop signal qua… |
 | **v9.0.588** | App Settings shows a retractable Zigbee spider map of this app's devices, with last-seen and rejoin counts. Links use last-hop signal qua… |
 | **v9.0.587** | App Settings shows a retractable Zigbee spider map of this app's devices, with last-seen and rejoin counts. Links use last-hop signal qua… |
@@ -113,7 +114,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.581** | Improved battery percentage for wireless remotes (Zigbee, Tuya DP, and hybrid): real reports only, CR2032 curves, and no fake 50/100% whi… |
 | **v9.0.580** | Mains switches fire a power-cut rejoin flow even after a short outage, 4-gang ZCL boards stay on the 4-gang driver, and 4-outlet strips n… |
 | **v9.0.579** | Scene/event mode is applied only on remotes that actually have it (TS004F). 3-button scene remotes keep per-endpoint presses, and wall sw… |
-| **v9.0.578** | Pairing no longer treats the Zigbee Green Power endpoint as an extra gang, so 2-gang switches and button remotes keep the right driver af… |
 
 <!-- CHANGELOG_END -->
 
