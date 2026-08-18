@@ -50,10 +50,22 @@ describe('P214 IntelligentProtocolDetect', () => {
     assert.strictEqual(info.listenHybrid, false);
   });
 
-  it('uses HYBRID when EF00 and ZCL both present', () => {
+  it('TS0002 leftover EF00 stays zcl_only (no hybrid DP bleed after re-pair)', () => {
     const info = detectIntelligentProtocol(mockDevice({
-      mfr: '_TZ3000_abc',
-      modelId: 'TS0001',
+      mfr: '_TZ3000_jjdkhueq',
+      modelId: 'TS0002',
+      clusters: { onOff: {}, tuya: {}, manuSpecificTuya: {} },
+    }));
+    assert.strictEqual(info.protocol, 'zcl_only');
+    assert.strictEqual(info.listenHybrid, false);
+    assert.strictEqual(info.isPureTuyaDP, false);
+    assert.strictEqual(info.reason, 'ts000x_zcl_switch_ignore_leftover_ef00');
+  });
+
+  it('uses HYBRID when EF00 and ZCL both present on an MCU couple', () => {
+    const info = detectIntelligentProtocol(mockDevice({
+      mfr: '_TZE200_shkxsgis',
+      modelId: 'TS0601',
       clusters: { onOff: {}, tuya: {}, manuSpecificTuya: {} },
     }));
     assert.strictEqual(info.protocol, 'HYBRID');

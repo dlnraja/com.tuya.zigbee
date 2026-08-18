@@ -36,7 +36,7 @@ describe('P218 SOS ACE + flow cards', () => {
   it('SOS keeps button.1 so a physical press can pulse the tile', () => {
     const c = compose('button_emergency_sos');
     assert.ok(c.capabilities.includes('button.1'));
-    assert.equal(c.capabilitiesOptions['button.1'].setable, true);
+    assert.equal(c.capabilitiesOptions['button.1'].setable, false);
     const dev = src('drivers/button_emergency_sos/device.js');
     assert.match(dev, /'button\.1'/);
   });

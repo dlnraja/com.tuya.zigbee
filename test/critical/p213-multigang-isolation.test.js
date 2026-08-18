@@ -136,6 +136,7 @@ describe('P213 switch pipeline wiring', () => {
     assert.match(s, /safeSetCapabilityValue\(capability, value, meta\)/);
     assert.match(s, /_pushConfiguredSwitchSettings/);
     assert.match(s, /afterBurst/);
+    assert.match(s, /skipDpRx/);
     assert.doesNotMatch(s, /parallelDiscover: true/);
   });
 
