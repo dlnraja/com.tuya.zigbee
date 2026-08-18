@@ -33,7 +33,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.591 |
+| **App Version** | v9.0.592 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,371 |
 | **Pairing Variants** | 16,601 (4 case combos per fingerprint) |
@@ -41,7 +41,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **Flow Cards** | 5,175 |
 | **Unique Capabilities** | 170 |
 | **Native OTA Drivers** | 5 |
-| **Test Suites** | 99 files |
+| **Test Suites** | 100 files |
 | **SVG Icons** | 731 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
@@ -102,7 +102,8 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
-| **v9.0.591** | ZCL multi-gang switches ignore leftover Tuya cluster so gangs do not cross-link after re-pair. Zemismart TB25 1/2/3/4/6-gang units stay o… |
+| **v9.0.592** | Lower boot memory so sleepy SOS, scene, leak and contact sensors can start and Flows stay enabled. Heavy extras wait one minute. ZCL mult… |
+| **v9.0.591** | Lower boot memory so sleepy SOS, scene, leak and contact sensors can start and Flows stay enabled. Heavy extras wait one minute. ZCL mult… |
 | **v9.0.590** | SOS and scene buttons fire Homey Flows on press. Two-gang wall switches get a separate tile per gang. ZCL multi-gang switches ignore left… |
 | **v9.0.589** | App Settings shows a retractable Zigbee spider map of this app's devices, with last-seen and rejoin counts. Links use last-hop signal qua… |
 | **v9.0.588** | App Settings shows a retractable Zigbee spider map of this app's devices, with last-seen and rejoin counts. Links use last-hop signal qua… |
@@ -113,7 +114,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.583** | Wall dimmers keep the correct driver fingerprint, clamp brightness so the MCU does not reboot, and strip phantom battery after a wrong cl… |
 | **v9.0.582** | Mains devices keep last-seen across app restart, sleepy sensors skip Poll Control binds, and switch settings including inching are re-app… |
 | **v9.0.581** | Improved battery percentage for wireless remotes (Zigbee, Tuya DP, and hybrid): real reports only, CR2032 curves, and no fake 50/100% whi… |
-| **v9.0.580** | Mains switches fire a power-cut rejoin flow even after a short outage, 4-gang ZCL boards stay on the 4-gang driver, and 4-outlet strips n… |
 
 <!-- CHANGELOG_END -->
 
