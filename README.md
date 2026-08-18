@@ -33,7 +33,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.587 |
+| **App Version** | v9.0.588 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,371 |
 | **Pairing Variants** | 16,604 (4 case combos per fingerprint) |
@@ -41,7 +41,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **Flow Cards** | 5,175 |
 | **Unique Capabilities** | 170 |
 | **Native OTA Drivers** | 5 |
-| **Test Suites** | 96 files |
+| **Test Suites** | 97 files |
 | **SVG Icons** | 731 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
@@ -102,6 +102,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.588** | Garage openers, dual outlets, Wing contacts and HOBEIAN USB switches keep the correct driver. Curtain motors that ignore position writes … |
 | **v9.0.587** | Garage openers, dual outlets, Wing contacts and HOBEIAN USB switches keep the correct driver. Curtain motors that ignore position writes … |
 | **v9.0.586** | Garage openers, dual outlets, Wing contacts and HOBEIAN USB switches keep the correct driver. Curtain motors that ignore position writes … |
 | **v9.0.585** | Wall dimmers keep the correct driver fingerprint, clamp brightness so the MCU does not reboot, and strip phantom battery after a wrong cl… |
@@ -113,7 +114,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.579** | Scene/event mode is applied only on remotes that actually have it (TS004F). 3-button scene remotes keep per-endpoint presses, and wall sw… |
 | **v9.0.578** | Pairing no longer treats the Zigbee Green Power endpoint as an extra gang, so 2-gang switches and button remotes keep the right driver af… |
 | **v9.0.577** | Multi-gang Tuya switches keep per-relay control after a power cut or re-pair, and silent Tuya MCU wall switches stay reachable. |
-| **v9.0.576** | Stopped multi-gang switches from toggling the wrong relay after a re-pair; commands stay on their own endpoint and unused Tuya DP is not … |
 
 <!-- CHANGELOG_END -->
 
