@@ -33,7 +33,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.593 |
+| **App Version** | v9.0.594 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,371 |
 | **Pairing Variants** | 16,601 (4 case combos per fingerprint) |
@@ -102,6 +102,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.594** | Two-gang wall switches show linked gang names in settings. LED and switch mode stay on the main tile. After a power cut the configured LE… |
 | **v9.0.593** | Two-gang wall switches show linked gang names in settings. LED and switch mode stay on the main tile. After a power cut the configured LE… |
 | **v9.0.592** | Lower boot memory so sleepy SOS, scene, leak and contact sensors can start and Flows stay enabled. Heavy extras wait one minute. ZCL mult… |
 | **v9.0.591** | Lower boot memory so sleepy SOS, scene, leak and contact sensors can start and Flows stay enabled. Heavy extras wait one minute. ZCL mult… |
@@ -113,7 +114,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.585** | Wall dimmers keep the correct driver fingerprint, clamp brightness so the MCU does not reboot, and strip phantom battery after a wrong cl… |
 | **v9.0.584** | Wall dimmers keep the correct driver fingerprint, clamp brightness so the MCU does not reboot, and strip phantom battery after a wrong cl… |
 | **v9.0.583** | Wall dimmers keep the correct driver fingerprint, clamp brightness so the MCU does not reboot, and strip phantom battery after a wrong cl… |
-| **v9.0.582** | Mains devices keep last-seen across app restart, sleepy sensors skip Poll Control binds, and switch settings including inching are re-app… |
 
 <!-- CHANGELOG_END -->
 
