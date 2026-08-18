@@ -183,7 +183,7 @@ Only content from these sources MAY be mentioned:
 ## D. Draft → Test Promotion
 
 Standard 3-tier Puppeteer pattern (ALL workflows must use):
-1. **Wait**: `node .github/scripts/wait-athom-draft-ready.js` (poll ≤4 min; fail-closed on `processing_failed` — never `sleep 180` alone)
+1. **Wait**: `node .github/scripts/wait-athom-draft-ready.js` (poll ≤4 min; prefer draft/test over a sibling `processing_failed`; fail-closed only after the window if still failed — never `sleep 180` alone)
 2. **Tier 1**: `npm install puppeteer --no-save` + `node .github/scripts/auto-promote-puppeteer.js`
 3. **Tier 2**: `node .github/scripts/auto-publish-draft.js` (API fallback)
 4. **Tier 3**: sleep 30s then re-run Puppeteer script
@@ -556,7 +556,7 @@ Only content from these sources MAY be mentioned:
 ## D. Draft  Test Promotion
 
 Standard 3-tier Puppeteer pattern (ALL workflows must use):
-1. **Wait**: `node .github/scripts/wait-athom-draft-ready.js` (poll ≤4 min; fail-closed on `processing_failed` — never `sleep 180` alone)
+1. **Wait**: `node .github/scripts/wait-athom-draft-ready.js` (poll ≤4 min; prefer draft/test over a sibling `processing_failed`; fail-closed only after the window if still failed — never `sleep 180` alone)
 2. **Tier 1**: `npm install puppeteer --no-save` + `node .github/scripts/auto-promote-puppeteer.js`
 3. **Tier 2**: `node .github/scripts/auto-publish-draft.js` (API fallback)
 4. **Tier 3**: sleep 30s then re-run Puppeteer script
@@ -774,7 +774,9 @@ slot is therefore a single shared channel.
    the failure is transient; if a rare non-transient heal runs, trigger
    **Auto-Publish on Push** (master) only — never Publish Stable→Test.
 4. `verify-test-version.js` stays fail-closed for the *expected* version
-   (do not greenwash a failed upload).
+   (do not greenwash a failed upload). `wait-athom-draft-ready.js` must not
+   exit 1 on the first `processing_failed` poll — a sibling draft/test of
+   the same version wins; fail-closed only after the wait window.
 5. Auto-Publish / Auto Publish workflows use `cancel-in-progress: false` on the
    publish concurrency group — cancelling mid-draft/promote causes orphan Athom
    builds and socket hang up races on the next upload.

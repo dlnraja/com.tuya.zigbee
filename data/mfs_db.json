@@ -127769,7 +127769,13 @@
       ],
       "modelIds": [],
       "deviceType": "unknown"
-    }
+    },
+    "_TZ3000_jjdkhueq": "wall_switch_2gang_1way",
+    "_tz3000_jjdkhueq": "wall_switch_2gang_1way",
+    "_TZ3000_ywubfuvt": "wall_switch_2gang_1way",
+    "_tz3000_ywubfuvt": "wall_switch_2gang_1way",
+    "_TZ3000_kgxej1dv": "wall_switch_2gang_1way",
+    "_tz3000_kgxej1dv": "wall_switch_2gang_1way"
   },
   "stats": {
     "totalEntries": 4314,
@@ -327259,7 +327265,7 @@
     "modelIdsCount": 1
   },
   "_TZ3000_jjdkhueq": {
-    "driverId": "switch_2gang",
+    "driverId": "wall_switch_2gang_1way",
     "source": "registry:novadigital-ts0002-jjdkhueq",
     "modelIds": [
       "TS0002"
@@ -327277,6 +327283,41 @@
     "source": "registry:lwthnp7j-zcl-4gang",
     "modelIds": [
       "TS0004"
+    ]
+  },
+  "_tz3000_jjdkhueq": {
+    "driverId": "wall_switch_2gang_1way",
+    "source": "registry:novadigital-ts0002-jjdkhueq",
+    "modelIds": [
+      "TS0002"
+    ]
+  },
+  "_TZ3000_ywubfuvt": {
+    "driverId": "wall_switch_2gang_1way",
+    "source": "registry:novadigital-ts0002-ywubfuvt",
+    "modelIds": [
+      "TS0002"
+    ]
+  },
+  "_tz3000_ywubfuvt": {
+    "driverId": "wall_switch_2gang_1way",
+    "source": "registry:novadigital-ts0002-ywubfuvt",
+    "modelIds": [
+      "TS0002"
+    ]
+  },
+  "_TZ3000_kgxej1dv": {
+    "driverId": "wall_switch_2gang_1way",
+    "source": "registry:novadigital-ts0002-kgxej1dv",
+    "modelIds": [
+      "TS0002"
+    ]
+  },
+  "_tz3000_kgxej1dv": {
+    "driverId": "wall_switch_2gang_1way",
+    "source": "registry:novadigital-ts0002-kgxej1dv",
+    "modelIds": [
+      "TS0002"
     ]
   }
 }

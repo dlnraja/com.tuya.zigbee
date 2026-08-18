@@ -112,9 +112,9 @@ const KNOWN_ROUTES = [
   },
   {
     id: 'jjdkhueq-switch2',
-    mfrs: ['_TZ3000_jjdkhueq'],
+    mfrs: ['_TZ3000_jjdkhueq', '_TZ3000_ywubfuvt', '_TZ3000_kgxej1dv'],
     pids: ['TS0002'],
-    driver: 'switch_2gang',
+    driver: 'wall_switch_2gang_1way',
   },
   {
     id: 'ok0ggpk7-switch3',

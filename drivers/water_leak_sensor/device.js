@@ -275,6 +275,30 @@ class WaterLeakSensorDevice extends UnifiedSensorBase {
     }, 'onNodeInit');
   }
 
+  /**
+   * WHY: after an app update the IAS listener is gone; after sleep Homey
+   * may still think the sensor is enrolled. Re-attach on every wake.
+   * Skip the Tuya dataQuery parent path for IAS-only units.
+   */
+  async onEndDeviceAnnounce() {
+    this.log('[WATER] wake/rejoin — re-attach IAS Zone listener');
+    try {
+      const iasManager = new IASZoneManager(this);
+      await iasManager.enrollIASZone();
+    } catch (err) {
+      this.log(`[WATER] IAS re-enroll on wake failed: ${err.message}`);
+    }
+    if (this._deviceProfile?.type === 'tuya_dp') {
+      if (typeof super.onEndDeviceAnnounce === 'function') {
+        await super.onEndDeviceAnnounce();
+      }
+      return;
+    }
+    try {
+      await this._forceInitialAlarmRead(this.zclNode);
+    } catch (_e) { /* sleepy read is best-effort */ }
+  }
+
   async _forceInitialAlarmRead(zclNode) {
     try {
       this.log('[WATER] Forcing initial alarm state read');

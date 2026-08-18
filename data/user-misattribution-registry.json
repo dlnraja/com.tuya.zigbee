@@ -528,11 +528,41 @@
       "id": "novadigital-ts0002-jjdkhueq",
       "mfr": ["_TZ3000_jjdkhueq", "_tz3000_jjdkhueq"],
       "productId": ["TS0002"],
-      "canonicalDriver": "switch_2gang",
-      "forbiddenDrivers": ["switch_1gang", "climate_sensor", "switch_3gang"],
+      "canonicalDriver": "wall_switch_2gang_1way",
+      "forbiddenDrivers": ["switch_1gang", "climate_sensor", "switch_3gang", "switch_2gang"],
       "protocol": "zcl",
       "retailNames": ["NovaDigital 2-gang", "Zemismart 2-gang"],
-      "notes": "Mains 2-gang TS0002. Do not steal onto 1-gang or climate catch-all.",
+      "notes": "Mains 2-gang TS0002. Pair as sub-devices (standard onoff per gang). Do not steal onto switch_2gang onoff.gang2 catch-all.",
+      "sources": ["z2m", "forum-140352-2173"],
+      "tracks": {
+        "master": { "static": true, "dynamic": true },
+        "stable": { "static": true, "dynamic": false }
+      }
+    },
+    {
+      "id": "novadigital-ts0002-ywubfuvt",
+      "mfr": ["_TZ3000_ywubfuvt", "_tz3000_ywubfuvt"],
+      "productId": ["TS0002"],
+      "canonicalDriver": "wall_switch_2gang_1way",
+      "forbiddenDrivers": ["switch_1gang", "climate_sensor", "switch_3gang", "switch_2gang"],
+      "protocol": "zcl",
+      "retailNames": ["NovaDigital 2-gang", "Zemismart 2-gang"],
+      "notes": "Mains 2-gang TS0002. Sub-device tiles (standard onoff per gang).",
+      "sources": ["z2m", "forum-140352-2173"],
+      "tracks": {
+        "master": { "static": true, "dynamic": true },
+        "stable": { "static": true, "dynamic": false }
+      }
+    },
+    {
+      "id": "novadigital-ts0002-kgxej1dv",
+      "mfr": ["_TZ3000_kgxej1dv", "_tz3000_kgxej1dv"],
+      "productId": ["TS0002"],
+      "canonicalDriver": "wall_switch_2gang_1way",
+      "forbiddenDrivers": ["switch_1gang", "climate_sensor", "switch_3gang", "switch_2gang"],
+      "protocol": "zcl",
+      "retailNames": ["NovaDigital 2-gang", "Zemismart 2-gang"],
+      "notes": "Mains 2-gang TS0002. Sub-device tiles (standard onoff per gang).",
       "sources": ["z2m", "forum-140352-2173"],
       "tracks": {
         "master": { "static": true, "dynamic": true },

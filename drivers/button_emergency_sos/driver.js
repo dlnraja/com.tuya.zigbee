@@ -46,8 +46,10 @@ class SosEmergencyButtonDriver extends ZigBeeDriver {
   async triggerSOS(device, tokens = {}, state = {}) {
     this.log('[FLOW] triggerSOS called for', device.getName());
 
-    // v5.5.833: Trigger flow card explicitly with source tokens
-    await this._triggerCard('button_emergency_sos_pressed', device, tokens, state);
+    // WHY: these cards declare no tokens. Passing { source } makes Homey
+    // reject the trigger ("invalid tokens") so Flows never fire.
+    await this._triggerCard('button_emergency_sos_pressed', device, {}, state);
+    await this._triggerCard('button_emergency_sos_physical_on', device, {}, state);
   }
 
   /**

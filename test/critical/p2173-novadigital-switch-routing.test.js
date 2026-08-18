@@ -26,10 +26,13 @@ function hasMfr(driver, mfr) {
 }
 
 describe('P2173 NovaDigital/Zemismart switch routing', () => {
-  it('routes 2-gang jjdkhueq onto switch_2gang only', () => {
-    assert.strictEqual(hasMfr('switch_2gang', '_TZ3000_jjdkhueq'), true);
+  it('routes 2-gang jjdkhueq onto wall_switch_2gang_1way (sub-device tiles)', () => {
+    assert.strictEqual(hasMfr('wall_switch_2gang_1way', '_TZ3000_jjdkhueq'), true);
+    assert.strictEqual(hasMfr('switch_2gang', '_TZ3000_jjdkhueq'), false);
     assert.strictEqual(hasMfr('switch_1gang', '_TZ3000_jjdkhueq'), false);
     assert.strictEqual(isForbiddenPlacement('_TZ3000_jjdkhueq', 'climate_sensor'), true);
+    assert.strictEqual(isForbiddenPlacement('_TZ3000_jjdkhueq', 'switch_2gang'), true);
+    assert.strictEqual(lookup('_TZ3000_jjdkhueq', 'TS0002').canonicalDriver, 'wall_switch_2gang_1way');
   });
 
   it('moves ok0ggpk7 / f09j9qjb / vjhcenzo onto switch_3gang', () => {

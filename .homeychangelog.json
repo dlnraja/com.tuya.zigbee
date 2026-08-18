@@ -2305,5 +2305,8 @@
   },
   "9.0.589": {
     "en": "App Settings shows a retractable Zigbee spider map of this app's devices, with last-seen and rejoin counts. Links use last-hop signal quality (Homey Pro 2023 has no neighbor table)."
+  },
+  "9.0.590": {
+    "en": "SOS and scene buttons fire Homey Flows on press. Two-gang wall switches get a separate tile per gang (rename, quick action, voice). Switch commands retry a missed ack after 350 ms. Water leak sensors stay enrolled after sleep."
   }
 }

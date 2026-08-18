@@ -97,7 +97,7 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
    * reaches flows through the driver's battery_low trigger.
    */
   async _ensureCapabilities() {
-    const caps = ['alarm_generic', 'measure_battery'];
+    const caps = ['alarm_generic', 'measure_battery', 'button.1'];
     for (const cap of caps) {
       if (!this.hasCapability(cap)) {
         await this.addCapability(cap).catch(() => { });
@@ -142,19 +142,22 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
           onPanic: () => this._fireAlarm({ source: 'iasAce-bound-panic' })
         });
         ep1.bind('iasAce', boundCluster);
+        if (typeof ep1.bind === 'function') {
+          try { ep1.bind('ssIasAce', boundCluster); } catch (_e) { /* name alias */ }
+        }
         this.log('[SOS] ✅ IasAceBoundCluster bound');
       } catch (e) {
         this.error('[SOS] IasAceBoundCluster bind failed:', e.message);
       }
     }
 
-    // Method 2: Explicit cluster listeners
-    const iasAce = ep1.clusters?.iasAce || ep1.clusters?.ssIasAce;
+    // Method 2: Explicit cluster listeners (iasAce + Z2M ssIasAce name)
+    const iasAce = ep1.clusters?.iasAce || ep1.clusters?.ssIasAce || ep1.clusters?.[0x0501] || ep1.clusters?.[1281];
     if (iasAce && typeof iasAce.on === 'function') {
       iasAce.on('command', (cmd, payload) => {
         this.log('[SOS] IAS ACE command:', cmd, payload);
         const cmdLower = (cmd || '').toString().toLowerCase();
-        if (['emergency', 'panic', 'fire', 'sos', '02', '03', '04'].includes(cmdLower)) {
+        if (['emergency', 'commandemergency', 'panic', 'commandpanic', 'fire', 'commandfire', 'sos', '02', '03', '04'].includes(cmdLower)) {
           this._fireAlarm({ source: 'iasAce-command', command: cmd });
         }
       });
