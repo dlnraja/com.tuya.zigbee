@@ -2307,6 +2307,6 @@
     "en": "App Settings shows a retractable Zigbee spider map of this app's devices, with last-seen and rejoin counts. Links use last-hop signal quality (Homey Pro 2023 has no neighbor table)."
   },
   "9.0.590": {
-    "en": "SOS and scene buttons fire Homey Flows on press. Two-gang wall switches get a separate tile per gang. ZCL multi-gang switches ignore leftover Tuya cluster so gangs do not cross-link after re-pair. Switch commands retry a missed ack after 350 ms. Water leak sensors stay enrolled after sleep."
+    "en": "SOS and scene buttons fire Homey Flows on press. Two-gang wall switches get a separate tile per gang. ZCL multi-gang switches ignore leftover Tuya cluster so gangs do not cross-link after re-pair. Switch commands retry a missed ack after 350 ms. Water leak sensors stay enrolled after sleep. Zemismart TB25 1/2/3/4/6-gang units stay on the matching switch driver."
   }
 }

@@ -52,8 +52,13 @@ function mock(mfr, modelId, clusters) {
   };
 }
 
-const hybrid = detectIntelligentProtocol(mock('_TZ3000_x', 'TS0001', { onOff: {}, tuya: {} }));
-if (hybrid.protocol === 'HYBRID' && hybrid.listenHybrid) ok('EF00+ZCL → HYBRID listen');
+const leftover = detectIntelligentProtocol(mock('_TZ3000_jjdkhueq', 'TS0002', { onOff: {}, tuya: {} }));
+if (leftover.protocol === 'zcl_only' && leftover.reason === 'ts000x_zcl_switch_ignore_leftover_ef00') {
+  ok('TS000x leftover EF00 → zcl_only (no gang bleed)');
+} else fail(`expected leftover zcl_only, got ${JSON.stringify(leftover)}`);
+
+const hybrid = detectIntelligentProtocol(mock('_TZE200_shkxsgis', 'TS0601', { onOff: {}, tuya: {} }));
+if (hybrid.protocol === 'HYBRID' && hybrid.listenHybrid) ok('MCU EF00+ZCL → HYBRID listen');
 else fail(`expected HYBRID, got ${JSON.stringify(hybrid.protocol)}`);
 
 const dp = detectIntelligentProtocol(mock('_TZE284_m1cvyneb', 'TS0601', { tuya: {} }));

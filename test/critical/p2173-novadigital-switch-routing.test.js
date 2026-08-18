@@ -79,6 +79,20 @@ describe('P2173 NovaDigital/Zemismart switch routing', () => {
     assert.strictEqual(lookup('_TZ3000_lwthnp7j', 'TS0004').canonicalDriver, 'switch_4gang');
   });
 
+  it('records TB25 retail aliases without inventing 606/808/ZMS-206 pids', () => {
+    const two = lookup('_TZ3000_jjdkhueq', 'TS0002');
+    assert.ok((two.retailNames || []).includes('Zemismart TB25-2'));
+    const four = lookup('_TZE200_shkxsgis', 'TS0601');
+    assert.ok((four.retailNames || []).includes('Zemismart TB25-4'));
+    const six = lookup('_TZE284_r731zlxk', 'TS0601');
+    assert.ok((six.retailNames || []).includes('Zemismart TB25-6'));
+    const one = lookup('_TZ3000_ovyaisip', 'TS0001');
+    assert.strictEqual(one.canonicalDriver, 'wall_switch_1gang_1way');
+    assert.ok((one.retailNames || []).includes('Zemismart TB25-1'));
+    const raw = fs.readFileSync(path.join(ROOT, 'data', 'user-misattribution-registry.json'), 'utf8');
+    assert.strictEqual(/ZMS-206/.test(raw) && /not locked/.test(raw), true);
+  });
+
   it('routes TS011F okaz9tjs / fgwhjm9j onto the metering plug', () => {
     assert.strictEqual(hasMfr('plug_energy_monitor', '_TZ3000_okaz9tjs'), true);
     assert.strictEqual(hasMfr('button_wireless_plug', '_TZ3000_okaz9tjs'), false);

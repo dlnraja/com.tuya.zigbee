@@ -525,15 +525,35 @@
       }
     },
     {
+      "id": "zemismart-ts0001-tb25-1",
+      "mfr": [
+        "_TZ3000_ovyaisip",
+        "_tz3000_ovyaisip",
+        "_TZ3000_pk8tgtdb",
+        "_tz3000_pk8tgtdb"
+      ],
+      "productId": ["TS0001"],
+      "canonicalDriver": "wall_switch_1gang_1way",
+      "forbiddenDrivers": ["switch_2gang", "switch_3gang", "climate_sensor"],
+      "protocol": "zcl",
+      "retailNames": ["Zemismart TB25-1", "NovaDigital 1-gang"],
+      "notes": "1-gang ZCL TS0001. Ignore leftover 0xEF00. Retail TB25-1 from field; do not invent pids for 606/808/ZMS-206.",
+      "sources": ["forum-140352-2173", "forum-140352-2182"],
+      "tracks": {
+        "master": { "static": true, "dynamic": true },
+        "stable": { "static": true, "dynamic": false }
+      }
+    },
+    {
       "id": "novadigital-ts0002-jjdkhueq",
       "mfr": ["_TZ3000_jjdkhueq", "_tz3000_jjdkhueq"],
       "productId": ["TS0002"],
       "canonicalDriver": "wall_switch_2gang_1way",
       "forbiddenDrivers": ["switch_1gang", "climate_sensor", "switch_3gang", "switch_2gang"],
       "protocol": "zcl",
-      "retailNames": ["NovaDigital 2-gang", "Zemismart 2-gang"],
+      "retailNames": ["NovaDigital 2-gang", "Zemismart 2-gang", "Zemismart TB25-2"],
       "notes": "Mains 2-gang TS0002. Pair as sub-devices (standard onoff per gang). Do not steal onto switch_2gang onoff.gang2 catch-all.",
-      "sources": ["z2m", "forum-140352-2173"],
+      "sources": ["z2m", "forum-140352-2173", "forum-140352-2182"],
       "tracks": {
         "master": { "static": true, "dynamic": true },
         "stable": { "static": true, "dynamic": false }
@@ -546,9 +566,9 @@
       "canonicalDriver": "wall_switch_2gang_1way",
       "forbiddenDrivers": ["switch_1gang", "climate_sensor", "switch_3gang", "switch_2gang"],
       "protocol": "zcl",
-      "retailNames": ["NovaDigital 2-gang", "Zemismart 2-gang"],
+      "retailNames": ["NovaDigital 2-gang", "Zemismart 2-gang", "Zemismart TB25-2"],
       "notes": "Mains 2-gang TS0002. Sub-device tiles (standard onoff per gang).",
-      "sources": ["z2m", "forum-140352-2173"],
+      "sources": ["z2m", "forum-140352-2173", "forum-140352-2182"],
       "tracks": {
         "master": { "static": true, "dynamic": true },
         "stable": { "static": true, "dynamic": false }
@@ -561,9 +581,9 @@
       "canonicalDriver": "wall_switch_2gang_1way",
       "forbiddenDrivers": ["switch_1gang", "climate_sensor", "switch_3gang", "switch_2gang"],
       "protocol": "zcl",
-      "retailNames": ["NovaDigital 2-gang", "Zemismart 2-gang"],
+      "retailNames": ["NovaDigital 2-gang", "Zemismart 2-gang", "Zemismart TB25-2"],
       "notes": "Mains 2-gang TS0002. Sub-device tiles (standard onoff per gang).",
-      "sources": ["z2m", "forum-140352-2173"],
+      "sources": ["z2m", "forum-140352-2173", "forum-140352-2182"],
       "tracks": {
         "master": { "static": true, "dynamic": true },
         "stable": { "static": true, "dynamic": false }
@@ -576,9 +596,9 @@
       "canonicalDriver": "switch_3gang",
       "forbiddenDrivers": ["switch_1gang", "climate_sensor", "switch_2gang", "switch_2_gang", "generic_tuya"],
       "protocol": "zcl",
-      "retailNames": ["NovaDigital NFZB-03"],
-      "notes": "Z2M sibling of _TZ3000_fawk5xjv. switch_1gang also lists TS0003 so this mfr must not live there.",
-      "sources": ["z2m-28204", "forum-140352-2173"],
+      "retailNames": ["NovaDigital NFZB-03", "Zemismart TB25-3"],
+      "notes": "Z2M sibling of _TZ3000_fawk5xjv. switch_1gang also lists TS0003 so this mfr must not live there. Retail TB25-n from field; 606/808/ZMS-206 SKUs not locked until mfr+pid confirmed.",
+      "sources": ["z2m-28204", "forum-140352-2173", "forum-140352-2182"],
       "tracks": {
         "master": { "static": true, "dynamic": true },
         "stable": { "static": true, "dynamic": false }
@@ -591,8 +611,9 @@
       "canonicalDriver": "switch_3gang",
       "forbiddenDrivers": ["switch_2_gang", "switch_2gang", "climate_sensor", "switch_1gang"],
       "protocol": "zcl",
+      "retailNames": ["Zemismart TB25-3"],
       "notes": "3-gang ZCL. Climate compose lists TS0601 so this mfr on climate would steal pairing.",
-      "sources": ["forum-140352-2173"],
+      "sources": ["forum-140352-2173", "forum-140352-2182"],
       "tracks": {
         "master": { "static": true, "dynamic": true },
         "stable": { "static": true, "dynamic": false }
@@ -605,8 +626,9 @@
       "canonicalDriver": "switch_3gang",
       "forbiddenDrivers": ["climate_sensor", "switch_1gang", "switch_2gang"],
       "protocol": "zcl",
+      "retailNames": ["Zemismart TB25-3"],
       "notes": "3-gang ZCL, not a climate sensor.",
-      "sources": ["forum-140352-2173"],
+      "sources": ["forum-140352-2173", "forum-140352-2182"],
       "tracks": {
         "master": { "static": true, "dynamic": true },
         "stable": { "static": true, "dynamic": false }
@@ -624,7 +646,7 @@
       "canonicalDriver": "wall_switch_4_gang_tuya",
       "forbiddenDrivers": ["climate_sensor", "din_rail_meter", "switch_4gang"],
       "protocol": "tuya_ef00",
-      "retailNames": ["NovaDigital TB26-4"],
+      "retailNames": ["NovaDigital TB26-4", "Zemismart TB25-4"],
       "notes": "4-gang MCU DP1-4. climate_sensor also declares TS0601.",
       "sources": ["z2m-herdsman-7133", "forum-140352-2173"],
       "tracks": {
@@ -646,8 +668,9 @@
       "canonicalDriver": "wall_switch_4_gang_tuya",
       "forbiddenDrivers": ["climate_sensor", "din_rail_meter", "switch_4gang"],
       "protocol": "tuya_ef00",
+      "retailNames": ["Zemismart TB25-4", "Zemismart TB26-4"],
       "notes": "4-gang MCU DP1-4. din_rail_meter previously stole the TZE204 sibling.",
-      "sources": ["forum-140352-2173"],
+      "sources": ["forum-140352-2173", "forum-140352-2182"],
       "tracks": {
         "master": { "static": true, "dynamic": true },
         "stable": { "static": true, "dynamic": false }
@@ -667,9 +690,9 @@
       "canonicalDriver": "wall_switch_6_gang_tuya",
       "forbiddenDrivers": ["climate_sensor", "switch_wall_6gang"],
       "protocol": "tuya_ef00",
-      "retailNames": ["Zemismart TB26-6"],
+      "retailNames": ["Zemismart TB25-6", "Zemismart TB26-6"],
       "notes": "6-gang MCU DP1-6 + DP14 power-on. climate_sensor also declares TS0601.",
-      "sources": ["z2m-11975", "forum-140352-2173"],
+      "sources": ["z2m-11975", "forum-140352-2173", "forum-140352-2182"],
       "tracks": {
         "master": { "static": true, "dynamic": true },
         "stable": { "static": true, "dynamic": false }
