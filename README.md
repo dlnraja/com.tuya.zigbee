@@ -33,7 +33,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.586 |
+| **App Version** | v9.0.587 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,371 |
 | **Pairing Variants** | 16,604 (4 case combos per fingerprint) |
@@ -45,7 +45,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **SVG Icons** | 731 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
-| **Last Updated** | 2026-08-17 |
+| **Last Updated** | 2026-08-18 |
 
 ### Top 20 Drivers by Fingerprint Count
 
@@ -102,6 +102,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.587** | Garage openers, dual outlets, Wing contacts and HOBEIAN USB switches keep the correct driver. Curtain motors that ignore position writes … |
 | **v9.0.586** | Garage openers, dual outlets, Wing contacts and HOBEIAN USB switches keep the correct driver. Curtain motors that ignore position writes … |
 | **v9.0.585** | Wall dimmers keep the correct driver fingerprint, clamp brightness so the MCU does not reboot, and strip phantom battery after a wrong cl… |
 | **v9.0.584** | Wall dimmers keep the correct driver fingerprint, clamp brightness so the MCU does not reboot, and strip phantom battery after a wrong cl… |
@@ -113,7 +114,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.578** | Pairing no longer treats the Zigbee Green Power endpoint as an extra gang, so 2-gang switches and button remotes keep the right driver af… |
 | **v9.0.577** | Multi-gang Tuya switches keep per-relay control after a power cut or re-pair, and silent Tuya MCU wall switches stay reachable. |
 | **v9.0.576** | Stopped multi-gang switches from toggling the wrong relay after a re-pair; commands stay on their own endpoint and unused Tuya DP is not … |
-| **v9.0.575** | After a power cut, ZCL switches keep the Homey backlight and power-on settings instead of trusting the boot dump. |
 
 <!-- CHANGELOG_END -->
 
