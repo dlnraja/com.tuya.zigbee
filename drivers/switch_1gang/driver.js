@@ -97,8 +97,9 @@ async onInit() {
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
-          // Generic action handler
-          this.log('[FLOW] Action switch_1gang_set_countdown triggered for', args.device.getName());
+          if (typeof args.device.setCountdown === 'function') {
+            await args.device.setCountdown(1, args.seconds).catch(() => {});
+          }
           return true;
         });
       }
@@ -109,8 +110,10 @@ async onInit() {
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
-          // Generic action handler
-          this.log('[FLOW] Action switch_1gang_set_child_lock triggered for', args.device.getName());
+          const enabled = args.enabled === true || args.enabled === 'true' || args.enabled === 1;
+          if (typeof args.device.setChildLock === 'function') {
+            await args.device.setChildLock(enabled).catch(() => {});
+          }
           return true;
         });
       }
