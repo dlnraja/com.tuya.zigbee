@@ -25,7 +25,7 @@ A **(mfr, pid)** pair = the canonical identity of a Zigbee device.
 - mfr alone is ambiguous (one mfr can map to multiple devices).
 - pid alone is ambiguous (one pid is shared by many vendors).
 - The pair is unique. Cross-reference all sources on this pair, not on individual fields.
-- **Every prompt:** look up `docs/knowledge/DEVICE_TRUTH.md` + `docs/knowledge/device-truth.json` (431 drivers, 1-by-1) then confirm compose + `data/user-misattribution-registry.json`.
+- **Every prompt:** look up `docs/knowledge/DEVICE_TRUTH.md` + `docs/knowledge/device-truth.json` (431 drivers, 1-by-1) + `docs/knowledge/PECULIARITIES.md` then confirm compose + `data/user-misattribution-registry.json`.
 
 ## Stable vs Master Discipline
 

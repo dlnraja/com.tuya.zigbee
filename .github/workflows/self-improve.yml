@@ -99,6 +99,7 @@ jobs:
         run: |
           node tools/ci/generate-docs-index.js || true
           node tools/ci/build-device-truth.js || true
+          node tools/ci/investigate-device-peculiarities.js || true
           node .github/scripts/generate-script-registry.js || true
           node .github/scripts/generate-readme.js || true
 

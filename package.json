@@ -161,6 +161,7 @@
     "forum:pm": "node tools/ci/forum-pm-read-only.js",
     "forum:media": "node tools/ci/forum-media-deep-scan.js --max=40",
     "knowledge:devices": "node tools/ci/build-device-truth.js",
+    "knowledge:peculiarities": "node tools/ci/investigate-device-peculiarities.js",
     "check:forum-ai-paste": "node tools/ci/forum-ai-paste-gate.js --scan-defaults",
     "check:flow-dups": "node tools/ci/flow-card-dup-gate.js",
     "check:bare-zigbee:update": "node tools/ci/lint-bare-zigbee-device.js --update-baseline",

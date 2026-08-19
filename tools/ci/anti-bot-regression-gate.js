@@ -122,6 +122,51 @@ const FORBIDDEN = [
     mfrs: ['_TZE284_m1cvyneb', '_TZE204_m1cvyneb', '_TZE200_m1cvyneb'],
   },
   {
+    id: 'p218-k4ej3ww2-not-gas',
+    driver: 'gas_sensor_switch',
+    mfrs: ['_TZ3000_k4ej3ww2'],
+  },
+  {
+    id: 'p218-k4ej3ww2-not-rain',
+    driver: 'rain_sensor',
+    mfrs: ['_TZ3000_k4ej3ww2'],
+  },
+  {
+    id: 'p218-k4ej3ww2-not-tuya-water',
+    driver: 'water_leak_sensor_tuya',
+    mfrs: ['_TZ3000_k4ej3ww2'],
+  },
+  {
+    id: 'p218-k4ej3ww2-not-repeater',
+    driver: 'zigbee_repeater',
+    mfrs: ['_TZ3000_k4ej3ww2'],
+  },
+  {
+    id: 'p218-k4ej3ww2-not-contact',
+    driver: 'contact_sensor',
+    mfrs: ['_TZ3000_k4ej3ww2'],
+  },
+  {
+    id: 'p218-5k5vh43t-not-water',
+    driver: 'water_leak_sensor',
+    mfrs: ['_TZ3000_5k5vh43t'],
+  },
+  {
+    id: 'p218-7fiyo3kv-not-1gang',
+    driver: 'switch_1gang',
+    mfrs: ['_TZ3218_7fiyo3kv', '_TZ3218_ya5d6wth'],
+  },
+  {
+    id: 'p218-okaz9tjs-not-climate',
+    driver: 'climate_sensor',
+    mfrs: ['_TZ3000_okaz9tjs', '_TZ3210_fgwhjm9j'],
+  },
+  {
+    id: 'p218-2imwyigp-not-contact',
+    driver: 'contact_sensor',
+    mfrs: ['_TZE200_2imwyigp', '_TZE204_2imwyigp'],
+  },
+  {
     id: 'p94-imaccztn-not-generic',
     driver: 'generic_tuya',
     mfrs: ['_TZ3210_imaccztn'],
@@ -458,6 +503,26 @@ const REQUIRED = [
     id: 'p138-nt4pquef-soil',
     driver: 'soil_sensor',
     mfrs: ['_TZE284_nt4pquef'],
+  },
+  {
+    id: 'p218-k4ej3ww2-water-ias',
+    driver: 'water_leak_sensor',
+    mfrs: ['_TZ3000_k4ej3ww2'],
+  },
+  {
+    id: 'p218-5k5vh43t-repeater',
+    driver: 'zigbee_repeater',
+    mfrs: ['_TZ3000_5k5vh43t'],
+  },
+  {
+    id: 'p218-7fiyo3kv-switch-temp',
+    driver: 'switch_temp_sensor',
+    mfrs: ['_TZ3218_7fiyo3kv', '_TZ3218_ya5d6wth'],
+  },
+  {
+    id: 'p218-okaz9tjs-metering-plug',
+    driver: 'plug_energy_monitor',
+    mfrs: ['_TZ3000_okaz9tjs'],
   },
   {
     id: 'p98-u6x1zyv2-rain',

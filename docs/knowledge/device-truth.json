@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-19T01:09:55.055Z",
+  "generatedAt": "2026-08-19T08:02:55.876Z",
   "source": "tools/ci/build-device-truth.js",
   "doctrine": "Fingerprint = manufacturerName + productId. Never invent a pid. Never POST on Homey forum.",
   "driverCount": 431,
@@ -16,6 +16,7 @@
     "docs/rules/DUAL_APP_VISION.md",
     "docs/rules/FORUM_SILENT_HUMANIZE.md",
     "data/user-misattribution-registry.json",
+    "docs/knowledge/PECULIARITIES.md",
     "drivers/<id>/driver.compose.json",
     ".cursor/rules/device-truth.mdc"
   ],
@@ -2499,11 +2500,10 @@
         "DoorWindow-Sensor-ZB3.0",
         "MCT-340 E",
         "Excellux",
-        "TS0207",
         "TY0203",
         "q9mpfhw"
       ],
-      "manufacturerCount": 47,
+      "manufacturerCount": 43,
       "manufacturersSample": [
         "WING",
         "wing",
@@ -2711,8 +2711,6 @@
         "TS0115",
         "TS011F",
         "TS0203",
-        "TS0207",
-        "TS0601",
         "TY0203",
         "ZG-102Z",
         "ZG-102ZL",
@@ -6077,7 +6075,6 @@
         "TS0111",
         "TS011F",
         "TS0203",
-        "TS0207",
         "TS0601",
         "TS0601_generic",
         "TS0603",
@@ -8283,7 +8280,7 @@
             "climate_sensor"
           ],
           "protocol": "zcl",
-          "notes": "Metering TS011F plug, not a wireless button."
+          "notes": "Metering TS011F plug (Z2M TS011F_plug_3). Firmware 1.0.5+ disabled auto electrical reports — poll voltage/current/power. Not a wireless button. Pid TS011F is also DIN/strip/double-outlet — lock this couple."
         },
         {
           "caseId": "fgwhjm9j-ts011f-metering-plug",
@@ -8300,12 +8297,13 @@
             "button_wireless_plug"
           ],
           "protocol": "zcl",
-          "notes": "TZ3210 TS011F metering plug, not a climate sensor."
+          "notes": "TZ3210 TS011F metering plug sibling of okaz9tjs. ZCL electrical+metering; not climate. Pid TS011F is ambiguous without mfr."
         }
       ],
       "peculiarities": [
-        "Metering TS011F plug, not a wireless button.",
-        "TZ3210 TS011F metering plug, not a climate sensor."
+        "okaz9tjs TS011F_plug_3: fw 1.0.5+ needs electrical poll; pid TS011F is also DIN/strip/double-outlet",
+        "Metering TS011F plug (Z2M TS011F_plug_3). Firmware 1.0.5+ disabled auto electrical reports — poll voltage/current/power. Not a wireless button. Pid TS011F is also DIN/strip/double-outlet — lock this couple.",
+        "TZ3210 TS011F metering plug sibling of okaz9tjs. ZCL electrical+metering; not climate. Pid TS011F is ambiguous without mfr."
       ]
     },
     "plug_smart": {
@@ -8693,11 +8691,11 @@
             "air_purifier_presence"
           ],
           "protocol": "tuya_ef00",
-          "notes": "MTG235-ZB-RL mmWave + relay — presence_sensor_radar only (GH #420)."
+          "notes": "MTG235-ZB-RL mmWave + relay — presence_sensor_radar only (GH#420, Z2M#18677 sbyx0lm6 family). Mains. Never climate or PIR motion."
         }
       ],
       "peculiarities": [
-        "MTG235-ZB-RL mmWave + relay — presence_sensor_radar only (GH #420)."
+        "MTG235-ZB-RL mmWave + relay — presence_sensor_radar only (GH#420, Z2M#18677 sbyx0lm6 family). Mains. Never climate or PIR motion."
       ]
     },
     "radar_sensor": {
@@ -12125,11 +12123,11 @@
             "climate_sensor"
           ],
           "protocol": "zcl",
-          "notes": "4-outlet + USB strip. Same mfr must not pair as a 2-button remote."
+          "notes": "4-outlet + USB strip. Same mfr must not pair as a 2-button remote. Compound lock _TZ3000_cfnprab5|TS011F."
         }
       ],
       "peculiarities": [
-        "4-outlet + USB strip. Same mfr must not pair as a 2-button remote."
+        "4-outlet + USB strip. Same mfr must not pair as a 2-button remote. Compound lock _TZ3000_cfnprab5|TS011F."
       ]
     },
     "socket_power_strip_four_two": {
@@ -12262,7 +12260,7 @@
             "air_purifier_soil"
           ],
           "protocol": "tuya_ef00",
-          "notes": "Soil moisture — not climate LCD. DP mapping per P141."
+          "notes": "Soil moisture MCU — not climate LCD. Z2M SGS02Z/SG502Z are retail labels; pid stays TS0601. DPs: 2=light enum (not moisture), 3=soil %, 5=temp/10, 9=unit, 15=battery. Interview may show 0xED00 — do not compose it. ZHA#4707 / herdsman#10315."
         },
         {
           "caseId": "hobeian-zg303z-soil",
@@ -12283,12 +12281,13 @@
             "soilsensor_2"
           ],
           "protocol": "tuya_ef00",
-          "notes": "HOBEIAN ZG-303Z / _TZE200_wqashyqo soil. Bare HOBEIAN brand stripped from non-ZG drivers (P179). nt4pquef stays on soil-nt4pquef."
+          "notes": "HOBEIAN ZG-303Z / _TZE200_wqashyqo soil. Lock HOBEIAN|ZG-303Z and wqashyqo|TS0601 only — never HOBEIAN|TS0601 (other HOBEIAN TS0601 exist). nt4pquef stays on soil-nt4pquef."
         }
       ],
       "peculiarities": [
-        "Soil moisture — not climate LCD. DP mapping per P141.",
-        "HOBEIAN ZG-303Z / _TZE200_wqashyqo soil. Bare HOBEIAN brand stripped from non-ZG drivers (P179). nt4pquef stays on soil-nt4pquef."
+        "nt4pquef+TS0601: DP2 light enum (not moisture), DP3 soil %, DP5 temp/10; do not compose 0xED00",
+        "Soil moisture MCU — not climate LCD. Z2M SGS02Z/SG502Z are retail labels; pid stays TS0601. DPs: 2=light enum (not moisture), 3=soil %, 5=temp/10, 9=unit, 15=battery. Interview may show 0xED00 — do not compose it. ZHA#4707 / herdsman#10315.",
+        "HOBEIAN ZG-303Z / _TZE200_wqashyqo soil. Lock HOBEIAN|ZG-303Z and wqashyqo|TS0601 only — never HOBEIAN|TS0601 (other HOBEIAN TS0601 exist). nt4pquef stays on soil-nt4pquef."
       ]
     },
     "soil_sensor_ec": {
@@ -12701,7 +12700,7 @@
             "wall_dimmer_tuya"
           ],
           "protocol": "zcl",
-          "notes": "Kanbros #2130 — ZCL-only 2-gang; no EF00 / no metering phantoms."
+          "notes": "Kanbros #2130 — ZCL-only 2-gang; leftover 0xEF00 is not MCU; no metering phantoms. BSEED zcl_only family."
         },
         {
           "caseId": "p217-hobeian-zg305z-usb-2gang",
@@ -12721,7 +12720,7 @@
         }
       ],
       "peculiarities": [
-        "Kanbros #2130 — ZCL-only 2-gang; no EF00 / no metering phantoms.",
+        "Kanbros #2130 — ZCL-only 2-gang; leftover 0xEF00 is not MCU; no metering phantoms. BSEED zcl_only family.",
         "HOBEIAN ZG-305Z MHCOZY dual USB-C switch (JohanBendz PR #1435). Unique pid avoids TS0601 cartesian with other HOBEIAN sensors."
       ]
     },
@@ -13138,6 +13137,7 @@
         }
       ],
       "peculiarities": [
+        "7fiyo3kv/ya5d6wth + TS000F hybrid: ZCL onoff + EF00 DP102 temp/10; re-pair if 1-gang",
         "Mains 1-gang switch with DS18B20 probe (ZCL onoff + EF00 DP102). Pairing as switch_1gang hid temperature."
       ]
     },
@@ -14546,13 +14546,13 @@
             "ir_blaster"
           ],
           "protocol": "tuya_ef00",
-          "notes": "BSEED Click 1-gang EF00 dimmer insert. Stale climate pairing cannot be swapped at runtime — remove and re-add as wall dimmer."
+          "notes": "BSEED Click 1-gang EF00 dimmer insert. MCU brightness 0-1000 (never write >1000, Z2M#32305). Stale climate pairing cannot be swapped at runtime — remove and re-add as wall dimmer. Couple is TS0601 only; do not invent TS0201."
         }
       ],
       "peculiarities": [
         "MCU brightness 0–1000 via TuyaBrightnessScale; never write >1000",
         "Sacred couple _TZE284_m1cvyneb+TS0601 only; forbid climate/soil/universal",
-        "BSEED Click 1-gang EF00 dimmer insert. Stale climate pairing cannot be swapped at runtime — remove and re-add as wall dimmer."
+        "BSEED Click 1-gang EF00 dimmer insert. MCU brightness 0-1000 (never write >1000, Z2M#32305). Stale climate pairing cannot be swapped at runtime — remove and re-add as wall dimmer. Couple is TS0601 only; do not invent TS0201."
       ]
     },
     "wall_remote_1_gang": {
@@ -15458,12 +15458,12 @@
             "switch_4gang"
           ],
           "protocol": "zcl",
-          "notes": "ZCL 4-gang (not EF00 TS0601)."
+          "notes": "ZCL 4-gang TB25-4 (not EF00 TS0601). Sub-device tiles. Do not invent 606/808/ZMS-206 pids."
         }
       ],
       "peculiarities": [
         "Sub-device tiles; EP1-only backlight/mode; leftover 0xEF00 is zcl_only",
-        "ZCL 4-gang (not EF00 TS0601)."
+        "ZCL 4-gang TB25-4 (not EF00 TS0601). Sub-device tiles. Do not invent 606/808/ZMS-206 pids."
       ]
     },
     "wall_switch_5_gang_tuya": {
@@ -15748,12 +15748,13 @@
             "air_purifier_soil"
           ],
           "protocol": "ias_zone",
-          "notes": "Never EF00/Tuya-DP water driver. modelId is always TS0207; ZG-222ZA is retail label. Removed from water_leak_sensor_tuya (P144) and gas_sensor productId abuse (P143)."
+          "notes": "Never EF00/Tuya-DP water driver. modelId is always TS0207; ZG-222ZA/IH-K665/IH-1218 are retail labels. Sleepy IAS 1280 reports on wet/dry only (Z2M#17685/#19308). Same pid TS0207 is a mains repeater for 5k5vh43t — lock the couple. Removed from water_leak_sensor_tuya (P144) and gas_sensor productId abuse (P143)."
         }
       ],
       "peculiarities": [
         "Sleepy IAS: enroll on wake, no boot poll storm, no leftover EF00 TX",
-        "Never EF00/Tuya-DP water driver. modelId is always TS0207; ZG-222ZA is retail label. Removed from water_leak_sensor_tuya (P144) and gas_sensor productId abuse (P143)."
+        "TS0207 pid is shared with mains repeaters — lock k4ej3ww2 IAS, never rain/repeater default",
+        "Never EF00/Tuya-DP water driver. modelId is always TS0207; ZG-222ZA/IH-K665/IH-1218 are retail labels. Sleepy IAS 1280 reports on wet/dry only (Z2M#17685/#19308). Same pid TS0207 is a mains repeater for 5k5vh43t — lock the couple. Removed from water_leak_sensor_tuya (P144) and gas_sensor productId abuse (P143)."
       ]
     },
     "water_leak_sensor_tuya": {
@@ -17090,6 +17091,7 @@
         }
       ],
       "peculiarities": [
+        "TS0207_repeater family (5k5vh43t) — no IAS, not water leak",
         "z2m TS0207_repeater — a range extender with no IAS zone and no motion capability."
       ]
     }

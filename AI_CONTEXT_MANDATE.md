@@ -7,7 +7,7 @@
 >
 > **MANDATORY DIAGNOSTIC SAFETY STEP**: Any task involving Gmail crash logs, Homey dashboard diagnostics, forum/GitHub notification emails, or generated diagnostic artifacts must also follow [DIAGNOSTIC_HISTORY_RULES.md](docs/rules/DIAGNOSTIC_HISTORY_RULES.md) before collecting, summarizing, committing, or publishing results.
 >
-> **MANDATORY DEVICE TRUTH STEP**: Read [docs/knowledge/DEVICE_TRUTH.md](docs/knowledge/DEVICE_TRUTH.md) then look up the relevant driver in [docs/knowledge/device-truth.json](docs/knowledge/device-truth.json) (431 drivers, 1-by-1). Lock **manufacturerName + productId**. Never invent a pid. **Publish** = Homey App Store; **do not post** = no Homey Community / PM replies.
+> **MANDATORY DEVICE TRUTH STEP**: Read [docs/knowledge/DEVICE_TRUTH.md](docs/knowledge/DEVICE_TRUTH.md) then look up the relevant driver in [docs/knowledge/device-truth.json](docs/knowledge/device-truth.json) (431 drivers, 1-by-1). For DP/cluster/source notes per couple, read [docs/knowledge/PECULIARITIES.md](docs/knowledge/PECULIARITIES.md). Lock **manufacturerName + productId**. Never invent a pid. **Publish** = Homey App Store; **do not post** = no Homey Community / PM replies.
 >
 > **MANDATORY V9.0.39 UPDATE**: This mandate includes all v8.5.0–v9.0.39 consolidations (Gmail IMAP optimizations, workflow speedups, `_destroyed` guard, `safeSetCapabilityValue()`, UnifiedBatteryHandler, Smart Divisor Manager, new mmWave presence and soil sensor integrations) validated as of 15/06/2026. See section 9 for the complete changelog.
 

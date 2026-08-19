@@ -114,6 +114,21 @@ function main() {
     if (id === 'button_emergency_sos' || id === 'water_leak_sensor' || id === 'contact_sensor') {
       peculiarities.push('Sleepy IAS: enroll on wake, no boot poll storm, no leftover EF00 TX');
     }
+    if (id === 'water_leak_sensor') {
+      peculiarities.push('TS0207 pid is shared with mains repeaters — lock k4ej3ww2 IAS, never rain/repeater default');
+    }
+    if (id === 'soil_sensor') {
+      peculiarities.push('nt4pquef+TS0601: DP2 light enum (not moisture), DP3 soil %, DP5 temp/10; do not compose 0xED00');
+    }
+    if (id === 'plug_energy_monitor') {
+      peculiarities.push('okaz9tjs TS011F_plug_3: fw 1.0.5+ needs electrical poll; pid TS011F is also DIN/strip/double-outlet');
+    }
+    if (id === 'switch_temp_sensor') {
+      peculiarities.push('7fiyo3kv/ya5d6wth + TS000F hybrid: ZCL onoff + EF00 DP102 temp/10; re-pair if 1-gang');
+    }
+    if (id === 'zigbee_repeater') {
+      peculiarities.push('TS0207_repeater family (5k5vh43t) — no IAS, not water leak');
+    }
     if (/wall_switch_\dgang/.test(id)) {
       peculiarities.push('Sub-device tiles; EP1-only backlight/mode; leftover 0xEF00 is zcl_only');
     }
@@ -164,6 +179,7 @@ function main() {
       'docs/rules/DUAL_APP_VISION.md',
       'docs/rules/FORUM_SILENT_HUMANIZE.md',
       'data/user-misattribution-registry.json',
+      'docs/knowledge/PECULIARITIES.md',
       'drivers/<id>/driver.compose.json',
       '.cursor/rules/device-truth.mdc',
     ],

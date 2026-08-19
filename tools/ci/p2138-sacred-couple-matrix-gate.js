@@ -9,7 +9,7 @@
  * 2. One MFS can map to many PIDs / variants — refuse wrong-PID catalog force.
  * 3. BSEED Click wall dimmer lock: *_m1cvyneb + TS0601 → wall_dimmer_tuya only.
  * 4. Same MFS + unknown/wrong PID (e.g. TS0201) → null (no climate invent).
- * 5. PRODUCT_ID_DEFAULTS.TS0201 must not invent a driver.
+ * 5. PRODUCT_ID_DEFAULTS.TS0201 / TS0207 / TS011F must not invent a driver.
  * 6. Brightness scale helper must clamp 0–1000 (lib/tuya/TuyaBrightnessScale.js).
  * 7. Anti-bot forbidden drivers for m1cvyneb must stay listed.
  *
@@ -106,6 +106,27 @@ try {
     ok('PRODUCT_ID_DEFAULTS.TS0201.driver === null (no invent)');
   } else {
     fail('PRODUCT_ID_DEFAULTS.TS0201 must set driver: null');
+  }
+  if (/'TS0207':\s*\{[^}]*driver:\s*null/.test(src)) {
+    ok('PRODUCT_ID_DEFAULTS.TS0207.driver === null (water vs repeater vs rain)');
+  } else {
+    fail('PRODUCT_ID_DEFAULTS.TS0207 must set driver: null (ambiguous pid)');
+  }
+  if (/'TS011F':\s*\{[^}]*driver:\s*null/.test(src)) {
+    ok('PRODUCT_ID_DEFAULTS.TS011F.driver === null (plug vs DIN vs strip)');
+  } else {
+    fail('PRODUCT_ID_DEFAULTS.TS011F must set driver: null (ambiguous pid)');
+  }
+  const compoundHits = [
+    ['_TZ3000_k4ej3ww2', 'TS0207', 'water_leak_sensor'],
+    ['_TZ3000_5k5vh43t', 'TS0207', 'zigbee_repeater'],
+    ['_TZ3000_okaz9tjs', 'TS011F', 'plug_energy_monitor'],
+    ['_TZE284_nt4pquef', 'TS0601', 'soil_sensor'],
+  ];
+  for (const [mfr, pid, driver] of compoundHits) {
+    const hit = DeviceFingerprintDB.lookup(mfr, pid);
+    if (hit && hit.driver === driver) ok(`compound ${mfr}+${pid} → ${driver}`);
+    else fail(`compound ${mfr}+${pid} expected ${driver}, got ${JSON.stringify(hit && hit.driver)}`);
   }
 } catch (e) {
   fail(`read DeviceFingerprintDB: ${e.message}`);
