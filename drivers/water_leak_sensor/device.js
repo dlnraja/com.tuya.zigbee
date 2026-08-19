@@ -6,6 +6,8 @@ const { boolean } = require('../../lib/converters/ValueConverterRegistry');
 const IASAlarmFallback = require('../../lib/IASAlarmFallback');
 const IASZoneManager = require('../../lib/managers/IASZoneManager');
 const { getModelId, getManufacturer } = require('../../lib/helpers/DeviceDataHelper');
+const { safeSetTimeout, safeClearTimeout } = require('../../lib/utils/safe-timers');
+const BootBudget = require('../../lib/performance/BootBudget');
 
 /**
  * Water leak sensor — IAS Zone (TS0207) + selective Tuya DP (TS0601) profiles.
@@ -269,6 +271,7 @@ class WaterLeakSensorDevice extends UnifiedSensorBase {
    * Skip the Tuya dataQuery parent path for IAS-only units.
    */
   async onEndDeviceAnnounce() {
+    BootBudget.markRadioActivity(this);
     this.log('[WATER] wake/rejoin — re-attach IAS Zone listener');
     try {
       if (typeof this._reattachIasOnWake === 'function') {
@@ -290,9 +293,14 @@ class WaterLeakSensorDevice extends UnifiedSensorBase {
       await this._forceInitialAlarmRead(this.zclNode);
     } catch (_e) { /* sleepy read is best-effort */ }
     if (this._secondaryAlarmReadTimer) {
-      try { this.homey.clearTimeout(this._secondaryAlarmReadTimer); } catch (_e) { /* ignore */ }
+      safeClearTimeout(this, this._secondaryAlarmReadTimer);
+      this._secondaryAlarmReadTimer = null;
     }
-    this._secondaryAlarmReadTimer = this.homey.setTimeout(async () => {
+    if (!BootBudget.shouldTxSleepy(this)) {
+      this.log('[WATER] skip delayed IAS read (heap critical or not in awake window)');
+      return;
+    }
+    this._secondaryAlarmReadTimer = safeSetTimeout(this, async () => {
       this._secondaryAlarmReadTimer = null;
       if (this._destroyed) {return;}
       try {
