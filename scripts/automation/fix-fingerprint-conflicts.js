@@ -30,6 +30,7 @@ const DRY_RUN = process.argv.includes('--dry-run');
 const REPORT_ONLY = process.argv.includes('--report-only');
 const JSON_OUTPUT = process.argv.includes('--json');
 const PREDICTIVE = process.argv.includes('--predictive') || JSON_OUTPUT;
+const SOFT_EXIT = process.argv.includes('--soft-exit');
 const DDIR = DRIVERS_DIR;
 
 // Device category mapping for conflict resolution priority
@@ -963,7 +964,7 @@ function main() {
     unresolved,
     dryRun: DRY_RUN,
     health: predictiveOutput,
-    exitCode: (remainingConflicts > 0 && !DRY_RUN) ? 1 : 0,
+    exitCode: (remainingConflicts > 0 && !DRY_RUN && !SOFT_EXIT) ? 1 : 0,
   };
   const statePath = path.join(__dirname, '..', '..', '.github', 'state', 'conflict-fix-report.json');
   try {
@@ -1010,7 +1011,7 @@ function main() {
     console.log('='.repeat(60));
   }
 
-  process.exit((remainingConflicts > 0 && !DRY_RUN && !REPORT_ONLY) ? 1 : 0);
+  process.exit((remainingConflicts > 0 && !DRY_RUN && !REPORT_ONLY && !SOFT_EXIT) ? 1 : 0);
 }
 
 if (require.main === module) {
