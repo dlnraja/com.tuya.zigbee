@@ -183,23 +183,55 @@ async function pollBuildState(api, token, buildId, { timeoutMs = 180000, interva
   const id = String(buildId);
   const deadline = Date.now() + timeoutMs;
   let last = null;
+  // Transient error patterns from Athom API (socket hang up, ECONNRESET, 429, 5xx)
+  const TRANSIENT_RE = /socket hang up|econnreset|econnaborted|etimedout|too many requests|fetch failed|network|502|503|504/i;
+  let consecutiveTransient = 0;
+  const MAX_TRANSIENT_RETRIES = 6; // up to 6 consecutive transient errors before giving up
   while (Date.now() < deadline) {
-    const b = await api.getBuild({
-      $token: token,
-      $timeout: API_TIMEOUT_MS,
-      appId: APP_ID,
-      buildId: id,
-    });
+    let b;
+    try {
+      b = await api.getBuild({
+        $token: token,
+        $timeout: API_TIMEOUT_MS,
+        appId: APP_ID,
+        buildId: id,
+      });
+      consecutiveTransient = 0; // reset on successful API call
+    } catch (apiErr) {
+      const msg = String(apiErr?.message || apiErr);
+      if (TRANSIENT_RE.test(msg)) {
+        consecutiveTransient++;
+        const backoff = Math.min(consecutiveTransient * 8000, 60000);
+        log(`WARN: Athom API transient error (${consecutiveTransient}/${MAX_TRANSIENT_RETRIES}): ${msg} — retrying in ${backoff}ms`);
+        if (consecutiveTransient >= MAX_TRANSIENT_RETRIES) {
+          throw new Error(`FATAL: Too many consecutive Athom API transient errors polling build #${id}: ${msg}`);
+        }
+        await new Promise((res) => setTimeout(res, backoff));
+        continue;
+      }
+      throw apiErr; // non-transient — propagate
+    }
     const state = b?.state;
     if (state !== last) {
       log(`Build #${id} state: ${state} (approved=${b?.approved})`);
       last = state;
     }
     if (SUCCESS_STATES.has(state)) return b;
-    // Terminal failure states (revoked / processing_failed / error) OR
-    // an explicit error/feedback object: exit fast with a clear message.
+    // processing_failed from Athom is almost always a transient socket hang up.
+    // Retry up to 3 times with 30s backoff before declaring fatal.
     if (FAILURE_STATES.has(state) || b?.error) {
-      throw new Error(`Build #${id} FAILED: state=${state} error=${JSON.stringify(b?.error || b?.feedback || {})}`);
+      const detail = JSON.stringify(b?.error || b?.feedback || b?.stateMeta || {});
+      const isTransientFailure = TRANSIENT_RE.test(detail) || state === 'processing_failed';
+      if (isTransientFailure) {
+        consecutiveTransient++;
+        const backoff = Math.min(consecutiveTransient * 30000, 90000);
+        log(`WARN: Build #${id} state=${state} (transient? ${consecutiveTransient}/3) detail=${detail} — waiting ${backoff}ms before re-poll`);
+        if (consecutiveTransient <= 3) {
+          await new Promise((res) => setTimeout(res, backoff));
+          continue;
+        }
+      }
+      throw new Error(`Build #${id} FAILED: state=${state} error=${detail}`);
     }
     // If approved but not yet ready, keep polling.
     await new Promise((res) => setTimeout(res, intervalMs));
