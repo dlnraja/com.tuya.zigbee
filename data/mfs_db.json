@@ -32,7 +32,7 @@
       "realMfrsAdded": 5,
       "details": "tmp/synthetic-resolution.json + tmp/pruned21-resolution.json"
     },
-    "lastAlignedAt": "2026-08-18T16:13:48.206Z",
+    "lastAlignedAt": "2026-08-19T17:16:33.412Z",
     "alignTool": "align-mfs-db-intelligent@P169"
   },
   "sources": {
@@ -151311,15 +151311,6 @@
     "pid": "CK-TLSR8656-SS5-01(7014)",
     "modelIdsCount": 28
   },
-  "_TZE204_AAGRXLBD": {
-    "driverId": "wall_switch_4_gang_tuya",
-    "source": "registry:novadigital-ts0601-4gang-aagrxlbd",
-    "modelIds": [
-      "TS0601"
-    ],
-    "pid": "CK-TLSR8656-SS5-01(7014)",
-    "modelIdsCount": 28
-  },
   "_TZE204_AAI5GRIX": {
     "driverId": "climate_sensor",
     "source": "auto-sync",
@@ -160857,15 +160848,6 @@
     "pid": "CK-TLSR8656-SS5-01(7014)",
     "modelIdsCount": 28
   },
-  "_tze200_r731zlxk": {
-    "driverId": "wall_switch_6_gang_tuya",
-    "source": "registry:zemismart-ts0601-6gang-r731zlxk",
-    "modelIds": [
-      "TS0601"
-    ],
-    "pid": "CK-TLSR8656-SS5-01(7014)",
-    "modelIdsCount": 28
-  },
   "_tze284_uo8qcagc": {
     "driverId": "climate_sensor",
     "source": "auto-sync",
@@ -170228,8 +170210,8 @@
     "modelIdsCount": 51
   },
   "_TZE204_2imwyigp": {
-    "driverId": "generic_diy",
-    "source": "auto-sync",
+    "driverId": "switch_3gang",
+    "source": "compose-exclusive",
     "modelIds": [
       "0x8040",
       "BASICZBR3",
@@ -197284,15 +197266,6 @@
     "pid": "01MINIZB",
     "modelIdsCount": 34
   },
-  "_TZ3000_OK0GGPK7": {
-    "driverId": "switch_3gang",
-    "source": "registry:novadigital-ts0003-ok0ggpk7",
-    "modelIds": [
-      "TS0003"
-    ],
-    "pid": "01MINIZB",
-    "modelIdsCount": 34
-  },
   "_TZ3000_OLO5JHJK": {
     "driverId": "switch_1gang",
     "source": "auto-sync",
@@ -201273,44 +201246,10 @@
     "modelIdsCount": 34
   },
   "_TZ3218_7FIYO3KV": {
-    "driverId": "switch_1gang",
-    "source": "auto-sync",
+    "driverId": "switch_temp_sensor",
+    "source": "registry:pm-rolp-tz3218-7fiyo3kv-ts000f-switch-temp",
     "modelIds": [
-      "01MINIZB",
-      "BASICZBR3",
-      "S26R2ZB",
-      "S31ZB",
-      "TS0001",
-      "TS0001_power",
-      "TS0001_switch",
-      "TS0001_switch_module",
-      "TS0002",
-      "TS0003",
-      "TS000F",
-      "TS0011",
-      "TS0012",
-      "TS0014",
-      "TS0041",
-      "TS0101",
-      "TS0111",
-      "TS011F",
-      "TS0601",
-      "TS0601_tempswitch",
-      "TS0726",
-      "TS110E",
-      "TS130F",
-      "TS4100",
-      "ZBM5-1C-120",
-      "ZBM5-2C-120",
-      "ZBM5-3C-120",
-      "ZBMINI",
-      "ZBMINIL2",
-      "ZBMINIL2-R2",
-      "ZBMINIR",
-      "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "TS000F"
     ],
     "pid": "01MINIZB",
     "modelIdsCount": 35
@@ -201358,43 +201297,10 @@
     "modelIdsCount": 34
   },
   "_TZ3218_YA5D6WTH": {
-    "driverId": "switch_1gang",
-    "source": "auto-sync",
+    "driverId": "switch_temp_sensor",
+    "source": "registry:pm-rolp-tz3218-7fiyo3kv-ts000f-switch-temp",
     "modelIds": [
-      "01MINIZB",
-      "BASICZBR3",
-      "S26R2ZB",
-      "S31ZB",
-      "TS0001",
-      "TS0001_power",
-      "TS0001_switch",
-      "TS0001_switch_module",
-      "TS0002",
-      "TS0003",
-      "TS000F",
-      "TS0011",
-      "TS0012",
-      "TS0014",
-      "TS0041",
-      "TS0101",
-      "TS0111",
-      "TS011F",
-      "TS0601",
-      "TS0726",
-      "TS110E",
-      "TS130F",
-      "TS4100",
-      "ZBM5-1C-120",
-      "ZBM5-2C-120",
-      "ZBM5-3C-120",
-      "ZBMINI",
-      "ZBMINIL2",
-      "ZBMINIL2-R2",
-      "ZBMINIR",
-      "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "TS000F"
     ],
     "pid": "01MINIZB",
     "modelIdsCount": 34
@@ -209167,22 +209073,6 @@
     "pid": "TS0003",
     "modelIdsCount": 8
   },
-  "_tz3000_fawk5xjv": {
-    "driverId": "switch_3gang",
-    "source": "auto-sync",
-    "modelIds": [
-      "TS0003",
-      "TS0003_power",
-      "TS0003_switch_module",
-      "TS0013",
-      "TS0040",
-      "TS0043",
-      "TS0601",
-      "ZG-302Z3"
-    ],
-    "pid": "TS0003",
-    "modelIdsCount": 8
-  },
   "_tz3000_lsunm46z": {
     "driverId": "switch_3gang",
     "source": "auto-sync",
@@ -209326,10 +209216,6 @@
     ],
     "pid": "TS0003",
     "modelIdsCount": 8
-  },
-  "_tz3000_qxcnwv26": {
-    "driverId": "switch_3gang",
-    "source": "auto-sync"
   },
   "_tz3000_sznawwyw": {
     "driverId": "switch_3gang",
@@ -209512,10 +209398,6 @@
     ],
     "pid": "TS0003",
     "modelIdsCount": 8
-  },
-  "_TZ3000_EQSAIR32": {
-    "driverId": "switch_3gang",
-    "source": "auto-sync"
   },
   "_TZ3000_MW1PQQQT": {
     "driverId": "switch_1gang",
@@ -211809,16 +211691,6 @@
     "modelIdsCount": 2
   },
   "_tze200_qdihqf3l": {
-    "driverId": "thermostat_tuya_dp",
-    "source": "auto-sync",
-    "modelIds": [
-      "TS0601",
-      "TS0601_thermo"
-    ],
-    "pid": "TS0601",
-    "modelIdsCount": 2
-  },
-  "_tze200_s8gkrkxk": {
     "driverId": "thermostat_tuya_dp",
     "source": "auto-sync",
     "modelIds": [
@@ -216085,24 +215957,6 @@
     "pid": "TS0001",
     "modelIdsCount": 7
   },
-  "_tz3000_ovyaisip": {
-    "driverId": "wall_switch_1gang_1way",
-    "source": "registry:zemismart-ts0001-tb25-1",
-    "modelIds": [
-      "TS0001"
-    ],
-    "pid": "TS0001",
-    "modelIdsCount": 7
-  },
-  "_tz3000_pk8tgtdb": {
-    "driverId": "wall_switch_1gang_1way",
-    "source": "registry:zemismart-ts0001-tb25-1",
-    "modelIds": [
-      "TS0001"
-    ],
-    "pid": "TS0001",
-    "modelIdsCount": 7
-  },
   "_tz3000_2mb38mf3": {
     "driverId": "wall_switch_1_gang",
     "source": "auto-sync",
@@ -216187,35 +216041,6 @@
     "modelIdsCount": 3
   },
   "_tz3000_1lom3myx": {
-    "driverId": "wall_switch_3gang_1way",
-    "source": "auto-sync",
-    "modelIds": [
-      "TS0003",
-      "TS0013",
-      "TS0043"
-    ],
-    "pid": "TS0003",
-    "modelIdsCount": 3
-  },
-  "_tz3000_f09j9qjb": {
-    "driverId": "switch_3gang",
-    "source": "registry:novadigital-ts0003-f09j9qjb",
-    "modelIds": [
-      "TS0003"
-    ],
-    "pid": "CK-TLSR8656-SS5-01(7014)",
-    "modelIdsCount": 31
-  },
-  "_tz3000_vjhcenzo": {
-    "driverId": "switch_3gang",
-    "source": "registry:novadigital-ts0003-vjhcenzo",
-    "modelIds": [
-      "TS0003"
-    ],
-    "pid": "CK-TLSR8656-SS5-01(7014)",
-    "modelIdsCount": 31
-  },
-  "_tz3000_yervjnlj": {
     "driverId": "wall_switch_3gang_1way",
     "source": "auto-sync",
     "modelIds": [
@@ -216338,15 +216163,6 @@
     ],
     "pid": "01MINIZB",
     "modelIdsCount": 35
-  },
-  "_tze200_shkxsgis": {
-    "driverId": "wall_switch_4_gang_tuya",
-    "source": "registry:zemismart-ts0601-4gang-shkxsgis",
-    "modelIds": [
-      "TS0601"
-    ],
-    "pid": "TS0601",
-    "modelIdsCount": 1
   },
   "_TZE204_ad2jkxwh": {
     "driverId": "wall_switch_6_gang_tuya",
@@ -327229,7 +327045,7 @@
     ]
   },
   "_TZ3000_lwthnp7j": {
-    "driverId": "switch_4gang",
+    "driverId": "wall_switch_4gang_1way",
     "source": "registry:lwthnp7j-zcl-4gang",
     "modelIds": [
       "TS0004"
@@ -327250,94 +327066,95 @@
     ]
   },
   "_TZ3000_ovyaisip": {
-    "driverId": "switch_1gang",
-    "source": "forum-140352-#2173:gabriel-tb25-1gang",
+    "driverId": "wall_switch_1gang_1way",
+    "source": "registry:zemismart-ts0001-tb25-1",
     "modelIds": [
       "TS0001"
     ]
   },
   "_TZ3000_pk8tgtdb": {
-    "driverId": "switch_1gang",
-    "source": "forum-140352-#2173:gabriel-tb25-1gang",
+    "driverId": "wall_switch_1gang_1way",
+    "source": "registry:zemismart-ts0001-tb25-1",
     "modelIds": [
       "TS0001"
     ]
   },
   "_TZ3000_yervjnlj": {
     "driverId": "wall_switch_3gang_1way",
-    "source": "forum-140352-#2173:gabriel-tb25-3gang",
+    "source": "registry:novadigital-ts0003-yervjnlj",
     "modelIds": [
       "TS0003"
     ]
   },
   "_TZ3000_vjhcenzo": {
     "driverId": "wall_switch_3gang_1way",
-    "source": "forum-140352-#2173:gabriel-tb25-3gang",
+    "source": "registry:novadigital-ts0003-vjhcenzo",
     "modelIds": [
       "TS0003"
     ]
   },
   "_TZ3000_qxcnwv26": {
     "driverId": "wall_switch_3gang_1way",
-    "source": "forum-140352-#2173:gabriel-tb25-3gang+z2m:TS0003_switch_3_gang",
+    "source": "registry:novadigital-ts0003-qxcnwv26",
     "modelIds": [
       "TS0003"
     ]
   },
   "_TZ3000_eqsair32": {
     "driverId": "wall_switch_3gang_1way",
-    "source": "forum-140352-#2173:gabriel-tb25-3gang+z2m:TB26-3-zemismart",
+    "source": "registry:novadigital-ts0003-eqsair32",
     "modelIds": [
       "TS0003"
     ]
   },
   "_TZ3000_f09j9qjb": {
     "driverId": "wall_switch_3gang_1way",
-    "source": "forum-140352-#2173:gabriel-tb25-3gang",
+    "source": "registry:novadigital-ts0003-f09j9qjb",
     "modelIds": [
       "TS0003"
     ]
   },
   "_TZ3000_fawk5xjv": {
     "driverId": "wall_switch_3gang_1way",
-    "source": "forum-140352-#2173:gabriel-tb25-3gang+z2m:NFZB-03-novadigital",
+    "source": "registry:novadigital-ts0003-fawk5xjv",
     "modelIds": [
       "TS0003"
     ]
   },
   "_TZ3000_ok0ggpk7": {
     "driverId": "wall_switch_3gang_1way",
-    "source": "forum-140352-#2173:gabriel-tb25-3gang+z2m:TS0003_with_backlight",
+    "source": "registry:novadigital-ts0003-ok0ggpk7",
     "modelIds": [
       "TS0003"
     ]
   },
   "_TZE204_aagrxlbd": {
     "driverId": "wall_switch_4_gang_tuya",
-    "source": "forum-140352-#2173:gabriel-tb25-4gang+z2m:TS0601_switch_4_gang_1",
+    "source": "registry:novadigital-ts0601-4gang-aagrxlbd",
     "modelIds": [
       "TS0601"
     ]
   },
   "_TZE200_r731zlxk": {
     "driverId": "wall_switch_6_gang_tuya",
-    "source": "forum-140352-#2173:gabriel-tb25-6gang+z2m:TS0601_switch_6_gang",
+    "source": "registry:zemismart-ts0601-6gang-r731zlxk",
     "modelIds": [
       "TS0601"
     ]
   },
   "_TZE200_shkxsgis": {
-    "driverId": "wall_switch_6_gang_tuya",
-    "source": "forum-140352-#2173:gabriel-tb25-6gang",
+    "driverId": "wall_switch_4_gang_tuya",
+    "source": "registry:zemismart-ts0601-4gang-shkxsgis",
     "modelIds": [
       "TS0601"
     ]
   },
   "_TZE200_s8gkrkxk": {
-    "driverId": "christmas_lights",
-    "source": "forum-140352-#2146:mikenono-device-list",
+    "driverId": "thermostat_tuya_dp",
+    "source": "compose-exclusive",
     "modelIds": [
-      "TS0601"
+      "TS0601",
+      "TS0601_thermo"
     ]
   }
 }
