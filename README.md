@@ -33,7 +33,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.595 |
+| **App Version** | v9.0.596 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,370 |
 | **Pairing Variants** | 16,598 (4 case combos per fingerprint) |
@@ -41,11 +41,11 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **Flow Cards** | 5,175 |
 | **Unique Capabilities** | 170 |
 | **Native OTA Drivers** | 5 |
-| **Test Suites** | 105 files |
+| **Test Suites** | 107 files |
 | **SVG Icons** | 731 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
-| **Last Updated** | 2026-08-18 |
+| **Last Updated** | 2026-08-19 |
 
 ### Top 20 Drivers by Fingerprint Count
 
@@ -102,6 +102,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.596** | Sleepy SOS, leak and contact sensors keep enroll on wake. Multi-gang ZCL wall switches pair as linked tiles. One-gang switches with a tem… |
 | **v9.0.595** | Sleepy SOS, scene, leak and contact sensors keep enroll, probe, lux/DP query and leak backup poll — they run on wake and when RAM allows,… |
 | **v9.0.594** | Two-gang wall switches show linked gang names in settings. LED and switch mode stay on the main tile. After a power cut the configured LE… |
 | **v9.0.593** | Two-gang wall switches show linked gang names in settings. LED and switch mode stay on the main tile. After a power cut the configured LE… |
@@ -113,7 +114,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.587** | App Settings shows a retractable Zigbee spider map of this app's devices, with last-seen and rejoin counts. Links use last-hop signal qua… |
 | **v9.0.586** | Garage openers, dual outlets, Wing contacts and HOBEIAN USB switches keep the correct driver. Curtain motors that ignore position writes … |
 | **v9.0.585** | Wall dimmers keep the correct driver fingerprint, clamp brightness so the MCU does not reboot, and strip phantom battery after a wrong cl… |
-| **v9.0.584** | Wall dimmers keep the correct driver fingerprint, clamp brightness so the MCU does not reboot, and strip phantom battery after a wrong cl… |
 
 <!-- CHANGELOG_END -->
 
