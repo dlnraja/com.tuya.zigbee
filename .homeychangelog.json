@@ -2362,5 +2362,8 @@
   },
   "9.0.608": {
     "en": "IntelligentDriverHotSwap v2: unified integration with DynamicCapabilityManager, computed-cap guard (meter_* never device-written), double-source ZCL/EF00 coherence, per-device cap budget, stale-cap cleanup, lazy profile-DB load. safeSetCapabilityValue hotSwap-gated."
+  },
+  "9.0.609": {
+    "en": "IntelligentDriverHotSwap v2: unified integration with DynamicCapabilityManager, computed-cap guard (meter_* never device-written), double-source ZCL/EF00 coherence, per-device cap budget, stale-cap cleanup, lazy profile-DB load. safeSetCapabilityValue hotSwap-gated."
   }
 }
