@@ -1,0 +1,29 @@
+---
+description: Per-device truth lookup every prompt — manufacturerName+productId, no invented pids, publish app ≠ post forum
+alwaysApply: true
+---
+
+# Device truth (every prompt / every interaction)
+
+## Publish vs forum (do not confuse)
+- **Publish** = Homey App Store (master `9.0.x` Test). Do this when the user asks to push/publish.
+- **Do not post** = never write Homey Community or PM replies (T157628). Scan → code/CI only.
+- Never Publish Stable→Test while 9.x occupies the shared App ID Test slot.
+
+## Lookup order (mandatory on device work)
+1. Lock **manufacturerName + productId**. Never invent a pid from a retail SKU.
+2. Read [docs/knowledge/DEVICE_TRUTH.md](docs/knowledge/DEVICE_TRUTH.md) (how + 54 locked couples).
+3. Open [docs/knowledge/device-truth.json](docs/knowledge/device-truth.json) → `drivers.<driverId>` (431 drivers, 1 by 1).
+4. Confirm in `drivers/<id>/driver.compose.json` and `data/user-misattribution-registry.json`.
+5. Cross-check: `AI_CONTEXT_MANDATE.md`, `docs/ARCHITECTURE_AI.md`, `docs/GLOBAL_INVESTIGATION_PLAN.md`, `docs/rules/WHY_INTERROGATION.md`, `docs/rules/DUAL_APP_VISION.md`, `docs/rules/FORUM_SILENT_HUMANIZE.md`, `.cursorrules`.
+
+## High-risk peculiarities (never invert)
+- `_TZE284_m1cvyneb` + `TS0601` → `wall_dimmer_tuya` only. Brightness MCU **0–1000**. Forbid climate/soil/universal.
+- `_TZ3000_w5xztuy7` + `TS0002` → `switch_2gang` **zcl_only**.
+- `_TZ3218_7fiyo3kv` / `_TZ3218_ya5d6wth` + `TS000F` → `switch_temp_sensor` (re-pair if 1-gang).
+- TZ3000 3-gang `TS0003`/`TS0013` → `wall_switch_3gang_1way` (not `switch_3gang`). 4-gang `_TZ3000_lwthnp7j`+`TS0004` → `wall_switch_4gang_1way`.
+- SOS / water leak / contact = sleepy IAS. Enroll on wake. No boot poll storm. No leftover EF00 TX.
+- Backlight settings are strings `off`/`normal`/`inverted`. Battery: no linear `(V-2.5)/0.5`.
+- BSEED zcl_only mfrs: `_TZ3000_l9brjwau`, `_TZ3000_blhvsaqf`, `_TZ3000_ysdv91bk`, `_TZ3000_hafsqare`, `_TZ3000_e98krvvk`, `_TZ3000_iedbgyxt`, `_TZ3000_cauq1okq`, `_TZ3000_w5xztuy7`.
+
+Regenerate catalog: `node tools/ci/build-device-truth.js`.

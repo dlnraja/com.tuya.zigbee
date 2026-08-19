@@ -7,12 +7,15 @@
 > **MANDATORY SECOND STEP:** Read [docs/GLOBAL_INVESTIGATION_PLAN.md](docs/GLOBAL_INVESTIGATION_PLAN.md) — 22-section investigation methodology (forums/emails/GitHub/Z2M/ZHA, bug hunting, prevention).
 >
 > **MANDATORY THIRD STEP:** Read [docs/ARCHITECTURE_AI.md](docs/ARCHITECTURE_AI.md) — 3 AI layers: IDE Locale, GitHub Actions, Homey Runtime (SDK3, zero cloud).
+>
+> **MANDATORY FOURTH STEP:** Read [docs/knowledge/DEVICE_TRUTH.md](docs/knowledge/DEVICE_TRUTH.md) then look up the driver in [docs/knowledge/device-truth.json](docs/knowledge/device-truth.json). Lock manufacturerName + productId. **Publish** = Homey app; **do not post** = no forum/PM replies.
 
 ## CRITICAL FIRST STEPS
 1. Read `AI_CONTEXT_MANDATE.md`
 2. Read `docs/GLOBAL_INVESTIGATION_PLAN.md`
 3. Read `docs/ARCHITECTURE_AI.md`
-4. **P215:** For every feature / non-obvious line, answer Pourquoi / Comment / Pour qui / Quand / Contre quoi — see `docs/rules/WHY_INTERROGATION.md`. Use answers to enrich workflows, rules, docs, catalogs.
+4. Read `docs/knowledge/DEVICE_TRUTH.md` and look up `docs/knowledge/device-truth.json` for the device in scope
+5. **P215:** For every feature / non-obvious line, answer Pourquoi / Comment / Pour qui / Quand / Contre quoi — see `docs/rules/WHY_INTERROGATION.md`. Use answers to enrich workflows, rules, docs, catalogs.
 
 ## Project Context
 Homey Pro app for 4200+ Tuya Zigbee devices. Hybrid protocol: Tuya DP (0xEF00) + ZCL clusters.

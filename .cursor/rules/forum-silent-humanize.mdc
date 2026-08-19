@@ -11,9 +11,10 @@ Community mandate mirrored from Homey thread
 ## Absolute defaults
 1. **Prefer NOT posting** on the Homey forum. Fix/enrich the app, workflows, and automations silently.
 2. **Never paste unchecked AI output** into forum drafts, PR comments meant for community paste, or Discourse posts.
-3. **REPLY_TOPICS = `140352` only** if a human maintainer explicitly asks to publish. All other topics are READ-ONLY forever (146735, 26439, 89271, 43287, 157628, 157859, …).
-4. Auto-post scripts stay **forced dry-run / blocked** (`forum-responder.js`, `post-forum-update.js`).
-5. Private inbox is harvested on cron (`forum-pm-read.yml` 07:50/19:50 UTC + `forum-poll.yml`) via `forum-pm-read-only.js`. **Never POST.** Do not use `forum-pm-scanner.js` for replies.
+3. **REPLY_TOPICS = `140352` only** if a human maintainer explicitly asks to publish a **forum reply**. All other topics are READ-ONLY forever.
+4. **Publish the Homey app** when asked to push/publish. "Do not publish on the forum" never means skip App Store Test.
+5. Auto-post scripts stay **forced dry-run / blocked** (`forum-responder.js`, `post-forum-update.js`).
+6. Private inbox is harvested on cron (`forum-pm-read.yml` 07:50/19:50 UTC + `forum-poll.yml`) via `forum-pm-read-only.js`. **Never POST.** Do not use `forum-pm-scanner.js` for replies.
 
 ## RF coexistence (silent transfer from T157859 education)
 - Zigbee/Thread channel numbers ≠ Wi-Fi channel numbers (same 2.4 GHz band, different numbering).

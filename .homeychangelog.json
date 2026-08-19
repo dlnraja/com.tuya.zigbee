@@ -2323,5 +2323,8 @@
   },
   "9.0.595": {
     "en": "Sleepy SOS, scene, leak and contact sensors keep enroll, probe, lux/DP query and leak backup poll — they run on wake and when RAM allows, not while the hub is out of memory. Homey Flows stay enabled. Extra engines wait and retry instead of being dropped. Three-gang and four-gang ZCL wall switches pair as linked gang tiles. One-gang switches with a temperature probe pair as a switch-plus-temperature device."
+  },
+  "9.0.596": {
+    "en": "Sleepy SOS, leak and contact sensors keep enroll on wake. Multi-gang ZCL wall switches pair as linked tiles. One-gang switches with a temperature probe stay on the switch-plus-temperature driver. Homey Flows stay enabled."
   }
 }

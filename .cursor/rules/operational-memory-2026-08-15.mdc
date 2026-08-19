@@ -65,6 +65,8 @@ alwaysApply: true
 - P194 OTA/WiFi local-first is master-only.
 - AlarmPolarity smart-learn / free-scrape / parallelDiscover = **MASTER_ONLY**.
 - Next cleanup: remaining `_hybrid_*_needs_device_assignment` / `_GENERIC_*` placeholders (M09 warn).
+- Device truth every prompt: `docs/knowledge/DEVICE_TRUTH.md` + `docs/knowledge/device-truth.json`.
+- **Publish** = Homey Test 9.0.x. **Do not post** = no Community/PM replies.
 
 ## Commands
 ```bash

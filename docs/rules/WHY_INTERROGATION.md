@@ -15,7 +15,8 @@ comment near the code) is how we investigate and enrich the whole project.
 | 5 | **Contre quoi ?** What fails if we remove or invert it? | Regression = gate or test |
 
 Optional sixth (device work): **Quel couple ?** Exact `manufacturerName` + `productId` —
-never invent a pid; Google/Z2M/ZHA/forum by the couple.
+never invent a pid; Google/Z2M/ZHA/forum by the couple. Look up
+`docs/knowledge/DEVICE_TRUTH.md` + `docs/knowledge/device-truth.json` first.
 
 ## How to use this to enrich the repo
 

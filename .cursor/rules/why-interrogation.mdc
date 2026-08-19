@@ -13,7 +13,7 @@ Before implementing or changing anything non-trivial, answer:
 4. **Quand** — pair, RX, TX, enrich cron, publish?
 5. **Contre quoi** — what regresses if removed? → gate or test.
 
-Device work: always lock **manufacturerName + productId**. Search Z2M/ZHA/forum/Google by the couple — never invent a pid.
+Device work: always lock **manufacturerName + productId**. Search Z2M/ZHA/forum/Google by the couple — never invent a pid. Look up `docs/knowledge/DEVICE_TRUTH.md` + `docs/knowledge/device-truth.json` first.
 
 Use answers to enrich: code `// WHY:` comments, `.github/workflows`, `WORKFLOW_GUIDELINES`, `.cursorrules`, knowledge cache, interview DB.
 
