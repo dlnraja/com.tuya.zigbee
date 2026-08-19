@@ -193,6 +193,7 @@ class Switch3GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
 
     // Setup attribute listeners for physical button detection
     for (const epNum of [1, 2, 3]) {
+      const capName = epNum === 1 ? 'onoff' : `onoff.gang${epNum}`;
       const onOff = getOnOffCluster(epNum);
       if (!onOff || typeof onOff.on !== 'function') {
         this.log(`[BSEED-3G] EP${epNum} no attr listener (cluster not ready)`);

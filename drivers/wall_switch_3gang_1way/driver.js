@@ -5,6 +5,9 @@ const { setGangOnOff, setAllGangsOnOff } = require('../../lib/drivers/FlowGangCo
 
 class WallSwitch3Gang1WayDriver extends BaseZigBeeDriver {
   async onInit() {
+    await super.onInit();
+    if (this._flowCardsRegistered) {return;}
+    this._flowCardsRegistered = true;
     this.log('Wall Switch 3-Gang 1-Way Driver initialized');
     this._registerFlowCards();
   }
