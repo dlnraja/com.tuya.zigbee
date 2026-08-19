@@ -53,6 +53,12 @@ const CIRCUIT_BREAKER_PATTERNS = [
   /circuit\.execute/,
   /breaker\.execute/,
   /CB\.execute/,
+  /NetworkResilience/,
+  /createNetworkBreaker/,
+  /boundedHttpRequest/,
+  /getMqttConnectBreaker/,
+  /getEnigmaReportBreaker/,
+  /aiBreakerFor/,
 ];
 
 // Files that are known to use CircuitBreaker or are allowed to not use it

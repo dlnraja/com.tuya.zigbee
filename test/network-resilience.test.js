@@ -104,9 +104,9 @@ describe('NetworkResilience runtime integration contracts', () => {
     assert.match(read('lib/scraper/reader-fallback.js'), /createNetworkBreaker\('ReaderFallback'/);
   });
 
-  it('EweLinkLANClient caps LAN response size', () => {
-    const src = read('lib/ewelink-local/EweLinkLANClient.js');
-    assert.match(src, /MAX_LAN_RESPONSE_BYTES/);
-    assert.match(src, /getEwelinkLanBreaker/);
+  it('BaseUnifiedDevice onoff ZCL commands use safeSetCapabilityValue', () => {
+    const src = read('lib/devices/BaseUnifiedDevice.js');
+    assert.match(src, /safeSetCapabilityValue\(cap, state, \{ source: 'zcl' \}\)/);
+    assert.match(src, /safeSetCapabilityValue\(cap, !current, \{ source: 'zcl' \}\)/);
   });
 });
