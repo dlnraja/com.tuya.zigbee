@@ -1,6 +1,6 @@
 # Device peculiarities — cross-source investigation
 
-Generated 2026-08-19T08:02:55.353Z from registry (54 cases) × compound DB (209 keys) × local Z2M fps.
+Generated 2026-08-19T08:50:15.322Z from registry (54 cases) × compound DB (209 keys) × local Z2M fps.
 
 ## Class notes (always)
 
