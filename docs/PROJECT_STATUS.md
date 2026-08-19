@@ -6,7 +6,7 @@
 
 | Metric | Value |
 |--------|-------|
-| Version | v9.0.603 |
+| Version | v9.0.604 |
 | Drivers | 431 |
 | Fingerprints | 16,594 |
 | Last Updated | 2026-08-19 |
