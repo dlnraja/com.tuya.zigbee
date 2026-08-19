@@ -6,6 +6,10 @@ const { setGangOnOff, setAllGangsOnOff } = require('../../lib/drivers/FlowGangCo
 class WallSwitch4Gang1WayDriver extends BaseZigBeeDriver {
   async onInit() {
     this.log('Wall Switch 4-Gang 1-Way Driver initialized');
+    // WHY: avoid duplicate flow registration when Homey re-inits drivers.
+    // AGAINST: duplicated triggers/actions causing flow double-fire.
+    if (this._flowCardsRegistered) { return; }
+    this._flowCardsRegistered = true;
     this._registerFlowCards();
   }
 

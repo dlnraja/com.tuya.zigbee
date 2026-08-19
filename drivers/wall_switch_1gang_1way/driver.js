@@ -9,6 +9,10 @@ class WallSwitch1Gang1WayDriver extends ZigBeeDriver {
 
   async onInit() {
     this.log('Wall Switch 1-Gang 1-Way Driver initialized');
+    // WHY: avoid duplicate flow registration when Homey re-inits drivers.
+    // AGAINST: duplicated triggers/actions causing flow double-fire.
+    if (this._flowCardsRegistered) { return; }
+    this._flowCardsRegistered = true;
     this._registerFlowCards();
   }
 
