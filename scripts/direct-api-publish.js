@@ -174,30 +174,62 @@ async function packDirectory(appPath) {
 }
 
 async function pollBuildState(api, token, buildId, { timeoutMs = 180000, intervalMs = 5000 } = {}) {
+  const id = String(buildId);
   const deadline = Date.now() + timeoutMs;
   let last = null;
+  const TRANSIENT_RE = /socket hang up|econnreset|econnaborted|etimedout|too many requests|fetch failed|network|502|503|504/i;
+  let consecutiveApiErrors = 0;
+  let consecutiveFailurePolls = 0;
+  const MAX_API_ERROR_RETRIES = 6;
+  const MAX_FAILURE_POLL_RETRIES = 3;
   while (Date.now() < deadline) {
-    const b = await api.getBuild({
-      $token: token,
-      $timeout: API_TIMEOUT_MS,
-      appId: APP_ID,
-      buildId,
-    });
+    let b;
+    try {
+      b = await api.getBuild({
+        $token: token,
+        $timeout: API_TIMEOUT_MS,
+        appId: APP_ID,
+        buildId: id,
+      });
+      consecutiveApiErrors = 0;
+    } catch (apiErr) {
+      const msg = String(apiErr?.message || apiErr);
+      if (TRANSIENT_RE.test(msg)) {
+        consecutiveApiErrors++;
+        const backoff = Math.min(consecutiveApiErrors * 8000, 60000);
+        log(`WARN: Athom API transient error (${consecutiveApiErrors}/${MAX_API_ERROR_RETRIES}): ${msg} — retrying in ${backoff}ms`);
+        if (consecutiveApiErrors >= MAX_API_ERROR_RETRIES) {
+          throw new Error(`FATAL: Too many consecutive Athom API transient errors polling build #${id}: ${msg}`);
+        }
+        await new Promise((res) => setTimeout(res, backoff));
+        continue;
+      }
+      throw apiErr;
+    }
     const state = b?.state;
     if (state !== last) {
-      log(`Build #${buildId} state: ${state} (approved=${b?.approved})`);
+      log(`Build #${id} state: ${state} (approved=${b?.approved})`);
       last = state;
     }
     if (SUCCESS_STATES.has(state)) return b;
-    // Terminal failure states (revoked / processing_failed / error) OR
-    // an explicit error/feedback object: exit fast with a clear message.
     if (FAILURE_STATES.has(state) || b?.error) {
-      throw new Error(`Build #${buildId} FAILED: state=${state} error=${JSON.stringify(b?.error || b?.feedback || {})}`);
+      const detail = JSON.stringify(b?.error || b?.feedback || b?.stateMeta || {});
+      const isTransientFailure = TRANSIENT_RE.test(detail) || state === 'processing_failed';
+      if (isTransientFailure) {
+        consecutiveFailurePolls++;
+        const backoff = Math.min(consecutiveFailurePolls * 30000, 90000);
+        log(`WARN: Build #${id} state=${state} (transient? ${consecutiveFailurePolls}/${MAX_FAILURE_POLL_RETRIES}) detail=${detail} — waiting ${backoff}ms before re-poll`);
+        if (consecutiveFailurePolls <= MAX_FAILURE_POLL_RETRIES) {
+          await new Promise((res) => setTimeout(res, backoff));
+          continue;
+        }
+      }
+      throw new Error(`Build #${id} FAILED: state=${state} error=${detail}`);
     }
-    // If approved but not yet ready, keep polling.
+    consecutiveFailurePolls = 0;
     await new Promise((res) => setTimeout(res, intervalMs));
   }
-  throw new Error(`Timed out waiting for build #${buildId} (last state: ${last})`);
+  throw new Error(`Timed out waiting for build #${id} (last state: ${last})`);
 }
 
 async function setChannel(api, token, buildId, channel) {
