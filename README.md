@@ -33,7 +33,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.606 |
+| **App Version** | v9.0.607 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,370 |
 | **Pairing Variants** | 16,594 (4 case combos per fingerprint) |
@@ -102,6 +102,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.607** | IntelligentDriverHotSwap v2: unified integration with DynamicCapabilityManager, computed-cap guard (meter_* never device-written), double… |
 | **v9.0.606** | IntelligentDriverHotSwap v2: unified integration with DynamicCapabilityManager, computed-cap guard (meter_* never device-written), double… |
 | **v9.0.605** | IntelligentDriverHotSwap v2: unified integration with DynamicCapabilityManager, computed-cap guard (meter_* never device-written), double… |
 | **v9.0.604** | IntelligentDriverHotSwap v2: unified integration with DynamicCapabilityManager, computed-cap guard (meter_* never device-written), double… |
@@ -113,7 +114,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.598** | Deep device investigation: IAS contact/water/repeater disambiguation, compound fingerprint locks, peculiarities catalog regenerated. All … |
 | **v9.0.597** | Deep device investigation: IAS contact/water/repeater disambiguation, compound fingerprint locks, peculiarities catalog regenerated. All … |
 | **v9.0.596** | Sleepy SOS, leak and contact sensors keep enroll on wake. Multi-gang ZCL wall switches pair as linked tiles. One-gang switches with a tem… |
-| **v9.0.595** | Sleepy SOS, scene, leak and contact sensors keep enroll, probe, lux/DP query and leak backup poll — they run on wake and when RAM allows,… |
 
 <!-- CHANGELOG_END -->
 
