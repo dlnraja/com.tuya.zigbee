@@ -110,10 +110,15 @@ jobs:
         continue-on-error: true
         env:
           GH_PAT: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
-          FORK_DEPTH: "3"
+          FORK_DEPTH: "0"
+          FORK_MAX_FORKS: "50"
+          FORK_SKIP_PRS: "1"
+          DRY_RUN: ${{ inputs.dry_run && 'true' || 'false' }}
         run: |
-          node .github/scripts/deep-fork-integrator.js
-          node .github/scripts/scan-forks-recursive.js || true
+          node .github/scripts/deep-fork-integrator.js --fast
+          node .github/scripts/scan-forks-recursive.js --fast || true
+          node .github/scripts/implement-fork-fps.js || true
+          node tools/ci/p2138-sacred-couple-matrix-gate.js || true
 
       - name: 🌡️ Sensor Capability Gap Check
         continue-on-error: true

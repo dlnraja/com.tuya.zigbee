@@ -10,13 +10,18 @@ const UPSTREAM='JohanBendz/com.tuya.zigbee';
 const OWN='dlnraja/com.tuya.zigbee';
 const CREDITS_FILE=path.join(ROOT,'docs','CREDITS.md');
 const STATE_FILE=path.join(__dirname,'..','state','fork-scan-state.json');
-// GitHub Actions fournit souvent GITHUB_STEP_SUMMARY.
-// Sur Windows, '/dev/null' n'existe pas -> garde un chemin valide.
-const SUMMARY = process.env.GITHUB_STEP_SUMMARY
-  || (process.platform === 'win32'
-    ? path.join(__dirname, '..', 'state', 'fork-scan-summary.md')
-    : '/dev/null');
-const MAX_DEPTH=parseInt(process.env.FORK_DEPTH||'3');
+const FORK_FPS_FILE=path.join(__dirname,'..','state','new-fork-fps.json');
+function resolveSummaryPath(){
+  const env=process.env.GITHUB_STEP_SUMMARY;
+  if(env && !(process.platform==='win32' && /^\/dev\/null/i.test(env))){
+    return env;
+  }
+  return path.join(__dirname,'..','state','fork-scan-summary.md');
+}
+const SUMMARY=resolveSummaryPath();
+const MAX_DEPTH=parseInt(process.env.FORK_DEPTH||'3',10);
+const MAX_FORKS=parseInt(process.env.FORK_MAX_FORKS||'0',10)||0;
+const SKIP_PRS=process.argv.includes('--fast')||process.env.FORK_SKIP_PRS==='1';
 const hdrs={Accept:'application/vnd.github+json','User-Agent':'tuya-fork-scanner'};
 if(TOKEN)hdrs.Authorization='Bearer '+TOKEN;
 
@@ -160,34 +165,56 @@ function updateCredits(credits){
 async function main(){
   const fps=loadFingerprints();
   console.log('Our DB: '+fps.size+' fingerprints');
+  console.log('Config: depth='+MAX_DEPTH+(MAX_FORKS?(', maxForks='+MAX_FORKS):'')+(SKIP_PRS?', skipPRs':''));
   const visited=new Set();
   visited.add(OWN);
 
   // Collect all forks recursively from upstream
   console.log('=== Recursive Fork Collection ===');
-  const allForks=await collectForks(UPSTREAM,0,visited);
-  console.log('Total forks found: '+allForks.length);
+  let allForks=await collectForks(UPSTREAM,0,visited);
+  allForks=allForks.filter(f=>f.full_name!==OWN);
+  allForks.sort((a,b)=>String(b.updated||'').localeCompare(String(a.updated||'')));
+  if(MAX_FORKS>0&&allForks.length>MAX_FORKS){
+    console.log('Limiting scan to '+MAX_FORKS+' most recently updated forks (of '+allForks.length+')');
+    allForks=allForks.slice(0,MAX_FORKS);
+  }
+  console.log('Total forks to scan: '+allForks.length);
 
   // Scan each fork
   const newFPs=new Map();
   const credits=new Map();
   console.log('=== Scanning Forks ===');
+  let scanned=0;
   for(const fork of allForks){
     await scanFork(fork,fps,newFPs,credits);
-    if(newFPs.size%10===0&&newFPs.size>0)console.log('  New FPs so far: '+newFPs.size);
+    scanned++;
+    if(scanned%10===0)console.log('  Progress: '+scanned+'/'+allForks.length+' forks, new FPs: '+newFPs.size);
   }
 
-  // Scan PRs for credits
-  console.log('=== Scanning PRs ===');
-  await scanPRs([OWN,UPSTREAM],credits);
+  // Scan PRs for credits (optional — needs token; 403 without auth)
+  if(!SKIP_PRS&&TOKEN){
+    console.log('=== Scanning PRs ===');
+    await scanPRs([OWN,UPSTREAM],credits);
+  }else if(!SKIP_PRS){
+    console.log('=== Scanning PRs skipped (no GH token) ===');
+  }
 
-  // Update CREDITS.md
-  updateCredits(credits);
+  // Update CREDITS.md only when we found contributor signal
+  if(credits.size>0)updateCredits(credits);
 
-  // Save state
-  const state={lastRun:new Date().toISOString(),forksScanned:allForks.length,newFPs:newFPs.size,contributors:credits.size};
+  // Save state + fork FP payload (always — implement-fork-fps expects the file)
+  const state={
+    lastRun:new Date().toISOString(),
+    forksScanned:allForks.length,
+    maxDepth:MAX_DEPTH,
+    maxForks:MAX_FORKS||null,
+    newFPs:newFPs.size,
+    contributors:credits.size,
+    skipPRs:SKIP_PRS,
+  };
   fs.mkdirSync(path.dirname(STATE_FILE),{recursive:true});
   fs.writeFileSync(STATE_FILE,JSON.stringify(state,null,2)+'\n');
+  fs.writeFileSync(FORK_FPS_FILE,JSON.stringify(Object.fromEntries(newFPs),null,2)+'\n');
 
   // Summary
   let report='## Recursive Fork Scanner\n';
@@ -203,16 +230,10 @@ async function main(){
     }
   }
   console.log(report);
-  fs.appendFileSync(SUMMARY,report+'\n');
-
-  // Save new FPs for downstream processing (both locations for compat)
-  if(newFPs.size>0){
-    const data=Object.fromEntries(newFPs);
-    fs.writeFileSync(path.join(__dirname,'..','state','new-fork-fps.json'),JSON.stringify(data,null,2)+'\n');
-    try{fs.writeFileSync('/tmp/new_fork_fps.json',JSON.stringify(data,null,2)+'\n');}catch{}
-  }
+  try{fs.appendFileSync(SUMMARY,report+'\n');}catch(e){console.log('Summary write skipped: '+e.message);}
 
   console.log('Done: '+allForks.length+' forks, '+newFPs.size+' new FPs, '+credits.size+' contributors');
+  console.log('Wrote '+FORK_FPS_FILE);
 }
 
 main().catch(e=>{console.error(e);process.exit(1);});

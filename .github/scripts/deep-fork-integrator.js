@@ -15,8 +15,22 @@ const TK=process.env.GH_PAT||process.env.GH_TOKEN||process.env.GITHUB_TOKEN;
 const UP='JohanBendz/com.tuya.zigbee';
 const OWN='dlnraja/com.tuya.zigbee';
 const MD=parseInt(process.env.FORK_DEPTH||'3',10);
-const DRY=process.env.DRY_RUN==='true';
-const SUMMARY=process.env.GITHUB_STEP_SUMMARY||null;
+const MAX_FORKS=parseInt(process.env.FORK_MAX_FORKS||'0',10)||0;
+const SKIP_PRS=process.argv.includes('--fast')||process.env.FORK_SKIP_PRS==='1';
+const FAST=process.argv.includes('--fast')||process.env.FORK_FAST==='1';
+const SKIP_UPSTREAM=FAST||process.env.FORK_SKIP_UPSTREAM==='1';
+const DRY=process.env.DRY_RUN==='true'||process.argv.includes('--dry-run');
+const SLEEP_MS=FAST?80:200;
+const SLEEP_DJ=FAST?120:300;
+const SLEEP_FORK=FAST?150:500;
+const MAX_COMPOSES=FAST?60:0;
+const MAX_DEVICE_JS=FAST?3:10;
+function resolveSummaryPath(){
+  const env=process.env.GITHUB_STEP_SUMMARY;
+  if(env && !(process.platform==='win32' && /^\/dev\/null/i.test(env)))return env;
+  return path.join(SD,'deep-fork-summary.md');
+}
+const SUMMARY=resolveSummaryPath();
 const hdrs={Accept:'application/vnd.github+json','User-Agent':'tuya-deep'};
 if(TK)hdrs.Authorization='Bearer '+TK;
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
@@ -95,13 +109,14 @@ async function scanForkDeep(fork,local,results){
     const tree=await ghGet('/repos/'+fork.full_name+'/git/trees/'+fork.branch+'?recursive=1');
     if(!tree||!tree.tree)return;
     const files=tree.tree.filter(t=>t.path&&/^drivers\//.test(t.path));
-    const composes=files.filter(t=>/driver\.compose\.json$/.test(t.path));
+    let composes=files.filter(t=>/driver\.compose\.json$/.test(t.path));
     const deviceJs=files.filter(t=>/device\.js$/.test(t.path));
     const driverJs=files.filter(t=>/driver\.js$/.test(t.path));
     const flowJsons=files.filter(t=>/driver\.flow\.compose\.json$/.test(t.path));
+    if(MAX_COMPOSES>0&&composes.length>MAX_COMPOSES)composes=composes.slice(0,MAX_COMPOSES);
 
     for(const cf of composes){
-      await sleep(200);
+      await sleep(SLEEP_MS);
       const raw=await ghBlob(fork.full_name,cf.path,fork.branch);
       if(!raw)continue;
       let data;try{data=JSON.parse(raw)}catch{continue}
@@ -143,12 +158,12 @@ async function scanForkDeep(fork,local,results){
     }
 
     // Scan device.js for DP mapping patterns we don't have
-    for(const dj of deviceJs.slice(0,10)){
+    for(const dj of deviceJs.slice(0,MAX_DEVICE_JS)){
       const drvName=dj.path.match(/drivers\/([^\/]+)\//)?.[1];
       if(!drvName)continue;
       const norm=normDriver(drvName);
       if(!norm||!local.drivers.has(norm))continue;
-      await sleep(300);
+      await sleep(SLEEP_DJ);
       const code=await ghBlob(fork.full_name,dj.path,fork.branch);
       if(!code||code.length<100)continue;
       // Extract DP mappings from fork's device.js
@@ -166,7 +181,8 @@ async function scanForkDeep(fork,local,results){
       }
     }
 
-    // Also scan non-default branches (up to 3)
+    // Also scan non-default branches (up to 3) — skipped in fast mode
+    if(!FAST){
     const branches=await ghGet('/repos/'+fork.full_name+'/branches?per_page=10');
     if(branches&&branches.length>1){
       for(const b of branches.slice(0,3)){
@@ -192,6 +208,7 @@ async function scanForkDeep(fork,local,results){
           }
         }
       }
+    }
     }
   }catch(e){console.log('  ERR '+fork.full_name+': '+(e.message||'').slice(0,60))}
 }
@@ -277,22 +294,38 @@ async function main(){
   const results={fpAdds:[],newDrivers:[],dpFinds:[],settingsAdds:[]};
   const visited=new Set();visited.add(OWN);
 
-  // 1. Scan upstream directly
-  console.log('\n=== Scanning upstream: '+UP+' ===');
-  await scanForkDeep({full_name:UP,owner:'JohanBendz',branch:'master',depth:0},local,results);
+  // 1. Scan upstream directly (skip in --fast — 400+ drivers, forks carry community deltas)
+  if(!SKIP_UPSTREAM){
+    console.log('\n=== Scanning upstream: '+UP+' ===');
+    await scanForkDeep({full_name:UP,owner:'JohanBendz',branch:'master',depth:0},local,results);
+  }else{
+    console.log('\n=== Upstream scan skipped (--fast) ===');
+  }
 
   // 2. Recursively scan ALL forks from upstream
   console.log('\n=== Collecting forks recursively (depth '+MD+') ===');
-  const allForks=await collectForks(UP,0,visited);
-  console.log('Total forks: '+allForks.length);
+  let allForks=await collectForks(UP,0,visited);
+  allForks=allForks.filter(f=>f.full_name!==OWN);
+  allForks.sort((a,b)=>String(b.updated||'').localeCompare(String(a.updated||'')));
+  if(MAX_FORKS>0&&allForks.length>MAX_FORKS){
+    console.log('Limiting to '+MAX_FORKS+' most recent forks (of '+allForks.length+')');
+    allForks=allForks.slice(0,MAX_FORKS);
+  }
+  console.log('Total forks: '+allForks.length+(DRY?' [DRY RUN]':''));
+  let scanned=0;
   for(const fork of allForks){
+    console.log('  Fork '+(++scanned)+'/'+allForks.length+': '+fork.full_name);
     await scanForkDeep(fork,local,results);
-    await sleep(500);
+    await sleep(SLEEP_FORK);
   }
 
   // 3. Scan ALL PRs from upstream and own repo
-  console.log('\n=== Deep PR scan ===');
-  await scanPRsDeep([UP,OWN],local,results);
+  if(!SKIP_PRS){
+    console.log('\n=== Deep PR scan ===');
+    await scanPRsDeep([UP,OWN],local,results);
+  }else{
+    console.log('\n=== Deep PR scan skipped ===');
+  }
 
   // 4. Apply safe integrations
   console.log('\n=== Applying integrations ===');
@@ -359,7 +392,7 @@ async function main(){
       for(const d of results.newDrivers.slice(0,10))
         sm+='- `'+d.driver+'` ('+d.mfrs.length+' FPs) <- '+d.fork+'\n';
     }
-    fs.appendFileSync(SUMMARY,sm+'\n');
+    try{fs.appendFileSync(SUMMARY,sm+'\n');}catch(e){console.log('Summary write skipped: '+e.message);}
   }
 }
 
