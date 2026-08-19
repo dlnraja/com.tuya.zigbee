@@ -1311,5 +1311,8 @@
   },
   "5.12.86": {
     "en": "Reliability: IAS water/contact/repeater disambiguation, compound fingerprint locks, BrightnessScale backport, battery cascade hardening."
+  },
+  "5.12.87": {
+    "en": "Fix: computed caps (meter_*) no longer auto-added from device DP reports. Guard routes meter_power to measure_power (native measurement). Prevents phantom kWh in Energy tab."
   }
 }
