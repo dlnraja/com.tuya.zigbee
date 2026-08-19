@@ -380,7 +380,7 @@
     "analyzed": 9,
     "keyPatterns": {
       "johanBendz": "TuyaSpecificClusterDevice, DP constants, sub-devices",
-      "gpmachado": "Cluster registry, availability manager, rejoin detection, error utils",
+      "gpmachado": "com.gpm.homesuite (GPL-3.0, ideas only): onUninit teardown, Poll Control skip, settings-over-dump, sacred couples",
       "andiwirz": "Protocol auto-detect, DP discovery tool",
       "rebtor": "TuyAPI local control",
       "drenso": "TypeScript, OAuth2",
@@ -540,7 +540,7 @@
     "communityContributors": [
       {"name": "AreAArseth/com.hobeian", "contribution": "Hobeian Zigbee devices"},
       {"name": "drenso/com.tuya2", "contribution": "TypeScript Tuya cloud app (OAuth2 patterns)"},
-      {"name": "gpmachado", "contribution": "Cluster registry, availability manager, rejoin detection"},
+      {"name": "gpmachado", "contribution": "com.gpm.homesuite studied (GPL-3.0, no code copied): onUninit teardown, Poll Control skip, sacred couples"},
       {"name": "andiwirz", "contribution": "Protocol auto-detect, DP discovery tool"},
       {"name": "rebtor", "contribution": "TuyAPI local control"},
       {"name": "jurgenheine", "contribution": "Cloud API patterns"},

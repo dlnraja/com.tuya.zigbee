@@ -1,53 +1,61 @@
-const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
-const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 'use strict';
 
-const { debug, Cluster } = require('zigbee-clusters');
+const { Cluster } = require('zigbee-clusters');
 const TuyaSpecificCluster = require('../../lib/TuyaSpecificCluster');
-const TuyaSpecificClusterDevice = require("../../lib/TuyaSpecificClusterDevice");
+const TuyaSpecificClusterDevice = require('../../lib/TuyaSpecificClusterDevice');
 const { getDataValue } = require('../../lib/TuyaHelpers');
 const { V1_SINGLE_GANG_DIMMER_SWITCH_DATA_POINTS } = require('../../lib/TuyaDataPoints');
+const { toTuyaBrightness, fromTuyaBrightness } = require('../../lib/tuya/TuyaBrightnessScale');
 
 Cluster.addCluster(TuyaSpecificCluster);
 
 class wall_dimmer_tuya extends TuyaSpecificClusterDevice {
 
-  // v9.0.74: This device is mains-powered. Declare it so UnifiedBatteryHandler
-  // does not add a false measure_battery capability (fixes false-battery reports).
   get mainsPowered() { return true; }
 
   async onNodeInit({ zclNode }) {
+    await super.onNodeInit({ zclNode });
     this.printNode();
-/*     debug(true);
-    this.enableDebug(); */
 
-    // Read and log device attributes
+    if (this.mainsPowered) {
+      if (this.hasCapability('measure_battery')) {
+        await this.removeCapability('measure_battery').catch(() => {});
+      }
+      if (this.hasCapability('alarm_battery')) {
+        await this.removeCapability('alarm_battery').catch(() => {});
+      }
+    }
+
     await this._readDeviceAttributes(zclNode);
-
-    // Setup capability listeners for on/off and dim
     await this._setupGang(zclNode);
 
-    // Attach event listeners for Tuya-specific reports (manual state changes)
     if (!this.hasListenersAttached) {
-      zclNode.endpoints[1].clusters.tuya.on('reporting', async (value) => {
-        try {
-          this.log('Received reporting:', value);
-          await this.processDatapoint(value);
-        } catch (err) {
-          this.error('Error processing datapoint:', err);
-        }
-      });
+      const tuya = zclNode?.endpoints?.[1]?.clusters?.tuya
+        || zclNode?.endpoints?.[1]?.clusters?.[0xEF00];
 
-      zclNode.endpoints[1].clusters.tuya.on('response', async (value) => {
-        try {
-          this.log('Received response:', value);
-          await this.processDatapoint(value);
-        } catch (err) {
-          this.error('Error processing datapoint:', err);
-        }
-      });
+      if (tuya?.on) {
+        tuya.on('reporting', async (value) => {
+          try {
+            this.log('Received reporting:', value);
+            await this.processDatapoint(value);
+          } catch (err) {
+            this.error('Error processing datapoint:', err);
+          }
+        });
 
-      this.hasListenersAttached = true;
+        tuya.on('response', async (value) => {
+          try {
+            this.log('Received response:', value);
+            await this.processDatapoint(value);
+          } catch (err) {
+            this.error('Error processing datapoint:', err);
+          }
+        });
+
+        this.hasListenersAttached = true;
+      } else {
+        this.log('[WALL-DIMMER] Tuya EF00 cluster missing — cannot attach DP listeners');
+      }
     }
   }
 
@@ -60,8 +68,8 @@ class wall_dimmer_tuya extends TuyaSpecificClusterDevice {
   }
 
   async _setupGang(zclNode) {
-    // Register capability listeners
     this.registerCapabilityListener('onoff', async (value) => {
+      if (typeof this.markAppCommand === 'function') {this.markAppCommand();}
       this.log('onoff:', value);
       try {
         await this.writeBool(V1_SINGLE_GANG_DIMMER_SWITCH_DATA_POINTS.onOff, value);
@@ -72,21 +80,19 @@ class wall_dimmer_tuya extends TuyaSpecificClusterDevice {
     });
 
     this.registerCapabilityListener('dim', async (value) => {
-      const brightness = Math.floor(value * 1000); // Scale to 0-1000
+      if (typeof this.markAppCommand === 'function') {this.markAppCommand();}
+      const brightness = toTuyaBrightness(value);
       this.log('brightness:', brightness);
-      
+
       try {
-        // If dim value is greater than 0 and the device is off, turn it on
         if (brightness > 0 && !this.getCapabilityValue('onoff')) {
           this.log('Dim level is greater than 0, turning on device');
           await this.writeBool(V1_SINGLE_GANG_DIMMER_SWITCH_DATA_POINTS.onOff, true);
           await this['safeSetCapabilityValue']('onoff', true);
         }
-    
-        // Set the brightness
+
         await this.writeData32(V1_SINGLE_GANG_DIMMER_SWITCH_DATA_POINTS.brightness, brightness);
-    
-        // Turning off device if dim level is 0
+
         if (brightness === 0) {
           this.log('Dim level is 0, turning off device');
           await this.writeBool(V1_SINGLE_GANG_DIMMER_SWITCH_DATA_POINTS.onOff, false);
@@ -97,11 +103,8 @@ class wall_dimmer_tuya extends TuyaSpecificClusterDevice {
         throw err;
       }
     });
-    
-    
   }
 
-  // Process DP reports and update Homey accordingly
   async processDatapoint(data) {
     const dp = data.dp;
     const parsedValue = getDataValue(data);
@@ -116,7 +119,7 @@ class wall_dimmer_tuya extends TuyaSpecificClusterDevice {
 
       case V1_SINGLE_GANG_DIMMER_SWITCH_DATA_POINTS.brightness:
         this.log('Received dim level:', parsedValue);
-        await this['safeSetCapabilityValue']('dim', parsedValue / 1000).catch(this.error);
+        await this['safeSetCapabilityValue']('dim', fromTuyaBrightness(parsedValue)).catch(this.error);
         break;
 
       default:

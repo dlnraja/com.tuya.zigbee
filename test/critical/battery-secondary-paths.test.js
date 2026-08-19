@@ -58,7 +58,7 @@ describe('secondary battery paths', function() {
     assert.deepStrictEqual(BatteryRouter.TUYA_VOLTAGE_DPS, [33, 35, 247]);
   });
 
-  it('uses marked 50% estimates and replaces them with real router DP values', async function() {
+  it('does not invent 50% — leaves battery unknown until a real DP', async function() {
     const device = createDevice();
 
     await BatteryRouter.configureBatteryReporting(device, {
@@ -67,9 +67,8 @@ describe('secondary battery paths', function() {
       dps: [121],
     });
 
-    assert.strictEqual(device.values.measure_battery, 50);
-    assert.strictEqual(device.store.last_battery_estimated, true);
-    assert.strictEqual(device.store.last_battery_source, 'battery-router-estimated-default');
+    assert.strictEqual(device.values.measure_battery, undefined);
+    assert.strictEqual(device.store.last_battery_estimated, undefined);
 
     device.tuyaEF00Manager.emit('dp-121', 88);
     await new Promise(resolve => setImmediate(resolve));

@@ -1872,9 +1872,9 @@
   },
   {
     "manufacturerName": "_TZE284_m1cvyneb",
-    "driverId": "zigbee_universal",
-    "type": "other",
-    "powerSource": "unknown",
+    "driverId": "wall_dimmer_tuya",
+    "type": "dimmer",
+    "powerSource": "mains",
     "modelIds": [
       "TS0601"
     ]

@@ -53,6 +53,10 @@ drivers/
 3. Test with `npx homey app validate`
 4. Submit PR
 
+## Thanks
+
+[gpmachado/com.gpm.homesuite](https://github.com/gpmachado/com.gpm.homesuite) (GPL-3.0) was studied for field behaviour. We reimplement under MIT — no HomeSuite sources in this tree. See `CREDITS.md` and `NOTICE`.
+
 ---
 
 ## Flow Card Guidelines
