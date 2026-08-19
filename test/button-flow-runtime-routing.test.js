@@ -74,13 +74,11 @@ describe('button flow runtime routing guards', function() {
     assert.match(source, /this\.cleanup\(\{ silent: true \}\)/);
     assert.match(source, /epId === 'getDeviceEndpoint'/);
     assert.match(source, /typeof cluster\?\.removeListener === 'function'/);
-    const onMatch = source.match(/if\s*\(\s*lower\.includes\('on'\)\s*\)\s*\{?\s*return\s+'on';\s*\}?/);
-    const offMatch = source.match(/if\s*\(\s*lower\.includes\('off'\)\s*\)\s*\{?\s*return\s+'off';\s*\}?/);
-    assert(onMatch && offMatch, 'onOff classifier must check both on and off states');
-    assert(
-      onMatch.index < offMatch.index,
-      'onOff commands must classify commandOnWithTimedOff as on before checking off'
-    );
+    assert.match(source, /normalizeOnOffCommand\(name\)/);
+    const endpointCap = read('lib/utils/endpointCapability.js');
+    assert.match(endpointCap, /Never use includes\('on'\)/);
+    assert.match(endpointCap, /timedoff.*return 'on'/s);
+    assert.match(endpointCap, /commandoff.*return 'off'/s);
     assert.match(base, /multistateInput/);
     assert.match(base, /resolvePressType\(sceneId, 'CMD-scene'\)/);
     assert.match(base, /resolvePressType\(value, 'CMD-multistate'\)/);
@@ -129,6 +127,13 @@ describe('button flow runtime routing guards', function() {
     assert.match(source, /await this\._triggerPhysicalFlow\?\.\(i, 'single', \{ source: 'virtual', _internalTrigger: true \}\)/);
   });
 
+  it('UnifiedSwitchBase button.N UI applies virtual/physical dedup gate', function() {
+    const source = read('lib/devices/UnifiedSwitchBase.js');
+    assert.match(source, /lastPhysical = this\._virtualPhysicalDedup\.lastPhysicalPress\[gang\]/);
+    assert.match(source, /Skipping virtual press \(physical/);
+    assert.match(source, /this\._virtualPhysicalDedup\.lastVirtualPress\[gang\] = now/);
+  });
+
   it('routes mixed switch button UI and flow actions through real gang commands', async function() {
     const switchBase = read('lib/devices/UnifiedSwitchBase.js');
     const flowHelper = read('lib/drivers/FlowGangControl.js');
@@ -146,8 +151,8 @@ describe('button flow runtime routing guards', function() {
     assert.match(switchBase, /this\.registerCapabilityListener\(capability, async \(\) =>/);
     assert.match(switchBase, /this\._triggerPhysicalFlow\(gang, 'single', \{ source: 'virtual', _internalTrigger: true \}\)/);
     assert.match(switchBase, /await setGangOnOff\(this, gang, 'toggle'\)/);
-    assert.match(switchBase, /throw dpErr/);
-    assert.match(switchBase, /throw e/);
+    assert.match(switchBase, /throw cascadeErr/);
+    assert.match(switchBase, /writeCapabilityWithFallbacks/);
     assert.match(flowHelper, /device\._setGangOnOff\(gang, nextValue\)/);
     assert.match(flowHelper, /isMissingCapabilityListenerError/);
     assert.match(baseDriver, /'wall_switch_2gang'/);

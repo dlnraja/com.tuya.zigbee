@@ -41,6 +41,11 @@ function isValidFP(mfr) {
 function main() {
   console.log('=== Implement Fork FPs v5.12.0 ===');
   
+  if (!fs.existsSync(FORK_FPS)) {
+    console.log('No new fork fingerprints found (missing state/new-fork-fps.json). Skipping.');
+    return;
+  }
+
   // Build current index (mfrs + pids)
   const allMfrs = new Set();
   const allPids = new Set();

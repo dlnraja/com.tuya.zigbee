@@ -10,7 +10,12 @@ const UPSTREAM='JohanBendz/com.tuya.zigbee';
 const OWN='dlnraja/com.tuya.zigbee';
 const CREDITS_FILE=path.join(ROOT,'docs','CREDITS.md');
 const STATE_FILE=path.join(__dirname,'..','state','fork-scan-state.json');
-const SUMMARY=process.env.GITHUB_STEP_SUMMARY||'/dev/null';
+// GitHub Actions fournit souvent GITHUB_STEP_SUMMARY.
+// Sur Windows, '/dev/null' n'existe pas -> garde un chemin valide.
+const SUMMARY = process.env.GITHUB_STEP_SUMMARY
+  || (process.platform === 'win32'
+    ? path.join(__dirname, '..', 'state', 'fork-scan-summary.md')
+    : '/dev/null');
 const MAX_DEPTH=parseInt(process.env.FORK_DEPTH||'3');
 const hdrs={Accept:'application/vnd.github+json','User-Agent':'tuya-fork-scanner'};
 if(TOKEN)hdrs.Authorization='Bearer '+TOKEN;
@@ -50,10 +55,23 @@ async function collectForks(repo,depth,visited){
   return all;
 }
 
+// Get a GitHub tree object containing ONLY drivers/*, to avoid
+// downloading the full repo with `?recursive=1` (huge payload).
+async function getDriversTree(fork, branch){
+  // First: root tree without recursion (small).
+  const root=await ghGet('/repos/'+fork.full_name+'/git/trees/'+branch+'?recursive=0');
+  const driversEntry=root?.tree?.find(t=>t?.path==='drivers' && t?.type==='tree');
+  if(driversEntry?.sha){
+    return await ghGet('/repos/'+fork.full_name+'/git/trees/'+driversEntry.sha+'?recursive=1');
+  }
+  // Fallback: previous (slower) approach.
+  return await ghGet('/repos/'+fork.full_name+'/git/trees/'+branch+'?recursive=1');
+}
+
 // Scan a single fork for new fingerprints
 async function scanFork(fork,fps,newFPs,credits){
   try{
-    const tree=await ghGet('/repos/'+fork.full_name+'/git/trees/'+fork.default_branch+'?recursive=1');
+    const tree=await getDriversTree(fork,fork.default_branch);
     if(!tree||!tree.tree)return;
     const composeFiles=tree.tree.filter(t=>t.path&&t.path.match(/drivers\/.*\/driver\.compose\.json/));
     for(const cf of composeFiles){
@@ -79,7 +97,7 @@ async function scanFork(fork,fps,newFPs,credits){
       for(const b of branches.slice(0,5)){
         if(b.name===fork.default_branch)continue;
         try{
-          const btree=await ghGet('/repos/'+fork.full_name+'/git/trees/'+b.name+'?recursive=1');
+          const btree=await getDriversTree(fork,b.name);
           if(!btree||!btree.tree)continue;
           const bComposes=btree.tree.filter(t=>t.path&&t.path.match(/drivers\/.*\/driver\.compose\.json/));
           for(const cf of bComposes){
