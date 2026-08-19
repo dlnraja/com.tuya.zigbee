@@ -41,5 +41,9 @@ To prevent `NaN` or `Infinity` crashes (which are difficult to debug in Homey di
 3. Ensure the **CI Pipeline** passes (Syntax, JSON, Architectural rules).
 4. Provide a **Diagnostic Log ID** if adding a new device fingerprint.
 
+## Thanks
+
+Study-only (no code copied): [gpmachado/com.gpm.homesuite](https://github.com/gpmachado/com.gpm.homesuite) (GPL-3.0) — `onUninit` teardown, Poll Control skip, sacred-couple routing. Full list: `CREDITS.md` / `NOTICE`.
+
 ---
 *Failure to follow these rules will result in an automatic CI/CD rejection.*

@@ -60,6 +60,7 @@
       "mfr": [
         "_TZE284_m1cvyneb",
         "_tze284_m1cvyneb",
+        "_TZE284_M1CVYNEB",
         "_TZE204_m1cvyneb",
         "_TZE200_m1cvyneb"
       ],
@@ -69,10 +70,14 @@
         "climate_sensor",
         "climate_sensor_temperature",
         "thermostat",
-        "air_purifier_climate"
+        "air_purifier_climate",
+        "soil_sensor",
+        "zigbee_universal",
+        "generic_tuya",
+        "ir_blaster"
       ],
       "protocol": "tuya_ef00",
-      "notes": "PresentSky / forum: wall dimmer wrongly paired as temperature sensor. Re-pair required after FP lock.",
+      "notes": "BSEED Click 1-gang EF00 dimmer insert. Stale climate pairing cannot be swapped at runtime — remove and re-add as wall dimmer.",
       "sources": ["forum-140352", "diag-f20dc4f0", "P139", "P149"],
       "tracks": {
         "master": { "static": true, "dynamic": true },
@@ -612,6 +617,58 @@
       "canonicalDriver": "wall_switch_6_gang_tuya",
       "forbiddenDrivers": ["climate_sensor", "switch_wall_6gang"],
       "protocol": "tuya_ef00",
+      "tracks": {
+        "master": { "static": true, "dynamic": false },
+        "stable": { "static": true, "dynamic": false }
+      }
+    },
+    {
+      "id": "okaz9tjs-ts011f-metering-plug",
+      "mfr": ["_TZ3000_okaz9tjs", "_tz3000_okaz9tjs", "_TZ3000_OKAZ9TJS"],
+      "productId": ["TS011F"],
+      "canonicalDriver": "plug_energy_monitor",
+      "forbiddenDrivers": ["button_wireless_plug", "button_wireless_2", "climate_sensor"],
+      "protocol": "zcl",
+      "notes": "Metering TS011F plug, not a wireless button.",
+      "tracks": {
+        "master": { "static": true, "dynamic": false },
+        "stable": { "static": true, "dynamic": false }
+      }
+    },
+    {
+      "id": "fgwhjm9j-ts011f-metering-plug",
+      "mfr": ["_TZ3210_fgwhjm9j", "_tz3210_fgwhjm9j", "_TZ3210_FGWHJM9J"],
+      "productId": ["TS011F"],
+      "canonicalDriver": "plug_energy_monitor",
+      "forbiddenDrivers": ["climate_sensor", "button_wireless_plug"],
+      "protocol": "zcl",
+      "notes": "TZ3210 TS011F metering plug, not a climate sensor.",
+      "tracks": {
+        "master": { "static": true, "dynamic": false },
+        "stable": { "static": true, "dynamic": false }
+      }
+    },
+    {
+      "id": "cfnprab5-power-strip-not-remote",
+      "mfr": ["_TZ3000_cfnprab5", "_tz3000_cfnprab5", "_TZ3000_CFNPRAB5"],
+      "productId": ["TS011F"],
+      "canonicalDriver": "socket_power_strip_four_three",
+      "forbiddenDrivers": ["button_wireless_2", "button_wireless_4", "climate_sensor"],
+      "protocol": "zcl",
+      "notes": "4-outlet + USB strip. Same mfr must not pair as a 2-button remote.",
+      "tracks": {
+        "master": { "static": true, "dynamic": false },
+        "stable": { "static": true, "dynamic": false }
+      }
+    },
+    {
+      "id": "lwthnp7j-zcl-4gang",
+      "mfr": ["_TZ3000_lwthnp7j", "_tz3000_lwthnp7j", "_TZ3000_LWTHNP7J"],
+      "productId": ["TS0004"],
+      "canonicalDriver": "switch_4gang",
+      "forbiddenDrivers": ["wall_switch_4_gang_tuya", "climate_sensor", "button_wireless_4"],
+      "protocol": "zcl",
+      "notes": "ZCL 4-gang (not EF00 TS0601).",
       "tracks": {
         "master": { "static": true, "dynamic": false },
         "stable": { "static": true, "dynamic": false }

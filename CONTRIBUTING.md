@@ -43,6 +43,8 @@ this.settings.get('zb_model_id')
 - [ ] Version synchronisée (package.json + .homeychangelog.json)
 - [ ] Pas de  dans les noms de drivers
 
+Thanks (study-only, no code copied): `gpmachado/com.gpm.homesuite` — see `CREDITS.md`.
+
 ## 🔧 Scripts Utilitaires
 ```bash
 # Validation complète

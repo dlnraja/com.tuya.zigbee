@@ -19,13 +19,14 @@
 ## Community Contributors
 - **AreAArseth/com.hobeian** - Hobeian Zigbee devices
 - **drenso/com.tuya2** - TypeScript Tuya cloud app (OAuth2 patterns)
-- **gpmachado** - Cluster registry, availability manager, rejoin detection
+- **gpmachado** (`gpmachado/com.gpm.homesuite`, GPL-3.0, ideas only — no code copied) — availability last-seen / rejoin ideas, lifecycle `onUninit` teardown, Poll Control skip on sleepy nodes, Homey settings over ZCL dump, interview-driven sacred couples
 - **andiwirz** - Protocol auto-detect, DP discovery tool
 - **rebtor** - TuyAPI local control
 - **jurgenheine** - Cloud API patterns
 - **robertklep/homey-tuya-zigbee** - Community Tuya Zigbee
 - **codetheweb/tuyapi** - Node.js Tuya API
 - **blakadder/zigbee** - Zigbee device database
+- **gpmachado/com.gpm.homesuite** - GPL-3.0 study only (no code copied): onUninit teardown, Poll Control skip
 
 ## Homey Community Forum Contributors
 - **dlnraja** - App author, primary maintainer, TITAN Protocol architect
@@ -61,6 +62,7 @@
 - **Joolee/Homey-SVG-Icons** - Community SVG capability icons
 - **codetheweb/tuyapi** - Node.js Tuya local API
 - **blakadder/zigbee** - Cross-platform Zigbee device database
+- **gpmachado/com.gpm.homesuite** - GPL-3.0 study only (no code copied)
 
 ## Device Database
 - **zigbee.blakadder.com** - Cross-platform device fingerprints
@@ -96,6 +98,7 @@
 | athombv (SDK3, zigbeedriver, zigbee-clusters) | **MIT** | Framework |
 | OpenHAB Zigbee binding | **EPL-2.0** | Recherche intervalles de reporting |
 | SmartThings Edge drivers | **Apache-2.0** | Patterns Tuya DP |
+| gpmachado/com.gpm.homesuite | **GPL-3.0** | Study only — no code copied; behaviour reimplemented under MIT |
 
 > Voir **NOTICE** à la racine pour les attributions complètes. Les empreintes,
 > numéros de datapoint et comportements protocolaires sont des données

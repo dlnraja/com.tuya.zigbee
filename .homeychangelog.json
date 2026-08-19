@@ -1308,5 +1308,8 @@
   },
   "5.12.84": {
     "en": "Garage openers, dual outlets, Wing contacts and HOBEIAN USB switches keep the correct driver. Curtain motors that ignore position writes use open/stop/close. Battery 100% stays 100%."
+  },
+  "5.12.86": {
+    "en": "Reliability: IAS water/contact/repeater disambiguation, compound fingerprint locks, BrightnessScale backport, battery cascade hardening."
   }
 }
