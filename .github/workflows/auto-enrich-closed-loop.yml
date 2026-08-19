@@ -1,5 +1,5 @@
 # 🔄 Auto-Enrich Closed Loop (P69)
-# Triggers: cron: 0 */4 * * * + workflow_dispatch | Secrets: GH_PAT,GMAIL_APP_PASSWORD,GMAIL_CLIENT_ID,GMAIL_CLIENT_SECRET,GMAIL_EMAIL,GMAIL_REFRESH_TOKEN,HOMEY_PAT,HOMEY_PAT_API
+# Triggers: cron: 0 */4 * * * + workflow_dispatch | Secrets: GH_PAT,GMAIL_APP_PASSWORD,GMAIL_CLIENT_ID,GMAIL_CLIENT_SECRET,GMAIL_EMAIL,GMAIL_REFRESH_TOKEN,HOMEY_PAT,HOMEY_PAT_API,HOMEY_EMAIL,HOMEY_PASSWORD
 # Doc header added 2026-07-29 (workflows genealogy enrichment).
 
 name: 🔄 Auto-Enrich Closed Loop (P69)
@@ -63,6 +63,9 @@ jobs:
       GMAIL_REFRESH_TOKEN: ${{ secrets.GMAIL_REFRESH_TOKEN }}
       HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
       HOMEY_PAT_API: ${{ secrets.HOMEY_PAT_API }}
+      HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+      HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+      DISCOURSE_API_KEY: ${{ secrets.DISCOURSE_API_KEY }}
 
     steps:
       - name: 📥 Checkout
@@ -242,6 +245,32 @@ jobs:
             node -e "const d=require('./.github/state/forum/multi-silent-digest.json'); console.log(JSON.stringify(d.totals))"
           fi
 
+      # READ-ONLY: screenshots/alts + private inbox. Never POST.
+      - name: "Forum media + PM harvest (T157628, never post)"
+        if: always()
+        continue-on-error: true
+        timeout-minutes: 12
+        env:
+          SMART_FETCH_READER_FALLBACK: "1"
+          FIRECRAWL_API_KEY: ${{ secrets.FIRECRAWL_API_KEY }}
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+          DISCOURSE_API_KEY: ${{ secrets.DISCOURSE_API_KEY }}
+          DISCOURSE_USERNAME: dlnraja
+          FORUM_USERNAME: dlnraja
+          FORUM_AUTO_POST: "0"
+          DRY_RUN: "true"
+          FORUM_PM_MAX_THREADS: "20"
+        run: |
+          if [ -f tools/ci/forum-media-deep-scan.js ]; then
+            node tools/ci/forum-media-deep-scan.js --max=40 --topics=140352,26439,89271 || echo "media scan skipped"
+          fi
+          if [ -z "${HOMEY_EMAIL:-}" ] && [ -z "${DISCOURSE_API_KEY:-}" ]; then
+            echo "No forum SSO — skip PM harvest"
+          elif [ -f tools/ci/forum-pm-read-only.js ]; then
+            node tools/ci/forum-pm-read-only.js || echo "PM harvest skipped"
+          fi
+
       # READ-ONLY extended satellite thread FP scan (never posts)
       - name: "Forum threads scan (READ-ONLY FP diff)"
         if: always()
@@ -298,6 +327,7 @@ jobs:
             .github/state/gmail-crash-patterns.json
             .github/state/gmail-fps-crossref-v2.json
             .github/state/sacred-couple-dry-gate.json
+            .github/state/forum/
             auto-enrich.log
           if-no-files-found: warn
           retention-days: 14

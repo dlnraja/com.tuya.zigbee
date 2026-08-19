@@ -9,7 +9,7 @@
  * HOMEY_PASSWORD (GitHub secrets). Never invent a pid from a retail SKU.
  * HOW: Discourse inbox/sent JSON with session cookies or Api-Key.
  * WHO: CI bot (master). Artifacts only — not Homey runtime.
- * WHEN: workflow_dispatch (no cron).
+ * WHEN: cron 07:50/19:50 UTC (forum-pm-read.yml) and every 4h via forum-poll.yml.
  * AGAINST: forum-pm-scanner.js historically POSTed replies; this script has
  * no POST code path at all.
  */

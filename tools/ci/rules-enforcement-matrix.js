@@ -96,6 +96,7 @@ const RULES = [
   { id: 'M1', domain: 'forum', rule: 'REPLY_TOPICS is 140352 and nothing else', source: '.cursor/rules/forum-silent-humanize.mdc', enforcedBy: 'tools/ci/forum-ai-paste-gate.js' },
   { id: 'M2', domain: 'forum', rule: 'Never paste unchecked AI output into the Homey community', source: '.cursor/rules/forum-silent-humanize.mdc', enforcedBy: 'tools/ci/forum-ai-paste-gate.js' },
   { id: 'M3', domain: 'forum', rule: 'External sources are never credited in commits, changelogs or forum text', source: '.cursorrules', unenforced: 'wording policy — needs human review' },
+  { id: 'M4', domain: 'forum', rule: 'Private messages are harvested on a schedule; never POST replies', source: 'docs/rules/FORUM_SILENT_HUMANIZE.md', enforcedBy: 'test/critical/p218-forum-ci-harvest.test.js' },
 
   // ── Branch discipline ────────────────────────────────────────────────────
   { id: 'D1', domain: 'branches', rule: 'Never push directly to stable-v5; backport surgically after a clean master soak', source: 'docs/rules/DUAL_APP_VISION.md', unenforced: 'branch protection concern, not a repo script' },

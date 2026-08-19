@@ -127,6 +127,8 @@ Orchestrated via `tools/ci/mega-crawler.js` + GHA `mega-crawl.yml` (**workflow_d
 - Blakadder: **daily 04:00 UTC** (`blakadder-fetch.yml`)
 - Gmail: **daily** (`gmail-diagnostics.yml`)
 - Recurrent orchestrator: **daily 03:30 UTC** (`recurrent-orchestrator.yml`)
+- Forum public poll: **every 4h at :15** (`forum-poll.yml`) — silent scan + media + PM harvest, never POST
+- Forum PM dedicated: **07:50 and 19:50 UTC** (`forum-pm-read.yml`) — inbox/sent + optional one deep-diag UUID
 - Stale issues: **weekly** (`stale.yml`) — mark only, never close
 - Bot/[Auto] issues: **daily 04:45 UTC** (`auto-bot-issue-triage.yml`) — treat FPs → close
 - Batch analyze & respond: **daily 05:45 UTC** (`auto-close-supported.yml`) — labels/comments; human closes stay manual
@@ -180,6 +182,8 @@ Note: the response is at `data.post_stream.posts`, NOT `data.posts`. (P53 discov
 This fetches all 2032 posts of topic 140352 in ~5 minutes with 100% success.
 
 - Silent multi-topic scan: `node tools/ci/forum-silent-multi-scan.js`
+- Forum PM harvest (never POST): `node tools/ci/forum-pm-read-only.js`
+- Forum media/screenshots: `node tools/ci/forum-media-deep-scan.js --max=40`
   (topics 140352, 146735, 26439, 89271, 43287, 157628, 157859 — READ-ONLY except policy on 140352).
 - RF coexistence (Zigbee/Thread ≠ Wi-Fi numbering): `docs/guides/RF_CHANNEL_COEXISTENCE.md`
   · `lib/utils/rf-channel-coexistence.js` · smoke `tools/ci/rf-channel-coexistence-smoke.js`

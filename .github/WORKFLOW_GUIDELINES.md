@@ -117,7 +117,11 @@ env:
 - Gate: `node tools/ci/forum-ai-paste-gate.js --scan-defaults`
 - Doctrine: `docs/rules/FORUM_SILENT_HUMANIZE.md`
 - Silent multi-scan: `tools/ci/forum-silent-multi-scan.js` (wired in `forum-poll.yml`, `auto-enrich-closed-loop.yml`, `fetch-diags.yml`)
-- Private inbox harvest (SSO `HOMEY_EMAIL`/`HOMEY_PASSWORD`, **never POST**): `tools/ci/forum-pm-read-only.js` + dispatch-only `.github/workflows/forum-pm-read.yml`. Do not use `forum-pm-scanner.js` for replies.
+- Private inbox harvest (SSO `HOMEY_EMAIL`/`HOMEY_PASSWORD`, **never POST**): `tools/ci/forum-pm-read-only.js`
+  - Dedicated: `.github/workflows/forum-pm-read.yml` — cron `50 7,19 * * *` + dispatch; may fire `tuya-deep-diag.yml` for one UUID
+  - Also wired in `forum-poll.yml` (every 4h) and `auto-enrich-closed-loop.yml`
+  - Do not use `forum-pm-scanner.js` for replies
+- Screenshot / media scan (public threads, never POST): `tools/ci/forum-media-deep-scan.js` in `forum-poll.yml`, `auto-enrich-closed-loop.yml`, `fetch-diags.yml`
 
 **BUG FIXED v5.12.14:** `post-forum-update.js` had default `FORUM_TOPICS='140352,26439,146735'`
 which caused bot to post release updates on OTHER people's threads (T26439, T146735).
@@ -260,6 +264,8 @@ env:
 | deploy-pages | on push + daily | Device Finder | GITHUB_TOKEN |
 | tuya-automation-hub | 4x/day (1,7,13,19) + Mon/Thu | forum+github | ALL |
 | forum-auto-responder | 2x/day (9,21 UTC) | forum respond | HOMEY_EMAIL/PASSWORD |
+| forum-pm-read | 07:50/19:50 UTC | PM harvest, never POST | HOMEY_EMAIL/PASSWORD |
+| forum-poll | every 4h at :15 | public + media + PM harvest | HOMEY_EMAIL/PASSWORD |
 | cleanup-wrong-threads | manual | cleanup bot posts | HOMEY_EMAIL/PASSWORD |
 | johan-sdk3-sync | Wed 05:00 | SDK3 FP+DP sync + scaffold + audit | GITHUB_TOKEN |
 | driver-maintenance | Fri 04:00 | Auto-scaffold + conflict audit + PR | GH_PAT |
@@ -633,6 +639,8 @@ env:
 | deploy-pages | on push + daily | Device Finder | GITHUB_TOKEN |
 | tuya-automation-hub | 4x/day (1,7,13,19) + Mon/Thu | forum+github | ALL |
 | forum-auto-responder | 2x/day (9,21 UTC) | forum respond | HOMEY_EMAIL/PASSWORD |
+| forum-pm-read | 07:50/19:50 UTC | PM harvest, never POST | HOMEY_EMAIL/PASSWORD |
+| forum-poll | every 4h at :15 | public + media + PM harvest | HOMEY_EMAIL/PASSWORD |
 | cleanup-wrong-threads | manual | cleanup bot posts | HOMEY_EMAIL/PASSWORD |
 | johan-sdk3-sync | Wed 05:00 | SDK3 FP+DP sync + scaffold + audit | GITHUB_TOKEN |
 | driver-maintenance | Fri 04:00 | Auto-scaffold + conflict audit + PR | GH_PAT |

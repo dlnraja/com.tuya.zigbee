@@ -72,6 +72,8 @@ Used by: homey-device-diagnostics.js (NEW)
 | tuya-automation-hub.yml | GH_PAT, GOOGLE_API_KEY, OPENAI_API_KEY, HOMEY_EMAIL, HOMEY_PASSWORD |
 | upstream-auto-triage.yml | GH_PAT, GOOGLE_API_KEY |
 | forum-auto-responder.yml | GOOGLE_API_KEY, OPENAI_API_KEY, HOMEY_EMAIL, HOMEY_PASSWORD |
+| forum-pm-read.yml | HOMEY_EMAIL, HOMEY_PASSWORD, DISCOURSE_API_KEY (read-only PMs, never POST) |
+| forum-poll.yml | GITHUB_TOKEN; HOMEY_EMAIL, HOMEY_PASSWORD, DISCOURSE_API_KEY (PM harvest only) |
 | gmail-diagnostics.yml | GMAIL_EMAIL, GMAIL_APP_PASSWORD, HOMEY_EMAIL, GOOGLE_API_KEY, GH_PAT |
 | gmail-token-keepalive.yml | GMAIL_EMAIL, GMAIL_APP_PASSWORD, HOMEY_EMAIL, GH_PAT |
 | monthly-comprehensive-sync.yml | GOOGLE_API_KEY, OPENAI_API_KEY, HOMEY_PAT, HOMEY_PAT_API, GH_PAT |
@@ -205,6 +207,8 @@ Used by: homey-device-diagnostics.js (NEW)
 | tuya-automation-hub.yml | GH_PAT, GOOGLE_API_KEY, OPENAI_API_KEY, HOMEY_EMAIL, HOMEY_PASSWORD |
 | upstream-auto-triage.yml | GH_PAT, GOOGLE_API_KEY |
 | forum-auto-responder.yml | GOOGLE_API_KEY, OPENAI_API_KEY, HOMEY_EMAIL, HOMEY_PASSWORD |
+| forum-pm-read.yml | HOMEY_EMAIL, HOMEY_PASSWORD, DISCOURSE_API_KEY (read-only PMs, never POST) |
+| forum-poll.yml | GITHUB_TOKEN; HOMEY_EMAIL, HOMEY_PASSWORD, DISCOURSE_API_KEY (PM harvest only) |
 | gmail-diagnostics.yml | GMAIL_EMAIL, GMAIL_APP_PASSWORD, HOMEY_EMAIL, GOOGLE_API_KEY, GH_PAT |
 | gmail-token-keepalive.yml | GMAIL_EMAIL, GMAIL_APP_PASSWORD, HOMEY_EMAIL, GH_PAT |
 | monthly-comprehensive-sync.yml | GOOGLE_API_KEY, OPENAI_API_KEY, HOMEY_PAT, HOMEY_PAT_API, GH_PAT |

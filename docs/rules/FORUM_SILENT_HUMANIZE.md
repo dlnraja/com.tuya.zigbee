@@ -16,15 +16,19 @@ Improve the Homey app, workflows, and automations from **all** forum signals —
 | FS5 | Auto-post scripts forced dry-run (`forum-responder.js`, `post-forum-update.js`). |
 | FS6 | Scan satellite threads READ-ONLY via `forum-silent-multi-scan.js`. |
 | FS7 | Changelogs/commits: generic wording; no external-thread attribution. |
+| FS8 | Private messages: harvest via SSO (`forum-pm-read-only.js`) on cron; **never POST**. |
 
 ## Tooling
 - `tools/ci/forum-silent-multi-scan.js` — multi-topic silent digest
 - `tools/ci/apply-forum-silent-multi.js` — dry-run sacred-couple reinforce from digests
 - `tools/ci/forum-ai-paste-gate.js` — anti AI-paste detector
+- `tools/ci/forum-pm-read-only.js` — inbox/sent harvest (no POST)
+- `tools/ci/forum-media-deep-scan.js` — screenshot alts / image URLs / diag UUIDs
+- `tools/ci/forum-dispatch-diag-if-new.js` — at most one `tuya-deep-diag` UUID from PMs
 - `lib/utils/rf-channel-coexistence.js` — Zigbee/Thread ≠ Wi-Fi numbering
 - `.github/scripts/reply-quality-gate.js` — factual + human-leak checks
 - `.github/scripts/forum-responder.js` — dry-run only
-- Workflows: `forum-poll.yml`, `auto-enrich-closed-loop.yml`, `fetch-diags.yml`, `auto-fix-and-publish.yml` (`check:rf`)
+- Workflows: `forum-pm-read.yml` (cron 07:50/19:50 UTC), `forum-poll.yml`, `auto-enrich-closed-loop.yml`, `fetch-diags.yml`
 
 ## Voice
 See `docs/responses/FORUM_STYLE_GUIDE.md`.

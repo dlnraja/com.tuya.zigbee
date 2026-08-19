@@ -1,10 +1,18 @@
 # Forum PM read-only harvest (T157628)
-# Triggers: workflow_dispatch only | Secrets: HOMEY_EMAIL, HOMEY_PASSWORD
+# Triggers: cron: 50 7,19 * * * + workflow_dispatch | Secrets: HOMEY_EMAIL, HOMEY_PASSWORD
 # (optional DISCOURSE_API_KEY). NEVER posts. Artifact only.
+# WHY: PMs carry fingerprints / Homey diag UUIDs that public T140352 never shows.
+# HOW: SSO session or Discourse API key → inbox/sent JSON. No POST code path.
+# WHO: CI bot (master). Homey runtime never sees this.
+# WHEN: 07:50 and 19:50 UTC (staggered 30+ min from forum-poll :15 and gmail :00).
+# AGAINST: forum-pm-scanner.js historically drafted replies — this workflow cannot POST.
 
 name: 🔇 Forum PM read-only
 
 on:
+  schedule:
+    # Twice daily, off the :00/:15 herds. Do not collide with forum-poll (2,6,10,14,18,22 :15).
+    - cron: '50 7,19 * * *'
   workflow_dispatch:
     inputs:
       max_threads:
@@ -12,9 +20,15 @@ on:
         required: false
         type: string
         default: '20'
+      dispatch_diag:
+        description: 'Dispatch Tuya Deep Diagnostics for one harvested UUID'
+        required: false
+        type: boolean
+        default: true
 
 permissions:
   contents: read
+  actions: write
 
 concurrency:
   group: forum-pm-read
@@ -61,6 +75,21 @@ jobs:
             exit 0
           fi
           node tools/ci/forum-pm-read-only.js
+
+      - name: Dispatch deep-diag for one PM UUID
+        if: always()
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          FORUM_AUTO_POST: '0'
+          FORUM_PM_DISPATCH_DIAG: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.dispatch_diag == 'false' && '0' || '1' }}
+        run: |
+          if [ ! -f tools/ci/forum-dispatch-diag-if-new.js ]; then
+            echo "forum-dispatch-diag-if-new.js missing — skip"
+            exit 0
+          fi
+          node tools/ci/forum-dispatch-diag-if-new.js
 
       - name: Upload redacted artifact
         if: always()

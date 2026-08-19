@@ -88,6 +88,23 @@ function loadForumPosts() {
   return null;
 }
 
+/** Counts only — never quote private message bodies in the committed digest. */
+function loadForumPmSignals() {
+  const fp = path.join(SD, "forum", "pm-inbox.json");
+  try {
+    const j = JSON.parse(fs.readFileSync(fp, "utf8"));
+    const s = j.summary || {};
+    return {
+      fetched: j.fetched || 0,
+      mfrs: (s.manufacturers || []).length,
+      pids: (s.productIds || []).length,
+      uuids: (s.diagnosticUuids || []).length,
+    };
+  } catch {
+    return null;
+  }
+}
+
 async function main() {
   console.log("Community Inbox Digest —", new Date().toISOString());
   const issues = await fetchOpen("issue");
@@ -106,7 +123,12 @@ async function main() {
   L.push("## Résumé", "");
   L.push(`- Issues ouvertes : **${enriched.length}** — 🔴 à traiter : **${red.length}**, 🟡 attente utilisateur : ${yellow.length}, 🟢 maintainer actif : ${green.length}`);
   L.push(`- PRs ouvertes : **${prs.length}**`);
-  L.push(forum === null ? "- Forum : état non disponible (le workflow forum-poll n'a pas encore tourné sur ce runner)" : `- Forum : **${forum.length}** post(s) sans réponse du maintainer`, "");
+  L.push(forum === null ? "- Forum : état non disponible (le workflow forum-poll n'a pas encore tourné sur ce runner)" : `- Forum : **${forum.length}** post(s) sans réponse du maintainer`);
+  const pm = loadForumPmSignals();
+  if (pm) {
+    L.push(`- Messages privés (lecture seule, jamais de réponse) : **${pm.fetched}** thread(s), ${pm.mfrs} mfr, ${pm.pids} pid, ${pm.uuids} UUID diag`);
+  }
+  L.push("");
   if (red.length) {
     L.push("## 🔴 Issues à traiter", "");
     for (const i of red) L.push(`- [#${i.number}](${i.url}) — ${i.title} _(${i.status}, maj ${i.updated})_`);

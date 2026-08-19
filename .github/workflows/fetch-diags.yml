@@ -194,6 +194,23 @@ jobs:
             .github/state/forum/multi-silent-digest.json \
             .github/state/forum/multi-silent-new-fps.json || true
 
+      - name: "Forum media deep scan (READ-ONLY screenshots)"
+        if: always()
+        continue-on-error: true
+        timeout-minutes: 8
+        env:
+          SMART_FETCH_READER_FALLBACK: "1"
+          FIRECRAWL_API_KEY: ${{ secrets.FIRECRAWL_API_KEY }}
+          FORUM_AUTO_POST: "0"
+        run: |
+          if [ ! -f tools/ci/forum-media-deep-scan.js ]; then
+            echo "forum-media-deep-scan.js missing — skip"
+            exit 0
+          fi
+          node tools/ci/forum-media-deep-scan.js --max=40 --topics=140352,26439,89271 || echo "media scan failed (non-blocking)"
+          node .github/scripts/privacy-redactor.js \
+            .github/state/forum/forum-media-deep.json || true
+
       - name: Commit and Push changes
         if: always()
         run: |

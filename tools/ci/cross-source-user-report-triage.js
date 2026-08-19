@@ -7,6 +7,7 @@
  *
  *   - GitHub issues and pull requests (cached, refreshed with --fetch)
  *   - Homey community forum scan  (.github/state/forum/forum-media-deep.json)
+ *   - Homey forum PMs (mfr list only, never bodies)
  *   - Gmail crash diagnostics     (.github/state/gmail-crash-patterns.json)
  *
  * The hard part is signal, not collection. The `[Auto]` community-sync issues
@@ -113,6 +114,11 @@ for (const p of prs) {
 
 const forum = readJson(path.join(STATE, 'forum', 'forum-media-deep.json'), null);
 if (forum) harvest(JSON.stringify(forum), 'forum', 'forum-media-deep', true);
+
+const pmInbox = readJson(path.join(STATE, 'forum', 'pm-inbox.json'), null);
+if (pmInbox && pmInbox.summary) {
+  harvest((pmInbox.summary.manufacturers || []).join(' '), 'forum-pm', 'pm-inbox', true);
+}
 
 const gmail = readJson(path.join(STATE, 'gmail-crash-patterns.json'), null);
 if (gmail) harvest(JSON.stringify(gmail), 'gmail-diag', 'crash-patterns', true);
