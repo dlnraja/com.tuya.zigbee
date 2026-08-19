@@ -327248,5 +327248,96 @@
     "modelIds": [
       "TS0002"
     ]
+  },
+  "_TZ3000_ovyaisip": {
+    "driverId": "switch_1gang",
+    "source": "forum-140352-#2173:gabriel-tb25-1gang",
+    "modelIds": [
+      "TS0001"
+    ]
+  },
+  "_TZ3000_pk8tgtdb": {
+    "driverId": "switch_1gang",
+    "source": "forum-140352-#2173:gabriel-tb25-1gang",
+    "modelIds": [
+      "TS0001"
+    ]
+  },
+  "_TZ3000_yervjnlj": {
+    "driverId": "wall_switch_3gang_1way",
+    "source": "forum-140352-#2173:gabriel-tb25-3gang",
+    "modelIds": [
+      "TS0003"
+    ]
+  },
+  "_TZ3000_vjhcenzo": {
+    "driverId": "wall_switch_3gang_1way",
+    "source": "forum-140352-#2173:gabriel-tb25-3gang",
+    "modelIds": [
+      "TS0003"
+    ]
+  },
+  "_TZ3000_qxcnwv26": {
+    "driverId": "wall_switch_3gang_1way",
+    "source": "forum-140352-#2173:gabriel-tb25-3gang+z2m:TS0003_switch_3_gang",
+    "modelIds": [
+      "TS0003"
+    ]
+  },
+  "_TZ3000_eqsair32": {
+    "driverId": "wall_switch_3gang_1way",
+    "source": "forum-140352-#2173:gabriel-tb25-3gang+z2m:TB26-3-zemismart",
+    "modelIds": [
+      "TS0003"
+    ]
+  },
+  "_TZ3000_f09j9qjb": {
+    "driverId": "wall_switch_3gang_1way",
+    "source": "forum-140352-#2173:gabriel-tb25-3gang",
+    "modelIds": [
+      "TS0003"
+    ]
+  },
+  "_TZ3000_fawk5xjv": {
+    "driverId": "wall_switch_3gang_1way",
+    "source": "forum-140352-#2173:gabriel-tb25-3gang+z2m:NFZB-03-novadigital",
+    "modelIds": [
+      "TS0003"
+    ]
+  },
+  "_TZ3000_ok0ggpk7": {
+    "driverId": "wall_switch_3gang_1way",
+    "source": "forum-140352-#2173:gabriel-tb25-3gang+z2m:TS0003_with_backlight",
+    "modelIds": [
+      "TS0003"
+    ]
+  },
+  "_TZE204_aagrxlbd": {
+    "driverId": "wall_switch_4_gang_tuya",
+    "source": "forum-140352-#2173:gabriel-tb25-4gang+z2m:TS0601_switch_4_gang_1",
+    "modelIds": [
+      "TS0601"
+    ]
+  },
+  "_TZE200_r731zlxk": {
+    "driverId": "wall_switch_6_gang_tuya",
+    "source": "forum-140352-#2173:gabriel-tb25-6gang+z2m:TS0601_switch_6_gang",
+    "modelIds": [
+      "TS0601"
+    ]
+  },
+  "_TZE200_shkxsgis": {
+    "driverId": "wall_switch_6_gang_tuya",
+    "source": "forum-140352-#2173:gabriel-tb25-6gang",
+    "modelIds": [
+      "TS0601"
+    ]
+  },
+  "_TZE200_s8gkrkxk": {
+    "driverId": "christmas_lights",
+    "source": "forum-140352-#2146:mikenono-device-list",
+    "modelIds": [
+      "TS0601"
+    ]
   }
 }
