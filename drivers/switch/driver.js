@@ -1,6 +1,7 @@
 'use strict';
 
 const { ZigBeeDriver } = require('homey-zigbeedriver');
+const { setGangOnOff } = require('../../lib/drivers/FlowGangControl');
 
 class TuyaZigbeeDriver extends ZigBeeDriver {
   async onInit() {
@@ -30,7 +31,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
-          return args.device.getCapabilityValue('onoff') === true;
+          return args.device.getCapabilityValue('onoff.gang2') === true;
         });
       }
     } catch (err) { this.error('[FLOW] Condition gang2_is_on:', err.message); }
@@ -51,7 +52,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
-          await args.device['setCapabilityValue']('onoff', true).catch(() => {});
+          await setGangOnOff(args.device, 1, true);
           return true;
         });
       }
@@ -62,7 +63,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
-          await args.device['setCapabilityValue']('onoff', false).catch(() => {});
+          await setGangOnOff(args.device, 1, false);
           return true;
         });
       }
@@ -73,7 +74,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
-          await args.device['setCapabilityValue']('onoff', true).catch(() => {});
+          await setGangOnOff(args.device, 2, true);
           return true;
         });
       }
@@ -84,7 +85,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
-          await args.device['setCapabilityValue']('onoff', false).catch(() => {});
+          await setGangOnOff(args.device, 2, false);
           return true;
         });
       }
@@ -95,8 +96,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
-          const current = args.device.getCapabilityValue('onoff');
-          await args.device['setCapabilityValue']('onoff', !current).catch(() => {});
+          await setGangOnOff(args.device, 1, 'toggle');
           return true;
         });
       }
@@ -107,8 +107,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
-          const current = args.device.getCapabilityValue('onoff');
-          await args.device['setCapabilityValue']('onoff', !current).catch(() => {});
+          await setGangOnOff(args.device, 2, 'toggle');
           return true;
         });
       }

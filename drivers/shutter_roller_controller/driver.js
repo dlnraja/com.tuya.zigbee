@@ -13,7 +13,7 @@ async onInit() {
   }
 
   _registerFlowCards() {
-    // TRIGGERS
+    // TRIGGERS
     // CONDITIONS
     try {
       const card = this.homey.flow.getConditionCard('shutter_roller_controller_is_open');
@@ -30,8 +30,9 @@ async onInit() {
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
-          const val = args.device.getCapabilityValue('measure_co2') || 0;
-          return val > (args.threshold || 400);
+          const val = Number(args.device.getCapabilityValue('windowcoverings_set'));
+          const threshold = Number(args.position ?? args.threshold ?? 0);
+          return Number.isFinite(val) && val > threshold;
       });
       }
     } catch (err) { if (this.developerDebugMode) { this.error(`Condition shutter_roller_controller_position_above: ${err.message}`); } }
@@ -52,8 +53,8 @@ async onInit() {
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
-          // Generic action handler
-          this.log('[FLOW] Action shutter_roller_controller_open triggered for', args.device.getName());
+          await args.device.triggerCapabilityListener?.('windowcoverings_set', 1).catch(() => {});
+          await args.device.safeSetCapabilityValue?.('windowcoverings_set', 1).catch(() => {});
           return true;
         });
       }
@@ -64,8 +65,8 @@ async onInit() {
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
-          // Generic action handler
-          this.log('[FLOW] Action shutter_roller_controller_close triggered for', args.device.getName());
+          await args.device.triggerCapabilityListener?.('windowcoverings_set', 0).catch(() => {});
+          await args.device.safeSetCapabilityValue?.('windowcoverings_set', 0).catch(() => {});
           return true;
         });
       }
@@ -76,8 +77,8 @@ async onInit() {
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
-          // Generic action handler
-          this.log('[FLOW] Action shutter_roller_controller_stop triggered for', args.device.getName());
+          await args.device.triggerCapabilityListener?.('windowcoverings_state', 'idle').catch(() => {});
+          await args.device.safeSetCapabilityValue?.('windowcoverings_state', 'idle').catch(() => {});
           return true;
         });
       }
