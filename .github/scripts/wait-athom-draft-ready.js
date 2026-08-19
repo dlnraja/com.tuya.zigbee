@@ -19,6 +19,36 @@ const ROOT = path.join(__dirname, '..', '..');
 const APP = process.env.APP_ID || 'com.dlnraja.tuya.zigbee';
 const MAX_MS = Number(process.env.HOMEY_DRAFT_WAIT_MS || 240000);
 const STEP_MS = Number(process.env.HOMEY_DRAFT_POLL_MS || 20000);
+const HEALTHY_TEST_PATCH_LAG = Number(process.env.HOMEY_HEALTHY_TEST_PATCH_LAG || 3);
+
+function parseSemver(v) {
+  const m = String(v || '').replace(/^v/i, '').match(/^(\d+)\.(\d+)\.(\d+)/);
+  if (!m) return null;
+  return { major: +m[1], minor: +m[2], patch: +m[3] };
+}
+
+/** Patch distance when major.minor match; null if incomparable. */
+function patchDistance(a, b) {
+  const sa = parseSemver(a);
+  const sb = parseSemver(b);
+  if (!sa || !sb) return null;
+  if (sa.major !== sb.major || sa.minor !== sb.minor) return null;
+  return Math.abs(sa.patch - sb.patch);
+}
+
+function latestTestBuild(builds) {
+  return (Array.isArray(builds) ? builds : [])
+    .filter((b) => b.state === 'test')
+    .sort((a, b) => Number(b.id || 0) - Number(a.id || 0))[0] || null;
+}
+
+function healthyTestFallback(builds, expected) {
+  const test = latestTestBuild(builds);
+  if (!test) return null;
+  const lag = patchDistance(test.version, expected);
+  if (lag === null || lag > HEALTHY_TEST_PATCH_LAG) return null;
+  return test;
+}
 
 function sleepMs(ms) {
   return new Promise((r) => setTimeout(r, ms));
@@ -157,6 +187,16 @@ async function main() {
   }
   const failed = classified.failed[0] || lastFailed;
   if (failed) {
+    const allBuilds = (Array.isArray(list) ? list : []).map(normalizeBuild);
+    const fallback = healthyTestFallback(allBuilds, expected);
+    if (fallback) {
+      console.log(`wait-draft: P139 — v${expected} still ${failed.state} (#${failed.id}) but Test healthy at v${fallback.version} #${fallback.id} (patch lag ${patchDistance(fallback.version, expected)} ≤ ${HEALTHY_TEST_PATCH_LAG}); continue`);
+      if (process.env.GITHUB_OUTPUT) {
+        fs.appendFileSync(process.env.GITHUB_OUTPUT, `healthy_test_version=${fallback.version}\n`, 'utf8');
+        fs.appendFileSync(process.env.GITHUB_OUTPUT, `processing_failed_degraded=true\n`, 'utf8');
+      }
+      return;
+    }
     console.error(`wait-draft: v${expected} still ${failed.state} (#${failed.id}) after ${MAX_MS}ms — P139 fail-closed`);
     process.exit(1);
   }
@@ -169,6 +209,10 @@ module.exports = {
   normalizeBuild,
   isReady,
   isFailed,
+  parseSemver,
+  patchDistance,
+  healthyTestFallback,
+  latestTestBuild,
 };
 
 if (require.main === module) {

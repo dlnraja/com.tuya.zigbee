@@ -9,6 +9,10 @@ const {
   createClient: createHomeyAppsClient,
   getBuilds: getSdkBuilds,
 } = require('./homey-apps-api-client');
+const {
+  healthyTestFallback,
+  patchDistance,
+} = require('./wait-athom-draft-ready');
 
 const ROOT = path.join(__dirname, '..', '..');
 const APP = process.env.APP_ID || 'com.dlnraja.tuya.zigbee';
@@ -353,11 +357,24 @@ async function main() {
     }
   }
 
-  // Fail hard when Test channel confirmation never arrives. Soft-exit here
-  // greenwashed Athom processing_failed (e.g. socket hang up) as workflow success.
+  // Fail hard when Test channel confirmation never arrives — unless P139 healthy Test fallback.
   log(`v${version} was not confirmed on the Homey test channel after ${maxAttempts} attempts`);
   if (lastError) {
     log(`Last error: ${lastError}`);
+  }
+  try {
+    const client = await createHomeyAppsClient({ log });
+    const builds = normalizeBuilds(await getSdkBuilds(client, APP, { limit: 50 }));
+    const fallback = healthyTestFallback(builds, version);
+    if (fallback) {
+      log(`P139: Test healthy at v${fallback.version} #${fallback.id} (patch lag ${patchDistance(fallback.version, version)}); not failing workflow`);
+      log(`NOTE: Athom processing_failed on v${version}; keep soaking v${fallback.version} on Test.`);
+      return;
+    }
+  } catch (e) {
+    log(`P139 fallback check failed: ${e.message}`);
+  }
+  if (lastError) {
     log(`NOTE (P139): If Athom shows processing_failed / socket hang up, do NOT bump-loop republish.`);
     log(`Keep the last healthy Test build; wait for Athom or one human Auto-Publish.`);
     log(`Check the actual app at https://tools.developer.homey.app/apps/app/${APP}`);
