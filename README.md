@@ -33,7 +33,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.598 |
+| **App Version** | v9.0.599 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,370 |
 | **Pairing Variants** | 16,594 (4 case combos per fingerprint) |
@@ -102,6 +102,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.599** | Deep device investigation: IAS contact/water/repeater disambiguation, compound fingerprint locks, peculiarities catalog regenerated. All … |
 | **v9.0.598** | Deep device investigation: IAS contact/water/repeater disambiguation, compound fingerprint locks, peculiarities catalog regenerated. All … |
 | **v9.0.597** | Deep device investigation: IAS contact/water/repeater disambiguation, compound fingerprint locks, peculiarities catalog regenerated. All … |
 | **v9.0.596** | Sleepy SOS, leak and contact sensors keep enroll on wake. Multi-gang ZCL wall switches pair as linked tiles. One-gang switches with a tem… |
@@ -113,7 +114,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.590** | SOS and scene buttons fire Homey Flows on press. Two-gang wall switches get a separate tile per gang. ZCL multi-gang switches ignore left… |
 | **v9.0.589** | App Settings shows a retractable Zigbee spider map of this app's devices, with last-seen and rejoin counts. Links use last-hop signal qua… |
 | **v9.0.588** | App Settings shows a retractable Zigbee spider map of this app's devices, with last-seen and rejoin counts. Links use last-hop signal qua… |
-| **v9.0.587** | App Settings shows a retractable Zigbee spider map of this app's devices, with last-seen and rejoin counts. Links use last-hop signal qua… |
 
 <!-- CHANGELOG_END -->
 
