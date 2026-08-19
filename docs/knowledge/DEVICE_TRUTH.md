@@ -396,7 +396,7 @@ Catalog: **431** drivers, **54** locked community cases.
 | `switch_2_gang_metering` | socket | zcl | TS0601, TS004F | mains | 0 | 0 |  |
 | `switch_2gang` | socket | zcl | ZG-305Z, TS0002, TS0012, TS0002_power, TS0002_switch_module, TS0601 | mains | 234 | 2 | Kanbros #2130 — ZCL-only 2-gang; leftover 0xEF00 is not MCU; no metering phantoms. BSEED z |
 | `switch_3_gang` | socket | zcl_sleepy | TS0003, TS0013 | CR2032 | 4 | 0 |  |
-| `switch_3gang` | socket | tuya_ef00 | 01MINIZB, BASICZBR3, JZ-ZB-004, S26R2ZB, S31ZB, TS0001 | mains | 212 | 1 | z2m MG-ZG03W — 3 gang switch, not a door/window sensor. |
+| `switch_3gang` | socket | tuya_ef00 | 01MINIZB, BASICZBR3, JZ-ZB-004, S26R2ZB, S31ZB, TS0001 | mains | 212 | 1 | Multi-cap tile (onoff + gang2/3); EF00 metering + ZCL-only BSEED mode. Flow cards namespaced `switch_3gang_*`. Zero compose mfr overlap with wall_switch_3gang_1way. |
 | `switch_4_gang_metering` | socket | tuya_ef00 | ERS-10TZBVK-AA, TS0004, TS0044, TS004F, TS0601, ZG-101ZD | mains | 40 | 0 |  |
 | `switch_4gang` | socket | zcl | 01MINIZB, BASICZBR3, JZ-ZB-004, S26R2ZB, S31ZB, TS0001 | mains | 274 | 1 | ZHA #2538 ZG-003-RF 4-gang — not 1-gang (P168 class scale). |
 | `switch_dimmer_1gang` | light | tuya_ef00 | TS0601 | mains | 8 | 0 |  |
@@ -451,7 +451,7 @@ Catalog: **431** drivers, **54** locked community cases.
 | `wall_switch_2_gang` | socket | zcl_sleepy | TS0002, TS0012, TS0042 | CR2032 | 8 | 0 |  |
 | `wall_switch_2gang_1way` | socket | zcl | TS0002, TS0012, TS0042 | mains | 17 | 3 | Sub-device tiles; EP1-only backlight/mode; leftover 0xEF00 is zcl_only |
 | `wall_switch_3_gang` | socket | zcl_sleepy | TS0003, TS0013, TS0043 | CR2032 | 16 | 0 |  |
-| `wall_switch_3gang_1way` | socket | zcl | TS0003, TS0013 | mains | 32 | 7 | Sub-device tiles; EP1-only backlight/mode; leftover 0xEF00 is zcl_only |
+| `wall_switch_3gang_1way` | socket | zcl | TS0003, TS0013 | mains | 32 | 7 | packet_ninja 1-way sub-device tiles (secondSwitch/thirdSwitch); gang filter when sub-devices paired. NovaDigital/Zemismart TB25-3 couples locked here; switch_3gang forbidden. |
 | `wall_switch_4_gang` | socket | zcl_sleepy | TS0014, TS0044, TS0004 | CR2032 | 24 | 0 |  |
 | `wall_switch_4_gang_tuya` | socket | tuya_ef00 | TS0601 | CR2032 | 20 | 2 | 4-gang MCU DP1-4. climate_sensor also declares TS0601. |
 | `wall_switch_4gang_1way` | socket | zcl | TS0004, TS0014, TS000F, TS0726 | mains | 24 | 1 | Sub-device tiles; EP1-only backlight/mode; leftover 0xEF00 is zcl_only |

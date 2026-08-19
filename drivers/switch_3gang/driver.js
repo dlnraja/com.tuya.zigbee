@@ -91,7 +91,14 @@ async onInit() {
           // Flow schema uses mode ids: off|on|memory (not previous).
           const validValues = ['off', 'on', 'memory'];
           const behavior = validValues.includes(args.mode) ? args.mode : 'memory';
-          await args.device.setCapabilityValue('power_on_behavior', behavior).catch(() => {});
+          // WHY: route through capability listener → DP14 TX + L14 hardening when available.
+          if (typeof args.device.triggerCapabilityListener === 'function') {
+            await args.device.triggerCapabilityListener('power_on_behavior', behavior);
+          } else if (typeof args.device.safeSetCapabilityValue === 'function') {
+            await args.device.safeSetCapabilityValue('power_on_behavior', behavior);
+          } else {
+            await args.device.setCapabilityValue('power_on_behavior', behavior).catch(() => {});
+          }
           this.log('[FLOW] Action set_power_on_behavior triggered:', behavior);
           return true;
         });

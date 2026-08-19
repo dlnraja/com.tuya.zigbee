@@ -456,6 +456,77 @@
         "nl": "Gang 3 wisselen",
         "de": "Gang 3 umschalten"
       }
+    },
+    {
+      "id": "switch_3gang_set_backlight",
+      "title": {
+        "en": "Set backlight mode",
+        "fr": "Définir le mode rétroéclairage",
+        "nl": "Stel achtergrondverlichting in",
+        "de": "Hintergrundbeleuchtung einstellen"
+      },
+      "args": [
+        {
+          "name": "mode",
+          "type": "dropdown",
+          "values": [
+            { "id": "off", "title": { "en": "Off", "fr": "Éteint" } },
+            { "id": "normal", "title": { "en": "Normal", "fr": "Normal" } },
+            { "id": "inverted", "title": { "en": "Inverted", "fr": "Inversé" } }
+          ]
+        }
+      ],
+      "titleFormatted": {
+        "en": "Set backlight mode [[mode]]",
+        "fr": "Définir le mode rétroéclairage [[mode]]"
+      }
+    },
+    {
+      "id": "switch_3gang_set_scene_mode",
+      "title": {
+        "en": "Set scene mode",
+        "fr": "Définir le mode scène",
+        "nl": "Stel scènemodus in"
+      },
+      "args": [
+        {
+          "name": "mode",
+          "type": "dropdown",
+          "values": [
+            { "id": "auto", "title": { "en": "Auto (Normal + flows)" } },
+            { "id": "magic", "title": { "en": "Magic (Scene only)" } },
+            { "id": "both", "title": { "en": "Both (Load + scene)" } }
+          ]
+        }
+      ],
+      "titleFormatted": {
+        "en": "Set scene mode [[mode]]",
+        "fr": "Définir le mode scène [[mode]]"
+      }
+    },
+    {
+      "id": "switch_3gang_set_power_on_behavior",
+      "title": {
+        "en": "Set power-on behavior",
+        "fr": "Définir le comportement à la mise sous tension",
+        "nl": "Stel inschakelgedrag in",
+        "de": "Einschaltverhalten einstellen"
+      },
+      "args": [
+        {
+          "name": "mode",
+          "type": "dropdown",
+          "values": [
+            { "id": "off", "title": { "en": "Always Off", "nl": "Altijd Uit" } },
+            { "id": "on", "title": { "en": "Always On", "nl": "Altijd Aan" } },
+            { "id": "memory", "title": { "en": "Last State", "nl": "Laatste status" } }
+          ]
+        }
+      ],
+      "titleFormatted": {
+        "en": "Set power-on behavior [[mode]]",
+        "fr": "Définir le comportement à la mise sous tension [[mode]]"
+      }
     }
   ]
 }
