@@ -95,8 +95,27 @@ const FAILURE_STATES = new Set([STATE.REVOKED, STATE.PROCESSING_FAILED, STATE.ER
 function log(...args) { console.log('[direct-publish]', ...args); }
 function err(...args) { console.error('[direct-publish]', ...args); }
 
+const TRANSIENT_API_RE = /socket hang up|econnreset|econnaborted|etimedout|too many requests|\b429\b|fetch failed|network|502|503|504/i;
+
+async function withAthomRetry(label, fn, { maxAttempts = 5 } = {}) {
+  let lastErr;
+  for (let attempt = 1; attempt <= maxAttempts; attempt++) {
+    try {
+      return await fn();
+    } catch (e) {
+      lastErr = e;
+      const msg = String(e?.message || e);
+      if (!TRANSIENT_API_RE.test(msg) || attempt >= maxAttempts) throw e;
+      const backoff = Math.min(attempt * 15000, 90000);
+      log(`WARN: ${label} transient (${attempt}/${maxAttempts}): ${msg} — retry in ${backoff}ms`);
+      await new Promise((res) => setTimeout(res, backoff));
+    }
+  }
+  throw lastErr;
+}
+
 async function buildApi() {
-  const tokenObj = await AthomApi.createDelegationToken({ audience: 'apps' });
+  const tokenObj = await withAthomRetry('delegation token', () => AthomApi.createDelegationToken({ audience: 'apps' }));
   const token = tokenObj?.token || tokenObj?.access_token || tokenObj;
   if (!token) throw new Error('Homey apps delegation token missing');
   const api = new AthomAppsAPI({ token });
@@ -184,7 +203,7 @@ async function pollBuildState(api, token, buildId, { timeoutMs = 180000, interva
   const deadline = Date.now() + timeoutMs;
   let last = null;
   // Transient error patterns from Athom API (socket hang up, ECONNRESET, 429, 5xx)
-  const TRANSIENT_RE = /socket hang up|econnreset|econnaborted|etimedout|too many requests|fetch failed|network|502|503|504/i;
+  const TRANSIENT_RE = TRANSIENT_API_RE;
   let consecutiveApiErrors = 0;
   let consecutiveFailurePolls = 0;
   const MAX_API_ERROR_RETRIES = 6;
@@ -398,7 +417,7 @@ async function main() {
   // in the spec. The CLI passes version/changelog/env/readme FLAT (not nested
   // under `body:`) — see homey CLI App.js:1415-1424. Wrapping them in `body:`
   // made the API see no named params → server returned "Invalid Version: undefined".
-  const created = await api.createBuild({
+  const created = await withAthomRetry('createBuild', () => api.createBuild({
     $token: token,
     $timeout: API_TIMEOUT_MS,
     appId: APP_ID,
@@ -406,7 +425,7 @@ async function main() {
     changelog,
     env,
     readme,
-  });
+  }));
 
   const { url, method, headers } = created;
   const buildId = created?.buildId != null ? String(created.buildId) : null;
