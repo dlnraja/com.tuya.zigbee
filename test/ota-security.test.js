@@ -78,6 +78,8 @@ describe('OTA download guards', () => {
     const src = require('fs').readFileSync(require('path').join(ROOT, 'lib/ota/OTARepository.js'), 'utf8');
     assert.match(src, /MAX_IMAGE_SIZE = 2 \* 1024 \* 1024/);
     assert.match(src, /DOWNLOAD_TIMEOUT_MS = 60000/);
+    assert.match(src, /MAX_MANIFEST_BYTES = 4 \* 1024 \* 1024/);
+    assert.match(src, /boundedHttpsTextGet/);
   });
 
   it('enforces HTTPS-only downloads', () => {
