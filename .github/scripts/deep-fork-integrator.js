@@ -49,7 +49,7 @@ const DMAP={
   tuya_dummy_device:null
 };
 function normDriver(d){if(DMAP[d]===null)return null;return DMAP[d]||d}
-function isValidFP(m){return m&&m.length>=6&&!/xxxxxxxx/.test(m)&&m!=='undefined'&&m!=='null'}
+function isValidFP(m){return m&&m.length>=6&&!/xxxxxxxx|dummy|placeholder|needs_device|_GENERIC_|_generic_/i.test(m)&&m!=='undefined'&&m!=='null'}
 
 // GitHub API helpers
 async function ghGet(url){
@@ -228,23 +228,27 @@ function applyIntegration(results,local){
   for(const[drv,data]of byDriver){
     const cf=path.join(DDIR,drv,'driver.compose.json');
     if(!fs.existsSync(cf))continue;
+    if(/^custom_/i.test(drv)||/generic_tuya|universal_zigbee/i.test(drv))continue;
     const compose=JSON.parse(fs.readFileSync(cf,'utf8'));
     if(!compose.zigbee)continue;
-    const existMfrs=new Set(compose.zigbee.manufacturerName||[]);
+    const existMfrs=new Set((compose.zigbee.manufacturerName||[]).map(m=>String(m).toLowerCase()));
     const existPids=new Set(compose.zigbee.productId||[]);
     let changed=false;
     for(const m of data.mfrs){
-      if(!existMfrs.has(m)){
-        compose.zigbee.manufacturerName.push(m);
-        existMfrs.add(m);totalMfrs++;changed=true;
-      }
+      if(!isValidFP(m))continue;
+      const key=String(m).toLowerCase();
+      if(existMfrs.has(key))continue;
+      compose.zigbee.manufacturerName.push(m);
+      existMfrs.add(key);totalMfrs++;changed=true;
     }
+    // P2200: only add PID if driver already has that pid family (no invent)
     for(const pid of data.pids){
-      if(!existPids.has(pid)){
-        if(!compose.zigbee.productId)compose.zigbee.productId=[];
-        compose.zigbee.productId.push(pid);
-        existPids.add(pid);totalPids++;changed=true;
-      }
+      if(!pid||pid.length<4)continue;
+      if(existPids.has(pid))continue;
+      if(existPids.size===0)continue; // never invent first pid
+      if(!compose.zigbee.productId)compose.zigbee.productId=[];
+      compose.zigbee.productId.push(pid);
+      existPids.add(pid);totalPids++;changed=true;
     }
     if(changed&&!DRY){
       fs.writeFileSync(cf,JSON.stringify(compose,null,2)+'\n');

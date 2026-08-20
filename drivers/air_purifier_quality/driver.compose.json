@@ -228,7 +228,10 @@
         ]
       }
     },
-    "manufacturerName": []
+    "manufacturerName": [
+      "_hybrid_air_purifier_quality_needs_device_assignment",
+      "_HYBRID_AIR_PURIFIER_QUALITY_NEEDS_DEVICE_ASSIGNMENT"
+    ]
   },
   "ui": {},
   "deprecated": true

@@ -49,7 +49,8 @@
   "zigbee": {
     "productId": [
       "TS0601",
-      "TS004F"
+      "TS004F",
+      "TS0002"
     ],
     "endpoints": {
       "1": {
@@ -101,8 +102,7 @@
       }
     },
     "manufacturerName": [
-      "_hybrid_switch_2_gang_metering_needs_device_assignment",
-      "_HYBRID_SWITCH_2_GANG_METERING_NEEDS_DEVICE_ASSIGNMENT"
+      "_TZ3000_zmy4lslw"
     ]
   },
   "version": "1.0.0",

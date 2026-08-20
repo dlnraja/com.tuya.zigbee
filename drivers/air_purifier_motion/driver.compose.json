@@ -67,7 +67,10 @@
         "fr": "Maintenez le bouton power pendant 5 secondes"
       }
     },
-    "manufacturerName": []
+    "manufacturerName": [
+      "_hybrid_air_purifier_motion_needs_device_assignment",
+      "_HYBRID_AIR_PURIFIER_MOTION_NEEDS_DEVICE_ASSIGNMENT"
+    ]
   },
   "images": {
     "small": "/drivers/air_purifier/assets/images/small.png",

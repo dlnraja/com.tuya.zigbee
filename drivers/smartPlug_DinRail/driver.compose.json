@@ -47,7 +47,8 @@
   "zigbee": {
     "productId": [
       "TS0121",
-      "TS011F"
+      "TS011F",
+      "TSO121"
     ],
     "endpoints": {
       "1": {
@@ -79,8 +80,12 @@
       }
     },
     "manufacturerName": [
-      "_GENERIC_SMARTPLUG_DINRAIL",
-      "_generic_smartplug_dinrail"
+      "_TZ3000_qeuvnohg",
+      "_TZ3000_cayepv1a",
+      "_TZ3000_lepzuhto",
+      "_TZ3000_qystbcjg",
+      "_TZ3000_6l1pjfqe",
+      "_TZ3000_303avxxt"
     ]
   },
   "ui": {

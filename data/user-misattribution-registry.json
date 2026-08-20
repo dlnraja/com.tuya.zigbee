@@ -1909,6 +1909,36 @@
       "sources": [
         "homesuite-field"
       ]
+    },
+    {
+      "id": "blitzwolf-amdymr7l-shp13-plug",
+      "mfr": [
+        "_TZ3000_amdymr7l",
+        "_tz3000_amdymr7l",
+        "_TZ3210_amdymr7l",
+        "_tz3210_amdymr7l"
+      ],
+      "productId": [
+        "TS011F"
+      ],
+      "canonicalDriver": "plug_energy_monitor",
+      "forbiddenDrivers": [
+        "button_wireless_2",
+        "button_wireless_1",
+        "climate_sensor",
+        "button_wireless_plug"
+      ],
+      "protocol": "zcl",
+      "notes": "BlitzWolf BW-SHP13 metering plug (Phoscon/Z2M). Never button driver. Pid TS011F ambiguous without mfr.",
+      "tracks": {
+        "master": { "static": true, "dynamic": true },
+        "stable": { "static": true, "dynamic": false }
+      },
+      "sources": [
+        "phoscon-compat",
+        "z2m-11703",
+        "fork-mmaaikel"
+      ]
     }
   ]
 }
