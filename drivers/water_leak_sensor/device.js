@@ -213,6 +213,11 @@ class WaterLeakSensorDevice extends UnifiedSensorBase {
     await this._safeInvoke(async () => {
       this._deviceProfile = this._getDeviceProfile();
       this._invertAlarm = this.getSetting('invert_alarm') || false;
+      if (this._deviceProfile?.type === 'ias_zone') {
+        // P2184 BOTH: TS0207 IAS-only — never EF00 DP storm at boot/30min (Peter 1cf775a2)
+        this._skipTuyaDataQuery = true;
+        this._iasOnlyProfile = true;
+      }
       await super.onNodeInit({ zclNode });
 
       // IAS Zone enrollment
