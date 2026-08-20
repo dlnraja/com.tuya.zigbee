@@ -4,11 +4,11 @@
 
 [![Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdlnraja%2Fcom.tuya.zigbee%2Fmaster%2Fapp.json&query=%24.version&label=version&color=blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![Drivers](https://img.shields.io/badge/drivers-431-brightgreen)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
-[![Fingerprints](https://img.shields.io/badge/fingerprints-4,370%20unique-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
+[![Fingerprints](https://img.shields.io/badge/fingerprints-4,354%20unique-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![SDK](https://img.shields.io/badge/SDK-3-orange)](https://apps.developer.homey.app/)
 [![License](https://img.shields.io/badge/license-GPL--3.0-green)](LICENSE)
 
-Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, sensors, lights, thermostats, covers, valves — **431 drivers**, **4,370 unique fingerprints**. No cloud required.
+Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, sensors, lights, thermostats, covers, valves — **431 drivers**, **4,354 unique fingerprints**. No cloud required.
 
 **What it does:**
 - Talks to devices on your Homey Zigbee mesh (Tuya DP `0xEF00` and standard ZCL)
@@ -35,8 +35,8 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 |--------|-------|
 | **App Version** | v9.0.611 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
-| **Unique Fingerprints** | 4,370 |
-| **Pairing Variants** | 16,594 (4 case combos per fingerprint) |
+| **Unique Fingerprints** | 4,354 |
+| **Pairing Variants** | 16,839 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 577 |
 | **Flow Cards** | 5,178 |
 | **Unique Capabilities** | 170 |
@@ -51,24 +51,24 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | # | Driver | Fingerprints |
 |---|--------|-------------|
-| 1 | `climate_sensor` | 2,606 |
-| 2 | `switch_1gang` | 1,776 |
-| 3 | `button_wireless_2` | 740 |
-| 4 | `presence_sensor_radar` | 722 |
+| 1 | `climate_sensor` | 2,463 |
+| 2 | `switch_1gang` | 1,772 |
+| 3 | `presence_sensor_radar` | 722 |
+| 4 | `button_wireless_2` | 716 |
 | 5 | `radiator_valve` | 599 |
 | 6 | `wall_dimmer_tuya` | 496 |
 | 7 | `generic_tuya` | 420 |
 | 8 | `device_radiator_valve` | 380 |
 | 9 | `sensor_contact_zigbee` | 340 |
-| 10 | `curtain_motor` | 308 |
-| 11 | `switch_4gang` | 274 |
-| 12 | `switch_2gang` | 234 |
+| 10 | `curtain_motor` | 322 |
+| 11 | `switch_4gang` | 272 |
+| 12 | `switch_2gang` | 238 |
 | 13 | `switch_3gang` | 212 |
-| 14 | `diy_custom_zigbee` | 206 |
-| 15 | `thermostat_tuya_dp` | 192 |
-| 16 | `soil_sensor` | 191 |
-| 17 | `water_leak_sensor_tuya` | 190 |
-| 18 | `motion_sensor` | 178 |
+| 14 | `motion_sensor` | 209 |
+| 15 | `diy_custom_zigbee` | 206 |
+| 16 | `thermostat_tuya_dp` | 192 |
+| 17 | `soil_sensor` | 191 |
+| 18 | `water_leak_sensor_tuya` | 190 |
 | 19 | `usb_dongle_triple` | 176 |
 | 20 | `dimmer_wall_1gang` | 156 |
 
