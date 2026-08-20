@@ -243,7 +243,7 @@ class WaterLeakSensorDevice extends UnifiedSensorBase {
       // Initialize IAS Alarm Fallback
       this._iasFallback = new IASAlarmFallback(this, {
         pollInterval: 30000,
-        useTuyaMirror: true
+        useTuyaMirror: this._deviceProfile?.type !== 'ias_zone'
       });
       await this._iasFallback.init().catch(e => {
         this.log(`[WATER] ⚠️ IAS Fallback init failed: ${e.message}`);
