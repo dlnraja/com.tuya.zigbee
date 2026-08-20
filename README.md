@@ -4,11 +4,11 @@
 
 [![Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdlnraja%2Fcom.tuya.zigbee%2Fmaster%2Fapp.json&query=%24.version&label=version&color=blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![Drivers](https://img.shields.io/badge/drivers-431-brightgreen)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
-[![Fingerprints](https://img.shields.io/badge/fingerprints-4,352%20unique-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
+[![Fingerprints](https://img.shields.io/badge/fingerprints-4,353%20unique-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![SDK](https://img.shields.io/badge/SDK-3-orange)](https://apps.developer.homey.app/)
 [![License](https://img.shields.io/badge/license-GPL--3.0-green)](LICENSE)
 
-Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, sensors, lights, thermostats, covers, valves — **431 drivers**, **4,352 unique fingerprints**. No cloud required.
+Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, sensors, lights, thermostats, covers, valves — **431 drivers**, **4,353 unique fingerprints**. No cloud required.
 
 **What it does:**
 - Talks to devices on your Homey Zigbee mesh (Tuya DP `0xEF00` and standard ZCL)
@@ -33,10 +33,10 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.616 |
+| **App Version** | v9.0.617 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
-| **Unique Fingerprints** | 4,352 |
-| **Pairing Variants** | 16,513 (4 case combos per fingerprint) |
+| **Unique Fingerprints** | 4,353 |
+| **Pairing Variants** | 16,515 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 577 |
 | **Flow Cards** | 5,178 |
 | **Unique Capabilities** | 170 |
@@ -55,7 +55,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | 2 | `switch_1gang` | 1,764 |
 | 3 | `presence_sensor_radar` | 722 |
 | 4 | `radiator_valve` | 599 |
-| 5 | `button_wireless_2` | 576 |
+| 5 | `button_wireless_2` | 578 |
 | 6 | `wall_dimmer_tuya` | 496 |
 | 7 | `generic_tuya` | 420 |
 | 8 | `device_radiator_valve` | 380 |
@@ -102,6 +102,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.617** | P2203: IAS already-enrolled bind + IAS-only water EF00 skip; FP hygiene 2putqrmw. |
 | **v9.0.616** | P2203 hygiene: strip plug mfr 2putqrmw from button_wireless_2 (FP collision); version sync. |
 | **v9.0.615** | P2203: re-bind IAS Zone when already enrolled (Peter water/contact after app restart); skip EF00 Tuya mirror on IAS-only water sensors; s… |
 | **v9.0.614** | P2203: re-bind IAS Zone when already enrolled (Peter water/contact after app restart); skip EF00 Tuya mirror on IAS-only water sensors; s… |
@@ -113,7 +114,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.608** | IntelligentDriverHotSwap v2: unified integration with DynamicCapabilityManager, computed-cap guard (meter_* never device-written), double… |
 | **v9.0.607** | IntelligentDriverHotSwap v2: unified integration with DynamicCapabilityManager, computed-cap guard (meter_* never device-written), double… |
 | **v9.0.606** | IntelligentDriverHotSwap v2: unified integration with DynamicCapabilityManager, computed-cap guard (meter_* never device-written), double… |
-| **v9.0.605** | IntelligentDriverHotSwap v2: unified integration with DynamicCapabilityManager, computed-cap guard (meter_* never device-written), double… |
 
 <!-- CHANGELOG_END -->
 
