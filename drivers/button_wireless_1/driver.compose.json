@@ -36,7 +36,9 @@
         "no": "Trådløs",
         "es": "Controlador",
         "da": "Trådløs"
-      }
+      },
+      "getable": false,
+      "setable": false
     }
   },
   "energy": {
