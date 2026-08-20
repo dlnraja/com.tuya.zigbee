@@ -398,7 +398,8 @@
       "canonicalDriver": "led_strip_rgbw",
       "forbiddenDrivers": [
         "button_wireless_2",
-        "tunable_bulb_E14"
+        "tunable_bulb_E14",
+        "rgb_led_strip_controller"
       ],
       "protocol": "zcl",
       "notes": "Blakadder/Z2M LED strip controller — not button or E14 CCT.",
@@ -488,7 +489,7 @@
       "productId": [
         "TS011F"
       ],
-      "canonicalDriver": "device_plug_energy_monitor",
+      "canonicalDriver": "socket_power_strip",
       "forbiddenDrivers": [
         "button_wireless_2",
         "tunable_bulb_E14"
@@ -526,7 +527,8 @@
         "wall_dimmer_tuya",
         "led_strip_advanced",
         "dimmable_led_strip",
-        "led_controller_rgb"
+        "led_controller_rgb",
+        "rgb_led_light_bar"
       ],
       "notProductIds": [
         "TS0601",
@@ -825,7 +827,7 @@
       "productId": [
         "TS130F"
       ],
-      "canonicalDriver": "wall_curtain_switch",
+      "canonicalDriver": "curtain_module",
       "forbiddenDrivers": [
         "climate_sensor",
         "dimmer_1_gang"
@@ -919,7 +921,7 @@
       "productId": [
         "TS130F"
       ],
-      "canonicalDriver": "wall_curtain_switch",
+      "canonicalDriver": "curtain_module",
       "forbiddenDrivers": [
         "curtain_motor_shutter"
       ],
@@ -1623,7 +1625,8 @@
       "forbiddenDrivers": [
         "button_wireless_2",
         "button_wireless_4",
-        "climate_sensor"
+        "climate_sensor",
+        "socket_power_strip_four_two"
       ],
       "protocol": "zcl",
       "notes": "4-outlet + USB strip. Same mfr must not pair as a 2-button remote. Compound lock _TZ3000_cfnprab5|TS011F.",
@@ -1690,7 +1693,8 @@
       "forbiddenDrivers": [
         "button_wireless_plug",
         "button_wireless_2",
-        "climate_sensor"
+        "climate_sensor",
+        "smartplug"
       ],
       "protocol": "zcl",
       "notes": "Metering TS011F plug (Z2M TS011F_plug_3). Firmware 1.0.5+ disabled auto electrical reports — poll voltage/current/power. Not a wireless button. Pid TS011F is also DIN/strip/double-outlet — lock this couple.",
@@ -1931,8 +1935,14 @@
       "protocol": "zcl",
       "notes": "BlitzWolf BW-SHP13 metering plug (Phoscon/Z2M). Never button driver. Pid TS011F ambiguous without mfr.",
       "tracks": {
-        "master": { "static": true, "dynamic": true },
-        "stable": { "static": true, "dynamic": false }
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
       },
       "sources": [
         "phoscon-compat",
@@ -1963,8 +1973,14 @@
       "protocol": "tuya_dp",
       "notes": "ZG-102ZL luminance contact. TS0601 pairs via contact_sensor_zigbee (P126 forbids TS0601 on contact_sensor). ZG-102ZL also on contact_sensor.",
       "tracks": {
-        "master": { "static": true, "dynamic": true },
-        "stable": { "static": true, "dynamic": false }
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
       },
       "sources": [
         "z2m-zg-102zl",

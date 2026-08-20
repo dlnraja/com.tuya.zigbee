@@ -531,8 +531,14 @@ const REQUIRED = [
   },
   {
     id: 'p98-pay2byax-contact',
+    // ZG-102ZL path on contact_sensor; TS0601 pairs via contact_sensor_zigbee (P126)
     driver: 'contact_sensor',
     mfrs: ['_TZE200_pay2byax'],
+  },
+  {
+    id: 'p2201-pay2byax-contact-zigbee-ts0601',
+    driver: 'contact_sensor_zigbee',
+    mfrs: ['_TZE200_pay2byax', '_TZE204_pay2byax'],
   },
   {
     id: 'p98-pftj0i7z-btn4',
