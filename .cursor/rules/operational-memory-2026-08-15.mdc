@@ -3,7 +3,7 @@ description: Live operational memory (Homey Test, P139, forum silent) — read e
 alwaysApply: true
 ---
 
-# Operational memory — com.dlnraja.tuya.zigbee (audit 2026-08-17)
+# Operational memory — com.dlnraja.tuya.zigbee (audit 2026-08-20)
 
 ## Dual-app + shared App ID
 - `master` = preview/soak (~9.0.x). `stable-v5` = reliability LTS (~5.12.x).
@@ -11,8 +11,8 @@ alwaysApply: true
 - Never full-tree sync. Classify BOTH | MASTER_ONLY | STABLE_ONLY.
 
 ## Homey Test live truth (last verified)
-- Master tip (repo): **v9.0.583** (P2138 BSEED dimmer + HomeSuite reliability through 9.0.582). Do not overwrite with 5.12.
-- Stable tip (worktree): **5.12.85** — soak-first; **never** promote onto shared Test while 9.0 soaks.
+- Master tip (repo): **v9.0.613+** (P2203 IAS already-enrolled bind + P2184/P2201/P2202). Do not overwrite with 5.12.
+- Stable tip (worktree): **5.12.87** — soak-first; **never** promote onto shared Test while 9.0 soaks.
 - **9.0.530** hit Athom `processing_failed` (`socket hang up`) — superseded; do **not** spam republish (P139).
 - **P139 hardening**: Auto-Publish `cancel-in-progress: false` (do not kill mid Athom draft/promote).
 - Store name: **Universal Tuya Zigbee** (P142 — dropped “Unified Smart Home Engine”).
@@ -43,6 +43,9 @@ alwaysApply: true
 | `_TZE284_nt4pquef`+TS0601 | `soil_sensor` | not climate |
 | `_TZE284_hodyryli`+TS0601 | `climate_sensor_zt08` | GH #513 |
 | `_TZ3000_okaz9tjs` / `fgwhjm9j`+TS011F | `plug_energy_monitor` | HomeSuite field couples |
+| `_TZ3000_amdymr7l` / `_TZ3210_amdymr7l`+TS011F | `plug_energy_monitor` | BlitzWolf BW-SHP13; never button |
+| `_TZE200/204_pay2byax`+TS0601 | `contact_sensor_zigbee` | P126: no TS0601 on `contact_sensor`; ZG-102ZL luminance |
+| `_TZ3000_k4ej3ww2`+TS0207 | `water_leak_sensor` | Peter #2184 IAS bind + skip EF00 (P2184 BOTH) |
 
 ## Catalog hygiene (P2138 + sacred couple matrix)
 - **One MFS ≠ one device.** A manufacturer can have many productIds, OEM labels, variants, and device names. Always lock **(mfr + pid)** couples.
@@ -61,7 +64,7 @@ alwaysApply: true
 ## Open work
 - **Issue #513 CLOSED** — Finnamu confirmed values OK on 9.0.533 (ZT08 DP17 + unix_1970).
 - Open GitHub issues/PRs: **none**.
-- Peter SOS/smartbutton leftover (#2137/#2167) — still no press reports.
+- Peter #2184: SOS OK on 9.0.596; water+smartbutton — **P2203** binds IAS on already-enrolled (app restart/wake). Diag `1cf775a2`. Re-pair after Test ≥ fix.
 - P194 OTA/WiFi local-first is master-only.
 - AlarmPolarity smart-learn / free-scrape / parallelDiscover = **MASTER_ONLY**.
 - Next cleanup: remaining `_hybrid_*_needs_device_assignment` / `_GENERIC_*` placeholders (M09 warn).
@@ -72,9 +75,11 @@ alwaysApply: true
 ```bash
 gh run list --repo dlnraja/com.tuya.zigbee --limit 12
 node tools/ci/gmail-crash-pattern-gate.js --json
-node tools/ci/forum-media-deep-scan.js --max=40 --topics=140352,26439,89271
+node tools/ci/forum-silent-multi-scan.js --max=30
 node tools/ci/anti-bot-regression-gate.js
-node --test test/critical/p2138-bseed-wall-dimmer.test.js
+node tools/ci/p2138-sacred-couple-matrix-gate.js
+node .github/scripts/fp-collision-check.js --baseline .github/fingerprint-collision-baseline.json
+node --test test/critical/p2138-bseed-wall-dimmer.test.js test/critical/p2184-diag-1cf775a2.test.js test/critical/p2201-pay2byax-p126-contact.test.js
 node tools/ci/firmware-updates-gate.js
 node tools/ci/wifi-local-first-gate.js
 ```

@@ -1,37 +1,13 @@
 {
-  "timestamp": "2026-08-20T16:29:57.508Z",
+  "timestamp": "2026-08-20T16:47:31.050Z",
   "gate": "align-mfs-db-intelligent",
   "apply": false,
   "check": true,
-  "changeCount": 3,
-  "skippedCount": 26,
+  "changeCount": 0,
+  "skippedCount": 28,
   "highSeverityCount": 0,
-  "byAction": {
-    "compose_exclusive": 3
-  },
-  "changes": [
-    {
-      "severity": "medium",
-      "action": "compose_exclusive",
-      "mfr": "_tyzb01_iuepbmpv",
-      "from": "button_wireless_2",
-      "to": "smartplug"
-    },
-    {
-      "severity": "medium",
-      "action": "compose_exclusive",
-      "mfr": "_TYZB01_HJSGDKFL",
-      "from": "temphumidsensor5",
-      "to": "lcdtemphumidsensor"
-    },
-    {
-      "severity": "medium",
-      "action": "compose_exclusive",
-      "mfr": "_tyzb01_qezuin6k",
-      "from": "dimmer_wall_1gang",
-      "to": "dimmer_1_gang"
-    }
-  ],
+  "byAction": {},
+  "changes": [],
   "skipped": [
     {
       "reason": "registry_bare_brand_multi_canon",
@@ -68,6 +44,44 @@
       "reason": "unclaimed_no_compose",
       "mfr": "_TZ3210_RWMITWJ4",
       "curated": "bulb_rgb"
+    },
+    {
+      "reason": "pair_conflict_ambiguous",
+      "mfr": "_TZ3000_dpo1ysak",
+      "curated": "button_wireless_2",
+      "foreign": [
+        "plug",
+        "smartplug"
+      ],
+      "modelIds": [
+        "TS0001",
+        "TS0002",
+        "TS0003",
+        "TS000F",
+        "TS0011",
+        "TS0012",
+        "TS0013",
+        "TS0014",
+        "TS0041",
+        "TS0042",
+        "TS0043",
+        "TS0044",
+        "TS0111",
+        "TS011F",
+        "TS0121",
+        "TS0215A",
+        "TS0601",
+        "TSO121"
+      ]
+    },
+    {
+      "reason": "unclaimed_multi",
+      "mfr": "_TZ3000_dpo1ysak",
+      "curated": "button_wireless_2",
+      "claimers": [
+        "plug",
+        "smartplug"
+      ]
     },
     {
       "reason": "pair_conflict_ambiguous",

@@ -256,10 +256,11 @@ class WaterLeakSensorDevice extends UnifiedSensorBase {
         `tamper=${!!profile.hasTamper} invert=${this._invertAlarm}`,
       );
 
-      // Initialize IAS Alarm Fallback
+      // WHY P2203: IAS-only TS0207 (k4ej3ww2) has no useful EF00 — Tuya mirror
+      // only adds DP query noise (Peter 1cf775a2). Hybrid/DP waters keep mirror.
       this._iasFallback = new IASAlarmFallback(this, {
         pollInterval: 6 * 60 * 60 * 1000,
-        useTuyaMirror: true
+        useTuyaMirror: this._deviceProfile?.type !== 'ias_zone'
       });
       await this._iasFallback.init().catch(e => {
         this.log(`[WATER] IAS Fallback init failed: ${e.message}`);

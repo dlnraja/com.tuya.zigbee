@@ -830,6 +830,18 @@ node --test test/critical/poll-control-policy.test.js
 Enrich / Blakadder / forum appliers must call anti-bot **after** apply; matrix gate
 catches invent regressions anti-bot alone might miss (wrong-PID catalog force).
 
+### P2201 — Homey cartesian / contact TS0601 (2026-08-20)
+- Never put **TS0601** on `contact_sensor` compose (pairs with every mfr → climate collisions).
+- `_TZE200/204_pay2byax`+`TS0601` → narrow `contact_sensor_zigbee` only.
+- ZG-102ZL luminance stays on `contact_sensor` with verified (mfr,pid) couples.
+
+### P2202 — Fork-dump collision hygiene
+- After mega/fork FP dumps, strip dual-homes from button/sensor drivers that collide with plugs.
+- Refresh baseline only when **new** collisions are intentional:
+  `node .github/scripts/fp-collision-check.js --baseline .github/fingerprint-collision-baseline.json`
+- **Never** run `resolve-collisions.js` blindly (mass-prunes drivers).
+- After strip/apply: `node tools/ci/align-mfs-db-intelligent.js` (report then `--apply` for medium compose_exclusive).
+
 ### Dual-app classification
 - **BOTH**: wall_dimmer harden, brightness clamp, fingerprint refuse-wrong-pid,
   Poll Control skip sleepy, battery no-invent, compose FP locks.

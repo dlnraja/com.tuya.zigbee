@@ -1,78 +1,47 @@
-# SESSION HANDOFF — 2026-08-17 (P2138 + HomeSuite reliability)
+# SESSION HANDOFF — 2026-08-20 (P2203 IAS already-enrolled bind)
 
 > Shared App ID `com.dlnraja.tuya.zigbee`. Forum silent (T157628). Dual-track: master=preview, stable=reliability-only. Never Publish Stable→Test while 9.0 soaks.
 
 | Track | Tip (repo) | Homey Test |
 |-------|------------|------------|
-| master | **9.0.583** — BSEED dimmer lock + MCU brightness clamp + catalog cleanup | Auto-Publish after push; do not overwrite with 5.12 |
-| stable-v5 | **5.12.85** (worktree) — surgical BOTH only | soak-skip; do **not** promote onto shared Test |
+| master | **9.0.613 → next publish (P2203)** | Auto-Publish on push; do not overwrite with 5.12 |
+| stable-v5 | **5.12.87** | soak; do **not** Promote Stable→Test |
 
-## P2138 — PresentSky BSEED Click wall-dimmer insert (#2133/#2138)
+## Forum fine analysis (silent, 2026-08-20)
 
-| Field | Value |
-|-------|--------|
-| Couple | `_TZE284_m1cvyneb` + `TS0601` (+ TZE204/TZE200 siblings) |
-| Canonical | `wall_dimmer_tuya` |
-| Symptom | Paired as temperature/climate; on/off/dim dead |
-| Interview | EP1 clusters `0,4,5,61184(EF00),60672(0xED00)`; EP242 Green Power ignore; router, mains, appVersion 78 |
-| Z2M | `TS0601_dimmer_1_gang_1` — DP1 on/off, DP2 brightness 0–1000, DP6 countdown, DP21 backlight |
-| User action | **Remove + re-pair** (Homey cannot hot-swap drivers) |
-| Diag | `f20dc4f0` (9.0.491 climate misattr) |
+| Post | Who | Finding | Action |
+|------|-----|---------|--------|
+| #2184 | Peter | SOS OK on 9.0.596 after re-pair; water+smartbutton still dead; diag `1cf775a2` | P2184+**P2203** |
+| #2183 | Peter | Heap / Flows dead; SOS/button/water/contact | Heap defer P2184; IAS bind P2203 |
+| #2186/#2188 | Gabriel | `_TZ3000_lwthnp7j` 4-gang ZCL touch BR | Already `wall_switch_4gang_1way`+TS0004 — no invent |
+| Scanner “new FPs” | — | `_TZE200_ABC123`, Johan cartesian mfr dumps, `V5498KDM` | **Refuse** — no Z2M couple |
 
-### Catalog pollution found (must stay fixed)
-- `mfs_db` had climate_sensor / soil_sensor / false TS0201 for this mfr — **false TS0201 couple removed** (do not remap to dimmer)
-- `lib/data/new_fingerprints.json` → was `zigbee_universal`; now dimmer with `modelIds: ["TS0601"]` only
-- Runtime compound DB locks `mfr|TS0601` only
-- `getDriverId(mfr, 'TS0201')` → `null` (refuses unverified pid on mfr catalog)
-- Forbidden: climate*, soil_sensor, zigbee_universal, generic_tuya, ir_blaster
-- Do **not** add `0xED00` to compose clusters (bind noise)
+### WHY P2203 (doubt → fix)
 
-### Driver harden (BOTH)
-- `await super.onNodeInit` (misattr + layers)
-- `lib/tuya/TuyaBrightnessScale.js` clamp (MCU reboot if >1000 — Z2M #32305)
-- Strip phantom `measure_battery`; `markAppCommand` on onoff/dim
-- Tests: `test/critical/p2138-bseed-wall-dimmer.test.js`
+| Q | Answer |
+|---|--------|
+| **Pourquoi** | After app update Homey restarts; sleepy IAS already `enrolled` → early return set listener but **never bind** → 0 `iasZone` msgs (Peter water) |
+| **Comment** | `IASZoneManager._ensureIasBound`: cluster.bind + endpoint.bind fallback; call on enrolled path AND after enroll |
+| **Pour qui** | Water / contact / SOS IAS users (BOTH tracks) |
+| **Quand** | `enrollIASZone` at init + every wake `onEndDeviceAnnounce` |
+| **Contre quoi** | Listener-only without bind; EF00 mirror on IAS-only (`useTuyaMirror` off) |
 
-## HomeSuite study (GPL-3.0, ideas only — MIT reimplementation)
+Also: `IASAlarmFallback` skips Tuya mirror when `_iasOnlyProfile`; uses `safeSetCapabilityValue`.
 
-Landed on master ~9.0.582 (credits in `CREDITS.md` / `NOTICE`):
+## Prior locks (still sacred)
 
-| Behaviour | Track |
-|-----------|--------|
-| Persist `avail_last_seen_ts` + boot grace | MASTER_ONLY |
-| `device_rejoined` / noteBootDump | MASTER_ONLY |
-| `onUninit` → `_destroyDevice` / switch teardown | BOTH |
-| Skip Poll Control 0x0020 on sleepy | BOTH |
-| ZBMINIR2 `waitForResponse: false` | BOTH |
-| Inching re-apply after power-cut | MASTER_ONLY (UI extras) |
-| Battery no invent 50/100% | BOTH |
-| TS011F `okaz9tjs`/`fgwhjm9j` → plug_energy_monitor | BOTH |
+| Couple | Driver |
+|--------|--------|
+| `_TZ3000_k4ej3ww2`+TS0207 | `water_leak_sensor` IAS |
+| `_TZ3000_mrpevh8p`+TS0041 | `button_wireless_1` |
+| `_TZE200/204_pay2byax`+TS0601 | `contact_sensor_zigbee` |
+| `_TZ3000_lwthnp7j`+TS0004 | `wall_switch_4gang_1way` |
+| `_TZE284_m1cvyneb`+TS0601 | `wall_dimmer_tuya` |
 
-## Forum silent leftovers
-- Peter SOS/smartbutton #2137 / #2167 — still open (not this pass)
-- Do **not** auto-reply on #2138 unless human asks for a draft
+## User guidance (silent — do not forum-post)
 
-## P214 — Intelligent ZCL ↔ EF00 (session)
+After Homey Test shows the P2203 build: **remove + re-pair** water + smartbutton if still silent (bind needs a radio window).
 
-- `lib/protocol/IntelligentProtocolDetect.js` is the single detect order for all Unified* + bootstrap.
-- Sacred BSEED `zcl_only` beats any “force DP” heuristic.
-- Soft-attach `TuyaEF00Manager` only when EF00 / MCU heuristics warrant it.
-- Gate: `tools/ci/p214-intelligent-protocol-gate.js`
+## Do not
 
-## Session re-audit improvement (same day)
-
-- Wall dimmer settings aligned with Z2M #28658: backlight (strings), power-on, light type.
-- Full reflection: `reports/SESSION_REFLECTION_2026-08-17.md`
-- Interview INT-2138 added to `docs/data/DEVICE_INTERVIEWS.json`
-
-
-## Docs / knowledge touched this pass
-- `.ai/KNOWLEDGE_CACHE.json`
-- `.cursor/rules/operational-memory-2026-08-15.mdc`
-- `.cursor/rules/dual-app-vision.mdc`
-- `.cursorrules`
-- `docs/guides/USER_TROUBLESHOOTING.md`
-- `docs/rules/PRAGMATIC_ROADMAP.md` · `DUAL_APP_VISION.md`
-- `.github/CONTRIBUTING.md` · `AGENTS.md`
-- `data/device-knowledge-base.json`
-- `reports/P2138_BSEED_WALL_DIMMER_2026-08-17.md`
+- Forum/PM replies · invent productIds · Publish Stable→Test · trust forum-scanner ABC123/cartesian dumps
