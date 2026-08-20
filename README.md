@@ -33,10 +33,10 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.613 |
+| **App Version** | v9.0.614 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,353 |
-| **Pairing Variants** | 16,853 (4 case combos per fingerprint) |
+| **Pairing Variants** | 16,517 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 577 |
 | **Flow Cards** | 5,178 |
 | **Unique Capabilities** | 170 |
@@ -52,25 +52,25 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | # | Driver | Fingerprints |
 |---|--------|-------------|
 | 1 | `climate_sensor` | 2,463 |
-| 2 | `switch_1gang` | 1,772 |
+| 2 | `switch_1gang` | 1,764 |
 | 3 | `presence_sensor_radar` | 722 |
-| 4 | `button_wireless_2` | 716 |
-| 5 | `radiator_valve` | 599 |
+| 4 | `radiator_valve` | 599 |
+| 5 | `button_wireless_2` | 580 |
 | 6 | `wall_dimmer_tuya` | 496 |
 | 7 | `generic_tuya` | 420 |
 | 8 | `device_radiator_valve` | 380 |
-| 9 | `sensor_contact_zigbee` | 340 |
-| 10 | `curtain_motor` | 322 |
-| 11 | `switch_4gang` | 272 |
-| 12 | `switch_2gang` | 238 |
-| 13 | `switch_3gang` | 212 |
-| 14 | `motion_sensor` | 209 |
-| 15 | `diy_custom_zigbee` | 206 |
-| 16 | `thermostat_tuya_dp` | 192 |
-| 17 | `soil_sensor` | 191 |
-| 18 | `water_leak_sensor_tuya` | 190 |
+| 9 | `curtain_motor` | 318 |
+| 10 | `switch_4gang` | 272 |
+| 11 | `switch_2gang` | 238 |
+| 12 | `switch_3gang` | 212 |
+| 13 | `motion_sensor` | 209 |
+| 14 | `diy_custom_zigbee` | 206 |
+| 15 | `thermostat_tuya_dp` | 192 |
+| 16 | `soil_sensor` | 191 |
+| 17 | `sensor_contact_zigbee` | 186 |
+| 18 | `water_leak_sensor_tuya` | 182 |
 | 19 | `usb_dongle_triple` | 176 |
-| 20 | `dimmer_wall_1gang` | 156 |
+| 20 | `contact_sensor` | 153 |
 
 ### Drivers by Device Class
 
@@ -102,6 +102,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.614** | IntelligentDriverHotSwap v2: unified integration with DynamicCapabilityManager, computed-cap guard (meter_* never device-written), double… |
 | **v9.0.613** | IntelligentDriverHotSwap v2: unified integration with DynamicCapabilityManager, computed-cap guard (meter_* never device-written), double… |
 | **v9.0.612** | IntelligentDriverHotSwap v2: unified integration with DynamicCapabilityManager, computed-cap guard (meter_* never device-written), double… |
 | **v9.0.611** | IntelligentDriverHotSwap v2: unified integration with DynamicCapabilityManager, computed-cap guard (meter_* never device-written), double… |
@@ -113,7 +114,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.605** | IntelligentDriverHotSwap v2: unified integration with DynamicCapabilityManager, computed-cap guard (meter_* never device-written), double… |
 | **v9.0.604** | IntelligentDriverHotSwap v2: unified integration with DynamicCapabilityManager, computed-cap guard (meter_* never device-written), double… |
 | **v9.0.603** | IntelligentDriverHotSwap v2: unified integration with DynamicCapabilityManager, computed-cap guard (meter_* never device-written), double… |
-| **v9.0.602** | IntelligentDriverHotSwap v2: unified integration with DynamicCapabilityManager, computed-cap guard (meter_* never device-written), double… |
 
 <!-- CHANGELOG_END -->
 
