@@ -351,32 +351,7 @@
   },
   "zigbee": {
     "productId": [
-      "3300-S",
-      "3320-L",
-      "CK-TLSR8656-SS5-01(7003)",
-      "DS01",
-      "DoorWindow-Sensor-ZB3.0",
-      "E1603/E1702",
-      "Excellux",
-      "MCCGQ01LM",
-      "MCCGQ11LM",
-      "MCCGQ12LM",
-      "MCCGQ14LM",
-      "MCT-340 E",
-      "RH3001",
-      "TRADFRI open/close remote",
-      "TS0021",
-      "TS0115",
-      "TS011F",
-      "TS0203",
-      "TY0203",
-      "ZG-102Z",
-      "ZG-102ZL",
-      "lumi.magnet.ac01",
-      "lumi.magnet.agl02",
-      "lumi.sensor_magnet",
-      "lumi.sensor_magnet.aq2",
-      "q9mpfhw"
+      "TS0601"
     ],
     "endpoints": {
       "1": {
@@ -386,8 +361,14 @@
       }
     },
     "manufacturerName": [
-      "_GENERIC_CONTACT_SENSOR_ZIGBEE",
-      "_generic_contact_sensor_zigbee"
+      "_TZE200_pay2byax",
+      "_tze200_pay2byax",
+      "_TZE200_PAY2BYAX",
+      "_tze200_PAY2BYAX",
+      "_TZE204_pay2byax",
+      "_tze204_pay2byax",
+      "_TZE204_PAY2BYAX",
+      "_tze204_PAY2BYAX"
     ]
   }
 }

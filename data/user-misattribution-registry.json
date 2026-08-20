@@ -1939,6 +1939,38 @@
         "z2m-11703",
         "fork-mmaaikel"
       ]
+    },
+    {
+      "id": "p2201-pay2byax-zg102zl-contact",
+      "mfr": [
+        "_TZE200_pay2byax",
+        "_tze200_pay2byax",
+        "_TZE204_pay2byax",
+        "_tze204_pay2byax"
+      ],
+      "productId": [
+        "TS0601",
+        "ZG-102ZL",
+        "ZG-102Z"
+      ],
+      "canonicalDriver": "contact_sensor_zigbee",
+      "forbiddenDrivers": [
+        "soil_sensor",
+        "climate_sensor",
+        "switch_3gang",
+        "zigbee_universal"
+      ],
+      "protocol": "tuya_dp",
+      "notes": "ZG-102ZL luminance contact. TS0601 pairs via contact_sensor_zigbee (P126 forbids TS0601 on contact_sensor). ZG-102ZL also on contact_sensor.",
+      "tracks": {
+        "master": { "static": true, "dynamic": true },
+        "stable": { "static": true, "dynamic": false }
+      },
+      "sources": [
+        "z2m-zg-102zl",
+        "p126-contact-no-TS0601",
+        "fork-p2200"
+      ]
     }
   ]
 }

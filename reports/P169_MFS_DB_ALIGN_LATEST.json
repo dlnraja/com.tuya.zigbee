@@ -1,10 +1,10 @@
 {
-  "timestamp": "2026-08-19T17:19:25.097Z",
+  "timestamp": "2026-08-20T15:59:56.352Z",
   "gate": "align-mfs-db-intelligent",
   "apply": false,
   "check": true,
   "changeCount": 0,
-  "skippedCount": 24,
+  "skippedCount": 26,
   "highSeverityCount": 0,
   "byAction": {},
   "changes": [],
@@ -120,6 +120,35 @@
     },
     {
       "reason": "unclaimed_multi",
+      "mfr": "TUYATEC-g3gl6cgy",
+      "curated": "doorwindowsensor",
+      "claimers": [
+        "contact_sensor",
+        "temphumidsensor"
+      ]
+    },
+    {
+      "reason": "unclaimed_multi",
+      "mfr": "TUYATEC-Bfq2i2Sy",
+      "curated": "doorwindowsensor",
+      "claimers": [
+        "contact_sensor",
+        "hybrid_fan_sensor",
+        "temphumidsensor"
+      ]
+    },
+    {
+      "reason": "unclaimed_multi",
+      "mfr": "TUYATEC-abkehqus",
+      "curated": "doorwindowsensor",
+      "claimers": [
+        "contact_sensor",
+        "hybrid_fan_sensor",
+        "temphumidsensor"
+      ]
+    },
+    {
+      "reason": "unclaimed_multi",
       "mfr": "_TZ3000_ysdv91bk",
       "curated": "gas_sensor_switch",
       "claimers": [
@@ -207,11 +236,6 @@
         "sensor_climate_motion",
         "slim_motion_sensor"
       ]
-    },
-    {
-      "reason": "unclaimed_no_compose",
-      "mfr": "_TZE204_pay2byax",
-      "curated": "soil_sensor"
     },
     {
       "reason": "unclaimed_multi",
