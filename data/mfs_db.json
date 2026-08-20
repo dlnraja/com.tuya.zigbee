@@ -32,7 +32,7 @@
       "realMfrsAdded": 5,
       "details": "tmp/synthetic-resolution.json + tmp/pruned21-resolution.json"
     },
-    "lastAlignedAt": "2026-08-20T15:59:34.371Z",
+    "lastAlignedAt": "2026-08-20T16:18:09.434Z",
     "alignTool": "align-mfs-db-intelligent@P169"
   },
   "sources": {
@@ -128963,7 +128963,7 @@
   },
   "_TZ3000_VZOPCETZ": {
     "driverId": "socket_power_strip",
-    "source": "sacred-audit-p2201",
+    "source": "registry:plug-vzopcetz-1obwwnmq",
     "modelIds": [
       "TS011F"
     ],
@@ -133120,7 +133120,7 @@
     "modelIdsCount": 18
   },
   "_TZ3000_1OBWWNMQ": {
-    "driverId": "device_plug_energy_monitor",
+    "driverId": "socket_power_strip",
     "source": "registry:plug-vzopcetz-1obwwnmq",
     "modelIds": [
       "TS011F"
@@ -133726,7 +133726,7 @@
   },
   "_TZ3000_amdymr7l": {
     "driverId": "plug_energy_monitor",
-    "source": "sacred-audit-p2201",
+    "source": "registry:blitzwolf-amdymr7l-shp13-plug",
     "modelIds": [
       "TS011F"
     ],
@@ -162375,7 +162375,7 @@
   },
   "_TZE200_pay2byax": {
     "driverId": "contact_sensor_zigbee",
-    "source": "sacred-audit-p2201",
+    "source": "registry:p2201-pay2byax-zg102zl-contact",
     "modelIds": [
       "TS0601",
       "ZG-102ZL",
@@ -164650,8 +164650,8 @@
     "modelIdsCount": 3
   },
   "_TZ3000_1dd0d5yi": {
-    "driverId": "curtain_module",
-    "source": "sacred-audit-p2201",
+    "driverId": "wall_curtain_switch",
+    "source": "registry:p191-ts130f-curtain-quartet-not-shutter-catchall",
     "modelIds": [
       "TS130F"
     ],
@@ -164918,8 +164918,8 @@
     "modelIdsCount": 3
   },
   "_TZ3210_ol1uhvza": {
-    "driverId": "curtain_module",
-    "source": "sacred-audit-p2201",
+    "driverId": "wall_curtain_switch",
+    "source": "registry:p190-ts130f-curtain-not-climate-or-dimmer",
     "modelIds": [
       "TS130F"
     ],
@@ -191028,7 +191028,7 @@
   },
   "_TZE204_pay2byax": {
     "driverId": "contact_sensor_zigbee",
-    "source": "sacred-audit-p2201",
+    "source": "registry:p2201-pay2byax-zg102zl-contact",
     "modelIds": [
       "TS0601",
       "ZG-102ZL",
@@ -327149,7 +327149,7 @@
   },
   "_TZ3210_amdymr7l": {
     "driverId": "plug_energy_monitor",
-    "source": "sacred-audit-p2201",
+    "source": "registry:blitzwolf-amdymr7l-shp13-plug",
     "modelIds": [
       "TS011F"
     ],

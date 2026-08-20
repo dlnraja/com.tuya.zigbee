@@ -827,10 +827,11 @@
       "productId": [
         "TS130F"
       ],
-      "canonicalDriver": "curtain_module",
+      "canonicalDriver": "wall_curtain_switch",
       "forbiddenDrivers": [
         "climate_sensor",
-        "dimmer_1_gang"
+        "dimmer_1_gang",
+        "curtain_module"
       ],
       "protocol": "zcl",
       "notes": "TS130F curtain switch module per Johan enrichment and product-reference (deviceClass windowcoverings). Not a climate sensor and not a dimmer.",
@@ -921,9 +922,10 @@
       "productId": [
         "TS130F"
       ],
-      "canonicalDriver": "curtain_module",
+      "canonicalDriver": "wall_curtain_switch",
       "forbiddenDrivers": [
-        "curtain_motor_shutter"
+        "curtain_motor_shutter",
+        "curtain_module"
       ],
       "protocol": "zcl",
       "notes": "Johan enrichment gives TS130F for all four (Moes MS-108ZR family, plus LoraTap and Nous rebrands). curtain_motor_shutter does not even declare TS130F, so the placement can never match; its 50-entry productId list has accumulated Hue bulbs, Xiaomi weather sensors and temperature sensors and should not grow further.",
