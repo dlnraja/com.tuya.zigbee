@@ -33,10 +33,10 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.611 |
+| **App Version** | v9.0.612 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,353 |
-| **Pairing Variants** | 16,847 (4 case combos per fingerprint) |
+| **Pairing Variants** | 16,839 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 577 |
 | **Flow Cards** | 5,178 |
 | **Unique Capabilities** | 170 |
@@ -102,6 +102,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.612** | IntelligentDriverHotSwap v2: unified integration with DynamicCapabilityManager, computed-cap guard (meter_* never device-written), double… |
 | **v9.0.611** | IntelligentDriverHotSwap v2: unified integration with DynamicCapabilityManager, computed-cap guard (meter_* never device-written), double… |
 | **v9.0.610** | IntelligentDriverHotSwap v2: unified integration with DynamicCapabilityManager, computed-cap guard (meter_* never device-written), double… |
 | **v9.0.609** | IntelligentDriverHotSwap v2: unified integration with DynamicCapabilityManager, computed-cap guard (meter_* never device-written), double… |
@@ -113,7 +114,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.603** | IntelligentDriverHotSwap v2: unified integration with DynamicCapabilityManager, computed-cap guard (meter_* never device-written), double… |
 | **v9.0.602** | IntelligentDriverHotSwap v2: unified integration with DynamicCapabilityManager, computed-cap guard (meter_* never device-written), double… |
 | **v9.0.601** | IntelligentDriverHotSwap v2: unified integration with DynamicCapabilityManager, computed-cap guard (meter_* never device-written), double… |
-| **v9.0.600** | Deep device investigation: IAS contact/water/repeater disambiguation, compound fingerprint locks, peculiarities catalog regenerated. All … |
 
 <!-- CHANGELOG_END -->
 
