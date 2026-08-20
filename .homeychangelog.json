@@ -2386,5 +2386,8 @@
   },
   "9.0.616": {
     "en": "P2203 hygiene: strip plug mfr 2putqrmw from button_wireless_2 (FP collision); version sync."
+  },
+  "9.0.617": {
+    "en": "P2203: IAS already-enrolled bind + IAS-only water EF00 skip; FP hygiene 2putqrmw."
   }
 }
