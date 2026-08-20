@@ -2383,5 +2383,8 @@
   },
   "9.0.615": {
     "en": "P2203: re-bind IAS Zone when already enrolled (Peter water/contact after app restart); skip EF00 Tuya mirror on IAS-only water sensors; safer capability updates on IAS fallback."
+  },
+  "9.0.616": {
+    "en": "P2203 hygiene: strip plug mfr 2putqrmw from button_wireless_2 (FP collision); version sync."
   }
 }
