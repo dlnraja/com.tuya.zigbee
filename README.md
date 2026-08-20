@@ -33,7 +33,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.610 |
+| **App Version** | v9.0.611 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,370 |
 | **Pairing Variants** | 16,594 (4 case combos per fingerprint) |
@@ -41,11 +41,11 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **Flow Cards** | 5,178 |
 | **Unique Capabilities** | 170 |
 | **Native OTA Drivers** | 5 |
-| **Test Suites** | 115 files |
+| **Test Suites** | 118 files |
 | **SVG Icons** | 731 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
-| **Last Updated** | 2026-08-19 |
+| **Last Updated** | 2026-08-20 |
 
 ### Top 20 Drivers by Fingerprint Count
 
@@ -102,6 +102,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.611** | IntelligentDriverHotSwap v2: unified integration with DynamicCapabilityManager, computed-cap guard (meter_* never device-written), double… |
 | **v9.0.610** | IntelligentDriverHotSwap v2: unified integration with DynamicCapabilityManager, computed-cap guard (meter_* never device-written), double… |
 | **v9.0.609** | IntelligentDriverHotSwap v2: unified integration with DynamicCapabilityManager, computed-cap guard (meter_* never device-written), double… |
 | **v9.0.608** | IntelligentDriverHotSwap v2: unified integration with DynamicCapabilityManager, computed-cap guard (meter_* never device-written), double… |
@@ -113,7 +114,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.602** | IntelligentDriverHotSwap v2: unified integration with DynamicCapabilityManager, computed-cap guard (meter_* never device-written), double… |
 | **v9.0.601** | IntelligentDriverHotSwap v2: unified integration with DynamicCapabilityManager, computed-cap guard (meter_* never device-written), double… |
 | **v9.0.600** | Deep device investigation: IAS contact/water/repeater disambiguation, compound fingerprint locks, peculiarities catalog regenerated. All … |
-| **v9.0.599** | Deep device investigation: IAS contact/water/repeater disambiguation, compound fingerprint locks, peculiarities catalog regenerated. All … |
 
 <!-- CHANGELOG_END -->
 
