@@ -225,6 +225,11 @@ class WaterLeakSensorDevice extends UnifiedSensorBase {
       // For DP path: mirror resolvePolarity.shouldInvert (lists/learn XOR checkbox)
       this._invertAlarm = !!pol.shouldInvert;
       this.log(`[WATER] polarity mode=${pol.mode} invert=${this._invertAlarm} reason=${pol.reason} userCheckbox=${userInv}`);
+      if (this._deviceProfile?.type === 'ias_zone') {
+        // P2184 Peter 1cf775a2: TS0207 IAS-only — never EF00 DP storm at boot/30min
+        this._skipTuyaDataQuery = true;
+        this._iasOnlyProfile = true;
+      }
       await super.onNodeInit({ zclNode });
 
       // Forum #2134: Homey shows "-" for Sabotagealarm until first report —
