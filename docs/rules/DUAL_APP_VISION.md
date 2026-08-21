@@ -2,17 +2,22 @@
 
 > **NEVER full copy-paste between branches.** Enrich both tracks according to PURPOSE.
 
-Two Homey apps / tracks, one monorepo:
+Two Homey apps / tracks, one monorepo — **distinct Athom App IDs** (2026-08-21+):
 
 | | **master** (preview / Test) | **stable-v5** (production) |
 |---|---|---|
 | **Branch** | `master` | `stable-v5` |
+| **Athom App ID** | `com.dlnraja.tuya.zigbee` | `com.dlnraja.tuya.zigbee.stable` |
+| **Store name** | Universal Tuya | Tuya Unified (Stable) |
 | **Goal** | Innovation + soak new fixes | Zero crashes, zero surprises |
 | **Users** | Early adopters, forum power users | Everyday reliability |
-| **Version line** | `9.0.x` (bot bump) | `5.12.x` (or `*-stable.N`) — keep distinct |
+| **Version line** | `9.0.x` (bot bump) | `5.12.x` — keep distinct |
 | **What lands** | Features + reliability | **Reliability only** (after soak on master) |
+| **Canonical clone** | `Documents\homey\master` | `Documents\homey\stable` |
 
 > App Store IDs and versions must **never** be overwritten when syncing. Protect `.homeycompose/app.json` / `package.json` / `app.json` identity fields on each track.
+>
+> **P139 (2026-08-21):** Stable draft `5.12.88` build #13 hit Athom `processing_failed` (`socket hang up`). Do **not** spam republish. Universal Tuya 9.0 Test is a **different** app and stays intact when Stable publishes to `.stable`.
 
 ## Purpose (do not blur)
 
@@ -49,7 +54,8 @@ Before coding, classify:
 
 ## Anti-patterns
 
-- Publishing **stable → Test** on the **same App ID** as master → overwrites Test with 5.12.x (Peter saw 5.12.70). Prefer stable Live / distinct ID when possible.
+- Publishing stable with the **wrong** compose id (legacy shared `com.dlnraja.tuya.zigbee`) → overwrites Universal Tuya Test. Stable workflows must keep `APP_ID=com.dlnraja.tuya.zigbee.stable`.
+- Republishing Stable immediately after Athom `processing_failed` (P139) — wait / use processing-failure gate.
 - P52 “safe sync” of huge JSON dumps without reading purpose
 - Porting AlarmPolarity “auto learn” to stable before soak + human OK
 - Mentioning branch mechanics in Homey forum replies (silent enrichment)

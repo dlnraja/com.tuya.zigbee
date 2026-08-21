@@ -1,88 +1,52 @@
 ---
-description: Live operational memory (Homey Test, P139, forum silent) — read every session
+description: Live operational memory — dual App IDs, forum #2190, P139 Stable
 alwaysApply: true
 ---
 
-# Operational memory — com.dlnraja.tuya.zigbee (audit 2026-08-20)
+# Operational memory — dual apps (audit 2026-08-22)
 
-## Dual-app + shared App ID
-- `master` = preview/soak (~9.0.x). `stable-v5` = reliability LTS (~5.12.x).
-- **Same Homey App ID** `com.dlnraja.tuya.zigbee` → Publish Stable→Test **overwrites** master Test.
-- Never full-tree sync. Classify BOTH | MASTER_ONLY | STABLE_ONLY.
+## Dual Athom apps (independent Test slots)
+| Track | Branch | App ID | Tip (git) | Homey Test |
+|-------|--------|--------|-----------|------------|
+| Universal Tuya | `master` | `com.dlnraja.tuya.zigbee` | **9.0.620** (`3d9553ae0`) | Auto-Publish OK (#2950 lineage) |
+| Tuya Unified (Stable) | `stable-v5` | `com.dlnraja.tuya.zigbee.stable` | **5.12.88** (`531c103cb`) | Draft #13 **P139 processing_failed** — **no republish loop** |
 
-## Homey Test live truth (last verified)
-- Master tip (repo): **v9.0.613+** (P2203 IAS already-enrolled bind + P2184/P2201/P2202). Do not overwrite with 5.12.
-- Stable tip (worktree): **5.12.87** — soak-first; **never** promote onto shared Test while 9.0 soaks.
-- **9.0.530** hit Athom `processing_failed` (`socket hang up`) — superseded; do **not** spam republish (P139).
-- **P139 hardening**: Auto-Publish `cancel-in-progress: false` (do not kill mid Athom draft/promote).
-- Store name: **Universal Tuya Zigbee** (P142 — dropped “Unified Smart Home Engine”).
-- Docs map: `.github/CONTRIBUTING.md` · `docs/guides/USER_TROUBLESHOOTING.md` · `docs/architecture/LAYERS_CAPABILITY_PROTOCOL.md` · `docs/rules/PRAGMATIC_ROADMAP.md` · `reports/P2138_BSEED_WALL_DIMMER_2026-08-17.md`.
-
-## P139 — Athom transient (DO NOT LOOP)
-- Scripts: `.github/scripts/processing-failure-republish-check.js`, `athom-processing-failure-retry.js`.
-- Transient (`socket hang up`, ECONNRESET, 502–504) → **refuse** Auto-Fix bump/republish if Test healthy (or even without).
-- Self-heal must **not** run Publish Stable→Test after master failure; prefer Auto-Publish master only, rate-limited.
-- Homey CLI headless publish auto-bumps: seed next changelog via `ensure-next-changelog.js` (P196).
-- Docs: `.github/WORKFLOW_GUIDELINES.md` section **M**.
-- Publish size: Auto-Fix / enrich gates **50 MB** (prepared dir ~37 MB).
+Clone Stable: `Documents\homey\stable`. `stable-v5-p195` is **STALE**.
 
 ## Forum silent (T157628)
-- Default: **no forum posts**. Scan → code/CI only. `REPLY_TOPICS=140352` only if human asks.
-- Media sweep: `tools/ci/forum-media-deep-scan.js` + `forum-silent-multi-scan.js`.
-- Report: `reports/FORUM_MEDIA_SWEEP_2026-08-15.md`.
+- Highest post **#2190** Peter (diag `0cea6870`) — couple **ABSENT** in post. Do not invent k4ej/mrpevh8p onto Peter tiles.
+- **#2189** meter91: `_TZ3000_zgyzgdua`+**TS0044** → `scene_switch_4` 0xFD. User must **update Test ≥9.0.619 + re-pair**.
+- Default: **no forum / PM replies**. Scan → code/CI only.
 
-### Sacred couples (recent) — already routed
+## Shipped on master Test (users must update + re-pair)
+- IAS zoneStatus Buffer/object coerce
+- Skip leftover EF00 TX on IAS-only (`shouldSkipIasOnlyEf00Tx`)
+- PhysicalButtonMixin / scene_switch_4 **0xFD** (skip 0x8004)
+- P2203 `_ensureIasBound` on already-enrolled
+- Hashed flow resolve, IR `_sendIR` aliases, ZS06→`ir_blaster` TS1201
+- Drop genPowerCfg bind on IAS-only (INVALID_EP)
+
+## Sacred couples (lock mfr+pid only)
 | Couple | Driver | Note |
 |--------|--------|------|
-| `_TYZB01_hlla45kx`+TS011F | `double_power_point_2` | Welsh #2129 image OCR |
-| `_TZ3000_w5xztuy7`+TS0002 | `switch_2gang` **ZCL-only** | Kanbros #2130 P139 |
-| `_TZ3210_imaccztn`+TS0004 | `relay_board_4_channel` | TBoy #2131 |
-| `_TZE284_m1cvyneb`+TS0601 | `wall_dimmer_tuya` | PresentSky #2133/#2138 — **re-pair**; MCU brightness clamp; forbid climate/soil/universal |
-| `_TZE204_clrdrnya`+TS0601 | `presence_sensor_radar` | settings already present |
-| `_TZE28C1000000_jtbgusdc`+TS0601 | `dimmer_2_gang_tuya` | Royce / Z2M #32305 brightness clamp |
-| `_TZE284_nt4pquef`+TS0601 | `soil_sensor` | not climate |
-| `_TZE284_hodyryli`+TS0601 | `climate_sensor_zt08` | GH #513 |
-| `_TZ3000_okaz9tjs` / `fgwhjm9j`+TS011F | `plug_energy_monitor` | HomeSuite field couples |
-| `_TZ3000_amdymr7l` / `_TZ3210_amdymr7l`+TS011F | `plug_energy_monitor` | BlitzWolf BW-SHP13; never button |
-| `_TZE200/204_pay2byax`+TS0601 | `contact_sensor_zigbee` | P126: no TS0601 on `contact_sensor`; ZG-102ZL luminance |
-| `_TZ3000_k4ej3ww2`+TS0207 | `water_leak_sensor` | Peter #2184 IAS bind + skip EF00 (P2184 BOTH) |
+| `_TZ3000_zgyzgdua`+TS0044 | `scene_switch_4` | meter91; 0xFD; not knob |
+| `_TZ3000_k4ej3ww2`+TS0207 | `water_leak_sensor` IAS 1280 | Z2M; never EF00 tuya water |
+| `_TZE284_m1cvyneb`+TS0601 | `wall_dimmer_tuya` | brightness 0–1000 |
+| `_TZ3000_lwthnp7j`+TS0004 | `wall_switch_4gang_1way` | Gabriel; pid not in #2186 post |
+| `_TZE200/204_pay2byax`+TS0601 | `contact_sensor_zigbee` | P126 no TS0601 on contact_sensor |
 
-## Catalog hygiene (P2138 + sacred couple matrix)
-- **One MFS ≠ one device.** A manufacturer can have many productIds, OEM labels, variants, and device names. Always lock **(mfr + pid)** couples.
-- Homey pairing uses **compose** sacred couples — but `mfs_db` / `new_fingerprints.json` / compound `DeviceFingerprintDB` can **re-inject** wrong drivers via enrichers + runtime adaptation.
-- Always lock **all** of: compose, registry `forbiddenDrivers`, compound DB (`mfr|pid`), `mfs_db` couples, `lib/tuya/fingerprints.json` with **verified modelIds only**.
-- Never invent a second pid (e.g. fake TS0201) to “fix” a climate collision for a TS0601-only silicon.
-- Runtime: `getDriverId(mfr, pid)` refuses mfr-only catalog when pid is not in `modelIds`.
-- Tuya MCU dimmers: brightness **0–1000 clamped** (`lib/tuya/TuyaBrightnessScale.js`). Never write >1000.
-- Do **not** declare interview-only exotic clusters (e.g. `0xED00`) in compose bindings.
-
-## HomeSuite (gpmachado) — classification reminder
-- GPL-3.0 **ideas only** — no code copy. Credits: `CREDITS.md` / `NOTICE`.
-- BOTH: onUninit teardown, Poll Control skip sleepy, default-response quirks, battery no-invent, FP locks.
-- MASTER_ONLY: DeviceAvailabilityManager last-seen, `device_rejoined`, TX pacer, inching UI extras.
-
-## Open work
-- **Issue #513 CLOSED** — Finnamu confirmed values OK on 9.0.533 (ZT08 DP17 + unix_1970).
-- Open GitHub issues/PRs: **none**.
-- Peter #2184: SOS OK on 9.0.596; water+smartbutton — **P2203** binds IAS on already-enrolled (app restart/wake). Diag `1cf775a2`. Re-pair after Test ≥ fix.
-- P194 OTA/WiFi local-first is master-only.
-- AlarmPolarity smart-learn / free-scrape / parallelDiscover = **MASTER_ONLY**.
-- Next cleanup: remaining `_hybrid_*_needs_device_assignment` / `_GENERIC_*` placeholders (M09 warn).
-- Device truth every prompt: `docs/knowledge/DEVICE_TRUTH.md` + `docs/knowledge/device-truth.json`.
-- **Publish** = Homey Test 9.0.x. **Do not post** = no Community/PM replies.
+## P139 — Athom transient (DO NOT LOOP)
+- Stable 5.12.88 upload succeeded then **processing_failed** — wait; do not force_test spam.
+- Scripts: `.github/scripts/processing-failure-republish-check.js`
 
 ## Commands
 ```bash
 gh run list --repo dlnraja/com.tuya.zigbee --limit 12
-node tools/ci/gmail-crash-pattern-gate.js --json
-node tools/ci/forum-silent-multi-scan.js --max=30
+node tools/ci/forum-silent-multi-scan.js --max=40
 node tools/ci/anti-bot-regression-gate.js
 node tools/ci/p2138-sacred-couple-matrix-gate.js
-node .github/scripts/fp-collision-check.js --baseline .github/fingerprint-collision-baseline.json
-node --test test/critical/p2138-bseed-wall-dimmer.test.js test/critical/p2184-diag-1cf775a2.test.js test/critical/p2201-pay2byax-p126-contact.test.js
-node tools/ci/firmware-updates-gate.js
-node tools/ci/wifi-local-first-gate.js
+node --test test/critical/p2184-diag-1cf775a2.test.js test/critical/p2138-bseed-wall-dimmer.test.js
 ```
 
-## Handoff file
-Refresh `reports/SESSION_HANDOFF_2026-08-15.md` when versions/Test change.
+## Handoffs (parent folder)
+`Documents\homey\FROM_THE_BEGINNING.md` · `NEXT_PATCHES.md` · `FORUM_LATEST_2190.md` · `FULL_SOURCE_SWEEP.md` · `ZIGBEE_PARALLEL_CROSS.md`

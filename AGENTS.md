@@ -11,7 +11,7 @@
 | **Author** | Dylan Rajasekaram (dlnraja) |
 | **License** | GPL-3.0 (was MIT-licensed JohanBendz fork) |
 | **Branches** | `master` (preview/dev) + `stable-v5` (production) |
-| **Current Version** | v9.0.613 (audit 2026-08-20; stable LTS tip 5.12.87) |
+| **Current Version** | v9.0.620 (audit 2026-08-22; stable LTS tip 5.12.88 as com.dlnraja.tuya.zigbee.stable) |
 | **Drivers** | 430 on master, 431 on `stable-v5` |
 | **Fingerprints** | 5,471 (audit 2026-07-27; 4,218 entries in mfs_db) |
 | **SDK** | Homey SDK v3 (compatibility >= 12.2.0) |

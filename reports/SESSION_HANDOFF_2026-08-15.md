@@ -1,47 +1,25 @@
-# SESSION HANDOFF — 2026-08-20 (P2203 IAS already-enrolled bind)
+# SESSION HANDOFF — 2026-08-22 (dual App IDs + forum #2190)
 
-> Shared App ID `com.dlnraja.tuya.zigbee`. Forum silent (T157628). Dual-track: master=preview, stable=reliability-only. Never Publish Stable→Test while 9.0 soaks.
+> Forum silent. No invent pid. No CloudAgent. Stable P139 = no Athom republish spam.
 
-| Track | Tip (repo) | Homey Test |
-|-------|------------|------------|
-| master | **9.0.613 → next publish (P2203)** | Auto-Publish on push; do not overwrite with 5.12 |
-| stable-v5 | **5.12.87** | soak; do **not** Promote Stable→Test |
+## Live truth
 
-## Forum fine analysis (silent, 2026-08-20)
+| Track | App ID | Git tip | Store |
+|-------|--------|---------|-------|
+| master | `com.dlnraja.tuya.zigbee` | **9.0.620** `3d9553ae0` | Test OK (update + re-pair) |
+| stable-v5 | `com.dlnraja.tuya.zigbee.stable` | **5.12.88** `531c103cb` | Draft #13 processing_failed |
 
-| Post | Who | Finding | Action |
-|------|-----|---------|--------|
-| #2184 | Peter | SOS OK on 9.0.596 after re-pair; water+smartbutton still dead; diag `1cf775a2` | P2184+**P2203** |
-| #2183 | Peter | Heap / Flows dead; SOS/button/water/contact | Heap defer P2184; IAS bind P2203 |
-| #2186/#2188 | Gabriel | `_TZ3000_lwthnp7j` 4-gang ZCL touch BR | Already `wall_switch_4gang_1way`+TS0004 — no invent |
-| Scanner “new FPs” | — | `_TZE200_ABC123`, Johan cartesian mfr dumps, `V5498KDM` | **Refuse** — no Z2M couple |
+## Forum (highest #2190)
+- Peter #2190: contact pulse / water+smartbutton dead / SOS OK — **no mfr in post**. Diag `0cea6870`.
+- meter91 #2189: `zgyzgdua`+TS0044 — needs Test ≥ 9.0.619 + re-pair for 0xFD.
 
-### WHY P2203 (doubt → fix)
+## In git (already published on master Auto-Publish)
+skip leftover EF00 IAS · 0xFD mixin · zoneStatus coerce · hashed flows · IR aliases · P2203 bind
 
-| Q | Answer |
-|---|--------|
-| **Pourquoi** | After app update Homey restarts; sleepy IAS already `enrolled` → early return set listener but **never bind** → 0 `iasZone` msgs (Peter water) |
-| **Comment** | `IASZoneManager._ensureIasBound`: cluster.bind + endpoint.bind fallback; call on enrolled path AND after enroll |
-| **Pour qui** | Water / contact / SOS IAS users (BOTH tracks) |
-| **Quand** | `enrollIASZone` at init + every wake `onEndDeviceAnnounce` |
-| **Contre quoi** | Listener-only without bind; EF00 mirror on IAS-only (`useTuyaMirror` off) |
-
-Also: `IASAlarmFallback` skips Tuya mirror when `_iasOnlyProfile`; uses `safeSetCapabilityValue`.
-
-## Prior locks (still sacred)
-
-| Couple | Driver |
-|--------|--------|
-| `_TZ3000_k4ej3ww2`+TS0207 | `water_leak_sensor` IAS |
-| `_TZ3000_mrpevh8p`+TS0041 | `button_wireless_1` |
-| `_TZE200/204_pay2byax`+TS0601 | `contact_sensor_zigbee` |
-| `_TZ3000_lwthnp7j`+TS0004 | `wall_switch_4gang_1way` |
-| `_TZE284_m1cvyneb`+TS0601 | `wall_dimmer_tuya` |
-
-## User guidance (silent — do not forum-post)
-
-After Homey Test shows the P2203 build: **remove + re-pair** water + smartbutton if still silent (bind needs a radio window).
+## Open (do not invent)
+- Peter SOS battery glitchy / contact lux plateau — no couple in post → wait dump
+- Stable: strip leftover mfr-as-pid on water (local fix) — **push Stable only after P139 cooldown**
+- Empty-mfr catch-alls (18) — strip carefully (zero FP otherwise)
 
 ## Do not
-
-- Forum/PM replies · invent productIds · Publish Stable→Test · trust forum-scanner ABC123/cartesian dumps
+Forum reply · invent pid from compose onto Peter · republish Stable tonight · use stale `stable-v5-p195`
