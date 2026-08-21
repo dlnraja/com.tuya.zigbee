@@ -1,15 +1,15 @@
 {
-  "id": "com.dlnraja.tuya.zigbee",
+  "id": "com.dlnraja.tuya.zigbee.stable",
   "version": "5.12.88",
   "compatibility": ">=12.2.0",
   "platforms": [
     "local"
   ],
   "name": {
-    "en": "Universal Tuya",
-    "nl": "Universal Tuya",
-    "de": "Universal Tuya",
-    "fr": "Universal Tuya"
+    "en": "Tuya Unified (Stable)",
+    "nl": "Tuya Unified (Stable)",
+    "de": "Tuya Unified (Stable)",
+    "fr": "Tuya Unified (Stable)"
   },
   "description": {
     "en": "Local Zigbee control for Tuya devices on Homey Pro — switches, sensors, lights, thermostats and covers.",
