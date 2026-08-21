@@ -33,7 +33,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.617 |
+| **App Version** | v9.0.618 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,353 |
 | **Pairing Variants** | 16,515 (4 case combos per fingerprint) |
@@ -45,7 +45,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **SVG Icons** | 731 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
-| **Last Updated** | 2026-08-20 |
+| **Last Updated** | 2026-08-21 |
 
 ### Top 20 Drivers by Fingerprint Count
 
@@ -102,6 +102,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.618** | P2203 IAS already-enrolled bind + water EF00 skip + FP hygiene. |
 | **v9.0.617** | P2203: IAS already-enrolled bind + IAS-only water EF00 skip; FP hygiene 2putqrmw. |
 | **v9.0.616** | P2203 hygiene: strip plug mfr 2putqrmw from button_wireless_2 (FP collision); version sync. |
 | **v9.0.615** | P2203: re-bind IAS Zone when already enrolled (Peter water/contact after app restart); skip EF00 Tuya mirror on IAS-only water sensors; s… |
@@ -113,7 +114,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.609** | IntelligentDriverHotSwap v2: unified integration with DynamicCapabilityManager, computed-cap guard (meter_* never device-written), double… |
 | **v9.0.608** | IntelligentDriverHotSwap v2: unified integration with DynamicCapabilityManager, computed-cap guard (meter_* never device-written), double… |
 | **v9.0.607** | IntelligentDriverHotSwap v2: unified integration with DynamicCapabilityManager, computed-cap guard (meter_* never device-written), double… |
-| **v9.0.606** | IntelligentDriverHotSwap v2: unified integration with DynamicCapabilityManager, computed-cap guard (meter_* never device-written), double… |
 
 <!-- CHANGELOG_END -->
 
