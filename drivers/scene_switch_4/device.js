@@ -17,6 +17,7 @@ class SceneSwitch4Device extends ButtonDevice {
 
   async onNodeInit({ zclNode }) {
     this.buttonCount = 4;
+    this.gangCount = 4;
 
     await Promise.resolve().then(() => super.onNodeInit({ zclNode })).catch(err => this.error('[INIT] Error:', err.message));
 
