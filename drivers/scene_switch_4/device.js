@@ -17,11 +17,13 @@ class SceneSwitch4Device extends ButtonDevice {
 
   async onNodeInit({ zclNode }) {
     this.buttonCount = 4;
+    this.gangCount = 4;
 
     await Promise.resolve().then(() => super.onNodeInit({ zclNode })).catch(err => this.error('[INIT] Error:', err.message));
 
     // v10.1.1: E000 + DP cluster detection for scene switch devices
     await this._setupE000Detection(zclNode);
+    await this._setupOnOffFdBoundCluster(zclNode);
     await this._setupTuyaDPButtonDetection(zclNode);
     await this._setupRawFrameInterceptor(zclNode);
 
@@ -85,6 +87,40 @@ class SceneSwitch4Device extends ButtonDevice {
 
     await this._setupE000BoundCluster(zclNode);
     this.log('[E000-S4] E000 detection setup complete');
+  }
+
+  /**
+   * ZHA TuyaSmartRemoteOnOffCluster + Koenkk TS0044:
+   * physical press is manufacturer cmd 0xFD on genOnOff (cluster 6), per endpoint,
+   * payload 0=single 1=double 2=hold. Standard commandOn/Off/Toggle is the TS004F
+   * command-mode path ? not this remote. Bind OnOffBoundCluster so 0xFD is not dropped.
+   */
+  async _setupOnOffFdBoundCluster(zclNode) {
+    try {
+      const OnOffBoundCluster = require('../../lib/clusters/OnOffBoundCluster');
+      const { PRESS_MAP } = require('../../lib/utils/TuyaPressTypeMap');
+      for (let ep = 1; ep <= 4; ep++) {
+        const endpoint = zclNode?.endpoints?.[ep];
+        if (!endpoint) {continue;}
+        const bc = new OnOffBoundCluster({
+          onSetOn: async (payload) => {
+            if (this._isDeduped(ep, 'fd-on')) {return;}
+            let press = 'single';
+            if (payload && (payload.cmdId === 0xFD || payload.scene !== undefined)) {
+              press = PRESS_MAP[payload.scene] || payload.press || 'single';
+            }
+            this.log(`[ONOFF-S4] EP${ep} 0xFD scene=${payload?.scene} -> ${press}`);
+            await this._triggerSceneSwitch4(ep, press);
+          },
+        });
+        bc._device = this;
+        if (!endpoint.bindings) {endpoint.bindings = {};}
+        endpoint.bindings.onOff = bc;
+        this.log(`[ONOFF-S4] BoundCluster EP${ep} ready (0xFD)`);
+      }
+    } catch (e) {
+      this.log(`[ONOFF-S4] BoundCluster not available: ${e.message}`);
+    }
   }
 
   /**
@@ -171,6 +207,21 @@ class SceneSwitch4Device extends ButtonDevice {
       if (!zclNode || typeof zclNode.handleFrame !== 'function') {return;}
       const orig = zclNode.handleFrame.bind(zclNode);
       zclNode.handleFrame = async (epId, cId, f, m) => {
+        if (cId === 6 || cId === 0x0006) {
+          const json = typeof f?.toJSON === 'function' ? f.toJSON() : f;
+          const d = Buffer.isBuffer(json?.data) ? json.data
+            : Array.isArray(json?.data) ? Buffer.from(json.data)
+            : Buffer.isBuffer(f) ? f : null;
+          const cmd = f?.cmdId ?? f?.commandId;
+          const looksFd = cmd === 0xFD || (d && d.length && d.includes(0xFD));
+          if (looksFd) {
+            const scene = (typeof cmd === 'number' && d && d.length) ? d[0]
+              : (d && d.length > 1 ? d[d.length - 1] : 0);
+            const pt = require('../../lib/utils/TuyaPressTypeMap').PRESS_MAP[scene] || 'single';
+            this.log(`[ONOFF-S4-RAW] EP${epId} 0xFD scene=${scene} -> ${pt}`);
+            await this._triggerSceneSwitch4(epId, pt);
+          }
+        }
         if (cId === 57344 || cId === 0xE000) {
           // v10.6.0 FIX: `f` is a raw Buffer — `f.data` is undefined, this
           // path was dead. Extract bytes the same way button_wireless_4 does.
