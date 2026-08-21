@@ -1317,5 +1317,8 @@
   },
   "5.12.88": {
     "en": "Tuya Unified (Stable) identity (com.dlnraja.tuya.zigbee.stable). Reliability: skip leftover EF00 TX and genPowerCfg bind on IAS-only (TS0207/TS0203/TS0215)."
+  },
+  "5.12.89": {
+    "en": "Stability improvements and Homey test publication retry after transient processing failure."
   }
 }
