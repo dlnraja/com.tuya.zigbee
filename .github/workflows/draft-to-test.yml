@@ -84,6 +84,7 @@ jobs:
         if: (inputs.branch || 'master') == 'stable-v5'
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+          APP_ID: com.dlnraja.tuya.zigbee.stable
         run: node .github/scripts/refuse-stable-test-overwrite.js
 
       - name: "Tier 1: Promote via Browser (Puppeteer)"

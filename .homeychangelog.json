@@ -1314,5 +1314,8 @@
   },
   "5.12.87": {
     "en": "Fix: computed caps (meter_*) no longer auto-added from device DP reports. Guard routes meter_power to measure_power (native measurement). Prevents phantom kWh in Energy tab."
+  },
+  "5.12.88": {
+    "en": "Tuya Unified (Stable) identity (com.dlnraja.tuya.zigbee.stable). Reliability: skip leftover EF00 TX and genPowerCfg bind on IAS-only (TS0207/TS0203/TS0215)."
   }
 }

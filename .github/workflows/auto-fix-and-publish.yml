@@ -200,7 +200,8 @@ jobs:
           fi
 
       - name: 🚀 Publish if needed
-        # P193/P217: never Homey-publish 5.12 from this workflow while master 9.0 soaks Test.
+        # P193/P217: skip Homey-publish on stable-v5 here so we cannot hit Universal Tuya 9.0.
+        # Dedicated publish-stable.yml publishes com.dlnraja.tuya.zigbee.stable.
         if: (env.trigger_publish == 'true' || github.event_name == 'workflow_dispatch') && github.ref_name != 'stable-v5'
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}

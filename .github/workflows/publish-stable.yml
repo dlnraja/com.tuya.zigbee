@@ -17,7 +17,7 @@ on:
   workflow_dispatch:
     inputs:
       force_test:
-        description: 'Promote to Test even if master 9.0.x is soaking (overwrites shared App ID)'
+        description: 'Force Test promotion for com.dlnraja.tuya.zigbee.stable (9.0 soak is Universal Tuya, a different Athom app)'
         type: boolean
         default: false
 
@@ -30,6 +30,7 @@ defaults:
 
 env:
   NODE_VERSION: "22"
+  APP_ID: "com.dlnraja.tuya.zigbee.stable"
   # v5.12.0: 431 drivers × assets still overshoots the 26 MB default.
   # v5.12.4 (P75.1): Bumped 45 → 50 MB to match master after .homeyignore
   # pruning reduces the source directory to ~40 MB. The gzipped tarball
@@ -91,7 +92,7 @@ jobs:
         run: node scripts/maintenance/sanitize-manifest.cjs app.json .homeybuild/app.json
 
   soak:
-    name: "Shared App ID soak guard"
+    name: "Stable App ID soak guard"
     needs: upstream-guard
     runs-on: ubuntu-latest
     timeout-minutes: 5
@@ -107,10 +108,11 @@ jobs:
           node-version: '22'
           cache: npm
       - run: npm ci --prefer-offline --no-audit || npm install
-      - name: Shared App ID soak guard
+      - name: Stable App ID soak guard
         id: soak
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+          APP_ID: com.dlnraja.tuya.zigbee.stable
           STABLE_FORCE_TEST: ${{ github.event.inputs.force_test || 'false' }}
         run: node .github/scripts/refuse-stable-test-overwrite.js
 
@@ -224,13 +226,13 @@ jobs:
           echo "## Shared App ID soak" >> "$GITHUB_STEP_SUMMARY"
           echo "skip=${{ needs.soak.outputs.skip }} reason=${{ needs.soak.outputs.reason }}" >> "$GITHUB_STEP_SUMMARY"
           if [ "${{ needs.soak.outputs.skip }}" = "true" ]; then
-            echo "Draft upload skipped so 5.12.x cannot overwrite soaking 9.0 Test." >> "$GITHUB_STEP_SUMMARY"
+            echo "Draft upload skipped only if guard would overwrite Universal Tuya 9.0. The .stable id is never blocked by 9.x soak." >> "$GITHUB_STEP_SUMMARY"
           fi
 
   promote:
     name: "Promote to Test"
     needs: [pre-validation, publish, soak]
-    # Skip entirely while master 9.0.x occupies the shared Test slot.
+    # Skip only if soak-guard would overwrite Universal Tuya 9.0 (never for .stable id).
     if: needs.soak.outputs.skip != 'true' && needs.publish.result == 'success'
     runs-on: ubuntu-latest
     timeout-minutes: 35
@@ -241,10 +243,11 @@ jobs:
           node-version: '22'
           cache: npm
       - run: npm ci --prefer-offline --no-audit || npm install
-      - name: Shared App ID soak guard
+      - name: Stable App ID soak guard
         id: soak
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+          APP_ID: com.dlnraja.tuya.zigbee.stable
           STABLE_FORCE_TEST: ${{ github.event.inputs.force_test || 'false' }}
         run: node .github/scripts/refuse-stable-test-overwrite.js
       - name: Wait for Athom draft processing
@@ -291,7 +294,7 @@ jobs:
           echo "## Stable Publish" >> $GITHUB_STEP_SUMMARY
           echo "v$VER | APP_ID: $APP_ID" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          echo "> **APP_ID warning**: master and stable share \`com.dlnraja.tuya.zigbee\`. Promoting stable to Test overwrites the master Test slot (and vice versa). Prefer Live for production stable, or republish master last if Test must stay on 9.x." >> $GITHUB_STEP_SUMMARY
+          echo "> **APP_ID**: this track publishes \`com.dlnraja.tuya.zigbee.stable\` (Tuya Unified (Stable)). Universal Tuya 9.0 (\`com.dlnraja.tuya.zigbee\`) is a different Athom app and is not overwritten." >> $GITHUB_STEP_SUMMARY
           echo "Soak guard skip=${{ steps.soak.outputs.skip }} reason=${{ steps.soak.outputs.reason }}" >> $GITHUB_STEP_SUMMARY
       - name: Full diagnostics sweep - sanitized
         if: always()
