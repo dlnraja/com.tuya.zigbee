@@ -1,4 +1,4 @@
-# 📥 Community Inbox — 2026-08-21 05:47 UTC
+# 📥 Community Inbox — 2026-08-21 22:13 UTC
 
 Généré par `.github/scripts/community-inbox-digest.js` (workflow `community-inbox.yml`).
 
@@ -6,7 +6,7 @@ Généré par `.github/scripts/community-inbox-digest.js` (workflow `community-i
 
 - Issues ouvertes : **0** — 🔴 à traiter : **0**, 🟡 attente utilisateur : 0, 🟢 maintainer actif : 0
 - PRs ouvertes : **0**
-- Forum : **11** post(s) sans réponse du maintainer
+- Forum : **12** post(s) sans réponse du maintainer
 - Messages privés (lecture seule, jamais de réponse) : **20** thread(s), 7 mfr, 5 pid, 7 UUID diag
 
 ## 🌍 Forum — posts sans réponse
@@ -22,4 +22,5 @@ Généré par `.github/scripts/community-inbox-digest.js` (workflow `community-i
 - **Gabriel_Pedrosa_Mach** (2026-08-20) :  The 4gang zcl device is a device sold in Brazil with the new digital brand. It is a 4-key touch device. In my repository there is his inter
 - **smarthomesven** (2026-08-20) :  Gabriel_Pedrosa_Mach: In my repository https://github.com/gpmachado/com.gpm.homesuite/Homey_interview there is his interview That one retur
 - **Gabriel_Pedrosa_Mach** (2026-08-20) :  Ok com.gpm.homesuite/Homey_Interview/4G touch/_TZ3000_lwthnp7j.txt at main · gpmachado/com.gpm.homesuite · GitHub 
+- **meter91** (2026-08-21) :  Hey! Thanks for all the great work. I’m having issues with the TS0044 + _TZ3000_zgyzgdua 4-way switch. Similair to what I read above I does
 
