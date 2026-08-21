@@ -41,7 +41,9 @@ class IRRemoteDriver extends Driver {
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
-          if (typeof args.device._sendIR === 'function') {await args.device._sendIR(args.ir_code || args.code);}
+          // WHY: flow cards called _sendIR but device method is sendIRCode
+          const send = args.device.sendIRCode || args.device._sendIR;
+          if (typeof send === 'function') {await send.call(args.device, args.ir_code || args.code);}
           return true;
         });
       }
@@ -52,7 +54,9 @@ class IRRemoteDriver extends Driver {
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
-          if (typeof args.device._startLearn === 'function') {await args.device._startLearn();}
+          // WHY: flow cards called _startLearn but device method is startLearn
+          const learn = args.device.startLearn || args.device._startLearn;
+          if (typeof learn === 'function') {await learn.call(args.device);}
           return true;
         });
       }

@@ -110,6 +110,10 @@ class IRRemoteDevice extends TuyaZigbeeDevice {
 
   _nextSeq() { return this._seq = (this._seq + 1) % 0x10000; }
 
+  // WHY: flow cards historically called _sendIR/_startLearn; methods are sendIRCode/startLearn.
+  async _sendIR(code) { return this.sendIRCode(code); }
+  async _startLearn() { return this.startLearn(); }
+
   async sendIRCode(code) {
     if (!code) {return;}
     // v10.8.0 (z2m ZS06 lesson): a spammed IR blaster can enter a transmit

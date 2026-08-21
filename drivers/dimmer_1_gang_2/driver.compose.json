@@ -91,6 +91,7 @@
   "metadata": {
     "driver": {
       "catchall": true,
+      "_comment": "WHY: skip pid strip 2026-08-21 — empty manufacturerName; stripping productIds would leave zero fingerprints. Do not invent mfrs.",
       "reason": "Fallback for unmatched devices with PIDs: TS110E, TS0601, TS0505B, TS0215A, TS0002, TS0003, TS0012, TS0013, TS0001, TS0726, TS0052"
     }
   },
