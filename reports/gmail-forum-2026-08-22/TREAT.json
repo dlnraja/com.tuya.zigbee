@@ -1,0 +1,66 @@
+{
+  "forum": {
+    "highest": 2190,
+    "last_posted_at": "2026-08-21T19:22:42.668Z",
+    "new_since_last_session": "none (#2191+ absent)",
+    "actionable": [
+      {
+        "n": 2190,
+        "user": "Peter_van_Werkhoven",
+        "uuid": "0cea6870-69dd-4a98-abdd-e35273699e7d",
+        "mfr_pid": "ABSENT in post — do not invent",
+        "issues": [
+          "SOS battery glitchy",
+          "contact pulse not open/close",
+          "luminance wrong"
+        ],
+        "treat": "already shipped IAS/EF00 skip + zoneStatus; battery/lux need dump+couple"
+      },
+      {
+        "n": 2189,
+        "user": "meter91",
+        "couple": "_TZ3000_zgyzgdua + TS0044",
+        "driver": "scene_switch_4",
+        "treat": "0xFD + EP1-4 shipped ≥9.0.619 — user update+re-pair"
+      }
+    ],
+    "refuse_lock": [
+      "_TZE200_ABC123",
+      "Johan 26439 catalogue dumps (_TZ3000_CEHUW1L2 etc)",
+      "_TZ3000_V5498KDM+TS0001 (topic 99614 — verify before lock)"
+    ]
+  },
+  "gmail": {
+    "source": "GHA 32540449774 + Gmail MCP thread 1a023f6ac3857a87",
+    "newest": {
+      "date": "2026-08-21T23:50:34Z",
+      "couple_z2m": "_TZ3000_xffhmvhv + TS0044 (Nous 4-button wireless)",
+      "pid_noise": "TS004F also appeared in email extractor — Z2M model is TS0044",
+      "driver": "button_wireless_4 (compose has mfr; scene_switch_4 does NOT)",
+      "errs": [
+        "button_wireless_4_button_1_button_pressed",
+        "button_wireless_4_button_2_button_pressed",
+        "button_wireless_4_button_3_button_pressed",
+        "button_wireless_4_button_4_button_pressed"
+      ],
+      "meaning": "flow card resolve / physical press path noise (toast or hashed flow) — same family as meter91"
+    },
+    "meter91_diag": {
+      "date": "2026-08-21T10:56:03Z",
+      "couple": "_TZ3000_zgyzgdua + TS0044",
+      "errs": [
+        "scene_switch_4_button_1gang_button_pressed"
+      ]
+    },
+    "peter_crash_aug19": {
+      "date": "2026-08-19T10:28:08Z",
+      "caps": [
+        "measure_battery",
+        "alarm_water",
+        "alarm_tamper"
+      ],
+      "issue": "sleepy powerConfiguration read timeout — do not storm battery poll"
+    }
+  },
+  "generatedAt": "2026-08-22T01:11:30.770Z"
+}

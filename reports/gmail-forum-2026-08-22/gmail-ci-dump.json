@@ -1,0 +1,443 @@
+{
+  "reportMeta": {
+    "ts": "2026-08-22T00:29:32.338Z",
+    "count": 100,
+    "byType": {
+      "general": 89,
+      "crash_report": 1,
+      "diagnostic": 5,
+      "changelog": 1,
+      "device_issue": 2,
+      "interview": 1,
+      "bug_report": 1
+    },
+    "newFP": [],
+    "history": {
+      "categories": [
+        {
+          "id": "button_flow",
+          "label": "Button / flow trigger",
+          "severity": "high",
+          "count": 2,
+          "checks": [
+            "npm run check:flows",
+            "node scripts/automation/audit-flowcards.js --json"
+          ]
+        },
+        {
+          "id": "battery_unknown",
+          "label": "Battery reporting unknown",
+          "severity": "high",
+          "count": 1,
+          "checks": [
+            "node scripts/ci/bug-hunter.js --json",
+            "node scripts/automation/validate-drivers.js --json"
+          ]
+        },
+        {
+          "id": "runtime_crash",
+          "label": "Runtime crash / exception",
+          "severity": "high",
+          "count": 1,
+          "checks": [
+            "node scripts/ci/bug-hunter.js --json",
+            "npm run check:timer-context"
+          ]
+        }
+      ],
+      "topErrors": [
+        {
+          "error": "get â measure_battery â read attribute (cluster: powerConfiguration, attribu",
+          "count": 1
+        },
+        {
+          "error": "Het apparaat reageert niet. Is het van stroom voorzien?",
+          "count": 1
+        },
+        {
+          "error": "could not fetch initial value for measure_battery Error: Het apparaat reageert n",
+          "count": 1
+        },
+        {
+          "error": "configuring attribute reporting (endpoint: 1, cluster: powerConfiguration) {",
+          "count": 1
+        },
+        {
+          "error": "failed to configure reporting for measure_battery and powerConfiguration Error:",
+          "count": 1
+        },
+        {
+          "error": "scene_switch_4_button_1gang_button_pressed",
+          "count": 1
+        },
+        {
+          "error": "regarding the driver. However, it doesn't matter which device type I select duri",
+          "count": 1
+        },
+        {
+          "error": "button_wireless_4_button_4_button_pressed",
+          "count": 1
+        },
+        {
+          "error": "button_wireless_4_button_3_button_pressed",
+          "count": 1
+        },
+        {
+          "error": "button_wireless_4_button_1_button_pressed",
+          "count": 1
+        },
+        {
+          "error": "button_wireless_4_button_2_button_pressed",
+          "count": 1
+        }
+      ],
+      "recommendedChecks": [
+        {
+          "command": "node scripts/automation/audit-flowcards.js --json",
+          "weight": 2
+        },
+        {
+          "command": "node scripts/ci/bug-hunter.js --json",
+          "weight": 2
+        },
+        {
+          "command": "npm run check:flows",
+          "weight": 2
+        },
+        {
+          "command": "node scripts/automation/validate-drivers.js --json",
+          "weight": 1
+        },
+        {
+          "command": "npm run check:timer-context",
+          "weight": 1
+        }
+      ],
+      "chronology": [
+        {
+          "date": "2026-08-19T10:28:08.000Z",
+          "type": "crash_report",
+          "subj": "[com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report",
+          "categories": [
+            "battery_unknown",
+            "runtime_crash"
+          ],
+          "fps": {
+            "mfr": [],
+            "pid": []
+          },
+          "errors": [
+            "get â measure_battery â read attribute (cluster: powerConfiguration, attribu",
+            "Het apparaat reageert niet. Is het van stroom voorzien?",
+            "could not fetch initial value for measure_battery Error: Het apparaat reageert n",
+            "configuring attribute reporting (endpoint: 1, cluster: powerConfiguration) {",
+            "failed to configure reporting for measure_battery and powerConfiguration Error:"
+          ]
+        },
+        {
+          "date": "2026-08-21T10:56:03.000Z",
+          "type": "diagnostic",
+          "subj": "[com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report",
+          "categories": [
+            "button_flow"
+          ],
+          "fps": {
+            "mfr": [
+              "_TZ3000_zgyzgdua"
+            ],
+            "pid": [
+              "TS0044"
+            ]
+          },
+          "errors": [
+            "scene_switch_4_button_1gang_button_pressed"
+          ]
+        },
+        {
+          "date": "2026-08-21T23:50:34.000Z",
+          "type": "diagnostic",
+          "subj": "[com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report",
+          "categories": [
+            "button_flow"
+          ],
+          "fps": {
+            "mfr": [
+              "_TZ3000_xffhmvhv"
+            ],
+            "pid": [
+              "TS004F",
+              "TS0044"
+            ]
+          },
+          "errors": [
+            "button_wireless_4_button_4_button_pressed",
+            "button_wireless_4_button_3_button_pressed",
+            "button_wireless_4_button_1_button_pressed",
+            "button_wireless_4_button_2_button_pressed"
+          ]
+        }
+      ]
+    },
+    "errorCount": 0
+  },
+  "summaryKeys": [
+    "timestamp",
+    "devices",
+    "unmatchedFPs",
+    "errors",
+    "sources"
+  ],
+  "summaryPreview": "{\"timestamp\":\"2026-08-22T00:32:31.580Z\",\"devices\":[{\"homey\":\"f34e4669c3af\",\"fw\":\"?\",\"app\":null,\"total\":0,\"tuya\":0,\"matched\":0,\"unmatched\":0},{\"homey\":\"52614a6db2fe\",\"fw\":\"?\",\"app\":null,\"total\":0,\"tuya\":0,\"matched\":0,\"unmatched\":0}],\"unmatchedFPs\":[],\"errors\":[{\"err\":\"get â measure_battery â read attribute (cluster: powerConfiguration, attribu\",\"source\":\"gmail\"},{\"err\":\"Het apparaat reageert niet. Is het van stroom voorzien?\",\"source\":\"gmail\"},{\"err\":\"could not fetch initial value for measure_battery Error: Het apparaat reageert n\",\"source\":\"gmail\"},{\"err\":\"configuring attribute reporting (endpoint: 1, cluster: powerConfiguration) {\",\"source\":\"gmail\"},{\"err\":\"failed to configure reporting for measure_battery and powerConfiguration Error:\",\"source\":\"gmail\"},{\"err\":\"scene_switch_4_button_1gang_button_pressed\",\"source\":\"gmail\"},{\"err\":\"regarding the driver. However, it doesn't matter which device type I select duri\",\"source\":\"gmail\"},{\"err\":\"button_wireless_4_button_4_button_pressed\",\"source\":\"gmail\"},{\"err\":\"button_wireless_4_button_3_button_pressed\",\"source\":\"gmail\"},{\"err\":\"button_wireless_4_button_1_button_pressed\",\"source\":\"gmail\"},{\"err\":\"button_wireless_4_button_2_button_pressed\",\"source\":\"gmail\"}],\"sources\":{\"gmail\":100,\"homey_report\":2}}",
+  "crash": {
+    "generatedAt": "2026-08-22T00:29:33.071Z",
+    "sourcesScanned": 102,
+    "patternCounts": {
+      "flow_getDeviceActionCard": 0,
+      "readonly_error_assign": 0,
+      "unbound_destroyed": 0,
+      "getDiscoveries_not_fn": 0,
+      "getDeviceById": 0,
+      "catch_on_undefined": 0,
+      "registerRunListenerasync_typo": 0,
+      "settimeout_destroyed": 0,
+      "onDeleted_null": 0,
+      "dcm_auditCapabilities_missing": 0,
+      "capability_ref_undefined": 0,
+      "clusterutils_destroyed_unbound": 0,
+      "heap_oom_live_data": 0,
+      "ERR_IAS_SLEEPY_TIMEOUT": 0,
+      "ERR_DESTROYED_DEVICE_TIMER": 0,
+      "ERR_UNBOUND_DESTROYED": 0,
+      "ERR_CATCH_ON_UNDEFINED": 0,
+      "ERR_CAPABILITY_NOT_FOUND": 0,
+      "ERR_AUDIT_CAPABILITIES": 0,
+      "ERR_ZIGBEE_ROUTE_FULL": 0
+    },
+    "hits": [],
+    "unknownFatals": [],
+    "knownFixed": [
+      "flow_getDeviceActionCard",
+      "readonly_error_assign",
+      "unbound_destroyed",
+      "getDiscoveries_not_fn",
+      "getDeviceById",
+      "catch_on_undefined",
+      "registerRunListenerasync_typo",
+      "settimeout_destroyed",
+      "onDeleted_null",
+      "dcm_auditCapabilities_missing",
+      "capability_ref_undefined",
+      "clusterutils_destroyed_unbound",
+      "heap_oom_live_data",
+      "ERR_IAS_SLEEPY_TIMEOUT",
+      "ERR_DESTROYED_DEVICE_TIMER",
+      "ERR_UNBOUND_DESTROYED",
+      "ERR_CATCH_ON_UNDEFINED",
+      "ERR_AUDIT_CAPABILITIES"
+    ],
+    "watch": [],
+    "verdict": "ok"
+  },
+  "fps": {
+    "timestamp": "2026-08-22T00:29:33.271Z",
+    "source": "gmail-unique-fps.json(prior)",
+    "totalUnique": 2,
+    "byPrefix": {
+      "Z3000": [
+        "_TZ3000_xffhmvhv",
+        "_TZ3000_zgyzgdua"
+      ]
+    },
+    "fps": [
+      "_TZ3000_xffhmvhv",
+      "_TZ3000_zgyzgdua"
+    ]
+  },
+  "sacred": {
+    "timestamp": "2026-08-22T00:29:34.105Z",
+    "mode": "dry-run",
+    "results": [
+      {
+        "id": "p101-lot2",
+        "status": "ok",
+        "exitCode": 0,
+        "signal": null,
+        "stdoutTail": "_3gang rem - addM 0 addP 0\nDRY _TZE200_rqhnxkqu -> switch_wall_6gang rem - addM 0 addP 0\nDRY _TZE284_hyssaqjk -> switch_wall_6gang rem - addM 0 addP 0\nDRY _TZ3218_sgbsg6mr -> switch_2gang rem - addM 0 addP 0\nDRY _TZE204_xu4a5rhj -> curtain_motor rem - addM 0 addP 0\nDRY _TYST11_fzo2pocs -> curtain_motor rem - addM 0 addP 0\nDRY _TZE284_d2zfgtij -> energy_meter_din rem - addM 0 addP 0\nDRY _TZE284_s4sa1mcx -> energy_meter_3phase rem - addM 0 addP 0\nDRY _TZE204_x8diwkqb -> energy_meter_3phase rem - addM 0 addP 0\nDRY _TZE284_x8diwkqb -> energy_meter_3phase rem - addM 0 addP 0\nDRY _TZE204_lawxy9e2 -> ceiling_fan rem - addM 0 addP 0\nDRY _TZE204_2jnoy8dj -> fan_controller rem - addM 0 addP 0\nDRY _TZE200_xixlazkg -> wall_thermostat rem - addM 0 addP 0\n\nP101 lot2: 19 couples (dry-run — pass --apply)\n",
+        "stderrTail": ""
+      },
+      {
+        "id": "blakadder-new",
+        "status": "skip",
+        "reason": "input_missing",
+        "input": ".github/state/blakadder/blakadder-only.json"
+      },
+      {
+        "id": "issue-439",
+        "status": "ok",
+        "exitCode": 0,
+        "signal": null,
+        "stdoutTail": "=== P53 — Apply missing FPs from issue #439 to generic_tuya ===\nNo issue-439-fps.json — falling back to embedded list...\nNo embedded FP list either — nothing to apply (dry-run OK).\n",
+        "stderrTail": ""
+      },
+      {
+        "id": "canonical-gaps",
+        "status": "skip",
+        "reason": "input_missing",
+        "input": ".github/state/mfr-pid-cross-ref.json"
+      }
+    ],
+    "ok": true
+  },
+  "diags": [
+    {
+      "id": "imap_bde86a7f6a43",
+      "from": "homey_system",
+      "subj": "",
+      "when": "2026-08-18T17:22:12.000Z"
+    },
+    {
+      "id": "imap_0a155e2d2768",
+      "from": "homey_system",
+      "subj": "",
+      "when": "2026-08-18T17:22:26.000Z"
+    },
+    {
+      "id": "imap_2e9dae005dc9",
+      "from": "homey_system",
+      "subj": "",
+      "when": "2026-08-18T17:24:31.000Z"
+    },
+    {
+      "id": "imap_9eff902ce86d",
+      "from": "homey_system",
+      "subj": "",
+      "when": "2026-08-18T23:00:36.000Z"
+    },
+    {
+      "id": "imap_dbb1a5137e3b",
+      "from": "homey_system",
+      "subj": "",
+      "when": "2026-08-18T23:00:51.000Z"
+    },
+    {
+      "id": "imap_069910773c83",
+      "from": "homey_system",
+      "subj": "",
+      "when": "2026-08-18T23:02:48.000Z"
+    },
+    {
+      "id": "imap_b3d4085b9ddd",
+      "from": "homey_system",
+      "subj": "",
+      "when": "2026-08-19T01:19:41.000Z"
+    },
+    {
+      "id": "imap_afd8a5c0fcde",
+      "from": "homey_system",
+      "subj": "",
+      "when": "2026-08-19T01:19:51.000Z"
+    },
+    {
+      "id": "imap_0a9798accfe4",
+      "from": "homey_system",
+      "subj": "",
+      "when": "2026-08-19T01:20:08.000Z"
+    },
+    {
+      "id": "imap_fefe5724c73f",
+      "from": "homey_system",
+      "subj": "",
+      "when": "2026-08-19T01:35:24.000Z"
+    },
+    {
+      "id": "imap_161083c1c355",
+      "from": "homey_system",
+      "subj": "",
+      "when": "2026-08-19T08:13:17.000Z"
+    },
+    {
+      "id": "imap_e9198814a4db",
+      "from": "homey_system",
+      "subj": "",
+      "when": "2026-08-19T08:13:32.000Z"
+    },
+    {
+      "id": "imap_7a9c7a40302b",
+      "from": "homey_system",
+      "subj": "",
+      "when": "2026-08-19T08:56:35.000Z"
+    },
+    {
+      "id": "imap_7149e1b8660a",
+      "from": "homey_system",
+      "subj": "",
+      "when": "2026-08-19T08:56:49.000Z"
+    },
+    {
+      "id": "imap_5414233d0d57",
+      "from": "homey_system",
+      "subj": "",
+      "when": "2026-08-19T09:06:16.000Z"
+    },
+    {
+      "id": "imap_002ed5525d9c",
+      "from": "homey_system",
+      "subj": "",
+      "when": "2026-08-19T09:06:28.000Z"
+    },
+    {
+      "id": "imap_9467ed348aef",
+      "from": "homey_system",
+      "subj": "",
+      "when": "2026-08-19T09:06:47.000Z"
+    },
+    {
+      "id": "imap_57551d9fcd71",
+      "from": "homey_system",
+      "subj": "",
+      "when": "2026-08-19T09:10:44.000Z"
+    },
+    {
+      "id": "imap_3e9374ca1e90",
+      "from": "homey_system",
+      "subj": "",
+      "when": "2026-08-19T09:14:58.000Z"
+    },
+    {
+      "id": "imap_7af05e747714",
+      "from": "homey_system",
+      "subj": "",
+      "when": "2026-08-19T09:15:16.000Z"
+    },
+    {
+      "id": "imap_de428d932991",
+      "from": "homey_system",
+      "subj": "",
+      "when": "2026-08-19T09:17:13.000Z"
+    },
+    {
+      "id": "imap_a0b705b73b5d",
+      "from": "homey_system",
+      "subj": "",
+      "when": "2026-08-19T09:20:31.000Z"
+    },
+    {
+      "id": "imap_9be0356ec293",
+      "from": "homey_system",
+      "subj": "",
+      "when": "2026-08-19T09:27:52.000Z"
+    },
+    {
+      "id": "imap_f9b6603786a5",
+      "from": "homey_system",
+      "subj": "",
+      "when": "2026-08-19T09:28:07.000Z"
+    },
+    {
+      "id": "imap_c57d09cc8883",
+      "from": "homey_system",
+      "subj": "",
+      "when": "2026-08-19T09:30:07.000Z"
+    }
+  ]
+}
