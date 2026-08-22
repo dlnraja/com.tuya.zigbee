@@ -10,6 +10,7 @@ name: "PR Labeler"
 
 
 on:
+  # P2206-ALLOW-PRT: labels only — does NOT checkout PR head / untrusted code
   pull_request_target:
     types: [opened, synchronize, reopened]
 

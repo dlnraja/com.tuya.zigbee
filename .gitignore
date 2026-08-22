@@ -238,6 +238,22 @@ diagnostics/**/*.json
 !diagnostics/reports/.gitkeep
 gmail-dumps/
 
+# P2206: Homey/Gmail diagnostic dumps — tech summaries OK, raw/excerpts NEVER
+reports/**/gmail-ci-dump.json
+reports/**/diag-*-excerpt.txt
+reports/**/*-diagnostics-raw.json
+reports/**/*gmail-dump*.json
+reports/forum-*/**/*.jpeg
+reports/forum-*/**/*.jpg
+reports/forum-*/**/*.png
+reports/forum-*/**/*.gif
+reports/forum-*/**/*.webp
+!reports/forum-*/README.md
+.tmp/
+agent-tools/
+.github/state-forum-tail.json
+.github/state-forum*.json
+
 # Security: screenshots may contain credentials (login pages, etc.)
 screenshots/
 screenshots-debug/

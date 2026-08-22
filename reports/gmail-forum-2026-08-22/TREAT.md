@@ -26,3 +26,7 @@ Silent only. No forum posts.
 - meter91: Test ≥9.0.619 + re-pair
 - Nobø: next Test build after this push + re-pair; use `*_4gang_button_*` flow cards
 - Peter: update Test with IAS-prefer fix; re-pair water if still dead; SOS battery may need couple from dump
+
+## Privacy (P2206)
+- `gmail-ci-dump.json` removed from git — keep this TREAT + FINE_ANALYSIS only.
+- Local `diag-*-excerpt.txt` stay gitignored; never stage forum user media.

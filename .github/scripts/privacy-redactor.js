@@ -39,6 +39,9 @@ function redact(text) {
     s = s.replace(/\b(?:\d{1,3}\.){3}\d{1,3}\b/g, '[REDACTED_IP]');
     s = s.replace(/\b(?:[0-9a-f]{1,4}:){2,7}[0-9a-f]{1,4}\b/gi, '[REDACTED_IPV6]');
     s = s.replace(/\b(?:[0-9A-F]{2}[:-]){5}[0-9A-F]{2}\b/gi, '[REDACTED_MAC]');
+    // Homey device / cloud UUIDs (keep short 8-char forum diag ids via KEEP_TECH elsewhere)
+    s = s.replace(/\b[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}\b/gi, m => alias('uuid', m.toLowerCase()));
+    s = s.replace(/\b(?:ieee|ieeeAddr|networkAddress|nwkAddr)["']?\s*[:=]\s*["']?0x[0-9a-fA-F]{4,16}/gi, m => m.replace(/0x[0-9a-fA-F]{4,16}/, '[REDACTED_IEEE]'));
     s = s.replace(/\b(?:gh[pousr]_|github_pat_)[A-Za-z0-9_]{20,}\b/g, '[REDACTED_GITHUB_TOKEN]');
     s = s.replace(/\bAIza[0-9A-Za-z_-]{35}\b/g, '[REDACTED_GOOGLE_KEY]');
     s = s.replace(/\bAKIA[0-9A-Z]{16}\b/g, '[REDACTED_AWS_KEY]');

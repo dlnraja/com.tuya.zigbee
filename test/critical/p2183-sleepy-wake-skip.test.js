@@ -148,15 +148,15 @@ describe('P2183 sleepy wake skip', () => {
   });
 
   it('Peter flow cards do not use titleFormatted [[device]]', () => {
-    const flowRoot = path.join(__dirname, '..', '..', '.homeycompose/flow');
+    const root = path.join(__dirname, '..', '..');
     const files = [
-      'triggers/contact_sensor_illuminance_changed.json',
-      'triggers/battery_health_changed.json',
-      'triggers/virtual_button_pressed.json'
+      'drivers/contact_sensor/driver.flow.compose.json',
+      '.homeycompose/flow/triggers/battery_health_changed.json',
+      '.homeycompose/flow/triggers/virtual_button_pressed.json',
     ];
     for (const rel of files) {
-      const j = JSON.parse(fs.readFileSync(path.join(flowRoot, rel), 'utf8'));
-      const blob = JSON.stringify(j.titleFormatted || {});
+      const j = JSON.parse(fs.readFileSync(path.join(root, rel), 'utf8'));
+      const blob = JSON.stringify(j);
       assert.ok(!blob.includes('[[device]]'), rel);
     }
   });

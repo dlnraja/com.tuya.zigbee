@@ -856,3 +856,38 @@ catches invent regressions anti-bot alone might miss (wrong-PID catalog force).
 4. `data/mfs_db.json` (no false couples)
 5. `data/user-misattribution-registry.json` + anti-bot forbid list
 6. Critical test + matrix gate entry if high-risk misroute
+
+---
+
+## O. GitHub elementary security & data-leak hygiene (P2206)
+
+### Always
+1. Every workflow declares top-level `permissions:` (start `contents: read`).
+2. Never `echo ${{ secrets.* }}` or dump secret env to logs/artifacts.
+3. Prefer `GITHUB_TOKEN`; use `GH_PAT` only for documented cross-repo needs.
+4. `pull_request_target` is high-risk: do **not** checkout PR head. If used, add
+   comment `P2206-ALLOW-PRT` explaining why (e.g. labeler with no untrusted code).
+5. Guard missing secrets: empty → exit 0 / skip; optional steps `continue-on-error: true`.
+6. Artifacts: never upload raw Gmail/Homey diag dumps; run `privacy-redactor.js` first.
+
+### Never commit
+| Path pattern | Why |
+|--------------|-----|
+| `reports/**/gmail-ci-dump.json` | mailbox / diag operational dump |
+| `reports/**/diag-*-excerpt.txt` | Homey device UUIDs, paths, PII |
+| `gmail-dumps/`, `diagnostics/raw/` | raw exports |
+| `reports/forum-*/**/*.{jpg,png,...}` | user media |
+| `.env*`, `secrets.json`, tokens | credentials |
+
+Commit **sanitized** summaries only (`TREAT.md`, FP couples, app versions).
+
+### Gates
+```bash
+npm run security-scan
+npm run security:github
+# or
+npm run security:full
+node .github/scripts/privacy-redactor.js <files...>
+```
+
+`unified-ci.yml` runs security-scanner + `github-security-elementary-gate.js` (hard fail).

@@ -36,14 +36,31 @@ Gmail and Homey diagnostic workflows are allowed to keep technical evidence only
 5. Run `node .github/scripts/privacy-redactor.js` before every `git add`, `git commit`, `git push`, issue creation or artifact upload that includes `.github/state/` or `diagnostics/` data.
 6. Use `GITHUB_TOKEN` by default in workflows. Use `GH_PAT` only where cross-repository permissions are required and documented.
 7. Raw exports must remain local and ignored by git: `.github/state/gmail-raw/`, `gmail-dumps/`, `diagnostics/raw/` and `*.raw.json`.
+8. **P2206:** Never commit `gmail-ci-dump.json`, `diag-*-excerpt.txt`, or forum user media under `reports/`. Keep `TREAT.md` / FP couples only. Gate: `npm run security:github`.
+
+## 🛡️ GitHub Actions elementary rules (P2206)
+
+| Rule | Requirement |
+|------|-------------|
+| `permissions:` | Required at workflow top level; least privilege |
+| Secrets in logs | Never echo / printenv secrets |
+| `pull_request_target` | No untrusted checkout; document with `P2206-ALLOW-PRT` |
+| Artifacts | Redact before upload; short retention preferred |
+| Fork PRs | Do not pass write secrets to untrusted workflows |
+
+```bash
+npm run security:github
+npm run security:full
+```
 
 ## 📋 Pre-Commit Checklist
 
 Before any commit:
-1. Run `npm run security-scan`
+1. Run `npm run security-scan` and `npm run security:github` (or `npm run precommit`)
 2. Verify no `.env` files in `git status`
 3. Verify no tokens in `git remote -v`
 4. Run `git diff --cached | grep -i 'gh[pousrx]_[A-Za-z0-9_]\{36,\}'` — should return nothing
+5. Confirm no `diag-*-excerpt` / `gmail-ci-dump` staged
 
 ## 🔄 CI Integration
 

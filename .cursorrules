@@ -24,6 +24,12 @@ Homey Pro app for 4200+ Tuya Zigbee devices. Hybrid protocol: Tuya DP (0xEF00) +
 - Use `zb_model_id` NOT zb_modelId
 - Use `zb_manufacturer_name` NOT zb_manufacturerName
 
+## CRITICAL: Security / data-leak (P2206)
+- Never commit secrets, raw Gmail dumps, `diag-*-excerpt.txt`, or forum user media
+- Workflows: top-level `permissions:`, no secret echo, no untrusted `pull_request_target` checkout
+- Redact before commit/upload: `node .github/scripts/privacy-redactor.js`
+- Gates: `npm run security-scan` · `npm run security:github` · see `docs/rules/SECURITY_RULES.md` + `.github/WORKFLOW_GUIDELINES.md` §O
+
 ## Flow Cards
 - ID pattern: `{driver}_physical_gang{N}_{on|off}`
 - NO `titleFormatted` with `[[device]]` - causes bugs

@@ -307,6 +307,14 @@ jobs:
             exit 1
           fi
 
+          echo "🔐 [3b/5] GitHub elementary security + data-leak gate (P2206)..."
+          if node tools/ci/github-security-elementary-gate.js; then
+            echo "✅ GitHub security elementary gate passed"
+          else
+            echo "::error::⚠️ Workflow permissions / data-leak path issues"
+            exit 1
+          fi
+
           echo "🔐 [4/5] Checking .gitignore for env/credential protection..."
           REQUIRED_ENTRIES=(".env" "credentials.json" "secrets.json" "token.json" "*.key" "*.pem")
           for entry in "${REQUIRED_ENTRIES[@]}"; do

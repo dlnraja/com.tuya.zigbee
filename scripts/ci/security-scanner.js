@@ -102,6 +102,26 @@ const FORBIDDEN_TRACKED_PATHS = [
     pattern: /^\.agents\/fix_.*\.js$/,
     reason: 'one-off local repair scripts often contain private absolute paths',
   },
+  {
+    pattern: /^reports\/.+\/gmail-ci-dump\.json$/,
+    reason: 'Gmail CI dumps can embed mailbox metadata — keep TREAT.md only',
+  },
+  {
+    pattern: /^reports\/.+\/diag-.+-excerpt\.txt$/,
+    reason: 'Homey diagnostic excerpts can include device UUIDs, paths, and PII',
+  },
+  {
+    pattern: /^reports\/.+\/.*(gmail-dump|diagnostics-raw).*\.json$/i,
+    reason: 'raw Gmail/diagnostic JSON must stay local (.gitignore)',
+  },
+  {
+    pattern: /^reports\/forum-\d+\/.+\.(jpe?g|png|gif|webp)$/i,
+    reason: 'forum user media may contain personal photos or device screenshots',
+  },
+  {
+    pattern: /^\.tmp\//,
+    reason: 'scratch dumps often hold redacted intermediates and absolute paths',
+  },
 ];
 
 const EXCLUDED_PATHS = [
