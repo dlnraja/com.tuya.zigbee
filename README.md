@@ -33,15 +33,15 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.623 |
+| **App Version** | v9.0.624 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,353 |
 | **Pairing Variants** | 16,515 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 577 |
-| **Flow Cards** | 5,178 |
+| **Flow Cards** | 5,179 |
 | **Unique Capabilities** | 170 |
 | **Native OTA Drivers** | 5 |
-| **Test Suites** | 119 files |
+| **Test Suites** | 120 files |
 | **SVG Icons** | 731 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
@@ -102,6 +102,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.624** | Docs cartography for dual App IDs; reliability carry-forward from 9.0.620. |
 | **v9.0.623** | Docs cartography for dual App IDs; reliability carry-forward from 9.0.620. |
 | **v9.0.622** | Docs cartography for dual App IDs; reliability carry-forward from 9.0.620. |
 | **v9.0.621** | P2203 IAS already-enrolled bind + water EF00 skip + FP hygiene. |
@@ -113,7 +114,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.615** | P2203: re-bind IAS Zone when already enrolled (Peter water/contact after app restart); skip EF00 Tuya mirror on IAS-only water sensors; s… |
 | **v9.0.614** | P2203: re-bind IAS Zone when already enrolled (Peter water/contact after app restart); skip EF00 Tuya mirror on IAS-only water sensors; s… |
 | **v9.0.613** | IntelligentDriverHotSwap v2: unified integration with DynamicCapabilityManager, computed-cap guard (meter_* never device-written), double… |
-| **v9.0.612** | IntelligentDriverHotSwap v2: unified integration with DynamicCapabilityManager, computed-cap guard (meter_* never device-written), double… |
 
 <!-- CHANGELOG_END -->
 
