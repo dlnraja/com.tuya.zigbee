@@ -139,6 +139,22 @@ async function fetchTopicTail(topicId, max) {
   };
 }
 
+function isPollutedNewFp(mfr, pids) {
+  const m = String(mfr || '');
+  const list = Array.isArray(pids) ? pids : [];
+  // Placeholders / examples
+  if (/ABC123|XXXX|example|needs_device|_HYBRID_/i.test(m)) return true;
+  // Truncated / non-canonical Tuya MFS (real ones are _TZ3000_xxxxxxxx ~ 8+ alnum)
+  if (/^_TZ\d{4}_[A-Z0-9]{1,7}$/i.test(m) && m === m.toUpperCase() && m.length < 18) {
+    // allow only if looks like full id; short UPPER dumps from Johan OP are noise
+  }
+  // Johan catalogue posts dump one mfr against dozens of modelIds — never a real couple
+  if (list.length > 6) return true;
+  // Uppercase-only short vendor ids from scraped device lists (CEHUW1L2, H1JNZ6L, OBORYB)
+  if (/^_TZ\d{4}_[A-Z0-9]{5,10}$/.test(m) && m === m.toUpperCase() && list.length > 1) return true;
+  return false;
+}
+
 function analyzePosts(posts, localMfrs) {
   const actionable = [];
   const newFPs = new Map();
@@ -150,6 +166,7 @@ function analyzePosts(posts, localMfrs) {
 
     for (const m of mfrs) {
       if (!localMfrs.has(m.toLowerCase())) {
+        if (isPollutedNewFp(m, pids)) continue;
         newFPs.set(m, {
           mfr: m,
           pids,

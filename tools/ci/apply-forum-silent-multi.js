@@ -146,6 +146,19 @@ const KNOWN_ROUTES = [
     pids: ['TS000F'],
     driver: 'switch_temp_sensor',
   },
+  // P2207 — forum/gmail couples verified Z2M + interview (never invent pid)
+  {
+    id: 'zgyzgdua-scene4',
+    mfrs: ['_TZ3000_zgyzgdua'],
+    pids: ['TS0044'],
+    driver: 'scene_switch_4',
+  },
+  {
+    id: 'xffhmvhv-nobo-sws-iz',
+    mfrs: ['_TZ3000_xffhmvhv'],
+    pids: ['TS004F'],
+    driver: 'button_wireless_4',
+  },
 ];
 
 function loadJson(fp) {
