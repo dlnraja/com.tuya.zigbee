@@ -617,3 +617,25 @@ Generated 2026-08-19T08:50:15.322Z from registry (54 cases) × compound DB (209 
 
 Regenerate: `node tools/ci/investigate-device-peculiarities.js`
 
+
+### `nobo-sws-iz-xffhmvhv` → `button_wireless_4` (Gmail 9cbf9eb6 / 2026-08-22)
+
+- Couple: `_TZ3000_xffhmvhv` + TS004F (user) / TS0044 (Z2M Nous wireless 4-button)
+- Protocol: ZCL multi-EP OnOff/Level (clusters 5/6/8), **no genOnOff 0x8004**
+- Retail: Nobø SWS-IZ
+- Notes: Physical presses arrive as `[TS0044-RAW] EPn`; writing 32772 spam kills UX. Prefer `*_button_4gang_button_N_*` Flow cards. Never invent `*_button_N_button_pressed`.
+- Sources: gmail-diag-9cbf9eb6, z2m-tuya.ts Nous TS0044
+
+### `meter91-zgyzgdua-ts0044` → `scene_switch_4` (forum #2189 / 55e3e591)
+
+- Couple: `_TZ3000_zgyzgdua` + TS0044 (also ERS-10TZBVK-AA in dump)
+- Protocol: multi-EP OnOff + manufacturer 0xFD; **no 0x8004**
+- Notes: Update Test ≥9.0.619 + re-pair. Skip toast `button_wireless_4`. Physical = 0xFD.
+- Sources: forum-140352#2189, gmail-55e3e591
+
+### `peter-0cea6870-hybrid-contact` → `contact_sensor` (forum #2190)
+
+- Couple: **ABSENT in post** — do not invent
+- Protocol: hybrid IAS Zone + EF00 (DP1 contact, DP101 lux)
+- Notes: Prefer IAS over DP1 for `alarm_contact` (pulse open/close). Lux via DP101 needs `contact_sensor_illuminance_changed`. Water/smartbutton need re-pair on Test with IAS leftover EF00 skip.
+- Sources: forum-140352#2190, gmail-0cea6870

@@ -473,7 +473,17 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
     }
 
     if (percent >= 0 && percent <= 100) {
+      // WHY: Peter SOS battery "nervous" — reject sub-2s jumps >15pp (11↔20).
+      const prev = this.getCapabilityValue('measure_battery');
+      if (typeof prev === 'number' && Math.abs(prev - percent) > 15) {
+        const lastAt = this.getStoreValue('sos_battery_last_write_at') || 0;
+        if (Date.now() - lastAt < 2000) {
+          this.log(`[BATTERY] Ignore spike ${prev}% → ${percent}% (<2s)`);
+          return;
+        }
+      }
       await this.safeSetCapabilityValue('measure_battery', percent).catch(() => { });
+      try { await this.setStoreValue('sos_battery_last_write_at', Date.now()); } catch (_e) { /* ignore */ }
       this._updateActivity();
 
       // v5.5.833: Trigger battery_low flow when below threshold

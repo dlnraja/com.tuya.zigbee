@@ -184,6 +184,40 @@
         "nl": "Sabotagealarm",
         "de": "Manipulationsalarm"
       }
+    },
+    {
+      "id": "contact_sensor_illuminance_changed",
+      "title": {
+        "en": "Luminance changed",
+        "nl": "Lichtsterkte veranderd",
+        "fr": "Luminosité changée",
+        "de": "Helligkeit geändert"
+      },
+      "hint": {
+        "en": "Triggers when lux changes (DP101 / illuminance on hybrid contacts)",
+        "nl": "Triggert wanneer lux verandert (DP101)",
+        "fr": "Se déclenche quand le lux change (DP101)",
+        "de": "Wird ausgelöst, wenn sich Lux ändert (DP101)"
+      },
+      "args": [],
+      "tokens": [
+        {
+          "name": "lux",
+          "type": "number",
+          "title": {
+            "en": "Lux",
+            "nl": "Lux",
+            "fr": "Lux",
+            "de": "Lux"
+          }
+        }
+      ],
+      "titleFormatted": {
+        "en": "Luminance changed",
+        "nl": "Lichtsterkte veranderd",
+        "fr": "Luminosité changée",
+        "de": "Helligkeit geändert"
+      }
     }
   ],
   "conditions": [
