@@ -1,0 +1,79 @@
+{
+  "_meta": {
+    "version": "1.1.0",
+    "updated": "2026-08-23",
+    "why": "Two Athom apps — never blur App ID / version / purpose. Classify every change.",
+    "doctrine": "docs/rules/DUAL_APP_VISION.md"
+  },
+  "tracks": {
+    "master": {
+      "branch": "master",
+      "appId": "com.dlnraja.tuya.zigbee",
+      "storeName": "Universal Tuya",
+      "versionLine": "9.0.x",
+      "purpose": "Innovation + soak (features + reliability)",
+      "cloneHint": "Documents/homey/master",
+      "publish": "Auto-Publish on Push → Homey Test"
+    },
+    "stable": {
+      "branch": "stable-v5",
+      "appId": "com.dlnraja.tuya.zigbee.stable",
+      "storeName": "Tuya Unified (Stable)",
+      "versionLine": "5.12.x",
+      "purpose": "Reliability LTS only — no feature managers unless human-promoted",
+      "cloneHint": "Documents/homey/stable",
+      "publish": "Publish Stable → Test (APP_ID=.stable only); P139 no spam republish"
+    }
+  },
+  "identityNeverCopy": [
+    ".homeycompose/app.json id/version",
+    "package.json name/version",
+    "app.json id/version",
+    "store changelog identity"
+  ],
+  "l99RecentClassification": {
+    "energy_compensation_ssot": {
+      "tag": "BOTH",
+      "note": "SmartDivisor + EnergyJumpGuard + rememberLearnedDivisor — reliability/data correctness"
+    },
+    "energy_compose_gate": {
+      "tag": "BOTH",
+      "note": "Athom schema — approximation vs meter caps"
+    },
+    "daylight_atmosphere_solar_sync": {
+      "tag": "MASTER_ONLY",
+      "note": "Circadian / AdaptiveLighting / Path Light / Room Balance — feature engines"
+    },
+    "smart_features_brand_scrub": {
+      "tag": "BOTH",
+      "note": "UI titles/hints only — no commercial names; safe to mirror on stable compose flow titles"
+    },
+    "homey_gap_compensator_soft": {
+      "tag": "BOTH",
+      "note": "Soft notes only — no phantom caps"
+    },
+    "intelligent_lazy_load_boot_budget": {
+      "tag": "BOTH",
+      "note": "64MB heap — BootBudget / IntelligentLazyLoad"
+    },
+    "intelligent_infra_ci_caches": {
+      "tag": "MASTER_ONLY",
+      "note": "CI .cache/ + workflows — not Homey bundle"
+    },
+    "forum_shadow_github_respond": {
+      "tag": "MASTER_ONLY",
+      "note": "Silent forum + GH comments — never Discourse POST"
+    }
+  },
+  "ci": {
+    "enrichGatesScript": "tools/ci/l99-dual-app-enrich-gates.js",
+    "npm": "check:l99-dual",
+    "workflows": [
+      "auto-enrich-closed-loop.yml",
+      "project-resilience.yml",
+      "recurrent-orchestrator.yml",
+      "unified-ci.yml",
+      "forum-poll.yml"
+    ]
+  }
+}

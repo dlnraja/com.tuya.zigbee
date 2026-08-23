@@ -4,10 +4,15 @@
 
 ### 0. Cross-App Prompt Benefit Rule
 Every AI prompt, automation, issue response, PR review, diagnostic summary, and code change must benefit both maintained app tracks whenever safely possible:
-- `master` / `com.dlnraja.tuya.zigbee` (9.0.x preview)
-- `stable-v5` / **same App ID** `com.dlnraja.tuya.zigbee` (5.12.x LTS — Publish Stable→Test overwrites master Test)
 
-Before changing code or writing an answer, classify the finding as master-only, stable-only, or cross-app. Security, diagnostics, SDK3 validation, publish verification, crash fixes, battery fixes, physical button fixes, endpoint mapping fixes, and flow reliability fixes are cross-app candidates by default. Keep branch separation strict: never copy App IDs, version metadata, publish settings, or store URLs between tracks.
+| Track | Branch | Athom App ID | Version | Purpose |
+|-------|--------|--------------|---------|---------|
+| Universal Tuya (preview) | `master` | `com.dlnraja.tuya.zigbee` | `9.0.x` | Features + soak |
+| Tuya Unified (Stable) | `stable-v5` | `com.dlnraja.tuya.zigbee.stable` | `5.12.x` | Reliability LTS only |
+
+**Independent App IDs (2026-08+).** Publish Stable must set `APP_ID=com.dlnraja.tuya.zigbee.stable`. Never assume a shared Test slot. Classify `BOTH` | `MASTER_ONLY` | `STABLE_ONLY` — see `docs/rules/DUAL_APP_VISION.md` and `config/architecture/dual-app-tracks.json`.
+
+Before changing code or writing an answer, classify the finding. Security, diagnostics, SDK3 validation, publish verification, crash fixes, battery fixes, energy divisors, physical button fixes, endpoint mapping, and flow reliability are cross-app (`BOTH`) by default. Daylight / presence / availability / scrape stacks stay **MASTER_ONLY** until human promotion. Keep branch separation strict: never copy App IDs, version metadata, publish settings, or store URLs between tracks.
 
 Diagnostic-history work must also follow `docs/rules/DIAGNOSTIC_HISTORY_RULES.md`: sanitize first, run `npm run check:diag-history`, and never commit raw Gmail/Homey/forum/GitHub diagnostic state.
 

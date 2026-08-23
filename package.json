@@ -200,7 +200,12 @@
     "triage:bot-issues": "node tools/ci/auto-bot-issue-triage.js",
     "triage:bot-issues:dry": "node tools/ci/auto-bot-issue-triage.js --dry-run",
     "check:unbound-catch": "node tools/ci/fix-unbound-catch-this-error.js --gate",
-    "check:double-division": "node tools/ci/adaptive-double-division-gate.js"
+    "check:double-division": "node tools/ci/adaptive-double-division-gate.js",
+    "check:smart-brand-scrub": "node tools/ci/smart-features-brand-scrub-gate.js",
+    "check:l99-dual": "node tools/ci/l99-dual-app-enrich-gates.js",
+    "check:l99-dual:hard": "node tools/ci/l99-dual-app-enrich-gates.js --hard",
+    "enrich:settings": "node tools/ci/enrich-driver-settings-intelligent.js",
+    "enrich:settings:apply": "node tools/ci/enrich-driver-settings-intelligent.js --apply"
   },
   "keywords": [
     "homey",

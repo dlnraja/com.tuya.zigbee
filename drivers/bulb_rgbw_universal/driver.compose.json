@@ -131,8 +131,8 @@
       "id": "enable_natural_light",
       "type": "checkbox",
       "label": {
-        "en": "Enable Natural Light (Solar Sync)",
-        "fr": "Activer la Lumière Naturelle (Synchro Solaire)"
+        "en": "Enable Solar Sync (Daylight Atmosphere)",
+        "fr": "Activer Synchro solaire (Atmosphère jour)"
       },
       "value": false,
       "hint": {

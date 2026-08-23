@@ -2,12 +2,14 @@
 const { safeMultiply } = require('../../lib/utils/tuyaUtils.js');
 const { CLUSTERS } = require('../../lib/constants/ZigbeeConstants.js');
 const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
+const EnergyJumpGuard = require('../../lib/tuya/EnergyJumpGuard');
+const { smartDivisorDetect } = require('../../lib/managers/SmartDivisorManager');
 
 /**
- * DIN Rail Energy Meter — P126: TuyaZigbeeDevice + mainsPowered + correct divisors
+ * DIN / air-purifier metering path — P126 + L99 energy SSOT
  *
- * DP1/DP6: energy raw = kWh*100 → /100
- * DP18: power W | DP19: V*10 → /10 | DP17/DP20: A*1000 → /1000
+ * Prefer SmartDivisorManager (KNOWN + learned cache) with ENERGY_DIVISORS as defaults.
+ * meter_power always goes through EnergyJumpGuard (forum #2092/#2093 jump bug).
  */
 const ENERGY_DIVISORS = {
   meter_power: 100,
@@ -19,6 +21,28 @@ const ENERGY_DIVISORS = {
 class DinRailMeterDevice extends TuyaZigbeeDevice {
 
   get mainsPowered() { return true; }
+
+  _mfr() {
+    return this.getSetting?.('zb_manufacturer_name')
+      || this.getData?.()?.manufacturerName
+      || '';
+  }
+
+  _smartCap(raw, dpId, capability, defaultDivisor) {
+    const n = Number(raw) || 0;
+    const opts = {
+      manufacturerName: this._mfr(),
+      capability,
+      deviceId: this.getData?.()?.id,
+      defaultDivisor,
+    };
+    const divisor = smartDivisorDetect(n, dpId, opts);
+    if (capability === 'meter_power' || capability.startsWith('meter_power.')) {
+      this._energyParseMeta = { mfr: this._mfr(), dpId, divisor, capability: 'meter_power' };
+    }
+    // Single detect — avoid double smartParse cache churn
+    return Math.round((n / divisor) * 10) / 10;
+  }
 
   async onNodeInit({ zclNode }) {
     await super.onNodeInit({ zclNode });
@@ -37,6 +61,13 @@ class DinRailMeterDevice extends TuyaZigbeeDevice {
     this.log('DIN Rail Meter initialized');
   }
 
+  async safeSetCapabilityValue(capability, value) {
+    if (capability === 'meter_power' || capability === 'meter_power.exported') {
+      value = EnergyJumpGuard.check(this, value);
+    }
+    return super.safeSetCapabilityValue(capability, value);
+  }
+
   async _setupElectricalMeasurement(zclNode) {
     const ep1 = zclNode.endpoints[1];
     if (!ep1) { return; }
@@ -52,13 +83,13 @@ class DinRailMeterDevice extends TuyaZigbeeDevice {
       });
 
       emCluster.on('attr.rmsVoltage', (value) => {
-        const voltage = (Number(value) || 0) / ENERGY_DIVISORS.measure_voltage;
+        const voltage = this._smartCap(value, 'zcl_rmsVoltage', 'measure_voltage', ENERGY_DIVISORS.measure_voltage);
         this.log(`[EM] Voltage: ${voltage}V`);
         this.safeSetCapabilityValue('measure_voltage', voltage).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
       });
 
       emCluster.on('attr.rmsCurrent', (value) => {
-        const current = (Number(value) || 0) / ENERGY_DIVISORS.measure_current;
+        const current = this._smartCap(value, 'zcl_rmsCurrent', 'measure_current', ENERGY_DIVISORS.measure_current);
         this.log(`[EM] Current: ${current}A`);
         this.safeSetCapabilityValue('measure_current', current).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
       });
@@ -69,7 +100,7 @@ class DinRailMeterDevice extends TuyaZigbeeDevice {
       this.log('[METERING] Metering cluster found');
 
       meteringCluster.on('attr.currentSummationDelivered', (value) => {
-        const energy = (Number(value) || 0) / ENERGY_DIVISORS.metering_summation;
+        const energy = this._smartCap(value, 'zcl_summation', 'meter_power', ENERGY_DIVISORS.metering_summation);
         this.log(`[METERING] Energy: ${energy}kWh`);
         this.safeSetCapabilityValue('meter_power', energy).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
       });
@@ -100,13 +131,13 @@ class DinRailMeterDevice extends TuyaZigbeeDevice {
 
     switch (dp) {
     case 1: {
-      const energy = (Number(value) || 0) / ENERGY_DIVISORS.meter_power;
+      const energy = this._smartCap(value, dp, 'meter_power', ENERGY_DIVISORS.meter_power);
       this.safeSetCapabilityValue('meter_power', energy).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
       break;
     }
     case 6:
       if (this._bidirectional && this.hasCapability('meter_power.exported')) {
-        const exported = (Number(value) || 0) / ENERGY_DIVISORS.meter_power;
+        const exported = this._smartCap(value, dp, 'meter_power', ENERGY_DIVISORS.meter_power);
         this.safeSetCapabilityValue('meter_power.exported', exported).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
       }
       break;
@@ -116,13 +147,13 @@ class DinRailMeterDevice extends TuyaZigbeeDevice {
       break;
     }
     case 19: {
-      const voltage = (Number(value) || 0) / ENERGY_DIVISORS.measure_voltage;
+      const voltage = this._smartCap(value, dp, 'measure_voltage', ENERGY_DIVISORS.measure_voltage);
       this.safeSetCapabilityValue('measure_voltage', voltage).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
       break;
     }
     case 20:
     case 17: {
-      const current = (Number(value) || 0) / ENERGY_DIVISORS.measure_current;
+      const current = this._smartCap(value, dp, 'measure_current', ENERGY_DIVISORS.measure_current);
       this.safeSetCapabilityValue('measure_current', current).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
       break;
     }

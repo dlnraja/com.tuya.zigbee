@@ -1,0 +1,47 @@
+{
+  "_meta": {
+    "version": "1.0.0",
+    "updated": "2026-08-23",
+    "why": "L99 — one energy compensation stack; Homey 64MB; no parallel invent",
+    "track": "BOTH for runtime energy SSOT; CI reports MASTER_ONLY; see dual-app-tracks.json"
+  },
+  "priority": [
+    "measured_dp_or_zcl",
+    "SmartDivisorManager",
+    "EnergyJumpGuard",
+    "SmartEnergyManager_audit",
+    "VirtualEnergyMeterMixin_estimate",
+    "HomeyGapCompensator_soft_only"
+  ],
+  "roles": {
+    "SmartDivisorManager": "SSOT for DP/ZCL scale (KNOWN_DIVISORS + LEARNED + range detect). Buffer JSON elsewhere; never hardcode /100 twice.",
+    "EnergyJumpGuard": "Defensive meter_power jump filter; sticky factor; syncs rememberLearnedDivisor when _energyParseMeta set.",
+    "SmartEnergyManager": "5-min real vs estimated audit; never overwrite direct with estimated.",
+    "VirtualEnergyMeterMixin": "Nominal-power estimates after audit silence; mainsPowered; no energy.approximation+meter compose.",
+    "HomeyGapCompensator": "Soft ensure/notes only — never adds measure_power/meter_power phantoms.",
+    "UniversalEnergyHandler": "Owned by SmartEnergyManager after audit promote."
+  },
+  "forbidden": [
+    "energy.approximation + measure_power/meter_power in same compose",
+    "linear battery (V-2.5)/0.5",
+    "new parallel energy manager",
+    "eager mfs_db at boot for energy refine",
+    "estimate overwrite of telemetry_*_source=direct"
+  ],
+  "gates": [
+    "tools/ci/energy-compose-gate.js",
+    "tools/ci/adaptive-double-division-gate.js",
+    "scripts/validation/check-energy-divisor.js"
+  ],
+  "softDeprecated": {
+    "VirtualEnergyEstimator": "Prefer VirtualEnergyMeterMixin",
+    "VirtualTelemetryCompensationEngine": "Prefer SmartEnergy + mixin",
+    "DynamicEnergyManager": "Prefer SmartEnergyManager"
+  },
+  "defaults": {
+    "meter_power": 100,
+    "measure_voltage": 10,
+    "measure_current": 1000,
+    "measure_power": 10
+  }
+}

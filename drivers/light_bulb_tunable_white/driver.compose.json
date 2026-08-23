@@ -271,6 +271,19 @@
         "en": "Estimate power consumption when real measurement is not available (AC/DC devices only)",
         "fr": "Estimer la consommation quand la mesure réelle n'est pas disponible (appareils AC/DC seulement)"
       }
+    },
+    {
+      "id": "enable_natural_light",
+      "type": "checkbox",
+      "label": {
+        "en": "Enable Solar Sync (Daylight Atmosphere)",
+        "fr": "Activer Synchro solaire (Atmosphère jour)"
+      },
+      "value": false,
+      "hint": {
+        "en": "Sun-driven white temperature over the day.",
+        "fr": "Blanc piloté par le soleil au fil du jour."
+      }
     }
   ],
   "images": {

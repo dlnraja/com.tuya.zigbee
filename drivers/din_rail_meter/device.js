@@ -105,6 +105,15 @@ class DinRailMeterDevice extends UnifiedPlugBase {
 
   async safeSetCapabilityValue(capability, value) {
     if (capability === 'meter_power' || capability === 'meter_power.exported') {
+      // Seed parse meta so EnergyJumpGuard can teach SmartDivisor on sticky corrections
+      if (!this._energyParseMeta) {
+        this._energyParseMeta = {
+          mfr: this.getSetting('zb_manufacturer_name') || this._protocolInfo?.mfr || '',
+          dpId: 1,
+          divisor: 100,
+          capability: 'meter_power',
+        };
+      }
       value = EnergyJumpGuard.check(this, value);
     }
     return super.safeSetCapabilityValue(capability, value);

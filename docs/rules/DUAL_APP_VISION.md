@@ -44,6 +44,19 @@ Before coding, classify:
 | `MASTER_ONLY` | Feature, smart learn, scrape automation, experimental DP race | Stay on master forever (until human promotes) |
 | `STABLE_ONLY` | Stable identity, stable publish workflow, LTS versioning | Never pull into master as identity |
 
+Machine SSOT: [`config/architecture/dual-app-tracks.json`](../../config/architecture/dual-app-tracks.json)  
+Regular CI: `node tools/ci/l99-dual-app-enrich-gates.js` (BOTH always; MASTER_ONLY skipped on stable track)
+
+### L99 recent (2026-08-23)
+
+| Deliverable | Tag | Why |
+|-------------|-----|-----|
+| EnergyJumpGuard → SmartDivisor, energy-compose / divisor gates | **BOTH** | Wrong kWh / Athom schema = reliability |
+| HomeyGapCompensator soft notes, BootBudget / IntelligentLazyLoad | **BOTH** | 64MB / soft ensure |
+| Flow title brand-scrub (no commercial names) | **BOTH** | UI hygiene; ids may stay `hue_*` |
+| Daylight Atmosphere / Solar Sync / Path Light / Room Balance | **MASTER_ONLY** | Feature lighting stack |
+| Lived-In Shuffle, availability, suppression, CI intel caches | **MASTER_ONLY** | Feature / CI-only |
+
 ## Backport rules (stable)
 
 1. **Crash/reliability only** — never “sync the whole tree”

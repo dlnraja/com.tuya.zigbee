@@ -127,5 +127,65 @@
       "getable": false,
       "setable": false
     }
-  }
+  },
+  "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "Measurement Settings",
+        "fr": "Paramètres de mesure"
+      },
+      "children": [
+        {
+          "id": "power_scale",
+          "type": "dropdown",
+          "label": {
+            "en": "Power Measurement Scale",
+            "fr": "Échelle de puissance"
+          },
+          "value": "1",
+          "values": [
+            {
+              "id": "0.1",
+              "label": {
+                "en": "÷10",
+                "fr": "÷10"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "×1 (Default)",
+                "fr": "×1 (défaut)"
+              }
+            },
+            {
+              "id": "10",
+              "label": {
+                "en": "×10",
+                "fr": "×10"
+              }
+            }
+          ],
+          "hint": {
+            "en": "Use if W/kWh readings are 10× too high or low.",
+            "fr": "Si W/kWh sont ×10 trop hauts ou bas."
+          }
+        },
+        {
+          "id": "bidirectional",
+          "type": "checkbox",
+          "label": {
+            "en": "Bidirectional (import/export)",
+            "fr": "Bidirectionnel (import/export)"
+          },
+          "value": false,
+          "hint": {
+            "en": "Enable when the meter reports exported energy.",
+            "fr": "Activer si le compteur reporte l’énergie exportée."
+          }
+        }
+      ]
+    }
+  ]
 }

@@ -9,8 +9,11 @@ Every AI prompt, automation prompt, diagnosis, issue reply, PR review, changelog
 
 Before producing an answer or code change, the agent must classify the impact for both tracks:
 
-1. Is the finding a universal bug fix, security hardening, battery/timer/IAS crash fix, button/flow fix, SDK3 compliance fix, or Homey publishing fix? → tag **`BOTH`**.
-2. Is it a feature (smart learn, scrape orchestrator, parallel DP discover, multichannel, AVE, …)? → tag **`MASTER_ONLY`**.
+1. Is the finding a universal bug fix, security hardening, battery/timer/IAS crash fix, button/flow fix, energy divisor / meter_power jump, SDK3 compliance fix, or Homey publishing fix? → tag **`BOTH`**.
+2. Is it a feature (Daylight Atmosphere / Solar Sync / Path Light, presence sim, smart learn, scrape orchestrator, parallel DP discover, multichannel, AVE, …)? → tag **`MASTER_ONLY`**.
+3. Is it Stable App ID / LTS publish / `5.12.x` identity only? → tag **`STABLE_ONLY`**.
+
+**App IDs are independent:** master `com.dlnraja.tuya.zigbee` (9.0.x) ≠ stable `com.dlnraja.tuya.zigbee.stable` (5.12.x). Never copy identity files. SSOT: `config/architecture/dual-app-tracks.json`.
 3. Is it stable identity / stable-only publish? → tag **`STABLE_ONLY`**.
 4. Document whether it should be forward-ported, surgically backported, or intentionally kept on one track.
 5. Never full-tree copy-paste. Adapt patches to each branch’s code shape.

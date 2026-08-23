@@ -1,18 +1,18 @@
 {
   "id": "hue_all_off",
   "title": {
-    "en": "All lights off (Hue-style)",
-    "fr": "Tout éteindre (style Hue)",
-    "nl": "Alle lampen uit (Hue-stijl)",
-    "de": "Alle Lichter aus (Hue-Stil)"
+    "en": "All Lights Off",
+    "fr": "Toutes les lumières off",
+    "nl": "Alle lampen uit",
+    "de": "Alle Lichter aus"
   },
   "hint": {
-    "en": "Turns off every light-capable device in the app (like the Hue app's All Off button)",
-    "fr": "Éteint tous les devices d'éclairage de l'app (comme le bouton 'Tout éteindre' de l'app Hue)"
+    "en": "Turns off every light-capable device paired in this app",
+    "fr": "Éteint tous les appareils d'éclairage appairés dans cette app"
   },
   "args": [],
   "titleFormatted": {
-    "en": "All lights off",
-    "fr": "Tout éteindre"
+    "en": "All Lights Off",
+    "fr": "Toutes les lumières off"
   }
 }

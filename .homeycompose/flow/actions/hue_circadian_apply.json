@@ -1,22 +1,20 @@
 {
   "id": "hue_circadian_apply",
   "title": {
-    "en": "Apply circadian lighting (Hue-style)",
-    "fr": "Appliquer l'éclairage circadien (style Hue)",
-    "nl": "Circadiaanse verlichting toepassen (Hue-stijl)",
-    "de": "Circadiane Beleuchtung anwenden (Hue-Stil)"
+    "en": "Apply Solar Sync (Daylight Atmosphere)",
+    "fr": "Appliquer Synchro solaire (Atmosphère jour)",
+    "nl": "Zonnesync toepassen (daglichtatmosfeer)",
+    "de": "Solar Sync anwenden (Tageslicht-Atmosphäre)"
   },
   "hint": {
-    "en": "Computes color temperature and brightness from the time of day (warm-dim morning, cool-bright noon, warm-dim evening) and applies it to the light",
-    "fr": "Calcule température de couleur et luminosité selon l'heure (chaud-faible le matin, froid-fort à midi, chaud-faible le soir) et les applique à la lumière",
-    "nl": "Berekent kleurtemperatuur en helderheid op basis van het tijdstip en past ze toe",
-    "de": "Berechnet Farbtemperatur und Helligkeit nach Tageszeit und wendet sie an"
+    "en": "Sets brightness and white temperature from real sun position (and Room Balance lux when available)",
+    "fr": "Règle luminosité et blanc selon la position réelle du soleil (et le lux Room Balance si dispo)"
   },
   "args": [
     { "type": "device", "name": "light", "title": { "en": "Light", "fr": "Lumière" } }
   ],
   "titleFormatted": {
-    "en": "Apply circadian curve to [[light]]",
-    "fr": "Appliquer la courbe circadienne à [[light]]"
+    "en": "Solar Sync on [[light]]",
+    "fr": "Synchro solaire sur [[light]]"
   }
 }

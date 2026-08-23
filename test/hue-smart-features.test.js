@@ -1,8 +1,8 @@
 'use strict';
 
 /**
- * Tests — Hue-style smart features (v9.0.376)
- * Circadian curve contract + flow cards presence in the manifest.
+ * Tests — Community smart features / Daylight Atmosphere (L99)
+ * Legacy flow ids hue_* remain for Homey compatibility; UI is brand-free.
  */
 
 const assert = require('assert');
@@ -13,50 +13,38 @@ const testApi = global.describe && global.it ? global : require('node:test');
 const { describe, it } = testApi;
 
 const ROOT = path.join(__dirname, '..');
+const DaylightAtmosphere = require('../lib/features/DaylightAtmosphere');
 
-// Miroir de la courbe (source: app.js _hueCircadianCurve)
-function circadianCurve(date) {
-  const h = date.getHours() + date.getMinutes() / 60;
-  if (h < 5) {return { dim: 0.1, temperature: 1.0 };}
-  if (h < 7) {return { dim: 0.3, temperature: 0.85 };}
-  if (h < 9) {return { dim: 0.6, temperature: 0.6 };}
-  if (h < 12) {return { dim: 0.9, temperature: 0.3 };}
-  if (h < 15) {return { dim: 1.0, temperature: 0.15 };}
-  if (h < 18) {return { dim: 0.85, temperature: 0.35 };}
-  if (h < 20) {return { dim: 0.6, temperature: 0.65 };}
-  if (h < 22) {return { dim: 0.35, temperature: 0.9 };}
-  return { dim: 0.15, temperature: 1.0 };
-}
-
-describe('Hue circadian curve', () => {
-  it('night is warm and dim', () => {
-    const c = circadianCurve(new Date(2026, 0, 1, 2, 0));
-    assert.strictEqual(c.temperature, 1.0);
-    assert.ok(c.dim <= 0.15);
+describe('Daylight Atmosphere curve', () => {
+  it('night elevation is warm and dim', () => {
+    const c = DaylightAtmosphere.compute({ elevation: -20 });
+    assert.ok(c.temperature >= 0.7);
+    assert.ok(c.dim <= 0.35);
   });
 
-  it('noon is cool and bright', () => {
-    const c = circadianCurve(new Date(2026, 0, 1, 13, 0));
-    assert.strictEqual(c.dim, 1.0);
-    assert.ok(c.temperature <= 0.2);
+  it('high sun is cool and bright', () => {
+    const c = DaylightAtmosphere.compute({ elevation: 55 });
+    assert.ok(c.dim >= 0.85);
+    assert.ok(c.temperature <= 0.4);
   });
 
-  it('evening warms up and dims progressively', () => {
-    const c18 = circadianCurve(new Date(2026, 0, 1, 19, 0));
-    const c22 = circadianCurve(new Date(2026, 0, 1, 23, 0));
-    assert.ok(c18.dim > c22.dim, 'dim must decrease through the evening');
-    assert.ok(c22.temperature >= c18.temperature, 'temperature must warm through the evening');
+  it('clock evening warms vs midday', () => {
+    const noon = DaylightAtmosphere.compute({ date: new Date(2026, 0, 1, 13, 0) });
+    const late = DaylightAtmosphere.compute({ date: new Date(2026, 0, 1, 23, 0) });
+    assert.ok(noon.dim >= late.dim);
+    assert.ok(late.temperature >= noon.temperature);
   });
 
-  it('source curve matches this mirror (anti-drift)', () => {
+  it('app delegates circadian to DaylightAtmosphere SSOT', () => {
     const src = fs.readFileSync(path.join(ROOT, 'app.js'), 'utf8');
     assert.match(src, /_hueCircadianCurve/);
-    assert.match(src, /h < 15\).*\{return \{ dim: 1\.0, temperature: 0\.15/);
+    assert.match(src, /DaylightAtmosphere/);
+    assert.match(src, /_registerCommunitySmartFlowCards/);
   });
 });
 
-describe('Hue flow cards in manifest', () => {
-  it('all 3 action cards exist in app.json', () => {
+describe('Community smart flow cards', () => {
+  it('legacy action card ids exist in app.json', () => {
     const app = require(path.join(ROOT, 'app.json'));
     const ids = new Set((app.flow?.actions || []).map(a => a.id));
     for (const id of ['hue_motion_lighting', 'hue_circadian_apply', 'hue_wakeup']) {
@@ -69,5 +57,11 @@ describe('Hue flow cards in manifest', () => {
     for (const id of ['hue_motion_lighting', 'hue_circadian_apply', 'hue_wakeup']) {
       assert.ok(src.includes(`getActionCard('${id}')`), `listener ${id} missing`);
     }
+  });
+
+  it('compose titles are brand-free (sample)', () => {
+    const circ = JSON.parse(fs.readFileSync(path.join(ROOT, '.homeycompose/flow/actions/hue_circadian_apply.json'), 'utf8'));
+    assert.ok(!/Hue|Philips|IKEA/i.test(JSON.stringify(circ.title)));
+    assert.match(circ.title.en, /Solar Sync|Daylight/i);
   });
 });

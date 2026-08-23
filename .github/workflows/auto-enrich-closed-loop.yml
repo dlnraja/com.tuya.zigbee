@@ -265,6 +265,14 @@ jobs:
           if [ -f tools/ci/project-resilience-orchestrator.js ]; then
             node tools/ci/project-resilience-orchestrator.js --write-report --critical-first || echo "resilience warn"
           fi
+          # L99 dual-app enrich gates (BOTH always; MASTER_ONLY on master only)
+          if [ -f tools/ci/l99-dual-app-enrich-gates.js ]; then
+            node tools/ci/l99-dual-app-enrich-gates.js --track=auto || echo "l99-dual soft warn"
+          fi
+          # Settings enrich plan (dry-run — apply only via explicit enrich:settings:apply)
+          if [ -f tools/ci/enrich-driver-settings-intelligent.js ]; then
+            node tools/ci/enrich-driver-settings-intelligent.js || echo "settings-enrich plan warn"
+          fi
           if [ -f .github/state/silent-enrichment/last-run.json ]; then
             echo "Silent enrichment state written (SHADOW forum — never POST)"
             node -e "const j=require('./.github/state/silent-enrichment/last-run.json'); console.log(JSON.stringify({ok:j.ok,phases:j.phases.map(p=>p.name)},null,2))"
@@ -280,6 +288,10 @@ jobs:
           if [ -f reports/resilience-$(date -u +%F)/RESILIENCE.md ]; then
             echo "### Project resilience (P2222–P2225 critical-first)" >> $GITHUB_STEP_SUMMARY
             head -n 40 "reports/resilience-$(date -u +%F)/RESILIENCE.md" >> $GITHUB_STEP_SUMMARY || true
+          fi
+          if [ -f reports/l99-dual-$(date -u +%F)/enrich-gates.json ]; then
+            echo "### L99 dual-app enrich gates" >> $GITHUB_STEP_SUMMARY
+            node -e "const j=require('./reports/l99-dual-'+new Date().toISOString().slice(0,10)+'/enrich-gates.json'); console.log('track='+j.track+' appId='+j.appId); (j.results||[]).forEach(r=>console.log((r.ok?'OK':'FAIL')+' ['+r.tag+'] '+r.name))" >> $GITHUB_STEP_SUMMARY || true
           fi
 
       # READ-ONLY: screenshots/alts + private inbox. Never POST.

@@ -6,13 +6,20 @@ Canonical runtime modules. Improve **one layer at a time**. Homey runtime does *
 
 | Rule | Module |
 |------|--------|
-| No linear `(V-2.5)/0.5` | `BatteryMasterEngine` |
+| Parse scale SSOT | `SmartDivisorManager` (`smartParse` / `rememberLearnedDivisor`) |
+| Impossible kWh jumps | `EnergyJumpGuard` → syncs learned divisor when `_energyParseMeta` set |
+| Real vs estimated | `SmartEnergyManager` (5-min audit) — never overwrite direct |
+| Virtual estimates | `VirtualEnergyMeterMixin` only after silence |
+| Soft compensator | `HomeyGapCompensator` notes only — **no** phantom power caps |
+| No linear `(V-2.5)/0.5` | `BatteryMasterEngine` / UnifiedBattery |
 | No compose `energy.approximation` + `measure_power`/`meter_power` | `tools/ci/energy-compose-gate.js` |
-| Virtual estimates never overwrite real metering | `VirtualEnergyMeterMixin` / `VirtualEnergyManager` |
 | Timers | `safeSetInterval` + `_cleanupVirtualEnergy()` |
 | Mains | `mainsPowered === true`; strip phantom `energy.batteries` |
 
-Gate: `node tools/ci/energy-compose-gate.js` · `node tools/ci/layer-pass-audit.js`
+SSOT: [`config/architecture/energy-compensation-ssot.json`](../../config/architecture/energy-compensation-ssot.json)  
+Gates: `node tools/ci/energy-compose-gate.js` · `node tools/ci/adaptive-double-division-gate.js` · `node scripts/validation/check-energy-divisor.js` · `node tools/ci/layer-pass-audit.js`
+
+**Soft-deprecated (do not extend):** `VirtualEnergyEstimator`, `VirtualTelemetryCompensationEngine`, `DynamicEnergyManager` — prefer SmartEnergy + VirtualEnergyMeterMixin.
 
 ## Buttons
 

@@ -855,16 +855,20 @@ Order: `fix-flow-cards`  `revert-battery-conflicts`  `fix-empty-caps`  `validate
 
 ## M. Athom `processing_failed` / socket hang up (P139)
 
-Master and stable share App ID `com.dlnraja.tuya.zigbee`. The Homey **Test**
-slot is therefore a single shared channel.
+**Dual App IDs (2026-08+):** master publishes `com.dlnraja.tuya.zigbee` (9.0.x);
+stable publishes `com.dlnraja.tuya.zigbee.stable` (5.12.x). Test slots are
+**independent** when Stable compose id is `.stable`. Still never spam republish
+after `processing_failed`, and never let a misconfigured Stable workflow target
+the Universal Tuya App ID.
 
 ### Do NOT
 1. Bump patch + republish in a loop when Athom returns `processing_failed` with
    `socket hang up` / ECONNRESET / 502–504 — that is Athom processor/network,
    not a version bug (see 9.0.525 / 9.0.526 while Test stayed on 9.0.524).
-2. Let Publish Self-Heal re-run **Publish Stable → Test** after a master
-   failure — that overwrites master Test with stable.
+2. Let Publish Self-Heal re-run **Publish Stable → Test** with the wrong App ID
+   (legacy shared id would overwrite Universal Tuya Test).
 3. Force a recovery bump on bare `workflow_dispatch` of Auto-Fix.
+4. Republish Stable in a loop on P139 while draft `5.12.88` is processing_failed.
 
 ### Do
 1. Keep Test on the last **healthy** build; wait for Athom or one human publish.
@@ -935,10 +939,23 @@ catches invent regressions anti-bot alone might miss (wrong-PID catalog force).
 
 ### Dual-app classification
 - **BOTH**: wall_dimmer harden, brightness clamp, fingerprint refuse-wrong-pid,
-  Poll Control skip sleepy, battery no-invent, compose FP locks.
+  Poll Control skip sleepy, battery no-invent, compose FP locks,
+  energy divisors / EnergyJumpGuard / energy-compose gate, BootBudget heap,
+  brand-scrub of flow **titles** (no commercial names).
 - **MASTER_ONLY**: command pacer, reconnect coalescer, availability last-seen,
-  `device_rejoined`, free-scrape / smart-learn.
-- Never Publish Stable→Test while master 9.0.x soaks (shared App ID).
+  presence sim, Daylight Atmosphere / Solar Sync / Path Light engines,
+  free-scrape, AlarmPolarity smart-learn, CI `.cache/` intel infra.
+- Never Publish Stable with App ID `com.dlnraja.tuya.zigbee` (must be `.stable`).
+- SSOT: `config/architecture/dual-app-tracks.json` · enrich gates:
+  `node tools/ci/l99-dual-app-enrich-gates.js` (soft on enrich; `--hard` on unified-ci).
+
+### L99 enrich automation (regular)
+Workflows that soft-run L99 dual gates on schedule:
+- `auto-enrich-closed-loop.yml` (every 4h)
+- `project-resilience.yml` (05:20 UTC)
+- `recurrent-orchestrator.yml` (03:30 UTC)
+- `forum-poll.yml` (soft after silent scan)
+Hard fail on `unified-ci.yml` / publish path for BOTH gates (`--hard`).
 
 ### Catalog lock checklist (when adding a sacred couple)
 1. `drivers/*/driver.compose.json` (static Homey match)

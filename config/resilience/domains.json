@@ -55,10 +55,23 @@
     "energy_divisors": {
       "priority": 1,
       "status": "partial",
-      "homeyGap": "Double division; energy.approximation vs meter caps",
-      "stack": ["SmartDivisorManager", "EnergyJumpGuard", "L14 safeSetCapabilityValue", "energy-compose gate"],
-      "gates": ["tools/ci/adaptive-double-division-gate.js", "tools/ci/energy-compose-gate.js", "tools/ci/l14-capability-writers-gate.js"],
-      "tests": ["test/critical/smart-energy-audit.test.js", "test/critical/commit-capability.test.js"]
+      "homeyGap": "Double division; energy.approximation vs meter caps; parallel estimators overwrite real W/kWh",
+      "ssot": "config/architecture/energy-compensation-ssot.json",
+      "stack": [
+        "SmartDivisorManager (parse SSOT)",
+        "EnergyJumpGuard → rememberLearnedDivisor",
+        "SmartEnergyManager (real vs estimated audit)",
+        "VirtualEnergyMeterMixin (estimates only after silence)",
+        "L14 safeSetCapabilityValue",
+        "HomeyGapCompensator soft notes only"
+      ],
+      "softDeprecatedParallel": [
+        "lib/managers/VirtualEnergyEstimator.js",
+        "lib/dynamic/VirtualTelemetryCompensationEngine.js",
+        "lib/dynamic/DynamicEnergyManager.js"
+      ],
+      "gates": ["tools/ci/adaptive-double-division-gate.js", "tools/ci/energy-compose-gate.js", "tools/ci/l14-capability-writers-gate.js", "scripts/validation/check-energy-divisor.js"],
+      "tests": ["test/critical/smart-energy-audit.test.js", "test/critical/l99-energy-jump-divisor.test.js", "test/critical/commit-capability.test.js"]
     },
     "ef00_dp": {
       "priority": 1,

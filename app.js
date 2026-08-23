@@ -369,10 +369,10 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
     }
 
     try {
-      this._registerHueStyleFlowCards();
-      this.log('✅ Hue-style flow cards registered');
+      this._registerCommunitySmartFlowCards();
+      this.log('✅ Community smart flow cards registered');
     } catch (err) {
-      this.error('⚠️ Hue-style flow cards failed (non-critical):', err.message);
+      this.error('⚠️ Community smart flow cards failed (non-critical):', err.message);
     }
 
     try {
@@ -787,8 +787,9 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
   getDPRegistry() { return this.dpRegistry; }
 
   // ═══════════════════════════════════════════════════════════════════════════
-  // v9.0.376: HUE-STYLE SMART FEATURES (Zigbee/Tuya overlay via flow cards)
-  // Motion-activated lighting, circadian curve, wake-up sunrise simulation.
+  // Community smart features (Daylight Atmosphere / Path Light / Dawn / Dusk)
+  // Flow card IDs keep legacy hue_* keys so existing Homey flows do not break.
+  // UI titles are brand-free — see config/architecture/smart-features-ssot.json
   // ═══════════════════════════════════════════════════════════════════════════
 
   async _hueSetLight(light, { onoff, dim, temperature } = {}) {
@@ -800,66 +801,59 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
     };
     if (onoff !== undefined) {await set('onoff', onoff);}
     if (dim !== undefined) {await set('dim', dim);}
-    if (temperature !== undefined) {await set('light_temperature', temperature);}
-  }
-
-  _hueCircadianCurve(date = new Date()) {
-    // light_temperature Homey: 0 = froid (6500K), 1 = chaud (2200K)
-    // v10.7.0: delegate to REAL solar elevation when available (the 4
-    // parallel circadian curves in the repo were all time-based guesses;
-    // SolarElevation computes the actual sun position). Time buckets stay
-    // as fallback when the solar engine isn't initialized.
-    const solar = this.solarElevation;
-    if (solar && typeof solar.getElevation === 'function') {
-      try {
-        const elev = solar.getElevation(date); // degrés, <0 = nuit
-        if (typeof elev === 'number' && Number.isFinite(elev)) {
-          // Map élévation → dim/temp: nuit (<-6°) → très chaud/sombre,
-          // crépuscule (-6..6°) → transition, jour (>30°) → froid/lumineux.
-          const clamp01 = (x) => Math.max(0, Math.min(1, x));
-          const dayness = clamp01((elev + 6) / 36); // -6° → 0, 30° → 1
-          return {
-            dim: Math.round((0.1 + dayness * 0.9) * 100) / 100,
-            temperature: Math.round((1.0 - dayness * 0.85) * 100) / 100
-          };
-        }
-      } catch { /* fall through to time buckets */ }
+    if (temperature !== undefined) {
+      if (light.hasCapability?.('light_temperature')) {await set('light_temperature', temperature);}
+      else if (light.hasCapability?.('light_color_temp')) {await set('light_color_temp', temperature);}
     }
-    const h = date.getHours() + date.getMinutes() / 60;
-    if (h < 5) {return { dim: 0.1, temperature: 1.0 };}
-    if (h < 7) {return { dim: 0.3, temperature: 0.85 };}
-    if (h < 9) {return { dim: 0.6, temperature: 0.6 };}
-    if (h < 12) {return { dim: 0.9, temperature: 0.3 };}
-    if (h < 15) {return { dim: 1.0, temperature: 0.15 };}
-    if (h < 18) {return { dim: 0.85, temperature: 0.35 };}
-    if (h < 20) {return { dim: 0.6, temperature: 0.65 };}
-    if (h < 22) {return { dim: 0.35, temperature: 0.9 };}
-    return { dim: 0.15, temperature: 1.0 };
   }
 
+  _hueCircadianCurve(date = new Date(), lux = null) {
+    try {
+      const DaylightAtmosphere = require('./lib/features/DaylightAtmosphere');
+      const curve = DaylightAtmosphere.compute({
+        date,
+        solar: this.solarElevation,
+        lux,
+      });
+      return { dim: curve.dim, temperature: curve.temperature, kelvin: curve.kelvin, source: curve.source };
+    } catch {
+      const h = date.getHours() + date.getMinutes() / 60;
+      if (h < 5) {return { dim: 0.1, temperature: 1.0 };}
+      if (h < 8) {return { dim: 0.3, temperature: 0.75 };}
+      if (h < 17) {return { dim: 1.0, temperature: 0.15 };}
+      if (h < 21) {return { dim: 0.5, temperature: 0.7 };}
+      return { dim: 0.2, temperature: 0.95 };
+    }
+  }
+
+  /** @deprecated alias — use _registerCommunitySmartFlowCards */
   _registerHueStyleFlowCards() {
-    // ── Éclairage activé par mouvement ───────────────────────────────────────
+    return this._registerCommunitySmartFlowCards();
+  }
+
+  _registerCommunitySmartFlowCards() {
+    // ── Path Light (motion) ─────────────────────────────────────────────────
     this.homey.flow.getActionCard('hue_motion_lighting')
       .registerRunListener(async (args) => {
         const { motion_sensor: sensor, light, brightness = 80, timeout = 5, lux_threshold = 0, quiet_start, quiet_end } = args;
         if (!sensor || !light) {return false;}
 
-        // Fenêtre heures calmes (DND) : "22:00"-"07:00" traverse minuit
         if (quiet_start && quiet_end && /^\d{1,2}:\d{2}$/.test(quiet_start) && /^\d{1,2}:\d{2}$/.test(quiet_end)) {
           const toMin = (s) => { const [h, m] = s.split(':').map(Number); return h * 60 + m; };
           const now = new Date().getHours() * 60 + new Date().getMinutes();
           const qs = toMin(quiet_start), qe = toMin(quiet_end);
           const inQuiet = qs <= qe ? (now >= qs && now < qe) : (now >= qs || now < qe);
           if (inQuiet) {
-            this.log(`[HUE] Motion ignoré: heures calmes ${quiet_start}-${quiet_end}`);
+            this.log(`[PATH-LIGHT] skipped: quiet hours ${quiet_start}-${quiet_end}`);
             return false;
           }
         }
 
-        if (lux_threshold > 0 && sensor.hasCapability?.('measure_luminance')) {
-          const lux = sensor.getCapabilityValue?.('measure_luminance');
-          if (typeof lux === 'number' && lux >= lux_threshold) {
-            this.log(`[HUE] Motion ignoré: lux ${lux} >= ${lux_threshold}`);
+        let lux = null;
+        if (sensor.hasCapability?.('measure_luminance')) {
+          lux = sensor.getCapabilityValue?.('measure_luminance');
+          if (lux_threshold > 0 && typeof lux === 'number' && lux >= lux_threshold) {
+            this.log(`[PATH-LIGHT] skipped: lux ${lux} >= ${lux_threshold}`);
             return false;
           }
         }
@@ -868,29 +862,41 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
           if (motion === false) {return false;}
         }
 
-        await this._hueSetLight(light, { onoff: true, dim: Math.max(1, Math.min(100, brightness)) / 100 });
-        this.log(`[HUE] Motion lighting: ${light.getName?.()} ON à ${brightness}%`);
+        // Seed Room Balance lux for Solar Sync on this light
+        if (typeof lux === 'number') {
+          light.setStoreValue?.('room_balance_lux', lux).catch(() => {});
+        }
+
+        const curve = this._hueCircadianCurve(new Date(), typeof lux === 'number' ? lux : null);
+        const dim = Math.max(1, Math.min(100, brightness)) / 100;
+        await this._hueSetLight(light, {
+          onoff: true,
+          dim,
+          temperature: curve.temperature,
+        });
+        this.log(`[PATH-LIGHT] ${light.getName?.()} ON ${brightness}% CT=${curve.temperature}`);
 
         this.homey.clearTimeout?.(light._hueMotionTimer);
         light._hueMotionTimer = this.homey.setTimeout(async () => {
           await this._hueSetLight(light, { onoff: false });
-          this.log(`[HUE] Motion lighting: ${light.getName?.()} OFF après ${timeout} min`);
+          this.log(`[PATH-LIGHT] ${light.getName?.()} OFF after ${timeout} min`);
         }, Math.max(1, timeout) * 60 * 1000);
         return true;
       });
 
-    // ── Éclairage circadien ──────────────────────────────────────────────────
+    // ── Solar Sync apply (legacy id hue_circadian_apply) ─────────────────────
     this.homey.flow.getActionCard('hue_circadian_apply')
       .registerRunListener(async (args) => {
         const { light } = args;
         if (!light) {return false;}
-        const curve = this._hueCircadianCurve();
+        const lux = light.getStoreValue?.('room_balance_lux');
+        const curve = this._hueCircadianCurve(new Date(), typeof lux === 'number' ? lux : null);
         await this._hueSetLight(light, { onoff: true, dim: curve.dim, temperature: curve.temperature });
-        this.log(`[HUE] Circadien appliqué à ${light.getName?.()}: dim=${curve.dim} temp=${curve.temperature}`);
+        this.log(`[SOLAR-SYNC] ${light.getName?.()}: dim=${curve.dim} temp=${curve.temperature} (${curve.source || 'ssot'})`);
         return true;
       });
 
-    // ── Routine réveil (simulation d'aube) ───────────────────────────────────
+    // ── Dawn Ramp ───────────────────────────────────────────────────────────
     this.homey.flow.getActionCard('hue_wakeup')
       .registerRunListener(async (args) => {
         const { light, ramp_minutes: duration = 15, target = 100 } = args;
@@ -900,22 +906,24 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
         const targetDim = Math.max(10, Math.min(100, target)) / 100;
         this.homey.clearInterval?.(light._hueWakeupTimer);
         let step = 0;
-        await this._hueSetLight(light, { onoff: true, dim: 0.01 });
+        const startCurve = this._hueCircadianCurve();
+        await this._hueSetLight(light, { onoff: true, dim: 0.01, temperature: Math.min(1, startCurve.temperature + 0.15) });
         light._hueWakeupTimer = this.homey.setInterval(async () => {
           step++;
           const dim = Math.min(targetDim, 0.01 + (targetDim - 0.01) * (step / steps));
-          await this._hueSetLight(light, { dim: Math.round(dim * 100) / 100 });
+          const t = this._hueCircadianCurve().temperature;
+          await this._hueSetLight(light, { dim: Math.round(dim * 100) / 100, temperature: t });
           if (step >= steps) {
             this.homey.clearInterval?.(light._hueWakeupTimer);
             light._hueWakeupTimer = null;
-            this.log(`[HUE] Réveil terminé sur ${light.getName?.()}: ${targetDim * 100}%`);
+            this.log(`[DAWN-RAMP] done ${light.getName?.()}: ${targetDim * 100}%`);
           }
         }, stepMs);
-        this.log(`[HUE] Réveil démarré sur ${light.getName?.()}: ${steps} pas × ${Math.round(stepMs / 1000)}s`);
+        this.log(`[DAWN-RAMP] start ${light.getName?.()}: ${steps} steps`);
         return true;
       });
 
-    // ── Routine coucher (simulation de crépuscule) ───────────────────────────
+    // ── Dusk Fade ───────────────────────────────────────────────────────────
     this.homey.flow.getActionCard('hue_sleep')
       .registerRunListener(async (args) => {
         const { light, ramp_minutes: duration = 15 } = args;
@@ -929,19 +937,20 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
         light._hueWakeupTimer = this.homey.setInterval(async () => {
           step++;
           const dim = Math.max(0.01, startDim * (1 - step / steps));
-          await this._hueSetLight(light, { dim: Math.round(dim * 100) / 100 });
+          const warm = Math.min(1, this._hueCircadianCurve().temperature + 0.2 * (step / steps));
+          await this._hueSetLight(light, { dim: Math.round(dim * 100) / 100, temperature: warm });
           if (step >= steps) {
             this.homey.clearInterval?.(light._hueWakeupTimer);
             light._hueWakeupTimer = null;
             await this._hueSetLight(light, { onoff: false });
-            this.log(`[HUE] Coucher terminé sur ${light.getName?.()}: OFF`);
+            this.log(`[DUSK-FADE] done ${light.getName?.()}: OFF`);
           }
         }, stepMs);
-        this.log(`[HUE] Coucher démarré sur ${light.getName?.()}: ${steps} pas × ${Math.round(stepMs / 1000)}s`);
+        this.log(`[DUSK-FADE] start ${light.getName?.()}`);
         return true;
       });
 
-    // ── Scènes : capture / application (style Hue) ───────────────────────────
+    // ── Scene Slots ─────────────────────────────────────────────────────────
     this.homey.flow.getActionCard('scene_capture')
       .registerRunListener(async (args) => {
         const { light, slot = 1 } = args;
@@ -949,11 +958,12 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
         const scene = {
           onoff: light.getCapabilityValue?.('onoff'),
           dim: light.getCapabilityValue?.('dim'),
-          temperature: light.getCapabilityValue?.('light_temperature'),
+          temperature: light.getCapabilityValue?.('light_temperature')
+            ?? light.getCapabilityValue?.('light_color_temp'),
           capturedAt: Date.now(),
         };
         await light.setStoreValue?.(`hue_scene_${slot}`, scene).catch(() => {});
-        this.log(`[HUE] Scène ${slot} capturée pour ${light.getName?.()}: ${JSON.stringify(scene)}`);
+        this.log(`[SCENE-SLOT] captured ${slot} for ${light.getName?.()}`);
         return true;
       });
 
@@ -963,7 +973,7 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
         if (!light) {return false;}
         const scene = await light.getStoreValue?.(`hue_scene_${slot}`);
         if (!scene) {
-          this.log(`[HUE] Slot ${slot} vide pour ${light.getName?.()}`);
+          this.log(`[SCENE-SLOT] empty slot ${slot} for ${light.getName?.()}`);
           return false;
         }
         await this._hueSetLight(light, {
@@ -971,11 +981,11 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
           dim: scene.dim,
           temperature: scene.temperature,
         });
-        this.log(`[HUE] Scène ${slot} appliquée à ${light.getName?.()}`);
+        this.log(`[SCENE-SLOT] applied ${slot} to ${light.getName?.()}`);
         return true;
       });
 
-    // ── Fondu vers un niveau (style Lutron) ──────────────────────────────────
+    // ── Soft Fade ───────────────────────────────────────────────────────────
     this.homey.flow.getActionCard('dim_to_level')
       .registerRunListener(async (args) => {
         const { light, target = 50, ramp_minutes: duration = 5 } = args;
@@ -1000,13 +1010,13 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
             this.homey.clearInterval?.(light._hueWakeupTimer);
             light._hueWakeupTimer = null;
             if (targetDim === 0) {await this._hueSetLight(light, { onoff: false });}
-            this.log(`[HUE] Fondu terminé sur ${light.getName?.()}: ${targetDim * 100}%`);
+            this.log(`[SOFT-FADE] done ${light.getName?.()}: ${targetDim * 100}%`);
           }
         }, stepMs);
         return true;
       });
 
-    // ── Cycle de scènes (style bouton raccourci IKEA) ────────────────────────
+    // ── Next Scene Slot ─────────────────────────────────────────────────────
     this.homey.flow.getActionCard('scene_cycle')
       .registerRunListener(async (args) => {
         const { light, slots = 3 } = args;
@@ -1017,7 +1027,7 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
         const scene = await light.getStoreValue?.(`hue_scene_${next}`);
         await light.setStoreValue?.('hue_scene_cycle_pos', next).catch(() => {});
         if (!scene) {
-          this.log(`[HUE] Cycle: slot ${next} vide pour ${light.getName?.()}`);
+          this.log(`[SCENE-SLOT] cycle empty ${next} for ${light.getName?.()}`);
           return false;
         }
         await this._hueSetLight(light, {
@@ -1025,11 +1035,11 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
           dim: scene.dim,
           temperature: scene.temperature,
         });
-        this.log(`[HUE] Cycle: scène ${next}/${count} appliquée à ${light.getName?.()}`);
+        this.log(`[SCENE-SLOT] cycle ${next}/${count} → ${light.getName?.()}`);
         return true;
       });
 
-    // ── Volets : position précise (style stores IKEA) ────────────────────────
+    // ── Cover Setpoint ──────────────────────────────────────────────────────
     this.homey.flow.getActionCard('cover_set_position')
       .registerRunListener(async (args) => {
         const { cover, position = 50 } = args;
@@ -1039,30 +1049,28 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
         if (cover.hasCapability?.('windowcoverings_set')) {
           if (set) {await set('windowcoverings_set', target).catch(() => {});}
           else {await cover.setCapabilityValue?.('windowcoverings_set', target).catch(() => {});}
-          this.log(`[HUE] Volet ${cover.getName?.()} → ${position}%`);
+          this.log(`[COVER] ${cover.getName?.()} → ${position}%`);
           return true;
         }
-        this.log(`[HUE] ${cover.getName?.()} n'a pas windowcoverings_set`);
+        this.log(`[COVER] ${cover.getName?.()} missing windowcoverings_set`);
         return false;
       });
 
-    // ── Calibration fins de course (Tuya DP16, Quoya/Dooya) ────────────────
+    // ── Curtain limit calibration (Tuya DP16) ───────────────────────────────
     this.homey.flow.getActionCard('cover_limit_calibration')
       .registerRunListener(async (args) => {
         const { cover, command } = args;
         if (!cover || !command) {return false;}
-        // z2m/Tuya convention: DP16 enum border — 0=up, 1=down, 2=up_delete,
-        // 3=down_delete, 4=remove_top_bottom
         const DP16 = { set_upper: 0, set_lower: 1, delete_upper: 2, delete_lower: 3, remove_all: 4 };
         const value = DP16[command];
         if (value === undefined) {return false;}
         try {
           if (typeof cover._sendTuyaDP === 'function') {
             await cover._sendTuyaDP(16, value, 'enum');
-            this.log(`[CURTAIN] DP16 limit calibration '${command}' (${value}) envoyé à ${cover.getName?.()}`);
+            this.log(`[CURTAIN] DP16 '${command}' (${value}) → ${cover.getName?.()}`);
             return true;
           }
-          this.log(`[CURTAIN] ${cover.getName?.()} ne supporte pas _sendTuyaDP`);
+          this.log(`[CURTAIN] ${cover.getName?.()} no _sendTuyaDP`);
           return false;
         } catch (err) {
           this.error('[CURTAIN] DP16 failed:', err.message);
@@ -1070,7 +1078,7 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
         }
       });
 
-    // ── Tout éteindre (style bouton "All Off" de l'app Hue) ──────────────────
+    // ── All Lights Off ──────────────────────────────────────────────────────
     this.homey.flow.getActionCard('hue_all_off')
       .registerRunListener(async () => {
         let count = 0;
@@ -1086,9 +1094,9 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
             }
           }
         } catch (err) {
-          this.error('[HUE] all_off error:', err.message);
+          this.error('[ALL-OFF] error:', err.message);
         }
-        this.log(`[HUE] Tout éteint: ${count} lumières`);
+        this.log(`[ALL-OFF] ${count} lights`);
         return true;
       });
   }

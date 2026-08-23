@@ -136,6 +136,21 @@ jobs:
             node tools/ci/silent-enrichment-orchestrator.js --phase=gates --skip-scan || echo "gates warn"
           fi
 
+      - name: "L99 dual-app enrich gates (soft)"
+        if: always()
+        continue-on-error: true
+        timeout-minutes: 8
+        run: |
+          if [ ! -f tools/ci/l99-dual-app-enrich-gates.js ]; then
+            echo "l99-dual missing — skip"
+            exit 0
+          fi
+          node tools/ci/l99-dual-app-enrich-gates.js --track=auto || echo "l99-dual soft warn"
+          echo "### L99 dual-app enrich gates" >> "$GITHUB_STEP_SUMMARY"
+          if [ -f "reports/l99-dual-$(date -u +%F)/enrich-gates.json" ]; then
+            node -e "const j=require('./reports/l99-dual-'+new Date().toISOString().slice(0,10)+'/enrich-gates.json'); console.log('track='+j.track+' appId='+(j.appId||'')); (j.results||[]).forEach(r=>console.log((r.ok?'OK':'FAIL')+' ['+r.tag+'] '+r.name))" >> "$GITHUB_STEP_SUMMARY" || true
+          fi
+
       - name: Commit resilience reports [skip ci]
         if: always()
         continue-on-error: true
@@ -143,7 +158,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git pull --rebase origin "${GITHUB_REF_NAME}" || true
-          git add reports/resilience-*/ .github/state/resilience/ 2>/dev/null || true
+          git add reports/resilience-*/ reports/l99-dual-*/ .github/state/resilience/ 2>/dev/null || true
           if git diff --cached --quiet; then
             echo "No resilience report changes"
             exit 0

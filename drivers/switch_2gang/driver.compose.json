@@ -779,6 +779,51 @@
           }
         }
       ]
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "LED Indicator (Backlight)",
+        "fr": "Indicateur LED"
+      },
+      "children": [
+        {
+          "id": "backlight_mode",
+          "type": "dropdown",
+          "label": {
+            "en": "Backlight mode",
+            "fr": "Mode rétroéclairage"
+          },
+          "value": "normal",
+          "values": [
+            {
+              "id": "off",
+              "label": {
+                "en": "Off",
+                "fr": "Éteint"
+              }
+            },
+            {
+              "id": "normal",
+              "label": {
+                "en": "Normal",
+                "fr": "Normal"
+              }
+            },
+            {
+              "id": "inverted",
+              "label": {
+                "en": "Inverted",
+                "fr": "Inversé"
+              }
+            }
+          ],
+          "hint": {
+            "en": "Strings only: off / normal / inverted.",
+            "fr": "Chaînes uniquement : off / normal / inverted."
+          }
+        }
+      ]
     }
   ],
   "name": {

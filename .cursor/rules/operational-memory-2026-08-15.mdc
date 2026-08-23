@@ -8,8 +8,12 @@ alwaysApply: true
 ## Dual Athom apps (independent Test slots)
 | Track | Branch | App ID | Tip (git) | Homey Test |
 |-------|--------|--------|-----------|------------|
-| Universal Tuya | `master` | `com.dlnraja.tuya.zigbee` | **9.0.626+** (local soak) | Auto-Publish OK (#2950 lineage) |
-| Tuya Unified (Stable) | `stable-v5` | `com.dlnraja.tuya.zigbee.stable` | **5.12.88** (`531c103cb`) | Draft #13 **P139 processing_failed** — **no republish loop** |
+| Universal Tuya | `master` | `com.dlnraja.tuya.zigbee` | **9.0.631+** | Auto-Publish OK |
+| Tuya Unified (Stable) | `stable-v5` | `com.dlnraja.tuya.zigbee.stable` | **5.12.88** | Draft P139 — **no republish loop** |
+
+SSOT: `config/architecture/dual-app-tracks.json` · regular gates: `npm run check:l99-dual` (soft enrich) / `npm run check:l99-dual:hard` (unified-ci).
+
+L99 classify: energy/divisors/BootBudget/brand-scrub titles = **BOTH**; Daylight Atmosphere / Path Light / presence / CI intel = **MASTER_ONLY**.
 
 Clone Stable: `Documents\homey\stable`. `stable-v5-p195` is **STALE**.
 

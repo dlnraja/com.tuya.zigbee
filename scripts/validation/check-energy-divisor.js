@@ -76,7 +76,11 @@ function checkDriver(driverName, deviceFilePath) {
     // Check for AdaptiveDataParser (also handles divisor)
     const hasAdaptiveParser = content.includes('AdaptiveDataParser') || content.includes('adaptiveData');
 
-    if (!hasSmartDivisor && !hasExplicitDivisor && !hasSmartDivisorManager && !hasAdaptiveParser) {
+    // L99: local ENERGY_DIVISORS / EnergyJumpGuard constants count as explicit
+    const hasEnergyDivisorsConst = content.includes('ENERGY_DIVISORS')
+      || content.includes('EnergyJumpGuard');
+
+    if (!hasSmartDivisor && !hasExplicitDivisor && !hasSmartDivisorManager && !hasAdaptiveParser && !hasEnergyDivisorsConst) {
       totalViolations++;
       violations.push({
         driver: driverName,

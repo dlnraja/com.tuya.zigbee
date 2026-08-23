@@ -1,0 +1,107 @@
+{
+  "_meta": {
+    "version": "1.0.0",
+    "updated": "2026-08-23",
+    "why": "Community smart features — inspired by common Zigbee hub patterns, never commercial product names in UI",
+    "track": "MASTER_ONLY for heavy engines; brand-scrub BOTH for flow titles; see dual-app-tracks.json"
+  },
+  "policy": {
+    "noCommercialNamesInUi": true,
+    "forbiddenUiTokens": [
+      "Hue", "Philips", "Signify", "IKEA", "Aqara", "Xiaomi", "Yeelight",
+      "Lutron", "SmartThings", "True Tone", "Ambilight", "Natural Light",
+      "Friends of Hue", "Tradfri", "HomeKit"
+    ],
+    "allowedInternal": "Code comments / Zigbee manufacturer catalogs may name vendors for protocol truth",
+    "namingVoice": "open-source community — Universal Tuya / dlnraja; short plain English + FR"
+  },
+  "catalog": [
+    {
+      "id": "daylight_atmosphere",
+      "uiName": { "en": "Daylight Atmosphere", "fr": "Atmosphère jour" },
+      "module": "lib/features/DaylightAtmosphere.js",
+      "role": "SSOT solar+lux → kelvin/dim; Room Balance lux bias",
+      "replacesConcepts": ["adaptive white", "screen ambient balance", "clock circadian guesses"]
+    },
+    {
+      "id": "solar_sync",
+      "uiName": { "en": "Solar Sync", "fr": "Synchro solaire" },
+      "module": "lib/managers/CircadianEngine.js",
+      "flowIds": ["hue_circadian_apply", "natural_light_enable", "natural_light_disable"],
+      "role": "Enrolled lights follow Daylight Atmosphere with fade"
+    },
+    {
+      "id": "path_light",
+      "uiName": { "en": "Path Light", "fr": "Lumière de passage" },
+      "flowIds": ["hue_motion_lighting"],
+      "role": "Motion → light with lux gate + quiet hours"
+    },
+    {
+      "id": "dawn_ramp",
+      "uiName": { "en": "Dawn Ramp", "fr": "Montée d'aube" },
+      "flowIds": ["hue_wakeup"],
+      "role": "Gradual brightness wake"
+    },
+    {
+      "id": "dusk_fade",
+      "uiName": { "en": "Dusk Fade", "fr": "Fondu crépuscule" },
+      "flowIds": ["hue_sleep"],
+      "role": "Gradual dim then off"
+    },
+    {
+      "id": "all_lights_off",
+      "uiName": { "en": "All Lights Off", "fr": "Toutes lumières off" },
+      "flowIds": ["hue_all_off"],
+      "role": "App-wide light off"
+    },
+    {
+      "id": "lived_in_shuffle",
+      "uiName": { "en": "Lived-In Shuffle", "fr": "Présence simulée" },
+      "module": "lib/managers/PresenceSimulationManager.js",
+      "flowIds": ["presence_simulation_start"],
+      "role": "Random on/off while away"
+    },
+    {
+      "id": "sensor_pause",
+      "uiName": { "en": "Sensor Pause", "fr": "Pause capteur" },
+      "module": "lib/managers/SensorSuppressionManager.js",
+      "role": "Mute motion/presence triggers temporarily"
+    },
+    {
+      "id": "room_cascade",
+      "uiName": { "en": "Room Cascade", "fr": "Cascade pièce" },
+      "module": "lib/managers/MotionCascadeManager.js",
+      "role": "Walk-path motion linking"
+    },
+    {
+      "id": "house_mode",
+      "uiName": { "en": "House Mode", "fr": "Mode maison" },
+      "module": "lib/managers/HomeModeManager.js",
+      "role": "day / evening / night / away"
+    },
+    {
+      "id": "scene_slots",
+      "uiName": { "en": "Scene Slots", "fr": "Slots de scène" },
+      "flowIds": ["scene_capture", "scene_apply", "scene_cycle"],
+      "role": "Per-light captured looks"
+    },
+    {
+      "id": "cover_setpoint",
+      "uiName": { "en": "Cover Setpoint", "fr": "Position volet" },
+      "flowIds": ["cover_set_position"],
+      "role": "Precise blind position"
+    }
+  ],
+  "softDeprecatedParallel": {
+    "note": "Prefer DaylightAtmosphere.compute(); keep handlers as thin callers",
+    "modules": [
+      "lib/dynamic/SmartBiorhythmHandler.js clock curve",
+      "lib/managers/AdaptiveLightingManager.js pre-solar clock curve",
+      "app.js _hueCircadianCurve time buckets"
+    ]
+  },
+  "memory": {
+    "boot": "deferred via BootBudget — same as CircadianEngine",
+    "forbid": "No entertainment RGB stream flood; no second circadian timer per stack"
+  }
+}

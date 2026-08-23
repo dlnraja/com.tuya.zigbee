@@ -29,10 +29,12 @@ A **(mfr, pid)** pair = the canonical identity of a Zigbee device.
 
 ## Stable vs Master Discipline
 
-| Branch | Purpose | Rule |
-|--------|---------|------|
-| **`master`** | Dev/preview, new features, experiments, new FPs | Push freely. Auto-publish to Test channel. |
-| **`stable-v5`** | Production, zero bugs, zero crashes | **Only** surgical reliability backports from master after soak. **Never** full-tree copy-paste. |
+| Track | Branch | Athom App ID | Version | Purpose |
+|-------|--------|--------------|---------|---------|
+| **master** | `master` | `com.dlnraja.tuya.zigbee` | `9.0.x` | Dev/preview, features + soak |
+| **stable-v5** | `stable-v5` | `com.dlnraja.tuya.zigbee.stable` | `5.12.x` | Production LTS — reliability only |
+
+> Machine SSOT: [`config/architecture/dual-app-tracks.json`](config/architecture/dual-app-tracks.json) · gates: `npm run check:l99-dual`
 
 > Canonical doctrine: [`docs/rules/DUAL_APP_VISION.md`](docs/rules/DUAL_APP_VISION.md) · cross-prompt: [`docs/rules/CROSS_APP_PROMPT_RULES.md`](docs/rules/CROSS_APP_PROMPT_RULES.md).
 

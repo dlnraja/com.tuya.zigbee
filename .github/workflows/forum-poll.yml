@@ -163,6 +163,9 @@ jobs:
           if [ -f tools/ci/project-resilience-orchestrator.js ]; then
             node tools/ci/project-resilience-orchestrator.js --write-report --critical-first --critical-only || echo "RESILIENCE_CRITICAL_WARN"
           fi
+          if [ -f tools/ci/l99-dual-app-enrich-gates.js ]; then
+            node tools/ci/l99-dual-app-enrich-gates.js --track=auto || echo "L99_DUAL_SOFT_WARN"
+          fi
           echo "Policy: SHADOW forum — implement silently, never paste unchecked AI." >> $GITHUB_STEP_SUMMARY
 
       # READ-ONLY: image alts, download URLs, diag UUIDs on public threads. Never posts.

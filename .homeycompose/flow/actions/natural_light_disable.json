@@ -1,14 +1,14 @@
 {
   "id": "natural_light_disable",
   "title": {
-    "en": "Disable Natural Light - solar sync",
-    "fr": "Désactiver Natural Light (Synchro Solaire)"
+    "en": "Disable Solar Sync",
+    "fr": "Désactiver Synchro solaire"
+  },
+  "hint": {
+    "en": "Remove this light from Daylight Atmosphere enrollment",
+    "fr": "Retire cette lumière de l'Atmosphère jour"
   },
   "args": [
-    {
-      "name": "device",
-      "type": "device",
-      "filter": "driver_id=bulb_rgbw|driver_id=led_controller_cct|driver_id=bulb_tunable_white|driver_id=led_strip"
-    }
+    { "type": "device", "name": "device", "title": { "en": "Light", "fr": "Lumière" } }
   ]
 }

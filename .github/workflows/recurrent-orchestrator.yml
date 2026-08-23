@@ -77,6 +77,14 @@ jobs:
           fi
           node tools/ci/recurrent-orchestrator.js $ARGS
 
+      - name: L99 dual-app enrich gates (soft regular)
+        continue-on-error: true
+        timeout-minutes: 8
+        run: |
+          if [ -f tools/ci/l99-dual-app-enrich-gates.js ]; then
+            node tools/ci/l99-dual-app-enrich-gates.js --track=auto || echo "l99-dual soft warn"
+          fi
+
       - name: Upload Reports
         uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5.0.0
         with:

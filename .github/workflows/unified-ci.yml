@@ -150,6 +150,9 @@ jobs:
       - name: 🛡️ Energy compose gate
         run: node tools/ci/energy-compose-gate.js
 
+      - name: 🛡️ L99 dual-app enrich gates (hard)
+        run: node tools/ci/l99-dual-app-enrich-gates.js --hard --track=auto
+
       - name: 🛡️ Bare ZigBeeDevice gate
         run: npm run check:bare-zigbee
 

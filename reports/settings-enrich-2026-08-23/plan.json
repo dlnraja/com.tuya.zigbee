@@ -1,0 +1,78 @@
+{
+  "at": "2026-08-23T16:44:53.257Z",
+  "apply": true,
+  "changes": [
+    {
+      "driverId": "energy_meter_din",
+      "msg": "add power_scale (+ bidirectional if exported)"
+    },
+    {
+      "driverId": "energy_meter_3phase",
+      "msg": "add power_scale (+ bidirectional if exported)"
+    },
+    {
+      "driverId": "power_clamp_meter",
+      "msg": "add power_scale (+ bidirectional if exported)"
+    },
+    {
+      "driverId": "device_din_rail_meter",
+      "msg": "add power_scale (+ bidirectional if exported)"
+    },
+    {
+      "driverId": "smartplug",
+      "msg": "add power_scale (+ bidirectional if exported)"
+    },
+    {
+      "driverId": "wall_socket",
+      "msg": "add power_scale (+ bidirectional if exported)"
+    },
+    {
+      "driverId": "outdoor_2_socket",
+      "msg": "add power_scale (+ bidirectional if exported)"
+    },
+    {
+      "driverId": "switch_1gang",
+      "msg": "add power_scale (+ bidirectional if exported)"
+    },
+    {
+      "driverId": "switch_2gang",
+      "msg": "add power_scale (+ bidirectional if exported)"
+    },
+    {
+      "driverId": "switch_3gang",
+      "msg": "add power_scale (+ bidirectional if exported)"
+    },
+    {
+      "driverId": "switch_1gang",
+      "msg": "add backlight_mode strings"
+    },
+    {
+      "driverId": "switch_2gang",
+      "msg": "add backlight_mode strings"
+    },
+    {
+      "driverId": "switch_3gang",
+      "msg": "add backlight_mode strings"
+    },
+    {
+      "driverId": "switch_4gang",
+      "msg": "add backlight_mode strings"
+    },
+    {
+      "driverId": "bulb_rgbw_universal",
+      "msg": "Solar Sync checkbox (brand-free label)"
+    },
+    {
+      "driverId": "light_bulb_tunable_white",
+      "msg": "Solar Sync checkbox (brand-free label)"
+    },
+    {
+      "driverId": "bulb_tunable_white",
+      "msg": "Solar Sync checkbox (brand-free label)"
+    },
+    {
+      "driverId": "light_bulb_dimmable_tunable",
+      "msg": "Solar Sync checkbox (brand-free label)"
+    }
+  ]
+}
