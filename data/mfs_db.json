@@ -137496,7 +137496,7 @@
   },
   "_TZE200_lsanae15": {
     "driverId": "energy_meter_din",
-    "source": "compose-exclusive",
+    "source": "z2m-dac2161c-p2231",
     "modelIds": [
       "TS0001",
       "TS0002",
@@ -137513,11 +137513,16 @@
       "TS0601"
     ],
     "pid": "TS0001",
-    "modelIdsCount": 13
+    "modelIdsCount": 13,
+    "forbidden": [
+      "smart_rcbo",
+      "climate_sensor",
+      "generic_tuya"
+    ]
   },
   "_TZE204_lsanae15": {
     "driverId": "energy_meter_din",
-    "source": "compose-exclusive",
+    "source": "z2m-dac2161c-p2231",
     "modelIds": [
       "TS0001",
       "TS0002",
@@ -137534,7 +137539,12 @@
       "TS0601"
     ],
     "pid": "TS0001",
-    "modelIdsCount": 13
+    "modelIdsCount": 13,
+    "forbidden": [
+      "smart_rcbo",
+      "climate_sensor",
+      "generic_tuya"
+    ]
   },
   "_TZE200_tz32mtza": {
     "driverId": "button_wireless_plug",

@@ -373,6 +373,15 @@ const FORBIDDEN = [
       '_TZE200_lsanae15', '_TZE204_lsanae15', '_TZE200_nkjintbl',
     ],
   },
+  // WHY: Z2M DAC2161C / TS0601_din — lsanae15 is energy_meter_din, never smart_rcbo (FP collision)
+  {
+    id: 'p2231-lsanae15-not-rcbo',
+    driver: 'smart_rcbo',
+    mfrs: [
+      '_TZE200_lsanae15', '_TZE204_lsanae15', '_TZE284_lsanae15',
+      '_tze200_lsanae15', '_tze204_lsanae15', '_tze284_lsanae15',
+    ],
+  },
   {
     id: 'p102-switches-not-btn2',
     driver: 'button_wireless_2',
