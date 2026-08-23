@@ -1,7 +1,7 @@
 # Weekly Sovereign Loop
 
-Generated: 2026-08-16T06:55:37.175Z
-Version: **9.0.533** · Branch: `master`
+Generated: 2026-08-23T06:57:01.107Z
+Version: **9.0.626** · Branch: `master`
 
 ## Quota policy
 - Cursor Automation = thin weekly brain (read report → bounded reliability fixes)
@@ -14,6 +14,17 @@ Version: **9.0.533** · Branch: `master`
 - ✅ **bareZigbee** (exit 0)
 - ✅ **doubleDivision** (exit 0)
 - ✅ **voice** (exit 0)
+- ❌ **dualClaim** (exit 1)
+- ✅ **alignMfs** (exit 0)
+- ✅ **heapJson** (exit 0)
+- ✅ **maxCoverage** (exit 0)
+- ✅ **batteryButton** (exit 0)
+- ✅ **rulesMatrix** (exit 0)
+- ✅ **userTriage** (exit 0)
+- ✅ **moduleLoad** (exit 0)
+- ✅ **workflowEstate** (exit 0)
+- ✅ **firmwareUpdates** (exit 0)
+- ✅ **wifiLocalFirst** (exit 0)
 
 ## Homey Test channel
 - URL: https://homey.app/a/com.dlnraja.tuya.zigbee/test/
@@ -29,33 +40,30 @@ Version: **9.0.533** · Branch: `master`
 - ❌ `self-improve.yml` — workflow not found
 
 ## Recent workflow runs
-- [in_progress] 🤖 Auto-Fix + Publish Pipeline (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/31932523816
-- [in_progress] Weekly Sovereign Loop (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/31932466478
-- [success] Gmail Diagnostics Auto-Analysis (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/31931085493
-- [skipped] Auto-Reopen on Comment (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/31930551208
-- [cancelled] Batch Analyze & Respond (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/31930389689
-- [success] 📥 Community Inbox (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/31929592931
-- [success] Auto Bot Issue Triage (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/31928154173
-- [success] Safe Sync master → stable-v5 (P52) (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/31927812010
-- [success] 🗂️ Blakadder Integration (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/31927503224
-- [success] 🔄 Auto-Enrich Closed Loop (P69) (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/31927084901
+- [in_progress] 🤖 Auto-Fix + Publish Pipeline (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/32624192630
+- [in_progress] Weekly Sovereign Loop (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/32624108037
+- [success] Gmail Diagnostics Auto-Analysis (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/32622598147
+- [cancelled] Batch Analyze & Respond (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/32621848380
+- [success] 📥 Community Inbox (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/32621053959
+- [success] Auto Bot Issue Triage (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/32619508947
+- [success] Safe Sync master → stable-v5 (P52) (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/32619161630
+- [success] 🗂️ Blakadder Integration (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/32618849172
+- [success] 🔄 Auto-Enrich Closed Loop (P69) (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/32618410283
+- [success] 🩹 Publish Self-Heal (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/32618091146
 
 ## Publish / validate related
-- [in_progress] 🤖 Auto-Fix + Publish Pipeline — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/31932523816
-- [success] 🩹 Publish Self-Heal — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/31926815965
+- [in_progress] 🤖 Auto-Fix + Publish Pipeline — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/32624192630
+- [success] 🩹 Publish Self-Heal — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/32618091146
 
 ## Open issues
-- #513 Bug report - Zigbee Climate sensor not installing
+- none
 
 ## Open PRs
-- #530 fix(stable): P139 + ZT08 DP17 + TYZB01 switch routes — https://github.com/dlnraja/com.tuya.zigbee/pull/530
+- none
 
 ## Cursor brain — do this week (max)
-- **P1**: Human issues remain open — verify FP/runtime fixes silently; do not mass-close needs-maintainer.
-  - #513 Bug report - Zigbee Climate sensor not installing
+- **P0**: Local gates failing: dualClaim — fix before any publish.
 - **P1**: Some workflow dispatches failed (check GH_PAT / workflow names): mega-crawl.yml, gmail-diagnostics.yml, forum-poll.yml, auto-bot-issue-triage.yml, publish-diagnose.yml, safe-sync-stable.yml, self-improve.yml
-- **P1**: Open non-draft PRs — review for reliability merges on master only.
-  - https://github.com/dlnraja/com.tuya.zigbee/pull/530
 
 ## Hard stops
 - Do NOT paste unchecked AI to Homey forum
