@@ -1,0 +1,27 @@
+{
+  "generatedAt": "2026-08-23T14:39:19.124Z",
+  "outDir": "C:\\Users\\Dell\\Documents\\homey\\master\\reports\\flow-l99-2026-08-23",
+  "steps": [
+    {
+      "label": "flow-dups",
+      "ok": true,
+      "status": 0
+    },
+    {
+      "label": "flows-integrity",
+      "ok": true,
+      "status": 0
+    },
+    {
+      "label": "flow-coherence",
+      "ok": true,
+      "status": 0
+    },
+    {
+      "label": "voice-safety",
+      "ok": true,
+      "status": 0
+    }
+  ],
+  "failCount": 0
+}

@@ -20,12 +20,13 @@ The repository maintains two parallel, completely independent app environments t
 | App ID | Branch | Intended Audience | Versioning Style | Test Channel URL |
 | :--- | :--- | :--- | :--- | :--- |
 | `com.dlnraja.tuya.zigbee` | `master` | Preview / soak (features) | `9.0.x` | [Universal Tuya Test](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) |
-| `com.dlnraja.tuya.zigbee` | `stable-v5` | Production / LTS (reliability) | `5.12.x` | **Same App ID** — Publish Stable→Test overwrites master Test |
+| `com.dlnraja.tuya.zigbee.stable` | `stable-v5` | Production / LTS (reliability) | `5.12.x` | [Tuya Unified Stable Test](https://homey.app/a/com.dlnraja.tuya.zigbee.stable/test/) |
 
-### ⚠️ Critical Dual-App Publishing Rules:
-1. **Shared App ID**: both tracks publish `com.dlnraja.tuya.zigbee`. There is **no** live `com.dlnraja.tuya.zigbee.stable` store slot. Promoting stable 5.12.x to Test overwrites soaking master 9.0.x. Soak-guard must skip draft+promote while Test is 9.x unless `force_test`.
-2. **Hermetic Branch Separation**: reliability-only on `stable-v5`; features stay on `master`. Never copy App ID / version / store metadata between tracks.
+### Critical Dual-App Publishing Rules:
+1. **Independent App IDs (2026-08+)**: Stable publishes as `com.dlnraja.tuya.zigbee.stable`. Master Auto-Publish never retargets `.stable`. Do **not** spam Stable republish on Athom `processing_failed` (P139).
+2. **Hermetic Branch Separation**: reliability-only on `stable-v5`; features stay on `master`. Never copy App ID / version / store metadata between tracks the wrong way.
 3. **Migration Integrity**: Never force an update that breaks existing device pairings. The `stable-v5` track must remain backwards-compatible with standard Homey Zigbee interfaces.
+4. **Legacy note**: Older soak-guards assumed one shared App ID forever — keep refuse-overwrite helpers until every stable workflow path is verified `.stable`-only. See [`docs/rules/DUAL_APP_VISION.md`](docs/rules/DUAL_APP_VISION.md).
 
 ### 🧭 Cross-App Prompt Mandate:
 Every prompt, AI automation, issue reply, PR review, diagnostic summary, and code investigation must evaluate the impact on **both** app tracks before answering or changing code. Universal fixes (crash prevention, security redaction, diagnostics, SDK3 validation, publish verification, battery handling, physical buttons, endpoint mapping, and flow reliability) are cross-app candidates by default. The agent must explicitly decide whether the finding should be applied to `master`, `stable-v5`, both, or intentionally kept on one track, while preserving branch isolation and never copying App IDs, version metadata, store URLs, or release-only settings across tracks.

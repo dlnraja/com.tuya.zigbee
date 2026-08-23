@@ -1,0 +1,22 @@
+{
+  "generatedAt": "2026-08-23T14:41:26.819Z",
+  "appVersion": "9.0.630",
+  "dryRun": false,
+  "actions": [
+    {
+      "type": "issue",
+      "number": 513,
+      "couples": [
+        {
+          "mfr": "_TZE284_hodyryli",
+          "pid": "TS0601",
+          "status": "locked",
+          "driver": "climate_sensor_zt08",
+          "note": "compose → climate_sensor_zt08"
+        }
+      ],
+      "skipped": false,
+      "preview": "<!-- tuya-intel-github-respond -->\nQuick check on #513 (app Test tip **v9.0.630**).\n\nWhat I found:\n- `_TZE284_hodyryli+TS0601` → locked (**climate_sensor_zt08**) — compose → climate_sensor_zt08\n\nIf you are on an older Test build: update **Universal Tuya** Test to the latest, then"
+    }
+  ]
+}

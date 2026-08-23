@@ -1,0 +1,58 @@
+{
+  "_meta": {
+    "version": "1.0.0",
+    "schema": "intelligent-infra-v1",
+    "updated": "2026-08-23",
+    "policy": "Consolidate — do not invent parallel caches/loggers. Homey 64MB heap first."
+  },
+  "canonicalCiHttp": "lib/scraper/smart-fetch.js",
+  "deprecated": {
+    "NetworkCache": "lib/cache/NetworkCache.js — prefer smart-fetch",
+    "FingerprintCache": "lib/cache/FingerprintCache.js — pairing uses mfs_db + fingerprint-matcher"
+  },
+  "cacheTiers": {
+    "homey_runtime": {
+      "paths": ["lib/managers/DPCache.js", "lib/utils/CapabilityMapCache.js"],
+      "note": "WeakMap / TTL only — never ship .cache/ to Homey"
+    },
+    "ci_http": {
+      "dirs": [".cache/scraper-cache", ".cache/scanner-blobs", ".cache/scanners", ".cache/urls"],
+      "canonical": "smart-fetch + scanner-cache"
+    },
+    "ci_state": {
+      "dirs": [".github/state"],
+      "gitignored": true
+    },
+    "ai": {
+      "paths": [".ai/KNOWLEDGE_CACHE.json", ".ai/cache"]
+    }
+  },
+  "memory": {
+    "heapHeavyMaxMb": 42,
+    "heapCriticalMb": 52,
+    "tiers": ["boot_light", "deferred_heavy", "on_demand", "ci_only"],
+    "deferredModules": [
+      "ID database / fingerprints refine",
+      "Tuya WiFi UDP discovery",
+      "Analytics insights",
+      "LiveDataUpdater",
+      "Feature modules + flow cards (app deferred pass)"
+    ],
+    "rules": {
+      "bigJson": "JSON.parse(fs.readFileSync(path)) Buffer — never utf8 string",
+      "noEagerMfsAtBoot": true,
+      "facade": "lib/performance/IntelligentLazyLoad.js",
+      "budget": "lib/performance/BootBudget.js"
+    }
+  },
+  "logging": {
+    "ci": "tools/ci/intelligent-logger.js",
+    "homey": "lib/diagnostics/DiagnosticLogger.js",
+    "privacy": ".github/scripts/privacy-redactor.js"
+  },
+  "ghaCache": {
+    "action": "actions/cache@v5",
+    "paths": [".cache/scraper-cache/", ".cache/scanner-blobs/", ".cache/scanners/"],
+    "keyTemplate": "${{ runner.os }}-intel-cache-${{ hashFiles('package-lock.json') }}-${{ github.workflow }}"
+  }
+}

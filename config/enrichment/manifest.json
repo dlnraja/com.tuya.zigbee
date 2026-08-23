@@ -84,5 +84,29 @@
         "megathreadTopics": [26439]
       }
     }
+  },
+  "knowledgeWriteTargets": {
+    "deviceTruth": {
+      "path": "docs/knowledge/device-truth.json",
+      "write": "generators-only",
+      "role": "couple/driver lock SSOT"
+    },
+    "dpCouples": {
+      "path": "data/dp_couple_knowledge.json",
+      "write": "merge-stubs-only",
+      "role": "DP meaning per sacred couple"
+    },
+    "misattribution": {
+      "path": "data/user-misattribution-registry.json",
+      "write": "human-and-verified",
+      "role": "forbidden drivers + canonical routes"
+    },
+    "deviceKnowledgeBase": {
+      "path": "data/device-knowledge-base.json",
+      "write": "legacy-redirect",
+      "status": "read-only",
+      "redirectTo": ["deviceTruth", "dpCouples"],
+      "role": "Do not hand-edit — prefer device-truth + dp_couple_knowledge"
+    }
   }
 }

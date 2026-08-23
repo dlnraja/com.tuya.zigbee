@@ -1,0 +1,68 @@
+{
+  "_meta": {
+    "version": "1.0.0",
+    "updated": "2026-08-23",
+    "neverInventPid": true,
+    "softHypothesisNotLock": true
+  },
+  "sources": [
+    {
+      "id": "z2m",
+      "tier": 1,
+      "trust": "high",
+      "script": "scripts/sync/crawl-z2m.js",
+      "cacheDir": ".cache/scraper-cache",
+      "role": "Sacred couple + exposes cross-check"
+    },
+    {
+      "id": "zha",
+      "tier": 1,
+      "trust": "high",
+      "script": "scripts/sync/crawl-zha.js",
+      "cacheDir": ".cache/scraper-cache",
+      "role": "Quirk / cluster cross-check"
+    },
+    {
+      "id": "blakadder",
+      "tier": 1,
+      "trust": "high",
+      "script": "scripts/sync/crawl-blakadder.js",
+      "cacheDir": ".cache/scraper-cache",
+      "role": "Public Zigbee device index"
+    },
+    {
+      "id": "forum-140352",
+      "tier": 1,
+      "trust": "medium",
+      "script": "tools/ci/forum-silent-multi-scan.js",
+      "mode": "SHADOW_GET_ONLY",
+      "role": "User symptoms — never POST"
+    },
+    {
+      "id": "gmail-diags",
+      "tier": 1,
+      "trust": "high",
+      "script": ".github/scripts/fetch-gmail-diagnostics.js",
+      "role": "Interview couples + FLOW-GUARD / crash patterns"
+    },
+    {
+      "id": "johan",
+      "tier": 1,
+      "trust": "medium",
+      "script": "tools/ci/johan-dump.js",
+      "role": "Read-only upstream issues — implement silently"
+    },
+    {
+      "id": "alt-homey-apps",
+      "tier": 2,
+      "trust": "low",
+      "role": "Pattern mining only — no external attribution in changelogs/forum"
+    },
+    {
+      "id": "homey-sdk3-docs",
+      "tier": 2,
+      "trust": "high",
+      "role": "Flow card / capability schema truth"
+    }
+  ]
+}

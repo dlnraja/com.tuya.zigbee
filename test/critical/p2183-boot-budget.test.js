@@ -46,4 +46,18 @@ describe('P2183 boot budget (Peter memory / greyed Flows)', () => {
     assert.strictEqual(BootBudget.shouldTxSleepy({ mainsPowered: false }, 10 * 1024 * 1024), false);
     assert.strictEqual(BootBudget.shouldTxSleepy({ mainsPowered: true }, 60 * 1024 * 1024), false);
   });
+
+  it('does not eager-load mfs_db or fingerprints.json in onInit', () => {
+    const appJs = fs.readFileSync(path.join(__dirname, '..', '..', 'app.js'), 'utf8');
+    const onInit = appJs.slice(appJs.indexOf('async onInit()'), appJs.indexOf('_scheduleDeferredMasterFeatures'));
+    assert.doesNotMatch(onInit, /mfs_db\.json/);
+    assert.doesNotMatch(onInit, /fingerprints\.json/);
+  });
+
+  it('IntelligentLazyLoad facade is Homey-safe and wraps BootBudget', () => {
+    const Lazy = require('../../lib/performance/IntelligentLazyLoad');
+    assert.strictEqual(Lazy.BootBudget, BootBudget);
+    assert.equal(typeof Lazy.loadJsonBuffer, 'function');
+    assert.equal(typeof Lazy.whenHeapAllows, 'function');
+  });
 });

@@ -46,7 +46,33 @@ npm run enrich:silent
 npm run resilience:all
 npm run ai:plan-guard
 npm run workflow:smoke
+npm run infra:cache-stats
+npm run infra:log-smoke
+npm run infra:sources
+npm run flow:audit
+npm run github:intel-respond
 
 # Homey runtime is validated by device/driver tests, not by GHA catalogs
 node --test test/critical/p2223-button-capture-cascade.test.js
+node --test test/critical/p2183-boot-budget.test.js
 ```
+
+## Intelligent infra (caches / logs / knowledge / memory)
+
+SSOT: [`config/architecture/intelligent-infra.json`](../config/architecture/intelligent-infra.json) · verified sources: [`config/architecture/verified-sources.json`](../config/architecture/verified-sources.json).
+
+| Concern | Canonical |
+|---------|-----------|
+| CI HTTP | `lib/scraper/smart-fetch.js` (not NetworkCache) |
+| CI logs | `tools/ci/intelligent-logger.js` |
+| Knowledge writes | `config/enrichment/manifest.json` → `knowledgeWriteTargets` |
+| Homey memory | `BootBudget` + `lib/performance/IntelligentLazyLoad.js` — Buffer JSON, deferred heavy features |
+
+### Memory / lazy (Homey ~64MB)
+
+- **boot_light**: drivers start; no eager `mfs_db` / fingerprints giant parse
+- **deferred_heavy**: ID refine, UDP, LiveData, flow feature modules (`app.js` `_scheduleDeferredMasterFeatures`)
+- **on_demand**: `lazyRequire` / `whenHeapAllows` under pressure → skip
+- **ci_only**: `.cache/*`, enrichment catalogs — never in Homey package
+
+Big JSON: `JSON.parse(fs.readFileSync(path))` (Buffer). Never `'utf8'` on multi-MB files.

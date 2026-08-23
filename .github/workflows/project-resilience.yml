@@ -63,6 +63,17 @@ jobs:
       - name: Install deps
         run: npm ci --prefer-offline --no-audit || npm install --no-audit
 
+      - name: Restore intel scraper cache
+        uses: actions/cache@caa296126883cff596d87d8935842f9db880ef25 # v5.1.0
+        with:
+          path: |
+            .cache/scraper-cache/
+            .cache/scanner-blobs/
+            .cache/scanners/
+          key: ${{ runner.os }}-intel-cache-${{ hashFiles('package-lock.json') }}-${{ github.workflow }}
+          restore-keys: |
+            ${{ runner.os }}-intel-cache-
+
       - name: "Workflow smoke (YAML + inventory + critical)"
         continue-on-error: true
         timeout-minutes: 8
@@ -73,6 +84,8 @@ jobs:
           node tools/ci/ai-plan-guard.js --preflight || echo "ai plan warn"
           node tools/ci/ai-quota-report.js || true
           npm run security-scan || echo "security-scan warn"
+          npm run infra:cache-stats || echo "cache-stats warn"
+          npm run infra:log-smoke || true
 
       - name: "P2225 Inventory features + historical bugs"
         if: always()
