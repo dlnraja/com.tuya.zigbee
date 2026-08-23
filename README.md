@@ -33,7 +33,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.628 |
+| **App Version** | v9.0.629 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,354 |
 | **Pairing Variants** | 16,521 (4 case combos per fingerprint) |
@@ -102,6 +102,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.629** | Tongou DIN meter pairing lock (not Smart RCBO); block DP6 raw→humidity; button flow ID heuristics; resilience critical-first inventory; . |
 | **v9.0.628** | Tongou DIN meter pairing lock (not Smart RCBO); block DP6 raw→humidity; button flow ID heuristics; resilience critical-first inventory; . |
 | **v9.0.627** | Tongou DIN meter pairing lock (not Smart RCBO); block DP6 raw→humidity; button flow ID heuristics; resilience critical-first inventory; G… |
 | **v9.0.626** | Docs cartography for dual App IDs; reliability carry-forward from 9.0.620. |
@@ -113,7 +114,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.620** | P2203 IAS already-enrolled bind + water EF00 skip + FP hygiene. |
 | **v9.0.619** | P2203 IAS already-enrolled bind + water EF00 skip + FP hygiene. |
 | **v9.0.618** | P2203 IAS already-enrolled bind + water EF00 skip + FP hygiene. |
-| **v9.0.617** | P2203: IAS already-enrolled bind + IAS-only water EF00 skip; FP hygiene 2putqrmw. |
 
 <!-- CHANGELOG_END -->
 
