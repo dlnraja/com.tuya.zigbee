@@ -71,5 +71,12 @@
       }
     }
   ],
-  "id": "smart_rcbo"
+  "id": "smart_rcbo",
+  "capabilitiesOptions": {
+    "button.1": {
+      "setable": false,
+      "maintenanceAction": true,
+      "getable": false
+    }
+  }
 }
