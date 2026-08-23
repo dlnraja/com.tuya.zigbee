@@ -112,6 +112,25 @@ function phaseCrossRef() {
   return { findings: state, lastRun: lastState };
 }
 
+/** P2231: merge Blakadder/Z2M/ZHA/forum/gmail couples → market-new report */
+function phaseMarketCouples() {
+  try {
+    const out = runNode('tools/ci/market-couples-intake.js', '');
+    const intakePath = path.join(ROOT, '.github', 'state', 'market-couples', 'intake.json');
+    let stats = {};
+    if (fs.existsSync(intakePath)) {
+      stats = JSON.parse(fs.readFileSync(intakePath, 'utf8'));
+    }
+    return {
+      output: String(out).slice(-400),
+      marketNew: stats.marketNew,
+      needsReview: stats.needsReview,
+    };
+  } catch (e) {
+    return { error: e.message, soft: true };
+  }
+}
+
 function phaseApplyBlakadder() {
   if (skipCommit) { log('  skipped (--skip-commit)'); return { skipped: true }; }
   try {
@@ -233,6 +252,7 @@ function phasePublishSafe() {
 
 runPhase('1-crawl', phaseCrawl);
 runPhase('2-cross-ref', phaseCrossRef);
+runPhase('2b-market-couples', phaseMarketCouples);
 runPhase('3-apply-blakadder', phaseApplyBlakadder);
 runPhase('3a-multi-source-enrich', phaseMultiSourceEnrich);
 runPhase('3b-bidirectional-enrich', phaseBidirectionalEnrich);

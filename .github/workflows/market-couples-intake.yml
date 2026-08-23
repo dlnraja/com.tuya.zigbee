@@ -1,0 +1,121 @@
+# Market couples intake (P2231)
+# Daily sacred-couple harvest: Blakadder + Z2M + ZHA + cross-ref → mfr+pid candidates
+name: 📡 Market Couples Intake
+
+on:
+  schedule:
+    # After blakadder-fetch (04:15 UTC), before auto-enrich peak
+    - cron: '45 4 * * *'
+  workflow_dispatch:
+    inputs:
+      crawl:
+        description: 'Refresh Blakadder/Z2M/ZHA crawlers before cross-ref'
+        required: false
+        type: boolean
+        default: true
+      dry_run:
+        description: 'Skip git commit (artifact only)'
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: market-couples-intake
+  cancel-in-progress: false
+
+defaults:
+  run:
+    shell: bash
+
+env:
+  NODE_VERSION: '22'
+
+jobs:
+  intake:
+    name: 📡 Harvest mfr+pid
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      FIRECRAWL_API_KEY: ${{ secrets.FIRECRAWL_API_KEY }}
+      SMART_FETCH_READER_FALLBACK: '1'
+
+    steps:
+      - name: 📥 Checkout
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 📦 Setup Node.js
+        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+
+      - name: 📦 Install deps
+        run: npm ci --prefer-offline --no-audit || npm install --no-audit
+
+      - name: Restore intel scraper cache
+        uses: actions/cache@caa296126883cff596d87d8935842f9db880ef25 # v5.1.0
+        with:
+          path: |
+            .cache/scraper-cache/
+            .cache/scanner-blobs/
+          key: ${{ runner.os }}-market-couples-${{ hashFiles('package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-market-couples-
+            ${{ runner.os }}-intel-cache-
+
+      - name: 📡 Market couples intake
+        id: intake
+        run: |
+          ARGS=""
+          if [ "${{ inputs.crawl }}" = "true" ] || [ "${{ github.event_name }}" = "schedule" ]; then
+            ARGS="--crawl"
+          fi
+          echo "## 📡 Market couples intake" >> $GITHUB_STEP_SUMMARY
+          node tools/ci/market-couples-intake.js $ARGS --check 2>&1 | tee market-intake.log
+          echo '```' >> $GITHUB_STEP_SUMMARY
+          tail -n 40 market-intake.log >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+          if [ -f .github/state/market-couples/intake.json ]; then
+            echo "### Summary" >> $GITHUB_STEP_SUMMARY
+            node -e "const j=require('./.github/state/market-couples/intake.json'); console.log('- market-new:', j.marketNew, '| route hints:', j.withRouteHint, '| review:', j.needsReview);" >> $GITHUB_STEP_SUMMARY
+          fi
+
+      - name: 🛡️ P2138 sacred-couple matrix
+        run: node tools/ci/p2138-sacred-couple-matrix-gate.js
+
+      - name: 📦 Upload artifacts
+        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5.0.0
+        with:
+          name: market-couples-${{ github.run_id }}
+          path: |
+            .github/state/market-couples/
+            .github/state/mfr-pid-cross-ref.json
+            scripts/sync/data/blakadder.json
+            scripts/sync/data/z2m.json
+            scripts/sync/data/zha.json
+            market-intake.log
+          if-no-files-found: warn
+          retention-days: 14
+
+      - name: 📝 Commit state (master)
+        if: ${{ github.event_name == 'schedule' || inputs.dry_run != true }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .github/state/market-couples/ .github/state/mfr-pid-cross-ref.json .github/state/all-mfr-pid-pairs.json 2>/dev/null || true
+          git add scripts/sync/data/blakadder.json scripts/sync/data/z2m.json scripts/sync/data/zha.json 2>/dev/null || true
+          if git diff --staged --quiet; then
+            echo "Nothing to commit"
+            exit 0
+          fi
+          VER=$(node -p "require('./app.json').version" 2>/dev/null || echo '?')
+          git commit -m "market(P2231): refresh mfr+pid intake v${VER} [skip ci]"
+          git pull --rebase origin master || true
+          git push origin HEAD:master

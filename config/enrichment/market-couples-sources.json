@@ -1,0 +1,53 @@
+{
+  "_meta": {
+    "version": "1.0.0",
+    "updated": "2026-08-24",
+    "why": "SSOT for market mfr+pid intake — sacred couple only (never mfr-only invent)",
+    "doctrine": "docs/knowledge/DEVICE_TRUTH.md"
+  },
+  "marketSources": [
+    "blakadder",
+    "z2m",
+    "zha",
+    "deconz",
+    "johan-issue",
+    "johan-comment",
+    "gmail",
+    "forum"
+  ],
+  "internalSources": [
+    "canonical",
+    "mfs_db",
+    "driver"
+  ],
+  "crawlers": [
+    {
+      "id": "blakadder",
+      "cmd": "node scripts/sync/crawl-blakadder.js",
+      "data": "scripts/sync/data/blakadder.json",
+      "scheduleUtc": "04:15"
+    },
+    {
+      "id": "z2m",
+      "cmd": "node scripts/sync/crawl-z2m.js",
+      "data": "scripts/sync/data/z2m.json",
+      "scheduleUtc": "04:35"
+    },
+    {
+      "id": "zha",
+      "cmd": "node scripts/sync/crawl-zha.js",
+      "data": "scripts/sync/data/zha.json",
+      "scheduleUtc": "04:40"
+    },
+    {
+      "id": "deconz",
+      "cmd": "node scripts/sync/crawl-deconz.js",
+      "data": "scripts/sync/data/deconz.json",
+      "optional": true
+    }
+  ],
+  "gates": [
+    "tools/ci/p2138-sacred-couple-matrix-gate.js",
+    "tools/ci/align-mfs-db-intelligent.js --check"
+  ]
+}

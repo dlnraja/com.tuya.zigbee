@@ -1,13 +1,25 @@
 // cross-ref-all-sources.js — extract mfr+PID from ALL sources and find new combinations
+// P2231: + blakadder, z2m, zha, deconz, forum (market intake)
+'use strict';
+
 const fs = require('fs');
 const path = require('path');
 
+const ROOT = path.resolve(__dirname, '..', '..');
 const mfrPidPairs = new Map(); // key = "mfr|pid" -> { sources: Set, devices: [] }
+
+const TS_PID_RX = /^TS\d{4}[A-Z0-9]?$/;
+const TUYA_MFR_RX = /^(_TZ[A-Z0-9]{1,5}_[A-Z0-9]+|_TYST1[12]_[A-Z0-9]+|_TYZB[0-9]+_[A-Z0-9]+|TUYATEC[A-Z0-9_-]*)$/i;
 
 function addPair(mfr, pid, source, info = {}) {
   if (!mfr || !pid) return;
-  const mfrUpper = mfr.toUpperCase();
-  const pidUpper = pid.toUpperCase();
+  const pidStr = String(pid).trim().replace(/\\u0000/g, '').replace(/\0/g, '');
+  if (!pidStr || pidStr.length > 32) return;
+  // Sacred couple: require TSxxxx productId (never invent pid from ZHA typos)
+  if (!TS_PID_RX.test(pidStr.toUpperCase())) return;
+  const mfrUpper = String(mfr).trim().toUpperCase();
+  if (!TUYA_MFR_RX.test(mfrUpper)) return;
+  const pidUpper = pidStr.toUpperCase();
   const key = mfrUpper + '|' + pidUpper;
   if (!mfrPidPairs.has(key)) {
     mfrPidPairs.set(key, { mfr: mfrUpper, pid: pidUpper, sources: new Set(), info: [] });
@@ -149,6 +161,90 @@ function processDrivers() {
   return count;
 }
 
+// ============== SOURCE 7: BLAKADDER ==============
+function processBlakadder() {
+  const file = path.join(ROOT, 'scripts', 'sync', 'data', 'blakadder.json');
+  if (!fs.existsSync(file)) return 0;
+  const data = JSON.parse(fs.readFileSync(file, 'utf8'));
+  let count = 0;
+  for (const fp of data.fingerprints || []) {
+    if (!fp.mfr || !fp.productId) continue;
+    addPair(fp.mfr, fp.productId, 'blakadder', {
+      vendor: fp.vendor,
+      category: fp.category,
+      slug: fp.blakadderSlug,
+    });
+    count++;
+  }
+  return count;
+}
+
+// ============== SOURCE 8: Z2M ==============
+function processZ2m() {
+  const file = path.join(ROOT, 'scripts', 'sync', 'data', 'z2m.json');
+  if (!fs.existsSync(file)) return 0;
+  const data = JSON.parse(fs.readFileSync(file, 'utf8'));
+  let count = 0;
+  for (const fp of data.fingerprints || []) {
+    if (!fp.mfr || !fp.productId) continue;
+    addPair(fp.mfr, fp.productId, 'z2m', { vendor: fp.vendor, file: fp.file });
+    count++;
+  }
+  return count;
+}
+
+// ============== SOURCE 9: ZHA ==============
+function processZha() {
+  const file = path.join(ROOT, 'scripts', 'sync', 'data', 'zha.json');
+  if (!fs.existsSync(file)) return 0;
+  const data = JSON.parse(fs.readFileSync(file, 'utf8'));
+  let count = 0;
+  for (const fp of data.fingerprints || []) {
+    if (!fp.mfr || !fp.productId) continue;
+    if (!TS_PID_RX.test(String(fp.productId).toUpperCase())) continue;
+    addPair(fp.mfr, fp.productId, 'zha', { file: fp.file });
+    count++;
+  }
+  return count;
+}
+
+// ============== SOURCE 10: DECONZ ==============
+function processDeconz() {
+  const file = path.join(ROOT, 'scripts', 'sync', 'data', 'deconz.json');
+  if (!fs.existsSync(file)) return 0;
+  const data = JSON.parse(fs.readFileSync(file, 'utf8'));
+  let count = 0;
+  for (const fp of data.fingerprints || data.devices || []) {
+    const mfr = fp.mfr || fp.manufacturerName;
+    const pid = fp.productId || fp.modelId;
+    if (!mfr || !pid) continue;
+    addPair(mfr, pid, 'deconz', { model: fp.model });
+    count++;
+  }
+  return count;
+}
+
+// ============== SOURCE 11: FORUM SHADOW ==============
+function processForum() {
+  // Canonical state only — skip local reports/ dumps (may contain heuristic cartesian noise)
+  const file = path.join(ROOT, '.github', 'state', 'forum', 'couples-extracted.json');
+  if (!fs.existsSync(file)) return 0;
+  let data;
+  try { data = JSON.parse(fs.readFileSync(file, 'utf8')); } catch { return 0; }
+  const list = Array.isArray(data) ? data : (data.couples || data.items || []);
+  let count = 0;
+  for (const c of list) {
+    const mfr = c.mfr || c.manufacturerName;
+    const pid = c.pid || c.productId || c.modelId;
+    if (!mfr || !pid) continue;
+    // Skip low-confidence heuristic extractions
+    if (Number(c.sourceCount || 0) < 1) continue;
+    addPair(mfr, pid, 'forum', { topicId: c.topicId, sourceCount: c.sourceCount });
+    count++;
+  }
+  return count;
+}
+
 // ============== MAIN ==============
 console.log('=== CROSS-REFERENCING ALL SOURCES ===\n');
 console.log('Processing sources...');
@@ -159,7 +255,12 @@ const counts = {
   gmail: processGmail(),
   canonical: processCanonical(),
   mfs_db: processMfsDb(),
-  drivers: processDrivers()
+  drivers: processDrivers(),
+  blakadder: processBlakadder(),
+  z2m: processZ2m(),
+  zha: processZha(),
+  deconz: processDeconz(),
+  forum: processForum(),
 };
 
 console.log('\n=== PAIRS EXTRACTED ===');
@@ -180,7 +281,8 @@ for (const [key, entry] of mfrPidPairs) {
 }
 
 // Find pairs that are in user data (Johan, Gmail) but NOT in canonical/mfs_db/drivers
-const userSources = new Set(['johan-issue', 'johan-comment', 'gmail']);
+const userSources = new Set(['johan-issue', 'johan-comment', 'gmail', 'forum']);
+const marketSources = new Set(['blakadder', 'z2m', 'zha', 'deconz', 'johan-issue', 'johan-comment', 'gmail', 'forum']);
 const internalSources = new Set(['canonical', 'mfs_db', 'driver']);
 const newInUserOnly = [];
 for (const [key, entry] of mfrPidPairs) {
@@ -219,6 +321,26 @@ for (const e of inMfsNotDrivers.slice(0, 15)) {
   console.log('  ' + e.mfr + ' + ' + e.pid + ' (driverHint: ' + [...e.info].map(i => i.driverHint).filter(Boolean).join(',') + ')');
 }
 
+// Market-new: catalog/user-verified sources, not in driver compose
+const catalogSources = new Set(['blakadder', 'z2m', 'zha', 'deconz']);
+const trustedUserSources = new Set(['gmail', 'johan-issue', 'johan-comment']);
+const marketNew = [];
+for (const [, entry] of mfrPidPairs) {
+  const src = [...entry.sources];
+  const inDriver = entry.sources.has('driver');
+  const inCatalog = src.some((s) => catalogSources.has(s));
+  const inTrustedUser = src.some((s) => trustedUserSources.has(s));
+  const forumOnly = entry.sources.has('forum') && !inCatalog && !inTrustedUser;
+  if (!inDriver && (inCatalog || inTrustedUser) && !forumOnly) {
+    marketNew.push(entry);
+  }
+}
+marketNew.sort((a, b) => a.mfr.localeCompare(b.mfr) || a.pid.localeCompare(b.pid));
+console.log('\nMarket-new (external sources, not in driver.compose):', marketNew.length);
+for (const e of marketNew.slice(0, 20)) {
+  console.log('  ' + e.mfr + ' + ' + e.pid + ' (' + [...e.sources].join(',') + ')');
+}
+
 // ============== SUMMARY ==============
 const summary = {
   meta: { generatedAt: new Date().toISOString() },
@@ -240,14 +362,32 @@ const summary = {
   newInUserOnlyList: newInUserOnly.map(e => ({
     mfr: e.mfr, pid: e.pid,
     sources: [...e.sources]
-  }))
+  })),
+  marketNew: marketNew.length,
+  marketNewList: marketNew.slice(0, 500).map((e) => ({
+    mfr: e.mfr,
+    pid: e.pid,
+    sources: [...e.sources],
+    meta: e.info.slice(0, 3),
+  })),
 };
-fs.writeFileSync('.github/state/mfr-pid-cross-ref.json', JSON.stringify(summary, null, 2));
+const stateDir = path.join(ROOT, '.github', 'state');
+if (!fs.existsSync(stateDir)) fs.mkdirSync(stateDir, { recursive: true });
+fs.writeFileSync(path.join(stateDir, 'mfr-pid-cross-ref.json'), JSON.stringify(summary, null, 2));
 console.log('\nSaved summary to .github/state/mfr-pid-cross-ref.json');
 
 // Save the full pairs map for analysis
 const allPairs = [...mfrPidPairs.entries()].map(([k, v]) => ({
   mfr: v.mfr, pid: v.pid, sources: [...v.sources], info: v.info
 }));
-fs.writeFileSync('.github/state/all-mfr-pid-pairs.json', JSON.stringify(allPairs, null, 2));
+fs.writeFileSync(path.join(stateDir, 'all-mfr-pid-pairs.json'), JSON.stringify(allPairs, null, 2));
 console.log('Saved all pairs to .github/state/all-mfr-pid-pairs.json');
+
+const marketDir = path.join(stateDir, 'market-couples');
+if (!fs.existsSync(marketDir)) fs.mkdirSync(marketDir, { recursive: true });
+fs.writeFileSync(path.join(marketDir, 'cross-ref-summary.json'), JSON.stringify({
+  generatedAt: summary.meta.generatedAt,
+  marketNew: summary.marketNew,
+  marketNewList: summary.marketNewList,
+  bySource: summary.bySource,
+}, null, 2));
