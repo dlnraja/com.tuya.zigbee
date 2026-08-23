@@ -1,39 +1,36 @@
 # Battery / Button Intelligence Gate
 
-Generated: 2026-08-16T15:00:23.193Z
+Generated: 2026-08-23T13:02:59.286Z
 
 - Errors: **0**
-- Warnings: **79**
+- Warnings: **74**
 
 | Rule | Severity | File | Line | Detail |
 |------|----------|------|------|--------|
 | B5 | warn | `drivers/motion_sensor/device.js` | 1452 | batteryVoltage scaled by a hardcoded unit divisor — remotes reporting mV read ten times too high; use normalizeZclBatteryVoltagePercent |
-| B5 | warn | `drivers/sensor_contact_motion/device.js` | 1441 | batteryVoltage scaled by a hardcoded unit divisor — remotes reporting mV read ten times too high; use normalizeZclBatteryVoltagePercent |
+| B5 | warn | `drivers/sensor_contact_motion/device.js` | 1442 | batteryVoltage scaled by a hardcoded unit divisor — remotes reporting mV read ten times too high; use normalizeZclBatteryVoltagePercent |
 | B5 | warn | `lib/BatteryManagerV4.js` | 496 | batteryVoltage scaled by a hardcoded unit divisor — remotes reporting mV read ten times too high; use normalizeZclBatteryVoltagePercent |
 | B5 | warn | `lib/BatteryManagerV4.js` | 623 | batteryVoltage scaled by a hardcoded unit divisor — remotes reporting mV read ten times too high; use normalizeZclBatteryVoltagePercent |
-| B5 | warn | `lib/devices/BaseUnifiedDevice.js` | 1917 | batteryVoltage scaled by a hardcoded unit divisor — remotes reporting mV read ten times too high; use normalizeZclBatteryVoltagePercent |
-| B5 | warn | `lib/devices/BaseUnifiedDevice.js` | 3316 | batteryVoltage scaled by a hardcoded unit divisor — remotes reporting mV read ten times too high; use normalizeZclBatteryVoltagePercent |
-| B5 | warn | `lib/devices/BaseUnifiedDevice.js` | 3645 | batteryVoltage scaled by a hardcoded unit divisor — remotes reporting mV read ten times too high; use normalizeZclBatteryVoltagePercent |
-| B5 | warn | `lib/devices/BaseUnifiedDevice.js` | 4354 | batteryVoltage scaled by a hardcoded unit divisor — remotes reporting mV read ten times too high; use normalizeZclBatteryVoltagePercent |
-| B5 | warn | `lib/devices/BaseUnifiedDevice.js` | 4806 | batteryVoltage scaled by a hardcoded unit divisor — remotes reporting mV read ten times too high; use normalizeZclBatteryVoltagePercent |
-| B5 | warn | `lib/devices/ButtonDevice.js` | 1198 | batteryVoltage scaled by a hardcoded unit divisor — remotes reporting mV read ten times too high; use normalizeZclBatteryVoltagePercent |
-| B5 | warn | `lib/devices/UnifiedSensorBase.js` | 1422 | batteryVoltage scaled by a hardcoded unit divisor — remotes reporting mV read ten times too high; use normalizeZclBatteryVoltagePercent |
-| B5 | warn | `lib/devices/UnifiedSensorBase.js` | 4605 | batteryVoltage scaled by a hardcoded unit divisor — remotes reporting mV read ten times too high; use normalizeZclBatteryVoltagePercent |
+| B5 | warn | `lib/devices/BaseUnifiedDevice.js` | 1943 | batteryVoltage scaled by a hardcoded unit divisor — remotes reporting mV read ten times too high; use normalizeZclBatteryVoltagePercent |
+| B5 | warn | `lib/devices/BaseUnifiedDevice.js` | 3363 | batteryVoltage scaled by a hardcoded unit divisor — remotes reporting mV read ten times too high; use normalizeZclBatteryVoltagePercent |
+| B5 | warn | `lib/devices/BaseUnifiedDevice.js` | 3695 | batteryVoltage scaled by a hardcoded unit divisor — remotes reporting mV read ten times too high; use normalizeZclBatteryVoltagePercent |
+| B5 | warn | `lib/devices/BaseUnifiedDevice.js` | 4404 | batteryVoltage scaled by a hardcoded unit divisor — remotes reporting mV read ten times too high; use normalizeZclBatteryVoltagePercent |
+| B5 | warn | `lib/devices/BaseUnifiedDevice.js` | 4859 | batteryVoltage scaled by a hardcoded unit divisor — remotes reporting mV read ten times too high; use normalizeZclBatteryVoltagePercent |
+| B5 | warn | `lib/devices/UnifiedSensorBase.js` | 1452 | batteryVoltage scaled by a hardcoded unit divisor — remotes reporting mV read ten times too high; use normalizeZclBatteryVoltagePercent |
+| B5 | warn | `lib/devices/UnifiedSensorBase.js` | 4723 | batteryVoltage scaled by a hardcoded unit divisor — remotes reporting mV read ten times too high; use normalizeZclBatteryVoltagePercent |
 | B5 | warn | `lib/diagnostics/HealthCheck.js` | 151 | batteryVoltage scaled by a hardcoded unit divisor — remotes reporting mV read ten times too high; use normalizeZclBatteryVoltagePercent |
-| B5 | warn | `lib/tuya/DataRecoveryManager.js` | 463 | batteryVoltage scaled by a hardcoded unit divisor — remotes reporting mV read ten times too high; use normalizeZclBatteryVoltagePercent |
-| B5 | warn | `lib/tuya/TuyaSyncManager.js` | 232 | batteryVoltage scaled by a hardcoded unit divisor — remotes reporting mV read ten times too high; use normalizeZclBatteryVoltagePercent |
-| B5 | warn | `lib/utils/battery-reader.js` | 82 | batteryVoltage scaled by a hardcoded unit divisor — remotes reporting mV read ten times too high; use normalizeZclBatteryVoltagePercent |
+| B5 | warn | `lib/tuya/DataRecoveryManager.js` | 484 | batteryVoltage scaled by a hardcoded unit divisor — remotes reporting mV read ten times too high; use normalizeZclBatteryVoltagePercent |
+| B5 | warn | `lib/tuya/TuyaSyncManager.js` | 234 | batteryVoltage scaled by a hardcoded unit divisor — remotes reporting mV read ten times too high; use normalizeZclBatteryVoltagePercent |
 | F1 | warn | `drivers/bulb_dimmable/driver.compose.json` | - | marketing model names used as productId (ZG-301Z, ZG-302Z1) — the hardware reports TS0601/TS02xx, so these entries never match; real couples are in data/marketing-model-alias-registry.json |
 | F1 | warn | `drivers/button_wireless/driver.compose.json` | - | marketing model names used as productId (ZG-101ZL) — the hardware reports TS0601/TS02xx, so these entries never match; real couples are in data/marketing-model-alias-registry.json |
 | F1 | warn | `drivers/button_wireless_1/driver.compose.json` | - | marketing model names used as productId (ZG-101ZL) — the hardware reports TS0601/TS02xx, so these entries never match; real couples are in data/marketing-model-alias-registry.json |
-| F1 | warn | `drivers/button_wireless_2/driver.compose.json` | - | marketing model names used as productId (ZG-301Z, ZG-302Z1, ZG-302Z2, ZG-305Z) — the hardware reports TS0601/TS02xx, so these entries never match; real couples are in data/marketing-model-alias-registry.json |
+| F1 | warn | `drivers/button_wireless_2/driver.compose.json` | - | marketing model names used as productId (ZG-301Z, ZG-302Z1, ZG-302Z2) — the hardware reports TS0601/TS02xx, so these entries never match; real couples are in data/marketing-model-alias-registry.json |
 | F1 | warn | `drivers/button_wireless_4/driver.compose.json` | - | marketing model names used as productId (ZG-301Z, ZG-302Z1) — the hardware reports TS0601/TS02xx, so these entries never match; real couples are in data/marketing-model-alias-registry.json |
 | F1 | warn | `drivers/button_wireless_plug/driver.compose.json` | - | marketing model names used as productId (ZG-225Z, ZG-227Z, ZG-227ZL) — the hardware reports TS0601/TS02xx, so these entries never match; real couples are in data/marketing-model-alias-registry.json |
 | F1 | warn | `drivers/button_wireless_switch/driver.compose.json` | - | marketing model names used as productId (ZG-301Z, ZG-302Z1) — the hardware reports TS0601/TS02xx, so these entries never match; real couples are in data/marketing-model-alias-registry.json |
 | F1 | warn | `drivers/climate_sensor/driver.compose.json` | - | marketing model names used as productId (ZG-204ZE, ZG-204ZH, ZG-204ZK, ZG-204ZL, ZG-204ZM, ZG-204ZQ, ZG-204ZV, ZG-205Z, ZG-205ZL, ZG-227Z, ZG-227ZL, ZG-302Z1, ZG-302ZL, ZG-302ZM) — the hardware reports TS0601/TS02xx, so these entries never match; real couples are in data/marketing-model-alias-registry.json |
 | F1 | warn | `drivers/climate_sensor_energy/driver.compose.json` | - | marketing model names used as productId (ZG-227Z, ZG-227ZL) — the hardware reports TS0601/TS02xx, so these entries never match; real couples are in data/marketing-model-alias-registry.json |
 | F1 | warn | `drivers/contact_sensor/driver.compose.json` | - | marketing model names used as productId (ZG-102Z, ZG-102ZL) — the hardware reports TS0601/TS02xx, so these entries never match; real couples are in data/marketing-model-alias-registry.json |
-| F1 | warn | `drivers/contact_sensor_zigbee/driver.compose.json` | - | marketing model names used as productId (ZG-102Z, ZG-102ZL) — the hardware reports TS0601/TS02xx, so these entries never match; real couples are in data/marketing-model-alias-registry.json |
 | F1 | warn | `drivers/curtain_motor/driver.compose.json` | - | marketing model names used as productId (ZG-301Z, ZG-302Z1) — the hardware reports TS0601/TS02xx, so these entries never match; real couples are in data/marketing-model-alias-registry.json |
 | F1 | warn | `drivers/curtain_motor_shutter/driver.compose.json` | - | marketing model names used as productId (ZG-227Z, ZG-227ZL) — the hardware reports TS0601/TS02xx, so these entries never match; real couples are in data/marketing-model-alias-registry.json |
 | F1 | warn | `drivers/device_plug_smart/driver.compose.json` | - | marketing model names used as productId (ZG-227Z, ZG-227ZL) — the hardware reports TS0601/TS02xx, so these entries never match; real couples are in data/marketing-model-alias-registry.json |
@@ -71,7 +68,7 @@ Generated: 2026-08-16T15:00:23.193Z
 | F1 | warn | `drivers/soilsensor_2/driver.compose.json` | - | marketing model names used as productId (ZG-303Z) — the hardware reports TS0601/TS02xx, so these entries never match; real couples are in data/marketing-model-alias-registry.json |
 | F1 | warn | `drivers/soil_sensor/driver.compose.json` | - | marketing model names used as productId (ZG-303Z) — the hardware reports TS0601/TS02xx, so these entries never match; real couples are in data/marketing-model-alias-registry.json |
 | F1 | warn | `drivers/switch_1gang/driver.compose.json` | - | marketing model names used as productId (ZG-301Z, ZG-302Z1) — the hardware reports TS0601/TS02xx, so these entries never match; real couples are in data/marketing-model-alias-registry.json |
-| F1 | warn | `drivers/switch_2gang/driver.compose.json` | - | marketing model names used as productId (ZG-302Z2, ZG-305Z) — the hardware reports TS0601/TS02xx, so these entries never match; real couples are in data/marketing-model-alias-registry.json |
+| F1 | warn | `drivers/switch_2gang/driver.compose.json` | - | marketing model names used as productId (ZG-305Z, ZG-302Z2) — the hardware reports TS0601/TS02xx, so these entries never match; real couples are in data/marketing-model-alias-registry.json |
 | F1 | warn | `drivers/switch_3gang/driver.compose.json` | - | marketing model names used as productId (ZG-301Z, ZG-302Z1, ZG-302Z3) — the hardware reports TS0601/TS02xx, so these entries never match; real couples are in data/marketing-model-alias-registry.json |
 | F1 | warn | `drivers/switch_4gang/driver.compose.json` | - | marketing model names used as productId (ZG-301Z, ZG-302Z1) — the hardware reports TS0601/TS02xx, so these entries never match; real couples are in data/marketing-model-alias-registry.json |
 | F1 | warn | `drivers/switch_4_gang_metering/driver.compose.json` | - | marketing model names used as productId (ZG-101ZD) — the hardware reports TS0601/TS02xx, so these entries never match; real couples are in data/marketing-model-alias-registry.json |
@@ -79,8 +76,6 @@ Generated: 2026-08-16T15:00:23.193Z
 | F1 | warn | `drivers/temphumidsensor5/driver.compose.json` | - | marketing model names used as productId (ZG-227Z) — the hardware reports TS0601/TS02xx, so these entries never match; real couples are in data/marketing-model-alias-registry.json |
 | F1 | warn | `drivers/vibration_sensor/driver.compose.json` | - | marketing model names used as productId (ZG-102ZM, ZG-103ZL, ZG-103Z) — the hardware reports TS0601/TS02xx, so these entries never match; real couples are in data/marketing-model-alias-registry.json |
 | F1 | warn | `drivers/wall_switch_1_gang_tuya/driver.compose.json` | - | marketing model names used as productId (ZG-302Z1) — the hardware reports TS0601/TS02xx, so these entries never match; real couples are in data/marketing-model-alias-registry.json |
-| F1 | warn | `drivers/wall_switch_3gang_1way/driver.compose.json` | - | marketing model names used as productId (ZG-227Z, ZG-227ZL) — the hardware reports TS0601/TS02xx, so these entries never match; real couples are in data/marketing-model-alias-registry.json |
-| F1 | warn | `drivers/wall_switch_4gang_1way/driver.compose.json` | - | marketing model names used as productId (ZG-301Z, ZG-302Z1) — the hardware reports TS0601/TS02xx, so these entries never match; real couples are in data/marketing-model-alias-registry.json |
 | F1 | warn | `drivers/wall_switch_5_gang_tuya/driver.compose.json` | - | marketing model names used as productId (ZG-302Z1) — the hardware reports TS0601/TS02xx, so these entries never match; real couples are in data/marketing-model-alias-registry.json |
 | F1 | warn | `drivers/water_detector/driver.compose.json` | - | marketing model names used as productId (ZG-102Z, ZG-102ZL) — the hardware reports TS0601/TS02xx, so these entries never match; real couples are in data/marketing-model-alias-registry.json |
 | F1 | warn | `drivers/water_leak_sensor/driver.compose.json` | - | marketing model names used as productId (ZG-222Z, ZG-222ZA, ZG-223Z) — the hardware reports TS0601/TS02xx, so these entries never match; real couples are in data/marketing-model-alias-registry.json |

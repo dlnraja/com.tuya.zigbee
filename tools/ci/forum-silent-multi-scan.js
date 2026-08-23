@@ -134,6 +134,7 @@ async function fetchTopicTail(topicId, max) {
   return {
     title: meta.title,
     posts_count: meta.posts_count,
+    highest_post_number: meta.highest_post_number,
     last_posted_at: meta.last_posted_at,
     posts,
   };
@@ -198,14 +199,23 @@ async function main() {
   ensureDir();
   const localMfrs = loadLocalMfrs();
   const topics = DEFAULT_TOPICS.filter((t) => !topicFilter || topicFilter.has(t.id));
+
+  // WHY: --topics partial refresh must not wipe other topic rows
+  const prior = fs.existsSync(DIGEST_PATH)
+    ? JSON.parse(fs.readFileSync(DIGEST_PATH, 'utf8'))
+    : null;
   const digest = {
     generatedAt: new Date().toISOString(),
     replyPolicy: 'REPLY_TOPICS=140352 only — other topics are READ-ONLY',
     maxPostsPerTopic: maxPosts,
-    topics: [],
+    topics: topicFilter && prior?.topics?.length
+      ? prior.topics.filter((t) => !topicFilter.has(t.id))
+      : [],
     totals: { actionable: 0, newFPs: 0 },
   };
-  const allNew = [];
+  const allNew = topicFilter && fs.existsSync(NEW_FPS_PATH)
+    ? [...(JSON.parse(fs.readFileSync(NEW_FPS_PATH, 'utf8')).items || [])]
+    : [];
 
   console.log('=== Forum SILENT multi-scan (never posts) ===');
   for (const t of topics) {
@@ -220,6 +230,7 @@ async function main() {
         replyAllowed: t.replyAllowed === true,
         title: data.title,
         posts_count: data.posts_count,
+        highest_post_number: data.highest_post_number,
         last_posted_at: data.last_posted_at,
         scanned: data.posts.length,
         actionable: actionable.slice(-30),
@@ -234,6 +245,12 @@ async function main() {
       digest.topics.push({ id: t.id, name: t.name, error: err.message });
     }
   }
+
+  digest.totals.actionable = digest.topics.reduce(
+    (n, t) => n + (t.actionable || []).length,
+    0,
+  );
+  digest.totals.newFPs = allNew.length;
 
   fs.writeFileSync(DIGEST_PATH, `${JSON.stringify(digest, null, 2)}\n`);
   fs.writeFileSync(NEW_FPS_PATH, `${JSON.stringify({

@@ -1,0 +1,692 @@
+{
+  "generatedAt": "2026-08-23T13:02:42.972Z",
+  "policy": "SHADOW forum — intelligence in code/CI only",
+  "methodology": [
+    "Homey gap → parallel complementary stack",
+    "Wire gate/test/workflow",
+    "Honest FIXED/PARTIAL/OPEN"
+  ],
+  "counts": {
+    "domains": 22,
+    "priority1": 7,
+    "bugClasses": 32,
+    "residualOpenPartial": 25,
+    "criticalGaps": 7,
+    "layerSchemes": 5
+  },
+  "criticalPriority": [
+    {
+      "id": "sacred_couple_fp",
+      "severity": 1,
+      "why": "Wrong driver pairing cannot hot-swap; inventing pid destroys fleets",
+      "homeyGap": "No driver hot-swap; mfr-only ambiguous",
+      "stack": [
+        "compose FP",
+        "DeviceFingerprintDB",
+        "misattribution-registry",
+        "p2138 gate",
+        "softHypothesis"
+      ],
+      "bugs": [
+        "fp_collision_ts0601",
+        "sacred_misroute",
+        "enricher_reinject"
+      ],
+      "gates": [
+        "tools/ci/p2138-sacred-couple-matrix-gate.js",
+        "tools/ci/sacred-couple-dry-gate.js"
+      ],
+      "discoveries": [
+        "Tongou _TZE284_6ocnqlhn+TS0601→din_rail_meter",
+        "BSEED m1cvyneb+TS0601→wall_dimmer_tuya 0-1000"
+      ]
+    },
+    {
+      "id": "buttons_bidirectional",
+      "severity": 1,
+      "why": "Homey drops Tuya 0xFD/0xFC; physical↔virtual↔UI loops",
+      "homeyGap": "No physical vs app distinction; mfr OnOff dropped",
+      "stack": [
+        "L1–L8 ButtonCaptureCascade",
+        "Physical+Virtual+UI init",
+        "markAppCommand",
+        "2s dedup"
+      ],
+      "bugs": [
+        "ghost_flow_echo",
+        "missing_capability_listener",
+        "bseed_group_all_gangs"
+      ],
+      "gates": [
+        "tools/ci/battery-button-intelligence-gate.js"
+      ],
+      "discoveries": [
+        "P2220–P2223 cascade",
+        "OnOffBound 0xFD/0xFC",
+        "scene remotes flow-only"
+      ]
+    },
+    {
+      "id": "ias_sleepy",
+      "severity": 1,
+      "why": "Boot poll storms + leftover EF00 brick sleepy IAS",
+      "homeyGap": "zoneStatus shapes; EF00 TX on wake",
+      "stack": [
+        "IASZoneEnhanced.coerce",
+        "shouldSkipIasOnlyEf00Tx",
+        "_ensureIasBound"
+      ],
+      "bugs": [
+        "ias_ef00_leftover",
+        "ias_zonestatus_coerce"
+      ],
+      "gates": [],
+      "discoveries": [
+        "Peter SOS IAS",
+        "k4ej+TS0207 water_leak never EF00"
+      ]
+    },
+    {
+      "id": "battery",
+      "severity": 1,
+      "why": "Half-percent + linear formulas spam false battery",
+      "homeyGap": "0–200 vs 0–100; no nonlinear curves",
+      "stack": [
+        "normalizeZclBatteryPercent",
+        "UnifiedBatteryHandler",
+        "nonlinear profiles"
+      ],
+      "bugs": [
+        "zcl_battery_half",
+        "linear_battery_formula",
+        "phantom_mains_battery"
+      ],
+      "gates": [
+        "tools/ci/p216-zcl-battery-half-percent-gate.js"
+      ],
+      "discoveries": [
+        "P216 ban blind /2"
+      ]
+    },
+    {
+      "id": "energy_divisors",
+      "severity": 1,
+      "why": "Double /100 wrecks power/temp UX",
+      "homeyGap": "AdaptiveDataParser + dpMappings both divide",
+      "stack": [
+        "SmartDivisorManager",
+        "adaptive-double-division-gate",
+        "energy-compose-gate"
+      ],
+      "bugs": [
+        "double_division",
+        "energy_approximation_conflict"
+      ],
+      "gates": [
+        "tools/ci/adaptive-double-division-gate.js",
+        "tools/ci/energy-compose-gate.js"
+      ],
+      "discoveries": [
+        "v8 SmartDivisor"
+      ]
+    },
+    {
+      "id": "ef00_dp",
+      "severity": 1,
+      "why": "Type0 byte_array misread as humidity/climate",
+      "homeyGap": "Opaque 0xEF00; no type semantics without couple",
+      "stack": [
+        "DpByteArrayProfiles",
+        "dp_couple_knowledge",
+        "audit:dp-couples"
+      ],
+      "bugs": [
+        "dp_type0_misread",
+        "sacred_misroute"
+      ],
+      "gates": [
+        "tools/ci/audit-sacred-couple-dps.js"
+      ],
+      "discoveries": [
+        "Tongou DP6 type0 V/A/W composite — not humidity"
+      ]
+    },
+    {
+      "id": "l14_telemetry",
+      "severity": 1,
+      "why": "Raw setCapability floods UI / flows",
+      "homeyGap": "No EMA/ROC / anti-flood in SDK",
+      "stack": [
+        "safeSetCapabilityValue",
+        "SanityFilter",
+        "commitCapability"
+      ],
+      "bugs": [],
+      "gates": [
+        "tools/ci/l14-capability-writers-gate.js"
+      ],
+      "discoveries": [
+        "Phoenix L14 v5.13.6+"
+      ]
+    }
+  ],
+  "domains": [
+    {
+      "id": "battery",
+      "priority": 1,
+      "status": "partial",
+      "homeyGap": "0–200 vs 0–100; no nonlinear curves",
+      "stackCount": 4,
+      "gatesPresent": 2,
+      "gatesTotal": 2,
+      "testsPresent": 3,
+      "dualApp": "BOTH"
+    },
+    {
+      "id": "buttons_bidirectional",
+      "priority": 1,
+      "status": "hardened",
+      "homeyGap": "No physical vs app distinction; mfr OnOff 0xFD/0xFC dropped; unknown 0xE000",
+      "stackCount": 9,
+      "gatesPresent": 1,
+      "gatesTotal": 1,
+      "testsPresent": 4,
+      "dualApp": "BOTH"
+    },
+    {
+      "id": "ef00_dp",
+      "priority": 1,
+      "status": "partial",
+      "homeyGap": "Opaque 0xEF00; type0 misread",
+      "stackCount": 4,
+      "gatesPresent": 1,
+      "gatesTotal": 1,
+      "testsPresent": 2,
+      "dualApp": "BOTH"
+    },
+    {
+      "id": "energy_divisors",
+      "priority": 1,
+      "status": "partial",
+      "homeyGap": "Double division; energy.approximation vs meter caps",
+      "stackCount": 4,
+      "gatesPresent": 3,
+      "gatesTotal": 3,
+      "testsPresent": 2,
+      "dualApp": "BOTH"
+    },
+    {
+      "id": "ias_sleepy",
+      "priority": 1,
+      "status": "partial",
+      "homeyGap": "Boot poll storms; zoneStatus shapes; leftover EF00",
+      "stackCount": 5,
+      "gatesPresent": 0,
+      "gatesTotal": 0,
+      "testsPresent": 3,
+      "dualApp": "BOTH"
+    },
+    {
+      "id": "l14_telemetry",
+      "priority": 1,
+      "status": "partial",
+      "homeyGap": "Raw setCapability floods UI; no EMA/ROC",
+      "stackCount": 4,
+      "gatesPresent": 1,
+      "gatesTotal": 1,
+      "testsPresent": 2,
+      "dualApp": "BOTH"
+    },
+    {
+      "id": "sacred_couple_fp",
+      "priority": 1,
+      "status": "partial",
+      "homeyGap": "No hot-swap; mfr-only pairing ambiguous",
+      "stackCount": 4,
+      "gatesPresent": 3,
+      "gatesTotal": 3,
+      "testsPresent": 2,
+      "dualApp": "BOTH"
+    },
+    {
+      "id": "ci_fleetwood",
+      "priority": 2,
+      "status": "partial",
+      "homeyGap": "N/A — CI purity (braces, shell bash, schema)",
+      "stackCount": 4,
+      "gatesPresent": 1,
+      "gatesTotal": 1,
+      "testsPresent": 0,
+      "dualApp": "BOTH"
+    },
+    {
+      "id": "dimmer_brightness",
+      "priority": 2,
+      "status": "hardened",
+      "homeyGap": "dim 0–1 vs MCU 0–1000",
+      "stackCount": 2,
+      "gatesPresent": 1,
+      "gatesTotal": 1,
+      "testsPresent": 1,
+      "dualApp": "BOTH"
+    },
+    {
+      "id": "dual_app_publish",
+      "priority": 2,
+      "status": "partial",
+      "homeyGap": "Shared Test slot historically",
+      "stackCount": 3,
+      "gatesPresent": 0,
+      "gatesTotal": 0,
+      "testsPresent": 2,
+      "dualApp": "BOTH"
+    },
+    {
+      "id": "enrichment_shadow",
+      "priority": 2,
+      "status": "hardened",
+      "homeyGap": "N/A — ops; forum write forbidden",
+      "stackCount": 3,
+      "gatesPresent": 2,
+      "gatesTotal": 2,
+      "testsPresent": 1,
+      "dualApp": "BOTH"
+    },
+    {
+      "id": "flows",
+      "priority": 2,
+      "status": "partial",
+      "homeyGap": "titleFormatted [[device]]; Missing Capability Listener",
+      "stackCount": 4,
+      "gatesPresent": 0,
+      "gatesTotal": 0,
+      "testsPresent": 2,
+      "dualApp": "BOTH"
+    },
+    {
+      "id": "heap_json",
+      "priority": 2,
+      "status": "partial",
+      "homeyGap": "UTF-16 string OOM on large JSON",
+      "stackCount": 2,
+      "gatesPresent": 1,
+      "gatesTotal": 1,
+      "testsPresent": 1,
+      "dualApp": "BOTH"
+    },
+    {
+      "id": "hybrid_protocol",
+      "priority": 2,
+      "status": "partial",
+      "homeyGap": "Assumes single cluster path",
+      "stackCount": 3,
+      "gatesPresent": 1,
+      "gatesTotal": 1,
+      "testsPresent": 2,
+      "dualApp": "BOTH"
+    },
+    {
+      "id": "identity_normalize",
+      "priority": 2,
+      "status": "partial",
+      "homeyGap": "Case-sensitive mfr/pid mismatches",
+      "stackCount": 3,
+      "gatesPresent": 1,
+      "gatesTotal": 1,
+      "testsPresent": 1,
+      "dualApp": "BOTH"
+    },
+    {
+      "id": "mcu_time",
+      "priority": 2,
+      "status": "partial",
+      "homeyGap": "Wrong epoch / format variants",
+      "stackCount": 3,
+      "gatesPresent": 0,
+      "gatesTotal": 0,
+      "testsPresent": 1,
+      "dualApp": "BOTH"
+    },
+    {
+      "id": "protocol_rxtx_bus",
+      "priority": 2,
+      "status": "partial",
+      "homeyGap": "Single confirm path; reconnect storms",
+      "stackCount": 4,
+      "gatesPresent": 2,
+      "gatesTotal": 2,
+      "testsPresent": 2,
+      "dualApp": "BOTH"
+    },
+    {
+      "id": "timers_destroyed",
+      "priority": 2,
+      "status": "partial",
+      "homeyGap": "setTimeout after destroy",
+      "stackCount": 2,
+      "gatesPresent": 0,
+      "gatesTotal": 0,
+      "testsPresent": 2,
+      "dualApp": "BOTH"
+    },
+    {
+      "id": "bypass_elite_complement",
+      "priority": 3,
+      "status": "partial",
+      "homeyGap": "Documented elite bypass intent — runtime denser now",
+      "stackCount": 4,
+      "gatesPresent": 0,
+      "gatesTotal": 0,
+      "testsPresent": 0,
+      "dualApp": "BOTH"
+    },
+    {
+      "id": "dynamic_adaptation",
+      "priority": 3,
+      "status": "partial",
+      "homeyGap": "Static compose cannot hot-adapt DP/caps",
+      "stackCount": 4,
+      "gatesPresent": 0,
+      "gatesTotal": 0,
+      "testsPresent": 0,
+      "dualApp": "MASTER_ONLY"
+    },
+    {
+      "id": "layers_fusion",
+      "priority": 3,
+      "status": "partial",
+      "homeyGap": "Single-path RX loss",
+      "stackCount": 3,
+      "gatesPresent": 1,
+      "gatesTotal": 1,
+      "testsPresent": 2,
+      "dualApp": "BOTH"
+    },
+    {
+      "id": "wifi_local",
+      "priority": 3,
+      "status": "partial",
+      "homeyGap": "Cloud-only MCU handshake",
+      "stackCount": 2,
+      "gatesPresent": 1,
+      "gatesTotal": 1,
+      "testsPresent": 1,
+      "dualApp": "BOTH"
+    }
+  ],
+  "residualBugs": [
+    {
+      "id": "fp_collision_ts0601",
+      "status": "open",
+      "domains": [
+        "sacred_couple_fp"
+      ],
+      "fix": "sacred locks + softHypothesis"
+    },
+    {
+      "id": "forum_soft_hypothesis",
+      "status": "open",
+      "domains": [
+        "enrichment_shadow"
+      ],
+      "fix": "never invent pid; soft only"
+    },
+    {
+      "id": "p139_processing_failed",
+      "status": "open",
+      "domains": [
+        "dual_app_publish"
+      ],
+      "fix": "wait cooldown no loop"
+    },
+    {
+      "id": "ghost_flow_echo",
+      "status": "partial",
+      "domains": [
+        "buttons_bidirectional",
+        "flows"
+      ],
+      "fix": "markAppCommand + dedup"
+    },
+    {
+      "id": "missing_capability_listener",
+      "status": "partial",
+      "domains": [
+        "buttons_bidirectional",
+        "flows"
+      ],
+      "fix": "P2220/P2221 UI listeners"
+    },
+    {
+      "id": "double_division",
+      "status": "partial",
+      "domains": [
+        "energy_divisors"
+      ],
+      "fix": "SmartDivisorManager + gate"
+    },
+    {
+      "id": "zcl_battery_half",
+      "status": "partial",
+      "domains": [
+        "battery"
+      ],
+      "fix": "normalizeZclBatteryPercent P216"
+    },
+    {
+      "id": "linear_battery_formula",
+      "status": "partial",
+      "domains": [
+        "battery"
+      ],
+      "fix": "nonlinear profiles ban"
+    },
+    {
+      "id": "phantom_mains_battery",
+      "status": "partial",
+      "domains": [
+        "battery",
+        "sacred_couple_fp"
+      ],
+      "fix": "mainsPowered strip"
+    },
+    {
+      "id": "ias_ef00_leftover",
+      "status": "partial",
+      "domains": [
+        "ias_sleepy"
+      ],
+      "fix": "shouldSkipIasOnlyEf00Tx"
+    },
+    {
+      "id": "sacred_misroute",
+      "status": "partial",
+      "domains": [
+        "sacred_couple_fp",
+        "dimmer_brightness",
+        "ef00_dp"
+      ],
+      "fix": "p2138 matrix"
+    },
+    {
+      "id": "oom_json_utf16",
+      "status": "partial",
+      "domains": [
+        "heap_json"
+      ],
+      "fix": "Buffer JSON.parse"
+    },
+    {
+      "id": "settimeout_destroyed",
+      "status": "partial",
+      "domains": [
+        "timers_destroyed"
+      ],
+      "fix": "safe-timers"
+    },
+    {
+      "id": "unsupported_cluster",
+      "status": "partial",
+      "domains": [
+        "hybrid_protocol"
+      ],
+      "fix": "parallelDiscover cascade"
+    },
+    {
+      "id": "mcu_time_wrong",
+      "status": "partial",
+      "domains": [
+        "mcu_time"
+      ],
+      "fix": "guessFormat chain"
+    },
+    {
+      "id": "dp_type0_misread",
+      "status": "partial",
+      "domains": [
+        "ef00_dp"
+      ],
+      "fix": "DpByteArrayProfiles + audit"
+    },
+    {
+      "id": "bseed_group_all_gangs",
+      "status": "partial",
+      "domains": [
+        "buttons_bidirectional"
+      ],
+      "fix": "group strip + per-gang mark"
+    },
+    {
+      "id": "enricher_reinject",
+      "status": "partial",
+      "domains": [
+        "sacred_couple_fp",
+        "enrichment_shadow"
+      ],
+      "fix": "anti-bot + sacred gate"
+    },
+    {
+      "id": "tongou_dp6_as_humidity",
+      "status": "partial",
+      "domains": [
+        "ef00_dp",
+        "sacred_couple_fp"
+      ],
+      "fix": "DpByteArrayProfiles + din_rail_meter couple lock"
+    },
+    {
+      "id": "onoff_fd_dropped",
+      "status": "partial",
+      "domains": [
+        "buttons_bidirectional"
+      ],
+      "fix": "OnOffBoundCluster 0xFD/0xFC + cascade L1"
+    },
+    {
+      "id": "e000_unbound_silent",
+      "status": "partial",
+      "domains": [
+        "buttons_bidirectional"
+      ],
+      "fix": "ButtonCaptureCascade L5 E000 BoundCluster"
+    },
+    {
+      "id": "raw_capability_flood",
+      "status": "partial",
+      "domains": [
+        "l14_telemetry"
+      ],
+      "fix": "safeSetCapabilityValue + SanityFilter"
+    },
+    {
+      "id": "case_sensitive_mfr",
+      "status": "partial",
+      "domains": [
+        "identity_normalize"
+      ],
+      "fix": "CaseInsensitiveMatcher"
+    },
+    {
+      "id": "reconnect_confirm_storm",
+      "status": "partial",
+      "domains": [
+        "protocol_rxtx_bus"
+      ],
+      "fix": "ReconnectBurstCoalescer + confirmInbound"
+    },
+    {
+      "id": "shared_test_slot_overwrite",
+      "status": "partial",
+      "domains": [
+        "dual_app_publish"
+      ],
+      "fix": "independent .stable App ID + soak-guard"
+    }
+  ],
+  "layerSchemes": [
+    "pipeline_l0_l11",
+    "bypass_elite_l1_l9",
+    "capability_protocol_l0_l6",
+    "button_capture_l1_l8",
+    "ai_three_layers"
+  ],
+  "workflowHooks": {
+    "inventory": "tools/ci/inventory-features-bugs.js",
+    "auditCritical": "tools/ci/project-resilience-orchestrator.js --write-report --critical-first",
+    "auditAll": "tools/ci/project-resilience-orchestrator.js --write-report",
+    "enrichGates": "tools/ci/silent-enrichment-orchestrator.js --phase=gates --skip-scan",
+    "shadowEnv": {
+      "FORUM_AUTO_POST": "0",
+      "SHADOW_FORUM": "1",
+      "DISCOURSE_WRITE": "0",
+      "REPLY_TOPICS": ""
+    }
+  },
+  "missingCriticalArtifacts": [],
+  "discoveries": [
+    {
+      "domain": "sacred_couple_fp",
+      "note": "Tongou _TZE284_6ocnqlhn+TS0601→din_rail_meter"
+    },
+    {
+      "domain": "sacred_couple_fp",
+      "note": "BSEED m1cvyneb+TS0601→wall_dimmer_tuya 0-1000"
+    },
+    {
+      "domain": "buttons_bidirectional",
+      "note": "P2220–P2223 cascade"
+    },
+    {
+      "domain": "buttons_bidirectional",
+      "note": "OnOffBound 0xFD/0xFC"
+    },
+    {
+      "domain": "buttons_bidirectional",
+      "note": "scene remotes flow-only"
+    },
+    {
+      "domain": "ias_sleepy",
+      "note": "Peter SOS IAS"
+    },
+    {
+      "domain": "ias_sleepy",
+      "note": "k4ej+TS0207 water_leak never EF00"
+    },
+    {
+      "domain": "battery",
+      "note": "P216 ban blind /2"
+    },
+    {
+      "domain": "energy_divisors",
+      "note": "v8 SmartDivisor"
+    },
+    {
+      "domain": "ef00_dp",
+      "note": "Tongou DP6 type0 V/A/W composite — not humidity"
+    },
+    {
+      "domain": "l14_telemetry",
+      "note": "Phoenix L14 v5.13.6+"
+    }
+  ]
+}

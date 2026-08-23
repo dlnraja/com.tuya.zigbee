@@ -102,12 +102,21 @@ jobs:
           REPLY_TOPICS: '140352'
           FORUM_AUTO_POST: '0'
         run: |
-          echo "## 🔇 Silent multi-topic scan (no replies / no AI paste)" >> $GITHUB_STEP_SUMMARY
+          echo "## 🔇 Silent multi-topic scan (SHADOW — no replies / no AI paste)" >> $GITHUB_STEP_SUMMARY
           MAX="${{ inputs.max_posts || '40' }}"
+          export SHADOW_FORUM=1 DISCOURSE_WRITE=0 FORUM_AUTO_POST=0 REPLY_TOPICS=
           if [ -f tools/ci/forum-silent-multi-scan.js ]; then
             node tools/ci/forum-silent-multi-scan.js --max="$MAX" 2>&1 | tee forum-silent-multi.log || echo "SILENT_SCAN_SKIP"
           else
             echo "forum-silent-multi-scan.js missing — skip"
+          fi
+          if [ -f tools/ci/silent-enrichment-orchestrator.js ]; then
+            echo "## 🔇 Silent enrichment (forum+sync+investigate need-action, no user wait)" >> $GITHUB_STEP_SUMMARY
+            node tools/ci/silent-enrichment-orchestrator.js --phase=forum --skip-scan 2>&1 | tee forum-enrich.log || echo "ENRICH_ORCH_WARN"
+            node tools/ci/silent-enrichment-orchestrator.js --phase=gates --skip-scan 2>&1 | tee forum-gates.log || echo "GATES_WARN"
+          elif [ -f tools/ci/forum-actionable-processor.js ]; then
+            echo "## 📋 Forum actionable processor (P2210 — post-by-post cross-ref)" >> $GITHUB_STEP_SUMMARY
+            node tools/ci/forum-actionable-processor.js 2>&1 | tee forum-actionable-processor.log || echo "PROCESSOR_SKIP"
           fi
           if [ -f tools/ci/forum-ai-paste-gate.js ]; then
             node tools/ci/forum-ai-paste-gate.js --scan-defaults || echo "AI_PASTE_GATE_WARN"
@@ -115,10 +124,34 @@ jobs:
           if [ -f .github/state/forum/multi-silent-digest.json ]; then
             echo "### Digest totals" >> $GITHUB_STEP_SUMMARY
             echo '```json' >> $GITHUB_STEP_SUMMARY
-            node -e "const d=require('./.github/state/forum/multi-silent-digest.json'); console.log(JSON.stringify({totals:d.totals,topics:d.topics.map(t=>({id:t.id,scanned:t.scanned,actionable:(t.actionable||[]).length,newFP:(t.newFPs||[]).length,err:t.error})},null,2))" >> $GITHUB_STEP_SUMMARY
+            node -e "const d=require('./.github/state/forum/multi-silent-digest.json'); console.log(JSON.stringify({totals:d.totals,topics:d.topics.map(t=>({id:t.id,scanned:t.scanned,actionable:(t.actionable||[]).length,newFP:(t.newFPs||[]).length,err:t.error})),null,2))" >> $GITHUB_STEP_SUMMARY
             echo '```' >> $GITHUB_STEP_SUMMARY
           fi
-          echo "Policy: FORUM_AUTO_POST=0 — implement silently, never paste unchecked AI." >> $GITHUB_STEP_SUMMARY
+          if [ -f .github/state/forum/actionable-processor-report.json ]; then
+            echo '```json' >> $GITHUB_STEP_SUMMARY
+            node -e "const r=require('./.github/state/forum/actionable-processor-report.json'); console.log(JSON.stringify(r.totals,null,2))" >> $GITHUB_STEP_SUMMARY
+            echo '```' >> $GITHUB_STEP_SUMMARY
+          fi
+          if [ -f .github/state/forum/topic-140352-parse.json ]; then
+            echo "### Topic 140352 parse (P2214)" >> $GITHUB_STEP_SUMMARY
+            echo '```json' >> $GITHUB_STEP_SUMMARY
+            node -e "const r=require('./.github/state/forum/topic-140352-parse.json'); console.log(JSON.stringify({liveHighest:r.analysis.liveHighest,digestHighest:r.analysis.digestHighestActionable,gap:r.analysis.newPostsSinceDigestScan,status:r.analysis.status},null,2))" >> $GITHUB_STEP_SUMMARY
+            echo '```' >> $GITHUB_STEP_SUMMARY
+          fi
+          if [ -f reports/forum-verify-$(date -u +%F)/NEED_ACTION.md ]; then
+            echo "### NEED_ACTION auto-investigate (shadow)" >> $GITHUB_STEP_SUMMARY
+            head -n 25 "reports/forum-verify-$(date -u +%F)/NEED_ACTION.md" >> $GITHUB_STEP_SUMMARY || true
+          fi
+          # P2225: inventory + critical-first Homey-gap stacks (SHADOW)
+          if [ -f tools/ci/inventory-features-bugs.js ]; then
+            node tools/ci/inventory-features-bugs.js --write-report || echo "INVENTORY_WARN"
+            echo "### Features + bugs inventory" >> $GITHUB_STEP_SUMMARY
+            head -n 30 "reports/resilience-$(date -u +%F)/INVENTORY.md" >> $GITHUB_STEP_SUMMARY || true
+          fi
+          if [ -f tools/ci/project-resilience-orchestrator.js ]; then
+            node tools/ci/project-resilience-orchestrator.js --write-report --critical-first --critical-only || echo "RESILIENCE_CRITICAL_WARN"
+          fi
+          echo "Policy: SHADOW forum — implement silently, never paste unchecked AI." >> $GITHUB_STEP_SUMMARY
 
       # READ-ONLY: image alts, download URLs, diag UUIDs on public threads. Never posts.
       - name: 🖼️ Forum media / screenshot scan
@@ -179,5 +212,7 @@ jobs:
             .github/state/forum-activity-data.json
             forum-poll.log
             forum-silent-multi.log
+            forum-actionable-processor.log
+            reports/forum-verify-*/
           if-no-files-found: warn
           retention-days: 7

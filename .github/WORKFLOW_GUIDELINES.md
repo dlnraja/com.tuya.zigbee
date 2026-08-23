@@ -117,6 +117,97 @@ env:
 - Gate: `node tools/ci/forum-ai-paste-gate.js --scan-defaults`
 - Doctrine: `docs/rules/FORUM_SILENT_HUMANIZE.md`
 - Silent multi-scan: `tools/ci/forum-silent-multi-scan.js` (wired in `forum-poll.yml`, `auto-enrich-closed-loop.yml`, `fetch-diags.yml`)
+- **P2210 — Forum actionable processor:** `tools/ci/forum-actionable-processor.js` (`npm run forum:process`)
+  - Runs **after** `multi-silent-digest.json` exists (scan step above)
+  - Processes every actionable post **one-by-one**: sacred couple extraction, misattribution registry, `KNOWN_ROUTES`, `device-truth.json`, dual-app track (`BOTH` / `MASTER_ONLY` / `REVIEW`)
+  - Writes `.github/state/forum/actionable-processor-report.json` + `reports/forum-verify-YYYY-MM-DD/PROCESS.md`
+  - Chains dry-run `apply-forum-silent-multi.js` + `extract-forum-couples-once.js --out=reports/forum-verify-*`
+  - **Never posts** — silent enrichment only (T157628). Use `--apply-routes` only after human review.
+  - Wired in: `forum-poll.yml`, `auto-enrich-closed-loop.yml`, `fetch-diags.yml`
+- **P2211 — Diagnostic content enricher:** `lib/diagnostics/DiagContentEnricher.js`
+  - Extracts Log ID, user message, sacred couples, driver lines, known signals (IAS coerce, SOS battery spike, etc.)
+  - Used by: `fetch-gmail-diagnostics.js`, `analyze-diag-locally.js`, `render-diag-treat.js`
+  - Commands: `npm run diag:analyze -- path/to/log.txt`, `npm run diag:treat`
+  - Auto TREAT table: `tools/ci/render-diag-treat.js` → `reports/gmail-forum-YYYY-MM-DD/TREAT.md`
+- **P2212 — Sacred couple DP audit:** `tools/ci/audit-sacred-couple-dps.js` (`npm run audit:dp-couples`)
+  - Cross-ref: misattribution registry × `drivers/*/device.js` dpMappings × `data/dp_registry.json` × `data/dp_couple_knowledge.json`
+  - Flags RAW/type-0 without parser, Z2M-known DPs missing in driver, TX gaps
+  - Guide: `docs/guides/DP_INTERPRETATION.md` — **never interpret DP number without (mfr, pid)**
+  - Byte array parsers: `lib/tuya/DpByteArrayProfiles.js`
+  - Wired in: `fetch-diags.yml` (after diag treat)
+- **P2213 — User impact investigator:** `tools/ci/user-impact-investigator.js` (`npm run user:impact`)
+  - Per-user device matrix: forum posts + diag lineage + `data/user-impact-catalog.json`
+  - Output: `reports/forum-verify-*/users/*.md` + `INDEX.json`
+- **P2214 — Forum digest parse:** `tools/ci/parse-forum-digest.js` + Python twin (`npm run forum:parse-digest`)
+  - Verifies live Discourse `highest_post_number` vs digest actionable tail (cross-platform; no PowerShell one-liners)
+  - State: `.github/state/forum/topic-140352-parse.json`
+- **P2215 — Silent enrichment orchestrator:** `tools/ci/silent-enrichment-orchestrator.js` (`npm run enrich:silent`)
+  - Chains P2210–P2217 + diag treat + DP audit + user impact + gates
+  - Phases: `--phase=forum|diag|users|investigate|gates|all` · `--skip-scan` · `--with-media` · `--with-pm` · `--apply-routes`
+  - State: `.github/state/silent-enrichment/last-run.json` · summary: `reports/forum-verify-*/ENRICHMENT.md`
+  - Wired in: `forum-poll.yml`, `auto-enrich-closed-loop.yml`, `fetch-diags.yml`, `multi-source-enrich-orchestrator.js`
+- **P2216 — Enrichment architecture (manifest-driven):**
+  - Manifest: `config/enrichment/manifest.json` — layers, state paths, merge rules
+  - Phases: `config/enrichment/phases.json` — declarative pipeline (`lib/enrichment/PhaseRunner.js`)
+  - Models: `config/enrichment/models/action-model.json`, `issue-model.json`, `investigation-model.json`
+  - Sync: `npm run enrich:sync` → `tools/ci/sync-enrichment-profiles.js` (stubs only, never overwrite curated)
+  - Profile pages: `npm run enrich:profiles` → `docs/knowledge/profiles/` (users + couples INDEX)
+  - Library: `lib/enrichment/EnrichmentRegistry.js`, `ProfileSynchronizer.js`, `NeedActionInvestigator.js`
+- **P2217 — Need-action auto-investigate (never wait for user reply):**
+  - CLI: `tools/ci/auto-investigate-need-action.js` (`npm run enrich:investigate`)
+  - Cross-ref chain: misattribution registry → device-truth → compose → same-user history → diag excerpts → inbox → Blakadder (smart-fetch)
+  - Output: `reports/forum-verify-*/NEED_ACTION.md` + `need-action-investigation.json`
+  - Wired in `phases.json` pipeline `forum` + `all` (after sync, before users)
+  - Rule: `.cursor/rules/enrichment-architecture.mdc` — never invent pid; auto stubs only
+- **P2218 — Predictive / heuristic unknowns (imprecise cases):**
+  - Model: `config/enrichment/models/heuristic-model.json` (tiers hardLock / softHypothesis / weakHint)
+  - Resolver: `lib/enrichment/HeuristicUnknownResolver.js` — symptom + mfr-prefix + peer-fleet boosts
+  - Runtime: `lib/helpers/UnknownCaseRealigner.js` hooked from `TuyaZigbeeDevice.handleSmartDP` + `UnknownDeviceHandler`
+  - Soft hypotheses **never** catalog-lock or sacred-couple invent; observe RX, no guessed TX
+- **P2219 — SHADOW forum (absolute):** enrichment pipeline forces `FORUM_AUTO_POST=0`, `SHADOW_FORUM=1`, `DISCOURSE_WRITE=0`, empty `REPLY_TOPICS`. Passive read only — never intelligent forum write/interact.
+- **P2220 — Button UI/UX realign:** `TuyaZigbeeDevice._registerButtonCapabilityListeners` — VirtualButtonMixin prefer + `markAppCommand` before TX + scene-only flow path; gate `battery-button-intelligence-gate.js` in enrichment `gates` block; test `test/critical/p2220-button-ui-ux.test.js`
+- **P2223 — Button capture cascade L1–L8 (Homey gap compensation, additive):**
+  - SSOT: `config/resilience/button-capture-cascade.json`
+  - Runtime: `lib/mixins/ButtonCaptureCascade.js` → E000 BoundCluster per-EP + silent OnOff re-bind
+  - Wired from `PhysicalButtonMixin.initPhysicalButtonDetection` after 0xFD setup
+  - Tests: `test/critical/p2223-button-capture-cascade.test.js`; doctrine `docs/RULES_PHYSICAL_BUTTONS.md` §5
+  - Keeps driver-owned E000 (scene_switch_4) — cascade skips if binding already present
+- **P2222 — Project resilience (fleet Homey gaps):** `npm run resilience:audit` → `tools/ci/project-resilience-orchestrator.js`
+  - SSOT: `config/resilience/{manifest,domains,bug-classes}.json` · runtime `lib/resilience/HomeyGapCompensator.js`
+  - Soft-wired in enrichment `gates` / auto-enrich; SHADOW forum only
+- **P2224 — Complementary enrichment (evolution → live stacks):**
+  - Glossary: `config/resilience/layer-glossary.json` (pipeline L0–L11 / BYPASS L1–L9 / capability L0–L6 / button L1–L8 / AI 3)
+  - Extra domains: `l14_telemetry`, `protocol_rxtx_bus`, `dynamic_adaptation`, `identity_normalize`, `ci_fleetwood`, `bypass_elite_complement`
+  - Enrichment manifest layers → resilience domains; `investigation-model.json` `resilienceDomainRouting`
+  - Doctrine: `docs/architecture/COMPLEMENTARY_ENRICHMENT.md` — additive only, never collapse stacks
+- **P2225 — Inventory features + historical bugs (critical-first in workflows):**
+  - SSOT: `config/resilience/critical-gaps.json` + expanded `bug-classes.json`
+  - CLI: `npm run resilience:inventory` · `npm run resilience:critical` · `npm run resilience:all`
+  - Script: `tools/ci/inventory-features-bugs.js` → `reports/resilience-*/INVENTORY.md`
+  - Workflow: `.github/workflows/project-resilience.yml` — cron `20 5 * * *` + dispatch (`inventory|critical|all`)
+  - Also wired: `forum-poll.yml`, `auto-enrich-closed-loop.yml`, `fetch-diags.yml`, enrichment `gates` block
+  - Method: Homey gap → parallel stacks → gates; prioritize prio-1 domains before fleet audit
+- **P2226 — Gmail auth cascade (plugin → secrets → local):**
+  - L0 Cursor Gmail MCP = IDE/agent only (not in Actions)
+  - L1 IMAP `GMAIL_EMAIL`/`GMAIL_APP_PASSWORD` (+ Homey aliases)
+  - L2 OAuth refresh secrets · L3 `gmail-local-reader` from prior state
+  - Scripts: `gmail-auth-cascade.js`, `verify-gmail-setup.js`; `npm run diag:gmail:cascade` / `diag:gmail:verify`
+  - Workflows: `fetch-diags.yml`, `gmail-diagnostics.yml` probe cascade before fetch; `GMAIL_ALLOW_LOCAL_FALLBACK=1`
+  - Smoke: `npm run workflow:smoke` → `tools/ci/workflow-smoke-p2226.js`
+- **P2227 — AI forfait inclus + security (never exceed included quotas):**
+  - SSOT: `config/security/ai-plan-forfait.json` — `AI_PLAN_MODE=forfait`, `AI_ALLOW_PAID=false`
+  - Caps: global daily **400**, soft-stop **85%**, paid providers blocked, `GMAIL_DIAG_AI_MAX=0`
+  - Guard: `tools/ci/ai-plan-guard.js` · wired in `ai-helper.js` `budgetAllows()` + token-budget
+  - Commands: `npm run ai:plan-guard` · `npm run ai:quota` · `npm run security:plan`
+  - Workflows: `gmail-diagnostics`, `fetch-diags`, `auto-enrich-closed-loop`, `project-resilience`
+  - Prefer local heuristics when soft/hard stop — never auto-spend overage
+
+- **P2228 — CI vs Homey app packaging:**
+  - Doctrine: `docs/architecture/CI_VS_HOMEY_RUNTIME.md`
+  - Homey ships: `HomeyGapCompensator`, `ButtonCaptureCascade` + `lib/resilience/data/*`, `UnknownCaseRealigner` + `lib/helpers/data/heuristic-model.json`
+  - Homey **excludes** (`.homeyignore`): `config/enrichment|resilience|security`, CI enrichment modules, `tools/`, `data/user-impact-catalog.json`
+  - Never `require('tools/ci/...')` on Homey without try/catch + local fallback
+
 - Private inbox harvest (SSO `HOMEY_EMAIL`/`HOMEY_PASSWORD`, **never POST**): `tools/ci/forum-pm-read-only.js`
   - Dedicated: `.github/workflows/forum-pm-read.yml` — cron `50 7,19 * * *` + dispatch; may fire `tuya-deep-diag.yml` for one UUID
   - Also wired in `forum-poll.yml` (every 4h) and `auto-enrich-closed-loop.yml`

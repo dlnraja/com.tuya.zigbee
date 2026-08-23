@@ -1,0 +1,94 @@
+{
+  "_meta": {
+    "version": "1.0.0",
+    "id": "P2223",
+    "description": "Button capture cascade — Homey ZCL gaps compensated by parallel complementary layers. Enrich existing PhysicalButtonMixin; keep all working paths."
+  },
+  "homeyGaps": [
+    "SDK3 OnOff drops manufacturer cmds 0xFD/0xFC",
+    "Unknown clusters 0xE000/0xE001 have no native objects",
+    "Bindings may fail silently so BoundCluster never fires",
+    "Residual 0xEF00 on pure ZCL remotes is interview noise"
+  ],
+  "levels": [
+    {
+      "level": 1,
+      "id": "onoff_fd_bound",
+      "cluster": "0x0006",
+      "cmds": ["0xFD", "0xFC"],
+      "impl": "lib/clusters/OnOffBoundCluster per-EP + TuyaPressTypeMap",
+      "status": "present"
+    },
+    {
+      "level": 2,
+      "id": "raw_node_catcher",
+      "cluster": "0x0006",
+      "impl": "zclNode.handleFrame wrap + onOffCluster.on('command') wide match",
+      "status": "present"
+    },
+    {
+      "level": 3,
+      "id": "scenes_recall",
+      "cluster": "0x0005",
+      "impl": "scenes recall / recallScene / attr.currentScene",
+      "status": "present"
+    },
+    {
+      "level": 4,
+      "id": "zcl_on_off_toggle",
+      "cluster": "0x0006",
+      "cmds": ["0x00", "0x01", "0x02"],
+      "impl": "attr.onOff + 9 OnOff command patterns",
+      "status": "present"
+    },
+    {
+      "level": 5,
+      "id": "tuya_e000",
+      "cluster": "0xE000",
+      "impl": "TuyaE000BoundCluster per-EP + L1 onZigBeeMessage E000/E001",
+      "status": "enriched"
+    },
+    {
+      "level": 6,
+      "id": "level_control",
+      "cluster": "0x0008",
+      "impl": "step/move/stop → press tokens (TS004F knobs)",
+      "status": "present"
+    },
+    {
+      "level": 7,
+      "id": "ef00_dp",
+      "cluster": "0xEF00",
+      "impl": "DP listeners when MCU/scene-pad profile; leftover EF00 on IAS/ZCL remotes stays observe-first",
+      "status": "present_conditional"
+    },
+    {
+      "level": 8,
+      "id": "multistate_input",
+      "cluster": "0x0012",
+      "impl": "attr.presentValue last-resort",
+      "status": "present"
+    }
+  ],
+  "productPreferredLevels": {
+    "TS0044": [1, 2, 5, 3, 4],
+    "TS004F": [1, 2, 6, 3, 4, 5],
+    "TS0041": [1, 2, 4, 5],
+    "TS0042": [1, 2, 4, 5],
+    "TS0043": [1, 2, 4, 5],
+    "TS0601": [7, 1, 2],
+    "TS0001": [4, 1, 2],
+    "TS0002": [4, 1, 2],
+    "TS0003": [4, 1, 2],
+    "TS0004": [4, 1, 2]
+  },
+  "tokenNormalize": {
+    "engine": "lib/utils/TuyaPressTypeMap.js",
+    "outputs": ["single", "double", "long", "triple", "rotate_left", "rotate_right"]
+  },
+  "pillars": [
+    "normalize all RX sources to Homey press tokens before flow dispatch",
+    "classify operating family at init (DeviceOperatingMode) and load preferred levels",
+    "silent bind/report retry in background when BoundCluster path is quiet"
+  ]
+}

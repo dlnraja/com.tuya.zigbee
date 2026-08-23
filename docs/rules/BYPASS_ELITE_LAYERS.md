@@ -97,3 +97,15 @@ To benefit both the **Innovative (`master`)** and **Stable (`stable-v5`)** track
 To maintain this zero-defect, high-performance ecosystem:
 - **Weekly Integrity Sweeps**: Run `scripts/ci/DEPENDENCY_INTEGRITY_SHIELD.js` and `scripts/ci/STRICT_SYNTAX_GUARD.js` to prevent any regressions.
 - **Auto-Alignment Checks**: Utilize the newly deployed `scripts/ci/zero-defect-control.js` script to verify that all drivers correctly implement the required initializations and conform to SDK3 standards.
+
+---
+
+## Complementary enrichment (P2224)
+
+BYPASS L1–L9 is a **historical intent map**. Live stacks also use capability L0–L6, pipeline L0–L11, and button L1–L8 — they coexist; do not delete BYPASS docs to “pick one”.
+
+- Crosswalk: [`config/resilience/layer-glossary.json`](../../config/resilience/layer-glossary.json)
+- Domain: `bypass_elite_complement` in [`config/resilience/domains.json`](../../config/resilience/domains.json)
+- Runtime complements: `UniversalLayerBootstrap`, `ButtonCaptureCascade`, `HomeyGapCompensator`
+- Doctrine: [`docs/architecture/COMPLEMENTARY_ENRICHMENT.md`](../architecture/COMPLEMENTARY_ENRICHMENT.md)
+

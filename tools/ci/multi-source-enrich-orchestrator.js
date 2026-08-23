@@ -93,6 +93,12 @@ phase('1-forum-silent-scan', () => {
   return runNode('tools/ci/forum-silent-multi-scan.js', ['--max=40'], true);
 });
 
+phase('1b-silent-enrichment-forum', () =>
+  runNode('tools/ci/silent-enrichment-orchestrator.js', ['--phase=forum', '--skip-scan'], true));
+
+phase('1c-silent-enrichment-users', () =>
+  runNode('tools/ci/silent-enrichment-orchestrator.js', ['--phase=users', '--skip-scan'], true));
+
 phase('2-forum-ai-paste-gate', () => runNode('tools/ci/forum-ai-paste-gate.js', ['--scan-defaults'], true));
 
 phase('3-apply-forum-known-routes', () => {
@@ -162,6 +168,8 @@ phase('11-coverage-snapshot', () => {
     gmailUnique: '.github/state/gmail-unique-fps.json',
     forumDigest: '.github/state/forum/multi-silent-digest.json',
     forumApply: '.github/state/forum/multi-silent-apply-report.json',
+    forumParse: '.github/state/forum/topic-140352-parse.json',
+    silentEnrich: '.github/state/silent-enrichment/last-run.json',
     lot3: '.github/state/p102-sacred-lot3-report.json',
     blakadder: '.github/state/blakadder/apply-report.json',
     infer: '.github/state/infer-enrich-report.json',

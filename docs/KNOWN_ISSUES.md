@@ -1,6 +1,8 @@
 # KNOWN_ISSUES.md - Known Issues & Limitations
 
-> **Last Updated**: 2026-06-15 | **Version**: 9.0.36
+> **Last Updated**: 2026-08-23 | **Live SSOT**: `config/resilience/bug-classes.json` + `npm run resilience:audit` → `reports/resilience-*/RESILIENCE.md`
+>
+> Firmware rows below remain valid. App-level FIXED/PARTIAL/OPEN status is maintained in the resilience catalog (P2222) — do not treat this file alone as current.
 
 ## Firmware-Level Issues (Cannot Fix in App)
 

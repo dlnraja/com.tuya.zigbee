@@ -34,36 +34,66 @@ function classifyTask(t,s,o){
   return{cx:type==='code'||type==='analyze'?2:1,type};
 }
 
-// ─── v9.0.367: HARD BILLING GUARD ──────────────────────────────────────────
+// ─── v9.0.367 / P2227: HARD BILLING GUARD (forfait inclus) ─────────────────
 // Central enforcement point: EVERY provider call funnels through callAIEngine.
 // Rules:
 //  1. Paid-tier providers (deepseek, openai, …) are BLOCKED unless
 //     AI_ALLOW_PAID=true is set explicitly in the workflow env.
-//  2. Per-provider daily cap (from scripts/automation/token-budget.js BUDGETS,
-//     overridable via AI_DAILY_CAP_<NAME>).
-//  3. Global daily cap across ALL providers (AI_GLOBAL_DAILY_CAP, default 2000).
+//  2. Per-provider daily cap (config/security/ai-plan-forfait.json included caps,
+//     else scripts/automation/token-budget.js BUDGETS; overridable via AI_DAILY_CAP_<NAME>).
+//  3. Global daily cap across ALL providers (AI_GLOBAL_DAILY_CAP, default 400 in forfait).
+//  4. Soft-stop at AI_SOFT_STOP_PERCENT (default 85) — refuse further calls for that provider.
 // The rate-state file (.github/state/ai-rate-state.json) is restored via CI
 // cache, so caps hold across runs of the same day.
 let _BUDGETS=null;
+let _FORFAIT=null;
+function _forfait(){
+  if(_FORFAIT)return _FORFAIT;
+  try{_FORFAIT=require('../../config/security/ai-plan-forfait.json')}catch{_FORFAIT={}}
+  return _FORFAIT;
+}
 function _budgets(){if(_BUDGETS)return _BUDGETS;try{_BUDGETS=require('../../scripts/automation/token-budget').BUDGETS||{}}catch{_BUDGETS={}}return _BUDGETS;}
+function _planMode(){
+  const f=_forfait();
+  return String(process.env.AI_PLAN_MODE||f.defaults?.AI_PLAN_MODE||'forfait').toLowerCase();
+}
 function _dailyCap(name){
   const env=process.env['AI_DAILY_CAP_'+name.toUpperCase().replace(/[^A-Z0-9]/g,'_')];
   if(env&&Number.isFinite(parseInt(env,10)))return parseInt(env,10);
+  const included=_forfait().includedDailyCaps?.[name];
+  if(Number.isFinite(included))return included;
   return _budgets()[name]?.dailyRequests??500;
 }
 function budgetAllows(name){
   _rtLoad();
   const b=_budgets()[name];
-  if(b&&b.tier==='paid'&&process.env.AI_ALLOW_PAID!=='true'){
+  const plan=_planMode();
+  const allowPaid=process.env.AI_ALLOW_PAID==='true';
+  const blocked=_forfait().blockedUnlessPaidFlag||['openai','deepseek'];
+  if(plan==='forfait'&&blocked.includes(name)&&!allowPaid){
+    console.log(`  [${name}] BLOCKED: forfait plan — paid/overage provider (set AI_ALLOW_PAID=true only if intentional spend)`);
+    return false;
+  }
+  if(b&&b.tier==='paid'&&!allowPaid){
     console.log(`  [${name}] BLOCKED: paid provider (set AI_ALLOW_PAID=true to enable)`);
     return false;
   }
   const used=_rt.d[name]||0;
   const cap=_dailyCap(name);
+  if(cap<=0){console.log(`  [${name}] BLOCKED: included cap is 0 (forfait)`);return false;}
   if(used>=cap){console.log(`  [${name}] BLOCKED: daily cap ${used}/${cap}`);return false;}
-  const globalCap=parseInt(process.env.AI_GLOBAL_DAILY_CAP||'2000',10);
+  const softPct=parseInt(process.env.AI_SOFT_STOP_PERCENT||_forfait().defaults?.AI_SOFT_STOP_PERCENT||'85',10);
+  if(softPct>0&&used>=Math.floor(cap*softPct/100)){
+    console.log(`  [${name}] BLOCKED: soft-stop ${used}/${cap} (≥${softPct}% forfait)`);
+    return false;
+  }
+  const globalCap=parseInt(process.env.AI_GLOBAL_DAILY_CAP||_forfait().defaults?.AI_GLOBAL_DAILY_CAP||'400',10);
   const total=Object.values(_rt.d).reduce((a,c)=>a+c,0);
   if(total>=globalCap){console.log(`  [${name}] BLOCKED: global daily cap ${total}/${globalCap}`);return false;}
+  if(softPct>0&&total>=Math.floor(globalCap*softPct/100)){
+    console.log(`  [${name}] BLOCKED: global soft-stop ${total}/${globalCap} (≥${softPct}%)`);
+    return false;
+  }
   return true;
 }
 

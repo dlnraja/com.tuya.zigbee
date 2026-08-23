@@ -1,0 +1,178 @@
+{
+  "_meta": {
+    "version": "1.0.0",
+    "description": "Declarative silent-enrichment pipeline. Referenced by lib/enrichment/PhaseRunner.js"
+  },
+  "defaults": {
+    "maxPosts": 40,
+    "topicId": 140352,
+    "env": {
+      "FORUM_AUTO_POST": "0",
+      "SHADOW_FORUM": "1",
+      "DISCOURSE_WRITE": "0",
+      "REPLY_TOPICS": ""
+    }
+  },
+  "blocks": {
+    "forum": [
+      {
+        "id": "forum-silent-scan",
+        "script": "tools/ci/forum-silent-multi-scan.js",
+        "args": ["--max={{maxPosts}}"],
+        "skipWhen": "skipScan"
+      },
+      {
+        "id": "forum-ai-paste-gate",
+        "script": "tools/ci/forum-ai-paste-gate.js",
+        "args": ["--scan-defaults"]
+      },
+      {
+        "id": "forum-parse-digest",
+        "script": "tools/ci/parse-forum-digest.js",
+        "args": ["--topic={{topicId}}"],
+        "softFail": true
+      },
+      {
+        "id": "forum-actionable-processor",
+        "script": "tools/ci/forum-actionable-processor.js",
+        "args": ["--no-chain", "--report-dir={{reportDir}}"],
+        "whenApply": { "flag": "applyRoutes", "extraArgs": ["--apply-routes"] }
+      },
+      {
+        "id": "forum-apply-routes",
+        "script": "tools/ci/apply-forum-silent-multi.js",
+        "args": [],
+        "whenApply": { "flag": "applyRoutes", "extraArgs": ["--apply"] }
+      },
+      {
+        "id": "forum-extract-couples",
+        "script": "tools/ci/extract-forum-couples-once.js",
+        "args": ["--out={{reportDir}}"]
+      },
+      {
+        "id": "forum-media-scan",
+        "script": "tools/ci/forum-media-deep-scan.js",
+        "args": ["--max=40", "--topics=140352,26439,89271"],
+        "skipWhen": "noMedia"
+      },
+      {
+        "id": "forum-pm-harvest",
+        "script": "tools/ci/forum-pm-read-only.js",
+        "args": [],
+        "skipWhen": "noPm"
+      }
+    ],
+    "sync": [
+      {
+        "id": "sync-enrichment-profiles",
+        "script": "tools/ci/sync-enrichment-profiles.js",
+        "args": []
+      },
+      {
+        "id": "render-profile-index",
+        "script": "tools/ci/render-enrichment-index.js",
+        "args": []
+      }
+    ],
+    "investigate": [
+      {
+        "id": "auto-investigate-need-action",
+        "script": "tools/ci/auto-investigate-need-action.js",
+        "args": [],
+        "timeout": 420000
+      },
+      {
+        "id": "post-investigate-sync",
+        "script": "tools/ci/sync-enrichment-profiles.js",
+        "args": []
+      },
+      {
+        "id": "post-investigate-profiles",
+        "script": "tools/ci/render-enrichment-index.js",
+        "args": []
+      }
+    ],
+    "users": [
+      {
+        "id": "user-impact-investigator",
+        "script": "tools/ci/user-impact-investigator.js",
+        "args": ["--all-users"]
+      }
+    ],
+    "diag": [
+      {
+        "id": "diag-render-treat",
+        "script": "tools/ci/render-diag-treat.js",
+        "args": ["--out=reports/gmail-forum-{{date}}"],
+        "requires": ".github/state/diagnostics-report.json"
+      },
+      {
+        "id": "diag-dp-audit",
+        "script": "tools/ci/audit-sacred-couple-dps.js",
+        "args": []
+      },
+      {
+        "id": "diag-local-excerpts",
+        "script": "tools/ci/analyze-diag-locally.js",
+        "args": [],
+        "dynamic": "diagExcerpts"
+      }
+    ],
+    "gates": [
+      {
+        "id": "gate-p2138-sacred-couple",
+        "script": "tools/ci/p2138-sacred-couple-matrix-gate.js",
+        "args": [],
+        "hard": true
+      },
+      {
+        "id": "gate-anti-bot",
+        "script": "tools/ci/anti-bot-regression-gate.js",
+        "args": ["--strip"]
+      },
+      {
+        "id": "gate-button-intelligence",
+        "script": "tools/ci/battery-button-intelligence-gate.js",
+        "args": [],
+        "softFail": true
+      },
+      {
+        "id": "inventory-features-bugs",
+        "script": "tools/ci/inventory-features-bugs.js",
+        "args": ["--write-report"],
+        "timeout": 120000,
+        "softFail": true
+      },
+      {
+        "id": "gate-project-resilience-critical",
+        "script": "tools/ci/project-resilience-orchestrator.js",
+        "args": ["--write-report", "--critical-first", "--critical-only"],
+        "timeout": 420000,
+        "softFail": true
+      },
+      {
+        "id": "gate-project-resilience",
+        "script": "tools/ci/project-resilience-orchestrator.js",
+        "args": ["--write-report"],
+        "timeout": 600000,
+        "softFail": true
+      }
+    ],
+    "summary": [
+      {
+        "id": "write-summary",
+        "script": "tools/ci/render-enrichment-index.js",
+        "args": ["--summary-only"]
+      }
+    ]
+  },
+  "pipelines": {
+    "all": ["forum", "sync", "investigate", "users", "diag", "gates", "summary"],
+    "forum": ["forum", "sync", "investigate"],
+    "users": ["users", "summary"],
+    "diag": ["diag", "summary"],
+    "gates": ["gates"],
+    "sync": ["sync", "summary"],
+    "investigate": ["investigate", "summary"]
+  }
+}

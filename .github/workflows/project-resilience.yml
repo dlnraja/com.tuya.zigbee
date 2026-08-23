@@ -1,0 +1,138 @@
+# 🛡️ Project Resilience + Feature/Bug Inventory (P2222–P2225)
+# Inventory features + historical bugs → critical-first Homey-gap stacks → full audit.
+# SHADOW forum only. Never POST. Both tracks can run (App ID untouched).
+# Doc: docs/architecture/COMPLEMENTARY_ENRICHMENT.md · config/resilience/critical-gaps.json
+
+name: 🛡️ Project Resilience Inventory
+
+on:
+  schedule:
+    # Daily 05:20 UTC — after forum-poll :15 and enrich */4; before bot-triage 04:45 next cycle
+    - cron: '20 5 * * *'
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'inventory | critical | all'
+        required: false
+        type: choice
+        options:
+          - all
+          - critical
+          - inventory
+        default: all
+
+permissions:
+  contents: write
+
+concurrency:
+  group: project-resilience
+  cancel-in-progress: false
+
+defaults:
+  run:
+    shell: bash
+
+env:
+  NODE_VERSION: '22'
+  AI_PLAN_MODE: forfait
+  AI_ALLOW_PAID: 'false'
+  AI_GLOBAL_DAILY_CAP: '400'
+  AI_SOFT_STOP_PERCENT: '85'
+  FORUM_AUTO_POST: '0'
+  SHADOW_FORUM: '1'
+  DISCOURSE_WRITE: '0'
+  REPLY_TOPICS: ''
+  GMAIL_DIAG_AI_MAX: '0'
+
+jobs:
+  resilience:
+    name: Inventory + critical-first + audit
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 1
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+
+      - name: Install deps
+        run: npm ci --prefer-offline --no-audit || npm install --no-audit
+
+      - name: "Workflow smoke (YAML + inventory + critical)"
+        continue-on-error: true
+        timeout-minutes: 8
+        run: |
+          if [ -f tools/ci/workflow-smoke-p2226.js ]; then
+            node tools/ci/workflow-smoke-p2226.js || echo "smoke warn"
+          fi
+          node tools/ci/ai-plan-guard.js --preflight || echo "ai plan warn"
+          node tools/ci/ai-quota-report.js || true
+          npm run security-scan || echo "security-scan warn"
+
+      - name: "P2225 Inventory features + historical bugs"
+        if: always()
+        continue-on-error: true
+        timeout-minutes: 5
+        run: |
+          if [ ! -f tools/ci/inventory-features-bugs.js ]; then
+            echo "inventory script missing — skip"
+            exit 0
+          fi
+          node tools/ci/inventory-features-bugs.js --write-report
+          echo "### Features + bugs inventory (P2225)" >> "$GITHUB_STEP_SUMMARY"
+          if [ -f "reports/resilience-$(date -u +%F)/INVENTORY.md" ]; then
+            head -n 60 "reports/resilience-$(date -u +%F)/INVENTORY.md" >> "$GITHUB_STEP_SUMMARY" || true
+          fi
+
+      - name: "Critical-first resilience audit"
+        if: ${{ github.event_name == 'schedule' || inputs.mode == 'all' || inputs.mode == 'critical' || inputs.mode == '' }}
+        continue-on-error: true
+        timeout-minutes: 25
+        run: |
+          if [ ! -f tools/ci/project-resilience-orchestrator.js ]; then
+            echo "orchestrator missing — skip"
+            exit 0
+          fi
+          MODE="${{ inputs.mode || 'all' }}"
+          if [ "$MODE" = "inventory" ]; then
+            echo "inventory-only mode"
+            exit 0
+          fi
+          if [ "$MODE" = "critical" ]; then
+            node tools/ci/project-resilience-orchestrator.js --write-report --critical-first --critical-only || echo "critical warn"
+          else
+            # schedule + all: inventory already ran; audit critical-first then remaining
+            node tools/ci/project-resilience-orchestrator.js --write-report --critical-first || echo "resilience warn"
+          fi
+          echo "### Project resilience (P2222–P2225)" >> "$GITHUB_STEP_SUMMARY"
+          if [ -f "reports/resilience-$(date -u +%F)/RESILIENCE.md" ]; then
+            head -n 45 "reports/resilience-$(date -u +%F)/RESILIENCE.md" >> "$GITHUB_STEP_SUMMARY" || true
+          fi
+
+      - name: "Enrichment gates (SHADOW — soft)"
+        if: ${{ github.event_name == 'schedule' || inputs.mode == 'all' || inputs.mode == '' }}
+        continue-on-error: true
+        timeout-minutes: 12
+        run: |
+          if [ -f tools/ci/silent-enrichment-orchestrator.js ]; then
+            node tools/ci/silent-enrichment-orchestrator.js --phase=gates --skip-scan || echo "gates warn"
+          fi
+
+      - name: Commit resilience reports [skip ci]
+        if: always()
+        continue-on-error: true
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git pull --rebase origin "${GITHUB_REF_NAME}" || true
+          git add reports/resilience-*/ .github/state/resilience/ 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "No resilience report changes"
+            exit 0
+          fi
+          git commit -m "chore(resilience): inventory + critical-first audit [skip ci]" || true
+          git push || true

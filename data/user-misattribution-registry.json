@@ -1989,6 +1989,45 @@
         "p126-contact-no-TS0601",
         "fork-p2200"
       ]
+    },
+    {
+      "id": "tongou-to-q-sys-jzt-din-meter",
+      "mfr": [
+        "_TZE284_6ocnqlhn",
+        "_tze284_6ocnqlhn",
+        "_TZE284_6OCNQLHN"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": "din_rail_meter",
+      "forbiddenDrivers": [
+        "smart_rcbo",
+        "climate_sensor",
+        "soil_sensor",
+        "generic_tuya",
+        "zigbee_universal"
+      ],
+      "protocol": "tuya_ef00",
+      "retailNames": [
+        "Tongou TO-Q-SYS-JZT"
+      ],
+      "notes": "Gmail diags 3a1f196d + 31e654a4 (Aug 2026). Z2M din rail smart meter — not RCBO. smart_rcbo stole couple; DP6 raw was mapped to measure_humidity. User must update Test and re-pair.",
+      "sources": [
+        "gmail-diag-3a1f196d",
+        "gmail-diag-31e654a4",
+        "z2m-TO-Q-SYS-JZT"
+      ],
+      "tracks": {
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
+      }
     }
   ]
 }

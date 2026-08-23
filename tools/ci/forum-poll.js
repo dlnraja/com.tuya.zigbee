@@ -169,7 +169,10 @@ async function poll() {
     totalPosts: result.posts.length,
     newPosts: result.newPosts.length,
     allFPs: result.allFPs.length,
-    newFPs: result.newFPs.length
+    newFPs: result.newFPs.length,
+    highestPostNumber: topic.highest_post_number,
+    postsCount: topic.posts_count,
+    lastPostedAt: topic.last_posted_at,
   };
   console.log(JSON.stringify(summary, null, 2));
 }

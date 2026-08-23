@@ -135,20 +135,32 @@ function _loadMonthlyCounts() {
 // ---------------------------------------------------------------------------
 // 3. Budget calculations
 // ---------------------------------------------------------------------------
+function _dailyCapFromForfait(providerName) {
+  try {
+    const f = require('../../config/security/ai-plan-forfait.json');
+    const included = f.includedDailyCaps?.[providerName];
+    if (Number.isFinite(included)) return included;
+  } catch { /* optional */ }
+  return null;
+}
+
 function getRemainingDaily(providerName) {
   const budget = BUDGETS[providerName];
   if (!budget) return null;
+  const forfaitCap = _dailyCapFromForfait(providerName);
+  const dailyLimit = forfaitCap !== null ? forfaitCap : budget.dailyRequests;
   const daily = _loadDailyCounts();
   const used = daily[providerName] || 0;
   return {
     provider: providerName,
     tier: budget.tier,
     dailyUsed: used,
-    dailyLimit: budget.dailyRequests,
-    dailyRemaining: Math.max(0, budget.dailyRequests - used),
-    dailyUtilizationPercent: Math.round((used / budget.dailyRequests) * 100),
+    dailyLimit,
+    dailyRemaining: Math.max(0, dailyLimit - used),
+    dailyUtilizationPercent: dailyLimit ? Math.round((used / dailyLimit) * 100) : 0,
     estimatedTokensUsed: used * budget.tokensPerRequest,
-    estimatedTokensRemaining: Math.max(0, (budget.dailyRequests - used) * budget.tokensPerRequest),
+    estimatedTokensRemaining: Math.max(0, (dailyLimit - used) * budget.tokensPerRequest),
+    forfaitCapApplied: forfaitCap !== null,
   };
 }
 
@@ -163,6 +175,17 @@ function _estimateDailyCostUSD(providerName) {
 function _isAvailable(providerName) {
   const budget = BUDGETS[providerName];
   if (!budget) return false;
+
+  // Forfait: never auto-select paid without explicit flag
+  if (budget.tier === 'paid' && process.env.AI_ALLOW_PAID !== 'true') return false;
+  try {
+    const f = require('../../config/security/ai-plan-forfait.json');
+    if ((f.blockedUnlessPaidFlag || []).includes(providerName) && process.env.AI_ALLOW_PAID !== 'true') {
+      return false;
+    }
+    const included = f.includedDailyCaps?.[providerName];
+    if (included === 0) return false;
+  } catch { /* optional */ }
 
   // Check env key
   let key;
@@ -179,9 +202,11 @@ function _isAvailable(providerName) {
   }
   if (!key) return false;
 
-  // Check daily cap
+  // Check daily cap (forfait-aware)
   const remaining = getRemainingDaily(providerName);
   if (remaining.dailyRemaining <= 0) return false;
+  const softPct = parseInt(process.env.AI_SOFT_STOP_PERCENT || '85', 10);
+  if (softPct > 0 && remaining.dailyUtilizationPercent >= softPct) return false;
 
   return true;
 }

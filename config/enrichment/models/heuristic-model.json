@@ -1,0 +1,72 @@
+{
+  "_meta": {
+    "version": "1.0.0",
+    "policy": "Predictive soft hypotheses when info missing. Never invent hard sacred-couple locks. Soft ≠ lock."
+  },
+  "confidenceTiers": {
+    "hardLock": { "min": 92, "action": "resolve-and-stub", "catalogWrite": true },
+    "softHypothesis": { "min": 70, "action": "prefer-candidate", "catalogWrite": false },
+    "weakHint": { "min": 45, "action": "rank-only", "catalogWrite": false },
+    "unknown": { "min": 0, "action": "observe-and-realign", "catalogWrite": false }
+  },
+  "symptomPidBoosts": [
+    { "match": ["4.?gang", "4gang", "quad", "tb25-4"], "preferPids": ["TS0004"], "preferDrivers": ["wall_switch_4gang_1way"], "boost": 18 },
+    { "match": ["3.?gang", "3gang", "triple"], "preferPids": ["TS0003", "TS0013"], "preferDrivers": ["wall_switch_3gang_1way", "switch_3gang"], "boost": 14 },
+    { "match": ["2.?gang", "2gang", "dual"], "preferPids": ["TS0002", "TS0012"], "preferDrivers": ["switch_2gang", "wall_switch_2gang_1way"], "boost": 14 },
+    { "match": ["1.?gang", "1gang", "single"], "preferPids": ["TS0001", "TS0011"], "preferDrivers": ["switch_1gang"], "boost": 10 },
+    { "match": ["virtual\\s*button", "ui\\s*button", "missing capability listener", "button\\.\\d"], "preferPids": ["TS0044", "TS004F", "TS0001", "TS0002", "TS0003", "TS0004"], "preferDrivers": ["scene_switch_4", "button_wireless_4", "switch_1gang", "switch_2gang", "wall_switch_4gang_1way"], "boost": 12 },
+    { "match": ["physical\\s*button", "wall\\s*button", "0xfd", "scene\\s*switch"], "preferPids": ["TS0044", "TS004F"], "preferDrivers": ["scene_switch_4", "button_wireless_4"], "boost": 14 },
+    { "match": ["water\\s*leak", "flood", "leak"], "preferPids": ["TS0207"], "preferDrivers": ["water_leak_sensor"], "boost": 20 },
+    { "match": ["din\\s*rail", "tongou", "rcbo", "energy\\s*meter"], "preferPids": ["TS0601"], "preferDrivers": ["din_rail_meter", "smart_rcbo"], "boost": 16 },
+    { "match": ["dimmer", "brightness", "bseed"], "preferPids": ["TS0601"], "preferDrivers": ["wall_dimmer_tuya"], "boost": 14 },
+    { "match": ["soil", "moisture", "sgs02"], "preferPids": ["TS0601"], "preferDrivers": ["soil_sensor"], "boost": 14 },
+    { "match": ["contact", "door", "window\\s*sensor"], "preferPids": ["TS0203", "TS0601"], "preferDrivers": ["contact_sensor", "contact_sensor_zigbee"], "boost": 12 },
+    { "match": ["sos", "emergency", "panic"], "preferPids": ["TS0215A", "TS0215"], "preferDrivers": ["button_emergency_sos"], "boost": 16 },
+    { "match": ["plug", "socket", "outlet"], "preferPids": ["TS011F"], "preferDrivers": ["plug_energy_monitor", "smart_plug"], "boost": 12 },
+    { "match": ["climate", "temp", "humidity", "th0"], "preferPids": ["TS0201", "TS0601"], "preferDrivers": ["climate_sensor"], "boost": 10 }
+  ],
+  "mfrPrefixHints": [
+    { "prefix": "_TZE284_", "defaultPid": "TS0601", "protocol": "ef00", "confidence": 55 },
+    { "prefix": "_TZE204_", "defaultPid": "TS0601", "protocol": "ef00", "confidence": 50 },
+    { "prefix": "_TZE200_", "defaultPid": "TS0601", "protocol": "ef00", "confidence": 50 },
+    { "prefix": "_TZ3000_", "defaultPid": null, "protocol": "zcl_or_hybrid", "confidence": 40 },
+    { "prefix": "_TZ3210_", "defaultPid": "TS011F", "protocol": "zcl", "confidence": 45 },
+    { "prefix": "_TZ3218_", "defaultPid": "TS000F", "protocol": "hybrid", "confidence": 48 }
+  ],
+  "unknownPlaybook": {
+    "missingPid": [
+      "Rank registry/truth/compose/history candidates",
+      "Apply symptomPidBoosts from post text + issues",
+      "If single candidate ≥ hardLock → soft-promote to resolved",
+      "If top ≥ softHypothesis → prefer-candidate (no catalog invent)",
+      "Else observe — ask diag only as last resort guidance, never block CI"
+    ],
+    "missingCoupleEntirely": [
+      "Use curated user fleet tiles + fixCatalog",
+      "Map issues → issue-model drivers",
+      "Mark symptomOnly + fixShipped if code already on Test"
+    ],
+    "ambiguousMultiPid": [
+      "Never invent — keep ranked list",
+      "Boost by gang/sensor wording",
+      "Prefer misattribution-registry over compose alone"
+    ],
+    "runtimeUnknownDp": [
+      "Log via UnknownDPLogger",
+      "Try SmartDivisorManager range detect",
+      "Try UniversalSmartFeaturesHandler heuristics",
+      "Do not TX guessed DP until RX confirms"
+    ],
+    "runtimeUnknownDevice": [
+      "UnknownDeviceHandler + ProbabilisticDeviceDetector",
+      "Cluster/EP heuristics for temporary capabilities",
+      "Sacred couple still required before compose FP write"
+    ]
+  },
+  "peerFleetBoost": {
+    "enabled": true,
+    "sameUserHistoryBoost": 12,
+    "sameSymptomOtherUsersBoost": 6,
+    "maxPeers": 5
+  }
+}

@@ -1,0 +1,216 @@
+{
+  "_meta": {
+    "description": "Feature domains — Homey gaps + parallel compensation stacks (P2222). P2224 adds evolution-era domains (L14, RX/TX bus, dynamic adaptation, identity, Fleetwood, BYPASS complement).",
+    "updated": "2026-08-23",
+    "dualApp": "BOTH — SSOT on master + stable-v5; never rewrite App ID when porting"
+  },
+  "domains": {
+    "sacred_couple_fp": {
+      "priority": 1,
+      "status": "partial",
+      "homeyGap": "No hot-swap; mfr-only pairing ambiguous",
+      "stack": ["compose static FP", "DeviceFingerprintDB", "misattribution-registry", "softHypothesis never lock"],
+      "gates": ["tools/ci/p2138-sacred-couple-matrix-gate.js", "tools/ci/sacred-couple-dry-gate.js", "tools/ci/dual-claim-compose-gate.js"],
+      "tests": ["test/critical/p218-device-truth.test.js", "test/critical/p-device-peculiarity-compound.test.js"]
+    },
+    "buttons_bidirectional": {
+      "priority": 1,
+      "status": "hardened",
+      "homeyGap": "No physical vs app distinction; mfr OnOff 0xFD/0xFC dropped; unknown 0xE000",
+      "stack": [
+        "L1 OnOffBoundCluster 0xFD/0xFC per-EP",
+        "L2 raw handleFrame + wide command match",
+        "L3 scenes recall",
+        "L4 ZCL on/off/toggle",
+        "L5 TuyaE000BoundCluster + E001 (ButtonCaptureCascade P2223)",
+        "L6 LevelControl knobs",
+        "L7 EF00 conditional MCU",
+        "L8 MultistateInput",
+        "VirtualButtonMixin markAppCommand + UI P2220/P2221"
+      ],
+      "gates": ["tools/ci/battery-button-intelligence-gate.js"],
+      "tests": [
+        "test/critical/p2223-button-capture-cascade.test.js",
+        "test/critical/p2221-bidirectional-buttons.test.js",
+        "test/critical/p2220-button-ui-ux.test.js",
+        "test/button-bidirectional.test.js"
+      ]
+    },
+    "ias_sleepy": {
+      "priority": 1,
+      "status": "partial",
+      "homeyGap": "Boot poll storms; zoneStatus shapes; leftover EF00",
+      "stack": ["IASZoneEnhanced.coerce", "shouldSkipIasOnlyEf00Tx", "_ensureIasBound", "wake enroll", "no Poll Control sleepy"],
+      "gates": [],
+      "tests": ["test/critical/p2183-sleepy-wake-skip.test.js", "test/critical/p2183-tuya-dataquery-skip.test.js", "test/critical/alarm-polarity-manager.test.js"]
+    },
+    "battery": {
+      "priority": 1,
+      "status": "partial",
+      "homeyGap": "0–200 vs 0–100; no nonlinear curves",
+      "stack": ["normalizeZclBatteryPercent", "UnifiedBatteryHandler nonlinear", "DP cascade", "linear formula ban"],
+      "gates": ["tools/ci/p216-zcl-battery-half-percent-gate.js", "tools/ci/battery-button-intelligence-gate.js"],
+      "tests": ["test/critical/p216-zcl-battery-half-percent.test.js", "test/critical/unified-battery-cascade.test.js", "test/critical/multi-protocol-battery.test.js"]
+    },
+    "energy_divisors": {
+      "priority": 1,
+      "status": "partial",
+      "homeyGap": "Double division; energy.approximation vs meter caps",
+      "stack": ["SmartDivisorManager", "EnergyJumpGuard", "L14 safeSetCapabilityValue", "energy-compose gate"],
+      "gates": ["tools/ci/adaptive-double-division-gate.js", "tools/ci/energy-compose-gate.js", "tools/ci/l14-capability-writers-gate.js"],
+      "tests": ["test/critical/smart-energy-audit.test.js", "test/critical/commit-capability.test.js"]
+    },
+    "ef00_dp": {
+      "priority": 1,
+      "status": "partial",
+      "homeyGap": "Opaque 0xEF00; type0 misread",
+      "stack": ["couple dp profile", "DpByteArrayProfiles", "SmartDivisor", "UnknownDPLogger observe-only TX"],
+      "gates": ["tools/ci/audit-sacred-couple-dps.js"],
+      "tests": ["test/critical/p2207-tongou-din-meter.test.js", "test/critical/p2212-dp6-tongou-byte-array.test.js"]
+    },
+    "hybrid_protocol": {
+      "priority": 2,
+      "status": "partial",
+      "homeyGap": "Assumes single cluster path",
+      "stack": ["IntelligentProtocolDetect HYBRID", "CapabilityCommandRouter parallelDiscover", "sacred zcl_only BSEED"],
+      "gates": ["tools/ci/p214-intelligent-protocol-gate.js"],
+      "tests": ["test/critical/p214-intelligent-protocol-detect.test.js", "test/critical/unsupported-cluster-cascade.test.js"]
+    },
+    "flows": {
+      "priority": 2,
+      "status": "partial",
+      "homeyGap": "titleFormatted [[device]]; Missing Capability Listener",
+      "stack": ["unique flow IDs", "no [[device]]", "hashed resolve", "safeRegisterCapability"],
+      "gates": [],
+      "npm": ["check:flows", "check:flow-dups"],
+      "npmSoft": ["check:button-flows"],
+      "tests": ["test/critical/p2205-flow-id-hygiene.test.js", "test/critical/p2198-flow-runtime-coherence.test.js"]
+    },
+    "mcu_time": {
+      "priority": 2,
+      "status": "partial",
+      "homeyGap": "Wrong epoch / format variants",
+      "stack": ["TuyaTimeSyncFormats.guessFormat", "fallback chain", "ZT08 DP17 commit"],
+      "gates": [],
+      "tests": ["test/critical/time-cluster-policy.test.js"]
+    },
+    "dimmer_brightness": {
+      "priority": 2,
+      "status": "hardened",
+      "homeyGap": "dim 0–1 vs MCU 0–1000",
+      "stack": ["TuyaBrightnessScale clamp", "P2138 sacred wall_dimmer_tuya"],
+      "gates": ["tools/ci/p2138-sacred-couple-matrix-gate.js"],
+      "tests": ["test/critical/p2138-bseed-wall-dimmer.test.js"]
+    },
+    "timers_destroyed": {
+      "priority": 2,
+      "status": "partial",
+      "homeyGap": "setTimeout after destroy",
+      "stack": ["safe-timers", "onDeleted/onUninit clear"],
+      "gates": [],
+      "npm": ["check:timer-context"],
+      "tests": ["test/critical/p199-homey-timer-clears.test.js", "test/critical/p200-homey-timer-api-match.test.js"]
+    },
+    "heap_json": {
+      "priority": 2,
+      "status": "partial",
+      "homeyGap": "UTF-16 string OOM on large JSON",
+      "stack": ["Buffer JSON.parse", "homey-heap-json-gate"],
+      "gates": ["tools/ci/homey-heap-json-gate.js"],
+      "tests": ["test/critical/p2184-peter-sleepy-heap.test.js"]
+    },
+    "wifi_local": {
+      "priority": 3,
+      "status": "partial",
+      "homeyGap": "Cloud-only MCU handshake",
+      "stack": ["LocalFirstResolver", "handshake rotate v3.1–3.5"],
+      "gates": ["tools/ci/wifi-local-first-gate.js"],
+      "tests": ["test/critical/wifi-local-first-resolver.test.js"]
+    },
+    "layers_fusion": {
+      "priority": 3,
+      "status": "partial",
+      "homeyGap": "Single-path RX loss",
+      "stack": ["LayerSignalFusion", "CrossLayerRedundancy", "UniversalLayerBootstrap"],
+      "gates": ["tools/ci/layer-coverage-gate.js"],
+      "tests": ["test/critical/layer-signal-fusion.test.js", "test/critical/layer-coverage.test.js"]
+    },
+    "enrichment_shadow": {
+      "priority": 2,
+      "status": "hardened",
+      "homeyGap": "N/A — ops; forum write forbidden",
+      "stack": ["SHADOW GET only", "NeedActionInvestigator", "HeuristicUnknownResolver"],
+      "gates": ["tools/ci/forum-ai-paste-gate.js", "tools/ci/anti-bot-regression-gate.js"],
+      "tests": ["test/critical/forum-routing-regressions.test.js"]
+    },
+    "dual_app_publish": {
+      "priority": 2,
+      "status": "partial",
+      "homeyGap": "Shared Test slot historically",
+      "stack": ["independent App IDs", "P139 wait cooldown", "BOTH/MASTER_ONLY classify"],
+      "gates": [],
+      "tests": ["test/critical/p139-wait-athom-draft.test.js", "test/critical/p197-enrich-soak-identity.test.js"]
+    },
+    "l14_telemetry": {
+      "priority": 1,
+      "status": "partial",
+      "era": "v8 Phoenix",
+      "homeyGap": "Raw setCapability floods UI; no EMA/ROC",
+      "stack": ["SanityFilter EMA/ROC", "anti-flood", "safeSetCapabilityValue", "commitCapability"],
+      "gates": ["tools/ci/l14-capability-writers-gate.js"],
+      "tests": ["test/critical/commit-capability.test.js", "test/critical/energy-battery-button-flows.test.js"],
+      "docs": ["docs/architecture/ARCHITECTURE_TELEMETRY_V5.md"]
+    },
+    "protocol_rxtx_bus": {
+      "priority": 2,
+      "status": "partial",
+      "era": "v9 P206–P214",
+      "homeyGap": "Single confirm path; reconnect storms",
+      "stack": ["ProtocolRxTxChain", "confirmInbound", "ReconnectBurstCoalescer", "CrossLayerRedundancy"],
+      "gates": ["tools/ci/layer-coverage-gate.js", "tools/ci/p214-intelligent-protocol-gate.js"],
+      "tests": ["test/critical/layer-signal-fusion.test.js", "test/critical/unsupported-cluster-cascade.test.js"],
+      "docs": ["docs/architecture/LAYERS_CAPABILITY_PROTOCOL.md"]
+    },
+    "dynamic_adaptation": {
+      "priority": 3,
+      "status": "partial",
+      "era": "v9 Sovereign",
+      "dualApp": "MASTER_ONLY",
+      "homeyGap": "Static compose cannot hot-adapt DP/caps",
+      "stack": ["DPAdaptationEngine", "DynamicCapabilityManager", "IntelligentDriverHotSwap", "UniversalLayerBootstrap"],
+      "gates": [],
+      "tests": [],
+      "docs": ["docs/architecture/LAYERS_CAPABILITY_PROTOCOL.md"]
+    },
+    "identity_normalize": {
+      "priority": 2,
+      "status": "partial",
+      "era": "v8–v10 CaseInsensitive",
+      "homeyGap": "Case-sensitive mfr/pid mismatches",
+      "stack": ["CaseInsensitiveMatcher", "TuyaNormalizer", "fingerprint-matcher"],
+      "gates": ["tools/ci/ensure-case-variants.js"],
+      "tests": ["test/critical/manufacturerResolver.test.js"]
+    },
+    "ci_fleetwood": {
+      "priority": 2,
+      "status": "partial",
+      "era": "v8 Fleetwood Gateway",
+      "homeyGap": "N/A — CI purity (braces, shell bash, schema)",
+      "stack": ["PRE_COMMIT_CHECKS", "syntax-purity", "workflow-estate-gate", "defaults bash"],
+      "gates": ["tools/ci/workflow-estate-gate.js"],
+      "npm": ["check:yaml"],
+      "tests": [],
+      "docs": ["docs/rules/CRITICAL_MISTAKES.md"]
+    },
+    "bypass_elite_complement": {
+      "priority": 3,
+      "status": "partial",
+      "era": "May 2026 BYPASS L1–L9",
+      "homeyGap": "Documented elite bypass intent — runtime denser now",
+      "stack": ["UniversalLayerBootstrap", "ButtonCaptureCascade", "HomeyGapCompensator", "layer-glossary crosswalk"],
+      "gates": [],
+      "tests": [],
+      "docs": ["docs/rules/BYPASS_ELITE_LAYERS.md", "config/resilience/layer-glossary.json"]
+    }
+  }
+}

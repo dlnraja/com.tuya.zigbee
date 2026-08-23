@@ -25,23 +25,33 @@
 *   **Rule 2.3: Method-Call Safety**
     *   To prevent `ReferenceError` during complex inheritance calls, always prefix SDK methods (like `setCapabilityValue`) with `this.`.
 
-## 3. Fingerprint Integrity
-*   **Rule 3.1: Resolution Conflict**
-    *   Manufacturer IDs MUST NOT be duplicated across drivers of different "gang" counts (e.g., mapping a 3-gang MFR to a 1-gang driver is forbidden).
-    *   **Action**: Audit `DeviceFingerprintDB.js` daily for gang-count consistency.
+## 5. Capture cascade L1–L8 (P2223 — Homey gap compensation)
+Declarative SSOT: `config/resilience/button-capture-cascade.json`. Runtime enricher: `lib/mixins/ButtonCaptureCascade.js` (additive).
 
-## 4. Multi-Layer Logic
-*   **Layer 0: Trame Réseau (Raw)**
-    *   Check for endpoint 0xFD or 0xEF00 (Tuya Cluster).
-*   **Layer 1: Zigbee Standard**
-    *   Standard OnOff (0x0006) cluster usage.
-*   **Layer 2: Tuya DP Mapping**
-    *   Mapping DPs (1, 2, 7 etc.) to gang IDs.
+| L | Path | Role |
+|---|------|------|
+| 1 | OnOffBoundCluster per-EP `0xFD`/`0xFC` | Tuya mfr cmds Homey SDK drops |
+| 2 | Raw `zclNode.handleFrame` + wide `command` match | When bindings silent |
+| 3 | Scenes `0x0005` recall | Scene remotes |
+| 4 | ZCL on/off/toggle (+ 9 name patterns) | Dimmer/hybrid fallback |
+| 5 | `TuyaE000BoundCluster` + L1 E000/E001 | Moes/legacy proprietary |
+| 6 | LevelControl step/move/stop | TS004F knobs / command mode |
+| 7 | EF00 DP | MCU scene pads (TS0601 family) — observe-first on residual EF00 |
+| 8 | MultistateInput `presentValue` | Exotic remotes |
 
-## 5. Manufacturer Rules
-*   **Rule 5.1: Case Sensitivity**
-    *   ALWAYS route `manufacturerName`/`productId` comparisons through `lib/utils/TuyaNormalizer.js` (`normalize`, `equalsIgnoreCase`, `includesCI`, `findCI`) — never a bare `.toLowerCase()` on a device identifier (supersedes the historical rule; NFKD + LRU-cached since v10.1.0).
-*   **Rule 5.2: Generic Fallbacks**
-    *   For `_TZ3000_` devices, prefer generic drivers but prune `onoff` if it's a battery remote.
-*   **Rule 5.3: Standard Initialization**
-    *   Avoid using "ZCL-only" modes for non-BSEED devices. Standard hybrid initialization is the robust default.
+**Pillars:** (1) normalize via `TuyaPressTypeMap` → Homey press tokens (2) `DeviceOperatingMode` family at init (3) silent OnOff re-bind retry.
+
+## 6. Homey-native gaps → parallel compensation (P2221)
+Homey / zigbee-clusters omit Tuya manufacturer OnOff cmds and unknown 0xE000 objects.
+Re-implement smarter from Z2M/ZHA/Hubitat ideas — keep all complementary layers.
+
+Bidirectional vision: Physical RX fires flows; Virtual/UI TX actuates device + optimistic UI; shared `_virtualPhysicalDedup` + `markAppCommand`. `UnifiedSwitchBase` inits physical + virtual + UI.
+
+## 7. Fingerprint / manufacturer
+* Route `manufacturerName`/`productId` through `TuyaNormalizer` (case-insensitive).
+* Sacred couple = manufacturerName + productId (e.g. `_TZ3000_zgyzgdua`+`TS0044` → `scene_switch_4`).
+* Hybrid init is the default; BSEED stays `zcl_only` when profile says so.
+
+## 8. Dedup between parallel layers
+* Windows 200–500ms between L1–L8 so complementary paths do not multi-fire the same press.
+

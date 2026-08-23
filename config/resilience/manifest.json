@@ -1,0 +1,37 @@
+{
+  "_meta": {
+    "version": "1.2.0",
+    "schema": "project-resilience-v1",
+    "updated": "2026-08-23",
+    "policy": "SHADOW forum. Complementary enrichment + critical-first inventory (P2224/P2225). Parallel layer vocabularies coexist."
+  },
+  "phases": "config/resilience/phases.json",
+  "domains": "config/resilience/domains.json",
+  "bugClasses": "config/resilience/bug-classes.json",
+  "buttonCascade": "lib/resilience/data/button-capture-cascade.json",
+  "buttonCascadeCiCatalog": "config/resilience/button-capture-cascade.json",
+  "layerGlossary": "config/resilience/layer-glossary.json",
+  "criticalGaps": "config/resilience/critical-gaps.json",
+  "evolutionRefs": [
+    "docs/CHRONOLOGICAL_EVOLUTION.md",
+    "docs/PROJECT_EVOLUTION_HISTORY.md",
+    "docs/MASTER_EVOLUTION_REFERENCE.md",
+    "docs/architecture/LAYERS_CAPABILITY_PROTOCOL.md",
+    "docs/architecture/LAYERS_ENERGY_BUTTONS_FLOWS.md",
+    "docs/architecture/ARCHITECTURE_TELEMETRY_V5.md",
+    "docs/architecture/COMPLEMENTARY_ENRICHMENT.md",
+    "docs/rules/BYPASS_ELITE_LAYERS.md",
+    "docs/rules/DUAL_APP_VISION.md",
+    "docs/ARCHITECTURE_AI.md",
+    "AI_CONTEXT_MANDATE.md"
+  ],
+  "outputs": {
+    "reportDir": "reports/resilience-{{date}}",
+    "summary": "reports/resilience-{{date}}/RESILIENCE.md",
+    "inventory": "reports/resilience-{{date}}/INVENTORY.md"
+  },
+  "state": {
+    "lastRun": ".github/state/resilience/last-run.json",
+    "inventory": ".github/state/resilience/inventory.json"
+  }
+}

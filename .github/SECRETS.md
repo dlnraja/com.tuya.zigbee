@@ -17,11 +17,24 @@
 | GITHUB_TOKEN | GitHub (auto) | Current repo only. Cannot access other repos (#46566) |
 | GOOGLE_API_KEY | Google Gemini | AI analysis, vision (images), code gen, translation, long context |
 | OPENAI_API_KEY | OpenAI | GPT-4o fallback, embeddings, PR review |
-| GMAIL_CLIENT_ID | Gmail OAuth | **LEGACY** — removed v5.12.6, use IMAP instead |
-| GMAIL_CLIENT_SECRET | Gmail OAuth | **LEGACY** — removed v5.12.6, use IMAP instead |
-| GMAIL_REFRESH_TOKEN | Gmail OAuth | **LEGACY** — removed v5.12.6, use IMAP instead |
-| GMAIL_EMAIL | Gmail IMAP | **REQUIRED** — Gmail address for IMAP (permanent, never expires) |
-| GMAIL_APP_PASSWORD | Gmail IMAP | **REQUIRED** — App Password for IMAP (permanent, never expires) |
+| GMAIL_CLIENT_ID | Gmail OAuth | **L2 fallback** when IMAP app-password fails |
+| GMAIL_CLIENT_SECRET | Gmail OAuth | **L2 fallback** with refresh token |
+| GMAIL_REFRESH_TOKEN | Gmail OAuth | **L2 fallback** — keep refreshed via `gmail-token-keepalive.yml` |
+| GMAIL_EMAIL | Gmail IMAP | **L1 REQUIRED** — Gmail address for IMAP (permanent) |
+| GMAIL_APP_PASSWORD | Gmail IMAP | **L1 REQUIRED** — App Password for IMAP (permanent) |
+
+### Gmail auth cascade (P2226)
+
+| Layer | Where | Path |
+|-------|--------|------|
+| L0 | Cursor IDE / agent only | Gmail MCP plugin (`plugin-gmail-gmail`) — **not available in GitHub Actions** |
+| L1 | CI + local | `GMAIL_EMAIL` + `GMAIL_APP_PASSWORD` (aliases: `HOMEY_EMAIL` / `HOMEY_PASSWORD`) |
+| L2 | CI + local | OAuth `GMAIL_CLIENT_ID` + `GMAIL_CLIENT_SECRET` + `GMAIL_REFRESH_TOKEN` |
+| L3 | CI + local | Prior `.github/state/diagnostics-*.json` via `gmail-local-reader.js` |
+
+Probe: `npm run diag:gmail:cascade` · Verify: `npm run diag:gmail:verify` · Fetch: `npm run diag:gmail`
+
+If the Cursor plugin fails or is unavailable, workflows **automatically** use L1→L2→L3 with GitHub secrets — no manual switch required.
 | ATHOM_CLIENT_ID | Athom OAuth | OAuth client ID for headless promotion (from Athom Developer Tools SPA) |
 | ATHOM_CLIENT_SECRET | Athom OAuth | OAuth client secret for headless promotion (from Athom Developer Tools SPA) |
 
@@ -271,32 +284,29 @@ All forum scripts authenticate via `forum-auth.js`  `getForumAuth()`  session co
 9. HF_TOKEN, GROQ_API_KEY - Free tier AI redundancy
 10. Remaining AI keys (optional, any one adds redundancy)
 
-## AI Provider Tiers (Updated v7.4.15)
+## AI Provider Tiers (Updated P2227 — forfait inclus)
 
-**TIER 1 - FREE (Use First):**
-| Provider | Secret | Daily Cap |
-|----------|--------|-----------|
-| NVIDIA NIM | NVIDIA_API_KEY | 800/day |
-| HuggingFace | HF_TOKEN | 500/day |
-| Groq | GROQ_API_KEY | 500/day |
-| OpenRouter | OPENROUTER_API_KEY | Varies |
+**Default mode: `AI_PLAN_MODE=forfait`** — never exceed included free/subscription quotas; never auto-enable paid overage (`AI_ALLOW_PAID` must stay `false` unless a human intentionally spends).
 
-**TIER 2 - SUBSCRIPTION (Monthly Budget):**
-| Provider | Secret | Monthly Budget | Notes |
-|----------|--------|---------------|-------|
-| **Minimax** | MINIMAX_API_KEY | ~$20/month | Subscription-based, tracked via MINIMAX_BUDGET env var (default: 50000 tokens/month) |
+SSOT: `config/security/ai-plan-forfait.json` · Guard: `npm run ai:plan-guard` · Report: `npm run ai:quota`
 
-**TIER 3 - PAID (Budget Strict):**
-| Provider | Secret | Daily Cap | Max Monthly |
-|----------|--------|-----------|-------------|
-| Cerebras | CEREBRAS_API_KEY | 100/day | $5 |
-| Together.ai | TOGETHER_API_KEY | 200/day | $10 |
-| DeepSeek | DEEPSEEK_API_KEY | 50/day | $3 |
-| Kimi | KIMI_API_KEY | 50/day | $5 |
+| Control | Default |
+|---------|---------|
+| Global daily calls | **400** (`AI_GLOBAL_DAILY_CAP`) |
+| Soft-stop | **85%** of each cap |
+| Gmail AI analysis | **0** (`GMAIL_DIAG_AI_MAX`) |
+| Paid OpenAI/DeepSeek | **blocked** unless `AI_ALLOW_PAID=true` |
 
-**TIER 4 - PREMIUM (Very Strict):**
-| Provider | Secret | Daily Cap | Max Monthly |
-|----------|--------|-----------|-------------|
-| OpenAI | OPENAI_API_KEY | 50/day | $10 |
-| Mistral | MISTRAL_API_KEY | 30/day | $5 |
-| Gemini | GOOGLE_API_KEY | 1400/day | Free tier |
+**TIER 1 - FREE (Use First, within included caps):**
+| Provider | Secret | Included daily (forfait) |
+|----------|--------|--------------------------|
+| Gemini | GOOGLE_API_KEY | 400 |
+| NVIDIA NIM | NVIDIA_API_KEY | 200 |
+| HuggingFace | HF_TOKEN | 200 |
+| Groq | GROQ_API_KEY | 200 |
+| OpenRouter | OPENROUTER_API_KEY | 200 |
+
+**TIER 3/4 - PAID (blocked in forfait):**
+OpenAI / DeepSeek remain **cap 0** unless a human sets `AI_ALLOW_PAID=true` and raises `AI_DAILY_CAP_*`.
+
+When soft/hard stop triggers → skip AI, keep local heuristics / enrichment / resilience.

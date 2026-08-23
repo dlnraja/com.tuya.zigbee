@@ -1,0 +1,67 @@
+{
+  "_meta": {
+    "version": "1.0.0",
+    "description": "Maps processor verdicts + issue tags to enrichment actions and user guidance"
+  },
+  "verdictActions": {
+    "LOCKED_OK": {
+      "processorAction": "user-update-repair",
+      "userAction": "Update Universal Tuya Test to latest soak build; re-pair only if driver/EP changed",
+      "dualAppDefault": "BOTH",
+      "autoSyncUserStub": true
+    },
+    "ROUTED_OK": {
+      "processorAction": "user-update-repair",
+      "userAction": "Update Test + re-pair if still wrong driver",
+      "dualAppDefault": "BOTH",
+      "autoSyncUserStub": true
+    },
+    "SINGLE_DRIVER": {
+      "processorAction": "user-update-repair",
+      "userAction": "Verify compose fingerprint; update Test",
+      "dualAppDefault": "BOTH",
+      "autoSyncUserStub": true
+    },
+    "MISSING_PID": {
+      "processorAction": "request-diag-couple",
+      "userAction": "Need interview / diagnostic with manufacturerName + productId — never invent pid",
+      "dualAppDefault": "REVIEW",
+      "autoSyncUserStub": true,
+      "forbiddenInvent": true
+    },
+    "WRONG_DRIVER_PRESENT": {
+      "processorAction": "lock-sacred-couple",
+      "userAction": "Remove device, update Test, re-pair to canonical driver",
+      "dualAppDefault": "BOTH",
+      "autoSyncCoupleStub": true
+    },
+    "MISSING_IN_COMPOSE": {
+      "processorAction": "lock-sacred-couple",
+      "userAction": "Registry lock exists — add FP to compose + re-pair",
+      "dualAppDefault": "BOTH",
+      "autoSyncCoupleStub": true
+    },
+    "NOT_IN_CATALOG": {
+      "processorAction": "lock-sacred-couple",
+      "userAction": "Cross-ref Z2M/ZHA/forum before adding FP",
+      "dualAppDefault": "REVIEW",
+      "autoSyncCoupleStub": false
+    },
+    "COLLISION": {
+      "processorAction": "lock-sacred-couple",
+      "userAction": "Resolve sacred couple collision in registry before user re-pair",
+      "dualAppDefault": "BOTH",
+      "autoSyncCoupleStub": false
+    }
+  },
+  "issueOverrides": {
+    "sos": { "processorAction": "code-fix-stable-candidate", "fixProfileRef": "SOS battery spike guard" },
+    "battery": { "processorAction": "code-fix-stable-candidate", "fixProfileRef": "SOS battery spike guard" },
+    "ias": { "processorAction": "code-fix-stable-candidate", "fixProfileRef": "IASZoneEnhanced.coerce" },
+    "contact": { "processorAction": "code-fix-stable-candidate", "fixProfileRef": "IASZoneEnhanced.coerce" },
+    "crash": { "processorAction": "user-update-repair", "dualAppDefault": "MASTER_ONLY" },
+    "memory": { "processorAction": "master-only-tune", "dualAppDefault": "MASTER_ONLY" }
+  },
+  "silentActions": ["silent-monitor", "user-update-repair"],
+  "needActionExclude": ["silent-monitor"]
+}

@@ -1,0 +1,74 @@
+{
+  "_meta": {
+    "version": "1.1.0",
+    "policy": "SHADOW: investigate need-action offline — never wait for / write to forum. Never invent pid. P2224 routes symptoms → resilience domains."
+  },
+  "needActionActions": [
+    "code-fix-stable-candidate",
+    "lock-sacred-couple",
+    "request-diag-couple",
+    "master-only-tune"
+  ],
+  "pidCandidates": [
+    "TS0001", "TS0002", "TS0003", "TS0004",
+    "TS0041", "TS0042", "TS0043", "TS0044", "TS004F",
+    "TS011F", "TS0201", "TS0207", "TS0601", "TS000F"
+  ],
+  "sources": {
+    "priority": [
+      "misattribution-registry",
+      "device-truth",
+      "device-fingerprint-db",
+      "driver-compose",
+      "same-user-forum-history",
+      "diag-excerpt",
+      "community-inbox",
+      "user-impact-catalog",
+      "z2m-web"
+    ],
+    "web": {
+      "enabled": true,
+      "maxFetches": 8,
+      "templates": {
+        "z2mSearch": "https://www.zigbee2mqtt.io/all.html",
+        "blakadder": "https://zigbee.blakadder.com/search.html?q={{mfr}}"
+      }
+    }
+  },
+  "resolutionVerdicts": {
+    "resolvedRegistry": "Couple confirmed via misattribution registry / device-truth",
+    "resolvedCompose": "Couple confirmed via driver.compose productId list",
+    "resolvedUserHistory": "Same user posted couple elsewhere on forum",
+    "resolvedDiag": "Diagnostic excerpt contains mfr+pid or driver UUID",
+    "resolvedHeuristic": "Heuristic hard prefer (≥92) after symptom/prefix/peer boost — still verify on re-pair",
+    "softHypothesis": "Predictive soft rank — observe only; never catalog invent / never sacred lock",
+    "ambiguousMultiPid": "Ranked candidates kept — CI continues without waiting for user",
+    "stillMissing": "Observe RX / clusters — do not invent pid from tile name",
+    "fixShipped": "Code fix already on master Test — user update + re-pair only"
+  },
+  "unknownPolicy": {
+    "waitForUser": false,
+    "predictive": true,
+    "softNeverLocks": true,
+    "runtimeHelper": "lib/helpers/UnknownCaseRealigner.js"
+  },
+  "resilienceDomainRouting": {
+    "button": "buttons_bidirectional",
+    "virtual": "buttons_bidirectional",
+    "physical": "buttons_bidirectional",
+    "sos": "battery",
+    "battery": "battery",
+    "ias": "ias_sleepy",
+    "contact": "ias_sleepy",
+    "meter": "ef00_dp",
+    "gang": "buttons_bidirectional",
+    "luminance": "ef00_dp",
+    "flow": "flows",
+    "crash": "heap_json",
+    "dimmer": "dimmer_brightness"
+  },
+  "evolutionRefs": [
+    "config/resilience/layer-glossary.json",
+    "docs/architecture/COMPLEMENTARY_ENRICHMENT.md"
+  ]
+}

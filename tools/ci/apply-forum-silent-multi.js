@@ -154,10 +154,22 @@ const KNOWN_ROUTES = [
     driver: 'scene_switch_4',
   },
   {
+    id: 'kfu8zapd-button4',
+    mfrs: ['_TZ3000_kfu8zapd'],
+    pids: ['TS0044', 'TS004F'],
+    driver: 'button_wireless_4',
+  },
+  {
     id: 'xffhmvhv-nobo-sws-iz',
     mfrs: ['_TZ3000_xffhmvhv'],
     pids: ['TS004F'],
     driver: 'button_wireless_4',
+  },
+  {
+    id: 'tongou-to-q-sys-jzt-din',
+    mfrs: ['_TZE284_6ocnqlhn', '_TZE284_6OCNQLHN', '_tze284_6ocnqlhn'],
+    pids: ['TS0601'],
+    driver: 'din_rail_meter',
   },
 ];
 
@@ -251,4 +263,8 @@ function main() {
   console.log('Report:', REPORT);
 }
 
-main();
+module.exports = { KNOWN_ROUTES, ensureCouple };
+
+if (require.main === module) {
+  main();
+}

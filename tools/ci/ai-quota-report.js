@@ -18,22 +18,39 @@ const STATE = path.join(ROOT, '.github', 'state', 'ai-rate-state.json');
 let budgets = {};
 try {budgets = require(path.join(ROOT, 'scripts', 'automation', 'token-budget.js')).BUDGETS || {};} catch { /* no budget file */ }
 
+let forfaitCaps = {};
+try {
+  forfaitCaps = require(path.join(ROOT, 'config', 'security', 'ai-plan-forfait.json')).includedDailyCaps || {};
+} catch { /* optional */ }
+
 let state = { d: {}, dd: 'n/a' };
 try {state = JSON.parse(fs.readFileSync(STATE, 'utf8'));} catch { /* no state yet */ }
 
-const globalCap = parseInt(process.env.AI_GLOBAL_DAILY_CAP || '2000', 10);
+let globalCap = 400;
+try {
+  globalCap = parseInt(
+    process.env.AI_GLOBAL_DAILY_CAP
+      || require(path.join(ROOT, 'config', 'security', 'ai-plan-forfait.json')).defaults.AI_GLOBAL_DAILY_CAP
+      || '400',
+    10
+  );
+} catch {
+  globalCap = parseInt(process.env.AI_GLOBAL_DAILY_CAP || '400', 10);
+}
 const total = Object.values(state.d || {}).reduce((a, c) => a + c, 0);
 
-console.log(`[ai-quota] date=${state.dd || 'n/a'} | usage global: ${total}/${globalCap} (${globalCap ? Math.round(100 * total / globalCap) : 0}%)`);
+console.log(`[ai-quota] forfait | date=${state.dd || 'n/a'} | usage global: ${total}/${globalCap} (${globalCap ? Math.round(100 * total / globalCap) : 0}%)`);
 
-const providers = new Set([...Object.keys(budgets), ...Object.keys(state.d || {})]);
+const providers = new Set([...Object.keys(budgets), ...Object.keys(forfaitCaps), ...Object.keys(state.d || {})]);
 let warned = 0;
 for (const name of [...providers].sort()) {
   const used = (state.d || {})[name] || 0;
-  const cap = budgets[name]?.dailyRequests ?? 500;
+  const cap = Number.isFinite(forfaitCaps[name])
+    ? forfaitCaps[name]
+    : (budgets[name]?.dailyRequests ?? 500);
   const tier = budgets[name]?.tier || 'free';
-  const pct = cap ? Math.round(100 * used / cap) : 0;
-  const flag = pct >= 80 ? ' ⚠️' : '';
+  const pct = cap ? Math.round(100 * used / cap) : (used > 0 ? 100 : 0);
+  const flag = pct >= 80 || (cap === 0 && tier === 'paid') ? ' ⚠️' : '';
   if (pct >= 80) {warned++;}
   console.log(`  ${flag} ${name.padEnd(16)} ${String(used).padStart(4)}/${String(cap).padEnd(5)} (${String(pct).padStart(3)}%) [${tier}]`);
 }

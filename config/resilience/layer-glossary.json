@@ -1,0 +1,89 @@
+{
+  "_meta": {
+    "version": "1.0.0",
+    "id": "P2224",
+    "policy": "Complementary enrichment — parallel vocabularies coexist; do not collapse stacks",
+    "eras": [
+      "v5 fat classes",
+      "v7 mixins Physical/Virtual",
+      "v8 Phoenix L14 Fleetwood UnifiedBattery",
+      "v9 Sovereign dual-app silent enrichment resilience"
+    ]
+  },
+  "schemes": {
+    "pipeline_l0_l11": {
+      "source": ["AI_CONTEXT_MANDATE.md", "docs/GLOBAL_INVESTIGATION_PLAN.md §3"],
+      "layers": {
+        "L0": { "name": "raw_handleFrame", "modules": ["PhysicalButtonMixin.onZigBeeMessage", "TuyaZigbeeDevice._setupRawFrameFallback"] },
+        "L1": { "name": "throttle_flood", "modules": ["UniversalThrottleManager", "EventDeduplicationLayer"] },
+        "L2": { "name": "bound_cluster", "modules": ["lib/clusters/OnOffBoundCluster", "TuyaE000BoundCluster"] },
+        "L3": { "name": "cluster_listeners", "modules": ["PhysicalButtonMixin._setupGangPhysicalDetection"] },
+        "L4": { "name": "dp_ef00", "modules": ["TuyaEF00Manager", "UniversalDPReceiver"] },
+        "L5": { "name": "protocol_router", "modules": ["IntelligentProtocolDetect", "CapabilityCommandRouter"] },
+        "L6": { "name": "smart_divisor", "modules": ["SmartDivisorManager"] },
+        "L7": { "name": "battery_cascade", "modules": ["UnifiedBatteryHandler", "normalizeZclBatteryPercent"] },
+        "L8": { "name": "dynamic_caps", "modules": ["DynamicCapabilityManager", "DPAdaptationEngine"] },
+        "L9": { "name": "ir_session", "modules": ["lib/ir"] },
+        "L10": { "name": "health_monitor", "modules": ["DeviceAvailabilityManager"] },
+        "L11": { "name": "sanity_l14", "modules": ["SanityFilter", "safeSetCapabilityValue"] }
+      }
+    },
+    "bypass_elite_l1_l9": {
+      "source": ["docs/rules/BYPASS_ELITE_LAYERS.md"],
+      "note": "May 2026 intent — complemented by UniversalLayerBootstrap + domains.json",
+      "layers": {
+        "L1": "raw interceptor",
+        "L2": "BoundCluster emulation",
+        "L3": "cluster listeners",
+        "L4": "debounce",
+        "L5": "scale/divisor",
+        "L6": "battery",
+        "L7": "hybrid router",
+        "L8": "dynamic capabilities",
+        "L9": "SDK3 wrapper"
+      }
+    },
+    "capability_protocol_l0_l6": {
+      "source": ["docs/architecture/LAYERS_CAPABILITY_PROTOCOL.md"],
+      "layers": {
+        "L0": "raw Zigbee",
+        "L1": "cluster bind",
+        "L2": "protocol detect",
+        "L3": "capability map",
+        "L3b": "HomeyCompensation / UnsupportedRegistry",
+        "L4": "confirmInbound fusion",
+        "L5": "L14 write",
+        "L6": "UI / flows"
+      }
+    },
+    "button_capture_l1_l8": {
+      "source": ["config/resilience/button-capture-cascade.json", "docs/RULES_PHYSICAL_BUTTONS.md"],
+      "layers": {
+        "L1": "OnOffBound 0xFD/0xFC",
+        "L2": "raw node catcher",
+        "L3": "scenes",
+        "L4": "ZCL on/off/toggle",
+        "L5": "E000/E001",
+        "L6": "LevelControl",
+        "L7": "EF00 DP conditional",
+        "L8": "MultistateInput"
+      }
+    },
+    "ai_three_layers": {
+      "source": ["docs/ARCHITECTURE_AI.md"],
+      "layers": {
+        "IDE": "Cursor / local agent",
+        "GHA": "silent enrichment workflows",
+        "RUNTIME": "Homey SDK3 zero cloud"
+      }
+    }
+  },
+  "crosswalk": [
+    { "from": "pipeline.L0", "also": ["button.L2", "bypass.L1"] },
+    { "from": "pipeline.L2", "also": ["button.L1", "button.L5", "bypass.L2"] },
+    { "from": "pipeline.L5", "also": ["capability.L2", "resilience.hybrid_protocol"] },
+    { "from": "pipeline.L7", "also": ["resilience.battery"] },
+    { "from": "pipeline.L11", "also": ["capability.L5", "resilience.l14_telemetry"] },
+    { "from": "button.L1-L8", "also": ["resilience.buttons_bidirectional"] }
+  ]
+}

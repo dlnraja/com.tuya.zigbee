@@ -1,0 +1,57 @@
+{
+  "_meta": {
+    "version": "1.0.0",
+    "description": "Issue symptom tags → fix profile keys in user-impact-catalog.fixCatalog"
+  },
+  "issues": {
+    "sos": {
+      "fixRefs": ["SOS battery spike guard"],
+      "drivers": ["button_emergency_sos"],
+      "signals": ["sos", "battery_low", "IAS"]
+    },
+    "battery": {
+      "fixRefs": ["SOS battery spike guard", "UnifiedBatteryHandler"],
+      "drivers": ["button_emergency_sos", "contact_sensor", "water_leak_sensor"]
+    },
+    "contact": {
+      "fixRefs": ["IASZoneEnhanced.coerce", "shouldSkipIasOnlyEf00Tx"],
+      "drivers": ["contact_sensor", "contact_sensor_zigbee"]
+    },
+    "button": {
+      "fixRefs": [
+        "ButtonDevice wake + deferred DataRecovery P2184",
+        "PhysicalButtonMixin 0xFD",
+        "VirtualButtonMixin markAppCommand",
+        "TuyaZigbeeDevice._registerButtonCapabilityListeners P2220"
+      ],
+      "drivers": ["button_wireless_1", "button_wireless_2", "scene_switch_4", "switch_1gang", "switch_2gang", "wall_switch_4gang_1way"],
+      "notes": "Physical 0xFD + virtual UI must share dedup; UI path must markAppCommand before TX"
+    },
+    "virtual": {
+      "fixRefs": ["VirtualButtonMixin markAppCommand", "TuyaZigbeeDevice._registerButtonCapabilityListeners P2220"],
+      "drivers": ["switch_1gang", "switch_2gang", "wall_switch_4gang_1way", "scene_switch_4"]
+    },
+    "physical": {
+      "fixRefs": ["PhysicalButtonMixin 0xFD", "markAppCommand ghost suppression"],
+      "drivers": ["scene_switch_4", "button_wireless_4", "switch_2gang"]
+    },
+    "luminance": {
+      "fixRefs": ["contact_sensor_illuminance_changed flow"],
+      "drivers": ["contact_sensor"],
+      "notes": "DP101 scale needs couple interview — never hardcode divisor"
+    },
+    "gang": {
+      "fixRefs": ["endpoint jitter hardening", "markAppCommand per-gang"],
+      "drivers": ["switch_2gang", "switch_3gang", "wall_switch_4gang_1way"]
+    },
+    "meter": {
+      "fixRefs": ["DpByteArrayProfiles tongou-to-q-sys-jzt-dp6"],
+      "drivers": ["din_rail_meter"],
+      "coupleHint": "_TZE284_6ocnqlhn+TS0601"
+    },
+    "flow": {
+      "fixRefs": [],
+      "notes": "Usually app update + flow card ID validation — not device FP"
+    }
+  }
+}

@@ -1,0 +1,245 @@
+{
+  "_meta": {
+    "version": "1.0.0",
+    "updated": "2026-08-23",
+    "doctrine": "Lock interpretation by sacred couple (mfr+pid). Same DP number ≠ same meaning.",
+    "tuyaTypes": {
+      "0": "RAW / byte_array — requires explicit layout parser; never auto-map to humidity",
+      "1": "BOOL",
+      "2": "VALUE (uint32 BE)",
+      "3": "STRING",
+      "4": "ENUM",
+      "5": "BITMAP"
+    },
+    "lastSync": "2026-08-23T06:07:56.138Z"
+  },
+  "globalDpCollisions": {
+    "1": [
+      "onoff",
+      "meter_power",
+      "energy",
+      "alarm_contact"
+    ],
+    "2": [
+      "dim/brightness",
+      "temperature",
+      "humidity",
+      "mode"
+    ],
+    "4": [
+      "mode",
+      "battery_percent"
+    ],
+    "5": [
+      "temperature",
+      "brightness_level"
+    ],
+    "6": [
+      "countdown",
+      "measure_humidity",
+      "meter_power.exported",
+      "electricity_composite_raw"
+    ],
+    "15": [
+      "backlight_mode",
+      "battery"
+    ],
+    "101": [
+      "luminance",
+      "battery",
+      "custom"
+    ],
+    "108": [
+      "control_mode",
+      "leakage_setting (wrong Z2M label pre-26.68)"
+    ]
+  },
+  "couples": {
+    "_TZE284_6ocnqlhn|TS0601": {
+      "caseId": "tongou-to-q-sys-jzt-din-meter",
+      "driver": "din_rail_meter",
+      "model": "TO-Q-SYS-JZT",
+      "vendor": "Tongou",
+      "sources": [
+        "z2m-TO-Q-SYS-JZT",
+        "z2m#12466",
+        "z2m#30925",
+        "gmail-diag-3a1f196d",
+        "gmail-diag-31e654a4"
+      ],
+      "dps": {
+        "1": {
+          "name": "energy",
+          "tuyaType": 2,
+          "direction": "rx",
+          "capability": "meter_power",
+          "divisor": 100,
+          "notes": "Total kWh counter"
+        },
+        "6": {
+          "name": "electricity_composite_raw",
+          "tuyaType": 0,
+          "direction": "rx",
+          "format": "byte_array",
+          "profile": "tongou-to-q-sys-jzt-dp6",
+          "capability": null,
+          "blockDcm": true,
+          "blockLearnerHumidity": true,
+          "layout": [
+            {
+              "offset": 1,
+              "size": 2,
+              "encoding": "u16be",
+              "scale": 10,
+              "field": "voltage_V"
+            },
+            {
+              "offset": 3,
+              "size": 2,
+              "encoding": "u16be",
+              "scale": 1000,
+              "field": "current_A"
+            },
+            {
+              "offset": 5,
+              "size": 2,
+              "encoding": "u16be",
+              "scale": 10,
+              "field": "power_W"
+            }
+          ],
+          "notes": "RAW burst. Was mis-mapped to measure_humidity on smart_rcbo via DCM heuristics (DP6 in humid-dp list). Must use DpByteArrayProfiles."
+        },
+        "13": {
+          "name": "test1",
+          "tuyaType": 2,
+          "direction": "rx",
+          "capability": null,
+          "internal": true
+        },
+        "16": {
+          "name": "state",
+          "tuyaType": 1,
+          "direction": "rx_tx",
+          "capability": null,
+          "internal": "switch_state"
+        },
+        "32": {
+          "name": "ac_frequency",
+          "tuyaType": 2,
+          "direction": "rx",
+          "capability": null,
+          "divisor": 100,
+          "internal": "ac_frequency"
+        },
+        "50": {
+          "name": "power_factor",
+          "tuyaType": 2,
+          "direction": "rx",
+          "capability": null,
+          "divisor": 100,
+          "internal": "power_factor"
+        },
+        "108": {
+          "name": "control_mode",
+          "tuyaType": 4,
+          "direction": "rx_tx",
+          "enum": {
+            "0": "local_lock",
+            "1": "local_mode",
+            "2": "remote_mode",
+            "3": "full_control"
+          },
+          "capability": null,
+          "notes": "Z2M #12466 — value 3 is valid, not leakage_setting"
+        },
+        "125": {
+          "name": "test5",
+          "tuyaType": 2,
+          "direction": "rx",
+          "capability": "measure_power",
+          "divisor": 8.2,
+          "notes": "Z2M #30925 — tracks LCD power more reliably than composite DP6"
+        },
+        "131": {
+          "name": "temperature",
+          "tuyaType": 2,
+          "direction": "rx",
+          "capability": null,
+          "smartDivisor": true,
+          "internal": "temperature"
+        }
+      },
+      "txNotes": "Breaker trip thresholds on DPs 102-119 are settings enums/thresholds — expose only after compose review; no blind SET."
+    },
+    "_TZE284_m1cvyneb|TS0601": {
+      "caseId": "presentsky-bseed-dimmer-m1cvyneb",
+      "driver": "wall_dimmer_tuya",
+      "dps": {
+        "1": {
+          "name": "switch",
+          "tuyaType": 1,
+          "direction": "rx_tx",
+          "capability": "onoff"
+        },
+        "2": {
+          "name": "brightness",
+          "tuyaType": 2,
+          "direction": "rx_tx",
+          "capability": "dim",
+          "scale": "0-1000"
+        },
+        "6": {
+          "name": "countdown",
+          "tuyaType": 2,
+          "direction": "rx_tx",
+          "capability": null,
+          "notes": "NOT humidity on this couple"
+        },
+        "21": {
+          "name": "backlight",
+          "tuyaType": 4,
+          "direction": "rx_tx",
+          "capability": null,
+          "enum": [
+            "off",
+            "normal",
+            "inverted"
+          ]
+        }
+      }
+    },
+    "_TZE284_nt4pquef|TS0601": {
+      "caseId": "soil-nt4pquef",
+      "driver": "soil_sensor",
+      "dps": {
+        "2": {
+          "name": "light_level",
+          "tuyaType": 4,
+          "direction": "rx",
+          "capability": null,
+          "notes": "Enum light band — NOT moisture"
+        },
+        "3": {
+          "name": "moisture",
+          "tuyaType": 2,
+          "direction": "rx",
+          "capability": "measure_soil_moisture"
+        },
+        "5": {
+          "name": "temperature",
+          "tuyaType": 2,
+          "direction": "rx",
+          "capability": "measure_temperature",
+          "divisor": 10
+        },
+        "15": {
+          "name": "battery",
+          "tuyaType": 2,
+          "direction": "rx",
+          "capability": "measure_battery"
+        }
+      }
+    }
+  }
+}

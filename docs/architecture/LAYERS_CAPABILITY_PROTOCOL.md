@@ -149,3 +149,11 @@ Contribute: [`.github/CONTRIBUTING.md`](../../.github/CONTRIBUTING.md) · [`docs
 - Deprecated hybrids: sentinel mfrs, not empty catch-alls.
 - Document *why* in the module header; keep device.js thin.
 - Forum: silent by default (T157628); human drafts only when asked.
+
+## Complementary enrichment (P2224)
+
+This L0–L6 map coexists with pipeline L0–L11, BYPASS L1–L9, and button L1–L8 — do not collapse.
+
+- Glossary: [`config/resilience/layer-glossary.json`](../../config/resilience/layer-glossary.json)
+- Domains: [`config/resilience/domains.json`](../../config/resilience/domains.json)
+- Doctrine: [`COMPLEMENTARY_ENRICHMENT.md`](./COMPLEMENTARY_ENRICHMENT.md)

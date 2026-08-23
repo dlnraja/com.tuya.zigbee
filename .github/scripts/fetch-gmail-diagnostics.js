@@ -1,13 +1,17 @@
 #!/usr/bin/env node
 'use strict';
-// v5.13.2: IMAP primary with OAuth fallback when Gmail app-password auth breaks
+// v5.13.2 / P2226: Gmail cascade — IMAP (secrets) → OAuth (secrets) → local state
+// IDE/agent may probe Cursor Gmail plugin first; CI never has the plugin.
 const fs=require('fs'),path=require('path');
 const{fetchWithRetry}=require('./retry-helper');
 const privacy=require('./privacy-redactor');
 let eng=null;try{eng=require('./fp-research-engine')}catch{}
 let imap=null;try{imap=require('./gmail-imap-reader')}catch(err){console.error('gmail-imap-reader load error:',err.message)}
 let oauth=null;try{oauth=require('./gmail-oauth-reader')}catch(err){console.error('gmail-oauth-reader load error:',err.message)}
+let localReader=null;try{localReader=require('./gmail-local-reader')}catch(err){console.error('gmail-local-reader load error:',err.message)}
+let authCascade=null;try{authCascade=require('./gmail-auth-cascade')}catch{}
 const{extractFP:_vFP,extractFPWithBrands:_vFPB,extractPID:_vPID,isValidTuyaFP}=require('./fp-validator');
+const DiagEnrich=require('../../lib/diagnostics/DiagContentEnricher');
 let KB=null;try{KB=require('./bug-knowledge-base')}catch{}
 const SD=path.join(__dirname,'..','state');
 const SF=path.join(SD,'diagnostics-state.json');
@@ -171,8 +175,14 @@ function parse(t){
   const dps=(t.match(/\bDP\s*:?\s*(\d{1,3})\b/gi)||[]).map(d=>d.replace(/\D/g,''));
   const clusters=(t.match(/\bcluster\s*:?\s*(0x[0-9a-f]{4}|\d{4,5})\b/gi)||[]).map(cl=>cl.replace(/cluster\s*:?\s*/i,''));
   const caps=(t.match(/\b(onoff|dim|measure_power|measure_temperature|measure_humidity|measure_battery|meter_power|alarm_[a-z_]+|measure_[a-z_]+|button\.push)\b/g)||[]);
-  return{fps,errs:[...new Set(errs)].slice(0,15),devNames:[...new Set(devNames)],rid,homeyVersion:hv,appVersion:av,
-    kbMatch,dps:[...new Set(dps)],clusters:[...new Set(clusters)],caps:[...new Set(caps)]};
+  const enriched=DiagEnrich.enrich(t);
+  for(const c of enriched.couples||[]){
+    if(c.mfr&&!fps.mfr.includes(c.mfr))fps.mfr.push(c.mfr);
+    if(c.pid&&!fps.pid.includes(c.pid))fps.pid.push(c.pid);
+  }
+  return{fps,errs:[...new Set(errs)].slice(0,15),devNames:[...new Set(devNames)],rid,homeyVersion:hv||enriched.meta.homeyVersion||null,appVersion:av||enriched.meta.appVersion||null,
+    kbMatch,dps:[...new Set(dps)],clusters:[...new Set(clusters)],caps:[...new Set(caps)],
+    enriched};
 }
 
 // Cross-reference fingerprints with driver index
@@ -440,21 +450,45 @@ function finishAccessFailure(fetchOptions,code,message,extra={}){
 
 async function main(){
   const fetchOptions=parseFetchOptions(process.argv.slice(2));
+  // P2226: publish cascade health (plugin IDE-only; secrets for CI)
+  try{
+    if(authCascade?.probeCredentials){
+      const c=authCascade.probeCredentials();
+      fs.mkdirSync(SD,{recursive:true});
+      fs.writeFileSync(path.join(SD,'gmail-auth-cascade.json'),JSON.stringify(c,null,2)+'\n');
+      console.log('Gmail auth cascade — recommended:',c.recommended,'ciReady:',c.ciReady,
+        '| L0 plugin hinted:',c.layers.L0_cursor_plugin.hintedOk,
+        '| L1 IMAP:',c.layers.L1_imap_secrets.ready,
+        '| L2 OAuth:',c.layers.L2_oauth_secrets.ready,
+        '| L3 local:',c.layers.L3_local_state.ready);
+    }
+  }catch{}
   const e=process.env.GMAIL_EMAIL||process.env.HOMEY_EMAIL;
   const p=process.env.GMAIL_APP_PASSWORD||process.env.HOMEY_PASSWORD;
   const hasImapCredentials=Boolean(e&&p);
   const hasOAuthCredentials=Boolean(oauth&&oauth.hasOAuthCredentials&&oauth.hasOAuthCredentials());
+  const allowLocalFallback=boolEnv('GMAIL_ALLOW_LOCAL_FALLBACK',true);
   if(!hasImapCredentials&&!hasOAuthCredentials){
+    if(allowLocalFallback&&localReader?.readLocally){
+      console.log('::warning::No Gmail secrets — falling back to L3 local diagnostics state (plugin unavailable in CI).');
+      const localBatch=localReader.readLocally({limit:fetchOptions.maxTotalResults||100})||[];
+      if(Array.isArray(localBatch)&&localBatch.length){
+        console.log('L3 local-reader OK:',localBatch.length,'records');
+        // Re-enter processing path by assigning emails via synthetic window result
+        return processFetchedEmails(localBatch,fetchOptions,{mode:'local',windows:0,imapConnectionFailed:false,oauthConnectionFailed:false});
+      }
+    }
     const msg='Gmail credentials missing. Set GMAIL_EMAIL/GMAIL_APP_PASSWORD or Gmail OAuth secrets, then rerun Gmail diagnostics.';
     console.error('Gmail credentials missing. Set IMAP credentials or GMAIL_CLIENT_ID + GMAIL_CLIENT_SECRET + GMAIL_REFRESH_TOKEN.');
-    finishAccessFailure(fetchOptions,'missing_gmail_credentials',msg,{mode:'imap+oauth'});
+    finishAccessFailure(fetchOptions,'missing_gmail_credentials',msg,{mode:'imap+oauth+local'});
   }
   if(hasImapCredentials&&!imap&&!hasOAuthCredentials){
     const msg='gmail-imap-reader is unavailable. Install the IMAP dependencies before rerunning Gmail diagnostics.';
     console.error('gmail-imap-reader not available. npm install imapflow');
     finishAccessFailure(fetchOptions,'imap_reader_unavailable',msg);
   }
-  console.log('Gmail diagnostics mode — IMAP primary, OAuth fallback:',hasOAuthCredentials?'available':'unavailable');
+  console.log('Gmail diagnostics cascade — L1 IMAP primary, L2 OAuth fallback, L3 local last-resort');
+  console.log('OAuth fallback:',hasOAuthCredentials?'available':'unavailable');
   if(hasImapCredentials)console.log('IMAP primary — connecting as',safeAlias('account',e));
   else console.log('IMAP primary unavailable — missing GMAIL_EMAIL/GMAIL_APP_PASSWORD');
   console.log('Diagnostics fetch options:',JSON.stringify({mode:fetchOptions.allHistory?'all-history':'recent',
@@ -509,23 +543,49 @@ async function main(){
       if(emails.length>=fetchOptions.maxTotalResults)break;
     }
   }
+  if(!emails.length&&allowLocalFallback&&localReader?.readLocally){
+    console.log('::warning::Live Gmail fetch empty/failed — trying L3 local-reader fallback');
+    try{
+      const localBatch=localReader.readLocally({limit:fetchOptions.maxTotalResults||100})||[];
+      if(Array.isArray(localBatch)&&localBatch.length){
+        modesUsed.add('local');
+        for(const em of localBatch){
+          if(seenEmailIds.has(em.id))continue;
+          seenEmailIds.add(em.id);
+          emails.push(em);
+          if(emails.length>=fetchOptions.maxTotalResults)break;
+        }
+        console.log('L3 local-reader recovered',emails.length,'records');
+      }
+    }catch(err){
+      console.error('L3 local-reader error:',privacy.redact(err.message||String(err)));
+    }
+  }
   if((imapConnectionFailed||oauthConnectionFailed)&&!emails.length){
     const code=hasOAuthCredentials?'gmail_auth_failed':'imap_connection_failed';
     const msg=hasOAuthCredentials
       ? 'IMAP and OAuth Gmail access both failed before diagnostics could be fetched. Refresh Gmail IMAP app password and OAuth refresh token secrets, then rerun Gmail Diagnostics.'
       : 'IMAP connection failed before diagnostics could be fetched. Refresh the Gmail app credential, then rerun Gmail Diagnostics.';
-    console.error('::error::Gmail diagnostics could not authenticate. Refresh GMAIL_EMAIL/GMAIL_APP_PASSWORD and, if using OAuth fallback, GMAIL_REFRESH_TOKEN secrets.');
+    console.error('::error::Gmail diagnostics could not authenticate. Refresh GMAIL_EMAIL/GMAIL_APP_PASSWORD and, if using OAuth fallback, GMAIL_REFRESH_TOKEN secrets. Cursor Gmail plugin is IDE-only and cannot run in Actions.');
     finishAccessFailure(fetchOptions,code,msg,{windows:windows.length,fetched:0,mode:hasOAuthCredentials?'imap+oauth':'imap'});
   }
   if(imapConnectionFailed){
     console.log('::warning::At least one IMAP window failed, but diagnostics were fetched via',Array.from(modesUsed).join('+')||'fallback');
   }
-  if(oauthConnectionFailed&&hasOAuthCredentials&&!modesUsed.has('oauth')){
+  if(oauthConnectionFailed&&hasOAuthCredentials&&!modesUsed.has('oauth')&&!modesUsed.has('local')){
     console.log('::warning::OAuth fallback did not fetch diagnostics.');
   }
   if(!emails||!emails.length){console.log('No emails retrieved via Gmail diagnostics');process.exit(0)}
-  const successMode=Array.from(modesUsed).join('+')||'unknown';
-  console.log('Gmail diagnostics OK:',emails.length,'emails across',windows.length,'window(s), mode:',successMode);
+  return processFetchedEmails(emails,fetchOptions,{
+    mode:Array.from(modesUsed).join('+')||'unknown',
+    windows:windows.length,
+    imapConnectionFailed,
+    oauthConnectionFailed,
+  });
+}
+
+async function processFetchedEmails(emails,fetchOptions,{mode:successMode,windows}){
+  console.log('Gmail diagnostics OK:',emails.length,'emails across',windows||0,'window(s), mode:',successMode);
 
   // Track Gmail diagnostics health.
   const HF=path.join(SD,'gmail-token-health.json');
@@ -585,11 +645,14 @@ async function main(){
         crashApp:crashInfo.crashApp,capabilities:crashInfo.capabilities,clusters:crashInfo.clusters}:null,
       kbMatch:d.kbMatch,
       ai:safeAI,homeyVersion:d.homeyVersion,appVersion:d.appVersion,
+      logId:d.enriched?.logId||null,logIdShort:d.enriched?.logIdShort||null,
+      userMessage:d.enriched?.userMessage||null,couples:d.enriched?.couples||[],
+      signals:d.enriched?.signals||[],driversInLog:d.enriched?.drivers||[],
+      logHighlights:d.enriched?.highlights||[],diagSummary:d.enriched?.summary||null,
       bodyLength:em.bodyLength||0,contentType:em.contentType||'unknown'});
     res.push(entry);
     done.add(em.id);
-    console.log(' ['+type+'] '+safeSubj.substring(0,60)+(d.fps.mfr.length?' FP:'+d.fps.mfr.join(','):'')+
-      (safePseudo.username?' @'+safePseudo.username:''));
+    console.log(DiagEnrich.formatConsoleLine(type,safeSubj,d.enriched||{}));
 
     if(ai&&(ai.severity==='critical'||ai.severity==='high')){
       const issBody='**Type:** '+type+'\n**From:** '+safeFrom+'\n\n'+
@@ -626,6 +689,16 @@ async function main(){
   fs.writeFileSync(RF,JSON.stringify(report,null,2));
   console.log('Done:',res.length,'emails |',newFPs.length,'new FPs |',impl.added,'auto-added');
   console.log('By type:',JSON.stringify(bt));
+  const withLogId=res.filter(r=>r.logIdShort);
+  if(withLogId.length){
+    console.log('\n=== Structured diagnostic summaries (latest '+Math.min(8,withLogId.length)+') ===');
+    for(const r of withLogId.slice(0,8)){
+      console.log(' ',r.diagSummary||DiagEnrich.enrich(r.subj).summary);
+    }
+  }
+  try{
+    require('child_process').execSync('node tools/ci/render-diag-treat.js', { cwd: ROOT, stdio: 'inherit' });
+  }catch(e){console.log('render-diag-treat skipped:',e.message)}
 
     // v5.13.0: YAML cross-reference output for deep diagnostics
   const YF=path.join(SD,'diagnostics-crossref.yml');

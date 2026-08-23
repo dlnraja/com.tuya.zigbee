@@ -1,22 +1,35 @@
 ---
-description: Live operational memory — dual App IDs, forum #2190, P139 Stable
+description: Live operational memory — dual App IDs, forum #2190, P139 Stable, P2207/P2210
 alwaysApply: true
 ---
 
-# Operational memory — dual apps (audit 2026-08-22)
+# Operational memory — dual apps (audit 2026-08-23)
 
 ## Dual Athom apps (independent Test slots)
 | Track | Branch | App ID | Tip (git) | Homey Test |
 |-------|--------|--------|-----------|------------|
-| Universal Tuya | `master` | `com.dlnraja.tuya.zigbee` | **9.0.620** (`3d9553ae0`) | Auto-Publish OK (#2950 lineage) |
+| Universal Tuya | `master` | `com.dlnraja.tuya.zigbee` | **9.0.626+** (local soak) | Auto-Publish OK (#2950 lineage) |
 | Tuya Unified (Stable) | `stable-v5` | `com.dlnraja.tuya.zigbee.stable` | **5.12.88** (`531c103cb`) | Draft #13 **P139 processing_failed** — **no republish loop** |
 
 Clone Stable: `Documents\homey\stable`. `stable-v5-p195` is **STALE**.
 
-## Forum silent (T157628)
-- Highest post **#2190** Peter (diag `0cea6870`) — couple **ABSENT** in post. Do not invent k4ej/mrpevh8p onto Peter tiles.
+## Forum silent (T157628) — SHADOW read only
+- **Passive GET only** — never POST/reply/PM/like; never paste AI.
+- Scan → processor → enrich:investigate → code/CI only. `FORUM_AUTO_POST=0` + `SHADOW_FORUM=1` forced.
+- **P2218** heuristics for missing pid/DP; **P2220–P2221** bidirectional buttons (physical↔virtual+UI, 0xFD/0xFC parallel RX).
+- Reports local only: `reports/forum-verify-*/NEED_ACTION.md`
+- Highest live **#2192** (robertklep tip-only). **#2191** Toni: `_TZE284_6ocnqlhn`+TS0601 → `din_rail_meter`.
+- **P2229 shadow fix:** `app.json` + `mfs_db` still stole Tongou onto `smart_rcbo` while compose was correct — resynced zigbee from compose; mfs → `din_rail_meter`. Users: update Test + re-pair.
+- **P2229 CI:** `forum-actionable-processor` `routeFor` used `normalize()` as 2-arg predicate (always truthy) → every couple falsely → `wall_dimmer_tuya`. Fixed with `equalsCI`.
+- **#2190** Peter (diag `0cea6870`) — couple **ABSENT** in post. Do not invent k4ej/mrpevh8p onto Peter tiles.
 - **#2189** meter91: `_TZ3000_zgyzgdua`+**TS0044** → `scene_switch_4` 0xFD. User must **update Test ≥9.0.619 + re-pair**.
-- Default: **no forum / PM replies**. Scan → code/CI only.
+- **T99614 #286 SergeP** `_TZ3000_v5498kdm`+TS0001 = **Nous/SoPhos app**, not Universal Tuya — do **not** auto-lock into our drivers from that post.
+- **P2230 Gmail cascade verified:** L0 Cursor plugin OK; CI run `32640495322` IMAP Auth OK (50 mails) via GitHub secrets — plugin never required in GHA.
+- Latest diags: Toni `3a1f196d` Tongou still on Test **smart_rcbo** (needs publish of app.json sync); meter91 `55e3e591` / Nobø `9cbf9eb6` FLOW-GUARD ID spam fixed in heuristics; DYN-CAP blocks DP6 raw→humidity.
+- Homey Test tip email: master build **#2954** testing; Stable **#13–15** processing_failed (P139).
+- Soft only (no lock): `_TZ3000_xabckq1v`+TS0001 hypothesis — known couple is **TS004F** → `button_wireless_4`.
+- DP audit: `npm run audit:dp-couples` · guide: `docs/guides/DP_INTERPRETATION.md` · knowledge: `data/dp_couple_knowledge.json`
+- Default: **no forum / PM replies**. Scan → `forum-actionable-processor.js` → code/CI only.
 
 ## Shipped on master Test (users must update + re-pair)
 - IAS zoneStatus Buffer/object coerce
@@ -25,15 +38,18 @@ Clone Stable: `Documents\homey\stable`. `stable-v5-p195` is **STALE**.
 - P2203 `_ensureIasBound` on already-enrolled
 - Hashed flow resolve, IR `_sendIR` aliases, ZS06→`ir_blaster` TS1201
 - Drop genPowerCfg bind on IAS-only (INVALID_EP)
+- P2207 Tongou DIN meter DP profile (`din_rail_meter/device.js`)
 
 ## Sacred couples (lock mfr+pid only)
 | Couple | Driver | Note |
 |--------|--------|------|
+| `_TZE284_6ocnqlhn`+TS0601 | `din_rail_meter` | Tongou TO-Q-SYS-JZT; forbid `smart_rcbo` |
 | `_TZ3000_zgyzgdua`+TS0044 | `scene_switch_4` | meter91; 0xFD; not knob |
 | `_TZ3000_k4ej3ww2`+TS0207 | `water_leak_sensor` IAS 1280 | Z2M; never EF00 tuya water |
 | `_TZE284_m1cvyneb`+TS0601 | `wall_dimmer_tuya` | brightness 0–1000 |
 | `_TZ3000_lwthnp7j`+TS0004 | `wall_switch_4gang_1way` | Gabriel; pid not in #2186 post |
 | `_TZE200/204_pay2byax`+TS0601 | `contact_sensor_zigbee` | P126 no TS0601 on contact_sensor |
+| `_TZ3000_xffhmvhv`+TS004F | `button_wireless_4` | Nobø diag `9cbf9eb6` |
 
 ## P139 — Athom transient (DO NOT LOOP)
 - Stable 5.12.88 upload succeeded then **processing_failed** — wait; do not force_test spam.
@@ -42,11 +58,37 @@ Clone Stable: `Documents\homey\stable`. `stable-v5-p195` is **STALE**.
 ## Commands
 ```bash
 gh run list --repo dlnraja/com.tuya.zigbee --limit 12
-node tools/ci/forum-silent-multi-scan.js --max=40
-node tools/ci/anti-bot-regression-gate.js
-node tools/ci/p2138-sacred-couple-matrix-gate.js
-node --test test/critical/p2184-diag-1cf775a2.test.js test/critical/p2138-bseed-wall-dimmer.test.js
+npm run enrich:silent
+npm run enrich:investigate
+npm run resilience:audit
+npm run forum:process
+npm run forum:parse-digest
 ```
+
+## Resilience (P2222 / P2224 / P2225) — BOTH tracks
+- SSOT: `config/resilience/` (22 domains, critical-gaps, bug-classes, glossary)
+- Inventory: `npm run resilience:inventory` → `reports/resilience-*/INVENTORY.md`
+- Critical-first: `npm run resilience:critical` · full: `npm run resilience:all`
+- Workflow: `project-resilience.yml` (05:20 UTC) + wired in forum-poll / auto-enrich / fetch-diags
+- Doctrine: `docs/architecture/COMPLEMENTARY_ENRICHMENT.md`
+- Runtime: `HomeyGapCompensator` + `ButtonCaptureCascade`
+- Forum: SHADOW only
+- Stale worktrees not mass-synced — canonical Stable: `Documents\homey\stable`
+
+## Gmail cascade (P2226)
+- L0 Cursor Gmail plugin = IDE only (probed OK this session — Homey diag mail present)
+- CI: L1 IMAP secrets → L2 OAuth → L3 local state (`npm run diag:gmail:cascade`)
+- Workflows: `fetch-diags.yml`, `gmail-diagnostics.yml` + `npm run workflow:smoke`
+
+## CI vs Homey app (P2228)
+- Doctrine: `docs/architecture/CI_VS_HOMEY_RUNTIME.md`
+- Homey: soft hooks in `lib/` + `lib/**/data/*` only
+- GHA: `config/enrichment|resilience|security`, `tools/ci/*` — excluded via `.homeyignore`
+
+## AI forfait + security (P2227)
+- Mode: `AI_PLAN_MODE=forfait` — never paid overage (`AI_ALLOW_PAID=false`)
+- Caps: global 400/day, soft-stop 85%, `GMAIL_DIAG_AI_MAX=0`
+- `npm run ai:plan-guard` · `npm run security:plan` · SSOT `config/security/ai-plan-forfait.json`
 
 ## Handoffs (parent folder)
 `Documents\homey\FROM_THE_BEGINNING.md` · `NEXT_PATCHES.md` · `FORUM_LATEST_2190.md` · `FULL_SOURCE_SWEEP.md` · `ZIGBEE_PARALLEL_CROSS.md`

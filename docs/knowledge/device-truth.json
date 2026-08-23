@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-08-19T08:50:15.132Z",
+  "generatedAt": "2026-08-23T03:42:07.227Z",
   "source": "tools/ci/build-device-truth.js",
   "doctrine": "Fingerprint = manufacturerName + productId. Never invent a pid. Never POST on Homey forum.",
   "driverCount": 431,
-  "lockCount": 54,
+  "lockCount": 57,
   "lookup": {
     "byDriver": "drivers.<driverId>",
     "byCouple": "scan locks[].mfr + locks[].productId, or Grep compose"
@@ -756,12 +756,16 @@
         "ZB-CL01",
         "ZBT-ColorLight"
       ],
-      "manufacturerCount": 4,
+      "manufacturerCount": 19,
       "manufacturersSample": [
         "lumi.light.cwopcn02",
         "lumi.light.cwopcn03",
         "LUMI.LIGHT.CWOPCN02",
-        "LUMI.LIGHT.CWOPCN03"
+        "LUMI.LIGHT.CWOPCN03",
+        "_TZ3000_dbou1ap4",
+        "_TZ3000_keabpigv",
+        "_TZ3000_hlijwsai",
+        "_TZ3000_qd7hej8u"
       ],
       "capabilities": [
         "dim",
@@ -1213,7 +1217,7 @@
       "id": "button_wireless_2",
       "class": "button",
       "name": "2-Buttons Wireless Controller",
-      "protocol": "zcl_only",
+      "protocol": "tuya_ef00",
       "productIds": [
         "01MINIZB",
         "A11Z",
@@ -1322,7 +1326,7 @@
         "lumi.plug.mmeu01",
         "SNZB-01M"
       ],
-      "manufacturerCount": 740,
+      "manufacturerCount": 578,
       "manufacturersSample": [
         "TUYATEC-NZRRVGCO",
         "TUYATEC-O6SNCWD6",
@@ -2096,16 +2100,16 @@
         "lumi.sensor_ht.agl02",
         "lumi.weather"
       ],
-      "manufacturerCount": 2606,
+      "manufacturerCount": 2463,
       "manufacturersSample": [
         "Wing",
         "wing",
         "WING",
         "TUYATEC-HaoiuWzy",
         "TUYATEC-1uxx9cci",
-        "TUYATEC-riuj5xzs",
-        "TUYATEC-v3uxbuxy",
-        "TUYATEC-1g3tawnp"
+        "OWON",
+        "TUYATEC-AVTSQQBD",
+        "TUYATEC-W89THYFC"
       ],
       "capabilities": [
         "measure_temperature",
@@ -2503,7 +2507,7 @@
         "TY0203",
         "q9mpfhw"
       ],
-      "manufacturerCount": 43,
+      "manufacturerCount": 153,
       "manufacturersSample": [
         "WING",
         "wing",
@@ -2691,37 +2695,21 @@
       "id": "contact_sensor_zigbee",
       "class": "sensor",
       "name": "Contact Sensor Zigbee",
-      "protocol": "zcl_sleepy",
+      "protocol": "tuya_ef00",
       "productIds": [
-        "3300-S",
-        "3320-L",
-        "CK-TLSR8656-SS5-01(7003)",
-        "DS01",
-        "DoorWindow-Sensor-ZB3.0",
-        "E1603/E1702",
-        "Excellux",
-        "MCCGQ01LM",
-        "MCCGQ11LM",
-        "MCCGQ12LM",
-        "MCCGQ14LM",
-        "MCT-340 E",
-        "RH3001",
-        "TRADFRI open/close remote",
-        "TS0021",
-        "TS0115",
-        "TS011F",
-        "TS0203",
-        "TY0203",
-        "ZG-102Z",
-        "ZG-102ZL",
-        "lumi.magnet.ac01",
-        "lumi.magnet.agl02",
-        "lumi.sensor_magnet",
-        "lumi.sensor_magnet.aq2",
-        "q9mpfhw"
+        "TS0601"
       ],
-      "manufacturerCount": 0,
-      "manufacturersSample": [],
+      "manufacturerCount": 8,
+      "manufacturersSample": [
+        "_TZE200_pay2byax",
+        "_tze200_pay2byax",
+        "_TZE200_PAY2BYAX",
+        "_tze200_PAY2BYAX",
+        "_TZE204_pay2byax",
+        "_tze204_pay2byax",
+        "_TZE204_PAY2BYAX",
+        "_tze204_PAY2BYAX"
+      ],
       "capabilities": [
         "alarm_contact",
         "measure_battery",
@@ -2735,8 +2723,33 @@
       "mainsPowered": false,
       "hasEf00Cluster": false,
       "endpointCount": 1,
-      "locks": [],
-      "peculiarities": []
+      "locks": [
+        {
+          "caseId": "p2201-pay2byax-zg102zl-contact",
+          "mfr": [
+            "_TZE200_pay2byax",
+            "_tze200_pay2byax",
+            "_TZE204_pay2byax",
+            "_tze204_pay2byax"
+          ],
+          "productId": [
+            "TS0601",
+            "ZG-102ZL",
+            "ZG-102Z"
+          ],
+          "forbidden": [
+            "soil_sensor",
+            "climate_sensor",
+            "switch_3gang",
+            "zigbee_universal"
+          ],
+          "protocol": "tuya_dp",
+          "notes": "ZG-102ZL luminance contact. TS0601 pairs via contact_sensor_zigbee (P126 forbids TS0601 on contact_sensor). ZG-102ZL also on contact_sensor."
+        }
+      ],
+      "peculiarities": [
+        "ZG-102ZL luminance contact. TS0601 pairs via contact_sensor_zigbee (P126 forbids TS0601 on contact_sensor). ZG-102ZL also on contact_sensor."
+      ]
     },
     "curtain_module": {
       "id": "curtain_module",
@@ -2747,7 +2760,7 @@
         "TS130F",
         "TS0726"
       ],
-      "manufacturerCount": 24,
+      "manufacturerCount": 36,
       "manufacturersSample": [
         "_TZ3000_zirycmlo",
         "_TZ3000_fccfkzca",
@@ -2797,7 +2810,7 @@
         "TS0601",
         "TS0726"
       ],
-      "manufacturerCount": 36,
+      "manufacturerCount": 40,
       "manufacturersSample": [
         "_TZ3000_vd43bbhf",
         "_TZ3000_4naa57is",
@@ -2876,16 +2889,16 @@
         "lumi.curtain.acn002",
         "lumi.curtain.hagl04"
       ],
-      "manufacturerCount": 308,
+      "manufacturerCount": 318,
       "manufacturersSample": [
-        "_TZ3000_4UUAJA4A",
-        "_TZ3000_4uuaja4a",
         "_TZ3000_EAFAA66E",
         "_TZ3000_EG7AWG6A",
         "_TZ3000_FCCPJZ5Z",
         "_TZ3000_J1XL73IW",
         "_TZ3000_KE7PZJ5D",
-        "_TZ3000_L6IQPH4F"
+        "_TZ3000_L6IQPH4F",
+        "_TZ3000_ZIRYCPWS",
+        "_TZ3000_eafaa66e"
       ],
       "capabilities": [
         "windowcoverings_state",
@@ -3952,13 +3965,8 @@
         "TS004F",
         "TS011F"
       ],
-      "manufacturerCount": 4,
-      "manufacturersSample": [
-        "_TZ3000_vzopcetz",
-        "_TZ3000_1obwwnmq",
-        "_tz3000_vzopcetz",
-        "_tz3000_1obwwnmq"
-      ],
+      "manufacturerCount": 0,
+      "manufacturersSample": [],
       "capabilities": [
         "onoff",
         "measure_power",
@@ -3972,27 +3980,8 @@
       "mainsPowered": true,
       "hasEf00Cluster": false,
       "endpointCount": 1,
-      "locks": [
-        {
-          "caseId": "plug-vzopcetz-1obwwnmq",
-          "mfr": [
-            "_TZ3000_vzopcetz",
-            "_TZ3000_1obwwnmq"
-          ],
-          "productId": [
-            "TS011F"
-          ],
-          "forbidden": [
-            "button_wireless_2",
-            "tunable_bulb_E14"
-          ],
-          "protocol": "zcl",
-          "notes": "Johan/Silvercrest TS011F strip/plug — not button or E14 bulb."
-        }
-      ],
-      "peculiarities": [
-        "Johan/Silvercrest TS011F strip/plug — not button or E14 bulb."
-      ]
+      "locks": [],
+      "peculiarities": []
     },
     "device_plug_smart": {
       "id": "device_plug_smart",
@@ -4024,13 +4013,8 @@
         "lumi.sensor_ht.agl02",
         "lumi.weather"
       ],
-      "manufacturerCount": 4,
-      "manufacturersSample": [
-        "_TZ3000_pnzfdr9y",
-        "_tz3000_pnzfdr9y",
-        "_TZ3000_PNZFDR9Y",
-        "_tz3000_PNZFDR9Y"
-      ],
+      "manufacturerCount": 0,
+      "manufacturersSample": [],
       "capabilities": [
         "onoff",
         "measure_power",
@@ -4262,7 +4246,7 @@
         "ZBMINI-DIM",
         "ZBMINID"
       ],
-      "manufacturerCount": 84,
+      "manufacturerCount": 86,
       "manufacturersSample": [
         "_tz3000_8uaoilu9",
         "_tz3000_gek6snaj",
@@ -4293,7 +4277,7 @@
       "productIds": [
         "TS0502B"
       ],
-      "manufacturerCount": 28,
+      "manufacturerCount": 26,
       "manufacturersSample": [
         "_tz3000_g1glzzfk",
         "_TZ3000_G1GLZZFK",
@@ -4301,8 +4285,8 @@
         "_TZ3210_C2IWPXF1",
         "_tz3210_frm6149r",
         "_TZ3210_FRM6149R",
-        "_tz3210_invesber",
-        "_tz3210_psgq7ysz"
+        "_tz3210_psgq7ysz",
+        "_TZ3210_PSGQ7YSZ"
       ],
       "capabilities": [
         "onoff",
@@ -4348,7 +4332,7 @@
         "TS110E",
         "TS0052"
       ],
-      "manufacturerCount": 24,
+      "manufacturerCount": 26,
       "manufacturersSample": [
         "_TZ3210_c2iwsgbm",
         "_TZ3210_fwpt0tcx",
@@ -4428,7 +4412,7 @@
         "TS0001",
         "TS0726"
       ],
-      "manufacturerCount": 8,
+      "manufacturerCount": 30,
       "manufacturersSample": [
         "_TZE200_0hb4rdnp",
         "_tze200_0hb4rdnp",
@@ -4497,7 +4481,7 @@
         "ZG-301Z",
         "ZG-302Z1"
       ],
-      "manufacturerCount": 8,
+      "manufacturerCount": 20,
       "manufacturersSample": [
         "_TZE200_92t1xwwa",
         "_TZE200_fco1mkys",
@@ -4567,7 +4551,7 @@
         "ZG-301Z",
         "ZG-302Z1"
       ],
-      "manufacturerCount": 50,
+      "manufacturerCount": 60,
       "manufacturersSample": [
         "_tz3210_eejm8dcr",
         "_tze284_nthhgkd6",
@@ -4718,17 +4702,8 @@
         "TS1101",
         "TS0601"
       ],
-      "manufacturerCount": 8,
-      "manufacturersSample": [
-        "_tz3000_92chsky7",
-        "_TZ3000_92CHSKY7",
-        "_TZ3000_7ysdnebc",
-        "_tz3000_7ysdnebc",
-        "_TZ3000_7YSDNEBC",
-        "_TZ3000_92chsky7",
-        "_tz3000_92CHSKY7",
-        "_tz3000_7YSDNEBC"
-      ],
+      "manufacturerCount": 0,
+      "manufacturersSample": [],
       "capabilities": [
         "onoff",
         "dim",
@@ -4757,7 +4732,8 @@
         "TS0012",
         "TS0013",
         "TS0001",
-        "TS0726"
+        "TS0726",
+        "TS110E"
       ],
       "manufacturerCount": 8,
       "manufacturersSample": [
@@ -4811,16 +4787,16 @@
         "ZBMINI-DIM",
         "ZBMINID"
       ],
-      "manufacturerCount": 156,
+      "manufacturerCount": 152,
       "manufacturersSample": [
         "TS110E",
         "TS110F",
-        "_TYZB01_qezuin6k",
         "_TZ3000_49QCHF10",
         "_TZ3000_49qchf10",
         "_TZ3000_5rpu3r0d",
         "_TZ3000_7dcddnye",
-        "_TZ3000_7hcgjxpc"
+        "_TZ3000_7hcgjxpc",
+        "_TZ3000_bwlvyjwk"
       ],
       "capabilities": [
         "dim",
@@ -4938,7 +4914,7 @@
         "TS0601_generic",
         "TS0603"
       ],
-      "manufacturerCount": 36,
+      "manufacturerCount": 40,
       "manufacturersSample": [
         "_TZE204_DHOTIAUW",
         "_TZE204_dhotiauw",
@@ -4961,8 +4937,31 @@
       "mainsPowered": true,
       "hasEf00Cluster": true,
       "endpointCount": 1,
-      "locks": [],
-      "peculiarities": []
+      "locks": [
+        {
+          "caseId": "tongou-to-q-sys-jzt-din-meter",
+          "mfr": [
+            "_TZE284_6ocnqlhn",
+            "_tze284_6ocnqlhn",
+            "_TZE284_6OCNQLHN"
+          ],
+          "productId": [
+            "TS0601"
+          ],
+          "forbidden": [
+            "smart_rcbo",
+            "climate_sensor",
+            "soil_sensor",
+            "generic_tuya",
+            "zigbee_universal"
+          ],
+          "protocol": "tuya_ef00",
+          "notes": "Gmail diags 3a1f196d + 31e654a4 (Aug 2026). Z2M din rail smart meter — not RCBO. smart_rcbo stole couple; DP6 raw was mapped to measure_humidity. User must update Test and re-pair."
+        }
+      ],
+      "peculiarities": [
+        "Gmail diags 3a1f196d + 31e654a4 (Aug 2026). Z2M din rail smart meter — not RCBO. smart_rcbo stole couple; DP6 raw was mapped to measure_humidity. User must update Test and re-pair."
+      ]
     },
     "din_rail_switch": {
       "id": "din_rail_switch",
@@ -4974,7 +4973,7 @@
         "TS0601",
         "TS011F"
       ],
-      "manufacturerCount": 36,
+      "manufacturerCount": 34,
       "manufacturersSample": [
         "_tz3000_3r9fthmw",
         "_tz3000_7y5ikxwq",
@@ -5282,17 +5281,8 @@
         "TS0203",
         "SNZB-04"
       ],
-      "manufacturerCount": 9,
-      "manufacturersSample": [
-        "TUYATEC-ABKEHQUS",
-        "TUYATEC-BFQ2I2SY",
-        "TUYATEC-Bfq2i2Sy",
-        "TUYATEC-G3GL6CGY",
-        "TUYATEC-abkehqus",
-        "TUYATEC-g3gl6cgy",
-        "tuyatec-abkehqus",
-        "tuyatec-bfq2i2sy"
-      ],
+      "manufacturerCount": 0,
+      "manufacturersSample": [],
       "capabilities": [
         "alarm_contact",
         "measure_battery",
@@ -5380,7 +5370,7 @@
         "ZG-301Z",
         "ZG-302Z1"
       ],
-      "manufacturerCount": 8,
+      "manufacturerCount": 14,
       "manufacturersSample": [
         "_TZ3000_jowhpxop",
         "_tz3000_jowhpxop",
@@ -5435,7 +5425,7 @@
         "lumi.sensor_ht.agl02",
         "lumi.weather"
       ],
-      "manufacturerCount": 8,
+      "manufacturerCount": 10,
       "manufacturersSample": [
         "_tze284_8whfphjv",
         "cat0001",
@@ -6224,7 +6214,7 @@
         "SNZB-09P",
         "TS0044"
       ],
-      "manufacturerCount": 60,
+      "manufacturerCount": 56,
       "manufacturersSample": [
         "BOSCH",
         "D5X84YU",
@@ -6298,7 +6288,7 @@
         "TS0215A",
         "TS0601"
       ],
-      "manufacturerCount": 40,
+      "manufacturerCount": 42,
       "manufacturersSample": [
         "_tz3000_j70oanab",
         "_tz3000_lxw3kcw2",
@@ -6776,7 +6766,7 @@
         "TS0601_repeater",
         "TS1201"
       ],
-      "manufacturerCount": 120,
+      "manufacturerCount": 124,
       "manufacturersSample": [
         "_TZ3210_JIC09I9A",
         "_TZ3210_OGX8U9IT",
@@ -6784,8 +6774,8 @@
         "_TZ3290_5LUHABKC",
         "_TZ3290_785FBXIK",
         "_TZ3290_7V1K4VUF",
-        "_TZ3290_AI4V11WR0MYCYH7K",
-        "_TZ3290_GHTYM4CE"
+        "_tz3290_7v1k4vufotpowp9z",
+        "_TZ3290_7V1K4VUFOTPOWP9Z"
       ],
       "capabilities": [
         "onoff",
@@ -6819,16 +6809,16 @@
       "productIds": [
         "TS0601"
       ],
-      "manufacturerCount": 20,
+      "manufacturerCount": 16,
       "manufacturersSample": [
-        "_tz3290_7v1k4vufotpowp9z",
         "_TZ3290_ACV1IUSLXI3SHAAJ",
         "_tz3290_ot6ewjvmejq5ekhl",
         "_TZ3290_U9XAC5RV",
         "_TZ3290_XJPBCXN92AAXVMLZ",
-        "_TZ3290_7V1K4VUFOTPOWP9Z",
         "_tz3290_acv1iuslxi3shaaj",
-        "_TZ3290_OT6EWJVMEJQ5EKHL"
+        "_TZ3290_OT6EWJVMEJQ5EKHL",
+        "_tz3290_u9xac5rv",
+        "_tz3290_xjpbcxn92aaxvmlz"
       ],
       "capabilities": [
         "onoff",
@@ -6854,7 +6844,7 @@
         "TS0601",
         "Excellux"
       ],
-      "manufacturerCount": 12,
+      "manufacturerCount": 18,
       "manufacturersSample": [
         "_tz3000_8jtgjy0k",
         "_tz3000_g8fjhjt5",
@@ -6894,7 +6884,7 @@
         "TY0201",
         "Excellux"
       ],
-      "manufacturerCount": 44,
+      "manufacturerCount": 66,
       "manufacturersSample": [
         "_TZ2000_avdnvykf",
         "_TZ2000_hjsgdkfl",
@@ -6930,10 +6920,14 @@
       "productIds": [
         "TS0601",
         "TS0201",
-        "Excellux"
+        "Excellux",
+        "SM0201"
       ],
-      "manufacturerCount": 0,
-      "manufacturersSample": [],
+      "manufacturerCount": 2,
+      "manufacturersSample": [
+        "_TYZB01_cbiezpds",
+        "_tyzb01_cbiezpds"
+      ],
       "capabilities": [
         "measure_temperature",
         "measure_humidity",
@@ -6959,7 +6953,7 @@
         "TS0201",
         "Excellux"
       ],
-      "manufacturerCount": 32,
+      "manufacturerCount": 48,
       "manufacturersSample": [
         "_TZ3000_yujem9ee",
         "_TZE200_osmxri8y",
@@ -7257,7 +7251,8 @@
           ],
           "forbidden": [
             "button_wireless_2",
-            "tunable_bulb_E14"
+            "tunable_bulb_E14",
+            "rgb_led_strip_controller"
           ],
           "protocol": "zcl",
           "notes": "Blakadder/Z2M LED strip controller — not button or E14 CCT."
@@ -7472,7 +7467,8 @@
             "wall_dimmer_tuya",
             "led_strip_advanced",
             "dimmable_led_strip",
-            "led_controller_rgb"
+            "led_controller_rgb",
+            "rgb_led_light_bar"
           ],
           "protocol": "zcl",
           "notes": "Z2M Lidl/Livarno RGB+CCT bulb (TS0505B). Was dual-claimed with wall_dimmer via shared TS0601 productId — strip mfr from dimmer/strip."
@@ -7727,7 +7723,7 @@
         "lumi.sensor_motion",
         "lumi.sensor_motion.aq2"
       ],
-      "manufacturerCount": 178,
+      "manufacturerCount": 209,
       "manufacturersSample": [
         "TUYATEC-BD5FAF9P",
         "TUYATEC-SMMLGUJU",
@@ -7764,8 +7760,12 @@
         "Excellux",
         "TS0001"
       ],
-      "manufacturerCount": 0,
-      "manufacturersSample": [],
+      "manufacturerCount": 3,
+      "manufacturersSample": [
+        "---_TZE200_3towulqd---",
+        "---_tze200_3towulqd---",
+        "---_TZE200_3TOWULQD---"
+      ],
       "capabilities": [
         "measure_battery",
         "measure_luminance",
@@ -7899,12 +7899,14 @@
         "TS0101",
         "TS0049"
       ],
-      "manufacturerCount": 4,
+      "manufacturerCount": 6,
       "manufacturersSample": [
         "_TZ3000_br3laukf",
         "_TZ3000_BR3LAUKF",
         "_tz3000_br3laukf",
-        "_tz3000_BR3LAUKF"
+        "_tz3000_BR3LAUKF",
+        "_TZ3000_pnzfdr9y",
+        "_tz3000_pnzfdr9y"
       ],
       "capabilities": [
         "onoff",
@@ -8060,7 +8062,7 @@
         "ZG-301Z",
         "ZG-302Z1"
       ],
-      "manufacturerCount": 20,
+      "manufacturerCount": 44,
       "manufacturersSample": [
         "_tz3000_kmh5qpmb",
         "_tz3040_bb6xaihh",
@@ -8094,17 +8096,8 @@
       "productIds": [
         "RH3040"
       ],
-      "manufacturerCount": 21,
-      "manufacturersSample": [
-        "TUYATEC-lha8pbwd",
-        "TUYATEC-zn9wyqtr",
-        "TUYATEC-dxnohkpd",
-        "TUYATEC-53o41joc",
-        "TUYATEC-deetibst",
-        "TUYATEC-dgtxmihe",
-        "TUYATEC-b5g40alm",
-        "tuyatec-lha8pbwd"
-      ],
+      "manufacturerCount": 0,
+      "manufacturersSample": [],
       "capabilities": [
         "alarm_motion",
         "measure_battery",
@@ -8132,7 +8125,7 @@
         "TS0011",
         "TS011F"
       ],
-      "manufacturerCount": 8,
+      "manufacturerCount": 24,
       "manufacturersSample": [
         "_tz3000_jcqs2mrv",
         "_TZ3000_JCQS2MRV",
@@ -8240,7 +8233,7 @@
         "lumi.plug.maeu01",
         "lumi.plug.mmeu01"
       ],
-      "manufacturerCount": 134,
+      "manufacturerCount": 138,
       "manufacturersSample": [
         "CK-BL702-SWP-01(7020)",
         "E-WELINK",
@@ -8277,7 +8270,8 @@
           "forbidden": [
             "button_wireless_plug",
             "button_wireless_2",
-            "climate_sensor"
+            "climate_sensor",
+            "smartplug"
           ],
           "protocol": "zcl",
           "notes": "Metering TS011F plug (Z2M TS011F_plug_3). Firmware 1.0.5+ disabled auto electrical reports — poll voltage/current/power. Not a wireless button. Pid TS011F is also DIN/strip/double-outlet — lock this couple."
@@ -8298,12 +8292,33 @@
           ],
           "protocol": "zcl",
           "notes": "TZ3210 TS011F metering plug sibling of okaz9tjs. ZCL electrical+metering; not climate. Pid TS011F is ambiguous without mfr."
+        },
+        {
+          "caseId": "blitzwolf-amdymr7l-shp13-plug",
+          "mfr": [
+            "_TZ3000_amdymr7l",
+            "_tz3000_amdymr7l",
+            "_TZ3210_amdymr7l",
+            "_tz3210_amdymr7l"
+          ],
+          "productId": [
+            "TS011F"
+          ],
+          "forbidden": [
+            "button_wireless_2",
+            "button_wireless_1",
+            "climate_sensor",
+            "button_wireless_plug"
+          ],
+          "protocol": "zcl",
+          "notes": "BlitzWolf BW-SHP13 metering plug (Phoscon/Z2M). Never button driver. Pid TS011F ambiguous without mfr."
         }
       ],
       "peculiarities": [
         "okaz9tjs TS011F_plug_3: fw 1.0.5+ needs electrical poll; pid TS011F is also DIN/strip/double-outlet",
         "Metering TS011F plug (Z2M TS011F_plug_3). Firmware 1.0.5+ disabled auto electrical reports — poll voltage/current/power. Not a wireless button. Pid TS011F is also DIN/strip/double-outlet — lock this couple.",
-        "TZ3210 TS011F metering plug sibling of okaz9tjs. ZCL electrical+metering; not climate. Pid TS011F is ambiguous without mfr."
+        "TZ3210 TS011F metering plug sibling of okaz9tjs. ZCL electrical+metering; not climate. Pid TS011F is ambiguous without mfr.",
+        "BlitzWolf BW-SHP13 metering plug (Phoscon/Z2M). Never button driver. Pid TS011F ambiguous without mfr."
       ]
     },
     "plug_smart": {
@@ -8324,7 +8339,7 @@
         "TS0002",
         "TS0121"
       ],
-      "manufacturerCount": 31,
+      "manufacturerCount": 33,
       "manufacturersSample": [
         "_TZ3000_9VO5ICAU",
         "_TZ3000_NFNMI125",
@@ -8997,7 +9012,7 @@
         "TS0207",
         "ZG-223Z"
       ],
-      "manufacturerCount": 26,
+      "manufacturerCount": 30,
       "manufacturersSample": [
         "_tz3000_k1msavlx",
         "_tz3000_otwpdq1d",
@@ -9030,13 +9045,11 @@
       "name": "1 Channel Relay Board",
       "protocol": "zcl",
       "productIds": [
-        "TS0601"
+        "TS0601",
+        "TS0001"
       ],
-      "manufacturerCount": 2,
-      "manufacturersSample": [
-        "_TZ3000_dummy1781425895948",
-        "_tz3000_dummy1781425895948"
-      ],
+      "manufacturerCount": 0,
+      "manufacturersSample": [],
       "capabilities": [
         "onoff",
         "button.1"
@@ -9087,7 +9100,7 @@
       "productIds": [
         "TS0004"
       ],
-      "manufacturerCount": 16,
+      "manufacturerCount": 18,
       "manufacturersSample": [
         "_TZ3000_imaccztn",
         "_tz3000_imaccztn",
@@ -9529,17 +9542,8 @@
         "TS0505B",
         "ZB-CL01"
       ],
-      "manufacturerCount": 15,
-      "manufacturersSample": [
-        "EWELIGHT",
-        "_tz3000_q50zhdsc",
-        "_tz3000_qd7hej8u",
-        "_tz3210_mja6r5ix",
-        "eWeLight",
-        "ewelight",
-        "_TZ3000_Q50ZHDSC",
-        "_TZ3000_QD7HEJ8U"
-      ],
+      "manufacturerCount": 0,
+      "manufacturersSample": [],
       "capabilities": [
         "onoff",
         "dim",
@@ -9690,7 +9694,7 @@
         "TS0121",
         "TS0601"
       ],
-      "manufacturerCount": 16,
+      "manufacturerCount": 18,
       "manufacturersSample": [
         "_TZ3000_dl4pxp1r",
         "_TZ3000_qqjaziws",
@@ -9726,12 +9730,14 @@
         "TS0501A",
         "TS0601"
       ],
-      "manufacturerCount": 4,
+      "manufacturerCount": 6,
       "manufacturersSample": [
         "_TZ3000_9cpuaca6",
         "_tz3000_9cpuaca6",
         "_TZ3000_9CPUACA6",
-        "_tz3000_9CPUACA6"
+        "_tz3000_9CPUACA6",
+        "_TZ3210_r0xgkft5",
+        "_tz3210_r0xgkft5"
       ],
       "capabilities": [
         "onoff",
@@ -9994,7 +10000,7 @@
       ],
       "mainsPowered": false,
       "hasEf00Cluster": true,
-      "endpointCount": 1,
+      "endpointCount": 4,
       "locks": [],
       "peculiarities": []
     },
@@ -10287,17 +10293,8 @@
         "lumi.sensor_ht.agl02",
         "lumi.weather"
       ],
-      "manufacturerCount": 8,
-      "manufacturersSample": [
-        "_tz3000_ywagc4rj",
-        "_tz3210_ncw88jfq",
-        "_TZ3000_YWAGC4RJ",
-        "_TZ3210_NCW88JFQ",
-        "_TZ3000_ywagc4rj",
-        "_TZ3210_ncw88jfq",
-        "_tz3000_YWAGC4RJ",
-        "_tz3210_NCW88JFQ"
-      ],
+      "manufacturerCount": 0,
+      "manufacturersSample": [],
       "capabilities": [
         "measure_temperature",
         "measure_humidity",
@@ -10555,16 +10552,16 @@
         "lumi.sensor_magnet",
         "lumi.sensor_magnet.aq2"
       ],
-      "manufacturerCount": 340,
+      "manufacturerCount": 186,
       "manufacturersSample": [
         "HOBEIAN",
         "IMMAX",
         "Immax",
-        "TUYATEC-0L6XAQMI",
-        "TUYATEC-0l6xaqmi",
         "TUYATEC-3TIPNSRX",
         "TUYATEC-3tipnsrx",
-        "TUYATEC-7QUNN4GQ"
+        "TUYATEC-KTGE2VQT",
+        "_TZ3000_dlhhrhs8",
+        "_TZ3000_fab7r7mc"
       ],
       "capabilities": [
         "alarm_contact",
@@ -10731,17 +10728,8 @@
         "TS0201",
         "TY0201"
       ],
-      "manufacturerCount": 8,
-      "manufacturersSample": [
-        "_TZ3000_rusu2vzb",
-        "_tz2000_xogb73am",
-        "_tz3000_rusu2vzb",
-        "_TZ3000_RUSU2VZB",
-        "_TZ2000_XOGB73AM",
-        "_TZ2000_xogb73am",
-        "_tz3000_RUSU2VZB",
-        "_tz2000_XOGB73AM"
-      ],
+      "manufacturerCount": 0,
+      "manufacturersSample": [],
       "capabilities": [
         "measure_temperature",
         "measure_humidity",
@@ -11072,10 +11060,20 @@
       "protocol": "zcl",
       "productIds": [
         "TS0121",
-        "TS011F"
+        "TS011F",
+        "TSO121"
       ],
-      "manufacturerCount": 0,
-      "manufacturersSample": [],
+      "manufacturerCount": 10,
+      "manufacturersSample": [
+        "_TZ3000_qeuvnohg",
+        "_TZ3000_cayepv1a",
+        "_TZ3000_lepzuhto",
+        "_TZ3000_qystbcjg",
+        "_TZ3000_303avxxt",
+        "_tz3000_qeuvnohg",
+        "_tz3000_cayepv1a",
+        "_tz3000_lepzuhto"
+      ],
       "capabilities": [
         "onoff",
         "measure_power",
@@ -11170,7 +11168,7 @@
         "TS0601",
         "TS0215A"
       ],
-      "manufacturerCount": 16,
+      "manufacturerCount": 24,
       "manufacturersSample": [
         "_tz3000_lq01",
         "_tz3000_wqxwpita",
@@ -11281,12 +11279,16 @@
         "ZBMINI-DIM",
         "ZBMINID"
       ],
-      "manufacturerCount": 4,
+      "manufacturerCount": 10,
       "manufacturersSample": [
         "_TZ3210_EYMUNFFL",
         "_tz3210_eymunffl",
         "_TZ3210_eymunffl",
-        "_tz3210_EYMUNFFL"
+        "_tz3210_EYMUNFFL",
+        "_TZ3000_cjfmu5he",
+        "_TZ3000_kz1anoi8",
+        "_TZ3000_mq4wujmp",
+        "_tz3000_cjfmu5he"
       ],
       "capabilities": [
         "onoff",
@@ -11614,12 +11616,14 @@
         "TS0601_rcbo",
         "TS0601"
       ],
-      "manufacturerCount": 4,
+      "manufacturerCount": 6,
       "manufacturersSample": [
-        "_TZE284_6ocnqlhn",
-        "_TZE284_6OCNQLHN",
-        "_tze284_6ocnqlhn",
-        "_tze284_6OCNQLHN"
+        "_TZE200_lsanae15",
+        "_TZE204_lsanae15",
+        "_TZE284_lsanae15",
+        "_tze200_lsanae15",
+        "_tze204_lsanae15",
+        "_tze284_lsanae15"
       ],
       "capabilities": [
         "onoff",
@@ -11644,12 +11648,14 @@
       "productIds": [
         "TS004F"
       ],
-      "manufacturerCount": 4,
+      "manufacturerCount": 6,
       "manufacturersSample": [
         "_tz3000_yirp2pgd",
         "_TZ3000_YIRP2PGD",
         "_TZ3000_yirp2pgd",
-        "_tz3000_YIRP2PGD"
+        "_tz3000_YIRP2PGD",
+        "_TZ3000_kjfzuycl",
+        "_tz3000_kjfzuycl"
       ],
       "capabilities": [
         "measure_battery",
@@ -11807,10 +11813,20 @@
       "protocol": "zcl",
       "productIds": [
         "TS0121",
-        "TS011F"
+        "TS011F",
+        "TSO121"
       ],
-      "manufacturerCount": 0,
-      "manufacturersSample": [],
+      "manufacturerCount": 76,
+      "manufacturersSample": [
+        "_TZ3000_3ooaz3ng",
+        "_TYZB01_iuepbmpv",
+        "_TZ3000_g5xawfcq",
+        "_TZ3000_vtscrpmw",
+        "_TZ3000_rdtixbnu",
+        "_TZ3000_8nkb7mof",
+        "_TZ3000_cphmq0q7",
+        "_TZ3000_ew3ldmgx"
+      ],
       "capabilities": [
         "onoff",
         "measure_power",
@@ -11836,8 +11852,11 @@
         "TS011F",
         "TS0601"
       ],
-      "manufacturerCount": 0,
-      "manufacturersSample": [],
+      "manufacturerCount": 2,
+      "manufacturersSample": [
+        "_TZ3000_jak16dll",
+        "_tz3000_jak16dll"
+      ],
       "capabilities": [
         "onoff",
         "measure_power",
@@ -11960,7 +11979,7 @@
         "NAS-SD02B0",
         "TS0601"
       ],
-      "manufacturerCount": 92,
+      "manufacturerCount": 96,
       "manufacturersSample": [
         "_TYZB01_dsjszp0x",
         "_TYZB01_qiplt4jq",
@@ -12032,8 +12051,17 @@
         "TS011F",
         "TS0115"
       ],
-      "manufacturerCount": 0,
-      "manufacturersSample": [],
+      "manufacturerCount": 10,
+      "manufacturersSample": [
+        "_TZ3000_1obwwnmq",
+        "_TZ3000_vzopcetz",
+        "_TZ3000_4uf3d0ax",
+        "_TZ3000_wzauvbcs",
+        "_tz3000_1obwwnmq",
+        "_tz3000_vzopcetz",
+        "_tz3000_4uf3d0ax",
+        "_tz3000_wzauvbcs"
+      ],
       "capabilities": [
         "onoff",
         "button.1"
@@ -12042,8 +12070,27 @@
       "mainsPowered": false,
       "hasEf00Cluster": false,
       "endpointCount": 3,
-      "locks": [],
-      "peculiarities": []
+      "locks": [
+        {
+          "caseId": "plug-vzopcetz-1obwwnmq",
+          "mfr": [
+            "_TZ3000_vzopcetz",
+            "_TZ3000_1obwwnmq"
+          ],
+          "productId": [
+            "TS011F"
+          ],
+          "forbidden": [
+            "button_wireless_2",
+            "tunable_bulb_E14"
+          ],
+          "protocol": "zcl",
+          "notes": "Johan/Silvercrest TS011F strip/plug — not button or E14 bulb."
+        }
+      ],
+      "peculiarities": [
+        "Johan/Silvercrest TS011F strip/plug — not button or E14 bulb."
+      ]
     },
     "socket_power_strip_four": {
       "id": "socket_power_strip_four",
@@ -12055,7 +12102,7 @@
         "TS0601",
         "TS011F"
       ],
-      "manufacturerCount": 8,
+      "manufacturerCount": 10,
       "manufacturersSample": [
         "_tz3000_j1rx47vc",
         "_tz3000_u5u0drof",
@@ -12087,7 +12134,7 @@
         "TS0601",
         "TS011F"
       ],
-      "manufacturerCount": 15,
+      "manufacturerCount": 17,
       "manufacturersSample": [
         "_TZ3000_9tg32trw",
         "_TZ3000_djgzdba9",
@@ -12120,7 +12167,8 @@
           "forbidden": [
             "button_wireless_2",
             "button_wireless_4",
-            "climate_sensor"
+            "climate_sensor",
+            "socket_power_strip_four_two"
           ],
           "protocol": "zcl",
           "notes": "4-outlet + USB strip. Same mfr must not pair as a 2-button remote. Compound lock _TZ3000_cfnprab5|TS011F."
@@ -12146,8 +12194,11 @@
         "S60ZBTPF",
         "S60ZBTPG"
       ],
-      "manufacturerCount": 0,
-      "manufacturersSample": [],
+      "manufacturerCount": 2,
+      "manufacturersSample": [
+        "_TZ3000_o005nuxx",
+        "_tz3000_o005nuxx"
+      ],
       "capabilities": [
         "onoff",
         "button.1"
@@ -12542,7 +12593,7 @@
         "ZG-301Z",
         "ZG-302Z1"
       ],
-      "manufacturerCount": 1776,
+      "manufacturerCount": 1764,
       "manufacturersSample": [
         "BSEED",
         "TZE204_7SJNCIRF",
@@ -12583,16 +12634,16 @@
         "TS0002",
         "TS011F"
       ],
-      "manufacturerCount": 16,
+      "manufacturerCount": 12,
       "manufacturersSample": [
         "_TYZB01_MTUNWANM",
         "_TYZB01_ANEIICMQ",
-        "_TYZB01_ZSL6Z0PW",
         "_TYZB01_NCUTBJDI",
         "_tyzb01_mtunwanm",
         "_tyzb01_aneiicmq",
-        "_tyzb01_zsl6z0pw",
-        "_tyzb01_ncutbjdi"
+        "_tyzb01_ncutbjdi",
+        "_TYZB01_mtunwanm",
+        "_TYZB01_aneiicmq"
       ],
       "capabilities": [
         "onoff",
@@ -12616,7 +12667,8 @@
       "protocol": "zcl",
       "productIds": [
         "TS0601",
-        "TS004F"
+        "TS004F",
+        "TS0002"
       ],
       "manufacturerCount": 0,
       "manufacturersSample": [],
@@ -12655,7 +12707,7 @@
         "TS0726",
         "TS000F"
       ],
-      "manufacturerCount": 234,
+      "manufacturerCount": 238,
       "manufacturersSample": [
         "HOBEIAN",
         "_tyzb01_6g8b7at8",
@@ -12952,7 +13004,7 @@
         "ZG-301Z",
         "ZG-302Z1"
       ],
-      "manufacturerCount": 274,
+      "manufacturerCount": 272,
       "manufacturersSample": [
         "_tyzb01_bagt1e4o",
         "_tyzb01_BAGT1E4O",
@@ -13150,16 +13202,16 @@
         "TS0002",
         "TS011F"
       ],
-      "manufacturerCount": 32,
+      "manufacturerCount": 28,
       "manufacturersSample": [
-        "_tz3000_18ejxno0",
         "_tz3000_3zofvcaa",
         "_tz3000_jcspr0tp",
         "_tz3000_lqb7lcq9",
         "_tz3000_pvlvoxvt",
         "_tz3210_8n4dn1ne",
         "_tz3210_urjf5u18",
-        "_TZ3000_18EJXNO0"
+        "_TZ3000_3ZOFVCAA",
+        "_TZ3000_JCSPR0TP"
       ],
       "capabilities": [
         "onoff",
@@ -13403,7 +13455,7 @@
         "TS0601",
         "TS0215A"
       ],
-      "manufacturerCount": 52,
+      "manufacturerCount": 48,
       "manufacturersSample": [
         "_TZE200_7HFCUDW5",
         "_TZE200_9QAYZQA8",
@@ -13412,7 +13464,7 @@
         "_TZE200_I0B1DBQU",
         "_TZE200_KAGKGK0I",
         "_TZE200_LGSTEPHA",
-        "_TZE200_M9SKFCTM"
+        "_TZE200_NSLR42TT"
       ],
       "capabilities": [
         "measure_battery",
@@ -13440,7 +13492,7 @@
         "RH3052",
         "TS0201"
       ],
-      "manufacturerCount": 10,
+      "manufacturerCount": 48,
       "manufacturersSample": [
         "TUYATEC-ABKEHQUS",
         "TUYATEC-BFQ2I2SY",
@@ -13471,21 +13523,22 @@
       "id": "temphumidsensor2",
       "class": "sensor",
       "name": "Temperature & Humidity Sensor",
-      "protocol": "zcl_sleepy",
+      "protocol": "tuya_ef00",
       "productIds": [
         "RH3052",
-        "TS0201"
+        "TS0201",
+        "TS0601"
       ],
-      "manufacturerCount": 15,
+      "manufacturerCount": 18,
       "manufacturersSample": [
         "_tza226_ueagguan",
         "_tyzb01_a082h2cc",
         "_tz3000_rufdtfyv",
-        "TUYATEC-QUN7VQ14",
-        "tuyatec-qun7vq14",
-        "TUYATEC-qun7vq14",
         "_TZA226_UEAGGUAN",
-        "_TYZB01_A082H2CC"
+        "_TYZB01_A082H2CC",
+        "_TZ3000_RUFDTFYV",
+        "_TZA226_ueagguan",
+        "_TYZB01_a082h2cc"
       ],
       "capabilities": [
         "measure_temperature",
@@ -13508,9 +13561,10 @@
       "name": "Temperature & Humidity Sensor",
       "protocol": "zcl_sleepy",
       "productIds": [
-        "SNTZ003"
+        "SNTZ003",
+        "TS0201"
       ],
-      "manufacturerCount": 12,
+      "manufacturerCount": 18,
       "manufacturersSample": [
         "_tze200_qoy0ekbd",
         "_tze204_a8sdabtg",
@@ -13576,15 +13630,11 @@
         "RH3052",
         "TS0201"
       ],
-      "manufacturerCount": 8,
+      "manufacturerCount": 4,
       "manufacturersSample": [
-        "_TYZB01_HJSGDKFL",
         "_TYZB01_UJFK3XD9",
-        "_tyzb01_hjsgdkfl",
         "_tyzb01_ujfk3xd9",
-        "_TYZB01_hjsgdkfl",
         "_TYZB01_ujfk3xd9",
-        "_tyzb01_HJSGDKFL",
         "_tyzb01_UJFK3XD9"
       ],
       "capabilities": [
@@ -14000,7 +14050,7 @@
         "TS110F",
         "TS130F"
       ],
-      "manufacturerCount": 114,
+      "manufacturerCount": 112,
       "manufacturersSample": [
         "_tz",
         "_tzb",
@@ -14135,16 +14185,16 @@
         "TS0002",
         "TS0121"
       ],
-      "manufacturerCount": 70,
+      "manufacturerCount": 66,
       "manufacturersSample": [
-        "_TYZB01_VKWRYFDR",
-        "_TYZB01_vkwryfdr",
         "_TZ3000_8KCQDNGY",
         "_TZ3000_8gs8h2e4",
         "_TZ3000_ATP3BEWS",
         "_TZ3000_J4GG6D1B",
         "_TZ3000_KO6V90PG",
-        "_TZ3000_QYOLRMC9"
+        "_TZ3000_QYOLRMC9",
+        "_TZ3000_U5U4CAHO",
+        "_TZ3000_fgwhjm9j"
       ],
       "capabilities": [
         "onoff",
@@ -14299,13 +14349,13 @@
       "id": "valvecontroller",
       "class": "other",
       "name": "Valve Controller",
-      "protocol": "zcl",
+      "protocol": "zcl_only",
       "productIds": [
         "TS0111",
         "TS0001",
         "TS011F"
       ],
-      "manufacturerCount": 8,
+      "manufacturerCount": 18,
       "manufacturersSample": [
         "_TYZB01_4TLKSK8A",
         "_TZ3000_wpueorev",
@@ -14380,14 +14430,14 @@
       ],
       "manufacturerCount": 64,
       "manufacturersSample": [
-        "_tz3000_1dd0d5yi",
-        "_TZ3000_1dd0d5yi",
         "_tz3000_5iixzdo7",
         "_TZ3000_5iixzdo7",
         "_tz3000_74hsp7qy",
         "_TZ3000_74hsp7qy",
         "_tz3000_8h7wgocw",
-        "_TZ3000_8h7wgocw"
+        "_TZ3000_8h7wgocw",
+        "_tz3000_bs93npae",
+        "_TZ3000_bs93npae"
       ],
       "capabilities": [
         "windowcoverings_set",
@@ -14410,7 +14460,8 @@
           ],
           "forbidden": [
             "climate_sensor",
-            "dimmer_1_gang"
+            "dimmer_1_gang",
+            "curtain_module"
           ],
           "protocol": "zcl",
           "notes": "TS130F curtain switch module per Johan enrichment and product-reference (deviceClass windowcoverings). Not a climate sensor and not a dimmer."
@@ -14427,7 +14478,8 @@
             "TS130F"
           ],
           "forbidden": [
-            "curtain_motor_shutter"
+            "curtain_motor_shutter",
+            "curtain_module"
           ],
           "protocol": "zcl",
           "notes": "Johan enrichment gives TS130F for all four (Moes MS-108ZR family, plus LoraTap and Nous rebrands). curtain_motor_shutter does not even declare TS130F, so the placement can never match; its 50-entry productId list has accumulated Hue bulbs, Xiaomi weather sensors and temperature sensors and should not grow further."
@@ -15699,9 +15751,10 @@
         "_tz3000_eit6l5",
         "_tz3000_kyb656no",
         "lumi.sensor_wleak.aq1",
-        "q9mpfhw"
+        "q9mpfhw",
+        "RH3001"
       ],
-      "manufacturerCount": 58,
+      "manufacturerCount": 69,
       "manufacturersSample": [
         "HOBEIAN",
         "Hobeian",
@@ -15782,16 +15835,16 @@
         "SNZB-05P",
         "CK-TLSR8656-SS5-01(7019)"
       ],
-      "manufacturerCount": 190,
+      "manufacturerCount": 182,
       "manufacturersSample": [
         "TUYATEC-BDUZ1XXP",
         "TUYATEC-H4WNRTCK",
         "TUYATEC-KTEV3UWQ",
         "_TYST11_qq9mpfhw",
         "_TZ3000_0s9gukzt",
-        "_TZ3000_3dfewsk1",
-        "_TZ3000_4uvovz4r",
-        "_TZ3000_awvmkayh"
+        "_TZ3000_awvmkayh",
+        "_TZ3000_eit7p838",
+        "_TZ3000_fxvjhdyl"
       ],
       "capabilities": [
         "alarm_water",

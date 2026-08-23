@@ -1,0 +1,88 @@
+{
+  "_meta": {
+    "version": "1.1.0",
+    "schema": "enrichment-manifest-v1",
+    "updated": "2026-08-23",
+    "policy": "SHADOW forum only — passive GET/read. Never POST/reply/PM/like. Intelligence stays in code/CI (T157628). P2224 links resilience domains + layer glossary."
+  },
+  "forumMode": {
+    "mode": "shadow",
+    "allowed": ["GET topic JSON", "GET posts", "GET PM inbox read-only", "scan media URLs"],
+    "forbidden": ["POST reply", "POST PM", "edit", "like", "draft-for-paste", "intelligent community interaction"],
+    "envForce": {
+      "FORUM_AUTO_POST": "0",
+      "SHADOW_FORUM": "1",
+      "DISCOURSE_WRITE": "0"
+    }
+  },
+  "layers": {
+    "deviceTruth": {
+      "path": "docs/knowledge/device-truth.json",
+      "generator": "tools/ci/build-device-truth.js",
+      "role": "Locked couples per driver — SSOT for pairing"
+    },
+    "dpCouples": {
+      "path": "data/dp_couple_knowledge.json",
+      "role": "DP semantics per sacred couple — never interpret DP without mfr+pid"
+    },
+    "userImpact": {
+      "path": "data/user-impact-catalog.json",
+      "role": "Curated user fleets — hand-enriched; auto-sync adds stubs only"
+    },
+    "misattribution": {
+      "path": "data/user-misattribution-registry.json",
+      "role": "Forbidden drivers + canonical routing"
+    },
+    "fixProfiles": {
+      "path": "data/user-impact-catalog.json",
+      "jsonPath": "fixCatalog",
+      "role": "Shipped fixes with since-version and dual-app track"
+    },
+    "resilienceDomains": {
+      "path": "config/resilience/domains.json",
+      "role": "CI-only fleet domains (not shipped in Homey app — P2228)"
+    },
+    "buttonCascade": {
+      "path": "lib/resilience/data/button-capture-cascade.json",
+      "ciCatalog": "config/resilience/button-capture-cascade.json",
+      "role": "Homey runtime SSOT under lib/; CI keeps config/ copy"
+    },
+    "layerGlossary": {
+      "path": "config/resilience/layer-glossary.json",
+      "role": "CI-only layer crosswalk (not shipped in Homey app)"
+    }
+  },
+  "models": {
+    "action": "config/enrichment/models/action-model.json",
+    "issue": "config/enrichment/models/issue-model.json",
+    "investigation": "config/enrichment/models/investigation-model.json",
+    "heuristic": "config/enrichment/models/heuristic-model.json",
+    "heuristicRuntime": "lib/helpers/data/heuristic-model.json"
+  },
+  "phases": "config/enrichment/phases.json",
+  "state": {
+    "orchestrator": ".github/state/silent-enrichment/last-run.json",
+    "forumProcessor": ".github/state/forum/actionable-processor-report.json",
+    "forumParse": ".github/state/forum/topic-140352-parse.json",
+    "forumDigest": ".github/state/forum/multi-silent-digest.json"
+  },
+  "outputs": {
+    "reportDir": "reports/forum-verify-{{date}}",
+    "profilePages": "docs/knowledge/profiles",
+    "enrichmentSummary": "reports/forum-verify-{{date}}/ENRICHMENT.md"
+  },
+  "sources": {
+    "priority": ["misattribution", "deviceTruth", "dpCouples", "forumProcessor", "diagnostics", "userImpact"],
+    "mergeRules": {
+      "userImpact": "merge-stubs-only",
+      "dpCouples": "merge-stubs-only",
+      "neverInventPid": true,
+      "limits": {
+        "maxCouplesPerPost": 6,
+        "maxAutoDevicesPerUser": 12,
+        "skipMegathreadFirstPost": true,
+        "megathreadTopics": [26439]
+      }
+    }
+  }
+}

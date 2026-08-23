@@ -1,0 +1,46 @@
+{
+  "_meta": {
+    "description": "Declarative project-wide resilience + inventory pipeline (P2222–P2225)",
+    "updated": "2026-08-23"
+  },
+  "defaults": {
+    "env": {
+      "FORUM_AUTO_POST": "0",
+      "SHADOW_FORUM": "1",
+      "DISCOURSE_WRITE": "0",
+      "REPLY_TOPICS": ""
+    }
+  },
+  "blocks": {
+    "inventory": [
+      {
+        "id": "inventory-features-bugs",
+        "script": "tools/ci/inventory-features-bugs.js",
+        "args": ["--write-report"],
+        "timeout": 120000
+      }
+    ],
+    "critical": [
+      {
+        "id": "resilience-critical-first",
+        "script": "tools/ci/project-resilience-orchestrator.js",
+        "args": ["--write-report", "--critical-first"],
+        "timeout": 600000
+      }
+    ],
+    "audit": [
+      {
+        "id": "resilience-domain-audit",
+        "script": "tools/ci/project-resilience-orchestrator.js",
+        "args": ["--write-report"],
+        "timeout": 600000
+      }
+    ]
+  },
+  "pipelines": {
+    "all": ["inventory", "critical", "audit"],
+    "inventory": ["inventory"],
+    "critical": ["inventory", "critical"],
+    "audit": ["audit"]
+  }
+}

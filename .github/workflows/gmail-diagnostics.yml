@@ -64,6 +64,11 @@ concurrency:
 
 env:
   NODE_VERSION: "22"
+  AI_PLAN_MODE: forfait
+  AI_ALLOW_PAID: "false"
+  AI_GLOBAL_DAILY_CAP: "400"
+  AI_SOFT_STOP_PERCENT: "85"
+  GMAIL_DIAG_AI_MAX: "0"
 
 defaults:
   run:
@@ -82,6 +87,20 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
           cache: npm
       - run: npm ci --prefer-offline --no-audit || npm install
+      - name: "P2227 AI forfait plan guard (no paid overage)"
+        continue-on-error: true
+        run: |
+          node tools/ci/ai-plan-guard.js --preflight
+          node tools/ci/ai-quota-report.js || true
+          # Apply included caps into job env via GITHUB_ENV
+          eval "$(node tools/ci/ai-plan-guard.js --apply-env)"
+          {
+            echo "AI_PLAN_MODE=${AI_PLAN_MODE:-forfait}"
+            echo "AI_ALLOW_PAID=false"
+            echo "AI_GLOBAL_DAILY_CAP=${AI_GLOBAL_DAILY_CAP:-400}"
+            echo "AI_SOFT_STOP_PERCENT=${AI_SOFT_STOP_PERCENT:-85}"
+            echo "GMAIL_DIAG_AI_MAX=0"
+          } >> "$GITHUB_ENV"
       - name: Gmail auth health preflight
         continue-on-error: true
         env:
@@ -90,9 +109,13 @@ jobs:
           GMAIL_CLIENT_ID: ${{ secrets.GMAIL_CLIENT_ID }}
           GMAIL_CLIENT_SECRET: ${{ secrets.GMAIL_CLIENT_SECRET }}
           GMAIL_REFRESH_TOKEN: ${{ secrets.GMAIL_REFRESH_TOKEN }}
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
           GMAIL_HEALTH_STRICT: "false"
-        run: node .github/scripts/gmail-token-keepalive.js
-      # v5.13.3: IMAP diagnostics with OAuth fallback and health preflight
+        run: |
+          node .github/scripts/gmail-auth-cascade.js --json || true
+          node .github/scripts/gmail-token-keepalive.js || true
+      # v5.13.3 / P2226: IMAP → OAuth → local (Cursor plugin is IDE-only)
       - name: Fetch diagnostics via Gmail
         env:
           GMAIL_EMAIL: ${{ secrets.GMAIL_EMAIL }}
@@ -100,6 +123,9 @@ jobs:
           GMAIL_CLIENT_ID: ${{ secrets.GMAIL_CLIENT_ID }}
           GMAIL_CLIENT_SECRET: ${{ secrets.GMAIL_CLIENT_SECRET }}
           GMAIL_REFRESH_TOKEN: ${{ secrets.GMAIL_REFRESH_TOKEN }}
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+          GMAIL_ALLOW_LOCAL_FALLBACK: "1"
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
           NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
           MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY || '' }}
@@ -120,7 +146,10 @@ jobs:
           GMAIL_DIAG_AUTO_IMPLEMENT: ${{ github.event.inputs.auto_implement || 'false' }}
           GMAIL_DIAG_REQUIRE_ACCESS: ${{ github.event.inputs.require_access || 'false' }}
           DRY_RUN: ${{ github.event.inputs.auto_implement == 'true' && 'false' || 'true' }}
-        run: node .github/scripts/fetch-gmail-diagnostics.js
+        run: |
+          if [ -z "${GMAIL_EMAIL:-}" ] && [ -n "${HOMEY_EMAIL:-}" ]; then export GMAIL_EMAIL="$HOMEY_EMAIL"; fi
+          if [ -z "${GMAIL_APP_PASSWORD:-}" ] && [ -n "${HOMEY_PASSWORD:-}" ]; then export GMAIL_APP_PASSWORD="$HOMEY_PASSWORD"; fi
+          node .github/scripts/fetch-gmail-diagnostics.js
       - name: Privacy gate for Gmail outputs
         run: node .github/scripts/privacy-redactor.js .github/state/diagnostics-state.json .github/state/diagnostics-report.json .github/state/gmail-token-health.json .github/state/diagnostics-crossref.yml diagnostics
       - name: Diagnostic history gate

@@ -637,5 +637,7 @@ Regenerate: `node tools/ci/investigate-device-peculiarities.js`
 
 - Couple: **ABSENT in post** — do not invent
 - Protocol: hybrid IAS Zone + EF00 (DP1 contact, DP101 lux)
-- Notes: Prefer IAS over DP1 for `alarm_contact` (pulse open/close). Lux via DP101 needs `contact_sensor_illuminance_changed`. Water/smartbutton need re-pair on Test with IAS leftover EF00 skip.
-- Sources: forum-140352#2190, gmail-0cea6870
+- Tiles: Raam onze slpkamer, Raam Computerkamer, Raam Slpkamer voor (UUID `53c35301…`)
+- Notes: Prefer IAS over DP1 for `alarm_contact` (pulse open/close). Lux via DP101 (raw ~121–141 in diag) may differ from dedicated window lux sensor — need interview for scale. Water/smartbutton need re-pair on Test with IAS leftover EF00 skip.
+- Fleet: `data/user-impact-catalog.json` → `Peter_van_Werkhoven`; report `reports/forum-verify-*/users/Peter_van_Werkhoven.md`
+- Sources: forum-140352#2183–2190, gmail-0cea6870, 1cf775a2, 96c19859, 634f7b19

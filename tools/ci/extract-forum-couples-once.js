@@ -52,7 +52,10 @@ const out = [...couples.values()].map((e) => ({
   sources: e.sources.slice(0, 5),
 })).sort((a, b) => b.sourceCount - a.sourceCount);
 
-const dir = path.join(ROOT, 'reports/forum-verify-2026-08-22');
+const outArg = process.argv.find((a) => a.startsWith('--out='));
+const dir = outArg
+  ? path.resolve(ROOT, outArg.split('=')[1])
+  : path.join(ROOT, 'reports', `forum-verify-${new Date().toISOString().slice(0, 10)}`);
 fs.mkdirSync(dir, { recursive: true });
 fs.writeFileSync(path.join(dir, 'couples-extracted.json'), JSON.stringify(out, null, 2));
 console.log(JSON.stringify({

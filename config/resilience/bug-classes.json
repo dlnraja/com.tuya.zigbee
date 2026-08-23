@@ -1,0 +1,264 @@
+{
+  "_meta": {
+    "description": "Historical bug classes since project start — FIXED / PARTIAL / OPEN (P2222/P2225)",
+    "updated": "2026-08-23",
+    "inventory": "tools/ci/inventory-features-bugs.js"
+  },
+  "classes": {
+    "ghost_flow_echo": {
+      "status": "partial",
+      "domains": [
+        "buttons_bidirectional",
+        "flows"
+      ],
+      "fix": "markAppCommand + dedup"
+    },
+    "virtual_button_loop": {
+      "status": "fixed",
+      "domains": [
+        "buttons_bidirectional"
+      ],
+      "fix": "safeSetCapabilityValue L14"
+    },
+    "missing_capability_listener": {
+      "status": "partial",
+      "domains": [
+        "buttons_bidirectional",
+        "flows"
+      ],
+      "fix": "P2220/P2221 UI listeners"
+    },
+    "titleformatted_device": {
+      "status": "fixed",
+      "domains": [
+        "flows"
+      ],
+      "fix": "check:flows gate"
+    },
+    "double_division": {
+      "status": "partial",
+      "domains": [
+        "energy_divisors"
+      ],
+      "fix": "SmartDivisorManager + gate"
+    },
+    "zcl_battery_half": {
+      "status": "partial",
+      "domains": [
+        "battery"
+      ],
+      "fix": "normalizeZclBatteryPercent P216"
+    },
+    "linear_battery_formula": {
+      "status": "partial",
+      "domains": [
+        "battery"
+      ],
+      "fix": "nonlinear profiles ban"
+    },
+    "phantom_mains_battery": {
+      "status": "partial",
+      "domains": [
+        "battery",
+        "sacred_couple_fp"
+      ],
+      "fix": "mainsPowered strip"
+    },
+    "ias_ef00_leftover": {
+      "status": "partial",
+      "domains": [
+        "ias_sleepy"
+      ],
+      "fix": "shouldSkipIasOnlyEf00Tx"
+    },
+    "ias_zonestatus_coerce": {
+      "status": "fixed",
+      "domains": [
+        "ias_sleepy"
+      ],
+      "fix": "IASZoneEnhanced.coerce"
+    },
+    "fp_collision_ts0601": {
+      "status": "open",
+      "domains": [
+        "sacred_couple_fp"
+      ],
+      "fix": "sacred locks + softHypothesis"
+    },
+    "sacred_misroute": {
+      "status": "partial",
+      "domains": [
+        "sacred_couple_fp",
+        "dimmer_brightness",
+        "ef00_dp"
+      ],
+      "fix": "p2138 matrix"
+    },
+    "oom_json_utf16": {
+      "status": "partial",
+      "domains": [
+        "heap_json"
+      ],
+      "fix": "Buffer JSON.parse"
+    },
+    "settimeout_destroyed": {
+      "status": "partial",
+      "domains": [
+        "timers_destroyed"
+      ],
+      "fix": "safe-timers"
+    },
+    "unsupported_cluster": {
+      "status": "partial",
+      "domains": [
+        "hybrid_protocol"
+      ],
+      "fix": "parallelDiscover cascade"
+    },
+    "mcu_time_wrong": {
+      "status": "partial",
+      "domains": [
+        "mcu_time"
+      ],
+      "fix": "guessFormat chain"
+    },
+    "brightness_over_1000": {
+      "status": "fixed",
+      "domains": [
+        "dimmer_brightness"
+      ],
+      "fix": "TuyaBrightnessScale"
+    },
+    "dp_type0_misread": {
+      "status": "partial",
+      "domains": [
+        "ef00_dp"
+      ],
+      "fix": "DpByteArrayProfiles + audit"
+    },
+    "bseed_group_all_gangs": {
+      "status": "partial",
+      "domains": [
+        "buttons_bidirectional"
+      ],
+      "fix": "group strip + per-gang mark"
+    },
+    "enricher_reinject": {
+      "status": "partial",
+      "domains": [
+        "sacred_couple_fp",
+        "enrichment_shadow"
+      ],
+      "fix": "anti-bot + sacred gate"
+    },
+    "forum_soft_hypothesis": {
+      "status": "open",
+      "domains": [
+        "enrichment_shadow"
+      ],
+      "fix": "never invent pid; soft only"
+    },
+    "p139_processing_failed": {
+      "status": "open",
+      "domains": [
+        "dual_app_publish"
+      ],
+      "fix": "wait cooldown no loop"
+    },
+    "settings_camelcase": {
+      "status": "fixed",
+      "domains": [
+        "sacred_couple_fp"
+      ],
+      "fix": "zb_model_id keys"
+    },
+    "energy_approximation_conflict": {
+      "status": "fixed",
+      "domains": [
+        "energy_divisors"
+      ],
+      "fix": "compose rule"
+    },
+    "tongou_dp6_as_humidity": {
+      "status": "fixed",
+      "domains": [
+        "ef00_dp",
+        "sacred_couple_fp"
+      ],
+      "fix": "din_rail_meter lock + DpByteArrayProfiles + DYN-CAP raw block P2230"
+    },
+    "onoff_fd_dropped": {
+      "status": "partial",
+      "domains": [
+        "buttons_bidirectional"
+      ],
+      "fix": "OnOffBoundCluster 0xFD/0xFC + cascade L1"
+    },
+    "e000_unbound_silent": {
+      "status": "partial",
+      "domains": [
+        "buttons_bidirectional"
+      ],
+      "fix": "ButtonCaptureCascade L5 E000 BoundCluster"
+    },
+    "raw_capability_flood": {
+      "status": "partial",
+      "domains": [
+        "l14_telemetry"
+      ],
+      "fix": "safeSetCapabilityValue + SanityFilter"
+    },
+    "case_sensitive_mfr": {
+      "status": "partial",
+      "domains": [
+        "identity_normalize"
+      ],
+      "fix": "CaseInsensitiveMatcher"
+    },
+    "reconnect_confirm_storm": {
+      "status": "partial",
+      "domains": [
+        "protocol_rxtx_bus"
+      ],
+      "fix": "ReconnectBurstCoalescer + confirmInbound"
+    },
+    "zcl_only_forced_ef00": {
+      "status": "fixed",
+      "domains": [
+        "hybrid_protocol",
+        "sacred_couple_fp"
+      ],
+      "fix": "IntelligentProtocolDetect refuses EF00 on BSEED zcl_only"
+    },
+    "shared_test_slot_overwrite": {
+      "status": "partial",
+      "domains": [
+        "dual_app_publish"
+      ],
+      "fix": "independent .stable App ID + soak-guard"
+    },
+    "flow_card_invented_ids": {
+      "status": "fixed",
+      "domains": [
+        "buttons_bidirectional",
+        "flows"
+      ],
+      "fix": "FlowCardHeuristics compose-real IDs only (meter91/Nobø)"
+    },
+    "appjson_compose_drift": {
+      "status": "partial",
+      "domains": [
+        "sacred_couple_fp",
+        "ci_fleetwood"
+      ],
+      "fix": "sync-appjson-zigbee after compose FP changes"
+    },
+    "routeFor_normalize_false_positive": {
+      "status": "fixed",
+      "domains": [
+        "enrichment_shadow"
+      ],
+      "fix": "equalsCI in forum-actionable-processor routeFor"
+    }
+  }
+}

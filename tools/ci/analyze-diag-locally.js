@@ -1,26 +1,24 @@
 'use strict';
 
 /**
- * analyze-diag-locally.js (P170)
+ * analyze-diag-locally.js (P170 + P2211 enrich)
  *
- * Local-first, zero-AI triage of Homey crash/diag text against:
+ * Local-first triage of Homey crash/diag text against:
+ *   - lib/diagnostics/DiagContentEnricher (log id, couples, signals)
  *   - data/error-patterns.json
- *   - data/device-knowledge-base.json (optional mfr/pid hints)
+ *   - docs/knowledge/device-truth.json + misattribution registry
  *
- * READ-ONLY: prints a report. Does NOT post to GitHub, open PRs, or mutate drivers.
- *
- * Usage:
- *   node tools/ci/analyze-diag-locally.js path/to/log.txt
- *   node tools/ci/analyze-diag-locally.js --stdin < crash.txt
- *   echo "heap out of memory" | node tools/ci/analyze-diag-locally.js --stdin --json
- *   node tools/ci/analyze-diag-locally.js --mfr=_TZ3000_k4ej3ww2 --pid=TS0207
+ * READ-ONLY: prints a report. Does NOT post to GitHub or mutate drivers.
  */
 
 const fs = require('fs');
 const path = require('path');
+const { enrich } = require('../../lib/diagnostics/DiagContentEnricher');
+const { lookup, isForbiddenDriver } = require('../../lib/pairing/UserMisattributionRegistry');
 
 const ROOT = path.join(__dirname, '..', '..');
 const PATTERNS_PATH = path.join(ROOT, 'data', 'error-patterns.json');
+const TRUTH_PATH = path.join(ROOT, 'docs', 'knowledge', 'device-truth.json');
 const KB_PATH = path.join(ROOT, 'data', 'device-knowledge-base.json');
 const JSON_MODE = process.argv.includes('--json');
 const STDIN = process.argv.includes('--stdin');
@@ -47,17 +45,30 @@ function loadKb() {
   }
 }
 
+function loadTruth() {
+  try {
+    return JSON.parse(fs.readFileSync(TRUTH_PATH, 'utf8'));
+  } catch {
+    return { drivers: {} };
+  }
+}
+
+function truthDriverFor(truth, mfr, pid) {
+  if (!mfr || !pid) return null;
+  const ml = norm(mfr);
+  const np = norm(pid);
+  for (const [driverId, row] of Object.entries(truth.drivers || {})) {
+    for (const lock of row.locks || []) {
+      if (norm(lock.mfr) === ml && norm(lock.productId) === np) return driverId;
+    }
+  }
+  return null;
+}
+
 function readInputText() {
-  if (STDIN) {
-    return fs.readFileSync(0, 'utf8');
-  }
-  const file = process.argv.find((a) => !a.startsWith('-') && a !== process.argv[0] && a !== process.argv[1]
-    && !a.includes('analyze-diag-locally'));
-  // argv[1] is script path; find first non-flag path after script
+  if (STDIN) return fs.readFileSync(0, 'utf8');
   const args = process.argv.slice(2).filter((a) => !a.startsWith('-'));
-  if (args[0] && fs.existsSync(args[0])) {
-    return fs.readFileSync(args[0], 'utf8');
-  }
+  if (args[0] && fs.existsSync(args[0])) return fs.readFileSync(args[0], 'utf8');
   return '';
 }
 
@@ -68,7 +79,7 @@ function matchPatterns(text, patterns) {
     if (p.regex) {
       try {
         if (new RegExp(p.regex, 'i').test(text)) matched = true;
-      } catch { /* ignore bad regex */ }
+      } catch { /* ignore */ }
     }
     if (!matched && Array.isArray(p.keywords)) {
       matched = p.keywords.some((k) => text.toLowerCase().includes(String(k).toLowerCase()));
@@ -91,21 +102,54 @@ function lookupDevice(kb, mfr, pid) {
   return { exact, productIdHint: hint || null };
 }
 
+function analyzeCouples(enriched, truth) {
+  return (enriched.couples || []).map((c) => {
+    const reg = lookup(c.mfr, c.pid);
+    const truthDriver = truthDriverFor(truth, c.mfr, c.pid);
+    const forbidden = (reg?.forbiddenDrivers || []).filter((d) => isForbiddenDriver(c.mfr, c.pid, d));
+    return {
+      mfr: c.mfr,
+      pid: c.pid,
+      registryId: reg?.id || null,
+      canonicalDriver: reg?.canonicalDriver || truthDriver || null,
+      forbiddenDrivers: forbidden,
+      deviceTruthDriver: truthDriver,
+    };
+  });
+}
+
 function main() {
   const patterns = loadPatterns();
   const kb = loadKb();
+  const truth = loadTruth();
   const text = readInputText();
   const mfr = arg('mfr');
   const pid = arg('pid');
+  const enriched = enrich(text);
+  if (mfr && pid && !enriched.couples.some((c) => norm(c.mfr) === norm(mfr) && norm(c.pid) === norm(pid))) {
+    enriched.couples.unshift({ mfr, pid });
+  }
 
   const hits = text ? matchPatterns(text, patterns) : [];
   const device = mfr ? lookupDevice(kb, mfr, pid) : null;
+  const coupleAnalysis = analyzeCouples(enriched, truth);
 
   const report = {
     timestamp: new Date().toISOString(),
     tool: 'analyze-diag-locally',
     policy: 'local-first read-only — no GitHub comments, no auto-PR, no AI',
     inputChars: text.length,
+    enriched: {
+      logId: enriched.logId,
+      logIdShort: enriched.logIdShort,
+      userMessage: enriched.userMessage,
+      meta: enriched.meta,
+      summary: enriched.summary,
+      drivers: enriched.drivers,
+      signals: enriched.signals,
+      highlights: enriched.highlights,
+    },
+    couples: coupleAnalysis,
     patternHits: hits.map((h) => ({
       id: h.id,
       severity: h.severity,
@@ -114,38 +158,51 @@ function main() {
       fixAction: h.fixAction,
       status: h.status,
       codeRefs: h.codeRefs || [],
-      autoFixable: false, // force honesty: never claim auto-PR
+      autoFixable: false,
     })),
     deviceKnowledge: device,
     nextSteps: [
-      'Verify against tip code + registry (audit-sacred-couple.js)',
-      'If OOM: ensure Test ≥9.0.541 LiveData caps (not fingerprints.json myth)',
-      'Do not open auto-PRs from this tool',
+      'Verify sacred couple in compose + user-misattribution-registry.json',
+      'Cross-ref forum-actionable-processor + device-truth.json locks',
+      'If OOM: Test ≥9.0.541 LiveData caps — not fingerprints.json myth',
+      'Never open auto-PRs from this tool',
     ],
   };
 
   if (JSON_MODE) {
     console.log(JSON.stringify(report, null, 2));
-  } else {
-    console.log(`analyze-diag-locally: ${hits.length} pattern hit(s), input ${text.length} chars`);
-    for (const h of report.patternHits) {
-      console.log(`\n[${h.severity}] ${h.id} (${h.status || 'n/a'})`);
-      console.log(`  cause: ${h.rootCause}`);
-      console.log(`  fix:   ${h.suggestedFix}`);
-      if (h.codeRefs?.length) console.log(`  code:  ${h.codeRefs.join(', ')}`);
+    return;
+  }
+
+  console.log('=== analyze-diag-locally ===');
+  if (enriched.logIdShort) console.log(`Log ID: ${enriched.logIdShort} (${enriched.logId || 'partial'})`);
+  if (enriched.meta.appVersion) console.log(`App: v${enriched.meta.appVersion} | Homey: v${enriched.meta.homeyVersion || '?'}`);
+  if (enriched.userMessage) console.log(`User: ${enriched.userMessage}`);
+  console.log(`Summary: ${enriched.summary || 'no structured content'}`);
+  console.log(`Pattern hits: ${hits.length} | signals: ${enriched.signals.length} | couples: ${coupleAnalysis.length}`);
+
+  if (enriched.signals.length) {
+    console.log('\nSignals:');
+    for (const s of enriched.signals) console.log(`  [${s.severity}] ${s.id} → ${s.fix}`);
+  }
+  if (coupleAnalysis.length) {
+    console.log('\nSacred couples:');
+    for (const c of coupleAnalysis) {
+      console.log(`  ${c.mfr}+${c.pid} → canonical=${c.canonicalDriver || '?'} registry=${c.registryId || '—'}`);
+      if (c.forbiddenDrivers?.length) console.log(`    forbid: ${c.forbiddenDrivers.join(', ')}`);
     }
-    if (device?.exact?.length) {
-      console.log('\nDevice KB (sacred couple):');
-      for (const d of device.exact) {
-        console.log(`  ${d.mfr} + ${(d.productId || []).join('|')} → ${d.canonicalDriverHint || '?'} [${d.type}]`);
-        if (d.requiredWorkarounds?.length) console.log(`  workarounds: ${d.requiredWorkarounds.join(', ')}`);
-      }
-    } else if (device?.productIdHint) {
-      console.log('\nproductId hint only (ambiguous without mfr):', JSON.stringify(device.productIdHint));
-    }
-    if (!hits.length && !text && !mfr) {
-      console.log('Usage: node tools/ci/analyze-diag-locally.js <logfile> | --stdin | --mfr=... --pid=...');
-    }
+  }
+  for (const h of report.patternHits) {
+    console.log(`\n[${h.severity}] ${h.id} (${h.status || 'n/a'})`);
+    console.log(`  cause: ${h.rootCause}`);
+    console.log(`  fix:   ${h.suggestedFix}`);
+  }
+  if (enriched.highlights.length) {
+    console.log('\nLog highlights:');
+    for (const line of enriched.highlights.slice(0, 5)) console.log(`  ${line}`);
+  }
+  if (!hits.length && !text && !mfr) {
+    console.log('\nUsage: node tools/ci/analyze-diag-locally.js <logfile> | --stdin | --mfr=... --pid=...');
   }
 }
 

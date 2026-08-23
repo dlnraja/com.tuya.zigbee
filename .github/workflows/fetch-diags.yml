@@ -54,6 +54,15 @@ defaults:
   run:
     shell: bash
 
+env:
+  AI_PLAN_MODE: forfait
+  AI_ALLOW_PAID: 'false'
+  AI_GLOBAL_DAILY_CAP: '400'
+  AI_SOFT_STOP_PERCENT: '85'
+  GMAIL_DIAG_AI_MAX: '0'
+  FORUM_AUTO_POST: '0'
+  SHADOW_FORUM: '1'
+
 jobs:
   fetch-diags:
     runs-on: ubuntu-latest
@@ -73,6 +82,31 @@ jobs:
       - name: Install dependencies
         run: npm ci --prefer-offline --no-audit || npm install
 
+      - name: "P2227 AI forfait + security preflight"
+        continue-on-error: true
+        run: |
+          node tools/ci/ai-plan-guard.js --preflight || true
+          node tools/ci/ai-quota-report.js || true
+          npm run security-scan || echo "security-scan warn"
+
+      - name: "P2226 Gmail auth cascade probe (plugin IDE-only → IMAP → OAuth → local)"
+        continue-on-error: true
+        env:
+          GMAIL_EMAIL: ${{ secrets.GMAIL_EMAIL }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          GMAIL_CLIENT_ID: ${{ secrets.GMAIL_CLIENT_ID }}
+          GMAIL_CLIENT_SECRET: ${{ secrets.GMAIL_CLIENT_SECRET }}
+          GMAIL_REFRESH_TOKEN: ${{ secrets.GMAIL_REFRESH_TOKEN }}
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+        run: |
+          node .github/scripts/gmail-auth-cascade.js --json | tee gmail-cascade.json || true
+          echo "### Gmail auth cascade" >> "$GITHUB_STEP_SUMMARY"
+          echo '```json' >> "$GITHUB_STEP_SUMMARY"
+          head -n 40 gmail-cascade.json >> "$GITHUB_STEP_SUMMARY" || true
+          echo '```' >> "$GITHUB_STEP_SUMMARY"
+          echo "Note: Cursor Gmail plugin is IDE-only. CI uses GitHub secrets IMAP→OAuth→local." >> "$GITHUB_STEP_SUMMARY"
+
       - name: Fetch Diagnostics from Gmail
         id: gmail_fetch
         env:
@@ -81,6 +115,9 @@ jobs:
           GMAIL_CLIENT_ID: ${{ secrets.GMAIL_CLIENT_ID }}
           GMAIL_CLIENT_SECRET: ${{ secrets.GMAIL_CLIENT_SECRET }}
           GMAIL_REFRESH_TOKEN: ${{ secrets.GMAIL_REFRESH_TOKEN }}
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+          GMAIL_ALLOW_LOCAL_FALLBACK: "1"
           GMAIL_DIAG_ALL_HISTORY: ${{ github.event.inputs.all_history || 'false' }}
           GMAIL_DIAG_SINCE: ${{ github.event.inputs.since || '' }}
           GMAIL_DIAG_UNTIL: ${{ github.event.inputs.until || '' }}
@@ -94,10 +131,17 @@ jobs:
           DRY_RUN: "true"
         run: |
           set +e
+          # Prefer dedicated Gmail secrets; alias Homey SSO only for IMAP fallback
+          if [ -z "${GMAIL_EMAIL:-}" ] && [ -n "${HOMEY_EMAIL:-}" ]; then
+            export GMAIL_EMAIL="$HOMEY_EMAIL"
+            echo "::notice::Using HOMEY_EMAIL as GMAIL_EMAIL alias for IMAP cascade"
+          fi
+          if [ -z "${GMAIL_APP_PASSWORD:-}" ] && [ -n "${HOMEY_PASSWORD:-}" ]; then
+            export GMAIL_APP_PASSWORD="$HOMEY_PASSWORD"
+            echo "::notice::Using HOMEY_PASSWORD as GMAIL_APP_PASSWORD alias (app-password preferred)"
+          fi
           if [ -z "${GMAIL_EMAIL:-}" ] && [ -z "${GMAIL_REFRESH_TOKEN:-}" ]; then
-            echo "::warning::Gmail secrets missing — skipping fetch (privacy/gates still run)"
-            echo "exit_code=0" >> "$GITHUB_OUTPUT"
-            exit 0
+            echo "::warning::No live Gmail secrets — attempting L3 local-reader fallback"
           fi
           node .github/scripts/fetch-gmail-diagnostics.js
           code=$?
@@ -112,6 +156,45 @@ jobs:
         run: |
           node .github/scripts/privacy-redactor.js .github/state/diagnostics-state.json .github/state/diagnostics-report.json .github/state/gmail-token-health.json .github/state/diagnostics-crossref.yml diagnostics
           npm run check:diag-history
+
+      - name: "Render diagnostic TREAT summary (P2211)"
+        if: always()
+        continue-on-error: true
+        run: |
+          if [ -f tools/ci/render-diag-treat.js ] && [ -f .github/state/diagnostics-report.json ]; then
+            node tools/ci/render-diag-treat.js || echo "render-diag-treat warn"
+          fi
+
+      - name: "Silent enrichment — diag + forum (P2215)"
+        if: always()
+        continue-on-error: true
+        timeout-minutes: 18
+        env:
+          SMART_FETCH_READER_FALLBACK: "1"
+          FIRECRAWL_API_KEY: ${{ secrets.FIRECRAWL_API_KEY }}
+          REPLY_TOPICS: "140352"
+          FORUM_AUTO_POST: "0"
+        run: |
+          if [ ! -f tools/ci/silent-enrichment-orchestrator.js ]; then
+            echo "orchestrator missing — legacy diag steps"
+            node tools/ci/audit-sacred-couple-dps.js || true
+            node tools/ci/forum-silent-multi-scan.js --max=40 || true
+            node tools/ci/forum-actionable-processor.js --no-chain || true
+            exit 0
+          fi
+          node tools/ci/silent-enrichment-orchestrator.js --phase=diag --skip-scan || echo "diag enrich warn"
+          node tools/ci/silent-enrichment-orchestrator.js --phase=forum --skip-scan || echo "forum enrich warn"
+          node tools/ci/silent-enrichment-orchestrator.js --phase=users --skip-scan || echo "user impact warn"
+          if [ -f tools/ci/inventory-features-bugs.js ]; then
+            node tools/ci/inventory-features-bugs.js --write-report || echo "inventory warn"
+          fi
+          if [ -f tools/ci/project-resilience-orchestrator.js ]; then
+            node tools/ci/project-resilience-orchestrator.js --write-report --critical-first --critical-only || echo "resilience critical warn"
+          fi
+          if [ -f reports/resilience-$(date -u +%F)/INVENTORY.md ]; then
+            echo "### Inventory (P2225)" >> $GITHUB_STEP_SUMMARY
+            head -n 25 "reports/resilience-$(date -u +%F)/INVENTORY.md" >> $GITHUB_STEP_SUMMARY || true
+          fi
 
       - name: "Regression lessons gate (MUST-KEEP fatals)"
         if: always()
@@ -177,22 +260,24 @@ jobs:
       - name: "Forum silent multi-topic scan (P108 / T157628)"
         if: always()
         continue-on-error: true
-        timeout-minutes: 10
+        timeout-minutes: 12
         env:
           SMART_FETCH_READER_FALLBACK: "1"
           FIRECRAWL_API_KEY: ${{ secrets.FIRECRAWL_API_KEY }}
           REPLY_TOPICS: "140352"
           FORUM_AUTO_POST: "0"
         run: |
-          if [ ! -f tools/ci/forum-silent-multi-scan.js ]; then
-            echo "forum-silent-multi-scan.js missing — skip"
-            exit 0
+          if [ -f tools/ci/silent-enrichment-orchestrator.js ]; then
+            node tools/ci/silent-enrichment-orchestrator.js --phase=forum --skip-scan --with-media || echo "forum enrich warn"
+          else
+            node tools/ci/forum-silent-multi-scan.js --max=40 || echo "silent multi-scan failed (non-blocking)"
+            node tools/ci/forum-ai-paste-gate.js --scan-defaults || echo "ai-paste gate warn"
+            node tools/ci/forum-actionable-processor.js --no-chain || echo "forum actionable processor warn (non-blocking)"
           fi
-          node tools/ci/forum-silent-multi-scan.js --max=40 || echo "silent multi-scan failed (non-blocking)"
-          node tools/ci/forum-ai-paste-gate.js --scan-defaults || echo "ai-paste gate warn"
           node .github/scripts/privacy-redactor.js \
             .github/state/forum/multi-silent-digest.json \
-            .github/state/forum/multi-silent-new-fps.json || true
+            .github/state/forum/multi-silent-new-fps.json \
+            .github/state/forum/actionable-processor-report.json || true
 
       - name: "Forum media deep scan (READ-ONLY screenshots)"
         if: always()

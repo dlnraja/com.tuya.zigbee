@@ -42,6 +42,13 @@ defaults:
 
 env:
   NODE_VERSION: '22'
+  AI_PLAN_MODE: forfait
+  AI_ALLOW_PAID: 'false'
+  AI_GLOBAL_DAILY_CAP: '400'
+  AI_SOFT_STOP_PERCENT: '85'
+  GMAIL_DIAG_AI_MAX: '0'
+  FORUM_AUTO_POST: '0'
+  SHADOW_FORUM: '1'
   # P138: Align with Auto-Publish / Auto-Fix (50); prepared dir ~37 MB.
   HOMEY_PUBLISH_MAX_UNCOMPRESSED_MB: "50"
   HOMEY_PUBLISH_SOURCE_MAX_MB: "50"
@@ -87,6 +94,13 @@ jobs:
           else
             echo "No package.json"
           fi
+
+      - name: "P2227 AI forfait plan guard"
+        continue-on-error: true
+        run: |
+          node tools/ci/ai-plan-guard.js --preflight || true
+          node tools/ci/ai-quota-report.js || true
+          npm run security-scan || echo "security-scan warn"
 
       - name: Configure Git
         run: |
@@ -220,29 +234,52 @@ jobs:
           node tools/ci/forum-fetch-146735.js || echo "146735 fetch failed (non-blocking)"
           node tools/ci/apply-forum-146735-silent.js || echo "146735 apply dry-run failed (non-blocking)"
 
-      # READ-ONLY multi-topic (140352+146735+26439+89271+43287+157628). Never replies.
       - name: "Forum silent multi-topic scan (P108 / T157628)"
         if: always()
         continue-on-error: true
-        timeout-minutes: 10
+        timeout-minutes: 15
         env:
           SMART_FETCH_READER_FALLBACK: "1"
           FIRECRAWL_API_KEY: ${{ secrets.FIRECRAWL_API_KEY }}
           REPLY_TOPICS: "140352"
           FORUM_AUTO_POST: "0"
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+          DISCOURSE_API_KEY: ${{ secrets.DISCOURSE_API_KEY }}
         run: |
-          if [ ! -f tools/ci/forum-silent-multi-scan.js ]; then
-            echo "forum-silent-multi-scan.js missing — skip"
+          if [ ! -f tools/ci/silent-enrichment-orchestrator.js ]; then
+            echo "silent-enrichment-orchestrator.js missing — fallback scan only"
+            node tools/ci/forum-silent-multi-scan.js --max=40 || true
+            node tools/ci/forum-actionable-processor.js --no-chain || true
             exit 0
           fi
-          node tools/ci/forum-silent-multi-scan.js --max=40 || echo "silent multi-scan failed (non-blocking)"
-          node tools/ci/forum-ai-paste-gate.js --scan-defaults || echo "ai-paste gate warn"
-          if [ -f tools/ci/apply-forum-silent-multi.js ]; then
-            node tools/ci/apply-forum-silent-multi.js || echo "silent multi apply dry-run warn"
+          # SHADOW: forum GET only. phase=forum already includes sync+investigate (need-action without user wait)
+          export SHADOW_FORUM=1 DISCOURSE_WRITE=0 FORUM_AUTO_POST=0 REPLY_TOPICS=
+          node tools/ci/silent-enrichment-orchestrator.js --phase=forum --with-media --with-pm || echo "silent enrichment warn"
+          node tools/ci/silent-enrichment-orchestrator.js --phase=users --skip-scan || echo "user impact warn"
+          node tools/ci/silent-enrichment-orchestrator.js --phase=gates --skip-scan || echo "gates warn"
+          # P2225: explicit inventory + critical-first (gates also soft-run orchestrator)
+          if [ -f tools/ci/inventory-features-bugs.js ]; then
+            node tools/ci/inventory-features-bugs.js --write-report || echo "inventory warn"
           fi
-          if [ -f .github/state/forum/multi-silent-digest.json ]; then
-            echo "Silent multi-scan digest written (FORUM_AUTO_POST=0)"
-            node -e "const d=require('./.github/state/forum/multi-silent-digest.json'); console.log(JSON.stringify(d.totals))"
+          if [ -f tools/ci/project-resilience-orchestrator.js ]; then
+            node tools/ci/project-resilience-orchestrator.js --write-report --critical-first || echo "resilience warn"
+          fi
+          if [ -f .github/state/silent-enrichment/last-run.json ]; then
+            echo "Silent enrichment state written (SHADOW forum — never POST)"
+            node -e "const j=require('./.github/state/silent-enrichment/last-run.json'); console.log(JSON.stringify({ok:j.ok,phases:j.phases.map(p=>p.name)},null,2))"
+          fi
+          if [ -f reports/forum-verify-$(date -u +%F)/NEED_ACTION.md ]; then
+            echo "### NEED_ACTION (shadow — no forum write)" >> $GITHUB_STEP_SUMMARY
+            head -n 40 "reports/forum-verify-$(date -u +%F)/NEED_ACTION.md" >> $GITHUB_STEP_SUMMARY || true
+          fi
+          if [ -f reports/resilience-$(date -u +%F)/INVENTORY.md ]; then
+            echo "### Features + bugs inventory (P2225)" >> $GITHUB_STEP_SUMMARY
+            head -n 40 "reports/resilience-$(date -u +%F)/INVENTORY.md" >> $GITHUB_STEP_SUMMARY || true
+          fi
+          if [ -f reports/resilience-$(date -u +%F)/RESILIENCE.md ]; then
+            echo "### Project resilience (P2222–P2225 critical-first)" >> $GITHUB_STEP_SUMMARY
+            head -n 40 "reports/resilience-$(date -u +%F)/RESILIENCE.md" >> $GITHUB_STEP_SUMMARY || true
           fi
 
       # READ-ONLY: screenshots/alts + private inbox. Never POST.

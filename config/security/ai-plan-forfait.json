@@ -1,0 +1,48 @@
+{
+  "_meta": {
+    "id": "P2227",
+    "updated": "2026-08-23",
+    "policy": "Plan forfait inclus only — never exceed included free/subscription quotas; never auto-spend paid overage. Prefer local heuristics. SHADOW forum. Never echo secrets."
+  },
+  "mode": "forfait",
+  "defaults": {
+    "AI_PLAN_MODE": "forfait",
+    "AI_ALLOW_PAID": "false",
+    "AI_GLOBAL_DAILY_CAP": "400",
+    "AI_SOFT_STOP_PERCENT": "85",
+    "GMAIL_DIAG_AI_MAX": "0",
+    "preferLocalHeuristics": true
+  },
+  "includedDailyCaps": {
+    "gemini": 400,
+    "openrouter": 200,
+    "huggingface": 200,
+    "groq": 200,
+    "cerebras": 50,
+    "together": 80,
+    "nvidia": 200,
+    "mistral": 20,
+    "kimi": 20,
+    "openai": 0,
+    "deepseek": 0,
+    "github-models": 50
+  },
+  "blockedUnlessPaidFlag": ["openai", "deepseek"],
+  "security": {
+    "neverEchoSecrets": true,
+    "redactBeforeCommit": true,
+    "privacyRedactor": ".github/scripts/privacy-redactor.js",
+    "securityScan": "npm run security-scan",
+    "forbidArtifactGlobs": [
+      "**/*token*",
+      "**/.env*",
+      "**/diag-*-excerpt.txt",
+      "**/gmail-ci-dump.json"
+    ]
+  },
+  "workflowHooks": {
+    "preAi": "tools/ci/ai-plan-guard.js --preflight",
+    "report": "tools/ci/ai-quota-report.js",
+    "budget": "node scripts/automation/token-budget.js health"
+  }
+}

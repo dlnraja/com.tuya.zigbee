@@ -44,3 +44,12 @@ Audit: `node tools/ci/layer-pass-audit.js` (4843+ cards scanned; zero `[[device]
 | Humans / Cursor | Surgical fixes → push → Test soak |
 
 Do **not** build Homey-side “try many drivers” or autonomous full-tree rewrite bots.
+
+## Complementary enrichment (P2224)
+
+Energy / button / flow contracts sit beside pipeline L0–L11 and button capture L1–L8.
+
+- Glossary: [`config/resilience/layer-glossary.json`](../../config/resilience/layer-glossary.json)
+- Domains: `battery`, `energy_divisors`, `buttons_bidirectional`, `flows`, `l14_telemetry`
+- Doctrine: [`COMPLEMENTARY_ENRICHMENT.md`](./COMPLEMENTARY_ENRICHMENT.md)
+
