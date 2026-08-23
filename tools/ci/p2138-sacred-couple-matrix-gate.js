@@ -122,6 +122,7 @@ try {
     ['_TZ3000_5k5vh43t', 'TS0207', 'zigbee_repeater'],
     ['_TZ3000_okaz9tjs', 'TS011F', 'plug_energy_monitor'],
     ['_TZE284_nt4pquef', 'TS0601', 'soil_sensor'],
+    ['_TZE284_6ocnqlhn', 'TS0601', 'din_rail_meter'],
   ];
   for (const [mfr, pid, driver] of compoundHits) {
     const hit = DeviceFingerprintDB.lookup(mfr, pid);

@@ -233689,7 +233689,7 @@
     "_tze284_6ocnqlhn|ts0601": {
       "mfr": "_tze284_6ocnqlhn",
       "pid": "ts0601",
-      "driver": "generic_tuya",
+      "driver": "din_rail_meter",
       "sources": [
         "canonical",
         "mfs_db"
@@ -254475,15 +254475,6 @@
       "mfr": "_tze284_x8diwkqb",
       "pid": "ts0601",
       "driver": "energy_meter_3phase",
-      "sources": [
-        "mfs_db"
-      ],
-      "confidence": 0.17
-    },
-    "_tze284_6ocnqlhn|ts0601_rcbo": {
-      "mfr": "_tze284_6ocnqlhn",
-      "pid": "ts0601_rcbo",
-      "driver": "smart_rcbo",
       "sources": [
         "mfs_db"
       ],
@@ -291361,12 +291352,12 @@
       "confidence": 0.95
     },
     "_TZE284_6ocnqlhn": {
-      "driverId": "generic_tuya",
+      "driverId": "din_rail_meter",
       "productIds": [
         "TS0601"
       ],
-      "source": "fingerprints-2026-07-14",
-      "confidence": 0.95
+      "source": "forum-shadow-p2229-toni-2191",
+      "confidence": 0.99
     },
     "_TZE284_6teua268": {
       "driverId": "switch_1gang",
