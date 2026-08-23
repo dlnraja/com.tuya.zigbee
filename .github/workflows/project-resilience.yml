@@ -148,5 +148,6 @@ jobs:
             echo "No resilience report changes"
             exit 0
           fi
-          git commit -m "chore(resilience): inventory + critical-first audit [skip ci]" || true
-          git push || true
+          git commit -m "chore(resilience): inventory + critical-first audit [skip ci]" || exit 0
+          # Verified push (no || true mask) — step continue-on-error handles soft failure
+          git push origin "HEAD:${GITHUB_REF_NAME}"

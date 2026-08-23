@@ -101,9 +101,10 @@ jobs:
             exit 0
           fi
           # Commit BEFORE pull — avoids "index contains uncommitted changes" rebase failure
-          git commit -m "chore(P136): weekly sovereign loop report [skip ci]" || true
+          git commit -m "chore(P136): weekly sovereign loop report [skip ci]" || exit 0
           git pull --rebase --autostash origin master || true
-          git push origin HEAD:master || true
+          # Verified push — step should use continue-on-error if soft failure is OK
+          git push origin HEAD:master
 
       - name: Summary
         run: |
