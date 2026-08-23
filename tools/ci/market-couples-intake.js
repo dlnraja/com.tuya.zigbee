@@ -18,7 +18,8 @@
 
 const fs = require('fs');
 const path = require('path');
-const { execSync, spawnSync } = require('child_process');
+const { spawnSync } = require('child_process');
+const { lookup, isForbiddenDriver } = require('../../lib/pairing/UserMisattributionRegistry');
 
 const ROOT = path.resolve(__dirname, '..', '..');
 const STATE_DIR = path.join(ROOT, '.github', 'state', 'market-couples');
@@ -72,6 +73,34 @@ function lookupDriver(mfr, pid) {
   }
 }
 
+function enrichCouple(c) {
+  const reg = lookup(c.mfr, c.pid);
+  let routeHint = lookupDriver(c.mfr, c.pid);
+  if (routeHint && isForbiddenDriver(c.mfr, c.pid, routeHint)) {
+    routeHint = reg?.canonicalDriver || null;
+  }
+  if (!routeHint && reg?.canonicalDriver) routeHint = reg.canonicalDriver;
+  const src = c.sources || [];
+  const catalogHit = src.some((s) => ['blakadder', 'z2m', 'zha', 'deconz'].includes(s));
+  const blakadderHit = src.includes('blakadder');
+  return {
+    ...c,
+    routeHint,
+    canonicalDriver: reg?.canonicalDriver || null,
+    forbiddenDrivers: reg?.forbiddenDrivers || [],
+    needsReview: !routeHint,
+    catalogHit,
+    blakadderHit,
+  };
+}
+
+function sortMarketNew(a, b) {
+  if (a.blakadderHit !== b.blakadderHit) return a.blakadderHit ? -1 : 1;
+  if (a.catalogHit !== b.catalogHit) return a.catalogHit ? -1 : 1;
+  if (a.needsReview !== b.needsReview) return a.needsReview ? 1 : -1;
+  return a.mfr.localeCompare(b.mfr) || a.pid.localeCompare(b.pid);
+}
+
 function renderMarkdown(report) {
   const lines = [
     '# Market couples intake — ' + report.generatedAt.slice(0, 10),
@@ -92,10 +121,14 @@ function renderMarkdown(report) {
     lines.push(`- **${k}**: ${v} pairs`);
   }
   lines.push('', '## Top market-new (not in driver.compose)', '');
-  lines.push('| Couple | Sources | Route hint |');
-  lines.push('|--------|---------|------------|');
+  lines.push('| Couple | Sources | Route | Registry |');
+  lines.push('|--------|---------|-------|----------|');
   for (const c of (report.topMarketNew || []).slice(0, 40)) {
-    lines.push(`| \`${c.mfr}+${c.pid}\` | ${c.sources.join(', ')} | ${c.routeHint || '—'} |`);
+    const reg = c.canonicalDriver ? c.canonicalDriver : '—';
+    lines.push(`| \`${c.mfr}+${c.pid}\` | ${c.sources.join(', ')} | ${c.routeHint || '—'} | ${reg} |`);
+  }
+  if (report.blakadderNew) {
+    lines.push('', `**Blakadder-only new:** ${report.blakadderNew}`, '');
   }
   lines.push('', 'Regenerate: `npm run market:couples` · crawl: `npm run market:couples:crawl`');
   return lines.join('\n');
@@ -133,16 +166,15 @@ function main() {
   }
   const summary = JSON.parse(fs.readFileSync(summaryPath, 'utf8'));
 
-  const enriched = (summary.marketNewList || []).map((c) => {
-    const routeHint = lookupDriver(c.mfr, c.pid);
-    return { ...c, routeHint, needsReview: !routeHint };
-  });
+  const enriched = (summary.marketNewList || []).map(enrichCouple).sort(sortMarketNew);
 
   const report = {
     generatedAt: new Date().toISOString(),
     mode: DO_CRAWL ? 'crawl+cross-ref' : 'cross-ref-only',
     totalPairs: summary.totalUniquePairs,
     marketNew: summary.marketNew,
+    blakadderNew: enriched.filter((c) => c.blakadderHit).length,
+    catalogNew: enriched.filter((c) => c.catalogHit).length,
     bySource: summary.bySource,
     withRouteHint: enriched.filter((c) => c.routeHint).length,
     needsReview: enriched.filter((c) => c.needsReview).length,
@@ -154,7 +186,7 @@ function main() {
   fs.writeFileSync(path.join(STATE_DIR, 'intake.json'), JSON.stringify(report, null, 2));
   fs.writeFileSync(path.join(STATE_DIR, 'NEED_REVIEW.md'), renderMarkdown(report));
 
-  log(`market-new: ${report.marketNew} | route hints: ${report.withRouteHint} | review: ${report.needsReview}`);
+  log(`market-new: ${report.marketNew} | blakadder: ${report.blakadderNew} | route hints: ${report.withRouteHint} | review: ${report.needsReview}`);
   log(`Wrote ${path.relative(ROOT, path.join(STATE_DIR, 'intake.json'))}`);
 
   if (CHECK) {
@@ -183,4 +215,4 @@ if (require.main === module) {
   }
 }
 
-module.exports = { main };
+module.exports = { main, enrichCouple, sortMarketNew, renderMarkdown };

@@ -4,47 +4,37 @@
 
 const fs = require('fs');
 const path = require('path');
+const {
+  normalizeSacredCouple,
+  extractCouplesFromText,
+  isValidSacredCouple,
+} = require('./sacred-couple-pair');
 
 const ROOT = path.resolve(__dirname, '..', '..');
 const mfrPidPairs = new Map(); // key = "mfr|pid" -> { sources: Set, devices: [] }
 
-const TS_PID_RX = /^TS\d{4}[A-Z0-9]?$/;
-const TUYA_MFR_RX = /^(_TZ[A-Z0-9]{1,5}_[A-Z0-9]+|_TYST1[12]_[A-Z0-9]+|_TYZB[0-9]+_[A-Z0-9]+|TUYATEC[A-Z0-9_-]*)$/i;
-
 function addPair(mfr, pid, source, info = {}) {
-  if (!mfr || !pid) return;
-  const pidStr = String(pid).trim().replace(/\\u0000/g, '').replace(/\0/g, '');
-  if (!pidStr || pidStr.length > 32) return;
-  // Sacred couple: require TSxxxx productId (never invent pid from ZHA typos)
-  if (!TS_PID_RX.test(pidStr.toUpperCase())) return;
-  const mfrUpper = String(mfr).trim().toUpperCase();
-  if (!TUYA_MFR_RX.test(mfrUpper)) return;
-  const pidUpper = pidStr.toUpperCase();
-  const key = mfrUpper + '|' + pidUpper;
-  if (!mfrPidPairs.has(key)) {
-    mfrPidPairs.set(key, { mfr: mfrUpper, pid: pidUpper, sources: new Set(), info: [] });
+  const n = normalizeSacredCouple(mfr, pid);
+  if (!n) return;
+  if (!mfrPidPairs.has(n.key)) {
+    mfrPidPairs.set(n.key, { mfr: n.mfr, pid: n.pid, sources: new Set(), info: [] });
   }
-  const entry = mfrPidPairs.get(key);
+  const entry = mfrPidPairs.get(n.key);
   entry.sources.add(source);
   if (Object.keys(info).length) entry.info.push({ source, ...info });
 }
 
 // ============== SOURCE 1: JOHAN ISSUES ==============
 function processJohan() {
-  const issueFile = '.github/state/johan-dump/issues.json';
+  const issueFile = path.join(ROOT, '.github', 'state', 'johan-dump', 'issues.json');
   if (!fs.existsSync(issueFile)) return 0;
   const issues = JSON.parse(fs.readFileSync(issueFile, 'utf8'));
   let count = 0;
   for (const iss of issues) {
-    const text = (iss.title || '') + ' ' + (iss.body || '');
-    // Extract _TZE/TZ patterns + TS patterns
-    const mfrMatches = text.match(/_TZE\d+_[a-zA-Z0-9]+|_TZ\d+_[a-zA-Z0-9]+|_TYZB\d+_[a-zA-Z0-9]+|_TYST\d+_[a-zA-Z0-9]+/g) || [];
-    const pidMatches = text.match(/\bTS\d{4}[a-zA-Z]?\b|\bTH\d+\b|\bZG-\d+\b|\bCS-\d+\b/g) || [];
-    for (const mfr of mfrMatches) {
-      for (const pid of pidMatches) {
-        addPair(mfr, pid, 'johan-issue', { issue: iss.number });
-        count++;
-      }
+    const text = `${iss.title || ''}\n${iss.body || ''}`;
+    for (const c of extractCouplesFromText(text)) {
+      addPair(c.mfr, c.pid, 'johan-issue', { issue: iss.number });
+      count++;
     }
   }
   return count;
@@ -52,19 +42,14 @@ function processJohan() {
 
 // ============== SOURCE 2: JOHAN COMMENTS ==============
 function processJohanComments() {
-  const file = '.github/state/johan-dump/comments.json';
+  const file = path.join(ROOT, '.github', 'state', 'johan-dump', 'comments.json');
   if (!fs.existsSync(file)) return 0;
   const comments = JSON.parse(fs.readFileSync(file, 'utf8'));
   let count = 0;
   for (const c of comments) {
-    const text = (c.body || '');
-    const mfrMatches = text.match(/_TZE\d+_[a-zA-Z0-9]+|_TZ\d+_[a-zA-Z0-9]+|_TYZB\d+_[a-zA-Z0-9]+|_TYST\d+_[a-zA-Z0-9]+/g) || [];
-    const pidMatches = text.match(/\bTS\d{4}[a-zA-Z]?\b|\bTH\d+\b|\bZG-\d+\b|\bCS-\d+\b/g) || [];
-    for (const mfr of mfrMatches) {
-      for (const pid of pidMatches) {
-        addPair(mfr, pid, 'johan-comment', { comment: c.id });
-        count++;
-      }
+    for (const pair of extractCouplesFromText(c.body || '')) {
+      addPair(pair.mfr, pair.pid, 'johan-comment', { comment: c.id });
+      count++;
     }
   }
   return count;
@@ -201,7 +186,7 @@ function processZha() {
   let count = 0;
   for (const fp of data.fingerprints || []) {
     if (!fp.mfr || !fp.productId) continue;
-    if (!TS_PID_RX.test(String(fp.productId).toUpperCase())) continue;
+    if (!isValidSacredCouple(fp.mfr, fp.productId)) continue;
     addPair(fp.mfr, fp.productId, 'zha', { file: fp.file });
     count++;
   }

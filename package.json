@@ -170,6 +170,7 @@
     "market:couples": "node tools/ci/market-couples-intake.js",
     "market:couples:crawl": "node tools/ci/market-couples-intake.js --crawl",
     "market:couples:check": "node tools/ci/market-couples-intake.js --check",
+    "market:couples:test": "node --test test/critical/p2231-market-couples-intake.test.js",
     "enrich:silent": "node tools/ci/silent-enrichment-orchestrator.js",
     "enrich:sync": "node tools/ci/sync-enrichment-profiles.js",
     "enrich:profiles": "node tools/ci/render-enrichment-index.js",

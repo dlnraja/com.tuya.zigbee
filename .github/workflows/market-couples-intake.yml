@@ -90,6 +90,9 @@ jobs:
       - name: 🛡️ P2138 sacred-couple matrix
         run: node tools/ci/p2138-sacred-couple-matrix-gate.js
 
+      - name: 🧪 P2231 market couples tests
+        run: node --test test/critical/p2231-market-couples-intake.test.js
+
       - name: 📦 Upload artifacts
         uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5.0.0
         with:
