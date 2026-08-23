@@ -41,7 +41,8 @@ env:
   FORUM_AUTO_POST: '0'
   SHADOW_FORUM: '1'
   DISCOURSE_WRITE: '0'
-  REPLY_TOPICS: ''
+  # WHY: Fleetwood WFL_REPLY_TOPICS_LEAK rejects empty; SHADOW still blocks POST via FORUM_AUTO_POST=0
+  REPLY_TOPICS: '140352'
   GMAIL_DIAG_AI_MAX: '0'
 
 jobs:
