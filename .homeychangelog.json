@@ -2420,5 +2420,8 @@
   "9.0.627": {
     "en": "Tongou DIN meter pairing lock (not Smart RCBO); block DP6 raw→humidity; button flow ID heuristics; resilience critical-first inventory; Gmail IMAP secrets cascade.",
     "fr": "Verrouillage compteur DIN Tongou (pas Smart RCBO); blocage DP6 raw→humidité; heuristiques IDs Flow boutons; inventaire resilience critical-first; cascade Gmail IMAP secrets."
+  },
+  "9.0.628": {
+    "en": "Tongou DIN meter pairing lock (not Smart RCBO); block DP6 raw→humidity; button flow ID heuristics; resilience critical-first inventory; ."
   }
 }
