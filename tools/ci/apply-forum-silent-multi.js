@@ -25,6 +25,49 @@ const { isForbiddenPlacement } = require('../../lib/pairing/UserMisattributionRe
 
 /** High-confidence typed routes only (sacred couple). */
 const KNOWN_ROUTES = [
+  // P2236 — forum integral (TS004x remotes ≠ wall switches; din rail ≠ smartPlug_DinRail)
+  {
+    id: 'p2236-4upl1fcj-button1',
+    mfrs: ['_TZ3000_4upl1fcj'],
+    pids: ['TS0041'],
+    driver: 'button_wireless_1',
+  },
+  {
+    id: 'p2236-qeuvnohg-din',
+    mfrs: ['_TZ3000_qeuvnohg'],
+    pids: ['TS011F'],
+    driver: 'din_rail_switch',
+  },
+  {
+    id: 'p2236-zgyzgdua-scene4',
+    mfrs: ['_TZ3000_zgyzgdua'],
+    pids: ['TS0044'],
+    driver: 'scene_switch_4',
+  },
+  {
+    id: 'p2236-xabckq1v-bw4',
+    mfrs: ['_TZ3000_xabckq1v'],
+    pids: ['TS004F'],
+    driver: 'button_wireless_4',
+  },
+  {
+    id: 'p2236-kfu8zapd-bw4',
+    mfrs: ['_TZ3000_kfu8zapd'],
+    pids: ['TS0044', 'TS004F'],
+    driver: 'button_wireless_4',
+  },
+  {
+    id: 'p2236-amdymr7l-plug-energy',
+    mfrs: ['_TZ3000_amdymr7l', '_TZ3210_amdymr7l'],
+    pids: ['TS011F'],
+    driver: 'plug_energy_monitor',
+  },
+  {
+    id: 'p2236-nkcobies-smartplug',
+    mfrs: ['_TZ3000_nkcobies'],
+    pids: ['TS011F', 'TS0121'],
+    driver: 'smartplug',
+  },
   {
     id: 'm1cvyneb-wall-dimmer',
     mfrs: ['_TZE284_m1cvyneb', '_TZE204_m1cvyneb', '_TZE200_m1cvyneb'],

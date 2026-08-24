@@ -75,12 +75,14 @@ function removeMfr(driver, mfr) {
 }
 
 function patchMfs(mfr, driverId, modelIds) {
+  // WHY (P2234b): REPLACE modelIds with verified pids only — never union invent
+  // (old bug: ZCL mfrs got TS0601 appended and lost multi-variant truth).
   const f = path.join(ROOT, 'data', 'mfs_db.json');
   const db = JSON.parse(fs.readFileSync(f));
   const devices = db.devices || (db.devices = {});
   const key = Object.keys(devices).find((k) => k.toLowerCase() === mfr.toLowerCase()) || mfr;
   const prev = devices[key] && typeof devices[key] === 'object' ? devices[key] : {};
-  const ids = Array.isArray(modelIds) ? modelIds : [modelIds];
+  const ids = Array.isArray(modelIds) ? [...new Set(modelIds.map(String))] : [String(modelIds)];
   devices[key] = {
     ...prev,
     manufacturerId: mfr,
@@ -89,6 +91,7 @@ function patchMfs(mfr, driverId, modelIds) {
     source: 'p2234-z2m-web',
     modelIds: ids,
     pid: ids[0],
+    coupleLock: true,
     confidence: 0.95,
     updatedAt: new Date().toISOString().slice(0, 10),
   };

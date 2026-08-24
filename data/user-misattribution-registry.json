@@ -2104,6 +2104,429 @@
       ],
       "source": "z2m#32883",
       "notes": "Power-monitoring water heater controller"
+    },
+    {
+      "id": "p2234b-tz3000_gdsvhfao",
+      "mfr": [
+        "_TZ3000_gdsvhfao",
+        "_tz3000_gdsvhfao",
+        "_TZ3000_GDSVHFAO"
+      ],
+      "productId": [
+        "TS0001"
+      ],
+      "canonicalDriver": "zigbee_repeater",
+      "forbiddenDrivers": [
+        "switch_1gang",
+        "switch_2gang",
+        "plug_energy_monitor"
+      ],
+      "source": "p2234b-couple-refine",
+      "notes": "Z2M#11207 TS0001_repeater only — not every TS0001"
+    },
+    {
+      "id": "p2234b-tze200_itp8dt7f",
+      "mfr": [
+        "_TZE200_itp8dt7f",
+        "_tze200_itp8dt7f",
+        "_TZE200_ITP8DT7F"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": "wall_dimmer_tuya",
+      "forbiddenDrivers": [
+        "soil_sensor",
+        "climate_sensor",
+        "zigbee_universal"
+      ],
+      "source": "p2234b-couple-refine",
+      "notes": "Z2M#12213 ION dimmer — strip fake ZG-303Z soil pid from mfs"
+    },
+    {
+      "id": "p2234b-tz3000_dershnvx",
+      "mfr": [
+        "_TZ3000_dershnvx",
+        "_tz3000_dershnvx",
+        "_TZ3000_DERSHNVX"
+      ],
+      "productId": [
+        "TS0002"
+      ],
+      "canonicalDriver": "switch_2gang",
+      "forbiddenDrivers": [
+        "switch_1gang",
+        "wall_switch_2gang_1way"
+      ],
+      "source": "p2234b-couple-refine",
+      "notes": "Z2M#32034 / #12246 — ONLY TS0002 (no TS0001/TS0601 invent)"
+    },
+    {
+      "id": "p2234b-tz3000_icoxotza",
+      "mfr": [
+        "_TZ3000_icoxotza",
+        "_tz3000_icoxotza",
+        "_TZ3000_ICOXOTZA"
+      ],
+      "productId": [
+        "TS0726"
+      ],
+      "canonicalDriver": "switch_2gang",
+      "forbiddenDrivers": [
+        "switch_1gang"
+      ],
+      "source": "p2234b-couple-refine",
+      "notes": "Z2M#11720 TS0726_2_gang — pid is TS0726 not TS0002"
+    },
+    {
+      "id": "p2234b-tze204_qujphad5",
+      "mfr": [
+        "_TZE204_qujphad5",
+        "_tze204_qujphad5",
+        "_TZE204_QUJPHAD5"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": "wall_thermostat",
+      "forbiddenDrivers": [
+        "bulb_dimmable",
+        "thermostatic_radiator_valve"
+      ],
+      "source": "p2234b-couple-refine",
+      "notes": "TYBAC-006 FCU — sibling mpbki2zm is a SEPARATE couple"
+    },
+    {
+      "id": "p2234b-tze204_mpbki2zm",
+      "mfr": [
+        "_TZE204_mpbki2zm",
+        "_tze204_mpbki2zm",
+        "_TZE204_MPBKI2ZM"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": "wall_thermostat",
+      "forbiddenDrivers": [
+        "thermostatic_radiator_valve",
+        "bulb_dimmable"
+      ],
+      "source": "p2234b-couple-refine",
+      "notes": "TYBAC-006 sibling — not TRV"
+    },
+    {
+      "id": "p2234b-tze204_apiu8k13",
+      "mfr": [
+        "_TZE204_apiu8k13",
+        "_tze204_apiu8k13",
+        "_TZE204_APIU8K13"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": "plug_energy_monitor",
+      "forbiddenDrivers": [
+        "switch_1gang",
+        "soil_sensor"
+      ],
+      "source": "p2234b-couple-refine",
+      "notes": "Water-heater monitor — TZE284_q9qytwfa is sibling couple, not same mfr"
+    },
+    {
+      "id": "p2234b-tze284_q9qytwfa",
+      "mfr": [
+        "_TZE284_q9qytwfa",
+        "_tze284_q9qytwfa",
+        "_TZE284_Q9QYTWFA"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": "plug_energy_monitor",
+      "forbiddenDrivers": [
+        "switch_1gang",
+        "soil_sensor"
+      ],
+      "source": "p2234b-couple-refine",
+      "notes": "Z2M#32883 — TZE284 ≠ TZE204; lock separately"
+    },
+    {
+      "id": "p2234b-tze200_7upwjcca",
+      "mfr": [
+        "_TZE200_7upwjcca",
+        "_tze200_7upwjcca",
+        "_TZE200_7UPWJCCA"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": "curtain_motor",
+      "forbiddenDrivers": [
+        "soil_sensor",
+        "climate_sensor"
+      ],
+      "source": "p2234b-couple-refine",
+      "notes": "Z2M#32905 cover — only TS0601"
+    },
+    {
+      "id": "p2234b-tz3000_anptztic",
+      "mfr": [
+        "_TZ3000_anptztic",
+        "_tz3000_anptztic",
+        "_TZ3000_ANPTZTIC"
+      ],
+      "productId": [
+        "TS0001"
+      ],
+      "canonicalDriver": "plug_energy_monitor",
+      "forbiddenDrivers": [
+        "switch_1gang",
+        "zigbee_repeater"
+      ],
+      "source": "p2234b-couple-refine",
+      "notes": "Z2M#32609 metering TS0001 — same pid as repeater family but DIFFERENT mfr"
+    },
+    {
+      "id": "p2234b-tz3000_ly9apzky",
+      "mfr": [
+        "_TZ3000_ly9apzky",
+        "_tz3000_ly9apzky",
+        "_TZ3000_LY9APZKY"
+      ],
+      "productId": [
+        "TS0003"
+      ],
+      "canonicalDriver": "wall_switch_3gang_1way",
+      "forbiddenDrivers": [
+        "switch_3gang",
+        "switch_1gang"
+      ],
+      "source": "p2234b-couple-refine",
+      "notes": "Z2M#32810 + doctrine: TS0003 3-gang → wall_switch_3gang_1way NOT switch_3gang"
+    },
+    {
+      "id": "p2234b-tze204_pkpfn9hc",
+      "mfr": [
+        "_TZE204_pkpfn9hc",
+        "_tze204_pkpfn9hc",
+        "_TZE204_PKPFN9HC"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": "air_quality_co2",
+      "forbiddenDrivers": [
+        "climate_sensor",
+        "soil_sensor"
+      ],
+      "source": "p2234b-couple-refine",
+      "notes": "Z2M#12949 CO2 — TS0601 shared pid, mfr locks type"
+    },
+    {
+      "id": "p2234b-tz3002_y7wpizuw",
+      "mfr": [
+        "_TZ3002_y7wpizuw",
+        "_tz3002_y7wpizuw",
+        "_TZ3002_Y7WPIZUW"
+      ],
+      "productId": [
+        "TS0726"
+      ],
+      "canonicalDriver": "switch_4gang",
+      "forbiddenDrivers": [
+        "switch_2gang",
+        "switch_1gang"
+      ],
+      "source": "p2234b-couple-refine",
+      "notes": "Z2M#32628 4-gang TS0726 — icoxotza+TS0726 is 2-gang (different mfr)"
+    },
+    {
+      "id": "p2234b-tze284_smcqit2l",
+      "mfr": [
+        "_TZE284_smcqit2l",
+        "_tze284_smcqit2l",
+        "_TZE284_SMCQIT2L"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": "wall_thermostat",
+      "forbiddenDrivers": [
+        "thermostatic_radiator_valve",
+        "climate_sensor"
+      ],
+      "source": "p2234b-couple-refine",
+      "notes": "Z2M#32568 — do not conflate with qujphad5/mpbki2zm"
+    },
+    {
+      "id": "p2234b-tze284_6uyu20xu",
+      "mfr": [
+        "_TZE284_6uyu20xu",
+        "_tze284_6uyu20xu",
+        "_TZE284_6UYU20XU"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": "climate_sensor",
+      "forbiddenDrivers": [
+        "soil_sensor",
+        "wall_thermostat"
+      ],
+      "source": "p2234b-couple-refine",
+      "notes": "Z2M#32491 Chayo TOVTH"
+    },
+    {
+      "id": "p2236-4upl1fcj-ts0041-button",
+      "mfr": [
+        "_TZ3000_4upl1fcj",
+        "_tz3000_4upl1fcj",
+        "_TZ3000_4UPL1FCJ"
+      ],
+      "productId": [
+        "TS0041"
+      ],
+      "canonicalDriver": "button_wireless_1",
+      "forbiddenDrivers": [
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "wall_dimmer_tuya"
+      ],
+      "source": "p2236-forum-integral",
+      "notes": "SunBeech T156967 — TS0041 wireless remote, NEVER switch_1gang (processor false ROUTED_OK)"
+    },
+    {
+      "id": "p2236-qeuvnohg-ts011f-din",
+      "mfr": [
+        "_TZ3000_qeuvnohg",
+        "_tz3000_qeuvnohg",
+        "_TZ3000_QEUVNOHG"
+      ],
+      "productId": [
+        "TS011F"
+      ],
+      "canonicalDriver": "din_rail_switch",
+      "forbiddenDrivers": [
+        "smartPlug_DinRail",
+        "switch_1gang",
+        "button_wireless_2",
+        "zigbee_universal"
+      ],
+      "source": "p2236-forum-integral",
+      "notes": "T89271 Erwin3/Zdenek — registry+DeviceFingerprintDB din_rail_switch; strip fake TS0042/TS0601"
+    },
+    {
+      "id": "p2236-amdymr7l-tz3210-energy",
+      "mfr": [
+        "_TZ3210_amdymr7l",
+        "_tz3210_amdymr7l",
+        "_TZ3210_AMDYMR7L"
+      ],
+      "productId": [
+        "TS011F"
+      ],
+      "canonicalDriver": "plug_energy_monitor",
+      "forbiddenDrivers": [
+        "plug_smart",
+        "button_wireless_4",
+        "switch_1gang"
+      ],
+      "source": "p2236-forum-integral",
+      "notes": "T89271 Bram_B — BlitzWolf SHP13 dual-compose; energy only"
+    },
+    {
+      "id": "p2236-amdymr7l-tz3000-energy",
+      "mfr": [
+        "_TZ3000_amdymr7l",
+        "_tz3000_amdymr7l",
+        "_TZ3000_AMDYMR7L"
+      ],
+      "productId": [
+        "TS011F"
+      ],
+      "canonicalDriver": "plug_energy_monitor",
+      "forbiddenDrivers": [
+        "plug_smart",
+        "button_wireless_4"
+      ],
+      "source": "p2236-forum-integral",
+      "notes": "Sibling TZ3000 BlitzWolf — TS011F only"
+    },
+    {
+      "id": "p2236-xabckq1v-ts004f",
+      "mfr": [
+        "_TZ3000_xabckq1v",
+        "_tz3000_xabckq1v",
+        "_TZ3000_XABCKQ1V"
+      ],
+      "productId": [
+        "TS004F"
+      ],
+      "canonicalDriver": "button_wireless_4",
+      "forbiddenDrivers": [
+        "switch_1gang",
+        "zigbee_universal"
+      ],
+      "source": "p2236-forum-integral",
+      "notes": "Steampunk soft TS0001 REJECTED — known couple is TS004F only"
+    },
+    {
+      "id": "p2236-kfu8zapd-ts0044f",
+      "mfr": [
+        "_TZ3000_kfu8zapd",
+        "_tz3000_kfu8zapd",
+        "_TZ3000_KFU8ZAPD"
+      ],
+      "productId": [
+        "TS0044",
+        "TS004F"
+      ],
+      "canonicalDriver": "button_wireless_4",
+      "forbiddenDrivers": [
+        "switch_1gang",
+        "scene_switch_4"
+      ],
+      "source": "p2236-forum-integral",
+      "notes": "Primordial T150690 — Moes 4-btn; mfs must list TS0044/TS004F not TS0001"
+    },
+    {
+      "id": "p2236-zgyzgdua-ts0044-scene",
+      "mfr": [
+        "_TZ3000_zgyzgdua",
+        "_tz3000_zgyzgdua",
+        "_TZ3000_ZGYZGDUA"
+      ],
+      "productId": [
+        "TS0044"
+      ],
+      "canonicalDriver": "scene_switch_4",
+      "forbiddenDrivers": [
+        "button_wireless_4",
+        "smart_knob",
+        "wall_dimmer_tuya"
+      ],
+      "source": "p2236-forum-integral",
+      "notes": "meter91 #2189 — scene_switch_4 0xFD; never invent TS0601-only"
+    },
+    {
+      "id": "p2236-nkcobies-ts011f-plug",
+      "mfr": [
+        "_TZ3000_nkcobies",
+        "_tz3000_nkcobies",
+        "_TZ3000_NKCOBIES"
+      ],
+      "productId": [
+        "TS011F",
+        "TS0121"
+      ],
+      "canonicalDriver": "smartplug",
+      "forbiddenDrivers": [
+        "switch_1gang",
+        "button_wireless_2"
+      ],
+      "source": "p2236-forum-integral",
+      "notes": "Bo_Kjaergaard soft TS0001 REJECTED — compose plug TS011F/TS0121"
     }
   ]
 }

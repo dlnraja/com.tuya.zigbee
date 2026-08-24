@@ -133,11 +133,25 @@ function analyzeCouple(mfr, pid, index, truth) {
 
   const forbiddenHits = catalogDrivers.filter((d) => isForbiddenDriver(mfr, pid, d));
   // Prefer registry / known route / device-truth; SINGLE_DRIVER falls back to compose hit.
-  const canonical = reg?.canonicalDriver
+  let canonical = reg?.canonicalDriver
     || route?.driver
     || truthDriver
     || (catalogDrivers.length === 1 ? catalogDrivers[0] : null)
     || null;
+
+  // WHY (P2236): TS0041/42/43/44/F are wireless remotes — NEVER resolve to actuators/switches
+  // (SunBeech T156967 false ROUTED_OK → switch_1gang for 4upl1fcj+TS0041).
+  const isSceneRemotePid = /^ts004[1-4f]$/i.test(String(pid || ''));
+  const ts004xForbidden = /^switch_\d+gang$|^wall_switch_|^wall_dimmer|^plug_|^smartplug|^smart_plug|^din_rail|^climate_|^soil_|^generic_/;
+  if (isSceneRemotePid && canonical && ts004xForbidden.test(canonical)) {
+    canonical = null;
+  }
+  if (isSceneRemotePid) {
+    catalogDrivers = catalogDrivers.filter((d) => !ts004xForbidden.test(d));
+    if (!canonical && catalogDrivers.length === 1) {
+      canonical = catalogDrivers[0];
+    }
+  }
 
   let verdict = 'INVESTIGATE';
   if (!np) verdict = 'MISSING_PID';
@@ -308,4 +322,13 @@ function main() {
   }
 }
 
-main();
+if (require.main === module) {
+  main();
+}
+
+module.exports = {
+  analyzeCouple,
+  buildDriverIndex,
+  routeFor,
+  classifyDualApp,
+};
