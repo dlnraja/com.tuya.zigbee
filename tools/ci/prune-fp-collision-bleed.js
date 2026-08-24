@@ -112,19 +112,41 @@ function loadMfsHints() {
 }
 
 function loadRegistryCanon() {
-  const canon = new Map();
+  /** @type {Map<string, string>} mfrNorm|pidNorm → canonicalDriver */
+  const coupleCanon = new Map();
+  /** mfrNorm → Set<canonicalDriver> — brand/OEM aliases spanning multiple sacred couples */
+  const mfrDrivers = new Map();
   const forbidden = new Map();
   try {
     const reg = JSON.parse(fs.readFileSync(REG_PATH, 'utf8'));
     for (const c of reg.cases || []) {
       const driver = c.canonicalDriver;
-      for (const m of [].concat(c.mfr || [])) {
-        if (driver) canon.set(norm(m), driver);
-        if (c.forbiddenDrivers?.length) forbidden.set(norm(m), c.forbiddenDrivers);
+      const mfrs = [].concat(c.mfr || []);
+      const pids = [].concat(c.productId || []);
+      for (const m of mfrs) {
+        const mfrNorm = norm(m);
+        if (driver) {
+          if (!mfrDrivers.has(mfrNorm)) mfrDrivers.set(mfrNorm, new Set());
+          mfrDrivers.get(mfrNorm).add(driver);
+        }
+        if (c.forbiddenDrivers?.length) {
+          const prev = forbidden.get(mfrNorm) || [];
+          forbidden.set(mfrNorm, [...new Set([...prev, ...c.forbiddenDrivers])]);
+        }
+        if (!driver || !pids.length) continue;
+        for (const p of pids) {
+          coupleCanon.set(`${mfrNorm}|${norm(p)}`, driver);
+        }
       }
     }
   } catch { /* ignore */ }
-  return { canon, forbidden };
+  const ambiguousMfrs = new Set();
+  const canon = new Map();
+  for (const [mfrNorm, drivers] of mfrDrivers) {
+    if (drivers.size > 1) ambiguousMfrs.add(mfrNorm);
+    else if (drivers.size === 1) canon.set(mfrNorm, [...drivers][0]);
+  }
+  return { canon, coupleCanon, ambiguousMfrs, forbidden };
 }
 
 function stripMfrFromCompose(driverId, mfrNorm) {
@@ -147,7 +169,12 @@ function stripMfrFromCompose(driverId, mfrNorm) {
   return removed;
 }
 
-function resolveCanonical(mfrNorm, drivers, mfsHints, registry) {
+function resolveCanonical(mfrNorm, pidNorm, drivers, mfsHints, registry) {
+  if (registry.ambiguousMfrs.has(mfrNorm)) return null;
+  const coupleKey = `${mfrNorm}|${pidNorm}`;
+  if (registry.coupleCanon.has(coupleKey)) {
+    return registry.coupleCanon.get(coupleKey);
+  }
   if (registry.canon.has(mfrNorm)) {
     return registry.canon.get(mfrNorm);
   }
@@ -167,16 +194,33 @@ function main() {
 
   const byMfr = new Map();
   for (const c of newCollisions) {
-    const mfrNorm = c.key.split('|')[0];
-    if (!byMfr.has(mfrNorm)) byMfr.set(mfrNorm, { collisions: [], drivers: new Set() });
+    const [mfrNorm, pidNorm] = c.key.split('|');
+    if (registry.ambiguousMfrs.has(mfrNorm)) continue;
+    if (!byMfr.has(mfrNorm)) byMfr.set(mfrNorm, { collisions: [], drivers: new Set(), pids: new Set() });
     byMfr.get(mfrNorm).collisions.push(c);
+    byMfr.get(mfrNorm).pids.add(pidNorm);
     for (const d of c.drivers) byMfr.get(mfrNorm).drivers.add(d);
   }
 
   const actions = [];
   for (const [mfrNorm, row] of byMfr) {
     const drivers = [...row.drivers].filter((d) => !EXEMPT_DRIVERS.has(d) && !WIDE_CLAIM.has(d));
-    const canonical = resolveCanonical(mfrNorm, drivers, mfsHints, registry);
+    let canonical = null;
+    let source = 'mfs_driverHint';
+    for (const pidNorm of row.pids) {
+      const c = resolveCanonical(mfrNorm, pidNorm, drivers, mfsHints, registry);
+      if (c && drivers.includes(c)) {
+        canonical = c;
+        source = registry.coupleCanon.has(`${mfrNorm}|${pidNorm}`)
+          ? 'registry_couple'
+          : (registry.canon.has(mfrNorm) ? 'registry' : 'mfs_driverHint');
+        break;
+      }
+    }
+    if (!canonical) {
+      canonical = resolveCanonical(mfrNorm, [...row.pids][0] || '', drivers, mfsHints, registry);
+      if (canonical && registry.canon.has(mfrNorm)) source = 'registry';
+    }
     if (!canonical || !drivers.includes(canonical)) continue;
 
     const victims = new Set(drivers.filter((d) => d !== canonical));
@@ -194,7 +238,7 @@ function main() {
           strippedFrom: victim,
           removedVariants: removed,
           collisionCount: row.collisions.length,
-          source: registry.canon.has(mfrNorm) ? 'registry' : 'mfs_driverHint',
+          source,
         });
       } else if (!APPLY) {
         actions.push({
@@ -203,7 +247,7 @@ function main() {
           strippedFrom: victim,
           removedVariants: 0,
           collisionCount: row.collisions.length,
-          source: registry.canon.has(mfrNorm) ? 'registry' : 'mfs_driverHint',
+          source,
           planned: true,
         });
       }

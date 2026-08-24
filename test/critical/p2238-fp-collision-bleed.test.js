@@ -26,4 +26,14 @@ describe('P2238 FP collision bleed prune', () => {
     const j = JSON.parse(out);
     assert.strictEqual(j.new, 0, `expected 0 NEW collisions, got ${j.new}`);
   });
+
+  it('HOBEIAN brand alias stays on soil_sensor (multi-driver OEM — P2238 regression)', () => {
+    const fs = require('fs');
+    const path = require('path');
+    const j = JSON.parse(fs.readFileSync(path.join(__dirname, '..', '..', 'drivers', 'soil_sensor', 'driver.compose.json'), 'utf8'));
+    const mfrs = (j.zigbee?.manufacturerName || []).map((m) => String(m).toLowerCase());
+    assert.ok(mfrs.includes('hobeian'), 'soil_sensor must retain HOBEIAN for ZG-303Z sacred couple');
+    const pids = (j.zigbee?.productId || []).map((p) => String(p));
+    assert.ok(pids.includes('ZG-303Z'), 'soil_sensor must list ZG-303Z productId');
+  });
 });
