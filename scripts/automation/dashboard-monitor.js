@@ -39,6 +39,7 @@ const APP_ID = readAppId();
 const args = process.argv.slice(2);
 const JSON_MODE = args.includes('--json');
 const ALERT_MODE = args.includes('--alert');
+const SOFT_EXPECT = args.includes('--soft-expect');
 const LATEST_ONLY = args.includes('--latest');
 const REQUIRE_BUILDS = args.includes('--require-builds');
 const REPORT_PATH = path.join(process.cwd(), '.github', 'state', 'dashboard-monitor-report.json');
@@ -349,7 +350,7 @@ async function main() {
   if (EXPECTED_VERSION && !expectedBuild) {
     const stateText = EXPECTED_STATE ? ` in state ${EXPECTED_STATE}` : '';
     log(`ALERT: expected v${EXPECTED_VERSION}${stateText} was not found in Athom builds.`);
-    process.exitCode = 1;
+    if (!SOFT_EXPECT) process.exitCode = 1;
   }
 
   log('=== Monitor Complete ===');

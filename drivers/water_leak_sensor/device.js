@@ -6,6 +6,8 @@ const { boolean } = require('../../lib/converters/ValueConverterRegistry');
 const IASAlarmFallback = require('../../lib/IASAlarmFallback');
 const IASZoneManager = require('../../lib/managers/IASZoneManager');
 const { getModelId, getManufacturer } = require('../../lib/helpers/DeviceDataHelper');
+const { safeSetTimeout, safeClearTimeout } = require('../../lib/utils/safe-timers');
+const BootBudget = require('../../lib/performance/BootBudget');
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
@@ -242,30 +244,61 @@ class WaterLeakSensorDevice extends UnifiedSensorBase {
 
       // Initialize IAS Alarm Fallback
       this._iasFallback = new IASAlarmFallback(this, {
-        pollInterval: 30000,
+        pollInterval: 6 * 60 * 60 * 1000,
         useTuyaMirror: this._deviceProfile?.type !== 'ias_zone'
       });
       await this._iasFallback.init().catch(e => {
-        this.log(`[WATER] ⚠️ IAS Fallback init failed: ${e.message}`);
+        this.log(`[WATER] IAS Fallback init failed: ${e.message}`);
       });
 
-      // Force initial alarm state read
-      await this._forceInitialAlarmRead(zclNode);
-
-      // Delayed secondary read for sleepy sensors
-      this._secondaryAlarmReadTimer = this.homey.setTimeout(async () => {
-        this._secondaryAlarmReadTimer = null;
-        if (this._destroyed) return;
-        try {
-          this.log('[WATER] 📖 Delayed secondary alarm read (5s post-init)...');
-          await this._forceInitialAlarmRead(zclNode);
-        } catch (e) {
-          this.log(`[WATER] ⚠️ Secondary read failed: ${e.message}`);
-        }
-      }, 5000);
-
-      this.log(`[WATER] ✅ Water leak sensor ready (invert: ${this._invertAlarm})`);
+      // Sleepy: defer boot poll — wake/rejoin path re-attaches IAS (Peter #2183).
     }, 'onNodeInit');
+  }
+
+  /**
+   * WHY: after app update the IAS listener is gone; re-attach on every wake.
+   * Skip Tuya dataQuery parent path for IAS-only units (Peter 1cf775a2).
+   */
+  async onEndDeviceAnnounce() {
+    BootBudget.markRadioActivity(this);
+    this.log('[WATER] wake/rejoin — re-attach IAS Zone listener');
+    try {
+      if (typeof this._reattachIasOnWake === 'function') {
+        await this._reattachIasOnWake();
+      } else {
+        const iasManager = new IASZoneManager(this);
+        await iasManager.enrollIASZone();
+      }
+    } catch (err) {
+      this.log(`[WATER] IAS re-enroll on wake failed: ${err.message}`);
+    }
+    if (this._deviceProfile?.type === 'tuya_dp') {
+      if (typeof super.onEndDeviceAnnounce === 'function') {
+        await super.onEndDeviceAnnounce();
+      }
+      return;
+    }
+    try {
+      await this._forceInitialAlarmRead(this.zclNode);
+    } catch (_e) { /* best-effort */ }
+    if (this._secondaryAlarmReadTimer) {
+      safeClearTimeout(this, this._secondaryAlarmReadTimer);
+      this._secondaryAlarmReadTimer = null;
+    }
+    if (!BootBudget.shouldTxSleepy(this)) {
+      this.log('[WATER] skip delayed IAS read (heap critical or not in awake window)');
+      return;
+    }
+    this._secondaryAlarmReadTimer = safeSetTimeout(this, async () => {
+      this._secondaryAlarmReadTimer = null;
+      if (this._destroyed) {return;}
+      try {
+        this.log('[WATER] Delayed secondary alarm read (5s post-wake)');
+        await this._forceInitialAlarmRead(this.zclNode);
+      } catch (e) {
+        this.log(`[WATER] Secondary read failed: ${e.message}`);
+      }
+    }, 5000);
   }
 
   async _forceInitialAlarmRead(zclNode) {
