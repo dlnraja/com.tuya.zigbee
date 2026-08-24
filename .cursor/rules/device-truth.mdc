@@ -18,6 +18,19 @@ alwaysApply: true
 5. Confirm in `drivers/<id>/driver.compose.json` and `data/user-misattribution-registry.json`.
 6. Cross-check: `AI_CONTEXT_MANDATE.md`, `docs/ARCHITECTURE_AI.md`, `docs/GLOBAL_INVESTIGATION_PLAN.md`, `docs/rules/WHY_INTERROGATION.md`, `docs/rules/DUAL_APP_VISION.md`, `docs/rules/FORUM_SILENT_HUMANIZE.md`, `.cursorrules`.
 
+## One mfr / mfs → many variants & productIds (NORMAL)
+
+**Un même `manufacturerName` (entrée `mfs_db` / fingerprint) peut couvrir plusieurs appareils réels** — ce n’est pas un bug ni une collision à “nettoyer” par défaut.
+
+| Autorisé | Interdit |
+|----------|----------|
+| Même mfr + **pid différent** → drivers différents (ex. `_TZ3000_abc`+`TS0001` vs `TS0002`) | Retirer un mfr d’un driver parce qu’il apparaît ailleurs avec **un autre** pid |
+| Même mfr + **variants OEM** (HOBEIAN, Wing, labels retail `ZG-303Z`, suffixes `_curtain_tilt`) | Inventer un pid pour “couvrir” climate / effacer une collision |
+| `mfs_db` avec **plusieurs `modelIds`** pour un mfr si **chaque** pid est un couple vérifié | Router sur mfr seul quand le pid est connu mais absent de la liste |
+| Même OEM Tuya (`_TZE200` / `_TZE204` / `_TZE284`) = familles séparées jusqu’à preuve | Supposer qu’un mfr = un seul type d’appareil |
+
+**Règle d’or :** identité = **(manufacturerName, productId)**. Variants et pid multiples sous un mfr sont attendus — toujours verrouiller et investiguer le **couple**, jamais le mfr isolé.
+
 ## High-risk peculiarities (never invert)
 - `_TZE284_m1cvyneb` + `TS0601` → `wall_dimmer_tuya` only. Brightness MCU **0–1000**. Forbid climate/soil/universal.
 - `_TZ3000_w5xztuy7` + `TS0002` → `switch_2gang` **zcl_only**.

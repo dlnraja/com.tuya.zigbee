@@ -30,6 +30,7 @@ Clone Stable: `Documents\homey\stable`. `stable-v5-p195` is **STALE**.
 - **T99614 #286 SergeP** `_TZ3000_v5498kdm`+TS0001 = **Nous/SoPhos app**, not Universal Tuya — do **not** auto-lock into our drivers from that post.
 - **P2230 Gmail cascade verified:** L0 Cursor plugin OK; CI run `32640495322` IMAP Auth OK (50 mails) via GitHub secrets — plugin never required in GHA.
 - Latest diags: Toni `3a1f196d` Tongou still on Test **smart_rcbo** (needs publish of app.json sync); meter91 `55e3e591` / Nobø `9cbf9eb6` FLOW-GUARD ID spam fixed in heuristics; DYN-CAP blocks DP6 raw→humidity.
+- **P2241 (2026-08-24):** Stable P2240 pushed (`006ed93bf`). Dual-app dashboard + diagnostics HTML on **both** tracks: `npm run dashboard:both`, `dashboard:summary`, `dashboard:diagnostics`. Stable falls back to master `.github/state/diagnostics-report.json` when local report missing. Athom `--soft-expect` avoids false fail when v5.12.89 processing_failed (P139).
 - Homey Test tip email: master build **#2954** testing; Stable **#13–15** processing_failed (P139).
 - Soft only (no lock): `_TZ3000_xabckq1v`+TS0001 hypothesis — known couple is **TS004F** → `button_wireless_4`.
 - DP audit: `npm run audit:dp-couples` · guide: `docs/guides/DP_INTERPRETATION.md` · knowledge: `data/dp_couple_knowledge.json`

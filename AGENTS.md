@@ -23,6 +23,7 @@ A **(mfr, pid)** pair = the canonical identity of a Zigbee device.
 - **mfr** (manufacturerName): e.g. `_TZE200_aoclfnxz`, `_TZ3000_abc12345`
 - **pid** (productId / modelID): e.g. `TS0601`, `TS0505B`, `TS0044`
 - mfr alone is ambiguous (one mfr can map to multiple devices).
+- **mfs / `mfs_db`:** one manufacturerName may carry **multiple productIds and OEM variants** — each verified `(mfr, pid)` maps to its driver; shared mfr across drivers is expected, not a collision bug.
 - pid alone is ambiguous (one pid is shared by many vendors).
 - The pair is unique. Cross-reference all sources on this pair, not on individual fields.
 - **Every prompt:** look up `docs/knowledge/DEVICE_TRUTH.md` + `docs/knowledge/device-truth.json` (431 drivers, 1-by-1) + `docs/knowledge/PECULIARITIES.md` then confirm compose + `data/user-misattribution-registry.json`.

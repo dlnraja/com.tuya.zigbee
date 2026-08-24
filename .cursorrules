@@ -159,7 +159,9 @@ When encountering an unknown device, the system uses 6 heuristics to rank time f
 - `drivers/{type}/driver.flow.compose.json` - Flow definitions
 
 ## CRITICAL: Fingerprint Matching (Sacred Couple Doctrine)
-**One manufacturerName can map to MANY devices** — different productIds, variants, OEM labels, and device names. That is NORMAL.
+**One manufacturerName can map to MANY devices** — different productIds, hardware variants, OEM labels, retail SKUs, and device names. That is NORMAL.
+
+**`mfs_db` / mfs rule:** one mfr entry may list **multiple `modelIds` (productIds)** and **different variants** (e.g. HOBEIAN → soil `ZG-303Z`, switch `ZG-305Z`, climate sibling). Each `(mfr, pid)` is its own sacred couple → its own driver. Never dedupe or prune a mfr across drivers unless **same mfr + same pid** is in the **wrong** driver.
 
 ### Fingerprint = manufacturerName + productId (COMBINED) — never mfr alone
 ```

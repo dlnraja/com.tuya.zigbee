@@ -24,6 +24,7 @@ const DASHBOARDS = [
   { gen: 'generate-error-dashboard.js', file: 'error-dashboard.html', title: 'Error Dashboard', desc: 'Anti-patterns and code findings' },
   { gen: 'generate-dependency-dashboard.js', file: 'dependency-dashboard.html', title: 'Dependency Dashboard', desc: 'Module graph, cycles, unused modules' },
   { gen: 'generate-performance-dashboard.js', file: 'performance-dashboard.html', title: 'Performance Dashboard', desc: 'Syntax checks and perf history' },
+  { gen: 'generate-diagnostics-dashboard.js', file: 'diagnostics-dashboard.html', title: 'Diagnostics Dashboard', desc: 'Gmail crash/diag triage with sacred-couple signals' },
 ];
 
 module.exports = function generateDashboardsPage() {

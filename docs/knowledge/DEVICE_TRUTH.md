@@ -20,6 +20,16 @@
 4. Cross-check rules: `AI_CONTEXT_MANDATE.md`, `docs/ARCHITECTURE_AI.md`, `docs/rules/WHY_INTERROGATION.md`, `docs/rules/DUAL_APP_VISION.md`, `docs/rules/FORUM_SILENT_HUMANIZE.md`, `.cursorrules`.
 5. **Publish** means Homey App Store (master Test 9.0.x). **Do not post** means no Homey Community / PM replies.
 
+## mfs / manufacturerName — variants & multiple productIds
+
+One `manufacturerName` (including `mfs_db` entries) **may legitimately map to many devices**:
+
+- **Different productIds** under the same mfr → different drivers (e.g. `_TZ3000_abc`+`TS0001` vs `TS0002` vs `TS0003`).
+- **Different hardware variants** — OEM brand strings (HOBEIAN, Wing), retail labels (`ZG-303Z`), firmware suffixes (`TS0601_curtain_tilt`).
+- **`mfs_db` may list several `modelIds`** for one mfr when each pid is a verified sacred couple.
+
+Do **not** remove a fingerprint because the mfr appears in another driver with a **different** pid. Only remove when **same mfr + same pid** is in the **wrong** driver. Never route on mfr alone when pid is known.
+
 Catalog: **431** drivers, **57** locked community cases.
 
 ## Locked couples (canonical, 1 by 1)
