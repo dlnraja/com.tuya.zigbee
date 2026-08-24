@@ -2028,6 +2028,82 @@
           "dynamic": false
         }
       }
+    },
+    {
+      "id": "p2234-gdsvhfao-repeater",
+      "mfr": [
+        "_TZ3000_gdsvhfao",
+        "_tz3000_gdsvhfao",
+        "_TZ3000_GDSVHFAO"
+      ],
+      "productId": [
+        "TS0001"
+      ],
+      "canonicalDriver": "zigbee_repeater",
+      "forbiddenDrivers": [
+        "switch_1gang",
+        "switch_2gang"
+      ],
+      "source": "z2m#11207",
+      "notes": "TS0001_repeater — pairing button repeater"
+    },
+    {
+      "id": "p2234-itp8dt7f-dimmer",
+      "mfr": [
+        "_TZE200_itp8dt7f",
+        "_tze200_itp8dt7f",
+        "_TZE200_ITP8DT7F"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": "wall_dimmer_tuya",
+      "forbiddenDrivers": [
+        "soil_sensor",
+        "climate_sensor"
+      ],
+      "source": "z2m#12213",
+      "notes": "ION touch dimmer alias of ykgar0ow"
+    },
+    {
+      "id": "p2234-qujphad5-tybac",
+      "mfr": [
+        "_TZE204_qujphad5",
+        "_tze204_qujphad5",
+        "_TZE204_QUJPHAD5"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": "wall_thermostat",
+      "forbiddenDrivers": [
+        "bulb_dimmable",
+        "thermostatic_radiator_valve"
+      ],
+      "source": "z2m#12869",
+      "notes": "TYBAC-006 FCU thermostat"
+    },
+    {
+      "id": "p2234-apiu8k13-q9qytwfa-water-heater",
+      "mfr": [
+        "_TZE204_apiu8k13",
+        "_tze204_apiu8k13",
+        "_TZE204_APIU8K13",
+        "_TZE284_q9qytwfa",
+        "_tze284_q9qytwfa",
+        "_TZE284_Q9QYTWFA"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": "plug_energy_monitor",
+      "forbiddenDrivers": [
+        "switch_1gang",
+        "soil_sensor",
+        "climate_sensor"
+      ],
+      "source": "z2m#32883",
+      "notes": "Power-monitoring water heater controller"
     }
   ]
 }
