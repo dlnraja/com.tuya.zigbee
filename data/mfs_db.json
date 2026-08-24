@@ -185437,11 +185437,12 @@
   },
   "_tz3000_zgyzgdua": {
     "driverId": "scene_switch_4",
-    "source": "auto-sync",
+    "source": "registry:p2244-zgyzgdua-ts0044-scene",
     "modelIds": [
       "ERS-10TZBVK-AA",
       "TS0601",
-      "ZG-101ZS"
+      "ZG-101ZS",
+      "TS0044"
     ],
     "pid": "ERS-10TZBVK-AA",
     "modelIdsCount": 3
@@ -221295,16 +221296,6 @@
       ],
       "confidence": 0.95
     },
-    "_tz3000_4upl1fcj|ts0601": {
-      "mfr": "_tz3000_4upl1fcj",
-      "pid": "ts0601",
-      "driver": "switch_1gang",
-      "sources": [
-        "canonical",
-        "mfs_db"
-      ],
-      "confidence": 0.95
-    },
     "_tz3000_4ux0ondb|ts0601": {
       "mfr": "_tz3000_4ux0ondb",
       "pid": "ts0601",
@@ -223233,16 +223224,6 @@
       "mfr": "_tz3000_kdpxju99",
       "pid": "ts0601",
       "driver": "curtain_motor",
-      "sources": [
-        "canonical",
-        "mfs_db"
-      ],
-      "confidence": 0.95
-    },
-    "_tz3000_kfu8zapd|ts0601": {
-      "mfr": "_tz3000_kfu8zapd",
-      "pid": "ts0601",
-      "driver": "switch_1gang",
       "sources": [
         "canonical",
         "mfs_db"
@@ -235555,12 +235536,12 @@
     "_tz3000_zgyzgdua|ts0044": {
       "mfr": "_tz3000_zgyzgdua",
       "pid": "ts0044",
-      "driver": "button_wireless_4",
+      "driver": "scene_switch_4",
       "sources": [
-        "canonical",
-        "user-data"
+        "p2244",
+        "meter91-2189"
       ],
-      "confidence": 0.95
+      "confidence": 0.98
     },
     "_tz3000_zutizvyk|ts0203": {
       "mfr": "_tz3000_zutizvyk",
@@ -264828,15 +264809,6 @@
       ],
       "confidence": 0.17
     },
-    "_tz3000_zgyzgdua|ts0601": {
-      "mfr": "_tz3000_zgyzgdua",
-      "pid": "ts0601",
-      "driver": "scene_switch_4",
-      "sources": [
-        "mfs_db"
-      ],
-      "confidence": 0.17
-    },
     "_tze200_zqtiam9d|ts0601": {
       "mfr": "_tze200_zqtiam9d",
       "pid": "ts0601",
@@ -268047,15 +268019,6 @@
       ],
       "confidence": 0.17
     },
-    "_tz3000_4upl1fcj|ts0001": {
-      "mfr": "_tz3000_4upl1fcj",
-      "pid": "ts0001",
-      "driver": "switch_1gang",
-      "sources": [
-        "mfs_db"
-      ],
-      "confidence": 0.17
-    },
     "_tz3000_4whigl8i|ts0001": {
       "mfr": "_tz3000_4whigl8i",
       "pid": "ts0001",
@@ -269083,15 +269046,6 @@
         "mfs_db"
       ],
       "confidence": 0.17
-    },
-    "_tz3000_kfu8zapd|ts0001": {
-      "mfr": "_tz3000_kfu8zapd",
-      "pid": "ts0001",
-      "driver": "switch_1gang",
-      "sources": [
-        "mfs_db"
-      ],
-      "confidence": 0.25
     },
     "_tz3000_kj0nwdz6|ts0001": {
       "mfr": "_tz3000_kj0nwdz6",
@@ -281555,14 +281509,6 @@
       "source": "fingerprints-2026-07-14",
       "confidence": 0.95
     },
-    "_TZ3000_4upl1fcj": {
-      "driverId": "switch_1gang",
-      "productIds": [
-        "TS0601"
-      ],
-      "source": "fingerprints-2026-07-14",
-      "confidence": 0.95
-    },
     "_TZ3000_4ux0ondb": {
       "driverId": "plug_smart",
       "productIds": [
@@ -283109,14 +283055,6 @@
     },
     "_TZ3000_kdpxju99": {
       "driverId": "curtain_motor",
-      "productIds": [
-        "TS0601"
-      ],
-      "source": "fingerprints-2026-07-14",
-      "confidence": 0.95
-    },
-    "_TZ3000_kfu8zapd": {
-      "driverId": "switch_1gang",
       "productIds": [
         "TS0601"
       ],
@@ -292700,12 +292638,12 @@
       "confidence": 0.95
     },
     "_TZ3000_zgyzgdua": {
-      "driverId": "button_wireless_4",
+      "driverId": "scene_switch_4",
       "productIds": [
         "TS0044"
       ],
-      "source": "fingerprints-2026-07-14",
-      "confidence": 0.95
+      "source": "p2244",
+      "confidence": 0.98
     },
     "_TZ3000_zutizvyk": {
       "driverId": "door_sensor",
@@ -296986,12 +296924,12 @@
       "confidence": 0.95
     },
     "_tz3000_zgyzgdua": {
-      "driverId": "button_wireless_4",
+      "driverId": "scene_switch_4",
       "productIds": [
         "TS0044"
       ],
-      "source": "fingerprints-2026-07-14",
-      "confidence": 0.95
+      "source": "p2244",
+      "confidence": 0.98
     },
     "_tz3290_785fbxik": {
       "driverId": "button_wireless_4",
@@ -318617,14 +318555,6 @@
       "source": "fingerprints-2026-07-14",
       "confidence": 0.95
     },
-    "_TZ3000_KFU8ZAPD": {
-      "driverId": "switch_1gang",
-      "productIds": [
-        "TS0001"
-      ],
-      "source": "fingerprints-2026-07-14",
-      "confidence": 0.95
-    },
     "_TZ3000_KJ0NWDZ6": {
       "driverId": "switch_1gang",
       "productIds": [
@@ -326045,6 +325975,36 @@
       "driver": "presence_sensor_radar",
       "source": "blakadder-r68",
       "added": "2026-07-16T14:35:26.327Z"
+    },
+    "_tz3000_4upl1fcj|ts0041": {
+      "mfr": "_tz3000_4upl1fcj",
+      "pid": "ts0041",
+      "driver": "button_wireless_1",
+      "sources": [
+        "p2236",
+        "p2244"
+      ],
+      "confidence": 0.95
+    },
+    "_tz3000_kfu8zapd|ts004f": {
+      "mfr": "_tz3000_kfu8zapd",
+      "pid": "ts004f",
+      "driver": "button_wireless_4",
+      "sources": [
+        "p2236",
+        "p2244"
+      ],
+      "confidence": 0.9
+    },
+    "_tz3000_xffhmvhv|ts004f": {
+      "mfr": "_tz3000_xffhmvhv",
+      "pid": "ts004f",
+      "driver": "button_wireless_4",
+      "sources": [
+        "p2244",
+        "nobo"
+      ],
+      "confidence": 0.95
     }
   },
   "_TZE204_ZG204Z": {
@@ -327159,6 +327119,15 @@
       "TS011F"
     ],
     "pid": "TS011F",
+    "modelIdsCount": 1
+  },
+  "_tz3000_xffhmvhv": {
+    "driverId": "button_wireless_4",
+    "modelIds": [
+      "TS004F"
+    ],
+    "source": "registry:p2244-xffhmvhv-nobo",
+    "confidence": 0.95,
     "modelIdsCount": 1
   }
 }
