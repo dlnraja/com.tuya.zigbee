@@ -1,4 +1,4 @@
-# 📥 Community Inbox — 2026-08-23 05:44 UTC
+# 📥 Community Inbox — 2026-08-24 05:53 UTC
 
 Généré par `.github/scripts/community-inbox-digest.js` (workflow `community-inbox.yml`).
 
@@ -6,7 +6,7 @@ Généré par `.github/scripts/community-inbox-digest.js` (workflow `community-i
 
 - Issues ouvertes : **0** — 🔴 à traiter : **0**, 🟡 attente utilisateur : 0, 🟢 maintainer actif : 0
 - PRs ouvertes : **0**
-- Forum : **13** post(s) sans réponse du maintainer
+- Forum : **15** post(s) sans réponse du maintainer
 - Messages privés (lecture seule, jamais de réponse) : **20** thread(s), 7 mfr, 5 pid, 7 UUID diag
 
 ## 🌍 Forum — posts sans réponse
@@ -24,4 +24,6 @@ Généré par `.github/scripts/community-inbox-digest.js` (workflow `community-i
 - **Gabriel_Pedrosa_Mach** (2026-08-20) :  Ok com.gpm.homesuite/Homey_Interview/4G touch/_TZ3000_lwthnp7j.txt at main · gpmachado/com.gpm.homesuite · GitHub 
 - **meter91** (2026-08-21) :  Hey! Thanks for all the great work. I’m having issues with the TS0044 + _TZ3000_zgyzgdua 4-way switch. Similair to what I read above I does
 - **Peter_van_Werkhoven** (2026-08-21) :  Hi Dylan Good evening, SOS button’s still working fine, only Battery is very Nervous/Glitchy 1000041136 1220×2712 248 KB 1000041137 1220×27
+- **Toni_UrbanoMarquez** (2026-08-23) :  Hi, I need support for a Tuya Zigbee DIN rail energy meter. Device: Model ID: TS0601 Manufacturer: _TZE284_6ocnqlhn Device: Tongou TO-Q-SYS
+- **robertklep** (2026-08-23) :  Toni_UrbanoMarquez: I need You really need to read the first post of the thread. 
 
