@@ -33,7 +33,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.643 |
+| **App Version** | v9.0.645 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,363 |
 | **Pairing Variants** | 16,465 (4 case combos per fingerprint) |
@@ -102,6 +102,8 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.645** | Reliability improvements. |
+| **v9.0.644** | P2244/P2245 remote sacred couples + irrigation valve compose; Athom republish after 9.0.643 processing_failed. |
 | **v9.0.643** | Tongou DIN meter pairing lock (not Smart RCBO); block DP6 raw→humidity; button flow ID heuristics; resilience critical-first inventory; . |
 | **v9.0.642** | Tongou DIN meter pairing lock (not Smart RCBO); block DP6 raw→humidity; button flow ID heuristics; resilience critical-first inventory; . |
 | **v9.0.641** | Tongou DIN meter pairing lock (not Smart RCBO); block DP6 raw→humidity; button flow ID heuristics; resilience critical-first inventory; . |
@@ -112,8 +114,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.636** | Tongou DIN meter pairing lock (not Smart RCBO); block DP6 raw→humidity; button flow ID heuristics; resilience critical-first inventory; . |
 | **v9.0.635** | Tongou DIN meter pairing lock (not Smart RCBO); block DP6 raw→humidity; button flow ID heuristics; resilience critical-first inventory; . |
 | **v9.0.634** | Tongou DIN meter pairing lock (not Smart RCBO); block DP6 raw→humidity; button flow ID heuristics; resilience critical-first inventory; . |
-| **v9.0.633** | Tongou DIN meter pairing lock (not Smart RCBO); block DP6 raw→humidity; button flow ID heuristics; resilience critical-first inventory; . |
-| **v9.0.632** | Tongou DIN meter pairing lock (not Smart RCBO); block DP6 raw→humidity; button flow ID heuristics; resilience critical-first inventory; . |
 
 <!-- CHANGELOG_END -->
 
