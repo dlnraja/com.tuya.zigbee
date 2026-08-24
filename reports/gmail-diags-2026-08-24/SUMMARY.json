@@ -1,0 +1,76 @@
+{
+  "generatedAt": "2026-08-24T09:22:57.670Z",
+  "source": "gmail-plugin L0",
+  "note": "SHADOW — no forum reply; sanitized summary only",
+  "diags": [
+    {
+      "logId": "f647d35b-c401-4077-b758-da1356e523f9",
+      "date": "2026-08-24T08:46:04Z",
+      "app": "9.0.636",
+      "userMsg": "Door/Window and Waterdetector OK; Smartbutton still no response",
+      "driver": "button_wireless_1",
+      "couple": "ABSENT (D101/D102 no zb_manufacturer_name / zb_model_id)",
+      "signals": [
+        "sleepy",
+        "IAS enroll abort",
+        "bind fail while asleep",
+        "DCM-FB +onoff",
+        "DP-ADAPT save Not Found"
+      ],
+      "action": "BOTH: soft DP-ADAPT; user must re-pair while pressing button; need mfr+pid from interview",
+      "status": "investigate"
+    },
+    {
+      "logId": "3a1f196d-77e6-44f6-870e-d03d6a28da97",
+      "date": "2026-08-23T02:01:41Z",
+      "app": "9.0.626",
+      "userMsg": "Tongou TO-Q-SYS-JZT not recognized",
+      "couple": "_TZE284_6ocnqlhn+TS0601",
+      "wrongDriver": "smart_rcbo",
+      "canonical": "din_rail_meter",
+      "action": "Already locked; user needs Test update + remove/re-pair",
+      "status": "fixed_in_tip_needs_user_update"
+    },
+    {
+      "logId": "31e654a4-31c2-4639-a3b0-9bf682a08bb4",
+      "date": "2026-08-22T11:23:11Z",
+      "app": "9.0.626",
+      "note": "User typo mfr _TZE284_60cnqlhn (missing c) — real couple 6ocnqlhn",
+      "couple": "_TZE284_6ocnqlhn+TS0601",
+      "status": "same_tongou"
+    },
+    {
+      "logId": "9cbf9eb6-ec5f-430f-964d-c93d13d3c89e",
+      "date": "2026-08-21T23:50:34Z",
+      "app": "9.0.621",
+      "couple": "_TZ3000_xffhmvhv+TS004F",
+      "driver": "button_wireless_4",
+      "signals": [
+        "FLOW-GUARD invalid button_N_button_pressed",
+        "0x8004 write fail — now skipped for xffhmvhv",
+        "EP1-4 TS0044-RAW work"
+      ],
+      "status": "mostly_fixed_on_tip_user_update"
+    }
+  ],
+  "athom": [
+    {
+      "type": "processing_failed",
+      "builds": [
+        "#2956",
+        "#2960",
+        "#2964"
+      ],
+      "reason": "socket hang up",
+      "note": "P139 Athom transient — do not spam republish"
+    },
+    {
+      "type": "testing",
+      "builds": [
+        "#2965"
+      ],
+      "note": "latest Test tip after P2232 push"
+    }
+  ],
+  "crashes_app": []
+}
