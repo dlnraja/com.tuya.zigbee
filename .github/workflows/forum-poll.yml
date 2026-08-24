@@ -126,9 +126,13 @@ jobs:
             echo "## 🔇 Silent enrichment (forum+sync+investigate need-action, no user wait)" >> $GITHUB_STEP_SUMMARY
             node tools/ci/silent-enrichment-orchestrator.js --phase=forum --skip-scan 2>&1 | tee forum-enrich.log || echo "ENRICH_ORCH_WARN"
             node tools/ci/silent-enrichment-orchestrator.js --phase=gates --skip-scan 2>&1 | tee forum-gates.log || echo "GATES_WARN"
-          elif [ -f tools/ci/forum-actionable-processor.js ]; then
+          fi
+          if [ -f tools/ci/forum-actionable-processor.js ]; then
             echo "## 📋 Forum actionable processor (P2210 — post-by-post cross-ref)" >> $GITHUB_STEP_SUMMARY
             node tools/ci/forum-actionable-processor.js 2>&1 | tee forum-actionable-processor.log || echo "PROCESSOR_SKIP"
+          fi
+          if [ -f tools/ci/apply-forum-silent-multi.js ]; then
+            node tools/ci/apply-forum-silent-multi.js 2>&1 | tee forum-known-routes.log || echo "KNOWN_ROUTES_SKIP"
           fi
           if [ -f tools/ci/forum-ai-paste-gate.js ]; then
             node tools/ci/forum-ai-paste-gate.js --scan-defaults || echo "AI_PASTE_GATE_WARN"
