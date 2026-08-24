@@ -4,11 +4,11 @@
 
 [![Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdlnraja%2Fcom.tuya.zigbee%2Fmaster%2Fapp.json&query=%24.version&label=version&color=blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![Drivers](https://img.shields.io/badge/drivers-431-brightgreen)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
-[![Fingerprints](https://img.shields.io/badge/fingerprints-4,353%20unique-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
+[![Fingerprints](https://img.shields.io/badge/fingerprints-4,355%20unique-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![SDK](https://img.shields.io/badge/SDK-3-orange)](https://apps.developer.homey.app/)
 [![License](https://img.shields.io/badge/license-GPL--3.0-green)](LICENSE)
 
-Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, sensors, lights, thermostats, covers, valves — **431 drivers**, **4,353 unique fingerprints**. No cloud required.
+Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, sensors, lights, thermostats, covers, valves — **431 drivers**, **4,355 unique fingerprints**. No cloud required.
 
 **What it does:**
 - Talks to devices on your Homey Zigbee mesh (Tuya DP `0xEF00` and standard ZCL)
@@ -33,11 +33,11 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.634 |
+| **App Version** | v9.0.635 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
-| **Unique Fingerprints** | 4,353 |
-| **Pairing Variants** | 16,515 (4 case combos per fingerprint) |
-| **Unique Product IDs** | 577 |
+| **Unique Fingerprints** | 4,355 |
+| **Pairing Variants** | 16,523 (4 case combos per fingerprint) |
+| **Unique Product IDs** | 578 |
 | **Flow Cards** | 5,178 |
 | **Unique Capabilities** | 170 |
 | **Native OTA Drivers** | 5 |
@@ -45,28 +45,28 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **SVG Icons** | 731 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
-| **Last Updated** | 2026-08-23 |
+| **Last Updated** | 2026-08-24 |
 
 ### Top 20 Drivers by Fingerprint Count
 
 | # | Driver | Fingerprints |
 |---|--------|-------------|
-| 1 | `climate_sensor` | 2,463 |
-| 2 | `switch_1gang` | 1,764 |
-| 3 | `presence_sensor_radar` | 722 |
+| 1 | `climate_sensor` | 2,447 |
+| 2 | `switch_1gang` | 1,736 |
+| 3 | `presence_sensor_radar` | 724 |
 | 4 | `radiator_valve` | 599 |
 | 5 | `button_wireless_2` | 578 |
 | 6 | `wall_dimmer_tuya` | 496 |
 | 7 | `generic_tuya` | 420 |
 | 8 | `device_radiator_valve` | 380 |
-| 9 | `curtain_motor` | 318 |
-| 10 | `switch_4gang` | 272 |
-| 11 | `switch_2gang` | 238 |
-| 12 | `switch_3gang` | 212 |
+| 9 | `curtain_motor` | 322 |
+| 10 | `switch_4gang` | 276 |
+| 11 | `switch_2gang` | 240 |
+| 12 | `switch_3gang` | 214 |
 | 13 | `motion_sensor` | 209 |
 | 14 | `diy_custom_zigbee` | 206 |
-| 15 | `thermostat_tuya_dp` | 192 |
-| 16 | `soil_sensor` | 191 |
+| 15 | `soil_sensor` | 193 |
+| 16 | `thermostat_tuya_dp` | 192 |
 | 17 | `sensor_contact_zigbee` | 186 |
 | 18 | `water_leak_sensor_tuya` | 182 |
 | 19 | `usb_dongle_triple` | 176 |
@@ -102,6 +102,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.635** | Tongou DIN meter pairing lock (not Smart RCBO); block DP6 raw→humidity; button flow ID heuristics; resilience critical-first inventory; . |
 | **v9.0.634** | Tongou DIN meter pairing lock (not Smart RCBO); block DP6 raw→humidity; button flow ID heuristics; resilience critical-first inventory; . |
 | **v9.0.633** | Tongou DIN meter pairing lock (not Smart RCBO); block DP6 raw→humidity; button flow ID heuristics; resilience critical-first inventory; . |
 | **v9.0.632** | Tongou DIN meter pairing lock (not Smart RCBO); block DP6 raw→humidity; button flow ID heuristics; resilience critical-first inventory; . |
@@ -113,7 +114,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.626** | Docs cartography for dual App IDs; reliability carry-forward from 9.0.620. |
 | **v9.0.625** | Docs cartography for dual App IDs; reliability carry-forward from 9.0.620. |
 | **v9.0.624** | Docs cartography for dual App IDs; reliability carry-forward from 9.0.620. |
-| **v9.0.623** | Docs cartography for dual App IDs; reliability carry-forward from 9.0.620. |
 
 <!-- CHANGELOG_END -->
 
