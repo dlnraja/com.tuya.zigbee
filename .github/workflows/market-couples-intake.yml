@@ -93,6 +93,14 @@ jobs:
       - name: 🧪 P2231 market couples tests
         run: node --test test/critical/p2231-market-couples-intake.test.js
 
+      - name: 🔒 Apply-safe couples (dry then apply)
+        run: |
+          node tools/ci/apply-market-couples.js 2>&1 | tee apply-dry.log
+          node tools/ci/apply-market-couples.js --apply 2>&1 | tee apply-live.log
+          echo '```' >> $GITHUB_STEP_SUMMARY
+          tail -n 30 apply-live.log >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+
       - name: 📦 Upload artifacts
         uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5.0.0
         with:
@@ -107,18 +115,20 @@ jobs:
           if-no-files-found: warn
           retention-days: 14
 
-      - name: 📝 Commit state (master)
+      - name: 📝 Commit state + compose (master)
         if: ${{ github.event_name == 'schedule' || inputs.dry_run != true }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          node scripts/maintenance/sync-appjson-zigbee.js || true
           git add .github/state/market-couples/ .github/state/mfr-pid-cross-ref.json .github/state/all-mfr-pid-pairs.json 2>/dev/null || true
           git add scripts/sync/data/blakadder.json scripts/sync/data/z2m.json scripts/sync/data/zha.json 2>/dev/null || true
+          git add drivers/*/driver.compose.json app.json 2>/dev/null || true
           if git diff --staged --quiet; then
             echo "Nothing to commit"
             exit 0
           fi
           VER=$(node -p "require('./app.json').version" 2>/dev/null || echo '?')
-          git commit -m "market(P2231): refresh mfr+pid intake v${VER} [skip ci]"
+          git commit -m "market(P2231): intake + apply-safe couples v${VER} [skip ci]"
           git pull --rebase origin master || true
           git push origin HEAD:master

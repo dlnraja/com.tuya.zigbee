@@ -125,6 +125,14 @@ phase('6-blakadder-new', () => {
   return runNode(script, args, true);
 });
 
+phase('6b-market-couples-intake', () =>
+  runNode('tools/ci/market-couples-intake.js', [], true));
+
+phase('6c-market-couples-apply', () => {
+  const args = APPLY ? ['--apply'] : [];
+  return runNode('tools/ci/apply-market-couples.js', args, true);
+});
+
 phase('7-infer-enrich-dry', () => runNode('tools/ci/infer-enrich-from-incomplete.js', ['--dry-run'], true));
 
 phase('8-sacred-couple-dry-gate', () => {

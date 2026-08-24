@@ -7,19 +7,20 @@
  * Regular recovery of new sacred couples (manufacturerName + productId) from
  * market sources: Blakadder, Z2M, ZHA, deCONZ, forum SHADOW, Gmail, Johan.
  *
- * NEVER invents pid. NEVER auto-applies to compose without sacred gates.
+ * NEVER invents pid. NEVER auto-applies productId_default alone.
  *
  * Usage:
- *   node tools/ci/market-couples-intake.js              # use cached crawl data
- *   node tools/ci/market-couples-intake.js --crawl     # refresh blakadder+z2m+zha first
- *   node tools/ci/market-couples-intake.js --check     # CI: fail if high-severity mfs drift
+ *   node tools/ci/market-couples-intake.js
+ *   node tools/ci/market-couples-intake.js --crawl
+ *   node tools/ci/market-couples-intake.js --check
+ *   node tools/ci/market-couples-intake.js --apply   # safe compose apply after intake
  *   node tools/ci/market-couples-intake.js --json
  */
 
 const fs = require('fs');
 const path = require('path');
 const { spawnSync } = require('child_process');
-const { lookup, isForbiddenDriver } = require('../../lib/pairing/UserMisattributionRegistry');
+const { resolveMarketDriver } = require('./market-driver-infer');
 
 const ROOT = path.resolve(__dirname, '..', '..');
 const STATE_DIR = path.join(ROOT, '.github', 'state', 'market-couples');
@@ -27,6 +28,7 @@ const SSOT = path.join(ROOT, 'config', 'enrichment', 'market-couples-sources.jso
 
 const DO_CRAWL = process.argv.includes('--crawl');
 const CHECK = process.argv.includes('--check');
+const DO_APPLY = process.argv.includes('--apply');
 const JSON_MODE = process.argv.includes('--json');
 
 function log(msg) {
@@ -63,40 +65,33 @@ function loadSsot() {
   }
 }
 
-function lookupDriver(mfr, pid) {
-  try {
-    const DeviceFingerprintDB = require(path.join(ROOT, 'lib', 'DeviceFingerprintDB.js'));
-    const hit = DeviceFingerprintDB.lookup(mfr, pid);
-    return hit?.driver || null;
-  } catch {
-    return null;
-  }
-}
-
 function enrichCouple(c) {
-  const reg = lookup(c.mfr, c.pid);
-  let routeHint = lookupDriver(c.mfr, c.pid);
-  if (routeHint && isForbiddenDriver(c.mfr, c.pid, routeHint)) {
-    routeHint = reg?.canonicalDriver || null;
-  }
-  if (!routeHint && reg?.canonicalDriver) routeHint = reg.canonicalDriver;
+  const resolved = resolveMarketDriver(c.mfr, c.pid);
   const src = c.sources || [];
   const catalogHit = src.some((s) => ['blakadder', 'z2m', 'zha', 'deconz'].includes(s));
   const blakadderHit = src.includes('blakadder');
+  const z2mHit = src.includes('z2m');
   return {
     ...c,
-    routeHint,
-    canonicalDriver: reg?.canonicalDriver || null,
-    forbiddenDrivers: reg?.forbiddenDrivers || [],
-    needsReview: !routeHint,
+    routeHint: resolved.driver,
+    tier: resolved.tier,
+    applySafe: !!resolved.applySafe && !!resolved.driver,
+    reason: resolved.reason,
+    z2mDesc: resolved.z2m?.description || null,
+    needsReview: !resolved.applySafe,
     catalogHit,
     blakadderHit,
+    z2mHit,
   };
 }
 
 function sortMarketNew(a, b) {
+  // apply-safe first, then multi-catalog, then blakadder
+  if (a.applySafe !== b.applySafe) return a.applySafe ? -1 : 1;
+  const aMulti = a.blakadderHit && a.z2mHit;
+  const bMulti = b.blakadderHit && b.z2mHit;
+  if (aMulti !== bMulti) return aMulti ? -1 : 1;
   if (a.blakadderHit !== b.blakadderHit) return a.blakadderHit ? -1 : 1;
-  if (a.catalogHit !== b.catalogHit) return a.catalogHit ? -1 : 1;
   if (a.needsReview !== b.needsReview) return a.needsReview ? 1 : -1;
   return a.mfr.localeCompare(b.mfr) || a.pid.localeCompare(b.pid);
 }
@@ -107,12 +102,14 @@ function renderMarkdown(report) {
     '',
     'Sacred couple only (mfr+pid). Silent enrichment — no forum posts.',
     '',
-    `| Metric | Count |`,
-    `|--------|------:|`,
+    '| Metric | Count |',
+    '|--------|------:|',
     `| Total unique pairs | ${report.totalPairs} |`,
     `| Market-new (not in compose) | ${report.marketNew} |`,
-    `| With DB route hint | ${report.withRouteHint} |`,
+    `| Apply-safe | ${report.applySafe} |`,
+    `| Soft pid_default (review) | ${report.pidDefaultSoft} |`,
     `| Needs review | ${report.needsReview} |`,
+    `| Blakadder new | ${report.blakadderNew} |`,
     '',
     '## Sources',
     '',
@@ -120,17 +117,25 @@ function renderMarkdown(report) {
   for (const [k, v] of Object.entries(report.bySource || {})) {
     lines.push(`- **${k}**: ${v} pairs`);
   }
-  lines.push('', '## Top market-new (not in driver.compose)', '');
-  lines.push('| Couple | Sources | Route | Registry |');
-  lines.push('|--------|---------|-------|----------|');
-  for (const c of (report.topMarketNew || []).slice(0, 40)) {
-    const reg = c.canonicalDriver ? c.canonicalDriver : '—';
-    lines.push(`| \`${c.mfr}+${c.pid}\` | ${c.sources.join(', ')} | ${c.routeHint || '—'} | ${reg} |`);
+
+  const safe = (report.topMarketNew || []).filter((c) => c.applySafe);
+  lines.push('', '## Apply-safe (registry / exact / Z2M description)', '');
+  lines.push('| Couple | Sources | Driver | Tier | Z2M |');
+  lines.push('|--------|---------|--------|------|-----|');
+  for (const c of safe.slice(0, 40)) {
+    lines.push(`| \`${c.mfr}+${c.pid}\` | ${c.sources.join(', ')} | ${c.routeHint} | ${c.tier} | ${(c.z2mDesc || '—').slice(0, 40)} |`);
   }
-  if (report.blakadderNew) {
-    lines.push('', `**Blakadder-only new:** ${report.blakadderNew}`, '');
+
+  const review = (report.topMarketNew || []).filter((c) => !c.applySafe);
+  lines.push('', '## Needs review (not auto-applied)', '');
+  lines.push('| Couple | Sources | Soft hint | Tier |');
+  lines.push('|--------|---------|-----------|------|');
+  for (const c of review.slice(0, 40)) {
+    lines.push(`| \`${c.mfr}+${c.pid}\` | ${c.sources.join(', ')} | ${c.routeHint || '—'} | ${c.tier} |`);
   }
-  lines.push('', 'Regenerate: `npm run market:couples` · crawl: `npm run market:couples:crawl`');
+
+  lines.push('', 'Apply safe: `node tools/ci/apply-market-couples.js --apply`');
+  lines.push('Regenerate: `npm run market:couples` · crawl: `npm run market:couples:crawl`');
   return lines.join('\n');
 }
 
@@ -148,7 +153,6 @@ function main() {
       crawlResults.push({ id: c.id, ...r });
       if (!r.ok && !c.optional) log(`  warn: ${c.id} crawl exit ${r.exitCode}`);
     }
-    // Forum + gmail are refreshed by auto-enrich; optional light pull
     runNode('tools/ci/blakadder-cross-ref.js', [], 120000);
   }
 
@@ -175,10 +179,12 @@ function main() {
     marketNew: summary.marketNew,
     blakadderNew: enriched.filter((c) => c.blakadderHit).length,
     catalogNew: enriched.filter((c) => c.catalogHit).length,
+    applySafe: enriched.filter((c) => c.applySafe).length,
+    pidDefaultSoft: enriched.filter((c) => c.tier === 'pid_default').length,
     bySource: summary.bySource,
     withRouteHint: enriched.filter((c) => c.routeHint).length,
     needsReview: enriched.filter((c) => c.needsReview).length,
-    topMarketNew: enriched.slice(0, 100),
+    topMarketNew: enriched.slice(0, 150),
     crawlResults,
     crossRef: { ok: xref.ok, tail: xref.tail },
   };
@@ -186,8 +192,15 @@ function main() {
   fs.writeFileSync(path.join(STATE_DIR, 'intake.json'), JSON.stringify(report, null, 2));
   fs.writeFileSync(path.join(STATE_DIR, 'NEED_REVIEW.md'), renderMarkdown(report));
 
-  log(`market-new: ${report.marketNew} | blakadder: ${report.blakadderNew} | route hints: ${report.withRouteHint} | review: ${report.needsReview}`);
+  log(`market-new: ${report.marketNew} | apply-safe: ${report.applySafe} | pid_default soft: ${report.pidDefaultSoft} | review: ${report.needsReview}`);
   log(`Wrote ${path.relative(ROOT, path.join(STATE_DIR, 'intake.json'))}`);
+
+  if (DO_APPLY) {
+    log('Applying apply-safe couples…');
+    const ar = runNode('tools/ci/apply-market-couples.js', ['--apply'], 120000);
+    log(ar.ok ? 'apply OK' : `apply warn: ${ar.tail.slice(0, 200)}`);
+    report.apply = { ok: ar.ok, tail: ar.tail };
+  }
 
   if (CHECK) {
     const align = runNode('tools/ci/align-mfs-db-intelligent.js', ['--check'], 120000);
