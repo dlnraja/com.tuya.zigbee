@@ -29,6 +29,16 @@ const MAX = (() => {
   return a ? parseInt(a.split('=')[1], 10) : 80;
 })();
 
+// WHY (P2246): never apply known false routes even if z2m_desc looks apply-safe
+const SKIP_COUPLES = new Set([
+  '_tz3000_cvis4qmw|ts0006', // p2237 — only TS0001 → switch_1gang
+  '_tz3000_g9chy2ib|ts0003', // FP = switch_3gang, not wall_thermostat
+]);
+
+function skipCouple(mfr, pid) {
+  return SKIP_COUPLES.has(`${String(mfr).toLowerCase()}|${String(pid).toLowerCase()}`);
+}
+
 function ensureCouple(driver, mfr, pid) {
   if (isForbiddenPlacement(mfr, driver)) {
     return { ok: false, reason: 'forbidden-placement' };
@@ -84,6 +94,10 @@ function main() {
     const pair = normalizeSacredCouple(c.mfr, c.pid);
     if (!pair) {
       report.skipped.push({ mfr: c.mfr, pid: c.pid, reason: 'invalid-couple' });
+      continue;
+    }
+    if (skipCouple(pair.mfr, pair.pid)) {
+      report.skipped.push({ mfr: pair.mfr, pid: pair.pid, reason: 'p2246-skip-list' });
       continue;
     }
     const resolved = resolveMarketDriver(pair.mfr, pair.pid);

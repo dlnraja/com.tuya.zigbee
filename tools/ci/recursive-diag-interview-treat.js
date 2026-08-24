@@ -162,7 +162,7 @@ function collectTextSources() {
   return sources;
 }
 
-function analyzeSource(src, truth) {
+function analyzeSource(src, truth, interviewByDriver) {
   const en = enrich(src.text);
   const deep = deepSignals(src.text);
   const couples = (en.couples || []).map((c) => {
@@ -191,6 +191,36 @@ function analyzeSource(src, truth) {
     });
   }
 
+  // WHY (P2246): when D101/D102 leave couple ABSENT, derive ONLY from interview rows
+  // for drivers present in the log — never invent a pid. Soft when >1 interview hit.
+  let derived = [];
+  if (couples.length === 0 && (en.drivers || []).length) {
+    const hits = [];
+    for (const drv of en.drivers) {
+      const rows = interviewByDriver.get(norm(drv)) || [];
+      for (const r of rows) {
+        if (!r.mfr || !r.pid) continue;
+        if (/^unknown$/i.test(r.mfr) || /^unknown$/i.test(r.pid)) continue;
+        hits.push({
+          mfr: r.mfr,
+          pid: r.pid,
+          canonicalDriver: r.driver || drv,
+          forbiddenDrivers: [],
+          confidence: rows.length === 1 ? 'derived_interview' : 'derived_interview_soft',
+          sourceInterview: r.id || null,
+        });
+      }
+    }
+    const seen = new Set();
+    derived = hits.filter((h) => {
+      const k = `${norm(h.mfr)}|${norm(h.pid)}`;
+      if (seen.has(k)) return false;
+      seen.add(k);
+      return true;
+    }).slice(0, 6);
+    for (const d of derived) couples.push(d);
+  }
+
   const coupleAbsent = couples.length === 0 && /D101|D102|button_wireless|Smartbutton|smart button/i.test(src.text);
 
   return {
@@ -203,6 +233,7 @@ function analyzeSource(src, truth) {
     deviceIds: en.deviceIds || [],
     couples,
     coupleAbsent,
+    derivedCoupleCount: derived.length,
     signals: [...(en.signals || []).map((s) => ({ id: s.id, severity: s.severity, fix: s.fix, track: 'BOTH' })), ...deep],
     highlights: (en.highlights || []).slice(0, 6),
     summary: en.summary || null,
@@ -220,12 +251,35 @@ function severityRank(s) {
   return ({ critical: 0, high: 1, medium: 2, low: 3 }[s] ?? 9);
 }
 
+function loadInterviewByDriver() {
+  const map = new Map();
+  const ivPath = path.join(ROOT, 'docs/data/DEVICE_INTERVIEWS.json');
+  if (!fs.existsSync(ivPath)) return map;
+  try {
+    const db = JSON.parse(fs.readFileSync(ivPath, 'utf8'));
+    for (const list of Object.values(db.interviews || {})) {
+      if (!Array.isArray(list)) continue;
+      for (const iv of list) {
+        const driver = iv.driver || iv.suggestedDriver || '';
+        const mfr = iv.manufacturerName || iv.mfr || '';
+        const pid = iv.modelId || iv.productId || iv.pid || '';
+        if (!driver || !mfr || !pid) continue;
+        const key = norm(driver);
+        if (!map.has(key)) map.set(key, []);
+        map.get(key).push({ id: iv.id, mfr, pid, driver });
+      }
+    }
+  } catch { /* ignore */ }
+  return map;
+}
+
 function main() {
   const truth = loadTruth();
+  const interviewByDriver = loadInterviewByDriver();
   const sources = collectTextSources();
   console.log('[recursive-treat] sources:', sources.length);
 
-  const analyzed = sources.map((s) => analyzeSource(s, truth));
+  const analyzed = sources.map((s) => analyzeSource(s, truth, interviewByDriver));
   const byKey = new Map();
   for (const row of analyzed) {
     const k = dedupeKey(row);
@@ -261,10 +315,11 @@ function main() {
   fs.mkdirSync(OUT, { recursive: true });
   const summary = {
     generatedAt: new Date().toISOString(),
-    methodology: 'f647d35b-style full-body recursive treat — sacred couple never invented',
+    methodology: 'f647d35b-style full-body recursive treat — sacred couple never invented; P2246 derive from interview when ABSENT',
     sourcesScanned: sources.length,
     uniqueCases: unique.length,
     actionable: actionable.length,
+    derivedFromInterview: unique.filter((r) => (r.derivedCoupleCount || 0) > 0).length,
     signalTally,
     gmailBodiesPresent: sources.filter((s) => s.kind === 'gmail_body').length,
     interviews: interviewCouples.length,
