@@ -215,6 +215,19 @@ jobs:
         if: always()
         run: node tools/ci/p2138-sacred-couple-matrix-gate.js
 
+      - name: "🧹 Prune FP collision bleed (P2238 — mfs driverHint)"
+        if: always() && inputs.dry_run != true
+        continue-on-error: true
+        run: |
+          node tools/ci/prune-fp-collision-bleed.js --apply || true
+          node tools/ci/align-mfs-db-intelligent.js --apply || true
+
+      - name: "🛡️ FP collision + mfs alignment check (P2238)"
+        if: always()
+        run: |
+          node tools/ci/prune-fp-collision-bleed.js --check
+          node tools/ci/align-mfs-db-intelligent.js --check
+
       - name: "🛡️ Regression lessons gate (MUST-KEEP fatals)"
         if: always()
         run: node tools/ci/regression-lessons-gate.js

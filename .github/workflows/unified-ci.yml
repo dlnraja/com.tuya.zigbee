@@ -109,6 +109,7 @@ jobs:
 
       - name: 🔍 Fingerprint Collision Check
         run: |
+          node tools/ci/prune-fp-collision-bleed.js --check
           node .github/scripts/fp-collision-check.js --baseline .github/fingerprint-collision-baseline.json
 
       - name: 🛡️ Anti-bot regression gate (P127)
