@@ -32,7 +32,7 @@
       "realMfrsAdded": 5,
       "details": "tmp/synthetic-resolution.json + tmp/pruned21-resolution.json"
     },
-    "lastAlignedAt": "2026-08-24T02:07:36.608Z",
+    "lastAlignedAt": "2026-08-24T05:31:25.725Z",
     "alignTool": "align-mfs-db-intelligent@P169"
   },
   "sources": {
@@ -140319,8 +140319,8 @@
     "modelIdsCount": 28
   },
   "_TZ3000_NPGIPL5D": {
-    "driverId": "climate_sensor",
-    "source": "auto-sync",
+    "driverId": "switch_2gang",
+    "source": "compose-exclusive",
     "modelIds": [
       "CK-TLSR8656-SS5-01(7014)",
       "Excellux",
@@ -140724,8 +140724,8 @@
     "modelIdsCount": 28
   },
   "_TZ3000_T3S9QMMG": {
-    "driverId": "climate_sensor",
-    "source": "auto-sync",
+    "driverId": "curtain_motor",
+    "source": "compose-exclusive",
     "modelIds": [
       "CK-TLSR8656-SS5-01(7014)",
       "Excellux",
@@ -141480,8 +141480,8 @@
     "modelIdsCount": 28
   },
   "_TZ3210_6PWPEZ2J": {
-    "driverId": "climate_sensor",
-    "source": "auto-sync",
+    "driverId": "bulb_rgb",
+    "source": "compose-exclusive",
     "modelIds": [
       "CK-TLSR8656-SS5-01(7014)",
       "Excellux",
@@ -160690,8 +160690,8 @@
     "modelIdsCount": 28
   },
   "_TZE21C_dohbhb5k": {
-    "driverId": "climate_sensor",
-    "source": "auto-sync",
+    "driverId": "soil_sensor",
+    "source": "compose-exclusive",
     "modelIds": [
       "CK-TLSR8656-SS5-01(7014)",
       "Excellux",
@@ -194058,8 +194058,8 @@
     "modelIdsCount": 34
   },
   "_TZ3000_DZIAICT4": {
-    "driverId": "switch_1gang",
-    "source": "auto-sync",
+    "driverId": "button_wireless_4",
+    "source": "compose-exclusive",
     "modelIds": [
       "01MINIZB",
       "BASICZBR3",
@@ -195675,8 +195675,8 @@
     "modelIdsCount": 34
   },
   "_TZ3000_J61X9RXN": {
-    "driverId": "switch_1gang",
-    "source": "auto-sync",
+    "driverId": "button_wireless_4",
+    "source": "compose-exclusive",
     "modelIds": [
       "01MINIZB",
       "BASICZBR3",
@@ -196179,8 +196179,8 @@
     "modelIdsCount": 34
   },
   "_TZ3000_LBTPIODY": {
-    "driverId": "switch_1gang",
-    "source": "auto-sync",
+    "driverId": "water_leak_sensor",
+    "source": "compose-exclusive",
     "modelIds": [
       "01MINIZB",
       "BASICZBR3",
@@ -196431,8 +196431,8 @@
     "modelIdsCount": 34
   },
   "_TZ3000_LXW3ZCDK": {
-    "driverId": "switch_1gang",
-    "source": "auto-sync",
+    "driverId": "plug_energy_monitor",
+    "source": "compose-exclusive",
     "modelIds": [
       "01MINIZB",
       "BASICZBR3",
@@ -196599,8 +196599,8 @@
     "modelIdsCount": 34
   },
   "_TZ3000_MH9PX7CQ": {
-    "driverId": "switch_1gang",
-    "source": "auto-sync",
+    "driverId": "button_wireless_4",
+    "source": "compose-exclusive",
     "modelIds": [
       "01MINIZB",
       "BASICZBR3",
@@ -197859,8 +197859,8 @@
     "modelIdsCount": 34
   },
   "_TZ3000_QFHHB5Y4": {
-    "driverId": "switch_1gang",
-    "source": "auto-sync",
+    "driverId": "presence_sensor_radar",
+    "source": "compose-exclusive",
     "modelIds": [
       "01MINIZB",
       "BASICZBR3",
@@ -200191,8 +200191,8 @@
     "modelIdsCount": 34
   },
   "_TZ3000_XWUVEIZV": {
-    "driverId": "switch_1gang",
-    "source": "auto-sync",
+    "driverId": "button_wireless_4",
+    "source": "compose-exclusive",
     "modelIds": [
       "01MINIZB",
       "BASICZBR3",
