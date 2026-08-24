@@ -56,6 +56,39 @@
       }
     },
     {
+      "id": "p2240-mwd3c2at-irrigation-valve-ts0202",
+      "mfr": [
+        "_TZ3000_mwd3c2at",
+        "_tz3000_mwd3c2at"
+      ],
+      "productId": [
+        "TS0202"
+      ],
+      "canonicalDriver": "smart_irrigation_valve",
+      "forbiddenDrivers": [
+        "motion_sensor",
+        "sensor_motion_presence",
+        "pir_sensor_2"
+      ],
+      "protocol": "tuya_ef00",
+      "notes": "Z2M irrigation/water valve — TS0202 must not cartesian to motion PIR default (P2231 CI-safe without z2m.json index).",
+      "sources": [
+        "z2m",
+        "P2231",
+        "P2240"
+      ],
+      "tracks": {
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
+      }
+    },
+    {
       "id": "presentsky-bseed-dimmer-m1cvyneb",
       "mfr": [
         "_TZE284_m1cvyneb",

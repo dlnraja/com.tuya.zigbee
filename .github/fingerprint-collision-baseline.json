@@ -1,20 +1,55 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-15T18:06:31.314Z",
+  "generatedAt": "2026-08-24T19:16:38.714Z",
   "description": "Known historical fingerprint collisions. CI fails only for collisions not listed here.",
   "collisions": [
     {
-      "key": "_tze284_ga1maeof|TS0601",
+      "key": "_tze200_lsanae15|TS0601",
       "drivers": [
-        "soil_sensor",
-        "soilsensor"
+        "button_wireless_plug",
+        "smart_rcbo"
       ]
     },
     {
-      "key": "_TZE284_ga1maeof|TS0601",
+      "key": "_TZE200_lsanae15|TS0601",
       "drivers": [
-        "soil_sensor",
-        "soilsensor"
+        "button_wireless_plug",
+        "smart_rcbo"
+      ]
+    },
+    {
+      "key": "_tze204_lsanae15|TS0601",
+      "drivers": [
+        "button_wireless_plug",
+        "smart_rcbo"
+      ]
+    },
+    {
+      "key": "_TZE204_lsanae15|TS0601",
+      "drivers": [
+        "button_wireless_plug",
+        "smart_rcbo"
+      ]
+    },
+    {
+      "key": "_tze204_pay2byax|Excellux",
+      "drivers": [
+        "contact_sensor",
+        "soil_sensor"
+      ]
+    },
+    {
+      "key": "_TZE204_pay2byax|Excellux",
+      "drivers": [
+        "contact_sensor",
+        "soil_sensor"
+      ]
+    },
+    {
+      "key": "_TZE204_PAY2BYAX|Excellux",
+      "drivers": [
+        "contact_sensor",
+        "soil_sensor"
       ]
     },
     {
@@ -42,24 +77,63 @@
       "key": "hobeian|TS0001",
       "drivers": [
         "button_wireless_1",
-        "soil_sensor",
-        "water_leak_sensor"
+        "soil_sensor"
       ]
     },
     {
       "key": "Hobeian|TS0001",
       "drivers": [
         "button_wireless_1",
-        "soil_sensor",
-        "water_leak_sensor"
+        "soil_sensor"
       ]
     },
     {
       "key": "HOBEIAN|TS0001",
       "drivers": [
         "button_wireless_1",
-        "soil_sensor",
-        "water_leak_sensor"
+        "soil_sensor"
+      ]
+    },
+    {
+      "key": "hobeian|TS0003",
+      "drivers": [
+        "sensor_contact_zigbee",
+        "switch_2gang"
+      ]
+    },
+    {
+      "key": "Hobeian|TS0003",
+      "drivers": [
+        "sensor_contact_zigbee",
+        "switch_2gang"
+      ]
+    },
+    {
+      "key": "HOBEIAN|TS0003",
+      "drivers": [
+        "sensor_contact_zigbee",
+        "switch_2gang"
+      ]
+    },
+    {
+      "key": "hobeian|TS0013",
+      "drivers": [
+        "sensor_contact_zigbee",
+        "switch_2gang"
+      ]
+    },
+    {
+      "key": "Hobeian|TS0013",
+      "drivers": [
+        "sensor_contact_zigbee",
+        "switch_2gang"
+      ]
+    },
+    {
+      "key": "HOBEIAN|TS0013",
+      "drivers": [
+        "sensor_contact_zigbee",
+        "switch_2gang"
       ]
     },
     {
@@ -131,7 +205,6 @@
         "button_wireless_1",
         "sensor_contact_zigbee",
         "soil_sensor",
-        "water_leak_sensor",
         "switch_2gang"
       ]
     },
@@ -141,7 +214,7 @@
         "button_wireless_1",
         "sensor_contact_zigbee",
         "soil_sensor",
-        "water_leak_sensor"
+        "switch_2gang"
       ]
     },
     {
@@ -150,7 +223,28 @@
         "button_wireless_1",
         "sensor_contact_zigbee",
         "soil_sensor",
-        "water_leak_sensor"
+        "switch_2gang"
+      ]
+    },
+    {
+      "key": "hobeian|TS0726",
+      "drivers": [
+        "sensor_contact_zigbee",
+        "switch_2gang"
+      ]
+    },
+    {
+      "key": "Hobeian|TS0726",
+      "drivers": [
+        "sensor_contact_zigbee",
+        "switch_2gang"
+      ]
+    },
+    {
+      "key": "HOBEIAN|TS0726",
+      "drivers": [
+        "sensor_contact_zigbee",
+        "switch_2gang"
       ]
     },
     {
