@@ -9,6 +9,8 @@ try {
   // UnifiedBatteryHandler not available - will use fallback
 }
 
+const { normalizeZclBatteryVoltagePercent } = require('../../lib/battery/zcl-percent');
+
 let IEEEAddressManager = null;
 try {
   IEEEAddressManager = require('../../lib/managers/IEEEAddressManager');
@@ -169,9 +171,12 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
         this.log(`[SOS] ✅ Enroll Response sent (${why}, zoneId: 10)`);
         this._enrollmentPending = false;
       } catch (e) {
-        this.error('[SOS] Enroll response failed:', e.message);
+        this._enrollmentPending = true;
+        // Sleepy buttons time out at boot — retry on announce; do not flood stderr.
+        this.log('[SOS] Enroll response deferred (sleepy):', e.message);
       }
     };
+    this._sendIasEnrollResponse = sendEnrollResponse;
 
     iasZone.onZoneEnrollRequest = () => {
       this.log('[SOS] Zone Enroll Request received');
@@ -426,17 +431,22 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
         : (value > 100 ? Math.round(value / 2) : value);
       if (percent === null || percent === undefined) {return;}
     } else {
-      // ZCL batteryVoltage is in 100mV units (30 = 3.0V); tolerate mV (3000)
-      // and plain volts (3.0) too — the previous code read 3.0V as "30V".
-      let voltage = typeof value === 'number' ? value : parseFloat(value);
-      if (isNaN(voltage)) {return;}
-      if (voltage > 300) {voltage = voltage / 1000;}      // mV
-      else if (voltage >= 10) {voltage = voltage / 10;}   // ZCL 100mV units
-      percent = UnifiedBatteryHandler.calculateFromVoltage(voltage, '3V_2100');
+      percent = normalizeZclBatteryVoltagePercent(value, { batteryType: '3V_2100' });
+      if (percent === null) {return;}
     }
 
     if (percent >= 0 && percent <= 100) {
+      // WHY: Peter #2190 / 0cea6870 — reject sub-2s battery jumps >15pp (11↔20).
+      const prev = this.getCapabilityValue('measure_battery');
+      if (typeof prev === 'number' && Math.abs(prev - percent) > 15) {
+        const lastAt = this.getStoreValue('sos_battery_last_write_at') || 0;
+        if (Date.now() - lastAt < 2000) {
+          this.log(`[BATTERY] Ignore spike ${prev}% → ${percent}% (<2s)`);
+          return;
+        }
+      }
       await this.safeSetCapabilityValue('measure_battery', percent).catch(() => { });
+      try { await this.setStoreValue('sos_battery_last_write_at', Date.now()); } catch (_e) { /* ignore */ }
       this._updateActivity();
 
       // v5.5.833: Trigger battery_low flow when below threshold
@@ -581,6 +591,9 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
         }
       }
 
+      if (this._enrollmentPending && typeof this._sendIasEnrollResponse === 'function') {
+        await this._sendIasEnrollResponse('announce');
+      }
       await this._readBatteryNow();
       await this._verifyCieAddress();
     } catch (err) {

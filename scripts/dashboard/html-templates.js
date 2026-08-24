@@ -279,6 +279,7 @@ function buildPage(config) {
     { id: 'dependencies', label: 'Dependencies', file: 'dependency-dashboard.html' },
     { id: 'errors', label: 'Errors', file: 'error-dashboard.html' },
     { id: 'performance', label: 'Performance', file: 'performance-dashboard.html' },
+    { id: 'diagnostics', label: 'Diagnostics', file: 'diagnostics-dashboard.html' },
     ...dashboards
   ];
 

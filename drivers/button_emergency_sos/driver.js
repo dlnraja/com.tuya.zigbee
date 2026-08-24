@@ -47,7 +47,8 @@ class SosEmergencyButtonDriver extends ZigBeeDriver {
     this.log('[FLOW] triggerSOS called for', device.getName());
 
     // v5.5.833: Trigger flow card explicitly with source tokens
-    await this._triggerCard('button_emergency_sos_pressed', device, tokens, state);
+    await this._triggerCard('button_emergency_sos_pressed', device, {}, state);
+    await this._triggerCard('button_emergency_sos_physical_on', device, {}, state);
   }
 
   /**
@@ -70,6 +71,14 @@ class SosEmergencyButtonDriver extends ZigBeeDriver {
    * v5.5.833: Trigger battery low flow
    */
   async triggerBatteryLow(device, tokens = {}, state = {}) {
+    // WHY: Peter #2190 / 0cea6870 — debounce battery_low flow spam (60s).
+    const now = Date.now();
+    const last = device.getStoreValue?.('sos_battery_low_flow_at') || 0;
+    if (now - last < 60_000) {
+      this.log('[FLOW] triggerBatteryLow debounced for', device.getName());
+      return;
+    }
+    try { await device.setStoreValue?.('sos_battery_low_flow_at', now); } catch (_e) { /* ignore */ }
     this.log('[FLOW] triggerBatteryLow called for', device.getName());
     await this._triggerCard('button_emergency_sos_battery_low', device, tokens, state);
   }

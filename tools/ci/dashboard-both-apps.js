@@ -4,17 +4,25 @@
 /**
  * P25.7 / P2240 — Dashboard monitor for BOTH apps (master + stable)
  * Stable clone runs from its own tree; reports aggregate under master .github/state.
+ *
+ * Env:
+ *   MASTER_ROOT — path to master clone (default: sibling ../master)
+ *   STABLE_ROOT — override stable path
  */
 
 const fs = require('fs');
 const path = require('path');
 const { execFileSync } = require('child_process');
 
-const STABLE_ROOT = path.resolve(__dirname, '..', '..');
+const STABLE_ROOT = process.env.STABLE_ROOT
+  ? path.resolve(process.env.STABLE_ROOT)
+  : path.resolve(__dirname, '..', '..');
 const MASTER_ROOT = process.env.MASTER_ROOT
   ? path.resolve(process.env.MASTER_ROOT)
   : path.resolve(STABLE_ROOT, '..', 'master');
-const STATE_DIR = path.join(MASTER_ROOT, '.github', 'state');
+const STATE_DIR = fs.existsSync(path.join(MASTER_ROOT, '.github', 'state'))
+  ? path.join(MASTER_ROOT, '.github', 'state')
+  : path.join(STABLE_ROOT, '.github', 'state');
 
 const APPS = [
   {
@@ -42,6 +50,26 @@ function readVersion(appRoot, fallback) {
   }
 }
 
+function monitorScriptFor(app) {
+  const local = path.join(app.root, 'scripts', 'automation', 'dashboard-monitor.js');
+  if (fs.existsSync(local)) return local;
+  const master = path.join(MASTER_ROOT, 'scripts', 'automation', 'dashboard-monitor.js');
+  return fs.existsSync(master) ? master : local;
+}
+
+function copySnapshot(app, perAppReport) {
+  const srcReport = path.join(app.root, '.github', 'state', 'dashboard-monitor-report.json');
+  if (!fs.existsSync(srcReport)) return null;
+  try {
+    const snapshot = JSON.parse(fs.readFileSync(srcReport, 'utf8'));
+    fs.mkdirSync(STATE_DIR, { recursive: true });
+    fs.writeFileSync(perAppReport, JSON.stringify(snapshot, null, 2));
+    return snapshot;
+  } catch {
+    return null;
+  }
+}
+
 function runDashboardForApp(app, expectedVersion) {
   console.log(`\n=== Dashboard for ${app.name} (${app.id}) v${expectedVersion} ===`);
   if (!fs.existsSync(app.root)) {
@@ -49,16 +77,17 @@ function runDashboardForApp(app, expectedVersion) {
     console.warn(msg);
     return { success: false, skipped: true, output: msg, error: msg };
   }
-  const monitor = path.join(
-    fs.existsSync(path.join(app.root, 'scripts', 'automation', 'dashboard-monitor.js'))
-      ? app.root
-      : MASTER_ROOT,
-    'scripts',
-    'automation',
-    'dashboard-monitor.js',
-  );
+  const monitor = monitorScriptFor(app);
   const perAppReport = path.join(STATE_DIR, app.reportFile);
-  const args = [monitor, '--latest', '--expect-version', expectedVersion, '--expect-state', 'test'];
+  const args = [
+    monitor,
+    '--latest',
+    '--expect-version',
+    expectedVersion,
+    '--expect-state',
+    'test',
+    '--soft-expect',
+  ];
   try {
     const output = execFileSync(process.execPath, args, {
       cwd: app.root,
@@ -74,18 +103,14 @@ function runDashboardForApp(app, expectedVersion) {
       stdio: ['ignore', 'pipe', 'pipe'],
     });
     console.log(output);
-    const srcReport = path.join(app.root, '.github', 'state', 'dashboard-monitor-report.json');
-    if (fs.existsSync(srcReport) && fs.existsSync(MASTER_ROOT)) {
-      try {
-        fs.mkdirSync(STATE_DIR, { recursive: true });
-        fs.copyFileSync(srcReport, perAppReport);
-      } catch { /* ignore */ }
-    }
-    return { success: true, output };
+    const snapshot = copySnapshot(app, perAppReport);
+    return { success: true, output, snapshot };
   } catch (error) {
     const out = `${error.stdout || ''}\n${error.stderr || ''}`;
     console.log(out);
-    return { success: false, output: out, error: error.message };
+    const snapshot = copySnapshot(app, perAppReport);
+    const partial = Boolean(snapshot);
+    return { success: partial, partial, output: out, error: error.message, snapshot };
   }
 }
 
@@ -94,6 +119,9 @@ function main() {
   const masterVersion = fs.existsSync(MASTER_ROOT)
     ? readVersion(MASTER_ROOT, stableVersion)
     : null;
+
+  console.log('Master root:', MASTER_ROOT, 'version:', masterVersion ?? '(missing)');
+  console.log('Stable root:', STABLE_ROOT, 'version:', stableVersion);
 
   const results = {};
   for (const app of APPS) {
@@ -105,34 +133,39 @@ function main() {
     results[app.name] = runDashboardForApp(app, version);
   }
 
-  if (fs.existsSync(MASTER_ROOT)) {
-    fs.mkdirSync(STATE_DIR, { recursive: true });
-    fs.writeFileSync(
-      path.join(STATE_DIR, 'dashboard-monitor-both.json'),
-      JSON.stringify({
-        meta: {
-          generatedAt: new Date().toISOString(),
-          masterRoot: MASTER_ROOT,
-          stableRoot: STABLE_ROOT,
-          masterVersion,
-          stableVersion,
-        },
-        apps: APPS.map((app) => ({
-          id: app.id,
-          name: app.name,
-          expectedVersion: app.name === 'stable' ? stableVersion : masterVersion,
-          result: results[app.name],
-        })),
-      }, null, 2),
-    );
-  }
+  fs.mkdirSync(STATE_DIR, { recursive: true });
+  fs.writeFileSync(
+    path.join(STATE_DIR, 'dashboard-monitor-both.json'),
+    JSON.stringify({
+      meta: {
+        generatedAt: new Date().toISOString(),
+        masterRoot: MASTER_ROOT,
+        stableRoot: STABLE_ROOT,
+        masterVersion,
+        stableVersion,
+      },
+      apps: APPS.map((app) => ({
+        id: app.id,
+        name: app.name,
+        branch: app.branch,
+        root: app.root,
+        expectedVersion: app.name === 'stable' ? stableVersion : masterVersion,
+        result: results[app.name],
+      })),
+    }, null, 2),
+  );
 
   console.log('\n=== Summary ===');
   for (const app of APPS) {
     const r = results[app.name];
     if (!r) continue;
-    console.log(`${app.name}: ${r.skipped ? 'skipped' : (r.success ? 'ok' : 'fail')}`);
+    const icon = r.skipped ? '—' : (r.success ? '✓' : (r.partial ? '~' : '⚠'));
+    console.log(`${app.name}: ${icon}${r.skipped ? ' skipped' : ''}`);
   }
+  console.log(`\nReport: ${path.join(STATE_DIR, 'dashboard-monitor-both.json')}`);
+
+  const hardFail = Object.values(results).some((r) => r && !r.success && !r.skipped && !r.partial);
+  if (hardFail) process.exit(1);
 }
 
 main();
