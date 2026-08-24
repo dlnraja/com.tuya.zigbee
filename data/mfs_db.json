@@ -326005,6 +326005,16 @@
         "nobo"
       ],
       "confidence": 0.95
+    },
+    "_tz3000_mwd3c2at|ts0202": {
+      "mfr": "_tz3000_mwd3c2at",
+      "pid": "ts0202",
+      "driver": "smart_irrigation_valve",
+      "sources": [
+        "p2240",
+        "z2m"
+      ],
+      "confidence": 0.95
     }
   },
   "_TZE204_ZG204Z": {
