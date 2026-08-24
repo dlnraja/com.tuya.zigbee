@@ -2468,5 +2468,11 @@
   },
   "9.0.643": {
     "en": "Tongou DIN meter pairing lock (not Smart RCBO); block DP6 raw→humidity; button flow ID heuristics; resilience critical-first inventory; ."
+  },
+  "9.0.644": {
+    "en": "P2244/P2245 remote sacred couples + irrigation valve compose; Athom republish after 9.0.643 processing_failed."
+  },
+  "9.0.645": {
+    "en": "Reliability improvements."
   }
 }
