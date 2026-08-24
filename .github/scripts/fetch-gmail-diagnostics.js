@@ -654,6 +654,20 @@ async function processFetchedEmails(emails,fetchOptions,{mode:successMode,window
     done.add(em.id);
     console.log(DiagEnrich.formatConsoleLine(type,safeSubj,d.enriched||{}));
 
+    // P2233: optional recursive-inbox body dump (gitignored .github/state) for f647-style treat
+    if(String(process.env.GMAIL_DIAG_RECURSIVE_INBOX||'1')!=='0'&&em.id&&em.body){
+      try{
+        const inboxDir=path.join(SD,'diag-recursive-inbox','bodies');
+        fs.mkdirSync(inboxDir,{recursive:true});
+        const outFile=path.join(inboxDir,em.id+'.txt');
+        if(!fs.existsSync(outFile)||fs.statSync(outFile).size<200){
+          // sanitize only — assertNoLeaks too strict for Homey footer mailto links
+          const bodySafe=sanitize(String(em.body).slice(0,120000));
+          fs.writeFileSync(outFile,bodySafe);
+        }
+      }catch(e){console.warn('[recursive-inbox] skip',em.id,e.message);}
+    }
+
     if(ai&&(ai.severity==='critical'||ai.severity==='high')){
       const issBody='**Type:** '+type+'\n**From:** '+safeFrom+'\n\n'+
         '**Fingerprints:** '+JSON.stringify(d.fps)+'\n**Errors:** '+JSON.stringify(d.errs.map(e=>sanitize(e)))+'\n'+

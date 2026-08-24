@@ -152,6 +152,19 @@ jobs:
           node .github/scripts/fetch-gmail-diagnostics.js
       - name: Privacy gate for Gmail outputs
         run: node .github/scripts/privacy-redactor.js .github/state/diagnostics-state.json .github/state/diagnostics-report.json .github/state/gmail-token-health.json .github/state/diagnostics-crossref.yml diagnostics
+      - name: "P2233 Recursive diag/interview treat (f647 methodology)"
+        if: always()
+        continue-on-error: true
+        timeout-minutes: 10
+        env:
+          GMAIL_DIAG_RECURSIVE_INBOX: "1"
+        run: |
+          node tools/ci/diag-recursive-inbox-automate.js --from-diagnostics-report || true
+          node .github/scripts/privacy-redactor.js \
+            reports/diag-recursive-treat-*/SUMMARY.json \
+            reports/diag-recursive-treat-*/CASES.json \
+            reports/diag-recursive-treat-*/TREAT.md \
+            .github/state/diag-recursive-inbox/automate-status.json || true
       - name: Diagnostic history gate
         run: npm run check:diag-history
       - name: "Regression lessons gate (MUST-KEEP fatals)"
