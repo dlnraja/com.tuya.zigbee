@@ -42,6 +42,7 @@ defaults:
 
 env:
   NODE_VERSION: '22'
+  TUYA_FP_HEURISTIC: '1'
   AI_PLAN_MODE: forfait
   AI_ALLOW_PAID: 'false'
   AI_GLOBAL_DAILY_CAP: '400'

@@ -1,5 +1,5 @@
 // cross-ref-all-sources.js — extract mfr+PID from ALL sources and find new combinations
-// P2231: + blakadder, z2m, zha, deconz, forum (market intake)
+// P2231/P2232: blakadder, z2m, zha, deconz, forum, gmail, github-own, interview, device-truth
 'use strict';
 
 const fs = require('fs');
@@ -22,6 +22,24 @@ function addPair(mfr, pid, source, info = {}) {
   const entry = mfrPidPairs.get(n.key);
   entry.sources.add(source);
   if (Object.keys(info).length) entry.info.push({ source, ...info });
+}
+
+function readJson(relOrAbs) {
+  const fp = path.isAbsolute(relOrAbs) ? relOrAbs : path.join(ROOT, relOrAbs);
+  if (!fs.existsSync(fp)) return null;
+  try {
+    return JSON.parse(fs.readFileSync(fp, 'utf8'));
+  } catch {
+    return null;
+  }
+}
+
+function firstExisting(rels) {
+  for (const r of rels) {
+    const fp = path.join(ROOT, r);
+    if (fs.existsSync(fp)) return fp;
+  }
+  return null;
 }
 
 // ============== SOURCE 1: JOHAN ISSUES ==============
@@ -55,34 +73,77 @@ function processJohanComments() {
   return count;
 }
 
-// ============== SOURCE 3: GMAIL EMAILS ==============
+// ============== SOURCE 3: GMAIL / DIAG LOGS ==============
 function processGmail() {
-  // Try fresh Gmail first, fallback to aggregate
-  const freshFile = '.github/state/gmail-2026-07-13-12pm/.github/state/diagnostics-report.json';
-  const aggFile = '.github/state/emails-aggregate.json';
+  const diagPath = firstExisting([
+    '.github/state/diagnostics-report.json',
+    '.github/state/gmail-diagnostics/diagnostics-report.json',
+    '.github/state/gmail-2026-07-13-12pm/.github/state/diagnostics-report.json',
+  ]);
+  const aggPath = path.join(ROOT, '.github', 'state', 'emails-aggregate.json');
   let emails = [];
-  if (fs.existsSync(freshFile)) {
-    const data = JSON.parse(fs.readFileSync(freshFile, 'utf8'));
+  let label = 'none';
+  if (diagPath) {
+    const data = readJson(diagPath) || {};
     emails = data.diagnostics || [];
-    console.log('  Gmail source: fresh (551 emails)');
-  } else if (fs.existsSync(aggFile)) {
-    const data = JSON.parse(fs.readFileSync(aggFile, 'utf8'));
+    label = path.relative(ROOT, diagPath);
+  } else if (fs.existsSync(aggPath)) {
+    const data = readJson(aggPath) || {};
     emails = data.emails || [];
-    console.log('  Gmail source: aggregate (' + emails.length + ' emails)');
+    label = 'emails-aggregate';
   } else {
     return 0;
   }
+  console.log(`  Gmail/diag source: ${label} (${emails.length})`);
   let count = 0;
   for (const e of emails) {
     const mfrs = e.fps?.mfr || [];
     const pids = e.fps?.pid || [];
-    for (let i = 0; i < mfrs.length; i++) {
-      const mfr = mfrs[i];
-      const pid = pids[i] || (pids[0] || null);
-      if (pid) {
-        addPair(mfr, pid, 'gmail', { type: e.type, date: e.date });
+    // Prefer index-aligned pairs; never cartesian-explode mfr×pid
+    const n = Math.max(mfrs.length, pids.length);
+    for (let i = 0; i < n; i++) {
+      const mfr = mfrs[i] || (mfrs.length === 1 ? mfrs[0] : null);
+      const pid = pids[i] || (pids.length === 1 ? pids[0] : null);
+      if (mfr && pid) {
+        addPair(mfr, pid, 'gmail', { type: e.type, date: e.date, id: e.id });
         count++;
       }
+    }
+    // xref: single mfr + single pid in same mail → sacred couple
+    const xref = Array.isArray(e.xref) ? e.xref : [];
+    const xm = xref.filter((x) => x && x.type === 'mfr' && x.fingerprint).map((x) => x.fingerprint);
+    const xp = xref.filter((x) => x && x.type === 'pid' && x.fingerprint).map((x) => x.fingerprint);
+    if (xm.length === 1 && xp.length === 1) {
+      addPair(xm[0], xp[0], 'gmail', { type: e.type, via: 'xref', id: e.id });
+      count++;
+    }
+    for (const c of extractCouplesFromText(JSON.stringify({
+      subj: e.subj, errs: e.errs, ai: e.ai, forumInfo: e.forumInfo, crashInfo: e.crashInfo,
+    }))) {
+      addPair(c.mfr, c.pid, 'gmail', { type: e.type, via: 'text', id: e.id });
+      count++;
+    }
+  }
+  return count;
+}
+
+// ============== SOURCE 3b: GMAIL CRASH PATTERNS ==============
+function processGmailCrash() {
+  const data = readJson('.github/state/gmail-crash-patterns.json');
+  if (!data) return 0;
+  let count = 0;
+  const bags = [...(data.hits || []), ...(data.watch || []), ...(data.knownFixed || [])];
+  for (const h of bags) {
+    const sacred = h.sacred || {};
+    const mfrs = sacred.mfrs || [];
+    const pids = sacred.pids || [];
+    if (mfrs.length === 1 && pids.length === 1) {
+      addPair(mfrs[0], pids[0], 'gmail-crash', { pattern: h.pattern, status: h.status });
+      count++;
+    }
+    for (const c of extractCouplesFromText(`${h.fix || ''} ${h.pattern || ''} ${JSON.stringify(h)}`)) {
+      addPair(c.mfr, c.pid, 'gmail-crash', { pattern: h.pattern });
+      count++;
     }
   }
   return count;
@@ -230,6 +291,114 @@ function processForum() {
   return count;
 }
 
+// ============== SOURCE 12: DEVICE INTERVIEWS (project knowledge) ==============
+function processInterviews() {
+  const data = readJson('docs/data/DEVICE_INTERVIEWS.json');
+  if (!data || !data.interviews) return 0;
+  let count = 0;
+  for (const [, rows] of Object.entries(data.interviews)) {
+    if (!Array.isArray(rows)) continue;
+    for (const row of rows) {
+      const mfr = row.manufacturerName || row.mfr;
+      const pid = row.productId || row.pid || row.modelId;
+      if (!mfr || !pid || String(mfr).includes('*')) continue;
+      addPair(mfr, pid, 'interview', {
+        id: row.id,
+        status: row.status,
+        driver: row.driver || null,
+        deviceName: row.deviceName,
+      });
+      count++;
+    }
+  }
+  // Optional per-file interviews under docs/data/interviews (JSON only)
+  const idir = path.join(ROOT, 'docs', 'data', 'interviews');
+  if (fs.existsSync(idir)) {
+    for (const name of fs.readdirSync(idir)) {
+      if (!name.endsWith('.json')) continue;
+      const one = readJson(path.join(idir, name));
+      if (!one || typeof one !== 'object') continue;
+      const mfr = one.manufacturerName || one.mfr;
+      const pid = one.productId || one.pid || one.modelId;
+      if (mfr && pid && !String(mfr).includes('*')) {
+        addPair(mfr, pid, 'interview', { file: name, driver: one.driver || null, status: one.status });
+        count++;
+      }
+      for (const c of extractCouplesFromText(JSON.stringify(one))) {
+        addPair(c.mfr, c.pid, 'interview', { file: name, via: 'text' });
+        count++;
+      }
+    }
+  }
+  return count;
+}
+
+// ============== SOURCE 13: DEVICE-TRUTH LOCKS ==============
+function processDeviceTruth() {
+  const data = readJson('docs/knowledge/device-truth.json');
+  if (!data || !data.drivers) return 0;
+  let count = 0;
+  for (const [driverId, d] of Object.entries(data.drivers)) {
+    for (const lock of d.locks || []) {
+      const mfrs = Array.isArray(lock.mfr) ? lock.mfr : (lock.mfr ? [lock.mfr] : []);
+      const pids = Array.isArray(lock.productId) ? lock.productId : (lock.productId ? [lock.productId] : []);
+      for (const mfr of mfrs) {
+        if (String(mfr).includes('*')) continue;
+        for (const pid of pids) {
+          addPair(mfr, pid, 'device-truth', {
+            driver: driverId,
+            caseId: lock.caseId,
+            forbidden: lock.forbidden || [],
+          });
+          count++;
+        }
+      }
+    }
+  }
+  return count;
+}
+
+// ============== SOURCE 14: OWN GITHUB INTEL (issues/PRs respond reports) ==============
+function processGithubOwn() {
+  const reportsDir = path.join(ROOT, 'reports');
+  if (!fs.existsSync(reportsDir)) return 0;
+  let count = 0;
+  for (const name of fs.readdirSync(reportsDir)) {
+    if (!/^github-intel-/i.test(name)) continue;
+    const reportPath = path.join(reportsDir, name, 'respond-report.json');
+    const data = readJson(reportPath);
+    if (!data) continue;
+    for (const action of data.actions || []) {
+      for (const c of action.couples || []) {
+        if (!c.mfr || !c.pid) continue;
+        addPair(c.mfr, c.pid, 'github-own', {
+          issue: action.number,
+          driver: c.driver || null,
+          status: c.status,
+          note: c.note,
+        });
+        count++;
+      }
+      for (const pair of extractCouplesFromText(action.preview || '')) {
+        addPair(pair.mfr, pair.pid, 'github-own', { issue: action.number, via: 'preview' });
+        count++;
+      }
+    }
+  }
+  // Local state intel if present
+  const stateIntel = readJson('.github/state/github-intel/respond-report.json');
+  if (stateIntel) {
+    for (const action of stateIntel.actions || []) {
+      for (const c of action.couples || []) {
+        if (!c.mfr || !c.pid) continue;
+        addPair(c.mfr, c.pid, 'github-own', { issue: action.number, driver: c.driver });
+        count++;
+      }
+    }
+  }
+  return count;
+}
+
 // ============== MAIN ==============
 console.log('=== CROSS-REFERENCING ALL SOURCES ===\n');
 console.log('Processing sources...');
@@ -238,6 +407,7 @@ const counts = {
   johan_issues: processJohan(),
   johan_comments: processJohanComments(),
   gmail: processGmail(),
+  gmail_crash: processGmailCrash(),
   canonical: processCanonical(),
   mfs_db: processMfsDb(),
   drivers: processDrivers(),
@@ -246,6 +416,9 @@ const counts = {
   zha: processZha(),
   deconz: processDeconz(),
   forum: processForum(),
+  interview: processInterviews(),
+  device_truth: processDeviceTruth(),
+  github_own: processGithubOwn(),
 };
 
 console.log('\n=== PAIRS EXTRACTED ===');
@@ -266,9 +439,16 @@ for (const [key, entry] of mfrPidPairs) {
 }
 
 // Find pairs that are in user data (Johan, Gmail) but NOT in canonical/mfs_db/drivers
-const userSources = new Set(['johan-issue', 'johan-comment', 'gmail', 'forum']);
-const marketSources = new Set(['blakadder', 'z2m', 'zha', 'deconz', 'johan-issue', 'johan-comment', 'gmail', 'forum']);
-const internalSources = new Set(['canonical', 'mfs_db', 'driver']);
+const userSources = new Set([
+  'johan-issue', 'johan-comment', 'gmail', 'gmail-crash', 'forum',
+  'interview', 'github-own',
+]);
+const marketSources = new Set([
+  'blakadder', 'z2m', 'zha', 'deconz',
+  'johan-issue', 'johan-comment', 'gmail', 'gmail-crash', 'forum',
+  'interview', 'device-truth', 'github-own',
+]);
+const internalSources = new Set(['canonical', 'mfs_db', 'driver', 'device-truth']);
 const newInUserOnly = [];
 for (const [key, entry] of mfrPidPairs) {
   const inUser = [...entry.sources].some(s => userSources.has(s));
@@ -308,7 +488,10 @@ for (const e of inMfsNotDrivers.slice(0, 15)) {
 
 // Market-new: catalog/user-verified sources, not in driver compose
 const catalogSources = new Set(['blakadder', 'z2m', 'zha', 'deconz']);
-const trustedUserSources = new Set(['gmail', 'johan-issue', 'johan-comment']);
+const trustedUserSources = new Set([
+  'gmail', 'gmail-crash', 'johan-issue', 'johan-comment',
+  'interview', 'github-own', 'device-truth',
+]);
 const marketNew = [];
 for (const [, entry] of mfrPidPairs) {
   const src = [...entry.sources];

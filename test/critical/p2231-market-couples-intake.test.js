@@ -43,6 +43,13 @@ describe('sacred-couple-pair (P2231)', () => {
   it('toClassicOem lowers suffix', () => {
     assert.equal(toClassicOem('_TZ3000_B7BXOJRG'), '_TZ3000_b7bxojrg');
   });
+
+  it('accepts exotic HOBEIAN + ZG modelId', () => {
+    const c = normalizeSacredCouple('HOBEIAN', 'ZG-204ZL');
+    assert.ok(c);
+    assert.equal(c.mfr, 'HOBEIAN');
+    assert.equal(c.pid, 'ZG-204ZL');
+  });
 });
 
 describe('market-driver-infer (P2231)', () => {
@@ -95,5 +102,35 @@ describe('market-driver-infer (P2231)', () => {
     assert.equal(r.driver, 'smart_irrigation_valve');
     assert.equal(r.applySafe, true);
     assert.equal(r.tier, 'z2m_desc');
+  });
+
+  it('resolveMarketDriver: device-truth lock is apply-safe', () => {
+    const r = resolveMarketDriver('_TZE284_hodyryli', 'TS0601');
+    assert.equal(r.driver, 'climate_sensor_zt08');
+    assert.equal(r.applySafe, true);
+    assert.ok(['device_truth', 'registry', 'exact'].includes(r.tier));
+  });
+
+  it('soft heuristic never marks applySafe', () => {
+    const r = resolveMarketDriver('_TZ3000_zzheuristicxx', 'TS0601');
+    if (/heuristic_/.test(r.tier)) {
+      assert.equal(r.applySafe, false);
+      assert.ok(r.driver);
+    } else {
+      assert.equal(r.applySafe, false);
+    }
+  });
+
+  it('TUYA_FP_HEURISTIC=0 disables soft matcher', () => {
+    const prev = process.env.TUYA_FP_HEURISTIC;
+    process.env.TUYA_FP_HEURISTIC = '0';
+    try {
+      const { softHeuristicHint } = require('../../tools/ci/market-driver-infer');
+      const noop = () => false;
+      assert.equal(softHeuristicHint('_TZ3000_zzheuristicxx', 'TS0601', noop), null);
+    } finally {
+      if (prev === undefined) delete process.env.TUYA_FP_HEURISTIC;
+      else process.env.TUYA_FP_HEURISTIC = prev;
+    }
   });
 });

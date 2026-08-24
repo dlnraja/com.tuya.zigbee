@@ -965,6 +965,40 @@ Hard fail on `unified-ci.yml` / publish path for BOTH gates (`--hard`).
 5. `data/user-misattribution-registry.json` + anti-bot forbid list
 6. Critical test + matrix gate entry if high-risk misroute
 
+### P2232 — Max-source market couples + soft adaptive heuristic (2026-08-24)
+Harvest **manufacturerName + productId** from every trusted channel — never invent pid.
+
+| Source | Role |
+|--------|------|
+| Blakadder / Z2M / ZHA / deCONZ | Market catalogs |
+| Johan issues/comments | Upstream SDK3 intel |
+| Gmail diags + crash patterns | User crash/diag couples |
+| Forum SHADOW | Read-only couples extract |
+| `DEVICE_INTERVIEWS.json` | Project interview knowledge |
+| `device-truth.json` locks | Canonical apply-safe locks |
+| `reports/github-intel-*/` | Own GH issue/PR couples |
+
+**Apply-safe tiers only:** `registry` · `device_truth` · `exact` · `interview(fixed)` · `z2m_desc`.
+
+**Soft review only (never auto-compose):** `pid_default` · `heuristic_adaptive` · `heuristic_pid`
+(`lib/utils/fingerprint-matcher.js`, kill-switch `TUYA_FP_HEURISTIC=0`).
+
+```bash
+npm run market:couples          # cross-ref + NEED_REVIEW.md
+npm run market:couples:crawl    # refresh catalogs then intake
+npm run market:couples:apply    # apply-safe compose locks
+npm run market:couples:test     # P2231/P2232 critical tests
+```
+
+**Workflows:**
+- `market-couples-intake.yml` — daily 04:45 UTC (crawl + check + apply-safe + mfs align)
+- `auto-enrich-closed-loop.yml` — phase `2b-market-couples` (+ apply when not dry-run)
+- `forum-poll.yml` — soft intake only (artifact / summary, no compose apply)
+- `multi-source-enrich-orchestrator.js` — phases `6b` / `6c`
+- `unified-ci.yml` — runs `p2231-market-couples-intake.test.js`
+
+SSOT: `config/enrichment/market-couples-sources.json`
+
 ---
 
 ## O. GitHub elementary security & data-leak hygiene (P2206)

@@ -166,6 +166,15 @@ jobs:
           if [ -f tools/ci/l99-dual-app-enrich-gates.js ]; then
             node tools/ci/l99-dual-app-enrich-gates.js --track=auto || echo "L99_DUAL_SOFT_WARN"
           fi
+          # P2232: soft market couples cross-ref (no compose apply on forum poll — review only)
+          if [ -f tools/ci/market-couples-intake.js ]; then
+            echo "## 📡 Market couples soft intake (P2232 — SHADOW, no apply)" >> $GITHUB_STEP_SUMMARY
+            export TUYA_FP_HEURISTIC=1
+            node tools/ci/market-couples-intake.js 2>&1 | tee market-couples-soft.log || echo "MARKET_COUPLES_SOFT_WARN"
+            if [ -f .github/state/market-couples/intake.json ]; then
+              node -e "const j=require('./.github/state/market-couples/intake.json'); console.log(JSON.stringify({marketNew:j.marketNew,applySafe:j.applySafe,heuristicSoft:j.heuristicSoft,knowledgeNew:j.knowledgeNew,needsReview:j.needsReview},null,2))" >> $GITHUB_STEP_SUMMARY || true
+            fi
+          fi
           echo "Policy: SHADOW forum — implement silently, never paste unchecked AI." >> $GITHUB_STEP_SUMMARY
 
       # READ-ONLY: image alts, download URLs, diag UUIDs on public threads. Never posts.
@@ -225,9 +234,11 @@ jobs:
           path: |
             .github/state/forum/
             .github/state/forum-activity-data.json
+            .github/state/market-couples/
             forum-poll.log
             forum-silent-multi.log
             forum-actionable-processor.log
+            market-couples-soft.log
             reports/forum-verify-*/
           if-no-files-found: warn
           retention-days: 7

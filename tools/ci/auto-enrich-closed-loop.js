@@ -112,19 +112,33 @@ function phaseCrossRef() {
   return { findings: state, lastRun: lastState };
 }
 
-/** P2231: merge Blakadder/Z2M/ZHA/forum/gmail couples → market-new report */
+/** P2231/P2232: max-source couples → market-new; apply-safe when not dry-run */
 function phaseMarketCouples() {
   try {
+    process.env.TUYA_FP_HEURISTIC = process.env.TUYA_FP_HEURISTIC || '1';
     const out = runNode('tools/ci/market-couples-intake.js', '');
     const intakePath = path.join(ROOT, '.github', 'state', 'market-couples', 'intake.json');
     let stats = {};
     if (fs.existsSync(intakePath)) {
       stats = JSON.parse(fs.readFileSync(intakePath, 'utf8'));
     }
+    let apply = { skipped: true };
+    if (!dryRun && !skipCommit) {
+      try {
+        const aOut = runNode('tools/ci/apply-market-couples.js', '--apply');
+        apply = { applied: true, output: String(aOut).slice(-300) };
+      } catch (e) {
+        apply = { softError: e.message.slice(0, 200) };
+      }
+    }
     return {
       output: String(out).slice(-400),
       marketNew: stats.marketNew,
+      applySafe: stats.applySafe,
+      heuristicSoft: stats.heuristicSoft,
+      knowledgeNew: stats.knowledgeNew,
       needsReview: stats.needsReview,
+      apply,
     };
   } catch (e) {
     return { error: e.message, soft: true };

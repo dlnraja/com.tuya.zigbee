@@ -1,5 +1,8 @@
-# Market couples intake (P2231)
-# Daily sacred-couple harvest: Blakadder + Z2M + ZHA + cross-ref → mfr+pid candidates
+# Market couples intake (P2231 / P2232)
+# Max-source sacred-couple harvest:
+#   Blakadder + Z2M + ZHA + deCONZ + Johan + Gmail/diag/crash + forum SHADOW
+#   + interviews + device-truth locks + own GitHub intel
+# Soft adaptive heuristic (fingerprint-matcher) → NEED_REVIEW only (never applySafe alone)
 name: 📡 Market Couples Intake
 
 on:
@@ -18,6 +21,11 @@ on:
         required: false
         type: boolean
         default: false
+      apply_safe:
+        description: 'Apply apply-safe couples (registry/truth/exact/interview/Z2M)'
+        required: false
+        type: boolean
+        default: true
 
 permissions:
   contents: write
@@ -32,16 +40,18 @@ defaults:
 
 env:
   NODE_VERSION: '22'
+  # Soft adaptive heuristic ON for NEED_REVIEW hints (same kill-switch as Homey runtime)
+  TUYA_FP_HEURISTIC: '1'
+  SMART_FETCH_READER_FALLBACK: '1'
 
 jobs:
   intake:
     name: 📡 Harvest mfr+pid
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    timeout-minutes: 30
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       FIRECRAWL_API_KEY: ${{ secrets.FIRECRAWL_API_KEY }}
-      SMART_FETCH_READER_FALLBACK: '1'
 
     steps:
       - name: 📥 Checkout
@@ -70,36 +80,51 @@ jobs:
             ${{ runner.os }}-market-couples-
             ${{ runner.os }}-intel-cache-
 
-      - name: 📡 Market couples intake
+      - name: 📡 Market couples intake (P2232 max-source)
         id: intake
         run: |
           ARGS=""
           if [ "${{ inputs.crawl }}" = "true" ] || [ "${{ github.event_name }}" = "schedule" ]; then
             ARGS="--crawl"
           fi
-          echo "## 📡 Market couples intake" >> $GITHUB_STEP_SUMMARY
+          echo "## 📡 Market couples intake (P2231/P2232)" >> $GITHUB_STEP_SUMMARY
+          echo "Sources: Blakadder · Z2M · ZHA · deCONZ · Johan · Gmail/diag/crash · forum · interview · device-truth · GitHub intel" >> $GITHUB_STEP_SUMMARY
+          echo "Apply-safe tiers: registry · device_truth · exact · interview · z2m_desc — heuristic = review only" >> $GITHUB_STEP_SUMMARY
           node tools/ci/market-couples-intake.js $ARGS --check 2>&1 | tee market-intake.log
           echo '```' >> $GITHUB_STEP_SUMMARY
           tail -n 40 market-intake.log >> $GITHUB_STEP_SUMMARY
           echo '```' >> $GITHUB_STEP_SUMMARY
           if [ -f .github/state/market-couples/intake.json ]; then
             echo "### Summary" >> $GITHUB_STEP_SUMMARY
-            node -e "const j=require('./.github/state/market-couples/intake.json'); console.log('- market-new:', j.marketNew, '| route hints:', j.withRouteHint, '| review:', j.needsReview);" >> $GITHUB_STEP_SUMMARY
+            node -e "
+              const j=require('./.github/state/market-couples/intake.json');
+              console.log('- market-new:', j.marketNew);
+              console.log('- apply-safe:', j.applySafe);
+              console.log('- pid_default soft:', j.pidDefaultSoft);
+              console.log('- heuristic soft:', j.heuristicSoft||0);
+              console.log('- knowledge-hit:', j.knowledgeNew||0);
+              console.log('- needs review:', j.needsReview);
+              console.log('- bySource:', JSON.stringify(j.bySource||{}));
+            " >> $GITHUB_STEP_SUMMARY
           fi
 
       - name: 🛡️ P2138 sacred-couple matrix
         run: node tools/ci/p2138-sacred-couple-matrix-gate.js
 
-      - name: 🧪 P2231 market couples tests
+      - name: 🧪 P2231/P2232 market couples tests
         run: node --test test/critical/p2231-market-couples-intake.test.js
 
       - name: 🔒 Apply-safe couples (dry then apply)
+        if: ${{ github.event_name == 'schedule' || inputs.apply_safe != false }}
         run: |
           node tools/ci/apply-market-couples.js 2>&1 | tee apply-dry.log
           node tools/ci/apply-market-couples.js --apply 2>&1 | tee apply-live.log
           echo '```' >> $GITHUB_STEP_SUMMARY
           tail -n 30 apply-live.log >> $GITHUB_STEP_SUMMARY
           echo '```' >> $GITHUB_STEP_SUMMARY
+          # Sync mfs after compose locks (compose_exclusive / couple hygiene)
+          node tools/ci/align-mfs-db-intelligent.js --apply 2>&1 | tee align-apply.log || true
+          node tools/ci/align-mfs-db-intelligent.js --check 2>&1 | tee align-check.log || true
 
       - name: 📦 Upload artifacts
         uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5.0.0
@@ -112,6 +137,8 @@ jobs:
             scripts/sync/data/z2m.json
             scripts/sync/data/zha.json
             market-intake.log
+            apply-live.log
+            align-check.log
           if-no-files-found: warn
           retention-days: 14
 
@@ -123,12 +150,12 @@ jobs:
           node scripts/maintenance/sync-appjson-zigbee.js || true
           git add .github/state/market-couples/ .github/state/mfr-pid-cross-ref.json .github/state/all-mfr-pid-pairs.json 2>/dev/null || true
           git add scripts/sync/data/blakadder.json scripts/sync/data/z2m.json scripts/sync/data/zha.json 2>/dev/null || true
-          git add drivers/*/driver.compose.json app.json 2>/dev/null || true
+          git add drivers/*/driver.compose.json data/mfs_db.json app.json reports/P169_MFS_DB_ALIGN_LATEST.json 2>/dev/null || true
           if git diff --staged --quiet; then
             echo "Nothing to commit"
             exit 0
           fi
           VER=$(node -p "require('./app.json').version" 2>/dev/null || echo '?')
-          git commit -m "market(P2231): intake + apply-safe couples v${VER} [skip ci]"
+          git commit -m "market(P2232): max-source intake + apply-safe couples v${VER} [skip ci]"
           git pull --rebase origin master || true
           git push origin HEAD:master

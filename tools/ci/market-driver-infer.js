@@ -1,9 +1,10 @@
 'use strict';
 
 /**
- * market-driver-infer.js (P2231)
- * Infer Homey driver from Z2M/Blakadder metadata — never invent pid.
+ * market-driver-infer.js (P2231 / P2232)
+ * Infer Homey driver from Z2M/Blakadder/interview/device-truth + soft adaptive heuristic.
  * productId_default alone is UNSAFE (TS0044 scene vs button, TS0202 valve vs PIR).
+ * Heuristic / pid-suggest = soft review only (never applySafe).
  */
 
 const path = require('path');
@@ -13,6 +14,10 @@ const ROOT = path.resolve(__dirname, '..', '..');
 
 /** @type {Map<string, object>|null} */
 let _z2mIndex = null;
+/** @type {Map<string, object>|null} */
+let _truthLocks = null;
+/** @type {Map<string, object>|null} */
+let _interviewIndex = null;
 
 function loadZ2mIndex() {
   if (_z2mIndex) return _z2mIndex;
@@ -28,6 +33,66 @@ function loadZ2mIndex() {
     }
   } catch { /* ignore */ }
   return _z2mIndex;
+}
+
+function coupleKey(mfr, pid) {
+  return `${String(mfr).toLowerCase()}|${String(pid).toUpperCase()}`;
+}
+
+function loadDeviceTruthLocks() {
+  if (_truthLocks) return _truthLocks;
+  _truthLocks = new Map();
+  const fp = path.join(ROOT, 'docs', 'knowledge', 'device-truth.json');
+  if (!fs.existsSync(fp)) return _truthLocks;
+  try {
+    const data = JSON.parse(fs.readFileSync(fp, 'utf8'));
+    for (const [driverId, d] of Object.entries(data.drivers || {})) {
+      for (const lock of d.locks || []) {
+        const mfrs = Array.isArray(lock.mfr) ? lock.mfr : [];
+        const pids = Array.isArray(lock.productId) ? lock.productId : [];
+        for (const m of mfrs) {
+          if (String(m).includes('*')) continue;
+          for (const p of pids) {
+            _truthLocks.set(coupleKey(m, p), {
+              driver: driverId,
+              caseId: lock.caseId,
+              forbidden: lock.forbidden || [],
+            });
+          }
+        }
+      }
+    }
+  } catch { /* ignore */ }
+  return _truthLocks;
+}
+
+function loadInterviewIndex() {
+  if (_interviewIndex) return _interviewIndex;
+  _interviewIndex = new Map();
+  const fp = path.join(ROOT, 'docs', 'data', 'DEVICE_INTERVIEWS.json');
+  if (!fs.existsSync(fp)) return _interviewIndex;
+  try {
+    const data = JSON.parse(fs.readFileSync(fp, 'utf8'));
+    for (const [, rows] of Object.entries(data.interviews || {})) {
+      if (!Array.isArray(rows)) continue;
+      for (const row of rows) {
+        const mfr = row.manufacturerName || row.mfr;
+        const pid = row.productId || row.pid;
+        if (!mfr || !pid || String(mfr).includes('*')) continue;
+        const key = coupleKey(mfr, pid);
+        const prev = _interviewIndex.get(key);
+        // Prefer rows that name an explicit driver + fixed/supported status
+        if (!prev || (row.driver && !prev.driver) || (row.status === 'fixed' && prev.status !== 'fixed')) {
+          _interviewIndex.set(key, {
+            driver: row.driver || null,
+            status: row.status || null,
+            id: row.id,
+          });
+        }
+      }
+    }
+  } catch { /* ignore */ }
+  return _interviewIndex;
 }
 
 /** Strong pid families — Z2M text must not fight these without clear override words */
@@ -133,6 +198,83 @@ function lookupZ2m(mfr, pid) {
   return loadZ2mIndex().get(key) || null;
 }
 
+function driverExists(id) {
+  return id && fs.existsSync(path.join(ROOT, 'drivers', id, 'driver.compose.json'));
+}
+
+/** @type {object|null} */
+let _mfsAsDb = null;
+
+function loadMfsAsDb() {
+  if (_mfsAsDb) return _mfsAsDb;
+  const mfsPath = path.join(ROOT, 'data', 'mfs_db.json');
+  if (!fs.existsSync(mfsPath)) {
+    _mfsAsDb = {};
+    return _mfsAsDb;
+  }
+  try {
+    const mfs = JSON.parse(fs.readFileSync(mfsPath));
+    const devices = mfs.devices && typeof mfs.devices === 'object' ? mfs.devices : mfs;
+    const asDb = {};
+    for (const [k, v] of Object.entries(devices)) {
+      if (!v || typeof v !== 'object') continue;
+      if (k === '_meta' || k === 'sources' || k === 'stats' || k === 'driverMapping' || k === 'diff') continue;
+      asDb[k] = v;
+    }
+    _mfsAsDb = asDb;
+  } catch {
+    _mfsAsDb = {};
+  }
+  return _mfsAsDb;
+}
+
+/**
+ * Soft adaptive heuristic (runtime fingerprint-matcher + mfs_db pid tally).
+ * NEVER applySafe — review / NEED_REVIEW only.
+ */
+function softHeuristicHint(mfr, pid, isForbiddenDriver) {
+  // Respect TUYA_FP_HEURISTIC=0 kill-switch (same as DeviceFingerprintDB runtime)
+  if (process.env.TUYA_FP_HEURISTIC === '0') {
+    return null;
+  }
+  try {
+    const { suggestDriverFromPid, matchFingerprint } = require('../../lib/utils/fingerprint-matcher');
+    const asDb = loadMfsAsDb();
+    if (!Object.keys(asDb).length) return null;
+    const matched = matchFingerprint(mfr, pid, asDb, { threshold: 0.75 });
+    if (matched?.entry) {
+      const hint = matched.entry.driverHint || matched.entry.driverId || matched.entry.driver;
+      if (hint && driverExists(hint) && !isForbiddenDriver(mfr, pid, hint)) {
+        // Only soft if pid coherent or match is prefix/fuzzy (not claiming exact lock)
+        if (matched.matchType !== 'exact' && matched.matchType !== 'normalized') {
+          return {
+            driver: hint,
+            tier: 'heuristic_adaptive',
+            reason: `fingerprint-matcher:${matched.matchType}@${matched.score}`,
+            applySafe: false,
+          };
+        }
+      }
+    }
+
+    const sug = suggestDriverFromPid(pid, asDb);
+    if (sug?.driverHint && driverExists(sug.driverHint) && !isForbiddenDriver(mfr, pid, sug.driverHint)) {
+      // Require plurality (≥2 supporting mfrs) to even soft-hint
+      if (sug.count >= 2) {
+        return {
+          driver: sug.driverHint,
+          tier: 'heuristic_pid',
+          reason: `suggestDriverFromPid count=${sug.count}`,
+          applySafe: false,
+        };
+      }
+    }
+  } catch {
+    /* heuristic optional */
+  }
+  return null;
+}
+
 /**
  * @returns {{ driver: string|null, tier: string, reason: string, z2m: object|null, applySafe: boolean }}
  */
@@ -151,6 +293,17 @@ function resolveMarketDriver(mfr, pid, opts = {}) {
     };
   }
 
+  const truth = loadDeviceTruthLocks().get(coupleKey(mfr, pid));
+  if (truth?.driver && driverExists(truth.driver) && !isForbiddenDriver(mfr, pid, truth.driver)) {
+    return {
+      driver: truth.driver,
+      tier: 'device_truth',
+      reason: `lock:${truth.caseId || truth.driver}`,
+      z2m: lookupZ2m(mfr, pid),
+      applySafe: true,
+    };
+  }
+
   const hit = DeviceFingerprintDB.lookup(mfr, pid);
   if (hit?.driver && (hit.matchType === 'exact' || hit.matchType === 'exact_ci')) {
     if (isForbiddenDriver(mfr, pid, hit.driver)) {
@@ -160,6 +313,19 @@ function resolveMarketDriver(mfr, pid, opts = {}) {
       driver: hit.driver,
       tier: 'exact',
       reason: hit.key || 'exact',
+      z2m: lookupZ2m(mfr, pid),
+      applySafe: true,
+    };
+  }
+
+  const interview = loadInterviewIndex().get(coupleKey(mfr, pid));
+  if (interview?.driver && driverExists(interview.driver)
+    && !isForbiddenDriver(mfr, pid, interview.driver)
+    && /^(fixed|supported|locked)$/i.test(String(interview.status || 'supported'))) {
+    return {
+      driver: interview.driver,
+      tier: 'interview',
+      reason: `interview:${interview.id || 'row'}`,
       z2m: lookupZ2m(mfr, pid),
       applySafe: true,
     };
@@ -192,6 +358,23 @@ function resolveMarketDriver(mfr, pid, opts = {}) {
     };
   }
 
+  // Soft adaptive / dynamic heuristic (same engine as Homey runtime when TUYA_FP_HEURISTIC≠0)
+  const soft = softHeuristicHint(mfr, pid, isForbiddenDriver);
+  if (soft) {
+    return { ...soft, z2m };
+  }
+
+  // Interview without explicit driver still surfaces status for NEED_REVIEW
+  if (interview && !interview.driver) {
+    return {
+      driver: opts.fallback || null,
+      tier: 'interview_soft',
+      reason: `interview:${interview.id || 'row'}:${interview.status || 'unknown'}`,
+      z2m,
+      applySafe: false,
+    };
+  }
+
   return {
     driver: opts.fallback || null,
     tier: 'none',
@@ -199,10 +382,6 @@ function resolveMarketDriver(mfr, pid, opts = {}) {
     z2m,
     applySafe: false,
   };
-}
-
-function driverExists(id) {
-  return id && fs.existsSync(path.join(ROOT, 'drivers', id, 'driver.compose.json'));
 }
 
 module.exports = {
@@ -213,4 +392,7 @@ module.exports = {
   driverExists,
   pidFamily,
   familyAllows,
+  softHeuristicHint,
+  loadDeviceTruthLocks,
+  loadInterviewIndex,
 };

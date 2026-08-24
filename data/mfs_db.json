@@ -32,7 +32,7 @@
       "realMfrsAdded": 5,
       "details": "tmp/synthetic-resolution.json + tmp/pruned21-resolution.json"
     },
-    "lastAlignedAt": "2026-08-20T16:47:25.932Z",
+    "lastAlignedAt": "2026-08-24T02:07:36.608Z",
     "alignTool": "align-mfs-db-intelligent@P169"
   },
   "sources": {
@@ -130221,7 +130221,7 @@
     "modelIdsCount": 13
   },
   "_tz3000_xwh1e22x": {
-    "driverId": "smart_irrigation_valve",
+    "driverId": "bulb_rgbw",
     "source": "compose-exclusive",
     "modelIds": [
       "CK-BL702-AL-01(7009_Z102LG03-1)",
@@ -169379,7 +169379,7 @@
     "modelIdsCount": 50
   },
   "_tz3290_7v1k4vufotpowp9z": {
-    "driverId": "ir_remote",
+    "driverId": "ir_blaster",
     "source": "compose-exclusive",
     "modelIds": [
       "0x8040",
@@ -185304,7 +185304,7 @@
     "modelIdsCount": 1
   },
   "_tz3210_bfwvfyx1": {
-    "driverId": "dimmable_led_strip",
+    "driverId": "bulb_rgb",
     "source": "compose-exclusive",
     "modelIds": [
       "TS0505A",
@@ -189775,7 +189775,7 @@
   },
   "_TZE284_6ocnqlhn": {
     "driverId": "din_rail_meter",
-    "source": "forum-shadow-p2229-toni-2191",
+    "source": "registry:tongou-to-q-sys-jzt-din-meter",
     "modelIds": [
       "TS0601"
     ],

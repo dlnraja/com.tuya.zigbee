@@ -5,9 +5,11 @@
  * market-couples-intake.js (P2231)
  *
  * Regular recovery of new sacred couples (manufacturerName + productId) from
- * market sources: Blakadder, Z2M, ZHA, deCONZ, forum SHADOW, Gmail, Johan.
+ * market sources: Blakadder, Z2M, ZHA, deCONZ, forum SHADOW, Gmail/diag/crash,
+ * own GitHub intel, interviews, device-truth — plus soft adaptive heuristic
+ * (fingerprint-matcher) for NEED_REVIEW only.
  *
- * NEVER invents pid. NEVER auto-applies productId_default alone.
+ * NEVER invents pid. NEVER auto-applies productId_default or heuristic alone.
  *
  * Usage:
  *   node tools/ci/market-couples-intake.js
@@ -71,6 +73,8 @@ function enrichCouple(c) {
   const catalogHit = src.some((s) => ['blakadder', 'z2m', 'zha', 'deconz'].includes(s));
   const blakadderHit = src.includes('blakadder');
   const z2mHit = src.includes('z2m');
+  const knowledgeHit = src.some((s) => ['interview', 'device-truth', 'github-own', 'gmail', 'gmail-crash'].includes(s));
+  const agreement = src.length;
   return {
     ...c,
     routeHint: resolved.driver,
@@ -82,15 +86,20 @@ function enrichCouple(c) {
     catalogHit,
     blakadderHit,
     z2mHit,
+    knowledgeHit,
+    agreement,
+    heuristicSoft: /heuristic_/.test(String(resolved.tier || '')),
   };
 }
 
 function sortMarketNew(a, b) {
-  // apply-safe first, then multi-catalog, then blakadder
+  // apply-safe first, then multi-source agreement, then multi-catalog, then blakadder
   if (a.applySafe !== b.applySafe) return a.applySafe ? -1 : 1;
+  if ((b.agreement || 0) !== (a.agreement || 0)) return (b.agreement || 0) - (a.agreement || 0);
   const aMulti = a.blakadderHit && a.z2mHit;
   const bMulti = b.blakadderHit && b.z2mHit;
   if (aMulti !== bMulti) return aMulti ? -1 : 1;
+  if (a.knowledgeHit !== b.knowledgeHit) return a.knowledgeHit ? -1 : 1;
   if (a.blakadderHit !== b.blakadderHit) return a.blakadderHit ? -1 : 1;
   if (a.needsReview !== b.needsReview) return a.needsReview ? 1 : -1;
   return a.mfr.localeCompare(b.mfr) || a.pid.localeCompare(b.pid);
@@ -108,8 +117,10 @@ function renderMarkdown(report) {
     `| Market-new (not in compose) | ${report.marketNew} |`,
     `| Apply-safe | ${report.applySafe} |`,
     `| Soft pid_default (review) | ${report.pidDefaultSoft} |`,
+    `| Soft heuristic adaptive | ${report.heuristicSoft || 0} |`,
     `| Needs review | ${report.needsReview} |`,
     `| Blakadder new | ${report.blakadderNew} |`,
+    `| Knowledge-hit (interview/diag/GH/truth) | ${report.knowledgeNew || 0} |`,
     '',
     '## Sources',
     '',
@@ -119,7 +130,7 @@ function renderMarkdown(report) {
   }
 
   const safe = (report.topMarketNew || []).filter((c) => c.applySafe);
-  lines.push('', '## Apply-safe (registry / exact / Z2M description)', '');
+  lines.push('', '## Apply-safe (registry / device-truth / exact / interview / Z2M)', '');
   lines.push('| Couple | Sources | Driver | Tier | Z2M |');
   lines.push('|--------|---------|--------|------|-----|');
   for (const c of safe.slice(0, 40)) {
@@ -127,11 +138,11 @@ function renderMarkdown(report) {
   }
 
   const review = (report.topMarketNew || []).filter((c) => !c.applySafe);
-  lines.push('', '## Needs review (not auto-applied)', '');
-  lines.push('| Couple | Sources | Soft hint | Tier |');
-  lines.push('|--------|---------|-----------|------|');
+  lines.push('', '## Needs review (not auto-applied — includes soft adaptive heuristic)', '');
+  lines.push('| Couple | #src | Sources | Soft hint | Tier |');
+  lines.push('|--------|-----:|---------|-----------|------|');
   for (const c of review.slice(0, 40)) {
-    lines.push(`| \`${c.mfr}+${c.pid}\` | ${c.sources.join(', ')} | ${c.routeHint || '—'} | ${c.tier} |`);
+    lines.push(`| \`${c.mfr}+${c.pid}\` | ${c.agreement || c.sources.length} | ${c.sources.join(', ')} | ${c.routeHint || '—'} | ${c.tier} |`);
   }
 
   lines.push('', 'Apply safe: `node tools/ci/apply-market-couples.js --apply`');
@@ -181,6 +192,8 @@ function main() {
     catalogNew: enriched.filter((c) => c.catalogHit).length,
     applySafe: enriched.filter((c) => c.applySafe).length,
     pidDefaultSoft: enriched.filter((c) => c.tier === 'pid_default').length,
+    heuristicSoft: enriched.filter((c) => c.heuristicSoft).length,
+    knowledgeNew: enriched.filter((c) => c.knowledgeHit).length,
     bySource: summary.bySource,
     withRouteHint: enriched.filter((c) => c.routeHint).length,
     needsReview: enriched.filter((c) => c.needsReview).length,

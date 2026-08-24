@@ -1,9 +1,10 @@
 {
   "_meta": {
-    "version": "1.0.0",
+    "version": "1.1.0",
     "updated": "2026-08-24",
-    "why": "SSOT for market mfr+pid intake — sacred couple only (never mfr-only invent)",
-    "doctrine": "docs/knowledge/DEVICE_TRUTH.md"
+    "why": "SSOT for market mfr+pid intake — sacred couple only (never mfr-only invent); max-source + soft adaptive heuristic",
+    "doctrine": "docs/knowledge/DEVICE_TRUTH.md",
+    "heuristic": "lib/utils/fingerprint-matcher.js (TUYA_FP_HEURISTIC≠0) — soft review only, never applySafe"
   },
   "marketSources": [
     "blakadder",
@@ -13,12 +14,29 @@
     "johan-issue",
     "johan-comment",
     "gmail",
-    "forum"
+    "gmail-crash",
+    "forum",
+    "interview",
+    "github-own"
   ],
   "internalSources": [
     "canonical",
     "mfs_db",
-    "driver"
+    "driver",
+    "device-truth"
+  ],
+  "applySafeTiers": [
+    "registry",
+    "device_truth",
+    "exact",
+    "interview",
+    "z2m_desc"
+  ],
+  "softReviewTiers": [
+    "pid_default",
+    "heuristic_adaptive",
+    "heuristic_pid",
+    "interview_soft"
   ],
   "crawlers": [
     {
@@ -45,6 +63,13 @@
       "data": "scripts/sync/data/deconz.json",
       "optional": true
     }
+  ],
+  "knowledgePaths": [
+    "docs/knowledge/device-truth.json",
+    "docs/data/DEVICE_INTERVIEWS.json",
+    ".github/state/diagnostics-report.json",
+    ".github/state/gmail-crash-patterns.json",
+    "reports/github-intel-*/respond-report.json"
   ],
   "gates": [
     "tools/ci/p2138-sacred-couple-matrix-gate.js",
