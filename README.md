@@ -38,14 +38,14 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **Unique Fingerprints** | 4,363 |
 | **Pairing Variants** | 16,509 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 578 |
-| **Flow Cards** | 5,178 |
+| **Flow Cards** | 5,182 |
 | **Unique Capabilities** | 170 |
 | **Native OTA Drivers** | 5 |
-| **Test Suites** | 139 files |
+| **Test Suites** | 140 files |
 | **SVG Icons** | 731 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
-| **Last Updated** | 2026-08-24 |
+| **Last Updated** | 2026-08-25 |
 
 ### Top 20 Drivers by Fingerprint Count
 
