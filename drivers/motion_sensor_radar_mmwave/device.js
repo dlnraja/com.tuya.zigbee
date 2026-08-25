@@ -207,10 +207,6 @@ class MotionSensorRadarDevice extends UnifiedSensorBase {
     const plan = planSettingWrite(key, rawValue);
     if (!plan) { return false; }
 
-    // #region agent log
-    fetch('http://127.0.0.1:7359/ingest/3c833dfa-dc0b-48f4-aebb-d655bb6357ae',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'c45b0c'},body:JSON.stringify({sessionId:'c45b0c',location:'motion_sensor_radar_mmwave/device.js:_writeLinptechSetting',message:'Linptech setting write plan',data:{key,plan},timestamp:Date.now(),hypothesisId:'H1'})}).catch(()=>{});
-    // #endregion
-
     if (plan.kind === 'zcl') {
       const ok = await this._llBridge.writeZCLAttribute(plan.cluster, plan.attr, plan.value, 1);
       if (!ok) {
@@ -247,10 +243,6 @@ class MotionSensorRadarDevice extends UnifiedSensorBase {
   }
 
   async onSettings({ oldSettings, newSettings, changedKeys }) {
-    // #region agent log
-    fetch('http://127.0.0.1:7359/ingest/3c833dfa-dc0b-48f4-aebb-d655bb6357ae',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'c45b0c'},body:JSON.stringify({sessionId:'c45b0c',location:'motion_sensor_radar_mmwave/device.js:onSettings',message:'onSettings entry',data:{linptech:this._isLinptechES1(),changedKeys},timestamp:Date.now(),hypothesisId:'H2'})}).catch(()=>{});
-    // #endregion
-
     if (this._isLinptechES1()) {
       return this._linptechOnSettings({ oldSettings, newSettings, changedKeys });
     }
