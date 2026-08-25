@@ -33,10 +33,10 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.645 |
+| **App Version** | v9.0.646 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,363 |
-| **Pairing Variants** | 16,509 (4 case combos per fingerprint) |
+| **Pairing Variants** | 16,507 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 578 |
 | **Flow Cards** | 5,182 |
 | **Unique Capabilities** | 170 |
@@ -51,7 +51,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | # | Driver | Fingerprints |
 |---|--------|-------------|
-| 1 | `climate_sensor` | 2,451 |
+| 1 | `climate_sensor` | 2,449 |
 | 2 | `switch_1gang` | 1,716 |
 | 3 | `presence_sensor_radar` | 726 |
 | 4 | `radiator_valve` | 599 |
@@ -102,6 +102,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.646** | Reliability improvements. |
 | **v9.0.645** | Reliability improvements. |
 | **v9.0.644** | P2244/P2245 remote sacred couples + irrigation valve compose; Athom republish after 9.0.643 processing_failed. |
 | **v9.0.643** | Tongou DIN meter pairing lock (not Smart RCBO); block DP6 raw→humidity; button flow ID heuristics; resilience critical-first inventory; . |
@@ -113,7 +114,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.637** | Tongou DIN meter pairing lock (not Smart RCBO); block DP6 raw→humidity; button flow ID heuristics; resilience critical-first inventory; . |
 | **v9.0.636** | Tongou DIN meter pairing lock (not Smart RCBO); block DP6 raw→humidity; button flow ID heuristics; resilience critical-first inventory; . |
 | **v9.0.635** | Tongou DIN meter pairing lock (not Smart RCBO); block DP6 raw→humidity; button flow ID heuristics; resilience critical-first inventory; . |
-| **v9.0.634** | Tongou DIN meter pairing lock (not Smart RCBO); block DP6 raw→humidity; button flow ID heuristics; resilience critical-first inventory; . |
 
 <!-- CHANGELOG_END -->
 
