@@ -1,4 +1,4 @@
-# 📥 Community Inbox — 2026-08-24 05:53 UTC
+# 📥 Community Inbox — 2026-08-25 05:46 UTC
 
 Généré par `.github/scripts/community-inbox-digest.js` (workflow `community-inbox.yml`).
 
@@ -6,24 +6,10 @@ Généré par `.github/scripts/community-inbox-digest.js` (workflow `community-i
 
 - Issues ouvertes : **0** — 🔴 à traiter : **0**, 🟡 attente utilisateur : 0, 🟢 maintainer actif : 0
 - PRs ouvertes : **0**
-- Forum : **15** post(s) sans réponse du maintainer
+- Forum : **1** post(s) sans réponse du maintainer
 - Messages privés (lecture seule, jamais de réponse) : **20** thread(s), 7 mfr, 5 pid, 7 UUID diag
 
 ## 🌍 Forum — posts sans réponse
 
-- **Gabriel_Pedrosa_Mach** (2026-08-17) :  Appreciate you digging into the endpoint isolation. On gang2: I get why onoff.gang2 -style capability instances mirror the physical Tuya la
-- **Zemismart_Official** (2026-08-18) :  Thank you very much for sharing all these details and for the work you’ve already done on your own drivers. This is really helpful for us. 
-- **Zemismart_Official** (2026-08-18) :  dlnraja: Hi @Gabriel_Pedrosa_Mach , Thanks for such transparent and actionable technical feedback! The multi-gang cross-linking and state b
-- **Zemismart_Official** (2026-08-18) :  Could you tell me which Zemismart switch models each of these corresponds to? For example, the 606 series, 808 series, ZMS-206, etc. thanks
-- **Gabriel_Pedrosa_Mach** (2026-08-18) :  hanks for forwarding it! The switches I’ve been testing correspond to the TB25 series — TB25-1, TB25-2, TB25-3, TB25-4 and TB25-6 (1 to 6 g
-- **Peter_van_Werkhoven** (2026-08-18) :  Hi Dylan Good afternoon, is the app using to much memory, because Flow’s don’t run and device’s are difficult to start I noticed since yest
-- **Peter_van_Werkhoven** (2026-08-19) :  Hi Dylan Good afternoon you achieved it the SOS buttons finally work again, great job 1000040782 1220×2712 202 KB Before I had to disable t
-- **Zemismart_Official** (2026-08-20) :  for the 4 gang ZCL, you mean the module :ZMS-206 ? the one with screen thanks for your reply! 
-- **Gabriel_Pedrosa_Mach** (2026-08-20) :  The 4gang zcl device is a device sold in Brazil with the new digital brand. It is a 4-key touch device. In my repository there is his inter
-- **smarthomesven** (2026-08-20) :  Gabriel_Pedrosa_Mach: In my repository https://github.com/gpmachado/com.gpm.homesuite/Homey_interview there is his interview That one retur
-- **Gabriel_Pedrosa_Mach** (2026-08-20) :  Ok com.gpm.homesuite/Homey_Interview/4G touch/_TZ3000_lwthnp7j.txt at main · gpmachado/com.gpm.homesuite · GitHub 
-- **meter91** (2026-08-21) :  Hey! Thanks for all the great work. I’m having issues with the TS0044 + _TZ3000_zgyzgdua 4-way switch. Similair to what I read above I does
-- **Peter_van_Werkhoven** (2026-08-21) :  Hi Dylan Good evening, SOS button’s still working fine, only Battery is very Nervous/Glitchy 1000041136 1220×2712 248 KB 1000041137 1220×27
-- **Toni_UrbanoMarquez** (2026-08-23) :  Hi, I need support for a Tuya Zigbee DIN rail energy meter. Device: Model ID: TS0601 Manufacturer: _TZE284_6ocnqlhn Device: Tongou TO-Q-SYS
-- **robertklep** (2026-08-23) :  Toni_UrbanoMarquez: I need You really need to read the first post of the thread. 
+- **Peter_van_Werkhoven** (2026-08-24) :  Hi Dylan that’s good to hear, congratulations 
 
