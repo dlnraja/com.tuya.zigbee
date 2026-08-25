@@ -9,7 +9,7 @@ const {
   planSettingWrite,
   isLinptechSettingKey,
   ATTR_RX_MAP,
-  CLUSTER_MANU_TUYA2,
+  CLUSTER_WRITE_CHAIN,
   ATTR,
 } = require('../../lib/profiles/LinptechES1Profile');
 
@@ -86,11 +86,12 @@ class MotionSensorRadarDevice extends UnifiedSensorBase {
   _setupLinptechClusterListener(zclNode) {
     const ep = zclNode?.endpoints?.[1];
     if (!ep?.clusters) { return; }
-    const cluster = ep.clusters[CLUSTER_MANU_TUYA2]
-      || ep.clusters.tuyaE001
-      || ep.clusters[57345];
-    if (!cluster) {
-      this.log('[MMWAVE][LINPTECH] Cluster 0xE001 not on EP1 — settings TX may still work');
+    // WHY P2261: interview advertises 0xE002 (57346); herdsman also maps 0xE001 — listen both
+    const candidates = CLUSTER_WRITE_CHAIN
+      .map((id) => ep.clusters[id] || ep.clusters[id === 0xE002 ? 'tuyaE002' : 'tuyaE001'] || ep.clusters[id])
+      .filter(Boolean);
+    if (!candidates.length) {
+      this.log('[MMWAVE][LINPTECH] Cluster 0xE002/0xE001 not on EP1 — settings TX may still work');
       return;
     }
     const handler = (report) => {
@@ -100,9 +101,11 @@ class MotionSensorRadarDevice extends UnifiedSensorBase {
         this.log('[MMWAVE][LINPTECH] attr report error:', err.message);
       }
     };
-    if (typeof cluster.on === 'function') {
-      cluster.on('attributeReport', handler);
-      cluster.on('reporting', handler);
+    for (const cluster of candidates) {
+      if (typeof cluster.on === 'function') {
+        cluster.on('attributeReport', handler);
+        cluster.on('reporting', handler);
+      }
     }
   }
 
@@ -208,11 +211,21 @@ class MotionSensorRadarDevice extends UnifiedSensorBase {
     if (!plan) { return false; }
 
     if (plan.kind === 'zcl') {
-      const ok = await this._llBridge.writeZCLAttribute(plan.cluster, plan.attr, plan.value, 1);
-      if (!ok) {
-        throw new Error(`ZCL 0x${plan.cluster.toString(16)} attr ${plan.attr} write failed`);
+      const chain = [plan.cluster, ...(plan.fallbackClusters || [])].filter((c, i, a) => a.indexOf(c) === i);
+      let wrote = false;
+      let lastCluster = plan.cluster;
+      for (const clusterId of chain) {
+        lastCluster = clusterId;
+        const ok = await this._llBridge.writeZCLAttribute(clusterId, plan.attr, plan.value, 1);
+        if (ok) {
+          wrote = true;
+          this.log(`[MMWAVE][LINPTECH] ${key} → 0x${clusterId.toString(16)} attr ${plan.attr}=${plan.value}`);
+          break;
+        }
       }
-      this.log(`[MMWAVE][LINPTECH] ${key} → attr ${plan.attr}=${plan.value}`);
+      if (!wrote) {
+        throw new Error(`ZCL 0x${lastCluster.toString(16)} attr ${plan.attr} write failed (tried ${chain.map((c) => `0x${c.toString(16)}`).join(',')})`);
+      }
       return true;
     }
 

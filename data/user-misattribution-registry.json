@@ -1836,8 +1836,47 @@
       },
       "sources": [
         "forum-140352-2173",
-        "forum-140352-2182"
+        "forum-140352-2182",
+        "forum-140352-2188",
+        "gpm-homesuite-interview-TS0004"
       ]
+    },
+    {
+      "id": "p2261-ihseno-debczeci-presence",
+      "mfr": [
+        "_TZE284_debczeci",
+        "_tze284_debczeci",
+        "_TZE204_debczeci",
+        "_TZE284_1lvln0x6",
+        "_tze284_1lvln0x6"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": "presence_sensor_radar",
+      "forbiddenDrivers": [
+        "motion_sensor_radar_mmwave",
+        "climate_sensor",
+        "zigbee_universal"
+      ],
+      "forbidMode": "couple",
+      "protocol": "tuya_dp",
+      "notes": "iHseno mmWave presence — DP1 occupancy DP4 battery. Johan T26439 #5493; Z2M sibling 1lvln0x6.",
+      "sources": [
+        "z2m-27773",
+        "forum-26439-5493",
+        "P2261"
+      ],
+      "tracks": {
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
+      }
     },
     {
       "id": "okaz9tjs-ts011f-metering-plug",
@@ -2741,12 +2780,14 @@
       ],
       "forbidMode": "couple",
       "protocol": "hybrid",
-      "notes": "Linptech ES1ZZ / Moes ZSS-LP-HP02-MS — settings via manuSpecificTuya2 attrs 57348/57349/57355, not EF00 DP9. A_Tas #2199 / T158757.",
+      "notes": "Linptech ES1ZZ / Moes ZSS-LP-HP02-MS — settings via 0xE002 attrs 57348/57349/57355 (fallback 0xE001), not EF00 DP9. A_Tas #2199 / T158757 / P2261.",
       "sources": [
         "z2m-ES1ZZ",
+        "zha-3012",
         "forum-140352",
         "forum-158757",
-        "P2258"
+        "P2258",
+        "P2261"
       ],
       "tracks": {
         "master": {

@@ -56,6 +56,11 @@ const DEFAULT_TOPICS = [
   { id: 156967, name: 'moes-official', replyAllowed: false },
   { id: 150690, name: 'relax-moes-zigbee', replyAllowed: false },
   { id: 99614, name: 'nous-energy', replyAllowed: false },
+  // Satellite thematic — rain / Moes presence (silent enrich only)
+  { id: 158754, name: 'tuya-raindetector-pair', replyAllowed: false },
+  { id: 158757, name: 'moes-presence-settings', replyAllowed: false },
+  { id: 120477, name: 'rainsensor-solar-tuya', replyAllowed: false },
+  { id: 146667, name: 'hobeian-zg303z-soil', replyAllowed: false },
 ];
 
 const UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36';

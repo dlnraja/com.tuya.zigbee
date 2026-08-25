@@ -31,10 +31,12 @@ describe('P2258 Linptech ES1ZZ settings gate', function () {
     assert.ok(!isLinptechES1('_TZ3000_k4ej3ww2', 'TS0207'));
   });
 
-  it('motion_detection_sensitivity plans ZCL attr 57348 not EF00 DP9', () => {
+  it('motion_detection_sensitivity plans ZCL attr 57348 on 0xE002 not EF00 DP9', () => {
     const plan = planSettingWrite('motion_detection_sensitivity', 4);
     assert.strictEqual(plan.kind, 'zcl');
     assert.strictEqual(plan.cluster, CLUSTER_MANU_TUYA2);
+    assert.strictEqual(plan.cluster, 0xE002);
+    assert.ok((plan.fallbackClusters || []).includes(0xE001));
     assert.strictEqual(plan.attr, ATTR.motionSensitivity);
     assert.strictEqual(plan.value, 4);
 
@@ -57,7 +59,7 @@ describe('P2258 Linptech ES1ZZ settings gate', function () {
     assert.ok(!/case\s+'radar_sensitivity'[\s\S]*sendTuyaCommand\s*\(\s*9/.test(src));
   });
 
-  it('compose exposes Linptech 0–5 sensitivity settings + cluster 57345', () => {
+  it('compose exposes Linptech 0–5 sensitivity settings + cluster 57346 (0xE002)', () => {
     const compose = JSON.parse(read('drivers/motion_sensor_radar_mmwave/driver.compose.json'));
     const settingIds = (compose.settings || [])
       .flatMap((s) => (s.children ? s.children.map((c) => c.id) : [s.id]))
@@ -66,7 +68,9 @@ describe('P2258 Linptech ES1ZZ settings gate', function () {
     assert.ok(settingIds.includes('static_detection_sensitivity'));
     assert.ok(settingIds.includes('motion_detection_distance'));
     const clusters = compose.zigbee.endpoints['1'].clusters.map(Number);
-    assert.ok(clusters.includes(57345) || clusters.includes(0xE001), 'needs manuSpecificTuya2 cluster');
+    // P2261: interview inClusterList uses 57346 (0xE002); keep 57345 as fallback
+    assert.ok(clusters.includes(57346) || clusters.includes(0xE002), 'needs Linptech primary cluster 0xE002');
+    assert.ok(clusters.includes(57345) || clusters.includes(0xE001), 'needs E001 fallback cluster');
   });
 
   it('registry couple p2258-linptech-es1zz-ts0225 exists', () => {

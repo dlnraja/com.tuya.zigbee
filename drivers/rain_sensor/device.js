@@ -17,17 +17,18 @@ class RainSensorDevice extends UnifiedSensorBase {
   get mainsPowered() { return false; }
 
   get sensorCapabilities() {
-    return ['alarm_water', 'measure_humidity', 'measure_battery'];
+    return ['alarm_water', 'measure_humidity', 'measure_luminance', 'measure_battery'];
   }
 
     get dpMappings() {
     const mfr = typeof this.getSetting === 'function' ? this.getSetting('zb_manufacturer_name') || '' : '';
 
-    // ── TS0601 HOBEIAN variants (ZG-223Z) ──
-    if (includesCI(mfr, 'u6x1zyv2') || includesCI(mfr, 'jsaqgakf') || includesCI(mfr, '2pddnnrk')) {
+    // ── HOBEIAN ZG-223Z (Z2M: IAS rain + ZCL illuminance + battery) ──
+    if (includesCI(mfr, 'HOBEIAN') || includesCI(mfr, 'u6x1zyv2') || includesCI(mfr, 'jsaqgakf') || includesCI(mfr, '2pddnnrk')) {
       return {
         1: { capability: 'alarm_water', transform: (v) => v !== 0 && v !== '0' && v !== false && v !== 'false' && v !== 'normal' },
         2: { capability: 'measure_humidity', divisor: 1 },
+        101: { capability: 'measure_luminance', divisor: 1 },
         102: { capability: 'measure_luminance', divisor: 1 },
         4: { capability: 'measure_battery', divisor: 1 },
         104: { capability: 'measure_battery', divisor: 1 },
@@ -75,6 +76,13 @@ class RainSensorDevice extends UnifiedSensorBase {
           minInterval: 30,
           maxInterval: 600,
           minChange: 100,
+        },
+        {
+          cluster: 'msIlluminanceMeasurement',
+          attributeName: 'measuredValue',
+          minInterval: 30,
+          maxInterval: 600,
+          minChange: 50,
         },
         {
           cluster: 'genPowerCfg',
