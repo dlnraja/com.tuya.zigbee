@@ -118,7 +118,17 @@ class ContactSensorDevice extends UnifiedSensorBase {
       // Report interval (some models)
       10: { setting: 'report_interval' },
       // v5.11.102: Luminance (lux) for _TZE200_pay2byax ZG-102ZL variant
-      101: { capability: 'measure_luminance', divisor: 1 },
+      101: {
+        capability: 'measure_luminance',
+        divisor: 1,
+        transform: (v) => {
+          const num = typeof v === 'number' ? v : parseFloat(v);
+          if (!Number.isFinite(num) || num < 0) {return null;}
+          return typeof this._applyLuxCalibration === 'function'
+            ? this._applyLuxCalibration(num)
+            : num;
+        },
+      },
     };
   }
 
@@ -170,7 +180,14 @@ class ContactSensorDevice extends UnifiedSensorBase {
     const userReverse = this.getSetting('reverse_alarm') || false;
     this._invertContact = userInvert || userReverse;
     this._userExplicitInvert = this._invertContact;
-    this._debounceMs = (this.getSetting('debounce_time') || safeParse(DEBOUNCE.DEFAULT_MS,1000), 1000);
+    // Debounce setting must be honored (comma-operator previously forced 1000ms)
+    {
+      const rawDebounce = this.getSetting('debounce_time');
+      const parsed = Number(rawDebounce);
+      this._debounceMs = Number.isFinite(parsed) && parsed > 0
+        ? parsed
+        : safeParse(DEBOUNCE.DEFAULT_MS, 1000);
+    }
     this._lastBatteryReportTime = 0; // v5.5.793: Battery throttling
 
     // v5.5.344: Get manufacturer for problematic device detection
@@ -182,31 +199,15 @@ class ContactSensorDevice extends UnifiedSensorBase {
       '_TZ3000_n2egfsli'
     ], mfr);
 
-    // v5.5.506: Forum fix Lasse_K - HOBEIAN ZG-102Z reports inverted by default
-    // v5.5.713: Expanded list of sensors that report inverted by default
-    // v5.5.776: REMOVED HOBEIAN - Lasse_K forum Jan 2026 confirms ZG-102Z works correctly WITHOUT inversion
-    // These sensors report closed=alarm, open=no alarm (inverted from standard)
-    // v5.5.908: Added _TZ3000_996rpfy6 (blutch32 forum - always shows no)
-    const invertedByDefault = [
-      // v5.12.1: REMOVED HOBEIAN  Lasse_K #1592 'always ja': standard TS0203 IAS bit0=1=open maps directly to alarm_contact=true, no inversion needed
-      // 'HOBEIAN',  
-      '_TZ3000_26fmupbb',  // Known inverted
-      '_TZ3000_n2egfsli',  // Known inverted
-      '_TZ3000_oxslv1c9',  // Known inverted
-      '_TZ3000_402jjyro',  // Known inverted
-      '_TZ3000_2mbfxlzr',  // Known inverted
-      '_TZ3000_bzxloft2',  // Known inverted (forum reports)
-      '_TZ3000_yxqnffam',  // Known inverted (forum reports)
-      '_TZ3000_996rpfy6',  // v5.5.908: blutch32 forum - TS0203 always "no" fix
-      '_TZE200_pay2byax',  // DP1 inverse converter: raw 0=closed, raw 1=open
-    ].some(id => includesCI(mfr, id));
-    // v5.12.3: XOR  default inversion + user invert cancel each other out
+    // Polarity lists + smart learn + alarm_polarity setting → AlarmPolarityManager
+    const { resolvePolarity } = require('../../lib/managers/AlarmPolarityManager');
+    const pol = resolvePolarity(this, 'contact');
+    const invertedByDefault = !!pol.listedInvert && !pol.listedNormal;
     this._invertedByDefault = invertedByDefault;
-    if (invertedByDefault) {
-      this._invertContact = !(userInvert || userReverse);
-      this._userExplicitInvert = false;
-      this.log(`[CONTACT] Sensor ${mfr} invertedByDefault=true userInvert=${userInvert} => _invertContact=${this._invertContact}`);
-    }
+    // shouldInvert already includes curated lists, smart learn, XOR checkboxes, explicit mode
+    this._invertContact = !!pol.shouldInvert;
+    this._userExplicitInvert = !!(userInvert || userReverse) && pol.mode === 'auto' && !invertedByDefault;
+    this.log(`[CONTACT] Sensor ${mfr} polarity invert=${this._invertContact} reason=${pol.reason} mode=${pol.mode}`);
 
     if (this._isProblematicSensor) {
       this.log(`[CONTACT]  Problematic sensor detected (${mfr}) - extended debounce enabled`);
@@ -217,6 +218,11 @@ class ContactSensorDevice extends UnifiedSensorBase {
     await super.onNodeInit({ zclNode });
     this._registerCapabilityListeners(); // rule-12a injected
 
+    // Forum #2134: seed tamper so UI is not stuck on "-"
+    if (this.hasCapability('alarm_tamper') && this.getCapabilityValue('alarm_tamper') == null) {
+      await this.safeSetCapabilityValue('alarm_tamper', false).catch(() => {});
+    }
+
     await setupSonoffSensor(this, zclNode);
     this.log('[CONTACT] v5.11.106 - DPs: 1,2,3,4,5,15,101 | ZCL: IAS,PWR,EF00 | SONOFF: tamper');
     this.log(`[CONTACT]  Ready (debounce: ${this._debounceMs}ms, invert: ${this._invertContact}, problematic: ${this._isProblematicSensor})`);
@@ -226,31 +232,37 @@ class ContactSensorDevice extends UnifiedSensorBase {
    * v5.5.344: Handle settings changes
    */
   async onSettings({ oldSettings, newSettings, changedKeys }) {
-    // v5.8.98: Handle both invert_contact and reverse_alarm (were separate, now unified)
-    if (changedKeys.includes('invert_contact') || changedKeys.includes('reverse_alarm')) {
-      const inv = changedKeys.includes('invert_contact') ? newSettings.invert_contact : this.getSetting('invert_contact') || false;
-      const rev = changedKeys.includes('reverse_alarm') ? newSettings.reverse_alarm : this.getSetting('reverse_alarm') || false;
-      if (this._invertedByDefault) {
-        this._invertContact = !(inv || rev);
-        this._userExplicitInvert = false;
-      } else {
-        this._invertContact = inv || rev;
-        this._userExplicitInvert = this._invertContact;
-      }
-      this.log(`[CONTACT] Invert setting changed to: ${this._invertContact} (invert=${inv}, reverse=${rev})`);
-      // Toggle current displayed state  use super to bypass invert override
+    if (changedKeys.includes('alarm_polarity')
+      || changedKeys.includes('invert_contact')
+      || changedKeys.includes('reverse_alarm')) {
+      try {
+        const { resetLearning } = require('../../lib/managers/AlarmPolarityManager');
+        resetLearning(this);
+      } catch (_e) { /* ignore */ }
+    }
+    // v5.8.98: Handle invert_contact / reverse_alarm / alarm_polarity via manager
+    if (changedKeys.includes('invert_contact') || changedKeys.includes('reverse_alarm') || changedKeys.includes('alarm_polarity')) {
+      const prevGet = this.getSetting.bind(this);
+      this.getSetting = (k) => (Object.prototype.hasOwnProperty.call(newSettings, k)
+        ? newSettings[k]
+        : prevGet(k));
+      const { resolvePolarity } = require('../../lib/managers/AlarmPolarityManager');
+      const pol = resolvePolarity(this, 'contact');
+      this.getSetting = prevGet;
+      this._invertContact = !!pol.shouldInvert;
+      this._invertedByDefault = !!pol.listedInvert && !pol.listedNormal;
+      this._userExplicitInvert = !!(newSettings.invert_contact || newSettings.reverse_alarm
+        || this.getSetting('invert_contact') || this.getSetting('reverse_alarm'))
+        && pol.mode === 'auto' && !this._invertedByDefault;
+      this.log(`[CONTACT] Invert/polarity → ${this._invertContact} (${pol.reason})`);
+      // Toggle current displayed state when user explicitly flips polarity
       const current = this.getCapabilityValue('alarm_contact');
       if (current !== null) {
         const newValue = !current;
-        await super.setCapabilityValue('alarm_contact', newValue).catch(() => { });
-        // v5.11.16: CRITICAL FIX (Lasse_K #1401-1403/#1426 "stops responding")
-        // Reset confirmedValue to match new capability state, otherwise the
-        // setCapabilityValue override's duplicate filter blocks next IAS event
+        await super.setCapabilityValue('alarm_contact', newValue).catch(() => {});
+        // Reset confirmedValue so next IAS event is not blocked (Lasse_K #1401)
         if (this._contactState) {
           if (this._invertedByDefault) {
-            // v5.12.4: For invertedByDefault devices, clear confirmedValue so next DP
-            // event always passes duplicate filter  avoids stuck state when user
-            // toggles invert (XOR cancels default, raw values become wrong)
             this._contactState.confirmedValue = null;
             this._contactState.lastValue = null;
           } else {
@@ -321,7 +333,7 @@ class ContactSensorDevice extends UnifiedSensorBase {
 
         // Set timer to apply after debounce window
         state.timer = safeSetTimeout(this, async () => {
-          if (this._destroyed) return;
+          if (this._destroyed) {return;}
           this.log(`[CONTACT]  Debounce complete - applying: ${finalValue}`);
           state.lastValue = finalValue;
           state.confirmedValue = finalValue;
@@ -355,7 +367,7 @@ class ContactSensorDevice extends UnifiedSensorBase {
 
           // Double debounce for problematic openclosed transitions
           state.timer = safeSetTimeout(this, async () => {
-            if (this._destroyed) return;
+            if (this._destroyed) {return;}
             this.log(`[CONTACT]  Extended debounce complete - applying: ${finalValue}`);
             state.lastValue = finalValue;
             state.confirmedValue = finalValue;
@@ -393,7 +405,7 @@ class ContactSensorDevice extends UnifiedSensorBase {
    * v5.5.793: Override setCapabilityValue for battery throttling
    */
   async _handleBatteryUpdate(value) {
-    if (this._destroyed) return;
+    if (this._destroyed) {return;}
     const now = Date.now();
     if (this._lastBatteryReportTime && (now - this._lastBatteryReportTime) < BATTERY_THROTTLE_MS) {
       return; // Skip - too soon since last report
@@ -425,7 +437,7 @@ class ContactSensorDevice extends UnifiedSensorBase {
    * v5.5.793: Cleanup on device delete
    */
   async onDeleted() {
-    if (this._destroyed) return;
+    if (this._destroyed) {return;}
     this._destroyed = true;
     if (this._contactState?.timer) {
       safeClearTimeout(this, this._contactState.timer);
@@ -439,11 +451,16 @@ class ContactSensorDevice extends UnifiedSensorBase {
    */
   async onEndDeviceAnnounce() {
     this.log('[REJOIN] Device announced itself, refreshing state...');
+    try {
+      const { logFleetIdentity } = require('../../lib/diagnostics/FleetIdentityLog');
+      logFleetIdentity(this, 'CONTACT-WAKE');
+    } catch (_e) { /* ignore */ }
     if (typeof this._updateLastSeen === 'function') {this._updateLastSeen();}
     // WHY: Peter #2183 windows showed lux (DP101) but contact Flows stayed
     // grey — announce used to skip parent IAS re-attach and force Tuya recovery.
     try {
       await this._reattachIasOnWake();
+      this.log('[CONTACT] IAS re-attach on wake OK');
     } catch (err) {
       this.log(`[CONTACT] IAS re-attach on wake failed: ${err.message}`);
     }

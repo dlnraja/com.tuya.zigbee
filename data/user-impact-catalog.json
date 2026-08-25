@@ -1,10 +1,10 @@
 {
   "_meta": {
     "version": "1.0.0",
-    "updated": "2026-08-23",
+    "updated": "2026-08-25",
     "policy": "Never invent mfr+pid from tile names. Diag UUID + driver + forum text only.",
     "lastSync": "2026-08-23T06:07:56.138Z",
-    "lastInvestigation": "2026-08-23T06:36:47.024Z"
+    "lastInvestigation": "2026-08-25T01:37:15.060Z"
   },
   "users": {
     "Peter_van_Werkhoven": {
@@ -131,7 +131,14 @@
         "Do not use TS0207 from other Peter-era posts"
       ],
       "dualApp": "BOTH for IAS/SOS/battery/contact; OOM LiveData master-only soak",
-      "investigationNote": "Update Universal Tuya Test to latest soak; re-pair if driver changed"
+      "investigationNote": "Update Universal Tuya Test to latest soak; re-pair if driver changed",
+      "fixesP2248": [
+        "SOS battery debounce 15s/10pp + drop alarm_battery set",
+        "FleetIdentityLog mfr+pid on SOS init / contact wake",
+        "DiagnosticLogger critical caps always info + TUYA_DIAG_VERBOSE",
+        "P2247 declared-only flow cards (FLOW-GUARD)"
+      ],
+      "notes": "Couples still ABSENT — next diag must include [SOS-INIT]/[CONTACT-WAKE] lines; never invent k4ej/mrpe/TS0207"
     },
     "meter91": {
       "forumTopic": 140352,

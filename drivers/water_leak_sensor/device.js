@@ -10,24 +10,13 @@ const { safeSetTimeout, safeClearTimeout } = require('../../lib/utils/safe-timer
 const BootBudget = require('../../lib/performance/BootBudget');
 
 /**
- * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║      WATER LEAK SENSOR - v5.5.803 FORUM #1166 LASSE_K FIX                   ║
- * ╠══════════════════════════════════════════════════════════════════════════════╣
- * ║  Sources:                                                                    ║
- * ║  - Zigbee2MQTT: TS0207_water_leak_detector, TS0601_water_sensor             ║
- * ║  - GitHub Issues: #28181 (HOBEIAN INVALID_EP), #24759 (upgcbody)            ║
- * ║  - ZHA, Hubitat community reports                                           ║
- * ║                                                                              ║
- * ║  DEVICE TYPES:                                                               ║
- * ║  1. TS0207 (IAS Zone 1280): _TZ3000_*, HOBEIAN, SONOFF SNZB-05P             ║
- * ║  2. TS0601 (Tuya DP 61184): _TZE200_qq9mpfhw, _TZE204_qq9mpfhw              ║
- * ║                                                                              ║
- * ║  KNOWN ISSUES FIXED:                                                         ║
- * ║  - Lasse_K #978: Some sensors use IAS alarm2 instead of alarm1              ║
- * ║  - Lasse_K #1166: Water sensor installs but no alarm (v5.5.803 fix)         ║
- * ║  - HOBEIAN #28181: INVALID_EP binding error (sleepy device timing)          ║
- * ║  - _TZ3000_85czd6fy: Tamper support added                                   ║
- * ╚══════════════════════════════════════════════════════════════════════════════╝
+ * Water leak sensor — IAS Zone (TS0207) + selective Tuya DP (TS0601) profiles.
+ *
+ * Sacred couple example: `_TZ3000_k4ej3ww2` + `TS0207` → IAS only (never EF00 tuya water driver).
+ * See data/user-misattribution-registry.json + reports/P151_*.
+ *
+ * Known quirks: HOBEIAN INVALID_EP bind on sleepy devices; some units use alarm2 vs alarm1;
+ * batteryPercentageRemaining often 0–200; passive until wet/dry.
  */
 
 const WATER_SENSOR_PROFILES = {
@@ -57,7 +46,21 @@ const WATER_SENSOR_PROFILES = {
     model: 'ZG-222Z/ZG-222ZA',
     iasAlarmBit: 'both',
     hasTamper: true,
-    notes: 'HOBEIAN water leak'
+    notes: 'HOBEIAN/Aubess IAS water leak — sacred couple; never EF00 tuya driver'
+  },
+  '_tz3000_k4ej3ww2': {
+    type: 'ias_zone', productId: 'TS0207', brand: 'HOBEIAN',
+    model: 'ZG-222Z/ZG-222ZA',
+    iasAlarmBit: 'both',
+    hasTamper: true,
+    notes: 'case variant of _TZ3000_k4ej3ww2'
+  },
+  '_TZ3000_K4EJ3WW2': {
+    type: 'ias_zone', productId: 'TS0207', brand: 'HOBEIAN',
+    model: 'ZG-222Z/ZG-222ZA',
+    iasAlarmBit: 'both',
+    hasTamper: true,
+    notes: 'case variant of _TZ3000_k4ej3ww2'
   },
   '_TZ3000_85czd6fy': {
     type: 'ias_zone', productId: 'TS0207',
@@ -133,7 +136,8 @@ const WATER_SENSOR_PROFILES = {
     hasTamper: true,
     notes: 'HOBEIAN branded'
   },
-  // P93: explicit lowercase alias — forum #2090/#2111
+  // P93: explicit lowercase alias — some interviews report manufacturerName as "hobeian"
+  // (forum #2090/#2111 "no data" when profile match failed before IAS enroll)
   'hobeian': {
     type: 'ias_zone', productId: 'ZG-222Z',
     iasAlarmBit: 'both',
@@ -214,35 +218,46 @@ class WaterLeakSensorDevice extends UnifiedSensorBase {
   async onNodeInit({ zclNode }) {
     await this._safeInvoke(async () => {
       this._deviceProfile = this._getDeviceProfile();
-      this._invertAlarm = this.getSetting('invert_alarm') || false;
+      // AlarmPolarityManager: curated lists + smart learn + setting (auto|normal|inverted)
+      const { resolvePolarity } = require('../../lib/managers/AlarmPolarityManager');
+      const pol = resolvePolarity(this, 'water');
+      const userInv = !!this.getSetting('invert_alarm');
+      // For DP path: mirror resolvePolarity.shouldInvert (lists/learn XOR checkbox)
+      this._invertAlarm = !!pol.shouldInvert;
+      this.log(`[WATER] polarity mode=${pol.mode} invert=${this._invertAlarm} reason=${pol.reason} userCheckbox=${userInv}`);
       if (this._deviceProfile?.type === 'ias_zone') {
-        // P2184 BOTH: TS0207 IAS-only — never EF00 DP storm at boot/30min (Peter 1cf775a2)
+        // P2184 Peter 1cf775a2: TS0207 IAS-only — never EF00 DP storm at boot/30min
         this._skipTuyaDataQuery = true;
         this._iasOnlyProfile = true;
       }
       await super.onNodeInit({ zclNode });
+
+      // Forum #2134: Homey shows "-" for Sabotagealarm until first report —
+      // seed false so UI is known (not "unknown").
+      if (this.hasCapability('alarm_tamper') && this.getCapabilityValue('alarm_tamper') == null) {
+        await this.safeSetCapabilityValue('alarm_tamper', false).catch(() => {});
+      }
+      if (this.hasCapability('alarm_water') && this.getCapabilityValue('alarm_water') == null) {
+        await this.safeSetCapabilityValue('alarm_water', false).catch(() => {});
+      }
 
       // IAS Zone enrollment
       try {
         const iasManager = new IASZoneManager(this);
         await iasManager.enrollIASZone();
       } catch (err) {
-        this.log(`[WATER] ⚠️ IAS enrollment error (non-critical): ${err.message}`);
+        this.log(`[WATER] IAS enrollment error (non-critical): ${err.message}`);
       }
 
-      // Log device-specific info
       const profile = this._deviceProfile;
-      this.log('╔══════════════════════════════════════════════════════════════╗');
-      this.log('║          WATER LEAK SENSOR v5.5.803                          ║');
-      this.log('╠══════════════════════════════════════════════════════════════╣');
-      this.log(`║ Manufacturer: ${profile.mfr || 'unknown'}`);
-      this.log(`║ Profile Type: ${profile.type || 'hybrid'}`);
-      this.log(`║ Matched By:   ${profile.matchedBy || 'default'}`);
-      this.log(`║ IAS Alarm:    ${profile.iasAlarmBit || 'both'}`);
-      this.log(`║ Has Tamper:   ${profile.hasTamper ? 'YES' : 'NO'}`);
-      this.log('╚══════════════════════════════════════════════════════════════╝');
+      this.log(
+        `[WATER] ready mfr=${profile.mfr || 'unknown'} type=${profile.type || 'hybrid'} ` +
+        `match=${profile.matchedBy || 'default'} ias=${profile.iasAlarmBit || 'both'} ` +
+        `tamper=${!!profile.hasTamper} invert=${this._invertAlarm}`,
+      );
 
-      // Initialize IAS Alarm Fallback
+      // WHY P2203: IAS-only TS0207 (k4ej3ww2) has no useful EF00 — Tuya mirror
+      // only adds DP query noise (Peter 1cf775a2). Hybrid/DP waters keep mirror.
       this._iasFallback = new IASAlarmFallback(this, {
         pollInterval: 6 * 60 * 60 * 1000,
         useTuyaMirror: this._deviceProfile?.type !== 'ias_zone'
@@ -251,15 +266,21 @@ class WaterLeakSensorDevice extends UnifiedSensorBase {
         this.log(`[WATER] IAS Fallback init failed: ${e.message}`);
       });
 
-      // Sleepy: defer boot poll — wake/rejoin path re-attaches IAS (Peter #2183).
+      // Sleepy: do not force a second 5s IAS read at boot (e181bc15 timeouts).
+      // Wake/rejoin path re-attaches listeners and reads while the node is up.
     }, 'onNodeInit');
   }
 
   /**
-   * WHY: after app update the IAS listener is gone; re-attach on every wake.
-   * Skip Tuya dataQuery parent path for IAS-only units (Peter 1cf775a2).
+   * WHY: after an app update the IAS listener is gone; after sleep Homey
+   * may still think the sensor is enrolled. Re-attach on every wake.
+   * Skip the Tuya dataQuery parent path for IAS-only units.
    */
   async onEndDeviceAnnounce() {
+    try {
+      const { logFleetIdentity } = require('../../lib/diagnostics/FleetIdentityLog');
+      logFleetIdentity(this, 'WATER-WAKE');
+    } catch (_e) { /* ignore */ }
     BootBudget.markRadioActivity(this);
     this.log('[WATER] wake/rejoin — re-attach IAS Zone listener');
     try {
@@ -280,7 +301,7 @@ class WaterLeakSensorDevice extends UnifiedSensorBase {
     }
     try {
       await this._forceInitialAlarmRead(this.zclNode);
-    } catch (_e) { /* best-effort */ }
+    } catch (_e) { /* sleepy read is best-effort */ }
     if (this._secondaryAlarmReadTimer) {
       safeClearTimeout(this, this._secondaryAlarmReadTimer);
       this._secondaryAlarmReadTimer = null;
@@ -303,7 +324,7 @@ class WaterLeakSensorDevice extends UnifiedSensorBase {
 
   async _forceInitialAlarmRead(zclNode) {
     try {
-      this.log('[WATER] 📖 Forcing initial alarm state read...');
+      this.log('[WATER] Forcing initial alarm state read');
       const ep = zclNode?.endpoints?.[1];
       if (!ep) {return;}
 
@@ -312,13 +333,13 @@ class WaterLeakSensorDevice extends UnifiedSensorBase {
         try {
           const attrs = await Promise.race([
             iasCluster.readAttributes(['zoneStatus', 'zoneState']),
-            new Promise((_, rej) => this.homey.setTimeout(() => { if (this._destroyed) return; rej(new Error('timeout')); }, 5000))
+            new Promise((_, rej) => this.homey.setTimeout(() => { if (this._destroyed) {return;} rej(new Error('timeout')); }, 5000))
           ]);
           if (attrs?.zoneStatus !== undefined && typeof this._handleIASZoneStatus === 'function') {
             this._handleIASZoneStatus(attrs.zoneStatus);
           }
         } catch (e) {
-          this.log(`[WATER] ⚠️ Initial IAS read failed: ${e.message}`);
+          this.log(`[WATER] Initial IAS read failed: ${e.message}`);
         }
       }
 
@@ -338,11 +359,25 @@ class WaterLeakSensorDevice extends UnifiedSensorBase {
   }
 
   async onSettings({ oldSettings, newSettings, changedKeys }) {
-    if (changedKeys.includes('invert_alarm')) {
-      this._invertAlarm = newSettings.invert_alarm;
-      this.log(`[WATER] Invert setting changed to: ${this._invertAlarm}`);
+    if (changedKeys.includes('alarm_polarity') || changedKeys.includes('invert_alarm')) {
+      try {
+        const { resetLearning } = require('../../lib/managers/AlarmPolarityManager');
+        resetLearning(this);
+      } catch (_e) { /* ignore */ }
+    }
+    if (changedKeys.includes('invert_alarm') || changedKeys.includes('alarm_polarity')) {
+      const { resolvePolarity } = require('../../lib/managers/AlarmPolarityManager');
+      // resolvePolarity reads getSetting — temporarily apply newSettings for resolve
+      const prevGet = this.getSetting.bind(this);
+      this.getSetting = (k) => (Object.prototype.hasOwnProperty.call(newSettings, k)
+        ? newSettings[k]
+        : prevGet(k));
+      const pol = resolvePolarity(this, 'water');
+      this.getSetting = prevGet;
+      this._invertAlarm = !!pol.shouldInvert;
+      this.log(`[WATER] Invert/polarity changed invert=${this._invertAlarm} reason=${pol.reason}`);
       const current = this.getCapabilityValue('alarm_water');
-      if (current !== null) {
+      if (current !== null && (changedKeys.includes('invert_alarm') || changedKeys.includes('alarm_polarity'))) {
         await super.setCapabilityValue('alarm_water', !current).catch(() => { });
       }
     }
@@ -365,7 +400,7 @@ class WaterLeakSensorDevice extends UnifiedSensorBase {
   }
 
   async onDeleted() {
-    if (this._destroyed) return;
+    if (this._destroyed) {return;}
     this._destroyed = true;
     if (this._secondaryAlarmReadTimer) {
       this.homey.clearTimeout(this._secondaryAlarmReadTimer);
