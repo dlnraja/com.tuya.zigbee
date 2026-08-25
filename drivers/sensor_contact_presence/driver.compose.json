@@ -44,7 +44,8 @@
   "subDevices": [],
   "zigbee": {
     "manufacturerName": [
-      "_DISABLED_sensor_contact_presence"
+      "_DISABLED_sensor_contact_presence",
+      "_disabled_sensor_contact_presence"
     ],
     "productId": [
       "DISABLED_SENSOR_CONTACT_PRESENCE"
