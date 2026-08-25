@@ -480,6 +480,8 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
     if (percent >= 0 && percent <= 100) {
       // WHY (P2248 / Peter #2190 / 0cea6870): SOS CR2032 still flipped 11↔20
       // after the 2s/15pp guard — widen to 15s and 10pp + log identity.
+      // WHY(P2256): also ignore micro-jitter (Δ≤5 within 60s) that drives
+      // nervous Homey timeline / battery_low edge chatter around threshold 20.
       const prev = this.getCapabilityValue('measure_battery');
       if (typeof prev === 'number') {
         const delta = Math.abs(prev - percent);
@@ -493,18 +495,29 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
           } catch (_e) { /* ignore */ }
           return;
         }
+        if (delta > 0 && delta <= 5 && age < 60_000) {
+          this.log(`[BATTERY] Ignore jitter ${prev}% → ${percent}% (Δ${delta} <60s)`);
+          return;
+        }
       }
       await this.safeSetCapabilityValue('measure_battery', percent).catch(() => { });
       try { await this.setStoreValue('sos_battery_last_write_at', Date.now()); } catch (_e) { /* ignore */ }
       this._updateActivity();
       this.log(`[BATTERY] ${percent}% (${type}=${value})`);
 
-      // v5.5.833: Trigger battery_low flow when below threshold
-      // alarm_battery deliberately NOT composed — flow card only (Homey guideline)
+      // v5.5.833 + P2256 hysteresis: latch low until clear above threshold+5
       const threshold = this.getSetting('battery_low_threshold') || 20;
+      const hyst = 5;
+      let latched = false;
+      try { latched = !!this.getStoreValue('sos_battery_low_latched'); } catch (_e) { /* ignore */ }
       if (percent <= threshold) {
-        if (this.driver?.triggerBatteryLow) {
+        if (!latched && this.driver?.triggerBatteryLow) {
           await this.driver.triggerBatteryLow(this, { battery_level: percent });
+          try { await this.setStoreValue('sos_battery_low_latched', true); } catch (_e2) { /* ignore */ }
+        }
+      } else if (percent > threshold + hyst) {
+        if (latched) {
+          try { await this.setStoreValue('sos_battery_low_latched', false); } catch (_e3) { /* ignore */ }
         }
       }
     }

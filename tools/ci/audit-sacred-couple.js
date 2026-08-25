@@ -117,9 +117,20 @@ function auditCouple(mfr, pid, drivers) {
   };
 
   if (registry && claimingMfr.some((d) => registry.forbiddenDrivers?.includes(d.id))) {
-    verdict.forbiddenDriverStillClaimsMfr = claimingMfr
-      .filter((d) => registry.forbiddenDrivers.includes(d.id))
-      .map((d) => d.id);
+    // WHY(P2256): forbidMode "couple" allows same brand on other drivers with other pids
+    // (HOBEIAN climate vs soil vs presence). Only fail if a forbidden driver claims
+    // the exact couple, or mode is mfr-wide ban.
+    const mode = registry.forbidMode || 'mfr';
+    if (mode === 'couple') {
+      const badExact = claimingBoth.filter((d) => registry.forbiddenDrivers.includes(d.id));
+      if (badExact.length) {
+        verdict.forbiddenDriverStillClaimsMfr = badExact.map((d) => d.id);
+      }
+    } else {
+      verdict.forbiddenDriverStillClaimsMfr = claimingMfr
+        .filter((d) => registry.forbiddenDrivers.includes(d.id))
+        .map((d) => d.id);
+    }
   }
 
   return verdict;
@@ -134,6 +145,9 @@ function main() {
       fs.readFileSync(path.join(ROOT, 'data', 'user-misattribution-registry.json'), 'utf8'),
     );
     for (const c of reg.cases || []) {
+      // WHY(P2256): external/doNotTouch couples (e.g. SergeP Nous/SoPhos) must not
+      // fail publish — they are intentionally outside our driver lock.
+      if (c.doNotTouch === true) continue;
       const mfr = (c.mfr || [])[0];
       const pid = (c.productId || [])[0];
       if (!mfr) continue;
