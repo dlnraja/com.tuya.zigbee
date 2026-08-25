@@ -56,6 +56,7 @@
           1024,
           1280,
           1030,
+          57345,
           61184
         ]
       }
@@ -86,6 +87,67 @@
       },
       "children": [
         {
+          "id": "motion_detection_sensitivity",
+          "type": "number",
+          "label": {
+            "en": "Motion Detection Sensitivity",
+            "fr": "Sensibilité Détection Mouvement"
+          },
+          "value": 3,
+          "min": 0,
+          "max": 5,
+          "step": 1,
+          "hint": {
+            "en": "Linptech/Moes ES1ZZ: motion sensitivity 0–5 (Z2M). Other radars: use Radar Sensitivity below.",
+            "fr": "Linptech/Moes ES1ZZ : sensibilité mouvement 0–5. Autres radars : Sensibilité Radar ci-dessous."
+          }
+        },
+        {
+          "id": "static_detection_sensitivity",
+          "type": "number",
+          "label": {
+            "en": "Static Detection Sensitivity",
+            "fr": "Sensibilité Détection Statique"
+          },
+          "value": 3,
+          "min": 0,
+          "max": 5,
+          "step": 1,
+          "hint": {
+            "en": "Linptech/Moes ES1ZZ: static/breathing sensitivity 0–5.",
+            "fr": "Linptech/Moes ES1ZZ : sensibilité statique 0–5."
+          }
+        },
+        {
+          "id": "motion_detection_distance",
+          "type": "number",
+          "label": {
+            "en": "Motion Detection Distance (cm)",
+            "fr": "Distance Détection Mouvement (cm)"
+          },
+          "value": 300,
+          "min": 0,
+          "max": 600,
+          "step": 75,
+          "hint": {
+            "en": "Linptech/Moes ES1ZZ: max motion range in cm (0–600, step 75).",
+            "fr": "Linptech/Moes ES1ZZ : portée mouvement en cm (0–600)."
+          }
+        },
+        {
+          "id": "led_indicator",
+          "type": "checkbox",
+          "label": {
+            "en": "LED Presence Indicator",
+            "fr": "LED Indicateur Présence"
+          },
+          "value": true,
+          "hint": {
+            "en": "Linptech/Moes ES1ZZ: toggle onboard presence LED.",
+            "fr": "Linptech/Moes ES1ZZ : activer la LED de présence."
+          }
+        },
+        {
           "id": "radar_sensitivity",
           "type": "number",
           "label": {
@@ -97,8 +159,8 @@
           "max": 9,
           "step": 1,
           "hint": {
-            "en": "Detection sensitivity (0=lowest, 9=highest). Higher values detect smaller movements.",
-            "fr": "Sensibilité de détection (0=min, 9=max). Valeurs élevées détectent les petits mouvements."
+            "en": "Generic Tuya mmWave (DP2). Linptech ES1ZZ uses Motion/Static settings above.",
+            "fr": "mmWave Tuya générique (DP2). Linptech ES1ZZ utilise les réglages Mouvement/Statique."
           }
         },
         {

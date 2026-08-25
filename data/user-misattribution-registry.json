@@ -2720,6 +2720,89 @@
           "dynamic": false
         }
       }
+    },
+    {
+      "id": "p2258-linptech-es1zz-ts0225",
+      "mfr": [
+        "_TZ3218_t9ynfz4x",
+        "_tz3218_t9ynfz4x",
+        "_TZ3218_awarhusb",
+        "_TZ3218_ewrxirng"
+      ],
+      "productId": [
+        "TS0225"
+      ],
+      "canonicalDriver": "motion_sensor_radar_mmwave",
+      "forbiddenDrivers": [
+        "climate_sensor",
+        "presence_sensor_radar",
+        "motion_sensor",
+        "sensor_motion_presence"
+      ],
+      "forbidMode": "couple",
+      "protocol": "hybrid",
+      "notes": "Linptech ES1ZZ / Moes ZSS-LP-HP02-MS — settings via manuSpecificTuya2 attrs 57348/57349/57355, not EF00 DP9. A_Tas #2199 / T158757.",
+      "sources": [
+        "z2m-ES1ZZ",
+        "forum-140352",
+        "forum-158757",
+        "P2258"
+      ],
+      "tracks": {
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
+      }
+    },
+    {
+      "id": "p2259-hobeian-zg223z-rain",
+      "mfr": [
+        "HOBEIAN",
+        "hobeian",
+        "Hobeian"
+      ],
+      "productId": [
+        "ZG-223Z"
+      ],
+      "canonicalDriver": "rain_sensor",
+      "forbiddenDrivers": [
+        "water_leak_sensor",
+        "water_leak_sensor_tuya",
+        "contact_sensor",
+        "water_detector"
+      ],
+      "forbidMode": "couple",
+      "protocol": "tuya_dp",
+      "energy": {
+        "batteries": [
+          "CR123A"
+        ]
+      },
+      "retailNames": [
+        "HOBEIAN Raindrop Detection Sensor",
+        "ZG-223Z"
+      ],
+      "notes": "Z2M rainwater sensor — alarm_water + rain level, NOT IAS leak. Johan T158754 / forum #1610.",
+      "sources": [
+        "z2m-ZG-223Z",
+        "forum-158754",
+        "P2259"
+      ],
+      "tracks": {
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
+      }
     }
   ]
 }

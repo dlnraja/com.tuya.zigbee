@@ -59584,7 +59584,8 @@
       "manufacturerId": "_tz3218_t9ynfz4x",
       "modelIds": [
         "TS0601_mmwave",
-        "TS0601"
+        "TS0601",
+        "TS0225"
       ],
       "variants": [],
       "deviceType": "sensor",
@@ -185611,7 +185612,7 @@
       "ZG-102ZL": "contact_sensor",
       "ZG-222Z": "water_leak_sensor",
       "ZG-222ZA": "water_leak_sensor",
-      "ZG-223Z": "water_leak_sensor",
+      "ZG-223Z": "rain_sensor",
       "ZG-305Z": "switch_2gang",
       "ZG-106Z": "illuminance_sensor",
       "ZG-101ZL": "button_wireless_1",
