@@ -33,7 +33,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.648 |
+| **App Version** | v9.0.649 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,365 |
 | **Pairing Variants** | 16,526 (4 case combos per fingerprint) |
@@ -41,7 +41,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **Flow Cards** | 5,182 |
 | **Unique Capabilities** | 170 |
 | **Native OTA Drivers** | 5 |
-| **Test Suites** | 145 files |
+| **Test Suites** | 146 files |
 | **SVG Icons** | 731 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
@@ -102,6 +102,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.649** | Reliability improvements. |
 | **v9.0.648** | Reliability improvements. |
 | **v9.0.647** | Reliability improvements. |
 | **v9.0.646** | Reliability improvements. |
@@ -113,7 +114,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.640** | Tongou DIN meter pairing lock (not Smart RCBO); block DP6 raw→humidity; button flow ID heuristics; resilience critical-first inventory; . |
 | **v9.0.639** | Tongou DIN meter pairing lock (not Smart RCBO); block DP6 raw→humidity; button flow ID heuristics; resilience critical-first inventory; . |
 | **v9.0.638** | Tongou DIN meter pairing lock (not Smart RCBO); block DP6 raw→humidity; button flow ID heuristics; resilience critical-first inventory; . |
-| **v9.0.637** | Tongou DIN meter pairing lock (not Smart RCBO); block DP6 raw→humidity; button flow ID heuristics; resilience critical-first inventory; . |
 
 <!-- CHANGELOG_END -->
 
