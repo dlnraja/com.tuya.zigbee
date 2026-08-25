@@ -83,13 +83,13 @@ function main() {
     const updates = collectUpdates(driverId);
     if (!updates.length) continue;
     const compose = readJson(path.join(DRIVERS, driverId, 'driver.compose.json')) || {};
-    const mfrs = new Set((compose.zigbee && compose.zigbee.manufacturerName) || []);
+    const mfrsLc = new Set(((compose.zigbee && compose.zigbee.manufacturerName) || []).map((m) => String(m).toLowerCase()));
     const pids = new Set((compose.zigbee && compose.zigbee.productId) || []);
 
     for (const { update } of updates) {
       const device = update.device || {};
       for (const m of [].concat(device.manufacturerName || [])) {
-        if (!mfrs.has(m)) add(errors, `${driverId}: OTA mfr ${m} not in driver zigbee.manufacturerName`);
+        if (!mfrsLc.has(String(m).toLowerCase())) add(errors, `${driverId}: OTA mfr ${m} not in driver zigbee.manufacturerName`);
       }
       for (const p of [].concat(device.productId || [])) {
         if (!pids.has(p)) add(errors, `${driverId}: OTA productId ${p} not in driver zigbee.productId`);

@@ -502,7 +502,9 @@ function compactZigbeeIdentifiers(manifest, opts = {}) {
     const fw = driver.firmwareUpdates;
     if (!fw || !Array.isArray(fw.updates)) continue;
     const pids = new Set((driver.zigbee && driver.zigbee.productId) || []);
-    const mfrsLc = new Set(((driver.zigbee && driver.zigbee.manufacturerName) || []).map((m) => String(m).toLowerCase()));
+    const zigbeeMfrs = (driver.zigbee && driver.zigbee.manufacturerName) || [];
+    const mfrByLc = new Map(zigbeeMfrs.map((m) => [String(m).toLowerCase(), String(m)]));
+    const mfrsLc = new Set(mfrByLc.keys());
     const kept = [];
     for (const update of fw.updates) {
       const dev = update && update.device;
@@ -512,8 +514,16 @@ function compactZigbeeIdentifiers(manifest, opts = {}) {
         if (next.length !== dev.productId.length) { dev.productId = next; firmwareAligned++; }
       }
       if (Array.isArray(dev.manufacturerName)) {
-        const next = dev.manufacturerName.filter((m) => mfrsLc.has(String(m).toLowerCase()));
-        if (next.length !== dev.manufacturerName.length) { dev.manufacturerName = next; firmwareAligned++; }
+        // WHY(P2257): homey-lib publish validation is case-sensitive on exact strings.
+        // After compaction we may keep _tze200_* while OTA still cites _TZE200_*.
+        const next = dev.manufacturerName
+          .filter((m) => mfrsLc.has(String(m).toLowerCase()))
+          .map((m) => mfrByLc.get(String(m).toLowerCase()) || m);
+        if (next.length !== dev.manufacturerName.length
+          || next.some((m, i) => m !== dev.manufacturerName[i])) {
+          dev.manufacturerName = next;
+          firmwareAligned++;
+        }
       }
       const emptyPids = Array.isArray(dev.productId) && dev.productId.length === 0;
       const emptyMfrs = Array.isArray(dev.manufacturerName) && dev.manufacturerName.length === 0;

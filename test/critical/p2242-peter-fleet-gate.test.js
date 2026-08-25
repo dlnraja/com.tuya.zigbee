@@ -21,6 +21,8 @@ describe('P2242 Peter fleet gate', () => {
     const drv = read('drivers/button_emergency_sos/driver.js');
     assert.match(dev, /Ignore spike/);
     assert.match(dev, /15_000|sos_battery_last_write_at/);
+    assert.match(dev, /Ignore jitter|Δ≤5 within 60s/);
+    assert.match(dev, /threshold \+ hyst|threshold \+ 5/);
     assert.match(drv, /sos_battery_low_flow_at/);
     assert.match(drv, /60_000/);
   });
