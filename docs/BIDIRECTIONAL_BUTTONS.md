@@ -1,8 +1,11 @@
 # Bidirectional Button System - Implementation Guide
 
+> Canonical runtime doctrine for Universal Tuya Zigbee (`com.dlnraja.tuya.zigbee`).
+> Cross-ref: `docs/knowledge/TS004X_BATTERY_REMOTES.md` · P2253/P2254.
+
 ## Overview
 
-The Tuya Unified Zigbee app implements a **bidirectional button system** that prevents double-triggering and maintains state synchronization between physical button presses and virtual app button presses.
+The Universal Tuya Zigbee app implements a **bidirectional button system** that prevents double-triggering and keeps state synchronized between physical presses and virtual Homey app presses.
 
 ## Architecture
 
@@ -12,18 +15,19 @@ The Tuya Unified Zigbee app implements a **bidirectional button system** that pr
    - Handles app-initiated button presses
    - Registers capability listeners for `button.toggle`, `button_dim_up`, etc.
    - Records virtual button events with timestamps
-   - v5.5.999: Enhanced with state tracking (packetninja pattern)
+   - v5.5.999: state tracking (packetninja pattern)
+   - **Must** route capability updates through `safeSetCapabilityValue()` / markAppCommand (never raw `setCapabilityValue('button', …)`)
 
 2. **PhysicalButtonMixin** (`lib/mixins/PhysicalButtonMixin.js`)
-   - Detects physical button presses from device
-   - Handles ZCL cluster events (scenes, onOff, multistateInput)
+   - Detects physical presses (ZCL scenes / onOff / multistateInput / **mfr 0xFD** / E000 / optional EF00 RX)
    - Triggers Homey flow cards
-   - v5.12.5: Scene mode support
+   - Scene-mode **writes** only when `DeviceOperatingMode.writeSceneAttr === true` (TS004F)
+   - Profile flag `skip8004` is an **active gate** (P2254)
 
 3. **ButtonDevice** (`lib/devices/ButtonDevice.js`)
    - Base class combining both mixins
-   - Implements deduplication logic
-   - Scene mode switching for TS004F/TS0044
+   - Central `triggerButtonPress()` + reverse_button_order
+   - Scene mode switching for **TS004F only** (never TS0041–44)
 
 ### State Tracking Structure
 
@@ -39,276 +43,142 @@ this._virtualButtonState = {
 ### Deduplication System
 
 ```javascript
-// v5.7.14: Bidirectional deduplication
+// v5.7.14 / P92.115: Bidirectional deduplication
 this._virtualPhysicalDedup = {
   lastVirtualPress: {},   // { button: timestamp }
   lastPhysicalPress: {},  // { button: timestamp }
-  dedupWindow: 1500       // 1.5s window
+  dedupWindow: 2000       // 2s window (default in ButtonDevice + mixins)
 };
 ```
+
+- Physical press within window of virtual → skip physical flow (avoid echo)
+- Virtual press within window of physical → skip virtual (avoid double)
 
 ## Scene Mode Implementation
 
 ### TS004F Scene Mode (NOT TS0044)
 
 **TS004F** has two hardware modes:
-- **Dimmer Mode**: Buttons control brightness (up/down/step)
-- **Scene Mode**: Buttons send scene commands (single/double/long press)
+- **Dimmer / command Mode**: brightness up/down/step
+- **Scene / event Mode**: single / double / long press
 
-**TS0041–TS0044** are multi-endpoint OnOff remotes. They stay in scene/multi-press behaviour **without** software 0x8004. Writing attr 32772 on TS0044 logs `not a valid attribute` and kills physical presses (meter91 / P2253).
+**TS0041–TS0044** are multi-endpoint OnOff remotes. They stay in scene/multi-press behaviour **without** software `0x8004`. Writing attr `32772` on TS0044 logs `not a valid attribute` and **kills physical presses** (meter91 / P2253).
+
+| Pid | Write genOnOff 0x8004? | Homey `button_mode` |
+|-----|------------------------|---------------------|
+| TS0041–44 | **No** (`writeSceneAttr: false`) | Default **scene** (UI hint) |
+| TS004F | Yes (0=dimmer, 1=scene) | Auto / scene / dimmer |
+| Exceptions (reject even if labelled TS004F) | `_TZ3000_xffhmvhv`, `_TZ3000_kfu8zapd`, `_TZ3000_xabckq1v` | Skip write |
 
 ### Mode Switching (TS004F only)
 
-Automatic mode switching via attribute 0x8004 on onOff cluster:
 ```javascript
+// Prefer DeviceOperatingMode.applyDesiredMode(device, zclNode)
+// Raw form (TS004F only):
 const MODE_ATTRIBUTE = 0x8004; // 32772
 const SCENE_MODE = 1;
 await onOffCluster.writeAttributes({ [MODE_ATTRIBUTE]: SCENE_MODE });
 ```
 
-### Affected Devices (0x8004 write — TS004F family)
+### Sacred couples (TS0044 → scene_switch_4)
 
-From `lib/managers/ManufacturerVariationManager.js` (TS004F scene-capable IDs).
-Known **exceptions** that reject 0x8004 even if labelled TS004F: `_TZ3000_xffhmvhv`, `_TZ3000_kfu8zapd`, `_TZ3000_xabckq1v` (see DeviceOperatingMode).
+| Couple | Driver | Note |
+|--------|--------|------|
+| `_TZ3000_zgyzgdua` + TS0044 | `scene_switch_4` | meter91 — no 0x8004 |
+| `_TZ3000_wkai4ga5` + TS0044 | `scene_switch_4` | Moes — no 0x8004 |
+| `_TZ3000_kfu8zapd` + TS0044 | `button_wireless_4` | skip 0x8004 |
 
-TS0044 sacred couples (`_TZ3000_zgyzgdua`, `_TZ3000_wkai4ga5`) → `scene_switch_4`, `writeSceneAttr: false`.
+Blue LED on remotes (if present) = pairing / leave-network blink only — **not** Homey-controllable.
 
 ## Virtual Button Flow
 
 1. User presses virtual button in Homey app
-2. `VirtualButtonMixin._handleVirtualToggle(gang)` called
+2. `VirtualButtonMixin._handleVirtualToggle(gang)` (or UI `button.N` → NamedButtonFallback)
 3. Event recorded: `_recordVirtualButtonEvent(gang, 'toggle', data)`
-4. Timestamp stored in `_virtualPhysicalDedup.lastVirtualPress[gang]`
-5. Command sent to device (ZCL or Tuya DP depending on protocol)
-6. Capability value updated in Homey
+4. Timestamp → `_virtualPhysicalDedup.lastVirtualPress[gang]`
+5. `markAppCommand` / command sent (ZCL or Tuya DP)
+6. Capability updated via `safeSetCapabilityValue()`
 
 ## Physical Button Flow
 
-1. Device sends ZCL event (cluster 4/5/6/18 or Tuya DP)
-2. `PhysicalButtonMixin` detects event
-3. Check deduplication: if virtual press within 1.5s, skip
-4. Trigger flow card: `{driver}_physical_gang{N}_{pressType}`
-5. If scene mode enabled, also trigger: `{driver}_gang{N}_scene`
+1. Device sends ZCL / Tuya mfr **0xFD** / E000 / optional EF00 RX / raw frame
+2. `PhysicalButtonMixin` / `OnOffBoundCluster` / `scene_switch_4` parallel wrappers detect it
+3. Dedup: if virtual press within `dedupWindow`, skip
+4. `triggerButtonPress` → declared flow cards only (FLOW-GUARD)
+5. Typical IDs: `{driver}_physical_gang{N}_{on|off|single|double|long|triple}`
+
+Dominant path for battery remotes (TS0041–44): **genOnOff manufacturer cmd 0xFD** per endpoint — not Homey native toggles.
 
 ## Multi-Gang Support
 
 ### Capability Naming Convention
-- Gang 1: `onoff` (NOT `onoff.gang1`)
+- Gang 1: `onoff` (**not** `onoff.gang1`)
 - Gang 2: `onoff.gang2`
 - Gang 3: `onoff.gang3`
 - Gang 4: `onoff.gang4`
 
 ### Virtual Button Capabilities
-- `button.toggle` - Single gang
-- `button.toggle_1` through `button.toggle_8` - Multi-gang
+- `button.toggle` — single gang
+- `button.toggle_1` … `button.toggle_8` — multi-gang
+- UI tiles: `button.1` … `button.N` (TuyaZigbeeDevice listeners + VirtualButtonMixin)
 
 ## Protocol Detection
 
-### ZCL-Only Mode (BSEED devices)
+### ZCL-Only Mode (BSEED / zcl_only)
+Never force leftover EF00 TX on these:
+
 ```javascript
-const ZCL_ONLY_MANUFACTURERS_2G = [
-  '_TZ3000_l9brjwau', '_TZ3000_blhvsaqf',
-  '_TZ3000_ysdv91bk', '_TZ3000_hafsqare'
-];
+// Sacred zcl_only examples (.cursorrules)
+'_TZ3000_l9brjwau', '_TZ3000_blhvsaqf', '_TZ3000_ysdv91bk',
+'_TZ3000_hafsqare', '_TZ3000_e98krvvk', '_TZ3000_iedbgyxt',
+'_TZ3000_cauq1okq', '_TZ3000_w5xztuy7'
 ```
 
 ### Tuya DP Mode
-- Uses `_sendTuyaDP(dp, datatype, value)`
-- DP1-8: Gang states
-- DP14: Power-on behavior
-- DP15: Backlight mode
+- `_sendTuyaDP(dp, datatype, value)`
+- DP1–8: gang states · DP14: power-on · DP15: backlight (`off`/`normal`/`inverted` strings)
 
 ### Hybrid Mode
-- Supports BOTH ZCL and Tuya DP
-- ProtocolAutoOptimizer decides best path
-- Fallback chain: ZCL → Tuya DP → Direct value set
+- Listen on **both** ZCL and Tuya paths (`IntelligentProtocolDetect` HYBRID)
+- Cascade TX: ZCL → Tuya DP → safe capability set
+- Pure ZCL remotes: **EF00 RX listen OK, never force EF00 TX**
 
 ## Common Issues & Solutions
 
-### "Driver Not Initialized" Error
-**Cause**: Exception thrown in `onNodeInit()`
-**Solution**: Wrap init chain in try-catch, ensure super.onNodeInit() completes
+### "Driver Not Initialized"
+**Cause:** Exception in `onNodeInit()`  
+**Fix:** try/catch around init; ensure `super.onNodeInit()` completes
 
 ### Virtual Buttons Not Working
-**Cause**: Missing capability listeners or wrong endpoint
-**Solution**: Check `initVirtualButtons()` called after `super.onNodeInit()`
+**Cause:** Missing listeners / wrong endpoint  
+**Fix:** `initVirtualButtons()` after `super.onNodeInit()`; use `safeSetCapabilityValue`
 
 ### Physical Buttons Not Triggering Flows
-**Cause**: Missing cluster bindings or scene mode not activated
-**Solution**: Verify `setupButtonDetection()` and `_universalSceneModeSwitch()`
+**Cause (TS0041–44):** Missing **0xFD BoundCluster** / magic `0xFFDE=0x13` / wrong driver — **not** missing 0x8004  
+**Cause (TS004F):** Mode stuck in dimmer → `_universalSceneModeSwitch` / `applyDesiredMode`  
+**Fix:** Bind OnOff EP1..N + OnOffBoundCluster; skip wake 0x8004 for endpoint remotes
 
 ### Double Triggers
-**Cause**: Deduplication window too short or not initialized
-**Solution**: Ensure `_virtualPhysicalDedup` initialized before any button presses
+**Cause:** Dedup window missing or too short  
+**Fix:** Init `_virtualPhysicalDedup` before any press (`dedupWindow: 2000`)
+
+### First Press After Sleep Ignored
+**Cause:** Missing Tuya genBasic magic setup  
+**Fix:** `TuyaMagicPacket` write `0xFFDE=0x13` on wake/configure
 
 ## Flow Card Naming Patterns
 
 ### Physical Button Triggers
 - Single gang: `{driver}_physical_{on|off|single|double|long|triple}`
 - Multi-gang: `{driver}_physical_gang{N}_{on|off|single|double|long|triple}`
+- No `titleFormatted` with `[[device]]` (Homey selection bug)
 
-### Scene Mode Triggers
-- `{driver}_gang{N}_scene` with tokens: `{ action, gang }`
-
-## References
-
-- Z2M TS004F Issue: https://github.com/Koenkk/zigbee2mqtt/discussions/7158
-- ZHA Scene Mode: https://github.com/zigpy/zha-device-handlers/issues/1372
-- Hubitat Implementation: https://github.com/kkossev/Hubitat/blob/main/Drivers/Tuya%20TS004F/TS004F.groovy
-# Bidirectional Button System - Implementation Guide
-
-## Overview
-
-The Universal Tuya Zigbee app implements a **bidirectional button system** that prevents double-triggering and maintains state synchronization between physical button presses and virtual app button presses.
-
-## Architecture
-
-### Key Components
-
-1. **VirtualButtonMixin** (`lib/mixins/VirtualButtonMixin.js`)
-   - Handles app-initiated button presses
-   - Registers capability listeners for `button.toggle`, `button_dim_up`, etc.
-   - Records virtual button events with timestamps
-   - v5.5.999: Enhanced with state tracking (packetninja pattern)
-
-2. **PhysicalButtonMixin** (`lib/mixins/PhysicalButtonMixin.js`)
-   - Detects physical button presses from device
-   - Handles ZCL cluster events (scenes, onOff, multistateInput)
-   - Triggers Homey flow cards
-   - v5.12.5: Scene mode support
-
-3. **ButtonDevice** (`lib/devices/ButtonDevice.js`)
-   - Base class combining both mixins
-   - Implements deduplication logic
-   - Scene mode switching for TS004F/TS0044
-
-### State Tracking Structure
-
-```javascript
-this._virtualButtonState = {
-  lastEvent: null,        // Last virtual button event (any)
-  totalPresses: 0,        // Total virtual button presses
-  gangs: {},              // Per-gang state tracking
-  history: []             // Last 10 virtual button events (circular buffer)
-};
-```
-
-### Deduplication System
-
-```javascript
-// v5.7.14: Bidirectional deduplication
-this._virtualPhysicalDedup = {
-  lastVirtualPress: {},   // { button: timestamp }
-  lastPhysicalPress: {},  // { button: timestamp }
-  dedupWindow: 1500       // 1.5s window
-};
-```
-
-## Scene Mode Implementation
-
-### TS004F Scene Mode (NOT TS0044)
-
-**TS004F** has two hardware modes:
-- **Dimmer Mode**: Buttons control brightness (up/down/step)
-- **Scene Mode**: Buttons send scene commands (single/double/long press)
-
-**TS0041–TS0044** are multi-endpoint OnOff remotes. They stay in scene/multi-press behaviour **without** software 0x8004. Writing attr 32772 on TS0044 logs `not a valid attribute` and kills physical presses (meter91 / P2253).
-
-### Mode Switching (TS004F only)
-
-Automatic mode switching via attribute 0x8004 on onOff cluster:
-```javascript
-const MODE_ATTRIBUTE = 0x8004; // 32772
-const SCENE_MODE = 1;
-await onOffCluster.writeAttributes({ [MODE_ATTRIBUTE]: SCENE_MODE });
-```
-
-### Affected Devices (0x8004 write — TS004F family)
-
-From `lib/managers/ManufacturerVariationManager.js` (TS004F scene-capable IDs).
-Known **exceptions** that reject 0x8004 even if labelled TS004F: `_TZ3000_xffhmvhv`, `_TZ3000_kfu8zapd`, `_TZ3000_xabckq1v` (see DeviceOperatingMode).
-
-TS0044 sacred couples (`_TZ3000_zgyzgdua`, `_TZ3000_wkai4ga5`) → `scene_switch_4`, `writeSceneAttr: false`.
-
-## Virtual Button Flow
-
-1. User presses virtual button in Homey app
-2. `VirtualButtonMixin._handleVirtualToggle(gang)` called
-3. Event recorded: `_recordVirtualButtonEvent(gang, 'toggle', data)`
-4. Timestamp stored in `_virtualPhysicalDedup.lastVirtualPress[gang]`
-5. Command sent to device (ZCL or Tuya DP depending on protocol)
-6. Capability value updated in Homey
-
-## Physical Button Flow
-
-1. Device sends ZCL event (cluster 4/5/6/18 or Tuya DP)
-2. `PhysicalButtonMixin` detects event
-3. Check deduplication: if virtual press within 1.5s, skip
-4. Trigger flow card: `{driver}_physical_gang{N}_{pressType}`
-5. If scene mode enabled, also trigger: `{driver}_gang{N}_scene`
-
-## Multi-Gang Support
-
-### Capability Naming Convention
-- Gang 1: `onoff` (NOT `onoff.gang1`)
-- Gang 2: `onoff.gang2`
-- Gang 3: `onoff.gang3`
-- Gang 4: `onoff.gang4`
-
-### Virtual Button Capabilities
-- `button.toggle` - Single gang
-- `button.toggle_1` through `button.toggle_8` - Multi-gang
-
-## Protocol Detection
-
-### ZCL-Only Mode (BSEED devices)
-```javascript
-const ZCL_ONLY_MANUFACTURERS_2G = [
-  '_TZ3000_l9brjwau', '_TZ3000_blhvsaqf',
-  '_TZ3000_ysdv91bk', '_TZ3000_hafsqare'
-];
-```
-
-### Tuya DP Mode
-- Uses `_sendTuyaDP(dp, datatype, value)`
-- DP1-8: Gang states
-- DP14: Power-on behavior
-- DP15: Backlight mode
-
-### Hybrid Mode
-- Supports BOTH ZCL and Tuya DP
-- ProtocolAutoOptimizer decides best path
-- Fallback chain: ZCL  Tuya DP  Direct value set
-
-## Common Issues & Solutions
-
-### "Driver Not Initialized" Error
-**Cause**: Exception thrown in `onNodeInit()`
-**Solution**: Wrap init chain in try-catch, ensure super.onNodeInit() completes
-
-### Virtual Buttons Not Working
-**Cause**: Missing capability listeners or wrong endpoint
-**Solution**: Check `initVirtualButtons()` called after `super.onNodeInit()`
-
-### Physical Buttons Not Triggering Flows
-**Cause**: Missing cluster bindings or scene mode not activated
-**Solution**: Verify `setupButtonDetection()` and `_universalSceneModeSwitch()`
-
-### Double Triggers
-**Cause**: Deduplication window too short or not initialized
-**Solution**: Ensure `_virtualPhysicalDedup` initialized before any button presses
-
-## Flow Card Naming Patterns
-
-### Physical Button Triggers
-- Single gang: `{driver}_physical_{on|off|single|double|long|triple}`
-- Multi-gang: `{driver}_physical_gang{N}_{on|off|single|double|long|triple}`
-
-### Scene Mode Triggers
-- `{driver}_gang{N}_scene` with tokens: `{ action, gang }`
+### Scene / matrix (when declared on driver)
+- Prefer declared cards only — never invent speculative IDs (FLOW-GUARD spam)
 
 ## References
 
-- Z2M TS004F Issue: https://github.com/Koenkk/zigbee2mqtt/discussions/7158
-- ZHA Scene Mode: https://github.com/zigpy/zha-device-handlers/issues/1372
-- Hubitat Implementation: https://github.com/kkossev/Hubitat/blob/main/Drivers/Tuya%20TS004F/TS004F.groovy
+- Z2M TS004F: https://github.com/Koenkk/zigbee2mqtt/discussions/7158
+- ZHA scene mode: https://github.com/zigpy/zha-device-handlers/issues/1372
+- Hubitat TS004F: https://github.com/kkossev/Hubitat/blob/main/Drivers/Tuya%20TS004F/TS004F.groovy
+- Local: `docs/knowledge/TS004X_BATTERY_REMOTES.md` · `lib/zigbee/DeviceOperatingMode.js`

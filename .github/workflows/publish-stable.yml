@@ -43,7 +43,7 @@ env:
   # driver differences over time). 35,000 covers stable with headroom.
   HOMEY_ZIGBEE_MAX_TOTAL_COMBOS: "20000"
   HOMEY_ZIGBEE_MAX_DRIVER_COMBOS: "2000"
-  HOMEY_ZIGBEE_MAX_DRIVER_COMBOS: "1000"
+  HOMEY_ZIGBEE_MAX_CASE_FORMS: "2"
 
 jobs:
   upstream-guard:
