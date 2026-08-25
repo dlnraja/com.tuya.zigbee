@@ -128,7 +128,11 @@
     "check:voice": "node scripts/validation/check-google-assistant-voice-safety.js",
     "io:smoke": "node tools/ci/device-io-facade-smoke.js",
     "check:io": "npm run io:smoke",
-    "check:bare-zigbee": "node tools/ci/bare-zigbee-device-gate.js"
+    "check:bare-zigbee": "node tools/ci/bare-zigbee-device-gate.js",
+    "sync:dp-knowledge": "node tools/ci/sync-dp-couple-knowledge.js",
+    "sync:dp-knowledge:apply": "node tools/ci/sync-dp-couple-knowledge.js --apply",
+    "coverage:dp-cluster-flow": "node tools/ci/coverage-dp-cluster-flow.js",
+    "coverage:dp-cluster-flow:strict": "node tools/ci/coverage-dp-cluster-flow.js --strict"
   },
   "keywords": [
     "homey",

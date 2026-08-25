@@ -49,8 +49,10 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
    * _registerButtonListener is the single button.1 listener — a second one
    * would double-trigger the alarm.
    */
-  // Must stay async: TuyaZigbeeDevice.onNodeInit awaits Promise.resolve(this._registerButtonCapabilityListeners()).catch(...)
-  // Sync empty override → "reading 'catch'" aborts IAS/battery (Peter #2134). BOTH reliability — not AlarmPolarity.
+  // Must stay async: TuyaZigbeeDevice.onNodeInit does
+  // `await this._registerButtonCapabilityListeners().catch(...)`.
+  // A sync empty override returns undefined → "reading 'catch'" and aborts IAS/battery init
+  // (Peter diag f1e5b12d on build 2756 / v9.0.434).
   async _registerButtonCapabilityListeners() { /* intentionally empty — see _registerButtonListener */ }
 
   async onNodeInit({ zclNode }) {
@@ -85,12 +87,22 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
       this._setupHeartbeatMonitor();
       await this._checkClustersAndWarn();
 
+      try {
+        const { logFleetIdentity } = require('../../lib/diagnostics/FleetIdentityLog');
+        logFleetIdentity(this, 'SOS-INIT');
+      } catch (_e) { /* ignore */ }
+
       this.log('[SOS] ✅ Device ready');
     }, 'onNodeInit');
   }
 
+  /**
+   * `alarm_battery` is deliberately absent: Homey guidelines reject a driver
+   * exposing it alongside `measure_battery`, and the low-battery signal already
+   * reaches flows through the driver's battery_low trigger.
+   */
   async _ensureCapabilities() {
-    const caps = ['alarm_generic', 'measure_battery', 'alarm_battery'];
+    const caps = ['alarm_generic', 'measure_battery', 'button.1'];
     for (const cap of caps) {
       if (!this.hasCapability(cap)) {
         await this.addCapability(cap).catch(() => { });
@@ -111,7 +123,7 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
     try {
       this.registerCapabilityListener('button.1', async () => {
         this.log('[SOS] Virtual button press (app UI)');
-        await this._handleAlarm({ source: 'virtual-button' });
+        await this._fireAlarm({ source: 'virtual-button' });
       });
       this.log('[SOS] ✅ button.1 capability listener registered');
     } catch (e) {
@@ -130,25 +142,28 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
     if (IasAceBoundCluster && typeof ep1.bind === 'function') {
       try {
         const boundCluster = new IasAceBoundCluster({
-          onEmergency: () => this._handleAlarm({ source: 'iasAce-bound-emergency' }),
-          onFire: () => this._handleAlarm({ source: 'iasAce-bound-fire' }),
-          onPanic: () => this._handleAlarm({ source: 'iasAce-bound-panic' })
+          onEmergency: () => this._fireAlarm({ source: 'iasAce-bound-emergency' }),
+          onFire: () => this._fireAlarm({ source: 'iasAce-bound-fire' }),
+          onPanic: () => this._fireAlarm({ source: 'iasAce-bound-panic' })
         });
         ep1.bind('iasAce', boundCluster);
+        if (typeof ep1.bind === 'function') {
+          try { ep1.bind('ssIasAce', boundCluster); } catch (_e) { /* name alias */ }
+        }
         this.log('[SOS] ✅ IasAceBoundCluster bound');
       } catch (e) {
         this.error('[SOS] IasAceBoundCluster bind failed:', e.message);
       }
     }
 
-    // Method 2: Explicit cluster listeners
-    const iasAce = ep1.clusters?.iasAce || ep1.clusters?.ssIasAce;
+    // Method 2: Explicit cluster listeners (iasAce + Z2M ssIasAce name)
+    const iasAce = ep1.clusters?.iasAce || ep1.clusters?.ssIasAce || ep1.clusters?.[0x0501] || ep1.clusters?.[1281];
     if (iasAce && typeof iasAce.on === 'function') {
       iasAce.on('command', (cmd, payload) => {
         this.log('[SOS] IAS ACE command:', cmd, payload);
         const cmdLower = (cmd || '').toString().toLowerCase();
-        if (['emergency', 'panic', 'fire', 'sos', '02', '03', '04'].includes(cmdLower)) {
-          this._handleAlarm({ source: 'iasAce-command', command: cmd });
+        if (['emergency', 'commandemergency', 'panic', 'commandpanic', 'fire', 'commandfire', 'sos', '02', '03', '04'].includes(cmdLower)) {
+          this._fireAlarm({ source: 'iasAce-command', command: cmd });
         }
       });
     }
@@ -162,9 +177,9 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
     const iasZone = ep1?.clusters?.iasZone;
     if (!iasZone) {return;}
 
-    // BOTH reliability (Peter #2134/#2137): zoneId 10 + proactive enroll.
-    // zoneId 0 left SOS stuck at "Laatste waarde onbekend" / battery "?".
-    // No AlarmPolarityManager on stable — raw IAS only.
+    // Align with IASZoneManager / Homey "Peter pattern": zoneId 10 + proactive
+    // enroll response. zoneId 0 left SOS buttons stuck at "Laatste waarde onbekend"
+    // with battery "?" (forum #2134).
     const sendEnrollResponse = async (why) => {
       try {
         await iasZone.zoneEnrollResponse({ enrollResponseCode: 0, zoneId: 10 });
@@ -172,12 +187,13 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
         this._enrollmentPending = false;
       } catch (e) {
         this._enrollmentPending = true;
-        // Sleepy buttons time out at boot — retry on announce; do not flood stderr.
+        // Sleepy buttons time out at boot (e181bc15). Retry on announce — do not flood stderr.
         this.log('[SOS] Enroll response deferred (sleepy):', e.message);
       }
     };
     this._sendIasEnrollResponse = sendEnrollResponse;
 
+    // Listener BEFORE proactive response (must be sync-assign, no await gap)
     iasZone.onZoneEnrollRequest = () => {
       this.log('[SOS] Zone Enroll Request received');
       sendEnrollResponse('request');
@@ -186,7 +202,7 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
       iasZone.on('zoneEnrollRequest', () => sendEnrollResponse('event'));
     }
 
-    // CIE Address Setup — never write zero IEEE
+    // CIE Address Setup
     try {
       const ieeeAddress = await this._getCoordinatorIeee();
       if (ieeeAddress) {
@@ -202,15 +218,17 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
       this.error('[SOS] CIE Address setup failed:', e.message);
     }
 
+    // Proactive enrollment (SDK best practice — do not wait for request)
     await sendEnrollResponse('proactive');
 
-    iasZone.onZoneStatusChangeNotification = (payload) => this._handleAlarm(payload);
-
+    // Alarm Listeners
+    iasZone.onZoneStatusChangeNotification = (payload) => this._fireAlarm(payload);
+    
     if (typeof iasZone.on === 'function') {
-      iasZone.on('attr.zoneStatus', (status) => this._handleAlarm({ zoneStatus: status }));
+      iasZone.on('attr.zoneStatus', (status) => this._fireAlarm({ zoneStatus: status }));
       iasZone.on('command', (cmd, payload) => {
         this.log('[SOS] IAS Zone command:', cmd, payload);
-        this._handleAlarm({ source: 'iasZone-command', command: cmd, ...payload });
+        this._fireAlarm({ source: 'iasZone-command', command: cmd, ...payload });
       });
     }
   }
@@ -260,12 +278,12 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
     if (dp === 1 || dp === 14 || (dp === 101 && typeof value !== 'number')) {
       // Tuya DP might send 1, true, 'true', or even 0/false depending on button release/press
       // For SOS buttons, any payload on these DPs usually means a press event
-      this._handleAlarm({ source: 'tuya-dp', dp, value });
+      this._fireAlarm({ source: 'tuya-dp', dp, value });
     }
 
     // Button Actions (DP13)
     if (dp === 13) {
-      this._handleAlarm({ source: 'tuya-dp13', value });
+      this._fireAlarm({ source: 'tuya-dp13', value });
     }
   }
 
@@ -279,13 +297,13 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
     // genOnOff
     const onOff = ep1.clusters?.onOff || ep1.clusters?.genOnOff;
     if (onOff && typeof onOff.on === 'function') {
-      onOff.on('command', (cmd) => this._handleAlarm({ source: 'onOff', command: cmd }));
+      onOff.on('command', (cmd) => this._fireAlarm({ source: 'onOff', command: cmd }));
     }
 
     // multistateInput
     const ms = ep1.clusters?.multistateInput || ep1.clusters?.genMultistateInput;
     if (ms && typeof ms.on === 'function') {
-      ms.on('attr.presentValue', (v) => this._handleAlarm({ source: 'multistate', value: v }));
+      ms.on('attr.presentValue', (v) => this._fireAlarm({ source: 'multistate', value: v }));
     }
   }
 
@@ -303,14 +321,14 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
         cluster.on('attr', (name, value) => {
           const alarmClusters = ['iaszone', 'iasace', '1280', '1281'];
           if (alarmClusters.some(c => clusterName.toLowerCase().includes(c))) {
-            this._handleAlarm({ source: 'global-attr', cluster: clusterName, attr: name, value });
+            this._fireAlarm({ source: 'global-attr', cluster: clusterName, attr: name, value });
           }
         });
 
         cluster.on('command', (cmd, payload) => {
           const alarmClusters = ['iaszone', 'iasace', '1280', '1281'];
           if (alarmClusters.some(c => clusterName.toLowerCase().includes(c))) {
-            this._handleAlarm({ source: 'global-cmd', cluster: clusterName, command: cmd, ...payload });
+            this._fireAlarm({ source: 'global-cmd', cluster: clusterName, command: cmd, ...payload });
           }
         });
       }
@@ -320,11 +338,21 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
   /**
    * Alarm Handling
    */
+  _fireAlarm(payload) {
+    return Promise.resolve(this._handleAlarm(payload)).catch((e) => {
+      this.error('[SOS] _handleAlarm failed:', e?.message || e);
+    });
+  }
+
   async _handleAlarm(payload) {
     if (this._destroyed) {return;}
     this._updateActivity();
 
-    // BOTH: gate keep-alive zoneStatus (no AlarmPolarity on stable — raw bits).
+    const { applyPolarity, observeRaw } = require('../../lib/managers/AlarmPolarityManager');
+
+    // Gate on alarm bits for zoneStatus reports — clear/keep-alive must NOT
+    // fire SOS (or re-write CIE). ACE / DP / announce / command sources pass.
+    // Polarity-aware: inverted OEMs press with alarm1=0 → still fire.
     const src = payload && payload.source ? String(payload.source) : '';
     const allowWithoutAlarmBit = /ace|dp|device_announce|command|tuya|virtual/i.test(src);
     if (!allowWithoutAlarmBit) {
@@ -336,10 +364,13 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
       } else if (typeof zs === 'number' && Number.isFinite(zs)) {
         rawAlarm = (zs & 0x03) !== 0;
       }
-      if (!rawAlarm) {
-        this.log('[SOS] Ignoring non-alarm zoneStatus keep-alive');
+      observeRaw(this, rawAlarm, 'sos');
+      const { value: logicalAlarm, meta } = applyPolarity(this, rawAlarm, 'sos');
+      if (!logicalAlarm) {
+        this.log(`[SOS] Ignoring non-alarm zoneStatus (raw=${rawAlarm}, ${meta.reason})`);
         return;
       }
+      this.log(`[SOS] zoneStatus press accepted (raw=${rawAlarm}, ${meta.reason})`);
     }
 
     const now = Date.now();
@@ -348,18 +379,23 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
 
     this.log('[SOS] SOS BUTTON PRESSED!', JSON.stringify(payload));
 
+    // Wake up actions — battery yes; CIE only if we have a real IEEE
     this._readBatteryNow().catch(() => {});
     this._verifyCieAddress().catch(() => {});
 
+    // Set capability and trigger flow with source info
     await this.safeSetCapabilityValue('alarm_generic', true).catch(() => { });
     if (this.driver?.triggerSOS) {
       const source = (payload && payload.source) || 'unknown';
       await this.driver.triggerSOS(this, { source });
     }
 
-    const { safeSetTimeout, safeClearTimeout } = require('../../lib/utils/safe-timers');
+    // v10.3.0 FIX (B6): Physical presses must fire the same flow sets as a
+    // virtual UI press — pulse button.1 and fire the generic button_pressed
+    // card (the SOS-specific card above stays the primary signal).
     if (this.hasCapability('button.1')) {
       await this.safeSetCapabilityValue('button.1', true).catch(() => { });
+      const { safeSetTimeout } = require('../../lib/utils/safe-timers');
       safeSetTimeout(this, async () => {
         if (this._destroyed) {return;}
         await this.safeSetCapabilityValue('button.1', false).catch(() => { });
@@ -371,6 +407,8 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
         .catch(() => { });
     } catch (_e) { /* generic card not available for this driver */ }
 
+    // Auto-reset
+    const { safeSetTimeout, safeClearTimeout } = require('../../lib/utils/safe-timers');
     if (this._resetTimeout) {safeClearTimeout(this, this._resetTimeout);}
     this._resetTimeout = safeSetTimeout(this, async () => {
       if (this._destroyed) {return;}
@@ -394,7 +432,9 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
       if (attrs.batteryVoltage !== undefined) {this._updateBattery(attrs.batteryVoltage, 'voltage');}
     });
 
-    // BOTH (Peter #2134): force wake read so tiles are not stuck on battery "?"
+    // Forum #2134 (Peter): SOS tiles showed battery "?" / "Laatste waarde onbekend"
+    // because listeners alone never populate measure_battery until a press wake.
+    // Force an immediate read + sleepy retry, and request reporting when supported.
     await this._readBatteryNow().catch(() => {});
     try {
       if (typeof powerCfg.configureReporting === 'function') {
@@ -412,7 +452,7 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
       this._batteryRetryTimer = null;
       if (this._destroyed) {return;}
       this._readBatteryNow().catch(() => {});
-    }, 30000);
+    }, 8000);
   }
 
   async _updateBattery(value, type) {
@@ -431,33 +471,41 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
         : (value > 100 ? Math.round(value / 2) : value);
       if (percent === null || percent === undefined) {return;}
     } else {
+      // Unit detection (V / 100mV / mV) plus the non-linear curve both live in
+      // the shared helper, so a coin cell reads the same here as anywhere else.
       percent = normalizeZclBatteryVoltagePercent(value, { batteryType: '3V_2100' });
       if (percent === null) {return;}
     }
 
     if (percent >= 0 && percent <= 100) {
-      // WHY: Peter #2190 / 0cea6870 — reject sub-2s battery jumps >15pp (11↔20).
+      // WHY (P2248 / Peter #2190 / 0cea6870): SOS CR2032 still flipped 11↔20
+      // after the 2s/15pp guard — widen to 15s and 10pp + log identity.
       const prev = this.getCapabilityValue('measure_battery');
-      if (typeof prev === 'number' && Math.abs(prev - percent) > 15) {
+      if (typeof prev === 'number') {
+        const delta = Math.abs(prev - percent);
         const lastAt = this.getStoreValue('sos_battery_last_write_at') || 0;
-        if (Date.now() - lastAt < 2000) {
-          this.log(`[BATTERY] Ignore spike ${prev}% → ${percent}% (<2s)`);
+        const age = Date.now() - lastAt;
+        if (delta > 10 && age < 15_000) {
+          this.log(`[BATTERY] Ignore spike ${prev}% → ${percent}% (Δ${delta} <15s)`);
+          try {
+            const { logFleetIdentity } = require('../../lib/diagnostics/FleetIdentityLog');
+            logFleetIdentity(this, 'SOS-BATT', { prev, next: percent, delta, ageMs: age });
+          } catch (_e) { /* ignore */ }
           return;
         }
       }
       await this.safeSetCapabilityValue('measure_battery', percent).catch(() => { });
       try { await this.setStoreValue('sos_battery_last_write_at', Date.now()); } catch (_e) { /* ignore */ }
       this._updateActivity();
+      this.log(`[BATTERY] ${percent}% (${type}=${value})`);
 
       // v5.5.833: Trigger battery_low flow when below threshold
+      // alarm_battery deliberately NOT composed — flow card only (Homey guideline)
       const threshold = this.getSetting('battery_low_threshold') || 20;
       if (percent <= threshold) {
-        await this.safeSetCapabilityValue('alarm_battery', true).catch(() => { });
         if (this.driver?.triggerBatteryLow) {
           await this.driver.triggerBatteryLow(this, { battery_level: percent });
         }
-      } else {
-        await this.safeSetCapabilityValue('alarm_battery', false).catch(() => { });
       }
     }
   }
@@ -470,10 +518,7 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
     try {
       const result = await Promise.race([
         powerCfg.readAttributes(['batteryPercentageRemaining', 'batteryVoltage']),
-        new Promise((_, r) => {
-          const timerApi = (this.homey && typeof this.homey.setTimeout === 'function') ? this.homey : globalThis;
-          timerApi.setTimeout(() => { if (this._destroyed) {return;} r(new Error('Timeout')); }, 1500);
-        })
+        new Promise((_, r) => (this.homey && typeof this.homey.setTimeout === 'function' ? this.homey : globalThis).setTimeout(() => { if (this._destroyed) {return;} r(new Error('Timeout')); }, 1500))
       ]).catch(() => ({}));
 
       if (result.batteryPercentageRemaining !== undefined) {this._updateBattery(result.batteryPercentageRemaining, 'percentage');}
@@ -488,11 +533,12 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
    */
   _setupHeartbeatMonitor() {
     this._lastActivity = Date.now();
-    this._heartbeatInterval = this.homey.setInterval(() => {
+    const { safeSetInterval } = require('../../lib/utils/safe-timers');
+    this._heartbeatInterval = safeSetInterval(this, () => {
       if (this._destroyed) {return;}
       const hours = (Date.now() - this._lastActivity) / (1000 * 60 * 60);
       if (hours > 24) {
-        this.log('[SOS] ⚠️ No activity for', Math.round(hours), 'hours');
+        this.log('[SOS] No activity for', Math.round(hours), 'hours');
         if (hours > 48) {this.setUnavailable('Device not responding').catch(() => { });}
       }
     }, 3600000);
@@ -530,6 +576,14 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
   async onSettings({ oldSettings, newSettings, changedKeys }) {
     this.log('[SOS] Settings changed:', changedKeys);
 
+    if (changedKeys.includes('alarm_polarity') || changedKeys.includes('invert_sos')) {
+      try {
+        const { resetLearning } = require('../../lib/managers/AlarmPolarityManager');
+        resetLearning(this);
+        this.log('[SOS] Polarity learning reset');
+      } catch (_e) { /* ignore */ }
+    }
+
     for (const key of changedKeys) {
       if (key === 'refresh_battery' && newSettings.refresh_battery === true) {
         this.log('[SOS] Manual battery read triggered');
@@ -548,7 +602,8 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
   }
 
   async _getCoordinatorIeee() {
-    // BOTH: NEVER write zero CIE — breaks IAS (Peter #2134).
+    // NEVER return/write the zero CIE — that actively breaks IAS enrollment
+    // (forum #2134 Peter: SOS stuck "Laatste waarde onbekend" / battery "?").
     const isZero = (ieee) => {
       if (!ieee) {return true;}
       const hex = String(ieee).replace(/[:\-0x]/gi, '');
@@ -587,7 +642,7 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
         const now = Date.now();
         if (now - lastAlarm > 2000 && now - lastActivity > 30000) {
           this.log('[SOS] 🚨 Device Announce heuristic enabled - Triggering physical alarm fallback');
-          await this._handleAlarm({ source: 'device_announce_udp' });
+          await this._fireAlarm({ source: 'device_announce_udp' });
         }
       }
 
@@ -602,24 +657,33 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
   }
 
   onUninit() {
-    const { safeClearTimeout } = require('../../lib/utils/safe-timers');
+    const { safeClearTimeout, safeClearInterval } = require('../../lib/utils/safe-timers');
     if (this._resetTimeout) {safeClearTimeout(this, this._resetTimeout); this._resetTimeout = null;}
-    if (this._batteryRetryTimer) {safeClearTimeout(this, this._batteryRetryTimer); this._batteryRetryTimer = null;}
     if (this._heartbeatInterval) {
-      try {
-        if (this.homey && typeof this.homey.clearInterval === 'function') {
-          this.homey.clearInterval(this._heartbeatInterval);
-        }
-      } catch (_e) { /* destroyed */ }
+      safeClearInterval(this, this._heartbeatInterval);
       this._heartbeatInterval = null;
+    }
+    if (this._batteryRetryTimer) {
+      safeClearTimeout(this, this._batteryRetryTimer);
+      this._batteryRetryTimer = null;
     }
   }
 
   async onDeleted() {
     this._destroyed = true;
-    const { safeClearTimeout } = require('../../lib/utils/safe-timers');
-    if (this._batteryRetryTimer) {safeClearTimeout(this, this._batteryRetryTimer); this._batteryRetryTimer = null;}
-    if (this._resetTimeout) {safeClearTimeout(this, this._resetTimeout); this._resetTimeout = null;}
+    const { safeClearTimeout, safeClearInterval } = require('../../lib/utils/safe-timers');
+    if (this._batteryRetryTimer) {
+      safeClearTimeout(this, this._batteryRetryTimer);
+      this._batteryRetryTimer = null;
+    }
+    if (this._heartbeatInterval) {
+      safeClearInterval(this, this._heartbeatInterval);
+      this._heartbeatInterval = null;
+    }
+    if (this._resetTimeout) {
+      safeClearTimeout(this, this._resetTimeout);
+      this._resetTimeout = null;
+    }
     await super.onDeleted();
     this.log('[SOS] Device deleted');
   }

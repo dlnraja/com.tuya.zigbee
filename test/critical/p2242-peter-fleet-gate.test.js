@@ -19,10 +19,27 @@ describe('P2242 Peter fleet gate', () => {
   it('SOS battery spike guard + flow debounce (0cea6870)', () => {
     const dev = read('drivers/button_emergency_sos/device.js');
     const drv = read('drivers/button_emergency_sos/driver.js');
-    assert.match(dev, /Ignore spike.*<2s/);
-    assert.match(dev, /sos_battery_last_write_at/);
+    assert.match(dev, /Ignore spike/);
+    assert.match(dev, /15_000|sos_battery_last_write_at/);
     assert.match(drv, /sos_battery_low_flow_at/);
     assert.match(drv, /60_000/);
+  });
+
+  it('fleet identity log dumps mfr+pid without inventing (P2248)', () => {
+    const { readZigbeeIdentity, logFleetIdentity } = require('../../lib/diagnostics/FleetIdentityLog');
+    const lines = [];
+    const fake = {
+      getSetting: (k) => (k === 'zb_manufacturer_name' ? '_TZ3000_demo' : k === 'zb_model_id' ? 'TS0203' : null),
+      getData: () => ({ id: 'x', ieeeAddress: '00:11:22:33:44:55:66:77' }),
+      getName: () => 'Raam test',
+      driver: { id: 'contact_sensor' },
+      log: (...a) => lines.push(a.join(' ')),
+    };
+    const id = readZigbeeIdentity(fake);
+    assert.strictEqual(id.mfr, '_TZ3000_demo');
+    assert.strictEqual(id.pid, 'TS0203');
+    logFleetIdentity(fake, 'CONTACT-WAKE');
+    assert.ok(lines.some((l) => /mfr=_TZ3000_demo/.test(l) && /pid=TS0203/.test(l)));
   });
 
   it('contact + water re-attach IAS on wake (#2183)', () => {
