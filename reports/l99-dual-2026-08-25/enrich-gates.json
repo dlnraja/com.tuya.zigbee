@@ -1,0 +1,106 @@
+{
+  "at": "2026-08-25T05:50:23.958Z",
+  "track": "master",
+  "appId": "com.dlnraja.tuya.zigbee",
+  "hard": false,
+  "results": [
+    {
+      "tag": "BOTH",
+      "ok": true,
+      "skipped": false,
+      "name": "tools/ci/energy-compose-gate.js",
+      "detail": "energy-compose-gate: scanned 431 driver.compose.json files | OK: no Homey Energy v3 approximation + power-cap conflicts | NOTE: 4 driver(s) have energy.batteries + measure_power/meter_power without approximation (informational)",
+      "status": 0
+    },
+    {
+      "tag": "BOTH",
+      "ok": true,
+      "skipped": false,
+      "name": "tools/ci/adaptive-double-division-gate.js",
+      "detail": "[adaptive-double-division-gate] hits=2 hardHits=0 mode=soft |   (soft) lib/devices/BaseUnifiedDevice.js: AdaptiveDataParser + local divisor/smartDivisor in same file |   (soft) lib/tuya/TuyaEF00Manager.js: AdaptiveDataParser + local divisor",
+      "status": 0
+    },
+    {
+      "tag": "BOTH",
+      "ok": true,
+      "skipped": false,
+      "name": "scripts/validation/check-energy-divisor.js",
+      "detail": "   Drivers without divisor: 0 |  | ✅ All energy drivers have proper divisor settings",
+      "status": 0
+    },
+    {
+      "tag": "BOTH",
+      "ok": true,
+      "skipped": false,
+      "name": "tools/ci/smart-features-brand-scrub-gate.js",
+      "detail": "smart-features-brand-scrub-gate: OK (no commercial UI tokens in .homeycompose/flow)",
+      "status": 0
+    },
+    {
+      "tag": "BOTH",
+      "ok": true,
+      "skipped": false,
+      "name": "test/critical/l99-energy-jump-divisor.test.js",
+      "detail": "# skipped 0 | # todo 0 | # duration_ms 39.339256",
+      "status": 0
+    },
+    {
+      "tag": "MASTER_ONLY",
+      "ok": true,
+      "skipped": false,
+      "name": "test/critical/l99-daylight-atmosphere.test.js",
+      "detail": "# skipped 0 | # todo 0 | # duration_ms 39.213288",
+      "status": 0
+    },
+    {
+      "tag": "MASTER_ONLY",
+      "ok": true,
+      "skipped": false,
+      "name": "test/hue-smart-features.test.js",
+      "detail": "# skipped 0 | # todo 0 | # duration_ms 110.405801",
+      "status": 0
+    },
+    {
+      "tag": "MASTER_ONLY",
+      "ok": true,
+      "skipped": false,
+      "name": "tools/ci/flow-l99-orchestrator.js",
+      "detail": "  ], |   \"failCount\": 0 | }",
+      "status": 0
+    }
+  ],
+  "classification": {
+    "energy_compensation_ssot": {
+      "tag": "BOTH",
+      "note": "SmartDivisor + EnergyJumpGuard + rememberLearnedDivisor — reliability/data correctness"
+    },
+    "energy_compose_gate": {
+      "tag": "BOTH",
+      "note": "Athom schema — approximation vs meter caps"
+    },
+    "daylight_atmosphere_solar_sync": {
+      "tag": "MASTER_ONLY",
+      "note": "Circadian / AdaptiveLighting / Path Light / Room Balance — feature engines"
+    },
+    "smart_features_brand_scrub": {
+      "tag": "BOTH",
+      "note": "UI titles/hints only — no commercial names; safe to mirror on stable compose flow titles"
+    },
+    "homey_gap_compensator_soft": {
+      "tag": "BOTH",
+      "note": "Soft notes only — no phantom caps"
+    },
+    "intelligent_lazy_load_boot_budget": {
+      "tag": "BOTH",
+      "note": "64MB heap — BootBudget / IntelligentLazyLoad"
+    },
+    "intelligent_infra_ci_caches": {
+      "tag": "MASTER_ONLY",
+      "note": "CI .cache/ + workflows — not Homey bundle"
+    },
+    "forum_shadow_github_respond": {
+      "tag": "MASTER_ONLY",
+      "note": "Silent forum + GH comments — never Discourse POST"
+    }
+  }
+}
