@@ -266,7 +266,7 @@ const SENSOR_CONFIGS = {
       '_TZE204_bvfld3xc', '_TZE204_sbkgeilo',
       '_TZE200_f1pvdgoh', '_TZE200_hyhl5y36',
       '_TZE204_b8vxct9l', '_TZE204_hyt4iucb',
-      '_TZE200_juzago6i', '_TZ3218_ewrxirng',
+      '_TZE200_juzago6i',
     ],
     battery: false,
     mainsPowered: true,

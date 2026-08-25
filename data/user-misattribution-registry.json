@@ -2803,6 +2803,75 @@
           "dynamic": false
         }
       }
+    },
+    {
+      "id": "p2260-upgcbody-ts0207-water",
+      "mfr": [
+        "_TZ3000_upgcbody",
+        "_TZ3000_UPGCBODY",
+        "_tz3000_upgcbody"
+      ],
+      "productId": [
+        "TS0207"
+      ],
+      "canonicalDriver": "water_leak_sensor",
+      "forbiddenDrivers": [
+        "water_leak_sensor_tuya",
+        "climate_sensor",
+        "water_detector"
+      ],
+      "forbidMode": "couple",
+      "protocol": "ias_zone",
+      "notes": "Z2M TS0207 IAS water leak; melectro T89271 #651",
+      "sources": [
+        "z2m#21247",
+        "blakadder",
+        "P2260"
+      ],
+      "tracks": {
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
+      }
+    },
+    {
+      "id": "p2260-3lbtuxgp-ts0505b-bulb",
+      "mfr": [
+        "_TZ3210_3lbtuxgp",
+        "_TZ3210_3LBTUXGP",
+        "_tz3210_3lbtuxgp"
+      ],
+      "productId": [
+        "TS0505B"
+      ],
+      "canonicalDriver": "bulb_rgb",
+      "forbiddenDrivers": [
+        "wall_dimmer_tuya",
+        "climate_sensor",
+        "bulb_dimmable_dimmer"
+      ],
+      "forbidMode": "couple",
+      "protocol": "zcl",
+      "notes": "Tuya RGBCW downlight; late4marshmellow T89271 #667; Z2M #13579",
+      "sources": [
+        "z2m#13579",
+        "P2260"
+      ],
+      "tracks": {
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
+      }
     }
   ]
 }
