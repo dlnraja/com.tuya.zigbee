@@ -409,6 +409,22 @@ const FORBIDDEN_PIDS = [
     driver: 'contact_sensor',
     pids: ['TS0601'],
   },
+  // P2250: HOBEIAN climate vs presence vs soil — pid pollution bans
+  {
+    id: 'p2250-climate-no-zg204-presence',
+    driver: 'climate_sensor',
+    pids: ['ZG-204Z', 'ZG-204ZE', 'ZG-204ZH', 'ZG-204ZK', 'ZG-204ZL', 'ZG-204ZM', 'ZG-204ZQ', 'ZG-204ZV', 'ZG-205Z', 'ZG-205ZL', 'ZG-303Z'],
+  },
+  {
+    id: 'p2250-presence-no-zg227-climate',
+    driver: 'presence_sensor_radar',
+    pids: ['ZG-227Z', 'ZG-227ZL', 'ZG-303Z'],
+  },
+  {
+    id: 'p2250-soil-no-zg227-climate',
+    driver: 'soil_sensor',
+    pids: ['ZG-227Z', 'ZG-227ZL'],
+  },
 ];
 
 /** Required placements (must be present). */
@@ -447,6 +463,37 @@ const REQUIRED = [
     id: 'p94-m1cvyneb-dimmer',
     driver: 'wall_dimmer_tuya',
     mfrs: ['_TZE284_m1cvyneb', '_TZE204_m1cvyneb', '_TZE200_m1cvyneb'],
+  },
+  // P2250: HOBEIAN climate ZG-227Z/ZL — brand case forms must stay on climate_sensor
+  {
+    id: 'p2250-hobeian-climate',
+    driver: 'climate_sensor',
+    mfrs: ['HOBEIAN', 'hobeian', 'Hobeian'],
+    pids: ['ZG-227Z', 'ZG-227ZL'],
+  },
+  {
+    id: 'p2250-hobeian-soil',
+    driver: 'soil_sensor',
+    mfrs: ['HOBEIAN'],
+    pids: ['ZG-303Z'],
+  },
+  {
+    id: 'p2250-hobeian-presence',
+    driver: 'presence_sensor_radar',
+    mfrs: ['HOBEIAN'],
+    pids: ['ZG-204ZM'],
+  },
+  {
+    id: 'p2250-hobeian-contact',
+    driver: 'contact_sensor',
+    mfrs: ['HOBEIAN'],
+    pids: ['ZG-102Z'],
+  },
+  {
+    id: 'p2250-hobeian-switch2',
+    driver: 'switch_2gang',
+    mfrs: ['HOBEIAN'],
+    pids: ['ZG-305Z'],
   },
   {
     id: 'p108-wkr3jqmr-switch4',
@@ -680,6 +727,14 @@ const REQUIRED = [
  * lcdtemphumidsensor_plug_energy roughly twenty minutes after they were removed.
  * Deriving the rules from the registry makes it one source of truth.
  */
+/**
+ * Registry → FORBIDDEN rules.
+ *
+ * P2250: when a case sets forbidMode:"couple" (or has productIds + forbidMode couple),
+ * the ban is (mfr AND any listed productId) on the forbidden driver — not brand-wide.
+ * One OEM brand (HOBEIAN) owns many verified couples (climate ZG-227, soil ZG-303,
+ * presence ZG-204, contact ZG-102…). Mfr-only bans wrongly strip climate support.
+ */
 function forbiddenFromRegistry() {
   const file = path.join(ROOT, 'data', 'user-misattribution-registry.json');
   if (!fs.existsSync(file)) return [];
@@ -699,8 +754,16 @@ function forbiddenFromRegistry() {
     if (!c || !Array.isArray(c.forbiddenDrivers) || !c.forbiddenDrivers.length) continue;
     const mfrs = [].concat(c.mfr || c.mfrs || []).filter(Boolean);
     if (!mfrs.length) continue;
+    const pids = [].concat(c.productId || c.productIds || []).filter(Boolean);
+    const couple = String(c.forbidMode || '').toLowerCase() === 'couple' && pids.length > 0;
     for (const driver of c.forbiddenDrivers) {
-      rules.push({ id: `registry:${c.id || 'case'}:${driver}`, driver, mfrs });
+      rules.push({
+        id: `registry:${c.id || 'case'}:${driver}`,
+        driver,
+        mfrs,
+        pids: couple ? pids : undefined,
+        couple,
+      });
     }
   }
   return rules;
@@ -728,6 +791,11 @@ function stripForbiddenPlacements() {
     } catch {
       notes.push(`strip skip ${rule.id}: unreadable compose`);
       continue;
+    }
+    // Couple-aware: only strip brand when the forbidden pid is also present
+    if (rule.couple && Array.isArray(rule.pids) && rule.pids.length) {
+      const hasForbiddenPid = rule.pids.some((pid) => hasPid(compose, pid));
+      if (!hasForbiddenPid) continue;
     }
     const list = compose && compose.zigbee && compose.zigbee.manufacturerName;
     if (!Array.isArray(list) || !list.length) continue;
@@ -766,9 +834,15 @@ for (const rule of FORBIDDEN) {
     continue;
   }
   for (const mfr of rule.mfrs) {
-    if (hasMfr(compose, mfr)) {
-      failures.push(`FORBIDDEN ${rule.id}: ${mfr} still in drivers/${rule.driver}`);
+    if (!hasMfr(compose, mfr)) continue;
+    // Couple-aware registry bans: mfr alone is OK when the forbidden pid is absent
+    if (rule.couple && Array.isArray(rule.pids) && rule.pids.length) {
+      const hitPid = rule.pids.find((pid) => hasPid(compose, pid));
+      if (!hitPid) continue;
+      failures.push(`FORBIDDEN ${rule.id}: couple ${mfr}|${hitPid} still in drivers/${rule.driver}`);
+      continue;
     }
+    failures.push(`FORBIDDEN ${rule.id}: ${mfr} still in drivers/${rule.driver}`);
   }
 }
 
@@ -795,6 +869,13 @@ for (const rule of REQUIRED) {
   for (const mfr of rule.mfrs) {
     if (!hasMfr(compose, mfr)) {
       failures.push(`REQUIRED ${rule.id}: ${mfr} missing from drivers/${rule.driver}`);
+    }
+  }
+  if (Array.isArray(rule.pids)) {
+    for (const pid of rule.pids) {
+      if (!hasPid(compose, pid)) {
+        failures.push(`REQUIRED ${rule.id}: productId ${pid} missing from drivers/${rule.driver}`);
+      }
     }
   }
 }

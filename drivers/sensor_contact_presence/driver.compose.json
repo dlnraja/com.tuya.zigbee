@@ -44,13 +44,10 @@
   "subDevices": [],
   "zigbee": {
     "manufacturerName": [
-      "HOBEIAN",
-      "Hobeian",
-      "hobeian"
+      "_DISABLED_sensor_contact_presence"
     ],
     "productId": [
-      "ZG-227Z",
-      "ZG-227ZL"
+      "DISABLED_SENSOR_CONTACT_PRESENCE"
     ],
     "learnmode": {
       "image": "/drivers/presence_sensor_radar/assets/learnmode.svg",

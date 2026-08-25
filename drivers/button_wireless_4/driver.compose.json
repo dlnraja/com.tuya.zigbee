@@ -569,8 +569,8 @@
         "de": "Betriebsart"
       },
       "hint": {
-        "en": "Scene Mode (default) allows single/double/long press for TS0041/TS0042/TS0043/TS0044/TS004F. Dimmer Mode only supports single press. Auto tries to detect and switch automatically.",
-        "fr": "Le mode Scène (par défaut) permet les appuis simples/doubles/longs pour TS0041/TS0042/TS0043/TS0044/TS004F. Le mode Variateur ne supporte que l'appui simple. Auto tente de détecter et basculer automatiquement."
+        "en": "Scene Mode (default) = multi-press. Homey writes genOnOff 0x8004 ONLY on true TS004F. TS0041–44 / Nobø-like firmwares skip that write (presses would die). Blue LED = pairing/network only. Dimmer Mode = TS004F command mode.",
+        "fr": "Mode Scène (défaut) = multi-clics. Homey écrit genOnOff 0x8004 UNIQUEMENT sur vrai TS004F. TS0041–44 / firmwares type Nobø skip (sinon appuis morts). LED bleue = appairage/réseau seulement. Mode Variateur = TS004F command mode."
       },
       "value": "scene",
       "values": [

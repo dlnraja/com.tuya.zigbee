@@ -880,13 +880,22 @@ the Universal Tuya App ID.
 4. `verify-test-version.js` stays fail-closed for the *expected* version
    (do not greenwash a failed upload). `wait-athom-draft-ready.js` must not
    exit 1 on the first `processing_failed` poll — a sibling draft/test of
-   the same version wins; fail-closed only after the wait window.
+   the same version wins; fail-closed only after the wait window
+   (`HOMEY_DRAFT_WAIT_MS` default **360s** after P2252).
 5. Auto-Publish / Auto Publish workflows use `cancel-in-progress: false` on the
    publish concurrency group — cancelling mid-draft/promote causes orphan Athom
    builds and socket hang up races on the next upload.
 6. Auto-Fix+Publish must **not** Homey-publish from `stable-v5` (`github.ref_name != 'stable-v5'`).
    P217: `fix-fingerprint-conflicts.js` must not strip pid-disambiguated brands
    (`HOBEIAN`, `Wing`); re-inject after conflict resolve; anti-bot REQUIRED for HOBEIAN on `switch_2gang`.
+7. **P2252 Athom combo budget (root cause of many `socket hang up`)**:
+   Athom expands `manufacturerName[] × productId[]` using **RAW array lengths**
+   (every CASE form counts). `compact-zigbee-identifiers.cjs` must:
+   - count `afterTotal` as raw length product (not unique-lowercase);
+   - cap CASE forms (`HOMEY_ZIGBEE_MAX_CASE_FORMS`, default 2);
+   - run a second pass until raw total ≤ `HOMEY_ZIGBEE_MAX_TOTAL_COMBOS` (20k);
+   - per-driver raw ≤ `HOMEY_ZIGBEE_MAX_DRIVER_COMBOS` (2k).
+   Source compose may stay large; only the publish temp manifest is compacted.
 
 ---
 

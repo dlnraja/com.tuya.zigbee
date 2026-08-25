@@ -49,13 +49,15 @@ this._virtualPhysicalDedup = {
 
 ## Scene Mode Implementation
 
-### TS004F/TS0044 Scene Mode
+### TS004F Scene Mode (NOT TS0044)
 
-These devices have **two modes**:
+**TS004F** has two hardware modes:
 - **Dimmer Mode**: Buttons control brightness (up/down/step)
 - **Scene Mode**: Buttons send scene commands (single/double/long press)
 
-### Mode Switching
+**TS0041–TS0044** are multi-endpoint OnOff remotes. They stay in scene/multi-press behaviour **without** software 0x8004. Writing attr 32772 on TS0044 logs `not a valid attribute` and kills physical presses (meter91 / P2253).
+
+### Mode Switching (TS004F only)
 
 Automatic mode switching via attribute 0x8004 on onOff cluster:
 ```javascript
@@ -64,18 +66,12 @@ const SCENE_MODE = 1;
 await onOffCluster.writeAttributes({ [MODE_ATTRIBUTE]: SCENE_MODE });
 ```
 
-### Affected Devices
+### Affected Devices (0x8004 write — TS004F family)
 
-From `lib/managers/ManufacturerVariationManager.js`:
-```javascript
-const TS004F_SCENE_MODE_IDS = [
-  '_TZ3000_xabckq1v', '_TZ3000_czuyt8lz', '_TZ3000_pcqjmcud',
-  '_TZ3000_4fjiwweb', '_TZ3000_uri7oadn', '_TZ3000_ixla93vd',
-  '_TZ3000_qzjcsmar', '_TZ3000_wkai4ga5', '_TZ3000_5tqxpine',
-  '_TZ3000_abrsvsou', '_TZ3000_ja5osu5g', '_TZ3000_kjfzuycl',
-  '_TZ3000_owgcnkrh', '_TZ3000_rrjr1dsk', '_TZ3000_vdfwjopk'
-];
-```
+From `lib/managers/ManufacturerVariationManager.js` (TS004F scene-capable IDs).
+Known **exceptions** that reject 0x8004 even if labelled TS004F: `_TZ3000_xffhmvhv`, `_TZ3000_kfu8zapd`, `_TZ3000_xabckq1v` (see DeviceOperatingMode).
+
+TS0044 sacred couples (`_TZ3000_zgyzgdua`, `_TZ3000_wkai4ga5`) → `scene_switch_4`, `writeSceneAttr: false`.
 
 ## Virtual Button Flow
 
@@ -210,13 +206,15 @@ this._virtualPhysicalDedup = {
 
 ## Scene Mode Implementation
 
-### TS004F/TS0044 Scene Mode
+### TS004F Scene Mode (NOT TS0044)
 
-These devices have **two modes**:
+**TS004F** has two hardware modes:
 - **Dimmer Mode**: Buttons control brightness (up/down/step)
 - **Scene Mode**: Buttons send scene commands (single/double/long press)
 
-### Mode Switching
+**TS0041–TS0044** are multi-endpoint OnOff remotes. They stay in scene/multi-press behaviour **without** software 0x8004. Writing attr 32772 on TS0044 logs `not a valid attribute` and kills physical presses (meter91 / P2253).
+
+### Mode Switching (TS004F only)
 
 Automatic mode switching via attribute 0x8004 on onOff cluster:
 ```javascript
@@ -225,18 +223,12 @@ const SCENE_MODE = 1;
 await onOffCluster.writeAttributes({ [MODE_ATTRIBUTE]: SCENE_MODE });
 ```
 
-### Affected Devices
+### Affected Devices (0x8004 write — TS004F family)
 
-From `lib/managers/ManufacturerVariationManager.js`:
-```javascript
-const TS004F_SCENE_MODE_IDS = [
-  '_TZ3000_xabckq1v', '_TZ3000_czuyt8lz', '_TZ3000_pcqjmcud',
-  '_TZ3000_4fjiwweb', '_TZ3000_uri7oadn', '_TZ3000_ixla93vd',
-  '_TZ3000_qzjcsmar', '_TZ3000_wkai4ga5', '_TZ3000_5tqxpine',
-  '_TZ3000_abrsvsou', '_TZ3000_ja5osu5g', '_TZ3000_kjfzuycl',
-  '_TZ3000_owgcnkrh', '_TZ3000_rrjr1dsk', '_TZ3000_vdfwjopk'
-];
-```
+From `lib/managers/ManufacturerVariationManager.js` (TS004F scene-capable IDs).
+Known **exceptions** that reject 0x8004 even if labelled TS004F: `_TZ3000_xffhmvhv`, `_TZ3000_kfu8zapd`, `_TZ3000_xabckq1v` (see DeviceOperatingMode).
+
+TS0044 sacred couples (`_TZ3000_zgyzgdua`, `_TZ3000_wkai4ga5`) → `scene_switch_4`, `writeSceneAttr: false`.
 
 ## Virtual Button Flow
 

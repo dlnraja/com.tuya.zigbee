@@ -559,12 +559,14 @@
       },
       {
         "id": "INT-062",
-        "deviceName": "Smart Plug",
+        "deviceName": "Moes 4-button wireless remote",
         "manufacturerName": "_TZ3000_kfu8zapd",
-        "productId": "TS011F",
-        "source": "GitHub PR #1209",
+        "productId": "TS0044",
+        "productIdAlt": ["TS004F"],
+        "source": "GitHub PR #1209 / forum #2098-#2104 / Z2M Moes XH-SY-04Z — corrected P2251 (was false TS011F plug)",
         "status": "supported",
-        "driver": "plug_smart"
+        "driver": "button_wireless_4",
+        "notes": "OnOff 0xFD multi-EP; never write genOnOff 0x8004; never TS011F plug"
       }
     ],
 

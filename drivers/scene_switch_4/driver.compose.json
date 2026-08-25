@@ -93,7 +93,10 @@
       "_tz3000_WKAI4GA5",
       "_tz3000_ZGYZGDUA",
       "_tze200_ZQTIAM9D",
-      "_tze204_ZQTIAM9D"
+      "_tze204_ZQTIAM9D",
+      "HOBEIAN",
+      "hobeian",
+      "Hobeian"
     ],
     "productId": [
       "ERS-10TZBVK-AA",
@@ -179,10 +182,10 @@
         "fr": "Mode de fonctionnement"
       },
       "hint": {
-        "en": "Scene Mode allows single/double/long press. Dimmer Mode only supports single press. Auto tries to detect and switch automatically.",
-        "fr": "Le mode Scène permet les appuis simples/doubles/longs. Le mode Variateur ne supporte que l'appui simple. Auto tente de détecter et basculer automatiquement."
+        "en": "TS0044 Scene Switch: keep Scene Mode (multi-press). Homey does NOT write genOnOff 0x8004 on TS0044 (unlike some TS004F). Blue LED = pairing flash or network leave blink only — not controllable from Homey.",
+        "fr": "Scene Switch TS0044: rester en Mode Scène (multi-clics). Homey n’écrit PAS genOnOff 0x8004 sur TS0044 (contrairement à certains TS004F). LED bleue = flash appairage ou clignotement sortie réseau uniquement — non contrôlable depuis Homey."
       },
-      "value": "auto",
+      "value": "scene",
       "values": [
         {
           "id": "auto",
@@ -194,18 +197,31 @@
         {
           "id": "scene",
           "label": {
-            "en": "Scene Mode (Multi-press)",
-            "fr": "Mode Scène (Multi-clics)"
+            "en": "Scene Mode (default — Multi-press)",
+            "fr": "Mode Scène (par défaut — Multi-clics)"
           }
         },
         {
           "id": "dimmer",
           "label": {
-            "en": "Dimmer Mode",
-            "fr": "Mode Variateur"
+            "en": "Dimmer Mode (TS004F only)",
+            "fr": "Mode Variateur (TS004F seulement)"
           }
         }
       ]
+    },
+    {
+      "id": "reverse_button_order",
+      "type": "checkbox",
+      "label": {
+        "en": "Reverse button order",
+        "fr": "Inverser l’ordre des boutons"
+      },
+      "value": false,
+      "hint": {
+        "en": "Enable if physical buttons fire in reverse order (e.g. 4,3,2,1)",
+        "fr": "Activer si les boutons physiques déclenchent dans l’ordre inverse (ex. 4,3,2,1)"
+      }
     }
   ],
   "maintenanceActions": [

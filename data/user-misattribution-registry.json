@@ -591,11 +591,49 @@
       "mfr": [
         "HOBEIAN",
         "hobeian",
+        "Hobeian"
+      ],
+      "productId": [
+        "ZG-303Z"
+      ],
+      "canonicalDriver": "soil_sensor",
+      "forbiddenDrivers": [
+        "climate_sensor",
+        "climate_sensor_energy",
+        "sensor_climate_temphumidsensor",
+        "temphumidsensor",
+        "temphumidsensor5",
+        "soilsensor_2",
+        "presence_sensor_radar",
+        "sensor_contact_presence"
+      ],
+      "forbidMode": "couple",
+      "protocol": "tuya_ef00",
+      "notes": "HOBEIAN|ZG-303Z soil only. Brand HOBEIAN also owns climate ZG-227Z/ZL, presence ZG-204*, contact ZG-102*, water ZG-222*, switch ZG-305Z — never ban brand from climate mfr-only. nt4pquef / wqashyqo are separate couples.",
+      "sources": [
+        "z2m-ZG-303Z",
+        "forum-blutch32",
+        "P178",
+        "P2250"
+      ],
+      "tracks": {
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
+      }
+    },
+    {
+      "id": "wqashyqo-ts0601-soil",
+      "mfr": [
         "_TZE200_wqashyqo",
         "_tze200_wqashyqo"
       ],
       "productId": [
-        "ZG-303Z",
         "TS0601"
       ],
       "canonicalDriver": "soil_sensor",
@@ -603,14 +641,101 @@
         "climate_sensor",
         "climate_sensor_energy",
         "sensor_climate_temphumidsensor",
+        "temphumidsensor",
+        "temphumidsensor5",
         "soilsensor_2"
       ],
       "protocol": "tuya_ef00",
-      "notes": "HOBEIAN ZG-303Z / _TZE200_wqashyqo soil. Lock HOBEIAN|ZG-303Z and wqashyqo|TS0601 only — never HOBEIAN|TS0601 (other HOBEIAN TS0601 exist). nt4pquef stays on soil-nt4pquef.",
+      "notes": "HOBEIAN ZG-303Z MCU alias _TZE200_wqashyqo|TS0601 — mfr-forbid on climate catch-alls. Do not invent HOBEIAN|TS0601 brand lock.",
       "sources": [
         "z2m-ZG-303Z",
-        "forum-blutch32",
-        "P178"
+        "P178",
+        "P2250"
+      ],
+      "tracks": {
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
+      }
+    },
+    {
+      "id": "hobeian-zg227z-climate",
+      "mfr": [
+        "HOBEIAN",
+        "hobeian",
+        "Hobeian"
+      ],
+      "productId": [
+        "ZG-227Z",
+        "ZG-227ZL"
+      ],
+      "canonicalDriver": "climate_sensor",
+      "forbiddenDrivers": [
+        "soil_sensor",
+        "soilsensor_2",
+        "presence_sensor_radar",
+        "sensor_contact_presence",
+        "motion_sensor",
+        "contact_sensor"
+      ],
+      "forbidMode": "couple",
+      "protocol": "zcl",
+      "notes": "HOBEIAN ZG-227Z/ZL temp+humidity (Z2M). Pure ZCL msTemperatureMeasurement+msRelativeHumidity. Case-insensitive brand forms required. Not soil/presence/contact.",
+      "sources": [
+        "z2m-ZG-227Z",
+        "z2m-ZG-227ZL",
+        "P2250"
+      ],
+      "tracks": {
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
+      }
+    },
+    {
+      "id": "hobeian-zg204-presence",
+      "mfr": [
+        "HOBEIAN",
+        "hobeian",
+        "Hobeian"
+      ],
+      "productId": [
+        "ZG-204Z",
+        "ZG-204ZE",
+        "ZG-204ZH",
+        "ZG-204ZK",
+        "ZG-204ZL",
+        "ZG-204ZM",
+        "ZG-204ZQ",
+        "ZG-204ZV",
+        "ZG-205Z",
+        "ZG-205ZL"
+      ],
+      "canonicalDriver": "presence_sensor_radar",
+      "forbiddenDrivers": [
+        "climate_sensor",
+        "climate_sensor_energy",
+        "sensor_climate_temphumidsensor",
+        "temphumidsensor",
+        "temphumidsensor5",
+        "soil_sensor"
+      ],
+      "forbidMode": "couple",
+      "protocol": "tuya_ef00",
+      "notes": "HOBEIAN ZG-204*/ZG-205* radar/PIR presence family — never climate or soil catch-all.",
+      "sources": [
+        "z2m-ZG-204ZM",
+        "P2250"
       ],
       "tracks": {
         "master": {
@@ -2560,6 +2685,41 @@
       ],
       "source": "p2236-forum-integral",
       "notes": "Bo_Kjaergaard soft TS0001 REJECTED — compose plug TS011F/TS0121"
+    },
+    {
+      "id": "p2251-sergep-nous-sophos-external",
+      "mfr": [
+        "_TZ3000_v5498kdm",
+        "_tz3000_v5498kdm"
+      ],
+      "productId": [
+        "TS0001"
+      ],
+      "canonicalDriver": null,
+      "doNotTouch": true,
+      "forbiddenDrivers": [
+        "switch_1gang",
+        "wall_switch_1gang_1way",
+        "climate_sensor",
+        "generic_tuya",
+        "zigbee_universal"
+      ],
+      "protocol": "external_app",
+      "notes": "T99614 SergeP/Antek — Nous/SoPhos app, NOT Universal Tuya. Never lock into our drivers from that post.",
+      "sources": [
+        "forum-T99614",
+        "P2251"
+      ],
+      "tracks": {
+        "master": {
+          "static": true,
+          "dynamic": false
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
+      }
     }
   ]
 }

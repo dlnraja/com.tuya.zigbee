@@ -51,7 +51,10 @@ Catalog: **431** drivers, **57** locked community cases.
 | rgb-bulb-jaap6jeb | `bulb_rgbw` | `_TZ3210_jaap6jeb` + TS0505B | contact_sensor, motion_sensor | zcl |
 | plug-vzopcetz-1obwwnmq | `socket_power_strip` | `_TZ3000_vzopcetz` + TS011F | button_wireless_2, tunable_bulb_E14 | zcl |
 | rgb-bulb-iystcadi-ts0505b | `light_bulb_rgb_led` | `_TZ3210_iystcadi` + TS0505B | wall_dimmer_tuya, led_strip_advanced, dimmable_led_strip, led_controller_rgb | zcl |
-| hobeian-zg303z-soil | `soil_sensor` | `HOBEIAN` + ZG-303Z, TS0601 | climate_sensor, climate_sensor_energy, sensor_climate_temphumidsensor, soilsensor_2 | tuya_ef00 |
+| hobeian-zg303z-soil | `soil_sensor` | `HOBEIAN` + ZG-303Z | climate_sensor, climate_sensor_energy, sensor_climate_temphumidsensor, temphumidsensor, soilsensor_2, presence_sensor_radar | tuya_ef00 |
+| wqashyqo-ts0601-soil | `soil_sensor` | `_TZE200_wqashyqo` + TS0601 | climate_sensor, climate_sensor_energy, sensor_climate_temphumidsensor, temphumidsensor, soilsensor_2 | tuya_ef00 |
+| hobeian-zg227z-climate | `climate_sensor` | `HOBEIAN` + ZG-227Z, ZG-227ZL | soil_sensor, presence_sensor_radar, sensor_contact_presence, motion_sensor, contact_sensor | zcl |
+| hobeian-zg204-presence | `presence_sensor_radar` | `HOBEIAN` + ZG-204*/ZG-205* | climate_sensor, soil_sensor, temphumidsensor | tuya_ef00 |
 | curtain-r0jdjrvi-tilt | `curtain_motor_tilt` | `_TZE204_r0jdjrvi` + TS0601, TS0601_curtain_tilt | plug, curtain_motor, switch_1gang | tuya_ef00 |
 | p189-usb-wall-outlet-not-climate | `switch_usb_dongle` | `_TZ3000_3zofvcaa` + TS011F | climate_sensor | zcl |
 | p189-ts0207-repeater-not-motion | `zigbee_repeater` | `_TZ3000_5k5vh43t` + TS0207 | motion_sensor, remote_button_wireless_usb | zcl |

@@ -31,6 +31,23 @@ alwaysApply: true
 
 **Règle d’or :** identité = **(manufacturerName, productId)**. Variants et pid multiples sous un mfr sont attendus — toujours verrouiller et investiguer le **couple**, jamais le mfr isolé.
 
+### HOBEIAN (brand ≠ one device) — P2250
+| Couple | Driver | Protocol |
+|--------|--------|----------|
+| `HOBEIAN` + `ZG-227Z`/`ZG-227ZL` | `climate_sensor` | ZCL temp/humidity |
+| `HOBEIAN` + `ZG-303Z` | `soil_sensor` | EF00 soil |
+| `HOBEIAN` + `ZG-204*`/`ZG-205*` | `presence_sensor_radar` | presence/radar |
+| `HOBEIAN` + `ZG-102Z`/`ZG-102ZL` | `contact_sensor` | IAS/contact |
+| `HOBEIAN` + `ZG-222*`/`ZG-223Z` | `water_leak_sensor` | IAS leak |
+| `HOBEIAN` + `ZG-305Z` | `switch_2gang` | ZCL USB 2-gang |
+| `HOBEIAN` + `ZG-106Z` | `illuminance_sensor` | illuminance |
+| `HOBEIAN` + `ZG-101ZL` | `button_wireless_1` | button |
+
+Never ban brand `HOBEIAN` from climate because soil exists — use **couple-aware** registry (`forbidMode: "couple"`). Match all CASE forms via `pairingCaseVariants` / `CaseInsensitiveMatcher` (HOBEIAN / hobeian / Hobeian).
+
+### Homey native gaps → parallel wrappers
+Homey SDK/interview does **not** cover every ZCL/EF00 path. Runtime must keep parallel RX/TX: `HomeyCompensationLayer`, `IntelligentProtocolDetect` (HYBRID), `CapabilityCommandRouter` / `ProtocolFallbackChain`, raw frame + magic handshake, `ZclClusterLexicon`. Never assume “native cluster only”.
+
 ## High-risk peculiarities (never invert)
 - `_TZE284_m1cvyneb` + `TS0601` → `wall_dimmer_tuya` only. Brightness MCU **0–1000**. Forbid climate/soil/universal.
 - `_TZ3000_w5xztuy7` + `TS0002` → `switch_2gang` **zcl_only**.

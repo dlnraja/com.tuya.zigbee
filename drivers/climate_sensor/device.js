@@ -25,7 +25,21 @@ class ClimateSensorDevice extends UnifiedSensorBase {
 
     this._batteryInference = new BatteryInference(this);
 
+    // WHY(P2250): HOBEIAN ZG-227Z/ZL is pure ZCL climate — brand also owns soil/presence
+    // couples; log couple so diags never confuse with ZG-303Z / ZG-204*.
+    try {
+      const mfr = this._manufacturerName();
+      const pid = this.getSetting?.('zb_model_id')
+        || this.getStoreValue?.('modelId')
+        || this.getData?.()?.productId
+        || '';
+      if (containsCI(mfr, 'HOBEIAN') || /ZG-227/i.test(String(pid))) {
+        this.log(`[CLIMATE-HOBEIAN] couple mfr=${mfr || '?'} pid=${pid || '?'} (ZCL temp/humidity; hybrid wrappers still active)`);
+      }
+    } catch (_e) { /* non-fatal */ }
+
     // Parent handles standard sensor logic and v8 discovery initialization
+    // (IntelligentProtocolDetect HYBRID + HomeyCompensationLayer parallel RX/TX)
     await super.onNodeInit({ zclNode });
 
     this.log('[CLIMATE] ✅ Ready');

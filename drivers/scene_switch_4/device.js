@@ -27,7 +27,9 @@ class SceneSwitch4Device extends ButtonDevice {
     await this._setupTuyaDPButtonDetection(zclNode);
     await this._setupRawFrameInterceptor(zclNode);
 
-    this.log('[SCENE_SWITCH_4] v10.1.1 initialized with E000 + DP support');
+    // WHY(P2253): parallel hybrid stack — native ZCL + Tuya mfr 0xFD + E000 + EF00 RX + raw
+    this.log('[SCENE_SWITCH_4] hybrid RX: OnOff-0xFD + E000 + DP(EF00 listen) + raw; TX: no 0x8004 on TS0044; blue LED=pairing/network only');
+    this.log('[SCENE_SWITCH_4] v10.1.1+P2253 initialized with hybrid wrappers');
   }
 
   /**

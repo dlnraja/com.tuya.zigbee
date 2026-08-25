@@ -5227,13 +5227,13 @@
     "productId": [
       "TS0041"
     ],
-    "driver": "wall_remote_1_gang",
+    "driver": "button_wireless_1",
     "deviceType": "remote",
     "capabilities": [],
     "hasBattery": true,
     "vendor": null,
-    "description": null,
-    "source": "Johan"
+    "description": "P2251: was stale wall_remote_1_gang — SunBeech sacred couple → button_wireless_1",
+    "source": "Johan/P2236/P2251"
   },
   {
     "mfr": "_TZ3000_q68478x7",

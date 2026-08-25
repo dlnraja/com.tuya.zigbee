@@ -17,7 +17,7 @@ const path = require('path');
 
 const ROOT = path.join(__dirname, '..', '..');
 const APP = process.env.APP_ID || 'com.dlnraja.tuya.zigbee';
-const MAX_MS = Number(process.env.HOMEY_DRAFT_WAIT_MS || 240000);
+const MAX_MS = Number(process.env.HOMEY_DRAFT_WAIT_MS || 360000);
 const STEP_MS = Number(process.env.HOMEY_DRAFT_POLL_MS || 20000);
 const HEALTHY_TEST_PATCH_LAG = Number(process.env.HOMEY_HEALTHY_TEST_PATCH_LAG || 3);
 
