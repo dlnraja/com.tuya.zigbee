@@ -63,37 +63,55 @@
     "batteries": [
       "CR2032",
       "CR2450"
-    ],
-    "approximation": {
-      "usageConstant": 0.5
-    }
+    ]
   },
   "zigbee": {
     "manufacturerName": [
       "_TZ3000_BCZR4E10",
+      "_TZ3000_I5J6K7L8",
       "_TZ3000_MJWG6A52",
       "_TZ3000_MUTFMN4U",
       "_TZ3000_NGSPH3OJ",
       "_TZ3000_UYJMM0ET",
-      "_TZ3000_famkxci2",
+      "_tz3000_famkxci2",
+      "_TZ3000_FAMKXCI2",
       "_tz3000_bczr4e10",
+      "_tz3000_i5j6k7l8",
       "_tz3000_mjwg6a52",
       "_tz3000_mutfmn4u",
       "_tz3000_ngsph3oj",
       "_tz3000_uyjmm0et",
-      "_TZ3000_FAMKXCI2",
-      "_tz3000_famkxci2",
       "_TZ3000_bczr4e10",
+      "_TZ3000_i5j6k7l8",
       "_TZ3000_mjwg6a52",
       "_TZ3000_mutfmn4u",
       "_TZ3000_ngsph3oj",
-      "_TZ3000_uyjmm0et"
+      "_TZ3000_uyjmm0et",
+      "_TZ3000_famkxci2",
+      "_tz3000_BCZR4E10",
+      "_tz3000_I5J6K7L8",
+      "_tz3000_MJWG6A52",
+      "_tz3000_MUTFMN4U",
+      "_tz3000_NGSPH3OJ",
+      "_tz3000_UYJMM0ET",
+      "_tz3000_FAMKXCI2",
+      "_TZ3000_1kmurvlx",
+      "_tz3000_1kmurvlx",
+      "_TZ3000_1KMURVLX",
+      "_tz3000_1KMURVLX",
+      "_TZ3000_a7ouggvs",
+      "_tz3000_a7ouggvs",
+      "_TZ3000_qzjcsmar",
+      "_tz3000_qzjcsmar",
+      "_TZ3400_key8kk7r",
+      "_tz3400_key8kk7r",
+      "_TZ3000_key8kk7r",
+      "_tz3000_key8kk7r"
     ],
     "productId": [
       "TS0043",
       "TS0013",
       "TS0601",
-      "TS0044",
       "TS0215A"
     ],
     "learnmode": {
@@ -124,6 +142,9 @@
           1280,
           1281,
           61184
+        ],
+        "bindings": [
+          6
         ]
       },
       "2": {
@@ -135,6 +156,9 @@
           6,
           18,
           57344
+        ],
+        "bindings": [
+          6
         ]
       },
       "3": {
@@ -146,6 +170,9 @@
           6,
           18,
           57344
+        ],
+        "bindings": [
+          6
         ]
       },
       "4": {
@@ -510,23 +537,21 @@
       "id": "tuya_revive",
       "title": {
         "en": "Tuya Revive (device recovery)",
-        "fr": "Tuya Revive (récupération appareil)"
+        "fr": "Tuya Revive (récupération appareil)",
+        "nl": "Tuya Revive (apparaatherstel)",
+        "de": "Tuya Revive (Gerätewiederherstellung)"
       }
     },
     {
       "id": "generate_issue_report",
       "title": {
         "en": "Generate support report (GitHub issue)",
-        "fr": "Générer rapport de support (issue GitHub)"
+        "fr": "Générer rapport de support (issue GitHub)",
+        "nl": "Supportrapport genereren (GitHub issue)",
+        "de": "Supportbericht erstellen (GitHub Issue)"
       }
     }
   ],
   "id": "button_wireless_3",
-  "version": "1.0.0",
-  "_pidConflictNotes": [
-    "// PID-CONFLICT-NOTE TS0215A shared with 28 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE TS0043 shared with 16 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE TS0013 shared with 15 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE TS0044 shared with 9 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-  ]
+  "version": "1.0.0"
 }
