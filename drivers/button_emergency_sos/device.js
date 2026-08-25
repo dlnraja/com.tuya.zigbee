@@ -87,6 +87,11 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
       this._setupHeartbeatMonitor();
       await this._checkClustersAndWarn();
 
+      try {
+        const { logFleetIdentity } = require('../../lib/diagnostics/FleetIdentityLog');
+        logFleetIdentity(this, 'SOS-INIT');
+      } catch (_e) { /* ignore */ }
+
       this.log('[SOS] ✅ Device ready');
     }, 'onNodeInit');
   }
@@ -473,28 +478,34 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
     }
 
     if (percent >= 0 && percent <= 100) {
-      // WHY: Peter SOS battery "nervous" — reject sub-2s jumps >15pp (11↔20).
+      // WHY (P2248 / Peter #2190 / 0cea6870): SOS CR2032 still flipped 11↔20
+      // after the 2s/15pp guard — widen to 15s and 10pp + log identity.
       const prev = this.getCapabilityValue('measure_battery');
-      if (typeof prev === 'number' && Math.abs(prev - percent) > 15) {
+      if (typeof prev === 'number') {
+        const delta = Math.abs(prev - percent);
         const lastAt = this.getStoreValue('sos_battery_last_write_at') || 0;
-        if (Date.now() - lastAt < 2000) {
-          this.log(`[BATTERY] Ignore spike ${prev}% → ${percent}% (<2s)`);
+        const age = Date.now() - lastAt;
+        if (delta > 10 && age < 15_000) {
+          this.log(`[BATTERY] Ignore spike ${prev}% → ${percent}% (Δ${delta} <15s)`);
+          try {
+            const { logFleetIdentity } = require('../../lib/diagnostics/FleetIdentityLog');
+            logFleetIdentity(this, 'SOS-BATT', { prev, next: percent, delta, ageMs: age });
+          } catch (_e) { /* ignore */ }
           return;
         }
       }
       await this.safeSetCapabilityValue('measure_battery', percent).catch(() => { });
       try { await this.setStoreValue('sos_battery_last_write_at', Date.now()); } catch (_e) { /* ignore */ }
       this._updateActivity();
+      this.log(`[BATTERY] ${percent}% (${type}=${value})`);
 
       // v5.5.833: Trigger battery_low flow when below threshold
+      // alarm_battery deliberately NOT composed — flow card only (Homey guideline)
       const threshold = this.getSetting('battery_low_threshold') || 20;
       if (percent <= threshold) {
-        await this.safeSetCapabilityValue('alarm_battery', true).catch(() => { });
         if (this.driver?.triggerBatteryLow) {
           await this.driver.triggerBatteryLow(this, { battery_level: percent });
         }
-      } else {
-        await this.safeSetCapabilityValue('alarm_battery', false).catch(() => { });
       }
     }
   }

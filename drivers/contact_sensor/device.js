@@ -451,11 +451,16 @@ class ContactSensorDevice extends UnifiedSensorBase {
    */
   async onEndDeviceAnnounce() {
     this.log('[REJOIN] Device announced itself, refreshing state...');
+    try {
+      const { logFleetIdentity } = require('../../lib/diagnostics/FleetIdentityLog');
+      logFleetIdentity(this, 'CONTACT-WAKE');
+    } catch (_e) { /* ignore */ }
     if (typeof this._updateLastSeen === 'function') {this._updateLastSeen();}
     // WHY: Peter #2183 windows showed lux (DP101) but contact Flows stayed
     // grey — announce used to skip parent IAS re-attach and force Tuya recovery.
     try {
       await this._reattachIasOnWake();
+      this.log('[CONTACT] IAS re-attach on wake OK');
     } catch (err) {
       this.log(`[CONTACT] IAS re-attach on wake failed: ${err.message}`);
     }

@@ -1,7 +1,7 @@
 {
   "_meta": {
     "version": "1.0.0",
-    "updated": "2026-08-23",
+    "updated": "2026-08-24",
     "doctrine": "Lock interpretation by sacred couple (mfr+pid). Same DP number ≠ same meaning.",
     "tuyaTypes": {
       "0": "RAW / byte_array — requires explicit layout parser; never auto-map to humidity",
@@ -11,7 +11,8 @@
       "4": "ENUM",
       "5": "BITMAP"
     },
-    "lastSync": "2026-08-23T06:07:56.138Z"
+    "lastSync": "2026-08-24T21:52:26.516Z",
+    "coupleCount": 78
   },
   "globalDpCollisions": {
     "1": [
@@ -117,6 +118,14 @@
           "capability": null,
           "internal": true
         },
+        "15": {
+          "name": "leakage_current",
+          "tuyaType": 2,
+          "direction": "rx",
+          "capability": null,
+          "internal": "leakage_current",
+          "notes": "Z2M leakage_current — internal only until compose exposes a cap"
+        },
         "16": {
           "name": "state",
           "tuyaType": 1,
@@ -140,6 +149,41 @@
           "divisor": 100,
           "internal": "power_factor"
         },
+        "102": {
+          "name": "over_voltage_setting",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "103": {
+          "name": "under_voltage_setting",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "104": {
+          "name": "over_current_setting",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "105": {
+          "name": "over_power_setting",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "107": {
+          "name": "temperature_setting",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
         "108": {
           "name": "control_mode",
           "tuyaType": 4,
@@ -152,6 +196,48 @@
           },
           "capability": null,
           "notes": "Z2M #12466 — value 3 is valid, not leakage_setting"
+        },
+        "110": {
+          "name": "event",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "114": {
+          "name": "over_current_threshold",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "115": {
+          "name": "over_voltage_threshold",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "116": {
+          "name": "under_voltage_threshold",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "118": {
+          "name": "temperature_threshold",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "119": {
+          "name": "over_power_threshold",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
         },
         "125": {
           "name": "test5",
@@ -189,12 +275,40 @@
           "capability": "dim",
           "scale": "0-1000"
         },
+        "3": {
+          "name": "min_brightness",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "4": {
+          "name": "light_type",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "5": {
+          "name": "max_brightness",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
         "6": {
           "name": "countdown",
           "tuyaType": 2,
           "direction": "rx_tx",
           "capability": null,
           "notes": "NOT humidity on this couple"
+        },
+        "14": {
+          "name": "power_on_behavior",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
         },
         "21": {
           "name": "backlight",
@@ -213,6 +327,12 @@
       "caseId": "soil-nt4pquef",
       "driver": "soil_sensor",
       "dps": {
+        "1": {
+          "name": "measure_temperature",
+          "direction": "rx",
+          "capability": "measure_temperature",
+          "source": "driver-dpMappings"
+        },
         "2": {
           "name": "light_level",
           "tuyaType": 4,
@@ -233,6 +353,13 @@
           "capability": "measure_temperature",
           "divisor": 10
         },
+        "9": {
+          "name": "temperature_unit",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
         "15": {
           "name": "battery",
           "tuyaType": 2,
@@ -240,6 +367,2332 @@
           "capability": "measure_battery"
         }
       }
+    },
+    "_TZ3000_k4ej3ww2|TS0207": {
+      "caseId": "hobeian-aubess-k4ej3ww2-ias",
+      "driver": "water_leak_sensor",
+      "sources": [
+        "registry",
+        "auto-seed-p2247"
+      ],
+      "seed": "auto",
+      "dps": {
+        "1": {
+          "name": "alarm_water",
+          "direction": "rx",
+          "capability": "alarm_water",
+          "source": "driver-dpMappings"
+        },
+        "2": {
+          "name": "measure_temperature",
+          "direction": "rx",
+          "capability": "measure_temperature",
+          "source": "driver-dpMappings"
+        },
+        "3": {
+          "name": "measure_battery",
+          "direction": "rx",
+          "capability": "measure_battery",
+          "source": "driver-dpMappings"
+        },
+        "4": {
+          "name": "measure_battery",
+          "direction": "rx",
+          "capability": "measure_battery",
+          "source": "driver-dpMappings"
+        },
+        "5": {
+          "name": "alarm_tamper",
+          "direction": "rx",
+          "capability": "alarm_tamper",
+          "source": "driver-dpMappings"
+        },
+        "6": {
+          "name": "battery_voltage",
+          "direction": "rx",
+          "capability": null,
+          "internal": "battery_voltage",
+          "source": "driver-dpMappings"
+        },
+        "9": {
+          "name": "dp_9",
+          "direction": "rx",
+          "capability": null,
+          "source": "driver-dpMappings"
+        },
+        "14": {
+          "name": "battery_low",
+          "direction": "rx",
+          "capability": null,
+          "internal": "battery_low",
+          "source": "driver-dpMappings"
+        },
+        "15": {
+          "name": "measure_battery",
+          "direction": "rx",
+          "capability": "measure_battery",
+          "source": "driver-dpMappings"
+        },
+        "19": {
+          "name": "alarm_water",
+          "direction": "rx",
+          "capability": "alarm_water",
+          "source": "driver-dpMappings"
+        },
+        "101": {
+          "name": "alarm_water",
+          "direction": "rx",
+          "capability": "alarm_water",
+          "source": "driver-dpMappings"
+        }
+      }
+    },
+    "_TZ3000_mwd3c2at|TS0202": {
+      "caseId": "p2240-mwd3c2at-irrigation-valve-ts0202",
+      "driver": "smart_irrigation_valve",
+      "sources": [
+        "registry",
+        "auto-seed-p2247"
+      ],
+      "seed": "auto",
+      "dps": {
+        "1": {
+          "name": "onoff",
+          "direction": "rx",
+          "capability": "onoff",
+          "source": "driver-dpMappings"
+        },
+        "5": {
+          "name": "measure_water",
+          "direction": "rx",
+          "capability": "measure_water",
+          "source": "driver-dpMappings"
+        },
+        "6": {
+          "name": "countdown_remaining",
+          "direction": "rx",
+          "capability": "countdown_remaining",
+          "source": "driver-dpMappings"
+        },
+        "12": {
+          "name": "alarm_fault",
+          "direction": "rx",
+          "capability": "alarm_fault",
+          "source": "driver-dpMappings"
+        },
+        "13": {
+          "name": "dp_13",
+          "direction": "rx",
+          "capability": null,
+          "source": "driver-dpMappings"
+        },
+        "14": {
+          "name": "dp_14",
+          "direction": "rx",
+          "capability": null,
+          "source": "driver-dpMappings"
+        }
+      }
+    },
+    "_TZ3210_imaccztn|TS0004": {
+      "caseId": "tboy-relay-4ch-imaccztn",
+      "driver": "relay_board_4_channel",
+      "sources": [
+        "registry",
+        "auto-seed-p2247"
+      ],
+      "seed": "auto",
+      "dps": {}
+    },
+    "_TZ3000_w5xztuy7|TS0002": {
+      "caseId": "kanbros-bseed-2gang-w5xztuy7",
+      "driver": "switch_2gang",
+      "sources": [
+        "registry",
+        "auto-seed-p2247"
+      ],
+      "seed": "auto",
+      "dps": {}
+    },
+    "_TZE284_hodyryli|TS0601": {
+      "caseId": "zt08-hodyryli",
+      "driver": "climate_sensor_zt08",
+      "sources": [
+        "registry",
+        "auto-seed-p2247"
+      ],
+      "seed": "auto",
+      "dps": {
+        "1": {
+          "name": "measure_temperature",
+          "direction": "rx",
+          "capability": "measure_temperature",
+          "source": "driver-dpMappings"
+        },
+        "2": {
+          "name": "measure_humidity",
+          "direction": "rx",
+          "capability": "measure_humidity",
+          "source": "driver-dpMappings"
+        },
+        "3": {
+          "name": "measure_battery",
+          "direction": "rx",
+          "capability": "measure_battery",
+          "source": "driver-dpMappings"
+        },
+        "17": {
+          "name": "time_format",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "38": {
+          "name": "external_temperature",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        }
+      }
+    },
+    "_TZE204_clrdrnya|TS0601": {
+      "caseId": "presence-radar-clrdrnya",
+      "driver": "presence_sensor_radar",
+      "sources": [
+        "registry",
+        "auto-seed-p2247"
+      ],
+      "seed": "auto",
+      "dps": {
+        "1": {
+          "name": "presence",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "2": {
+          "name": "radar_sensitivity",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "3": {
+          "name": "shield_range",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "4": {
+          "name": "detection_range",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "6": {
+          "name": "equipment_status",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "9": {
+          "name": "target_distance",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "101": {
+          "name": "entry_filter_time",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "102": {
+          "name": "departure_delay",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "103": {
+          "name": "cline",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "104": {
+          "name": "illuminance",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "105": {
+          "name": "entry_sensitivity",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "106": {
+          "name": "entry_distance_indentation",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "107": {
+          "name": "breaker_mode",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "108": {
+          "name": "breaker_status",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "109": {
+          "name": "status_indication",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "110": {
+          "name": "illuminance_threshold",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "111": {
+          "name": "breaker_polarity",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "112": {
+          "name": "block_time",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "113": {
+          "name": "parameter_setting_result",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "114": {
+          "name": "factory_parameters",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "115": {
+          "name": "sensor",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        }
+      }
+    },
+    "_TZ3000_wkr3jqmr|TS0004": {
+      "caseId": "switch-4gang-wkr3jqmr",
+      "driver": "switch_4gang",
+      "sources": [
+        "registry",
+        "auto-seed-p2247"
+      ],
+      "seed": "auto",
+      "dps": {}
+    },
+    "_TZ3210_vbfp8eyv|TS011F": {
+      "caseId": "din-relay-vbfp8eyv-qeuvnohg",
+      "driver": "din_rail_switch",
+      "sources": [
+        "registry",
+        "auto-seed-p2247"
+      ],
+      "seed": "auto",
+      "dps": {
+        "1": {
+          "name": "onoff",
+          "direction": "rx",
+          "capability": "onoff",
+          "source": "driver-dpMappings"
+        },
+        "16": {
+          "name": "onoff",
+          "direction": "rx",
+          "capability": "onoff",
+          "source": "driver-dpMappings"
+        },
+        "17": {
+          "name": "measure_current",
+          "direction": "rx",
+          "capability": "measure_current",
+          "source": "driver-dpMappings"
+        },
+        "18": {
+          "name": "measure_power",
+          "direction": "rx",
+          "capability": "measure_power",
+          "source": "driver-dpMappings"
+        },
+        "19": {
+          "name": "measure_voltage",
+          "direction": "rx",
+          "capability": "measure_voltage",
+          "source": "driver-dpMappings"
+        },
+        "20": {
+          "name": "measure_current",
+          "direction": "rx",
+          "capability": "measure_current",
+          "source": "driver-dpMappings"
+        },
+        "101": {
+          "name": "meter_power",
+          "direction": "rx",
+          "capability": "meter_power",
+          "source": "driver-dpMappings"
+        }
+      }
+    },
+    "_TZ3000_obacbukl|TS0503A": {
+      "caseId": "led-strip-obacbukl",
+      "driver": "led_strip_rgbw",
+      "sources": [
+        "registry",
+        "auto-seed-p2247"
+      ],
+      "seed": "auto",
+      "dps": {}
+    },
+    "_TZE284_mvtclclq|TS0601": {
+      "caseId": "usb-switch-mvtclclq",
+      "driver": "usb_outlet_advanced",
+      "sources": [
+        "registry",
+        "auto-seed-p2247"
+      ],
+      "seed": "auto",
+      "dps": {
+        "1": {
+          "name": "onoff",
+          "direction": "rx",
+          "capability": "onoff",
+          "source": "driver-dpMappings"
+        },
+        "2": {
+          "name": "onoff.socket2",
+          "direction": "rx",
+          "capability": "onoff.socket2",
+          "source": "driver-dpMappings"
+        },
+        "3": {
+          "name": "onoff.usb1",
+          "direction": "rx",
+          "capability": "onoff.usb1",
+          "source": "driver-dpMappings"
+        },
+        "4": {
+          "name": "onoff.usb2",
+          "direction": "rx",
+          "capability": "onoff.usb2",
+          "source": "driver-dpMappings"
+        },
+        "7": {
+          "name": "onoff",
+          "direction": "rx",
+          "capability": "onoff",
+          "source": "driver-dpMappings"
+        },
+        "8": {
+          "name": "countdown_usb_c",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "9": {
+          "name": "onoff.usb1",
+          "direction": "rx",
+          "capability": "onoff.usb1",
+          "source": "driver-dpMappings"
+        },
+        "10": {
+          "name": "onoff.usb2",
+          "direction": "rx",
+          "capability": "onoff.usb2",
+          "source": "driver-dpMappings"
+        },
+        "11": {
+          "name": "onoff.usb1",
+          "direction": "rx",
+          "capability": "onoff.usb1",
+          "source": "driver-dpMappings"
+        },
+        "12": {
+          "name": "onoff.usb2",
+          "direction": "rx",
+          "capability": "onoff.usb2",
+          "source": "driver-dpMappings"
+        },
+        "13": {
+          "name": "onoff.led",
+          "direction": "rx",
+          "capability": "onoff.led",
+          "source": "driver-dpMappings"
+        },
+        "14": {
+          "name": "relay_status",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "16": {
+          "name": "measure_power",
+          "direction": "rx",
+          "capability": "measure_power",
+          "source": "driver-dpMappings"
+        },
+        "17": {
+          "name": "measure_current",
+          "direction": "rx",
+          "capability": "measure_current",
+          "source": "driver-dpMappings"
+        },
+        "18": {
+          "name": "measure_voltage",
+          "direction": "rx",
+          "capability": "measure_voltage",
+          "source": "driver-dpMappings"
+        },
+        "19": {
+          "name": "meter_power",
+          "direction": "rx",
+          "capability": "meter_power",
+          "source": "driver-dpMappings"
+        },
+        "21": {
+          "name": "current",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "22": {
+          "name": "power",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "23": {
+          "name": "voltage",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "101": {
+          "name": "onoff.led",
+          "direction": "rx",
+          "capability": "onoff.led",
+          "source": "driver-dpMappings"
+        },
+        "102": {
+          "name": "dp_102",
+          "direction": "rx",
+          "capability": null,
+          "source": "driver-dpMappings"
+        },
+        "103": {
+          "name": "dp_103",
+          "direction": "rx",
+          "capability": null,
+          "source": "driver-dpMappings"
+        },
+        "104": {
+          "name": "measure_power",
+          "direction": "rx",
+          "capability": "measure_power",
+          "source": "driver-dpMappings"
+        },
+        "105": {
+          "name": "measure_current",
+          "direction": "rx",
+          "capability": "measure_current",
+          "source": "driver-dpMappings"
+        },
+        "106": {
+          "name": "measure_voltage",
+          "direction": "rx",
+          "capability": "measure_voltage",
+          "source": "driver-dpMappings"
+        },
+        "121": {
+          "name": "dp_121",
+          "direction": "rx",
+          "capability": null,
+          "source": "driver-dpMappings"
+        }
+      }
+    },
+    "_TZ3210_jaap6jeb|TS0505B": {
+      "caseId": "rgb-bulb-jaap6jeb",
+      "driver": "bulb_rgbw",
+      "sources": [
+        "registry",
+        "auto-seed-p2247"
+      ],
+      "seed": "auto",
+      "dps": {
+        "1": {
+          "name": "onoff",
+          "direction": "rx",
+          "capability": "onoff",
+          "source": "driver-dpMappings"
+        },
+        "2": {
+          "name": "light_mode",
+          "direction": "rx",
+          "capability": "light_mode",
+          "source": "driver-dpMappings"
+        },
+        "3": {
+          "name": "dim",
+          "direction": "rx",
+          "capability": "dim",
+          "source": "driver-dpMappings"
+        },
+        "4": {
+          "name": "light_temperature",
+          "direction": "rx",
+          "capability": "light_temperature",
+          "source": "driver-dpMappings"
+        },
+        "5": {
+          "name": "hsv",
+          "direction": "rx",
+          "capability": null,
+          "internal": "hsv",
+          "source": "driver-dpMappings"
+        },
+        "6": {
+          "name": "scene_data",
+          "direction": "rx",
+          "capability": null,
+          "internal": "scene_data",
+          "source": "driver-dpMappings"
+        },
+        "7": {
+          "name": "countdown_remaining",
+          "direction": "rx",
+          "capability": "countdown_remaining",
+          "source": "driver-dpMappings"
+        },
+        "21": {
+          "name": "power_on_behavior",
+          "direction": "rx",
+          "capability": "power_on_behavior",
+          "source": "driver-dpMappings"
+        },
+        "24": {
+          "name": "hsv_alt",
+          "direction": "rx",
+          "capability": null,
+          "internal": "hsv_alt",
+          "source": "driver-dpMappings"
+        },
+        "25": {
+          "name": "dim",
+          "direction": "rx",
+          "capability": "dim",
+          "source": "driver-dpMappings"
+        },
+        "26": {
+          "name": "light_temperature",
+          "direction": "rx",
+          "capability": "light_temperature",
+          "source": "driver-dpMappings"
+        }
+      }
+    },
+    "_TZ3000_vzopcetz|TS011F": {
+      "caseId": "plug-vzopcetz-1obwwnmq",
+      "driver": "socket_power_strip",
+      "sources": [
+        "registry",
+        "auto-seed-p2247"
+      ],
+      "seed": "auto",
+      "dps": {}
+    },
+    "_TZ3210_iystcadi|TS0505B": {
+      "caseId": "rgb-bulb-iystcadi-ts0505b",
+      "driver": "light_bulb_rgb_led",
+      "sources": [
+        "registry",
+        "auto-seed-p2247"
+      ],
+      "seed": "auto",
+      "dps": {
+        "1": {
+          "name": "onoff",
+          "direction": "rx",
+          "capability": "onoff",
+          "source": "driver-dpMappings"
+        },
+        "2": {
+          "name": "light_mode",
+          "direction": "rx",
+          "capability": "light_mode",
+          "source": "driver-dpMappings"
+        },
+        "3": {
+          "name": "dim",
+          "direction": "rx",
+          "capability": "dim",
+          "source": "driver-dpMappings"
+        },
+        "4": {
+          "name": "light_temperature",
+          "direction": "rx",
+          "capability": "light_temperature",
+          "source": "driver-dpMappings"
+        },
+        "5": {
+          "name": "dp_5",
+          "direction": "rx",
+          "capability": null,
+          "source": "driver-dpMappings"
+        },
+        "6": {
+          "name": "dp_6",
+          "direction": "rx",
+          "capability": null,
+          "source": "driver-dpMappings"
+        },
+        "7": {
+          "name": "countdown_remaining",
+          "direction": "rx",
+          "capability": "countdown_remaining",
+          "source": "driver-dpMappings"
+        },
+        "8": {
+          "name": "dp_8",
+          "direction": "rx",
+          "capability": null,
+          "source": "driver-dpMappings"
+        },
+        "21": {
+          "name": "dp_21",
+          "direction": "rx",
+          "capability": null,
+          "source": "driver-dpMappings"
+        },
+        "24": {
+          "name": "dp_24",
+          "direction": "rx",
+          "capability": null,
+          "source": "driver-dpMappings"
+        },
+        "25": {
+          "name": "dim",
+          "direction": "rx",
+          "capability": "dim",
+          "source": "driver-dpMappings"
+        },
+        "26": {
+          "name": "dp_26",
+          "direction": "rx",
+          "capability": null,
+          "source": "driver-dpMappings"
+        },
+        "101": {
+          "name": "dim",
+          "direction": "rx",
+          "capability": "dim",
+          "source": "driver-dpMappings"
+        }
+      }
+    },
+    "_TZE204_r0jdjrvi|TS0601": {
+      "caseId": "curtain-r0jdjrvi-tilt",
+      "driver": "curtain_motor_tilt",
+      "sources": [
+        "registry",
+        "auto-seed-p2247"
+      ],
+      "seed": "auto",
+      "dps": {
+        "1": {
+          "name": "state",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "2": {
+          "name": "position",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "3": {
+          "name": "position",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "5": {
+          "name": "reverse_direction",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "12": {
+          "name": "motor_fault",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "103": {
+          "name": "upper_stroke_limit",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "104": {
+          "name": "middle_stroke_limit",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "105": {
+          "name": "lower_stroke_limit",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "106": {
+          "name": "motor_working_mode",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        }
+      }
+    },
+    "_TZ3000_3zofvcaa|TS011F": {
+      "caseId": "p189-usb-wall-outlet-not-climate",
+      "driver": "switch_usb_dongle",
+      "sources": [
+        "registry",
+        "auto-seed-p2247"
+      ],
+      "seed": "auto",
+      "dps": {}
+    },
+    "_TZ3000_5k5vh43t|TS0207": {
+      "caseId": "p189-ts0207-repeater-not-motion",
+      "driver": "zigbee_repeater",
+      "sources": [
+        "registry",
+        "auto-seed-p2247"
+      ],
+      "seed": "auto",
+      "dps": {}
+    },
+    "_TZE200_2imwyigp|TS0601": {
+      "caseId": "p189-mg-zg03w-3gang-not-contact",
+      "driver": "switch_3gang",
+      "sources": [
+        "registry",
+        "auto-seed-p2247"
+      ],
+      "seed": "auto",
+      "dps": {
+        "1": {
+          "name": "state_l1",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "2": {
+          "name": "state_l2",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "3": {
+          "name": "state_l3",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "17": {
+          "name": "measure_current",
+          "direction": "rx",
+          "capability": "measure_current",
+          "source": "driver-dpMappings"
+        },
+        "18": {
+          "name": "measure_power",
+          "direction": "rx",
+          "capability": "measure_power",
+          "source": "driver-dpMappings"
+        },
+        "19": {
+          "name": "measure_voltage",
+          "direction": "rx",
+          "capability": "measure_voltage",
+          "source": "driver-dpMappings"
+        },
+        "20": {
+          "name": "meter_power",
+          "direction": "rx",
+          "capability": "meter_power",
+          "source": "driver-dpMappings"
+        }
+      }
+    },
+    "_TZ3000_g9g2xnch|TS004F": {
+      "caseId": "p189-scene-remotes-not-switch1",
+      "driver": "smart_knob",
+      "sources": [
+        "registry",
+        "auto-seed-p2247"
+      ],
+      "seed": "auto",
+      "dps": {}
+    },
+    "_TZ3000_fa9mlvja|TS0043": {
+      "caseId": "p189-smart-button-fa9mlvja-not-wall4gang",
+      "driver": "remote_button_wireless",
+      "sources": [
+        "registry",
+        "auto-seed-p2247"
+      ],
+      "seed": "auto",
+      "dps": {}
+    },
+    "_TZ3000_uri7ongn|TS004F": {
+      "caseId": "p190-ers10-knob-uri7ongn-ixla93vd",
+      "driver": "smart_knob",
+      "sources": [
+        "registry",
+        "auto-seed-p2247"
+      ],
+      "seed": "auto",
+      "dps": {}
+    },
+    "_TZ3210_ol1uhvza|TS130F": {
+      "caseId": "p190-ts130f-curtain-not-climate-or-dimmer",
+      "driver": "wall_curtain_switch",
+      "sources": [
+        "registry",
+        "auto-seed-p2247"
+      ],
+      "seed": "auto",
+      "dps": {}
+    },
+    "_TZ3000_vd43bbfq|TS130F": {
+      "caseId": "p190-ts130f-curtain-vd43bbfq-not-lock",
+      "driver": "curtain_module",
+      "sources": [
+        "registry",
+        "auto-seed-p2247"
+      ],
+      "seed": "auto",
+      "dps": {}
+    },
+    "_TZ3000_n2egfsli|TS0203": {
+      "caseId": "p190-contact-n2egfsli-not-button",
+      "driver": "contact_sensor",
+      "sources": [
+        "registry",
+        "auto-seed-p2247"
+      ],
+      "seed": "auto",
+      "dps": {
+        "1": {
+          "name": "alarm_contact",
+          "direction": "rx",
+          "capability": "alarm_contact",
+          "source": "driver-dpMappings"
+        }
+      }
+    },
+    "_TZ3000_1dd0d5yi|TS130F": {
+      "caseId": "p191-ts130f-curtain-quartet-not-shutter-catchall",
+      "driver": "wall_curtain_switch",
+      "sources": [
+        "registry",
+        "auto-seed-p2247"
+      ],
+      "seed": "auto",
+      "dps": {}
+    },
+    "_TZB210_g01ie5wu|TS0501B": {
+      "caseId": "p191-ts0501b-dimmer-g01ie5wu",
+      "driver": "wall_dimmer_1gang_1way",
+      "sources": [
+        "registry",
+        "auto-seed-p2247"
+      ],
+      "seed": "auto",
+      "dps": {}
+    },
+    "_TZE200_a4bpgplm|TS0601": {
+      "caseId": "p191-trv-a4bpgplm-not-generic-diy",
+      "driver": "device_radiator_valve",
+      "sources": [
+        "registry",
+        "auto-seed-p2247"
+      ],
+      "seed": "auto",
+      "dps": {
+        "1": {
+          "name": "system_mode",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "2": {
+          "name": "thermostat_mode",
+          "direction": "rx",
+          "capability": "thermostat_mode",
+          "source": "driver-dpMappings"
+        },
+        "3": {
+          "name": "local_temperature",
+          "direction": "rx",
+          "capability": null,
+          "source": "driver-dpMappings"
+        },
+        "4": {
+          "name": "target_temperature",
+          "direction": "rx",
+          "capability": "target_temperature",
+          "source": "driver-dpMappings"
+        },
+        "5": {
+          "name": "measure_temperature",
+          "direction": "rx",
+          "capability": "measure_temperature",
+          "source": "driver-dpMappings"
+        },
+        "6": {
+          "name": "running_state",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "7": {
+          "name": "child_lock",
+          "direction": "rx",
+          "capability": "child_lock",
+          "source": "driver-dpMappings"
+        },
+        "8": {
+          "name": "window_detection",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "12": {
+          "name": "child_lock",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "13": {
+          "name": "battery",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "14": {
+          "name": "alarm_switch",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "15": {
+          "name": "min_temperature",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "16": {
+          "name": "max_temperature",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "17": {
+          "name": "schedule_monday",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "18": {
+          "name": "schedule_tuesday",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "19": {
+          "name": "schedule_wednesday",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "20": {
+          "name": "schedule_thursday",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "21": {
+          "name": "schedule_friday",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "22": {
+          "name": "schedule_saturday",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "23": {
+          "name": "schedule_sunday",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "35": {
+          "name": "alarm_battery",
+          "direction": "rx",
+          "capability": "alarm_battery",
+          "source": "driver-dpMappings"
+        },
+        "36": {
+          "name": "frost_protection",
+          "direction": "rx",
+          "capability": "frost_protection",
+          "source": "driver-dpMappings"
+        },
+        "39": {
+          "name": "dp_39",
+          "direction": "rx",
+          "capability": null,
+          "source": "driver-dpMappings"
+        },
+        "47": {
+          "name": "dp_47",
+          "direction": "rx",
+          "capability": null,
+          "source": "driver-dpMappings"
+        },
+        "101": {
+          "name": "local_temperature_calibration",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "102": {
+          "name": "position",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "116": {
+          "name": "screen_orientation",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "152": {
+          "name": "display_brightness",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "153": {
+          "name": "mode",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "154": {
+          "name": "switch_deviation_eco",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        }
+      }
+    },
+    "_TZ3000_a7ouggvs|TS0043": {
+      "caseId": "zemismart-ts0043-3btn-sticky",
+      "driver": "button_wireless_3",
+      "sources": [
+        "registry",
+        "auto-seed-p2247"
+      ],
+      "seed": "auto",
+      "dps": {}
+    },
+    "_TZ3000_ovyaisip|TS0001": {
+      "caseId": "zemismart-ts0001-tb25-1",
+      "driver": "wall_switch_1gang_1way",
+      "sources": [
+        "registry",
+        "auto-seed-p2247"
+      ],
+      "seed": "auto",
+      "dps": {}
+    },
+    "_TZ3000_jjdkhueq|TS0002": {
+      "caseId": "novadigital-ts0002-jjdkhueq",
+      "driver": "wall_switch_2gang_1way",
+      "sources": [
+        "registry",
+        "auto-seed-p2247"
+      ],
+      "seed": "auto",
+      "dps": {}
+    },
+    "_TZ3000_ywubfuvt|TS0002": {
+      "caseId": "novadigital-ts0002-ywubfuvt",
+      "driver": "wall_switch_2gang_1way",
+      "sources": [
+        "registry",
+        "auto-seed-p2247"
+      ],
+      "seed": "auto",
+      "dps": {}
+    },
+    "_TZ3000_kgxej1dv|TS0002": {
+      "caseId": "novadigital-ts0002-kgxej1dv",
+      "driver": "wall_switch_2gang_1way",
+      "sources": [
+        "registry",
+        "auto-seed-p2247"
+      ],
+      "seed": "auto",
+      "dps": {}
+    },
+    "_TZ3000_ok0ggpk7|TS0003": {
+      "caseId": "novadigital-ts0003-ok0ggpk7",
+      "driver": "wall_switch_3gang_1way",
+      "sources": [
+        "registry",
+        "auto-seed-p2247"
+      ],
+      "seed": "auto",
+      "dps": {}
+    },
+    "_TZ3000_f09j9qjb|TS0003": {
+      "caseId": "novadigital-ts0003-f09j9qjb",
+      "driver": "wall_switch_3gang_1way",
+      "sources": [
+        "registry",
+        "auto-seed-p2247"
+      ],
+      "seed": "auto",
+      "dps": {}
+    },
+    "_TZ3000_vjhcenzo|TS0003": {
+      "caseId": "novadigital-ts0003-vjhcenzo",
+      "driver": "wall_switch_3gang_1way",
+      "sources": [
+        "registry",
+        "auto-seed-p2247"
+      ],
+      "seed": "auto",
+      "dps": {}
+    },
+    "_TZ3000_eqsair32|TS0003": {
+      "caseId": "novadigital-ts0003-eqsair32",
+      "driver": "wall_switch_3gang_1way",
+      "sources": [
+        "registry",
+        "auto-seed-p2247"
+      ],
+      "seed": "auto",
+      "dps": {}
+    },
+    "_TZ3000_qxcnwv26|TS0003": {
+      "caseId": "novadigital-ts0003-qxcnwv26",
+      "driver": "wall_switch_3gang_1way",
+      "sources": [
+        "registry",
+        "auto-seed-p2247"
+      ],
+      "seed": "auto",
+      "dps": {}
+    },
+    "_TZ3000_fawk5xjv|TS0003": {
+      "caseId": "novadigital-ts0003-fawk5xjv",
+      "driver": "wall_switch_3gang_1way",
+      "sources": [
+        "registry",
+        "auto-seed-p2247"
+      ],
+      "seed": "auto",
+      "dps": {}
+    },
+    "_TZ3000_yervjnlj|TS0003": {
+      "caseId": "novadigital-ts0003-yervjnlj",
+      "driver": "wall_switch_3gang_1way",
+      "sources": [
+        "registry",
+        "auto-seed-p2247"
+      ],
+      "seed": "auto",
+      "dps": {}
+    },
+    "_TZE204_aagrxlbd|TS0601": {
+      "caseId": "novadigital-ts0601-4gang-aagrxlbd",
+      "driver": "wall_switch_4_gang_tuya",
+      "sources": [
+        "registry",
+        "auto-seed-p2247"
+      ],
+      "seed": "auto",
+      "dps": {
+        "1": {
+          "name": "state_l1",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "2": {
+          "name": "state_l2",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "3": {
+          "name": "state_l3",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "4": {
+          "name": "state_l4",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        }
+      }
+    },
+    "_TZE200_shkxsgis|TS0601": {
+      "caseId": "zemismart-ts0601-4gang-shkxsgis",
+      "driver": "wall_switch_4_gang_tuya",
+      "sources": [
+        "registry",
+        "auto-seed-p2247"
+      ],
+      "seed": "auto",
+      "dps": {}
+    },
+    "_TZE200_r731zlxk|TS0601": {
+      "caseId": "zemismart-ts0601-6gang-r731zlxk",
+      "driver": "wall_switch_6_gang_tuya",
+      "sources": [
+        "registry",
+        "auto-seed-p2247"
+      ],
+      "seed": "auto",
+      "dps": {}
+    },
+    "_TZ3000_bczr4e10|TS0043": {
+      "caseId": "interview-ts0043-bczr4e10",
+      "driver": "button_wireless_3",
+      "sources": [
+        "registry",
+        "auto-seed-p2247"
+      ],
+      "seed": "auto",
+      "dps": {}
+    },
+    "_TZ3000_cfnprab5|TS011F": {
+      "caseId": "cfnprab5-power-strip-not-remote",
+      "driver": "socket_power_strip_four_three",
+      "sources": [
+        "registry",
+        "auto-seed-p2247"
+      ],
+      "seed": "auto",
+      "dps": {}
+    },
+    "_TZ3000_lwthnp7j|TS0004": {
+      "caseId": "lwthnp7j-zcl-4gang",
+      "driver": "wall_switch_4gang_1way",
+      "sources": [
+        "registry",
+        "auto-seed-p2247"
+      ],
+      "seed": "auto",
+      "dps": {}
+    },
+    "_TZ3000_okaz9tjs|TS011F": {
+      "caseId": "okaz9tjs-ts011f-metering-plug",
+      "driver": "plug_energy_monitor",
+      "sources": [
+        "registry",
+        "auto-seed-p2247"
+      ],
+      "seed": "auto",
+      "dps": {}
+    },
+    "_TZE200_wfxuhoea|TS0601": {
+      "caseId": "p217-wfxuhoea-loratap-garage",
+      "driver": "garage_door",
+      "sources": [
+        "registry",
+        "auto-seed-p2247"
+      ],
+      "seed": "auto",
+      "dps": {}
+    },
+    "_TZ3000_k6fvknrr|TS011F": {
+      "caseId": "p217-k6fvknrr-ts011f-double-outlet",
+      "driver": "double_power_point_2",
+      "sources": [
+        "registry",
+        "auto-seed-p2247"
+      ],
+      "seed": "auto",
+      "dps": {}
+    },
+    "_TZ3218_7fiyo3kv|TS000F": {
+      "caseId": "pm-rolp-tz3218-7fiyo3kv-ts000f-switch-temp",
+      "driver": "switch_temp_sensor",
+      "sources": [
+        "registry",
+        "auto-seed-p2247"
+      ],
+      "seed": "auto",
+      "dps": {}
+    },
+    "_TZ3210_fgwhjm9j|TS011F": {
+      "caseId": "fgwhjm9j-ts011f-metering-plug",
+      "driver": "plug_energy_monitor",
+      "sources": [
+        "registry",
+        "auto-seed-p2247"
+      ],
+      "seed": "auto",
+      "dps": {}
+    },
+    "_TZ3000_amdymr7l|TS011F": {
+      "caseId": "blitzwolf-amdymr7l-shp13-plug",
+      "driver": "plug_energy_monitor",
+      "sources": [
+        "registry",
+        "auto-seed-p2247"
+      ],
+      "seed": "auto",
+      "dps": {}
+    },
+    "_TZE200_pay2byax|TS0601": {
+      "caseId": "p2201-pay2byax-zg102zl-contact",
+      "driver": "contact_sensor_zigbee",
+      "sources": [
+        "registry",
+        "auto-seed-p2247"
+      ],
+      "seed": "auto",
+      "dps": {
+        "1": {
+          "name": "alarm_contact",
+          "direction": "rx",
+          "capability": "alarm_contact",
+          "source": "driver-dpMappings"
+        },
+        "2": {
+          "name": "battery",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "101": {
+          "name": "illuminance",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "102": {
+          "name": "illuminance_interval",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        }
+      }
+    },
+    "_TZ3000_gdsvhfao|TS0001": {
+      "caseId": "p2234-gdsvhfao-repeater",
+      "driver": "zigbee_repeater",
+      "sources": [
+        "registry",
+        "auto-seed-p2247"
+      ],
+      "seed": "auto",
+      "dps": {}
+    },
+    "_TZE200_itp8dt7f|TS0601": {
+      "caseId": "p2234-itp8dt7f-dimmer",
+      "driver": "wall_dimmer_tuya",
+      "sources": [
+        "registry",
+        "auto-seed-p2247"
+      ],
+      "seed": "auto",
+      "dps": {
+        "1": {
+          "name": "state",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "2": {
+          "name": "brightness",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "3": {
+          "name": "min_brightness",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "4": {
+          "name": "light_type",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "5": {
+          "name": "max_brightness",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "6": {
+          "name": "countdown",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "14": {
+          "name": "power_on_behavior",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "21": {
+          "name": "backlight_mode",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        }
+      }
+    },
+    "_TZE204_qujphad5|TS0601": {
+      "caseId": "p2234-qujphad5-tybac",
+      "driver": "wall_thermostat",
+      "sources": [
+        "registry",
+        "auto-seed-p2247"
+      ],
+      "seed": "auto",
+      "dps": {}
+    },
+    "_TZE204_apiu8k13|TS0601": {
+      "caseId": "p2234-apiu8k13-q9qytwfa-water-heater",
+      "driver": "plug_energy_monitor",
+      "sources": [
+        "registry",
+        "auto-seed-p2247"
+      ],
+      "seed": "auto",
+      "dps": {
+        "1": {
+          "name": "state",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "7": {
+          "name": "countdown",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "20": {
+          "name": "energy",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "21": {
+          "name": "current",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "22": {
+          "name": "power",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "23": {
+          "name": "voltage",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        }
+      }
+    },
+    "_TZ3000_dershnvx|TS0002": {
+      "caseId": "p2234b-tz3000_dershnvx",
+      "driver": "switch_2gang",
+      "sources": [
+        "registry",
+        "auto-seed-p2247"
+      ],
+      "seed": "auto",
+      "dps": {}
+    },
+    "_TZ3000_icoxotza|TS0726": {
+      "caseId": "p2234b-tz3000_icoxotza",
+      "driver": "switch_2gang",
+      "sources": [
+        "registry",
+        "auto-seed-p2247"
+      ],
+      "seed": "auto",
+      "dps": {}
+    },
+    "_TZE204_mpbki2zm|TS0601": {
+      "caseId": "p2234b-tze204_mpbki2zm",
+      "driver": "wall_thermostat",
+      "sources": [
+        "registry",
+        "auto-seed-p2247"
+      ],
+      "seed": "auto",
+      "dps": {
+        "1": {
+          "name": "state",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "2": {
+          "name": "system_mode",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "4": {
+          "name": "eco_mode",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "16": {
+          "name": "current_heating_setpoint",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "19": {
+          "name": "max_temperature",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "24": {
+          "name": "local_temperature",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "26": {
+          "name": "min_temperature",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "27": {
+          "name": "local_temperature_calibration",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "28": {
+          "name": "fan_mode",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "36": {
+          "name": "valve",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "40": {
+          "name": "child_lock",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "101": {
+          "name": "manual_mode",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "103": {
+          "name": "deadzone_temperature",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "104": {
+          "name": "min_temperature_limit",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "105": {
+          "name": "max_temperature_limit",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "106": {
+          "name": "schedule_sunday",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "107": {
+          "name": "schedule_saturday",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "108": {
+          "name": "schedule_friday",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "109": {
+          "name": "schedule_thursday",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "110": {
+          "name": "schedule_wednesday",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "111": {
+          "name": "schedule_tuesday",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "112": {
+          "name": "schedule_monday",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        }
+      }
+    },
+    "_TZE284_q9qytwfa|TS0601": {
+      "caseId": "p2234b-tze284_q9qytwfa",
+      "driver": "plug_energy_monitor",
+      "sources": [
+        "registry",
+        "auto-seed-p2247"
+      ],
+      "seed": "auto",
+      "dps": {}
+    },
+    "_TZE200_7upwjcca|TS0601": {
+      "caseId": "p2234b-tze200_7upwjcca",
+      "driver": "curtain_motor",
+      "sources": [
+        "registry",
+        "auto-seed-p2247"
+      ],
+      "seed": "auto",
+      "dps": {
+        "1": {
+          "name": "windowcoverings_state",
+          "direction": "rx",
+          "capability": "windowcoverings_state",
+          "source": "driver-dpMappings"
+        },
+        "2": {
+          "name": "windowcoverings_set",
+          "direction": "rx",
+          "capability": "windowcoverings_set",
+          "source": "driver-dpMappings"
+        },
+        "3": {
+          "name": "dim",
+          "direction": "rx",
+          "capability": "dim",
+          "source": "driver-dpMappings"
+        },
+        "4": {
+          "name": "mode",
+          "direction": "rx",
+          "capability": null,
+          "internal": "mode",
+          "source": "driver-dpMappings"
+        },
+        "5": {
+          "name": "reverse",
+          "direction": "rx",
+          "capability": null,
+          "internal": "reverse",
+          "source": "driver-dpMappings"
+        },
+        "6": {
+          "name": "border",
+          "direction": "rx",
+          "capability": null,
+          "internal": "border",
+          "source": "driver-dpMappings"
+        },
+        "7": {
+          "name": "position_reached",
+          "direction": "rx",
+          "capability": null,
+          "internal": "position_reached",
+          "source": "driver-dpMappings"
+        },
+        "8": {
+          "name": "moving",
+          "direction": "rx",
+          "capability": "moving",
+          "source": "driver-dpMappings"
+        },
+        "9": {
+          "name": "windowcoverings_tilt_set",
+          "direction": "rx",
+          "capability": "windowcoverings_tilt_set",
+          "source": "driver-dpMappings"
+        },
+        "10": {
+          "name": "speed",
+          "direction": "rx",
+          "capability": null,
+          "internal": "speed",
+          "source": "driver-dpMappings"
+        },
+        "12": {
+          "name": "backlight",
+          "direction": "rx",
+          "capability": null,
+          "internal": "backlight",
+          "source": "driver-dpMappings"
+        },
+        "13": {
+          "name": "measure_battery",
+          "direction": "rx",
+          "capability": "measure_battery",
+          "source": "driver-dpMappings"
+        },
+        "14": {
+          "name": "measure_luminance",
+          "direction": "rx",
+          "capability": "measure_luminance",
+          "source": "driver-dpMappings"
+        },
+        "15": {
+          "name": "button_press",
+          "direction": "rx",
+          "capability": null,
+          "internal": "button_press",
+          "source": "driver-dpMappings"
+        },
+        "16": {
+          "name": "border_limits",
+          "direction": "rx",
+          "capability": null,
+          "internal": "border_limits",
+          "source": "driver-dpMappings"
+        },
+        "101": {
+          "name": "open_time",
+          "direction": "rx",
+          "capability": null,
+          "internal": "open_time",
+          "source": "driver-dpMappings"
+        },
+        "102": {
+          "name": "close_time",
+          "direction": "rx",
+          "capability": null,
+          "internal": "close_time",
+          "source": "driver-dpMappings"
+        },
+        "104": {
+          "name": "measure_luminance",
+          "direction": "rx",
+          "capability": "measure_luminance",
+          "source": "driver-dpMappings"
+        },
+        "105": {
+          "name": "button_press",
+          "direction": "rx",
+          "capability": null,
+          "internal": "button_press",
+          "source": "driver-dpMappings"
+        }
+      }
+    },
+    "_TZ3000_anptztic|TS0001": {
+      "caseId": "p2234b-tz3000_anptztic",
+      "driver": "plug_energy_monitor",
+      "sources": [
+        "registry",
+        "auto-seed-p2247"
+      ],
+      "seed": "auto",
+      "dps": {}
+    },
+    "_TZ3000_ly9apzky|TS0003": {
+      "caseId": "p2234b-tz3000_ly9apzky",
+      "driver": "wall_switch_3gang_1way",
+      "sources": [
+        "registry",
+        "auto-seed-p2247"
+      ],
+      "seed": "auto",
+      "dps": {}
+    },
+    "_TZE204_pkpfn9hc|TS0601": {
+      "caseId": "p2234b-tze204_pkpfn9hc",
+      "driver": "air_quality_co2",
+      "sources": [
+        "registry",
+        "auto-seed-p2247"
+      ],
+      "seed": "auto",
+      "dps": {
+        "1": {
+          "name": "measure_co2",
+          "direction": "rx",
+          "capability": "measure_co2",
+          "source": "driver-dpMappings"
+        },
+        "2": {
+          "name": "measure_formaldehyde",
+          "direction": "rx",
+          "capability": "measure_formaldehyde",
+          "source": "driver-dpMappings"
+        },
+        "3": {
+          "name": "measure_temperature",
+          "direction": "rx",
+          "capability": "measure_temperature",
+          "source": "driver-dpMappings"
+        },
+        "4": {
+          "name": "measure_humidity",
+          "direction": "rx",
+          "capability": "measure_humidity",
+          "source": "driver-dpMappings"
+        }
+      }
+    },
+    "_TZ3002_y7wpizuw|TS0726": {
+      "caseId": "p2234b-tz3002_y7wpizuw",
+      "driver": "switch_4gang",
+      "sources": [
+        "registry",
+        "auto-seed-p2247"
+      ],
+      "seed": "auto",
+      "dps": {}
+    },
+    "_TZE284_smcqit2l|TS0601": {
+      "caseId": "p2234b-tze284_smcqit2l",
+      "driver": "wall_thermostat",
+      "sources": [
+        "registry",
+        "auto-seed-p2247"
+      ],
+      "seed": "auto",
+      "dps": {}
+    },
+    "_TZE284_6uyu20xu|TS0601": {
+      "caseId": "p2234b-tze284_6uyu20xu",
+      "driver": "climate_sensor",
+      "sources": [
+        "registry",
+        "auto-seed-p2247"
+      ],
+      "seed": "auto",
+      "dps": {
+        "2": {
+          "name": "measure_luminance",
+          "direction": "rx",
+          "capability": "measure_luminance",
+          "source": "driver-dpMappings"
+        },
+        "3": {
+          "name": "measure_battery",
+          "direction": "rx",
+          "capability": "measure_battery",
+          "source": "driver-dpMappings"
+        },
+        "4": {
+          "name": "measure_battery",
+          "direction": "rx",
+          "capability": "measure_battery",
+          "source": "driver-dpMappings"
+        }
+      }
+    },
+    "_TZ3000_4upl1fcj|TS0041": {
+      "caseId": "p2236-4upl1fcj-ts0041-button",
+      "driver": "button_wireless_1",
+      "sources": [
+        "registry",
+        "auto-seed-p2247"
+      ],
+      "seed": "auto",
+      "dps": {}
+    },
+    "_TZ3000_qeuvnohg|TS011F": {
+      "caseId": "p2236-qeuvnohg-ts011f-din",
+      "driver": "din_rail_switch",
+      "sources": [
+        "registry",
+        "auto-seed-p2247"
+      ],
+      "seed": "auto",
+      "dps": {
+        "1": {
+          "name": "onoff",
+          "direction": "rx",
+          "capability": "onoff",
+          "source": "driver-dpMappings"
+        },
+        "16": {
+          "name": "onoff",
+          "direction": "rx",
+          "capability": "onoff",
+          "source": "driver-dpMappings"
+        },
+        "17": {
+          "name": "measure_current",
+          "direction": "rx",
+          "capability": "measure_current",
+          "source": "driver-dpMappings"
+        },
+        "18": {
+          "name": "measure_power",
+          "direction": "rx",
+          "capability": "measure_power",
+          "source": "driver-dpMappings"
+        },
+        "19": {
+          "name": "measure_voltage",
+          "direction": "rx",
+          "capability": "measure_voltage",
+          "source": "driver-dpMappings"
+        },
+        "20": {
+          "name": "measure_current",
+          "direction": "rx",
+          "capability": "measure_current",
+          "source": "driver-dpMappings"
+        },
+        "101": {
+          "name": "meter_power",
+          "direction": "rx",
+          "capability": "meter_power",
+          "source": "driver-dpMappings"
+        }
+      }
+    },
+    "_TZ3210_amdymr7l|TS011F": {
+      "caseId": "p2236-amdymr7l-tz3210-energy",
+      "driver": "plug_energy_monitor",
+      "sources": [
+        "registry",
+        "auto-seed-p2247"
+      ],
+      "seed": "auto",
+      "dps": {}
+    },
+    "_TZ3000_xabckq1v|TS004F": {
+      "caseId": "p2236-xabckq1v-ts004f",
+      "driver": "button_wireless_4",
+      "sources": [
+        "registry",
+        "auto-seed-p2247"
+      ],
+      "seed": "auto",
+      "dps": {}
+    },
+    "_TZ3000_kfu8zapd|TS0044": {
+      "caseId": "p2236-kfu8zapd-ts0044f",
+      "driver": "button_wireless_4",
+      "sources": [
+        "registry",
+        "auto-seed-p2247"
+      ],
+      "seed": "auto",
+      "dps": {}
+    },
+    "_TZ3000_zgyzgdua|TS0044": {
+      "caseId": "p2236-zgyzgdua-ts0044-scene",
+      "driver": "scene_switch_4",
+      "sources": [
+        "registry",
+        "auto-seed-p2247"
+      ],
+      "seed": "auto",
+      "dps": {}
+    },
+    "_TZ3000_nkcobies|TS011F": {
+      "caseId": "p2236-nkcobies-ts011f-plug",
+      "driver": "smartplug",
+      "sources": [
+        "registry",
+        "auto-seed-p2247"
+      ],
+      "seed": "auto",
+      "dps": {}
+    },
+    "_TZE200_wqashyqo|TS0601": {
+      "caseId": "hobeian-zg303z-soil",
+      "driver": "soil_sensor",
+      "model": "ZG-303Z",
+      "sources": [
+        "registry",
+        "auto-seed-p2247"
+      ],
+      "seed": "auto",
+      "dps": {
+        "1": {
+          "name": "measure_temperature",
+          "direction": "rx",
+          "capability": "measure_temperature",
+          "source": "driver-dpMappings"
+        },
+        "2": {
+          "name": "measure_humidity.soil",
+          "direction": "rx",
+          "capability": "measure_humidity.soil",
+          "source": "driver-dpMappings"
+        },
+        "102": {
+          "name": "soil_calibration",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "103": {
+          "name": "temperature",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "104": {
+          "name": "temperature_calibration",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "105": {
+          "name": "humidity_calibration",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "106": {
+          "name": "temperature_unit",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "107": {
+          "name": "soil_moisture",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "108": {
+          "name": "battery",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "109": {
+          "name": "humidity",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "110": {
+          "name": "soil_warning",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "111": {
+          "name": "temperature_sampling",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        },
+        "112": {
+          "name": "soil_sampling",
+          "direction": "rx",
+          "capability": null,
+          "source": "z2m-soft",
+          "notes": "Soft seed — verify before binding capability"
+        }
+      }
+    },
+    "_TYZB01_hlla45kx|TS011F": {
+      "caseId": "welsh-double-outlet-hlla45kx",
+      "driver": "double_power_point_2",
+      "sources": [
+        "registry",
+        "auto-seed-p2247"
+      ],
+      "seed": "auto",
+      "dps": {}
     }
   }
 }

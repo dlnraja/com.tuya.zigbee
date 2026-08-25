@@ -27,6 +27,25 @@ const coupleArg = process.argv.find((a) => a.startsWith('--couple='));
 
 const DCM_HUMID_DPS = new Set([2, 4, 6, 19, 25]);
 
+// WHY (P2247): Z2M byMfr can mix device types under one OEM — don't flag presence DPs on soil meters
+const FAMILY_BLOCK = {
+  soil_sensor: /presence|radar|motion_state|fading_time|detection_range|sensitivity|large_motion|mov_minimum|medium_motion/i,
+  soil: /presence|radar|motion_state|fading_time|detection_range|sensitivity|large_motion|mov_minimum|medium_motion/i,
+  climate_sensor: /presence|radar|leakage_current/i,
+  din_rail_meter: /presence|humidity|moisture/i,
+  smart_rcbo: /presence|humidity|moisture/i,
+  wall_dimmer_tuya: /presence|humidity|energy|leakage/i,
+  switch_2gang: /presence|radar|motion_state|fading_time|detection_range|sensitivity|large_motion|mov_minimum|medium_motion/i,
+  switch_1gang: /presence|radar|motion_state|fading_time|detection_range/i,
+  presence_sensor_radar: /moisture|soil|leakage_current/i,
+};
+
+function z2mBlockedForDriver(driver, z2mName) {
+  const re = FAMILY_BLOCK[driver];
+  if (!re || !z2mName) return false;
+  return re.test(z2mName);
+}
+
 function norm(s) {
   return String(s || '').trim();
 }
@@ -66,10 +85,17 @@ function extractDpMappingsFromDevice(driverId) {
   return { found: dps.size > 0, dps, hasCustomDp6: /_handleTongouDp6|DpByteArrayProfiles/.test(src) };
 }
 
-function z2mDpsForMfr(dpReg, mfr) {
+function z2mDpsForMfr(dpReg, mfr, pidHint) {
   const rows = dpReg?.byMfr?.[mfr] || dpReg?.byMfr?.[mfr.toLowerCase()] || dpReg?.byMfr?.[mfr.toUpperCase()] || [];
+  let use = rows;
+  if (pidHint) {
+    const filtered = rows.filter((r) => String(r.model || '').toLowerCase() === String(pidHint).toLowerCase());
+    if (filtered.length) use = filtered;
+    // Brand-only mfr with no model match → empty (avoid ZG-205 presence on ZG-303 soil)
+    else if (!/^_t[yz]/i.test(mfr)) use = [];
+  }
   const map = new Map();
-  for (const r of rows) map.set(r.dpId, r.name);
+  for (const r of use) map.set(r.dpId, r.name);
   return map;
 }
 
@@ -85,7 +111,7 @@ function auditCouple(caseRow, dpReg, knowledge) {
     for (const pid of pids) {
       const key = coupleKey(mfr, pid);
       const know = knowledge?.couples?.[key] || knowledge?.couples?.[`${mfr}|${pid}`];
-      const z2m = z2mDpsForMfr(dpReg, mfr);
+      const z2m = z2mDpsForMfr(dpReg, mfr, pid);
 
       const allDpIds = new Set([...z2m.keys(), ...device.dps.keys(), ...Object.keys(know?.dps || {}).map(Number)]);
 
@@ -103,12 +129,22 @@ function auditCouple(caseRow, dpReg, knowledge) {
         const notes = [];
 
         if (z2mName && !driverMap && !knowDp) {
-          status = 'missing_in_driver';
-          notes.push(`Z2M defines ${z2mName} — no driver dpMapping`);
+          if (z2mBlockedForDriver(driver, z2mName)) {
+            status = 'ok';
+            notes.push(`Z2M ${z2mName} ignored — family mismatch for ${driver}`);
+          } else {
+            status = 'missing_in_driver';
+            notes.push(`Z2M defines ${z2mName} — no driver dpMapping`);
+          }
         }
         if (knowDp && !driverMap) {
-          status = 'missing_in_driver';
-          notes.push(`knowledge documents DP — not in driver compose/device`);
+          if (knowDp.source === 'z2m-soft') {
+            status = 'ok';
+            notes.push('soft knowledge seed only');
+          } else {
+            status = 'missing_in_driver';
+            notes.push(`knowledge documents DP — not in driver compose/device`);
+          }
         }
         if (isRaw && !hasParser && !hasCustom) {
           status = 'raw_unparsed';

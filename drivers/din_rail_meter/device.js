@@ -59,6 +59,9 @@ class DinRailMeterDevice extends UnifiedPlugBase {
     return {
       1: { capability: 'meter_power', divisor: 100 },
       6: { capability: null, internal: 'tongou_electricity_raw' },
+      // WHY: Z2M TO-Q-SYS-JZT — internal telemetry; never DCM→humidity
+      13: { capability: null, internal: 'tongou_test1' },
+      15: { capability: null, internal: 'leakage_current' },
       16: { capability: null, internal: 'switch_state' },
       32: { capability: null, internal: 'ac_frequency', divisor: 100 },
       50: { capability: null, internal: 'power_factor', divisor: 100 },

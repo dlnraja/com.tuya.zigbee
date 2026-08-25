@@ -277,6 +277,10 @@ class WaterLeakSensorDevice extends UnifiedSensorBase {
    * Skip the Tuya dataQuery parent path for IAS-only units.
    */
   async onEndDeviceAnnounce() {
+    try {
+      const { logFleetIdentity } = require('../../lib/diagnostics/FleetIdentityLog');
+      logFleetIdentity(this, 'WATER-WAKE');
+    } catch (_e) { /* ignore */ }
     BootBudget.markRadioActivity(this);
     this.log('[WATER] wake/rejoin — re-attach IAS Zone listener');
     try {
