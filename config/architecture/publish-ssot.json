@@ -1,0 +1,64 @@
+{
+  "_meta": {
+    "id": "P2286-P2288",
+    "updated": "2026-08-26",
+    "why": "Orphan Athom builds (waiting_for_files / processing_failed) from repo-root publish + compaction dropping sacred couples.",
+    "humanDoc": "docs/architecture/PUBLISH_SSOT.md",
+    "workflowGuidelines": ".github/WORKFLOW_GUIDELINES.md §M.8",
+    "classify": "BOTH"
+  },
+  "mandatoryPath": {
+    "neverPublishFrom": "repo root",
+    "alwaysUse": [
+      "npm run build",
+      "npm run prepare-publish",
+      "npm run publish:direct -- --channel test"
+    ],
+    "alternate": "npm run publish:temp -- --channel test",
+    "tempDirName": "homey-publish-temp",
+    "refuseUnless": ["HOMEY_ALLOW_REPO_PUBLISH=1", "--force"]
+  },
+  "scripts": {
+    "prepare": "scripts/prepare-publish.js",
+    "directPublish": "scripts/direct-api-publish.js",
+    "softExpect": "scripts/lib/soft-expect-decision.js",
+    "compact": "scripts/maintenance/compact-zigbee-identifiers.cjs",
+    "sacredKeepList": "config/architecture/publish-sacred-keep-couples.json"
+  },
+  "softExpect": {
+    "why": "Race when auto-publish and manual publish both createBuild same version (#2997→#2998, Stable #23).",
+    "reListAfterCreateBuild": true,
+    "skipWhen": ["already-test", "in-flight", "peer-test-after-failed"],
+    "test": "test/critical/p2286-soft-expect-publish.test.js",
+    "npm": "check:p2286"
+  },
+  "sacredKeep": {
+    "why": "Athom expands mfr×pid; budget compaction must not drop verified couples (e.g. button_wireless_1 31→2 pids).",
+    "pinFile": "config/architecture/publish-sacred-keep-couples.json",
+    "failIfMissingAfterCompact": true,
+    "test": "test/critical/p2288-prepare-publish-sacred-keep.test.js",
+    "npm": "check:p2288"
+  },
+  "iasLeftoverEf00": {
+    "why": "Sleepy IAS-only devices brick on leftover HYBRID-QUERY / queryAllDPs.",
+    "helper": "lib/io/shouldSkipIasOnlyEf00Tx.js",
+    "facadeReExport": "lib/io/DeviceIOFacade.js",
+    "test": "test/critical/p2287-ias-leftover-ef00-skip.test.js",
+    "npm": "check:p2287",
+    "criticalGap": "config/resilience/critical-gaps.json → ias_sleepy"
+  },
+  "gates": {
+    "unifiedCi": [
+      "npm run check:p2284",
+      "npm run check:p2285",
+      "npm run check:p2286",
+      "npm run check:p2287",
+      "npm run check:p2288",
+      "node tools/ci/prune-fp-collision-bleed.js --check"
+    ]
+  },
+  "p139": {
+    "doNot": "spam republish on processing_failed / socket hang up",
+    "do": "soft-expect exit 0 when peer already on test; wait Athom cooldown"
+  }
+}

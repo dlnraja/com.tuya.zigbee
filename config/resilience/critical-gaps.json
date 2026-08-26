@@ -1,0 +1,223 @@
+{
+  "_meta": {
+    "id": "P2225",
+    "updated": "2026-08-26",
+    "policy": "SHADOW forum. Inventory + critical-first Homey-gap compensation. Parallel stacks only — never collapse.",
+    "methodology": [
+      "Document Homey-native gap per domain",
+      "Add complementary parallel layer (do not replace working path)",
+      "Wire gate/test/workflow",
+      "Mark bug-class FIXED/PARTIAL/OPEN honestly",
+      "softHypothesis never sacred-locks"
+    ]
+  },
+  "criticalPriority": [
+    {
+      "id": "sacred_couple_fp",
+      "severity": 1,
+      "why": "Wrong driver pairing cannot hot-swap; inventing pid destroys fleets",
+      "homeyGap": "No driver hot-swap; mfr-only ambiguous",
+      "stack": [
+        "compose FP",
+        "DeviceFingerprintDB",
+        "misattribution-registry",
+        "p2138 gate",
+        "softHypothesis"
+      ],
+      "bugs": [
+        "fp_collision_ts0601",
+        "sacred_misroute",
+        "enricher_reinject"
+      ],
+      "gates": [
+        "tools/ci/p2138-sacred-couple-matrix-gate.js",
+        "tools/ci/sacred-couple-dry-gate.js",
+        "test/critical/p2288-prepare-publish-sacred-keep.test.js"
+      ],
+      "discoveries": [
+        "Tongou _TZE284_6ocnqlhn+TS0601→din_rail_meter",
+        "BSEED m1cvyneb+TS0601→wall_dimmer_tuya 0-1000",
+        "P2229 app.json stole Tongou onto smart_rcbo — sync-appjson-zigbee + mfs retarget"
+      ]
+    },
+    {
+      "id": "buttons_bidirectional",
+      "severity": 1,
+      "why": "Homey drops Tuya 0xFD/0xFC; physical↔virtual↔UI loops",
+      "homeyGap": "No physical vs app distinction; mfr OnOff dropped",
+      "stack": [
+        "L1–L8 ButtonCaptureCascade",
+        "Physical+Virtual+UI init",
+        "markAppCommand",
+        "2s dedup",
+        "BidirectionalButtonState.wrapHandleFrame"
+      ],
+      "bugs": [
+        "ghost_flow_echo",
+        "missing_capability_listener",
+        "bseed_group_all_gangs",
+        "handleframe_orphan"
+      ],
+      "gates": [
+        "tools/ci/battery-button-intelligence-gate.js",
+        "tools/ci/p2284-handleframe-chain-gate.js",
+        "test/critical/p2283-bidirectional-buttons-permanent.test.js",
+        "test/critical/p2284-handleframe-chain.test.js"
+      ],
+      "discoveries": [
+        "P2220–P2223 cascade",
+        "OnOffBound 0xFD/0xFC",
+        "scene remotes flow-only",
+        "P2230 FlowCardHeuristics: no *_1gang_button_pressed / *_button_N_button_pressed invent",
+        "P2283 wrapHandleFrame SSOT",
+        "P2284 L0/IO/P0 always next — never orphan 0xFD"
+      ]
+    },
+    {
+      "id": "handleframe_chain",
+      "severity": 1,
+      "why": "Blind node.handleFrame= + L0 dedup/shed without next kills Physical/IO/IAS siblings",
+      "homeyGap": "SDK exposes single handleFrame; no official middleware chain",
+      "stack": [
+        "BidirectionalButtonState.wrapHandleFrame",
+        "raw-l0-fallback keepAlways",
+        "io-passive-ef00",
+        "physical-onoff-fd"
+      ],
+      "bugs": [
+        "handleframe_orphan",
+        "l0_dedup_swallow_fd"
+      ],
+      "gates": [
+        "tools/ci/p2284-handleframe-chain-gate.js"
+      ],
+      "discoveries": [
+        "P2282 Peter mrpevh8p IO arity",
+        "P2284 UnifiedSwitch/Sensor super L0 + UniversalZigbee always forward"
+      ]
+    },
+    {
+      "id": "ias_sleepy",
+      "severity": 1,
+      "why": "Boot poll storms + leftover EF00 brick sleepy IAS",
+      "homeyGap": "zoneStatus shapes; EF00 TX on wake",
+      "stack": [
+        "IASZoneEnhanced.coerce",
+        "shouldSkipIasOnlyEf00Tx",
+        "_ensureIasBound"
+      ],
+      "bugs": [
+        "ias_ef00_leftover",
+        "ias_zonestatus_coerce"
+      ],
+      "gates": [
+        "test/critical/p2242-peter-fleet-gate.test.js",
+        "test/critical/forum-routing-regressions.test.js",
+        "test/doorwindow-contact-helper.test.js",
+        "test/critical/p2287-ias-leftover-ef00-skip.test.js"
+      ],
+      "discoveries": [
+        "Peter SOS IAS",
+        "k4ej+TS0207 water_leak never EF00",
+        "P2287 shouldSkipIasOnlyEf00Tx unit gate"
+      ]
+    },
+    {
+      "id": "battery",
+      "severity": 1,
+      "why": "Half-percent + linear formulas spam false battery",
+      "homeyGap": "0–200 vs 0–100; no nonlinear curves",
+      "stack": [
+        "normalizeZclBatteryPercent",
+        "UnifiedBatteryHandler",
+        "nonlinear profiles"
+      ],
+      "bugs": [
+        "zcl_battery_half",
+        "linear_battery_formula",
+        "phantom_mains_battery"
+      ],
+      "gates": [
+        "tools/ci/p216-zcl-battery-half-percent-gate.js"
+      ],
+      "discoveries": [
+        "P216 ban blind /2"
+      ]
+    },
+    {
+      "id": "energy_divisors",
+      "severity": 1,
+      "why": "Double /100 wrecks power/temp UX",
+      "homeyGap": "AdaptiveDataParser + dpMappings both divide",
+      "stack": [
+        "SmartDivisorManager",
+        "adaptive-double-division-gate",
+        "energy-compose-gate"
+      ],
+      "bugs": [
+        "double_division",
+        "energy_approximation_conflict"
+      ],
+      "gates": [
+        "tools/ci/adaptive-double-division-gate.js",
+        "tools/ci/energy-compose-gate.js"
+      ],
+      "discoveries": [
+        "v8 SmartDivisor"
+      ]
+    },
+    {
+      "id": "ef00_dp",
+      "severity": 1,
+      "why": "Type0 byte_array misread as humidity/climate",
+      "homeyGap": "Opaque 0xEF00; no type semantics without couple",
+      "stack": [
+        "DpByteArrayProfiles",
+        "dp_couple_knowledge",
+        "audit:dp-couples"
+      ],
+      "bugs": [
+        "dp_type0_misread",
+        "sacred_misroute"
+      ],
+      "gates": [
+        "tools/ci/audit-sacred-couple-dps.js"
+      ],
+      "discoveries": [
+        "Tongou DP6 type0 V/A/W composite — not humidity",
+        "P2230 DYN-CAP never maps type0/raw to measure_humidity"
+      ]
+    },
+    {
+      "id": "l14_telemetry",
+      "severity": 1,
+      "why": "Raw setCapability floods UI / flows",
+      "homeyGap": "No EMA/ROC / anti-flood in SDK",
+      "stack": [
+        "safeSetCapabilityValue",
+        "SanityFilter",
+        "commitCapability"
+      ],
+      "bugs": [],
+      "gates": [
+        "tools/ci/l14-capability-writers-gate.js"
+      ],
+      "discoveries": [
+        "Phoenix L14 v5.13.6+"
+      ]
+    }
+  ],
+  "workflowHooks": {
+    "inventory": "tools/ci/inventory-features-bugs.js",
+    "auditCritical": "tools/ci/project-resilience-orchestrator.js --write-report --critical-first",
+    "auditAll": "tools/ci/project-resilience-orchestrator.js --write-report",
+    "enrichGates": "tools/ci/silent-enrichment-orchestrator.js --phase=gates --skip-scan",
+    "shadowEnv": {
+      "FORUM_AUTO_POST": "0",
+      "SHADOW_FORUM": "1",
+      "DISCOURSE_WRITE": "0",
+      "REPLY_TOPICS": ""
+    }
+  },
+  "dualApp": "BOTH — wire on master + stable; never rewrite App ID"
+}

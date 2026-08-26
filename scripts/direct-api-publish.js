@@ -97,6 +97,8 @@ function err(...args) { console.error('[direct-publish]', ...args); }
 
 const TRANSIENT_API_RE = /socket hang up|econnreset|econnaborted|etimedout|too many requests|\b429\b|fetch failed|network|502|503|504/i;
 
+const { softExpectDecision } = require('./lib/soft-expect-decision');
+
 async function withAthomRetry(label, fn, { maxAttempts = 5 } = {}) {
   let lastErr;
   for (let attempt = 1; attempt <= maxAttempts; attempt++) {
@@ -433,20 +435,12 @@ async function main() {
   if (listOnly) return;
 
   // Soft-expect / P139: do not createBuild if this version is already on test
-  // or still processing (avoids Stable #23 race after auto-publish).
-  if (!force) {
-    const same = (builds || []).filter((b) => String(b.version) === String(APP_VERSION));
-    const onTest = same.find((b) => b.state === 'test' || b.channel === 'test');
-    const inFlight = same.find((b) =>
-      ['processing', 'pending', 'waiting_for_files', 'uploading', 'building'].includes(String(b.state)));
-    if (onTest) {
-      log(`SOFT-EXPECT: v${APP_VERSION} already on test (#${onTest.id}) — skip createBuild (use --force to override).`);
-      log(`Manage: https://tools.developer.homey.app/apps/app/${APP_ID}/build/${onTest.id}`);
-      return;
-    }
-    if (inFlight) {
-      log(`SOFT-EXPECT: v${APP_VERSION} already ${inFlight.state} (#${inFlight.id}) — skip createBuild (use --force to override).`);
-      log(`Manage: https://tools.developer.homey.app/apps/app/${APP_ID}/build/${inFlight.id}`);
+  // or still processing (avoids Stable #23 / master #2997→#2998 race).
+  {
+    const pre = softExpectDecision(builds, APP_VERSION, { force });
+    if (pre.skip) {
+      log(`SOFT-EXPECT: v${APP_VERSION} ${pre.reason} (#${pre.build?.id}) — skip createBuild (use --force to override).`);
+      log(`Manage: https://tools.developer.homey.app/apps/app/${APP_ID}/build/${pre.build?.id}`);
       return;
     }
   }
@@ -479,6 +473,19 @@ async function main() {
   }
   log(`Created build #${buildId}. Upload target ready.`);
 
+  // Re-list AFTER createBuild: peer may already be on test (orphan draft race).
+  try {
+    const again = await listBuilds(api, token);
+    const post = softExpectDecision(again, APP_VERSION, { force, excludeBuildId: buildId });
+    if (post.skip && post.reason === 'already-test') {
+      log(`SOFT-EXPECT: peer #${post.build?.id} already on test after createBuild — abort upload of orphan #${buildId}.`);
+      log(`Manage peer: https://tools.developer.homey.app/apps/app/${APP_ID}/build/${post.build?.id}`);
+      return;
+    }
+  } catch (listErr) {
+    log(`WARN: post-createBuild listBuilds soft-expect skipped: ${listErr?.message || listErr}`);
+  }
+
   const existingArchive = ensureArchive();
   const archivePath = existingArchive || await packDirectory(APP_ROOT);
   const cleanupArchive = !existingArchive && archivePath && path.basename(path.dirname(archivePath)).startsWith('homey-direct-publish-');
@@ -495,13 +502,36 @@ async function main() {
   }
 
   log('Polling Athom until the build is processed...');
-  const finalBuild = await pollBuildState(api, token, buildId, {
-    timeoutMs: BUILD_POLL_TIMEOUT_MS,
-    intervalMs: BUILD_POLL_INTERVAL_MS,
-  });
+  let finalBuild;
+  try {
+    finalBuild = await pollBuildState(api, token, buildId, {
+      timeoutMs: BUILD_POLL_TIMEOUT_MS,
+      intervalMs: BUILD_POLL_INTERVAL_MS,
+    });
+  } catch (pollErr) {
+    // If this build failed but a peer of the same version is already test, soft-exit 0.
+    try {
+      const afterFail = await listBuilds(api, token);
+      const peer = softExpectDecision(afterFail, APP_VERSION, { force, excludeBuildId: buildId });
+      if (peer.skip && (peer.reason === 'already-test' || peer.reason === 'peer-test-after-failed')) {
+        log(`SOFT-EXPECT: build #${buildId} failed but peer #${peer.build?.id} already on test — exit 0.`);
+        return;
+      }
+    } catch (_e) { /* fall through */ }
+    throw pollErr;
+  }
   log(`Build #${buildId} final state: ${finalBuild.state}`);
 
   if (doChannel) {
+    // Final soft-expect before promote (another runner may have won).
+    try {
+      const beforePromote = await listBuilds(api, token);
+      const promo = softExpectDecision(beforePromote, APP_VERSION, { force, excludeBuildId: buildId });
+      if (promo.skip && promo.reason === 'already-test') {
+        log(`SOFT-EXPECT: peer #${promo.build?.id} already on test — skip setChannel for #${buildId}.`);
+        return;
+      }
+    } catch (_e) { /* proceed */ }
     await setChannel(api, token, buildId, doChannel);
   }
 
@@ -509,8 +539,10 @@ async function main() {
   log(`Manage: https://tools.developer.homey.app/apps/app/${APP_ID}/build/${buildId}`);
 }
 
-main().catch((e) => {
-  err('FATAL:', e?.message || e);
-  if (e?.stack) err(e.stack.split('\n').slice(0, 8).join('\n'));
-  process.exit(1);
-});
+if (require.main === module) {
+  main().catch((e) => {
+    err('FATAL:', e?.message || e);
+    if (e?.stack) err(e.stack.split('\n').slice(0, 8).join('\n'));
+    process.exit(1);
+  });
+}

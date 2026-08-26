@@ -17,6 +17,13 @@
     { "mfr": "_TZE284_nt4pquef", "pid": "TS0601", "driverId": "soil_sensor", "note": "soil EF00" },
     { "mfr": "HOBEIAN", "pid": "ZG-305Z", "driverId": "switch_2gang", "note": "P2250 couple-scoped" },
     { "mfr": "HOBEIAN", "pid": "ZG-303Z", "driverId": "soil_sensor", "note": "P2250" },
-    { "mfr": "HOBEIAN", "pid": "ZG-227Z", "driverId": "climate_sensor", "note": "P2250" }
+    { "mfr": "HOBEIAN", "pid": "ZG-227Z", "driverId": "climate_sensor", "note": "P2250" },
+    { "mfr": "HOBEIAN", "pid": "3315-S", "driverId": "water_leak_sensor", "note": "P2282 Peter water" },
+    { "mfr": "_TZ3000_kfu8zapd", "pid": "TS0044", "driverId": "button_wireless_4", "note": "Moes 4-btn" },
+    { "mfr": "_TZ3000_xabckq1v", "pid": "TS004F", "driverId": "button_wireless_4", "note": "P2236 soft lock" },
+    { "mfr": "_TZ3000_4upl1fcj", "pid": "TS0041", "driverId": "button_wireless_1", "note": "SunBeech" },
+    { "mfr": "_TZ3000_qeuvnohg", "pid": "TS011F", "driverId": "din_rail_switch", "note": "DIN relay" },
+    { "mfr": "_TZ3000_amdymr7l", "pid": "TS011F", "driverId": "plug_energy_monitor", "note": "BlitzWolf SHP13" },
+    { "mfr": "_TZ3000_nkcobies", "pid": "TS011F", "driverId": "smartplug", "note": "P2236 plug" }
   ]
 }

@@ -6,9 +6,9 @@ name: 🛡️ Unified CI/CD Orchestrator
 
 on:
   push:
-    branches: [ master, main ]
+    branches: [ master, main, stable-v5 ]
   pull_request:
-    branches: [ master, main ]
+    branches: [ master, main, stable-v5 ]
   workflow_dispatch:
     inputs:
       force_audit:
@@ -79,6 +79,14 @@ jobs:
       - name: Normalize Homey manifest before validation
         run: npm run fix:generated-flow-args
 
+      - name: 🧪 P2284/P2285 handleFrame + publish sacred keep
+        run: |
+          npm run check:p2284
+          npm run check:p2285
+          npm run check:p2286
+          npm run check:p2287
+          npm run check:p2288
+
       - name: 🏠 Homey Validate
         run: npx homey app validate --level publish
 
@@ -99,6 +107,7 @@ jobs:
 
       - name: 🔍 Fingerprint Collision Check
         run: |
+          node tools/ci/prune-fp-collision-bleed.js --check
           node .github/scripts/fp-collision-check.js --baseline .github/fingerprint-collision-baseline.json
 
       - name: 🌌 ZERO DEFECT ARCHITECT AUDIT
