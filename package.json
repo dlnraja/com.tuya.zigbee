@@ -221,7 +221,10 @@
     "check:l99-dual": "node tools/ci/l99-dual-app-enrich-gates.js",
     "check:l99-dual:hard": "node tools/ci/l99-dual-app-enrich-gates.js --hard",
     "enrich:settings": "node tools/ci/enrich-driver-settings-intelligent.js",
-    "enrich:settings:apply": "node tools/ci/enrich-driver-settings-intelligent.js --apply"
+    "enrich:settings:apply": "node tools/ci/enrich-driver-settings-intelligent.js --apply",
+    "check:sacred-couple": "node tools/ci/p2138-sacred-couple-matrix-gate.js",
+    "apply:parallel-couples": "node tools/ci/p2268-apply-parallel-couple-fixes.js",
+    "apply:mfr-pid": "node tools/ci/apply-mfr-pid-cross-ref.js"
   },
   "keywords": [
     "homey",

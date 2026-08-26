@@ -3053,6 +3053,54 @@
           "dynamic": false
         }
       }
+    },
+    {
+      "id": "p2268-cjbofhxw-clamp-not-smoke",
+      "mfr": ["_TZE204_cjbofhxw", "_TZE284_cjbofhxw", "_TZE200_cjbofhxw"],
+      "productId": ["TS0601"],
+      "canonicalDriver": "power_clamp_meter",
+      "forbiddenDrivers": ["smoke_sensor3", "smoke_detector", "climate_sensor"],
+      "forbidMode": "couple",
+      "protocol": "tuya_dp",
+      "notes": "Z2M PJ-MGW1203 clamp meter — was cartesian-stolen by smoke_sensor3 via TS0601",
+      "sources": ["z2m-PJ-MGW1203", "ha-community-931745", "P2268"],
+      "tracks": { "master": { "static": true, "dynamic": true }, "stable": { "static": true, "dynamic": false } }
+    },
+    {
+      "id": "p2268-a14rjslz-3phase-not-climate",
+      "mfr": ["_TZE284_a14rjslz"],
+      "productId": ["TS0601"],
+      "canonicalDriver": "energy_meter_3phase",
+      "forbiddenDrivers": ["climate_sensor", "smoke_sensor3", "power_clamp_meter"],
+      "forbidMode": "couple",
+      "protocol": "tuya_dp",
+      "notes": "Z2M ATMS10013Z3 Ourtop 3-phase meter — was on climate_sensor",
+      "sources": ["z2m-ATMS10013Z3", "zhc-8658", "P2268"],
+      "tracks": { "master": { "static": true, "dynamic": true }, "stable": { "static": true, "dynamic": false } }
+    },
+    {
+      "id": "p2268-tonrapsk-ts0002-2gang",
+      "mfr": ["_TZ3000_tonrapsk", "_tz3000_tonrapsk"],
+      "productId": ["TS0002"],
+      "canonicalDriver": "switch_2gang",
+      "forbiddenDrivers": ["switch_1gang", "wall_switch_2gang"],
+      "forbidMode": "couple",
+      "protocol": "zcl",
+      "notes": "ZHA #5260 Zemismart ZB811 — per-gang needs Tuya magic (UnifiedSwitchBase already sends). Works in Z2M.",
+      "sources": ["zha-device-handlers#5260", "P2268"],
+      "tracks": { "master": { "static": true, "dynamic": true }, "stable": { "static": true, "dynamic": false } }
+    },
+    {
+      "id": "p2268-cf4b5ktf-moes-3phase-soft",
+      "mfr": ["_TZE284_cf4b5ktf"],
+      "productId": ["TS0601"],
+      "canonicalDriver": "energy_meter_3phase",
+      "forbiddenDrivers": ["climate_sensor", "smart_rcbo"],
+      "forbidMode": "couple",
+      "protocol": "tuya_dp",
+      "notes": "ZHA #5117 Moes 3-phase — Z2M converter still absent; soft route only, no invented DPs",
+      "sources": ["zha-device-handlers#5117", "P2268"],
+      "tracks": { "master": { "static": true, "dynamic": true }, "stable": { "static": true, "dynamic": false } }
     }
   ]
 }

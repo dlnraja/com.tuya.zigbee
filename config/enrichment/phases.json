@@ -72,6 +72,20 @@
         "id": "render-profile-index",
         "script": "tools/ci/render-enrichment-index.js",
         "args": []
+      },
+      {
+        "id": "sync-z2m-zha-light",
+        "script": "tools/ci/mega-crawler.js",
+        "args": ["--only=z2m", "--timeout=120"],
+        "softFail": true,
+        "timeout": 180000
+      },
+      {
+        "id": "sync-zha-light",
+        "script": "tools/ci/mega-crawler.js",
+        "args": ["--only=zha", "--timeout=120"],
+        "softFail": true,
+        "timeout": 180000
       }
     ],
     "investigate": [
