@@ -30,17 +30,71 @@ const path = require('path');
 // Legacy budgets (no mfs_db available): historical behavior.
 const DEFAULT_MAX_DRIVER_COMBOS = 350;
 const DEFAULT_MAX_TOTAL_COMBOS = 20000;
-// Prioritized budgets (mfs_db available): sized so that every observed
-// manufacturer survives — measured 2026-07-28: 31 capped drivers keep all
-// 3.7k observed mfrs at ~31.4k total combos and a 3.3 MB app.json.
-const PRIORITIZED_MAX_DRIVER_COMBOS = 10000;
-const PRIORITIZED_MAX_TOTAL_COMBOS = 60000;
+// Prioritized budgets (mfs_db available).
+// WHY(P2252): Athom expands manufacturerName[] × productId[] using RAW array
+// lengths (every CASE form counts). Unique-lowercase under-counting let
+// publish think ~28k while Athom saw 100k+ → processor socket hang up /
+// processing_failed (#2977 on 9.0.646). Keep raw totals Athom-safe.
+const PRIORITIZED_MAX_DRIVER_COMBOS = 2000;
+const PRIORITIZED_MAX_TOTAL_COMBOS = 20000;
 // Above this per-driver combo count (and only when mfs_db is available),
 // productIds are reduced to the ones actually observed with the driver's
 // manufacturers — this shrinks the cross-product without losing any real pair.
 const DEFAULT_PID_REDUCE_OVER = 350;
+// Max CASE string forms kept per unique manufacturer (Homey matching is
+// often case-sensitive). 2 = canonical + lowercase covers HOBEIAN/hobeian.
+const DEFAULT_MAX_CASE_FORMS = 2;
 const SYNTHETIC_MANUFACTURER_RE = /unknown|dummy|placeholder|needs_device_assignment|needs_exact_fingerprint|migrated_to|^_generic_|^_GENERIC_|^_hybrid_|^_HYBRID_|^_master_|^_MASTER_|^_disabled_|^_DISABLED_/;
 const MFS_DB_META_KEYS = new Set(['_meta', 'sources', 'devices', 'driverMapping', 'stats', 'diff']);
+
+/** WHY(P2286): pin verified (mfr,pid,driver) so Athom budget cuts never drop sacred couples. */
+function loadSacredKeepCouples(repoRoot) {
+  const candidates = [
+    path.join(repoRoot, 'config', 'architecture', 'publish-sacred-keep-couples.json'),
+    path.join(__dirname, '..', '..', 'config', 'architecture', 'publish-sacred-keep-couples.json'),
+  ];
+  for (const file of candidates) {
+    try {
+      if (!fs.existsSync(file)) continue;
+      const raw = JSON.parse(fs.readFileSync(file, 'utf8'));
+      const list = Array.isArray(raw.couples) ? raw.couples : [];
+      return list
+        .filter((c) => c && c.mfr && c.pid && c.driverId)
+        .map((c) => ({
+          mfr: String(c.mfr).toLowerCase(),
+          pid: String(c.pid),
+          driverId: String(c.driverId),
+        }));
+    } catch {
+      /* try next */
+    }
+  }
+  return [];
+}
+
+function sacredPinsForDriver(sacredAll, driverId) {
+  return sacredAll.filter((c) => c.driverId === driverId);
+}
+
+function assertSacredCouplesPresent(manifest, sacredAll) {
+  const missing = [];
+  const byId = new Map((manifest.drivers || []).map((d) => [d.id, d]));
+  for (const c of sacredAll) {
+    const d = byId.get(c.driverId);
+    if (!d || !d.zigbee) {
+      missing.push(`${c.mfr}+${c.pid} → ${c.driverId} (driver missing in publish)`);
+      continue;
+    }
+    const mfrs = (d.zigbee.manufacturerName || []).map((m) => String(m).toLowerCase());
+    const pids = (d.zigbee.productId || []).map(String);
+    const hasMfr = mfrs.includes(c.mfr);
+    const hasPid = pids.some((p) => p.toUpperCase() === c.pid.toUpperCase());
+    if (!hasMfr || !hasPid) {
+      missing.push(`${c.mfr}+${c.pid} → ${c.driverId} (mfr=${hasMfr} pid=${hasPid})`);
+    }
+  }
+  return missing;
+}
 
 function uniqStrings(values) {
   const out = [];
@@ -60,7 +114,38 @@ function comboCount(driver) {
   if (!zigbee) return 0;
   const manufacturers = uniqStrings(zigbee.manufacturerName);
   const products = uniqStrings(zigbee.productId);
+  // WHY(P2252): Athom cartesian uses raw list lengths — do not unique-case here.
   return manufacturers.length * products.length;
+}
+
+/**
+ * Cap CASE variants per unique manufacturer key.
+ * Prefer original first occurrence, then lowercase, then uppercase.
+ */
+function limitCaseForms(manufacturers, maxForms = DEFAULT_MAX_CASE_FORMS) {
+  const limit = Math.max(1, Number(maxForms) || DEFAULT_MAX_CASE_FORMS);
+  const groups = new Map();
+  for (const value of manufacturers || []) {
+    if (typeof value !== 'string' || !value.trim()) continue;
+    const k = value.toLowerCase();
+    if (!groups.has(k)) groups.set(k, []);
+    const list = groups.get(k);
+    if (!list.includes(value)) list.push(value);
+  }
+  const out = [];
+  for (const [, variants] of groups) {
+    const preferred = [];
+    const lower = variants.find((v) => v === v.toLowerCase());
+    const upper = variants.find((v) => v === v.toUpperCase());
+    const first = variants[0];
+    for (const v of [first, lower, upper, ...variants]) {
+      if (!v || preferred.includes(v)) continue;
+      preferred.push(v);
+      if (preferred.length >= limit) break;
+    }
+    out.push(...preferred);
+  }
+  return out;
 }
 
 function isSyntheticManufacturer(value) {
@@ -189,6 +274,17 @@ function compactZigbeeIdentifiers(manifest, opts = {}) {
     )
     : Infinity;
   const verbose = opts.verbose === true || process.env.COMPACT_VERBOSE === '1';
+  const maxCaseForms = Number(
+    opts.maxCaseForms
+    || process.env.HOMEY_ZIGBEE_MAX_CASE_FORMS
+    || DEFAULT_MAX_CASE_FORMS,
+  );
+
+  const repoRoot = opts.repoRoot || path.join(__dirname, '..', '..');
+  const sacredAll = Array.isArray(opts.sacredKeep)
+    ? opts.sacredKeep
+    : loadSacredKeepCouples(repoRoot);
+  const sacredMissing = [];
 
   const changes = [];
   const prunedDrivers = [];
@@ -200,6 +296,7 @@ function compactZigbeeIdentifiers(manifest, opts = {}) {
   let filteredSyntheticManufacturers = 0;
   let observedBefore = 0;
   let observedKept = 0;
+  let sacredPinned = 0;
 
   const nextDrivers = [];
 
@@ -208,6 +305,10 @@ function compactZigbeeIdentifiers(manifest, opts = {}) {
       nextDrivers.push(driver);
       continue;
     }
+
+    const sacredPins = sacredPinsForDriver(sacredAll, driver.id);
+    const sacredMfrKeys = new Set(sacredPins.map((c) => c.mfr));
+    const sacredPids = new Set(sacredPins.map((c) => c.pid.toUpperCase()));
 
     let manufacturers = uniqStrings(driver.zigbee.manufacturerName);
     let products = uniqStrings(driver.zigbee.productId);
@@ -301,8 +402,17 @@ function compactZigbeeIdentifiers(manifest, opts = {}) {
         nextProducts = products.filter(pid => observedPidSet.has(pid));
       }
     }
+    // WHY(P2286): re-inject sacred pids after mfs reduce so TS0041 etc. never vanish.
+    if (sacredPids.size > 0) {
+      const pinned = products.filter((pid) => sacredPids.has(String(pid).toUpperCase()));
+      if (pinned.length > 0) {
+        nextProducts = uniqStrings([...pinned, ...nextProducts]);
+        sacredPinned += pinned.length;
+      }
+    }
 
     // Budget: DEVICE count (case-variant groups) × pids — case variants are free
+    // for GROUP selection, but Athom RAW cartesian is applied after emit.
     const candidate = variantGroups.size * nextProducts.length;
     if (candidate > maxDriverCombos && manufacturers.length > 0 && nextProducts.length > 0) {
       let nextManufacturers;
@@ -312,20 +422,33 @@ function compactZigbeeIdentifiers(manifest, opts = {}) {
           // Pathological: pids alone exceed the budget.
           nextManufacturers = (observed.length > 0 ? observed : speculative).slice(0, 1);
           nextProducts = nextProducts.slice(0, maxDriverCombos);
+          const pinned = products.filter((pid) => sacredPids.has(String(pid).toUpperCase()));
+          if (pinned.length > 0) {
+            nextProducts = uniqStrings([...pinned, ...nextProducts]).slice(0, maxDriverCombos);
+          }
         } else {
-          // 2) Truncate by DEVICE GROUP (never splits a case-variant group):
-          //    observed groups (confidence desc) first, speculative afterwards.
-          //    Emission order: all variants of kept observed groups first
-          //    (confidence desc), then variants of kept speculative groups.
+          // Truncate by DEVICE GROUP: sacred first, then observed, then speculative.
           const groupLimit = Math.max(1, Math.floor(maxDriverCombos / nextProducts.length));
-          const keptObservedKeys = observedKeys.slice(0, groupLimit);
+          const sacredKeys = observedKeys.filter((k) => sacredMfrKeys.has(k));
+          const otherObserved = observedKeys.filter((k) => !sacredMfrKeys.has(k));
+          const keptSacred = sacredKeys.slice(0, groupLimit);
+          const keptObservedKeys = [
+            ...keptSacred,
+            ...otherObserved.slice(0, Math.max(0, groupLimit - keptSacred.length)),
+          ];
           const keptSpeculativeKeys = speculativeKeys.slice(0, Math.max(0, groupLimit - keptObservedKeys.length));
-          const keptKeys = new Set([...keptObservedKeys, ...keptSpeculativeKeys]);
           nextManufacturers = [
             ...keptObservedKeys.flatMap(k => variantGroups.get(k)),
             ...keptSpeculativeKeys.flatMap(k => variantGroups.get(k)),
           ];
-          const droppedKeys = observedKeys.slice(groupLimit);
+          // Force-include sacred groups even if over soft groupLimit.
+          for (const sk of sacredMfrKeys) {
+            if (variantGroups.has(sk) && !nextManufacturers.some((m) => m.toLowerCase() === sk)) {
+              nextManufacturers = [...variantGroups.get(sk), ...nextManufacturers];
+            }
+          }
+          nextManufacturers = uniqStrings(nextManufacturers);
+          const droppedKeys = observedKeys.filter((k) => !keptObservedKeys.includes(k) && !sacredMfrKeys.has(k));
           if (droppedKeys.length > 0) {
             observedDropped.push({
               id: driver.id,
@@ -338,8 +461,29 @@ function compactZigbeeIdentifiers(manifest, opts = {}) {
         nextProducts = nextProducts.slice(0, maxDriverCombos);
       } else {
         const groupLimit = Math.max(1, Math.floor(maxDriverCombos / Math.max(1, nextProducts.length)));
-        const keptKeys = new Set([...variantGroups.keys()].slice(0, groupLimit));
+        const keys = [...variantGroups.keys()];
+        const sacredFirst = [
+          ...keys.filter((k) => sacredMfrKeys.has(k)),
+          ...keys.filter((k) => !sacredMfrKeys.has(k)),
+        ];
+        const keptKeys = new Set(sacredFirst.slice(0, groupLimit));
+        for (const sk of sacredMfrKeys) {
+          if (variantGroups.has(sk)) keptKeys.add(sk);
+        }
         nextManufacturers = manufacturers.filter(v => keptKeys.has(v.toLowerCase()));
+      }
+
+      // WHY(P2252): cap CASE forms so Athom raw cartesian stays near group budget
+      nextManufacturers = limitCaseForms(nextManufacturers, maxCaseForms);
+      // If still over raw budget, cut more groups — never drop sacred keys
+      while (
+        nextManufacturers.length * nextProducts.length > maxDriverCombos
+        && new Set(nextManufacturers.map((v) => v.toLowerCase())).size > 1
+      ) {
+        const keys = [...new Set(nextManufacturers.map((v) => v.toLowerCase()))];
+        const drop = [...keys].reverse().find((k) => !sacredMfrKeys.has(k));
+        if (!drop) break;
+        nextManufacturers = nextManufacturers.filter((v) => v.toLowerCase() !== drop);
       }
 
       driver.zigbee.manufacturerName = nextManufacturers;
@@ -350,7 +494,7 @@ function compactZigbeeIdentifiers(manifest, opts = {}) {
         : 0;
       observedKept += keptObservedCount;
 
-      const after = new Set(nextManufacturers.map(v => v.toLowerCase())).size * nextProducts.length;
+      const after = nextManufacturers.length * nextProducts.length;
       const change = {
         id: driver.id,
         before,
@@ -367,37 +511,111 @@ function compactZigbeeIdentifiers(manifest, opts = {}) {
       );
       afterTotal += after;
     } else {
-      observedKept += observed.length;
-      afterTotal += candidate;
+      // Still cap CASE forms on under-budget drivers (Athom raw cartesian)
+      let emitMfrs = limitCaseForms(manufacturers, maxCaseForms);
+      let emitProducts = nextProducts;
+      while (
+        emitMfrs.length * emitProducts.length > maxDriverCombos
+        && new Set(emitMfrs.map((v) => v.toLowerCase())).size > 1
+      ) {
+        const keys = [...new Set(emitMfrs.map((v) => v.toLowerCase()))];
+        const drop = [...keys].reverse().find((k) => !sacredMfrKeys.has(k));
+        if (!drop) break;
+        emitMfrs = emitMfrs.filter((v) => v.toLowerCase() !== drop);
+      }
+      for (const sk of sacredMfrKeys) {
+        if (!emitMfrs.some((m) => m.toLowerCase() === sk) && variantGroups.has(sk)) {
+          emitMfrs = uniqStrings([...variantGroups.get(sk), ...emitMfrs]);
+        }
+      }
+      const after = emitMfrs.length * emitProducts.length;
+      observedKept += hasDb
+        ? emitMfrs.filter(value => db.byMfr.has(value.toLowerCase())).length
+        : 0;
+      afterTotal += after;
       const wasRescued = rescuedDrivers.some(r => r.id === driver.id);
-      if (wasRescued) {
-        logLines.push(`[compact] ${driver.id}: mfrs 0→${manufacturers.length} (obs ${observed.length}/${observed.length}), pids 0→${nextProducts.length}, combos 0→${candidate} (rescued)`);
-      } else if (nextProducts.length !== products.length) {
+      if (wasRescued || emitMfrs.length !== manufacturers.length || emitProducts.length !== products.length) {
         changes.push({
           id: driver.id,
           before,
-          after: candidate,
-          manufacturers: `${manufacturers.length}->${manufacturers.length}`,
-          products: `${products.length}->${nextProducts.length}`,
-          observed: hasDb ? `${observed.length}/${observed.length}` : undefined,
+          after,
+          manufacturers: `${manufacturers.length}->${emitMfrs.length}`,
+          products: `${products.length}->${emitProducts.length}`,
+          observed: hasDb ? undefined : undefined,
         });
         logLines.push(
-          `[compact] ${driver.id}: mfrs ${manufacturers.length}→${manufacturers.length}`
-          + (hasDb ? ` (obs ${observed.length}/${observed.length})` : '')
-          + `, pids ${products.length}→${nextProducts.length}, combos ${before}→${candidate}`,
+          `[compact] ${driver.id}: mfrs ${manufacturers.length}→${emitMfrs.length}`
+          + `, pids ${products.length}→${emitProducts.length}, combos ${before}→${after}`
+          + (wasRescued ? ' (rescued)' : ''),
         );
       }
-      driver.zigbee.manufacturerName = manufacturers;
-      driver.zigbee.productId = nextProducts;
+      driver.zigbee.manufacturerName = emitMfrs;
+      driver.zigbee.productId = emitProducts;
+      for (const pin of sacredPins) {
+        const mfrsNow = (driver.zigbee.manufacturerName || []).map((m) => String(m).toLowerCase());
+        const pidsNow = (driver.zigbee.productId || []).map(String);
+        if (!mfrsNow.includes(pin.mfr) || !pidsNow.some((p) => p.toUpperCase() === pin.pid.toUpperCase())) {
+          sacredMissing.push(`${pin.mfr}+${pin.pid} @ ${driver.id}`);
+        }
+      }
       nextDrivers.push(driver);
       continue;
+    }
+
+    for (const pin of sacredPins) {
+      const mfrsNow = (driver.zigbee.manufacturerName || []).map((m) => String(m).toLowerCase());
+      const pidsNow = (driver.zigbee.productId || []).map(String);
+      if (!mfrsNow.includes(pin.mfr) || !pidsNow.some((p) => p.toUpperCase() === pin.pid.toUpperCase())) {
+        sacredMissing.push(`${pin.mfr}+${pin.pid} @ ${driver.id}`);
+      }
     }
 
     nextDrivers.push(driver);
   }
 
-  if (prunedDrivers.length > 0 || rescuedDrivers.length > 0) {
+  if (prunedDrivers.length > 0 || rescuedDrivers.length > 0 || changes.length > 0) {
     manifest.drivers = nextDrivers;
+  }
+
+  // WHY(P2252): second pass — enforce RAW total Athom cartesian budget
+  let pass2Cuts = 0;
+  const rawTotal = () => (manifest.drivers || []).reduce((sum, d) => sum + comboCount(d), 0);
+  afterTotal = rawTotal();
+  while (afterTotal > maxTotalCombos) {
+    const ranked = (manifest.drivers || [])
+      .map((d) => ({ d, c: comboCount(d) }))
+      .filter((x) => x.c > 1)
+      .sort((a, b) => b.c - a.c);
+    if (!ranked.length) break;
+    const target = ranked[0].d;
+    const mfrs = uniqStrings(target.zigbee.manufacturerName);
+    const pids = uniqStrings(target.zigbee.productId);
+    const pins = sacredPinsForDriver(sacredAll, target.id);
+    const pinMfr = new Set(pins.map((p) => p.mfr));
+    const pinPid = new Set(pins.map((p) => p.pid.toUpperCase()));
+    if (mfrs.length <= 1 && pids.length <= 1) break;
+    if (mfrs.length > pids.length) {
+      const keys = [...new Set(mfrs.map((v) => v.toLowerCase()))];
+      const drop = [...keys].reverse().find((k) => !pinMfr.has(k));
+      if (!drop) {
+        // Cannot drop mfr — try pid instead
+        const dropPid = [...pids].reverse().find((p) => !pinPid.has(String(p).toUpperCase()));
+        if (!dropPid) break;
+        target.zigbee.productId = pids.filter((p) => p !== dropPid);
+      } else {
+        target.zigbee.manufacturerName = mfrs.filter((v) => v.toLowerCase() !== drop);
+      }
+    } else {
+      const dropPid = [...pids].reverse().find((p) => !pinPid.has(String(p).toUpperCase()));
+      if (!dropPid) break;
+      target.zigbee.productId = pids.filter((p) => p !== dropPid);
+    }
+    pass2Cuts += 1;
+    afterTotal = rawTotal();
+    if (pass2Cuts > 50000) break; // safety
+  }
+  if (pass2Cuts > 0) {
+    logLines.push(`[compact] pass2: cut ${pass2Cuts} group/pid slot(s) to meet raw total ≤ ${maxTotalCombos} (now ${afterTotal})`);
   }
 
   // Keep OTA firmwareUpdates consistent with the (possibly compacted) zigbee
@@ -408,7 +626,9 @@ function compactZigbeeIdentifiers(manifest, opts = {}) {
     const fw = driver.firmwareUpdates;
     if (!fw || !Array.isArray(fw.updates)) continue;
     const pids = new Set((driver.zigbee && driver.zigbee.productId) || []);
-    const mfrsLc = new Set(((driver.zigbee && driver.zigbee.manufacturerName) || []).map((m) => String(m).toLowerCase()));
+    const zigbeeMfrs = (driver.zigbee && driver.zigbee.manufacturerName) || [];
+    const mfrByLc = new Map(zigbeeMfrs.map((m) => [String(m).toLowerCase(), String(m)]));
+    const mfrsLc = new Set(mfrByLc.keys());
     const kept = [];
     for (const update of fw.updates) {
       const dev = update && update.device;
@@ -418,8 +638,16 @@ function compactZigbeeIdentifiers(manifest, opts = {}) {
         if (next.length !== dev.productId.length) { dev.productId = next; firmwareAligned++; }
       }
       if (Array.isArray(dev.manufacturerName)) {
-        const next = dev.manufacturerName.filter((m) => mfrsLc.has(String(m).toLowerCase()));
-        if (next.length !== dev.manufacturerName.length) { dev.manufacturerName = next; firmwareAligned++; }
+        // WHY(P2257): homey-lib publish validation is case-sensitive on exact strings.
+        // After compaction we may keep _tze200_* while OTA still cites _TZE200_*.
+        const next = dev.manufacturerName
+          .filter((m) => mfrsLc.has(String(m).toLowerCase()))
+          .map((m) => mfrByLc.get(String(m).toLowerCase()) || m);
+        if (next.length !== dev.manufacturerName.length
+          || next.some((m, i) => m !== dev.manufacturerName[i])) {
+          dev.manufacturerName = next;
+          firmwareAligned++;
+        }
       }
       const emptyPids = Array.isArray(dev.productId) && dev.productId.length === 0;
       const emptyMfrs = Array.isArray(dev.manufacturerName) && dev.manufacturerName.length === 0;
@@ -436,9 +664,15 @@ function compactZigbeeIdentifiers(manifest, opts = {}) {
   }
 
   const droppedObservedCount = observedDropped.reduce((sum, item) => sum + item.manufacturers.length, 0);
+  // Re-assert after pass2 (may have cut more)
+  const sacredMissingFinal = assertSacredCouplesPresent(manifest, sacredAll);
+  for (const m of sacredMissingFinal) {
+    if (!sacredMissing.includes(m)) sacredMissing.push(m);
+  }
   logLines.push(
     `[compact] summary: combos ${beforeTotal}→${afterTotal}, observed mfrs preserved ${observedKept}/${observedBefore}`
     + `, drivers compacted=${changes.length}, rescued=${rescuedDrivers.length}, pruned=${prunedDrivers.length}`
+    + `, sacredPinned=${sacredPinned}, sacredMissing=${sacredMissing.length}`
     + (droppedObservedCount > 0 ? `, OBSERVED DROPPED=${droppedObservedCount} (budget-forced)` : ''),
   );
   if (verbose) {
@@ -462,6 +696,8 @@ function compactZigbeeIdentifiers(manifest, opts = {}) {
     observedBefore,
     observedKept,
     observedDropped,
+    sacredPinned,
+    sacredMissing,
     beforeTotal,
     afterTotal,
     maxDriverCombos,
@@ -510,6 +746,11 @@ if (require.main === module) {
       if (result.observedDropped.length > 0) {
         console.error(`[compact-zigbee] WARNING: ${result.observedDropped.reduce((s, i) => s + i.manufacturers.length, 0)} observed manufacturer(s) dropped (budget-forced) in ${result.observedDropped.length} driver(s)`);
       }
+      if ((result.sacredMissing || []).length > 0) {
+        console.error(`[compact-zigbee] FATAL: sacred keep couples missing after compact:`);
+        for (const m of result.sacredMissing.slice(0, 20)) console.error(`  - ${m}`);
+        failed = true;
+      }
     } catch (e) {
       console.error(`[compact-zigbee] FATAL: ${file}: ${e.message}`);
       failed = true;
@@ -522,7 +763,10 @@ module.exports = {
   comboCount,
   compactManifestFile,
   compactZigbeeIdentifiers,
+  limitCaseForms,
   indexMfsDatabase,
   isSyntheticManufacturer,
   loadMfsDatabase,
+  loadSacredKeepCouples,
+  assertSacredCouplesPresent,
 };

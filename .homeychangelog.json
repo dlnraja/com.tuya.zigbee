@@ -1335,5 +1335,8 @@
   },
   "5.12.94": {
     "en": "Reliability: button RX chain (handleFrame) no longer drops physical presses; TS0041 one-button remotes locked to wireless button driver; sleepy remote battery/pairing hardening."
+  },
+  "5.12.95": {
+    "en": "Publish hardening: changelog always shipped; sacred couples preserved under compaction; safer Test uploads."
   }
 }
