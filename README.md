@@ -33,10 +33,10 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.667 |
+| **App Version** | v9.0.668 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,379 |
-| **Pairing Variants** | 16,450 (4 case combos per fingerprint) |
+| **Pairing Variants** | 16,465 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 579 |
 | **Flow Cards** | 5,182 |
 | **Unique Capabilities** | 170 |
@@ -51,9 +51,9 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | # | Driver | Fingerprints |
 |---|--------|-------------|
-| 1 | `climate_sensor` | 2,401 |
+| 1 | `climate_sensor` | 2,404 |
 | 2 | `switch_1gang` | 1,708 |
-| 3 | `presence_sensor_radar` | 728 |
+| 3 | `presence_sensor_radar` | 731 |
 | 4 | `radiator_valve` | 599 |
 | 5 | `button_wireless_2` | 578 |
 | 6 | `wall_dimmer_tuya` | 490 |
@@ -66,11 +66,11 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | 13 | `motion_sensor` | 207 |
 | 14 | `diy_custom_zigbee` | 206 |
 | 15 | `thermostat_tuya_dp` | 192 |
-| 16 | `soil_sensor` | 188 |
+| 16 | `soil_sensor` | 189 |
 | 17 | `sensor_contact_zigbee` | 186 |
 | 18 | `water_leak_sensor_tuya` | 178 |
 | 19 | `usb_dongle_triple` | 172 |
-| 20 | `contact_sensor` | 155 |
+| 20 | `contact_sensor` | 158 |
 
 ### Drivers by Device Class
 
@@ -102,6 +102,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.668** | Publish hardening: store changelog always shipped; sacred device couples preserved under size compaction; safer Test uploads (no orphan b… |
 | **v9.0.667** | Publish hardening: store changelog always shipped; sacred device couples preserved under size compaction; safer Test uploads (no orphan b… |
 | **v9.0.666** | Publish hardening: store changelog always shipped; sacred device couples preserved under size compaction; safer Test uploads (no orphan b… |
 | **v9.0.665** | Publish hardening: store changelog always shipped; sacred device couples preserved under size compaction; safer Test uploads (no orphan b… |
@@ -113,7 +114,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.659** | Reliability improvements. |
 | **v9.0.658** | Reliability improvements. |
 | **v9.0.657** | Reliability improvements. |
-| **v9.0.656** | Reliability improvements. |
 
 <!-- CHANGELOG_END -->
 
