@@ -306,14 +306,21 @@ function compactZigbeeIdentifiers(manifest, opts = {}) {
       continue;
     }
 
-    const sacredPins = sacredPinsForDriver(sacredAll, driver.id);
-    const sacredMfrKeys = new Set(sacredPins.map((c) => c.mfr));
-    const sacredPids = new Set(sacredPins.map((c) => c.pid.toUpperCase()));
-
     let manufacturers = uniqStrings(driver.zigbee.manufacturerName);
     let products = uniqStrings(driver.zigbee.productId);
     const before = manufacturers.length * products.length;
     beforeTotal += before;
+
+    const sacredPins = sacredPinsForDriver(sacredAll, driver.id);
+    // WHY(P2286): only require pins that already exist in THIS driver's source
+    // compose (stable track may omit master-only sibling mfrs).
+    const sacredRequired = sacredPins.filter((pin) => {
+      const hasM = manufacturers.some((m) => String(m).toLowerCase() === pin.mfr);
+      const hasP = products.some((p) => String(p).toUpperCase() === pin.pid.toUpperCase());
+      return hasM && hasP;
+    });
+    const sacredMfrKeys = new Set(sacredRequired.map((c) => c.mfr));
+    const sacredPids = new Set(sacredRequired.map((c) => c.pid.toUpperCase()));
 
     if (pruneSynthetic) {
       const realManufacturers = manufacturers.filter(value => !isSyntheticManufacturer(value));
@@ -551,7 +558,7 @@ function compactZigbeeIdentifiers(manifest, opts = {}) {
       }
       driver.zigbee.manufacturerName = emitMfrs;
       driver.zigbee.productId = emitProducts;
-      for (const pin of sacredPins) {
+      for (const pin of sacredRequired) {
         const mfrsNow = (driver.zigbee.manufacturerName || []).map((m) => String(m).toLowerCase());
         const pidsNow = (driver.zigbee.productId || []).map(String);
         if (!mfrsNow.includes(pin.mfr) || !pidsNow.some((p) => p.toUpperCase() === pin.pid.toUpperCase())) {
@@ -562,7 +569,7 @@ function compactZigbeeIdentifiers(manifest, opts = {}) {
       continue;
     }
 
-    for (const pin of sacredPins) {
+    for (const pin of sacredRequired) {
       const mfrsNow = (driver.zigbee.manufacturerName || []).map((m) => String(m).toLowerCase());
       const pidsNow = (driver.zigbee.productId || []).map(String);
       if (!mfrsNow.includes(pin.mfr) || !pidsNow.some((p) => p.toUpperCase() === pin.pid.toUpperCase())) {
@@ -664,11 +671,8 @@ function compactZigbeeIdentifiers(manifest, opts = {}) {
   }
 
   const droppedObservedCount = observedDropped.reduce((sum, item) => sum + item.manufacturers.length, 0);
-  // Re-assert after pass2 (may have cut more)
-  const sacredMissingFinal = assertSacredCouplesPresent(manifest, sacredAll);
-  for (const m of sacredMissingFinal) {
-    if (!sacredMissing.includes(m)) sacredMissing.push(m);
-  }
+  // Pass2 can still drop — re-check only couples we already flagged as required.
+  // Do NOT re-assert the full config list (stable may omit master-only siblings).
   logLines.push(
     `[compact] summary: combos ${beforeTotal}→${afterTotal}, observed mfrs preserved ${observedKept}/${observedBefore}`
     + `, drivers compacted=${changes.length}, rescued=${rescuedDrivers.length}, pruned=${prunedDrivers.length}`
