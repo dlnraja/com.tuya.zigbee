@@ -619,11 +619,11 @@ Generated 2026-08-19T08:50:15.322Z from registry (54 cases) × compound DB (209 
 
 - Couple: `_TZ3000_qaaysllp` + TS0201
 - Protocol: zcl (multi-endpoint)
-- Retail: Neo NAS-TH02B / TH01
+- Retail: Neo NAS-TH02B2 / NAS-TH02B / TH01 / Z2M LCZ030
 - Compound `_TZ3000_qaaysllp|TS0201`: EP1 lux+battery+0xE002; undeclared EP2 temp 0x0402 + humidity 0x0405 after Basic magic 0xFFFE
 - Compose: class=sensor eps=2 EF00=false batteries=AAA/AAA
-- Notes: ZHA #862 / Z2M — without magic packet, temp/humidity stay dead. Homey creates virtual EP2 + `sendTuyaMagicPacket` on init/announce. Do not route to climate_sensor-only.
-- Sources: zha-device-handlers#862, z2m, P2264
+- Notes: Abysim Medium layers — (1) lying descriptor (2) reports on EP2 (3) magic 0xFFFE (4) EP2 read → UNSUPPORTED 0x86 so no configureReporting on EP2; unsolicited reports only. E002 `alarm_humidity_max` is **0xD00D** (upstream ZHA wrongly used 0xD00C). Scale /100. Wait ~1–2 min after pair for first temp/hum.
+- Sources: zha-device-handlers#862, abysim-medium-ts0201-neo, z2m-LCZ030, P2264, P2265
 
 Regenerate: `node tools/ci/investigate-device-peculiarities.js`
 
