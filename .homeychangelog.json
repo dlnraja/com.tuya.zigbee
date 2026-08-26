@@ -2531,5 +2531,8 @@
   },
   "9.0.664": {
     "en": "Improved wireless 1-button remotes (TS0041): reliable press detection. Fixed button RX chain so physical presses are not dropped. Publish payload trim (backups) to reduce Athom processing_failed."
+  },
+  "9.0.665": {
+    "en": "Improved wireless 1-button remotes (TS0041): reliable press detection. Fixed button RX chain so physical presses are not dropped. Publish payload trim (backups) to reduce Athom processing_failed."
   }
 }
