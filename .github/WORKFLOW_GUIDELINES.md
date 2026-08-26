@@ -366,6 +366,22 @@ Order: `fix-flow-cards` → `revert-battery-conflicts` → `fix-empty-caps` → 
 - NEVER assume all variants have same features
 - Use runtime capability detection in device.js
 - Example: `if (this.hasCapability('measure_power'))` before setup
+
+---
+
+## M. P2286 mandatory publish path (Stable track)
+
+Never publish from **repo root**. Always:
+
+```bash
+npm run build
+npm run prepare-publish
+npm run publish:direct -- --channel test
+```
+
+`direct-api-publish.js` refuses non-`homey-publish-temp` unless `--force`.
+Soft-expect skips duplicate `createBuild` when version already on test.
+Sacred couples pinned via `config/architecture/publish-sacred-keep-couples.json`.
 # Workflow Guidelines & Rules
 
 > Prevent common traps, conflicts, and errors in GitHub Actions YML files.
@@ -734,3 +750,19 @@ Order: `fix-flow-cards`  `revert-battery-conflicts`  `fix-empty-caps`  `validate
 - NEVER assume all variants have same features
 - Use runtime capability detection in device.js
 - Example: `if (this.hasCapability('measure_power'))` before setup
+
+---
+
+## M. P2286 mandatory publish path (Stable track)
+
+Never publish from **repo root**. Always:
+
+```bash
+npm run build
+npm run prepare-publish
+npm run publish:direct -- --channel test
+```
+
+`direct-api-publish.js` refuses non-`homey-publish-temp` unless `--force`.
+Soft-expect skips duplicate `createBuild` when version already on test.
+Sacred couples pinned via `config/architecture/publish-sacred-keep-couples.json`.

@@ -165118,7 +165118,11 @@
           "_TZE204_davzgqq0",
           "_TZE204_ipxszdhv",
           "_TZE204_nslr42tt",
-          "_TZE284_2dpa3fqj"
+          "_TZE284_2dpa3fqj",
+          "_TZE284_6ocnqlhn",
+          "_TZE284_6OCNQLHN",
+          "_tze284_6ocnqlhn",
+          "_tze284_6OCNQLHN"
         ],
         "productId": [
           "SDM01-3Z1",
@@ -165257,11 +165261,14 @@
           "_TZE200_fjb98hbq",
           "_TZE204_aqnazj70",
           "_TZE204_fjb98hbq",
-          "_TZ3000_rjxqso4a"
+          "_TZ3000_rjxqso4a",
+          "_TZ3000_qeuvnohg",
+          "_tz3000_qeuvnohg"
         ],
         "productId": [
           "TS0001_din",
-          "TS0601"
+          "TS0601",
+          "TS011F"
         ],
         "endpoints": {
           "1": {
@@ -217127,7 +217134,6 @@
           "_TZE284_DMCKRSXG",
           "_TZE284_F5EFVTBV",
           "_TZE284_GT5AL3BL",
-          "_TZE284_HLX9TNZB",
           "_TZE284_LBHH5O6Z",
           "_TZE284_MS97NKYY",
           "_TZE284_N9CTKB6J",
@@ -217144,7 +217150,6 @@
           "_tz3210_ok0ggpk7",
           "_tze200_3regm3h6",
           "_tze204_9qhuzgo0",
-          "_tze204_hlx9tnzb",
           "_tze204_n9ctkb6j",
           "bseed",
           "tze204_7sjncirf",
@@ -217652,7 +217657,6 @@
           "_tze284_dmckrsxg",
           "_tze284_f5efvtbv",
           "_tze284_gt5al3bl",
-          "_tze284_hlx9tnzb",
           "_tze284_lbhh5o6z",
           "_tze284_ms97nkyy",
           "_tze284_n9ctkb6j",
@@ -217672,7 +217676,6 @@
           "_TZ3210_OK0GGPK7",
           "_TZE200_3REGM3H6",
           "_TZE204_9QHUZGO0",
-          "_TZE204_HLX9TNZB",
           "_TZE204_N9CTKB6J",
           "_TZ3000_ovbvmhiq",
           "_tz3000_ovbvmhiq",
@@ -217984,7 +217987,6 @@
           "_TZE284_dmckrsxg",
           "_TZE284_f5efvtbv",
           "_TZE284_gt5al3bl",
-          "_TZE284_hlx9tnzb",
           "_TZE284_lbhh5o6z",
           "_TZE284_ms97nkyy",
           "_TZE284_n9ctkb6j",
@@ -217998,7 +218000,6 @@
           "_TZ3210_ok0ggpk7",
           "_TZE200_3regm3h6",
           "_TZE204_9qhuzgo0",
-          "_TZE204_hlx9tnzb",
           "_TZE204_n9ctkb6j"
         ],
         "endpoints": {
@@ -221123,34 +221124,25 @@
         "manufacturerName": [
           "_tze200_rhblgy0z",
           "_tze204_rhblgy0z",
-          "_tz3000_402vrq2i",
           "_tze200_rks0sgb7",
           "_tze204_q9xty0ad",
           "_TZ3000_1fqpj6qz",
           "_tze284_kow4ok3t",
           "_tze204_eaac7dkw",
-          "_tz3210_402vrq2i",
-          "_tz3400_402vrq2i",
           "_TZE200_RHBLGY0Z",
           "_TZE204_RHBLGY0Z",
-          "_TZ3000_402VRQ2I",
           "_TZE200_RKS0SGB7",
           "_TZE204_Q9XTY0AD",
           "_TZ3000_1FQPJ6QZ",
           "_tz3000_1fqpj6qz",
           "_TZE284_KOW4OK3T",
           "_TZE204_EAAC7DKW",
-          "_TZ3210_402VRQ2I",
-          "_TZ3400_402VRQ2I",
           "_TZE200_rhblgy0z",
           "_TZE204_rhblgy0z",
-          "_TZ3000_402vrq2i",
           "_TZE200_rks0sgb7",
           "_TZE204_q9xty0ad",
           "_TZE284_kow4ok3t",
-          "_TZE204_eaac7dkw",
-          "_TZ3210_402vrq2i",
-          "_TZ3400_402vrq2i"
+          "_TZE204_eaac7dkw"
         ],
         "productId": [
           "ERS-10TZBVK-AA",
@@ -237683,7 +237675,9 @@
           "AOYAN",
           "_TZ3000_k4ej3ww2",
           "_tz3000_k4ej3ww2",
-          "_TZ3000_K4EJ3WW2"
+          "_TZ3000_K4EJ3WW2",
+          "HOBEIAN",
+          "hobeian"
         ]
       },
       "settings": [
