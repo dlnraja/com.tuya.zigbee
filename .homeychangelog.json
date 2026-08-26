@@ -2520,5 +2520,8 @@
   },
   "9.0.658": {
     "en": "Reliability improvements."
+  },
+  "9.0.661": {
+    "en": "Improved device matching from Zigbee community research; smarter Tuya/ZCL protocol path selection."
   }
 }
