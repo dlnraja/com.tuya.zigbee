@@ -4,11 +4,11 @@
 
 [![Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdlnraja%2Fcom.tuya.zigbee%2Fmaster%2Fapp.json&query=%24.version&label=version&color=blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![Drivers](https://img.shields.io/badge/drivers-431-brightgreen)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
-[![Fingerprints](https://img.shields.io/badge/fingerprints-4,367%20unique-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
+[![Fingerprints](https://img.shields.io/badge/fingerprints-4,378%20unique-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![SDK](https://img.shields.io/badge/SDK-3-orange)](https://apps.developer.homey.app/)
 [![License](https://img.shields.io/badge/license-GPL--3.0-green)](LICENSE)
 
-Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, sensors, lights, thermostats, covers, valves — **431 drivers**, **4,367 unique fingerprints**. No cloud required.
+Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, sensors, lights, thermostats, covers, valves — **431 drivers**, **4,378 unique fingerprints**. No cloud required.
 
 **What it does:**
 - Talks to devices on your Homey Zigbee mesh (Tuya DP `0xEF00` and standard ZCL)
@@ -33,15 +33,15 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.661 |
+| **App Version** | v9.0.663 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
-| **Unique Fingerprints** | 4,367 |
-| **Pairing Variants** | 16,527 (4 case combos per fingerprint) |
+| **Unique Fingerprints** | 4,378 |
+| **Pairing Variants** | 16,461 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 579 |
 | **Flow Cards** | 5,182 |
 | **Unique Capabilities** | 170 |
 | **Native OTA Drivers** | 5 |
-| **Test Suites** | 155 files |
+| **Test Suites** | 164 files |
 | **SVG Icons** | 731 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
@@ -51,25 +51,25 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | # | Driver | Fingerprints |
 |---|--------|-------------|
-| 1 | `climate_sensor` | 2,444 |
-| 2 | `switch_1gang` | 1,708 |
+| 1 | `climate_sensor` | 2,404 |
+| 2 | `switch_1gang` | 1,706 |
 | 3 | `presence_sensor_radar` | 730 |
 | 4 | `radiator_valve` | 599 |
 | 5 | `button_wireless_2` | 578 |
-| 6 | `wall_dimmer_tuya` | 494 |
+| 6 | `wall_dimmer_tuya` | 490 |
 | 7 | `generic_tuya` | 420 |
-| 8 | `device_radiator_valve` | 382 |
-| 9 | `curtain_motor` | 326 |
-| 10 | `switch_4gang` | 276 |
-| 11 | `switch_2gang` | 247 |
-| 12 | `switch_3gang` | 210 |
-| 13 | `motion_sensor` | 209 |
+| 8 | `device_radiator_valve` | 378 |
+| 9 | `curtain_motor` | 334 |
+| 10 | `switch_4gang` | 274 |
+| 11 | `switch_2gang` | 249 |
+| 12 | `switch_3gang` | 208 |
+| 13 | `motion_sensor` | 207 |
 | 14 | `diy_custom_zigbee` | 206 |
 | 15 | `thermostat_tuya_dp` | 192 |
 | 16 | `soil_sensor` | 191 |
 | 17 | `sensor_contact_zigbee` | 186 |
-| 18 | `water_leak_sensor_tuya` | 182 |
-| 19 | `usb_dongle_triple` | 176 |
+| 18 | `water_leak_sensor_tuya` | 178 |
+| 19 | `usb_dongle_triple` | 172 |
 | 20 | `contact_sensor` | 157 |
 
 ### Drivers by Device Class
@@ -102,6 +102,8 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.663** | Improved wireless 1-button remotes (TS0041 / SH-SC07): more reliable press detection and flows. Fixed button RX chain so physical presses… |
+| **v9.0.662** | Improved wireless 1-button remotes (TS0041 / SH-SC07): more reliable press detection and flows. Fixed button RX chain so physical presses… |
 | **v9.0.661** | Improved device matching from Zigbee community research; smarter Tuya/ZCL protocol path selection. |
 | **v9.0.660** | Improved device matching from Zigbee community research; smarter Tuya/ZCL protocol path selection. |
 | **v9.0.659** | Reliability improvements. |
@@ -112,8 +114,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.654** | Reliability improvements. |
 | **v9.0.653** | Reliability improvements. |
 | **v9.0.652** | Reliability improvements. |
-| **v9.0.651** | Reliability improvements. |
-| **v9.0.650** | Reliability improvements. |
 
 <!-- CHANGELOG_END -->
 

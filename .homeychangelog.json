@@ -1,7 +1,6 @@
 {
   "9.0.660": {
-    "en": "Improved device matching from Zigbee community research; smarter Tuya/ZCL protocol path selection.",
-    "fr": "Amelioration matching appareils (recherches Zigbee); selection de chemin protocole Tuya/ZCL plus intelligente."
+    "en": "Improved device matching from Zigbee community research; smarter Tuya/ZCL protocol path selection."
   },
   "9.0.659": {
     "en": "Reliability improvements."
@@ -2521,13 +2520,13 @@
   "9.0.658": {
     "en": "Reliability improvements."
   },
-  "9.0.660": {
-    "en": "Improved device matching from Zigbee community research; smarter Tuya/ZCL protocol path selection."
-  },
   "9.0.661": {
     "en": "Improved device matching from Zigbee community research; smarter Tuya/ZCL protocol path selection."
   },
   "9.0.662": {
+    "en": "Improved wireless 1-button remotes (TS0041 / SH-SC07): more reliable press detection and flows. Fixed button RX chain so physical presses are not dropped. Battery and pairing hardening for sleepy remotes."
+  },
+  "9.0.663": {
     "en": "Improved wireless 1-button remotes (TS0041 / SH-SC07): more reliable press detection and flows. Fixed button RX chain so physical presses are not dropped. Battery and pairing hardening for sleepy remotes."
   }
 }
