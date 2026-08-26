@@ -1,36 +1,8 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-24T19:16:38.714Z",
+  "generatedAt": "2026-08-26T20:25:41.388Z",
   "description": "Known historical fingerprint collisions. CI fails only for collisions not listed here.",
   "collisions": [
-    {
-      "key": "_tze200_lsanae15|TS0601",
-      "drivers": [
-        "button_wireless_plug",
-        "smart_rcbo"
-      ]
-    },
-    {
-      "key": "_TZE200_lsanae15|TS0601",
-      "drivers": [
-        "button_wireless_plug",
-        "smart_rcbo"
-      ]
-    },
-    {
-      "key": "_tze204_lsanae15|TS0601",
-      "drivers": [
-        "button_wireless_plug",
-        "smart_rcbo"
-      ]
-    },
-    {
-      "key": "_TZE204_lsanae15|TS0601",
-      "drivers": [
-        "button_wireless_plug",
-        "smart_rcbo"
-      ]
-    },
     {
       "key": "_tze204_pay2byax|Excellux",
       "drivers": [
@@ -39,77 +11,234 @@
       ]
     },
     {
-      "key": "_TZE204_pay2byax|Excellux",
+      "key": "hobeian|3300-S",
       "drivers": [
         "contact_sensor",
+        "sensor_contact_zigbee"
+      ]
+    },
+    {
+      "key": "hobeian|3320-L",
+      "drivers": [
+        "contact_sensor",
+        "sensor_contact_zigbee"
+      ]
+    },
+    {
+      "key": "hobeian|CK-TLSR8656-SS5-01(7003)",
+      "drivers": [
+        "contact_sensor",
+        "sensor_contact_zigbee"
+      ]
+    },
+    {
+      "key": "hobeian|CK-TLSR8656-SS5-01(7014)",
+      "drivers": [
+        "presence_sensor_radar",
         "soil_sensor"
       ]
     },
     {
-      "key": "_TZE204_PAY2BYAX|Excellux",
+      "key": "hobeian|DoorWindow-Sensor-ZB3.0",
       "drivers": [
         "contact_sensor",
-        "soil_sensor"
+        "sensor_contact_zigbee"
+      ]
+    },
+    {
+      "key": "hobeian|DS01",
+      "drivers": [
+        "contact_sensor",
+        "sensor_contact_zigbee"
+      ]
+    },
+    {
+      "key": "hobeian|E1603/E1702",
+      "drivers": [
+        "contact_sensor",
+        "sensor_contact_zigbee"
       ]
     },
     {
       "key": "hobeian|Excellux",
       "drivers": [
+        "contact_sensor",
+        "presence_sensor_radar",
         "sensor_contact_zigbee",
         "soil_sensor"
       ]
     },
     {
-      "key": "Hobeian|Excellux",
+      "key": "hobeian|lumi.magnet.ac01",
       "drivers": [
-        "sensor_contact_zigbee",
+        "contact_sensor",
+        "sensor_contact_zigbee"
+      ]
+    },
+    {
+      "key": "hobeian|lumi.magnet.agl02",
+      "drivers": [
+        "contact_sensor",
+        "sensor_contact_zigbee"
+      ]
+    },
+    {
+      "key": "hobeian|lumi.sensor_ht",
+      "drivers": [
+        "presence_sensor_radar",
         "soil_sensor"
       ]
     },
     {
-      "key": "HOBEIAN|Excellux",
+      "key": "hobeian|lumi.sensor_ht.agl02",
       "drivers": [
-        "sensor_contact_zigbee",
+        "presence_sensor_radar",
         "soil_sensor"
+      ]
+    },
+    {
+      "key": "hobeian|lumi.sensor_magnet",
+      "drivers": [
+        "contact_sensor",
+        "sensor_contact_zigbee"
+      ]
+    },
+    {
+      "key": "hobeian|lumi.sensor_magnet.aq2",
+      "drivers": [
+        "contact_sensor",
+        "sensor_contact_zigbee"
+      ]
+    },
+    {
+      "key": "hobeian|lumi.weather",
+      "drivers": [
+        "presence_sensor_radar",
+        "soil_sensor"
+      ]
+    },
+    {
+      "key": "hobeian|MCCGQ01LM",
+      "drivers": [
+        "contact_sensor",
+        "sensor_contact_zigbee"
+      ]
+    },
+    {
+      "key": "hobeian|MCCGQ11LM",
+      "drivers": [
+        "contact_sensor",
+        "sensor_contact_zigbee"
+      ]
+    },
+    {
+      "key": "hobeian|MCCGQ12LM",
+      "drivers": [
+        "contact_sensor",
+        "sensor_contact_zigbee"
+      ]
+    },
+    {
+      "key": "hobeian|MCCGQ14LM",
+      "drivers": [
+        "contact_sensor",
+        "sensor_contact_zigbee"
+      ]
+    },
+    {
+      "key": "hobeian|MCT-340 E",
+      "drivers": [
+        "contact_sensor",
+        "sensor_contact_zigbee"
+      ]
+    },
+    {
+      "key": "hobeian|q9mpfhw",
+      "drivers": [
+        "contact_sensor",
+        "water_leak_sensor"
+      ]
+    },
+    {
+      "key": "hobeian|RH3001",
+      "drivers": [
+        "contact_sensor",
+        "sensor_contact_zigbee"
+      ]
+    },
+    {
+      "key": "hobeian|RH3052",
+      "drivers": [
+        "presence_sensor_radar",
+        "soil_sensor"
+      ]
+    },
+    {
+      "key": "hobeian|SM0201",
+      "drivers": [
+        "presence_sensor_radar",
+        "soil_sensor"
+      ]
+    },
+    {
+      "key": "hobeian|SNZB-04",
+      "drivers": [
+        "contact_sensor",
+        "sensor_contact_zigbee"
+      ]
+    },
+    {
+      "key": "hobeian|SNZB-04P",
+      "drivers": [
+        "contact_sensor",
+        "sensor_contact_zigbee"
+      ]
+    },
+    {
+      "key": "hobeian|SNZB-04PR2",
+      "drivers": [
+        "contact_sensor",
+        "sensor_contact_zigbee"
+      ]
+    },
+    {
+      "key": "hobeian|SNZB-04R2",
+      "drivers": [
+        "contact_sensor",
+        "sensor_contact_zigbee"
+      ]
+    },
+    {
+      "key": "hobeian|TH01",
+      "drivers": [
+        "presence_sensor_radar",
+        "soil_sensor"
+      ]
+    },
+    {
+      "key": "hobeian|THS317-ET",
+      "drivers": [
+        "presence_sensor_radar",
+        "soil_sensor"
+      ]
+    },
+    {
+      "key": "hobeian|TRADFRI open/close remote",
+      "drivers": [
+        "contact_sensor",
+        "sensor_contact_zigbee"
       ]
     },
     {
       "key": "hobeian|TS0001",
       "drivers": [
         "button_wireless_1",
-        "soil_sensor"
-      ]
-    },
-    {
-      "key": "Hobeian|TS0001",
-      "drivers": [
-        "button_wireless_1",
-        "soil_sensor"
-      ]
-    },
-    {
-      "key": "HOBEIAN|TS0001",
-      "drivers": [
-        "button_wireless_1",
-        "soil_sensor"
+        "soil_sensor",
+        "water_leak_sensor"
       ]
     },
     {
       "key": "hobeian|TS0003",
-      "drivers": [
-        "sensor_contact_zigbee",
-        "switch_2gang"
-      ]
-    },
-    {
-      "key": "Hobeian|TS0003",
-      "drivers": [
-        "sensor_contact_zigbee",
-        "switch_2gang"
-      ]
-    },
-    {
-      "key": "HOBEIAN|TS0003",
       "drivers": [
         "sensor_contact_zigbee",
         "switch_2gang"
@@ -123,35 +252,14 @@
       ]
     },
     {
-      "key": "Hobeian|TS0013",
+      "key": "hobeian|TS0021",
       "drivers": [
-        "sensor_contact_zigbee",
-        "switch_2gang"
-      ]
-    },
-    {
-      "key": "HOBEIAN|TS0013",
-      "drivers": [
-        "sensor_contact_zigbee",
-        "switch_2gang"
+        "contact_sensor",
+        "sensor_contact_zigbee"
       ]
     },
     {
       "key": "hobeian|TS0041A",
-      "drivers": [
-        "button_wireless_1",
-        "soil_sensor"
-      ]
-    },
-    {
-      "key": "Hobeian|TS0041A",
-      "drivers": [
-        "button_wireless_1",
-        "soil_sensor"
-      ]
-    },
-    {
-      "key": "HOBEIAN|TS0041A",
       "drivers": [
         "button_wireless_1",
         "soil_sensor"
@@ -165,65 +273,65 @@
       ]
     },
     {
-      "key": "Hobeian|TS0044",
-      "drivers": [
-        "sensor_contact_zigbee",
-        "soil_sensor"
-      ]
-    },
-    {
-      "key": "HOBEIAN|TS0044",
-      "drivers": [
-        "sensor_contact_zigbee",
-        "soil_sensor"
-      ]
-    },
-    {
       "key": "hobeian|TS004F",
       "drivers": [
         "button_wireless_1",
+        "presence_sensor_radar",
         "sensor_contact_zigbee"
       ]
     },
     {
-      "key": "Hobeian|TS004F",
+      "key": "hobeian|TS0201",
       "drivers": [
-        "button_wireless_1",
+        "presence_sensor_radar",
+        "soil_sensor"
+      ]
+    },
+    {
+      "key": "hobeian|TS0202",
+      "drivers": [
+        "presence_sensor_radar",
+        "soil_sensor"
+      ]
+    },
+    {
+      "key": "hobeian|TS0203",
+      "drivers": [
+        "contact_sensor",
+        "presence_sensor_radar",
         "sensor_contact_zigbee"
       ]
     },
     {
-      "key": "HOBEIAN|TS004F",
+      "key": "hobeian|TS0207",
+      "drivers": [
+        "contact_sensor",
+        "water_leak_sensor"
+      ]
+    },
+    {
+      "key": "hobeian|TS0215A",
       "drivers": [
         "button_wireless_1",
-        "sensor_contact_zigbee"
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "hobeian|TS0222",
+      "drivers": [
+        "presence_sensor_radar",
+        "soil_sensor"
       ]
     },
     {
       "key": "hobeian|TS0601",
       "drivers": [
         "button_wireless_1",
+        "presence_sensor_radar",
         "sensor_contact_zigbee",
         "soil_sensor",
-        "switch_2gang"
-      ]
-    },
-    {
-      "key": "Hobeian|TS0601",
-      "drivers": [
-        "button_wireless_1",
-        "sensor_contact_zigbee",
-        "soil_sensor",
-        "switch_2gang"
-      ]
-    },
-    {
-      "key": "HOBEIAN|TS0601",
-      "drivers": [
-        "button_wireless_1",
-        "sensor_contact_zigbee",
-        "soil_sensor",
-        "switch_2gang"
+        "switch_2gang",
+        "water_leak_sensor"
       ]
     },
     {
@@ -234,17 +342,10 @@
       ]
     },
     {
-      "key": "Hobeian|TS0726",
+      "key": "hobeian|TS1201",
       "drivers": [
-        "sensor_contact_zigbee",
-        "switch_2gang"
-      ]
-    },
-    {
-      "key": "HOBEIAN|TS0726",
-      "drivers": [
-        "sensor_contact_zigbee",
-        "switch_2gang"
+        "presence_sensor_radar",
+        "soil_sensor"
       ]
     },
     {
@@ -255,22 +356,51 @@
       ]
     },
     {
-      "key": "HOBEIAN|TS130F",
+      "key": "hobeian|TY0201",
       "drivers": [
-        "sensor_contact_zigbee",
-        "wall_curtain_switch"
+        "presence_sensor_radar",
+        "soil_sensor"
+      ]
+    },
+    {
+      "key": "hobeian|WSDCGQ01LM",
+      "drivers": [
+        "presence_sensor_radar",
+        "soil_sensor"
+      ]
+    },
+    {
+      "key": "hobeian|WSDCGQ11LM",
+      "drivers": [
+        "presence_sensor_radar",
+        "soil_sensor"
+      ]
+    },
+    {
+      "key": "hobeian|WSDCGQ12LM",
+      "drivers": [
+        "presence_sensor_radar",
+        "soil_sensor"
+      ]
+    },
+    {
+      "key": "hobeian|ZG-102Z",
+      "drivers": [
+        "contact_sensor",
+        "sensor_contact_zigbee"
+      ]
+    },
+    {
+      "key": "hobeian|ZG-102ZL",
+      "drivers": [
+        "contact_sensor",
+        "sensor_contact_zigbee"
       ]
     },
     {
       "key": "hobeian|ZG-227Z",
       "drivers": [
-        "sensor_contact_presence",
-        "soil_sensor"
-      ]
-    },
-    {
-      "key": "HOBEIAN|ZG-227Z",
-      "drivers": [
+        "presence_sensor_radar",
         "sensor_contact_presence",
         "soil_sensor"
       ]
@@ -278,13 +408,7 @@
     {
       "key": "hobeian|ZG-227ZL",
       "drivers": [
-        "sensor_contact_presence",
-        "soil_sensor"
-      ]
-    },
-    {
-      "key": "HOBEIAN|ZG-227ZL",
-      "drivers": [
+        "presence_sensor_radar",
         "sensor_contact_presence",
         "soil_sensor"
       ]

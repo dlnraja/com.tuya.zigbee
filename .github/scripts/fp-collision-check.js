@@ -24,7 +24,11 @@ const EXEMPT_DRIVERS = new Set([
   'universal_zigbee'
 ]);
 
-const EXEMPT_KEY_RE = /_hybrid_.*_needs_device_assignment|_master_.*_needs_device_assignment|_stable_v5_.*_needs_device_assignment|_tz3000_unknown|_tze200_placeholder_generic/i;
+// Synthetic sentinels exist precisely so that no hardware ever matches them, so
+// two drivers sharing one is not a collision — it is the deprecation marker
+// working. `_deprecated_..._do_not_pair` was missing here and failed CI on every
+// push once the air_purifier hybrids were retired.
+const EXEMPT_KEY_RE = /_hybrid_.*_needs_device_assignment|_master_.*_needs_device_assignment|_stable_v5_.*_needs_device_assignment|_deprecated_.*_do_not_pair|_tz3000_unknown|_tze200_placeholder_generic/i;
 
 function parseArgs(argv) {
   const args = { baseline: null, writeBaseline: null, json: false };
@@ -77,7 +81,11 @@ function collectCollisions() {
         // sensitive). This aligns with driver-conflict-audit.js (official) which
         // reports 0 mfr+pid duplicates — the previous lower-case logic produced
         // 3,274 false positives from case-only differences.
-        const key = `${String(mfr)}|${String(pid)}`;
+        // v10.17.4 (P92.89e): with the 4-combo case coverage (P92.62), every
+        // shared pair now appears as 4 case forms → 4x false "collisions".
+        // The collision key is case-NORMALIZED (lowercase): same underlying
+        // pair in the same drivers = ONE collision, whatever the case form.
+        const key = `${String(mfr).toLowerCase()}|${String(pid)}`;
         if (!map.has(key)) map.set(key, []);
         map.get(key).push(driverId);
       }
@@ -103,6 +111,27 @@ function loadBaseline(file) {
     key: c.key,
     drivers: normalizeDrivers(c.drivers || [])
   })));
+}
+
+// A current collision is covered by the baseline when the exact entry exists
+// OR when the baseline holds the same key with a SUPERSET of the current
+// drivers: the fingerprint was removed from one or more drivers, which is an
+// improvement, not a new collision (previously flagged as NEW and failed CI,
+// e.g. hobeian|TS0601 3 drivers -> 2 drivers on 2026-07-29).
+function isCoveredByBaseline(baseline, collision) {
+  const id = collisionId(collision);
+  if (baseline.has(id)) return true;
+  const currentDrivers = new Set(normalizeDrivers(collision.drivers));
+  const suffix = ' -> ';
+  for (const entry of baseline) {
+    const sep = entry.indexOf(suffix);
+    if (sep === -1 || entry.slice(0, sep) !== collision.key) continue;
+    const baselineDrivers = entry.slice(sep + suffix.length).split(',');
+    if ([...currentDrivers].every(d => baselineDrivers.includes(d))) {
+      return true;
+    }
+  }
+  return false;
 }
 
 function writeBaseline(file, collisions) {
@@ -148,7 +177,7 @@ function main() {
 
   const baseline = loadBaseline(args.baseline);
   const currentIds = new Set(collisions.map(collisionId));
-  const newCollisions = collisions.filter(c => !baseline.has(collisionId(c)));
+  const newCollisions = collisions.filter(c => !isCoveredByBaseline(baseline, c));
   const resolvedBaseline = [...baseline].filter(id => !currentIds.has(id));
 
   const result = {
