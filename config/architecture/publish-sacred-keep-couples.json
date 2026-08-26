@@ -1,0 +1,22 @@
+{
+  "$schema_note": "Couples that MUST survive prepare-publish Zigbee compaction (Athom matrix). mfr+pid+driverId only — never invent pid.",
+  "why": "Budget truncation can drop observed mfrs from broad drivers (button_wireless_1 had 31→2 pids). Sacred locks stay pin-first.",
+  "couples": [
+    { "mfr": "_TZ3000_mrpevh8p", "pid": "TS0041", "driverId": "button_wireless_1", "note": "P2285 SH-SC07" },
+    { "mfr": "_TZ3000_b4awzgct", "pid": "TS0041", "driverId": "button_wireless_1", "note": "TS0041 sibling" },
+    { "mfr": "_TZ3000_5bpeda8u", "pid": "TS0041", "driverId": "button_wireless_1", "note": "TS0041 sibling" },
+    { "mfr": "_TZE284_m1cvyneb", "pid": "TS0601", "driverId": "wall_dimmer_tuya", "note": "P2138 BSEED" },
+    { "mfr": "_TZE204_m1cvyneb", "pid": "TS0601", "driverId": "wall_dimmer_tuya", "note": "P2138 sibling" },
+    { "mfr": "_TZE200_m1cvyneb", "pid": "TS0601", "driverId": "wall_dimmer_tuya", "note": "P2138 sibling" },
+    { "mfr": "_TZE284_6ocnqlhn", "pid": "TS0601", "driverId": "din_rail_meter", "note": "Tongou DIN" },
+    { "mfr": "_TZ3000_zgyzgdua", "pid": "TS0044", "driverId": "scene_switch_4", "note": "meter91 0xFD" },
+    { "mfr": "_TZ3000_k4ej3ww2", "pid": "TS0207", "driverId": "water_leak_sensor", "note": "IAS leak" },
+    { "mfr": "_TZ3000_5k5vh43t", "pid": "TS0207", "driverId": "zigbee_repeater", "note": "not leak" },
+    { "mfr": "_TZ3000_lwthnp7j", "pid": "TS0004", "driverId": "wall_switch_4gang_1way", "note": "Gabriel 4-gang" },
+    { "mfr": "_TZ3000_xffhmvhv", "pid": "TS004F", "driverId": "button_wireless_4", "note": "Nobø" },
+    { "mfr": "_TZE284_nt4pquef", "pid": "TS0601", "driverId": "soil_sensor", "note": "soil EF00" },
+    { "mfr": "HOBEIAN", "pid": "ZG-305Z", "driverId": "switch_2gang", "note": "P2250 couple-scoped" },
+    { "mfr": "HOBEIAN", "pid": "ZG-303Z", "driverId": "soil_sensor", "note": "P2250" },
+    { "mfr": "HOBEIAN", "pid": "ZG-227Z", "driverId": "climate_sensor", "note": "P2250" }
+  ]
+}

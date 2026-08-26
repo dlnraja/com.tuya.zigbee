@@ -71,6 +71,11 @@ const STATE = {
   APPROVED: 'approved',
   PROCESSING: 'processing',
   READY: 'ready',
+  // Athom's current success-after-upload state. The CLI used to emit
+  // `ready`; the Apps API now parks a processed build at `draft` until
+  // a later step sets the channel to `test` / `live`. Waiting for
+  // `ready` after `draft` is why 9.0.562 #2884 timed out and skipped
+  // promotion even though Athom had already accepted the archive.
   DRAFT: 'draft',
   TEST: 'test',
   LIVE: 'live',
@@ -90,8 +95,27 @@ const FAILURE_STATES = new Set([STATE.REVOKED, STATE.PROCESSING_FAILED, STATE.ER
 function log(...args) { console.log('[direct-publish]', ...args); }
 function err(...args) { console.error('[direct-publish]', ...args); }
 
+const TRANSIENT_API_RE = /socket hang up|econnreset|econnaborted|etimedout|too many requests|\b429\b|fetch failed|network|502|503|504/i;
+
+async function withAthomRetry(label, fn, { maxAttempts = 5 } = {}) {
+  let lastErr;
+  for (let attempt = 1; attempt <= maxAttempts; attempt++) {
+    try {
+      return await fn();
+    } catch (e) {
+      lastErr = e;
+      const msg = String(e?.message || e);
+      if (!TRANSIENT_API_RE.test(msg) || attempt >= maxAttempts) throw e;
+      const backoff = Math.min(attempt * 15000, 90000);
+      log(`WARN: ${label} transient (${attempt}/${maxAttempts}): ${msg} — retry in ${backoff}ms`);
+      await new Promise((res) => setTimeout(res, backoff));
+    }
+  }
+  throw lastErr;
+}
+
 async function buildApi() {
-  const tokenObj = await AthomApi.createDelegationToken({ audience: 'apps' });
+  const tokenObj = await withAthomRetry('delegation token', () => AthomApi.createDelegationToken({ audience: 'apps' }));
   const token = tokenObj?.token || tokenObj?.access_token || tokenObj;
   if (!token) throw new Error('Homey apps delegation token missing');
   const api = new AthomAppsAPI({ token });
@@ -174,10 +198,12 @@ async function packDirectory(appPath) {
 }
 
 async function pollBuildState(api, token, buildId, { timeoutMs = 180000, intervalMs = 5000 } = {}) {
+  // homey-api getBuild requires buildId as string (number throws type validation).
   const id = String(buildId);
   const deadline = Date.now() + timeoutMs;
   let last = null;
-  const TRANSIENT_RE = /socket hang up|econnreset|econnaborted|etimedout|too many requests|fetch failed|network|502|503|504/i;
+  // Transient error patterns from Athom API (socket hang up, ECONNRESET, 429, 5xx)
+  const TRANSIENT_RE = TRANSIENT_API_RE;
   let consecutiveApiErrors = 0;
   let consecutiveFailurePolls = 0;
   const MAX_API_ERROR_RETRIES = 6;
@@ -204,7 +230,7 @@ async function pollBuildState(api, token, buildId, { timeoutMs = 180000, interva
         await new Promise((res) => setTimeout(res, backoff));
         continue;
       }
-      throw apiErr;
+      throw apiErr; // non-transient — propagate
     }
     const state = b?.state;
     if (state !== last) {
@@ -212,6 +238,7 @@ async function pollBuildState(api, token, buildId, { timeoutMs = 180000, interva
       last = state;
     }
     if (SUCCESS_STATES.has(state)) return b;
+    // processing_failed from Athom is often transient server-side — retry before fatal.
     if (FAILURE_STATES.has(state) || b?.error) {
       const detail = JSON.stringify(b?.error || b?.feedback || b?.stateMeta || {});
       const isTransientFailure = TRANSIENT_RE.test(detail) || state === 'processing_failed';
@@ -227,18 +254,20 @@ async function pollBuildState(api, token, buildId, { timeoutMs = 180000, interva
       throw new Error(`Build #${id} FAILED: state=${state} error=${detail}`);
     }
     consecutiveFailurePolls = 0;
+    // If approved but not yet ready, keep polling.
     await new Promise((res) => setTimeout(res, intervalMs));
   }
   throw new Error(`Timed out waiting for build #${id} (last state: ${last})`);
 }
 
 async function setChannel(api, token, buildId, channel) {
-  log(`Setting build #${buildId} channel to "${channel}"...`);
+  const id = String(buildId);
+  log(`Setting build #${id} channel to "${channel}"...`);
   const res = await api.updateBuildChannel({
     $token: token,
     $timeout: API_TIMEOUT_MS,
     appId: APP_ID,
-    buildId,
+    buildId: id,
     channel,
   });
   log('Channel update result:', JSON.stringify(res));
@@ -309,10 +338,21 @@ async function uploadArchive(url, method, headers, archivePath) {
  */
 function readChangelog() {
   try {
-    const clPath = path.join(APP_ROOT, '.homeychangelog.json');
-    if (!fs.existsSync(clPath)) {
+    // Prefer publish-temp / APP_ROOT, then fall back to repo root (Homey .* strip).
+    const candidates = [
+      path.join(APP_ROOT, '.homeychangelog.json'),
+      path.join(REPO_ROOT, '.homeychangelog.json'),
+    ];
+    let clPath = null;
+    for (const c of candidates) {
+      if (fs.existsSync(c)) { clPath = c; break; }
+    }
+    if (!clPath) {
       log('No .homeychangelog.json found, using generic changelog.');
       return { en: `v${APP_VERSION}: maintenance release` };
+    }
+    if (clPath !== path.join(APP_ROOT, '.homeychangelog.json')) {
+      log(`Changelog loaded from repo fallback: ${clPath}`);
     }
     const cl = JSON.parse(fs.readFileSync(clPath, 'utf8'));
     // Structure: { "0.0.0": { "en": "...", "nl": "..." }, ... }
@@ -369,14 +409,47 @@ async function main() {
     ? argv[argv.indexOf('--channel') + 1]
     : null;
   const listOnly = argv.includes('--list');
+  const force = argv.includes('--force');
+  const allowRepo = force || process.env.HOMEY_ALLOW_REPO_PUBLISH === '1';
 
   log(`App: ${APP_ID} v${APP_VERSION}`);
   log(`Path: ${APP_ROOT}`);
   log(`API timeout: ${API_TIMEOUT_MS}ms`);
+
+  // WHY(P2286): publishing from repo root packs un-prepared app.json / misses
+  // compaction → orphan waiting_for_files + processing_failed on Athom.
+  const normalizedRoot = APP_ROOT.replace(/[/\\]+$/, '');
+  const isPublishTemp = /homey-publish-temp$/i.test(normalizedRoot);
+  if (!listOnly && !isPublishTemp && !allowRepo) {
+    err('FATAL: refuse publish outside homey-publish-temp.');
+    err('Run: npm run build && npm run prepare-publish && npm run publish:direct -- --channel test');
+    err(`Path was: ${APP_ROOT}`);
+    process.exit(2);
+  }
+
   const { api, token } = await buildApi();
 
-  await listBuilds(api, token);
+  const builds = await listBuilds(api, token);
   if (listOnly) return;
+
+  // Soft-expect / P139: do not createBuild if this version is already on test
+  // or still processing (avoids Stable #23 race after auto-publish).
+  if (!force) {
+    const same = (builds || []).filter((b) => String(b.version) === String(APP_VERSION));
+    const onTest = same.find((b) => b.state === 'test' || b.channel === 'test');
+    const inFlight = same.find((b) =>
+      ['processing', 'pending', 'waiting_for_files', 'uploading', 'building'].includes(String(b.state)));
+    if (onTest) {
+      log(`SOFT-EXPECT: v${APP_VERSION} already on test (#${onTest.id}) — skip createBuild (use --force to override).`);
+      log(`Manage: https://tools.developer.homey.app/apps/app/${APP_ID}/build/${onTest.id}`);
+      return;
+    }
+    if (inFlight) {
+      log(`SOFT-EXPECT: v${APP_VERSION} already ${inFlight.state} (#${inFlight.id}) — skip createBuild (use --force to override).`);
+      log(`Manage: https://tools.developer.homey.app/apps/app/${APP_ID}/build/${inFlight.id}`);
+      return;
+    }
+  }
 
   const changelog = readChangelog();
   const readme = readReadme();
@@ -388,7 +461,7 @@ async function main() {
   // in the spec. The CLI passes version/changelog/env/readme FLAT (not nested
   // under `body:`) — see homey CLI App.js:1415-1424. Wrapping them in `body:`
   // made the API see no named params → server returned "Invalid Version: undefined".
-  const created = await api.createBuild({
+  const created = await withAthomRetry('createBuild', () => api.createBuild({
     $token: token,
     $timeout: API_TIMEOUT_MS,
     appId: APP_ID,
@@ -396,9 +469,10 @@ async function main() {
     changelog,
     env,
     readme,
-  });
+  }));
 
-  const { url, method, headers, buildId } = created;
+  const { url, method, headers } = created;
+  const buildId = created?.buildId != null ? String(created.buildId) : null;
   if (!url || !buildId) {
     err('createBuild did not return an upload URL:', JSON.stringify(created));
     process.exit(1);
