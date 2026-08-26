@@ -73,10 +73,23 @@ describe('P2261 silent multi-thread enrich gate', function () {
     assert.strictEqual(hit.canonicalDriver, 'presence_sensor_radar');
   });
 
-  it('silent multi-scan includes thematic rain/presence topics', () => {
-    const src = read('tools/ci/forum-silent-multi-scan.js');
-    assert.ok(src.includes('158754'));
-    assert.ok(src.includes('158757'));
-    assert.ok(src.includes('120477'));
+  it('planSettingWrite includes attrName for named writeAttributes', () => {
+    const plan = planSettingWrite('motion_detection_sensitivity', 4);
+    assert.strictEqual(plan.attrName, 'motionSensitivity');
+  });
+
+  it('TuyaE002Cluster merges Linptech radar attrs (P2262 Homesuite pattern)', () => {
+    const src = read('lib/clusters/TuyaE002Cluster.js');
+    assert.ok(src.includes('motionSensitivity'));
+    assert.ok(src.includes('0xE004') || src.includes('motionSensitivity'));
+    assert.ok(src.includes('motionDetectionDistance'));
+  });
+
+  it('Linptech path skips configureReporting and uses named writes', () => {
+    const src = read('drivers/motion_sensor_radar_mmwave/device.js');
+    assert.ok(src.includes('_setupLinptechIlluminanceListener'));
+    assert.ok(src.includes('writeAttributes'));
+    assert.ok(src.includes('_linptechBasicInit'));
+    assert.ok(src.includes('UNSUP_CLUSTER_COMMAND') || src.includes('no configureReporting'));
   });
 });

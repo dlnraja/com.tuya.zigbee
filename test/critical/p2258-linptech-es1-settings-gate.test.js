@@ -68,9 +68,10 @@ describe('P2258 Linptech ES1ZZ settings gate', function () {
     assert.ok(settingIds.includes('static_detection_sensitivity'));
     assert.ok(settingIds.includes('motion_detection_distance'));
     const clusters = compose.zigbee.endpoints['1'].clusters.map(Number);
-    // P2261: interview inClusterList uses 57346 (0xE002); keep 57345 as fallback
+    // P2262: Homesuite/Z2M interview — primary cluster 57346 only (no E001 required on compose)
     assert.ok(clusters.includes(57346) || clusters.includes(0xE002), 'needs Linptech primary cluster 0xE002');
-    assert.ok(clusters.includes(57345) || clusters.includes(0xE001), 'needs E001 fallback cluster');
+    const bindings = (compose.zigbee.endpoints['1'].bindings || []).map(Number);
+    assert.ok(bindings.includes(57346) || bindings.includes(0xE002), 'needs 0xE002 binding');
   });
 
   it('registry couple p2258-linptech-es1zz-ts0225 exists', () => {

@@ -9,6 +9,7 @@ const {
   planSettingWrite,
   isLinptechSettingKey,
   ATTR_RX_MAP,
+  ATTR_NAME,
   CLUSTER_WRITE_CHAIN,
   ATTR,
 } = require('../../lib/profiles/LinptechES1Profile');
@@ -34,8 +35,10 @@ const LEGACY_SETTING_ALIASES = Object.freeze({
 });
 
 /**
- * Motion Sensor Radar mmWave Device - v8.0.0 MODERNIZED
- * P2258: Linptech ES1ZZ / Moes ZSS-LP-HP02-MS uses manuSpecificTuya2 attrs, not EF00 DP9.
+ * Motion Sensor Radar mmWave Device
+ * P2258/P2261/P2262: Linptech ES1ZZ / Moes ZSS-LP-HP02-MS — settings on 0xE002
+ * named attrs (Homesuite ManuSpecificTuya3 pattern), not EF00 DP9.
+ * Firmware rejects configureReporting (UNSUP_CLUSTER_COMMAND) — skip throttle.
  */
 class MotionSensorRadarDevice extends UnifiedSensorBase {
 
@@ -73,59 +76,145 @@ class MotionSensorRadarDevice extends UnifiedSensorBase {
       if (appVersion) { this._inference.setFirmwareInfo(appVersion); }
 
       if (this._isLinptechES1()) {
-        this.log('[MMWAVE][LINPTECH] ES1ZZ profile — manuSpecificTuya2 settings path');
+        this.log('[MMWAVE][LINPTECH] ES1ZZ profile — 0xE002 named attr settings path');
         this._setupLinptechClusterListener(zclNode);
+        // WHY: same Basic read as Z2M configureMagicPacket / Homesuite — wakes dormant reports
+        this._linptechBasicInit(zclNode).catch((err) => {
+          this.log('[MMWAVE][LINPTECH] Basic init deferred:', err.message);
+        });
+        // Contre quoi: configureReporting → UNSUP_CLUSTER_COMMAND on this firmware
+        this._setupLinptechIlluminanceListener(zclNode);
+      } else {
+        await this._configureIlluminanceReporting();
       }
-
-      await this._configureIlluminanceReporting();
 
       this.log('[MMWAVE] ✅ Ready');
     }, 'onNodeInit');
   }
 
+  _getLinptechManuCluster(ep) {
+    if (!ep?.clusters) { return null; }
+    return ep.clusters.manuSpecificTuya3
+      || ep.clusters.tuyaE002
+      || ep.clusters[57346]
+      || ep.clusters[0xE002]
+      || null;
+  }
+
+  async _linptechBasicInit(zclNode) {
+    const basic = zclNode?.endpoints?.[1]?.clusters?.basic;
+    if (!basic?.readAttributes) { return; }
+    try {
+      await basic.readAttributes([
+        'manufacturerName',
+        'zclVersion',
+        'appVersion',
+        'modelId',
+        'powerSource',
+        'attributeReportingStatus',
+      ]);
+      this.log('[MMWAVE][LINPTECH] Basic init read OK (report wake)');
+    } catch (err) {
+      // Request itself is the wake trigger even if some attrs are rejected
+      this.log('[MMWAVE][LINPTECH] Basic init sent:', err.message);
+    }
+  }
+
   _setupLinptechClusterListener(zclNode) {
     const ep = zclNode?.endpoints?.[1];
     if (!ep?.clusters) { return; }
-    // WHY P2261: interview advertises 0xE002 (57346); herdsman also maps 0xE001 — listen both
-    const candidates = CLUSTER_WRITE_CHAIN
-      .map((id) => ep.clusters[id] || ep.clusters[id === 0xE002 ? 'tuyaE002' : 'tuyaE001'] || ep.clusters[id])
+
+    const manu = this._getLinptechManuCluster(ep);
+    const fallbacks = CLUSTER_WRITE_CHAIN
+      .map((id) => ep.clusters[id] || ep.clusters[id === 0xE002 ? 'tuyaE002' : 'tuyaE001'])
       .filter(Boolean);
-    if (!candidates.length) {
-      this.log('[MMWAVE][LINPTECH] Cluster 0xE002/0xE001 not on EP1 — settings TX may still work');
+    const clusters = [...new Set([manu, ...fallbacks].filter(Boolean))];
+
+    if (!clusters.length) {
+      this.log('[MMWAVE][LINPTECH] Cluster 0xE002 not on EP1 — settings TX may still work via LowLevelBridge');
       return;
     }
-    const handler = (report) => {
-      try {
-        this._handleLinptechAttrReport(report);
-      } catch (err) {
-        this.log('[MMWAVE][LINPTECH] attr report error:', err.message);
-      }
+
+    const namedAttrs = {
+      presenceKeepTime: ATTR.presenceKeepTime,
+      motionSensitivity: ATTR.motionSensitivity,
+      staticSensitivity: ATTR.staticSensitivity,
+      ledIndicator: ATTR.ledIndicator,
+      targetDistance: ATTR.targetDistance,
+      motionDetectionDistance: ATTR.motionDistance,
     };
-    for (const cluster of candidates) {
-      if (typeof cluster.on === 'function') {
-        cluster.on('attributeReport', handler);
-        cluster.on('reporting', handler);
+
+    this._linptechAttrListeners = [];
+    for (const cluster of clusters) {
+      if (typeof cluster.on !== 'function') { continue; }
+
+      for (const [name, attrId] of Object.entries(namedAttrs)) {
+        const handler = (value) => {
+          try {
+            this._handleLinptechNamedAttr(attrId, value, name);
+          } catch (err) {
+            this.log('[MMWAVE][LINPTECH] named attr error:', err.message);
+          }
+        };
+        cluster.on(`attr.${name}`, handler);
+        this._linptechAttrListeners.push({ cluster, event: `attr.${name}`, handler });
+      }
+
+      const bulkHandler = (report) => {
+        try {
+          this._handleLinptechAttrReport(report);
+        } catch (err) {
+          this.log('[MMWAVE][LINPTECH] attr report error:', err.message);
+        }
+      };
+      cluster.on('attributeReport', bulkHandler);
+      cluster.on('reporting', bulkHandler);
+      this._linptechAttrListeners.push({ cluster, event: 'attributeReport', handler: bulkHandler });
+      this._linptechAttrListeners.push({ cluster, event: 'reporting', handler: bulkHandler });
+    }
+  }
+
+  _handleLinptechNamedAttr(attrId, value, name) {
+    const rxKey = ATTR_RX_MAP[attrId] || name;
+    if (attrId === ATTR.targetDistance || attrId === ATTR.motionDistance) {
+      const distanceCm = Number(value);
+      if (!Number.isNaN(distanceCm)) {
+        const distanceM = distanceCm / 100;
+        this._inference.updateDistance(distanceM);
+        this.safeSetCapabilityValue('measure_luminance.distance', distanceM).catch(() => {});
       }
     }
+    this.log(`[MMWAVE][LINPTECH] RX ${rxKey}=${value}`);
   }
 
   _handleLinptechAttrReport(report) {
     const payload = report?.attributes || report?.data || report || {};
     for (const [attrKey, raw] of Object.entries(payload)) {
-      const attrId = Number(attrKey);
-      const rxKey = ATTR_RX_MAP[attrId];
-      if (!rxKey) { continue; }
+      const attrId = Number.isFinite(Number(attrKey)) ? Number(attrKey) : null;
+      const byName = ATTR_NAME && Object.entries(ATTR_NAME).find(([, n]) => n === attrKey);
+      const resolvedId = attrId != null && !Number.isNaN(attrId) ? attrId : (byName ? Number(byName[0]) : null);
+      if (resolvedId == null) { continue; }
       const value = typeof raw === 'object' && raw !== null && 'value' in raw ? raw.value : raw;
-      if (rxKey === 'target_distance' || rxKey === 'motion_detection_distance') {
-        const distanceCm = Number(value);
-        if (!Number.isNaN(distanceCm)) {
-          const distanceM = distanceCm / 100;
-          this._inference.updateDistance(distanceM);
-          this.safeSetCapabilityValue('measure_luminance.distance', distanceM).catch(() => {});
-        }
-      }
-      this.log(`[MMWAVE][LINPTECH] RX ${rxKey}=${value}`);
+      this._handleLinptechNamedAttr(resolvedId, value, ATTR_NAME[resolvedId] || attrKey);
     }
+  }
+
+  _setupLinptechIlluminanceListener(zclNode) {
+    const illum = zclNode?.endpoints?.[1]?.clusters?.illuminanceMeasurement;
+    if (!illum || typeof illum.on !== 'function') {
+      this.log('[MMWAVE][LINPTECH] Illuminance 0x0400 unavailable — DP lux fallback OK');
+      return;
+    }
+    // Listen only — do NOT configureReporting (firmware rejects it)
+    this._onLinptechIllum = (raw) => {
+      const n = Number(raw);
+      if (!Number.isFinite(n)) { return; }
+      const lux = n === 0 ? 0 : Math.round(10 ** ((n - 1) / 10000));
+      this._inference.updateLux(lux);
+      this.safeSetCapabilityValue('measure_luminance', lux).catch(() => {});
+    };
+    illum.on('attr.measuredValue', this._onLinptechIllum);
+    this.log('[MMWAVE][LINPTECH] Illuminance listener armed (no configureReporting)');
   }
 
   async _configureIlluminanceReporting() {
@@ -177,8 +266,9 @@ class MotionSensorRadarDevice extends UnifiedSensorBase {
       }
 
       case 12:
-      case 104: {
-        const lux = value;
+      case 104:
+      case 106: {
+        const lux = typeof value === 'number' && value > 200 ? Math.round(value / 10) : value;
         this._inference.updateLux(lux);
         return this.safeSetCapabilityValue('measure_luminance', lux).catch(() => {});
       }
@@ -211,6 +301,19 @@ class MotionSensorRadarDevice extends UnifiedSensorBase {
     if (!plan) { return false; }
 
     if (plan.kind === 'zcl') {
+      // WHY P2262: named writeAttributes on registered tuyaE002 (Homesuite path) first
+      const ep = this.zclNode?.endpoints?.[1];
+      const manu = this._getLinptechManuCluster(ep);
+      if (manu && typeof manu.writeAttributes === 'function' && plan.attrName) {
+        try {
+          await manu.writeAttributes({ [plan.attrName]: plan.value });
+          this.log(`[MMWAVE][LINPTECH] ${key} → tuyaE002.${plan.attrName}=${plan.value}`);
+          return true;
+        } catch (err) {
+          this.log(`[MMWAVE][LINPTECH] named write failed, trying LowLevelBridge: ${err.message}`);
+        }
+      }
+
       const chain = [plan.cluster, ...(plan.fallbackClusters || [])].filter((c, i, a) => a.indexOf(c) === i);
       let wrote = false;
       let lastCluster = plan.cluster;
