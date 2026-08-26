@@ -209,6 +209,24 @@
         "softFail": true
       },
       {
+        "id": "gate-p2286-soft-expect",
+        "script": "tools/ci/run-node-test.js",
+        "args": ["test/critical/p2286-soft-expect-publish.test.js"],
+        "softFail": true
+      },
+      {
+        "id": "gate-p2287-ias-ef00",
+        "script": "tools/ci/run-node-test.js",
+        "args": ["test/critical/p2287-ias-leftover-ef00-skip.test.js"],
+        "softFail": true
+      },
+      {
+        "id": "gate-p2288-sacred-keep",
+        "script": "tools/ci/run-node-test.js",
+        "args": ["test/critical/p2288-prepare-publish-sacred-keep.test.js"],
+        "softFail": true
+      },
+      {
         "id": "gate-discovery-lineage",
         "script": "tools/ci/discovery-lineage-enrich-gate.js",
         "args": [],

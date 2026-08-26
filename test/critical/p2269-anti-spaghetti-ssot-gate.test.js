@@ -23,6 +23,8 @@ describe('P2269 anti-spaghetti SSOT', () => {
     assert.ok(exists('docs', 'architecture', 'BATTERY_SSOT.md'));
     assert.ok(exists('docs', 'architecture', 'TIME_SYNC_SSOT.md'));
     assert.ok(exists('docs', 'architecture', 'PARSER_SSOT.md'));
+    assert.ok(exists('docs', 'architecture', 'PUBLISH_SSOT.md'));
+    assert.ok(fs.existsSync(path.join(ROOT, 'config', 'architecture', 'publish-ssot.json')));
     assert.ok(exists('docs', 'architecture', 'COMM_PATHFINDING.md'));
     assert.ok(exists('reports', 'anti-spaghetti-2026-08-26', 'ARCHITECTURE_HISTORY.md'));
   });

@@ -19,7 +19,7 @@ Critical RX chain orphans (blind `node.handleFrame =` + L0 dedup/shed `return` w
 | V6 | HOBEIAN multi-device brand MISATTR without `forbidMode:couple` | S1 | **FIXED** — ZG-305Z + existing HOBEIAN couples |
 | V7 | Endpoint-level `ep.handleFrame` wraps (DPReceiver / ClusterWrapper) | S3 | **ACCEPT** — different object; still call `orig` |
 | V8 | TS0601 cartesian / enricher reinject | S1 | **GATED** — p2138 + softHypothesis (no invent) |
-| V9 | IAS sleepy leftover EF00 / zoneStatus | S1 | **PARTIAL** — runtime stack present; wire more gates |
+| V9 | IAS sleepy leftover EF00 / zoneStatus | S1 | **FIXED** — `shouldSkipIasOnlyEf00Tx` pure helper + p2287 gate |
 | V10 | Dual publish P139 Stable processing_failed | S2 | **POLICY** — no spam republish |
 | V11 | Battery linear / half-percent | S1 | **GATED** — P216 |
 | V12 | Double-division energy/temp | S1 | **GATED** — SmartDivisor + adaptive gate |
@@ -42,6 +42,6 @@ Without V1–V5: Peter-class remotes wake with battery but no flows; wall switch
 
 - Surgical `forbidMode:couple` only for verified multi-brand mfrs (never mass-fill)
 - ~~Stable backport of P2284 runtime files~~ (done 5.12.94)
-- IAS gate list fill in `critical-gaps.json` when tests exist
-- **P2286 publish harden** (2026-08-26): changelog inject, refuse repo-root publish,
-  soft-expect skip duplicate createBuild, sacred-keep pin list under compaction
+- ~~IAS gate list fill in `critical-gaps.json` when tests exist~~ (p2287 done)
+- ~~**P2286 publish harden**~~ (soft-expect + sacred-keep + WORKFLOW_GUIDELINES §8)
+- **P2288** sacred-keep compaction test + expanded pin list (forum-verified couples)

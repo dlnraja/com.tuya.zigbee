@@ -11,7 +11,7 @@
 | **Author** | Dylan Rajasekaram (dlnraja) |
 | **License** | GPL-3.0 (was MIT-licensed JohanBendz fork) |
 | **Branches** | `master` (preview/dev) + `stable-v5` (production) |
-| **Current Version** | v9.0.620 (audit 2026-08-22; stable LTS tip 5.12.88 as com.dlnraja.tuya.zigbee.stable) |
+| **Current Version** | v9.0.665 (master soak); stable LTS ~5.12.95 as `com.dlnraja.tuya.zigbee.stable` |
 | **Drivers** | 430 on master, 431 on `stable-v5` |
 | **Fingerprints** | 5,471 (audit 2026-07-27; 4,218 entries in mfs_db) |
 | **SDK** | Homey SDK v3 (compatibility >= 12.2.0) |
@@ -90,6 +90,9 @@ Orchestrated via `tools/ci/mega-crawler.js` + GHA `mega-crawl.yml` (**workflow_d
 
 | Path | Purpose |
 |------|---------|
+| `config/architecture/dual-app-tracks.json` | Dual-app classification SSOT (BOTH / MASTER_ONLY / STABLE_ONLY) |
+| `config/architecture/publish-ssot.json` | Publish path, soft-expect, sacred-keep, IAS gate refs (P2286–P2288) |
+| `docs/architecture/PUBLISH_SSOT.md` | Human publish doctrine (points to machine SSOT) |
 | `app.json` / `.homeycompose/app.json` | App manifest (auto-generated from .homeycompose) |
 | `data/mfs_db.json` | Master fingerprint DB (5.7MB, 4149 mfrs) |
 | `data/fingerprints.json` | Curated fingerprint list |

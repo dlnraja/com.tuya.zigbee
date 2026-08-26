@@ -238,6 +238,9 @@
     "check:p2283": "node --test test/critical/p2283-bidirectional-buttons-permanent.test.js",
     "check:p2284": "node tools/ci/p2284-handleframe-chain-gate.js",
     "check:p2285": "node --test test/critical/p2285-mrpevh8p-ts0041-sh-sc07.test.js",
+    "check:p2286": "node --test test/critical/p2286-soft-expect-publish.test.js",
+    "check:p2287": "node --test test/critical/p2287-ias-leftover-ef00-skip.test.js",
+    "check:p2288": "node --test test/critical/p2288-prepare-publish-sacred-keep.test.js",
     "check:discovery-lineage": "node tools/ci/discovery-lineage-enrich-gate.js"
   },
   "keywords": [

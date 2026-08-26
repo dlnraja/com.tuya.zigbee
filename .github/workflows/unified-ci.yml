@@ -136,9 +136,12 @@ jobs:
       - name: 🧪 P2283/P2284 bidirectional + handleFrame chain
         run: |
           node --test test/critical/p2283-bidirectional-buttons-permanent.test.js
-          node --test test/critical/p2284-handleframe-chain.test.js
+          npm run check:p2284
           node --test test/critical/p2282-forum-2202-peter-misattr-button.test.js
-          node --test test/critical/p2285-mrpevh8p-ts0041-sh-sc07.test.js
+          npm run check:p2285
+          npm run check:p2286
+          npm run check:p2287
+          npm run check:p2288
 
       - name: 🛡️ P217 fork harvest sacred-couple gate
         run: node tools/ci/p217-fork-harvest-gate.js

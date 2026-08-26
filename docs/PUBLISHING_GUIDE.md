@@ -1,6 +1,22 @@
 # 📦 Homey App Publishing Guide
 
-## 🎯 Publication Process
+> **Canonical SSOT (2026-08-26):** [docs/architecture/PUBLISH_SSOT.md](architecture/PUBLISH_SSOT.md) · [config/architecture/publish-ssot.json](../config/architecture/publish-ssot.json) · WORKFLOW_GUIDELINES §M.8
+
+## P2286 mandatory path (both apps)
+
+```bash
+npm run build
+npm run prepare-publish
+npm run publish:direct -- --channel test
+```
+
+Never publish from repo root. Soft-expect skips duplicate Athom builds. Sacred couples pinned in `publish-sacred-keep-couples.json`.
+
+Gates: `npm run check:p2286` · `check:p2287` · `check:p2288`
+
+---
+
+## 🎯 Publication Process (legacy overview)
 
 ### Automatic Build (via GitHub Actions)
 

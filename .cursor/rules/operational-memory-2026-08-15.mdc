@@ -3,15 +3,15 @@ description: Live operational memory — dual App IDs, forum #2190, P139 Stable,
 alwaysApply: true
 ---
 
-# Operational memory — dual apps (audit 2026-08-23)
+# Operational memory — dual apps (audit 2026-08-26)
 
 ## Dual Athom apps (independent Test slots)
 | Track | Branch | App ID | Tip (git) | Homey Test |
 |-------|--------|--------|-----------|------------|
-| Universal Tuya | `master` | `com.dlnraja.tuya.zigbee` | **9.0.631+** | Auto-Publish OK |
-| Tuya Unified (Stable) | `stable-v5` | `com.dlnraja.tuya.zigbee.stable` | **5.12.88** | Draft P139 — **no republish loop** |
+| Universal Tuya | `master` | `com.dlnraja.tuya.zigbee` | **9.0.665+** | Auto-Publish OK |
+| Tuya Unified (Stable) | `stable-v5` | `com.dlnraja.tuya.zigbee.stable` | **5.12.95** | P139 — **no republish loop** |
 
-SSOT: `config/architecture/dual-app-tracks.json` · regular gates: `npm run check:l99-dual` (soft enrich) / `npm run check:l99-dual:hard` (unified-ci).
+SSOT: `config/architecture/dual-app-tracks.json` · publish: `config/architecture/publish-ssot.json` · `docs/architecture/PUBLISH_SSOT.md` · regular gates: `npm run check:l99-dual` / `check:p2286`–`p2288`.
 
 L99 classify: energy/divisors/BootBudget/brand-scrub titles = **BOTH**; Daylight Atmosphere / Path Light / presence / CI intel = **MASTER_ONLY**.
 
@@ -38,7 +38,8 @@ Clone Stable: `Documents\homey\stable`. `stable-v5-p195` is **STALE**.
 
 ## Shipped on master Test (users must update + re-pair)
 - IAS zoneStatus Buffer/object coerce
-- Skip leftover EF00 TX on IAS-only (`shouldSkipIasOnlyEf00Tx`)
+- Skip leftover EF00 TX on IAS-only (`lib/io/shouldSkipIasOnlyEf00Tx.js` — P2287 gate)
+- **P2286–P2288 (2026-08-26):** publish temp-only + soft-expect + sacred-keep compaction; both tracks CI wired
 - PhysicalButtonMixin / scene_switch_4 **0xFD** (skip 0x8004)
 - P2203 `_ensureIasBound` on already-enrolled
 - Hashed flow resolve, IR `_sendIR` aliases, ZS06→`ir_blaster` TS1201

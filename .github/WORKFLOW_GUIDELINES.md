@@ -897,6 +897,20 @@ the Universal Tuya App ID.
    - per-driver raw ≤ `HOMEY_ZIGBEE_MAX_DRIVER_COMBOS` (2k).
    Source compose may stay large; only the publish temp manifest is compacted.
 
+8. **P2286 mandatory publish path (root cause of orphan Athom builds):**
+   Never publish from the **repo root**. Always:
+   ```bash
+   npm run build
+   npm run prepare-publish
+   npm run publish:direct -- --channel test
+   # or: npm run publish:temp -- --channel test
+   ```
+   `direct-api-publish.js` refuses paths that are not `homey-publish-temp`
+   unless `HOMEY_ALLOW_REPO_PUBLISH=1` or `--force`. Soft-expect skips
+   `createBuild` / upload / promote when the same version is already `test`
+   or in-flight (re-lists after `createBuild` to catch peer races).
+   `.homeyignore` must keep `!.homeychangelog.json`. Size gate default **50 MB**.
+
 ---
 
 ## N. Sacred couple matrix / P2138 / HomeSuite reliability (2026-08-17)

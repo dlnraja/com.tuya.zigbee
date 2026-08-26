@@ -47,6 +47,16 @@ Before coding, classify:
 Machine SSOT: [`config/architecture/dual-app-tracks.json`](../../config/architecture/dual-app-tracks.json)  
 Regular CI: `node tools/ci/l99-dual-app-enrich-gates.js` (BOTH always; MASTER_ONLY skipped on stable track)
 
+### L99 recent (2026-08-26)
+
+| Deliverable | Tag | Why |
+|-------------|-----|-----|
+| P2286 publish soft-expect + temp-only path | **BOTH** | Orphan Athom builds / P139 race |
+| P2287 IAS leftover EF00 skip helper | **BOTH** | Sleepy IAS mesh brick |
+| P2288 sacred-keep compaction pins | **BOTH** | Athom mfr×pid budget must not drop verified couples |
+| P2284 wrapHandleFrame chain | **BOTH** | Never orphan 0xFD / PhysicalButtonMixin |
+| SSOT `publish-ssot.json` + `PUBLISH_SSOT.md` | **BOTH** | Machine + human publish doctrine |
+
 ### L99 recent (2026-08-23)
 
 | Deliverable | Tag | Why |

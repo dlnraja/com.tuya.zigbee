@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "version": "1.0.0",
+    "version": "1.1.0",
     "updated": "2026-08-26",
     "why": "Workflows must remember past+recent+present discoveries without inventing pids. SHADOW forum only.",
     "doctrine": ".github/WORKFLOW_GUIDELINES.md §P2268/P2270",
@@ -76,7 +76,7 @@
       ]
     },
     "present": {
-      "range": "P2269–P2285",
+      "range": "P2269–P2288",
       "mustRemember": [
         {
           "id": "P2269",
@@ -113,6 +113,18 @@
         {
           "id": "P2285",
           "note": "mrpevh8p+TS0041 SH-SC07 deep lock: phantom EP, 0xFD, magic, no 0x8004/EF00, FP case fix, siblings 5bpeda8u/b4awzgct"
+        },
+        {
+          "id": "P2286",
+          "note": "Publish SSOT: homey-publish-temp only; soft-expect post-createBuild; WORKFLOW_GUIDELINES §M.8; config/architecture/publish-ssot.json"
+        },
+        {
+          "id": "P2287",
+          "note": "IAS leftover EF00: lib/io/shouldSkipIasOnlyEf00Tx.js + critical-gaps ias_sleepy gate"
+        },
+        {
+          "id": "P2288",
+          "note": "Sacred-keep compaction: publish-sacred-keep-couples.json (23 pins) + prepare-publish fail-closed"
         }
       ],
       "workflowHooks": [
@@ -127,8 +139,13 @@
         "test/critical/p2283-bidirectional-buttons-permanent.test.js",
         "test/critical/p2284-handleframe-chain.test.js",
         "test/critical/p2285-mrpevh8p-ts0041-sh-sc07.test.js",
-        "reports/weakness-vectors-2026-08-26/SUMMARY.md",
-        "reports/couple-mrpevh8p-ts0041-2026-08-26/SUMMARY.md"
+        "test/critical/p2286-soft-expect-publish.test.js",
+        "test/critical/p2287-ias-leftover-ef00-skip.test.js",
+        "test/critical/p2288-prepare-publish-sacred-keep.test.js",
+        "config/architecture/publish-ssot.json",
+        "docs/architecture/PUBLISH_SSOT.md",
+        "reports/l99-reco-apply-2026-08-26/SUMMARY.md",
+        "reports/weakness-vectors-2026-08-26/SUMMARY.md"
       ]
     }
   },
@@ -155,6 +172,9 @@
       "gate-p2270-discussion-harvest",
       "gate-p2278-trv-cal",
       "gate-p2279-cover-usb",
+      "gate-p2286-soft-expect",
+      "gate-p2287-ias-ef00",
+      "gate-p2288-sacred-keep",
       "gate-discovery-lineage",
       "gate-p2138-sacred-couple"
     ]

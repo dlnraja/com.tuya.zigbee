@@ -1,7 +1,7 @@
 {
   "_meta": {
     "id": "P2225",
-    "updated": "2026-08-23",
+    "updated": "2026-08-26",
     "policy": "SHADOW forum. Inventory + critical-first Homey-gap compensation. Parallel stacks only — never collapse.",
     "methodology": [
       "Document Homey-native gap per domain",
@@ -31,7 +31,8 @@
       ],
       "gates": [
         "tools/ci/p2138-sacred-couple-matrix-gate.js",
-        "tools/ci/sacred-couple-dry-gate.js"
+        "tools/ci/sacred-couple-dry-gate.js",
+        "test/critical/p2288-prepare-publish-sacred-keep.test.js"
       ],
       "discoveries": [
         "Tongou _TZE284_6ocnqlhn+TS0601→din_rail_meter",
@@ -112,11 +113,13 @@
       "gates": [
         "test/critical/p2242-peter-fleet-gate.test.js",
         "test/critical/forum-routing-regressions.test.js",
-        "test/doorwindow-contact-helper.test.js"
+        "test/doorwindow-contact-helper.test.js",
+        "test/critical/p2287-ias-leftover-ef00-skip.test.js"
       ],
       "discoveries": [
         "Peter SOS IAS",
-        "k4ej+TS0207 water_leak never EF00"
+        "k4ej+TS0207 water_leak never EF00",
+        "P2287 shouldSkipIasOnlyEf00Tx unit gate"
       ]
     },
     {

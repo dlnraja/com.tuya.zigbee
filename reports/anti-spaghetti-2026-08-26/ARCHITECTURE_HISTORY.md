@@ -18,11 +18,14 @@ Homey SDK interview gaps + Tuya OEM DP chaos + dual-app soak produced parallel e
 | P214 | IntelligentProtocolDetect | Sacred zcl_only before EF00 |
 | P2267 | E002 taxonomy | Z2M manuSpecificTuya2 = 0xE002 |
 | P2268–P2273 | Parallel harvest | Lock mfr+pid only; unsteal misroutes |
+| P2284–P2285 | handleFrame + mrpevh8p | wrapHandleFrame SSOT; SH-SC07 1-button lock |
+| P2286–P2288 | Publish + IAS | temp-only publish; soft-expect; sacred-keep; shouldSkipIasOnlyEf00Tx |
 
 ## SSOT map docs
 
 - [SPAGHETTI_MAP.md](../architecture/SPAGHETTI_MAP.md)
 - [PROTOCOL_TX_RX_SSOT.md](../architecture/PROTOCOL_TX_RX_SSOT.md)
+- [PUBLISH_SSOT.md](../architecture/PUBLISH_SSOT.md)
 - [BATTERY_SSOT.md](../architecture/BATTERY_SSOT.md)
 - [TIME_SYNC_SSOT.md](../architecture/TIME_SYNC_SSOT.md)
 - [PARSER_SSOT.md](../architecture/PARSER_SSOT.md)

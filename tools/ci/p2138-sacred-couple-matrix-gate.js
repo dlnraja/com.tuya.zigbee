@@ -125,6 +125,11 @@ try {
     ['_TZE284_6ocnqlhn', 'TS0601', 'din_rail_meter'],
     ['_TZ3000_mrpevh8p', 'TS0041', 'button_wireless_1'],
     ['_TZ3000_zgyzgdua', 'TS0044', 'scene_switch_4'],
+    ['_TZ3000_kfu8zapd', 'TS0044', 'button_wireless_4'],
+    ['_TZ3000_xabckq1v', 'TS004F', 'button_wireless_4'],
+    ['_TZ3000_4upl1fcj', 'TS0041', 'button_wireless_1'],
+    ['_TZ3000_qeuvnohg', 'TS011F', 'din_rail_switch'],
+    ['HOBEIAN', '3315-S', 'water_leak_sensor'],
   ];
   for (const [mfr, pid, driver] of compoundHits) {
     const hit = DeviceFingerprintDB.lookup(mfr, pid);
