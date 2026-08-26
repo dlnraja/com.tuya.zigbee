@@ -321,6 +321,19 @@ try {
   fs.cpSync(srcDir, destDir, { recursive: true, filter });
   console.log('Successfully copied all files.');
 
+  // WHY(P2286): Homey CLI ignore `.*` strips .homeychangelog.json from .homeybuild.
+  // Force-copy from repo so Athom createBuild gets real release notes.
+  {
+    const repoChangelog = path.join(__dirname, '..', '.homeychangelog.json');
+    const destChangelog = path.join(destDir, '.homeychangelog.json');
+    if (!fs.existsSync(repoChangelog)) {
+      console.error('FATAL: repo .homeychangelog.json missing — refuse publish without changelog.');
+      process.exit(1);
+    }
+    fs.copyFileSync(repoChangelog, destChangelog);
+    console.log('Publish: injected .homeychangelog.json from repo (Homey .* ignore bypass).');
+  }
+
   if (skippedReserved > 0) {
     console.error(`FATAL: ${skippedReserved} reserved-name file(s) were rejected during copy.`);
     console.error('The source tree is contaminated. Run: node scripts/maintenance/kill-stray-nulls.cjs --force');
@@ -331,7 +344,7 @@ try {
   }
 
   // 3) Validate mandatory manifest files exist in destination.
-  const mustExist = ['app.json', 'package.json'];
+  const mustExist = ['app.json', 'package.json', '.homeychangelog.json'];
   for (const f of mustExist) {
     const p = path.join(destDir, f);
     if (!fs.existsSync(p)) {
@@ -340,7 +353,7 @@ try {
       process.exit(1);
     }
   }
-  console.log('Mandatory manifests present: app.json, package.json');
+    console.log('Mandatory manifests present: app.json, package.json, .homeychangelog.json');
 
   // 4) Refuse stale build output before any upload. A previous local
   // .homeybuild can otherwise publish an older version than source app.json.
@@ -406,7 +419,16 @@ try {
       console.error(`Limit: ${compact.maxTotalCombos}. Lower HOMEY_ZIGBEE_MAX_DRIVER_COMBOS or split broad drivers.`);
       process.exit(1);
     }
+    if ((compact.sacredMissing || []).length > 0) {
+      console.error('FATAL: sacred keep couples missing from publish manifest after compaction:');
+      for (const m of compact.sacredMissing.slice(0, 20)) console.error(`  - ${m}`);
+      console.error('See config/architecture/publish-sacred-keep-couples.json — raise driver budget or pin list.');
+      process.exit(1);
+    }
     console.log(`Zigbee identifier matrix: ${compact.beforeTotal} -> ${compact.afterTotal} combinations across ${(compact.changes || []).length} compacted driver(s), ${compact.pruned || 0} pruned synthetic driver(s).`);
+    if (compact.sacredPinned) {
+      console.log(`  - sacred keep pins injected: ${compact.sacredPinned}`);
+    }
     console.log(`  - mfs_db evidence: ${compact.mfsDbLoaded ? 'loaded (prioritized compaction)' : 'ABSENT — legacy order-based truncation'}`);
     if (compact.mfsDbLoaded) {
       console.log(`  - observed manufacturers preserved: ${compact.observedKept}/${compact.observedBefore}`);

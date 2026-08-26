@@ -338,10 +338,21 @@ async function uploadArchive(url, method, headers, archivePath) {
  */
 function readChangelog() {
   try {
-    const clPath = path.join(APP_ROOT, '.homeychangelog.json');
-    if (!fs.existsSync(clPath)) {
+    // Prefer publish-temp / APP_ROOT, then fall back to repo root (Homey .* strip).
+    const candidates = [
+      path.join(APP_ROOT, '.homeychangelog.json'),
+      path.join(REPO_ROOT, '.homeychangelog.json'),
+    ];
+    let clPath = null;
+    for (const c of candidates) {
+      if (fs.existsSync(c)) { clPath = c; break; }
+    }
+    if (!clPath) {
       log('No .homeychangelog.json found, using generic changelog.');
       return { en: `v${APP_VERSION}: maintenance release` };
+    }
+    if (clPath !== path.join(APP_ROOT, '.homeychangelog.json')) {
+      log(`Changelog loaded from repo fallback: ${clPath}`);
     }
     const cl = JSON.parse(fs.readFileSync(clPath, 'utf8'));
     // Structure: { "0.0.0": { "en": "...", "nl": "..." }, ... }
@@ -398,14 +409,47 @@ async function main() {
     ? argv[argv.indexOf('--channel') + 1]
     : null;
   const listOnly = argv.includes('--list');
+  const force = argv.includes('--force');
+  const allowRepo = force || process.env.HOMEY_ALLOW_REPO_PUBLISH === '1';
 
   log(`App: ${APP_ID} v${APP_VERSION}`);
   log(`Path: ${APP_ROOT}`);
   log(`API timeout: ${API_TIMEOUT_MS}ms`);
+
+  // WHY(P2286): publishing from repo root packs un-prepared app.json / misses
+  // compaction → orphan waiting_for_files + processing_failed on Athom.
+  const normalizedRoot = APP_ROOT.replace(/[/\\]+$/, '');
+  const isPublishTemp = /homey-publish-temp$/i.test(normalizedRoot);
+  if (!listOnly && !isPublishTemp && !allowRepo) {
+    err('FATAL: refuse publish outside homey-publish-temp.');
+    err('Run: npm run build && npm run prepare-publish && npm run publish:direct -- --channel test');
+    err(`Path was: ${APP_ROOT}`);
+    process.exit(2);
+  }
+
   const { api, token } = await buildApi();
 
-  await listBuilds(api, token);
+  const builds = await listBuilds(api, token);
   if (listOnly) return;
+
+  // Soft-expect / P139: do not createBuild if this version is already on test
+  // or still processing (avoids Stable #23 race after auto-publish).
+  if (!force) {
+    const same = (builds || []).filter((b) => String(b.version) === String(APP_VERSION));
+    const onTest = same.find((b) => b.state === 'test' || b.channel === 'test');
+    const inFlight = same.find((b) =>
+      ['processing', 'pending', 'waiting_for_files', 'uploading', 'building'].includes(String(b.state)));
+    if (onTest) {
+      log(`SOFT-EXPECT: v${APP_VERSION} already on test (#${onTest.id}) — skip createBuild (use --force to override).`);
+      log(`Manage: https://tools.developer.homey.app/apps/app/${APP_ID}/build/${onTest.id}`);
+      return;
+    }
+    if (inFlight) {
+      log(`SOFT-EXPECT: v${APP_VERSION} already ${inFlight.state} (#${inFlight.id}) — skip createBuild (use --force to override).`);
+      log(`Manage: https://tools.developer.homey.app/apps/app/${APP_ID}/build/${inFlight.id}`);
+      return;
+    }
+  }
 
   const changelog = readChangelog();
   const readme = readReadme();

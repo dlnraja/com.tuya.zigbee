@@ -123,6 +123,8 @@ try {
     ['_TZ3000_okaz9tjs', 'TS011F', 'plug_energy_monitor'],
     ['_TZE284_nt4pquef', 'TS0601', 'soil_sensor'],
     ['_TZE284_6ocnqlhn', 'TS0601', 'din_rail_meter'],
+    ['_TZ3000_mrpevh8p', 'TS0041', 'button_wireless_1'],
+    ['_TZ3000_zgyzgdua', 'TS0044', 'scene_switch_4'],
   ];
   for (const [mfr, pid, driver] of compoundHits) {
     const hit = DeviceFingerprintDB.lookup(mfr, pid);

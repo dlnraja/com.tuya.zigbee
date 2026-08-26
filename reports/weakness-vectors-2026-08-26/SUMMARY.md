@@ -41,5 +41,7 @@ Without V1–V5: Peter-class remotes wake with battery but no flows; wall switch
 ## Next (not inventing)
 
 - Surgical `forbidMode:couple` only for verified multi-brand mfrs (never mass-fill)
-- Stable backport of P2284 runtime files
+- ~~Stable backport of P2284 runtime files~~ (done 5.12.94)
 - IAS gate list fill in `critical-gaps.json` when tests exist
+- **P2286 publish harden** (2026-08-26): changelog inject, refuse repo-root publish,
+  soft-expect skip duplicate createBuild, sacred-keep pin list under compaction

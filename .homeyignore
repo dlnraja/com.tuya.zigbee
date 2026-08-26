@@ -3,6 +3,9 @@
 # `tmp/` (405 MB, 13k files) was not excluded by anything and would have been
 # pulled into .homeybuild by `homey app build`.
 tmp
+# WHY(P2286): Homey CLI injects ignore rule `.*` (all dotfiles). Re-include the
+# Athom store changelog so prepare-publish / direct-api-publish see real notes.
+!.homeychangelog.json
 # P74.6: global *.bak files (catches lib/tuya/fingerprints.json.bak.*)
 **/*.bak.*
 **/*.bak
