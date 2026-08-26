@@ -3,9 +3,15 @@ const ZclBatteryMonitor = require('../../lib/battery/ZclBatteryMonitor');
 
 const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
 const { Cluster, CLUSTER } = require('zigbee-clusters');
+const { sendTuyaMagicPacket } = require('../../lib/zigbee/TuyaMagicPacket');
 
 /**
- * P124 — TuyaZigbeeDevice (L14); ZCL temp/humidity always /100
+ * Neo NAS-TH02B / `_TZ3000_qaaysllp` + TS0201 (ZHA #862 / Z2M)
+ *
+ * WHY: Interview only advertises EP1 (lux + battery + 0xE002). Temp/humidity
+ *      report on undeclared EP2 (0x0402 / 0x0405) AFTER Tuya magic packet.
+ * HOW: Virtual EP2 cluster listeners + genBasic 0xFFFE handshake (configureMagicPacket).
+ * Contre quoi: lux-only tiles with dead temp/humidity.
  */
 class LcdTempHumidLuxSensor extends TuyaZigbeeDevice {
 
@@ -76,6 +82,18 @@ class LcdTempHumidLuxSensor extends TuyaZigbeeDevice {
     }
   }
 
+  async _sendQaaysMagicPacket(zclNode) {
+    // WHY P2264: without Basic 0xFFFE read, EP2 never starts reporting (ZHA Medium / Z2M)
+    try {
+      const ok = await sendTuyaMagicPacket(this, zclNode, 1, { force: true });
+      this.log(`[QAAYS] Tuya magic packet ${ok ? 'OK' : 'skipped/unavailable'}`);
+      return ok;
+    } catch (err) {
+      this.log('[QAAYS] Magic packet deferred:', err.message);
+      return false;
+    }
+  }
+
   async onNodeInit({ zclNode }) {
     await super.onNodeInit({ zclNode });
     ZclBatteryMonitor.attach(this, zclNode);
@@ -90,6 +108,9 @@ class LcdTempHumidLuxSensor extends TuyaZigbeeDevice {
       this.log('[QAAYS] Endpoint 1 unavailable — illuminance/battery bindings skipped');
     }
 
+    // Magic packet BEFORE reporting config so EP2 wakes (ZHA #862 lesson)
+    await this._sendQaaysMagicPacket(zclNode);
+
     if (this.isFirstInit()) {
       await this.configureAttributeReporting([
         {
@@ -101,6 +122,26 @@ class LcdTempHumidLuxSensor extends TuyaZigbeeDevice {
           minChange: 1,
         },
       ]).catch((err) => this.log('[QAAYS] Battery reporting configuration unavailable:', err.message));
+
+      // Soft: EP2 may reject configureReporting until firmware is enchanted
+      await this.configureAttributeReporting([
+        {
+          endpointId: 2,
+          cluster: CLUSTER.TEMPERATURE_MEASUREMENT,
+          attributeName: 'measuredValue',
+          minInterval: 30,
+          maxInterval: 3600,
+          minChange: 10,
+        },
+        {
+          endpointId: 2,
+          cluster: CLUSTER.RELATIVE_HUMIDITY_MEASUREMENT,
+          attributeName: 'measuredValue',
+          minInterval: 30,
+          maxInterval: 3600,
+          minChange: 100,
+        },
+      ]).catch((err) => this.log('[QAAYS] EP2 reporting config soft-fail:', err.message));
     }
 
     const temperatureCluster = endpointTwo?.clusters?.[CLUSTER.TEMPERATURE_MEASUREMENT.NAME];
@@ -131,6 +172,16 @@ class LcdTempHumidLuxSensor extends TuyaZigbeeDevice {
 
     if (!temperatureCluster || !humidityCluster) {
       this.log('[QAAYS] Temperature or humidity cluster is unavailable on endpoint 2');
+    }
+  }
+
+  async onEndDeviceAnnounce() {
+    if (typeof super.onEndDeviceAnnounce === 'function') {
+      await super.onEndDeviceAnnounce();
+    }
+    // Re-enchant after sleep/power-cut so EP2 resumes (ZHA #862 / Z2M)
+    if (this._zclNode) {
+      await this._sendQaaysMagicPacket(this._zclNode);
     }
   }
 
@@ -173,7 +224,7 @@ class LcdTempHumidLuxSensor extends TuyaZigbeeDevice {
     const UnifiedBatteryHandler = require('../../lib/battery/UnifiedBatteryHandler');
     const batteryPercentage = UnifiedBatteryHandler.normalizeZigbeeValue(raw, {
       manufacturer: (this.getSetting && this.getSetting('zb_manufacturer_name')) || '',
-      batteryType: 'CR2032',
+      batteryType: 'AAA',
     });
     if (batteryPercentage == null) { return; }
     const batteryThreshold = Number(this.getSetting('batteryThreshold')) || 20;
@@ -200,267 +251,3 @@ class LcdTempHumidLuxSensor extends TuyaZigbeeDevice {
 }
 
 module.exports = LcdTempHumidLuxSensor;
-
-
-/* "ids": {
-    "modelId": "TS0201",
-    "manufacturerName": "_TZ3000_qaaysllp"
-  },
-  "endpoints": {
-    "endpointDescriptors": [
-      {
-        "endpointId": 1,
-        "applicationProfileId": 260,
-        "applicationDeviceId": 262,
-        "applicationDeviceVersion": 0,
-        "_reserved1": 1,
-        "inputClusters": [
-          0,
-          1,
-          1024,
-          57346
-        ],
-        "outputClusters": [
-          25,
-          10
-        ]
-      }
-    ],
-    "endpoints": {
-      "1": {
-        "clusters": {
-          "basic": {
-            "attributes": [
-              {
-                "acl": [
-                  "readable",
-                  "reportable"
-                ],
-                "id": 0,
-                "name": "zclVersion",
-                "value": 3
-              },
-              {
-                "acl": [
-                  "readable",
-                  "reportable"
-                ],
-                "id": 1,
-                "name": "appVersion",
-                "value": 68
-              },
-              {
-                "acl": [
-                  "readable",
-                  "reportable"
-                ],
-                "id": 2,
-                "name": "stackVersion",
-                "value": 0
-              },
-              {
-                "acl": [
-                  "readable",
-                  "reportable"
-                ],
-                "id": 3,
-                "name": "hwVersion",
-                "value": 1
-              },
-              {
-                "acl": [
-                  "readable",
-                  "reportable"
-                ],
-                "id": 4,
-                "name": "manufacturerName",
-                "value": "_TZ3000_qaaysllp"
-              },
-              {
-                "acl": [
-                  "readable",
-                  "reportable"
-                ],
-                "id": 5,
-                "name": "modelId",
-                "value": "TS0201"
-              },
-              {
-                "acl": [
-                  "readable",
-                  "reportable"
-                ],
-                "id": 6,
-                "name": "dateCode",
-                "value": ""
-              },
-              {
-                "acl": [
-                  "readable",
-                  "reportable"
-                ],
-                "id": 7,
-                "name": "powerSource",
-                "value": "battery"
-              },
-              {
-                "acl": [
-                  "readable",
-                  "writable",
-                  "reportable"
-                ],
-                "id": 65502
-              },
-              {
-                "acl": [
-                  "readable",
-                  "reportable"
-                ],
-                "id": 65533,
-                "name": "clusterRevision",
-                "value": 2
-              },
-              {
-                "acl": [
-                  "readable",
-                  "reportable"
-                ],
-                "id": 65534,
-                "name": "attributeReportingStatus",
-                "value": "PENDING"
-              },
-              {
-                "acl": [
-                  "readable",
-                  "reportable"
-                ],
-                "id": 65504
-              },
-              {
-                "acl": [
-                  "readable",
-                  "reportable"
-                ],
-                "id": 65505
-              },
-              {
-                "acl": [
-                  "readable",
-                  "reportable"
-                ],
-                "id": 65506
-              },
-              {
-                "acl": [
-                  "readable",
-                  "reportable"
-                ],
-                "id": 65507
-              }
-            ],
-            "commandsGenerated": "UNSUP_GENERAL_COMMAND",
-            "commandsReceived": "UNSUP_GENERAL_COMMAND"
-          },
-          "powerConfiguration": {
-            "attributes": [
-              {
-                "acl": [
-                  "readable",
-                  "reportable"
-                ],
-                "id": 0
-              },
-              {
-                "acl": [
-                  "readable",
-                  "reportable"
-                ],
-                "id": 32,
-                "name": "batteryVoltage",
-                "value": 30
-              },
-              {
-                "acl": [
-                  "readable",
-                  "reportable"
-                ],
-                "id": 33,
-                "name": "batteryPercentageRemaining",
-                "value": 200
-              },
-              {
-                "acl": [
-                  "readable",
-                  "reportable"
-                ],
-                "id": 65533,
-                "name": "clusterRevision",
-                "value": 1
-              }
-            ],
-            "commandsGenerated": "UNSUP_GENERAL_COMMAND",
-            "commandsReceived": "UNSUP_GENERAL_COMMAND"
-          },
-          "illuminanceMeasurement": {
-            "attributes": [
-              {
-                "acl": [
-                  "readable",
-                  "reportable"
-                ],
-                "id": 0,
-                "name": "measuredValue",
-                "value": 26032
-              },
-              {
-                "acl": [
-                  "readable",
-                  "writable",
-                  "reportable"
-                ],
-                "id": 61441
-              },
-              {
-                "acl": [
-                  "readable",
-                  "writable",
-                  "reportable"
-                ],
-                "id": 43521
-              },
-              {
-                "acl": [
-                  "readable",
-                  "writable",
-                  "reportable"
-                ],
-                "id": 43522
-              },
-              {
-                "acl": [
-                  "readable",
-                  "writable",
-                  "reportable"
-                ],
-                "id": 43523
-              }
-            ],
-            "commandsGenerated": "UNSUP_GENERAL_COMMAND",
-            "commandsReceived": "UNSUP_GENERAL_COMMAND"
-          }
-        },
-        "bindings": {
-          "ota": {
-            "attributes": [],
-            "commandsGenerated": "UNSUP_GENERAL_COMMAND",
-            "commandsReceived": "UNSUP_GENERAL_COMMAND"
-          },
-          "time": {
-            "attributes": [],
-            "commandsGenerated": "UNSUP_GENERAL_COMMAND",
-            "commandsReceived": "UNSUP_GENERAL_COMMAND"
-          }
-        }
-      }
-    }
-  } */

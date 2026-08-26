@@ -2913,6 +2913,55 @@
           "dynamic": false
         }
       }
+    },
+    {
+      "id": "p2264-qaaysllp-neo-th02b",
+      "mfr": [
+        "_TZ3000_qaaysllp",
+        "_tz3000_qaaysllp",
+        "_TZ3000_QAAYSLLP"
+      ],
+      "productId": [
+        "TS0201"
+      ],
+      "canonicalDriver": "lcdtemphumidluxsensor",
+      "forbiddenDrivers": [
+        "climate_sensor",
+        "lcdtemphumidsensor",
+        "zigbee_universal",
+        "generic_tuya"
+      ],
+      "forbidMode": "couple",
+      "protocol": "zcl",
+      "clusters": {
+        "1": [0, 1, 1024, 57346],
+        "2": [1026, 1029]
+      },
+      "energy": {
+        "batteries": ["AAA", "AAA"],
+        "notes": "Neo NAS-TH02B / TH01 — 2xAAA typical"
+      },
+      "retailNames": [
+        "Neo NAS-TH02B",
+        "Neo TH01",
+        "NAS-TH02B"
+      ],
+      "notes": "ZHA #862: interview EP1 only (lux+battery+0xE002). Temp/humidity on undeclared EP2 after Tuya magic packet (Basic 0xFFFE). Homey: virtual EP2 + sendTuyaMagicPacket on init/announce.",
+      "sources": [
+        "zha-device-handlers#862",
+        "z2m",
+        "P2264"
+      ],
+      "tracks": {
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
+      }
     }
   ]
 }

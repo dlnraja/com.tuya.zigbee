@@ -615,6 +615,16 @@ Generated 2026-08-19T08:50:15.322Z from registry (54 cases) × compound DB (209 
 - Notes: TZ3210 TS011F metering plug sibling of okaz9tjs. ZCL electrical+metering; not climate. Pid TS011F is ambiguous without mfr.
 - Sources: homesuite-field
 
+### `p2264-qaaysllp-neo-th02b` → `lcdtemphumidluxsensor`
+
+- Couple: `_TZ3000_qaaysllp` + TS0201
+- Protocol: zcl (multi-endpoint)
+- Retail: Neo NAS-TH02B / TH01
+- Compound `_TZ3000_qaaysllp|TS0201`: EP1 lux+battery+0xE002; undeclared EP2 temp 0x0402 + humidity 0x0405 after Basic magic 0xFFFE
+- Compose: class=sensor eps=2 EF00=false batteries=AAA/AAA
+- Notes: ZHA #862 / Z2M — without magic packet, temp/humidity stay dead. Homey creates virtual EP2 + `sendTuyaMagicPacket` on init/announce. Do not route to climate_sensor-only.
+- Sources: zha-device-handlers#862, z2m, P2264
+
 Regenerate: `node tools/ci/investigate-device-peculiarities.js`
 
 
