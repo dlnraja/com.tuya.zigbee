@@ -163,6 +163,23 @@ class LCDTempHumidSensorDevice extends UnifiedSensorBase {
     this._timeSyncEngine = null;
     await super.onDeleted?.();
   }
+
+  async onSettings({ newSettings, changedKeys }) {
+    if (typeof super.onSettings === 'function') {
+      await super.onSettings({ newSettings, changedKeys });
+    }
+    const keys = changedKeys || Object.keys(newSettings || {});
+    const alarmKeys = keys.filter((k) => /alarm|silence_alarm/i.test(k));
+    if (!alarmKeys.length || !this._zclNode) { return; }
+    const { applyE002AlarmSettings } = require('../../lib/tuya/TuyaE002AlarmManager');
+    const subset = {};
+    for (const k of alarmKeys) { subset[k] = newSettings[k]; }
+    await this._sendLcdMagicPacket(this._zclNode);
+    const result = await applyE002AlarmSettings(this, this._zclNode, subset, { tempScale: 'celsius' });
+    if (!result.ok) {
+      this.log('[LCD] E002 alarm settings soft-fail:', result.error);
+    }
+  }
 }
 
 module.exports = LCDTempHumidSensorDevice;

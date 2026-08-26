@@ -80,5 +80,70 @@
         }
       }
     ]
+  },
+  {
+    "type": "group",
+    "label": { "en": "Tuya alarm (0xE002)", "fr": "Alarme Tuya (0xE002)" },
+    "children": [
+      {
+        "id": "silence_alarm_beep",
+        "type": "checkbox",
+        "label": { "en": "Silence alarm beeper", "fr": "Couper le bip d'alarme" },
+        "hint": {
+          "en": "Writes 0xE002 attr 0xD010=1. Wake the sensor (press button) then save."
+        },
+        "value": false
+      },
+      {
+        "id": "temperature_alarm_mode",
+        "type": "dropdown",
+        "label": { "en": "Temperature alarm mode" },
+        "value": "off",
+        "values": [
+          { "id": "off", "label": { "en": "Off" } },
+          { "id": "min", "label": { "en": "Min threshold" } },
+          { "id": "max", "label": { "en": "Max threshold" } }
+        ]
+      },
+      {
+        "id": "humidity_alarm_mode",
+        "type": "dropdown",
+        "label": { "en": "Humidity alarm mode" },
+        "value": "off",
+        "values": [
+          { "id": "off", "label": { "en": "Off" } },
+          { "id": "min", "label": { "en": "Min threshold" } },
+          { "id": "max", "label": { "en": "Max threshold" } }
+        ]
+      },
+      {
+        "id": "alarm_temperature_max",
+        "type": "number",
+        "label": { "en": "Alarm temperature max (°C)" },
+        "value": 40,
+        "attr": { "min": -40, "max": 80, "step": 1 }
+      },
+      {
+        "id": "alarm_temperature_min",
+        "type": "number",
+        "label": { "en": "Alarm temperature min (°C)" },
+        "value": 10,
+        "attr": { "min": -40, "max": 80, "step": 1 }
+      },
+      {
+        "id": "alarm_humidity_max",
+        "type": "number",
+        "label": { "en": "Alarm humidity max (%)" },
+        "value": 90,
+        "attr": { "min": 0, "max": 100, "step": 1 }
+      },
+      {
+        "id": "alarm_humidity_min",
+        "type": "number",
+        "label": { "en": "Alarm humidity min (%)" },
+        "value": 20,
+        "attr": { "min": 0, "max": 100, "step": 1 }
+      }
+    ]
   }
 ]

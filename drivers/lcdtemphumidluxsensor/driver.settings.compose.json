@@ -2,39 +2,21 @@
   {
     "id": "temperature_offset",
     "type": "number",
-    "label": {
-      "en": "Temperature offset (°C)"
-    },
+    "label": { "en": "Temperature offset (°C)" },
     "hint": {
       "en": "Set a value to compensate a temperature offset.\nRange: -10 - 10, step size 0.1, \ndefault: 0 [°C]"
     },
     "value": 0,
-    "attr": {
-      "min": -10,
-      "max": 10,
-      "step": 0.1
-    }
+    "attr": { "min": -10, "max": 10, "step": 0.1 }
   },
   {
     "id": "temperature_decimals",
     "type": "radio",
-    "label": {
-      "en": "Temperature reporting decimals"
-    },
+    "label": { "en": "Temperature reporting decimals" },
     "value": "1",
     "values": [
-      {
-        "id": "1",
-        "label": {
-          "en": "Report temperature value with 1 decimal (21.4 °C)"
-        }
-      },
-      {
-        "id": "2",
-        "label": {
-          "en": "Report temperature value with 2 decimals (21.37 °C)"
-        }
-      }
+      { "id": "1", "label": { "en": "Report temperature value with 1 decimal (21.4 °C)" } },
+      { "id": "2", "label": { "en": "Report temperature value with 2 decimals (21.37 °C)" } }
     ]
   },
   {
@@ -49,35 +31,81 @@
       "nl": "Stel een correctiewaarde in om een Luchtvochtigheids verschil te compenseren.\nBereik: -10 - 10, stap grootte 1, \nstandaard: 0 [%]"
     },
     "value": 0,
-    "attr": {
-      "min": -10,
-      "max": 10,
-      "step": 1
-    },
-    "units": {
-      "en": "%",
-      "nl": "%"
-    }
+    "attr": { "min": -10, "max": 10, "step": 1 },
+    "units": { "en": "%", "nl": "%" }
   },
   {
     "id": "humidity_decimals",
     "type": "radio",
-    "label": {
-      "en": "Humidity reporting"
-    },
+    "label": { "en": "Humidity reporting" },
     "value": "1",
     "values": [
+      { "id": "1", "label": { "en": "Report humidity value with 1 decimal (35.2 %)" } },
+      { "id": "2", "label": { "en": "Report humidity value with 2 decimals (35.19 %)" } }
+    ]
+  },
+  {
+    "type": "group",
+    "label": { "en": "Tuya alarm (0xE002)", "fr": "Alarme Tuya (0xE002)" },
+    "children": [
       {
-        "id": "1",
-        "label": {
-          "en": "Report humidity value with 1 decimal (35.2 %)"
-        }
+        "id": "silence_alarm_beep",
+        "type": "checkbox",
+        "label": { "en": "Silence alarm beeper", "fr": "Couper le bip d'alarme" },
+        "hint": {
+          "en": "Writes 0xE002 attr 0xD010=1 (HA/Z2M tip). Display alarm icon may remain. Wake the sensor (press button) then save."
+        },
+        "value": false
       },
       {
-        "id": "2",
-        "label": {
-          "en": "Report humidity value with 2 decimals (35.19 %)"
-        }
+        "id": "temperature_alarm_mode",
+        "type": "dropdown",
+        "label": { "en": "Temperature alarm mode" },
+        "value": "off",
+        "values": [
+          { "id": "off", "label": { "en": "Off" } },
+          { "id": "min", "label": { "en": "Min threshold" } },
+          { "id": "max", "label": { "en": "Max threshold" } }
+        ]
+      },
+      {
+        "id": "humidity_alarm_mode",
+        "type": "dropdown",
+        "label": { "en": "Humidity alarm mode" },
+        "value": "off",
+        "values": [
+          { "id": "off", "label": { "en": "Off" } },
+          { "id": "min", "label": { "en": "Min threshold" } },
+          { "id": "max", "label": { "en": "Max threshold" } }
+        ]
+      },
+      {
+        "id": "alarm_temperature_max",
+        "type": "number",
+        "label": { "en": "Alarm temperature max (°C)" },
+        "value": 40,
+        "attr": { "min": -40, "max": 80, "step": 1 }
+      },
+      {
+        "id": "alarm_temperature_min",
+        "type": "number",
+        "label": { "en": "Alarm temperature min (°C)" },
+        "value": 10,
+        "attr": { "min": -40, "max": 80, "step": 1 }
+      },
+      {
+        "id": "alarm_humidity_max",
+        "type": "number",
+        "label": { "en": "Alarm humidity max (%)" },
+        "value": 90,
+        "attr": { "min": 0, "max": 100, "step": 1 }
+      },
+      {
+        "id": "alarm_humidity_min",
+        "type": "number",
+        "label": { "en": "Alarm humidity min (%)" },
+        "value": 20,
+        "attr": { "min": 0, "max": 100, "step": 1 }
       }
     ]
   }

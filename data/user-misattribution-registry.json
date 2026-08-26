@@ -3018,6 +3018,41 @@
           "dynamic": false
         }
       }
+    },
+    {
+      "id": "p2267-e002-alarm-taxonomy",
+      "mfr": [
+        "_TZ3210_qkj7rujp",
+        "_tz3210_qkj7rujp"
+      ],
+      "productId": [
+        "TS0201"
+      ],
+      "canonicalDriver": "lcdtemphumidsensor",
+      "forbiddenDrivers": [
+        "lcdtemphumidluxsensor",
+        "climate_sensor",
+        "zigbee_universal"
+      ],
+      "forbidMode": "couple",
+      "protocol": "zcl",
+      "notes": "P2267 Google 0xE002 sweep: LCD E002 alarms; mute beeper via attr 0xD010=1. Humidity max attr 0xD00D (Z2M). Cluster taxonomy Z2M manuSpecificTuya2=0xE002.",
+      "sources": [
+        "ha-community-692449",
+        "z2m-ManuSpecificTuya2",
+        "zigpy-discussion-823",
+        "P2267"
+      ],
+      "tracks": {
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
+      }
     }
   ]
 }
