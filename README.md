@@ -102,7 +102,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
-| **v9.0.665** | Improved wireless 1-button remotes (TS0041): reliable press detection. Fixed button RX chain so physical presses are not dropped. Publish… |
+| **v9.0.665** | Publish hardening: store changelog always shipped; sacred device couples preserved under size compaction; safer Test uploads (no orphan b… |
 | **v9.0.664** | Improved wireless 1-button remotes (TS0041): reliable press detection. Fixed button RX chain so physical presses are not dropped. Publish… |
 | **v9.0.663** | Improved wireless 1-button remotes (TS0041 / SH-SC07): more reliable press detection and flows. Fixed button RX chain so physical presses… |
 | **v9.0.662** | Improved wireless 1-button remotes (TS0041 / SH-SC07): more reliable press detection and flows. Fixed button RX chain so physical presses… |
