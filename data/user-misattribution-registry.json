@@ -24,10 +24,19 @@
         "air_purifier_soil"
       ],
       "protocol": "ias_zone",
-      "clusters": [0, 1, 3, 1280],
-      "bindings": [1280],
+      "clusters": [
+        0,
+        1,
+        3,
+        1280
+      ],
+      "bindings": [
+        1280
+      ],
       "energy": {
-        "batteries": ["CR2032"],
+        "batteries": [
+          "CR2032"
+        ],
         "notes": "Passive sleepy — often only reports on wet/dry change; ZCL batteryPercentageRemaining 0-200"
       },
       "retailNames": [
@@ -40,7 +49,7 @@
         "q9mpfhw",
         "TS0601"
       ],
-      "notes": "Never EF00/Tuya-DP water driver. modelId is always TS0207; ZG-222ZA is retail label. Removed from water_leak_sensor_tuya (P144) and gas_sensor productId abuse (P143).",
+      "notes": "Never EF00/Tuya-DP water driver. modelId is always TS0207; ZG-222ZA/IH-K665/IH-1218 are retail labels. Sleepy IAS 1280 reports on wet/dry only (Z2M#17685/#19308). Same pid TS0207 is a mains repeater for 5k5vh43t — lock the couple. Removed from water_leak_sensor_tuya (P144) and gas_sensor productId abuse (P143).",
       "sources": [
         "z2m#17685",
         "z2m#28181",
@@ -51,8 +60,14 @@
         "P146"
       ],
       "tracks": {
-        "master": { "static": true, "dynamic": true },
-        "stable": { "static": true, "dynamic": false }
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
       }
     },
     {
@@ -97,7 +112,9 @@
         "_TZE204_m1cvyneb",
         "_TZE200_m1cvyneb"
       ],
-      "productId": ["TS0601"],
+      "productId": [
+        "TS0601"
+      ],
       "canonicalDriver": "wall_dimmer_tuya",
       "forbiddenDrivers": [
         "climate_sensor",
@@ -110,87 +127,203 @@
         "ir_blaster"
       ],
       "protocol": "tuya_ef00",
-      "notes": "BSEED Click 1-gang EF00 dimmer insert. Stale climate pairing cannot be swapped at runtime — remove and re-add as wall dimmer.",
-      "sources": ["forum-140352", "diag-f20dc4f0", "P139", "P149"],
+      "notes": "BSEED Click 1-gang EF00 dimmer insert. MCU brightness 0-1000 (never write >1000, Z2M#32305). Stale climate pairing cannot be swapped at runtime — remove and re-add as wall dimmer. Couple is TS0601 only; do not invent TS0201.",
+      "sources": [
+        "forum-140352",
+        "diag-f20dc4f0",
+        "P139",
+        "P149",
+        "z2m#32305"
+      ],
       "tracks": {
-        "master": { "static": true, "dynamic": true },
-        "stable": { "static": true, "dynamic": false }
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
       }
     },
     {
       "id": "tboy-relay-4ch-imaccztn",
-      "mfr": ["_TZ3210_imaccztn", "_tz3210_imaccztn"],
-      "productId": ["TS0004"],
+      "mfr": [
+        "_TZ3210_imaccztn",
+        "_tz3210_imaccztn"
+      ],
+      "productId": [
+        "TS0004"
+      ],
       "canonicalDriver": "relay_board_4_channel",
-      "forbiddenDrivers": ["switch_4gang", "switch_1gang", "socket"],
+      "forbiddenDrivers": [
+        "switch_4gang",
+        "switch_1gang",
+        "socket"
+      ],
       "protocol": "zcl",
       "notes": "TBoy #2131 — 4-channel relay board, not a simple switch.",
-      "sources": ["forum-140352", "P139", "P149"],
+      "sources": [
+        "forum-140352",
+        "P139",
+        "P149"
+      ],
       "tracks": {
-        "master": { "static": true, "dynamic": true },
-        "stable": { "static": true, "dynamic": false }
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
       }
     },
     {
       "id": "kanbros-bseed-2gang-w5xztuy7",
-      "mfr": ["_TZ3000_w5xztuy7", "_tz3000_w5xztuy7"],
-      "productId": ["TS0002"],
+      "mfr": [
+        "_TZ3000_w5xztuy7",
+        "_tz3000_w5xztuy7"
+      ],
+      "productId": [
+        "TS0002"
+      ],
       "canonicalDriver": "switch_2gang",
-      "forbiddenDrivers": ["switch_2gang_metering", "dimmer_2_gang_tuya", "wall_dimmer_tuya"],
+      "forbiddenDrivers": [
+        "switch_2gang_metering",
+        "dimmer_2_gang_tuya",
+        "wall_dimmer_tuya"
+      ],
       "protocol": "zcl",
-      "notes": "Kanbros #2130 — ZCL-only 2-gang; no EF00 / no metering phantoms.",
-      "sources": ["forum-140352", "P139", "P141"],
+      "notes": "Kanbros #2130 — ZCL-only 2-gang; leftover 0xEF00 is not MCU; no metering phantoms. BSEED zcl_only family.",
+      "sources": [
+        "forum-140352",
+        "P139",
+        "P141"
+      ],
       "tracks": {
-        "master": { "static": true, "dynamic": true },
-        "stable": { "static": true, "dynamic": false }
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
       }
     },
     {
       "id": "welsh-double-outlet-hlla45kx",
-      "mfr": ["_TYZB01_hlla45kx", "_tyzb01_hlla45kx"],
-      "productId": ["TS011F"],
+      "mfr": [
+        "_TYZB01_hlla45kx",
+        "_tyzb01_hlla45kx"
+      ],
+      "productId": [
+        "TS011F"
+      ],
       "canonicalDriver": "double_power_point_2",
-      "forbiddenDrivers": ["socket", "smartplug", "switch_1gang"],
+      "forbiddenDrivers": [
+        "socket",
+        "smartplug",
+        "switch_1gang"
+      ],
       "protocol": "zcl",
       "notes": "Welsh #2129 — double power point, not generic socket.",
-      "sources": ["forum-140352", "P139"],
+      "sources": [
+        "forum-140352",
+        "P139"
+      ],
       "tracks": {
-        "master": { "static": true, "dynamic": true },
-        "stable": { "static": true, "dynamic": false }
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
       }
     },
     {
       "id": "soil-nt4pquef",
-      "mfr": ["_TZE284_nt4pquef", "_tze284_nt4pquef"],
-      "productId": ["TS0601"],
+      "mfr": [
+        "_TZE284_nt4pquef",
+        "_tze284_nt4pquef"
+      ],
+      "productId": [
+        "TS0601"
+      ],
       "canonicalDriver": "soil_sensor",
-      "forbiddenDrivers": ["climate_sensor", "climate_sensor_zt08", "climate_sensor_energy", "sensor_climate_temphumidsensor", "air_purifier_soil"],
+      "forbiddenDrivers": [
+        "climate_sensor",
+        "climate_sensor_zt08",
+        "climate_sensor_energy",
+        "sensor_climate_temphumidsensor",
+        "air_purifier_soil"
+      ],
       "protocol": "tuya_ef00",
-      "notes": "Soil moisture — not climate LCD. DP mapping per P141.",
-      "sources": ["forum-140352", "P141"],
+      "notes": "Soil moisture MCU — not climate LCD. Z2M SGS02Z/SG502Z are retail labels; pid stays TS0601. DPs: 2=light enum (not moisture), 3=soil %, 5=temp/10, 9=unit, 15=battery. Interview may show 0xED00 — do not compose it. ZHA#4707 / herdsman#10315.",
+      "sources": [
+        "forum-140352",
+        "P141",
+        "z2m-herdsman#10315",
+        "zha#4707"
+      ],
       "tracks": {
-        "master": { "static": true, "dynamic": true },
-        "stable": { "static": true, "dynamic": false }
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
       }
     },
     {
       "id": "zt08-hodyryli",
-      "mfr": ["_TZE284_hodyryli", "_tze284_hodyryli"],
-      "productId": ["TS0601"],
+      "mfr": [
+        "_TZE284_hodyryli",
+        "_tze284_hodyryli"
+      ],
+      "productId": [
+        "TS0601"
+      ],
       "canonicalDriver": "climate_sensor_zt08",
-      "forbiddenDrivers": ["climate_sensor", "soil_sensor"],
+      "forbiddenDrivers": [
+        "climate_sensor",
+        "soil_sensor"
+      ],
       "protocol": "tuya_ef00",
       "notes": "ZT08 weather — unix_1970 time sync + DP17 commit (GH #513).",
-      "sources": ["forum-140352", "github#513", "P140"],
+      "sources": [
+        "forum-140352",
+        "github#513",
+        "P140"
+      ],
       "tracks": {
-        "master": { "static": true, "dynamic": true },
-        "stable": { "static": true, "dynamic": false }
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
       }
     },
     {
       "id": "presence-radar-clrdrnya",
-      "mfr": ["_TZE204_clrdrnya", "_tze204_clrdrnya", "_TZE284_clrdrnya", "_TZE200_clrdrnya", "_tze200_clrdrnya"],
-      "productId": ["TS0601"],
+      "mfr": [
+        "_TZE204_clrdrnya",
+        "_tze204_clrdrnya",
+        "_TZE284_clrdrnya",
+        "_TZE200_clrdrnya",
+        "_tze200_clrdrnya"
+      ],
+      "productId": [
+        "TS0601"
+      ],
       "canonicalDriver": "presence_sensor_radar",
       "forbiddenDrivers": [
         "motion_sensor",
@@ -200,95 +333,215 @@
         "air_purifier_presence"
       ],
       "protocol": "tuya_ef00",
-      "notes": "MTG235-ZB-RL mmWave + relay — presence_sensor_radar only (GH #420).",
-      "sources": ["forum-140352", "github#420", "P139", "P204"],
+      "notes": "MTG235-ZB-RL mmWave + relay — presence_sensor_radar only (GH#420, Z2M#18677 sbyx0lm6 family). Mains. Never climate or PIR motion.",
+      "sources": [
+        "forum-140352",
+        "github#420",
+        "P139",
+        "P204",
+        "z2m#18677"
+      ],
       "tracks": {
-        "master": { "static": true, "dynamic": true },
-        "stable": { "static": true, "dynamic": false }
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
       }
     },
     {
       "id": "switch-4gang-wkr3jqmr",
-      "mfr": ["_TZ3000_wkr3jqmr", "_tz3000_wkr3jqmr"],
-      "productId": ["TS0004"],
+      "mfr": [
+        "_TZ3000_wkr3jqmr",
+        "_tz3000_wkr3jqmr"
+      ],
+      "productId": [
+        "TS0004"
+      ],
       "canonicalDriver": "switch_4gang",
-      "forbiddenDrivers": ["switch_1gang", "switch_2gang", "switch_3gang"],
+      "forbiddenDrivers": [
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang"
+      ],
       "protocol": "zcl",
       "notes": "ZHA #2538 ZG-003-RF 4-gang — not 1-gang (P168 class scale).",
-      "sources": ["zha#2538", "P168"],
+      "sources": [
+        "zha#2538",
+        "P168"
+      ],
       "tracks": {
-        "master": { "static": true, "dynamic": true },
-        "stable": { "static": true, "dynamic": false }
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
       }
     },
     {
       "id": "din-relay-vbfp8eyv-qeuvnohg",
-      "mfr": ["_TZ3210_vbfp8eyv", "_TZ3000_qeuvnohg", "_TZ3000_ky0fq4ho", "_TZ3000_8bxrzyxz"],
-      "productId": ["TS011F"],
+      "mfr": [
+        "_TZ3210_vbfp8eyv",
+        "_TZ3000_qeuvnohg",
+        "_TZ3000_ky0fq4ho",
+        "_TZ3000_8bxrzyxz"
+      ],
+      "productId": [
+        "TS011F"
+      ],
       "canonicalDriver": "din_rail_switch",
-      "forbiddenDrivers": ["button_wireless_4", "button_wireless_2", "vibration_sensor", "presence_sensor_radar", "lcdtemphumidsensor_plug_energy"],
+      "forbiddenDrivers": [
+        "button_wireless_4",
+        "button_wireless_2",
+        "vibration_sensor",
+        "presence_sensor_radar",
+        "lcdtemphumidsensor_plug_energy"
+      ],
       "protocol": "zcl",
       "notes": "Z2M TS011F_din_smart_relay(+polling). Not wireless button / vibration / radar.",
-      "sources": ["z2m-herdsman", "P167"],
+      "sources": [
+        "z2m-herdsman",
+        "P167"
+      ],
       "tracks": {
-        "master": { "static": true, "dynamic": true },
-        "stable": { "static": true, "dynamic": false }
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
       }
     },
     {
       "id": "led-strip-obacbukl",
-      "mfr": ["_TZ3000_obacbukl"],
-      "productId": ["TS0503A"],
+      "mfr": [
+        "_TZ3000_obacbukl"
+      ],
+      "productId": [
+        "TS0503A"
+      ],
       "canonicalDriver": "led_strip_rgbw",
-      "forbiddenDrivers": ["button_wireless_2", "tunable_bulb_E14"],
+      "forbiddenDrivers": [
+        "button_wireless_2",
+        "tunable_bulb_E14",
+        "rgb_led_strip_controller"
+      ],
       "protocol": "zcl",
       "notes": "Blakadder/Z2M LED strip controller — not button or E14 CCT.",
-      "sources": ["blakadder", "z2m", "P167"],
+      "sources": [
+        "blakadder",
+        "z2m",
+        "P167"
+      ],
       "tracks": {
-        "master": { "static": true, "dynamic": true },
-        "stable": { "static": true, "dynamic": false }
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
       }
     },
     {
       "id": "usb-switch-mvtclclq",
-      "mfr": ["_TZE284_mvtclclq", "_TZE204_mvtclclq"],
-      "productId": ["TS0601"],
+      "mfr": [
+        "_TZE284_mvtclclq",
+        "_TZE204_mvtclclq"
+      ],
+      "productId": [
+        "TS0601"
+      ],
       "canonicalDriver": "usb_outlet_advanced",
-      "forbiddenDrivers": ["button_wireless_4", "radiator_valve"],
+      "forbiddenDrivers": [
+        "button_wireless_4",
+        "radiator_valve"
+      ],
       "protocol": "tuya_ef00",
       "notes": "Z2M DS-1450WN USB/plug switch with power — not TRV or wireless button.",
-      "sources": ["z2m#31275", "P167"],
+      "sources": [
+        "z2m#31275",
+        "P167"
+      ],
       "tracks": {
-        "master": { "static": true, "dynamic": true },
-        "stable": { "static": true, "dynamic": false }
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
       }
     },
     {
       "id": "rgb-bulb-jaap6jeb",
-      "mfr": ["_TZ3210_jaap6jeb"],
-      "productId": ["TS0505B"],
+      "mfr": [
+        "_TZ3210_jaap6jeb"
+      ],
+      "productId": [
+        "TS0505B"
+      ],
       "canonicalDriver": "bulb_rgbw",
-      "forbiddenDrivers": ["contact_sensor", "motion_sensor"],
+      "forbiddenDrivers": [
+        "contact_sensor",
+        "motion_sensor"
+      ],
       "protocol": "zcl",
       "notes": "LEDEPLY SG45-E26 RGB+CCT — not door/motion sensor.",
-      "sources": ["z2m-herdsman", "P167"],
+      "sources": [
+        "z2m-herdsman",
+        "P167"
+      ],
       "tracks": {
-        "master": { "static": true, "dynamic": true },
-        "stable": { "static": true, "dynamic": false }
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
       }
     },
     {
       "id": "plug-vzopcetz-1obwwnmq",
-      "mfr": ["_TZ3000_vzopcetz", "_TZ3000_1obwwnmq"],
-      "productId": ["TS011F"],
-      "canonicalDriver": "device_plug_energy_monitor",
-      "forbiddenDrivers": ["button_wireless_2", "tunable_bulb_E14"],
+      "mfr": [
+        "_TZ3000_vzopcetz",
+        "_TZ3000_1obwwnmq"
+      ],
+      "productId": [
+        "TS011F"
+      ],
+      "canonicalDriver": "socket_power_strip",
+      "forbiddenDrivers": [
+        "button_wireless_2",
+        "tunable_bulb_E14"
+      ],
       "protocol": "zcl",
       "notes": "Johan/Silvercrest TS011F strip/plug — not button or E14 bulb.",
-      "sources": ["johan", "P167"],
+      "sources": [
+        "johan",
+        "P167"
+      ],
       "tracks": {
-        "master": { "static": true, "dynamic": true },
-        "stable": { "static": true, "dynamic": false }
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
       }
     },
     {
@@ -299,21 +552,38 @@
         "_TZ3210_IYSTCADI",
         "_tz3210_IYSTCADI"
       ],
-      "productId": ["TS0505B"],
+      "productId": [
+        "TS0505B"
+      ],
       "canonicalDriver": "light_bulb_rgb_led",
       "forbiddenDrivers": [
         "wall_dimmer_tuya",
         "led_strip_advanced",
         "dimmable_led_strip",
-        "led_controller_rgb"
+        "led_controller_rgb",
+        "rgb_led_light_bar"
       ],
-      "notProductIds": ["TS0601", "TS0601_dim1", "TS0601_strip_adv"],
+      "notProductIds": [
+        "TS0601",
+        "TS0601_dim1",
+        "TS0601_strip_adv"
+      ],
       "protocol": "zcl",
       "notes": "Z2M Lidl/Livarno RGB+CCT bulb (TS0505B). Was dual-claimed with wall_dimmer via shared TS0601 productId — strip mfr from dimmer/strip.",
-      "sources": ["z2m#12090", "dual-claim-compose-gate", "P177"],
+      "sources": [
+        "z2m#12090",
+        "dual-claim-compose-gate",
+        "P177"
+      ],
       "tracks": {
-        "master": { "static": true, "dynamic": true },
-        "stable": { "static": true, "dynamic": false }
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
       }
     },
     {
@@ -321,23 +591,161 @@
       "mfr": [
         "HOBEIAN",
         "hobeian",
-        "_TZE200_wqashyqo",
-        "_tze200_wqashyqo"
+        "Hobeian"
       ],
-      "productId": ["ZG-303Z", "TS0601"],
+      "productId": [
+        "ZG-303Z"
+      ],
       "canonicalDriver": "soil_sensor",
       "forbiddenDrivers": [
         "climate_sensor",
         "climate_sensor_energy",
         "sensor_climate_temphumidsensor",
+        "temphumidsensor",
+        "temphumidsensor5",
+        "soilsensor_2",
+        "presence_sensor_radar",
+        "sensor_contact_presence"
+      ],
+      "forbidMode": "couple",
+      "protocol": "tuya_ef00",
+      "notes": "HOBEIAN|ZG-303Z soil only. Brand HOBEIAN also owns climate ZG-227Z/ZL, presence ZG-204*, contact ZG-102*, water ZG-222*, switch ZG-305Z — never ban brand from climate mfr-only. nt4pquef / wqashyqo are separate couples.",
+      "sources": [
+        "z2m-ZG-303Z",
+        "forum-blutch32",
+        "P178",
+        "P2250"
+      ],
+      "tracks": {
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
+      }
+    },
+    {
+      "id": "wqashyqo-ts0601-soil",
+      "mfr": [
+        "_TZE200_wqashyqo",
+        "_tze200_wqashyqo"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": "soil_sensor",
+      "forbiddenDrivers": [
+        "climate_sensor",
+        "climate_sensor_energy",
+        "sensor_climate_temphumidsensor",
+        "temphumidsensor",
+        "temphumidsensor5",
         "soilsensor_2"
       ],
       "protocol": "tuya_ef00",
-      "notes": "HOBEIAN ZG-303Z / _TZE200_wqashyqo soil. Bare HOBEIAN brand stripped from non-ZG drivers (P179). nt4pquef stays on soil-nt4pquef.",
-      "sources": ["z2m-ZG-303Z", "forum-blutch32", "P178"],
+      "notes": "HOBEIAN ZG-303Z MCU alias _TZE200_wqashyqo|TS0601 — mfr-forbid on climate catch-alls. Do not invent HOBEIAN|TS0601 brand lock.",
+      "sources": [
+        "z2m-ZG-303Z",
+        "P178",
+        "P2250"
+      ],
       "tracks": {
-        "master": { "static": true, "dynamic": true },
-        "stable": { "static": true, "dynamic": false }
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
+      }
+    },
+    {
+      "id": "hobeian-zg227z-climate",
+      "mfr": [
+        "HOBEIAN",
+        "hobeian",
+        "Hobeian"
+      ],
+      "productId": [
+        "ZG-227Z",
+        "ZG-227ZL"
+      ],
+      "canonicalDriver": "climate_sensor",
+      "forbiddenDrivers": [
+        "soil_sensor",
+        "soilsensor_2",
+        "presence_sensor_radar",
+        "sensor_contact_presence",
+        "motion_sensor",
+        "contact_sensor"
+      ],
+      "forbidMode": "couple",
+      "protocol": "zcl",
+      "notes": "HOBEIAN ZG-227Z/ZL temp+humidity (Z2M). Pure ZCL msTemperatureMeasurement+msRelativeHumidity. Case-insensitive brand forms required. Not soil/presence/contact.",
+      "sources": [
+        "z2m-ZG-227Z",
+        "z2m-ZG-227ZL",
+        "P2250"
+      ],
+      "tracks": {
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
+      }
+    },
+    {
+      "id": "hobeian-zg204-presence",
+      "mfr": [
+        "HOBEIAN",
+        "hobeian",
+        "Hobeian"
+      ],
+      "productId": [
+        "ZG-204Z",
+        "ZG-204ZE",
+        "ZG-204ZH",
+        "ZG-204ZK",
+        "ZG-204ZL",
+        "ZG-204ZM",
+        "ZG-204ZQ",
+        "ZG-204ZV",
+        "ZG-205Z",
+        "ZG-205ZL"
+      ],
+      "canonicalDriver": "presence_sensor_radar",
+      "forbiddenDrivers": [
+        "climate_sensor",
+        "climate_sensor_energy",
+        "sensor_climate_temphumidsensor",
+        "temphumidsensor",
+        "temphumidsensor5",
+        "soil_sensor"
+      ],
+      "forbidMode": "couple",
+      "protocol": "tuya_ef00",
+      "notes": "HOBEIAN ZG-204*/ZG-205* radar/PIR presence family — never climate or soil catch-all.",
+      "sources": [
+        "z2m-ZG-204ZM",
+        "P2250"
+      ],
+      "tracks": {
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
       }
     },
     {
@@ -348,364 +756,2650 @@
         "_TZE204_R0JDJRVI",
         "_tze204_R0JDJRVI"
       ],
-      "productId": ["TS0601", "TS0601_curtain_tilt"],
+      "productId": [
+        "TS0601",
+        "TS0601_curtain_tilt"
+      ],
       "canonicalDriver": "curtain_motor_tilt",
-      "forbiddenDrivers": ["plug", "curtain_motor", "switch_1gang"],
+      "forbiddenDrivers": [
+        "plug",
+        "curtain_motor",
+        "switch_1gang"
+      ],
       "protocol": "tuya_ef00",
       "notes": "Curtain/tilt motor — never a plug. _TZE200_r0jdjrvi stays on curtain_motor.",
-      "sources": ["johan#1374", "forum", "P178"],
+      "sources": [
+        "johan#1374",
+        "forum",
+        "P178"
+      ],
       "tracks": {
-        "master": { "static": true, "dynamic": true },
-        "stable": { "static": true, "dynamic": false }
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
       }
     },
     {
       "id": "p189-usb-wall-outlet-not-climate",
-      "mfr": ["_TZ3000_3zofvcaa", "_TZ3000_lqb7lcq9", "_TZ3000_pvlvoxvt", "_TZ3210_8n4dn1ne", "_TZ3210_urjf5u18"],
-      "productId": ["TS011F"],
+      "mfr": [
+        "_TZ3000_3zofvcaa",
+        "_TZ3000_lqb7lcq9",
+        "_TZ3000_pvlvoxvt",
+        "_TZ3210_8n4dn1ne",
+        "_TZ3210_urjf5u18"
+      ],
+      "productId": [
+        "TS011F"
+      ],
       "canonicalDriver": "switch_usb_dongle",
-      "forbiddenDrivers": ["climate_sensor"],
+      "forbiddenDrivers": [
+        "climate_sensor"
+      ],
       "protocol": "zcl",
       "notes": "z2m TS011F_2_gang_2_usb_wall — 2 gang 2 usb wall outlet. No temperature or humidity endpoint; the climate catch-all had claimed it.",
-      "sources": ["z2m-herdsman", "P189"],
+      "sources": [
+        "z2m-herdsman",
+        "P189"
+      ],
       "tracks": {
-        "master": { "static": true, "dynamic": true },
-        "stable": { "static": true, "dynamic": false }
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
       }
     },
     {
       "id": "p189-ts0207-repeater-not-motion",
-      "mfr": ["_TZ3000_5k5vh43t", "_TZ3000_gszjt2xx", "_TZ3000_misw04hq", "_TZ3000_nkkl7uzv", "_TZ3000_nlsszmzl", "_TZ3000_ufttklsz", "_TZ3000_wlquqiiz", "_TZ3000_m0vaazab"],
-      "productId": ["TS0207"],
+      "mfr": [
+        "_TZ3000_5k5vh43t",
+        "_TZ3000_gszjt2xx",
+        "_TZ3000_misw04hq",
+        "_TZ3000_nkkl7uzv",
+        "_TZ3000_nlsszmzl",
+        "_TZ3000_ufttklsz",
+        "_TZ3000_wlquqiiz",
+        "_TZ3000_m0vaazab"
+      ],
+      "productId": [
+        "TS0207"
+      ],
       "canonicalDriver": "zigbee_repeater",
-      "forbiddenDrivers": ["motion_sensor", "remote_button_wireless_usb"],
+      "forbiddenDrivers": [
+        "motion_sensor",
+        "remote_button_wireless_usb"
+      ],
       "protocol": "zcl",
       "notes": "z2m TS0207_repeater — a range extender with no IAS zone and no motion capability.",
-      "sources": ["z2m-herdsman", "P189"],
+      "sources": [
+        "z2m-herdsman",
+        "P189"
+      ],
       "tracks": {
-        "master": { "static": true, "dynamic": true },
-        "stable": { "static": true, "dynamic": false }
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
       }
     },
     {
       "id": "p189-mg-zg03w-3gang-not-contact",
-      "mfr": ["_TZE200_2imwyigp"],
-      "productId": ["TS0601"],
+      "mfr": [
+        "_TZE200_2imwyigp"
+      ],
+      "productId": [
+        "TS0601"
+      ],
       "canonicalDriver": "switch_3gang",
-      "forbiddenDrivers": ["contact_sensor"],
+      "forbiddenDrivers": [
+        "contact_sensor"
+      ],
       "protocol": "tuya_ef00",
       "notes": "z2m MG-ZG03W — 3 gang switch, not a door/window sensor.",
-      "sources": ["z2m-herdsman", "P189"],
+      "sources": [
+        "z2m-herdsman",
+        "P189"
+      ],
       "tracks": {
-        "master": { "static": true, "dynamic": true },
-        "stable": { "static": true, "dynamic": false }
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
       }
     },
     {
       "id": "p189-scene-remotes-not-switch1",
-      "mfr": ["_TZ3000_g9g2xnch", "_TZ3000_r0o2dahu"],
-      "productId": ["TS004F"],
+      "mfr": [
+        "_TZ3000_g9g2xnch",
+        "_TZ3000_r0o2dahu"
+      ],
+      "productId": [
+        "TS004F"
+      ],
       "canonicalDriver": "smart_knob",
-      "forbiddenDrivers": ["switch_1gang"],
+      "forbiddenDrivers": [
+        "switch_1gang"
+      ],
       "protocol": "zcl",
       "notes": "z2m YSR-MINI-Z 2-in-1 dimming/scene remote and TS004F_6_button. Battery remotes, not mains 1-gang switches.",
-      "sources": ["z2m-herdsman", "P189"],
+      "sources": [
+        "z2m-herdsman",
+        "P189"
+      ],
       "tracks": {
-        "master": { "static": true, "dynamic": true },
-        "stable": { "static": true, "dynamic": false }
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
       }
     },
     {
       "id": "p189-smart-button-fa9mlvja-not-wall4gang",
-      "mfr": ["_TZ3000_fa9mlvja"],
-      "productId": ["TS0043"],
+      "mfr": [
+        "_TZ3000_fa9mlvja"
+      ],
+      "productId": [
+        "TS0043"
+      ],
       "canonicalDriver": "remote_button_wireless",
-      "forbiddenDrivers": ["wall_switch_4_gang"],
+      "forbiddenDrivers": [
+        "wall_switch_4_gang"
+      ],
       "protocol": "zcl",
       "notes": "z2m IH-K663 smart button. A battery remote, not a mains 4-gang wall switch.",
-      "sources": ["z2m-herdsman", "P189"],
+      "sources": [
+        "z2m-herdsman",
+        "P189"
+      ],
       "tracks": {
-        "master": { "static": true, "dynamic": true },
-        "stable": { "static": true, "dynamic": false }
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
       }
     },
     {
       "id": "p190-ers10-knob-uri7ongn-ixla93vd",
-      "mfr": ["_TZ3000_uri7ongn", "_TZ3000_ixla93vd"],
-      "productId": ["TS004F"],
+      "mfr": [
+        "_TZ3000_uri7ongn",
+        "_TZ3000_ixla93vd"
+      ],
+      "productId": [
+        "TS004F"
+      ],
       "canonicalDriver": "smart_knob",
-      "forbiddenDrivers": ["power_meter", "relay_board_4_channel", "switch_wireless", "wall_switch_4_gang"],
+      "forbiddenDrivers": [
+        "power_meter",
+        "relay_board_4_channel",
+        "switch_wireless",
+        "wall_switch_4_gang"
+      ],
       "protocol": "zcl",
       "notes": "z2m ERS-10TZBVK-AA smart knob (zigbeeModel ZG-101ZD, TS004F, CR2032). Battery rotary remote — never an energy meter, relay board or mains wall switch. power_meter also declares TS004F, so leaving it there is a live dual-claim.",
-      "sources": ["z2m-herdsman", "johan-enrichment", "P190"],
+      "sources": [
+        "z2m-herdsman",
+        "johan-enrichment",
+        "P190"
+      ],
       "tracks": {
-        "master": { "static": true, "dynamic": true },
-        "stable": { "static": true, "dynamic": false }
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
       }
     },
     {
       "id": "p190-ts130f-curtain-not-climate-or-dimmer",
-      "mfr": ["_TZ3210_ol1uhvza", "_TZ3210_dwytrmda"],
-      "productId": ["TS130F"],
+      "mfr": [
+        "_TZ3210_ol1uhvza",
+        "_TZ3210_dwytrmda"
+      ],
+      "productId": [
+        "TS130F"
+      ],
       "canonicalDriver": "wall_curtain_switch",
-      "forbiddenDrivers": ["climate_sensor", "dimmer_1_gang"],
+      "forbiddenDrivers": [
+        "climate_sensor",
+        "dimmer_1_gang",
+        "curtain_module"
+      ],
       "protocol": "zcl",
       "notes": "TS130F curtain switch module per Johan enrichment and product-reference (deviceClass windowcoverings). Not a climate sensor and not a dimmer.",
-      "sources": ["z2m-herdsman", "johan-enrichment", "P190"],
+      "sources": [
+        "z2m-herdsman",
+        "johan-enrichment",
+        "P190"
+      ],
       "tracks": {
-        "master": { "static": true, "dynamic": true },
-        "stable": { "static": true, "dynamic": false }
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
       }
     },
     {
       "id": "p190-ts130f-curtain-vd43bbfq-not-lock",
-      "mfr": ["_TZ3000_vd43bbfq"],
-      "productId": ["TS130F"],
+      "mfr": [
+        "_TZ3000_vd43bbfq"
+      ],
+      "productId": [
+        "TS130F"
+      ],
       "canonicalDriver": "curtain_module",
-      "forbiddenDrivers": ["fingerprint_lock"],
+      "forbiddenDrivers": [
+        "fingerprint_lock"
+      ],
       "protocol": "zcl",
       "notes": "TS130F curtain module per data/fingerprints.json and Johan enrichment. The lock placement came from an mfs_db record reading TS0601_lock back out of our own manifests.",
-      "sources": ["z2m-herdsman", "johan-enrichment", "P190"],
+      "sources": [
+        "z2m-herdsman",
+        "johan-enrichment",
+        "P190"
+      ],
       "tracks": {
-        "master": { "static": true, "dynamic": true },
-        "stable": { "static": true, "dynamic": false }
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
       }
     },
     {
       "id": "p190-contact-n2egfsli-not-button",
-      "mfr": ["_TZ3000_n2egfsli"],
-      "productId": ["TS0203"],
+      "mfr": [
+        "_TZ3000_n2egfsli"
+      ],
+      "productId": [
+        "TS0203"
+      ],
       "canonicalDriver": "contact_sensor",
-      "forbiddenDrivers": ["button_wireless_2"],
+      "forbiddenDrivers": [
+        "button_wireless_2"
+      ],
       "protocol": "zcl",
       "notes": "Johan enrichment lists TS0203/RH3001/SNZB-04 with alarm_contact. The button_wireless_2 claim traces to a driver-compose derived record, i.e. circular.",
-      "sources": ["z2m-herdsman", "johan-enrichment", "P190"],
+      "sources": [
+        "z2m-herdsman",
+        "johan-enrichment",
+        "P190"
+      ],
       "tracks": {
-        "master": { "static": true, "dynamic": true },
-        "stable": { "static": true, "dynamic": false }
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
       }
     },
     {
       "id": "p191-ts130f-curtain-quartet-not-shutter-catchall",
-      "mfr": ["_TZ3000_1dd0d5yi", "_TZ3000_femsaaua", "_TZ3000_e3vhyirx", "_TZ3000_jwv3cwak"],
-      "productId": ["TS130F"],
+      "mfr": [
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_femsaaua",
+        "_TZ3000_e3vhyirx",
+        "_TZ3000_jwv3cwak"
+      ],
+      "productId": [
+        "TS130F"
+      ],
       "canonicalDriver": "wall_curtain_switch",
-      "forbiddenDrivers": ["curtain_motor_shutter"],
+      "forbiddenDrivers": [
+        "curtain_motor_shutter",
+        "curtain_module"
+      ],
       "protocol": "zcl",
       "notes": "Johan enrichment gives TS130F for all four (Moes MS-108ZR family, plus LoraTap and Nous rebrands). curtain_motor_shutter does not even declare TS130F, so the placement can never match; its 50-entry productId list has accumulated Hue bulbs, Xiaomi weather sensors and temperature sensors and should not grow further.",
-      "sources": ["z2m-herdsman", "johan-enrichment", "P191"],
+      "sources": [
+        "z2m-herdsman",
+        "johan-enrichment",
+        "P191"
+      ],
       "tracks": {
-        "master": { "static": true, "dynamic": true },
-        "stable": { "static": true, "dynamic": false }
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
       }
     },
     {
       "id": "p191-ts0501b-dimmer-g01ie5wu",
-      "mfr": ["_TZB210_g01ie5wu"],
-      "productId": ["TS0501B"],
+      "mfr": [
+        "_TZB210_g01ie5wu"
+      ],
+      "productId": [
+        "TS0501B"
+      ],
       "canonicalDriver": "wall_dimmer_1gang_1way",
-      "forbiddenDrivers": ["wall_dimmer_tuya"],
+      "forbiddenDrivers": [
+        "wall_dimmer_tuya"
+      ],
       "protocol": "zcl",
       "notes": "z2m TS0501B_dimmer_2. wall_dimmer_1gang_1way declares TS0501B; wall_dimmer_tuya does not, so that placement cannot match.",
-      "sources": ["z2m-herdsman", "johan-enrichment", "P191"],
+      "sources": [
+        "z2m-herdsman",
+        "johan-enrichment",
+        "P191"
+      ],
       "tracks": {
-        "master": { "static": true, "dynamic": true },
-        "stable": { "static": true, "dynamic": false }
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
       }
     },
     {
-      "id": "p217-wfxuhoea-loratap-garage",
-      "mfr": ["_TZE200_wfxuhoea", "_tze200_wfxuhoea", "_TZE204_wfxuhoea"],
-      "productId": ["TS0601"],
-      "canonicalDriver": "garage_door",
-      "forbiddenDrivers": ["button_wireless_plug"],
-      "protocol": "tuya_ef00",
-      "notes": "LoraTap garage opener. Not a wireless plug.",
-      "tracks": { "master": { "static": true, "dynamic": true }, "stable": { "static": true, "dynamic": false } }
-    },
-    {
-      "id": "p217-k6fvknrr-ts011f-double-outlet",
-      "mfr": ["_TZ3000_k6fvknrr", "_tz3000_k6fvknrr"],
-      "productId": ["TS011F"],
-      "canonicalDriver": "double_power_point_2",
-      "forbiddenDrivers": ["switch_1gang"],
-      "protocol": "zcl",
-      "notes": "2-endpoint TS011F without metering.",
-      "tracks": { "master": { "static": true, "dynamic": true }, "stable": { "static": true, "dynamic": false } }
-    },
-    {
-      "id": "p217-wing-ts0203-contact",
-      "mfr": ["Wing", "wing", "WING"],
-      "productId": ["TS0203"],
-      "canonicalDriver": "contact_sensor",
-      "forbiddenDrivers": ["water_leak_sensor"],
-      "protocol": "ias_zone",
-      "notes": "Wing brand door/window.",
-      "tracks": { "master": { "static": true, "dynamic": true }, "stable": { "static": true, "dynamic": false } }
-    },
-    {
-      "id": "p217-hobeian-zg305z-usb-2gang",
-      "mfr": ["HOBEIAN", "hobeian", "Hobeian"],
-      "productId": ["ZG-305Z"],
-      "canonicalDriver": "switch_2gang",
-      "forbiddenDrivers": ["button_wireless_2"],
-      "protocol": "zcl",
-      "notes": "HOBEIAN ZG-305Z dual USB switch.",
-      "tracks": { "master": { "static": true, "dynamic": true }, "stable": { "static": true, "dynamic": false } }
-    },
-    {
       "id": "p191-trv-a4bpgplm-not-generic-diy",
-      "mfr": ["_TZE200_a4bpgplm"],
-      "productId": ["TS0601"],
+      "mfr": [
+        "_TZE200_a4bpgplm"
+      ],
+      "productId": [
+        "TS0601"
+      ],
       "canonicalDriver": "device_radiator_valve",
-      "forbiddenDrivers": ["generic_diy"],
+      "forbiddenDrivers": [
+        "generic_diy"
+      ],
       "protocol": "tuya_ef00",
       "notes": "z2m TRV06 family thermostatic radiator valve. generic_diy is the DIY catch-all (CC2530, PTVO, ESP32) and does not declare TS0601 — a commercial Tuya TRV does not belong there.",
-      "sources": ["z2m-herdsman", "johan-enrichment", "P191"],
+      "sources": [
+        "z2m-herdsman",
+        "johan-enrichment",
+        "P191"
+      ],
       "tracks": {
-        "master": { "static": true, "dynamic": true },
-        "stable": { "static": true, "dynamic": false }
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
+      }
+    },
+    {
+      "id": "zemismart-ts0043-3btn-sticky",
+      "mfr": [
+        "_TZ3000_a7ouggvs",
+        "_tz3000_a7ouggvs",
+        "_TZ3000_qzjcsmar",
+        "_tz3000_qzjcsmar"
+      ],
+      "productId": [
+        "TS0043"
+      ],
+      "canonicalDriver": "button_wireless_3",
+      "forbiddenDrivers": [
+        "button_wireless_2",
+        "button_wireless_1",
+        "button_wireless_4",
+        "scene_switch_wall",
+        "switch_1gang"
+      ],
+      "protocol": "zcl",
+      "energy": {
+        "batteries": [
+          "CR2032"
+        ]
+      },
+      "retailNames": [
+        "Zemismart ZB-L03C-H",
+        "Zemismart 3-button wireless scene switch"
+      ],
+      "notes": "Battery CR2032 sticky 3-button wall remote. Must not pair as 2-gang. Single/double/long press via PhysicalButtonMixin.",
+      "sources": [
+        "z2m",
+        "forum-140352-2168",
+        "aliexpress-3055457170131038"
+      ],
+      "tracks": {
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
+      }
+    },
+    {
+      "id": "zemismart-ts0001-tb25-1",
+      "mfr": [
+        "_TZ3000_ovyaisip",
+        "_tz3000_ovyaisip",
+        "_TZ3000_pk8tgtdb",
+        "_tz3000_pk8tgtdb"
+      ],
+      "productId": [
+        "TS0001"
+      ],
+      "canonicalDriver": "wall_switch_1gang_1way",
+      "forbiddenDrivers": [
+        "switch_2gang",
+        "switch_3gang",
+        "climate_sensor"
+      ],
+      "protocol": "zcl",
+      "retailNames": [
+        "Zemismart TB25-1",
+        "NovaDigital 1-gang"
+      ],
+      "notes": "1-gang ZCL TS0001. Ignore leftover 0xEF00. Retail TB25-1 from field; do not invent pids for 606/808/ZMS-206.",
+      "sources": [
+        "forum-140352-2173",
+        "forum-140352-2182"
+      ],
+      "tracks": {
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
       }
     },
     {
       "id": "novadigital-ts0002-jjdkhueq",
-      "mfr": ["_TZ3000_jjdkhueq", "_tz3000_jjdkhueq"],
-      "productId": ["TS0002"],
-      "canonicalDriver": "switch_2gang",
-      "forbiddenDrivers": ["switch_1gang", "climate_sensor", "switch_3gang", "generic_tuya"],
+      "mfr": [
+        "_TZ3000_jjdkhueq",
+        "_tz3000_jjdkhueq"
+      ],
+      "productId": [
+        "TS0002"
+      ],
+      "canonicalDriver": "wall_switch_2gang_1way",
+      "forbiddenDrivers": [
+        "switch_1gang",
+        "climate_sensor",
+        "switch_3gang",
+        "switch_2gang"
+      ],
       "protocol": "zcl",
-      "notes": "Mains 2-gang TS0002. Do not steal onto 1-gang, climate, or generic_tuya.",
-      "sources": ["z2m", "forum-140352-2173"],
+      "retailNames": [
+        "NovaDigital 2-gang",
+        "Zemismart 2-gang",
+        "Zemismart TB25-2"
+      ],
+      "notes": "Mains 2-gang TS0002. Pair as sub-devices (standard onoff per gang). Do not steal onto switch_2gang onoff.gang2 catch-all.",
+      "sources": [
+        "z2m",
+        "forum-140352-2173",
+        "forum-140352-2182"
+      ],
       "tracks": {
-        "master": { "static": true, "dynamic": false },
-        "stable": { "static": true, "dynamic": false }
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
+      }
+    },
+    {
+      "id": "novadigital-ts0002-ywubfuvt",
+      "mfr": [
+        "_TZ3000_ywubfuvt",
+        "_tz3000_ywubfuvt"
+      ],
+      "productId": [
+        "TS0002"
+      ],
+      "canonicalDriver": "wall_switch_2gang_1way",
+      "forbiddenDrivers": [
+        "switch_1gang",
+        "climate_sensor",
+        "switch_3gang",
+        "switch_2gang"
+      ],
+      "protocol": "zcl",
+      "retailNames": [
+        "NovaDigital 2-gang",
+        "Zemismart 2-gang",
+        "Zemismart TB25-2"
+      ],
+      "notes": "Mains 2-gang TS0002. Sub-device tiles (standard onoff per gang).",
+      "sources": [
+        "z2m",
+        "forum-140352-2173",
+        "forum-140352-2182"
+      ],
+      "tracks": {
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
+      }
+    },
+    {
+      "id": "novadigital-ts0002-kgxej1dv",
+      "mfr": [
+        "_TZ3000_kgxej1dv",
+        "_tz3000_kgxej1dv"
+      ],
+      "productId": [
+        "TS0002"
+      ],
+      "canonicalDriver": "wall_switch_2gang_1way",
+      "forbiddenDrivers": [
+        "switch_1gang",
+        "climate_sensor",
+        "switch_3gang",
+        "switch_2gang"
+      ],
+      "protocol": "zcl",
+      "retailNames": [
+        "NovaDigital 2-gang",
+        "Zemismart 2-gang",
+        "Zemismart TB25-2"
+      ],
+      "notes": "Mains 2-gang TS0002. Sub-device tiles (standard onoff per gang).",
+      "sources": [
+        "z2m",
+        "forum-140352-2173",
+        "forum-140352-2182"
+      ],
+      "tracks": {
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
       }
     },
     {
       "id": "novadigital-ts0003-ok0ggpk7",
-      "mfr": ["_TZ3000_ok0ggpk7", "_tz3000_ok0ggpk7"],
-      "productId": ["TS0003"],
-      "canonicalDriver": "switch_3gang",
-      "forbiddenDrivers": ["switch_1gang", "climate_sensor", "switch_2gang", "switch_2_gang", "generic_tuya"],
+      "mfr": [
+        "_TZ3000_ok0ggpk7",
+        "_tz3000_ok0ggpk7"
+      ],
+      "productId": [
+        "TS0003"
+      ],
+      "canonicalDriver": "wall_switch_3gang_1way",
+      "forbiddenDrivers": [
+        "switch_1gang",
+        "climate_sensor",
+        "switch_2gang",
+        "switch_2_gang",
+        "generic_tuya",
+        "switch_3gang"
+      ],
       "protocol": "zcl",
-      "notes": "NovaDigital NFZB-03 sibling of fawk5xjv. switch_1gang also lists TS0003.",
-      "sources": ["z2m-28204", "forum-140352-2173"],
+      "retailNames": [
+        "NovaDigital NFZB-03",
+        "Zemismart TB25-3"
+      ],
+      "notes": "Z2M sibling of _TZ3000_fawk5xjv. switch_1gang also lists TS0003 so this mfr must not live there. Retail TB25-n from field; 606/808/ZMS-206 SKUs not locked until mfr+pid confirmed.",
+      "sources": [
+        "z2m-28204",
+        "forum-140352-2173",
+        "forum-140352-2182"
+      ],
       "tracks": {
-        "master": { "static": true, "dynamic": false },
-        "stable": { "static": true, "dynamic": false }
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
       }
     },
     {
       "id": "novadigital-ts0003-f09j9qjb",
-      "mfr": ["_TZ3000_f09j9qjb", "_tz3000_f09j9qjb"],
-      "productId": ["TS0003"],
-      "canonicalDriver": "switch_3gang",
-      "forbiddenDrivers": ["switch_2_gang", "switch_2gang", "climate_sensor", "switch_1gang"],
+      "mfr": [
+        "_TZ3000_f09j9qjb",
+        "_tz3000_f09j9qjb"
+      ],
+      "productId": [
+        "TS0003"
+      ],
+      "canonicalDriver": "wall_switch_3gang_1way",
+      "forbiddenDrivers": [
+        "switch_2_gang",
+        "switch_2gang",
+        "climate_sensor",
+        "switch_1gang",
+        "switch_3gang"
+      ],
       "protocol": "zcl",
+      "retailNames": [
+        "Zemismart TB25-3"
+      ],
+      "notes": "3-gang ZCL. Climate compose lists TS0601 so this mfr on climate would steal pairing.",
+      "sources": [
+        "forum-140352-2173",
+        "forum-140352-2182"
+      ],
       "tracks": {
-        "master": { "static": true, "dynamic": false },
-        "stable": { "static": true, "dynamic": false }
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
       }
     },
     {
       "id": "novadigital-ts0003-vjhcenzo",
-      "mfr": ["_TZ3000_vjhcenzo", "_tz3000_vjhcenzo"],
-      "productId": ["TS0003"],
-      "canonicalDriver": "switch_3gang",
-      "forbiddenDrivers": ["climate_sensor", "switch_1gang", "switch_2gang"],
+      "mfr": [
+        "_TZ3000_vjhcenzo",
+        "_tz3000_vjhcenzo"
+      ],
+      "productId": [
+        "TS0003"
+      ],
+      "canonicalDriver": "wall_switch_3gang_1way",
+      "forbiddenDrivers": [
+        "climate_sensor",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang"
+      ],
       "protocol": "zcl",
+      "retailNames": [
+        "Zemismart TB25-3"
+      ],
+      "notes": "3-gang ZCL, not a climate sensor.",
+      "sources": [
+        "forum-140352-2173",
+        "forum-140352-2182"
+      ],
       "tracks": {
-        "master": { "static": true, "dynamic": false },
-        "stable": { "static": true, "dynamic": false }
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
+      }
+    },
+    {
+      "id": "novadigital-ts0003-eqsair32",
+      "mfr": [
+        "_TZ3000_eqsair32",
+        "_tz3000_eqsair32"
+      ],
+      "productId": [
+        "TS0003"
+      ],
+      "canonicalDriver": "wall_switch_3gang_1way",
+      "forbiddenDrivers": [
+        "climate_sensor",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang"
+      ],
+      "protocol": "zcl",
+      "retailNames": [
+        "Zemismart TB25-3"
+      ],
+      "notes": "3-gang ZCL wall; sub-device tiles. TZ3000 only.",
+      "sources": [
+        "forum-140352-2173",
+        "forum-140352-2182"
+      ],
+      "tracks": {
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
+      }
+    },
+    {
+      "id": "novadigital-ts0003-qxcnwv26",
+      "mfr": [
+        "_TZ3000_qxcnwv26",
+        "_tz3000_qxcnwv26"
+      ],
+      "productId": [
+        "TS0003"
+      ],
+      "canonicalDriver": "wall_switch_3gang_1way",
+      "forbiddenDrivers": [
+        "climate_sensor",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang"
+      ],
+      "protocol": "zcl",
+      "retailNames": [
+        "Zemismart TB25-3"
+      ],
+      "notes": "3-gang ZCL wall; sub-device tiles.",
+      "sources": [
+        "forum-140352-2173",
+        "forum-140352-2182"
+      ],
+      "tracks": {
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
+      }
+    },
+    {
+      "id": "novadigital-ts0003-fawk5xjv",
+      "mfr": [
+        "_TZ3000_fawk5xjv",
+        "_tz3000_fawk5xjv"
+      ],
+      "productId": [
+        "TS0003"
+      ],
+      "canonicalDriver": "wall_switch_3gang_1way",
+      "forbiddenDrivers": [
+        "climate_sensor",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang"
+      ],
+      "protocol": "zcl",
+      "retailNames": [
+        "Zemismart TB25-3"
+      ],
+      "notes": "TZ3000 3-gang. _TZ3210_fawk5xjv is a different couple — do not move.",
+      "sources": [
+        "forum-140352-2173",
+        "forum-140352-2182"
+      ],
+      "tracks": {
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
+      }
+    },
+    {
+      "id": "novadigital-ts0003-yervjnlj",
+      "mfr": [
+        "_TZ3000_yervjnlj",
+        "_tz3000_yervjnlj"
+      ],
+      "productId": [
+        "TS0003"
+      ],
+      "canonicalDriver": "wall_switch_3gang_1way",
+      "forbiddenDrivers": [
+        "climate_sensor",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang"
+      ],
+      "protocol": "zcl",
+      "retailNames": [
+        "Zemismart TB25-3"
+      ],
+      "notes": "Already on wall_switch_3gang_1way; keep TS0003/TS0013 only.",
+      "sources": [
+        "forum-140352-2173",
+        "forum-140352-2182"
+      ],
+      "tracks": {
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
       }
     },
     {
       "id": "novadigital-ts0601-4gang-aagrxlbd",
-      "mfr": ["_TZE204_aagrxlbd", "_tze204_aagrxlbd", "_TZE284_aagrxlbd", "_tze284_aagrxlbd"],
-      "productId": ["TS0601"],
+      "mfr": [
+        "_TZE204_aagrxlbd",
+        "_tze204_aagrxlbd",
+        "_TZE284_aagrxlbd",
+        "_tze284_aagrxlbd"
+      ],
+      "productId": [
+        "TS0601"
+      ],
       "canonicalDriver": "wall_switch_4_gang_tuya",
-      "forbiddenDrivers": ["climate_sensor", "din_rail_meter", "switch_4gang"],
+      "forbiddenDrivers": [
+        "climate_sensor",
+        "din_rail_meter",
+        "switch_4gang"
+      ],
       "protocol": "tuya_ef00",
+      "retailNames": [
+        "NovaDigital TB26-4",
+        "Zemismart TB25-4"
+      ],
+      "notes": "4-gang MCU DP1-4. climate_sensor also declares TS0601.",
+      "sources": [
+        "z2m-herdsman-7133",
+        "forum-140352-2173"
+      ],
       "tracks": {
-        "master": { "static": true, "dynamic": false },
-        "stable": { "static": true, "dynamic": false }
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
       }
     },
     {
       "id": "zemismart-ts0601-4gang-shkxsgis",
-      "mfr": ["_TZE200_shkxsgis", "_tze200_shkxsgis", "_TZE204_shkxsgis", "_tze204_shkxsgis", "_TZE284_shkxsgis", "_tze284_shkxsgis"],
-      "productId": ["TS0601"],
+      "mfr": [
+        "_TZE200_shkxsgis",
+        "_tze200_shkxsgis",
+        "_TZE204_shkxsgis",
+        "_tze204_shkxsgis",
+        "_TZE284_shkxsgis",
+        "_tze284_shkxsgis"
+      ],
+      "productId": [
+        "TS0601"
+      ],
       "canonicalDriver": "wall_switch_4_gang_tuya",
-      "forbiddenDrivers": ["climate_sensor", "din_rail_meter", "switch_4gang"],
+      "forbiddenDrivers": [
+        "climate_sensor",
+        "din_rail_meter",
+        "switch_4gang"
+      ],
       "protocol": "tuya_ef00",
+      "retailNames": [
+        "Zemismart TB25-4",
+        "Zemismart TB26-4"
+      ],
+      "notes": "4-gang MCU DP1-4. din_rail_meter previously stole the TZE204 sibling.",
+      "sources": [
+        "forum-140352-2173",
+        "forum-140352-2182"
+      ],
       "tracks": {
-        "master": { "static": true, "dynamic": false },
-        "stable": { "static": true, "dynamic": false }
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
       }
     },
     {
       "id": "zemismart-ts0601-6gang-r731zlxk",
-      "mfr": ["_TZE200_r731zlxk", "_tze200_r731zlxk", "_TZE204_r731zlxk", "_tze204_r731zlxk", "_TZE284_r731zlxk", "_tze284_r731zlxk"],
-      "productId": ["TS0601"],
+      "mfr": [
+        "_TZE200_r731zlxk",
+        "_tze200_r731zlxk",
+        "_TZE204_r731zlxk",
+        "_tze204_r731zlxk",
+        "_TZE284_r731zlxk",
+        "_tze284_r731zlxk"
+      ],
+      "productId": [
+        "TS0601"
+      ],
       "canonicalDriver": "wall_switch_6_gang_tuya",
-      "forbiddenDrivers": ["climate_sensor", "switch_wall_6gang"],
+      "forbiddenDrivers": [
+        "climate_sensor",
+        "switch_wall_6gang"
+      ],
       "protocol": "tuya_ef00",
+      "retailNames": [
+        "Zemismart TB25-6",
+        "Zemismart TB26-6"
+      ],
+      "notes": "6-gang MCU DP1-6 + DP14 power-on. climate_sensor also declares TS0601.",
+      "sources": [
+        "z2m-11975",
+        "forum-140352-2173",
+        "forum-140352-2182"
+      ],
       "tracks": {
-        "master": { "static": true, "dynamic": false },
-        "stable": { "static": true, "dynamic": false }
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
       }
     },
     {
-      "id": "okaz9tjs-ts011f-metering-plug",
-      "mfr": ["_TZ3000_okaz9tjs", "_tz3000_okaz9tjs", "_TZ3000_OKAZ9TJS"],
-      "productId": ["TS011F"],
-      "canonicalDriver": "plug_energy_monitor",
-      "forbiddenDrivers": ["button_wireless_plug", "button_wireless_2", "climate_sensor"],
+      "id": "interview-ts0043-bczr4e10",
+      "mfr": [
+        "_TZ3000_bczr4e10",
+        "_tz3000_bczr4e10"
+      ],
+      "productId": [
+        "TS0043"
+      ],
+      "canonicalDriver": "button_wireless_3",
+      "forbiddenDrivers": [
+        "switch_3gang",
+        "switch_4gang",
+        "switch_2gang"
+      ],
       "protocol": "zcl",
-      "notes": "Metering TS011F plug, not a wireless button.",
+      "notes": "INT-170: interview has 4 OnOff endpoints + EP custom 0xE000. ProductId TS0043 is a battery remote, not a wall switch.",
+      "sources": [
+        "DEVICE_INTERVIEWS INT-170",
+        "desktop-interview-2026-01-31"
+      ],
       "tracks": {
-        "master": { "static": true, "dynamic": false },
-        "stable": { "static": true, "dynamic": false }
-      }
-    },
-    {
-      "id": "fgwhjm9j-ts011f-metering-plug",
-      "mfr": ["_TZ3210_fgwhjm9j", "_tz3210_fgwhjm9j", "_TZ3210_FGWHJM9J"],
-      "productId": ["TS011F"],
-      "canonicalDriver": "plug_energy_monitor",
-      "forbiddenDrivers": ["climate_sensor", "button_wireless_plug"],
-      "protocol": "zcl",
-      "notes": "TZ3210 TS011F metering plug, not a climate sensor.",
-      "tracks": {
-        "master": { "static": true, "dynamic": false },
-        "stable": { "static": true, "dynamic": false }
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
       }
     },
     {
       "id": "cfnprab5-power-strip-not-remote",
-      "mfr": ["_TZ3000_cfnprab5", "_tz3000_cfnprab5", "_TZ3000_CFNPRAB5"],
-      "productId": ["TS011F"],
+      "mfr": [
+        "_TZ3000_cfnprab5",
+        "_tz3000_cfnprab5",
+        "_TZ3000_CFNPRAB5"
+      ],
+      "productId": [
+        "TS011F"
+      ],
       "canonicalDriver": "socket_power_strip_four_three",
-      "forbiddenDrivers": ["button_wireless_2", "button_wireless_4", "climate_sensor"],
+      "forbiddenDrivers": [
+        "button_wireless_2",
+        "button_wireless_4",
+        "climate_sensor",
+        "socket_power_strip_four_two"
+      ],
       "protocol": "zcl",
-      "notes": "4-outlet + USB strip. Same mfr must not pair as a 2-button remote.",
+      "notes": "4-outlet + USB strip. Same mfr must not pair as a 2-button remote. Compound lock _TZ3000_cfnprab5|TS011F.",
       "tracks": {
-        "master": { "static": true, "dynamic": false },
-        "stable": { "static": true, "dynamic": false }
-      }
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
+      },
+      "sources": [
+        "z2m-herdsman",
+        "P167"
+      ]
     },
     {
       "id": "lwthnp7j-zcl-4gang",
-      "mfr": ["_TZ3000_lwthnp7j", "_tz3000_lwthnp7j", "_TZ3000_LWTHNP7J"],
-      "productId": ["TS0004"],
-      "canonicalDriver": "switch_4gang",
-      "forbiddenDrivers": ["wall_switch_4_gang_tuya", "climate_sensor", "button_wireless_4"],
+      "mfr": [
+        "_TZ3000_lwthnp7j",
+        "_tz3000_lwthnp7j",
+        "_TZ3000_LWTHNP7J"
+      ],
+      "productId": [
+        "TS0004"
+      ],
+      "canonicalDriver": "wall_switch_4gang_1way",
+      "forbiddenDrivers": [
+        "wall_switch_4_gang_tuya",
+        "climate_sensor",
+        "button_wireless_4",
+        "switch_4gang"
+      ],
       "protocol": "zcl",
-      "notes": "ZCL 4-gang (not EF00 TS0601).",
+      "notes": "ZCL 4-gang TB25-4 (not EF00 TS0601). Sub-device tiles. Do not invent 606/808/ZMS-206 pids.",
       "tracks": {
-        "master": { "static": true, "dynamic": false },
-        "stable": { "static": true, "dynamic": false }
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
+      },
+      "sources": [
+        "forum-140352-2173",
+        "forum-140352-2182",
+        "forum-140352-2188",
+        "gpm-homesuite-interview-TS0004"
+      ]
+    },
+    {
+      "id": "p2261-ihseno-debczeci-presence",
+      "mfr": [
+        "_TZE284_debczeci",
+        "_tze284_debczeci",
+        "_TZE204_debczeci",
+        "_TZE284_1lvln0x6",
+        "_tze284_1lvln0x6"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": "presence_sensor_radar",
+      "forbiddenDrivers": [
+        "motion_sensor_radar_mmwave",
+        "climate_sensor",
+        "zigbee_universal"
+      ],
+      "forbidMode": "couple",
+      "protocol": "tuya_dp",
+      "notes": "iHseno mmWave presence — DP1 occupancy DP4 battery. Johan T26439 #5493; Z2M sibling 1lvln0x6.",
+      "sources": [
+        "z2m-27773",
+        "forum-26439-5493",
+        "P2261"
+      ],
+      "tracks": {
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
       }
+    },
+    {
+      "id": "okaz9tjs-ts011f-metering-plug",
+      "mfr": [
+        "_TZ3000_okaz9tjs",
+        "_tz3000_okaz9tjs",
+        "_TZ3000_OKAZ9TJS"
+      ],
+      "productId": [
+        "TS011F"
+      ],
+      "canonicalDriver": "plug_energy_monitor",
+      "forbiddenDrivers": [
+        "button_wireless_plug",
+        "button_wireless_2",
+        "climate_sensor",
+        "smartplug"
+      ],
+      "protocol": "zcl",
+      "notes": "Metering TS011F plug (Z2M TS011F_plug_3). Firmware 1.0.5+ disabled auto electrical reports — poll voltage/current/power. Not a wireless button. Pid TS011F is also DIN/strip/double-outlet — lock this couple.",
+      "tracks": {
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
+      },
+      "sources": [
+        "z2m#13191",
+        "homesuite-field"
+      ]
+    },
+    {
+      "id": "p217-wfxuhoea-loratap-garage",
+      "mfr": [
+        "_TZE200_wfxuhoea",
+        "_tze200_wfxuhoea",
+        "_TZE204_wfxuhoea",
+        "_tze204_wfxuhoea"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": "garage_door",
+      "forbiddenDrivers": [
+        "button_wireless_plug",
+        "plug_energy_monitor",
+        "air_purifier_plug",
+        "climate_sensor"
+      ],
+      "protocol": "tuya_ef00",
+      "notes": "LoraTap garage opener (JohanBendz #1442). Z2M GARAGE family — not a wireless plug.",
+      "sources": [
+        "JohanBendz#1442",
+        "z2m-garage"
+      ],
+      "tracks": {
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
+      }
+    },
+    {
+      "id": "p217-k6fvknrr-ts011f-double-outlet",
+      "mfr": [
+        "_TZ3000_k6fvknrr",
+        "_tz3000_k6fvknrr",
+        "_TZ3000_K6FVKNRR"
+      ],
+      "productId": [
+        "TS011F"
+      ],
+      "canonicalDriver": "double_power_point_2",
+      "forbiddenDrivers": [
+        "switch_1gang",
+        "plug_energy_monitor",
+        "plug_smart"
+      ],
+      "protocol": "zcl",
+      "notes": "2-endpoint TS011F without metering clusters (JohanBendz PR #1437).",
+      "sources": [
+        "JohanBendz#1437"
+      ],
+      "tracks": {
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
+      }
+    },
+    {
+      "id": "p217-wing-ts0203-contact",
+      "mfr": [
+        "Wing",
+        "wing",
+        "WING"
+      ],
+      "productId": [
+        "TS0203"
+      ],
+      "canonicalDriver": "contact_sensor",
+      "forbiddenDrivers": [
+        "water_leak_sensor"
+      ],
+      "protocol": "ias_zone",
+      "notes": "Wing brand door/window reports manufacturerName Wing (JohanBendz PR #1439).",
+      "sources": [
+        "JohanBendz#1439"
+      ],
+      "tracks": {
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
+      }
+    },
+    {
+      "id": "p217-hobeian-zg305z-usb-2gang",
+      "mfr": [
+        "HOBEIAN",
+        "hobeian",
+        "Hobeian"
+      ],
+      "productId": [
+        "ZG-305Z"
+      ],
+      "canonicalDriver": "switch_2gang",
+      "forbiddenDrivers": [
+        "button_wireless_2"
+      ],
+      "forbidMode": "couple",
+      "protocol": "zcl",
+      "notes": "HOBEIAN ZG-305Z MHCOZY dual USB-C switch (JohanBendz PR #1435). Unique pid avoids TS0601 cartesian with other HOBEIAN sensors. forbidMode couple — same brand has climate/soil/radar siblings.",
+      "sources": [
+        "JohanBendz#1435"
+      ],
+      "tracks": {
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
+      }
+    },
+    {
+      "id": "pm-rolp-tz3218-7fiyo3kv-ts000f-switch-temp",
+      "mfr": [
+        "_TZ3218_7fiyo3kv",
+        "_tz3218_7fiyo3kv",
+        "_TZ3218_7FIYO3KV",
+        "_TZ3218_ya5d6wth",
+        "_tz3218_ya5d6wth",
+        "_TZ3218_YA5D6WTH"
+      ],
+      "productId": [
+        "TS000F"
+      ],
+      "canonicalDriver": "switch_temp_sensor",
+      "forbiddenDrivers": [
+        "switch_1gang",
+        "switch_1_gang",
+        "zigbee_universal",
+        "climate_sensor",
+        "generic_tuya"
+      ],
+      "protocol": "hybrid",
+      "retailNames": [
+        "Mumubiz TYZGTH1CH-D1RF",
+        "MHCOZY TYZGTH16A-D1RF"
+      ],
+      "notes": "Mains 1-gang switch with DS18B20 probe (ZCL onoff + EF00 DP102). Pairing as switch_1gang hid temperature.",
+      "sources": [
+        "z2m-herdsman",
+        "JohanBendz#1176",
+        "forum-pm-147692"
+      ],
+      "tracks": {
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
+      }
+    },
+    {
+      "id": "fgwhjm9j-ts011f-metering-plug",
+      "mfr": [
+        "_TZ3210_fgwhjm9j",
+        "_tz3210_fgwhjm9j",
+        "_TZ3210_FGWHJM9J"
+      ],
+      "productId": [
+        "TS011F"
+      ],
+      "canonicalDriver": "plug_energy_monitor",
+      "forbiddenDrivers": [
+        "climate_sensor",
+        "button_wireless_plug"
+      ],
+      "protocol": "zcl",
+      "notes": "TZ3210 TS011F metering plug sibling of okaz9tjs. ZCL electrical+metering; not climate. Pid TS011F is ambiguous without mfr.",
+      "tracks": {
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
+      },
+      "sources": [
+        "homesuite-field"
+      ]
+    },
+    {
+      "id": "blitzwolf-amdymr7l-shp13-plug",
+      "mfr": [
+        "_TZ3000_amdymr7l",
+        "_tz3000_amdymr7l",
+        "_TZ3210_amdymr7l",
+        "_tz3210_amdymr7l"
+      ],
+      "productId": [
+        "TS011F"
+      ],
+      "canonicalDriver": "plug_energy_monitor",
+      "forbiddenDrivers": [
+        "button_wireless_2",
+        "button_wireless_1",
+        "climate_sensor",
+        "button_wireless_plug"
+      ],
+      "protocol": "zcl",
+      "notes": "BlitzWolf BW-SHP13 metering plug (Phoscon/Z2M). Never button driver. Pid TS011F ambiguous without mfr.",
+      "tracks": {
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
+      },
+      "sources": [
+        "phoscon-compat",
+        "z2m-11703",
+        "fork-mmaaikel"
+      ]
+    },
+    {
+      "id": "p2201-pay2byax-zg102zl-contact",
+      "mfr": [
+        "_TZE200_pay2byax",
+        "_tze200_pay2byax",
+        "_TZE204_pay2byax",
+        "_tze204_pay2byax"
+      ],
+      "productId": [
+        "TS0601",
+        "ZG-102ZL",
+        "ZG-102Z"
+      ],
+      "canonicalDriver": "contact_sensor_zigbee",
+      "forbiddenDrivers": [
+        "soil_sensor",
+        "climate_sensor",
+        "switch_3gang",
+        "zigbee_universal"
+      ],
+      "protocol": "tuya_dp",
+      "notes": "ZG-102ZL luminance contact. TS0601 pairs via contact_sensor_zigbee (P126 forbids TS0601 on contact_sensor). ZG-102ZL also on contact_sensor.",
+      "tracks": {
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
+      },
+      "sources": [
+        "z2m-zg-102zl",
+        "p126-contact-no-TS0601",
+        "fork-p2200"
+      ]
+    },
+    {
+      "id": "tongou-to-q-sys-jzt-din-meter",
+      "mfr": [
+        "_TZE284_6ocnqlhn",
+        "_tze284_6ocnqlhn",
+        "_TZE284_6OCNQLHN"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": "din_rail_meter",
+      "forbiddenDrivers": [
+        "smart_rcbo",
+        "climate_sensor",
+        "soil_sensor",
+        "generic_tuya",
+        "zigbee_universal"
+      ],
+      "protocol": "tuya_ef00",
+      "retailNames": [
+        "Tongou TO-Q-SYS-JZT"
+      ],
+      "notes": "Gmail diags 3a1f196d + 31e654a4 (Aug 2026). Z2M din rail smart meter — not RCBO. smart_rcbo stole couple; DP6 raw was mapped to measure_humidity. User must update Test and re-pair.",
+      "sources": [
+        "gmail-diag-3a1f196d",
+        "gmail-diag-31e654a4",
+        "z2m-TO-Q-SYS-JZT"
+      ],
+      "tracks": {
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
+      }
+    },
+    {
+      "id": "p2234-gdsvhfao-repeater",
+      "mfr": [
+        "_TZ3000_gdsvhfao",
+        "_tz3000_gdsvhfao",
+        "_TZ3000_GDSVHFAO"
+      ],
+      "productId": [
+        "TS0001"
+      ],
+      "canonicalDriver": "zigbee_repeater",
+      "forbiddenDrivers": [
+        "switch_1gang",
+        "switch_2gang"
+      ],
+      "source": "z2m#11207",
+      "notes": "TS0001_repeater — pairing button repeater"
+    },
+    {
+      "id": "p2234-itp8dt7f-dimmer",
+      "mfr": [
+        "_TZE200_itp8dt7f",
+        "_tze200_itp8dt7f",
+        "_TZE200_ITP8DT7F"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": "wall_dimmer_tuya",
+      "forbiddenDrivers": [
+        "soil_sensor",
+        "climate_sensor"
+      ],
+      "source": "z2m#12213",
+      "notes": "ION touch dimmer alias of ykgar0ow"
+    },
+    {
+      "id": "p2234-qujphad5-tybac",
+      "mfr": [
+        "_TZE204_qujphad5",
+        "_tze204_qujphad5",
+        "_TZE204_QUJPHAD5"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": "wall_thermostat",
+      "forbiddenDrivers": [
+        "bulb_dimmable",
+        "thermostatic_radiator_valve"
+      ],
+      "source": "z2m#12869",
+      "notes": "TYBAC-006 FCU thermostat"
+    },
+    {
+      "id": "p2234-apiu8k13-q9qytwfa-water-heater",
+      "mfr": [
+        "_TZE204_apiu8k13",
+        "_tze204_apiu8k13",
+        "_TZE204_APIU8K13",
+        "_TZE284_q9qytwfa",
+        "_tze284_q9qytwfa",
+        "_TZE284_Q9QYTWFA"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": "plug_energy_monitor",
+      "forbiddenDrivers": [
+        "switch_1gang",
+        "soil_sensor",
+        "climate_sensor"
+      ],
+      "source": "z2m#32883",
+      "notes": "Power-monitoring water heater controller"
+    },
+    {
+      "id": "p2234b-tz3000_gdsvhfao",
+      "mfr": [
+        "_TZ3000_gdsvhfao",
+        "_tz3000_gdsvhfao",
+        "_TZ3000_GDSVHFAO"
+      ],
+      "productId": [
+        "TS0001"
+      ],
+      "canonicalDriver": "zigbee_repeater",
+      "forbiddenDrivers": [
+        "switch_1gang",
+        "switch_2gang",
+        "plug_energy_monitor"
+      ],
+      "source": "p2234b-couple-refine",
+      "notes": "Z2M#11207 TS0001_repeater only — not every TS0001"
+    },
+    {
+      "id": "p2234b-tze200_itp8dt7f",
+      "mfr": [
+        "_TZE200_itp8dt7f",
+        "_tze200_itp8dt7f",
+        "_TZE200_ITP8DT7F"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": "wall_dimmer_tuya",
+      "forbiddenDrivers": [
+        "soil_sensor",
+        "climate_sensor",
+        "zigbee_universal"
+      ],
+      "source": "p2234b-couple-refine",
+      "notes": "Z2M#12213 ION dimmer — strip fake ZG-303Z soil pid from mfs"
+    },
+    {
+      "id": "p2234b-tz3000_dershnvx",
+      "mfr": [
+        "_TZ3000_dershnvx",
+        "_tz3000_dershnvx",
+        "_TZ3000_DERSHNVX"
+      ],
+      "productId": [
+        "TS0002"
+      ],
+      "canonicalDriver": "switch_2gang",
+      "forbiddenDrivers": [
+        "switch_1gang",
+        "wall_switch_2gang_1way"
+      ],
+      "source": "p2234b-couple-refine",
+      "notes": "Z2M#32034 / #12246 — ONLY TS0002 (no TS0001/TS0601 invent)"
+    },
+    {
+      "id": "p2234b-tz3000_icoxotza",
+      "mfr": [
+        "_TZ3000_icoxotza",
+        "_tz3000_icoxotza",
+        "_TZ3000_ICOXOTZA"
+      ],
+      "productId": [
+        "TS0726"
+      ],
+      "canonicalDriver": "switch_2gang",
+      "forbiddenDrivers": [
+        "switch_1gang"
+      ],
+      "source": "p2234b-couple-refine",
+      "notes": "Z2M#11720 TS0726_2_gang — pid is TS0726 not TS0002"
+    },
+    {
+      "id": "p2234b-tze204_qujphad5",
+      "mfr": [
+        "_TZE204_qujphad5",
+        "_tze204_qujphad5",
+        "_TZE204_QUJPHAD5"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": "wall_thermostat",
+      "forbiddenDrivers": [
+        "bulb_dimmable",
+        "thermostatic_radiator_valve"
+      ],
+      "source": "p2234b-couple-refine",
+      "notes": "TYBAC-006 FCU — sibling mpbki2zm is a SEPARATE couple"
+    },
+    {
+      "id": "p2234b-tze204_mpbki2zm",
+      "mfr": [
+        "_TZE204_mpbki2zm",
+        "_tze204_mpbki2zm",
+        "_TZE204_MPBKI2ZM"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": "wall_thermostat",
+      "forbiddenDrivers": [
+        "thermostatic_radiator_valve",
+        "bulb_dimmable"
+      ],
+      "source": "p2234b-couple-refine",
+      "notes": "TYBAC-006 sibling — not TRV"
+    },
+    {
+      "id": "p2234b-tze204_apiu8k13",
+      "mfr": [
+        "_TZE204_apiu8k13",
+        "_tze204_apiu8k13",
+        "_TZE204_APIU8K13"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": "plug_energy_monitor",
+      "forbiddenDrivers": [
+        "switch_1gang",
+        "soil_sensor"
+      ],
+      "source": "p2234b-couple-refine",
+      "notes": "Water-heater monitor — TZE284_q9qytwfa is sibling couple, not same mfr"
+    },
+    {
+      "id": "p2234b-tze284_q9qytwfa",
+      "mfr": [
+        "_TZE284_q9qytwfa",
+        "_tze284_q9qytwfa",
+        "_TZE284_Q9QYTWFA"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": "plug_energy_monitor",
+      "forbiddenDrivers": [
+        "switch_1gang",
+        "soil_sensor"
+      ],
+      "source": "p2234b-couple-refine",
+      "notes": "Z2M#32883 — TZE284 ≠ TZE204; lock separately"
+    },
+    {
+      "id": "p2234b-tze200_7upwjcca",
+      "mfr": [
+        "_TZE200_7upwjcca",
+        "_tze200_7upwjcca",
+        "_TZE200_7UPWJCCA"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": "curtain_motor",
+      "forbiddenDrivers": [
+        "soil_sensor",
+        "climate_sensor"
+      ],
+      "source": "p2234b-couple-refine",
+      "notes": "Z2M#32905 cover — only TS0601"
+    },
+    {
+      "id": "p2234b-tz3000_anptztic",
+      "mfr": [
+        "_TZ3000_anptztic",
+        "_tz3000_anptztic",
+        "_TZ3000_ANPTZTIC"
+      ],
+      "productId": [
+        "TS0001"
+      ],
+      "canonicalDriver": "plug_energy_monitor",
+      "forbiddenDrivers": [
+        "switch_1gang",
+        "zigbee_repeater"
+      ],
+      "source": "p2234b-couple-refine",
+      "notes": "Z2M#32609 metering TS0001 — same pid as repeater family but DIFFERENT mfr"
+    },
+    {
+      "id": "p2234b-tz3000_ly9apzky",
+      "mfr": [
+        "_TZ3000_ly9apzky",
+        "_tz3000_ly9apzky",
+        "_TZ3000_LY9APZKY"
+      ],
+      "productId": [
+        "TS0003"
+      ],
+      "canonicalDriver": "wall_switch_3gang_1way",
+      "forbiddenDrivers": [
+        "switch_3gang",
+        "switch_1gang"
+      ],
+      "source": "p2234b-couple-refine",
+      "notes": "Z2M#32810 + doctrine: TS0003 3-gang → wall_switch_3gang_1way NOT switch_3gang"
+    },
+    {
+      "id": "p2234b-tze204_pkpfn9hc",
+      "mfr": [
+        "_TZE204_pkpfn9hc",
+        "_tze204_pkpfn9hc",
+        "_TZE204_PKPFN9HC"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": "air_quality_co2",
+      "forbiddenDrivers": [
+        "climate_sensor",
+        "soil_sensor"
+      ],
+      "source": "p2234b-couple-refine",
+      "notes": "Z2M#12949 CO2 — TS0601 shared pid, mfr locks type"
+    },
+    {
+      "id": "p2234b-tz3002_y7wpizuw",
+      "mfr": [
+        "_TZ3002_y7wpizuw",
+        "_tz3002_y7wpizuw",
+        "_TZ3002_Y7WPIZUW"
+      ],
+      "productId": [
+        "TS0726"
+      ],
+      "canonicalDriver": "switch_4gang",
+      "forbiddenDrivers": [
+        "switch_2gang",
+        "switch_1gang"
+      ],
+      "source": "p2234b-couple-refine",
+      "notes": "Z2M#32628 4-gang TS0726 — icoxotza+TS0726 is 2-gang (different mfr)"
+    },
+    {
+      "id": "p2234b-tze284_smcqit2l",
+      "mfr": [
+        "_TZE284_smcqit2l",
+        "_tze284_smcqit2l",
+        "_TZE284_SMCQIT2L"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": "wall_thermostat",
+      "forbiddenDrivers": [
+        "thermostatic_radiator_valve",
+        "climate_sensor"
+      ],
+      "source": "p2234b-couple-refine",
+      "notes": "Z2M#32568 — do not conflate with qujphad5/mpbki2zm"
+    },
+    {
+      "id": "p2234b-tze284_6uyu20xu",
+      "mfr": [
+        "_TZE284_6uyu20xu",
+        "_tze284_6uyu20xu",
+        "_TZE284_6UYU20XU"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": "climate_sensor",
+      "forbiddenDrivers": [
+        "soil_sensor",
+        "wall_thermostat"
+      ],
+      "source": "p2234b-couple-refine",
+      "notes": "Z2M#32491 Chayo TOVTH"
+    },
+    {
+      "id": "p2236-4upl1fcj-ts0041-button",
+      "mfr": [
+        "_TZ3000_4upl1fcj",
+        "_tz3000_4upl1fcj",
+        "_TZ3000_4UPL1FCJ"
+      ],
+      "productId": [
+        "TS0041"
+      ],
+      "canonicalDriver": "button_wireless_1",
+      "forbiddenDrivers": [
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "wall_dimmer_tuya"
+      ],
+      "source": "p2236-forum-integral",
+      "notes": "SunBeech T156967 — TS0041 wireless remote, NEVER switch_1gang (processor false ROUTED_OK)"
+    },
+    {
+      "id": "p2236-qeuvnohg-ts011f-din",
+      "mfr": [
+        "_TZ3000_qeuvnohg",
+        "_tz3000_qeuvnohg",
+        "_TZ3000_QEUVNOHG"
+      ],
+      "productId": [
+        "TS011F"
+      ],
+      "canonicalDriver": "din_rail_switch",
+      "forbiddenDrivers": [
+        "smartPlug_DinRail",
+        "switch_1gang",
+        "button_wireless_2",
+        "zigbee_universal"
+      ],
+      "source": "p2236-forum-integral",
+      "notes": "T89271 Erwin3/Zdenek — registry+DeviceFingerprintDB din_rail_switch; strip fake TS0042/TS0601"
+    },
+    {
+      "id": "p2236-amdymr7l-tz3210-energy",
+      "mfr": [
+        "_TZ3210_amdymr7l",
+        "_tz3210_amdymr7l",
+        "_TZ3210_AMDYMR7L"
+      ],
+      "productId": [
+        "TS011F"
+      ],
+      "canonicalDriver": "plug_energy_monitor",
+      "forbiddenDrivers": [
+        "plug_smart",
+        "button_wireless_4",
+        "switch_1gang"
+      ],
+      "source": "p2236-forum-integral",
+      "notes": "T89271 Bram_B — BlitzWolf SHP13 dual-compose; energy only"
+    },
+    {
+      "id": "p2236-amdymr7l-tz3000-energy",
+      "mfr": [
+        "_TZ3000_amdymr7l",
+        "_tz3000_amdymr7l",
+        "_TZ3000_AMDYMR7L"
+      ],
+      "productId": [
+        "TS011F"
+      ],
+      "canonicalDriver": "plug_energy_monitor",
+      "forbiddenDrivers": [
+        "plug_smart",
+        "button_wireless_4"
+      ],
+      "source": "p2236-forum-integral",
+      "notes": "Sibling TZ3000 BlitzWolf — TS011F only"
+    },
+    {
+      "id": "p2236-xabckq1v-ts004f",
+      "mfr": [
+        "_TZ3000_xabckq1v",
+        "_tz3000_xabckq1v",
+        "_TZ3000_XABCKQ1V"
+      ],
+      "productId": [
+        "TS004F"
+      ],
+      "canonicalDriver": "button_wireless_4",
+      "forbiddenDrivers": [
+        "switch_1gang",
+        "zigbee_universal"
+      ],
+      "source": "p2236-forum-integral",
+      "notes": "Steampunk soft TS0001 REJECTED — known couple is TS004F only"
+    },
+    {
+      "id": "p2236-kfu8zapd-ts0044f",
+      "mfr": [
+        "_TZ3000_kfu8zapd",
+        "_tz3000_kfu8zapd",
+        "_TZ3000_KFU8ZAPD"
+      ],
+      "productId": [
+        "TS0044",
+        "TS004F"
+      ],
+      "canonicalDriver": "button_wireless_4",
+      "forbiddenDrivers": [
+        "switch_1gang",
+        "scene_switch_4"
+      ],
+      "source": "p2236-forum-integral",
+      "notes": "Primordial T150690 — Moes 4-btn; mfs must list TS0044/TS004F not TS0001"
+    },
+    {
+      "id": "p2236-zgyzgdua-ts0044-scene",
+      "mfr": [
+        "_TZ3000_zgyzgdua",
+        "_tz3000_zgyzgdua",
+        "_TZ3000_ZGYZGDUA"
+      ],
+      "productId": [
+        "TS0044"
+      ],
+      "canonicalDriver": "scene_switch_4",
+      "forbiddenDrivers": [
+        "button_wireless_4",
+        "smart_knob",
+        "wall_dimmer_tuya"
+      ],
+      "source": "p2236-forum-integral",
+      "notes": "meter91 #2189 — scene_switch_4 0xFD; never invent TS0601-only"
+    },
+    {
+      "id": "p2236-nkcobies-ts011f-plug",
+      "mfr": [
+        "_TZ3000_nkcobies",
+        "_tz3000_nkcobies",
+        "_TZ3000_NKCOBIES"
+      ],
+      "productId": [
+        "TS011F",
+        "TS0121"
+      ],
+      "canonicalDriver": "smartplug",
+      "forbiddenDrivers": [
+        "switch_1gang",
+        "button_wireless_2"
+      ],
+      "source": "p2236-forum-integral",
+      "notes": "Bo_Kjaergaard soft TS0001 REJECTED — compose plug TS011F/TS0121"
+    },
+    {
+      "id": "p2251-sergep-nous-sophos-external",
+      "mfr": [
+        "_TZ3000_v5498kdm",
+        "_tz3000_v5498kdm"
+      ],
+      "productId": [
+        "TS0001"
+      ],
+      "canonicalDriver": null,
+      "doNotTouch": true,
+      "forbiddenDrivers": [
+        "switch_1gang",
+        "wall_switch_1gang_1way",
+        "climate_sensor",
+        "generic_tuya",
+        "zigbee_universal"
+      ],
+      "protocol": "external_app",
+      "notes": "T99614 SergeP/Antek — Nous/SoPhos app, NOT Universal Tuya. Never lock into our drivers from that post.",
+      "sources": [
+        "forum-T99614",
+        "P2251"
+      ],
+      "tracks": {
+        "master": {
+          "static": true,
+          "dynamic": false
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
+      }
+    },
+    {
+      "id": "p2258-linptech-es1zz-ts0225",
+      "mfr": [
+        "_TZ3218_t9ynfz4x",
+        "_tz3218_t9ynfz4x",
+        "_TZ3218_awarhusb",
+        "_TZ3218_ewrxirng"
+      ],
+      "productId": [
+        "TS0225"
+      ],
+      "canonicalDriver": "motion_sensor_radar_mmwave",
+      "forbiddenDrivers": [
+        "climate_sensor",
+        "presence_sensor_radar",
+        "motion_sensor",
+        "sensor_motion_presence"
+      ],
+      "forbidMode": "couple",
+      "protocol": "hybrid",
+      "notes": "Linptech ES1ZZ / Moes ZSS-LP-HP02-MS — settings via 0xE002 attrs 57348/57349/57355 (fallback 0xE001), not EF00 DP9. A_Tas #2199 / T158757 / P2261.",
+      "sources": [
+        "z2m-ES1ZZ",
+        "zha-3012",
+        "forum-140352",
+        "forum-158757",
+        "P2258",
+        "P2261"
+      ],
+      "tracks": {
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
+      }
+    },
+    {
+      "id": "p2259-hobeian-zg223z-rain",
+      "mfr": [
+        "HOBEIAN",
+        "hobeian",
+        "Hobeian"
+      ],
+      "productId": [
+        "ZG-223Z"
+      ],
+      "canonicalDriver": "rain_sensor",
+      "forbiddenDrivers": [
+        "water_leak_sensor",
+        "water_leak_sensor_tuya",
+        "contact_sensor",
+        "water_detector"
+      ],
+      "forbidMode": "couple",
+      "protocol": "tuya_dp",
+      "energy": {
+        "batteries": [
+          "CR123A"
+        ]
+      },
+      "retailNames": [
+        "HOBEIAN Raindrop Detection Sensor",
+        "ZG-223Z"
+      ],
+      "notes": "Z2M rainwater sensor — alarm_water + rain level, NOT IAS leak. Johan T158754 / forum #1610.",
+      "sources": [
+        "z2m-ZG-223Z",
+        "forum-158754",
+        "P2259"
+      ],
+      "tracks": {
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
+      }
+    },
+    {
+      "id": "p2260-upgcbody-ts0207-water",
+      "mfr": [
+        "_TZ3000_upgcbody",
+        "_TZ3000_UPGCBODY",
+        "_tz3000_upgcbody"
+      ],
+      "productId": [
+        "TS0207"
+      ],
+      "canonicalDriver": "water_leak_sensor",
+      "forbiddenDrivers": [
+        "water_leak_sensor_tuya",
+        "climate_sensor",
+        "water_detector"
+      ],
+      "forbidMode": "couple",
+      "protocol": "ias_zone",
+      "notes": "Z2M TS0207 IAS water leak; melectro T89271 #651",
+      "sources": [
+        "z2m#21247",
+        "blakadder",
+        "P2260"
+      ],
+      "tracks": {
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
+      }
+    },
+    {
+      "id": "p2260-3lbtuxgp-ts0505b-bulb",
+      "mfr": [
+        "_TZ3210_3lbtuxgp",
+        "_TZ3210_3LBTUXGP",
+        "_tz3210_3lbtuxgp"
+      ],
+      "productId": [
+        "TS0505B"
+      ],
+      "canonicalDriver": "bulb_rgb",
+      "forbiddenDrivers": [
+        "wall_dimmer_tuya",
+        "climate_sensor",
+        "bulb_dimmable_dimmer"
+      ],
+      "forbidMode": "couple",
+      "protocol": "zcl",
+      "notes": "Tuya RGBCW downlight; late4marshmellow T89271 #667; Z2M #13579",
+      "sources": [
+        "z2m#13579",
+        "P2260"
+      ],
+      "tracks": {
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
+      }
+    },
+    {
+      "id": "p2264-qaaysllp-neo-th02b",
+      "mfr": [
+        "_TZ3000_qaaysllp",
+        "_tz3000_qaaysllp",
+        "_TZ3000_QAAYSLLP"
+      ],
+      "productId": [
+        "TS0201"
+      ],
+      "canonicalDriver": "lcdtemphumidluxsensor",
+      "forbiddenDrivers": [
+        "climate_sensor",
+        "lcdtemphumidsensor",
+        "zigbee_universal",
+        "generic_tuya"
+      ],
+      "forbidMode": "couple",
+      "protocol": "zcl",
+      "clusters": {
+        "1": [0, 1, 1024, 57346],
+        "2": [1026, 1029]
+      },
+      "energy": {
+        "batteries": ["AAA", "AAA"],
+        "notes": "Neo NAS-TH02B / TH01 — 2xAAA typical"
+      },
+      "retailNames": [
+        "Neo NAS-TH02B2",
+        "Neo NAS-TH02B",
+        "Neo TH01",
+        "NAS-TH02B",
+        "Tuya LCZ030"
+      ],
+      "notes": "ZHA #862 + Abysim Medium: (1) interview EP1 only (2) temp/humidity on undeclared EP2 (3) needs Basic 0xFFFE magic (4) EP2 read/CFG → UNSUPPORTED 0x86 — use unsolicited reports. E002 humidity max attr is 0xD00D not 0xD00C. Homey: virtual EP2 + magic + delayed retries.",
+      "sources": [
+        "zha-device-handlers#862",
+        "abysim-medium-ts0201-neo",
+        "z2m-LCZ030",
+        "P2264",
+        "P2265"
+      ],
+      "tracks": {
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
+      }
+    },
+    {
+      "id": "p2266-bjawzodf-ty0201-temu",
+      "mfr": [
+        "_TZ3000_bjawzodf",
+        "_tz3000_bjawzodf",
+        "_TZ3000_BJAWZODF"
+      ],
+      "productId": [
+        "TY0201",
+        "TS0201"
+      ],
+      "canonicalDriver": "lcdtemphumidsensor",
+      "forbiddenDrivers": [
+        "lcdtemphumidsensor_3",
+        "climate_sensor",
+        "curtain_motor_shutter",
+        "soil_sensor",
+        "lcdtemphumidluxsensor",
+        "zigbee_universal"
+      ],
+      "forbidMode": "couple",
+      "protocol": "zcl",
+      "clusters": {
+        "1": [0, 1, 3, 1026, 1029]
+      },
+      "energy": {
+        "batteries": ["AAA", "AAA"],
+        "notes": "Round white Temu LCD sensor"
+      },
+      "retailNames": [
+        "Temu Zigbee temp humidity display",
+        "Tuya WSD500A",
+        "TH02Z class"
+      ],
+      "notes": "HACF #38762 + ZHA #2862: EP1 ZCL temp/humidity (0x0402/0x0405), not Neo qaaysllp EP2/lux. Needs magic 0xFFFE (Z2M WSD500A). Distinct from _TZE200_bjawzodf|TS0601 EF00 climate.",
+      "sources": [
+        "hacf-38762",
+        "zha-device-handlers#2862",
+        "z2m-WSD500A",
+        "P2266"
+      ],
+      "tracks": {
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
+      }
+    },
+    {
+      "id": "p2267-e002-alarm-taxonomy",
+      "mfr": [
+        "_TZ3210_qkj7rujp",
+        "_tz3210_qkj7rujp"
+      ],
+      "productId": [
+        "TS0201"
+      ],
+      "canonicalDriver": "lcdtemphumidsensor",
+      "forbiddenDrivers": [
+        "lcdtemphumidluxsensor",
+        "climate_sensor",
+        "zigbee_universal"
+      ],
+      "forbidMode": "couple",
+      "protocol": "zcl",
+      "notes": "P2267 Google 0xE002 sweep: LCD E002 alarms; mute beeper via attr 0xD010=1. Humidity max attr 0xD00D (Z2M). Cluster taxonomy Z2M manuSpecificTuya2=0xE002.",
+      "sources": [
+        "ha-community-692449",
+        "z2m-ManuSpecificTuya2",
+        "zigpy-discussion-823",
+        "P2267"
+      ],
+      "tracks": {
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
+      }
+    },
+    {
+      "id": "p2268-cjbofhxw-clamp-not-smoke",
+      "mfr": ["_TZE204_cjbofhxw", "_TZE284_cjbofhxw", "_TZE200_cjbofhxw"],
+      "productId": ["TS0601"],
+      "canonicalDriver": "power_clamp_meter",
+      "forbiddenDrivers": ["smoke_sensor3", "smoke_detector", "climate_sensor"],
+      "forbidMode": "couple",
+      "protocol": "tuya_dp",
+      "notes": "Z2M PJ-MGW1203 clamp meter — was cartesian-stolen by smoke_sensor3 via TS0601",
+      "sources": ["z2m-PJ-MGW1203", "ha-community-931745", "P2268"],
+      "tracks": { "master": { "static": true, "dynamic": true }, "stable": { "static": true, "dynamic": false } }
+    },
+    {
+      "id": "p2268-a14rjslz-3phase-not-climate",
+      "mfr": ["_TZE284_a14rjslz"],
+      "productId": ["TS0601"],
+      "canonicalDriver": "energy_meter_3phase",
+      "forbiddenDrivers": ["climate_sensor", "smoke_sensor3", "power_clamp_meter"],
+      "forbidMode": "couple",
+      "protocol": "tuya_dp",
+      "notes": "Z2M ATMS10013Z3 Ourtop 3-phase meter — was on climate_sensor",
+      "sources": ["z2m-ATMS10013Z3", "zhc-8658", "P2268"],
+      "tracks": { "master": { "static": true, "dynamic": true }, "stable": { "static": true, "dynamic": false } }
+    },
+    {
+      "id": "p2268-tonrapsk-ts0002-2gang",
+      "mfr": ["_TZ3000_tonrapsk", "_tz3000_tonrapsk"],
+      "productId": ["TS0002"],
+      "canonicalDriver": "switch_2gang",
+      "forbiddenDrivers": ["switch_1gang", "wall_switch_2gang"],
+      "forbidMode": "couple",
+      "protocol": "zcl",
+      "notes": "ZHA #5260 Zemismart ZB811 — per-gang needs Tuya magic (UnifiedSwitchBase already sends). Works in Z2M.",
+      "sources": ["zha-device-handlers#5260", "P2268"],
+      "tracks": { "master": { "static": true, "dynamic": true }, "stable": { "static": true, "dynamic": false } }
+    },
+    {
+      "id": "p2268-cf4b5ktf-moes-3phase-soft",
+      "mfr": ["_TZE284_cf4b5ktf"],
+      "productId": ["TS0601"],
+      "canonicalDriver": "energy_meter_3phase",
+      "forbiddenDrivers": ["climate_sensor", "smart_rcbo"],
+      "forbidMode": "couple",
+      "protocol": "tuya_dp",
+      "notes": "ZHA #5117 Moes 3-phase — Z2M converter still absent; soft route only, no invented DPs",
+      "sources": ["zha-device-handlers#5117", "P2268"],
+      "tracks": { "master": { "static": true, "dynamic": true }, "stable": { "static": true, "dynamic": false } }
+    },
+    {
+      "id": "p2270-402vrq2i-knob-not-4gang",
+      "mfr": ["_TZ3000_402vrq2i", "_tz3000_402vrq2i"],
+      "productId": ["TS004F"],
+      "canonicalDriver": "smart_knob",
+      "forbiddenDrivers": ["switch_4_gang_metering", "switch_4gang", "scene_switch_4"],
+      "forbidMode": "couple",
+      "protocol": "zcl",
+      "notes": "ZHA#5261 rotary knob — was stolen by switch_4_gang_metering cartesian TS004F",
+      "sources": ["zha-device-handlers#5261", "P2270"],
+      "tracks": { "master": { "static": true, "dynamic": true }, "stable": { "static": true, "dynamic": false } }
+    },
+    {
+      "id": "p2270-hlx9tnzb-dimmer-not-1gang",
+      "mfr": ["_TZE204_hlx9tnzb"],
+      "productId": ["TS0601"],
+      "canonicalDriver": "dimmer_1_gang_tuya",
+      "forbiddenDrivers": ["switch_1gang", "water_leak_sensor", "climate_sensor"],
+      "forbidMode": "couple",
+      "protocol": "tuya_dp",
+      "notes": "Z2M#32815 Moes dimmer (mesh flood after reboot) — not switch_1gang",
+      "sources": ["zigbee2mqtt#32815", "P2270"],
+      "tracks": { "master": { "static": true, "dynamic": true }, "stable": { "static": true, "dynamic": false } }
+    },
+    {
+      "id": "p2270-gnpflcoq-4in1-mmwave",
+      "mfr": ["_TZE284_gnpflcoq"],
+      "productId": ["TS0601"],
+      "canonicalDriver": "motion_sensor_radar_mmwave",
+      "forbiddenDrivers": ["climate_sensor", "presence_sensor_radar", "zigbee_universal"],
+      "forbidMode": "couple",
+      "protocol": "tuya_dp",
+      "notes": "ZHA#5252 4in1 — DP1 presence inverted (0=occupied). Prefer mmwave driver.",
+      "sources": ["zha-device-handlers#5252", "P2270"],
+      "tracks": { "master": { "static": true, "dynamic": true }, "stable": { "static": true, "dynamic": false } }
+    },
+    {
+      "id": "p2270-fqm2sfpe-trv-soft",
+      "mfr": ["_TZE284_fqm2sfpe"],
+      "productId": ["TS0601"],
+      "canonicalDriver": "device_radiator_valve",
+      "forbiddenDrivers": ["climate_sensor", "wall_thermostat"],
+      "forbidMode": "couple",
+      "protocol": "tuya_dp",
+      "notes": "Z2M#32931 TRV soft lock — no invented DPs",
+      "sources": ["zigbee2mqtt#32931", "P2270"],
+      "tracks": { "master": { "static": true, "dynamic": true }, "stable": { "static": true, "dynamic": false } }
+    },
+    {
+      "id": "p2271-tdg4ckyh-rf-cloner",
+      "mfr": ["_TZE284_tdg4ckyh"],
+      "productId": ["TS0601"],
+      "canonicalDriver": "ir_blaster",
+      "forbiddenDrivers": ["climate_sensor", "zigbee_universal", "generic_tuya"],
+      "forbidMode": "couple",
+      "protocol": "tuya_dp",
+      "notes": "Z2M#32756/#32836 Zigbee RF Cloner — soft ir_blaster; no invented RF DPs",
+      "sources": ["zigbee2mqtt#32756", "zigbee2mqtt#32836", "P2271"],
+      "tracks": { "master": { "static": true, "dynamic": true }, "stable": { "static": true, "dynamic": false } }
+    },
+    {
+      "id": "p2271-kq1l5eu5-moes-curtain",
+      "mfr": ["_TZE284_kq1l5eu5"],
+      "productId": ["TS0601"],
+      "canonicalDriver": "wall_curtain_switch",
+      "forbiddenDrivers": ["climate_sensor", "curtain_motor", "zigbee_universal"],
+      "forbidMode": "couple",
+      "protocol": "tuya_dp",
+      "notes": "Z2M#31244 Moes SFC02 curtain wall switch — soft lock pending full DP map",
+      "sources": ["zigbee2mqtt#31244", "P2271"],
+      "tracks": { "master": { "static": true, "dynamic": true }, "stable": { "static": true, "dynamic": false } }
+    },
+    {
+      "id": "p2272-bjoccxbi-rgb-cct",
+      "mfr": ["_TZE284_bjoccxbi"],
+      "productId": ["TS0601"],
+      "canonicalDriver": "led_controller_rgb",
+      "forbiddenDrivers": ["climate_sensor", "switch_1gang", "zigbee_universal"],
+      "forbidMode": "couple",
+      "protocol": "tuya_dp",
+      "notes": "Z2M#32594 RGB+CCT controller; brightness MCU 0-1000",
+      "sources": ["zigbee2mqtt#32594", "P2272"],
+      "tracks": { "master": { "static": true, "dynamic": true }, "stable": { "static": true, "dynamic": false } }
+    },
+    {
+      "id": "p2272-lq0ffndf-dual-gpo-usb",
+      "mfr": ["_TZE284_lq0ffndf"],
+      "productId": ["TS0601"],
+      "canonicalDriver": "usb_outlet_advanced",
+      "forbiddenDrivers": ["climate_sensor", "switch_2gang", "plug_energy_monitor"],
+      "forbidMode": "couple",
+      "protocol": "tuya_dp",
+      "notes": "Z2M#32901 MakeGood dual GPO+USB-C; DPs 1/2/20-23/101 live-tested",
+      "sources": ["zigbee2mqtt#32901", "P2272"],
+      "tracks": { "master": { "static": true, "dynamic": true }, "stable": { "static": true, "dynamic": false } }
+    },
+    {
+      "id": "p2272-hdc8bbha-ts000f-relay",
+      "mfr": ["_TZ3218_hdc8bbha"],
+      "productId": ["TS000F"],
+      "canonicalDriver": "switch_1gang",
+      "forbiddenDrivers": ["switch_temp_sensor", "climate_sensor"],
+      "forbidMode": "couple",
+      "protocol": "zcl",
+      "notes": "ZHA#5241 1-gang relay — magic enchantment; NOT 7fiyo3kv temp hybrid",
+      "sources": ["zha-device-handlers#5241", "P2272"],
+      "tracks": { "master": { "static": true, "dynamic": true }, "stable": { "static": true, "dynamic": false } }
+    },
+    {
+      "id": "p2273-guvc7pdy-curtain-not-1gang",
+      "mfr": ["_TZE204_guvc7pdy", "_TZE200_guvc7pdy"],
+      "productId": ["TS0601"],
+      "canonicalDriver": "curtain_motor",
+      "forbiddenDrivers": ["switch_1gang", "climate_sensor", "zigbee_universal"],
+      "forbidMode": "couple",
+      "protocol": "tuya_dp",
+      "notes": "ZHA#5140 Moes curtain motor — was cartesian-stolen by switch_1gang",
+      "sources": ["zha-device-handlers#5140", "P2273"],
+      "tracks": { "master": { "static": true, "dynamic": true }, "stable": { "static": true, "dynamic": false } }
+    },
+    {
+      "id": "p2273-hdml1aav-soil-zs300tf",
+      "mfr": ["_TZE284_hdml1aav", "_TZE2841000000_hdml1aav"],
+      "productId": ["TS0601"],
+      "canonicalDriver": "soil_sensor",
+      "forbiddenDrivers": ["climate_sensor", "soil_sensor_ec", "zigbee_universal"],
+      "forbidMode": "couple",
+      "protocol": "tuya_dp",
+      "notes": "ZHA#5276 Excellux ZS-300TF/ZS-301 soil fertility",
+      "sources": ["zha-device-handlers#5276", "P2273"],
+      "tracks": { "master": { "static": true, "dynamic": true }, "stable": { "static": true, "dynamic": false } }
+    },
+    {
+      "id": "p2274-6cmeijtd-nous-a11z-strip",
+      "mfr": ["_TZ3210_6cmeijtd", "_tz3210_6cmeijtd"],
+      "productId": ["TS011F"],
+      "canonicalDriver": "socket_power_strip",
+      "forbiddenDrivers": ["usb_dongle_triple", "plug", "switch_1gang"],
+      "forbidMode": "couple",
+      "protocol": "zcl",
+      "notes": "Nous A11Z 3-gang power strip — magic packet + multi-ep; Z2M#30799 / ZHA#5185",
+      "sources": ["zigbee2mqtt#30799", "zha-device-handlers#5185", "P2274"],
+      "tracks": { "master": { "static": true, "dynamic": true }, "stable": { "static": true, "dynamic": false } }
+    },
+    {
+      "id": "p2276-rccxox8p-smoke-not-climate",
+      "mfr": ["_TZE284_rccxox8p", "_TZE200_rccxox8p", "_TZE204_rccxox8p", "_TZE283_rccxox8p"],
+      "productId": ["TS0601"],
+      "canonicalDriver": "smoke_sensor2",
+      "forbiddenDrivers": ["climate_sensor", "soil_sensor", "zigbee_universal"],
+      "forbidMode": "couple",
+      "protocol": "hybrid",
+      "notes": "ZHA#4687 PA-44Z smoke IAS+EF00 DP15 battery — was stolen by climate_sensor",
+      "sources": ["zha-device-handlers#4687", "P2276"],
+      "tracks": { "master": { "static": true, "dynamic": true }, "stable": { "static": true, "dynamic": false } }
+    },
+    {
+      "id": "p2276-dikb3dp6-3phase-not-climate",
+      "mfr": ["_TZE284_dikb3dp6", "_TZE200_dikb3dp6", "_TZE204_dikb3dp6"],
+      "productId": ["TS0601"],
+      "canonicalDriver": "energy_meter_3phase",
+      "forbiddenDrivers": ["climate_sensor", "smart_rcbo", "din_rail_meter"],
+      "forbidMode": "couple",
+      "protocol": "tuya_dp",
+      "notes": "ZHA#3955 Zemismart 3-phase energy meter — was stolen by climate_sensor",
+      "sources": ["zha-device-handlers#3955", "P2276"],
+      "tracks": { "master": { "static": true, "dynamic": true }, "stable": { "static": true, "dynamic": false } }
+    },
+    {
+      "id": "p2277-lpedvtvr-thermostat-not-climate",
+      "mfr": ["_TZE204_lpedvtvr", "_tze204_lpedvtvr"],
+      "productId": ["TS0601"],
+      "canonicalDriver": "wall_thermostat",
+      "forbiddenDrivers": ["climate_sensor", "device_radiator_valve", "zigbee_universal"],
+      "forbidMode": "couple",
+      "protocol": "tuya_dp",
+      "notes": "ZHA#3666 Moes Star Ring thermostat — was stolen by climate_sensor",
+      "sources": ["zha-device-handlers#3666", "P2277"],
+      "tracks": { "master": { "static": true, "dynamic": true }, "stable": { "static": true, "dynamic": false } }
+    },
+    {
+      "id": "p2277-xalsoe3m-bht002-not-trv",
+      "mfr": ["_TZE204_xalsoe3m", "_TZE200_xalsoe3m"],
+      "productId": ["TS0601"],
+      "canonicalDriver": "wall_thermostat",
+      "forbiddenDrivers": ["device_radiator_valve", "climate_sensor", "zigbee_universal"],
+      "forbidMode": "couple",
+      "protocol": "tuya_dp",
+      "notes": "Z2M#25372 Moes BHT-002 sibling of aoclfnxz — was on TRV driver",
+      "sources": ["zigbee2mqtt#25372", "zha-device-handlers#3788", "P2277"],
+      "tracks": { "master": { "static": true, "dynamic": true }, "stable": { "static": true, "dynamic": false } }
+    },
+    {
+      "id": "p2277-te34fjg4-ts1002-scene4",
+      "mfr": ["_TZ3000_te34fjg4", "_tz3000_te34fjg4"],
+      "productId": ["TS1002"],
+      "canonicalDriver": "scene_switch_4",
+      "forbiddenDrivers": ["bulb_rgbw", "bulb_dimmable", "switch_4gang"],
+      "forbidMode": "couple",
+      "protocol": "zcl",
+      "notes": "ZHA#5224 Arlight 4-button scene panel 0xFD — mains, strip phantom battery",
+      "sources": ["zha-device-handlers#5224", "P2277"],
+      "tracks": { "master": { "static": true, "dynamic": true }, "stable": { "static": true, "dynamic": false } }
+    },
+    {
+      "id": "p2278-ogx8u5z6-trv-cal-tenths",
+      "mfr": ["_TZE204_ogx8u5z6", "_TZE284_ogx8u5z6", "_tze204_ogx8u5z6", "_tze284_ogx8u5z6"],
+      "productId": ["TS0601"],
+      "canonicalDriver": "device_radiator_valve",
+      "forbiddenDrivers": ["climate_sensor", "wall_thermostat", "zigbee_universal"],
+      "forbidMode": "couple",
+      "protocol": "tuya_dp",
+      "notes": "P2278 me167 profile + DP47 cal ÷10 (ZHA#4124 / Z2M#25199 user firmware); other ME167 stay whole °C",
+      "sources": ["zha-device-handlers#4124", "zigbee2mqtt#25199", "P2278"],
+      "tracks": { "master": { "static": true, "dynamic": true }, "stable": { "static": true, "dynamic": false } }
+    },
+    {
+      "id": "p2279-1fuxihti-cover-not-climate",
+      "mfr": ["_TZE200_1fuxihti", "_TZE204_1fuxihti", "_TZE284_1fuxihti"],
+      "productId": ["TS0601"],
+      "canonicalDriver": "curtain_motor",
+      "forbiddenDrivers": ["climate_sensor", "wall_curtain_switch", "zigbee_universal"],
+      "forbidMode": "couple",
+      "protocol": "tuya_dp",
+      "notes": "Z2M cover family — TZE284 sibling was stolen by climate_sensor",
+      "sources": ["zigbee-herdsman-converters tuya TS0601_cover", "P2279"],
+      "tracks": { "master": { "static": true, "dynamic": true }, "stable": { "static": true, "dynamic": false } }
+    },
+    {
+      "id": "p2279-mvtclclq-usb-not-dimmer",
+      "mfr": ["_TZE204_mvtclclq", "_TZE284_mvtclclq", "_TZE200_mvtclclq"],
+      "productId": ["TS0601"],
+      "canonicalDriver": "usb_outlet_advanced",
+      "forbiddenDrivers": ["wall_dimmer_tuya", "device_radiator_valve", "climate_sensor"],
+      "forbidMode": "couple",
+      "protocol": "tuya_dp",
+      "notes": "Z2M DS-1450WN BSEED 2plug+2USB — TZE200 was wrongly on wall_dimmer",
+      "sources": ["zigbee2mqtt#31275", "zigbee2mqtt#28937", "P2279"],
+      "tracks": { "master": { "static": true, "dynamic": true }, "stable": { "static": true, "dynamic": false } }
+    },
+    {
+      "id": "p2282-mrpevh8p-ts0041-button",
+      "mfr": [
+        "_TZ3000_mrpevh8p",
+        "_tz3000_mrpevh8p",
+        "_TZ3000_MRPEVH8P",
+        "_tz3000_MRPEVH8P"
+      ],
+      "productId": ["TS0041"],
+      "canonicalDriver": "button_wireless_1",
+      "forbiddenDrivers": [
+        "switch_1gang",
+        "scene_switch_4",
+        "button_wireless_4",
+        "button_wireless_4_ts0041",
+        "climate_sensor",
+        "button_wireless",
+        "wall_switch_1gang_1way"
+      ],
+      "forbidMode": "couple",
+      "protocol": "zcl",
+      "notes": "P2285: Z2M SH-SC07 / RSH-SC021 / Johan #1120. Interview EP1–4 (phantom) but 1 physical button. RX: genOnOff mfr 0xFD (single=0/double=1/hold=2) + E000; magic packet; NEVER 0x8004; NEVER EF00 TX; battery EP1 only (EP2–4=253 garbage); Z2M #8072 no battery reporting. fingerprints.json must not case-route MRPEVH8P→switch_1gang.",
+      "sources": [
+        "forum-140352-2202",
+        "diag-95a7c6e5",
+        "zigbee-herdsman-converters#6225",
+        "JohanBendz#1120",
+        "Hubitat-kkossev-TS004F",
+        "Z2M-TS0041-SH-SC07",
+        "P2282",
+        "P2285"
+      ],
+      "tracks": { "master": { "static": true, "dynamic": true }, "stable": { "static": true, "dynamic": false } }
+    },
+    {
+      "id": "p2285-sh-sc07-siblings-ts0041",
+      "mfr": ["_TZ3000_5bpeda8u", "_tz3000_5bpeda8u", "_TZ3000_b4awzgct", "_tz3000_b4awzgct"],
+      "productId": ["TS0041"],
+      "canonicalDriver": "button_wireless_1",
+      "forbiddenDrivers": ["button_wireless_4_ts0041", "switch_1gang", "scene_switch_1", "scene_switch_4"],
+      "forbidMode": "couple",
+      "protocol": "zcl",
+      "notes": "Z2M whitelabel SH-SC07 same as mrpevh8p — 1-button not 4_ts0041",
+      "sources": ["zigbee2mqtt-TS0041-whitelabel", "P2285"],
+      "tracks": { "master": { "static": true, "dynamic": true }, "stable": { "static": true, "dynamic": false } }
+    },
+    {
+      "id": "p2282-hobeian-3315s-water-not-soil",
+      "mfr": ["HOBEIAN", "hobeian", "Hobeian"],
+      "productId": ["3315-S", "3315-Seu"],
+      "canonicalDriver": "water_leak_sensor",
+      "forbiddenDrivers": ["soil_sensor", "rain_sensor", "climate_sensor", "air_purifier_soil"],
+      "forbidMode": "couple",
+      "protocol": "ias_zone",
+      "notes": "Peter #2202 diag 95a7c6e5 — false MISATTR soil via rain placement. Keep water_leak; never invent k4ej pid onto this tile.",
+      "sources": ["forum-140352-2202", "diag-95a7c6e5", "P2282"],
+      "tracks": { "master": { "static": true, "dynamic": true }, "stable": { "static": true, "dynamic": false } }
     }
   ]
 }

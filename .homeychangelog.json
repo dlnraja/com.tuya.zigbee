@@ -1332,5 +1332,8 @@
   },
   "5.12.93": {
     "en": "Reliability improvements."
+  },
+  "5.12.94": {
+    "en": "Reliability: button RX chain (handleFrame) no longer drops physical presses; TS0041 one-button remotes locked to wireless button driver; sleepy remote battery/pairing hardening."
   }
 }

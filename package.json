@@ -1,6 +1,6 @@
 {
   "name": "com.dlnraja.tuya.zigbee",
-  "version": "5.12.90",
+  "version": "5.12.94",
   "description": "Tuya Unified Zigbee - Local-first control with AI automation",
   "main": "app.js",
   "scripts": {
@@ -132,7 +132,11 @@
     "sync:dp-knowledge": "node tools/ci/sync-dp-couple-knowledge.js",
     "sync:dp-knowledge:apply": "node tools/ci/sync-dp-couple-knowledge.js --apply",
     "coverage:dp-cluster-flow": "node tools/ci/coverage-dp-cluster-flow.js",
-    "coverage:dp-cluster-flow:strict": "node tools/ci/coverage-dp-cluster-flow.js --strict"
+    "coverage:dp-cluster-flow:strict": "node tools/ci/coverage-dp-cluster-flow.js --strict",
+    "check:p2278": "node --test test/critical/p2278-ogx8u5z6-trv-cal-gate.test.js",
+    "check:p2279": "node --test test/critical/p2279-1fuxihti-mvtclclq-gate.test.js",
+    "check:p2284": "node tools/ci/p2284-handleframe-chain-gate.js",
+    "check:p2285": "node --test test/critical/p2285-mrpevh8p-ts0041-sh-sc07.test.js"
   },
   "keywords": [
     "homey",
