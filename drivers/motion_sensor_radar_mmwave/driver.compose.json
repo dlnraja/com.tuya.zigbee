@@ -139,12 +139,12 @@
             "fr": "Distance Détection Mouvement (cm)"
           },
           "value": 300,
-          "min": 0,
+          "min": 75,
           "max": 600,
           "step": 75,
           "hint": {
-            "en": "Linptech/Moes ES1ZZ: max motion range in cm (0–600, step 75).",
-            "fr": "Linptech/Moes ES1ZZ : portée mouvement en cm (0–600)."
+            "en": "Linptech/Moes ES1ZZ: max motion range in cm (75–600, step 75).",
+            "fr": "Linptech/Moes ES1ZZ : portée mouvement en cm (75–600, pas 75)."
           }
         },
         {
@@ -156,8 +156,8 @@
           },
           "value": true,
           "hint": {
-            "en": "Linptech/Moes ES1ZZ: toggle onboard presence LED.",
-            "fr": "Linptech/Moes ES1ZZ : activer la LED de présence."
+            "en": "Linptech/Moes ES1ZZ: onboard LED. Some Moes firmwares reject this write — other settings still save.",
+            "fr": "Linptech/Moes ES1ZZ : LED. Certains firmwares Moes refusent cette écriture — les autres réglages restent sauvegardés."
           }
         },
         {

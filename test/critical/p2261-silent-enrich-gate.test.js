@@ -92,4 +92,14 @@ describe('P2261 silent multi-thread enrich gate', function () {
     assert.ok(src.includes('_linptechBasicInit'));
     assert.ok(src.includes('UNSUP_CLUSTER_COMMAND') || src.includes('no configureReporting'));
   });
+
+  it('led_indicator is optional soft-fail; distance coerces to 75-step', () => {
+    const { isOptionalLinptechSetting, planSettingWrite } = require('../../lib/profiles/LinptechES1Profile');
+    assert.ok(isOptionalLinptechSetting('led_indicator'));
+    assert.ok(!isOptionalLinptechSetting('motion_detection_sensitivity'));
+    const d = planSettingWrite('motion_detection_distance', 100);
+    assert.strictEqual(d.value, 75);
+    const d2 = planSettingWrite('motion_detection_distance', 200);
+    assert.strictEqual(d2.value, 225);
+  });
 });

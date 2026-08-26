@@ -1,0 +1,34 @@
+---
+description: Always-on L99 max-depth investigation + deep search mode for every prompt
+alwaysApply: true
+---
+
+# L99 Deep Investigation Mode — ALWAYS ON
+
+**Mandate (user):** Work in L99 thinking / max investigation / deep-search mode **everywhere, every turn**. Never shallow-guess.
+
+## Default behaviour (every prompt)
+1. **Assume L99** — dual-app classify (`BOTH` | `MASTER_ONLY` | `STABLE_ONLY`), run/consider `l99-dual-app-enrich-gates`, flow L99, sacred-couple gates when touching devices/flows/CI.
+2. **Deep search first** — forum silent multi-scan, T140352 + satellites, Z2M/ZHA/Hubitat/Homesuite/deCONZ/Johan PRs-issues, Gmail diags when relevant. Cross-ref **manufacturerName + productId** only.
+3. **Recursive TX/RX** — settings → ZCL/EF00 → clusters → capabilities → flows → mfs_db/registry/compose. Fix root cause, not symptoms.
+4. **Silent enrich** — implement in code/CI; **never** auto-post Homey forum (T157628). Publish Homey Test when asked to push/publish.
+5. **WHY (P215)** — Pourquoi / Comment / Pour qui / Quand / Contre quoi before non-trivial changes.
+6. **Verify** — critical gates + L99 green before claiming done; push/publish when user asks.
+
+## Tools / scripts (prefer)
+```bash
+node tools/ci/forum-silent-multi-scan.js
+node tools/ci/forum-actionable-processor.js
+node tools/ci/l99-dual-app-enrich-gates.js
+node tools/ci/flow-l99-orchestrator.js
+node tools/ci/p2138-sacred-couple-matrix-gate.js
+node tools/ci/coverage-dp-cluster-flow.js --strict
+```
+
+## Anti-patterns
+- Inventing productIds or locking mfr-only
+- Surface wording without intent/harm check
+- Skipping cross-ref because “already fixed once”
+- Forum replies / AI paste
+
+See: `docs/GLOBAL_INVESTIGATION_PLAN.md`, `docs/rules/WHY_INTERROGATION.md`, `docs/rules/FORUM_SILENT_HUMANIZE.md`, `docs/rules/DUAL_APP_VISION.md`.

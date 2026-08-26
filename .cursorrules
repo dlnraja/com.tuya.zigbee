@@ -16,6 +16,7 @@
 3. Read `docs/ARCHITECTURE_AI.md`
 4. Read `docs/knowledge/DEVICE_TRUTH.md` and look up `docs/knowledge/device-truth.json` for the device in scope
 5. **P215:** For every feature / non-obvious line, answer Pourquoi / Comment / Pour qui / Quand / Contre quoi — see `docs/rules/WHY_INTERROGATION.md`. Use answers to enrich workflows, rules, docs, catalogs.
+6. **L99 ALWAYS:** Max-depth investigation + deep search on every prompt — see `.cursor/rules/l99-deep-investigation-always.mdc`. Silent forum enrich; cross-ref Z2M/ZHA/alt apps; TX/RX recursive; gates before done.
 
 ## Project Context
 Homey Pro app for 4200+ Tuya Zigbee devices. Hybrid protocol: Tuya DP (0xEF00) + ZCL clusters.

@@ -8,6 +8,7 @@ const {
   isLinptechES1,
   planSettingWrite,
   isLinptechSettingKey,
+  isOptionalLinptechSetting,
   ATTR_RX_MAP,
   ATTR_NAME,
   CLUSTER_WRITE_CHAIN,
@@ -352,6 +353,11 @@ class MotionSensorRadarDevice extends UnifiedSensorBase {
       try {
         await this._writeLinptechSetting(key, newSettings[key]);
       } catch (err) {
+        // WHY P2263: some Moes firmwares reject LED 57353 (UNSUPPORTED_ATTRIBUTE) — soft-fail
+        if (isOptionalLinptechSetting(key)) {
+          this.log(`[MMWAVE][LINPTECH] optional setting ${key} skipped: ${err.message}`);
+          continue;
+        }
         this.error(`[MMWAVE][LINPTECH] settings save failed ${key}: ${err.message}`);
         throw err;
       }
