@@ -58,6 +58,25 @@ Do not invent a LED capability or write backlight DPs on these remotes.
 | `_TZ3000_zgyzgdua` + **TS0044** | `scene_switch_4` | meter91 / INT-015 Moes |
 | `_TZ3000_wkai4ga5` + **TS0044** | `scene_switch_4` | Z2M Moes white-label |
 | `_TZ3000_xffhmvhv` + **TS004F** | `button_wireless_4` | Nobø — **no** 0x8004 |
+| `_TZ3000_mrpevh8p` + **TS0041** | `button_wireless_1` | Z2M SH-SC07 / Johan #1120 / Peter #2202 — **P2285** |
+| `_TZ3000_5bpeda8u` / `_TZ3000_b4awzgct` + **TS0041** | `button_wireless_1` | Z2M SH-SC07 siblings (not 4_ts0041) |
+
+## Architecture deep-dive — `_TZ3000_mrpevh8p`+`TS0041` (P2285)
+
+| Layer | Reality (cross-ref) |
+|-------|---------------------|
+| Identity | Sacred couple only. Retail: SH-SC07 / RSH-SC021. Z2M whitelabel PR #6225. |
+| Interview | EP1: clusters **0,1,6,E000**; out 25,10. EP2–4: phantom OnOff/power (battery 253 junk). |
+| RX press | Dominant: genOnOff **mfr cmd 0xFD** data[0]=0 single / 1 double / 2 hold (Z2M `tuya.fz.on_off_action`). |
+| Bound | `OnOffBoundCluster.handleFrame` + raw `wrapHandleFrame('physical-onoff-fd')` |
+| E000 | Present on EP1 — cascade Bound when profile.usesE000 |
+| EF00 | **Absent** — never force EF00 TX; IO passive wrap must not orphan 0xFD |
+| TX wake | `configureMagicPacket` / `sendTuyaMagicPacket` (0xFFDE=0x13) on init + announce |
+| Forbidden TX | **0x8004** scene attr — kills presses on TS0041–44 |
+| Battery | EP1 only; ZCL 0–200; **never** configure battery reporting (Z2M #8072 mesh death) |
+| Flows | `button_wireless_1_button_1gang_button_{pressed\|double_press\|long_press}` |
+
+Known external bugs: Z2M interview fail (force re-pair); HA ZHA double-event “stuck” toggle; Domoticz momentary on→off race; fingerprints case `MRPEVH8P`→`switch_1gang` (fixed P2285).
 
 ## Why some users said 5.x “worked better”
 

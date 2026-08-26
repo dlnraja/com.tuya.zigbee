@@ -9,6 +9,8 @@
 >
 > **MANDATORY DEVICE TRUTH STEP**: Read [docs/knowledge/DEVICE_TRUTH.md](docs/knowledge/DEVICE_TRUTH.md) then look up the relevant driver in [docs/knowledge/device-truth.json](docs/knowledge/device-truth.json) (431 drivers, 1-by-1). For DP/cluster/source notes per couple, read [docs/knowledge/PECULIARITIES.md](docs/knowledge/PECULIARITIES.md). Lock **manufacturerName + productId**. Never invent a pid. **Publish** = Homey App Store; **do not post** = no Homey Community / PM replies.
 >
+> **P2269 ANTI-SPAGHETTI SSOT**: Prefer [SPAGHETTI_MAP.md](docs/architecture/SPAGHETTI_MAP.md), [PROTOCOL_TX_RX_SSOT.md](docs/architecture/PROTOCOL_TX_RX_SSOT.md), [BATTERY_SSOT.md](docs/architecture/BATTERY_SSOT.md), [TIME_SYNC_SSOT.md](docs/architecture/TIME_SYNC_SSOT.md), [PARSER_SSOT.md](docs/architecture/PARSER_SSOT.md), [COMM_PATHFINDING.md](docs/architecture/COMM_PATHFINDING.md). Harvest ≥50: `reports/discussion-harvest-2026-08-26/`. Gates: `npm run check:p2269` · `npm run check:p2270` · `npm run check:p2278` · `npm run check:p2279`. Dual inconsistency sweep: `reports/dual-inconsistency-2026-08-26/` (P2280).
+>
 > **MANDATORY V9.0.39 UPDATE**: This mandate includes all v8.5.0–v9.0.39 consolidations (Gmail IMAP optimizations, workflow speedups, `_destroyed` guard, `safeSetCapabilityValue()`, UnifiedBatteryHandler, Smart Divisor Manager, new mmWave presence and soil sensor integrations) validated as of 15/06/2026. See section 9 for the complete changelog.
 
 ---

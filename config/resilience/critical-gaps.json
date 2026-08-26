@@ -48,21 +48,51 @@
         "L1–L8 ButtonCaptureCascade",
         "Physical+Virtual+UI init",
         "markAppCommand",
-        "2s dedup"
+        "2s dedup",
+        "BidirectionalButtonState.wrapHandleFrame"
       ],
       "bugs": [
         "ghost_flow_echo",
         "missing_capability_listener",
-        "bseed_group_all_gangs"
+        "bseed_group_all_gangs",
+        "handleframe_orphan"
       ],
       "gates": [
-        "tools/ci/battery-button-intelligence-gate.js"
+        "tools/ci/battery-button-intelligence-gate.js",
+        "tools/ci/p2284-handleframe-chain-gate.js",
+        "test/critical/p2283-bidirectional-buttons-permanent.test.js",
+        "test/critical/p2284-handleframe-chain.test.js"
       ],
       "discoveries": [
         "P2220–P2223 cascade",
         "OnOffBound 0xFD/0xFC",
         "scene remotes flow-only",
-        "P2230 FlowCardHeuristics: no *_1gang_button_pressed / *_button_N_button_pressed invent"
+        "P2230 FlowCardHeuristics: no *_1gang_button_pressed / *_button_N_button_pressed invent",
+        "P2283 wrapHandleFrame SSOT",
+        "P2284 L0/IO/P0 always next — never orphan 0xFD"
+      ]
+    },
+    {
+      "id": "handleframe_chain",
+      "severity": 1,
+      "why": "Blind node.handleFrame= + L0 dedup/shed without next kills Physical/IO/IAS siblings",
+      "homeyGap": "SDK exposes single handleFrame; no official middleware chain",
+      "stack": [
+        "BidirectionalButtonState.wrapHandleFrame",
+        "raw-l0-fallback keepAlways",
+        "io-passive-ef00",
+        "physical-onoff-fd"
+      ],
+      "bugs": [
+        "handleframe_orphan",
+        "l0_dedup_swallow_fd"
+      ],
+      "gates": [
+        "tools/ci/p2284-handleframe-chain-gate.js"
+      ],
+      "discoveries": [
+        "P2282 Peter mrpevh8p IO arity",
+        "P2284 UnifiedSwitch/Sensor super L0 + UniversalZigbee always forward"
       ]
     },
     {
@@ -79,7 +109,11 @@
         "ias_ef00_leftover",
         "ias_zonestatus_coerce"
       ],
-      "gates": [],
+      "gates": [
+        "test/critical/p2242-peter-fleet-gate.test.js",
+        "test/critical/forum-routing-regressions.test.js",
+        "test/doorwindow-contact-helper.test.js"
+      ],
       "discoveries": [
         "Peter SOS IAS",
         "k4ej+TS0207 water_leak never EF00"

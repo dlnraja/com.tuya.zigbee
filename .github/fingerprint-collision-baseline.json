@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-20T16:33:35.440Z",
+  "generatedAt": "2026-08-26T17:08:48.699Z",
   "description": "Known historical fingerprint collisions. CI fails only for collisions not listed here.",
   "collisions": [
     {
@@ -550,6 +550,13 @@
       ]
     },
     {
+      "key": "_tz3000_iystcadi|TS0601",
+      "drivers": [
+        "dimmable_led_strip",
+        "led_controller_rgb"
+      ]
+    },
+    {
       "key": "_tz3000_j1v25l17|TS011F",
       "drivers": [
         "plug_energy_monitor",
@@ -837,6 +844,13 @@
       ]
     },
     {
+      "key": "_tz3000_l13erpv4|TS0601",
+      "drivers": [
+        "garage_door",
+        "wall_curtain_switch"
+      ]
+    },
+    {
       "key": "_tz3000_l6iqph4f|TS0601",
       "drivers": [
         "curtain_module_2_gang",
@@ -1121,41 +1135,6 @@
       "drivers": [
         "button_wireless_2",
         "socket_power_strip_four_two"
-      ]
-    },
-    {
-      "key": "_tz3000_o4mkahkc|Excellux",
-      "drivers": [
-        "pir_sensor_2",
-        "sensor_motion_presence"
-      ]
-    },
-    {
-      "key": "_tz3000_o4mkahkc|TS0001",
-      "drivers": [
-        "pir_sensor_2",
-        "sensor_motion_presence"
-      ]
-    },
-    {
-      "key": "_tz3000_o4mkahkc|TS0202",
-      "drivers": [
-        "pir_sensor_2",
-        "sensor_motion_presence"
-      ]
-    },
-    {
-      "key": "_tz3000_o4mkahkc|TS0225",
-      "drivers": [
-        "pir_sensor_2",
-        "sensor_motion_presence"
-      ]
-    },
-    {
-      "key": "_tz3000_o4mkahkc|TS0601",
-      "drivers": [
-        "pir_sensor_2",
-        "sensor_motion_presence"
       ]
     },
     {
@@ -1460,244 +1439,6 @@
       ]
     },
     {
-      "key": "_tz3000_wuep9zng|_tz3000_eit6l5",
-      "drivers": [
-        "water_leak_sensor",
-        "water_leak_sensor_tuya"
-      ]
-    },
-    {
-      "key": "_tz3000_wuep9zng|_tz3000_kyb656no",
-      "drivers": [
-        "water_leak_sensor",
-        "water_leak_sensor_tuya"
-      ]
-    },
-    {
-      "key": "_tz3000_wuep9zng|3315-S",
-      "drivers": [
-        "water_leak_sensor",
-        "water_leak_sensor_tuya"
-      ]
-    },
-    {
-      "key": "_tz3000_wuep9zng|3315-Seu",
-      "drivers": [
-        "water_leak_sensor",
-        "water_leak_sensor_tuya"
-      ]
-    },
-    {
-      "key": "_tz3000_wuep9zng|CK-TLSR8656-SS5-01(7019)",
-      "drivers": [
-        "water_leak_sensor",
-        "water_leak_sensor_tuya"
-      ]
-    },
-    {
-      "key": "_tz3000_wuep9zng|HS1WL",
-      "drivers": [
-        "water_leak_sensor",
-        "water_leak_sensor_tuya"
-      ]
-    },
-    {
-      "key": "_tz3000_wuep9zng|LS21001",
-      "drivers": [
-        "water_leak_sensor",
-        "water_leak_sensor_tuya"
-      ]
-    },
-    {
-      "key": "_tz3000_wuep9zng|lumi.sensor_wleak.aq1",
-      "drivers": [
-        "water_leak_sensor",
-        "water_leak_sensor_tuya"
-      ]
-    },
-    {
-      "key": "_tz3000_wuep9zng|q9mpfhw",
-      "drivers": [
-        "water_leak_sensor",
-        "water_leak_sensor_tuya"
-      ]
-    },
-    {
-      "key": "_tz3000_wuep9zng|SJCGQ11LM",
-      "drivers": [
-        "water_leak_sensor",
-        "water_leak_sensor_tuya"
-      ]
-    },
-    {
-      "key": "_tz3000_wuep9zng|SJCGQ12LM",
-      "drivers": [
-        "water_leak_sensor",
-        "water_leak_sensor_tuya"
-      ]
-    },
-    {
-      "key": "_tz3000_wuep9zng|SJCGQ13LM",
-      "drivers": [
-        "water_leak_sensor",
-        "water_leak_sensor_tuya"
-      ]
-    },
-    {
-      "key": "_tz3000_wuep9zng|SNZB-05",
-      "drivers": [
-        "water_leak_sensor",
-        "water_leak_sensor_tuya"
-      ]
-    },
-    {
-      "key": "_tz3000_wuep9zng|SNZB-05P",
-      "drivers": [
-        "water_leak_sensor",
-        "water_leak_sensor_tuya"
-      ]
-    },
-    {
-      "key": "_tz3000_wuep9zng|SQ510A",
-      "drivers": [
-        "water_leak_sensor",
-        "water_leak_sensor_tuya"
-      ]
-    },
-    {
-      "key": "_tz3000_wuep9zng|ZG-222Z",
-      "drivers": [
-        "water_leak_sensor",
-        "water_leak_sensor_tuya"
-      ]
-    },
-    {
-      "key": "_tz3000_wuep9zng|ZG-223Z",
-      "drivers": [
-        "water_leak_sensor",
-        "water_leak_sensor_tuya"
-      ]
-    },
-    {
-      "key": "_tz3000_ww9i3e0y|_tz3000_eit6l5",
-      "drivers": [
-        "water_leak_sensor",
-        "water_leak_sensor_tuya"
-      ]
-    },
-    {
-      "key": "_tz3000_ww9i3e0y|_tz3000_kyb656no",
-      "drivers": [
-        "water_leak_sensor",
-        "water_leak_sensor_tuya"
-      ]
-    },
-    {
-      "key": "_tz3000_ww9i3e0y|3315-S",
-      "drivers": [
-        "water_leak_sensor",
-        "water_leak_sensor_tuya"
-      ]
-    },
-    {
-      "key": "_tz3000_ww9i3e0y|3315-Seu",
-      "drivers": [
-        "water_leak_sensor",
-        "water_leak_sensor_tuya"
-      ]
-    },
-    {
-      "key": "_tz3000_ww9i3e0y|CK-TLSR8656-SS5-01(7019)",
-      "drivers": [
-        "water_leak_sensor",
-        "water_leak_sensor_tuya"
-      ]
-    },
-    {
-      "key": "_tz3000_ww9i3e0y|HS1WL",
-      "drivers": [
-        "water_leak_sensor",
-        "water_leak_sensor_tuya"
-      ]
-    },
-    {
-      "key": "_tz3000_ww9i3e0y|LS21001",
-      "drivers": [
-        "water_leak_sensor",
-        "water_leak_sensor_tuya"
-      ]
-    },
-    {
-      "key": "_tz3000_ww9i3e0y|lumi.sensor_wleak.aq1",
-      "drivers": [
-        "water_leak_sensor",
-        "water_leak_sensor_tuya"
-      ]
-    },
-    {
-      "key": "_tz3000_ww9i3e0y|q9mpfhw",
-      "drivers": [
-        "water_leak_sensor",
-        "water_leak_sensor_tuya"
-      ]
-    },
-    {
-      "key": "_tz3000_ww9i3e0y|SJCGQ11LM",
-      "drivers": [
-        "water_leak_sensor",
-        "water_leak_sensor_tuya"
-      ]
-    },
-    {
-      "key": "_tz3000_ww9i3e0y|SJCGQ12LM",
-      "drivers": [
-        "water_leak_sensor",
-        "water_leak_sensor_tuya"
-      ]
-    },
-    {
-      "key": "_tz3000_ww9i3e0y|SJCGQ13LM",
-      "drivers": [
-        "water_leak_sensor",
-        "water_leak_sensor_tuya"
-      ]
-    },
-    {
-      "key": "_tz3000_ww9i3e0y|SNZB-05",
-      "drivers": [
-        "water_leak_sensor",
-        "water_leak_sensor_tuya"
-      ]
-    },
-    {
-      "key": "_tz3000_ww9i3e0y|SNZB-05P",
-      "drivers": [
-        "water_leak_sensor",
-        "water_leak_sensor_tuya"
-      ]
-    },
-    {
-      "key": "_tz3000_ww9i3e0y|SQ510A",
-      "drivers": [
-        "water_leak_sensor",
-        "water_leak_sensor_tuya"
-      ]
-    },
-    {
-      "key": "_tz3000_ww9i3e0y|ZG-222Z",
-      "drivers": [
-        "water_leak_sensor",
-        "water_leak_sensor_tuya"
-      ]
-    },
-    {
-      "key": "_tz3000_ww9i3e0y|ZG-223Z",
-      "drivers": [
-        "water_leak_sensor",
-        "water_leak_sensor_tuya"
-      ]
-    },
-    {
       "key": "_tz3000_wzauvbcs|TS011F",
       "drivers": [
         "button_wireless_2",
@@ -1863,83 +1604,6 @@
       "drivers": [
         "dimmer_2_gang",
         "rgb_led_strip"
-      ]
-    },
-    {
-      "key": "_tz3210_amdymr7l|S26R2ZB",
-      "drivers": [
-        "plug_energy_monitor",
-        "plug_smart"
-      ]
-    },
-    {
-      "key": "_tz3210_amdymr7l|S31 Lite zb",
-      "drivers": [
-        "plug_energy_monitor",
-        "plug_smart"
-      ]
-    },
-    {
-      "key": "_tz3210_amdymr7l|S40LITE",
-      "drivers": [
-        "plug_energy_monitor",
-        "plug_smart"
-      ]
-    },
-    {
-      "key": "_tz3210_amdymr7l|S60ZBTPF",
-      "drivers": [
-        "plug_energy_monitor",
-        "plug_smart"
-      ]
-    },
-    {
-      "key": "_tz3210_amdymr7l|S60ZBTPG",
-      "drivers": [
-        "plug_energy_monitor",
-        "plug_smart"
-      ]
-    },
-    {
-      "key": "_tz3210_amdymr7l|TS0002",
-      "drivers": [
-        "plug_energy_monitor",
-        "plug_smart"
-      ]
-    },
-    {
-      "key": "_tz3210_amdymr7l|TS0101",
-      "drivers": [
-        "plug_energy_monitor",
-        "plug_smart"
-      ]
-    },
-    {
-      "key": "_tz3210_amdymr7l|TS0111",
-      "drivers": [
-        "plug_energy_monitor",
-        "plug_smart"
-      ]
-    },
-    {
-      "key": "_tz3210_amdymr7l|TS011F",
-      "drivers": [
-        "plug_energy_monitor",
-        "plug_smart"
-      ]
-    },
-    {
-      "key": "_tz3210_amdymr7l|TS0121",
-      "drivers": [
-        "plug_energy_monitor",
-        "plug_smart"
-      ]
-    },
-    {
-      "key": "_tz3210_amdymr7l|TS0601",
-      "drivers": [
-        "plug_energy_monitor",
-        "plug_smart"
       ]
     },
     {
@@ -2958,55 +2622,6 @@
       ]
     },
     {
-      "key": "_tze204_hlx9tnzb|TS0001",
-      "drivers": [
-        "dimmer_1_gang_tuya",
-        "switch_1gang"
-      ]
-    },
-    {
-      "key": "_tze204_hlx9tnzb|TS0002",
-      "drivers": [
-        "dimmer_1_gang_tuya",
-        "switch_1gang"
-      ]
-    },
-    {
-      "key": "_tze204_hlx9tnzb|TS0003",
-      "drivers": [
-        "dimmer_1_gang_tuya",
-        "switch_1gang"
-      ]
-    },
-    {
-      "key": "_tze204_hlx9tnzb|TS0012",
-      "drivers": [
-        "dimmer_1_gang_tuya",
-        "switch_1gang"
-      ]
-    },
-    {
-      "key": "_tze204_hlx9tnzb|TS0601",
-      "drivers": [
-        "dimmer_1_gang_tuya",
-        "switch_1gang"
-      ]
-    },
-    {
-      "key": "_tze204_hlx9tnzb|TS0726",
-      "drivers": [
-        "dimmer_1_gang_tuya",
-        "switch_1gang"
-      ]
-    },
-    {
-      "key": "_tze204_hlx9tnzb|TS110E",
-      "drivers": [
-        "dimmer_1_gang_tuya",
-        "switch_1gang"
-      ]
-    },
-    {
       "key": "_tze204_n9ctkb6j|TS0001",
       "drivers": [
         "dimmer_1_gang_tuya",
@@ -3091,23 +2706,314 @@
       ]
     },
     {
+      "key": "hobeian|3300-S",
+      "drivers": [
+        "contact_sensor",
+        "sensor_contact_zigbee"
+      ]
+    },
+    {
+      "key": "hobeian|3320-L",
+      "drivers": [
+        "contact_sensor",
+        "sensor_contact_zigbee"
+      ]
+    },
+    {
+      "key": "hobeian|BASICZBR3",
+      "drivers": [
+        "climate_sensor",
+        "soil_sensor"
+      ]
+    },
+    {
+      "key": "hobeian|CK-BL702-MWS-01",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "hobeian|CK-BL702-MWS-01(7016)",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar",
+        "vibration_sensor"
+      ]
+    },
+    {
+      "key": "hobeian|CK-TLSR8656-SS5-01(7003)",
+      "drivers": [
+        "contact_sensor",
+        "sensor_contact_zigbee"
+      ]
+    },
+    {
+      "key": "hobeian|CK-TLSR8656-SS5-01(7014)",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar",
+        "soil_sensor"
+      ]
+    },
+    {
+      "key": "hobeian|DoorWindow-Sensor-ZB3.0",
+      "drivers": [
+        "contact_sensor",
+        "sensor_contact_zigbee"
+      ]
+    },
+    {
+      "key": "hobeian|DS01",
+      "drivers": [
+        "contact_sensor",
+        "sensor_contact_zigbee"
+      ]
+    },
+    {
+      "key": "hobeian|E1603/E1702",
+      "drivers": [
+        "contact_sensor",
+        "sensor_contact_zigbee"
+      ]
+    },
+    {
+      "key": "hobeian|ERS-10TZBVK-AA",
+      "drivers": [
+        "scene_switch_4",
+        "sensor_contact_zigbee"
+      ]
+    },
+    {
       "key": "hobeian|Excellux",
       "drivers": [
-        "motion_sensor",
+        "contact_sensor",
+        "presence_sensor_radar",
         "sensor_contact_zigbee"
+      ]
+    },
+    {
+      "key": "hobeian|lumi.magnet.ac01",
+      "drivers": [
+        "contact_sensor",
+        "sensor_contact_zigbee"
+      ]
+    },
+    {
+      "key": "hobeian|lumi.magnet.agl02",
+      "drivers": [
+        "contact_sensor",
+        "sensor_contact_zigbee"
+      ]
+    },
+    {
+      "key": "hobeian|lumi.sensor_ht",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar",
+        "soil_sensor"
+      ]
+    },
+    {
+      "key": "hobeian|lumi.sensor_ht.agl02",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar",
+        "soil_sensor"
+      ]
+    },
+    {
+      "key": "hobeian|lumi.sensor_magnet",
+      "drivers": [
+        "contact_sensor",
+        "sensor_contact_zigbee"
+      ]
+    },
+    {
+      "key": "hobeian|lumi.sensor_magnet.aq2",
+      "drivers": [
+        "contact_sensor",
+        "sensor_contact_zigbee"
+      ]
+    },
+    {
+      "key": "hobeian|lumi.weather",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar",
+        "soil_sensor"
+      ]
+    },
+    {
+      "key": "hobeian|MCCGQ01LM",
+      "drivers": [
+        "contact_sensor",
+        "sensor_contact_zigbee"
+      ]
+    },
+    {
+      "key": "hobeian|MCCGQ11LM",
+      "drivers": [
+        "contact_sensor",
+        "sensor_contact_zigbee"
+      ]
+    },
+    {
+      "key": "hobeian|MCCGQ12LM",
+      "drivers": [
+        "contact_sensor",
+        "sensor_contact_zigbee"
+      ]
+    },
+    {
+      "key": "hobeian|MCCGQ14LM",
+      "drivers": [
+        "contact_sensor",
+        "sensor_contact_zigbee"
+      ]
+    },
+    {
+      "key": "hobeian|MCT-340 E",
+      "drivers": [
+        "contact_sensor",
+        "sensor_contact_zigbee"
+      ]
+    },
+    {
+      "key": "hobeian|MG1_5RZ",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "hobeian|q9mpfhw",
+      "drivers": [
+        "contact_sensor",
+        "water_leak_sensor"
       ]
     },
     {
       "key": "hobeian|RH3001",
       "drivers": [
+        "contact_sensor",
         "sensor_contact_zigbee",
         "water_leak_sensor"
+      ]
+    },
+    {
+      "key": "hobeian|RH3052",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar",
+        "soil_sensor"
+      ]
+    },
+    {
+      "key": "hobeian|S26R2ZB",
+      "drivers": [
+        "climate_sensor",
+        "soil_sensor"
+      ]
+    },
+    {
+      "key": "hobeian|S31ZB",
+      "drivers": [
+        "climate_sensor",
+        "soil_sensor"
+      ]
+    },
+    {
+      "key": "hobeian|SM0201",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar",
+        "soil_sensor"
+      ]
+    },
+    {
+      "key": "hobeian|SNZB-04",
+      "drivers": [
+        "contact_sensor",
+        "sensor_contact_zigbee"
+      ]
+    },
+    {
+      "key": "hobeian|SNZB-04P",
+      "drivers": [
+        "contact_sensor",
+        "sensor_contact_zigbee"
+      ]
+    },
+    {
+      "key": "hobeian|SNZB-04PR2",
+      "drivers": [
+        "contact_sensor",
+        "sensor_contact_zigbee"
+      ]
+    },
+    {
+      "key": "hobeian|SNZB-04R2",
+      "drivers": [
+        "contact_sensor",
+        "sensor_contact_zigbee"
+      ]
+    },
+    {
+      "key": "hobeian|SZLMR10",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "hobeian|TH01",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar",
+        "soil_sensor"
+      ]
+    },
+    {
+      "key": "hobeian|THS317-ET",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar",
+        "soil_sensor"
+      ]
+    },
+    {
+      "key": "hobeian|TRADFRI open/close remote",
+      "drivers": [
+        "contact_sensor",
+        "sensor_contact_zigbee"
+      ]
+    },
+    {
+      "key": "hobeian|TS0001",
+      "drivers": [
+        "button_wireless_1",
+        "soil_sensor"
       ]
     },
     {
       "key": "hobeian|TS0003",
       "drivers": [
         "sensor_contact_zigbee",
+        "switch_2gang"
+      ]
+    },
+    {
+      "key": "hobeian|TS0004",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "hobeian|TS000F",
+      "drivers": [
+        "climate_sensor",
         "switch_2gang"
       ]
     },
@@ -3119,40 +3025,217 @@
       ]
     },
     {
+      "key": "hobeian|TS0021",
+      "drivers": [
+        "contact_sensor",
+        "sensor_contact_zigbee"
+      ]
+    },
+    {
+      "key": "hobeian|TS0041",
+      "drivers": [
+        "button_wireless_1",
+        "scene_switch_4"
+      ]
+    },
+    {
+      "key": "hobeian|TS0043",
+      "drivers": [
+        "scene_switch_4",
+        "sensor_contact_zigbee"
+      ]
+    },
+    {
+      "key": "hobeian|TS0044",
+      "drivers": [
+        "scene_switch_4",
+        "sensor_contact_zigbee"
+      ]
+    },
+    {
+      "key": "hobeian|TS004F",
+      "drivers": [
+        "button_wireless_1",
+        "presence_sensor_radar",
+        "scene_switch_4",
+        "sensor_contact_zigbee"
+      ]
+    },
+    {
+      "key": "hobeian|TS011F",
+      "drivers": [
+        "switch_2gang",
+        "vibration_sensor"
+      ]
+    },
+    {
+      "key": "hobeian|TS0201",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar",
+        "soil_sensor",
+        "water_leak_sensor"
+      ]
+    },
+    {
       "key": "hobeian|TS0202",
       "drivers": [
-        "motion_sensor",
+        "climate_sensor",
+        "presence_sensor_radar",
         "soil_sensor"
       ]
     },
     {
       "key": "hobeian|TS0203",
       "drivers": [
-        "motion_sensor",
+        "contact_sensor",
+        "presence_sensor_radar",
         "sensor_contact_zigbee"
+      ]
+    },
+    {
+      "key": "hobeian|TS0207",
+      "drivers": [
+        "rain_sensor",
+        "water_leak_sensor"
+      ]
+    },
+    {
+      "key": "hobeian|TS0215A",
+      "drivers": [
+        "button_wireless_1",
+        "climate_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "hobeian|TS0222",
+      "drivers": [
+        "climate_sensor",
+        "illuminance_sensor",
+        "presence_sensor_radar",
+        "soil_sensor"
+      ]
+    },
+    {
+      "key": "hobeian|TS0225",
+      "drivers": [
+        "climate_sensor",
+        "illuminance_sensor",
+        "presence_sensor_radar"
       ]
     },
     {
       "key": "hobeian|TS0601",
       "drivers": [
-        "motion_sensor",
+        "button_wireless_1",
+        "climate_sensor",
+        "illuminance_sensor",
+        "presence_sensor_radar",
+        "rain_sensor",
+        "scene_switch_4",
         "sensor_contact_zigbee",
         "soil_sensor",
-        "switch_2gang"
+        "switch_2gang",
+        "vibration_sensor",
+        "water_leak_sensor"
+      ]
+    },
+    {
+      "key": "hobeian|TS0601_wirelesssw",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
       ]
     },
     {
       "key": "hobeian|TS0726",
       "drivers": [
+        "climate_sensor",
         "sensor_contact_zigbee",
         "switch_2gang"
       ]
     },
     {
-      "key": "tuyatec-3tipnsrx|RH3001",
+      "key": "hobeian|TS110E",
       "drivers": [
-        "sensor_contact_zigbee",
-        "water_leak_sensor"
+        "climate_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "hobeian|TS1201",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar",
+        "soil_sensor"
+      ]
+    },
+    {
+      "key": "hobeian|TY0201",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar",
+        "soil_sensor"
+      ]
+    },
+    {
+      "key": "hobeian|WSDCGQ01LM",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar",
+        "soil_sensor"
+      ]
+    },
+    {
+      "key": "hobeian|WSDCGQ11LM",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar",
+        "soil_sensor"
+      ]
+    },
+    {
+      "key": "hobeian|WSDCGQ12LM",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar",
+        "soil_sensor"
+      ]
+    },
+    {
+      "key": "hobeian|ZBMINI",
+      "drivers": [
+        "climate_sensor",
+        "soil_sensor"
+      ]
+    },
+    {
+      "key": "hobeian|ZBMINIL2",
+      "drivers": [
+        "climate_sensor",
+        "soil_sensor"
+      ]
+    },
+    {
+      "key": "hobeian|ZG-102Z",
+      "drivers": [
+        "contact_sensor",
+        "sensor_contact_zigbee"
+      ]
+    },
+    {
+      "key": "hobeian|ZG-102ZL",
+      "drivers": [
+        "contact_sensor",
+        "sensor_contact_zigbee"
+      ]
+    },
+    {
+      "key": "hobeian|ZP-301Z",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
       ]
     },
     {

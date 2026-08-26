@@ -1,6 +1,6 @@
 {
   "name": "com.dlnraja.tuya.zigbee",
-  "version": "9.0.661",
+  "version": "9.0.662",
   "description": "Tuya Unified Zigbee - Local-first control with AI automation",
   "main": "app.js",
   "scripts": {
@@ -226,7 +226,16 @@
     "apply:parallel-couples": "node tools/ci/p2268-apply-parallel-couple-fixes.js",
     "apply:mfr-pid": "node tools/ci/apply-mfr-pid-cross-ref.js",
     "discover:discussions": "node tools/ci/p2270-discussion-harvest.js",
-    "check:p2270": "node --test test/critical/p2270-discussion-harvest-gate.test.js"
+    "discover:apply-min": "node tools/ci/p2270-apply-min-discoveries.js",
+    "discover:regen-md": "node tools/ci/p2270-regenerate-discoveries-md.js",
+    "check:p2269": "node --test test/critical/p2269-anti-spaghetti-ssot-gate.test.js",
+    "check:p2270": "node tools/ci/p2270-regenerate-discoveries-md.js && node --test test/critical/p2270-discussion-harvest-gate.test.js",
+    "check:p2278": "node --test test/critical/p2278-ogx8u5z6-trv-cal-gate.test.js",
+    "check:p2279": "node --test test/critical/p2279-1fuxihti-mvtclclq-gate.test.js",
+    "check:p2283": "node --test test/critical/p2283-bidirectional-buttons-permanent.test.js",
+    "check:p2284": "node tools/ci/p2284-handleframe-chain-gate.js",
+    "check:p2285": "node --test test/critical/p2285-mrpevh8p-ts0041-sh-sc07.test.js",
+    "check:discovery-lineage": "node tools/ci/discovery-lineage-enrich-gate.js"
   },
   "keywords": [
     "homey",

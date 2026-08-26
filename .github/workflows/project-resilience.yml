@@ -132,10 +132,12 @@ jobs:
         continue-on-error: true
         timeout-minutes: 12
         run: |
+          # P2281: past P102–P2266 + recent P2267/P2268 + present harvest softFail
           if [ -f tools/ci/silent-enrichment-orchestrator.js ]; then
+            node tools/ci/silent-enrichment-orchestrator.js --phase=sync --skip-scan || echo "sync harvest warn"
             node tools/ci/silent-enrichment-orchestrator.js --phase=gates --skip-scan || echo "gates warn"
           fi
-
+          node tools/ci/discovery-lineage-enrich-gate.js || echo "discovery-lineage warn"
       - name: "L99 dual-app enrich gates (soft)"
         if: always()
         continue-on-error: true

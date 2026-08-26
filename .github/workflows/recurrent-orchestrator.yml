@@ -77,6 +77,21 @@ jobs:
           fi
           node tools/ci/recurrent-orchestrator.js $ARGS
 
+      - name: "P2281 discovery lineage + harvest (SHADOW soft)"
+        continue-on-error: true
+        timeout-minutes: 10
+        env:
+          FORUM_AUTO_POST: '0'
+          SHADOW_FORUM: '1'
+          DISCOURSE_WRITE: '0'
+        run: |
+          # Past P102–P2266 · recent P2267 E002 + P2268 parallel · present P2269+
+          if [ -f tools/ci/silent-enrichment-orchestrator.js ]; then
+            node tools/ci/silent-enrichment-orchestrator.js --phase=sync --skip-scan || echo "sync harvest warn"
+          fi
+          node tools/ci/discovery-lineage-enrich-gate.js || echo "discovery-lineage warn"
+          node tools/ci/p2270-regenerate-discoveries-md.js || echo "discoveries md warn"
+
       - name: L99 dual-app enrich gates (soft regular)
         continue-on-error: true
         timeout-minutes: 8

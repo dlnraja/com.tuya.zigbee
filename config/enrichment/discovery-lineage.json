@@ -1,0 +1,162 @@
+{
+  "_meta": {
+    "version": "1.0.0",
+    "updated": "2026-08-26",
+    "why": "Workflows must remember past+recent+present discoveries without inventing pids. SHADOW forum only.",
+    "doctrine": ".github/WORKFLOW_GUIDELINES.md §P2268/P2270",
+    "harvest": "reports/discussion-harvest-2026-08-26/DISCOVERIES.json"
+  },
+  "rules": [
+    "SHADOW — never forum/PM POST",
+    "Sacred couple = manufacturerName + productId only",
+    "Never invent productId or DP",
+    "REPLY_TOPICS empty or dry-run 140352 only"
+  ],
+  "eras": {
+    "past": {
+      "range": "P102–P2266",
+      "mustRemember": [
+        {
+          "id": "P102",
+          "note": "Forum silent-first / T157628 — no AI paste; REPLY_TOPICS=140352 dry-run"
+        },
+        {
+          "id": "P108",
+          "note": "Never auto-post satellite topics"
+        },
+        {
+          "id": "P2138",
+          "note": "BSEED wall_dimmer m1cvyneb+TS0601 brightness 0–1000; matrix gate hard"
+        },
+        {
+          "id": "P2201",
+          "note": "No TS0601 on contact_sensor compose"
+        },
+        {
+          "id": "P2206",
+          "note": "Privacy redactor — never commit raw Gmail/diag excerpts"
+        },
+        {
+          "id": "P2227",
+          "note": "AI forfait plan — AI_ALLOW_PAID=false"
+        },
+        {
+          "id": "P2228",
+          "note": "CI vs Homey runtime — tools/ci + config/enrichment not in Homey bundle"
+        },
+        {
+          "id": "P2232",
+          "note": "Market couples intake — soft hypotheses never catalog-lock"
+        }
+      ],
+      "workflowHooks": [
+        "tools/ci/p2138-sacred-couple-matrix-gate.js",
+        "tools/ci/anti-bot-regression-gate.js",
+        "tools/ci/forum-ai-paste-gate.js",
+        ".github/scripts/privacy-redactor.js",
+        "tools/ci/ai-plan-guard.js"
+      ]
+    },
+    "recent": {
+      "range": "P2267–P2268",
+      "mustRemember": [
+        {
+          "id": "P2267",
+          "note": "E000/E001/E002 taxonomy — 0xE002=manuSpecificTuya2 in ZclClusterLexicon"
+        },
+        {
+          "id": "P2268",
+          "note": "Parallel ZHA/Z2M couple unsteals — apply-parallel-couples + softFail in phases sync"
+        }
+      ],
+      "workflowHooks": [
+        "lib/zigbee/ZclClusterLexicon.js",
+        "tools/ci/p2268-apply-parallel-couple-fixes.js",
+        "docs/knowledge/TUYA_E000_E001_E002.md"
+      ]
+    },
+    "present": {
+      "range": "P2269–P2285",
+      "mustRemember": [
+        {
+          "id": "P2269",
+          "note": "Anti-spaghetti SSOT + DeviceFusionHooks + parser quarantine"
+        },
+        {
+          "id": "P2270",
+          "note": "Discussion harvest ≥50 + PathFinder + discover:* npm scripts"
+        },
+        {
+          "id": "P2271-P2279",
+          "note": "Couple TX/RX unsteals (polarity, strip, curtain, smoke, meter, TRV cal, cover, USB)"
+        },
+        {
+          "id": "P2280",
+          "note": "Dual-app inconsistency sweep BOTH reliability"
+        },
+        {
+          "id": "P2281",
+          "note": "Workflow lineage fidelity — this file + harvest MD regen"
+        },
+        {
+          "id": "P2282",
+          "note": "Forum #2202 Peter: HOBEIAN water MISATTR couple-aware + mrpevh8p 0xFD handleFrame arity"
+        },
+        {
+          "id": "P2283",
+          "note": "Bidirectional physical↔virtual permanent SSOT (gangCount, stampVirtual, wrapHandleFrame)"
+        },
+        {
+          "id": "P2284",
+          "note": "handleFrame chain: L0/IO/P0 always wrap+next; never orphan 0xFD; HOBEIAN ZG-305Z forbidMode couple"
+        },
+        {
+          "id": "P2285",
+          "note": "mrpevh8p+TS0041 SH-SC07 deep lock: phantom EP, 0xFD, magic, no 0x8004/EF00, FP case fix, siblings 5bpeda8u/b4awzgct"
+        }
+      ],
+      "workflowHooks": [
+        "tools/ci/p2270-discussion-harvest.js",
+        "tools/ci/p2270-regenerate-discoveries-md.js",
+        "lib/protocol/CommunicationPathFinder.js",
+        "lib/utils/BidirectionalButtonState.js",
+        "tools/ci/p2284-handleframe-chain-gate.js",
+        "test/critical/p2269-anti-spaghetti-ssot-gate.test.js",
+        "test/critical/p2270-discussion-harvest-gate.test.js",
+        "test/critical/p2282-forum-2202-peter-misattr-button.test.js",
+        "test/critical/p2283-bidirectional-buttons-permanent.test.js",
+        "test/critical/p2284-handleframe-chain.test.js",
+        "test/critical/p2285-mrpevh8p-ts0041-sh-sc07.test.js",
+        "reports/weakness-vectors-2026-08-26/SUMMARY.md",
+        "reports/couple-mrpevh8p-ts0041-2026-08-26/SUMMARY.md"
+      ]
+    }
+  },
+  "ghaWiring": {
+    "hard": [
+      "unified-ci.yml",
+      "pr-gate.yml",
+      "validate.yml",
+      "auto-publish-on-push.yml"
+    ],
+    "softHarvestSync": [
+      "auto-enrich-closed-loop.yml",
+      "forum-poll.yml",
+      "project-resilience.yml",
+      "recurrent-orchestrator.yml"
+    ],
+    "phaseIds": [
+      "discover-discussions-p2270",
+      "discover-regen-md-p2270",
+      "discover-apply-min-p2270",
+      "apply-parallel-couples-p2268",
+      "remind-e002-taxonomy-p2267",
+      "gate-p2269-anti-spaghetti",
+      "gate-p2270-discussion-harvest",
+      "gate-p2278-trv-cal",
+      "gate-p2279-cover-usb",
+      "gate-discovery-lineage",
+      "gate-p2138-sacred-couple"
+    ]
+  }
+}

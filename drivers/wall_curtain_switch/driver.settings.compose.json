@@ -17,6 +17,41 @@
         "value": false
       },
       {
+        "id": "invert_position",
+        "type": "checkbox",
+        "label": {
+          "en": "Invert position",
+          "de": "Position invertieren",
+          "fr": "Inverser la position"
+        },
+        "hint": {
+          "en": "Flip open/close percentages (Z2M invert_cover). Always on for _TZ3210_ol1uhvza+TS130F; enable for other TS130F that report inverted lift.",
+          "de": "Öffnen/Schließen-Prozentwerte umkehren (Z2M invert_cover). Für _TZ3210_ol1uhvza immer aktiv.",
+          "fr": "Inverse ouvert/fermé (Z2M invert_cover). Toujours actif pour _TZ3210_ol1uhvza+TS130F."
+        },
+        "value": false
+      },
+      {
+        "id": "backlight_mode",
+        "type": "dropdown",
+        "label": {
+          "en": "Backlight",
+          "de": "Hintergrundbeleuchtung",
+          "fr": "Rétroéclairage"
+        },
+        "hint": {
+          "en": "TS130F OnOff attr 0x5000 (backlight_switch).",
+          "de": "TS130F OnOff-Attribut 0x5000.",
+          "fr": "Attribut OnOff 0x5000 TS130F."
+        },
+        "value": "off",
+        "values": [
+          { "id": "off", "label": { "en": "Off", "fr": "Off", "de": "Aus" } },
+          { "id": "low", "label": { "en": "Low / normal", "fr": "Bas / normal", "de": "Niedrig" } },
+          { "id": "high", "label": { "en": "High / inverted", "fr": "Haut / inversé", "de": "Hoch" } }
+        ]
+      },
+      {
         "id": "movetime",
         "type": "number",
         "label": {

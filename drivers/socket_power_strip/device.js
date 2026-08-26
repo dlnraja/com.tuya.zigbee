@@ -3,18 +3,15 @@
 const Homey = require('homey');
 const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
 const { debug, CLUSTER } = require('zigbee-clusters');
+const { sendTuyaMagicPacket } = require('../../lib/zigbee/TuyaMagicPacket');
+const { safeSetTimeout } = require('../../lib/utils/safe-timers');
 
 class socket_power_strip extends TuyaZigbeeDevice {
-		
+
 	async onNodeInit({zclNode}) {
     await super.onNodeInit({ zclNode }).catch(() => {});
 
 		this.printNode();
-
-/* 		const node = await this.homey.zigbee.getNode(this);
-		node.handleFrame = (endpointId, clusterId, frame, meta) => {
-      		this.log("frame data! endpointId:", endpointId,", clusterId:", clusterId,", frame:", frame, ", meta:", meta);
-    	}; */
 
         const { subDeviceId } = this.getData();
         this.log("Device data: ", subDeviceId);
@@ -27,6 +24,16 @@ class socket_power_strip extends TuyaZigbeeDevice {
 		.catch(err => {
 			this.error('Error when reading device attributes ', err);
 		});
+
+    // WHY P2274/D009: Nous A11Z (_TZ3210_6cmeijtd+TS011F) — Z2M configureMagicPacket for independent L1/L2/L3
+    const mfr = String(this.getSetting?.('zb_manufacturer_name') || '').toLowerCase();
+    if (mfr.includes('6cmeijtd') && subDeviceId !== 'socket2' && subDeviceId !== 'socket3') {
+      safeSetTimeout(this, async () => {
+        try {
+          await sendTuyaMagicPacket(this, zclNode, 1, { force: true });
+        } catch (_e) { /* sleepy-safe */ }
+      }, 2500);
+    }
 
   }
 

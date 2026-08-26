@@ -125,7 +125,11 @@ jobs:
           if [ -f tools/ci/silent-enrichment-orchestrator.js ]; then
             echo "## 🔇 Silent enrichment (forum+sync+investigate need-action, no user wait)" >> $GITHUB_STEP_SUMMARY
             node tools/ci/silent-enrichment-orchestrator.js --phase=forum --skip-scan 2>&1 | tee forum-enrich.log || echo "ENRICH_ORCH_WARN"
+            # P2270/P2281: discussion harvest + lineage (soft) via sync pipeline
+            node tools/ci/silent-enrichment-orchestrator.js --phase=sync --skip-scan 2>&1 | tee forum-sync-harvest.log || echo "SYNC_HARVEST_WARN"
             node tools/ci/silent-enrichment-orchestrator.js --phase=gates --skip-scan 2>&1 | tee forum-gates.log || echo "GATES_WARN"
+            node tools/ci/discovery-lineage-enrich-gate.js || echo "LINEAGE_WARN"
+            node tools/ci/p2270-regenerate-discoveries-md.js || echo "DISCOVERIES_MD_WARN"
           fi
           if [ -f tools/ci/forum-actionable-processor.js ]; then
             echo "## 📋 Forum actionable processor (P2210 — post-by-post cross-ref)" >> $GITHUB_STEP_SUMMARY

@@ -91,6 +91,8 @@ lib/enrichment/PhaseRunner.js
 lib/enrichment/EnrichmentRegistry.js
 lib/enrichment/NeedActionInvestigator.js
 lib/enrichment/ProfileSynchronizer.js
+# P2269: dead parser legacy (stub remains at lib/tuya/UniversalTuyaParser.js)
+lib/tuya/_quarantine
 data/user-impact-catalog.json
 data/dp_couple_knowledge.json
 .cursor

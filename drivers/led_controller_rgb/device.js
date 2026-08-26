@@ -11,6 +11,16 @@ class LEDControllerRGBDevice extends UnifiedLightBase {
   // does not add a false measure_battery capability (fixes false-battery reports).
   get mainsPowered() { return true; }
 
+  // WHY P2272: Z2M#32594 bjoccxbi RGB+CCT — brightness MCU 0–1000 (not /10)
+  get dpMappings() {
+    return {
+      1: { capability: 'onoff', transform: (v) => v === 1 || v === true },
+      2: { capability: 'dim', divisor: 1000, min: 0, max: 1000 },
+      3: { capability: 'light_temperature', divisor: 1000 },
+      5: { capability: 'light_hue', divisor: 360 },
+    };
+  }
+
   get lightCapabilities() {
     return ['onoff', 'dim', 'light_hue', 'light_saturation'];
   }

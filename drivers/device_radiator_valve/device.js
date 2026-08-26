@@ -1,7 +1,6 @@
 'use strict';
 
 const { safeSetTimeout, safeClearTimeout } = require('../../lib/utils/safe-timers');
-const { includesCI } = require('../../lib/utils/CaseInsensitiveMatcher');
 const { safeDivide, safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
 
 const UnifiedThermostatBase = require('../../lib/devices/UnifiedThermostatBase');
@@ -26,25 +25,28 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
 
   /**
    * Detect DP profile based on manufacturerName
-   * Profile B (ME167): _TZE284_o3x45p96, _TZE284_p3dbf6qs, _TZE200_p3dbf6qs, etc.
+   * Profile B (ME167 / TS0601_thermostat_3): AVATTO ME167 + EARU + ogx8u5z6 family
+   * WHY P2278: _TZE204_ogx8u5z6 uses DP4/5 /10 + DP47 cal (Z2M#25199 / ZHA#4124) — not Profile A
    */
   get dpProfile() {
-    const mfr = this.getSetting('zb_manufacturer_name') || this.getStoreValue('manufacturerName') || '';
-    const me167Ids = [
-      '_TZE284_o3x45p96', '_tze284_o3x45p96',
-      '_TZE284_p3dbf6qs', '_tze284_p3dbf6qs',
-      '_TZE200_p3dbf6qs', '_tze200_p3dbf6qs',
-      '_TZE284_rv6iuyxb', '_tze284_rv6iuyxb',
-      '_TZE284_c6wv4xyo', '_tze284_c6wv4xyo',
-      '_TZE284_hvaxb2tc', '_tze284_hvaxb2tc',
-      '_TZE204_o3x45p96', '_tze204_o3x45p96'
+    const mfr = String(
+      this.getSetting('zb_manufacturer_name')
+      || this.getStoreValue('manufacturerName')
+      || '',
+    ).toLowerCase();
+    const me167Tails = [
+      'o3x45p96', 'p3dbf6qs', 'rv6iuyxb', 'c6wv4xyo', 'hvaxb2tc', 'ogx8u5z6',
     ];
-    return me167Ids.some(id => includesCI(me167Ids, id)) ? 'me167' : 'standard';
+    return me167Tails.some((t) => mfr.includes(t)) ? 'me167' : 'standard';
   }
 
   get dpMappings() {
+    const mfr = String(this.getSetting('zb_manufacturer_name') || this.getStoreValue('manufacturerName') || '');
+    // WHY P2278: ogx8u5z6 firmware stores cal in tenths (user-confirmed Z2M divideBy10)
+    const calDivisor = /ogx8u5z6/i.test(mfr) ? 10 : 1;
+
     if (this.dpProfile === 'me167') {
-      // Profile B: AVATTO ME167/TRV06 DP mapping
+      // Profile B: AVATTO ME167/TRV06 / thermostat_3 DP mapping
       // v5.5.921: FORUM FIX (ManuelKugler #1223) - Added alarm_battery for DP35
       return {
         2: { capability: 'thermostat_mode', transform: (v) => ({ 0: 'auto', 1: 'heat', 2: 'off' }[v] ?? 'heat') },
@@ -55,7 +57,8 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
         35: { capability: 'alarm_battery', transform: (v) => v === 1 },
         36: { capability: 'frost_protection', transform: (v) => v === true || v === 1 },
         39: { internal: true, type: 'anti_scaling', writable: true },
-        47: { internal: true, type: 'temp_calibration', writable: true }
+        // WHY P2278: ogx8u5z6 stores tenths (ZHA#4124); other ME167 = whole °C (Z2M raw)
+        47: { internal: true, type: 'temp_calibration', writable: true, divisor: calDivisor, setting: 'temperature_calibration' },
       };
     }
     // Profile A: Standard TRV DP mapping (MOES, etc.)

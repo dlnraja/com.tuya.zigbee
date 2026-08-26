@@ -1,0 +1,26 @@
+{
+  "generatedAt": "2026-08-26T13:28:43.290Z",
+  "title": "P2280 dual-app inconsistency sweep",
+  "master": {
+    "registryVsComposeIssues": 0
+  },
+  "stableBefore": [
+    "climate+1fuxihti",
+    "dimmer+mvtclclq",
+    "climate+lpedvtvr",
+    "climate+rccxox8p",
+    "climate+dikb3dp6",
+    "usb_dongle+6cmeijtd",
+    "switch_1gang+guvc7pdy",
+    "wall_thermostat+ogx8u5z6"
+  ],
+  "stableAfter": "compose unsteals + BOTH device.js/UnifiedThermostatBase/registry/gates",
+  "docs": [
+    "PECULIARITIES",
+    "DEVICE_TRUTH",
+    "SPAGHETTI_MAP",
+    "WORKFLOW_GUIDELINES",
+    "dual-app-tracks"
+  ],
+  "classify": "P227x BOTH; PathFinder MASTER_ONLY"
+}

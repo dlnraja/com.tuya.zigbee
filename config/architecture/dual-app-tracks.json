@@ -13,7 +13,8 @@
       "versionLine": "9.0.x",
       "purpose": "Innovation + soak (features + reliability)",
       "cloneHint": "Documents/homey/master",
-      "publish": "Auto-Publish on Push → Homey Test"
+      "publish": "Auto-Publish on Push → Homey Test",
+      "version": "9.0.661"
     },
     "stable": {
       "branch": "stable-v5",
@@ -63,6 +64,14 @@
     "forum_shadow_github_respond": {
       "tag": "MASTER_ONLY",
       "note": "Silent forum + GH comments — never Discourse POST"
+    },
+    "p227x_sacred_couple_unsteals": {
+      "tag": "BOTH",
+      "note": "P2274–P2279 compose+registry+TX/RX (strip/curtain/smoke/meter/TRV cal/cover/USB) — reliability pairing"
+    },
+    "p2269_anti_spaghetti_ssot": {
+      "tag": "MASTER_ONLY",
+      "note": "SSOT docs + PathFinder + harvest gates — CI/docs; soft-port reliability TX/RX only to stable"
     }
   },
   "ci": {

@@ -123,7 +123,6 @@
       "_tze204_rtrmfadk",
       "_TZE204_tagezcph",
       "_TZE204_tbgecldg",
-      "_TZE204_xalsoe3m",
       "_TZE284_5slehgeo",
       "_TZE284_6kijc7nd",
       "_TZE284_a1ovdobn",
@@ -365,9 +364,6 @@
       "_tze204_tbgecldg",
       "_TZE204_TBGECLDG",
       "_tze204_TBGECLDG",
-      "_tze204_xalsoe3m",
-      "_TZE204_XALSOE3M",
-      "_tze204_XALSOE3M",
       "_tze284_5slehgeo",
       "_TZE284_5SLEHGEO",
       "_tze284_5SLEHGEO",
@@ -635,6 +631,23 @@
       "hint": {
         "en": "Estimate power consumption when real measurement is not available (AC/DC devices only)",
         "fr": "Estimer la consommation quand la mesure réelle n'est pas disponible (appareils AC/DC seulement)"
+      }
+    },
+    {
+      "id": "temperature_calibration",
+      "type": "number",
+      "label": {
+        "en": "Temperature calibration (°C)",
+        "fr": "Calibration température (°C)",
+        "nl": "Temperatuurkalibratie (°C)"
+      },
+      "value": 0,
+      "min": -20,
+      "max": 20,
+      "step": 0.1,
+      "hint": {
+        "en": "Offset written to TRV DP47. Some firmwares (_TZE204_ogx8u5z6) use 0.1 °C steps.",
+        "fr": "Décalage écrit sur DP47. Certains firmwares (_TZE204_ogx8u5z6) utilisent des pas de 0,1 °C."
       }
     }
   ],

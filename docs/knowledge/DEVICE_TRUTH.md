@@ -38,6 +38,10 @@ Catalog: **431** drivers, **57** locked community cases.
 |---|---|---|---|---|
 | hobeian-aubess-k4ej3ww2-ias | `water_leak_sensor` | `_TZ3000_k4ej3ww2` + TS0207 | water_leak_sensor_tuya, water_detector, gas_sensor_switch, contact_sensor | ias_zone |
 | presentsky-bseed-dimmer-m1cvyneb | `wall_dimmer_tuya` | `_TZE284_m1cvyneb` + TS0601 | climate_sensor, climate_sensor_temperature, thermostat, air_purifier_climate | tuya_ef00 |
+| p2279-1fuxihti-cover | `curtain_motor` | `_TZE284_1fuxihti` + TS0601 | climate_sensor, wall_curtain_switch, zigbee_universal | tuya_ef00 |
+| p2279-mvtclclq-usb | `usb_outlet_advanced` | `_TZE284_mvtclclq` + TS0601 | wall_dimmer_tuya, device_radiator_valve, climate_sensor | tuya_ef00 |
+| p2278-ogx8u5z6-trv | `device_radiator_valve` | `_TZE204_ogx8u5z6` + TS0601 | climate_sensor, wall_thermostat, zigbee_universal | tuya_ef00 |
+| p2277-lpedvtvr-thermostat | `wall_thermostat` | `_TZE204_lpedvtvr` + TS0601 | climate_sensor, device_radiator_valve, zigbee_universal | tuya_ef00 |
 | tboy-relay-4ch-imaccztn | `relay_board_4_channel` | `_TZ3210_imaccztn` + TS0004 | switch_4gang, switch_1gang, socket | zcl |
 | kanbros-bseed-2gang-w5xztuy7 | `switch_2gang` | `_TZ3000_w5xztuy7` + TS0002 | switch_2gang_metering, dimmer_2_gang_tuya, wall_dimmer_tuya | zcl |
 | welsh-double-outlet-hlla45kx | `double_power_point_2` | `_TYZB01_hlla45kx` + TS011F | socket, smartplug, switch_1gang | zcl |

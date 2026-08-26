@@ -124,6 +124,22 @@ jobs:
       - name: 🛡️ P2138 sacred-couple matrix gate
         run: node tools/ci/p2138-sacred-couple-matrix-gate.js
 
+      - name: 🛡️ P2281 discovery lineage (past+recent+present)
+        run: node tools/ci/discovery-lineage-enrich-gate.js
+
+      - name: 🧪 P2269/P2270 anti-spaghetti + harvest gates
+        run: |
+          node --test test/critical/p2269-anti-spaghetti-ssot-gate.test.js
+          node tools/ci/p2270-regenerate-discoveries-md.js
+          node --test test/critical/p2270-discussion-harvest-gate.test.js
+
+      - name: 🧪 P2283/P2284 bidirectional + handleFrame chain
+        run: |
+          node --test test/critical/p2283-bidirectional-buttons-permanent.test.js
+          node --test test/critical/p2284-handleframe-chain.test.js
+          node --test test/critical/p2282-forum-2202-peter-misattr-button.test.js
+          node --test test/critical/p2285-mrpevh8p-ts0041-sh-sc07.test.js
+
       - name: 🛡️ P217 fork harvest sacred-couple gate
         run: node tools/ci/p217-fork-harvest-gate.js
 

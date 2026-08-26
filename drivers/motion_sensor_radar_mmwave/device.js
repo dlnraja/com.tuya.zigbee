@@ -251,8 +251,33 @@ class MotionSensorRadarDevice extends UnifiedSensorBase {
 
     switch (dpId) {
       case 1: {
-        const presence = this._inference.updatePresenceDP(value);
+        // WHY P2271: ZHA#5252 gnpflcoq DP1 inverted (0=occupied). Route via AlarmPolarityManager.
+        const rawTrue = value === 1 || value === 2 || value === true;
+        let presence;
+        try {
+          const { applyPolarity, observeRaw } = require('../../lib/managers/AlarmPolarityManager');
+          observeRaw(this, rawTrue, 'motion');
+          presence = applyPolarity(this, rawTrue, 'motion').value;
+          this._inference.updatePresenceDP(presence ? 1 : 0);
+        } catch (_e) {
+          presence = this._inference.updatePresenceDP(value);
+        }
         return this.safeSetCapabilityValue('alarm_motion', presence).catch(() => { });
+      }
+
+      // WHY P2271: ZHA#5252 4in1 — DP7 temp×0.1, DP8 humidity %, DP11 lux (gnpflcoq)
+      case 7: {
+        const temp = smartParse(value, dpId, { capability: 'measure_temperature', defaultDivisor: 10 });
+        return this._safeDynCap('measure_temperature', temp);
+      }
+      case 8: {
+        const hum = smartParse(value, dpId, { capability: 'measure_humidity', defaultDivisor: 1 });
+        return this._safeDynCap('measure_humidity', hum);
+      }
+      case 11: {
+        const lux = typeof value === 'number' ? value : Number(value) || 0;
+        this._inference.updateLux(lux);
+        return this.safeSetCapabilityValue('measure_luminance', lux).catch(() => {});
       }
 
       case 9:
@@ -340,6 +365,23 @@ class MotionSensorRadarDevice extends UnifiedSensorBase {
     }
 
     throw new Error(`No TX path for ${key}`);
+  }
+
+  /**
+   * WHY P2271: gnpflcoq 4in1 reports climate DPs — add caps only when RX proves need (no phantom on Linptech).
+   */
+  async _safeDynCap(cap, value) {
+    try {
+      if (!this.hasCapability(cap)) {
+        const mfr = String(this.getSetting('zb_manufacturer_name') || this._manufacturerName || '');
+        if (!/gnpflcoq/i.test(mfr)) { return; }
+        await this.addCapability(cap);
+        this.log(`[MMWAVE] dynamicAdd ${cap} for 4in1 couple`);
+      }
+      await this.safeSetCapabilityValue(cap, value);
+    } catch (e) {
+      this.log(`[MMWAVE] _safeDynCap ${cap}:`, e?.message || e);
+    }
   }
 
   async _linptechOnSettings({ oldSettings, newSettings, changedKeys }) {

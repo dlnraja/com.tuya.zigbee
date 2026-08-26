@@ -2023,8 +2023,9 @@
       "forbiddenDrivers": [
         "button_wireless_2"
       ],
+      "forbidMode": "couple",
       "protocol": "zcl",
-      "notes": "HOBEIAN ZG-305Z MHCOZY dual USB-C switch (JohanBendz PR #1435). Unique pid avoids TS0601 cartesian with other HOBEIAN sensors.",
+      "notes": "HOBEIAN ZG-305Z MHCOZY dual USB-C switch (JohanBendz PR #1435). Unique pid avoids TS0601 cartesian with other HOBEIAN sensors. forbidMode couple — same brand has climate/soil/radar siblings.",
       "sources": [
         "JohanBendz#1435"
       ],
@@ -3148,6 +3149,256 @@
       "protocol": "tuya_dp",
       "notes": "Z2M#32931 TRV soft lock — no invented DPs",
       "sources": ["zigbee2mqtt#32931", "P2270"],
+      "tracks": { "master": { "static": true, "dynamic": true }, "stable": { "static": true, "dynamic": false } }
+    },
+    {
+      "id": "p2271-tdg4ckyh-rf-cloner",
+      "mfr": ["_TZE284_tdg4ckyh"],
+      "productId": ["TS0601"],
+      "canonicalDriver": "ir_blaster",
+      "forbiddenDrivers": ["climate_sensor", "zigbee_universal", "generic_tuya"],
+      "forbidMode": "couple",
+      "protocol": "tuya_dp",
+      "notes": "Z2M#32756/#32836 Zigbee RF Cloner — soft ir_blaster; no invented RF DPs",
+      "sources": ["zigbee2mqtt#32756", "zigbee2mqtt#32836", "P2271"],
+      "tracks": { "master": { "static": true, "dynamic": true }, "stable": { "static": true, "dynamic": false } }
+    },
+    {
+      "id": "p2271-kq1l5eu5-moes-curtain",
+      "mfr": ["_TZE284_kq1l5eu5"],
+      "productId": ["TS0601"],
+      "canonicalDriver": "wall_curtain_switch",
+      "forbiddenDrivers": ["climate_sensor", "curtain_motor", "zigbee_universal"],
+      "forbidMode": "couple",
+      "protocol": "tuya_dp",
+      "notes": "Z2M#31244 Moes SFC02 curtain wall switch — soft lock pending full DP map",
+      "sources": ["zigbee2mqtt#31244", "P2271"],
+      "tracks": { "master": { "static": true, "dynamic": true }, "stable": { "static": true, "dynamic": false } }
+    },
+    {
+      "id": "p2272-bjoccxbi-rgb-cct",
+      "mfr": ["_TZE284_bjoccxbi"],
+      "productId": ["TS0601"],
+      "canonicalDriver": "led_controller_rgb",
+      "forbiddenDrivers": ["climate_sensor", "switch_1gang", "zigbee_universal"],
+      "forbidMode": "couple",
+      "protocol": "tuya_dp",
+      "notes": "Z2M#32594 RGB+CCT controller; brightness MCU 0-1000",
+      "sources": ["zigbee2mqtt#32594", "P2272"],
+      "tracks": { "master": { "static": true, "dynamic": true }, "stable": { "static": true, "dynamic": false } }
+    },
+    {
+      "id": "p2272-lq0ffndf-dual-gpo-usb",
+      "mfr": ["_TZE284_lq0ffndf"],
+      "productId": ["TS0601"],
+      "canonicalDriver": "usb_outlet_advanced",
+      "forbiddenDrivers": ["climate_sensor", "switch_2gang", "plug_energy_monitor"],
+      "forbidMode": "couple",
+      "protocol": "tuya_dp",
+      "notes": "Z2M#32901 MakeGood dual GPO+USB-C; DPs 1/2/20-23/101 live-tested",
+      "sources": ["zigbee2mqtt#32901", "P2272"],
+      "tracks": { "master": { "static": true, "dynamic": true }, "stable": { "static": true, "dynamic": false } }
+    },
+    {
+      "id": "p2272-hdc8bbha-ts000f-relay",
+      "mfr": ["_TZ3218_hdc8bbha"],
+      "productId": ["TS000F"],
+      "canonicalDriver": "switch_1gang",
+      "forbiddenDrivers": ["switch_temp_sensor", "climate_sensor"],
+      "forbidMode": "couple",
+      "protocol": "zcl",
+      "notes": "ZHA#5241 1-gang relay — magic enchantment; NOT 7fiyo3kv temp hybrid",
+      "sources": ["zha-device-handlers#5241", "P2272"],
+      "tracks": { "master": { "static": true, "dynamic": true }, "stable": { "static": true, "dynamic": false } }
+    },
+    {
+      "id": "p2273-guvc7pdy-curtain-not-1gang",
+      "mfr": ["_TZE204_guvc7pdy", "_TZE200_guvc7pdy"],
+      "productId": ["TS0601"],
+      "canonicalDriver": "curtain_motor",
+      "forbiddenDrivers": ["switch_1gang", "climate_sensor", "zigbee_universal"],
+      "forbidMode": "couple",
+      "protocol": "tuya_dp",
+      "notes": "ZHA#5140 Moes curtain motor — was cartesian-stolen by switch_1gang",
+      "sources": ["zha-device-handlers#5140", "P2273"],
+      "tracks": { "master": { "static": true, "dynamic": true }, "stable": { "static": true, "dynamic": false } }
+    },
+    {
+      "id": "p2273-hdml1aav-soil-zs300tf",
+      "mfr": ["_TZE284_hdml1aav", "_TZE2841000000_hdml1aav"],
+      "productId": ["TS0601"],
+      "canonicalDriver": "soil_sensor",
+      "forbiddenDrivers": ["climate_sensor", "soil_sensor_ec", "zigbee_universal"],
+      "forbidMode": "couple",
+      "protocol": "tuya_dp",
+      "notes": "ZHA#5276 Excellux ZS-300TF/ZS-301 soil fertility",
+      "sources": ["zha-device-handlers#5276", "P2273"],
+      "tracks": { "master": { "static": true, "dynamic": true }, "stable": { "static": true, "dynamic": false } }
+    },
+    {
+      "id": "p2274-6cmeijtd-nous-a11z-strip",
+      "mfr": ["_TZ3210_6cmeijtd", "_tz3210_6cmeijtd"],
+      "productId": ["TS011F"],
+      "canonicalDriver": "socket_power_strip",
+      "forbiddenDrivers": ["usb_dongle_triple", "plug", "switch_1gang"],
+      "forbidMode": "couple",
+      "protocol": "zcl",
+      "notes": "Nous A11Z 3-gang power strip — magic packet + multi-ep; Z2M#30799 / ZHA#5185",
+      "sources": ["zigbee2mqtt#30799", "zha-device-handlers#5185", "P2274"],
+      "tracks": { "master": { "static": true, "dynamic": true }, "stable": { "static": true, "dynamic": false } }
+    },
+    {
+      "id": "p2276-rccxox8p-smoke-not-climate",
+      "mfr": ["_TZE284_rccxox8p", "_TZE200_rccxox8p", "_TZE204_rccxox8p", "_TZE283_rccxox8p"],
+      "productId": ["TS0601"],
+      "canonicalDriver": "smoke_sensor2",
+      "forbiddenDrivers": ["climate_sensor", "soil_sensor", "zigbee_universal"],
+      "forbidMode": "couple",
+      "protocol": "hybrid",
+      "notes": "ZHA#4687 PA-44Z smoke IAS+EF00 DP15 battery — was stolen by climate_sensor",
+      "sources": ["zha-device-handlers#4687", "P2276"],
+      "tracks": { "master": { "static": true, "dynamic": true }, "stable": { "static": true, "dynamic": false } }
+    },
+    {
+      "id": "p2276-dikb3dp6-3phase-not-climate",
+      "mfr": ["_TZE284_dikb3dp6", "_TZE200_dikb3dp6", "_TZE204_dikb3dp6"],
+      "productId": ["TS0601"],
+      "canonicalDriver": "energy_meter_3phase",
+      "forbiddenDrivers": ["climate_sensor", "smart_rcbo", "din_rail_meter"],
+      "forbidMode": "couple",
+      "protocol": "tuya_dp",
+      "notes": "ZHA#3955 Zemismart 3-phase energy meter — was stolen by climate_sensor",
+      "sources": ["zha-device-handlers#3955", "P2276"],
+      "tracks": { "master": { "static": true, "dynamic": true }, "stable": { "static": true, "dynamic": false } }
+    },
+    {
+      "id": "p2277-lpedvtvr-thermostat-not-climate",
+      "mfr": ["_TZE204_lpedvtvr", "_tze204_lpedvtvr"],
+      "productId": ["TS0601"],
+      "canonicalDriver": "wall_thermostat",
+      "forbiddenDrivers": ["climate_sensor", "device_radiator_valve", "zigbee_universal"],
+      "forbidMode": "couple",
+      "protocol": "tuya_dp",
+      "notes": "ZHA#3666 Moes Star Ring thermostat — was stolen by climate_sensor",
+      "sources": ["zha-device-handlers#3666", "P2277"],
+      "tracks": { "master": { "static": true, "dynamic": true }, "stable": { "static": true, "dynamic": false } }
+    },
+    {
+      "id": "p2277-xalsoe3m-bht002-not-trv",
+      "mfr": ["_TZE204_xalsoe3m", "_TZE200_xalsoe3m"],
+      "productId": ["TS0601"],
+      "canonicalDriver": "wall_thermostat",
+      "forbiddenDrivers": ["device_radiator_valve", "climate_sensor", "zigbee_universal"],
+      "forbidMode": "couple",
+      "protocol": "tuya_dp",
+      "notes": "Z2M#25372 Moes BHT-002 sibling of aoclfnxz — was on TRV driver",
+      "sources": ["zigbee2mqtt#25372", "zha-device-handlers#3788", "P2277"],
+      "tracks": { "master": { "static": true, "dynamic": true }, "stable": { "static": true, "dynamic": false } }
+    },
+    {
+      "id": "p2277-te34fjg4-ts1002-scene4",
+      "mfr": ["_TZ3000_te34fjg4", "_tz3000_te34fjg4"],
+      "productId": ["TS1002"],
+      "canonicalDriver": "scene_switch_4",
+      "forbiddenDrivers": ["bulb_rgbw", "bulb_dimmable", "switch_4gang"],
+      "forbidMode": "couple",
+      "protocol": "zcl",
+      "notes": "ZHA#5224 Arlight 4-button scene panel 0xFD — mains, strip phantom battery",
+      "sources": ["zha-device-handlers#5224", "P2277"],
+      "tracks": { "master": { "static": true, "dynamic": true }, "stable": { "static": true, "dynamic": false } }
+    },
+    {
+      "id": "p2278-ogx8u5z6-trv-cal-tenths",
+      "mfr": ["_TZE204_ogx8u5z6", "_TZE284_ogx8u5z6", "_tze204_ogx8u5z6", "_tze284_ogx8u5z6"],
+      "productId": ["TS0601"],
+      "canonicalDriver": "device_radiator_valve",
+      "forbiddenDrivers": ["climate_sensor", "wall_thermostat", "zigbee_universal"],
+      "forbidMode": "couple",
+      "protocol": "tuya_dp",
+      "notes": "P2278 me167 profile + DP47 cal ÷10 (ZHA#4124 / Z2M#25199 user firmware); other ME167 stay whole °C",
+      "sources": ["zha-device-handlers#4124", "zigbee2mqtt#25199", "P2278"],
+      "tracks": { "master": { "static": true, "dynamic": true }, "stable": { "static": true, "dynamic": false } }
+    },
+    {
+      "id": "p2279-1fuxihti-cover-not-climate",
+      "mfr": ["_TZE200_1fuxihti", "_TZE204_1fuxihti", "_TZE284_1fuxihti"],
+      "productId": ["TS0601"],
+      "canonicalDriver": "curtain_motor",
+      "forbiddenDrivers": ["climate_sensor", "wall_curtain_switch", "zigbee_universal"],
+      "forbidMode": "couple",
+      "protocol": "tuya_dp",
+      "notes": "Z2M cover family — TZE284 sibling was stolen by climate_sensor",
+      "sources": ["zigbee-herdsman-converters tuya TS0601_cover", "P2279"],
+      "tracks": { "master": { "static": true, "dynamic": true }, "stable": { "static": true, "dynamic": false } }
+    },
+    {
+      "id": "p2279-mvtclclq-usb-not-dimmer",
+      "mfr": ["_TZE204_mvtclclq", "_TZE284_mvtclclq", "_TZE200_mvtclclq"],
+      "productId": ["TS0601"],
+      "canonicalDriver": "usb_outlet_advanced",
+      "forbiddenDrivers": ["wall_dimmer_tuya", "device_radiator_valve", "climate_sensor"],
+      "forbidMode": "couple",
+      "protocol": "tuya_dp",
+      "notes": "Z2M DS-1450WN BSEED 2plug+2USB — TZE200 was wrongly on wall_dimmer",
+      "sources": ["zigbee2mqtt#31275", "zigbee2mqtt#28937", "P2279"],
+      "tracks": { "master": { "static": true, "dynamic": true }, "stable": { "static": true, "dynamic": false } }
+    },
+    {
+      "id": "p2282-mrpevh8p-ts0041-button",
+      "mfr": [
+        "_TZ3000_mrpevh8p",
+        "_tz3000_mrpevh8p",
+        "_TZ3000_MRPEVH8P",
+        "_tz3000_MRPEVH8P"
+      ],
+      "productId": ["TS0041"],
+      "canonicalDriver": "button_wireless_1",
+      "forbiddenDrivers": [
+        "switch_1gang",
+        "scene_switch_4",
+        "button_wireless_4",
+        "button_wireless_4_ts0041",
+        "climate_sensor",
+        "button_wireless",
+        "wall_switch_1gang_1way"
+      ],
+      "forbidMode": "couple",
+      "protocol": "zcl",
+      "notes": "P2285: Z2M SH-SC07 / RSH-SC021 / Johan #1120. Interview EP1–4 (phantom) but 1 physical button. RX: genOnOff mfr 0xFD (single=0/double=1/hold=2) + E000; magic packet; NEVER 0x8004; NEVER EF00 TX; battery EP1 only (EP2–4=253 garbage); Z2M #8072 no battery reporting. fingerprints.json must not case-route MRPEVH8P→switch_1gang.",
+      "sources": [
+        "forum-140352-2202",
+        "diag-95a7c6e5",
+        "zigbee-herdsman-converters#6225",
+        "JohanBendz#1120",
+        "Hubitat-kkossev-TS004F",
+        "Z2M-TS0041-SH-SC07",
+        "P2282",
+        "P2285"
+      ],
+      "tracks": { "master": { "static": true, "dynamic": true }, "stable": { "static": true, "dynamic": false } }
+    },
+    {
+      "id": "p2285-sh-sc07-siblings-ts0041",
+      "mfr": ["_TZ3000_5bpeda8u", "_tz3000_5bpeda8u", "_TZ3000_b4awzgct", "_tz3000_b4awzgct"],
+      "productId": ["TS0041"],
+      "canonicalDriver": "button_wireless_1",
+      "forbiddenDrivers": ["button_wireless_4_ts0041", "switch_1gang", "scene_switch_1", "scene_switch_4"],
+      "forbidMode": "couple",
+      "protocol": "zcl",
+      "notes": "Z2M whitelabel SH-SC07 same as mrpevh8p — 1-button not 4_ts0041",
+      "sources": ["zigbee2mqtt-TS0041-whitelabel", "P2285"],
+      "tracks": { "master": { "static": true, "dynamic": true }, "stable": { "static": true, "dynamic": false } }
+    },
+    {
+      "id": "p2282-hobeian-3315s-water-not-soil",
+      "mfr": ["HOBEIAN", "hobeian", "Hobeian"],
+      "productId": ["3315-S", "3315-Seu"],
+      "canonicalDriver": "water_leak_sensor",
+      "forbiddenDrivers": ["soil_sensor", "rain_sensor", "climate_sensor", "air_purifier_soil"],
+      "forbidMode": "couple",
+      "protocol": "ias_zone",
+      "notes": "Peter #2202 diag 95a7c6e5 — false MISATTR soil via rain placement. Keep water_leak; never invent k4ej pid onto this tile.",
+      "sources": ["forum-140352-2202", "diag-95a7c6e5", "P2282"],
       "tracks": { "master": { "static": true, "dynamic": true }, "stable": { "static": true, "dynamic": false } }
     }
   ]

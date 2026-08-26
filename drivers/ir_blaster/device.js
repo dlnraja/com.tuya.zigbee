@@ -1635,6 +1635,15 @@ class IrBlasterDevice extends TuyaZigbeeDevice {
     this._receiveBuffers = {};
     super.onDeleted();
   }
+
+  /** Alias for CapabilityCommandRouter / flow helpers (D031) */
+  async _sendIR(irCode, options = {}) {
+    return this.sendIRCode(irCode, options);
+  }
+
+  async sendIR(irCode, options = {}) {
+    return this.sendIRCode(irCode, options);
+  }
 }
 
 module.exports = IrBlasterDevice;

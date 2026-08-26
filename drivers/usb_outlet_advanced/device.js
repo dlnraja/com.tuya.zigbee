@@ -58,6 +58,34 @@ class USBOutletAdvancedDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
    * Based on Z2M TS011F and similar devices
    */
   get dpMappings() {
+    // WHY P2272: Z2M#32901 MakeGood dual GPO — DP20-23 metering triplet + DP101 child_lock (not LED)
+    const mfr = String(this.getSetting?.('zb_manufacturer_name') || this._manufacturerName || '');
+    if (/lq0ffndf/i.test(mfr)) {
+      return {
+        1: { capability: 'onoff', transform: boolean() },
+        2: { capability: 'onoff.socket2', transform: boolean() },
+        20: { capability: 'meter_power', smartDivisor: true },
+        21: { capability: 'measure_current', smartDivisor: true },
+        22: { capability: 'measure_power', smartDivisor: true },
+        23: { capability: 'measure_voltage', smartDivisor: true },
+        // child_lock DP101 — no Homey cap; ignore rather than steal onoff.led
+      };
+    }
+    // WHY P2279: Z2M DS-1450WN (_TZE204/284_mvtclclq) — DP1/2 USB, DP3/4 plugs (not TRV/dimmer)
+    if (/mvtclclq/i.test(mfr)) {
+      return {
+        1: { capability: 'onoff.usb1', transform: boolean() },
+        2: { capability: 'onoff.usb2', transform: boolean() },
+        3: { capability: 'onoff', transform: boolean() },
+        4: { capability: 'onoff.socket2', transform: boolean() },
+        16: { capability: 'onoff.led', transform: boolean() },
+        21: { capability: 'measure_current', smartDivisor: true },
+        22: { capability: 'measure_power', smartDivisor: true },
+        23: { capability: 'measure_voltage', smartDivisor: true },
+        105: { capability: 'meter_power', smartDivisor: true },
+        106: { capability: 'child_lock', transform: boolean() },
+      };
+    }
     return {
       // 
       // SOCKET/RELAY CONTROL

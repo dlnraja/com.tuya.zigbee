@@ -145,11 +145,11 @@ Generated 2026-08-19T08:50:15.322Z from registry (54 cases) × compound DB (209 
 - Couple: `_TZE284_mvtclclq` + TS0601
 - Protocol: tuya_ef00
 - Z2M local pids for mfr: TS0601 ✓ overlap
-- Compound `_TZE284_mvtclclq|TS0601`: tuya_dp DP {"1":"onoff","2":"onoff.gang2","3":"onoff.usb"} Z2M DS-1450WN / BSEED USB+sockets. DP1-3 not TRV. z2m#31275
-- Compound `_TZE204_mvtclclq|TS0601`: tuya_dp DP {"1":"onoff","2":"onoff.gang2","3":"onoff.usb"}
+- Compound `_TZE284_mvtclclq|TS0601`: tuya_dp DP {"1":"onoff.usb1","2":"onoff.usb2","3":"onoff","4":"onoff.socket2"} Z2M DS-1450WN / BSEED USB+sockets (P2279). Forbid wall_dimmer.
+- Compound `_TZE204_mvtclclq|TS0601`: tuya_dp DP {"1":"onoff.usb1","2":"onoff.usb2","3":"onoff","4":"onoff.socket2"}
 - Compose: class=socket eps=1 EF00=true IAS=false batteries=mains?
-- Notes: Z2M DS-1450WN USB/plug switch with power — not TRV or wireless button.
-- Sources: z2m#31275, P167
+- Notes: Z2M DS-1450WN USB/plug switch with power — not TRV, wireless button, or wall dimmer. Metering DP21–23/105.
+- Sources: z2m#31275, z2m#28937, P167, P2279
 
 ### `rgb-bulb-jaap6jeb` → `bulb_rgbw`
 

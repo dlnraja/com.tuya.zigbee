@@ -934,12 +934,35 @@ node --test test/critical/poll-control-policy.test.js
 Enrich / Blakadder / forum appliers must call anti-bot **after** apply; matrix gate
 catches invent regressions anti-bot alone might miss (wrong-PID catalog force).
 
-### P2268 / P2270 — Parallel discussion harvest (ZHA / Z2M / ZHC)
+### P2268 / P2270 / P2269 — Parallel discussion harvest + anti-spaghetti
+- **Machine SSOT lineage:** [`config/enrichment/discovery-lineage.json`](../config/enrichment/discovery-lineage.json) — past (P102–P2266) · recent (P2267 E002, P2268 parallel) · present (P2269–P2281).
+- Gate: `npm run check:discovery-lineage` · PhaseRunner softFail `gate-discovery-lineage` + sync `remind-e002-taxonomy-p2267`.
 - Shadow only (no forum POST). Curated discoveries: `reports/discussion-harvest-*/DISCOVERIES.json` (≥50).
-- Scripts: `npm run discover:discussions` · `npm run check:p2270` · `npm run apply:parallel-couples`.
-- Enrich phases (`config/enrichment/phases.json` sync): mega z2m/zha softFail + `discover-discussions-p2270` + `coverage-dp-cluster-flow`.
-- Comms ranking: `lib/protocol/CommunicationPathFinder.js` + `docs/architecture/COMM_PATHFINDING.md`.
+- Scripts: `npm run discover:discussions` · `npm run discover:apply-min` · `npm run discover:regen-md` · `npm run check:p2269` · `npm run check:p2270` · `npm run apply:parallel-couples`.
+- Regen MD: `node tools/ci/p2270-regenerate-discoveries-md.js` (keeps count ↔ array sync).
+- Enrich phases (`config/enrichment/phases.json` sync): mega z2m/zha softFail + `discover-discussions-p2270` + regen-md + `discover-apply-min-p2270` + `apply-parallel-couples-p2268` + E002 remind + `sync-dp-couple-knowledge` + `coverage-dp-cluster-flow`; gates softFail `gate-p2269` / `gate-p2270` / `gate-p2278` / `gate-p2279` / `gate-discovery-lineage` + hard `p2138`.
+- GHA softFail wiring: `auto-enrich-closed-loop.yml` · `forum-poll.yml` · `project-resilience.yml` · `recurrent-orchestrator.yml` run `--phase=sync` + lineage gate.
+- GHA hard: `unified-ci.yml` runs lineage + p2269/p2270 tests after P2138.
+- Comms ranking: `lib/protocol/CommunicationPathFinder.js` + `docs/architecture/COMM_PATHFINDING.md` (**keep**).
+- Lexicon: `lib/zigbee/ZclClusterLexicon.js` E002=`manuSpecificTuya2` (P2267) (**keep**).
+- SSOT map: `docs/architecture/SPAGHETTI_MAP.md` + PROTOCOL/BATTERY/TIME/PARSER_SSOT + DeviceFusionHooks split (**keep** WHY).
 - Never invent productId/DP; tier D = watchlist only.
+
+#### Discovery lineage (past → recent → present)
+
+| Era | Patches | What workflows must remember |
+|-----|---------|------------------------------|
+| Past | P102–P2200 | Forum SHADOW; REPLY_TOPICS=140352 dry-run; sacred mfr+pid; no AI paste |
+| Past | P2138 / P2201–P2207 | BSEED dimmer 0–1000; contact no TS0601; IAS/Tongou/DIN locks |
+| Past | P2206 / P2227–P2228 | Privacy redactor; AI forfait; CI≠Homey bundle |
+| Recent | P2267 | E000/E001/E002 taxonomy in lexicon + docs |
+| Recent | P2268 | Parallel ZHA/Z2M couple unsteals + apply script |
+| Present | P2269–P2270 | Anti-spaghetti SSOT + harvest ≥50 + PathFinder |
+| Present | P2271–P2279 | Polarity / strip / curtain / smoke / meter / TRV cal / cover+USB |
+| Present | P2280–P2281 | Dual-app inconsistency sweep + workflow lineage SSOT |
+
+- Extra gates: `npm run check:p2278` · `npm run check:p2279` · `npm run check:discovery-lineage`.
+- Dual-app: P227x couple unsteals + TRV cal TX/RX = **BOTH**. PathFinder / Daylight / mega feature managers = **MASTER_ONLY**.
 
 ### P2201 — Homey cartesian / contact TS0601 (2026-08-20)
 - Never put **TS0601** on `contact_sensor` compose (pairs with every mfr → climate collisions).
