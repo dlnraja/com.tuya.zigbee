@@ -33,7 +33,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.654 |
+| **App Version** | v9.0.655 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,365 |
 | **Pairing Variants** | 16,536 (4 case combos per fingerprint) |
@@ -102,6 +102,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.655** | Reliability improvements. |
 | **v9.0.654** | Reliability improvements. |
 | **v9.0.653** | Reliability improvements. |
 | **v9.0.652** | Reliability improvements. |
@@ -113,7 +114,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.646** | Reliability improvements. |
 | **v9.0.645** | Reliability improvements. |
 | **v9.0.644** | P2244/P2245 remote sacred couples + irrigation valve compose; Athom republish after 9.0.643 processing_failed. |
-| **v9.0.643** | Tongou DIN meter pairing lock (not Smart RCBO); block DP6 raw→humidity; button flow ID heuristics; resilience critical-first inventory; . |
 
 <!-- CHANGELOG_END -->
 
