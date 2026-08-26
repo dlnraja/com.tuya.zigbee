@@ -86,6 +86,19 @@
         "args": ["--only=zha", "--timeout=120"],
         "softFail": true,
         "timeout": 180000
+      },
+      {
+        "id": "discover-discussions-p2270",
+        "script": "tools/ci/p2270-discussion-harvest.js",
+        "args": [],
+        "softFail": true
+      },
+      {
+        "id": "coverage-dp-cluster-flow",
+        "script": "tools/ci/coverage-dp-cluster-flow.js",
+        "args": [],
+        "softFail": true,
+        "timeout": 300000
       }
     ],
     "investigate": [

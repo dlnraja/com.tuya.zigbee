@@ -3101,6 +3101,54 @@
       "notes": "ZHA #5117 Moes 3-phase — Z2M converter still absent; soft route only, no invented DPs",
       "sources": ["zha-device-handlers#5117", "P2268"],
       "tracks": { "master": { "static": true, "dynamic": true }, "stable": { "static": true, "dynamic": false } }
+    },
+    {
+      "id": "p2270-402vrq2i-knob-not-4gang",
+      "mfr": ["_TZ3000_402vrq2i", "_tz3000_402vrq2i"],
+      "productId": ["TS004F"],
+      "canonicalDriver": "smart_knob",
+      "forbiddenDrivers": ["switch_4_gang_metering", "switch_4gang", "scene_switch_4"],
+      "forbidMode": "couple",
+      "protocol": "zcl",
+      "notes": "ZHA#5261 rotary knob — was stolen by switch_4_gang_metering cartesian TS004F",
+      "sources": ["zha-device-handlers#5261", "P2270"],
+      "tracks": { "master": { "static": true, "dynamic": true }, "stable": { "static": true, "dynamic": false } }
+    },
+    {
+      "id": "p2270-hlx9tnzb-dimmer-not-1gang",
+      "mfr": ["_TZE204_hlx9tnzb"],
+      "productId": ["TS0601"],
+      "canonicalDriver": "dimmer_1_gang_tuya",
+      "forbiddenDrivers": ["switch_1gang", "water_leak_sensor", "climate_sensor"],
+      "forbidMode": "couple",
+      "protocol": "tuya_dp",
+      "notes": "Z2M#32815 Moes dimmer (mesh flood after reboot) — not switch_1gang",
+      "sources": ["zigbee2mqtt#32815", "P2270"],
+      "tracks": { "master": { "static": true, "dynamic": true }, "stable": { "static": true, "dynamic": false } }
+    },
+    {
+      "id": "p2270-gnpflcoq-4in1-mmwave",
+      "mfr": ["_TZE284_gnpflcoq"],
+      "productId": ["TS0601"],
+      "canonicalDriver": "motion_sensor_radar_mmwave",
+      "forbiddenDrivers": ["climate_sensor", "presence_sensor_radar", "zigbee_universal"],
+      "forbidMode": "couple",
+      "protocol": "tuya_dp",
+      "notes": "ZHA#5252 4in1 — DP1 presence inverted (0=occupied). Prefer mmwave driver.",
+      "sources": ["zha-device-handlers#5252", "P2270"],
+      "tracks": { "master": { "static": true, "dynamic": true }, "stable": { "static": true, "dynamic": false } }
+    },
+    {
+      "id": "p2270-fqm2sfpe-trv-soft",
+      "mfr": ["_TZE284_fqm2sfpe"],
+      "productId": ["TS0601"],
+      "canonicalDriver": "device_radiator_valve",
+      "forbiddenDrivers": ["climate_sensor", "wall_thermostat"],
+      "forbidMode": "couple",
+      "protocol": "tuya_dp",
+      "notes": "Z2M#32931 TRV soft lock — no invented DPs",
+      "sources": ["zigbee2mqtt#32931", "P2270"],
+      "tracks": { "master": { "static": true, "dynamic": true }, "stable": { "static": true, "dynamic": false } }
     }
   ]
 }

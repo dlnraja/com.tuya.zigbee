@@ -1,4 +1,11 @@
 {
+  "9.0.660": {
+    "en": "Improved device matching from Zigbee community research; smarter Tuya/ZCL protocol path selection.",
+    "fr": "Amelioration matching appareils (recherches Zigbee); selection de chemin protocole Tuya/ZCL plus intelligente."
+  },
+  "9.0.659": {
+    "en": "Reliability improvements."
+  },
   "9.0.501": {
     "en": "Improved sensor flow conditions and actuator Homey UI classes. Hybrid heater flows use capability listeners.",
     "fr": "Amélioration des conditions Flow capteurs et des classes UI actionneurs. Flows chauffage hybride via listeners de capacités."
@@ -2512,9 +2519,6 @@
     "en": "Reliability improvements."
   },
   "9.0.658": {
-    "en": "Reliability improvements."
-  },
-  "9.0.659": {
     "en": "Reliability improvements."
   }
 }
