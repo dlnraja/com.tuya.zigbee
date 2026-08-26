@@ -52,7 +52,11 @@
         "en": "Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode (the LED should blink green)."
       }
     },
-    "manufacturerName": []
+    "manufacturerName": [
+      "_TYZB01_4TLKSK8A",
+      "_TYZB01_4tlksk8a",
+      "_tyzb01_4tlksk8a"
+    ]
   },
   "version": "1.0.0",
   "capabilitiesOptions": {
