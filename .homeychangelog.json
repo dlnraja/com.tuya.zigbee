@@ -2528,5 +2528,8 @@
   },
   "9.0.663": {
     "en": "Improved wireless 1-button remotes (TS0041 / SH-SC07): more reliable press detection and flows. Fixed button RX chain so physical presses are not dropped. Battery and pairing hardening for sleepy remotes."
+  },
+  "9.0.664": {
+    "en": "Improved wireless 1-button remotes (TS0041): reliable press detection. Fixed button RX chain so physical presses are not dropped. Publish payload trim (backups) to reduce Athom processing_failed."
   }
 }
