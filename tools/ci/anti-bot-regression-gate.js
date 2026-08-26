@@ -496,6 +496,18 @@ const REQUIRED = [
     pids: ['ZG-305Z'],
   },
   {
+    id: 'p2282-hobeian-3315s-water',
+    driver: 'water_leak_sensor',
+    mfrs: ['HOBEIAN', 'hobeian', 'Hobeian'],
+    pids: ['3315-S', '3315-Seu'],
+  },
+  {
+    id: 'p2259-hobeian-zg223z-rain',
+    driver: 'rain_sensor',
+    mfrs: ['HOBEIAN', 'hobeian', 'Hobeian'],
+    pids: ['ZG-223Z'],
+  },
+  {
     id: 'p108-wkr3jqmr-switch4',
     driver: 'switch_4gang',
     mfrs: ['_TZ3000_wkr3jqmr'],

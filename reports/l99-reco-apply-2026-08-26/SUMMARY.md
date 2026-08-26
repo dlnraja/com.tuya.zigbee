@@ -19,7 +19,8 @@
 | SoftHypothesis MISSING_PID invent | — | **hold** (doctrine: never invent) |
 | D024 TH05-z ZigbeeTLc custom flash | — | **watch** (upstream only) |
 | SergeP Nous/SoPhos `_TZ3000_v5498kdm` | — | **doNotTouch** |
-| Forum / PM replies | — | **never** (T157628) |
+| P169 HOBEIAN compose restore + couple-aware align strip | BOTH | **done** |
+| P2282 Peter HOBEIAN+3315-S water anti-bot REQUIRED | BOTH | **done** |
 
 ## Verify (local green)
 

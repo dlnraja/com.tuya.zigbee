@@ -153,13 +153,50 @@ function stripMfrFromCompose(driverId, mfrNorm) {
   return removed;
 }
 
+function stripPidFromCompose(driverId, pidNorm) {
+  const p = path.join(ROOT, 'drivers', driverId, 'driver.compose.json');
+  if (!fs.existsSync(p)) return 0;
+  const j = JSON.parse(fs.readFileSync(p, 'utf8'));
+  const list = j.zigbee?.productId;
+  if (!Array.isArray(list)) return 0;
+  const next = list.filter((pid) => norm(pid) !== pidNorm);
+  const removed = list.length - next.length;
+  if (!removed) return 0;
+  j.zigbee.productId = next;
+  if (APPLY) fs.writeFileSync(p, `${JSON.stringify(j, null, 2)}\n`);
+  return removed;
+}
+
 function enforceRegistryCompose(registry, changes, highSeverity) {
   for (const c of registry.cases || []) {
     const forbidden = [].concat(c.forbiddenDrivers || []);
     const mfrs = [].concat(c.mfr || []);
+    const pids = sortedPids(c.productId);
+    const coupleMode = String(c.forbidMode || '').toLowerCase() === 'couple';
     for (const m of mfrs) {
       const nm = norm(m);
       for (const bad of forbidden) {
+        if (bad === c.canonicalDriver) continue;
+        // WHY(P2250/P2282): HOBEIAN spans climate/soil/presence/water — never strip bare brand
+        // from sibling drivers; remove conflicting productIds from forbidden drivers only.
+        if (coupleMode && pids.length) {
+          for (const pid of pids) {
+            const n = stripPidFromCompose(bad, norm(pid));
+            if (n) {
+              changes.push({
+                severity: 'medium',
+                action: 'registry_compose_strip_pid',
+                mfr: m,
+                pid,
+                from: bad,
+                to: c.canonicalDriver,
+                removed: n,
+                caseId: c.id,
+              });
+            }
+          }
+          continue;
+        }
         const n = stripMfrFromCompose(bad, nm);
         if (n) {
           changes.push({
