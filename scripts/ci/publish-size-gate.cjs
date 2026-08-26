@@ -19,12 +19,14 @@ const JSON_MODE = ARGS.has('--json');
 const STRICT = ARGS.has('--strict');
 const CHECK_FINAL = ARGS.has('--final') || process.env.HOMEY_CHECK_FINAL_PUBLISH_DIR === '1';
 
+// WHY: defaults must match prepare-publish.js (50) + auto-fix-and-publish.yml.
+// Stale 26/34 defaults blocked local commits while Athom still accepted ~9 MB gz.
 const LIMITS = {
   appJsonMB: numberEnv('HOMEY_APP_JSON_MAX_MB', 4),
-  publishUncompressedMB: numberEnv('HOMEY_PUBLISH_MAX_UNCOMPRESSED_MB', 34),
-  publishSourceMB: numberEnv('HOMEY_PUBLISH_SOURCE_MAX_MB', 24),
-  publishFinalMB: numberEnv('HOMEY_PUBLISH_FINAL_MAX_MB', 24),
-  archiveWarnMB: numberEnv('HOMEY_ARCHIVE_WARN_MB', 7),
+  publishUncompressedMB: numberEnv('HOMEY_PUBLISH_MAX_UNCOMPRESSED_MB', 50),
+  publishSourceMB: numberEnv('HOMEY_PUBLISH_SOURCE_MAX_MB', 50),
+  publishFinalMB: numberEnv('HOMEY_PUBLISH_FINAL_MAX_MB', 40),
+  archiveWarnMB: numberEnv('HOMEY_ARCHIVE_WARN_MB', 10),
   archiveMaxMB: numberEnv('HOMEY_ARCHIVE_MAX_MB', 20),
 };
 

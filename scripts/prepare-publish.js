@@ -100,6 +100,8 @@ function trimPublishOnlyFiles() {
     'data/forum-cache',
     'data/diagnostics',
     'data/backups',
+    // WHY: root backups/ inflate Athom payload
+    'backups',
   ];
   for (const rel of DEV_DIRS) {
     const p = path.join(destDir, rel);
@@ -247,6 +249,8 @@ function sanitizeSourceTree() {
     'tools/shadow-mode/tickets', 'tools/shadow-mode/.cache',
     'data/intel-harvest', 'data/community-sync', 'data/temp_desktop_cleanup',
     'data/archive', 'data/forum-cache', 'data/diagnostics', 'data/backups',
+    // WHY: root backups/ inflate Athom payload
+    'backups',
   ];
   for (const rel of devDirs) {
     const p = path.join(srcDir, rel);
