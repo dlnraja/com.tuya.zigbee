@@ -615,6 +615,15 @@ Generated 2026-08-19T08:50:15.322Z from registry (54 cases) × compound DB (209 
 - Notes: TZ3210 TS011F metering plug sibling of okaz9tjs. ZCL electrical+metering; not climate. Pid TS011F is ambiguous without mfr.
 - Sources: homesuite-field
 
+### `p2266-bjawzodf-ty0201-temu` → `lcdtemphumidsensor`
+
+- Couple: `_TZ3000_bjawzodf` + TY0201 (also TS0201 in Z2M WSD500A list)
+- Protocol: zcl EP1
+- Retail: Temu round white LCD temp/humidity (HACF #38762)
+- Compound: EP1 clusters 0/1/3/0x0402/0x0405 — NOT Neo qaaysllp (no lux, no EP2, no 0xE002)
+- Notes: Needs Tuya magic 0xFFFE. Sibling `_TZE200_bjawzodf`+TS0601 is EF00 → `climate_sensor` (different couple).
+- Sources: hacf-38762, zha-device-handlers#2862, z2m-WSD500A, P2266
+
 ### `p2264-qaaysllp-neo-th02b` → `lcdtemphumidluxsensor`
 
 - Couple: `_TZ3000_qaaysllp` + TS0201

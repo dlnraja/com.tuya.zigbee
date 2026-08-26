@@ -2966,6 +2966,58 @@
           "dynamic": false
         }
       }
+    },
+    {
+      "id": "p2266-bjawzodf-ty0201-temu",
+      "mfr": [
+        "_TZ3000_bjawzodf",
+        "_tz3000_bjawzodf",
+        "_TZ3000_BJAWZODF"
+      ],
+      "productId": [
+        "TY0201",
+        "TS0201"
+      ],
+      "canonicalDriver": "lcdtemphumidsensor",
+      "forbiddenDrivers": [
+        "lcdtemphumidsensor_3",
+        "climate_sensor",
+        "curtain_motor_shutter",
+        "soil_sensor",
+        "lcdtemphumidluxsensor",
+        "zigbee_universal"
+      ],
+      "forbidMode": "couple",
+      "protocol": "zcl",
+      "clusters": {
+        "1": [0, 1, 3, 1026, 1029]
+      },
+      "energy": {
+        "batteries": ["AAA", "AAA"],
+        "notes": "Round white Temu LCD sensor"
+      },
+      "retailNames": [
+        "Temu Zigbee temp humidity display",
+        "Tuya WSD500A",
+        "TH02Z class"
+      ],
+      "notes": "HACF #38762 + ZHA #2862: EP1 ZCL temp/humidity (0x0402/0x0405), not Neo qaaysllp EP2/lux. Needs magic 0xFFFE (Z2M WSD500A). Distinct from _TZE200_bjawzodf|TS0601 EF00 climate.",
+      "sources": [
+        "hacf-38762",
+        "zha-device-handlers#2862",
+        "z2m-WSD500A",
+        "P2266"
+      ],
+      "tracks": {
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
+      }
     }
   ]
 }

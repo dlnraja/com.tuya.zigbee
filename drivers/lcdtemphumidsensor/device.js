@@ -4,6 +4,8 @@ const UnifiedBatteryHandler = require('../../lib/battery/UnifiedBatteryHandler')
 const GlobalTimeSyncEngine = require('../../lib/tuya/GlobalTimeSyncEngine');
 const ManufacturerNameHelper = require('../../lib/helpers/ManufacturerNameHelper');
 const { includesCI } = require('../../lib/utils/CaseInsensitiveMatcher');
+const { sendTuyaMagicPacket } = require('../../lib/zigbee/TuyaMagicPacket');
+const { safeSetTimeout } = require('../../lib/utils/safe-timers');
 
 const DIRECT_HUMIDITY_MANUFACTURERS = [
   '_TZE200_vvmbj46n',
@@ -13,13 +15,13 @@ const DIRECT_HUMIDITY_MANUFACTURERS = [
 ];
 
 /**
- * LCD Temperature & Humidity Sensor Device - v7.4.4
+ * LCD Temperature & Humidity Sensor Device - v7.4.4 + P2266
  *
- * For TS0201 LCD display temperature/humidity sensors
- * Manufacturers: _TYZB01_*, _TZ2000_*, _TZE284_vvmbj46n*
- *
- * Uses UnifiedSensorBase for full ZCL + Tuya DP support
- * Supports: Temperature, Humidity, Battery, Time Synchronization
+ * Couples: TS0201 / TY0201 LCD sensors (ZCL ± EF00 hybrid).
+ * WHY P2266 (HACF #38762 / ZHA #2862): `_TZ3000_bjawzodf`+TY0201 Temu round
+ *      display — ZCL 0x0402/0x0405 on EP1; needs Tuya magic 0xFFFE (Z2M WSD500A).
+ * Contre quoi: humidity missing / no entities (same symptom as Neo qaaysllp family).
+ * Sibling: `_TZE200_bjawzodf`+TS0601 is EF00 climate — different sacred couple.
  */
 class LCDTempHumidSensorDevice extends UnifiedSensorBase {
 
@@ -58,7 +60,26 @@ class LCDTempHumidSensorDevice extends UnifiedSensorBase {
     };
   }
 
+  async _sendLcdMagicPacket(zclNode) {
+    try {
+      const ok = await sendTuyaMagicPacket(this, zclNode, 1, { force: true });
+      this.log(`[LCD] Tuya magic packet ${ok ? 'OK' : 'skipped/unavailable'}`);
+      return ok;
+    } catch (err) {
+      this.log('[LCD] Magic packet deferred:', err.message);
+      return false;
+    }
+  }
+
   async onNodeInit({ zclNode }) {
+    this._zclNode = zclNode;
+
+    // WHY P2266: Z2M WSD500A / ZHA #2862 — enchant before reporting config
+    await this._sendLcdMagicPacket(zclNode);
+    safeSetTimeout(this, () => {
+      this._sendLcdMagicPacket(zclNode).catch(() => {});
+    }, 2500);
+
     // --- Global Time Sync Engine v7.4.4 ---
     // LCD sensors need clock sync for the display to show correct time.
     try {
@@ -118,11 +139,14 @@ class LCDTempHumidSensorDevice extends UnifiedSensorBase {
   }
 
   /**
-   * v7.4.6: Refresh state when device announces itself (rejoin/wakeup)
+   * v7.4.6 + P2266: rejoin → re-enchant magic packet (humidity often silent otherwise)
    */
   async onEndDeviceAnnounce() {
     this.log('[REJOIN] Device announced itself, refreshing state...');
     if (typeof this._updateLastSeen === 'function') {this._updateLastSeen();}
+    if (this._zclNode) {
+      await this._sendLcdMagicPacket(this._zclNode);
+    }
     // Proactive data recovery if supported
     if (this._dataRecoveryManager) {
        this._dataRecoveryManager?.forceRecovery?.();
