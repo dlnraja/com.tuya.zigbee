@@ -32,7 +32,7 @@
       "realMfrsAdded": 5,
       "details": "tmp/synthetic-resolution.json + tmp/pruned21-resolution.json"
     },
-    "lastAlignedAt": "2026-08-24T18:30:58.037Z",
+    "lastAlignedAt": "2026-08-26T20:47:15.279Z",
     "alignTool": "align-mfs-db-intelligent@P169"
   },
   "sources": {
@@ -127985,7 +127985,7 @@
     "lastSacredCoupleEnrichment": "2026-07-13T23:57:58.590Z",
     "fingerprints": 5710,
     "lastUpdate": "2026-07-14",
-    "lastUpdated": "2026-08-26T02:26:12.311Z",
+    "lastUpdated": "2026-08-27T13:28:13.285Z",
     "totalModelIds": 62784,
     "multiPidMfrs": 3299,
     "variantMfrs": 82,
@@ -131244,8 +131244,8 @@
     "modelIdsCount": 31
   },
   "_TZ3000_B4AWZGCT": {
-    "driverId": "button_wireless_4_ts0041",
-    "source": "compose-exclusive",
+    "driverId": "button_wireless_1",
+    "source": "registry:p2285-sh-sc07-siblings-ts0041",
     "modelIds": [
       "TS0041"
     ],
@@ -139176,36 +139176,10 @@
   },
   "_TZ3000_BJAWZODF": {
     "driverId": "lcdtemphumidsensor",
-    "source": "compose-exclusive",
+    "source": "registry:p2266-bjawzodf-ty0201-temu",
     "modelIds": [
-      "CK-TLSR8656-SS5-01(7014)",
-      "Excellux",
-      "RH3052",
-      "SM0201",
-      "SNZB-02",
-      "SNZB-02B",
-      "SNZB-02D",
-      "SNZB-02DR2",
-      "SNZB-02LD",
-      "SNZB-02M",
-      "SNZB-02P",
-      "SNZB-02WD",
-      "TH01",
-      "THS317-ET",
       "TS0201",
-      "TS0202",
-      "TS0222",
-      "TS0601",
-      "TS1201",
-      "TY0201",
-      "WSDCGQ01LM",
-      "WSDCGQ11LM",
-      "WSDCGQ12LM",
-      "ZG-227Z",
-      "ZG-227ZL",
-      "lumi.sensor_ht",
-      "lumi.sensor_ht.agl02",
-      "lumi.weather"
+      "TY0201"
     ],
     "pid": "CK-TLSR8656-SS5-01(7014)",
     "modelIdsCount": 28
@@ -140634,36 +140608,9 @@
   },
   "_TZ3000_QAAYSLLP": {
     "driverId": "lcdtemphumidluxsensor",
-    "source": "compose-exclusive",
+    "source": "registry:p2264-qaaysllp-neo-th02b",
     "modelIds": [
-      "CK-TLSR8656-SS5-01(7014)",
-      "Excellux",
-      "RH3052",
-      "SM0201",
-      "SNZB-02",
-      "SNZB-02B",
-      "SNZB-02D",
-      "SNZB-02DR2",
-      "SNZB-02LD",
-      "SNZB-02M",
-      "SNZB-02P",
-      "SNZB-02WD",
-      "TH01",
-      "THS317-ET",
-      "TS0201",
-      "TS0202",
-      "TS0222",
-      "TS0601",
-      "TS1201",
-      "TY0201",
-      "WSDCGQ01LM",
-      "WSDCGQ11LM",
-      "WSDCGQ12LM",
-      "ZG-227Z",
-      "ZG-227ZL",
-      "lumi.sensor_ht",
-      "lumi.sensor_ht.agl02",
-      "lumi.weather"
+      "TS0201"
     ],
     "pid": "CK-TLSR8656-SS5-01(7014)",
     "modelIdsCount": 28
@@ -142163,37 +142110,10 @@
     "modelIdsCount": 28
   },
   "_TZE200_1FUXIHTI": {
-    "driverId": "climate_sensor",
-    "source": "auto-sync",
+    "driverId": "curtain_motor",
+    "source": "registry:p2279-1fuxihti-cover-not-climate",
     "modelIds": [
-      "CK-TLSR8656-SS5-01(7014)",
-      "Excellux",
-      "RH3052",
-      "SM0201",
-      "SNZB-02",
-      "SNZB-02B",
-      "SNZB-02D",
-      "SNZB-02DR2",
-      "SNZB-02LD",
-      "SNZB-02M",
-      "SNZB-02P",
-      "SNZB-02WD",
-      "TH01",
-      "THS317-ET",
-      "TS0201",
-      "TS0202",
-      "TS0222",
-      "TS0601",
-      "TS1201",
-      "TY0201",
-      "WSDCGQ01LM",
-      "WSDCGQ11LM",
-      "WSDCGQ12LM",
-      "ZG-227Z",
-      "ZG-227ZL",
-      "lumi.sensor_ht",
-      "lumi.sensor_ht.agl02",
-      "lumi.weather"
+      "TS0601"
     ],
     "pid": "CK-TLSR8656-SS5-01(7014)",
     "modelIdsCount": 28
@@ -144082,37 +144002,10 @@
     "modelIdsCount": 28
   },
   "_TZE200_DIKB3DP6": {
-    "driverId": "climate_sensor",
-    "source": "auto-sync",
+    "driverId": "energy_meter_3phase",
+    "source": "registry:p2276-dikb3dp6-3phase-not-climate",
     "modelIds": [
-      "CK-TLSR8656-SS5-01(7014)",
-      "Excellux",
-      "RH3052",
-      "SM0201",
-      "SNZB-02",
-      "SNZB-02B",
-      "SNZB-02D",
-      "SNZB-02DR2",
-      "SNZB-02LD",
-      "SNZB-02M",
-      "SNZB-02P",
-      "SNZB-02WD",
-      "TH01",
-      "THS317-ET",
-      "TS0201",
-      "TS0202",
-      "TS0222",
-      "TS0601",
-      "TS1201",
-      "TY0201",
-      "WSDCGQ01LM",
-      "WSDCGQ11LM",
-      "WSDCGQ12LM",
-      "ZG-227Z",
-      "ZG-227ZL",
-      "lumi.sensor_ht",
-      "lumi.sensor_ht.agl02",
-      "lumi.weather"
+      "TS0601"
     ],
     "pid": "CK-TLSR8656-SS5-01(7014)",
     "modelIdsCount": 28
@@ -151765,37 +151658,10 @@
     "modelIdsCount": 28
   },
   "_TZE204_DIKB3DP6": {
-    "driverId": "climate_sensor",
-    "source": "auto-sync",
+    "driverId": "energy_meter_3phase",
+    "source": "registry:p2276-dikb3dp6-3phase-not-climate",
     "modelIds": [
-      "CK-TLSR8656-SS5-01(7014)",
-      "Excellux",
-      "RH3052",
-      "SM0201",
-      "SNZB-02",
-      "SNZB-02B",
-      "SNZB-02D",
-      "SNZB-02DR2",
-      "SNZB-02LD",
-      "SNZB-02M",
-      "SNZB-02P",
-      "SNZB-02WD",
-      "TH01",
-      "THS317-ET",
-      "TS0201",
-      "TS0202",
-      "TS0222",
-      "TS0601",
-      "TS1201",
-      "TY0201",
-      "WSDCGQ01LM",
-      "WSDCGQ11LM",
-      "WSDCGQ12LM",
-      "ZG-227Z",
-      "ZG-227ZL",
-      "lumi.sensor_ht",
-      "lumi.sensor_ht.agl02",
-      "lumi.weather"
+      "TS0601"
     ],
     "pid": "CK-TLSR8656-SS5-01(7014)",
     "modelIdsCount": 28
@@ -152845,37 +152711,10 @@
     "modelIdsCount": 28
   },
   "_TZE204_LPEDVTVR": {
-    "driverId": "climate_sensor",
-    "source": "auto-sync",
+    "driverId": "wall_thermostat",
+    "source": "registry:p2277-lpedvtvr-thermostat-not-climate",
     "modelIds": [
-      "CK-TLSR8656-SS5-01(7014)",
-      "Excellux",
-      "RH3052",
-      "SM0201",
-      "SNZB-02",
-      "SNZB-02B",
-      "SNZB-02D",
-      "SNZB-02DR2",
-      "SNZB-02LD",
-      "SNZB-02M",
-      "SNZB-02P",
-      "SNZB-02WD",
-      "TH01",
-      "THS317-ET",
-      "TS0201",
-      "TS0202",
-      "TS0222",
-      "TS0601",
-      "TS1201",
-      "TY0201",
-      "WSDCGQ01LM",
-      "WSDCGQ11LM",
-      "WSDCGQ12LM",
-      "ZG-227Z",
-      "ZG-227ZL",
-      "lumi.sensor_ht",
-      "lumi.sensor_ht.agl02",
-      "lumi.weather"
+      "TS0601"
     ],
     "pid": "CK-TLSR8656-SS5-01(7014)",
     "modelIdsCount": 28
@@ -155312,37 +155151,10 @@
     "modelIdsCount": 28
   },
   "_TZE283_RCCXOX8P": {
-    "driverId": "climate_sensor",
-    "source": "auto-sync",
+    "driverId": "smoke_sensor2",
+    "source": "registry:p2276-rccxox8p-smoke-not-climate",
     "modelIds": [
-      "CK-TLSR8656-SS5-01(7014)",
-      "Excellux",
-      "RH3052",
-      "SM0201",
-      "SNZB-02",
-      "SNZB-02B",
-      "SNZB-02D",
-      "SNZB-02DR2",
-      "SNZB-02LD",
-      "SNZB-02M",
-      "SNZB-02P",
-      "SNZB-02WD",
-      "TH01",
-      "THS317-ET",
-      "TS0201",
-      "TS0202",
-      "TS0222",
-      "TS0601",
-      "TS1201",
-      "TY0201",
-      "WSDCGQ01LM",
-      "WSDCGQ11LM",
-      "WSDCGQ12LM",
-      "ZG-227Z",
-      "ZG-227ZL",
-      "lumi.sensor_ht",
-      "lumi.sensor_ht.agl02",
-      "lumi.weather"
+      "TS0601"
     ],
     "pid": "CK-TLSR8656-SS5-01(7014)",
     "modelIdsCount": 28
@@ -155492,37 +155304,10 @@
     "modelIdsCount": 28
   },
   "_TZE284_1LVLN0X6": {
-    "driverId": "climate_sensor",
-    "source": "auto-sync",
+    "driverId": "presence_sensor_radar",
+    "source": "registry:p2261-ihseno-debczeci-presence",
     "modelIds": [
-      "CK-TLSR8656-SS5-01(7014)",
-      "Excellux",
-      "RH3052",
-      "SM0201",
-      "SNZB-02",
-      "SNZB-02B",
-      "SNZB-02D",
-      "SNZB-02DR2",
-      "SNZB-02LD",
-      "SNZB-02M",
-      "SNZB-02P",
-      "SNZB-02WD",
-      "TH01",
-      "THS317-ET",
-      "TS0201",
-      "TS0202",
-      "TS0222",
-      "TS0601",
-      "TS1201",
-      "TY0201",
-      "WSDCGQ01LM",
-      "WSDCGQ11LM",
-      "WSDCGQ12LM",
-      "ZG-227Z",
-      "ZG-227ZL",
-      "lumi.sensor_ht",
-      "lumi.sensor_ht.agl02",
-      "lumi.weather"
+      "TS0601"
     ],
     "pid": "CK-TLSR8656-SS5-01(7014)",
     "modelIdsCount": 28
@@ -156294,37 +156079,10 @@
     "modelIdsCount": 28
   },
   "_TZE284_A14RJSLZ": {
-    "driverId": "climate_sensor",
-    "source": "auto-sync",
+    "driverId": "energy_meter_3phase",
+    "source": "registry:p2268-a14rjslz-3phase-not-climate",
     "modelIds": [
-      "CK-TLSR8656-SS5-01(7014)",
-      "Excellux",
-      "RH3052",
-      "SM0201",
-      "SNZB-02",
-      "SNZB-02B",
-      "SNZB-02D",
-      "SNZB-02DR2",
-      "SNZB-02LD",
-      "SNZB-02M",
-      "SNZB-02P",
-      "SNZB-02WD",
-      "TH01",
-      "THS317-ET",
-      "TS0201",
-      "TS0202",
-      "TS0222",
-      "TS0601",
-      "TS1201",
-      "TY0201",
-      "WSDCGQ01LM",
-      "WSDCGQ11LM",
-      "WSDCGQ12LM",
-      "ZG-227Z",
-      "ZG-227ZL",
-      "lumi.sensor_ht",
-      "lumi.sensor_ht.agl02",
-      "lumi.weather"
+      "TS0601"
     ],
     "pid": "CK-TLSR8656-SS5-01(7014)",
     "modelIdsCount": 28
@@ -156853,37 +156611,10 @@
     "modelIdsCount": 28
   },
   "_TZE284_DIKB3DP6": {
-    "driverId": "climate_sensor",
-    "source": "auto-sync",
+    "driverId": "energy_meter_3phase",
+    "source": "registry:p2276-dikb3dp6-3phase-not-climate",
     "modelIds": [
-      "CK-TLSR8656-SS5-01(7014)",
-      "Excellux",
-      "RH3052",
-      "SM0201",
-      "SNZB-02",
-      "SNZB-02B",
-      "SNZB-02D",
-      "SNZB-02DR2",
-      "SNZB-02LD",
-      "SNZB-02M",
-      "SNZB-02P",
-      "SNZB-02WD",
-      "TH01",
-      "THS317-ET",
-      "TS0201",
-      "TS0202",
-      "TS0222",
-      "TS0601",
-      "TS1201",
-      "TY0201",
-      "WSDCGQ01LM",
-      "WSDCGQ11LM",
-      "WSDCGQ12LM",
-      "ZG-227Z",
-      "ZG-227ZL",
-      "lumi.sensor_ht",
-      "lumi.sensor_ht.agl02",
-      "lumi.weather"
+      "TS0601"
     ],
     "pid": "CK-TLSR8656-SS5-01(7014)",
     "modelIdsCount": 28
@@ -159890,37 +159621,10 @@
     "modelIdsCount": 28
   },
   "_TZE284_1fuxihti": {
-    "driverId": "climate_sensor",
-    "source": "auto-sync",
+    "driverId": "curtain_motor",
+    "source": "registry:p2279-1fuxihti-cover-not-climate",
     "modelIds": [
-      "CK-TLSR8656-SS5-01(7014)",
-      "Excellux",
-      "RH3052",
-      "SM0201",
-      "SNZB-02",
-      "SNZB-02B",
-      "SNZB-02D",
-      "SNZB-02DR2",
-      "SNZB-02LD",
-      "SNZB-02M",
-      "SNZB-02P",
-      "SNZB-02WD",
-      "TH01",
-      "THS317-ET",
-      "TS0201",
-      "TS0202",
-      "TS0222",
-      "TS0601",
-      "TS1201",
-      "TY0201",
-      "WSDCGQ01LM",
-      "WSDCGQ11LM",
-      "WSDCGQ12LM",
-      "ZG-227Z",
-      "ZG-227ZL",
-      "lumi.sensor_ht",
-      "lumi.sensor_ht.agl02",
-      "lumi.weather"
+      "TS0601"
     ],
     "pid": "CK-TLSR8656-SS5-01(7014)",
     "modelIdsCount": 28
@@ -161040,109 +160744,28 @@
     "modelIdsCount": 28
   },
   "_tze204_rccxox8p": {
-    "driverId": "climate_sensor",
-    "source": "auto-sync",
+    "driverId": "smoke_sensor2",
+    "source": "registry:p2276-rccxox8p-smoke-not-climate",
     "modelIds": [
-      "CK-TLSR8656-SS5-01(7014)",
-      "Excellux",
-      "RH3052",
-      "SM0201",
-      "SNZB-02",
-      "SNZB-02B",
-      "SNZB-02D",
-      "SNZB-02DR2",
-      "SNZB-02LD",
-      "SNZB-02M",
-      "SNZB-02P",
-      "SNZB-02WD",
-      "TH01",
-      "THS317-ET",
-      "TS0201",
-      "TS0202",
-      "TS0222",
-      "TS0601",
-      "TS1201",
-      "TY0201",
-      "WSDCGQ01LM",
-      "WSDCGQ11LM",
-      "WSDCGQ12LM",
-      "ZG-227Z",
-      "ZG-227ZL",
-      "lumi.sensor_ht",
-      "lumi.sensor_ht.agl02",
-      "lumi.weather"
+      "TS0601"
     ],
     "pid": "CK-TLSR8656-SS5-01(7014)",
     "modelIdsCount": 28
   },
   "_TZE200_rccxox8p": {
-    "driverId": "climate_sensor",
-    "source": "auto-sync",
+    "driverId": "smoke_sensor2",
+    "source": "registry:p2276-rccxox8p-smoke-not-climate",
     "modelIds": [
-      "CK-TLSR8656-SS5-01(7014)",
-      "Excellux",
-      "RH3052",
-      "SM0201",
-      "SNZB-02",
-      "SNZB-02B",
-      "SNZB-02D",
-      "SNZB-02DR2",
-      "SNZB-02LD",
-      "SNZB-02M",
-      "SNZB-02P",
-      "SNZB-02WD",
-      "TH01",
-      "THS317-ET",
-      "TS0201",
-      "TS0202",
-      "TS0222",
-      "TS0601",
-      "TS1201",
-      "TY0201",
-      "WSDCGQ01LM",
-      "WSDCGQ11LM",
-      "WSDCGQ12LM",
-      "ZG-227Z",
-      "ZG-227ZL",
-      "lumi.sensor_ht",
-      "lumi.sensor_ht.agl02",
-      "lumi.weather"
+      "TS0601"
     ],
     "pid": "CK-TLSR8656-SS5-01(7014)",
     "modelIdsCount": 28
   },
   "_TZE284_rccxox8p": {
-    "driverId": "climate_sensor",
-    "source": "auto-sync",
+    "driverId": "smoke_sensor2",
+    "source": "registry:p2276-rccxox8p-smoke-not-climate",
     "modelIds": [
-      "CK-TLSR8656-SS5-01(7014)",
-      "Excellux",
-      "RH3052",
-      "SM0201",
-      "SNZB-02",
-      "SNZB-02B",
-      "SNZB-02D",
-      "SNZB-02DR2",
-      "SNZB-02LD",
-      "SNZB-02M",
-      "SNZB-02P",
-      "SNZB-02WD",
-      "TH01",
-      "THS317-ET",
-      "TS0201",
-      "TS0202",
-      "TS0222",
-      "TS0601",
-      "TS1201",
-      "TY0201",
-      "WSDCGQ01LM",
-      "WSDCGQ11LM",
-      "WSDCGQ12LM",
-      "ZG-227Z",
-      "ZG-227ZL",
-      "lumi.sensor_ht",
-      "lumi.sensor_ht.agl02",
-      "lumi.weather"
+      "TS0601"
     ],
     "pid": "CK-TLSR8656-SS5-01(7014)",
     "modelIdsCount": 28
@@ -162268,7 +161891,6 @@
     "driverId": "soil_sensor",
     "source": "registry:hobeian-zg303z-soil",
     "modelIds": [
-      "ZG-303Z",
       "TS0601"
     ],
     "pid": "CK-TLSR8656-SS5-01(7014)",
@@ -162362,36 +161984,9 @@
   },
   "_TZE284_hdml1aav": {
     "driverId": "soil_sensor",
-    "source": "compose-exclusive",
+    "source": "registry:p2273-hdml1aav-soil-zs300tf",
     "modelIds": [
-      "CK-TLSR8656-SS5-01(7014)",
-      "Excellux",
-      "RH3052",
-      "SM0201",
-      "SNZB-02",
-      "SNZB-02B",
-      "SNZB-02D",
-      "SNZB-02DR2",
-      "SNZB-02LD",
-      "SNZB-02M",
-      "SNZB-02P",
-      "SNZB-02WD",
-      "TH01",
-      "THS317-ET",
-      "TS0201",
-      "TS0202",
-      "TS0222",
-      "TS0601",
-      "TS1201",
-      "TY0201",
-      "WSDCGQ01LM",
-      "WSDCGQ11LM",
-      "WSDCGQ12LM",
-      "ZG-227Z",
-      "ZG-227ZL",
-      "lumi.sensor_ht",
-      "lumi.sensor_ht.agl02",
-      "lumi.weather"
+      "TS0601"
     ],
     "pid": "CK-TLSR8656-SS5-01(7014)",
     "modelIdsCount": 28
@@ -164495,42 +164090,9 @@
   },
   "_TZE204_1fuxihti": {
     "driverId": "curtain_motor",
-    "source": "auto-sync|adjudicated-z2m-arbiter",
+    "source": "registry:p2279-1fuxihti-cover-not-climate",
     "modelIds": [
-      "01MINIZB",
-      "BASICZBR3",
-      "S26R2ZB",
-      "S31ZB",
-      "TS0001",
-      "TS0001_power",
-      "TS0001_switch",
-      "TS0001_switch_module",
-      "TS0002",
-      "TS0003",
-      "TS000F",
-      "TS0011",
-      "TS0012",
-      "TS0014",
-      "TS0041",
-      "TS0101",
-      "TS0111",
-      "TS011F",
-      "TS0601",
-      "TS0726",
-      "TS110E",
-      "TS130F",
-      "TS4100",
-      "ZBM5-1C-120",
-      "ZBM5-2C-120",
-      "ZBM5-3C-120",
-      "ZBMINI",
-      "ZBMINIL2",
-      "ZBMINIL2-R2",
-      "ZBMINIR",
-      "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "TS0601"
     ],
     "pid": "01MINIZB",
     "modelIdsCount": 34
@@ -175214,30 +174776,18 @@
   },
   "_TZ3218_AWARHUSB": {
     "driverId": "motion_sensor_radar_mmwave",
-    "source": "auto-sync",
+    "source": "registry:p2258-linptech-es1zz-ts0225",
     "modelIds": [
-      "CK-BL702-MWS-01(7016)",
-      "TS0004",
-      "TS0225",
-      "TS0601",
-      "TS0601_mmwave",
-      "TS110E",
-      "ZP-301Z"
+      "TS0225"
     ],
     "pid": "CK-BL702-MWS-01(7016)",
     "modelIdsCount": 7
   },
   "_TZ3218_T9YNFZ4X": {
     "driverId": "motion_sensor_radar_mmwave",
-    "source": "auto-sync",
+    "source": "registry:p2258-linptech-es1zz-ts0225",
     "modelIds": [
-      "CK-BL702-MWS-01(7016)",
-      "TS0004",
-      "TS0225",
-      "TS0601",
-      "TS0601_mmwave",
-      "TS110E",
-      "ZP-301Z"
+      "TS0225"
     ],
     "pid": "CK-BL702-MWS-01(7016)",
     "modelIdsCount": 7
@@ -175304,15 +174854,9 @@
   },
   "_TZE284_gnpflcoq": {
     "driverId": "motion_sensor_radar_mmwave",
-    "source": "auto-sync",
+    "source": "registry:p2270-gnpflcoq-4in1-mmwave",
     "modelIds": [
-      "CK-BL702-MWS-01(7016)",
-      "TS0004",
-      "TS0225",
-      "TS0601",
-      "TS0601_mmwave",
-      "TS110E",
-      "ZP-301Z"
+      "TS0601"
     ],
     "pid": "CK-BL702-MWS-01(7016)",
     "modelIdsCount": 7
@@ -177263,32 +176807,10 @@
     "modelIdsCount": 28
   },
   "_TZ3218_EWRXIRNG": {
-    "driverId": "presence_sensor_radar",
-    "source": "auto-sync",
+    "driverId": "motion_sensor_radar_mmwave",
+    "source": "registry:p2258-linptech-es1zz-ts0225",
     "modelIds": [
-      "CK-BL702-MWS-01",
-      "CK-BL702-MWS-01(7016)",
-      "MG1_5RZ",
-      "SNZB-06P",
-      "SNZB-06P24",
-      "SZLMR10",
-      "TS0004",
-      "TS0203",
-      "TS0225",
-      "TS0601",
-      "TS110E",
-      "ZG-204ZE",
-      "ZG-204ZH",
-      "ZG-204ZK",
-      "ZG-204ZL",
-      "ZG-204ZM",
-      "ZG-204ZQ",
-      "ZG-204ZV",
-      "ZG-205Z",
-      "ZG-205ZL",
-      "ZG-302ZL",
-      "ZG-302ZM",
-      "ZP-301Z"
+      "TS0225"
     ],
     "pid": "CK-BL702-MWS-01",
     "modelIdsCount": 23
@@ -179963,31 +179485,9 @@
   },
   "_TZE284_DEBCZECI": {
     "driverId": "presence_sensor_radar",
-    "source": "auto-sync",
+    "source": "registry:p2261-ihseno-debczeci-presence",
     "modelIds": [
-      "CK-BL702-MWS-01",
-      "CK-BL702-MWS-01(7016)",
-      "MG1_5RZ",
-      "SNZB-06P",
-      "SNZB-06P24",
-      "SZLMR10",
-      "TS0004",
-      "TS0203",
-      "TS0225",
-      "TS0601",
-      "TS110E",
-      "ZG-204ZE",
-      "ZG-204ZH",
-      "ZG-204ZK",
-      "ZG-204ZL",
-      "ZG-204ZM",
-      "ZG-204ZQ",
-      "ZG-204ZV",
-      "ZG-205Z",
-      "ZG-205ZL",
-      "ZG-302ZL",
-      "ZG-302ZM",
-      "ZP-301Z"
+      "TS0601"
     ],
     "pid": "CK-BL702-MWS-01",
     "modelIdsCount": 23
@@ -180991,31 +180491,9 @@
   },
   "_TZE204_debczeci": {
     "driverId": "presence_sensor_radar",
-    "source": "auto-sync",
+    "source": "registry:p2261-ihseno-debczeci-presence",
     "modelIds": [
-      "CK-BL702-MWS-01",
-      "CK-BL702-MWS-01(7016)",
-      "MG1_5RZ",
-      "SNZB-06P",
-      "SNZB-06P24",
-      "SZLMR10",
-      "TS0004",
-      "TS0203",
-      "TS0225",
-      "TS0601",
-      "TS110E",
-      "ZG-204ZE",
-      "ZG-204ZH",
-      "ZG-204ZK",
-      "ZG-204ZL",
-      "ZG-204ZM",
-      "ZG-204ZQ",
-      "ZG-204ZV",
-      "ZG-205Z",
-      "ZG-205ZL",
-      "ZG-302ZL",
-      "ZG-302ZM",
-      "ZP-301Z"
+      "TS0601"
     ],
     "pid": "CK-BL702-MWS-01",
     "modelIdsCount": 23
@@ -185452,14 +184930,10 @@
     "modelIdsCount": 5
   },
   "_tz3000_5bpeda8u": {
-    "driverId": "scene_switch_1",
-    "source": "auto-sync",
+    "driverId": "button_wireless_1",
+    "source": "registry:p2285-sh-sc07-siblings-ts0041",
     "modelIds": [
-      "TS0041",
-      "TS004F",
-      "TS0215A",
-      "TS0601",
-      "TS0601_scene1"
+      "TS0041"
     ],
     "pid": "TS0041",
     "modelIdsCount": 5
@@ -185612,6 +185086,8 @@
       "ZG-102ZL": "contact_sensor",
       "ZG-222Z": "water_leak_sensor",
       "ZG-222ZA": "water_leak_sensor",
+      "3315-S": "water_leak_sensor",
+      "3315-Seu": "water_leak_sensor",
       "ZG-223Z": "rain_sensor",
       "ZG-305Z": "switch_2gang",
       "ZG-106Z": "illuminance_sensor",
@@ -189984,23 +189460,10 @@
     "modelIdsCount": 2
   },
   "_TZ3000_MWD3C2AT": {
-    "driverId": "smoke_detector_advanced",
-    "source": "auto-sync",
+    "driverId": "smart_irrigation_valve",
+    "source": "registry:p2240-mwd3c2at-irrigation-valve-ts0202",
     "modelIds": [
-      "GS361A-H04",
-      "HS1SA",
-      "HS3SA",
-      "JTYJ-GD-01LM/BW",
-      "NAS-SD02B0",
-      "PG-S11Z",
-      "SA12IZL",
-      "SD8SC_00.00.03.12TC",
-      "SMSZB-120",
-      "SSSQS01LM",
-      "TS0205",
-      "TS0601",
-      "YG400A",
-      "lumi.sensor_smoke"
+      "TS0202"
     ],
     "pid": "GS361A-H04",
     "modelIdsCount": 14
@@ -190688,20 +190151,18 @@
     "modelIdsCount": 2
   },
   "_TZE204_cjbofhxw": {
-    "driverId": "smoke_sensor3",
-    "source": "auto-sync",
+    "driverId": "power_clamp_meter",
+    "source": "registry:p2268-cjbofhxw-clamp-not-smoke",
     "modelIds": [
-      "TS0205",
       "TS0601"
     ],
     "pid": "TS0205",
     "modelIdsCount": 2
   },
   "_TZE284_cjbofhxw": {
-    "driverId": "smoke_sensor3",
-    "source": "auto-sync",
+    "driverId": "power_clamp_meter",
+    "source": "registry:p2268-cjbofhxw-clamp-not-smoke",
     "modelIds": [
-      "TS0205",
       "TS0601"
     ],
     "pid": "TS0205",
@@ -190748,10 +190209,9 @@
     "modelIdsCount": 2
   },
   "_TZE200_cjbofhxw": {
-    "driverId": "smoke_sensor3",
-    "source": "auto-sync",
+    "driverId": "power_clamp_meter",
+    "source": "registry:p2268-cjbofhxw-clamp-not-smoke",
     "modelIds": [
-      "TS0205",
       "TS0601"
     ],
     "pid": "TS0205",
@@ -191147,13 +190607,9 @@
   },
   "_TZE2841000000_hdml1aav": {
     "driverId": "soil_sensor",
-    "source": "auto-sync",
+    "source": "registry:p2273-hdml1aav-soil-zs300tf",
     "modelIds": [
-      "Arteco",
-      "CS-201Z",
-      "TS0001",
-      "TS0601",
-      "ZG-303Z"
+      "TS0601"
     ],
     "pid": "Arteco",
     "modelIdsCount": 5
@@ -196739,42 +196195,9 @@
   },
   "_TZ3000_MRPEVH8P": {
     "driverId": "button_wireless_1",
-    "source": "compose-exclusive",
+    "source": "registry:p2282-mrpevh8p-ts0041-button",
     "modelIds": [
-      "01MINIZB",
-      "BASICZBR3",
-      "S26R2ZB",
-      "S31ZB",
-      "TS0001",
-      "TS0001_power",
-      "TS0001_switch",
-      "TS0001_switch_module",
-      "TS0002",
-      "TS0003",
-      "TS000F",
-      "TS0011",
-      "TS0012",
-      "TS0014",
-      "TS0041",
-      "TS0101",
-      "TS0111",
-      "TS011F",
-      "TS0601",
-      "TS0726",
-      "TS110E",
-      "TS130F",
-      "TS4100",
-      "ZBM5-1C-120",
-      "ZBM5-2C-120",
-      "ZBM5-3C-120",
-      "ZBMINI",
-      "ZBMINIL2",
-      "ZBMINIL2-R2",
-      "ZBMINIR",
-      "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "TS0041"
     ],
     "pid": "01MINIZB",
     "modelIdsCount": 34
@@ -201273,42 +200696,9 @@
   },
   "_TZ3218_HDC8BBHA": {
     "driverId": "switch_1gang",
-    "source": "auto-sync",
+    "source": "registry:p2272-hdc8bbha-ts000f-relay",
     "modelIds": [
-      "01MINIZB",
-      "BASICZBR3",
-      "S26R2ZB",
-      "S31ZB",
-      "TS0001",
-      "TS0001_power",
-      "TS0001_switch",
-      "TS0001_switch_module",
-      "TS0002",
-      "TS0003",
-      "TS000F",
-      "TS0011",
-      "TS0012",
-      "TS0014",
-      "TS0041",
-      "TS0101",
-      "TS0111",
-      "TS011F",
-      "TS0601",
-      "TS0726",
-      "TS110E",
-      "TS130F",
-      "TS4100",
-      "ZBM5-1C-120",
-      "ZBM5-2C-120",
-      "ZBM5-3C-120",
-      "ZBMINI",
-      "ZBMINIL2",
-      "ZBMINIL2-R2",
-      "ZBMINIR",
-      "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "TS000F"
     ],
     "pid": "01MINIZB",
     "modelIdsCount": 34
@@ -204104,43 +203494,10 @@
     "modelIdsCount": 34
   },
   "_TZE204_guvc7pdy": {
-    "driverId": "switch_1gang",
-    "source": "auto-sync",
+    "driverId": "curtain_motor",
+    "source": "registry:p2273-guvc7pdy-curtain-not-1gang",
     "modelIds": [
-      "01MINIZB",
-      "BASICZBR3",
-      "S26R2ZB",
-      "S31ZB",
-      "TS0001",
-      "TS0001_power",
-      "TS0001_switch",
-      "TS0001_switch_module",
-      "TS0002",
-      "TS0003",
-      "TS000F",
-      "TS0011",
-      "TS0012",
-      "TS0014",
-      "TS0041",
-      "TS0101",
-      "TS0111",
-      "TS011F",
-      "TS0601",
-      "TS0726",
-      "TS110E",
-      "TS130F",
-      "TS4100",
-      "ZBM5-1C-120",
-      "ZBM5-2C-120",
-      "ZBM5-3C-120",
-      "ZBMINI",
-      "ZBMINIL2",
-      "ZBMINIL2-R2",
-      "ZBMINIR",
-      "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "TS0601"
     ],
     "pid": "01MINIZB",
     "modelIdsCount": 34
@@ -207452,43 +206809,10 @@
     "modelIdsCount": 34
   },
   "_tze204_hlx9tnzb": {
-    "driverId": "switch_1gang",
-    "source": "auto-sync",
+    "driverId": "dimmer_1_gang_tuya",
+    "source": "registry:p2270-hlx9tnzb-dimmer-not-1gang",
     "modelIds": [
-      "01MINIZB",
-      "BASICZBR3",
-      "S26R2ZB",
-      "S31ZB",
-      "TS0001",
-      "TS0001_power",
-      "TS0001_switch",
-      "TS0001_switch_module",
-      "TS0002",
-      "TS0003",
-      "TS000F",
-      "TS0011",
-      "TS0012",
-      "TS0014",
-      "TS0041",
-      "TS0101",
-      "TS0111",
-      "TS011F",
-      "TS0601",
-      "TS0726",
-      "TS110E",
-      "TS130F",
-      "TS4100",
-      "ZBM5-1C-120",
-      "ZBM5-2C-120",
-      "ZBM5-3C-120",
-      "ZBMINI",
-      "ZBMINIL2",
-      "ZBMINIL2-R2",
-      "ZBMINIR",
-      "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "TS0601"
     ],
     "pid": "01MINIZB",
     "modelIdsCount": 34
@@ -210888,12 +210212,10 @@
     "modelIdsCount": 5
   },
   "_tz3000_402vrq2i": {
-    "driverId": "switch_4_gang_metering",
-    "source": "auto-sync",
+    "driverId": "smart_knob",
+    "source": "registry:p2270-402vrq2i-knob-not-4gang",
     "modelIds": [
-      "TS0004",
-      "TS004F",
-      "TS0601"
+      "TS004F"
     ],
     "pid": "TS0004",
     "modelIdsCount": 3
@@ -211393,8 +210715,8 @@
     "modelIdsCount": 17
   },
   "_TZE204_xalsoe3m": {
-    "driverId": "device_radiator_valve",
-    "source": "compose-exclusive",
+    "driverId": "wall_thermostat",
+    "source": "registry:p2277-xalsoe3m-bht002-not-trv",
     "modelIds": [
       "TS0601"
     ],
@@ -212561,18 +211883,10 @@
     "modelIdsCount": 9
   },
   "_tz3210_6cmeijtd": {
-    "driverId": "usb_dongle_triple",
-    "source": "auto-sync",
+    "driverId": "socket_power_strip",
+    "source": "registry:p2274-6cmeijtd-nous-a11z-strip",
     "modelIds": [
-      "S26R2ZB",
-      "S31 Lite zb",
-      "S40LITE",
-      "S60ZBTPF",
-      "S60ZBTPG",
-      "TS0101",
-      "TS0111",
-      "TS011F",
-      "TS0601"
+      "TS011F"
     ],
     "pid": "S26R2ZB",
     "modelIdsCount": 9
@@ -214136,18 +213450,10 @@
     "modelIdsCount": 9
   },
   "_tz3210_3lbtuxgp": {
-    "driverId": "wall_dimmer_tuya",
-    "source": "auto-sync",
+    "driverId": "bulb_rgb",
+    "source": "registry:p2260-3lbtuxgp-ts0505b-bulb",
     "modelIds": [
-      "TS0011",
-      "TS0052",
-      "TS0601",
-      "TS0601_dim1",
-      "TS1101",
-      "TS110E",
-      "TS110F",
-      "ZBMINI-DIM",
-      "ZBMINID"
+      "TS0505B"
     ],
     "pid": "TS0011",
     "modelIdsCount": 9
@@ -214998,18 +214304,10 @@
     "modelIdsCount": 9
   },
   "_tze200_mvtclclq": {
-    "driverId": "wall_dimmer_tuya",
-    "source": "auto-sync",
+    "driverId": "usb_outlet_advanced",
+    "source": "registry:p2279-mvtclclq-usb-not-dimmer",
     "modelIds": [
-      "TS0011",
-      "TS0052",
-      "TS0601",
-      "TS0601_dim1",
-      "TS1101",
-      "TS110E",
-      "TS110F",
-      "ZBMINI-DIM",
-      "ZBMINID"
+      "TS0601"
     ],
     "pid": "TS0011",
     "modelIdsCount": 9
@@ -216368,7 +215666,7 @@
   },
   "_TZE204_ogx8u5z6": {
     "driverId": "device_radiator_valve",
-    "source": "compose-exclusive",
+    "source": "registry:p2278-ogx8u5z6-trv-cal-tenths",
     "modelIds": [
       "TS0601"
     ],
@@ -216386,7 +215684,7 @@
   },
   "_TZE284_ogx8u5z6": {
     "driverId": "device_radiator_valve",
-    "source": "compose-exclusive",
+    "source": "registry:p2278-ogx8u5z6-trv-cal-tenths",
     "modelIds": [
       "TS0601"
     ],
@@ -217910,28 +217208,10 @@
     "modelIdsCount": 19
   },
   "_tz3000_upgcbody": {
-    "driverId": "water_leak_sensor_tuya",
-    "source": "auto-sync",
+    "driverId": "water_leak_sensor",
+    "source": "registry:p2260-upgcbody-ts0207-water",
     "modelIds": [
-      "3315-S",
-      "3315-Seu",
-      "CK-TLSR8656-SS5-01(7019)",
-      "HS1WL",
-      "LS21001",
-      "SJCGQ11LM",
-      "SJCGQ12LM",
-      "SJCGQ13LM",
-      "SNZB-05",
-      "SNZB-05P",
-      "SQ510A",
-      "TS0601",
-      "ZG-222Z",
-      "ZG-223Z",
-      "_tz3000_eit6l5",
-      "_tz3000_k4ej3ww2",
-      "_tz3000_kyb656no",
-      "lumi.sensor_wleak.aq1",
-      "q9mpfhw"
+      "TS0207"
     ],
     "pid": "3315-S",
     "modelIdsCount": 19,
@@ -326268,7 +325548,8 @@
   "_tz3000_l13erpv4": {
     "driver": "curtain_motor",
     "pid": "TS130F",
-    "source": "blakadder-r68"
+    "source": "compose-exclusive",
+    "driverId": "garage_door"
   },
   "_tz3000_nfnmi125": {
     "driver": "plug_energy_monitor",
@@ -327175,5 +326456,82 @@
     "source": "registry:p2244-xffhmvhv-nobo",
     "confidence": 0.95,
     "modelIdsCount": 1
+  },
+  "_TZ3210_qkj7rujp": {
+    "driverId": "lcdtemphumidsensor",
+    "source": "registry:p2267-e002-alarm-taxonomy",
+    "modelIds": [
+      "TS0201"
+    ]
+  },
+  "_TZ3000_tonrapsk": {
+    "driverId": "switch_2gang",
+    "source": "registry:p2268-tonrapsk-ts0002-2gang",
+    "modelIds": [
+      "TS0002"
+    ]
+  },
+  "_TZE284_cf4b5ktf": {
+    "driverId": "energy_meter_3phase",
+    "source": "registry:p2268-cf4b5ktf-moes-3phase-soft",
+    "modelIds": [
+      "TS0601"
+    ]
+  },
+  "_TZE284_fqm2sfpe": {
+    "driverId": "device_radiator_valve",
+    "source": "registry:p2270-fqm2sfpe-trv-soft",
+    "modelIds": [
+      "TS0601"
+    ]
+  },
+  "_TZE284_tdg4ckyh": {
+    "driverId": "ir_blaster",
+    "source": "registry:p2271-tdg4ckyh-rf-cloner",
+    "modelIds": [
+      "TS0601"
+    ]
+  },
+  "_TZE284_kq1l5eu5": {
+    "driverId": "wall_curtain_switch",
+    "source": "registry:p2271-kq1l5eu5-moes-curtain",
+    "modelIds": [
+      "TS0601"
+    ]
+  },
+  "_TZE284_bjoccxbi": {
+    "driverId": "led_controller_rgb",
+    "source": "registry:p2272-bjoccxbi-rgb-cct",
+    "modelIds": [
+      "TS0601"
+    ]
+  },
+  "_TZE284_lq0ffndf": {
+    "driverId": "usb_outlet_advanced",
+    "source": "registry:p2272-lq0ffndf-dual-gpo-usb",
+    "modelIds": [
+      "TS0601"
+    ]
+  },
+  "_TZE200_guvc7pdy": {
+    "driverId": "curtain_motor",
+    "source": "registry:p2273-guvc7pdy-curtain-not-1gang",
+    "modelIds": [
+      "TS0601"
+    ]
+  },
+  "_TZE200_xalsoe3m": {
+    "driverId": "wall_thermostat",
+    "source": "registry:p2277-xalsoe3m-bht002-not-trv",
+    "modelIds": [
+      "TS0601"
+    ]
+  },
+  "_TZ3000_te34fjg4": {
+    "driverId": "scene_switch_4",
+    "source": "registry:p2277-te34fjg4-ts1002-scene4",
+    "modelIds": [
+      "TS1002"
+    ]
   }
 }
