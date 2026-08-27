@@ -43,6 +43,18 @@ function hasPid(compose, pid) {
 
 /** Forbidden placements: driver must NOT contain these mfrs (case-insensitive). */
 const FORBIDDEN = [
+  // P2270 / P2289: bot auto-fix-all re-bleed — rotary knob ≠ 4-gang metering
+  {
+    id: 'p2270-402vrq2i-not-metering',
+    driver: 'switch_4_gang_metering',
+    mfrs: ['_TZ3210_402vrq2i', '_TZ3400_402vrq2i', '_TZ3000_402vrq2i'],
+  },
+  // P2270 / P2289: bot re-bleed — dimmer couple ≠ switch_1gang
+  {
+    id: 'p2270-hlx9tnzb-not-switch1',
+    driver: 'switch_1gang',
+    mfrs: ['_TZE284_hlx9tnzb', '_TZE204_hlx9tnzb', '_TZE200_hlx9tnzb'],
+  },
   // P129: TS004F 4-button remotes (Z2M/ZHA) must NOT live on 1-gang switch catch-all
   {
     id: 'p129-ts004f-not-switch1',

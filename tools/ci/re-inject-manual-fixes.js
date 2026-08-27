@@ -80,9 +80,25 @@ const MANUAL_FIXES = [
       '_TZ3000_b3mgfu0d', '_tz3000_b3mgfu0d', '_TZ3000_B3MGFU0D', '_tz3000_B3MGFU0D',
       '_TZ3000_abrsvsou', '_tz3000_abrsvsou', '_TZ3000_ABRSVSOU', '_tz3000_ABRSVSOU',
       '_TZ3000_4fjiwweb', '_tz3000_4fjiwweb', '_TZ3000_4FJIWWEB', '_tz3000_4FJIWWEB',
+      // P2270/P2289: dimmer couple must not bleed onto switch_1gang (bot re-inject)
+      '_TZE284_hlx9tnzb', '_tze284_hlx9tnzb', '_TZE204_hlx9tnzb', '_tze204_hlx9tnzb',
+      '_TZE200_hlx9tnzb', '_tze200_hlx9tnzb',
     ],
     addAtTop: false,
     source: 'p129-ts004f-routing',
+  },
+  {
+    id: 'p2270-metering-remove-402vrq2i-knob',
+    file: 'drivers/switch_4_gang_metering/driver.compose.json',
+    description: 'P2270: rotary knob 402vrq2i must not live on switch_4_gang_metering',
+    match: () => true,
+    addIfMissing: [],
+    removeIfPresent: [
+      '_TZ3210_402vrq2i', '_tz3210_402vrq2i', '_TZ3400_402vrq2i', '_tz3400_402vrq2i',
+      '_TZ3000_402vrq2i', '_tz3000_402vrq2i',
+    ],
+    addAtTop: false,
+    source: 'p2270-knob-not-metering',
   },
   {
     id: 'p129-button-wireless-4-ts004f-mfrs',
