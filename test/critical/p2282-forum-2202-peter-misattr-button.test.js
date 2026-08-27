@@ -38,6 +38,20 @@ describe('P2282 forum #2202 Peter water MISATTR + Smartbutton', () => {
     assert.strictEqual(DB.lookup('HOBEIAN', '3315-S').driver, 'water_leak_sensor');
   });
 
+  it('HOBEIAN without pid does not resolve to soil (P2289)', () => {
+    const { invalidate } = require('../../lib/pairing/UserMisattributionRegistry');
+    invalidate();
+    assert.strictEqual(lookup('HOBEIAN', null), null);
+    assert.strictEqual(lookup('HOBEIAN', ''), null);
+  });
+
+  it('_warnIfMisattributedDriver clears stale MISATTR unavailable (P2289)', () => {
+    const src = read('lib/tuya/TuyaZigbeeDevice.js');
+    assert(src.includes('cleared stale unavailable'));
+    assert(src.includes('getUnavailableReason'));
+    assert(src.includes('unsetWarning'));
+  });
+
   it('HOBEIAN+ZG-223Z still forbids water_leak when rain couple is registered', () => {
     const c = lookup('HOBEIAN', 'ZG-223Z');
     if (!c) {

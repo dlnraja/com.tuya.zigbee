@@ -58,8 +58,16 @@ class MotionSensorRadarDevice extends UnifiedSensorBase {
   }
 
   _isLinptechES1() {
-    const mfr = this.getSetting('zb_manufacturer_name') || this._manufacturerName || '';
-    const pid = this.getSetting('zb_product_id') || this._modelId || '';
+    const mfr = this.getSetting('zb_manufacturer_name')
+      || this.getData?.()?.manufacturerName
+      || this._manufacturerName
+      || '';
+    const pid = this.getSetting('zb_product_id')
+      || this.getSetting('zb_model_id')
+      || this.getData?.()?.productId
+      || this.getData?.()?.modelId
+      || this._modelId
+      || '';
     return isLinptechES1(mfr, pid);
   }
 
@@ -400,8 +408,9 @@ class MotionSensorRadarDevice extends UnifiedSensorBase {
           this.log(`[MMWAVE][LINPTECH] optional setting ${key} skipped: ${err.message}`);
           continue;
         }
-        this.error(`[MMWAVE][LINPTECH] settings save failed ${key}: ${err.message}`);
-        throw err;
+        // WHY(P2289): A_Tas T158757/#2199 — Moes ES1 often rejects E002 attrs;
+        // never block Homey settings save (UI value still persists for retry).
+        this.error(`[MMWAVE][LINPTECH] settings save soft-fail ${key}: ${err.message}`);
       }
     }
   }

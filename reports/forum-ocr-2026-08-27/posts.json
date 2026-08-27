@@ -1,0 +1,102 @@
+[
+  {
+    "topic": 140352,
+    "post": 2203,
+    "user": "Peter_van_Werkhoven",
+    "at": "2026-08-27T08:31:08.567Z",
+    "text": "Hi Dylan Good morning it’s me again, Despite the wrong driver message when opening the Waterdetector it’s still working normal and triggering the flow so receiving messages when it touches water. 1000045253 1220×2712 122 KB And tried to repair Smartbutton again but still no response in Homey. Diagnostic code 4b1a0dc9-9fba-4e9b-a85c-66498ab80bc1 Thanks and good luck and have a nice day Peter.",
+    "images": [
+      "C:\\Users\\Dell\\Documents\\homey\\master\\reports\\forum-ocr-2026-08-27\\T140352_2203_0.png",
+      "C:\\Users\\Dell\\Documents\\homey\\master\\reports\\forum-ocr-2026-08-27\\T140352_2203_1.jpeg"
+    ]
+  },
+  {
+    "topic": 140352,
+    "post": 2202,
+    "user": "Peter_van_Werkhoven",
+    "at": "2026-08-26T07:47:13.072Z",
+    "text": "Hi Dylan good morning I’ve installed the latest version this morning 9.0.661 and I see that the Waterdetector sensor is not connected anymore it says that device is not there because of wrong driver, I was so pleased before that it was finally working after months of trying 1000041404 1220×2712 113 KB 1000041406 1220×2712 194 KB I also repaired the Smartbutton again but still no response to Homey and his flow. 1000041405 1220×2712 194 KB Diagnostic code 95a7c6e5-969f-4469-be5d-c96b7cb42b60 Good luck,thanks and best regards Peter.",
+    "images": [
+      "C:\\Users\\Dell\\Documents\\homey\\master\\reports\\forum-ocr-2026-08-27\\T140352_2202_0.png",
+      "C:\\Users\\Dell\\Documents\\homey\\master\\reports\\forum-ocr-2026-08-27\\T140352_2202_1.png",
+      "C:\\Users\\Dell\\Documents\\homey\\master\\reports\\forum-ocr-2026-08-27\\T140352_2202_2.jpeg",
+      "C:\\Users\\Dell\\Documents\\homey\\master\\reports\\forum-ocr-2026-08-27\\T140352_2202_3.jpeg",
+      "C:\\Users\\Dell\\Documents\\homey\\master\\reports\\forum-ocr-2026-08-27\\T140352_2202_4.jpeg"
+    ]
+  },
+  {
+    "topic": 140352,
+    "post": 2193,
+    "user": "Peter_van_Werkhoven",
+    "at": "2026-08-24T08:52:16.294Z",
+    "text": "Hi Dylan Good morning and good News the Door/Window sensors are fine now, open close is working as on off now and Luminance seems also okay. Waterdetector is sending puls now when it’s in the water so great work Only Smartbutton to fix now because that’s still not receiving data. Diagnostic code f647d35b-c401-4077-b758-da1356e523f9 Have a very nice day and thanks for fixing so far. Best regards Peter.",
+    "images": [
+      "C:\\Users\\Dell\\Documents\\homey\\master\\reports\\forum-ocr-2026-08-27\\T140352_2193_0.png",
+      "C:\\Users\\Dell\\Documents\\homey\\master\\reports\\forum-ocr-2026-08-27\\T140352_2193_1.png"
+    ]
+  },
+  {
+    "topic": 140352,
+    "post": 2199,
+    "user": "A_Tas",
+    "at": "2026-08-25T22:33:35.479Z",
+    "text": "First of all, thank you for your great work with the app. I have the latest trial version. Thanks to these, the Moes presence detector was able to connect ZSS-LP-HP02-MS to the manufacturer ID: _TZ3218_t9ynfz4x. Unfortunately, there is always an error message when saving patamers, such as sensitivity, etc. Do you have a solution for this? I use the current Homey Pro mini and the sensor is connected to Zigbee. Thank you in advance and many greetings from Germany. Kadir",
+    "images": []
+  },
+  {
+    "topic": 156967,
+    "post": 58,
+    "user": "Manfred_Vodermeier",
+    "at": "2026-08-27T11:17:25.000Z",
+    "text": "Hi followin Databfrom the Settings Page unknown device: Manufacturer ID: _TZ300_kalzta4 Produkt ID: TS004F enddevice Device ID: a4:c1:38:4b:26:a7:cc:c0 br manfred",
+    "images": []
+  },
+  {
+    "topic": 156967,
+    "post": 56,
+    "user": "Manfred_Vodermeier",
+    "at": "2026-08-26T10:26:20.765Z",
+    "text": "Hi, i would like to use the black Moes 3-was-Smart Button ZT-S02-SR-CBK-EU. (1click, double click, longpress) is it possibke to integrate it in Homey Pro. i testet many options from tuya tuya zigbee app but nothing worked so far….",
+    "images": []
+  },
+  {
+    "topic": 158757,
+    "post": 1,
+    "user": "A_Tas",
+    "at": "2026-08-25T22:32:18.283Z",
+    "text": "Continuing the discussion from [APP][Pro] Universal TUYA Zigbee Device App - test : [APP][Pro] Universal TUYA Zigbee Device App - test First of all, thank you for your great work with the app. I have the latest trial version. Thanks to these, the Moes presence detector was able to connect ZSS-LP-HP02-MS to the manufacturer ID: _TZ3218_t9ynfz4x. Unfortunately, there is always an error message when saving patamers, such as sensitivity, etc. Do you have a solution for this? I use the current Homey Pro mini and the sensor is connected to Zigbee. Thank you in advance and many greetings from Germany. Kadir",
+    "images": []
+  },
+  {
+    "topic": 26439,
+    "post": 5493,
+    "user": "Alejandro_Palladino",
+    "at": "2026-08-25T14:35:14.739Z",
+    "text": "Necesitaria conectar este dispositivo: Hi! Could you please add support for this Tuya mmWave presence sensor? Manufacturer ID: _TZE284_debczeci Product ID: TS0601 Device Type: Human Presence Sensor (mmWave) Thanks in advance!",
+    "images": []
+  },
+  {
+    "topic": 150690,
+    "post": 30,
+    "user": "SteampunkLolcat",
+    "at": "2026-03-29T10:19:36.058Z",
+    "text": "Thank you, that was fast. The device still gets added as a generic zigbee device though. I’ve put a complete device interview in the hidden part below. Summary “ids”: { “modelId”: “TS004F”, “manufacturerName”: “_TZ3000_xabckq1v” }, “endpoints”: { “ieeeAddress”: “60:a4:23:ff:fe:fd:dc:ab”, “networkAddress”: 10376, “modelId”: “TS004F”, “manufacturerName”: “_TZ3000_xabckq1v”, “endpointDescriptors”: [ { “status”: “SUCCESS”, “nwkAddrOfInterest”: 10376, “_reserved”: 36, “endpointId”: 1, “applicationProfileId”: 260, “applicationDeviceId”: 260, “applicationDeviceVersion”: 0, “_reserved1”: 1, “inputClusters”: [ 0, 1, 3, 4, 6, 4096 ], “outputClusters”: [ 25, 10, 3, 4, 5, 6, 8, 4096 ] } ], “deviceType”: “enddevice”, “receiveWhenIdle”: false, “capabilities”: { “alternatePANCoordinator”: false, “deviceType”: false, “powerSourceMains”: false, “receiveWhenIdle”: false, “security”: false, “allocateAddress”: true }, “extendedEndpointDescriptors”: { “1”: { “clusters”: { “basic”: { “attributes”: [ { “acl”: [ “readable”, “reportable” ], “id”: 0, “dataTypeId”: 32, “name”: “zclVersion”, “value”: 3, “reportingConfiguration”: { “status”: “NOT_FOUND”, “direction”: “reported” } }, { “acl”: [ “readable”, “reportable” ], “id”: 1, “dataTypeId”: 32, “name”: “appVersion”, “value”: 65, “reportingConfiguration”: { “direction”: “reported”, “attributeDataType”: 32, “minInterval”: 1, “maxInterval”: 65534, “minChange”: 0, “status”: “SUCCESS” } }, { “acl”: [ “readable”, “reportable” ], “id”: 2, “dataTypeId”: 32, “name”: “stackVersion”, “value”: 0, “reportingConfiguration”: { “status”: “NOT_FOUND”, “direction”: “reported” } }, { “acl”: [ “readable”, “reportable” ], “id”: 3, “dataTypeId”: 32, “name”: “hwVersion”, “value”: 1, “reportingConfiguration”: { “status”: “NOT_FOUND”, “direction”: “reported” } }, { “acl”: [ “readable”, “reportable” ], “id”: 4, “dataTypeId”: 66, “name”: “manufacturerName”, “value”: “_TZ3000_xabckq1v”, “reportingConfiguration”: { “status”: “NOT_FOUND”, “direction”: “reported” } }, { “",
+    "images": []
+  },
+  {
+    "topic": 150690,
+    "post": 28,
+    "user": "SteampunkLolcat",
+    "at": "2026-03-29T09:34:58.713Z",
+    "text": "Hi! Could you please add support for this 4 gang wall switch device id? _TZ3000_xabckq1v TS004F",
+    "images": []
+  },
+  {
+    "topic": 146667,
+    "post": 25,
+    "user": "Peter_Kawa",
+    "at": "2026-02-24T19:00:57.201Z",
+    "text": "My bad Alex, I meant to write soil nutrition (also called ‘fertility’). The one shown here doesn’t seem to have that specific sensor Michael_Edholm: When looking at zigbee2mtt homepage the device is there an a spec can be found for attributes (which does not seem to show up on the interview) HOBEIAN ZG-303Z control via MQTT | Zigbee2MQTT . Alex_R: But the one in your link doesn’t look like ZG-303Z(?) Correct, it is no Hobeian device: ZS-SF00 [APP][Pro] Universal TUYA Zigbee Device App - test \"ids\": { \"modelId\": \"Arteco\", \"manufacturerName\": \"A89G12C\" See https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352/1439?u=peter_kawa",
+    "images": []
+  }
+]
