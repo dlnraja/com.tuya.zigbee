@@ -1,36 +1,13 @@
 {
-  "timestamp": "2026-08-28T06:54:09.307Z",
+  "timestamp": "2026-08-28T17:03:24.264Z",
   "gate": "align-mfs-db-intelligent",
   "apply": false,
-  "check": false,
-  "changeCount": 2,
+  "check": true,
+  "changeCount": 0,
   "skippedCount": 36,
   "highSeverityCount": 0,
-  "byAction": {
-    "registry_compose_strip_pid": 2
-  },
-  "changes": [
-    {
-      "severity": "medium",
-      "action": "registry_compose_strip_pid",
-      "mfr": "_tz3210_6cmeijtd",
-      "pid": "TS011F",
-      "from": "usb_dongle_triple",
-      "to": "socket_power_strip",
-      "removed": 1,
-      "caseId": "p2274-6cmeijtd-nous-a11z-strip"
-    },
-    {
-      "severity": "medium",
-      "action": "registry_compose_strip_pid",
-      "mfr": "_TZ3210_6cmeijtd",
-      "pid": "TS011F",
-      "from": "usb_dongle_triple",
-      "to": "socket_power_strip",
-      "removed": 1,
-      "caseId": "p2274-6cmeijtd-nous-a11z-strip"
-    }
-  ],
+  "byAction": {},
+  "changes": [],
   "skipped": [
     {
       "reason": "registry_driver_missing",
