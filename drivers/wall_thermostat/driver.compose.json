@@ -150,7 +150,8 @@
       "_TZE200_XALSOE3M"
     ],
     "productId": [
-      "TS0003"
+      "TS0003",
+      "TS0601"
     ],
     "endpoints": {
       "1": {
@@ -198,10 +199,34 @@
     },
     "thermostat_mode": {
       "values": [
-        { "id": "off", "title": { "en": "Off", "fr": "Arrêt" } },
-        { "id": "cool", "title": { "en": "Cool", "fr": "Froid" } },
-        { "id": "heat", "title": { "en": "Heat", "fr": "Chaud" } },
-        { "id": "fan_only", "title": { "en": "Fan only", "fr": "Ventilation" } }
+        {
+          "id": "off",
+          "title": {
+            "en": "Off",
+            "fr": "Arrêt"
+          }
+        },
+        {
+          "id": "cool",
+          "title": {
+            "en": "Cool",
+            "fr": "Froid"
+          }
+        },
+        {
+          "id": "heat",
+          "title": {
+            "en": "Heat",
+            "fr": "Chaud"
+          }
+        },
+        {
+          "id": "fan_only",
+          "title": {
+            "en": "Fan only",
+            "fr": "Ventilation"
+          }
+        }
       ]
     },
     "target_temperature": {
