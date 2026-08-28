@@ -36,22 +36,22 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **App Version** | v9.0.671 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,377 |
-| **Pairing Variants** | 16,461 (4 case combos per fingerprint) |
+| **Pairing Variants** | 16,499 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 579 |
 | **Flow Cards** | 5,182 |
 | **Unique Capabilities** | 170 |
 | **Native OTA Drivers** | 5 |
-| **Test Suites** | 167 files |
+| **Test Suites** | 168 files |
 | **SVG Icons** | 731 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
-| **Last Updated** | 2026-08-27 |
+| **Last Updated** | 2026-08-28 |
 
 ### Top 20 Drivers by Fingerprint Count
 
 | # | Driver | Fingerprints |
 |---|--------|-------------|
-| 1 | `climate_sensor` | 2,404 |
+| 1 | `climate_sensor` | 2,396 |
 | 2 | `switch_1gang` | 1,706 |
 | 3 | `presence_sensor_radar` | 731 |
 | 4 | `radiator_valve` | 599 |
@@ -60,10 +60,10 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | 7 | `generic_tuya` | 420 |
 | 8 | `device_radiator_valve` | 378 |
 | 9 | `curtain_motor` | 334 |
-| 10 | `switch_4gang` | 274 |
+| 10 | `switch_4gang` | 276 |
 | 11 | `switch_2gang` | 249 |
-| 12 | `switch_3gang` | 208 |
-| 13 | `motion_sensor` | 207 |
+| 12 | `switch_3gang` | 210 |
+| 13 | `motion_sensor` | 209 |
 | 14 | `diy_custom_zigbee` | 206 |
 | 15 | `thermostat_tuya_dp` | 192 |
 | 16 | `soil_sensor` | 189 |
