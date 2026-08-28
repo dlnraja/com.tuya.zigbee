@@ -1,57 +1,34 @@
 {
-  "timestamp": "2026-08-27T15:39:52.288Z",
+  "timestamp": "2026-08-28T06:54:09.307Z",
   "gate": "align-mfs-db-intelligent",
   "apply": false,
-  "check": true,
-  "changeCount": 1,
+  "check": false,
+  "changeCount": 2,
   "skippedCount": 36,
-  "highSeverityCount": 1,
+  "highSeverityCount": 0,
   "byAction": {
-    "couple_exclusive": 1
+    "registry_compose_strip_pid": 2
   },
   "changes": [
     {
-      "severity": "high",
-      "action": "couple_exclusive",
-      "mfr": "_TZE200_bjzrowv2",
-      "from": "device_radiator_valve",
-      "to": "curtain_motor",
-      "modelIds": [
-        "01MINIZB",
-        "BASICZBR3",
-        "S26R2ZB",
-        "S31ZB",
-        "TS0001",
-        "TS0001_power",
-        "TS0001_switch",
-        "TS0001_switch_module",
-        "TS0002",
-        "TS0003",
-        "TS000F",
-        "TS0011",
-        "TS0012",
-        "TS0014",
-        "TS0041",
-        "TS0101",
-        "TS0111",
-        "TS011F",
-        "TS0601",
-        "TS0726",
-        "TS110E",
-        "TS130F",
-        "TS4100",
-        "ZBM5-1C-120",
-        "ZBM5-2C-120",
-        "ZBM5-3C-120",
-        "ZBMINI",
-        "ZBMINIL2",
-        "ZBMINIL2-R2",
-        "ZBMINIR",
-        "ZBMINIR2",
-        "ZBMINIR2-R2",
-        "ZG-301Z",
-        "ZG-302Z1"
-      ]
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_tz3210_6cmeijtd",
+      "pid": "TS011F",
+      "from": "usb_dongle_triple",
+      "to": "socket_power_strip",
+      "removed": 1,
+      "caseId": "p2274-6cmeijtd-nous-a11z-strip"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZ3210_6cmeijtd",
+      "pid": "TS011F",
+      "from": "usb_dongle_triple",
+      "to": "socket_power_strip",
+      "removed": 1,
+      "caseId": "p2274-6cmeijtd-nous-a11z-strip"
     }
   ],
   "skipped": [
@@ -383,7 +360,5 @@
       "curated": "switch_4_gang_metering"
     }
   ],
-  "highSeverity": [
-    "couple exclusive _TZE200_bjzrowv2 → curtain_motor"
-  ]
+  "highSeverity": []
 }
