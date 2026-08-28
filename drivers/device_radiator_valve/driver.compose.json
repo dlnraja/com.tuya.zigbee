@@ -23,7 +23,9 @@
     ]
   },
   "zigbee": {
-    "productId": [],
+    "productId": [
+      "TS0601"
+    ],
     "learnmode": {
       "image": "/drivers/radiator_valve/assets/learnmode.svg",
       "instruction": {
