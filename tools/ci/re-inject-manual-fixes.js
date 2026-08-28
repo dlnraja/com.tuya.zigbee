@@ -711,6 +711,39 @@ const MANUAL_FIXES = [
     addAtTop: true,
     source: 'p2291-forum-2204',
   },
+  {
+    id: 'p2293-curtain-strip-trv-68nvbio9-cf1sl3tj',
+    file: 'drivers/device_radiator_valve/driver.compose.json',
+    description: 'P2293 Zemismart covers must not reclaim TRV',
+    match: (mfrs) => Array.isArray(mfrs) && mfrs.some((m) => /68nvbio9|cf1sl3tj/i.test(String(m))),
+    removeIfPresent: [
+      '_TZE200_68nvbio9', '_tze200_68nvbio9', '_TZE200_68NVBIO9', '_tze200_68NVBIO9',
+      '_TZE200_cf1sl3tj', '_tze200_cf1sl3tj', '_TZE200_CF1SL3TJ', '_tze200_CF1SL3TJ',
+    ],
+    source: 'p2293-forum-154092',
+  },
+  {
+    id: 'p2293-curtain-strip-wall-68nvbio9',
+    file: 'drivers/wall_thermostat/driver.compose.json',
+    description: 'P2293 TZE204_68nvbio9 is cover bleed not thermostat',
+    match: (mfrs) => Array.isArray(mfrs) && mfrs.some((m) => /68nvbio9/i.test(String(m))),
+    removeIfPresent: [
+      '_TZE204_68nvbio9', '_tze204_68nvbio9', '_TZE204_68NVBIO9', '_tze204_68NVBIO9',
+    ],
+    source: 'p2293-forum-154092',
+  },
+  {
+    id: 'p2293-curtain-keep-curtain-motor',
+    file: 'drivers/curtain_motor/driver.compose.json',
+    description: 'P2293 keep Zemismart cover couples on curtain_motor',
+    match: () => true,
+    addIfMissing: [
+      '_TZE200_68nvbio9', '_tze200_68nvbio9',
+      '_TZE200_cf1sl3tj', '_tze200_cf1sl3tj',
+    ],
+    addProductIds: ['TS0601'],
+    source: 'p2293-forum-154092',
+  },
 ];
 
 function patchFix(fix) {

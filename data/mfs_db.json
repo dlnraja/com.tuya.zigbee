@@ -215440,8 +215440,8 @@
     "modelIdsCount": 1
   },
   "_TZE200_68nvbio9": {
-    "driverId": "device_radiator_valve",
-    "source": "compose-exclusive",
+    "driverId": "curtain_motor",
+    "source": "p2293-z2m-cover",
     "modelIds": [
       "TS0601"
     ],
@@ -215458,8 +215458,8 @@
     "modelIdsCount": 1
   },
   "_TZE200_cf1sl3tj": {
-    "driverId": "device_radiator_valve",
-    "source": "compose-exclusive",
+    "driverId": "curtain_motor",
+    "source": "p2293-z2m-cover",
     "modelIds": [
       "TS0601"
     ],
@@ -215891,8 +215891,8 @@
     "modelIdsCount": 1
   },
   "_tze204_68nvbio9": {
-    "driverId": "wall_thermostat",
-    "source": "auto-sync",
+    "driverId": "curtain_motor",
+    "source": "p2293-z2m-cover",
     "modelIds": [
       "TS0601"
     ],

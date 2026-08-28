@@ -2410,7 +2410,7 @@
         "bulb_dimmable"
       ],
       "source": "p2234b-couple-refine",
-      "notes": "TYBAC-006 sibling — not TRV"
+      "notes": "TYBAC-006 sibling — not TRV; P2293 DP2=system_mode cool/heat/fan_only, DP28=fan_mode (issue #532)"
     },
     {
       "id": "p2234b-tze204_apiu8k13",
@@ -3418,6 +3418,42 @@
       "protocol": "ias_zone",
       "notes": "Peter #2202 diag 95a7c6e5 — false MISATTR soil via rain placement. Keep water_leak; never invent k4ej pid onto this tile.",
       "sources": ["forum-140352-2202", "diag-95a7c6e5", "P2282"],
+      "tracks": { "master": { "static": true, "dynamic": true }, "stable": { "static": true, "dynamic": false } }
+    },
+    {
+      "id": "p2293-zemismart-68nvbio9-curtain-not-trv",
+      "mfr": ["_TZE200_68nvbio9", "_tze200_68nvbio9", "_TZE200_68NVBIO9"],
+      "productId": ["TS0601"],
+      "canonicalDriver": "curtain_motor",
+      "forbiddenDrivers": ["device_radiator_valve", "wall_thermostat", "climate_sensor"],
+      "forbidMode": "couple",
+      "protocol": "tuya_ef00",
+      "notes": "Z2M Zemismart ZM16EL cover motor — forum T154092 collision; never TRV/thermostat",
+      "sources": ["Z2M#29124", "Z2M#28655", "forum-154092", "P2293"],
+      "tracks": { "master": { "static": true, "dynamic": true }, "stable": { "static": true, "dynamic": false } }
+    },
+    {
+      "id": "p2293-zemismart-cf1sl3tj-curtain-not-trv",
+      "mfr": ["_TZE200_cf1sl3tj", "_tze200_cf1sl3tj", "_TZE200_CF1SL3TJ"],
+      "productId": ["TS0601"],
+      "canonicalDriver": "curtain_motor",
+      "forbiddenDrivers": ["device_radiator_valve", "wall_thermostat", "climate_sensor"],
+      "forbidMode": "couple",
+      "protocol": "tuya_ef00",
+      "notes": "Z2M Zemismart ZM85EL-2Z cover — forum T154092 collision",
+      "sources": ["Z2M#18413", "forum-154092", "P2293"],
+      "tracks": { "master": { "static": true, "dynamic": true }, "stable": { "static": true, "dynamic": false } }
+    },
+    {
+      "id": "p2293-dfgbtub0-ts0044-wireless-4",
+      "mfr": ["_TZ3000_dfgbtub0", "_TZ3000_DFGBTUB0", "_tz3000_dfgbtub0"],
+      "productId": ["TS0044"],
+      "canonicalDriver": "button_wireless_4",
+      "forbiddenDrivers": ["button_wireless_2", "switch_4gang"],
+      "forbidMode": "couple",
+      "protocol": "zcl",
+      "notes": "SunBeech Moes T156967 — TS0044 = 4-gang remote; TS0042 stays on button_wireless_2",
+      "sources": ["forum-156967-12", "P2293"],
       "tracks": { "master": { "static": true, "dynamic": true }, "stable": { "static": true, "dynamic": false } }
     }
   ]

@@ -1,0 +1,34 @@
+{
+  "type": "enum",
+  "title": {
+    "en": "Fan mode",
+    "fr": "Mode ventilateur",
+    "nl": "Ventilatormodus",
+    "de": "Lüftermodus"
+  },
+  "desc": {
+    "en": "Fan coil speed (TYBAC-006 FCU)",
+    "fr": "Vitesse ventiloconvecteur (TYBAC-006 FCU)"
+  },
+  "values": [
+    {
+      "id": "low",
+      "title": { "en": "Low", "fr": "Bas", "nl": "Laag", "de": "Niedrig" }
+    },
+    {
+      "id": "medium",
+      "title": { "en": "Medium", "fr": "Moyen", "nl": "Middel", "de": "Mittel" }
+    },
+    {
+      "id": "high",
+      "title": { "en": "High", "fr": "Haut", "nl": "Hoog", "de": "Hoch" }
+    },
+    {
+      "id": "auto",
+      "title": { "en": "Auto", "fr": "Auto", "nl": "Auto", "de": "Auto" }
+    }
+  ],
+  "getable": true,
+  "setable": true,
+  "uiComponent": "picker"
+}

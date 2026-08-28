@@ -45,7 +45,6 @@
       "_tze200_ekd8x5dt",
       "_tze200_lzriup1j",
       "_tze204_2ekuz3dz",
-      "_tze204_68nvbio9",
       "_tze204_aoclfnxz",
       "_TZE200_2EKUZ3DZ",
       "_tze200_2ekuz3dz",
@@ -79,12 +78,10 @@
       "_TZE200_EKD8X5DT",
       "_TZE200_LZRIUP1J",
       "_TZE204_2EKUZ3DZ",
-      "_TZE204_68NVBIO9",
       "_TYST11_2ekuz3dz",
       "_TZE200_ekd8x5dt",
       "_TZE200_lzriup1j",
       "_TZE204_2ekuz3dz",
-      "_TZE204_68nvbio9",
       "_tze200_2EKUZ3DZ",
       "_tze200_AOCLFNXZ",
       "_tze200_G9A3AWAJ",
@@ -104,7 +101,6 @@
       "_tze200_EKD8X5DT",
       "_tze200_LZRIUP1J",
       "_tze204_2EKUZ3DZ",
-      "_tze204_68NVBIO9",
       "_tze200_znzs7yaw",
       "_TZE200_ZNZS7YAW",
       "_TZE200_znzs7yaw",
@@ -199,6 +195,14 @@
       "maintenanceAction": true,
       "getable": false,
       "setable": false
+    },
+    "thermostat_mode": {
+      "values": [
+        { "id": "off", "title": { "en": "Off", "fr": "Arrêt" } },
+        { "id": "cool", "title": { "en": "Cool", "fr": "Froid" } },
+        { "id": "heat", "title": { "en": "Heat", "fr": "Chaud" } },
+        { "id": "fan_only", "title": { "en": "Fan only", "fr": "Ventilation" } }
+      ]
     },
     "target_temperature": {
       "min": 5,
