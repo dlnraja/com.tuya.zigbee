@@ -687,6 +687,30 @@ const MANUAL_FIXES = [
     addAtTop: true,
     source: 'p217-johan-1429',
   },
+  {
+    id: 'p2291-ogkdpgy2-air-quality-co2',
+    file: 'drivers/climate_sensor/driver.compose.json',
+    description: 'P2291 Elliot #2204: ogkdpgy2 NDIR CO2 — must NOT reclaim climate_sensor',
+    match: (mfrs) => Array.isArray(mfrs) && mfrs.some((m) => /ogkdpgy2/i.test(String(m))),
+    removeIfPresent: [
+      '_TZE200_ogkdpgy2', '_TZE204_ogkdpgy2', '_TZE200_OGKDPGY2', '_TZE204_OGKDPGY2',
+      '_tze200_ogkdpgy2', '_tze204_ogkdpgy2', '_tze200_OGKDPGY2', '_tze204_OGKDPGY2',
+    ],
+    source: 'p2291-forum-2204',
+  },
+  {
+    id: 'p2291-ogkdpgy2-air-quality-add',
+    file: 'drivers/air_quality_co2/driver.compose.json',
+    description: 'P2291 Elliot #2204: ogkdpgy2 CO2 lock on air_quality_co2',
+    match: (mfrs) => Array.isArray(mfrs) && mfrs.some((m) => /ogkdpgy2/i.test(String(m))),
+    addIfMissing: [
+      '_TZE200_ogkdpgy2', '_TZE204_ogkdpgy2', '_TZE200_OGKDPGY2', '_TZE204_OGKDPGY2',
+      '_tze200_ogkdpgy2', '_tze204_ogkdpgy2',
+    ],
+    addProductIds: ['TS0601'],
+    addAtTop: true,
+    source: 'p2291-forum-2204',
+  },
 ];
 
 function patchFix(fix) {

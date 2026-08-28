@@ -17,11 +17,15 @@ class AirQualityCO2Device extends SensorBase {
 
   get mainsPowered() {
     // v5.13.3: Correctly identify mains-powered devices
-    const mfr = this.getManufacturerName();
-    if (mfr === '_TZE200_8ygsuhe1' || mfr === '_TZE200_y6rqas8p') {
+    const mfr = (this.getManufacturerName() || '').toLowerCase();
+    if (mfr.includes('ogkdpgy2') || mfr === '_tze200_8ygsuhe1' || mfr === '_tze200_y6rqas8p') {
       return true;
     }
     return false;
+  }
+
+  _isOgkdpgy2Co2Only() {
+    return (this.getManufacturerName() || '').toLowerCase().includes('ogkdpgy2');
   }
 
   get sensorCapabilities() {
@@ -31,6 +35,17 @@ class AirQualityCO2Device extends SensorBase {
   get dpMappings() {
     const mfr = (this.getSetting('zb_manufacturer_name') || '').toUpperCase();
     const is8b9zpaav = mfr.includes('8B9ZPAAV');
+
+    // WHY(P2291): Z2M ogkdpgy2 NDIR CO2 — DP2 only, mains router, no temp/hum on TZE204
+    if (this._isOgkdpgy2Co2Only()) {
+      return {
+        2: {
+          capability: 'measure_co2',
+          divisor: 1,
+          transform: (v) => this._validateCO2(v),
+        },
+      };
+    }
 
     // _TZE284_8b9zpaav uses a different DP layout: DP1=CO2, DP2=HCHO, DP3=temp, DP4=humidity
     if (is8b9zpaav) {
@@ -77,7 +92,17 @@ class AirQualityCO2Device extends SensorBase {
         await this.removeCapability('measure_battery').catch(() => {});
       }
 
+      // WHY(P2291): ogkdpgy2 reports CO2 only — strip unused compose caps
+      if (this._isOgkdpgy2Co2Only()) {
+        for (const cap of ['measure_temperature', 'measure_humidity', 'measure_pm25', 'measure_voc', 'measure_formaldehyde', 'alarm_generic']) {
+          if (this.hasCapability(cap)) {
+            await this.removeCapability(cap).catch(() => {});
+          }
+        }
+      }
+
       // --- Attribute Reporting Configuration ---
+      if (!this._isOgkdpgy2Co2Only()) {
       try {
         await this.configureAttributeReporting([
           {
@@ -105,6 +130,7 @@ class AirQualityCO2Device extends SensorBase {
         this.log('Attribute reporting configured successfully');
       } catch (err) {
         this.log('Attribute reporting config failed (device may not support it):', err.message);
+      }
       }
 
       // v5.5.317: Initialize intelligent inference engines

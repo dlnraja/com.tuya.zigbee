@@ -3344,6 +3344,25 @@
       "tracks": { "master": { "static": true, "dynamic": true }, "stable": { "static": true, "dynamic": false } }
     },
     {
+      "id": "p2291-ogkdpgy2-co2-not-climate",
+      "mfr": [
+        "_TZE200_ogkdpgy2",
+        "_TZE204_ogkdpgy2",
+        "_TZE200_OGKDPGY2",
+        "_TZE204_OGKDPGY2",
+        "_tze200_ogkdpgy2",
+        "_tze204_ogkdpgy2"
+      ],
+      "productId": ["TS0601"],
+      "canonicalDriver": "air_quality_co2",
+      "forbiddenDrivers": ["climate_sensor", "climate_sensor_zt08", "soil_sensor", "zigbee_universal"],
+      "forbidMode": "couple",
+      "protocol": "tuya_ef00",
+      "notes": "Elliot #2204 T140352 — Z2M NDIR CO2 DCR-LCD mains router; DP2=measure_co2 only; was climate misroute",
+      "sources": ["forum-140352-2204", "Z2M#24858", "Z2M-PR-8354", "P2291"],
+      "tracks": { "master": { "static": true, "dynamic": true }, "stable": { "static": true, "dynamic": false } }
+    },
+    {
       "id": "p2282-mrpevh8p-ts0041-button",
       "mfr": [
         "_TZ3000_mrpevh8p",

@@ -79,4 +79,42 @@ describe('P2285 mrpevh8p+TS0041 SH-SC07 deep lock', () => {
     assert(src.includes('mapAllEndpointsToButton1'));
     assert(src.includes('EP${epId}→btn${gang}'));
   });
+
+  it('P2290 getDeviceProfile uses MfrHelper + button_wireless_1/TS0041 fallback', () => {
+    const src = read('lib/mixins/PhysicalButtonMixin.js');
+    assert(src.includes('ManufacturerNameHelper'));
+    assert(src.includes('P2290_button_wireless_1_ts0041'));
+    assert(src.includes('resolveGangCount(this)'));
+    assert(src.includes('collapsePhantomEndpoints'));
+  });
+
+  it('P2290 OnOffBoundCluster resolves nested command.id like raw catcher', () => {
+    const OnOffBoundCluster = require('../../lib/clusters/OnOffBoundCluster');
+    const seen = [];
+    const bc = new OnOffBoundCluster({
+      onSetOn: (p) => seen.push(p),
+    });
+    bc._device = { log() {} };
+    return bc.handleFrame({ command: { id: 0xFD }, data: Buffer.from([0]) }, null, null).then(() => {
+      assert.strictEqual(seen.length, 1);
+      assert.strictEqual(seen[0].cmdId, 0xFD);
+      assert.strictEqual(seen[0].press, 'single');
+    });
+  });
+
+  it('P2290 mfs_db MRPEVH8P pid is TS0041 not 01MINIZB', () => {
+    const j = JSON.parse(read('data/mfs_db.json'));
+    const e = j._TZ3000_MRPEVH8P;
+    assert(e);
+    assert.strictEqual(e.driverId, 'button_wireless_1');
+    assert.deepStrictEqual(e.modelIds, ['TS0041']);
+    assert.strictEqual(e.pid, 'TS0041');
+    assert.strictEqual(e.modelIdsCount, 1);
+  });
+
+  it('P2290 setupStandardBatteryMonitoring honors skipBatteryReporting', () => {
+    const src = read('lib/devices/BaseUnifiedDevice.js');
+    assert(src.includes('skipBatteryReporting'));
+    assert(src.includes('Skipping configureReporting (profile.skipBatteryReporting)'));
+  });
 });
