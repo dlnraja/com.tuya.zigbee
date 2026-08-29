@@ -4,11 +4,11 @@
 
 [![Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdlnraja%2Fcom.tuya.zigbee%2Fmaster%2Fapp.json&query=%24.version&label=version&color=blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![Drivers](https://img.shields.io/badge/drivers-431-brightgreen)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
-[![Fingerprints](https://img.shields.io/badge/fingerprints-4,377%20unique-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
+[![Fingerprints](https://img.shields.io/badge/fingerprints-4,378%20unique-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![SDK](https://img.shields.io/badge/SDK-3-orange)](https://apps.developer.homey.app/)
 [![License](https://img.shields.io/badge/license-GPL--3.0-green)](LICENSE)
 
-Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, sensors, lights, thermostats, covers, valves — **431 drivers**, **4,377 unique fingerprints**. No cloud required.
+Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, sensors, lights, thermostats, covers, valves — **431 drivers**, **4,378 unique fingerprints**. No cloud required.
 
 **What it does:**
 - Talks to devices on your Homey Zigbee mesh (Tuya DP `0xEF00` and standard ZCL)
@@ -33,15 +33,15 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.676 |
+| **App Version** | v9.0.677 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
-| **Unique Fingerprints** | 4,377 |
-| **Pairing Variants** | 16,475 (4 case combos per fingerprint) |
+| **Unique Fingerprints** | 4,378 |
+| **Pairing Variants** | 16,477 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 578 |
 | **Flow Cards** | 5,182 |
 | **Unique Capabilities** | 170 |
 | **Native OTA Drivers** | 5 |
-| **Test Suites** | 171 files |
+| **Test Suites** | 172 files |
 | **SVG Icons** | 731 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
@@ -102,6 +102,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.677** | Publish hardening: store changelog always shipped; sacred device couples preserved under size compaction; safer Test uploads (no orphan b… |
 | **v9.0.676** | Publish hardening: store changelog always shipped; sacred device couples preserved under size compaction; safer Test uploads (no orphan b… |
 | **v9.0.675** | Publish hardening: store changelog always shipped; sacred device couples preserved under size compaction; safer Test uploads (no orphan b… |
 | **v9.0.674** | Publish hardening: store changelog always shipped; sacred device couples preserved under size compaction; safer Test uploads (no orphan b… |
@@ -113,7 +114,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.668** | Publish hardening: store changelog always shipped; sacred device couples preserved under size compaction; safer Test uploads (no orphan b… |
 | **v9.0.667** | Publish hardening: store changelog always shipped; sacred device couples preserved under size compaction; safer Test uploads (no orphan b… |
 | **v9.0.666** | Publish hardening: store changelog always shipped; sacred device couples preserved under size compaction; safer Test uploads (no orphan b… |
-| **v9.0.665** | Publish hardening: store changelog always shipped; sacred device couples preserved under size compaction; safer Test uploads (no orphan b… |
 
 <!-- CHANGELOG_END -->
 
