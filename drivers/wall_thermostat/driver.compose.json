@@ -9,7 +9,9 @@
     "measure_temperature",
     "target_temperature",
     "child_lock",
-    "button.1"
+    "button.1",
+    "thermostat_mode",
+    "fan_mode"
   ],
   "images": {
     "large": "/{{driverAssetsPath}}/images/large.png",
@@ -243,7 +245,13 @@
       "_TZE200_xixlazkg",
       "_tze200_xixlazkg",
       "_TZE200_XIXLAZKG",
-      "_tze200_XIXLAZKG"
+      "_tze200_XIXLAZKG",
+      "_TZE204_mpbki2zm",
+      "_TZE204_qujphad5",
+      "_tze204_mpbki2zm",
+      "_tze204_qujphad5",
+      "_TZE204_MPBKI2ZM",
+      "_TZE204_QUJPHAD5"
     ],
     "productId": [
       "TS0601"
@@ -291,6 +299,71 @@
       "maintenanceAction": true,
       "getable": false,
       "setable": false
+    },
+    "thermostat_mode": {
+      "values": [
+        {
+          "id": "off",
+          "title": {
+            "en": "Off",
+            "fr": "Arrêt"
+          }
+        },
+        {
+          "id": "cool",
+          "title": {
+            "en": "Cool",
+            "fr": "Froid"
+          }
+        },
+        {
+          "id": "heat",
+          "title": {
+            "en": "Heat",
+            "fr": "Chaud"
+          }
+        },
+        {
+          "id": "fan_only",
+          "title": {
+            "en": "Fan only",
+            "fr": "Ventilation"
+          }
+        }
+      ]
+    },
+    "fan_mode": {
+      "values": [
+        {
+          "id": "low",
+          "title": {
+            "en": "Low"
+          }
+        },
+        {
+          "id": "medium",
+          "title": {
+            "en": "Medium"
+          }
+        },
+        {
+          "id": "high",
+          "title": {
+            "en": "High"
+          }
+        },
+        {
+          "id": "auto",
+          "title": {
+            "en": "Auto"
+          }
+        }
+      ]
+    },
+    "target_temperature": {
+      "min": 5,
+      "max": 35,
+      "step": 0.5
     }
   },
   "ui": {

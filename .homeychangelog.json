@@ -1344,5 +1344,8 @@
   },
   "5.12.98": {
     "en": "Reliability: late Zigbee identity re-arms 1-button remote presses; keep battery on sleepy buttons; CO2 sensor couple no longer stolen by climate; radar settings save never blocks Homey UI."
+  },
+  "5.12.99": {
+    "en": "P2303 BOTH: FCU wall_thermostat OFF/setpoint (Adam #532) — DeviceIO TX, FRAG/DP1 bool, mpbki2zm lock"
   }
 }
