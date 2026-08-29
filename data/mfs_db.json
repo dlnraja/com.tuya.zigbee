@@ -121177,6 +121177,23 @@
       "source": "p2236-forum-integral",
       "confidence": 0.95,
       "updatedAt": "2026-08-24"
+    },
+    "_tze28c1000000_i8sdouy0": {
+      "manufacturerId": "_tze28c1000000_i8sdouy0",
+      "modelIds": [
+        "TS0601"
+      ],
+      "variants": [],
+      "deviceType": "cover",
+      "driverHint": "curtain_motor",
+      "capabilities": [],
+      "powerSource": "unknown",
+      "sources": [
+        "z2m",
+        "p2307"
+      ],
+      "confidence": 0.95,
+      "lastSeen": "2026-08-29T23:32:19.548Z"
     }
   },
   "driverMapping": {
@@ -136119,8 +136136,8 @@
     ],
     "pid": null,
     "modelIdsCount": 2,
-    "driverHint": "button_wireless_4",
-    "notes": "TS0043→button_wireless_3; TS0044→button_wireless_4 (compose couple lock)"
+    "driverHint": null,
+    "notes": "MULTI_PID: TS0043→button_wireless_3; TS0044→button_wireless_4; TS0601 matrix bleed baselined"
   },
   "_TZ3000_yw5tvzsk": {
     "driverId": "button_wireless_2",
@@ -327871,5 +327888,25 @@
       "generic_tuya"
     ],
     "notes": "P2299 OCR alias of 6ocnqlhn (diag 31e654a4)"
+  },
+  "_TZE284_upt8lzi0": {
+    "driverId": "curtain_motor",
+    "source": "registry:p2307-moes-star-feather-upt8lzi0",
+    "modelIds": [
+      "TS0601"
+    ],
+    "pid": "TS0601",
+    "modelIdsCount": 1,
+    "notes": "Moes Star Feather ZS-SF curtain — P2307"
+  },
+  "_TZE28C1000000_i8sdouy0": {
+    "driverId": "curtain_motor",
+    "source": "registry:p2307-moes-star-feather-upt8lzi0",
+    "modelIds": [
+      "TS0601"
+    ],
+    "pid": "TS0601",
+    "modelIdsCount": 1,
+    "notes": "Moes Star Feather OEM alias — P2307"
   }
 }
