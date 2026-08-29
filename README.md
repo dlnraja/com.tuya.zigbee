@@ -33,10 +33,10 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.677 |
+| **App Version** | v9.0.678 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,378 |
-| **Pairing Variants** | 16,480 (4 case combos per fingerprint) |
+| **Pairing Variants** | 16,476 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 578 |
 | **Flow Cards** | 5,182 |
 | **Unique Capabilities** | 170 |
@@ -102,6 +102,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.678** | Publish hardening: store changelog always shipped; sacred device couples preserved under size compaction; safer Test uploads (no orphan b… |
 | **v9.0.677** | Publish hardening: store changelog always shipped; sacred device couples preserved under size compaction; safer Test uploads (no orphan b… |
 | **v9.0.676** | Publish hardening: store changelog always shipped; sacred device couples preserved under size compaction; safer Test uploads (no orphan b… |
 | **v9.0.675** | Publish hardening: store changelog always shipped; sacred device couples preserved under size compaction; safer Test uploads (no orphan b… |
@@ -113,7 +114,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.669** | Publish hardening: store changelog always shipped; sacred device couples preserved under size compaction; safer Test uploads (no orphan b… |
 | **v9.0.668** | Publish hardening: store changelog always shipped; sacred device couples preserved under size compaction; safer Test uploads (no orphan b… |
 | **v9.0.667** | Publish hardening: store changelog always shipped; sacred device couples preserved under size compaction; safer Test uploads (no orphan b… |
-| **v9.0.666** | Publish hardening: store changelog always shipped; sacred device couples preserved under size compaction; safer Test uploads (no orphan b… |
 
 <!-- CHANGELOG_END -->
 
