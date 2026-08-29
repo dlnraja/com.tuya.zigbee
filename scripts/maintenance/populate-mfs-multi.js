@@ -15,8 +15,20 @@ function saveJSON(p, obj) { fs.writeFileSync(p, JSON.stringify(obj, null, 2) + '
 
 const mfs = loadJSON(MFS);
 const blk = loadJSON(BLK) || {};
+const REG = loadJSON('data/user-misattribution-registry.json') || { cases: [] };
 
 if (!mfs) { console.log('mfs_db missing'); process.exit(1); }
+
+// WHY(P2295): registry-locked couples must NOT inherit the driver's full cartesian productId list.
+const registryLocked = new Map(); // norm(mfr) -> Set(norm pid)
+for (const c of REG.cases || []) {
+  const pids = [].concat(c.productId || []).map((p) => String(p).toLowerCase());
+  for (const m of [].concat(c.mfr || [])) {
+    const nm = String(m).toLowerCase();
+    if (!registryLocked.has(nm)) registryLocked.set(nm, new Set());
+    for (const p of pids) registryLocked.get(nm).add(p);
+  }
+}
 
 // Build mfr → driverId index
 const mfsByMfr = new Map();
@@ -88,17 +100,34 @@ let totalModelIds = 0;
 for (const [mfr, v] of mfsByMfr) {
   // 1. Collect modelIds (PIDs from drivers this mfr appears in)
   const appearances = mfrToDriverPids.get(mfr) || [];
-  const allPids = new Set();
-  for (const app of appearances) {
-    for (const p of app.pids) allPids.add(p);
-  }
-  if (allPids.size > 0) {
-    v.modelIds = [...allPids].sort();
-    v.pid = v.modelIds[0];  // Keep primary PID for backward compat
+  const locked = registryLocked.get(String(mfr).toLowerCase());
+  if (locked && locked.size) {
+    // WHY(P2295): sacred-couple lock — only registry productIds (real Zigbee pids)
+    const prefer = [...(v.modelIds || []), ...(appearances[0]?.pids || [])];
+    const resolved = new Set();
+    for (const lp of locked) {
+      const hit = prefer.find((p) => String(p).toLowerCase() === lp) || String(lp).toUpperCase();
+      resolved.add(hit);
+    }
+    v.modelIds = [...resolved].sort();
+    v.pid = v.modelIds[0];
     v.modelIdsCount = v.modelIds.length;
     totalModelIds += v.modelIds.length;
     if (v.modelIds.length > 1) multiPidMfrs++;
     updatedMfrs++;
+  } else {
+    const allPids = new Set();
+    for (const app of appearances) {
+      for (const p of app.pids) allPids.add(p);
+    }
+    if (allPids.size > 0) {
+      v.modelIds = [...allPids].sort();
+      v.pid = v.modelIds[0]; // Keep primary PID for backward compat
+      v.modelIdsCount = v.modelIds.length;
+      totalModelIds += v.modelIds.length;
+      if (v.modelIds.length > 1) multiPidMfrs++;
+      updatedMfrs++;
+    }
   }
 
   // 2. Collect case-variants (same mfr, different case)

@@ -11,6 +11,7 @@
     "windowcoverings_set",
     "windowcoverings_tilt_set",
     "measure_luminance",
+    "measure_battery",
     "button",
     "dim",
     "button.1"
@@ -397,7 +398,27 @@
       "_tze284_1fuxihti",
       "_tze200_1fuxihti",
       "_TZE204_68nvbio9",
-      "_tze204_68nvbio9"
+      "_tze204_68nvbio9",
+      "_TZE200_68nvbi09",
+      "_TZE204_pw7mji0l",
+      "_TZE200_vexa5o82",
+      "_TZE200_eevqq1uv",
+      "_TZE200_ba69l9ol",
+      "_TZE200_sfqyhvpv",
+      "_TZE204_ejh6owwz",
+      "_tze200_68nvbi09",
+      "_tze204_pw7mji0l",
+      "_tze200_vexa5o82",
+      "_tze200_eevqq1uv",
+      "_tze200_ba69l9ol",
+      "_tze200_sfqyhvpv",
+      "_tze204_ejh6owwz",
+      "_TZE200_m6lwazh9",
+      "_tze200_m6lwazh9",
+      "_TZE200_M6LWAZH9",
+      "_tze200_M6LWAZH9",
+      "_TZE210_M6LWAZH9",
+      "_tze210_M6LWAZH9"
     ],
     "productId": [
       "01MINIZB",
@@ -410,6 +431,9 @@
       "E1757",
       "FYRTUR",
       "KADRILJ",
+      "lumi.curtain",
+      "lumi.curtain.acn002",
+      "lumi.curtain.hagl04",
       "S26R2ZB",
       "S31ZB",
       "TS0001",
@@ -444,9 +468,6 @@
       "ZC-LS02",
       "ZG-301Z",
       "ZG-302Z1",
-      "lumi.curtain",
-      "lumi.curtain.acn002",
-      "lumi.curtain.hagl04",
       "TS0601"
     ],
     "endpoints": {
@@ -772,9 +793,9 @@
     }
   ],
   "energy": {
-    "approximation": {
-      "usageConstant": 0.5
-    }
+    "batteries": [
+      "OTHER"
+    ]
   },
   "metadata": {
     "app": {

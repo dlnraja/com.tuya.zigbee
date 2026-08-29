@@ -317,11 +317,22 @@ function align(db, compose, registry) {
         entry.modelIds = next;
         dirty = true;
       }
+      // WHY(P2295): keep pid/modelIdsCount coherent; never leave invent/bleed primary pid
+      const primary = entry.modelIds[0];
+      if (primary && entry.pid !== primary) {
+        entry.pid = primary;
+        dirty = true;
+      }
+      if (entry.modelIdsCount !== entry.modelIds.length) {
+        entry.modelIdsCount = entry.modelIds.length;
+        dirty = true;
+      }
     }
     entry.source = entry.source || 'user-misattribution-registry';
     if (!String(entry.source).includes('registry')) {
       entry.source = `registry:${row.caseIds[0]}`;
     }
+    // Preserve enrichment aliases (deviceNames / z2mModels / whiteLabels / productNames)
     if (dirty) {
       changes.push({
         severity: 'high',

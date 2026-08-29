@@ -32,7 +32,7 @@
       "realMfrsAdded": 5,
       "details": "tmp/synthetic-resolution.json + tmp/pruned21-resolution.json"
     },
-    "lastAlignedAt": "2026-08-28T17:03:23.535Z",
+    "lastAlignedAt": "2026-08-28T22:08:44.973Z",
     "alignTool": "align-mfs-db-intelligent@P169"
   },
   "sources": {
@@ -876,7 +876,7 @@
       ],
       "variants": [],
       "deviceType": "sensor",
-      "driverHint": "climate_sensor",
+      "driverHint": "air_quality_co2",
       "capabilities": [
         "measure_co2",
         "measure_temperature",
@@ -891,7 +891,7 @@
         "measure_power",
         "alarm_battery"
       ],
-      "powerSource": "battery",
+      "powerSource": "mains",
       "sources": [
         "local",
         "z2m"
@@ -5354,7 +5354,11 @@
       "modelIds": [
         "TS0041"
       ],
-      "variants": [],
+      "variants": [
+        "_tz3000_mrpevh8p",
+        "_TZ3000_mrpevh8p",
+        "_TZ3000_MRPEVH8P"
+      ],
       "deviceType": "button",
       "driverHint": "button_wireless_1",
       "capabilities": [
@@ -5366,15 +5370,40 @@
         "z2m",
         "hubitat",
         "johan_issue_1120",
-        "forum_140352"
+        "forum_140352",
+        "p2295-multi-identity",
+        "p2282-mrpevh8p-ts0041-button",
+        "p2295"
       ],
       "sourceDetails": {
         "local": 2,
         "z2m": 1,
         "hubitat": 1
       },
-      "confidence": 0.8,
-      "lastSeen": "2026-07-29T00:00:00.000Z"
+      "confidence": 0.95,
+      "lastSeen": "2026-08-28T22:03:09.511Z",
+      "driverId": "button_wireless_1",
+      "deviceNames": [
+        "RSH-SC021",
+        "SH-SC07",
+        "Tuya 1-button scene switch"
+      ],
+      "z2mModels": [
+        "SH-SC07",
+        "TS0041"
+      ],
+      "whiteLabels": [
+        "RSH-SC021",
+        "SH-SC07"
+      ],
+      "productNames": [
+        "RSH-SC021",
+        "SH-SC07",
+        "Tuya 1-button scene switch"
+      ],
+      "coupleLock": true,
+      "pid": "TS0041",
+      "notes": "P2295: zigbee pid=TS0041 only. SH-SC07/RSH-SC021 are whiteLabels. Interview may show phantom EP2–4 — still 1 physical button."
     },
     "_tz3000_b4awzgct": {
       "manufacturerId": "_tz3000_b4awzgct",
@@ -16227,29 +16256,53 @@
     "_tze200_3ejwxpmu": {
       "manufacturerId": "_tze200_3ejwxpmu",
       "modelIds": [
-        "TS0201",
         "TS0601"
       ],
-      "variants": [],
-      "deviceType": "sensor",
-      "driverHint": "climate_sensor",
+      "variants": [
+        "_tze200_3ejwxpmu",
+        "_TZE200_3ejwxpmu",
+        "_TZE200_3EJWXPMU"
+      ],
+      "deviceType": "air_quality",
+      "driverHint": "air_quality_co2",
       "capabilities": [
         "measure_temperature",
         "measure_humidity",
         "measure_battery",
         "alarm_battery"
       ],
-      "powerSource": "battery",
+      "powerSource": "mains",
       "sources": [
         "local",
-        "z2m"
+        "z2m",
+        "p2295-multi-identity",
+        "p2295-3ejwxpmu-co2-sibling",
+        "p2295"
       ],
       "sourceDetails": {
         "local": 1,
         "z2m": 1
       },
-      "confidence": 0.17,
-      "lastSeen": "2026-06-19T20:58:49.733Z"
+      "confidence": 0.95,
+      "lastSeen": "2026-08-28T22:03:07.879Z",
+      "driverId": "air_quality_co2",
+      "deviceNames": [
+        "NDIR CO2 sensor",
+        "TS0601_co2_sensor",
+        "Tuya CO2 (3ejwxpmu)"
+      ],
+      "z2mModels": [
+        "TS0601_co2_sensor"
+      ],
+      "whiteLabels": [],
+      "productNames": [
+        "NDIR CO2 sensor",
+        "TS0601_co2_sensor",
+        "Tuya CO2 (3ejwxpmu)"
+      ],
+      "coupleLock": true,
+      "pid": "TS0601",
+      "notes": "P2295: Z2M same fingerprint group as ogkdpgy2 CO2 — not climate_sensor cartesian bleed."
     },
     "_tze200_3xfjp0ag": {
       "manufacturerId": "_tze200_3xfjp0ag",
@@ -17014,12 +17067,15 @@
     "_tze200_ba69l9ol": {
       "manufacturerId": "_tze200_ba69l9ol",
       "modelIds": [
-        "TS0201",
         "TS0601"
       ],
-      "variants": [],
-      "deviceType": "sensor",
-      "driverHint": "climate_sensor",
+      "variants": [
+        "_tze200_ba69l9ol",
+        "_TZE200_ba69l9ol",
+        "_TZE200_BA69L9OL"
+      ],
+      "deviceType": "curtain",
+      "driverHint": "curtain_motor",
       "capabilities": [
         "measure_temperature",
         "measure_humidity",
@@ -17029,14 +17085,35 @@
       "powerSource": "battery",
       "sources": [
         "local",
-        "z2m"
+        "z2m",
+        "p2295-multi-identity",
+        "p2295-zemismart-cover-siblings",
+        "p2295"
       ],
       "sourceDetails": {
         "local": 1,
         "z2m": 1
       },
-      "confidence": 0.17,
-      "lastSeen": "2026-06-19T20:58:49.740Z"
+      "confidence": 0.95,
+      "lastSeen": "2026-08-28T22:03:09.096Z",
+      "driverId": "curtain_motor",
+      "deviceNames": [
+        "TS0601_cover",
+        "Zemismart / Tuya TS0601 cover (Z2M group 148)"
+      ],
+      "z2mModels": [
+        "TS0601_cover",
+        "ZM16EL",
+        "ZM85EL-2Z"
+      ],
+      "whiteLabels": [],
+      "productNames": [
+        "TS0601_cover",
+        "Zemismart / Tuya TS0601 cover (Z2M group 148)"
+      ],
+      "coupleLock": true,
+      "pid": "TS0601",
+      "notes": "P2295: Z2M cover fingerprint siblings of 68nvbio9/cf1sl3tj — each couple keeps pid TS0601 only."
     },
     "_tze200_bcusnqt8": {
       "manufacturerId": "_tze200_bcusnqt8",
@@ -17712,12 +17789,15 @@
     "_tze200_eevqq1uv": {
       "manufacturerId": "_tze200_eevqq1uv",
       "modelIds": [
-        "TS0201",
         "TS0601"
       ],
-      "variants": [],
-      "deviceType": "sensor",
-      "driverHint": "climate_sensor",
+      "variants": [
+        "_tze200_eevqq1uv",
+        "_TZE200_eevqq1uv",
+        "_TZE200_EEVQQ1UV"
+      ],
+      "deviceType": "curtain",
+      "driverHint": "curtain_motor",
       "capabilities": [
         "measure_temperature",
         "measure_humidity",
@@ -17727,14 +17807,35 @@
       "powerSource": "battery",
       "sources": [
         "local",
-        "z2m"
+        "z2m",
+        "p2295-multi-identity",
+        "p2295-zemismart-cover-siblings",
+        "p2295"
       ],
       "sourceDetails": {
         "local": 1,
         "z2m": 1
       },
-      "confidence": 0.17,
-      "lastSeen": "2026-06-19T20:58:49.740Z"
+      "confidence": 0.95,
+      "lastSeen": "2026-08-28T22:03:09.024Z",
+      "driverId": "curtain_motor",
+      "deviceNames": [
+        "TS0601_cover",
+        "Zemismart / Tuya TS0601 cover (Z2M group 148)"
+      ],
+      "z2mModels": [
+        "TS0601_cover",
+        "ZM16EL",
+        "ZM85EL-2Z"
+      ],
+      "whiteLabels": [],
+      "productNames": [
+        "TS0601_cover",
+        "Zemismart / Tuya TS0601 cover (Z2M group 148)"
+      ],
+      "coupleLock": true,
+      "pid": "TS0601",
+      "notes": "P2295: Z2M cover fingerprint siblings of 68nvbio9/cf1sl3tj — each couple keeps pid TS0601 only."
     },
     "_tze200_ehhrv2e3": {
       "manufacturerId": "_tze200_ehhrv2e3",
@@ -19713,29 +19814,64 @@
     "_tze200_ogkdpgy2": {
       "manufacturerId": "_tze200_ogkdpgy2",
       "modelIds": [
-        "TS0201",
         "TS0601"
       ],
-      "variants": [],
-      "deviceType": "sensor",
-      "driverHint": "climate_sensor",
+      "variants": [
+        "_tze200_ogkdpgy2",
+        "_TZE200_ogkdpgy2",
+        "_TZE200_OGKDPGY2"
+      ],
+      "deviceType": "air_quality",
+      "driverHint": "air_quality_co2",
       "capabilities": [
         "measure_temperature",
         "measure_humidity",
         "measure_battery",
         "alarm_battery"
       ],
-      "powerSource": "battery",
+      "powerSource": "mains",
       "sources": [
         "local",
-        "z2m"
+        "z2m",
+        "p2295-multi-identity",
+        "p2291-ogkdpgy2-co2-not-climate",
+        "p2295"
       ],
       "sourceDetails": {
         "local": 1,
         "z2m": 1
       },
-      "confidence": 0.17,
-      "lastSeen": "2026-06-19T20:58:49.733Z"
+      "confidence": 0.95,
+      "lastSeen": "2026-08-28T22:03:07.681Z",
+      "driverId": "air_quality_co2",
+      "deviceNames": [
+        "DCR-LCD",
+        "DCR-RQJ",
+        "NDIR CO2 sensor",
+        "TS0601_co2_sensor",
+        "TS0601_TZE204_ogkdpgy2",
+        "Tuya Zigbee CO2 Sensor"
+      ],
+      "z2mModels": [
+        "DCR-LCD",
+        "TS0601_co2_sensor",
+        "TS0601_TZE204_ogkdpgy2"
+      ],
+      "whiteLabels": [
+        "DCR-LCD",
+        "DCR-RQJ"
+      ],
+      "productNames": [
+        "DCR-LCD",
+        "DCR-RQJ",
+        "NDIR CO2 sensor",
+        "TS0601_co2_sensor",
+        "TS0601_TZE204_ogkdpgy2",
+        "Tuya Zigbee CO2 Sensor"
+      ],
+      "coupleLock": true,
+      "pid": "TS0601",
+      "notes": "P2295: zigbee pid=TS0601 only. Retail/Z2M names stay in deviceNames — never CK-TLSR climate bleed, never TS0601_co2 as Homey productId."
     },
     "_tze200_oisqyl4o": {
       "manufacturerId": "_tze200_oisqyl4o",
@@ -20440,12 +20576,15 @@
     "_tze200_sfqyhvpv": {
       "manufacturerId": "_tze200_sfqyhvpv",
       "modelIds": [
-        "TS0201",
         "TS0601"
       ],
-      "variants": [],
-      "deviceType": "sensor",
-      "driverHint": "climate_sensor",
+      "variants": [
+        "_tze200_sfqyhvpv",
+        "_TZE200_sfqyhvpv",
+        "_TZE200_SFQYHVPV"
+      ],
+      "deviceType": "curtain",
+      "driverHint": "curtain_motor",
       "capabilities": [
         "measure_temperature",
         "measure_humidity",
@@ -20455,14 +20594,35 @@
       "powerSource": "battery",
       "sources": [
         "local",
-        "z2m"
+        "z2m",
+        "p2295-multi-identity",
+        "p2295-zemismart-cover-siblings",
+        "p2295"
       ],
       "sourceDetails": {
         "local": 1,
         "z2m": 1
       },
-      "confidence": 0.17,
-      "lastSeen": "2026-06-19T20:58:49.740Z"
+      "confidence": 0.95,
+      "lastSeen": "2026-08-28T22:03:09.205Z",
+      "driverId": "curtain_motor",
+      "deviceNames": [
+        "TS0601_cover",
+        "Zemismart / Tuya TS0601 cover (Z2M group 148)"
+      ],
+      "z2mModels": [
+        "TS0601_cover",
+        "ZM16EL",
+        "ZM85EL-2Z"
+      ],
+      "whiteLabels": [],
+      "productNames": [
+        "TS0601_cover",
+        "Zemismart / Tuya TS0601 cover (Z2M group 148)"
+      ],
+      "coupleLock": true,
+      "pid": "TS0601",
+      "notes": "P2295: Z2M cover fingerprint siblings of 68nvbio9/cf1sl3tj — each couple keeps pid TS0601 only."
     },
     "_tze200_snfdqllf": {
       "manufacturerId": "_tze200_snfdqllf",
@@ -22697,29 +22857,53 @@
     "_tze204_3ejwxpmu": {
       "manufacturerId": "_tze204_3ejwxpmu",
       "modelIds": [
-        "TS0201",
         "TS0601"
       ],
-      "variants": [],
-      "deviceType": "sensor",
-      "driverHint": "climate_sensor",
+      "variants": [
+        "_tze204_3ejwxpmu",
+        "_TZE204_3ejwxpmu",
+        "_TZE204_3EJWXPMU"
+      ],
+      "deviceType": "air_quality",
+      "driverHint": "air_quality_co2",
       "capabilities": [
         "measure_temperature",
         "measure_humidity",
         "measure_battery",
         "alarm_battery"
       ],
-      "powerSource": "battery",
+      "powerSource": "mains",
       "sources": [
         "local",
-        "z2m"
+        "z2m",
+        "p2295-multi-identity",
+        "p2295-3ejwxpmu-co2-sibling",
+        "p2295"
       ],
       "sourceDetails": {
         "local": 1,
         "z2m": 1
       },
-      "confidence": 0.17,
-      "lastSeen": "2026-06-19T20:58:49.733Z"
+      "confidence": 0.95,
+      "lastSeen": "2026-08-28T22:03:07.962Z",
+      "driverId": "air_quality_co2",
+      "deviceNames": [
+        "NDIR CO2 sensor",
+        "TS0601_co2_sensor",
+        "Tuya CO2 (3ejwxpmu)"
+      ],
+      "z2mModels": [
+        "TS0601_co2_sensor"
+      ],
+      "whiteLabels": [],
+      "productNames": [
+        "NDIR CO2 sensor",
+        "TS0601_co2_sensor",
+        "Tuya CO2 (3ejwxpmu)"
+      ],
+      "coupleLock": true,
+      "pid": "TS0601",
+      "notes": "P2295: Z2M same fingerprint group as ogkdpgy2 CO2 — not climate_sensor cartesian bleed."
     },
     "_tze204_3q3maeoo": {
       "manufacturerId": "_tze204_3q3maeoo",
@@ -23755,12 +23939,15 @@
     "_tze204_ejh6owwz": {
       "manufacturerId": "_tze204_ejh6owwz",
       "modelIds": [
-        "TS0201",
         "TS0601"
       ],
-      "variants": [],
-      "deviceType": "sensor",
-      "driverHint": "climate_sensor",
+      "variants": [
+        "_tze204_ejh6owwz",
+        "_TZE204_ejh6owwz",
+        "_TZE204_EJH6OWWZ"
+      ],
+      "deviceType": "curtain",
+      "driverHint": "curtain_motor",
       "capabilities": [
         "measure_temperature",
         "measure_humidity",
@@ -23770,14 +23957,35 @@
       "powerSource": "battery",
       "sources": [
         "local",
-        "z2m"
+        "z2m",
+        "p2295-multi-identity",
+        "p2295-zemismart-cover-siblings",
+        "p2295"
       ],
       "sourceDetails": {
         "local": 1,
         "z2m": 1
       },
-      "confidence": 0.17,
-      "lastSeen": "2026-06-19T20:58:49.740Z"
+      "confidence": 0.95,
+      "lastSeen": "2026-08-28T22:03:09.288Z",
+      "driverId": "curtain_motor",
+      "deviceNames": [
+        "TS0601_cover",
+        "Zemismart / Tuya TS0601 cover (Z2M group 148)"
+      ],
+      "z2mModels": [
+        "TS0601_cover",
+        "ZM16EL",
+        "ZM85EL-2Z"
+      ],
+      "whiteLabels": [],
+      "productNames": [
+        "TS0601_cover",
+        "Zemismart / Tuya TS0601 cover (Z2M group 148)"
+      ],
+      "coupleLock": true,
+      "pid": "TS0601",
+      "notes": "P2295: Z2M cover fingerprint siblings of 68nvbio9/cf1sl3tj — each couple keeps pid TS0601 only."
     },
     "_tze204_fhvdgeuh": {
       "manufacturerId": "_tze204_fhvdgeuh",
@@ -24697,29 +24905,64 @@
     "_tze204_ogkdpgy2": {
       "manufacturerId": "_tze204_ogkdpgy2",
       "modelIds": [
-        "TS0201",
         "TS0601"
       ],
-      "variants": [],
-      "deviceType": "sensor",
-      "driverHint": "climate_sensor",
+      "variants": [
+        "_tze204_ogkdpgy2",
+        "_TZE204_ogkdpgy2",
+        "_TZE204_OGKDPGY2"
+      ],
+      "deviceType": "air_quality",
+      "driverHint": "air_quality_co2",
       "capabilities": [
         "measure_temperature",
         "measure_humidity",
         "measure_battery",
         "alarm_battery"
       ],
-      "powerSource": "battery",
+      "powerSource": "mains",
       "sources": [
         "local",
-        "z2m"
+        "z2m",
+        "p2295-multi-identity",
+        "p2291-ogkdpgy2-co2-not-climate",
+        "p2295"
       ],
       "sourceDetails": {
         "local": 1,
         "z2m": 1
       },
-      "confidence": 0.17,
-      "lastSeen": "2026-06-19T20:58:49.733Z"
+      "confidence": 0.95,
+      "lastSeen": "2026-08-28T22:03:07.782Z",
+      "driverId": "air_quality_co2",
+      "deviceNames": [
+        "DCR-LCD",
+        "DCR-RQJ",
+        "NDIR CO2 sensor",
+        "TS0601_co2_sensor",
+        "TS0601_TZE204_ogkdpgy2",
+        "Tuya Zigbee CO2 Sensor"
+      ],
+      "z2mModels": [
+        "DCR-LCD",
+        "TS0601_co2_sensor",
+        "TS0601_TZE204_ogkdpgy2"
+      ],
+      "whiteLabels": [
+        "DCR-LCD",
+        "DCR-RQJ"
+      ],
+      "productNames": [
+        "DCR-LCD",
+        "DCR-RQJ",
+        "NDIR CO2 sensor",
+        "TS0601_co2_sensor",
+        "TS0601_TZE204_ogkdpgy2",
+        "Tuya Zigbee CO2 Sensor"
+      ],
+      "coupleLock": true,
+      "pid": "TS0601",
+      "notes": "P2295: zigbee pid=TS0601 only. Retail/Z2M names stay in deviceNames — never CK-TLSR climate bleed, never TS0601_co2 as Homey productId."
     },
     "_tze204_oh8y8pv8": {
       "manufacturerId": "_tze204_oh8y8pv8",
@@ -48428,12 +48671,15 @@
     "_tze200_9p5xmj5r": {
       "manufacturerId": "_tze200_9p5xmj5r",
       "modelIds": [
-        "BUTTON",
         "TS0601"
       ],
-      "variants": [],
-      "deviceType": "thermostat",
-      "driverHint": "wall_thermostat",
+      "variants": [
+        "_tze200_9p5xmj5r",
+        "_TZE200_9p5xmj5r",
+        "_TZE200_9P5XMJ5R"
+      ],
+      "deviceType": "curtain",
+      "driverHint": "curtain_motor",
       "capabilities": [
         "onoff",
         "thermostat_programming",
@@ -48441,17 +48687,38 @@
         "target_temperature",
         "child_lock"
       ],
-      "powerSource": "mains",
+      "powerSource": "battery",
       "sources": [
         "local",
-        "z2m"
+        "z2m",
+        "p2295-multi-identity",
+        "p2295-zemismart-cover-siblings",
+        "p2295"
       ],
       "sourceDetails": {
         "local": 2,
         "z2m": 1
       },
-      "confidence": 0.17,
-      "lastSeen": "2026-06-19T20:58:49.740Z"
+      "confidence": 0.95,
+      "lastSeen": "2026-08-28T22:03:08.890Z",
+      "driverId": "curtain_motor",
+      "deviceNames": [
+        "TS0601_cover",
+        "Zemismart / Tuya TS0601 cover (Z2M group 148)"
+      ],
+      "z2mModels": [
+        "TS0601_cover",
+        "ZM16EL",
+        "ZM85EL-2Z"
+      ],
+      "whiteLabels": [],
+      "productNames": [
+        "TS0601_cover",
+        "Zemismart / Tuya TS0601 cover (Z2M group 148)"
+      ],
+      "coupleLock": true,
+      "pid": "TS0601",
+      "notes": "P2295: Z2M cover fingerprint siblings of 68nvbio9/cf1sl3tj — each couple keeps pid TS0601 only."
     },
     "_tze200_9sfg7gm0": {
       "manufacturerId": "_tze200_9sfg7gm0",
@@ -91633,12 +91900,11 @@
     "_tze200_m6lwazh9": {
       "manufacturerId": "_tze200_m6lwazh9",
       "modelIds": [
-        "TS0001",
         "TS0601"
       ],
       "variants": [],
       "deviceType": "unknown",
-      "driverHint": "switch_1gang",
+      "driverHint": "curtain_motor",
       "capabilities": [
         "onoff",
         "measure_power",
@@ -91649,7 +91915,7 @@
         "button.toggle",
         "button.identify"
       ],
-      "powerSource": "mains",
+      "powerSource": "battery",
       "sources": [
         "local",
         "z2m"
@@ -91659,7 +91925,8 @@
         "z2m": 1
       },
       "confidence": 0.17,
-      "lastSeen": "2026-06-19T20:58:49.739Z"
+      "lastSeen": "2026-06-19T20:58:49.739Z",
+      "driverId": "curtain_motor"
     },
     "_tze200_swlgvdlh": {
       "manufacturerId": "_tze200_swlgvdlh",
@@ -93441,13 +93708,11 @@
     "_tze210_m6lwazh9": {
       "manufacturerId": "_tze210_m6lwazh9",
       "modelIds": [
-        "TS0001",
-        "TS0601",
         "TS0301"
       ],
       "variants": [],
       "deviceType": "unknown",
-      "driverHint": "switch_1gang",
+      "driverHint": "curtain_motor",
       "capabilities": [
         "onoff",
         "measure_power",
@@ -93458,7 +93723,7 @@
         "button.toggle",
         "button.identify"
       ],
-      "powerSource": "mains",
+      "powerSource": "battery",
       "sources": [
         "local",
         "z2m"
@@ -93468,7 +93733,8 @@
         "z2m": 1
       },
       "confidence": 0.17,
-      "lastSeen": "2026-07-28T19:50:07.575Z"
+      "lastSeen": "2026-07-28T19:50:07.575Z",
+      "driverId": "curtain_motor"
     },
     "_tze200_m6ec2pgj": {
       "manufacturerId": "_tze200_m6ec2pgj",
@@ -100501,7 +100767,11 @@
       "modelIds": [
         "TS0601"
       ],
-      "variants": [],
+      "variants": [
+        "_tze204_mpbki2zm",
+        "_TZE204_mpbki2zm",
+        "_TZE204_MPBKI2ZM"
+      ],
       "deviceType": "thermostat",
       "driverHint": "wall_thermostat",
       "capabilities": [
@@ -100511,22 +100781,44 @@
         "window_open",
         "measure_battery"
       ],
-      "powerSource": "battery",
+      "powerSource": "mains",
       "sources": [
         "local",
-        "z2m"
+        "z2m",
+        "p2295-multi-identity",
+        "p2234b-tze204_mpbki2zm",
+        "p2295"
       ],
       "sourceDetails": {
         "local": 1,
         "z2m": 1
       },
       "confidence": 0.95,
-      "lastSeen": "2026-06-19T20:58:49.748Z",
+      "lastSeen": "2026-08-28T22:03:09.407Z",
       "driverId": "wall_thermostat",
       "source": "p2234b-couple-refine",
       "pid": "TS0601",
       "coupleLock": true,
-      "updatedAt": "2026-08-24"
+      "updatedAt": "2026-08-24",
+      "deviceNames": [
+        "BAC006",
+        "Tuya FCU thermostat",
+        "TYBAC-006"
+      ],
+      "z2mModels": [
+        "BAC-006",
+        "TYBAC-006"
+      ],
+      "whiteLabels": [
+        "BAC006",
+        "TYBAC-006"
+      ],
+      "productNames": [
+        "BAC006",
+        "Tuya FCU thermostat",
+        "TYBAC-006"
+      ],
+      "notes": "P2295: zigbee pid=TS0601 only — PJ-1203A was invent. TYBAC-006/BAC006 are retail names. Sibling qujphad5 is a separate couple."
     },
     "_tze200_6kijc7nd": {
       "manufacturerId": "_tze200_6kijc7nd",
@@ -111208,9 +111500,13 @@
       "modelIds": [
         "TS0601"
       ],
-      "variants": [],
-      "deviceType": "thermostat",
-      "driverHint": "wall_thermostat",
+      "variants": [
+        "_tze200_68nvbio9",
+        "_TZE200_68nvbio9",
+        "_TZE200_68NVBIO9"
+      ],
+      "deviceType": "curtain",
+      "driverHint": "curtain_motor",
       "capabilities": [
         "onoff",
         "thermostat_programming",
@@ -111218,26 +111514,57 @@
         "target_temperature",
         "child_lock"
       ],
-      "powerSource": "mains",
+      "powerSource": "battery",
       "sources": [
         "local",
-        "z2m"
+        "z2m",
+        "p2295-multi-identity",
+        "p2293-zemismart-68nvbio9-curtain-not-trv",
+        "p2295"
       ],
       "sourceDetails": {
         "local": 1,
         "z2m": 1
       },
-      "confidence": 0.17,
-      "lastSeen": "2026-06-19T20:58:49.740Z"
+      "confidence": 0.95,
+      "lastSeen": "2026-08-28T22:03:08.081Z",
+      "driverId": "curtain_motor",
+      "deviceNames": [
+        "Zemismart curtain motor",
+        "ZM16EL",
+        "ZM16EL-03",
+        "ZM16EL-33"
+      ],
+      "z2mModels": [
+        "TS0601_cover",
+        "ZM16EL"
+      ],
+      "whiteLabels": [
+        "ZM16EL-03",
+        "ZM16EL-33"
+      ],
+      "productNames": [
+        "Zemismart curtain motor",
+        "ZM16EL",
+        "ZM16EL-03",
+        "ZM16EL-33"
+      ],
+      "coupleLock": true,
+      "pid": "TS0601",
+      "notes": "P2295: Zigbee pid=TS0601; ZM16EL* are retail aliases not productIds."
     },
     "_tze200_pw7mji0l": {
       "manufacturerId": "_tze200_pw7mji0l",
       "modelIds": [
         "TS0601"
       ],
-      "variants": [],
-      "deviceType": "thermostat",
-      "driverHint": "wall_thermostat",
+      "variants": [
+        "_tze200_pw7mji0l",
+        "_TZE200_pw7mji0l",
+        "_TZE200_PW7MJI0L"
+      ],
+      "deviceType": "curtain",
+      "driverHint": "curtain_motor",
       "capabilities": [
         "onoff",
         "thermostat_programming",
@@ -111245,26 +111572,51 @@
         "target_temperature",
         "child_lock"
       ],
-      "powerSource": "mains",
+      "powerSource": "battery",
       "sources": [
         "local",
-        "z2m"
+        "z2m",
+        "p2295-multi-identity",
+        "p2295-zemismart-cover-siblings",
+        "p2295"
       ],
       "sourceDetails": {
         "local": 1,
         "z2m": 1
       },
-      "confidence": 0.17,
-      "lastSeen": "2026-06-19T20:58:49.740Z"
+      "confidence": 0.95,
+      "lastSeen": "2026-08-28T22:03:08.627Z",
+      "driverId": "curtain_motor",
+      "deviceNames": [
+        "TS0601_cover",
+        "Zemismart / Tuya TS0601 cover (Z2M group 148)"
+      ],
+      "z2mModels": [
+        "TS0601_cover",
+        "ZM16EL",
+        "ZM85EL-2Z"
+      ],
+      "whiteLabels": [],
+      "productNames": [
+        "TS0601_cover",
+        "Zemismart / Tuya TS0601 cover (Z2M group 148)"
+      ],
+      "coupleLock": true,
+      "pid": "TS0601",
+      "notes": "P2295: Z2M cover fingerprint siblings of 68nvbio9/cf1sl3tj — each couple keeps pid TS0601 only."
     },
     "_tze200_cf1sl3tj": {
       "manufacturerId": "_tze200_cf1sl3tj",
       "modelIds": [
         "TS0601"
       ],
-      "variants": [],
-      "deviceType": "thermostat",
-      "driverHint": "wall_thermostat",
+      "variants": [
+        "_tze200_cf1sl3tj",
+        "_TZE200_cf1sl3tj",
+        "_TZE200_CF1SL3TJ"
+      ],
+      "deviceType": "curtain",
+      "driverHint": "curtain_motor",
       "capabilities": [
         "onoff",
         "thermostat_programming",
@@ -111272,26 +111624,52 @@
         "target_temperature",
         "child_lock"
       ],
-      "powerSource": "mains",
+      "powerSource": "battery",
       "sources": [
         "local",
-        "z2m"
+        "z2m",
+        "p2295-multi-identity",
+        "p2293-zemismart-cf1sl3tj-curtain-not-trv",
+        "p2295"
       ],
       "sourceDetails": {
         "local": 1,
         "z2m": 1
       },
-      "confidence": 0.17,
-      "lastSeen": "2026-06-19T20:58:49.740Z"
+      "confidence": 0.95,
+      "lastSeen": "2026-08-28T22:03:08.421Z",
+      "driverId": "curtain_motor",
+      "deviceNames": [
+        "Zemismart dual curtain",
+        "ZM85EL-2Z"
+      ],
+      "z2mModels": [
+        "TS0601_cover",
+        "ZM85EL-2Z"
+      ],
+      "whiteLabels": [
+        "ZM85EL-2Z"
+      ],
+      "productNames": [
+        "Zemismart dual curtain",
+        "ZM85EL-2Z"
+      ],
+      "coupleLock": true,
+      "pid": "TS0601",
+      "notes": "P2295: Zigbee pid=TS0601; ZM85EL-2Z is retail alias."
     },
     "_tze200_nw1r9hp6": {
       "manufacturerId": "_tze200_nw1r9hp6",
       "modelIds": [
         "TS0601"
       ],
-      "variants": [],
-      "deviceType": "thermostat",
-      "driverHint": "wall_thermostat",
+      "variants": [
+        "_tze200_nw1r9hp6",
+        "_TZE200_nw1r9hp6",
+        "_TZE200_NW1R9HP6"
+      ],
+      "deviceType": "curtain",
+      "driverHint": "curtain_motor",
       "capabilities": [
         "onoff",
         "thermostat_programming",
@@ -111299,26 +111677,51 @@
         "target_temperature",
         "child_lock"
       ],
-      "powerSource": "mains",
+      "powerSource": "battery",
       "sources": [
         "local",
-        "z2m"
+        "z2m",
+        "p2295-multi-identity",
+        "p2295-zemismart-cover-siblings",
+        "p2295"
       ],
       "sourceDetails": {
         "local": 1,
         "z2m": 1
       },
-      "confidence": 0.17,
-      "lastSeen": "2026-06-19T20:58:49.740Z"
+      "confidence": 0.95,
+      "lastSeen": "2026-08-28T22:03:08.823Z",
+      "driverId": "curtain_motor",
+      "deviceNames": [
+        "TS0601_cover",
+        "Zemismart / Tuya TS0601 cover (Z2M group 148)"
+      ],
+      "z2mModels": [
+        "TS0601_cover",
+        "ZM16EL",
+        "ZM85EL-2Z"
+      ],
+      "whiteLabels": [],
+      "productNames": [
+        "TS0601_cover",
+        "Zemismart / Tuya TS0601 cover (Z2M group 148)"
+      ],
+      "coupleLock": true,
+      "pid": "TS0601",
+      "notes": "P2295: Z2M cover fingerprint siblings of 68nvbio9/cf1sl3tj — each couple keeps pid TS0601 only."
     },
     "_tze200_68nvbi09": {
       "manufacturerId": "_tze200_68nvbi09",
       "modelIds": [
         "TS0601"
       ],
-      "variants": [],
-      "deviceType": "thermostat",
-      "driverHint": "wall_thermostat",
+      "variants": [
+        "_tze200_68nvbi09",
+        "_TZE200_68nvbi09",
+        "_TZE200_68NVBI09"
+      ],
+      "deviceType": "curtain",
+      "driverHint": "curtain_motor",
       "capabilities": [
         "onoff",
         "thermostat_programming",
@@ -111326,17 +111729,37 @@
         "target_temperature",
         "child_lock"
       ],
-      "powerSource": "mains",
+      "powerSource": "battery",
       "sources": [
         "local",
-        "z2m"
+        "z2m",
+        "p2295-multi-identity",
+        "p2295-zemismart-68nvbi09-typo-curtain",
+        "p2295"
       ],
       "sourceDetails": {
         "local": 1,
         "z2m": 1
       },
-      "confidence": 0.17,
-      "lastSeen": "2026-06-19T20:58:49.740Z"
+      "confidence": 0.95,
+      "lastSeen": "2026-08-28T22:03:08.306Z",
+      "driverId": "curtain_motor",
+      "deviceNames": [
+        "Zemismart curtain motor",
+        "ZM16EL (typo mfr 68nvbi09)"
+      ],
+      "z2mModels": [
+        "TS0601_cover",
+        "ZM16EL"
+      ],
+      "whiteLabels": [],
+      "productNames": [
+        "Zemismart curtain motor",
+        "ZM16EL (typo mfr 68nvbi09)"
+      ],
+      "coupleLock": true,
+      "pid": "TS0601",
+      "notes": "P2295: Z2M fingerprint typo sibling of 68nvbio9 — cover not TRV."
     },
     "_tze200_e9ba97vf": {
       "manufacturerId": "_tze200_e9ba97vf",
@@ -112478,9 +112901,13 @@
       "modelIds": [
         "TS0601"
       ],
-      "variants": [],
-      "deviceType": "thermostat",
-      "driverHint": "wall_thermostat",
+      "variants": [
+        "_tze200_vexa5o82",
+        "_TZE200_vexa5o82",
+        "_TZE200_VEXA5O82"
+      ],
+      "deviceType": "curtain",
+      "driverHint": "curtain_motor",
       "capabilities": [
         "onoff",
         "thermostat_programming",
@@ -112488,26 +112915,51 @@
         "target_temperature",
         "child_lock"
       ],
-      "powerSource": "mains",
+      "powerSource": "battery",
       "sources": [
         "local",
-        "z2m"
+        "z2m",
+        "p2295-multi-identity",
+        "p2295-zemismart-cover-siblings",
+        "p2295"
       ],
       "sourceDetails": {
         "local": 1,
         "z2m": 1
       },
-      "confidence": 0.17,
-      "lastSeen": "2026-06-19T20:58:49.740Z"
+      "confidence": 0.95,
+      "lastSeen": "2026-08-28T22:03:08.961Z",
+      "driverId": "curtain_motor",
+      "deviceNames": [
+        "TS0601_cover",
+        "Zemismart / Tuya TS0601 cover (Z2M group 148)"
+      ],
+      "z2mModels": [
+        "TS0601_cover",
+        "ZM16EL",
+        "ZM85EL-2Z"
+      ],
+      "whiteLabels": [],
+      "productNames": [
+        "TS0601_cover",
+        "Zemismart / Tuya TS0601 cover (Z2M group 148)"
+      ],
+      "coupleLock": true,
+      "pid": "TS0601",
+      "notes": "P2295: Z2M cover fingerprint siblings of 68nvbio9/cf1sl3tj — each couple keeps pid TS0601 only."
     },
     "_tze204_pw7mji0l": {
       "manufacturerId": "_tze204_pw7mji0l",
       "modelIds": [
         "TS0601"
       ],
-      "variants": [],
-      "deviceType": "thermostat",
-      "driverHint": "wall_thermostat",
+      "variants": [
+        "_tze204_pw7mji0l",
+        "_TZE204_pw7mji0l",
+        "_TZE204_PW7MJI0L"
+      ],
+      "deviceType": "curtain",
+      "driverHint": "curtain_motor",
       "capabilities": [
         "onoff",
         "thermostat_programming",
@@ -112515,24 +112967,49 @@
         "target_temperature",
         "child_lock"
       ],
-      "powerSource": "mains",
+      "powerSource": "battery",
       "sources": [
-        "local"
+        "local",
+        "p2295-multi-identity",
+        "p2295-zemismart-cover-siblings",
+        "p2295"
       ],
       "sourceDetails": {
         "local": 1
       },
-      "confidence": 0.08,
-      "lastSeen": "2026-06-19T20:58:49.728Z"
+      "confidence": 0.95,
+      "lastSeen": "2026-08-28T22:03:08.727Z",
+      "driverId": "curtain_motor",
+      "deviceNames": [
+        "TS0601_cover",
+        "Zemismart / Tuya TS0601 cover (Z2M group 148)"
+      ],
+      "z2mModels": [
+        "TS0601_cover",
+        "ZM16EL",
+        "ZM85EL-2Z"
+      ],
+      "whiteLabels": [],
+      "productNames": [
+        "TS0601_cover",
+        "Zemismart / Tuya TS0601 cover (Z2M group 148)"
+      ],
+      "coupleLock": true,
+      "pid": "TS0601",
+      "notes": "P2295: Z2M cover fingerprint siblings of 68nvbio9/cf1sl3tj — each couple keeps pid TS0601 only."
     },
     "_tze204_68nvbio9": {
       "manufacturerId": "_tze204_68nvbio9",
       "modelIds": [
         "TS0601"
       ],
-      "variants": [],
-      "deviceType": "thermostat",
-      "driverHint": "wall_thermostat",
+      "variants": [
+        "_tze204_68nvbio9",
+        "_TZE204_68nvbio9",
+        "_TZE204_68NVBIO9"
+      ],
+      "deviceType": "curtain",
+      "driverHint": "curtain_motor",
       "capabilities": [
         "onoff",
         "thermostat_programming",
@@ -112540,15 +113017,42 @@
         "target_temperature",
         "child_lock"
       ],
-      "powerSource": "mains",
+      "powerSource": "battery",
       "sources": [
-        "local"
+        "local",
+        "p2295-multi-identity",
+        "p2293-zemismart-68nvbio9-curtain-not-trv",
+        "p2295"
       ],
       "sourceDetails": {
         "local": 1
       },
-      "confidence": 0.08,
-      "lastSeen": "2026-06-19T20:58:49.728Z"
+      "confidence": 0.95,
+      "lastSeen": "2026-08-28T22:03:08.164Z",
+      "driverId": "curtain_motor",
+      "deviceNames": [
+        "Zemismart curtain motor",
+        "ZM16EL",
+        "ZM16EL-03",
+        "ZM16EL-33"
+      ],
+      "z2mModels": [
+        "TS0601_cover",
+        "ZM16EL"
+      ],
+      "whiteLabels": [
+        "ZM16EL-03",
+        "ZM16EL-33"
+      ],
+      "productNames": [
+        "Zemismart curtain motor",
+        "ZM16EL",
+        "ZM16EL-03",
+        "ZM16EL-33"
+      ],
+      "coupleLock": true,
+      "pid": "TS0601",
+      "notes": "P2295: Zigbee pid=TS0601; ZM16EL* are retail aliases not productIds."
     },
     "_tze200_lzriup1j": {
       "manufacturerId": "_tze200_lzriup1j",
@@ -127989,7 +128493,9 @@
     "totalModelIds": 62784,
     "multiPidMfrs": 3299,
     "variantMfrs": 82,
-    "lastMfsMultiUpdate": "2026-07-23T21:38:43.390Z"
+    "lastMfsMultiUpdate": "2026-07-23T21:38:43.390Z",
+    "lastP2295Enrichment": "2026-08-28T22:03:09.595Z",
+    "p2295Note": "modelIds=real Zigbee pids; deviceNames/z2mModels/whiteLabels/productNames=aliases; multiCouple brands use byPid"
   },
   "diff": {
     "lastRun": "2026-06-19T20:58:49.880Z",
@@ -128688,7 +129194,8 @@
       "TS0601_co2"
     ],
     "pid": "RH3052",
-    "modelIdsCount": 3
+    "modelIdsCount": 3,
+    "powerSource": "mains"
   },
   "_tz3000_jr2atpww": {
     "driverId": "air_quality_comprehensive",
@@ -130833,8 +131340,8 @@
     "modelIds": [
       "TS0503A"
     ],
-    "pid": "TS0001",
-    "modelIdsCount": 18
+    "pid": "TS0503A",
+    "modelIdsCount": 1
   },
   "_tz3000_kdpxju99": {
     "driverId": "rgb_spot_GU10",
@@ -132323,8 +132830,8 @@
     "modelIds": [
       "TS0203"
     ],
-    "pid": "TS0001",
-    "modelIdsCount": 18,
+    "pid": "TS0203",
+    "modelIdsCount": 1,
     "variants": [
       "_TZ3000_n2egfsli",
       "_tz3000_n2egfsli"
@@ -133040,8 +133547,8 @@
     "modelIds": [
       "TS0043"
     ],
-    "pid": "E11-G13",
-    "modelIdsCount": 41
+    "pid": "TS0043",
+    "modelIdsCount": 1
   },
   "_tz3210_dse8ogfy": {
     "driverId": "fingerbot",
@@ -133266,8 +133773,8 @@
     "modelIds": [
       "TS011F"
     ],
-    "pid": "TS0001",
-    "modelIdsCount": 18
+    "pid": "TS011F",
+    "modelIdsCount": 1
   },
   "_TZ3000_1H2X4AKH": {
     "driverId": "smartplug",
@@ -133301,8 +133808,8 @@
     "modelIds": [
       "TS011F"
     ],
-    "pid": "TS0001",
-    "modelIdsCount": 18
+    "pid": "TS011F",
+    "modelIdsCount": 1
   },
   "_TZ3000_88IQNHVD": {
     "driverId": "plug_energy_monitor",
@@ -134363,8 +134870,8 @@
       "TS011F",
       "TS0121"
     ],
-    "pid": "TS0001",
-    "modelIdsCount": 18
+    "pid": "TS011F",
+    "modelIdsCount": 2
   },
   "_TZ3000_waho4jtj": {
     "driverId": "button_wireless_2",
@@ -134554,8 +135061,8 @@
     "modelIds": [
       "TS011F"
     ],
-    "pid": "TS0001",
-    "modelIdsCount": 18
+    "pid": "TS011F",
+    "modelIdsCount": 1
   },
   "_TZ3000_zmy1waw6": {
     "driverId": "button_wireless_2",
@@ -135484,30 +135991,13 @@
     "modelIdsCount": 18
   },
   "_TZ3000_dfgbtub0": {
-    "driverId": "button_wireless_2",
-    "source": "auto-sync",
+    "driverId": "button_wireless_4",
+    "source": "registry:p2293-dfgbtub0-ts0044-wireless-4",
     "modelIds": [
-      "TS0001",
-      "TS0002",
-      "TS0003",
-      "TS000F",
-      "TS0011",
-      "TS0012",
-      "TS0013",
-      "TS0014",
-      "TS0041",
-      "TS0042",
-      "TS0043",
-      "TS0044",
-      "TS0111",
-      "TS011F",
-      "TS0121",
-      "TS0215A",
-      "TS0601",
-      "TSO121"
+      "TS0044"
     ],
-    "pid": "TS0001",
-    "modelIdsCount": 18
+    "pid": "TS0044",
+    "modelIdsCount": 1
   },
   "_TZ3000_h1c2eamp": {
     "driverId": "button_wireless_2",
@@ -135593,8 +136083,8 @@
     "modelIds": [
       "TS0043"
     ],
-    "pid": "TS0001",
-    "modelIdsCount": 18
+    "pid": "TS0043",
+    "modelIdsCount": 1
   },
   "_TZ3000_rrjr1q0u": {
     "driverId": "button_wireless_2",
@@ -137175,8 +137665,8 @@
     "modelIds": [
       "TS0043"
     ],
-    "pid": "TS0013",
-    "modelIdsCount": 5
+    "pid": "TS0043",
+    "modelIdsCount": 1
   },
   "_TZ3000_MJWG6A52": {
     "driverId": "button_wireless_3",
@@ -137345,8 +137835,8 @@
     "modelIds": [
       "TS004F"
     ],
-    "pid": "01MINIZB",
-    "modelIdsCount": 37
+    "pid": "TS004F",
+    "modelIdsCount": 1
   },
   "_tze200_zxx7mi77": {
     "driverId": "button_wireless_6",
@@ -137844,8 +138334,8 @@
     "modelIds": [
       "TS011F"
     ],
-    "pid": "TS0001",
-    "modelIdsCount": 10
+    "pid": "TS011F",
+    "modelIdsCount": 1
   },
   "_TZ3000_ps3dmato": {
     "driverId": "button_wireless_plug",
@@ -138703,8 +139193,8 @@
     "modelIds": [
       "TS011F"
     ],
-    "pid": "CK-TLSR8656-SS5-01(7014)",
-    "modelIdsCount": 28
+    "pid": "TS011F",
+    "modelIdsCount": 1
   },
   "_TZ3000_5AF5R192": {
     "driverId": "climate_sensor",
@@ -139031,8 +139521,8 @@
     "modelIdsCount": 28
   },
   "_TZ3000_AMQUDJR0": {
-    "driverId": "climate_sensor",
-    "source": "auto-sync",
+    "driverId": "bulb_rgb",
+    "source": "compose-exclusive",
     "modelIds": [
       "CK-TLSR8656-SS5-01(7014)",
       "Excellux",
@@ -139181,8 +139671,8 @@
       "TS0201",
       "TY0201"
     ],
-    "pid": "CK-TLSR8656-SS5-01(7014)",
-    "modelIdsCount": 28
+    "pid": "TS0201",
+    "modelIdsCount": 2
   },
   "_TZ3000_BKFE0BAB": {
     "driverId": "climate_sensor",
@@ -140234,8 +140724,8 @@
     "modelIds": [
       "TS011F"
     ],
-    "pid": "CK-TLSR8656-SS5-01(7014)",
-    "modelIdsCount": 28
+    "pid": "TS011F",
+    "modelIdsCount": 1
   },
   "_TZ3000_LQMVRWA2": {
     "driverId": "climate_sensor",
@@ -140603,8 +141093,8 @@
     "modelIds": [
       "TS011F"
     ],
-    "pid": "CK-TLSR8656-SS5-01(7014)",
-    "modelIdsCount": 28
+    "pid": "TS011F",
+    "modelIdsCount": 1
   },
   "_TZ3000_QAAYSLLP": {
     "driverId": "lcdtemphumidluxsensor",
@@ -140612,8 +141102,8 @@
     "modelIds": [
       "TS0201"
     ],
-    "pid": "CK-TLSR8656-SS5-01(7014)",
-    "modelIdsCount": 28
+    "pid": "TS0201",
+    "modelIdsCount": 1
   },
   "_TZ3000_QOGSNSXH": {
     "driverId": "climate_sensor",
@@ -141593,8 +142083,8 @@
     "modelIds": [
       "TS011F"
     ],
-    "pid": "CK-TLSR8656-SS5-01(7014)",
-    "modelIdsCount": 28
+    "pid": "TS011F",
+    "modelIdsCount": 1
   },
   "_TZ3210_ALXKWN0H": {
     "driverId": "climate_sensor",
@@ -141746,8 +142236,8 @@
     "modelIds": [
       "TS011F"
     ],
-    "pid": "CK-TLSR8656-SS5-01(7014)",
-    "modelIdsCount": 28
+    "pid": "TS011F",
+    "modelIdsCount": 1
   },
   "_TZ3210_Y5ZTGA9R": {
     "driverId": "climate_sensor",
@@ -141930,8 +142420,8 @@
     "modelIdsCount": 28
   },
   "_TZE200_01FVXAMO": {
-    "driverId": "climate_sensor",
-    "source": "auto-sync",
+    "driverId": "motion_sensor",
+    "source": "compose-exclusive",
     "modelIds": [
       "CK-TLSR8656-SS5-01(7014)",
       "Excellux",
@@ -142115,8 +142605,8 @@
     "modelIds": [
       "TS0601"
     ],
-    "pid": "CK-TLSR8656-SS5-01(7014)",
-    "modelIdsCount": 28
+    "pid": "TS0601",
+    "modelIdsCount": 1
   },
   "_TZE200_1N2KYPHZ": {
     "driverId": "climate_sensor",
@@ -142335,42 +142825,6 @@
     "modelIdsCount": 28
   },
   "_TZE200_2VFXWENG": {
-    "driverId": "climate_sensor",
-    "source": "auto-sync",
-    "modelIds": [
-      "CK-TLSR8656-SS5-01(7014)",
-      "Excellux",
-      "RH3052",
-      "SM0201",
-      "SNZB-02",
-      "SNZB-02B",
-      "SNZB-02D",
-      "SNZB-02DR2",
-      "SNZB-02LD",
-      "SNZB-02M",
-      "SNZB-02P",
-      "SNZB-02WD",
-      "TH01",
-      "THS317-ET",
-      "TS0201",
-      "TS0202",
-      "TS0222",
-      "TS0601",
-      "TS1201",
-      "TY0201",
-      "WSDCGQ01LM",
-      "WSDCGQ11LM",
-      "WSDCGQ12LM",
-      "ZG-227Z",
-      "ZG-227ZL",
-      "lumi.sensor_ht",
-      "lumi.sensor_ht.agl02",
-      "lumi.weather"
-    ],
-    "pid": "CK-TLSR8656-SS5-01(7014)",
-    "modelIdsCount": 28
-  },
-  "_TZE200_3EJWXPMU": {
     "driverId": "climate_sensor",
     "source": "auto-sync",
     "modelIds": [
@@ -143451,42 +143905,6 @@
     "pid": "CK-TLSR8656-SS5-01(7014)",
     "modelIdsCount": 28
   },
-  "_TZE200_BA69L9OL": {
-    "driverId": "climate_sensor",
-    "source": "auto-sync",
-    "modelIds": [
-      "CK-TLSR8656-SS5-01(7014)",
-      "Excellux",
-      "RH3052",
-      "SM0201",
-      "SNZB-02",
-      "SNZB-02B",
-      "SNZB-02D",
-      "SNZB-02DR2",
-      "SNZB-02LD",
-      "SNZB-02M",
-      "SNZB-02P",
-      "SNZB-02WD",
-      "TH01",
-      "THS317-ET",
-      "TS0201",
-      "TS0202",
-      "TS0222",
-      "TS0601",
-      "TS1201",
-      "TY0201",
-      "WSDCGQ01LM",
-      "WSDCGQ11LM",
-      "WSDCGQ12LM",
-      "ZG-227Z",
-      "ZG-227ZL",
-      "lumi.sensor_ht",
-      "lumi.sensor_ht.agl02",
-      "lumi.weather"
-    ],
-    "pid": "CK-TLSR8656-SS5-01(7014)",
-    "modelIdsCount": 28
-  },
   "_TZE200_BCUSNQT8": {
     "driverId": "climate_sensor",
     "source": "auto-sync",
@@ -144007,8 +144425,8 @@
     "modelIds": [
       "TS0601"
     ],
-    "pid": "CK-TLSR8656-SS5-01(7014)",
-    "modelIdsCount": 28
+    "pid": "TS0601",
+    "modelIdsCount": 1
   },
   "_TZE200_DIKKIKA5": {
     "driverId": "climate_sensor",
@@ -144299,42 +144717,6 @@
     "modelIdsCount": 28
   },
   "_TZE200_EDL8PZ1K": {
-    "driverId": "climate_sensor",
-    "source": "auto-sync",
-    "modelIds": [
-      "CK-TLSR8656-SS5-01(7014)",
-      "Excellux",
-      "RH3052",
-      "SM0201",
-      "SNZB-02",
-      "SNZB-02B",
-      "SNZB-02D",
-      "SNZB-02DR2",
-      "SNZB-02LD",
-      "SNZB-02M",
-      "SNZB-02P",
-      "SNZB-02WD",
-      "TH01",
-      "THS317-ET",
-      "TS0201",
-      "TS0202",
-      "TS0222",
-      "TS0601",
-      "TS1201",
-      "TY0201",
-      "WSDCGQ01LM",
-      "WSDCGQ11LM",
-      "WSDCGQ12LM",
-      "ZG-227Z",
-      "ZG-227ZL",
-      "lumi.sensor_ht",
-      "lumi.sensor_ht.agl02",
-      "lumi.weather"
-    ],
-    "pid": "CK-TLSR8656-SS5-01(7014)",
-    "modelIdsCount": 28
-  },
-  "_TZE200_EEVQQ1UV": {
     "driverId": "climate_sensor",
     "source": "auto-sync",
     "modelIds": [
@@ -145374,8 +145756,8 @@
     "modelIdsCount": 28
   },
   "_TZE200_IQ4YGAAI": {
-    "driverId": "climate_sensor",
-    "source": "auto-sync",
+    "driverId": "motion_sensor",
+    "source": "compose-exclusive",
     "modelIds": [
       "CK-TLSR8656-SS5-01(7014)",
       "Excellux",
@@ -146880,15 +147262,6 @@
     "pid": "CK-TLSR8656-SS5-01(7014)",
     "modelIdsCount": 28
   },
-  "_TZE200_OGKDPGY2": {
-    "driverId": "air_quality_co2",
-    "source": "registry:p2291-ogkdpgy2-co2-not-climate",
-    "modelIds": [
-      "TS0601"
-    ],
-    "pid": "CK-TLSR8656-SS5-01(7014)",
-    "modelIdsCount": 28
-  },
   "_TZE200_OISQYL4O": {
     "driverId": "climate_sensor",
     "source": "auto-sync",
@@ -147783,42 +148156,6 @@
     ],
     "pid": "CK-BL702-MWS-01",
     "modelIdsCount": 23
-  },
-  "_TZE200_SFQYHVPV": {
-    "driverId": "climate_sensor",
-    "source": "auto-sync",
-    "modelIds": [
-      "CK-TLSR8656-SS5-01(7014)",
-      "Excellux",
-      "RH3052",
-      "SM0201",
-      "SNZB-02",
-      "SNZB-02B",
-      "SNZB-02D",
-      "SNZB-02DR2",
-      "SNZB-02LD",
-      "SNZB-02M",
-      "SNZB-02P",
-      "SNZB-02WD",
-      "TH01",
-      "THS317-ET",
-      "TS0201",
-      "TS0202",
-      "TS0222",
-      "TS0601",
-      "TS1201",
-      "TY0201",
-      "WSDCGQ01LM",
-      "WSDCGQ11LM",
-      "WSDCGQ12LM",
-      "ZG-227Z",
-      "ZG-227ZL",
-      "lumi.sensor_ht",
-      "lumi.sensor_ht.agl02",
-      "lumi.weather"
-    ],
-    "pid": "CK-TLSR8656-SS5-01(7014)",
-    "modelIdsCount": 28
   },
   "_TZE200_SNFDQLLF": {
     "driverId": "device_radiator_valve",
@@ -150684,42 +151021,6 @@
     "pid": "CK-TLSR8656-SS5-01(7014)",
     "modelIdsCount": 28
   },
-  "_TZE204_3EJWXPMU": {
-    "driverId": "climate_sensor",
-    "source": "auto-sync",
-    "modelIds": [
-      "CK-TLSR8656-SS5-01(7014)",
-      "Excellux",
-      "RH3052",
-      "SM0201",
-      "SNZB-02",
-      "SNZB-02B",
-      "SNZB-02D",
-      "SNZB-02DR2",
-      "SNZB-02LD",
-      "SNZB-02M",
-      "SNZB-02P",
-      "SNZB-02WD",
-      "TH01",
-      "THS317-ET",
-      "TS0201",
-      "TS0202",
-      "TS0222",
-      "TS0601",
-      "TS1201",
-      "TY0201",
-      "WSDCGQ01LM",
-      "WSDCGQ11LM",
-      "WSDCGQ12LM",
-      "ZG-227Z",
-      "ZG-227ZL",
-      "lumi.sensor_ht",
-      "lumi.sensor_ht.agl02",
-      "lumi.weather"
-    ],
-    "pid": "CK-TLSR8656-SS5-01(7014)",
-    "modelIdsCount": 28
-  },
   "_TZE204_3Q3MAEOO": {
     "driverId": "climate_sensor",
     "source": "auto-sync",
@@ -151636,8 +151937,8 @@
     "modelIds": [
       "TS0601"
     ],
-    "pid": "CK-TLSR8656-SS5-01(7014)",
-    "modelIdsCount": 28
+    "pid": "TS0601",
+    "modelIdsCount": 1
   },
   "_TZE204_DIKKIKA5": {
     "driverId": "climate_sensor",
@@ -151964,42 +152265,6 @@
     "modelIdsCount": 28
   },
   "_TZE204_EDL8PZ1K": {
-    "driverId": "climate_sensor",
-    "source": "auto-sync",
-    "modelIds": [
-      "CK-TLSR8656-SS5-01(7014)",
-      "Excellux",
-      "RH3052",
-      "SM0201",
-      "SNZB-02",
-      "SNZB-02B",
-      "SNZB-02D",
-      "SNZB-02DR2",
-      "SNZB-02LD",
-      "SNZB-02M",
-      "SNZB-02P",
-      "SNZB-02WD",
-      "TH01",
-      "THS317-ET",
-      "TS0201",
-      "TS0202",
-      "TS0222",
-      "TS0601",
-      "TS1201",
-      "TY0201",
-      "WSDCGQ01LM",
-      "WSDCGQ11LM",
-      "WSDCGQ12LM",
-      "ZG-227Z",
-      "ZG-227ZL",
-      "lumi.sensor_ht",
-      "lumi.sensor_ht.agl02",
-      "lumi.weather"
-    ],
-    "pid": "CK-TLSR8656-SS5-01(7014)",
-    "modelIdsCount": 28
-  },
-  "_TZE204_EJH6OWWZ": {
     "driverId": "climate_sensor",
     "source": "auto-sync",
     "modelIds": [
@@ -152689,8 +152954,8 @@
     "modelIds": [
       "TS0601"
     ],
-    "pid": "CK-TLSR8656-SS5-01(7014)",
-    "modelIdsCount": 28
+    "pid": "TS0601",
+    "modelIdsCount": 1
   },
   "_TZE204_LTWBM23F": {
     "driverId": "climate_sensor",
@@ -153232,15 +153497,6 @@
     "pid": "CK-TLSR8656-SS5-01(7014)",
     "modelIdsCount": 28
   },
-  "_TZE204_OGKDPGY2": {
-    "driverId": "air_quality_co2",
-    "source": "registry:p2291-ogkdpgy2-co2-not-climate",
-    "modelIds": [
-      "TS0601"
-    ],
-    "pid": "CK-TLSR8656-SS5-01(7014)",
-    "modelIdsCount": 28
-  },
   "_TZE204_OH8Y8PV8": {
     "driverId": "climate_sensor",
     "source": "auto-sync",
@@ -153535,8 +153791,8 @@
     "modelIds": [
       "TS0601"
     ],
-    "pid": "CK-TLSR8656-SS5-01(7014)",
-    "modelIdsCount": 28
+    "pid": "TS0601",
+    "modelIdsCount": 1
   },
   "_TZE204_RBBX5MFQ": {
     "driverId": "climate_sensor",
@@ -155102,8 +155358,8 @@
     "modelIds": [
       "TS0601"
     ],
-    "pid": "CK-TLSR8656-SS5-01(7014)",
-    "modelIdsCount": 28
+    "pid": "TS0601",
+    "modelIdsCount": 1
   },
   "_TZE284_0DVM9MVA": {
     "driverId": "climate_sensor",
@@ -155255,8 +155511,8 @@
     "modelIds": [
       "TS0601"
     ],
-    "pid": "CK-TLSR8656-SS5-01(7014)",
-    "modelIdsCount": 28
+    "pid": "TS0601",
+    "modelIdsCount": 1
   },
   "_TZE284_1YOUK3HJ": {
     "driverId": "presence_sensor_radar",
@@ -156030,8 +156286,8 @@
     "modelIds": [
       "TS0601"
     ],
-    "pid": "CK-TLSR8656-SS5-01(7014)",
-    "modelIdsCount": 28
+    "pid": "TS0601",
+    "modelIdsCount": 1
   },
   "_TZE284_A1OVDOBN": {
     "driverId": "device_radiator_valve",
@@ -156157,8 +156413,8 @@
     "modelIds": [
       "TS0601"
     ],
-    "pid": "CK-TLSR8656-SS5-01(7014)",
-    "modelIdsCount": 28
+    "pid": "TS0601",
+    "modelIdsCount": 1
   },
   "_TZE284_AAI5GRIX": {
     "driverId": "climate_sensor",
@@ -156562,8 +156818,8 @@
     "modelIds": [
       "TS0601"
     ],
-    "pid": "CK-TLSR8656-SS5-01(7014)",
-    "modelIdsCount": 28
+    "pid": "TS0601",
+    "modelIdsCount": 1
   },
   "_TZE284_DQOLCPCP": {
     "driverId": "climate_sensor",
@@ -159572,8 +159828,8 @@
     "modelIds": [
       "TS0601"
     ],
-    "pid": "CK-TLSR8656-SS5-01(7014)",
-    "modelIdsCount": 28
+    "pid": "TS0601",
+    "modelIdsCount": 1
   },
   "_TYST11_2dpplnsn": {
     "driverId": "radiator_valve",
@@ -160614,8 +160870,8 @@
     "modelIds": [
       "TS0601"
     ],
-    "pid": "CK-TLSR8656-SS5-01(7014)",
-    "modelIdsCount": 28
+    "pid": "TS0601",
+    "modelIdsCount": 1
   },
   "_tze284_uo8qcagc": {
     "driverId": "climate_sensor",
@@ -160695,8 +160951,8 @@
     "modelIds": [
       "TS0601"
     ],
-    "pid": "CK-TLSR8656-SS5-01(7014)",
-    "modelIdsCount": 28
+    "pid": "TS0601",
+    "modelIdsCount": 1
   },
   "_TZE200_rccxox8p": {
     "driverId": "smoke_sensor2",
@@ -160704,8 +160960,8 @@
     "modelIds": [
       "TS0601"
     ],
-    "pid": "CK-TLSR8656-SS5-01(7014)",
-    "modelIdsCount": 28
+    "pid": "TS0601",
+    "modelIdsCount": 1
   },
   "_TZE284_rccxox8p": {
     "driverId": "smoke_sensor2",
@@ -160713,8 +160969,8 @@
     "modelIds": [
       "TS0601"
     ],
-    "pid": "CK-TLSR8656-SS5-01(7014)",
-    "modelIdsCount": 28
+    "pid": "TS0601",
+    "modelIdsCount": 1
   },
   "_TZE200_0dvm9mva": {
     "driverId": "climate_sensor",
@@ -161839,8 +162095,8 @@
     "modelIds": [
       "TS0601"
     ],
-    "pid": "CK-TLSR8656-SS5-01(7014)",
-    "modelIdsCount": 28
+    "pid": "TS0601",
+    "modelIdsCount": 1
   },
   "_TZE200_npj9bug3": {
     "driverId": "soil_sensor",
@@ -161934,8 +162190,8 @@
     "modelIds": [
       "TS0601"
     ],
-    "pid": "CK-TLSR8656-SS5-01(7014)",
-    "modelIdsCount": 28
+    "pid": "TS0601",
+    "modelIdsCount": 1
   },
   "_GENERIC_CLIMATE_SENSOR_DEVICE": {
     "driverId": "climate_sensor_device",
@@ -164040,8 +164296,8 @@
     "modelIds": [
       "TS0601"
     ],
-    "pid": "01MINIZB",
-    "modelIdsCount": 34
+    "pid": "TS0601",
+    "modelIdsCount": 1
   },
   "_TZE200_axgvo9jh": {
     "driverId": "curtain_motor",
@@ -164195,8 +164451,8 @@
     "modelIds": [
       "TS130F"
     ],
-    "pid": "TS0301",
-    "modelIdsCount": 3
+    "pid": "TS130F",
+    "modelIdsCount": 1
   },
   "_TZ3000_femsaaua": {
     "driverId": "wall_curtain_switch",
@@ -164204,8 +164460,8 @@
     "modelIds": [
       "TS130F"
     ],
-    "pid": "TS0301",
-    "modelIdsCount": 3
+    "pid": "TS130F",
+    "modelIdsCount": 1
   },
   "_TZ3000_5iixzdo7": {
     "driverId": "curtain_motor_shutter",
@@ -164235,8 +164491,8 @@
     "modelIds": [
       "TS130F"
     ],
-    "pid": "TS0301",
-    "modelIdsCount": 3
+    "pid": "TS130F",
+    "modelIdsCount": 1
   },
   "_TZ3000_74hsp7qy": {
     "driverId": "curtain_motor_shutter",
@@ -164255,8 +164511,8 @@
     "modelIds": [
       "TS130F"
     ],
-    "pid": "TS0052",
-    "modelIdsCount": 6
+    "pid": "TS130F",
+    "modelIdsCount": 1
   },
   "_TZ3000_vw8pawxa": {
     "driverId": "curtain_motor_shutter",
@@ -167084,8 +167340,8 @@
     "modelIds": [
       "TS0601"
     ],
-    "pid": "SDM01-3Z1",
-    "modelIdsCount": 5
+    "pid": "TS0601",
+    "modelIdsCount": 1
   },
   "_tze284_2dpa3fqj": {
     "driverId": "din_rail_meter",
@@ -168174,8 +168430,8 @@
     "modelIds": [
       "TS130F"
     ],
-    "pid": "TS0601",
-    "modelIdsCount": 2
+    "pid": "TS130F",
+    "modelIdsCount": 1
   },
   "_tze200_ulyn7b1o": {
     "driverId": "floor_heating_thermostat",
@@ -168950,8 +169206,8 @@
     "modelIds": [
       "TS011F"
     ],
-    "pid": "0x8040",
-    "modelIdsCount": 58
+    "pid": "TS011F",
+    "modelIdsCount": 1
   },
   "_tz3210_zifx0xoj": {
     "driverId": "button_wireless_4",
@@ -169463,8 +169719,8 @@
     "modelIds": [
       "TS0601"
     ],
-    "pid": "0x8040",
-    "modelIdsCount": 55
+    "pid": "TS0601",
+    "modelIdsCount": 1
   },
   "_tze284_nbv4tdaz": {
     "driverId": "device_air_purifier_radiator",
@@ -169652,8 +169908,8 @@
     "modelIds": [
       "TS0601"
     ],
-    "pid": "0x8040",
-    "modelIdsCount": 50
+    "pid": "TS0601",
+    "modelIdsCount": 1
   },
   "_tze200_8whxpsiw": {
     "driverId": "thermostat_tuya_dp",
@@ -169714,65 +169970,6 @@
     ],
     "pid": "0x8040",
     "modelIdsCount": 52
-  },
-  "_tze200_9p5xmj5r": {
-    "driverId": "curtain_motor",
-    "source": "p98-sacred-couple",
-    "modelIds": [
-      "0x8040",
-      "BASICZBR3",
-      "BSP-EZ2",
-      "BSP-FZ2",
-      "BUTTON",
-      "Battery switch, 1 button",
-      "Battery switch, 2 buttons",
-      "CC2530",
-      "CC2531",
-      "CC2652",
-      "CUSTOM",
-      "DIY",
-      "EFEKTA",
-      "ESP32",
-      "MAKER",
-      "PTVO",
-      "RELAY",
-      "ROUTER",
-      "S26R2ZB",
-      "S31ZB",
-      "S40ZBTPB",
-      "SENSOR",
-      "SNZB-01",
-      "SNZB-01P",
-      "SNZB-02",
-      "SNZB-02P",
-      "SNZB-03",
-      "SNZB-03P",
-      "SNZB-04",
-      "SNZB-04P",
-      "SNZB-06P",
-      "SNZB-09P",
-      "SWITCH",
-      "TRV001",
-      "TRV003",
-      "TS0026",
-      "TS0041A",
-      "TS0044",
-      "TS0052",
-      "TS0105",
-      "TS0224",
-      "TS0601",
-      "TS0901",
-      "ZBMINI",
-      "ZBMINIL2",
-      "ZIGSTAR",
-      "eT093WRG",
-      "eT093WRO",
-      "eTRV0100",
-      "eTRV0101",
-      "eTRV0103"
-    ],
-    "pid": "TS0601",
-    "modelIdsCount": 51
   },
   "_tze200_9sfg7gm0": {
     "driverId": "thermostat_tuya_dp",
@@ -169840,8 +170037,8 @@
     "modelIds": [
       "TS0601"
     ],
-    "pid": "0x8040",
-    "modelIdsCount": 51
+    "pid": "TS0601",
+    "modelIdsCount": 1
   },
   "_TZE204_2imwyigp": {
     "driverId": "switch_3gang",
@@ -170011,8 +170208,8 @@
     "modelIds": [
       "TS0601"
     ],
-    "pid": "0x8040",
-    "modelIdsCount": 55
+    "pid": "TS0601",
+    "modelIdsCount": 1
   },
   "_TZ3000_imaccztn": {
     "driverId": "relay_board_4_channel",
@@ -170665,8 +170862,8 @@
     "modelIds": [
       "TS0505B"
     ],
-    "pid": "3305-S",
-    "modelIdsCount": 30
+    "pid": "TS0505B",
+    "modelIdsCount": 1
   },
   "MÃœLLER LICHT": {
     "driverId": "generic_tuya",
@@ -171736,7 +171933,7 @@
     "modelIds": [
       "TS0505B"
     ],
-    "pid": "TS0601_strip_adv",
+    "pid": "TS0505B",
     "modelIdsCount": 1
   },
   "_tzb210_ngnt8kni": {
@@ -172392,8 +172589,8 @@
     "modelIds": [
       "TS0501B"
     ],
-    "pid": "E11-G13",
-    "modelIdsCount": 37
+    "pid": "TS0501B",
+    "modelIdsCount": 1
   },
   "_tzb210_quinzf3w": {
     "driverId": "light_bulb_rgb",
@@ -174726,8 +174923,8 @@
     "modelIds": [
       "TS0225"
     ],
-    "pid": "CK-BL702-MWS-01(7016)",
-    "modelIdsCount": 7
+    "pid": "TS0225",
+    "modelIdsCount": 1
   },
   "_TZ3218_T9YNFZ4X": {
     "driverId": "motion_sensor_radar_mmwave",
@@ -174735,8 +174932,8 @@
     "modelIds": [
       "TS0225"
     ],
-    "pid": "CK-BL702-MWS-01(7016)",
-    "modelIdsCount": 7
+    "pid": "TS0225",
+    "modelIdsCount": 1
   },
   "_TZE200_1IBPYHON": {
     "driverId": "motion_sensor_radar_mmwave",
@@ -174804,8 +175001,8 @@
     "modelIds": [
       "TS0601"
     ],
-    "pid": "CK-BL702-MWS-01(7016)",
-    "modelIdsCount": 7
+    "pid": "TS0601",
+    "modelIdsCount": 1
   },
   "_TZ3218_T9YNFZ": {
     "driverId": "motion_sensor_radar_mmwave",
@@ -176758,8 +176955,8 @@
     "modelIds": [
       "TS0225"
     ],
-    "pid": "CK-BL702-MWS-01",
-    "modelIdsCount": 23
+    "pid": "TS0225",
+    "modelIdsCount": 1
   },
   "_TZ321C_4SLREUNP": {
     "driverId": "presence_sensor_radar",
@@ -179435,8 +179632,8 @@
     "modelIds": [
       "TS0601"
     ],
-    "pid": "CK-BL702-MWS-01",
-    "modelIdsCount": 23
+    "pid": "TS0601",
+    "modelIdsCount": 1
   },
   "_TZE284_FT7QQPX3": {
     "driverId": "presence_sensor_radar",
@@ -180441,8 +180638,8 @@
     "modelIds": [
       "TS0601"
     ],
-    "pid": "CK-BL702-MWS-01",
-    "modelIdsCount": 23
+    "pid": "TS0601",
+    "modelIdsCount": 1
   },
   "_TZE200_ka8l86iu": {
     "driverId": "presence_sensor_radar",
@@ -180823,8 +181020,8 @@
       "TS0601",
       "TS0601_curtain_tilt"
     ],
-    "pid": "CK-BL702-MWS-01",
-    "modelIdsCount": 23
+    "pid": "TS0601",
+    "modelIdsCount": 2
   },
   "_TZE204_grgol3xp": {
     "driverId": "presence_sensor_radar",
@@ -181018,8 +181215,8 @@
     "modelIds": [
       "TS011F"
     ],
-    "pid": "CK-BL702-MWS-01",
-    "modelIdsCount": 23
+    "pid": "TS011F",
+    "modelIdsCount": 1
   },
   "_tze200_f1lvlia0": {
     "driverId": "radar_sensor",
@@ -184605,7 +184802,7 @@
       "TS0043"
     ],
     "pid": "TS0043",
-    "modelIdsCount": 5
+    "modelIdsCount": 1
   },
   "_tz3000_rco1yzb1": {
     "driverId": "button_wireless_4",
@@ -184679,8 +184876,8 @@
     "modelIds": [
       "TS0207"
     ],
-    "pid": "TS011F",
-    "modelIdsCount": 2
+    "pid": "TS0207",
+    "modelIdsCount": 1
   },
   "_hybrid_remote_button_wireless_valve_needs_device_assignment": {
     "driverId": "remote_button_wireless_valve",
@@ -184882,7 +185079,7 @@
       "TS0041"
     ],
     "pid": "TS0041",
-    "modelIdsCount": 5
+    "modelIdsCount": 1
   },
   "_tz3002_6ahhkwyh": {
     "driverId": "scene_switch_2",
@@ -184986,8 +185183,8 @@
     "modelIds": [
       "TS0044"
     ],
-    "pid": "ERS-10TZBVK-AA",
-    "modelIdsCount": 3
+    "pid": "TS0044",
+    "modelIdsCount": 1
   },
   "_tze200_zqtiam9d": {
     "driverId": "scene_switch_4",
@@ -185041,11 +185238,89 @@
       "ZG-101ZS": "scene_switch_4"
     },
     "modelIds": [
-      "ZG-303Z"
+      "3315-S",
+      "3315-Seu",
+      "ZG-101ZL",
+      "ZG-101ZS",
+      "ZG-102Z",
+      "ZG-102ZL",
+      "ZG-106Z",
+      "ZG-204Z",
+      "ZG-204ZE",
+      "ZG-204ZH",
+      "ZG-204ZK",
+      "ZG-204ZL",
+      "ZG-204ZM",
+      "ZG-204ZQ",
+      "ZG-204ZV",
+      "ZG-205Z",
+      "ZG-205ZL",
+      "ZG-222Z",
+      "ZG-222ZA",
+      "ZG-223Z",
+      "ZG-227Z",
+      "ZG-227ZL",
+      "ZG-303Z",
+      "ZG-305Z"
     ],
     "source": "P2251-hobeian-multi-couple",
     "addedAt": "2026-08-25T00:00:00.000Z",
-    "notes": "One brand many pids; resolve via byPid. Compose remains Homey pairing SSOT."
+    "notes": "P2295: one brand → many deviceIds/pids/names/drivers. Never collapse to a single modelId. Compose remains Homey pairing SSOT; byPid is the multi-couple map.",
+    "modelIdsCount": 24,
+    "pid": "ZG-303Z",
+    "deviceNamesByPid": {
+      "3315-S": [
+        "HOBEIAN water leak",
+        "3315-S",
+        "3315-Seu"
+      ],
+      "3315-Seu": [
+        "HOBEIAN water leak EU",
+        "3315-Seu"
+      ],
+      "ZG-222Z": [
+        "HOBEIAN water leak ZG-222Z"
+      ],
+      "ZG-222ZA": [
+        "HOBEIAN water leak ZG-222ZA"
+      ],
+      "ZG-303Z": [
+        "HOBEIAN soil ZG-303Z",
+        "ZG-303L",
+        "ZG-303B"
+      ],
+      "ZG-227Z": [
+        "HOBEIAN climate ZG-227Z"
+      ],
+      "ZG-227ZL": [
+        "HOBEIAN climate ZG-227ZL"
+      ],
+      "ZG-204ZM": [
+        "HOBEIAN presence PIR+mmWave ZG-204ZM",
+        "ZG-204ZS"
+      ],
+      "ZG-101ZL": [
+        "HOBEIAN button ZG-101ZL"
+      ]
+    },
+    "deviceNames": [
+      "3315-S",
+      "3315-Seu",
+      "HOBEIAN button ZG-101ZL",
+      "HOBEIAN climate ZG-227Z",
+      "HOBEIAN climate ZG-227ZL",
+      "HOBEIAN presence PIR+mmWave ZG-204ZM",
+      "HOBEIAN soil ZG-303Z",
+      "HOBEIAN water leak",
+      "HOBEIAN water leak EU",
+      "HOBEIAN water leak ZG-222Z",
+      "HOBEIAN water leak ZG-222ZA",
+      "ZG-204ZS",
+      "ZG-303B",
+      "ZG-303L"
+    ],
+    "lastEnrichment": "p2295-multi-identity",
+    "updatedAt": "2026-08-28"
   },
   "_hybrid_scene_switch_6ch_needs_device_assignment": {
     "driverId": "scene_switch_6ch",
@@ -189411,8 +189686,8 @@
     "modelIds": [
       "TS0202"
     ],
-    "pid": "GS361A-H04",
-    "modelIdsCount": 14
+    "pid": "TS0202",
+    "modelIdsCount": 1
   },
   "_TZ3000_TK3S5TYG": {
     "driverId": "smoke_detector_advanced",
@@ -190102,8 +190377,8 @@
     "modelIds": [
       "TS0601"
     ],
-    "pid": "TS0205",
-    "modelIdsCount": 2
+    "pid": "TS0601",
+    "modelIdsCount": 1
   },
   "_TZE284_cjbofhxw": {
     "driverId": "power_clamp_meter",
@@ -190111,8 +190386,8 @@
     "modelIds": [
       "TS0601"
     ],
-    "pid": "TS0205",
-    "modelIdsCount": 2
+    "pid": "TS0601",
+    "modelIdsCount": 1
   },
   "_TZE200_qcasmfan": {
     "driverId": "smoke_sensor3",
@@ -190160,8 +190435,8 @@
     "modelIds": [
       "TS0601"
     ],
-    "pid": "TS0205",
-    "modelIdsCount": 2
+    "pid": "TS0601",
+    "modelIdsCount": 1
   },
   "_tz3000_j1rx47vc": {
     "driverId": "socket_power_strip_four",
@@ -190535,8 +190810,8 @@
     "modelIds": [
       "TS0601"
     ],
-    "pid": "Arteco",
-    "modelIdsCount": 5
+    "pid": "TS0601",
+    "modelIdsCount": 1
   },
   "_TZE21C_i2ij4rb3": {
     "driverId": "soil_sensor",
@@ -190557,8 +190832,8 @@
     "modelIds": [
       "TS0601"
     ],
-    "pid": "Arteco",
-    "modelIdsCount": 5
+    "pid": "TS0601",
+    "modelIdsCount": 1
   },
   "_TZE200_SH8V7FHD": {
     "driverId": "soil_sensor",
@@ -191509,8 +191784,8 @@
     "modelIds": [
       "TS0041"
     ],
-    "pid": "01MINIZB",
-    "modelIdsCount": 34
+    "pid": "TS0041",
+    "modelIdsCount": 1
   },
   "_TZ3000_4WHIGL8I": {
     "driverId": "switch_1gang",
@@ -191723,8 +191998,8 @@
     "modelIdsCount": 34
   },
   "_TZ3000_6KM7DJCM": {
-    "driverId": "switch_1gang",
-    "source": "auto-sync",
+    "driverId": "button_wireless_1",
+    "source": "compose-exclusive",
     "modelIds": [
       "01MINIZB",
       "BASICZBR3",
@@ -193836,8 +194111,8 @@
     "modelIds": [
       "TS004F"
     ],
-    "pid": "01MINIZB",
-    "modelIdsCount": 34
+    "pid": "TS004F",
+    "modelIdsCount": 1
   },
   "_TZ3000_GBSHWGAG": {
     "driverId": "switch_1gang",
@@ -193887,8 +194162,8 @@
     "modelIds": [
       "TS0001"
     ],
-    "pid": "01MINIZB",
-    "modelIdsCount": 34
+    "pid": "TS0001",
+    "modelIdsCount": 1
   },
   "_TZ3000_GHI789": {
     "driverId": "switch_1gang",
@@ -194824,8 +195099,8 @@
     "modelIds": [
       "TS0726"
     ],
-    "pid": "01MINIZB",
-    "modelIdsCount": 34
+    "pid": "TS0726",
+    "modelIdsCount": 1
   },
   "_TZ3000_IKTIY8UE": {
     "driverId": "switch_1gang",
@@ -195464,8 +195739,8 @@
       "TS0044",
       "TS004F"
     ],
-    "pid": "01MINIZB",
-    "modelIdsCount": 34
+    "pid": "TS0044",
+    "modelIdsCount": 2
   },
   "_TZ3000_KJ0NWDZ6": {
     "driverId": "switch_1gang",
@@ -196138,15 +196413,6 @@
     ],
     "pid": "01MINIZB",
     "modelIdsCount": 34
-  },
-  "_TZ3000_MRPEVH8P": {
-    "driverId": "button_wireless_1",
-    "source": "registry:p2282-mrpevh8p-ts0041-button",
-    "modelIds": [
-      "TS0041"
-    ],
-    "pid": "TS0041",
-    "modelIdsCount": 1
   },
   "_TZ3000_MTMTLJO4": {
     "driverId": "switch_1gang",
@@ -197540,8 +197806,8 @@
     "modelIds": [
       "TS004F"
     ],
-    "pid": "01MINIZB",
-    "modelIdsCount": 34
+    "pid": "TS004F",
+    "modelIdsCount": 1
   },
   "_TZ3000_R0PMI2P3": {
     "driverId": "button_wireless_2",
@@ -199233,8 +199499,8 @@
     "modelIds": [
       "TS0004"
     ],
-    "pid": "01MINIZB",
-    "modelIdsCount": 34
+    "pid": "TS0004",
+    "modelIdsCount": 1
   },
   "_TZ3000_WOL32OLT": {
     "driverId": "switch_1gang",
@@ -200637,8 +200903,8 @@
     "modelIds": [
       "TS000F"
     ],
-    "pid": "01MINIZB",
-    "modelIdsCount": 35
+    "pid": "TS000F",
+    "modelIdsCount": 1
   },
   "_TZ3218_HDC8BBHA": {
     "driverId": "switch_1gang",
@@ -200646,8 +200912,8 @@
     "modelIds": [
       "TS000F"
     ],
-    "pid": "01MINIZB",
-    "modelIdsCount": 34
+    "pid": "TS000F",
+    "modelIdsCount": 1
   },
   "_TZ3218_YA5D6WTH": {
     "driverId": "switch_temp_sensor",
@@ -200655,8 +200921,8 @@
     "modelIds": [
       "TS000F"
     ],
-    "pid": "01MINIZB",
-    "modelIdsCount": 34
+    "pid": "TS000F",
+    "modelIdsCount": 1
   },
   "_TZE200_0j5jma9b": {
     "driverId": "switch_1gang",
@@ -201798,8 +202064,8 @@
     "modelIds": [
       "TS0601"
     ],
-    "pid": "01MINIZB",
-    "modelIdsCount": 34
+    "pid": "TS0601",
+    "modelIdsCount": 1
   },
   "_TZE204_ATPWQGML": {
     "driverId": "switch_1gang",
@@ -203445,8 +203711,8 @@
     "modelIds": [
       "TS0601"
     ],
-    "pid": "01MINIZB",
-    "modelIdsCount": 34
+    "pid": "TS0601",
+    "modelIdsCount": 1
   },
   "_TZE200_7sjncirf": {
     "driverId": "switch_1gang",
@@ -203790,8 +204056,8 @@
     "modelIds": [
       "TS0002"
     ],
-    "pid": "01MINIZB",
-    "modelIdsCount": 34
+    "pid": "TS0002",
+    "modelIdsCount": 1
   },
   "_TZ3000_iv4eq7eh": {
     "driverId": "switch_1gang",
@@ -204046,46 +204312,20 @@
     "modelIdsCount": 34
   },
   "_TZE200_m6lwazh9": {
-    "driverId": "switch_1gang",
-    "source": "auto-sync",
+    "driverId": "curtain_motor",
+    "source": "registry:p2297",
     "modelIds": [
-      "01MINIZB",
-      "BASICZBR3",
-      "S26R2ZB",
-      "S31ZB",
-      "TS0001",
-      "TS0001_power",
-      "TS0001_switch",
-      "TS0001_switch_module",
-      "TS0002",
-      "TS0003",
-      "TS000F",
-      "TS0011",
-      "TS0012",
-      "TS0014",
-      "TS0041",
-      "TS0101",
-      "TS0111",
-      "TS011F",
-      "TS0601",
-      "TS0726",
-      "TS110E",
-      "TS130F",
-      "TS4100",
-      "ZBM5-1C-120",
-      "ZBM5-2C-120",
-      "ZBM5-3C-120",
-      "ZBMINI",
-      "ZBMINIL2",
-      "ZBMINIL2-R2",
-      "ZBMINIR",
-      "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "TS0601"
     ],
-    "pid": "01MINIZB",
-    "modelIdsCount": 34
+    "pid": "TS0601",
+    "modelIdsCount": 1,
+    "powerSource": "battery",
+    "deviceType": "curtain",
+    "deviceNames": [
+      "Zemismart cover m6lwazh9"
+    ],
+    "notes": "P2297 forum T154092",
+    "updatedAt": "2026-08-28"
   },
   "_TZE200_swlgvdlh": {
     "driverId": "switch_1gang",
@@ -206546,45 +206786,22 @@
   },
   "_tze210_m6lwazh9": {
     "driverId": "curtain_motor",
-    "source": "compose-exclusive",
+    "source": "registry:p2297",
     "modelIds": [
-      "01MINIZB",
-      "BASICZBR3",
-      "S26R2ZB",
-      "S31ZB",
-      "TS0001",
-      "TS0001_power",
-      "TS0001_switch",
-      "TS0001_switch_module",
-      "TS0002",
-      "TS0003",
-      "TS000F",
-      "TS0011",
-      "TS0012",
-      "TS0014",
-      "TS0041",
-      "TS0101",
-      "TS0111",
-      "TS011F",
-      "TS0601",
-      "TS0726",
-      "TS110E",
-      "TS130F",
-      "TS4100",
-      "ZBM5-1C-120",
-      "ZBM5-2C-120",
-      "ZBM5-3C-120",
-      "ZBMINI",
-      "ZBMINIL2",
-      "ZBMINIL2-R2",
-      "ZBMINIR",
-      "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "TS0301"
     ],
-    "pid": "01MINIZB",
-    "modelIdsCount": 34
+    "pid": "TS0301",
+    "modelIdsCount": 1,
+    "powerSource": "battery",
+    "deviceType": "curtain",
+    "deviceNames": [
+      "A-OK AM25"
+    ],
+    "z2mModels": [
+      "TS0301_cover"
+    ],
+    "notes": "P2297 Z2M#30273",
+    "updatedAt": "2026-08-28"
   },
   "_TZE200_m6ec2pgj": {
     "driverId": "switch_1gang",
@@ -206760,8 +206977,8 @@
     "modelIds": [
       "TS0601"
     ],
-    "pid": "01MINIZB",
-    "modelIdsCount": 34
+    "pid": "TS0601",
+    "modelIdsCount": 1
   },
   "_tze204_n9ctkb6j": {
     "driverId": "switch_1gang",
@@ -207997,7 +208214,7 @@
       "TS0003"
     ],
     "pid": "TS0003",
-    "modelIdsCount": 8
+    "modelIdsCount": 1
   },
   "_tz3000_nhhklsxw": {
     "driverId": "switch_3gang",
@@ -210141,7 +210358,7 @@
     "modelIds": [
       "TS004F"
     ],
-    "pid": "TS0004",
+    "pid": "TS004F",
     "modelIdsCount": 1
   },
   "_tz3000_qja6nq5z": {
@@ -210163,8 +210380,8 @@
     "modelIds": [
       "TS004F"
     ],
-    "pid": "TS0004",
-    "modelIdsCount": 3
+    "pid": "TS004F",
+    "modelIdsCount": 1
   },
   "_tz3000_gwkzibhs": {
     "driverId": "smart_knob_rotary",
@@ -210392,8 +210609,8 @@
     "modelIds": [
       "TS004F"
     ],
-    "pid": "TS0215A",
-    "modelIdsCount": 3
+    "pid": "TS004F",
+    "modelIdsCount": 1
   },
   "_tz3000_jnhu1llv": {
     "driverId": "temphumidsensor",
@@ -210605,8 +210822,42 @@
     "modelIds": [
       "TS0601"
     ],
-    "pid": "PJ-1203A",
-    "modelIdsCount": 4
+    "pid": "TS0601",
+    "modelIdsCount": 1,
+    "deviceNames": [
+      "BAC006",
+      "Tuya FCU thermostat",
+      "TYBAC-006"
+    ],
+    "z2mModels": [
+      "BAC-006",
+      "TYBAC-006"
+    ],
+    "whiteLabels": [
+      "BAC006",
+      "TYBAC-006"
+    ],
+    "productNames": [
+      "BAC006",
+      "Tuya FCU thermostat",
+      "TYBAC-006"
+    ],
+    "variants": [
+      "_tze204_mpbki2zm",
+      "_TZE204_mpbki2zm",
+      "_TZE204_MPBKI2ZM"
+    ],
+    "variantsCount": 3,
+    "prefixVariants": [
+      "_TZE204_mpbki2zm"
+    ],
+    "notes": "P2295: zigbee pid=TS0601 only — PJ-1203A was invent. TYBAC-006/BAC006 are retail names. Sibling qujphad5 is a separate couple.",
+    "protocol": "tuya_ef00",
+    "powerSource": "mains",
+    "deviceType": "thermostat",
+    "coupleLock": true,
+    "updatedAt": "2026-08-28",
+    "lastEnrichment": "p2295-multi-identity"
   },
   "_TZE200_6kijc7nd": {
     "driverId": "thermostatic_radiator_valve",
@@ -211834,8 +212085,8 @@
     "modelIds": [
       "TS011F"
     ],
-    "pid": "S26R2ZB",
-    "modelIdsCount": 9
+    "pid": "TS011F",
+    "modelIdsCount": 1
   },
   "_tz3210_cjrngdr3": {
     "driverId": "usb_dongle_triple",
@@ -212334,7 +212585,9 @@
     "source": "registry:fgwhjm9j-ts011f-metering-plug",
     "modelIds": [
       "TS011F"
-    ]
+    ],
+    "pid": "TS011F",
+    "modelIdsCount": 1
   },
   "_TZ3210_ph1joc22": {
     "driverId": "usb_outlet_advanced",
@@ -213401,8 +213654,8 @@
     "modelIds": [
       "TS0505B"
     ],
-    "pid": "TS0011",
-    "modelIdsCount": 9
+    "pid": "TS0505B",
+    "modelIdsCount": 1
   },
   "_tz3210_4zinq6io": {
     "driverId": "wall_dimmer_tuya",
@@ -214255,8 +214508,8 @@
     "modelIds": [
       "TS0601"
     ],
-    "pid": "TS0011",
-    "modelIdsCount": 9
+    "pid": "TS0601",
+    "modelIdsCount": 1
   },
   "_tze200_qzaing2g": {
     "driverId": "wall_dimmer_tuya",
@@ -215441,48 +215694,221 @@
   },
   "_TZE200_68nvbio9": {
     "driverId": "curtain_motor",
-    "source": "p2293-z2m-cover",
+    "source": "registry:p2293-zemismart-68nvbio9-curtain-not-trv",
     "modelIds": [
       "TS0601"
     ],
     "pid": "TS0601",
-    "modelIdsCount": 1
+    "modelIdsCount": 1,
+    "deviceNames": [
+      "Zemismart curtain motor",
+      "ZM16EL",
+      "ZM16EL-03",
+      "ZM16EL-33"
+    ],
+    "z2mModels": [
+      "TS0601_cover",
+      "ZM16EL"
+    ],
+    "whiteLabels": [
+      "ZM16EL-03",
+      "ZM16EL-33"
+    ],
+    "productNames": [
+      "Zemismart curtain motor",
+      "ZM16EL",
+      "ZM16EL-03",
+      "ZM16EL-33"
+    ],
+    "variants": [
+      "_tze200_68nvbio9",
+      "_TZE200_68nvbio9",
+      "_TZE200_68NVBIO9"
+    ],
+    "variantsCount": 3,
+    "prefixVariants": [
+      "_TZE200_68nvbio9",
+      "_TZE204_68nvbio9"
+    ],
+    "notes": "P2295: Zigbee pid=TS0601; ZM16EL* are retail aliases not productIds.",
+    "protocol": "tuya_ef00",
+    "powerSource": "battery",
+    "deviceType": "curtain",
+    "coupleLock": true,
+    "updatedAt": "2026-08-28",
+    "lastEnrichment": "p2295-multi-identity"
   },
   "_TZE200_pw7mji0l": {
-    "driverId": "device_radiator_valve",
-    "source": "compose-exclusive",
+    "driverId": "curtain_motor",
+    "source": "registry:p2295-zemismart-cover-siblings",
     "modelIds": [
       "TS0601"
     ],
     "pid": "TS0601",
-    "modelIdsCount": 1
+    "modelIdsCount": 1,
+    "deviceNames": [
+      "TS0601_cover",
+      "Zemismart / Tuya TS0601 cover (Z2M group 148)"
+    ],
+    "z2mModels": [
+      "TS0601_cover",
+      "ZM16EL",
+      "ZM85EL-2Z"
+    ],
+    "whiteLabels": [],
+    "productNames": [
+      "TS0601_cover",
+      "Zemismart / Tuya TS0601 cover (Z2M group 148)"
+    ],
+    "variants": [
+      "_tze200_pw7mji0l",
+      "_TZE200_pw7mji0l",
+      "_TZE200_PW7MJI0L"
+    ],
+    "variantsCount": 3,
+    "prefixVariants": [
+      "_TZE200_9p5xmj5r",
+      "_TZE200_ba69l9ol",
+      "_TZE200_eevqq1uv",
+      "_TZE200_nw1r9hp6",
+      "_TZE200_pw7mji0l",
+      "_TZE200_sfqyhvpv",
+      "_TZE200_vexa5o82",
+      "_TZE204_ejh6owwz",
+      "_TZE204_pw7mji0l"
+    ],
+    "notes": "P2295: Z2M cover fingerprint siblings of 68nvbio9/cf1sl3tj — each couple keeps pid TS0601 only.",
+    "protocol": "tuya_ef00",
+    "powerSource": "battery",
+    "deviceType": "curtain",
+    "coupleLock": true,
+    "updatedAt": "2026-08-28",
+    "lastEnrichment": "p2295-multi-identity"
   },
   "_TZE200_cf1sl3tj": {
     "driverId": "curtain_motor",
-    "source": "p2293-z2m-cover",
+    "source": "registry:p2293-zemismart-cf1sl3tj-curtain-not-trv",
     "modelIds": [
       "TS0601"
     ],
     "pid": "TS0601",
-    "modelIdsCount": 1
+    "modelIdsCount": 1,
+    "deviceNames": [
+      "Zemismart dual curtain",
+      "ZM85EL-2Z"
+    ],
+    "z2mModels": [
+      "TS0601_cover",
+      "ZM85EL-2Z"
+    ],
+    "whiteLabels": [
+      "ZM85EL-2Z"
+    ],
+    "productNames": [
+      "Zemismart dual curtain",
+      "ZM85EL-2Z"
+    ],
+    "variants": [
+      "_tze200_cf1sl3tj",
+      "_TZE200_cf1sl3tj",
+      "_TZE200_CF1SL3TJ"
+    ],
+    "variantsCount": 3,
+    "prefixVariants": [
+      "_TZE200_cf1sl3tj"
+    ],
+    "notes": "P2295: Zigbee pid=TS0601; ZM85EL-2Z is retail alias.",
+    "protocol": "tuya_ef00",
+    "powerSource": "battery",
+    "deviceType": "curtain",
+    "coupleLock": true,
+    "updatedAt": "2026-08-28",
+    "lastEnrichment": "p2295-multi-identity"
   },
   "_TZE200_nw1r9hp6": {
-    "driverId": "device_radiator_valve",
-    "source": "compose-exclusive",
+    "driverId": "curtain_motor",
+    "source": "registry:p2295-zemismart-cover-siblings",
     "modelIds": [
       "TS0601"
     ],
     "pid": "TS0601",
-    "modelIdsCount": 1
+    "modelIdsCount": 1,
+    "deviceNames": [
+      "TS0601_cover",
+      "Zemismart / Tuya TS0601 cover (Z2M group 148)"
+    ],
+    "z2mModels": [
+      "TS0601_cover",
+      "ZM16EL",
+      "ZM85EL-2Z"
+    ],
+    "whiteLabels": [],
+    "productNames": [
+      "TS0601_cover",
+      "Zemismart / Tuya TS0601 cover (Z2M group 148)"
+    ],
+    "variants": [
+      "_tze200_nw1r9hp6",
+      "_TZE200_nw1r9hp6",
+      "_TZE200_NW1R9HP6"
+    ],
+    "variantsCount": 3,
+    "prefixVariants": [
+      "_TZE200_9p5xmj5r",
+      "_TZE200_ba69l9ol",
+      "_TZE200_eevqq1uv",
+      "_TZE200_nw1r9hp6",
+      "_TZE200_pw7mji0l",
+      "_TZE200_sfqyhvpv",
+      "_TZE200_vexa5o82",
+      "_TZE204_ejh6owwz",
+      "_TZE204_pw7mji0l"
+    ],
+    "notes": "P2295: Z2M cover fingerprint siblings of 68nvbio9/cf1sl3tj — each couple keeps pid TS0601 only.",
+    "protocol": "tuya_ef00",
+    "powerSource": "battery",
+    "deviceType": "curtain",
+    "coupleLock": true,
+    "updatedAt": "2026-08-28",
+    "lastEnrichment": "p2295-multi-identity"
   },
   "_TZE200_68nvbi09": {
-    "driverId": "device_radiator_valve",
-    "source": "compose-exclusive",
+    "driverId": "curtain_motor",
+    "source": "registry:p2295-zemismart-68nvbi09-typo-curtain",
     "modelIds": [
       "TS0601"
     ],
     "pid": "TS0601",
-    "modelIdsCount": 1
+    "modelIdsCount": 1,
+    "deviceNames": [
+      "Zemismart curtain motor",
+      "ZM16EL (typo mfr 68nvbi09)"
+    ],
+    "z2mModels": [
+      "TS0601_cover",
+      "ZM16EL"
+    ],
+    "whiteLabels": [],
+    "productNames": [
+      "Zemismart curtain motor",
+      "ZM16EL (typo mfr 68nvbi09)"
+    ],
+    "variants": [
+      "_tze200_68nvbi09",
+      "_TZE200_68nvbi09",
+      "_TZE200_68NVBI09"
+    ],
+    "variantsCount": 3,
+    "prefixVariants": [
+      "_TZE200_68nvbi09"
+    ],
+    "notes": "P2295: Z2M fingerprint typo sibling of 68nvbio9 — cover not TRV.",
+    "protocol": "tuya_ef00",
+    "powerSource": "battery",
+    "deviceType": "curtain",
+    "coupleLock": true,
+    "updatedAt": "2026-08-28",
+    "lastEnrichment": "p2295-multi-identity"
   },
   "_TZE200_e9ba97vf": {
     "driverId": "device_radiator_valve",
@@ -215873,31 +216299,98 @@
     "modelIdsCount": 1
   },
   "_TZE200_vexa5o82": {
-    "driverId": "device_radiator_valve",
-    "source": "compose-exclusive",
+    "driverId": "curtain_motor",
+    "source": "registry:p2295-zemismart-cover-siblings",
     "modelIds": [
       "TS0601"
     ],
     "pid": "TS0601",
-    "modelIdsCount": 1
+    "modelIdsCount": 1,
+    "deviceNames": [
+      "TS0601_cover",
+      "Zemismart / Tuya TS0601 cover (Z2M group 148)"
+    ],
+    "z2mModels": [
+      "TS0601_cover",
+      "ZM16EL",
+      "ZM85EL-2Z"
+    ],
+    "whiteLabels": [],
+    "productNames": [
+      "TS0601_cover",
+      "Zemismart / Tuya TS0601 cover (Z2M group 148)"
+    ],
+    "variants": [
+      "_tze200_vexa5o82",
+      "_TZE200_vexa5o82",
+      "_TZE200_VEXA5O82"
+    ],
+    "variantsCount": 3,
+    "prefixVariants": [
+      "_TZE200_9p5xmj5r",
+      "_TZE200_ba69l9ol",
+      "_TZE200_eevqq1uv",
+      "_TZE200_nw1r9hp6",
+      "_TZE200_pw7mji0l",
+      "_TZE200_sfqyhvpv",
+      "_TZE200_vexa5o82",
+      "_TZE204_ejh6owwz",
+      "_TZE204_pw7mji0l"
+    ],
+    "notes": "P2295: Z2M cover fingerprint siblings of 68nvbio9/cf1sl3tj — each couple keeps pid TS0601 only.",
+    "protocol": "tuya_ef00",
+    "powerSource": "battery",
+    "deviceType": "curtain",
+    "coupleLock": true,
+    "updatedAt": "2026-08-28",
+    "lastEnrichment": "p2295-multi-identity"
   },
   "_TZE204_pw7mji0l": {
-    "driverId": "device_radiator_valve",
-    "source": "compose-exclusive",
-    "modelIds": [
-      "TS0601"
-    ],
-    "pid": "TS0601",
-    "modelIdsCount": 1
-  },
-  "_tze204_68nvbio9": {
     "driverId": "curtain_motor",
-    "source": "p2293-z2m-cover",
+    "source": "registry:p2295-zemismart-cover-siblings",
     "modelIds": [
       "TS0601"
     ],
     "pid": "TS0601",
-    "modelIdsCount": 1
+    "modelIdsCount": 1,
+    "deviceNames": [
+      "TS0601_cover",
+      "Zemismart / Tuya TS0601 cover (Z2M group 148)"
+    ],
+    "z2mModels": [
+      "TS0601_cover",
+      "ZM16EL",
+      "ZM85EL-2Z"
+    ],
+    "whiteLabels": [],
+    "productNames": [
+      "TS0601_cover",
+      "Zemismart / Tuya TS0601 cover (Z2M group 148)"
+    ],
+    "variants": [
+      "_tze204_pw7mji0l",
+      "_TZE204_pw7mji0l",
+      "_TZE204_PW7MJI0L"
+    ],
+    "variantsCount": 3,
+    "prefixVariants": [
+      "_TZE200_9p5xmj5r",
+      "_TZE200_ba69l9ol",
+      "_TZE200_eevqq1uv",
+      "_TZE200_nw1r9hp6",
+      "_TZE200_pw7mji0l",
+      "_TZE200_sfqyhvpv",
+      "_TZE200_vexa5o82",
+      "_TZE204_ejh6owwz",
+      "_TZE204_pw7mji0l"
+    ],
+    "notes": "P2295: Z2M cover fingerprint siblings of 68nvbio9/cf1sl3tj — each couple keeps pid TS0601 only.",
+    "protocol": "tuya_ef00",
+    "powerSource": "battery",
+    "deviceType": "curtain",
+    "coupleLock": true,
+    "updatedAt": "2026-08-28",
+    "lastEnrichment": "p2295-multi-identity"
   },
   "_tze200_lzriup1j": {
     "driverId": "wall_thermostat",
@@ -217159,8 +217652,8 @@
     "modelIds": [
       "TS0207"
     ],
-    "pid": "3315-S",
-    "modelIdsCount": 19,
+    "pid": "TS0207",
+    "modelIdsCount": 1,
     "variants": [
       "_TZ3000_upgcbody",
       "_tz3000_upgcbody"
@@ -218017,8 +218510,8 @@
     "modelIds": [
       "TS0601"
     ],
-    "pid": "CK-BL702-MWS-01",
-    "modelIdsCount": 23,
+    "pid": "TS0601",
+    "modelIdsCount": 1,
     "variants": [
       "_TZE200_clrdrnya",
       "_tze200_clrdrnya"
@@ -222865,11 +223358,32 @@
     "_tz3000_mrpevh8p|ts0041": {
       "mfr": "_tz3000_mrpevh8p",
       "pid": "ts0041",
-      "driver": "button_wireless",
+      "driver": "button_wireless_1",
       "sources": [
-        "canonical"
+        "canonical",
+        "p2295-multi-identity",
+        "registry"
       ],
-      "confidence": 0.95
+      "confidence": 0.95,
+      "productNames": [
+        "RSH-SC021",
+        "SH-SC07",
+        "TS0041",
+        "Tuya 1-button scene switch"
+      ],
+      "deviceNames": [
+        "RSH-SC021",
+        "SH-SC07",
+        "Tuya 1-button scene switch"
+      ],
+      "z2mModels": [
+        "SH-SC07",
+        "TS0041"
+      ],
+      "whiteLabels": [
+        "RSH-SC021",
+        "SH-SC07"
+      ]
     },
     "_tz3000_msl6wxk9|ts0601": {
       "mfr": "_tz3000_msl6wxk9",
@@ -226291,12 +226805,28 @@
     "_tze200_3ejwxpmu|ts0601": {
       "mfr": "_tze200_3ejwxpmu",
       "pid": "ts0601",
-      "driver": "generic_tuya",
+      "driver": "air_quality_co2",
       "sources": [
         "canonical",
-        "mfs_db"
+        "mfs_db",
+        "p2295-multi-identity",
+        "registry"
       ],
-      "confidence": 0.95
+      "confidence": 0.95,
+      "productNames": [
+        "NDIR CO2 sensor",
+        "TS0601_co2_sensor",
+        "Tuya CO2 (3ejwxpmu)"
+      ],
+      "deviceNames": [
+        "NDIR CO2 sensor",
+        "TS0601_co2_sensor",
+        "Tuya CO2 (3ejwxpmu)"
+      ],
+      "z2mModels": [
+        "TS0601_co2_sensor"
+      ],
+      "whiteLabels": []
     },
     "_tze200_3i3exuay|ts0601": {
       "mfr": "_tze200_3i3exuay",
@@ -226488,22 +227018,62 @@
     "_tze200_68nvbi09|ts0601": {
       "mfr": "_tze200_68nvbi09",
       "pid": "ts0601",
-      "driver": "device_radiator_valve",
+      "driver": "curtain_motor",
       "sources": [
         "canonical",
-        "mfs_db"
+        "mfs_db",
+        "p2295-multi-identity",
+        "registry"
       ],
-      "confidence": 0.95
+      "confidence": 0.95,
+      "productNames": [
+        "TS0601_cover",
+        "Zemismart curtain motor",
+        "ZM16EL",
+        "ZM16EL (typo mfr 68nvbi09)"
+      ],
+      "deviceNames": [
+        "Zemismart curtain motor",
+        "ZM16EL (typo mfr 68nvbi09)"
+      ],
+      "z2mModels": [
+        "TS0601_cover",
+        "ZM16EL"
+      ],
+      "whiteLabels": []
     },
     "_tze200_68nvbio9|ts0601": {
       "mfr": "_tze200_68nvbio9",
       "pid": "ts0601",
-      "driver": "device_radiator_valve",
+      "driver": "curtain_motor",
       "sources": [
         "canonical",
-        "mfs_db"
+        "mfs_db",
+        "p2295-multi-identity",
+        "registry"
       ],
-      "confidence": 0.95
+      "confidence": 0.95,
+      "productNames": [
+        "TS0601_cover",
+        "Zemismart curtain motor",
+        "ZM16EL",
+        "ZM16EL-03",
+        "ZM16EL-33"
+      ],
+      "deviceNames": [
+        "Zemismart curtain motor",
+        "ZM16EL",
+        "ZM16EL-03",
+        "ZM16EL-33"
+      ],
+      "z2mModels": [
+        "TS0601_cover",
+        "ZM16EL"
+      ],
+      "whiteLabels": [
+        "ZM16EL-03",
+        "ZM16EL-33"
+      ]
     },
     "_tze200_6rdj8dzm|ts0601": {
       "mfr": "_tze200_6rdj8dzm",
@@ -226722,12 +227292,30 @@
     "_tze200_9p5xmj5r|ts0601": {
       "mfr": "_tze200_9p5xmj5r",
       "pid": "ts0601",
-      "driver": "device_radiator_valve",
+      "driver": "curtain_motor",
       "sources": [
         "canonical",
-        "mfs_db"
+        "mfs_db",
+        "p2295-multi-identity",
+        "registry"
       ],
-      "confidence": 0.95
+      "confidence": 0.95,
+      "productNames": [
+        "TS0601_cover",
+        "Zemismart / Tuya TS0601 cover (Z2M group 148)",
+        "ZM16EL",
+        "ZM85EL-2Z"
+      ],
+      "deviceNames": [
+        "TS0601_cover",
+        "Zemismart / Tuya TS0601 cover (Z2M group 148)"
+      ],
+      "z2mModels": [
+        "TS0601_cover",
+        "ZM16EL",
+        "ZM85EL-2Z"
+      ],
+      "whiteLabels": []
     },
     "_tze200_9sfg7gm0|ts0601": {
       "mfr": "_tze200_9sfg7gm0",
@@ -226929,12 +227517,30 @@
     "_tze200_ba69l9ol|ts0601": {
       "mfr": "_tze200_ba69l9ol",
       "pid": "ts0601",
-      "driver": "device_radiator_valve",
+      "driver": "curtain_motor",
       "sources": [
         "canonical",
-        "mfs_db"
+        "mfs_db",
+        "p2295-multi-identity",
+        "registry"
       ],
-      "confidence": 0.95
+      "confidence": 0.95,
+      "productNames": [
+        "TS0601_cover",
+        "Zemismart / Tuya TS0601 cover (Z2M group 148)",
+        "ZM16EL",
+        "ZM85EL-2Z"
+      ],
+      "deviceNames": [
+        "TS0601_cover",
+        "Zemismart / Tuya TS0601 cover (Z2M group 148)"
+      ],
+      "z2mModels": [
+        "TS0601_cover",
+        "ZM16EL",
+        "ZM85EL-2Z"
+      ],
+      "whiteLabels": []
     },
     "_tze200_bcusnqt8|ts0601": {
       "mfr": "_tze200_bcusnqt8",
@@ -227093,12 +227699,30 @@
     "_tze200_cf1sl3tj|ts0601": {
       "mfr": "_tze200_cf1sl3tj",
       "pid": "ts0601",
-      "driver": "device_radiator_valve",
+      "driver": "curtain_motor",
       "sources": [
         "canonical",
-        "mfs_db"
+        "mfs_db",
+        "p2295-multi-identity",
+        "registry"
       ],
-      "confidence": 0.95
+      "confidence": 0.95,
+      "productNames": [
+        "TS0601_cover",
+        "Zemismart dual curtain",
+        "ZM85EL-2Z"
+      ],
+      "deviceNames": [
+        "Zemismart dual curtain",
+        "ZM85EL-2Z"
+      ],
+      "z2mModels": [
+        "TS0601_cover",
+        "ZM85EL-2Z"
+      ],
+      "whiteLabels": [
+        "ZM85EL-2Z"
+      ]
     },
     "_tze200_cirvgep4|ts0601": {
       "mfr": "_tze200_cirvgep4",
@@ -227468,12 +228092,30 @@
     "_tze200_eevqq1uv|ts0601": {
       "mfr": "_tze200_eevqq1uv",
       "pid": "ts0601",
-      "driver": "device_radiator_valve",
+      "driver": "curtain_motor",
       "sources": [
         "canonical",
-        "mfs_db"
+        "mfs_db",
+        "p2295-multi-identity",
+        "registry"
       ],
-      "confidence": 0.95
+      "confidence": 0.95,
+      "productNames": [
+        "TS0601_cover",
+        "Zemismart / Tuya TS0601 cover (Z2M group 148)",
+        "ZM16EL",
+        "ZM85EL-2Z"
+      ],
+      "deviceNames": [
+        "TS0601_cover",
+        "Zemismart / Tuya TS0601 cover (Z2M group 148)"
+      ],
+      "z2mModels": [
+        "TS0601_cover",
+        "ZM16EL",
+        "ZM85EL-2Z"
+      ],
+      "whiteLabels": []
     },
     "_tze200_ehhrv2e3|ts0601": {
       "mfr": "_tze200_ehhrv2e3",
@@ -228800,12 +229442,30 @@
     "_tze200_nw1r9hp6|ts0601": {
       "mfr": "_tze200_nw1r9hp6",
       "pid": "ts0601",
-      "driver": "soil_sensor",
+      "driver": "curtain_motor",
       "sources": [
         "canonical",
-        "mfs_db"
+        "mfs_db",
+        "p2295-multi-identity",
+        "registry"
       ],
-      "confidence": 0.95
+      "confidence": 0.95,
+      "productNames": [
+        "TS0601_cover",
+        "Zemismart / Tuya TS0601 cover (Z2M group 148)",
+        "ZM16EL",
+        "ZM85EL-2Z"
+      ],
+      "deviceNames": [
+        "TS0601_cover",
+        "Zemismart / Tuya TS0601 cover (Z2M group 148)"
+      ],
+      "z2mModels": [
+        "TS0601_cover",
+        "ZM16EL",
+        "ZM85EL-2Z"
+      ],
+      "whiteLabels": []
     },
     "_tze200_ny94onlb|ts0601": {
       "mfr": "_tze200_ny94onlb",
@@ -228840,12 +229500,39 @@
     "_tze200_ogkdpgy2|ts0601": {
       "mfr": "_tze200_ogkdpgy2",
       "pid": "ts0601",
-      "driver": "generic_tuya",
+      "driver": "air_quality_co2",
       "sources": [
         "canonical",
-        "mfs_db"
+        "mfs_db",
+        "p2295-multi-identity",
+        "registry"
       ],
-      "confidence": 0.95
+      "confidence": 0.95,
+      "productNames": [
+        "DCR-LCD",
+        "DCR-RQJ",
+        "NDIR CO2 sensor",
+        "TS0601_co2_sensor",
+        "TS0601_TZE204_ogkdpgy2",
+        "Tuya Zigbee CO2 Sensor"
+      ],
+      "deviceNames": [
+        "DCR-LCD",
+        "DCR-RQJ",
+        "NDIR CO2 sensor",
+        "TS0601_co2_sensor",
+        "TS0601_TZE204_ogkdpgy2",
+        "Tuya Zigbee CO2 Sensor"
+      ],
+      "z2mModels": [
+        "DCR-LCD",
+        "TS0601_co2_sensor",
+        "TS0601_TZE204_ogkdpgy2"
+      ],
+      "whiteLabels": [
+        "DCR-LCD",
+        "DCR-RQJ"
+      ]
     },
     "_tze200_oisqyl4o|ts0601": {
       "mfr": "_tze200_oisqyl4o",
@@ -229037,12 +229724,30 @@
     "_tze200_pw7mji0l|ts0601": {
       "mfr": "_tze200_pw7mji0l",
       "pid": "ts0601",
-      "driver": "device_radiator_valve",
+      "driver": "curtain_motor",
       "sources": [
         "canonical",
-        "mfs_db"
+        "mfs_db",
+        "p2295-multi-identity",
+        "registry"
       ],
-      "confidence": 0.95
+      "confidence": 0.95,
+      "productNames": [
+        "TS0601_cover",
+        "Zemismart / Tuya TS0601 cover (Z2M group 148)",
+        "ZM16EL",
+        "ZM85EL-2Z"
+      ],
+      "deviceNames": [
+        "TS0601_cover",
+        "Zemismart / Tuya TS0601 cover (Z2M group 148)"
+      ],
+      "z2mModels": [
+        "TS0601_cover",
+        "ZM16EL",
+        "ZM85EL-2Z"
+      ],
+      "whiteLabels": []
     },
     "_tze200_py4cm3he|ts0601": {
       "mfr": "_tze200_py4cm3he",
@@ -230587,12 +231292,28 @@
     "_tze204_3ejwxpmu|ts0601": {
       "mfr": "_tze204_3ejwxpmu",
       "pid": "ts0601",
-      "driver": "generic_tuya",
+      "driver": "air_quality_co2",
       "sources": [
         "canonical",
-        "mfs_db"
+        "mfs_db",
+        "p2295-multi-identity",
+        "registry"
       ],
-      "confidence": 0.95
+      "confidence": 0.95,
+      "productNames": [
+        "NDIR CO2 sensor",
+        "TS0601_co2_sensor",
+        "Tuya CO2 (3ejwxpmu)"
+      ],
+      "deviceNames": [
+        "NDIR CO2 sensor",
+        "TS0601_co2_sensor",
+        "Tuya CO2 (3ejwxpmu)"
+      ],
+      "z2mModels": [
+        "TS0601_co2_sensor"
+      ],
+      "whiteLabels": []
     },
     "_tze204_3regm3h6|ts0601": {
       "mfr": "_tze204_3regm3h6",
@@ -231180,12 +231901,30 @@
     "_tze204_ejh6owwz|ts0601": {
       "mfr": "_tze204_ejh6owwz",
       "pid": "ts0601",
-      "driver": "device_radiator_valve",
+      "driver": "curtain_motor",
       "sources": [
         "canonical",
-        "mfs_db"
+        "mfs_db",
+        "p2295-multi-identity",
+        "registry"
       ],
-      "confidence": 0.95
+      "confidence": 0.95,
+      "productNames": [
+        "TS0601_cover",
+        "Zemismart / Tuya TS0601 cover (Z2M group 148)",
+        "ZM16EL",
+        "ZM85EL-2Z"
+      ],
+      "deviceNames": [
+        "TS0601_cover",
+        "Zemismart / Tuya TS0601 cover (Z2M group 148)"
+      ],
+      "z2mModels": [
+        "TS0601_cover",
+        "ZM16EL",
+        "ZM85EL-2Z"
+      ],
+      "whiteLabels": []
     },
     "_tze204_ex3rcdha|ts0601": {
       "mfr": "_tze204_ex3rcdha",
@@ -231700,12 +232439,33 @@
     "_tze204_mpbki2zm|ts0601": {
       "mfr": "_tze204_mpbki2zm",
       "pid": "ts0601",
-      "driver": "power_meter",
+      "driver": "wall_thermostat",
       "sources": [
         "canonical",
-        "mfs_db"
+        "mfs_db",
+        "p2295-multi-identity",
+        "registry"
       ],
-      "confidence": 0.95
+      "confidence": 0.95,
+      "productNames": [
+        "BAC-006",
+        "BAC006",
+        "Tuya FCU thermostat",
+        "TYBAC-006"
+      ],
+      "deviceNames": [
+        "BAC006",
+        "Tuya FCU thermostat",
+        "TYBAC-006"
+      ],
+      "z2mModels": [
+        "BAC-006",
+        "TYBAC-006"
+      ],
+      "whiteLabels": [
+        "BAC006",
+        "TYBAC-006"
+      ]
     },
     "_tze204_mrffaamu|ts0601": {
       "mfr": "_tze204_mrffaamu",
@@ -231897,9 +232657,36 @@
       "driver": "air_quality_co2",
       "sources": [
         "canonical",
-        "mfs_db"
+        "mfs_db",
+        "p2295-multi-identity",
+        "registry"
       ],
-      "confidence": 0.95
+      "confidence": 0.95,
+      "productNames": [
+        "DCR-LCD",
+        "DCR-RQJ",
+        "NDIR CO2 sensor",
+        "TS0601_co2_sensor",
+        "TS0601_TZE204_ogkdpgy2",
+        "Tuya Zigbee CO2 Sensor"
+      ],
+      "deviceNames": [
+        "DCR-LCD",
+        "DCR-RQJ",
+        "NDIR CO2 sensor",
+        "TS0601_co2_sensor",
+        "TS0601_TZE204_ogkdpgy2",
+        "Tuya Zigbee CO2 Sensor"
+      ],
+      "z2mModels": [
+        "DCR-LCD",
+        "TS0601_co2_sensor",
+        "TS0601_TZE204_ogkdpgy2"
+      ],
+      "whiteLabels": [
+        "DCR-LCD",
+        "DCR-RQJ"
+      ]
     },
     "_tze204_ogx8u5z6|ts0601": {
       "mfr": "_tze204_ogx8u5z6",
@@ -235349,12 +236136,30 @@
     "_tze200_sfqyhvpv|ts0601": {
       "mfr": "_tze200_sfqyhvpv",
       "pid": "ts0601",
-      "driver": "presence_sensor_radar",
+      "driver": "curtain_motor",
       "sources": [
         "canonical",
-        "mfs_db"
+        "mfs_db",
+        "p2295-multi-identity",
+        "registry"
       ],
-      "confidence": 0.95
+      "confidence": 0.95,
+      "productNames": [
+        "TS0601_cover",
+        "Zemismart / Tuya TS0601 cover (Z2M group 148)",
+        "ZM16EL",
+        "ZM85EL-2Z"
+      ],
+      "deviceNames": [
+        "TS0601_cover",
+        "Zemismart / Tuya TS0601 cover (Z2M group 148)"
+      ],
+      "z2mModels": [
+        "TS0601_cover",
+        "ZM16EL",
+        "ZM85EL-2Z"
+      ],
+      "whiteLabels": []
     },
     "_tze200_shkxsgis|ts0601": {
       "mfr": "_tze200_shkxsgis",
@@ -237950,33 +238755,6 @@
         "mfs_db"
       ],
       "confidence": 0.08
-    },
-    "_tz3000_mrpevh8p|ts0040": {
-      "mfr": "_tz3000_mrpevh8p",
-      "pid": "ts0040",
-      "driver": "switch_1gang",
-      "sources": [
-        "mfs_db"
-      ],
-      "confidence": 0.25
-    },
-    "_tz3000_mrpevh8p|ts0001": {
-      "mfr": "_tz3000_mrpevh8p",
-      "pid": "ts0001",
-      "driver": "switch_1gang",
-      "sources": [
-        "mfs_db"
-      ],
-      "confidence": 0.25
-    },
-    "_tz3000_mrpevh8p|ts0601": {
-      "mfr": "_tz3000_mrpevh8p",
-      "pid": "ts0601",
-      "driver": "switch_1gang",
-      "sources": [
-        "mfs_db"
-      ],
-      "confidence": 0.25
     },
     "_tz3000_b4awzgct|ts0040": {
       "mfr": "_tz3000_b4awzgct",
@@ -242593,15 +243371,6 @@
       ],
       "confidence": 0.17
     },
-    "_tze200_3ejwxpmu|ts0201": {
-      "mfr": "_tze200_3ejwxpmu",
-      "pid": "ts0201",
-      "driver": "climate_sensor",
-      "sources": [
-        "mfs_db"
-      ],
-      "confidence": 0.17
-    },
     "_tze200_3xfjp0ag|ts0201": {
       "mfr": "_tze200_3xfjp0ag",
       "pid": "ts0201",
@@ -242872,15 +243641,6 @@
       ],
       "confidence": 0.17
     },
-    "_tze200_ba69l9ol|ts0201": {
-      "mfr": "_tze200_ba69l9ol",
-      "pid": "ts0201",
-      "driver": "climate_sensor",
-      "sources": [
-        "mfs_db"
-      ],
-      "confidence": 0.17
-    },
     "_tze200_bcusnqt8|ts0201": {
       "mfr": "_tze200_bcusnqt8",
       "pid": "ts0201",
@@ -243144,15 +243904,6 @@
     },
     "_tze200_edl8pz1k|ts0201": {
       "mfr": "_tze200_edl8pz1k",
-      "pid": "ts0201",
-      "driver": "climate_sensor",
-      "sources": [
-        "mfs_db"
-      ],
-      "confidence": 0.17
-    },
-    "_tze200_eevqq1uv|ts0201": {
-      "mfr": "_tze200_eevqq1uv",
       "pid": "ts0201",
       "driver": "climate_sensor",
       "sources": [
@@ -243925,15 +244676,6 @@
       ],
       "confidence": 0.17
     },
-    "_tze200_ogkdpgy2|ts0201": {
-      "mfr": "_tze200_ogkdpgy2",
-      "pid": "ts0201",
-      "driver": "climate_sensor",
-      "sources": [
-        "mfs_db"
-      ],
-      "confidence": 0.17
-    },
     "_tze200_oisqyl4o|ts0201": {
       "mfr": "_tze200_oisqyl4o",
       "pid": "ts0201",
@@ -244194,15 +244936,6 @@
         "mfs_db"
       ],
       "confidence": 0.25
-    },
-    "_tze200_sfqyhvpv|ts0201": {
-      "mfr": "_tze200_sfqyhvpv",
-      "pid": "ts0201",
-      "driver": "climate_sensor",
-      "sources": [
-        "mfs_db"
-      ],
-      "confidence": 0.17
     },
     "_tze200_snfdqllf|ts0201": {
       "mfr": "_tze200_snfdqllf",
@@ -245086,15 +245819,6 @@
       ],
       "confidence": 0.08
     },
-    "_tze204_3ejwxpmu|ts0201": {
-      "mfr": "_tze204_3ejwxpmu",
-      "pid": "ts0201",
-      "driver": "climate_sensor",
-      "sources": [
-        "mfs_db"
-      ],
-      "confidence": 0.17
-    },
     "_tze204_3q3maeoo|ts0201": {
       "mfr": "_tze204_3q3maeoo",
       "pid": "ts0201",
@@ -245501,15 +246225,6 @@
       ],
       "confidence": 0.17
     },
-    "_tze204_ejh6owwz|ts0201": {
-      "mfr": "_tze204_ejh6owwz",
-      "pid": "ts0201",
-      "driver": "climate_sensor",
-      "sources": [
-        "mfs_db"
-      ],
-      "confidence": 0.17
-    },
     "_tze204_fhvdgeuh|ts0201": {
       "mfr": "_tze204_fhvdgeuh",
       "pid": "ts0201",
@@ -245818,15 +246533,6 @@
     },
     "_tze204_odlldrxx|ts0201": {
       "mfr": "_tze204_odlldrxx",
-      "pid": "ts0201",
-      "driver": "climate_sensor",
-      "sources": [
-        "mfs_db"
-      ],
-      "confidence": 0.17
-    },
-    "_tze204_ogkdpgy2|ts0201": {
-      "mfr": "_tze204_ogkdpgy2",
       "pid": "ts0201",
       "driver": "climate_sensor",
       "sources": [
@@ -254944,15 +255650,6 @@
       "mfr": "_tze200_9cqcpkgb",
       "pid": "zg-303z",
       "driver": "soil_sensor",
-      "sources": [
-        "mfs_db"
-      ],
-      "confidence": 0.17
-    },
-    "_tze200_9p5xmj5r|button": {
-      "mfr": "_tze200_9p5xmj5r",
-      "pid": "button",
-      "driver": "wall_thermostat",
       "sources": [
         "mfs_db"
       ],
@@ -276958,29 +277655,88 @@
     "_tze200_vexa5o82|ts0601": {
       "mfr": "_tze200_vexa5o82",
       "pid": "ts0601",
-      "driver": "wall_thermostat",
+      "driver": "curtain_motor",
       "sources": [
-        "mfs_db"
+        "mfs_db",
+        "p2295-multi-identity",
+        "registry"
       ],
-      "confidence": 0.17
+      "confidence": 0.95,
+      "productNames": [
+        "TS0601_cover",
+        "Zemismart / Tuya TS0601 cover (Z2M group 148)",
+        "ZM16EL",
+        "ZM85EL-2Z"
+      ],
+      "deviceNames": [
+        "TS0601_cover",
+        "Zemismart / Tuya TS0601 cover (Z2M group 148)"
+      ],
+      "z2mModels": [
+        "TS0601_cover",
+        "ZM16EL",
+        "ZM85EL-2Z"
+      ],
+      "whiteLabels": []
     },
     "_tze204_pw7mji0l|ts0601": {
       "mfr": "_tze204_pw7mji0l",
       "pid": "ts0601",
-      "driver": "wall_thermostat",
+      "driver": "curtain_motor",
       "sources": [
-        "mfs_db"
+        "mfs_db",
+        "p2295-multi-identity",
+        "registry"
       ],
-      "confidence": 0.08
+      "confidence": 0.95,
+      "productNames": [
+        "TS0601_cover",
+        "Zemismart / Tuya TS0601 cover (Z2M group 148)",
+        "ZM16EL",
+        "ZM85EL-2Z"
+      ],
+      "deviceNames": [
+        "TS0601_cover",
+        "Zemismart / Tuya TS0601 cover (Z2M group 148)"
+      ],
+      "z2mModels": [
+        "TS0601_cover",
+        "ZM16EL",
+        "ZM85EL-2Z"
+      ],
+      "whiteLabels": []
     },
     "_tze204_68nvbio9|ts0601": {
       "mfr": "_tze204_68nvbio9",
       "pid": "ts0601",
-      "driver": "wall_thermostat",
+      "driver": "curtain_motor",
       "sources": [
-        "mfs_db"
+        "mfs_db",
+        "p2295-multi-identity",
+        "registry"
       ],
-      "confidence": 0.08
+      "confidence": 0.95,
+      "productNames": [
+        "TS0601_cover",
+        "Zemismart curtain motor",
+        "ZM16EL",
+        "ZM16EL-03",
+        "ZM16EL-33"
+      ],
+      "deviceNames": [
+        "Zemismart curtain motor",
+        "ZM16EL",
+        "ZM16EL-03",
+        "ZM16EL-33"
+      ],
+      "z2mModels": [
+        "TS0601_cover",
+        "ZM16EL"
+      ],
+      "whiteLabels": [
+        "ZM16EL-03",
+        "ZM16EL-33"
+      ]
     },
     "_tze200_lzriup1j|ts0601": {
       "mfr": "_tze200_lzriup1j",
@@ -282590,12 +283346,17 @@
       "confidence": 0.95
     },
     "_TZ3000_mrpevh8p": {
-      "driverId": "button_wireless",
+      "driverId": "button_wireless_1",
       "productIds": [
         "TS0041"
       ],
-      "source": "fingerprints-2026-07-14",
-      "confidence": 0.95
+      "source": "p2295-multi-identity",
+      "confidence": 0.95,
+      "productNames": [
+        "RSH-SC021",
+        "SH-SC07",
+        "Tuya 1-button scene switch"
+      ]
     },
     "_TZ3000_msl6wxk9": {
       "driverId": "motion_sensor",
@@ -285329,12 +286090,17 @@
       "confidence": 0.95
     },
     "_TZE200_3ejwxpmu": {
-      "driverId": "generic_tuya",
+      "driverId": "air_quality_co2",
       "productIds": [
         "TS0601"
       ],
-      "source": "fingerprints-2026-07-14",
-      "confidence": 0.95
+      "source": "p2295-multi-identity",
+      "confidence": 0.95,
+      "productNames": [
+        "NDIR CO2 sensor",
+        "TS0601_co2_sensor",
+        "Tuya CO2 (3ejwxpmu)"
+      ]
     },
     "_TZE200_3i3exuay": {
       "driverId": "switch_1gang",
@@ -285481,20 +286247,30 @@
       "confidence": 0.95
     },
     "_TZE200_68nvbi09": {
-      "driverId": "device_radiator_valve",
+      "driverId": "curtain_motor",
       "productIds": [
         "TS0601"
       ],
-      "source": "fingerprints-2026-07-14",
-      "confidence": 0.95
+      "source": "p2295-multi-identity",
+      "confidence": 0.95,
+      "productNames": [
+        "Zemismart curtain motor",
+        "ZM16EL (typo mfr 68nvbi09)"
+      ]
     },
     "_TZE200_68nvbio9": {
-      "driverId": "device_radiator_valve",
+      "driverId": "curtain_motor",
       "productIds": [
         "TS0601"
       ],
-      "source": "fingerprints-2026-07-14",
-      "confidence": 0.95
+      "source": "p2295-multi-identity",
+      "confidence": 0.95,
+      "productNames": [
+        "Zemismart curtain motor",
+        "ZM16EL",
+        "ZM16EL-03",
+        "ZM16EL-33"
+      ]
     },
     "_TZE200_6rdj8dzm": {
       "driverId": "device_radiator_valve",
@@ -285665,12 +286441,16 @@
       "confidence": 0.95
     },
     "_TZE200_9p5xmj5r": {
-      "driverId": "device_radiator_valve",
+      "driverId": "curtain_motor",
       "productIds": [
         "TS0601"
       ],
-      "source": "fingerprints-2026-07-14",
-      "confidence": 0.95
+      "source": "p2295-multi-identity",
+      "confidence": 0.95,
+      "productNames": [
+        "TS0601_cover",
+        "Zemismart / Tuya TS0601 cover (Z2M group 148)"
+      ]
     },
     "_TZE200_9sfg7gm0": {
       "driverId": "curtain_motor",
@@ -285825,12 +286605,16 @@
       "confidence": 0.95
     },
     "_TZE200_ba69l9ol": {
-      "driverId": "device_radiator_valve",
+      "driverId": "curtain_motor",
       "productIds": [
         "TS0601"
       ],
-      "source": "fingerprints-2026-07-14",
-      "confidence": 0.95
+      "source": "p2295-multi-identity",
+      "confidence": 0.95,
+      "productNames": [
+        "TS0601_cover",
+        "Zemismart / Tuya TS0601 cover (Z2M group 148)"
+      ]
     },
     "_TZE200_bcusnqt8": {
       "driverId": "curtain_motor",
@@ -285953,12 +286737,16 @@
       "confidence": 0.95
     },
     "_TZE200_cf1sl3tj": {
-      "driverId": "device_radiator_valve",
+      "driverId": "curtain_motor",
       "productIds": [
         "TS0601"
       ],
-      "source": "fingerprints-2026-07-14",
-      "confidence": 0.95
+      "source": "p2295-multi-identity",
+      "confidence": 0.95,
+      "productNames": [
+        "Zemismart dual curtain",
+        "ZM85EL-2Z"
+      ]
     },
     "_TZE200_cirvgep4": {
       "driverId": "climate_sensor",
@@ -286242,12 +287030,16 @@
       "confidence": 0.95
     },
     "_TZE200_eevqq1uv": {
-      "driverId": "device_radiator_valve",
+      "driverId": "curtain_motor",
       "productIds": [
         "TS0601"
       ],
-      "source": "fingerprints-2026-07-14",
-      "confidence": 0.95
+      "source": "p2295-multi-identity",
+      "confidence": 0.95,
+      "productNames": [
+        "TS0601_cover",
+        "Zemismart / Tuya TS0601 cover (Z2M group 148)"
+      ]
     },
     "_TZE200_ehhrv2e3": {
       "driverId": "climate_sensor",
@@ -287274,12 +288066,16 @@
       "confidence": 0.95
     },
     "_TZE200_nw1r9hp6": {
-      "driverId": "soil_sensor",
+      "driverId": "curtain_motor",
       "productIds": [
         "TS0601"
       ],
-      "source": "fingerprints-2026-07-14",
-      "confidence": 0.95
+      "source": "p2295-multi-identity",
+      "confidence": 0.95,
+      "productNames": [
+        "TS0601_cover",
+        "Zemismart / Tuya TS0601 cover (Z2M group 148)"
+      ]
     },
     "_TZE200_ny94onlb": {
       "driverId": "power_meter",
@@ -287306,12 +288102,20 @@
       "confidence": 0.95
     },
     "_TZE200_ogkdpgy2": {
-      "driverId": "generic_tuya",
+      "driverId": "air_quality_co2",
       "productIds": [
         "TS0601"
       ],
-      "source": "fingerprints-2026-07-14",
-      "confidence": 0.95
+      "source": "p2295-multi-identity",
+      "confidence": 0.95,
+      "productNames": [
+        "DCR-LCD",
+        "DCR-RQJ",
+        "NDIR CO2 sensor",
+        "TS0601_co2_sensor",
+        "TS0601_TZE204_ogkdpgy2",
+        "Tuya Zigbee CO2 Sensor"
+      ]
     },
     "_TZE200_oisqyl4o": {
       "driverId": "curtain_motor",
@@ -287458,12 +288262,16 @@
       "confidence": 0.95
     },
     "_TZE200_pw7mji0l": {
-      "driverId": "device_radiator_valve",
+      "driverId": "curtain_motor",
       "productIds": [
         "TS0601"
       ],
-      "source": "fingerprints-2026-07-14",
-      "confidence": 0.95
+      "source": "p2295-multi-identity",
+      "confidence": 0.95,
+      "productNames": [
+        "TS0601_cover",
+        "Zemismart / Tuya TS0601 cover (Z2M group 148)"
+      ]
     },
     "_TZE200_py4cm3he": {
       "driverId": "device_radiator_valve",
@@ -288666,12 +289474,17 @@
       "confidence": 0.95
     },
     "_TZE204_3ejwxpmu": {
-      "driverId": "generic_tuya",
+      "driverId": "air_quality_co2",
       "productIds": [
         "TS0601"
       ],
-      "source": "fingerprints-2026-07-14",
-      "confidence": 0.95
+      "source": "p2295-multi-identity",
+      "confidence": 0.95,
+      "productNames": [
+        "NDIR CO2 sensor",
+        "TS0601_co2_sensor",
+        "Tuya CO2 (3ejwxpmu)"
+      ]
     },
     "_TZE204_3regm3h6": {
       "driverId": "switch_1gang",
@@ -289138,12 +289951,16 @@
       "confidence": 0.95
     },
     "_TZE204_ejh6owwz": {
-      "driverId": "device_radiator_valve",
+      "driverId": "curtain_motor",
       "productIds": [
         "TS0601"
       ],
-      "source": "fingerprints-2026-07-14",
-      "confidence": 0.95
+      "source": "p2295-multi-identity",
+      "confidence": 0.95,
+      "productNames": [
+        "TS0601_cover",
+        "Zemismart / Tuya TS0601 cover (Z2M group 148)"
+      ]
     },
     "_TZE204_ex3rcdha": {
       "driverId": "siren",
@@ -289554,12 +290371,17 @@
       "confidence": 0.95
     },
     "_TZE204_mpbki2zm": {
-      "driverId": "power_meter",
+      "driverId": "wall_thermostat",
       "productIds": [
         "TS0601"
       ],
-      "source": "fingerprints-2026-07-14",
-      "confidence": 0.95
+      "source": "p2295-multi-identity",
+      "confidence": 0.95,
+      "productNames": [
+        "BAC006",
+        "Tuya FCU thermostat",
+        "TYBAC-006"
+      ]
     },
     "_TZE204_mrffaamu": {
       "driverId": "presence_sensor_radar",
@@ -289710,8 +290532,16 @@
       "productIds": [
         "TS0601"
       ],
-      "source": "fingerprints-2026-07-14",
-      "confidence": 0.95
+      "source": "p2295-multi-identity",
+      "confidence": 0.95,
+      "productNames": [
+        "DCR-LCD",
+        "DCR-RQJ",
+        "NDIR CO2 sensor",
+        "TS0601_co2_sensor",
+        "TS0601_TZE204_ogkdpgy2",
+        "Tuya Zigbee CO2 Sensor"
+      ]
     },
     "_TZE204_ogx8u5z6": {
       "driverId": "device_radiator_valve",
@@ -292244,12 +293074,16 @@
       "confidence": 0.95
     },
     "_TZE200_sfqyhvpv": {
-      "driverId": "presence_sensor_radar",
+      "driverId": "curtain_motor",
       "productIds": [
         "TS0601"
       ],
-      "source": "fingerprints-2026-07-14",
-      "confidence": 0.95
+      "source": "p2295-multi-identity",
+      "confidence": 0.95,
+      "productNames": [
+        "TS0601_cover",
+        "Zemismart / Tuya TS0601 cover (Z2M group 148)"
+      ]
     },
     "_TZE200_shkxsgis": {
       "driverId": "generic_tuya",
@@ -297316,12 +298150,17 @@
       "confidence": 0.95
     },
     "_TZE200_3EJWXPMU": {
-      "driverId": "climate_sensor",
+      "driverId": "air_quality_co2",
       "productIds": [
-        "TS0201"
+        "TS0601"
       ],
-      "source": "fingerprints-2026-07-14",
-      "confidence": 0.95
+      "source": "p2295-multi-identity",
+      "confidence": 0.95,
+      "productNames": [
+        "NDIR CO2 sensor",
+        "TS0601_co2_sensor",
+        "Tuya CO2 (3ejwxpmu)"
+      ]
     },
     "_TZE200_3XFJP0AG": {
       "driverId": "climate_sensor",
@@ -297548,12 +298387,16 @@
       "confidence": 0.95
     },
     "_TZE200_BA69L9OL": {
-      "driverId": "climate_sensor",
+      "driverId": "curtain_motor",
       "productIds": [
-        "TS0201"
+        "TS0601"
       ],
-      "source": "fingerprints-2026-07-14",
-      "confidence": 0.95
+      "source": "p2295-multi-identity",
+      "confidence": 0.95,
+      "productNames": [
+        "TS0601_cover",
+        "Zemismart / Tuya TS0601 cover (Z2M group 148)"
+      ]
     },
     "_TZE200_BCUSNQT8": {
       "driverId": "climate_sensor",
@@ -297740,12 +298583,16 @@
       "confidence": 0.95
     },
     "_TZE200_EEVQQ1UV": {
-      "driverId": "climate_sensor",
+      "driverId": "curtain_motor",
       "productIds": [
-        "TS0201"
+        "TS0601"
       ],
-      "source": "fingerprints-2026-07-14",
-      "confidence": 0.95
+      "source": "p2295-multi-identity",
+      "confidence": 0.95,
+      "productNames": [
+        "TS0601_cover",
+        "Zemismart / Tuya TS0601 cover (Z2M group 148)"
+      ]
     },
     "_TZE200_EHHRV2E3": {
       "driverId": "climate_sensor",
@@ -298252,12 +299099,20 @@
       "confidence": 0.95
     },
     "_TZE200_OGKDPGY2": {
-      "driverId": "climate_sensor",
+      "driverId": "air_quality_co2",
       "productIds": [
-        "TS0201"
+        "TS0601"
       ],
-      "source": "fingerprints-2026-07-14",
-      "confidence": 0.95
+      "source": "p2295-multi-identity",
+      "confidence": 0.95,
+      "productNames": [
+        "DCR-LCD",
+        "DCR-RQJ",
+        "NDIR CO2 sensor",
+        "TS0601_co2_sensor",
+        "TS0601_TZE204_ogkdpgy2",
+        "Tuya Zigbee CO2 Sensor"
+      ]
     },
     "_TZE200_OISQYL4O": {
       "driverId": "climate_sensor",
@@ -298436,12 +299291,16 @@
       "confidence": 0.95
     },
     "_TZE200_SFQYHVPV": {
-      "driverId": "climate_sensor",
+      "driverId": "curtain_motor",
       "productIds": [
-        "TS0201"
+        "TS0601"
       ],
-      "source": "fingerprints-2026-07-14",
-      "confidence": 0.95
+      "source": "p2295-multi-identity",
+      "confidence": 0.95,
+      "productNames": [
+        "TS0601_cover",
+        "Zemismart / Tuya TS0601 cover (Z2M group 148)"
+      ]
     },
     "_TZE200_SNFDQLLF": {
       "driverId": "climate_sensor",
@@ -299052,12 +299911,17 @@
       "confidence": 0.95
     },
     "_TZE204_3EJWXPMU": {
-      "driverId": "climate_sensor",
+      "driverId": "air_quality_co2",
       "productIds": [
-        "TS0201"
+        "TS0601"
       ],
-      "source": "fingerprints-2026-07-14",
-      "confidence": 0.95
+      "source": "p2295-multi-identity",
+      "confidence": 0.95,
+      "productNames": [
+        "NDIR CO2 sensor",
+        "TS0601_co2_sensor",
+        "Tuya CO2 (3ejwxpmu)"
+      ]
     },
     "_TZE204_3Q3MAEOO": {
       "driverId": "climate_sensor",
@@ -299332,12 +300196,16 @@
       "confidence": 0.95
     },
     "_TZE204_EJH6OWWZ": {
-      "driverId": "climate_sensor",
+      "driverId": "curtain_motor",
       "productIds": [
-        "TS0201"
+        "TS0601"
       ],
-      "source": "fingerprints-2026-07-14",
-      "confidence": 0.95
+      "source": "p2295-multi-identity",
+      "confidence": 0.95,
+      "productNames": [
+        "TS0601_cover",
+        "Zemismart / Tuya TS0601 cover (Z2M group 148)"
+      ]
     },
     "_TZE204_FHVDGEUH": {
       "driverId": "climate_sensor",
@@ -299612,12 +300480,20 @@
       "confidence": 0.95
     },
     "_TZE204_OGKDPGY2": {
-      "driverId": "climate_sensor",
+      "driverId": "air_quality_co2",
       "productIds": [
-        "TS0201"
+        "TS0601"
       ],
-      "source": "fingerprints-2026-07-14",
-      "confidence": 0.95
+      "source": "p2295-multi-identity",
+      "confidence": 0.95,
+      "productNames": [
+        "DCR-LCD",
+        "DCR-RQJ",
+        "NDIR CO2 sensor",
+        "TS0601_co2_sensor",
+        "TS0601_TZE204_ogkdpgy2",
+        "Tuya Zigbee CO2 Sensor"
+      ]
     },
     "_TZE204_OH8Y8PV8": {
       "driverId": "climate_sensor",
@@ -301348,12 +302224,17 @@
       "confidence": 0.95
     },
     "_tze204_mpbki2zm": {
-      "driverId": "climate_sensor",
+      "driverId": "wall_thermostat",
       "productIds": [
-        "TS0201"
+        "TS0601"
       ],
-      "source": "fingerprints-2026-07-14",
-      "confidence": 0.95
+      "source": "p2295-multi-identity",
+      "confidence": 0.95,
+      "productNames": [
+        "BAC006",
+        "Tuya FCU thermostat",
+        "TYBAC-006"
+      ]
     },
     "_tze204_nnrfa68v": {
       "driverId": "climate_sensor",
@@ -306444,12 +307325,16 @@
       "confidence": 0.95
     },
     "_tze200_9p5xmj5r": {
-      "driverId": "generic_diy",
+      "driverId": "curtain_motor",
       "productIds": [
-        "BUTTON"
+        "TS0601"
       ],
-      "source": "fingerprints-2026-07-14",
-      "confidence": 0.95
+      "source": "p2295-multi-identity",
+      "confidence": 0.95,
+      "productNames": [
+        "TS0601_cover",
+        "Zemismart / Tuya TS0601 cover (Z2M group 148)"
+      ]
     },
     "_tze200_9sfg7gm0": {
       "driverId": "generic_diy",
@@ -317852,12 +318737,17 @@
       "confidence": 0.95
     },
     "_TZ3000_MRPEVH8P": {
-      "driverId": "switch_1gang",
+      "driverId": "button_wireless_1",
       "productIds": [
-        "TS0001"
+        "TS0041"
       ],
-      "source": "fingerprints-2026-07-14",
-      "confidence": 0.95
+      "source": "p2295-multi-identity",
+      "confidence": 0.95,
+      "productNames": [
+        "RSH-SC021",
+        "SH-SC07",
+        "Tuya 1-button scene switch"
+      ]
     },
     "_TZ3000_MTMTLJO4": {
       "driverId": "switch_1gang",
@@ -324052,28 +324942,42 @@
       "confidence": 0.95
     },
     "_TZE200_vexa5o82": {
-      "driverId": "wall_thermostat",
+      "driverId": "curtain_motor",
       "productIds": [
         "TS0601"
       ],
-      "source": "fingerprints-2026-07-14",
-      "confidence": 0.95
+      "source": "p2295-multi-identity",
+      "confidence": 0.95,
+      "productNames": [
+        "TS0601_cover",
+        "Zemismart / Tuya TS0601 cover (Z2M group 148)"
+      ]
     },
     "_TZE204_pw7mji0l": {
-      "driverId": "wall_thermostat",
+      "driverId": "curtain_motor",
       "productIds": [
         "TS0601"
       ],
-      "source": "fingerprints-2026-07-14",
-      "confidence": 0.95
+      "source": "p2295-multi-identity",
+      "confidence": 0.95,
+      "productNames": [
+        "TS0601_cover",
+        "Zemismart / Tuya TS0601 cover (Z2M group 148)"
+      ]
     },
     "_tze204_68nvbio9": {
-      "driverId": "wall_thermostat",
+      "driverId": "curtain_motor",
       "productIds": [
         "TS0601"
       ],
-      "source": "fingerprints-2026-07-14",
-      "confidence": 0.95
+      "source": "p2295-multi-identity",
+      "confidence": 0.95,
+      "productNames": [
+        "Zemismart curtain motor",
+        "ZM16EL",
+        "ZM16EL-03",
+        "ZM16EL-33"
+      ]
     },
     "_tze200_lzriup1j": {
       "driverId": "wall_thermostat",
@@ -325890,8 +326794,8 @@
     "modelIds": [
       "TS011F"
     ],
-    "pid": "CK-BL702-MWS-01(7016)",
-    "modelIdsCount": 8,
+    "pid": "TS011F",
+    "modelIdsCount": 1,
     "variants": [
       "_TZ3000_KY0FQ4HO",
       "_TZ3000_ky0fq4ho"
@@ -326177,21 +327081,27 @@
     "source": "registry:presentsky-bseed-dimmer-m1cvyneb",
     "modelIds": [
       "TS0601"
-    ]
+    ],
+    "pid": "TS0601",
+    "modelIdsCount": 1
   },
   "_TZE200_m1cvyneb": {
     "driverId": "wall_dimmer_tuya",
     "source": "registry:presentsky-bseed-dimmer-m1cvyneb",
     "modelIds": [
       "TS0601"
-    ]
+    ],
+    "pid": "TS0601",
+    "modelIdsCount": 1
   },
   "_TZE284_clrdrnya": {
     "driverId": "presence_sensor_radar",
     "source": "registry:presence-radar-clrdrnya",
     "modelIds": [
       "TS0601"
-    ]
+    ],
+    "pid": "TS0601",
+    "modelIdsCount": 1
   },
   "Wing": {
     "driverId": "contact_sensor",
@@ -326207,119 +327117,153 @@
     "source": "registry:novadigital-ts0002-jjdkhueq",
     "modelIds": [
       "TS0002"
-    ]
+    ],
+    "pid": "TS0002",
+    "modelIdsCount": 1
   },
   "_TZE284_shkxsgis": {
     "driverId": "wall_switch_4_gang_tuya",
     "source": "registry:zemismart-ts0601-4gang-shkxsgis",
     "modelIds": [
       "TS0601"
-    ]
+    ],
+    "pid": "TS0601",
+    "modelIdsCount": 1
   },
   "_TZ3000_lwthnp7j": {
     "driverId": "wall_switch_4gang_1way",
     "source": "registry:lwthnp7j-zcl-4gang",
     "modelIds": [
       "TS0004"
-    ]
+    ],
+    "pid": "TS0004",
+    "modelIdsCount": 1
   },
   "_TZ3000_ywubfuvt": {
     "driverId": "wall_switch_2gang_1way",
     "source": "registry:novadigital-ts0002-ywubfuvt",
     "modelIds": [
       "TS0002"
-    ]
+    ],
+    "pid": "TS0002",
+    "modelIdsCount": 1
   },
   "_TZ3000_kgxej1dv": {
     "driverId": "wall_switch_2gang_1way",
     "source": "registry:novadigital-ts0002-kgxej1dv",
     "modelIds": [
       "TS0002"
-    ]
+    ],
+    "pid": "TS0002",
+    "modelIdsCount": 1
   },
   "_TZ3000_ovyaisip": {
     "driverId": "wall_switch_1gang_1way",
     "source": "registry:zemismart-ts0001-tb25-1",
     "modelIds": [
       "TS0001"
-    ]
+    ],
+    "pid": "TS0001",
+    "modelIdsCount": 1
   },
   "_TZ3000_pk8tgtdb": {
     "driverId": "wall_switch_1gang_1way",
     "source": "registry:zemismart-ts0001-tb25-1",
     "modelIds": [
       "TS0001"
-    ]
+    ],
+    "pid": "TS0001",
+    "modelIdsCount": 1
   },
   "_TZ3000_yervjnlj": {
     "driverId": "wall_switch_3gang_1way",
     "source": "registry:novadigital-ts0003-yervjnlj",
     "modelIds": [
       "TS0003"
-    ]
+    ],
+    "pid": "TS0003",
+    "modelIdsCount": 1
   },
   "_TZ3000_vjhcenzo": {
     "driverId": "wall_switch_3gang_1way",
     "source": "registry:novadigital-ts0003-vjhcenzo",
     "modelIds": [
       "TS0003"
-    ]
+    ],
+    "pid": "TS0003",
+    "modelIdsCount": 1
   },
   "_TZ3000_qxcnwv26": {
     "driverId": "wall_switch_3gang_1way",
     "source": "registry:novadigital-ts0003-qxcnwv26",
     "modelIds": [
       "TS0003"
-    ]
+    ],
+    "pid": "TS0003",
+    "modelIdsCount": 1
   },
   "_TZ3000_eqsair32": {
     "driverId": "wall_switch_3gang_1way",
     "source": "registry:novadigital-ts0003-eqsair32",
     "modelIds": [
       "TS0003"
-    ]
+    ],
+    "pid": "TS0003",
+    "modelIdsCount": 1
   },
   "_TZ3000_f09j9qjb": {
     "driverId": "wall_switch_3gang_1way",
     "source": "registry:novadigital-ts0003-f09j9qjb",
     "modelIds": [
       "TS0003"
-    ]
+    ],
+    "pid": "TS0003",
+    "modelIdsCount": 1
   },
   "_TZ3000_fawk5xjv": {
     "driverId": "wall_switch_3gang_1way",
     "source": "registry:novadigital-ts0003-fawk5xjv",
     "modelIds": [
       "TS0003"
-    ]
+    ],
+    "pid": "TS0003",
+    "modelIdsCount": 1
   },
   "_TZ3000_ok0ggpk7": {
     "driverId": "wall_switch_3gang_1way",
     "source": "registry:novadigital-ts0003-ok0ggpk7",
     "modelIds": [
       "TS0003"
-    ]
+    ],
+    "pid": "TS0003",
+    "modelIdsCount": 1
   },
   "_TZE204_aagrxlbd": {
     "driverId": "wall_switch_4_gang_tuya",
     "source": "registry:novadigital-ts0601-4gang-aagrxlbd",
     "modelIds": [
       "TS0601"
-    ]
+    ],
+    "pid": "TS0601",
+    "modelIdsCount": 1
   },
   "_TZE200_r731zlxk": {
     "driverId": "wall_switch_6_gang_tuya",
     "source": "registry:zemismart-ts0601-6gang-r731zlxk",
     "modelIds": [
       "TS0601"
-    ]
+    ],
+    "pid": "TS0601",
+    "modelIdsCount": 1
   },
   "_TZE200_shkxsgis": {
     "driverId": "wall_switch_4_gang_tuya",
     "source": "registry:zemismart-ts0601-4gang-shkxsgis",
     "modelIds": [
       "TS0601"
-    ]
+    ],
+    "pid": "TS0601",
+    "modelIdsCount": 1
   },
   "_TZE200_s8gkrkxk": {
     "driverId": "thermostat_tuya_dp",
@@ -326343,56 +327287,72 @@
     "source": "registry:p2234-qujphad5-tybac",
     "modelIds": [
       "TS0601"
-    ]
+    ],
+    "pid": "TS0601",
+    "modelIdsCount": 1
   },
   "_TZE284_q9qytwfa": {
     "driverId": "plug_energy_monitor",
     "source": "registry:p2234-apiu8k13-q9qytwfa-water-heater",
     "modelIds": [
       "TS0601"
-    ]
+    ],
+    "pid": "TS0601",
+    "modelIdsCount": 1
   },
   "_TZE200_7upwjcca": {
     "driverId": "curtain_motor",
     "source": "registry:p2234b-tze200_7upwjcca",
     "modelIds": [
       "TS0601"
-    ]
+    ],
+    "pid": "TS0601",
+    "modelIdsCount": 1
   },
   "_TZ3000_anptztic": {
     "driverId": "plug_energy_monitor",
     "source": "registry:p2234b-tz3000_anptztic",
     "modelIds": [
       "TS0001"
-    ]
+    ],
+    "pid": "TS0001",
+    "modelIdsCount": 1
   },
   "_TZE204_pkpfn9hc": {
     "driverId": "air_quality_co2",
     "source": "registry:p2234b-tze204_pkpfn9hc",
     "modelIds": [
       "TS0601"
-    ]
+    ],
+    "pid": "TS0601",
+    "modelIdsCount": 1
   },
   "_TZ3002_y7wpizuw": {
     "driverId": "switch_4gang",
     "source": "registry:p2234b-tz3002_y7wpizuw",
     "modelIds": [
       "TS0726"
-    ]
+    ],
+    "pid": "TS0726",
+    "modelIdsCount": 1
   },
   "_TZE284_smcqit2l": {
     "driverId": "wall_thermostat",
     "source": "registry:p2234b-tze284_smcqit2l",
     "modelIds": [
       "TS0601"
-    ]
+    ],
+    "pid": "TS0601",
+    "modelIdsCount": 1
   },
   "_TZE284_6uyu20xu": {
     "driverId": "climate_sensor",
     "source": "registry:p2234b-tze284_6uyu20xu",
     "modelIds": [
       "TS0601"
-    ]
+    ],
+    "pid": "TS0601",
+    "modelIdsCount": 1
   },
   "_tz3000_xffhmvhv": {
     "driverId": "button_wireless_4",
@@ -326408,76 +327368,602 @@
     "source": "registry:p2267-e002-alarm-taxonomy",
     "modelIds": [
       "TS0201"
-    ]
+    ],
+    "pid": "TS0201",
+    "modelIdsCount": 1
   },
   "_TZ3000_tonrapsk": {
     "driverId": "switch_2gang",
     "source": "registry:p2268-tonrapsk-ts0002-2gang",
     "modelIds": [
       "TS0002"
-    ]
+    ],
+    "pid": "TS0002",
+    "modelIdsCount": 1
   },
   "_TZE284_cf4b5ktf": {
     "driverId": "energy_meter_3phase",
     "source": "registry:p2268-cf4b5ktf-moes-3phase-soft",
     "modelIds": [
       "TS0601"
-    ]
+    ],
+    "pid": "TS0601",
+    "modelIdsCount": 1
   },
   "_TZE284_fqm2sfpe": {
     "driverId": "device_radiator_valve",
     "source": "registry:p2270-fqm2sfpe-trv-soft",
     "modelIds": [
       "TS0601"
-    ]
+    ],
+    "pid": "TS0601",
+    "modelIdsCount": 1
   },
   "_TZE284_tdg4ckyh": {
     "driverId": "ir_blaster",
     "source": "registry:p2271-tdg4ckyh-rf-cloner",
     "modelIds": [
       "TS0601"
-    ]
+    ],
+    "pid": "TS0601",
+    "modelIdsCount": 1
   },
   "_TZE284_kq1l5eu5": {
     "driverId": "wall_curtain_switch",
     "source": "registry:p2271-kq1l5eu5-moes-curtain",
     "modelIds": [
       "TS0601"
-    ]
+    ],
+    "pid": "TS0601",
+    "modelIdsCount": 1
   },
   "_TZE284_bjoccxbi": {
     "driverId": "led_controller_rgb",
     "source": "registry:p2272-bjoccxbi-rgb-cct",
     "modelIds": [
       "TS0601"
-    ]
+    ],
+    "pid": "TS0601",
+    "modelIdsCount": 1
   },
   "_TZE284_lq0ffndf": {
     "driverId": "usb_outlet_advanced",
     "source": "registry:p2272-lq0ffndf-dual-gpo-usb",
     "modelIds": [
       "TS0601"
-    ]
+    ],
+    "pid": "TS0601",
+    "modelIdsCount": 1
   },
   "_TZE200_guvc7pdy": {
     "driverId": "curtain_motor",
     "source": "registry:p2273-guvc7pdy-curtain-not-1gang",
     "modelIds": [
       "TS0601"
-    ]
+    ],
+    "pid": "TS0601",
+    "modelIdsCount": 1
   },
   "_TZE200_xalsoe3m": {
     "driverId": "wall_thermostat",
     "source": "registry:p2277-xalsoe3m-bht002-not-trv",
     "modelIds": [
       "TS0601"
-    ]
+    ],
+    "pid": "TS0601",
+    "modelIdsCount": 1
   },
   "_TZ3000_te34fjg4": {
     "driverId": "scene_switch_4",
     "source": "registry:p2277-te34fjg4-ts1002-scene4",
     "modelIds": [
       "TS1002"
-    ]
+    ],
+    "pid": "TS1002",
+    "modelIdsCount": 1
+  },
+  "_TZE200_ogkdpgy2": {
+    "driverId": "air_quality_co2",
+    "source": "registry:p2291-ogkdpgy2-co2-not-climate",
+    "modelIds": [
+      "TS0601"
+    ],
+    "pid": "TS0601",
+    "modelIdsCount": 1,
+    "deviceNames": [
+      "DCR-LCD",
+      "DCR-RQJ",
+      "NDIR CO2 sensor",
+      "TS0601_co2_sensor",
+      "TS0601_TZE204_ogkdpgy2",
+      "Tuya Zigbee CO2 Sensor"
+    ],
+    "z2mModels": [
+      "DCR-LCD",
+      "TS0601_co2_sensor",
+      "TS0601_TZE204_ogkdpgy2"
+    ],
+    "whiteLabels": [
+      "DCR-LCD",
+      "DCR-RQJ"
+    ],
+    "productNames": [
+      "DCR-LCD",
+      "DCR-RQJ",
+      "NDIR CO2 sensor",
+      "TS0601_co2_sensor",
+      "TS0601_TZE204_ogkdpgy2",
+      "Tuya Zigbee CO2 Sensor"
+    ],
+    "variants": [
+      "_tze200_ogkdpgy2",
+      "_TZE200_ogkdpgy2",
+      "_TZE200_OGKDPGY2"
+    ],
+    "variantsCount": 3,
+    "prefixVariants": [
+      "_TZE200_ogkdpgy2",
+      "_TZE204_ogkdpgy2"
+    ],
+    "notes": "P2295: zigbee pid=TS0601 only. Retail/Z2M names stay in deviceNames — never CK-TLSR climate bleed, never TS0601_co2 as Homey productId.",
+    "protocol": "tuya_ef00",
+    "powerSource": "mains",
+    "deviceType": "air_quality",
+    "coupleLock": true,
+    "updatedAt": "2026-08-28",
+    "lastEnrichment": "p2295-multi-identity"
+  },
+  "_TZE204_ogkdpgy2": {
+    "driverId": "air_quality_co2",
+    "source": "registry:p2291-ogkdpgy2-co2-not-climate",
+    "modelIds": [
+      "TS0601"
+    ],
+    "pid": "TS0601",
+    "modelIdsCount": 1,
+    "deviceNames": [
+      "DCR-LCD",
+      "DCR-RQJ",
+      "NDIR CO2 sensor",
+      "TS0601_co2_sensor",
+      "TS0601_TZE204_ogkdpgy2",
+      "Tuya Zigbee CO2 Sensor"
+    ],
+    "z2mModels": [
+      "DCR-LCD",
+      "TS0601_co2_sensor",
+      "TS0601_TZE204_ogkdpgy2"
+    ],
+    "whiteLabels": [
+      "DCR-LCD",
+      "DCR-RQJ"
+    ],
+    "productNames": [
+      "DCR-LCD",
+      "DCR-RQJ",
+      "NDIR CO2 sensor",
+      "TS0601_co2_sensor",
+      "TS0601_TZE204_ogkdpgy2",
+      "Tuya Zigbee CO2 Sensor"
+    ],
+    "variants": [
+      "_tze204_ogkdpgy2",
+      "_TZE204_ogkdpgy2",
+      "_TZE204_OGKDPGY2"
+    ],
+    "variantsCount": 3,
+    "prefixVariants": [
+      "_TZE200_ogkdpgy2",
+      "_TZE204_ogkdpgy2"
+    ],
+    "notes": "P2295: zigbee pid=TS0601 only. Retail/Z2M names stay in deviceNames — never CK-TLSR climate bleed, never TS0601_co2 as Homey productId.",
+    "protocol": "tuya_ef00",
+    "powerSource": "mains",
+    "deviceType": "air_quality",
+    "coupleLock": true,
+    "updatedAt": "2026-08-28",
+    "lastEnrichment": "p2295-multi-identity"
+  },
+  "_TZE200_3ejwxpmu": {
+    "driverId": "air_quality_co2",
+    "source": "registry:p2295-3ejwxpmu-co2-sibling",
+    "modelIds": [
+      "TS0601"
+    ],
+    "pid": "TS0601",
+    "modelIdsCount": 1,
+    "deviceNames": [
+      "NDIR CO2 sensor",
+      "TS0601_co2_sensor",
+      "Tuya CO2 (3ejwxpmu)"
+    ],
+    "z2mModels": [
+      "TS0601_co2_sensor"
+    ],
+    "whiteLabels": [],
+    "productNames": [
+      "NDIR CO2 sensor",
+      "TS0601_co2_sensor",
+      "Tuya CO2 (3ejwxpmu)"
+    ],
+    "variants": [
+      "_tze200_3ejwxpmu",
+      "_TZE200_3ejwxpmu",
+      "_TZE200_3EJWXPMU"
+    ],
+    "variantsCount": 3,
+    "prefixVariants": [
+      "_TZE200_3ejwxpmu",
+      "_TZE204_3ejwxpmu"
+    ],
+    "notes": "P2295: Z2M same fingerprint group as ogkdpgy2 CO2 — not climate_sensor cartesian bleed.",
+    "protocol": "tuya_ef00",
+    "powerSource": "mains",
+    "deviceType": "air_quality",
+    "coupleLock": true,
+    "updatedAt": "2026-08-28",
+    "lastEnrichment": "p2295-multi-identity"
+  },
+  "_TZE204_3ejwxpmu": {
+    "driverId": "air_quality_co2",
+    "source": "registry:p2295-3ejwxpmu-co2-sibling",
+    "modelIds": [
+      "TS0601"
+    ],
+    "pid": "TS0601",
+    "modelIdsCount": 1,
+    "deviceNames": [
+      "NDIR CO2 sensor",
+      "TS0601_co2_sensor",
+      "Tuya CO2 (3ejwxpmu)"
+    ],
+    "z2mModels": [
+      "TS0601_co2_sensor"
+    ],
+    "whiteLabels": [],
+    "productNames": [
+      "NDIR CO2 sensor",
+      "TS0601_co2_sensor",
+      "Tuya CO2 (3ejwxpmu)"
+    ],
+    "variants": [
+      "_tze204_3ejwxpmu",
+      "_TZE204_3ejwxpmu",
+      "_TZE204_3EJWXPMU"
+    ],
+    "variantsCount": 3,
+    "prefixVariants": [
+      "_TZE200_3ejwxpmu",
+      "_TZE204_3ejwxpmu"
+    ],
+    "notes": "P2295: Z2M same fingerprint group as ogkdpgy2 CO2 — not climate_sensor cartesian bleed.",
+    "protocol": "tuya_ef00",
+    "powerSource": "mains",
+    "deviceType": "air_quality",
+    "coupleLock": true,
+    "updatedAt": "2026-08-28",
+    "lastEnrichment": "p2295-multi-identity"
+  },
+  "_TZE204_68nvbio9": {
+    "driverId": "curtain_motor",
+    "source": "registry:p2293-zemismart-68nvbio9-curtain-not-trv",
+    "modelIds": [
+      "TS0601"
+    ],
+    "pid": "TS0601",
+    "modelIdsCount": 1,
+    "deviceNames": [
+      "Zemismart curtain motor",
+      "ZM16EL",
+      "ZM16EL-03",
+      "ZM16EL-33"
+    ],
+    "z2mModels": [
+      "TS0601_cover",
+      "ZM16EL"
+    ],
+    "whiteLabels": [
+      "ZM16EL-03",
+      "ZM16EL-33"
+    ],
+    "productNames": [
+      "Zemismart curtain motor",
+      "ZM16EL",
+      "ZM16EL-03",
+      "ZM16EL-33"
+    ],
+    "variants": [
+      "_tze204_68nvbio9",
+      "_TZE204_68nvbio9",
+      "_TZE204_68NVBIO9"
+    ],
+    "variantsCount": 3,
+    "prefixVariants": [
+      "_TZE200_68nvbio9",
+      "_TZE204_68nvbio9"
+    ],
+    "notes": "P2295: Zigbee pid=TS0601; ZM16EL* are retail aliases not productIds.",
+    "protocol": "tuya_ef00",
+    "powerSource": "battery",
+    "deviceType": "curtain",
+    "coupleLock": true,
+    "updatedAt": "2026-08-28",
+    "lastEnrichment": "p2295-multi-identity"
+  },
+  "_TZE200_9p5xmj5r": {
+    "driverId": "curtain_motor",
+    "source": "registry:p2295-zemismart-cover-siblings",
+    "modelIds": [
+      "TS0601"
+    ],
+    "pid": "TS0601",
+    "modelIdsCount": 1,
+    "deviceNames": [
+      "TS0601_cover",
+      "Zemismart / Tuya TS0601 cover (Z2M group 148)"
+    ],
+    "z2mModels": [
+      "TS0601_cover",
+      "ZM16EL",
+      "ZM85EL-2Z"
+    ],
+    "whiteLabels": [],
+    "productNames": [
+      "TS0601_cover",
+      "Zemismart / Tuya TS0601 cover (Z2M group 148)"
+    ],
+    "variants": [
+      "_tze200_9p5xmj5r",
+      "_TZE200_9p5xmj5r",
+      "_TZE200_9P5XMJ5R"
+    ],
+    "variantsCount": 3,
+    "prefixVariants": [
+      "_TZE200_9p5xmj5r",
+      "_TZE200_ba69l9ol",
+      "_TZE200_eevqq1uv",
+      "_TZE200_nw1r9hp6",
+      "_TZE200_pw7mji0l",
+      "_TZE200_sfqyhvpv",
+      "_TZE200_vexa5o82",
+      "_TZE204_ejh6owwz",
+      "_TZE204_pw7mji0l"
+    ],
+    "notes": "P2295: Z2M cover fingerprint siblings of 68nvbio9/cf1sl3tj — each couple keeps pid TS0601 only.",
+    "protocol": "tuya_ef00",
+    "powerSource": "battery",
+    "deviceType": "curtain",
+    "coupleLock": true,
+    "updatedAt": "2026-08-28",
+    "lastEnrichment": "p2295-multi-identity"
+  },
+  "_TZE200_eevqq1uv": {
+    "driverId": "curtain_motor",
+    "source": "registry:p2295-zemismart-cover-siblings",
+    "modelIds": [
+      "TS0601"
+    ],
+    "pid": "TS0601",
+    "modelIdsCount": 1,
+    "deviceNames": [
+      "TS0601_cover",
+      "Zemismart / Tuya TS0601 cover (Z2M group 148)"
+    ],
+    "z2mModels": [
+      "TS0601_cover",
+      "ZM16EL",
+      "ZM85EL-2Z"
+    ],
+    "whiteLabels": [],
+    "productNames": [
+      "TS0601_cover",
+      "Zemismart / Tuya TS0601 cover (Z2M group 148)"
+    ],
+    "variants": [
+      "_tze200_eevqq1uv",
+      "_TZE200_eevqq1uv",
+      "_TZE200_EEVQQ1UV"
+    ],
+    "variantsCount": 3,
+    "prefixVariants": [
+      "_TZE200_9p5xmj5r",
+      "_TZE200_ba69l9ol",
+      "_TZE200_eevqq1uv",
+      "_TZE200_nw1r9hp6",
+      "_TZE200_pw7mji0l",
+      "_TZE200_sfqyhvpv",
+      "_TZE200_vexa5o82",
+      "_TZE204_ejh6owwz",
+      "_TZE204_pw7mji0l"
+    ],
+    "notes": "P2295: Z2M cover fingerprint siblings of 68nvbio9/cf1sl3tj — each couple keeps pid TS0601 only.",
+    "protocol": "tuya_ef00",
+    "powerSource": "battery",
+    "deviceType": "curtain",
+    "coupleLock": true,
+    "updatedAt": "2026-08-28",
+    "lastEnrichment": "p2295-multi-identity"
+  },
+  "_TZE200_ba69l9ol": {
+    "driverId": "curtain_motor",
+    "source": "registry:p2295-zemismart-cover-siblings",
+    "modelIds": [
+      "TS0601"
+    ],
+    "pid": "TS0601",
+    "modelIdsCount": 1,
+    "deviceNames": [
+      "TS0601_cover",
+      "Zemismart / Tuya TS0601 cover (Z2M group 148)"
+    ],
+    "z2mModels": [
+      "TS0601_cover",
+      "ZM16EL",
+      "ZM85EL-2Z"
+    ],
+    "whiteLabels": [],
+    "productNames": [
+      "TS0601_cover",
+      "Zemismart / Tuya TS0601 cover (Z2M group 148)"
+    ],
+    "variants": [
+      "_tze200_ba69l9ol",
+      "_TZE200_ba69l9ol",
+      "_TZE200_BA69L9OL"
+    ],
+    "variantsCount": 3,
+    "prefixVariants": [
+      "_TZE200_9p5xmj5r",
+      "_TZE200_ba69l9ol",
+      "_TZE200_eevqq1uv",
+      "_TZE200_nw1r9hp6",
+      "_TZE200_pw7mji0l",
+      "_TZE200_sfqyhvpv",
+      "_TZE200_vexa5o82",
+      "_TZE204_ejh6owwz",
+      "_TZE204_pw7mji0l"
+    ],
+    "notes": "P2295: Z2M cover fingerprint siblings of 68nvbio9/cf1sl3tj — each couple keeps pid TS0601 only.",
+    "protocol": "tuya_ef00",
+    "powerSource": "battery",
+    "deviceType": "curtain",
+    "coupleLock": true,
+    "updatedAt": "2026-08-28",
+    "lastEnrichment": "p2295-multi-identity"
+  },
+  "_TZE200_sfqyhvpv": {
+    "driverId": "curtain_motor",
+    "source": "registry:p2295-zemismart-cover-siblings",
+    "modelIds": [
+      "TS0601"
+    ],
+    "pid": "TS0601",
+    "modelIdsCount": 1,
+    "deviceNames": [
+      "TS0601_cover",
+      "Zemismart / Tuya TS0601 cover (Z2M group 148)"
+    ],
+    "z2mModels": [
+      "TS0601_cover",
+      "ZM16EL",
+      "ZM85EL-2Z"
+    ],
+    "whiteLabels": [],
+    "productNames": [
+      "TS0601_cover",
+      "Zemismart / Tuya TS0601 cover (Z2M group 148)"
+    ],
+    "variants": [
+      "_tze200_sfqyhvpv",
+      "_TZE200_sfqyhvpv",
+      "_TZE200_SFQYHVPV"
+    ],
+    "variantsCount": 3,
+    "prefixVariants": [
+      "_TZE200_9p5xmj5r",
+      "_TZE200_ba69l9ol",
+      "_TZE200_eevqq1uv",
+      "_TZE200_nw1r9hp6",
+      "_TZE200_pw7mji0l",
+      "_TZE200_sfqyhvpv",
+      "_TZE200_vexa5o82",
+      "_TZE204_ejh6owwz",
+      "_TZE204_pw7mji0l"
+    ],
+    "notes": "P2295: Z2M cover fingerprint siblings of 68nvbio9/cf1sl3tj — each couple keeps pid TS0601 only.",
+    "protocol": "tuya_ef00",
+    "powerSource": "battery",
+    "deviceType": "curtain",
+    "coupleLock": true,
+    "updatedAt": "2026-08-28",
+    "lastEnrichment": "p2295-multi-identity"
+  },
+  "_TZE204_ejh6owwz": {
+    "driverId": "curtain_motor",
+    "source": "registry:p2295-zemismart-cover-siblings",
+    "modelIds": [
+      "TS0601"
+    ],
+    "pid": "TS0601",
+    "modelIdsCount": 1,
+    "deviceNames": [
+      "TS0601_cover",
+      "Zemismart / Tuya TS0601 cover (Z2M group 148)"
+    ],
+    "z2mModels": [
+      "TS0601_cover",
+      "ZM16EL",
+      "ZM85EL-2Z"
+    ],
+    "whiteLabels": [],
+    "productNames": [
+      "TS0601_cover",
+      "Zemismart / Tuya TS0601 cover (Z2M group 148)"
+    ],
+    "variants": [
+      "_tze204_ejh6owwz",
+      "_TZE204_ejh6owwz",
+      "_TZE204_EJH6OWWZ"
+    ],
+    "variantsCount": 3,
+    "prefixVariants": [
+      "_TZE200_9p5xmj5r",
+      "_TZE200_ba69l9ol",
+      "_TZE200_eevqq1uv",
+      "_TZE200_nw1r9hp6",
+      "_TZE200_pw7mji0l",
+      "_TZE200_sfqyhvpv",
+      "_TZE200_vexa5o82",
+      "_TZE204_ejh6owwz",
+      "_TZE204_pw7mji0l"
+    ],
+    "notes": "P2295: Z2M cover fingerprint siblings of 68nvbio9/cf1sl3tj — each couple keeps pid TS0601 only.",
+    "protocol": "tuya_ef00",
+    "powerSource": "battery",
+    "deviceType": "curtain",
+    "coupleLock": true,
+    "updatedAt": "2026-08-28",
+    "lastEnrichment": "p2295-multi-identity"
+  },
+  "_TZ3000_mrpevh8p": {
+    "driverId": "button_wireless_1",
+    "source": "registry:p2282-mrpevh8p-ts0041-button",
+    "modelIds": [
+      "TS0041"
+    ],
+    "pid": "TS0041",
+    "modelIdsCount": 1,
+    "deviceNames": [
+      "RSH-SC021",
+      "SH-SC07",
+      "Tuya 1-button scene switch"
+    ],
+    "z2mModels": [
+      "SH-SC07",
+      "TS0041"
+    ],
+    "whiteLabels": [
+      "RSH-SC021",
+      "SH-SC07"
+    ],
+    "productNames": [
+      "RSH-SC021",
+      "SH-SC07",
+      "Tuya 1-button scene switch"
+    ],
+    "variants": [
+      "_tz3000_mrpevh8p",
+      "_TZ3000_mrpevh8p",
+      "_TZ3000_MRPEVH8P"
+    ],
+    "variantsCount": 3,
+    "prefixVariants": [],
+    "notes": "P2295: zigbee pid=TS0041 only. SH-SC07/RSH-SC021 are whiteLabels. Interview may show phantom EP2–4 — still 1 physical button.",
+    "protocol": "zcl",
+    "powerSource": "battery",
+    "deviceType": "button",
+    "coupleLock": true,
+    "updatedAt": "2026-08-28",
+    "lastEnrichment": "p2295-multi-identity"
   }
 }

@@ -21,7 +21,9 @@
       "aliases": {
         "ZG-204ZL": {
           "modelId": "TS0601",
-          "manufacturerNames": ["_TZE200_3towulqd"],
+          "manufacturerNames": [
+            "_TZE200_3towulqd"
+          ],
           "description": "PIR motion + lux illuminance, no mmWave",
           "currentDriver": "presence_sensor_radar",
           "suggestedDriver": "motion_sensor",
@@ -29,23 +31,35 @@
         },
         "ZG-204ZM": {
           "modelId": "TS0601",
-          "manufacturerNames": ["_TZE200_2aaelwxk", "_TZE200_kb5noeto", "_TZE200_tyffvoij"],
+          "manufacturerNames": [
+            "_TZE200_2aaelwxk",
+            "_TZE200_kb5noeto",
+            "_TZE200_tyffvoij"
+          ],
           "description": "PIR + 24GHz mmWave + lux; v1/v2/v3 hardware revisions share the marketing name",
           "currentDriver": "presence_sensor_radar",
-          "alsoSoldAs": ["ZG-204ZS"],
+          "alsoSoldAs": [
+            "ZG-204ZS"
+          ],
           "triage": "ok"
         },
         "ZG-204ZP": {
           "modelId": "TS0601",
-          "manufacturerNames": ["_TZE200_ka8l86iu"],
+          "manufacturerNames": [
+            "_TZE200_ka8l86iu"
+          ],
           "description": "24GHz mmWave only, CR2450, no PIR and no lux",
           "currentDriver": "presence_sensor_radar",
-          "alsoSoldAs": ["ZG-204ZK"],
+          "alsoSoldAs": [
+            "ZG-204ZK"
+          ],
           "triage": "ok"
         },
         "ZG-204ZX": {
           "modelId": "TS0601",
-          "manufacturerNames": ["_TZE200_w0ap83qu"],
+          "manufacturerNames": [
+            "_TZE200_w0ap83qu"
+          ],
           "description": "PIR + mmWave + lux variant",
           "currentDriver": "presence_sensor_radar",
           "triage": "ok"
@@ -67,6 +81,369 @@
           "description": "Soil moisture + temperature + EC + battery; sub-variants ZG-303L and ZG-303B share the couples",
           "currentDriver": "soil_sensor",
           "triage": "ok"
+        }
+      }
+    },
+    "TuyaCO2": {
+      "aliases": {
+        "DCR-LCD": {
+          "modelId": "TS0601",
+          "manufacturerNames": [
+            "_TZE200_ogkdpgy2",
+            "_TZE204_ogkdpgy2"
+          ],
+          "description": "P2295: zigbee pid=TS0601 only. Retail/Z2M names stay in deviceNames — never CK-TLSR climate bleed, never TS0601_co2 as Homey productId.",
+          "currentDriver": "air_quality_co2",
+          "triage": "ok",
+          "alsoSoldAs": [
+            "DCR-RQJ"
+          ]
+        },
+        "DCR-RQJ": {
+          "modelId": "TS0601",
+          "manufacturerNames": [
+            "_TZE200_ogkdpgy2",
+            "_TZE204_ogkdpgy2"
+          ],
+          "description": "P2295: zigbee pid=TS0601 only. Retail/Z2M names stay in deviceNames — never CK-TLSR climate bleed, never TS0601_co2 as Homey productId.",
+          "currentDriver": "air_quality_co2",
+          "triage": "ok",
+          "alsoSoldAs": [
+            "DCR-LCD"
+          ]
+        },
+        "NDIR CO2 sensor": {
+          "modelId": "TS0601",
+          "manufacturerNames": [
+            "_TZE200_3ejwxpmu",
+            "_TZE200_ogkdpgy2",
+            "_TZE204_3ejwxpmu",
+            "_TZE204_ogkdpgy2"
+          ],
+          "description": "P2295: Z2M same fingerprint group as ogkdpgy2 CO2 — not climate_sensor cartesian bleed.",
+          "currentDriver": "air_quality_co2",
+          "triage": "ok",
+          "alsoSoldAs": [
+            "DCR-LCD",
+            "DCR-RQJ"
+          ]
+        },
+        "Tuya Zigbee CO2 Sensor": {
+          "modelId": "TS0601",
+          "manufacturerNames": [
+            "_TZE200_ogkdpgy2",
+            "_TZE204_ogkdpgy2"
+          ],
+          "description": "P2295: zigbee pid=TS0601 only. Retail/Z2M names stay in deviceNames — never CK-TLSR climate bleed, never TS0601_co2 as Homey productId.",
+          "currentDriver": "air_quality_co2",
+          "triage": "ok",
+          "alsoSoldAs": [
+            "DCR-LCD",
+            "DCR-RQJ"
+          ]
+        },
+        "TS0601_co2_sensor": {
+          "modelId": "TS0601",
+          "manufacturerNames": [
+            "_TZE200_3ejwxpmu",
+            "_TZE200_ogkdpgy2",
+            "_TZE204_3ejwxpmu",
+            "_TZE204_ogkdpgy2"
+          ],
+          "description": "P2295: Z2M same fingerprint group as ogkdpgy2 CO2 — not climate_sensor cartesian bleed.",
+          "currentDriver": "air_quality_co2",
+          "triage": "ok",
+          "alsoSoldAs": [
+            "DCR-LCD",
+            "DCR-RQJ"
+          ]
+        },
+        "TS0601_TZE204_ogkdpgy2": {
+          "modelId": "TS0601",
+          "manufacturerNames": [
+            "_TZE200_ogkdpgy2",
+            "_TZE204_ogkdpgy2"
+          ],
+          "description": "P2295: zigbee pid=TS0601 only. Retail/Z2M names stay in deviceNames — never CK-TLSR climate bleed, never TS0601_co2 as Homey productId.",
+          "currentDriver": "air_quality_co2",
+          "triage": "ok",
+          "alsoSoldAs": [
+            "DCR-LCD",
+            "DCR-RQJ"
+          ]
+        },
+        "Tuya CO2 (3ejwxpmu)": {
+          "modelId": "TS0601",
+          "manufacturerNames": [
+            "_TZE200_3ejwxpmu",
+            "_TZE204_3ejwxpmu"
+          ],
+          "description": "P2295: Z2M same fingerprint group as ogkdpgy2 CO2 — not climate_sensor cartesian bleed.",
+          "currentDriver": "air_quality_co2",
+          "triage": "ok",
+          "alsoSoldAs": []
+        }
+      }
+    },
+    "Zemismart": {
+      "aliases": {
+        "ZM16EL": {
+          "modelId": "TS0601",
+          "manufacturerNames": [
+            "_TZE200_68nvbi09",
+            "_TZE200_68nvbio9",
+            "_TZE200_9p5xmj5r",
+            "_TZE200_ba69l9ol",
+            "_TZE200_eevqq1uv",
+            "_TZE200_nw1r9hp6",
+            "_TZE200_pw7mji0l",
+            "_TZE200_sfqyhvpv",
+            "_TZE200_vexa5o82",
+            "_TZE204_68nvbio9",
+            "_TZE204_ejh6owwz",
+            "_TZE204_pw7mji0l"
+          ],
+          "description": "P2295: Z2M cover fingerprint siblings of 68nvbio9/cf1sl3tj — each couple keeps pid TS0601 only.",
+          "currentDriver": "curtain_motor",
+          "triage": "ok",
+          "alsoSoldAs": [
+            "ZM16EL-03",
+            "ZM16EL-33"
+          ]
+        },
+        "ZM16EL-03": {
+          "modelId": "TS0601",
+          "manufacturerNames": [
+            "_TZE200_68nvbio9",
+            "_TZE204_68nvbio9"
+          ],
+          "description": "P2295: Zigbee pid=TS0601; ZM16EL* are retail aliases not productIds.",
+          "currentDriver": "curtain_motor",
+          "triage": "ok",
+          "alsoSoldAs": [
+            "ZM16EL-33"
+          ]
+        },
+        "ZM16EL-33": {
+          "modelId": "TS0601",
+          "manufacturerNames": [
+            "_TZE200_68nvbio9",
+            "_TZE204_68nvbio9"
+          ],
+          "description": "P2295: Zigbee pid=TS0601; ZM16EL* are retail aliases not productIds.",
+          "currentDriver": "curtain_motor",
+          "triage": "ok",
+          "alsoSoldAs": [
+            "ZM16EL-03"
+          ]
+        },
+        "Zemismart curtain motor": {
+          "modelId": "TS0601",
+          "manufacturerNames": [
+            "_TZE200_68nvbi09",
+            "_TZE200_68nvbio9",
+            "_TZE204_68nvbio9"
+          ],
+          "description": "P2295: Z2M fingerprint typo sibling of 68nvbio9 — cover not TRV.",
+          "currentDriver": "curtain_motor",
+          "triage": "ok",
+          "alsoSoldAs": [
+            "ZM16EL-03",
+            "ZM16EL-33"
+          ]
+        },
+        "TS0601_cover": {
+          "modelId": "TS0601",
+          "manufacturerNames": [
+            "_TZE200_68nvbi09",
+            "_TZE200_68nvbio9",
+            "_TZE200_9p5xmj5r",
+            "_TZE200_ba69l9ol",
+            "_TZE200_cf1sl3tj",
+            "_TZE200_eevqq1uv",
+            "_TZE200_nw1r9hp6",
+            "_TZE200_pw7mji0l",
+            "_TZE200_sfqyhvpv",
+            "_TZE200_vexa5o82",
+            "_TZE204_68nvbio9",
+            "_TZE204_ejh6owwz",
+            "_TZE204_pw7mji0l"
+          ],
+          "description": "P2295: Z2M cover fingerprint siblings of 68nvbio9/cf1sl3tj — each couple keeps pid TS0601 only.",
+          "currentDriver": "curtain_motor",
+          "triage": "ok",
+          "alsoSoldAs": [
+            "ZM16EL-03",
+            "ZM16EL-33",
+            "ZM85EL-2Z"
+          ]
+        },
+        "ZM16EL (typo mfr 68nvbi09)": {
+          "modelId": "TS0601",
+          "manufacturerNames": [
+            "_TZE200_68nvbi09"
+          ],
+          "description": "P2295: Z2M fingerprint typo sibling of 68nvbio9 — cover not TRV.",
+          "currentDriver": "curtain_motor",
+          "triage": "ok",
+          "alsoSoldAs": []
+        },
+        "ZM85EL-2Z": {
+          "modelId": "TS0601",
+          "manufacturerNames": [
+            "_TZE200_9p5xmj5r",
+            "_TZE200_ba69l9ol",
+            "_TZE200_cf1sl3tj",
+            "_TZE200_eevqq1uv",
+            "_TZE200_nw1r9hp6",
+            "_TZE200_pw7mji0l",
+            "_TZE200_sfqyhvpv",
+            "_TZE200_vexa5o82",
+            "_TZE204_ejh6owwz",
+            "_TZE204_pw7mji0l"
+          ],
+          "description": "P2295: Z2M cover fingerprint siblings of 68nvbio9/cf1sl3tj — each couple keeps pid TS0601 only.",
+          "currentDriver": "curtain_motor",
+          "triage": "ok",
+          "alsoSoldAs": []
+        },
+        "Zemismart dual curtain": {
+          "modelId": "TS0601",
+          "manufacturerNames": [
+            "_TZE200_cf1sl3tj"
+          ],
+          "description": "P2295: Zigbee pid=TS0601; ZM85EL-2Z is retail alias.",
+          "currentDriver": "curtain_motor",
+          "triage": "ok",
+          "alsoSoldAs": [
+            "ZM85EL-2Z"
+          ]
+        },
+        "Zemismart / Tuya TS0601 cover (Z2M group 148)": {
+          "modelId": "TS0601",
+          "manufacturerNames": [
+            "_TZE200_9p5xmj5r",
+            "_TZE200_ba69l9ol",
+            "_TZE200_eevqq1uv",
+            "_TZE200_nw1r9hp6",
+            "_TZE200_pw7mji0l",
+            "_TZE200_sfqyhvpv",
+            "_TZE200_vexa5o82",
+            "_TZE204_ejh6owwz",
+            "_TZE204_pw7mji0l"
+          ],
+          "description": "P2295: Z2M cover fingerprint siblings of 68nvbio9/cf1sl3tj — each couple keeps pid TS0601 only.",
+          "currentDriver": "curtain_motor",
+          "triage": "ok",
+          "alsoSoldAs": []
+        }
+      }
+    },
+    "TuyaFCU": {
+      "aliases": {
+        "TYBAC-006": {
+          "modelId": "TS0601",
+          "manufacturerNames": [
+            "_TZE204_mpbki2zm"
+          ],
+          "description": "P2295: zigbee pid=TS0601 only — PJ-1203A was invent. TYBAC-006/BAC006 are retail names. Sibling qujphad5 is a separate couple.",
+          "currentDriver": "wall_thermostat",
+          "triage": "ok",
+          "alsoSoldAs": [
+            "BAC006"
+          ]
+        },
+        "BAC006": {
+          "modelId": "TS0601",
+          "manufacturerNames": [
+            "_TZE204_mpbki2zm"
+          ],
+          "description": "P2295: zigbee pid=TS0601 only — PJ-1203A was invent. TYBAC-006/BAC006 are retail names. Sibling qujphad5 is a separate couple.",
+          "currentDriver": "wall_thermostat",
+          "triage": "ok",
+          "alsoSoldAs": [
+            "TYBAC-006"
+          ]
+        },
+        "Tuya FCU thermostat": {
+          "modelId": "TS0601",
+          "manufacturerNames": [
+            "_TZE204_mpbki2zm"
+          ],
+          "description": "P2295: zigbee pid=TS0601 only — PJ-1203A was invent. TYBAC-006/BAC006 are retail names. Sibling qujphad5 is a separate couple.",
+          "currentDriver": "wall_thermostat",
+          "triage": "ok",
+          "alsoSoldAs": [
+            "BAC006",
+            "TYBAC-006"
+          ]
+        },
+        "BAC-006": {
+          "modelId": "TS0601",
+          "manufacturerNames": [
+            "_TZE204_mpbki2zm"
+          ],
+          "description": "P2295: zigbee pid=TS0601 only — PJ-1203A was invent. TYBAC-006/BAC006 are retail names. Sibling qujphad5 is a separate couple.",
+          "currentDriver": "wall_thermostat",
+          "triage": "ok",
+          "alsoSoldAs": [
+            "BAC006",
+            "TYBAC-006"
+          ]
+        }
+      }
+    },
+    "TuyaButton": {
+      "aliases": {
+        "SH-SC07": {
+          "modelId": "TS0041",
+          "manufacturerNames": [
+            "_TZ3000_mrpevh8p"
+          ],
+          "description": "P2295: zigbee pid=TS0041 only. SH-SC07/RSH-SC021 are whiteLabels. Interview may show phantom EP2–4 — still 1 physical button.",
+          "currentDriver": "button_wireless_1",
+          "triage": "ok",
+          "alsoSoldAs": [
+            "RSH-SC021"
+          ]
+        },
+        "RSH-SC021": {
+          "modelId": "TS0041",
+          "manufacturerNames": [
+            "_TZ3000_mrpevh8p"
+          ],
+          "description": "P2295: zigbee pid=TS0041 only. SH-SC07/RSH-SC021 are whiteLabels. Interview may show phantom EP2–4 — still 1 physical button.",
+          "currentDriver": "button_wireless_1",
+          "triage": "ok",
+          "alsoSoldAs": [
+            "SH-SC07"
+          ]
+        },
+        "Tuya 1-button scene switch": {
+          "modelId": "TS0041",
+          "manufacturerNames": [
+            "_TZ3000_mrpevh8p"
+          ],
+          "description": "P2295: zigbee pid=TS0041 only. SH-SC07/RSH-SC021 are whiteLabels. Interview may show phantom EP2–4 — still 1 physical button.",
+          "currentDriver": "button_wireless_1",
+          "triage": "ok",
+          "alsoSoldAs": [
+            "RSH-SC021",
+            "SH-SC07"
+          ]
+        },
+        "TS0041": {
+          "modelId": "TS0041",
+          "manufacturerNames": [
+            "_TZ3000_mrpevh8p"
+          ],
+          "description": "P2295: zigbee pid=TS0041 only. SH-SC07/RSH-SC021 are whiteLabels. Interview may show phantom EP2–4 — still 1 physical button.",
+          "currentDriver": "button_wireless_1",
+          "triage": "ok",
+          "alsoSoldAs": [
+            "RSH-SC021",
+            "SH-SC07"
+          ]
         }
       }
     }

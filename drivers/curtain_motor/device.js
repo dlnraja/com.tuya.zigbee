@@ -16,6 +16,8 @@ const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 // v9.x (upstream PR #1431): split frames packing several DPs (Dooya DC1545R)
 const { parseTuyaMultiDpFrame } = require('../../lib/TuyaDataPoints');
+const { isBatteryCoverMfr } = require('../../lib/helpers/batteryPowerSource');
+const SDK3BestPractices = require('../../lib/SDK3BestPractices');
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
@@ -29,11 +31,14 @@ const { parseTuyaMultiDpFrame } = require('../../lib/TuyaDataPoints');
  */
 class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedCoverBase)) {
 
-  // v5.5.322: Auto-detect power source - battery curtain robots use 3xAA
+  // WHY(P2296): Homey battery-status — ZM16EL/ZM85EL are Battery EndDevices (DP13 %).
+  // Never default to UnifiedCoverBase mains=true for those couples.
   get mainsPowered() {
     const powerSetting = this.getSetting('power_source');
     if (powerSetting === 'battery') {return false;}
     if (powerSetting === 'ac' || powerSetting === 'dc') {return true;}
+    const mfr = this.getManufacturerName?.() || this.getSetting?.('zb_manufacturer_name') || '';
+    if (isBatteryCoverMfr(mfr)) {return false;}
     // Auto-detect: assume battery if measure_battery capability exists
     return !this.hasCapability('measure_battery');
   }
@@ -70,15 +75,25 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
   get gangCount() { return 1; }
 
   async onNodeInit({ zclNode }) {
-    // Auto-fix: Remove battery capabilities for mains-powered devices
-    await this.removeCapability('measure_battery').catch(() => {});
-    await this.removeCapability('alarm_battery').catch(() => {});
+    // WHY(P2296): Homey SDK — never both measure_battery + alarm_battery;
+    // battery covers (ZM16EL) KEEP measure_battery; mains covers strip both.
+    if (this.mainsPowered) {
+      await this.removeCapability('measure_battery').catch(() => {});
+      await this.removeCapability('alarm_battery').catch(() => {});
+    } else {
+      if (!this.hasCapability('measure_battery')) {
+        await this.addCapability('measure_battery').catch(() => {});
+      }
+      // Prefer % UI over alarm (Homey best-practices/battery-status)
+      await this.removeCapability('alarm_battery').catch(() => {});
+    }
     // v5.6.0: Track state for physical button detection
     this._lastCoverState = null;
 
     // Parent handles ALL: cover listeners, Tuya DP, ZCL
     await super.onNodeInit({ zclNode });
-    this.log('[CURTAIN] v5.6.0 - DPs: 1-15,101-105 | ZCL: 258,6,8,EF00');
+    await SDK3BestPractices.ensureBatteryBestPractices(this).catch(() => {});
+    this.log('[CURTAIN] v5.6.0 - DPs: 1-15,101-105 | ZCL: 258,6,8,EF00 | mains=', this.mainsPowered);
 
     // v5.5.322: Add luminance + button for Tuya DP curtains (Eftychis #779)
     // v5.8.40: Skip for TS130F ZCL curtains (Tbao forum: _TZ3000_bs93npae)

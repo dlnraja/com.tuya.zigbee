@@ -1,13 +1,56 @@
 {
-  "timestamp": "2026-08-28T17:03:24.264Z",
+  "timestamp": "2026-08-28T22:11:57.629Z",
   "gate": "align-mfs-db-intelligent",
   "apply": false,
   "check": true,
-  "changeCount": 0,
+  "changeCount": 4,
   "skippedCount": 36,
   "highSeverityCount": 0,
-  "byAction": {},
-  "changes": [],
+  "byAction": {
+    "registry_compose_strip_pid": 4
+  },
+  "changes": [
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE200_mvtclclq",
+      "pid": "TS0601",
+      "from": "wall_dimmer_tuya",
+      "to": "usb_outlet_advanced",
+      "removed": 1,
+      "caseId": "p2279-mvtclclq-usb-not-dimmer"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE284_mvtclclq",
+      "pid": "TS0601",
+      "from": "wall_dimmer_tuya",
+      "to": "usb_outlet_advanced",
+      "removed": 1,
+      "caseId": "p2279-mvtclclq-usb-not-dimmer"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE204_mvtclclq",
+      "pid": "TS0601",
+      "from": "wall_dimmer_tuya",
+      "to": "usb_outlet_advanced",
+      "removed": 1,
+      "caseId": "p2279-mvtclclq-usb-not-dimmer"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE284_kq1l5eu5",
+      "pid": "TS0601",
+      "from": "curtain_motor",
+      "to": "wall_curtain_switch",
+      "removed": 1,
+      "caseId": "p2271-kq1l5eu5-moes-curtain"
+    }
+  ],
   "skipped": [
     {
       "reason": "registry_driver_missing",

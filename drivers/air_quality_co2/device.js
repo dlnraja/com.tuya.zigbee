@@ -1,6 +1,8 @@
 'use strict';
 const { SensorBase } = require('../../lib/devices/UnifiedSensorBase');
 const { AirQualityInference, BatteryInference } = require('../../lib/IntelligentSensorInference');
+const { isMainsCo2Mfr } = require('../../lib/helpers/batteryPowerSource');
+const SDK3BestPractices = require('../../lib/SDK3BestPractices');
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
@@ -16,11 +18,9 @@ const { AirQualityInference, BatteryInference } = require('../../lib/Intelligent
 class AirQualityCO2Device extends SensorBase {
 
   get mainsPowered() {
-    // v5.13.3: Correctly identify mains-powered devices
-    const mfr = (this.getManufacturerName() || '').toLowerCase();
-    if (mfr.includes('ogkdpgy2') || mfr === '_tze200_8ygsuhe1' || mfr === '_tze200_y6rqas8p') {
-      return true;
-    }
+    // WHY(P2296): Homey battery-status — mains NDIR CO2 must not show measure/alarm_battery
+    const mfr = (this.getManufacturerName() || this.getSetting?.('zb_manufacturer_name') || '').toLowerCase();
+    if (isMainsCo2Mfr(mfr)) return true;
     return false;
   }
 
@@ -28,7 +28,15 @@ class AirQualityCO2Device extends SensorBase {
     return (this.getManufacturerName() || '').toLowerCase().includes('ogkdpgy2');
   }
 
+  _isCo2OnlyMains() {
+    const mfr = (this.getManufacturerName() || '').toLowerCase();
+    return /ogkdpgy2|3ejwxpmu/i.test(mfr);
+  }
+
   get sensorCapabilities() {
+    if (this._isCo2OnlyMains()) {
+      return ['measure_co2'];
+    }
     return ['measure_co2', 'measure_temperature', 'measure_humidity', 'measure_pm25', 'measure_voc', 'measure_formaldehyde', 'measure_battery'];
   }
 
@@ -36,8 +44,8 @@ class AirQualityCO2Device extends SensorBase {
     const mfr = (this.getSetting('zb_manufacturer_name') || '').toUpperCase();
     const is8b9zpaav = mfr.includes('8B9ZPAAV');
 
-    // WHY(P2291): Z2M ogkdpgy2 NDIR CO2 — DP2 only, mains router, no temp/hum on TZE204
-    if (this._isOgkdpgy2Co2Only()) {
+    // WHY(P2291/P2296): Z2M ogkdpgy2/3ejwxpmu NDIR CO2 — DP2 only, mains router
+    if (this._isCo2OnlyMains()) {
       return {
         2: {
           capability: 'measure_co2',
@@ -77,8 +85,17 @@ class AirQualityCO2Device extends SensorBase {
       // v5.5.317: VOC with inference tracking
       // v5.11.26: DP22=HCHO per Z2M (was incorrectly mapped to VOC)
       22: { capability: 'measure_formaldehyde', smartDivisor: true },
+      // WHY(P2296): Homey SDK — prefer measure_battery only; DP15 low-battery maps to % floor, not alarm_battery
       14: { capability: 'measure_battery', divisor: 1 },
-      15: { capability: null, internal: 'battery_low', transform: (v) => v === 1 || v === 'low' },
+      15: {
+        capability: 'measure_battery',
+        transform: (v) => {
+          // battery_state enum 0/1/2 → keep existing % or map low→10
+          if (v === 1 || v === 'low' || v === 2) return 10;
+          if (v === 0 || v === 'high') return this.getCapabilityValue('measure_battery') ?? 100;
+          return null;
+        },
+      },
       1: { capability: 'alarm_generic', transform: (v) => v === true || v === 1 }
     };
   }
@@ -87,14 +104,21 @@ class AirQualityCO2Device extends SensorBase {
     await this._safeInvoke(async () => {
       await super.onNodeInit({ zclNode });
 
-      if (this.mainsPowered && this.hasCapability('measure_battery')) {
-        this.log('[CO2] Mains powered variant detected. Dynamically pruning battery capability...');
-        await this.removeCapability('measure_battery').catch(() => {});
+      // WHY(P2296): Homey apps.developer — never both measure_battery + alarm_battery;
+      // mains CO2 strips both; battery variants keep measure_battery only.
+      await SDK3BestPractices.ensureBatteryBestPractices(this).catch(() => {});
+      if (this.mainsPowered) {
+        this.log('[CO2] Mains powered variant — pruning battery capabilities');
+        for (const cap of ['measure_battery', 'alarm_battery']) {
+          if (this.hasCapability(cap)) await this.removeCapability(cap).catch(() => {});
+        }
+      } else if (this.hasCapability('alarm_battery') && this.hasCapability('measure_battery')) {
+        await this.removeCapability('alarm_battery').catch(() => {});
       }
 
-      // WHY(P2291): ogkdpgy2 reports CO2 only — strip unused compose caps
-      if (this._isOgkdpgy2Co2Only()) {
-        for (const cap of ['measure_temperature', 'measure_humidity', 'measure_pm25', 'measure_voc', 'measure_formaldehyde', 'alarm_generic']) {
+      // WHY(P2291/P2296): ogkdpgy2/3ejwxpmu report CO2 only — strip unused compose caps
+      if (this._isCo2OnlyMains()) {
+        for (const cap of ['measure_temperature', 'measure_humidity', 'measure_pm25', 'measure_voc', 'measure_formaldehyde', 'alarm_generic', 'measure_battery', 'alarm_battery']) {
           if (this.hasCapability(cap)) {
             await this.removeCapability(cap).catch(() => {});
           }
@@ -102,7 +126,7 @@ class AirQualityCO2Device extends SensorBase {
       }
 
       // --- Attribute Reporting Configuration ---
-      if (!this._isOgkdpgy2Co2Only()) {
+      if (!this._isCo2OnlyMains() && !this.mainsPowered) {
       try {
         await this.configureAttributeReporting([
           {
@@ -138,21 +162,27 @@ class AirQualityCO2Device extends SensorBase {
         co2Baseline: 400,           // Outdoor CO2 baseline
         vocCorrelationFactor: 0.5   // CO2/VOC correlation factor
       });
-      this._batteryInference = new BatteryInference(this);
+      if (!this.mainsPowered) {
+        this._batteryInference = new BatteryInference(this);
+      }
 
-      // v5.12.2: Ensure VOC/HCHO/PM2.5 capabilities exist for devices that report them
-      for (const cap of ['measure_pm25', 'measure_voc', 'measure_formaldehyde']) {
-        if (!this.hasCapability(cap)) {
-          await this.addCapability(cap).catch(() => { });
-          this.log(`[CO2] Added ${  cap}`);
+      // v5.12.2: Ensure VOC/HCHO/PM2.5 capabilities exist for multi-gas devices only
+      if (!this._isCo2OnlyMains()) {
+        for (const cap of ['measure_pm25', 'measure_voc', 'measure_formaldehyde']) {
+          if (!this.hasCapability(cap)) {
+            await this.addCapability(cap).catch(() => { });
+            this.log(`[CO2] Added ${cap}`);
+          }
         }
       }
 
       this.log('[CO2] v5.5.317 INTELLIGENT INFERENCE - DPs: 1,2,14,15,18,19,20-22');
       
       // Setup ZCL temp/humidity (specific to air quality sensors)
-      await this._setupAirQualityZCL(zclNode);
-      this.log('[CO2] ✅ Ready with cross-validation');
+      if (!this._isCo2OnlyMains()) {
+        await this._setupAirQualityZCL(zclNode);
+      }
+      this.log('[CO2] ✅ Ready with cross-validation | mains=', this.mainsPowered);
     }, 'onNodeInit');
   }
 
