@@ -61,4 +61,14 @@ describe('P2300 wall_thermostat FCU TX/RX + contact pressure band', function () 
     assert.ok(set.has('_tze204_mpbki2zm|TS0601|wall_thermostat'), 'FCU sacred keep');
     assert.ok(set.has('_tz3000_pjb1ua0m|TS0203|contact_sensor'), 'pressure band sacred keep');
   });
+
+  it('doorwindowsensor_3 no longer steals pjb1ua0m (publish collision)', () => {
+    const door = JSON.parse(
+      fs.readFileSync(path.join(ROOT, 'drivers/doorwindowsensor_3/driver.compose.json'), 'utf8'),
+    );
+    assert.ok(
+      !(door.zigbee.manufacturerName || []).some((m) => /pjb1ua0m/i.test(m)),
+      'pjb1ua0m must leave doorwindowsensor_3',
+    );
+  });
 });
