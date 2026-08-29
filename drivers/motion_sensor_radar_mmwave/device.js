@@ -135,22 +135,37 @@ class MotionSensorRadarDevice extends UnifiedSensorBase {
   }
 
   async onSettings({ oldSettings, newSettings, changedKeys }) {
-    for (const key of changedKeys) {
-      const val = newSettings[key];
-      switch (key) {
-        case 'radar_sensitivity': 
-          await this.sendTuyaCommand(9, val, 'value').catch(() => {}); 
-          break;
-        case 'minimum_range': 
-          await this.sendTuyaCommand(10, Math.round(val * 100), 'value').catch(() => {}); 
-          break;
-        case 'maximum_range': 
-          await this.sendTuyaCommand(11, Math.round(val * 100), 'value').catch(() => {}); 
-          break;
-        case 'fading_time': 
-          await this.sendTuyaCommand(104, val, 'value').catch(() => {}); 
-          break;
+    // WHY(P2289/P2298): A_Tas #2199 — never block Homey settings save UI
+    try {
+      for (const key of changedKeys) {
+        const val = newSettings[key];
+        switch (key) {
+          case 'radar_sensitivity':
+            await this.sendTuyaCommand(9, val, 'value').catch((err) => {
+              this.error(`[MMWAVE] settings soft-fail ${key}: ${err.message}`);
+            });
+            break;
+          case 'minimum_range':
+            await this.sendTuyaCommand(10, Math.round(val * 100), 'value').catch((err) => {
+              this.error(`[MMWAVE] settings soft-fail ${key}: ${err.message}`);
+            });
+            break;
+          case 'maximum_range':
+            await this.sendTuyaCommand(11, Math.round(val * 100), 'value').catch((err) => {
+              this.error(`[MMWAVE] settings soft-fail ${key}: ${err.message}`);
+            });
+            break;
+          case 'fading_time':
+            await this.sendTuyaCommand(104, val, 'value').catch((err) => {
+              this.error(`[MMWAVE] settings soft-fail ${key}: ${err.message}`);
+            });
+            break;
+          default:
+            break;
+        }
       }
+    } catch (err) {
+      this.error(`[MMWAVE] onSettings outer soft-fail: ${err.message}`);
     }
   }
 }

@@ -1,7 +1,7 @@
 {
   "_comment": "Generated from .homeycompose/app.json. STABLE channel — only bug fixes applied.",
   "id": "com.dlnraja.tuya.zigbee.stable",
-  "version": "5.12.95",
+  "version": "5.12.98",
   "compatibility": ">=12.2.0",
   "platforms": [
     "local"
@@ -125628,7 +125628,13 @@
           "_tze200_y6rqas8p",
           "_tze204_8ikyd92m",
           "_TZE200_8ikyd92m",
-          "_TZE204_8ikyd92m"
+          "_TZE204_8ikyd92m",
+          "_TZE200_ogkdpgy2",
+          "_TZE204_ogkdpgy2",
+          "_tze200_ogkdpgy2",
+          "_tze204_ogkdpgy2",
+          "_TZE200_OGKDPGY2",
+          "_TZE204_OGKDPGY2"
         ],
         "productId": [
           "RH3052",
@@ -139899,6 +139905,9 @@
       },
       "zigbee": {
         "manufacturerName": [
+          "Wing",
+          "wing",
+          "WING",
           "OWON",
           "TUYATEC-AVTSQQBD",
           "TUYATEC-W89THYFC",
@@ -140209,7 +140218,6 @@
           "_TZE200_NY94ONLB",
           "_TZE200_NYVAVZBJ",
           "_TZE200_ODLLDRXX",
-          "_TZE200_OGKDPGY2",
           "_TZE200_OISQYL4O",
           "_TZE200_OWWDXJBX",
           "_TZE200_OYTI2UMS",
@@ -140422,7 +140430,6 @@
           "_TZE204_NLADMFVF",
           "_TZE204_NY94ONLB",
           "_TZE204_ODLLDRXX",
-          "_TZE204_OGKDPGY2",
           "_TZE204_OH8Y8PV8",
           "_TZE204_OQTPVX51",
           "_TZE204_P1QRTLJN",
@@ -140990,7 +140997,6 @@
           "_tze200_ny94onlb",
           "_tze200_nyvavzbj",
           "_tze200_odlldrxx",
-          "_tze200_ogkdpgy2",
           "_tze200_oisqyl4o",
           "_tze200_owwdxjbx",
           "_tze200_oyti2ums",
@@ -141188,7 +141194,6 @@
           "_tze204_nladmfvf",
           "_tze204_ny94onlb",
           "_tze204_odlldrxx",
-          "_tze204_ogkdpgy2",
           "_tze204_oh8y8pv8",
           "_tze204_oqtpvx51",
           "_tze204_p1qrtljn",
@@ -141675,7 +141680,6 @@
           "_TZE200_ny94onlb",
           "_TZE200_nyvavzbj",
           "_TZE200_odlldrxx",
-          "_TZE200_ogkdpgy2",
           "_TZE200_oisqyl4o",
           "_TZE200_owwdxjbx",
           "_TZE200_oyti2ums",
@@ -141829,7 +141833,6 @@
           "_TZE204_nladmfvf",
           "_TZE204_ny94onlb",
           "_TZE204_odlldrxx",
-          "_TZE204_ogkdpgy2",
           "_TZE204_oh8y8pv8",
           "_TZE204_oqtpvx51",
           "_TZE204_p1qrtljn",
@@ -142017,9 +142020,6 @@
           "_TZE284_mul9abs3",
           "_TZE284_uo8qcagc",
           "_TZE284_v5xjyphj",
-          "Wing",
-          "wing",
-          "WING",
           "HOBEIAN",
           "hobeian",
           "Hobeian"
