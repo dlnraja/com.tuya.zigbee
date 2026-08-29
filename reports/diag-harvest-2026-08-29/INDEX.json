@@ -1,0 +1,64 @@
+{
+  "harvestedAt": "2026-08-29T02:50:00Z",
+  "source": "gmail-plugin L0 + local homey-app-diag",
+  "diags": [
+    {
+      "id": "4b1a0dc9-9fba-4e9b-a85c-66498ab80bc1",
+      "date": "2026-08-27",
+      "app": "9.0.669",
+      "issue": "SH-SC07 battery strip + hybrid",
+      "couple": "_TZ3000_mrpevh8p+TS0041",
+      "status": "P2298+P2299"
+    },
+    {
+      "id": "95a7c6e5-969f-4469-be5d-c96b7cb42b60",
+      "date": "2026-08-26",
+      "app": "9.0.661",
+      "issue": "stale MISATTR + button",
+      "couple": "HOBEIAN+3315-S",
+      "status": "P2289+P2298"
+    },
+    {
+      "id": "f647d35b-c401-4077-b758-da1356e523f9",
+      "date": "2026-08-24",
+      "app": "9.0.636",
+      "issue": "DCM-FB phantoms",
+      "couple": "button_wireless_1",
+      "status": "P2299"
+    },
+    {
+      "id": "3a1f196d-77e6-44f6-870e-d03d6a28da97",
+      "date": "2026-08-23",
+      "app": "9.0.626",
+      "issue": "Tongou on smart_rcbo",
+      "couple": "_TZE284_6ocnqlhn+TS0601",
+      "status": "P2229"
+    },
+    {
+      "id": "31e654a4-31c2-4639-a3b0-9bf682a08bb4",
+      "date": "2026-08-21",
+      "app": "9.0.626",
+      "issue": "OCR 60cnqlhn",
+      "couple": "_TZE284_60cnqlhn+TS0601",
+      "status": "P2299"
+    },
+    {
+      "id": "55e3e591-2d4d-4230-a8b6-d521a6ab5b18",
+      "date": "2026-08-21",
+      "app": "9.0.617",
+      "issue": "TS0044 physical",
+      "couple": "_TZ3000_zgyzgdua+TS0044",
+      "status": "prior"
+    },
+    {
+      "id": "9cbf9eb6-ec5f-430f-964d-c93d13d3c89e",
+      "date": "2026-08-21",
+      "app": "9.0.621",
+      "issue": "Nobø TS004F",
+      "couple": "_TZ3000_xffhmvhv+TS004F",
+      "status": "prior"
+    }
+  ],
+  "masterTipAtHarvest": "9.0.675 / build 3006",
+  "forum": "silent"
+}

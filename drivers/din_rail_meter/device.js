@@ -18,7 +18,8 @@ class DinRailMeterDevice extends UnifiedPlugBase {
 
   _isTongouToqSysJzt() {
     const mfr = this.getSetting('zb_manufacturer_name') || this._protocolInfo?.mfr || '';
-    return containsCI(mfr, '_TZE284_6ocnqlhn');
+    // WHY(P2299): diag 31e654a4 / Gmail OCR often reads 6o as 60
+    return containsCI(mfr, '_TZE284_6ocnqlhn') || containsCI(mfr, '_TZE284_60cnqlhn');
   }
 
   async _migrateCapabilities() {

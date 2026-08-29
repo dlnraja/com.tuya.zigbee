@@ -9,6 +9,7 @@
     { "mfr": "_TZE204_m1cvyneb", "pid": "TS0601", "driverId": "wall_dimmer_tuya", "note": "P2138 sibling" },
     { "mfr": "_TZE200_m1cvyneb", "pid": "TS0601", "driverId": "wall_dimmer_tuya", "note": "P2138 sibling" },
     { "mfr": "_TZE284_6ocnqlhn", "pid": "TS0601", "driverId": "din_rail_meter", "note": "Tongou DIN" },
+    { "mfr": "_TZE284_60cnqlhn", "pid": "TS0601", "driverId": "din_rail_meter", "note": "P2299 OCR alias of 6ocnqlhn (diag 31e654a4)" },
     { "mfr": "_TZ3000_zgyzgdua", "pid": "TS0044", "driverId": "scene_switch_4", "note": "meter91 0xFD" },
     { "mfr": "_TZ3000_k4ej3ww2", "pid": "TS0207", "driverId": "water_leak_sensor", "note": "IAS leak" },
     { "mfr": "_TZ3000_5k5vh43t", "pid": "TS0207", "driverId": "zigbee_repeater", "note": "not leak" },
