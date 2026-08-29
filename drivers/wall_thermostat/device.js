@@ -95,11 +95,21 @@ class WallThermostatDevice extends TuyaSpecificClusterDevice {
     }
 
     this.registerCapabilityListener('onoff', async (onOff) => {
-      const ok = await this.writeBool(BHT_DATA_POINTS.onOff, onOff);
-      if (this._fcu && !onOff && this.hasCapability('thermostat_mode')) {
-        await this.safeSetCapabilityValue('thermostat_mode', 'off');
+      // WHY(P2301): avoid re-entrancy when syncing thermostat_mode ↔ onoff
+      if (this._fcuSyncing) return;
+      this._fcuSyncing = true;
+      try {
+        await this.writeBool(BHT_DATA_POINTS.onOff, onOff);
+        if (this._fcu && this.hasCapability('thermostat_mode')) {
+          const mode = onOff
+            ? (this._lastFcuSystemMode || 'cool')
+            : 'off';
+          await this.safeSetCapabilityValue('thermostat_mode', mode);
+        }
+        this.log('[WALL-THERMO] onoff TX', onOff, 'ok');
+      } finally {
+        this._fcuSyncing = false;
       }
-      this.log('[WALL-THERMO] onoff TX', onOff, ok === false ? 'FAIL' : 'ok');
     });
 
     this.registerCapabilityListener('thermostat_programming', async (mode) => {
@@ -114,17 +124,26 @@ class WallThermostatDevice extends TuyaSpecificClusterDevice {
 
     if (this._fcu) {
       this.registerCapabilityListener('thermostat_mode', async (mode) => {
-        if (mode === 'off') {
-          await this.writeBool(FCU_DATA_POINTS.onOff, false);
-          await this.safeSetCapabilityValue('onoff', false);
-          return;
+        if (this._fcuSyncing) return;
+        this._fcuSyncing = true;
+        try {
+          // Z2M #8691: system_mode "off" → DP1 false; cool/heat/fan_only → DP1 true + DP2
+          if (mode === 'off') {
+            await this.writeBool(FCU_DATA_POINTS.onOff, false);
+            await this.safeSetCapabilityValue('onoff', false);
+            this.log('[WALL-THERMO] FCU system_mode TX off');
+            return;
+          }
+          const enumVal = SYSTEM_MODE_TX[mode];
+          if (enumVal === undefined) return;
+          this._lastFcuSystemMode = mode;
+          await this.writeBool(FCU_DATA_POINTS.onOff, true);
+          await this.writeEnum(FCU_DATA_POINTS.systemMode, enumVal);
+          await this.safeSetCapabilityValue('onoff', true);
+          this.log('[WALL-THERMO] FCU system_mode TX', mode, enumVal);
+        } finally {
+          this._fcuSyncing = false;
         }
-        const enumVal = SYSTEM_MODE_TX[mode];
-        if (enumVal === undefined) return;
-        await this.writeBool(FCU_DATA_POINTS.onOff, true);
-        await this.writeEnum(FCU_DATA_POINTS.systemMode, enumVal);
-        await this.safeSetCapabilityValue('onoff', true);
-        this.log('[WALL-THERMO] FCU system_mode TX', mode, enumVal);
       });
 
       this.registerCapabilityListener('fan_mode', async (mode) => {
@@ -241,16 +260,28 @@ class WallThermostatDevice extends TuyaSpecificClusterDevice {
     try {
       switch (dp) {
         case FCU_DATA_POINTS.onOff: {
-          await this.safeSetCapabilityValue('onoff', !!parsedValue);
-          if (!parsedValue && this.hasCapability('thermostat_mode')) {
-            await this.safeSetCapabilityValue('thermostat_mode', 'off');
+          if (this._fcuSyncing) break;
+          this._fcuSyncing = true;
+          try {
+            await this.safeSetCapabilityValue('onoff', !!parsedValue);
+            if (this.hasCapability('thermostat_mode')) {
+              const mode = parsedValue
+                ? (this._lastFcuSystemMode || 'cool')
+                : 'off';
+              await this.safeSetCapabilityValue('thermostat_mode', mode);
+            }
+          } finally {
+            this._fcuSyncing = false;
           }
           break;
         }
         case FCU_DATA_POINTS.systemMode: {
           const mode = SYSTEM_MODE_RX[parsedValue];
-          if (mode && this.hasCapability('thermostat_mode')) {
-            await this.safeSetCapabilityValue('thermostat_mode', mode);
+          if (mode) {
+            this._lastFcuSystemMode = mode;
+            if (this.hasCapability('thermostat_mode') && !this._fcuSyncing) {
+              await this.safeSetCapabilityValue('thermostat_mode', mode);
+            }
           }
           break;
         }
