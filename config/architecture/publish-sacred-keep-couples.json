@@ -28,6 +28,9 @@
     { "mfr": "_TZ3000_4upl1fcj", "pid": "TS0041", "driverId": "button_wireless_1", "note": "SunBeech" },
     { "mfr": "_TZ3000_qeuvnohg", "pid": "TS011F", "driverId": "din_rail_switch", "note": "DIN relay" },
     { "mfr": "_TZ3000_amdymr7l", "pid": "TS011F", "driverId": "plug_energy_monitor", "note": "BlitzWolf SHP13" },
-    { "mfr": "_TZ3000_nkcobies", "pid": "TS011F", "driverId": "smartplug", "note": "P2236 plug" }
+    { "mfr": "_TZ3000_nkcobies", "pid": "TS011F", "driverId": "smartplug", "note": "P2236 plug" },
+    { "mfr": "_TZE204_mpbki2zm", "pid": "TS0601", "driverId": "wall_thermostat", "note": "P2300 #532 TYBAC-006 FCU" },
+    { "mfr": "_TZE204_qujphad5", "pid": "TS0601", "driverId": "wall_thermostat", "note": "P2300 FCU sibling" },
+    { "mfr": "_TZ3000_pjb1ua0m", "pid": "TS0203", "driverId": "contact_sensor", "note": "P2300 discussion #100 pressure band" }
   ]
 }

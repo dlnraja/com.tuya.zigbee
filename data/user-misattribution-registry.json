@@ -2397,6 +2397,40 @@
       "notes": "TYBAC-006 FCU — sibling mpbki2zm is a SEPARATE couple"
     },
     {
+      "id": "p2300-tz3000_pjb1ua0m-contact-ts0203",
+      "mfr": [
+        "_TZ3000_pjb1ua0m",
+        "_tz3000_pjb1ua0m",
+        "_TZ3000_PJB1UA0M"
+      ],
+      "productId": [
+        "TS0203"
+      ],
+      "canonicalDriver": "contact_sensor",
+      "forbiddenDrivers": [
+        "water_leak_sensor",
+        "climate_sensor",
+        "motion_sensor"
+      ],
+      "forbidMode": "couple",
+      "protocol": "ias_zone",
+      "notes": "GitHub Discussion #100 Pressure band — door/window IAS contact, not climate.",
+      "sources": [
+        "discussion-100",
+        "P2300"
+      ],
+      "tracks": {
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
+      }
+    },
+    {
       "id": "p2234b-tze204_mpbki2zm",
       "mfr": [
         "_tze204_mpbki2zm",
@@ -2414,14 +2448,16 @@
         "thermostatic_radiator_valve"
       ],
       "source": "p2234b-couple-refine",
-      "notes": "P2295: zigbee pid=TS0601 only — PJ-1203A was invent. TYBAC-006/BAC006 are retail names. Sibling qujphad5 is a separate couple.",
+      "notes": "P2295: zigbee pid=TS0601 only — PJ-1203A was invent. TYBAC-006/BAC006 are retail names. Sibling qujphad5 is a separate couple. P2300: wall_thermostat must call super.onNodeInit for EF00 TX/RX (#532).",
       "forbidMode": "couple",
       "protocol": "tuya_ef00",
       "sources": [
         "p2234b-tze204_mpbki2zm",
         "P2295",
+        "P2300",
         "TYBAC-006",
-        "BAC-006"
+        "BAC-006",
+        "issue-532"
       ],
       "tracks": {
         "master": {
