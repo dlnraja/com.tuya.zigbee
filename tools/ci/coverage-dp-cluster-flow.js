@@ -82,15 +82,29 @@ function dpCoverage() {
   const knowledge = loadJson(path.join(ROOT, 'data', 'dp_couple_knowledge.json')) || { couples: {} };
   const registry = loadJson(path.join(ROOT, 'data', 'user-misattribution-registry.json')) || { cases: [] };
   const coupleKeys = Object.keys(knowledge.couples || {});
+  const knowledgeSet = new Set(coupleKeys.map((k) => k.toLowerCase()));
+  // WHY: brand-only (HOBEIAN/Wing) + external soft-watch (no canonicalDriver) are not EF00
+  // DP knowledge targets — counting them as gaps falsely tanks coverage after sacred locks.
   const registryCouples = new Set();
+  const skipped = [];
   for (const c of registry.cases || []) {
-    const mfr = [].concat(c.mfr || [])[0];
-    const pid = [].concat(c.productId || [])[0];
-    if (mfr && pid) registryCouples.add(`${mfr}|${String(pid).toUpperCase()}`);
+    const mfrs = [].concat(c.mfr || []).filter(Boolean);
+    const pids = [].concat(c.productId || []).filter(Boolean);
+    if (!mfrs.length || !pids.length) continue;
+    const tuyaMfr = mfrs.find((m) => /^_t[yz]/i.test(m));
+    if (!tuyaMfr || !c.canonicalDriver) {
+      skipped.push(`${mfrs[0]}|${pids[0]}`);
+      continue;
+    }
+    // Prefer TS* pid when present (TY0201 + TS0201 → count against TS0201 knowledge key)
+    const pid = pids.find((p) => /^TS/i.test(p)) || pids[0];
+    registryCouples.add(`${tuyaMfr}|${String(pid).toUpperCase()}`);
   }
   let covered = 0;
+  const uncovered = [];
   for (const k of registryCouples) {
-    if (knowledge.couples[k]) covered++;
+    if (knowledge.couples[k] || knowledgeSet.has(k.toLowerCase())) covered++;
+    else uncovered.push(k);
   }
   return {
     knowledgeCouples: coupleKeys.length,
@@ -99,6 +113,8 @@ function dpCoverage() {
     coveragePct: registryCouples.size
       ? Math.round((1000 * covered) / registryCouples.size) / 10
       : 0,
+    skippedBrandOrExternal: skipped.length,
+    uncovered,
   };
 }
 
@@ -181,8 +197,12 @@ function main() {
     '',
     '## DP knowledge',
     `- Knowledge couples: ${dps.knowledgeCouples}`,
-    `- Registry couples: ${dps.registryCouples}`,
+    `- Registry couples (Tuya EF00-eligible): ${dps.registryCouples}`,
     `- Covered: ${dps.registryCovered} (${dps.coveragePct}%)`,
+    `- Skipped brand/external soft-watch: ${dps.skippedBrandOrExternal || 0}`,
+    ...(dps.uncovered && dps.uncovered.length
+      ? ['- Uncovered:', ...dps.uncovered.map((u) => `  - ${u}`)]
+      : ['- Uncovered: none']),
     '',
     '## Flow heuristic smoke',
     '```json',
