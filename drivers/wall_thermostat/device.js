@@ -6,6 +6,7 @@ const TuyaSpecificClusterDevice = require('../../lib/TuyaSpecificClusterDevice')
 const { getDataValue } = require('./helpers');
 const { Cluster } = require('zigbee-clusters');
 const { equalsCI } = require('../../lib/utils/CaseInsensitiveMatcher');
+const TuyaDeviceHelper = require('../../lib/utils/TuyaDeviceHelper');
 
 Cluster.addCluster(TuyaOnOffCluster);
 Cluster.addCluster(TuyaSpecificCluster);
@@ -23,6 +24,7 @@ const BHT_DATA_POINTS = {
  * TYBAC-006 FCU (Z2M herdsman #6174) — sacred couples only:
  *   _TZE204_mpbki2zm|TS0601, _TZE204_qujphad5|TS0601
  * DP2 = system_mode cool/heat/fan_only; DP28 = fan_mode; DP101 = manual/schedule.
+ * DP36 = 3-way valve (FCU signature — never on BHT-002).
  */
 const FCU_DATA_POINTS = {
   onOff: 1,
@@ -30,48 +32,70 @@ const FCU_DATA_POINTS = {
   targetTemperature: 16,
   currentTemperature: 24,
   fanMode: 28,
+  valve: 36,
   childlock: 40,
   manualMode: 101,
 };
 
 const FCU_MFRS = ['_TZE204_mpbki2zm', '_TZE204_qujphad5'];
+const FCU_SIGNAL_DPS = new Set([28, 36, 101]);
 const SYSTEM_MODE_RX = { 0: 'cool', 1: 'heat', 2: 'fan_only' };
 const SYSTEM_MODE_TX = { cool: 0, heat: 1, fan_only: 2 };
 const FAN_MODE_RX = { 0: 'low', 1: 'medium', 2: 'high', 3: 'auto' };
 const FAN_MODE_TX = { low: 0, medium: 1, high: 2, auto: 3 };
 
-const FCU_QUERY_DPS = [1, 2, 16, 24, 28, 40, 101];
+const FCU_QUERY_DPS = [1, 2, 16, 24, 28, 36, 40, 101];
 
 /**
  * WallThermostatDevice — BHT-002 path + TYBAC-006 FCU couple branch.
- * WHY(P2300 / #532): must call super.onNodeInit so DeviceIO + EF00 cluster
- * attach/query run — otherwise caps show but TX/RX are dead (xDMcGee on 9.0.675).
- * WHY(P2302 / diag f84180b7): late identity left `_fcu=false` → BHT RX + generic
- * DP1→temp; OFF/setpoint ignored. Arm FCU from pairing data + re-register listeners.
+ * WHY(P2300–P2303 / Adam K #532 xDMcGee):
+ *  - must call super.onNodeInit (DeviceIO/EF00)
+ *  - break safeSet recursion
+ *  - FRAG/DP1 bool handled in TuyaEF00Manager
+ *  - empty mfr at init → BHT forever: arm FCU from meta + DP28/36/101 + store
+ *  - TX via DeviceIO.sendDP cascade (cluster-only writeBool can soft-fail)
  */
 class WallThermostatDevice extends TuyaSpecificClusterDevice {
   get mainsPowered() { return true; }
 
   _resolveMfrPid() {
     const data = (typeof this.getData === 'function' ? this.getData() : null) || {};
+    const meta = (typeof TuyaDeviceHelper.getDeviceMeta === 'function'
+      ? TuyaDeviceHelper.getDeviceMeta(this)
+      : {}) || {};
+    const settings = (typeof this.getSettings === 'function' ? this.getSettings() : null) || {};
+
     const mfr = this.getSetting?.('zb_manufacturer_name')
+      || settings.zb_manufacturer_name
+      || (typeof this.getManufacturerName === 'function' ? this.getManufacturerName() : '')
       || this._cachedManufacturerName
+      || meta.manufacturerName
       || data.manufacturerName
       || this.getStoreValue?.('manufacturerName')
+      || this.zclNode?.manufacturerName
       || this.zigbee?.manufacturerName
       || '';
+
     const pid = this.getSetting?.('zb_model_id')
+      || settings.zb_model_id
       || this._cachedModelId
+      || meta.productId
+      || meta.modelId
       || data.productId
       || data.modelId
       || this.getStoreValue?.('modelId')
       || this.getStoreValue?.('productId')
+      || this.zclNode?.modelId
       || this.zigbee?.productId
       || '';
-    return { mfr: String(mfr), pid: String(pid) };
+
+    return { mfr: String(mfr || ''), pid: String(pid || '') };
   }
 
   _isFcuCouple() {
+    if (this.getStoreValue?.('wall_thermo_fcu') === true || this._fcuSignalSeen) {
+      return true;
+    }
     const { mfr, pid } = this._resolveMfrPid();
     const mfrOk = FCU_MFRS.some((m) => equalsCI(mfr, m));
     // Pairing may omit pid briefly — FCU mfrs are sacred to TS0601 only
@@ -92,19 +116,73 @@ class WallThermostatDevice extends TuyaSpecificClusterDevice {
       this.dpMappings[FCU_DATA_POINTS.systemMode] = { capability: 'thermostat_mode', type: 'enum' };
       this.dpMappings[FCU_DATA_POINTS.fanMode] = { capability: 'fan_mode', type: 'enum' };
       this.dpMappings[FCU_DATA_POINTS.manualMode] = { capability: 'thermostat_programming', type: 'bool' };
+      // DP36 valve is FCU signature only — handled in processResponse, not a Homey cap
     }
   }
 
+  /**
+   * WHY(P2303): Prefer DeviceIO.sendDP (manager → cluster → raw → magic) over
+   * cluster-only writeBool — Homey Self-Hosted + EF00 often needs the cascade.
+   */
+  async _txBool(dp, value) {
+    const v = !!value;
+    if (this.io && typeof this.io.sendDP === 'function') {
+      const ok = await this.io.sendDP(dp, v, { dpType: 'bool', type: 'bool' }).catch(() => false);
+      if (ok) return true;
+    }
+    await this.writeBool(dp, v);
+    return true;
+  }
+
+  async _txEnum(dp, value) {
+    const v = Number(value);
+    if (this.io && typeof this.io.sendDP === 'function') {
+      const ok = await this.io.sendDP(dp, v, { dpType: 'enum', type: 'enum' }).catch(() => false);
+      if (ok) return true;
+    }
+    await this.writeEnum(dp, v);
+    return true;
+  }
+
+  async _txValue(dp, value) {
+    const v = Number(value);
+    if (this.io && typeof this.io.sendDP === 'function') {
+      const ok = await this.io.sendDP(dp, v, { dpType: 'value', type: 'value' }).catch(() => false);
+      if (ok) return true;
+    }
+    await this.writeData32(dp, v);
+    return true;
+  }
+
+  async _armFcu(reason = 'signal') {
+    if (this._fcu) return;
+    this._fcu = true;
+    this._fcuSignalSeen = true;
+    try { await this.setStoreValue?.('wall_thermo_fcu', true); } catch (_) { /* ignore */ }
+    this._installDpMappings();
+    for (const cap of ['thermostat_mode', 'fan_mode']) {
+      if (!this.hasCapability(cap)) await this.addCapability(cap).catch(() => {});
+    }
+    this._registerFcuListeners();
+    this.log(`[WALL-THERMO] P2303 FCU armed (${reason})`);
+    this._queryFcuState().catch(() => {});
+  }
+
   async onNodeInit({ zclNode }) {
-    // WHY(P2300): parent installs DeviceIO, interview compensation, dataQuery
     await super.onNodeInit({ zclNode });
     this.printNode?.();
 
+    // Persist / restore FCU arm from prior session (Adam re-pair churn)
+    if (this.getStoreValue?.('wall_thermo_fcu') === true) {
+      this._fcuSignalSeen = true;
+    }
+
     this._fcu = this._isFcuCouple();
     this._installDpMappings();
+    const id = this._resolveMfrPid();
     this.log(this._fcu
-      ? `[WALL-THERMO] FCU path (${this._resolveMfrPid().mfr}|${this._resolveMfrPid().pid})`
-      : '[WALL-THERMO] BHT path');
+      ? `[WALL-THERMO] FCU path (${id.mfr}|${id.pid})`
+      : `[WALL-THERMO] BHT path (${id.mfr}|${id.pid}) — will arm on DP28/36/101`);
 
     for (const cap of ['thermostat_programming', 'child_lock']) {
       if (!this.hasCapability(cap)) await this.addCapability(cap).catch(() => {});
@@ -120,10 +198,36 @@ class WallThermostatDevice extends TuyaSpecificClusterDevice {
 
     this._attachTuyaRx(zclNode);
 
+    // Soft-read Basic cluster identity if settings empty (Homey SHS often blanks zb_*)
+    this._refreshIdentityFromBasic(zclNode).catch(() => {});
+
     if (this._fcu) {
       this._queryFcuState().catch((err) => {
         this.log('[WALL-THERMO] FCU DP query deferred:', err?.message || err);
       });
+    }
+  }
+
+  async _refreshIdentityFromBasic(zclNode) {
+    try {
+      const basic = zclNode?.endpoints?.[1]?.clusters?.basic
+        || zclNode?.endpoints?.[1]?.clusters?.genBasic;
+      if (!basic || typeof basic.readAttributes !== 'function') return;
+      const attrs = await basic.readAttributes(['manufacturerName', 'modelId']).catch(() => null);
+      if (!attrs) return;
+      if (attrs.manufacturerName) {
+        this._cachedManufacturerName = String(attrs.manufacturerName);
+        try { await this.setStoreValue?.('manufacturerName', this._cachedManufacturerName); } catch (_) { /* ignore */ }
+      }
+      if (attrs.modelId) {
+        this._cachedModelId = String(attrs.modelId);
+        try { await this.setStoreValue?.('modelId', this._cachedModelId); } catch (_) { /* ignore */ }
+      }
+      if (!this._fcu && this._isFcuCouple()) {
+        await this._armFcu('basic-cluster');
+      }
+    } catch (e) {
+      this.log('[WALL-THERMO] basic identity read skipped:', e?.message || e);
     }
   }
 
@@ -132,16 +236,13 @@ class WallThermostatDevice extends TuyaSpecificClusterDevice {
     this._sharedListenersReady = true;
 
     this.registerCapabilityListener('onoff', async (onOff) => {
-      // WHY(P2301): avoid re-entrancy when syncing thermostat_mode ↔ onoff
       if (this._fcuSyncing) return;
       this._fcuSyncing = true;
       try {
-        // WHY(P2302): schedule mode can ignore DP1 — force manual first (Z2M DP101)
-        if (this._fcu) {
-          await this.writeBool(FCU_DATA_POINTS.manualMode, true).catch(() => {});
-        }
-        await this.writeBool(BHT_DATA_POINTS.onOff, !!onOff);
-        if (this._fcu && this.hasCapability('thermostat_mode')) {
+        // Always force manual before power TX — schedule ignores DP1 on TYBAC
+        await this._txBool(FCU_DATA_POINTS.manualMode, true).catch(() => {});
+        await this._txBool(BHT_DATA_POINTS.onOff, !!onOff);
+        if (this.hasCapability('thermostat_mode')) {
           const mode = onOff
             ? (this._lastFcuSystemMode || 'cool')
             : 'off';
@@ -154,27 +255,25 @@ class WallThermostatDevice extends TuyaSpecificClusterDevice {
     });
 
     this.registerCapabilityListener('thermostat_programming', async (mode) => {
-      if (this._fcu) {
+      if (this._fcu || this._fcuSignalSeen) {
         const manualOn = String(mode) === '0';
-        await this.writeBool(FCU_DATA_POINTS.manualMode, manualOn);
+        await this._txBool(FCU_DATA_POINTS.manualMode, manualOn);
       } else {
-        await this.writeEnum(BHT_DATA_POINTS.mode, Number(mode));
+        await this._txEnum(BHT_DATA_POINTS.mode, Number(mode));
       }
       this.log('[WALL-THERMO] programming TX', mode);
     });
 
     this.registerCapabilityListener('target_temperature', async (targetTemperature) => {
       const rawValue = Math.round(Number(targetTemperature) * 10);
-      // WHY(P2302): setpoint ignored while MCU is in schedule — arm manual first
-      if (this._fcu) {
-        await this.writeBool(FCU_DATA_POINTS.manualMode, true).catch(() => {});
-      }
-      await this.writeData32(BHT_DATA_POINTS.targetTemperature, rawValue);
+      // Force manual so schedule cannot swallow setpoint (Z2M DP101)
+      await this._txBool(FCU_DATA_POINTS.manualMode, true).catch(() => {});
+      await this._txValue(BHT_DATA_POINTS.targetTemperature, rawValue);
       this.log('[WALL-THERMO] target_temperature TX', targetTemperature, 'raw', rawValue);
     });
 
     this.registerCapabilityListener('child_lock', async (childlock) => {
-      await this.writeBool(BHT_DATA_POINTS.childlock, !!childlock);
+      await this._txBool(BHT_DATA_POINTS.childlock, !!childlock);
       this.log('[WALL-THERMO] child_lock TX', childlock);
     });
   }
@@ -187,10 +286,10 @@ class WallThermostatDevice extends TuyaSpecificClusterDevice {
       if (this._fcuSyncing) return;
       this._fcuSyncing = true;
       try {
-        await this.writeBool(FCU_DATA_POINTS.manualMode, true).catch(() => {});
-        // Z2M #8691: system_mode "off" → DP1 false; cool/heat/fan_only → DP1 true + DP2
+        await this._txBool(FCU_DATA_POINTS.manualMode, true).catch(() => {});
+        // Z2M: system_mode "off" → DP1 false; cool/heat/fan_only → DP1 true + DP2
         if (mode === 'off') {
-          await this.writeBool(FCU_DATA_POINTS.onOff, false);
+          await this._txBool(FCU_DATA_POINTS.onOff, false);
           await this.safeSetCapabilityValue('onoff', false);
           this.log('[WALL-THERMO] FCU system_mode TX off');
           return;
@@ -198,8 +297,8 @@ class WallThermostatDevice extends TuyaSpecificClusterDevice {
         const enumVal = SYSTEM_MODE_TX[mode];
         if (enumVal === undefined) return;
         this._lastFcuSystemMode = mode;
-        await this.writeBool(FCU_DATA_POINTS.onOff, true);
-        await this.writeEnum(FCU_DATA_POINTS.systemMode, enumVal);
+        await this._txBool(FCU_DATA_POINTS.onOff, true);
+        await this._txEnum(FCU_DATA_POINTS.systemMode, enumVal);
         await this.safeSetCapabilityValue('onoff', true);
         this.log('[WALL-THERMO] FCU system_mode TX', mode, enumVal);
       } finally {
@@ -210,15 +309,11 @@ class WallThermostatDevice extends TuyaSpecificClusterDevice {
     this.registerCapabilityListener('fan_mode', async (mode) => {
       const enumVal = FAN_MODE_TX[mode];
       if (enumVal === undefined) return;
-      await this.writeEnum(FCU_DATA_POINTS.fanMode, enumVal);
+      await this._txEnum(FCU_DATA_POINTS.fanMode, enumVal);
       this.log('[WALL-THERMO] FCU fan_mode TX', mode, enumVal);
     });
   }
 
-  /**
-   * WHY(P2300): interview often exposes 0xEF00 without a ready `clusters.tuya`
-   * handle — resolve via DeviceIO aliases and soft-fail if still missing.
-   */
   _attachTuyaRx(zclNode) {
     try {
       const cluster = (typeof this._resolveTuyaCluster === 'function'
@@ -244,7 +339,6 @@ class WallThermostatDevice extends TuyaSpecificClusterDevice {
 
   async _queryFcuState() {
     const dps = FCU_QUERY_DPS;
-    // WHY(P2300): DeviceIO has requestDP / queryAllDPs — not queryDPs
     if (this.io && typeof this.io.requestDP === 'function') {
       for (const dp of dps) {
         await this.io.requestDP(dp, { silent: true }).catch(() => false);
@@ -268,8 +362,13 @@ class WallThermostatDevice extends TuyaSpecificClusterDevice {
 
   async processResponse(data) {
     if (!data || data.dp == null) return;
-    const dp = data.dp;
+    const dp = Number(data.dp);
     const parsedValue = getDataValue(data);
+
+    // WHY(P2303 / Adam diag f84180b7): DP36 valve proved FCU while path was still BHT
+    if (!this._fcu && FCU_SIGNAL_DPS.has(dp)) {
+      await this._armFcu(`dp${dp}`);
+    }
 
     if (this._fcu) {
       await this._processFcuResponse(dp, parsedValue);
@@ -337,6 +436,9 @@ class WallThermostatDevice extends TuyaSpecificClusterDevice {
           await this.safeSetCapabilityValue('thermostat_programming', parsedValue ? '0' : '1');
           break;
         }
+        case FCU_DATA_POINTS.valve:
+          this.log('[WALL-THERMO] FCU valve', parsedValue === 0 ? 'OPEN' : 'CLOSE');
+          break;
         case FCU_DATA_POINTS.currentTemperature:
           await this.safeSetCapabilityValue('measure_temperature', Number(parsedValue) / 10);
           break;
@@ -354,21 +456,13 @@ class WallThermostatDevice extends TuyaSpecificClusterDevice {
     }
   }
 
-  /**
-   * WHY(P2300/P2302): MFR-ENSURE can land after onNodeInit — re-evaluate FCU branch
-   * and register missing FCU capability listeners.
-   */
   async _onZigbeeIdentityResolved(updates = {}) {
-    const wasFcu = this._fcu;
-    this._fcu = this._isFcuCouple();
-    this._installDpMappings();
-    if (this._fcu && !wasFcu) {
-      this.log('[WALL-THERMO] P2302 identity → FCU path armed');
-      for (const cap of ['thermostat_mode', 'fan_mode']) {
-        if (!this.hasCapability(cap)) await this.addCapability(cap).catch(() => {});
-      }
-      this._registerFcuListeners();
-      await this._queryFcuState().catch(() => {});
+    if (updates.manufacturerName) this._cachedManufacturerName = String(updates.manufacturerName);
+    if (updates.modelId || updates.productId) {
+      this._cachedModelId = String(updates.modelId || updates.productId);
+    }
+    if (!this._fcu && this._isFcuCouple()) {
+      await this._armFcu('identity-resolved');
     }
   }
 }

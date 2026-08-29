@@ -2597,5 +2597,8 @@
   },
   "9.0.686": {
     "en": "P2302: FCU thermostat OFF/setpoint (diag f84180b7) — fix FRAG false-positive on DP24, bool DP1→onoff, arm FCU listeners; gbm10jnj→button_wireless_3 TS0043"
+  },
+  "9.0.687": {
+    "en": "P2303: Adam K #532 FCU — arm from DP28/36/101 + Basic identity, DeviceIO TX cascade for OFF/setpoint"
   }
 }
