@@ -327964,5 +327964,46 @@
       "generic_tuya"
     ],
     "notes": "P2299 OCR alias of 6ocnqlhn (diag 31e654a4)"
+  },
+  "_TZ3000_MRPEVH8P": {
+    "driverId": "button_wireless_1",
+    "source": "registry:p2282-mrpevh8p-ts0041-button|p2285-case-alias",
+    "modelIds": [
+      "TS0041"
+    ],
+    "pid": "TS0041",
+    "modelIdsCount": 1,
+    "deviceNames": [
+      "RSH-SC021",
+      "SH-SC07",
+      "Tuya 1-button scene switch"
+    ],
+    "z2mModels": [
+      "SH-SC07",
+      "TS0041"
+    ],
+    "whiteLabels": [
+      "RSH-SC021",
+      "SH-SC07"
+    ],
+    "productNames": [
+      "RSH-SC021",
+      "SH-SC07",
+      "Tuya 1-button scene switch"
+    ],
+    "variants": [
+      "_tz3000_mrpevh8p",
+      "_TZ3000_mrpevh8p",
+      "_TZ3000_MRPEVH8P"
+    ],
+    "variantsCount": 3,
+    "prefixVariants": [],
+    "notes": "P2295: zigbee pid=TS0041 only. SH-SC07/RSH-SC021 are whiteLabels. Interview may show phantom EP2–4 — still 1 physical button.",
+    "protocol": "zcl",
+    "powerSource": "battery",
+    "deviceType": "button",
+    "coupleLock": true,
+    "updatedAt": "2026-08-28",
+    "lastEnrichment": "p2295-multi-identity"
   }
 }
