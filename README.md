@@ -33,7 +33,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.675 |
+| **App Version** | v9.0.676 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,377 |
 | **Pairing Variants** | 16,475 (4 case combos per fingerprint) |
@@ -41,7 +41,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **Flow Cards** | 5,182 |
 | **Unique Capabilities** | 170 |
 | **Native OTA Drivers** | 5 |
-| **Test Suites** | 170 files |
+| **Test Suites** | 171 files |
 | **SVG Icons** | 731 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
@@ -102,6 +102,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.676** | Publish hardening: store changelog always shipped; sacred device couples preserved under size compaction; safer Test uploads (no orphan b… |
 | **v9.0.675** | Publish hardening: store changelog always shipped; sacred device couples preserved under size compaction; safer Test uploads (no orphan b… |
 | **v9.0.674** | Publish hardening: store changelog always shipped; sacred device couples preserved under size compaction; safer Test uploads (no orphan b… |
 | **v9.0.673** | Publish hardening: store changelog always shipped; sacred device couples preserved under size compaction; safer Test uploads (no orphan b… |
@@ -113,7 +114,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.667** | Publish hardening: store changelog always shipped; sacred device couples preserved under size compaction; safer Test uploads (no orphan b… |
 | **v9.0.666** | Publish hardening: store changelog always shipped; sacred device couples preserved under size compaction; safer Test uploads (no orphan b… |
 | **v9.0.665** | Publish hardening: store changelog always shipped; sacred device couples preserved under size compaction; safer Test uploads (no orphan b… |
-| **v9.0.664** | Improved wireless 1-button remotes (TS0041): reliable press detection. Fixed button RX chain so physical presses are not dropped. Publish… |
 
 <!-- CHANGELOG_END -->
 
