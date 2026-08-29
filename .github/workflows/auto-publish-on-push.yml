@@ -380,8 +380,11 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
 
+      # WHY(P139/P2301): processing_failed + transient HOMEY_PAT list errors must not
+      # abort the job after a successful upload — still attempt draft→test promote.
       - name: Wait for Athom draft processing
         if: steps.pub.outcome == 'success'
+        continue-on-error: true
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
         run: node .github/scripts/wait-athom-draft-ready.js

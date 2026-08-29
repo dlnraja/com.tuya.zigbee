@@ -178,7 +178,12 @@ async function main() {
   }
 
   // After the window: fail-closed only if we still have no draft/test.
-  const list = await getBuilds(client, APP, { limit: 20 }).catch(() => []);
+  let listError = null;
+  const list = await getBuilds(client, APP, { limit: 20 }).catch((e) => {
+    listError = e;
+    console.log(`wait-draft: final list failed (${e?.message || e})`);
+    return [];
+  });
   const classified = classifyDraftWait((Array.isArray(list) ? list : []).map(normalizeBuild), expected);
   if (classified.ready.length) {
     const ready = classified.ready[0];
@@ -193,6 +198,15 @@ async function main() {
       console.log(`wait-draft: P139 — v${expected} still ${failed.state} (#${failed.id}) but Test healthy at v${fallback.version} #${fallback.id} (patch lag ${patchDistance(fallback.version, expected)} ≤ ${HEALTHY_TEST_PATCH_LAG}); continue`);
       if (process.env.GITHUB_OUTPUT) {
         fs.appendFileSync(process.env.GITHUB_OUTPUT, `healthy_test_version=${fallback.version}\n`, 'utf8');
+        fs.appendFileSync(process.env.GITHUB_OUTPUT, `processing_failed_degraded=true\n`, 'utf8');
+      }
+      return;
+    }
+    // WHY(P2301): Athom list token blips must not hard-fail the whole Auto-Publish
+    // after upload succeeded — leave promote/verify a chance (continue-on-error too).
+    if (listError || allBuilds.length === 0) {
+      console.log(`wait-draft: P139 soft-continue — v${expected} saw ${failed.state} (#${failed.id}) but builds list unavailable; do not fail-closed`);
+      if (process.env.GITHUB_OUTPUT) {
         fs.appendFileSync(process.env.GITHUB_OUTPUT, `processing_failed_degraded=true\n`, 'utf8');
       }
       return;
