@@ -1,6 +1,6 @@
 {
   "name": "com.dlnraja.tuya.zigbee",
-  "version": "9.0.695",
+  "version": "9.0.696",
   "description": "Tuya Unified Zigbee - Local-first control with AI automation",
   "main": "app.js",
   "scripts": {
@@ -118,6 +118,7 @@
     "check": "node scripts/validate/homey-mandatory-check.js",
     "check:fix": "node scripts/validate/homey-mandatory-check.js --fix",
     "check:json": "node scripts/validate/homey-mandatory-check.js --json",
+    "check:productid": "node tools/ci/check-empty-productid.js",
     "check:athom": "node scripts/validate/validate-app-json.js",
     "check:precommit": "node .githooks/pre-commit",
     "check:yaml": "node scripts/ci/validate-all-yaml.js --json && node scripts/ci/validate-github-actions-policy.js && node tools/ci/workflow-estate-gate.js",

@@ -120224,17 +120224,19 @@
         "TS0601"
       ],
       "variants": [],
-      "deviceType": "switch",
-      "driverHint": "switch_1gang",
+      "deviceType": "cover",
+      "driverHint": "curtain_motor",
       "capabilities": [],
       "powerSource": "unknown",
       "sources": [
-        "z2m"
+        "z2m",
+        "p2307",
+        "p2309"
       ],
       "sourceDetails": {
         "z2m": 1
       },
-      "confidence": 0.75,
+      "confidence": 0.95,
       "lastSeen": "2026-07-28T19:50:07.575Z"
     },
     "_tz3000_ubuikmgo": {
@@ -266220,15 +266222,6 @@
       ],
       "confidence": 0.08
     },
-    "_tz3000_yj6k7vfo|ts0040": {
-      "mfr": "_tz3000_yj6k7vfo",
-      "pid": "ts0040",
-      "driver": "smart_button_switch",
-      "sources": [
-        "mfs_db"
-      ],
-      "confidence": 0.08
-    },
     "_tz3000_ja5osu5g|ts0040": {
       "mfr": "_tz3000_ja5osu5g",
       "pid": "ts0040",
@@ -326002,6 +325995,26 @@
       "pid": "ts0043",
       "driver": "button_wireless_3",
       "confidence": 0.9
+    },
+    "_tze284_upt8lzi0|ts0601": {
+      "mfr": "_tze284_upt8lzi0",
+      "pid": "ts0601",
+      "driver": "curtain_motor",
+      "sources": [
+        "z2m",
+        "p2307"
+      ],
+      "confidence": 0.95
+    },
+    "_tz3000_yj6k7vfo|ts0041": {
+      "mfr": "_tz3000_yj6k7vfo",
+      "pid": "ts0041",
+      "driver": "button_wireless_4_ts0041",
+      "sources": [
+        "compose",
+        "p2309"
+      ],
+      "confidence": 0.95
     }
   },
   "_TZE204_ZG204Z": {

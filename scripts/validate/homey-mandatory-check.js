@@ -27,6 +27,7 @@
  *   M12 — app.json must be valid JSON parseable without error
  *   M13 — All locales/*.json must be valid JSON
  *   M14 — .homeychangelog.json must have entry for current version
+ *   M15 — Zigbee driver.compose.json must have non-empty productId[] (publish FATAL)
  * ═══════════════════════════════════════════════════════════════════════════
  */
 
@@ -454,6 +455,54 @@ if (app.drivers && Array.isArray(app.drivers)) {
   }
 }
 
+
+// ─── M15 — Zigbee compose productId must be non-empty (prepare-publish FATAL) ─
+section('M15 — Zigbee productId non-empty');
+(() => {
+  const driversDir = path.join(ROOT, 'drivers');
+  if (!fs.existsSync(driversDir)) return;
+  /** Infer pid from driver id suffix only when explicit (never invent). */
+  function inferPidFromDriverId(id) {
+    const m = String(id || '').match(/_(ts[0-9a-z]+)$/i);
+    return m ? m[1].toUpperCase() : null;
+  }
+  const empty = [];
+  for (const id of fs.readdirSync(driversDir)) {
+    const composePath = path.join(driversDir, id, 'driver.compose.json');
+    if (!fs.existsSync(composePath)) continue;
+    let compose;
+    try { compose = JSON.parse(fs.readFileSync(composePath, 'utf8')); } catch { continue; }
+    if (!compose.zigbee) continue;
+    const conn = [].concat(compose.connectivity || []);
+    if (conn.length && !conn.includes('zigbee')) continue;
+    const pid = compose.zigbee.productId;
+    if (Array.isArray(pid) && pid.length > 0) continue;
+    empty.push({ id, composePath, compose });
+  }
+  if (!empty.length) {
+    ok('M15', 'All zigbee driver.compose.json have non-empty productId');
+    return;
+  }
+  if (FIX_MODE) {
+    for (const row of empty) {
+      const inferred = inferPidFromDriverId(row.id);
+      if (!inferred) {
+        fail('M15', `drivers/${row.id}: empty productId[] — cannot auto-fix (no _TSxxxx suffix)`);
+        continue;
+      }
+      row.compose.zigbee.productId = [inferred];
+      fs.writeFileSync(row.composePath, `${JSON.stringify(row.compose, null, 2)}\n`);
+      fixed.push(`[M15] AUTO-FIXED: drivers/${row.id} productId → [${inferred}]`);
+    }
+    const still = empty.filter((r) => !inferPidFromDriverId(r.id));
+    if (!still.length) ok('M15', `Auto-fixed ${empty.length} empty productId[] from driver id suffix`);
+  } else {
+    fail(
+      'M15',
+      `${empty.length} zigbee driver(s) with empty productId[] (blocks Homey publish): ${empty.slice(0, 8).map((e) => e.id).join(', ')}${empty.length > 8 ? '…' : ''}`
+    );
+  }
+})();
 
 // ─── Per-driver asset checks (spot check first 5 drivers) ────────────────────
 section('Driver Asset Spot Check (first 5)');
