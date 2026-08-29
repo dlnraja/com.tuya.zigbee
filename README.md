@@ -33,7 +33,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.672 |
+| **App Version** | v9.0.673 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,377 |
 | **Pairing Variants** | 16,475 (4 case combos per fingerprint) |
@@ -102,6 +102,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.673** | Publish hardening: store changelog always shipped; sacred device couples preserved under size compaction; safer Test uploads (no orphan b… |
 | **v9.0.672** | Publish hardening: store changelog always shipped; sacred device couples preserved under size compaction; safer Test uploads (no orphan b… |
 | **v9.0.671** | Publish hardening: store changelog always shipped; sacred device couples preserved under size compaction; safer Test uploads (no orphan b… |
 | **v9.0.670** | Publish hardening: store changelog always shipped; sacred device couples preserved under size compaction; safer Test uploads (no orphan b… |
@@ -113,7 +114,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.664** | Improved wireless 1-button remotes (TS0041): reliable press detection. Fixed button RX chain so physical presses are not dropped. Publish… |
 | **v9.0.663** | Improved wireless 1-button remotes (TS0041 / SH-SC07): more reliable press detection and flows. Fixed button RX chain so physical presses… |
 | **v9.0.662** | Improved wireless 1-button remotes (TS0041 / SH-SC07): more reliable press detection and flows. Fixed button RX chain so physical presses… |
-| **v9.0.661** | Improved device matching from Zigbee community research; smarter Tuya/ZCL protocol path selection. |
 
 <!-- CHANGELOG_END -->
 
