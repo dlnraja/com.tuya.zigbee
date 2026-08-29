@@ -3,6 +3,31 @@
 // v5.11.185: Suppress punycode DEP0040 deprecation from transitive deps
 require('./lib/suppress-punycode');
 
+// WHY(P2306): Homey flow serializer can embed foreign driver URIs
+// (`homey:virtualdriverzigbee:driver`). ManagerDrivers.getDriver throws
+// "Invalid Driver ID" and crashes the whole app process (Gmail crash 9.0.677).
+// Soft-fail unknown/foreign IDs so flow deserialize can continue.
+try {
+  const HomeyEarly = require('homey');
+  const proto = HomeyEarly?.ManagerDrivers?.prototype;
+  if (proto && typeof proto.getDriver === 'function' && !proto.__p2306SafeGetDriver) {
+    const orig = proto.getDriver;
+    proto.getDriver = function safeGetDriver(driverId) {
+      try {
+        return orig.call(this, driverId);
+      } catch (err) {
+        const msg = String(err && err.message || err || '');
+        if (/Invalid Driver ID/i.test(msg) || /virtualdriverzigbee/i.test(String(driverId || ''))) {
+          this.error?.(`[P2306] getDriver soft-fail: ${driverId} (${msg})`);
+          return null;
+        }
+        throw err;
+      }
+    };
+    proto.__p2306SafeGetDriver = true;
+  }
+} catch (_) { /* best-effort */ }
+
 // v5.8.25: Patch color-space module to fix Homey sandbox require('./rgb') error
 try {
   const colorShim = require('./lib/shims/color-space-shim');

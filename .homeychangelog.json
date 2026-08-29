@@ -2606,5 +2606,8 @@
   },
   "9.0.689": {
     "en": "Improved Moes curtain switch pairing (ZTS-EUR-C) and Homey validate / forum poll CI gates."
+  },
+  "9.0.690": {
+    "en": "Restored sacred-couple productIds for pairing, Moes curtain lock, safer flow driver resolve, and 4-button gbm10jnj support."
   }
 }

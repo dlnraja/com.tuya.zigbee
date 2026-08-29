@@ -10143,12 +10143,12 @@
     "_tz3000_gbm10jnj": {
       "manufacturerId": "_tz3000_gbm10jnj",
       "modelIds": [
-        "TS0042",
-        "TS0601"
+        "TS0043",
+        "TS0044"
       ],
       "variants": [],
       "deviceType": "sensor",
-      "driverHint": "button_wireless_2",
+      "driverHint": "button_wireless_3",
       "capabilities": [
         "button.1",
         "button.2",
@@ -16003,14 +16003,11 @@
       "powerSource": "mains",
       "sources": [
         "github-533",
-        "z2m-moes-zts-eur-c"
+        "z2m-moes-zts-eur-c",
+        "p2304"
       ],
-      "sourceDetails": {
-        "github-533": 1,
-        "z2m": 1
-      },
       "confidence": 0.95,
-      "lastSeen": "2026-08-29T16:29:51.335Z"
+      "lastSeen": "2026-08-29T17:02:09.163Z"
     },
     "_tze200_1drr8tab": {
       "manufacturerId": "_tze200_1drr8tab",
@@ -19637,14 +19634,11 @@
       "powerSource": "mains",
       "sources": [
         "github-533",
-        "z2m-moes-zts-eur-c"
+        "z2m-moes-zts-eur-c",
+        "p2304"
       ],
-      "sourceDetails": {
-        "github-533": 1,
-        "z2m": 1
-      },
       "confidence": 0.95,
-      "lastSeen": "2026-08-29T16:29:51.335Z"
+      "lastSeen": "2026-08-29T17:02:09.163Z"
     },
     "_tze200_nojsjtj2": {
       "manufacturerId": "_tze200_nojsjtj2",
@@ -23031,14 +23025,11 @@
       "powerSource": "mains",
       "sources": [
         "github-533",
-        "z2m-moes-zts-eur-c"
+        "z2m-moes-zts-eur-c",
+        "p2304"
       ],
-      "sourceDetails": {
-        "github-533": 1,
-        "z2m": 1
-      },
       "confidence": 0.95,
-      "lastSeen": "2026-08-29T16:29:51.335Z"
+      "lastSeen": "2026-08-29T17:02:09.163Z"
     },
     "_tze204_6a4vxfnv": {
       "manufacturerId": "_tze204_6a4vxfnv",
@@ -26878,14 +26869,11 @@
       "powerSource": "mains",
       "sources": [
         "github-533",
-        "z2m-moes-zts-eur-c"
+        "z2m-moes-zts-eur-c",
+        "p2304"
       ],
-      "sourceDetails": {
-        "github-533": 1,
-        "z2m": 1
-      },
       "confidence": 0.95,
-      "lastSeen": "2026-08-29T16:29:51.335Z"
+      "lastSeen": "2026-08-29T17:02:09.163Z"
     },
     "_tze284_5ys44kzo": {
       "manufacturerId": "_tze284_5ys44kzo",
@@ -136121,13 +136109,16 @@
     "modelIdsCount": 18
   },
   "_TZ3000_gbm10jnj": {
-    "driverId": "button_wireless_3",
-    "source": "P2302_z2m_zha_deconz",
+    "driverId": null,
+    "source": "compose-multi-pid",
     "modelIds": [
-      "TS0043"
+      "TS0043",
+      "TS0044"
     ],
-    "pid": "TS0043",
-    "modelIdsCount": 1
+    "pid": null,
+    "modelIdsCount": 2,
+    "driverHint": "button_wireless_4",
+    "notes": "TS0043→button_wireless_3; TS0044→button_wireless_4 (compose couple lock)"
   },
   "_TZ3000_yw5tvzsk": {
     "driverId": "button_wireless_2",
@@ -142519,40 +142510,18 @@
     "modelIdsCount": 28
   },
   "_TZE200_127X7WNL": {
-    "driverId": "device_radiator_valve",
-    "source": "compose-exclusive",
+    "driverId": "curtain_motor",
+    "source": "registry:p2304-moes-zts-eur-c-curtain",
     "modelIds": [
-      "CK-TLSR8656-SS5-01(7014)",
-      "Excellux",
-      "RH3052",
-      "SM0201",
-      "SNZB-02",
-      "SNZB-02B",
-      "SNZB-02D",
-      "SNZB-02DR2",
-      "SNZB-02LD",
-      "SNZB-02M",
-      "SNZB-02P",
-      "SNZB-02WD",
-      "TH01",
-      "THS317-ET",
-      "TS0201",
-      "TS0202",
-      "TS0222",
-      "TS0601",
-      "TS1201",
-      "TY0201",
-      "WSDCGQ01LM",
-      "WSDCGQ11LM",
-      "WSDCGQ12LM",
-      "ZG-227Z",
-      "ZG-227ZL",
-      "lumi.sensor_ht",
-      "lumi.sensor_ht.agl02",
-      "lumi.weather"
+      "TS0601"
     ],
-    "pid": "CK-TLSR8656-SS5-01(7014)",
-    "modelIdsCount": 28
+    "pid": "TS0601",
+    "modelIdsCount": 1,
+    "driverHint": "curtain_motor",
+    "deviceType": "cover",
+    "powerSource": "mains",
+    "confidence": 0.95,
+    "lastSeen": "2026-08-29T17:04:47.451Z"
   },
   "_TZE200_1DRR8TAB": {
     "driverId": "climate_sensor",
@@ -147002,40 +146971,18 @@
     "modelIdsCount": 28
   },
   "_TZE200_NHYJ64W2": {
-    "driverId": "device_radiator_valve",
-    "source": "compose-exclusive",
+    "driverId": "curtain_motor",
+    "source": "registry:p2304-moes-zts-eur-c-curtain",
     "modelIds": [
-      "CK-TLSR8656-SS5-01(7014)",
-      "Excellux",
-      "RH3052",
-      "SM0201",
-      "SNZB-02",
-      "SNZB-02B",
-      "SNZB-02D",
-      "SNZB-02DR2",
-      "SNZB-02LD",
-      "SNZB-02M",
-      "SNZB-02P",
-      "SNZB-02WD",
-      "TH01",
-      "THS317-ET",
-      "TS0201",
-      "TS0202",
-      "TS0222",
-      "TS0601",
-      "TS1201",
-      "TY0201",
-      "WSDCGQ01LM",
-      "WSDCGQ11LM",
-      "WSDCGQ12LM",
-      "ZG-227Z",
-      "ZG-227ZL",
-      "lumi.sensor_ht",
-      "lumi.sensor_ht.agl02",
-      "lumi.weather"
+      "TS0601"
     ],
-    "pid": "CK-TLSR8656-SS5-01(7014)",
-    "modelIdsCount": 28
+    "pid": "TS0601",
+    "modelIdsCount": 1,
+    "driverHint": "curtain_motor",
+    "deviceType": "cover",
+    "powerSource": "mains",
+    "confidence": 0.95,
+    "lastSeen": "2026-08-29T17:04:47.454Z"
   },
   "_TZE200_NOJSJTJ2": {
     "driverId": "climate_sensor",
@@ -151157,40 +151104,18 @@
     "modelIdsCount": 28
   },
   "_TZE204_5SLEHGEO": {
-    "driverId": "device_radiator_valve",
-    "source": "compose-exclusive",
+    "driverId": "curtain_motor",
+    "source": "registry:p2304-moes-zts-eur-c-curtain",
     "modelIds": [
-      "CK-TLSR8656-SS5-01(7014)",
-      "Excellux",
-      "RH3052",
-      "SM0201",
-      "SNZB-02",
-      "SNZB-02B",
-      "SNZB-02D",
-      "SNZB-02DR2",
-      "SNZB-02LD",
-      "SNZB-02M",
-      "SNZB-02P",
-      "SNZB-02WD",
-      "TH01",
-      "THS317-ET",
-      "TS0201",
-      "TS0202",
-      "TS0222",
-      "TS0601",
-      "TS1201",
-      "TY0201",
-      "WSDCGQ01LM",
-      "WSDCGQ11LM",
-      "WSDCGQ12LM",
-      "ZG-227Z",
-      "ZG-227ZL",
-      "lumi.sensor_ht",
-      "lumi.sensor_ht.agl02",
-      "lumi.weather"
+      "TS0601"
     ],
-    "pid": "CK-TLSR8656-SS5-01(7014)",
-    "modelIdsCount": 28
+    "pid": "TS0601",
+    "modelIdsCount": 1,
+    "driverHint": "curtain_motor",
+    "deviceType": "cover",
+    "powerSource": "mains",
+    "confidence": 0.95,
+    "lastSeen": "2026-08-29T17:04:47.454Z"
   },
   "_TZE204_6A4VXFNV": {
     "driverId": "climate_sensor",
@@ -155876,40 +155801,18 @@
     "modelIdsCount": 28
   },
   "_TZE284_5SLEHGEO": {
-    "driverId": "device_radiator_valve",
-    "source": "compose-exclusive",
+    "driverId": "curtain_motor",
+    "source": "registry:p2304-moes-zts-eur-c-curtain",
     "modelIds": [
-      "CK-TLSR8656-SS5-01(7014)",
-      "Excellux",
-      "RH3052",
-      "SM0201",
-      "SNZB-02",
-      "SNZB-02B",
-      "SNZB-02D",
-      "SNZB-02DR2",
-      "SNZB-02LD",
-      "SNZB-02M",
-      "SNZB-02P",
-      "SNZB-02WD",
-      "TH01",
-      "THS317-ET",
-      "TS0201",
-      "TS0202",
-      "TS0222",
-      "TS0601",
-      "TS1201",
-      "TY0201",
-      "WSDCGQ01LM",
-      "WSDCGQ11LM",
-      "WSDCGQ12LM",
-      "ZG-227Z",
-      "ZG-227ZL",
-      "lumi.sensor_ht",
-      "lumi.sensor_ht.agl02",
-      "lumi.weather"
+      "TS0601"
     ],
-    "pid": "CK-TLSR8656-SS5-01(7014)",
-    "modelIdsCount": 28
+    "pid": "TS0601",
+    "modelIdsCount": 1,
+    "driverHint": "curtain_motor",
+    "deviceType": "cover",
+    "powerSource": "mains",
+    "confidence": 0.95,
+    "lastSeen": "2026-08-29T17:04:47.455Z"
   },
   "_TZE284_5YS44KZO": {
     "driverId": "climate_sensor",
@@ -326054,10 +325957,9 @@
       "driver": "curtain_motor",
       "sources": [
         "github-533",
-        "z2m-moes-zts-eur-c"
+        "z2m"
       ],
-      "confidence": 0.95,
-      "notes": "Moes ZTS-EUR-C curtain switch — never TRV/climate"
+      "confidence": 0.95
     },
     "_tze200_nhyj64w2|ts0601": {
       "mfr": "_tze200_nhyj64w2",
@@ -326065,10 +325967,9 @@
       "driver": "curtain_motor",
       "sources": [
         "github-533",
-        "z2m-moes-zts-eur-c"
+        "z2m"
       ],
-      "confidence": 0.95,
-      "notes": "Moes ZTS-EUR-C curtain switch — never TRV/climate"
+      "confidence": 0.95
     },
     "_tze204_5slehgeo|ts0601": {
       "mfr": "_tze204_5slehgeo",
@@ -326076,10 +325977,9 @@
       "driver": "curtain_motor",
       "sources": [
         "github-533",
-        "z2m-moes-zts-eur-c"
+        "z2m"
       ],
-      "confidence": 0.95,
-      "notes": "Moes ZTS-EUR-C curtain switch — never TRV/climate"
+      "confidence": 0.95
     },
     "_tze284_5slehgeo|ts0601": {
       "mfr": "_tze284_5slehgeo",
@@ -326087,10 +325987,21 @@
       "driver": "curtain_motor",
       "sources": [
         "github-533",
-        "z2m-moes-zts-eur-c"
+        "z2m"
       ],
-      "confidence": 0.95,
-      "notes": "Moes ZTS-EUR-C curtain switch — never TRV/climate"
+      "confidence": 0.95
+    },
+    "_tz3000_gbm10jnj|ts0044": {
+      "mfr": "_tz3000_gbm10jnj",
+      "pid": "ts0044",
+      "driver": "button_wireless_4",
+      "confidence": 0.9
+    },
+    "_tz3000_gbm10jnj|ts0043": {
+      "mfr": "_tz3000_gbm10jnj",
+      "pid": "ts0043",
+      "driver": "button_wireless_3",
+      "confidence": 0.9
     }
   },
   "_TZE204_ZG204Z": {

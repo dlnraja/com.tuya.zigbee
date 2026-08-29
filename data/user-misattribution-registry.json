@@ -4577,15 +4577,11 @@
       ],
       "canonicalDriver": "curtain_motor",
       "forbiddenDrivers": [
-        "device_radiator_valve",
-        "thermostatic_radiator_valve",
-        "climate_sensor",
-        "soil_sensor",
-        "wall_thermostat"
+        "device_radiator_valve"
       ],
       "forbidMode": "couple",
       "source": "github-533-salvagr + Z2M Moes ZTS-EUR-C",
-      "notes": "Moes Zigbee+RF curtain switch. DPs: 1 open/stop/close, 2 percent, 3 calib, 7 backlight, 8 reverse, 10 time. Was wrongly on radiator valve."
+      "notes": "Moes ZTS-EUR-C curtain. Forbid radiator only (mfr was there). Do NOT forbid wall_thermostat/climate/trv — coupleMode strip_pid would delete TS0601 from those drivers."
     }
   ]
 }
