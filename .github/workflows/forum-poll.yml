@@ -144,18 +144,18 @@ jobs:
           if [ -f .github/state/forum/multi-silent-digest.json ]; then
             echo "### Digest totals" >> $GITHUB_STEP_SUMMARY
             echo '```json' >> $GITHUB_STEP_SUMMARY
-            node -e "const d=require('./.github/state/forum/multi-silent-digest.json'); console.log(JSON.stringify({totals:d.totals,topics:d.topics.map(t=>({id:t.id,scanned:t.scanned,actionable:(t.actionable||[]).length,newFP:(t.newFPs||[]).length,err:t.error})),null,2))" >> $GITHUB_STEP_SUMMARY
+            node -e "const d=require('./.github/state/forum/multi-silent-digest.json'); console.log(JSON.stringify({totals:d.totals,topics:d.topics.map(t=>({id:t.id,scanned:t.scanned,actionable:(t.actionable||[]).length,newFP:(t.newFPs||[]).length,err:t.error}))},null,2))" >> $GITHUB_STEP_SUMMARY || echo '{"digest":"unavailable"}' >> $GITHUB_STEP_SUMMARY
             echo '```' >> $GITHUB_STEP_SUMMARY
           fi
           if [ -f .github/state/forum/actionable-processor-report.json ]; then
             echo '```json' >> $GITHUB_STEP_SUMMARY
-            node -e "const r=require('./.github/state/forum/actionable-processor-report.json'); console.log(JSON.stringify(r.totals,null,2))" >> $GITHUB_STEP_SUMMARY
+            node -e "const r=require('./.github/state/forum/actionable-processor-report.json'); console.log(JSON.stringify(r.totals,null,2))" >> $GITHUB_STEP_SUMMARY || true
             echo '```' >> $GITHUB_STEP_SUMMARY
           fi
           if [ -f .github/state/forum/topic-140352-parse.json ]; then
             echo "### Topic 140352 parse (P2214)" >> $GITHUB_STEP_SUMMARY
             echo '```json' >> $GITHUB_STEP_SUMMARY
-            node -e "const r=require('./.github/state/forum/topic-140352-parse.json'); console.log(JSON.stringify({liveHighest:r.analysis.liveHighest,digestHighest:r.analysis.digestHighestActionable,gap:r.analysis.newPostsSinceDigestScan,status:r.analysis.status},null,2))" >> $GITHUB_STEP_SUMMARY
+            node -e "const r=require('./.github/state/forum/topic-140352-parse.json'); console.log(JSON.stringify({liveHighest:r.analysis.liveHighest,digestHighest:r.analysis.digestHighestActionable,gap:r.analysis.newPostsSinceDigestScan,status:r.analysis.status},null,2))" >> $GITHUB_STEP_SUMMARY || true
             echo '```' >> $GITHUB_STEP_SUMMARY
           fi
           if [ -f reports/forum-verify-$(date -u +%F)/NEED_ACTION.md ]; then

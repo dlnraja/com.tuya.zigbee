@@ -15989,26 +15989,28 @@
     "_tze200_127x7wnl": {
       "manufacturerId": "_tze200_127x7wnl",
       "modelIds": [
-        "TS0201"
+        "TS0601"
       ],
-      "variants": [],
-      "deviceType": "sensor",
-      "driverHint": "climate_sensor",
+      "variants": [
+        "ZTS-EUR-C"
+      ],
+      "deviceType": "cover",
+      "driverHint": "curtain_motor",
       "capabilities": [
-        "measure_temperature",
-        "measure_humidity",
-        "measure_battery",
-        "alarm_battery"
+        "windowcoverings_state",
+        "windowcoverings_set"
       ],
-      "powerSource": "battery",
+      "powerSource": "mains",
       "sources": [
-        "local"
+        "github-533",
+        "z2m-moes-zts-eur-c"
       ],
       "sourceDetails": {
-        "local": 1
+        "github-533": 1,
+        "z2m": 1
       },
-      "confidence": 0.08,
-      "lastSeen": "2026-06-19T20:58:49.670Z"
+      "confidence": 0.95,
+      "lastSeen": "2026-08-29T16:29:51.335Z"
     },
     "_tze200_1drr8tab": {
       "manufacturerId": "_tze200_1drr8tab",
@@ -19621,26 +19623,28 @@
     "_tze200_nhyj64w2": {
       "manufacturerId": "_tze200_nhyj64w2",
       "modelIds": [
-        "TS0201"
+        "TS0601"
       ],
-      "variants": [],
-      "deviceType": "sensor",
-      "driverHint": "climate_sensor",
+      "variants": [
+        "ZTS-EUR-C"
+      ],
+      "deviceType": "cover",
+      "driverHint": "curtain_motor",
       "capabilities": [
-        "measure_temperature",
-        "measure_humidity",
-        "measure_battery",
-        "alarm_battery"
+        "windowcoverings_state",
+        "windowcoverings_set"
       ],
-      "powerSource": "battery",
+      "powerSource": "mains",
       "sources": [
-        "local"
+        "github-533",
+        "z2m-moes-zts-eur-c"
       ],
       "sourceDetails": {
-        "local": 1
+        "github-533": 1,
+        "z2m": 1
       },
-      "confidence": 0.08,
-      "lastSeen": "2026-06-19T20:58:49.671Z"
+      "confidence": 0.95,
+      "lastSeen": "2026-08-29T16:29:51.335Z"
     },
     "_tze200_nojsjtj2": {
       "manufacturerId": "_tze200_nojsjtj2",
@@ -23013,26 +23017,28 @@
     "_tze204_5slehgeo": {
       "manufacturerId": "_tze204_5slehgeo",
       "modelIds": [
-        "TS0201"
+        "TS0601"
       ],
-      "variants": [],
-      "deviceType": "sensor",
-      "driverHint": "climate_sensor",
+      "variants": [
+        "ZTS-EUR-C"
+      ],
+      "deviceType": "cover",
+      "driverHint": "curtain_motor",
       "capabilities": [
-        "measure_temperature",
-        "measure_humidity",
-        "measure_battery",
-        "alarm_battery"
+        "windowcoverings_state",
+        "windowcoverings_set"
       ],
-      "powerSource": "battery",
+      "powerSource": "mains",
       "sources": [
-        "local"
+        "github-533",
+        "z2m-moes-zts-eur-c"
       ],
       "sourceDetails": {
-        "local": 1
+        "github-533": 1,
+        "z2m": 1
       },
-      "confidence": 0.08,
-      "lastSeen": "2026-06-19T20:58:49.673Z"
+      "confidence": 0.95,
+      "lastSeen": "2026-08-29T16:29:51.335Z"
     },
     "_tze204_6a4vxfnv": {
       "manufacturerId": "_tze204_6a4vxfnv",
@@ -26858,26 +26864,28 @@
     "_tze284_5slehgeo": {
       "manufacturerId": "_tze284_5slehgeo",
       "modelIds": [
-        "TS0201"
+        "TS0601"
       ],
-      "variants": [],
-      "deviceType": "sensor",
-      "driverHint": "climate_sensor",
+      "variants": [
+        "ZTS-EUR-C"
+      ],
+      "deviceType": "cover",
+      "driverHint": "curtain_motor",
       "capabilities": [
-        "measure_temperature",
-        "measure_humidity",
-        "measure_battery",
-        "alarm_battery"
+        "windowcoverings_state",
+        "windowcoverings_set"
       ],
-      "powerSource": "battery",
+      "powerSource": "mains",
       "sources": [
-        "local"
+        "github-533",
+        "z2m-moes-zts-eur-c"
       ],
       "sourceDetails": {
-        "local": 1
+        "github-533": 1,
+        "z2m": 1
       },
-      "confidence": 0.08,
-      "lastSeen": "2026-06-19T20:58:49.674Z"
+      "confidence": 0.95,
+      "lastSeen": "2026-08-29T16:29:51.335Z"
     },
     "_tze284_5ys44kzo": {
       "manufacturerId": "_tze284_5ys44kzo",
@@ -121514,7 +121522,6 @@
         "_tze200_01fvxamo",
         "_tze200_04yfvweb",
         "_tze200_0u3bj3rc",
-        "_tze200_127x7wnl",
         "_tze200_1drr8tab",
         "_tze200_1fuxihti",
         "_tze200_1n2kyphz",
@@ -121626,7 +121633,6 @@
         "_tze200_n1aauwb4",
         "_tze200_n5fxyyjw",
         "_tze200_n9clpsht",
-        "_tze200_nhyj64w2",
         "_tze200_nojsjtj2",
         "_tze200_nus5kk3n",
         "_tze200_ny94onlb",
@@ -121732,7 +121738,6 @@
         "_tze204_432zhuwe",
         "_tze204_4bjixefp",
         "_tze204_58of2pfn",
-        "_tze204_5slehgeo",
         "_tze204_6a4vxfnv",
         "_tze204_6fk3gewc",
         "_tze204_6vwfjkcj",
@@ -121866,7 +121871,6 @@
         "_tze284_4dosadbh",
         "_tze284_4hdbt6rn",
         "_tze284_5m4nchbm",
-        "_tze284_5slehgeo",
         "_tze284_5ys44kzo",
         "_tze284_6fopvb6v",
         "_tze284_6hrnp30w",
@@ -124780,7 +124784,11 @@
         "_tze200_gaj531w3",
         "_tze200_yia0p3tr",
         "_tze204_xu4a5rhj",
-        "_tze200_3ylew7b4"
+        "_tze200_3ylew7b4",
+        "_tze200_127x7wnl",
+        "_tze200_nhyj64w2",
+        "_tze204_5slehgeo",
+        "_tze284_5slehgeo"
       ],
       "modelIds": [
         "TS0302",
@@ -243222,15 +243230,6 @@
       ],
       "confidence": 0.25
     },
-    "_tze200_127x7wnl|ts0201": {
-      "mfr": "_tze200_127x7wnl",
-      "pid": "ts0201",
-      "driver": "climate_sensor",
-      "sources": [
-        "mfs_db"
-      ],
-      "confidence": 0.08
-    },
     "_tze200_1drr8tab|ts0201": {
       "mfr": "_tze200_1drr8tab",
       "pid": "ts0201",
@@ -244554,15 +244553,6 @@
       ],
       "confidence": 0.17
     },
-    "_tze200_nhyj64w2|ts0201": {
-      "mfr": "_tze200_nhyj64w2",
-      "pid": "ts0201",
-      "driver": "climate_sensor",
-      "sources": [
-        "mfs_db"
-      ],
-      "confidence": 0.08
-    },
     "_tze200_nojsjtj2|ts0201": {
       "mfr": "_tze200_nojsjtj2",
       "pid": "ts0201",
@@ -245807,15 +245797,6 @@
     },
     "_tze204_58of2pfn|ts0201": {
       "mfr": "_tze204_58of2pfn",
-      "pid": "ts0201",
-      "driver": "climate_sensor",
-      "sources": [
-        "mfs_db"
-      ],
-      "confidence": 0.08
-    },
-    "_tze204_5slehgeo|ts0201": {
-      "mfr": "_tze204_5slehgeo",
       "pid": "ts0201",
       "driver": "climate_sensor",
       "sources": [
@@ -247191,15 +247172,6 @@
         "mfs_db"
       ],
       "confidence": 0.17
-    },
-    "_tze284_5slehgeo|ts0201": {
-      "mfr": "_tze284_5slehgeo",
-      "pid": "ts0201",
-      "driver": "climate_sensor",
-      "sources": [
-        "mfs_db"
-      ],
-      "confidence": 0.08
     },
     "_tze284_5ys44kzo|ts0201": {
       "mfr": "_tze284_5ys44kzo",
@@ -326075,6 +326047,50 @@
       "locked": true,
       "source": "p2249-ts004x",
       "note": "Zemismart ZM-ZS-3 alt prefix"
+    },
+    "_tze200_127x7wnl|ts0601": {
+      "mfr": "_tze200_127x7wnl",
+      "pid": "ts0601",
+      "driver": "curtain_motor",
+      "sources": [
+        "github-533",
+        "z2m-moes-zts-eur-c"
+      ],
+      "confidence": 0.95,
+      "notes": "Moes ZTS-EUR-C curtain switch — never TRV/climate"
+    },
+    "_tze200_nhyj64w2|ts0601": {
+      "mfr": "_tze200_nhyj64w2",
+      "pid": "ts0601",
+      "driver": "curtain_motor",
+      "sources": [
+        "github-533",
+        "z2m-moes-zts-eur-c"
+      ],
+      "confidence": 0.95,
+      "notes": "Moes ZTS-EUR-C curtain switch — never TRV/climate"
+    },
+    "_tze204_5slehgeo|ts0601": {
+      "mfr": "_tze204_5slehgeo",
+      "pid": "ts0601",
+      "driver": "curtain_motor",
+      "sources": [
+        "github-533",
+        "z2m-moes-zts-eur-c"
+      ],
+      "confidence": 0.95,
+      "notes": "Moes ZTS-EUR-C curtain switch — never TRV/climate"
+    },
+    "_tze284_5slehgeo|ts0601": {
+      "mfr": "_tze284_5slehgeo",
+      "pid": "ts0601",
+      "driver": "curtain_motor",
+      "sources": [
+        "github-533",
+        "z2m-moes-zts-eur-c"
+      ],
+      "confidence": 0.95,
+      "notes": "Moes ZTS-EUR-C curtain switch — never TRV/climate"
     }
   },
   "_TZE204_ZG204Z": {

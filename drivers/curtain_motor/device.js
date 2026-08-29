@@ -43,8 +43,35 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
     return !this.hasCapability('measure_battery');
   }
 
+  // WHY(P2304): Moes ZTS-EUR-C (`_TZE204_5slehgeo`+TS0601) uses DP3=calib, DP7=backlight,
+  // DP8=motor reverse, DP10=calib seconds — not the generic cover lux/dim map.
+  _isMoesZtsEurC() {
+    const mfr = String(
+      this.getManufacturerName?.()
+      || this.getSetting?.('zb_manufacturer_name')
+      || this.getData?.()?.manufacturerName
+      || ''
+    ).toLowerCase();
+    return mfr.includes('5slehgeo')
+      || mfr.includes('nhyj64w2')
+      || mfr.includes('127x7wnl');
+  }
+
   // v5.5.322: Extended DP mappings with lux sensor and button support
   get dpMappings() {
+    if (this._isMoesZtsEurC()) {
+      return {
+        1: {
+          capability: 'windowcoverings_state',
+          transform: (v) => (v === 0 || v === 'open' ? 'up' : v === 2 || v === 'close' ? 'down' : 'idle'),
+        },
+        2: { capability: 'windowcoverings_set', transform: (v) => v / 100 },
+        3: { capability: null, internal: 'calibration', writable: true },
+        7: { capability: null, internal: 'backlight', writable: true },
+        8: { capability: null, internal: 'reverse', writable: true },
+        10: { capability: null, internal: 'open_time', writable: true },
+      };
+    }
     return {
       1: { capability: 'windowcoverings_state', transform: (v) => v === 0 || v === 'open' ? 'up' : v === 2 || v === 'close' ? 'down' : 'idle' },
       2: { capability: 'windowcoverings_set', transform: (v) => v / 100 },
@@ -98,7 +125,9 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
     // v5.5.322: Add luminance + button for Tuya DP curtains (Eftychis #779)
     // v5.8.40: Skip for TS130F ZCL curtains (Tbao forum: _TZ3000_bs93npae)
     const { protocol } = this._detectProtocol?.() || {};
-    if (protocol !== 'ZCL') {
+    const moesZts = this._isMoesZtsEurC();
+    // WHY(P2304): Moes ZTS-EUR-C wall switch — no lux/button robot extras
+    if (protocol !== 'ZCL' && !moesZts) {
       if (!this.hasCapability('measure_luminance')) {
         try {
           await this.addCapability('measure_luminance');
@@ -112,11 +141,13 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
         } catch (e) { /* ignore */ }
       }
     } else {
-      // v5.8.40: Remove wrong capabilities from TS130F ZCL curtains
-      for (const cap of ['measure_luminance', 'button', 'measure_battery']) {
+      const strip = protocol === 'ZCL'
+        ? ['measure_luminance', 'button', 'measure_battery']
+        : ['measure_luminance', 'button', 'dim', 'windowcoverings_tilt_set', 'measure_battery', 'alarm_battery'];
+      for (const cap of strip) {
         if (this.hasCapability(cap)) {
           this.removeCapability(cap).catch(() => {});
-          this.log(`[CURTAIN] 🗑️ Removed incorrect ${cap} from ZCL curtain`);
+          this.log(`[CURTAIN] 🗑️ Removed incorrect ${cap} from ${protocol === 'ZCL' ? 'ZCL' : 'Moes ZTS'} curtain`);
         }
       }
     }
