@@ -577,6 +577,21 @@ try {
     } else {
       console.log(`OK: 0 empty arrays across ${(manifest.drivers || []).length} drivers.`);
     }
+    // WHY: Homey publish requires zigbee.productId; deleting empty [] then fails
+    // with "should have required property 'productId'" (button_wireless_4_ts0041).
+    const missingPid = (manifest.drivers || []).filter((d) => {
+      if (!d.zigbee) return false;
+      const conn = [].concat(d.connectivity || []);
+      if (conn.length && !conn.includes('zigbee')) return false;
+      const p = d.zigbee.productId;
+      return !Array.isArray(p) || p.length === 0;
+    }).map((d) => d.id);
+    if (missingPid.length) {
+      console.error('FATAL: zigbee drivers missing non-empty productId after sanitize:');
+      for (const id of missingPid.slice(0, 30)) console.error(`  - ${id}`);
+      console.error('Fix driver.compose.json productId before publish (never ship productId: []).');
+      process.exit(1);
+    }
   } catch (valErr) {
     console.error('FATAL: could not sanitize driver arrays:', valErr.message);
     process.exit(1);

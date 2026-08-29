@@ -38,7 +38,9 @@
     ]
   },
   "zigbee": {
-    "productId": [],
+    "productId": [
+      "TS0601"
+    ],
     "endpoints": {
       "1": {
         "clusters": [

@@ -72,7 +72,9 @@
     ]
   },
   "zigbee": {
-    "productId": [],
+    "productId": [
+      "TS0041"
+    ],
     "learnmode": {
       "image": "/drivers/button_wireless_4/assets/learnmode.svg",
       "instruction": {
