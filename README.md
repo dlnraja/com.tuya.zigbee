@@ -33,7 +33,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.695 |
+| **App Version** | v9.0.697 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,380 |
 | **Pairing Variants** | 16,476 (4 case combos per fingerprint) |
@@ -102,6 +102,8 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.697** | P2309: gate empty productId (M15) so button_wireless_4_ts0041 cannot regress; lock yj6k7vfo\|TS0041 + Moes upt8lzi0 curtain sacred couples. |
+| **v9.0.696** | P2309: gate empty productId (M15) so button_wireless_4_ts0041 cannot regress; lock yj6k7vfo\|TS0041 + Moes upt8lzi0 curtain sacred couples. |
 | **v9.0.695** | P2308 , soft-fail wall dimmer IEEE writes (m1cvyneb), Moes Star Feather curtain lock (upt8lzi0). |
 | **v9.0.694** | P2308 Gmail diags: break SafeCapability recursion (#532), soft-fail wall dimmer IEEE writes (m1cvyneb), Moes Star Feather curtain lock (u… |
 | **v9.0.693** | Fix Homey publish: restore missing productId on button_wireless_4_ts0041 (TS0041) and soil_sensor_ec (TS0601). |
@@ -112,8 +114,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.688** | P2303: Adam K #532 FCU — arm from DP28/36/101 + Basic identity, DeviceIO TX cascade for OFF/setpoint |
 | **v9.0.687** | P2303: Adam K #532 FCU — arm from DP28/36/101 + Basic identity, DeviceIO TX cascade for OFF/setpoint |
 | **v9.0.686** | P2302: FCU thermostat OFF/setpoint (diag f84180b7) — fix FRAG false-positive on DP24, bool DP1→onoff, arm FCU listeners; gbm10jnj→button_… |
-| **v9.0.685** | P2302: FCU thermostat OFF/setpoint (diag f84180b7) — fix FRAG false-positive on DP24, bool DP1→onoff, arm FCU listeners; gbm10jnj→button_… |
-| **v9.0.684** | Fix wall thermostat crash on OFF (safeSetCapability recursion) for FCU/BAC006 couples; Athom draft wait soft-continues on . |
 
 <!-- CHANGELOG_END -->
 
