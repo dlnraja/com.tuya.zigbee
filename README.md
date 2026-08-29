@@ -4,11 +4,11 @@
 
 [![Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdlnraja%2Fcom.tuya.zigbee%2Fmaster%2Fapp.json&query=%24.version&label=version&color=blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![Drivers](https://img.shields.io/badge/drivers-431-brightgreen)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
-[![Fingerprints](https://img.shields.io/badge/fingerprints-4,379%20unique-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
+[![Fingerprints](https://img.shields.io/badge/fingerprints-4,380%20unique-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![SDK](https://img.shields.io/badge/SDK-3-orange)](https://apps.developer.homey.app/)
 [![License](https://img.shields.io/badge/license-GPL--3.0-green)](LICENSE)
 
-Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, sensors, lights, thermostats, covers, valves — **431 drivers**, **4,379 unique fingerprints**. No cloud required.
+Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, sensors, lights, thermostats, covers, valves — **431 drivers**, **4,380 unique fingerprints**. No cloud required.
 
 **What it does:**
 - Talks to devices on your Homey Zigbee mesh (Tuya DP `0xEF00` and standard ZCL)
@@ -33,10 +33,10 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.693 |
+| **App Version** | v9.0.695 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
-| **Unique Fingerprints** | 4,379 |
-| **Pairing Variants** | 16,472 (4 case combos per fingerprint) |
+| **Unique Fingerprints** | 4,380 |
+| **Pairing Variants** | 16,476 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 578 |
 | **Flow Cards** | 5,182 |
 | **Unique Capabilities** | 170 |
@@ -52,13 +52,13 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | # | Driver | Fingerprints |
 |---|--------|-------------|
 | 1 | `climate_sensor` | 2,360 |
-| 2 | `switch_1gang` | 1,700 |
+| 2 | `switch_1gang` | 1,696 |
 | 3 | `presence_sensor_radar` | 731 |
 | 4 | `radiator_valve` | 599 |
 | 5 | `button_wireless_2` | 574 |
 | 6 | `wall_dimmer_tuya` | 490 |
 | 7 | `generic_tuya` | 420 |
-| 8 | `curtain_motor` | 372 |
+| 8 | `curtain_motor` | 380 |
 | 9 | `device_radiator_valve` | 334 |
 | 10 | `switch_4gang` | 278 |
 | 11 | `switch_2gang` | 251 |
@@ -102,6 +102,8 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.695** | P2308 , soft-fail wall dimmer IEEE writes (m1cvyneb), Moes Star Feather curtain lock (upt8lzi0). |
+| **v9.0.694** | P2308 Gmail diags: break SafeCapability recursion (#532), soft-fail wall dimmer IEEE writes (m1cvyneb), Moes Star Feather curtain lock (u… |
 | **v9.0.693** | Fix Homey publish: restore missing productId on button_wireless_4_ts0041 (TS0041) and soil_sensor_ec (TS0601). |
 | **v9.0.692** | Fix Homey publish: restore missing productId on button_wireless_4_ts0041 (TS0041) and soil_sensor_ec (TS0601). |
 | **v9.0.691** | Restored sacred-couple productIds for pairing, Moes curtain lock, safer flow driver resolve, and 4-button gbm10jnj support. |
@@ -112,8 +114,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.686** | P2302: FCU thermostat OFF/setpoint (diag f84180b7) — fix FRAG false-positive on DP24, bool DP1→onoff, arm FCU listeners; gbm10jnj→button_… |
 | **v9.0.685** | P2302: FCU thermostat OFF/setpoint (diag f84180b7) — fix FRAG false-positive on DP24, bool DP1→onoff, arm FCU listeners; gbm10jnj→button_… |
 | **v9.0.684** | Fix wall thermostat crash on OFF (safeSetCapability recursion) for FCU/BAC006 couples; Athom draft wait soft-continues on . |
-| **v9.0.683** | Fix wall thermostat crash on OFF (safeSetCapability recursion) for FCU/BAC006 couples; Athom draft wait soft-continues on . |
-| **v9.0.682** | Fix wall thermostat crash on OFF (safeSetCapability recursion) for FCU/BAC006 couples; Athom draft wait soft-continues on . |
 
 <!-- CHANGELOG_END -->
 
