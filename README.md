@@ -33,7 +33,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.692 |
+| **App Version** | v9.0.693 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,379 |
 | **Pairing Variants** | 16,472 (4 case combos per fingerprint) |
@@ -102,7 +102,9 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
-| **v9.0.692** | Restored sacred-couple productIds for pairing, Moes curtain lock, safer flow driver resolve, and 4-button gbm10jnj support. |
+| **v9.0.693** | Fix Homey publish: restore missing productId on button_wireless_4_ts0041 (TS0041) and soil_sensor_ec (TS0601). |
+| **v9.0.692** | Fix Homey publish: restore missing productId on button_wireless_4_ts0041 (TS0041) and soil_sensor_ec (TS0601). |
+| **v9.0.691** | Restored sacred-couple productIds for pairing, Moes curtain lock, safer flow driver resolve, and 4-button gbm10jnj support. |
 | **v9.0.690** | Restored sacred-couple productIds for pairing, Moes curtain lock, safer flow driver resolve, and 4-button gbm10jnj support. |
 | **v9.0.689** | Improved Moes curtain switch pairing (ZTS-EUR-C) and Homey validate / forum poll CI gates. |
 | **v9.0.688** | P2303: Adam K #532 FCU — arm from DP28/36/101 + Basic identity, DeviceIO TX cascade for OFF/setpoint |
@@ -112,8 +114,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.684** | Fix wall thermostat crash on OFF (safeSetCapability recursion) for FCU/BAC006 couples; Athom draft wait soft-continues on . |
 | **v9.0.683** | Fix wall thermostat crash on OFF (safeSetCapability recursion) for FCU/BAC006 couples; Athom draft wait soft-continues on . |
 | **v9.0.682** | Fix wall thermostat crash on OFF (safeSetCapability recursion) for FCU/BAC006 couples; Athom draft wait soft-continues on . |
-| **v9.0.681** | Fix wall thermostat crash on OFF (safeSetCapability recursion) for FCU/BAC006 couples; Athom draft wait soft-continues on . |
-| **v9.0.680** | Fix wall thermostat crash on OFF (safeSetCapability recursion) for FCU/BAC006 couples; Athom draft wait soft-continues on token blips. |
 
 <!-- CHANGELOG_END -->
 

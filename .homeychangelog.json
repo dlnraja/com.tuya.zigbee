@@ -2615,5 +2615,8 @@
   },
   "9.0.692": {
     "en": "Fix Homey publish: restore missing productId on button_wireless_4_ts0041 (TS0041) and soil_sensor_ec (TS0601)."
+  },
+  "9.0.693": {
+    "en": "Fix Homey publish: restore missing productId on button_wireless_4_ts0041 (TS0041) and soil_sensor_ec (TS0601)."
   }
 }
