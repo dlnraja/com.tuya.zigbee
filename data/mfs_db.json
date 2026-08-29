@@ -136113,30 +136113,13 @@
     "modelIdsCount": 18
   },
   "_TZ3000_gbm10jnj": {
-    "driverId": "button_wireless_2",
-    "source": "auto-sync",
+    "driverId": "button_wireless_3",
+    "source": "P2302_z2m_zha_deconz",
     "modelIds": [
-      "TS0001",
-      "TS0002",
-      "TS0003",
-      "TS000F",
-      "TS0011",
-      "TS0012",
-      "TS0013",
-      "TS0014",
-      "TS0041",
-      "TS0042",
-      "TS0043",
-      "TS0044",
-      "TS0111",
-      "TS011F",
-      "TS0121",
-      "TS0215A",
-      "TS0601",
-      "TSO121"
+      "TS0043"
     ],
-    "pid": "TS0001",
-    "modelIdsCount": 18
+    "pid": "TS0043",
+    "modelIdsCount": 1
   },
   "_TZ3000_yw5tvzsk": {
     "driverId": "button_wireless_2",

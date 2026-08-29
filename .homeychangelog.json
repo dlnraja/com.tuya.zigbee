@@ -2591,5 +2591,8 @@
   },
   "9.0.684": {
     "en": "Fix wall thermostat crash on OFF (safeSetCapability recursion) for FCU/BAC006 couples; Athom draft wait soft-continues on ."
+  },
+  "9.0.685": {
+    "en": "P2302: FCU thermostat OFF/setpoint (diag f84180b7) — fix FRAG false-positive on DP24, bool DP1→onoff, arm FCU listeners; gbm10jnj→button_wireless_3 TS0043"
   }
 }
