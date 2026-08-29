@@ -82,14 +82,19 @@ class wall_dimmer_tuya extends TuyaSpecificClusterDevice {
   }
 
   async _setupGang(zclNode) {
+    // WHY(P2308 / Gmail `_TZE284_m1cvyneb`): never rethrow IEEE/token misses —
+    // Homey UI showed "none of the controls work" while writeBool logged and failed.
     this.registerCapabilityListener('onoff', async (value) => {
       if (typeof this.markAppCommand === 'function') {this.markAppCommand();}
       this.log('onoff:', value);
       try {
+        if (typeof this._ensureTuyaIo === 'function') {
+          await this._ensureTuyaIo(zclNode || this.zclNode);
+        }
         await this.writeBool(V1_SINGLE_GANG_DIMMER_SWITCH_DATA_POINTS.onOff, value);
       } catch (err) {
         this.error('Error when writing onOff:', err);
-        throw err;
+        // Soft-fail: keep Homey UI responsive; device may be offline/rejoining.
       }
     });
 
@@ -99,6 +104,9 @@ class wall_dimmer_tuya extends TuyaSpecificClusterDevice {
       this.log('brightness:', brightness);
 
       try {
+        if (typeof this._ensureTuyaIo === 'function') {
+          await this._ensureTuyaIo(zclNode || this.zclNode);
+        }
         if (brightness > 0 && !this.getCapabilityValue('onoff')) {
           this.log('Dim level is greater than 0, turning on device');
           await this.writeBool(V1_SINGLE_GANG_DIMMER_SWITCH_DATA_POINTS.onOff, true);
@@ -114,7 +122,6 @@ class wall_dimmer_tuya extends TuyaSpecificClusterDevice {
         }
       } catch (err) {
         this.error('Error when writing brightness:', err);
-        throw err;
       }
     });
   }

@@ -52,9 +52,12 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
       || this.getData?.()?.manufacturerName
       || ''
     ).toLowerCase();
+    // WHY(P2307): Moes Star Feather `_TZE284_upt8lzi0` shares ZTS DP family (1/2/3/7/8/10).
     return mfr.includes('5slehgeo')
       || mfr.includes('nhyj64w2')
-      || mfr.includes('127x7wnl');
+      || mfr.includes('127x7wnl')
+      || mfr.includes('upt8lzi0')
+      || mfr.includes('i8sdouy0');
   }
 
   // v5.5.322: Extended DP mappings with lux sensor and button support

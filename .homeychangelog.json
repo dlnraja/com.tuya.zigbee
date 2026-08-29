@@ -2618,5 +2618,8 @@
   },
   "9.0.693": {
     "en": "Fix Homey publish: restore missing productId on button_wireless_4_ts0041 (TS0041) and soil_sensor_ec (TS0601)."
+  },
+  "9.0.694": {
+    "en": "P2308 Gmail diags: break SafeCapability recursion (#532), soft-fail wall dimmer IEEE writes (m1cvyneb), Moes Star Feather curtain lock (upt8lzi0)."
   }
 }

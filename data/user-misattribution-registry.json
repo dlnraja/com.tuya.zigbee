@@ -4582,6 +4582,31 @@
       "forbidMode": "couple",
       "source": "github-533-salvagr + Z2M Moes ZTS-EUR-C",
       "notes": "Moes ZTS-EUR-C curtain. Forbid radiator only (mfr was there). Do NOT forbid wall_thermostat/climate/trv — coupleMode strip_pid would delete TS0601 from those drivers."
+    },
+    {
+      "id": "p2307-moes-star-feather-upt8lzi0",
+      "mfr": [
+        "_TZE284_upt8lzi0",
+        "_tze284_upt8lzi0",
+        "_TZE284_UPT8LZI0",
+        "_tze284_UPT8LZI0",
+        "_TZE28C1000000_i8sdouy0",
+        "_tze28c1000000_i8sdouy0",
+        "_TZE28C1000000_I8SDOUY0",
+        "_tze28c1000000_I8SDOUY0"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": "curtain_motor",
+      "forbiddenDrivers": [
+        "switch_1gang",
+        "switch_2gang",
+        "device_radiator_valve"
+      ],
+      "forbidMode": "couple",
+      "source": "Z2M moes ZS-SF-EUC-WH-MS",
+      "notes": "Moes Star Feather curtain. DPs same family as ZTS-EUR-C."
     }
   ]
 }
