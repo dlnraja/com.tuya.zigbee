@@ -17,6 +17,27 @@ const { EventEmitter } = require('events');
 EventEmitter.defaultMaxListeners = 50;
 
 const Homey = require('homey');
+
+// WHY(P2306/P2308): Homey flow serializer foreign driver URIs crash getDriver
+try {
+  const proto = Homey.ManagerDrivers && Homey.ManagerDrivers.prototype;
+  if (proto && typeof proto.getDriver === 'function' && !proto.__p2306SafeGetDriver) {
+    const orig = proto.getDriver;
+    proto.getDriver = function safeGetDriver(driverId) {
+      try { return orig.call(this, driverId); }
+      catch (err) {
+        const msg = String((err && err.message) || err || '');
+        if (/Invalid Driver ID/i.test(msg) || /virtualdriverzigbee/i.test(String(driverId || ''))) {
+          this.error && this.error('[P2306] getDriver soft-fail: ' + driverId + ' (' + msg + ')');
+          return null;
+        }
+        throw err;
+      }
+    };
+    proto.__p2306SafeGetDriver = true;
+  }
+} catch (_e) { /* best-effort */ }
+
 require('./lib/drivers/ZigBeeDriverFlowCardPatch');
 const { registerCustomClusters } = require('./lib/zigbee/registerClusters');
 const FlowCardManager = require('./lib/flow/FlowCardManager');

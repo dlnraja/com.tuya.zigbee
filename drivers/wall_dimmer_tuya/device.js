@@ -74,8 +74,7 @@ class wall_dimmer_tuya extends TuyaSpecificClusterDevice {
       try {
         await this.writeBool(V1_SINGLE_GANG_DIMMER_SWITCH_DATA_POINTS.onOff, value);
       } catch (err) {
-        this.error('Error when writing onOff:', err);
-        throw err;
+        this.error('Error when writing onOff:', err); // P2308 soft-fail
       }
     });
 
@@ -99,8 +98,7 @@ class wall_dimmer_tuya extends TuyaSpecificClusterDevice {
           await this['safeSetCapabilityValue']('onoff', false);
         }
       } catch (err) {
-        this.error('Error when writing brightness:', err);
-        throw err;
+        this.error('Error when writing brightness:', err); // P2308 soft-fail
       }
     });
   }
