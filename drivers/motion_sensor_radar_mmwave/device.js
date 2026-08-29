@@ -393,25 +393,29 @@ class MotionSensorRadarDevice extends UnifiedSensorBase {
   }
 
   async _linptechOnSettings({ oldSettings, newSettings, changedKeys }) {
-    const genericKeys = changedKeys.filter((k) => !isLinptechSettingKey(k));
-    if (genericKeys.length) {
-      await super.onSettings({ oldSettings, newSettings, changedKeys: genericKeys });
-    }
-
-    for (const key of changedKeys) {
-      if (!isLinptechSettingKey(key)) { continue; }
-      try {
-        await this._writeLinptechSetting(key, newSettings[key]);
-      } catch (err) {
-        // WHY P2263: some Moes firmwares reject LED 57353 (UNSUPPORTED_ATTRIBUTE) — soft-fail
-        if (isOptionalLinptechSetting(key)) {
-          this.log(`[MMWAVE][LINPTECH] optional setting ${key} skipped: ${err.message}`);
-          continue;
-        }
-        // WHY(P2289): A_Tas T158757/#2199 — Moes ES1 often rejects E002 attrs;
-        // never block Homey settings save (UI value still persists for retry).
-        this.error(`[MMWAVE][LINPTECH] settings save soft-fail ${key}: ${err.message}`);
+    try {
+      const genericKeys = changedKeys.filter((k) => !isLinptechSettingKey(k));
+      if (genericKeys.length) {
+        await super.onSettings({ oldSettings, newSettings, changedKeys: genericKeys });
       }
+
+      for (const key of changedKeys) {
+        if (!isLinptechSettingKey(key)) { continue; }
+        try {
+          await this._writeLinptechSetting(key, newSettings[key]);
+        } catch (err) {
+          // WHY P2263: some Moes firmwares reject LED 57353 (UNSUPPORTED_ATTRIBUTE) — soft-fail
+          if (isOptionalLinptechSetting(key)) {
+            this.log(`[MMWAVE][LINPTECH] optional setting ${key} skipped: ${err.message}`);
+            continue;
+          }
+          // WHY(P2289/P2298): A_Tas #2199 — never block Homey settings save UI
+          this.error(`[MMWAVE][LINPTECH] settings save soft-fail ${key}: ${err.message}`);
+        }
+      }
+    } catch (err) {
+      // Contre quoi: Homey red-banner "error saving" when any settings TX throws
+      this.error(`[MMWAVE][LINPTECH] onSettings outer soft-fail: ${err.message}`);
     }
   }
 
