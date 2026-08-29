@@ -32,7 +32,7 @@
       "realMfrsAdded": 5,
       "details": "tmp/synthetic-resolution.json + tmp/pruned21-resolution.json"
     },
-    "lastAlignedAt": "2026-08-28T22:08:44.973Z",
+    "lastAlignedAt": "2026-08-29T06:01:20.468Z",
     "alignTool": "align-mfs-db-intelligent@P169"
   },
   "sources": {
@@ -327932,5 +327932,37 @@
     "coupleLock": true,
     "updatedAt": "2026-08-28",
     "lastEnrichment": "p2295-multi-identity"
+  },
+  "_TZE284_60cnqlhn": {
+    "driverId": "din_rail_meter",
+    "source": "registry:tongou-to-q-sys-jzt-din-meter",
+    "modelIds": [
+      "TS0601"
+    ],
+    "pid": "TS0601",
+    "modelIdsCount": 1,
+    "forbidden": [
+      "smart_rcbo",
+      "climate_sensor",
+      "soil_sensor",
+      "generic_tuya"
+    ],
+    "notes": "P2299 OCR alias of 6ocnqlhn (diag 31e654a4)"
+  },
+  "_tze284_60cnqlhn": {
+    "driverId": "din_rail_meter",
+    "source": "registry:tongou-to-q-sys-jzt-din-meter",
+    "modelIds": [
+      "TS0601"
+    ],
+    "pid": "TS0601",
+    "modelIdsCount": 1,
+    "forbidden": [
+      "smart_rcbo",
+      "climate_sensor",
+      "soil_sensor",
+      "generic_tuya"
+    ],
+    "notes": "P2299 OCR alias of 6ocnqlhn (diag 31e654a4)"
   }
 }

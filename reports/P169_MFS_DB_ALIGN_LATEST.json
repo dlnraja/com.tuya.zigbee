@@ -1,21 +1,1792 @@
 {
-  "timestamp": "2026-08-28T22:11:57.629Z",
+  "timestamp": "2026-08-29T06:02:51.240Z",
   "gate": "align-mfs-db-intelligent",
   "apply": false,
   "check": true,
-  "changeCount": 4,
+  "changeCount": 278,
   "skippedCount": 36,
   "highSeverityCount": 0,
   "byAction": {
-    "registry_compose_strip_pid": 4
+    "registry_compose_strip_pid": 277,
+    "case_dedupe": 1
   },
   "changes": [
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE200_M6LWAZH9",
+      "pid": "TS0601",
+      "from": "wall_thermostat",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2297-m6lwazh9-tze200-ts0601-curtain"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE200_M6LWAZH9",
+      "pid": "TS0601",
+      "from": "device_radiator_valve",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2297-m6lwazh9-tze200-ts0601-curtain"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE200_M6LWAZH9",
+      "pid": "TS0601",
+      "from": "wall_dimmer_tuya",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2297-m6lwazh9-tze200-ts0601-curtain"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE200_M6LWAZH9",
+      "pid": "TS0601",
+      "from": "switch_1gang",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2297-m6lwazh9-tze200-ts0601-curtain"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_tze200_m6lwazh9",
+      "pid": "TS0601",
+      "from": "wall_thermostat",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2297-m6lwazh9-tze200-ts0601-curtain"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_tze200_m6lwazh9",
+      "pid": "TS0601",
+      "from": "device_radiator_valve",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2297-m6lwazh9-tze200-ts0601-curtain"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_tze200_m6lwazh9",
+      "pid": "TS0601",
+      "from": "wall_dimmer_tuya",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2297-m6lwazh9-tze200-ts0601-curtain"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_tze200_m6lwazh9",
+      "pid": "TS0601",
+      "from": "switch_1gang",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2297-m6lwazh9-tze200-ts0601-curtain"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE200_m6lwazh9",
+      "pid": "TS0601",
+      "from": "wall_thermostat",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2297-m6lwazh9-tze200-ts0601-curtain"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE200_m6lwazh9",
+      "pid": "TS0601",
+      "from": "device_radiator_valve",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2297-m6lwazh9-tze200-ts0601-curtain"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE200_m6lwazh9",
+      "pid": "TS0601",
+      "from": "wall_dimmer_tuya",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2297-m6lwazh9-tze200-ts0601-curtain"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE200_m6lwazh9",
+      "pid": "TS0601",
+      "from": "switch_1gang",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2297-m6lwazh9-tze200-ts0601-curtain"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE204_PW7MJI0L",
+      "pid": "TS0601",
+      "from": "climate_sensor",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2295-zemismart-cover-siblings"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE204_PW7MJI0L",
+      "pid": "TS0601",
+      "from": "wall_thermostat",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2295-zemismart-cover-siblings"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE204_PW7MJI0L",
+      "pid": "TS0601",
+      "from": "device_radiator_valve",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2295-zemismart-cover-siblings"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE204_pw7mji0l",
+      "pid": "TS0601",
+      "from": "climate_sensor",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2295-zemismart-cover-siblings"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE204_pw7mji0l",
+      "pid": "TS0601",
+      "from": "wall_thermostat",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2295-zemismart-cover-siblings"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE204_pw7mji0l",
+      "pid": "TS0601",
+      "from": "device_radiator_valve",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2295-zemismart-cover-siblings"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_tze204_pw7mji0l",
+      "pid": "TS0601",
+      "from": "climate_sensor",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2295-zemismart-cover-siblings"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_tze204_pw7mji0l",
+      "pid": "TS0601",
+      "from": "wall_thermostat",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2295-zemismart-cover-siblings"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_tze204_pw7mji0l",
+      "pid": "TS0601",
+      "from": "device_radiator_valve",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2295-zemismart-cover-siblings"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE204_EJH6OWWZ",
+      "pid": "TS0601",
+      "from": "climate_sensor",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2295-zemismart-cover-siblings"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE204_EJH6OWWZ",
+      "pid": "TS0601",
+      "from": "wall_thermostat",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2295-zemismart-cover-siblings"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE204_EJH6OWWZ",
+      "pid": "TS0601",
+      "from": "device_radiator_valve",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2295-zemismart-cover-siblings"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE204_ejh6owwz",
+      "pid": "TS0601",
+      "from": "climate_sensor",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2295-zemismart-cover-siblings"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE204_ejh6owwz",
+      "pid": "TS0601",
+      "from": "wall_thermostat",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2295-zemismart-cover-siblings"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE204_ejh6owwz",
+      "pid": "TS0601",
+      "from": "device_radiator_valve",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2295-zemismart-cover-siblings"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_tze204_ejh6owwz",
+      "pid": "TS0601",
+      "from": "climate_sensor",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2295-zemismart-cover-siblings"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_tze204_ejh6owwz",
+      "pid": "TS0601",
+      "from": "wall_thermostat",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2295-zemismart-cover-siblings"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_tze204_ejh6owwz",
+      "pid": "TS0601",
+      "from": "device_radiator_valve",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2295-zemismart-cover-siblings"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE200_VEXA5O82",
+      "pid": "TS0601",
+      "from": "climate_sensor",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2295-zemismart-cover-siblings"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE200_VEXA5O82",
+      "pid": "TS0601",
+      "from": "wall_thermostat",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2295-zemismart-cover-siblings"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE200_VEXA5O82",
+      "pid": "TS0601",
+      "from": "device_radiator_valve",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2295-zemismart-cover-siblings"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE200_vexa5o82",
+      "pid": "TS0601",
+      "from": "climate_sensor",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2295-zemismart-cover-siblings"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE200_vexa5o82",
+      "pid": "TS0601",
+      "from": "wall_thermostat",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2295-zemismart-cover-siblings"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE200_vexa5o82",
+      "pid": "TS0601",
+      "from": "device_radiator_valve",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2295-zemismart-cover-siblings"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_tze200_vexa5o82",
+      "pid": "TS0601",
+      "from": "climate_sensor",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2295-zemismart-cover-siblings"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_tze200_vexa5o82",
+      "pid": "TS0601",
+      "from": "wall_thermostat",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2295-zemismart-cover-siblings"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_tze200_vexa5o82",
+      "pid": "TS0601",
+      "from": "device_radiator_valve",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2295-zemismart-cover-siblings"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE200_SFQYHVPV",
+      "pid": "TS0601",
+      "from": "climate_sensor",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2295-zemismart-cover-siblings"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE200_SFQYHVPV",
+      "pid": "TS0601",
+      "from": "wall_thermostat",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2295-zemismart-cover-siblings"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE200_SFQYHVPV",
+      "pid": "TS0601",
+      "from": "device_radiator_valve",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2295-zemismart-cover-siblings"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE200_sfqyhvpv",
+      "pid": "TS0601",
+      "from": "climate_sensor",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2295-zemismart-cover-siblings"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE200_sfqyhvpv",
+      "pid": "TS0601",
+      "from": "wall_thermostat",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2295-zemismart-cover-siblings"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE200_sfqyhvpv",
+      "pid": "TS0601",
+      "from": "device_radiator_valve",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2295-zemismart-cover-siblings"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_tze200_sfqyhvpv",
+      "pid": "TS0601",
+      "from": "climate_sensor",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2295-zemismart-cover-siblings"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_tze200_sfqyhvpv",
+      "pid": "TS0601",
+      "from": "wall_thermostat",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2295-zemismart-cover-siblings"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_tze200_sfqyhvpv",
+      "pid": "TS0601",
+      "from": "device_radiator_valve",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2295-zemismart-cover-siblings"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE200_PW7MJI0L",
+      "pid": "TS0601",
+      "from": "climate_sensor",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2295-zemismart-cover-siblings"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE200_PW7MJI0L",
+      "pid": "TS0601",
+      "from": "wall_thermostat",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2295-zemismart-cover-siblings"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE200_PW7MJI0L",
+      "pid": "TS0601",
+      "from": "device_radiator_valve",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2295-zemismart-cover-siblings"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE200_pw7mji0l",
+      "pid": "TS0601",
+      "from": "climate_sensor",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2295-zemismart-cover-siblings"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE200_pw7mji0l",
+      "pid": "TS0601",
+      "from": "wall_thermostat",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2295-zemismart-cover-siblings"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE200_pw7mji0l",
+      "pid": "TS0601",
+      "from": "device_radiator_valve",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2295-zemismart-cover-siblings"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_tze200_pw7mji0l",
+      "pid": "TS0601",
+      "from": "climate_sensor",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2295-zemismart-cover-siblings"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_tze200_pw7mji0l",
+      "pid": "TS0601",
+      "from": "wall_thermostat",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2295-zemismart-cover-siblings"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_tze200_pw7mji0l",
+      "pid": "TS0601",
+      "from": "device_radiator_valve",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2295-zemismart-cover-siblings"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE200_NW1R9HP6",
+      "pid": "TS0601",
+      "from": "climate_sensor",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2295-zemismart-cover-siblings"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE200_NW1R9HP6",
+      "pid": "TS0601",
+      "from": "wall_thermostat",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2295-zemismart-cover-siblings"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE200_NW1R9HP6",
+      "pid": "TS0601",
+      "from": "device_radiator_valve",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2295-zemismart-cover-siblings"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE200_nw1r9hp6",
+      "pid": "TS0601",
+      "from": "climate_sensor",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2295-zemismart-cover-siblings"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE200_nw1r9hp6",
+      "pid": "TS0601",
+      "from": "wall_thermostat",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2295-zemismart-cover-siblings"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE200_nw1r9hp6",
+      "pid": "TS0601",
+      "from": "device_radiator_valve",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2295-zemismart-cover-siblings"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_tze200_nw1r9hp6",
+      "pid": "TS0601",
+      "from": "climate_sensor",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2295-zemismart-cover-siblings"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_tze200_nw1r9hp6",
+      "pid": "TS0601",
+      "from": "wall_thermostat",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2295-zemismart-cover-siblings"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_tze200_nw1r9hp6",
+      "pid": "TS0601",
+      "from": "device_radiator_valve",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2295-zemismart-cover-siblings"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE200_EEVQQ1UV",
+      "pid": "TS0601",
+      "from": "climate_sensor",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2295-zemismart-cover-siblings"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE200_EEVQQ1UV",
+      "pid": "TS0601",
+      "from": "wall_thermostat",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2295-zemismart-cover-siblings"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE200_EEVQQ1UV",
+      "pid": "TS0601",
+      "from": "device_radiator_valve",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2295-zemismart-cover-siblings"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE200_eevqq1uv",
+      "pid": "TS0601",
+      "from": "climate_sensor",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2295-zemismart-cover-siblings"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE200_eevqq1uv",
+      "pid": "TS0601",
+      "from": "wall_thermostat",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2295-zemismart-cover-siblings"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE200_eevqq1uv",
+      "pid": "TS0601",
+      "from": "device_radiator_valve",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2295-zemismart-cover-siblings"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_tze200_eevqq1uv",
+      "pid": "TS0601",
+      "from": "climate_sensor",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2295-zemismart-cover-siblings"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_tze200_eevqq1uv",
+      "pid": "TS0601",
+      "from": "wall_thermostat",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2295-zemismart-cover-siblings"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_tze200_eevqq1uv",
+      "pid": "TS0601",
+      "from": "device_radiator_valve",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2295-zemismart-cover-siblings"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE200_BA69L9OL",
+      "pid": "TS0601",
+      "from": "climate_sensor",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2295-zemismart-cover-siblings"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE200_BA69L9OL",
+      "pid": "TS0601",
+      "from": "wall_thermostat",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2295-zemismart-cover-siblings"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE200_BA69L9OL",
+      "pid": "TS0601",
+      "from": "device_radiator_valve",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2295-zemismart-cover-siblings"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE200_ba69l9ol",
+      "pid": "TS0601",
+      "from": "climate_sensor",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2295-zemismart-cover-siblings"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE200_ba69l9ol",
+      "pid": "TS0601",
+      "from": "wall_thermostat",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2295-zemismart-cover-siblings"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE200_ba69l9ol",
+      "pid": "TS0601",
+      "from": "device_radiator_valve",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2295-zemismart-cover-siblings"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_tze200_ba69l9ol",
+      "pid": "TS0601",
+      "from": "climate_sensor",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2295-zemismart-cover-siblings"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_tze200_ba69l9ol",
+      "pid": "TS0601",
+      "from": "wall_thermostat",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2295-zemismart-cover-siblings"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_tze200_ba69l9ol",
+      "pid": "TS0601",
+      "from": "device_radiator_valve",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2295-zemismart-cover-siblings"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE200_9P5XMJ5R",
+      "pid": "TS0601",
+      "from": "climate_sensor",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2295-zemismart-cover-siblings"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE200_9P5XMJ5R",
+      "pid": "TS0601",
+      "from": "wall_thermostat",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2295-zemismart-cover-siblings"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE200_9P5XMJ5R",
+      "pid": "TS0601",
+      "from": "device_radiator_valve",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2295-zemismart-cover-siblings"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE200_9p5xmj5r",
+      "pid": "TS0601",
+      "from": "climate_sensor",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2295-zemismart-cover-siblings"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE200_9p5xmj5r",
+      "pid": "TS0601",
+      "from": "wall_thermostat",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2295-zemismart-cover-siblings"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE200_9p5xmj5r",
+      "pid": "TS0601",
+      "from": "device_radiator_valve",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2295-zemismart-cover-siblings"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_tze200_9p5xmj5r",
+      "pid": "TS0601",
+      "from": "climate_sensor",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2295-zemismart-cover-siblings"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_tze200_9p5xmj5r",
+      "pid": "TS0601",
+      "from": "wall_thermostat",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2295-zemismart-cover-siblings"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_tze200_9p5xmj5r",
+      "pid": "TS0601",
+      "from": "device_radiator_valve",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2295-zemismart-cover-siblings"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE200_68NVBI09",
+      "pid": "TS0601",
+      "from": "climate_sensor",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2295-zemismart-68nvbi09-typo-curtain"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE200_68NVBI09",
+      "pid": "TS0601",
+      "from": "wall_thermostat",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2295-zemismart-68nvbi09-typo-curtain"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE200_68NVBI09",
+      "pid": "TS0601",
+      "from": "device_radiator_valve",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2295-zemismart-68nvbi09-typo-curtain"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE200_68nvbi09",
+      "pid": "TS0601",
+      "from": "climate_sensor",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2295-zemismart-68nvbi09-typo-curtain"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE200_68nvbi09",
+      "pid": "TS0601",
+      "from": "wall_thermostat",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2295-zemismart-68nvbi09-typo-curtain"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE200_68nvbi09",
+      "pid": "TS0601",
+      "from": "device_radiator_valve",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2295-zemismart-68nvbi09-typo-curtain"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_tze200_68nvbi09",
+      "pid": "TS0601",
+      "from": "climate_sensor",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2295-zemismart-68nvbi09-typo-curtain"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_tze200_68nvbi09",
+      "pid": "TS0601",
+      "from": "wall_thermostat",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2295-zemismart-68nvbi09-typo-curtain"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_tze200_68nvbi09",
+      "pid": "TS0601",
+      "from": "device_radiator_valve",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2295-zemismart-68nvbi09-typo-curtain"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE204_3EJWXPMU",
+      "pid": "TS0601",
+      "from": "soil_sensor",
+      "to": "air_quality_co2",
+      "removed": 1,
+      "caseId": "p2295-3ejwxpmu-co2-sibling"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE204_3EJWXPMU",
+      "pid": "TS0601",
+      "from": "climate_sensor_zt08",
+      "to": "air_quality_co2",
+      "removed": 1,
+      "caseId": "p2295-3ejwxpmu-co2-sibling"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE204_3EJWXPMU",
+      "pid": "TS0601",
+      "from": "climate_sensor",
+      "to": "air_quality_co2",
+      "removed": 1,
+      "caseId": "p2295-3ejwxpmu-co2-sibling"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE204_3ejwxpmu",
+      "pid": "TS0601",
+      "from": "soil_sensor",
+      "to": "air_quality_co2",
+      "removed": 1,
+      "caseId": "p2295-3ejwxpmu-co2-sibling"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE204_3ejwxpmu",
+      "pid": "TS0601",
+      "from": "climate_sensor_zt08",
+      "to": "air_quality_co2",
+      "removed": 1,
+      "caseId": "p2295-3ejwxpmu-co2-sibling"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE204_3ejwxpmu",
+      "pid": "TS0601",
+      "from": "climate_sensor",
+      "to": "air_quality_co2",
+      "removed": 1,
+      "caseId": "p2295-3ejwxpmu-co2-sibling"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_tze204_3ejwxpmu",
+      "pid": "TS0601",
+      "from": "soil_sensor",
+      "to": "air_quality_co2",
+      "removed": 1,
+      "caseId": "p2295-3ejwxpmu-co2-sibling"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_tze204_3ejwxpmu",
+      "pid": "TS0601",
+      "from": "climate_sensor_zt08",
+      "to": "air_quality_co2",
+      "removed": 1,
+      "caseId": "p2295-3ejwxpmu-co2-sibling"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_tze204_3ejwxpmu",
+      "pid": "TS0601",
+      "from": "climate_sensor",
+      "to": "air_quality_co2",
+      "removed": 1,
+      "caseId": "p2295-3ejwxpmu-co2-sibling"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE200_3EJWXPMU",
+      "pid": "TS0601",
+      "from": "soil_sensor",
+      "to": "air_quality_co2",
+      "removed": 1,
+      "caseId": "p2295-3ejwxpmu-co2-sibling"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE200_3EJWXPMU",
+      "pid": "TS0601",
+      "from": "climate_sensor_zt08",
+      "to": "air_quality_co2",
+      "removed": 1,
+      "caseId": "p2295-3ejwxpmu-co2-sibling"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE200_3EJWXPMU",
+      "pid": "TS0601",
+      "from": "climate_sensor",
+      "to": "air_quality_co2",
+      "removed": 1,
+      "caseId": "p2295-3ejwxpmu-co2-sibling"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE200_3ejwxpmu",
+      "pid": "TS0601",
+      "from": "soil_sensor",
+      "to": "air_quality_co2",
+      "removed": 1,
+      "caseId": "p2295-3ejwxpmu-co2-sibling"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE200_3ejwxpmu",
+      "pid": "TS0601",
+      "from": "climate_sensor_zt08",
+      "to": "air_quality_co2",
+      "removed": 1,
+      "caseId": "p2295-3ejwxpmu-co2-sibling"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE200_3ejwxpmu",
+      "pid": "TS0601",
+      "from": "climate_sensor",
+      "to": "air_quality_co2",
+      "removed": 1,
+      "caseId": "p2295-3ejwxpmu-co2-sibling"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_tze200_3ejwxpmu",
+      "pid": "TS0601",
+      "from": "soil_sensor",
+      "to": "air_quality_co2",
+      "removed": 1,
+      "caseId": "p2295-3ejwxpmu-co2-sibling"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_tze200_3ejwxpmu",
+      "pid": "TS0601",
+      "from": "climate_sensor_zt08",
+      "to": "air_quality_co2",
+      "removed": 1,
+      "caseId": "p2295-3ejwxpmu-co2-sibling"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_tze200_3ejwxpmu",
+      "pid": "TS0601",
+      "from": "climate_sensor",
+      "to": "air_quality_co2",
+      "removed": 1,
+      "caseId": "p2295-3ejwxpmu-co2-sibling"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE200_CF1SL3TJ",
+      "pid": "TS0601",
+      "from": "wall_thermostat",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2293-zemismart-cf1sl3tj-curtain-not-trv"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE200_CF1SL3TJ",
+      "pid": "TS0601",
+      "from": "device_radiator_valve",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2293-zemismart-cf1sl3tj-curtain-not-trv"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE200_CF1SL3TJ",
+      "pid": "TS0601",
+      "from": "climate_sensor",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2293-zemismart-cf1sl3tj-curtain-not-trv"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE200_cf1sl3tj",
+      "pid": "TS0601",
+      "from": "wall_thermostat",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2293-zemismart-cf1sl3tj-curtain-not-trv"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE200_cf1sl3tj",
+      "pid": "TS0601",
+      "from": "device_radiator_valve",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2293-zemismart-cf1sl3tj-curtain-not-trv"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE200_cf1sl3tj",
+      "pid": "TS0601",
+      "from": "climate_sensor",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2293-zemismart-cf1sl3tj-curtain-not-trv"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_tze200_cf1sl3tj",
+      "pid": "TS0601",
+      "from": "wall_thermostat",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2293-zemismart-cf1sl3tj-curtain-not-trv"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_tze200_cf1sl3tj",
+      "pid": "TS0601",
+      "from": "device_radiator_valve",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2293-zemismart-cf1sl3tj-curtain-not-trv"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_tze200_cf1sl3tj",
+      "pid": "TS0601",
+      "from": "climate_sensor",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2293-zemismart-cf1sl3tj-curtain-not-trv"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE204_68NVBIO9",
+      "pid": "TS0601",
+      "from": "wall_thermostat",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2293-zemismart-68nvbio9-curtain-not-trv"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE204_68NVBIO9",
+      "pid": "TS0601",
+      "from": "device_radiator_valve",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2293-zemismart-68nvbio9-curtain-not-trv"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE204_68NVBIO9",
+      "pid": "TS0601",
+      "from": "climate_sensor",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2293-zemismart-68nvbio9-curtain-not-trv"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE204_68nvbio9",
+      "pid": "TS0601",
+      "from": "wall_thermostat",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2293-zemismart-68nvbio9-curtain-not-trv"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE204_68nvbio9",
+      "pid": "TS0601",
+      "from": "device_radiator_valve",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2293-zemismart-68nvbio9-curtain-not-trv"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE204_68nvbio9",
+      "pid": "TS0601",
+      "from": "climate_sensor",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2293-zemismart-68nvbio9-curtain-not-trv"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_tze204_68nvbio9",
+      "pid": "TS0601",
+      "from": "wall_thermostat",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2293-zemismart-68nvbio9-curtain-not-trv"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_tze204_68nvbio9",
+      "pid": "TS0601",
+      "from": "device_radiator_valve",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2293-zemismart-68nvbio9-curtain-not-trv"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_tze204_68nvbio9",
+      "pid": "TS0601",
+      "from": "climate_sensor",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2293-zemismart-68nvbio9-curtain-not-trv"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE200_68NVBIO9",
+      "pid": "TS0601",
+      "from": "wall_thermostat",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2293-zemismart-68nvbio9-curtain-not-trv"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE200_68NVBIO9",
+      "pid": "TS0601",
+      "from": "device_radiator_valve",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2293-zemismart-68nvbio9-curtain-not-trv"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE200_68NVBIO9",
+      "pid": "TS0601",
+      "from": "climate_sensor",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2293-zemismart-68nvbio9-curtain-not-trv"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE200_68nvbio9",
+      "pid": "TS0601",
+      "from": "wall_thermostat",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2293-zemismart-68nvbio9-curtain-not-trv"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE200_68nvbio9",
+      "pid": "TS0601",
+      "from": "device_radiator_valve",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2293-zemismart-68nvbio9-curtain-not-trv"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE200_68nvbio9",
+      "pid": "TS0601",
+      "from": "climate_sensor",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2293-zemismart-68nvbio9-curtain-not-trv"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_tze200_68nvbio9",
+      "pid": "TS0601",
+      "from": "wall_thermostat",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2293-zemismart-68nvbio9-curtain-not-trv"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_tze200_68nvbio9",
+      "pid": "TS0601",
+      "from": "device_radiator_valve",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2293-zemismart-68nvbio9-curtain-not-trv"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_tze200_68nvbio9",
+      "pid": "TS0601",
+      "from": "climate_sensor",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2293-zemismart-68nvbio9-curtain-not-trv"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_tz3000_b4awzgct",
+      "pid": "TS0041",
+      "from": "button_wireless_4_ts0041",
+      "to": "button_wireless_1",
+      "removed": 1,
+      "caseId": "p2285-sh-sc07-siblings-ts0041"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZ3000_b4awzgct",
+      "pid": "TS0041",
+      "from": "button_wireless_4_ts0041",
+      "to": "button_wireless_1",
+      "removed": 1,
+      "caseId": "p2285-sh-sc07-siblings-ts0041"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_tz3000_5bpeda8u",
+      "pid": "TS0041",
+      "from": "button_wireless_4_ts0041",
+      "to": "button_wireless_1",
+      "removed": 1,
+      "caseId": "p2285-sh-sc07-siblings-ts0041"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZ3000_5bpeda8u",
+      "pid": "TS0041",
+      "from": "button_wireless_4_ts0041",
+      "to": "button_wireless_1",
+      "removed": 1,
+      "caseId": "p2285-sh-sc07-siblings-ts0041"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZ3000_MRPEVH8P",
+      "pid": "TS0041",
+      "from": "button_wireless_4_ts0041",
+      "to": "button_wireless_1",
+      "removed": 1,
+      "caseId": "p2282-mrpevh8p-ts0041-button"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZ3000_mrpevh8p",
+      "pid": "TS0041",
+      "from": "button_wireless_4_ts0041",
+      "to": "button_wireless_1",
+      "removed": 1,
+      "caseId": "p2282-mrpevh8p-ts0041-button"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_tz3000_MRPEVH8P",
+      "pid": "TS0041",
+      "from": "button_wireless_4_ts0041",
+      "to": "button_wireless_1",
+      "removed": 1,
+      "caseId": "p2282-mrpevh8p-ts0041-button"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_tz3000_mrpevh8p",
+      "pid": "TS0041",
+      "from": "button_wireless_4_ts0041",
+      "to": "button_wireless_1",
+      "removed": 1,
+      "caseId": "p2282-mrpevh8p-ts0041-button"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE204_OGKDPGY2",
+      "pid": "TS0601",
+      "from": "soil_sensor",
+      "to": "air_quality_co2",
+      "removed": 1,
+      "caseId": "p2291-ogkdpgy2-co2-not-climate"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE204_OGKDPGY2",
+      "pid": "TS0601",
+      "from": "climate_sensor_zt08",
+      "to": "air_quality_co2",
+      "removed": 1,
+      "caseId": "p2291-ogkdpgy2-co2-not-climate"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE204_OGKDPGY2",
+      "pid": "TS0601",
+      "from": "climate_sensor",
+      "to": "air_quality_co2",
+      "removed": 1,
+      "caseId": "p2291-ogkdpgy2-co2-not-climate"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE204_ogkdpgy2",
+      "pid": "TS0601",
+      "from": "soil_sensor",
+      "to": "air_quality_co2",
+      "removed": 1,
+      "caseId": "p2291-ogkdpgy2-co2-not-climate"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE204_ogkdpgy2",
+      "pid": "TS0601",
+      "from": "climate_sensor_zt08",
+      "to": "air_quality_co2",
+      "removed": 1,
+      "caseId": "p2291-ogkdpgy2-co2-not-climate"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE204_ogkdpgy2",
+      "pid": "TS0601",
+      "from": "climate_sensor",
+      "to": "air_quality_co2",
+      "removed": 1,
+      "caseId": "p2291-ogkdpgy2-co2-not-climate"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_tze204_ogkdpgy2",
+      "pid": "TS0601",
+      "from": "soil_sensor",
+      "to": "air_quality_co2",
+      "removed": 1,
+      "caseId": "p2291-ogkdpgy2-co2-not-climate"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_tze204_ogkdpgy2",
+      "pid": "TS0601",
+      "from": "climate_sensor_zt08",
+      "to": "air_quality_co2",
+      "removed": 1,
+      "caseId": "p2291-ogkdpgy2-co2-not-climate"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_tze204_ogkdpgy2",
+      "pid": "TS0601",
+      "from": "climate_sensor",
+      "to": "air_quality_co2",
+      "removed": 1,
+      "caseId": "p2291-ogkdpgy2-co2-not-climate"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE200_OGKDPGY2",
+      "pid": "TS0601",
+      "from": "soil_sensor",
+      "to": "air_quality_co2",
+      "removed": 1,
+      "caseId": "p2291-ogkdpgy2-co2-not-climate"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE200_OGKDPGY2",
+      "pid": "TS0601",
+      "from": "climate_sensor_zt08",
+      "to": "air_quality_co2",
+      "removed": 1,
+      "caseId": "p2291-ogkdpgy2-co2-not-climate"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE200_OGKDPGY2",
+      "pid": "TS0601",
+      "from": "climate_sensor",
+      "to": "air_quality_co2",
+      "removed": 1,
+      "caseId": "p2291-ogkdpgy2-co2-not-climate"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE200_ogkdpgy2",
+      "pid": "TS0601",
+      "from": "soil_sensor",
+      "to": "air_quality_co2",
+      "removed": 1,
+      "caseId": "p2291-ogkdpgy2-co2-not-climate"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE200_ogkdpgy2",
+      "pid": "TS0601",
+      "from": "climate_sensor_zt08",
+      "to": "air_quality_co2",
+      "removed": 1,
+      "caseId": "p2291-ogkdpgy2-co2-not-climate"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE200_ogkdpgy2",
+      "pid": "TS0601",
+      "from": "climate_sensor",
+      "to": "air_quality_co2",
+      "removed": 1,
+      "caseId": "p2291-ogkdpgy2-co2-not-climate"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_tze200_ogkdpgy2",
+      "pid": "TS0601",
+      "from": "soil_sensor",
+      "to": "air_quality_co2",
+      "removed": 1,
+      "caseId": "p2291-ogkdpgy2-co2-not-climate"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_tze200_ogkdpgy2",
+      "pid": "TS0601",
+      "from": "climate_sensor_zt08",
+      "to": "air_quality_co2",
+      "removed": 1,
+      "caseId": "p2291-ogkdpgy2-co2-not-climate"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_tze200_ogkdpgy2",
+      "pid": "TS0601",
+      "from": "climate_sensor",
+      "to": "air_quality_co2",
+      "removed": 1,
+      "caseId": "p2291-ogkdpgy2-co2-not-climate"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE200_mvtclclq",
+      "pid": "TS0601",
+      "from": "climate_sensor",
+      "to": "usb_outlet_advanced",
+      "removed": 1,
+      "caseId": "p2279-mvtclclq-usb-not-dimmer"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE200_mvtclclq",
+      "pid": "TS0601",
+      "from": "device_radiator_valve",
+      "to": "usb_outlet_advanced",
+      "removed": 1,
+      "caseId": "p2279-mvtclclq-usb-not-dimmer"
+    },
     {
       "severity": "medium",
       "action": "registry_compose_strip_pid",
       "mfr": "_TZE200_mvtclclq",
       "pid": "TS0601",
       "from": "wall_dimmer_tuya",
+      "to": "usb_outlet_advanced",
+      "removed": 1,
+      "caseId": "p2279-mvtclclq-usb-not-dimmer"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE284_mvtclclq",
+      "pid": "TS0601",
+      "from": "climate_sensor",
+      "to": "usb_outlet_advanced",
+      "removed": 1,
+      "caseId": "p2279-mvtclclq-usb-not-dimmer"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE284_mvtclclq",
+      "pid": "TS0601",
+      "from": "device_radiator_valve",
       "to": "usb_outlet_advanced",
       "removed": 1,
       "caseId": "p2279-mvtclclq-usb-not-dimmer"
@@ -35,6 +1806,26 @@
       "action": "registry_compose_strip_pid",
       "mfr": "_TZE204_mvtclclq",
       "pid": "TS0601",
+      "from": "climate_sensor",
+      "to": "usb_outlet_advanced",
+      "removed": 1,
+      "caseId": "p2279-mvtclclq-usb-not-dimmer"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE204_mvtclclq",
+      "pid": "TS0601",
+      "from": "device_radiator_valve",
+      "to": "usb_outlet_advanced",
+      "removed": 1,
+      "caseId": "p2279-mvtclclq-usb-not-dimmer"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE204_mvtclclq",
+      "pid": "TS0601",
       "from": "wall_dimmer_tuya",
       "to": "usb_outlet_advanced",
       "removed": 1,
@@ -43,12 +1834,182 @@
     {
       "severity": "medium",
       "action": "registry_compose_strip_pid",
-      "mfr": "_TZE284_kq1l5eu5",
+      "mfr": "_TZE284_1fuxihti",
       "pid": "TS0601",
-      "from": "curtain_motor",
-      "to": "wall_curtain_switch",
+      "from": "wall_curtain_switch",
+      "to": "curtain_motor",
       "removed": 1,
-      "caseId": "p2271-kq1l5eu5-moes-curtain"
+      "caseId": "p2279-1fuxihti-cover-not-climate"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE284_1fuxihti",
+      "pid": "TS0601",
+      "from": "climate_sensor",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2279-1fuxihti-cover-not-climate"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE204_1fuxihti",
+      "pid": "TS0601",
+      "from": "wall_curtain_switch",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2279-1fuxihti-cover-not-climate"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE204_1fuxihti",
+      "pid": "TS0601",
+      "from": "climate_sensor",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2279-1fuxihti-cover-not-climate"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE200_1fuxihti",
+      "pid": "TS0601",
+      "from": "wall_curtain_switch",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2279-1fuxihti-cover-not-climate"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE200_1fuxihti",
+      "pid": "TS0601",
+      "from": "climate_sensor",
+      "to": "curtain_motor",
+      "removed": 1,
+      "caseId": "p2279-1fuxihti-cover-not-climate"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_tze284_ogx8u5z6",
+      "pid": "TS0601",
+      "from": "wall_thermostat",
+      "to": "device_radiator_valve",
+      "removed": 1,
+      "caseId": "p2278-ogx8u5z6-trv-cal-tenths"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_tze284_ogx8u5z6",
+      "pid": "TS0601",
+      "from": "climate_sensor",
+      "to": "device_radiator_valve",
+      "removed": 1,
+      "caseId": "p2278-ogx8u5z6-trv-cal-tenths"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_tze204_ogx8u5z6",
+      "pid": "TS0601",
+      "from": "wall_thermostat",
+      "to": "device_radiator_valve",
+      "removed": 1,
+      "caseId": "p2278-ogx8u5z6-trv-cal-tenths"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_tze204_ogx8u5z6",
+      "pid": "TS0601",
+      "from": "climate_sensor",
+      "to": "device_radiator_valve",
+      "removed": 1,
+      "caseId": "p2278-ogx8u5z6-trv-cal-tenths"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE284_ogx8u5z6",
+      "pid": "TS0601",
+      "from": "wall_thermostat",
+      "to": "device_radiator_valve",
+      "removed": 1,
+      "caseId": "p2278-ogx8u5z6-trv-cal-tenths"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE284_ogx8u5z6",
+      "pid": "TS0601",
+      "from": "climate_sensor",
+      "to": "device_radiator_valve",
+      "removed": 1,
+      "caseId": "p2278-ogx8u5z6-trv-cal-tenths"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE204_ogx8u5z6",
+      "pid": "TS0601",
+      "from": "wall_thermostat",
+      "to": "device_radiator_valve",
+      "removed": 1,
+      "caseId": "p2278-ogx8u5z6-trv-cal-tenths"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE204_ogx8u5z6",
+      "pid": "TS0601",
+      "from": "climate_sensor",
+      "to": "device_radiator_valve",
+      "removed": 1,
+      "caseId": "p2278-ogx8u5z6-trv-cal-tenths"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE200_xalsoe3m",
+      "pid": "TS0601",
+      "from": "climate_sensor",
+      "to": "wall_thermostat",
+      "removed": 1,
+      "caseId": "p2277-xalsoe3m-bht002-not-trv"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE200_xalsoe3m",
+      "pid": "TS0601",
+      "from": "device_radiator_valve",
+      "to": "wall_thermostat",
+      "removed": 1,
+      "caseId": "p2277-xalsoe3m-bht002-not-trv"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE204_xalsoe3m",
+      "pid": "TS0601",
+      "from": "climate_sensor",
+      "to": "wall_thermostat",
+      "removed": 1,
+      "caseId": "p2277-xalsoe3m-bht002-not-trv"
+    },
+    {
+      "severity": "medium",
+      "action": "registry_compose_strip_pid",
+      "mfr": "_TZE204_xalsoe3m",
+      "pid": "TS0601",
+      "from": "device_radiator_valve",
+      "to": "wall_thermostat",
+      "removed": 1,
+      "caseId": "p2277-xalsoe3m-bht002-not-trv"
     }
   ],
   "skipped": [
