@@ -33,7 +33,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.682 |
+| **App Version** | v9.0.683 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,378 |
 | **Pairing Variants** | 16,476 (4 case combos per fingerprint) |
@@ -102,6 +102,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.683** | Fix wall thermostat crash on OFF (safeSetCapability recursion) for FCU/BAC006 couples; Athom draft wait soft-continues on . |
 | **v9.0.682** | Fix wall thermostat crash on OFF (safeSetCapability recursion) for FCU/BAC006 couples; Athom draft wait soft-continues on . |
 | **v9.0.681** | Fix wall thermostat crash on OFF (safeSetCapability recursion) for FCU/BAC006 couples; Athom draft wait soft-continues on . |
 | **v9.0.680** | Fix wall thermostat crash on OFF (safeSetCapability recursion) for FCU/BAC006 couples; Athom draft wait soft-continues on token blips. |
@@ -113,7 +114,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.674** | Publish hardening: store changelog always shipped; sacred device couples preserved under size compaction; safer Test uploads (no orphan b… |
 | **v9.0.673** | Publish hardening: store changelog always shipped; sacred device couples preserved under size compaction; safer Test uploads (no orphan b… |
 | **v9.0.672** | Publish hardening: store changelog always shipped; sacred device couples preserved under size compaction; safer Test uploads (no orphan b… |
-| **v9.0.671** | Publish hardening: store changelog always shipped; sacred device couples preserved under size compaction; safer Test uploads (no orphan b… |
 
 <!-- CHANGELOG_END -->
 
