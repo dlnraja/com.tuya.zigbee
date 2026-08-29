@@ -1338,5 +1338,11 @@
   },
   "5.12.95": {
     "en": "Publish hardening: changelog always shipped; sacred couples preserved under compaction; safer Test uploads."
+  },
+  "5.12.97": {
+    "en": "Reliability improvements."
+  },
+  "5.12.98": {
+    "en": "Reliability: late Zigbee identity re-arms 1-button remote presses; keep battery on sleepy buttons; CO2 sensor couple no longer stolen by climate; radar settings save never blocks Homey UI."
   }
 }
