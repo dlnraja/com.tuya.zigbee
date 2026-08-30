@@ -39,8 +39,8 @@
     ]
   },
   "images": {
-    "small": "/{{driverAssetsPath}}/images/moes_zigbee_3_small.png",
-    "large": "/{{driverAssetsPath}}/images/moes_zigbee_3_large.png"
+    "small": "{{driverAssetsPath}}/images/moes_zigbee_3_small.png",
+    "large": "{{driverAssetsPath}}/images/moes_zigbee_3_large.png"
   },
   "zigbee": {
     "manufacturerName": [
