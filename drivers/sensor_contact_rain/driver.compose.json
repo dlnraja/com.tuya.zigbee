@@ -277,8 +277,8 @@
     }
   ],
   "images": {
-    "small": "{{driverAssetsPath}}/images/small.png",
-    "large": "{{driverAssetsPath}}/images/large.png"
+    "small": "/drivers/contact_sensor/assets/images/small.png",
+    "large": "/drivers/contact_sensor/assets/images/large.png"
   },
   "platforms": [
     "local"

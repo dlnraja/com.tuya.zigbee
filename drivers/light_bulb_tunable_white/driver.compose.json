@@ -287,8 +287,8 @@
     }
   ],
   "images": {
-    "small": "{{driverAssetsPath}}/images/small.png",
-    "large": "{{driverAssetsPath}}/images/large.png"
+    "small": "/drivers/bulb_tunable_white/assets/images/small.png",
+    "large": "/drivers/bulb_tunable_white/assets/images/large.png"
   },
   "platforms": [
     "local"

@@ -111,8 +111,8 @@
     }
   ],
   "images": {
-    "small": "{{driverAssetsPath}}/images/small.png",
-    "large": "{{driverAssetsPath}}/images/large.png"
+    "small": "/drivers/wifi_dimmer/assets/images/small.png",
+    "large": "/drivers/wifi_dimmer/assets/images/large.png"
   },
   "platforms": [
     "local"

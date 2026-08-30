@@ -53,8 +53,8 @@
     "zigbee"
   ],
   "images": {
-    "small": "{{driverAssetsPath}}/images/small.png",
-    "large": "{{driverAssetsPath}}/images/large.png"
+    "small": "/drivers/usb_dongle_triple/assets/images/small.png",
+    "large": "/drivers/usb_dongle_triple/assets/images/large.png"
   },
   "zigbee": {
     "manufacturerName": [

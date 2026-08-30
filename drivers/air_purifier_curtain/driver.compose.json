@@ -14,8 +14,8 @@
     "measure_battery"
   ],
   "images": {
-    "small": "{{driverAssetsPath}}/images/small.png",
-    "large": "{{driverAssetsPath}}/images/large.png"
+    "small": "/drivers/curtain_motor_tilt/assets/images/small.png",
+    "large": "/drivers/curtain_motor_tilt/assets/images/large.png"
   },
   "platforms": [
     "local"

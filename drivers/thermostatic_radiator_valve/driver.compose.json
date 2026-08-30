@@ -39,8 +39,8 @@
     ]
   },
   "images": {
-    "small": "{{driverAssetsPath}}/images/small.png",
-    "large": "{{driverAssetsPath}}/images/large.png"
+    "small": "/drivers/thermostatic_radiator_valve/assets/images/moes_zigbee_3_small.png",
+    "large": "/drivers/thermostatic_radiator_valve/assets/images/moes_zigbee_3_large.png"
   },
   "zigbee": {
     "manufacturerName": [

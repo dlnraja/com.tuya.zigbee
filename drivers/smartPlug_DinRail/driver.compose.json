@@ -34,8 +34,8 @@
     }
   },
   "images": {
-    "large": "{{driverAssetsPath}}/images/large.png",
-    "small": "{{driverAssetsPath}}/images/small.png"
+    "small": "/drivers/smartPlug_DinRail/assets/images/small.png",
+    "large": "/drivers/smartPlug_DinRail/assets/images/large.png"
   },
   "version": "1.0.0",
   "metadata": {

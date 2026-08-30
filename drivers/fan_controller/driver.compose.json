@@ -114,8 +114,8 @@
     }
   },
   "images": {
-    "small": "{{driverAssetsPath}}/images/small.png",
-    "large": "{{driverAssetsPath}}/images/large.png"
+    "small": "/drivers/fan_controller/assets/images/small.png",
+    "large": "/drivers/fan_controller/assets/images/large.png"
   },
   "platforms": [
     "local"

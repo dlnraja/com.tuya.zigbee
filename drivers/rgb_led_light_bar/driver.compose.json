@@ -78,7 +78,7 @@
     "quickAction": "onoff"
   },
   "images": {
-    "small": "{{driverAssetsPath}}/images/small.png",
-    "large": "{{driverAssetsPath}}/images/large.png"
+    "small": "/drivers/rgb_led_light_bar/assets/images/small.png",
+    "large": "/drivers/rgb_led_light_bar/assets/images/large.png"
   }
 }

@@ -63,8 +63,8 @@
     }
   },
   "images": {
-    "large": "{{driverAssetsPath}}/images/large.png",
-    "small": "{{driverAssetsPath}}/images/small.png"
+    "small": "/drivers/switch_4_gang_metering/assets/images/small.png",
+    "large": "/drivers/switch_4_gang_metering/assets/images/large.png"
   },
   "zigbee": {
     "manufacturerName": [

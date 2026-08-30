@@ -33,8 +33,8 @@
     }
   },
   "images": {
-    "large": "{{driverAssetsPath}}/images/large.png",
-    "small": "{{driverAssetsPath}}/images/small.png"
+    "small": "/drivers/switch_1_gang_metering/assets/images/small.png",
+    "large": "/drivers/switch_1_gang_metering/assets/images/large.png"
   },
   "version": "1.0.0",
   "energy": {

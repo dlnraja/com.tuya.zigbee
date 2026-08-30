@@ -78,8 +78,8 @@
     }
   },
   "images": {
-    "small": "{{driverAssetsPath}}/images/small.png",
-    "large": "{{driverAssetsPath}}/images/large.png"
+    "small": "/drivers/scene_switch_3/assets/images/small.png",
+    "large": "/drivers/scene_switch_3/assets/images/large.png"
   },
   "platforms": [
     "local"

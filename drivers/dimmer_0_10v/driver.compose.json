@@ -90,8 +90,8 @@
     ]
   },
   "images": {
-    "small": "{{driverAssetsPath}}/images/small.png",
-    "large": "{{driverAssetsPath}}/images/large.png"
+    "small": "/drivers/dimmer_0_10v/assets/images/small.png",
+    "large": "/drivers/dimmer_0_10v/assets/images/large.png"
   },
   "platforms": [
     "local"

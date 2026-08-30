@@ -22,8 +22,8 @@
     "zigbee"
   ],
   "images": {
-    "small": "{{driverAssetsPath}}/images/small.png",
-    "large": "{{driverAssetsPath}}/images/large.png"
+    "small": "/drivers/wall_switch_1gang_1way/assets/images/small.png",
+    "large": "/drivers/wall_switch_1gang_1way/assets/images/large.png"
   },
   "zigbee": {
     "manufacturerName": [

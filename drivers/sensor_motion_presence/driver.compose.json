@@ -692,8 +692,8 @@
     }
   ],
   "images": {
-    "small": "{{driverAssetsPath}}/images/small.png",
-    "large": "{{driverAssetsPath}}/images/large.png"
+    "small": "/drivers/presence_sensor_radar/assets/images/small.png",
+    "large": "/drivers/presence_sensor_radar/assets/images/large.png"
   },
   "platforms": [
     "local"

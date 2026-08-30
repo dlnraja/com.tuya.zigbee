@@ -73,8 +73,8 @@
     ]
   },
   "images": {
-    "small": "{{driverAssetsPath}}/images/small.png",
-    "large": "{{driverAssetsPath}}/images/large.png"
+    "small": "/drivers/switch_usb_dongle/assets/images/small.png",
+    "large": "/drivers/switch_usb_dongle/assets/images/large.png"
   },
   "settings": [
     {

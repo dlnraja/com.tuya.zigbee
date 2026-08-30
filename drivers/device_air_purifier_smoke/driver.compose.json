@@ -237,8 +237,8 @@
     }
   ],
   "images": {
-    "small": "{{driverAssetsPath}}/images/small.png",
-    "large": "{{driverAssetsPath}}/images/large.png"
+    "small": "/drivers/smoke_detector_advanced/assets/images/small.png",
+    "large": "/drivers/smoke_detector_advanced/assets/images/large.png"
   },
   "platforms": [
     "local"

@@ -265,8 +265,8 @@
     }
   ],
   "images": {
-    "small": "{{driverAssetsPath}}/images/small.png",
-    "large": "{{driverAssetsPath}}/images/large.png"
+    "small": "/drivers/shutter_roller_controller/assets/images/small.png",
+    "large": "/drivers/shutter_roller_controller/assets/images/large.png"
   },
   "platforms": [
     "local"

@@ -78,8 +78,8 @@
     }
   ],
   "images": {
-    "small": "{{driverAssetsPath}}/images/small.png",
-    "large": "{{driverAssetsPath}}/images/large.png"
+    "small": "/drivers/wifi_ewelink_th/assets/images/small.png",
+    "large": "/drivers/wifi_ewelink_th/assets/images/large.png"
   },
   "platforms": [
     "local"

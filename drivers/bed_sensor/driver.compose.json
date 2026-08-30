@@ -71,8 +71,8 @@
     ]
   },
   "images": {
-    "small": "{{driverAssetsPath}}/images/small.png",
-    "large": "{{driverAssetsPath}}/images/large.png"
+    "small": "/drivers/bed_sensor/assets/images/small.png",
+    "large": "/drivers/bed_sensor/assets/images/large.png"
   },
   "platforms": [
     "local"

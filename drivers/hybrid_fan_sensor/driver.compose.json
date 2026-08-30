@@ -110,8 +110,8 @@
     }
   ],
   "images": {
-    "small": "{{driverAssetsPath}}/images/small.png",
-    "large": "{{driverAssetsPath}}/images/large.png"
+    "small": "/drivers/hybrid_fan_sensor/assets/images/small.png",
+    "large": "/drivers/hybrid_fan_sensor/assets/images/large.png"
   },
   "platforms": [
     "local"

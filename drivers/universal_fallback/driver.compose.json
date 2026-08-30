@@ -27,8 +27,8 @@
     ]
   },
   "images": {
-    "small": "{{driverAssetsPath}}/images/small.png",
-    "large": "{{driverAssetsPath}}/images/large.png"
+    "small": "/drivers/universal_fallback/assets/images/small.png",
+    "large": "/drivers/universal_fallback/assets/images/large.png"
   },
   "platforms": [
     "local"

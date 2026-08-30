@@ -343,8 +343,8 @@
     }
   ],
   "images": {
-    "small": "{{driverAssetsPath}}/images/small.png",
-    "large": "{{driverAssetsPath}}/images/large.png"
+    "small": "/drivers/wifi_robot_vacuum/assets/images/small.png",
+    "large": "/drivers/wifi_robot_vacuum/assets/images/large.png"
   },
   "platforms": [
     "local"

@@ -99,8 +99,8 @@
     ]
   },
   "images": {
-    "small": "{{driverAssetsPath}}/images/small.png",
-    "large": "{{driverAssetsPath}}/images/large.png"
+    "small": "/drivers/energy_meter_din/assets/images/small.png",
+    "large": "/drivers/energy_meter_din/assets/images/large.png"
   },
   "platforms": [
     "local"

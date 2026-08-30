@@ -80,8 +80,8 @@
     ]
   },
   "images": {
-    "small": "{{driverAssetsPath}}/images/small.png",
-    "large": "{{driverAssetsPath}}/images/large.png"
+    "small": "/drivers/floor_heating_thermostat/assets/images/small.png",
+    "large": "/drivers/floor_heating_thermostat/assets/images/large.png"
   },
   "platforms": [
     "local"

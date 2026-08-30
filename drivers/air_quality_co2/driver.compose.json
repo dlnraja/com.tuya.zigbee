@@ -231,8 +231,8 @@
     }
   ],
   "images": {
-    "small": "{{driverAssetsPath}}/images/small.png",
-    "large": "{{driverAssetsPath}}/images/large.png"
+    "small": "/drivers/air_quality_co2/assets/images/small.png",
+    "large": "/drivers/air_quality_co2/assets/images/large.png"
   },
   "platforms": [
     "local"

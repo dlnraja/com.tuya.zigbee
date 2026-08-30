@@ -102,8 +102,8 @@
     }
   },
   "images": {
-    "small": "{{driverAssetsPath}}/images/small.png",
-    "large": "{{driverAssetsPath}}/images/large.png"
+    "small": "/drivers/button_wireless_2/assets/images/small.png",
+    "large": "/drivers/button_wireless_2/assets/images/large.png"
   },
   "platforms": [
     "local"

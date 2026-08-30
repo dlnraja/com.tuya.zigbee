@@ -70,8 +70,8 @@
     }
   },
   "images": {
-    "small": "{{driverAssetsPath}}/images/small.png",
-    "large": "{{driverAssetsPath}}/images/large.png"
+    "small": "/drivers/light_sensor_outdoor/assets/images/small.png",
+    "large": "/drivers/light_sensor_outdoor/assets/images/large.png"
   },
   "platforms": [
     "local"

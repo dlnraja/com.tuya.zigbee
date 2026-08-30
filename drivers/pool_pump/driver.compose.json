@@ -56,8 +56,8 @@
     }
   },
   "images": {
-    "small": "{{driverAssetsPath}}/images/small.png",
-    "large": "{{driverAssetsPath}}/images/large.png"
+    "small": "/drivers/pool_pump/assets/images/small.png",
+    "large": "/drivers/pool_pump/assets/images/large.png"
   },
   "platforms": [
     "local"

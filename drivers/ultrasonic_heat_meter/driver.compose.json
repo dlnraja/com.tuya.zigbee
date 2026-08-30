@@ -56,8 +56,8 @@
     ]
   },
   "images": {
-    "small": "{{driverAssetsPath}}/images/small.png",
-    "large": "{{driverAssetsPath}}/images/large.png"
+    "small": "/drivers/ultrasonic_heat_meter/assets/images/small.png",
+    "large": "/drivers/ultrasonic_heat_meter/assets/images/large.png"
   },
   "platforms": [
     "local"

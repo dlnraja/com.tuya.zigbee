@@ -23,8 +23,8 @@
     ]
   },
   "images": {
-    "large": "{{driverAssetsPath}}/images/large.png",
-    "small": "{{driverAssetsPath}}/images/small.png"
+    "small": "/drivers/smoke_sensor2/assets/images/small.png",
+    "large": "/drivers/smoke_sensor2/assets/images/large.png"
   },
   "zigbee": {
     "manufacturerName": [

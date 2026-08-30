@@ -1,4 +1,7 @@
 {
+  "9.0.711": {
+    "en": "Fixed driver image paths for App Store processing; restored Homey-safe icons."
+  },
   "9.0.709": {
     "en": "Homey-safe driver icons restored; fixed corrupt SVGs; own-path images; avoided invalid placeholder manufacturerNames for App Store."
   },

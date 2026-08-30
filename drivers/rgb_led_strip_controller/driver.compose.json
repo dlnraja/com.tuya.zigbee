@@ -96,7 +96,7 @@
     "quickAction": "onoff"
   },
   "images": {
-    "small": "{{driverAssetsPath}}/images/small.png",
-    "large": "{{driverAssetsPath}}/images/large.png"
+    "small": "/drivers/rgb_led_strip_controller/assets/images/small.png",
+    "large": "/drivers/rgb_led_strip_controller/assets/images/large.png"
   }
 }

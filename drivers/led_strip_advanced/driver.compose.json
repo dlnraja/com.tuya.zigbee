@@ -259,8 +259,8 @@
     }
   ],
   "images": {
-    "small": "{{driverAssetsPath}}/images/small.png",
-    "large": "{{driverAssetsPath}}/images/large.png"
+    "small": "/drivers/led_strip_advanced/assets/images/small.png",
+    "large": "/drivers/led_strip_advanced/assets/images/large.png"
   },
   "platforms": [
     "local"

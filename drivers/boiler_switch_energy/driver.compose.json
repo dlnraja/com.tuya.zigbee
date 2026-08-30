@@ -60,8 +60,8 @@
     ]
   },
   "images": {
-    "small": "{{driverAssetsPath}}/images/small.png",
-    "large": "{{driverAssetsPath}}/images/large.png"
+    "small": "/drivers/boiler_switch_energy/assets/images/small.png",
+    "large": "/drivers/boiler_switch_energy/assets/images/large.png"
   },
   "platforms": [
     "local"

@@ -21,8 +21,8 @@
     ]
   },
   "images": {
-    "large": "{{driverAssetsPath}}/images/large.png",
-    "small": "{{driverAssetsPath}}/images/small.png"
+    "small": "/drivers/pirsensor/assets/images/small.png",
+    "large": "/drivers/pirsensor/assets/images/large.png"
   },
   "zigbee": {
     "manufacturerName": [],

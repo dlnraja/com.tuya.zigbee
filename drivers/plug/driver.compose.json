@@ -29,8 +29,8 @@
     }
   },
   "images": {
-    "large": "{{driverAssetsPath}}/images/large.png",
-    "small": "{{driverAssetsPath}}/images/small.png"
+    "small": "/drivers/plug/assets/images/small.png",
+    "large": "/drivers/plug/assets/images/large.png"
   },
   "zigbee": {
     "manufacturerName": [

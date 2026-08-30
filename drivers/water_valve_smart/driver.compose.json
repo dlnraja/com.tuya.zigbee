@@ -322,8 +322,8 @@
     }
   ],
   "images": {
-    "small": "{{driverAssetsPath}}/images/small.png",
-    "large": "{{driverAssetsPath}}/images/large.png"
+    "small": "/drivers/water_valve_smart/assets/images/small.png",
+    "large": "/drivers/water_valve_smart/assets/images/large.png"
   },
   "platforms": [
     "local"

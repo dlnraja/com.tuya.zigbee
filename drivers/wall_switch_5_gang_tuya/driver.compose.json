@@ -20,8 +20,8 @@
     "button.5"
   ],
   "images": {
-    "large": "{{driverAssetsPath}}/images/large.png",
-    "small": "{{driverAssetsPath}}/images/small.png"
+    "small": "/drivers/wall_switch_5_gang_tuya/assets/images/small.png",
+    "large": "/drivers/wall_switch_5_gang_tuya/assets/images/large.png"
   },
   "energy": {
     "batteries": [
