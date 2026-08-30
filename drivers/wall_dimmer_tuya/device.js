@@ -224,7 +224,12 @@ class wall_dimmer_tuya extends TuyaSpecificClusterDevice {
             const { safeSetTimeout } = require('../../lib/utils/safe-timers');
             safeSetTimeout(this, resolve, delays[i]);
           } catch (_e) {
-            setTimeout(resolve, delays[i]);
+            // WHY(P2329): never bare setTimeout — TITAN syntax-check fails CI
+            if (this.homey && typeof this.homey.setTimeout === 'function') {
+              this.homey.setTimeout(resolve, delays[i]);
+            } else {
+              resolve();
+            }
           }
         });
       }

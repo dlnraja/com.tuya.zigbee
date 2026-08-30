@@ -1,0 +1,1735 @@
+{
+  "generatedAt": "2026-08-30T19:20:30.084Z",
+  "notifications": [
+    {
+      "id": "25377630037",
+      "unread": true,
+      "reason": "ci_activity",
+      "updated_at": "2026-08-30T19:19:28Z",
+      "title": "🔍 Syntax Check & SDK3 Validation workflow run failed for stable-v5 branch",
+      "type": "CheckSuite",
+      "url": null,
+      "latest_comment_url": null,
+      "repo": "dlnraja/com.tuya.zigbee"
+    },
+    {
+      "id": "25377627163",
+      "unread": true,
+      "reason": "ci_activity",
+      "updated_at": "2026-08-30T19:19:09Z",
+      "title": "🤖 Auto-Fix + Publish Pipeline workflow run failed for stable-v5 branch",
+      "type": "CheckSuite",
+      "url": null,
+      "latest_comment_url": null,
+      "repo": "dlnraja/com.tuya.zigbee"
+    },
+    {
+      "id": "25377611211",
+      "unread": true,
+      "reason": "ci_activity",
+      "updated_at": "2026-08-30T19:17:21Z",
+      "title": "🔍 Syntax Check & SDK3 Validation workflow run failed for master branch",
+      "type": "CheckSuite",
+      "url": null,
+      "latest_comment_url": null,
+      "repo": "dlnraja/com.tuya.zigbee"
+    },
+    {
+      "id": "25377609671",
+      "unread": true,
+      "reason": "ci_activity",
+      "updated_at": "2026-08-30T19:17:10Z",
+      "title": "🛡️ Unified CI/CD Orchestrator workflow run failed for master branch",
+      "type": "CheckSuite",
+      "url": null,
+      "latest_comment_url": null,
+      "repo": "dlnraja/com.tuya.zigbee"
+    },
+    {
+      "id": "25363202856",
+      "unread": true,
+      "reason": "comment",
+      "updated_at": "2026-08-30T18:52:48Z",
+      "title": "Device Request - [SMART ZIGBEE CURTAIN SWITCH] - [MOES]",
+      "type": "Issue",
+      "url": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues/533",
+      "latest_comment_url": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues/comments/5470604576",
+      "repo": "dlnraja/com.tuya.zigbee"
+    },
+    {
+      "id": "25377281912",
+      "unread": true,
+      "reason": "ci_activity",
+      "updated_at": "2026-08-30T18:41:21Z",
+      "title": "🔍 Syntax Check & SDK3 Validation workflow run failed for stable-v5 branch",
+      "type": "CheckSuite",
+      "url": null,
+      "latest_comment_url": null,
+      "repo": "dlnraja/com.tuya.zigbee"
+    },
+    {
+      "id": "25377276432",
+      "unread": true,
+      "reason": "ci_activity",
+      "updated_at": "2026-08-30T18:40:47Z",
+      "title": "🤖 Auto-Fix + Publish Pipeline workflow run failed for stable-v5 branch",
+      "type": "CheckSuite",
+      "url": null,
+      "latest_comment_url": null,
+      "repo": "dlnraja/com.tuya.zigbee"
+    },
+    {
+      "id": "25377228322",
+      "unread": true,
+      "reason": "ci_activity",
+      "updated_at": "2026-08-30T18:35:37Z",
+      "title": "🔍 Syntax Check & SDK3 Validation workflow run failed for stable-v5 branch",
+      "type": "CheckSuite",
+      "url": null,
+      "latest_comment_url": null,
+      "repo": "dlnraja/com.tuya.zigbee"
+    },
+    {
+      "id": "25377224036",
+      "unread": true,
+      "reason": "ci_activity",
+      "updated_at": "2026-08-30T18:35:12Z",
+      "title": "🚀 Publish Stable to Test workflow run failed for stable-v5 branch",
+      "type": "CheckSuite",
+      "url": null,
+      "latest_comment_url": null,
+      "repo": "dlnraja/com.tuya.zigbee"
+    },
+    {
+      "id": "25377221499",
+      "unread": true,
+      "reason": "ci_activity",
+      "updated_at": "2026-08-30T18:34:57Z",
+      "title": "🤖 Auto-Fix + Publish Pipeline workflow run failed for stable-v5 branch",
+      "type": "CheckSuite",
+      "url": null,
+      "latest_comment_url": null,
+      "repo": "dlnraja/com.tuya.zigbee"
+    },
+    {
+      "id": "25377172722",
+      "unread": true,
+      "reason": "ci_activity",
+      "updated_at": "2026-08-30T18:29:53Z",
+      "title": "🛡️ Unified CI/CD Orchestrator workflow run failed for master branch",
+      "type": "CheckSuite",
+      "url": null,
+      "latest_comment_url": null,
+      "repo": "dlnraja/com.tuya.zigbee"
+    },
+    {
+      "id": "25377171771",
+      "unread": true,
+      "reason": "ci_activity",
+      "updated_at": "2026-08-30T18:29:47Z",
+      "title": "🔍 Syntax Check & SDK3 Validation workflow run failed for master branch",
+      "type": "CheckSuite",
+      "url": null,
+      "latest_comment_url": null,
+      "repo": "dlnraja/com.tuya.zigbee"
+    },
+    {
+      "id": "25375609642",
+      "unread": true,
+      "reason": "ci_activity",
+      "updated_at": "2026-08-30T15:41:34Z",
+      "title": "🔍 Validate Homey App workflow run failed for master branch",
+      "type": "CheckSuite",
+      "url": null,
+      "latest_comment_url": null,
+      "repo": "dlnraja/com.tuya.zigbee"
+    },
+    {
+      "id": "25374074359",
+      "unread": true,
+      "reason": "ci_activity",
+      "updated_at": "2026-08-30T12:55:57Z",
+      "title": "🛡️ Unified CI/CD Orchestrator workflow run failed for master branch",
+      "type": "CheckSuite",
+      "url": null,
+      "latest_comment_url": null,
+      "repo": "dlnraja/com.tuya.zigbee"
+    },
+    {
+      "id": "25374073724",
+      "unread": true,
+      "reason": "ci_activity",
+      "updated_at": "2026-08-30T12:55:53Z",
+      "title": "🔍 Syntax Check & SDK3 Validation workflow run failed for master branch",
+      "type": "CheckSuite",
+      "url": null,
+      "latest_comment_url": null,
+      "repo": "dlnraja/com.tuya.zigbee"
+    },
+    {
+      "id": "25373482461",
+      "unread": true,
+      "reason": "ci_activity",
+      "updated_at": "2026-08-30T11:47:44Z",
+      "title": "🔍 Syntax Check & SDK3 Validation workflow run failed for stable-v5 branch",
+      "type": "CheckSuite",
+      "url": null,
+      "latest_comment_url": null,
+      "repo": "dlnraja/com.tuya.zigbee"
+    },
+    {
+      "id": "25373482360",
+      "unread": true,
+      "reason": "ci_activity",
+      "updated_at": "2026-08-30T11:47:43Z",
+      "title": "Auto-Publish on Push workflow run failed for master branch",
+      "type": "CheckSuite",
+      "url": null,
+      "latest_comment_url": null,
+      "repo": "dlnraja/com.tuya.zigbee"
+    },
+    {
+      "id": "25373482086",
+      "unread": true,
+      "reason": "ci_activity",
+      "updated_at": "2026-08-30T11:47:41Z",
+      "title": "🛡️ Unified CI/CD Orchestrator workflow run failed for stable-v5 branch",
+      "type": "CheckSuite",
+      "url": null,
+      "latest_comment_url": null,
+      "repo": "dlnraja/com.tuya.zigbee"
+    },
+    {
+      "id": "25373345194",
+      "unread": true,
+      "reason": "ci_activity",
+      "updated_at": "2026-08-30T11:31:18Z",
+      "title": "🔍 Syntax Check & SDK3 Validation workflow run failed for master branch",
+      "type": "CheckSuite",
+      "url": null,
+      "latest_comment_url": null,
+      "repo": "dlnraja/com.tuya.zigbee"
+    },
+    {
+      "id": "25373343745",
+      "unread": true,
+      "reason": "ci_activity",
+      "updated_at": "2026-08-30T11:31:09Z",
+      "title": "🛡️ Unified CI/CD Orchestrator workflow run failed for master branch",
+      "type": "CheckSuite",
+      "url": null,
+      "latest_comment_url": null,
+      "repo": "dlnraja/com.tuya.zigbee"
+    },
+    {
+      "id": "25372393154",
+      "unread": true,
+      "reason": "ci_activity",
+      "updated_at": "2026-08-30T09:32:47Z",
+      "title": "🔍 Syntax Check & SDK3 Validation workflow run failed for stable-v5 branch",
+      "type": "CheckSuite",
+      "url": null,
+      "latest_comment_url": null,
+      "repo": "dlnraja/com.tuya.zigbee"
+    },
+    {
+      "id": "25372392303",
+      "unread": true,
+      "reason": "ci_activity",
+      "updated_at": "2026-08-30T09:32:41Z",
+      "title": "🚀 Publish Stable to Test workflow run failed for stable-v5 branch",
+      "type": "CheckSuite",
+      "url": null,
+      "latest_comment_url": null,
+      "repo": "dlnraja/com.tuya.zigbee"
+    },
+    {
+      "id": "25372390972",
+      "unread": true,
+      "reason": "ci_activity",
+      "updated_at": "2026-08-30T09:32:31Z",
+      "title": "🛡️ Unified CI/CD Orchestrator workflow run failed for stable-v5 branch",
+      "type": "CheckSuite",
+      "url": null,
+      "latest_comment_url": null,
+      "repo": "dlnraja/com.tuya.zigbee"
+    },
+    {
+      "id": "25372359134",
+      "unread": true,
+      "reason": "ci_activity",
+      "updated_at": "2026-08-30T09:28:35Z",
+      "title": "🌙 Nightly Audit workflow run failed for master branch",
+      "type": "CheckSuite",
+      "url": null,
+      "latest_comment_url": null,
+      "repo": "dlnraja/com.tuya.zigbee"
+    },
+    {
+      "id": "25372354627",
+      "unread": true,
+      "reason": "ci_activity",
+      "updated_at": "2026-08-30T09:28:02Z",
+      "title": "🔍 Syntax Check & SDK3 Validation workflow run failed for master branch",
+      "type": "CheckSuite",
+      "url": null,
+      "latest_comment_url": null,
+      "repo": "dlnraja/com.tuya.zigbee"
+    },
+    {
+      "id": "25372353971",
+      "unread": true,
+      "reason": "ci_activity",
+      "updated_at": "2026-08-30T09:27:57Z",
+      "title": "🛡️ Unified CI/CD Orchestrator workflow run failed for master branch",
+      "type": "CheckSuite",
+      "url": null,
+      "latest_comment_url": null,
+      "repo": "dlnraja/com.tuya.zigbee"
+    },
+    {
+      "id": "25372076584",
+      "unread": true,
+      "reason": "ci_activity",
+      "updated_at": "2026-08-30T08:54:04Z",
+      "title": "Auto-Publish on Push workflow run failed for master branch",
+      "type": "CheckSuite",
+      "url": null,
+      "latest_comment_url": null,
+      "repo": "dlnraja/com.tuya.zigbee"
+    },
+    {
+      "id": "25371956078",
+      "unread": true,
+      "reason": "ci_activity",
+      "updated_at": "2026-08-30T08:38:53Z",
+      "title": "🛡️ Unified CI/CD Orchestrator workflow run failed for stable-v5 branch",
+      "type": "CheckSuite",
+      "url": null,
+      "latest_comment_url": null,
+      "repo": "dlnraja/com.tuya.zigbee"
+    },
+    {
+      "id": "25371944177",
+      "unread": true,
+      "reason": "ci_activity",
+      "updated_at": "2026-08-30T08:37:25Z",
+      "title": "🛡️ Unified CI/CD Orchestrator workflow run failed for master branch",
+      "type": "CheckSuite",
+      "url": null,
+      "latest_comment_url": null,
+      "repo": "dlnraja/com.tuya.zigbee"
+    },
+    {
+      "id": "25371634870",
+      "unread": true,
+      "reason": "ci_activity",
+      "updated_at": "2026-08-30T07:58:08Z",
+      "title": "Auto-Publish on Push workflow run failed for master branch",
+      "type": "CheckSuite",
+      "url": null,
+      "latest_comment_url": null,
+      "repo": "dlnraja/com.tuya.zigbee"
+    },
+    {
+      "id": "25371513888",
+      "unread": true,
+      "reason": "ci_activity",
+      "updated_at": "2026-08-30T07:42:27Z",
+      "title": "🛡️ Unified CI/CD Orchestrator workflow run failed for stable-v5 branch",
+      "type": "CheckSuite",
+      "url": null,
+      "latest_comment_url": null,
+      "repo": "dlnraja/com.tuya.zigbee"
+    },
+    {
+      "id": "25371503931",
+      "unread": true,
+      "reason": "ci_activity",
+      "updated_at": "2026-08-30T07:41:09Z",
+      "title": "🛡️ Unified CI/CD Orchestrator workflow run failed for master branch",
+      "type": "CheckSuite",
+      "url": null,
+      "latest_comment_url": null,
+      "repo": "dlnraja/com.tuya.zigbee"
+    },
+    {
+      "id": "25371336189",
+      "unread": true,
+      "reason": "ci_activity",
+      "updated_at": "2026-08-30T07:19:02Z",
+      "title": "Auto-Publish on Push workflow run failed for master branch",
+      "type": "CheckSuite",
+      "url": null,
+      "latest_comment_url": null,
+      "repo": "dlnraja/com.tuya.zigbee"
+    },
+    {
+      "id": "25371208240",
+      "unread": true,
+      "reason": "ci_activity",
+      "updated_at": "2026-08-30T07:01:23Z",
+      "title": "🔍 Syntax Check & SDK3 Validation workflow run failed for master branch",
+      "type": "CheckSuite",
+      "url": null,
+      "latest_comment_url": null,
+      "repo": "dlnraja/com.tuya.zigbee"
+    },
+    {
+      "id": "25371206970",
+      "unread": true,
+      "reason": "ci_activity",
+      "updated_at": "2026-08-30T07:01:13Z",
+      "title": "🛡️ Unified CI/CD Orchestrator workflow run failed for master branch",
+      "type": "CheckSuite",
+      "url": null,
+      "latest_comment_url": null,
+      "repo": "dlnraja/com.tuya.zigbee"
+    },
+    {
+      "id": "25371122456",
+      "unread": true,
+      "reason": "ci_activity",
+      "updated_at": "2026-08-30T06:49:05Z",
+      "title": "Auto-Publish on Push workflow run failed for master branch",
+      "type": "CheckSuite",
+      "url": null,
+      "latest_comment_url": null,
+      "repo": "dlnraja/com.tuya.zigbee"
+    },
+    {
+      "id": "25371115990",
+      "unread": true,
+      "reason": "ci_activity",
+      "updated_at": "2026-08-30T06:48:08Z",
+      "title": "🛡️ Unified CI/CD Orchestrator workflow run failed for master branch",
+      "type": "CheckSuite",
+      "url": null,
+      "latest_comment_url": null,
+      "repo": "dlnraja/com.tuya.zigbee"
+    },
+    {
+      "id": "25371114954",
+      "unread": true,
+      "reason": "ci_activity",
+      "updated_at": "2026-08-30T06:47:59Z",
+      "title": "🔍 Syntax Check & SDK3 Validation workflow run failed for master branch",
+      "type": "CheckSuite",
+      "url": null,
+      "latest_comment_url": null,
+      "repo": "dlnraja/com.tuya.zigbee"
+    },
+    {
+      "id": "25371098052",
+      "unread": true,
+      "reason": "ci_activity",
+      "updated_at": "2026-08-30T06:45:34Z",
+      "title": "Auto-Publish on Push workflow run failed for master branch",
+      "type": "CheckSuite",
+      "url": null,
+      "latest_comment_url": null,
+      "repo": "dlnraja/com.tuya.zigbee"
+    },
+    {
+      "id": "25370976373",
+      "unread": true,
+      "reason": "ci_activity",
+      "updated_at": "2026-08-30T06:28:41Z",
+      "title": "🔍 Syntax Check & SDK3 Validation workflow run failed for master branch",
+      "type": "CheckSuite",
+      "url": null,
+      "latest_comment_url": null,
+      "repo": "dlnraja/com.tuya.zigbee"
+    },
+    {
+      "id": "25370974617",
+      "unread": true,
+      "reason": "ci_activity",
+      "updated_at": "2026-08-30T06:28:26Z",
+      "title": "🛡️ Unified CI/CD Orchestrator workflow run failed for master branch",
+      "type": "CheckSuite",
+      "url": null,
+      "latest_comment_url": null,
+      "repo": "dlnraja/com.tuya.zigbee"
+    },
+    {
+      "id": "25370872022",
+      "unread": true,
+      "reason": "ci_activity",
+      "updated_at": "2026-08-30T06:14:11Z",
+      "title": "Auto-Publish on Push workflow run failed for master branch",
+      "type": "CheckSuite",
+      "url": null,
+      "latest_comment_url": null,
+      "repo": "dlnraja/com.tuya.zigbee"
+    },
+    {
+      "id": "25370751733",
+      "unread": true,
+      "reason": "ci_activity",
+      "updated_at": "2026-08-30T05:57:05Z",
+      "title": "🛡️ Unified CI/CD Orchestrator workflow run failed for master branch",
+      "type": "CheckSuite",
+      "url": null,
+      "latest_comment_url": null,
+      "repo": "dlnraja/com.tuya.zigbee"
+    },
+    {
+      "id": "25370751427",
+      "unread": true,
+      "reason": "ci_activity",
+      "updated_at": "2026-08-30T05:57:02Z",
+      "title": "🔍 Syntax Check & SDK3 Validation workflow run failed for master branch",
+      "type": "CheckSuite",
+      "url": null,
+      "latest_comment_url": null,
+      "repo": "dlnraja/com.tuya.zigbee"
+    },
+    {
+      "id": "25370441035",
+      "unread": true,
+      "reason": "ci_activity",
+      "updated_at": "2026-08-30T05:09:52Z",
+      "title": "Auto-Publish on Push workflow run failed for master branch",
+      "type": "CheckSuite",
+      "url": null,
+      "latest_comment_url": null,
+      "repo": "dlnraja/com.tuya.zigbee"
+    },
+    {
+      "id": "25370265762",
+      "unread": true,
+      "reason": "ci_activity",
+      "updated_at": "2026-08-30T04:43:23Z",
+      "title": "Auto-Publish on Push workflow run failed for master branch",
+      "type": "CheckSuite",
+      "url": null,
+      "latest_comment_url": null,
+      "repo": "dlnraja/com.tuya.zigbee"
+    },
+    {
+      "id": "25370144707",
+      "unread": true,
+      "reason": "ci_activity",
+      "updated_at": "2026-08-30T04:24:52Z",
+      "title": "🛡️ Unified CI/CD Orchestrator workflow run failed for master branch",
+      "type": "CheckSuite",
+      "url": null,
+      "latest_comment_url": null,
+      "repo": "dlnraja/com.tuya.zigbee"
+    },
+    {
+      "id": "25370049189",
+      "unread": true,
+      "reason": "ci_activity",
+      "updated_at": "2026-08-30T04:10:17Z",
+      "title": "Auto-Publish on Push workflow run failed for master branch",
+      "type": "CheckSuite",
+      "url": null,
+      "latest_comment_url": null,
+      "repo": "dlnraja/com.tuya.zigbee"
+    },
+    {
+      "id": "25369949412",
+      "unread": true,
+      "reason": "ci_activity",
+      "updated_at": "2026-08-30T03:55:03Z",
+      "title": "🛡️ Unified CI/CD Orchestrator workflow run failed for master branch",
+      "type": "CheckSuite",
+      "url": null,
+      "latest_comment_url": null,
+      "repo": "dlnraja/com.tuya.zigbee"
+    },
+    {
+      "id": "25369776104",
+      "unread": true,
+      "reason": "ci_activity",
+      "updated_at": "2026-08-30T03:29:47Z",
+      "title": "Auto-Publish on Push workflow run failed for master branch",
+      "type": "CheckSuite",
+      "url": null,
+      "latest_comment_url": null,
+      "repo": "dlnraja/com.tuya.zigbee"
+    }
+  ],
+  "openIssues": [
+    {
+      "number": 533,
+      "title": "Device Request - [SMART ZIGBEE CURTAIN SWITCH] - [MOES]",
+      "author": "salvagr",
+      "updatedAt": "2026-08-30T18:52:27Z",
+      "comments": [
+        {
+          "id": "IC_kwDOPPue0s8AAAABRaSEcw",
+          "author": {
+            "login": "dlnraja"
+          },
+          "authorAssociation": "OWNER",
+          "body": "<!-- diag-resolver -->\n### Auto-resolved by Diagnostic Resolver\n\nAll fingerprints in this issue found in **Tuya Unified Zigbee v9.0.688**:\n- `_TZE204_5slehgeo` -> **device_radiator_valve**\n\n**Install:** https://homey.app/a/com.dlnraja.tuya.zigbee/test/\nRemove and re-pair your device after installing.\n\n\n> **Protocol:** Tuya DP (cluster 0xEF00). Ensure DP listeners active.\n\n**Detected issues:**\n- Alarm DP updated — re-pair\n\n**Troubleshooting:** https://github.com/dlnraja/com.tuya.zigbee/wiki/Troubleshooting\n\n> **Detected protocols:** tuya_dp\n",
+          "createdAt": "2026-08-29T15:54:03Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/533#issuecomment-5463377011",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDOPPue0s8AAAABRagIVg",
+          "author": {
+            "login": "dlnraja"
+          },
+          "authorAssociation": "OWNER",
+          "body": "Shipped on master (next Test publish):\n\n- Sacred couple ``_TZE204_5slehgeo`` + ``TS0601`` (and Z2M siblings ``_TZE284_5slehgeo``, ``_TZE200_nhyj64w2``, ``_TZE200_127x7wnl``) locked to **curtain_motor** (Moes ZTS-EUR-C).\n- Removed from radiator valve (wrong pair).\n- DP map for this couple: 1 open/stop/close, 2 %, 3 calib, 7 backlight, 8 reverse, 10 time.\n\nPlease **update the Test app**, remove the device, and re-pair as Cover Controller. Homey cannot hot-swap drivers on an already paired tile.",
+          "createdAt": "2026-08-29T16:41:48Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/533#issuecomment-5463607382",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDOPPue0s8AAAABRapzIg",
+          "author": {
+            "login": "dlnraja"
+          },
+          "authorAssociation": "OWNER",
+          "body": "Also shipping 9.0.690: pairing productId restores so Curtain (and other locked couples) keep matching after compact. Update Test to 9.0.690+, remove + re-pair.",
+          "createdAt": "2026-08-29T17:14:22Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/533#issuecomment-5463765794",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDOPPue0s8AAAABRbhqeQ",
+          "author": {
+            "login": "salvagr"
+          },
+          "authorAssociation": "NONE",
+          "body": "Hello,\r\n\r\nI have checked the app and the last version is 9.0.688.\r\n\r\nThank you. Regards.\r\n\r\n[image: imagen.png]\r\n\r\n\r\nEl sáb, 29 ago 2026 a las 19:14, dlnraja ***@***.***>)\r\nescribió:\r\n\r\n> *dlnraja* left a comment (dlnraja/com.tuya.zigbee#533)\r\n> <https://github.com/dlnraja/com.tuya.zigbee/issues/533#issuecomment-5463765794>\r\n>\r\n> Also shipping 9.0.690: pairing productId restores so Curtain (and other\r\n> locked couples) keep matching after compact. Update Test to 9.0.690+,\r\n> remove + re-pair.\r\n>\r\n> —\r\n> Reply to this email directly, view it on GitHub\r\n> <https://github.com/dlnraja/com.tuya.zigbee/issues/533?email_source=notifications&email_token=AGFSYZNODLJM3K5YM4CXUA35MMFQJA5CNFSNUABFM5UWIORPF5TWS5BNNB2WEL2JONZXKZKDN5WW2ZLOOQXTKNBWGM3TMNJXHE2KM4TFMFZW63VGMF2XI2DPOKSWK5TFNZ2KYZTPN52GK4S7MNWGSY3L#issuecomment-5463765794>,\r\n> or unsubscribe\r\n> <https://github.com/notifications/unsubscribe-auth/AGFSYZNO3SWIVWJKX6AKHG35MMFQJAVCNFSNUABGKJSXA33TNF2G64TZHMYTAMRTGEZDGMJVGQ5US43TOVSTWNJSHA3DSOBQGYYTBILWAI>\r\n> .\r\n> Triage notifications, keep track of coding agent tasks and review pull\r\n> requests on the go with GitHub Mobile for iOS\r\n> <https://github.com/notifications/mobile/ios/AGFSYZN2QIGOHUDKKQYOMAT5MMFQJA5CNFSNUABFM5UWIORPF5TWS5BNNB2WEL2JONZXKZKDN5WW2ZLOOQXTKNBWGM3TMNJXHE2KM4TFMFZW63VGMF2XI2DPOKSWK5TFNZ2KUZTPN52GK4S7NFXXG>\r\n> and Android\r\n> <https://github.com/notifications/mobile/android/AGFSYZO23YLHPACO2NLLGKT5MMFQJA5CNFSNUABFM5UWIORPF5TWS5BNNB2WEL2JONZXKZKDN5WW2ZLOOQXTKNBWGM3TMNJXHE2KM4TFMFZW63VGMF2XI2DPOKSWK5TFNZ2K4ZTPN52GK4S7MFXGI4TPNFSA>.\r\n> Download it today!\r\n> You are receiving this because you authored the thread.Message ID:\r\n> ***@***.***>\r\n>\r\n",
+          "createdAt": "2026-08-29T20:21:17Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/533#issuecomment-5464681081",
+          "viewerDidAuthor": false
+        },
+        {
+          "id": "IC_kwDOPPue0s8AAAABRcJItg",
+          "author": {
+            "login": "dlnraja"
+          },
+          "authorAssociation": "OWNER",
+          "body": "Also in 9.0.694+: Moes Star Feather curtain \\_TZE284_upt8lzi0\\ moved to curtain_motor (was switch_1gang). Update Test and remove+re-pair if still on switch.",
+          "createdAt": "2026-08-29T22:47:40Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/533#issuecomment-5465327798",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDOPPue0s8AAAABRcSmoA",
+          "author": {
+            "login": "dlnraja"
+          },
+          "authorAssociation": "OWNER",
+          "body": "**Update for @salvagr** (Homey still showed **9.0.688** in your screenshot)\n\nLatest **Test** tip is **9.0.696+** (curtain lock + productId pairing restores). Homey App Store “Test” list can lag a few minutes behind Athom — pull-to-refresh the Test install page.\n\n### Your device\n- Couple: `_TZE204_5slehgeo` + `TS0601` (Moes ZTS-EUR-C curtain wall switch)\n- Purchase: https://es.aliexpress.com/item/1005008356152992.html\n- Locked driver: **curtain_motor** (Cover) — **not** radiator valve\n\n### Steps\n1. Install Test: https://homey.app/a/com.dlnraja.tuya.zigbee/test/\n2. Confirm app version ≥ **9.0.696** (or at least **9.0.690+**)\n3. **Remove** the wrongly paired tile\n4. Re-pair — choose **Curtain / Cover Controller**\n5. Test open / stop / close (+ position if shown)\n\nIf it still pairs wrong, reply with a **Diagnostic Report ID** from device settings.",
+          "createdAt": "2026-08-29T23:25:21Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/533#issuecomment-5465482912",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDOPPue0s8AAAABReqp_g",
+          "author": {
+            "login": "salvagr"
+          },
+          "authorAssociation": "NONE",
+          "body": "HelloI re-paired the device as “Cover controller” but it is detected as “Zigbee device”This is the Diagnostic Report ID: 7a6f2ca1-28dc-4ddb-9748-805a79aa39b6Thank youEl 30 ago 2026, a las 1:25, dlnraja ***@***.***> escribió:﻿dlnraja left a comment (dlnraja/com.tuya.zigbee#533)\r\nUpdate for @salvagr (Homey still showed 9.0.688 in your screenshot)\r\nLatest Test tip is 9.0.696+ (curtain lock + productId pairing restores). Homey App Store “Test” list can lag a few minutes behind Athom — pull-to-refresh the Test install page.\r\nYour device\r\n\r\nCouple: _TZE204_5slehgeo + TS0601 (Moes ZTS-EUR-C curtain wall switch)\r\nPurchase: https://es.aliexpress.com/item/1005008356152992.html\r\nLocked driver: curtain_motor (Cover) — not radiator valve\r\n\r\nSteps\r\n\r\nInstall Test: https://homey.app/a/com.dlnraja.tuya.zigbee/test/\r\nConfirm app version ≥ 9.0.696 (or at least 9.0.690+)\r\nRemove the wrongly paired tile\r\nRe-pair — choose Curtain / Cover Controller\r\nTest open / stop / close (+ position if shown)\r\n\r\nIf it still pairs wrong, reply with a Diagnostic Report ID from device settings.\r\n\r\n—Reply to this email directly, view it on GitHub, or unsubscribe.Triage notifications, keep track of coding agent tasks and review pull requests on the go with GitHub Mobile for iOS and Android. Download it today!\r\nYou are receiving this because you were mentioned.Message ID: ***@***.***>",
+          "createdAt": "2026-08-30T09:49:11Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/533#issuecomment-5467974142",
+          "viewerDidAuthor": false
+        },
+        {
+          "id": "IC_kwDOPPue0s8AAAABRfBtbA",
+          "author": {
+            "login": "dlnraja"
+          },
+          "authorAssociation": "OWNER",
+          "body": "**P2324 follow-up on diag `7a6f2ca1` (salvagr)**\n\nCouple `_TZE204_5slehgeo`+`TS0601` is locked to **curtain_motor** (Moes ZTS-EUR-C). Homey showing generic Zigbee / radiator usually means an older Test tip (your earlier screenshot was 9.0.688) or a stale pairing.\n\n**Extra hardening:** DeviceFingerprintDB + broader TRV/generic forbids (couple-mode).\n\nPlease:\n1. Update Universal Tuya **Test** to latest tip\n2. Remove the device\n3. Re-pair and pick **Cover controller** / curtain motor\n4. If it still lands on generic Zigbee on tip ≥9.0.720, send another diagnostic with the driver name shown in device settings\n",
+          "createdAt": "2026-08-30T11:17:03Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/533#issuecomment-5468351852",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDOPPue0s8AAAABRfKZUw",
+          "author": {
+            "login": "salvagr"
+          },
+          "authorAssociation": "NONE",
+          "body": "Hello,\r\n\r\nThe switch is still detected as a \"zigbee device\".\r\n\r\nID: c137a5d7-30b5-425d-8744-2bf304e6c63d\r\n\r\nRegards\r\n\r\nEl dom, 30 ago 2026 a las 13:17, dlnraja ***@***.***>)\r\nescribió:\r\n\r\n> *dlnraja* left a comment (dlnraja/com.tuya.zigbee#533)\r\n> <https://github.com/dlnraja/com.tuya.zigbee/issues/533#issuecomment-5468351852>\r\n>\r\n> *P2324 follow-up on diag 7a6f2ca1 (salvagr)*\r\n>\r\n> Couple _TZE204_5slehgeo+TS0601 is locked to *curtain_motor* (Moes\r\n> ZTS-EUR-C). Homey showing generic Zigbee / radiator usually means an older\r\n> Test tip (your earlier screenshot was 9.0.688) or a stale pairing.\r\n>\r\n> *Extra hardening:* DeviceFingerprintDB + broader TRV/generic forbids\r\n> (couple-mode).\r\n>\r\n> Please:\r\n>\r\n>    1. Update Universal Tuya *Test* to latest tip\r\n>    2. Remove the device\r\n>    3. Re-pair and pick *Cover controller* / curtain motor\r\n>    4. If it still lands on generic Zigbee on tip ≥9.0.720, send another\r\n>    diagnostic with the driver name shown in device settings\r\n>\r\n> —\r\n> Reply to this email directly, view it on GitHub\r\n> <https://github.com/dlnraja/com.tuya.zigbee/issues/533?email_source=notifications&email_token=AGFSYZK7XZ5ZU37ZEGC4CW35MQEMJA5CNFSNUABFM5UWIORPF5TWS5BNNB2WEL2JONZXKZKDN5WW2ZLOOQXTKNBWHAZTKMJYGUZKM4TFMFZW63VHNVSW45DJN5XKKZLWMVXHJLDGN5XXIZLSL5RWY2LDNM#issuecomment-5468351852>,\r\n> or unsubscribe\r\n> <https://github.com/notifications/unsubscribe-auth/AGFSYZKDPPBJO4D47JUBERL5MQEMJAVCNFSNUABGKJSXA33TNF2G64TZHMYTAMRTGEZDGMJVGQ5US43TOVSTWNJSHA3DSOBQGYYTBILWAI>\r\n> .\r\n> Triage notifications, keep track of coding agent tasks and review pull\r\n> requests on the go with GitHub Mobile for iOS\r\n> <https://github.com/notifications/mobile/ios/AGFSYZM6KPAEFMYDMOSHLMT5MQEMJA5CNFSNUABFM5UWIORPF5TWS5BNNB2WEL2JONZXKZKDN5WW2ZLOOQXTKNBWHAZTKMJYGUZKM4TFMFZW63VHNVSW45DJN5XKKZLWMVXHJKTGN5XXIZLSL5UW64Y>\r\n> and Android\r\n> <https://github.com/notifications/mobile/android/AGFSYZIQLZL7YFLEOF6P6FT5MQEMJA5CNFSNUABFM5UWIORPF5TWS5BNNB2WEL2JONZXKZKDN5WW2ZLOOQXTKNBWHAZTKMJYGUZKM4TFMFZW63VHNVSW45DJN5XKKZLWMVXHJLTGN5XXIZLSL5QW4ZDSN5UWI>.\r\n> Download it today!\r\n> You are receiving this because you were mentioned.Message ID: <dlnraja/com\r\n> .***@***.***>\r\n>\r\n",
+          "createdAt": "2026-08-30T11:47:26Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/533#issuecomment-5468494163",
+          "viewerDidAuthor": false
+        },
+        {
+          "id": "IC_kwDOPPue0s8AAAABRg_e-A",
+          "author": {
+            "login": "dlnraja"
+          },
+          "authorAssociation": "OWNER",
+          "body": "**P2326 follow-up — diag `c137a5d7` (salvagr) on Homey Test **9.0.719** (#3035)**\n\nFetched your latest report. App version is correct (9.0.719), but the only Universal Tuya device initializing in that log is:\n\n- **Driver:** `device_radiator_valve` (TRV)\n- **Model:** `TS0601`\n- **manufacturerName:** empty → Generic profile\n\nSo Homey did **not** land on `curtain_motor`. That usually means the device was added under **Climate / Radiator Valve** (or an old radiator pairing), not Curtain / Window Coverings.\n\nSacred couple remains:\n\n- `_TZE204_5slehgeo` + `TS0601` → **`curtain_motor`** only (Moes ZTS-EUR-C)\n\nPlease:\n\n1. **Remove** the current device (including if it shows as Zigbee Device / Radiator).\n2. Update Universal Tuya Test again (pull-to-refresh the Test page — tip may still show 9.0.719 while 9.0.721 is draft/hanging on Athom).\n3. Add device → choose **Curtain / Window Coverings** under Universal Tuya (do **not** pick Radiator Valve).\n4. If it still pairs generic, send a new diag **right after** the failed pair attempt.\n\nShipping next Test build: empty-mfr heal + loud `[MISROUTE-P2326]` when this couple is stuck on radiator.\n",
+          "createdAt": "2026-08-30T18:13:26Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/533#issuecomment-5470412536",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDOPPue0s8AAAABRhLNIA",
+          "author": {
+            "login": "salvagr"
+          },
+          "authorAssociation": "NONE",
+          "body": "Hello,\r\n\r\nI follow this steps, but still detecting as Zigbee Device:\r\n- Uninstall Universal Tuya.\r\n- Reinstall Universal Tuya.\r\n- Put the device in pairing mode.\r\n- Add device choosing \"Cover controller\" ( I didn't find \"Curtain / Window\r\nCoverings\" )\r\n- Detected as Unknown device and added as Zigbee Device\r\n\r\nNew Diag ID: e5d19878-d2fc-4bc6-ab0f-cf3d760c5c23\r\n\r\nThank You and regards\r\n\r\nEl dom, 30 ago 2026 a las 20:13, dlnraja ***@***.***>)\r\nescribió:\r\n\r\n> *dlnraja* left a comment (dlnraja/com.tuya.zigbee#533)\r\n> <https://github.com/dlnraja/com.tuya.zigbee/issues/533#issuecomment-5470412536>\r\n>\r\n> *P2326 follow-up — diag c137a5d7 (salvagr) on Homey Test 9.0.719 (#3035)*\r\n>\r\n> Fetched your latest report. App version is correct (9.0.719), but the only\r\n> Universal Tuya device initializing in that log is:\r\n>\r\n>    - *Driver:* device_radiator_valve (TRV)\r\n>    - *Model:* TS0601\r\n>    - *manufacturerName:* empty → Generic profile\r\n>\r\n> So Homey did *not* land on curtain_motor. That usually means the device\r\n> was added under *Climate / Radiator Valve* (or an old radiator pairing),\r\n> not Curtain / Window Coverings.\r\n>\r\n> Sacred couple remains:\r\n>\r\n>    - _TZE204_5slehgeo + TS0601 → *curtain_motor* only (Moes ZTS-EUR-C)\r\n>\r\n> Please:\r\n>\r\n>    1. *Remove* the current device (including if it shows as Zigbee Device\r\n>    / Radiator).\r\n>    2. Update Universal Tuya Test again (pull-to-refresh the Test page —\r\n>    tip may still show 9.0.719 while 9.0.721 is draft/hanging on Athom).\r\n>    3. Add device → choose *Curtain / Window Coverings* under Universal\r\n>    Tuya (do *not* pick Radiator Valve).\r\n>    4. If it still pairs generic, send a new diag *right after* the failed\r\n>    pair attempt.\r\n>\r\n> Shipping next Test build: empty-mfr heal + loud [MISROUTE-P2326] when\r\n> this couple is stuck on radiator.\r\n>\r\n> —\r\n> Reply to this email directly, view it on GitHub\r\n> <https://github.com/dlnraja/com.tuya.zigbee/issues/533?email_source=notifications&email_token=AGFSYZLKUDAUTL637LOHBAD5MRVFZA5CNFSNUABFM5UWIORPF5TWS5BNNB2WEL2JONZXKZKDN5WW2ZLOOQXTKNBXGA2DCMRVGM3KM4TFMFZW63VHNVSW45DJN5XKKZLWMVXHJLDGN5XXIZLSL5RWY2LDNM#issuecomment-5470412536>,\r\n> or unsubscribe\r\n> <https://github.com/notifications/unsubscribe-auth/AGFSYZOPA5IBNSAVW7SUJIT5MRVFZAVCNFSNUABGKJSXA33TNF2G64TZHMYTAMRTGEZDGMJVGQ5US43TOVSTWNJSHA3DSOBQGYYTBILWAI>\r\n> .\r\n> Triage notifications, keep track of coding agent tasks and review pull\r\n> requests on the go with GitHub Mobile for iOS\r\n> <https://github.com/notifications/mobile/ios/AGFSYZJNQ5SLSOFYX4I5H5L5MRVFZA5CNFSNUABFM5UWIORPF5TWS5BNNB2WEL2JONZXKZKDN5WW2ZLOOQXTKNBXGA2DCMRVGM3KM4TFMFZW63VHNVSW45DJN5XKKZLWMVXHJKTGN5XXIZLSL5UW64Y>\r\n> and Android\r\n> <https://github.com/notifications/mobile/android/AGFSYZNFDY2AJP6OQSVFVND5MRVFZA5CNFSNUABFM5UWIORPF5TWS5BNNB2WEL2JONZXKZKDN5WW2ZLOOQXTKNBXGA2DCMRVGM3KM4TFMFZW63VHNVSW45DJN5XKKZLWMVXHJLTGN5XXIZLSL5QW4ZDSN5UWI>.\r\n> Download it today!\r\n> You are receiving this because you were mentioned.Message ID: <dlnraja/com\r\n> .***@***.***>\r\n>\r\n",
+          "createdAt": "2026-08-30T18:52:26Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/533#issuecomment-5470604576",
+          "viewerDidAuthor": false
+        }
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/533"
+    },
+    {
+      "number": 532,
+      "title": "[Device] Zigbee Smart AC Thermostat",
+      "author": "xDMcGee",
+      "updatedAt": "2026-08-30T18:13:31Z",
+      "comments": [
+        {
+          "id": "IC_kwDOPPue0s8AAAABRTH1mA",
+          "author": {
+            "login": "dlnraja"
+          },
+          "authorAssociation": "OWNER",
+          "body": "<!-- diag-resolver -->\n### Auto-resolved by Diagnostic Resolver\n\nAll fingerprints in this issue found in **Tuya Unified Zigbee v9.0.672**:\n- `_TZE204_mpbki2zm` -> **wall_thermostat**\n\n**Install:** https://homey.app/a/com.dlnraja.tuya.zigbee/test/\nRemove and re-pair your device after installing.\n\n\n> **Protocol:** Tuya DP (cluster 0xEF00). Ensure DP listeners active.\n**Troubleshooting:** https://github.com/dlnraja/com.tuya.zigbee/wiki/Troubleshooting\n\n> **Detected protocols:** tuya_dp\n",
+          "createdAt": "2026-08-28T17:50:51Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/532#issuecomment-5455869336",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDOPPue0s8AAAABRVIyXg",
+          "author": {
+            "login": "dlnraja"
+          },
+          "authorAssociation": "OWNER",
+          "body": "**Supported on master (P2234 lock + P2293 FCU TX/RX) — Test app v9.0.672+**\n\nCouple `_TZE204_mpbki2zm` + `TS0601` (TYBAC-006 / BAC006 FCU) pairs as **Wall Thermostat**.\n\nRuntime now maps Z2M-aligned DPs for this couple:\n- DP1 on/off\n- DP2 system_mode → `cool` / `heat` / `fan_only` (`thermostat_mode`)\n- DP16/24 setpoint & local temp (÷10)\n- DP28 `fan_mode` → low/medium/high/auto\n- DP40 child lock / DP101 manual vs schedule\n\nPlease install the **Test** build and re-pair if the device was added before this fix. Feedback on fan + mode TX/RX welcome.",
+          "createdAt": "2026-08-28T21:32:10Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/532#issuecomment-5457982046",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDOPPue0s8AAAABRW3JDw",
+          "author": {
+            "login": "xDMcGee"
+          },
+          "authorAssociation": "NONE",
+          "body": "I have updated to v9.0.675 and repaired the device. It now correctly registers as a wall thermostat and has the correct capabilities in the app but none of the controls actually work and it is not displaying the current temperature either. I have tried changing the target temp, turning the device on/off with the app but they have no effect on the device. Please let me know if there is any info I can provide to help :)",
+          "createdAt": "2026-08-29T02:29:49Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/532#issuecomment-5459790095",
+          "viewerDidAuthor": false
+        },
+        {
+          "id": "IC_kwDOPPue0s8AAAABRW3LVQ",
+          "author": {
+            "login": "github-actions"
+          },
+          "authorAssociation": "NONE",
+          "body": "<!-- tuya-reopen-bot -->\nThis issue has been **automatically reopened** because @xDMcGee posted a new comment.\nIt will be reviewed in the next automation cycle.\n\n> If your device is still not working, please share:\n> 1. **Device Interview** from [Developer Tools](https://tools.developer.homey.app)\n> 2. **Diagnostic Report ID** from device settings",
+          "createdAt": "2026-08-29T02:29:57Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/532#issuecomment-5459790677",
+          "viewerDidAuthor": false
+        },
+        {
+          "id": "IC_kwDOPPue0s8AAAABRXGv-Q",
+          "author": {
+            "login": "dlnraja"
+          },
+          "authorAssociation": "OWNER",
+          "body": "**P2300 fix shipped on master** — root cause: `wall_thermostat` never called `super.onNodeInit`, so DeviceIO / EF00 attach + DP query never ran. Caps looked correct, TX/RX were dead (matches your 9.0.675 re-pair report).\n\nAlso hardened:\n- EF00 RX attach via `_resolveTuyaCluster`\n- FCU DP query after pair (`requestDP` / `queryAllDPs`)\n- Late MFR-ENSURE re-arms FCU path\n- Buffer-safe DP parse\n\n**Please:** update to the next **Test** build after Auto-Publish (~9.0.677+), remove the device, re-pair as Wall Thermostat, then try on/off + setpoint + fan/mode. If anything still fails, send a diagnostic report ID from device settings.",
+          "createdAt": "2026-08-29T03:27:13Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/532#issuecomment-5460045817",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDOPPue0s8AAAABRXJXNQ",
+          "author": {
+            "login": "xDMcGee"
+          },
+          "authorAssociation": "NONE",
+          "body": "I have just updated to 9.0.677 and re-paired. The device now pairs as Unknown ZigBee Device with no functionality. I have sent diagnostic report 8cc4aef0-a486-4cb1-badd-087ed84f43da",
+          "createdAt": "2026-08-29T03:36:45Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/532#issuecomment-5460088629",
+          "viewerDidAuthor": false
+        },
+        {
+          "id": "IC_kwDOPPue0s8AAAABRXL9Pw",
+          "author": {
+            "login": "dlnraja"
+          },
+          "authorAssociation": "OWNER",
+          "body": "**Update (P2300 publish follow-up)**\n\n`9.0.677` did **not** include the FCU TX/RX fix — Auto-Publish was blocked by a fingerprint collision on an unrelated contact couple (`_TZ3000_pjb1ua0m`). That is now cleared and a new Test build is publishing.\n\nIf Homey showed **Unknown ZigBee Device** on 9.0.677, wait for the next Test build after this push (should be **9.0.678+**), then:\n1. Update the Test app\n2. Remove the thermostat\n3. Re-pair — it should come back as **Wall Thermostat** with working on/off / setpoint / temp\n\nThanks for diag `8cc4aef0` — I will cross-check it against the new build.",
+          "createdAt": "2026-08-29T03:45:57Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/532#issuecomment-5460131135",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDOPPue0s8AAAABRXVqbw",
+          "author": {
+            "login": "xDMcGee"
+          },
+          "authorAssociation": "NONE",
+          "body": "Progress! I have updated to 9.0.678 and now can turn the AC ON using the app. Unfortunately I cannot turn it back off and the app seems to crash when I try interacting with the device and I have to select Restart App in Homey. I have published diagnostic 8c49c683-294c-4965-ade1-e165c56a06e9",
+          "createdAt": "2026-08-29T04:18:35Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/532#issuecomment-5460290159",
+          "viewerDidAuthor": false
+        },
+        {
+          "id": "IC_kwDOPPue0s8AAAABRXWGJA",
+          "author": {
+            "login": "dlnraja"
+          },
+          "authorAssociation": "OWNER",
+          "body": "**P2300 is now on Homey Test** (Auto-Publish succeeded).\n\nPlease update to the latest Test build, remove the AC thermostat, and re-pair as **Wall Thermostat**. On/off, setpoint, local temp, fan/mode should work after that.\n\nIf anything still fails, reply with the new diagnostic ID.",
+          "createdAt": "2026-08-29T04:20:02Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/532#issuecomment-5460297252",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDOPPue0s8AAAABRXc7YQ",
+          "author": {
+            "login": "dlnraja"
+          },
+          "authorAssociation": "OWNER",
+          "body": "**Root cause found in diag `8c49c683` (P2301)**\n\nTurning OFF crashed the app with `Maximum call stack size exceeded` in `safeSetCapabilityValue` ↔ `setCapabilityValue` (that is why ON worked but OFF / further interaction needed Restart App).\n\nFix is on master and publishing to Test now. After the next build (**9.0.679+**):\n1. Update Test\n2. Restart the app once (or re-pair if still wedged)\n3. Try ON **and** OFF again\n\nSorry for the churn — this one was a real stack overflow, not a missing DP.",
+          "createdAt": "2026-08-29T04:47:43Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/532#issuecomment-5460409185",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDOPPue0s8AAAABRXiZPw",
+          "author": {
+            "login": "dlnraja"
+          },
+          "authorAssociation": "OWNER",
+          "body": "**P2301 code is on master (`9.0.679`)** — recursion crash fix is committed.\n\nAthom marked draft **#3009** as `processing_failed` (transient processor / P139). I am **not** force-republishing in a loop. Homey Test may still show **9.0.678** until Athom accepts the next draft.\n\nWhen a new Test build appears (**9.0.679+**), update + restart the app (or re-pair if needed), then try OFF again.",
+          "createdAt": "2026-08-29T05:10:07Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/532#issuecomment-5460498751",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDOPPue0s8AAAABRXnWbw",
+          "author": {
+            "login": "dlnraja"
+          },
+          "authorAssociation": "OWNER",
+          "body": "**Retry publish:** master is now **9.0.680** (P2301 crash fix + softer Athom draft-wait so a `processing_failed` sibling does not hard-block promotion).\n\nPlease watch Homey Test for **9.0.680+**, then update / restart the app and retest OFF.",
+          "createdAt": "2026-08-29T05:30:02Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/532#issuecomment-5460579951",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDOPPue0s8AAAABRXrNyA",
+          "author": {
+            "login": "dlnraja"
+          },
+          "authorAssociation": "OWNER",
+          "body": "**Homey Test publish OK** — Auto-Publish for **9.0.680** succeeded (tip may already show **9.0.681** after the bot bump).\n\nPlease update Universal Tuya Test, restart the app if needed, then retest AC **OFF**. The stack-overflow crash on OFF should be gone.",
+          "createdAt": "2026-08-29T05:46:04Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/532#issuecomment-5460643272",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDOPPue0s8AAAABRYCCoA",
+          "author": {
+            "login": "xDMcGee"
+          },
+          "authorAssociation": "NONE",
+          "body": "I have now updated to 9.0.684 and re-paired the device. I can now see the temperature reading from the thermostat and turn the AC on but adjust the target temp or trying to turn the AC OFF still do not work. I have uploaded another diagnostic for you f84180b7-6cc7-4cdd-8bc5-003e80f23a62\n\nThank you for all your hard work!",
+          "createdAt": "2026-08-29T07:17:40Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/532#issuecomment-5461017248",
+          "viewerDidAuthor": false
+        },
+        {
+          "id": "IC_kwDOPPue0s8AAAABRYVdlg",
+          "author": {
+            "login": "dlnraja"
+          },
+          "authorAssociation": "OWNER",
+          "body": "**P2302 from diag `f84180b7` (9.0.684)** — root causes found:\n\n1. Device was on **BHT path** (not FCU) so mode/fan listeners never armed\n2. Generic EF00 mapped **bool DP1 → measure_temperature=0** and tried `onoff=0` as a number (Homey rejected it)\n3. **TUYA-FRAG** treated DP24 temp `[0,0,0,220]` as a 220-byte fragment and discarded the payload\n4. Setpoint/OFF can be ignored while MCU is in **schedule** — we now force **manual (DP101)** before TX\n\nFix is on master **9.0.685** and publishing to Homey Test. Please update, restart the app (or re-pair once), then retest **OFF** and **target temp**.\n\nIf anything still fails, send a fresh diagnostic ID.",
+          "createdAt": "2026-08-29T08:36:18Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/532#issuecomment-5461335446",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDOPPue0s8AAAABRYZW0g",
+          "author": {
+            "login": "dlnraja"
+          },
+          "authorAssociation": "OWNER",
+          "body": "**P2303 for Adam K (`xDMcGee`) — follow-up on diag `f84180b7`**\n\nYour Homey Self-Hosted log showed the thermostat stuck on the **BHT** path (empty `zb_manufacturer_name`) even though it is a TYBAC FCU (`_TZE204_mpbki2zm` + `TS0601`). DP36 (valve) proved it was FCU hardware.\n\n**Extra hardening in Test `9.0.687+`:**\n1. Arm FCU automatically when DP28 / DP36 / DP101 appears (or Basic cluster identity)\n2. Persist FCU arm in device store across restarts\n3. TX via **DeviceIO cascade** (not cluster-only) for OFF + setpoint\n4. Always force **manual mode (DP101)** before OFF / target temp (schedule was swallowing commands)\n\n**Please:**\n1. Update Universal Tuya Test to **9.0.687+** (wait a few minutes if 9.0.686 is still showing)\n2. Restart the app once (re-pair only if still stuck)\n3. Retest **OFF** and **target temperature**\n\nIf anything fails, send a new diagnostic ID — I will keep iterating until OFF + setpoint work.",
+          "createdAt": "2026-08-29T08:51:58Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/532#issuecomment-5461399250",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDOPPue0s8AAAABRapzwA",
+          "author": {
+            "login": "dlnraja"
+          },
+          "authorAssociation": "OWNER",
+          "body": "9.0.690 also soft-fails a Homey flow serializer crash (Invalid Driver ID virtualdriverzigbee) seen on older Test builds. Please retest FCU OFF/setpoint on latest Test after update.",
+          "createdAt": "2026-08-29T17:14:23Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/532#issuecomment-5463765952",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDOPPue0s8AAAABRcJISw",
+          "author": {
+            "login": "dlnraja"
+          },
+          "authorAssociation": "OWNER",
+          "body": "P2308 from Gmail crash harvest: extra recursion guard on SafeCapabilityMixin + setCapabilityValue depth cap. Please update Test to **9.0.694+** and retest FCU OFF/setpoint.",
+          "createdAt": "2026-08-29T22:47:38Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/532#issuecomment-5465327691",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDOPPue0s8AAAABRcSm_w",
+          "author": {
+            "login": "dlnraja"
+          },
+          "authorAssociation": "OWNER",
+          "body": "**Status check for @xDMcGee (Adam)**\n\nTip Test is now **9.0.696+** (includes P2300–P2303 FCU path + P2308 recursion guards from your Gmail/diags `8c49c683` / `f84180b7`).\n\nPlease:\n1. Update Test → https://homey.app/a/com.dlnraja.tuya.zigbee/test/\n2. Confirm ≥ **9.0.696** (or at least **9.0.694+**)\n3. Restart app once (re-pair only if still stuck on BHT/empty mfr)\n4. Retest **OFF** + **target temperature**\n\nProduct page you listed: https://www.aliexpress.com/item/1005005866919886.html (`_TZE204_mpbki2zm` + `TS0601`).\n\nIf OFF/setpoint still fail, send a **new diagnostic ID** — I’ll keep iterating.",
+          "createdAt": "2026-08-29T23:25:22Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/532#issuecomment-5465483007",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDOPPue0s8AAAABRdXoUw",
+          "author": {
+            "login": "xDMcGee"
+          },
+          "authorAssociation": "NONE",
+          "body": "I have updated to 6.0.699, restarted and repaired but still only the ON functionality is working. Set OFF/Target temp not working. Here is a new diagnostic for you a095345e-08a4-4d5e-b3b1-adbc30ff12a2\nThank you!",
+          "createdAt": "2026-08-30T04:05:51Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/532#issuecomment-5466613843",
+          "viewerDidAuthor": false
+        },
+        {
+          "id": "IC_kwDOPPue0s8AAAABRfBsLQ",
+          "author": {
+            "login": "dlnraja"
+          },
+          "authorAssociation": "OWNER",
+          "body": "**P2324 follow-up on diag `a095345e` (Adam)**\n\nRoot cause for ON-ok / OFF+setpoint-dead on TYBAC FCU (`_TZE204_mpbki2zm`+`TS0601`):\n1. Blind DP101 (manual) before every TX — Z2M still marks DP101 as TODO; MCU can ignore DP1=false / DP16\n2. Soft-success TX + hollow EF00 after re-pair\n\n**Fix in next Test tip:** DP1/DP16 first; DP101 only after RX confirms it; force magic handshake + IEEE heal on FCU boot; hard-fail if mesh TX fails.\n\nPlease update Test when Athom publishes the tip, restart app once, retest **OFF** + **target temperature**. If still stuck, send a fresh diagnostic.\n",
+          "createdAt": "2026-08-30T11:16:59Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/532#issuecomment-5468351533",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDOPPue0s8AAAABRg_gfQ",
+          "author": {
+            "login": "dlnraja"
+          },
+          "authorAssociation": "OWNER",
+          "body": "**P2326 follow-up — diag `a095345e` (Adam) on Test **9.0.699****\n\nLog shows FCU path is alive:\n\n- OFF TX: `onoff TX false ok` and DP1 RX `false` (mesh ACK)\n- Then DynCap **wrongly** mapped **DP36** (3-way valve) → `target_temperature` and wrote `5`\n\nSo the “setpoint dead / jumps” symptom on 9.0.699 is partly **DynCap inventing a mapping** for a driver-owned FCU DP, not only missing OFF TX.\n\nFixes on master (next Test after Athom recovers from draft hang):\n\n1. P2324 — FCU TX order (DP1/DP16 before DP101; hard-fail soft TX)\n2. P2326 — DynCap **skips driver-owned DPs**; DP36 reserved as internal valve\n\nPlease update to the newest Universal Tuya Test tip when Athom shows it (live tip was still **9.0.719** while **9.0.721** sat in draft after socket hang). Then remove + re-pair Wall Thermostat and retest OFF + target temp.\n\nIf still broken, send a fresh diag after the re-pair.\n",
+          "createdAt": "2026-08-30T18:13:31Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/532#issuecomment-5470412925",
+          "viewerDidAuthor": true
+        }
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/532"
+    }
+  ],
+  "openPrs": [],
+  "recentRuns": [
+    {
+      "conclusion": "success",
+      "createdAt": "2026-08-30T19:18:56Z",
+      "databaseId": 33330524877,
+      "displayTitle": "🔬 Publish Diagnose",
+      "headBranch": "master",
+      "name": "🔬 Publish Diagnose",
+      "status": "completed",
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/actions/runs/33330524877"
+    },
+    {
+      "conclusion": "",
+      "createdAt": "2026-08-30T19:18:52Z",
+      "databaseId": 33330521957,
+      "displayTitle": "🚀 Publish Stable to Test",
+      "headBranch": "stable-v5",
+      "name": "🚀 Publish Stable to Test",
+      "status": "pending",
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/actions/runs/33330521957"
+    },
+    {
+      "conclusion": "success",
+      "createdAt": "2026-08-30T19:18:15Z",
+      "databaseId": 33330492255,
+      "displayTitle": "🔬 Publish Diagnose",
+      "headBranch": "master",
+      "name": "🔬 Publish Diagnose",
+      "status": "completed",
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/actions/runs/33330492255"
+    },
+    {
+      "conclusion": "cancelled",
+      "createdAt": "2026-08-30T19:18:11Z",
+      "databaseId": 33330489180,
+      "displayTitle": "🚀 Publish Stable to Test",
+      "headBranch": "stable-v5",
+      "name": "🚀 Publish Stable to Test",
+      "status": "completed",
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/actions/runs/33330489180"
+    },
+    {
+      "conclusion": "cancelled",
+      "createdAt": "2026-08-30T19:18:00Z",
+      "databaseId": 33330481184,
+      "displayTitle": "🚀 Publish Stable to Test",
+      "headBranch": "stable-v5",
+      "name": "🚀 Publish Stable to Test",
+      "status": "completed",
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/actions/runs/33330481184"
+    },
+    {
+      "conclusion": "success",
+      "createdAt": "2026-08-30T19:18:01Z",
+      "databaseId": 33330481181,
+      "displayTitle": "fix(stable): P2328 BOTH button forum TS0044 RX ÔÇö 0x8004/handleFrame…",
+      "headBranch": "stable-v5",
+      "name": "code-quality",
+      "status": "completed",
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/actions/runs/33330481181"
+    },
+    {
+      "conclusion": "failure",
+      "createdAt": "2026-08-30T19:18:00Z",
+      "databaseId": 33330481150,
+      "displayTitle": "fix(stable): P2328 BOTH button forum TS0044 RX ÔÇö 0x8004/handleFrame…",
+      "headBranch": "stable-v5",
+      "name": "🔍 Syntax Check & SDK3 Validation",
+      "status": "completed",
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/actions/runs/33330481150"
+    },
+    {
+      "conclusion": "failure",
+      "createdAt": "2026-08-30T19:18:00Z",
+      "databaseId": 33330481140,
+      "displayTitle": "fix(stable): P2328 BOTH button forum TS0044 RX ÔÇö 0x8004/handleFrame…",
+      "headBranch": "stable-v5",
+      "name": "🤖 Auto-Fix + Publish Pipeline",
+      "status": "completed",
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/actions/runs/33330481140"
+    },
+    {
+      "conclusion": "",
+      "createdAt": "2026-08-30T19:18:00Z",
+      "databaseId": 33330481126,
+      "displayTitle": "fix(stable): P2328 BOTH button forum TS0044 RX ÔÇö 0x8004/handleFrame…",
+      "headBranch": "stable-v5",
+      "name": "🚀 Publish Stable to Test",
+      "status": "in_progress",
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/actions/runs/33330481126"
+    },
+    {
+      "conclusion": "success",
+      "createdAt": "2026-08-30T19:15:39Z",
+      "databaseId": 33330367505,
+      "displayTitle": "fix(buttons): P2328 forum TS0044 RX ÔÇö stop 0x8004 misclass, handleF…",
+      "headBranch": "master",
+      "name": "code-quality",
+      "status": "completed",
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/actions/runs/33330367505"
+    },
+    {
+      "conclusion": "",
+      "createdAt": "2026-08-30T19:15:39Z",
+      "databaseId": 33330367484,
+      "displayTitle": "fix(buttons): P2328 forum TS0044 RX ÔÇö stop 0x8004 misclass, handleF…",
+      "headBranch": "master",
+      "name": "Auto-Publish on Push",
+      "status": "in_progress",
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/actions/runs/33330367484"
+    },
+    {
+      "conclusion": "failure",
+      "createdAt": "2026-08-30T19:15:39Z",
+      "databaseId": 33330367476,
+      "displayTitle": "fix(buttons): P2328 forum TS0044 RX ÔÇö stop 0x8004 misclass, handleF…",
+      "headBranch": "master",
+      "name": "🔍 Syntax Check & SDK3 Validation",
+      "status": "completed",
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/actions/runs/33330367476"
+    },
+    {
+      "conclusion": "",
+      "createdAt": "2026-08-30T19:15:39Z",
+      "databaseId": 33330367475,
+      "displayTitle": "fix(buttons): P2328 forum TS0044 RX ÔÇö stop 0x8004 misclass, handleF…",
+      "headBranch": "master",
+      "name": "continuous-flow",
+      "status": "in_progress",
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/actions/runs/33330367475"
+    },
+    {
+      "conclusion": "failure",
+      "createdAt": "2026-08-30T19:15:39Z",
+      "databaseId": 33330367466,
+      "displayTitle": "fix(buttons): P2328 forum TS0044 RX ÔÇö stop 0x8004 misclass, handleF…",
+      "headBranch": "master",
+      "name": "🛡️ Unified CI/CD Orchestrator",
+      "status": "completed",
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/actions/runs/33330367466"
+    },
+    {
+      "conclusion": "success",
+      "createdAt": "2026-08-30T19:15:39Z",
+      "databaseId": 33330367465,
+      "displayTitle": "fix(buttons): P2328 forum TS0044 RX ÔÇö stop 0x8004 misclass, handleF…",
+      "headBranch": "master",
+      "name": "Deploy Device Finder to GitHub Pages",
+      "status": "completed",
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/actions/runs/33330367465"
+    }
+  ],
+  "recentComments": [
+    {
+      "id": 5470604576,
+      "issue_url": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues/533",
+      "user": "salvagr",
+      "updated_at": "2026-08-30T18:52:26Z",
+      "body": "Hello,\r\n\r\nI follow this steps, but still detecting as Zigbee Device:\r\n- Uninstall Universal Tuya.\r\n- Reinstall Universal Tuya.\r\n- Put the device in pairing mode.\r\n- Add device choosing \"Cover controller\" ( I didn't find \"Curtain / Window\r\nCoverings\" )\r\n- Detected as Unknown device and added as Zigbee Device\r\n\r\nNew Diag ID: e5d19878-d2fc-4bc6-ab0f-cf3d760c5c23\r\n\r\nThank You and regards\r\n\r\nEl dom, 30"
+    },
+    {
+      "id": 5470412925,
+      "issue_url": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues/532",
+      "user": "dlnraja",
+      "updated_at": "2026-08-30T18:13:31Z",
+      "body": "**P2326 follow-up — diag `a095345e` (Adam) on Test **9.0.699****\n\nLog shows FCU path is alive:\n\n- OFF TX: `onoff TX false ok` and DP1 RX `false` (mesh ACK)\n- Then DynCap **wrongly** mapped **DP36** (3-way valve) → `target_temperature` and wrote `5`\n\nSo the “setpoint dead / jumps” symptom on 9.0.699 is partly **DynCap inventing a mapping** for a driver-owned FCU DP, not only missing OFF TX.\n\nFixes "
+    },
+    {
+      "id": 5470412536,
+      "issue_url": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues/533",
+      "user": "dlnraja",
+      "updated_at": "2026-08-30T18:13:26Z",
+      "body": "**P2326 follow-up — diag `c137a5d7` (salvagr) on Homey Test **9.0.719** (#3035)**\n\nFetched your latest report. App version is correct (9.0.719), but the only Universal Tuya device initializing in that log is:\n\n- **Driver:** `device_radiator_valve` (TRV)\n- **Model:** `TS0601`\n- **manufacturerName:** empty → Generic profile\n\nSo Homey did **not** land on `curtain_motor`. That usually means the device"
+    },
+    {
+      "id": 5468494163,
+      "issue_url": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues/533",
+      "user": "salvagr",
+      "updated_at": "2026-08-30T11:47:26Z",
+      "body": "Hello,\r\n\r\nThe switch is still detected as a \"zigbee device\".\r\n\r\nID: c137a5d7-30b5-425d-8744-2bf304e6c63d\r\n\r\nRegards\r\n\r\nEl dom, 30 ago 2026 a las 13:17, dlnraja ***@***.***>)\r\nescribió:\r\n\r\n> *dlnraja* left a comment (dlnraja/com.tuya.zigbee#533)\r\n> <https://github.com/dlnraja/com.tuya.zigbee/issues/533#issuecomment-5468351852>\r\n>\r\n> *P2324 follow-up on diag 7a6f2ca1 (salvagr)*\r\n>\r\n> Couple _TZE204_"
+    },
+    {
+      "id": 5468351852,
+      "issue_url": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues/533",
+      "user": "dlnraja",
+      "updated_at": "2026-08-30T11:17:03Z",
+      "body": "**P2324 follow-up on diag `7a6f2ca1` (salvagr)**\n\nCouple `_TZE204_5slehgeo`+`TS0601` is locked to **curtain_motor** (Moes ZTS-EUR-C). Homey showing generic Zigbee / radiator usually means an older Test tip (your earlier screenshot was 9.0.688) or a stale pairing.\n\n**Extra hardening:** DeviceFingerprintDB + broader TRV/generic forbids (couple-mode).\n\nPlease:\n1. Update Universal Tuya **Test** to lat"
+    },
+    {
+      "id": 5468351533,
+      "issue_url": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues/532",
+      "user": "dlnraja",
+      "updated_at": "2026-08-30T11:16:59Z",
+      "body": "**P2324 follow-up on diag `a095345e` (Adam)**\n\nRoot cause for ON-ok / OFF+setpoint-dead on TYBAC FCU (`_TZE204_mpbki2zm`+`TS0601`):\n1. Blind DP101 (manual) before every TX — Z2M still marks DP101 as TODO; MCU can ignore DP1=false / DP16\n2. Soft-success TX + hollow EF00 after re-pair\n\n**Fix in next Test tip:** DP1/DP16 first; DP101 only after RX confirms it; force magic handshake + IEEE heal on FCU"
+    },
+    {
+      "id": 5467974142,
+      "issue_url": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues/533",
+      "user": "salvagr",
+      "updated_at": "2026-08-30T09:49:11Z",
+      "body": "HelloI re-paired the device as “Cover controller” but it is detected as “Zigbee device”This is the Diagnostic Report ID: 7a6f2ca1-28dc-4ddb-9748-805a79aa39b6Thank youEl 30 ago 2026, a las 1:25, dlnraja ***@***.***> escribió:﻿dlnraja left a comment (dlnraja/com.tuya.zigbee#533)\r\nUpdate for @salvagr (Homey still showed 9.0.688 in your screenshot)\r\nLatest Test tip is 9.0.696+ (curtain lock + productI"
+    },
+    {
+      "id": 5466613843,
+      "issue_url": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues/532",
+      "user": "xDMcGee",
+      "updated_at": "2026-08-30T04:05:51Z",
+      "body": "I have updated to 6.0.699, restarted and repaired but still only the ON functionality is working. Set OFF/Target temp not working. Here is a new diagnostic for you a095345e-08a4-4d5e-b3b1-adbc30ff12a2\nThank you!"
+    },
+    {
+      "id": 5465483007,
+      "issue_url": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues/532",
+      "user": "dlnraja",
+      "updated_at": "2026-08-29T23:25:22Z",
+      "body": "**Status check for @xDMcGee (Adam)**\n\nTip Test is now **9.0.696+** (includes P2300–P2303 FCU path + P2308 recursion guards from your Gmail/diags `8c49c683` / `f84180b7`).\n\nPlease:\n1. Update Test → https://homey.app/a/com.dlnraja.tuya.zigbee/test/\n2. Confirm ≥ **9.0.696** (or at least **9.0.694+**)\n3. Restart app once (re-pair only if still stuck on BHT/empty mfr)\n4. Retest **OFF** + **target tempe"
+    },
+    {
+      "id": 5465482912,
+      "issue_url": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues/533",
+      "user": "dlnraja",
+      "updated_at": "2026-08-29T23:25:21Z",
+      "body": "**Update for @salvagr** (Homey still showed **9.0.688** in your screenshot)\n\nLatest **Test** tip is **9.0.696+** (curtain lock + productId pairing restores). Homey App Store “Test” list can lag a few minutes behind Athom — pull-to-refresh the Test install page.\n\n### Your device\n- Couple: `_TZE204_5slehgeo` + `TS0601` (Moes ZTS-EUR-C curtain wall switch)\n- Purchase: https://es.aliexpress.com/item/1"
+    },
+    {
+      "id": 5465327798,
+      "issue_url": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues/533",
+      "user": "dlnraja",
+      "updated_at": "2026-08-29T22:47:40Z",
+      "body": "Also in 9.0.694+: Moes Star Feather curtain \\_TZE284_upt8lzi0\\ moved to curtain_motor (was switch_1gang). Update Test and remove+re-pair if still on switch."
+    },
+    {
+      "id": 5465327691,
+      "issue_url": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues/532",
+      "user": "dlnraja",
+      "updated_at": "2026-08-29T22:47:38Z",
+      "body": "P2308 from Gmail crash harvest: extra recursion guard on SafeCapabilityMixin + setCapabilityValue depth cap. Please update Test to **9.0.694+** and retest FCU OFF/setpoint."
+    },
+    {
+      "id": 5464681081,
+      "issue_url": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues/533",
+      "user": "salvagr",
+      "updated_at": "2026-08-29T20:21:17Z",
+      "body": "Hello,\r\n\r\nI have checked the app and the last version is 9.0.688.\r\n\r\nThank you. Regards.\r\n\r\n[image: imagen.png]\r\n\r\n\r\nEl sáb, 29 ago 2026 a las 19:14, dlnraja ***@***.***>)\r\nescribió:\r\n\r\n> *dlnraja* left a comment (dlnraja/com.tuya.zigbee#533)\r\n> <https://github.com/dlnraja/com.tuya.zigbee/issues/533#issuecomment-5463765794>\r\n>\r\n> Also shipping 9.0.690: pairing productId restores so Curtain (and ot"
+    },
+    {
+      "id": 5463765952,
+      "issue_url": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues/532",
+      "user": "dlnraja",
+      "updated_at": "2026-08-29T17:14:23Z",
+      "body": "9.0.690 also soft-fails a Homey flow serializer crash (Invalid Driver ID virtualdriverzigbee) seen on older Test builds. Please retest FCU OFF/setpoint on latest Test after update."
+    },
+    {
+      "id": 5463765794,
+      "issue_url": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues/533",
+      "user": "dlnraja",
+      "updated_at": "2026-08-29T17:14:22Z",
+      "body": "Also shipping 9.0.690: pairing productId restores so Curtain (and other locked couples) keep matching after compact. Update Test to 9.0.690+, remove + re-pair."
+    },
+    {
+      "id": 5463607382,
+      "issue_url": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues/533",
+      "user": "dlnraja",
+      "updated_at": "2026-08-29T16:41:48Z",
+      "body": "Shipped on master (next Test publish):\n\n- Sacred couple ``_TZE204_5slehgeo`` + ``TS0601`` (and Z2M siblings ``_TZE284_5slehgeo``, ``_TZE200_nhyj64w2``, ``_TZE200_127x7wnl``) locked to **curtain_motor** (Moes ZTS-EUR-C).\n- Removed from radiator valve (wrong pair).\n- DP map for this couple: 1 open/stop/close, 2 %, 3 calib, 7 backlight, 8 reverse, 10 time.\n\nPlease **update the Test app**, remove the "
+    },
+    {
+      "id": 5463377011,
+      "issue_url": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues/533",
+      "user": "dlnraja",
+      "updated_at": "2026-08-29T15:54:03Z",
+      "body": "<!-- diag-resolver -->\n### Auto-resolved by Diagnostic Resolver\n\nAll fingerprints in this issue found in **Tuya Unified Zigbee v9.0.688**:\n- `_TZE204_5slehgeo` -> **device_radiator_valve**\n\n**Install:** https://homey.app/a/com.dlnraja.tuya.zigbee/test/\nRemove and re-pair your device after installing.\n\n\n> **Protocol:** Tuya DP (cluster 0xEF00). Ensure DP listeners active.\n\n**Detected issues:**\n- Al"
+    },
+    {
+      "id": 5461399250,
+      "issue_url": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues/532",
+      "user": "dlnraja",
+      "updated_at": "2026-08-29T08:51:58Z",
+      "body": "**P2303 for Adam K (`xDMcGee`) — follow-up on diag `f84180b7`**\n\nYour Homey Self-Hosted log showed the thermostat stuck on the **BHT** path (empty `zb_manufacturer_name`) even though it is a TYBAC FCU (`_TZE204_mpbki2zm` + `TS0601`). DP36 (valve) proved it was FCU hardware.\n\n**Extra hardening in Test `9.0.687+`:**\n1. Arm FCU automatically when DP28 / DP36 / DP101 appears (or Basic cluster identity"
+    },
+    {
+      "id": 5461335446,
+      "issue_url": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues/532",
+      "user": "dlnraja",
+      "updated_at": "2026-08-29T08:36:18Z",
+      "body": "**P2302 from diag `f84180b7` (9.0.684)** — root causes found:\n\n1. Device was on **BHT path** (not FCU) so mode/fan listeners never armed\n2. Generic EF00 mapped **bool DP1 → measure_temperature=0** and tried `onoff=0` as a number (Homey rejected it)\n3. **TUYA-FRAG** treated DP24 temp `[0,0,0,220]` as a 220-byte fragment and discarded the payload\n4. Setpoint/OFF can be ignored while MCU is in **sche"
+    },
+    {
+      "id": 5461017248,
+      "issue_url": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues/532",
+      "user": "xDMcGee",
+      "updated_at": "2026-08-29T07:17:40Z",
+      "body": "I have now updated to 9.0.684 and re-paired the device. I can now see the temperature reading from the thermostat and turn the AC on but adjust the target temp or trying to turn the AC OFF still do not work. I have uploaded another diagnostic for you f84180b7-6cc7-4cdd-8bc5-003e80f23a62\n\nThank you for all your hard work!"
+    },
+    {
+      "id": 5460643272,
+      "issue_url": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues/532",
+      "user": "dlnraja",
+      "updated_at": "2026-08-29T05:46:04Z",
+      "body": "**Homey Test publish OK** — Auto-Publish for **9.0.680** succeeded (tip may already show **9.0.681** after the bot bump).\n\nPlease update Universal Tuya Test, restart the app if needed, then retest AC **OFF**. The stack-overflow crash on OFF should be gone."
+    },
+    {
+      "id": 5460579951,
+      "issue_url": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues/532",
+      "user": "dlnraja",
+      "updated_at": "2026-08-29T05:30:02Z",
+      "body": "**Retry publish:** master is now **9.0.680** (P2301 crash fix + softer Athom draft-wait so a `processing_failed` sibling does not hard-block promotion).\n\nPlease watch Homey Test for **9.0.680+**, then update / restart the app and retest OFF."
+    },
+    {
+      "id": 5460498751,
+      "issue_url": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues/532",
+      "user": "dlnraja",
+      "updated_at": "2026-08-29T05:10:07Z",
+      "body": "**P2301 code is on master (`9.0.679`)** — recursion crash fix is committed.\n\nAthom marked draft **#3009** as `processing_failed` (transient processor / P139). I am **not** force-republishing in a loop. Homey Test may still show **9.0.678** until Athom accepts the next draft.\n\nWhen a new Test build appears (**9.0.679+**), update + restart the app (or re-pair if needed), then try OFF again."
+    },
+    {
+      "id": 5460409185,
+      "issue_url": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues/532",
+      "user": "dlnraja",
+      "updated_at": "2026-08-29T04:47:43Z",
+      "body": "**Root cause found in diag `8c49c683` (P2301)**\n\nTurning OFF crashed the app with `Maximum call stack size exceeded` in `safeSetCapabilityValue` ↔ `setCapabilityValue` (that is why ON worked but OFF / further interaction needed Restart App).\n\nFix is on master and publishing to Test now. After the next build (**9.0.679+**):\n1. Update Test\n2. Restart the app once (or re-pair if still wedged)\n3. Try "
+    },
+    {
+      "id": 5460297252,
+      "issue_url": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues/532",
+      "user": "dlnraja",
+      "updated_at": "2026-08-29T04:20:02Z",
+      "body": "**P2300 is now on Homey Test** (Auto-Publish succeeded).\n\nPlease update to the latest Test build, remove the AC thermostat, and re-pair as **Wall Thermostat**. On/off, setpoint, local temp, fan/mode should work after that.\n\nIf anything still fails, reply with the new diagnostic ID."
+    },
+    {
+      "id": 5460290159,
+      "issue_url": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues/532",
+      "user": "xDMcGee",
+      "updated_at": "2026-08-29T04:18:35Z",
+      "body": "Progress! I have updated to 9.0.678 and now can turn the AC ON using the app. Unfortunately I cannot turn it back off and the app seems to crash when I try interacting with the device and I have to select Restart App in Homey. I have published diagnostic 8c49c683-294c-4965-ade1-e165c56a06e9"
+    },
+    {
+      "id": 5460131135,
+      "issue_url": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues/532",
+      "user": "dlnraja",
+      "updated_at": "2026-08-29T03:45:57Z",
+      "body": "**Update (P2300 publish follow-up)**\n\n`9.0.677` did **not** include the FCU TX/RX fix — Auto-Publish was blocked by a fingerprint collision on an unrelated contact couple (`_TZ3000_pjb1ua0m`). That is now cleared and a new Test build is publishing.\n\nIf Homey showed **Unknown ZigBee Device** on 9.0.677, wait for the next Test build after this push (should be **9.0.678+**), then:\n1. Update the Test "
+    },
+    {
+      "id": 5460088629,
+      "issue_url": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues/532",
+      "user": "xDMcGee",
+      "updated_at": "2026-08-29T03:36:45Z",
+      "body": "I have just updated to 9.0.677 and re-paired. The device now pairs as Unknown ZigBee Device with no functionality. I have sent diagnostic report 8cc4aef0-a486-4cb1-badd-087ed84f43da"
+    },
+    {
+      "id": 5460045817,
+      "issue_url": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues/532",
+      "user": "dlnraja",
+      "updated_at": "2026-08-29T03:27:13Z",
+      "body": "**P2300 fix shipped on master** — root cause: `wall_thermostat` never called `super.onNodeInit`, so DeviceIO / EF00 attach + DP query never ran. Caps looked correct, TX/RX were dead (matches your 9.0.675 re-pair report).\n\nAlso hardened:\n- EF00 RX attach via `_resolveTuyaCluster`\n- FCU DP query after pair (`requestDP` / `queryAllDPs`)\n- Late MFR-ENSURE re-arms FCU path\n- Buffer-safe DP parse\n\n**Ple"
+    },
+    {
+      "id": 5459790677,
+      "issue_url": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues/532",
+      "user": "github-actions[bot]",
+      "updated_at": "2026-08-29T02:29:57Z",
+      "body": "<!-- tuya-reopen-bot -->\nThis issue has been **automatically reopened** because @xDMcGee posted a new comment.\nIt will be reviewed in the next automation cycle.\n\n> If your device is still not working, please share:\n> 1. **Device Interview** from [Developer Tools](https://tools.developer.homey.app)\n> 2. **Diagnostic Report ID** from device settings"
+    },
+    {
+      "id": 5459790095,
+      "issue_url": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues/532",
+      "user": "xDMcGee",
+      "updated_at": "2026-08-29T02:29:49Z",
+      "body": "I have updated to v9.0.675 and repaired the device. It now correctly registers as a wall thermostat and has the correct capabilities in the app but none of the controls actually work and it is not displaying the current temperature either. I have tried changing the target temp, turning the device on/off with the app but they have no effect on the device. Please let me know if there is any info I c"
+    },
+    {
+      "id": 5457982046,
+      "issue_url": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues/532",
+      "user": "dlnraja",
+      "updated_at": "2026-08-28T21:32:10Z",
+      "body": "**Supported on master (P2234 lock + P2293 FCU TX/RX) — Test app v9.0.672+**\n\nCouple `_TZE204_mpbki2zm` + `TS0601` (TYBAC-006 / BAC006 FCU) pairs as **Wall Thermostat**.\n\nRuntime now maps Z2M-aligned DPs for this couple:\n- DP1 on/off\n- DP2 system_mode → `cool` / `heat` / `fan_only` (`thermostat_mode`)\n- DP16/24 setpoint & local temp (÷10)\n- DP28 `fan_mode` → low/medium/high/auto\n- DP40 child lock /"
+    },
+    {
+      "id": 5457981568,
+      "issue_url": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues/531",
+      "user": "dlnraja",
+      "updated_at": "2026-08-28T21:32:07Z",
+      "body": "**Fixed on master (P2291) — Test app v9.0.672+**\n\nSacred couple `_TZE204_ogkdpgy2` / `_TZE200_ogkdpgy2` + `TS0601` is locked to `air_quality_co2` (removed from `climate_sensor`). CO2 via Tuya DP2 on cluster 0xEF00.\n\nPlease update the **Test** app and **re-pair** the sensor so Homey picks the CO2 driver."
+    },
+    {
+      "id": 5455869336,
+      "issue_url": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues/532",
+      "user": "dlnraja",
+      "updated_at": "2026-08-28T17:50:51Z",
+      "body": "<!-- diag-resolver -->\n### Auto-resolved by Diagnostic Resolver\n\nAll fingerprints in this issue found in **Tuya Unified Zigbee v9.0.672**:\n- `_TZE204_mpbki2zm` -> **wall_thermostat**\n\n**Install:** https://homey.app/a/com.dlnraja.tuya.zigbee/test/\nRemove and re-pair your device after installing.\n\n\n> **Protocol:** Tuya DP (cluster 0xEF00). Ensure DP listeners active.\n**Troubleshooting:** https://git"
+    },
+    {
+      "id": 5451265055,
+      "issue_url": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues/531",
+      "user": "Nespouique",
+      "updated_at": "2026-08-28T10:11:17Z",
+      "body": "On homey installation webpage, it is still in version 9.0.670, is there a way to force newer version?\n\n<img width=\"395\" height=\"492\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/621b657c-0955-412a-b030-2e9db587c037\" />"
+    },
+    {
+      "id": 5447414369,
+      "issue_url": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues/531",
+      "user": "dlnraja",
+      "updated_at": "2026-08-28T01:53:21Z",
+      "body": "<!-- diag-resolver -->\n### Auto-resolved by Diagnostic Resolver\n\nAll fingerprints in this issue found in **Tuya Unified Zigbee v9.0.671**:\n- `_TZE204_ogkdpgy2` -> **climate_sensor**\n- `_TZE200_ogkdpgy2` -> **climate_sensor**\n\n**Install:** https://homey.app/a/com.dlnraja.tuya.zigbee/test/\nRemove and re-pair your device after installing.\n\n\n> **Protocol:** Tuya DP (cluster 0xEF00). Ensure DP listener"
+    },
+    {
+      "id": 5446372423,
+      "issue_url": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues/531",
+      "user": "Nespouique",
+      "updated_at": "2026-08-27T23:19:51Z",
+      "body": "If needed you can find the related issue opened on original unmaintained repo (with device interview details) : https://github.com/JohanBendz/com.tuya.zigbee/issues/1451"
+    },
+    {
+      "id": 5388689552,
+      "issue_url": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues/513",
+      "user": "dlnraja",
+      "updated_at": "2026-08-23T21:58:54Z",
+      "body": "<!-- tuya-intel-github-respond -->\nQuick check on #513 (app Test tip **v9.0.632**).\n\nWhat I found:\n- `_TZE284_hodyryli+TS0601` → locked (**climate_sensor_zt08**) — compose → climate_sensor_zt08\n\nIf you are on an older Test build: update **Universal Tuya** Test to the latest, then remove the device and re-pair if the driver tile was wrong.\n\nTracks: master soak `com.dlnraja.tuya.zigbee` · Stable LTS"
+    },
+    {
+      "id": 5386575843,
+      "issue_url": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues/513",
+      "user": "dlnraja",
+      "updated_at": "2026-08-23T14:41:28Z",
+      "body": "<!-- tuya-intel-github-respond -->\nQuick check on #513 (app Test tip **v9.0.630**).\n\nWhat I found:\n- `_TZE284_hodyryli+TS0601` → locked (**climate_sensor_zt08**) — compose → climate_sensor_zt08\n\nIf you are on an older Test build: update **Universal Tuya** Test to the latest, then remove the device and re-pair if the driver tile was wrong.\n\nTracks: master soak `com.dlnraja.tuya.zigbee` · Stable LTS"
+    },
+    {
+      "id": 5386569711,
+      "issue_url": "https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues/511",
+      "user": "dlnraja",
+      "updated_at": "2026-08-23T14:40:07Z",
+      "body": "<!-- tuya-intel-github-respond -->\nQuick check on #511 (app Test tip **v9.0.630**).\n\nWhat I found:\n- `_TZE284_awepdiwi+TS0601` → locked (**soil_sensor**) — compose → soil_sensor\n- `_TZE284_ga1maeof+TS0601` → locked (**soilsensor**) — compose → soilsensor\n\nIf you are on an older Test build: update **Universal Tuya** Test to the latest, then remove the device and re-pair if the driver tile was wrong"
+    }
+  ],
+  "issueDetails": [
+    {
+      "number": 533,
+      "title": "Device Request - [SMART ZIGBEE CURTAIN SWITCH] - [MOES]",
+      "author": "salvagr",
+      "updatedAt": "2026-08-30T18:52:27Z",
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/533",
+      "body": "Thank you for your support.\n\n## 📱 Basic Information\n\n**Brand & Model**: SMART ZIGBEE CURTAIN SWITCH - MOES\n**Purchase Link**: https://es.aliexpress.com/item/1005008356152992.html\n**Power Source**:  Mains\n**Current Status**: pairing with wrong device type. Detected as \"radiator valve\"\n\n---\n\n## 🔍 Zigbee Fingerprint (MANDATORY)\n\n```json\n  \"ids\": {\n    \"modelId\": \"TS0601\",\n    \"manufacturerName\": \"_TZE204_5slehgeo\"\n  },\n  \"endpoints\": {\n    \"ieeeAddress\": \"a4:c1:38:db:ac:5f:6b:c3\",\n    \"networkAddress\": 60894,\n    \"modelId\": \"TS0601\",\n    \"manufacturerName\": \"_TZE204_5slehgeo\",\n    \"endpointDescriptors\": [\n      {\n        \"status\": \"SUCCESS\",\n        \"nwkAddrOfInterest\": 60894,\n        \"_reserved\": 20,\n        \"endpointId\": 1,\n        \"applicationProfileId\": 260,\n        \"applicationDeviceId\": 81,\n        \"applicationDeviceVersion\": 0,\n        \"_reserved1\": 1,\n        \"inputClusters\": [\n          4,\n          5,\n          61184,\n          0\n        ],\n        \"outputClusters\": [\n          25,\n          10\n        ]\n      },\n      {\n        \"status\": \"SUCCESS\",\n        \"nwkAddrOfInterest\": 60894,\n        \"_reserved\": 10,\n        \"endpointId\": 242,\n        \"applicationProfileId\": 41440,\n        \"applicationDeviceId\": 97,\n        \"applicationDeviceVersion\": 0,\n        \"_reserved1\": 0,\n        \"inputClusters\": [],\n        \"outputClusters\": [\n          33\n        ]\n      }\n    ],\n    \"deviceType\": \"router\",\n    \"receiveWhenIdle\": true,\n    \"capabilities\": {\n      \"alternatePANCoordinator\": false,\n      \"deviceType\": true,\n      \"powerSourceMains\": true,\n      \"receiveWhenIdle\": true,\n      \"security\": false,\n      \"allocateAddress\": true\n    },\n    \"extendedEndpointDescriptors\": {\n      \"1\": {\n        \"clusters\": {\n          \"groups\": {\n            \"attributes\": [\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 0,\n                \"dataTypeId\": 24,\n                \"name\": \"nameSupport\",\n                \"value\": {\n                  \"type\": \"Buffer\",\n                  \"data\": [\n                    0\n                  ]\n                },\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 65533,\n                \"dataTypeId\": 33,\n                \"name\": \"clusterRevision\",\n                \"value\": 2,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              }\n            ]\n          },\n          \"scenes\": {\n            \"attributes\": [\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 0,\n                \"dataTypeId\": 32,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 1,\n                \"dataTypeId\": 32,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 2,\n                \"dataTypeId\": 33,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 3,\n              ",
+      "labels": [
+        "enhancement",
+        "device-request",
+        "needs-maintainer"
+      ],
+      "comments": [
+        {
+          "user": "dlnraja",
+          "created_at": "2026-08-29T15:54:03Z",
+          "updated_at": "2026-08-29T15:54:03Z",
+          "body": "<!-- diag-resolver -->\n### Auto-resolved by Diagnostic Resolver\n\nAll fingerprints in this issue found in **Tuya Unified Zigbee v9.0.688**:\n- `_TZE204_5slehgeo` -> **device_radiator_valve**\n\n**Install:** https://homey.app/a/com.dlnraja.tuya.zigbee/test/\nRemove and re-pair your device after installing.\n\n\n> **Protocol:** Tuya DP (cluster 0xEF00). Ensure DP listeners active.\n\n**Detected issues:**\n- Alarm DP updated — re-pair\n\n**Troubleshooting:** https://github.com/dlnraja/com.tuya.zigbee/wiki/Troubleshooting\n\n> **Detected protocols:** tuya_dp\n"
+        },
+        {
+          "user": "dlnraja",
+          "created_at": "2026-08-29T16:41:48Z",
+          "updated_at": "2026-08-29T16:41:48Z",
+          "body": "Shipped on master (next Test publish):\n\n- Sacred couple ``_TZE204_5slehgeo`` + ``TS0601`` (and Z2M siblings ``_TZE284_5slehgeo``, ``_TZE200_nhyj64w2``, ``_TZE200_127x7wnl``) locked to **curtain_motor** (Moes ZTS-EUR-C).\n- Removed from radiator valve (wrong pair).\n- DP map for this couple: 1 open/stop/close, 2 %, 3 calib, 7 backlight, 8 reverse, 10 time.\n\nPlease **update the Test app**, remove the device, and re-pair as Cover Controller. Homey cannot hot-swap drivers on an already paired tile."
+        },
+        {
+          "user": "dlnraja",
+          "created_at": "2026-08-29T17:14:22Z",
+          "updated_at": "2026-08-29T17:14:22Z",
+          "body": "Also shipping 9.0.690: pairing productId restores so Curtain (and other locked couples) keep matching after compact. Update Test to 9.0.690+, remove + re-pair."
+        },
+        {
+          "user": "salvagr",
+          "created_at": "2026-08-29T20:21:17Z",
+          "updated_at": "2026-08-29T20:21:17Z",
+          "body": "Hello,\r\n\r\nI have checked the app and the last version is 9.0.688.\r\n\r\nThank you. Regards.\r\n\r\n[image: imagen.png]\r\n\r\n\r\nEl sáb, 29 ago 2026 a las 19:14, dlnraja ***@***.***>)\r\nescribió:\r\n\r\n> *dlnraja* left a comment (dlnraja/com.tuya.zigbee#533)\r\n> <https://github.com/dlnraja/com.tuya.zigbee/issues/533#issuecomment-5463765794>\r\n>\r\n> Also shipping 9.0.690: pairing productId restores so Curtain (and other\r\n> locked couples) keep matching after compact. Update Test to 9.0.690+,\r\n> remove + re-pair.\r\n>\r\n> —\r\n> Reply to this email directly, view it on GitHub\r\n> <https://github.com/dlnraja/com.tuya.zigbee/issues/533?email_source=notifications&email_token=AGFSYZNODLJM3K5YM4CXUA35MMFQJA5CNFSNUABFM5UWIORPF5TWS5BNNB2WEL2JONZXKZKDN5WW2ZLOOQXTKNBWGM3TMNJXHE2KM4TFMFZW63VGMF2XI2DPOKSWK5TFNZ2KYZTPN52GK4S7MNWGSY3L#issuecomment-5463765794>,\r\n> or unsubscribe\r\n> <https://github.com/notifications/unsubscribe-auth/AGFSYZNO3SWIVWJKX6AKHG35MMFQJAVCNFSNUABGKJSXA33TNF2G64TZHMYTAMRTGEZDGMJVGQ5US43TOVSTWNJSHA3DSOBQGYYTBILWAI>\r\n> .\r\n> Triage notifications, keep track of coding agent tasks and review pull\r\n> requests on the go with GitHub Mobile for iOS\r\n> <https://github.com/notifications/mobile/ios/AGFSYZN2QIGOHUDKKQYOMAT5MMFQJA5CNFSNUABFM5UWIORPF5TWS5BNNB2WEL2JONZXKZKDN5WW2ZLOOQXTKNBWGM3TMNJXHE2KM4TFMFZW63VGMF2XI2DPOKSWK5TFNZ2KUZTPN52GK4S7NFXXG>\r\n> and Android\r\n> <https://github.com/notifications/mobile/android/AGFSYZO23YLHPACO2NLLGKT5MMFQJA5CNFSNUABFM5UWIORPF5TWS5BNNB2WEL2JONZXKZKDN5WW2ZLOOQXTKNBWGM3TMNJXHE2KM4TFMFZW63VGMF2XI2DPOKSWK5TFNZ2K4ZTPN52GK4S7MFXGI4TPNFSA>.\r\n> Download it today!\r\n> You are receiving this because you authored the thread.Message ID:\r\n> ***@***.***>\r\n>\r\n"
+        },
+        {
+          "user": "dlnraja",
+          "created_at": "2026-08-29T22:47:40Z",
+          "updated_at": "2026-08-29T22:47:40Z",
+          "body": "Also in 9.0.694+: Moes Star Feather curtain \\_TZE284_upt8lzi0\\ moved to curtain_motor (was switch_1gang). Update Test and remove+re-pair if still on switch."
+        },
+        {
+          "user": "dlnraja",
+          "created_at": "2026-08-29T23:25:21Z",
+          "updated_at": "2026-08-29T23:25:21Z",
+          "body": "**Update for @salvagr** (Homey still showed **9.0.688** in your screenshot)\n\nLatest **Test** tip is **9.0.696+** (curtain lock + productId pairing restores). Homey App Store “Test” list can lag a few minutes behind Athom — pull-to-refresh the Test install page.\n\n### Your device\n- Couple: `_TZE204_5slehgeo` + `TS0601` (Moes ZTS-EUR-C curtain wall switch)\n- Purchase: https://es.aliexpress.com/item/1005008356152992.html\n- Locked driver: **curtain_motor** (Cover) — **not** radiator valve\n\n### Steps\n1. Install Test: https://homey.app/a/com.dlnraja.tuya.zigbee/test/\n2. Confirm app version ≥ **9.0.696** (or at least **9.0.690+**)\n3. **Remove** the wrongly paired tile\n4. Re-pair — choose **Curtain / Cover Controller**\n5. Test open / stop / close (+ position if shown)\n\nIf it still pairs wrong, reply with a **Diagnostic Report ID** from device settings."
+        },
+        {
+          "user": "salvagr",
+          "created_at": "2026-08-30T09:49:11Z",
+          "updated_at": "2026-08-30T09:49:11Z",
+          "body": "HelloI re-paired the device as “Cover controller” but it is detected as “Zigbee device”This is the Diagnostic Report ID: 7a6f2ca1-28dc-4ddb-9748-805a79aa39b6Thank youEl 30 ago 2026, a las 1:25, dlnraja ***@***.***> escribió:﻿dlnraja left a comment (dlnraja/com.tuya.zigbee#533)\r\nUpdate for @salvagr (Homey still showed 9.0.688 in your screenshot)\r\nLatest Test tip is 9.0.696+ (curtain lock + productId pairing restores). Homey App Store “Test” list can lag a few minutes behind Athom — pull-to-refresh the Test install page.\r\nYour device\r\n\r\nCouple: _TZE204_5slehgeo + TS0601 (Moes ZTS-EUR-C curtain wall switch)\r\nPurchase: https://es.aliexpress.com/item/1005008356152992.html\r\nLocked driver: curtain_motor (Cover) — not radiator valve\r\n\r\nSteps\r\n\r\nInstall Test: https://homey.app/a/com.dlnraja.tuya.zigbee/test/\r\nConfirm app version ≥ 9.0.696 (or at least 9.0.690+)\r\nRemove the wrongly paired tile\r\nRe-pair — choose Curtain / Cover Controller\r\nTest open / stop / close (+ position if shown)\r\n\r\nIf it still pairs wrong, reply with a Diagnostic Report ID from device settings.\r\n\r\n—Reply to this email directly, view it on GitHub, or unsubscribe.Triage notifications, keep track of coding agent tasks and review pull requests on the go with GitHub Mobile for iOS and Android. Download it today!\r\nYou are receiving this because you were mentioned.Message ID: ***@***.***>"
+        },
+        {
+          "user": "dlnraja",
+          "created_at": "2026-08-30T11:17:03Z",
+          "updated_at": "2026-08-30T11:17:03Z",
+          "body": "**P2324 follow-up on diag `7a6f2ca1` (salvagr)**\n\nCouple `_TZE204_5slehgeo`+`TS0601` is locked to **curtain_motor** (Moes ZTS-EUR-C). Homey showing generic Zigbee / radiator usually means an older Test tip (your earlier screenshot was 9.0.688) or a stale pairing.\n\n**Extra hardening:** DeviceFingerprintDB + broader TRV/generic forbids (couple-mode).\n\nPlease:\n1. Update Universal Tuya **Test** to latest tip\n2. Remove the device\n3. Re-pair and pick **Cover controller** / curtain motor\n4. If it still lands on generic Zigbee on tip ≥9.0.720, send another diagnostic with the driver name shown in device settings\n"
+        },
+        {
+          "user": "salvagr",
+          "created_at": "2026-08-30T11:47:26Z",
+          "updated_at": "2026-08-30T11:47:26Z",
+          "body": "Hello,\r\n\r\nThe switch is still detected as a \"zigbee device\".\r\n\r\nID: c137a5d7-30b5-425d-8744-2bf304e6c63d\r\n\r\nRegards\r\n\r\nEl dom, 30 ago 2026 a las 13:17, dlnraja ***@***.***>)\r\nescribió:\r\n\r\n> *dlnraja* left a comment (dlnraja/com.tuya.zigbee#533)\r\n> <https://github.com/dlnraja/com.tuya.zigbee/issues/533#issuecomment-5468351852>\r\n>\r\n> *P2324 follow-up on diag 7a6f2ca1 (salvagr)*\r\n>\r\n> Couple _TZE204_5slehgeo+TS0601 is locked to *curtain_motor* (Moes\r\n> ZTS-EUR-C). Homey showing generic Zigbee / radiator usually means an older\r\n> Test tip (your earlier screenshot was 9.0.688) or a stale pairing.\r\n>\r\n> *Extra hardening:* DeviceFingerprintDB + broader TRV/generic forbids\r\n> (couple-mode).\r\n>\r\n> Please:\r\n>\r\n>    1. Update Universal Tuya *Test* to latest tip\r\n>    2. Remove the device\r\n>    3. Re-pair and pick *Cover controller* / curtain motor\r\n>    4. If it still lands on generic Zigbee on tip ≥9.0.720, send another\r\n>    diagnostic with the driver name shown in device settings\r\n>\r\n> —\r\n> Reply to this email directly, view it on GitHub\r\n> <https://github.com/dlnraja/com.tuya.zigbee/issues/533?email_source=notifications&email_token=AGFSYZK7XZ5ZU37ZEGC4CW35MQEMJA5CNFSNUABFM5UWIORPF5TWS5BNNB2WEL2JONZXKZKDN5WW2ZLOOQXTKNBWHAZTKMJYGUZKM4TFMFZW63VHNVSW45DJN5XKKZLWMVXHJLDGN5XXIZLSL5RWY2LDNM#issuecomment-5468351852>,\r\n> or unsubscribe\r\n> <https://github.com/notifications/unsubscribe-auth/AGFSYZKDPPBJO4D47JUBERL5MQEMJAVCNFSNUABGKJSXA33TNF2G64TZHMYTAMRTGEZDGMJVGQ5US43TOVSTWNJSHA3DSOBQGYYTBILWAI>\r\n> .\r\n> Triage notifications, keep track of coding agent tasks and review pull\r\n> requests on the go with GitHub Mobile for iOS\r\n> <https://github.com/notifications/mobile/ios/AGFSYZM6KPAEFMYDMOSHLMT5MQEMJA5CNFSNUABFM5UWIORPF5TWS5BNNB2WEL2JONZXKZKDN5WW2ZLOOQXTKNBWHAZTKMJYGUZKM4TFMFZW63VHNVSW45DJN5XKKZLWMVXHJKTGN5XXIZLSL5UW64Y>\r\n> and Android\r\n> <https://github.com/notifications/mobile/android/AGFSYZIQLZL7YFLEOF6P6FT5MQEMJA5CNFSNUABFM5UWIORPF5TWS5BNNB2WEL2JONZXKZKDN5WW2ZLOOQXTKNBWHAZTKMJYGUZKM4TFMFZW63VHNVSW45DJN5XKKZLWMVXHJLTGN5XXIZLSL5QW4ZDSN5UWI>.\r\n> Download it today!\r\n> You are receiving this because you were mentioned.Message ID: <dlnraja/com\r\n> .***@***.***>\r\n>\r\n"
+        },
+        {
+          "user": "dlnraja",
+          "created_at": "2026-08-30T18:13:26Z",
+          "updated_at": "2026-08-30T18:13:26Z",
+          "body": "**P2326 follow-up — diag `c137a5d7` (salvagr) on Homey Test **9.0.719** (#3035)**\n\nFetched your latest report. App version is correct (9.0.719), but the only Universal Tuya device initializing in that log is:\n\n- **Driver:** `device_radiator_valve` (TRV)\n- **Model:** `TS0601`\n- **manufacturerName:** empty → Generic profile\n\nSo Homey did **not** land on `curtain_motor`. That usually means the device was added under **Climate / Radiator Valve** (or an old radiator pairing), not Curtain / Window Coverings.\n\nSacred couple remains:\n\n- `_TZE204_5slehgeo` + `TS0601` → **`curtain_motor`** only (Moes ZTS-EUR-C)\n\nPlease:\n\n1. **Remove** the current device (including if it shows as Zigbee Device / Radiator).\n2. Update Universal Tuya Test again (pull-to-refresh the Test page — tip may still show 9.0.719 while 9.0.721 is draft/hanging on Athom).\n3. Add device → choose **Curtain / Window Coverings** under Universal Tuya (do **not** pick Radiator Valve).\n4. If it still pairs generic, send a new diag **right after** the failed pair attempt.\n\nShipping next Test build: empty-mfr heal + loud `[MISROUTE-P2326]` when this couple is stuck on radiator.\n"
+        },
+        {
+          "user": "salvagr",
+          "created_at": "2026-08-30T18:52:26Z",
+          "updated_at": "2026-08-30T18:52:26Z",
+          "body": "Hello,\r\n\r\nI follow this steps, but still detecting as Zigbee Device:\r\n- Uninstall Universal Tuya.\r\n- Reinstall Universal Tuya.\r\n- Put the device in pairing mode.\r\n- Add device choosing \"Cover controller\" ( I didn't find \"Curtain / Window\r\nCoverings\" )\r\n- Detected as Unknown device and added as Zigbee Device\r\n\r\nNew Diag ID: e5d19878-d2fc-4bc6-ab0f-cf3d760c5c23\r\n\r\nThank You and regards\r\n\r\nEl dom, 30 ago 2026 a las 20:13, dlnraja ***@***.***>)\r\nescribió:\r\n\r\n> *dlnraja* left a comment (dlnraja/com.tuya.zigbee#533)\r\n> <https://github.com/dlnraja/com.tuya.zigbee/issues/533#issuecomment-5470412536>\r\n>\r\n> *P2326 follow-up — diag c137a5d7 (salvagr) on Homey Test 9.0.719 (#3035)*\r\n>\r\n> Fetched your latest report. App version is correct (9.0.719), but the only\r\n> Universal Tuya device initializing in that log is:\r\n>\r\n>    - *Driver:* device_radiator_valve (TRV)\r\n>    - *Model:* TS0601\r\n>    - *manufacturerName:* empty → Generic profile\r\n>\r\n> So Homey did *not* land on curtain_motor. That usually means the device\r\n> was added under *Climate / Radiator Valve* (or an old radiator pairing),\r\n> not Curtain / Window Coverings.\r\n>\r\n> Sacred couple remains:\r\n>\r\n>    - _TZE204_5slehgeo + TS0601 → *curtain_motor* only (Moes ZTS-EUR-C)\r\n>\r\n> Please:\r\n>\r\n>    1. *Remove* the current device (including if it shows as Zigbee Device\r\n>    / Radiator).\r\n>    2. Update Universal Tuya Test again (pull-to-refresh the Test page —\r\n>    tip may still show 9.0.719 while 9.0.721 is draft/hanging on Athom).\r\n>    3. Add device → choose *Curtain / Window Coverings* under Universal\r\n>    Tuya (do *not* pick Radiator Valve).\r\n>    4. If it still pairs generic, send a new diag *right after* the failed\r\n>    pair attempt.\r\n>\r\n> Shipping next Test build: empty-mfr heal + loud [MISROUTE-P2326] when\r\n> this couple is stuck on radiator.\r\n>\r\n> —\r\n> Reply to this email directly, view it on GitHub\r\n> <https://github.com/dlnraja/com.tuya.zigbee/issues/533?email_source=notifications&email_token=AGFSYZLKUDAUTL637LOHBAD5MRVFZA5CNFSNUABFM5UWIORPF5TWS5BNNB2WEL2JONZXKZKDN5WW2ZLOOQXTKNBXGA2DCMRVGM3KM4TFMFZW63VHNVSW45DJN5XKKZLWMVXHJLDGN5XXIZLSL5RWY2LDNM#issuecomment-5470412536>,\r\n> or unsubscribe\r\n> <https://github.com/notifications/unsubscribe-auth/AGFSYZOPA5IBNSAVW7SUJIT5MRVFZAVCNFSNUABGKJSXA33TNF2G64TZHMYTAMRTGEZDGMJVGQ5US43TOVSTWNJSHA3DSOBQGYYTBILWAI>\r\n> .\r\n> Triage notifications, keep track of coding agent tasks and review pull\r\n> requests on the go with GitHub Mobile for iOS\r\n> <https://github.com/notifica"
+        }
+      ]
+    },
+    {
+      "number": 532,
+      "title": "[Device] Zigbee Smart AC Thermostat",
+      "author": "xDMcGee",
+      "updatedAt": "2026-08-30T18:13:31Z",
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/532",
+      "body": "### Brand & Model\n\nSmart SDT BAC006 3(S) 0-10V (V) Zigbee Thermostat\n\n### Where Purchased\n\nhttps://www.aliexpress.com/item/1005005866919886.html\n\n### Power Source\n\nMains (AC)\n\n### Zigbee Fingerprint (MANDATORY)\n\n```yaml\n\"ids\": {\n    \"modelId\": \"TS0601\",\n    \"manufacturerName\": \"_TZE204_mpbki2zm\"\n  },\n  \"endpoints\": {\n    \"ieeeAddress\": \"a4:c1:38:b0:ba:7b:90:b9\",\n    \"networkAddress\": 31509,\n    \"modelId\": \"TS0601\",\n    \"manufacturerName\": \"_TZE204_mpbki2zm\",\n    \"endpointDescriptors\": [\n      {\n        \"endpointId\": 1,\n        \"applicationProfileId\": 260,\n        \"applicationDeviceId\": 81,\n        \"applicationDeviceVersion\": 0,\n        \"_reserved1\": 1,\n        \"inputClusters\": [\n          4,\n          5,\n          61184,\n          0\n        ],\n        \"outputClusters\": [\n          25,\n          10\n        ],\n        \"nwkAddrOfInterest\": 31509,\n        \"_reserved\": 0,\n        \"status\": \"ZSuccess\"\n      },\n      {\n        \"endpointId\": 242,\n        \"applicationProfileId\": 41440,\n        \"applicationDeviceId\": 97,\n        \"applicationDeviceVersion\": 0,\n        \"_reserved1\": 0,\n        \"inputClusters\": [],\n        \"outputClusters\": [\n          33\n        ],\n        \"nwkAddrOfInterest\": 31509,\n        \"_reserved\": 0,\n        \"status\": \"ZSuccess\"\n      }\n    ],\n    \"deviceType\": \"router\",\n    \"receiveWhenIdle\": true,\n    \"capabilities\": {\n      \"alternatePANCoordinator\": false,\n      \"deviceType\": true,\n      \"powerSourceMains\": true,\n      \"receiveWhenIdle\": true,\n      \"security\": false,\n      \"allocateAddress\": true\n    },\n    \"extendedEndpointDescriptors\": {\n      \"1\": {\n        \"clusters\": {\n          \"groups\": {\n            \"attributes\": [\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 0,\n                \"dataTypeId\": 24,\n                \"name\": \"nameSupport\",\n                \"value\": {\n                  \"type\": \"Buffer\",\n                  \"data\": [\n                    0\n                  ]\n                },\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 65533,\n                \"dataTypeId\": 33,\n                \"name\": \"clusterRevision\",\n                \"value\": 2,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              }\n            ]\n          },\n          \"scenes\": {\n            \"attributes\": [\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 0,\n                \"dataTypeId\": 32,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 1,\n                \"dataTypeId\": 32,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 2,\n                \"dataTypeId\": 33,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 3,\n                \"dataTypeId\": 16,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n               ",
+      "labels": [
+        "device-request",
+        "reopened-by-user",
+        "needs-review"
+      ],
+      "comments": [
+        {
+          "user": "dlnraja",
+          "created_at": "2026-08-28T17:50:51Z",
+          "updated_at": "2026-08-28T17:50:51Z",
+          "body": "<!-- diag-resolver -->\n### Auto-resolved by Diagnostic Resolver\n\nAll fingerprints in this issue found in **Tuya Unified Zigbee v9.0.672**:\n- `_TZE204_mpbki2zm` -> **wall_thermostat**\n\n**Install:** https://homey.app/a/com.dlnraja.tuya.zigbee/test/\nRemove and re-pair your device after installing.\n\n\n> **Protocol:** Tuya DP (cluster 0xEF00). Ensure DP listeners active.\n**Troubleshooting:** https://github.com/dlnraja/com.tuya.zigbee/wiki/Troubleshooting\n\n> **Detected protocols:** tuya_dp\n"
+        },
+        {
+          "user": "dlnraja",
+          "created_at": "2026-08-28T21:32:10Z",
+          "updated_at": "2026-08-28T21:32:10Z",
+          "body": "**Supported on master (P2234 lock + P2293 FCU TX/RX) — Test app v9.0.672+**\n\nCouple `_TZE204_mpbki2zm` + `TS0601` (TYBAC-006 / BAC006 FCU) pairs as **Wall Thermostat**.\n\nRuntime now maps Z2M-aligned DPs for this couple:\n- DP1 on/off\n- DP2 system_mode → `cool` / `heat` / `fan_only` (`thermostat_mode`)\n- DP16/24 setpoint & local temp (÷10)\n- DP28 `fan_mode` → low/medium/high/auto\n- DP40 child lock / DP101 manual vs schedule\n\nPlease install the **Test** build and re-pair if the device was added before this fix. Feedback on fan + mode TX/RX welcome."
+        },
+        {
+          "user": "xDMcGee",
+          "created_at": "2026-08-29T02:29:49Z",
+          "updated_at": "2026-08-29T02:29:49Z",
+          "body": "I have updated to v9.0.675 and repaired the device. It now correctly registers as a wall thermostat and has the correct capabilities in the app but none of the controls actually work and it is not displaying the current temperature either. I have tried changing the target temp, turning the device on/off with the app but they have no effect on the device. Please let me know if there is any info I can provide to help :)"
+        },
+        {
+          "user": "github-actions[bot]",
+          "created_at": "2026-08-29T02:29:57Z",
+          "updated_at": "2026-08-29T02:29:57Z",
+          "body": "<!-- tuya-reopen-bot -->\nThis issue has been **automatically reopened** because @xDMcGee posted a new comment.\nIt will be reviewed in the next automation cycle.\n\n> If your device is still not working, please share:\n> 1. **Device Interview** from [Developer Tools](https://tools.developer.homey.app)\n> 2. **Diagnostic Report ID** from device settings"
+        },
+        {
+          "user": "dlnraja",
+          "created_at": "2026-08-29T03:27:13Z",
+          "updated_at": "2026-08-29T03:27:13Z",
+          "body": "**P2300 fix shipped on master** — root cause: `wall_thermostat` never called `super.onNodeInit`, so DeviceIO / EF00 attach + DP query never ran. Caps looked correct, TX/RX were dead (matches your 9.0.675 re-pair report).\n\nAlso hardened:\n- EF00 RX attach via `_resolveTuyaCluster`\n- FCU DP query after pair (`requestDP` / `queryAllDPs`)\n- Late MFR-ENSURE re-arms FCU path\n- Buffer-safe DP parse\n\n**Please:** update to the next **Test** build after Auto-Publish (~9.0.677+), remove the device, re-pair as Wall Thermostat, then try on/off + setpoint + fan/mode. If anything still fails, send a diagnostic report ID from device settings."
+        },
+        {
+          "user": "xDMcGee",
+          "created_at": "2026-08-29T03:36:45Z",
+          "updated_at": "2026-08-29T03:36:45Z",
+          "body": "I have just updated to 9.0.677 and re-paired. The device now pairs as Unknown ZigBee Device with no functionality. I have sent diagnostic report 8cc4aef0-a486-4cb1-badd-087ed84f43da"
+        },
+        {
+          "user": "dlnraja",
+          "created_at": "2026-08-29T03:45:57Z",
+          "updated_at": "2026-08-29T03:45:57Z",
+          "body": "**Update (P2300 publish follow-up)**\n\n`9.0.677` did **not** include the FCU TX/RX fix — Auto-Publish was blocked by a fingerprint collision on an unrelated contact couple (`_TZ3000_pjb1ua0m`). That is now cleared and a new Test build is publishing.\n\nIf Homey showed **Unknown ZigBee Device** on 9.0.677, wait for the next Test build after this push (should be **9.0.678+**), then:\n1. Update the Test app\n2. Remove the thermostat\n3. Re-pair — it should come back as **Wall Thermostat** with working on/off / setpoint / temp\n\nThanks for diag `8cc4aef0` — I will cross-check it against the new build."
+        },
+        {
+          "user": "xDMcGee",
+          "created_at": "2026-08-29T04:18:35Z",
+          "updated_at": "2026-08-29T04:18:35Z",
+          "body": "Progress! I have updated to 9.0.678 and now can turn the AC ON using the app. Unfortunately I cannot turn it back off and the app seems to crash when I try interacting with the device and I have to select Restart App in Homey. I have published diagnostic 8c49c683-294c-4965-ade1-e165c56a06e9"
+        },
+        {
+          "user": "dlnraja",
+          "created_at": "2026-08-29T04:20:02Z",
+          "updated_at": "2026-08-29T04:20:02Z",
+          "body": "**P2300 is now on Homey Test** (Auto-Publish succeeded).\n\nPlease update to the latest Test build, remove the AC thermostat, and re-pair as **Wall Thermostat**. On/off, setpoint, local temp, fan/mode should work after that.\n\nIf anything still fails, reply with the new diagnostic ID."
+        },
+        {
+          "user": "dlnraja",
+          "created_at": "2026-08-29T04:47:43Z",
+          "updated_at": "2026-08-29T04:47:43Z",
+          "body": "**Root cause found in diag `8c49c683` (P2301)**\n\nTurning OFF crashed the app with `Maximum call stack size exceeded` in `safeSetCapabilityValue` ↔ `setCapabilityValue` (that is why ON worked but OFF / further interaction needed Restart App).\n\nFix is on master and publishing to Test now. After the next build (**9.0.679+**):\n1. Update Test\n2. Restart the app once (or re-pair if still wedged)\n3. Try ON **and** OFF again\n\nSorry for the churn — this one was a real stack overflow, not a missing DP."
+        },
+        {
+          "user": "dlnraja",
+          "created_at": "2026-08-29T05:10:07Z",
+          "updated_at": "2026-08-29T05:10:07Z",
+          "body": "**P2301 code is on master (`9.0.679`)** — recursion crash fix is committed.\n\nAthom marked draft **#3009** as `processing_failed` (transient processor / P139). I am **not** force-republishing in a loop. Homey Test may still show **9.0.678** until Athom accepts the next draft.\n\nWhen a new Test build appears (**9.0.679+**), update + restart the app (or re-pair if needed), then try OFF again."
+        },
+        {
+          "user": "dlnraja",
+          "created_at": "2026-08-29T05:30:02Z",
+          "updated_at": "2026-08-29T05:30:02Z",
+          "body": "**Retry publish:** master is now **9.0.680** (P2301 crash fix + softer Athom draft-wait so a `processing_failed` sibling does not hard-block promotion).\n\nPlease watch Homey Test for **9.0.680+**, then update / restart the app and retest OFF."
+        },
+        {
+          "user": "dlnraja",
+          "created_at": "2026-08-29T05:46:04Z",
+          "updated_at": "2026-08-29T05:46:04Z",
+          "body": "**Homey Test publish OK** — Auto-Publish for **9.0.680** succeeded (tip may already show **9.0.681** after the bot bump).\n\nPlease update Universal Tuya Test, restart the app if needed, then retest AC **OFF**. The stack-overflow crash on OFF should be gone."
+        },
+        {
+          "user": "xDMcGee",
+          "created_at": "2026-08-29T07:17:40Z",
+          "updated_at": "2026-08-29T07:17:40Z",
+          "body": "I have now updated to 9.0.684 and re-paired the device. I can now see the temperature reading from the thermostat and turn the AC on but adjust the target temp or trying to turn the AC OFF still do not work. I have uploaded another diagnostic for you f84180b7-6cc7-4cdd-8bc5-003e80f23a62\n\nThank you for all your hard work!"
+        },
+        {
+          "user": "dlnraja",
+          "created_at": "2026-08-29T08:36:18Z",
+          "updated_at": "2026-08-29T08:36:18Z",
+          "body": "**P2302 from diag `f84180b7` (9.0.684)** — root causes found:\n\n1. Device was on **BHT path** (not FCU) so mode/fan listeners never armed\n2. Generic EF00 mapped **bool DP1 → measure_temperature=0** and tried `onoff=0` as a number (Homey rejected it)\n3. **TUYA-FRAG** treated DP24 temp `[0,0,0,220]` as a 220-byte fragment and discarded the payload\n4. Setpoint/OFF can be ignored while MCU is in **schedule** — we now force **manual (DP101)** before TX\n\nFix is on master **9.0.685** and publishing to Homey Test. Please update, restart the app (or re-pair once), then retest **OFF** and **target temp**.\n\nIf anything still fails, send a fresh diagnostic ID."
+        },
+        {
+          "user": "dlnraja",
+          "created_at": "2026-08-29T08:51:58Z",
+          "updated_at": "2026-08-29T08:51:58Z",
+          "body": "**P2303 for Adam K (`xDMcGee`) — follow-up on diag `f84180b7`**\n\nYour Homey Self-Hosted log showed the thermostat stuck on the **BHT** path (empty `zb_manufacturer_name`) even though it is a TYBAC FCU (`_TZE204_mpbki2zm` + `TS0601`). DP36 (valve) proved it was FCU hardware.\n\n**Extra hardening in Test `9.0.687+`:**\n1. Arm FCU automatically when DP28 / DP36 / DP101 appears (or Basic cluster identity)\n2. Persist FCU arm in device store across restarts\n3. TX via **DeviceIO cascade** (not cluster-only) for OFF + setpoint\n4. Always force **manual mode (DP101)** before OFF / target temp (schedule was swallowing commands)\n\n**Please:**\n1. Update Universal Tuya Test to **9.0.687+** (wait a few minutes if 9.0.686 is still showing)\n2. Restart the app once (re-pair only if still stuck)\n3. Retest **OFF** and **target temperature**\n\nIf anything fails, send a new diagnostic ID — I will keep iterating until OFF + setpoint work."
+        },
+        {
+          "user": "dlnraja",
+          "created_at": "2026-08-29T17:14:23Z",
+          "updated_at": "2026-08-29T17:14:23Z",
+          "body": "9.0.690 also soft-fails a Homey flow serializer crash (Invalid Driver ID virtualdriverzigbee) seen on older Test builds. Please retest FCU OFF/setpoint on latest Test after update."
+        },
+        {
+          "user": "dlnraja",
+          "created_at": "2026-08-29T22:47:38Z",
+          "updated_at": "2026-08-29T22:47:38Z",
+          "body": "P2308 from Gmail crash harvest: extra recursion guard on SafeCapabilityMixin + setCapabilityValue depth cap. Please update Test to **9.0.694+** and retest FCU OFF/setpoint."
+        },
+        {
+          "user": "dlnraja",
+          "created_at": "2026-08-29T23:25:22Z",
+          "updated_at": "2026-08-29T23:25:22Z",
+          "body": "**Status check for @xDMcGee (Adam)**\n\nTip Test is now **9.0.696+** (includes P2300–P2303 FCU path + P2308 recursion guards from your Gmail/diags `8c49c683` / `f84180b7`).\n\nPlease:\n1. Update Test → https://homey.app/a/com.dlnraja.tuya.zigbee/test/\n2. Confirm ≥ **9.0.696** (or at least **9.0.694+**)\n3. Restart app once (re-pair only if still stuck on BHT/empty mfr)\n4. Retest **OFF** + **target temperature**\n\nProduct page you listed: https://www.aliexpress.com/item/1005005866919886.html (`_TZE204_mpbki2zm` + `TS0601`).\n\nIf OFF/setpoint still fail, send a **new diagnostic ID** — I’ll keep iterating."
+        },
+        {
+          "user": "xDMcGee",
+          "created_at": "2026-08-30T04:05:51Z",
+          "updated_at": "2026-08-30T04:05:51Z",
+          "body": "I have updated to 6.0.699, restarted and repaired but still only the ON functionality is working. Set OFF/Target temp not working. Here is a new diagnostic for you a095345e-08a4-4d5e-b3b1-adbc30ff12a2\nThank you!"
+        },
+        {
+          "user": "dlnraja",
+          "created_at": "2026-08-30T11:16:59Z",
+          "updated_at": "2026-08-30T11:16:59Z",
+          "body": "**P2324 follow-up on diag `a095345e` (Adam)**\n\nRoot cause for ON-ok / OFF+setpoint-dead on TYBAC FCU (`_TZE204_mpbki2zm`+`TS0601`):\n1. Blind DP101 (manual) before every TX — Z2M still marks DP101 as TODO; MCU can ignore DP1=false / DP16\n2. Soft-success TX + hollow EF00 after re-pair\n\n**Fix in next Test tip:** DP1/DP16 first; DP101 only after RX confirms it; force magic handshake + IEEE heal on FCU boot; hard-fail if mesh TX fails.\n\nPlease update Test when Athom publishes the tip, restart app once, retest **OFF** + **target temperature**. If still stuck, send a fresh diagnostic.\n"
+        },
+        {
+          "user": "dlnraja",
+          "created_at": "2026-08-30T18:13:31Z",
+          "updated_at": "2026-08-30T18:13:31Z",
+          "body": "**P2326 follow-up — diag `a095345e` (Adam) on Test **9.0.699****\n\nLog shows FCU path is alive:\n\n- OFF TX: `onoff TX false ok` and DP1 RX `false` (mesh ACK)\n- Then DynCap **wrongly** mapped **DP36** (3-way valve) → `target_temperature` and wrote `5`\n\nSo the “setpoint dead / jumps” symptom on 9.0.699 is partly **DynCap inventing a mapping** for a driver-owned FCU DP, not only missing OFF TX.\n\nFixes on master (next Test after Athom recovers from draft hang):\n\n1. P2324 — FCU TX order (DP1/DP16 before DP101; hard-fail soft TX)\n2. P2326 — DynCap **skips driver-owned DPs**; DP36 reserved as internal valve\n\nPlease update to the newest Universal Tuya Test tip when Athom shows it (live tip was still **9.0.719** while **9.0.721** sat in draft after socket hang). Then remove + re-pair Wall Thermostat and retest OFF + target temp.\n\nIf still broken, send a fresh diag after the re-pair.\n"
+        }
+      ]
+    }
+  ]
+}
