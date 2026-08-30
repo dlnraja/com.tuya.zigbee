@@ -1,4 +1,10 @@
 {
+  "9.0.705": {
+    "en": "Aligned coherent driver icons/images; cleaned SVG for App Store; guarded empty manufacturerName AggregateError."
+  },
+  "9.0.704": {
+    "en": "Aligned driver icons and images; fixed asset paths; cleaned SVG icons for App Store processing."
+  },
   "9.0.702": {
     "en": "Aligned driver icons and images to a coherent Homey design; fixed image paths to each driver own assets."
   },

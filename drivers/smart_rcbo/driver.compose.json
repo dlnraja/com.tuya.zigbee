@@ -15,7 +15,9 @@
     "button.1"
   ],
   "zigbee": {
-    "manufacturerName": [],
+    "manufacturerName": [
+      "_TZ3000_ph_smartrcbo"
+    ],
     "productId": [
       "TS0601_rcbo"
     ],

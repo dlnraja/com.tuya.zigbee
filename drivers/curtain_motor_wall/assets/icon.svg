@@ -12,8 +12,8 @@
   <circle cx="480" cy="300" r="20" fill="#4299E1"/>
   <!-- Temperature display -->
   <rect x="360" y="380" width="240" height="80" rx="10" fill="#1A365D"/>
-  <text x="480" y="440" font-family="Arial, sans-serif" font-size="48" fill="#00B5D8" text-anchor="middle" font-weight="bold">22.0°</text>
+  
   <!-- Drop indicator -->
   <path d="M 480 540 Q 460 580 460 600 Q 460 620 480 620 Q 500 620 500 600 Q 500 580 480 540 Z" fill="#4299E1"/>
-  <text x="480" y="900" font-family="Arial, sans-serif" font-size="64" fill="#2C5282" text-anchor="middle" font-weight="bold">VALVE</text>
+  
 </svg>

@@ -17,7 +17,9 @@
     ]
   },
   "zigbee": {
-    "manufacturerName": [],
+    "manufacturerName": [
+      "_TZ3000_ph_sensorlcdtemphum"
+    ],
     "productId": [
       "TS0601_lcd",
       "TS0601",

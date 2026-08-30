@@ -80,7 +80,6 @@ const ICONS = {
   <rect x="295" y="680" width="20" height="60" rx="3" fill="${c.neutral}"/>
   <!-- Status indicator (closed/open) -->
   <circle cx="480" cy="160" r="20" fill="${c.success}"/>
-  <text x="480" y="900" font-family="Arial, sans-serif" font-size="64" fill="${c.primary}" text-anchor="middle" font-weight="bold">DOOR</text>
 </svg>`,
 
   motion: (c = COLORS) => `<?xml version="1.0" encoding="UTF-8"?>
@@ -98,7 +97,6 @@ const ICONS = {
   <path d="M 200 480 Q 140 420 200 360" stroke="${c.accent}" stroke-width="20" fill="none" stroke-linecap="round" opacity="0.6"/>
   <path d="M 740 480 Q 780 440 740 400" stroke="${c.accent}" stroke-width="20" fill="none" stroke-linecap="round"/>
   <path d="M 760 480 Q 820 420 760 360" stroke="${c.accent}" stroke-width="20" fill="none" stroke-linecap="round" opacity="0.6"/>
-  <text x="480" y="900" font-family="Arial, sans-serif" font-size="64" fill="${c.primary}" text-anchor="middle" font-weight="bold">MOTION</text>
 </svg>`,
 
   climate: (c = COLORS) => `<?xml version="1.0" encoding="UTF-8"?>
@@ -118,7 +116,6 @@ const ICONS = {
   <line x1="400" y1="320" x2="390" y2="320" stroke="${c.primary}" stroke-width="6" stroke-linecap="round"/>
   <line x1="400" y1="400" x2="380" y2="400" stroke="${c.primary}" stroke-width="8" stroke-linecap="round"/>
   <line x1="400" y1="480" x2="390" y2="480" stroke="${c.primary}" stroke-width="6" stroke-linecap="round"/>
-  <text x="480" y="900" font-family="Arial, sans-serif" font-size="64" fill="${c.primary}" text-anchor="middle" font-weight="bold">CLIMATE</text>
 </svg>`,
 
   water: (c = COLORS) => `<?xml version="1.0" encoding="UTF-8"?>
@@ -131,7 +128,6 @@ const ICONS = {
   <!-- Waves at base -->
   <path d="M 200 760 Q 280 740 360 760 T 520 760 T 680 760 T 760 760" stroke="${c.tertiary}" stroke-width="16" fill="none" stroke-linecap="round"/>
   <path d="M 200 800 Q 280 780 360 800 T 520 800 T 680 800 T 760 800" stroke="${c.tertiary}" stroke-width="12" fill="none" stroke-linecap="round" opacity="0.6"/>
-  <text x="480" y="900" font-family="Arial, sans-serif" font-size="64" fill="${c.primary}" text-anchor="middle" font-weight="bold">WATER</text>
 </svg>`,
 
   smoke: (c = COLORS) => `<?xml version="1.0" encoding="UTF-8"?>
@@ -148,7 +144,6 @@ const ICONS = {
   <ellipse cx="500" cy="340" rx="80" ry="50" fill="${c.neutral}" opacity="0.7"/>
   <ellipse cx="560" cy="280" rx="70" ry="45" fill="${c.neutral}" opacity="0.5"/>
   <ellipse cx="440" cy="220" rx="50" ry="35" fill="${c.neutral}" opacity="0.4"/>
-  <text x="480" y="900" font-family="Arial, sans-serif" font-size="64" fill="${c.primary}" text-anchor="middle" font-weight="bold">SMOKE</text>
 </svg>`,
 
   switch: (c = COLORS) => `<?xml version="1.0" encoding="UTF-8"?>
@@ -165,7 +160,6 @@ const ICONS = {
   <!-- Mounting screws -->
   <circle cx="320" cy="240" r="12" fill="${c.neutral}"/>
   <circle cx="640" cy="720" r="12" fill="${c.neutral}"/>
-  <text x="480" y="900" font-family="Arial, sans-serif" font-size="64" fill="${c.primary}" text-anchor="middle" font-weight="bold">SWITCH</text>
 </svg>`,
 
   plug: (c = COLORS) => `<?xml version="1.0" encoding="UTF-8"?>
@@ -180,8 +174,6 @@ const ICONS = {
   <!-- LED indicator -->
   <circle cx="480" cy="600" r="20" fill="${c.success}"/>
   <!-- Watt meter symbol -->
-  <text x="480" y="700" font-family="Arial, sans-serif" font-size="80" fill="${c.primary}" text-anchor="middle" font-weight="bold">W</text>
-  <text x="480" y="900" font-family="Arial, sans-serif" font-size="64" fill="${c.primary}" text-anchor="middle" font-weight="bold">PLUG</text>
 </svg>`,
 
   bulb: (c = COLORS) => `<?xml version="1.0" encoding="UTF-8"?>
@@ -204,7 +196,6 @@ const ICONS = {
   <line x1="720" y1="240" x2="760" y2="280" stroke="${c.warning}" stroke-width="16" stroke-linecap="round"/>
   <line x1="760" y1="320" x2="800" y2="320" stroke="${c.warning}" stroke-width="16" stroke-linecap="round"/>
   <line x1="720" y1="400" x2="760" y2="360" stroke="${c.warning}" stroke-width="16" stroke-linecap="round"/>
-  <text x="480" y="900" font-family="Arial, sans-serif" font-size="64" fill="${c.primary}" text-anchor="middle" font-weight="bold">BULB</text>
 </svg>`,
 
   dimmer: (c = COLORS) => `<?xml version="1.0" encoding="UTF-8"?>
@@ -222,7 +213,6 @@ const ICONS = {
   <line x1="610" y1="480" x2="640" y2="480" stroke="${c.primary}" stroke-width="12" stroke-linecap="round"/>
   <line x1="480" y1="320" x2="480" y2="350" stroke="${c.primary}" stroke-width="12" stroke-linecap="round"/>
   <line x1="480" y1="610" x2="480" y2="640" stroke="${c.primary}" stroke-width="12" stroke-linecap="round"/>
-  <text x="480" y="900" font-family="Arial, sans-serif" font-size="64" fill="${c.primary}" text-anchor="middle" font-weight="bold">DIMMER</text>
 </svg>`,
 
   remote: (c = COLORS) => `<?xml version="1.0" encoding="UTF-8"?>
@@ -240,7 +230,6 @@ const ICONS = {
   <circle cx="480" cy="640" r="40" fill="${c.danger}"/>
   <!-- LED at top -->
   <circle cx="480" cy="200" r="12" fill="${c.success}"/>
-  <text x="480" y="900" font-family="Arial, sans-serif" font-size="64" fill="${c.primary}" text-anchor="middle" font-weight="bold">REMOTE</text>
 </svg>`,
 
   thermostat: (c = COLORS) => `<?xml version="1.0" encoding="UTF-8"?>
@@ -250,12 +239,9 @@ const ICONS = {
   <circle cx="480" cy="440" r="280" fill="${c.white}" stroke="${c.primary}" stroke-width="20"/>
   <!-- Display -->
   <circle cx="480" cy="440" r="220" fill="${c.tertiary}"/>
-  <text x="480" y="420" font-family="Arial, sans-serif" font-size="120" fill="${c.accent}" text-anchor="middle" font-weight="bold">21°</text>
-  <text x="480" y="480" font-family="Arial, sans-serif" font-size="40" fill="${c.white}" text-anchor="middle" opacity="0.7">SET 22°</text>
   <!-- Temperature dial (outer ring) -->
   <path d="M 220 440 A 260 260 0 0 1 320 240" stroke="${c.warning}" stroke-width="20" fill="none" stroke-linecap="round"/>
   <path d="M 740 440 A 260 260 0 0 1 640 640" stroke="${c.accent}" stroke-width="20" fill="none" stroke-linecap="round"/>
-  <text x="480" y="900" font-family="Arial, sans-serif" font-size="64" fill="${c.primary}" text-anchor="middle" font-weight="bold">THERMOSTAT</text>
 </svg>`,
 
   valve: (c = COLORS) => `<?xml version="1.0" encoding="UTF-8"?>
@@ -272,10 +258,8 @@ const ICONS = {
   <circle cx="480" cy="300" r="20" fill="${c.secondary}"/>
   <!-- Temperature display -->
   <rect x="360" y="380" width="240" height="80" rx="10" fill="${c.tertiary}"/>
-  <text x="480" y="440" font-family="Arial, sans-serif" font-size="48" fill="${c.accent}" text-anchor="middle" font-weight="bold">22.0°</text>
   <!-- Drop indicator -->
   <path d="M 480 540 Q 460 580 460 600 Q 460 620 480 620 Q 500 620 500 600 Q 500 580 480 540 Z" fill="${c.secondary}"/>
-  <text x="480" y="900" font-family="Arial, sans-serif" font-size="64" fill="${c.primary}" text-anchor="middle" font-weight="bold">VALVE</text>
 </svg>`,
 
   soil: (c = COLORS) => `<?xml version="1.0" encoding="UTF-8"?>
@@ -294,7 +278,6 @@ const ICONS = {
   <ellipse cx="460" cy="320" rx="40" ry="20" fill="${c.success}"/>
   <!-- Drop -->
   <path d="M 700 700 Q 700 670 720 670 Q 740 670 740 700 Q 740 730 720 730 Q 700 730 700 700 Z" fill="${c.accent}"/>
-  <text x="480" y="900" font-family="Arial, sans-serif" font-size="64" fill="${c.primary}" text-anchor="middle" font-weight="bold">SOIL</text>
 </svg>`,
 
   gas: (c = COLORS) => `<?xml version="1.0" encoding="UTF-8"?>
@@ -314,7 +297,6 @@ const ICONS = {
   <circle cx="480" cy="560" r="80" fill="none" stroke="${c.neutral}" stroke-width="6"/>
   <line x1="400" y1="560" x2="560" y2="560" stroke="${c.neutral}" stroke-width="6"/>
   <line x1="480" y1="480" x2="480" y2="640" stroke="${c.neutral}" stroke-width="6"/>
-  <text x="480" y="900" font-family="Arial, sans-serif" font-size="64" fill="${c.primary}" text-anchor="middle" font-weight="bold">GAS</text>
 </svg>`,
 
   presence: (c = COLORS) => `<?xml version="1.0" encoding="UTF-8"?>
@@ -331,7 +313,6 @@ const ICONS = {
   <!-- Person silhouette (detected) -->
   <circle cx="480" cy="700" r="20" fill="${c.success}"/>
   <path d="M 460 740 L 460 800 L 500 800 L 500 740 Z" fill="${c.success}"/>
-  <text x="480" y="900" font-family="Arial, sans-serif" font-size="64" fill="${c.primary}" text-anchor="middle" font-weight="bold">PRESENCE</text>
 </svg>`,
 
   illuminance: (c = COLORS) => `<?xml version="1.0" encoding="UTF-8"?>
@@ -350,8 +331,6 @@ const ICONS = {
   <line x1="320" y1="580" x2="360" y2="540" stroke="${c.warning}" stroke-width="20" stroke-linecap="round"/>
   <line x1="600" y1="540" x2="640" y2="580" stroke="${c.warning}" stroke-width="20" stroke-linecap="round"/>
   <!-- LUX text -->
-  <text x="480" y="800" font-family="Arial, sans-serif" font-size="80" fill="${c.primary}" text-anchor="middle" font-weight="bold">LUX</text>
-  <text x="480" y="900" font-family="Arial, sans-serif" font-size="64" fill="${c.primary}" text-anchor="middle" font-weight="bold">LIGHT</text>
 </svg>`,
 
   air: (c = COLORS) => `<?xml version="1.0" encoding="UTF-8"?>
@@ -366,14 +345,11 @@ const ICONS = {
   <circle cx="480" cy="280" r="20" fill="${c.accent}"/>
   <!-- Display -->
   <rect x="360" y="440" width="240" height="120" rx="10" fill="${c.tertiary}"/>
-  <text x="480" y="510" font-family="Arial, sans-serif" font-size="48" fill="${c.accent}" text-anchor="middle" font-weight="bold">PM2.5</text>
-  <text x="480" y="550" font-family="Arial, sans-serif" font-size="32" fill="${c.white}" text-anchor="middle" opacity="0.7">12 μg/m³</text>
   <!-- Air flow arrows -->
   <path d="M 200 280 L 280 280" stroke="${c.accent}" stroke-width="10" fill="none" stroke-linecap="round" marker-end="url(#arrow)"/>
   <path d="M 200 320 L 280 320" stroke="${c.accent}" stroke-width="10" fill="none" stroke-linecap="round" opacity="0.6"/>
   <path d="M 680 280 L 760 280" stroke="${c.accent}" stroke-width="10" fill="none" stroke-linecap="round"/>
   <path d="M 680 320 L 760 320" stroke="${c.accent}" stroke-width="10" fill="none" stroke-linecap="round" opacity="0.6"/>
-  <text x="480" y="900" font-family="Arial, sans-serif" font-size="64" fill="${c.primary}" text-anchor="middle" font-weight="bold">AIR</text>
 </svg>`,
 
   button: (c = COLORS) => `<?xml version="1.0" encoding="UTF-8"?>
@@ -388,7 +364,6 @@ const ICONS = {
   <!-- Wireless waves -->
   <path d="M 240 360 Q 200 480 240 600" stroke="${c.success}" stroke-width="14" fill="none" stroke-linecap="round"/>
   <path d="M 720 360 Q 760 480 720 600" stroke="${c.success}" stroke-width="14" fill="none" stroke-linecap="round"/>
-  <text x="480" y="900" font-family="Arial, sans-serif" font-size="64" fill="${c.primary}" text-anchor="middle" font-weight="bold">BUTTON</text>
 </svg>`,
 
   generic: (c = COLORS) => `<?xml version="1.0" encoding="UTF-8"?>
@@ -401,7 +376,6 @@ const ICONS = {
   <!-- Signal waves -->
   <path d="M 240 280 Q 200 360 240 440" stroke="${c.accent}" stroke-width="10" fill="none" stroke-linecap="round" opacity="0.7"/>
   <path d="M 720 280 Q 760 360 720 440" stroke="${c.accent}" stroke-width="10" fill="none" stroke-linecap="round" opacity="0.7"/>
-  <text x="480" y="900" font-family="Arial, sans-serif" font-size="64" fill="${c.primary}" text-anchor="middle" font-weight="bold">TUYA</text>
 </svg>`,
 };
 

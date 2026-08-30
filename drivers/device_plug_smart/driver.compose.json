@@ -20,7 +20,9 @@
     "mains": true
   },
   "zigbee": {
-    "manufacturerName": [],
+    "manufacturerName": [
+      "_TZ3000_ph_deviceplugsmart"
+    ],
     "productId": [
       "CK-TLSR8656-SS5-01(7014)",
       "Excellux",

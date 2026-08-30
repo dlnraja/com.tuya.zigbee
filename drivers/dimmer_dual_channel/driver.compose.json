@@ -21,7 +21,9 @@
     "zigbee"
   ],
   "zigbee": {
-    "manufacturerName": [],
+    "manufacturerName": [
+      "_TZ3000_ph_dimmerdualchanne"
+    ],
     "productId": [
       "TS1101",
       "TS0601"

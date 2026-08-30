@@ -3,7 +3,8 @@ const fs = require('fs');
 const path = require('path');
 const sharp = require('sharp');
 const DRIVERS = path.join(__dirname, '..', '..', 'drivers');
-const SIZES = { small: 75, large: 500, xlarge: 1000 };
+// WHY P2315: Homey pair UI uses small+large only; xlarge (~12MB fleet) blows Athom 50MB publish gate
+const SIZES = { small: 75, large: 500 };
 
 async function renderIcon(svgPath, outPath, size) {
   const svgBuf = fs.readFileSync(svgPath);

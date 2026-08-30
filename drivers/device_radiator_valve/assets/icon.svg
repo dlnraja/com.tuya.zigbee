@@ -5,10 +5,10 @@
   <circle cx="480" cy="440" r="280" fill="#FFFFFF" stroke="#2C5282" stroke-width="20"/>
   <!-- Display -->
   <circle cx="480" cy="440" r="220" fill="#1A365D"/>
-  <text x="480" y="420" font-family="Arial, sans-serif" font-size="120" fill="#00B5D8" text-anchor="middle" font-weight="bold">21°</text>
-  <text x="480" y="480" font-family="Arial, sans-serif" font-size="40" fill="#FFFFFF" text-anchor="middle" opacity="0.7">SET 22°</text>
+  
+  
   <!-- Temperature dial (outer ring) -->
   <path d="M 220 440 A 260 260 0 0 1 320 240" stroke="#ED8936" stroke-width="20" fill="none" stroke-linecap="round"/>
   <path d="M 740 440 A 260 260 0 0 1 640 640" stroke="#00B5D8" stroke-width="20" fill="none" stroke-linecap="round"/>
-  <text x="480" y="900" font-family="Arial, sans-serif" font-size="64" fill="#2C5282" text-anchor="middle" font-weight="bold">THERMOSTAT</text>
+  
 </svg>
