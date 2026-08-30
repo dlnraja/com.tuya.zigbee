@@ -5,15 +5,9 @@
       "title": {
         "en": "Turn on"
       },
-      "args": [
-        {
-          "type": "device",
-          "name": "device",
-          "filter": "driver_id=valve_irrigation"
-        }
-      ],
+      "args": [],
       "titleFormatted": {
-        "en": "Turn on [[device]]"
+        "en": "Turn on"
       }
     },
     {
@@ -21,15 +15,9 @@
       "title": {
         "en": "Turn off"
       },
-      "args": [
-        {
-          "type": "device",
-          "name": "device",
-          "filter": "driver_id=valve_irrigation"
-        }
-      ],
+      "args": [],
       "titleFormatted": {
-        "en": "Turn off [[device]]"
+        "en": "Turn off"
       }
     },
     {
@@ -40,18 +28,12 @@
         "nl": "Wisselen",
         "de": "Umschalten"
       },
-      "args": [
-        {
-          "type": "device",
-          "name": "device",
-          "filter": "driver_id=valve_irrigation"
-        }
-      ],
+      "args": [],
       "titleFormatted": {
-        "en": "Toggle [[device]]",
-        "fr": "Basculer [[device]]",
-        "nl": "Wisselen [[device]]",
-        "de": "Umschalten [[device]]"
+        "en": "Toggle",
+        "fr": "Basculer",
+        "nl": "Wisselen",
+        "de": "Umschalten"
       }
     }
   ],
@@ -64,18 +46,12 @@
         "nl": "Aangezet",
         "de": "Eingeschaltet"
       },
-      "args": [
-        {
-          "type": "device",
-          "name": "device",
-          "filter": "driver_id=valve_irrigation"
-        }
-      ],
+      "args": [],
       "titleFormatted": {
-        "en": "Turned on [[device]]",
-        "fr": "Allumé [[device]]",
-        "nl": "Aangezet [[device]]",
-        "de": "Eingeschaltet [[device]]"
+        "en": "Turned on",
+        "fr": "Allumé",
+        "nl": "Aangezet",
+        "de": "Eingeschaltet"
       }
     },
     {
@@ -86,18 +62,12 @@
         "nl": "Uitgezet",
         "de": "Ausgeschaltet"
       },
-      "args": [
-        {
-          "type": "device",
-          "name": "device",
-          "filter": "driver_id=valve_irrigation"
-        }
-      ],
+      "args": [],
       "titleFormatted": {
-        "en": "Turned off [[device]]",
-        "fr": "Éteint [[device]]",
-        "nl": "Uitgezet [[device]]",
-        "de": "Ausgeschaltet [[device]]"
+        "en": "Turned off",
+        "fr": "Éteint",
+        "nl": "Uitgezet",
+        "de": "Ausgeschaltet"
       }
     },
     {
@@ -108,19 +78,45 @@
         "nl": "Batterij laag",
         "de": "Batterie schwach"
       },
-      "args": [
-        {
-          "type": "device",
-          "name": "device",
-          "filter": "driver_id=valve_irrigation"
-        }
-      ],
+      "args": [],
       "titleFormatted": {
-        "en": "Battery low [[device]]",
-        "fr": "Batterie faible [[device]]",
-        "nl": "Batterij laag [[device]]",
-        "de": "Batterie schwach [[device]]"
+        "en": "Battery low",
+        "fr": "Batterie faible",
+        "nl": "Batterij laag",
+        "de": "Batterie schwach"
       }
+    },
+    {
+      "id": "valve_irrigation_physical_gang1_on",
+      "title": {
+        "en": "Physical gang 1 on",
+        "fr": "Physical gang 1 on"
+      },
+      "args": []
+    },
+    {
+      "id": "valve_irrigation_physical_gang1_off",
+      "title": {
+        "en": "Physical gang 1 off",
+        "fr": "Physical gang 1 off"
+      },
+      "args": []
+    },
+    {
+      "id": "valve_irrigation_physical_gang2_on",
+      "title": {
+        "en": "Physical gang 2 on",
+        "fr": "Physical gang 2 on"
+      },
+      "args": []
+    },
+    {
+      "id": "valve_irrigation_physical_gang2_off",
+      "title": {
+        "en": "Physical gang 2 off",
+        "fr": "Physical gang 2 off"
+      },
+      "args": []
     }
   ],
   "conditions": [
@@ -132,18 +128,12 @@
         "nl": "Is !{{aan|uit}}",
         "de": "Ist !{{ein|aus}}"
       },
-      "args": [
-        {
-          "type": "device",
-          "name": "device",
-          "filter": "driver_id=valve_irrigation"
-        }
-      ],
+      "args": [],
       "titleFormatted": {
-        "en": "Is !{{on|off}} [[device]]",
-        "fr": "Est !{{allumé|éteint}} [[device]]",
-        "nl": "Is !{{aan|uit}} [[device]]",
-        "de": "Ist !{{ein|aus}} [[device]]"
+        "en": "Is !{{on|off}}",
+        "fr": "Est !{{allumé|éteint}}",
+        "nl": "Is !{{aan|uit}}",
+        "de": "Ist !{{ein|aus}}"
       }
     }
   ]

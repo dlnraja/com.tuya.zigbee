@@ -6,16 +6,10 @@
         "en": "Turned on",
         "fr": "Allume"
       },
-      "args": [
-        {
-          "type": "device",
-          "name": "device",
-          "filter": "driver_id=smart_garden_irrigation_control"
-        }
-      ],
+      "args": [],
       "titleFormatted": {
-        "en": "Turned on [[device]]",
-        "fr": "Allume [[device]]"
+        "en": "Turned on",
+        "fr": "Allume"
       }
     },
     {
@@ -24,16 +18,10 @@
         "en": "Turned off",
         "fr": "Eteint"
       },
-      "args": [
-        {
-          "type": "device",
-          "name": "device",
-          "filter": "driver_id=smart_garden_irrigation_control"
-        }
-      ],
+      "args": [],
       "titleFormatted": {
-        "en": "Turned off [[device]]",
-        "fr": "Eteint [[device]]"
+        "en": "Turned off",
+        "fr": "Eteint"
       }
     },
     {
@@ -44,18 +32,12 @@
         "nl": "Batterij laag",
         "de": "Batterie schwach"
       },
-      "args": [
-        {
-          "type": "device",
-          "name": "device",
-          "filter": "driver_id=smart_garden_irrigation_control"
-        }
-      ],
+      "args": [],
       "titleFormatted": {
-        "en": "Battery low [[device]]",
-        "fr": "Batterie faible [[device]]",
-        "nl": "Batterij laag [[device]]",
-        "de": "Batterie schwach [[device]]"
+        "en": "Battery low",
+        "fr": "Batterie faible",
+        "nl": "Batterij laag",
+        "de": "Batterie schwach"
       }
     }
   ],
@@ -66,16 +48,10 @@
         "en": "Is turned !{{on|off}}",
         "fr": "Est !{{allume|eteint}}"
       },
-      "args": [
-        {
-          "type": "device",
-          "name": "device",
-          "filter": "driver_id=smart_garden_irrigation_control"
-        }
-      ],
+      "args": [],
       "titleFormatted": {
-        "en": "Is turned !{{on|off}} [[device]]",
-        "fr": "Est !{{allume|eteint}} [[device]]"
+        "en": "Is turned !{{on|off}}",
+        "fr": "Est !{{allume|eteint}}"
       }
     }
   ],
@@ -86,16 +62,10 @@
         "en": "Turn on",
         "fr": "Allumer"
       },
-      "args": [
-        {
-          "type": "device",
-          "name": "device",
-          "filter": "driver_id=smart_garden_irrigation_control"
-        }
-      ],
+      "args": [],
       "titleFormatted": {
-        "en": "Turn on [[device]]",
-        "fr": "Allumer [[device]]"
+        "en": "Turn on",
+        "fr": "Allumer"
       }
     },
     {
@@ -104,16 +74,10 @@
         "en": "Turn off",
         "fr": "Eteindre"
       },
-      "args": [
-        {
-          "type": "device",
-          "name": "device",
-          "filter": "driver_id=smart_garden_irrigation_control"
-        }
-      ],
+      "args": [],
       "titleFormatted": {
-        "en": "Turn off [[device]]",
-        "fr": "Eteindre [[device]]"
+        "en": "Turn off",
+        "fr": "Eteindre"
       }
     },
     {
@@ -122,16 +86,10 @@
         "en": "Toggle",
         "fr": "Basculer"
       },
-      "args": [
-        {
-          "type": "device",
-          "name": "device",
-          "filter": "driver_id=smart_garden_irrigation_control"
-        }
-      ],
+      "args": [],
       "titleFormatted": {
-        "en": "Toggle [[device]]",
-        "fr": "Basculer [[device]]"
+        "en": "Toggle",
+        "fr": "Basculer"
       }
     }
   ]
