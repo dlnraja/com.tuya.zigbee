@@ -911,6 +911,15 @@ the Universal Tuya App ID.
    or in-flight (re-lists after `createBuild` to catch peer races).
    `.homeyignore` must keep `!.homeychangelog.json`. Size gate default **50 MB**.
 
+9. **P2323 tip email + developer tools dashboard hang:**
+   - `dashboard-monitor.js` must pass `$timeout` (≥60s via `HOMEY_API_TIMEOUT_MS`)
+     and retry on `Timeout after` / `socket hang up` (Athom default ~10s is too short).
+   - Soft-alert: latest `processing_failed` + transient detail + any healthy `test`
+     → do **not** exit 1 / bump-loop.
+   - `prepare-publish` exports `HOMEY_PUBLISH_DIR` to `GITHUB_ENV`; publish steps
+     prefer that path over recomputing `os.tmpdir()`.
+   - Publish Diagnose scrapes logs for hang signatures and recommends wait + combo check.
+
 ---
 
 ## N. Sacred couple matrix / P2138 / HomeSuite reliability (2026-08-17)

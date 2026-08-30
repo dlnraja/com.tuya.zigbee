@@ -25,7 +25,7 @@ try {
 const ROOT = process.cwd();
 const REPORT_PATH = path.join(ROOT, ".github", "state", "dashboard-monitor-report.json");
 const FAILED_STATES = new Set(["processing_failed", "error", "failed", "revoked"]);
-const TRANSIENT_RE = /socket hang up|econnreset|econnaborted|etimedout|fetch failed|network|timeout|temporar|502|503|504/i;
+const TRANSIENT_RE = /socket hang up|econnreset|econnaborted|etimedout|timeout after|fetch failed|network|timeout|temporar|502|503|504/i;
 const HEALTHY_TEST_STATES = new Set(["test"]);
 
 function readJson(file) {

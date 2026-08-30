@@ -123,12 +123,14 @@ class WallThermostatDevice extends TuyaSpecificClusterDevice {
   /**
    * WHY(P2303): Prefer DeviceIO.sendDP (manager → cluster → raw → magic) over
    * cluster-only writeBool — Homey Self-Hosted + EF00 often needs the cascade.
+   * WHY(P2324): Never soft-success — Adam #532 OFF/setpoint looked OK in UI while mesh TX failed.
    */
   async _txBool(dp, value) {
     const v = !!value;
     if (this.io && typeof this.io.sendDP === 'function') {
-      const ok = await this.io.sendDP(dp, v, { dpType: 'bool', type: 'bool' }).catch(() => false);
-      if (ok) return true;
+      const ok = await this.io.sendDP(dp, v, { dpType: 'bool', type: 'bool' });
+      if (!ok) throw new Error(`FCU/BHT DP${dp} bool TX failed`);
+      return true;
     }
     await this.writeBool(dp, v);
     return true;
@@ -137,8 +139,9 @@ class WallThermostatDevice extends TuyaSpecificClusterDevice {
   async _txEnum(dp, value) {
     const v = Number(value);
     if (this.io && typeof this.io.sendDP === 'function') {
-      const ok = await this.io.sendDP(dp, v, { dpType: 'enum', type: 'enum' }).catch(() => false);
-      if (ok) return true;
+      const ok = await this.io.sendDP(dp, v, { dpType: 'enum', type: 'enum' });
+      if (!ok) throw new Error(`FCU/BHT DP${dp} enum TX failed`);
+      return true;
     }
     await this.writeEnum(dp, v);
     return true;
@@ -147,11 +150,26 @@ class WallThermostatDevice extends TuyaSpecificClusterDevice {
   async _txValue(dp, value) {
     const v = Number(value);
     if (this.io && typeof this.io.sendDP === 'function') {
-      const ok = await this.io.sendDP(dp, v, { dpType: 'value', type: 'value' }).catch(() => false);
-      if (ok) return true;
+      const ok = await this.io.sendDP(dp, v, { dpType: 'value', type: 'value' });
+      if (!ok) throw new Error(`FCU/BHT DP${dp} value TX failed`);
+      return true;
     }
     await this.writeData32(dp, v);
     return true;
+  }
+
+  /**
+   * WHY(P2324): Z2M still marks TYBAC DP101 (manual) as TODO. Blind DP101=true before
+   * every OFF/setpoint can leave the MCU ignoring DP1/DP16 (ON works, OFF/setpoint dead).
+   * Only TX DP101 after RX confirmed it, or when user sets thermostat_programming.
+   */
+  async _ensureFcuManualForTx() {
+    if (!(this._fcu || this._fcuSignalSeen)) return;
+    if (!this._fcuManualDpConfirmed) {
+      this.log('[WALL-THERMO] skip DP101 pre-TX (unconfirmed on this node)');
+      return;
+    }
+    await this._txBool(FCU_DATA_POINTS.manualMode, true);
   }
 
   async _armFcu(reason = 'signal') {
@@ -175,6 +193,9 @@ class WallThermostatDevice extends TuyaSpecificClusterDevice {
     // Persist / restore FCU arm from prior session (Adam re-pair churn)
     if (this.getStoreValue?.('wall_thermo_fcu') === true) {
       this._fcuSignalSeen = true;
+    }
+    if (this.getStoreValue?.('wall_thermo_fcu_manual_ok') === true) {
+      this._fcuManualDpConfirmed = true;
     }
 
     this._fcu = this._isFcuCouple();
@@ -201,7 +222,26 @@ class WallThermostatDevice extends TuyaSpecificClusterDevice {
     // Soft-read Basic cluster identity if settings empty (Homey SHS often blanks zb_*)
     this._refreshIdentityFromBasic(zclNode).catch(() => {});
 
+    // WHY(P2324 #532): after re-pair, EF00 stays hollow until magic + identity heal (same as PresentSky dimmer).
     if (this._fcu) {
+      try {
+        const { healZigbeeNodeIdentity } = require('../../lib/io/healZigbeeNodeIdentity');
+        await healZigbeeNodeIdentity(this, { force: true }).catch(() => {});
+      } catch (_) { /* optional heal */ }
+      try {
+        if (typeof this._ensureTuyaIo === 'function') {
+          await this._ensureTuyaIo(zclNode, {
+            queryAll: true,
+            mcu: true,
+            pollFallback: false,
+            forceMagic: true,
+          });
+        } else if (this.io && typeof this.io.magicHandshake === 'function') {
+          await this.io.magicHandshake({ force: true }).catch(() => {});
+        }
+      } catch (e) {
+        this.log('[WALL-THERMO] FCU magic/heal deferred:', e?.message || e);
+      }
       this._queryFcuState().catch((err) => {
         this.log('[WALL-THERMO] FCU DP query deferred:', err?.message || err);
       });
@@ -239,9 +279,11 @@ class WallThermostatDevice extends TuyaSpecificClusterDevice {
       if (this._fcuSyncing) return;
       this._fcuSyncing = true;
       try {
-        // Always force manual before power TX — schedule ignores DP1 on TYBAC
-        await this._txBool(FCU_DATA_POINTS.manualMode, true).catch(() => {});
+        // WHY(P2324): DP1 first (Z2M power switch). DP101 only if confirmed — never block OFF.
         await this._txBool(BHT_DATA_POINTS.onOff, !!onOff);
+        await this._ensureFcuManualForTx().catch((e) => {
+          this.log('[WALL-THERMO] DP101 after onoff skipped:', e?.message || e);
+        });
         if (this.hasCapability('thermostat_mode')) {
           const mode = onOff
             ? (this._lastFcuSystemMode || 'cool')
@@ -257,6 +299,8 @@ class WallThermostatDevice extends TuyaSpecificClusterDevice {
     this.registerCapabilityListener('thermostat_programming', async (mode) => {
       if (this._fcu || this._fcuSignalSeen) {
         const manualOn = String(mode) === '0';
+        this._fcuManualDpConfirmed = true;
+        try { await this.setStoreValue?.('wall_thermo_fcu_manual_ok', true); } catch (_) { /* ignore */ }
         await this._txBool(FCU_DATA_POINTS.manualMode, manualOn);
       } else {
         await this._txEnum(BHT_DATA_POINTS.mode, Number(mode));
@@ -266,9 +310,11 @@ class WallThermostatDevice extends TuyaSpecificClusterDevice {
 
     this.registerCapabilityListener('target_temperature', async (targetTemperature) => {
       const rawValue = Math.round(Number(targetTemperature) * 10);
-      // Force manual so schedule cannot swallow setpoint (Z2M DP101)
-      await this._txBool(FCU_DATA_POINTS.manualMode, true).catch(() => {});
+      // WHY(P2324): setpoint DP16 first; optional DP101 only when RX-confirmed.
       await this._txValue(BHT_DATA_POINTS.targetTemperature, rawValue);
+      await this._ensureFcuManualForTx().catch((e) => {
+        this.log('[WALL-THERMO] DP101 after setpoint skipped:', e?.message || e);
+      });
       this.log('[WALL-THERMO] target_temperature TX', targetTemperature, 'raw', rawValue);
     });
 
@@ -286,11 +332,11 @@ class WallThermostatDevice extends TuyaSpecificClusterDevice {
       if (this._fcuSyncing) return;
       this._fcuSyncing = true;
       try {
-        await this._txBool(FCU_DATA_POINTS.manualMode, true).catch(() => {});
         // Z2M: system_mode "off" → DP1 false; cool/heat/fan_only → DP1 true + DP2
         if (mode === 'off') {
           await this._txBool(FCU_DATA_POINTS.onOff, false);
           await this.safeSetCapabilityValue('onoff', false);
+          await this._ensureFcuManualForTx().catch(() => {});
           this.log('[WALL-THERMO] FCU system_mode TX off');
           return;
         }
@@ -299,6 +345,7 @@ class WallThermostatDevice extends TuyaSpecificClusterDevice {
         this._lastFcuSystemMode = mode;
         await this._txBool(FCU_DATA_POINTS.onOff, true);
         await this._txEnum(FCU_DATA_POINTS.systemMode, enumVal);
+        await this._ensureFcuManualForTx().catch(() => {});
         await this.safeSetCapabilityValue('onoff', true);
         this.log('[WALL-THERMO] FCU system_mode TX', mode, enumVal);
       } finally {
@@ -433,6 +480,9 @@ class WallThermostatDevice extends TuyaSpecificClusterDevice {
           break;
         }
         case FCU_DATA_POINTS.manualMode: {
+          // WHY(P2324): RX proves DP101 exists on this MCU — safe to use for later TX.
+          this._fcuManualDpConfirmed = true;
+          try { await this.setStoreValue?.('wall_thermo_fcu_manual_ok', true); } catch (_) { /* ignore */ }
           await this.safeSetCapabilityValue('thermostat_programming', parsedValue ? '0' : '1');
           break;
         }

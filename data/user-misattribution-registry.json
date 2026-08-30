@@ -2447,10 +2447,12 @@
         "bulb_dimmable",
         "device_radiator_valve",
         "power_meter",
-        "thermostatic_radiator_valve"
+        "thermostatic_radiator_valve",
+        "generic_tuya",
+        "zigbee_universal"
       ],
       "source": "p2234b-couple-refine",
-      "notes": "P2295: zigbee pid=TS0601 only — PJ-1203A was invent. TYBAC-006/BAC006 are retail names. Sibling qujphad5 is a separate couple. P2300: wall_thermostat must call super.onNodeInit for EF00 TX/RX (#532).",
+      "notes": "P2295: zigbee pid=TS0601 only — PJ-1203A was invent. TYBAC-006/BAC006 are retail names. Sibling qujphad5 is a separate couple. P2300: wall_thermostat must call super.onNodeInit for EF00 TX/RX (#532). P2324: DP1 before DP101; magic heal; strip generic_tuya compounds.",
       "forbidMode": "couple",
       "protocol": "tuya_ef00",
       "sources": [
@@ -4647,11 +4649,19 @@
       ],
       "canonicalDriver": "curtain_motor",
       "forbiddenDrivers": [
-        "device_radiator_valve"
+        "device_radiator_valve",
+        "radiator_valve",
+        "thermostatic_radiator_valve",
+        "thermostat_tuya_dp",
+        "device_radiator_valve_smart",
+        "radiator_valve_zigbee",
+        "generic_tuya",
+        "zigbee_universal",
+        "unknown_zigbee_unit"
       ],
       "forbidMode": "couple",
       "source": "github-533-salvagr + Z2M Moes ZTS-EUR-C",
-      "notes": "Moes ZTS-EUR-C curtain. Forbid radiator only (mfr was there). Do NOT forbid wall_thermostat/climate/trv — coupleMode strip_pid would delete TS0601 from those drivers."
+      "notes": "P2324: Moes ZTS-EUR-C curtain. Expand TRV/generic forbids (coupleMode). Do NOT forbid wall_thermostat — strip_pid would gut TS0601 there."
     },
     {
       "id": "p2307-moes-star-feather-upt8lzi0",

@@ -61,3 +61,46 @@ describe('P2286 softExpectDecision', () => {
     assert.strictEqual(d.skip, false);
   });
 });
+
+describe('P2323 softAlertDecision (socket hang up)', () => {
+  const { softAlertDecision, isTransientAthomFailure } = require('../../scripts/lib/soft-expect-decision');
+
+  it('detects socket hang up as transient', () => {
+    assert.strictEqual(
+      isTransientAthomFailure({ state: 'processing_failed', stateMeta: 'socket hang up' }),
+      true
+    );
+  });
+
+  it('soft-skips alert when hang + healthy Test exists', () => {
+    const d = softAlertDecision(
+      [
+        { id: 15, version: '5.12.89', state: 'processing_failed', stateMeta: 'socket hang up' },
+        { id: 12, version: '5.11.219', state: 'test' },
+      ],
+      { soft: true }
+    );
+    assert.strictEqual(d.alert, false);
+    assert.strictEqual(d.reason, 'transient-hang-healthy-test');
+    assert.strictEqual(String(d.healthy.id), '12');
+  });
+
+  it('alerts when hang but no healthy Test', () => {
+    const d = softAlertDecision(
+      [{ id: 15, version: '5.12.89', state: 'processing_failed', stateMeta: 'socket hang up' }],
+      { soft: true }
+    );
+    assert.strictEqual(d.alert, true);
+  });
+
+  it('alerts on non-transient latest failure even with soft', () => {
+    const d = softAlertDecision(
+      [
+        { id: 20, version: '9.0.700', state: 'processing_failed', stateMeta: 'invalid app.json schema' },
+        { id: 19, version: '9.0.699', state: 'test' },
+      ],
+      { soft: true }
+    );
+    assert.strictEqual(d.alert, true);
+  });
+});

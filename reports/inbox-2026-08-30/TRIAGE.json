@@ -1,0 +1,54 @@
+{
+  "generatedAt": "2026-08-29T23:26:16.947Z",
+  "tip": "9.0.696",
+  "github": {
+    "open": [
+      {
+        "n": 532,
+        "user": "xDMcGee",
+        "title": "AC FCU thermostat",
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/532",
+        "action": "nudged to 9.0.696+ OFF/setpoint retest",
+        "product": "https://www.aliexpress.com/item/1005005866919886.html",
+        "couple": "_TZE204_mpbki2zm|TS0601"
+      },
+      {
+        "n": 533,
+        "user": "salvagr",
+        "title": "Moes curtain",
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/533",
+        "action": "nudged to 9.0.696+ remove+re-pair curtain_motor",
+        "product": "https://es.aliexpress.com/item/1005008356152992.html",
+        "couple": "_TZE204_5slehgeo|TS0601",
+        "note": "user screenshot showed stuck on 9.0.688"
+      }
+    ],
+    "discussions": [
+      {
+        "n": 100,
+        "title": "Pressure band",
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/discussions/100",
+        "couple": "_TZ3000_pjb1ua0m|TS0203",
+        "status": "already locked contact_sensor — answered"
+      }
+    ]
+  },
+  "forumSilent": {
+    "policy": "no auto-reply",
+    "topicsScanned": 22,
+    "newFP": [
+      {
+        "mfr": "_TZ3000_V5498KDM",
+        "pid": "TS0001",
+        "by": "SergeP",
+        "topic": 99614,
+        "decision": "DO_NOT_LOCK (Nous external app)"
+      }
+    ],
+    "actionableHighlight": {
+      "PresentSky_140352": {
+        "_TZE284_m1cvyneb": "TS0601 wall_dimmer — controls dead; P2308 IEEE soft-fail already shipped; silent (no forum post)"
+      }
+    }
+  }
+}

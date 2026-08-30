@@ -597,6 +597,18 @@ try {
     process.exit(1);
   }
 
+  // WHY(P2323): export absolute publish dir so the next CI step uses the same path
+  // (avoids "Prepared publish directory is missing" when TMPDIR / runner env drifts).
+  if (process.env.GITHUB_ENV) {
+    try {
+      fs.appendFileSync(process.env.GITHUB_ENV, `HOMEY_PUBLISH_DIR=${destDir}\n`);
+      console.log(`Exported HOMEY_PUBLISH_DIR=${destDir} to GITHUB_ENV`);
+    } catch (envErr) {
+      console.warn(`Could not write HOMEY_PUBLISH_DIR to GITHUB_ENV: ${envErr.message}`);
+    }
+  }
+  console.log(`Publish directory ready: ${destDir}`);
+
 } catch (err) {
   console.error('Error during copy:', err.message);
   process.exit(1);

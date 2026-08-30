@@ -5,6 +5,15 @@ const fs = require('fs');
 const path = require('path');
 const { execSync } = require('child_process');
 const { summarizeVersionHistory } = require('./build-history-utils');
+const {
+  softAlertDecision,
+  TRANSIENT_ATHOM_RE,
+} = require('../lib/soft-expect-decision');
+
+// WHY(P2323): AthomAppsAPI defaults to ~10s → "Timeout after 10000ms" / looks like hang.
+// Align with direct-api-publish (60s) + retry on socket hang up / timeout.
+const API_TIMEOUT_MS = Number(process.env.HOMEY_API_TIMEOUT_MS || 60000);
+const API_RETRIES = Math.max(1, Number(process.env.HOMEY_API_RETRIES || 4));
 
 let fetchWithRetry = null;
 let privacy = null;
@@ -63,6 +72,23 @@ function log(message) {
 
 function redacted(value) {
   return privacy.redact(String(value || ''));
+}
+
+async function withAthomRetry(label, fn, { maxAttempts = API_RETRIES } = {}) {
+  let lastErr;
+  for (let attempt = 1; attempt <= maxAttempts; attempt++) {
+    try {
+      return await fn();
+    } catch (e) {
+      lastErr = e;
+      const msg = String(e?.message || e);
+      if (!TRANSIENT_ATHOM_RE.test(msg) || attempt >= maxAttempts) throw e;
+      const backoff = Math.min(attempt * 10000, 45000);
+      log(`WARN: ${label} transient (${attempt}/${maxAttempts}): ${redacted(msg)} — retry in ${backoff}ms`);
+      await new Promise((res) => setTimeout(res, backoff));
+    }
+  }
+  throw lastErr;
 }
 
 function normalizeText(value) {
@@ -169,12 +195,23 @@ async function getBuildsFromCliDelegation(errors) {
     homeyApi = require('homey-api');
   }
   const { AthomAppsAPI } = homeyApi;
-  const token = await AthomApi.createDelegationToken({ audience: 'apps' });
-  const api = new AthomAppsAPI({ token });
-  const body = await api.getBuilds({ '$token': token, appId: APP_ID, query: { limit: 1000 } });
-  const builds = normalizeBuilds(body);
-  if (!builds.length) errors.push('Athom Apps API returned no builds via CLI delegation.');
-  return builds;
+  return withAthomRetry('CLI delegation getBuilds', async () => {
+    const tokenObj = await AthomApi.createDelegationToken({ audience: 'apps' });
+    const token = tokenObj?.token || tokenObj?.access_token || tokenObj;
+    if (!token) throw new Error('Homey apps delegation token missing');
+    const api = new AthomAppsAPI({ token });
+    // $timeout + $query — match direct-api-publish (default Athom client is ~10s).
+    const body = await api.getBuilds({
+      $token: token,
+      $timeout: API_TIMEOUT_MS,
+      appId: APP_ID,
+      $query: { limit: 1000 },
+      query: { limit: 1000 },
+    });
+    const builds = normalizeBuilds(body);
+    if (!builds.length) errors.push('Athom Apps API returned no builds via CLI delegation.');
+    return builds;
+  });
 }
 
 async function getBuildsFromPat(errors) {
@@ -197,7 +234,7 @@ async function getBuildsFromPat(errors) {
             Authorization: `Bearer ${token}`,
             Accept: 'application/json',
           },
-        }, { retries: 2, label: 'athom-builds', queue: 'athom' });
+        }, { retries: 3, timeout: API_TIMEOUT_MS, label: 'athom-builds', queue: 'athom' });
         if (!response.ok) {
           errors.push(`PAT request ${new URL(url).pathname} returned HTTP ${response.status}.`);
           continue;
@@ -337,9 +374,19 @@ async function main() {
   writeReport(report);
 
   if (ALERT_MODE && latestIsFailed) {
+    // WHY(P139/P2323): tip email + developer tools show socket hang up while Test is healthy —
+    // always soft-skip transient hang (never force bump-loop via exit 1).
+    const alertDecision = softAlertDecision(sorted, { soft: true });
     log(`ALERT: latest build #${latestBuild.id} is ${latestBuild.state}`);
     log(`Latest failure detail: ${stateMeta(latestBuild) || 'no stateMeta returned by Athom API'}`);
-    process.exitCode = 1;
+    if (!alertDecision.alert) {
+      log(`SOFT-ALERT skip (${alertDecision.reason}): healthy Test v${alertDecision.healthy?.version || '?'} (#${alertDecision.healthy?.id || '?'}) — refuse bump-loop`);
+      report.currentStatus.softAlertSkipped = true;
+      report.currentStatus.softAlertReason = alertDecision.reason;
+      writeReport(report);
+    } else {
+      process.exitCode = 1;
+    }
   } else if (ALERT_MODE && REQUIRE_BUILDS && !sorted.length) {
     log('ALERT: no builds were available and --require-builds was set.');
     process.exitCode = 1;

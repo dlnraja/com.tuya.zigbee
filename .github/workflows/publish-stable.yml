@@ -176,11 +176,13 @@ jobs:
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
         run: |
-          PUBLISH_DIR="$(node -p "require('path').join(require('os').tmpdir(), 'homey-publish-temp')")"
+          PUBLISH_DIR="${HOMEY_PUBLISH_DIR:-$(node -p "require('path').join(require('os').tmpdir(), 'homey-publish-temp')")}"
           if [ ! -d "$PUBLISH_DIR" ]; then
             echo "::error::Prepared publish directory is missing: $PUBLISH_DIR"
+            echo "::error::Hint: prepare-publish must run in the same job; check HOMEY_PUBLISH_DIR / .homeybuild"
             exit 1
           fi
+          echo "Using PUBLISH_DIR=$PUBLISH_DIR"
           cd "$PUBLISH_DIR"
           if [ -f package-lock.json ] || [ -f npm-shrinkwrap.json ]; then
             npm ci --omit=dev --ignore-scripts --no-audit --no-fund

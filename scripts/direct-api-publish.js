@@ -95,7 +95,7 @@ const FAILURE_STATES = new Set([STATE.REVOKED, STATE.PROCESSING_FAILED, STATE.ER
 function log(...args) { console.log('[direct-publish]', ...args); }
 function err(...args) { console.error('[direct-publish]', ...args); }
 
-const TRANSIENT_API_RE = /socket hang up|econnreset|econnaborted|etimedout|too many requests|\b429\b|fetch failed|network|502|503|504/i;
+const TRANSIENT_API_RE = /socket hang up|econnreset|econnaborted|etimedout|timeout after|too many requests|\b429\b|fetch failed|network|502|503|504/i;
 
 const { softExpectDecision } = require('./lib/soft-expect-decision');
 

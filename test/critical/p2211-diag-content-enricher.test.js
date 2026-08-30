@@ -23,9 +23,9 @@ describe('DiagContentEnricher', () => {
     assert.ok(r.couples.some((c) => c.mfr === '_TZE284_6ocnqlhn' && c.pid === 'TS0601'));
   });
 
-  it('collects drivers from stdout', () => {
-    const text = '[Driver:contact_sensor] foo [Driver:button_emergency_sos] bar';
-    const r = enrich(text);
-    assert.deepEqual(r.drivers.sort(), ['button_emergency_sos', 'contact_sensor']);
+  it('detects Athom socket hang up tip / developer tools signal', () => {
+    const r = enrich('Build #15 v5.12.89 processing_failed stateMeta=socket hang up');
+    assert.ok(r.signals.some((s) => s.id === 'athom_socket_hang'));
+    assert.ok(r.signals.some((s) => s.id === 'athom_processing_failed'));
   });
 });
