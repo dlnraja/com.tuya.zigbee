@@ -33,7 +33,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.712 |
+| **App Version** | v9.0.714 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,380 |
 | **Pairing Variants** | 16,474 (4 case combos per fingerprint) |
@@ -41,7 +41,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **Flow Cards** | 5,182 |
 | **Unique Capabilities** | 170 |
 | **Native OTA Drivers** | 5 |
-| **Test Suites** | 175 files |
+| **Test Suites** | 176 files |
 | **SVG Icons** | 731 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
@@ -102,6 +102,8 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.714** | Improved wireless button press capture for Tuya scene remotes after wake and pairing. |
+| **v9.0.713** | Improved wireless button press capture for Tuya scene remotes after wake and pairing. |
 | **v9.0.712** | Fixed driver image paths for App Store processing; restored Homey-safe icons. |
 | **v9.0.711** | Fixed driver image paths for App Store processing; restored Homey-safe icons. |
 | **v9.0.710** | Homey-safe driver icons restored; fixed corrupt SVGs; own-path images; avoided invalid placeholder manufacturerNames for App Store. |
@@ -112,8 +114,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.705** | Aligned coherent driver icons/images; cleaned SVG for App Store; guarded empty manufacturerName AggregateError. |
 | **v9.0.704** | Aligned driver icons and images; fixed asset paths; cleaned SVG icons for App Store processing. |
 | **v9.0.703** | Aligned driver icons and images to a coherent Homey design; fixed image paths to each driver own assets. |
-| **v9.0.702** | Aligned driver icons and images to a coherent Homey design; fixed image paths to each driver own assets. |
-| **v9.0.701** | Improved wall dimmer control reliability for Tuya EF00 devices after pairing. |
 
 <!-- CHANGELOG_END -->
 
