@@ -32,7 +32,7 @@
       "realMfrsAdded": 5,
       "details": "tmp/synthetic-resolution.json + tmp/pruned21-resolution.json"
     },
-    "lastAlignedAt": "2026-08-30T07:32:21.041Z",
+    "lastAlignedAt": "2026-08-30T08:26:35.721Z",
     "alignTool": "align-mfs-db-intelligent@P169"
   },
   "sources": {
@@ -130544,44 +130544,13 @@
     "modelIdsCount": 27
   },
   "_TZ3210_DDIGCA5N": {
-    "driverId": "bulb_rgb",
-    "source": "auto-sync",
+    "driverId": "plug_energy_monitor",
+    "source": "registry:p2321-ddigca5n-ts011f-nous-a9z",
     "modelIds": [
-      "E11-G13",
-      "E11-G14",
-      "E11-G23",
-      "GL-C-006",
-      "LCT001",
-      "LCT002",
-      "LCT003",
-      "LCT007",
-      "LCT010",
-      "LCT011",
-      "LCT012",
-      "LCT014",
-      "LCT015",
-      "LCT016",
-      "RB 185 C",
-      "RB 285 C",
-      "S26R2ZB",
-      "S31 Lite zb",
-      "S40LITE",
-      "S60ZBTPF",
-      "S60ZBTPG",
-      "TS0101",
-      "TS0111",
-      "TS011F",
-      "TS0503A",
-      "TS0503B",
-      "TS0504B",
-      "TS0505A",
-      "TS0505B",
-      "TS0601",
-      "ZB-CL01",
-      "ZBT-ColorLight"
+      "TS011F"
     ],
-    "pid": "E11-G13",
-    "modelIdsCount": 32
+    "pid": "TS011F",
+    "modelIdsCount": 1
   },
   "_TZ3210_JLF1NEPW": {
     "driverId": "bulb_rgb",
@@ -207920,8 +207889,13 @@
     "source": "compose-exclusive"
   },
   "_TZ3000_MTNPT6WS": {
-    "driverId": "switch_1gang",
-    "source": "compose-exclusive"
+    "driverId": "switch_2gang",
+    "source": "registry:p2321-mtnpt6ws-ts0002-2gang",
+    "modelIds": [
+      "TS0002"
+    ],
+    "pid": "TS0002",
+    "modelIdsCount": 1
   },
   "_hybrid_switch_2_gang_metering_needs_device_assignment": {
     "driverId": "switch_2_gang_metering",

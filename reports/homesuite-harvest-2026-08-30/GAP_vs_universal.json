@@ -1,0 +1,461 @@
+{
+  "generatedAt": "2026-08-30T08:02:08.514Z",
+  "missingCount": 13,
+  "presentCount": 61,
+  "missing": [
+    {
+      "mfr": "S",
+      "pid": "BASICZBR3",
+      "homesuiteDriver": "BASICZBR3",
+      "class": "socket",
+      "ourDrivers": []
+    },
+    {
+      "mfr": "O",
+      "pid": "BASICZBR3",
+      "homesuiteDriver": "BASICZBR3",
+      "class": "socket",
+      "ourDrivers": []
+    },
+    {
+      "mfr": "N",
+      "pid": "BASICZBR3",
+      "homesuiteDriver": "BASICZBR3",
+      "class": "socket",
+      "ourDrivers": []
+    },
+    {
+      "mfr": "F",
+      "pid": "BASICZBR3",
+      "homesuiteDriver": "BASICZBR3",
+      "class": "socket",
+      "ourDrivers": []
+    },
+    {
+      "mfr": "SONOFF",
+      "pid": "MINI-ZB1GP",
+      "homesuiteDriver": "MINI-ZB1GP",
+      "class": "sensor",
+      "ourDrivers": []
+    },
+    {
+      "mfr": "SONOFF",
+      "pid": "MINI-ZBD",
+      "homesuiteDriver": "MINI-ZBD",
+      "class": "socket",
+      "ourDrivers": []
+    },
+    {
+      "mfr": "SONOFF",
+      "pid": "SNZB-02LD",
+      "homesuiteDriver": "SNZB-02LD",
+      "class": "sensor",
+      "ourDrivers": []
+    },
+    {
+      "mfr": "SONOFF",
+      "pid": "SNZB-02WD",
+      "homesuiteDriver": "SNZB-02WD",
+      "class": "sensor",
+      "ourDrivers": []
+    },
+    {
+      "mfr": "eWeLink",
+      "pid": "MS01",
+      "homesuiteDriver": "SNZB-03",
+      "class": "sensor",
+      "ourDrivers": []
+    },
+    {
+      "mfr": "SONOFF",
+      "pid": "SNZB-06P",
+      "homesuiteDriver": "SNZB-06P",
+      "class": "sensor",
+      "ourDrivers": []
+    },
+    {
+      "mfr": "aqara",
+      "pid": "lumi.motion.ac01",
+      "homesuiteDriver": "aqara_fp1",
+      "class": "sensor",
+      "ourDrivers": []
+    },
+    {
+      "mfr": "SONOFF",
+      "pid": "DONGLE-E_R",
+      "homesuiteDriver": "sonoff_dongle",
+      "class": "other",
+      "ourDrivers": []
+    },
+    {
+      "mfr": "_TZ3000_mtnpt6ws",
+      "pid": "TS0002",
+      "homesuiteDriver": "switch_2_ch",
+      "class": "socket",
+      "ourDrivers": []
+    }
+  ],
+  "presentSample": [
+    {
+      "mfr": "SONOFF",
+      "pid": "ZBMINIR2",
+      "homesuiteDriver": "ZBMINIR2",
+      "class": "socket",
+      "ourDrivers": [
+        "module_mini_switch"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_7tbsruql",
+      "pid": "TS0203",
+      "homesuiteDriver": "doorwindowsensor",
+      "class": "sensor",
+      "ourDrivers": [
+        "contact_sensor"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_osu834un",
+      "pid": "TS0203",
+      "homesuiteDriver": "doorwindowsensor",
+      "class": "sensor",
+      "ourDrivers": [
+        "contact_sensor"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_6zvw8ham",
+      "pid": "TS0203",
+      "homesuiteDriver": "doorwindowsensor_2",
+      "class": "sensor",
+      "ourDrivers": [
+        "contact_sensor"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_decxrtwa",
+      "pid": "TS0203",
+      "homesuiteDriver": "doorwindowsensor_2",
+      "class": "sensor",
+      "ourDrivers": [
+        "contact_sensor"
+      ]
+    },
+    {
+      "mfr": "_TZE204_q76rtoa9",
+      "pid": "TS0601",
+      "homesuiteDriver": "ekaza_siren",
+      "class": "siren",
+      "ourDrivers": [
+        "siren"
+      ]
+    },
+    {
+      "mfr": "_TYZB01_0w3d5uw3",
+      "pid": "TS0204",
+      "homesuiteDriver": "gas_detector",
+      "class": "sensor",
+      "ourDrivers": [
+        "gas_detector"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_ywagc4rj",
+      "pid": "TS0201",
+      "homesuiteDriver": "lcdtemphumidsensor",
+      "class": "sensor",
+      "ourDrivers": [
+        "lcdtemphumidsensor"
+      ]
+    },
+    {
+      "mfr": "_TZE204_1v1dxkck",
+      "pid": "TS0601",
+      "homesuiteDriver": "moes_dimmer_3_gang",
+      "class": "socket",
+      "ourDrivers": [
+        "wall_dimmer_tuya"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_wkai4ga5",
+      "pid": "TS0044",
+      "homesuiteDriver": "moes_remote_4_gang",
+      "class": "remote",
+      "ourDrivers": [
+        "scene_switch_4"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_ovyaisip",
+      "pid": "TS0001",
+      "homesuiteDriver": "novadigital_switch_1_gang",
+      "class": "socket",
+      "ourDrivers": [
+        "wall_switch_1gang_1way"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_pk8tgtdb",
+      "pid": "TS0001",
+      "homesuiteDriver": "novadigital_switch_1_gang",
+      "class": "socket",
+      "ourDrivers": [
+        "wall_switch_1gang_1way"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_ywubfuvt",
+      "pid": "TS0002",
+      "homesuiteDriver": "novadigital_switch_2_gang",
+      "class": "socket",
+      "ourDrivers": [
+        "wall_switch_2gang_1way"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_kgxej1dv",
+      "pid": "TS0002",
+      "homesuiteDriver": "novadigital_switch_2_gang",
+      "class": "socket",
+      "ourDrivers": [
+        "wall_switch_2gang_1way"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_jjdkhueq",
+      "pid": "TS0002",
+      "homesuiteDriver": "novadigital_switch_2gang_touch",
+      "class": "socket",
+      "ourDrivers": [
+        "wall_switch_2gang_1way"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_yervjnlj",
+      "pid": "TS0003",
+      "homesuiteDriver": "novadigital_switch_3_gang",
+      "class": "socket",
+      "ourDrivers": [
+        "wall_switch_3gang_1way"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_vjhcenzo",
+      "pid": "TS0003",
+      "homesuiteDriver": "novadigital_switch_3_gang",
+      "class": "socket",
+      "ourDrivers": [
+        "wall_switch_3gang_1way"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_qxcnwv26",
+      "pid": "TS0003",
+      "homesuiteDriver": "novadigital_switch_3_gang",
+      "class": "socket",
+      "ourDrivers": [
+        "wall_switch_3gang_1way"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_eqsair32",
+      "pid": "TS0003",
+      "homesuiteDriver": "novadigital_switch_3_gang",
+      "class": "socket",
+      "ourDrivers": [
+        "wall_switch_3gang_1way"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_f09j9qjb",
+      "pid": "TS0003",
+      "homesuiteDriver": "novadigital_switch_3_gang",
+      "class": "socket",
+      "ourDrivers": [
+        "wall_switch_3gang_1way"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_fawk5xjv",
+      "pid": "TS0003",
+      "homesuiteDriver": "novadigital_switch_3_gang",
+      "class": "socket",
+      "ourDrivers": [
+        "wall_switch_3gang_1way"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_ok0ggpk7",
+      "pid": "TS0003",
+      "homesuiteDriver": "novadigital_switch_3_gang",
+      "class": "socket",
+      "ourDrivers": [
+        "wall_switch_3gang_1way"
+      ]
+    },
+    {
+      "mfr": "_TZE200_shkxsgis",
+      "pid": "TS0601",
+      "homesuiteDriver": "novadigital_switch_4_gang",
+      "class": "socket",
+      "ourDrivers": [
+        "wall_switch_4_gang_tuya"
+      ]
+    },
+    {
+      "mfr": "_TZE284_shkxsgis",
+      "pid": "TS0601",
+      "homesuiteDriver": "novadigital_switch_4_gang",
+      "class": "socket",
+      "ourDrivers": [
+        "wall_switch_4_gang_tuya"
+      ]
+    },
+    {
+      "mfr": "_TZE204_aagrxlbd",
+      "pid": "TS0601",
+      "homesuiteDriver": "novadigital_switch_4_gang",
+      "class": "socket",
+      "ourDrivers": [
+        "wall_switch_4_gang_tuya"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_lwthnp7j",
+      "pid": "TS0004",
+      "homesuiteDriver": "novadigital_switch_4_gang_zcl",
+      "class": "socket",
+      "ourDrivers": [
+        "wall_switch_4gang_1way"
+      ]
+    },
+    {
+      "mfr": "_TZE200_r731zlxk",
+      "pid": "TS0601",
+      "homesuiteDriver": "novadigital_switch_6_gang",
+      "class": "socket",
+      "ourDrivers": [
+        "wall_switch_6_gang_tuya"
+      ]
+    },
+    {
+      "mfr": "_TZE284_r731zlxk",
+      "pid": "TS0601",
+      "homesuiteDriver": "novadigital_switch_6_gang",
+      "class": "socket",
+      "ourDrivers": [
+        "wall_switch_6_gang_tuya"
+      ]
+    },
+    {
+      "mfr": "_TZ3218_t9ynfz4x",
+      "pid": "TS0225",
+      "homesuiteDriver": "radar_sensor_mmwave",
+      "class": "sensor",
+      "ourDrivers": [
+        "motion_sensor_radar_mmwave"
+      ]
+    },
+    {
+      "mfr": "_TZ3218_awarhusb",
+      "pid": "TS0225",
+      "homesuiteDriver": "radar_sensor_mmwave",
+      "class": "sensor",
+      "ourDrivers": [
+        "motion_sensor_radar_mmwave"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_88iqnhvd",
+      "pid": "TS011F",
+      "homesuiteDriver": "smartplug",
+      "class": "socket",
+      "ourDrivers": [
+        "plug_energy_monitor"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_okaz9tjs",
+      "pid": "TS011F",
+      "homesuiteDriver": "smartplug",
+      "class": "socket",
+      "ourDrivers": [
+        "plug_energy_monitor"
+      ]
+    },
+    {
+      "mfr": "_TZ3210_fgwhjm9j",
+      "pid": "TS011F",
+      "homesuiteDriver": "smartplug_2",
+      "class": "socket",
+      "ourDrivers": [
+        "plug_energy_monitor"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_cehuw1lw",
+      "pid": "TS011F",
+      "homesuiteDriver": "smartplug_3",
+      "class": "socket",
+      "ourDrivers": [
+        "button_wireless_plug",
+        "smartplug"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_cfnprab5",
+      "pid": "TS011F",
+      "homesuiteDriver": "socket_power_strip",
+      "class": "socket",
+      "ourDrivers": [
+        "socket_power_strip_four_three"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_npzfdcof",
+      "pid": "TS0001",
+      "homesuiteDriver": "switch_1_ch",
+      "class": "socket",
+      "ourDrivers": [
+        "button_wireless_2"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_hktqahrq",
+      "pid": "TS0001",
+      "homesuiteDriver": "switch_1_ch",
+      "class": "socket",
+      "ourDrivers": [
+        "button_wireless_2"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_mx3vgyea",
+      "pid": "TS0001",
+      "homesuiteDriver": "switch_1_ch",
+      "class": "socket",
+      "ourDrivers": [
+        "button_wireless_2"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_5ng23zjs",
+      "pid": "TS0001",
+      "homesuiteDriver": "switch_1_ch",
+      "class": "socket",
+      "ourDrivers": [
+        "switch_1gang"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_rmjr4ufz",
+      "pid": "TS0001",
+      "homesuiteDriver": "switch_1_ch",
+      "class": "socket",
+      "ourDrivers": [
+        "button_wireless_2"
+      ]
+    }
+  ]
+}

@@ -2798,6 +2798,70 @@
       "notes": "Bo_Kjaergaard soft TS0001 REJECTED — compose plug TS011F/TS0121"
     },
     {
+      "id": "p2321-mtnpt6ws-ts0002-2gang",
+      "mfr": [
+        "_TZ3000_mtnpt6ws",
+        "_tz3000_mtnpt6ws"
+      ],
+      "productId": [
+        "TS0002"
+      ],
+      "canonicalDriver": "switch_2gang",
+      "forbidMode": "couple",
+      "forbiddenDrivers": [
+        "switch_1gang",
+        "wall_switch_1gang_1way",
+        "climate_sensor"
+      ],
+      "protocol": "zcl",
+      "retailNames": [
+        "Nous L13Z",
+        "AVATTO ZWSM16-2",
+        "OXT SWTZ22"
+      ],
+      "notes": "P2321: HomeSuite switch_2_ch + Z2M TS0002_switch_module. 2-EP ZCL module.",
+      "sources": [
+        "homesuite",
+        "z2m",
+        "P2321"
+      ],
+      "tracks": {
+        "master": { "static": true, "dynamic": true },
+        "stable": { "static": true, "dynamic": false }
+      }
+    },
+    {
+      "id": "p2321-ddigca5n-ts011f-nous-a9z",
+      "mfr": [
+        "_TZ3210_ddigca5n",
+        "_tz3210_ddigca5n"
+      ],
+      "productId": [
+        "TS011F"
+      ],
+      "canonicalDriver": "plug_energy_monitor",
+      "forbidMode": "couple",
+      "forbiddenDrivers": [
+        "switch_1gang",
+        "climate_sensor",
+        "usb_outlet_advanced"
+      ],
+      "protocol": "zcl",
+      "retailNames": [
+        "Nous A9Z"
+      ],
+      "notes": "P2321: Johan #1452 + Z2M Nous A9Z metering plug. Complementary from alt-app harvest.",
+      "sources": [
+        "JohanBendz#1452",
+        "z2m",
+        "P2321"
+      ],
+      "tracks": {
+        "master": { "static": true, "dynamic": true },
+        "stable": { "static": true, "dynamic": false }
+      }
+    },
+    {
       "id": "p2251-sergep-nous-sophos-external",
       "mfr": [
         "_TZ3000_v5498kdm",

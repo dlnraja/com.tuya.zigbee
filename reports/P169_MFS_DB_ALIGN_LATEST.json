@@ -1,265 +1,79 @@
 {
-  "timestamp": "2026-08-30T07:32:21.044Z",
+  "timestamp": "2026-08-30T08:26:35.723Z",
   "gate": "align-mfs-db-intelligent",
   "apply": true,
   "check": false,
-  "changeCount": 20,
-  "skippedCount": 35,
-  "highSeverityCount": 7,
+  "changeCount": 2,
+  "skippedCount": 34,
+  "highSeverityCount": 2,
   "byAction": {
-    "create_from_registry": 1,
-    "registry_force": 4,
-    "compose_exclusive": 14,
-    "case_dedupe": 1
+    "registry_force": 2
   },
   "changes": [
     {
       "severity": "high",
-      "action": "create_from_registry",
-      "mfr": "_TZ3000_v5498kdm",
-      "driverId": "switch_1gang",
-      "modelIds": [
-        "TS0001"
-      ],
-      "caseId": "p2251-sergep-nous-sophos-external"
-    },
-    {
-      "severity": "high",
       "action": "registry_force",
-      "mfr": "_TZ3000_v5498kdm",
+      "mfr": "_TZ3000_MTNPT6WS",
       "from": {
-        "driverId": null,
+        "driverId": "switch_1gang",
         "modelIds": []
       },
       "to": {
-        "driverId": "switch_1gang",
+        "driverId": "switch_2gang",
         "modelIds": [
-          "TS0001"
+          "TS0002"
         ]
       },
-      "caseId": "p2251-sergep-nous-sophos-external"
+      "caseId": "p2321-mtnpt6ws-ts0002-2gang"
     },
     {
       "severity": "high",
       "action": "registry_force",
-      "mfr": "_TZ3000_CVIS4QMW",
+      "mfr": "_TZ3210_DDIGCA5N",
       "from": {
-        "driverId": "switch_1gang",
+        "driverId": "bulb_rgb",
         "modelIds": [
-          "01MINIZB",
-          "BASICZBR3",
+          "E11-G13",
+          "E11-G14",
+          "E11-G23",
+          "GL-C-006",
+          "LCT001",
+          "LCT002",
+          "LCT003",
+          "LCT007",
+          "LCT010",
+          "LCT011",
+          "LCT012",
+          "LCT014",
+          "LCT015",
+          "LCT016",
+          "RB 185 C",
+          "RB 285 C",
           "S26R2ZB",
-          "S31ZB",
-          "TS0001",
-          "TS0001_power",
-          "TS0001_switch",
-          "TS0001_switch_module",
-          "TS0002",
-          "TS0003",
-          "TS000F",
-          "TS0011",
-          "TS0012",
-          "TS0014",
-          "TS0041",
+          "S31 Lite zb",
+          "S40LITE",
+          "S60ZBTPF",
+          "S60ZBTPG",
           "TS0101",
           "TS0111",
           "TS011F",
+          "TS0503A",
+          "TS0503B",
+          "TS0504B",
+          "TS0505A",
+          "TS0505B",
           "TS0601",
-          "TS0726",
-          "TS110E",
-          "TS130F",
-          "TS4100",
-          "ZBM5-1C-120",
-          "ZBM5-2C-120",
-          "ZBM5-3C-120",
-          "ZBMINI",
-          "ZBMINIL2",
-          "ZBMINIL2-R2",
-          "ZBMINIR",
-          "ZBMINIR2",
-          "ZBMINIR2-R2",
-          "ZG-301Z",
-          "ZG-302Z1"
+          "ZB-CL01",
+          "ZBT-ColorLight"
         ]
       },
       "to": {
-        "driverId": "switch_wall_6gang",
+        "driverId": "plug_energy_monitor",
         "modelIds": [
-          "TS0006"
+          "TS011F"
         ]
       },
-      "caseId": "p2317-cvis4qmw-ts0006-6gang"
-    },
-    {
-      "severity": "high",
-      "action": "registry_force",
-      "mfr": "_TZ3000_g9chy2ib",
-      "from": {
-        "driverId": "device_radiator_valve",
-        "modelIds": [
-          "TS0601"
-        ]
-      },
-      "to": {
-        "driverId": "wall_switch_3gang_1way",
-        "modelIds": [
-          "TS0003"
-        ]
-      },
-      "caseId": "p2317-g9chy2ib-ts0003-3gang"
-    },
-    {
-      "severity": "high",
-      "action": "registry_force",
-      "mfr": "_TZ3000_ETUFNLTX",
-      "from": {
-        "driverId": "switch_1gang",
-        "modelIds": [
-          "01MINIZB",
-          "BASICZBR3",
-          "S26R2ZB",
-          "S31ZB",
-          "TS0001",
-          "TS0001_power",
-          "TS0001_switch",
-          "TS0001_switch_module",
-          "TS0002",
-          "TS0003",
-          "TS000F",
-          "TS0011",
-          "TS0012",
-          "TS0014",
-          "TS0041",
-          "TS0101",
-          "TS0111",
-          "TS011F",
-          "TS0601",
-          "TS0726",
-          "TS110E",
-          "TS130F",
-          "TS4100",
-          "ZBM5-1C-120",
-          "ZBM5-2C-120",
-          "ZBM5-3C-120",
-          "ZBMINI",
-          "ZBMINIL2",
-          "ZBMINIL2-R2",
-          "ZBMINIR",
-          "ZBMINIR2",
-          "ZBMINIR2-R2",
-          "ZG-301Z",
-          "ZG-302Z1"
-        ]
-      },
-      "to": {
-        "driverId": "button_wireless_4",
-        "modelIds": [
-          "TS1002"
-        ]
-      },
-      "caseId": "p2317-etufnltx-ts1002-foria"
-    },
-    {
-      "severity": "medium",
-      "action": "compose_exclusive",
-      "mfr": "_TZ3000_BI6LPSEW",
-      "from": "switch_1gang",
-      "to": "button_wireless_3"
-    },
-    {
-      "severity": "medium",
-      "action": "compose_exclusive",
-      "mfr": "_tz3290_ot6ewjvmejq5ekhl",
-      "from": "ir_remote",
-      "to": "ir_blaster"
-    },
-    {
-      "severity": "medium",
-      "action": "compose_exclusive",
-      "mfr": "_TZ3290_U9XAC5RV",
-      "from": "ir_remote",
-      "to": "ir_blaster"
-    },
-    {
-      "severity": "medium",
-      "action": "compose_exclusive",
-      "mfr": "_TZ3000_4WHIGL8I",
-      "from": "switch_1gang",
-      "to": "bulb_dimmable"
-    },
-    {
-      "severity": "medium",
-      "action": "compose_exclusive",
-      "mfr": "_TZ3000_B7BXOJRG",
-      "from": "switch_1gang",
-      "to": "button_wireless_4"
-    },
-    {
-      "severity": "medium",
-      "action": "compose_exclusive",
-      "mfr": "_TZ3000_D16Y6COL",
-      "from": "switch_1gang",
-      "to": "water_leak_sensor"
-    },
-    {
-      "severity": "medium",
-      "action": "compose_exclusive",
-      "mfr": "_TZ3000_Q68478X7",
-      "from": "switch_1gang",
-      "to": "button_wireless_1"
-    },
-    {
-      "severity": "medium",
-      "action": "compose_exclusive",
-      "mfr": "_TZ3000_T8HZPGND",
-      "from": "switch_1gang",
-      "to": "button_wireless_2"
-    },
-    {
-      "severity": "medium",
-      "action": "compose_exclusive",
-      "mfr": "_TZ3000_W3C7OURU",
-      "from": "switch_1gang",
-      "to": "button_wireless_3"
-    },
-    {
-      "severity": "medium",
-      "action": "compose_exclusive",
-      "mfr": "_TZ3000_WQCBZBAE",
-      "from": "switch_1gang",
-      "to": "button_wireless_1"
-    },
-    {
-      "severity": "medium",
-      "action": "compose_exclusive",
-      "mfr": "_TZ3000_YGVF9XZP",
-      "from": "switch_1gang",
-      "to": "button_wireless_4"
-    },
-    {
-      "severity": "medium",
-      "action": "compose_exclusive",
-      "mfr": "_tz3000_rk2yzt0u",
-      "from": "usb_dongle_triple",
-      "to": "switch_1gang"
-    },
-    {
-      "severity": "high",
-      "action": "compose_exclusive",
-      "mfr": "_tz3000_hodifxa9",
-      "to": "bulb_dimmable"
-    },
-    {
-      "severity": "high",
-      "action": "compose_exclusive",
-      "mfr": "_tz3210_g0qr1fqo",
-      "to": "bulb_rgb"
-    },
-    {
-      "severity": "medium",
-      "action": "case_dedupe",
-      "drop": "_TZ3000_MRPEVH8P",
-      "keep": "_TZ3000_mrpevh8p"
+      "caseId": "p2321-ddigca5n-ts011f-nous-a9z"
     }
   ],
   "skipped": [
@@ -315,11 +129,6 @@
       "reason": "unclaimed_no_compose",
       "mfr": "_tze20x_xxxxxxxx",
       "curated": "air_purifier"
-    },
-    {
-      "reason": "unclaimed_no_compose",
-      "mfr": "_TZ3210_DDIGCA5N",
-      "curated": "bulb_rgb"
     },
     {
       "reason": "unclaimed_no_compose",
@@ -587,12 +396,7 @@
     }
   ],
   "highSeverity": [
-    "missing mfs entry for registry p2251-sergep-nous-sophos-external",
-    "registry drift _TZ3000_v5498kdm → switch_1gang",
-    "registry drift _TZ3000_CVIS4QMW → switch_wall_6gang",
-    "registry drift _TZ3000_g9chy2ib → wall_switch_3gang_1way",
-    "registry drift _TZ3000_ETUFNLTX → button_wireless_4",
-    "orphan/wrong curated _tz3000_hodifxa9 → bulb_dimmable",
-    "orphan/wrong curated _tz3210_g0qr1fqo → bulb_rgb"
+    "registry drift _TZ3000_MTNPT6WS → switch_2gang",
+    "registry drift _TZ3210_DDIGCA5N → plug_energy_monitor"
   ]
 }

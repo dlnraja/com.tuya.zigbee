@@ -1243,6 +1243,15 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
         this._heavyInitTimer = null;
       }
     } catch (e) {}
+    // WHY(P2321): tear down availability first (sync flag) so device onUninit
+    // cannot race store writes after app teardown — HomeSuite idea, MIT reimpl.
+    try {
+      if (this.availabilityManager?.destroy) {
+        this.availabilityManager.destroy();
+      }
+      this.availabilityManager = null;
+      this._availabilityStarted = false;
+    } catch (e) {}
     try { if (this._tuyaUDPDiscovery) { await this._tuyaUDPDiscovery.stop(); this._tuyaUDPDiscovery = null; } } catch (e) {}
     try { if (this.analytics?.destroy) { this.analytics.destroy(); this.analytics = null; } } catch (e) {}
     try { if (this.healthMonitor?.destroy) { this.healthMonitor.destroy(); this.healthMonitor = null; } } catch (e) {}
