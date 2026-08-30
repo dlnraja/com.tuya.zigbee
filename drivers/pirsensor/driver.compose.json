@@ -25,10 +25,7 @@
     "small": "{{driverAssetsPath}}/images/small.png"
   },
   "zigbee": {
-    "manufacturerName": [
-      "_TZ3000_ph_pirsensor",
-      "_tz3000_ph_pirsensor"
-    ],
+    "manufacturerName": [],
     "productId": [
       "RH3040"
     ],

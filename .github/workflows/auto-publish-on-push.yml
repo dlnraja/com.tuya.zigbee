@@ -156,10 +156,10 @@ jobs:
                 if (!fs.existsSync(p)) return;
                 try {
                   const comp = JSON.parse(fs.readFileSync(p, 'utf8'));
-                  if (comp.zigbee && !comp.zigbee.manufacturerName) {
-                    // Use driver ID as placeholder so the array is never truly empty
-                    const placeholder = (d || 'Unknown').replace(/_/g, ' ');
-                    comp.zigbee.manufacturerName = [placeholder];
+                  // WHY P2315: never inject spacey fake mfrs (Athom AggregateError).
+                  // Missing mfr → empty array; prepare-publish strips empty arrays safely.
+                  if (comp.zigbee && (comp.zigbee.manufacturerName == null)) {
+                    comp.zigbee.manufacturerName = [];
                     fs.writeFileSync(p, JSON.stringify(comp, null, 2) + '\n', 'utf8');
                     srcFixed++;
                   }
@@ -172,9 +172,8 @@ jobs:
           let appFixed = 0;
           app.drivers.forEach(d => {
             if (!d.zigbee) return;
-            if (!d.zigbee.manufacturerName) {
-              const placeholder = (d.id || 'Unknown').replace(/_/g, ' ');
-              d.zigbee.manufacturerName = [placeholder];
+            if (d.zigbee.manufacturerName == null) {
+              d.zigbee.manufacturerName = [];
               appFixed++;
             }
           });
