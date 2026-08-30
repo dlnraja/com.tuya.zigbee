@@ -137734,8 +137734,14 @@
     "source": "auto-sync|adjudicated-z2m-arbiter"
   },
   "_TZ3000_A4XYCPRS": {
-    "driverId": "button_wireless_2",
-    "source": "compose-exclusive"
+    "driverId": "scene_switch_4",
+    "source": "registry:p2312-a4xycprs-ts0044-scene",
+    "modelIds": [
+      "TS0044"
+    ],
+    "pid": "TS0044",
+    "modelIdsCount": 1,
+    "notes": "P2312 Z2M Star Ring 4-gang scene"
   },
   "_TZ3000_BGTZM4NY": {
     "driverId": "button_wireless_4",
@@ -146024,39 +146030,13 @@
   },
   "_TZE200_JTHF7VB6": {
     "driverId": "water_leak_sensor",
-    "source": "compose-exclusive",
+    "source": "registry:p2312-jthf7vb6-ts0601-water",
     "modelIds": [
-      "CK-TLSR8656-SS5-01(7014)",
-      "Excellux",
-      "RH3052",
-      "SM0201",
-      "SNZB-02",
-      "SNZB-02B",
-      "SNZB-02D",
-      "SNZB-02DR2",
-      "SNZB-02LD",
-      "SNZB-02M",
-      "SNZB-02P",
-      "SNZB-02WD",
-      "TH01",
-      "THS317-ET",
-      "TS0201",
-      "TS0202",
-      "TS0222",
-      "TS0601",
-      "TS1201",
-      "TY0201",
-      "WSDCGQ01LM",
-      "WSDCGQ11LM",
-      "WSDCGQ12LM",
-      "ZG-227Z",
-      "ZG-227ZL",
-      "lumi.sensor_ht",
-      "lumi.sensor_ht.agl02",
-      "lumi.weather"
+      "TS0601"
     ],
-    "pid": "CK-TLSR8656-SS5-01(7014)",
-    "modelIdsCount": 28
+    "pid": "TS0601",
+    "modelIdsCount": 1,
+    "notes": "P2312 Z2M/Blakadder water leak"
   },
   "_TZE200_JWSJBXJS": {
     "driverId": "climate_sensor",

@@ -33,6 +33,8 @@ const MAX = (() => {
 const SKIP_COUPLES = new Set([
   '_tz3000_cvis4qmw|ts0006', // p2237 — only TS0001 → switch_1gang
   '_tz3000_g9chy2ib|ts0003', // FP = switch_3gang, not wall_thermostat
+  '_tz3000_a4xycprs|ts0044', // P2312 — Z2M Star Ring scene → scene_switch_4 (not switch_4gang)
+  '_tz3000_etufnltx|ts1002', // review — Safira scene panel, not blind switch_4gang
 ]);
 
 function skipCouple(mfr, pid) {

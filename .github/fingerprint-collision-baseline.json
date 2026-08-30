@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-29T23:32:19.676Z",
+  "generatedAt": "2026-08-30T00:48:06.513Z",
   "description": "Known historical fingerprint collisions. CI fails only for collisions not listed here.",
   "collisions": [
     {
@@ -4750,9 +4750,11 @@
     {
       "key": "hobeian|TS0201",
       "drivers": [
+        "climate_sensor",
         "presence_sensor_radar",
         "water_leak_sensor"
-      ]
+      ],
+      "reason": "HOBEIAN brand multi-device; TS0201 climate sibling P2312"
     },
     {
       "key": "hobeian|TS0202",
@@ -4804,8 +4806,10 @@
         "scene_switch_4",
         "sensor_contact_zigbee",
         "soil_sensor",
-        "vibration_sensor"
-      ]
+        "vibration_sensor",
+        "water_leak_sensor"
+      ],
+      "reason": "HOBEIAN brand EF00/IAS matrix; water_leak TS0601 P2312"
     },
     {
       "key": "hobeian|TS0601_wirelesssw",
@@ -4910,6 +4914,14 @@
         "button_wireless_4"
       ],
       "reason": "MULTI_PID OEM: TS0043→wireless_3 TS0044→wireless_4; shared TS0601 productId matrix bleed"
+    },
+    {
+      "key": "hobeian|TS0225",
+      "drivers": [
+        "illuminance_sensor",
+        "presence_sensor_radar"
+      ],
+      "reason": "HOBEIAN brand; TS0225 presence P2312 pid lock"
     }
   ]
 }

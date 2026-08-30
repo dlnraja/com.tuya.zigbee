@@ -31,7 +31,14 @@ class SceneSwitch4Device extends ButtonDevice {
 
     // v10.1.1: E000 + DP cluster detection for scene switch devices
     await this._setupE000Detection(zclNode);
-    await this._setupOnOffFdBoundCluster(zclNode);
+    // WHY(P2312): PhysicalButtonMixin already owns OnOffBound 0xFD + wrapHandleFrame.
+    // Driver used to overwrite bindings.onOff + blind-replace handleFrame (orphans mixin).
+    // Only fill gaps if mixin did not initialize (exotic subclass order).
+    if (!this._onOffFdBoundClusterInitialized && typeof this._setupOnOffFdBoundCluster === 'function') {
+      await this._setupOnOffFdBoundCluster(zclNode);
+    } else {
+      this.log('[SCENE_SWITCH_4] P2312 skip duplicate OnOffBound — mixin owns 0xFD');
+    }
     await this._setupTuyaDPButtonDetection(zclNode);
     await this._setupRawFrameInterceptor(zclNode);
 
@@ -210,51 +217,61 @@ class SceneSwitch4Device extends ButtonDevice {
   }
 
   /**
-   * v10.1.1: Raw frame interceptor for cluster 0xE000
+   * v10.1.1 + P2312: Raw frame interceptor for cluster 0xE000 / OnOff 0xFD
+   * WHY: append-only wrapHandleFrame — never orphan PhysicalButtonMixin physical-onoff-fd.
    */
   async _setupRawFrameInterceptor(zclNode) {
     try {
       if (!zclNode || typeof zclNode.handleFrame !== 'function') {return;}
-      const orig = zclNode.handleFrame.bind(zclNode);
-      zclNode.handleFrame = async (epId, cId, f, m) => {
-        if (cId === 6 || cId === 0x0006) {
-          const json = typeof f?.toJSON === 'function' ? f.toJSON() : f;
-          const d = Buffer.isBuffer(json?.data) ? json.data
-            : Array.isArray(json?.data) ? Buffer.from(json.data)
-            : Buffer.isBuffer(f) ? f : null;
-          const cmd = f?.cmdId ?? f?.commandId;
-          const looksFd = cmd === 0xFD || (d && d.length && d.includes(0xFD));
-          if (looksFd) {
-            const scene = (typeof cmd === 'number' && d && d.length) ? d[0]
-              : (d && d.length > 1 ? d[d.length - 1] : 0);
-            const pt = require('../../lib/utils/TuyaPressTypeMap').PRESS_MAP[scene] || 'single';
-            this.log(`[ONOFF-S4-RAW] EP${epId} 0xFD scene=${scene} -> ${pt}`);
-            await this._triggerSceneSwitch4(epId, pt);
+      const { wrapHandleFrame } = require('../../lib/utils/BidirectionalButtonState');
+      const self = this;
+      wrapHandleFrame(zclNode, 'scene-switch-4-raw', async (args, next) => {
+        const epId = args[0];
+        const cId = args[1];
+        const f = args[2];
+        try {
+          if (cId === 6 || cId === 0x0006) {
+            const json = typeof f?.toJSON === 'function' ? f.toJSON() : f;
+            const d = Buffer.isBuffer(json?.data) ? json.data
+              : Array.isArray(json?.data) ? Buffer.from(json.data)
+              : Buffer.isBuffer(f) ? f : null;
+            const cmd = f?.cmdId ?? f?.commandId ?? f?.command?.id;
+            const looksFd = cmd === 0xFD || (d && d.length && d.includes(0xFD));
+            if (looksFd) {
+              const scene = (typeof cmd === 'number' && d && d.length) ? d[0]
+                : (d && d.length > 1 ? d[d.length - 1] : 0);
+              const pt = require('../../lib/utils/TuyaPressTypeMap').PRESS_MAP[scene] || 'single';
+              const gang = (epId >= 1 && epId <= 4) ? epId : 1;
+              if (!self._isDeduped(gang, `raw-fd-${scene}`)) {
+                self.log(`[ONOFF-S4-RAW] EP${epId} 0xFD scene=${scene} -> ${pt}`);
+                await self._triggerSceneSwitch4(gang, pt);
+              }
+            }
           }
-        }
-        if (cId === 57344 || cId === 0xE000) {
-          // v10.6.0 FIX: `f` is a raw Buffer — `f.data` is undefined, this
-          // path was dead. Extract bytes the same way button_wireless_4 does.
-          const json = typeof f?.toJSON === 'function' ? f.toJSON() : f;
-          const d = Buffer.isBuffer(json?.data) ? json.data
-            : Array.isArray(json?.data) ? Buffer.from(json.data)
-            : Buffer.isBuffer(f) ? f : null;
-          this.log(`[E000-S4-RAW] EP${epId} E000 frame`);
-          let btn = epId;
-          let pt = 'single';
-          if (d?.length >= 2 && d[0] >= 1 && d[0] <= 4) {
-            btn = d[0];
-            pt = resolvePressType(d[1], 'E000-S4-RAW');
-          } else if (d?.length >= 1) {
-            pt = resolvePressType(d[0], 'E000-S4-RAW');
+          if (cId === 57344 || cId === 0xE000) {
+            const json = typeof f?.toJSON === 'function' ? f.toJSON() : f;
+            const d = Buffer.isBuffer(json?.data) ? json.data
+              : Array.isArray(json?.data) ? Buffer.from(json.data)
+              : Buffer.isBuffer(f) ? f : null;
+            self.log(`[E000-S4-RAW] EP${epId} E000 frame`);
+            let btn = (epId >= 1 && epId <= 4) ? epId : 1;
+            let pt = 'single';
+            if (d?.length >= 2 && d[0] >= 1 && d[0] <= 4) {
+              btn = d[0];
+              pt = resolvePressType(d[1], 'E000-S4-RAW');
+            } else if (d?.length >= 1) {
+              pt = resolvePressType(d[0], 'E000-S4-RAW');
+            }
+            if (!self._isDeduped(btn, `e000-raw-${pt}`)) {
+              await self._triggerSceneSwitch4(btn, pt);
+            }
           }
-          await this._triggerSceneSwitch4(btn, pt);
-        }
-        return orig(epId, cId, f, m);
-      };
-      this.log('[E000-S4-RAW] Frame interceptor ready');
+        } catch (_e) { /* soft */ }
+        return next(...args);
+      });
+      this.log('[SCENE_SWITCH_4] P2312 raw wrapHandleFrame tagged scene-switch-4-raw');
     } catch (e) {
-      this.log(`[E000-S4-RAW] Setup failed: ${e.message}`);
+      this.log(`[SCENE_SWITCH_4] raw interceptor: ${e.message}`);
     }
   }
 

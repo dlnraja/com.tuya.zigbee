@@ -4607,6 +4607,43 @@
       "forbidMode": "couple",
       "source": "Z2M moes ZS-SF-EUC-WH-MS",
       "notes": "Moes Star Feather curtain. DPs same family as ZTS-EUR-C."
+    },
+    {
+      "id": "p2312-a4xycprs-ts0044-scene",
+      "mfr": [
+        "_TZ3000_a4xycprs",
+        "_tz3000_a4xycprs"
+      ],
+      "productId": [
+        "TS0044"
+      ],
+      "canonicalDriver": "scene_switch_4",
+      "forbiddenDrivers": [
+        "switch_4gang",
+        "button_wireless_2",
+        "button_wireless_4"
+      ],
+      "forbidMode": "couple",
+      "source": "z2m Star Ring 4 Gang Scene Switch",
+      "notes": "P2312 market: Z2M scene remote — not wall switch_4gang"
+    },
+    {
+      "id": "p2312-jthf7vb6-ts0601-water",
+      "mfr": [
+        "_TZE200_jthf7vb6",
+        "_tze200_jthf7vb6"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": "water_leak_sensor",
+      "forbiddenDrivers": [
+        "climate_sensor",
+        "soil_sensor"
+      ],
+      "forbidMode": "couple",
+      "source": "z2m/blakadder water leak",
+      "notes": "P2312: mfr was on water_leak without TS0601 pid"
     }
   ]
 }
