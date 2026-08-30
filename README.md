@@ -33,7 +33,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.714 |
+| **App Version** | v9.0.715 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,380 |
 | **Pairing Variants** | 16,474 (4 case combos per fingerprint) |
@@ -52,7 +52,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | # | Driver | Fingerprints |
 |---|--------|-------------|
 | 1 | `climate_sensor` | 2,360 |
-| 2 | `switch_1gang` | 1,696 |
+| 2 | `switch_1gang` | 1,692 |
 | 3 | `presence_sensor_radar` | 731 |
 | 4 | `radiator_valve` | 599 |
 | 5 | `button_wireless_2` | 570 |
@@ -60,7 +60,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | 7 | `generic_tuya` | 420 |
 | 8 | `curtain_motor` | 380 |
 | 9 | `device_radiator_valve` | 334 |
-| 10 | `switch_4gang` | 278 |
+| 10 | `switch_4gang` | 276 |
 | 11 | `switch_2gang` | 251 |
 | 12 | `switch_3gang` | 214 |
 | 13 | `motion_sensor` | 213 |
@@ -102,6 +102,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.715** | Improved wireless button press capture for Tuya scene remotes after wake and pairing. |
 | **v9.0.714** | Improved wireless button press capture for Tuya scene remotes after wake and pairing. |
 | **v9.0.713** | Improved wireless button press capture for Tuya scene remotes after wake and pairing. |
 | **v9.0.712** | Fixed driver image paths for App Store processing; restored Homey-safe icons. |
@@ -113,7 +114,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.706** | Aligned coherent driver icons/images; cleaned SVG for App Store; guarded empty manufacturerName AggregateError. |
 | **v9.0.705** | Aligned coherent driver icons/images; cleaned SVG for App Store; guarded empty manufacturerName AggregateError. |
 | **v9.0.704** | Aligned driver icons and images; fixed asset paths; cleaned SVG icons for App Store processing. |
-| **v9.0.703** | Aligned driver icons and images to a coherent Homey design; fixed image paths to each driver own assets. |
 
 <!-- CHANGELOG_END -->
 
