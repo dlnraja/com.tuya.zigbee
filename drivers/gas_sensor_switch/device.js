@@ -6,7 +6,7 @@ const { safeSetTimeout, safeClearTimeout } = require('../../lib/utils/safe-timer
 let UnifiedSwitchBase;
 try {
   UnifiedSwitchBase = require('../../lib/devices/UnifiedSwitchBase');
-  if (!UnifiedSwitchBase) throw new Error('UnifiedSwitchBase is undefined');
+  if (!UnifiedSwitchBase) {throw new Error('UnifiedSwitchBase is undefined');}
 } catch (e) {
   // UnifiedSwitchBase load failed - using ZigBeeDevice fallback
   const { ZigBeeDevice } = require('homey-zigbeedriver');
@@ -126,7 +126,7 @@ class Switch4GangDevice extends BaseClass {
         this._lastCommandTime = Date.now();
         this._zclState.pending[epNum] = true;
         safeClearTimeout(this, this._zclState.timeout[epNum]);
-        this._zclState.timeout[epNum] = safeSetTimeout(this, () => { if (this._destroyed) return; this._zclState.pending[epNum] = false; }, 2000);
+        this._zclState.timeout[epNum] = safeSetTimeout(this, () => { if (this._destroyed) {return;} this._zclState.pending[epNum] = false; }, 2000);
         
         const onOff = getOnOffCluster(epNum);
         if (onOff && typeof onOff.writeAttributes === 'function') {
@@ -155,7 +155,7 @@ class Switch4GangDevice extends BaseClass {
       const capName = epNum === 1 ? 'onoff' : `onoff.gang${epNum}`;
       onOff.on('attr.onOff', async (value) => {
         const now = Date.now();
-        if (now - (this._zclState.lastReport[epNum] || 0) < 1000) return;
+        if (now - (this._zclState.lastReport[epNum] || 0) < 1000) {return;}
         this._zclState.lastReport[epNum] = now;
 
         const isPhysical = !this._zclState.pending[epNum];
@@ -188,26 +188,31 @@ class Switch4GangDevice extends BaseClass {
             }
           }
 
-          if (isPhysical && (mode === 'auto' || mode === 'both')) {
-            const flowId = `gas_sensor_switch_switch_4gang_physical_gang${epNum}_${value ? 'on' : 'off'}`;
-            try {
-              const card = this.homey.flow.getDeviceTriggerCard(flowId);
-              if (card) {
-                await card.trigger(this, { gang: epNum, state: value }, {}).catch(() => {});
-                this.log(`[BSEED-4G] ✅ Physical G${epNum} ${value ? 'ON' : 'OFF'}`);
+          // WHY(P2330): compose declares gas_sensor_switch_4gang_* — never invent *_switch_4gang_*
+          if (isPhysical && (mode === 'auto' || mode === 'both' || mode === 'magic')) {
+            if (typeof this._triggerPhysicalFlow === 'function') {
+              this._triggerPhysicalFlow(epNum, value ? 'on' : 'off');
+              this.log(`[BSEED-4G] ✅ Physical/scene via mixin G${epNum} ${value ? 'ON' : 'OFF'}`);
+            } else if (typeof this._safeTriggerFlow === 'function') {
+              const state = value ? 'on' : 'off';
+              await this._safeTriggerFlow(
+                `gas_sensor_switch_4gang_physical_gang${epNum}_${state}`,
+                { gang: epNum, button: String(epNum), state: value },
+                { type: 'physical' },
+              );
+              await this._safeTriggerFlow(
+                `gas_sensor_switch_physical_gang${epNum}_${state}`,
+                { gang: epNum, button: String(epNum), state: value },
+                { type: 'physical-short' },
+              );
+              if (mode === 'auto' || mode === 'magic' || mode === 'both') {
+                await this._safeTriggerFlow(
+                  `gas_sensor_switch_4gang_gang${epNum}_scene`,
+                  { action: state, gang: epNum },
+                  { type: 'scene' },
+                );
               }
-            } catch (e) { }
-          }
-
-          if (isPhysical && (mode === 'auto' || mode === 'magic' || mode === 'both')) {
-            const sceneId = `gas_sensor_switch_switch_4gang_gang${epNum}_scene`;
-            try {
-              const card = this.homey.flow.getDeviceTriggerCard(sceneId);
-              if (card) {
-                await card.trigger(this, { action: value ? 'on' : 'off' }, {}).catch(() => {});
-                this.log(`[BSEED-4G] ✅ Scene G${epNum} ${value ? 'on' : 'off'}`);
-              }
-            } catch (e) { }
+            }
           }
         }
       });
@@ -225,16 +230,16 @@ class Switch4GangDevice extends BaseClass {
     try {
       const { Cluster } = require('zigbee-clusters');
       const OnOffCluster = Cluster.getCluster('onOff') || Cluster.getCluster(6);
-      if (!OnOffCluster) return;
+      if (!OnOffCluster) {return;}
 
       for (const epNum of [1, 2, 3, 4]) {
         const ep = zclNode?.endpoints?.[epNum];
-        if (!ep) continue;
-        if (!ep.clusters) ep.clusters = {};
+        if (!ep) {continue;}
+        if (!ep.clusters) {ep.clusters = {};}
 
         const existing = ep.clusters.onOff || ep.clusters.genOnOff
           || ep.clusters[6] || ep.clusters['6'];
-        if (existing) continue;
+        if (existing) {continue;}
 
         let clusterInstance = null;
         try {
@@ -245,8 +250,8 @@ class Switch4GangDevice extends BaseClass {
         if (clusterInstance) {
           const name = OnOffCluster.NAME || 'onOff';
           ep.clusters[name] = clusterInstance;
-          if (!ep.clusters[6]) ep.clusters[6] = clusterInstance;
-          if (!ep.clusters['6']) ep.clusters['6'] = clusterInstance;
+          if (!ep.clusters[6]) {ep.clusters[6] = clusterInstance;}
+          if (!ep.clusters['6']) {ep.clusters['6'] = clusterInstance;}
           this.log(`[BSEED-4G]  EP${epNum} onOff cluster CREATED manually`);
         }
       }
@@ -260,9 +265,9 @@ class Switch4GangDevice extends BaseClass {
     for (const epNum of [1, 2, 3, 4]) {
       try {
         const ep = zclNode?.endpoints?.[epNum];
-        if (!ep?.clusters) continue;
+        if (!ep?.clusters) {continue;}
         const g = ep.clusters.groups || ep.clusters.genGroups || ep.clusters[4] || ep.clusters['4'];
-        if (!g) continue;
+        if (!g) {continue;}
         const fn = g.removeAll || g.removeAllGroups;
         if (typeof fn === 'function') {
           await fn.call(g).catch(() => {});
@@ -279,7 +284,7 @@ class Switch4GangDevice extends BaseClass {
     for (const epNum of [1, 2, 3, 4]) {
       try {
         const ep = zclNode?.endpoints?.[epNum];
-        if (!ep?.clusters) continue;
+        if (!ep?.clusters) {continue;}
         const onOff = ep.clusters.onOff || ep.clusters.genOnOff || ep.clusters[6] || ep.clusters['6'];
         if (onOff && typeof onOff.bind === 'function') {
           await onOff.bind().catch(() => {});
@@ -291,7 +296,7 @@ class Switch4GangDevice extends BaseClass {
     for (const epNum of [1, 2, 3, 4]) {
       try {
         const ep = zclNode?.endpoints?.[epNum];
-        if (!ep?.clusters) continue;
+        if (!ep?.clusters) {continue;}
         const onOff = ep.clusters.onOff || ep.clusters.genOnOff || ep.clusters[6] || ep.clusters['6'];
         if (onOff && typeof onOff.configureReporting === 'function') {
           await onOff.configureReporting({
@@ -306,7 +311,7 @@ class Switch4GangDevice extends BaseClass {
   onDeleted() {
     if (this._zclState?.timeout) {
       for (const epNum of [1, 2, 3, 4]) {
-        if (this._zclState.timeout[epNum]) safeClearTimeout(this, this._zclState.timeout[epNum]);
+        if (this._zclState.timeout[epNum]) {safeClearTimeout(this, this._zclState.timeout[epNum]);}
       }
     }
     super.onDeleted?.();
