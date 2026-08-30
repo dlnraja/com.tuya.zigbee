@@ -128,7 +128,7 @@
         "generic_tuya",
         "ir_blaster"
       ],
-      "notes": "BSEED Click 1-gang EF00 dimmer insert. MCU brightness 0-1000 (never write >1000, Z2M#32305). Stale climate pairing cannot be swapped at runtime — remove and re-add as wall dimmer. Couple is TS0601 only; do not invent TS0201.",
+      "notes": "BSEED Click 1-gang EF00 dimmer insert. MCU brightness 0-1000 (never write >1000, Z2M#32305). Stale climate pairing cannot be swapped at runtime — remove and re-add as wall dimmer. Couple is TS0601 only; do not invent TS0201. P2314: hollow zclNode IEEE after re-pair caused Missing IEEE on DP TX — healZigbeeNodeIdentity + L1–Lx EF00 cascade (no queryAll flood on UI toggle).",
       "sources": [
         "forum-140352",
         "diag-f20dc4f0",

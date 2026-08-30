@@ -83,6 +83,8 @@ describe('P2138 BSEED wall dimmer m1cvyneb', () => {
     assert.match(src, /markAppCommand/);
     assert.match(src, /onSettings/);
     assert.match(src, /backlight_mode/);
+    assert.match(src, /healZigbeeNodeIdentity/);
+    assert.match(src, /writeCapabilityWithFallbacks/);
     assert.doesNotMatch(src, /Math\.floor\(value \* 1000\)/);
 
     assert.strictEqual(toTuyaBrightness(1), 1000);

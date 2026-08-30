@@ -8,7 +8,7 @@ Homey matches **`(manufacturerName + productId)`** (sacred couple). The tile you
 
 | Example | Canonical driver | Action |
 |---------|------------------|--------|
-| `_TZE284_m1cvyneb` + `TS0601` | `wall_dimmer_tuya` | Remove climate/soil-paired device → update Test → re-add as **Wall Dimmer**. Interview shows EF00 (dimmer MCU), not temp clusters. Brightness is clamped 0–1000 so the MCU does not reboot. |
+| `_TZE284_m1cvyneb` + `TS0601` | `wall_dimmer_tuya` | If still on climate/soil: remove → update Test → re-add as **Wall Dimmer**. If already Wall Dimmer but controls dead (Gmail IEEE miss): update Test **≥9.0.700**, toggle once; re-pair only if still mute. Brightness clamped 0–1000. |
 | `_TZ3210_imaccztn` + `TS0004` | `relay_board_4_channel` | Re-pair as relay board (not 4-gang switch) |
 | `_TZ3000_k4ej3ww2` + `TS0207` | `water_leak_sensor` (IAS) | Not the Tuya-DP water driver |
 | `_TZE28C1000000_jtbgusdc` + `TS0601` | `dimmer_2_gang_tuya` | Avatto 2-ch dimmer — not climate; brightness clamp required |

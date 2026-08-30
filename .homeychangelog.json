@@ -1,4 +1,7 @@
 {
+  "9.0.700": {
+    "en": "Improved wall dimmer control reliability for Tuya EF00 devices after pairing."
+  },
   "9.0.660": {
     "en": "Improved device matching from Zigbee community research; smarter Tuya/ZCL protocol path selection."
   },

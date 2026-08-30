@@ -6,8 +6,24 @@ const TuyaSpecificClusterDevice = require('../../lib/TuyaSpecificClusterDevice')
 const { getDataValue } = require('../../lib/TuyaHelpers');
 const { V1_SINGLE_GANG_DIMMER_SWITCH_DATA_POINTS } = require('../../lib/TuyaDataPoints');
 const { toTuyaBrightness, fromTuyaBrightness } = require('../../lib/tuya/TuyaBrightnessScale');
+const { writeCapabilityWithFallbacks } = require('../../lib/zigbee/CapabilityCommandRouter');
+const { healZigbeeNodeIdentity } = require('../../lib/io/healZigbeeNodeIdentity');
 
 Cluster.addCluster(TuyaSpecificCluster);
+
+/** EF00-only BSEED/PresentSky dimmers — no genOnOff / genLevelCtrl on interview. */
+const EF00_DP_MAP = {
+  onoff: {
+    dp: V1_SINGLE_GANG_DIMMER_SWITCH_DATA_POINTS.onOff,
+    type: 'bool',
+    encode: (v) => Boolean(v),
+  },
+  dim: {
+    dp: V1_SINGLE_GANG_DIMMER_SWITCH_DATA_POINTS.brightness,
+    type: 'value',
+    encode: (v) => toTuyaBrightness(v),
+  },
+};
 
 class wall_dimmer_tuya extends TuyaSpecificClusterDevice {
 
@@ -27,19 +43,16 @@ class wall_dimmer_tuya extends TuyaSpecificClusterDevice {
       }
     }
 
-    // Forum silent-scan: BSEED/Tuya wall dimmers pair but stay mute when Homey
-    // interview misses 0xEF00 — compensate before attaching listeners.
+    // P2314: heal IEEE + EF00 before listeners (Gmail: pair OK, controls dead)
+    await healZigbeeNodeIdentity(this, { force: true }).catch(() => {});
     if (typeof this._ensureTuyaIo === 'function') {
-      await this._ensureTuyaIo(zclNode);
+      await this._ensureTuyaIo(zclNode, { queryAll: true, mcu: true, pollFallback: false });
     }
+    await this._ensureEf00Manager(zclNode);
 
-    // Read and log device attributes
     await this._readDeviceAttributes(zclNode);
-
-    // Setup capability listeners for on/off and dim
     await this._setupGang(zclNode);
 
-    // Attach event listeners for Tuya-specific reports (manual state changes)
     if (!this.hasListenersAttached) {
       const tuya = (typeof this._resolveTuyaCluster === 'function'
         ? this._resolveTuyaCluster(zclNode)
@@ -73,53 +86,102 @@ class wall_dimmer_tuya extends TuyaSpecificClusterDevice {
     }
   }
 
+  /**
+   * Soft-attach TuyaEF00Manager when UniversalLayerBootstrap missed interview.
+   * WHY: PresentSky interview has 0xEF00; hollow node still needs manager for L2 TX.
+   */
+  async _ensureEf00Manager(zclNode) {
+    try {
+      if (this.tuyaEF00Manager) {
+        if (typeof this.tuyaEF00Manager.initialize === 'function' && zclNode) {
+          await this.tuyaEF00Manager.initialize(zclNode).catch(() => {});
+        }
+        return;
+      }
+      const TuyaEF00Manager = require('../../lib/tuya/TuyaEF00Manager');
+      this.tuyaEF00Manager = new TuyaEF00Manager(this);
+      if (zclNode && typeof this.tuyaEF00Manager.initialize === 'function') {
+        await this.tuyaEF00Manager.initialize(zclNode).catch(() => {});
+      }
+      this.log('[WALL-DIMMER] TuyaEF00Manager attached');
+    } catch (err) {
+      this.log(`[WALL-DIMMER] EF00 manager skip: ${err?.message || err}`);
+    }
+  }
+
   async _readDeviceAttributes(zclNode) {
     try {
-      await zclNode.endpoints[1].clusters.basic.readAttributes(['manufacturerName', 'zclVersion', 'appVersion', 'modelId', 'powerSource', 'attributeReportingStatus']);
+      await zclNode.endpoints[1].clusters.basic.readAttributes([
+        'manufacturerName', 'zclVersion', 'appVersion', 'modelId', 'powerSource', 'attributeReportingStatus',
+      ]);
     } catch (err) {
       this.error('Error when reading device attributes:', err);
     }
   }
 
+  /**
+   * TX via CapabilityCommandRouter L1→Lx (forceDp — interview has no onOff/levelControl).
+   * Light _ensureTuyaIo only (no queryAll flood on every UI toggle).
+   */
+  async _txCapability(capability, value) {
+    if (typeof this.markAppCommand === 'function') {this.markAppCommand();}
+    await healZigbeeNodeIdentity(this, { force: false }).catch(() => {});
+    if (typeof this._ensureTuyaIo === 'function') {
+      await this._ensureTuyaIo(this.zclNode, { light: true });
+    }
+
+    const r = await writeCapabilityWithFallbacks(this, capability, value, {
+      forceDp: true,
+      parallelDiscover: false,
+      skipDp: false,
+      dpMap: EF00_DP_MAP[capability],
+      extraSteps: [
+        {
+          name: 'writeBool-writeData32',
+          run: async () => {
+            if (capability === 'onoff') {
+              await this.writeBool(EF00_DP_MAP.onoff.dp, Boolean(value));
+            } else if (capability === 'dim') {
+              const brightness = toTuyaBrightness(value);
+              if (brightness > 0 && !this.getCapabilityValue('onoff')) {
+                await this.writeBool(EF00_DP_MAP.onoff.dp, true);
+                await this.safeSetCapabilityValue('onoff', true);
+              }
+              await this.writeData32(EF00_DP_MAP.dim.dp, brightness);
+              if (brightness === 0) {
+                await this.writeBool(EF00_DP_MAP.onoff.dp, false);
+                await this.safeSetCapabilityValue('onoff', false);
+              }
+            }
+            return 'writeBool-writeData32';
+          },
+        },
+      ],
+    });
+
+    if (!r.ok) {
+      this.error(`[WALL-DIMMER] ${capability} TX failed:`, r.error?.message || r.error || 'unreachable');
+    } else {
+      this.log(`[WALL-DIMMER] ${capability} via ${r.via}`);
+    }
+    return r;
+  }
+
   async _setupGang(zclNode) {
-    // WHY(P2308 / Gmail `_TZE284_m1cvyneb`): never rethrow IEEE/token misses —
-    // Homey UI showed "none of the controls work" while writeBool logged and failed.
     this.registerCapabilityListener('onoff', async (value) => {
-      if (typeof this.markAppCommand === 'function') {this.markAppCommand();}
       this.log('onoff:', value);
       try {
-        if (typeof this._ensureTuyaIo === 'function') {
-          await this._ensureTuyaIo(zclNode || this.zclNode);
-        }
-        await this.writeBool(V1_SINGLE_GANG_DIMMER_SWITCH_DATA_POINTS.onOff, value);
+        await this._txCapability('onoff', value);
       } catch (err) {
         this.error('Error when writing onOff:', err);
-        // Soft-fail: keep Homey UI responsive; device may be offline/rejoining.
       }
     });
 
     this.registerCapabilityListener('dim', async (value) => {
-      if (typeof this.markAppCommand === 'function') {this.markAppCommand();}
-      const brightness = toTuyaBrightness(value); // 0-1000, MCU-safe
+      const brightness = toTuyaBrightness(value);
       this.log('brightness:', brightness);
-
       try {
-        if (typeof this._ensureTuyaIo === 'function') {
-          await this._ensureTuyaIo(zclNode || this.zclNode);
-        }
-        if (brightness > 0 && !this.getCapabilityValue('onoff')) {
-          this.log('Dim level is greater than 0, turning on device');
-          await this.writeBool(V1_SINGLE_GANG_DIMMER_SWITCH_DATA_POINTS.onOff, true);
-          await this['safeSetCapabilityValue']('onoff', true);
-        }
-
-        await this.writeData32(V1_SINGLE_GANG_DIMMER_SWITCH_DATA_POINTS.brightness, brightness);
-
-        if (brightness === 0) {
-          this.log('Dim level is 0, turning off device');
-          await this.writeBool(V1_SINGLE_GANG_DIMMER_SWITCH_DATA_POINTS.onOff, false);
-          await this['safeSetCapabilityValue']('onoff', false);
-        }
+        await this._txCapability('dim', value);
       } catch (err) {
         this.error('Error when writing brightness:', err);
       }
@@ -135,12 +197,14 @@ class wall_dimmer_tuya extends TuyaSpecificClusterDevice {
     switch (dp) {
       case V1_SINGLE_GANG_DIMMER_SWITCH_DATA_POINTS.onOff:
         this.log('Received on/off:', parsedValue);
-        await this['safeSetCapabilityValue']('onoff', parsedValue === true || parsedValue === 1).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
+        await this.safeSetCapabilityValue('onoff', parsedValue === true || parsedValue === 1)
+          .catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
         break;
 
       case V1_SINGLE_GANG_DIMMER_SWITCH_DATA_POINTS.brightness:
         this.log('Received dim level:', parsedValue);
-        await this['safeSetCapabilityValue']('dim', fromTuyaBrightness(parsedValue)).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
+        await this.safeSetCapabilityValue('dim', fromTuyaBrightness(parsedValue))
+          .catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
         break;
 
       case V1_SINGLE_GANG_DIMMER_SWITCH_DATA_POINTS.countdown:
@@ -157,7 +221,6 @@ class wall_dimmer_tuya extends TuyaSpecificClusterDevice {
       }
 
       case V1_SINGLE_GANG_DIMMER_SWITCH_DATA_POINTS.backlightMode: {
-        // Strings only — Layer 11 / .cursorrules
         const map = { 0: 'off', 1: 'normal', 2: 'inverted' };
         const key = map[Number(parsedValue)];
         if (key && typeof this.setSettings === 'function') {
@@ -190,6 +253,7 @@ class wall_dimmer_tuya extends TuyaSpecificClusterDevice {
    */
   async onSettings({ newSettings, changedKeys }) {
     if (typeof this.markAppCommand === 'function') {this.markAppCommand();}
+    await healZigbeeNodeIdentity(this, { force: false }).catch(() => {});
     const keys = changedKeys || Object.keys(newSettings || {});
 
     if (keys.includes('backlight_mode')) {

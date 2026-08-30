@@ -29,6 +29,7 @@ node tools/ci/coverage-dp-cluster-flow.js --strict
 - Inventing productIds or locking mfr-only
 - Surface wording without intent/harm check
 - Skipping cross-ref because “already fixed once”
+- **“Already covered” / blaming the user** on reports without diag + interview + driver/flow/DP audit (see `user-report-deep-investigation-always.mdc` P2313)
 - Forum replies / AI paste
 
 See: `docs/GLOBAL_INVESTIGATION_PLAN.md`, `docs/rules/WHY_INTERROGATION.md`, `docs/rules/FORUM_SILENT_HUMANIZE.md`, `docs/rules/DUAL_APP_VISION.md`.

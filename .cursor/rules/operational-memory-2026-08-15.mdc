@@ -17,6 +17,11 @@ L99 classify: energy/divisors/BootBudget/brand-scrub titles = **BOTH**; Daylight
 
 Clone Stable: `Documents\homey\stable`. `stable-v5-p195` is **STALE**.
 
+## P2313 — User report doctrine (every prompt)
+- **Never** dismiss with “déjà couvert” / “user wrong” without full pass: driver, flows, flow cards, DP/cluster, RX/TX, interview, Gmail diag cross-ref.
+- **Recurring report** = investigate harder, not deny. Push + publish when asked; **stable-v5** backport when BOTH (reliability only).
+- Rule: `.cursor/rules/user-report-deep-investigation-always.mdc`
+
 ## Forum silent (T157628) — SHADOW read only
 - **Passive GET only** — never POST/reply/PM/like; never paste AI.
 - Scan → processor → enrich:investigate → code/CI only. `FORUM_AUTO_POST=0` + `SHADOW_FORUM=1` forced.

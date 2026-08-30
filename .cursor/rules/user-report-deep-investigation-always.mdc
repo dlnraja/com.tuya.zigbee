@@ -1,0 +1,50 @@
+---
+description: Never dismiss user reports — deep cross-ref driver/flows/DP/diag on every issue
+alwaysApply: true
+---
+
+# User report investigation — ALWAYS ON (P2313)
+
+**Mandate (user):** When a user reports a problem (forum, GitHub, Gmail diag, PM harvest), **never** close with “already covered” or “user is wrong” without a full weakness-vector pass. Recurring reports = **stronger signal**, not noise.
+
+## Forbidden responses (without evidence)
+- “Already fixed in 9.0.x” / “déjà couvert” as the **only** answer
+- “User must update” without verifying Test tip, interview, driver match, and RX path
+- “False report” / “wrong device” when couple or logs are incomplete
+- Forum auto-reply (T157628) — silent code/CI only
+
+## Mandatory investigation loop (every user report)
+
+1. **Lock identity** — `manufacturerName` + `productId` only; read `docs/knowledge/DEVICE_TRUTH.md` + `device-truth.json`. Never invent pid.
+2. **Believe the symptom** — map user words → capabilities, flow cards, settings, interview clusters, diag UUID, app version on device.
+3. **Deep cross-ref** — Gmail diag, forum silent scan, GitHub issue, Z2M/ZHA/Blakadder, `reports/inbox-*`, prior agent handoffs. **Recurring** → grep codebase + git history for same couple/symptom.
+4. **Recursive stack audit** (match problem scope):
+   - **Driver** — `drivers/<id>/device.js`, compose, sacred couple, misattribution registry
+   - **Flows** — `driver.flow.compose.json`, card IDs, declared-only triggers (no FLOW-GUARD invent)
+   - **RX/TX** — ZCL, EF00 DP map, clusters, raw 0xFD/0xFC, E000, multistate, IAS, bind/wake rebind
+   - **Coverage** — capabilities vs interview; phantom EPs; wrong driver class
+   - **Runtime** — `safeSetCapabilityValue`, scene 0x8004 skip, battery profiles, BootBudget
+5. **Weakness vectors** — run/consider `npm run resilience:critical`, flow-l99, coverage-dp-cluster-flow, relevant `test/critical/*` for the device class.
+6. **Fix root cause** — minimal correct diff; WHY (P215) in code/comments when non-obvious.
+7. **Dual-app** — classify `BOTH` | `MASTER_ONLY` | `STABLE_ONLY`; backport reliability fixes to `stable-v5` surgically when BOTH (see `docs/rules/DUAL_APP_VISION.md`).
+8. **Verify + ship** — gates green; when user asks **push + publish**: master Test + stable backport when BOTH; watch Auto-Publish to Test confirmation.
+
+## Recurring problem doctrine
+- Same user or same couple reporting again → **assume gap remains** until proven by diag + interview + flow trace.
+- Check: wrong driver after re-pair, stale Test version, wake/bind miss, double handleFrame, DP divisor, empty productId, asset path, Athom processing_failed.
+- Document in registry/mfs/PECULIARITIES when a new weakness is found — silent enrich only.
+
+## External-app couples (do not lock)
+- Example: `_TZ3000_v5498kdm`+`TS0001` → Nous/SoPhos (`p2251-sergep-nous-sophos-external`, `doNotTouch`) — investigate report but **do not** add to Universal Tuya compose.
+
+## Tools (prefer)
+```bash
+node tools/ci/forum-actionable-processor.js
+node tools/ci/gmail-diagnostics.js
+node tools/ci/coverage-dp-cluster-flow.js --strict
+node tools/ci/flow-l99-orchestrator.js
+node tools/ci/l99-dual-app-enrich-gates.js
+npm run resilience:critical
+```
+
+See also: `l99-deep-investigation-always.mdc`, `docs/GLOBAL_INVESTIGATION_PLAN.md`, `docs/rules/DUAL_APP_VISION.md`.
