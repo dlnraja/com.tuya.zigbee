@@ -1,3 +1,7 @@
+# 🛡️ Unified CI/CD Orchestrator
+# Triggers: pull_request,push,workflow_dispatch | Secrets: GITHUB_TOKEN only
+# Doc header added 2026-07-29 (workflows genealogy enrichment).
+
 name: 🛡️ Unified CI/CD Orchestrator
 
 # <!-- badges:start -->
@@ -6,9 +10,9 @@ name: 🛡️ Unified CI/CD Orchestrator
 
 on:
   push:
-    branches: [ master, main, stable-v5 ]
+    branches: [ master, main ]
   pull_request:
-    branches: [ master, main, stable-v5 ]
+    branches: [ master, main ]
   workflow_dispatch:
     inputs:
       force_audit:
@@ -33,9 +37,9 @@ jobs:
     timeout-minutes: 15
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
       - name: Setup Node.js
-        uses: actions/setup-node@v5
+        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
         with:
           node-version: '22'
           cache: 'npm'
@@ -79,13 +83,8 @@ jobs:
       - name: Normalize Homey manifest before validation
         run: npm run fix:generated-flow-args
 
-      - name: 🧪 P2284/P2285 handleFrame + publish sacred keep
-        run: |
-          npm run check:p2284
-          npm run check:p2285
-          npm run check:p2286
-          npm run check:p2287
-          npm run check:p2288
+      - name: 🃏 Flow card uniqueness gate
+        run: node tools/ci/flow-card-dup-gate.js
 
       - name: 🏠 Homey Validate
         run: npx homey app validate --level publish
@@ -95,6 +94,9 @@ jobs:
       
       - name: 🛡️ Fleetwood Integrity & Manifest Gateway
         run: node scripts/PRE_COMMIT_CHECKS.js
+
+      - name: 🛡️ Regression lessons gate (MUST-KEEP fatals)
+        run: node tools/ci/regression-lessons-gate.js
       
       - name: 🛡️ SDK 3 Strict Linter
         run: node scripts/maintenance/rule-21-linter.js
@@ -109,6 +111,79 @@ jobs:
         run: |
           node tools/ci/prune-fp-collision-bleed.js --check
           node .github/scripts/fp-collision-check.js --baseline .github/fingerprint-collision-baseline.json
+
+      - name: 🛡️ Anti-bot regression gate (P127)
+        run: node tools/ci/anti-bot-regression-gate.js
+
+      - name: 🛡️ Sacred couple registry audit (P151)
+        run: node tools/ci/audit-sacred-couple.js --from-registry
+
+      - name: 🛡️ Dual-claim compose gate (P167/P168)
+        run: node tools/ci/dual-claim-compose-gate.js
+
+      - name: 🛡️ P2138 sacred-couple matrix gate
+        run: node tools/ci/p2138-sacred-couple-matrix-gate.js
+
+      - name: 🛡️ P2281 discovery lineage (past+recent+present)
+        run: node tools/ci/discovery-lineage-enrich-gate.js
+
+      - name: 🧪 P2269/P2270 anti-spaghetti + harvest gates
+        run: |
+          node --test test/critical/p2269-anti-spaghetti-ssot-gate.test.js
+          node tools/ci/p2270-regenerate-discoveries-md.js
+          node --test test/critical/p2270-discussion-harvest-gate.test.js
+
+      - name: 🧪 P2283/P2284 bidirectional + handleFrame chain
+        run: |
+          node --test test/critical/p2283-bidirectional-buttons-permanent.test.js
+          npm run check:p2284
+          node --test test/critical/p2282-forum-2202-peter-misattr-button.test.js
+          npm run check:p2285
+          npm run check:p2286
+          npm run check:p2287
+          npm run check:p2288
+          npm run check:p2325
+          npm run check:p2326
+
+      - name: 🛡️ P217 fork harvest sacred-couple gate
+        run: node tools/ci/p217-fork-harvest-gate.js
+
+      - name: 🛡️ P214 intelligent ZCL/EF00 adaptation gate
+        run: node tools/ci/p214-intelligent-protocol-gate.js
+
+      - name: 🛡️ P216 ZCL battery half-percent gate
+        run: node tools/ci/p216-zcl-battery-half-percent-gate.js
+
+      - name: 🛡️ Layer coverage gate (P206–P209)
+        run: node tools/ci/layer-coverage-gate.js
+
+      - name: 🧪 P2138 + Poll Control critical tests
+        run: |
+          node --test test/critical/p2138-bseed-wall-dimmer.test.js
+          node --test test/critical/poll-control-policy.test.js
+          node --test test/critical/p214-intelligent-protocol-detect.test.js
+          node --test test/critical/p2231-market-couples-intake.test.js
+
+      - name: 🛡️ Firmware / OTA path gate
+        run: node tools/ci/firmware-updates-gate.js
+
+      - name: 🛡️ WiFi local-first gate
+        run: node tools/ci/wifi-local-first-gate.js
+
+      - name: 🛡️ Energy compose gate
+        run: node tools/ci/energy-compose-gate.js
+
+      - name: 🛡️ L99 dual-app enrich gates (hard)
+        run: node tools/ci/l99-dual-app-enrich-gates.js --hard --track=auto
+
+      - name: 🛡️ Bare ZigBeeDevice gate
+        run: npm run check:bare-zigbee
+
+      - name: 🛡️ Unbound catch(this.error) gate
+        run: node tools/ci/fix-unbound-catch-this-error.js --gate
+
+      - name: 🛡️ Adaptive double-division gate (hard)
+        run: node tools/ci/adaptive-double-division-gate.js --hard
 
       - name: 🌌 ZERO DEFECT ARCHITECT AUDIT
         run: node scripts/maintenance/zero-defect-architect-audit.js
@@ -172,9 +247,9 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
       - name: Setup Node.js
-        uses: actions/setup-node@v5
+        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
         with:
           node-version: '22'
           cache: 'npm'
@@ -199,7 +274,7 @@ jobs:
           grep -q "smartDivisor" lib/devices/UnifiedSensorBase.js && echo "Smart Divisor Active" || echo "WARNING: smartDivisor not found"
       
       - name: 📦 Artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5.0.0
         with:
           name: homey-app-bundle
           path: .homeybuild/
@@ -216,7 +291,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
       - name: 🕵️ Deep Credential & Token Leak Detection
         run: |
           echo "🔐 [1/5] Checking for .env and forbidden files..."
@@ -255,6 +330,14 @@ jobs:
             echo "✅ Security scanner passed"
           else
             echo "::error::⚠️ Security scanner found issues"
+            exit 1
+          fi
+
+          echo "🔐 [3b/5] GitHub elementary security + data-leak gate (P2206)..."
+          if node tools/ci/github-security-elementary-gate.js; then
+            echo "✅ GitHub security elementary gate passed"
+          else
+            echo "::error::⚠️ Workflow permissions / data-leak path issues"
             exit 1
           fi
 

@@ -7,7 +7,7 @@ name: "🚀 Publish Stable to Test"
 
 concurrency:
   group: publish-stable-v5
-  # P139 / P195: never kill mid Athom draft/promote (orphan builds + socket hang up).
+  # P139 / P193: never kill mid Athom draft/promote (orphan builds + socket hang up).
   cancel-in-progress: false
 
 on:
@@ -17,7 +17,7 @@ on:
   workflow_dispatch:
     inputs:
       force_test:
-        description: 'Force Test promotion for com.dlnraja.tuya.zigbee.stable (9.0 soak is Universal Tuya, a different Athom app)'
+        description: 'Promote to Test even if master 9.0.x is soaking (overwrites shared App ID)'
         type: boolean
         default: false
 
@@ -30,7 +30,6 @@ defaults:
 
 env:
   NODE_VERSION: "22"
-  APP_ID: "com.dlnraja.tuya.zigbee.stable"
   # v5.12.0: 431 drivers × assets still overshoots the 26 MB default.
   # v5.12.4 (P75.1): Bumped 45 → 50 MB to match master after .homeyignore
   # pruning reduces the source directory to ~40 MB. The gzipped tarball
@@ -42,8 +41,9 @@ env:
   # exceeding the default 20,000 limit. 30,000 gives headroom.
   # v5.12.1 (P59 sync): stable has 30,211 combos (more than master due to
   # driver differences over time). 35,000 covers stable with headroom.
-  HOMEY_ZIGBEE_MAX_TOTAL_COMBOS: "22000"
-  HOMEY_ZIGBEE_MAX_DRIVER_COMBOS: "500"
+  HOMEY_ZIGBEE_MAX_TOTAL_COMBOS: "20000"
+  HOMEY_ZIGBEE_MAX_DRIVER_COMBOS: "2000"
+  HOMEY_ZIGBEE_MAX_CASE_FORMS: "2"
 
 jobs:
   upstream-guard:
@@ -76,6 +76,8 @@ jobs:
         run: npm ci --prefer-offline --no-audit || npm install
       - name: Crash regression guard - Homey timer context
         run: npm run check:timer-context
+      - name: Regression lessons gate (MUST-KEEP fatals)
+        run: node tools/ci/regression-lessons-gate.js
       - name: Google Assistant / Alexa voice-safety gate
         run: npm run check:voice
       - name: SDK3 Validation
@@ -92,7 +94,7 @@ jobs:
         run: node scripts/maintenance/sanitize-manifest.cjs app.json .homeybuild/app.json
 
   soak:
-    name: "Stable App ID soak guard"
+    name: "Shared App ID soak guard"
     needs: upstream-guard
     runs-on: ubuntu-latest
     timeout-minutes: 5
@@ -108,11 +110,10 @@ jobs:
           node-version: '22'
           cache: npm
       - run: npm ci --prefer-offline --no-audit || npm install
-      - name: Stable App ID soak guard
+      - name: Shared App ID soak guard
         id: soak
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
-          APP_ID: com.dlnraja.tuya.zigbee.stable
           STABLE_FORCE_TEST: ${{ github.event.inputs.force_test || 'false' }}
         run: node .github/scripts/refuse-stable-test-overwrite.js
 
@@ -175,11 +176,13 @@ jobs:
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
         run: |
-          PUBLISH_DIR="$(node -p "require('path').join(require('os').tmpdir(), 'homey-publish-temp')")"
+          PUBLISH_DIR="${HOMEY_PUBLISH_DIR:-$(node -p "require('path').join(require('os').tmpdir(), 'homey-publish-temp')")}"
           if [ ! -d "$PUBLISH_DIR" ]; then
             echo "::error::Prepared publish directory is missing: $PUBLISH_DIR"
+            echo "::error::Hint: prepare-publish must run in the same job; check HOMEY_PUBLISH_DIR / .homeybuild"
             exit 1
           fi
+          echo "Using PUBLISH_DIR=$PUBLISH_DIR"
           cd "$PUBLISH_DIR"
           if [ -f package-lock.json ] || [ -f npm-shrinkwrap.json ]; then
             npm ci --omit=dev --ignore-scripts --no-audit --no-fund
@@ -226,13 +229,13 @@ jobs:
           echo "## Shared App ID soak" >> "$GITHUB_STEP_SUMMARY"
           echo "skip=${{ needs.soak.outputs.skip }} reason=${{ needs.soak.outputs.reason }}" >> "$GITHUB_STEP_SUMMARY"
           if [ "${{ needs.soak.outputs.skip }}" = "true" ]; then
-            echo "Draft upload skipped only if guard would overwrite Universal Tuya 9.0. The .stable id is never blocked by 9.x soak." >> "$GITHUB_STEP_SUMMARY"
+            echo "Draft upload skipped so 5.12.x cannot overwrite soaking 9.0 Test." >> "$GITHUB_STEP_SUMMARY"
           fi
 
   promote:
     name: "Promote to Test"
     needs: [pre-validation, publish, soak]
-    # Skip only if soak-guard would overwrite Universal Tuya 9.0 (never for .stable id).
+    # Skip entirely while master 9.0.x occupies the shared Test slot.
     if: needs.soak.outputs.skip != 'true' && needs.publish.result == 'success'
     runs-on: ubuntu-latest
     timeout-minutes: 35
@@ -243,11 +246,10 @@ jobs:
           node-version: '22'
           cache: npm
       - run: npm ci --prefer-offline --no-audit || npm install
-      - name: Stable App ID soak guard
+      - name: Shared App ID soak guard
         id: soak
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
-          APP_ID: com.dlnraja.tuya.zigbee.stable
           STABLE_FORCE_TEST: ${{ github.event.inputs.force_test || 'false' }}
         run: node .github/scripts/refuse-stable-test-overwrite.js
       - name: Wait for Athom draft processing
@@ -280,12 +282,16 @@ jobs:
         if: steps.soak.outputs.skip != 'true'
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+          HOMEY_API_TIMEOUT_MS: "60000"
         run: |
           if [ "${{ steps.promote_puppeteer.outcome }}" != "success" ] && \
              [ "${{ steps.promote_api.outcome }}" != "success" ]; then
             echo "::warning::All stable draft-to-test promotion tiers returned non-success; verifying actual Homey channel state before failing."
           fi
+          # P2325 BOTH: soft-continue when Athom hang + healthy .stable Test
           node .github/scripts/verify-test-version.js
+          echo "### P2325 verify soft-continue" >> "$GITHUB_STEP_SUMMARY"
+          echo "Healthy Test + transient hang → exit 0 (no Stable republish spam / P139)." >> "$GITHUB_STEP_SUMMARY"
       - name: Summary
         if: always()
         run: |
@@ -294,7 +300,7 @@ jobs:
           echo "## Stable Publish" >> $GITHUB_STEP_SUMMARY
           echo "v$VER | APP_ID: $APP_ID" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          echo "> **APP_ID**: this track publishes \`com.dlnraja.tuya.zigbee.stable\` (Tuya Unified (Stable)). Universal Tuya 9.0 (\`com.dlnraja.tuya.zigbee\`) is a different Athom app and is not overwritten." >> $GITHUB_STEP_SUMMARY
+          echo "> **APP_ID warning**: master and stable share \`com.dlnraja.tuya.zigbee\`. Promoting stable to Test overwrites the master Test slot (and vice versa). Prefer Live for production stable, or republish master last if Test must stay on 9.x." >> $GITHUB_STEP_SUMMARY
           echo "Soak guard skip=${{ steps.soak.outputs.skip }} reason=${{ steps.soak.outputs.reason }}" >> $GITHUB_STEP_SUMMARY
       - name: Full diagnostics sweep - sanitized
         if: always()
