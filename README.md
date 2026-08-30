@@ -33,15 +33,15 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.719 |
+| **App Version** | v9.0.720 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,381 |
-| **Pairing Variants** | 16,492 (4 case combos per fingerprint) |
+| **Pairing Variants** | 16,489 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 578 |
 | **Flow Cards** | 5,182 |
 | **Unique Capabilities** | 170 |
 | **Native OTA Drivers** | 5 |
-| **Test Suites** | 178 files |
+| **Test Suites** | 179 files |
 | **SVG Icons** | 731 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
@@ -57,8 +57,8 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | 4 | `radiator_valve` | 599 |
 | 5 | `button_wireless_2` | 572 |
 | 6 | `wall_dimmer_tuya` | 490 |
-| 7 | `generic_tuya` | 420 |
-| 8 | `curtain_motor` | 380 |
+| 7 | `generic_tuya` | 415 |
+| 8 | `curtain_motor` | 382 |
 | 9 | `device_radiator_valve` | 334 |
 | 10 | `switch_4gang` | 276 |
 | 11 | `switch_2gang` | 265 |
@@ -102,6 +102,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.720** | Improved wireless button press capture for Tuya scene remotes after wake and pairing. |
 | **v9.0.719** | Improved wireless button press capture for Tuya scene remotes after wake and pairing. |
 | **v9.0.718** | Improved wireless button press capture for Tuya scene remotes after wake and pairing. |
 | **v9.0.717** | Improved wireless button press capture for Tuya scene remotes after wake and pairing. |
@@ -113,7 +114,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.711** | Fixed driver image paths for App Store processing; restored Homey-safe icons. |
 | **v9.0.710** | Homey-safe driver icons restored; fixed corrupt SVGs; own-path images; avoided invalid placeholder manufacturerNames for App Store. |
 | **v9.0.709** | Homey-safe driver icons restored; fixed corrupt SVGs; own-path images; avoided invalid placeholder manufacturerNames for App Store. |
-| **v9.0.708** | Restored Homey-safe driver icons; kept own-path images; guarded empty manufacturerName for App Store processing. |
 
 <!-- CHANGELOG_END -->
 
