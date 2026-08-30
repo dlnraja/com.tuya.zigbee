@@ -22,7 +22,8 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
 
   _registerFlowCards() {
     // TRIGGERS
-    const _triggerIds = ["button_wireless_switch_switch_2gang_gang1_turned_on","button_wireless_switch_switch_2gang_gang1_turned_off","button_wireless_switch_switch_2gang_gang2_turned_on","button_wireless_switch_switch_2gang_gang2_turned_off","button_wireless_switch_switch_2gang_physical_gang1_on","button_wireless_switch_switch_2gang_physical_gang1_off","button_wireless_switch_switch_2gang_physical_gang2_on","button_wireless_switch_switch_2gang_physical_gang2_off","button_wireless_switch_switch_2gang_turned_on","button_wireless_switch_switch_2gang_turned_off","button_wireless_switch_switch_2gang_power_changed","button_wireless_switch_switch_2gang_gang1_scene","button_wireless_switch_switch_2gang_gang2_scene"];
+    // WHY(P2330): IDs must match driver.flow.compose.json (no double `switch_`)
+    const _triggerIds = ["button_wireless_switch_2gang_gang1_turned_on","button_wireless_switch_2gang_gang1_turned_off","button_wireless_switch_2gang_gang2_turned_on","button_wireless_switch_2gang_gang2_turned_off","button_wireless_switch_2gang_physical_gang1_on","button_wireless_switch_2gang_physical_gang1_off","button_wireless_switch_2gang_physical_gang2_on","button_wireless_switch_2gang_physical_gang2_off","button_wireless_switch_2gang_turned_on","button_wireless_switch_2gang_turned_off","button_wireless_switch_2gang_power_changed","button_wireless_switch_2gang_gang1_scene","button_wireless_switch_2gang_gang2_scene","button_wireless_switch_physical_gang1_on","button_wireless_switch_physical_gang1_off","button_wireless_switch_physical_gang2_on","button_wireless_switch_physical_gang2_off"];
     for (const _tid of _triggerIds) {
       try {
         const _card = this._getFlowCard(_tid, "trigger");

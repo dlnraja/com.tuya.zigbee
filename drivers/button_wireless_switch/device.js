@@ -189,25 +189,32 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
                 }
               }
             }
-            if (isPhysical && (mode === 'auto' || mode === 'both')) {
-              const flowId = `button_wireless_switch_switch_2gang_physical_gang${epNum}_${value ? 'on' : 'off'}`;
-              try {
-                const card = this.homey.flow.getDeviceTriggerCard(flowId);
-                if (card) {
-                  await card.trigger(this, { gang: epNum, state: value }, {}).catch(() => {});
-                  this.log(`[BSEED-2G] ✅ Physical G${epNum} ${value ? 'ON' : 'OFF'}`);
+            // WHY(P2330): never invent `*_switch_switch_2gang_*` — compose declares
+            // `button_wireless_switch_2gang_*` (+ short `*_physical_gang*`). Prefer mixin path.
+            if (isPhysical && (mode === 'auto' || mode === 'both' || mode === 'magic')) {
+              if (typeof this._triggerPhysicalFlow === 'function') {
+                this._triggerPhysicalFlow(epNum, value ? 'on' : 'off');
+                this.log(`[BSEED-2G] ✅ Physical/scene via mixin G${epNum} ${value ? 'ON' : 'OFF'}`);
+              } else if (typeof this._safeTriggerFlow === 'function') {
+                const state = value ? 'on' : 'off';
+                await this._safeTriggerFlow(
+                  `button_wireless_switch_2gang_physical_gang${epNum}_${state}`,
+                  { gang: epNum, button: String(epNum), state: value },
+                  { type: 'physical' },
+                );
+                await this._safeTriggerFlow(
+                  `button_wireless_switch_physical_gang${epNum}_${state}`,
+                  { gang: epNum, button: String(epNum), state: value },
+                  { type: 'physical-short' },
+                );
+                if (mode === 'auto' || mode === 'magic' || mode === 'both') {
+                  await this._safeTriggerFlow(
+                    `button_wireless_switch_2gang_gang${epNum}_scene`,
+                    { action: state, gang: epNum },
+                    { type: 'scene' },
+                  );
                 }
-              } catch (e) { }
-            }
-            if (isPhysical && (mode === 'auto' || mode === 'magic' || mode === 'both')) {
-              const sceneId = `button_wireless_switch_switch_2gang_gang${epNum}_scene`;
-              try {
-                const card = this.homey.flow.getDeviceTriggerCard(sceneId);
-                if (card) {
-                  await card.trigger(this, { action: value ? 'on' : 'off' }, {}).catch(() => {});
-                  this.log(`[BSEED-2G] ✅ Scene G${epNum} ${value ? 'on' : 'off'}`);
-                }
-              } catch (e) { }
+              }
             }
           }
         });
