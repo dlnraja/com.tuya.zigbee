@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "description": "Community-reported wrong-driver / pairing conflict cases. Sacred couple = mfr + productId. Master: static compose + dynamic lookup. Stable: static compose only (copy canonicalDriver into driver.compose.json).",
+  "description": "Community-reported wrong-driver / pairing conflict cases. Sacred couple = mfr + productId. Master: static compose + dynamic lookup. Stable: static compose only (copy canonicalDriver into driver.compose.json). P2318 ENRICHMENT-FIRST: lock by adding to canonicalDriver; forbidMode=couple only strips manufacturerName when the forbidden productId is also present — never strip shared productIds (coverage reduction ban); never delete a mfr from a driver solely because it appears elsewhere with a different pid.",
   "cases": [
     {
       "id": "hobeian-aubess-k4ej3ww2-ias",
@@ -1829,16 +1829,7 @@
       ],
       "protocol": "zcl",
       "notes": "P2322: HomeSuite interview confirms TS0004 + EP1-4 genOnOff (clusters 3,4,5,6,57344,57345). ZCL TB25-4 touch — not EF00. Sub-device tiles. Forum #2186/#2188 Gabriel.",
-      "tracks": {
-        "master": {
-          "static": true,
-          "dynamic": true
-        },
-        "stable": {
-          "static": true,
-          "dynamic": false
-        }
-      },
+      "forbidMode": "couple",
       "sources": [
         "forum-140352-2173",
         "forum-140352-2182",
@@ -1847,7 +1838,10 @@
         "gpm-homesuite-interview-TS0004",
         "P2322"
       ],
-      "forbidMode": "couple"
+      "tracks": {
+        "master": { "static": true, "dynamic": true },
+        "stable": { "static": true, "dynamic": false }
+      }
     },
     {
       "id": "p2261-ihseno-debczeci-presence",
@@ -2201,7 +2195,9 @@
       "mfr": [
         "_TZE284_6ocnqlhn",
         "_tze284_6ocnqlhn",
-        "_TZE284_6OCNQLHN"
+        "_TZE284_6OCNQLHN",
+        "_TZE284_60cnqlhn",
+        "_tze284_60cnqlhn"
       ],
       "productId": [
         "TS0601"
@@ -2403,10 +2399,44 @@
       "notes": "TYBAC-006 FCU — sibling mpbki2zm is a SEPARATE couple"
     },
     {
+      "id": "p2300-tz3000_pjb1ua0m-contact-ts0203",
+      "mfr": [
+        "_TZ3000_pjb1ua0m",
+        "_tz3000_pjb1ua0m",
+        "_TZ3000_PJB1UA0M"
+      ],
+      "productId": [
+        "TS0203"
+      ],
+      "canonicalDriver": "contact_sensor",
+      "forbiddenDrivers": [
+        "water_leak_sensor",
+        "climate_sensor",
+        "motion_sensor"
+      ],
+      "forbidMode": "couple",
+      "protocol": "ias_zone",
+      "notes": "GitHub Discussion #100 Pressure band — door/window IAS contact, not climate.",
+      "sources": [
+        "discussion-100",
+        "P2300"
+      ],
+      "tracks": {
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
+      }
+    },
+    {
       "id": "p2234b-tze204_mpbki2zm",
       "mfr": [
-        "_TZE204_mpbki2zm",
         "_tze204_mpbki2zm",
+        "_TZE204_mpbki2zm",
         "_TZE204_MPBKI2ZM"
       ],
       "productId": [
@@ -2414,11 +2444,48 @@
       ],
       "canonicalDriver": "wall_thermostat",
       "forbiddenDrivers": [
+        "bulb_dimmable",
+        "device_radiator_valve",
+        "power_meter",
         "thermostatic_radiator_valve",
-        "bulb_dimmable"
+        "generic_tuya",
+        "zigbee_universal"
       ],
       "source": "p2234b-couple-refine",
-      "notes": "TYBAC-006 sibling — not TRV"
+      "notes": "P2295: zigbee pid=TS0601 only — PJ-1203A was invent. TYBAC-006/BAC006 are retail names. Sibling qujphad5 is a separate couple. P2300: wall_thermostat must call super.onNodeInit for EF00 TX/RX (#532). P2324: DP1 before DP101; magic heal; strip generic_tuya compounds.",
+      "forbidMode": "couple",
+      "protocol": "tuya_ef00",
+      "sources": [
+        "p2234b-tze204_mpbki2zm",
+        "P2295",
+        "P2300",
+        "TYBAC-006",
+        "BAC-006",
+        "issue-532"
+      ],
+      "tracks": {
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
+      },
+      "deviceNames": [
+        "TYBAC-006",
+        "BAC006",
+        "Tuya FCU thermostat"
+      ],
+      "z2mModels": [
+        "TYBAC-006",
+        "BAC-006"
+      ],
+      "whiteLabels": [
+        "TYBAC-006",
+        "BAC006"
+      ]
     },
     {
       "id": "p2234b-tze204_apiu8k13",
@@ -2735,16 +2802,83 @@
       "notes": "Bo_Kjaergaard soft TS0001 REJECTED — compose plug TS011F/TS0121"
     },
     {
+      "id": "p2321-mtnpt6ws-ts0002-2gang",
+      "mfr": [
+        "_TZ3000_mtnpt6ws",
+        "_tz3000_mtnpt6ws"
+      ],
+      "productId": [
+        "TS0002"
+      ],
+      "canonicalDriver": "switch_2gang",
+      "forbidMode": "couple",
+      "forbiddenDrivers": [
+        "switch_1gang",
+        "wall_switch_1gang_1way",
+        "climate_sensor"
+      ],
+      "protocol": "zcl",
+      "retailNames": [
+        "Nous L13Z",
+        "AVATTO ZWSM16-2",
+        "OXT SWTZ22"
+      ],
+      "notes": "P2321: HomeSuite switch_2_ch + Z2M TS0002_switch_module. 2-EP ZCL module.",
+      "sources": [
+        "homesuite",
+        "z2m",
+        "P2321"
+      ],
+      "tracks": {
+        "master": { "static": true, "dynamic": true },
+        "stable": { "static": true, "dynamic": false }
+      }
+    },
+    {
+      "id": "p2321-ddigca5n-ts011f-nous-a9z",
+      "mfr": [
+        "_TZ3210_ddigca5n",
+        "_tz3210_ddigca5n"
+      ],
+      "productId": [
+        "TS011F"
+      ],
+      "canonicalDriver": "plug_energy_monitor",
+      "forbidMode": "couple",
+      "forbiddenDrivers": [
+        "switch_1gang",
+        "climate_sensor",
+        "usb_outlet_advanced"
+      ],
+      "protocol": "zcl",
+      "retailNames": [
+        "Nous A9Z"
+      ],
+      "notes": "P2321: Johan #1452 + Z2M Nous A9Z metering plug. Complementary from alt-app harvest.",
+      "sources": [
+        "JohanBendz#1452",
+        "z2m",
+        "P2321"
+      ],
+      "tracks": {
+        "master": { "static": true, "dynamic": true },
+        "stable": { "static": true, "dynamic": false }
+      }
+    },
+    {
       "id": "p2251-sergep-nous-sophos-external",
       "mfr": [
         "_TZ3000_v5498kdm",
-        "_tz3000_v5498kdm"
+        "_tz3000_v5498kdm",
+        "_TZ3000_V5498KDM",
+        "_tz3000_V5498KDM"
       ],
       "productId": [
         "TS0001"
       ],
       "canonicalDriver": "switch_1gang",
       "doNotTouch": false,
+      "forbidMode": "couple",
       "forbiddenDrivers": [
         "climate_sensor",
         "generic_tuya",
@@ -2753,7 +2887,7 @@
         "device_radiator_valve"
       ],
       "protocol": "zcl",
-      "notes": "P2320: lock into switch_1gang (backport BOTH).",
+      "notes": "P2320: user asked to carry SergeP/Antek T99614 Nous/SoPhos TS0001 into Universal Tuya. Lock switch_1gang (mfr+pid). Was doNotTouch external-only.",
       "sources": [
         "forum-T99614",
         "P2251",
@@ -2762,14 +2896,13 @@
       "tracks": {
         "master": {
           "static": true,
-          "dynamic": false
+          "dynamic": true
         },
         "stable": {
           "static": true,
           "dynamic": false
         }
-      },
-      "forbidMode": "couple"
+      }
     },
     {
       "id": "p2258-linptech-es1zz-ts0225",
@@ -3879,38 +4012,38 @@
       }
     },
     {
-      "id": "p2282-mrpevh8p-ts0041-button",
+      "id": "p2291-ogkdpgy2-co2-not-climate",
       "mfr": [
-        "_TZ3000_mrpevh8p",
-        "_tz3000_mrpevh8p",
-        "_TZ3000_MRPEVH8P",
-        "_tz3000_MRPEVH8P"
+        "_tze200_ogkdpgy2",
+        "_TZE200_ogkdpgy2",
+        "_TZE200_OGKDPGY2",
+        "_tze204_ogkdpgy2",
+        "_TZE204_ogkdpgy2",
+        "_TZE204_OGKDPGY2"
       ],
       "productId": [
-        "TS0041"
+        "TS0601"
       ],
-      "canonicalDriver": "button_wireless_1",
+      "canonicalDriver": "air_quality_co2",
       "forbiddenDrivers": [
-        "switch_1gang",
-        "scene_switch_4",
-        "button_wireless_4",
-        "button_wireless_4_ts0041",
         "climate_sensor",
-        "button_wireless",
-        "wall_switch_1gang_1way"
+        "climate_sensor_zt08",
+        "soil_sensor",
+        "zigbee_universal"
       ],
       "forbidMode": "couple",
-      "protocol": "zcl",
-      "notes": "P2285: Z2M SH-SC07 / RSH-SC021 / Johan #1120. Interview EP1–4 (phantom) but 1 physical button. RX: genOnOff mfr 0xFD (single=0/double=1/hold=2) + E000; magic packet; NEVER 0x8004; NEVER EF00 TX; battery EP1 only (EP2–4=253 garbage); Z2M #8072 no battery reporting. fingerprints.json must not case-route MRPEVH8P→switch_1gang.",
+      "protocol": "tuya_ef00",
+      "notes": "P2295: zigbee pid=TS0601 only. Retail/Z2M names stay in deviceNames — never CK-TLSR climate bleed, never TS0601_co2 as Homey productId.",
       "sources": [
-        "forum-140352-2202",
-        "diag-95a7c6e5",
-        "zigbee-herdsman-converters#6225",
-        "JohanBendz#1120",
-        "Hubitat-kkossev-TS004F",
-        "Z2M-TS0041-SH-SC07",
-        "P2282",
-        "P2285"
+        "forum-140352-2204",
+        "Z2M#24858",
+        "Z2M-PR-8354",
+        "P2291",
+        "p2291-ogkdpgy2-co2-not-climate",
+        "P2295",
+        "TS0601_co2_sensor",
+        "TS0601_TZE204_ogkdpgy2",
+        "DCR-LCD"
       ],
       "tracks": {
         "master": {
@@ -3921,7 +4054,86 @@
           "static": true,
           "dynamic": false
         }
-      }
+      },
+      "deviceNames": [
+        "DCR-LCD",
+        "DCR-RQJ",
+        "NDIR CO2 sensor",
+        "Tuya Zigbee CO2 Sensor",
+        "TS0601_co2_sensor",
+        "TS0601_TZE204_ogkdpgy2"
+      ],
+      "z2mModels": [
+        "TS0601_co2_sensor",
+        "TS0601_TZE204_ogkdpgy2",
+        "DCR-LCD"
+      ],
+      "whiteLabels": [
+        "DCR-LCD",
+        "DCR-RQJ"
+      ]
+    },
+    {
+      "id": "p2282-mrpevh8p-ts0041-button",
+      "mfr": [
+        "_tz3000_mrpevh8p",
+        "_tz3000_MRPEVH8P",
+        "_TZ3000_mrpevh8p",
+        "_TZ3000_MRPEVH8P"
+      ],
+      "productId": [
+        "TS0041"
+      ],
+      "canonicalDriver": "button_wireless_1",
+      "forbiddenDrivers": [
+        "button_wireless",
+        "button_wireless_4",
+        "button_wireless_4_ts0041",
+        "climate_sensor",
+        "scene_switch_4",
+        "switch_1gang",
+        "wall_switch_1gang_1way"
+      ],
+      "forbidMode": "couple",
+      "protocol": "zcl",
+      "notes": "P2295: zigbee pid=TS0041 only. SH-SC07/RSH-SC021 are whiteLabels. Interview may show phantom EP2–4 — still 1 physical button.",
+      "sources": [
+        "forum-140352-2202",
+        "diag-95a7c6e5",
+        "zigbee-herdsman-converters#6225",
+        "JohanBendz#1120",
+        "Hubitat-kkossev-TS004F",
+        "Z2M-TS0041-SH-SC07",
+        "P2282",
+        "P2285",
+        "p2282-mrpevh8p-ts0041-button",
+        "P2295",
+        "TS0041",
+        "SH-SC07"
+      ],
+      "tracks": {
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
+      },
+      "deviceNames": [
+        "SH-SC07",
+        "RSH-SC021",
+        "Tuya 1-button scene switch"
+      ],
+      "z2mModels": [
+        "TS0041",
+        "SH-SC07"
+      ],
+      "whiteLabels": [
+        "SH-SC07",
+        "RSH-SC021"
+      ]
     },
     {
       "id": "p2285-sh-sc07-siblings-ts0041",
@@ -3997,27 +4209,133 @@
       }
     },
     {
-      "id": "p2321-mtnpt6ws-ts0002-2gang",
+      "id": "p2293-zemismart-68nvbio9-curtain-not-trv",
       "mfr": [
-        "_TZ3000_mtnpt6ws",
-        "_tz3000_mtnpt6ws"
+        "_tze200_68nvbio9",
+        "_TZE200_68nvbio9",
+        "_TZE200_68NVBIO9",
+        "_tze204_68nvbio9",
+        "_TZE204_68nvbio9",
+        "_TZE204_68NVBIO9"
       ],
       "productId": [
-        "TS0002"
+        "TS0601"
       ],
-      "canonicalDriver": "switch_2gang",
-      "forbidMode": "couple",
+      "canonicalDriver": "curtain_motor",
       "forbiddenDrivers": [
-        "switch_1gang",
-        "wall_switch_1gang_1way",
-        "climate_sensor"
+        "climate_sensor",
+        "device_radiator_valve",
+        "wall_thermostat"
       ],
-      "protocol": "zcl",
-      "notes": "P2321 BOTH: Nous L13Z / AVATTO 2-gang module",
+      "forbidMode": "couple",
+      "protocol": "tuya_ef00",
+      "notes": "P2295: Zigbee pid=TS0601; ZM16EL* are retail aliases not productIds.",
       "sources": [
-        "homesuite",
-        "z2m",
-        "P2321"
+        "Z2M#29124",
+        "Z2M#28655",
+        "forum-154092",
+        "P2293",
+        "p2293-zemismart-68nvbio9-curtain-not-trv",
+        "P2295",
+        "ZM16EL",
+        "TS0601_cover"
+      ],
+      "tracks": {
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
+      },
+      "deviceNames": [
+        "ZM16EL",
+        "ZM16EL-03",
+        "ZM16EL-33",
+        "Zemismart curtain motor"
+      ],
+      "z2mModels": [
+        "ZM16EL",
+        "TS0601_cover"
+      ],
+      "whiteLabels": [
+        "ZM16EL-03",
+        "ZM16EL-33"
+      ]
+    },
+    {
+      "id": "p2293-zemismart-cf1sl3tj-curtain-not-trv",
+      "mfr": [
+        "_tze200_cf1sl3tj",
+        "_TZE200_cf1sl3tj",
+        "_TZE200_CF1SL3TJ"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": "curtain_motor",
+      "forbiddenDrivers": [
+        "climate_sensor",
+        "device_radiator_valve",
+        "wall_thermostat"
+      ],
+      "forbidMode": "couple",
+      "protocol": "tuya_ef00",
+      "notes": "P2295: Zigbee pid=TS0601; ZM85EL-2Z is retail alias.",
+      "sources": [
+        "Z2M#18413",
+        "forum-154092",
+        "P2293",
+        "p2293-zemismart-cf1sl3tj-curtain-not-trv",
+        "P2295",
+        "ZM85EL-2Z",
+        "TS0601_cover"
+      ],
+      "tracks": {
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
+      },
+      "deviceNames": [
+        "ZM85EL-2Z",
+        "Zemismart dual curtain"
+      ],
+      "z2mModels": [
+        "ZM85EL-2Z",
+        "TS0601_cover"
+      ],
+      "whiteLabels": [
+        "ZM85EL-2Z"
+      ]
+    },
+    {
+      "id": "p2293-dfgbtub0-ts0044-wireless-4",
+      "mfr": [
+        "_TZ3000_dfgbtub0",
+        "_TZ3000_DFGBTUB0",
+        "_tz3000_dfgbtub0"
+      ],
+      "productId": [
+        "TS0044"
+      ],
+      "canonicalDriver": "button_wireless_4",
+      "forbiddenDrivers": [
+        "button_wireless_2",
+        "switch_4gang"
+      ],
+      "forbidMode": "couple",
+      "protocol": "zcl",
+      "notes": "SunBeech Moes T156967 — TS0044 = 4-gang remote; TS0042 stays on button_wireless_2",
+      "sources": [
+        "forum-156967-12",
+        "P2293"
       ],
       "tracks": {
         "master": {
@@ -4031,28 +4349,269 @@
       }
     },
     {
-      "id": "p2321-ddigca5n-ts011f-nous-a9z",
+      "id": "p2295-3ejwxpmu-co2-sibling",
       "mfr": [
-        "_TZ3210_ddigca5n",
-        "_tz3210_ddigca5n"
+        "_tze200_3ejwxpmu",
+        "_TZE200_3ejwxpmu",
+        "_TZE200_3EJWXPMU",
+        "_tze204_3ejwxpmu",
+        "_TZE204_3ejwxpmu",
+        "_TZE204_3EJWXPMU"
       ],
       "productId": [
-        "TS011F"
+        "TS0601"
       ],
-      "canonicalDriver": "plug_energy_monitor",
+      "canonicalDriver": "air_quality_co2",
+      "forbiddenDrivers": [
+        "climate_sensor",
+        "climate_sensor_zt08",
+        "soil_sensor"
+      ],
       "forbidMode": "couple",
+      "protocol": "tuya_ef00",
+      "notes": "P2295: Z2M same fingerprint group as ogkdpgy2 CO2 — not climate_sensor cartesian bleed.",
+      "sources": [
+        "p2295-3ejwxpmu-co2-sibling",
+        "P2295",
+        "TS0601_co2_sensor"
+      ],
+      "tracks": {
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
+      },
+      "deviceNames": [
+        "NDIR CO2 sensor",
+        "TS0601_co2_sensor",
+        "Tuya CO2 (3ejwxpmu)"
+      ],
+      "z2mModels": [
+        "TS0601_co2_sensor"
+      ],
+      "whiteLabels": []
+    },
+    {
+      "id": "p2295-zemismart-68nvbi09-typo-curtain",
+      "mfr": [
+        "_tze200_68nvbi09",
+        "_TZE200_68nvbi09",
+        "_TZE200_68NVBI09"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": "curtain_motor",
+      "forbiddenDrivers": [
+        "device_radiator_valve",
+        "wall_thermostat",
+        "climate_sensor"
+      ],
+      "forbidMode": "couple",
+      "protocol": "tuya_ef00",
+      "notes": "P2295: Z2M fingerprint typo sibling of 68nvbio9 — cover not TRV.",
+      "sources": [
+        "p2295-zemismart-68nvbi09-typo-curtain",
+        "P2295",
+        "ZM16EL",
+        "TS0601_cover"
+      ],
+      "tracks": {
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
+      },
+      "deviceNames": [
+        "ZM16EL (typo mfr 68nvbi09)",
+        "Zemismart curtain motor"
+      ],
+      "z2mModels": [
+        "ZM16EL",
+        "TS0601_cover"
+      ],
+      "whiteLabels": []
+    },
+    {
+      "id": "p2295-zemismart-cover-siblings",
+      "mfr": [
+        "_tze200_9p5xmj5r",
+        "_TZE200_9p5xmj5r",
+        "_TZE200_9P5XMJ5R",
+        "_tze200_ba69l9ol",
+        "_TZE200_ba69l9ol",
+        "_TZE200_BA69L9OL",
+        "_tze200_eevqq1uv",
+        "_TZE200_eevqq1uv",
+        "_TZE200_EEVQQ1UV",
+        "_tze200_nw1r9hp6",
+        "_TZE200_nw1r9hp6",
+        "_TZE200_NW1R9HP6",
+        "_tze200_pw7mji0l",
+        "_TZE200_pw7mji0l",
+        "_TZE200_PW7MJI0L",
+        "_tze200_sfqyhvpv",
+        "_TZE200_sfqyhvpv",
+        "_TZE200_SFQYHVPV",
+        "_tze200_vexa5o82",
+        "_TZE200_vexa5o82",
+        "_TZE200_VEXA5O82",
+        "_tze204_ejh6owwz",
+        "_TZE204_ejh6owwz",
+        "_TZE204_EJH6OWWZ",
+        "_tze204_pw7mji0l",
+        "_TZE204_pw7mji0l",
+        "_TZE204_PW7MJI0L"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": "curtain_motor",
+      "forbiddenDrivers": [
+        "device_radiator_valve",
+        "wall_thermostat",
+        "climate_sensor"
+      ],
+      "forbidMode": "couple",
+      "protocol": "tuya_ef00",
+      "notes": "P2295: Z2M cover fingerprint siblings of 68nvbio9/cf1sl3tj — each couple keeps pid TS0601 only.",
+      "sources": [
+        "p2295-zemismart-cover-siblings",
+        "P2295",
+        "TS0601_cover",
+        "ZM16EL",
+        "ZM85EL-2Z"
+      ],
+      "tracks": {
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
+      },
+      "deviceNames": [
+        "Zemismart / Tuya TS0601 cover (Z2M group 148)",
+        "TS0601_cover"
+      ],
+      "z2mModels": [
+        "TS0601_cover",
+        "ZM16EL",
+        "ZM85EL-2Z"
+      ],
+      "whiteLabels": []
+    },
+    {
+      "id": "p2297-m6lwazh9-tze210-ts0301-curtain",
+      "mfr": [
+        "_TZE210_m6lwazh9",
+        "_tze210_m6lwazh9",
+        "_TZE210_M6LWAZH9"
+      ],
+      "productId": [
+        "TS0301"
+      ],
+      "canonicalDriver": "curtain_motor",
       "forbiddenDrivers": [
         "switch_1gang",
-        "climate_sensor",
-        "usb_outlet_advanced",
-        "usb_dongle_triple"
+        "wall_dimmer_tuya",
+        "device_radiator_valve",
+        "wall_thermostat"
       ],
-      "protocol": "zcl",
-      "notes": "P2321 BOTH: Nous A9Z metering plug",
+      "forbidMode": "couple",
+      "protocol": "tuya_ef00",
+      "notes": "Z2M #30273 A-OK AM25 blind — battery DP13; never switch_1gang",
       "sources": [
-        "JohanBendz#1452",
-        "z2m",
-        "P2321"
+        "Z2M#30273",
+        "P2297"
+      ],
+      "tracks": {
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
+      },
+      "deviceNames": [
+        "A-OK AM25",
+        "TS0301_cover"
+      ]
+    },
+    {
+      "id": "p2297-m6lwazh9-tze200-ts0601-curtain",
+      "mfr": [
+        "_TZE200_m6lwazh9",
+        "_tze200_m6lwazh9",
+        "_TZE200_M6LWAZH9"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": "curtain_motor",
+      "forbiddenDrivers": [
+        "switch_1gang",
+        "wall_dimmer_tuya",
+        "device_radiator_valve",
+        "wall_thermostat"
+      ],
+      "forbidMode": "couple",
+      "protocol": "tuya_ef00",
+      "notes": "Forum T154092 Zemismart Official — cover couple; strip from switch_1gang cartesian bleed",
+      "sources": [
+        "forum-154092-26",
+        "P2297"
+      ],
+      "tracks": {
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
+      },
+      "deviceNames": [
+        "Zemismart cover motor m6lwazh9"
+      ]
+    },
+    {
+      "id": "p2297-t9ynfz4x-ts0225-mmwave",
+      "mfr": [
+        "_TZ3218_t9ynfz4x",
+        "_tz3218_t9ynfz4x",
+        "_TZ3218_T9YNFZ4X",
+        "_tz3218_T9YNFZ4X"
+      ],
+      "productId": [
+        "TS0225"
+      ],
+      "canonicalDriver": "motion_sensor_radar_mmwave",
+      "forbiddenDrivers": [
+        "climate_sensor",
+        "presence_sensor_radar",
+        "motion_sensor"
+      ],
+      "forbidMode": "couple",
+      "protocol": "zcl",
+      "notes": "A_Tas T158757/T140352 — Linptech-class mmWave; posts without pid stay soft; never invent pid",
+      "sources": [
+        "forum-158757",
+        "forum-140352-2199",
+        "P2297"
       ],
       "tracks": {
         "master": {
@@ -4064,6 +4623,167 @@
           "dynamic": false
         }
       }
+    },
+    {
+      "id": "p2304-moes-zts-eur-c-curtain",
+      "mfr": [
+        "_TZE200_127x7wnl",
+        "_TZE200_127X7WNL",
+        "_tze200_127x7wnl",
+        "_tze200_127X7WNL",
+        "_TZE200_nhyj64w2",
+        "_TZE200_NHYJ64W2",
+        "_tze200_nhyj64w2",
+        "_tze200_NHYJ64W2",
+        "_TZE204_5slehgeo",
+        "_TZE204_5SLEHGEO",
+        "_tze204_5slehgeo",
+        "_tze204_5SLEHGEO",
+        "_TZE284_5slehgeo",
+        "_TZE284_5SLEHGEO",
+        "_tze284_5slehgeo",
+        "_tze284_5SLEHGEO"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": "curtain_motor",
+      "forbiddenDrivers": [
+        "device_radiator_valve",
+        "radiator_valve",
+        "thermostatic_radiator_valve",
+        "thermostat_tuya_dp",
+        "device_radiator_valve_smart",
+        "radiator_valve_zigbee",
+        "generic_tuya",
+        "zigbee_universal",
+        "unknown_zigbee_unit"
+      ],
+      "forbidMode": "couple",
+      "source": "github-533-salvagr + Z2M Moes ZTS-EUR-C",
+      "notes": "P2324: Moes ZTS-EUR-C curtain. Expand TRV/generic forbids (coupleMode). Do NOT forbid wall_thermostat — strip_pid would gut TS0601 there."
+    },
+    {
+      "id": "p2307-moes-star-feather-upt8lzi0",
+      "mfr": [
+        "_TZE284_upt8lzi0",
+        "_tze284_upt8lzi0",
+        "_TZE284_UPT8LZI0",
+        "_tze284_UPT8LZI0",
+        "_TZE28C1000000_i8sdouy0",
+        "_tze28c1000000_i8sdouy0",
+        "_TZE28C1000000_I8SDOUY0",
+        "_tze28c1000000_I8SDOUY0"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": "curtain_motor",
+      "forbiddenDrivers": [
+        "switch_1gang",
+        "switch_2gang",
+        "device_radiator_valve"
+      ],
+      "forbidMode": "couple",
+      "source": "Z2M moes ZS-SF-EUC-WH-MS",
+      "notes": "Moes Star Feather curtain. DPs same family as ZTS-EUR-C."
+    },
+    {
+      "id": "p2312-a4xycprs-ts0044-scene",
+      "mfr": [
+        "_TZ3000_a4xycprs",
+        "_tz3000_a4xycprs"
+      ],
+      "productId": [
+        "TS0044"
+      ],
+      "canonicalDriver": "scene_switch_4",
+      "forbiddenDrivers": [
+        "switch_4gang",
+        "button_wireless_2",
+        "button_wireless_4"
+      ],
+      "forbidMode": "couple",
+      "source": "z2m Star Ring 4 Gang Scene Switch",
+      "notes": "P2312 market: Z2M scene remote — not wall switch_4gang"
+    },
+    {
+      "id": "p2312-jthf7vb6-ts0601-water",
+      "mfr": [
+        "_TZE200_jthf7vb6",
+        "_tze200_jthf7vb6"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": "water_leak_sensor",
+      "forbiddenDrivers": [
+        "climate_sensor",
+        "soil_sensor"
+      ],
+      "forbidMode": "couple",
+      "source": "z2m/blakadder water leak",
+      "notes": "P2312: mfr was on water_leak without TS0601 pid"
+    },
+    {
+      "id": "p2317-cvis4qmw-ts0006-6gang",
+      "mfr": [
+        "_TZ3000_cvis4qmw",
+        "_tz3000_cvis4qmw"
+      ],
+      "productId": [
+        "TS0006"
+      ],
+      "canonicalDriver": "switch_wall_6gang",
+      "forbiddenDrivers": [
+        "switch_4gang",
+        "wall_thermostat"
+      ],
+      "forbidMode": "couple",
+      "source": "Z2M AVATTO TS0006_1 (6 EP)",
+      "notes": "Market said switch_4gang; Z2M binds EP1-6. P2318: enrichment-first — do not strip shared pids; mfr may remain on other drivers when forbidden pid absent.",
+      "enrichOnly": true
+    },
+    {
+      "id": "p2317-g9chy2ib-ts0003-3gang",
+      "mfr": [
+        "_TZ3000_g9chy2ib",
+        "_tz3000_g9chy2ib"
+      ],
+      "productId": [
+        "TS0003"
+      ],
+      "canonicalDriver": "wall_switch_3gang_1way",
+      "forbiddenDrivers": [
+        "wall_thermostat",
+        "device_radiator_valve",
+        "climate_sensor",
+        "switch_1gang"
+      ],
+      "forbidMode": "couple",
+      "source": "Z2M TS0003_3_gang_switch",
+      "notes": "Market wrongly said wall_thermostat; Z2M=3-gang backlight. P2318: enrichment-first — do not strip shared pids; mfr may remain on other drivers when forbidden pid absent.",
+      "enrichOnly": true
+    },
+    {
+      "id": "p2317-etufnltx-ts1002-foria",
+      "mfr": [
+        "_TZ3000_etufnltx",
+        "_tz3000_etufnltx"
+      ],
+      "productId": [
+        "TS1002"
+      ],
+      "canonicalDriver": "button_wireless_4",
+      "forbiddenDrivers": [
+        "bulb_rgbw",
+        "switch_3gang",
+        "scene_switch_4"
+      ],
+      "forbidMode": "couple",
+      "source": "Z2M FORIA F00XN00-04-1",
+      "notes": "Battery dimmer/scene remote — not wall switch. P2318: enrichment-first — do not strip shared pids; mfr may remain on other drivers when forbidden pid absent.",
+      "enrichOnly": true
     }
   ]
 }
