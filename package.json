@@ -142,7 +142,11 @@
     "check:p2288": "node --test test/critical/p2288-prepare-publish-sacred-keep.test.js",
     "publish:direct": "node scripts/publish-from-temp.js",
     "publish:direct:list": "node scripts/direct-api-publish.js --list",
-    "publish:temp": "npm run prepare-publish && node scripts/publish-from-temp.js --channel test"
+    "publish:temp": "npm run prepare-publish && node scripts/publish-from-temp.js --channel test",
+    "check:p2325": "node --test test/critical/p2325-verify-soft-hang.test.js",
+    "check:p2326": "node --test test/critical/p2326-dyn-cap-misroute.test.js",
+    "diag:inbox-uuids": "node tools/ci/inbox-diag-uuid-harvest.js",
+    "diag:inbox-uuids:fetch": "node tools/ci/inbox-diag-uuid-harvest.js --fetch --max=6"
   },
   "keywords": [
     "homey",

@@ -1,8 +1,8 @@
 {
   "_meta": {
     "id": "P2286-P2288",
-    "updated": "2026-08-26",
-    "why": "Orphan Athom builds (waiting_for_files / processing_failed) from repo-root publish + compaction dropping sacred couples.",
+    "updated": "2026-08-30",
+    "why": "Orphan Athom builds + tip hang soft-continue (P2325) + inbox diag harvest (P2326).",
     "humanDoc": "docs/architecture/PUBLISH_SSOT.md",
     "workflowGuidelines": ".github/WORKFLOW_GUIDELINES.md §M.8",
     "classify": "BOTH"
@@ -60,5 +60,27 @@
   "p139": {
     "doNot": "spam republish on processing_failed / socket hang up",
     "do": "soft-expect exit 0 when peer already on test; wait Athom cooldown"
+  },
+  "p2323": {
+    "why": "Tip email + Homey developer tools hang / Timeout after 10000ms",
+    "dashboardTimeoutMs": 60000,
+    "env": "HOMEY_API_TIMEOUT_MS",
+    "softAlert": "scripts/lib/soft-expect-decision.js → softAlertDecision"
+  },
+  "p2325": {
+    "why": "Auto-Publish verify fail-closed skipped healthy Test after Athom hang (9.0.720/721 draft vs 9.0.719 test)",
+    "verify": ".github/scripts/verify-test-version.js → softContinueOnTransientHang",
+    "test": "test/critical/p2325-verify-soft-hang.test.js",
+    "npm": "check:p2325",
+    "classify": "BOTH"
+  },
+  "p2326": {
+    "why": "Inbox #532 DynCap DP36→setpoint; #533 curtain mispaired as radiator empty-mfr",
+    "dynCap": "lib/dynamic/DynamicCapabilityManager.js → _isDriverOwnedDp",
+    "misroute": "drivers/device_radiator_valve/device.js → MISROUTE-P2326",
+    "harvest": "tools/ci/inbox-diag-uuid-harvest.js",
+    "test": "test/critical/p2326-dyn-cap-misroute.test.js",
+    "npm": "check:p2326",
+    "classify": "BOTH"
   }
 }

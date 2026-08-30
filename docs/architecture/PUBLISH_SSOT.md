@@ -1,8 +1,8 @@
-# Publish SSOT (P2286–P2288)
+# Publish SSOT (P2286–P2288 + P2323/P2325/P2326)
 
 Machine SSOT: [`config/architecture/publish-ssot.json`](../../config/architecture/publish-ssot.json)  
 Sacred pin list: [`config/architecture/publish-sacred-keep-couples.json`](../../config/architecture/publish-sacred-keep-couples.json)  
-Workflow policy: [`.github/WORKFLOW_GUIDELINES.md`](../../.github/WORKFLOW_GUIDELINES.md) §M.8
+Workflow policy: [`.github/WORKFLOW_GUIDELINES.md`](../../.github/WORKFLOW_GUIDELINES.md) §M.8–M.11
 
 **Classify:** `BOTH` (master + stable-v5 reliability).
 
@@ -30,6 +30,24 @@ Athom races when two publishers hit `createBuild` for the same version.
 | Orphan `processing_failed` + peer `test` | Skip (P139) |
 
 Implementation: `scripts/lib/soft-expect-decision.js` · Gate: `npm run check:p2286`
+
+## Athom hang soft-continue (P2323 / P2325)
+
+| Signal | Action |
+|--------|--------|
+| Tip email / Dev Tools `socket hang up` | Do **not** bump-loop |
+| `dashboard-monitor` `Timeout after 10000ms` | Use `HOMEY_API_TIMEOUT_MS=60000` + soft-alert |
+| Verify expected version still `draft`/`processing_failed` but older Test healthy | `verify-test-version.js` soft-continues (P2325) |
+
+Gate: `npm run check:p2325`
+
+## Inbox diag harvest (P2326)
+
+Forum media + GitHub issue diag UUIDs → `tools/ci/inbox-diag-uuid-harvest.js` (wired in `forum-poll.yml`, `fetch-diags.yml`).
+
+Runtime: DynCap must not invent FCU DP36→setpoint; radiator logs curtain misroutes.
+
+Gate: `npm run check:p2326`
 
 ## Sacred-keep compaction (P2288)
 
