@@ -290,13 +290,19 @@ class SceneSwitch4Device extends ButtonDevice {
       return;
     }
 
-    // WHY(P2283): compose uses scene_switch_4_button_{N}_{pressed|double|long}
+    // WHY(P2283/P2332): compose uses scene_switch_4_button_{N}_{pressed|double|long}
     // — never invent scene_switch_4_button_4gang_button_pressed (no button index).
+    // Prefer triggerButtonPress / _tryCard / _safeTriggerFlow (declared-only).
     try {
       const suffix = pressType === 'single' || pressType === 'pressed' ? 'pressed'
         : (pressType === 'double' || pressType === 'double_press') ? 'double'
           : (pressType === 'long' || pressType === 'long_press') ? 'long'
             : String(pressType || 'pressed');
+      const typeMap = { pressed: 'single', double: 'double', long: 'long' };
+      if (typeof this.triggerButtonPress === 'function') {
+        await this.triggerButtonPress(button, typeMap[suffix] || 'single', 1, { source: 'e000-s4' });
+        return;
+      }
       const candidates = [
         `scene_switch_4_button_${button}_${suffix}`,
         `scene_switch_4_button_4gang_button_${button}_${suffix}`,
@@ -304,11 +310,16 @@ class SceneSwitch4Device extends ButtonDevice {
           : suffix === 'double' ? 'scene_switch_4_button_double_press'
             : 'scene_switch_4_button_long_press',
       ];
-      for (const cardId of candidates) {
-        const trigger = this.homey?.flow?.getDeviceTriggerCard(cardId);
-        if (trigger) {
-          await trigger.trigger(this, { button, pressType });
-          return;
+      const tokens = { button: String(button), pressType, gang: Number(button) || 1 };
+      if (typeof this._tryCard === 'function') {
+        for (const cardId of candidates) {
+          // eslint-disable-next-line no-await-in-loop
+          if (await this._tryCard(cardId, tokens, tokens)) {return;}
+        }
+      } else if (typeof this._safeTriggerFlow === 'function') {
+        for (const cardId of candidates) {
+          // eslint-disable-next-line no-await-in-loop
+          if (await this._safeTriggerFlow(cardId, tokens, { type: 'e000-s4' })) {return;}
         }
       }
     } catch (e) {
