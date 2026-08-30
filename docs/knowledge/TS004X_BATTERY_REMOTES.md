@@ -90,10 +90,11 @@ Cross-ref (diags meter91 `55e3e591`, Nobø `9cbf9eb6`, forum #2189, git P2235/P2
 
 1. **Wrong driver** — TS0043/44 stolen by `button_wireless_2` / wall_switch (P2249 strip pids).
 2. **0x8004 scene write** on TS0041–44 — attr 32772 unsupported → press dies.
-3. **First press ignored after sleep** — missing **0xFFDE=0x13**.
+3. **First press ignored after sleep / pair** — missing **0xFFDE=0x13** (Z2M configure + HA “first action ignored”).
 4. **Missing 0xFD BoundCluster** — SDK drops mfr cmds.
 5. **Button order reversed** — use setting `reverse_button_order` (`scene_switch_4` / `button_wireless_3`).
 6. **Peter couples ABSENT** — do not invent; wait for `[BUTTON-WAKE] mfr=… pid=…`.
+7. **Late identity (P2298/P2316)** — `zb_manufacturer_name` lands minutes after init → re-arm 0xFD + magic.
 
 ## Runtime path (Homey)
 

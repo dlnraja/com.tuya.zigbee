@@ -15,7 +15,10 @@
       "level": 1,
       "id": "onoff_fd_bound",
       "cluster": "0x0006",
-      "cmds": ["0xFD", "0xFC"],
+      "cmds": [
+        "0xFD",
+        "0xFC"
+      ],
       "impl": "lib/clusters/OnOffBoundCluster per-EP + TuyaPressTypeMap",
       "status": "present"
     },
@@ -37,7 +40,11 @@
       "level": 4,
       "id": "zcl_on_off_toggle",
       "cluster": "0x0006",
-      "cmds": ["0x00", "0x01", "0x02"],
+      "cmds": [
+        "0x00",
+        "0x01",
+        "0x02"
+      ],
       "impl": "attr.onOff + 9 OnOff command patterns",
       "status": "present"
     },
@@ -71,20 +78,142 @@
     }
   ],
   "productPreferredLevels": {
-    "TS0044": [1, 2, 5, 3, 4],
-    "TS004F": [1, 2, 6, 3, 4, 5],
-    "TS0041": [1, 2, 4, 5],
-    "TS0042": [1, 2, 4, 5],
-    "TS0043": [1, 2, 4, 5],
-    "TS0601": [7, 1, 2],
-    "TS0001": [4, 1, 2],
-    "TS0002": [4, 1, 2],
-    "TS0003": [4, 1, 2],
-    "TS0004": [4, 1, 2]
+    "TS0044": [
+      1,
+      2,
+      5,
+      3,
+      8,
+      4
+    ],
+    "TS004F": [
+      1,
+      2,
+      6,
+      3,
+      4,
+      5
+    ],
+    "TS0041": [
+      1,
+      2,
+      5,
+      8,
+      3,
+      4
+    ],
+    "TS0042": [
+      1,
+      2,
+      5,
+      8,
+      3,
+      4
+    ],
+    "TS0043": [
+      1,
+      2,
+      5,
+      8,
+      3,
+      4
+    ],
+    "TS0601": [
+      7,
+      1,
+      2
+    ],
+    "TS0001": [
+      4,
+      1,
+      2
+    ],
+    "TS0002": [
+      4,
+      1,
+      2
+    ],
+    "TS0003": [
+      4,
+      1,
+      2
+    ],
+    "TS0004": [
+      4,
+      1,
+      2
+    ]
+  },
+  "manufacturerPreferredLevels": {
+    "mrpevh8p": [
+      1,
+      2,
+      5,
+      8,
+      3,
+      4
+    ],
+    "5bpeda8u": [
+      1,
+      2,
+      5,
+      8,
+      3,
+      4
+    ],
+    "b4awzgct": [
+      1,
+      2,
+      5,
+      8,
+      3,
+      4
+    ],
+    "zgyzgdua": [
+      1,
+      2,
+      5,
+      3,
+      8,
+      4
+    ],
+    "wkai4ga5": [
+      1,
+      2,
+      5,
+      3,
+      8,
+      4
+    ],
+    "xffhmvhv": [
+      1,
+      2,
+      5,
+      3,
+      8,
+      4,
+      6
+    ],
+    "kfu8zapd": [
+      1,
+      2,
+      5,
+      3,
+      8,
+      4,
+      6
+    ]
   },
   "tokenNormalize": {
     "engine": "lib/utils/TuyaPressTypeMap.js",
-    "outputs": ["single", "double", "long", "triple", "rotate_left", "rotate_right"]
+    "outputs": [
+      "single",
+      "double",
+      "long",
+      "triple",
+      "rotate_left",
+      "rotate_right"
+    ]
   },
   "pillars": [
     "normalize all RX sources to Homey press tokens before flow dispatch",

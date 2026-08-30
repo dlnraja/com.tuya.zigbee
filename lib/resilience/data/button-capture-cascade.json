@@ -82,6 +82,15 @@
     "TS0003": [4, 1, 2],
     "TS0004": [4, 1, 2]
   },
+  "manufacturerPreferredLevels": {
+    "mrpevh8p": [1, 2, 5, 8, 3, 4],
+    "5bpeda8u": [1, 2, 5, 8, 3, 4],
+    "b4awzgct": [1, 2, 5, 8, 3, 4],
+    "zgyzgdua": [1, 2, 5, 3, 8, 4],
+    "wkai4ga5": [1, 2, 5, 3, 8, 4],
+    "xffhmvhv": [1, 2, 5, 3, 8, 4, 6],
+    "kfu8zapd": [1, 2, 5, 3, 8, 4, 6]
+  },
   "tokenNormalize": {
     "engine": "lib/utils/TuyaPressTypeMap.js",
     "outputs": ["single", "double", "long", "triple", "rotate_left", "rotate_right"]
