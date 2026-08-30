@@ -1,7 +1,7 @@
 # Weekly Sovereign Loop
 
-Generated: 2026-08-23T06:57:01.107Z
-Version: **9.0.626** · Branch: `master`
+Generated: 2026-08-30T11:49:11.857Z
+Version: **9.0.719** · Branch: `master`
 
 ## Quota policy
 - Cursor Automation = thin weekly brain (read report → bounded reliability fixes)
@@ -40,28 +40,36 @@ Version: **9.0.626** · Branch: `master`
 - ❌ `self-improve.yml` — workflow not found
 
 ## Recent workflow runs
-- [in_progress] 🤖 Auto-Fix + Publish Pipeline (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/32624192630
-- [in_progress] Weekly Sovereign Loop (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/32624108037
-- [success] Gmail Diagnostics Auto-Analysis (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/32622598147
-- [cancelled] Batch Analyze & Respond (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/32621848380
-- [success] 📥 Community Inbox (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/32621053959
-- [success] Auto Bot Issue Triage (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/32619508947
-- [success] Safe Sync master → stable-v5 (P52) (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/32619161630
-- [success] 🗂️ Blakadder Integration (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/32618849172
-- [success] 🔄 Auto-Enrich Closed Loop (P69) (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/32618410283
-- [success] 🩹 Publish Self-Heal (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/32618091146
+- [success] 🔬 Publish Diagnose (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/33309962967
+- [in_progress] 🤖 Auto-Fix + Publish Pipeline (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/33309848570
+- [skipped] Auto-Reopen on Comment (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/33309803533
+- [success] code-quality (`stable-v5`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/33309745580
+- [success] 🤖 Auto-Fix + Publish Pipeline (`stable-v5`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/33309745565
+- [failure] 🛡️ Unified CI/CD Orchestrator (`stable-v5`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/33309745560
+- [success] 🚀 Publish Stable to Test (`stable-v5`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/33309745558
+- [failure] 🔍 Syntax Check & SDK3 Validation (`stable-v5`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/33309745557
+- [in_progress] Weekly Sovereign Loop (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/33309736572
+- [success] e2e-dashboard-test (`master`) — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/33309244901
 
 ## Publish / validate related
-- [in_progress] 🤖 Auto-Fix + Publish Pipeline — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/32624192630
-- [success] 🩹 Publish Self-Heal — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/32618091146
+- [success] 🔬 Publish Diagnose — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/33309962967
+- [in_progress] 🤖 Auto-Fix + Publish Pipeline — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/33309848570
+- [success] 🤖 Auto-Fix + Publish Pipeline — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/33309745565
+- [success] 🚀 Publish Stable to Test — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/33309745558
+- [failure] Auto-Publish on Push — https://github.com/dlnraja/com.tuya.zigbee/actions/runs/33309055381
 
 ## Open issues
-- none
+- #533 Device Request - [SMART ZIGBEE CURTAIN SWITCH] - [MOES]
+- #532 [Device] Zigbee Smart AC Thermostat
 
 ## Open PRs
 - none
 
 ## Cursor brain — do this week (max)
+- **P0**: Inspect failed CI/publish runs and apply reliability-only fixes on master; backport crash fixes to stable-v5 only after soak.
+  - https://github.com/dlnraja/com.tuya.zigbee/actions/runs/33309745560 · https://github.com/dlnraja/com.tuya.zigbee/actions/runs/33309745557 · https://github.com/dlnraja/com.tuya.zigbee/actions/runs/33309055381 · https://github.com/dlnraja/com.tuya.zigbee/actions/runs/33309055369
+- **P1**: Human issues remain open — verify FP/runtime fixes silently; do not mass-close needs-maintainer.
+  - #533 Device Request - [SMART ZIGBEE CURTAIN SWITCH] - [MOES] · #532 [Device] Zigbee Smart AC Thermostat
 - **P0**: Local gates failing: dualClaim — fix before any publish.
 - **P1**: Some workflow dispatches failed (check GH_PAT / workflow names): mega-crawl.yml, gmail-diagnostics.yml, forum-poll.yml, auto-bot-issue-triage.yml, publish-diagnose.yml, safe-sync-stable.yml, self-improve.yml
 
