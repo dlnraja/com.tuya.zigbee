@@ -55,6 +55,54 @@
         "nl": "Fysiek UIT",
         "de": "Physisch AUS"
       }
+    },
+    {
+      "id": "wall_switch_4_gang_physical_gang1_on",
+      "title": { "en": "Gang 1 physical ON", "nl": "Gang 1 fysiek AAN" },
+      "args": [],
+      "titleFormatted": { "en": "Gang 1 physical ON", "nl": "Gang 1 fysiek AAN" }
+    },
+    {
+      "id": "wall_switch_4_gang_physical_gang1_off",
+      "title": { "en": "Gang 1 physical OFF", "nl": "Gang 1 fysiek UIT" },
+      "args": [],
+      "titleFormatted": { "en": "Gang 1 physical OFF", "nl": "Gang 1 fysiek UIT" }
+    },
+    {
+      "id": "wall_switch_4_gang_physical_gang2_on",
+      "title": { "en": "Gang 2 physical ON", "nl": "Gang 2 fysiek AAN" },
+      "args": [],
+      "titleFormatted": { "en": "Gang 2 physical ON", "nl": "Gang 2 fysiek AAN" }
+    },
+    {
+      "id": "wall_switch_4_gang_physical_gang2_off",
+      "title": { "en": "Gang 2 physical OFF", "nl": "Gang 2 fysiek UIT" },
+      "args": [],
+      "titleFormatted": { "en": "Gang 2 physical OFF", "nl": "Gang 2 fysiek UIT" }
+    },
+    {
+      "id": "wall_switch_4_gang_physical_gang3_on",
+      "title": { "en": "Gang 3 physical ON", "nl": "Gang 3 fysiek AAN" },
+      "args": [],
+      "titleFormatted": { "en": "Gang 3 physical ON", "nl": "Gang 3 fysiek AAN" }
+    },
+    {
+      "id": "wall_switch_4_gang_physical_gang3_off",
+      "title": { "en": "Gang 3 physical OFF", "nl": "Gang 3 fysiek UIT" },
+      "args": [],
+      "titleFormatted": { "en": "Gang 3 physical OFF", "nl": "Gang 3 fysiek UIT" }
+    },
+    {
+      "id": "wall_switch_4_gang_physical_gang4_on",
+      "title": { "en": "Gang 4 physical ON", "nl": "Gang 4 fysiek AAN" },
+      "args": [],
+      "titleFormatted": { "en": "Gang 4 physical ON", "nl": "Gang 4 fysiek AAN" }
+    },
+    {
+      "id": "wall_switch_4_gang_physical_gang4_off",
+      "title": { "en": "Gang 4 physical OFF", "nl": "Gang 4 fysiek UIT" },
+      "args": [],
+      "titleFormatted": { "en": "Gang 4 physical OFF", "nl": "Gang 4 fysiek UIT" }
     }
   ],
   "conditions": [
