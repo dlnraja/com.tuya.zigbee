@@ -9,6 +9,11 @@ const ManufacturerNameHelper = require('../../lib/helpers/ManufacturerNameHelper
  * Each gang can be a separate Homey device (Sub-device architecture).
  * v10.3.0 FIX (B10): Removed the redundant PhysicalButtonMixin + VirtualButtonMixin double wrap
  * double wrap — UnifiedSwitchBase already inherits both via TuyaZigbeeDevice.
+ * v10.6.1 FIX (forum #2099): initPhysicalButtonDetection() was never called —
+ * UnifiedSwitchBase.onNodeInit does not chain to TuyaZigbeeDevice.onNodeInit
+ * (the only automatic caller), so _physicalButtonState stayed undefined and
+ * every physical-press flow (physical_gangN_on/off, gangN_scene) was dead for
+ * the Moes TS0014 (_TZ3000_mrduubod). Call it explicitly like switch_4gang does.
  */
 class WallSwitch4Gang1WayDevice extends UnifiedSwitchBase {
 
@@ -56,18 +61,27 @@ class WallSwitch4Gang1WayDevice extends UnifiedSwitchBase {
         this._gangNumber = 1;
       }
       this._isSubDevice = Boolean(subDeviceId);
+      // P2322: Gabriel/HomeSuite NovaDigital 4G touch — force ZCL-only (ignore leftover EF00)
+      this._isPureTuyaDP = false;
+      if (this._protocolInfo) {
+        this._protocolInfo.protocol = 'zcl_only';
+        this._protocolInfo.preferDpTx = false;
+        this._protocolInfo.listenHybrid = false;
+      }
       this.log(`[WALL-4G] Initializing ${this._gangNumber > 1 ? 'Sub' : 'Primary'} Device (Gang ${this._gangNumber})`);
       await super.onNodeInit({ zclNode });
-      // v5.12.48 (backport P92.93, forum #2099): UnifiedSwitchBase.onNodeInit ne
-      // chaîne pas vers TuyaZigbeeDevice.onNodeInit — initPhysicalButtonDetection
-      // n'était jamais appelé → flows d'appui physique morts (Moes TS0014).
-      if (typeof this.initPhysicalButtonDetection === 'function') {
-        await this.initPhysicalButtonDetection(zclNode).catch(err => this.log(`[BUTTON-INIT] ⚠️ Physical error: ${err.message}`));
-      }
       await this._setupPzaoSceneInterceptor();
+      // v10.6.1 FIX (forum #2099): never called before — physical button flows were dead
+      if (typeof this.initPhysicalButtonDetection === 'function') {
+        await this.initPhysicalButtonDetection(zclNode);
+      }
       await this.initVirtualButtons();
       if (typeof this._registerButtonCapabilityListeners === 'function') {
         this._registerButtonCapabilityListeners();
+      }
+      // P2322: HomeSuite — re-apply backlight/power-on after pair (settings win over dump)
+      if (typeof this._pushConfiguredSwitchSettings === 'function' && !this._isSubDevice) {
+        await this._pushConfiguredSwitchSettings('p2322-pair').catch(() => {});
       }
       this.log(`[WALL-4G] v9.7.3 - Unified initialization complete for Gang ${this._gangNumber}`);
     }, 'onNodeInit');
