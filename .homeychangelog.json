@@ -1,4 +1,7 @@
 {
+  "5.12.100": {
+    "en": "Improved wall dimmer control reliability after pairing."
+  },
   "changelog": [
     {
       "version": "5.12.81",
@@ -1347,8 +1350,5 @@
   },
   "5.12.99": {
     "en": "P2303 BOTH: FCU wall_thermostat OFF/setpoint (Adam #532) — DeviceIO TX, FRAG/DP1 bool, mpbki2zm lock"
-  },
-  "5.12.100": {
-    "en": "P2308 BOTH: Gmail crash guards (SafeCapability recursion, virtualdriver soft-fail, dimmer IEEE soft-fail) + Moes Star Feather curtain lock."
   }
 }
