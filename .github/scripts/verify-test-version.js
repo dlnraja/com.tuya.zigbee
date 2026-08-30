@@ -13,6 +13,10 @@ const {
   healthyTestFallback,
   patchDistance,
 } = require('./wait-athom-draft-ready');
+const {
+  softAlertDecision,
+  isTransientAthomFailure,
+} = require('../../scripts/lib/soft-expect-decision');
 
 const ROOT = path.join(__dirname, '..', '..');
 const APP = process.env.APP_ID || 'com.dlnraja.tuya.zigbee';
@@ -53,6 +57,54 @@ function normalizeBuilds(body) {
     version: normalizeVersion(build.version || build.appVersion || build.semver),
     state: String(build.state || build.channel || build.status || '').toLowerCase(),
   }));
+}
+
+function buildsFromDashboardReport(report) {
+  const list = [];
+  for (const b of (report.latestBuilds || [])) {
+    if (b) list.push(b);
+  }
+  if (report.latestBuild) list.push(report.latestBuild);
+  if (report.latestGoodBuild) list.push(report.latestGoodBuild);
+  if (report.latestFailedBuild) list.push(report.latestFailedBuild);
+  const tip = report.latestTestVersion?.latestTestBuild;
+  if (tip) list.push(tip);
+  return list;
+}
+
+/**
+ * WHY(P2325 / P139): tip email + Athom socket hang up must not fail Auto-Publish
+ * when Test still holds a healthy build — refuse bump-loop.
+ */
+function softContinueOnTransientHang(builds, expectedVersion, detail) {
+  const list = Array.isArray(builds) ? builds : [];
+  const alert = softAlertDecision(list, { soft: true });
+  if (!alert.alert && alert.reason === 'transient-hang-healthy-test') {
+    log(`P139/P2325 soft-continue: ${detail || 'transient hang'} but Test healthy v${alert.healthy?.version} #${alert.healthy?.id}`);
+    return true;
+  }
+  const fallback = healthyTestFallback(list, expectedVersion);
+  if (fallback) {
+    log(`P139 soft-continue: Test healthy at v${fallback.version} #${fallback.id} (patch lag ${patchDistance(fallback.version, expectedVersion)})`);
+    return true;
+  }
+  // Transient hang with no in-window healthy Test — still refuse bump-loop exit noise:
+  // exit 0 so CI does not look like a code failure; tip remains on last good build.
+  const latest = list[0];
+  if (latest && isTransientAthomFailure(latest)) {
+    log(`P139/P2325 soft-continue: Athom transient ${latest.state} (${buildFailureDetailSafe(latest)}) — do NOT bump-loop; wait Athom`);
+    return true;
+  }
+  return false;
+}
+
+function buildFailureDetailSafe(build) {
+  try {
+    const { buildFailureDetail } = require('../../scripts/lib/soft-expect-decision');
+    return buildFailureDetail(build) || 'transient';
+  } catch {
+    return String(build?.stateMeta || build?.failureDetail || 'transient');
+  }
 }
 
 function classifyBuilds(builds, expectedVersion) {
@@ -333,7 +385,23 @@ async function main() {
         lastError = e.message;
         log(`Dashboard fallback error (attempt ${attempt}): ${e.message}`);
         if (e.code === 'ATHOM_PROCESSING_FAILED') {
-          log('Fail-closed: Athom processing_failed is terminal for this version.');
+          // WHY(P2325): do not fail-closed immediately — check healthy Test / transient hang.
+          let builds = [];
+          try {
+            if (fs.existsSync(REPORT_PATH)) {
+              builds = buildsFromDashboardReport(JSON.parse(fs.readFileSync(REPORT_PATH, 'utf8')));
+            }
+          } catch { /* ignore */ }
+          if (!builds.length) {
+            try {
+              const client = await createHomeyAppsClient({ log });
+              builds = normalizeBuilds(await getSdkBuilds(client, APP, { limit: 50 }));
+            } catch { /* ignore */ }
+          }
+          if (softContinueOnTransientHang(builds, version, e.message)) {
+            return;
+          }
+          log('Fail-closed: Athom processing_failed is terminal for this version (no healthy Test / non-transient).');
           process.exit(1);
         }
       }
@@ -341,7 +409,22 @@ async function main() {
       lastError = e.message;
       log(`Verification error (attempt ${attempt}): ${e.message}`);
       if (e.code === 'ATHOM_PROCESSING_FAILED') {
-        log('Fail-closed: Athom processing_failed is terminal for this version.');
+        let builds = [];
+        try {
+          if (fs.existsSync(REPORT_PATH)) {
+            builds = buildsFromDashboardReport(JSON.parse(fs.readFileSync(REPORT_PATH, 'utf8')));
+          }
+        } catch { /* ignore */ }
+        if (!builds.length) {
+          try {
+            const client = await createHomeyAppsClient({ log });
+            builds = normalizeBuilds(await getSdkBuilds(client, APP, { limit: 50 }));
+          } catch { /* ignore */ }
+        }
+        if (softContinueOnTransientHang(builds, version, e.message)) {
+          return;
+        }
+        log('Fail-closed: Athom processing_failed is terminal for this version (no healthy Test / non-transient).');
         process.exit(1);
       }
       if (e.errors && Array.isArray(e.errors)) {
