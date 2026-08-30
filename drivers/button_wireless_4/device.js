@@ -270,15 +270,13 @@ class Button4GangDevice extends ButtonDevice {
    */
   async _setupRawFrameInterceptor(zclNode) {
     try {
-      const node = await this.homey?.zigbee?.getNode?.(this);
-      if (!node || node.__tuyaButton4RawWrapper) {return;}
-
-      // P75.15: Variable named `orig` to match forum-routing-regressions test contract
-      const orig = typeof node.handleFrame === 'function'
-        ? node.handleFrame.bind(node)
-        : null;
-      const original = orig; // alias used in this file
-      const wrapper = async (...args) => {
+      // WHY(P2328): never blind-assign node.handleFrame — orphans PhysicalButtonMixin
+      // physical-onoff-fd / IO wrap chain and double-fires 0xFD. Same pattern as scene_switch_4.
+      const node = zclNode || this.zclNode;
+      if (!node || typeof node.handleFrame !== 'function') {return;}
+      const { wrapHandleFrame } = require('../../lib/utils/BidirectionalButtonState');
+      const self = this;
+      wrapHandleFrame(node, 'button-wireless-4-raw', async (args, next) => {
         const [endpointId, clusterId, frame] = args;
         try {
           const ep = Math.max(1, Math.min(4, Number(endpointId) || 1));
@@ -287,24 +285,17 @@ class Button4GangDevice extends ButtonDevice {
             ? json.data
             : Array.isArray(json?.data)
               ? Buffer.from(json.data)
-              : this._extractRawFrameData(json);
+              : self._extractRawFrameData(json);
 
-          // Proven TS0044 path: command 0xFD on cluster 0x0006, action in data[3].
-          // v10.3.0 FIX (B9): check the ZCL command id (data[2]) — the old
-          // "any frame with data[3] in 0..2" test also matched OnOff attribute
-          // reports (cmd 0x0A, attrId 0x0000 → data[3]=0) and read responses
-          // (cmd 0x01), producing phantom presses.
-          // v10.6.0 FIX: use the shared ZCL header parser — when the frame's
-          // manufacturer-specific bit (0x04) is set, the header is 5 bytes and
-          // cmdId lands at data[4] (payload at data[5]). The literal data[2]
-          // test silently missed presses on TS0044/TS004F mfr-bit variants.
+          // Gap-fill only: Physical BoundCluster already owns 0xFD when armed.
           const { parseZclHeader } = require('../../lib/zigbee/ZigbeeHelpers');
           const hdr = data ? parseZclHeader(data) : null;
-          if (Number(clusterId) === 0x0006 && hdr && hdr.cmdId === 0xFD &&
-              data.length === hdr.payloadOffset + 1 && [0, 1, 2].includes(data[hdr.payloadOffset])) {
+          if (!self._onOffFdBoundClusterInitialized
+              && Number(clusterId) === 0x0006 && hdr && hdr.cmdId === 0xFD
+              && data.length === hdr.payloadOffset + 1 && [0, 1, 2].includes(data[hdr.payloadOffset])) {
             const pressType = resolvePressType(data[hdr.payloadOffset], 'TS0044-RAW');
-            this.log(`[TS0044-RAW] EP${ep} action=${data[hdr.payloadOffset]} -> ${pressType}${hdr.mfrCode !== null ? ` (mfr 0x${hdr.mfrCode.toString(16)})` : ''}`);
-            await this._triggerButton4Gang(ep, pressType);
+            self.log(`[TS0044-RAW] EP${ep} action=${data[hdr.payloadOffset]} -> ${pressType}${hdr.mfrCode !== null ? ` (mfr 0x${hdr.mfrCode.toString(16)})` : ''}`);
+            await self._triggerButton4Gang(ep, pressType);
           } else if (Number(clusterId) === 0xE000) {
             let button = ep;
             let pressType = 'single';
@@ -314,25 +305,19 @@ class Button4GangDevice extends ButtonDevice {
             } else if (data?.length >= 1) {
               pressType = resolvePressType(data[0], 'E000-RAW');
             }
-            await this._triggerButton4Gang(button, pressType);
-          } else {
-            // v10.1.3: VERBOSE fallback — log EVERY unrecognized frame so the
-            // next user diagnostic reveals the actual frame format (forum bug:
-            // TS0044 _TZ3000_u3nv1jwk presses not detected). Diagnostic only,
-            // no guessing. Throttled per (cluster+data signature) to avoid spam.
-            this._logUnrecognizedFrame(ep, clusterId, json, data);
+            await self._triggerButton4Gang(button, pressType);
+          } else if (!self._onOffFdBoundClusterInitialized) {
+            self._logUnrecognizedFrame(ep, clusterId, json, data);
           }
         } catch (err) {
-          this.log(`[BUTTON-4-RAW] Decode failed: ${err.message}`);
+          self.log(`[BUTTON-4-RAW] Decode failed: ${err.message}`);
         }
-        return orig ? orig(...args) : undefined;
-      };
-
-      node.handleFrame = wrapper;
-      node.__tuyaButton4RawWrapper = wrapper;
+        return next(...args);
+      });
+      // P75.15 test contract: retain aliases without orphaning the wrap chain
+      node.__tuyaButton4RawWrapper = node.handleFrame;
       this._rawZigbeeNode = node;
-      this._rawZigbeeOriginalHandleFrame = original;
-      this.log('[BUTTON-4-RAW] Raw node interceptor ready');
+      this.log('[BUTTON-4-RAW] P2328 wrapHandleFrame tagged button-wireless-4-raw');
     } catch (e) {
       this.log(`[BUTTON-4-RAW] Setup failed: ${e.message}`);
     }

@@ -230,7 +230,9 @@ class SceneSwitch4Device extends ButtonDevice {
         const cId = args[1];
         const f = args[2];
         try {
-          if (cId === 6 || cId === 0x0006) {
+          // WHY(P2328): skip 0xFD when Physical OnOffBoundCluster already owns it —
+          // dual raw+Bound double-fires Flow cards (ghost automations).
+          if (!self._onOffFdBoundClusterInitialized && (cId === 6 || cId === 0x0006)) {
             const json = typeof f?.toJSON === 'function' ? f.toJSON() : f;
             const d = Buffer.isBuffer(json?.data) ? json.data
               : Array.isArray(json?.data) ? Buffer.from(json.data)

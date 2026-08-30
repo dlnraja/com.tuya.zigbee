@@ -2783,6 +2783,47 @@
       "notes": "meter91 #2189 — scene_switch_4 0xFD; never invent TS0601-only"
     },
     {
+      "id": "p2328-wkai4ga5-ts0044-scene",
+      "mfr": [
+        "_TZ3000_wkai4ga5",
+        "_tz3000_wkai4ga5",
+        "_TZ3000_WKAI4GA5"
+      ],
+      "productId": [
+        "TS0044"
+      ],
+      "canonicalDriver": "scene_switch_4",
+      "forbiddenDrivers": [
+        "button_wireless_4",
+        "smart_knob",
+        "wall_switch_4_gang",
+        "wall_dimmer_tuya"
+      ],
+      "source": "p2328-forum-buttons",
+      "notes": "Moes/SunBeech TS0044 — NOT TS004F 0x8004; strip wall_switch steal"
+    },
+    {
+      "id": "p2328-ts0044-remotes-not-wall-switch",
+      "mfr": [
+        "_TZ3000_ufhtxr59",
+        "_tz3000_ufhtxr59",
+        "_TZ3000_vp6clf9d",
+        "_tz3000_vp6clf9d",
+        "_TZ3000_abci1hiu",
+        "_tz3000_abci1hiu"
+      ],
+      "productId": [
+        "TS0044"
+      ],
+      "canonicalDriver": "scene_switch_4",
+      "forbiddenDrivers": [
+        "wall_switch_4_gang",
+        "smart_knob"
+      ],
+      "source": "p2328-forum-buttons",
+      "notes": "Battery scene remotes — never pair as wall_switch_4_gang"
+    },
+    {
       "id": "p2236-nkcobies-ts011f-plug",
       "mfr": [
         "_TZ3000_nkcobies",

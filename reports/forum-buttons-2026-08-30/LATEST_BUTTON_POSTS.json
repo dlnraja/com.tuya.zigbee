@@ -1,0 +1,598 @@
+[
+  {
+    "topic": 158757,
+    "name": "moes-presence-settings",
+    "post": 10,
+    "user": "Gabriel_Pedrosa_Mach",
+    "at": "2026-08-30T16:41:08.983Z",
+    "issues": [
+      "dimmer",
+      "gang",
+      "button",
+      "flow",
+      "rejoin",
+      "timeout",
+      "battery"
+    ],
+    "mfrs": [],
+    "pids": [],
+    "excerpt": "Hi SergeP, Since I already have working drivers for a few MOES devices in my repo (GPL v3 — GitHub - gpmachado/com.gpm.homesuite: Homey app for Zigbee/Tuya devices — switches, sensors, plugs and more · GitHub ), happy to"
+  },
+  {
+    "topic": 140352,
+    "name": "universal-tuya-zigbee",
+    "post": 2207,
+    "user": "meter91",
+    "at": "2026-08-30T08:35:19.758Z",
+    "issues": [
+      "unknown",
+      "button"
+    ],
+    "mfrs": [],
+    "pids": [],
+    "excerpt": "Hi @dlnraja , thank you for your reply. I tried adding the switch but it isn’t recognised and adds as unknown zigbee device. I tried all relevant 4-button switches and remotes but it works for all the same. Don’t know wh"
+  },
+  {
+    "topic": 140352,
+    "name": "universal-tuya-zigbee",
+    "post": 2203,
+    "user": "Peter_van_Werkhoven",
+    "at": "2026-08-27T08:31:08.567Z",
+    "issues": [
+      "wrong driver",
+      "flow"
+    ],
+    "mfrs": [],
+    "pids": [],
+    "excerpt": "Hi Dylan Good morning it’s me again, Despite the wrong driver message when opening the Waterdetector it’s still working normal and triggering the flow so receiving messages when it touches water. 1000045253 1220×2712 122"
+  },
+  {
+    "topic": 156967,
+    "name": "moes-official",
+    "post": 57,
+    "user": "SergeP",
+    "at": "2026-08-26T11:37:18.557Z",
+    "issues": [
+      "gang",
+      "unknown"
+    ],
+    "mfrs": [],
+    "pids": [],
+    "excerpt": "Hi Manfred_Vodermeier , As I don’t own myself one of these uints, it’ll be hard to integrate as it. Btw, I looked for this ZT-S02-SR-CBK-EU unit and it seems very near from the Wall Scene Remote 2 Gang (ZT-B-EU2-MS) unit"
+  },
+  {
+    "topic": 156967,
+    "name": "moes-official",
+    "post": 56,
+    "user": "Manfred_Vodermeier",
+    "at": "2026-08-26T10:26:20.765Z",
+    "issues": [
+      "button"
+    ],
+    "mfrs": [],
+    "pids": [],
+    "excerpt": "Hi, i would like to use the black Moes 3-was-Smart Button ZT-S02-SR-CBK-EU. (1click, double click, longpress) is it possibke to integrate it in Homey Pro. i testet many options from tuya tuya zigbee app but nothing worke"
+  },
+  {
+    "topic": 140352,
+    "name": "universal-tuya-zigbee",
+    "post": 2202,
+    "user": "Peter_van_Werkhoven",
+    "at": "2026-08-26T07:47:13.072Z",
+    "issues": [
+      "wrong driver",
+      "flow"
+    ],
+    "mfrs": [],
+    "pids": [],
+    "excerpt": "Hi Dylan good morning I’ve installed the latest version this morning 9.0.661 and I see that the Waterdetector sensor is not connected anymore it says that device is not there because of wrong driver, I was so pleased bef"
+  },
+  {
+    "topic": 158757,
+    "name": "moes-presence-settings",
+    "post": 2,
+    "user": "Gabriel_Pedrosa_Mach",
+    "at": "2026-08-25T22:53:42.297Z",
+    "issues": [
+      "flow"
+    ],
+    "mfrs": [
+      "_TZ3218_T9YNFZ4X"
+    ],
+    "pids": [
+      "TS0225"
+    ],
+    "excerpt": "Hi Kadir, I have this exact device (_TZ3218_t9ynfz4x, Moes/Linptech ZSS-LP-HP02-MS / TS0225) working reliably in my own Homey app, including saving sensitivity/keep-time/LED/distance parameters. Likely cause of the save "
+  },
+  {
+    "topic": 140352,
+    "name": "universal-tuya-zigbee",
+    "post": 2191,
+    "user": "Toni_UrbanoMarquez",
+    "at": "2026-08-23T05:11:19.799Z",
+    "issues": [
+      "endpoint"
+    ],
+    "mfrs": [
+      "_TZE284_6OCNQLHN"
+    ],
+    "pids": [
+      "TS0601"
+    ],
+    "excerpt": "Hi, I need support for a Tuya Zigbee DIN rail energy meter. Device: Model ID: TS0601 Manufacturer: _TZE284_6ocnqlhn Device: Tongou TO-Q-SYS-JZT Endpoint: 1 Clusters: 0xEF00 and 0xED00 Universal Tuya version: v9.0.626 Exp"
+  },
+  {
+    "topic": 140352,
+    "name": "universal-tuya-zigbee",
+    "post": 2190,
+    "user": "Peter_van_Werkhoven",
+    "at": "2026-08-21T19:22:42.668Z",
+    "issues": [
+      "sos",
+      "button",
+      "battery",
+      "luminance"
+    ],
+    "mfrs": [],
+    "pids": [],
+    "excerpt": "Hi Dylan Good evening, SOS button’s still working fine, only Battery is very Nervous/Glitchy 1000041136 1220×2712 248 KB 1000041137 1220×2712 183 KB Contact sensors are not switching open/close but only acting as puls co"
+  },
+  {
+    "topic": 140352,
+    "name": "universal-tuya-zigbee",
+    "post": 2189,
+    "user": "meter91",
+    "at": "2026-08-21T12:51:38.641Z",
+    "issues": [],
+    "mfrs": [
+      "_TZ3000_ZGYZGDUA"
+    ],
+    "pids": [
+      "TS0044"
+    ],
+    "excerpt": "Hey! Thanks for all the great work. I’m having issues with the TS0044 + _TZ3000_zgyzgdua 4-way switch. Similair to what I read above I doesn’t work with it’s physical buttons (in-app everything works). I got below error "
+  },
+  {
+    "topic": 146735,
+    "name": "tuya-smart-life",
+    "post": 492,
+    "user": "drenso",
+    "at": "2026-08-20T14:38:19.720Z",
+    "issues": [
+      "endpoint"
+    ],
+    "mfrs": [],
+    "pids": [],
+    "excerpt": "The API endpoint actually differs for each account, so it could very well be that that is the one used for your API calls, yes. smarthomesven: So is it per endpoint per IP, or just per endpoint in general? You usually ha"
+  },
+  {
+    "topic": 146735,
+    "name": "tuya-smart-life",
+    "post": 490,
+    "user": "smarthomesven",
+    "at": "2026-08-20T14:20:12.909Z",
+    "issues": [
+      "endpoint"
+    ],
+    "mfrs": [],
+    "pids": [],
+    "excerpt": "drenso: Endpoints and domains are different things. I know, but is it the endpoint on m1.tuyaeu.com ? drenso: No, it is a generic endpoint rate limit that is being hit. That’s strange. So is it per endpoint per IP, or ju"
+  },
+  {
+    "topic": 146735,
+    "name": "tuya-smart-life",
+    "post": 489,
+    "user": "drenso",
+    "at": "2026-08-20T14:17:46.440Z",
+    "issues": [
+      "endpoint"
+    ],
+    "mfrs": [],
+    "pids": [],
+    "excerpt": "Yes, it is affecting Home Assistant users as well. smarthomesven: Do you mean the m1.tuyaeu endpoint? Endpoints and domains are different things. smarthomesven: Probably rate limiting on IP No, it is a generic endpoint r"
+  },
+  {
+    "topic": 146735,
+    "name": "tuya-smart-life",
+    "post": 485,
+    "user": "smarthomesven",
+    "at": "2026-08-20T14:04:16.644Z",
+    "issues": [
+      "endpoint"
+    ],
+    "mfrs": [],
+    "pids": [],
+    "excerpt": "Do you mean the m1.tuyaeu endpoint? Because fetching a token every few seconds is quite strange, and that’s probably why Tuya implemented the limit image 1020×473 29.5 KB image 982×558 32.9 KB"
+  },
+  {
+    "topic": 146735,
+    "name": "tuya-smart-life",
+    "post": 484,
+    "user": "drenso",
+    "at": "2026-08-20T14:01:47.390Z",
+    "issues": [
+      "endpoint"
+    ],
+    "mfrs": [],
+    "pids": [],
+    "excerpt": "The rate limit only concerns the token endpoint, so the amount of devices is not a factor here."
+  },
+  {
+    "topic": 146735,
+    "name": "tuya-smart-life",
+    "post": 483,
+    "user": "Joep",
+    "at": "2026-08-20T13:50:35.658Z",
+    "issues": [
+      "flow"
+    ],
+    "mfrs": [],
+    "pids": [],
+    "excerpt": "After the latest update, it has been very stable at my home over the past few days. But I only have 4 Tuya lights and I control them twice a day with a flow (turning them on in the evening and turning them off when I go "
+  },
+  {
+    "topic": 140352,
+    "name": "universal-tuya-zigbee",
+    "post": 2186,
+    "user": "Gabriel_Pedrosa_Mach",
+    "at": "2026-08-20T12:33:50.392Z",
+    "issues": [
+      "gang"
+    ],
+    "mfrs": [
+      "_TZ3000_LWTHNP7J"
+    ],
+    "pids": [],
+    "excerpt": "The 4gang zcl device is a device sold in Brazil with the new digital brand. It is a 4-key touch device. In my repository there is his interview. com.gpm.homesuite/Homey_Interview/4G touch/_TZ3000_lwthnp7j.txt at main · g"
+  },
+  {
+    "topic": 140352,
+    "name": "universal-tuya-zigbee",
+    "post": 2185,
+    "user": "Zemismart_Official",
+    "at": "2026-08-20T09:49:25.260Z",
+    "issues": [
+      "gang"
+    ],
+    "mfrs": [],
+    "pids": [],
+    "excerpt": "for the 4 gang ZCL, you mean the module :ZMS-206 ? the one with screen thanks for your reply!"
+  },
+  {
+    "topic": 140352,
+    "name": "universal-tuya-zigbee",
+    "post": 2184,
+    "user": "Peter_van_Werkhoven",
+    "at": "2026-08-19T10:37:14.180Z",
+    "issues": [
+      "sos",
+      "flow"
+    ],
+    "mfrs": [],
+    "pids": [],
+    "excerpt": "Hi Dylan Good afternoon you achieved it the SOS buttons finally work again, great job 1000040782 1220×2712 202 KB Before I had to disable the app last night because Flow’s didn’t run and I also couldn’t switch off device"
+  },
+  {
+    "topic": 146735,
+    "name": "tuya-smart-life",
+    "post": 480,
+    "user": "Autogedrocht",
+    "at": "2026-08-18T20:29:22.739Z",
+    "issues": [
+      "flow"
+    ],
+    "mfrs": [],
+    "pids": [],
+    "excerpt": "FYI Sadly it still doenst work stable. I constantly have to restart app to have connection with the devices. I automatically restart it every hour with a flow, but thats not enough apparently. With Smartwares app devices"
+  },
+  {
+    "topic": 146735,
+    "name": "tuya-smart-life",
+    "post": 477,
+    "user": "smarthomesven",
+    "at": "2026-08-18T16:36:59.701Z",
+    "issues": [
+      "flow"
+    ],
+    "mfrs": [],
+    "pids": [],
+    "excerpt": "I’d recommend using this script: [HOW-TO][Pro][Cloud] - Tool to FIX (advanced) flows after removing and re-adding devices Tutorials Also available as app: [APP][Pro]Flow Converter Use at own risk! If you have a broken de"
+  },
+  {
+    "topic": 140352,
+    "name": "universal-tuya-zigbee",
+    "post": 2183,
+    "user": "Peter_van_Werkhoven",
+    "at": "2026-08-18T15:47:48.694Z",
+    "issues": [
+      "flow",
+      "sos"
+    ],
+    "mfrs": [],
+    "pids": [],
+    "excerpt": "Hi Dylan Good afternoon, is the app using to much memory, because Flow’s don’t run and device’s are difficult to start I noticed since yesterday. Diagnostic code e181bc15-ebb8-4a6f-a08a-b00b5fe71552 Also non of the devic"
+  },
+  {
+    "topic": 140352,
+    "name": "universal-tuya-zigbee",
+    "post": 2182,
+    "user": "Gabriel_Pedrosa_Mach",
+    "at": "2026-08-18T10:28:21.684Z",
+    "issues": [
+      "gang",
+      "rejoin"
+    ],
+    "mfrs": [],
+    "pids": [],
+    "excerpt": "hanks for forwarding it! The switches I’ve been testing correspond to the TB25 series — TB25-1, TB25-2, TB25-3, TB25-4 and TB25-6 (1 to 6 gang), plus a 4-gang ZCL variant and a touch model. The touch model actually uses "
+  },
+  {
+    "topic": 140352,
+    "name": "universal-tuya-zigbee",
+    "post": 2180,
+    "user": "Zemismart_Official",
+    "at": "2026-08-18T03:30:51.550Z",
+    "issues": [
+      "gang",
+      "jitter",
+      "endpoint"
+    ],
+    "mfrs": [],
+    "pids": [],
+    "excerpt": "dlnraja: Hi @Gabriel_Pedrosa_Mach , Thanks for such transparent and actionable technical feedback! The multi-gang cross-linking and state bleeding is definitely one of the trickiest parts on Homey’s Zigbee implementation"
+  },
+  {
+    "topic": 140352,
+    "name": "universal-tuya-zigbee",
+    "post": 2178,
+    "user": "Gabriel_Pedrosa_Mach",
+    "at": "2026-08-17T16:02:41.789Z",
+    "issues": [
+      "endpoint",
+      "gang",
+      "jitter",
+      "offline"
+    ],
+    "mfrs": [],
+    "pids": [],
+    "excerpt": "Appreciate you digging into the endpoint isolation. On gang2: I get why onoff.gang2 -style capability instances mirror the physical Tuya layout more closely, but in practice it creates real friction for the end user. Sev"
+  },
+  {
+    "topic": 146735,
+    "name": "tuya-smart-life",
+    "post": 467,
+    "user": "bert69",
+    "at": "2026-08-17T15:34:04.893Z",
+    "issues": [
+      "unknown"
+    ],
+    "mfrs": [],
+    "pids": [],
+    "excerpt": "smarthomesven: I mean why do you even need smart devices at all if nothing can be controlled remotely That’s where you are wrong; this is exactly where Homey comes in so you only have one entrypoint for your smart home, "
+  },
+  {
+    "topic": 140352,
+    "name": "universal-tuya-zigbee",
+    "post": 2176,
+    "user": "dlnraja",
+    "at": "2026-08-17T13:20:28.255Z",
+    "issues": [
+      "gang",
+      "endpoint",
+      "jitter",
+      "power-restore",
+      "battery"
+    ],
+    "mfrs": [],
+    "pids": [],
+    "excerpt": "Hi Gabriel, thanks for going deeper — the ZCL vs EF00 split is the important bit. I tightened the multi-gang path so endpoint 2 stays on onoff.gang2, and commands are paced with a bit of jitter plus retry if there’s no a"
+  },
+  {
+    "topic": 140352,
+    "name": "universal-tuya-zigbee",
+    "post": 2174,
+    "user": "dlnraja",
+    "at": "2026-08-17T12:33:58.272Z",
+    "issues": [
+      "gang",
+      "jitter",
+      "endpoint"
+    ],
+    "mfrs": [],
+    "pids": [],
+    "excerpt": "Hi @Gabriel_Pedrosa_Mach , Thanks for such transparent and actionable technical feedback! The multi-gang cross-linking and state bleeding is definitely one of the trickiest parts on Homey’s Zigbee implementation, especia"
+  },
+  {
+    "topic": 140352,
+    "name": "universal-tuya-zigbee",
+    "post": 2173,
+    "user": "Gabriel_Pedrosa_Mach",
+    "at": "2026-08-17T11:44:24.780Z",
+    "issues": [
+      "gang"
+    ],
+    "mfrs": [
+      "_TZ3000_OVYAISIP",
+      "_TZ3000_PK8TGTDB",
+      "_TZ3000_YWUBFUVT",
+      "_TZ3000_KGXEJ1DV",
+      "_TZ3000_JJDKHUEQ",
+      "_TZ3000_YERVJNLJ",
+      "_TZ3000_VJHCENZO",
+      "_TZ3000_QXCNWV26",
+      "_TZ3000_EQSAIR32",
+      "_TZ3000_F09J9QJB",
+      "_TZ3000_FAWK5XJV",
+      "_TZ3000_OK0GGPK7",
+      "_TZE200_SHKXSGIS",
+      "_TZE284_SHKXSGIS",
+      "_TZE204_AAGRXLBD",
+      "_TZE200_R731ZLXK",
+      "_TZE284_R731ZLXK"
+    ],
+    "pids": [
+      "TS0001",
+      "TS0002",
+      "TS0003",
+      "TS0601"
+    ],
+    "excerpt": "Hi @Zemismart_Official , following up with additional switches I’ve validated on my own driver. Some of these are Zemismart-branded directly; others I bought in Brazil under the “Novadigital” brand (a local distributor t"
+  },
+  {
+    "topic": 146735,
+    "name": "tuya-smart-life",
+    "post": 460,
+    "user": "John_Roording",
+    "at": "2026-08-17T11:43:31.946Z",
+    "issues": [
+      "timeout",
+      "flow"
+    ],
+    "mfrs": [],
+    "pids": [],
+    "excerpt": "I have now to restart about once a day. I first see no reaction and 10s timeout. When restart your app it works again. This follows all the messages I read here and people creating a flow checking every 15 minutes and re"
+  },
+  {
+    "topic": 140352,
+    "name": "universal-tuya-zigbee",
+    "post": 2172,
+    "user": "Gabriel_Pedrosa_Mach",
+    "at": "2026-08-17T11:43:27.496Z",
+    "issues": [
+      "power restore",
+      "gang",
+      "burst",
+      "unavailable",
+      "rejoin"
+    ],
+    "mfrs": [],
+    "pids": [],
+    "excerpt": "Thanks, @dlnraja — glad the comparison was useful, happy to go deeper. One caveat up front: this all applies to Tuya devices on standard ZCL clusters. The EF00 (proprietary cluster) devices don’t behave the same way, so "
+  },
+  {
+    "topic": 140352,
+    "name": "universal-tuya-zigbee",
+    "post": 2171,
+    "user": "dlnraja",
+    "at": "2026-08-17T09:34:21.973Z",
+    "issues": [
+      "gang",
+      "battery"
+    ],
+    "mfrs": [],
+    "pids": [
+      "TS0043"
+    ],
+    "excerpt": "Hi @Zemismart_Official , Thank you for following up on this! The specific switch I am referring to is: Model / Product Reference: ZB-L03C-H Zigbee Model ID: TS0043 Type: 3-Gang Wireless Scene Switch (battery-powered CR20"
+  },
+  {
+    "topic": 140352,
+    "name": "universal-tuya-zigbee",
+    "post": 2170,
+    "user": "dlnraja",
+    "at": "2026-08-17T09:33:15.849Z",
+    "issues": [
+      "scale",
+      "gang"
+    ],
+    "mfrs": [],
+    "pids": [],
+    "excerpt": "Hi @Gabriel_Pedrosa_Mach , Thanks a lot for the kind words and for taking the time to share your detailed feedback! You’ve pinpointed the exact reality of maintaining Tuya at scale: per-device validation, handling cluste"
+  },
+  {
+    "topic": 140352,
+    "name": "universal-tuya-zigbee",
+    "post": 2168,
+    "user": "Gabriel_Pedrosa_Mach",
+    "at": "2026-08-17T00:45:25.775Z",
+    "issues": [
+      "scale",
+      "cover",
+      "flow",
+      "gang",
+      "cross-link"
+    ],
+    "mfrs": [],
+    "pids": [],
+    "excerpt": "First — genuine respect for taking on a project at this scale. Broad Tuya/Zigbee coverage is a lot of surface area to maintain, and it’s a real service to people who’d otherwise have no driver at all. To be clear, I’m no"
+  },
+  {
+    "topic": 140352,
+    "name": "universal-tuya-zigbee",
+    "post": 2167,
+    "user": "Peter_van_Werkhoven",
+    "at": "2026-08-16T20:28:52.254Z",
+    "issues": [
+      "flow",
+      "sos"
+    ],
+    "mfrs": [],
+    "pids": [],
+    "excerpt": "Hi Dylan Good evening, App is not crashing anymore and Waterdetector sensor is working receiving data in Homey and triggering the Flow now 1000040577 1220×2712 190 KB SOS and Smartbutton still no response in Homey and Fl"
+  },
+  {
+    "topic": 146735,
+    "name": "tuya-smart-life",
+    "post": 459,
+    "user": "kaylan",
+    "at": "2026-08-16T10:46:49.463Z",
+    "issues": [
+      "flow"
+    ],
+    "mfrs": [],
+    "pids": [],
+    "excerpt": "I personally haven’t experienced any issues with running it every 30 minutes. I also don’t think this flow puts much load on Homey, since it’s quite a simple flow. As a small update: last night, the app restarted at 5:01"
+  },
+  {
+    "topic": 43287,
+    "name": "device-capabilities",
+    "post": 2202,
+    "user": "SunBeech",
+    "at": "2026-08-14T17:15:53.141Z",
+    "issues": [
+      "flow"
+    ],
+    "mfrs": [],
+    "pids": [],
+    "excerpt": "Your flow updates all fields in parallel. Maybe that’s too much. Try updating them in series (or series of parallel blocks)."
+  },
+  {
+    "topic": 43287,
+    "name": "device-capabilities",
+    "post": 2197,
+    "user": "SunBeech",
+    "at": "2026-08-12T11:58:58.332Z",
+    "issues": [
+      "flow"
+    ],
+    "mfrs": [],
+    "pids": [],
+    "excerpt": "@4x4_Pete , Below an example on how to combine values. An AVD that has a temperature and humidity value. I combined both values in a status field via a flow (Status) or via a calculation in the AVD’s field itself (Status"
+  },
+  {
+    "topic": 43287,
+    "name": "device-capabilities",
+    "post": 2192,
+    "user": "4x4_Pete",
+    "at": "2026-08-12T11:14:27.749Z",
+    "issues": [
+      "flow"
+    ],
+    "mfrs": [],
+    "pids": [],
+    "excerpt": "Hi @SunBeech What I am referencing are two boolean fields/properties of that device (not BLL variables,; BLL here just means using BLL logic, I think). And I am asking myself, why would it be possible to attach/reference"
+  },
+  {
+    "topic": 43287,
+    "name": "device-capabilities",
+    "post": 2191,
+    "user": "SunBeech",
+    "at": "2026-08-12T10:59:51.818Z",
+    "issues": [
+      "flow"
+    ],
+    "mfrs": [],
+    "pids": [],
+    "excerpt": "I am not sure whether you can reference other fields in the AVD. You can use a flow that triggers on a change in the values you want to combine, and then combine them and store them in another BLL variable (that sources "
+  }
+]
