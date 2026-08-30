@@ -127,13 +127,18 @@
         "ir_blaster"
       ],
       "protocol": "tuya_ef00",
-      "notes": "BSEED Click 1-gang EF00 dimmer insert. MCU brightness 0-1000 (never write >1000, Z2M#32305). Stale climate pairing cannot be swapped at runtime — remove and re-add as wall dimmer. Couple is TS0601 only; do not invent TS0201.",
+      "notes": "P2322 PresentSky #2206: pair as wall_dimmer OK but controls were dead — force magic handshake + IEEE heal from node + flow cards must TX via _txCapability (not setCapabilityValue alone). MCU brightness 0-1000. Couple TS0601 only; never invent TS0201. Remove+re-pair after update.",
       "sources": [
+        "forum-140352-2206",
         "forum-140352",
+        "diag-60959c24",
         "diag-f20dc4f0",
         "P139",
         "P149",
-        "z2m#32305"
+        "P2314",
+        "P2322",
+        "z2m#32305",
+        "z2m-TS0601_dimmer_1_gang_1"
       ],
       "tracks": {
         "master": {
@@ -1823,23 +1828,20 @@
         "switch_4gang"
       ],
       "protocol": "zcl",
-      "notes": "ZCL 4-gang TB25-4 (not EF00 TS0601). Sub-device tiles. Do not invent 606/808/ZMS-206 pids.",
-      "tracks": {
-        "master": {
-          "static": true,
-          "dynamic": true
-        },
-        "stable": {
-          "static": true,
-          "dynamic": false
-        }
-      },
+      "notes": "P2322: HomeSuite interview confirms TS0004 + EP1-4 genOnOff (clusters 3,4,5,6,57344,57345). ZCL TB25-4 touch — not EF00. Sub-device tiles. Forum #2186/#2188 Gabriel.",
+      "forbidMode": "couple",
       "sources": [
         "forum-140352-2173",
         "forum-140352-2182",
+        "forum-140352-2186",
         "forum-140352-2188",
-        "gpm-homesuite-interview-TS0004"
-      ]
+        "gpm-homesuite-interview-TS0004",
+        "P2322"
+      ],
+      "tracks": {
+        "master": { "static": true, "dynamic": true },
+        "stable": { "static": true, "dynamic": false }
+      }
     },
     {
       "id": "p2261-ihseno-debczeci-presence",

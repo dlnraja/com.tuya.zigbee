@@ -61,6 +61,13 @@ class WallSwitch4Gang1WayDevice extends UnifiedSwitchBase {
         this._gangNumber = 1;
       }
       this._isSubDevice = Boolean(subDeviceId);
+      // P2322: Gabriel/HomeSuite NovaDigital 4G touch — force ZCL-only (ignore leftover EF00)
+      this._isPureTuyaDP = false;
+      if (this._protocolInfo) {
+        this._protocolInfo.protocol = 'zcl_only';
+        this._protocolInfo.preferDpTx = false;
+        this._protocolInfo.listenHybrid = false;
+      }
       this.log(`[WALL-4G] Initializing ${this._gangNumber > 1 ? 'Sub' : 'Primary'} Device (Gang ${this._gangNumber})`);
       await super.onNodeInit({ zclNode });
       await this._setupPzaoSceneInterceptor();
@@ -71,6 +78,10 @@ class WallSwitch4Gang1WayDevice extends UnifiedSwitchBase {
       await this.initVirtualButtons();
       if (typeof this._registerButtonCapabilityListeners === 'function') {
         this._registerButtonCapabilityListeners();
+      }
+      // P2322: HomeSuite — re-apply backlight/power-on after pair (settings win over dump)
+      if (typeof this._pushConfiguredSwitchSettings === 'function' && !this._isSubDevice) {
+        await this._pushConfiguredSwitchSettings('p2322-pair').catch(() => {});
       }
       this.log(`[WALL-4G] v9.7.3 - Unified initialization complete for Gang ${this._gangNumber}`);
     }, 'onNodeInit');
