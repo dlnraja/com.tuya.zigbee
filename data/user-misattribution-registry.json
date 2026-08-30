@@ -2803,6 +2803,26 @@
       "notes": "Moes/SunBeech TS0044 — NOT TS004F 0x8004; strip wall_switch steal"
     },
     {
+      "id": "p2332-xffhmvhv-ts004f-nobo",
+      "mfr": [
+        "_TZ3000_xffhmvhv",
+        "_tz3000_xffhmvhv",
+        "_TZ3000_XFFHMVHV"
+      ],
+      "productId": [
+        "TS004F"
+      ],
+      "canonicalDriver": "button_wireless_4",
+      "forbiddenDrivers": [
+        "scene_switch_4",
+        "smart_knob",
+        "wall_switch_4_gang",
+        "button_wireless_1"
+      ],
+      "source": "p2332-z2m-nobo-sws-iz",
+      "notes": "Nobø SWS-IZ (Z2M #12768); diag 9cbf9eb6 — skip 0x8004 write (firmware rejects); 0xFD/hybrid RX"
+    },
+    {
       "id": "p2328-ts0044-remotes-not-wall-switch",
       "mfr": [
         "_TZ3000_ufhtxr59",

@@ -1,13 +1,13 @@
-const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
-const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 'use strict';
 
-const Homey = require('homey');
-const { ZigBeeDevice } = require('homey-zigbeedriver');
 const UnifiedSwitchBase = require('../../lib/devices/UnifiedSwitchBase');
-const { debug, CLUSTER } = require('zigbee-clusters');
+const { CLUSTER } = require('zigbee-clusters');
 
 class wall_switch_4_gang extends UnifiedSwitchBase {
+
+    get mainsPowered() { return true; }
+
+    get gangCount() { return 4; }
 
     async onNodeInit({zclNode}) {
 
@@ -15,16 +15,21 @@ class wall_switch_4_gang extends UnifiedSwitchBase {
 
         const { subDeviceId } = this.getData();
         this.log("Device data: ", subDeviceId);
+        this._gangNumber = subDeviceId === 'secondSwitch' ? 2
+          : subDeviceId === 'thirdSwitch' ? 3
+          : subDeviceId === 'fourthSwitch' ? 4
+          : 1;
+        this._isSubDevice = Boolean(subDeviceId);
 
         this.registerCapability('onoff', CLUSTER.ON_OFF, {
-            endpoint: subDeviceId === 'secondSwitch' ? 2 : subDeviceId === 'thirdSwitch' ? 3 : subDeviceId === 'fourthSwitch' ? 4 : 1,
+            endpoint: this._gangNumber,
         });
 
         try {
           const indicatorMode = await this.zclNode.endpoints[1].clusters.onOff.readAttributes(['indicatorMode']);     
           this.log("Indicator Mode supported by device");
           await this.setSettings({
-            indicator_mode: ZCLDataTypes.enum8IndicatorMode.args[0][indicatorMode.indicatorMode].toString()
+            indicator_mode: String(indicatorMode?.indicatorMode ?? indicatorMode)
           });
         } catch (error) {
         this.log("This device does not support Indicator Mode", error);
@@ -55,6 +60,13 @@ class wall_switch_4_gang extends UnifiedSwitchBase {
           }
         }
 
+        // WHY(P2332): onNodeInit skips super — PhysicalButtonMixin never armed;
+        // compose has physical_gangN_* but RX never fired (same class of bug as
+        // wall_switch_4gang_1way forum #2099 / v10.6.1).
+        if (typeof this.initPhysicalButtonDetection === 'function') {
+          await this.initPhysicalButtonDetection(zclNode);
+        }
+
     }
 
 /*     onSettings(oldSettingsObj, newSettingsObj, changedKeysArr, callback) {
@@ -69,7 +81,8 @@ class wall_switch_4_gang extends UnifiedSwitchBase {
 
     onDeleted(){
       super.onDeleted();
-		this.log("4 Gang Wall Switch, channel ", subDeviceId, " removed")
+      const { subDeviceId } = (typeof this.getData === 'function' && this.getData()) || {};
+      this.log('4 Gang Wall Switch, channel ', subDeviceId, ' removed');
 	}
 
   async onSettings({oldSettings, newSettings, changedKeys}) {

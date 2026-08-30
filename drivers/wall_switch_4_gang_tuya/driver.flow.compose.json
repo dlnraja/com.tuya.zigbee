@@ -55,6 +55,54 @@
         "nl": "Fysiek UIT",
         "de": "Physisch AUS"
       }
+    },
+    {
+      "id": "wall_switch_4_gang_tuya_physical_gang1_on",
+      "title": { "en": "Physical gang 1 ON", "fr": "Physique gang 1 ON" },
+      "args": [],
+      "titleFormatted": { "en": "Physical gang 1 ON", "fr": "Physique gang 1 ON" }
+    },
+    {
+      "id": "wall_switch_4_gang_tuya_physical_gang1_off",
+      "title": { "en": "Physical gang 1 OFF", "fr": "Physique gang 1 OFF" },
+      "args": [],
+      "titleFormatted": { "en": "Physical gang 1 OFF", "fr": "Physique gang 1 OFF" }
+    },
+    {
+      "id": "wall_switch_4_gang_tuya_physical_gang2_on",
+      "title": { "en": "Physical gang 2 ON", "fr": "Physique gang 2 ON" },
+      "args": [],
+      "titleFormatted": { "en": "Physical gang 2 ON", "fr": "Physique gang 2 ON" }
+    },
+    {
+      "id": "wall_switch_4_gang_tuya_physical_gang2_off",
+      "title": { "en": "Physical gang 2 OFF", "fr": "Physique gang 2 OFF" },
+      "args": [],
+      "titleFormatted": { "en": "Physical gang 2 OFF", "fr": "Physique gang 2 OFF" }
+    },
+    {
+      "id": "wall_switch_4_gang_tuya_physical_gang3_on",
+      "title": { "en": "Physical gang 3 ON", "fr": "Physique gang 3 ON" },
+      "args": [],
+      "titleFormatted": { "en": "Physical gang 3 ON", "fr": "Physique gang 3 ON" }
+    },
+    {
+      "id": "wall_switch_4_gang_tuya_physical_gang3_off",
+      "title": { "en": "Physical gang 3 OFF", "fr": "Physique gang 3 OFF" },
+      "args": [],
+      "titleFormatted": { "en": "Physical gang 3 OFF", "fr": "Physique gang 3 OFF" }
+    },
+    {
+      "id": "wall_switch_4_gang_tuya_physical_gang4_on",
+      "title": { "en": "Physical gang 4 ON", "fr": "Physique gang 4 ON" },
+      "args": [],
+      "titleFormatted": { "en": "Physical gang 4 ON", "fr": "Physique gang 4 ON" }
+    },
+    {
+      "id": "wall_switch_4_gang_tuya_physical_gang4_off",
+      "title": { "en": "Physical gang 4 OFF", "fr": "Physique gang 4 OFF" },
+      "args": [],
+      "titleFormatted": { "en": "Physical gang 4 OFF", "fr": "Physique gang 4 OFF" }
     }
   ],
   "conditions": [
