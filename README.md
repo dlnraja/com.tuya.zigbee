@@ -33,10 +33,10 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.706 |
+| **App Version** | v9.0.708 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,399 |
-| **Pairing Variants** | 16,513 (4 case combos per fingerprint) |
+| **Pairing Variants** | 16,517 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 578 |
 | **Flow Cards** | 5,182 |
 | **Unique Capabilities** | 170 |
@@ -102,6 +102,8 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.708** | Restored Homey-safe driver icons; kept own-path images; guarded empty manufacturerName for App Store processing. |
+| **v9.0.707** | Restored Homey-safe driver icons; kept own-path images; guarded empty manufacturerName for App Store processing. |
 | **v9.0.706** | Aligned coherent driver icons/images; cleaned SVG for App Store; guarded empty manufacturerName AggregateError. |
 | **v9.0.705** | Aligned coherent driver icons/images; cleaned SVG for App Store; guarded empty manufacturerName AggregateError. |
 | **v9.0.704** | Aligned driver icons and images; fixed asset paths; cleaned SVG icons for App Store processing. |
@@ -112,8 +114,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.699** | P2309: gate empty productId (M15) so button_wireless_4_ts0041 cannot regress; lock yj6k7vfo\|TS0041 + Moes upt8lzi0 curtain sacred couples. |
 | **v9.0.698** | P2309: gate empty productId (M15) so button_wireless_4_ts0041 cannot regress; lock yj6k7vfo\|TS0041 + Moes upt8lzi0 curtain sacred couples. |
 | **v9.0.697** | P2309: gate empty productId (M15) so button_wireless_4_ts0041 cannot regress; lock yj6k7vfo\|TS0041 + Moes upt8lzi0 curtain sacred couples. |
-| **v9.0.696** | P2309: gate empty productId (M15) so button_wireless_4_ts0041 cannot regress; lock yj6k7vfo\|TS0041 + Moes upt8lzi0 curtain sacred couples. |
-| **v9.0.695** | P2308 , soft-fail wall dimmer IEEE writes (m1cvyneb), Moes Star Feather curtain lock (upt8lzi0). |
 
 <!-- CHANGELOG_END -->
 
