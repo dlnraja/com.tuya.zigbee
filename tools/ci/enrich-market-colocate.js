@@ -80,7 +80,9 @@ const FORCE_DRIVER = {
   '_tz3210_e5t9bfdv|ts0501b': 'bulb_dimmable',
   '_tz3210_g0qr1fqo|ts0503b': 'bulb_rgb',
   // USB / outlet
-  '_tz3000_cfnprab5|ts0115': 'usb_outlet_advanced',
+  // WHY(P2319): cfnprab5+TS011F canon = socket_power_strip_four_three — do not also
+  // put mfr on usb_outlet_advanced (shares TS011F → pairing conflict).
+  '_tz3000_cfnprab5|ts0115': 'socket_power_strip_four_three',
   '_tz3000_o005nuxx|ts0115': 'usb_outlet_advanced',
   // Switch pid_default soft with clear gang
   '_tz3000_rk2yzt0u|ts0001': 'switch_1gang',
