@@ -102,3 +102,30 @@ test('button_wireless_1 sends magic packet on init (first-press)', () => {
 });
 
 console.log('P2316 OK');
+
+
+test('P2317 DeviceOperatingMode skips 0x8004 for TS0044_1 white-labels', () => {
+  const DOM = require(path.join(ROOT, 'lib/zigbee/DeviceOperatingMode'));
+  for (const mfr of ['_TZ3000_mh9px7cq', '_TZ3000_dziaict4', '_TZ3000_a4xycprs']) {
+    const fam = DOM.classifyOperatingFamily({
+      getSetting: (k) => (k === 'zb_manufacturer_name' ? mfr : k === 'zb_model_id' ? 'TS004F' : null),
+      getData: () => ({ manufacturerName: mfr, modelId: 'TS004F' }),
+    });
+    assert.strictEqual(fam.writeSceneAttr, false, `${mfr} must not write 0x8004`);
+  }
+});
+
+test('P2317 ButtonDevice wake magic marker present', () => {
+  const src = fs.readFileSync(path.join(ROOT, 'lib/devices/ButtonDevice.js'), 'utf8');
+  assert.ok(/P2317/.test(src) && /sendTuyaMagicPacket/.test(src));
+});
+
+test('P2317 sacred couples compose', () => {
+  const six = JSON.parse(fs.readFileSync(path.join(ROOT, 'drivers/switch_wall_6gang/driver.compose.json'), 'utf8'));
+  const three = JSON.parse(fs.readFileSync(path.join(ROOT, 'drivers/wall_switch_3gang_1way/driver.compose.json'), 'utf8'));
+  assert.ok((six.zigbee.manufacturerName || []).some((m) => /cvis4qmw/i.test(m)));
+  assert.ok((six.zigbee.productId || []).includes('TS0006'));
+  assert.ok((three.zigbee.manufacturerName || []).some((m) => /g9chy2ib/i.test(m)));
+  assert.ok((three.zigbee.productId || []).includes('TS0003'));
+});
+

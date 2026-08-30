@@ -4644,6 +4644,65 @@
       "forbidMode": "couple",
       "source": "z2m/blakadder water leak",
       "notes": "P2312: mfr was on water_leak without TS0601 pid"
+    },
+    {
+      "id": "p2317-cvis4qmw-ts0006-6gang",
+      "mfr": [
+        "_TZ3000_cvis4qmw",
+        "_tz3000_cvis4qmw"
+      ],
+      "productId": [
+        "TS0006"
+      ],
+      "canonicalDriver": "switch_wall_6gang",
+      "forbiddenDrivers": [
+        "switch_1gang",
+        "switch_4gang",
+        "wall_thermostat"
+      ],
+      "forbidMode": "couple",
+      "source": "Z2M AVATTO TS0006_1 (6 EP)",
+      "notes": "Market said switch_4gang; Z2M binds EP1-6."
+    },
+    {
+      "id": "p2317-g9chy2ib-ts0003-3gang",
+      "mfr": [
+        "_TZ3000_g9chy2ib",
+        "_tz3000_g9chy2ib"
+      ],
+      "productId": [
+        "TS0003"
+      ],
+      "canonicalDriver": "wall_switch_3gang_1way",
+      "forbiddenDrivers": [
+        "wall_thermostat",
+        "device_radiator_valve",
+        "switch_1gang",
+        "climate_sensor"
+      ],
+      "forbidMode": "couple",
+      "source": "Z2M TS0003_3_gang_switch",
+      "notes": "Market wrongly said wall_thermostat; Z2M=3-gang backlight."
+    },
+    {
+      "id": "p2317-etufnltx-ts1002-foria",
+      "mfr": [
+        "_TZ3000_etufnltx",
+        "_tz3000_etufnltx"
+      ],
+      "productId": [
+        "TS1002"
+      ],
+      "canonicalDriver": "button_wireless_4",
+      "forbiddenDrivers": [
+        "switch_4gang",
+        "switch_1gang",
+        "bulb_rgbw",
+        "switch_3gang"
+      ],
+      "forbidMode": "couple",
+      "source": "Z2M FORIA F00XN00-04-1",
+      "notes": "Battery dimmer/scene remote — not wall switch."
     }
   ]
 }
