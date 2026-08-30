@@ -33,15 +33,15 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.724 |
+| **App Version** | v9.0.725 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,381 |
 | **Pairing Variants** | 16,480 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 577 |
-| **Flow Cards** | 5,182 |
+| **Flow Cards** | 5,190 |
 | **Unique Capabilities** | 170 |
 | **Native OTA Drivers** | 5 |
-| **Test Suites** | 184 files |
+| **Test Suites** | 185 files |
 | **SVG Icons** | 731 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
@@ -102,6 +102,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.725** | Improved wireless button press capture for Tuya scene remotes after wake and pairing. |
 | **v9.0.724** | Improved wireless button press capture for Tuya scene remotes after wake and pairing. |
 | **v9.0.723** | Improved wireless button press capture for Tuya scene remotes after wake and pairing. |
 | **v9.0.722** | Improved wireless button press capture for Tuya scene remotes after wake and pairing. |
@@ -113,7 +114,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.716** | Improved wireless button press capture for Tuya scene remotes after wake and pairing. |
 | **v9.0.715** | Improved wireless button press capture for Tuya scene remotes after wake and pairing. |
 | **v9.0.714** | Improved wireless button press capture for Tuya scene remotes after wake and pairing. |
-| **v9.0.713** | Improved wireless button press capture for Tuya scene remotes after wake and pairing. |
 
 <!-- CHANGELOG_END -->
 
