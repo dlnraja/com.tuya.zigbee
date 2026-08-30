@@ -3987,6 +3987,75 @@
           "dynamic": false
         }
       }
+    },
+    {
+      "id": "p2321-mtnpt6ws-ts0002-2gang",
+      "mfr": [
+        "_TZ3000_mtnpt6ws",
+        "_tz3000_mtnpt6ws"
+      ],
+      "productId": [
+        "TS0002"
+      ],
+      "canonicalDriver": "switch_2gang",
+      "forbidMode": "couple",
+      "forbiddenDrivers": [
+        "switch_1gang",
+        "wall_switch_1gang_1way",
+        "climate_sensor"
+      ],
+      "protocol": "zcl",
+      "notes": "P2321 BOTH: Nous L13Z / AVATTO 2-gang module",
+      "sources": [
+        "homesuite",
+        "z2m",
+        "P2321"
+      ],
+      "tracks": {
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
+      }
+    },
+    {
+      "id": "p2321-ddigca5n-ts011f-nous-a9z",
+      "mfr": [
+        "_TZ3210_ddigca5n",
+        "_tz3210_ddigca5n"
+      ],
+      "productId": [
+        "TS011F"
+      ],
+      "canonicalDriver": "plug_energy_monitor",
+      "forbidMode": "couple",
+      "forbiddenDrivers": [
+        "switch_1gang",
+        "climate_sensor",
+        "usb_outlet_advanced",
+        "usb_dongle_triple"
+      ],
+      "protocol": "zcl",
+      "notes": "P2321 BOTH: Nous A9Z metering plug",
+      "sources": [
+        "JohanBendz#1452",
+        "z2m",
+        "P2321"
+      ],
+      "tracks": {
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
+      }
     }
   ]
 }
