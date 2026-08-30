@@ -51,21 +51,21 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
 
   async _setupPowerMeasurement(zclNode) {
     const endpoint = zclNode?.endpoints?.[1];
-    if (!endpoint?.clusters) return;
+    if (!endpoint?.clusters) {return;}
 
     const elecCluster = endpoint.clusters.electricalMeasurement || endpoint.clusters.haElectricalMeasurement || endpoint.clusters[0x0B04];
     if (elecCluster && typeof elecCluster.on === 'function') {
       elecCluster.on('attr.activePower', (value) => {
         const watts = safeMultiply(value, ENERGY_DIVISORS.measure_power.divisor);
-        if (this.hasCapability('measure_power')) this.safeSetCapabilityValue('measure_power', parseFloat(watts)).catch(() => { });
+        if (this.hasCapability('measure_power')) {this.safeSetCapabilityValue('measure_power', parseFloat(watts)).catch(() => { });}
       });
       elecCluster.on('attr.rmsVoltage', (value) => {
         const volts = safeMultiply(value, ENERGY_DIVISORS.measure_voltage.divisor);
-        if (this.hasCapability('measure_voltage')) this.safeSetCapabilityValue('measure_voltage', parseFloat(volts)).catch(() => { });
+        if (this.hasCapability('measure_voltage')) {this.safeSetCapabilityValue('measure_voltage', parseFloat(volts)).catch(() => { });}
       });
       elecCluster.on('attr.rmsCurrent', (value) => {
         const amps = value * ENERGY_DIVISORS.measure_current.divisor;
-        if (this.hasCapability('measure_current')) this.safeSetCapabilityValue('measure_current', parseFloat(amps)).catch(() => { });
+        if (this.hasCapability('measure_current')) {this.safeSetCapabilityValue('measure_current', parseFloat(amps)).catch(() => { });}
       });
       this._readElectricalAttributes(elecCluster);
     }
@@ -74,7 +74,7 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
     if (meteringCluster && typeof meteringCluster.on === 'function') {
       meteringCluster.on('attr.currentSummationDelivered', (value) => {
         const kwh = value / ENERGY_DIVISORS.meter_power.divisor;
-        if (this.hasCapability('meter_power')) this.safeSetCapabilityValue('meter_power', parseFloat(kwh)).catch(() => { });
+        if (this.hasCapability('meter_power')) {this.safeSetCapabilityValue('meter_power', parseFloat(kwh)).catch(() => { });}
       });
       this._readMeteringAttributes(meteringCluster);
     }
@@ -137,14 +137,14 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
         this._lastCommandTime = Date.now();
         this._zclState.pending[epNum] = true;
         safeClearTimeout(this, this._zclState.timeout[epNum]);
-        this._zclState.timeout[epNum] = safeSetTimeout(this, () => { if (this._destroyed) return; this._zclState.pending[epNum] = false; }, 2000);
+        this._zclState.timeout[epNum] = (this.homey && typeof this.homey.setTimeout === 'function' ? this.homey : globalThis).setTimeout(() => { if (this._destroyed) {return;} this._zclState.pending[epNum] = false; }, 2000);
         
         const onOff = getOnOffCluster(epNum);
         if (onOff) {
           try {
             await onOff.writeAttributes({ onOff: !!value });
           } catch (e) {
-            if (typeof onOff[value ? 'setOn' : 'setOff'] === 'function') await onOff[value ? 'setOn' : 'setOff']();
+            if (typeof onOff[value ? 'setOn' : 'setOff'] === 'function') {await onOff[value ? 'setOn' : 'setOff']();}
           }
         }
         return true;
@@ -157,7 +157,7 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
         const capName = epNum === 1 ? 'onoff' : 'onoff.gang2';
         onOff.on('attr.onOff', async (value) => {
           const now = Date.now();
-          if (now - (this._zclState.lastReport[epNum] || 0) < 1000) return;
+          if (now - (this._zclState.lastReport[epNum] || 0) < 1000) {return;}
           this._zclState.lastReport[epNum] = now;
 
           const isPhysical = !this._zclState.pending[epNum];
@@ -189,25 +189,32 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
                 }
               }
             }
-            if (isPhysical && (mode === 'auto' || mode === 'both')) {
-              const flowId = `button_wireless_switch_switch_2gang_physical_gang${epNum}_${value ? 'on' : 'off'}`;
-              try {
-                const card = this.homey.flow.getDeviceTriggerCard(flowId);
-                if (card) {
-                  await card.trigger(this, { gang: epNum, state: value }, {}).catch(() => {});
-                  this.log(`[BSEED-2G] ✅ Physical G${epNum} ${value ? 'ON' : 'OFF'}`);
+            // WHY(P2330): never invent `*_switch_switch_2gang_*` — compose declares
+            // `button_wireless_switch_2gang_*` (+ short `*_physical_gang*`). Prefer mixin path.
+            if (isPhysical && (mode === 'auto' || mode === 'both' || mode === 'magic')) {
+              if (typeof this._triggerPhysicalFlow === 'function') {
+                this._triggerPhysicalFlow(epNum, value ? 'on' : 'off');
+                this.log(`[BSEED-2G] ✅ Physical/scene via mixin G${epNum} ${value ? 'ON' : 'OFF'}`);
+              } else if (typeof this._safeTriggerFlow === 'function') {
+                const state = value ? 'on' : 'off';
+                await this._safeTriggerFlow(
+                  `button_wireless_switch_2gang_physical_gang${epNum}_${state}`,
+                  { gang: epNum, button: String(epNum), state: value },
+                  { type: 'physical' },
+                );
+                await this._safeTriggerFlow(
+                  `button_wireless_switch_physical_gang${epNum}_${state}`,
+                  { gang: epNum, button: String(epNum), state: value },
+                  { type: 'physical-short' },
+                );
+                if (mode === 'auto' || mode === 'magic' || mode === 'both') {
+                  await this._safeTriggerFlow(
+                    `button_wireless_switch_2gang_gang${epNum}_scene`,
+                    { action: state, gang: epNum },
+                    { type: 'scene' },
+                  );
                 }
-              } catch (e) { }
-            }
-            if (isPhysical && (mode === 'auto' || mode === 'magic' || mode === 'both')) {
-              const sceneId = `button_wireless_switch_switch_2gang_gang${epNum}_scene`;
-              try {
-                const card = this.homey.flow.getDeviceTriggerCard(sceneId);
-                if (card) {
-                  await card.trigger(this, { action: value ? 'on' : 'off' }, {}).catch(() => {});
-                  this.log(`[BSEED-2G] ✅ Scene G${epNum} ${value ? 'on' : 'off'}`);
-                }
-              } catch (e) { }
+              }
             }
           }
         });
@@ -231,7 +238,7 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
   onDeleted() {
     if (this._zclState?.timeout) {
       for (const epNum of [1, 2]) {
-        if (this._zclState.timeout[epNum]) safeClearTimeout(this, this._zclState.timeout[epNum]);
+        if (this._zclState.timeout[epNum]) {safeClearTimeout(this, this._zclState.timeout[epNum]);}
       }
     }
     super.onDeleted?.();
