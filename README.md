@@ -4,11 +4,11 @@
 
 [![Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdlnraja%2Fcom.tuya.zigbee%2Fmaster%2Fapp.json&query=%24.version&label=version&color=blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![Drivers](https://img.shields.io/badge/drivers-431-brightgreen)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
-[![Fingerprints](https://img.shields.io/badge/fingerprints-4,380%20unique-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
+[![Fingerprints](https://img.shields.io/badge/fingerprints-4,399%20unique-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![SDK](https://img.shields.io/badge/SDK-3-orange)](https://apps.developer.homey.app/)
 [![License](https://img.shields.io/badge/license-GPL--3.0-green)](LICENSE)
 
-Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, sensors, lights, thermostats, covers, valves — **431 drivers**, **4,380 unique fingerprints**. No cloud required.
+Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, sensors, lights, thermostats, covers, valves — **431 drivers**, **4,399 unique fingerprints**. No cloud required.
 
 **What it does:**
 - Talks to devices on your Homey Zigbee mesh (Tuya DP `0xEF00` and standard ZCL)
@@ -33,10 +33,10 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.703 |
+| **App Version** | v9.0.706 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
-| **Unique Fingerprints** | 4,380 |
-| **Pairing Variants** | 16,474 (4 case combos per fingerprint) |
+| **Unique Fingerprints** | 4,399 |
+| **Pairing Variants** | 16,513 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 578 |
 | **Flow Cards** | 5,182 |
 | **Unique Capabilities** | 170 |
@@ -102,6 +102,9 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.706** | Aligned coherent driver icons/images; cleaned SVG for App Store; guarded empty manufacturerName AggregateError. |
+| **v9.0.705** | Aligned coherent driver icons/images; cleaned SVG for App Store; guarded empty manufacturerName AggregateError. |
+| **v9.0.704** | Aligned driver icons and images; fixed asset paths; cleaned SVG icons for App Store processing. |
 | **v9.0.703** | Aligned driver icons and images to a coherent Homey design; fixed image paths to each driver own assets. |
 | **v9.0.702** | Aligned driver icons and images to a coherent Homey design; fixed image paths to each driver own assets. |
 | **v9.0.701** | Improved wall dimmer control reliability for Tuya EF00 devices after pairing. |
@@ -111,9 +114,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.697** | P2309: gate empty productId (M15) so button_wireless_4_ts0041 cannot regress; lock yj6k7vfo\|TS0041 + Moes upt8lzi0 curtain sacred couples. |
 | **v9.0.696** | P2309: gate empty productId (M15) so button_wireless_4_ts0041 cannot regress; lock yj6k7vfo\|TS0041 + Moes upt8lzi0 curtain sacred couples. |
 | **v9.0.695** | P2308 , soft-fail wall dimmer IEEE writes (m1cvyneb), Moes Star Feather curtain lock (upt8lzi0). |
-| **v9.0.694** | P2308 Gmail diags: break SafeCapability recursion (#532), soft-fail wall dimmer IEEE writes (m1cvyneb), Moes Star Feather curtain lock (u… |
-| **v9.0.693** | Fix Homey publish: restore missing productId on button_wireless_4_ts0041 (TS0041) and soil_sensor_ec (TS0601). |
-| **v9.0.692** | Fix Homey publish: restore missing productId on button_wireless_4_ts0041 (TS0041) and soil_sensor_ec (TS0601). |
 
 <!-- CHANGELOG_END -->
 
