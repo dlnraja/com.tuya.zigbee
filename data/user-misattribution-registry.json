@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "description": "Community-reported wrong-driver / pairing conflict cases. Sacred couple = mfr + productId. Master: static compose + dynamic lookup. Stable: static compose only (copy canonicalDriver into driver.compose.json).",
+  "description": "Community-reported wrong-driver / pairing conflict cases. Sacred couple = mfr + productId. Master: static compose + dynamic lookup. Stable: static compose only (copy canonicalDriver into driver.compose.json). P2318 ENRICHMENT-FIRST: lock by adding to canonicalDriver; forbidMode=couple only strips manufacturerName when the forbidden productId is also present — never strip shared productIds (coverage reduction ban); never delete a mfr from a driver solely because it appears elsewhere with a different pid.",
   "cases": [
     {
       "id": "hobeian-aubess-k4ej3ww2-ias",
@@ -4656,13 +4656,13 @@
       ],
       "canonicalDriver": "switch_wall_6gang",
       "forbiddenDrivers": [
-        "switch_1gang",
         "switch_4gang",
         "wall_thermostat"
       ],
       "forbidMode": "couple",
       "source": "Z2M AVATTO TS0006_1 (6 EP)",
-      "notes": "Market said switch_4gang; Z2M binds EP1-6."
+      "notes": "Market said switch_4gang; Z2M binds EP1-6. P2318: enrichment-first — do not strip shared pids; mfr may remain on other drivers when forbidden pid absent.",
+      "enrichOnly": true
     },
     {
       "id": "p2317-g9chy2ib-ts0003-3gang",
@@ -4677,12 +4677,13 @@
       "forbiddenDrivers": [
         "wall_thermostat",
         "device_radiator_valve",
-        "switch_1gang",
-        "climate_sensor"
+        "climate_sensor",
+        "switch_1gang"
       ],
       "forbidMode": "couple",
       "source": "Z2M TS0003_3_gang_switch",
-      "notes": "Market wrongly said wall_thermostat; Z2M=3-gang backlight."
+      "notes": "Market wrongly said wall_thermostat; Z2M=3-gang backlight. P2318: enrichment-first — do not strip shared pids; mfr may remain on other drivers when forbidden pid absent.",
+      "enrichOnly": true
     },
     {
       "id": "p2317-etufnltx-ts1002-foria",
@@ -4695,14 +4696,14 @@
       ],
       "canonicalDriver": "button_wireless_4",
       "forbiddenDrivers": [
-        "switch_4gang",
-        "switch_1gang",
         "bulb_rgbw",
-        "switch_3gang"
+        "switch_3gang",
+        "scene_switch_4"
       ],
       "forbidMode": "couple",
       "source": "Z2M FORIA F00XN00-04-1",
-      "notes": "Battery dimmer/scene remote — not wall switch."
+      "notes": "Battery dimmer/scene remote — not wall switch. P2318: enrichment-first — do not strip shared pids; mfr may remain on other drivers when forbidden pid absent.",
+      "enrichOnly": true
     }
   ]
 }

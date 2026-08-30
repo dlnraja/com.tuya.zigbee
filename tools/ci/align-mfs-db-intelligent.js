@@ -177,23 +177,34 @@ function enforceRegistryCompose(registry, changes, highSeverity) {
       const nm = norm(m);
       for (const bad of forbidden) {
         if (bad === c.canonicalDriver) continue;
-        // WHY(P2250/P2282): HOBEIAN spans climate/soil/presence/water — never strip bare brand
-        // from sibling drivers; remove conflicting productIds from forbidden drivers only.
+        // WHY(P2250/P2282/P2318): enrichment-first — never strip a shared productId from a
+        // forbidden driver (TS0006/TS0003/TS0601 serve hundreds of other couples). Couple
+        // mode only removes the conflicting manufacturerName when that driver also lists
+        // the forbidden pid (same rule as anti-bot-regression-gate). Never reduce coverage.
         if (coupleMode && pids.length) {
-          for (const pid of pids) {
-            const n = stripPidFromCompose(bad, norm(pid));
-            if (n) {
-              changes.push({
-                severity: 'medium',
-                action: 'registry_compose_strip_pid',
-                mfr: m,
-                pid,
-                from: bad,
-                to: c.canonicalDriver,
-                removed: n,
-                caseId: c.id,
-              });
-            }
+          const composePath = path.join(ROOT, 'drivers', bad, 'driver.compose.json');
+          if (!fs.existsSync(composePath)) continue;
+          let compose;
+          try {
+            compose = JSON.parse(fs.readFileSync(composePath, 'utf8'));
+          } catch {
+            continue;
+          }
+          const hasForbiddenPid = pids.some((pid) => (compose.zigbee?.productId || [])
+            .some((p) => norm(p) === norm(pid)));
+          if (!hasForbiddenPid) continue;
+          const n = stripMfrFromCompose(bad, nm);
+          if (n) {
+            changes.push({
+              severity: 'medium',
+              action: 'registry_compose_strip_couple_mfr',
+              mfr: m,
+              pid: pids.join('|'),
+              from: bad,
+              to: c.canonicalDriver,
+              removed: n,
+              caseId: c.id,
+            });
           }
           continue;
         }
