@@ -31,10 +31,11 @@ const MAX = (() => {
 
 // WHY (P2246): never apply known false routes even if z2m_desc looks apply-safe
 const SKIP_COUPLES = new Set([
-  '_tz3000_cvis4qmw|ts0006', // p2237 — only TS0001 → switch_1gang
-  '_tz3000_g9chy2ib|ts0003', // FP = switch_3gang, not wall_thermostat
-  '_tz3000_a4xycprs|ts0044', // P2312 — Z2M Star Ring scene → scene_switch_4 (not switch_4gang)
-  '_tz3000_etufnltx|ts1002', // review — Safira scene panel, not blind switch_4gang
+  // WHY(P2319): wrong market routes — real locks live on corrected drivers via enrich-market-colocate
+  '_tz3000_cvis4qmw|ts0006', // → switch_wall_6gang (6 EP), not switch_4gang
+  '_tz3000_g9chy2ib|ts0003', // → wall_switch_3gang_1way, not wall_thermostat
+  '_tz3000_a4xycprs|ts0044', // → scene_switch_4, not switch_4gang
+  '_tz3000_etufnltx|ts1002', // → button_wireless_4 FORIA remote, not switch_4gang
 ]);
 
 function skipCouple(mfr, pid) {

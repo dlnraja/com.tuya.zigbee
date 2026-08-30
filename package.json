@@ -179,6 +179,8 @@
     "market:couples:check": "node tools/ci/market-couples-intake.js --check",
     "market:couples:apply": "node tools/ci/market-couples-intake.js --apply",
     "market:couples:apply:dry": "node tools/ci/apply-market-couples.js",
+    "market:couples:colocate": "node tools/ci/enrich-market-colocate.js",
+    "market:couples:colocate:apply": "node tools/ci/enrich-market-colocate.js --apply",
     "market:couples:test": "node --test test/critical/p2231-market-couples-intake.test.js",
     "enrich:silent": "node tools/ci/silent-enrichment-orchestrator.js",
     "enrich:sync": "node tools/ci/sync-enrichment-profiles.js",

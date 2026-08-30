@@ -1749,7 +1749,12 @@
       "_TZE284_u15pabbc",
       "_tze284_u15pabbc",
       "_TZE200_g1ib5ldv",
-      "_tze200_g1ib5ldv"
+      "_tze200_g1ib5ldv",
+      "_TZ3000_etufnltx",
+      "_tz3000_etufnltx",
+      "_TZ3000_ETUFNLTX",
+      "_TZ3000_rk2yzt0u",
+      "_tz3000_rk2yzt0u"
     ],
     "endpoints": {
       "1": {
@@ -1777,180 +1782,180 @@
           "type": "dropdown",
           "label": {
             "en": "Connected Device Type",
-            "fr": "Type d'Appareil Connecté"
+            "fr": "Type d'Appareil Connect├®"
           },
           "hint": {
             "en": "Select the type of device connected to this module. Radiator will invert the ON/OFF logic.",
-            "fr": "Sélectionnez le type d'appareil connecté à ce module. Radiateur inversera la logique MARCHE/ARRÊT."
+            "fr": "S├®lectionnez le type d'appareil connect├® ├á ce module. Radiateur inversera la logique MARCHE/ARR├èT."
           },
           "value": "light",
           "values": [
             {
               "id": "light",
               "label": {
-                "en": "💡 Éclairage",
-                "fr": "💡 Éclairage"
+                "en": "­ƒÆí ├ëclairage",
+                "fr": "­ƒÆí ├ëclairage"
               }
             },
             {
               "id": "outdoor_light",
               "label": {
-                "en": "🏡 Éclairage extérieur",
-                "fr": "🏡 Éclairage extérieur"
+                "en": "­ƒÅí ├ëclairage ext├®rieur",
+                "fr": "­ƒÅí ├ëclairage ext├®rieur"
               }
             },
             {
               "id": "radiator",
               "label": {
-                "en": "🔥 Radiateur (fil pilote)",
-                "fr": "🔥 Radiateur (fil pilote)"
+                "en": "­ƒöÑ Radiateur (fil pilote)",
+                "fr": "­ƒöÑ Radiateur (fil pilote)"
               }
             },
             {
               "id": "water_heater",
               "label": {
-                "en": "🚿 Chauffe-eau / Cumulus",
-                "fr": "🚿 Chauffe-eau / Cumulus"
+                "en": "­ƒÜ┐ Chauffe-eau / Cumulus",
+                "fr": "­ƒÜ┐ Chauffe-eau / Cumulus"
               }
             },
             {
               "id": "boiler",
               "label": {
-                "en": "🏠 Chaudière",
-                "fr": "🏠 Chaudière"
+                "en": "­ƒÅá Chaudi├¿re",
+                "fr": "­ƒÅá Chaudi├¿re"
               }
             },
             {
               "id": "underfloor_heating",
               "label": {
-                "en": "🦶 Plancher chauffant",
-                "fr": "🦶 Plancher chauffant"
+                "en": "­ƒªÂ Plancher chauffant",
+                "fr": "­ƒªÂ Plancher chauffant"
               }
             },
             {
               "id": "fan",
               "label": {
-                "en": "🌀 Ventilateur / VMC",
-                "fr": "🌀 Ventilateur / VMC"
+                "en": "­ƒîÇ Ventilateur / VMC",
+                "fr": "­ƒîÇ Ventilateur / VMC"
               }
             },
             {
               "id": "ac",
               "label": {
-                "en": "❄️ Climatisation",
-                "fr": "❄️ Climatisation"
+                "en": "ÔØä´©Å Climatisation",
+                "fr": "ÔØä´©Å Climatisation"
               }
             },
             {
               "id": "extractor",
               "label": {
-                "en": "💨 Extracteur / Hotte",
-                "fr": "💨 Extracteur / Hotte"
+                "en": "­ƒÆ¿ Extracteur / Hotte",
+                "fr": "­ƒÆ¿ Extracteur / Hotte"
               }
             },
             {
               "id": "shutter",
               "label": {
-                "en": "🪟 Volet roulant / Store",
-                "fr": "🪟 Volet roulant / Store"
+                "en": "­ƒ¬ƒ Volet roulant / Store",
+                "fr": "­ƒ¬ƒ Volet roulant / Store"
               }
             },
             {
               "id": "gate",
               "label": {
-                "en": "🚗 Portail / Garage",
-                "fr": "🚗 Portail / Garage"
+                "en": "­ƒÜù Portail / Garage",
+                "fr": "­ƒÜù Portail / Garage"
               }
             },
             {
               "id": "door_lock",
               "label": {
-                "en": "🔐 Gâche / Serrure",
-                "fr": "🔐 Gâche / Serrure"
+                "en": "­ƒöÉ G├óche / Serrure",
+                "fr": "­ƒöÉ G├óche / Serrure"
               }
             },
             {
               "id": "pump",
               "label": {
-                "en": "💧 Pompe",
-                "fr": "💧 Pompe"
+                "en": "­ƒÆº Pompe",
+                "fr": "­ƒÆº Pompe"
               }
             },
             {
               "id": "irrigation",
               "label": {
-                "en": "🌱 Arrosage",
-                "fr": "🌱 Arrosage"
+                "en": "­ƒî▒ Arrosage",
+                "fr": "­ƒî▒ Arrosage"
               }
             },
             {
               "id": "pool",
               "label": {
-                "en": "🏊 Équipement piscine",
-                "fr": "🏊 Équipement piscine"
+                "en": "­ƒÅè ├ëquipement piscine",
+                "fr": "­ƒÅè ├ëquipement piscine"
               }
             },
             {
               "id": "socket",
               "label": {
-                "en": "🔌 Prise commandée",
-                "fr": "🔌 Prise commandée"
+                "en": "­ƒöî Prise command├®e",
+                "fr": "­ƒöî Prise command├®e"
               }
             },
             {
               "id": "appliance",
               "label": {
-                "en": "🧺 Électroménager",
-                "fr": "🧺 Électroménager"
+                "en": "­ƒº║ ├ëlectrom├®nager",
+                "fr": "­ƒº║ ├ëlectrom├®nager"
               }
             },
             {
               "id": "coffee_machine",
               "label": {
-                "en": "☕ Machine à café",
-                "fr": "☕ Machine à café"
+                "en": "Ôÿò Machine ├á caf├®",
+                "fr": "Ôÿò Machine ├á caf├®"
               }
             },
             {
               "id": "alarm",
               "label": {
-                "en": "🚨 Alarme / Sirène",
-                "fr": "🚨 Alarme / Sirène"
+                "en": "­ƒÜ¿ Alarme / Sir├¿ne",
+                "fr": "­ƒÜ¿ Alarme / Sir├¿ne"
               }
             },
             {
               "id": "camera",
               "label": {
-                "en": "📹 Caméra",
-                "fr": "📹 Caméra"
+                "en": "­ƒô╣ Cam├®ra",
+                "fr": "­ƒô╣ Cam├®ra"
               }
             },
             {
               "id": "tv",
               "label": {
-                "en": "📺 TV / Écran",
-                "fr": "📺 TV / Écran"
+                "en": "­ƒô║ TV / ├ëcran",
+                "fr": "­ƒô║ TV / ├ëcran"
               }
             },
             {
               "id": "audio",
               "label": {
-                "en": "🔊 Audio / Hifi",
-                "fr": "🔊 Audio / Hifi"
+                "en": "­ƒöè Audio / Hifi",
+                "fr": "­ƒöè Audio / Hifi"
               }
             },
             {
               "id": "fountain",
               "label": {
-                "en": "⛲ Fontaine",
-                "fr": "⛲ Fontaine"
+                "en": "Ôø▓ Fontaine",
+                "fr": "Ôø▓ Fontaine"
               }
             },
             {
               "id": "other",
               "label": {
-                "en": "⚙️ Autre appareil",
-                "fr": "⚙️ Autre appareil"
+                "en": "ÔÜÖ´©Å Autre appareil",
+                "fr": "ÔÜÖ´©Å Autre appareil"
               }
             }
           ]
@@ -1964,7 +1969,7 @@
           },
           "hint": {
             "en": "Force invert ON/OFF logic regardless of device type (advanced users only)",
-            "fr": "Forcer l'inversion de la logique MARCHE/ARRÊT indépendamment du type (utilisateurs avancés uniquement)"
+            "fr": "Forcer l'inversion de la logique MARCHE/ARR├èT ind├®pendamment du type (utilisateurs avanc├®s uniquement)"
           },
           "value": false
         }
@@ -1983,7 +1988,7 @@
           "id": "auto",
           "label": {
             "en": "Auto Detect",
-            "fr": "Détection Automatique"
+            "fr": "D├®tection Automatique"
           }
         },
         {
@@ -2010,7 +2015,7 @@
       ],
       "hint": {
         "en": "Select power source manually or use auto-detection",
-        "fr": "Sélectionnez la source d'alimentation manuellement ou utilisez la détection automatique"
+        "fr": "S├®lectionnez la source d'alimentation manuellement ou utilisez la d├®tection automatique"
       }
     },
     {
@@ -2026,7 +2031,7 @@
           "id": "auto",
           "label": {
             "en": "Auto Detect",
-            "fr": "Détection Automatique"
+            "fr": "D├®tection Automatique"
           }
         },
         {
@@ -2067,7 +2072,7 @@
       ],
       "hint": {
         "en": "Select battery type manually or use auto-detection based on voltage",
-        "fr": "Sélectionnez le type de batterie manuellement ou utilisez la détection automatique basée sur la tension"
+        "fr": "S├®lectionnez le type de batterie manuellement ou utilisez la d├®tection automatique bas├®e sur la tension"
       }
     },
     {
@@ -2083,7 +2088,7 @@
       "step": 5,
       "hint": {
         "en": "Trigger low battery warning when below this percentage",
-        "fr": "Déclencher l'alerte batterie faible en dessous de ce pourcentage"
+        "fr": "D├®clencher l'alerte batterie faible en dessous de ce pourcentage"
       }
     },
     {
@@ -2099,7 +2104,7 @@
       "step": 5,
       "hint": {
         "en": "Trigger critical battery warning when below this percentage",
-        "fr": "Déclencher l'alerte batterie critique en dessous de ce pourcentage"
+        "fr": "D├®clencher l'alerte batterie critique en dessous de ce pourcentage"
       }
     },
     {
@@ -2112,7 +2117,7 @@
       "value": true,
       "hint": {
         "en": "Send flow notifications for battery events",
-        "fr": "Envoyer des notifications de flow pour les événements de batterie"
+        "fr": "Envoyer des notifications de flow pour les ├®v├®nements de batterie"
       }
     },
     {
@@ -2128,7 +2133,7 @@
       "step": 1,
       "hint": {
         "en": "How often to request battery status updates",
-        "fr": "Fréquence de demande des mises à jour d'état de batterie"
+        "fr": "Fr├®quence de demande des mises ├á jour d'├®tat de batterie"
       }
     },
     {
@@ -2136,7 +2141,7 @@
       "type": "dropdown",
       "label": {
         "en": "Energy Optimization Mode",
-        "fr": "Mode Optimisation Énergétique"
+        "fr": "Mode Optimisation ├ënerg├®tique"
       },
       "value": "balanced",
       "values": [
@@ -2144,27 +2149,27 @@
           "id": "performance",
           "label": {
             "en": "Performance (More responsive)",
-            "fr": "Performance (Plus réactif)"
+            "fr": "Performance (Plus r├®actif)"
           }
         },
         {
           "id": "balanced",
           "label": {
             "en": "Balanced",
-            "fr": "Équilibré"
+            "fr": "├ëquilibr├®"
           }
         },
         {
           "id": "power_saving",
           "label": {
             "en": "Power Saving (Longer battery)",
-            "fr": "Économie d'énergie (Batterie plus longue)"
+            "fr": "├ëconomie d'├®nergie (Batterie plus longue)"
           }
         }
       ],
       "hint": {
         "en": "Balance between responsiveness and battery life",
-        "fr": "Équilibre entre réactivité et durée de vie de la batterie"
+        "fr": "├ëquilibre entre r├®activit├® et dur├®e de vie de la batterie"
       }
     },
     {
@@ -2174,7 +2179,7 @@
         "en": "Power-On Behavior",
         "nl": "Gedrag bij inschakelen",
         "de": "Einschaltverhalten",
-        "fr": "Comportement à la mise sous tension"
+        "fr": "Comportement ├á la mise sous tension"
       },
       "hint": {
         "en": "What happens when power is restored after an outage (DP14)",
@@ -2215,7 +2220,7 @@
       "value": true,
       "hint": {
         "en": "Estimate power consumption when real measurement is not available (AC/DC devices only)",
-        "fr": "Estimer la consommation quand la mesure réelle n'est pas disponible (appareils AC/DC seulement)"
+        "fr": "Estimer la consommation quand la mesure r├®elle n'est pas disponible (appareils AC/DC seulement)"
       }
     },
     {
@@ -2368,7 +2373,7 @@
           "type": "dropdown",
           "label": {
             "en": "Backlight mode",
-            "fr": "Mode rétroéclairage"
+            "fr": "Mode r├®tro├®clairage"
           },
           "value": "normal",
           "values": [
@@ -2376,7 +2381,7 @@
               "id": "off",
               "label": {
                 "en": "Off",
-                "fr": "Éteint"
+                "fr": "├ëteint"
               }
             },
             {
@@ -2390,13 +2395,13 @@
               "id": "inverted",
               "label": {
                 "en": "Inverted",
-                "fr": "Inversé"
+                "fr": "Invers├®"
               }
             }
           ],
           "hint": {
             "en": "Strings only: off / normal / inverted.",
-            "fr": "Chaînes uniquement : off / normal / inverted."
+            "fr": "Cha├«nes uniquement : off / normal / inverted."
           }
         }
       ]
@@ -2418,7 +2423,7 @@
     "power_on_behavior": {
       "title": {
         "en": "Power On Behavior",
-        "fr": "Comportement à la mise sous tension"
+        "fr": "Comportement ├á la mise sous tension"
       }
     },
     "button.1": {
@@ -2482,7 +2487,7 @@
       "id": "ota_check",
       "title": {
         "en": "Check Zigbee OTA Update",
-        "fr": "Vérifier MàJ OTA",
+        "fr": "V├®rifier M├áJ OTA",
         "nl": "Controleer op OTA-updates"
       }
     },
@@ -2490,16 +2495,16 @@
       "id": "tuya_revive",
       "title": {
         "en": "Tuya Revive (device recovery)",
-        "fr": "Tuya Revive (récupération appareil)",
+        "fr": "Tuya Revive (r├®cup├®ration appareil)",
         "nl": "Tuya Revive (apparaatherstel)",
-        "de": "Tuya Revive (Gerätewiederherstellung)"
+        "de": "Tuya Revive (Ger├ñtewiederherstellung)"
       }
     },
     {
       "id": "generate_issue_report",
       "title": {
         "en": "Generate support report (GitHub issue)",
-        "fr": "Générer rapport de support (issue GitHub)",
+        "fr": "G├®n├®rer rapport de support (issue GitHub)",
         "nl": "Supportrapport genereren (GitHub issue)",
         "de": "Supportbericht erstellen (GitHub Issue)"
       }

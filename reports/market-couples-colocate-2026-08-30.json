@@ -1,0 +1,1611 @@
+{
+  "generatedAt": "2026-08-30T06:32:28.426Z",
+  "mfrOnlyIncomplete": [
+    {
+      "mfr": "_TZE200_n8dljorx",
+      "pid": "TS0601",
+      "hint": "climate_sensor",
+      "withMfr": [
+        "contact_sensor"
+      ],
+      "sources": [
+        "canonical",
+        "mfs_db",
+        "blakadder",
+        "z2m"
+      ],
+      "tier": "heuristic_pid",
+      "applySafe": false,
+      "z2mDesc": "Temperature and humidity sensor"
+    },
+    {
+      "mfr": "_TZ3290_ot6ewjvmejq5ekhl",
+      "pid": "TS1201",
+      "hint": "ir_blaster",
+      "withMfr": [
+        "ir_remote"
+      ],
+      "sources": [
+        "johan-comment",
+        "mfs_db",
+        "blakadder",
+        "zha"
+      ],
+      "tier": "heuristic_pid",
+      "applySafe": false,
+      "z2mDesc": null
+    },
+    {
+      "mfr": "_TZE200_nkjintbl",
+      "pid": "TS0601",
+      "hint": "climate_sensor",
+      "withMfr": [
+        "switch_2gang"
+      ],
+      "sources": [
+        "canonical",
+        "mfs_db",
+        "blakadder",
+        "zha"
+      ],
+      "tier": "heuristic_pid",
+      "applySafe": false,
+      "z2mDesc": null
+    },
+    {
+      "mfr": "_TZ3000_fa9mlvja",
+      "pid": "TS0041",
+      "hint": "button_wireless_1",
+      "withMfr": [
+        "remote_button_wireless"
+      ],
+      "sources": [
+        "mfs_db",
+        "blakadder",
+        "z2m"
+      ],
+      "tier": "pid_default",
+      "applySafe": false,
+      "z2mDesc": "Smart light & sound siren"
+    },
+    {
+      "mfr": "_TZ3000_sj7jbgks",
+      "pid": "TS0043",
+      "hint": "button_wireless_3",
+      "withMfr": [
+        "button_wireless_2"
+      ],
+      "sources": [
+        "canonical",
+        "blakadder",
+        "z2m"
+      ],
+      "tier": "pid_default",
+      "applySafe": false,
+      "z2mDesc": "Scene remote with 2 keys"
+    },
+    {
+      "mfr": "_TZ3210_4whigl8i",
+      "pid": "TS0501",
+      "hint": null,
+      "withMfr": [
+        "switch_1gang"
+      ],
+      "sources": [
+        "mfs_db",
+        "blakadder",
+        "z2m"
+      ],
+      "tier": "none",
+      "applySafe": false,
+      "z2mDesc": "Triple switch"
+    },
+    {
+      "mfr": "_TZ3210_lzqq3u4r",
+      "pid": "TS0501",
+      "hint": null,
+      "withMfr": [
+        "fan_controller"
+      ],
+      "sources": [
+        "mfs_db",
+        "blakadder",
+        "z2m"
+      ],
+      "tier": "none",
+      "applySafe": false,
+      "z2mDesc": "Triple switch"
+    },
+    {
+      "mfr": "_TZ3210_ttkgurpb",
+      "pid": "TS0504B",
+      "hint": null,
+      "withMfr": [
+        "wall_dimmer_tuya"
+      ],
+      "sources": [
+        "mfs_db",
+        "blakadder",
+        "z2m"
+      ],
+      "tier": "none",
+      "applySafe": false,
+      "z2mDesc": null
+    },
+    {
+      "mfr": "_TZE200_qoy0ekbd",
+      "pid": "TS0601",
+      "hint": "climate_sensor",
+      "withMfr": [
+        "temphumidsensor3"
+      ],
+      "sources": [
+        "canonical",
+        "mfs_db",
+        "blakadder"
+      ],
+      "tier": "heuristic_pid",
+      "applySafe": false,
+      "z2mDesc": null
+    },
+    {
+      "mfr": "_TZ3210_nuenzetq",
+      "pid": "TS0002",
+      "hint": "switch_2gang",
+      "withMfr": [
+        "switch_1gang"
+      ],
+      "sources": [
+        "johan-comment",
+        "canonical",
+        "mfs_db"
+      ],
+      "tier": "pid_default",
+      "applySafe": false,
+      "z2mDesc": null
+    },
+    {
+      "mfr": "_TZ3290_u9xac5rv",
+      "pid": "TS1201",
+      "hint": "ir_blaster",
+      "withMfr": [
+        "ir_remote"
+      ],
+      "sources": [
+        "mfs_db",
+        "z2m",
+        "zha"
+      ],
+      "tier": "heuristic_pid",
+      "applySafe": false,
+      "z2mDesc": null
+    },
+    {
+      "mfr": "_TZE200_qcasmfan",
+      "pid": "TS0601",
+      "hint": "climate_sensor",
+      "withMfr": [
+        "smoke_sensor3"
+      ],
+      "sources": [
+        "canonical",
+        "mfs_db",
+        "z2m"
+      ],
+      "tier": "heuristic_pid",
+      "applySafe": false,
+      "z2mDesc": "Temperature & humidity Sensor with external probe"
+    },
+    {
+      "mfr": "_TZE200_wjk6rurm",
+      "pid": "TS0601",
+      "hint": "climate_sensor",
+      "withMfr": [
+        "power_meter"
+      ],
+      "sources": [
+        "canonical",
+        "mfs_db",
+        "z2m"
+      ],
+      "tier": "heuristic_pid",
+      "applySafe": false,
+      "z2mDesc": "Smart energy monitor for 1P+N system"
+    },
+    {
+      "mfr": "_TZE204_81yrt3l",
+      "pid": "TS0601",
+      "hint": "climate_sensor",
+      "withMfr": [
+        "power_meter"
+      ],
+      "sources": [
+        "johan-comment",
+        "canonical",
+        "mfs_db"
+      ],
+      "tier": "heuristic_pid",
+      "applySafe": false,
+      "z2mDesc": null
+    },
+    {
+      "mfr": "_TZE204_wjk6rurm",
+      "pid": "TS0601",
+      "hint": "climate_sensor",
+      "withMfr": [
+        "power_meter"
+      ],
+      "sources": [
+        "canonical",
+        "mfs_db",
+        "z2m"
+      ],
+      "tier": "heuristic_pid",
+      "applySafe": false,
+      "z2mDesc": "Smart energy monitor for 1P+N system"
+    },
+    {
+      "mfr": "_TZE284_81yrt3l",
+      "pid": "TS0601",
+      "hint": "climate_sensor",
+      "withMfr": [
+        "power_meter"
+      ],
+      "sources": [
+        "johan-comment",
+        "canonical",
+        "mfs_db"
+      ],
+      "tier": "heuristic_pid",
+      "applySafe": false,
+      "z2mDesc": null
+    },
+    {
+      "mfr": "_TZE284_wjk6rurm",
+      "pid": "TS0601",
+      "hint": "climate_sensor",
+      "withMfr": [
+        "power_meter"
+      ],
+      "sources": [
+        "canonical",
+        "mfs_db",
+        "z2m"
+      ],
+      "tier": "heuristic_pid",
+      "applySafe": false,
+      "z2mDesc": "Smart energy monitor for 1P+N system"
+    },
+    {
+      "mfr": "_TZ3000_4whigl8i",
+      "pid": "TS0501B",
+      "hint": "wall_dimmer_tuya",
+      "withMfr": [
+        "switch_1gang"
+      ],
+      "sources": [
+        "mfs_db",
+        "blakadder"
+      ],
+      "tier": "heuristic_pid",
+      "applySafe": false,
+      "z2mDesc": null
+    },
+    {
+      "mfr": "_TZ3000_85czd6fy",
+      "pid": "TS0207",
+      "hint": "water_leak_sensor_tuya",
+      "withMfr": [
+        "contact_sensor"
+      ],
+      "sources": [
+        "mfs_db",
+        "blakadder"
+      ],
+      "tier": "heuristic_pid",
+      "applySafe": false,
+      "z2mDesc": null
+    },
+    {
+      "mfr": "_TZ3000_b7bxojrg",
+      "pid": "TS0044",
+      "hint": "button_wireless_4",
+      "withMfr": [
+        "switch_1gang"
+      ],
+      "sources": [
+        "mfs_db",
+        "blakadder"
+      ],
+      "tier": "pid_default",
+      "applySafe": false,
+      "z2mDesc": null
+    },
+    {
+      "mfr": "_TZ3000_bi6lpsew",
+      "pid": "TS0043",
+      "hint": "button_wireless_3",
+      "withMfr": [
+        "switch_1gang"
+      ],
+      "sources": [
+        "mfs_db",
+        "blakadder"
+      ],
+      "tier": "pid_default",
+      "applySafe": false,
+      "z2mDesc": null
+    },
+    {
+      "mfr": "_TZ3000_cfnprab5",
+      "pid": "TS0115",
+      "hint": "usb_outlet_advanced",
+      "withMfr": [
+        "socket_power_strip_four_three"
+      ],
+      "sources": [
+        "mfs_db",
+        "blakadder"
+      ],
+      "tier": "heuristic_pid",
+      "applySafe": false,
+      "z2mDesc": null
+    },
+    {
+      "mfr": "_TZ3000_d16y6col",
+      "pid": "TS0207",
+      "hint": "water_leak_sensor_tuya",
+      "withMfr": [
+        "switch_1gang"
+      ],
+      "sources": [
+        "mfs_db",
+        "blakadder"
+      ],
+      "tier": "heuristic_pid",
+      "applySafe": false,
+      "z2mDesc": null
+    },
+    {
+      "mfr": "_TZ3000_hodifxa9",
+      "pid": "TS0501B",
+      "hint": "wall_dimmer_tuya",
+      "withMfr": [
+        "generic_tuya"
+      ],
+      "sources": [
+        "mfs_db",
+        "blakadder"
+      ],
+      "tier": "heuristic_pid",
+      "applySafe": false,
+      "z2mDesc": null
+    },
+    {
+      "mfr": "_TZ3000_jyupj3fw",
+      "pid": "TS0006",
+      "hint": null,
+      "withMfr": [
+        "switch_1gang"
+      ],
+      "sources": [
+        "mfs_db",
+        "blakadder"
+      ],
+      "tier": "none",
+      "applySafe": false,
+      "z2mDesc": null
+    },
+    {
+      "mfr": "_TZ3000_kyb656no",
+      "pid": "TS0207",
+      "hint": "water_leak_sensor_tuya",
+      "withMfr": [
+        "water_leak_sensor_tuya"
+      ],
+      "sources": [
+        "mfs_db",
+        "blakadder"
+      ],
+      "tier": "heuristic_pid",
+      "applySafe": false,
+      "z2mDesc": null
+    },
+    {
+      "mfr": "_TZ3000_lfa05ajd",
+      "pid": "TS0201",
+      "hint": "climate_sensor",
+      "withMfr": [
+        "switch_1gang"
+      ],
+      "sources": [
+        "mfs_db",
+        "blakadder"
+      ],
+      "tier": "heuristic_pid",
+      "applySafe": false,
+      "z2mDesc": null
+    },
+    {
+      "mfr": "_TZ3000_o005nuxx",
+      "pid": "TS0115",
+      "hint": "usb_outlet_advanced",
+      "withMfr": [
+        "button_wireless_2",
+        "socket_power_strip_four_two"
+      ],
+      "sources": [
+        "mfs_db",
+        "blakadder"
+      ],
+      "tier": "heuristic_pid",
+      "applySafe": false,
+      "z2mDesc": null
+    },
+    {
+      "mfr": "_TZ3000_pzui3skt",
+      "pid": "TS0041",
+      "hint": "button_wireless_1",
+      "withMfr": [
+        "smart_knob_rotary"
+      ],
+      "sources": [
+        "mfs_db",
+        "blakadder"
+      ],
+      "tier": "pid_default",
+      "applySafe": false,
+      "z2mDesc": null
+    },
+    {
+      "mfr": "_TZ3000_rk2yzt0u",
+      "pid": "TS0001",
+      "hint": "switch_1gang",
+      "withMfr": [
+        "usb_dongle_triple"
+      ],
+      "sources": [
+        "mfs_db",
+        "blakadder"
+      ],
+      "tier": "pid_default",
+      "applySafe": false,
+      "z2mDesc": null
+    },
+    {
+      "mfr": "_TZ3000_t8hzpgnd",
+      "pid": "TS0042",
+      "hint": "button_wireless_2",
+      "withMfr": [
+        "switch_1gang"
+      ],
+      "sources": [
+        "mfs_db",
+        "blakadder"
+      ],
+      "tier": "pid_default",
+      "applySafe": false,
+      "z2mDesc": null
+    },
+    {
+      "mfr": "_TZ3000_w3c7ouru",
+      "pid": "TS0043",
+      "hint": "button_wireless_3",
+      "withMfr": [
+        "switch_1gang"
+      ],
+      "sources": [
+        "mfs_db",
+        "blakadder"
+      ],
+      "tier": "pid_default",
+      "applySafe": false,
+      "z2mDesc": null
+    },
+    {
+      "mfr": "_TZ3000_ww9i3e0y",
+      "pid": "TS0207",
+      "hint": "water_leak_sensor_tuya",
+      "withMfr": [
+        "water_leak_sensor_tuya"
+      ],
+      "sources": [
+        "mfs_db",
+        "blakadder"
+      ],
+      "tier": "heuristic_pid",
+      "applySafe": false,
+      "z2mDesc": null
+    },
+    {
+      "mfr": "_TZ3000_ygvf9xzp",
+      "pid": "TS0044",
+      "hint": "button_wireless_4",
+      "withMfr": [
+        "switch_1gang"
+      ],
+      "sources": [
+        "mfs_db",
+        "blakadder"
+      ],
+      "tier": "pid_default",
+      "applySafe": false,
+      "z2mDesc": null
+    },
+    {
+      "mfr": "_TZ3210_4zinq6io",
+      "pid": "TS0501B",
+      "hint": "wall_dimmer_tuya",
+      "withMfr": [
+        "wall_dimmer_tuya"
+      ],
+      "sources": [
+        "mfs_db",
+        "blakadder"
+      ],
+      "tier": "heuristic_pid",
+      "applySafe": false,
+      "z2mDesc": null
+    },
+    {
+      "mfr": "_TZ3210_9q49basr",
+      "pid": "TS0501B",
+      "hint": "wall_dimmer_tuya",
+      "withMfr": [
+        "wall_dimmer_tuya"
+      ],
+      "sources": [
+        "mfs_db",
+        "blakadder"
+      ],
+      "tier": "heuristic_pid",
+      "applySafe": false,
+      "z2mDesc": null
+    },
+    {
+      "mfr": "_TZ3210_e5t9bfdv",
+      "pid": "TS0501B",
+      "hint": "wall_dimmer_tuya",
+      "withMfr": [
+        "wall_dimmer_tuya"
+      ],
+      "sources": [
+        "mfs_db",
+        "blakadder"
+      ],
+      "tier": "heuristic_pid",
+      "applySafe": false,
+      "z2mDesc": null
+    },
+    {
+      "mfr": "_TZ3210_g0qr1fqo",
+      "pid": "TS0503B",
+      "hint": "bulb_rgb",
+      "withMfr": [
+        "generic_tuya"
+      ],
+      "sources": [
+        "mfs_db",
+        "blakadder"
+      ],
+      "tier": "heuristic_pid",
+      "applySafe": false,
+      "z2mDesc": null
+    },
+    {
+      "mfr": "_TZ3210_i680rtja",
+      "pid": "TS0501B",
+      "hint": "wall_dimmer_tuya",
+      "withMfr": [
+        "wall_dimmer_tuya"
+      ],
+      "sources": [
+        "mfs_db",
+        "blakadder"
+      ],
+      "tier": "heuristic_pid",
+      "applySafe": false,
+      "z2mDesc": null
+    },
+    {
+      "mfr": "_TZ3210_odlghna1",
+      "pid": "TS0503B",
+      "hint": "bulb_rgb",
+      "withMfr": [
+        "wall_dimmer_tuya"
+      ],
+      "sources": [
+        "mfs_db",
+        "blakadder"
+      ],
+      "tier": "heuristic_pid",
+      "applySafe": false,
+      "z2mDesc": null
+    },
+    {
+      "mfr": "_TZ3210_pudg9sge",
+      "pid": "TS0501B",
+      "hint": "wall_dimmer_tuya",
+      "withMfr": [
+        "generic_tuya"
+      ],
+      "sources": [
+        "mfs_db",
+        "blakadder"
+      ],
+      "tier": "heuristic_pid",
+      "applySafe": false,
+      "z2mDesc": null
+    },
+    {
+      "mfr": "_TZ3210_q7oryllx",
+      "pid": "TS0501",
+      "hint": null,
+      "withMfr": [
+        "switch_1gang"
+      ],
+      "sources": [
+        "mfs_db",
+        "blakadder"
+      ],
+      "tier": "none",
+      "applySafe": false,
+      "z2mDesc": null
+    },
+    {
+      "mfr": "_TZ3210_rxqls8v0",
+      "pid": "TS0202",
+      "hint": "motion_sensor",
+      "withMfr": [
+        "wall_dimmer_tuya"
+      ],
+      "sources": [
+        "mfs_db",
+        "blakadder"
+      ],
+      "tier": "pid_default",
+      "applySafe": false,
+      "z2mDesc": null
+    },
+    {
+      "mfr": "_TZ3210_wp1k8xws",
+      "pid": "TS0503B",
+      "hint": "bulb_rgb",
+      "withMfr": [
+        "generic_tuya"
+      ],
+      "sources": [
+        "mfs_db",
+        "blakadder"
+      ],
+      "tier": "heuristic_pid",
+      "applySafe": false,
+      "z2mDesc": null
+    },
+    {
+      "mfr": "_TZ3210_wuhzzfqg",
+      "pid": "TS0202",
+      "hint": "motion_sensor",
+      "withMfr": [
+        "wall_dimmer_tuya"
+      ],
+      "sources": [
+        "mfs_db",
+        "blakadder"
+      ],
+      "tier": "pid_default",
+      "applySafe": false,
+      "z2mDesc": null
+    },
+    {
+      "mfr": "_TZ3210_zmy9hjay",
+      "pid": "TS0202",
+      "hint": "motion_sensor",
+      "withMfr": [
+        "wall_dimmer_tuya"
+      ],
+      "sources": [
+        "mfs_db",
+        "blakadder"
+      ],
+      "tier": "pid_default",
+      "applySafe": false,
+      "z2mDesc": null
+    },
+    {
+      "mfr": "_TZ3400_keyjqthh",
+      "pid": "TS0041",
+      "hint": "button_wireless_1",
+      "withMfr": [
+        "button_wireless_8"
+      ],
+      "sources": [
+        "mfs_db",
+        "blakadder"
+      ],
+      "tier": "pid_default",
+      "applySafe": false,
+      "z2mDesc": null
+    },
+    {
+      "mfr": "_TZB210_nfzrlz29",
+      "pid": "TS0501B",
+      "hint": "wall_dimmer_tuya",
+      "withMfr": [
+        "bulb_rgbw"
+      ],
+      "sources": [
+        "mfs_db",
+        "blakadder"
+      ],
+      "tier": "heuristic_pid",
+      "applySafe": false,
+      "z2mDesc": null
+    },
+    {
+      "mfr": "_TZE200_hl0ss9oa",
+      "pid": "TS0025",
+      "hint": null,
+      "withMfr": [
+        "presence_sensor_radar"
+      ],
+      "sources": [
+        "mfs_db",
+        "blakadder"
+      ],
+      "tier": "none",
+      "applySafe": false,
+      "z2mDesc": null
+    },
+    {
+      "mfr": "_TZE200_sbordckq",
+      "pid": "TS0003",
+      "hint": "switch_3gang",
+      "withMfr": [
+        "curtain_motor_tilt"
+      ],
+      "sources": [
+        "mfs_db",
+        "blakadder"
+      ],
+      "tier": "pid_default",
+      "applySafe": false,
+      "z2mDesc": null
+    },
+    {
+      "mfr": "_TYZB01_4lwqwyqn",
+      "pid": "TS0013",
+      "hint": "switch_3gang",
+      "withMfr": [
+        "switch_1gang"
+      ],
+      "sources": [
+        "johan-issue",
+        "mfs_db"
+      ],
+      "tier": "pid_default",
+      "applySafe": false,
+      "z2mDesc": null
+    },
+    {
+      "mfr": "_TZ1800_akzvkzqq",
+      "pid": "TS0211",
+      "hint": "doorbell",
+      "withMfr": [
+        "usb_dongle_triple"
+      ],
+      "sources": [
+        "mfs_db",
+        "z2m"
+      ],
+      "tier": "heuristic_pid",
+      "applySafe": false,
+      "z2mDesc": "Silvercrest smart button"
+    },
+    {
+      "mfr": "_TZ1800_ladpngdx",
+      "pid": "TS0211",
+      "hint": "doorbell",
+      "withMfr": [
+        "climate_sensor"
+      ],
+      "sources": [
+        "mfs_db",
+        "z2m"
+      ],
+      "tier": "heuristic_pid",
+      "applySafe": false,
+      "z2mDesc": "Silvercrest smart button"
+    },
+    {
+      "mfr": "_TZ3000_5af5r192",
+      "pid": "TS0049",
+      "hint": "water_valve_garden",
+      "withMfr": [
+        "climate_sensor"
+      ],
+      "sources": [
+        "mfs_db",
+        "z2m"
+      ],
+      "tier": "heuristic_pid",
+      "applySafe": false,
+      "z2mDesc": "Universal smart IR remote control"
+    },
+    {
+      "mfr": "_TZ3000_6dwfra5l",
+      "pid": "SMD9300",
+      "hint": "light_bulb_dimmable_tunable",
+      "withMfr": [
+        "light_bulb_dimmable_tunable"
+      ],
+      "sources": [
+        "mfs_db",
+        "z2m"
+      ],
+      "tier": "heuristic_pid",
+      "applySafe": false,
+      "z2mDesc": "Ikon ceiling light"
+    },
+    {
+      "mfr": "_TZ3000_bumeauzp",
+      "pid": "SMD9300",
+      "hint": "light_bulb_dimmable_tunable",
+      "withMfr": [
+        "light_bulb_dimmable_tunable"
+      ],
+      "sources": [
+        "mfs_db",
+        "z2m"
+      ],
+      "tier": "heuristic_pid",
+      "applySafe": false,
+      "z2mDesc": "Linear ceiling LED luminaire"
+    },
+    {
+      "mfr": "_TZ3000_c8bqthpo",
+      "pid": "TS0207",
+      "hint": "water_leak_sensor_tuya",
+      "withMfr": [
+        "water_leak_sensor_tuya"
+      ],
+      "sources": [
+        "mfs_db",
+        "z2m"
+      ],
+      "tier": "heuristic_pid",
+      "applySafe": false,
+      "z2mDesc": "Smart temperature and humidity sensor"
+    },
+    {
+      "mfr": "_TZ3000_hgm6k8ku",
+      "pid": "TS0207",
+      "hint": "water_leak_sensor_tuya",
+      "withMfr": [
+        "climate_sensor"
+      ],
+      "sources": [
+        "mfs_db",
+        "z2m"
+      ],
+      "tier": "heuristic_pid",
+      "applySafe": false,
+      "z2mDesc": null
+    },
+    {
+      "mfr": "_TZ3000_jcqs2mrv",
+      "pid": "SM0001",
+      "hint": null,
+      "withMfr": [
+        "plug"
+      ],
+      "sources": [
+        "mfs_db",
+        "z2m"
+      ],
+      "tier": "none",
+      "applySafe": false,
+      "z2mDesc": "Hand wave wall smart switch"
+    },
+    {
+      "mfr": "_TZ3000_piuensvr",
+      "pid": "TS0207",
+      "hint": "water_leak_sensor_tuya",
+      "withMfr": [
+        "climate_sensor"
+      ],
+      "sources": [
+        "mfs_db",
+        "z2m"
+      ],
+      "tier": "heuristic_pid",
+      "applySafe": false,
+      "z2mDesc": null
+    },
+    {
+      "mfr": "_TZ3000_ptjcjise",
+      "pid": "TS0002",
+      "hint": "switch_2gang",
+      "withMfr": [
+        "switch_1gang"
+      ],
+      "sources": [
+        "johan-issue",
+        "mfs_db"
+      ],
+      "tier": "pid_default",
+      "applySafe": false,
+      "z2mDesc": null
+    },
+    {
+      "mfr": "_TZ3000_yujem9ee",
+      "pid": "TS0201",
+      "hint": "climate_sensor",
+      "withMfr": [
+        "lcdtemphumidsensor_3"
+      ],
+      "sources": [
+        "mfs_db",
+        "z2m"
+      ],
+      "tier": "heuristic_pid",
+      "applySafe": false,
+      "z2mDesc": "Temperature and humidity sensor"
+    },
+    {
+      "mfr": "_TZ3000_ztrfrcsu",
+      "pid": "TS1001",
+      "hint": null,
+      "withMfr": [
+        "button_wireless_1"
+      ],
+      "sources": [
+        "mfs_db",
+        "z2m"
+      ],
+      "tier": "none",
+      "applySafe": false,
+      "z2mDesc": null
+    },
+    {
+      "mfr": "_TZ3210_c2iwpxf1",
+      "pid": "SMD9300",
+      "hint": "light_bulb_dimmable_tunable",
+      "withMfr": [
+        "dimmable_recessed_led",
+        "tunable_bulb_E14"
+      ],
+      "sources": [
+        "mfs_db",
+        "z2m"
+      ],
+      "tier": "heuristic_pid",
+      "applySafe": false,
+      "z2mDesc": "Livarno Lux smart LED ceiling light"
+    },
+    {
+      "mfr": "_TZ3290_acv1iuslxi3shaaj",
+      "pid": "TS1201",
+      "hint": "ir_blaster",
+      "withMfr": [
+        "ir_remote"
+      ],
+      "sources": [
+        "mfs_db",
+        "zha"
+      ],
+      "tier": "heuristic_pid",
+      "applySafe": false,
+      "z2mDesc": null
+    },
+    {
+      "mfr": "_TZ3290_rlkmy85q4pzoxobl",
+      "pid": "TS1201",
+      "hint": "ir_blaster",
+      "withMfr": [
+        "button_wireless_2"
+      ],
+      "sources": [
+        "mfs_db",
+        "zha"
+      ],
+      "tier": "heuristic_pid",
+      "applySafe": false,
+      "z2mDesc": null
+    },
+    {
+      "mfr": "_TZE200_eatmkx5j",
+      "pid": "TS0301",
+      "hint": "curtain_motor_shutter",
+      "withMfr": [
+        "button_wireless_2"
+      ],
+      "sources": [
+        "mfs_db",
+        "z2m"
+      ],
+      "tier": "heuristic_pid",
+      "applySafe": false,
+      "z2mDesc": "Top-down bottom-up dual motor shade"
+    },
+    {
+      "mfr": "_TZ3000_ja5osu5g",
+      "pid": "ZG-103ZL",
+      "hint": null,
+      "withMfr": [
+        "smart_remote_1_button_2"
+      ],
+      "sources": [
+        "interview"
+      ],
+      "tier": "interview_soft",
+      "applySafe": false,
+      "z2mDesc": null
+    },
+    {
+      "mfr": "_TZ3000_nzbm4ad4",
+      "pid": "TS0504A",
+      "hint": "bulb_rgbw",
+      "withMfr": [
+        "generic_tuya"
+      ],
+      "sources": [
+        "blakadder"
+      ],
+      "tier": "pid_default",
+      "applySafe": false,
+      "z2mDesc": null
+    },
+    {
+      "mfr": "_TZ3000_q68478x7",
+      "pid": "TS0041",
+      "hint": "button_wireless_1",
+      "withMfr": [
+        "switch_1gang"
+      ],
+      "sources": [
+        "blakadder"
+      ],
+      "tier": "pid_default",
+      "applySafe": false,
+      "z2mDesc": null
+    },
+    {
+      "mfr": "_TZ3000_rrjr1q0u",
+      "pid": "TS0043",
+      "hint": "button_wireless_3",
+      "withMfr": [
+        "button_wireless_2"
+      ],
+      "sources": [
+        "blakadder"
+      ],
+      "tier": "pid_default",
+      "applySafe": false,
+      "z2mDesc": null
+    },
+    {
+      "mfr": "_TZ3000_wqcbzbae",
+      "pid": "TS0041",
+      "hint": "button_wireless_1",
+      "withMfr": [
+        "switch_1gang"
+      ],
+      "sources": [
+        "blakadder"
+      ],
+      "tier": "pid_default",
+      "applySafe": false,
+      "z2mDesc": null
+    },
+    {
+      "mfr": "_TZ3000_yw5tvzsk",
+      "pid": "TS0043",
+      "hint": "button_wireless_3",
+      "withMfr": [
+        "button_wireless_2"
+      ],
+      "sources": [
+        "blakadder"
+      ],
+      "tier": "pid_default",
+      "applySafe": false,
+      "z2mDesc": null
+    },
+    {
+      "mfr": "_TZ3210_19qb27da",
+      "pid": "TS0501B",
+      "hint": "wall_dimmer_tuya",
+      "withMfr": [
+        "generic_tuya"
+      ],
+      "sources": [
+        "blakadder"
+      ],
+      "tier": "heuristic_pid",
+      "applySafe": false,
+      "z2mDesc": null
+    },
+    {
+      "mfr": "_TZ3210_1elppmba",
+      "pid": "TS0504B",
+      "hint": null,
+      "withMfr": [
+        "generic_tuya"
+      ],
+      "sources": [
+        "blakadder"
+      ],
+      "tier": "none",
+      "applySafe": false,
+      "z2mDesc": null
+    },
+    {
+      "mfr": "_TZ3210_93gnbdgz",
+      "pid": "TS0501B",
+      "hint": "wall_dimmer_tuya",
+      "withMfr": [
+        "generic_tuya"
+      ],
+      "sources": [
+        "blakadder"
+      ],
+      "tier": "heuristic_pid",
+      "applySafe": false,
+      "z2mDesc": null
+    },
+    {
+      "mfr": "_TZ3210_bfvybixd",
+      "pid": "TS0504B",
+      "hint": null,
+      "withMfr": [
+        "generic_tuya"
+      ],
+      "sources": [
+        "blakadder"
+      ],
+      "tier": "none",
+      "applySafe": false,
+      "z2mDesc": null
+    },
+    {
+      "mfr": "_TZ3210_grnwgegn",
+      "pid": "TS0501B",
+      "hint": "wall_dimmer_tuya",
+      "withMfr": [
+        "generic_tuya"
+      ],
+      "sources": [
+        "blakadder"
+      ],
+      "tier": "heuristic_pid",
+      "applySafe": false,
+      "z2mDesc": null
+    },
+    {
+      "mfr": "_TZ3210_nehayyhx",
+      "pid": "TS0501B",
+      "hint": "wall_dimmer_tuya",
+      "withMfr": [
+        "generic_tuya"
+      ],
+      "sources": [
+        "blakadder"
+      ],
+      "tier": "heuristic_pid",
+      "applySafe": false,
+      "z2mDesc": null
+    },
+    {
+      "mfr": "_TZ3210_wuheofsg",
+      "pid": "TS0501B",
+      "hint": "wall_dimmer_tuya",
+      "withMfr": [
+        "generic_tuya"
+      ],
+      "sources": [
+        "blakadder"
+      ],
+      "tier": "heuristic_pid",
+      "applySafe": false,
+      "z2mDesc": null
+    },
+    {
+      "mfr": "_TZ3400_key8kk7r",
+      "pid": "TS0043",
+      "hint": "button_wireless_3",
+      "withMfr": [
+        "button_wireless_2"
+      ],
+      "sources": [
+        "blakadder"
+      ],
+      "tier": "pid_default",
+      "applySafe": false,
+      "z2mDesc": null
+    },
+    {
+      "mfr": "TUYATEC-L8U78XHN",
+      "pid": "TS0901",
+      "hint": null,
+      "withMfr": [
+        "generic_tuya"
+      ],
+      "sources": [
+        "blakadder"
+      ],
+      "tier": "none",
+      "applySafe": false,
+      "z2mDesc": null
+    },
+    {
+      "mfr": "_TZ3000_aaifmpuq",
+      "pid": "TS0002",
+      "hint": "switch_2gang",
+      "withMfr": [
+        "switch_1gang"
+      ],
+      "sources": [
+        "z2m"
+      ],
+      "tier": "pid_default",
+      "applySafe": false,
+      "z2mDesc": "Switch with power monitoring"
+    },
+    {
+      "mfr": "_TZ3000_huvxrx4i",
+      "pid": "TS0002",
+      "hint": "switch_2gang",
+      "withMfr": [
+        "switch_1gang"
+      ],
+      "sources": [
+        "z2m"
+      ],
+      "tier": "pid_default",
+      "applySafe": false,
+      "z2mDesc": "Switch with power monitoring"
+    },
+    {
+      "mfr": "_TZ3000_irrmjcgi",
+      "pid": "TS0002",
+      "hint": "switch_2gang",
+      "withMfr": [
+        "switch_1gang"
+      ],
+      "sources": [
+        "z2m"
+      ],
+      "tier": "pid_default",
+      "applySafe": false,
+      "z2mDesc": "Switch with power monitoring"
+    },
+    {
+      "mfr": "_TZ3000_j6adk9id",
+      "pid": "TS0222",
+      "hint": "illuminance_sensor",
+      "withMfr": [
+        "dimmer_wall_1gang"
+      ],
+      "sources": [
+        "z2m"
+      ],
+      "tier": "pid_default",
+      "applySafe": false,
+      "z2mDesc": "Light intensity sensor"
+    },
+    {
+      "mfr": "_TZ3000_ja5osu5g",
+      "pid": "ZG-101ZE",
+      "hint": null,
+      "withMfr": [
+        "smart_remote_1_button_2"
+      ],
+      "sources": [
+        "johan-issue"
+      ],
+      "tier": "none",
+      "applySafe": false,
+      "z2mDesc": null
+    },
+    {
+      "mfr": "_TZ3000_kgxej1dv",
+      "pid": "TS00002",
+      "hint": null,
+      "withMfr": [
+        "wall_switch_2gang_1way"
+      ],
+      "sources": [
+        "johan-issue"
+      ],
+      "tier": "none",
+      "applySafe": false,
+      "z2mDesc": null
+    },
+    {
+      "mfr": "_TZ3000_pxfjrzyj",
+      "pid": "TS0002",
+      "hint": "switch_2gang",
+      "withMfr": [
+        "switch_1gang"
+      ],
+      "sources": [
+        "z2m"
+      ],
+      "tier": "pid_default",
+      "applySafe": false,
+      "z2mDesc": "Switch with power monitoring"
+    },
+    {
+      "mfr": "_TZE200_o7vduidq",
+      "pid": "TS0601",
+      "hint": "climate_sensor",
+      "withMfr": [
+        "switch_2gang"
+      ],
+      "sources": [
+        "z2m"
+      ],
+      "tier": "heuristic_pid",
+      "applySafe": false,
+      "z2mDesc": "RF control command for scene status"
+    }
+  ],
+  "nowhere": [
+    {
+      "mfr": "_TZ3000_xr5m6kfg",
+      "pid": "TS0505B",
+      "hint": "bulb_rgbw",
+      "sources": [
+        "mfs_db",
+        "z2m"
+      ],
+      "tier": "pid_default",
+      "applySafe": false,
+      "z2mDesc": "Contact sensor"
+    },
+    {
+      "mfr": "_TZ3290_lidgqyzu",
+      "pid": "TS1201",
+      "hint": "ir_blaster",
+      "sources": [
+        "mfs_db",
+        "z2m"
+      ],
+      "tier": "heuristic_pid",
+      "applySafe": false,
+      "z2mDesc": null
+    },
+    {
+      "mfr": "_TZE200_b0ihkhxh",
+      "pid": "TS0601",
+      "hint": "climate_sensor",
+      "sources": [
+        "mfs_db",
+        "z2m"
+      ],
+      "tier": "heuristic_pid",
+      "applySafe": false,
+      "z2mDesc": null
+    },
+    {
+      "mfr": "_TZE200_ra6wrlgv",
+      "pid": "TS0601",
+      "hint": "climate_sensor",
+      "sources": [
+        "mfs_db",
+        "z2m"
+      ],
+      "tier": "heuristic_pid",
+      "applySafe": false,
+      "z2mDesc": "RF control status"
+    },
+    {
+      "mfr": "_TZE200_rt5dklro",
+      "pid": "TS0601",
+      "hint": "climate_sensor",
+      "sources": [
+        "mfs_db",
+        "z2m"
+      ],
+      "tier": "heuristic_pid",
+      "applySafe": false,
+      "z2mDesc": null
+    },
+    {
+      "mfr": "_TZE200_yp5tsi3y",
+      "pid": "TS0601",
+      "hint": "climate_sensor",
+      "sources": [
+        "mfs_db",
+        "z2m"
+      ],
+      "tier": "heuristic_pid",
+      "applySafe": false,
+      "z2mDesc": "Clear RF control"
+    },
+    {
+      "mfr": "_TZE284_7qc2wlqr",
+      "pid": "TS0601",
+      "hint": "climate_sensor",
+      "sources": [
+        "mfs_db",
+        "z2m"
+      ],
+      "tier": "heuristic_pid",
+      "applySafe": false,
+      "z2mDesc": null
+    },
+    {
+      "mfr": "_TZE284_ajhu0zqb",
+      "pid": "TS0601",
+      "hint": "climate_sensor",
+      "sources": [
+        "mfs_db",
+        "z2m"
+      ],
+      "tier": "heuristic_pid",
+      "applySafe": false,
+      "z2mDesc": null
+    },
+    {
+      "mfr": "_TZE284_hqys6frs",
+      "pid": "TS0601",
+      "hint": "climate_sensor",
+      "sources": [
+        "mfs_db",
+        "z2m"
+      ],
+      "tier": "heuristic_pid",
+      "applySafe": false,
+      "z2mDesc": "Zigbee Repeater"
+    },
+    {
+      "mfr": "_TZE284_iunyuzwe",
+      "pid": "TS0601",
+      "hint": "climate_sensor",
+      "sources": [
+        "mfs_db",
+        "z2m"
+      ],
+      "tier": "heuristic_pid",
+      "applySafe": false,
+      "z2mDesc": "Zigbee Router"
+    },
+    {
+      "mfr": "_TZE284_vbgmewta",
+      "pid": "TS0601",
+      "hint": "climate_sensor",
+      "sources": [
+        "mfs_db",
+        "z2m"
+      ],
+      "tier": "heuristic_pid",
+      "applySafe": false,
+      "z2mDesc": "Zigbee Router"
+    },
+    {
+      "mfr": "_TZE210_xgzzuerd",
+      "pid": "TS0301",
+      "hint": "curtain_motor_shutter",
+      "sources": [
+        "z2m"
+      ],
+      "tier": "heuristic_pid",
+      "applySafe": false,
+      "z2mDesc": "Cover motor"
+    },
+    {
+      "mfr": "_TZE284_tokhh9pf",
+      "pid": "TS0601",
+      "hint": "climate_sensor",
+      "sources": [
+        "z2m"
+      ],
+      "tier": "heuristic_pid",
+      "applySafe": false,
+      "z2mDesc": "5-Gang TZExxx Zigbee Touch Switch"
+    }
+  ],
+  "coupleElsewhere": [
+    {
+      "mfr": "_TZ3000_cvis4qmw",
+      "pid": "TS0006",
+      "sources": [
+        "mfs_db",
+        "z2m"
+      ],
+      "meta": [
+        {
+          "source": "mfs_db",
+          "deviceType": "unknown",
+          "driverHint": "switch_1gang"
+        },
+        {
+          "source": "z2m",
+          "vendor": "AVATTO",
+          "file": "tuya.ts"
+        }
+      ],
+      "routeHint": "switch_4gang",
+      "tier": "z2m_desc",
+      "applySafe": true,
+      "reason": "4 gang switch module with neutral wire and socket",
+      "z2mDesc": "4 gang switch module with neutral wire and socket",
+      "needsReview": false,
+      "catalogHit": true,
+      "blakadderHit": false,
+      "z2mHit": true,
+      "knowledgeHit": false,
+      "agreement": 2,
+      "heuristicSoft": false,
+      "where": "switch_wall_6gang"
+    },
+    {
+      "mfr": "_TZ3000_etufnltx",
+      "pid": "TS1002",
+      "sources": [
+        "mfs_db",
+        "z2m"
+      ],
+      "meta": [
+        {
+          "source": "mfs_db",
+          "deviceType": "unknown",
+          "driverHint": "switch_1gang"
+        },
+        {
+          "source": "z2m",
+          "vendor": "Nova Digital",
+          "file": "tuya.ts"
+        }
+      ],
+      "routeHint": "switch_4gang",
+      "tier": "z2m_desc",
+      "applySafe": true,
+      "reason": "Safira smart light switch - 4 gang",
+      "z2mDesc": "Safira smart light switch - 4 gang",
+      "needsReview": false,
+      "catalogHit": true,
+      "blakadderHit": false,
+      "z2mHit": true,
+      "knowledgeHit": false,
+      "agreement": 2,
+      "heuristicSoft": false,
+      "where": "button_wireless_4"
+    },
+    {
+      "mfr": "_TZ3000_g9chy2ib",
+      "pid": "TS0003",
+      "sources": [
+        "mfs_db",
+        "z2m"
+      ],
+      "meta": [
+        {
+          "source": "mfs_db",
+          "deviceType": "thermostat",
+          "driverHint": "wall_thermostat"
+        },
+        {
+          "source": "z2m",
+          "vendor": "Tuya",
+          "file": "tuya.ts"
+        }
+      ],
+      "routeHint": "wall_thermostat",
+      "tier": "z2m_desc",
+      "applySafe": true,
+      "reason": "Wall thermostat with humidity sensor",
+      "z2mDesc": "Wall thermostat with humidity sensor",
+      "needsReview": false,
+      "catalogHit": true,
+      "blakadderHit": false,
+      "z2mHit": true,
+      "knowledgeHit": false,
+      "agreement": 2,
+      "heuristicSoft": false,
+      "where": "wall_switch_3gang_1way"
+    }
+  ]
+}
