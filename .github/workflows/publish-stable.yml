@@ -282,12 +282,16 @@ jobs:
         if: steps.soak.outputs.skip != 'true'
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+          HOMEY_API_TIMEOUT_MS: "60000"
         run: |
           if [ "${{ steps.promote_puppeteer.outcome }}" != "success" ] && \
              [ "${{ steps.promote_api.outcome }}" != "success" ]; then
             echo "::warning::All stable draft-to-test promotion tiers returned non-success; verifying actual Homey channel state before failing."
           fi
+          # P2325 BOTH: soft-continue when Athom hang + healthy .stable Test
           node .github/scripts/verify-test-version.js
+          echo "### P2325 verify soft-continue" >> "$GITHUB_STEP_SUMMARY"
+          echo "Healthy Test + transient hang → exit 0 (no Stable republish spam / P139)." >> "$GITHUB_STEP_SUMMARY"
       - name: Summary
         if: always()
         run: |

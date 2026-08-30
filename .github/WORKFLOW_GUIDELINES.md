@@ -920,9 +920,24 @@ the Universal Tuya App ID.
      prefer that path over recomputing `os.tmpdir()`.
    - Publish Diagnose scrapes logs for hang signatures and recommends wait + combo check.
 
----
+10. **P2325 Auto-Publish verify soft-continue (2026-08-30):**
+    - `verify-test-version.js` must call `softContinueOnTransientHang()` /
+      `softAlertDecision` **before** fail-closed on `ATHOM_PROCESSING_FAILED`.
+    - Evidence: tip emails + builds #3036/#3037 (`9.0.720`/`9.0.721`) hung while
+      Test stayed healthy on **9.0.719** (#3035) — workflow must exit 0 with
+      `P139: Test healthy…` note, not bump-loop.
+    - Gate: `npm run check:p2325` · `test/critical/p2325-verify-soft-hang.test.js`.
+    - Workflows: set `HOMEY_API_TIMEOUT_MS=60000` on verify + dashboard-monitor steps.
 
-## N. Sacred couple matrix / P2138 / HomeSuite reliability (2026-08-17)
+11. **P2326 inbox / misroute / DynCap (2026-08-30):**
+    - GitHub issues + forum media often carry Homey diag UUIDs — harvest via
+      `tools/ci/inbox-diag-uuid-harvest.js` (wired in `fetch-diags.yml`, `forum-poll.yml`).
+    - `#533` salvagr: on Test tip, device ran `device_radiator_valve` with empty mfr
+      while couple is `curtain_motor` — radiator logs `[MISROUTE-P2326]`.
+    - `#532` Adam: DynCap mapped FCU DP36 valve → `target_temperature` — DynCap must
+      skip driver-owned DPs (`npm run check:p2326`).
+    - Forum: keep `forum:media` + actionable processor SHADOW; never auto-post.
+    - Classify publish/runtime reliability as **BOTH**; do not spam Athom republish.
 
 ### Doctrine (never invent)
 - Identity is always **manufacturerName + productId** (Sacred Couple).

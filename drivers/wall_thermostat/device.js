@@ -116,7 +116,18 @@ class WallThermostatDevice extends TuyaSpecificClusterDevice {
       this.dpMappings[FCU_DATA_POINTS.systemMode] = { capability: 'thermostat_mode', type: 'enum' };
       this.dpMappings[FCU_DATA_POINTS.fanMode] = { capability: 'fan_mode', type: 'enum' };
       this.dpMappings[FCU_DATA_POINTS.manualMode] = { capability: 'thermostat_programming', type: 'bool' };
-      // DP36 valve is FCU signature only — handled in processResponse, not a Homey cap
+      // WHY(P2326): Reserve DP36 so DynCap cannot map valve→target_temperature (a095345e)
+      this.dpMappings[FCU_DATA_POINTS.valve] = { internal: true, type: 'valve' };
+      this._dynCapBlockDps = new Set([
+        FCU_DATA_POINTS.onOff,
+        FCU_DATA_POINTS.targetTemperature,
+        FCU_DATA_POINTS.currentTemperature,
+        FCU_DATA_POINTS.systemMode,
+        FCU_DATA_POINTS.fanMode,
+        FCU_DATA_POINTS.manualMode,
+        FCU_DATA_POINTS.valve,
+        FCU_DATA_POINTS.childlock,
+      ].filter((n) => Number.isFinite(Number(n))).map(Number));
     }
   }
 

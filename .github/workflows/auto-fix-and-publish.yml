@@ -174,7 +174,9 @@ jobs:
       - name: 📊 Dashboard monitor
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
-        run: timeout 30 node scripts/automation/dashboard-monitor.js --latest || true
+          # P2323: Athom client needs ≥60s; 30s wall clock was cutting soft-alert short
+          HOMEY_API_TIMEOUT_MS: "60000"
+        run: timeout 90 node scripts/automation/dashboard-monitor.js --latest || true
 
       - name: "📧 Re-scan crash patterns after dashboard carto"
         continue-on-error: true
@@ -186,7 +188,12 @@ jobs:
         id: processing_check
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
-        run: node .github/scripts/processing-failure-republish-check.js
+          # P2325: refuse bump-loop when hang + healthy Test (see WORKFLOW_GUIDELINES §M.10)
+          HOMEY_API_TIMEOUT_MS: "60000"
+        run: |
+          node .github/scripts/processing-failure-republish-check.js
+          echo "### P139/P2325 republish gate" >> "$GITHUB_STEP_SUMMARY"
+          echo "Refuse patch bump when Athom \`processing_failed\` / socket hang up and Test is already healthy." >> "$GITHUB_STEP_SUMMARY"
 
       - name: 🔁 Bump version for Homey recovery publish
         # P139: only bump when recovery checker says so — never on bare

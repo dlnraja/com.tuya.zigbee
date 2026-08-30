@@ -48,6 +48,9 @@ jobs:
       HOMEY_PUBLISH_MAX_UNCOMPRESSED_MB: "50"
       HOMEY_ZIGBEE_MAX_TOTAL_COMBOS: "20000"
       HOMEY_ZIGBEE_MAX_DRIVER_COMBOS: "2000"
+      # P2323/P2325: Athom apps API default ~10s is too short (tip hang / Timeout after)
+      HOMEY_API_TIMEOUT_MS: "60000"
+      HOMEY_BUILD_POLL_TIMEOUT_MS: "240000"
       HOMEY_ZIGBEE_MAX_CASE_FORMS: "2"
       HOMEY_DRAFT_WAIT_MS: "360000"
 
@@ -430,6 +433,8 @@ jobs:
         if: steps.check_pat.outputs.has_pat == 'true'
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+          # P2325: soft-continue when Athom hang + healthy Test (do not fail-closed/bump-loop)
+          HOMEY_API_TIMEOUT_MS: "60000"
         run: |
           if [ "${{ steps.promote_puppeteer.outcome }}" != "success" ] && \
              [ "${{ steps.promote_oauth.outcome }}" != "success" ] && \
@@ -437,6 +442,8 @@ jobs:
             echo "::warning::All draft-to-test promotion tiers returned non-success; verifying actual Homey channel state before failing."
           fi
           node .github/scripts/verify-test-version.js
+          echo "### P2325 verify (soft-continue on Athom hang)" >> "$GITHUB_STEP_SUMMARY"
+          echo "If Athom draft hung but Test is healthy, workflow exits 0 (P139) — do not spam republish." >> "$GITHUB_STEP_SUMMARY"
 
       - name: Regenerate README & Docs
         if: always()

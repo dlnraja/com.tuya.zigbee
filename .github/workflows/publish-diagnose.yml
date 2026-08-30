@@ -117,14 +117,16 @@ jobs:
           HINT="${{ steps.detect.outputs.hang_hint }}"
           echo "## 💡 Recommendation" >> $GITHUB_STEP_SUMMARY
           if [ "$HINT" = "athom_socket_hang" ]; then
-            echo "**Root cause (P139/P2323)**: Athom \`processing_failed\` / \`socket hang up\` (tip email + developer tools)." >> $GITHUB_STEP_SUMMARY
+            echo "**Root cause (P139/P2323/P2325)**: Athom \`processing_failed\` / \`socket hang up\` (tip email + developer tools)." >> $GITHUB_STEP_SUMMARY
             echo "" >> $GITHUB_STEP_SUMMARY
             echo "**Do NOT** bump-loop / spam Publish Stable→Test." >> $GITHUB_STEP_SUMMARY
             echo "**Do**:" >> $GITHUB_STEP_SUMMARY
             echo "1. Keep last healthy Test build; wait Athom cooldown" >> $GITHUB_STEP_SUMMARY
             echo "2. Verify combo budget: \`node scripts/maintenance/compact-zigbee-identifiers.cjs\` (P2252 raw ≤20k)" >> $GITHUB_STEP_SUMMARY
             echo "3. Dashboard: \`HOMEY_API_TIMEOUT_MS=60000 npm run versions:report\` (retry on hang)" >> $GITHUB_STEP_SUMMARY
-            echo "4. One human publish after cooldown if Test is stale" >> $GITHUB_STEP_SUMMARY
+            echo "4. \`verify-test-version.js\` soft-continues when Test is healthy (P2325) — treat green workflow + hung draft as soak, not failure to republish" >> $GITHUB_STEP_SUMMARY
+            echo "5. One human publish after cooldown if Test tip is stale vs master tip" >> $GITHUB_STEP_SUMMARY
+            echo "6. Inbox misroutes (#533 radiator vs curtain): fetch diag UUID via \`npm run diag:inbox-uuids:fetch\` (P2326)" >> $GITHUB_STEP_SUMMARY
           elif [ "$HINT" = "prepare_publish_missing" ]; then
             echo "**Root cause**: prepared publish dir missing after \`prepare-publish\`." >> $GITHUB_STEP_SUMMARY
             echo "" >> $GITHUB_STEP_SUMMARY

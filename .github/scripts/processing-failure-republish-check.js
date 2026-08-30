@@ -28,6 +28,13 @@ const FAILED_STATES = new Set(["processing_failed", "error", "failed", "revoked"
 const TRANSIENT_RE = /socket hang up|econnreset|econnaborted|etimedout|timeout after|fetch failed|network|timeout|temporar|502|503|504/i;
 const HEALTHY_TEST_STATES = new Set(["test"]);
 
+let softAlertDecision = null;
+try {
+  ({ softAlertDecision } = require("../../scripts/lib/soft-expect-decision"));
+} catch {
+  softAlertDecision = null;
+}
+
 function readJson(file) {
   return JSON.parse(fs.readFileSync(file, "utf8"));
 }
@@ -131,6 +138,25 @@ function decidePublishRecovery({ appVersion, report, now = Date.now(), maxAgeMs 
       reason: "Latest Athom build is not failed.",
       changelog: changelogDefault,
     };
+  }
+
+  // P139 / P2325: prefer shared softAlertDecision when available (same rules as verify-test-version)
+  if (softAlertDecision) {
+    try {
+      const alert = softAlertDecision(listBuilds(report), { soft: true });
+      if (alert && alert.alert === false && alert.reason === "transient-hang-healthy-test") {
+        return {
+          triggerPublish: false,
+          requiresBump: false,
+          transient: true,
+          latestState,
+          latestVersion,
+          latestDetail,
+          reason: `P2325 soft-alert: ${alert.reason} (healthy Test v${alert.healthy?.version || "?"} #${alert.healthy?.id || "?"}). Refusing republish loop.`,
+          changelog: changelogDefault,
+        };
+      }
+    } catch (_e) { /* fall through to local logic */ }
   }
 
   // P139: shared App ID — if Test already has a healthy build, Athom transient

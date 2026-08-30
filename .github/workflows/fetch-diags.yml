@@ -207,6 +207,34 @@ jobs:
             head -n 25 "reports/resilience-$(date -u +%F)/INVENTORY.md" >> $GITHUB_STEP_SUMMARY || true
           fi
 
+      # P2326: pull Homey crash/diags by UUID from forum media + known inbox codes
+      - name: "P2326 Inbox diag UUID harvest + Athom fetch"
+        if: always()
+        continue-on-error: true
+        timeout-minutes: 15
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+          HOMEY_API_TIMEOUT_MS: "60000"
+        run: |
+          echo "## P2326 inbox diag UUID harvest" >> "$GITHUB_STEP_SUMMARY"
+          if [ -f tools/ci/forum-media-deep-scan.js ]; then
+            node tools/ci/forum-media-deep-scan.js --max=20 --topics=140352,89271 || true
+          fi
+          if [ -f tools/ci/inbox-diag-uuid-harvest.js ]; then
+            if [ -n "${HOMEY_PAT:-}" ]; then
+              node tools/ci/inbox-diag-uuid-harvest.js --fetch --max=8 || echo "uuid harvest warn"
+            else
+              node tools/ci/inbox-diag-uuid-harvest.js || echo "uuid list warn"
+            fi
+          fi
+          node .github/scripts/privacy-redactor.js .github/state/inbox-diag-harvest .github/state/homey-app-diag || true
+          if [ -f .github/state/inbox-diag-harvest/latest.json ]; then
+            echo '```json' >> "$GITHUB_STEP_SUMMARY"
+            head -c 2000 .github/state/inbox-diag-harvest/latest.json >> "$GITHUB_STEP_SUMMARY" || true
+            echo '' >> "$GITHUB_STEP_SUMMARY"
+            echo '```' >> "$GITHUB_STEP_SUMMARY"
+          fi
+
       - name: "Regression lessons gate (MUST-KEEP fatals)"
         if: always()
         run: node tools/ci/regression-lessons-gate.js

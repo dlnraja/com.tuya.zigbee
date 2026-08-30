@@ -245,6 +245,10 @@
     "check:p2286": "node --test test/critical/p2286-soft-expect-publish.test.js",
     "check:p2287": "node --test test/critical/p2287-ias-leftover-ef00-skip.test.js",
     "check:p2288": "node --test test/critical/p2288-prepare-publish-sacred-keep.test.js",
+    "check:p2325": "node --test test/critical/p2325-verify-soft-hang.test.js",
+    "check:p2326": "node --test test/critical/p2326-dyn-cap-misroute.test.js",
+    "diag:inbox-uuids": "node tools/ci/inbox-diag-uuid-harvest.js",
+    "diag:inbox-uuids:fetch": "node tools/ci/inbox-diag-uuid-harvest.js --fetch --max=6",
     "check:discovery-lineage": "node tools/ci/discovery-lineage-enrich-gate.js"
   },
   "keywords": [

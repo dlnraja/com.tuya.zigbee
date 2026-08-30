@@ -142,6 +142,8 @@ jobs:
           npm run check:p2286
           npm run check:p2287
           npm run check:p2288
+          npm run check:p2325
+          npm run check:p2326
 
       - name: 🛡️ P217 fork harvest sacred-couple gate
         run: node tools/ci/p217-fork-harvest-gate.js

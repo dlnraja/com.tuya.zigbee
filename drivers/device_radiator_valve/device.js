@@ -169,6 +169,27 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
     const profile = this.dpProfile;
     this.log(`[TRV] v5.6.0 - Profile: ${profile} | ${profile === 'me167' ? 'ME167 DPs: 2-5,7,35,36,39,47' : 'Standard DPs: 1-10,13-15,101-109'}`);
 
+    // WHY(P2326 / salvagr #533 diag c137a5d7): empty zb_manufacturer_name left TRV on
+    // Generic profile while Moes ZTS-EUR-C curtain was mis-paired as radiator.
+    try {
+      const { ensureManufacturerSettings, getManufacturerName, getModelId } = require('../../lib/helpers/ManufacturerNameHelper');
+      await ensureManufacturerSettings(this, zclNode);
+      const mfr = getManufacturerName(this);
+      const pid = getModelId(this) || 'TS0601';
+      const { isForbiddenDriver, lookup } = require('../../lib/pairing/UserMisattributionRegistry');
+      if (mfr && isForbiddenDriver(mfr, pid, 'device_radiator_valve')) {
+        const c = lookup(mfr, pid);
+        this.error(
+          `[MISROUTE-P2326] ${mfr}+${pid} is locked to ${c?.canonicalDriver || 'curtain_motor'} `
+          + '— remove this device and re-pair under Curtain / Window Coverings (not Radiator Valve).',
+        );
+      } else if (!mfr) {
+        this.log('[TRV-P2326] manufacturerName still empty after ensure — pair identity incomplete');
+      }
+    } catch (e) {
+      this.log('[TRV-P2326] misroute check skipped:', e?.message || e);
+    }
+
     // Store manufacturerName for profile detection
     try {
       const mfr = this.getStoreValue('manufacturerName') || zclNode?.endpoints?.[1]?.clusters?.basic?.attributes?.manufacturerName?.value;

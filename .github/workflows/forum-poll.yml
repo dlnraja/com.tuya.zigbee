@@ -201,6 +201,38 @@ jobs:
           else
             echo "forum-media-deep-scan.js missing — skip"
           fi
+          if [ -f .github/state/forum/forum-media-deep.json ]; then
+            echo '```json' >> "$GITHUB_STEP_SUMMARY"
+            node -e "const m=require('./.github/state/forum/forum-media-deep.json'); const n=(m.topics||[]).reduce((a,t)=>a+(t.withMediaOrFp||0),0); console.log(JSON.stringify({generatedAt:m.generatedAt,topics:(m.topics||[]).length,withMediaOrFp:n,collisions:(m.collisions||[]).length},null,2))" >> "$GITHUB_STEP_SUMMARY" || true
+            echo '```' >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      # P2326: harvest Homey diag UUIDs from media/actionable reports; optional Athom fetch
+      - name: 🩺 Inbox diag UUID harvest (P2326 SHADOW)
+        if: always()
+        continue-on-error: true
+        timeout-minutes: 12
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+          HOMEY_API_TIMEOUT_MS: "60000"
+        run: |
+          echo "## 🩺 Inbox diag UUID harvest (P2326)" >> "$GITHUB_STEP_SUMMARY"
+          if [ ! -f tools/ci/inbox-diag-uuid-harvest.js ]; then
+            echo "harvest script missing — skip"
+            exit 0
+          fi
+          if [ -n "${HOMEY_PAT:-}" ]; then
+            node tools/ci/inbox-diag-uuid-harvest.js --fetch --max=6 || echo "HARVEST_FETCH_WARN"
+          else
+            node tools/ci/inbox-diag-uuid-harvest.js || echo "HARVEST_LIST_WARN"
+          fi
+          if [ -f .github/state/inbox-diag-harvest/latest.json ]; then
+            echo '```json' >> "$GITHUB_STEP_SUMMARY"
+            head -c 2500 .github/state/inbox-diag-harvest/latest.json >> "$GITHUB_STEP_SUMMARY" || true
+            echo '' >> "$GITHUB_STEP_SUMMARY"
+            echo '```' >> "$GITHUB_STEP_SUMMARY"
+          fi
+          node .github/scripts/privacy-redactor.js .github/state/inbox-diag-harvest .github/state/homey-app-diag || true
 
       - name: 🔇 Forum PM read-only (SSO, never POST)
         if: always()
@@ -248,5 +280,6 @@ jobs:
             forum-actionable-processor.log
             market-couples-soft.log
             reports/forum-verify-*/
+            .github/state/inbox-diag-harvest/
           if-no-files-found: warn
           retention-days: 7
