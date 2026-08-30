@@ -111,9 +111,8 @@
     }
   ],
   "images": {
-    "small": "/drivers/wifi_switch/assets/images/small.png",
-    "large": "/drivers/wifi_switch/assets/images/large.png",
-    "xlarge": "/drivers/wifi_switch/assets/images/xlarge.png"
+    "small": "{{driverAssetsPath}}/images/small.png",
+    "large": "{{driverAssetsPath}}/images/large.png"
   },
   "platforms": [
     "local"

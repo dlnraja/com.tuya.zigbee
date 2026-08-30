@@ -111,9 +111,8 @@
     }
   ],
   "images": {
-    "small": "/drivers/wifi_water_valve/assets/images/small.png",
-    "large": "/drivers/wifi_water_valve/assets/images/large.png",
-    "xlarge": "/drivers/wifi_water_valve/assets/images/xlarge.png"
+    "small": "{{driverAssetsPath}}/images/small.png",
+    "large": "{{driverAssetsPath}}/images/large.png"
   },
   "platforms": [
     "local"

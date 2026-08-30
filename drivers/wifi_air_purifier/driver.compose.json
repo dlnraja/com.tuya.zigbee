@@ -114,9 +114,8 @@
     }
   ],
   "images": {
-    "small": "/drivers/wifi_air_purifier/assets/images/small.png",
-    "large": "/drivers/wifi_air_purifier/assets/images/large.png",
-    "xlarge": "/drivers/wifi_air_purifier/assets/images/xlarge.png"
+    "small": "{{driverAssetsPath}}/images/small.png",
+    "large": "{{driverAssetsPath}}/images/large.png"
   },
   "platforms": [
     "local"

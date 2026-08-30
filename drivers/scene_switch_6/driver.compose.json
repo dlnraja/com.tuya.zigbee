@@ -97,9 +97,8 @@
     }
   },
   "images": {
-    "small": "/drivers/scene_switch_6/assets/images/small.png",
-    "large": "/drivers/scene_switch_6/assets/images/large.png",
-    "xlarge": "/drivers/scene_switch_6/assets/images/xlarge.png"
+    "small": "{{driverAssetsPath}}/images/small.png",
+    "large": "{{driverAssetsPath}}/images/large.png"
   },
   "platforms": [
     "local"

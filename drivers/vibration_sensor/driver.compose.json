@@ -198,9 +198,8 @@
     }
   },
   "images": {
-    "small": "/drivers/vibration_sensor/assets/images/small.png",
-    "large": "/drivers/vibration_sensor/assets/images/large.png",
-    "xlarge": "/drivers/vibration_sensor/assets/images/xlarge.png"
+    "small": "{{driverAssetsPath}}/images/small.png",
+    "large": "{{driverAssetsPath}}/images/large.png"
   },
   "platforms": [
     "local"

@@ -117,9 +117,8 @@
     }
   ],
   "images": {
-    "small": "/drivers/smart_scene_panel/assets/images/small.png",
-    "large": "/drivers/smart_scene_panel/assets/images/large.png",
-    "xlarge": "/drivers/smart_scene_panel/assets/images/xlarge.png"
+    "small": "{{driverAssetsPath}}/images/small.png",
+    "large": "{{driverAssetsPath}}/images/large.png"
   },
   "platforms": [
     "local"

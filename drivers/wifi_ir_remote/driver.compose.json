@@ -110,9 +110,8 @@
     }
   ],
   "images": {
-    "small": "/drivers/wifi_ir_remote/assets/images/small.png",
-    "large": "/drivers/wifi_ir_remote/assets/images/large.png",
-    "xlarge": "/drivers/wifi_ir_remote/assets/images/xlarge.png"
+    "small": "{{driverAssetsPath}}/images/small.png",
+    "large": "{{driverAssetsPath}}/images/large.png"
   },
   "platforms": [
     "local"

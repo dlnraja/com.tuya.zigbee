@@ -128,9 +128,8 @@
     }
   ],
   "images": {
-    "small": "/drivers/hybrid_heater_thermostat/assets/images/small.png",
-    "large": "/drivers/hybrid_heater_thermostat/assets/images/large.png",
-    "xlarge": "/drivers/hybrid_heater_thermostat/assets/images/xlarge.png"
+    "small": "{{driverAssetsPath}}/images/small.png",
+    "large": "{{driverAssetsPath}}/images/large.png"
   },
   "platforms": [
     "local"

@@ -23,9 +23,8 @@
     "alarm_generic"
   ],
   "images": {
-    "large": "/drivers/remote_button_emergency_sos/assets/images/large.png",
-    "small": "/drivers/remote_button_emergency_sos/assets/images/small.png",
-    "xlarge": "/drivers/remote_button_emergency_sos/assets/images/xlarge.png"
+    "large": "{{driverAssetsPath}}/images/large.png",
+    "small": "{{driverAssetsPath}}/images/small.png"
   },
   "energy": {
     "batteries": [

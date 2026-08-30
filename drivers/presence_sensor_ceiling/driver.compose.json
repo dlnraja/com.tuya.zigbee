@@ -126,7 +126,7 @@
       }
     },
     "learnmode": {
-      "image": "/drivers/presence_sensor_ceiling/assets/learnmode.svg",
+      "image": "{{driverAssetsPath}}/icon.svg",
       "instruction": {
         "en": "Press and hold the pairing button for 5 seconds until the LED flashes rapidly.",
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote rapidement."
@@ -318,9 +318,8 @@
     }
   ],
   "images": {
-    "small": "/drivers/presence_sensor_ceiling/assets/images/small.png",
-    "large": "/drivers/presence_sensor_ceiling/assets/images/large.png",
-    "xlarge": "/drivers/presence_sensor_ceiling/assets/images/xlarge.png"
+    "small": "{{driverAssetsPath}}/images/small.png",
+    "large": "{{driverAssetsPath}}/images/large.png"
   },
   "platforms": [
     "local"

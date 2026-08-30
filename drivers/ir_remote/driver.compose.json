@@ -126,8 +126,8 @@
     }
   ],
   "images": {
-    "large": "/drivers/ir_remote/assets/images/large.png",
-    "small": "/drivers/ir_remote/assets/images/small.png"
+    "large": "{{driverAssetsPath}}/images/large.png",
+    "small": "{{driverAssetsPath}}/images/small.png"
   },
   "id": "ir_remote",
   "version": "1.0.0",

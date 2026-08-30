@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="960" height="960" viewBox="0 0 960 960" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect x="200" y="200" width="560" height="560" rx="60" stroke="black" stroke-width="40" fill="none"/>
-  <circle cx="480" cy="480" r="100" stroke="black" stroke-width="40" fill="none"/>
-  <path d="M480 300V380M480 580V660M300 480H380M580 480H660" stroke="black" stroke-width="40" stroke-linecap="round"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 960" fill="none">
+  <rect x="0" y="0" width="960" height="960" fill="#E8F0F7"/>
+  <!-- Pipe horizontal -->
+  <rect x="80" y="420" width="800" height="120" rx="20" fill="#A0AEC0"/>
+  <rect x="80" y="430" width="800" height="20" fill="#FFFFFF" opacity="0.4"/>
+  <!-- Valve body -->
+  <rect x="320" y="280" width="320" height="400" rx="20" fill="#FFFFFF" stroke="#2C5282" stroke-width="20"/>
+  <!-- Valve handle (cross) -->
+  <rect x="460" y="220" width="40" height="120" fill="#2C5282"/>
+  <rect x="400" y="280" width="160" height="40" fill="#2C5282"/>
+  <circle cx="480" cy="300" r="20" fill="#4299E1"/>
+  <!-- Temperature display -->
+  <rect x="360" y="380" width="240" height="80" rx="10" fill="#1A365D"/>
+  <text x="480" y="440" font-family="Arial, sans-serif" font-size="48" fill="#00B5D8" text-anchor="middle" font-weight="bold">22.0°</text>
+  <!-- Drop indicator -->
+  <path d="M 480 540 Q 460 580 460 600 Q 460 620 480 620 Q 500 620 500 600 Q 500 580 480 540 Z" fill="#4299E1"/>
+  <text x="480" y="900" font-family="Arial, sans-serif" font-size="64" fill="#2C5282" text-anchor="middle" font-weight="bold">VALVE</text>
 </svg>

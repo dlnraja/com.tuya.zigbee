@@ -18,8 +18,8 @@
     "zigbee"
   ],
   "images": {
-    "large": "/drivers/sr_zs_switch/assets/images/large.png",
-    "small": "/drivers/sr_zs_switch/assets/images/small.png"
+    "large": "{{driverAssetsPath}}/images/large.png",
+    "small": "{{driverAssetsPath}}/images/small.png"
   },
   "version": "1.0.0",
   "metadata": {

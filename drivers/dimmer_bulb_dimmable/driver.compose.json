@@ -37,7 +37,7 @@
       }
     },
     "learnmode": {
-      "image": "/drivers/bulb_dimmable/assets/learnmode.svg",
+      "image": "{{driverAssetsPath}}/icon.svg",
       "instruction": {
         "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'àce que la LED clignote."
@@ -267,8 +267,8 @@
     }
   ],
   "images": {
-    "small": "/drivers/bulb_dimmable/assets/images/small.png",
-    "large": "/drivers/bulb_dimmable/assets/images/large.png"
+    "small": "{{driverAssetsPath}}/images/small.png",
+    "large": "{{driverAssetsPath}}/images/large.png"
   },
   "platforms": [
     "local"

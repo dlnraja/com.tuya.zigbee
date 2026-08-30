@@ -534,9 +534,57 @@ function createPng(width, height, fillRgb) {
   ]);
 }
 
-function generateForDriver(driverId) {
-  const iconType = DRIVER_ICON_MAP[driverId] || 'generic';
-  const svg = ICONS[iconType](COLORS);
+function inferIconType(driverId) {
+  if (DRIVER_ICON_MAP[driverId]) {return DRIVER_ICON_MAP[driverId];}
+  const id = String(driverId || '').toLowerCase();
+  if (/door|contact|window/.test(id) && !/garage/.test(id)) {return 'door';}
+  if (/motion|pir/.test(id) && !/presence|radar|mmwave/.test(id)) {return 'motion';}
+  if (/presence|radar|mmwave|occupancy/.test(id)) {return 'presence';}
+  if (/climate|temp|humid|thermo|trv|radiator|heater|hvac|fcu/.test(id)) {return 'climate';}
+  if (/water.?leak|flood|rain/.test(id)) {return 'water';}
+  if (/smoke|fire/.test(id)) {return 'smoke';}
+  if (/gas|co2|co_/.test(id)) {return 'gas';}
+  if (/soil|plant/.test(id)) {return 'soil';}
+  if (/illum|lux|light.?sensor/.test(id)) {return 'illuminance';}
+  if (/air.?purif|air.?quality/.test(id)) {return 'air';}
+  if (/dimmer|dim_/.test(id)) {return 'dimmer';}
+  if (/bulb|rgb|led.?strip|light.?bulb|tunable/.test(id)) {return 'bulb';}
+  if (/plug|outlet|socket|energy.?monitor|meter|rcbo|din.?rail/.test(id)) {return 'plug';}
+  if (/curtain|cover|shutter|blind|garage|windowcovering/.test(id)) {return 'valve';}
+  if (/valve|irrigation/.test(id)) {return 'valve';}
+  if (/button|remote|scene.?switch|wireless.?[1-8]|ts004/.test(id)) {return 'remote';}
+  if (/switch|gang|relay|module.?mini/.test(id)) {return 'switch';}
+  if (/siren|alarm|sos/.test(id)) {return 'smoke';}
+  if (/thermostat/.test(id)) {return 'thermostat';}
+  if (/button/.test(id)) {return 'button';}
+  return 'generic';
+}
+
+async function renderSvgPng(svg, outPath, size) {
+  const sharp = require('sharp');
+  const pad = Math.round(size * 0.12);
+  const iconSz = Math.max(1, size - pad * 2);
+  const icon = await sharp(Buffer.from(svg))
+    .resize(iconSz, iconSz, { fit: 'contain', background: { r: 0, g: 0, b: 0, alpha: 0 } })
+    .png()
+    .toBuffer();
+  await sharp({
+    create: {
+      width: size,
+      height: size,
+      channels: 4,
+      background: { r: 232, g: 240, b: 247, alpha: 255 },
+    },
+  })
+    .composite([{ input: icon, left: pad, top: pad }])
+    .png({ compressionLevel: 9 })
+    .toFile(outPath);
+  return fs.statSync(outPath).size;
+}
+
+async function generateForDriver(driverId) {
+  const iconType = inferIconType(driverId);
+  const svg = (ICONS[iconType] || ICONS.generic)(COLORS);
   const driverDir = path.join(ROOT, 'drivers', driverId, 'assets');
   const imgDir = path.join(driverDir, 'images');
 
@@ -545,66 +593,90 @@ function generateForDriver(driverId) {
   }
 
   fs.mkdirSync(imgDir, { recursive: true });
+  fs.writeFileSync(path.join(driverDir, 'icon.svg'), svg, 'utf8');
 
-  // Write SVG
-  const svgPath = path.join(driverDir, 'icon.svg');
-  fs.writeFileSync(svgPath, svg, 'utf8');
+  let smallBytes = 0;
+  let largeBytes = 0;
+  let xlargeBytes = 0;
+  try {
+    smallBytes = await renderSvgPng(svg, path.join(imgDir, 'small.png'), 75);
+    largeBytes = await renderSvgPng(svg, path.join(imgDir, 'large.png'), 500);
+    // xlarge omitted — Homey pair UI uses small+large; keeps publish under 50MB
+  } catch (_e) {
+    const r = parseInt(COLORS.primary.slice(1, 3), 16);
+    const g = parseInt(COLORS.primary.slice(3, 5), 16);
+    const b = parseInt(COLORS.primary.slice(5, 7), 16);
+    const smallPng = createPng(75, 75, [r, g, b]);
+    const largePng = createPng(500, 500, [r, g, b]);
+    fs.writeFileSync(path.join(imgDir, 'small.png'), smallPng);
+    fs.writeFileSync(path.join(imgDir, 'large.png'), largePng);
+    smallBytes = smallPng.length;
+    largeBytes = largePng.length;
+  }
 
-  // Write small.png (75x75) and large.png (500x500) - gradient
-  // Convert primary hex to RGB
-  const r = parseInt(COLORS.primary.slice(1, 3), 16);
-  const g = parseInt(COLORS.primary.slice(3, 5), 16);
-  const b = parseInt(COLORS.primary.slice(5, 7), 16);
-
-  const smallPng = createPng(75, 75, [r, g, b]);
-  fs.writeFileSync(path.join(imgDir, 'small.png'), smallPng);
-
-  const largePng = createPng(500, 500, [r, g, b]);
-  fs.writeFileSync(path.join(imgDir, 'large.png'), largePng);
-
-  // Image-info.json
   const infoPath = path.join(driverDir, 'image-info.json');
   if (!fs.existsSync(infoPath)) {
     fs.writeFileSync(infoPath, JSON.stringify({
-      en: driverId.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase()),
+      en: driverId.replace(/_/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase()),
     }, null, 2));
   }
 
-  return { driver: driverId, icon: iconType, status: 'ok', svgBytes: svg.length, smallBytes: smallPng.length, largeBytes: largePng.length };
+  return {
+    driver: driverId,
+    icon: iconType,
+    status: 'ok',
+    svgBytes: svg.length,
+    smallBytes,
+    largeBytes,
+    xlargeBytes,
+  };
 }
 
-function main() {
-  console.log('Coherent Icon Generator v1.0.0\n');
+async function main() {
+  console.log('Coherent Icon Generator v1.1.0 (P2315)\n');
   const args = process.argv.slice(2);
 
   let targets = [];
   if (args.includes('--all')) {
-    targets = fs.readdirSync(path.join(ROOT, 'drivers')).filter(d => {
+    targets = fs.readdirSync(path.join(ROOT, 'drivers')).filter((d) => {
       const cp = path.join(ROOT, 'drivers', d, 'driver.compose.json');
       return fs.existsSync(cp);
     });
   } else if (args.length) {
-    targets = args;
+    targets = args.filter((a) => !a.startsWith('--'));
   } else {
-    // Default: door_sensor + thermostat (missing)
     targets = ['door_sensor', 'thermostat'];
   }
 
   console.log('Targets:', targets.length, 'drivers\n');
   const results = [];
+  let i = 0;
   for (const d of targets) {
-    const r = generateForDriver(d);
-    if (r.status === 'ok') {
-      console.log('  ✓', d, '(', r.icon, '): SVG=' + r.svgBytes + 'B, small=' + r.smallBytes + 'B, large=' + r.largeBytes + 'B');
-    } else {
-      console.log('  -', d, ':', r.reason);
-    }
+    const r = await generateForDriver(d);
     results.push(r);
+    i++;
+    if (r.status === 'ok') {
+      if (i % 25 === 0 || i === targets.length) {
+        console.log(`  … ${i}/${targets.length} (last: ${d} → ${r.icon})`);
+      }
+    } else {
+      console.log('  ✗', d, r.reason || r.status);
+    }
   }
 
-  const ok = results.filter(r => r.status === 'ok').length;
-  console.log('\n✓ Done:', ok + '/' + results.length, 'icons generated/regenerated');
+  const ok = results.filter((r) => r.status === 'ok').length;
+  const types = {};
+  for (const r of results) {
+    if (r.icon) {types[r.icon] = (types[r.icon] || 0) + 1;}
+  }
+  console.log('\nDone:', ok, 'ok /', results.length);
+  console.log('Icon type histogram:', types);
 }
 
-if (require.main === module) main();
-module.exports = { generateForDriver, ICONS, DRIVER_ICON_MAP, createPng };
+if (require.main === module) {
+  main().catch((e) => {
+    console.error(e);
+    process.exit(1);
+  });
+}
+module.exports = { generateForDriver, ICONS, DRIVER_ICON_MAP, createPng, inferIconType };

@@ -38,9 +38,8 @@
     }
   },
   "images": {
-    "small": "/drivers/valve_single/assets/images/small.png",
-    "large": "/drivers/valve_single/assets/images/large.png",
-    "xlarge": "/drivers/valve_single/assets/images/xlarge.png"
+    "small": "{{driverAssetsPath}}/images/small.png",
+    "large": "{{driverAssetsPath}}/images/large.png"
   },
   "platforms": [
     "local"

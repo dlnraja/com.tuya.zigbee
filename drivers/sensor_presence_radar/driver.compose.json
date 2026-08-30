@@ -55,7 +55,7 @@
       "TS0004"
     ],
     "learnmode": {
-      "image": "/drivers/presence_sensor_radar/assets/learnmode.svg",
+      "image": "{{driverAssetsPath}}/icon.svg",
       "instruction": {
         "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
@@ -613,9 +613,8 @@
     }
   ],
   "images": {
-    "small": "/drivers/presence_sensor_radar/assets/images/small.png",
-    "large": "/drivers/presence_sensor_radar/assets/images/large.png",
-    "xlarge": "/drivers/presence_sensor_radar/assets/images/xlarge.png"
+    "small": "{{driverAssetsPath}}/images/small.png",
+    "large": "{{driverAssetsPath}}/images/large.png"
   },
   "platforms": [
     "local"

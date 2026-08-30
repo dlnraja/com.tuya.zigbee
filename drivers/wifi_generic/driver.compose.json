@@ -129,9 +129,8 @@
     }
   ],
   "images": {
-    "small": "/drivers/wifi_generic/assets/images/small.png",
-    "large": "/drivers/wifi_generic/assets/images/large.png",
-    "xlarge": "/drivers/wifi_generic/assets/images/xlarge.png"
+    "small": "{{driverAssetsPath}}/images/small.png",
+    "large": "{{driverAssetsPath}}/images/large.png"
   },
   "platforms": [
     "local"

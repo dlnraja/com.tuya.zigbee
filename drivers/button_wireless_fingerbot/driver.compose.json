@@ -13,8 +13,8 @@
     "finger_bot_mode"
   ],
   "images": {
-    "small": "/drivers/switch_1gang/assets/images/small.png",
-    "large": "/drivers/switch_1gang/assets/images/large.png"
+    "small": "{{driverAssetsPath}}/images/small.png",
+    "large": "{{driverAssetsPath}}/images/large.png"
   },
   "settings": [
     {

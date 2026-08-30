@@ -145,9 +145,8 @@
     }
   },
   "images": {
-    "small": "/drivers/smart_knob_rotary/assets/images/small.png",
-    "large": "/drivers/smart_knob_rotary/assets/images/large.png",
-    "xlarge": "/drivers/smart_knob_rotary/assets/images/xlarge.png"
+    "small": "{{driverAssetsPath}}/images/small.png",
+    "large": "{{driverAssetsPath}}/images/large.png"
   },
   "maintenanceActions": [
     {

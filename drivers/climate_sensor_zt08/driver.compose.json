@@ -65,8 +65,8 @@
     }
   },
   "images": {
-    "small": "/drivers/climate_sensor_zt08/assets/images/small.png",
-    "large": "/drivers/climate_sensor_zt08/assets/images/large.png"
+    "small": "{{driverAssetsPath}}/images/small.png",
+    "large": "{{driverAssetsPath}}/images/large.png"
   },
   "platforms": [
     "local"

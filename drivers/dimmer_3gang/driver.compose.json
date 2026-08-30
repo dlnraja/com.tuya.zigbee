@@ -121,9 +121,8 @@
     }
   },
   "images": {
-    "small": "/drivers/dimmer_3gang/assets/images/small.png",
-    "large": "/drivers/dimmer_3gang/assets/images/large.png",
-    "xlarge": "/drivers/dimmer_3gang/assets/images/xlarge.png"
+    "small": "{{driverAssetsPath}}/images/small.png",
+    "large": "{{driverAssetsPath}}/images/large.png"
   },
   "energy": {
     "batteries": [

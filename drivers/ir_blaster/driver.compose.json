@@ -284,9 +284,8 @@
     }
   },
   "images": {
-    "small": "/drivers/ir_blaster/assets/images/small.png",
-    "large": "/drivers/ir_blaster/assets/images/large.png",
-    "xlarge": "/drivers/ir_blaster/assets/images/xlarge.png"
+    "small": "{{driverAssetsPath}}/images/small.png",
+    "large": "{{driverAssetsPath}}/images/large.png"
   },
   "energy": {
     "batteries": [

@@ -89,9 +89,8 @@
     "button.1"
   ],
   "images": {
-    "small": "/drivers/wifi_sonoff_pow_elite/assets/images/small.png",
-    "large": "/drivers/wifi_sonoff_pow_elite/assets/images/large.png",
-    "xlarge": "/drivers/wifi_sonoff_pow_elite/assets/images/xlarge.png"
+    "small": "{{driverAssetsPath}}/images/small.png",
+    "large": "{{driverAssetsPath}}/images/large.png"
   },
   "maintenanceActions": [
     {

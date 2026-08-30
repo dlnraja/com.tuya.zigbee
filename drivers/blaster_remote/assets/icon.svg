@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-  <g transform="translate(0.00,0.00) scale(0.960000)">
-<svg width="960" height="960" viewBox="0 0 960 960" xmlns="http://www.w3.org/2000/svg">
-  <ellipse cx="500" cy="540" rx="250" ry="190" fill="none" stroke="#000" stroke-width="6"/>
-  <ellipse cx="500" cy="520" rx="250" ry="190" fill="none" stroke="#000" stroke-width="6"/>
-  <ellipse cx="500" cy="520" rx="170" ry="130" fill="none" stroke="#000" stroke-width="3"/>
-  <circle cx="500" cy="400" r="16" fill="none" stroke="#000" stroke-width="4"/>
-  <path d="M460 310 Q450 270 435 220" fill="none" stroke="#000" stroke-width="4" stroke-linecap="round"/>
-  <path d="M500 300 Q500 250 500 190" fill="none" stroke="#000" stroke-width="4" stroke-linecap="round"/>
-  <path d="M540 310 Q550 270 565 220" fill="none" stroke="#000" stroke-width="4" stroke-linecap="round"/>
-
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 960" fill="none">
+  <rect x="0" y="0" width="960" height="960" fill="#E8F0F7"/>
+  <!-- Remote body -->
+  <rect x="320" y="160" width="320" height="640" rx="40" fill="#FFFFFF" stroke="#2C5282" stroke-width="20"/>
+  <!-- Button 1 -->
+  <circle cx="480" cy="280" r="40" fill="#4299E1"/>
+  <!-- Button 2 -->
+  <circle cx="480" cy="400" r="40" fill="#E8F0F7" stroke="#4299E1" stroke-width="8"/>
+  <!-- Button 3 -->
+  <circle cx="480" cy="520" r="40" fill="#E8F0F7" stroke="#4299E1" stroke-width="8"/>
+  <!-- Button 4 -->
+  <circle cx="480" cy="640" r="40" fill="#F56565"/>
+  <!-- LED at top -->
+  <circle cx="480" cy="200" r="12" fill="#48BB78"/>
+  <text x="480" y="900" font-family="Arial, sans-serif" font-size="64" fill="#2C5282" text-anchor="middle" font-weight="bold">REMOTE</text>
 </svg>

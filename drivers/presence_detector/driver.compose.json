@@ -230,9 +230,8 @@
     }
   ],
   "images": {
-    "small": "/drivers/presence_detector/assets/images/small.png",
-    "large": "/drivers/presence_detector/assets/images/large.png",
-    "xlarge": "/drivers/presence_detector/assets/images/xlarge.png"
+    "small": "{{driverAssetsPath}}/images/small.png",
+    "large": "{{driverAssetsPath}}/images/large.png"
   },
   "platforms": [
     "local"

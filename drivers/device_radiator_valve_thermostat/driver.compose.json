@@ -18,8 +18,8 @@
     "local"
   ],
   "images": {
-    "large": "/drivers/thermostat_tuya_dp/assets/images/large.png",
-    "small": "/drivers/thermostat_tuya_dp/assets/images/small.png"
+    "large": "{{driverAssetsPath}}/images/large.png",
+    "small": "{{driverAssetsPath}}/images/small.png"
   },
   "energy": {
     "mains": true

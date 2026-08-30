@@ -1,36 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="960" height="960" viewBox="0 0 960 960" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Water Tank Monitor Icon - Homey Style -->
-  <!-- Tank body -->
-  <rect x="280" y="180" width="400" height="600" rx="40" ry="40" 
-        fill="none" stroke="#000000" stroke-width="24"/>
-  
-  <!-- Tank top rim -->
-  <ellipse cx="480" cy="180" rx="200" ry="40" 
-           fill="none" stroke="#000000" stroke-width="24"/>
-  
-  <!-- Water level indicator lines -->
-  <line x1="320" y1="300" x2="380" y2="300" stroke="#000000" stroke-width="16" stroke-linecap="round"/>
-  <line x1="320" y1="400" x2="380" y2="400" stroke="#000000" stroke-width="16" stroke-linecap="round"/>
-  <line x1="320" y1="500" x2="380" y2="500" stroke="#000000" stroke-width="16" stroke-linecap="round"/>
-  <line x1="320" y1="600" x2="380" y2="600" stroke="#000000" stroke-width="16" stroke-linecap="round"/>
-  
-  <!-- Water waves inside tank -->
-  <path d="M340 520 Q400 480 460 520 T580 520" 
-        fill="none" stroke="#000000" stroke-width="16" stroke-linecap="round"/>
-  <path d="M340 580 Q400 540 460 580 T580 580" 
-        fill="none" stroke="#000000" stroke-width="16" stroke-linecap="round"/>
-  <path d="M340 640 Q400 600 460 640 T580 640" 
-        fill="none" stroke="#000000" stroke-width="16" stroke-linecap="round"/>
-  <path d="M340 700 Q400 660 460 700 T580 700" 
-        fill="none" stroke="#000000" stroke-width="16" stroke-linecap="round"/>
-  
-  <!-- Sensor on top -->
-  <rect x="440" y="100" width="80" height="80" rx="10" 
-        fill="none" stroke="#000000" stroke-width="16"/>
-  <circle cx="480" cy="140" r="15" fill="#000000"/>
-  
-  <!-- Signal waves from sensor -->
-  <path d="M420 120 Q480 80 540 120" fill="none" stroke="#000000" stroke-width="12" stroke-linecap="round"/>
-  <path d="M400 90 Q480 40 560 90" fill="none" stroke="#000000" stroke-width="12" stroke-linecap="round"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 960" fill="none">
+  <rect x="0" y="0" width="960" height="960" fill="#E8F0F7"/>
+  <!-- Air purifier body (cylinder) -->
+  <rect x="320" y="200" width="320" height="600" rx="40" fill="#FFFFFF" stroke="#2C5282" stroke-width="20"/>
+  <!-- Air vents (top circle) -->
+  <circle cx="480" cy="280" r="100" fill="none" stroke="#4299E1" stroke-width="8"/>
+  <circle cx="480" cy="280" r="80" fill="none" stroke="#4299E1" stroke-width="6"/>
+  <circle cx="480" cy="280" r="60" fill="none" stroke="#4299E1" stroke-width="4"/>
+  <circle cx="480" cy="280" r="20" fill="#00B5D8"/>
+  <!-- Display -->
+  <rect x="360" y="440" width="240" height="120" rx="10" fill="#1A365D"/>
+  <text x="480" y="510" font-family="Arial, sans-serif" font-size="48" fill="#00B5D8" text-anchor="middle" font-weight="bold">PM2.5</text>
+  <text x="480" y="550" font-family="Arial, sans-serif" font-size="32" fill="#FFFFFF" text-anchor="middle" opacity="0.7">12 μg/m³</text>
+  <!-- Air flow arrows -->
+  <path d="M 200 280 L 280 280" stroke="#00B5D8" stroke-width="10" fill="none" stroke-linecap="round" marker-end="url(#arrow)"/>
+  <path d="M 200 320 L 280 320" stroke="#00B5D8" stroke-width="10" fill="none" stroke-linecap="round" opacity="0.6"/>
+  <path d="M 680 280 L 760 280" stroke="#00B5D8" stroke-width="10" fill="none" stroke-linecap="round"/>
+  <path d="M 680 320 L 760 320" stroke="#00B5D8" stroke-width="10" fill="none" stroke-linecap="round" opacity="0.6"/>
+  <text x="480" y="900" font-family="Arial, sans-serif" font-size="64" fill="#2C5282" text-anchor="middle" font-weight="bold">AIR</text>
 </svg>

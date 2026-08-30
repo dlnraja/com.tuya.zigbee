@@ -35,7 +35,7 @@
       }
     },
     "learnmode": {
-      "image": "/drivers/switch_usb_dongle/assets/learnmode.svg",
+      "image": "{{driverAssetsPath}}/icon.svg",
       "instruction": {
         "en": "Plug the USB dongle into a USB power source. Press the button on the dongle 3 times quickly.",
         "fr": "Branchez le dongle USB sur une source d'alimentation USB. Appuyez 3 fois rapidement sur le bouton du dongle."
@@ -73,9 +73,8 @@
     ]
   },
   "images": {
-    "small": "/drivers/switch_usb_dongle/assets/images/small.png",
-    "large": "/drivers/switch_usb_dongle/assets/images/large.png",
-    "xlarge": "/drivers/switch_usb_dongle/assets/images/xlarge.png"
+    "small": "{{driverAssetsPath}}/images/small.png",
+    "large": "{{driverAssetsPath}}/images/large.png"
   },
   "settings": [
     {

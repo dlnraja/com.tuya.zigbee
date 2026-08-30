@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="960" height="960" viewBox="0 0 960 960" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <path d="M480 750C535 750 580 705 580 650C580 605 550 565 510 552V250C510 233 497 220 480 220C463 220 450 233 450 250V552C410 565 380 605 380 650C380 705 425 750 480 750Z" stroke="black" stroke-width="40" fill="none"/>
-  <circle cx="480" cy="650" r="50" fill="black"/>
-  <line x1="480" y1="550" x2="480" y2="350" stroke="black" stroke-width="20" stroke-linecap="round"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 960" fill="none">
+  <rect x="0" y="0" width="960" height="960" fill="#E8F0F7"/>
+  <!-- Pot -->
+  <path d="M 280 600 L 320 800 L 640 800 L 680 600 Z" fill="#2C5282"/>
+  <rect x="270" y="580" width="420" height="40" rx="10" fill="#1A365D"/>
+  <!-- Soil -->
+  <ellipse cx="480" cy="600" rx="180" ry="20" fill="#1A233A"/>
+  <!-- Plant stem -->
+  <path d="M 480 600 L 480 360" stroke="#48BB78" stroke-width="20" stroke-linecap="round"/>
+  <!-- Leaves -->
+  <ellipse cx="420" cy="420" rx="60" ry="30" fill="#48BB78" transform="rotate(-30 420 420)"/>
+  <ellipse cx="540" cy="380" rx="60" ry="30" fill="#48BB78" transform="rotate(30 540 380)"/>
+  <ellipse cx="460" cy="320" rx="40" ry="20" fill="#48BB78"/>
+  <!-- Drop -->
+  <path d="M 700 700 Q 700 670 720 670 Q 740 670 740 700 Q 740 730 720 730 Q 700 730 700 700 Z" fill="#00B5D8"/>
+  <text x="480" y="900" font-family="Arial, sans-serif" font-size="64" fill="#2C5282" text-anchor="middle" font-weight="bold">SOIL</text>
 </svg>

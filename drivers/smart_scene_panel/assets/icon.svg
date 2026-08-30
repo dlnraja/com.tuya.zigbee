@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="960" height="960" viewBox="0 0 960 960" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect x="300" y="100" width="360" height="760" rx="60" stroke="black" stroke-width="40" fill="none"/>
-  <circle cx="480" cy="250" r="40" fill="black"/>
-  <circle cx="480" cy="400" r="40" fill="black"/>
-  <circle cx="480" cy="550" r="40" fill="black"/>
-  <rect x="400" y="650" width="160" height="80" rx="20" fill="black"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 960" fill="none">
+  <rect x="0" y="0" width="960" height="960" fill="#E8F0F7"/>
+  <!-- Generic device box -->
+  <rect x="200" y="200" width="560" height="560" rx="60" fill="#FFFFFF" stroke="#2C5282" stroke-width="20"/>
+  <!-- Zigbee logo (simplified Z) -->
+  <path d="M 360 360 L 600 360 L 360 600 L 600 600" stroke="#4299E1" stroke-width="30" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Signal waves -->
+  <path d="M 240 280 Q 200 360 240 440" stroke="#00B5D8" stroke-width="10" fill="none" stroke-linecap="round" opacity="0.7"/>
+  <path d="M 720 280 Q 760 360 720 440" stroke="#00B5D8" stroke-width="10" fill="none" stroke-linecap="round" opacity="0.7"/>
+  <text x="480" y="900" font-family="Arial, sans-serif" font-size="64" fill="#2C5282" text-anchor="middle" font-weight="bold">TUYA</text>
 </svg>

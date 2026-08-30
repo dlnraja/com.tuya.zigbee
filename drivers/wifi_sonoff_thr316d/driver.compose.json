@@ -88,9 +88,8 @@
     "button.1"
   ],
   "images": {
-    "small": "/drivers/wifi_sonoff_thr316d/assets/images/small.png",
-    "large": "/drivers/wifi_sonoff_thr316d/assets/images/large.png",
-    "xlarge": "/drivers/wifi_sonoff_thr316d/assets/images/xlarge.png"
+    "small": "{{driverAssetsPath}}/images/small.png",
+    "large": "{{driverAssetsPath}}/images/large.png"
   },
   "maintenanceActions": [
     {

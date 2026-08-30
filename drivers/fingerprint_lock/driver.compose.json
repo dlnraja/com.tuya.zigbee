@@ -80,9 +80,8 @@
     }
   },
   "images": {
-    "small": "/drivers/fingerprint_lock/assets/images/small.png",
-    "large": "/drivers/fingerprint_lock/assets/images/large.png",
-    "xlarge": "/drivers/fingerprint_lock/assets/images/xlarge.png"
+    "small": "{{driverAssetsPath}}/images/small.png",
+    "large": "{{driverAssetsPath}}/images/large.png"
   },
   "platforms": [
     "local"

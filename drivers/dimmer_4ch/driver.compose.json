@@ -98,9 +98,8 @@
     ]
   },
   "images": {
-    "small": "/drivers/dimmer_4ch/assets/images/small.png",
-    "large": "/drivers/dimmer_4ch/assets/images/large.png",
-    "xlarge": "/drivers/dimmer_4ch/assets/images/xlarge.png"
+    "small": "{{driverAssetsPath}}/images/small.png",
+    "large": "{{driverAssetsPath}}/images/large.png"
   },
   "platforms": [
     "local"

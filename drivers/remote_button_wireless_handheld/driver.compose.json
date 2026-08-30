@@ -77,7 +77,7 @@
       "DISABLED_REMOTE_BUTTON_WIRELESS_HANDHELD"
     ],
     "learnmode": {
-      "image": "/drivers/button_wireless_4/assets/learnmode.svg",
+      "image": "{{driverAssetsPath}}/icon.svg",
       "instruction": {
         "en": "Press and hold any button for 5 seconds until the LED blinks rapidly",
         "fr": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
@@ -128,9 +128,8 @@
     }
   },
   "images": {
-    "small": "/drivers/button_wireless_4/assets/images/small.png",
-    "large": "/drivers/button_wireless_4/assets/images/large.png",
-    "xlarge": "/drivers/button_wireless_4/assets/images/xlarge.png"
+    "small": "{{driverAssetsPath}}/images/small.png",
+    "large": "{{driverAssetsPath}}/images/large.png"
   },
   "platforms": [
     "local"

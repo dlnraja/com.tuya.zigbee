@@ -81,9 +81,8 @@
     }
   },
   "images": {
-    "small": "/drivers/hvac_controller/assets/images/small.png",
-    "large": "/drivers/hvac_controller/assets/images/large.png",
-    "xlarge": "/drivers/hvac_controller/assets/images/xlarge.png"
+    "small": "{{driverAssetsPath}}/images/small.png",
+    "large": "{{driverAssetsPath}}/images/large.png"
   },
   "platforms": [
     "local"

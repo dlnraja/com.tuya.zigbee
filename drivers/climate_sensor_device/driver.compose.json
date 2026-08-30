@@ -235,9 +235,8 @@
     }
   ],
   "images": {
-    "small": "/drivers/radiator_valve/assets/images/small.png",
-    "large": "/drivers/radiator_valve/assets/images/large.png",
-    "xlarge": "/drivers/radiator_valve/assets/images/xlarge.png"
+    "small": "{{driverAssetsPath}}/images/small.png",
+    "large": "{{driverAssetsPath}}/images/large.png"
   },
   "platforms": [
     "local"
@@ -310,7 +309,7 @@
       "TS0601"
     ],
     "learnmode": {
-      "image": "/drivers/radiator_valve/assets/learnmode.svg",
+      "image": "{{driverAssetsPath}}/icon.svg",
       "instruction": {
         "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."

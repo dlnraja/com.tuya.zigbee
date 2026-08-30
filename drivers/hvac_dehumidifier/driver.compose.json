@@ -66,9 +66,8 @@
     "zigbee"
   ],
   "images": {
-    "small": "/drivers/hvac_dehumidifier/assets/images/small.png",
-    "large": "/drivers/hvac_dehumidifier/assets/images/large.png",
-    "xlarge": "/drivers/hvac_dehumidifier/assets/images/xlarge.png"
+    "small": "{{driverAssetsPath}}/images/small.png",
+    "large": "{{driverAssetsPath}}/images/large.png"
   },
   "zigbee": {
     "manufacturerName": [
@@ -106,7 +105,7 @@
       }
     },
     "learnmode": {
-      "image": "/drivers/hvac_dehumidifier/assets/learnmode.svg",
+      "image": "{{driverAssetsPath}}/icon.svg",
       "instruction": {
         "en": "Press and hold the power button for 5 seconds until LED blinks rapidly",
         "fr": "Appuyez et maintenez le bouton d'alimentation pendant 5 secondes jusqu'à ce que la LED clignote rapidement",

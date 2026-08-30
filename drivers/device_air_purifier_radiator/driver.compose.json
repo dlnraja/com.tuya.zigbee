@@ -43,7 +43,7 @@
       "lumi.airrtc.vrfegl01"
     ],
     "learnmode": {
-      "image": "/drivers/radiator_valve/assets/learnmode.svg",
+      "image": "{{driverAssetsPath}}/icon.svg",
       "instruction": {
         "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'àce que la LED clignote."
@@ -277,8 +277,8 @@
     }
   ],
   "images": {
-    "small": "/drivers/radiator_valve/assets/images/small.png",
-    "large": "/drivers/radiator_valve/assets/images/large.png"
+    "small": "{{driverAssetsPath}}/images/small.png",
+    "large": "{{driverAssetsPath}}/images/large.png"
   },
   "platforms": [
     "local"

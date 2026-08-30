@@ -116,9 +116,8 @@
     ]
   },
   "images": {
-    "small": "/drivers/lcdtemphumidsensor/assets/images/small.png",
-    "large": "/drivers/lcdtemphumidsensor/assets/images/large.png",
-    "xlarge": "/drivers/lcdtemphumidsensor/assets/images/xlarge.png"
+    "small": "{{driverAssetsPath}}/images/small.png",
+    "large": "{{driverAssetsPath}}/images/large.png"
   },
   "platforms": [
     "local"

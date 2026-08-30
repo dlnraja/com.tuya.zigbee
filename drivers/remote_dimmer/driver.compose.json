@@ -41,7 +41,7 @@
       }
     },
     "learnmode": {
-      "image": "/drivers/remote_dimmer/assets/learnmode.svg",
+      "image": "{{driverAssetsPath}}/icon.svg",
       "instruction": {
         "en": "Press and hold the pairing button for 5 seconds until the LED flashes rapidly.",
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'au clignotement rapide de la LED.",
@@ -51,9 +51,8 @@
     }
   },
   "images": {
-    "large": "/drivers/remote_dimmer/assets/images/large.png",
-    "small": "/drivers/remote_dimmer/assets/images/small.png",
-    "xlarge": "/drivers/remote_dimmer/assets/images/xlarge.png"
+    "large": "{{driverAssetsPath}}/images/large.png",
+    "small": "{{driverAssetsPath}}/images/small.png"
   },
   "maintenanceActions": [
     {

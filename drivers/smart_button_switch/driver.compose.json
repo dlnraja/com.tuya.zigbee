@@ -19,9 +19,8 @@
     "measure_battery"
   ],
   "images": {
-    "large": "/drivers/smart_button_switch/assets/images/large.png",
-    "small": "/drivers/smart_button_switch/assets/images/small.png",
-    "xlarge": "/drivers/smart_button_switch/assets/images/xlarge.png"
+    "large": "{{driverAssetsPath}}/images/large.png",
+    "small": "{{driverAssetsPath}}/images/small.png"
   },
   "energy": {
     "batteries": [

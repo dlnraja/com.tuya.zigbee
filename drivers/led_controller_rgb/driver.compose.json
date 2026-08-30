@@ -44,9 +44,8 @@
     }
   },
   "images": {
-    "small": "/drivers/led_controller_rgb/assets/images/small.png",
-    "large": "/drivers/led_controller_rgb/assets/images/large.png",
-    "xlarge": "/drivers/led_controller_rgb/assets/images/xlarge.png"
+    "small": "{{driverAssetsPath}}/images/small.png",
+    "large": "{{driverAssetsPath}}/images/large.png"
   },
   "platforms": [
     "local"

@@ -65,9 +65,8 @@
     ]
   },
   "images": {
-    "small": "/drivers/energy_meter_3phase/assets/images/small.png",
-    "large": "/drivers/energy_meter_3phase/assets/images/large.png",
-    "xlarge": "/drivers/energy_meter_3phase/assets/images/xlarge.png"
+    "small": "{{driverAssetsPath}}/images/small.png",
+    "large": "{{driverAssetsPath}}/images/large.png"
   },
   "platforms": [
     "local"

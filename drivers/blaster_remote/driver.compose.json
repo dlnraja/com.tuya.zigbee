@@ -35,8 +35,8 @@
     }
   },
   "images": {
-    "large": "/drivers/blaster_remote/assets/images/large.png",
-    "small": "/drivers/blaster_remote/assets/images/small.png"
+    "large": "{{driverAssetsPath}}/images/large.png",
+    "small": "{{driverAssetsPath}}/images/small.png"
   },
   "maintenanceActions": [
     {

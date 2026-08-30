@@ -101,7 +101,7 @@
       }
     },
     "learnmode": {
-      "image": "/drivers/universal_zigbee/assets/learnmode.svg",
+      "image": "{{driverAssetsPath}}/icon.svg",
       "instruction": {
         "en": "Press the pairing button on your Zigbee device until it enters pairing mode.",
         "fr": "Appuyez sur le bouton d'appairage de votre appareil Zigbee jusqu'àce qu'il passe en mode appairage."
@@ -109,8 +109,8 @@
     }
   },
   "images": {
-    "large": "/drivers/universal_zigbee/assets/images/large.png",
-    "small": "/drivers/universal_zigbee/assets/images/small.png"
+    "large": "{{driverAssetsPath}}/images/large.png",
+    "small": "{{driverAssetsPath}}/images/small.png"
   },
   "flow": {
     "triggers": [],

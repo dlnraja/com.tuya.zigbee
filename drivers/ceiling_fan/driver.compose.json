@@ -46,7 +46,7 @@
       "TS0601"
     ],
     "learnmode": {
-      "image": "/drivers/ceiling_fan/assets/learnmode.svg",
+      "image": "{{driverAssetsPath}}/icon.svg",
       "instruction": {
         "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
@@ -274,9 +274,8 @@
     }
   ],
   "images": {
-    "small": "/drivers/ceiling_fan/assets/images/small.png",
-    "large": "/drivers/ceiling_fan/assets/images/large.png",
-    "xlarge": "/drivers/ceiling_fan/assets/images/xlarge.png"
+    "small": "{{driverAssetsPath}}/images/small.png",
+    "large": "{{driverAssetsPath}}/images/large.png"
   },
   "platforms": [
     "local"

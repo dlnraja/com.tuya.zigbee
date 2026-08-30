@@ -157,7 +157,7 @@
       }
     },
     "learnmode": {
-      "image": "/drivers/usb_outlet_advanced/assets/learnmode.svg",
+      "image": "{{driverAssetsPath}}/icon.svg",
       "instruction": {
         "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
@@ -542,9 +542,8 @@
     }
   ],
   "images": {
-    "small": "/drivers/usb_outlet_advanced/assets/images/small.png",
-    "large": "/drivers/usb_outlet_advanced/assets/images/large.png",
-    "xlarge": "/drivers/usb_outlet_advanced/assets/images/xlarge.png"
+    "small": "{{driverAssetsPath}}/images/small.png",
+    "large": "{{driverAssetsPath}}/images/large.png"
   },
   "platforms": [
     "local"

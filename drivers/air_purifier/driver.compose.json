@@ -75,9 +75,8 @@
     ]
   },
   "images": {
-    "small": "/drivers/air_purifier/assets/images/small.png",
-    "large": "/drivers/air_purifier/assets/images/large.png",
-    "xlarge": "/drivers/air_purifier/assets/images/xlarge.png"
+    "small": "{{driverAssetsPath}}/images/small.png",
+    "large": "{{driverAssetsPath}}/images/large.png"
   },
   "platforms": [
     "local"

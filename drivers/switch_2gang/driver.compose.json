@@ -29,7 +29,7 @@
       "TS000F"
     ],
     "learnmode": {
-      "image": "/drivers/switch_2gang/assets/learnmode.svg",
+      "image": "{{driverAssetsPath}}/icon.svg",
       "instruction": {
         "en": "Turn the switch on/off 3 times quickly"
       }
@@ -302,9 +302,8 @@
     }
   },
   "images": {
-    "small": "/drivers/switch_2gang/assets/images/small.png",
-    "large": "/drivers/switch_2gang/assets/images/large.png",
-    "xlarge": "/drivers/switch_2gang/assets/images/xlarge.png"
+    "small": "{{driverAssetsPath}}/images/small.png",
+    "large": "{{driverAssetsPath}}/images/large.png"
   },
   "settings": [
     {

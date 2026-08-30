@@ -8,9 +8,8 @@
   },
   "class": "other",
   "images": {
-    "small": "/drivers/generic_tuya/assets/images/small.png",
-    "large": "/drivers/generic_tuya/assets/images/large.png",
-    "xlarge": "/drivers/generic_tuya/assets/images/xlarge.png"
+    "small": "{{driverAssetsPath}}/images/small.png",
+    "large": "{{driverAssetsPath}}/images/large.png"
   },
   "capabilities": [
     "measure_battery",
@@ -92,7 +91,7 @@
       }
     },
     "learnmode": {
-      "image": "/drivers/generic_tuya/assets/learnmode.svg",
+      "image": "{{driverAssetsPath}}/icon.svg",
       "instruction": {
         "en": "Generic Tuya TS0601 device.\n\n1. Press and hold the reset button for 5+ seconds\n2. The LED should start blinking\n3. The device will be detected automatically\n\nNote: This is a fallback driver for unknown TS0601 devices. Data points will be auto-discovered.",
         "fr": "Appareil Tuya TS0601 générique.\n\n1. Appuyez et maintenez le bouton reset pendant 5+ secondes\n2. La LED devrait clignoter\n3. L'appareil sera détecté automatiquement\n\nNote: Driver de secours pour TS0601 inconnus. Les points de données seront auto-découverts."

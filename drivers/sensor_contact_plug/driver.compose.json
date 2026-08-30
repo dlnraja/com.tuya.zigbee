@@ -28,7 +28,7 @@
       "Excellux"
     ],
     "learnmode": {
-      "image": "/drivers/plug_smart/assets/learnmode.svg",
+      "image": "{{driverAssetsPath}}/icon.svg",
       "instruction": {
         "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'àce que la LED clignote."
@@ -594,8 +594,8 @@
     }
   ],
   "images": {
-    "small": "/drivers/plug_smart/assets/images/small.png",
-    "large": "/drivers/plug_smart/assets/images/large.png"
+    "small": "{{driverAssetsPath}}/images/small.png",
+    "large": "{{driverAssetsPath}}/images/large.png"
   },
   "platforms": [
     "local"

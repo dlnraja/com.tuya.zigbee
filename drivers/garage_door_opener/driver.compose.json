@@ -99,9 +99,8 @@
     }
   },
   "images": {
-    "small": "/drivers/garage_door_opener/assets/images/small.png",
-    "large": "/drivers/garage_door_opener/assets/images/large.png",
-    "xlarge": "/drivers/garage_door_opener/assets/images/xlarge.png"
+    "small": "{{driverAssetsPath}}/images/small.png",
+    "large": "{{driverAssetsPath}}/images/large.png"
   },
   "platforms": [
     "local"

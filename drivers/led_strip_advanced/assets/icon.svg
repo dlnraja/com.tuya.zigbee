@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="960" height="960" viewBox="0 0 960 960" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <path d="M480 150C370 150 280 240 280 350C280 430 320 500 380 540V680H580V540C640 500 680 430 680 350C680 240 590 150 480 150Z" stroke="black" stroke-width="40" fill="none"/>
-  <rect x="420" y="700" width="120" height="40" rx="10" fill="black"/>
-  <rect x="440" y="760" width="80" height="40" rx="10" fill="black"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 960" fill="none">
+  <rect x="0" y="0" width="960" height="960" fill="#E8F0F7"/>
+  <!-- Bulb glass -->
+  <path d="M 480 160 Q 320 160 320 320 Q 320 440 400 520 L 400 600 L 560 600 L 560 520 Q 640 440 640 320 Q 640 160 480 160 Z" fill="#ED8936" stroke="#2C5282" stroke-width="16"/>
+  <!-- Filament -->
+  <path d="M 440 380 Q 460 360 480 380 Q 500 400 520 380" stroke="#1A233A" stroke-width="8" fill="none"/>
+  <path d="M 440 420 Q 460 400 480 420 Q 500 440 520 420" stroke="#1A233A" stroke-width="8" fill="none"/>
+  <!-- Bulb base -->
+  <rect x="400" y="600" width="160" height="40" fill="#A0AEC0"/>
+  <rect x="400" y="640" width="160" height="40" fill="#A0AEC0"/>
+  <rect x="420" y="680" width="120" height="40" fill="#A0AEC0"/>
+  <path d="M 440 720 L 520 720 L 500 760 L 460 760 Z" fill="#1A365D"/>
+  <!-- Light rays -->
+  <line x1="200" y1="240" x2="240" y2="280" stroke="#ED8936" stroke-width="16" stroke-linecap="round"/>
+  <line x1="160" y1="320" x2="200" y2="320" stroke="#ED8936" stroke-width="16" stroke-linecap="round"/>
+  <line x1="200" y1="400" x2="240" y2="360" stroke="#ED8936" stroke-width="16" stroke-linecap="round"/>
+  <line x1="720" y1="240" x2="760" y2="280" stroke="#ED8936" stroke-width="16" stroke-linecap="round"/>
+  <line x1="760" y1="320" x2="800" y2="320" stroke="#ED8936" stroke-width="16" stroke-linecap="round"/>
+  <line x1="720" y1="400" x2="760" y2="360" stroke="#ED8936" stroke-width="16" stroke-linecap="round"/>
+  <text x="480" y="900" font-family="Arial, sans-serif" font-size="64" fill="#2C5282" text-anchor="middle" font-weight="bold">BULB</text>
 </svg>

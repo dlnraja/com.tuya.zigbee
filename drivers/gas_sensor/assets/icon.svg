@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="960" height="960" viewBox="0 0 960 960" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect x="200" y="200" width="560" height="560" rx="60" stroke="black" stroke-width="40" fill="none"/>
-  <circle cx="480" cy="480" r="100" stroke="black" stroke-width="40" fill="none"/>
-  <path d="M480 300V380M480 580V660M300 480H380M580 480H660" stroke="black" stroke-width="40" stroke-linecap="round"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 960" fill="none">
+  <rect x="0" y="0" width="960" height="960" fill="#E8F0F7"/>
+  <!-- Detector body -->
+  <circle cx="480" cy="560" r="240" fill="#FFFFFF" stroke="#2C5282" stroke-width="20"/>
+  <circle cx="480" cy="560" r="200" fill="#E8F0F7" stroke="#ED8936" stroke-width="10"/>
+  <!-- Warning symbol -->
+  <path d="M 480 460 L 480 580" stroke="#F56565" stroke-width="20" stroke-linecap="round"/>
+  <circle cx="480" cy="640" r="14" fill="#F56565"/>
+  <!-- Gas cloud rising -->
+  <ellipse cx="380" cy="360" rx="50" ry="35" fill="#ED8936" opacity="0.5"/>
+  <ellipse cx="500" cy="320" rx="70" ry="40" fill="#ED8936" opacity="0.6"/>
+  <ellipse cx="560" cy="260" rx="60" ry="35" fill="#ED8936" opacity="0.4"/>
+  <!-- Sensor mesh in middle -->
+  <circle cx="480" cy="560" r="80" fill="none" stroke="#A0AEC0" stroke-width="6"/>
+  <line x1="400" y1="560" x2="560" y2="560" stroke="#A0AEC0" stroke-width="6"/>
+  <line x1="480" y1="480" x2="480" y2="640" stroke="#A0AEC0" stroke-width="6"/>
+  <text x="480" y="900" font-family="Arial, sans-serif" font-size="64" fill="#2C5282" text-anchor="middle" font-weight="bold">GAS</text>
 </svg>

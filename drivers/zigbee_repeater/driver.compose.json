@@ -87,9 +87,8 @@
   },
   "icon": "/drivers/zigbee_repeater/assets/icon.svg",
   "images": {
-    "small": "/drivers/zigbee_repeater/assets/images/small.png",
-    "large": "/drivers/zigbee_repeater/assets/images/large.png",
-    "xlarge": "/drivers/zigbee_repeater/assets/images/xlarge.png"
+    "small": "{{driverAssetsPath}}/images/small.png",
+    "large": "{{driverAssetsPath}}/images/large.png"
   },
   "energy": {
     "approximation": {

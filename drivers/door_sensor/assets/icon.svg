@@ -13,5 +13,5 @@
   <rect x="295" y="680" width="20" height="60" rx="3" fill="#A0AEC0"/>
   <!-- Status indicator (closed/open) -->
   <circle cx="480" cy="160" r="20" fill="#48BB78"/>
-  
+  <text x="480" y="900" font-family="Arial, sans-serif" font-size="64" fill="#2C5282" text-anchor="middle" font-weight="bold">DOOR</text>
 </svg>

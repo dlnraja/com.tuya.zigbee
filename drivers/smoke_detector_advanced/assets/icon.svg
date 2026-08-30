@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="960" height="960" viewBox="0 0 960 960" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect x="200" y="200" width="560" height="560" rx="60" stroke="black" stroke-width="40" fill="none"/>
-  <circle cx="480" cy="480" r="100" stroke="black" stroke-width="40" fill="none"/>
-  <path d="M480 300V380M480 580V660M300 480H380M580 480H660" stroke="black" stroke-width="40" stroke-linecap="round"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 960" fill="none">
+  <rect x="0" y="0" width="960" height="960" fill="#E8F0F7"/>
+  <!-- Detector base (round) -->
+  <circle cx="480" cy="600" r="240" fill="#FFFFFF" stroke="#2C5282" stroke-width="20"/>
+  <circle cx="480" cy="600" r="200" fill="#E8F0F7" stroke="#4299E1" stroke-width="8"/>
+  <!-- LED ring -->
+  <circle cx="480" cy="600" r="100" fill="none" stroke="#00B5D8" stroke-width="12"/>
+  <circle cx="480" cy="600" r="20" fill="#F56565"/>
+  <!-- Smoke clouds rising -->
+  <ellipse cx="400" cy="380" rx="60" ry="40" fill="#A0AEC0" opacity="0.7"/>
+  <ellipse cx="500" cy="340" rx="80" ry="50" fill="#A0AEC0" opacity="0.7"/>
+  <ellipse cx="560" cy="280" rx="70" ry="45" fill="#A0AEC0" opacity="0.5"/>
+  <ellipse cx="440" cy="220" rx="50" ry="35" fill="#A0AEC0" opacity="0.4"/>
+  <text x="480" y="900" font-family="Arial, sans-serif" font-size="64" fill="#2C5282" text-anchor="middle" font-weight="bold">SMOKE</text>
 </svg>
