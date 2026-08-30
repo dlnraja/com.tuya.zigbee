@@ -1350,5 +1350,8 @@
   },
   "5.12.99": {
     "en": "P2303 BOTH: FCU wall_thermostat OFF/setpoint (Adam #532) — DeviceIO TX, FRAG/DP1 bool, mpbki2zm lock"
+  },
+  "5.12.101": {
+    "en": "Improved button and scene remote Flow triggers (hold-release, wall 4-gang physical, Tuya DP path)."
   }
 }
