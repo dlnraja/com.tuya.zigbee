@@ -6,7 +6,7 @@
     "de": "Szenenschalter 4-fach",
     "es": "Interruptor de escena 4 botones"
   },
-  "class": "sensor",
+  "class": "button",
   "capabilities": [
     "button.1",
     "button.2",
@@ -87,18 +87,28 @@
       "_TZ3000_wkai4ga5",
       "_TZ3000_zgyzgdua",
       "_TZE200_zqtiam9d",
-      "_TZE204_zqtiam9d"
+      "_TZE204_zqtiam9d",
+      "_tz3000_JCKXIP3G",
+      "_tz3000_KGVAMGXS",
+      "_tz3000_WKAI4GA5",
+      "_tz3000_ZGYZGDUA",
+      "_tze200_ZQTIAM9D",
+      "_tze204_ZQTIAM9D",
+      "_TZ3000_te34fjg4",
+      "_tz3000_te34fjg4",
+      "_TZ3000_TE34FJG4",
+      "_TZ3000_a4xycprs",
+      "_tz3000_a4xycprs",
+      "_TZ3000_vp6clf9d",
+      "_tz3000_vp6clf9d",
+      "_TZ3000_ufhtxr59",
+      "_tz3000_ufhtxr59",
+      "_TZ3000_abci1hiu",
+      "_tz3000_abci1hiu"
     ],
     "productId": [
-      "ERS-10TZBVK-AA",
-      "TS0041",
-      "TS0042",
-      "TS0043",
       "TS0044",
-      "TS0046",
-      "TS004F",
-      "TS0601",
-      "ZG-101ZS"
+      "TS1002"
     ],
     "endpoints": {
       "1": {
@@ -149,8 +159,7 @@
   },
   "images": {
     "small": "/drivers/scene_switch_4/assets/images/small.png",
-    "large": "/drivers/scene_switch_4/assets/images/large.png",
-    "xlarge": "/drivers/scene_switch_4/assets/images/xlarge.png"
+    "large": "/drivers/scene_switch_4/assets/images/large.png"
   },
   "platforms": [
     "local"
@@ -173,10 +182,10 @@
         "fr": "Mode de fonctionnement"
       },
       "hint": {
-        "en": "Scene Mode allows single/double/long press. Dimmer Mode only supports single press. Auto tries to detect and switch automatically.",
-        "fr": "Le mode Scène permet les appuis simples/doubles/longs. Le mode Variateur ne supporte que l'appui simple. Auto tente de détecter et basculer automatiquement."
+        "en": "TS0044 Scene Switch: keep Scene Mode (multi-press). Homey does NOT write genOnOff 0x8004 on TS0044 (unlike some TS004F). Blue LED = pairing flash or network leave blink only — not controllable from Homey.",
+        "fr": "Scene Switch TS0044: rester en Mode Scène (multi-clics). Homey n’écrit PAS genOnOff 0x8004 sur TS0044 (contrairement à certains TS004F). LED bleue = flash appairage ou clignotement sortie réseau uniquement — non contrôlable depuis Homey."
       },
-      "value": "auto",
+      "value": "scene",
       "values": [
         {
           "id": "auto",
@@ -188,18 +197,31 @@
         {
           "id": "scene",
           "label": {
-            "en": "Scene Mode (Multi-press)",
-            "fr": "Mode Scène (Multi-clics)"
+            "en": "Scene Mode (default — Multi-press)",
+            "fr": "Mode Scène (par défaut — Multi-clics)"
           }
         },
         {
           "id": "dimmer",
           "label": {
-            "en": "Dimmer Mode",
-            "fr": "Mode Variateur"
+            "en": "Dimmer Mode (TS004F only)",
+            "fr": "Mode Variateur (TS004F seulement)"
           }
         }
       ]
+    },
+    {
+      "id": "reverse_button_order",
+      "type": "checkbox",
+      "label": {
+        "en": "Reverse button order",
+        "fr": "Inverser l’ordre des boutons"
+      },
+      "value": false,
+      "hint": {
+        "en": "Enable if physical buttons fire in reverse order (e.g. 4,3,2,1)",
+        "fr": "Activer si les boutons physiques déclenchent dans l’ordre inverse (ex. 4,3,2,1)"
+      }
     }
   ],
   "maintenanceActions": [
@@ -215,20 +237,21 @@
       "id": "tuya_revive",
       "title": {
         "en": "Tuya Revive (device recovery)",
-        "fr": "Tuya Revive (récupération appareil)"
+        "fr": "Tuya Revive (récupération appareil)",
+        "nl": "Tuya Revive (apparaatherstel)",
+        "de": "Tuya Revive (Gerätewiederherstellung)"
       }
     },
     {
       "id": "generate_issue_report",
       "title": {
         "en": "Generate support report (GitHub issue)",
-        "fr": "Générer rapport de support (issue GitHub)"
+        "fr": "Générer rapport de support (issue GitHub)",
+        "nl": "Supportrapport genereren (GitHub issue)",
+        "de": "Supportbericht erstellen (GitHub Issue)"
       }
     }
   ],
   "id": "scene_switch_4",
-  "version": "1.0.0",
-  "_pidConflictNotes": [
-    "// PID-CONFLICT-NOTE ERS-10TZBVK-AA shared with 4 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-  ]
+  "version": "1.0.0"
 }

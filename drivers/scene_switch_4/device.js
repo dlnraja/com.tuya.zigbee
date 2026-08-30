@@ -21,13 +21,30 @@ class SceneSwitch4Device extends ButtonDevice {
 
     await Promise.resolve().then(() => super.onNodeInit({ zclNode })).catch(err => this.error('[INIT] Error:', err.message));
 
+    // WHY P2277: Arlight TS1002 (_TZ3000_te34fjg4) is mains 230V scene panel — strip phantom battery
+    const mfr = String(this.getSetting?.('zb_manufacturer_name') || this.getData?.()?.manufacturerName || '').toLowerCase();
+    const pid = String(this.getSetting?.('zb_model_id') || this.getData?.()?.modelId || '').toUpperCase();
+    if (mfr.includes('te34fjg4') || pid === 'TS1002') {
+      await this.removeCapability('measure_battery').catch(() => {});
+      await this.removeCapability('alarm_battery').catch(() => {});
+    }
+
     // v10.1.1: E000 + DP cluster detection for scene switch devices
     await this._setupE000Detection(zclNode);
-    await this._setupOnOffFdBoundCluster(zclNode);
+    // WHY(P2312): PhysicalButtonMixin already owns OnOffBound 0xFD + wrapHandleFrame.
+    // Driver used to overwrite bindings.onOff + blind-replace handleFrame (orphans mixin).
+    // Only fill gaps if mixin did not initialize (exotic subclass order).
+    if (!this._onOffFdBoundClusterInitialized && typeof this._setupOnOffFdBoundCluster === 'function') {
+      await this._setupOnOffFdBoundCluster(zclNode);
+    } else {
+      this.log('[SCENE_SWITCH_4] P2312 skip duplicate OnOffBound — mixin owns 0xFD');
+    }
     await this._setupTuyaDPButtonDetection(zclNode);
     await this._setupRawFrameInterceptor(zclNode);
 
-    this.log('[SCENE_SWITCH_4] v10.1.1 initialized with E000 + DP support');
+    // WHY(P2253): parallel hybrid stack — native ZCL + Tuya mfr 0xFD + E000 + EF00 RX + raw
+    this.log('[SCENE_SWITCH_4] hybrid RX: OnOff-0xFD + E000 + DP(EF00 listen) + raw; TX: no 0x8004 on TS0044; blue LED=pairing/network only');
+    this.log('[SCENE_SWITCH_4] v10.1.1+P2253 initialized with hybrid wrappers');
   }
 
   /**
@@ -200,51 +217,63 @@ class SceneSwitch4Device extends ButtonDevice {
   }
 
   /**
-   * v10.1.1: Raw frame interceptor for cluster 0xE000
+   * v10.1.1 + P2312: Raw frame interceptor for cluster 0xE000 / OnOff 0xFD
+   * WHY: append-only wrapHandleFrame — never orphan PhysicalButtonMixin physical-onoff-fd.
    */
   async _setupRawFrameInterceptor(zclNode) {
     try {
       if (!zclNode || typeof zclNode.handleFrame !== 'function') {return;}
-      const orig = zclNode.handleFrame.bind(zclNode);
-      zclNode.handleFrame = async (epId, cId, f, m) => {
-        if (cId === 6 || cId === 0x0006) {
-          const json = typeof f?.toJSON === 'function' ? f.toJSON() : f;
-          const d = Buffer.isBuffer(json?.data) ? json.data
-            : Array.isArray(json?.data) ? Buffer.from(json.data)
-            : Buffer.isBuffer(f) ? f : null;
-          const cmd = f?.cmdId ?? f?.commandId;
-          const looksFd = cmd === 0xFD || (d && d.length && d.includes(0xFD));
-          if (looksFd) {
-            const scene = (typeof cmd === 'number' && d && d.length) ? d[0]
-              : (d && d.length > 1 ? d[d.length - 1] : 0);
-            const pt = require('../../lib/utils/TuyaPressTypeMap').PRESS_MAP[scene] || 'single';
-            this.log(`[ONOFF-S4-RAW] EP${epId} 0xFD scene=${scene} -> ${pt}`);
-            await this._triggerSceneSwitch4(epId, pt);
+      const { wrapHandleFrame } = require('../../lib/utils/BidirectionalButtonState');
+      const self = this;
+      wrapHandleFrame(zclNode, 'scene-switch-4-raw', async (args, next) => {
+        const epId = args[0];
+        const cId = args[1];
+        const f = args[2];
+        try {
+          // WHY(P2328): skip 0xFD when Physical OnOffBoundCluster already owns it —
+          // dual raw+Bound double-fires Flow cards (ghost automations).
+          if (!self._onOffFdBoundClusterInitialized && (cId === 6 || cId === 0x0006)) {
+            const json = typeof f?.toJSON === 'function' ? f.toJSON() : f;
+            const d = Buffer.isBuffer(json?.data) ? json.data
+              : Array.isArray(json?.data) ? Buffer.from(json.data)
+              : Buffer.isBuffer(f) ? f : null;
+            const cmd = f?.cmdId ?? f?.commandId ?? f?.command?.id;
+            const looksFd = cmd === 0xFD || (d && d.length && d.includes(0xFD));
+            if (looksFd) {
+              const scene = (typeof cmd === 'number' && d && d.length) ? d[0]
+                : (d && d.length > 1 ? d[d.length - 1] : 0);
+              const pt = require('../../lib/utils/TuyaPressTypeMap').PRESS_MAP[scene] || 'single';
+              const gang = (epId >= 1 && epId <= 4) ? epId : 1;
+              if (!self._isDeduped(gang, `raw-fd-${scene}`)) {
+                self.log(`[ONOFF-S4-RAW] EP${epId} 0xFD scene=${scene} -> ${pt}`);
+                await self._triggerSceneSwitch4(gang, pt);
+              }
+            }
           }
-        }
-        if (cId === 57344 || cId === 0xE000) {
-          // v10.6.0 FIX: `f` is a raw Buffer — `f.data` is undefined, this
-          // path was dead. Extract bytes the same way button_wireless_4 does.
-          const json = typeof f?.toJSON === 'function' ? f.toJSON() : f;
-          const d = Buffer.isBuffer(json?.data) ? json.data
-            : Array.isArray(json?.data) ? Buffer.from(json.data)
-            : Buffer.isBuffer(f) ? f : null;
-          this.log(`[E000-S4-RAW] EP${epId} E000 frame`);
-          let btn = epId;
-          let pt = 'single';
-          if (d?.length >= 2 && d[0] >= 1 && d[0] <= 4) {
-            btn = d[0];
-            pt = resolvePressType(d[1], 'E000-S4-RAW');
-          } else if (d?.length >= 1) {
-            pt = resolvePressType(d[0], 'E000-S4-RAW');
+          if (cId === 57344 || cId === 0xE000) {
+            const json = typeof f?.toJSON === 'function' ? f.toJSON() : f;
+            const d = Buffer.isBuffer(json?.data) ? json.data
+              : Array.isArray(json?.data) ? Buffer.from(json.data)
+              : Buffer.isBuffer(f) ? f : null;
+            self.log(`[E000-S4-RAW] EP${epId} E000 frame`);
+            let btn = (epId >= 1 && epId <= 4) ? epId : 1;
+            let pt = 'single';
+            if (d?.length >= 2 && d[0] >= 1 && d[0] <= 4) {
+              btn = d[0];
+              pt = resolvePressType(d[1], 'E000-S4-RAW');
+            } else if (d?.length >= 1) {
+              pt = resolvePressType(d[0], 'E000-S4-RAW');
+            }
+            if (!self._isDeduped(btn, `e000-raw-${pt}`)) {
+              await self._triggerSceneSwitch4(btn, pt);
+            }
           }
-          await this._triggerSceneSwitch4(btn, pt);
-        }
-        return orig(epId, cId, f, m);
-      };
-      this.log('[E000-S4-RAW] Frame interceptor ready');
+        } catch (_e) { /* soft */ }
+        return next(...args);
+      });
+      this.log('[SCENE_SWITCH_4] P2312 raw wrapHandleFrame tagged scene-switch-4-raw');
     } catch (e) {
-      this.log(`[E000-S4-RAW] Setup failed: ${e.message}`);
+      this.log(`[SCENE_SWITCH_4] raw interceptor: ${e.message}`);
     }
   }
 
@@ -252,16 +281,35 @@ class SceneSwitch4Device extends ButtonDevice {
    * v10.1.1: Trigger button flow for scene switch 4-gang
    */
   async _triggerSceneSwitch4(button, pressType) {
+    if (typeof this.triggerButtonPress === 'function') {
+      await this.triggerButtonPress(button, pressType === 'long_press' ? 'long' : pressType, 1, { source: 'physical' });
+      return;
+    }
     if (typeof this._triggerPhysicalFlow === 'function') {
       this._triggerPhysicalFlow(button, pressType);
       return;
     }
 
+    // WHY(P2283): compose uses scene_switch_4_button_{N}_{pressed|double|long}
+    // — never invent scene_switch_4_button_4gang_button_pressed (no button index).
     try {
-      const cardId = `scene_switch_4_button_4gang_button_${pressType === 'single' ? 'pressed' : pressType === 'double' ? 'double_press' : 'long_press'}`;
-      const trigger = this.homey?.flow?.getDeviceTriggerCard(cardId);
-      if (trigger) {
-        await trigger.trigger(this, { button, pressType });
+      const suffix = pressType === 'single' || pressType === 'pressed' ? 'pressed'
+        : (pressType === 'double' || pressType === 'double_press') ? 'double'
+          : (pressType === 'long' || pressType === 'long_press') ? 'long'
+            : String(pressType || 'pressed');
+      const candidates = [
+        `scene_switch_4_button_${button}_${suffix}`,
+        `scene_switch_4_button_4gang_button_${button}_${suffix}`,
+        suffix === 'pressed' ? 'scene_switch_4_button_pressed'
+          : suffix === 'double' ? 'scene_switch_4_button_double_press'
+            : 'scene_switch_4_button_long_press',
+      ];
+      for (const cardId of candidates) {
+        const trigger = this.homey?.flow?.getDeviceTriggerCard(cardId);
+        if (trigger) {
+          await trigger.trigger(this, { button, pressType });
+          return;
+        }
       }
     } catch (e) {
       this.log(`[E000-S4] Flow trigger error: ${e.message}`);

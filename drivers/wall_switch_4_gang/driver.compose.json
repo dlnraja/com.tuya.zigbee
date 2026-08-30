@@ -19,27 +19,31 @@
     "button.4"
   ],
   "images": {
-    "large": "/{{driverAssetsPath}}/images/large.png",
-    "small": "/{{driverAssetsPath}}/images/small.png"
+    "small": "/drivers/wall_switch_4_gang/assets/images/small.png",
+    "large": "/drivers/wall_switch_4_gang/assets/images/large.png"
   },
   "energy": {
-    "approximation": {
-      "usageOn": 0,
-      "usageOff": 0
-    },
     "batteries": [
       "CR2032"
     ]
   },
   "zigbee": {
     "manufacturerName": [
-      "_TZ3000_dku2cfsc",
-      "_TZ3000_DKU2CFSC",
-      "_tz3000_dku2cfsc"
+      "_TZ3000_JR2ATPWW",
+      "_tz3000_jr2atpww",
+      "_TZ3000_jr2atpww",
+      "_tz3000_JR2ATPWW",
+      "_tze200_aqnazj70",
+      "_TZE200_MEXISFIK",
+      "_TZE200_AQNAZJ70",
+      "_tze200_mexisfik",
+      "_TZE200_aqnazj70",
+      "_TZE200_mexisfik",
+      "_tze200_AQNAZJ70",
+      "_tze200_MEXISFIK"
     ],
     "productId": [
       "TS0014",
-      "TS0044",
       "TS0004"
     ],
     "endpoints": {
@@ -178,11 +182,6 @@
       "setable": false
     }
   },
-  "_pidConflictNotes": [
-    "// PID-CONFLICT-NOTE TS0004 shared with 14 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE TS0044 shared with 9 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE TS0014 shared with 7 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-  ],
   "ui": {
     "quickAction": "onoff"
   }
