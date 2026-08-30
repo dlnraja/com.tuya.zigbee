@@ -1,16 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 960" fill="none">
-  <rect x="0" y="0" width="960" height="960" fill="#E8F0F7"/>
-  <!-- Wall plate -->
-  <rect x="280" y="200" width="400" height="560" rx="40" fill="#FFFFFF" stroke="#2C5282" stroke-width="20"/>
-  <!-- Switch body -->
-  <rect x="340" y="380" width="280" height="200" rx="20" fill="#E8F0F7" stroke="#4299E1" stroke-width="10"/>
-  <!-- Toggle (ON position) -->
-  <rect x="500" y="400" width="100" height="160" rx="15" fill="#48BB78"/>
-  <!-- Status LED -->
-  <circle cx="480" cy="280" r="20" fill="#48BB78"/>
-  <!-- Mounting screws -->
-  <circle cx="320" cy="240" r="12" fill="#A0AEC0"/>
-  <circle cx="640" cy="720" r="12" fill="#A0AEC0"/>
-  
+<svg width="960" height="960" viewBox="0 0 960 960" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="200" y="200" width="560" height="560" rx="60" stroke="black" stroke-width="40" fill="none"/>
+  <circle cx="480" cy="480" r="100" stroke="black" stroke-width="40" fill="none"/>
 </svg>

@@ -1,15 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 960" fill="none">
-  <rect x="0" y="0" width="960" height="960" fill="#E8F0F7"/>
-  <!-- Plug body (rounded square) -->
-  <rect x="280" y="200" width="400" height="560" rx="80" fill="#FFFFFF" stroke="#2C5282" stroke-width="20"/>
-  <!-- Power button -->
-  <circle cx="480" cy="400" r="80" fill="none" stroke="#4299E1" stroke-width="16"/>
-  <line x1="480" y1="360" x2="480" y2="420" stroke="#4299E1" stroke-width="20" stroke-linecap="round"/>
-  <path d="M 440 440 A 50 50 0 1 0 520 440" stroke="#4299E1" stroke-width="20" fill="none" stroke-linecap="round"/>
-  <!-- LED indicator -->
-  <circle cx="480" cy="600" r="20" fill="#48BB78"/>
-  <!-- Watt meter symbol -->
-  
-  
+<svg width="960" height="960" viewBox="0 0 960 960" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- DIN rail module body -->
+  <rect x="180" y="240" width="600" height="480" rx="40" stroke="black" stroke-width="40" fill="none"/>
+  <!-- DIN rail clip top -->
+  <rect x="260" y="200" width="440" height="60" rx="12" stroke="black" stroke-width="28" fill="none"/>
+  <!-- Status indicator LED -->
+  <circle cx="480" cy="480" r="60" stroke="black" stroke-width="36" fill="none"/>
+  <!-- Power symbol -->
+  <path d="M480 410V480" stroke="black" stroke-width="36" stroke-linecap="round"/>
+  <path d="M420 460C435 430 455 415 480 415C505 415 525 430 540 460" stroke="black" stroke-width="36" stroke-linecap="round" fill="none"/>
 </svg>

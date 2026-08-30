@@ -1,4 +1,7 @@
 {
+  "9.0.707": {
+    "en": "Restored Homey-safe driver icons; kept own-path images; guarded empty manufacturerName for App Store processing."
+  },
   "9.0.705": {
     "en": "Aligned coherent driver icons/images; cleaned SVG for App Store; guarded empty manufacturerName AggregateError."
   },

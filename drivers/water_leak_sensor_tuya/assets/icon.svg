@@ -1,12 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 960" fill="none">
-  <rect x="0" y="0" width="960" height="960" fill="#E8F0F7"/>
-  <!-- Big water drop -->
-  <path d="M 480 160 Q 320 360 320 540 Q 320 680 480 680 Q 640 680 640 540 Q 640 360 480 160 Z" fill="#4299E1" stroke="#2C5282" stroke-width="16"/>
-  <!-- Inner highlight -->
-  <ellipse cx="430" cy="380" rx="40" ry="80" fill="#FFFFFF" opacity="0.4"/>
-  <!-- Waves at base -->
-  <path d="M 200 760 Q 280 740 360 760 T 520 760 T 680 760 T 760 760" stroke="#1A365D" stroke-width="16" fill="none" stroke-linecap="round"/>
-  <path d="M 200 800 Q 280 780 360 800 T 520 800 T 680 800 T 760 800" stroke="#1A365D" stroke-width="12" fill="none" stroke-linecap="round" opacity="0.6"/>
-  
+<svg width="960" height="960" viewBox="0 0 960 960" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="200" y="200" width="560" height="560" rx="60" stroke="black" stroke-width="40" fill="none"/>
+  <circle cx="480" cy="480" r="100" stroke="black" stroke-width="40" fill="none"/>
 </svg>

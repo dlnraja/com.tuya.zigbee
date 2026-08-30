@@ -1,21 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 960" fill="none">
-  <rect x="0" y="0" width="960" height="960" fill="#E8F0F7"/>
-  <!-- Air purifier body (cylinder) -->
-  <rect x="320" y="200" width="320" height="600" rx="40" fill="#FFFFFF" stroke="#2C5282" stroke-width="20"/>
-  <!-- Air vents (top circle) -->
-  <circle cx="480" cy="280" r="100" fill="none" stroke="#4299E1" stroke-width="8"/>
-  <circle cx="480" cy="280" r="80" fill="none" stroke="#4299E1" stroke-width="6"/>
-  <circle cx="480" cy="280" r="60" fill="none" stroke="#4299E1" stroke-width="4"/>
-  <circle cx="480" cy="280" r="20" fill="#00B5D8"/>
-  <!-- Display -->
-  <rect x="360" y="440" width="240" height="120" rx="10" fill="#1A365D"/>
-  
-  
-  <!-- Air flow arrows -->
-  <path d="M 200 280 L 280 280" stroke="#00B5D8" stroke-width="10" fill="none" stroke-linecap="round" marker-end="url(#arrow)"/>
-  <path d="M 200 320 L 280 320" stroke="#00B5D8" stroke-width="10" fill="none" stroke-linecap="round" opacity="0.6"/>
-  <path d="M 680 280 L 760 280" stroke="#00B5D8" stroke-width="10" fill="none" stroke-linecap="round"/>
-  <path d="M 680 320 L 760 320" stroke="#00B5D8" stroke-width="10" fill="none" stroke-linecap="round" opacity="0.6"/>
-  
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 960">
+  <g transform="translate(0.00,0.00) scale(19.200000)"><rect x="14" y="4" width="960" height="960" rx="2" fill="none" stroke="#333" stroke-width="2"/><rect x="19" y="12" width="12" height="8" rx="1" fill="#333"/><circle cx="25" cy="32" r="3" fill="#333"/><rect x="17" y="40" width="4" height="4" rx="1" fill="#333"/><rect x="29" y="40" width="4" height="4" rx="1" fill="#333"/>
+  </g>
 </svg>

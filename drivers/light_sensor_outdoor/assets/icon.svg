@@ -1,17 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 960" fill="none">
-  <rect x="0" y="0" width="960" height="960" fill="#E8F0F7"/>
-  <!-- Door frame -->
-  <rect x="280" y="120" width="400" height="720" rx="20" fill="#FFFFFF" stroke="#2C5282" stroke-width="20"/>
-  <!-- Door panel inset -->
-  <rect x="320" y="180" width="320" height="600" rx="10" fill="#E8F0F7" stroke="#4299E1" stroke-width="10"/>
-  <!-- Door handle -->
-  <circle cx="600" cy="500" r="32" fill="#4299E1"/>
-  <circle cx="600" cy="500" r="16" fill="#FFFFFF"/>
-  <!-- Hinge indicators (left side) -->
-  <rect x="295" y="220" width="20" height="60" rx="3" fill="#A0AEC0"/>
-  <rect x="295" y="680" width="20" height="60" rx="3" fill="#A0AEC0"/>
-  <!-- Status indicator (closed/open) -->
-  <circle cx="480" cy="160" r="20" fill="#48BB78"/>
-  
+<svg width="960" height="960" viewBox="0 0 960 960" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M480 150C370 150 280 240 280 350C280 430 320 500 380 540V680H580V540C640 500 680 430 680 350C680 240 590 150 480 150Z" stroke="black" stroke-width="40" fill="none"/>
+  <rect x="420" y="700" width="120" height="40" rx="10" fill="black"/>
+  <rect x="440" y="760" width="80" height="40" rx="10" fill="black"/>
 </svg>

@@ -1,19 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 960" fill="none">
-  <rect x="0" y="0" width="960" height="960" fill="#E8F0F7"/>
-  <!-- Thermometer body -->
-  <rect x="420" y="160" width="120" height="540" rx="60" fill="#FFFFFF" stroke="#2C5282" stroke-width="20"/>
-  <!-- Mercury (blue gradient) -->
-  <rect x="450" y="380" width="60" height="320" rx="30" fill="#4299E1"/>
-  <!-- Bulb -->
-  <circle cx="480" cy="700" r="80" fill="#1A365D"/>
-  <circle cx="480" cy="700" r="50" fill="#4299E1"/>
-  <!-- Humidity droplet -->
-  <path d="M 700 600 Q 700 540 740 540 Q 780 540 780 600 Q 780 660 740 660 Q 700 660 700 600 Z" fill="#00B5D8"/>
-  <!-- Tick marks -->
-  <line x1="400" y1="240" x2="380" y2="240" stroke="#2C5282" stroke-width="8" stroke-linecap="round"/>
-  <line x1="400" y1="320" x2="390" y2="320" stroke="#2C5282" stroke-width="6" stroke-linecap="round"/>
-  <line x1="400" y1="400" x2="380" y2="400" stroke="#2C5282" stroke-width="8" stroke-linecap="round"/>
-  <line x1="400" y1="480" x2="390" y2="480" stroke="#2C5282" stroke-width="6" stroke-linecap="round"/>
-  
+<svg width="960" height="960" viewBox="0 0 960 960" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="480" cy="480" r="300" stroke="black" stroke-width="40" fill="none"/>
+  <rect x="400" y="350" width="40" height="120" rx="20" fill="black"/>
+  <rect x="520" y="350" width="40" height="120" rx="20" fill="black"/>
+  <circle cx="480" cy="580" r="30" fill="black"/>
 </svg>

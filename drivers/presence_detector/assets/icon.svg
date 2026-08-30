@@ -1,16 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 960" fill="none">
-  <rect x="0" y="0" width="960" height="960" fill="#E8F0F7"/>
-  <!-- Sensor body (small round) -->
-  <circle cx="480" cy="480" r="80" fill="#FFFFFF" stroke="#2C5282" stroke-width="16"/>
-  <circle cx="480" cy="480" r="20" fill="#4299E1"/>
-  <!-- Concentric radar waves -->
-  <circle cx="480" cy="480" r="140" fill="none" stroke="#00B5D8" stroke-width="8" opacity="0.8"/>
-  <circle cx="480" cy="480" r="220" fill="none" stroke="#00B5D8" stroke-width="6" opacity="0.6"/>
-  <circle cx="480" cy="480" r="300" fill="none" stroke="#00B5D8" stroke-width="4" opacity="0.4"/>
-  <circle cx="480" cy="480" r="380" fill="none" stroke="#00B5D8" stroke-width="3" opacity="0.2"/>
-  <!-- Person silhouette (detected) -->
-  <circle cx="480" cy="700" r="20" fill="#48BB78"/>
-  <path d="M 460 740 L 460 800 L 500 800 L 500 740 Z" fill="#48BB78"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 960">
+  <g transform="translate(0.00,0.00) scale(9.600000)">
+  <rect width="960" height="960" rx="15" fill="#1a233a"/>
+  <circle cx="50" cy="35" r="12" fill="#00E6A0" opacity="0.9"/>
+  <path d="M30 65 Q50 80 70 65" stroke="#00E6A0" stroke-width="3" fill="none" opacity="0.7"/>
+  <path d="M20 55 Q50 75 80 55" stroke="#00E6A0" stroke-width="2" fill="none" opacity="0.4"/>
+  <path d="M10 48 Q50 72 90 48" stroke="#00E6A0" stroke-width="1.5" fill="none" opacity="0.2"/>
   
+
+  </g>
 </svg>

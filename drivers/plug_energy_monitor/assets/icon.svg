@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 960" fill="none">
-  <rect x="0" y="0" width="960" height="960" fill="#E8F0F7"/>
-  <!-- Plug body (rounded square) -->
-  <rect x="280" y="200" width="400" height="560" rx="80" fill="#FFFFFF" stroke="#2C5282" stroke-width="20"/>
-  <!-- Power button -->
-  <circle cx="480" cy="400" r="80" fill="none" stroke="#4299E1" stroke-width="16"/>
-  <line x1="480" y1="360" x2="480" y2="420" stroke="#4299E1" stroke-width="20" stroke-linecap="round"/>
-  <path d="M 440 440 A 50 50 0 1 0 520 440" stroke="#4299E1" stroke-width="20" fill="none" stroke-linecap="round"/>
-  <!-- LED indicator -->
-  <circle cx="480" cy="600" r="20" fill="#48BB78"/>
-  <!-- Watt meter symbol -->
-  
-  
+<svg width="960" height="960" viewBox="0 0 960 960" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="480" cy="480" r="300" stroke="black" stroke-width="40" fill="none"/>
+  <rect x="400" y="350" width="40" height="120" rx="20" fill="black"/>
+  <rect x="520" y="350" width="40" height="120" rx="20" fill="black"/>
+  <circle cx="480" cy="580" r="30" fill="black"/>
 </svg>

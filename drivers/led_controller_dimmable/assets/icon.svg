@@ -1,12 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 960" fill="none">
-  <rect x="0" y="0" width="960" height="960" fill="#E8F0F7"/>
-  <!-- Generic device box -->
-  <rect x="200" y="200" width="560" height="560" rx="60" fill="#FFFFFF" stroke="#2C5282" stroke-width="20"/>
-  <!-- Zigbee logo (simplified Z) -->
-  <path d="M 360 360 L 600 360 L 360 600 L 600 600" stroke="#4299E1" stroke-width="30" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-  <!-- Signal waves -->
-  <path d="M 240 280 Q 200 360 240 440" stroke="#00B5D8" stroke-width="10" fill="none" stroke-linecap="round" opacity="0.7"/>
-  <path d="M 720 280 Q 760 360 720 440" stroke="#00B5D8" stroke-width="10" fill="none" stroke-linecap="round" opacity="0.7"/>
-  
+<svg width="960" height="960" viewBox="0 0 960 960" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M480 150C370 150 280 240 280 350C280 430 320 500 380 540V680H580V540C640 500 680 430 680 350C680 240 590 150 480 150Z" stroke="black" stroke-width="40" fill="none"/>
+  <rect x="420" y="700" width="120" height="40" rx="10" fill="black"/>
+  <rect x="440" y="760" width="80" height="40" rx="10" fill="black"/>
 </svg>

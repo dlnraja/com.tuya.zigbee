@@ -1,14 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 960" fill="none">
-  <rect x="0" y="0" width="960" height="960" fill="#E8F0F7"/>
-  <!-- Thermostat round body -->
-  <circle cx="480" cy="440" r="280" fill="#FFFFFF" stroke="#2C5282" stroke-width="20"/>
-  <!-- Display -->
-  <circle cx="480" cy="440" r="220" fill="#1A365D"/>
-  
-  
-  <!-- Temperature dial (outer ring) -->
-  <path d="M 220 440 A 260 260 0 0 1 320 240" stroke="#ED8936" stroke-width="20" fill="none" stroke-linecap="round"/>
-  <path d="M 740 440 A 260 260 0 0 1 640 640" stroke="#00B5D8" stroke-width="20" fill="none" stroke-linecap="round"/>
-  
+<svg width="960" height="960" viewBox="0 0 960 960" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="200" y="200" width="560" height="560" rx="60" stroke="black" stroke-width="40" fill="none"/>
+  <circle cx="480" cy="480" r="100" stroke="black" stroke-width="40" fill="none"/>
 </svg>
