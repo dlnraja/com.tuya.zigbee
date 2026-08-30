@@ -24,7 +24,7 @@ const APPLY = process.argv.includes('--apply');
 
 /** Do-not-lock / known bad Universal Tuya couples */
 const NEVER = new Set([
-  '_tz3000_v5498kdm|ts0001', // Nous/SoPhos external
+  // intentionally empty — P2320 brought v5498kdm+TS0001 into switch_1gang
 ]);
 
 /**
@@ -38,6 +38,7 @@ const FORCE_DRIVER = {
   '_tz3000_a4xycprs|ts0044': 'scene_switch_4',
   '_tz3000_zgyzgdua|ts0044': 'scene_switch_4',
   '_tz3000_wkai4ga5|ts0044': 'scene_switch_4',
+  '_tz3000_v5498kdm|ts0001': 'switch_1gang',
   // Buttons / remotes (pid family + blakadder/z2m)
   '_tz3000_bi6lpsew|ts0043': 'button_wireless_3',
   '_tz3000_t8hzpgnd|ts0042': 'button_wireless_2',

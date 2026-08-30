@@ -60,10 +60,16 @@ describe('P2251 interview + soft-couple enrich', () => {
     assert.ok(!(h.modelIds || []).some((p) => /^TS0601$/i.test(p)));
   });
 
-  it('SergeP Nous/SoPhos is doNotTouch in registry', () => {
+  it('SergeP Nous/SoPhos TS0001 locks switch_1gang (P2320)', () => {
     const reg = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/user-misattribution-registry.json'), 'utf8'));
     const c = (reg.cases || []).find((x) => x.id === 'p2251-sergep-nous-sophos-external');
     assert.ok(c);
-    assert.strictEqual(c.doNotTouch, true);
+    assert.strictEqual(c.doNotTouch, false);
+    assert.strictEqual(c.canonicalDriver, 'switch_1gang');
+    const compose = JSON.parse(fs.readFileSync(path.join(ROOT, 'drivers/switch_1gang/driver.compose.json'), 'utf8'));
+    const mfrs = (compose.zigbee?.manufacturerName || []).map((m) => String(m).toLowerCase());
+    const pids = (compose.zigbee?.productId || []).map((p) => String(p).toUpperCase());
+    assert.ok(mfrs.includes('_tz3000_v5498kdm'));
+    assert.ok(pids.includes('TS0001'));
   });
 });

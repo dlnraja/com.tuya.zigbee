@@ -32,7 +32,7 @@
       "realMfrsAdded": 5,
       "details": "tmp/synthetic-resolution.json + tmp/pruned21-resolution.json"
     },
-    "lastAlignedAt": "2026-08-29T11:29:20.143Z",
+    "lastAlignedAt": "2026-08-30T07:32:21.041Z",
     "alignTool": "align-mfs-db-intelligent@P169"
   },
   "sources": {
@@ -137722,7 +137722,7 @@
     "modelIdsCount": 5
   },
   "_TZ3000_BI6LPSEW": {
-    "driverId": "switch_1gang",
+    "driverId": "button_wireless_3",
     "source": "compose-exclusive"
   },
   "_tz3000_0ht8dnxj": {
@@ -168760,7 +168760,7 @@
     "source": "auto-sync"
   },
   "_tz3290_ot6ewjvmejq5ekhl": {
-    "driverId": "ir_remote",
+    "driverId": "ir_blaster",
     "source": "compose-exclusive",
     "modelIds": [
       "0x8040",
@@ -171622,8 +171622,8 @@
     "modelIdsCount": 1
   },
   "_TZ3290_U9XAC5RV": {
-    "driverId": "ir_remote",
-    "source": "auto-sync",
+    "driverId": "ir_blaster",
+    "source": "compose-exclusive",
     "modelIds": [
       "TS0601"
     ],
@@ -191648,8 +191648,8 @@
     "modelIdsCount": 1
   },
   "_TZ3000_4WHIGL8I": {
-    "driverId": "switch_1gang",
-    "source": "auto-sync",
+    "driverId": "bulb_dimmable",
+    "source": "compose-exclusive",
     "modelIds": [
       "01MINIZB",
       "BASICZBR3",
@@ -192782,8 +192782,8 @@
     "modelIdsCount": 34
   },
   "_TZ3000_B7BXOJRG": {
-    "driverId": "switch_1gang",
-    "source": "auto-sync",
+    "driverId": "button_wireless_4",
+    "source": "compose-exclusive",
     "modelIds": [
       "01MINIZB",
       "BASICZBR3",
@@ -193412,50 +193412,17 @@
     "modelIdsCount": 34
   },
   "_TZ3000_CVIS4QMW": {
-    "driverId": "switch_1gang",
-    "source": "auto-sync",
+    "driverId": "switch_wall_6gang",
+    "source": "registry:p2317-cvis4qmw-ts0006-6gang",
     "modelIds": [
-      "01MINIZB",
-      "BASICZBR3",
-      "S26R2ZB",
-      "S31ZB",
-      "TS0001",
-      "TS0001_power",
-      "TS0001_switch",
-      "TS0001_switch_module",
-      "TS0002",
-      "TS0003",
-      "TS000F",
-      "TS0011",
-      "TS0012",
-      "TS0014",
-      "TS0041",
-      "TS0101",
-      "TS0111",
-      "TS011F",
-      "TS0601",
-      "TS0726",
-      "TS110E",
-      "TS130F",
-      "TS4100",
-      "ZBM5-1C-120",
-      "ZBM5-2C-120",
-      "ZBM5-3C-120",
-      "ZBMINI",
-      "ZBMINIL2",
-      "ZBMINIL2-R2",
-      "ZBMINIR",
-      "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "TS0006"
     ],
-    "pid": "01MINIZB",
-    "modelIdsCount": 34
+    "pid": "TS0006",
+    "modelIdsCount": 1
   },
   "_TZ3000_D16Y6COL": {
-    "driverId": "switch_1gang",
-    "source": "auto-sync",
+    "driverId": "water_leak_sensor",
+    "source": "compose-exclusive",
     "modelIds": [
       "01MINIZB",
       "BASICZBR3",
@@ -193836,46 +193803,13 @@
     "modelIdsCount": 34
   },
   "_TZ3000_ETUFNLTX": {
-    "driverId": "switch_1gang",
-    "source": "auto-sync",
+    "driverId": "button_wireless_4",
+    "source": "registry:p2317-etufnltx-ts1002-foria",
     "modelIds": [
-      "01MINIZB",
-      "BASICZBR3",
-      "S26R2ZB",
-      "S31ZB",
-      "TS0001",
-      "TS0001_power",
-      "TS0001_switch",
-      "TS0001_switch_module",
-      "TS0002",
-      "TS0003",
-      "TS000F",
-      "TS0011",
-      "TS0012",
-      "TS0014",
-      "TS0041",
-      "TS0101",
-      "TS0111",
-      "TS011F",
-      "TS0601",
-      "TS0726",
-      "TS110E",
-      "TS130F",
-      "TS4100",
-      "ZBM5-1C-120",
-      "ZBM5-2C-120",
-      "ZBM5-3C-120",
-      "ZBMINI",
-      "ZBMINIL2",
-      "ZBMINIL2-R2",
-      "ZBMINIR",
-      "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
+      "TS1002"
     ],
-    "pid": "01MINIZB",
-    "modelIdsCount": 34
+    "pid": "TS1002",
+    "modelIdsCount": 1
   },
   "_TZ3000_ETX8INRK": {
     "driverId": "switch_1gang",
@@ -197283,8 +197217,8 @@
     "modelIdsCount": 34
   },
   "_TZ3000_Q68478X7": {
-    "driverId": "switch_1gang",
-    "source": "auto-sync",
+    "driverId": "button_wireless_1",
+    "source": "compose-exclusive",
     "modelIds": [
       "01MINIZB",
       "BASICZBR3",
@@ -198178,8 +198112,8 @@
     "modelIdsCount": 34
   },
   "_TZ3000_T8HZPGND": {
-    "driverId": "switch_1gang",
-    "source": "auto-sync",
+    "driverId": "button_wireless_2",
+    "source": "compose-exclusive",
     "modelIds": [
       "01MINIZB",
       "BASICZBR3",
@@ -199228,8 +199162,8 @@
     "modelIdsCount": 34
   },
   "_TZ3000_W3C7OURU": {
-    "driverId": "switch_1gang",
-    "source": "auto-sync",
+    "driverId": "button_wireless_3",
+    "source": "compose-exclusive",
     "modelIds": [
       "01MINIZB",
       "BASICZBR3",
@@ -199447,8 +199381,8 @@
     "modelIdsCount": 34
   },
   "_TZ3000_WQCBZBAE": {
-    "driverId": "switch_1gang",
-    "source": "auto-sync",
+    "driverId": "button_wireless_1",
+    "source": "compose-exclusive",
     "modelIds": [
       "01MINIZB",
       "BASICZBR3",
@@ -199783,8 +199717,8 @@
     "modelIdsCount": 34
   },
   "_TZ3000_YGVF9XZP": {
-    "driverId": "switch_1gang",
-    "source": "auto-sync",
+    "driverId": "button_wireless_4",
+    "source": "compose-exclusive",
     "modelIds": [
       "01MINIZB",
       "BASICZBR3",
@@ -212034,8 +211968,8 @@
     "modelIdsCount": 9
   },
   "_tz3000_rk2yzt0u": {
-    "driverId": "usb_dongle_triple",
-    "source": "auto-sync",
+    "driverId": "switch_1gang",
+    "source": "compose-exclusive",
     "modelIds": [
       "S26R2ZB",
       "S31 Lite zb",
@@ -216141,12 +216075,12 @@
     "modelIdsCount": 1
   },
   "_TZ3000_g9chy2ib": {
-    "driverId": "device_radiator_valve",
-    "source": "compose-exclusive",
+    "driverId": "wall_switch_3gang_1way",
+    "source": "registry:p2317-g9chy2ib-ts0003-3gang",
     "modelIds": [
-      "TS0601"
+      "TS0003"
     ],
-    "pid": "TS0601",
+    "pid": "TS0003",
     "modelIdsCount": 1
   },
   "_TZE204_0hcjew5p": {
@@ -326139,7 +326073,8 @@
   "_tz3000_hodifxa9": {
     "driver": "bulb_dimmable",
     "pid": "TS0001",
-    "source": "blakadder-r68"
+    "source": "compose-exclusive",
+    "driverId": "bulb_dimmable"
   },
   "_tz3000_589kq4ul": {
     "driver": "bulb_dimmable",
@@ -326216,7 +326151,8 @@
   "_tz3210_g0qr1fqo": {
     "driver": "bulb_dimmable",
     "pid": "TS0601",
-    "source": "blakadder-r68"
+    "source": "compose-exclusive",
+    "driverId": "bulb_rgb"
   },
   "_tz3000_mantufyr": {
     "driver": "switch_1gang",
@@ -327889,45 +327825,13 @@
     "modelIdsCount": 1,
     "notes": "Moes Star Feather OEM alias — P2307"
   },
-  "_TZ3000_MRPEVH8P": {
-    "driverId": "button_wireless_1",
-    "source": "registry:p2282-mrpevh8p-ts0041-button",
+  "_TZ3000_v5498kdm": {
+    "driverId": "switch_1gang",
+    "source": "registry:p2251-sergep-nous-sophos-external",
     "modelIds": [
-      "TS0041"
+      "TS0001"
     ],
-    "pid": "TS0041",
-    "modelIdsCount": 1,
-    "deviceNames": [
-      "RSH-SC021",
-      "SH-SC07",
-      "Tuya 1-button scene switch"
-    ],
-    "z2mModels": [
-      "SH-SC07",
-      "TS0041"
-    ],
-    "whiteLabels": [
-      "RSH-SC021",
-      "SH-SC07"
-    ],
-    "productNames": [
-      "RSH-SC021",
-      "SH-SC07",
-      "Tuya 1-button scene switch"
-    ],
-    "variants": [
-      "_tz3000_mrpevh8p",
-      "_TZ3000_mrpevh8p",
-      "_TZ3000_MRPEVH8P"
-    ],
-    "variantsCount": 3,
-    "prefixVariants": [],
-    "notes": "P2295: zigbee pid=TS0041 only. SH-SC07/RSH-SC021 are whiteLabels. Interview may show phantom EP2–4 — still 1 physical button. Alias key for P2290 lock test (uppercase OEM suffix).",
-    "protocol": "zcl",
-    "powerSource": "battery",
-    "deviceType": "button",
-    "coupleLock": true,
-    "updatedAt": "2026-08-28",
-    "lastEnrichment": "p2295-multi-identity"
+    "pid": "TS0001",
+    "modelIdsCount": 1
   }
 }

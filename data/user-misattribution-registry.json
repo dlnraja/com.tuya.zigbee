@@ -2801,30 +2801,34 @@
       "id": "p2251-sergep-nous-sophos-external",
       "mfr": [
         "_TZ3000_v5498kdm",
-        "_tz3000_v5498kdm"
+        "_tz3000_v5498kdm",
+        "_TZ3000_V5498KDM",
+        "_tz3000_V5498KDM"
       ],
       "productId": [
         "TS0001"
       ],
-      "canonicalDriver": null,
-      "doNotTouch": true,
+      "canonicalDriver": "switch_1gang",
+      "doNotTouch": false,
+      "forbidMode": "couple",
       "forbiddenDrivers": [
-        "switch_1gang",
-        "wall_switch_1gang_1way",
         "climate_sensor",
         "generic_tuya",
-        "zigbee_universal"
+        "zigbee_universal",
+        "wall_thermostat",
+        "device_radiator_valve"
       ],
-      "protocol": "external_app",
-      "notes": "T99614 SergeP/Antek — Nous/SoPhos app, NOT Universal Tuya. Never lock into our drivers from that post.",
+      "protocol": "zcl",
+      "notes": "P2320: user asked to carry SergeP/Antek T99614 Nous/SoPhos TS0001 into Universal Tuya. Lock switch_1gang (mfr+pid). Was doNotTouch external-only.",
       "sources": [
         "forum-T99614",
-        "P2251"
+        "P2251",
+        "P2320"
       ],
       "tracks": {
         "master": {
           "static": true,
-          "dynamic": false
+          "dynamic": true
         },
         "stable": {
           "static": true,

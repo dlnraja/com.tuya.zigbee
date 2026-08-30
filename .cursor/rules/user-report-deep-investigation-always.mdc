@@ -35,7 +35,7 @@ alwaysApply: true
 - Document in registry/mfs/PECULIARITIES when a new weakness is found — silent enrich only.
 
 ## External-app couples (do not lock)
-- Example: `_TZ3000_v5498kdm`+`TS0001` → Nous/SoPhos (`p2251-sergep-nous-sophos-external`, `doNotTouch`) — investigate report but **do not** add to Universal Tuya compose.
+- Example: `_TZ3000_v5498kdm`+`TS0001` → `switch_1gang` (P2320 — was Nous/SoPhos doNotTouch; now locked in Universal Tuya).
 
 ## Tools (prefer)
 ```bash
