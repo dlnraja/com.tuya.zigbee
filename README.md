@@ -33,7 +33,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.710 |
+| **App Version** | v9.0.712 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,380 |
 | **Pairing Variants** | 16,474 (4 case combos per fingerprint) |
@@ -102,6 +102,8 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.712** | Fixed driver image paths for App Store processing; restored Homey-safe icons. |
+| **v9.0.711** | Fixed driver image paths for App Store processing; restored Homey-safe icons. |
 | **v9.0.710** | Homey-safe driver icons restored; fixed corrupt SVGs; own-path images; avoided invalid placeholder manufacturerNames for App Store. |
 | **v9.0.709** | Homey-safe driver icons restored; fixed corrupt SVGs; own-path images; avoided invalid placeholder manufacturerNames for App Store. |
 | **v9.0.708** | Restored Homey-safe driver icons; kept own-path images; guarded empty manufacturerName for App Store processing. |
@@ -112,8 +114,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.703** | Aligned driver icons and images to a coherent Homey design; fixed image paths to each driver own assets. |
 | **v9.0.702** | Aligned driver icons and images to a coherent Homey design; fixed image paths to each driver own assets. |
 | **v9.0.701** | Improved wall dimmer control reliability for Tuya EF00 devices after pairing. |
-| **v9.0.700** | Improved wall dimmer control reliability for Tuya EF00 devices after pairing. |
-| **v9.0.699** | P2309: gate empty productId (M15) so button_wireless_4_ts0041 cannot regress; lock yj6k7vfo\|TS0041 + Moes upt8lzi0 curtain sacred couples. |
 
 <!-- CHANGELOG_END -->
 

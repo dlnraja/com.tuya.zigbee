@@ -2672,5 +2672,8 @@
   },
   "9.0.710": {
     "en": "Homey-safe driver icons restored; fixed corrupt SVGs; own-path images; avoided invalid placeholder manufacturerNames for App Store."
+  },
+  "9.0.712": {
+    "en": "Fixed driver image paths for App Store processing; restored Homey-safe icons."
   }
 }
