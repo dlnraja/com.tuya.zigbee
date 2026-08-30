@@ -23,7 +23,8 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
 
   _registerFlowCards() {
     // TRIGGERS
-    const _triggerIds = ["contact_sensor_switch_switch_1gang_turned_on","contact_sensor_switch_switch_1gang_turned_off","contact_sensor_switch_switch_1gang_physical_on","contact_sensor_switch_switch_1gang_physical_off","contact_sensor_switch_switch_1gang_physical_single","contact_sensor_switch_switch_1gang_physical_double","contact_sensor_switch_switch_1gang_physical_long_press","contact_sensor_switch_switch_1gang_physical_triple","contact_sensor_switch_switch_1gang_battery_low","contact_sensor_switch_switch_1gang_power_changed","contact_sensor_switch_switch_1gang_gang1_scene"];
+    // WHY(P2331): IDs must match driver.flow.compose.json (no double `switch_`)
+    const _triggerIds = ["contact_sensor_switch_1gang_turned_on","contact_sensor_switch_1gang_turned_off","contact_sensor_switch_1gang_physical_on","contact_sensor_switch_1gang_physical_off","contact_sensor_switch_1gang_physical_single","contact_sensor_switch_1gang_physical_double","contact_sensor_switch_1gang_physical_long_press","contact_sensor_switch_1gang_physical_triple","contact_sensor_switch_1gang_battery_low","contact_sensor_switch_1gang_power_changed","contact_sensor_switch_1gang_gang1_scene","contact_sensor_switch_physical_on","contact_sensor_switch_physical_off"];
     for (const _tid of _triggerIds) {
       try {
         const _card = this._getFlowCard(_tid, "trigger");

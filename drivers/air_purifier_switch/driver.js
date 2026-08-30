@@ -22,18 +22,21 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
 
   _registerFlowCards() {
     // TRIGGERS
+    // WHY(P2331): IDs must match driver.flow.compose.json (no double `switch_`)
     const triggers = [
-      'air_purifier_switch_switch_1gang_turned_on',
-      'air_purifier_switch_switch_1gang_turned_off',
-      'air_purifier_switch_switch_1gang_physical_on',
-      'air_purifier_switch_switch_1gang_physical_off',
-      'air_purifier_switch_switch_1gang_physical_single',
-      'air_purifier_switch_switch_1gang_physical_double',
-      'air_purifier_switch_switch_1gang_physical_long_press',
-      'air_purifier_switch_switch_1gang_physical_triple',
-      'air_purifier_switch_switch_1gang_battery_low',
-      'air_purifier_switch_switch_1gang_power_changed',
-      'air_purifier_switch_switch_1gang_gang1_scene',
+      'air_purifier_switch_1gang_turned_on',
+      'air_purifier_switch_1gang_turned_off',
+      'air_purifier_switch_1gang_physical_on',
+      'air_purifier_switch_1gang_physical_off',
+      'air_purifier_switch_1gang_physical_single',
+      'air_purifier_switch_1gang_physical_double',
+      'air_purifier_switch_1gang_physical_long_press',
+      'air_purifier_switch_1gang_physical_triple',
+      'air_purifier_switch_1gang_battery_low',
+      'air_purifier_switch_1gang_power_changed',
+      'air_purifier_switch_1gang_gang1_scene',
+      'air_purifier_switch_physical_on',
+      'air_purifier_switch_physical_off',
     ];
     for (const id of triggers) {
       try {

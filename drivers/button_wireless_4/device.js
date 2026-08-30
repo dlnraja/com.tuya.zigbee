@@ -373,22 +373,47 @@ class Button4GangDevice extends ButtonDevice {
       return;
     }
 
-    // Fallback: trigger flow card directly
+    // Fallback: declared compose IDs only (P2331 — no invent `*_button_4gang_button_release`)
     try {
       const driverId = this.driver?.id || 'button_wireless_4';
-      const suffix = type === 'single'
-        ? 'button_pressed'
-        : type === 'double'
-          ? 'button_double_press'
-          : type === 'multi'
-            ? 'button_multi_press'
-            : type === 'release'
-              ? 'button_release'
-              : 'button_long_press';
-      const cardId = `${driverId}_button_4gang_${suffix}`;
-      const trigger = this.homey?.flow?.getDeviceTriggerCard(cardId);
-      if (trigger) {
-        await trigger.trigger(this, { button: String(btn), pressType: type, count }, { button: String(btn), count });
+      const candidates = type === 'release'
+        ? [
+          `${driverId}_button_4gang_button_${btn}_release`,
+          `${driverId}_button_${btn}_release`,
+        ]
+        : type === 'single'
+          ? [
+            `${driverId}_button_4gang_button_${btn}_pressed`,
+            `${driverId}_button_4gang_button_pressed`,
+          ]
+          : type === 'double'
+            ? [
+              `${driverId}_button_4gang_button_${btn}_double`,
+              `${driverId}_button_4gang_button_double_press`,
+            ]
+            : type === 'multi'
+              ? [
+                `${driverId}_button_4gang_button_${btn}_triple`,
+                `${driverId}_button_4gang_button_multi_press`,
+              ]
+              : [
+                `${driverId}_button_4gang_button_${btn}_long`,
+                `${driverId}_button_4gang_button_long_press`,
+              ];
+      if (typeof this._safeTriggerFlow === 'function') {
+        for (const cardId of candidates) {
+          // eslint-disable-next-line no-await-in-loop
+          if (await this._safeTriggerFlow(cardId, { button: String(btn), pressType: type, count, gang: btn }, { type })) {
+            return;
+          }
+        }
+      } else if (typeof this._tryCard === 'function') {
+        for (const cardId of candidates) {
+          // eslint-disable-next-line no-await-in-loop
+          if (await this._tryCard(cardId, { button: String(btn), pressType: type, count }, { button: String(btn), count })) {
+            return;
+          }
+        }
       }
     } catch (e) {
       this.log(`[E000-4G] Flow trigger error: ${e.message}`);
