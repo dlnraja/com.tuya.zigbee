@@ -1,81 +1,13 @@
 {
-  "timestamp": "2026-08-30T08:26:35.723Z",
+  "timestamp": "2026-08-30T10:15:03.817Z",
   "gate": "align-mfs-db-intelligent",
-  "apply": true,
-  "check": false,
-  "changeCount": 2,
+  "apply": false,
+  "check": true,
+  "changeCount": 0,
   "skippedCount": 34,
-  "highSeverityCount": 2,
-  "byAction": {
-    "registry_force": 2
-  },
-  "changes": [
-    {
-      "severity": "high",
-      "action": "registry_force",
-      "mfr": "_TZ3000_MTNPT6WS",
-      "from": {
-        "driverId": "switch_1gang",
-        "modelIds": []
-      },
-      "to": {
-        "driverId": "switch_2gang",
-        "modelIds": [
-          "TS0002"
-        ]
-      },
-      "caseId": "p2321-mtnpt6ws-ts0002-2gang"
-    },
-    {
-      "severity": "high",
-      "action": "registry_force",
-      "mfr": "_TZ3210_DDIGCA5N",
-      "from": {
-        "driverId": "bulb_rgb",
-        "modelIds": [
-          "E11-G13",
-          "E11-G14",
-          "E11-G23",
-          "GL-C-006",
-          "LCT001",
-          "LCT002",
-          "LCT003",
-          "LCT007",
-          "LCT010",
-          "LCT011",
-          "LCT012",
-          "LCT014",
-          "LCT015",
-          "LCT016",
-          "RB 185 C",
-          "RB 285 C",
-          "S26R2ZB",
-          "S31 Lite zb",
-          "S40LITE",
-          "S60ZBTPF",
-          "S60ZBTPG",
-          "TS0101",
-          "TS0111",
-          "TS011F",
-          "TS0503A",
-          "TS0503B",
-          "TS0504B",
-          "TS0505A",
-          "TS0505B",
-          "TS0601",
-          "ZB-CL01",
-          "ZBT-ColorLight"
-        ]
-      },
-      "to": {
-        "driverId": "plug_energy_monitor",
-        "modelIds": [
-          "TS011F"
-        ]
-      },
-      "caseId": "p2321-ddigca5n-ts011f-nous-a9z"
-    }
-  ],
+  "highSeverityCount": 0,
+  "byAction": {},
+  "changes": [],
   "skipped": [
     {
       "reason": "registry_bare_brand_multi_canon",
@@ -395,8 +327,5 @@
       "curated": "switch_4_gang_metering"
     }
   ],
-  "highSeverity": [
-    "registry drift _TZ3000_MTNPT6WS → switch_2gang",
-    "registry drift _TZ3210_DDIGCA5N → plug_energy_monitor"
-  ]
+  "highSeverity": []
 }
