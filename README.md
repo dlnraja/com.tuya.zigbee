@@ -33,7 +33,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.715 |
+| **App Version** | v9.0.716 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,380 |
 | **Pairing Variants** | 16,474 (4 case combos per fingerprint) |
@@ -102,6 +102,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.716** | Improved wireless button press capture for Tuya scene remotes after wake and pairing. |
 | **v9.0.715** | Improved wireless button press capture for Tuya scene remotes after wake and pairing. |
 | **v9.0.714** | Improved wireless button press capture for Tuya scene remotes after wake and pairing. |
 | **v9.0.713** | Improved wireless button press capture for Tuya scene remotes after wake and pairing. |
@@ -113,7 +114,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.707** | Restored Homey-safe driver icons; kept own-path images; guarded empty manufacturerName for App Store processing. |
 | **v9.0.706** | Aligned coherent driver icons/images; cleaned SVG for App Store; guarded empty manufacturerName AggregateError. |
 | **v9.0.705** | Aligned coherent driver icons/images; cleaned SVG for App Store; guarded empty manufacturerName AggregateError. |
-| **v9.0.704** | Aligned driver icons and images; fixed asset paths; cleaned SVG icons for App Store processing. |
 
 <!-- CHANGELOG_END -->
 
