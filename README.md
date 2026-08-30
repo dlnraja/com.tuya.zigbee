@@ -33,7 +33,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.701 |
+| **App Version** | v9.0.703 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,380 |
 | **Pairing Variants** | 16,474 (4 case combos per fingerprint) |
@@ -102,6 +102,8 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.703** | Aligned driver icons and images to a coherent Homey design; fixed image paths to each driver own assets. |
+| **v9.0.702** | Aligned driver icons and images to a coherent Homey design; fixed image paths to each driver own assets. |
 | **v9.0.701** | Improved wall dimmer control reliability for Tuya EF00 devices after pairing. |
 | **v9.0.700** | Improved wall dimmer control reliability for Tuya EF00 devices after pairing. |
 | **v9.0.699** | P2309: gate empty productId (M15) so button_wireless_4_ts0041 cannot regress; lock yj6k7vfo\|TS0041 + Moes upt8lzi0 curtain sacred couples. |
@@ -112,8 +114,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.694** | P2308 Gmail diags: break SafeCapability recursion (#532), soft-fail wall dimmer IEEE writes (m1cvyneb), Moes Star Feather curtain lock (u… |
 | **v9.0.693** | Fix Homey publish: restore missing productId on button_wireless_4_ts0041 (TS0041) and soil_sensor_ec (TS0601). |
 | **v9.0.692** | Fix Homey publish: restore missing productId on button_wireless_4_ts0041 (TS0041) and soil_sensor_ec (TS0601). |
-| **v9.0.691** | Restored sacred-couple productIds for pairing, Moes curtain lock, safer flow driver resolve, and 4-button gbm10jnj support. |
-| **v9.0.690** | Restored sacred-couple productIds for pairing, Moes curtain lock, safer flow driver resolve, and 4-button gbm10jnj support. |
 
 <!-- CHANGELOG_END -->
 

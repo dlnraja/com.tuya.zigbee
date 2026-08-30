@@ -2645,5 +2645,8 @@
   },
   "9.0.701": {
     "en": "Improved wall dimmer control reliability for Tuya EF00 devices after pairing."
+  },
+  "9.0.703": {
+    "en": "Aligned driver icons and images to a coherent Homey design; fixed image paths to each driver own assets."
   }
 }
