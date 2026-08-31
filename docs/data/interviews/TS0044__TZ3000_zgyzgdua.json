@@ -7,8 +7,9 @@
   "user": "Jesse22homey, Freddyboy",
   "status": "fixed",
   "priority": "high",
-  "driver": "button_wireless_4",
+  "driver": "scene_switch_4",
   "inputClusters": [1, 6, 57344, 0],
+  "pairingClustersNote": "P2336: Homey match needs driver EP1 ⊆ device — use [0,1,6] only (no identify/4096/EF00). EP2-4 often [1,6] only.",
   "symptoms": [
     "Physical buttons not triggering flows",
     "Virtual buttons not clickable (setable:false)",

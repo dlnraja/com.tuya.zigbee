@@ -645,12 +645,13 @@ Regenerate: `node tools/ci/investigate-device-peculiarities.js`
 - Notes: Physical presses arrive as `[TS0044-RAW] EPn`; writing 32772 spam kills UX. Prefer `*_button_4gang_button_N_*` Flow cards. Never invent `*_button_N_button_pressed`.
 - Sources: gmail-diag-9cbf9eb6, z2m-tuya.ts Nous TS0044
 
-### `meter91-zgyzgdua-ts0044` → `scene_switch_4` (forum #2189 / 55e3e591)
+### `meter91-zgyzgdua-ts0044` → `scene_switch_4` (forum #2189 / 55e3e591 / P2336)
 
 - Couple: `_TZ3000_zgyzgdua` + TS0044 (also ERS-10TZBVK-AA in dump)
 - Protocol: multi-EP OnOff + manufacturer 0xFD; **no 0x8004**
-- Notes: Update Test ≥9.0.619 + re-pair. Skip toast `button_wireless_4`. Physical = 0xFD.
-- Sources: forum-140352#2189, gmail-55e3e591
+- Pairing clusters (P2336): compose/app.json EP1 `[0,1,6]` only — do **not** require identify/4096/EF00/57344 (interview often lacks them → Unknown Zigbee). EP2–4 `[6]`.
+- Notes: Update Test ≥9.0.733 + re-pair. Skip toast `button_wireless_4`. Physical = 0xFD.
+- Sources: forum-140352#2189, gmail-55e3e591, diag c40705a1
 
 ### `peter-0cea6870-hybrid-contact` → `contact_sensor` (forum #2190)
 

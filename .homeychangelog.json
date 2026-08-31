@@ -2738,5 +2738,8 @@
   },
   "9.0.733": {
     "en": "Improved Moes curtain Cover Controller pairing and fingerprint routing for Tuya EF00 covers."
+  },
+  "9.0.734": {
+    "en": "Fixed Moes TS0044 scene remote and soil sensor pairing clusters; hardened wall dimmer TX failure detection."
   }
 }
