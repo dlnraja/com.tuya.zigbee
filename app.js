@@ -425,16 +425,24 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
         this.log('[OTA] Manual check initiated via Flow');
         if (!args.device) return false;
         try {
+          // WHY(P2357/P2359): fuse app OTA check with Homey Device Updates UX
+          let HDU = null;
+          try { HDU = require('./lib/ota/HomeyDeviceUpdates'); } catch { /* optional */ }
           const update = await this.otaManager?.checkUpdate(args.device);
-          if (update?.available) {
-            await this.homey.notifications.createNotification({
-              excerpt: `OTA Update found for ${args.device.getName()} (v${update.newVersion}).`
-            });
-          } else {
-            await this.homey.notifications.createNotification({
-              excerpt: `Your device ${args.device.getName()} is on the latest firmware.`
-            });
-          }
+          const platform = HDU?.isDeviceUpdatesPlatformReady?.(this.homey);
+          const hasNative = HDU?.driverHasNativeFirmwareUpdates?.(args.device) === true;
+          const payload = {
+            available: !!update?.available,
+            newVersion: update?.newVersion,
+            platform,
+            hasNativeImages: hasNative,
+          };
+          await this.homey.notifications.createNotification({
+            excerpt: HDU?.notificationExcerpt?.(args.device.getName(), payload)
+              || (update?.available
+                ? `Firmware v${update.newVersion} for ${args.device.getName()} — Settings → Device Updates.`
+                : `${args.device.getName()} is on the latest firmware known to this app.`),
+          });
           return true;
         } catch (err) {
           this.error('[OTA] Check failed:', err.message);
