@@ -32,7 +32,7 @@
       "realMfrsAdded": 5,
       "details": "tmp/synthetic-resolution.json + tmp/pruned21-resolution.json"
     },
-    "lastAlignedAt": "2026-08-31T06:29:58.313Z",
+    "lastAlignedAt": "2026-08-31T11:16:31.074Z",
     "alignTool": "align-mfs-db-intelligent@P169"
   },
   "sources": {
@@ -184968,37 +184968,6 @@
     "pid": "ERS-10TZBVK-AA",
     "modelIdsCount": 3
   },
-  "_tz3000_wkai4ga5": {
-    "driverId": "scene_switch_4",
-    "source": "registry:p2328-wkai4ga5-ts0044-scene",
-    "modelIds": [
-      "TS0044"
-    ],
-    "pid": "TS0044",
-    "modelIdsCount": 1,
-    "driverHint": "scene_switch_4",
-    "coupleLock": true,
-    "powerSource": "battery",
-    "deviceType": "remote",
-    "capabilities": [
-      "button.1",
-      "button.2",
-      "button.3",
-      "button.4",
-      "measure_battery",
-      "alarm_battery"
-    ],
-    "confidence": 0.95
-  },
-  "_tz3000_zgyzgdua": {
-    "driverId": "scene_switch_4",
-    "source": "registry:p2244-zgyzgdua-ts0044-scene",
-    "modelIds": [
-      "TS0044"
-    ],
-    "pid": "TS0044",
-    "modelIdsCount": 1
-  },
   "_tze200_zqtiam9d": {
     "driverId": "scene_switch_4",
     "source": "auto-sync",
@@ -195478,16 +195447,6 @@
     ],
     "pid": "01MINIZB",
     "modelIdsCount": 34
-  },
-  "_TZ3000_KFU8ZAPD": {
-    "driverId": "button_wireless_4",
-    "source": "registry:p2236-kfu8zapd-ts0044f",
-    "modelIds": [
-      "TS0044",
-      "TS004F"
-    ],
-    "pid": "TS0044",
-    "modelIdsCount": 2
   },
   "_TZ3000_KJ0NWDZ6": {
     "driverId": "switch_1gang",

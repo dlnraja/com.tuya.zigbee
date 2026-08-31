@@ -1,14 +1,34 @@
 {
-  "timestamp": "2026-08-30T10:15:03.817Z",
+  "timestamp": "2026-08-31T11:16:32.097Z",
   "gate": "align-mfs-db-intelligent",
   "apply": false,
   "check": true,
   "changeCount": 0,
-  "skippedCount": 34,
+  "skippedCount": 38,
   "highSeverityCount": 0,
   "byAction": {},
   "changes": [],
   "skipped": [
+    {
+      "reason": "registry_enrich_only",
+      "caseId": "p2317-cvis4qmw-ts0006-6gang",
+      "canon": "switch_wall_6gang"
+    },
+    {
+      "reason": "registry_enrich_only",
+      "caseId": "p2317-g9chy2ib-ts0003-3gang",
+      "canon": "wall_switch_3gang_1way"
+    },
+    {
+      "reason": "registry_enrich_only",
+      "caseId": "p2317-etufnltx-ts1002-foria",
+      "canon": "button_wireless_4"
+    },
+    {
+      "reason": "registry_enrich_only",
+      "caseId": "p2347-gabriel-zemismart-cartesian-doc-only",
+      "canon": "wall_switch_1gang_1way"
+    },
     {
       "reason": "registry_bare_brand_multi_canon",
       "mfr": "hobeian",
