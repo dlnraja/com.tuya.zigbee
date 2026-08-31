@@ -9,6 +9,7 @@
     { "mfr": "_TZE204_m1cvyneb", "pid": "TS0601", "driverId": "wall_dimmer_tuya", "note": "P2138 sibling" },
     { "mfr": "_TZE200_m1cvyneb", "pid": "TS0601", "driverId": "wall_dimmer_tuya", "note": "P2138 sibling" },
     { "mfr": "_TZE284_6ocnqlhn", "pid": "TS0601", "driverId": "din_rail_meter", "note": "Tongou DIN" },
+    { "mfr": "_TZE284_60cnqlhn", "pid": "TS0601", "driverId": "din_rail_meter", "note": "P2299 OCR alias of 6ocnqlhn (diag 31e654a4)" },
     { "mfr": "_TZ3000_zgyzgdua", "pid": "TS0044", "driverId": "scene_switch_4", "note": "meter91 0xFD" },
     { "mfr": "_TZ3000_k4ej3ww2", "pid": "TS0207", "driverId": "water_leak_sensor", "note": "IAS leak" },
     { "mfr": "_TZ3000_5k5vh43t", "pid": "TS0207", "driverId": "zigbee_repeater", "note": "not leak" },
@@ -27,6 +28,14 @@
     { "mfr": "_TZ3000_4upl1fcj", "pid": "TS0041", "driverId": "button_wireless_1", "note": "SunBeech" },
     { "mfr": "_TZ3000_qeuvnohg", "pid": "TS011F", "driverId": "din_rail_switch", "note": "DIN relay" },
     { "mfr": "_TZ3000_amdymr7l", "pid": "TS011F", "driverId": "plug_energy_monitor", "note": "BlitzWolf SHP13" },
-    { "mfr": "_TZ3000_nkcobies", "pid": "TS011F", "driverId": "smartplug", "note": "P2236 plug" }
+    { "mfr": "_TZ3000_nkcobies", "pid": "TS011F", "driverId": "smartplug", "note": "P2236 plug" },
+    { "mfr": "_TZE204_mpbki2zm", "pid": "TS0601", "driverId": "wall_thermostat", "note": "P2300 #532 TYBAC-006 FCU" },
+    { "mfr": "_TZE204_qujphad5", "pid": "TS0601", "driverId": "wall_thermostat", "note": "P2300 FCU sibling" },
+    { "mfr": "_TZ3000_pjb1ua0m", "pid": "TS0203", "driverId": "contact_sensor", "note": "P2300 discussion #100 pressure band" },
+    { "mfr": "_TZE204_clrdrnya", "pid": "TS0601", "driverId": "presence_sensor_radar", "note": "VicHY diag 4217d5e3 mmWave 24G — compact dropped mfr" },
+    { "mfr": "_TZE200_clrdrnya", "pid": "TS0601", "driverId": "presence_sensor_radar", "note": "clrdrnya TZE200 sibling" },
+    { "mfr": "_TZE284_clrdrnya", "pid": "TS0601", "driverId": "presence_sensor_radar", "note": "clrdrnya TZE284 sibling" },
+    { "mfr": "HOBEIAN", "pid": "ZG-204ZL", "driverId": "presence_sensor_radar", "note": "Cam forum ZG-204ZL motion — HOBEIAN mfr stripped by compact" },
+    { "mfr": "HOBEIAN", "pid": "ZG-204ZM", "driverId": "presence_sensor_radar", "note": "HOBEIAN radar sibling" }
   ]
 }
