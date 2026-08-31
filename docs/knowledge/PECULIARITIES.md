@@ -650,6 +650,14 @@ Regenerate: `node tools/ci/investigate-device-peculiarities.js`
 - Couple: `_TZ3000_zgyzgdua` + TS0044 (also ERS-10TZBVK-AA in dump)
 - Protocol: multi-EP OnOff + manufacturer 0xFD; **no 0x8004**
 - Pairing clusters (P2336): compose/app.json EP1 `[0,1,6]` only — do **not** require identify/4096/EF00/57344 (interview often lacks them → Unknown Zigbee). EP2–4 `[6]`.
+- Z2M: Moes XH-SY-04Z whitelabel on `zgyzgdua`; actions via genOnOff 0xFD (12 scene: single/double/hold × 4).
+
+### `p2337-ts0044-routing` (Z2M whitelabel split)
+
+- `_TZ3000_u3nv1jwk` + TS0044 → `button_wireless_4` (Z2M TM-YKQ004 portable remote)
+- `_TZ3000_bgtzm4ny` + TS0044 → `button_wireless_4` (HOBEIAN ZG-101ZS Star Ring)
+- `_TZ3000_vp6clf9d` / `_TZ3000_ufhtxr59` + TS0044 → `scene_switch_4` only — removed from `wall_remote_4_gang` (P2328 steal)
+- MVM `resolveDriverType` must not route u3nv1jwk/bgtzm4ny to scene_switch_4
 - Notes: Update Test ≥9.0.733 + re-pair. Skip toast `button_wireless_4`. Physical = 0xFD.
 - Sources: forum-140352#2189, gmail-55e3e591, diag c40705a1
 

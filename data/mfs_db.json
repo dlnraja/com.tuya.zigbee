@@ -241435,7 +241435,7 @@
     "_tz3000_ufhtxr59|ts0044": {
       "mfr": "_tz3000_ufhtxr59",
       "pid": "ts0044",
-      "driver": "wall_remote_4_gang",
+      "driver": "scene_switch_4",
       "sources": [
         "mfs_db"
       ],
@@ -241471,7 +241471,7 @@
     "_tz3000_vp6clf9d|ts0044": {
       "mfr": "_tz3000_vp6clf9d",
       "pid": "ts0044",
-      "driver": "wall_remote_4_gang",
+      "driver": "scene_switch_4",
       "sources": [
         "mfs_db"
       ],

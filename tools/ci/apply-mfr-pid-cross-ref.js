@@ -1,6 +1,7 @@
 // apply-mfr-pid-cross-ref.js — apply new mfr+PID pairs from user data
 const fs = require('fs');
 const path = require('path');
+const MVM = require('../../lib/ManufacturerVariationManager');
 
 const mfsPath = 'data/mfs_db.json';
 const mfs = JSON.parse(fs.readFileSync(mfsPath, 'utf8'));
@@ -27,8 +28,10 @@ for (const p of newPairs) {
 
 console.log('\nUnique mfrs:', byMfr.size);
 
-// Determine best driver for each mfr (heuristic based on PID)
-function guessDriver(pid) {
+// Determine best driver for each mfr (heuristic based on PID + sacred couple)
+function guessDriver(pid, mfr) {
+  const couple = MVM.resolveDriverType(mfr, pid);
+  if (couple) return couple;
   const p = pid.toUpperCase();
   if (/^TS0601$/.test(p)) return 'soil_sensor'; // many soil/temp sensors use TS0601
   if (/^TS0201$/.test(p)) return 'climate_sensor';
@@ -86,7 +89,7 @@ for (const [mfr, items] of byMfr) {
     // Find the most common driver guess
     const driverGuesses = {};
     for (const pid of pids) {
-      const d = guessDriver(pid);
+      const d = guessDriver(pid, mfr);
       driverGuesses[d] = (driverGuesses[d] || 0) + 1;
     }
     const bestDriver = Object.entries(driverGuesses).sort((a,b) => b[1] - a[1])[0][0];
