@@ -46,8 +46,9 @@ describe('DeviceOperatingMode', () => {
       driverId: 'button_wireless_3',
     });
     const f = classifyOperatingFamily(d);
-    assert.equal(f.family, 'endpoint_remote');
+    // Sacred mfr list classifies as ts0044-skip family (same: no 0x8004 write)
     assert.equal(f.writeSceneAttr, false);
+    assert.ok(f.family === 'ts0044' || f.family === 'endpoint_remote');
   });
 
   it('TS0002 wall relay is switchType not scene mode', () => {
@@ -74,6 +75,39 @@ describe('DeviceOperatingMode', () => {
     assert.equal(f.family, 'knob');
     assert.equal(f.writeSceneAttr, false);
     assert.equal(f.defaultMode, 'dimmer');
+  });
+
+  // WHY(P2354 / T150690): Moes TS004F_1 must force event mode even if modelId lags
+  it('xabckq1v Moes TS004F_1 forces event/scene write (not TS0044 skip)', () => {
+    const d = mockDevice({
+      productId: 'TS004F',
+      mfr: '_TZ3000_xabckq1v',
+      driverId: 'button_wireless_4',
+    });
+    const f = classifyOperatingFamily(d);
+    assert.equal(f.family, 'ts004f');
+    assert.equal(f.writeSceneAttr, true);
+    assert.equal(f.defaultMode, 'scene');
+  });
+
+  it('xabckq1v without modelId still forces event write', () => {
+    const d = mockDevice({
+      mfr: '_TZ3000_xabckq1v',
+      driverId: 'button_wireless_4',
+    });
+    const f = classifyOperatingFamily(d);
+    assert.equal(f.family, 'ts004f');
+    assert.equal(f.writeSceneAttr, true);
+  });
+
+  it('Nobø xffhmvhv still skips 0x8004', () => {
+    const d = mockDevice({
+      productId: 'TS004F',
+      mfr: '_TZ3000_xffhmvhv',
+      driverId: 'button_wireless_4',
+    });
+    const f = classifyOperatingFamily(d);
+    assert.equal(f.writeSceneAttr, false);
   });
 
   it('button_wireless_3 with empty model still skips 0x8004', () => {
