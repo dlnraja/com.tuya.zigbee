@@ -1353,5 +1353,8 @@
   },
   "5.12.101": {
     "en": "Improved button and scene remote Flow triggers (hold-release, wall 4-gang physical, Tuya DP path)."
+  },
+  "5.12.102": {
+    "en": "Fixed wall dimmer brightness misread as humidity; fixed AC thermostat valve DP poisoning target temperature."
   }
 }

@@ -112,22 +112,26 @@ class WallThermostatDevice extends TuyaSpecificClusterDevice {
       [map.currentTemperature]: { capability: 'measure_temperature', type: 'value', divisor: 10 },
       [map.childlock]: { capability: 'child_lock', type: 'bool' },
     };
+    // WHY(P2333): always reserve FCU valve DP36 even before FCU arm — DynCap
+    // init races ahead of _armFcu and poisoned target_temperature (a095345e).
+    this.dpMappings[FCU_DATA_POINTS.valve] = { internal: true, type: 'valve' };
+    this._dynCapBlockDps = new Set([
+      map.onOff,
+      map.targetTemperature,
+      map.currentTemperature,
+      map.childlock,
+      FCU_DATA_POINTS.valve,
+      FCU_DATA_POINTS.systemMode,
+      FCU_DATA_POINTS.fanMode,
+      FCU_DATA_POINTS.manualMode,
+    ].filter((n) => Number.isFinite(Number(n))).map(Number));
     if (this._fcu) {
       this.dpMappings[FCU_DATA_POINTS.systemMode] = { capability: 'thermostat_mode', type: 'enum' };
       this.dpMappings[FCU_DATA_POINTS.fanMode] = { capability: 'fan_mode', type: 'enum' };
       this.dpMappings[FCU_DATA_POINTS.manualMode] = { capability: 'thermostat_programming', type: 'bool' };
-      // WHY(P2326): Reserve DP36 so DynCap cannot map valve→target_temperature (a095345e)
-      this.dpMappings[FCU_DATA_POINTS.valve] = { internal: true, type: 'valve' };
-      this._dynCapBlockDps = new Set([
-        FCU_DATA_POINTS.onOff,
-        FCU_DATA_POINTS.targetTemperature,
-        FCU_DATA_POINTS.currentTemperature,
-        FCU_DATA_POINTS.systemMode,
-        FCU_DATA_POINTS.fanMode,
-        FCU_DATA_POINTS.manualMode,
-        FCU_DATA_POINTS.valve,
-        FCU_DATA_POINTS.childlock,
-      ].filter((n) => Number.isFinite(Number(n))).map(Number));
+    }
+    if (typeof this.dynamicCapabilityManager?.purgeDriverOwnedDiscoveries === 'function') {
+      this.dynamicCapabilityManager.purgeDriverOwnedDiscoveries().catch(() => {});
     }
   }
 

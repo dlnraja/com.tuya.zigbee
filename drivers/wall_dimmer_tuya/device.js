@@ -31,8 +31,27 @@ class wall_dimmer_tuya extends TuyaSpecificClusterDevice {
   // does not add a false measure_battery capability (fixes false-battery reports).
   get mainsPowered() { return true; }
 
+  /**
+   * WHY(P2333 / PresentSky diag 60959c24): TuyaEF00Manager generic map treated
+   * DP2 as humidity + DynCap added measure_humidity — kill climate invent.
+   */
+  get dpMappings() {
+    return {
+      [V1_SINGLE_GANG_DIMMER_SWITCH_DATA_POINTS.onOff]: { capability: 'onoff', type: 'bool' },
+      [V1_SINGLE_GANG_DIMMER_SWITCH_DATA_POINTS.brightness]: { capability: 'dim', type: 'value' },
+    };
+  }
+
   async onNodeInit({ zclNode }) {
     await super.onNodeInit({ zclNode });
+
+    this._dynCapBlockDps = new Set([
+      V1_SINGLE_GANG_DIMMER_SWITCH_DATA_POINTS.onOff,
+      V1_SINGLE_GANG_DIMMER_SWITCH_DATA_POINTS.brightness,
+    ]);
+    if (typeof this.dynamicCapabilityManager?.purgeDriverOwnedDiscoveries === 'function') {
+      await this.dynamicCapabilityManager.purgeDriverOwnedDiscoveries().catch(() => {});
+    }
 
     if (this.mainsPowered) {
       if (this.hasCapability('measure_battery')) {
@@ -40,6 +59,12 @@ class wall_dimmer_tuya extends TuyaSpecificClusterDevice {
       }
       if (this.hasCapability('alarm_battery')) {
         await this.removeCapability('alarm_battery').catch(() => {});
+      }
+    }
+    // WHY(P2333): strip phantom climate caps invented from DP2 brightness
+    for (const phantom of ['measure_humidity', 'measure_temperature']) {
+      if (this.hasCapability(phantom)) {
+        await this.removeCapability(phantom).catch(() => {});
       }
     }
 
