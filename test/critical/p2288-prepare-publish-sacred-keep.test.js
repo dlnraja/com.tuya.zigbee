@@ -21,12 +21,13 @@ describe('P2288 publish sacred-keep compaction', () => {
   it('loads sacred keep list with verified couples', () => {
     const sacred = loadSacredKeepCouples(ROOT);
     assert.ok(sacred.length >= 15, `expected ≥15 sacred couples, got ${sacred.length}`);
+    // WHY(P2348): pin.mfr stays EXACT device case (Homey pairing case-sensitive).
     assert.ok(
-      sacred.some((c) => c.mfr === '_tz3000_mrpevh8p' && c.pid === 'TS0041'),
-      'mrpevh8p+TS0041 pinned (mfr normalized lowercase)'
+      sacred.some((c) => c.mfr === '_TZ3000_mrpevh8p' && c.pid === 'TS0041'),
+      'mrpevh8p+TS0041 pinned with exact device-case mfr'
     );
-    assert.ok(sacred.some((c) => c.mfr === '_tz3000_kfu8zapd' && c.pid === 'TS0044'));
-    assert.ok(sacred.some((c) => c.mfr === 'hobeian' && c.pid === '3315-S'));
+    assert.ok(sacred.some((c) => c.mfr === '_TZ3000_kfu8zapd' && c.pid === 'TS0044'));
+    assert.ok(sacred.some((c) => /^hobeian$/i.test(c.mfr) && c.pid === '3315-S'));
   });
 
   it('aggressive compaction keeps sacred couples in manifest clone', () => {
