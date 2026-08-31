@@ -33,7 +33,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.745 |
+| **App Version** | v9.0.746 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,383 |
 | **Pairing Variants** | 16,432 (4 case combos per fingerprint) |
@@ -102,6 +102,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.746** | Fixed Moes TS0044 scene remote and soil sensor pairing clusters; hardened wall dimmer TX failure detection. |
 | **v9.0.745** | Fixed Moes TS0044 scene remote and soil sensor pairing clusters; hardened wall dimmer TX failure detection. |
 | **v9.0.744** | Fixed Moes TS0044 scene remote and soil sensor pairing clusters; hardened wall dimmer TX failure detection. |
 | **v9.0.743** | Fixed Moes TS0044 scene remote and soil sensor pairing clusters; hardened wall dimmer TX failure detection. |
@@ -113,7 +114,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.737** | Fixed Moes TS0044 scene remote and soil sensor pairing clusters; hardened wall dimmer TX failure detection. |
 | **v9.0.736** | Fixed Moes TS0044 scene remote and soil sensor pairing clusters; hardened wall dimmer TX failure detection. |
 | **v9.0.735** | Fixed Moes TS0044 scene remote and soil sensor pairing clusters; hardened wall dimmer TX failure detection. |
-| **v9.0.734** | Fixed Moes TS0044 scene remote and soil sensor pairing clusters; hardened wall dimmer TX failure detection. |
 
 <!-- CHANGELOG_END -->
 
