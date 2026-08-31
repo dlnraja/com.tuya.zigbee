@@ -165,7 +165,9 @@ jobs:
           node --test test/critical/p2231-market-couples-intake.test.js
 
       - name: 🛡️ Firmware / OTA path gate
-        run: node tools/ci/firmware-updates-gate.js
+        run: node tools/ci/firmware-updates-gate.js --coverage
+      - name: Homey Device Updates verify (P2359)
+        run: node tools/ci/verify-homey-device-updates.js
 
       - name: 🛡️ WiFi local-first gate
         run: node tools/ci/wifi-local-first-gate.js

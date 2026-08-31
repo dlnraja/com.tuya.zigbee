@@ -1,0 +1,102 @@
+{
+  "_meta": {
+    "id": "homey-device-updates",
+    "version": "1.0.0",
+    "patch": "P2359",
+    "track": "BOTH",
+    "news": "https://homey.app/en-fr/news/introducing-device-updates/",
+    "sdkDocs": "https://apps.developer.homey.app/wireless/zigbee/zigbee-firmware-updates",
+    "policy": "Native Homey Zigbee OTA only — OEM images, SHA-verified, class-tight sacred couples. Never invent pid. Never brick via wide drivers."
+  },
+  "requirements": {
+    "homeyFirmwareMin": "13.2.0",
+    "mobileAppMin": "9.10.0",
+    "platforms": ["local", "cloud"]
+  },
+  "userPaths": {
+    "settings": "More (…) → Settings → Device Updates",
+    "maintenance": "Device → Maintenance → Check Device Updates"
+  },
+  "sources": {
+    "primary": {
+      "id": "koenkk-zigbee-ota",
+      "url": "https://raw.githubusercontent.com/Koenkk/zigbee-OTA/master/index.json",
+      "verify": "sha512",
+      "oemOnly": true
+    },
+    "secondary": [
+      {
+        "id": "mfs_db",
+        "path": "data/mfs_db.json",
+        "role": "fingerprint intersect (mfr in our catalog)"
+      },
+      {
+        "id": "misattribution-registry",
+        "path": "data/user-misattribution-registry.json",
+        "role": "safe driver route (forbid wide/generic)"
+      },
+      {
+        "id": "driver-compose",
+        "path": "drivers/*/driver.compose.json",
+        "role": "sacred couple subset check (mfr+pid ⊆ zigbee lists)"
+      }
+    ],
+    "excluded": [
+      "pvvx",
+      "community-replacement",
+      "generic_tuya",
+      "universal_zigbee",
+      "device_generic_tuya_universal",
+      "bulb_rgbw without registry lock"
+    ]
+  },
+  "tuyaManufacturerCodes": [4417, 4098],
+  "safety": {
+    "maxImageBytes": 2097152,
+    "requireOtaMagic": "0x0BEEF11E",
+    "classTightProductIds": true,
+    "refuseProductIdDefaultInvent": true,
+    "assetsDir": "assets/firmware",
+    "wakeInstructionRequiredFor": [
+      "contact_sensor",
+      "soil_sensor",
+      "radiator_valve",
+      "thermostatic_radiator_valve"
+    ]
+  },
+  "coveredDriversExpected": [
+    "wall_dimmer_tuya",
+    "usb_dongle_triple",
+    "radiator_valve",
+    "thermostatic_radiator_valve",
+    "wall_curtain_switch",
+    "switch_1gang",
+    "smartplug",
+    "contact_sensor",
+    "soil_sensor"
+  ],
+  "wakeInstructions": {
+    "contact_sensor": {
+      "en": "Press the reset/pairing button once to wake the contact sensor, then start Device Updates.",
+      "fr": "Appuyez une fois sur le bouton reset/appairage pour réveiller le capteur, puis lancez Device Updates."
+    },
+    "soil_sensor": {
+      "en": "Press the sensor button once to wake it, then start Device Updates.",
+      "fr": "Appuyez une fois sur le bouton du capteur pour le réveiller, puis lancez Device Updates."
+    },
+    "radiator_valve": {
+      "en": "Wake the radiator valve by pressing the menu button, then start Device Updates.",
+      "fr": "Réveillez le thermostat en appuyant sur le bouton menu, puis lancez Device Updates."
+    },
+    "thermostatic_radiator_valve": {
+      "en": "Wake up the radiator valve by pressing the menu button, then start Device Updates.",
+      "fr": "Réveillez le thermostat en appuyant sur le bouton menu, puis lancez Device Updates."
+    }
+  },
+  "ci": {
+    "gate": "tools/ci/firmware-updates-gate.js",
+    "build": "tools/ci/build-firmware-updates.js",
+    "verify": "tools/ci/verify-homey-device-updates.js",
+    "npm": ["check:firmware", "firmware:verify", "firmware:build"]
+  }
+}

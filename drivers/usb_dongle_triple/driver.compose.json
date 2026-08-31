@@ -415,7 +415,8 @@
     "updates": [
       {
         "changelog": {
-          "en": "OEM Tuya firmware v78 (Koenkk zigbee-OTA, SHA512-verified)"
+          "en": "OEM Zigbee firmware v78 (Koenkk zigbee-OTA, SHA512-verified). Install via Homey Device Updates (Settings → Device Updates) on Homey ≥13.2 / Mobile ≥9.10.",
+          "fr": "Firmware Zigbee OEM v78 (Koenkk zigbee-OTA, SHA512 vérifié). Installez via Homey Device Updates — Homey ≥13.2 / Mobile ≥9.10."
         },
         "device": {
           "manufacturerName": [
