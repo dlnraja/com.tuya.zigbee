@@ -2725,6 +2725,6 @@
     "en": "Fixed wall dimmer brightness misread as humidity; fixed AC thermostat valve DP poisoning target temperature from diagnostics."
   },
   "9.0.729": {
-    "en": "Fixed wall dimmer brightness misread as humidity; fixed AC thermostat valve DP poisoning target temperature from diagnostics."
+    "en": "Fixed Fingerbot Homey flow card IDs and switch turned-on/off triggers so Flows bind correctly."
   }
 }
