@@ -19,6 +19,14 @@ Generated 2026-08-19T08:50:15.322Z from registry (54 cases) × compound DB (209 
 
 ## Gaps
 
+### `p2354-forum-inspiration-ts004f-event` → remotes / CI
+
+- **Threads:** T150690 Steampunk (`_TZ3000_xabckq1v`+TS004F), T156967 Manfred (`kalzta4` typo), T140352 meter91/PresentSky/VicHY/Cam (tip lag)
+- **Inspiration:** Z2M Moes TS004F_1 requires `operation_mode=event` for multi-click; Homesuite/Gabriel soft-fail settings; Primordial DIY 0xFD on TS0044
+- **Bug:** `xabckq1v` was in DeviceOperatingMode TS0044 skip-0x8004 list → never forced event mode
+- **Fix:** force `ts004f` + writeSceneAttr for `xabckq1v`; forum processor typo `kalzta4`→`kaflzta4` → `smart_knob`+TS004F; sacred-keep pin
+- **Against:** treating real TS004F like 4-EP TS0044; inventing pid for Manfred without couple
+
 ### `p2351-foreign-driver-id-serializer` → runtime (all drivers)
 
 - Symptom: App crash `Invalid Driver ID: ZG9101SAC_HP` (Philips Hue ID) during HomeySerializer flow parse

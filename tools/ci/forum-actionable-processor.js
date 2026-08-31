@@ -105,14 +105,33 @@ function classifyDualApp(issues, excerpt) {
   return { track: 'REVIEW', reason: 'Manual classification — see DUAL_APP_VISION.md' };
 }
 
+/**
+ * Forum OCR / user typos → canonical mfr (never invent pid).
+ * WHY(P2354 / T156967 Manfred): `_TZ300_kalzta4` is `_TZ3000_kaflzta4` (Moes ERS-10TZBVB-AA).
+ */
+const FORUM_MFR_TYPO_ALIASES = Object.freeze({
+  _tz300_kalzta4: '_TZ3000_kaflzta4',
+  _tz3000_kalzta4: '_TZ3000_kaflzta4',
+  tz300_kalzta4: '_TZ3000_kaflzta4',
+  tz3000_kalzta4: '_TZ3000_kaflzta4',
+});
+
+function canonicalizeForumMfr(mfr) {
+  const raw = String(mfr || '').trim();
+  if (!raw) return raw;
+  const key = raw.replace(/^_+/, '').toLowerCase();
+  const withPrefix = raw.startsWith('_') ? raw.toLowerCase() : `_${key}`;
+  return FORUM_MFR_TYPO_ALIASES[withPrefix] || FORUM_MFR_TYPO_ALIASES[key] || raw;
+}
+
 function couplesFromPost(post) {
   const mfrs = post.mfrs || [];
   const pids = post.pids || [];
   const out = [];
   if (mfrs.length && pids.length) {
-    for (const m of mfrs) for (const p of pids) out.push({ mfr: m, pid: p });
+    for (const m of mfrs) for (const p of pids) out.push({ mfr: canonicalizeForumMfr(m), pid: p });
   } else if (mfrs.length) {
-    for (const m of mfrs) out.push({ mfr: m, pid: null });
+    for (const m of mfrs) out.push({ mfr: canonicalizeForumMfr(m), pid: null });
   }
   return out;
 }

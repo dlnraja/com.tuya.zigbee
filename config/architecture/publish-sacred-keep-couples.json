@@ -156,7 +156,13 @@
       "mfr": "_TZ3000_xabckq1v",
       "pid": "TS004F",
       "driverId": "button_wireless_4",
-      "note": "P2236 soft lock"
+      "note": "P2236/P2354 Moes TS004F_1 — force event mode 0x8004 (T150690)"
+    },
+    {
+      "mfr": "_TZ3000_kaflzta4",
+      "pid": "TS004F",
+      "driverId": "smart_knob",
+      "note": "Moes ERS-10TZBVB-AA; forum typo kalzta4→kaflzta4 (T156967)"
     },
     {
       "mfr": "_TZ3000_4upl1fcj",

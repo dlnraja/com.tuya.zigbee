@@ -1,5 +1,7 @@
 # New diag batch — 2026-08-31 (cross-ref + fix status)
 
+> Re-harvest ~12:50 UTC+2 → see **`LATEST_INBOX_HARVEST.md`**. Tip **9.0.748**; no new code gap (user tip lag).
+
 Fetched/analyzed Homey app-diags from Gmail UUID harvest + Athom crashes.
 
 | UUID | Tip | User / symptom | Couple | Verdict |
