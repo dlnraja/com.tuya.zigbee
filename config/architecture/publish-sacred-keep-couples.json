@@ -331,6 +331,36 @@
       "pid": "TS0601",
       "driverId": "wall_switch_6_gang_tuya",
       "note": "P2347 soft OEM sibling R731ZLXK"
+    },
+    {
+      "mfr": "_TZE204_5slehgeo",
+      "pid": "TS0601",
+      "driverId": "curtain_motor",
+      "note": "P2348 Salvagr #533 Moes ZTS-EUR-C — compact was dropping mfr (18718→264 combos)"
+    },
+    {
+      "mfr": "_TZE284_5slehgeo",
+      "pid": "TS0601",
+      "driverId": "curtain_motor",
+      "note": "P2348 TZE284 sibling ZTS-EUR-C"
+    },
+    {
+      "mfr": "_TZE200_5slehgeo",
+      "pid": "TS0601",
+      "driverId": "curtain_motor",
+      "note": "P2348 TZE200 sibling"
+    },
+    {
+      "mfr": "_TZE200_nhyj64w2",
+      "pid": "TS0601",
+      "driverId": "curtain_motor",
+      "note": "P2348 Z2M ZTS-EUR-C sibling from #533"
+    },
+    {
+      "mfr": "_TZE200_127x7wnl",
+      "pid": "TS0601",
+      "driverId": "curtain_motor",
+      "note": "P2348 Z2M ZTS-EUR-C sibling from #533"
     }
   ]
 }

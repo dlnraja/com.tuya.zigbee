@@ -58,10 +58,15 @@ function loadSacredKeepCouples(repoRoot) {
       if (!fs.existsSync(file)) continue;
       const raw = JSON.parse(fs.readFileSync(file, 'utf8'));
       const list = Array.isArray(raw.couples) ? raw.couples : [];
+      // WHY(P2348): Homey pairing is case-SENSITIVE. Keep pin.mfr EXACT as in
+      // publish-sacred-keep-couples.json (e.g. _TZE204_5slehgeo). Lowercasing
+      // here made compact inject _tze204_* while the device reports mixed case
+      // → Unknown Device (Salvagr #533 diag 724d4bc9). Group compares still use
+      // String(pin.mfr).toLowerCase() at call sites.
       return list
         .filter((c) => c && c.mfr && c.pid && c.driverId)
         .map((c) => ({
-          mfr: String(c.mfr).toLowerCase(),
+          mfr: String(c.mfr),
           pid: String(c.pid),
           driverId: String(c.driverId),
         }));
@@ -85,12 +90,19 @@ function assertSacredCouplesPresent(manifest, sacredAll) {
       missing.push(`${c.mfr}+${c.pid} → ${c.driverId} (driver missing in publish)`);
       continue;
     }
-    const mfrs = (d.zigbee.manufacturerName || []).map((m) => String(m).toLowerCase());
+    const mfrsExact = (d.zigbee.manufacturerName || []).map(String);
+    const mfrsLc = mfrsExact.map((m) => m.toLowerCase());
     const pids = (d.zigbee.productId || []).map(String);
-    const hasMfr = mfrs.includes(c.mfr);
-    const hasPid = pids.some((p) => p.toUpperCase() === c.pid.toUpperCase());
-    if (!hasMfr || !hasPid) {
-      missing.push(`${c.mfr}+${c.pid} → ${c.driverId} (mfr=${hasMfr} pid=${hasPid})`);
+    const pinMfr = String(c.mfr);
+    // Prefer exact device-case match (Homey pairing); fall back to CI-only lc.
+    const hasMfrExact = mfrsExact.includes(pinMfr);
+    const hasMfrLc = mfrsLc.includes(pinMfr.toLowerCase());
+    const hasPid = pids.some((p) => p.toUpperCase() === String(c.pid).toUpperCase());
+    if (!hasMfrExact || !hasPid) {
+      missing.push(
+        `${pinMfr}+${c.pid} → ${c.driverId}`
+        + ` (mfrExact=${hasMfrExact} mfrLc=${hasMfrLc} pid=${hasPid})`,
+      );
     }
   }
   return missing;
@@ -554,22 +566,26 @@ function compactZigbeeIdentifiers(manifest, opts = {}) {
       }
       driver.zigbee.manufacturerName = emitMfrs;
       driver.zigbee.productId = emitProducts;
+      // WHY(P2348): Homey Zigbee pairing is case-SENSITIVE on manufacturerName.
+      // Case-insensitive presence of 5SLEHGEO is NOT enough — inject exact pin.mfr.
       for (const pin of sacredRequired) {
-        const pinMfrLc = String(pin.mfr).toLowerCase();
-        const pinPidUc = String(pin.pid).toUpperCase();
-        if (!(driver.zigbee.manufacturerName || []).some((m) => String(m).toLowerCase() === pinMfrLc)) {
-          driver.zigbee.manufacturerName = uniqStrings([pin.mfr, ...(driver.zigbee.manufacturerName || [])]);
+        const pinMfr = String(pin.mfr);
+        const pinPid = String(pin.pid);
+        const pinPidUc = pinPid.toUpperCase();
+        const mfrs = driver.zigbee.manufacturerName || [];
+        if (!mfrs.some((m) => String(m) === pinMfr)) {
+          driver.zigbee.manufacturerName = uniqStrings([pinMfr, ...mfrs]);
           sacredPinned += 1;
         }
         if (!(driver.zigbee.productId || []).some((p) => String(p).toUpperCase() === pinPidUc)) {
-          driver.zigbee.productId = uniqStrings([pin.pid, ...(driver.zigbee.productId || [])]);
+          driver.zigbee.productId = uniqStrings([pinPid, ...(driver.zigbee.productId || [])]);
           sacredPinned += 1;
         }
       }
       for (const pin of sacredRequired) {
-        const mfrsNow = (driver.zigbee.manufacturerName || []).map((m) => String(m).toLowerCase());
+        const mfrsNow = driver.zigbee.manufacturerName || [];
         const pidsNow = (driver.zigbee.productId || []).map(String);
-        if (!mfrsNow.includes(String(pin.mfr).toLowerCase())
+        if (!mfrsNow.some((m) => String(m) === String(pin.mfr))
             || !pidsNow.some((p) => p.toUpperCase() === String(pin.pid).toUpperCase())) {
           sacredMissing.push(`${pin.mfr}+${pin.pid} @ ${driver.id}`);
         }
@@ -579,22 +595,24 @@ function compactZigbeeIdentifiers(manifest, opts = {}) {
     }
 
     for (const pin of sacredRequired) {
-      const pinMfrLc = String(pin.mfr).toLowerCase();
-      const pinPidUc = String(pin.pid).toUpperCase();
-      if (!(driver.zigbee.manufacturerName || []).some((m) => String(m).toLowerCase() === pinMfrLc)) {
-        driver.zigbee.manufacturerName = uniqStrings([pin.mfr, ...(driver.zigbee.manufacturerName || [])]);
+      const pinMfr = String(pin.mfr);
+      const pinPid = String(pin.pid);
+      const pinPidUc = pinPid.toUpperCase();
+      const mfrs = driver.zigbee.manufacturerName || [];
+      if (!mfrs.some((m) => String(m) === pinMfr)) {
+        driver.zigbee.manufacturerName = uniqStrings([pinMfr, ...mfrs]);
         sacredPinned += 1;
       }
       if (!(driver.zigbee.productId || []).some((p) => String(p).toUpperCase() === pinPidUc)) {
-        driver.zigbee.productId = uniqStrings([pin.pid, ...(driver.zigbee.productId || [])]);
+        driver.zigbee.productId = uniqStrings([pinPid, ...(driver.zigbee.productId || [])]);
         sacredPinned += 1;
       }
     }
 
     for (const pin of sacredRequired) {
-      const mfrsNow = (driver.zigbee.manufacturerName || []).map((m) => String(m).toLowerCase());
+      const mfrsNow = driver.zigbee.manufacturerName || [];
       const pidsNow = (driver.zigbee.productId || []).map(String);
-      if (!mfrsNow.includes(String(pin.mfr).toLowerCase())
+      if (!mfrsNow.some((m) => String(m) === String(pin.mfr))
           || !pidsNow.some((p) => p.toUpperCase() === String(pin.pid).toUpperCase())) {
         sacredMissing.push(`${pin.mfr}+${pin.pid} @ ${driver.id}`);
       }
@@ -621,12 +639,14 @@ function compactZigbeeIdentifiers(manifest, opts = {}) {
     const mfrs = uniqStrings(target.zigbee.manufacturerName);
     const pids = uniqStrings(target.zigbee.productId);
     const pins = sacredPinsForDriver(sacredAll, target.id);
-    const pinMfr = new Set(pins.map((p) => p.mfr));
-    const pinPid = new Set(pins.map((p) => p.pid.toUpperCase()));
+    // WHY(P2348): pass2 must compare lowercase keys to lowercase sacred pins
+    // (previously pinMfr held original case → sacred mfrs looked droppable).
+    const pinMfrLc = new Set(pins.map((p) => String(p.mfr).toLowerCase()));
+    const pinPid = new Set(pins.map((p) => String(p.pid).toUpperCase()));
     if (mfrs.length <= 1 && pids.length <= 1) break;
     if (mfrs.length > pids.length) {
       const keys = [...new Set(mfrs.map((v) => v.toLowerCase()))];
-      const drop = [...keys].reverse().find((k) => !pinMfr.has(k));
+      const drop = [...keys].reverse().find((k) => !pinMfrLc.has(k));
       if (!drop) {
         // Cannot drop mfr — try pid instead
         const dropPid = [...pids].reverse().find((p) => !pinPid.has(String(p).toUpperCase()));
@@ -647,6 +667,32 @@ function compactZigbeeIdentifiers(manifest, opts = {}) {
   if (pass2Cuts > 0) {
     logLines.push(`[compact] pass2: cut ${pass2Cuts} group/pid slot(s) to meet raw total ≤ ${maxTotalCombos} (now ${afterTotal})`);
   }
+
+  // WHY(P2348): re-assert exact sacred mfr strings after pass2 budget cuts
+  for (const driver of manifest.drivers || []) {
+    const pins = sacredPinsForDriver(sacredAll, driver.id);
+    if (!pins.length || !driver.zigbee) continue;
+    for (const pin of pins) {
+      const pinMfr = String(pin.mfr);
+      const pinPid = String(pin.pid);
+      const mfrs = driver.zigbee.manufacturerName || [];
+      if (!mfrs.some((m) => String(m) === pinMfr)) {
+        driver.zigbee.manufacturerName = uniqStrings([pinMfr, ...mfrs]);
+        sacredPinned += 1;
+      }
+      if (!(driver.zigbee.productId || []).some((p) => String(p).toUpperCase() === pinPid.toUpperCase())) {
+        driver.zigbee.productId = uniqStrings([pinPid, ...(driver.zigbee.productId || [])]);
+        sacredPinned += 1;
+      }
+    }
+  }
+
+  // Final exact-case sacred audit (pass1 sacredMissing can be stale after pass2)
+  sacredMissing.length = 0;
+  for (const miss of assertSacredCouplesPresent(manifest, sacredAll)) {
+    sacredMissing.push(miss);
+  }
+  afterTotal = rawTotal();
 
   // Keep OTA firmwareUpdates consistent with the (possibly compacted) zigbee
   // identifier lists: homey-lib 'publish' validation rejects firmware updates
