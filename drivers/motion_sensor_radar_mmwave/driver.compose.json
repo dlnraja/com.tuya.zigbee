@@ -9,24 +9,9 @@
   "capabilities": [
     "alarm_motion",
     "measure_luminance.distance",
-    "measure_temperature",
-    "measure_humidity",
     "measure_luminance",
-    "measure_battery",
     "button.1"
   ],
-  "energy": {
-    "batteries": [
-      "CR2032",
-      "CR2450",
-      "AAA",
-      "AA",
-      "CR123A"
-    ],
-    "approximation": {
-      "usageConstant": 0.5
-    }
-  },
   "subDevices": [],
   "zigbee": {
     "manufacturerName": [
@@ -49,34 +34,56 @@
       "_tze284_gnpflcoq",
       "_TZ3218_awarhusb",
       "_TZ3218_t9ynfz",
-      "_TZ3218_t9ynfz4x",
+      "_TZ3218_ewrxirng",
+      "_TZ3218_EWRXIRNG",
+      "_tz3218_ewrxirng",
+      "_tz3218_EWRXIRNG",
       "_TZE200_1ibpyhon",
       "_TZE204_1ibpyhon",
       "_TZE284_0wfzacel",
-      "_TZE284_zy6wjm01"
+      "_TZE284_zy6wjm01",
+      "_tz3218_AWARHUSB",
+      "_tz3218_T9YNFZ",
+      "_tz3218_T9YNFZ4X",
+      "_tze200_1IBPYHON",
+      "_tze204_1IBPYHON",
+      "_tze284_0WFZACEL",
+      "_tze284_ZY6WJM01",
+      "_tze284_GNPFLCOQ",
+      "_TZ3218_t9ynfz4x"
     ],
     "endpoints": {
       "1": {
         "clusters": [
           0,
-          1,
+          3,
+          4,
+          5,
           1024,
           1280,
-          1030,
+          16384,
+          57346,
+          61184
+        ],
+        "bindings": [
+          3,
+          1024,
+          1280,
+          57346,
           61184
         ]
       }
     },
     "learnmode": {
-      "image": "/drivers/motion_sensor_radar_mmwave/assets/learnmode.svg",
+      "image": "{{driverAssetsPath}}/icon.svg",
       "instruction": {
         "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
       }
     },
     "productId": [
-      "TS0601_mmwave",
       "TS0601",
+      "TS0601_mmwave",
       "TS0225",
       "CK-BL702-MWS-01(7016)",
       "ZP-301Z",
@@ -93,6 +100,67 @@
       },
       "children": [
         {
+          "id": "motion_detection_sensitivity",
+          "type": "number",
+          "label": {
+            "en": "Motion Detection Sensitivity",
+            "fr": "Sensibilité Détection Mouvement"
+          },
+          "value": 3,
+          "min": 0,
+          "max": 5,
+          "step": 1,
+          "hint": {
+            "en": "Linptech/Moes ES1ZZ: motion sensitivity 0–5 (Z2M). Other radars: use Radar Sensitivity below.",
+            "fr": "Linptech/Moes ES1ZZ : sensibilité mouvement 0–5. Autres radars : Sensibilité Radar ci-dessous."
+          }
+        },
+        {
+          "id": "static_detection_sensitivity",
+          "type": "number",
+          "label": {
+            "en": "Static Detection Sensitivity",
+            "fr": "Sensibilité Détection Statique"
+          },
+          "value": 3,
+          "min": 0,
+          "max": 5,
+          "step": 1,
+          "hint": {
+            "en": "Linptech/Moes ES1ZZ: static/breathing sensitivity 0–5.",
+            "fr": "Linptech/Moes ES1ZZ : sensibilité statique 0–5."
+          }
+        },
+        {
+          "id": "motion_detection_distance",
+          "type": "number",
+          "label": {
+            "en": "Motion Detection Distance (cm)",
+            "fr": "Distance Détection Mouvement (cm)"
+          },
+          "value": 300,
+          "min": 75,
+          "max": 600,
+          "step": 75,
+          "hint": {
+            "en": "Linptech/Moes ES1ZZ: max motion range in cm (75–600, step 75).",
+            "fr": "Linptech/Moes ES1ZZ : portée mouvement en cm (75–600, pas 75)."
+          }
+        },
+        {
+          "id": "led_indicator",
+          "type": "checkbox",
+          "label": {
+            "en": "LED Presence Indicator",
+            "fr": "LED Indicateur Présence"
+          },
+          "value": true,
+          "hint": {
+            "en": "Linptech/Moes ES1ZZ: onboard LED. Some Moes firmwares reject this write — other settings still save.",
+            "fr": "Linptech/Moes ES1ZZ : LED. Certains firmwares Moes refusent cette écriture — les autres réglages restent sauvegardés."
+          }
+        },
+        {
           "id": "radar_sensitivity",
           "type": "number",
           "label": {
@@ -104,8 +172,8 @@
           "max": 9,
           "step": 1,
           "hint": {
-            "en": "Detection sensitivity (0=lowest, 9=highest). Higher values detect smaller movements.",
-            "fr": "Sensibilité de détection (0=min, 9=max). Valeurs élevées détectent les petits mouvements."
+            "en": "Generic Tuya mmWave (DP2). Linptech ES1ZZ uses Motion/Static settings above.",
+            "fr": "mmWave Tuya générique (DP2). Linptech ES1ZZ utilise les réglages Mouvement/Statique."
           }
         },
         {
@@ -428,8 +496,7 @@
   ],
   "images": {
     "small": "/drivers/motion_sensor_radar_mmwave/assets/images/small.png",
-    "large": "/drivers/motion_sensor_radar_mmwave/assets/images/large.png",
-    "xlarge": "/drivers/motion_sensor_radar_mmwave/assets/images/xlarge.png"
+    "large": "/drivers/motion_sensor_radar_mmwave/assets/images/large.png"
   },
   "platforms": [
     "local"
@@ -469,14 +536,18 @@
       "id": "tuya_revive",
       "title": {
         "en": "Tuya Revive (device recovery)",
-        "fr": "Tuya Revive (récupération appareil)"
+        "fr": "Tuya Revive (récupération appareil)",
+        "nl": "Tuya Revive (apparaatherstel)",
+        "de": "Tuya Revive (Gerätewiederherstellung)"
       }
     },
     {
       "id": "generate_issue_report",
       "title": {
         "en": "Generate support report (GitHub issue)",
-        "fr": "Générer rapport de support (issue GitHub)"
+        "fr": "Générer rapport de support (issue GitHub)",
+        "nl": "Supportrapport genereren (GitHub issue)",
+        "de": "Supportbericht erstellen (GitHub Issue)"
       }
     }
   ],
@@ -492,12 +563,5 @@
       "getable": false,
       "setable": false
     }
-  },
-  "_pidConflictNotes": [
-    "// PID-CONFLICT-NOTE TS0225 shared with 19 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE TS110E shared with 18 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE TS0004 shared with 14 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE CK-BL702-MWS-01(7016) shared with 9 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE ZP-301Z shared with 8 other drivers (same-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-  ]
+  }
 }
