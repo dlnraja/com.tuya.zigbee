@@ -540,6 +540,100 @@
       }
     },
     {
+      "id": "moes_calibration_mode",
+      "type": "dropdown",
+      "label": {
+        "en": "Calibration action (Moes ZTS)",
+        "fr": "Action calibration (Moes ZTS)"
+      },
+      "value": "idle",
+      "values": [
+        {
+          "id": "idle",
+          "label": {
+            "en": "None",
+            "fr": "Aucune"
+          }
+        },
+        {
+          "id": "start",
+          "label": {
+            "en": "Start calibration",
+            "fr": "Démarrer calibration"
+          }
+        },
+        {
+          "id": "end",
+          "label": {
+            "en": "End calibration",
+            "fr": "Terminer calibration"
+          }
+        }
+      ],
+      "hint": {
+        "en": "DP3 — sends start/end when changed (accurate calibration)",
+        "fr": "DP3 — envoie start/end à la modification"
+      }
+    },
+    {
+      "id": "moes_calibration_seconds",
+      "type": "number",
+      "label": {
+        "en": "Quick calibration time (seconds)",
+        "fr": "Temps calibration rapide (secondes)"
+      },
+      "value": 31,
+      "min": 10,
+      "max": 180,
+      "step": 1,
+      "hint": {
+        "en": "DP10 — travel time used during quick calibration (Moes ZTS-EUR-C)",
+        "fr": "DP10 — durée calibration rapide"
+      }
+    },
+    {
+      "id": "moes_motor_direction",
+      "type": "dropdown",
+      "label": {
+        "en": "Motor direction (Moes ZTS)",
+        "fr": "Direction moteur (Moes ZTS)"
+      },
+      "value": "forward",
+      "values": [
+        {
+          "id": "forward",
+          "label": {
+            "en": "Forward",
+            "fr": "Avant"
+          }
+        },
+        {
+          "id": "back",
+          "label": {
+            "en": "Back",
+            "fr": "Arrière"
+          }
+        }
+      ],
+      "hint": {
+        "en": "DP8 — motor steering forward/back",
+        "fr": "DP8 — sens moteur"
+      }
+    },
+    {
+      "id": "moes_backlight",
+      "type": "checkbox",
+      "label": {
+        "en": "Backlight (Moes ZTS wall switch)",
+        "fr": "Rétroéclairage (interrupteur Moes ZTS)"
+      },
+      "value": true,
+      "hint": {
+        "en": "DP7 — LED backlight on the wall switch (GitHub #533)",
+        "fr": "DP7 — rétroéclairage LED"
+      }
+    },
+    {
       "id": "max_open_percentage",
       "type": "number",
       "label": {
@@ -837,9 +931,9 @@
     {
       "id": "ota_check",
       "title": {
-        "en": "Check Zigbee OTA Update",
-        "fr": "Vérifier MàJ OTA",
-        "nl": "Controleer op OTA-updates"
+        "en": "Check Device Updates (Zigbee OTA)",
+        "fr": "Vérifier Device Updates (OTA Zigbee)",
+        "nl": "Controleer Device Updates (Zigbee OTA)"
       }
     },
     {
