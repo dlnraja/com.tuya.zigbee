@@ -566,11 +566,17 @@
       "values": [
         {
           "id": "forward",
-          "label": { "en": "Forward", "fr": "Avant" }
+          "label": {
+            "en": "Forward",
+            "fr": "Avant"
+          }
         },
         {
           "id": "back",
-          "label": { "en": "Back", "fr": "Arrière" }
+          "label": {
+            "en": "Back",
+            "fr": "Arrière"
+          }
         }
       ],
       "hint": {
@@ -605,15 +611,24 @@
       "values": [
         {
           "id": "idle",
-          "label": { "en": "None", "fr": "Aucune" }
+          "label": {
+            "en": "None",
+            "fr": "Aucune"
+          }
         },
         {
           "id": "start",
-          "label": { "en": "Start calibration", "fr": "Démarrer calibration" }
+          "label": {
+            "en": "Start calibration",
+            "fr": "Démarrer calibration"
+          }
         },
         {
           "id": "end",
-          "label": { "en": "End calibration", "fr": "Terminer calibration" }
+          "label": {
+            "en": "End calibration",
+            "fr": "Terminer calibration"
+          }
         }
       ],
       "hint": {
