@@ -33,7 +33,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.735 |
+| **App Version** | v9.0.736 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,381 |
 | **Pairing Variants** | 16,480 (4 case combos per fingerprint) |
@@ -102,6 +102,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.736** | Fixed Moes TS0044 scene remote and soil sensor pairing clusters; hardened wall dimmer TX failure detection. |
 | **v9.0.735** | Fixed Moes TS0044 scene remote and soil sensor pairing clusters; hardened wall dimmer TX failure detection. |
 | **v9.0.734** | Fixed Moes TS0044 scene remote and soil sensor pairing clusters; hardened wall dimmer TX failure detection. |
 | **v9.0.733** | Improved Moes curtain Cover Controller pairing and fingerprint routing for Tuya EF00 covers. |
@@ -113,7 +114,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.727** | Improved button and scene remote Flow triggers (hold-release, wall 4-gang physical, Tuya DP path). Locked Nobo wireless remote pairing. |
 | **v9.0.726** | Improved button and scene remote Flow triggers (hold-release, wall 4-gang physical, Tuya DP path). Locked Nobo wireless remote pairing. |
 | **v9.0.725** | Improved wireless button press capture for Tuya scene remotes after wake and pairing. |
-| **v9.0.724** | Improved wireless button press capture for Tuya scene remotes after wake and pairing. |
 
 <!-- CHANGELOG_END -->
 
