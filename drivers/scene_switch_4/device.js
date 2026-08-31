@@ -8,8 +8,8 @@ const { resolve: resolvePressType } = require('../../lib/utils/TuyaPressTypeMap'
  *
  * FIX v10.1.1: Added E000 BoundCluster + direct E000 cluster listeners + Tuya DP
  *   button decoding for scene switch 4-gang devices.
- *   These devices declare cluster 57344 (0xE000) and 61184 (0xEF00) in compose.json
- *   but the ButtonDevice base class only handles ZCL scenes/onOff clusters.
+ *   Compose requires minimal clusters [0,1,6] for pairing; RX handles genOnOff 0xFD
+ *   and optional E000 when present — ButtonDevice base only handled plain onOff.
  *
  * v10.0.0: Initial universal standard
  */

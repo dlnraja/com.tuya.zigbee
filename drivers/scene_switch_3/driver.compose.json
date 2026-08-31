@@ -6,7 +6,7 @@
     "de": "Szenenschalter 3-fach",
     "es": "Interruptor de escena 3 grupos"
   },
-  "class": "sensor",
+  "class": "button",
   "capabilities": [
     "button.1",
     "button.2",
@@ -49,13 +49,14 @@
       "_TZ3000_QDGG10WG",
       "_TZ3002_WEH1JMHG",
       "_TZ3000_qdgg10wg",
-      "_TZ3002_weh1jmhg"
+      "_TZ3002_weh1jmhg",
+      "_tz3000_QDGG10WG",
+      "_tz3002_WEH1JMHG"
     ],
     "productId": [
       "TS0003",
       "TS0013",
       "TS0043",
-      "TS0044",
       "TS0215A",
       "TS0601",
       "TS0601_scene3",
@@ -77,8 +78,7 @@
   },
   "images": {
     "small": "/drivers/scene_switch_3/assets/images/small.png",
-    "large": "/drivers/scene_switch_3/assets/images/large.png",
-    "xlarge": "/drivers/scene_switch_3/assets/images/xlarge.png"
+    "large": "/drivers/scene_switch_3/assets/images/large.png"
   },
   "platforms": [
     "local"
@@ -143,23 +143,21 @@
       "id": "tuya_revive",
       "title": {
         "en": "Tuya Revive (device recovery)",
-        "fr": "Tuya Revive (récupération appareil)"
+        "fr": "Tuya Revive (récupération appareil)",
+        "nl": "Tuya Revive (apparaatherstel)",
+        "de": "Tuya Revive (Gerätewiederherstellung)"
       }
     },
     {
       "id": "generate_issue_report",
       "title": {
         "en": "Generate support report (GitHub issue)",
-        "fr": "Générer rapport de support (issue GitHub)"
+        "fr": "Générer rapport de support (issue GitHub)",
+        "nl": "Supportrapport genereren (GitHub issue)",
+        "de": "Supportbericht erstellen (GitHub Issue)"
       }
     }
   ],
   "id": "scene_switch_3",
-  "version": "1.0.0",
-  "_pidConflictNotes": [
-    "// PID-CONFLICT-NOTE TS0215A shared with 28 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE TS0726 shared with 21 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE TS0043 shared with 16 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE TS0044 shared with 9 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-  ]
+  "version": "1.0.0"
 }
