@@ -3,22 +3,32 @@
   "deviceName": "MOES Scene Switch 4 gang",
   "manufacturerName": "_TZ3000_zgyzgdua",
   "productId": "TS0044",
-  "source": "JohanBendz #1327, dlnraja Forum (Freddyboy)",
-  "user": "Jesse22homey, Freddyboy",
+  "source": "JohanBendz #1327, forum meter91 #2189/#2207, Z2M #28224",
+  "user": "meter91, Jesse22homey, Freddyboy",
   "status": "fixed",
   "priority": "high",
-  "driver": "button_wireless_4",
-  "inputClusters": [1, 6, 57344, 0],
+  "driver": "scene_switch_4",
+  "inputClusters": [0, 1, 6, 57344],
+  "endpointClusters": {
+    "1": [0, 1, 6, 57344],
+    "2": [1, 6],
+    "3": [1, 6],
+    "4": [1, 6]
+  },
+  "pairingClustersNote": "P2336: Homey match needs driver EP ⊆ interview — EP1 [0,1,6] only (never require identify/4096/EF00/57344). EP2–4 [6] ⊆ [1,6]. Re-pair mandatory after Test ≥9.0.734.",
+  "rxPath": "genOnOff 0xFD payload 0/1/2 per EP1–4; skip genOnOff 0x8004; E000 EP1 fallback only; no EF00",
   "symptoms": [
-    "Physical buttons not triggering flows",
-    "Virtual buttons not clickable (setable:false)",
-    "Device stuck in Dimmer Mode",
-    "manufacturerName shows empty in logs"
+    "Unknown Zigbee Device when pairing on Test <9.0.734 (pre-P2336 compose)",
+    "Physical buttons dead on stale tile after app update (needs remove + re-pair ≥9.0.619 0xFD path)",
+    "False migration toast button_wireless_4 while on scene_switch_4 (P2338 skip nag)"
   ],
-  "rootCause": "Multiple issues: setable:false, getData() empty, mode switch skipped",
+  "rootCause": "Pre-P2336 compose required clusters absent from interview; stale pairing skips 0xFD listeners/bindings",
   "fix": {
     "applied": true,
-    "version": "5.7.19",
-    "description": "v5.7.16: setable:true, v5.7.17: added to mode list, v5.7.18: getSetting fallback, v5.7.19: universal scene mode in ButtonDevice.js"
+    "version": "9.0.734",
+    "description": "P2336 pairing clusters; P2337 sacred routing; P2338 migration nag skip; runtime 0xFD via PhysicalButtonMixin + OnOffBoundCluster"
+  },
+  "diagnostics": {
+    "c40705a1": { "appVersion": "9.0.714", "note": "Pre-P2336 — user must update Test and re-pair" }
   }
 }

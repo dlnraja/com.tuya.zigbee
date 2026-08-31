@@ -312,15 +312,11 @@ function compactZigbeeIdentifiers(manifest, opts = {}) {
     beforeTotal += before;
 
     const sacredPins = sacredPinsForDriver(sacredAll, driver.id);
-    // WHY(P2286): only require pins that already exist in THIS driver's source
-    // compose (stable track may omit master-only sibling mfrs).
-    const sacredRequired = sacredPins.filter((pin) => {
-      const hasM = manufacturers.some((m) => String(m).toLowerCase() === pin.mfr);
-      const hasP = products.some((p) => String(p).toUpperCase() === pin.pid.toUpperCase());
-      return hasM && hasP;
-    });
-    const sacredMfrKeys = new Set(sacredRequired.map((c) => c.mfr));
-    const sacredPids = new Set(sacredRequired.map((c) => c.pid.toUpperCase()));
+    // WHY(P2340): SSOT pins must survive even when a prior compact pass already
+    // dropped the mfr from app.json (clrdrnya / HOBEIAN on presence_sensor_radar).
+    const sacredMfrKeys = new Set(sacredPins.map((c) => String(c.mfr).toLowerCase()));
+    const sacredPids = new Set(sacredPins.map((c) => String(c.pid).toUpperCase()));
+    const sacredRequired = sacredPins;
 
     if (pruneSynthetic) {
       const realManufacturers = manufacturers.filter(value => !isSyntheticManufacturer(value));
@@ -559,9 +555,22 @@ function compactZigbeeIdentifiers(manifest, opts = {}) {
       driver.zigbee.manufacturerName = emitMfrs;
       driver.zigbee.productId = emitProducts;
       for (const pin of sacredRequired) {
+        const pinMfrLc = String(pin.mfr).toLowerCase();
+        const pinPidUc = String(pin.pid).toUpperCase();
+        if (!(driver.zigbee.manufacturerName || []).some((m) => String(m).toLowerCase() === pinMfrLc)) {
+          driver.zigbee.manufacturerName = uniqStrings([pin.mfr, ...(driver.zigbee.manufacturerName || [])]);
+          sacredPinned += 1;
+        }
+        if (!(driver.zigbee.productId || []).some((p) => String(p).toUpperCase() === pinPidUc)) {
+          driver.zigbee.productId = uniqStrings([pin.pid, ...(driver.zigbee.productId || [])]);
+          sacredPinned += 1;
+        }
+      }
+      for (const pin of sacredRequired) {
         const mfrsNow = (driver.zigbee.manufacturerName || []).map((m) => String(m).toLowerCase());
         const pidsNow = (driver.zigbee.productId || []).map(String);
-        if (!mfrsNow.includes(pin.mfr) || !pidsNow.some((p) => p.toUpperCase() === pin.pid.toUpperCase())) {
+        if (!mfrsNow.includes(String(pin.mfr).toLowerCase())
+            || !pidsNow.some((p) => p.toUpperCase() === String(pin.pid).toUpperCase())) {
           sacredMissing.push(`${pin.mfr}+${pin.pid} @ ${driver.id}`);
         }
       }
@@ -570,9 +579,23 @@ function compactZigbeeIdentifiers(manifest, opts = {}) {
     }
 
     for (const pin of sacredRequired) {
+      const pinMfrLc = String(pin.mfr).toLowerCase();
+      const pinPidUc = String(pin.pid).toUpperCase();
+      if (!(driver.zigbee.manufacturerName || []).some((m) => String(m).toLowerCase() === pinMfrLc)) {
+        driver.zigbee.manufacturerName = uniqStrings([pin.mfr, ...(driver.zigbee.manufacturerName || [])]);
+        sacredPinned += 1;
+      }
+      if (!(driver.zigbee.productId || []).some((p) => String(p).toUpperCase() === pinPidUc)) {
+        driver.zigbee.productId = uniqStrings([pin.pid, ...(driver.zigbee.productId || [])]);
+        sacredPinned += 1;
+      }
+    }
+
+    for (const pin of sacredRequired) {
       const mfrsNow = (driver.zigbee.manufacturerName || []).map((m) => String(m).toLowerCase());
       const pidsNow = (driver.zigbee.productId || []).map(String);
-      if (!mfrsNow.includes(pin.mfr) || !pidsNow.some((p) => p.toUpperCase() === pin.pid.toUpperCase())) {
+      if (!mfrsNow.includes(String(pin.mfr).toLowerCase())
+          || !pidsNow.some((p) => p.toUpperCase() === String(pin.pid).toUpperCase())) {
         sacredMissing.push(`${pin.mfr}+${pin.pid} @ ${driver.id}`);
       }
     }
@@ -718,7 +741,7 @@ function compactZigbeeIdentifiers(manifest, opts = {}) {
 function compactManifestFile(file, opts = {}) {
   const manifest = JSON.parse(fs.readFileSync(file, 'utf8'));
   const result = compactZigbeeIdentifiers(manifest, opts);
-  if (result.changed > 0 || result.pruned > 0 || result.rescuedDrivers.length > 0 || result.filteredSyntheticManufacturers > 0 || result.firmwareAligned > 0) {
+  if (result.changed > 0 || result.pruned > 0 || result.rescuedDrivers.length > 0 || result.filteredSyntheticManufacturers > 0 || result.firmwareAligned > 0 || result.sacredPinned > 0) {
     fs.writeFileSync(file, JSON.stringify(manifest), 'utf8');
   }
   return result;

@@ -2779,8 +2779,9 @@
         "smart_knob",
         "wall_dimmer_tuya"
       ],
+      "protocol": "zcl",
       "source": "p2236-forum-integral",
-      "notes": "meter91 #2189 — scene_switch_4 0xFD; never invent TS0601-only"
+      "notes": "meter91 #2189/#2207 — scene_switch_4 genOnOff 0xFD; diag c40705a1 on 9.0.714 needs update + re-pair"
     },
     {
       "id": "p2328-wkai4ga5-ts0044-scene",
