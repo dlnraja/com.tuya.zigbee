@@ -57,6 +57,24 @@
       "note": "meter91 0xFD"
     },
     {
+      "mfr": "_TZ3000_wkai4ga5",
+      "pid": "TS0044",
+      "driverId": "scene_switch_4",
+      "note": "P2353 SunBeech/Relax — never invent TS0042 for this mfr without diag"
+    },
+    {
+      "mfr": "_TZ3000_dfgbtub0",
+      "pid": "TS0044",
+      "driverId": "button_wireless_4",
+      "note": "P2353 Moes 4-btn wireless"
+    },
+    {
+      "mfr": "_TZ3000_dfgbtub0",
+      "pid": "TS0042",
+      "driverId": "button_wireless_2",
+      "note": "P2353 Moes 2-btn sibling (same mfr, different pid)"
+    },
+    {
       "mfr": "_TZ3000_k4ej3ww2",
       "pid": "TS0207",
       "driverId": "water_leak_sensor",

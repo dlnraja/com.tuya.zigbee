@@ -34,6 +34,13 @@ Generated 2026-08-19T08:50:15.322Z from registry (54 cases) × compound DB (209 
 - Fix: doc-only enrichOnly case + align skip/refuse Cartesian multi-mfr×multi-gang-pid
 - Real locks remain per couple (TB25-1 / NovaDigital 2g / 3g)
 
+### `p2353-flow-button-triggers` → remotes / scene_switch_4
+
+- Symptom: PhysicalButtonMixin candidates for `scene_switch_4` skipped `*_button_4gang_button_N_*` declared cards when treated as “scene_switch 1gang branch”
+- Fix: emit both `*_button_N_*` and `*_button_Ngang_button_N_*`; never invent `*_button_N_button_pressed`
+- Sacred-keep: `wkai4ga5`+TS0044 scene_switch_4; `dfgbtub0`+TS0044 bw4 / +TS0042 bw2
+- Do **not** lock `wkai4ga5`+TS0042 without interview (forum soft only)
+
 ### `p2348-salvagr-5slehgeo-curtain` → `curtain_motor`
 
 - Couple: `_TZE204_5slehgeo` + TS0601 (siblings `_TZE284_` / `_TZE200_5slehgeo`, also `_TZE200_nhyj64w2` / `_TZE200_127x7wnl`)
