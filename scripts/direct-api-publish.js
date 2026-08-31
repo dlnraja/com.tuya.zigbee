@@ -37,7 +37,7 @@ const APP_ID = APP_JSON.id;
 const APP_VERSION = APP_JSON.version;
 const MAX_ARCHIVE_MB = Number(process.env.HOMEY_ARCHIVE_MAX_MB || 20);
 const API_TIMEOUT_MS = Number(process.env.HOMEY_API_TIMEOUT_MS || 60000);
-const BUILD_POLL_TIMEOUT_MS = Number(process.env.HOMEY_BUILD_POLL_TIMEOUT_MS || 240000);
+const BUILD_POLL_TIMEOUT_MS = Number(process.env.HOMEY_BUILD_POLL_TIMEOUT_MS || 300000);
 const BUILD_POLL_INTERVAL_MS = Number(process.env.HOMEY_BUILD_POLL_INTERVAL_MS || 5000);
 const REPO_ROOT = path.resolve(__dirname, '..');
 const MODULE_PATHS = [APP_ROOT, REPO_ROOT, process.cwd()];
@@ -209,7 +209,7 @@ async function pollBuildState(api, token, buildId, { timeoutMs = 180000, interva
   let consecutiveApiErrors = 0;
   let consecutiveFailurePolls = 0;
   const MAX_API_ERROR_RETRIES = 6;
-  const MAX_FAILURE_POLL_RETRIES = 3;
+  const MAX_FAILURE_POLL_RETRIES = Number(process.env.HOMEY_BUILD_FAILURE_POLL_RETRIES || 5);
   while (Date.now() < deadline) {
     let b;
     try {
@@ -289,8 +289,8 @@ async function uploadArchive(url, method, headers, archivePath) {
 
   // Retry transient failures: S3 5xx, network errors, ECONNRESET.
   // A single 5xx used to fail the whole publish; retry with backoff.
-  const MAX_ATTEMPTS = 3;
-  const BACKOFF_MS = [1000, 4000, 16000]; // 1s, 4s, 16s (exponential)
+  const MAX_ATTEMPTS = Number(process.env.HOMEY_UPLOAD_MAX_ATTEMPTS || 5);
+  const BACKOFF_MS = [1000, 4000, 16000, 32000, 60000];
 
   for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
     let res;
