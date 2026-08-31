@@ -28,6 +28,10 @@ Homey flow serializer can embed **foreign** driver IDs (e.g. Philips Hue `ZG9101
 
 Never put multiple gang mfrs + `TS0001`/`TS0002`/`TS0003` in one `user-misattribution-registry` case aimed at a single gang driver. Use one case per `(mfr, pid)` couple (see `zemismart-ts0001-tb25-1`, `novadigital-ts0002-*`, `novadigital-ts0003-*`).
 
+### Regular inbox automation (P2352)
+
+Gmail + GitHub issues/PRs + Homey forum SHADOW + driver gates run on cron via `npm run inbox:l99` / `.github/workflows/l99-inbox-intelligence.yml`. See `docs/architecture/L99_INBOX_INTELLIGENCE.md`.
+
 Catalog: **431** drivers, **147** locked community cases.
 
 ## Locked couples (canonical, 1 by 1)

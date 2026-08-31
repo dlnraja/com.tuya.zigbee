@@ -64,7 +64,8 @@
     "orchestrator": ".github/state/silent-enrichment/last-run.json",
     "forumProcessor": ".github/state/forum/actionable-processor-report.json",
     "forumParse": ".github/state/forum/topic-140352-parse.json",
-    "forumDigest": ".github/state/forum/multi-silent-digest.json"
+    "forumDigest": ".github/state/forum/multi-silent-digest.json",
+    "l99Inbox": ".github/state/l99-inbox-intelligence/last-run.json"
   },
   "outputs": {
     "reportDir": "reports/forum-verify-{{date}}",

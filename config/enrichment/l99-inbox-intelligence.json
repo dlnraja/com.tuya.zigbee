@@ -1,0 +1,65 @@
+{
+  "_meta": {
+    "id": "p2352-l99-inbox-intelligence",
+    "version": "1.0.0",
+    "updated": "2026-08-31",
+    "policy": "SHADOW forum only. Never invent productId. Never auto-post Homey Community. Publish = Homey Test via separate Auto-Publish."
+  },
+  "why": {
+    "pourquoi": "Unify Gmail + GitHub issues/PRs + Homey forum + driver/couple gates into one regular intelligent inbox loop",
+    "comment": "Orchestrator runs soft phases; workflows cron + forum-poll/auto-enrich hooks",
+    "pourQui": "CI bots + maintainers; Homey users via silent code/publish only",
+    "quand": "Cron ~every 4h after forum-poll; workflow_dispatch; optional quick mode",
+    "contreQuoi": "Fragmented manual L99 passes; forum AI paste; Cartesian mfs --apply; inventing pids"
+  },
+  "shadowEnv": {
+    "FORUM_AUTO_POST": "0",
+    "SHADOW_FORUM": "1",
+    "DISCOURSE_WRITE": "0",
+    "REPLY_TOPICS": "",
+    "AI_PLAN_MODE": "forfait",
+    "AI_ALLOW_PAID": "false",
+    "GMAIL_DIAG_AI_MAX": "0"
+  },
+  "phases": {
+    "full": ["guard", "github", "gmail", "forum", "drivers", "prioritize", "docs", "gates"],
+    "quick": ["guard", "github", "forum", "prioritize", "docs", "gates"],
+    "githubOnly": ["guard", "github", "prioritize", "docs"]
+  },
+  "scripts": {
+    "forumSilent": "tools/ci/forum-silent-multi-scan.js",
+    "forumProcess": "tools/ci/forum-actionable-processor.js",
+    "forumInvestigate": "tools/ci/auto-investigate-need-action.js",
+    "forumAiPaste": "tools/ci/forum-ai-paste-gate.js",
+    "gmailCrashes": "tools/ci/gmail-crash-pattern-gate.js",
+    "diagTreat": "tools/ci/diag-recursive-inbox-automate.js",
+    "alignMfs": "tools/ci/align-mfs-db-intelligent.js",
+    "sacredCouple": "tools/ci/p2138-sacred-couple-matrix-gate.js",
+    "l99Dual": "tools/ci/l99-dual-app-enrich-gates.js",
+    "silentEnrich": "tools/ci/silent-enrichment-orchestrator.js"
+  },
+  "outputs": {
+    "stateDir": ".github/state/l99-inbox-intelligence",
+    "reportDir": "reports/l99-inbox-{{date}}",
+    "priorityMd": "PRIORITY.md",
+    "summaryJson": "SUMMARY.json",
+    "githubJson": "github-harvest.json",
+    "docsPointer": "docs/architecture/L99_INBOX_INTELLIGENCE.md"
+  },
+  "github": {
+    "repo": "dlnraja/com.tuya.zigbee",
+    "maxIssues": 30,
+    "maxPrs": 20,
+    "labelBoost": ["crash", "bug", "device-request", "needs-maintainer", "regression"]
+  },
+  "priorityWeights": {
+    "gmailCrash": 100,
+    "openIssueCrash": 90,
+    "openIssueDevice": 70,
+    "forumLockSacred": 80,
+    "forumCodeFix": 75,
+    "forumNeedDiag": 40,
+    "mfsHighDrift": 85,
+    "openPr": 50
+  }
+}

@@ -174,6 +174,13 @@ jobs:
           if [ -f tools/ci/l99-dual-app-enrich-gates.js ]; then
             node tools/ci/l99-dual-app-enrich-gates.js --track=auto || echo "L99_DUAL_SOFT_WARN"
           fi
+          # P2352: unified inbox intelligence (GH + forum + drivers) — SHADOW, soft
+          if [ -f tools/ci/l99-inbox-intelligence-orchestrator.js ]; then
+            echo "## 🧠 L99 Inbox Intelligence (P2352 — SHADOW)" >> $GITHUB_STEP_SUMMARY
+            node tools/ci/l99-inbox-intelligence-orchestrator.js --quick --skip-scan 2>&1 | tee forum-l99-inbox.log || echo "L99_INBOX_SOFT_WARN"
+            DATE=$(date -u +%F)
+            head -n 30 "reports/l99-inbox-$DATE/PRIORITY.md" >> $GITHUB_STEP_SUMMARY 2>/dev/null || true
+          fi
           # P2232: soft market couples cross-ref (no compose apply on forum poll — review only)
           if [ -f tools/ci/market-couples-intake.js ]; then
             echo "## 📡 Market couples soft intake (P2232 — SHADOW, no apply)" >> $GITHUB_STEP_SUMMARY

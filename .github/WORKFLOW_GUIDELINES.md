@@ -1034,6 +1034,25 @@ Workflows that soft-run L99 dual gates on schedule:
 - `forum-poll.yml` (soft after silent scan)
 Hard fail on `unified-ci.yml` / publish path for BOTH gates (`--hard`).
 
+### P2352 — L99 Inbox Intelligence (regular + intelligent)
+**Unify** Gmail crashes + GitHub issues/PRs + Homey forum SHADOW + driver/couple gates into one prioritized loop.
+
+| | |
+|---|---|
+| Workflow | `l99-inbox-intelligence.yml` |
+| Cron | `45 2,6,10,14,18,22 * * *` (+30m after `forum-poll` `:15`) |
+| Script | `tools/ci/l99-inbox-intelligence-orchestrator.js` |
+| Config | `config/enrichment/l99-inbox-intelligence.json` |
+| Docs | `docs/architecture/L99_INBOX_INTELLIGENCE.md` |
+| npm | `npm run inbox:l99` · `inbox:l99:quick` · `inbox:l99:github` |
+
+Hooks (soft, continue-on-error):
+- `forum-poll.yml` → `--quick --skip-scan` after silent scan
+- `auto-enrich-closed-loop.yml` → same
+- `recurrent-orchestrator.yml` → same
+
+Rules: `FORUM_AUTO_POST=0`, never invent pid, never blind `align-mfs --apply`, commit reports only with `[skip ci]`.
+
 ### Catalog lock checklist (when adding a sacred couple)
 1. `drivers/*/driver.compose.json` (static Homey match)
 2. `lib/DeviceFingerprintDB.js` compound key `mfr|pid`

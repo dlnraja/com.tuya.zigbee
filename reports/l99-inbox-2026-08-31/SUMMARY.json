@@ -1,0 +1,113 @@
+{
+  "generatedAt": "2026-08-31T10:07:28.278Z",
+  "date": "2026-08-31",
+  "mode": "quick",
+  "phases": [
+    {
+      "name": "guard",
+      "ok": true,
+      "durationMs": 0,
+      "note": "SHADOW env forced"
+    },
+    {
+      "name": "github",
+      "ok": true,
+      "durationMs": 446
+    },
+    {
+      "name": "forum",
+      "ok": true,
+      "durationMs": 10774,
+      "skipScan": true,
+      "steps": [
+        {
+          "ok": true,
+          "skipped": false
+        },
+        {
+          "ok": true,
+          "skipped": false
+        },
+        {
+          "ok": true,
+          "skipped": false
+        }
+      ]
+    },
+    {
+      "name": "prioritize",
+      "ok": true,
+      "durationMs": 7,
+      "count": 2
+    },
+    {
+      "name": "docs",
+      "ok": true,
+      "durationMs": 4,
+      "doc": "C:\\Users\\Dell\\Documents\\homey\\master\\docs\\architecture\\L99_INBOX_INTELLIGENCE.md"
+    },
+    {
+      "name": "gates",
+      "ok": true,
+      "durationMs": 9902
+    }
+  ],
+  "github": {
+    "harvestedAt": "2026-08-31T10:07:28.722Z",
+    "repo": "dlnraja/com.tuya.zigbee",
+    "auth": "token",
+    "error": null,
+    "issues": [
+      {
+        "number": 533,
+        "title": "Device Request - [SMART ZIGBEE CURTAIN SWITCH] - [MOES]",
+        "labels": [
+          "enhancement",
+          "device-request",
+          "needs-maintainer"
+        ],
+        "updatedAt": "2026-08-31T09:56:04Z",
+        "user": "salvagr",
+        "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/533",
+        "bodySnippet": "Thank you for your support.\n\n## 📱 Basic Information\n\n**Brand & Model**: SMART ZIGBEE CURTAIN SWITCH - MOES\n**Purchase Link**: https://es.aliexpress.com/item/1005008356152992.html\n**Power Source**:  Mains\n**Current Status**: pairing with wrong device type. Detected as \"radiator v"
+      }
+    ],
+    "prs": [],
+    "openIssueCount": 1,
+    "openPrCount": 0
+  },
+  "forum": {
+    "path": "C:\\Users\\Dell\\Documents\\homey\\master\\.github\\state\\forum\\actionable-processor-report.json",
+    "totals": {
+      "posts": 218,
+      "withCouples": 76,
+      "needAction": 53,
+      "both": 143,
+      "masterOnly": 6
+    },
+    "posts": 218
+  },
+  "gmail": null,
+  "mfs": null,
+  "priority": [
+    {
+      "score": 75,
+      "dualApp": "BOTH",
+      "source": "forum",
+      "id": "forum-need-action",
+      "title": "53 forum posts needAction (shadow processor)",
+      "action": "enrich:investigate + lock mfr+pid only",
+      "forumReply": "NEVER"
+    },
+    {
+      "score": 70,
+      "dualApp": "BOTH",
+      "source": "github-issue",
+      "id": "#533",
+      "title": "Device Request - [SMART ZIGBEE CURTAIN SWITCH] - [MOES]",
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/533",
+      "action": "investigate-code-silent",
+      "forumReply": "NEVER"
+    }
+  ]
+}

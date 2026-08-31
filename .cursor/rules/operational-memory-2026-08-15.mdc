@@ -27,6 +27,12 @@ Clone Stable: `Documents\homey\stable`. `stable-v5-p195` is **STALE**.
 - Fix: `lib/utils/safe-get-driver-patch.js` + `App.onInit` rebind. BOTH tracks.
 - Also: kill Cartesian registry case that broke `align-mfs-db-intelligent --check` (multi-gang → 1gang).
 
+## P2352 — L99 Inbox Intelligence (regular automation)
+- Workflow: `l99-inbox-intelligence.yml` cron `45 2,6,10,14,18,22` UTC
+- Script: `npm run inbox:l99` · hooks in forum-poll / auto-enrich / recurrent
+- Docs: `docs/architecture/L99_INBOX_INTELLIGENCE.md`
+- SHADOW only — never forum POST; never invent pid
+
 ## Forum silent (T157628) — SHADOW read only
 - **Passive GET only** — never POST/reply/PM/like; never paste AI.
 - Scan → processor → enrich:investigate → code/CI only. `FORUM_AUTO_POST=0` + `SHADOW_FORUM=1` forced.
