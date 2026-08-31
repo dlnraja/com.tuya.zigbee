@@ -191,6 +191,31 @@
       ],
       "dualApp": "BOTH"
     },
+    "A_Tas": {
+      "forumTopic": 140352,
+      "posts": [
+        2199
+      ],
+      "diags": [],
+      "devices": [
+        {
+          "tile": "Linptech / Moes mmWave ES1",
+          "driver": "motion_sensor_radar_mmwave",
+          "couple": "_TZ3218_t9ynfz4x+TS0225",
+          "symptoms": [
+            "presence settings save error (EF00 DP9 collision on stale path)",
+            "forum posts omit pid — mfr-only"
+          ],
+          "fixes": [
+            "P2261 Linptech 0xE002 ZCL settings",
+            "P2289 mfr-only ES1 detect",
+            "P2298 onSettings soft-fail"
+          ],
+          "userAction": "Update Test ≥9.0.738 / Stable after P2343 + re-pair mmWave; use Motion/Static/Distance settings (not generic Radar DP9)"
+        }
+      ],
+      "dualApp": "BOTH"
+    },
     "Gabriel_Pedrosa_Mach": {
       "forumTopic": 140352,
       "posts": [
@@ -402,8 +427,10 @@
         }
       ],
       "forbiddenInvent": [
-        "Do not assign TS0003 from Gabriel bulk list without per-tile interview"
+        "Do not assign TS0003 from Gabriel bulk list without per-tile interview",
+        "Gabriel #2173 bulk OEM list mixes TS0001/2/3/TS0601 — only lock couples present in compose + Z2M cross-ref"
       ],
+      "investigationNote": "Z2M: SHKXSGIS+AAGRXLBD+TS0601=4-gang MCU; VJHCENZO/QXCNWV26+TS0003=3-gang ZCL. OVYAISIP/PK8TGTDB TS0002/3/0601 not in compose until interview.",
       "dualApp": "BOTH"
     },
     "Pascal_Nohl": {

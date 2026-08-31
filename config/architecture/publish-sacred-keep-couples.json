@@ -36,6 +36,17 @@
     { "mfr": "_TZE200_clrdrnya", "pid": "TS0601", "driverId": "presence_sensor_radar", "note": "clrdrnya TZE200 sibling" },
     { "mfr": "_TZE284_clrdrnya", "pid": "TS0601", "driverId": "presence_sensor_radar", "note": "clrdrnya TZE284 sibling" },
     { "mfr": "HOBEIAN", "pid": "ZG-204ZL", "driverId": "presence_sensor_radar", "note": "Cam forum ZG-204ZL motion — HOBEIAN mfr stripped by compact" },
-    { "mfr": "HOBEIAN", "pid": "ZG-204ZM", "driverId": "presence_sensor_radar", "note": "HOBEIAN radar sibling" }
+    { "mfr": "HOBEIAN", "pid": "ZG-204ZM", "driverId": "presence_sensor_radar", "note": "HOBEIAN radar sibling" },
+    { "mfr": "_TZE200_SHKXSGIS", "pid": "TS0601", "driverId": "wall_switch_4_gang_tuya", "note": "Gabriel/Zemismart Moes 4-gang Z2M TS0601" },
+    { "mfr": "_TZE204_SHKXSGIS", "pid": "TS0601", "driverId": "wall_switch_4_gang_tuya", "note": "SHKXSGIS TZE204 sibling" },
+    { "mfr": "_TZE284_SHKXSGIS", "pid": "TS0601", "driverId": "wall_switch_4_gang_tuya", "note": "SHKXSGIS TZE284 sibling" },
+    { "mfr": "_TZE204_AAGRXLBD", "pid": "TS0601", "driverId": "wall_switch_4_gang_tuya", "note": "Gabriel #2173 Zemismart 4-gang MCU" },
+    { "mfr": "_TZE284_AAGRXLBD", "pid": "TS0601", "driverId": "wall_switch_4_gang_tuya", "note": "AAGRXLBD TZE284 sibling" },
+    { "mfr": "_TZ3000_VJHCENZO", "pid": "TS0003", "driverId": "wall_switch_3gang_1way", "note": "Gabriel Zemismart 3-gang ZCL" },
+    { "mfr": "_TZ3000_QXCNWV26", "pid": "TS0003", "driverId": "wall_switch_3gang_1way", "note": "Gabriel 3-gang ZCL" },
+    { "mfr": "_TZ3000_EQSAIR32", "pid": "TS0003", "driverId": "wall_switch_3gang_1way", "note": "Gabriel 3-gang ZCL" },
+    { "mfr": "_TZ3000_F09J9QJB", "pid": "TS0003", "driverId": "wall_switch_3gang_1way", "note": "Gabriel 3-gang ZCL" },
+    { "mfr": "_TZ3000_FAWK5XJV", "pid": "TS0003", "driverId": "wall_switch_3gang_1way", "note": "Gabriel 3-gang ZCL" },
+    { "mfr": "_TZ3000_OK0GGPK7", "pid": "TS0003", "driverId": "wall_switch_3gang_1way", "note": "Gabriel 3-gang ZCL" }
   ]
 }

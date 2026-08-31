@@ -672,3 +672,20 @@ Regenerate: `node tools/ci/investigate-device-peculiarities.js`
 - Notes: Prefer IAS over DP1 for `alarm_contact` (pulse open/close). Lux via DP101 (raw ~121–141 in diag) may differ from dedicated window lux sensor — need interview for scale. Water/smartbutton need re-pair on Test with IAS leftover EF00 skip.
 - Fleet: `data/user-impact-catalog.json` → `Peter_van_Werkhoven`; report `reports/forum-verify-*/users/Peter_van_Werkhoven.md`
 - Sources: forum-140352#2183–2190, gmail-0cea6870, 1cf775a2, 96c19859, 634f7b19
+
+### `p2297-t9ynfz4x-ts0225-mmwave` → `motion_sensor_radar_mmwave` (A_Tas #2199 / T158757)
+
+- Couple: `_TZ3218_t9ynfz4x` + TS0225 (Linptech ES1ZZ / Moes ZSS-LP-HP02-MS whitelabel)
+- Protocol: **ZCL hybrid** — presence via IAS/mmwave; settings on **0xE002** attrs 57348/57349/57355 (NOT EF00 DP9)
+- Z2M ref: [ES1ZZ(TY)](https://www.zigbee2mqtt.io/devices/ES1ZZ(TY).html) — motion/static sensitivity, motion distance, fading_time DP101, led 57353
+- P2289: mfr-only detect when Homey settings omit pid; P2298 onSettings never throws to UI
+- Stable: P2343 backport LinptechES1Profile + full device.js (was EF00 DP9 stub — broken settings path)
+- User: update Test ≥9.0.738 + re-pair; use Linptech-specific settings group
+
+### `gabriel-zemismart-bulk-2173` (forum #2173 / #2186 / lwthnp7j)
+
+- Verified couples (Z2M + compose): `_TZE200/_TZE284_SHKXSGIS`+TS0601 → `wall_switch_4_gang_tuya`; `_TZ3000_VJHCENZO`+TS0003 → `wall_switch_3gang_1way` (+ QXCNWV26, EQSAIR32, F09J9QJB, FAWK5XJV, OK0GGPK7)
+- `_TZ3000_lwthnp7j`+TS0004 → `wall_switch_4gang_1way` (sacred — not switch_4gang)
+- **Forbidden:** assign TS0002/TS0003/TS0601 from Gabriel OEM spreadsheet without per-tile interview — same mfr sells 1/2/3/4-gang variants
+- P2343 sacred-keep pins prevent compact drop from app.json
+- Sources: forum-140352#2173, Z2M SHKXSGIS community, compose wall_switch_* drivers
