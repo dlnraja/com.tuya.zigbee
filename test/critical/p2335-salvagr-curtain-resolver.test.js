@@ -3,6 +3,7 @@
  * P2335 — Salvagr #533 residual + diag-resolver couple lock + MVM TZE284
  */
 const assert = require('assert');
+const { describe, it } = require('node:test');
 const fs = require('fs');
 const path = require('path');
 const ROOT = path.join(__dirname, '..', '..');
@@ -12,6 +13,16 @@ describe('P2335 salvagr curtain + resolver couple lock', () => {
     const c = JSON.parse(fs.readFileSync(path.join(ROOT, 'drivers/curtain_motor/driver.compose.json'), 'utf8'));
     const clusters = c.zigbee.endpoints['1'].clusters.map(Number).sort((a, b) => a - b);
     assert.deepEqual(clusters, [0, 4, 5, 61184]);
+  });
+
+  it('app.json curtain_motor endpoints match compose (Homey pairs from app.json)', () => {
+    const c = JSON.parse(fs.readFileSync(path.join(ROOT, 'drivers/curtain_motor/driver.compose.json'), 'utf8'));
+    const app = JSON.parse(fs.readFileSync(path.join(ROOT, 'app.json'), 'utf8'));
+    const d = app.drivers.find((x) => x.id === 'curtain_motor');
+    assert.ok(d, 'curtain_motor in app.json');
+    assert.deepEqual(d.zigbee.endpoints, c.zigbee.endpoints);
+    assert.ok((d.zigbee.manufacturerName || []).some((m) => /5slehgeo/i.test(m)));
+    assert.ok((d.zigbee.productId || []).some((p) => /^TS0601$/i.test(p)));
   });
 
   it('MVM TZE204/TZE284 curtain uses interview clusters (not legacy ZCL 6/258)', () => {
