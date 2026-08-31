@@ -684,8 +684,29 @@ Regenerate: `node tools/ci/investigate-device-peculiarities.js`
 
 ### `gabriel-zemismart-bulk-2173` (forum #2173 / #2186 / lwthnp7j)
 
-- Verified couples (Z2M + compose): `_TZE200/_TZE284_SHKXSGIS`+TS0601 → `wall_switch_4_gang_tuya`; `_TZ3000_VJHCENZO`+TS0003 → `wall_switch_3gang_1way` (+ QXCNWV26, EQSAIR32, F09J9QJB, FAWK5XJV, OK0GGPK7)
-- `_TZ3000_lwthnp7j`+TS0004 → `wall_switch_4gang_1way` (sacred — not switch_4gang)
-- **Forbidden:** assign TS0002/TS0003/TS0601 from Gabriel OEM spreadsheet without per-tile interview — same mfr sells 1/2/3/4-gang variants
-- P2343 sacred-keep pins prevent compact drop from app.json
-- Sources: forum-140352#2173, Z2M SHKXSGIS community, compose wall_switch_* drivers
+- **#2173 is a Cartesian OEM dump** — each mfr expanded to TS0001|2|3|0601. Lock **one verified pid per mfr** only (HomeSuite + Z2M + Blakadder).
+- Verified 1-gang: `_TZ3000_OVYAISIP`+`TS0001`, `_TZ3000_PK8TGTDB`+`TS0001` → `wall_switch_1gang_1way`
+- Verified 2-gang: `YWUBFUVT`/`KGXEJ1DV`/`JJDKHUEQ`+`TS0002` → `wall_switch_2gang_1way`
+- Verified 3-gang: `YERVJNLJ`/`VJHCENZO`/`QXCNWV26`/`EQSAIR32`/`F09J9QJB`/`FAWK5XJV`/`OK0GGPK7`+`TS0003` → `wall_switch_3gang_1way`
+- Verified 4-gang ZCL: `_TZ3000_lwthnp7j`+`TS0004` → `wall_switch_4gang_1way` (never `switch_4gang` / EF00)
+- Verified 4-gang MCU: `_TZE200/_TZE284_SHKXSGIS`, `_TZE204_AAGRXLBD`+`TS0601` → `wall_switch_4_gang_tuya`
+- Verified 6-gang MCU: `_TZE200/_TZE284_R731ZLXK`+`TS0601` → `wall_switch_6_gang_tuya`
+- Soft OEM siblings (compact pins only): `_TZE204_SHKXSGIS`, `_TZE284_AAGRXLBD`, `_TZE204_R731ZLXK`
+- **Forbidden:** Cartesian cross-pids; routing to `switch_Ngang` or `wall_dimmer_tuya`; inventing pid onto #2186 when ABSENT
+- P2343/P2347 sacred-keep pins prevent compact drop
+- Sources: HomeSuite device table, Z2M herdsman, Blakadder TB26-6, forum-140352#2173
+
+### `p2347-cam-smart-button-need-diag` → `button_wireless_1` (Cam T146735 #8)
+
+- Motion locked: `HOBEIAN`+`ZG-204ZL` → `presence_sensor_radar` (P2340)
+- Smart button couple **ABSENT** in post; hist diag `4d7b45a5` (#1160) not re-proven
+- Soft hypothesis only: `_TZ3000_5bpeda8u`+`TS0041` — NEED_DIAG interview
+- Do not invent Cam button pid from Peter / 4x4_Pete radar posts
+
+### `p2347-peter-2190-absent` → multi-tile (Peter_van_Werkhoven)
+
+- Diags `0cea6870` / `1cf775a2` known; extract has **0** mfr/pid lines
+- Tiles SOS / contact / water / smartbutton remain `couple: null`
+- Do not glue `k4ej3ww2`, `mrpevh8p`, `TS0207` onto #2190
+- Reliability BOTH already: IAS coerce, skip IAS-only EF00 TX, SOS battery debounce
+

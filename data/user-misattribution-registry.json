@@ -1839,8 +1839,14 @@
         "P2322"
       ],
       "tracks": {
-        "master": { "static": true, "dynamic": true },
-        "stable": { "static": true, "dynamic": false }
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
       }
     },
     {
@@ -2892,8 +2898,14 @@
         "P2321"
       ],
       "tracks": {
-        "master": { "static": true, "dynamic": true },
-        "stable": { "static": true, "dynamic": false }
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
       }
     },
     {
@@ -2923,8 +2935,14 @@
         "P2321"
       ],
       "tracks": {
-        "master": { "static": true, "dynamic": true },
-        "stable": { "static": true, "dynamic": false }
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
       }
     },
     {
@@ -4846,6 +4864,83 @@
       "source": "Z2M FORIA F00XN00-04-1",
       "notes": "Battery dimmer/scene remote — not wall switch. P2318: enrichment-first — do not strip shared pids; mfr may remain on other drivers when forbidden pid absent.",
       "enrichOnly": true
+    },
+    {
+      "id": "p2347-gabriel-zemismart-verified-only",
+      "mfr": [
+        "_TZ3000_OVYAISIP",
+        "_TZ3000_PK8TGTDB",
+        "_TZ3000_YWUBFUVT",
+        "_TZ3000_KGXEJ1DV",
+        "_TZ3000_JJDKHUEQ",
+        "_TZ3000_YERVJNLJ"
+      ],
+      "productId": [
+        "TS0001",
+        "TS0002",
+        "TS0003"
+      ],
+      "note": "P2347: NOT a multi-pid lock — see sacred-keep for exact couples. Case documents #2173 Cartesian forbid.",
+      "canonicalDriver": "wall_switch_1gang_1way",
+      "forbiddenDrivers": [
+        "wall_dimmer_tuya",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "climate_sensor"
+      ],
+      "forbidMode": "couple",
+      "protocol": "zcl",
+      "notes": "Forum #2173 Cartesian OEM dump. Lock ONLY verified single-pid couples in publish-sacred-keep-couples.json (OVYAISIP+TS0001, YWUBFUVT+TS0002, etc). Never invent cross-pids.",
+      "sources": [
+        "forum-140352-2173",
+        "HomeSuite",
+        "Z2M",
+        "P2347"
+      ],
+      "tracks": {
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": true
+        }
+      }
+    },
+    {
+      "id": "p2347-cam-smart-button-need-diag",
+      "mfr": [
+        "_TZ3000_5bpeda8u",
+        "_tz3000_5bpeda8u"
+      ],
+      "productId": [
+        "TS0041"
+      ],
+      "canonicalDriver": "button_wireless_1",
+      "forbiddenDrivers": [
+        "button_wireless_4",
+        "switch_1gang"
+      ],
+      "forbidMode": "couple",
+      "protocol": "zcl",
+      "notes": "Cam T146735 #8 smart button couple ABSENT in post. Soft hypothesis 5bpeda8u+TS0041 NEED_DIAG. Motion is separate HOBEIAN+ZG-204ZL.",
+      "sources": [
+        "forum-146735-8",
+        "INT-010",
+        "P2347"
+      ],
+      "tracks": {
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
+      }
     }
   ]
 }
