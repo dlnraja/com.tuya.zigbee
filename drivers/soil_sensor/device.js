@@ -61,7 +61,21 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
   //   DP 107 = soil_moisture, DP 108 = battery, DP 109 = humidity.
   // The legacy Z2M `TS0601_soil` map uses DP 3=moisture, DP 5=temperature, DP 15=battery.
   get isZG303ZVariant() {
-    const manufacturer = (this.getSetting?.('zb_manufacturer_name') || '').toLowerCase();
+    const MfrHelper = require('../../lib/helpers/ManufacturerNameHelper');
+    const { includesCI } = require('../../lib/utils/CaseInsensitiveMatcher');
+    const manufacturer = String(
+      MfrHelper.getManufacturerName(this)
+      || this.getSetting?.('zb_manufacturer_name')
+      || '',
+    ).toLowerCase();
+    const productId = String(
+      this.getData?.()?.productId
+      || this.getSetting?.('zb_model_id')
+      || '',
+    ).toUpperCase();
+    // WHY(P2339): blutch32 HOBEIAN ZG-303Z — settings may lag getData on first DP RX
+    if (includesCI(['HOBEIAN'], manufacturer)) { return true; }
+    if (productId === 'ZG-303Z' || productId === 'ZG-303ZL') { return true; }
     // MFRs known to use the ZG-303Z DP map: _TZE200_wqashyqo, _TZE284_awepdiwi,
     // _TZE284_ga1maeof, _TZE284_myd45weu, _TZE284_oitavov2, _TZE284_2nhqasjh,
     // _TZE284_aao3yzhs, _TZE284_tgrzpqf4, _TZE284_0ints6wl, _TZE200_npj9bug3.
@@ -71,10 +85,7 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
       '_tze284_aao3yzhs', '_tze284_tgrzpqf4', '_tze284_0ints6wl',
       '_tze200_npj9bug3', '_tze200_myd45weu', '_tze204_myd45weu',
     ];
-    if (zg303Mfrs.includes(manufacturer)) {return true;}
-    // vendor name 'HOBEIAN' is a strong hint too
-    if (manufacturer === 'hobeian' || manufacturer === 'hobeian zg-303z') {return true;}
-    return false;
+    return zg303Mfrs.includes(manufacturer);
   }
 
   /** Capabilities for soil sensors */

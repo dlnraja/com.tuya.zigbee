@@ -226,6 +226,24 @@ class ContactSensorDevice extends UnifiedSensorBase {
     await setupSonoffSensor(this, zclNode);
     this.log('[CONTACT] v5.11.106 - DPs: 1,2,3,4,5,15,101 | ZCL: IAS,PWR,EF00 | SONOFF: tamper');
     this.log(`[CONTACT]  Ready (debounce: ${this._debounceMs}ms, invert: ${this._invertContact}, problematic: ${this._isProblematicSensor})`);
+
+    // WHY(P2339): blutch32 _TZ3000_99rpfy6+TS0203 — paired but silent until first wake.
+    // Sleepy IAS contacts skip boot bind; schedule one zoneStatus read after announce window.
+    safeSetTimeout(this, async () => {
+      if (this._destroyed) { return; }
+      try {
+        const ep = this.zclNode?.endpoints?.[1] || this.zclNode?.endpoints?.[0];
+        const ias = ep?.clusters?.iasZone || ep?.clusters?.ssIasZone;
+        if (!ias?.readAttributes) { return; }
+        const attrs = await ias.readAttributes(['zoneStatus']).catch(() => null);
+        if (attrs?.zoneStatus !== undefined && typeof this._handleIASZoneStatus === 'function') {
+          this.log('[CONTACT] Delayed IAS zoneStatus seed after wake');
+          this._handleIASZoneStatus(attrs.zoneStatus);
+        }
+      } catch (err) {
+        this.log('[CONTACT] Delayed IAS wake read skipped:', err.message);
+      }
+    }, 8000);
   }
 
   /**
