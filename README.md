@@ -33,7 +33,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.733 |
+| **App Version** | v9.0.735 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,381 |
 | **Pairing Variants** | 16,480 (4 case combos per fingerprint) |
@@ -41,7 +41,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **Flow Cards** | 5,198 |
 | **Unique Capabilities** | 170 |
 | **Native OTA Drivers** | 5 |
-| **Test Suites** | 189 files |
+| **Test Suites** | 190 files |
 | **SVG Icons** | 731 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
@@ -102,6 +102,8 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.735** | Fixed Moes TS0044 scene remote and soil sensor pairing clusters; hardened wall dimmer TX failure detection. |
+| **v9.0.734** | Fixed Moes TS0044 scene remote and soil sensor pairing clusters; hardened wall dimmer TX failure detection. |
 | **v9.0.733** | Improved Moes curtain Cover Controller pairing and fingerprint routing for Tuya EF00 covers. |
 | **v9.0.732** | Improved Moes curtain Cover Controller pairing and fingerprint routing for Tuya EF00 covers. |
 | **v9.0.731** | Fixed Fingerbot Homey flow card IDs and switch turned-on/off triggers so Flows bind correctly. |
@@ -112,8 +114,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.726** | Improved button and scene remote Flow triggers (hold-release, wall 4-gang physical, Tuya DP path). Locked Nobo wireless remote pairing. |
 | **v9.0.725** | Improved wireless button press capture for Tuya scene remotes after wake and pairing. |
 | **v9.0.724** | Improved wireless button press capture for Tuya scene remotes after wake and pairing. |
-| **v9.0.723** | Improved wireless button press capture for Tuya scene remotes after wake and pairing. |
-| **v9.0.722** | Improved wireless button press capture for Tuya scene remotes after wake and pairing. |
 
 <!-- CHANGELOG_END -->
 
