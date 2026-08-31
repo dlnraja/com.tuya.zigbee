@@ -56,6 +56,22 @@ for(const p of(c.zigbee?.productId||[])){const k="pid:"+p;idx.set(k,(idx.get(k)|
 }catch{}
 }return idx;
 }
+/**
+ * WHY(P2335): resolve mfr → driver using sacred couple first.
+ * Contre quoi: mfr-only idx listing every driver that ever shared the OEM.
+ */
+function resolveDriversForFp(fp,pids,idx){
+try{
+const DeviceFingerprintDB=require("../../lib/DeviceFingerprintDB");
+const list=Array.isArray(pids)&&pids.length?pids:[undefined];
+for(const pid of list){
+if(!pid)continue;
+const hit=DeviceFingerprintDB.lookup(fp,pid);
+if(hit&&hit.driver)return[hit.driver];
+}
+}catch(e){/* optional at CI edge */}
+return idx.get(fp)||[];
+}
 async function ghGet(ep){
 try{const r=await fetchWithRetry(GH+ep,{headers:hdrs(TOKEN)},{retries:2,label:"ghGet"});return r.ok?r.json():null}catch{return null}
 }
@@ -206,7 +222,9 @@ await ghPost("/repos/"+repo+"/issues/"+iss.number+"/comments",{body:comment});
 st.commented.push(iss.id);report.commented++;continue;
 }
 const results=fps.map(fp=>{
-const drivers=idx.get(fp)||[];
+// WHY(P2335): prefer DeviceFingerprintDB couple lock (mfr+pid) over mfr-only
+// idx spray — salvagr #533 was auto-resolved to device_radiator_valve on v9.0.688.
+let drivers=resolveDriversForFp(fp,pids,idx);
 const proto=detectProtocol(txt,drivers[0]||null);
 // v5.13.1: KB validation for known conflicts
 let kbWarn=null;
@@ -230,4 +248,4 @@ fs.writeFileSync(RF,JSON.stringify(report,null,2));
 console.log("Report:",report);
 }
 if(require.main===module)main().catch(e=>{console.error(e);process.exit(1)});
-module.exports={buildIdx,detectProtocol,detectSym,commentGuard};
+module.exports={buildIdx,detectProtocol,detectSym,commentGuard,resolveDriversForFp};

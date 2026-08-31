@@ -2732,5 +2732,8 @@
   },
   "9.0.731": {
     "en": "Fixed Fingerbot Homey flow card IDs and switch turned-on/off triggers so Flows bind correctly."
+  },
+  "9.0.732": {
+    "en": "Improved Moes curtain Cover Controller pairing and fingerprint routing for Tuya EF00 covers."
   }
 }
