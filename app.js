@@ -18,24 +18,10 @@ EventEmitter.defaultMaxListeners = 50;
 
 const Homey = require('homey');
 
-// WHY(P2306/P2308): Homey flow serializer foreign driver URIs crash getDriver
+// WHY(P2306/P2351): Homey flow serializer can embed foreign driver URIs
+// (Hue ZG9101SAC_HP, virtualdriverzigbee). Soft-fail so flow deserialize continues.
 try {
-  const proto = Homey.ManagerDrivers && Homey.ManagerDrivers.prototype;
-  if (proto && typeof proto.getDriver === 'function' && !proto.__p2306SafeGetDriver) {
-    const orig = proto.getDriver;
-    proto.getDriver = function safeGetDriver(driverId) {
-      try { return orig.call(this, driverId); }
-      catch (err) {
-        const msg = String((err && err.message) || err || '');
-        if (/Invalid Driver ID/i.test(msg) || /virtualdriverzigbee/i.test(String(driverId || ''))) {
-          this.error && this.error('[P2306] getDriver soft-fail: ' + driverId + ' (' + msg + ')');
-          return null;
-        }
-        throw err;
-      }
-    };
-    proto.__p2306SafeGetDriver = true;
-  }
+  require('./lib/utils/safe-get-driver-patch').installFromHomeyModule();
 } catch (_e) { /* best-effort */ }
 
 require('./lib/drivers/ZigBeeDriverFlowCardPatch');
@@ -176,6 +162,16 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
 
   async onInit() {
     this.initializeSettings();
+
+    // P2351: re-bind soft getDriver on the live ManagerDrivers instance
+    try {
+      const { installSafeGetDriver } = require('./lib/utils/safe-get-driver-patch');
+      installSafeGetDriver(this.homey.drivers, this.error && this.error.bind(this) || this.log && this.log.bind(this));
+      installSafeGetDriver(
+        Object.getPrototypeOf(this.homey.drivers),
+        this.error && this.error.bind(this) || this.log && this.log.bind(this),
+      );
+    } catch (_e) { /* best-effort */ }
 
     // P100: wrap OR polyfill flow-card getters so a missing card id OR an SDK
     // without getDeviceActionCard cannot kill a driver's whole onInit.
