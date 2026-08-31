@@ -15,7 +15,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 - Case-insensitive fingerprint matching so pairing is reliable across OEM variants
 - Battery curves by chemistry (no linear `%` guesses)
 - Flow cards for physical buttons, sensors, and actuators (EN, FR, NL, DE)
-- Optional native Zigbee OTA for 5 drivers (Homey v13.2.0+)
+- Optional native Zigbee OTA for 9 drivers (Homey v13.2.0+)
 
 ---
 
@@ -33,15 +33,15 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.751 |
+| **App Version** | v9.0.754 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,384 |
 | **Pairing Variants** | 16,434 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 576 |
 | **Flow Cards** | 5,198 |
 | **Unique Capabilities** | 170 |
-| **Native OTA Drivers** | 5 |
-| **Test Suites** | 200 files |
+| **Native OTA Drivers** | 9 |
+| **Test Suites** | 201 files |
 | **SVG Icons** | 731 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
@@ -102,6 +102,9 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.754** | Moes curtain DP3/7/8/10 + Homey Device Updates OTA (P2356/P2357). |
+| **v9.0.753** | Moes curtain DP3/7/8/10 + Homey Device Updates OTA (P2356/P2357). |
+| **v9.0.752** | Moes curtain DP3/7/8/10 + Homey Device Updates OTA catalog (P2356/P2357). |
 | **v9.0.751** | Fixed Moes TS0044 scene remote and soil sensor pairing clusters; hardened wall dimmer TX failure detection. |
 | **v9.0.750** | Fixed Moes TS0044 scene remote and soil sensor pairing clusters; hardened wall dimmer TX failure detection. |
 | **v9.0.749** | Fixed Moes TS0044 scene remote and soil sensor pairing clusters; hardened wall dimmer TX failure detection. |
@@ -111,9 +114,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.745** | Fixed Moes TS0044 scene remote and soil sensor pairing clusters; hardened wall dimmer TX failure detection. |
 | **v9.0.744** | Fixed Moes TS0044 scene remote and soil sensor pairing clusters; hardened wall dimmer TX failure detection. |
 | **v9.0.743** | Fixed Moes TS0044 scene remote and soil sensor pairing clusters; hardened wall dimmer TX failure detection. |
-| **v9.0.742** | Fixed Moes TS0044 scene remote and soil sensor pairing clusters; hardened wall dimmer TX failure detection. |
-| **v9.0.741** | Fixed Moes TS0044 scene remote and soil sensor pairing clusters; hardened wall dimmer TX failure detection. |
-| **v9.0.740** | Fixed Moes TS0044 scene remote and soil sensor pairing clusters; hardened wall dimmer TX failure detection. |
 
 <!-- CHANGELOG_END -->
 
