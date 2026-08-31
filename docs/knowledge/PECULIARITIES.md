@@ -20,6 +20,15 @@ Generated 2026-08-19T08:50:15.322Z from registry (54 cases) × compound DB (209 
 ## Gaps
 
 
+### `p2348-salvagr-5slehgeo-curtain` → `curtain_motor`
+
+- Couple: `_TZE204_5slehgeo` + TS0601 (siblings `_TZE284_` / `_TZE200_5slehgeo`, also `_TZE200_nhyj64w2` / `_TZE200_127x7wnl`)
+- Retail: Moes ZTS-EUR-C (GitHub #533 Salvagr)
+- Protocol: EF00 interview clusters `[0,4,5,61184]` — not OnOff/WindowCovering
+- Diag: `724d4bc9` on 9.0.741 — Unknown Device (no driver init; pairing miss)
+- Root cause: publish compact lowercased sacred-keep pins → kept `_TZE204_5SLEHGEO` / `_tze204_5slehgeo` but dropped exact `_TZE204_5slehgeo` (Homey case-sensitive)
+- Fix: preserve exact `pin.mfr` in compact + sacred-keep pins; trim absurd curtain productIds
+
 ## Cases (1 by 1)
 
 ### `hobeian-aubess-k4ej3ww2-ias` → `water_leak_sensor`

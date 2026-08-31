@@ -167,6 +167,7 @@ Catalog: **431** drivers, **147** locked community cases.
 | p2297-m6lwazh9-tze200-ts0601-curtain | `curtain_motor` | `_TZE200_m6lwazh9` + TS0601 | switch_1gang, wall_dimmer_tuya, device_radiator_valve, wall_thermostat | tuya_ef00 |
 | p2297-t9ynfz4x-ts0225-mmwave | `motion_sensor_radar_mmwave` | `_TZ3218_t9ynfz4x` + TS0225 | climate_sensor, presence_sensor_radar, motion_sensor | zcl |
 | p2304-moes-zts-eur-c-curtain | `curtain_motor` | `_TZE200_127x7wnl` + TS0601 | device_radiator_valve, radiator_valve, thermostatic_radiator_valve, thermostat_tuya_dp |  |
+| p2348-salvagr-5slehgeo-curtain | `curtain_motor` | `_TZE204_5slehgeo` + TS0601 | device_radiator_valve, zigbee_universal, climate_sensor | tuya_ef00 |
 | p2307-moes-star-feather-upt8lzi0 | `curtain_motor` | `_TZE284_upt8lzi0` + TS0601 | switch_1gang, switch_2gang, device_radiator_valve |  |
 | p2312-a4xycprs-ts0044-scene | `scene_switch_4` | `_TZ3000_a4xycprs` + TS0044 | switch_4gang, button_wireless_2, button_wireless_4 |  |
 | p2312-jthf7vb6-ts0601-water | `water_leak_sensor` | `_TZE200_jthf7vb6` + TS0601 | climate_sensor, soil_sensor |  |
