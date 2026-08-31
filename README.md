@@ -4,11 +4,11 @@
 
 [![Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdlnraja%2Fcom.tuya.zigbee%2Fmaster%2Fapp.json&query=%24.version&label=version&color=blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![Drivers](https://img.shields.io/badge/drivers-431-brightgreen)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
-[![Fingerprints](https://img.shields.io/badge/fingerprints-4,381%20unique-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
+[![Fingerprints](https://img.shields.io/badge/fingerprints-4,382%20unique-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![SDK](https://img.shields.io/badge/SDK-3-orange)](https://apps.developer.homey.app/)
 [![License](https://img.shields.io/badge/license-GPL--3.0-green)](LICENSE)
 
-Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, sensors, lights, thermostats, covers, valves — **431 drivers**, **4,381 unique fingerprints**. No cloud required.
+Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, sensors, lights, thermostats, covers, valves — **431 drivers**, **4,382 unique fingerprints**. No cloud required.
 
 **What it does:**
 - Talks to devices on your Homey Zigbee mesh (Tuya DP `0xEF00` and standard ZCL)
@@ -33,10 +33,10 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.740 |
+| **App Version** | v9.0.741 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
-| **Unique Fingerprints** | 4,381 |
-| **Pairing Variants** | 16,472 (4 case combos per fingerprint) |
+| **Unique Fingerprints** | 4,382 |
+| **Pairing Variants** | 16,430 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 577 |
 | **Flow Cards** | 5,198 |
 | **Unique Capabilities** | 170 |
@@ -52,7 +52,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | # | Driver | Fingerprints |
 |---|--------|-------------|
 | 1 | `climate_sensor` | 2,360 |
-| 2 | `switch_1gang` | 1,656 |
+| 2 | `switch_1gang` | 1,652 |
 | 3 | `presence_sensor_radar` | 731 |
 | 4 | `radiator_valve` | 599 |
 | 5 | `button_wireless_2` | 572 |
@@ -61,7 +61,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | 8 | `curtain_motor` | 382 |
 | 9 | `device_radiator_valve` | 334 |
 | 10 | `switch_4gang` | 276 |
-| 11 | `switch_2gang` | 265 |
+| 11 | `switch_2gang` | 253 |
 | 12 | `switch_3gang` | 214 |
 | 13 | `motion_sensor` | 213 |
 | 14 | `diy_custom_zigbee` | 206 |
@@ -69,7 +69,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | 16 | `thermostat_tuya_dp` | 192 |
 | 17 | `sensor_contact_zigbee` | 186 |
 | 18 | `water_leak_sensor_tuya` | 178 |
-| 19 | `usb_dongle_triple` | 168 |
+| 19 | `usb_dongle_triple` | 164 |
 | 20 | `contact_sensor` | 161 |
 
 ### Drivers by Device Class
@@ -102,6 +102,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.741** | Fixed Moes TS0044 scene remote and soil sensor pairing clusters; hardened wall dimmer TX failure detection. |
 | **v9.0.740** | Fixed Moes TS0044 scene remote and soil sensor pairing clusters; hardened wall dimmer TX failure detection. |
 | **v9.0.739** | Fixed Moes TS0044 scene remote and soil sensor pairing clusters; hardened wall dimmer TX failure detection. |
 | **v9.0.738** | Fixed Moes TS0044 scene remote and soil sensor pairing clusters; hardened wall dimmer TX failure detection. |
@@ -113,7 +114,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.732** | Improved Moes curtain Cover Controller pairing and fingerprint routing for Tuya EF00 covers. |
 | **v9.0.731** | Fixed Fingerbot Homey flow card IDs and switch turned-on/off triggers so Flows bind correctly. |
 | **v9.0.730** | Fixed Fingerbot Homey flow card IDs and switch turned-on/off triggers so Flows bind correctly. |
-| **v9.0.729** | Fixed Fingerbot Homey flow card IDs and switch turned-on/off triggers so Flows bind correctly. |
 
 <!-- CHANGELOG_END -->
 
