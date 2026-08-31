@@ -61,17 +61,24 @@ function changelogFor(fileVersion) {
 function ensureWakeInstruction(driverId, ssot) {
   const text = ssot.wakeInstructions?.[driverId];
   if (!text) return;
+  const composePath = path.join(ROOT, 'drivers', driverId, 'driver.compose.json');
   const fwPath = path.join(ROOT, 'drivers', driverId, 'driver.firmware.compose.json');
+  // Prefer embedding wakeInstruction next to firmwareUpdates in compose (Homey merge-safe).
+  if (fs.existsSync(composePath)) {
+    try {
+      const compose = JSON.parse(fs.readFileSync(composePath, 'utf8'));
+      if (compose.firmwareUpdates && Array.isArray(compose.firmwareUpdates.updates)) {
+        compose.firmwareUpdates.wakeInstruction = text;
+        fs.writeFileSync(composePath, `${JSON.stringify(compose, null, 2)}\n`);
+        return;
+      }
+    } catch { /* fall through */ }
+  }
   let fw = {};
   if (fs.existsSync(fwPath)) {
     try { fw = JSON.parse(fs.readFileSync(fwPath, 'utf8')); } catch { fw = {}; }
   }
-  // Preserve existing updates in firmware.compose; only ensure wakeInstruction
   fw.wakeInstruction = text;
-  if (!Array.isArray(fw.updates)) {
-    // Keep updates in driver.compose.json firmwareUpdates when not already here
-    delete fw.updates;
-  }
   fs.writeFileSync(fwPath, `${JSON.stringify(fw, null, 2)}\n`);
 }
 
