@@ -57,6 +57,24 @@
       "note": "meter91 0xFD"
     },
     {
+      "mfr": "_TZ3000_wkai4ga5",
+      "pid": "TS0044",
+      "driverId": "scene_switch_4",
+      "note": "P2353 SunBeech/Relax — never invent TS0042 for this mfr without diag"
+    },
+    {
+      "mfr": "_TZ3000_dfgbtub0",
+      "pid": "TS0044",
+      "driverId": "button_wireless_4",
+      "note": "P2353 Moes 4-btn wireless"
+    },
+    {
+      "mfr": "_TZ3000_dfgbtub0",
+      "pid": "TS0042",
+      "driverId": "button_wireless_2",
+      "note": "P2353 Moes 2-btn sibling (same mfr, different pid)"
+    },
+    {
       "mfr": "_TZ3000_k4ej3ww2",
       "pid": "TS0207",
       "driverId": "water_leak_sensor",
@@ -138,7 +156,13 @@
       "mfr": "_TZ3000_xabckq1v",
       "pid": "TS004F",
       "driverId": "button_wireless_4",
-      "note": "P2236 soft lock"
+      "note": "P2236/P2354 Moes TS004F_1 — force event mode 0x8004 (T150690)"
+    },
+    {
+      "mfr": "_TZ3000_kaflzta4",
+      "pid": "TS004F",
+      "driverId": "smart_knob",
+      "note": "Moes ERS-10TZBVB-AA; forum typo kalzta4→kaflzta4 (T156967)"
     },
     {
       "mfr": "_TZ3000_4upl1fcj",
@@ -361,24 +385,6 @@
       "pid": "TS0601",
       "driverId": "curtain_motor",
       "note": "P2348 Z2M ZTS-EUR-C sibling from #533"
-    },
-    {
-      "mfr": "_TZ3000_wkai4ga5",
-      "pid": "TS0044",
-      "driverId": "scene_switch_4",
-      "note": "P2353"
-    },
-    {
-      "mfr": "_TZ3000_dfgbtub0",
-      "pid": "TS0044",
-      "driverId": "button_wireless_4",
-      "note": "P2353"
-    },
-    {
-      "mfr": "_TZ3000_dfgbtub0",
-      "pid": "TS0042",
-      "driverId": "button_wireless_2",
-      "note": "P2353"
     }
   ]
 }
