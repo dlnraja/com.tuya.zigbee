@@ -19,6 +19,20 @@ Generated 2026-08-19T08:50:15.322Z from registry (54 cases) × compound DB (209 
 
 ## Gaps
 
+### `p2351-foreign-driver-id-serializer` → runtime (all drivers)
+
+- Symptom: App crash `Invalid Driver ID: ZG9101SAC_HP` (Philips Hue ID) during HomeySerializer flow parse
+- Seen: Gmail crashes on **v9.0.730** and **v9.0.743** (build #3046 / #3059)
+- Stack: `_getDriverManifest` → `getDriver` → SDK.fromJSON → HomeySerializer
+- Fix: `lib/utils/safe-get-driver-patch.js` (P2306 hardened) — soft-fail foreign IDs; re-bind on live `homey.drivers` in `App.onInit`
+- Against: treating Hue/virtual IDs as Tuya drivers; crashing whole app for one bad flow token
+
+### `p2351-cartesian-registry-refuse` → gang switches
+
+- Bad case: `p2347-gabriel-zemismart-verified-only` listed OVYAISIP/YWUBFUVT/… + TS0001+2+3 on `wall_switch_1gang_1way`
+- Effect: `align-mfs-db-intelligent --check` tried to merge 2gang/3gang onto 1gang (CI red)
+- Fix: doc-only enrichOnly case + align skip/refuse Cartesian multi-mfr×multi-gang-pid
+- Real locks remain per couple (TB25-1 / NovaDigital 2g / 3g)
 
 ### `p2348-salvagr-5slehgeo-curtain` → `curtain_motor`
 

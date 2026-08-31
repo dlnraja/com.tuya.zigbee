@@ -254,13 +254,36 @@ function align(db, compose, registry) {
   /** @type {Map<string, {canon:string, pids:string[], caseIds:string[], sample:string, nm:string}>} */
   const registryRows = new Map();
   for (const c of registry.cases || []) {
+    // WHY(P2351): enrichOnly / empty-mfr doc cases must not registry_force mfs_db
+    // (p2347 Cartesian dump previously merged all gang pids onto 1gang).
+    if (c.enrichOnly === true) {
+      skipped.push({ reason: 'registry_enrich_only', caseId: c.id, canon: c.canonicalDriver });
+      continue;
+    }
     const canon = c.canonicalDriver;
     const pids = sortedPids(c.productId);
+    const mfrs = [].concat(c.mfr || []).filter(Boolean);
+    if (!mfrs.length) {
+      skipped.push({ reason: 'registry_empty_mfr', caseId: c.id, canon });
+      continue;
+    }
     if (!canon || !compose.driverExists.has(canon)) {
       skipped.push({ reason: 'registry_driver_missing', caseId: c.id, canon });
       continue;
     }
-    for (const m of [].concat(c.mfr || [])) {
+    // WHY(P2351): refuse Cartesian multi-mfr + multi-gang-pid locks in one case
+    const gangPids = pids.filter((p) => /^TS000[1-4]$/i.test(p) || /^TS001[1-4]$/i.test(p));
+    if (mfrs.length > 2 && gangPids.length > 1) {
+      skipped.push({
+        reason: 'registry_cartesian_gang_refuse',
+        caseId: c.id,
+        canon,
+        mfrCount: mfrs.length,
+        gangPids,
+      });
+      continue;
+    }
+    for (const m of mfrs) {
       const nm = norm(m);
       if (!nm || SYNTHETIC_RX.test(m)) continue;
       const rowKey = `${nm}|${canon}`;

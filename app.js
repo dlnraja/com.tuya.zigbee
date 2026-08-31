@@ -3,29 +3,12 @@
 // v5.11.185: Suppress punycode DEP0040 deprecation from transitive deps
 require('./lib/suppress-punycode');
 
-// WHY(P2306): Homey flow serializer can embed foreign driver URIs
-// (`homey:virtualdriverzigbee:driver`). ManagerDrivers.getDriver throws
-// "Invalid Driver ID" and crashes the whole app process (Gmail crash 9.0.677).
+// WHY(P2306/P2351): Homey flow serializer can embed foreign driver URIs
+// (Hue ZG9101SAC_HP, virtualdriverzigbee). ManagerDrivers.getDriver throws
+// "Invalid Driver ID" and crashes the whole app process (Gmail 9.0.730/9.0.743).
 // Soft-fail unknown/foreign IDs so flow deserialize can continue.
 try {
-  const HomeyEarly = require('homey');
-  const proto = HomeyEarly?.ManagerDrivers?.prototype;
-  if (proto && typeof proto.getDriver === 'function' && !proto.__p2306SafeGetDriver) {
-    const orig = proto.getDriver;
-    proto.getDriver = function safeGetDriver(driverId) {
-      try {
-        return orig.call(this, driverId);
-      } catch (err) {
-        const msg = String(err && err.message || err || '');
-        if (/Invalid Driver ID/i.test(msg) || /virtualdriverzigbee/i.test(String(driverId || ''))) {
-          this.error?.(`[P2306] getDriver soft-fail: ${driverId} (${msg})`);
-          return null;
-        }
-        throw err;
-      }
-    };
-    proto.__p2306SafeGetDriver = true;
-  }
+  require('./lib/utils/safe-get-driver-patch').installFromHomeyModule();
 } catch (_) { /* best-effort */ }
 
 // v5.8.25: Patch color-space module to fix Homey sandbox require('./rgb') error
@@ -188,6 +171,17 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
   async onInit() {
     this.homey.__tuyaApp = this;
     this.initializeSettings();
+
+    // P2351: re-bind soft getDriver on the live ManagerDrivers instance
+    // (prototype patch at module load may miss Homey's runtime instance).
+    try {
+      const { installSafeGetDriver } = require('./lib/utils/safe-get-driver-patch');
+      installSafeGetDriver(this.homey.drivers, this.error?.bind(this) || this.log?.bind(this));
+      installSafeGetDriver(
+        Object.getPrototypeOf(this.homey.drivers),
+        this.error?.bind(this) || this.log?.bind(this),
+      );
+    } catch (_) { /* best-effort */ }
 
     // v10.2.1 crash guard: wrap OR polyfill flow-card getters so a missing
     // card id OR an SDK without getDeviceActionCard cannot kill a driver's

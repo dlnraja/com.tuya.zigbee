@@ -22,6 +22,11 @@ Clone Stable: `Documents\homey\stable`. `stable-v5-p195` is **STALE**.
 - **Recurring report** = investigate harder, not deny. Push + publish when asked; **stable-v5** backport when BOTH (reliability only).
 - Rule: `.cursor/rules/user-report-deep-investigation-always.mdc`
 
+## P2351 — Foreign driver ID crash (2026-08-31)
+- Gmail: `Invalid Driver ID: ZG9101SAC_HP` on **9.0.730** + **9.0.743** (HomeySerializer → `_getDriverManifest`).
+- Fix: `lib/utils/safe-get-driver-patch.js` + `App.onInit` rebind. BOTH tracks.
+- Also: kill Cartesian registry case that broke `align-mfs-db-intelligent --check` (multi-gang → 1gang).
+
 ## Forum silent (T157628) — SHADOW read only
 - **Passive GET only** — never POST/reply/PM/like; never paste AI.
 - Scan → processor → enrich:investigate → code/CI only. `FORUM_AUTO_POST=0` + `SHADOW_FORUM=1` forced.

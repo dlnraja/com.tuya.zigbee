@@ -25,4 +25,12 @@ Fetched/analyzed Homey app-diags from Gmail UUID harvest + Athom crashes.
 ## Action for users (silent forum)
 Update Universal Tuya Test **≥ 9.0.744**, remove wrong/unknown tiles, re-pair.
 
-UUIDs not found on Athom API (likely email-only / other app): `c1272424`, `135cab11`, `ca387b80`, `f84180b7`, `ebc6e429`, `fbbeb578`, `329163f4`, `78fee48e`, `287d8ce5`, `424b2f0e` — paste if still relevant.
+## Code this pass (P2350)
+- Harden `TuyaEF00Manager` dimmer DP2 skip: also when `dpMappings[2].capability === 'dim'` (driver.id empty at boot).
+- Report: `DIAG_BATCH_NEW.md`
+
+## Follow-up P2351 (same day)
+- Gmail crash `ZG9101SAC_HP` on 9.0.730/9.0.743 → `safe-get-driver-patch.js` soft-fail `_getDriverManifest` + live drivers rebind.
+- Fixed P169 CI: removed Cartesian `p2347` multi-gang registry_force.
+- Report: `INBOX_L99_R3_P2351.md`
+

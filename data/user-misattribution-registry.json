@@ -4866,46 +4866,31 @@
       "enrichOnly": true
     },
     {
-      "id": "p2347-gabriel-zemismart-verified-only",
-      "mfr": [
-        "_TZ3000_OVYAISIP",
-        "_TZ3000_PK8TGTDB",
-        "_TZ3000_YWUBFUVT",
-        "_TZ3000_KGXEJ1DV",
-        "_TZ3000_JJDKHUEQ",
-        "_TZ3000_YERVJNLJ"
-      ],
-      "productId": [
-        "TS0001",
-        "TS0002",
-        "TS0003"
-      ],
-      "note": "P2347: NOT a multi-pid lock — see sacred-keep for exact couples. Case documents #2173 Cartesian forbid.",
+      "id": "p2347-gabriel-zemismart-cartesian-doc-only",
+      "mfr": [],
+      "productId": [],
       "canonicalDriver": "wall_switch_1gang_1way",
       "forbiddenDrivers": [
         "wall_dimmer_tuya",
-        "switch_1gang",
-        "switch_2gang",
-        "switch_3gang",
         "climate_sensor"
       ],
       "forbidMode": "couple",
+      "enrichOnly": true,
       "protocol": "zcl",
-      "notes": "Forum #2173 Cartesian OEM dump. Lock ONLY verified single-pid couples in publish-sacred-keep-couples.json (OVYAISIP+TS0001, YWUBFUVT+TS0002, etc). Never invent cross-pids.",
+      "notes": "P2351: DOC ONLY — forum #2173 Cartesian OEM dump must NEVER become a multi-mfr/multi-pid registry_force (was collapsing YWUBFUVT/KGXEJ1DV/JJDKHUEQ/YERVJNLJ onto wall_switch_1gang_1way with TS0001+2+3). Real locks stay per-couple: zemismart-ts0001-tb25-1, novadigital-ts0002-*, novadigital-ts0003-yervjnlj + publish-sacred-keep.",
       "sources": [
         "forum-140352-2173",
-        "HomeSuite",
-        "Z2M",
-        "P2347"
+        "P2347",
+        "P2351"
       ],
       "tracks": {
         "master": {
-          "static": true,
-          "dynamic": true
+          "static": false,
+          "dynamic": false
         },
         "stable": {
-          "static": true,
-          "dynamic": true
+          "static": false,
+          "dynamic": false
         }
       }
     },

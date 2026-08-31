@@ -20,6 +20,14 @@
 4. Cross-check rules: `AI_CONTEXT_MANDATE.md`, `docs/ARCHITECTURE_AI.md`, `docs/rules/WHY_INTERROGATION.md`, `docs/rules/DUAL_APP_VISION.md`, `docs/rules/FORUM_SILENT_HUMANIZE.md`, `.cursorrules`.
 5. **Publish** means Homey App Store (master Test 9.0.x). **Do not post** means no Homey Community / PM replies.
 
+### Runtime crash guard (P2351)
+
+Homey flow serializer can embed **foreign** driver IDs (e.g. Philips Hue `ZG9101SAC_HP`, `virtualdriverzigbee`). That must **soft-fail** in `lib/utils/safe-get-driver-patch.js` — never crash Universal Tuya. Not a Tuya sacred couple.
+
+### Registry Cartesian refuse (P2351)
+
+Never put multiple gang mfrs + `TS0001`/`TS0002`/`TS0003` in one `user-misattribution-registry` case aimed at a single gang driver. Use one case per `(mfr, pid)` couple (see `zemismart-ts0001-tb25-1`, `novadigital-ts0002-*`, `novadigital-ts0003-*`).
+
 Catalog: **431** drivers, **147** locked community cases.
 
 ## Locked couples (canonical, 1 by 1)
