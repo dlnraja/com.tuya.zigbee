@@ -46,11 +46,11 @@ class WiFiHeaterDevice extends TuyaLocalDevice {
 
     if (changes.onoff) {
       const cardId = changes.onoff.to ? 'wifi_heater_turned_on' : 'wifi_heater_turned_off';
-      getTrigger(cardId)?.trigger(this, {}, {}).catch(this.error);
+      getTrigger(cardId)?.trigger(this, {}, {}).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
     }
     
     if (changes.wifi_heater_mode) {
-      getTrigger('wifi_heater_mode_changed')?.trigger(this, { mode: changes.wifi_heater_mode.to }, {}).catch(this.error);
+      getTrigger('wifi_heater_mode_changed')?.trigger(this, { mode: changes.wifi_heater_mode.to }, {}).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
     }
   }
 

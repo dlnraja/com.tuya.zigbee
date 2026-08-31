@@ -399,14 +399,14 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
     const normalizedMoisture = this._normalizeSoilMoisture(moisture, 'flow');
     if (normalizedMoisture === null) {return;}
     if (this._flowTriggerMoistureChanged) {
-      this._flowTriggerMoistureChanged.trigger(this, { moisture: normalizedMoisture }).catch(this.error);
+      this._flowTriggerMoistureChanged.trigger(this, { moisture: normalizedMoisture }).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
     }
     if (this._previousMoisture !== null) {
       if (normalizedMoisture < 30 && this._previousMoisture >= 30 && this._flowTriggerSoilDry) {
-        this._flowTriggerSoilDry.trigger(this, {}).catch(this.error);
+        this._flowTriggerSoilDry.trigger(this, {}).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
       }
       if (normalizedMoisture > 70 && this._previousMoisture <= 70 && this._flowTriggerSoilWet) {
-        this._flowTriggerSoilWet.trigger(this, {}).catch(this.error);
+        this._flowTriggerSoilWet.trigger(this, {}).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
       }
     }
     this._previousMoisture = normalizedMoisture;
@@ -418,7 +418,7 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
 
   _triggerECFlows(ecValue) {
     if (this._flowTriggerECChanged) {
-      this._flowTriggerECChanged.trigger(this, { ec: ecValue }).catch(this.error);
+      this._flowTriggerECChanged.trigger(this, { ec: ecValue }).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
     }
   }
 

@@ -24,9 +24,9 @@ class smoke_sensor extends ZigBeeDevice {
 
     onIASZoneStatusChangeNotification({zoneStatus, extendedStatus, zoneId, delay,}) {
       this.log('IASZoneStatusChangeNotification received:', zoneStatus, extendedStatus, zoneId, delay);
-      this.safeSetCapabilityValue('alarm_smoke', zoneStatus.alarm1).catch(this.error);
-      this.safeSetCapabilityValue('alarm_battery', zoneStatus.battery).catch(this.error);
-      this.safeSetCapabilityValue('alarm_tamper', zoneStatus.tamper).catch(this.error);
+      this.safeSetCapabilityValue('alarm_smoke', zoneStatus.alarm1).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
+      this.safeSetCapabilityValue('alarm_battery', zoneStatus.battery).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
+      this.safeSetCapabilityValue('alarm_tamper', zoneStatus.tamper).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
     }
 
     onDeleted(){

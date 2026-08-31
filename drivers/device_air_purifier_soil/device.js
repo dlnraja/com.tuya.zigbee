@@ -512,20 +512,20 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
   _triggerMoistureFlows(moisture) {
     // Trigger: moisture changed
     if (this._flowTriggerMoistureChanged) {
-      this._flowTriggerMoistureChanged.trigger(this, { moisture }).catch(this.error);
+      this._flowTriggerMoistureChanged.trigger(this, { moisture }).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
     }
 
     // Trigger: soil dry (moisture below 30%)
     if (this._previousMoisture !== null && moisture < 30 && this._previousMoisture >= 30) {
       if (this._flowTriggerSoilDry) {
-        this._flowTriggerSoilDry.trigger(this, {}).catch(this.error);
+        this._flowTriggerSoilDry.trigger(this, {}).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
       }
     }
 
     // Trigger: soil wet (moisture above 70%)
     if (this._previousMoisture !== null && moisture > 70 && this._previousMoisture <= 70) {
       if (this._flowTriggerSoilWet) {
-        this._flowTriggerSoilWet.trigger(this, {}).catch(this.error);
+        this._flowTriggerSoilWet.trigger(this, {}).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
       }
     }
 
@@ -538,7 +538,7 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
   _triggerTemperatureFlows(temperature) {
     // Trigger: temperature changed
     if (this._flowTriggerTemperatureChanged) {
-      this._flowTriggerTemperatureChanged.trigger(this, { temperature }).catch(this.error);
+      this._flowTriggerTemperatureChanged.trigger(this, { temperature }).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
     }
 
     this._previousTemperature = temperature;
@@ -551,7 +551,7 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
     // Trigger: battery low (below 20%)
     if (battery <= 20 && (this._previousBattery === null || this._previousBattery > 20)) {
       if (this._flowTriggerBatteryLow) {
-        this._flowTriggerBatteryLow.trigger(this, { battery }).catch(this.error);
+        this._flowTriggerBatteryLow.trigger(this, { battery }).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
         this.log(`[SOIL]  Battery low alert triggered: ${battery}%`);
       }
     }

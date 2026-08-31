@@ -145,7 +145,7 @@ class pir_mmwave_sensor extends ZigBeeDevice {
     onZoneStatusAttributeReport(status) {
         if (this._destroyed) {return;}
         this.log("Motion status: ", status.alarm1);
-        this.safeSetCapabilityValue('alarm_motion', status.alarm1).catch(this.error);
+        this.safeSetCapabilityValue('alarm_motion', status.alarm1).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
     }
 
     // Handle battery status attribute reports via UnifiedBatteryHandler (not naive /2)
@@ -158,15 +158,15 @@ class pir_mmwave_sensor extends ZigBeeDevice {
         });
         if (batteryLevel == null) {return;}
         this.log('🔋 Battery handler called! Raw value:', batteryPercentageRemaining, 'Converted:', batteryLevel, '%');
-        this.safeSetCapabilityValue('measure_battery', batteryLevel).catch(this.error);
-        this.safeSetCapabilityValue('alarm_battery', batteryLevel < batteryThreshold).catch(this.error);
+        this.safeSetCapabilityValue('measure_battery', batteryLevel).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
+        this.safeSetCapabilityValue('alarm_battery', batteryLevel < batteryThreshold).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
     }
 
     // Handle illuminance attribute reports
     onIlluminanceMeasuredAttributeReport(measuredValue) {
         const luxValue = Math.round(Math.pow(10, (measuredValue - 1) / 10000)); // Convert measured value to lux
         this.log('measure_luminance | Illuminance (lux):', luxValue);
-        this.safeSetCapabilityValue('measure_luminance', luxValue).catch(this.error);
+        this.safeSetCapabilityValue('measure_luminance', luxValue).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
     }
 
     // Process Tuya-specific data points
@@ -180,11 +180,11 @@ class pir_mmwave_sensor extends ZigBeeDevice {
                 // Presence/Motion detection - can be boolean or number (1/0)
                 this.log('Motion detected via Tuya DP1:', measuredValue);
                 if (typeof measuredValue === 'boolean') {
-                    this.safeSetCapabilityValue('alarm_motion', measuredValue).catch(this.error);
+                    this.safeSetCapabilityValue('alarm_motion', measuredValue).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
                 } else if (typeof measuredValue === 'number') {
                     const motionDetected = measuredValue === 1;
                     this.log('Motion state:', motionDetected ? 'DETECTED' : 'CLEAR');
-                    this.safeSetCapabilityValue('alarm_motion', motionDetected).catch(this.error);
+                    this.safeSetCapabilityValue('alarm_motion', motionDetected).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
                 }
                 break;
 
@@ -236,9 +236,9 @@ class pir_mmwave_sensor extends ZigBeeDevice {
                 // Battery percentage
                 if (typeof measuredValue === 'number') {
                     this.log('🔋 Battery via Tuya DP110:', measuredValue, '%');
-                    this.safeSetCapabilityValue('measure_battery', measuredValue).catch(this.error);
+                    this.safeSetCapabilityValue('measure_battery', measuredValue).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
                     const batteryThreshold = this.getSetting('batteryThreshold') || 20;
-                    this.safeSetCapabilityValue('alarm_battery', measuredValue < batteryThreshold).catch(this.error);
+                    this.safeSetCapabilityValue('alarm_battery', measuredValue < batteryThreshold).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
                 }
                 break;
 
