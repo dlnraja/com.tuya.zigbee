@@ -103,6 +103,8 @@ Generated 2026-08-19T08:50:15.322Z from registry (54 cases) × compound DB (209 
 - Compound `_TZE204_clrdrnya|TS0601`: tuya_dp  MTG235-ZB-RL mmWave+relay (sbyx0lm6 family). Never climate/motion_pir. Z2M#18677 GH#420
 - Compound `_TZE284_clrdrnya|TS0601`: tuya_dp  TZE284 sibling of clrdrnya radar; same TS0601 couple only
 - Compound `_TZE200_clrdrnya|TS0601`: tuya_dp  TZE200 sibling; Z2M discussion#25712 lost-support reminder — keep compound lock
+- **P2340 (diag 4217d5e3 / VicHY):** publish compact dropped `_TZE204_clrdrnya` from app.json — sacred-keep + force-inject restores mfr; user on **9.0.719** must update Test ≥9.0.739 + re-pair `presence_sensor_radar`.
+- **P2340 (forum Cam / HOBEIAN ZG-204ZL):** compact dropped `HOBEIAN` mfr while pid `ZG-204ZL` remained — sacred-keep pins couple; motion flows need update + re-pair on `presence_sensor_radar`.
 - Compose: class=sensor eps=1 EF00=true IAS=false batteries=CR2032/CR2450/AAA/AA/CR123A/INTERNAL
 - Notes: MTG235-ZB-RL mmWave + relay — presence_sensor_radar only (GH#420, Z2M#18677 sbyx0lm6 family). Mains. Never climate or PIR motion.
 - Sources: forum-140352, github#420, P139, P204, z2m#18677
@@ -645,12 +647,13 @@ Regenerate: `node tools/ci/investigate-device-peculiarities.js`
 - Notes: Physical presses arrive as `[TS0044-RAW] EPn`; writing 32772 spam kills UX. Prefer `*_button_4gang_button_N_*` Flow cards. Never invent `*_button_N_button_pressed`.
 - Sources: gmail-diag-9cbf9eb6, z2m-tuya.ts Nous TS0044
 
-### `meter91-zgyzgdua-ts0044` → `scene_switch_4` (forum #2189 / 55e3e591 / P2336)
+### `meter91-zgyzgdua-ts0044` → `scene_switch_4` (forum #2189 / #2207 / diags 55e3e591, c40705a1)
 
-- Couple: `_TZ3000_zgyzgdua` + TS0044 (also ERS-10TZBVK-AA in dump)
-- Protocol: multi-EP OnOff + manufacturer 0xFD; **no 0x8004**
-- Pairing clusters (P2336): compose/app.json EP1 `[0,1,6]` only — do **not** require identify/4096/EF00/57344 (interview often lacks them → Unknown Zigbee). EP2–4 `[6]`.
-- Z2M: Moes XH-SY-04Z whitelabel on `zgyzgdua`; actions via genOnOff 0xFD (12 scene: single/double/hold × 4).
+- Couple: `_TZ3000_zgyzgdua` + TS0044 (Moes TS0044_2 / XH-SY-04Z whitelabel — **not** ERS-10TZBVK knob)
+- Protocol: **ZCL** multi-EP genOnOff **0xFD** (payload 0/1/2); E000 on EP1 fallback only; **no EF00**, **no 0x8004**
+- Pairing (P2336): compose EP1 `[0,1,6]` ⊆ interview `[0,1,6,57344]`; EP2–4 `[6]` only
+- Diag **c40705a1** (2026-08-30): user on **9.0.714** → unknown device = pre-P2336; update Test **≥9.0.738** + remove + re-pair
+- Z2M: Moes portable 4-button; `tuya.fz.on_off_action` only
 
 ### `p2337-ts0044-routing` (Z2M whitelabel split)
 

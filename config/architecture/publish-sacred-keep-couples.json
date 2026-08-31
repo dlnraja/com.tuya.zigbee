@@ -31,6 +31,11 @@
     { "mfr": "_TZ3000_nkcobies", "pid": "TS011F", "driverId": "smartplug", "note": "P2236 plug" },
     { "mfr": "_TZE204_mpbki2zm", "pid": "TS0601", "driverId": "wall_thermostat", "note": "P2300 #532 TYBAC-006 FCU" },
     { "mfr": "_TZE204_qujphad5", "pid": "TS0601", "driverId": "wall_thermostat", "note": "P2300 FCU sibling" },
-    { "mfr": "_TZ3000_pjb1ua0m", "pid": "TS0203", "driverId": "contact_sensor", "note": "P2300 discussion #100 pressure band" }
+    { "mfr": "_TZ3000_pjb1ua0m", "pid": "TS0203", "driverId": "contact_sensor", "note": "P2300 discussion #100 pressure band" },
+    { "mfr": "_TZE204_clrdrnya", "pid": "TS0601", "driverId": "presence_sensor_radar", "note": "VicHY diag 4217d5e3 mmWave 24G — compact dropped mfr" },
+    { "mfr": "_TZE200_clrdrnya", "pid": "TS0601", "driverId": "presence_sensor_radar", "note": "clrdrnya TZE200 sibling" },
+    { "mfr": "_TZE284_clrdrnya", "pid": "TS0601", "driverId": "presence_sensor_radar", "note": "clrdrnya TZE284 sibling" },
+    { "mfr": "HOBEIAN", "pid": "ZG-204ZL", "driverId": "presence_sensor_radar", "note": "Cam forum ZG-204ZL motion — HOBEIAN mfr stripped by compact" },
+    { "mfr": "HOBEIAN", "pid": "ZG-204ZM", "driverId": "presence_sensor_radar", "note": "HOBEIAN radar sibling" }
   ]
 }
