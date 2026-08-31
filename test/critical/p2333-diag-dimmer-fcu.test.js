@@ -5,6 +5,7 @@
 const assert = require('assert');
 const fs = require('fs');
 const path = require('path');
+const { describe, it } = require('node:test');
 const ROOT = path.join(__dirname, '..', '..');
 
 describe('P2333 diag-driven dimmer + FCU dyn-cap', () => {
@@ -13,6 +14,8 @@ describe('P2333 diag-driven dimmer + FCU dyn-cap', () => {
     assert.match(src, /isDimmerDriver/);
     assert.match(src, /P2333[\s\S]{0,200}DP2/);
     assert.match(src, /internal \|\| ownedMap\.skip/);
+    // P2350: detect dimmer via dpMappings DP2→dim when driver.id empty
+    assert.match(src, /map2\?\.capability === 'dim'/);
   });
 
   it('wall_dimmer_tuya declares dpMappings + strips phantom humidity', () => {
