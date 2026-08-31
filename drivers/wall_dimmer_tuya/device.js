@@ -218,19 +218,20 @@ class wall_dimmer_tuya extends TuyaSpecificClusterDevice {
           run: async () => {
             if (capability === 'onoff') {
               const ok = await this.writeBool(EF00_DP_MAP.onoff.dp, Boolean(value));
-              if (ok === false) {throw new Error('writeBool soft-fail');}
+              // WHY(P2336): !ok covers false + undefined (PresentSky dead UI)
+              if (!ok) {throw new Error('writeBool soft-fail');}
             } else if (capability === 'dim') {
               const brightness = toTuyaBrightness(value);
               if (brightness > 0 && !this.getCapabilityValue('onoff')) {
                 const okOn = await this.writeBool(EF00_DP_MAP.onoff.dp, true);
-                if (okOn === false) {throw new Error('writeBool soft-fail');}
+                if (!okOn) {throw new Error('writeBool soft-fail');}
                 await this.safeSetCapabilityValue('onoff', true);
               }
               const okDim = await this.writeData32(EF00_DP_MAP.dim.dp, brightness);
-              if (okDim === false) {throw new Error('writeData32 soft-fail');}
+              if (!okDim) {throw new Error('writeData32 soft-fail');}
               if (brightness === 0) {
                 const okOff = await this.writeBool(EF00_DP_MAP.onoff.dp, false);
-                if (okOff === false) {throw new Error('writeBool soft-fail');}
+                if (!okOff) {throw new Error('writeBool soft-fail');}
                 await this.safeSetCapabilityValue('onoff', false);
               }
             }

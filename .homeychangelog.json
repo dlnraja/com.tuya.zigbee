@@ -1362,5 +1362,8 @@
   },
   "5.12.104": {
     "en": "Improved Moes curtain Cover Controller pairing for Tuya EF00 covers."
+  },
+  "5.12.105": {
+    "en": "Fixed Moes TS0044 scene remote and soil sensor pairing; hardened wall dimmer TX failure detection."
   }
 }
