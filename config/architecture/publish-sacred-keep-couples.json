@@ -2,51 +2,335 @@
   "$schema_note": "Couples that MUST survive prepare-publish Zigbee compaction (Athom matrix). mfr+pid+driverId only — never invent pid.",
   "why": "Budget truncation can drop observed mfrs from broad drivers (button_wireless_1 had 31→2 pids). Sacred locks stay pin-first.",
   "couples": [
-    { "mfr": "_TZ3000_mrpevh8p", "pid": "TS0041", "driverId": "button_wireless_1", "note": "P2285 SH-SC07" },
-    { "mfr": "_TZ3000_b4awzgct", "pid": "TS0041", "driverId": "button_wireless_1", "note": "TS0041 sibling" },
-    { "mfr": "_TZ3000_5bpeda8u", "pid": "TS0041", "driverId": "button_wireless_1", "note": "TS0041 sibling" },
-    { "mfr": "_TZE284_m1cvyneb", "pid": "TS0601", "driverId": "wall_dimmer_tuya", "note": "P2138 BSEED" },
-    { "mfr": "_TZE204_m1cvyneb", "pid": "TS0601", "driverId": "wall_dimmer_tuya", "note": "P2138 sibling" },
-    { "mfr": "_TZE200_m1cvyneb", "pid": "TS0601", "driverId": "wall_dimmer_tuya", "note": "P2138 sibling" },
-    { "mfr": "_TZE284_6ocnqlhn", "pid": "TS0601", "driverId": "din_rail_meter", "note": "Tongou DIN" },
-    { "mfr": "_TZE284_60cnqlhn", "pid": "TS0601", "driverId": "din_rail_meter", "note": "P2299 OCR alias of 6ocnqlhn (diag 31e654a4)" },
-    { "mfr": "_TZ3000_zgyzgdua", "pid": "TS0044", "driverId": "scene_switch_4", "note": "meter91 0xFD" },
-    { "mfr": "_TZ3000_k4ej3ww2", "pid": "TS0207", "driverId": "water_leak_sensor", "note": "IAS leak" },
-    { "mfr": "_TZ3000_5k5vh43t", "pid": "TS0207", "driverId": "zigbee_repeater", "note": "not leak" },
-    { "mfr": "_TZ3000_lwthnp7j", "pid": "TS0004", "driverId": "wall_switch_4gang_1way", "note": "Gabriel 4-gang" },
-    { "mfr": "_TZ3000_xffhmvhv", "pid": "TS004F", "driverId": "button_wireless_4", "note": "Nobø" },
-    { "mfr": "_TZE284_nt4pquef", "pid": "TS0601", "driverId": "soil_sensor", "note": "soil EF00" },
-    { "mfr": "HOBEIAN", "pid": "ZG-305Z", "driverId": "switch_2gang", "note": "P2250 couple-scoped" },
-    { "mfr": "HOBEIAN", "pid": "ZG-303Z", "driverId": "soil_sensor", "note": "P2250" },
-    { "mfr": "HOBEIAN", "pid": "ZG-227Z", "driverId": "climate_sensor", "note": "P2250" },
-    { "mfr": "HOBEIAN", "pid": "3315-S", "driverId": "water_leak_sensor", "note": "P2282 Peter water" },
-    { "mfr": "_TZE204_ogkdpgy2", "pid": "TS0601", "driverId": "air_quality_co2", "note": "Elliot #2204 / #531" },
-    { "mfr": "_TZE200_ogkdpgy2", "pid": "TS0601", "driverId": "air_quality_co2", "note": "Elliot CO2 sibling" },
-    { "mfr": "_TZ3218_t9ynfz4x", "pid": "TS0225", "driverId": "motion_sensor_radar_mmwave", "note": "A_Tas #2199 Linptech ES1" },
-    { "mfr": "_TZ3000_kfu8zapd", "pid": "TS0044", "driverId": "button_wireless_4", "note": "Moes 4-btn" },
-    { "mfr": "_TZ3000_xabckq1v", "pid": "TS004F", "driverId": "button_wireless_4", "note": "P2236 soft lock" },
-    { "mfr": "_TZ3000_4upl1fcj", "pid": "TS0041", "driverId": "button_wireless_1", "note": "SunBeech" },
-    { "mfr": "_TZ3000_qeuvnohg", "pid": "TS011F", "driverId": "din_rail_switch", "note": "DIN relay" },
-    { "mfr": "_TZ3000_amdymr7l", "pid": "TS011F", "driverId": "plug_energy_monitor", "note": "BlitzWolf SHP13" },
-    { "mfr": "_TZ3000_nkcobies", "pid": "TS011F", "driverId": "smartplug", "note": "P2236 plug" },
-    { "mfr": "_TZE204_mpbki2zm", "pid": "TS0601", "driverId": "wall_thermostat", "note": "P2300 #532 TYBAC-006 FCU" },
-    { "mfr": "_TZE204_qujphad5", "pid": "TS0601", "driverId": "wall_thermostat", "note": "P2300 FCU sibling" },
-    { "mfr": "_TZ3000_pjb1ua0m", "pid": "TS0203", "driverId": "contact_sensor", "note": "P2300 discussion #100 pressure band" },
-    { "mfr": "_TZE204_clrdrnya", "pid": "TS0601", "driverId": "presence_sensor_radar", "note": "VicHY diag 4217d5e3 mmWave 24G — compact dropped mfr" },
-    { "mfr": "_TZE200_clrdrnya", "pid": "TS0601", "driverId": "presence_sensor_radar", "note": "clrdrnya TZE200 sibling" },
-    { "mfr": "_TZE284_clrdrnya", "pid": "TS0601", "driverId": "presence_sensor_radar", "note": "clrdrnya TZE284 sibling" },
-    { "mfr": "HOBEIAN", "pid": "ZG-204ZL", "driverId": "presence_sensor_radar", "note": "Cam forum ZG-204ZL motion — HOBEIAN mfr stripped by compact" },
-    { "mfr": "HOBEIAN", "pid": "ZG-204ZM", "driverId": "presence_sensor_radar", "note": "HOBEIAN radar sibling" },
-    { "mfr": "_TZE200_SHKXSGIS", "pid": "TS0601", "driverId": "wall_switch_4_gang_tuya", "note": "Gabriel/Zemismart Moes 4-gang Z2M TS0601" },
-    { "mfr": "_TZE204_SHKXSGIS", "pid": "TS0601", "driverId": "wall_switch_4_gang_tuya", "note": "SHKXSGIS TZE204 sibling" },
-    { "mfr": "_TZE284_SHKXSGIS", "pid": "TS0601", "driverId": "wall_switch_4_gang_tuya", "note": "SHKXSGIS TZE284 sibling" },
-    { "mfr": "_TZE204_AAGRXLBD", "pid": "TS0601", "driverId": "wall_switch_4_gang_tuya", "note": "Gabriel #2173 Zemismart 4-gang MCU" },
-    { "mfr": "_TZE284_AAGRXLBD", "pid": "TS0601", "driverId": "wall_switch_4_gang_tuya", "note": "AAGRXLBD TZE284 sibling" },
-    { "mfr": "_TZ3000_VJHCENZO", "pid": "TS0003", "driverId": "wall_switch_3gang_1way", "note": "Gabriel Zemismart 3-gang ZCL" },
-    { "mfr": "_TZ3000_QXCNWV26", "pid": "TS0003", "driverId": "wall_switch_3gang_1way", "note": "Gabriel 3-gang ZCL" },
-    { "mfr": "_TZ3000_EQSAIR32", "pid": "TS0003", "driverId": "wall_switch_3gang_1way", "note": "Gabriel 3-gang ZCL" },
-    { "mfr": "_TZ3000_F09J9QJB", "pid": "TS0003", "driverId": "wall_switch_3gang_1way", "note": "Gabriel 3-gang ZCL" },
-    { "mfr": "_TZ3000_FAWK5XJV", "pid": "TS0003", "driverId": "wall_switch_3gang_1way", "note": "Gabriel 3-gang ZCL" },
-    { "mfr": "_TZ3000_OK0GGPK7", "pid": "TS0003", "driverId": "wall_switch_3gang_1way", "note": "Gabriel 3-gang ZCL" }
+    {
+      "mfr": "_TZ3000_mrpevh8p",
+      "pid": "TS0041",
+      "driverId": "button_wireless_1",
+      "note": "P2285 SH-SC07"
+    },
+    {
+      "mfr": "_TZ3000_b4awzgct",
+      "pid": "TS0041",
+      "driverId": "button_wireless_1",
+      "note": "TS0041 sibling"
+    },
+    {
+      "mfr": "_TZ3000_5bpeda8u",
+      "pid": "TS0041",
+      "driverId": "button_wireless_1",
+      "note": "P2347 Cam soft smart-button hypothesis NEED_DIAG (hist INT-010)"
+    },
+    {
+      "mfr": "_TZE284_m1cvyneb",
+      "pid": "TS0601",
+      "driverId": "wall_dimmer_tuya",
+      "note": "P2138 BSEED"
+    },
+    {
+      "mfr": "_TZE204_m1cvyneb",
+      "pid": "TS0601",
+      "driverId": "wall_dimmer_tuya",
+      "note": "P2138 sibling"
+    },
+    {
+      "mfr": "_TZE200_m1cvyneb",
+      "pid": "TS0601",
+      "driverId": "wall_dimmer_tuya",
+      "note": "P2138 sibling"
+    },
+    {
+      "mfr": "_TZE284_6ocnqlhn",
+      "pid": "TS0601",
+      "driverId": "din_rail_meter",
+      "note": "Tongou DIN"
+    },
+    {
+      "mfr": "_TZE284_60cnqlhn",
+      "pid": "TS0601",
+      "driverId": "din_rail_meter",
+      "note": "P2299 OCR alias of 6ocnqlhn (diag 31e654a4)"
+    },
+    {
+      "mfr": "_TZ3000_zgyzgdua",
+      "pid": "TS0044",
+      "driverId": "scene_switch_4",
+      "note": "meter91 0xFD"
+    },
+    {
+      "mfr": "_TZ3000_k4ej3ww2",
+      "pid": "TS0207",
+      "driverId": "water_leak_sensor",
+      "note": "IAS leak"
+    },
+    {
+      "mfr": "_TZ3000_5k5vh43t",
+      "pid": "TS0207",
+      "driverId": "zigbee_repeater",
+      "note": "not leak"
+    },
+    {
+      "mfr": "_TZ3000_lwthnp7j",
+      "pid": "TS0004",
+      "driverId": "wall_switch_4gang_1way",
+      "note": "P2347 Gabriel 4-gang ZCL touch"
+    },
+    {
+      "mfr": "_TZ3000_xffhmvhv",
+      "pid": "TS004F",
+      "driverId": "button_wireless_4",
+      "note": "Nobø"
+    },
+    {
+      "mfr": "_TZE284_nt4pquef",
+      "pid": "TS0601",
+      "driverId": "soil_sensor",
+      "note": "soil EF00"
+    },
+    {
+      "mfr": "HOBEIAN",
+      "pid": "ZG-305Z",
+      "driverId": "switch_2gang",
+      "note": "P2250 couple-scoped"
+    },
+    {
+      "mfr": "HOBEIAN",
+      "pid": "ZG-303Z",
+      "driverId": "soil_sensor",
+      "note": "P2250"
+    },
+    {
+      "mfr": "HOBEIAN",
+      "pid": "ZG-227Z",
+      "driverId": "climate_sensor",
+      "note": "P2250"
+    },
+    {
+      "mfr": "HOBEIAN",
+      "pid": "3315-S",
+      "driverId": "water_leak_sensor",
+      "note": "P2282 Peter water"
+    },
+    {
+      "mfr": "_TZE204_ogkdpgy2",
+      "pid": "TS0601",
+      "driverId": "air_quality_co2",
+      "note": "Elliot #2204 / #531"
+    },
+    {
+      "mfr": "_TZE200_ogkdpgy2",
+      "pid": "TS0601",
+      "driverId": "air_quality_co2",
+      "note": "Elliot CO2 sibling"
+    },
+    {
+      "mfr": "_TZ3218_t9ynfz4x",
+      "pid": "TS0225",
+      "driverId": "motion_sensor_radar_mmwave",
+      "note": "A_Tas #2199 Linptech ES1"
+    },
+    {
+      "mfr": "_TZ3000_kfu8zapd",
+      "pid": "TS0044",
+      "driverId": "button_wireless_4",
+      "note": "Moes 4-btn"
+    },
+    {
+      "mfr": "_TZ3000_xabckq1v",
+      "pid": "TS004F",
+      "driverId": "button_wireless_4",
+      "note": "P2236 soft lock"
+    },
+    {
+      "mfr": "_TZ3000_4upl1fcj",
+      "pid": "TS0041",
+      "driverId": "button_wireless_1",
+      "note": "SunBeech"
+    },
+    {
+      "mfr": "_TZ3000_qeuvnohg",
+      "pid": "TS011F",
+      "driverId": "din_rail_switch",
+      "note": "DIN relay"
+    },
+    {
+      "mfr": "_TZ3000_amdymr7l",
+      "pid": "TS011F",
+      "driverId": "plug_energy_monitor",
+      "note": "BlitzWolf SHP13"
+    },
+    {
+      "mfr": "_TZ3000_nkcobies",
+      "pid": "TS011F",
+      "driverId": "smartplug",
+      "note": "P2236 plug"
+    },
+    {
+      "mfr": "_TZE204_mpbki2zm",
+      "pid": "TS0601",
+      "driverId": "wall_thermostat",
+      "note": "P2300 #532 TYBAC-006 FCU"
+    },
+    {
+      "mfr": "_TZE204_qujphad5",
+      "pid": "TS0601",
+      "driverId": "wall_thermostat",
+      "note": "P2300 FCU sibling"
+    },
+    {
+      "mfr": "_TZ3000_pjb1ua0m",
+      "pid": "TS0203",
+      "driverId": "contact_sensor",
+      "note": "P2300 discussion #100 pressure band"
+    },
+    {
+      "mfr": "_TZE204_clrdrnya",
+      "pid": "TS0601",
+      "driverId": "presence_sensor_radar",
+      "note": "VicHY diag 4217d5e3 mmWave 24G — compact dropped mfr"
+    },
+    {
+      "mfr": "_TZE200_clrdrnya",
+      "pid": "TS0601",
+      "driverId": "presence_sensor_radar",
+      "note": "clrdrnya TZE200 sibling"
+    },
+    {
+      "mfr": "_TZE284_clrdrnya",
+      "pid": "TS0601",
+      "driverId": "presence_sensor_radar",
+      "note": "clrdrnya TZE284 sibling"
+    },
+    {
+      "mfr": "HOBEIAN",
+      "pid": "ZG-204ZL",
+      "driverId": "presence_sensor_radar",
+      "note": "Cam forum ZG-204ZL motion — HOBEIAN mfr stripped by compact"
+    },
+    {
+      "mfr": "HOBEIAN",
+      "pid": "ZG-204ZM",
+      "driverId": "presence_sensor_radar",
+      "note": "HOBEIAN radar sibling"
+    },
+    {
+      "mfr": "_TZE200_SHKXSGIS",
+      "pid": "TS0601",
+      "driverId": "wall_switch_4_gang_tuya",
+      "note": "P2347 HS 4-gang MCU"
+    },
+    {
+      "mfr": "_TZE204_SHKXSGIS",
+      "pid": "TS0601",
+      "driverId": "wall_switch_4_gang_tuya",
+      "note": "P2347 soft OEM sibling (HS lists TZE200/284)"
+    },
+    {
+      "mfr": "_TZE284_SHKXSGIS",
+      "pid": "TS0601",
+      "driverId": "wall_switch_4_gang_tuya",
+      "note": "P2347 HS 4-gang MCU"
+    },
+    {
+      "mfr": "_TZE204_AAGRXLBD",
+      "pid": "TS0601",
+      "driverId": "wall_switch_4_gang_tuya",
+      "note": "P2347 Z2M 4-gang MCU"
+    },
+    {
+      "mfr": "_TZE284_AAGRXLBD",
+      "pid": "TS0601",
+      "driverId": "wall_switch_4_gang_tuya",
+      "note": "P2347 soft OEM sibling of TZE204_AAGRXLBD"
+    },
+    {
+      "mfr": "_TZ3000_VJHCENZO",
+      "pid": "TS0003",
+      "driverId": "wall_switch_3gang_1way",
+      "note": "P2347 Gabriel 3-gang ZCL"
+    },
+    {
+      "mfr": "_TZ3000_QXCNWV26",
+      "pid": "TS0003",
+      "driverId": "wall_switch_3gang_1way",
+      "note": "P2347 Gabriel 3-gang ZCL"
+    },
+    {
+      "mfr": "_TZ3000_EQSAIR32",
+      "pid": "TS0003",
+      "driverId": "wall_switch_3gang_1way",
+      "note": "P2347 Z2M TB26-3"
+    },
+    {
+      "mfr": "_TZ3000_F09J9QJB",
+      "pid": "TS0003",
+      "driverId": "wall_switch_3gang_1way",
+      "note": "P2347 Gabriel HS 3-gang"
+    },
+    {
+      "mfr": "_TZ3000_FAWK5XJV",
+      "pid": "TS0003",
+      "driverId": "wall_switch_3gang_1way",
+      "note": "P2347 Z2M 3-gang"
+    },
+    {
+      "mfr": "_TZ3000_OK0GGPK7",
+      "pid": "TS0003",
+      "driverId": "wall_switch_3gang_1way",
+      "note": "P2347 Z2M 3-gang backlight"
+    },
+    {
+      "mfr": "_TZ3000_OVYAISIP",
+      "pid": "TS0001",
+      "driverId": "wall_switch_1gang_1way",
+      "note": "P2347 Gabriel HS TB25-1 only"
+    },
+    {
+      "mfr": "_TZ3000_PK8TGTDB",
+      "pid": "TS0001",
+      "driverId": "wall_switch_1gang_1way",
+      "note": "P2347 Gabriel HS 1-gang"
+    },
+    {
+      "mfr": "_TZ3000_YWUBFUVT",
+      "pid": "TS0002",
+      "driverId": "wall_switch_2gang_1way",
+      "note": "P2347 Z2M TB26-2"
+    },
+    {
+      "mfr": "_TZ3000_KGXEJ1DV",
+      "pid": "TS0002",
+      "driverId": "wall_switch_2gang_1way",
+      "note": "P2347 Gabriel HS 2-gang"
+    },
+    {
+      "mfr": "_TZ3000_JJDKHUEQ",
+      "pid": "TS0002",
+      "driverId": "wall_switch_2gang_1way",
+      "note": "P2347 Gabriel HS 2-gang touch"
+    },
+    {
+      "mfr": "_TZ3000_YERVJNLJ",
+      "pid": "TS0003",
+      "driverId": "wall_switch_3gang_1way",
+      "note": "P2347 Gabriel HS / Johan #1051"
+    },
+    {
+      "mfr": "_TZE200_R731ZLXK",
+      "pid": "TS0601",
+      "driverId": "wall_switch_6_gang_tuya",
+      "note": "P2347 Blakadder TB26-6"
+    },
+    {
+      "mfr": "_TZE284_R731ZLXK",
+      "pid": "TS0601",
+      "driverId": "wall_switch_6_gang_tuya",
+      "note": "P2347 Z2M 6-gang"
+    },
+    {
+      "mfr": "_TZE204_R731ZLXK",
+      "pid": "TS0601",
+      "driverId": "wall_switch_6_gang_tuya",
+      "note": "P2347 soft OEM sibling R731ZLXK"
+    }
   ]
 }
