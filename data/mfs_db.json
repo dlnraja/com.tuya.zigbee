@@ -32,7 +32,7 @@
       "realMfrsAdded": 5,
       "details": "tmp/synthetic-resolution.json + tmp/pruned21-resolution.json"
     },
-    "lastAlignedAt": "2026-08-30T08:26:35.721Z",
+    "lastAlignedAt": "2026-08-31T06:29:58.313Z",
     "alignTool": "align-mfs-db-intelligent@P169"
   },
   "sources": {
@@ -137734,16 +137734,13 @@
     "source": "auto-sync|adjudicated-z2m-arbiter"
   },
   "_TZ3000_UFHTXR59": {
-    "driverId": "wall_switch_4_gang",
-    "source": "couple-exclusive",
+    "driverId": "scene_switch_4",
+    "source": "registry:p2328-ts0044-remotes-not-wall-switch",
     "modelIds": [
-      "SNZB-01M",
-      "TS0014",
-      "TS0044",
-      "TS004F"
+      "TS0044"
     ],
-    "pid": "SNZB-01M",
-    "modelIdsCount": 4
+    "pid": "TS0044",
+    "modelIdsCount": 1
   },
   "_TZ3000_URI7OADN": {
     "driverId": "button_wireless_4",
@@ -137758,16 +137755,13 @@
     "modelIdsCount": 4
   },
   "_TZ3000_VP6CLF9D": {
-    "driverId": "wall_switch_4_gang",
-    "source": "couple-exclusive",
+    "driverId": "scene_switch_4",
+    "source": "registry:p2328-ts0044-remotes-not-wall-switch",
     "modelIds": [
-      "SNZB-01M",
-      "TS0014",
-      "TS0044",
-      "TS004F"
+      "TS0044"
     ],
-    "pid": "SNZB-01M",
-    "modelIdsCount": 4
+    "pid": "TS0044",
+    "modelIdsCount": 1
   },
   "_TZ3040_FWXUZCF4": {
     "driverId": "sensor_motion_presence",
@@ -181246,29 +181240,13 @@
     "modelIdsCount": 17
   },
   "_TZ3000_ABCI1HIU": {
-    "driverId": "radiator_valve",
-    "source": "auto-sync",
+    "driverId": "scene_switch_4",
+    "source": "registry:p2328-ts0044-remotes-not-wall-switch",
     "modelIds": [
-      "014G2461",
-      "014G2463",
-      "SEA801-Zigbee",
-      "SPZB0001",
-      "SPZB0003",
-      "STZB402",
-      "STZB403",
-      "TRV601",
-      "TRV602",
-      "TRVZB",
-      "TS0601",
-      "TV01-ZB",
-      "TV02-ZB",
-      "Zen-01",
-      "eTRV0100",
-      "lumi.airrtc.agl001",
-      "lumi.airrtc.vrfegl01"
+      "TS0044"
     ],
-    "pid": "014G2461",
-    "modelIdsCount": 17
+    "pid": "TS0044",
+    "modelIdsCount": 1
   },
   "_TZ3000_C3G3PUPU": {
     "driverId": "radiator_valve",
@@ -184992,7 +184970,7 @@
   },
   "_tz3000_wkai4ga5": {
     "driverId": "scene_switch_4",
-    "source": "p2328",
+    "source": "registry:p2328-wkai4ga5-ts0044-scene",
     "modelIds": [
       "TS0044"
     ],
@@ -327175,7 +327153,8 @@
     ],
     "source": "registry:p2244-xffhmvhv-nobo",
     "confidence": 0.95,
-    "modelIdsCount": 1
+    "modelIdsCount": 1,
+    "pid": "TS004F"
   },
   "_TZ3210_qkj7rujp": {
     "driverId": "lcdtemphumidsensor",
