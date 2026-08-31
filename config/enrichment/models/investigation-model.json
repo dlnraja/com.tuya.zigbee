@@ -42,6 +42,7 @@
     "resolvedDiag": "Diagnostic excerpt contains mfr+pid or driver UUID",
     "resolvedHeuristic": "Heuristic hard prefer (≥92) after symptom/prefix/peer boost — still verify on re-pair",
     "softHypothesis": "Predictive soft rank — observe only; never catalog invent / never sacred lock",
+    "alreadyInCatalog": "Mfr already in driver.compose — tip update + re-pair; no pid invent (P2358)",
     "ambiguousMultiPid": "Ranked candidates kept — CI continues without waiting for user",
     "stillMissing": "Observe RX / clusters — do not invent pid from tile name",
     "fixShipped": "Code fix already on master Test — user update + re-pair only"
