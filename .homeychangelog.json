@@ -1368,5 +1368,11 @@
   },
   "5.12.106": {
     "en": "Improved TS0044 scene remote routing; fixed wall remote driver stealing battery scene switches."
+  },
+  "5.12.108": {
+    "en": "Reliability: promote uses uploaded Athom version (P2355); TS004F event mode."
+  },
+  "5.12.109": {
+    "en": "Reliability: promote uses uploaded Athom version (P2355); TS004F event mode."
   }
 }

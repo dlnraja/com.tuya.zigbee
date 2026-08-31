@@ -350,7 +350,13 @@ async function main() {
   }
 
   const app = JSON.parse(fs.readFileSync(path.join(ROOT, 'app.json'), 'utf8'));
-  const version = normalizeVersion(app.version);
+  // WHY(P2355): prefer uploaded version from publish job output over checkout app.json
+  const version = normalizeVersion(
+    process.env.HOMEY_EXPECTED_VERSION
+      || process.env.HOMEY_APP_VERSION
+      || process.env.EXPECTED_APP_VERSION
+      || app.version,
+  );
   log('## Verify Test Version');
   log(`Expected: v${version}`);
 
