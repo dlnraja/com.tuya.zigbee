@@ -1,8 +1,14 @@
 {
+  "wakeInstruction": {
+    "en": "Wake up the radiator valve by pressing the menu button, then start Device Updates.",
+    "fr": "Réveillez le thermostat en appuyant sur le bouton menu, puis lancez Device Updates.",
+    "nl": "Wake de radiatorthermostaat op door op de menuknop te drukken, start daarna Device Updates."
+  },
   "updates": [
     {
       "changelog": {
-        "en": "OEM Tuya firmware v87 (si32 UART TRV module, Koenkk zigbee-OTA, SHA512-verified)"
+        "en": "OEM Tuya firmware v87 for the si32 UART TRV module (Koenkk zigbee-OTA, SHA512-verified). Install via Homey Device Updates (Settings → Device Updates) on Homey ≥13.2 / Mobile ≥9.10.",
+        "fr": "Firmware OEM v87 module TRV UART (Koenkk zigbee-OTA, SHA512 vérifié). Installez via Homey Device Updates — Homey ≥13.2 / Mobile ≥9.10."
       },
       "device": {
         "manufacturerName": [
@@ -23,9 +29,5 @@
         }
       ]
     }
-  ],
-  "wakeInstruction": {
-    "en": "Wake up the radiator valve by pressing the menu button.",
-    "fr": "Réveillez le thermostat en appuyant sur le bouton menu."
-  }
+  ]
 }
