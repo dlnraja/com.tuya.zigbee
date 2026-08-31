@@ -1,7 +1,7 @@
 {
   "_comment": "Generated from .homeycompose/app.json. STABLE channel — only bug fixes applied.",
   "id": "com.dlnraja.tuya.zigbee.stable",
-  "version": "5.12.104",
+  "version": "5.12.105",
   "compatibility": ">=12.2.0",
   "platforms": [
     "local"
@@ -196807,11 +196807,7 @@
             "clusters": [
               0,
               1,
-              3,
-              6,
-              4096,
-              57344,
-              61184
+              6
             ],
             "bindings": [
               6
@@ -196819,9 +196815,7 @@
           },
           "2": {
             "clusters": [
-              0,
-              6,
-              57344
+              6
             ],
             "bindings": [
               6
@@ -196829,9 +196823,7 @@
           },
           "3": {
             "clusters": [
-              0,
-              6,
-              57344
+              6
             ],
             "bindings": [
               6
@@ -196839,9 +196831,7 @@
           },
           "4": {
             "clusters": [
-              0,
-              6,
-              57344
+              6
             ],
             "bindings": [
               6
@@ -213821,6 +213811,8 @@
           "1": {
             "clusters": [
               0,
+              4,
+              5,
               61184
             ]
           }
