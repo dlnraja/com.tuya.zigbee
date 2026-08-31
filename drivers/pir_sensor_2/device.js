@@ -22,8 +22,8 @@ class pir_sensor_2 extends TuyaZigbeeDevice {
 
 	onIASZoneStatusChangeNotification({zoneStatus, extendedStatus, zoneId, delay,}) {
 		this.log('IASZoneStatusChangeNotification received:', zoneStatus, extendedStatus, zoneId, delay);
-		this.safeSetCapabilityValue('alarm_motion', zoneStatus.alarm1).catch(this.error);
-		this.safeSetCapabilityValue('alarm_battery', zoneStatus.battery).catch(this.error);
+		this.safeSetCapabilityValue('alarm_motion', zoneStatus.alarm1).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
+		this.safeSetCapabilityValue('alarm_battery', zoneStatus.battery).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
 	}
 
 	onDeleted(){

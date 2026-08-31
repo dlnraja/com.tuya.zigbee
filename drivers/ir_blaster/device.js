@@ -210,7 +210,7 @@ class IrBlasterDevice extends ZigBeeDevice {
         }
         this.log(`Learn mode attr: ${value ? 'ON' : 'OFF'}`);
         this._learningState = value ? LEARNING_STATES.LEARNING : LEARNING_STATES.IDLE;
-        this['safeSetCapabilityValue']('onoff', value).catch(this.error);
+        this['safeSetCapabilityValue']('onoff', value).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
         this._triggerLearningStateChanged(this._learningState);
       });
     }
@@ -1027,7 +1027,7 @@ class IrBlasterDevice extends ZigBeeDevice {
 
     // If we have a pending learn operation, store it with name
     if (this._pendingLearnName) {
-      this.storeLearnedCode(this._pendingLearnName, code).catch(this.error);
+      this.storeLearnedCode(this._pendingLearnName, code).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
       this._pendingLearnName = null;
     }
   }
@@ -1043,7 +1043,7 @@ class IrBlasterDevice extends ZigBeeDevice {
     this._triggerLearningStateChanged(status);
 
     if (status === LEARNING_STATES.SUCCESS) {
-      this.readLastLearnedCode().catch(this.error);
+      this.readLastLearnedCode().catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
     }
   }
 

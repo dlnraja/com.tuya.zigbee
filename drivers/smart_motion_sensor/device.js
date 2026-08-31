@@ -48,8 +48,8 @@ class smart_motion_sensor extends TuyaZigbeeDevice {
 	onZoneStatusAttributeReport(status) {
 		this.log("Motion status: ", status.alarm1);
 		this.log("Tamper status: ", status.tamper);
-		this.safeSetCapabilityValue('alarm_motion', status.alarm1).catch(this.error);
-		this.safeSetCapabilityValue('alarm_tamper', status.tamper).catch(this.error);
+		this.safeSetCapabilityValue('alarm_motion', status.alarm1).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
+		this.safeSetCapabilityValue('alarm_tamper', status.tamper).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
 	}
 
 	onDeleted(){

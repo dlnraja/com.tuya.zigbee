@@ -32,7 +32,7 @@ class christmas_lights extends TuyaSpecificClusterDevice {
                     return this.setColor({});
                 case 'white':
                     // Update light_saturation such that color in App is white
-                    await this['safeSetCapabilityValue']('light_saturation', 0).catch(this.error);
+                    await this['safeSetCapabilityValue']('light_saturation', 0).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
                     return this.setWhiteDim({});
                 case 'effect':
                     return this.writeString(6,'0e32ff0000fe7023ffc836d4ff421efe4312d3fc004ef9e80ff9');
@@ -55,7 +55,7 @@ class christmas_lights extends TuyaSpecificClusterDevice {
         // Handler for color
         this.registerMultipleCapabilityListener(['light_hue','light_saturation'],(values,options) => {
             // When choosing a color, actually switch to color mode
-            this.safeSetCapabilityValue('lidl_xmas_mode','color').catch(this.error);
+            this.safeSetCapabilityValue('lidl_xmas_mode','color').catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
             // Then set the color based on newly selected value
             return this.setColor(values);
         },500);
@@ -101,7 +101,7 @@ class christmas_lights extends TuyaSpecificClusterDevice {
     async StartEffect(args) {
         // Switch to effect mode
         await this.writeEnum(2,2);
-        this.safeSetCapabilityValue('lidl_xmas_mode', 'effect').catch(this.error);
+        this.safeSetCapabilityValue('lidl_xmas_mode', 'effect').catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
         let es = this.effectMap[args.effect_name];
         const speed = String(args.effect_speed);
         if (speed.length === 1) es += '0';

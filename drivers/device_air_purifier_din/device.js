@@ -64,19 +64,19 @@ class DinRailMeterDevice extends ZigBeeDevice {
       emCluster.on('attr.activePower', (value) => {
         const power =((value * safeParse)(this._powerScale) * 10);
         this.log(`[EM] Power: ${power}W`);
-        this.safeSetCapabilityValue('measure_power', power).catch(this.error);
+        this.safeSetCapabilityValue('measure_power', power).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
       });
 
       emCluster.on('attr.rmsVoltage', (value) => {
         const voltage = safeMultiply(value, ENERGY_DIVISORS.measure_voltage.divisor);
         this.log(`[EM] Voltage: ${voltage}V`);
-        this.safeSetCapabilityValue('measure_voltage', voltage).catch(this.error);
+        this.safeSetCapabilityValue('measure_voltage', voltage).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
       });
 
       emCluster.on('attr.rmsCurrent', (value) => {
         const current = value * ENERGY_DIVISORS.measure_current.divisor;
         this.log(`[EM] Current: ${current}A`);
-        this.safeSetCapabilityValue('measure_current', current).catch(this.error);
+        this.safeSetCapabilityValue('measure_current', current).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
       });
     }
 
@@ -87,7 +87,7 @@ class DinRailMeterDevice extends ZigBeeDevice {
       meteringCluster.on('attr.currentSummationDelivered', (value) => {
         const energy = value * ENERGY_DIVISORS.metering_summation.divisor;
         this.log(`[METERING] Energy: ${energy}kWh`);
-        this.safeSetCapabilityValue('meter_power', energy).catch(this.error);
+        this.safeSetCapabilityValue('meter_power', energy).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
       });
     }
   }
@@ -126,39 +126,39 @@ class DinRailMeterDevice extends ZigBeeDevice {
     case 1: //Total energy consumed (kWh*100)
       const energy = value * ENERGY_DIVISORS.meter_power.divisor;
       this.log(`[DP1] Energy consumed: ${energy}kWh`);
-      this.safeSetCapabilityValue('meter_power', energy).catch(this.error);
+      this.safeSetCapabilityValue('meter_power', energy).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
       break;
 
     case 6: //Total energy exported (kWh*100) - for bidirectional meters
       if (this._bidirectional && this.hasCapability('meter_power.exported')) {
         const exported = value * ENERGY_DIVISORS.meter_power.divisor;
         this.log(`[DP6] Energy exported: ${exported}kWh`);
-        this.safeSetCapabilityValue('meter_power.exported', exported).catch(this.error);
+        this.safeSetCapabilityValue('meter_power.exported', exported).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
       }
       break;
 
     case 18: // Power (W)
       const power =safeMultiply(value, this)._powerScale;
       this.log(`[DP18] Power: ${power}W`);
-      this.safeSetCapabilityValue('measure_power', power).catch(this.error);
+      this.safeSetCapabilityValue('measure_power', power).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
       break;
 
     case 19: //Voltage (V*10)
       const voltage = safeMultiply(value, ENERGY_DIVISORS.measure_voltage.divisor);
       this.log(`[DP19] Voltage: ${voltage}V`);
-      this.safeSetCapabilityValue('measure_voltage', voltage).catch(this.error);
+      this.safeSetCapabilityValue('measure_voltage', voltage).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
       break;
 
     case 20: //Current (A*1000)
       const current = value * ENERGY_DIVISORS.measure_current.divisor;
       this.log(`[DP20] Current: ${current}A`);
-      this.safeSetCapabilityValue('measure_current', current).catch(this.error);
+      this.safeSetCapabilityValue('measure_current', current).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
       break;
 
     case 17: // Total current for some models
       const totalCurrent = value * ENERGY_DIVISORS.measure_current.divisor;
       this.log(`[DP17] Total current: ${totalCurrent}A`);
-      this.safeSetCapabilityValue('measure_current', totalCurrent).catch(this.error);
+      this.safeSetCapabilityValue('measure_current', totalCurrent).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
       break;
 
     case 101: // Power factor (some models)

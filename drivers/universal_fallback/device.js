@@ -106,7 +106,7 @@ class UniversalFallbackDevice extends TuyaUnifiedDevice {
         const ep = cap.includes('.ep') ? parseInt(cap.split('.ep')[1]) : 1;
         const cluster = this.zclNode.endpoints[ep]?.clusters.onOff;
         if (cluster) {
-          return value ? cluster.setOn().catch(this.error) : cluster.setOff().catch(this.error);
+          return value ? cluster.setOn().catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} })) : cluster.setOff().catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
         }
       });
     }
@@ -116,7 +116,7 @@ class UniversalFallbackDevice extends TuyaUnifiedDevice {
         const ep = cap.includes('.ep') ? parseInt(cap.split('.ep')[1]) : 1;
         const cluster = this.zclNode.endpoints[ep]?.clusters.levelControl;
         if (cluster) {
-          return cluster.moveToLevel({ level: Math.round(value * 254), moveTime: 0 }).catch(this.error);
+          return cluster.moveToLevel({ level: Math.round(value * 254), moveTime: 0 }).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
         }
       });
     }

@@ -99,25 +99,25 @@ class temphumidsensor5 extends TuyaSpecificClusterDevice {
 		const humidityOffset = this.getSetting('humidity_offset') || 0;
 		const parsedValue = measuredValue;
 		this.log('measure_humidity | relative humidity: ', parsedValue, ' + humidity offset', humidityOffset);
-		this.safeSetCapabilityValue('measure_humidity', parsedValue + humidityOffset).catch(this.error);
+		this.safeSetCapabilityValue('measure_humidity', parsedValue + humidityOffset).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
 	}
 
 	reportTemperatureCapacity(measuredValue) {
 		const temperatureOffset = this.getSetting('temperature_offset') || 0;
 		const parsedValue = measuredValue / 10;
 		this.log('measure_temperature | temperature: ' , parsedValue, ' + temperature offset', temperatureOffset);
-		this.safeSetCapabilityValue('measure_temperature', parsedValue + temperatureOffset).catch(this.error);
+		this.safeSetCapabilityValue('measure_temperature', parsedValue + temperatureOffset).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
 	}
 
 	reportBatteryPercentageCapacity(measuredValue) {
 		const parsedValue = measuredValue;
 		this.log('measure_battery | battery percentage remaining: ', parsedValue, '%');
-		this.safeSetCapabilityValue('measure_battery', parsedValue).catch(this.error);
+		this.safeSetCapabilityValue('measure_battery', parsedValue).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
 	}
 
 	reportAlarmBatteryCapacity(measuredValue) { //true or false
 		this.log('alarm_battery | battery alarm: ', measuredValue);
-		this.safeSetCapabilityValue('alarm_battery', measuredValue).catch(this.error);
+		this.safeSetCapabilityValue('alarm_battery', measuredValue).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
 	}
 
 	processReporting(data) {

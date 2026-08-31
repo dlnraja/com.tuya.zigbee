@@ -61,7 +61,7 @@ class PetFeederDevice extends TuyaZigbeeDevice {
     switch (dp) {
     case 6: // Food level alarm
       if (this.hasCapability('alarm_generic')) {
-        this.safeSetCapabilityValue('alarm_generic', !!value).catch(this.error);
+        this.safeSetCapabilityValue('alarm_generic', !!value).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
       }
       break;
 

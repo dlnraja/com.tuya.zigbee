@@ -165,22 +165,22 @@ class FanControllerDevice extends ZigBeeDevice {
     switch (dp) {
       case 1: { // On/Off
         const wasOn = this.getCapabilityValue('onoff');
-        await this['safeSetCapabilityValue']('onoff', !!value).catch(this.error);
+        await this['safeSetCapabilityValue']('onoff', !!value).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
         if (!!value && !wasOn) {
           const trigger = this.homey.flow.getDeviceTriggerCard('fan_controller_turned_on');
-          if (trigger) {trigger.trigger(this).catch(this.error);}
+          if (trigger) {trigger.trigger(this).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));}
         } else if (!value && wasOn) {
           const trigger = this.homey.flow.getDeviceTriggerCard('fan_controller_turned_off');
-          if (trigger) {trigger.trigger(this).catch(this.error);}
+          if (trigger) {trigger.trigger(this).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));}
         }
         break;
       }
 
       case 3: { // Speed (0-4)
         const dim = value / 4;
-        await this['safeSetCapabilityValue']('dim', dim).catch(this.error);
+        await this['safeSetCapabilityValue']('dim', dim).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
         const trigger = this.homey.flow.getDeviceTriggerCard('fan_controller_speed_changed');
-        if (trigger) {trigger.trigger(this, { speed: Math.round(dim * 100) }).catch(this.error);}
+        if (trigger) {trigger.trigger(this, { speed: Math.round(dim * 100) }).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));}
         break;
       }
 

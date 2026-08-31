@@ -75,7 +75,7 @@ class PowerClampMeterDevice extends ZigBeeDevice {
     if (profile === 'pj1203a') {
       if (this.hasCapability('measure_power.phase3')) {
         this.log('[METER] 2-channel bidirectional profile detected. Removing Phase 3 capability.');
-        await this.removeCapability('measure_power.phase3').catch(this.error);
+        await this.removeCapability('measure_power.phase3').catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
       }
     }
     this.log(`[METER] v5.7.9  Ready (profile: ${profile}, mfr: ${this._cachedMfr || 'unknown'})`);
@@ -90,15 +90,15 @@ class PowerClampMeterDevice extends ZigBeeDevice {
       this.log('[EM] Electrical Measurement cluster available');
 
       emCluster.on('attr.activePower', (value) => {
-        this.safeSetCapabilityValue('measure_power', safeMultiply(value, 10)).catch(this.error);
+        this.safeSetCapabilityValue('measure_power', safeMultiply(value, 10)).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
       });
 
       emCluster.on('attr.rmsVoltage', (value) => {
-        this.safeSetCapabilityValue('measure_voltage', safeMultiply(value, 10)).catch(this.error);
+        this.safeSetCapabilityValue('measure_voltage', safeMultiply(value, 10)).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
       });
 
       emCluster.on('attr.rmsCurrent', (value) => {
-        this.safeSetCapabilityValue('measure_current', safeMultiply(safeDivide(value, 1000), this._ctRatio)).catch(this.error);
+        this.safeSetCapabilityValue('measure_current', safeMultiply(safeDivide(value, 1000), this._ctRatio)).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
       });
     }
   }
@@ -217,7 +217,7 @@ class PowerClampMeterDevice extends ZigBeeDevice {
       case 101: // Power A (W ÷ 10)
         const powerA = safeDivide(value, 10);
         if (this.hasCapability('measure_power.phase1')) {
-          this.safeSetCapabilityValue('measure_power.phase1', powerA).catch(this.error);
+          this.safeSetCapabilityValue('measure_power.phase1', powerA).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
         }
         this._powerA = powerA;
         this.log(`[PJ1203A]  Power A: ${powerA} W`);
@@ -237,7 +237,7 @@ class PowerClampMeterDevice extends ZigBeeDevice {
       case 105: // Power B (W ÷ 10)
         const powerB = safeDivide(value, 10);
         if (this.hasCapability('measure_power.phase2')) {
-          this.safeSetCapabilityValue('measure_power.phase2', powerB).catch(this.error);
+          this.safeSetCapabilityValue('measure_power.phase2', powerB).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
         }
         this._powerB = powerB;
         this.log(`[PJ1203A]  Power B: ${powerB} W`);
@@ -268,44 +268,44 @@ class PowerClampMeterDevice extends ZigBeeDevice {
 
       case 110: // Power factor A (÷100)
         if (this.hasCapability('measure_power_factor')) {
-          this.safeSetCapabilityValue('measure_power_factor', safeDivide(value, 100)).catch(this.error);
+          this.safeSetCapabilityValue('measure_power_factor', safeDivide(value, 100)).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
         }
         this.log(`[PJ1203A]  Power Factor A: ${value/100}`);
         break;
 
       case 111: // AC frequency (Hz ÷100)
         if (this.hasCapability('measure_frequency')) {
-          this.safeSetCapabilityValue('measure_frequency', safeDivide(value, 100)).catch(this.error);
+          this.safeSetCapabilityValue('measure_frequency', safeDivide(value, 100)).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
         }
         this.log(`[PJ1203A]  AC Frequency: ${value/100} Hz`);
         break;
 
       case 112: // Voltage (V ÷ 10)
-        this.safeSetCapabilityValue('measure_voltage', safeDivide(value, 10)).catch(this.error);
+        this.safeSetCapabilityValue('measure_voltage', safeDivide(value, 10)).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
         this.log(`[PJ1203A]  Voltage: ${value/10} V`);
         break;
 
       case 113: // Current A (A ÷1000)
-        this.safeSetCapabilityValue('measure_current', safeMultiply(safeDivide(value, 1000), this._ctRatio)).catch(this.error);
+        this.safeSetCapabilityValue('measure_current', safeMultiply(safeDivide(value, 1000), this._ctRatio)).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
         this.log(`[PJ1203A]  Current A: ${value/1000} A`);
         break;
 
       case 114: // Current B (A ÷1000)
         if (this.hasCapability('measure_current.phase2')) {
-          this.safeSetCapabilityValue('measure_current.phase2', safeMultiply(safeDivide(value, 1000), this._ctRatio)).catch(this.error);
+          this.safeSetCapabilityValue('measure_current.phase2', safeMultiply(safeDivide(value, 1000), this._ctRatio)).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
         }
         this.log(`[PJ1203A]  Current B: ${value/1000} A`);
         break;
 
       case 115: // Power AB Total (W ÷ 10)
         const totalPower = safeDivide(value, 10);
-        this.safeSetCapabilityValue('measure_power', totalPower).catch(this.error);
+        this.safeSetCapabilityValue('measure_power', totalPower).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
         this.log(`[PJ1203A]  Total Power: ${totalPower} W`);
         break;
 
       case 121: // Power factor B (÷100)
         if (this.hasCapability('measure_power_factor')) {
-          this.safeSetCapabilityValue('measure_power_factor', safeDivide(value, 100)).catch(this.error);
+          this.safeSetCapabilityValue('measure_power_factor', safeDivide(value, 100)).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
         }
         this.log(`[PJ1203A]  Power Factor B: ${value/100}`);
         break;
@@ -323,57 +323,57 @@ class PowerClampMeterDevice extends ZigBeeDevice {
     // 
     switch (dp) {
     case 1: //Total energy (kWh ÷ 100)
-      this.safeSetCapabilityValue('meter_power', safeDivide(value, 100)).catch(this.error);
+      this.safeSetCapabilityValue('meter_power', safeDivide(value, 100)).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
       break;
 
     case 16: // Phase 1 power (W)
       if (this.hasCapability('measure_power.phase1')) {
-        this.safeSetCapabilityValue('measure_power.phase1', value).catch(this.error);
+        this.safeSetCapabilityValue('measure_power.phase1', value).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
         this._updateTotalPower();
       }
       break;
 
     case 17: // Phase 2 power (W)
       if (this.hasCapability('measure_power.phase2')) {
-        this.safeSetCapabilityValue('measure_power.phase2', value).catch(this.error);
+        this.safeSetCapabilityValue('measure_power.phase2', value).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
       }
       this._updateTotalPower();
       break;
 
     case 18: // Phase 3 power (W)
       if (this.hasCapability('measure_power.phase3')) {
-        this.safeSetCapabilityValue('measure_power.phase3', value).catch(this.error);
+        this.safeSetCapabilityValue('measure_power.phase3', value).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
       }
       this._updateTotalPower();
       break;
 
     case 19: //Voltage (V ÷ 10)
-      this.safeSetCapabilityValue('measure_voltage', safeDivide(value, 10)).catch(this.error);
+      this.safeSetCapabilityValue('measure_voltage', safeDivide(value, 10)).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
       break;
 
     case 20: //Current phase 1 (A*1000)
     case 21: // Current phase 2
     case 22: // Current phase 3
-      this.safeSetCapabilityValue('measure_current', safeMultiply(safeDivide(value, 1000), this._ctRatio)).catch(this.error);
+      this.safeSetCapabilityValue('measure_current', safeMultiply(safeDivide(value, 1000), this._ctRatio)).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
       break;
 
     case 23: // Energy produced / exported (kWh ÷ 100)
       if (this.hasCapability('meter_power.exported')) {
-        this.safeSetCapabilityValue('meter_power.exported', safeDivide(value, 100)).catch(this.error);
+        this.safeSetCapabilityValue('meter_power.exported', safeDivide(value, 100)).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
       }
       this.log(`[3PHASE]  Energy Produced: ${safeDivide(value, 100)} kWh`);
       break;
 
     case 29: // Total active power (W ÷ 10)
       if (this.hasCapability('measure_power.phase_total')) {
-        this.safeSetCapabilityValue('measure_power.phase_total', safeDivide(value, 10)).catch(this.error);
+        this.safeSetCapabilityValue('measure_power.phase_total', safeDivide(value, 10)).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
       }
       this.log(`[3PHASE]  Total Active Power: ${safeDivide(value, 10)} W`);
       break;
 
     case 132: // AC frequency (Hz ÷ 10)
       if (this.hasCapability('measure_frequency')) {
-        this.safeSetCapabilityValue('measure_frequency', safeDivide(value, 10)).catch(this.error);
+        this.safeSetCapabilityValue('measure_frequency', safeDivide(value, 10)).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
       }
       this.log(`[3PHASE]  AC Frequency: ${safeDivide(value, 10)} Hz`);
       break;
@@ -382,7 +382,7 @@ class PowerClampMeterDevice extends ZigBeeDevice {
     case 101: // Total power (W) - 3phase OR Power A (W ÷ 10) - PJ-1203A
       // Try PJ-1203A scaling first if value seems too high
       const powerVal = value > 10000 ? safeDivide(value, 10) : value;
-      this.safeSetCapabilityValue('measure_power', powerVal).catch(this.error);
+      this.safeSetCapabilityValue('measure_power', powerVal).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
       this.log(`[FALLBACK]  Power: ${powerVal} W (raw: ${value})`);
       break;
 
@@ -391,7 +391,7 @@ class PowerClampMeterDevice extends ZigBeeDevice {
         // PJ-1203A direction (0 or 1)
         this.log(`[FALLBACK]  Direction A: ${value === 0 ? 'consuming' : 'producing'}`);
       } else {
-        this.safeSetCapabilityValue('meter_power', safeDivide(value, 100)).catch(this.error);
+        this.safeSetCapabilityValue('meter_power', safeDivide(value, 100)).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
       }
       break;
 
@@ -409,7 +409,7 @@ class PowerClampMeterDevice extends ZigBeeDevice {
     const powerA = this._powerA || 0;
     const powerB = this._powerB || 0;
     const total = powerA + powerB;
-    this.safeSetCapabilityValue('measure_power', total).catch(this.error);
+    this.safeSetCapabilityValue('measure_power', total).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
   }
 
   /**
@@ -419,7 +419,7 @@ class PowerClampMeterDevice extends ZigBeeDevice {
     const energyA = this._energyForwardA || this._energyA || 0;
     const energyB = this._energyForwardB || this._energyB || 0;
     const total = energyA + energyB;
-    this.safeSetCapabilityValue('meter_power', total).catch(this.error);
+    this.safeSetCapabilityValue('meter_power', total).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
     this.log(`[METER]  Total Energy: ${total} kWh (A:${energyA} + B:${energyB})`);
   }
 

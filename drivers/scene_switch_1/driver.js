@@ -23,19 +23,19 @@ class SceneSwitch1Driver extends ZigBeeDriver {
   }
 
   triggerButtonPressed(device) {
-    return this._buttonPressedTrigger.trigger(device, {}).catch(this.error);
+    return this._buttonPressedTrigger.trigger(device, {}).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
   }
 
   triggerButtonDoublePressed(device) {
-    return this._buttonDoubleTrigger.trigger(device, {}).catch(this.error);
+    return this._buttonDoubleTrigger.trigger(device, {}).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
   }
 
   triggerButtonLongPressed(device) {
-    return this._buttonLongTrigger.trigger(device, {}).catch(this.error);
+    return this._buttonLongTrigger.trigger(device, {}).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
   }
 
   triggerBatteryChanged(device, tokens) {
-    return this._batteryChangedTrigger.trigger(device, tokens).catch(this.error);
+    return this._batteryChangedTrigger.trigger(device, tokens).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
   }
 
 }

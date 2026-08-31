@@ -1117,12 +1117,12 @@ class MotionSensorDevice extends UnifiedSensorBase {
         this.log(`[ZCL-DATA] motion_sensor.ias_zone raw=${parsed.raw} alarm1=${parsed.alarm1} alarm2=${parsed.alarm2}  motion=${motion}`);
 
         if (this.hasCapability('alarm_motion')) {
-          this.safeSetCapabilityValue('alarm_motion', motion).catch(this.error);
+          this.safeSetCapabilityValue('alarm_motion', motion).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
         }
 
         // v5.5.18: Trigger flow card
         if (motion && this.driver?.motionTrigger) {
-          this.driver.motionTrigger.trigger(this, {}, {}).catch(this.error);
+          this.driver.motionTrigger.trigger(this, {}, {}).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
         }
 
         // v5.5.104: Read temp/humidity NOW while device is awake (Peter's 4-in-1 fix)
@@ -1148,7 +1148,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
         this.log(`[ZCL-DATA] motion_sensor.zone_status raw=${status}  alarm_motion=${motion}`);
 
         if (this.hasCapability('alarm_motion')) {
-          this.safeSetCapabilityValue('alarm_motion', motion).catch(this.error);
+          this.safeSetCapabilityValue('alarm_motion', motion).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
         }
 
         // v5.5.104: Also read temp/humidity on this event

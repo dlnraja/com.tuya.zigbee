@@ -68,11 +68,11 @@ class smoke_sensor2 extends TuyaSpecificClusterDevice {
       case dataPoints.tsSmokeAlarm:
         this.log("present state: "+ value);
         var smokeAlarm = value === 0 ? true : false;
-        this.safeSetCapabilityValue('alarm_smoke', Boolean(smokeAlarm)).catch(this.error);
+        this.safeSetCapabilityValue('alarm_smoke', Boolean(smokeAlarm)).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
         break;
 
       case dataPoints.tsTamperAlert:
-        this.safeSetCapabilityValue('alarm_tamper', Boolean(value)).catch(this.error);
+        this.safeSetCapabilityValue('alarm_tamper', Boolean(value)).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
         break;
 
       case dataPoints.tsBatteryState:
@@ -82,7 +82,7 @@ class smoke_sensor2 extends TuyaSpecificClusterDevice {
             var batteryPerc = 20;
             var batAlarm = value === 0 ? true : false;
             this.log("measure_battery | powerConfiguration - batteryPercentageRemaining (%): ", batteryPerc);
-            this.safeSetCapabilityValue('alarm_battery', batAlarm).catch(this.error);
+            this.safeSetCapabilityValue('alarm_battery', batAlarm).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
           case 1:
             var batteryPerc = 50;
             this.log("measure_battery | powerConfiguration - batteryPercentageRemaining (%): ", batteryPerc);
@@ -92,7 +92,7 @@ class smoke_sensor2 extends TuyaSpecificClusterDevice {
         break;
         }
         
-        this.safeSetCapabilityValue('measure_battery', batteryPerc).catch(this.error);
+        this.safeSetCapabilityValue('measure_battery', batteryPerc).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
 
         break;
       

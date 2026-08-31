@@ -94,8 +94,8 @@ class RemoteDimmerDevice extends PhysicalButtonMixin(VirtualButtonMixin(ZigBeeDe
           });
           if (pct == null) {return;}
           this.log('[RemoteDimmer] Battery:', pct, '%');
-          this.safeSetCapabilityValue('measure_battery', pct).catch(this.error);
-          this.safeSetCapabilityValue('alarm_battery', pct < 20).catch(this.error);
+          this.safeSetCapabilityValue('measure_battery', pct).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
+          this.safeSetCapabilityValue('alarm_battery', pct < 20).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
         });
 
         // Try to configure reporting

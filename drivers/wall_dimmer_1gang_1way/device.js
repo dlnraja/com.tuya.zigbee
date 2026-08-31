@@ -225,7 +225,7 @@ class WallDimmer1Gang1Way extends TuyaSpecificClusterDevice {
       if (this._lastOnoffState !== state) {
         this.log(`State changed: ${this._lastOnoffState} → ${state} (${isPhysicalPress ? 'PHYSICAL' : 'APP'})`);
         this._lastOnoffState = state;
-        this['safeSetCapabilityValue']('onoff', state).catch(this.error);
+        this['safeSetCapabilityValue']('onoff', state).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
         
         if (isPhysicalPress) {
           const flowCardId = state ? 'wall_dimmer_1gang_1way_turned_on' : 'wall_dimmer_1gang_1way_turned_off';
@@ -258,19 +258,19 @@ class WallDimmer1Gang1Way extends TuyaSpecificClusterDevice {
         const brightnessDecreased = this._lastBrightnessValue !== null && brightnessRaw < this._lastBrightnessValue;
         
         this._lastBrightnessValue = brightnessRaw;
-        this['safeSetCapabilityValue']('dim', brightness).catch(this.error);
+        this['safeSetCapabilityValue']('dim', brightness).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
         
         if (isPhysicalPress) {
           if (brightnessIncreased) {
             this.log('Triggering: wall_dimmer_1gang_1way_brightness_increased (PHYSICAL)');
             this.homey.flow.getDeviceTriggerCard('wall_dimmer_1gang_1way_brightness_increased')
               .trigger(this, { brightness })
-              .catch(this.error);
+              .catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
           } else if (brightnessDecreased) {
             this.log('Triggering: wall_dimmer_1gang_1way_brightness_decreased (PHYSICAL)');
             this.homey.flow.getDeviceTriggerCard('wall_dimmer_1gang_1way_brightness_decreased')
               .trigger(this, { brightness })
-              .catch(this.error);
+              .catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
           }
         }
       }
