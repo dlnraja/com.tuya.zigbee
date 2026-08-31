@@ -143,31 +143,50 @@
     "meter91": {
       "forumTopic": 140352,
       "posts": [
-        2189
+        2189,
+        2207
       ],
-      "diags": [],
+      "diags": [
+        "c40705a1-9b08-444b-868f-c5a14ca4d2b2"
+      ],
       "devices": [
         {
-          "tile": "4-gang scene switch (user report)",
+          "tile": "Moes 4-way scene remote",
           "driver": "scene_switch_4",
           "couple": "_TZ3000_zgyzgdua+TS0044",
           "symptoms": [
-            "wrong driver / knob",
-            "physical 0xFD not firing"
+            "unknown at pairing (diag 9.0.714 pre-P2336)",
+            "physical 0xFD dead on stale tile"
           ],
           "fixes": [
-            "scene_switch_4 PhysicalButtonMixin 0xFD skip 0x8004 ≥9.0.619"
+            "P2336 pairing clusters",
+            "P2337 sacred routing",
+            "P2338 migration nag skip",
+            "PhysicalButtonMixin 0xFD skip 0x8004"
           ],
-          "userAction": "Update Test ≥9.0.619 + re-pair; set scene mode in device settings"
-        },
+          "userAction": "Update Test ≥9.0.738 + remove + re-pair Scene Switch 4-Gang"
+        }
+      ],
+      "dualApp": "BOTH"
+    },
+    "VicHY": {
+      "forumTopic": 140352,
+      "posts": [],
+      "diags": [
+        "4217d5e3-c845-4f0b-a351-5e5a59295cbb"
+      ],
+      "devices": [
         {
-          "tile": "Forum T140352 #2189",
-          "driver": "wall_dimmer_tuya",
-          "couple": "_TZ3000_ZGYZGDUA+TS0044",
-          "symptoms": [],
-          "fixes": [],
-          "userAction": "Verify compose fingerprint; update Test",
-          "_autoStub": true
+          "tile": "24G presence radar",
+          "driver": "presence_sensor_radar",
+          "couple": "_TZE204_clrdrnya+TS0601",
+          "symptoms": [
+            "unknown at pairing (compact dropped mfr from app.json)"
+          ],
+          "fixes": [
+            "P2340 sacred-keep force-inject clrdrnya"
+          ],
+          "userAction": "Update Test ≥9.0.738 + re-pair Presence Sensor Radar"
         }
       ],
       "dualApp": "BOTH"
@@ -1126,13 +1145,26 @@
       "dualApp": "REVIEW"
     },
     "Cam": {
-      "forumTopic": 140352,
+      "forumTopic": 146735,
       "posts": [
         8
       ],
       "diags": [],
-      "devices": [],
-      "_autoStub": true,
+      "devices": [
+        {
+          "tile": "HOBEIAN ZG-204ZL motion",
+          "driver": "presence_sensor_radar",
+          "couple": "HOBEIAN+ZG-204ZL",
+          "symptoms": [
+            "LED flashes but flows dead",
+            "HOBEIAN mfr stripped from app.json by compact"
+          ],
+          "fixes": [
+            "P2340 sacred-keep HOBEIAN+ZG-204ZL"
+          ],
+          "userAction": "Update Test ≥9.0.738 + re-pair motion; send diag for smart button couple"
+        }
+      ],
       "dualApp": "BOTH"
     },
     "Toni_UrbanoMarquez": {
