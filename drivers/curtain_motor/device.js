@@ -145,14 +145,19 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
       }
     } else {
       const strip = protocol === 'ZCL'
-        ? ['measure_luminance', 'button', 'measure_battery']
-        : ['measure_luminance', 'button', 'dim', 'windowcoverings_tilt_set', 'measure_battery', 'alarm_battery'];
+        ? ['measure_luminance', 'button', 'measure_battery', 'button.1']
+        : ['measure_luminance', 'button', 'dim', 'windowcoverings_tilt_set', 'measure_battery', 'alarm_battery', 'button.1'];
       for (const cap of strip) {
         if (this.hasCapability(cap)) {
           this.removeCapability(cap).catch(() => {});
           this.log(`[CURTAIN] 🗑️ Removed incorrect ${cap} from ${protocol === 'ZCL' ? 'ZCL' : 'Moes ZTS'} curtain`);
         }
       }
+    }
+
+    // WHY(P2356): button.1 maintenanceAction without listener → Homey UI errors on #533
+    if (moesZts && this.hasCapability('button.1')) {
+      await this.removeCapability('button.1').catch(() => {});
     }
 
     // v5.8.79: Only setup Tuya DP listener and calibration for Tuya DP devices
@@ -243,13 +248,13 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
 
   /**
    * v5.5.322: Handle incoming Tuya DP reports
+   * WHY(P2356): must route DP1/2 (+ Moes 3/7/8/10) through _handleDP so manual
+   * wall-switch position updates reach windowcoverings_set (#533 salvagr).
    */
   _handleTuyaDP(data) {
     if (!data) {return;}
 
-    // v9.x (upstream PR #1431): some curtain modules (Dooya DC1545R family)
-    // pack SEVERAL datapoints into one report frame — split and process each,
-    // otherwise trailing DPs (e.g. position feedback) are silently dropped.
+    // v9.x (upstream PR #1431): some curtain modules pack several DPs per frame
     if (Buffer.isBuffer(data.data) && typeof data.length === 'number' && data.data.length > data.length) {
       for (const sub of parseTuyaMultiDpFrame(data)) {
         this._handleTuyaDP({ ...data, dp: sub.dp, datatype: sub.datatype, data: sub.data, length: sub.data.length });
@@ -257,31 +262,98 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
       return;
     }
 
-    const dp = data.dp || data.datapoint;
-    // v9.x: decode the full big-endian payload, not just the first byte
-    const value = Buffer.isBuffer(data.data)
-      ? data.data.reduce((acc, b) => (acc << 8) + b, 0)
+    const dp = Number(data.dp || data.datapoint);
+    if (!Number.isFinite(dp)) {return;}
+
+    const rawBuf = Buffer.isBuffer(data.data) ? data.data : null;
+    const value = rawBuf
+      ? (rawBuf.length === 1 ? rawBuf[0] : rawBuf.readUIntBE(0, Math.min(rawBuf.length, 4)))
       : (data.value ?? data.data?.[0]);
 
     this.log(`[CURTAIN] DP${dp} = ${value}`);
 
-    // Luminance (lux) - DP14 or DP104
+    // Primary path — unified RX (state, position, internal Moes settings)
+    try {
+      this._handleDP(dp, rawBuf ?? value);
+    } catch (err) {
+      this.log(`[CURTAIN] _handleDP(${dp}) error: ${err.message}`);
+    }
+
+    if (this._isMoesZtsEurC()) {
+      this._syncMoesSettingFromDp(dp, value).catch(() => {});
+    }
+
+    // Legacy lux/battery/button paths (non-Moes robot curtains)
     if ((dp === 14 || dp === 104) && this.hasCapability('measure_luminance')) {
       const lux = typeof value === 'number' ? value : parseInt(value, 10) || 0;
       this.safeSetCapabilityValue('measure_luminance', parseFloat(lux)).catch(() => { });
       this.log(`[CURTAIN] 💡 Lux: ${lux}`);
     }
 
-    // Battery - DP13
     if (dp === 13 && this.hasCapability('measure_battery')) {
       const battery = typeof value === 'number' ? value : parseInt(value, 10) || 0;
       this.safeSetCapabilityValue('measure_battery', parseFloat(Math.min(100, Math.max(0, battery)))).catch(() => { });
       this.log(`[CURTAIN] 🔋 Battery: ${battery}%`);
     }
 
-    // Button press - DP15 or DP105
     if ((dp === 15 || dp === 105) && this.hasCapability('button')) {
       this._handleButtonPress(value);
+    }
+  }
+
+  /**
+   * WHY(P2356): mirror Moes ZTS DP3/7/8/10 into device settings on RX (#533).
+   */
+  async _syncMoesSettingFromDp(dp, value) {
+    if (this._destroyed || !this._isMoesZtsEurC()) {return;}
+    const v = typeof value === 'number' ? value : parseInt(value, 10);
+    if (!Number.isFinite(v)) {return;}
+    const updates = {};
+    if (dp === 7) {updates.moes_backlight = v !== 0;}
+    else if (dp === 8) {updates.moes_motor_direction = v === 0 ? 'forward' : 'back';}
+    else if (dp === 10) {updates.moes_calibration_seconds = Math.max(10, Math.min(180, v));}
+    else if (dp === 3) {updates.moes_calibration_mode = v === 0 ? 'start' : 'end';}
+    if (Object.keys(updates).length) {
+      await this.setSettings(updates).catch(() => {});
+    }
+  }
+
+  /** WHY(P2356): push Moes wall-switch DPs 3/7/8/10 from settings UI (#533). */
+  async _applyMoesZtsSettings(changedKeys = null) {
+    if (!this._isMoesZtsEurC()) {return;}
+    const keys = changedKeys || [
+      'moes_backlight', 'moes_motor_direction', 'moes_calibration_seconds', 'moes_calibration_mode',
+      'reverse_direction', 'open_time',
+    ];
+    const send = async (dp, val, type) => {
+      try {
+        await this._sendTuyaDP(dp, val, type);
+      } catch (err) {
+        const msg = err?.message || String(err);
+        if (/timeout/i.test(msg)) {
+          this.log(`[CURTAIN] ⚠️ Moes DP${dp} timeout (transient): ${msg}`);
+          return;
+        }
+        throw err;
+      }
+    };
+    if (!changedKeys || keys.includes('moes_backlight')) {
+      const on = this.getSetting('moes_backlight');
+      if (typeof on === 'boolean') {await send(7, on ? 1 : 0, 'bool');}
+    }
+    if (!changedKeys || keys.includes('moes_motor_direction') || keys.includes('reverse_direction')) {
+      const dir = this.getSetting('moes_motor_direction')
+        || (this.getSetting('reverse_direction') ? 'back' : 'forward');
+      await send(8, dir === 'back' ? 1 : 0, 'enum');
+    }
+    if (!changedKeys || keys.includes('moes_calibration_seconds') || keys.includes('open_time')) {
+      const sec = parseInt(this.getSetting('moes_calibration_seconds') ?? this.getSetting('open_time') ?? 0, 10);
+      if (sec > 0) {await send(10, sec, 'value');}
+    }
+    if (!changedKeys || keys.includes('moes_calibration_mode')) {
+      const mode = this.getSetting('moes_calibration_mode');
+      if (mode === 'start') {await send(3, 0, 'enum');}
+      else if (mode === 'end') {await send(3, 1, 'enum');}
     }
   }
 
@@ -315,6 +387,10 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
    */
   async _applyCalibrationSettings() {
     try {
+      if (this._isMoesZtsEurC()) {
+        await this._applyMoesZtsSettings();
+        return;
+      }
       const openTime = this.getSetting('open_time') || 0;
       const closeTime = this.getSetting('close_time') || 0;
       const reverse = this.getSetting('reverse_direction') || false;
@@ -361,6 +437,18 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
   async onSettings({ oldSettings, newSettings, changedKeys }) {
     try {
       await super.onSettings?.({ oldSettings, newSettings, changedKeys });
+
+      if (this._isMoesZtsEurC()) {
+        const moesKeys = changedKeys.filter((k) => [
+          'moes_backlight', 'moes_motor_direction', 'moes_calibration_seconds',
+          'moes_calibration_mode', 'reverse_direction', 'open_time',
+        ].includes(k));
+        if (moesKeys.length) {
+          this.log('[CURTAIN] Moes ZTS settings changed:', moesKeys.join(', '));
+          await this._applyMoesZtsSettings(moesKeys);
+        }
+        return;
+      }
 
       if (changedKeys.includes('open_time') || changedKeys.includes('close_time') || changedKeys.includes('reverse_direction')) {
         this.log('[CURTAIN] Calibration settings changed, applying...');

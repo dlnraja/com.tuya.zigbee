@@ -638,5 +638,34 @@
       "getable": false,
       "setable": false
     }
+  },
+  "firmwareUpdates": {
+    "updates": [
+      {
+        "changelog": {
+          "en": "OEM Tuya firmware v20525057 (Koenkk zigbee-OTA, SHA512-verified)"
+        },
+        "device": {
+          "manufacturerName": [
+            "Wing"
+          ],
+          "productId": [
+            "TS0203"
+          ]
+        },
+        "files": [
+          {
+            "fileVersion": 20525057,
+            "imageType": 564,
+            "manufacturerCode": 4417,
+            "minHardwareVersion": 21562,
+            "maxHardwareVersion": 12371,
+            "size": 129826,
+            "name": "1141-0234-01393001-TS0201W.zigbee",
+            "integrity": "sha256:003fb48864a68d4e901e0efd6108be8e8fe7ee691e48645d9fd044f283b5f979"
+          }
+        ]
+      }
+    ]
   }
 }
