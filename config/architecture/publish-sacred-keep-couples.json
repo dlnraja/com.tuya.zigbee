@@ -361,6 +361,24 @@
       "pid": "TS0601",
       "driverId": "curtain_motor",
       "note": "P2348 Z2M ZTS-EUR-C sibling from #533"
+    },
+    {
+      "mfr": "_TZ3000_wkai4ga5",
+      "pid": "TS0044",
+      "driverId": "scene_switch_4",
+      "note": "P2353"
+    },
+    {
+      "mfr": "_TZ3000_dfgbtub0",
+      "pid": "TS0044",
+      "driverId": "button_wireless_4",
+      "note": "P2353"
+    },
+    {
+      "mfr": "_TZ3000_dfgbtub0",
+      "pid": "TS0042",
+      "driverId": "button_wireless_2",
+      "note": "P2353"
     }
   ]
 }
