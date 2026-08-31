@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-31T10:07:28.278Z",
+  "generatedAt": "2026-08-31T10:15:04.220Z",
   "date": "2026-08-31",
   "mode": "quick",
   "phases": [
@@ -12,20 +12,20 @@
     {
       "name": "github",
       "ok": true,
-      "durationMs": 446
+      "durationMs": 380
     },
     {
       "name": "forum",
-      "ok": true,
-      "durationMs": 10774,
+      "ok": false,
+      "durationMs": 80,
       "skipScan": true,
       "steps": [
         {
-          "ok": true,
+          "ok": false,
           "skipped": false
         },
         {
-          "ok": true,
+          "ok": false,
           "skipped": false
         },
         {
@@ -37,23 +37,23 @@
     {
       "name": "prioritize",
       "ok": true,
-      "durationMs": 7,
-      "count": 2
+      "durationMs": 1,
+      "count": 1
     },
     {
       "name": "docs",
       "ok": true,
-      "durationMs": 4,
-      "doc": "C:\\Users\\Dell\\Documents\\homey\\master\\docs\\architecture\\L99_INBOX_INTELLIGENCE.md"
+      "durationMs": 0,
+      "doc": "/home/runner/work/com.tuya.zigbee/com.tuya.zigbee/docs/architecture/L99_INBOX_INTELLIGENCE.md"
     },
     {
       "name": "gates",
       "ok": true,
-      "durationMs": 9902
+      "durationMs": 680
     }
   ],
   "github": {
-    "harvestedAt": "2026-08-31T10:07:28.722Z",
+    "harvestedAt": "2026-08-31T10:15:04.601Z",
     "repo": "dlnraja/com.tuya.zigbee",
     "auth": "token",
     "error": null,
@@ -76,29 +76,10 @@
     "openIssueCount": 1,
     "openPrCount": 0
   },
-  "forum": {
-    "path": "C:\\Users\\Dell\\Documents\\homey\\master\\.github\\state\\forum\\actionable-processor-report.json",
-    "totals": {
-      "posts": 218,
-      "withCouples": 76,
-      "needAction": 53,
-      "both": 143,
-      "masterOnly": 6
-    },
-    "posts": 218
-  },
+  "forum": null,
   "gmail": null,
   "mfs": null,
   "priority": [
-    {
-      "score": 75,
-      "dualApp": "BOTH",
-      "source": "forum",
-      "id": "forum-need-action",
-      "title": "53 forum posts needAction (shadow processor)",
-      "action": "enrich:investigate + lock mfr+pid only",
-      "forumReply": "NEVER"
-    },
     {
       "score": 70,
       "dualApp": "BOTH",
