@@ -29,7 +29,7 @@ try {
 } catch (e) {
   console.error('Warning: could not read app.json:', e.message);
 }
-const APP = appJson.id || 'com.dlnraja.tuya.zigbee';
+const APP = process.env.APP_ID || process.env.TARGET_APP_ID || appJson.id || 'com.dlnraja.tuya.zigbee';
 
 const PAT = process.env.HOMEY_PAT;
 const DRY = process.env.DRY_RUN === 'true';
@@ -153,7 +153,14 @@ async function promoteWithHomeySdk(version) {
 }
 
 async function main() {
-  const ver = appJson.version || 'unknown';
+  // WHY(P2355): promote must target the version Homey just uploaded, not checkout lag
+  const ver = String(
+    process.env.HOMEY_EXPECTED_VERSION
+      || process.env.HOMEY_APP_VERSION
+      || process.env.EXPECTED_APP_VERSION
+      || appJson.version
+      || 'unknown',
+  ).replace(/^v/i, '');
   log('## Auto-Publish Draft -> Test');
   log('App: ' + APP + ' | Version: v' + ver + ' | DRY=' + DRY);
   log('PAT: present (' + PAT.length + ' chars)');
