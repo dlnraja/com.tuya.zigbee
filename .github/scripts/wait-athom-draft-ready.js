@@ -55,6 +55,15 @@ function sleepMs(ms) {
 }
 
 function versionOf() {
+  // WHY(P2355): promote job checks out pre-bump SHA while Homey build may have
+  // uploaded N+1 in the publish job — honor explicit expected version from CI.
+  const fromEnv = String(
+    process.env.HOMEY_EXPECTED_VERSION
+      || process.env.HOMEY_APP_VERSION
+      || process.env.EXPECTED_APP_VERSION
+      || '',
+  ).replace(/^v/i, '').trim();
+  if (fromEnv) return fromEnv;
   try {
     return String(JSON.parse(fs.readFileSync(path.join(ROOT, 'app.json'), 'utf8')).version || '')
       .replace(/^v/i, '');

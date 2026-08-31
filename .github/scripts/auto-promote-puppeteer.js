@@ -19,8 +19,14 @@ try {
 } catch (e) {
   console.error('Warning: could not read app.json:', e.message);
 }
-const APP_ID = process.env.TARGET_APP_ID || appJson.id || 'com.dlnraja.tuya.zigbee';
-const APP_VERSION = appJson.version ? String(appJson.version).replace(/^v/i, '') : null;
+const APP_ID = process.env.TARGET_APP_ID || process.env.APP_ID || appJson.id || 'com.dlnraja.tuya.zigbee';
+const APP_VERSION = String(
+  process.env.HOMEY_EXPECTED_VERSION
+    || process.env.HOMEY_APP_VERSION
+    || process.env.EXPECTED_APP_VERSION
+    || appJson.version
+    || '',
+).replace(/^v/i, '') || null;
 
 const BASE = 'https://tools.developer.homey.app';
 const VERSIONS_URL = `${BASE}/apps/app/${APP_ID}/versions`;

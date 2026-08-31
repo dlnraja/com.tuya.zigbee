@@ -123,6 +123,10 @@ jobs:
     if: needs.soak.outputs.skip != 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 15
+    # WHY(P2355): Homey build may bump patch in-job; promote must wait that version.
+    outputs:
+      uploaded_version: ${{ steps.uploaded_version.outputs.version }}
+      app_id: ${{ steps.uploaded_version.outputs.app_id }}
     steps:
       - uses: actions/checkout@v5
         with:
@@ -165,6 +169,15 @@ jobs:
               }
             }
           '
+      # WHY(P2355): export post-build version so promote job does not use stale checkout app.json
+      - name: Export uploaded version
+        id: uploaded_version
+        run: |
+          V=$(node -p "require('./.homeybuild/app.json').version || require('./app.json').version")
+          AID=$(node -p "require('./app.json').id")
+          echo "version=$V" >> "$GITHUB_OUTPUT"
+          echo "app_id=$AID" >> "$GITHUB_OUTPUT"
+          echo "P2355 uploaded_version=$V app_id=$AID"
       - name: Ensure changelog for current and next patch
         env:
           HOMEY_CHANGELOG: 'Reliability improvements.'
@@ -256,6 +269,8 @@ jobs:
         if: steps.soak.outputs.skip != 'true'
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+          APP_ID: ${{ needs.publish.outputs.app_id }}
+          HOMEY_EXPECTED_VERSION: ${{ needs.publish.outputs.uploaded_version }}
         run: node .github/scripts/wait-athom-draft-ready.js
       - name: Install Puppeteer
         if: steps.soak.outputs.skip != 'true'
@@ -269,6 +284,9 @@ jobs:
         env:
           HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
           HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+          APP_ID: ${{ needs.publish.outputs.app_id }}
+          TARGET_APP_ID: ${{ needs.publish.outputs.app_id }}
+          HOMEY_EXPECTED_VERSION: ${{ needs.publish.outputs.uploaded_version }}
         run: node .github/scripts/auto-promote-puppeteer.js
       - name: Promote via API (PAT)
         id: promote_api
@@ -276,6 +294,8 @@ jobs:
         continue-on-error: true
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+          APP_ID: ${{ needs.publish.outputs.app_id }}
+          HOMEY_EXPECTED_VERSION: ${{ needs.publish.outputs.uploaded_version }}
         run: node .github/scripts/auto-publish-draft.js
       - name: Verify draft promotion result
         id: verify_test
@@ -283,6 +303,8 @@ jobs:
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
           HOMEY_API_TIMEOUT_MS: "60000"
+          APP_ID: ${{ needs.publish.outputs.app_id }}
+          HOMEY_EXPECTED_VERSION: ${{ needs.publish.outputs.uploaded_version }}
         run: |
           if [ "${{ steps.promote_puppeteer.outcome }}" != "success" ] && \
              [ "${{ steps.promote_api.outcome }}" != "success" ]; then
