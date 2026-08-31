@@ -1,6 +1,6 @@
 {
   "9.0.736": {
-    "en": "Improved TS0044 scene remote pairing and routing; fixed wall remote driver stealing battery scene switches."
+    "en": "Fixed Moes TS0044 scene remote and soil sensor pairing clusters; hardened wall dimmer TX failure detection."
   },
   "9.0.713": {
     "en": "Improved wireless button press capture for Tuya scene remotes after wake and pairing."
@@ -2748,7 +2748,7 @@
   "9.0.735": {
     "en": "Fixed Moes TS0044 scene remote and soil sensor pairing clusters; hardened wall dimmer TX failure detection."
   },
-  "9.0.736": {
+  "9.0.737": {
     "en": "Fixed Moes TS0044 scene remote and soil sensor pairing clusters; hardened wall dimmer TX failure detection."
   }
 }

@@ -33,15 +33,15 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.736 |
+| **App Version** | v9.0.737 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,381 |
-| **Pairing Variants** | 16,480 (4 case combos per fingerprint) |
+| **Pairing Variants** | 16,472 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 577 |
 | **Flow Cards** | 5,198 |
 | **Unique Capabilities** | 170 |
 | **Native OTA Drivers** | 5 |
-| **Test Suites** | 190 files |
+| **Test Suites** | 191 files |
 | **SVG Icons** | 731 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
@@ -102,6 +102,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.737** | Fixed Moes TS0044 scene remote and soil sensor pairing clusters; hardened wall dimmer TX failure detection. |
 | **v9.0.736** | Fixed Moes TS0044 scene remote and soil sensor pairing clusters; hardened wall dimmer TX failure detection. |
 | **v9.0.735** | Fixed Moes TS0044 scene remote and soil sensor pairing clusters; hardened wall dimmer TX failure detection. |
 | **v9.0.734** | Fixed Moes TS0044 scene remote and soil sensor pairing clusters; hardened wall dimmer TX failure detection. |
@@ -113,7 +114,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.728** | Fixed wall dimmer brightness misread as humidity; fixed AC thermostat valve DP poisoning target temperature from diagnostics. |
 | **v9.0.727** | Improved button and scene remote Flow triggers (hold-release, wall 4-gang physical, Tuya DP path). Locked Nobo wireless remote pairing. |
 | **v9.0.726** | Improved button and scene remote Flow triggers (hold-release, wall 4-gang physical, Tuya DP path). Locked Nobo wireless remote pairing. |
-| **v9.0.725** | Improved wireless button press capture for Tuya scene remotes after wake and pairing. |
 
 <!-- CHANGELOG_END -->
 
