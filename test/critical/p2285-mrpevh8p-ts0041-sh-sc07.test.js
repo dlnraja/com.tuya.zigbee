@@ -104,12 +104,14 @@ describe('P2285 mrpevh8p+TS0041 SH-SC07 deep lock', () => {
 
   it('P2290 mfs_db MRPEVH8P pid is TS0041 not 01MINIZB', () => {
     const j = JSON.parse(read('data/mfs_db.json'));
-    const e = j._TZ3000_MRPEVH8P;
+    // Canonical mfs key is mixed-case `_TZ3000_mrpevh8p` (variants list includes UPPER).
+    const e = j._TZ3000_mrpevh8p || j._TZ3000_MRPEVH8P;
     assert(e);
     assert.strictEqual(e.driverId, 'button_wireless_1');
     assert.deepStrictEqual(e.modelIds, ['TS0041']);
     assert.strictEqual(e.pid, 'TS0041');
     assert.strictEqual(e.modelIdsCount, 1);
+    assert.ok((e.variants || []).some((v) => String(v).toUpperCase() === '_TZ3000_MRPEVH8P'));
   });
 
   it('P2290 setupStandardBatteryMonitoring honors skipBatteryReporting', () => {
