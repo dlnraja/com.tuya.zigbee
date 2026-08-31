@@ -1,7 +1,7 @@
 {
   "_comment": "Generated from .homeycompose/app.json. STABLE channel — only bug fixes applied.",
   "id": "com.dlnraja.tuya.zigbee.stable",
-  "version": "5.12.102",
+  "version": "5.12.103",
   "compatibility": ">=12.2.0",
   "platforms": [
     "local"
@@ -67907,6 +67907,22 @@
           "fr": "Niveau liquide haut",
           "de": "Flussigkeitsstand hoch"
         }
+      },
+      {
+        "id": "button_wireless_fingerbot_physical_on",
+        "title": {
+          "en": "Physical button on",
+          "fr": "Physical button on"
+        },
+        "args": []
+      },
+      {
+        "id": "button_wireless_fingerbot_physical_off",
+        "title": {
+          "en": "Physical button off",
+          "fr": "Physical button off"
+        },
+        "args": []
       }
     ],
     "conditions": [

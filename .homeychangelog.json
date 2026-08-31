@@ -1356,5 +1356,8 @@
   },
   "5.12.102": {
     "en": "Fixed wall dimmer brightness misread as humidity; fixed AC thermostat valve DP poisoning target temperature."
+  },
+  "5.12.103": {
+    "en": "Fixed Fingerbot flow card IDs and switch turned-on/off Homey Flow triggers."
   }
 }
