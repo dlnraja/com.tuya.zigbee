@@ -1365,5 +1365,8 @@
   },
   "5.12.105": {
     "en": "Fixed Moes TS0044 scene remote and soil sensor pairing; hardened wall dimmer TX failure detection."
+  },
+  "5.12.106": {
+    "en": "Improved TS0044 scene remote routing; fixed wall remote driver stealing battery scene switches."
   }
 }
