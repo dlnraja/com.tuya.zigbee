@@ -517,5 +517,34 @@
     }
   ],
   "id": "soil_sensor",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "firmwareUpdates": {
+    "updates": [
+      {
+        "changelog": {
+          "en": "OEM Tuya firmware v20525057 (Koenkk zigbee-OTA, SHA512-verified)"
+        },
+        "device": {
+          "manufacturerName": [
+            "Hobeian"
+          ],
+          "productId": [
+            "ZG-303Z"
+          ]
+        },
+        "files": [
+          {
+            "fileVersion": 20525057,
+            "imageType": 565,
+            "manufacturerCode": 4417,
+            "minHardwareVersion": 16713,
+            "maxHardwareVersion": 14926,
+            "size": 131618,
+            "name": "1141-0235-01393001-ZG223Z.zigbee",
+            "integrity": "sha256:e6be63f694e3355fa4b6fc0c39c5586a6ea7a96e56954f2ca2170350fb691d93"
+          }
+        ]
+      }
+    ]
+  }
 }

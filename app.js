@@ -361,12 +361,13 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
         try {
           const update = await this.otaManager?.checkUpdate(args.device);
           if (update?.available) {
+            // WHY(P2357): Homey Device Updates UI installs native Zigbee OTA
             await this.homey.notifications.createNotification({
-              excerpt: `OTA Update found for ${args.device.getName()} (v${update.newVersion}).`
+              excerpt: `Firmware v${update.newVersion} for ${args.device.getName()} — open Homey → Settings → Device Updates (or device Maintenance) to install.`,
             });
           } else {
             await this.homey.notifications.createNotification({
-              excerpt: `Your device ${args.device.getName()} is on the latest firmware.`
+              excerpt: `${args.device.getName()} is on the latest firmware known to this app.`,
             });
           }
           return true;
