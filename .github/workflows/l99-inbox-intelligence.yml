@@ -51,7 +51,8 @@ env:
   FORUM_AUTO_POST: '0'
   SHADOW_FORUM: '1'
   DISCOURSE_WRITE: '0'
-  REPLY_TOPICS: ''
+  # WHY(P2354): Fleetwood WFL_REPLY_TOPICS_LEAK rejects empty — must be T140352 only (never other topics)
+  REPLY_TOPICS: '140352'
   AI_PLAN_MODE: forfait
   AI_ALLOW_PAID: 'false'
   GMAIL_DIAG_AI_MAX: '0'
