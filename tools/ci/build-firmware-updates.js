@@ -34,6 +34,7 @@ const { lookup, isForbiddenPlacement } = require('../../lib/pairing/UserMisattri
 
 const ROOT = path.join(__dirname, '..', '..');
 const APPLY = process.argv.includes('--apply');
+const SSOT_PATH = path.join(ROOT, 'config', 'architecture', 'homey-device-updates.json');
 const INDEX_URL = 'https://raw.githubusercontent.com/Koenkk/zigbee-OTA/master/index.json';
 const TUYA_MFR_CODES = new Set([4417, 4098]);
 const MAX_IMAGE_BYTES = 2 * 1024 * 1024;
@@ -41,6 +42,38 @@ const BUTTON_DRIVERS = /^(button_|remote_|sos_|scene_switch)/;
 const PLUG_IMAGE = /plug|breaker/i;
 const COVER_IMAGE = /cover|curtain|win_cover/i;
 const TRV_IMAGE = /uart_connect_sleep|trv|valve/i;
+
+function loadSsot() {
+  try {
+    return JSON.parse(fs.readFileSync(SSOT_PATH, 'utf8'));
+  } catch {
+    return { wakeInstructions: {}, safety: {}, sources: {} };
+  }
+}
+
+function changelogFor(fileVersion) {
+  return {
+    en: `OEM Zigbee firmware v${fileVersion} (Koenkk zigbee-OTA, SHA512-verified). Install via Homey Device Updates (Settings → Device Updates) on Homey ≥13.2 / Mobile ≥9.10.`,
+    fr: `Firmware Zigbee OEM v${fileVersion} (Koenkk zigbee-OTA, SHA512 vérifié). Installez via Homey Device Updates (Réglages → Device Updates) — Homey ≥13.2 / Mobile ≥9.10.`,
+  };
+}
+
+function ensureWakeInstruction(driverId, ssot) {
+  const text = ssot.wakeInstructions?.[driverId];
+  if (!text) return;
+  const fwPath = path.join(ROOT, 'drivers', driverId, 'driver.firmware.compose.json');
+  let fw = {};
+  if (fs.existsSync(fwPath)) {
+    try { fw = JSON.parse(fs.readFileSync(fwPath, 'utf8')); } catch { fw = {}; }
+  }
+  // Preserve existing updates in firmware.compose; only ensure wakeInstruction
+  fw.wakeInstruction = text;
+  if (!Array.isArray(fw.updates)) {
+    // Keep updates in driver.compose.json firmwareUpdates when not already here
+    delete fw.updates;
+  }
+  fs.writeFileSync(fwPath, `${JSON.stringify(fw, null, 2)}\n`);
+}
 
 function get(url, asBuffer = false, redirects = 0) {
   return new Promise((resolve, reject) => {
@@ -165,20 +198,35 @@ function tightProductIds(entry, driverPids, fileName) {
 }
 
 async function main() {
-  const index = JSON.parse(await get(INDEX_URL));
+  const ssot = loadSsot();
+  const indexUrl = ssot.sources?.primary?.url || INDEX_URL;
+  const index = JSON.parse(await get(indexUrl));
   const db = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'mfs_db.json'), 'utf8'));
   const dbLower = new Map(Object.keys(db).map((k) => [k.toLowerCase(), k]));
   const drivers = loadDriverIndex();
 
+  const codes = new Set(
+    Array.isArray(ssot.tuyaManufacturerCodes) && ssot.tuyaManufacturerCodes.length
+      ? ssot.tuyaManufacturerCodes
+      : [...TUYA_MFR_CODES],
+  );
+
   const candidates = index.filter((img) => {
-    if (!TUYA_MFR_CODES.has(img.manufacturerCode)) {return false;}
+    if (!codes.has(img.manufacturerCode)) {return false;}
     if (img.fileVersion === 20459521) {return false;}
     if (!Array.isArray(img.manufacturerName) || !img.manufacturerName.length) {return false;}
     return img.manufacturerName.some((m) => dbLower.has(String(m).toLowerCase()));
   });
 
   console.log(`[firmware-updates] ${candidates.length} image(s) OEM Tuya correspondant à nos empreintes`);
-  const report = { generated: new Date().toISOString(), apply: APPLY, drivers: [], skipped: [] };
+  const report = {
+    generated: new Date().toISOString(),
+    apply: APPLY,
+    patch: 'P2359',
+    source: indexUrl,
+    drivers: [],
+    skipped: [],
+  };
 
   for (const img of candidates) {
     const mfr = img.manufacturerName.find((m) => dbLower.has(String(m).toLowerCase()));
@@ -242,7 +290,7 @@ async function main() {
       compose.firmwareUpdates.updates = (compose.firmwareUpdates.updates || [])
         .filter((u) => !(u.files || []).some((f) => f.imageType === header.imageType && f.manufacturerCode === header.manufacturerCode));
       compose.firmwareUpdates.updates.push({
-        changelog: { en: `OEM Tuya firmware v${header.fileVersion} (Koenkk zigbee-OTA, SHA512-verified)` },
+        changelog: changelogFor(header.fileVersion),
         device: { manufacturerName: deviceMfrs, productId: devicePids },
         files: [{
           fileVersion: header.fileVersion,
@@ -258,6 +306,7 @@ async function main() {
         }]
       });
       fs.writeFileSync(driver.composePath, JSON.stringify(compose, null, 2) + '\n');
+      ensureWakeInstruction(driverId, ssot);
       entry2.applied = true;
     }
     report.drivers.push(entry2);
