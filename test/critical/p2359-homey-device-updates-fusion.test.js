@@ -38,9 +38,12 @@ describe('P2359 Homey Device Updates fusion', () => {
 
   it('sleepy OTA drivers ship wakeInstruction', () => {
     for (const id of ['contact_sensor', 'soil_sensor', 'radiator_valve', 'thermostatic_radiator_valve']) {
-      const fw = JSON.parse(fs.readFileSync(path.join(ROOT, 'drivers', id, 'driver.firmware.compose.json'), 'utf8'));
-      assert.ok(fw.wakeInstruction?.en, `${id} wakeInstruction.en`);
-      assert.match(fw.wakeInstruction.en, /Device Updates/i);
+      const compose = JSON.parse(fs.readFileSync(path.join(ROOT, 'drivers', id, 'driver.compose.json'), 'utf8'));
+      const fwPath = path.join(ROOT, 'drivers', id, 'driver.firmware.compose.json');
+      const fw = fs.existsSync(fwPath) ? JSON.parse(fs.readFileSync(fwPath, 'utf8')) : {};
+      const wake = fw.wakeInstruction || compose.firmwareUpdates?.wakeInstruction;
+      assert.ok(wake?.en, `${id} wakeInstruction.en`);
+      assert.match(wake.en, /Device Updates/i);
     }
   });
 

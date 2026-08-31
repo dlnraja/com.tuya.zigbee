@@ -667,6 +667,10 @@
           }
         ]
       }
-    ]
+    ],
+    "wakeInstruction": {
+      "en": "Press the reset/pairing button once to wake the contact sensor, then start Device Updates.",
+      "fr": "Appuyez une fois sur le bouton reset/appairage pour réveiller le capteur, puis lancez Device Updates."
+    }
   }
 }
