@@ -128,6 +128,8 @@
     "check:voice": "node scripts/validation/check-google-assistant-voice-safety.js",
     "io:smoke": "node tools/ci/device-io-facade-smoke.js",
     "check:io": "npm run io:smoke",
+    "rf:smoke": "node tools/ci/rf-channel-coexistence-smoke.js",
+    "check:rf": "npm run rf:smoke",
     "check:bare-zigbee": "node tools/ci/bare-zigbee-device-gate.js",
     "sync:dp-knowledge": "node tools/ci/sync-dp-couple-knowledge.js",
     "sync:dp-knowledge:apply": "node tools/ci/sync-dp-couple-knowledge.js --apply",
