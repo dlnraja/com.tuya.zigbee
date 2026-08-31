@@ -33,7 +33,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.739 |
+| **App Version** | v9.0.740 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,381 |
 | **Pairing Variants** | 16,472 (4 case combos per fingerprint) |
@@ -41,9 +41,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **Flow Cards** | 5,198 |
 | **Unique Capabilities** | 170 |
 | **Native OTA Drivers** | 5 |
-| **Test Suites** | 192 files |
-| **Test Suites** | 193 files |
-| **Test Suites** | 194 files |
+| **Test Suites** | 195 files |
 | **SVG Icons** | 731 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
@@ -104,6 +102,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.740** | Fixed Moes TS0044 scene remote and soil sensor pairing clusters; hardened wall dimmer TX failure detection. |
 | **v9.0.739** | Fixed Moes TS0044 scene remote and soil sensor pairing clusters; hardened wall dimmer TX failure detection. |
 | **v9.0.738** | Fixed Moes TS0044 scene remote and soil sensor pairing clusters; hardened wall dimmer TX failure detection. |
 | **v9.0.737** | Fixed Moes TS0044 scene remote and soil sensor pairing clusters; hardened wall dimmer TX failure detection. |
@@ -115,7 +114,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.731** | Fixed Fingerbot Homey flow card IDs and switch turned-on/off triggers so Flows bind correctly. |
 | **v9.0.730** | Fixed Fingerbot Homey flow card IDs and switch turned-on/off triggers so Flows bind correctly. |
 | **v9.0.729** | Fixed Fingerbot Homey flow card IDs and switch turned-on/off triggers so Flows bind correctly. |
-| **v9.0.728** | Fixed wall dimmer brightness misread as humidity; fixed AC thermostat valve DP poisoning target temperature from diagnostics. |
 
 <!-- CHANGELOG_END -->
 
