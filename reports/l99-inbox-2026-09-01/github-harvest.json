@@ -1,30 +1,19 @@
 {
-  "harvestedAt": "2026-09-01T08:01:26.543Z",
+  "harvestedAt": "2026-09-01T15:14:58.839Z",
   "repo": "dlnraja/com.tuya.zigbee",
   "auth": "token",
   "error": null,
   "issues": [
-    {
-      "number": 535,
-      "title": "[Auto] New Tuya devices found in zigbee2mqtt",
-      "labels": [
-        "enhancement",
-        "auto-scan"
-      ],
-      "updatedAt": "2026-09-01T05:44:09Z",
-      "user": "github-actions[bot]",
-      "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/535",
-      "bodySnippet": "Monthly scan found new manufacturerName IDs:\n```\n_TZ3000_bbebkwjk\n_TZ3000_bu47m8pv\n_TZ3000_gjiggmio\n_TZ3008_iooniers\n_TZ3008_qziabvzj\n_TZ3008_tary5dvv\n_TZ3008_xvfd3nkp\n_TZ3210_iooniers\n_TZ3210_o235agwx\n_TZE210_xgzzuerd\n_TZE284_da26abzz\n_TZE284_ksz749x8\n_TZE284_n41i9jyt\n_TZE284_to"
-    },
     {
       "number": 533,
       "title": "Device Request - [SMART ZIGBEE CURTAIN SWITCH] - [MOES]",
       "labels": [
         "enhancement",
         "device-request",
+        "new-fingerprint",
         "needs-maintainer"
       ],
-      "updatedAt": "2026-08-31T23:26:06Z",
+      "updatedAt": "2026-09-01T14:53:05Z",
       "user": "salvagr",
       "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/533",
       "bodySnippet": "Thank you for your support.\n\n## 📱 Basic Information\n\n**Brand & Model**: SMART ZIGBEE CURTAIN SWITCH - MOES\n**Purchase Link**: https://es.aliexpress.com/item/1005008356152992.html\n**Power Source**:  Mains\n**Current Status**: pairing with wrong device type. Detected as \"radiator v"
@@ -34,12 +23,12 @@
     {
       "number": 534,
       "title": "AI Monthly Audit - September 2026 | Risk: Updated",
-      "updatedAt": "2026-09-01T05:16:44Z",
+      "updatedAt": "2026-09-01T10:32:02Z",
       "user": "dlnraja",
       "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/pull/534",
       "draft": false
     }
   ],
-  "openIssueCount": 2,
+  "openIssueCount": 1,
   "openPrCount": 1
 }
