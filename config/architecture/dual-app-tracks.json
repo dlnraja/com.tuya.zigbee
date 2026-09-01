@@ -97,6 +97,18 @@
     "p2359_homey_device_updates": {
       "tag": "BOTH",
       "note": "Native Homey Device Updates OTA — SSOT + wakeInstruction + gate/verify + UX; OEM images only"
+    },
+    "p2372_fleet_free_scrape_all_classes": {
+      "tag": "MASTER_ONLY",
+      "note": "Fleet enrich cron lives on master; stable soft-ports free-scrape budget + FlowCardHeuristics"
+    },
+    "p2372_flow_heuristics_knob_rotary": {
+      "tag": "BOTH",
+      "note": "FlowCardHeuristics knob/rotary + SOS patterns — runtime flow resolve reliability"
+    },
+    "p218_2imwyigp_contact_strip": {
+      "tag": "BOTH",
+      "note": "Anti-bot: never list 2imwyigp/u6x1zyv2 on contact_sensor compose"
     }
   },
   "ci": {

@@ -1,0 +1,47 @@
+{
+  "_meta": {
+    "id": "P2372",
+    "updated": "2026-09-01",
+    "description": "All Homey driver classes + id patterns for fleet enrichment. Sacred couple = mfr+pid only."
+  },
+  "classes": [
+    { "id": "button", "patterns": ["button", "remote", "scene_switch", "knob", "sos", "handheld"], "priority": 1 },
+    { "id": "socket", "patterns": ["plug", "socket", "outlet", "energy_plug", "usb"], "priority": 1 },
+    { "id": "switch", "patterns": ["switch_", "wall_switch", "gang", "relay"], "priority": 1 },
+    { "id": "sensor", "patterns": ["sensor", "climate", "temp", "humid", "motion", "presence", "radar", "ias", "contact", "leak", "smoke", "gas", "co2", "soil", "rain", "illuminance"], "priority": 1 },
+    { "id": "light", "patterns": ["bulb", "light", "rgb", "cct", "dimmer", "led"], "priority": 2 },
+    { "id": "curtain", "patterns": ["curtain", "cover", "blind", "shutter", "window_covering"], "priority": 1 },
+    { "id": "thermostat", "patterns": ["thermostat", "trv", "radiator", "valve", "hvac"], "priority": 1 },
+    { "id": "meter", "patterns": ["meter", "din_rail", "rcbo", "clamp", "energy_meter"], "priority": 1 },
+    { "id": "fan", "patterns": ["fan", "ceiling_fan"], "priority": 2 },
+    { "id": "lock", "patterns": ["lock", "door_lock"], "priority": 2 },
+    { "id": "siren", "patterns": ["siren", "alarm", "doorbell"], "priority": 2 },
+    { "id": "ir", "patterns": ["ir_", "ir_blaster", "ir_remote", "wifi_ir"], "priority": 3 },
+    { "id": "wifi", "patterns": ["wifi_", "tuya_wifi"], "priority": 3 },
+    { "id": "garagedoor", "patterns": ["garage"], "priority": 2 },
+    { "id": "heater", "patterns": ["heater", "radiator_heater"], "priority": 2 },
+    { "id": "windowcoverings", "patterns": ["windowcovering", "window_covering"], "priority": 2 },
+    { "id": "other", "patterns": [], "priority": 9 }
+  ],
+  "enrichPhasesByClass": {
+    "button": ["button-flow-harvest", "case-variants", "settings"],
+    "socket": ["settings", "case-variants", "infer-enrich"],
+    "switch": ["settings", "case-variants", "infer-enrich"],
+    "sensor": ["settings", "case-variants", "harden-unknown", "infer-enrich"],
+    "light": ["settings", "case-variants"],
+    "curtain": ["curtain-couples", "case-variants", "settings"],
+    "thermostat": ["settings", "case-variants", "infer-enrich"],
+    "meter": ["settings", "case-variants", "infer-enrich"],
+    "fan": ["settings", "case-variants"],
+    "lock": ["settings", "case-variants"],
+    "siren": ["settings", "case-variants"],
+    "ir": ["harden-wifi-local"],
+    "wifi": ["harden-wifi-local"],
+    "garagedoor": ["settings", "case-variants"],
+    "heater": ["settings", "case-variants"],
+    "windowcoverings": ["curtain-couples", "case-variants"],
+    "other": ["case-variants"]
+  },
+  "neverDegrade": true,
+  "neverInventProductId": true
+}

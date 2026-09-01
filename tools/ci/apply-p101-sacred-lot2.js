@@ -85,8 +85,8 @@ const MOVES = [
   { mfr: '_TZ3002_vsom92pp', pid: 'TS0726', to: 'switch_3gang', evidence: 'Z2M TS0726_3_gang_scene_switch' },
   { mfr: '_TZE200_0hb4rdnp', pid: 'TS0601', to: 'dimmer_1_gang_tuya', evidence: 'Z2M TS0601_dimmer_1_gang_1' },
   { mfr: '_TZE200_gne0e6mk', pid: 'TS0601', to: 'dimmer_1_gang_tuya', evidence: 'Z2M TS0601_dimmer_1_gang_1' },
-  { mfr: '_TZE200_2imwyigp', pid: 'TS0601', to: 'switch_3gang', evidence: 'Z2M MG-ZG03W 3-gang' },
-  { mfr: '_TZE204_2imwyigp', pid: 'TS0601', to: 'switch_3gang', evidence: 'Z2M MG-ZG03W 3-gang' },
+  { mfr: '_TZE200_2imwyigp', pid: 'TS0601', to: 'switch_3gang', evidence: 'Z2M MG-ZG03W 3-gang; P218 forbids 2imwyigp on contact_sensor compose' },
+  { mfr: '_TZE204_2imwyigp', pid: 'TS0601', to: 'switch_3gang', evidence: 'Z2M MG-ZG03W 3-gang; P218 forbids 2imwyigp on contact_sensor compose' },
   { mfr: '_TZE200_2hf7x9n3', pid: 'TS0601', to: 'switch_3gang', evidence: 'Z2M TS0601_switch_3_gang' },
   { mfr: '_TZE200_rqhnxkqu', pid: 'TS0601', to: 'switch_wall_6gang', evidence: 'Z2M TO-6 6-gang wall' },
   { mfr: '_TZE284_hyssaqjk', pid: 'TS0601', to: 'switch_wall_6gang', evidence: 'Z2M QZ-4x4-6 6-gang' },
@@ -108,8 +108,15 @@ for (const move of MOVES) {
     console.error('SKIP missing driver', move.to, move.mfr);
     continue;
   }
-  const rem = removeMfrEverywhere(move.mfr, [move.to]);
+  const rem = removeMfrEverywhere(move.mfr, [move.to, ...(move.keepAlso || [])]);
   const add = ensureCouple(move.to, move.mfr, move.pid);
+  if (Array.isArray(move.keepAlso)) {
+    for (const also of move.keepAlso) {
+      if (also === 'contact_sensor' && /2imwyigp/i.test(move.mfr)) {
+        ensureCouple(also, move.mfr, 'TS0203');
+      }
+    }
+  }
   report.push({ ...move, rem, add });
   console.log(
     APPLY ? 'MOVE' : 'DRY',
