@@ -33,10 +33,10 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.769 |
+| **App Version** | v9.0.770 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,364 |
-| **Pairing Variants** | 16,166 (4 case combos per fingerprint) |
+| **Pairing Variants** | 16,162 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 576 |
 | **Flow Cards** | 5,198 |
 | **Unique Capabilities** | 170 |
@@ -69,8 +69,8 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | 16 | `soil_sensor` | 185 |
 | 17 | `sensor_contact_zigbee` | 182 |
 | 18 | `water_leak_sensor_tuya` | 178 |
-| 19 | `contact_sensor` | 165 |
-| 20 | `usb_dongle_triple` | 164 |
+| 19 | `usb_dongle_triple` | 164 |
+| 20 | `contact_sensor` | 161 |
 
 ### Drivers by Device Class
 
@@ -102,6 +102,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.770** | Added verified curtain motors from live Z2M harvest; improved cover fingerprint tooling. |
 | **v9.0.769** | Added verified curtain motors from live Z2M harvest; improved cover fingerprint tooling. |
 | **v9.0.768** | Improved curtain motors: EF00 RX hardening, timeout-safe position updates, and more verified cover fingerprints. |
 | **v9.0.767** | Exclusive plug routing for TS011F w0qqde0g fingerprints (energy monitor only). |
@@ -113,7 +114,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.760** | Improved MCU time sync and battery cover init; safer dimmer brightness scaling for Tuya devices. |
 | **v9.0.759** | Improved MCU time sync and battery cover init; safer dimmer brightness scaling for Tuya devices. |
 | **v9.0.758** | Moes curtain DP3/7/8/10 + Homey Device Updates OTA (P2356/P2357). |
-| **v9.0.757** | Moes curtain DP3/7/8/10 + Homey Device Updates OTA (P2356/P2357). |
 
 <!-- CHANGELOG_END -->
 
