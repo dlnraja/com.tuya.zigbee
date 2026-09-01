@@ -32,6 +32,7 @@ function main() {
     run('flows-integrity', 'node', ['scripts/validation/verify_flows_integrity.js']),
     run('flow-coherence', 'node', ['tools/ci/flow-coherence-audit.js']),
     run('flow-fleet-enrich', 'node', ['tools/ci/flow-fleet-enrich.js']),
+    run('appjson-flow-dedupe', 'node', ['tools/ci/sync-appjson-flow-dedupe.js']),
     run('voice-safety', 'node', ['scripts/validation/check-google-assistant-voice-safety.js']),
     run('dp-cluster-flow-coverage', 'node', ['tools/ci/coverage-dp-cluster-flow.js', '--strict']),
     run('button-flow-harvest', 'node', ['tools/ci/button-flow-harvest.js']),

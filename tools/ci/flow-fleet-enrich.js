@@ -440,46 +440,19 @@ function processDriverFlow(driverId) {
   return dirty ? result : null;
 }
 
-function syncAllFlowCardsToAppJson() {
-  const appPath = path.join(ROOT, 'app.json');
-  const app = readJson(appPath);
-  if (!app.flow) app.flow = { triggers: [], conditions: [], actions: [] };
-  const maps = {
-    triggers: new Map((app.flow.triggers || []).map((c) => [c.id, c])),
-    conditions: new Map((app.flow.conditions || []).map((c) => [c.id, c])),
-    actions: new Map((app.flow.actions || []).map((c) => [c.id, c])),
-  };
-  let added = 0;
-  let updated = 0;
-
-  for (const driverId of fs.readdirSync(DRIVERS)) {
-    const flowPath = path.join(DRIVERS, driverId, 'driver.flow.compose.json');
-    if (!fs.existsSync(flowPath)) continue;
-    const flow = readJson(flowPath);
-    for (const kind of ['triggers', 'conditions', 'actions']) {
-      for (const card of flow[kind] || []) {
-        if (!card?.id) continue;
-        if (card.titleFormatted && JSON.stringify(card.titleFormatted).includes('[[device]]')) {
-          delete card.titleFormatted;
-        }
-        if (!maps[kind].has(card.id)) {
-          maps[kind].set(card.id, card);
-          added += 1;
-        } else if (APPLY) {
-          maps[kind].set(card.id, card);
-          updated += 1;
-        }
-      }
-    }
-  }
-
-  if (APPLY) {
-    app.flow.triggers = [...maps.triggers.values()];
-    app.flow.conditions = [...maps.conditions.values()];
-    app.flow.actions = [...maps.actions.values()];
-    fs.writeFileSync(appPath, JSON.stringify(app));
-  }
-  return { added, updated, total: maps.triggers.size + maps.conditions.size + maps.actions.size };
+function dedupeAppJsonFlow() {
+  const script = path.join(ROOT, 'tools/ci/sync-appjson-flow-dedupe.js');
+  if (!fs.existsSync(script)) return { skipped: true };
+  const res = spawnSync(process.execPath, [script, '--apply'], {
+    cwd: ROOT,
+    encoding: 'utf8',
+    timeout: 120000,
+  });
+  let report = {};
+  try {
+    report = JSON.parse((res.stdout || '').trim().split('\n').pop());
+  } catch { /* ignore */ }
+  return { ok: res.status === 0, report };
 }
 
 function crossRefZ2mGaps() {
@@ -541,7 +514,7 @@ function main() {
     }
   }
 
-  const sync = syncAllFlowCardsToAppJson();
+  const sync = APPLY ? dedupeAppJsonFlow() : { mode: 'dry-run' };
   const z2m = crossRefZ2mGaps();
 
   const subtools = [];
@@ -558,7 +531,7 @@ function main() {
     orphanTokensFixed: driverResults.reduce((n, r) => n + (r.orphanFixed || 0), 0),
     triggersAdded: driverResults.reduce((n, r) => n + (r.triggersAdded?.length || 0), 0),
     actionsAdded: driverResults.reduce((n, r) => n + (r.actionsAdded?.length || 0), 0),
-    appJsonSync: sync,
+    appJsonDedupe: sync,
     z2mCrossRef: { count: z2m.recommendations?.length || 0 },
     subtools,
     topChanges: driverResults
@@ -584,7 +557,7 @@ function main() {
     `- Orphan tokens fixed: ${summary.orphanTokensFixed}`,
     `- Triggers added: ${summary.triggersAdded}`,
     `- Child-lock actions added: ${summary.actionsAdded}`,
-    `- app.json sync: +${sync.added} new, ${sync.total} total`,
+    `- app.json flow dedupe: ${JSON.stringify(sync.report || sync)}`,
     `- Z2M gap recommendations: ${summary.z2mCrossRef.count}`,
     '',
     '## Commands',
