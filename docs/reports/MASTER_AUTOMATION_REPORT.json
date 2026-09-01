@@ -1,46 +1,2831 @@
 {
-  "timestamp": "2026-06-28T16:17:16.068Z",
-  "version": "9.0.139",
+  "timestamp": "2026-09-01T06:50:19.737Z",
+  "version": "9.0.770",
   "phases": {
+    "2": {
+      "fixes": [
+        {
+          "id": "device_plug_energy_monitor",
+          "type": "zigbee",
+          "count": 2,
+          "source": "auto"
+        },
+        {
+          "id": "device_plug_smart",
+          "type": "zigbee",
+          "count": 1,
+          "source": "auto"
+        },
+        {
+          "id": "dimmer_1_gang_2",
+          "type": "zigbee",
+          "count": 2,
+          "source": "auto"
+        },
+        {
+          "id": "dimmer_dual_channel",
+          "type": "zigbee",
+          "count": 2,
+          "source": "auto"
+        },
+        {
+          "id": "doorwindowsensor",
+          "type": "zigbee",
+          "count": 34,
+          "source": "auto"
+        },
+        {
+          "id": "double_power_point",
+          "type": "zigbee",
+          "count": 2,
+          "source": "auto"
+        },
+        {
+          "id": "outdoor_2_socket",
+          "type": "zigbee",
+          "count": 2,
+          "source": "auto"
+        },
+        {
+          "id": "pirsensor",
+          "type": "zigbee",
+          "count": 21,
+          "source": "auto"
+        },
+        {
+          "id": "radar_sensor_2",
+          "type": "zigbee",
+          "count": 2,
+          "source": "auto"
+        },
+        {
+          "id": "radar_sensor_ceiling",
+          "type": "zigbee",
+          "count": 2,
+          "source": "auto"
+        },
+        {
+          "id": "relay_board_1_channel",
+          "type": "zigbee",
+          "count": 1,
+          "source": "auto"
+        },
+        {
+          "id": "rgb_bulb_E27",
+          "type": "zigbee",
+          "count": 3,
+          "source": "auto"
+        },
+        {
+          "id": "sensor_climate_temphumidsensor",
+          "type": "zigbee",
+          "count": 1,
+          "source": "auto"
+        },
+        {
+          "id": "sensor_lcdtemphumidsensor_temphumidsensor",
+          "type": "zigbee",
+          "count": 1,
+          "source": "auto"
+        },
+        {
+          "id": "sirentemphumidsensor",
+          "type": "zigbee",
+          "count": 2,
+          "source": "auto"
+        },
+        {
+          "id": "smart_air_detection_box",
+          "type": "zigbee",
+          "count": 2,
+          "source": "auto"
+        },
+        {
+          "id": "smart_rcbo",
+          "type": "zigbee",
+          "count": 1,
+          "source": "auto"
+        },
+        {
+          "id": "smart_switch",
+          "type": "zigbee",
+          "count": 3,
+          "source": "auto"
+        },
+        {
+          "id": "switch_2_gang_metering",
+          "type": "zigbee",
+          "count": 2,
+          "source": "auto"
+        },
+        {
+          "id": "wall_remote_4_gang",
+          "type": "zigbee",
+          "count": 2,
+          "source": "auto"
+        }
+      ],
+      "total": 20
+    },
     "1a": {
       "errors": [],
       "warnings": [],
       "stats": {
-        "total": 430,
-        "zigbee": 378,
+        "total": 431,
+        "zigbee": 379,
         "wifi": 51,
         "virtual": 1,
         "hybrid": 0,
-        "ok": 378,
+        "ok": 379,
         "emptyMF": [],
-        "totalFP": 5034
+        "totalFP": 16293
       }
     },
     "1b": {
       "broken": [],
-      "total": 430
+      "total": 431
     },
     "1c": {
       "missing": [],
-      "total": 860
+      "total": 862
     },
     "1d": {
-      "collisions": 0,
-      "collisionMap": {}
+      "collisions": 621,
+      "collisionMap": {
+        "_DEPRECATED_AIR_PURIFIER_HYBRID_DO_NOT_PAIR|TS0601": [
+          "air_purifier_curtain",
+          "air_purifier_siren"
+        ],
+        "_TZ3000_7DCDDNYE|TS0001": [
+          "bulb_dimmable",
+          "dimmer_wall_1gang"
+        ],
+        "_TZ3000_7DCDDNYE|TS0002": [
+          "bulb_dimmable",
+          "dimmer_wall_1gang"
+        ],
+        "_TZ3000_7DCDDNYE|TS0003": [
+          "bulb_dimmable",
+          "dimmer_wall_1gang"
+        ],
+        "_TZ3000_7DCDDNYE|TS0011": [
+          "bulb_dimmable",
+          "dimmer_wall_1gang"
+        ],
+        "_TZ3000_7DCDDNYE|TS0012": [
+          "bulb_dimmable",
+          "dimmer_wall_1gang"
+        ],
+        "_TZ3000_7DCDDNYE|TS0052": [
+          "bulb_dimmable",
+          "dimmer_wall_1gang"
+        ],
+        "_TZ3000_7DCDDNYE|TS0505B": [
+          "bulb_dimmable",
+          "dimmer_wall_1gang"
+        ],
+        "_TZ3000_7DCDDNYE|TS0726": [
+          "bulb_dimmable",
+          "dimmer_wall_1gang"
+        ],
+        "_TZ3000_7DCDDNYE|TS1101": [
+          "bulb_dimmable",
+          "dimmer_wall_1gang"
+        ],
+        "_TZ3000_7DCDDNYE|TS110E": [
+          "bulb_dimmable",
+          "dimmer_wall_1gang"
+        ],
+        "_TZ3000_7DCDDNYE|TS110F": [
+          "bulb_dimmable",
+          "dimmer_wall_1gang"
+        ],
+        "_TZ3000_J2W1DW29|TS0001": [
+          "bulb_dimmable",
+          "dimmer_wall_1gang"
+        ],
+        "_TZ3000_J2W1DW29|TS0002": [
+          "bulb_dimmable",
+          "dimmer_wall_1gang"
+        ],
+        "_TZ3000_J2W1DW29|TS0003": [
+          "bulb_dimmable",
+          "dimmer_wall_1gang"
+        ],
+        "_TZ3000_J2W1DW29|TS0011": [
+          "bulb_dimmable",
+          "dimmer_wall_1gang"
+        ],
+        "_TZ3000_J2W1DW29|TS0012": [
+          "bulb_dimmable",
+          "dimmer_wall_1gang"
+        ],
+        "_TZ3000_J2W1DW29|TS0052": [
+          "bulb_dimmable",
+          "dimmer_wall_1gang"
+        ],
+        "_TZ3000_J2W1DW29|TS0505B": [
+          "bulb_dimmable",
+          "dimmer_wall_1gang"
+        ],
+        "_TZ3000_J2W1DW29|TS0726": [
+          "bulb_dimmable",
+          "dimmer_wall_1gang"
+        ],
+        "_TZ3000_J2W1DW29|TS1101": [
+          "bulb_dimmable",
+          "dimmer_wall_1gang"
+        ],
+        "_TZ3000_J2W1DW29|TS110E": [
+          "bulb_dimmable",
+          "dimmer_wall_1gang"
+        ],
+        "_TZ3000_J2W1DW29|TS110F": [
+          "bulb_dimmable",
+          "dimmer_wall_1gang"
+        ],
+        "_TZ3000_NBNMW9NC|TS0001": [
+          "bulb_dimmable",
+          "dimmer_wall_1gang"
+        ],
+        "_TZ3000_NBNMW9NC|TS0002": [
+          "bulb_dimmable",
+          "dimmer_wall_1gang"
+        ],
+        "_TZ3000_NBNMW9NC|TS0003": [
+          "bulb_dimmable",
+          "dimmer_wall_1gang"
+        ],
+        "_TZ3000_NBNMW9NC|TS0011": [
+          "bulb_dimmable",
+          "dimmer_wall_1gang"
+        ],
+        "_TZ3000_NBNMW9NC|TS0012": [
+          "bulb_dimmable",
+          "dimmer_wall_1gang"
+        ],
+        "_TZ3000_NBNMW9NC|TS0052": [
+          "bulb_dimmable",
+          "dimmer_wall_1gang"
+        ],
+        "_TZ3000_NBNMW9NC|TS0505B": [
+          "bulb_dimmable",
+          "dimmer_wall_1gang"
+        ],
+        "_TZ3000_NBNMW9NC|TS0726": [
+          "bulb_dimmable",
+          "dimmer_wall_1gang"
+        ],
+        "_TZ3000_NBNMW9NC|TS1101": [
+          "bulb_dimmable",
+          "dimmer_wall_1gang"
+        ],
+        "_TZ3000_NBNMW9NC|TS110E": [
+          "bulb_dimmable",
+          "dimmer_wall_1gang"
+        ],
+        "_TZ3000_NBNMW9NC|TS110F": [
+          "bulb_dimmable",
+          "dimmer_wall_1gang"
+        ],
+        "_TZ3000_NOSNX7IM|TS0001": [
+          "bulb_dimmable",
+          "dimmer_wall_1gang"
+        ],
+        "_TZ3000_NOSNX7IM|TS0002": [
+          "bulb_dimmable",
+          "dimmer_wall_1gang"
+        ],
+        "_TZ3000_NOSNX7IM|TS0003": [
+          "bulb_dimmable",
+          "dimmer_wall_1gang"
+        ],
+        "_TZ3000_NOSNX7IM|TS0011": [
+          "bulb_dimmable",
+          "dimmer_wall_1gang"
+        ],
+        "_TZ3000_NOSNX7IM|TS0012": [
+          "bulb_dimmable",
+          "dimmer_wall_1gang"
+        ],
+        "_TZ3000_NOSNX7IM|TS0052": [
+          "bulb_dimmable",
+          "dimmer_wall_1gang"
+        ],
+        "_TZ3000_NOSNX7IM|TS0505B": [
+          "bulb_dimmable",
+          "dimmer_wall_1gang"
+        ],
+        "_TZ3000_NOSNX7IM|TS0726": [
+          "bulb_dimmable",
+          "dimmer_wall_1gang"
+        ],
+        "_TZ3000_NOSNX7IM|TS1101": [
+          "bulb_dimmable",
+          "dimmer_wall_1gang"
+        ],
+        "_TZ3000_NOSNX7IM|TS110E": [
+          "bulb_dimmable",
+          "dimmer_wall_1gang"
+        ],
+        "_TZ3000_NOSNX7IM|TS110F": [
+          "bulb_dimmable",
+          "dimmer_wall_1gang"
+        ],
+        "_TZ3000_ZW7WR5UO|TS0502A": [
+          "bulb_dimmable",
+          "tunable_bulb_E14"
+        ],
+        "_TZ3210_DBILPFQK|TS0001": [
+          "bulb_dimmable",
+          "dimmer_wall_1gang"
+        ],
+        "_TZ3210_DBILPFQK|TS0002": [
+          "bulb_dimmable",
+          "dimmer_wall_1gang"
+        ],
+        "_TZ3210_DBILPFQK|TS0003": [
+          "bulb_dimmable",
+          "dimmer_wall_1gang"
+        ],
+        "_TZ3210_DBILPFQK|TS0011": [
+          "bulb_dimmable",
+          "dimmer_wall_1gang"
+        ],
+        "_TZ3210_DBILPFQK|TS0012": [
+          "bulb_dimmable",
+          "dimmer_wall_1gang"
+        ],
+        "_TZ3210_DBILPFQK|TS0052": [
+          "bulb_dimmable",
+          "dimmer_wall_1gang"
+        ],
+        "_TZ3210_DBILPFQK|TS0505B": [
+          "bulb_dimmable",
+          "dimmer_wall_1gang"
+        ],
+        "_TZ3210_DBILPFQK|TS0726": [
+          "bulb_dimmable",
+          "dimmer_wall_1gang"
+        ],
+        "_TZ3210_DBILPFQK|TS1101": [
+          "bulb_dimmable",
+          "dimmer_wall_1gang"
+        ],
+        "_TZ3210_DBILPFQK|TS110E": [
+          "bulb_dimmable",
+          "dimmer_wall_1gang"
+        ],
+        "_TZ3210_DBILPFQK|TS110F": [
+          "bulb_dimmable",
+          "dimmer_wall_1gang"
+        ],
+        "_TZ3210_DXROOBU3|TS0001": [
+          "bulb_dimmable",
+          "dimmer_wall_1gang"
+        ],
+        "_TZ3210_DXROOBU3|TS0002": [
+          "bulb_dimmable",
+          "dimmer_wall_1gang"
+        ],
+        "_TZ3210_DXROOBU3|TS0003": [
+          "bulb_dimmable",
+          "dimmer_wall_1gang"
+        ],
+        "_TZ3210_DXROOBU3|TS0011": [
+          "bulb_dimmable",
+          "dimmer_wall_1gang"
+        ],
+        "_TZ3210_DXROOBU3|TS0012": [
+          "bulb_dimmable",
+          "dimmer_wall_1gang"
+        ],
+        "_TZ3210_DXROOBU3|TS0052": [
+          "bulb_dimmable",
+          "dimmer_wall_1gang"
+        ],
+        "_TZ3210_DXROOBU3|TS0505B": [
+          "bulb_dimmable",
+          "dimmer_wall_1gang"
+        ],
+        "_TZ3210_DXROOBU3|TS0726": [
+          "bulb_dimmable",
+          "dimmer_wall_1gang"
+        ],
+        "_TZ3210_DXROOBU3|TS1101": [
+          "bulb_dimmable",
+          "dimmer_wall_1gang"
+        ],
+        "_TZ3210_DXROOBU3|TS110E": [
+          "bulb_dimmable",
+          "dimmer_wall_1gang"
+        ],
+        "_TZ3210_DXROOBU3|TS110F": [
+          "bulb_dimmable",
+          "dimmer_wall_1gang"
+        ],
+        "_TZ3000_G1GLZZFK|TS0502A": [
+          "bulb_dimmable",
+          "tunable_bulb_E14"
+        ],
+        "_TZ3000_JUQ7I1FR|TS0001": [
+          "bulb_dimmable",
+          "dimmer_wall_1gang"
+        ],
+        "_TZ3000_JUQ7I1FR|TS0002": [
+          "bulb_dimmable",
+          "dimmer_wall_1gang"
+        ],
+        "_TZ3000_JUQ7I1FR|TS0003": [
+          "bulb_dimmable",
+          "dimmer_wall_1gang"
+        ],
+        "_TZ3000_JUQ7I1FR|TS0011": [
+          "bulb_dimmable",
+          "dimmer_wall_1gang"
+        ],
+        "_TZ3000_JUQ7I1FR|TS0012": [
+          "bulb_dimmable",
+          "dimmer_wall_1gang"
+        ],
+        "_TZ3000_JUQ7I1FR|TS0052": [
+          "bulb_dimmable",
+          "dimmer_wall_1gang"
+        ],
+        "_TZ3000_JUQ7I1FR|TS0505B": [
+          "bulb_dimmable",
+          "dimmer_wall_1gang"
+        ],
+        "_TZ3000_JUQ7I1FR|TS0726": [
+          "bulb_dimmable",
+          "dimmer_wall_1gang"
+        ],
+        "_TZ3000_JUQ7I1FR|TS1101": [
+          "bulb_dimmable",
+          "dimmer_wall_1gang"
+        ],
+        "_TZ3000_JUQ7I1FR|TS110E": [
+          "bulb_dimmable",
+          "dimmer_wall_1gang"
+        ],
+        "_TZ3000_JUQ7I1FR|TS110F": [
+          "bulb_dimmable",
+          "dimmer_wall_1gang"
+        ],
+        "_TZ3210_CLAEH5DS|CLASSIC A60 TW": [
+          "bulb_dimmable",
+          "light_bulb_dimmable_tunable"
+        ],
+        "_TZ3210_CLAEH5DS|E11-N13": [
+          "bulb_dimmable",
+          "light_bulb_dimmable_tunable"
+        ],
+        "_TZ3210_CLAEH5DS|E11-N14": [
+          "bulb_dimmable",
+          "light_bulb_dimmable_tunable"
+        ],
+        "_TZ3210_CLAEH5DS|E12-N13": [
+          "bulb_dimmable",
+          "light_bulb_dimmable_tunable"
+        ],
+        "_TZ3210_CLAEH5DS|E12-N14": [
+          "bulb_dimmable",
+          "light_bulb_dimmable_tunable"
+        ],
+        "_TZ3210_CLAEH5DS|GL-B-007Z": [
+          "bulb_dimmable",
+          "light_bulb_dimmable_tunable"
+        ],
+        "_TZ3210_CLAEH5DS|GL-C-007": [
+          "bulb_dimmable",
+          "light_bulb_dimmable_tunable"
+        ],
+        "_TZ3210_CLAEH5DS|LED1545G12": [
+          "bulb_dimmable",
+          "light_bulb_dimmable_tunable"
+        ],
+        "_TZ3210_CLAEH5DS|LED1546G12": [
+          "bulb_dimmable",
+          "light_bulb_dimmable_tunable"
+        ],
+        "_TZ3210_CLAEH5DS|LTW001": [
+          "bulb_dimmable",
+          "light_bulb_dimmable_tunable"
+        ],
+        "_TZ3210_CLAEH5DS|LTW004": [
+          "bulb_dimmable",
+          "light_bulb_dimmable_tunable"
+        ],
+        "_TZ3210_CLAEH5DS|LTW010": [
+          "bulb_dimmable",
+          "light_bulb_dimmable_tunable"
+        ],
+        "_TZ3210_CLAEH5DS|LTW012": [
+          "bulb_dimmable",
+          "light_bulb_dimmable_tunable"
+        ],
+        "_TZ3210_CLAEH5DS|LTW013": [
+          "bulb_dimmable",
+          "light_bulb_dimmable_tunable"
+        ],
+        "_TZ3210_CLAEH5DS|LTW015": [
+          "bulb_dimmable",
+          "light_bulb_dimmable_tunable"
+        ],
+        "_TZ3210_CLAEH5DS|RB 178 T": [
+          "bulb_dimmable",
+          "light_bulb_dimmable_tunable"
+        ],
+        "_TZ3210_CLAEH5DS|RS 128 T": [
+          "bulb_dimmable",
+          "light_bulb_dimmable_tunable"
+        ],
+        "_TZ3210_CLAEH5DS|TS0011": [
+          "bulb_dimmable",
+          "light_bulb_dimmable_tunable"
+        ],
+        "_TZ3210_CLAEH5DS|TS0052": [
+          "bulb_dimmable",
+          "light_bulb_dimmable_tunable"
+        ],
+        "_TZ3210_CLAEH5DS|TS0502A": [
+          "bulb_dimmable",
+          "light_bulb_dimmable_tunable"
+        ],
+        "_TZ3210_CLAEH5DS|TS0502B": [
+          "bulb_dimmable",
+          "light_bulb_dimmable_tunable"
+        ],
+        "_TZ3210_CLAEH5DS|TS1101": [
+          "bulb_dimmable",
+          "light_bulb_dimmable_tunable"
+        ],
+        "_TZ3210_CLAEH5DS|TS110E": [
+          "bulb_dimmable",
+          "light_bulb_dimmable_tunable"
+        ],
+        "_TZ3210_CLAEH5DS|TS110F": [
+          "bulb_dimmable",
+          "light_bulb_dimmable_tunable"
+        ],
+        "_TZ3210_CLAEH5DS|ZBT-CCTLIGHT": [
+          "bulb_dimmable",
+          "light_bulb_dimmable_tunable"
+        ],
+        "_TZB210_0BKZABHT|TS0502A": [
+          "bulb_dimmable",
+          "tunable_bulb_E14"
+        ],
+        "_TZB210_AYX58FT5|TS0502A": [
+          "bulb_dimmable",
+          "tunable_bulb_E14"
+        ],
+        "_TZB210_EIWANBEB|TS0502A": [
+          "bulb_dimmable",
+          "tunable_bulb_E14"
+        ],
+        "_TZB210_RKGNGB5O|TS0011": [
+          "bulb_dimmable",
+          "wall_dimmer_tuya"
+        ],
+        "_TZB210_RKGNGB5O|TS0052": [
+          "bulb_dimmable",
+          "wall_dimmer_tuya"
+        ],
+        "_TZB210_RKGNGB5O|TS1101": [
+          "bulb_dimmable",
+          "wall_dimmer_tuya"
+        ],
+        "_TZB210_RKGNGB5O|TS110E": [
+          "bulb_dimmable",
+          "wall_dimmer_tuya"
+        ],
+        "_TZB210_RKGNGB5O|TS110F": [
+          "bulb_dimmable",
+          "wall_dimmer_tuya"
+        ],
+        "_TZ3000_DBOU1AP4|TS0505A": [
+          "bulb_rgb",
+          "light_bulb_rgb_rgbw"
+        ],
+        "_TZ3000_DBOU1AP4|TS0505B": [
+          "bulb_rgb",
+          "light_bulb_rgb_rgbw"
+        ],
+        "_TZ3000_DBOU1AP4|TS0601": [
+          "bulb_rgb",
+          "light_bulb_rgb_rgbw"
+        ],
+        "_TZ3000_KEABPIGV|E11-G13": [
+          "bulb_rgb",
+          "led_strip_rgbw"
+        ],
+        "_TZ3000_KEABPIGV|E11-G14": [
+          "bulb_rgb",
+          "led_strip_rgbw"
+        ],
+        "_TZ3000_KEABPIGV|E11-G23": [
+          "bulb_rgb",
+          "led_strip_rgbw"
+        ],
+        "_TZ3000_KEABPIGV|GL-C-006": [
+          "bulb_rgb",
+          "led_strip_rgbw"
+        ],
+        "_TZ3000_KEABPIGV|LCT001": [
+          "bulb_rgb",
+          "led_strip_rgbw"
+        ],
+        "_TZ3000_KEABPIGV|LCT002": [
+          "bulb_rgb",
+          "led_strip_rgbw"
+        ],
+        "_TZ3000_KEABPIGV|LCT003": [
+          "bulb_rgb",
+          "led_strip_rgbw"
+        ],
+        "_TZ3000_KEABPIGV|LCT007": [
+          "bulb_rgb",
+          "led_strip_rgbw"
+        ],
+        "_TZ3000_KEABPIGV|LCT010": [
+          "bulb_rgb",
+          "led_strip_rgbw"
+        ],
+        "_TZ3000_KEABPIGV|LCT011": [
+          "bulb_rgb",
+          "led_strip_rgbw"
+        ],
+        "_TZ3000_KEABPIGV|LCT012": [
+          "bulb_rgb",
+          "led_strip_rgbw"
+        ],
+        "_TZ3000_KEABPIGV|LCT014": [
+          "bulb_rgb",
+          "led_strip_rgbw"
+        ],
+        "_TZ3000_KEABPIGV|LCT015": [
+          "bulb_rgb",
+          "led_strip_rgbw"
+        ],
+        "_TZ3000_KEABPIGV|LCT016": [
+          "bulb_rgb",
+          "led_strip_rgbw"
+        ],
+        "_TZ3000_KEABPIGV|RB 185 C": [
+          "bulb_rgb",
+          "led_strip_rgbw"
+        ],
+        "_TZ3000_KEABPIGV|RB 285 C": [
+          "bulb_rgb",
+          "led_strip_rgbw"
+        ],
+        "_TZ3000_KEABPIGV|TS0503A": [
+          "bulb_rgb",
+          "led_strip_rgbw"
+        ],
+        "_TZ3000_KEABPIGV|TS0503B": [
+          "bulb_rgb",
+          "led_strip_rgbw"
+        ],
+        "_TZ3000_KEABPIGV|TS0504B": [
+          "bulb_rgb",
+          "led_strip_rgbw"
+        ],
+        "_TZ3000_KEABPIGV|TS0505A": [
+          "bulb_rgb",
+          "led_strip_rgbw"
+        ],
+        "_TZ3000_KEABPIGV|TS0505B": [
+          "bulb_rgb",
+          "led_strip_rgbw"
+        ],
+        "_TZ3000_KEABPIGV|ZB-CL01": [
+          "bulb_rgb",
+          "led_strip_rgbw"
+        ],
+        "_TZ3000_KEABPIGV|ZBT-COLORLIGHT": [
+          "bulb_rgb",
+          "led_strip_rgbw"
+        ],
+        "_TZ3000_HLIJWSAI|E11-G13": [
+          "bulb_rgb",
+          "led_strip_rgbw"
+        ],
+        "_TZ3000_HLIJWSAI|E11-G14": [
+          "bulb_rgb",
+          "led_strip_rgbw"
+        ],
+        "_TZ3000_HLIJWSAI|E11-G23": [
+          "bulb_rgb",
+          "led_strip_rgbw"
+        ],
+        "_TZ3000_HLIJWSAI|GL-C-006": [
+          "bulb_rgb",
+          "led_strip_rgbw"
+        ],
+        "_TZ3000_HLIJWSAI|LCT001": [
+          "bulb_rgb",
+          "led_strip_rgbw"
+        ],
+        "_TZ3000_HLIJWSAI|LCT002": [
+          "bulb_rgb",
+          "led_strip_rgbw"
+        ],
+        "_TZ3000_HLIJWSAI|LCT003": [
+          "bulb_rgb",
+          "led_strip_rgbw"
+        ],
+        "_TZ3000_HLIJWSAI|LCT007": [
+          "bulb_rgb",
+          "led_strip_rgbw"
+        ],
+        "_TZ3000_HLIJWSAI|LCT010": [
+          "bulb_rgb",
+          "led_strip_rgbw"
+        ],
+        "_TZ3000_HLIJWSAI|LCT011": [
+          "bulb_rgb",
+          "led_strip_rgbw"
+        ],
+        "_TZ3000_HLIJWSAI|LCT012": [
+          "bulb_rgb",
+          "led_strip_rgbw"
+        ],
+        "_TZ3000_HLIJWSAI|LCT014": [
+          "bulb_rgb",
+          "led_strip_rgbw"
+        ],
+        "_TZ3000_HLIJWSAI|LCT015": [
+          "bulb_rgb",
+          "led_strip_rgbw"
+        ],
+        "_TZ3000_HLIJWSAI|LCT016": [
+          "bulb_rgb",
+          "led_strip_rgbw"
+        ],
+        "_TZ3000_HLIJWSAI|RB 185 C": [
+          "bulb_rgb",
+          "led_strip_rgbw"
+        ],
+        "_TZ3000_HLIJWSAI|RB 285 C": [
+          "bulb_rgb",
+          "led_strip_rgbw"
+        ],
+        "_TZ3000_HLIJWSAI|TS0503A": [
+          "bulb_rgb",
+          "led_strip_rgbw"
+        ],
+        "_TZ3000_HLIJWSAI|TS0503B": [
+          "bulb_rgb",
+          "led_strip_rgbw"
+        ],
+        "_TZ3000_HLIJWSAI|TS0504B": [
+          "bulb_rgb",
+          "led_strip_rgbw"
+        ],
+        "_TZ3000_HLIJWSAI|TS0505A": [
+          "bulb_rgb",
+          "led_strip_rgbw"
+        ],
+        "_TZ3000_HLIJWSAI|TS0505B": [
+          "bulb_rgb",
+          "led_strip_rgbw"
+        ],
+        "_TZ3000_HLIJWSAI|ZB-CL01": [
+          "bulb_rgb",
+          "led_strip_rgbw"
+        ],
+        "_TZ3000_HLIJWSAI|ZBT-COLORLIGHT": [
+          "bulb_rgb",
+          "led_strip_rgbw"
+        ],
+        "_TZ3000_QD7HEJ8U|TS0601": [
+          "bulb_rgb",
+          "dimmable_led_strip"
+        ],
+        "_TZ3210_MJA6R5IX|TS0601": [
+          "bulb_rgb",
+          "dimmable_led_strip"
+        ],
+        "_TZ3000_Q50ZHDSC|TS0601": [
+          "bulb_rgb",
+          "dimmable_led_strip"
+        ],
+        "_TZB210_ZDVRSTS8|TS0504B": [
+          "bulb_rgb",
+          "bulb_rgbw"
+        ],
+        "_TZB210_ZDVRSTS8|TS0505A": [
+          "bulb_rgb",
+          "bulb_rgbw"
+        ],
+        "_TZB210_ZDVRSTS8|TS0505B": [
+          "bulb_rgb",
+          "bulb_rgbw"
+        ],
+        "_TZB210_ZDVRSTS8|TS0601": [
+          "bulb_rgb",
+          "bulb_rgbw"
+        ],
+        "HOBEIAN|TS0001": [
+          "button_wireless_1",
+          "soil_sensor"
+        ],
+        "HOBEIAN|TS004F": [
+          "button_wireless_1",
+          "presence_sensor_radar",
+          "sensor_contact_zigbee"
+        ],
+        "HOBEIAN|TS0215A": [
+          "button_wireless_1",
+          "climate_sensor",
+          "presence_sensor_radar"
+        ],
+        "HOBEIAN|TS0601": [
+          "button_wireless_1",
+          "climate_sensor",
+          "illuminance_sensor",
+          "presence_sensor_radar",
+          "rain_sensor",
+          "sensor_contact_zigbee",
+          "soil_sensor",
+          "switch_2gang",
+          "vibration_sensor",
+          "water_leak_sensor"
+        ],
+        "_TZ3000_JAK16DLL|TS011F": [
+          "button_wireless_2",
+          "smartplug_2_socket"
+        ],
+        "_TZ3000_JAK16DLL|TS0601": [
+          "button_wireless_2",
+          "smartplug_2_socket"
+        ],
+        "_TZ3000_CAYEPV1A|TS011F": [
+          "button_wireless_2",
+          "smartPlug_DinRail"
+        ],
+        "_TZ3000_CAYEPV1A|TS0121": [
+          "button_wireless_2",
+          "smartPlug_DinRail"
+        ],
+        "_TZ3000_CAYEPV1A|TSO121": [
+          "button_wireless_2",
+          "smartPlug_DinRail"
+        ],
+        "_TZ3000_CYMSNFVF|TS0001": [
+          "button_wireless_2",
+          "plug"
+        ],
+        "_TZ3000_CYMSNFVF|TS0001_FINGERBOT": [
+          "button_wireless_2",
+          "plug"
+        ],
+        "_TZ3000_CYMSNFVF|TS0003": [
+          "button_wireless_2",
+          "plug"
+        ],
+        "_TZ3000_CYMSNFVF|TS000F": [
+          "button_wireless_2",
+          "plug"
+        ],
+        "_TZ3000_CYMSNFVF|TS0011": [
+          "button_wireless_2",
+          "plug"
+        ],
+        "_TZ3000_DFGBTUB0|01MINIZB": [
+          "button_wireless_2",
+          "button_wireless_4"
+        ],
+        "_TZ3000_DFGBTUB0|BASICZBR3": [
+          "button_wireless_2",
+          "button_wireless_4"
+        ],
+        "_TZ3000_DFGBTUB0|S26R2ZB": [
+          "button_wireless_2",
+          "button_wireless_4"
+        ],
+        "_TZ3000_DFGBTUB0|S31ZB": [
+          "button_wireless_2",
+          "button_wireless_4"
+        ],
+        "_TZ3000_DFGBTUB0|TS0001": [
+          "button_wireless_2",
+          "button_wireless_4"
+        ],
+        "_TZ3000_DFGBTUB0|TS0001_POWER": [
+          "button_wireless_2",
+          "button_wireless_4"
+        ],
+        "_TZ3000_DFGBTUB0|TS0001_SWITCH": [
+          "button_wireless_2",
+          "button_wireless_4"
+        ],
+        "_TZ3000_DFGBTUB0|TS0001_SWITCH_MODULE": [
+          "button_wireless_2",
+          "button_wireless_4"
+        ],
+        "_TZ3000_DFGBTUB0|TS0002": [
+          "button_wireless_2",
+          "button_wireless_4"
+        ],
+        "_TZ3000_DFGBTUB0|TS0003": [
+          "button_wireless_2",
+          "button_wireless_4"
+        ],
+        "_TZ3000_DFGBTUB0|TS000F": [
+          "button_wireless_2",
+          "button_wireless_4"
+        ],
+        "_TZ3000_DFGBTUB0|TS0011": [
+          "button_wireless_2",
+          "button_wireless_4"
+        ],
+        "_TZ3000_DFGBTUB0|TS0012": [
+          "button_wireless_2",
+          "button_wireless_4"
+        ],
+        "_TZ3000_DFGBTUB0|TS0014": [
+          "button_wireless_2",
+          "button_wireless_4"
+        ],
+        "_TZ3000_DFGBTUB0|TS004F": [
+          "button_wireless_2",
+          "button_wireless_4"
+        ],
+        "_TZ3000_DFGBTUB0|TS0101": [
+          "button_wireless_2",
+          "button_wireless_4"
+        ],
+        "_TZ3000_DFGBTUB0|TS0111": [
+          "button_wireless_2",
+          "button_wireless_4"
+        ],
+        "_TZ3000_DFGBTUB0|TS011F": [
+          "button_wireless_2",
+          "button_wireless_4"
+        ],
+        "_TZ3000_DFGBTUB0|TS0601": [
+          "button_wireless_2",
+          "button_wireless_4"
+        ],
+        "_TZ3000_DFGBTUB0|TS0726": [
+          "button_wireless_2",
+          "button_wireless_4"
+        ],
+        "_TZ3000_DFGBTUB0|TS110E": [
+          "button_wireless_2",
+          "button_wireless_4"
+        ],
+        "_TZ3000_DFGBTUB0|TS130F": [
+          "button_wireless_2",
+          "button_wireless_4"
+        ],
+        "_TZ3000_DFGBTUB0|TS4100": [
+          "button_wireless_2",
+          "button_wireless_4"
+        ],
+        "_TZ3000_DFGBTUB0|ZBM5-1C-120": [
+          "button_wireless_2",
+          "button_wireless_4"
+        ],
+        "_TZ3000_DFGBTUB0|ZBM5-2C-120": [
+          "button_wireless_2",
+          "button_wireless_4"
+        ],
+        "_TZ3000_DFGBTUB0|ZBM5-3C-120": [
+          "button_wireless_2",
+          "button_wireless_4"
+        ],
+        "_TZ3000_DFGBTUB0|ZBMINI": [
+          "button_wireless_2",
+          "button_wireless_4"
+        ],
+        "_TZ3000_DFGBTUB0|ZBMINIL2": [
+          "button_wireless_2",
+          "button_wireless_4"
+        ],
+        "_TZ3000_DFGBTUB0|ZBMINIL2-R2": [
+          "button_wireless_2",
+          "button_wireless_4"
+        ],
+        "_TZ3000_DFGBTUB0|ZBMINIR": [
+          "button_wireless_2",
+          "button_wireless_4"
+        ],
+        "_TZ3000_DFGBTUB0|ZBMINIR2": [
+          "button_wireless_2",
+          "button_wireless_4"
+        ],
+        "_TZ3000_DFGBTUB0|ZBMINIR2-R2": [
+          "button_wireless_2",
+          "button_wireless_4"
+        ],
+        "_TZ3000_DFGBTUB0|ZG-301Z": [
+          "button_wireless_2",
+          "button_wireless_4"
+        ],
+        "_TZ3000_DFGBTUB0|ZG-302Z1": [
+          "button_wireless_2",
+          "button_wireless_4"
+        ],
+        "_TZ3000_DFGBTUB0|SNZB-01M": [
+          "button_wireless_2",
+          "button_wireless_4"
+        ],
+        "_TZ3000_EE8NRT2L|01MINIZB": [
+          "button_wireless_2",
+          "button_wireless_4"
+        ],
+        "_TZ3000_EE8NRT2L|BASICZBR3": [
+          "button_wireless_2",
+          "button_wireless_4"
+        ],
+        "_TZ3000_EE8NRT2L|S26R2ZB": [
+          "button_wireless_2",
+          "button_wireless_4"
+        ],
+        "_TZ3000_EE8NRT2L|S31ZB": [
+          "button_wireless_2",
+          "button_wireless_4"
+        ],
+        "_TZ3000_EE8NRT2L|TS0001": [
+          "button_wireless_2",
+          "button_wireless_4"
+        ],
+        "_TZ3000_EE8NRT2L|TS0001_POWER": [
+          "button_wireless_2",
+          "button_wireless_4"
+        ],
+        "_TZ3000_EE8NRT2L|TS0001_SWITCH": [
+          "button_wireless_2",
+          "button_wireless_4"
+        ],
+        "_TZ3000_EE8NRT2L|TS0001_SWITCH_MODULE": [
+          "button_wireless_2",
+          "button_wireless_4"
+        ],
+        "_TZ3000_EE8NRT2L|TS0002": [
+          "button_wireless_2",
+          "button_wireless_4"
+        ],
+        "_TZ3000_EE8NRT2L|TS0003": [
+          "button_wireless_2",
+          "button_wireless_4"
+        ],
+        "_TZ3000_EE8NRT2L|TS000F": [
+          "button_wireless_2",
+          "button_wireless_4"
+        ],
+        "_TZ3000_EE8NRT2L|TS0011": [
+          "button_wireless_2",
+          "button_wireless_4"
+        ],
+        "_TZ3000_EE8NRT2L|TS0012": [
+          "button_wireless_2",
+          "button_wireless_4"
+        ],
+        "_TZ3000_EE8NRT2L|TS0014": [
+          "button_wireless_2",
+          "button_wireless_4"
+        ],
+        "_TZ3000_EE8NRT2L|TS004F": [
+          "button_wireless_2",
+          "button_wireless_4"
+        ],
+        "_TZ3000_EE8NRT2L|TS0101": [
+          "button_wireless_2",
+          "button_wireless_4"
+        ],
+        "_TZ3000_EE8NRT2L|TS0111": [
+          "button_wireless_2",
+          "button_wireless_4"
+        ],
+        "_TZ3000_EE8NRT2L|TS011F": [
+          "button_wireless_2",
+          "button_wireless_4"
+        ],
+        "_TZ3000_EE8NRT2L|TS0601": [
+          "button_wireless_2",
+          "button_wireless_4"
+        ],
+        "_TZ3000_EE8NRT2L|TS0726": [
+          "button_wireless_2",
+          "button_wireless_4"
+        ],
+        "_TZ3000_EE8NRT2L|TS110E": [
+          "button_wireless_2",
+          "button_wireless_4"
+        ],
+        "_TZ3000_EE8NRT2L|TS130F": [
+          "button_wireless_2",
+          "button_wireless_4"
+        ],
+        "_TZ3000_EE8NRT2L|TS4100": [
+          "button_wireless_2",
+          "button_wireless_4"
+        ],
+        "_TZ3000_EE8NRT2L|ZBM5-1C-120": [
+          "button_wireless_2",
+          "button_wireless_4"
+        ],
+        "_TZ3000_EE8NRT2L|ZBM5-2C-120": [
+          "button_wireless_2",
+          "button_wireless_4"
+        ],
+        "_TZ3000_EE8NRT2L|ZBM5-3C-120": [
+          "button_wireless_2",
+          "button_wireless_4"
+        ],
+        "_TZ3000_EE8NRT2L|ZBMINI": [
+          "button_wireless_2",
+          "button_wireless_4"
+        ],
+        "_TZ3000_EE8NRT2L|ZBMINIL2": [
+          "button_wireless_2",
+          "button_wireless_4"
+        ],
+        "_TZ3000_EE8NRT2L|ZBMINIL2-R2": [
+          "button_wireless_2",
+          "button_wireless_4"
+        ],
+        "_TZ3000_EE8NRT2L|ZBMINIR": [
+          "button_wireless_2",
+          "button_wireless_4"
+        ],
+        "_TZ3000_EE8NRT2L|ZBMINIR2": [
+          "button_wireless_2",
+          "button_wireless_4"
+        ],
+        "_TZ3000_EE8NRT2L|ZBMINIR2-R2": [
+          "button_wireless_2",
+          "button_wireless_4"
+        ],
+        "_TZ3000_EE8NRT2L|ZG-301Z": [
+          "button_wireless_2",
+          "button_wireless_4"
+        ],
+        "_TZ3000_EE8NRT2L|ZG-302Z1": [
+          "button_wireless_2",
+          "button_wireless_4"
+        ],
+        "_TZ3000_EE8NRT2L|SNZB-01M": [
+          "button_wireless_2",
+          "button_wireless_4"
+        ],
+        "_TZ3000_EW31DMGX|TS0001": [
+          "button_wireless_2",
+          "plug"
+        ],
+        "_TZ3000_EW31DMGX|TS0001_FINGERBOT": [
+          "button_wireless_2",
+          "plug"
+        ],
+        "_TZ3000_EW31DMGX|TS0003": [
+          "button_wireless_2",
+          "plug"
+        ],
+        "_TZ3000_EW31DMGX|TS000F": [
+          "button_wireless_2",
+          "plug"
+        ],
+        "_TZ3000_EW31DMGX|TS0011": [
+          "button_wireless_2",
+          "plug"
+        ],
+        "_TZ3000_HYFVRAR3|TS0001": [
+          "button_wireless_2",
+          "plug"
+        ],
+        "_TZ3000_HYFVRAR3|TS0001_FINGERBOT": [
+          "button_wireless_2",
+          "plug"
+        ],
+        "_TZ3000_HYFVRAR3|TS0003": [
+          "button_wireless_2",
+          "plug"
+        ],
+        "_TZ3000_HYFVRAR3|TS000F": [
+          "button_wireless_2",
+          "plug"
+        ],
+        "_TZ3000_HYFVRAR3|TS0011": [
+          "button_wireless_2",
+          "plug"
+        ],
+        "_TZ3000_ITNRSUFE|TS0601": [
+          "button_wireless_2",
+          "lcdtemphumidsensor"
+        ],
+        "_TZ3000_KDI2O9M6|TS0001": [
+          "button_wireless_2",
+          "plug"
+        ],
+        "_TZ3000_KDI2O9M6|TS0001_FINGERBOT": [
+          "button_wireless_2",
+          "plug"
+        ],
+        "_TZ3000_KDI2O9M6|TS0003": [
+          "button_wireless_2",
+          "plug"
+        ],
+        "_TZ3000_KDI2O9M6|TS000F": [
+          "button_wireless_2",
+          "plug"
+        ],
+        "_TZ3000_KDI2O9M6|TS0011": [
+          "button_wireless_2",
+          "plug"
+        ],
+        "_TZ3000_LEPZUHTO|TS011F": [
+          "button_wireless_2",
+          "smartPlug_DinRail"
+        ],
+        "_TZ3000_LEPZUHTO|TS0121": [
+          "button_wireless_2",
+          "smartPlug_DinRail"
+        ],
+        "_TZ3000_LEPZUHTO|TSO121": [
+          "button_wireless_2",
+          "smartPlug_DinRail"
+        ],
+        "_TZ3000_PLYVNUF5|TS0001": [
+          "button_wireless_2",
+          "plug"
+        ],
+        "_TZ3000_PLYVNUF5|TS0001_FINGERBOT": [
+          "button_wireless_2",
+          "plug"
+        ],
+        "_TZ3000_PLYVNUF5|TS0003": [
+          "button_wireless_2",
+          "plug"
+        ],
+        "_TZ3000_PLYVNUF5|TS000F": [
+          "button_wireless_2",
+          "plug"
+        ],
+        "_TZ3000_PLYVNUF5|TS0011": [
+          "button_wireless_2",
+          "plug"
+        ],
+        "_TZ3000_UPJRSXH1|TS0001": [
+          "button_wireless_2",
+          "plug"
+        ],
+        "_TZ3000_UPJRSXH1|TS0001_FINGERBOT": [
+          "button_wireless_2",
+          "plug"
+        ],
+        "_TZ3000_UPJRSXH1|TS0003": [
+          "button_wireless_2",
+          "plug"
+        ],
+        "_TZ3000_UPJRSXH1|TS000F": [
+          "button_wireless_2",
+          "plug"
+        ],
+        "_TZ3000_UPJRSXH1|TS0011": [
+          "button_wireless_2",
+          "plug"
+        ],
+        "_TZ3000_WZAUVBCS|TS011F": [
+          "button_wireless_2",
+          "socket_power_strip"
+        ],
+        "_TZE200_ZL1KMJQX|TS0601": [
+          "button_wireless_2",
+          "lcdtemphumidsensor_3"
+        ],
+        "_TZ3000_GBM10JNJ|TS0601": [
+          "button_wireless_3",
+          "button_wireless_4"
+        ],
+        "_TZ3000_U3NV1JWK|SNZB-01M": [
+          "button_wireless_4",
+          "handheld_remote_4_buttons"
+        ],
+        "_TZ3000_U3NV1JWK|TS0014": [
+          "button_wireless_4",
+          "handheld_remote_4_buttons"
+        ],
+        "_TZ3000_U3NV1JWK|TS0044": [
+          "button_wireless_4",
+          "handheld_remote_4_buttons"
+        ],
+        "_TZ3000_U3NV1JWK|TS004F": [
+          "button_wireless_4",
+          "handheld_remote_4_buttons"
+        ],
+        "_TZ3000_U3NV1JWK|TS0601": [
+          "button_wireless_4",
+          "handheld_remote_4_buttons"
+        ],
+        "_TZ3000_GJNOZSAZ|TS011F": [
+          "button_wireless_plug",
+          "smartplug"
+        ],
+        "_TZ3000_GJNOZSAZ|TS0121": [
+          "button_wireless_plug",
+          "smartplug"
+        ],
+        "_TZ3000_CEHUW1LW|TS011F": [
+          "button_wireless_plug",
+          "smartplug"
+        ],
+        "_TZ3000_CEHUW1LW|TS0121": [
+          "button_wireless_plug",
+          "smartplug"
+        ],
+        "_TZ3000_U5U4CAKC|TS011F": [
+          "button_wireless_plug",
+          "smartplug"
+        ],
+        "_TZ3000_U5U4CAKC|TS0121": [
+          "button_wireless_plug",
+          "smartplug"
+        ],
+        "HOBEIAN|BASICZBR3": [
+          "climate_sensor",
+          "soil_sensor"
+        ],
+        "HOBEIAN|CK-BL702-MWS-01": [
+          "climate_sensor",
+          "presence_sensor_radar"
+        ],
+        "HOBEIAN|CK-BL702-MWS-01(7016)": [
+          "climate_sensor",
+          "presence_sensor_radar",
+          "vibration_sensor"
+        ],
+        "HOBEIAN|CK-TLSR8656-SS5-01(7014)": [
+          "climate_sensor",
+          "presence_sensor_radar",
+          "soil_sensor"
+        ],
+        "HOBEIAN|MG1_5RZ": [
+          "climate_sensor",
+          "presence_sensor_radar"
+        ],
+        "HOBEIAN|RH3052": [
+          "climate_sensor",
+          "presence_sensor_radar",
+          "soil_sensor"
+        ],
+        "HOBEIAN|S26R2ZB": [
+          "climate_sensor",
+          "soil_sensor"
+        ],
+        "HOBEIAN|S31ZB": [
+          "climate_sensor",
+          "soil_sensor"
+        ],
+        "HOBEIAN|SM0201": [
+          "climate_sensor",
+          "presence_sensor_radar",
+          "soil_sensor"
+        ],
+        "HOBEIAN|SZLMR10": [
+          "climate_sensor",
+          "presence_sensor_radar"
+        ],
+        "HOBEIAN|TH01": [
+          "climate_sensor",
+          "presence_sensor_radar",
+          "soil_sensor"
+        ],
+        "HOBEIAN|THS317-ET": [
+          "climate_sensor",
+          "presence_sensor_radar",
+          "soil_sensor"
+        ],
+        "HOBEIAN|TS0004": [
+          "climate_sensor",
+          "presence_sensor_radar"
+        ],
+        "HOBEIAN|TS0202": [
+          "climate_sensor",
+          "presence_sensor_radar",
+          "soil_sensor"
+        ],
+        "HOBEIAN|TS0222": [
+          "climate_sensor",
+          "illuminance_sensor",
+          "presence_sensor_radar",
+          "soil_sensor"
+        ],
+        "HOBEIAN|TS0601_WIRELESSSW": [
+          "climate_sensor",
+          "presence_sensor_radar"
+        ],
+        "HOBEIAN|TS0726": [
+          "climate_sensor",
+          "sensor_contact_zigbee",
+          "switch_2gang"
+        ],
+        "HOBEIAN|TS110E": [
+          "climate_sensor",
+          "presence_sensor_radar"
+        ],
+        "HOBEIAN|TS1201": [
+          "climate_sensor",
+          "presence_sensor_radar",
+          "soil_sensor"
+        ],
+        "HOBEIAN|WSDCGQ01LM": [
+          "climate_sensor",
+          "presence_sensor_radar",
+          "soil_sensor"
+        ],
+        "HOBEIAN|WSDCGQ11LM": [
+          "climate_sensor",
+          "presence_sensor_radar",
+          "soil_sensor"
+        ],
+        "HOBEIAN|WSDCGQ12LM": [
+          "climate_sensor",
+          "presence_sensor_radar",
+          "soil_sensor"
+        ],
+        "HOBEIAN|ZBMINI": [
+          "climate_sensor",
+          "soil_sensor"
+        ],
+        "HOBEIAN|ZBMINIL2": [
+          "climate_sensor",
+          "soil_sensor"
+        ],
+        "HOBEIAN|ZP-301Z": [
+          "climate_sensor",
+          "presence_sensor_radar"
+        ],
+        "HOBEIAN|LUMI.SENSOR_HT": [
+          "climate_sensor",
+          "presence_sensor_radar",
+          "soil_sensor"
+        ],
+        "HOBEIAN|LUMI.SENSOR_HT.AGL02": [
+          "climate_sensor",
+          "presence_sensor_radar",
+          "soil_sensor"
+        ],
+        "HOBEIAN|LUMI.WEATHER": [
+          "climate_sensor",
+          "presence_sensor_radar",
+          "soil_sensor"
+        ],
+        "HOBEIAN|TS0201": [
+          "climate_sensor",
+          "presence_sensor_radar",
+          "water_leak_sensor"
+        ],
+        "HOBEIAN|TY0201": [
+          "climate_sensor",
+          "presence_sensor_radar"
+        ],
+        "_TZ3000_BPKIJO14|TS0203": [
+          "contact_sensor",
+          "doorwindowsensor_3"
+        ],
+        "_TZ3000_RCUYHWE3|TS0203": [
+          "contact_sensor",
+          "smart_door_window_sensor"
+        ],
+        "_TZ3000_RCUYHWE3|TY0203": [
+          "contact_sensor",
+          "smart_door_window_sensor"
+        ],
+        "_TZ3000_O4MKAHKC|EXCELLUX": [
+          "contact_sensor",
+          "motion_sensor"
+        ],
+        "HOBEIAN|TS0203": [
+          "contact_sensor",
+          "presence_sensor_radar",
+          "sensor_contact_zigbee"
+        ],
+        "HOBEIAN|ZG-102Z": [
+          "contact_sensor",
+          "sensor_contact_zigbee"
+        ],
+        "HOBEIAN|ZG-102ZL": [
+          "contact_sensor",
+          "sensor_contact_zigbee"
+        ],
+        "HOBEIAN|DS01": [
+          "contact_sensor",
+          "sensor_contact_zigbee"
+        ],
+        "HOBEIAN|RH3001": [
+          "contact_sensor",
+          "sensor_contact_zigbee",
+          "water_leak_sensor"
+        ],
+        "HOBEIAN|MCCGQ01LM": [
+          "contact_sensor",
+          "sensor_contact_zigbee"
+        ],
+        "HOBEIAN|MCCGQ11LM": [
+          "contact_sensor",
+          "sensor_contact_zigbee"
+        ],
+        "HOBEIAN|MCCGQ12LM": [
+          "contact_sensor",
+          "sensor_contact_zigbee"
+        ],
+        "HOBEIAN|MCCGQ14LM": [
+          "contact_sensor",
+          "sensor_contact_zigbee"
+        ],
+        "HOBEIAN|LUMI.SENSOR_MAGNET": [
+          "contact_sensor",
+          "sensor_contact_zigbee"
+        ],
+        "HOBEIAN|LUMI.SENSOR_MAGNET.AQ2": [
+          "contact_sensor",
+          "sensor_contact_zigbee"
+        ],
+        "HOBEIAN|LUMI.MAGNET.AC01": [
+          "contact_sensor",
+          "sensor_contact_zigbee"
+        ],
+        "HOBEIAN|LUMI.MAGNET.AGL02": [
+          "contact_sensor",
+          "sensor_contact_zigbee"
+        ],
+        "HOBEIAN|E1603/E1702": [
+          "contact_sensor",
+          "sensor_contact_zigbee"
+        ],
+        "HOBEIAN|TRADFRI OPEN/CLOSE REMOTE": [
+          "contact_sensor",
+          "sensor_contact_zigbee"
+        ],
+        "HOBEIAN|3300-S": [
+          "contact_sensor",
+          "sensor_contact_zigbee"
+        ],
+        "HOBEIAN|3320-L": [
+          "contact_sensor",
+          "sensor_contact_zigbee"
+        ],
+        "HOBEIAN|SNZB-04": [
+          "contact_sensor",
+          "sensor_contact_zigbee"
+        ],
+        "HOBEIAN|SNZB-04P": [
+          "contact_sensor",
+          "sensor_contact_zigbee"
+        ],
+        "HOBEIAN|SNZB-04PR2": [
+          "contact_sensor",
+          "sensor_contact_zigbee"
+        ],
+        "HOBEIAN|CK-TLSR8656-SS5-01(7003)": [
+          "contact_sensor",
+          "sensor_contact_zigbee"
+        ],
+        "HOBEIAN|SNZB-04R2": [
+          "contact_sensor",
+          "sensor_contact_zigbee"
+        ],
+        "HOBEIAN|TS0021": [
+          "contact_sensor",
+          "sensor_contact_zigbee"
+        ],
+        "HOBEIAN|DOORWINDOW-SENSOR-ZB3.0": [
+          "contact_sensor",
+          "sensor_contact_zigbee"
+        ],
+        "HOBEIAN|MCT-340 E": [
+          "contact_sensor",
+          "sensor_contact_zigbee"
+        ],
+        "HOBEIAN|EXCELLUX": [
+          "contact_sensor",
+          "presence_sensor_radar",
+          "sensor_contact_zigbee"
+        ],
+        "HOBEIAN|Q9MPFHW": [
+          "contact_sensor",
+          "water_leak_sensor"
+        ],
+        "_TZE200_BJZROWV2|TS0601": [
+          "curtain_motor",
+          "device_radiator_valve"
+        ],
+        "_TZE200_ZAH67EKD|TS0601": [
+          "curtain_motor",
+          "curtain_motor_tilt"
+        ],
+        "_TZE200_UJ3F4WR5|TS0301": [
+          "curtain_motor",
+          "curtain_motor_shutter"
+        ],
+        "_TZE200_UJ3F4WR5|TS0601": [
+          "curtain_motor",
+          "curtain_motor_shutter"
+        ],
+        "_TZE200_UJ3F4WR5|TS0726": [
+          "curtain_motor",
+          "curtain_motor_shutter"
+        ],
+        "_TZE200_UJ3F4WR5|TS110E": [
+          "curtain_motor",
+          "curtain_motor_shutter"
+        ],
+        "_TZ3000_IYSTCADI|TS0601": [
+          "dimmable_led_strip",
+          "led_controller_rgb"
+        ],
+        "_TZ3210_INVESBER|TS0011": [
+          "dimmable_led_strip",
+          "wall_dimmer_tuya"
+        ],
+        "_TZ3210_INVESBER|TS0052": [
+          "dimmable_led_strip",
+          "wall_dimmer_tuya"
+        ],
+        "_TZ3210_INVESBER|TS0601": [
+          "dimmable_led_strip",
+          "wall_dimmer_tuya"
+        ],
+        "_TZ3210_INVESBER|TS0601_DIM1": [
+          "dimmable_led_strip",
+          "wall_dimmer_tuya"
+        ],
+        "_TZ3210_INVESBER|TS1101": [
+          "dimmable_led_strip",
+          "wall_dimmer_tuya"
+        ],
+        "_TZ3210_INVESBER|TS110E": [
+          "dimmable_led_strip",
+          "wall_dimmer_tuya"
+        ],
+        "_TZ3210_INVESBER|TS110F": [
+          "dimmable_led_strip",
+          "wall_dimmer_tuya"
+        ],
+        "_TZ3210_INVESBER|ZBMINI-DIM": [
+          "dimmable_led_strip",
+          "wall_dimmer_tuya"
+        ],
+        "_TZ3210_INVESBER|ZBMINID": [
+          "dimmable_led_strip",
+          "wall_dimmer_tuya"
+        ],
+        "_TZE200_LA2C2UO9|TS110F": [
+          "dimmer_1_gang_tuya",
+          "wall_dimmer_tuya"
+        ],
+        "_TZE200_LA2C2UO9|TS110E": [
+          "dimmer_1_gang_tuya",
+          "wall_dimmer_tuya"
+        ],
+        "_TZE200_LA2C2UO9|TS0052": [
+          "dimmer_1_gang_tuya",
+          "wall_dimmer_tuya"
+        ],
+        "_TZE200_LA2C2UO9|TS0601": [
+          "dimmer_1_gang_tuya",
+          "wall_dimmer_tuya"
+        ],
+        "_TZE200_IP2AKL4W|TS110F": [
+          "dimmer_1_gang_tuya",
+          "wall_dimmer_tuya"
+        ],
+        "_TZE200_IP2AKL4W|TS110E": [
+          "dimmer_1_gang_tuya",
+          "wall_dimmer_tuya"
+        ],
+        "_TZE200_IP2AKL4W|TS0052": [
+          "dimmer_1_gang_tuya",
+          "wall_dimmer_tuya"
+        ],
+        "_TZE200_IP2AKL4W|TS0601": [
+          "dimmer_1_gang_tuya",
+          "wall_dimmer_tuya"
+        ],
+        "_TZE200_1AGWNEMS|TS110F": [
+          "dimmer_1_gang_tuya",
+          "wall_dimmer_tuya"
+        ],
+        "_TZE200_1AGWNEMS|TS110E": [
+          "dimmer_1_gang_tuya",
+          "wall_dimmer_tuya"
+        ],
+        "_TZE200_1AGWNEMS|TS0052": [
+          "dimmer_1_gang_tuya",
+          "wall_dimmer_tuya"
+        ],
+        "_TZE200_1AGWNEMS|TS0601": [
+          "dimmer_1_gang_tuya",
+          "wall_dimmer_tuya"
+        ],
+        "_TZE200_579LGUH2|TS110F": [
+          "dimmer_1_gang_tuya",
+          "wall_dimmer_tuya"
+        ],
+        "_TZE200_579LGUH2|TS110E": [
+          "dimmer_1_gang_tuya",
+          "wall_dimmer_tuya"
+        ],
+        "_TZE200_579LGUH2|TS0052": [
+          "dimmer_1_gang_tuya",
+          "wall_dimmer_tuya"
+        ],
+        "_TZE200_579LGUH2|TS0601": [
+          "dimmer_1_gang_tuya",
+          "wall_dimmer_tuya"
+        ],
+        "_TZE200_VUCANKJX|TS110F": [
+          "dimmer_1_gang_tuya",
+          "wall_dimmer_tuya"
+        ],
+        "_TZE200_VUCANKJX|TS110E": [
+          "dimmer_1_gang_tuya",
+          "wall_dimmer_tuya"
+        ],
+        "_TZE200_VUCANKJX|TS0052": [
+          "dimmer_1_gang_tuya",
+          "wall_dimmer_tuya"
+        ],
+        "_TZE200_VUCANKJX|TS0601": [
+          "dimmer_1_gang_tuya",
+          "wall_dimmer_tuya"
+        ],
+        "_TZE200_4MH6TYYO|TS110F": [
+          "dimmer_1_gang_tuya",
+          "dimmer_wall_1gang"
+        ],
+        "_TZE200_4MH6TYYO|TS110E": [
+          "dimmer_1_gang_tuya",
+          "dimmer_wall_1gang"
+        ],
+        "_TZE200_4MH6TYYO|TS0052": [
+          "dimmer_1_gang_tuya",
+          "dimmer_wall_1gang"
+        ],
+        "_TZE200_4MH6TYYO|TS0601": [
+          "dimmer_1_gang_tuya",
+          "dimmer_wall_1gang"
+        ],
+        "_TZE200_4MH6TYYO|TS0505B": [
+          "dimmer_1_gang_tuya",
+          "dimmer_wall_1gang"
+        ],
+        "_TZE200_4MH6TYYO|TS0002": [
+          "dimmer_1_gang_tuya",
+          "dimmer_wall_1gang"
+        ],
+        "_TZE200_4MH6TYYO|TS0003": [
+          "dimmer_1_gang_tuya",
+          "dimmer_wall_1gang"
+        ],
+        "_TZE200_4MH6TYYO|TS0012": [
+          "dimmer_1_gang_tuya",
+          "dimmer_wall_1gang"
+        ],
+        "_TZE200_4MH6TYYO|TS0013": [
+          "dimmer_1_gang_tuya",
+          "dimmer_wall_1gang"
+        ],
+        "_TZE200_4MH6TYYO|TS0001": [
+          "dimmer_1_gang_tuya",
+          "dimmer_wall_1gang"
+        ],
+        "_TZE200_4MH6TYYO|TS0726": [
+          "dimmer_1_gang_tuya",
+          "dimmer_wall_1gang"
+        ],
+        "_TZE204_N9CTKB6J|TS110E": [
+          "dimmer_1_gang_tuya",
+          "switch_1gang"
+        ],
+        "_TZE204_N9CTKB6J|TS0601": [
+          "dimmer_1_gang_tuya",
+          "switch_1gang"
+        ],
+        "_TZE204_N9CTKB6J|TS0003": [
+          "dimmer_1_gang_tuya",
+          "switch_1gang"
+        ],
+        "_TZE204_N9CTKB6J|TS0012": [
+          "dimmer_1_gang_tuya",
+          "switch_1gang"
+        ],
+        "_TZE204_N9CTKB6J|TS0001": [
+          "dimmer_1_gang_tuya",
+          "switch_1gang"
+        ],
+        "_TZE204_N9CTKB6J|TS0726": [
+          "dimmer_1_gang_tuya",
+          "switch_1gang"
+        ],
+        "_TZE204_9QHUZGO0|TS110E": [
+          "dimmer_1_gang_tuya",
+          "switch_1gang"
+        ],
+        "_TZE204_9QHUZGO0|TS0601": [
+          "dimmer_1_gang_tuya",
+          "switch_1gang"
+        ],
+        "_TZE204_9QHUZGO0|TS0003": [
+          "dimmer_1_gang_tuya",
+          "switch_1gang"
+        ],
+        "_TZE204_9QHUZGO0|TS0012": [
+          "dimmer_1_gang_tuya",
+          "switch_1gang"
+        ],
+        "_TZE204_9QHUZGO0|TS0001": [
+          "dimmer_1_gang_tuya",
+          "switch_1gang"
+        ],
+        "_TZE204_9QHUZGO0|TS0726": [
+          "dimmer_1_gang_tuya",
+          "switch_1gang"
+        ],
+        "_TZE204_DCNSGGVZ|TS110F": [
+          "dimmer_1_gang_tuya",
+          "dimmer_wall_1gang"
+        ],
+        "_TZE204_DCNSGGVZ|TS110E": [
+          "dimmer_1_gang_tuya",
+          "dimmer_wall_1gang"
+        ],
+        "_TZE204_DCNSGGVZ|TS0052": [
+          "dimmer_1_gang_tuya",
+          "dimmer_wall_1gang"
+        ],
+        "_TZE204_DCNSGGVZ|TS0601": [
+          "dimmer_1_gang_tuya",
+          "dimmer_wall_1gang"
+        ],
+        "_TZE204_DCNSGGVZ|TS0505B": [
+          "dimmer_1_gang_tuya",
+          "dimmer_wall_1gang"
+        ],
+        "_TZE204_DCNSGGVZ|TS0002": [
+          "dimmer_1_gang_tuya",
+          "dimmer_wall_1gang"
+        ],
+        "_TZE204_DCNSGGVZ|TS0003": [
+          "dimmer_1_gang_tuya",
+          "dimmer_wall_1gang"
+        ],
+        "_TZE204_DCNSGGVZ|TS0012": [
+          "dimmer_1_gang_tuya",
+          "dimmer_wall_1gang"
+        ],
+        "_TZE204_DCNSGGVZ|TS0013": [
+          "dimmer_1_gang_tuya",
+          "dimmer_wall_1gang"
+        ],
+        "_TZE204_DCNSGGVZ|TS0001": [
+          "dimmer_1_gang_tuya",
+          "dimmer_wall_1gang"
+        ],
+        "_TZE204_DCNSGGVZ|TS0726": [
+          "dimmer_1_gang_tuya",
+          "dimmer_wall_1gang"
+        ],
+        "_TZE204_5CUOCQTY|TS110E": [
+          "dimmer_1_gang_tuya",
+          "switch_1gang"
+        ],
+        "_TZE204_5CUOCQTY|TS0601": [
+          "dimmer_1_gang_tuya",
+          "switch_1gang"
+        ],
+        "_TZE204_5CUOCQTY|TS0003": [
+          "dimmer_1_gang_tuya",
+          "switch_1gang"
+        ],
+        "_TZE204_5CUOCQTY|TS0012": [
+          "dimmer_1_gang_tuya",
+          "switch_1gang"
+        ],
+        "_TZE204_5CUOCQTY|TS0001": [
+          "dimmer_1_gang_tuya",
+          "switch_1gang"
+        ],
+        "_TZE204_5CUOCQTY|TS0726": [
+          "dimmer_1_gang_tuya",
+          "switch_1gang"
+        ],
+        "_TZ3210_WDEXAYPG|TS0011": [
+          "dimmer_2_gang",
+          "wall_dimmer_tuya"
+        ],
+        "_TZ3210_WDEXAYPG|TS0601": [
+          "dimmer_2_gang",
+          "wall_dimmer_tuya"
+        ],
+        "_TZ3210_WDEXAYPG|TS1101": [
+          "dimmer_2_gang",
+          "wall_dimmer_tuya"
+        ],
+        "_TZ3210_WDEXAYPG|TS110E": [
+          "dimmer_2_gang",
+          "wall_dimmer_tuya"
+        ],
+        "_TZ3210_WDEXAYPG|TS110F": [
+          "dimmer_2_gang",
+          "wall_dimmer_tuya"
+        ],
+        "_TZ3210_3MPWQZUU|TS0011": [
+          "dimmer_2_gang",
+          "wall_dimmer_tuya"
+        ],
+        "_TZ3210_3MPWQZUU|TS0601": [
+          "dimmer_2_gang",
+          "wall_dimmer_tuya"
+        ],
+        "_TZ3210_3MPWQZUU|TS1101": [
+          "dimmer_2_gang",
+          "wall_dimmer_tuya"
+        ],
+        "_TZ3210_3MPWQZUU|TS110E": [
+          "dimmer_2_gang",
+          "wall_dimmer_tuya"
+        ],
+        "_TZ3210_3MPWQZUU|TS110F": [
+          "dimmer_2_gang",
+          "wall_dimmer_tuya"
+        ],
+        "_TZ3210_PAGAJPOG|TS0011": [
+          "dimmer_2_gang",
+          "wall_dimmer_tuya"
+        ],
+        "_TZ3210_PAGAJPOG|TS0601": [
+          "dimmer_2_gang",
+          "wall_dimmer_tuya"
+        ],
+        "_TZ3210_PAGAJPOG|TS1101": [
+          "dimmer_2_gang",
+          "wall_dimmer_tuya"
+        ],
+        "_TZ3210_PAGAJPOG|TS110E": [
+          "dimmer_2_gang",
+          "wall_dimmer_tuya"
+        ],
+        "_TZ3210_PAGAJPOG|TS110F": [
+          "dimmer_2_gang",
+          "wall_dimmer_tuya"
+        ],
+        "_TZ3210_4UBYLGHK|TS0601": [
+          "dimmer_2_gang",
+          "rgb_led_strip"
+        ],
+        "_TZE200_E3OITDYU|TS0011": [
+          "dimmer_2_gang_tuya",
+          "wall_dimmer_tuya"
+        ],
+        "_TZE200_E3OITDYU|TS0601": [
+          "dimmer_2_gang_tuya",
+          "wall_dimmer_tuya"
+        ],
+        "_TZE200_E3OITDYU|TS1101": [
+          "dimmer_2_gang_tuya",
+          "wall_dimmer_tuya"
+        ],
+        "_TZE200_E3OITDYU|TS110E": [
+          "dimmer_2_gang_tuya",
+          "wall_dimmer_tuya"
+        ],
+        "_TZE200_E3OITDYU|TS110F": [
+          "dimmer_2_gang_tuya",
+          "wall_dimmer_tuya"
+        ],
+        "_TZE204_ZENJ4LXV|TS0011": [
+          "dimmer_2_gang_tuya",
+          "wall_dimmer_tuya"
+        ],
+        "_TZE204_ZENJ4LXV|TS0601": [
+          "dimmer_2_gang_tuya",
+          "wall_dimmer_tuya"
+        ],
+        "_TZE204_ZENJ4LXV|TS1101": [
+          "dimmer_2_gang_tuya",
+          "wall_dimmer_tuya"
+        ],
+        "_TZE204_ZENJ4LXV|TS110E": [
+          "dimmer_2_gang_tuya",
+          "wall_dimmer_tuya"
+        ],
+        "_TZE204_ZENJ4LXV|TS110F": [
+          "dimmer_2_gang_tuya",
+          "wall_dimmer_tuya"
+        ],
+        "_TZE204_BXOO2SWD|TS0011": [
+          "dimmer_2_gang_tuya",
+          "wall_dimmer_tuya"
+        ],
+        "_TZE204_BXOO2SWD|TS0601": [
+          "dimmer_2_gang_tuya",
+          "wall_dimmer_tuya"
+        ],
+        "_TZE204_BXOO2SWD|TS1101": [
+          "dimmer_2_gang_tuya",
+          "wall_dimmer_tuya"
+        ],
+        "_TZE204_BXOO2SWD|TS110E": [
+          "dimmer_2_gang_tuya",
+          "wall_dimmer_tuya"
+        ],
+        "_TZE204_BXOO2SWD|TS110F": [
+          "dimmer_2_gang_tuya",
+          "wall_dimmer_tuya"
+        ],
+        "_TZE200_FJJBHX9D|01MINIZB": [
+          "dimmer_2_gang_tuya",
+          "wall_switch_5_gang_tuya"
+        ],
+        "_TZE200_FJJBHX9D|BASICZBR3": [
+          "dimmer_2_gang_tuya",
+          "wall_switch_5_gang_tuya"
+        ],
+        "_TZE200_FJJBHX9D|S26R2ZB": [
+          "dimmer_2_gang_tuya",
+          "wall_switch_5_gang_tuya"
+        ],
+        "_TZE200_FJJBHX9D|S31ZB": [
+          "dimmer_2_gang_tuya",
+          "wall_switch_5_gang_tuya"
+        ],
+        "_TZE200_FJJBHX9D|TS0001_POWER": [
+          "dimmer_2_gang_tuya",
+          "wall_switch_5_gang_tuya"
+        ],
+        "_TZE200_FJJBHX9D|TS0001_SWITCH": [
+          "dimmer_2_gang_tuya",
+          "wall_switch_5_gang_tuya"
+        ],
+        "_TZE200_FJJBHX9D|TS0001_SWITCH_MODULE": [
+          "dimmer_2_gang_tuya",
+          "wall_switch_5_gang_tuya"
+        ],
+        "_TZE200_FJJBHX9D|TS000F": [
+          "dimmer_2_gang_tuya",
+          "wall_switch_5_gang_tuya"
+        ],
+        "_TZE200_FJJBHX9D|TS0011": [
+          "dimmer_2_gang_tuya",
+          "wall_switch_5_gang_tuya"
+        ],
+        "_TZE200_FJJBHX9D|TS0101": [
+          "dimmer_2_gang_tuya",
+          "wall_switch_5_gang_tuya"
+        ],
+        "_TZE200_FJJBHX9D|TS0601": [
+          "dimmer_2_gang_tuya",
+          "wall_switch_5_gang_tuya"
+        ],
+        "_TZE200_FJJBHX9D|TS0726": [
+          "dimmer_2_gang_tuya",
+          "wall_switch_5_gang_tuya"
+        ],
+        "_TZE200_FJJBHX9D|TS4100": [
+          "dimmer_2_gang_tuya",
+          "wall_switch_5_gang_tuya"
+        ],
+        "_TZE200_FJJBHX9D|ZBM5-1C-120": [
+          "dimmer_2_gang_tuya",
+          "wall_switch_5_gang_tuya"
+        ],
+        "_TZE200_FJJBHX9D|ZBM5-2C-120": [
+          "dimmer_2_gang_tuya",
+          "wall_switch_5_gang_tuya"
+        ],
+        "_TZE200_FJJBHX9D|ZBM5-3C-120": [
+          "dimmer_2_gang_tuya",
+          "wall_switch_5_gang_tuya"
+        ],
+        "_TZE200_FJJBHX9D|ZBMINI": [
+          "dimmer_2_gang_tuya",
+          "wall_switch_5_gang_tuya"
+        ],
+        "_TZE200_FJJBHX9D|ZBMINIL2": [
+          "dimmer_2_gang_tuya",
+          "wall_switch_5_gang_tuya"
+        ],
+        "_TZE200_FJJBHX9D|ZBMINIL2-R2": [
+          "dimmer_2_gang_tuya",
+          "wall_switch_5_gang_tuya"
+        ],
+        "_TZE200_FJJBHX9D|ZBMINIR": [
+          "dimmer_2_gang_tuya",
+          "wall_switch_5_gang_tuya"
+        ],
+        "_TZE200_FJJBHX9D|ZBMINIR2": [
+          "dimmer_2_gang_tuya",
+          "wall_switch_5_gang_tuya"
+        ],
+        "_TZE200_FJJBHX9D|ZBMINIR2-R2": [
+          "dimmer_2_gang_tuya",
+          "wall_switch_5_gang_tuya"
+        ],
+        "_TZE200_FJJBHX9D|ZG-302Z1": [
+          "dimmer_2_gang_tuya",
+          "wall_switch_5_gang_tuya"
+        ],
+        "_TZ3000_ZGRFFIWG|TS0003": [
+          "doorwindowsensor_3",
+          "sensor_contact_zigbee"
+        ],
+        "_TZ3000_ZGRFFIWG|TS0203": [
+          "doorwindowsensor_3",
+          "sensor_contact_zigbee"
+        ],
+        "_TZ3000_ZGRFFIWG|TS0601": [
+          "doorwindowsensor_3",
+          "sensor_contact_zigbee"
+        ],
+        "_TZ3000_ZGRFFIWG|TS0726": [
+          "doorwindowsensor_3",
+          "sensor_contact_zigbee"
+        ],
+        "_TZ3000_ZGRFFIWG|TS130F": [
+          "doorwindowsensor_3",
+          "sensor_contact_zigbee"
+        ],
+        "_TZ3000_UVTI8NKD|TS0003": [
+          "doorwindowsensor_3",
+          "sensor_contact_zigbee"
+        ],
+        "_TZ3000_UVTI8NKD|TS0203": [
+          "doorwindowsensor_3",
+          "sensor_contact_zigbee"
+        ],
+        "_TZ3000_UVTI8NKD|TS0601": [
+          "doorwindowsensor_3",
+          "sensor_contact_zigbee"
+        ],
+        "_TZ3000_UVTI8NKD|TS0726": [
+          "doorwindowsensor_3",
+          "sensor_contact_zigbee"
+        ],
+        "_TZ3000_UVTI8NKD|TS130F": [
+          "doorwindowsensor_3",
+          "sensor_contact_zigbee"
+        ],
+        "ZBEACON|TS0601": [
+          "doorwindowsensor_4",
+          "plug_smart"
+        ],
+        "HOBEIAN|TS0225": [
+          "illuminance_sensor",
+          "presence_sensor_radar"
+        ],
+        "_TZ3210_HUZKZQYK|TS0601": [
+          "lcdtemphumidluxsensor",
+          "wall_dimmer_tuya"
+        ],
+        "_TZE200_VVMBJ46N|TS0601": [
+          "lcdtemphumidsensor",
+          "lcdtemphumidsensor_3"
+        ],
+        "_TZE200_VVMBJ46N|EXCELLUX": [
+          "lcdtemphumidsensor",
+          "lcdtemphumidsensor_3"
+        ],
+        "_TZE200_LOCANSQN|TS0601": [
+          "lcdtemphumidsensor",
+          "lcdtemphumidsensor_3"
+        ],
+        "_TZE200_LOCANSQN|EXCELLUX": [
+          "lcdtemphumidsensor",
+          "lcdtemphumidsensor_3"
+        ],
+        "_TZ3210_R0XGKFT5|TS0601": [
+          "led_controller_cct",
+          "rgb_mood_light"
+        ],
+        "_TZ3000_C8OZAH8N|EXCELLUX": [
+          "motion_sensor",
+          "pir_sensor_2"
+        ],
+        "_TZ3000_C8OZAH8N|TS0001": [
+          "motion_sensor",
+          "pir_sensor_2"
+        ],
+        "_TZ3000_C8OZAH8N|TS0202": [
+          "motion_sensor",
+          "pir_sensor_2"
+        ],
+        "_TZ3000_C8OZAH8N|TS0601": [
+          "motion_sensor",
+          "pir_sensor_2"
+        ],
+        "_TZ3000_C8OZAH8N|TS110E": [
+          "motion_sensor",
+          "pir_sensor_2"
+        ],
+        "_TZ3000_MMTWJMAQ|EXCELLUX": [
+          "motion_sensor",
+          "pir_sensor_2"
+        ],
+        "_TZ3000_MMTWJMAQ|TS0001": [
+          "motion_sensor",
+          "pir_sensor_2"
+        ],
+        "_TZ3000_MMTWJMAQ|TS0202": [
+          "motion_sensor",
+          "pir_sensor_2"
+        ],
+        "_TZ3000_MMTWJMAQ|TS0601": [
+          "motion_sensor",
+          "pir_sensor_2"
+        ],
+        "_TZ3000_MMTWJMAQ|TS110E": [
+          "motion_sensor",
+          "pir_sensor_2"
+        ],
+        "_TZ3000_MSL6WXK9|EXCELLUX": [
+          "pir_sensor_2",
+          "sensor_motion_presence"
+        ],
+        "_TZ3000_MSL6WXK9|TS0001": [
+          "pir_sensor_2",
+          "sensor_motion_presence"
+        ],
+        "_TZ3000_MSL6WXK9|TS0202": [
+          "pir_sensor_2",
+          "sensor_motion_presence"
+        ],
+        "_TZ3000_MSL6WXK9|TS0601": [
+          "pir_sensor_2",
+          "sensor_motion_presence"
+        ],
+        "_TZ3000_MCXW5EHU|EXCELLUX": [
+          "pir_sensor_2",
+          "sensor_motion_presence"
+        ],
+        "_TZ3000_MCXW5EHU|TS0001": [
+          "pir_sensor_2",
+          "sensor_motion_presence"
+        ],
+        "_TZ3000_MCXW5EHU|TS0202": [
+          "pir_sensor_2",
+          "sensor_motion_presence"
+        ],
+        "_TZ3000_MCXW5EHU|TS0601": [
+          "pir_sensor_2",
+          "sensor_motion_presence"
+        ],
+        "_TZ3000_OTVN3LNE|EXCELLUX": [
+          "pir_sensor_2",
+          "sensor_motion_presence"
+        ],
+        "_TZ3000_OTVN3LNE|TS0001": [
+          "pir_sensor_2",
+          "sensor_motion_presence"
+        ],
+        "_TZ3000_OTVN3LNE|TS0202": [
+          "pir_sensor_2",
+          "sensor_motion_presence"
+        ],
+        "_TZ3000_OTVN3LNE|TS0601": [
+          "pir_sensor_2",
+          "sensor_motion_presence"
+        ],
+        "_TZ3040_6YGJFYLL|EXCELLUX": [
+          "pir_sensor_2",
+          "sensor_motion_presence"
+        ],
+        "_TZ3040_6YGJFYLL|TS0001": [
+          "pir_sensor_2",
+          "sensor_motion_presence"
+        ],
+        "_TZ3040_6YGJFYLL|TS0202": [
+          "pir_sensor_2",
+          "sensor_motion_presence"
+        ],
+        "_TZ3040_6YGJFYLL|TS0601": [
+          "pir_sensor_2",
+          "sensor_motion_presence"
+        ],
+        "_TZ3000_NSS8AMZ9|EXCELLUX": [
+          "pir_sensor_2",
+          "sensor_motion_presence"
+        ],
+        "_TZ3000_NSS8AMZ9|TS0001": [
+          "pir_sensor_2",
+          "sensor_motion_presence"
+        ],
+        "_TZ3000_NSS8AMZ9|TS0202": [
+          "pir_sensor_2",
+          "sensor_motion_presence"
+        ],
+        "_TZ3000_NSS8AMZ9|TS0601": [
+          "pir_sensor_2",
+          "sensor_motion_presence"
+        ],
+        "_TZ3000_BSVQRXRU|EXCELLUX": [
+          "pir_sensor_2",
+          "sensor_motion_presence"
+        ],
+        "_TZ3000_BSVQRXRU|TS0001": [
+          "pir_sensor_2",
+          "sensor_motion_presence"
+        ],
+        "_TZ3000_BSVQRXRU|TS0202": [
+          "pir_sensor_2",
+          "sensor_motion_presence"
+        ],
+        "_TZ3000_BSVQRXRU|TS0601": [
+          "pir_sensor_2",
+          "sensor_motion_presence"
+        ],
+        "_TZ3040_WQMTJSYK|EXCELLUX": [
+          "pir_sensor_2",
+          "sensor_motion_presence"
+        ],
+        "_TZ3040_WQMTJSYK|TS0001": [
+          "pir_sensor_2",
+          "sensor_motion_presence"
+        ],
+        "_TZ3040_WQMTJSYK|TS0202": [
+          "pir_sensor_2",
+          "sensor_motion_presence"
+        ],
+        "_TZ3040_WQMTJSYK|TS0601": [
+          "pir_sensor_2",
+          "sensor_motion_presence"
+        ],
+        "_TZ3000_MG4DY6Z6|EXCELLUX": [
+          "pir_sensor_2",
+          "sensor_motion_presence"
+        ],
+        "_TZ3000_MG4DY6Z6|TS0001": [
+          "pir_sensor_2",
+          "sensor_motion_presence"
+        ],
+        "_TZ3000_MG4DY6Z6|TS0202": [
+          "pir_sensor_2",
+          "sensor_motion_presence"
+        ],
+        "_TZ3000_MG4DY6Z6|TS0601": [
+          "pir_sensor_2",
+          "sensor_motion_presence"
+        ],
+        "_TZ3000_WAMQDR3F|TS0001": [
+          "plug",
+          "plug_energy_monitor"
+        ],
+        "_TZ3000_WAMQDR3F|TS0003": [
+          "plug",
+          "plug_energy_monitor"
+        ],
+        "_TZ3000_WAMQDR3F|TS000F": [
+          "plug",
+          "plug_energy_monitor"
+        ],
+        "_TZ3000_WAMQDR3F|TS0011": [
+          "plug",
+          "plug_energy_monitor"
+        ],
+        "_TZ3000_FQOYNHKU|TS011F": [
+          "plug_energy_monitor",
+          "smartplug"
+        ],
+        "_TZ3000_FQOYNHKU|TS0121": [
+          "plug_energy_monitor",
+          "smartplug"
+        ],
+        "_TZ3000_FQOYNHKU|TSO121": [
+          "plug_energy_monitor",
+          "smartplug"
+        ],
+        "_TZ3000_J1V25L17|TS011F": [
+          "plug_energy_monitor",
+          "smartplug"
+        ],
+        "_TZ3000_J1V25L17|TS0121": [
+          "plug_energy_monitor",
+          "smartplug"
+        ],
+        "_TZ3000_J1V25L17|TSO121": [
+          "plug_energy_monitor",
+          "smartplug"
+        ],
+        "HOBEIAN|TS0207": [
+          "rain_sensor",
+          "water_leak_sensor"
+        ],
+        "_TZE200_JSAQGAKF|TS0601": [
+          "rain_sensor",
+          "sensor_motion_presence"
+        ],
+        "_TZE200_2PDDNNRK|TS0601": [
+          "rain_sensor",
+          "sensor_motion_presence"
+        ],
+        "_TZ3210_K1PE6IBM|TS0601": [
+          "rgb_led_strip_controller",
+          "wall_dimmer_tuya"
+        ],
+        "_TZ3000_PESZEJY7|TS0601": [
+          "scene_switch_1",
+          "smart_button_switch"
+        ],
+        "_TZ3000_PESZEJY7|TS0215A": [
+          "scene_switch_1",
+          "smart_button_switch"
+        ],
+        "HOBEIAN|TS0003": [
+          "sensor_contact_zigbee",
+          "switch_2gang"
+        ],
+        "HOBEIAN|TS0013": [
+          "sensor_contact_zigbee",
+          "switch_2gang"
+        ],
+        "_TZ3000_QGWCXXWS|TS0601": [
+          "smart_button_switch",
+          "switch_1gang"
+        ],
+        "_TZ3000_ITB0OMHV|TS0601": [
+          "smart_button_switch",
+          "switch_1gang"
+        ],
+        "_TZ3000_CJFMU5HE|TS0049": [
+          "smart_garden_irrigation_control",
+          "water_valve_garden"
+        ],
+        "_TZ3000_CJFMU5HE|TS0601": [
+          "smart_garden_irrigation_control",
+          "water_valve_garden"
+        ],
+        "_TZ3000_KZ1ANOI8|TS0049": [
+          "smart_garden_irrigation_control",
+          "water_valve_garden"
+        ],
+        "_TZ3000_KZ1ANOI8|TS0601": [
+          "smart_garden_irrigation_control",
+          "water_valve_garden"
+        ],
+        "_TZ3290_IXD9MVV4|TS0601": [
+          "smart_irrigation_valve",
+          "water_valve_smart"
+        ],
+        "_TZE200_NTCY3XU1|GS361A-H04": [
+          "smoke_detector_advanced",
+          "smoke_sensor2"
+        ],
+        "_TZE200_NTCY3XU1|HS1SA": [
+          "smoke_detector_advanced",
+          "smoke_sensor2"
+        ],
+        "_TZE200_NTCY3XU1|HS3SA": [
+          "smoke_detector_advanced",
+          "smoke_sensor2"
+        ],
+        "_TZE200_NTCY3XU1|JTYJ-GD-01LM/BW": [
+          "smoke_detector_advanced",
+          "smoke_sensor2"
+        ],
+        "_TZE200_NTCY3XU1|NAS-SD02B0": [
+          "smoke_detector_advanced",
+          "smoke_sensor2"
+        ],
+        "_TZE200_NTCY3XU1|PG-S11Z": [
+          "smoke_detector_advanced",
+          "smoke_sensor2"
+        ],
+        "_TZE200_NTCY3XU1|SA12IZL": [
+          "smoke_detector_advanced",
+          "smoke_sensor2"
+        ],
+        "_TZE200_NTCY3XU1|SD8SC_00.00.03.12TC": [
+          "smoke_detector_advanced",
+          "smoke_sensor2"
+        ],
+        "_TZE200_NTCY3XU1|SMSZB-120": [
+          "smoke_detector_advanced",
+          "smoke_sensor2"
+        ],
+        "_TZE200_NTCY3XU1|SSSQS01LM": [
+          "smoke_detector_advanced",
+          "smoke_sensor2"
+        ],
+        "_TZE200_NTCY3XU1|TS0205": [
+          "smoke_detector_advanced",
+          "smoke_sensor2"
+        ],
+        "_TZE200_NTCY3XU1|TS0601": [
+          "smoke_detector_advanced",
+          "smoke_sensor2"
+        ],
+        "_TZE200_NTCY3XU1|YG400A": [
+          "smoke_detector_advanced",
+          "smoke_sensor2"
+        ],
+        "_TZE200_NTCY3XU1|LUMI.SENSOR_SMOKE": [
+          "smoke_detector_advanced",
+          "smoke_sensor2"
+        ],
+        "_TZE200_YH7AOAHI|TS0205": [
+          "smoke_sensor",
+          "smoke_sensor3"
+        ],
+        "_TZE284_6YCGARAB|TS0205": [
+          "smoke_sensor",
+          "smoke_sensor3"
+        ],
+        "_TZ3000_T7UGVA7Q|01MINIZB": [
+          "switch_1gang",
+          "switch_3gang"
+        ],
+        "_TZ3000_T7UGVA7Q|BASICZBR3": [
+          "switch_1gang",
+          "switch_3gang"
+        ],
+        "_TZ3000_T7UGVA7Q|S26R2ZB": [
+          "switch_1gang",
+          "switch_3gang"
+        ],
+        "_TZ3000_T7UGVA7Q|S31ZB": [
+          "switch_1gang",
+          "switch_3gang"
+        ],
+        "_TZ3000_T7UGVA7Q|TS0001": [
+          "switch_1gang",
+          "switch_3gang"
+        ],
+        "_TZ3000_T7UGVA7Q|TS0001_POWER": [
+          "switch_1gang",
+          "switch_3gang"
+        ],
+        "_TZ3000_T7UGVA7Q|TS0001_SWITCH": [
+          "switch_1gang",
+          "switch_3gang"
+        ],
+        "_TZ3000_T7UGVA7Q|TS0001_SWITCH_MODULE": [
+          "switch_1gang",
+          "switch_3gang"
+        ],
+        "_TZ3000_T7UGVA7Q|TS0003": [
+          "switch_1gang",
+          "switch_3gang"
+        ],
+        "_TZ3000_T7UGVA7Q|TS0011": [
+          "switch_1gang",
+          "switch_3gang"
+        ],
+        "_TZ3000_T7UGVA7Q|TS0012": [
+          "switch_1gang",
+          "switch_3gang"
+        ],
+        "_TZ3000_T7UGVA7Q|TS0014": [
+          "switch_1gang",
+          "switch_3gang"
+        ],
+        "_TZ3000_T7UGVA7Q|TS0101": [
+          "switch_1gang",
+          "switch_3gang"
+        ],
+        "_TZ3000_T7UGVA7Q|TS0111": [
+          "switch_1gang",
+          "switch_3gang"
+        ],
+        "_TZ3000_T7UGVA7Q|TS0726": [
+          "switch_1gang",
+          "switch_3gang"
+        ],
+        "_TZ3000_T7UGVA7Q|TS110E": [
+          "switch_1gang",
+          "switch_3gang"
+        ],
+        "_TZ3000_T7UGVA7Q|TS130F": [
+          "switch_1gang",
+          "switch_3gang"
+        ],
+        "_TZ3000_T7UGVA7Q|TS4100": [
+          "switch_1gang",
+          "switch_3gang"
+        ],
+        "_TZ3000_T7UGVA7Q|ZBM5-1C-120": [
+          "switch_1gang",
+          "switch_3gang"
+        ],
+        "_TZ3000_T7UGVA7Q|ZBM5-2C-120": [
+          "switch_1gang",
+          "switch_3gang"
+        ],
+        "_TZ3000_T7UGVA7Q|ZBM5-3C-120": [
+          "switch_1gang",
+          "switch_3gang"
+        ],
+        "_TZ3000_T7UGVA7Q|ZBMINI": [
+          "switch_1gang",
+          "switch_3gang"
+        ],
+        "_TZ3000_T7UGVA7Q|ZBMINIL2": [
+          "switch_1gang",
+          "switch_3gang"
+        ],
+        "_TZ3000_T7UGVA7Q|ZBMINIL2-R2": [
+          "switch_1gang",
+          "switch_3gang"
+        ],
+        "_TZ3000_T7UGVA7Q|ZBMINIR": [
+          "switch_1gang",
+          "switch_3gang"
+        ],
+        "_TZ3000_T7UGVA7Q|ZBMINIR2": [
+          "switch_1gang",
+          "switch_3gang"
+        ],
+        "_TZ3000_T7UGVA7Q|ZBMINIR2-R2": [
+          "switch_1gang",
+          "switch_3gang"
+        ],
+        "_TZ3000_T7UGVA7Q|ZG-301Z": [
+          "switch_1gang",
+          "switch_3gang"
+        ],
+        "_TZ3000_T7UGVA7Q|ZG-302Z1": [
+          "switch_1gang",
+          "switch_3gang"
+        ],
+        "_TZ3000_T7UGVA7Q|TS0004": [
+          "switch_1gang",
+          "switch_3gang"
+        ],
+        "_TZ3000_T7UGVA7Q|TS011F": [
+          "switch_1gang",
+          "switch_3gang"
+        ],
+        "_TZ3000_T7UGVA7Q|TS0601": [
+          "switch_1gang",
+          "switch_3gang"
+        ],
+        "HOBEIAN|TS011F": [
+          "switch_2gang",
+          "vibration_sensor"
+        ]
+      }
     }
   },
-  "errors": [],
-  "warnings": [],
-  "fixes": [],
+  "errors": [
+    "AGGREGATE_ERROR: zigbee driver sans MF: device_plug_energy_monitor",
+    "AGGREGATE_ERROR: zigbee driver sans MF: device_plug_smart",
+    "AGGREGATE_ERROR: zigbee driver sans MF: dimmer_1_gang_2",
+    "AGGREGATE_ERROR: zigbee driver sans MF: dimmer_dual_channel",
+    "AGGREGATE_ERROR: zigbee driver sans MF: doorwindowsensor",
+    "AGGREGATE_ERROR: zigbee driver sans MF: double_power_point",
+    "AGGREGATE_ERROR: zigbee driver sans MF: outdoor_2_socket",
+    "AGGREGATE_ERROR: zigbee driver sans MF: pirsensor",
+    "AGGREGATE_ERROR: zigbee driver sans MF: radar_sensor_2",
+    "AGGREGATE_ERROR: zigbee driver sans MF: radar_sensor_ceiling",
+    "AGGREGATE_ERROR: zigbee driver sans MF: relay_board_1_channel",
+    "AGGREGATE_ERROR: zigbee driver sans MF: rgb_bulb_E27",
+    "AGGREGATE_ERROR: zigbee driver sans MF: sensor_climate_temphumidsensor",
+    "AGGREGATE_ERROR: zigbee driver sans MF: sensor_lcdtemphumidsensor_temphumidsensor",
+    "AGGREGATE_ERROR: zigbee driver sans MF: sirentemphumidsensor",
+    "AGGREGATE_ERROR: zigbee driver sans MF: smart_air_detection_box",
+    "AGGREGATE_ERROR: zigbee driver sans MF: smart_rcbo",
+    "AGGREGATE_ERROR: zigbee driver sans MF: smart_switch",
+    "AGGREGATE_ERROR: zigbee driver sans MF: switch_2_gang_metering",
+    "AGGREGATE_ERROR: zigbee driver sans MF: wall_remote_4_gang"
+  ],
+  "warnings": [
+    "COLLISIONS: 621"
+  ],
+  "fixes": [
+    {
+      "id": "device_plug_energy_monitor",
+      "type": "zigbee",
+      "count": 2,
+      "source": "auto"
+    },
+    {
+      "id": "device_plug_smart",
+      "type": "zigbee",
+      "count": 1,
+      "source": "auto"
+    },
+    {
+      "id": "dimmer_1_gang_2",
+      "type": "zigbee",
+      "count": 2,
+      "source": "auto"
+    },
+    {
+      "id": "dimmer_dual_channel",
+      "type": "zigbee",
+      "count": 2,
+      "source": "auto"
+    },
+    {
+      "id": "doorwindowsensor",
+      "type": "zigbee",
+      "count": 34,
+      "source": "auto"
+    },
+    {
+      "id": "double_power_point",
+      "type": "zigbee",
+      "count": 2,
+      "source": "auto"
+    },
+    {
+      "id": "outdoor_2_socket",
+      "type": "zigbee",
+      "count": 2,
+      "source": "auto"
+    },
+    {
+      "id": "pirsensor",
+      "type": "zigbee",
+      "count": 21,
+      "source": "auto"
+    },
+    {
+      "id": "radar_sensor_2",
+      "type": "zigbee",
+      "count": 2,
+      "source": "auto"
+    },
+    {
+      "id": "radar_sensor_ceiling",
+      "type": "zigbee",
+      "count": 2,
+      "source": "auto"
+    },
+    {
+      "id": "relay_board_1_channel",
+      "type": "zigbee",
+      "count": 1,
+      "source": "auto"
+    },
+    {
+      "id": "rgb_bulb_E27",
+      "type": "zigbee",
+      "count": 3,
+      "source": "auto"
+    },
+    {
+      "id": "sensor_climate_temphumidsensor",
+      "type": "zigbee",
+      "count": 1,
+      "source": "auto"
+    },
+    {
+      "id": "sensor_lcdtemphumidsensor_temphumidsensor",
+      "type": "zigbee",
+      "count": 1,
+      "source": "auto"
+    },
+    {
+      "id": "sirentemphumidsensor",
+      "type": "zigbee",
+      "count": 2,
+      "source": "auto"
+    },
+    {
+      "id": "smart_air_detection_box",
+      "type": "zigbee",
+      "count": 2,
+      "source": "auto"
+    },
+    {
+      "id": "smart_rcbo",
+      "type": "zigbee",
+      "count": 1,
+      "source": "auto"
+    },
+    {
+      "id": "smart_switch",
+      "type": "zigbee",
+      "count": 3,
+      "source": "auto"
+    },
+    {
+      "id": "switch_2_gang_metering",
+      "type": "zigbee",
+      "count": 2,
+      "source": "auto"
+    },
+    {
+      "id": "wall_remote_4_gang",
+      "type": "zigbee",
+      "count": 2,
+      "source": "auto"
+    }
+  ],
   "stats": {
-    "total": 430,
-    "zigbee": 378,
+    "total": 431,
+    "zigbee": 379,
     "wifi": 51,
     "virtual": 1,
     "hybrid": 0,
-    "ok": 378,
+    "ok": 379,
     "emptyMF": [],
-    "totalFP": 5034
+    "totalFP": 16293
   },
-  "conclusion": "PASS"
+  "conclusion": "FAIL"
 }
