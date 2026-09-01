@@ -15,6 +15,10 @@ runs:
       shell: bash
       run: npx homey app build
 
+    - name: Dedupe driver flow cards from app.json
+      shell: bash
+      run: node tools/ci/sync-appjson-flow-dedupe.js --apply
+
     - name: Optimize Built App
       shell: bash
       run: |

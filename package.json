@@ -282,6 +282,7 @@
     "enrich:flow-fleet:apply": "node tools/ci/flow-fleet-enrich.js --apply",
     "source:diff": "node tools/ci/intelligent-source-diff.js",
     "source:diff:apply": "node tools/ci/intelligent-source-diff.js --apply",
+    "fix:appjson-flow-dedupe": "node tools/ci/sync-appjson-flow-dedupe.js --apply",
     "scrape:budget": "node tools/ci/free-scrape-budget.js --report",
     "scrape:budget:preflight": "node tools/ci/free-scrape-budget.js --preflight"
   },
