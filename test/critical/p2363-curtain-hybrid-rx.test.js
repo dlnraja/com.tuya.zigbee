@@ -17,7 +17,7 @@ describe('P2363 curtain hybrid + cover hardening', () => {
     const src = fs.readFileSync(path.join(__dirname, '../../lib/devices/UnifiedCoverBase.js'), 'utf8');
     assert.match(src, /TuyaEF00Manager created \(P2363\)/);
     assert.match(src, /_optimisticCoverUpdate/);
-    assert.match(src, /optimistic UI after TX/);
+    assert.ok(src.includes('_optimisticCoverUpdate({'), 'optimistic calls after TX');
   });
 
   it('curtain_motor has Z2M-verified cover couples without switch bleed', () => {
