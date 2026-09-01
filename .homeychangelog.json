@@ -1383,5 +1383,8 @@
   },
   "5.12.112": {
     "en": "Stripped leftover plug fingerprint case-variants from wireless buttons; restored smartplug OTA asset for Homey validate."
+  },
+  "5.12.113": {
+    "en": "Locked TS011F plug fingerprint routing away from wireless buttons."
   }
 }
