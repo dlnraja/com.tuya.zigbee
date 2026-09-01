@@ -62,6 +62,9 @@ jobs:
       - name: 🤖 Run auto-fix-all
         run: node scripts/validation/auto-fix-all.js || true
 
+      - name: Dedupe driver flow cards (app.json + .homeycompose)
+        run: node tools/ci/sync-appjson-flow-dedupe.js --apply || true
+
       # P99: Homey compose matching is case-sensitive — ensure canonical+lower forms
       - name: "🔤 Ensure manufacturer case variants (P99)"
         run: node tools/ci/ensure-case-variants.js --apply

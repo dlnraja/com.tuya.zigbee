@@ -137,6 +137,9 @@ run('FP conflict resolve', 'node scripts/automation/fix-fingerprint-conflicts.js
 // 12. P68v2: Fix cross-driver flow card ID collisions
 run('Flow card dup v2', 'node tools/ci/fix-flow-card-dups-r68v2.js');
 
+// 13. P2376: Driver flow cards live in driver.flow.compose.json only
+run('app.json flow dedupe', 'node tools/ci/sync-appjson-flow-dedupe.js --apply');
+
 console.log('\n═══════════════════════════════════════════════');
 console.log(`  ✅ Fixes appliqués: ${fixes}`);
 console.log(`  ❌ Erreurs: ${errors}`);

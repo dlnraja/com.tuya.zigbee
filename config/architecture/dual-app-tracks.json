@@ -118,6 +118,10 @@
       "tag": "MASTER_ONLY",
       "note": "Cache-first source diff orchestrator — optional sources soft-fail, GHA intel cache, never block pipeline"
     },
+    "p2376_appjson_flow_dedupe": {
+      "tag": "BOTH",
+      "note": "Strip driver-scoped flow cards from app.json + .homeycompose after homey build / auto-fix"
+    },
     "p2372_flow_heuristics_knob_rotary": {
       "tag": "BOTH",
       "note": "FlowCardHeuristics knob/rotary + SOS patterns — runtime flow resolve reliability"
