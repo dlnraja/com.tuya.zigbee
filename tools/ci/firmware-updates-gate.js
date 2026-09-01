@@ -108,6 +108,12 @@ function main() {
     if (wakeNeed && !(wakeInstruction && (wakeInstruction.en || typeof wakeInstruction === 'string'))) {
       add(errors, `${driverId}: sleepy OTA driver missing wakeInstruction (Homey Device Updates)`);
     }
+    // Homey schema: firmwareUpdates requires updates[] — never wake-only
+    if ((compose.firmwareUpdates || fwCompose)
+      && !updates.length
+      && (wakeInstruction || compose.firmwareUpdates || Object.keys(fwCompose || {}).length)) {
+      add(errors, `${driverId}: firmwareUpdates/wake without updates[] (Homey schema)`);
+    }
 
     for (const update of updates) {
       const device = update.device || {};
