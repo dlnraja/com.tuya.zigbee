@@ -95,7 +95,7 @@ function main() {
   const updateCount = { drivers: 0, updates: 0, files: 0 };
 
   for (const driverId of drivers) {
-    const { compose, updates, wakeInstruction } = collectFirmwareMeta(driverId);
+    const { compose, fwCompose, updates, wakeInstruction } = collectFirmwareMeta(driverId);
     if (!updates.length) continue;
     covered.push(driverId);
     updateCount.drivers += 1;
