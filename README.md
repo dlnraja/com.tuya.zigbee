@@ -33,15 +33,15 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.775 |
+| **App Version** | v9.0.776 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,389 |
 | **Pairing Variants** | 16,225 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 576 |
-| **Flow Cards** | 5,243 |
+| **Flow Cards** | 5,724 |
 | **Unique Capabilities** | 170 |
 | **Native OTA Drivers** | 9 |
-| **Test Suites** | 211 files |
+| **Test Suites** | 213 files |
 | **SVG Icons** | 731 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
@@ -102,6 +102,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.776** | Fixed app crash from Invalid Driver ID in flows; restored remote button fingerprint gate. |
 | **v9.0.775** | Fixed app crash from Invalid Driver ID in flows; restored remote button fingerprint gate. |
 | **v9.0.774** | Fixed app crash from Invalid Driver ID in flows; restored remote button fingerprint gate. |
 | **v9.0.773** | Fixed app crash from foreign/flow Invalid Driver ID (Homey class light and third-party Zigbee tokens). |
@@ -113,7 +114,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.767** | Exclusive plug routing for TS011F w0qqde0g fingerprints (energy monitor only). |
 | **v9.0.766** | Exclusive plug routing for TS011F w0qqde0g fingerprints (energy monitor only). |
 | **v9.0.765** | Locked TS011F plug fingerprints in mfs_db so bots cannot re-route them to wireless buttons. |
-| **v9.0.763** | Locked TS011F plug fingerprints away from wireless buttons (mfs + case variants). |
 
 <!-- CHANGELOG_END -->
 
