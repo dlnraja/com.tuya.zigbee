@@ -62,7 +62,10 @@
     ]
   },
   "zigbee": {
-    "manufacturerName": [],
+    "manufacturerName": [
+      "_TZ3000_fa9mlvja",
+      "_tz3000_fa9mlvja"
+    ],
     "productId": [
       "TS0043",
       "TS011F",
