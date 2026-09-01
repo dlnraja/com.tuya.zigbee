@@ -1,8 +1,8 @@
 'use strict';
 
 /**
- * P2351 — Soft-fail foreign ManagerDrivers IDs (Hue ZG9101SAC_HP)
- * Crash: Gmail 9.0.730 / 9.0.743 HomeySerializer → getDriver → _getDriverManifest
+ * P2351 / P2373 — Soft-fail foreign ManagerDrivers IDs
+ * Crash: Gmail Invalid Driver ID ZG9101SAC_HP / light / virtualdriverzigbee
  */
 const { describe, it } = require('node:test');
 const assert = require('node:assert/strict');
@@ -15,12 +15,18 @@ const {
   installSafeGetDriver,
 } = require(path.join(ROOT, 'lib/utils/safe-get-driver-patch.js'));
 
-describe('P2351 safe-get-driver soft-fail', () => {
+describe('P2351/P2373 safe-get-driver soft-fail', () => {
   it('soft-fails Hue ZG9101SAC_HP and Invalid Driver ID', () => {
     assert.equal(shouldSoftFail('ZG9101SAC_HP', new Error('Invalid Driver ID: ZG9101SAC_HP')), true);
     assert.equal(shouldSoftFail('homey:virtualdriverzigbee:driver', new Error('Invalid Driver ID')), true);
     assert.equal(shouldSoftFail('LCT001', new Error('Invalid Driver ID: LCT001')), true);
     assert.equal(shouldSoftFail('switch_1gang', new Error('something else')), false);
+  });
+
+  it('soft-fails Homey class name light (Gmail 9.0.746 crash)', () => {
+    assert.equal(shouldSoftFail('light', new Error('Invalid Driver ID: light')), true);
+    assert.equal(shouldSoftFail('socket', new Error('Invalid Driver ID: socket')), true);
+    assert.equal(shouldSoftFail('sensor', new Error('Invalid Driver ID: sensor')), true);
   });
 
   it('wraps getDriver and _getDriverManifest to return null', () => {
@@ -34,14 +40,17 @@ describe('P2351 safe-get-driver soft-fail', () => {
     };
     assert.equal(installSafeGetDriver(fake), true);
     assert.equal(fake.getDriver('ZG9101SAC_HP'), null);
-    assert.equal(fake._getDriverManifest('ZG9101SAC_HP'), null);
+    assert.equal(fake._getDriverManifest('light'), null);
     assert.equal(fake.__p2351SafeGetDriver, true);
   });
 
-  it('app.js loads safe-get-driver-patch early', () => {
+  it('app.js loads safe-get-driver-patch after Homey require', () => {
     const appJs = fs.readFileSync(path.join(ROOT, 'app.js'), 'utf8');
     assert.match(appJs, /safe-get-driver-patch/);
-    assert.match(appJs, /P2351/);
+    assert.match(appJs, /P2351|P2373/);
+    const homeyIdx = appJs.indexOf("require('homey')");
+    const patchIdx = appJs.indexOf('safe-get-driver-patch');
+    assert.ok(homeyIdx >= 0 && patchIdx > homeyIdx, 'Homey require must precede patch install');
   });
 
   it('p2347 Cartesian registry case no longer forces multi-gang mfs', () => {
