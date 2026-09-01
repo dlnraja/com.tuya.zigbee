@@ -1,132 +1,7 @@
 {
-  "timestamp": "2026-09-01T06:50:19.737Z",
-  "version": "9.0.770",
+  "timestamp": "2026-09-01T06:56:27.443Z",
+  "version": "9.0.771",
   "phases": {
-    "2": {
-      "fixes": [
-        {
-          "id": "device_plug_energy_monitor",
-          "type": "zigbee",
-          "count": 2,
-          "source": "auto"
-        },
-        {
-          "id": "device_plug_smart",
-          "type": "zigbee",
-          "count": 1,
-          "source": "auto"
-        },
-        {
-          "id": "dimmer_1_gang_2",
-          "type": "zigbee",
-          "count": 2,
-          "source": "auto"
-        },
-        {
-          "id": "dimmer_dual_channel",
-          "type": "zigbee",
-          "count": 2,
-          "source": "auto"
-        },
-        {
-          "id": "doorwindowsensor",
-          "type": "zigbee",
-          "count": 34,
-          "source": "auto"
-        },
-        {
-          "id": "double_power_point",
-          "type": "zigbee",
-          "count": 2,
-          "source": "auto"
-        },
-        {
-          "id": "outdoor_2_socket",
-          "type": "zigbee",
-          "count": 2,
-          "source": "auto"
-        },
-        {
-          "id": "pirsensor",
-          "type": "zigbee",
-          "count": 21,
-          "source": "auto"
-        },
-        {
-          "id": "radar_sensor_2",
-          "type": "zigbee",
-          "count": 2,
-          "source": "auto"
-        },
-        {
-          "id": "radar_sensor_ceiling",
-          "type": "zigbee",
-          "count": 2,
-          "source": "auto"
-        },
-        {
-          "id": "relay_board_1_channel",
-          "type": "zigbee",
-          "count": 1,
-          "source": "auto"
-        },
-        {
-          "id": "rgb_bulb_E27",
-          "type": "zigbee",
-          "count": 3,
-          "source": "auto"
-        },
-        {
-          "id": "sensor_climate_temphumidsensor",
-          "type": "zigbee",
-          "count": 1,
-          "source": "auto"
-        },
-        {
-          "id": "sensor_lcdtemphumidsensor_temphumidsensor",
-          "type": "zigbee",
-          "count": 1,
-          "source": "auto"
-        },
-        {
-          "id": "sirentemphumidsensor",
-          "type": "zigbee",
-          "count": 2,
-          "source": "auto"
-        },
-        {
-          "id": "smart_air_detection_box",
-          "type": "zigbee",
-          "count": 2,
-          "source": "auto"
-        },
-        {
-          "id": "smart_rcbo",
-          "type": "zigbee",
-          "count": 1,
-          "source": "auto"
-        },
-        {
-          "id": "smart_switch",
-          "type": "zigbee",
-          "count": 3,
-          "source": "auto"
-        },
-        {
-          "id": "switch_2_gang_metering",
-          "type": "zigbee",
-          "count": 2,
-          "source": "auto"
-        },
-        {
-          "id": "wall_remote_4_gang",
-          "type": "zigbee",
-          "count": 2,
-          "source": "auto"
-        }
-      ],
-      "total": 20
-    },
     "1a": {
       "errors": [],
       "warnings": [],
@@ -150,7 +25,7 @@
       "total": 862
     },
     "1d": {
-      "collisions": 621,
+      "collisions": 684,
       "collisionMap": {
         "_DEPRECATED_AIR_PURIFIER_HYBRID_DO_NOT_PAIR|TS0601": [
           "air_purifier_curtain",
@@ -812,6 +687,18 @@
           "bulb_rgb",
           "dimmable_led_strip"
         ],
+        "EWELIGHT|TS0505A": [
+          "bulb_rgb",
+          "rgb_bulb_E27"
+        ],
+        "EWELIGHT|TS0505B": [
+          "bulb_rgb",
+          "rgb_bulb_E27"
+        ],
+        "EWELIGHT|ZB-CL01": [
+          "bulb_rgb",
+          "rgb_bulb_E27"
+        ],
         "_TZB210_ZDVRSTS8|TS0504B": [
           "bulb_rgb",
           "bulb_rgbw"
@@ -853,6 +740,14 @@
           "switch_2gang",
           "vibration_sensor",
           "water_leak_sensor"
+        ],
+        "_TYZB01_PHJERAQQ|TS0001": [
+          "button_wireless_2",
+          "smart_switch"
+        ],
+        "_TYZB01_PHJERAQQ|TS0601": [
+          "button_wireless_2",
+          "smart_switch"
         ],
         "_TZ3000_JAK16DLL|TS011F": [
           "button_wireless_2",
@@ -1488,6 +1383,150 @@
           "contact_sensor",
           "doorwindowsensor_3"
         ],
+        "TUYATEC-G3GL6CGY|TS0203": [
+          "contact_sensor",
+          "doorwindowsensor"
+        ],
+        "TUYATEC-G3GL6CGY|RH3001": [
+          "contact_sensor",
+          "doorwindowsensor"
+        ],
+        "TUYATEC-G3GL6CGY|SNZB-04": [
+          "contact_sensor",
+          "doorwindowsensor"
+        ],
+        "TUYATEC-BFQ2I2SY|TS0203": [
+          "contact_sensor",
+          "doorwindowsensor"
+        ],
+        "TUYATEC-BFQ2I2SY|RH3001": [
+          "contact_sensor",
+          "doorwindowsensor"
+        ],
+        "TUYATEC-BFQ2I2SY|SNZB-04": [
+          "contact_sensor",
+          "doorwindowsensor"
+        ],
+        "TUYATEC-ABKEHQUS|TS0203": [
+          "contact_sensor",
+          "doorwindowsensor"
+        ],
+        "TUYATEC-ABKEHQUS|RH3001": [
+          "contact_sensor",
+          "doorwindowsensor"
+        ],
+        "TUYATEC-ABKEHQUS|SNZB-04": [
+          "contact_sensor",
+          "doorwindowsensor"
+        ],
+        "TUYATEC-SB6T7ETT|TS0203": [
+          "contact_sensor",
+          "doorwindowsensor"
+        ],
+        "TUYATEC-SB6T7ETT|RH3001": [
+          "contact_sensor",
+          "doorwindowsensor"
+        ],
+        "TUYATEC-SB6T7ETT|SNZB-04": [
+          "contact_sensor",
+          "doorwindowsensor"
+        ],
+        "TUYATEC-RKQIQVCS|TS0203": [
+          "contact_sensor",
+          "doorwindowsensor"
+        ],
+        "TUYATEC-RKQIQVCS|RH3001": [
+          "contact_sensor",
+          "doorwindowsensor"
+        ],
+        "TUYATEC-RKQIQVCS|SNZB-04": [
+          "contact_sensor",
+          "doorwindowsensor"
+        ],
+        "TUYATEC-CRR8QB0P|TS0203": [
+          "contact_sensor",
+          "doorwindowsensor"
+        ],
+        "TUYATEC-CRR8QB0P|RH3001": [
+          "contact_sensor",
+          "doorwindowsensor"
+        ],
+        "TUYATEC-CRR8QB0P|SNZB-04": [
+          "contact_sensor",
+          "doorwindowsensor"
+        ],
+        "TUYATEC-KBQF60NT|TS0203": [
+          "contact_sensor",
+          "doorwindowsensor"
+        ],
+        "TUYATEC-KBQF60NT|RH3001": [
+          "contact_sensor",
+          "doorwindowsensor"
+        ],
+        "TUYATEC-KBQF60NT|SNZB-04": [
+          "contact_sensor",
+          "doorwindowsensor"
+        ],
+        "TUYATEC-R9HGSSOL|TS0203": [
+          "contact_sensor",
+          "doorwindowsensor"
+        ],
+        "TUYATEC-R9HGSSOL|RH3001": [
+          "contact_sensor",
+          "doorwindowsensor"
+        ],
+        "TUYATEC-R9HGSSOL|SNZB-04": [
+          "contact_sensor",
+          "doorwindowsensor"
+        ],
+        "TUYATEC-TRHRGA6P|TS0203": [
+          "contact_sensor",
+          "doorwindowsensor"
+        ],
+        "TUYATEC-TRHRGA6P|RH3001": [
+          "contact_sensor",
+          "doorwindowsensor"
+        ],
+        "TUYATEC-TRHRGA6P|SNZB-04": [
+          "contact_sensor",
+          "doorwindowsensor"
+        ],
+        "TUYATEC-IP9GANVW|TS0203": [
+          "contact_sensor",
+          "doorwindowsensor"
+        ],
+        "TUYATEC-IP9GANVW|RH3001": [
+          "contact_sensor",
+          "doorwindowsensor"
+        ],
+        "TUYATEC-IP9GANVW|SNZB-04": [
+          "contact_sensor",
+          "doorwindowsensor"
+        ],
+        "_TYZB01_XPH99WVR|TS0203": [
+          "contact_sensor",
+          "doorwindowsensor"
+        ],
+        "_TYZB01_XPH99WVR|RH3001": [
+          "contact_sensor",
+          "doorwindowsensor"
+        ],
+        "_TYZB01_XPH99WVR|SNZB-04": [
+          "contact_sensor",
+          "doorwindowsensor"
+        ],
+        "TUYATEC-7QUNN4GQ|TS0203": [
+          "contact_sensor",
+          "doorwindowsensor"
+        ],
+        "TUYATEC-7QUNN4GQ|RH3001": [
+          "contact_sensor",
+          "doorwindowsensor"
+        ],
+        "TUYATEC-7QUNN4GQ|SNZB-04": [
+          "contact_sensor",
+          "doorwindowsensor"
+        ],
         "_TZ3000_RCUYHWE3|TS0203": [
           "contact_sensor",
           "smart_door_window_sensor"
@@ -1634,6 +1673,28 @@
         "_TZE200_UJ3F4WR5|TS110E": [
           "curtain_motor",
           "curtain_motor_shutter"
+        ],
+        "_TZE200_7BZTMFM1|TS0601": [
+          "device_air_purifier_plug",
+          "smart_air_detection_box"
+        ],
+        "_TZE204_7BZTMFM1|TS0601": [
+          "device_air_purifier_plug",
+          "smart_air_detection_box"
+        ],
+        "_TZ3000_CJFMU5HE|TS0049": [
+          "device_plug_smart",
+          "smart_garden_irrigation_control",
+          "water_valve_garden"
+        ],
+        "_TZ3000_CJFMU5HE|TS0101": [
+          "device_plug_smart",
+          "smart_garden_irrigation_control"
+        ],
+        "_TZ3000_CJFMU5HE|TS0601": [
+          "device_plug_smart",
+          "smart_garden_irrigation_control",
+          "water_valve_garden"
         ],
         "_TZ3000_IYSTCADI|TS0601": [
           "dimmable_led_strip",
@@ -1915,6 +1976,14 @@
           "dimmer_1_gang_tuya",
           "switch_1gang"
         ],
+        "_TZ3000_92CHSKY7|TS0601": [
+          "dimmer_2_gang",
+          "dimmer_dual_channel"
+        ],
+        "_TZ3000_92CHSKY7|TS1101": [
+          "dimmer_2_gang",
+          "dimmer_dual_channel"
+        ],
         "_TZ3210_WDEXAYPG|TS0011": [
           "dimmer_2_gang",
           "wall_dimmer_tuya"
@@ -1978,6 +2047,14 @@
         "_TZ3210_4UBYLGHK|TS0601": [
           "dimmer_2_gang",
           "rgb_led_strip"
+        ],
+        "_TZ3000_7YSDNEBC|TS0601": [
+          "dimmer_2_gang",
+          "dimmer_dual_channel"
+        ],
+        "_TZ3000_7YSDNEBC|TS1101": [
+          "dimmer_2_gang",
+          "dimmer_dual_channel"
         ],
         "_TZE200_E3OITDYU|TS0011": [
           "dimmer_2_gang_tuya",
@@ -2199,6 +2276,38 @@
           "lcdtemphumidsensor",
           "lcdtemphumidsensor_3"
         ],
+        "_TZ3000_RUSU2VZB|TS0201": [
+          "lcdtemphumidsensor",
+          "sensor_lcdtemphumidsensor_temphumidsensor"
+        ],
+        "_TZ3000_RUSU2VZB|TS0601_LCD": [
+          "lcdtemphumidsensor",
+          "sensor_lcdtemphumidsensor_temphumidsensor"
+        ],
+        "_TZ3000_RUSU2VZB|TS0601": [
+          "lcdtemphumidsensor",
+          "sensor_lcdtemphumidsensor_temphumidsensor"
+        ],
+        "_TZ3000_RUSU2VZB|TY0201": [
+          "lcdtemphumidsensor",
+          "sensor_lcdtemphumidsensor_temphumidsensor"
+        ],
+        "_TZ3000_YWAGC4RJ|TS0201": [
+          "lcdtemphumidsensor",
+          "sensor_climate_temphumidsensor"
+        ],
+        "_TZ3000_YWAGC4RJ|TS0601": [
+          "lcdtemphumidsensor",
+          "sensor_climate_temphumidsensor"
+        ],
+        "_TZ3000_YWAGC4RJ|TY0201": [
+          "lcdtemphumidsensor",
+          "sensor_climate_temphumidsensor"
+        ],
+        "_TZ3000_YWAGC4RJ|EXCELLUX": [
+          "lcdtemphumidsensor",
+          "sensor_climate_temphumidsensor"
+        ],
         "_TZ3210_R0XGKFT5|TS0601": [
           "led_controller_cct",
           "rgb_mood_light"
@@ -2242,6 +2351,34 @@
         "_TZ3000_MMTWJMAQ|TS110E": [
           "motion_sensor",
           "pir_sensor_2"
+        ],
+        "TUYATEC-LHA8PBWD|RH3040": [
+          "motion_sensor",
+          "pirsensor"
+        ],
+        "TUYATEC-ZN9WYQTR|RH3040": [
+          "motion_sensor",
+          "pirsensor"
+        ],
+        "TUYATEC-53O41JOC|RH3040": [
+          "motion_sensor",
+          "pirsensor"
+        ],
+        "TUYATEC-DEETIBST|RH3040": [
+          "motion_sensor",
+          "pirsensor"
+        ],
+        "TUYATEC-DGTXMIHE|RH3040": [
+          "motion_sensor",
+          "pirsensor"
+        ],
+        "TUYATEC-B5G40ALM|RH3040": [
+          "motion_sensor",
+          "pirsensor"
+        ],
+        "TUYATEC-DXNOHKPD|RH3040": [
+          "motion_sensor",
+          "pirsensor"
         ],
         "_TZ3000_MSL6WXK9|EXCELLUX": [
           "pir_sensor_2",
@@ -2450,14 +2587,6 @@
         "_TZ3000_ITB0OMHV|TS0601": [
           "smart_button_switch",
           "switch_1gang"
-        ],
-        "_TZ3000_CJFMU5HE|TS0049": [
-          "smart_garden_irrigation_control",
-          "water_valve_garden"
-        ],
-        "_TZ3000_CJFMU5HE|TS0601": [
-          "smart_garden_irrigation_control",
-          "water_valve_garden"
         ],
         "_TZ3000_KZ1ANOI8|TS0049": [
           "smart_garden_irrigation_control",
@@ -2670,153 +2799,11 @@
       }
     }
   },
-  "errors": [
-    "AGGREGATE_ERROR: zigbee driver sans MF: device_plug_energy_monitor",
-    "AGGREGATE_ERROR: zigbee driver sans MF: device_plug_smart",
-    "AGGREGATE_ERROR: zigbee driver sans MF: dimmer_1_gang_2",
-    "AGGREGATE_ERROR: zigbee driver sans MF: dimmer_dual_channel",
-    "AGGREGATE_ERROR: zigbee driver sans MF: doorwindowsensor",
-    "AGGREGATE_ERROR: zigbee driver sans MF: double_power_point",
-    "AGGREGATE_ERROR: zigbee driver sans MF: outdoor_2_socket",
-    "AGGREGATE_ERROR: zigbee driver sans MF: pirsensor",
-    "AGGREGATE_ERROR: zigbee driver sans MF: radar_sensor_2",
-    "AGGREGATE_ERROR: zigbee driver sans MF: radar_sensor_ceiling",
-    "AGGREGATE_ERROR: zigbee driver sans MF: relay_board_1_channel",
-    "AGGREGATE_ERROR: zigbee driver sans MF: rgb_bulb_E27",
-    "AGGREGATE_ERROR: zigbee driver sans MF: sensor_climate_temphumidsensor",
-    "AGGREGATE_ERROR: zigbee driver sans MF: sensor_lcdtemphumidsensor_temphumidsensor",
-    "AGGREGATE_ERROR: zigbee driver sans MF: sirentemphumidsensor",
-    "AGGREGATE_ERROR: zigbee driver sans MF: smart_air_detection_box",
-    "AGGREGATE_ERROR: zigbee driver sans MF: smart_rcbo",
-    "AGGREGATE_ERROR: zigbee driver sans MF: smart_switch",
-    "AGGREGATE_ERROR: zigbee driver sans MF: switch_2_gang_metering",
-    "AGGREGATE_ERROR: zigbee driver sans MF: wall_remote_4_gang"
-  ],
+  "errors": [],
   "warnings": [
-    "COLLISIONS: 621"
+    "COLLISIONS: 684"
   ],
-  "fixes": [
-    {
-      "id": "device_plug_energy_monitor",
-      "type": "zigbee",
-      "count": 2,
-      "source": "auto"
-    },
-    {
-      "id": "device_plug_smart",
-      "type": "zigbee",
-      "count": 1,
-      "source": "auto"
-    },
-    {
-      "id": "dimmer_1_gang_2",
-      "type": "zigbee",
-      "count": 2,
-      "source": "auto"
-    },
-    {
-      "id": "dimmer_dual_channel",
-      "type": "zigbee",
-      "count": 2,
-      "source": "auto"
-    },
-    {
-      "id": "doorwindowsensor",
-      "type": "zigbee",
-      "count": 34,
-      "source": "auto"
-    },
-    {
-      "id": "double_power_point",
-      "type": "zigbee",
-      "count": 2,
-      "source": "auto"
-    },
-    {
-      "id": "outdoor_2_socket",
-      "type": "zigbee",
-      "count": 2,
-      "source": "auto"
-    },
-    {
-      "id": "pirsensor",
-      "type": "zigbee",
-      "count": 21,
-      "source": "auto"
-    },
-    {
-      "id": "radar_sensor_2",
-      "type": "zigbee",
-      "count": 2,
-      "source": "auto"
-    },
-    {
-      "id": "radar_sensor_ceiling",
-      "type": "zigbee",
-      "count": 2,
-      "source": "auto"
-    },
-    {
-      "id": "relay_board_1_channel",
-      "type": "zigbee",
-      "count": 1,
-      "source": "auto"
-    },
-    {
-      "id": "rgb_bulb_E27",
-      "type": "zigbee",
-      "count": 3,
-      "source": "auto"
-    },
-    {
-      "id": "sensor_climate_temphumidsensor",
-      "type": "zigbee",
-      "count": 1,
-      "source": "auto"
-    },
-    {
-      "id": "sensor_lcdtemphumidsensor_temphumidsensor",
-      "type": "zigbee",
-      "count": 1,
-      "source": "auto"
-    },
-    {
-      "id": "sirentemphumidsensor",
-      "type": "zigbee",
-      "count": 2,
-      "source": "auto"
-    },
-    {
-      "id": "smart_air_detection_box",
-      "type": "zigbee",
-      "count": 2,
-      "source": "auto"
-    },
-    {
-      "id": "smart_rcbo",
-      "type": "zigbee",
-      "count": 1,
-      "source": "auto"
-    },
-    {
-      "id": "smart_switch",
-      "type": "zigbee",
-      "count": 3,
-      "source": "auto"
-    },
-    {
-      "id": "switch_2_gang_metering",
-      "type": "zigbee",
-      "count": 2,
-      "source": "auto"
-    },
-    {
-      "id": "wall_remote_4_gang",
-      "type": "zigbee",
-      "count": 2,
-      "source": "auto"
-    }
-  ],
+  "fixes": [],
   "stats": {
     "total": 431,
     "zigbee": 379,
@@ -2827,5 +2814,5 @@
     "emptyMF": [],
     "totalFP": 16293
   },
-  "conclusion": "FAIL"
+  "conclusion": "PASS"
 }
