@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-01T08:01:26.050Z",
+  "generatedAt": "2026-09-01T15:14:58.510Z",
   "date": "2026-09-01",
   "mode": "full",
   "phases": [
@@ -12,18 +12,18 @@
     {
       "name": "github",
       "ok": true,
-      "durationMs": 493
+      "durationMs": 330
     },
     {
       "name": "gmail",
       "ok": true,
-      "durationMs": 115,
+      "durationMs": 173,
       "details": {
         "crash": {
           "ok": true,
           "skipped": false,
           "status": 0,
-          "durationMs": 25,
+          "durationMs": 36,
           "stderr": "",
           "stdoutTail": "[gmail-crash-pattern-gate] sources=32 hits=0 unknown=0\n  wrote .github/state/gmail-crash-patterns.json\n  verdict: ok\n"
         },
@@ -31,16 +31,16 @@
           "ok": true,
           "skipped": false,
           "status": 0,
-          "durationMs": 90,
+          "durationMs": 137,
           "stderr": "",
-          "stdoutTail": "[automate] inbox total=0 have=30 missing=0 ingested_now=0\n[recursive-treat] sources: 136\n[recursive-treat] wrote /home/runner/work/com.tuya.zigbee/com.tuya.zigbee/reports/diag-recursive-treat-2026-09-01\n{\n  \"generatedAt\": \"2026-09-01T08:01:26.650Z\",\n  \"methodology\": \"f647d35b-style full-body recursive treat — sacred couple never invented; P2246 derive from interview when ABSENT\",\n  \"sourcesScanned\": 136,\n  \"uniqueCases\": 122,\n  \"actionable\": 22,\n  \"derivedFromInterview\": 0,\n  \"signalTally\": {\n    \"scene_mode_unsupported\": 3,\n    \"wrong_driver_hint\": 4,\n    \"athom_socket_hang\": 6,\n    \"athom_processing_failed\": 2,\n    \"wrong_smart_rcbo\": 2,\n    \"flow_guard_spam\": 2,\n    \"processing_failed\": 6,\n    \"scene_0x8004\": 2,\n    \"invalid_flow_card\": 1,\n    \"missing_capability_listener\": 1\n  },\n  \"gmailBodiesPresent\": 30,\n  \"interviews\": 90\n}\n[automate] status → .github/state/diag-recursive-inbox/automate-status.json\n{\n  \"total\": 0,\n  \"have\": 30,\n  \"missing\": 0,\n  \"missingIds\": []\n}\n[automate] actionable= 22 gmailBodies= 30\n"
+          "stdoutTail": "[automate] inbox total=0 have=30 missing=0 ingested_now=0\n[recursive-treat] sources: 136\n[recursive-treat] wrote /home/runner/work/com.tuya.zigbee/com.tuya.zigbee/reports/diag-recursive-treat-2026-09-01\n{\n  \"generatedAt\": \"2026-09-01T15:14:59.002Z\",\n  \"methodology\": \"f647d35b-style full-body recursive treat — sacred couple never invented; P2246 derive from interview when ABSENT\",\n  \"sourcesScanned\": 136,\n  \"uniqueCases\": 122,\n  \"actionable\": 26,\n  \"derivedFromInterview\": 1,\n  \"signalTally\": {\n    \"scene_mode_unsupported\": 3,\n    \"wrong_driver_hint\": 4,\n    \"athom_socket_hang\": 9,\n    \"athom_processing_failed\": 2,\n    \"wrong_smart_rcbo\": 2,\n    \"flow_guard_spam\": 2,\n    \"processing_failed\": 9,\n    \"scene_0x8004\": 2,\n    \"invalid_flow_card\": 1,\n    \"missing_capability_listener\": 1,\n    \"physical_vs_virtual_button\": 1\n  },\n  \"gmailBodiesPresent\": 30,\n  \"interviews\": 90\n}\n[automate] status → .github/state/diag-recursive-inbox/automate-status.json\n{\n  \"total\": 0,\n  \"have\": 30,\n  \"missing\": 0,\n  \"missingIds\": []\n}\n[automate] actionable= 26 gmailBodies= 30\n"
         }
       }
     },
     {
       "name": "forum",
       "ok": true,
-      "durationMs": 25359,
+      "durationMs": 26707,
       "skipScan": false,
       "steps": [
         {
@@ -64,7 +64,7 @@
     {
       "name": "drivers",
       "ok": true,
-      "durationMs": 696,
+      "durationMs": 1175,
       "mfs": {
         "high": 0,
         "changes": 0,
@@ -76,7 +76,7 @@
       "name": "prioritize",
       "ok": true,
       "durationMs": 0,
-      "count": 4
+      "count": 3
     },
     {
       "name": "docs",
@@ -87,36 +87,25 @@
     {
       "name": "gates",
       "ok": true,
-      "durationMs": 1769
+      "durationMs": 3207
     }
   ],
   "github": {
-    "harvestedAt": "2026-09-01T08:01:26.543Z",
+    "harvestedAt": "2026-09-01T15:14:58.839Z",
     "repo": "dlnraja/com.tuya.zigbee",
     "auth": "token",
     "error": null,
     "issues": [
-      {
-        "number": 535,
-        "title": "[Auto] New Tuya devices found in zigbee2mqtt",
-        "labels": [
-          "enhancement",
-          "auto-scan"
-        ],
-        "updatedAt": "2026-09-01T05:44:09Z",
-        "user": "github-actions[bot]",
-        "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/535",
-        "bodySnippet": "Monthly scan found new manufacturerName IDs:\n```\n_TZ3000_bbebkwjk\n_TZ3000_bu47m8pv\n_TZ3000_gjiggmio\n_TZ3008_iooniers\n_TZ3008_qziabvzj\n_TZ3008_tary5dvv\n_TZ3008_xvfd3nkp\n_TZ3210_iooniers\n_TZ3210_o235agwx\n_TZE210_xgzzuerd\n_TZE284_da26abzz\n_TZE284_ksz749x8\n_TZE284_n41i9jyt\n_TZE284_to"
-      },
       {
         "number": 533,
         "title": "Device Request - [SMART ZIGBEE CURTAIN SWITCH] - [MOES]",
         "labels": [
           "enhancement",
           "device-request",
+          "new-fingerprint",
           "needs-maintainer"
         ],
-        "updatedAt": "2026-08-31T23:26:06Z",
+        "updatedAt": "2026-09-01T14:53:05Z",
         "user": "salvagr",
         "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/533",
         "bodySnippet": "Thank you for your support.\n\n## 📱 Basic Information\n\n**Brand & Model**: SMART ZIGBEE CURTAIN SWITCH - MOES\n**Purchase Link**: https://es.aliexpress.com/item/1005008356152992.html\n**Power Source**:  Mains\n**Current Status**: pairing with wrong device type. Detected as \"radiator v"
@@ -126,13 +115,13 @@
       {
         "number": 534,
         "title": "AI Monthly Audit - September 2026 | Risk: Updated",
-        "updatedAt": "2026-09-01T05:16:44Z",
+        "updatedAt": "2026-09-01T10:32:02Z",
         "user": "dlnraja",
         "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/pull/534",
         "draft": false
       }
     ],
-    "openIssueCount": 2,
+    "openIssueCount": 1,
     "openPrCount": 1
   },
   "forum": {
@@ -147,7 +136,7 @@
     "posts": 215
   },
   "gmail": {
-    "generatedAt": "2026-09-01T08:01:26.562Z",
+    "generatedAt": "2026-09-01T15:14:58.868Z",
     "sourcesScanned": 32,
     "patternCounts": {
       "flow_getDeviceActionCard": 0,
@@ -209,16 +198,6 @@
       "id": "forum-need-action",
       "title": "50 forum posts needAction (shadow processor)",
       "action": "enrich:investigate + lock mfr+pid only",
-      "forumReply": "NEVER"
-    },
-    {
-      "score": 70,
-      "dualApp": "BOTH",
-      "source": "github-issue",
-      "id": "#535",
-      "title": "[Auto] New Tuya devices found in zigbee2mqtt",
-      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/535",
-      "action": "investigate-code-silent",
       "forumReply": "NEVER"
     },
     {
