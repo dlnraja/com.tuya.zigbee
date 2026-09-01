@@ -33,10 +33,10 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.765 |
+| **App Version** | v9.0.767 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,384 |
-| **Pairing Variants** | 16,436 (4 case combos per fingerprint) |
+| **Pairing Variants** | 16,432 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 576 |
 | **Flow Cards** | 5,198 |
 | **Unique Capabilities** | 170 |
@@ -102,6 +102,8 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.767** | Exclusive plug routing for TS011F w0qqde0g fingerprints (energy monitor only). |
+| **v9.0.766** | Exclusive plug routing for TS011F w0qqde0g fingerprints (energy monitor only). |
 | **v9.0.765** | Locked TS011F plug fingerprints in mfs_db so bots cannot re-route them to wireless buttons. |
 | **v9.0.763** | Locked TS011F plug fingerprints away from wireless buttons (mfs + case variants). |
 | **v9.0.762** | Stripped leftover plug fingerprint case-variants from wireless buttons; keep TS011F plugs on energy monitor. |
@@ -112,8 +114,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.757** | Moes curtain DP3/7/8/10 + Homey Device Updates OTA (P2356/P2357). |
 | **v9.0.756** | Moes curtain DP3/7/8/10 + Homey Device Updates OTA (P2356/P2357). |
 | **v9.0.755** | Moes curtain DP3/7/8/10 + Homey Device Updates OTA (P2356/P2357). |
-| **v9.0.754** | Moes curtain DP3/7/8/10 + Homey Device Updates OTA (P2356/P2357). |
-| **v9.0.753** | Moes curtain DP3/7/8/10 + Homey Device Updates OTA (P2356/P2357). |
 
 <!-- CHANGELOG_END -->
 
