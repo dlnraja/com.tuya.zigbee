@@ -202,6 +202,16 @@ env:
   - Workflows: `gmail-diagnostics`, `fetch-diags`, `auto-enrich-closed-loop`, `project-resilience`
   - Prefer local heuristics when soft/hard stop — never auto-spend overage
 
+- **P2372 — Fleet enrich all driver classes + free scrape (no paid overage, no lockouts):**
+  - SSOT: `config/enrichment/free-scrape-budget.json` + `config/enrichment/driver-class-coverage.json`
+  - Budget: `tools/ci/free-scrape-budget.js` · wired in `lib/scraper/FreeScrapeStack.js` (Jina/Microlink/AllOrigins/Wayback/Firecrawl daily caps + 429/403 cooldown)
+  - All classes: `tools/ci/driver-class-fleet-enrich.js` (button/socket/switch/sensor/light/curtain/thermostat/meter/fan/lock/siren/ir/wifi)
+  - Orchestrator: `tools/ci/fleet-intelligent-enrich.js` — cache-first crawls, sacred couple only, never degrade coverage
+  - Workflow: `.github/workflows/fleet-intelligent-enrich.yml` — cron `35 1,13 * * *` (staggered off `*/4` enrich + forum `:15`)
+  - Commands: `npm run enrich:fleet:apply` · `enrich:classes` · `scrape:budget` · `scrape:budget:preflight`
+  - Env: `FIRECRAWL_DAILY_MAX=3`, `FREE_SCRAPE_BROWSER=0`, restore `.cache/scraper-cache` across runs
+  - Never invent productId; Firecrawl last resort only; prefer Jina keyless + direct HTTP + 6h cache
+
 - **P2228 — CI vs Homey app packaging:**
   - Doctrine: `docs/architecture/CI_VS_HOMEY_RUNTIME.md`
   - Homey ships: `HomeyGapCompensator`, `ButtonCaptureCascade` + `lib/resilience/data/*`, `UnknownCaseRealigner` + `lib/helpers/data/heuristic-model.json`

@@ -91,9 +91,9 @@
       "realMfrsAdded": 5,
       "details": "tmp/synthetic-resolution.json + tmp/pruned21-resolution.json"
     },
-    "lastAlignedAt": "2026-09-01T06:33:27.119Z",
+    "lastAlignedAt": "2026-09-01T07:55:42.613Z",
     "alignTool": "align-mfs-db-intelligent@P169",
-    "lastSyncedFromCompose": "2026-09-01T06:32:12.784Z",
+    "lastSyncedFromCompose": "2026-09-01T07:55:33.978Z",
     "syncComposeTool": "sync-compose-to-mfs-db@P2368"
   },
   "sources": {
@@ -5442,7 +5442,7 @@
         "hubitat": 1
       },
       "confidence": 0.95,
-      "lastSeen": "2026-09-01T06:14:27.304Z",
+      "lastSeen": "2026-09-01T07:55:36.406Z",
       "driverId": "button_wireless_1",
       "deviceNames": [
         "RSH-SC021",
@@ -16331,7 +16331,7 @@
         "z2m": 1
       },
       "confidence": 0.95,
-      "lastSeen": "2026-09-01T06:14:24.974Z",
+      "lastSeen": "2026-09-01T07:55:35.229Z",
       "driverId": "air_quality_co2",
       "deviceNames": [
         "NDIR CO2 sensor",
@@ -17142,7 +17142,7 @@
         "z2m": 1
       },
       "confidence": 0.95,
-      "lastSeen": "2026-09-01T06:14:26.935Z",
+      "lastSeen": "2026-09-01T07:55:36.143Z",
       "driverId": "curtain_motor",
       "deviceNames": [
         "TS0601_cover",
@@ -17864,7 +17864,7 @@
         "z2m": 1
       },
       "confidence": 0.95,
-      "lastSeen": "2026-09-01T06:14:26.851Z",
+      "lastSeen": "2026-09-01T07:55:36.071Z",
       "driverId": "curtain_motor",
       "deviceNames": [
         "TS0601_cover",
@@ -19888,7 +19888,7 @@
         "z2m": 1
       },
       "confidence": 0.95,
-      "lastSeen": "2026-09-01T06:14:24.757Z",
+      "lastSeen": "2026-09-01T07:55:35.083Z",
       "driverId": "air_quality_co2",
       "deviceNames": [
         "DCR-LCD",
@@ -20650,7 +20650,7 @@
         "z2m": 1
       },
       "confidence": 0.95,
-      "lastSeen": "2026-09-01T06:14:27.065Z",
+      "lastSeen": "2026-09-01T07:55:36.203Z",
       "driverId": "curtain_motor",
       "deviceNames": [
         "TS0601_cover",
@@ -22931,7 +22931,7 @@
         "z2m": 1
       },
       "confidence": 0.95,
-      "lastSeen": "2026-09-01T06:14:25.116Z",
+      "lastSeen": "2026-09-01T07:55:35.316Z",
       "driverId": "air_quality_co2",
       "deviceNames": [
         "NDIR CO2 sensor",
@@ -24012,7 +24012,7 @@
         "z2m": 1
       },
       "confidence": 0.95,
-      "lastSeen": "2026-09-01T06:14:27.128Z",
+      "lastSeen": "2026-09-01T07:55:36.261Z",
       "driverId": "curtain_motor",
       "deviceNames": [
         "TS0601_cover",
@@ -24978,7 +24978,7 @@
         "z2m": 1
       },
       "confidence": 0.95,
-      "lastSeen": "2026-09-01T06:14:24.877Z",
+      "lastSeen": "2026-09-01T07:55:35.143Z",
       "driverId": "air_quality_co2",
       "deviceNames": [
         "DCR-LCD",
@@ -48744,7 +48744,7 @@
         "z2m": 1
       },
       "confidence": 0.95,
-      "lastSeen": "2026-09-01T06:14:26.659Z",
+      "lastSeen": "2026-09-01T07:55:35.931Z",
       "driverId": "curtain_motor",
       "deviceNames": [
         "TS0601_cover",
@@ -100839,7 +100839,7 @@
         "z2m": 1
       },
       "confidence": 0.95,
-      "lastSeen": "2026-09-01T06:14:27.234Z",
+      "lastSeen": "2026-09-01T07:55:36.338Z",
       "driverId": "wall_thermostat",
       "source": "p2234b-couple-refine",
       "pid": "TS0601",
@@ -111572,7 +111572,7 @@
         "z2m": 1
       },
       "confidence": 0.95,
-      "lastSeen": "2026-09-01T06:14:25.193Z",
+      "lastSeen": "2026-09-01T07:55:35.387Z",
       "driverId": "curtain_motor",
       "deviceNames": [
         "Zemismart curtain motor",
@@ -111630,7 +111630,7 @@
         "z2m": 1
       },
       "confidence": 0.95,
-      "lastSeen": "2026-09-01T06:14:26.171Z",
+      "lastSeen": "2026-09-01T07:55:35.731Z",
       "driverId": "curtain_motor",
       "deviceNames": [
         "TS0601_cover",
@@ -111682,7 +111682,7 @@
         "z2m": 1
       },
       "confidence": 0.95,
-      "lastSeen": "2026-09-01T06:14:25.575Z",
+      "lastSeen": "2026-09-01T07:55:35.581Z",
       "driverId": "curtain_motor",
       "deviceNames": [
         "Zemismart dual curtain",
@@ -111735,7 +111735,7 @@
         "z2m": 1
       },
       "confidence": 0.95,
-      "lastSeen": "2026-09-01T06:14:26.468Z",
+      "lastSeen": "2026-09-01T07:55:35.866Z",
       "driverId": "curtain_motor",
       "deviceNames": [
         "TS0601_cover",
@@ -111787,7 +111787,7 @@
         "z2m": 1
       },
       "confidence": 0.95,
-      "lastSeen": "2026-09-01T06:14:25.340Z",
+      "lastSeen": "2026-09-01T07:55:35.513Z",
       "driverId": "curtain_motor",
       "deviceNames": [
         "Zemismart curtain motor",
@@ -112973,7 +112973,7 @@
         "z2m": 1
       },
       "confidence": 0.95,
-      "lastSeen": "2026-09-01T06:14:26.764Z",
+      "lastSeen": "2026-09-01T07:55:35.992Z",
       "driverId": "curtain_motor",
       "deviceNames": [
         "TS0601_cover",
@@ -113023,7 +113023,7 @@
         "local": 1
       },
       "confidence": 0.95,
-      "lastSeen": "2026-09-01T06:14:26.318Z",
+      "lastSeen": "2026-09-01T07:55:35.805Z",
       "driverId": "curtain_motor",
       "deviceNames": [
         "TS0601_cover",
@@ -113073,7 +113073,7 @@
         "local": 1
       },
       "confidence": 0.95,
-      "lastSeen": "2026-09-01T06:14:25.254Z",
+      "lastSeen": "2026-09-01T07:55:35.434Z",
       "driverId": "curtain_motor",
       "deviceNames": [
         "Zemismart curtain motor",
@@ -128558,7 +128558,7 @@
     "multiPidMfrs": 3299,
     "variantMfrs": 82,
     "lastMfsMultiUpdate": "2026-07-23T21:38:43.390Z",
-    "lastP2295Enrichment": "2026-09-01T06:14:27.469Z",
+    "lastP2295Enrichment": "2026-09-01T07:55:36.476Z",
     "p2295Note": "modelIds=real Zigbee pids; deviceNames/z2mModels/whiteLabels/productNames=aliases; multiCouple brands use byPid"
   },
   "diff": {
@@ -214797,57 +214797,36 @@
       "ZG-101ZS": "scene_switch_4"
     },
     "modelIds": [
-      "0X8040",
-      "ARTECO",
-      "BASICZBR3",
-      "BATTERY SWITCH, 1 BUTTON",
-      "BATTERY SWITCH, 2 BUTTONS",
-      "BSP-EZ2",
-      "BSP-FZ2",
-      "CK-TLSR8656-SS5-01(7014)",
-      "CS-201Z",
-      "ET093WRG",
-      "ET093WRO",
-      "ETRV0100",
-      "ETRV0101",
-      "ETRV0103",
-      "LUMI.SENSOR_HT",
-      "LUMI.SENSOR_HT.AGL02",
-      "LUMI.WEATHER",
-      "RH3052",
-      "S26R2ZB",
-      "S31ZB",
-      "S40ZBTPB",
-      "SG502Z",
-      "SGS02Z",
-      "SM0201",
-      "TH01",
-      "THS317-ET",
-      "TRV001",
-      "TRV003",
-      "TS0001",
-      "TS0026",
-      "TS0052",
-      "TS0105",
-      "TS0202",
-      "TS0222",
-      "TS0224",
-      "TS0601",
-      "TS0901",
-      "TS1201",
-      "WSDCGQ01LM",
-      "WSDCGQ11LM",
-      "WSDCGQ12LM",
-      "ZBMINI",
-      "ZBMINIL2",
+      "3315-S",
+      "3315-Seu",
+      "ZG-101ZL",
+      "ZG-101ZS",
+      "ZG-102Z",
+      "ZG-102ZL",
+      "ZG-106Z",
+      "ZG-204Z",
+      "ZG-204ZE",
+      "ZG-204ZH",
+      "ZG-204ZK",
+      "ZG-204ZL",
+      "ZG-204ZM",
+      "ZG-204ZQ",
+      "ZG-204ZV",
+      "ZG-205Z",
+      "ZG-205ZL",
+      "ZG-222Z",
+      "ZG-222ZA",
+      "ZG-223Z",
+      "ZG-227Z",
+      "ZG-227ZL",
       "ZG-303Z",
-      "ZIGSTAR"
+      "ZG-305Z"
     ],
     "source": "P2251-hobeian-multi-couple",
     "addedAt": "2026-08-25T00:00:00.000Z",
     "notes": "P2295: one brand → many deviceIds/pids/names/drivers. Never collapse to a single modelId. Compose remains Homey pairing SSOT; byPid is the multi-couple map.",
-    "modelIdsCount": 45,
-    "pid": "0X8040",
+    "modelIdsCount": 24,
+    "pid": "ZG-303Z",
     "deviceNamesByPid": {
       "3315-S": [
         "HOBEIAN water leak",
@@ -368852,20 +368831,6 @@
       "TS0601_WATERVALVE"
     ]
   },
-  "_tz3210_402vrq2i": {
-    "driverId": "smart_knob",
-    "source": "sync-compose-known",
-    "modelIds": [
-      "TS004F"
-    ]
-  },
-  "_tz3400_402vrq2i": {
-    "driverId": "smart_knob",
-    "source": "sync-compose-known",
-    "modelIds": [
-      "TS004F"
-    ]
-  },
   "_tze284_8whfphjv": {
     "driverId": "curtain_motor",
     "source": "sync-compose-add",
@@ -368918,6 +368883,54 @@
       "ZBMINIR2-R2",
       "ZG-301Z",
       "ZG-302Z1"
+    ]
+  },
+  "_tz3000_4fg3gz3w": {
+    "driverId": "contact_sensor",
+    "source": "sync-compose-add",
+    "modelIds": [
+      "3300-S",
+      "3320-L",
+      "CK-TLSR8656-SS5-01(7003)",
+      "DOORWINDOW-SENSOR-ZB3.0",
+      "DS01",
+      "E1603/E1702",
+      "EXCELLUX",
+      "LUMI.MAGNET.AC01",
+      "LUMI.MAGNET.AGL02",
+      "LUMI.SENSOR_MAGNET",
+      "LUMI.SENSOR_MAGNET.AQ2",
+      "MCCGQ01LM",
+      "MCCGQ11LM",
+      "MCCGQ12LM",
+      "MCCGQ14LM",
+      "MCT-340 E",
+      "Q9MPFHW",
+      "RH3001",
+      "SNZB-04",
+      "SNZB-04P",
+      "SNZB-04PR2",
+      "SNZB-04R2",
+      "TRADFRI OPEN/CLOSE REMOTE",
+      "TS0021",
+      "TS0203",
+      "TY0203",
+      "ZG-102Z",
+      "ZG-102ZL"
+    ]
+  },
+  "_tz3210_402vrq2i": {
+    "driverId": "smart_knob",
+    "source": "sync-compose-known",
+    "modelIds": [
+      "TS004F"
+    ]
+  },
+  "_tz3400_402vrq2i": {
+    "driverId": "smart_knob",
+    "source": "sync-compose-known",
+    "modelIds": [
+      "TS004F"
     ]
   }
 }

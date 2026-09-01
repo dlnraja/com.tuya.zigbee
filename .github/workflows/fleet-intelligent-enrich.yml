@@ -1,0 +1,159 @@
+# Fleet Intelligent Enrich (P2372)
+# All driver classes + free-scrape budget + AI forfait. Never paid overage.
+# Cron staggered off auto-enrich */4 and forum-poll :15 — avoids scrape lockouts.
+# Triggers: cron 35 1,13 * * * + workflow_dispatch
+
+name: 🧠 Fleet Intelligent Enrich (P2372)
+
+on:
+  schedule:
+    # Twice daily 01:35 and 13:35 UTC — between enrich */4 and forum :15 herds
+    - cron: '35 1,13 * * *'
+  workflow_dispatch:
+    inputs:
+      apply:
+        description: 'Apply enrichments (false = dry-run report only)'
+        required: false
+        type: boolean
+        default: true
+      crawl:
+        description: 'Crawl external sources (Z2M/ZHA/Blakadder). Prefer false if caches warm.'
+        required: false
+        type: boolean
+        default: false
+      skip_commit:
+        description: 'Skip git commit even if apply=true'
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: fleet-intelligent-enrich
+  cancel-in-progress: false
+
+defaults:
+  run:
+    shell: bash
+
+env:
+  NODE_VERSION: '22'
+  AI_PLAN_MODE: forfait
+  AI_ALLOW_PAID: 'false'
+  AI_GLOBAL_DAILY_CAP: '400'
+  AI_SOFT_STOP_PERCENT: '85'
+  GMAIL_DIAG_AI_MAX: '0'
+  FORUM_AUTO_POST: '0'
+  SHADOW_FORUM: '1'
+  SMART_FETCH_READER_FALLBACK: '1'
+  FIRECRAWL_DAILY_MAX: '3'
+  FREE_SCRAPE_BROWSER: '0'
+  TUYA_FP_HEURISTIC: '1'
+
+jobs:
+  fleet-enrich:
+    name: Fleet enrich all driver classes
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      GH_PAT: ${{ secrets.GH_PAT }}
+      FIRECRAWL_API_KEY: ${{ secrets.FIRECRAWL_API_KEY }}
+      DISCOURSE_API_KEY: ${{ secrets.DISCOURSE_API_KEY }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+
+      - name: npm ci
+        run: npm ci --ignore-scripts
+
+      - name: Restore scraper cache (budgets + metrics)
+        uses: actions/cache@v4
+        with:
+          path: .cache/scraper-cache
+          key: free-scrape-budget-${{ github.run_id }}
+          restore-keys: |
+            free-scrape-budget-
+            scraper-cache-
+
+      - name: AI forfait preflight
+        run: node tools/ci/ai-plan-guard.js --preflight || true
+
+      - name: Free-scrape budget preflight
+        run: node tools/ci/free-scrape-budget.js --preflight || true
+
+      - name: Driver-class coverage (all types)
+        run: node tools/ci/driver-class-fleet-enrich.js
+
+      - name: Fleet intelligent enrich
+        id: fleet
+        run: |
+          ARGS="--skip-crawl"
+          if [ "${{ github.event_name }}" = "schedule" ] || [ "${{ inputs.apply }}" = "true" ]; then
+            ARGS="--apply --skip-crawl"
+          fi
+          if [ "${{ inputs.crawl }}" = "true" ]; then
+            ARGS="--apply --crawl"
+          fi
+          if [ "${{ github.event_name }}" = "schedule" ]; then
+            # Scheduled: apply from cache (no crawl storm) — crawls live on blakadder/auto-enrich
+            ARGS="--apply --skip-crawl"
+          fi
+          if [ "${{ inputs.apply }}" = "false" ]; then
+            ARGS="--skip-crawl"
+          fi
+          echo "Running: node tools/ci/fleet-intelligent-enrich.js $ARGS"
+          node tools/ci/fleet-intelligent-enrich.js $ARGS 2>&1 | tee fleet-enrich.log
+          echo "### Fleet enrich" >> "$GITHUB_STEP_SUMMARY"
+          if [ -f reports/fleet-enrich-$(date -u +%F)/summary.json ]; then
+            node -e "const j=require('./reports/fleet-enrich-'+new Date().toISOString().slice(0,10)+'/summary.json'); console.log(JSON.stringify({ok:j.ok,delta:j.delta,baseline:j.baseline,final:j.final},null,2))" >> "$GITHUB_STEP_SUMMARY"
+          fi
+          if [ -f reports/driver-class-enrich-$(date -u +%F)/summary.json ]; then
+            echo "### Driver classes" >> "$GITHUB_STEP_SUMMARY"
+            node -e "const j=require('./reports/driver-class-enrich-'+new Date().toISOString().slice(0,10)+'/summary.json'); console.log(JSON.stringify({totals:j.totals,classes:Object.fromEntries(Object.entries(j.classes||{}).map(([k,v])=>[k,v.count]))},null,2))" >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Sacred + anti-bot gates
+        run: |
+          node tools/ci/p2138-sacred-couple-matrix-gate.js
+          node tools/ci/anti-bot-regression-gate.js
+          node tools/ci/free-scrape-budget.js --report >> "$GITHUB_STEP_SUMMARY" || true
+
+      - name: Commit enrichment (skip ci)
+        if: ${{ (github.event_name == 'schedule' || inputs.apply == true) && inputs.skip_commit != true }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git pull --rebase origin master || true
+          git add -A drivers data app.json docs/knowledge reports config/enrichment tools/ci lib/scraper lib/flow || true
+          if git diff --cached --quiet; then
+            echo "No enrichment changes to commit"
+            exit 0
+          fi
+          git commit -m "fleet-enrich: intelligent all-class coverage (P2372) [skip ci]" || true
+          git push origin HEAD:master || true
+
+      - name: Upload reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: fleet-enrich-${{ github.run_id }}
+          path: |
+            reports/fleet-enrich-*/
+            reports/driver-class-enrich-*/
+            fleet-enrich.log
+            .cache/scraper-cache/_free-scrape-budget.json
+          retention-days: 14

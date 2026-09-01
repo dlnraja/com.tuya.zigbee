@@ -91,14 +91,12 @@ for (const mfr of ['_TZ3210_p68kms0l', '_TZ3210_tgvtvdoc']) {
   report.push({ action: 'rain-rehome', mfr, added: a, removedFromContactRain: r });
 }
 
-// 2) Contact TS0203 + Switch TS0601 share mfr 2imwyigp (sacred couple — dual OK)
+// 2) P218: 2imwyigp TS0601 → switch_3gang only (contact_sensor compose must NOT list 2imwyigp)
 for (const mfr of ['_TZE200_2imwyigp', '_TZE204_2imwyigp']) {
-  const aContact = ensureMfr('contact_sensor', mfr, ['TS0203']);
   const aSwitch = ensureMfr('switch_3gang', mfr, ['TS0601']);
   report.push({
-    action: 'contact-switch-dual-home',
+    action: 'switch-3gang-2imwyigp',
     mfr,
-    contactAdded: aContact,
     switchAdded: aSwitch,
   });
 }

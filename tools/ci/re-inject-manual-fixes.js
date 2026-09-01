@@ -516,9 +516,25 @@ const MANUAL_FIXES = [
     description: 'Keep rain u6x1zyv2 off contact_sensor',
     match: () => true,
     addIfMissing: [],
-    removeIfPresent: ['_TZE200_u6x1zyv2', '_tze200_u6x1zyv2', '_TZE200_U6X1ZYV2', '_tze200_U6X1ZYV2'],
+    removeIfPresent: [
+      '_TZE200_u6x1zyv2', '_tze200_u6x1zyv2', '_TZE200_U6X1ZYV2', '_tze200_U6X1ZYV2',
+      '_TZE204_u6x1zyv2', '_tze204_u6x1zyv2', '_TZE204_U6X1ZYV2', '_tze204_U6X1ZYV2',
+    ],
     addAtTop: false,
     source: 'p98-forum-1610',
+  },
+  {
+    id: 'p218-2imwyigp-remove-contact',
+    file: 'drivers/contact_sensor/driver.compose.json',
+    description: 'P218 anti-bot: 2imwyigp TS0601 lives on switch_3gang only',
+    match: () => true,
+    addIfMissing: [],
+    removeIfPresent: [
+      '_TZE200_2imwyigp', '_tze200_2imwyigp', '_TZE200_2IMWYIGP', '_tze200_2IMWYIGP',
+      '_TZE204_2imwyigp', '_tze204_2imwyigp', '_TZE204_2IMWYIGP', '_tze204_2IMWYIGP',
+    ],
+    addAtTop: false,
+    source: 'p218-anti-bot',
   },
   {
     id: 'p98-pay2byax-remove-soil',
