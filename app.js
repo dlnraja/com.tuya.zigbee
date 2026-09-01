@@ -529,9 +529,10 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
                 for (const device of devices) {
                   const settings = device.getSettings();
                   if (settings && settings.device_id === info.deviceId) {
-                    if (settings.ip_address !== info.ip) {
-                      this.log(`🔄 [SMART-HEAL] IP change: ${settings.ip_address} -> ${info.ip}`);
-                      await device.setSettings({ ip_address: info.ip }).catch((e) => this.error('[SMART-HEAL] Settings update failed', e));
+                    const currentIp = settings.ip || settings.ip_address || settings.device_ip;
+                    if (currentIp !== info.ip) {
+                      this.log(`🔄 [SMART-HEAL] IP change: ${currentIp || '—'} -> ${info.ip}`);
+                      await device.setSettings({ ip: info.ip, ip_address: info.ip }).catch((e) => this.error('[SMART-HEAL] Settings update failed', e));
                     }
                   }
                 }

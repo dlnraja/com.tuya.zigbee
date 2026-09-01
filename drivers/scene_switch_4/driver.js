@@ -27,6 +27,14 @@ async onInit() {
     registerButtonFlowCards(this, 'scene_switch_4', 4);
   }
 
+  async onPairListDevices(devices) {
+    try {
+      const { logPairingIdentityBatch } = require('../../lib/pairing/logPairingIdentity');
+      logPairingIdentityBatch(this, devices);
+    } catch (_e) { /* optional */ }
+    return devices;
+  }
+
   _registerFlowCards() {
     const homey = this.homey;
     const driverId = 'scene_switch_4';

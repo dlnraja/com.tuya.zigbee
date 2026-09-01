@@ -1,0 +1,86 @@
+{
+  "generatedAt": "2026-09-01T06:40:24.786Z",
+  "driverCount": 52,
+  "totalTriggers": 812,
+  "totalConditions": 16,
+  "totalActions": 52,
+  "driversWithIssues": 12,
+  "highSeverityIssues": 0,
+  "heuristicMissDrivers": 12,
+  "appJsonDriftDrivers": 0,
+  "appLevelButtonTriggers": [
+    "button_pressed",
+    "button_double_press",
+    "button_long_press",
+    "button_triple_clicked",
+    "button_multi_press",
+    "button_release",
+    "button_matrix",
+    "virtual_button_pressed",
+    "remote_button_pressed",
+    "knob_rotated"
+  ],
+  "appLevelButtonTriggersMissing": [],
+  "topByTriggers": [
+    {
+      "driverId": "button_wireless_8",
+      "triggers": 45
+    },
+    {
+      "driverId": "scene_switch_4",
+      "triggers": 45
+    },
+    {
+      "driverId": "scene_switch_6ch",
+      "triggers": 40
+    },
+    {
+      "driverId": "button_wireless_6",
+      "triggers": 35
+    },
+    {
+      "driverId": "scene_switch_6",
+      "triggers": 34
+    },
+    {
+      "driverId": "wall_remote_6_gang",
+      "triggers": 30
+    },
+    {
+      "driverId": "button_wireless_smart",
+      "triggers": 29
+    },
+    {
+      "driverId": "button_wireless_4",
+      "triggers": 28
+    },
+    {
+      "driverId": "button_wireless_4_ts0041",
+      "triggers": 25
+    },
+    {
+      "driverId": "remote_button_wireless_handheld",
+      "triggers": 25
+    },
+    {
+      "driverId": "button_wireless_3",
+      "triggers": 21
+    },
+    {
+      "driverId": "handheld_remote_4_buttons",
+      "triggers": 20
+    },
+    {
+      "driverId": "remote_button_emergency_sos",
+      "triggers": 20
+    },
+    {
+      "driverId": "remote_button_wireless",
+      "triggers": 20
+    },
+    {
+      "driverId": "smart_remote_4_buttons",
+      "triggers": 20
+    }
+  ]
+}

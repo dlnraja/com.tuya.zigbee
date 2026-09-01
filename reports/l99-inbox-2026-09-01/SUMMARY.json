@@ -1,0 +1,1395 @@
+{
+  "generatedAt": "2026-09-01T00:57:16.691Z",
+  "date": "2026-09-01",
+  "mode": "full",
+  "phases": [
+    {
+      "name": "guard",
+      "ok": true,
+      "durationMs": 0,
+      "note": "SHADOW env forced"
+    },
+    {
+      "name": "github",
+      "ok": true,
+      "durationMs": 537
+    },
+    {
+      "name": "gmail",
+      "ok": true,
+      "durationMs": 9880,
+      "details": {
+        "crash": {
+          "ok": true,
+          "skipped": false,
+          "status": 0,
+          "durationMs": 1686,
+          "stderr": "",
+          "stdoutTail": "[gmail-crash-pattern-gate] sources=181 hits=60 unknown=0\n  flow_getDeviceActionCard: 4 source-hit(s)\n  readonly_error_assign: 16 source-hit(s)\n  unbound_destroyed: 8 source-hit(s)\n  getDiscoveries_not_fn: 5 source-hit(s)\n  getDeviceById: 3 source-hit(s)\n  catch_on_undefined: 12 source-hit(s)\n  settimeout_destroyed: 2 source-hit(s)\n  dcm_auditCapabilities_missing: 7 source-hit(s)\n  capability_ref_undefined: 3 source-hit(s)\n  heap_oom_live_data: 7 source-hit(s)\n  ERR_IAS_SLEEPY_TIMEOUT: 4 source-hit(s)\n  ERR_DESTROYED_DEVICE_TIMER: 2 source-hit(s)\n  ERR_UNBOUND_DESTROYED: 8 source-hit(s)\n  ERR_CATCH_ON_UNDEFINED: 12 source-hit(s)\n  ERR_CAPABILITY_NOT_FOUND: 1 source-hit(s)\n  ERR_AUDIT_CAPABILITIES: 7 source-hit(s)\n  wrote .github\\state\\gmail-crash-patterns.json\n  verdict: ok\n"
+        },
+        "treat": {
+          "ok": true,
+          "skipped": false,
+          "status": 0,
+          "durationMs": 8189,
+          "stderr": "",
+          "stdoutTail": "cursive treat — sacred couple never invented; P2246 derive from interview when ABSENT\",\n  \"sourcesScanned\": 820,\n  \"uniqueCases\": 376,\n  \"actionable\": 123,\n  \"derivedFromInterview\": 84,\n  \"signalTally\": {\n    \"scene_mode_unsupported\": 18,\n    \"wrong_driver_hint\": 16,\n    \"athom_socket_hang\": 3,\n    \"athom_processing_failed\": 2,\n    \"wrong_smart_rcbo\": 2,\n    \"flow_guard_spam\": 57,\n    \"processing_failed\": 2,\n    \"scene_0x8004\": 8,\n    \"ef00_on_ias_only\": 13,\n    \"dcm_audit_crash\": 6,\n    \"ef00_leftover_ias\": 13,\n    \"ias_storm_button\": 8,\n    \"bind_fail_sleepy\": 7,\n    \"heap_oom\": 2,\n    \"physical_vs_virtual_button\": 13,\n    \"invalid_flow_card\": 59,\n    \"dp_adapt_not_found\": 10,\n    \"ias_zone_object_coerce\": 2,\n    \"battery_spike_sos\": 2,\n    \"battery_health_token\": 4,\n    \"ias_object_coerce\": 2,\n    \"battery_spike\": 2,\n    \"missing_capability_listener\": 1,\n    \"sos_no_press_flow\": 1,\n    \"d102_no_pid\": 2,\n    \"dyn_cap_humidity_on_meter\": 2\n  },\n  \"gmailBodiesPresent\": 635,\n  \"interviews\": 90\n}\n[automate] status → .github\\state\\diag-recursive-inbox\\automate-status.json\n{\n  \"total\": 200,\n  \"have\": 637,\n  \"missing\": 0,\n  \"missingIds\": []\n}\n[automate] actionable= 123 gmailBodies= 635\n"
+        }
+      }
+    },
+    {
+      "name": "forum",
+      "ok": true,
+      "durationMs": 42950,
+      "skipScan": false,
+      "steps": [
+        {
+          "ok": true,
+          "skipped": false
+        },
+        {
+          "ok": true,
+          "skipped": false
+        },
+        {
+          "ok": true,
+          "skipped": false
+        },
+        {
+          "ok": true,
+          "skipped": false
+        }
+      ]
+    },
+    {
+      "name": "drivers",
+      "ok": true,
+      "durationMs": 5404,
+      "mfs": {
+        "high": 0,
+        "changes": 0,
+        "fail": false
+      },
+      "sacredOk": true
+    },
+    {
+      "name": "prioritize",
+      "ok": true,
+      "durationMs": 2,
+      "count": 2
+    },
+    {
+      "name": "docs",
+      "ok": true,
+      "durationMs": 1,
+      "doc": "C:\\Users\\Dell\\Documents\\homey\\master\\docs\\architecture\\L99_INBOX_INTELLIGENCE.md"
+    },
+    {
+      "name": "gates",
+      "ok": true,
+      "durationMs": 8001
+    }
+  ],
+  "github": {
+    "harvestedAt": "2026-09-01T00:57:17.226Z",
+    "repo": "dlnraja/com.tuya.zigbee",
+    "auth": "token",
+    "error": null,
+    "issues": [
+      {
+        "number": 533,
+        "title": "Device Request - [SMART ZIGBEE CURTAIN SWITCH] - [MOES]",
+        "labels": [
+          "enhancement",
+          "device-request",
+          "needs-maintainer"
+        ],
+        "updatedAt": "2026-08-31T23:26:06Z",
+        "user": "salvagr",
+        "htmlUrl": "https://github.com/dlnraja/com.tuya.zigbee/issues/533",
+        "bodySnippet": "Thank you for your support.\n\n## 📱 Basic Information\n\n**Brand & Model**: SMART ZIGBEE CURTAIN SWITCH - MOES\n**Purchase Link**: https://es.aliexpress.com/item/1005008356152992.html\n**Power Source**:  Mains\n**Current Status**: pairing with wrong device type. Detected as \"radiator v"
+      }
+    ],
+    "prs": [],
+    "openIssueCount": 1,
+    "openPrCount": 0
+  },
+  "forum": {
+    "path": "C:\\Users\\Dell\\Documents\\homey\\master\\.github\\state\\forum\\actionable-processor-report.json",
+    "totals": {
+      "posts": 215,
+      "withCouples": 76,
+      "needAction": 50,
+      "both": 139,
+      "masterOnly": 7
+    },
+    "posts": 215
+  },
+  "gmail": {
+    "generatedAt": "2026-09-01T00:57:18.789Z",
+    "sourcesScanned": 181,
+    "patternCounts": {
+      "flow_getDeviceActionCard": 4,
+      "readonly_error_assign": 16,
+      "unbound_destroyed": 8,
+      "getDiscoveries_not_fn": 5,
+      "getDeviceById": 3,
+      "catch_on_undefined": 12,
+      "registerRunListenerasync_typo": 0,
+      "settimeout_destroyed": 2,
+      "onDeleted_null": 0,
+      "dcm_auditCapabilities_missing": 7,
+      "capability_ref_undefined": 3,
+      "clusterutils_destroyed_unbound": 0,
+      "heap_oom_live_data": 7,
+      "ERR_IAS_SLEEPY_TIMEOUT": 4,
+      "ERR_DESTROYED_DEVICE_TIMER": 2,
+      "ERR_UNBOUND_DESTROYED": 8,
+      "ERR_CATCH_ON_UNDEFINED": 12,
+      "ERR_CAPABILITY_NOT_FOUND": 1,
+      "ERR_AUDIT_CAPABILITIES": 7,
+      "ERR_ZIGBEE_ROUTE_FULL": 0
+    },
+    "hits": [
+      {
+        "pattern": "flow_getDeviceActionCard",
+        "severity": "fatal",
+        "status": "fixed_p100",
+        "fix": "app.js FLOW-GUARD polyfill + getActionCard fallbacks in drivers",
+        "source": "tmp/gmail-art/.github/state/diagnostics-report.json",
+        "sacred": {
+          "mfrs": [
+            "_TZ3210_ngqk6jiaa",
+            "_TZ3000_uw3dadam",
+            "_TZ3000_dpo1ysaak",
+            "_TZ3000_fa9mlvjaa",
+            "_TZE204_clrdrnya",
+            "_TZE200_s8gkrkxk",
+            "_TZ3000_1dd0d5yi",
+            "_TZ3000_4uuaja4a",
+            "_TZ3000_e3vhyirx",
+            "_TZ3000_eafaa66e",
+            "_TZ3000_eg7awg6a",
+            "_TZ3000_fccpjz5z",
+            "_TZ3000_femsaaua",
+            "_TZ3000_jwv3cwak",
+            "_TZ3000_ke7pzj5d",
+            "_TZ3000_vd43bbfq",
+            "_TZ3000_zirycpws",
+            "_TZ3210_dwytrmda",
+            "_TZ3210_ol1uhvza",
+            "_TZ3000_j1xl73iw"
+          ],
+          "pids": [
+            "TS0041",
+            "TS0601",
+            "TS130F",
+            "TS0502B",
+            "TS0052",
+            "TS110E",
+            "TS110F",
+            "TS1101",
+            "TS0203",
+            "TS011F",
+            "TS0001",
+            "TS0207",
+            "TS0044",
+            "TS0201",
+            "TS0222",
+            "TS0002",
+            "TS0202",
+            "TS0101",
+            "TS0225",
+            "TS0004"
+          ]
+        }
+      },
+      {
+        "pattern": "readonly_error_assign",
+        "severity": "fatal",
+        "status": "fixed_p100",
+        "fix": "Never assign this.error; DiagnosticLogsCollector skip locked props; use _boundError",
+        "source": "tmp/gmail-art/.github/state/diagnostics-report.json",
+        "sacred": {
+          "mfrs": [
+            "_TZ3210_ngqk6jiaa",
+            "_TZ3000_uw3dadam",
+            "_TZ3000_dpo1ysaak",
+            "_TZ3000_fa9mlvjaa",
+            "_TZE204_clrdrnya",
+            "_TZE200_s8gkrkxk",
+            "_TZ3000_1dd0d5yi",
+            "_TZ3000_4uuaja4a",
+            "_TZ3000_e3vhyirx",
+            "_TZ3000_eafaa66e",
+            "_TZ3000_eg7awg6a",
+            "_TZ3000_fccpjz5z",
+            "_TZ3000_femsaaua",
+            "_TZ3000_jwv3cwak",
+            "_TZ3000_ke7pzj5d",
+            "_TZ3000_vd43bbfq",
+            "_TZ3000_zirycpws",
+            "_TZ3210_dwytrmda",
+            "_TZ3210_ol1uhvza",
+            "_TZ3000_j1xl73iw"
+          ],
+          "pids": [
+            "TS0041",
+            "TS0601",
+            "TS130F",
+            "TS0502B",
+            "TS0052",
+            "TS110E",
+            "TS110F",
+            "TS1101",
+            "TS0203",
+            "TS011F",
+            "TS0001",
+            "TS0207",
+            "TS0044",
+            "TS0201",
+            "TS0222",
+            "TS0002",
+            "TS0202",
+            "TS0101",
+            "TS0225",
+            "TS0004"
+          ]
+        }
+      },
+      {
+        "pattern": "unbound_destroyed",
+        "severity": "fatal",
+        "status": "fixed_p100",
+        "fix": "Use _boundError/_boundLog; never pass unbound this.error to .catch",
+        "source": "tmp/gmail-art/.github/state/diagnostics-report.json",
+        "sacred": {
+          "mfrs": [
+            "_TZ3210_ngqk6jiaa",
+            "_TZ3000_uw3dadam",
+            "_TZ3000_dpo1ysaak",
+            "_TZ3000_fa9mlvjaa",
+            "_TZE204_clrdrnya",
+            "_TZE200_s8gkrkxk",
+            "_TZ3000_1dd0d5yi",
+            "_TZ3000_4uuaja4a",
+            "_TZ3000_e3vhyirx",
+            "_TZ3000_eafaa66e",
+            "_TZ3000_eg7awg6a",
+            "_TZ3000_fccpjz5z",
+            "_TZ3000_femsaaua",
+            "_TZ3000_jwv3cwak",
+            "_TZ3000_ke7pzj5d",
+            "_TZ3000_vd43bbfq",
+            "_TZ3000_zirycpws",
+            "_TZ3210_dwytrmda",
+            "_TZ3210_ol1uhvza",
+            "_TZ3000_j1xl73iw"
+          ],
+          "pids": [
+            "TS0041",
+            "TS0601",
+            "TS130F",
+            "TS0502B",
+            "TS0052",
+            "TS110E",
+            "TS110F",
+            "TS1101",
+            "TS0203",
+            "TS011F",
+            "TS0001",
+            "TS0207",
+            "TS0044",
+            "TS0201",
+            "TS0222",
+            "TS0002",
+            "TS0202",
+            "TS0101",
+            "TS0225",
+            "TS0004"
+          ]
+        }
+      },
+      {
+        "pattern": "getDiscoveries_not_fn",
+        "severity": "fatal",
+        "status": "fixed_p100",
+        "fix": "AutoAdaptiveDevice._safeGetDiscoveries() typeof check before call",
+        "source": "tmp/gmail-art/.github/state/diagnostics-report.json",
+        "sacred": {
+          "mfrs": [
+            "_TZ3210_ngqk6jiaa",
+            "_TZ3000_uw3dadam",
+            "_TZ3000_dpo1ysaak",
+            "_TZ3000_fa9mlvjaa",
+            "_TZE204_clrdrnya",
+            "_TZE200_s8gkrkxk",
+            "_TZ3000_1dd0d5yi",
+            "_TZ3000_4uuaja4a",
+            "_TZ3000_e3vhyirx",
+            "_TZ3000_eafaa66e",
+            "_TZ3000_eg7awg6a",
+            "_TZ3000_fccpjz5z",
+            "_TZ3000_femsaaua",
+            "_TZ3000_jwv3cwak",
+            "_TZ3000_ke7pzj5d",
+            "_TZ3000_vd43bbfq",
+            "_TZ3000_zirycpws",
+            "_TZ3210_dwytrmda",
+            "_TZ3210_ol1uhvza",
+            "_TZ3000_j1xl73iw"
+          ],
+          "pids": [
+            "TS0041",
+            "TS0601",
+            "TS130F",
+            "TS0502B",
+            "TS0052",
+            "TS110E",
+            "TS110F",
+            "TS1101",
+            "TS0203",
+            "TS011F",
+            "TS0001",
+            "TS0207",
+            "TS0044",
+            "TS0201",
+            "TS0222",
+            "TS0002",
+            "TS0202",
+            "TS0101",
+            "TS0225",
+            "TS0004"
+          ]
+        }
+      },
+      {
+        "pattern": "getDeviceById",
+        "severity": "warn",
+        "status": "fixed_p101",
+        "fix": "ZigBeeDriverFlowCardPatch global null-safe getDeviceById (P101)",
+        "source": "tmp/gmail-art/.github/state/diagnostics-report.json",
+        "sacred": {
+          "mfrs": [
+            "_TZ3210_ngqk6jiaa",
+            "_TZ3000_uw3dadam",
+            "_TZ3000_dpo1ysaak",
+            "_TZ3000_fa9mlvjaa",
+            "_TZE204_clrdrnya",
+            "_TZE200_s8gkrkxk",
+            "_TZ3000_1dd0d5yi",
+            "_TZ3000_4uuaja4a",
+            "_TZ3000_e3vhyirx",
+            "_TZ3000_eafaa66e",
+            "_TZ3000_eg7awg6a",
+            "_TZ3000_fccpjz5z",
+            "_TZ3000_femsaaua",
+            "_TZ3000_jwv3cwak",
+            "_TZ3000_ke7pzj5d",
+            "_TZ3000_vd43bbfq",
+            "_TZ3000_zirycpws",
+            "_TZ3210_dwytrmda",
+            "_TZ3210_ol1uhvza",
+            "_TZ3000_j1xl73iw"
+          ],
+          "pids": [
+            "TS0041",
+            "TS0601",
+            "TS130F",
+            "TS0502B",
+            "TS0052",
+            "TS110E",
+            "TS110F",
+            "TS1101",
+            "TS0203",
+            "TS011F",
+            "TS0001",
+            "TS0207",
+            "TS0044",
+            "TS0201",
+            "TS0222",
+            "TS0002",
+            "TS0202",
+            "TS0101",
+            "TS0225",
+            "TS0004"
+          ]
+        }
+      },
+      {
+        "pattern": "catch_on_undefined",
+        "severity": "fatal",
+        "status": "fixed_p101",
+        "fix": "Promise.resolve(x).catch(...) or guard return values before .catch",
+        "source": "tmp/gmail-art/.github/state/diagnostics-report.json",
+        "sacred": {
+          "mfrs": [
+            "_TZ3210_ngqk6jiaa",
+            "_TZ3000_uw3dadam",
+            "_TZ3000_dpo1ysaak",
+            "_TZ3000_fa9mlvjaa",
+            "_TZE204_clrdrnya",
+            "_TZE200_s8gkrkxk",
+            "_TZ3000_1dd0d5yi",
+            "_TZ3000_4uuaja4a",
+            "_TZ3000_e3vhyirx",
+            "_TZ3000_eafaa66e",
+            "_TZ3000_eg7awg6a",
+            "_TZ3000_fccpjz5z",
+            "_TZ3000_femsaaua",
+            "_TZ3000_jwv3cwak",
+            "_TZ3000_ke7pzj5d",
+            "_TZ3000_vd43bbfq",
+            "_TZ3000_zirycpws",
+            "_TZ3210_dwytrmda",
+            "_TZ3210_ol1uhvza",
+            "_TZ3000_j1xl73iw"
+          ],
+          "pids": [
+            "TS0041",
+            "TS0601",
+            "TS130F",
+            "TS0502B",
+            "TS0052",
+            "TS110E",
+            "TS110F",
+            "TS1101",
+            "TS0203",
+            "TS011F",
+            "TS0001",
+            "TS0207",
+            "TS0044",
+            "TS0201",
+            "TS0222",
+            "TS0002",
+            "TS0202",
+            "TS0101",
+            "TS0225",
+            "TS0004"
+          ]
+        }
+      },
+      {
+        "pattern": "dcm_auditCapabilities_missing",
+        "severity": "fatal",
+        "status": "fixed_p108",
+        "fix": "Guard typeof auditCapabilities; add method on lib/dynamic/DynamicCapabilityManager",
+        "source": "tmp/gmail-art/.github/state/diagnostics-report.json",
+        "sacred": {
+          "mfrs": [
+            "_TZ3210_ngqk6jiaa",
+            "_TZ3000_uw3dadam",
+            "_TZ3000_dpo1ysaak",
+            "_TZ3000_fa9mlvjaa",
+            "_TZE204_clrdrnya",
+            "_TZE200_s8gkrkxk",
+            "_TZ3000_1dd0d5yi",
+            "_TZ3000_4uuaja4a",
+            "_TZ3000_e3vhyirx",
+            "_TZ3000_eafaa66e",
+            "_TZ3000_eg7awg6a",
+            "_TZ3000_fccpjz5z",
+            "_TZ3000_femsaaua",
+            "_TZ3000_jwv3cwak",
+            "_TZ3000_ke7pzj5d",
+            "_TZ3000_vd43bbfq",
+            "_TZ3000_zirycpws",
+            "_TZ3210_dwytrmda",
+            "_TZ3210_ol1uhvza",
+            "_TZ3000_j1xl73iw"
+          ],
+          "pids": [
+            "TS0041",
+            "TS0601",
+            "TS130F",
+            "TS0502B",
+            "TS0052",
+            "TS110E",
+            "TS110F",
+            "TS1101",
+            "TS0203",
+            "TS011F",
+            "TS0001",
+            "TS0207",
+            "TS0044",
+            "TS0201",
+            "TS0222",
+            "TS0002",
+            "TS0202",
+            "TS0101",
+            "TS0225",
+            "TS0004"
+          ]
+        }
+      },
+      {
+        "pattern": "capability_ref_undefined",
+        "severity": "fatal",
+        "status": "fixed_p136",
+        "fix": "generic_tuya._autoMapDP: destructure capability + skip internal mappings",
+        "source": "tmp/gmail-art/.github/state/diagnostics-report.json",
+        "sacred": {
+          "mfrs": [
+            "_TZ3210_ngqk6jiaa",
+            "_TZ3000_uw3dadam",
+            "_TZ3000_dpo1ysaak",
+            "_TZ3000_fa9mlvjaa",
+            "_TZE204_clrdrnya",
+            "_TZE200_s8gkrkxk",
+            "_TZ3000_1dd0d5yi",
+            "_TZ3000_4uuaja4a",
+            "_TZ3000_e3vhyirx",
+            "_TZ3000_eafaa66e",
+            "_TZ3000_eg7awg6a",
+            "_TZ3000_fccpjz5z",
+            "_TZ3000_femsaaua",
+            "_TZ3000_jwv3cwak",
+            "_TZ3000_ke7pzj5d",
+            "_TZ3000_vd43bbfq",
+            "_TZ3000_zirycpws",
+            "_TZ3210_dwytrmda",
+            "_TZ3210_ol1uhvza",
+            "_TZ3000_j1xl73iw"
+          ],
+          "pids": [
+            "TS0041",
+            "TS0601",
+            "TS130F",
+            "TS0502B",
+            "TS0052",
+            "TS110E",
+            "TS110F",
+            "TS1101",
+            "TS0203",
+            "TS011F",
+            "TS0001",
+            "TS0207",
+            "TS0044",
+            "TS0201",
+            "TS0222",
+            "TS0002",
+            "TS0202",
+            "TS0101",
+            "TS0225",
+            "TS0004"
+          ]
+        }
+      },
+      {
+        "pattern": "heap_oom_live_data",
+        "severity": "fatal",
+        "status": "fixed_p148",
+        "fix": "LiveDataUpdater: cap overlay (1500), store ≤180KB, manifest version check before segments, heap skip (P148)",
+        "source": "tmp/gmail-art/.github/state/diagnostics-report.json",
+        "sacred": {
+          "mfrs": [
+            "_TZ3210_ngqk6jiaa",
+            "_TZ3000_uw3dadam",
+            "_TZ3000_dpo1ysaak",
+            "_TZ3000_fa9mlvjaa",
+            "_TZE204_clrdrnya",
+            "_TZE200_s8gkrkxk",
+            "_TZ3000_1dd0d5yi",
+            "_TZ3000_4uuaja4a",
+            "_TZ3000_e3vhyirx",
+            "_TZ3000_eafaa66e",
+            "_TZ3000_eg7awg6a",
+            "_TZ3000_fccpjz5z",
+            "_TZ3000_femsaaua",
+            "_TZ3000_jwv3cwak",
+            "_TZ3000_ke7pzj5d",
+            "_TZ3000_vd43bbfq",
+            "_TZ3000_zirycpws",
+            "_TZ3210_dwytrmda",
+            "_TZ3210_ol1uhvza",
+            "_TZ3000_j1xl73iw"
+          ],
+          "pids": [
+            "TS0041",
+            "TS0601",
+            "TS130F",
+            "TS0502B",
+            "TS0052",
+            "TS110E",
+            "TS110F",
+            "TS1101",
+            "TS0203",
+            "TS011F",
+            "TS0001",
+            "TS0207",
+            "TS0044",
+            "TS0201",
+            "TS0222",
+            "TS0002",
+            "TS0202",
+            "TS0101",
+            "TS0225",
+            "TS0004"
+          ]
+        }
+      },
+      {
+        "pattern": "ERR_UNBOUND_DESTROYED",
+        "severity": "fatal",
+        "status": "fixed_p100",
+        "fix": "_boundError/_boundLog; never unbound this.error to .catch",
+        "source": "tmp/gmail-art/.github/state/diagnostics-report.json",
+        "sacred": {
+          "mfrs": [
+            "_TZ3210_ngqk6jiaa",
+            "_TZ3000_uw3dadam",
+            "_TZ3000_dpo1ysaak",
+            "_TZ3000_fa9mlvjaa",
+            "_TZE204_clrdrnya",
+            "_TZE200_s8gkrkxk",
+            "_TZ3000_1dd0d5yi",
+            "_TZ3000_4uuaja4a",
+            "_TZ3000_e3vhyirx",
+            "_TZ3000_eafaa66e",
+            "_TZ3000_eg7awg6a",
+            "_TZ3000_fccpjz5z",
+            "_TZ3000_femsaaua",
+            "_TZ3000_jwv3cwak",
+            "_TZ3000_ke7pzj5d",
+            "_TZ3000_vd43bbfq",
+            "_TZ3000_zirycpws",
+            "_TZ3210_dwytrmda",
+            "_TZ3210_ol1uhvza",
+            "_TZ3000_j1xl73iw"
+          ],
+          "pids": [
+            "TS0041",
+            "TS0601",
+            "TS130F",
+            "TS0502B",
+            "TS0052",
+            "TS110E",
+            "TS110F",
+            "TS1101",
+            "TS0203",
+            "TS011F",
+            "TS0001",
+            "TS0207",
+            "TS0044",
+            "TS0201",
+            "TS0222",
+            "TS0002",
+            "TS0202",
+            "TS0101",
+            "TS0225",
+            "TS0004"
+          ]
+        }
+      },
+      {
+        "pattern": "ERR_CATCH_ON_UNDEFINED",
+        "severity": "fatal",
+        "status": "fixed_p139",
+        "fix": "Promise.resolve(x).catch(...) or async listeners (SOS P139)",
+        "source": "tmp/gmail-art/.github/state/diagnostics-report.json",
+        "sacred": {
+          "mfrs": [
+            "_TZ3210_ngqk6jiaa",
+            "_TZ3000_uw3dadam",
+            "_TZ3000_dpo1ysaak",
+            "_TZ3000_fa9mlvjaa",
+            "_TZE204_clrdrnya",
+            "_TZE200_s8gkrkxk",
+            "_TZ3000_1dd0d5yi",
+            "_TZ3000_4uuaja4a",
+            "_TZ3000_e3vhyirx",
+            "_TZ3000_eafaa66e",
+            "_TZ3000_eg7awg6a",
+            "_TZ3000_fccpjz5z",
+            "_TZ3000_femsaaua",
+            "_TZ3000_jwv3cwak",
+            "_TZ3000_ke7pzj5d",
+            "_TZ3000_vd43bbfq",
+            "_TZ3000_zirycpws",
+            "_TZ3210_dwytrmda",
+            "_TZ3210_ol1uhvza",
+            "_TZ3000_j1xl73iw"
+          ],
+          "pids": [
+            "TS0041",
+            "TS0601",
+            "TS130F",
+            "TS0502B",
+            "TS0052",
+            "TS110E",
+            "TS110F",
+            "TS1101",
+            "TS0203",
+            "TS011F",
+            "TS0001",
+            "TS0207",
+            "TS0044",
+            "TS0201",
+            "TS0222",
+            "TS0002",
+            "TS0202",
+            "TS0101",
+            "TS0225",
+            "TS0004"
+          ]
+        }
+      },
+      {
+        "pattern": "ERR_AUDIT_CAPABILITIES",
+        "severity": "fatal",
+        "status": "fixed_p108",
+        "fix": "typeof guard + method on DCM (stable backport)",
+        "source": "tmp/gmail-art/.github/state/diagnostics-report.json",
+        "sacred": {
+          "mfrs": [
+            "_TZ3210_ngqk6jiaa",
+            "_TZ3000_uw3dadam",
+            "_TZ3000_dpo1ysaak",
+            "_TZ3000_fa9mlvjaa",
+            "_TZE204_clrdrnya",
+            "_TZE200_s8gkrkxk",
+            "_TZ3000_1dd0d5yi",
+            "_TZ3000_4uuaja4a",
+            "_TZ3000_e3vhyirx",
+            "_TZ3000_eafaa66e",
+            "_TZ3000_eg7awg6a",
+            "_TZ3000_fccpjz5z",
+            "_TZ3000_femsaaua",
+            "_TZ3000_jwv3cwak",
+            "_TZ3000_ke7pzj5d",
+            "_TZ3000_vd43bbfq",
+            "_TZ3000_zirycpws",
+            "_TZ3210_dwytrmda",
+            "_TZ3210_ol1uhvza",
+            "_TZ3000_j1xl73iw"
+          ],
+          "pids": [
+            "TS0041",
+            "TS0601",
+            "TS130F",
+            "TS0502B",
+            "TS0052",
+            "TS110E",
+            "TS110F",
+            "TS1101",
+            "TS0203",
+            "TS011F",
+            "TS0001",
+            "TS0207",
+            "TS0044",
+            "TS0201",
+            "TS0222",
+            "TS0002",
+            "TS0202",
+            "TS0101",
+            "TS0225",
+            "TS0004"
+          ]
+        }
+      },
+      {
+        "pattern": "flow_getDeviceActionCard",
+        "severity": "fatal",
+        "status": "fixed_p100",
+        "fix": "app.js FLOW-GUARD polyfill + getActionCard fallbacks in drivers",
+        "source": "tmp/gmail-art/diagnostics/summary.json",
+        "sacred": {
+          "mfrs": [
+            "_TZ3000_uw3dadam"
+          ],
+          "pids": []
+        }
+      },
+      {
+        "pattern": "readonly_error_assign",
+        "severity": "fatal",
+        "status": "fixed_p100",
+        "fix": "Never assign this.error; DiagnosticLogsCollector skip locked props; use _boundError",
+        "source": "tmp/gmail-art/diagnostics/summary.json",
+        "sacred": {
+          "mfrs": [
+            "_TZ3000_uw3dadam"
+          ],
+          "pids": []
+        }
+      },
+      {
+        "pattern": "unbound_destroyed",
+        "severity": "fatal",
+        "status": "fixed_p100",
+        "fix": "Use _boundError/_boundLog; never pass unbound this.error to .catch",
+        "source": "tmp/gmail-art/diagnostics/summary.json",
+        "sacred": {
+          "mfrs": [
+            "_TZ3000_uw3dadam"
+          ],
+          "pids": []
+        }
+      },
+      {
+        "pattern": "getDiscoveries_not_fn",
+        "severity": "fatal",
+        "status": "fixed_p100",
+        "fix": "AutoAdaptiveDevice._safeGetDiscoveries() typeof check before call",
+        "source": "tmp/gmail-art/diagnostics/summary.json",
+        "sacred": {
+          "mfrs": [
+            "_TZ3000_uw3dadam"
+          ],
+          "pids": []
+        }
+      },
+      {
+        "pattern": "getDeviceById",
+        "severity": "warn",
+        "status": "fixed_p101",
+        "fix": "ZigBeeDriverFlowCardPatch global null-safe getDeviceById (P101)",
+        "source": "tmp/gmail-art/diagnostics/summary.json",
+        "sacred": {
+          "mfrs": [
+            "_TZ3000_uw3dadam"
+          ],
+          "pids": []
+        }
+      },
+      {
+        "pattern": "catch_on_undefined",
+        "severity": "fatal",
+        "status": "fixed_p101",
+        "fix": "Promise.resolve(x).catch(...) or guard return values before .catch",
+        "source": "tmp/gmail-art/diagnostics/summary.json",
+        "sacred": {
+          "mfrs": [
+            "_TZ3000_uw3dadam"
+          ],
+          "pids": []
+        }
+      },
+      {
+        "pattern": "dcm_auditCapabilities_missing",
+        "severity": "fatal",
+        "status": "fixed_p108",
+        "fix": "Guard typeof auditCapabilities; add method on lib/dynamic/DynamicCapabilityManager",
+        "source": "tmp/gmail-art/diagnostics/summary.json",
+        "sacred": {
+          "mfrs": [
+            "_TZ3000_uw3dadam"
+          ],
+          "pids": []
+        }
+      },
+      {
+        "pattern": "capability_ref_undefined",
+        "severity": "fatal",
+        "status": "fixed_p136",
+        "fix": "generic_tuya._autoMapDP: destructure capability + skip internal mappings",
+        "source": "tmp/gmail-art/diagnostics/summary.json",
+        "sacred": {
+          "mfrs": [
+            "_TZ3000_uw3dadam"
+          ],
+          "pids": []
+        }
+      },
+      {
+        "pattern": "heap_oom_live_data",
+        "severity": "fatal",
+        "status": "fixed_p148",
+        "fix": "LiveDataUpdater: cap overlay (1500), store ≤180KB, manifest version check before segments, heap skip (P148)",
+        "source": "tmp/gmail-art/diagnostics/summary.json",
+        "sacred": {
+          "mfrs": [
+            "_TZ3000_uw3dadam"
+          ],
+          "pids": []
+        }
+      },
+      {
+        "pattern": "ERR_UNBOUND_DESTROYED",
+        "severity": "fatal",
+        "status": "fixed_p100",
+        "fix": "_boundError/_boundLog; never unbound this.error to .catch",
+        "source": "tmp/gmail-art/diagnostics/summary.json",
+        "sacred": {
+          "mfrs": [
+            "_TZ3000_uw3dadam"
+          ],
+          "pids": []
+        }
+      },
+      {
+        "pattern": "ERR_CATCH_ON_UNDEFINED",
+        "severity": "fatal",
+        "status": "fixed_p139",
+        "fix": "Promise.resolve(x).catch(...) or async listeners (SOS P139)",
+        "source": "tmp/gmail-art/diagnostics/summary.json",
+        "sacred": {
+          "mfrs": [
+            "_TZ3000_uw3dadam"
+          ],
+          "pids": []
+        }
+      },
+      {
+        "pattern": "ERR_AUDIT_CAPABILITIES",
+        "severity": "fatal",
+        "status": "fixed_p108",
+        "fix": "typeof guard + method on DCM (stable backport)",
+        "source": "tmp/gmail-art/diagnostics/summary.json",
+        "sacred": {
+          "mfrs": [
+            "_TZ3000_uw3dadam"
+          ],
+          "pids": []
+        }
+      },
+      {
+        "pattern": "ERR_IAS_SLEEPY_TIMEOUT",
+        "severity": "high",
+        "status": "fixed_p148",
+        "fix": "DataRecoveryManager: skip aggressive EF00 on IAS without EF00; no COMMON_DPS on sleepy (P148/P157).",
+        "source": ".github/state/homey-app-diag/60959c24-a0e6-4159-8cf1-12f9ba5df612.sanitized.json",
+        "sacred": {
+          "mfrs": [
+            "_TZE284_m1cvyneb"
+          ],
+          "pids": []
+        }
+      },
+      {
+        "pattern": "catch_on_undefined",
+        "severity": "fatal",
+        "status": "fixed_p101",
+        "fix": "Promise.resolve(x).catch(...) or guard return values before .catch",
+        "source": ".github/state/homey-app-diag/634f7b19-6909-4485-b35c-dd199d3a09d2.raw-stack.txt",
+        "sacred": {
+          "mfrs": [],
+          "pids": []
+        }
+      },
+      {
+        "pattern": "settimeout_destroyed",
+        "severity": "fatal",
+        "status": "fixed_p19",
+        "fix": "safeSetTimeout(this, cb, ms) from lib/utils/safe-timers.js (P19)",
+        "source": ".github/state/homey-app-diag/634f7b19-6909-4485-b35c-dd199d3a09d2.raw-stack.txt",
+        "sacred": {
+          "mfrs": [],
+          "pids": []
+        }
+      },
+      {
+        "pattern": "dcm_auditCapabilities_missing",
+        "severity": "fatal",
+        "status": "fixed_p108",
+        "fix": "Guard typeof auditCapabilities; add method on lib/dynamic/DynamicCapabilityManager",
+        "source": ".github/state/homey-app-diag/634f7b19-6909-4485-b35c-dd199d3a09d2.raw-stack.txt",
+        "sacred": {
+          "mfrs": [],
+          "pids": []
+        }
+      },
+      {
+        "pattern": "ERR_DESTROYED_DEVICE_TIMER",
+        "severity": "medium",
+        "status": "fixed_p19",
+        "fix": "safeSetTimeout / safeSetInterval / isDestroyed from lib/utils/safe-timers.js",
+        "source": ".github/state/homey-app-diag/634f7b19-6909-4485-b35c-dd199d3a09d2.raw-stack.txt",
+        "sacred": {
+          "mfrs": [],
+          "pids": []
+        }
+      },
+      {
+        "pattern": "ERR_CATCH_ON_UNDEFINED",
+        "severity": "fatal",
+        "status": "fixed_p139",
+        "fix": "Promise.resolve(x).catch(...) or async listeners (SOS P139)",
+        "source": ".github/state/homey-app-diag/634f7b19-6909-4485-b35c-dd199d3a09d2.raw-stack.txt",
+        "sacred": {
+          "mfrs": [],
+          "pids": []
+        }
+      },
+      {
+        "pattern": "ERR_AUDIT_CAPABILITIES",
+        "severity": "fatal",
+        "status": "fixed_p108",
+        "fix": "typeof guard + method on DCM (stable backport)",
+        "source": ".github/state/homey-app-diag/634f7b19-6909-4485-b35c-dd199d3a09d2.raw-stack.txt",
+        "sacred": {
+          "mfrs": [],
+          "pids": []
+        }
+      },
+      {
+        "pattern": "catch_on_undefined",
+        "severity": "fatal",
+        "status": "fixed_p101",
+        "fix": "Promise.resolve(x).catch(...) or guard return values before .catch",
+        "source": ".github/state/homey-app-diag/634f7b19-6909-4485-b35c-dd199d3a09d2.sanitized.json",
+        "sacred": {
+          "mfrs": [],
+          "pids": []
+        }
+      },
+      {
+        "pattern": "settimeout_destroyed",
+        "severity": "fatal",
+        "status": "fixed_p19",
+        "fix": "safeSetTimeout(this, cb, ms) from lib/utils/safe-timers.js (P19)",
+        "source": ".github/state/homey-app-diag/634f7b19-6909-4485-b35c-dd199d3a09d2.sanitized.json",
+        "sacred": {
+          "mfrs": [],
+          "pids": []
+        }
+      },
+      {
+        "pattern": "dcm_auditCapabilities_missing",
+        "severity": "fatal",
+        "status": "fixed_p108",
+        "fix": "Guard typeof auditCapabilities; add method on lib/dynamic/DynamicCapabilityManager",
+        "source": ".github/state/homey-app-diag/634f7b19-6909-4485-b35c-dd199d3a09d2.sanitized.json",
+        "sacred": {
+          "mfrs": [],
+          "pids": []
+        }
+      },
+      {
+        "pattern": "ERR_IAS_SLEEPY_TIMEOUT",
+        "severity": "high",
+        "status": "fixed_p148",
+        "fix": "DataRecoveryManager: skip aggressive EF00 on IAS without EF00; no COMMON_DPS on sleepy (P148/P157).",
+        "source": ".github/state/homey-app-diag/634f7b19-6909-4485-b35c-dd199d3a09d2.sanitized.json",
+        "sacred": {
+          "mfrs": [],
+          "pids": []
+        }
+      },
+      {
+        "pattern": "ERR_DESTROYED_DEVICE_TIMER",
+        "severity": "medium",
+        "status": "fixed_p19",
+        "fix": "safeSetTimeout / safeSetInterval / isDestroyed from lib/utils/safe-timers.js",
+        "source": ".github/state/homey-app-diag/634f7b19-6909-4485-b35c-dd199d3a09d2.sanitized.json",
+        "sacred": {
+          "mfrs": [],
+          "pids": []
+        }
+      },
+      {
+        "pattern": "ERR_CATCH_ON_UNDEFINED",
+        "severity": "fatal",
+        "status": "fixed_p139",
+        "fix": "Promise.resolve(x).catch(...) or async listeners (SOS P139)",
+        "source": ".github/state/homey-app-diag/634f7b19-6909-4485-b35c-dd199d3a09d2.sanitized.json",
+        "sacred": {
+          "mfrs": [],
+          "pids": []
+        }
+      },
+      {
+        "pattern": "ERR_AUDIT_CAPABILITIES",
+        "severity": "fatal",
+        "status": "fixed_p108",
+        "fix": "typeof guard + method on DCM (stable backport)",
+        "source": ".github/state/homey-app-diag/634f7b19-6909-4485-b35c-dd199d3a09d2.sanitized.json",
+        "sacred": {
+          "mfrs": [],
+          "pids": []
+        }
+      },
+      {
+        "pattern": "ERR_IAS_SLEEPY_TIMEOUT",
+        "severity": "high",
+        "status": "fixed_p148",
+        "fix": "DataRecoveryManager: skip aggressive EF00 on IAS without EF00; no COMMON_DPS on sleepy (P148/P157).",
+        "source": ".github/state/homey-app-diag/7a6f2ca1-28dc-4ddb-9748-805a79aa39b6.sanitized.json",
+        "sacred": {
+          "mfrs": [],
+          "pids": []
+        }
+      },
+      {
+        "pattern": "ERR_CAPABILITY_NOT_FOUND",
+        "severity": "medium",
+        "status": "hardened_l14",
+        "fix": "safeSetCapabilityValue() / L14 path on TuyaZigbeeDevice",
+        "source": ".github/state/homey-app-diag/8c49c683-294c-4965-ade1-e165c56a06e9.sanitized.json",
+        "sacred": {
+          "mfrs": [],
+          "pids": []
+        }
+      },
+      {
+        "pattern": "heap_oom_live_data",
+        "severity": "fatal",
+        "status": "fixed_p148",
+        "fix": "LiveDataUpdater: cap overlay (1500), store ≤180KB, manifest version check before segments, heap skip (P148)",
+        "source": ".github/state/homey-app-diag/96c19859-c46b-44cb-a137-1d57b5d17d83.sanitized.json",
+        "sacred": {
+          "mfrs": [],
+          "pids": []
+        }
+      },
+      {
+        "pattern": "ERR_IAS_SLEEPY_TIMEOUT",
+        "severity": "high",
+        "status": "fixed_p148",
+        "fix": "DataRecoveryManager: skip aggressive EF00 on IAS without EF00; no COMMON_DPS on sleepy (P148/P157).",
+        "source": ".github/state/homey-app-diag/96c19859-c46b-44cb-a137-1d57b5d17d83.sanitized.json",
+        "sacred": {
+          "mfrs": [],
+          "pids": []
+        }
+      },
+      {
+        "pattern": "getDiscoveries_not_fn",
+        "severity": "fatal",
+        "status": "fixed_p100",
+        "fix": "AutoAdaptiveDevice._safeGetDiscoveries() typeof check before call",
+        "source": ".github/state/homey-app-diag/f1e5b12d-5f69-4311-aaa7-b8bef967667c.raw-stack.txt",
+        "sacred": {
+          "mfrs": [],
+          "pids": []
+        }
+      },
+      {
+        "pattern": "catch_on_undefined",
+        "severity": "fatal",
+        "status": "fixed_p101",
+        "fix": "Promise.resolve(x).catch(...) or guard return values before .catch",
+        "source": ".github/state/homey-app-diag/f1e5b12d-5f69-4311-aaa7-b8bef967667c.raw-stack.txt",
+        "sacred": {
+          "mfrs": [],
+          "pids": []
+        }
+      },
+      {
+        "pattern": "ERR_CATCH_ON_UNDEFINED",
+        "severity": "fatal",
+        "status": "fixed_p139",
+        "fix": "Promise.resolve(x).catch(...) or async listeners (SOS P139)",
+        "source": ".github/state/homey-app-diag/f1e5b12d-5f69-4311-aaa7-b8bef967667c.raw-stack.txt",
+        "sacred": {
+          "mfrs": [],
+          "pids": []
+        }
+      },
+      {
+        "pattern": "getDiscoveries_not_fn",
+        "severity": "fatal",
+        "status": "fixed_p100",
+        "fix": "AutoAdaptiveDevice._safeGetDiscoveries() typeof check before call",
+        "source": ".github/state/homey-app-diag/f1e5b12d-5f69-4311-aaa7-b8bef967667c.sanitized.json",
+        "sacred": {
+          "mfrs": [],
+          "pids": []
+        }
+      },
+      {
+        "pattern": "catch_on_undefined",
+        "severity": "fatal",
+        "status": "fixed_p101",
+        "fix": "Promise.resolve(x).catch(...) or guard return values before .catch",
+        "source": ".github/state/homey-app-diag/f1e5b12d-5f69-4311-aaa7-b8bef967667c.sanitized.json",
+        "sacred": {
+          "mfrs": [],
+          "pids": []
+        }
+      },
+      {
+        "pattern": "ERR_CATCH_ON_UNDEFINED",
+        "severity": "fatal",
+        "status": "fixed_p139",
+        "fix": "Promise.resolve(x).catch(...) or async listeners (SOS P139)",
+        "source": ".github/state/homey-app-diag/f1e5b12d-5f69-4311-aaa7-b8bef967667c.sanitized.json",
+        "sacred": {
+          "mfrs": [],
+          "pids": []
+        }
+      },
+      {
+        "pattern": "heap_oom_live_data",
+        "severity": "fatal",
+        "status": "fixed_p148",
+        "fix": "LiveDataUpdater: cap overlay (1500), store ≤180KB, manifest version check before segments, heap skip (P148)",
+        "source": "tmp/gmail-art/diagnostics/summary.json#errors",
+        "sacred": {
+          "mfrs": [],
+          "pids": []
+        }
+      },
+      {
+        "pattern": "unbound_destroyed",
+        "severity": "fatal",
+        "status": "fixed_p100",
+        "fix": "Use _boundError/_boundLog; never pass unbound this.error to .catch",
+        "source": "tmp/gmail-art/diagnostics/summary.json#errors",
+        "sacred": {
+          "mfrs": [],
+          "pids": []
+        }
+      },
+      {
+        "pattern": "ERR_UNBOUND_DESTROYED",
+        "severity": "fatal",
+        "status": "fixed_p100",
+        "fix": "_boundError/_boundLog; never unbound this.error to .catch",
+        "source": "tmp/gmail-art/diagnostics/summary.json#errors",
+        "sacred": {
+          "mfrs": [],
+          "pids": []
+        }
+      },
+      {
+        "pattern": "catch_on_undefined",
+        "severity": "fatal",
+        "status": "fixed_p101",
+        "fix": "Promise.resolve(x).catch(...) or guard return values before .catch",
+        "source": "tmp/gmail-art/diagnostics/summary.json#errors",
+        "sacred": {
+          "mfrs": [],
+          "pids": []
+        }
+      },
+      {
+        "pattern": "ERR_CATCH_ON_UNDEFINED",
+        "severity": "fatal",
+        "status": "fixed_p139",
+        "fix": "Promise.resolve(x).catch(...) or async listeners (SOS P139)",
+        "source": "tmp/gmail-art/diagnostics/summary.json#errors",
+        "sacred": {
+          "mfrs": [],
+          "pids": []
+        }
+      },
+      {
+        "pattern": "getDiscoveries_not_fn",
+        "severity": "fatal",
+        "status": "fixed_p100",
+        "fix": "AutoAdaptiveDevice._safeGetDiscoveries() typeof check before call",
+        "source": "tmp/gmail-art/diagnostics/summary.json#errors",
+        "sacred": {
+          "mfrs": [],
+          "pids": []
+        }
+      },
+      {
+        "pattern": "capability_ref_undefined",
+        "severity": "fatal",
+        "status": "fixed_p136",
+        "fix": "generic_tuya._autoMapDP: destructure capability + skip internal mappings",
+        "source": "tmp/gmail-art/diagnostics/summary.json#errors",
+        "sacred": {
+          "mfrs": [],
+          "pids": []
+        }
+      },
+      {
+        "pattern": "dcm_auditCapabilities_missing",
+        "severity": "fatal",
+        "status": "fixed_p108",
+        "fix": "Guard typeof auditCapabilities; add method on lib/dynamic/DynamicCapabilityManager",
+        "source": "tmp/gmail-art/diagnostics/summary.json#errors",
+        "sacred": {
+          "mfrs": [],
+          "pids": []
+        }
+      },
+      {
+        "pattern": "ERR_AUDIT_CAPABILITIES",
+        "severity": "fatal",
+        "status": "fixed_p108",
+        "fix": "typeof guard + method on DCM (stable backport)",
+        "source": "tmp/gmail-art/diagnostics/summary.json#errors",
+        "sacred": {
+          "mfrs": [],
+          "pids": []
+        }
+      },
+      {
+        "pattern": "getDeviceById",
+        "severity": "warn",
+        "status": "fixed_p101",
+        "fix": "ZigBeeDriverFlowCardPatch global null-safe getDeviceById (P101)",
+        "source": "tmp/gmail-art/diagnostics/summary.json#errors",
+        "sacred": {
+          "mfrs": [],
+          "pids": []
+        }
+      },
+      {
+        "pattern": "flow_getDeviceActionCard",
+        "severity": "fatal",
+        "status": "fixed_p100",
+        "fix": "app.js FLOW-GUARD polyfill + getActionCard fallbacks in drivers",
+        "source": "tmp/gmail-art/diagnostics/summary.json#errors",
+        "sacred": {
+          "mfrs": [],
+          "pids": []
+        }
+      },
+      {
+        "pattern": "readonly_error_assign",
+        "severity": "fatal",
+        "status": "fixed_p100",
+        "fix": "Never assign this.error; DiagnosticLogsCollector skip locked props; use _boundError",
+        "source": "tmp/gmail-art/diagnostics/summary.json#errors",
+        "sacred": {
+          "mfrs": [],
+          "pids": []
+        }
+      }
+    ],
+    "unknownFatals": [],
+    "knownFixed": [
+      "flow_getDeviceActionCard",
+      "readonly_error_assign",
+      "unbound_destroyed",
+      "getDiscoveries_not_fn",
+      "getDeviceById",
+      "catch_on_undefined",
+      "registerRunListenerasync_typo",
+      "settimeout_destroyed",
+      "onDeleted_null",
+      "dcm_auditCapabilities_missing",
+      "capability_ref_undefined",
+      "clusterutils_destroyed_unbound",
+      "heap_oom_live_data",
+      "ERR_IAS_SLEEPY_TIMEOUT",
+      "ERR_DESTROYED_DEVICE_TIMER",
+      "ERR_UNBOUND_DESTROYED",
+      "ERR_CATCH_ON_UNDEFINED",
+      "ERR_AUDIT_CAPABILITIES"
+    ],
+    "watch": [],
+    "verdict": "ok"
+  },
+  "mfs": {
+    "high": 0,
+    "changes": 0,
+    "fail": false
+  },
+  "priority": [
+    {
+      "score": 75,
+      "dualApp": "BOTH",
+      "source": "forum",
+      "id": "forum-need-action",
+      "title": "50 forum posts needAction (shadow processor)",
+      "action": "enrich:investigate + lock mfr+pid only",
+      "forumReply": "NEVER"
+    },
+    {
+      "score": 70,
+      "dualApp": "BOTH",
+      "source": "github-issue",
+      "id": "#533",
+      "title": "Device Request - [SMART ZIGBEE CURTAIN SWITCH] - [MOES]",
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/533",
+      "action": "investigate-code-silent",
+      "forumReply": "NEVER"
+    }
+  ]
+}

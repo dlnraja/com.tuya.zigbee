@@ -17,7 +17,10 @@ class SosEmergencyButtonDriver extends ZigBeeDriver {
       'button_emergency_sos_pressed',
       'button_emergency_sos_double_pressed',
       'button_emergency_sos_long_pressed',
-      'button_emergency_sos_battery_low'
+      'button_emergency_sos_battery_low',
+      // WHY(P2364): triggerSOS fires physical_on — must be registered or fallback races manifest
+      'button_emergency_sos_physical_on',
+      'button_emergency_sos_physical_off',
     ];
 
     this._flowCards = {};
@@ -66,6 +69,14 @@ class SosEmergencyButtonDriver extends ZigBeeDriver {
   async triggerLongPress(device, tokens = {}, state = {}) {
     this.log('[FLOW] triggerLongPress called for', device.getName());
     await this._triggerCard('button_emergency_sos_long_pressed', device, tokens, state);
+  }
+
+  /**
+   * P2364: alarm_generic auto-reset should pair with physical_off for Flow parity.
+   */
+  async triggerPhysicalOff(device, tokens = {}, state = {}) {
+    this.log('[FLOW] triggerPhysicalOff called for', device.getName());
+    await this._triggerCard('button_emergency_sos_physical_off', device, {}, state);
   }
 
   /**

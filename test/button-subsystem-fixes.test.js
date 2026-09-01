@@ -129,7 +129,8 @@ describe('B6/B7 — SOS capability/flow parity and single listener', () => {
     const body = sosSrc.slice(start, end);
     assert.match(body, /safeSetCapabilityValue\('button\.1', true\)/);
     assert.match(body, /getDeviceTriggerCard\('button_pressed'\)/);
-    assert.match(body, /\{ button: '1', type: 'single' \}/);
+    assert.match(body, /type: flowType/);
+    assert.match(body, /const flowType = pressType === 'long' \? 'hold' : pressType/);
   });
 
   it('blocks the mixin asymmetric button.1 listener via a no-op router override', () => {

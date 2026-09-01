@@ -1,0 +1,288 @@
+{
+  "generatedAt": "2026-09-01T04:49:29.075Z",
+  "policy": "search-not-invent — never write compose from soft hypotheses",
+  "query": {
+    "uuid": "05867379",
+    "driver": "curtain_motor"
+  },
+  "diag": {
+    "uuid": "05867379-dabd-4299-bb1a-cad53fa57189",
+    "version": "9.0.750",
+    "createdAt": "2026-08-31T13:16:50.949Z",
+    "userMessage": "Time out after 10000ms.\nData device not updated",
+    "drivers": [
+      "curtain_motor"
+    ],
+    "coupleAbsent": true,
+    "couplesInLog": []
+  },
+  "hypotheses": [
+    {
+      "mfr": "_TZE204_5slehgeo",
+      "pid": "TS0601",
+      "driver": "curtain_motor",
+      "confidence": "github_context_soft",
+      "reason": "GitHub #533 Salvagr Moes ZTS-EUR-C — NOT proven in target diag log",
+      "sources": [
+        "github-533",
+        "diag-724d4bc9",
+        "PECULIARITIES-p2348",
+        "z2m"
+      ],
+      "z2mDesc": "Thermostatic radiator valve"
+    },
+    {
+      "mfr": "_TZE200_7upwjcca",
+      "pid": "TS0601",
+      "driver": "curtain_motor",
+      "confidence": "registry_locked",
+      "reason": "p2234b-tze200_7upwjcca",
+      "sources": []
+    },
+    {
+      "mfr": "_TZE204_guvc7pdy",
+      "pid": "TS0601",
+      "driver": "curtain_motor",
+      "confidence": "registry_locked",
+      "reason": "p2273-guvc7pdy-curtain-not-1gang",
+      "sources": [
+        "zha-device-handlers#5140",
+        "P2273"
+      ]
+    },
+    {
+      "mfr": "_TZE200_guvc7pdy",
+      "pid": "TS0601",
+      "driver": "curtain_motor",
+      "confidence": "registry_locked",
+      "reason": "p2273-guvc7pdy-curtain-not-1gang",
+      "sources": [
+        "zha-device-handlers#5140",
+        "P2273"
+      ]
+    },
+    {
+      "mfr": "_TZE200_1fuxihti",
+      "pid": "TS0601",
+      "driver": "curtain_motor",
+      "confidence": "registry_locked",
+      "reason": "p2279-1fuxihti-cover-not-climate",
+      "sources": [
+        "zigbee-herdsman-converters tuya TS0601_cover",
+        "P2279"
+      ]
+    },
+    {
+      "mfr": "_TZE204_1fuxihti",
+      "pid": "TS0601",
+      "driver": "curtain_motor",
+      "confidence": "registry_locked",
+      "reason": "p2279-1fuxihti-cover-not-climate",
+      "sources": [
+        "zigbee-herdsman-converters tuya TS0601_cover",
+        "P2279"
+      ]
+    },
+    {
+      "mfr": "_TZE284_1fuxihti",
+      "pid": "TS0601",
+      "driver": "curtain_motor",
+      "confidence": "registry_locked",
+      "reason": "p2279-1fuxihti-cover-not-climate",
+      "sources": [
+        "zigbee-herdsman-converters tuya TS0601_cover",
+        "P2279"
+      ]
+    },
+    {
+      "mfr": "_tze200_68nvbio9",
+      "pid": "TS0601",
+      "driver": "curtain_motor",
+      "confidence": "registry_locked",
+      "reason": "p2293-zemismart-68nvbio9-curtain-not-trv",
+      "sources": [
+        "Z2M#29124",
+        "Z2M#28655",
+        "forum-154092",
+        "P2293",
+        "p2293-zemismart-68nvbio9-curtain-not-trv",
+        "P2295",
+        "ZM16EL",
+        "TS0601_cover"
+      ]
+    },
+    {
+      "mfr": "_tze204_68nvbio9",
+      "pid": "TS0601",
+      "driver": "curtain_motor",
+      "confidence": "registry_locked",
+      "reason": "p2293-zemismart-68nvbio9-curtain-not-trv",
+      "sources": [
+        "Z2M#29124",
+        "Z2M#28655",
+        "forum-154092",
+        "P2293",
+        "p2293-zemismart-68nvbio9-curtain-not-trv",
+        "P2295",
+        "ZM16EL",
+        "TS0601_cover"
+      ]
+    },
+    {
+      "mfr": "_tze200_cf1sl3tj",
+      "pid": "TS0601",
+      "driver": "curtain_motor",
+      "confidence": "registry_locked",
+      "reason": "p2293-zemismart-cf1sl3tj-curtain-not-trv",
+      "sources": [
+        "Z2M#18413",
+        "forum-154092",
+        "P2293",
+        "p2293-zemismart-cf1sl3tj-curtain-not-trv",
+        "P2295",
+        "ZM85EL-2Z",
+        "TS0601_cover"
+      ]
+    },
+    {
+      "mfr": "_tze200_68nvbi09",
+      "pid": "TS0601",
+      "driver": "curtain_motor",
+      "confidence": "registry_locked",
+      "reason": "p2295-zemismart-68nvbi09-typo-curtain",
+      "sources": [
+        "p2295-zemismart-68nvbi09-typo-curtain",
+        "P2295",
+        "ZM16EL",
+        "TS0601_cover"
+      ]
+    },
+    {
+      "mfr": "_tze200_9p5xmj5r",
+      "pid": "TS0601",
+      "driver": "curtain_motor",
+      "confidence": "registry_locked",
+      "reason": "p2295-zemismart-cover-siblings",
+      "sources": [
+        "p2295-zemismart-cover-siblings",
+        "P2295",
+        "TS0601_cover",
+        "ZM16EL",
+        "ZM85EL-2Z"
+      ]
+    },
+    {
+      "mfr": "_tze200_ba69l9ol",
+      "pid": "TS0601",
+      "driver": "curtain_motor",
+      "confidence": "registry_locked",
+      "reason": "p2295-zemismart-cover-siblings",
+      "sources": [
+        "p2295-zemismart-cover-siblings",
+        "P2295",
+        "TS0601_cover",
+        "ZM16EL",
+        "ZM85EL-2Z"
+      ]
+    },
+    {
+      "mfr": "_tze200_eevqq1uv",
+      "pid": "TS0601",
+      "driver": "curtain_motor",
+      "confidence": "registry_locked",
+      "reason": "p2295-zemismart-cover-siblings",
+      "sources": [
+        "p2295-zemismart-cover-siblings",
+        "P2295",
+        "TS0601_cover",
+        "ZM16EL",
+        "ZM85EL-2Z"
+      ]
+    },
+    {
+      "mfr": "_tze200_nw1r9hp6",
+      "pid": "TS0601",
+      "driver": "curtain_motor",
+      "confidence": "registry_locked",
+      "reason": "p2295-zemismart-cover-siblings",
+      "sources": [
+        "p2295-zemismart-cover-siblings",
+        "P2295",
+        "TS0601_cover",
+        "ZM16EL",
+        "ZM85EL-2Z"
+      ]
+    },
+    {
+      "mfr": "_tze200_pw7mji0l",
+      "pid": "TS0601",
+      "driver": "curtain_motor",
+      "confidence": "registry_locked",
+      "reason": "p2295-zemismart-cover-siblings",
+      "sources": [
+        "p2295-zemismart-cover-siblings",
+        "P2295",
+        "TS0601_cover",
+        "ZM16EL",
+        "ZM85EL-2Z"
+      ]
+    },
+    {
+      "mfr": "_tze200_sfqyhvpv",
+      "pid": "TS0601",
+      "driver": "curtain_motor",
+      "confidence": "registry_locked",
+      "reason": "p2295-zemismart-cover-siblings",
+      "sources": [
+        "p2295-zemismart-cover-siblings",
+        "P2295",
+        "TS0601_cover",
+        "ZM16EL",
+        "ZM85EL-2Z"
+      ]
+    },
+    {
+      "mfr": "_tze200_vexa5o82",
+      "pid": "TS0601",
+      "driver": "curtain_motor",
+      "confidence": "registry_locked",
+      "reason": "p2295-zemismart-cover-siblings",
+      "sources": [
+        "p2295-zemismart-cover-siblings",
+        "P2295",
+        "TS0601_cover",
+        "ZM16EL",
+        "ZM85EL-2Z"
+      ]
+    },
+    {
+      "mfr": "_tze204_ejh6owwz",
+      "pid": "TS0601",
+      "driver": "curtain_motor",
+      "confidence": "registry_locked",
+      "reason": "p2295-zemismart-cover-siblings",
+      "sources": [
+        "p2295-zemismart-cover-siblings",
+        "P2295",
+        "TS0601_cover",
+        "ZM16EL",
+        "ZM85EL-2Z"
+      ]
+    },
+    {
+      "mfr": "_tze204_pw7mji0l",
+      "pid": "TS0601",
+      "driver": "curtain_motor",
+      "confidence": "registry_locked",
+      "reason": "p2295-zemismart-cover-siblings",
+      "sources": [
+        "p2295-zemismart-cover-siblings",
+        "P2295",
+        "TS0601_cover",
+        "ZM16EL",
+        "ZM85EL-2Z"
+      ]
+    }
+  ],
+  "action": "Request fresh Homey diag with [COVER-INIT] or [FLEET] mfr=… pid=… lines"
+}

@@ -257,7 +257,22 @@
     "diag:inbox-uuids:fetch": "node tools/ci/inbox-diag-uuid-harvest.js --fetch --max=6",
     "check:discovery-lineage": "node tools/ci/discovery-lineage-enrich-gate.js",
     "curtain:apply": "node tools/ci/apply-curtain-couples.js --apply",
-    "curtain:audit": "node tools/ci/_curtain-couple-audit.js"
+    "curtain:audit": "node tools/ci/_curtain-couple-audit.js",
+    "button:harvest": "node tools/ci/button-flow-harvest.js",
+    "button:harvest:apply": "node tools/ci/button-flow-harvest.js --apply-fixes",
+    "check:p2364": "node --test test/critical/p2364-button-flow-harvest.test.js",
+    "couple:search": "node tools/ci/couple-absent-search.js",
+    "unknown:harden": "node tools/ci/harden-unknown-zigbee.js",
+    "unknown:harden:apply": "node tools/ci/harden-unknown-zigbee.js --apply",
+    "check:p2366": "node --test test/critical/p2366-unknown-zigbee-harden.test.js",
+    "wifi:harden": "node tools/ci/harden-wifi-local.js",
+    "check:p2367": "node --test test/critical/p2367-wifi-local-harden.test.js",
+    "mfs:sync": "node tools/ci/sync-compose-to-mfs-db.js",
+    "mfs:sync:apply": "node tools/ci/sync-compose-to-mfs-db.js --apply",
+    "mfs:harden": "node tools/ci/harden-mfs-db.js",
+    "mfs:harden:apply": "node tools/ci/harden-mfs-db.js --apply",
+    "check:p2368": "node --test test/critical/p2368-mfs-db-harden.test.js",
+    "harvest:all:apply": "node tools/ci/harvest-all-sources.js --apply"
   },
   "keywords": [
     "homey",
