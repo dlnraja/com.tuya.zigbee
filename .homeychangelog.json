@@ -1380,5 +1380,8 @@
   },
   "5.12.111": {
     "en": "Fixed smart plug fingerprint routing so TS011F plugs are not matched as wireless buttons."
+  },
+  "5.12.112": {
+    "en": "Stripped leftover plug fingerprint case-variants from wireless buttons; restored smartplug OTA asset for Homey validate."
   }
 }
