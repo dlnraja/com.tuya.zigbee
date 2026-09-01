@@ -88,6 +88,8 @@ jobs:
             exit 1
           fi
           echo "SDK3 validated"
+      - name: Dedupe driver flow cards (app.json + .homeycompose)
+        run: node tools/ci/sync-appjson-flow-dedupe.js --apply
       - name: Validate App
         run: npx homey app validate --level publish
       - name: Sanitize generated manifest after validation
