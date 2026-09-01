@@ -61,7 +61,7 @@ fixJSON('sdk/sdkVersion normalization', () => {
       changed = true;
     }
     // Do NOT delete sdk — it is the canonical field.
-    if (changed) fs.writeFileSync(fp, JSON.stringify(c, null, 2) + '\n', 'utf8');
+    if (changed) fs.writeFileSync(fp, JSON.stringify(c) + '\n', 'utf8'); // compact: canonical app.json format (pretty-print = 6.2MB > 4MB Athom limit + guaranteed merge conflicts)
   }
 });
 
@@ -99,7 +99,7 @@ fixJSON('app.json button.X generated options', () => {
       d.capabilitiesOptions = opts;
     }
   }
-  if (fixed > 0) fs.writeFileSync(fp, JSON.stringify(c, null, 2) + '\n', 'utf8');
+  if (fixed > 0) fs.writeFileSync(fp, JSON.stringify(c) + '\n', 'utf8'); // compact (see above)
 });
 
 // 4. Fix broken require() paths
@@ -114,6 +114,10 @@ run('Case variants (HOBEIAN etc)', 'node scripts/validation/ensure-case-variants
 // 7. Pre-commit FP sync check
 run('FP sync (compose↔app.json)', 'node scripts/validation/pre-commit-fp-sync.js');
 
+// 7b. Resync app.json zigbee blocks from compose (canonical). Bots edit
+// compose without rebuilding app.json, which breaks routing regression tests.
+run('app.json zigbee resync (from compose)', 'node scripts/maintenance/sync-appjson-zigbee.js');
+
 // 8. Validate driver mesh (Polos)
 run('Driver mesh validator', 'node scripts/validation/validate-driver-mesh.js');
 
@@ -126,8 +130,15 @@ run('Mandatory check (M01-M51)', 'node scripts/validate/homey-mandatory-check.js
 // 11. P68: Apply Blakadder fingerprints (idempotent, only adds new)
 run('Blakadder FP integration', 'node tools/ci/apply-blakadder-new-fps-r68.js');
 
+// 11b. Resolve FP collisions after Blakadder (climate catch-all must lose to switches)
+// Prevents auto-fix-all from reintroducing pairs like _TZE200_8eazvzo6 in climate_sensor.
+run('FP conflict resolve', 'node scripts/automation/fix-fingerprint-conflicts.js --soft-exit');
+
 // 12. P68v2: Fix cross-driver flow card ID collisions
 run('Flow card dup v2', 'node tools/ci/fix-flow-card-dups-r68v2.js');
+
+// 13. P2376: Driver flow cards live in driver.flow.compose.json only
+run('app.json flow dedupe', 'node tools/ci/sync-appjson-flow-dedupe.js --apply');
 
 console.log('\n═══════════════════════════════════════════════');
 console.log(`  ✅ Fixes appliqués: ${fixes}`);

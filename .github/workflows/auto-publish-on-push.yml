@@ -350,6 +350,9 @@ jobs:
       - name: Normalize Homey manifest before validation
         run: npm run fix:generated-flow-args
 
+      - name: Dedupe driver flow cards (app.json + .homeycompose)
+        run: node tools/ci/sync-appjson-flow-dedupe.js --apply
+
       - name: Official Homey validator
         run: npx homey app validate --level publish
 
@@ -474,6 +477,7 @@ jobs:
             done
           }
           node scripts/maintenance/sanitize-manifest.cjs app.json .homeybuild/app.json || true
+          node tools/ci/sync-appjson-flow-dedupe.js --apply || true
           node <<'NODE'
           const fs = require('fs');
           // Self-healing version sync: take the HIGHEST version among the

@@ -294,44 +294,18 @@ function applyFixes() {
     fixes.push({ driver: 'remote_button_wireless_smart', prefixFix: true });
   }
 
-  const synced = syncFlowCardsToAppJson();
-  fixes.push({ syncAppJsonFlow: synced });
+  const dedupeScript = path.join(ROOT, 'tools/ci/sync-appjson-flow-dedupe.js');
+  if (fs.existsSync(dedupeScript)) {
+    const { spawnSync } = require('child_process');
+    const res = spawnSync(process.execPath, [dedupeScript, '--apply'], {
+      cwd: ROOT,
+      encoding: 'utf8',
+      timeout: 120000,
+    });
+    fixes.push({ appJsonFlowDedupe: res.status === 0 });
+  }
 
   return fixes;
-}
-
-/** Merge driver.flow.compose cards into app.json.flow (fixes app_json_drift). */
-function syncFlowCardsToAppJson() {
-  const appPath = path.join(ROOT, 'app.json');
-  const app = readJson(appPath);
-  if (!app.flow) app.flow = { triggers: [], conditions: [], actions: [] };
-  const maps = {
-    triggers: new Map((app.flow.triggers || []).map((c) => [c.id, c])),
-    conditions: new Map((app.flow.conditions || []).map((c) => [c.id, c])),
-    actions: new Map((app.flow.actions || []).map((c) => [c.id, c])),
-  };
-  let added = 0;
-  for (const driverId of fs.readdirSync(DRIVERS_DIR)) {
-    const composePath = path.join(DRIVERS_DIR, driverId, 'driver.compose.json');
-    if (!fs.existsSync(composePath)) continue;
-    const compose = readJson(composePath);
-    if (!isButtonDriver(driverId, compose)) continue;
-    const flowPath = path.join(DRIVERS_DIR, driverId, 'driver.flow.compose.json');
-    if (!fs.existsSync(flowPath)) continue;
-    const flow = readJson(flowPath);
-    for (const kind of ['triggers', 'conditions', 'actions']) {
-      for (const card of flow[kind] || []) {
-        if (!card?.id || maps[kind].has(card.id)) continue;
-        maps[kind].set(card.id, card);
-        added += 1;
-      }
-    }
-  }
-  app.flow.triggers = [...maps.triggers.values()];
-  app.flow.conditions = [...maps.conditions.values()];
-  app.flow.actions = [...maps.actions.values()];
-  fs.writeFileSync(appPath, JSON.stringify(app));
-  return added;
 }
 
 function buildNeedAction(drivers, exemptDrivers) {
