@@ -33,7 +33,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.773 |
+| **App Version** | v9.0.775 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,389 |
 | **Pairing Variants** | 16,225 (4 case combos per fingerprint) |
@@ -102,6 +102,8 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.775** | Fixed app crash from Invalid Driver ID in flows; restored remote button fingerprint gate. |
+| **v9.0.774** | Fixed app crash from Invalid Driver ID in flows; restored remote button fingerprint gate. |
 | **v9.0.773** | Fixed app crash from foreign/flow Invalid Driver ID (Homey class light and third-party Zigbee tokens). |
 | **v9.0.772** | Added verified curtain motors from live Z2M harvest; improved cover fingerprint tooling. |
 | **v9.0.771** | Added verified curtain motors from live Z2M harvest; improved cover fingerprint tooling. |
@@ -112,8 +114,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.766** | Exclusive plug routing for TS011F w0qqde0g fingerprints (energy monitor only). |
 | **v9.0.765** | Locked TS011F plug fingerprints in mfs_db so bots cannot re-route them to wireless buttons. |
 | **v9.0.763** | Locked TS011F plug fingerprints away from wireless buttons (mfs + case variants). |
-| **v9.0.762** | Stripped leftover plug fingerprint case-variants from wireless buttons; keep TS011F plugs on energy monitor. |
-| **v9.0.761** | Fixed smart plug fingerprint routing so TS011F plugs are not matched as wireless buttons. |
 
 <!-- CHANGELOG_END -->
 
