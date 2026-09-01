@@ -35,8 +35,14 @@ describe('P2372 free scrape + driver classes', () => {
     assert.equal(p.ok, true);
   });
 
-  it('fleet-intelligent-enrich workflow exists with forfait env', () => {
-    const yml = fs.readFileSync(path.join(ROOT, '.github/workflows/fleet-intelligent-enrich.yml'), 'utf8');
+  it('fleet-intelligent-enrich workflow exists with forfait env (master)', () => {
+    const ymlPath = path.join(ROOT, '.github/workflows/fleet-intelligent-enrich.yml');
+    // WHY(P2372): workflow is MASTER_ONLY; stable soft-ports budget/heuristics without the cron file
+    if (!fs.existsSync(ymlPath)) {
+      assert.ok(fs.existsSync(path.join(ROOT, 'config/enrichment/free-scrape-budget.json')));
+      return;
+    }
+    const yml = fs.readFileSync(ymlPath, 'utf8');
     assert.match(yml, /AI_PLAN_MODE: forfait/);
     assert.match(yml, /AI_ALLOW_PAID: 'false'/);
     assert.match(yml, /FIRECRAWL_DAILY_MAX: '3'/);
