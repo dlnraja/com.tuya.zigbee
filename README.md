@@ -4,11 +4,11 @@
 
 [![Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdlnraja%2Fcom.tuya.zigbee%2Fmaster%2Fapp.json&query=%24.version&label=version&color=blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![Drivers](https://img.shields.io/badge/drivers-431-brightgreen)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
-[![Fingerprints](https://img.shields.io/badge/fingerprints-4,384%20unique-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
+[![Fingerprints](https://img.shields.io/badge/fingerprints-4,383%20unique-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![SDK](https://img.shields.io/badge/SDK-3-orange)](https://apps.developer.homey.app/)
 [![License](https://img.shields.io/badge/license-GPL--3.0-green)](LICENSE)
 
-Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, sensors, lights, thermostats, covers, valves — **431 drivers**, **4,384 unique fingerprints**. No cloud required.
+Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, sensors, lights, thermostats, covers, valves — **431 drivers**, **4,383 unique fingerprints**. No cloud required.
 
 **What it does:**
 - Talks to devices on your Homey Zigbee mesh (Tuya DP `0xEF00` and standard ZCL)
@@ -33,15 +33,15 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.767 |
+| **App Version** | v9.0.768 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
-| **Unique Fingerprints** | 4,384 |
-| **Pairing Variants** | 16,432 (4 case combos per fingerprint) |
+| **Unique Fingerprints** | 4,383 |
+| **Pairing Variants** | 16,324 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 576 |
 | **Flow Cards** | 5,198 |
 | **Unique Capabilities** | 170 |
 | **Native OTA Drivers** | 9 |
-| **Test Suites** | 204 files |
+| **Test Suites** | 205 files |
 | **SVG Icons** | 731 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
@@ -51,23 +51,23 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | # | Driver | Fingerprints |
 |---|--------|-------------|
-| 1 | `climate_sensor` | 2,360 |
-| 2 | `switch_1gang` | 1,652 |
+| 1 | `climate_sensor` | 2,136 |
+| 2 | `switch_1gang` | 1,568 |
 | 3 | `presence_sensor_radar` | 731 |
-| 4 | `radiator_valve` | 599 |
-| 5 | `button_wireless_2` | 568 |
-| 6 | `wall_dimmer_tuya` | 490 |
-| 7 | `generic_tuya` | 415 |
-| 8 | `curtain_motor` | 386 |
+| 4 | `curtain_motor` | 618 |
+| 5 | `radiator_valve` | 599 |
+| 6 | `button_wireless_2` | 564 |
+| 7 | `wall_dimmer_tuya` | 490 |
+| 8 | `generic_tuya` | 415 |
 | 9 | `device_radiator_valve` | 334 |
 | 10 | `switch_4gang` | 276 |
 | 11 | `switch_2gang` | 253 |
 | 12 | `switch_3gang` | 214 |
 | 13 | `motion_sensor` | 213 |
 | 14 | `diy_custom_zigbee` | 206 |
-| 15 | `soil_sensor` | 193 |
-| 16 | `thermostat_tuya_dp` | 192 |
-| 17 | `sensor_contact_zigbee` | 186 |
+| 15 | `thermostat_tuya_dp` | 192 |
+| 16 | `soil_sensor` | 189 |
+| 17 | `sensor_contact_zigbee` | 182 |
 | 18 | `water_leak_sensor_tuya` | 178 |
 | 19 | `usb_dongle_triple` | 164 |
 | 20 | `contact_sensor` | 161 |
@@ -102,6 +102,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.768** | Improved curtain motors: EF00 RX hardening, timeout-safe position updates, and more verified cover fingerprints. |
 | **v9.0.767** | Exclusive plug routing for TS011F w0qqde0g fingerprints (energy monitor only). |
 | **v9.0.766** | Exclusive plug routing for TS011F w0qqde0g fingerprints (energy monitor only). |
 | **v9.0.765** | Locked TS011F plug fingerprints in mfs_db so bots cannot re-route them to wireless buttons. |
@@ -113,7 +114,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.758** | Moes curtain DP3/7/8/10 + Homey Device Updates OTA (P2356/P2357). |
 | **v9.0.757** | Moes curtain DP3/7/8/10 + Homey Device Updates OTA (P2356/P2357). |
 | **v9.0.756** | Moes curtain DP3/7/8/10 + Homey Device Updates OTA (P2356/P2357). |
-| **v9.0.755** | Moes curtain DP3/7/8/10 + Homey Device Updates OTA (P2356/P2357). |
 
 <!-- CHANGELOG_END -->
 
