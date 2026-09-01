@@ -1,4 +1,7 @@
 {
+  "9.0.774": {
+    "en": "Fixed app crash from Invalid Driver ID in flows; restored remote button fingerprint gate."
+  },
   "9.0.773": {
     "en": "Fixed app crash from foreign/flow Invalid Driver ID (Homey class light and third-party Zigbee tokens)."
   },
