@@ -1,0 +1,379 @@
+{
+  "generatedAt": "2026-09-01T08:38:26.872Z",
+  "mode": "dry-run",
+  "classFilter": null,
+  "neverInventProductId": true,
+  "classes": {
+    "button": {
+      "count": 54,
+      "withGaps": 6,
+      "mfrEntries": 1422,
+      "flowTriggers": 812,
+      "gapSamples": [
+        {
+          "id": "button_wireless_fingerbot",
+          "gaps": [
+            "missing_power_scale_setting"
+          ]
+        },
+        {
+          "id": "button_wireless_switch",
+          "gaps": [
+            "missing_power_scale_setting"
+          ]
+        },
+        {
+          "id": "button_wireless_usb",
+          "gaps": [
+            "missing_power_scale_setting"
+          ]
+        },
+        {
+          "id": "remote_button_wireless_fingerbot",
+          "gaps": [
+            "missing_power_scale_setting"
+          ]
+        },
+        {
+          "id": "remote_button_wireless_usb",
+          "gaps": [
+            "missing_power_scale_setting"
+          ]
+        },
+        {
+          "id": "wall_remote_4_gang",
+          "gaps": [
+            "empty_mfr"
+          ]
+        }
+      ]
+    },
+    "socket": {
+      "count": 108,
+      "withGaps": 41,
+      "mfrEntries": 3659,
+      "flowTriggers": 948,
+      "gapSamples": [
+        {
+          "id": "boiler_switch_energy",
+          "gaps": [
+            "missing_power_scale_setting"
+          ]
+        },
+        {
+          "id": "climate_sensor_switch",
+          "gaps": [
+            "missing_power_scale_setting"
+          ]
+        },
+        {
+          "id": "contact_sensor_switch",
+          "gaps": [
+            "missing_power_scale_setting"
+          ]
+        },
+        {
+          "id": "device_plug_energy_monitor",
+          "gaps": [
+            "empty_mfr"
+          ]
+        },
+        {
+          "id": "device_plug_smart",
+          "gaps": [
+            "empty_mfr"
+          ]
+        },
+        {
+          "id": "dimmer_wall_switch",
+          "gaps": [
+            "missing_power_scale_setting"
+          ]
+        },
+        {
+          "id": "din_rail_switch",
+          "gaps": [
+            "missing_power_scale_setting"
+          ]
+        },
+        {
+          "id": "double_power_point",
+          "gaps": [
+            "empty_mfr",
+            "missing_power_scale_setting"
+          ]
+        }
+      ]
+    },
+    "switch": {
+      "count": 9,
+      "withGaps": 2,
+      "mfrEntries": 331,
+      "flowTriggers": 64,
+      "gapSamples": [
+        {
+          "id": "dimmer_1_gang_2",
+          "gaps": [
+            "empty_mfr"
+          ]
+        },
+        {
+          "id": "dimmer_wall_1gang",
+          "gaps": [
+            "missing_power_scale_setting"
+          ]
+        }
+      ]
+    },
+    "sensor": {
+      "count": 122,
+      "withGaps": 20,
+      "mfrEntries": 5465,
+      "flowTriggers": 673,
+      "gapSamples": [
+        {
+          "id": "air_purifier_dimmer",
+          "gaps": [
+            "missing_power_scale_setting"
+          ]
+        },
+        {
+          "id": "air_purifier_din",
+          "gaps": [
+            "missing_power_scale_setting"
+          ]
+        },
+        {
+          "id": "air_purifier_quality",
+          "gaps": [
+            "missing_power_scale_setting"
+          ]
+        },
+        {
+          "id": "air_purifier_switch",
+          "gaps": [
+            "missing_power_scale_setting"
+          ]
+        },
+        {
+          "id": "climate_sensor_dimmer",
+          "gaps": [
+            "missing_power_scale_setting"
+          ]
+        },
+        {
+          "id": "climate_sensor_presence",
+          "gaps": [
+            "missing_power_scale_setting"
+          ]
+        },
+        {
+          "id": "contact_sensor_dimmer",
+          "gaps": [
+            "missing_power_scale_setting"
+          ]
+        },
+        {
+          "id": "device_air_purifier_din",
+          "gaps": [
+            "missing_power_scale_setting"
+          ]
+        }
+      ]
+    },
+    "light": {
+      "count": 53,
+      "withGaps": 6,
+      "mfrEntries": 1527,
+      "flowTriggers": 234,
+      "gapSamples": [
+        {
+          "id": "bulb_rgbw_universal",
+          "gaps": [
+            "missing_power_scale_setting"
+          ]
+        },
+        {
+          "id": "dimmer_air_purifier",
+          "gaps": [
+            "missing_power_scale_setting"
+          ]
+        },
+        {
+          "id": "dimmer_bulb_dimmable",
+          "gaps": [
+            "missing_power_scale_setting"
+          ]
+        },
+        {
+          "id": "dimmer_dual_channel",
+          "gaps": [
+            "empty_mfr"
+          ]
+        },
+        {
+          "id": "dimmer_wall_water",
+          "gaps": [
+            "missing_power_scale_setting"
+          ]
+        },
+        {
+          "id": "rgb_bulb_E27",
+          "gaps": [
+            "empty_mfr"
+          ]
+        }
+      ]
+    },
+    "curtain": {
+      "count": 9,
+      "withGaps": 0,
+      "mfrEntries": 765,
+      "flowTriggers": 40,
+      "gapSamples": []
+    },
+    "thermostat": {
+      "count": 31,
+      "withGaps": 1,
+      "mfrEntries": 1608,
+      "flowTriggers": 143,
+      "gapSamples": [
+        {
+          "id": "hybrid_heater_thermostat",
+          "gaps": [
+            "missing_power_scale_setting"
+          ]
+        }
+      ]
+    },
+    "meter": {
+      "count": 3,
+      "withGaps": 3,
+      "mfrEntries": 14,
+      "flowTriggers": 21,
+      "gapSamples": [
+        {
+          "id": "device_din_rail",
+          "gaps": [
+            "missing_power_scale_setting"
+          ]
+        },
+        {
+          "id": "device_din_rail_meter",
+          "gaps": [
+            "missing_power_scale_setting"
+          ]
+        },
+        {
+          "id": "smart_rcbo",
+          "gaps": [
+            "empty_mfr",
+            "missing_power_scale_setting"
+          ]
+        }
+      ]
+    },
+    "fan": {
+      "count": 6,
+      "withGaps": 0,
+      "mfrEntries": 84,
+      "flowTriggers": 12,
+      "gapSamples": []
+    },
+    "lock": {
+      "count": 5,
+      "withGaps": 0,
+      "mfrEntries": 70,
+      "flowTriggers": 26,
+      "gapSamples": []
+    },
+    "siren": {
+      "count": 6,
+      "withGaps": 0,
+      "mfrEntries": 137,
+      "flowTriggers": 23,
+      "gapSamples": []
+    },
+    "ir": {
+      "count": 1,
+      "withGaps": 0,
+      "mfrEntries": 128,
+      "flowTriggers": 6,
+      "gapSamples": []
+    },
+    "wifi": {
+      "count": 6,
+      "withGaps": 0,
+      "mfrEntries": 0,
+      "flowTriggers": 15,
+      "gapSamples": []
+    },
+    "other": {
+      "count": 13,
+      "withGaps": 3,
+      "mfrEntries": 917,
+      "flowTriggers": 60,
+      "gapSamples": [
+        {
+          "id": "device_generic_diy_universal",
+          "gaps": [
+            "missing_power_scale_setting"
+          ]
+        },
+        {
+          "id": "device_generic_tuya",
+          "gaps": [
+            "missing_power_scale_setting"
+          ]
+        },
+        {
+          "id": "universal_zigbee",
+          "gaps": [
+            "missing_power_scale_setting"
+          ]
+        }
+      ]
+    },
+    "garagedoor": {
+      "count": 2,
+      "withGaps": 0,
+      "mfrEntries": 72,
+      "flowTriggers": 3,
+      "gapSamples": []
+    },
+    "heater": {
+      "count": 2,
+      "withGaps": 2,
+      "mfrEntries": 10,
+      "flowTriggers": 9,
+      "gapSamples": [
+        {
+          "id": "smart_heater",
+          "gaps": [
+            "missing_power_scale_setting"
+          ]
+        },
+        {
+          "id": "smart_heater_controller",
+          "gaps": [
+            "missing_power_scale_setting"
+          ]
+        }
+      ]
+    },
+    "windowcoverings": {
+      "count": 1,
+      "withGaps": 0,
+      "mfrEntries": 2,
+      "flowTriggers": 3,
+      "gapSamples": []
+    }
+  },
+  "totals": {
+    "drivers": 431,
+    "withGaps": 84,
+    "mfrEntries": 16211,
+    "flowTriggers": 3092
+  },
+  "applyResults": []
+}

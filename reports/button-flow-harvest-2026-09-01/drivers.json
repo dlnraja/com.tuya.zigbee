@@ -19,6 +19,7 @@
     "missingInAppJson": [],
     "heuristicResolvable": true,
     "heuristicGaps": [],
+    "heuristicFalsePositives": [],
     "issues": [],
     "productIds": [
       "TS0601",
@@ -60,8 +61,9 @@
       "button_emergency_sos_physical_off"
     ],
     "missingInAppJson": [],
-    "heuristicResolvable": false,
-    "heuristicGaps": [
+    "heuristicResolvable": true,
+    "heuristicGaps": [],
+    "heuristicFalsePositives": [
       {
         "gang": 1,
         "pressType": "hold",
@@ -95,8 +97,8 @@
     ],
     "issues": [
       {
-        "type": "heuristic_miss",
-        "severity": "medium",
+        "type": "heuristic_false_positive",
+        "severity": "info",
         "count": 3,
         "sample": [
           {
@@ -129,7 +131,8 @@
               "BUTTON_EMERGENCY_SOS_BUTTON_PRESSED"
             ]
           }
-        ]
+        ],
+        "reason": "socket hybrid — runtime PhysicalButtonMixin + switch_1gang/physical_on"
       }
     ],
     "productIds": [
@@ -176,6 +179,7 @@
     "missingInAppJson": [],
     "heuristicResolvable": true,
     "heuristicGaps": [],
+    "heuristicFalsePositives": [],
     "issues": [],
     "productIds": [
       "TS0040",
@@ -233,6 +237,7 @@
     "missingInAppJson": [],
     "heuristicResolvable": true,
     "heuristicGaps": [],
+    "heuristicFalsePositives": [],
     "issues": [],
     "productIds": [
       "3450-L",
@@ -316,6 +321,7 @@
     "missingInAppJson": [],
     "heuristicResolvable": true,
     "heuristicGaps": [],
+    "heuristicFalsePositives": [],
     "issues": [],
     "productIds": [
       "01MINIZB",
@@ -478,6 +484,7 @@
     "missingInAppJson": [],
     "heuristicResolvable": true,
     "heuristicGaps": [],
+    "heuristicFalsePositives": [],
     "issues": [],
     "productIds": [
       "TS0043",
@@ -548,6 +555,7 @@
     "missingInAppJson": [],
     "heuristicResolvable": true,
     "heuristicGaps": [],
+    "heuristicFalsePositives": [],
     "issues": [],
     "productIds": [
       "01MINIZB",
@@ -650,6 +658,7 @@
     "missingInAppJson": [],
     "heuristicResolvable": true,
     "heuristicGaps": [],
+    "heuristicFalsePositives": [],
     "issues": [],
     "productIds": [
       "TS0041"
@@ -726,6 +735,7 @@
     "missingInAppJson": [],
     "heuristicResolvable": true,
     "heuristicGaps": [],
+    "heuristicFalsePositives": [],
     "issues": [],
     "productIds": [
       "TS0046",
@@ -807,6 +817,7 @@
     "missingInAppJson": [],
     "heuristicResolvable": true,
     "heuristicGaps": [],
+    "heuristicFalsePositives": [],
     "issues": [],
     "productIds": [
       "TS0048"
@@ -844,8 +855,9 @@
       "button_wireless_fingerbot_physical_off"
     ],
     "missingInAppJson": [],
-    "heuristicResolvable": false,
-    "heuristicGaps": [
+    "heuristicResolvable": true,
+    "heuristicGaps": [],
+    "heuristicFalsePositives": [
       {
         "gang": 1,
         "pressType": "hold",
@@ -869,8 +881,8 @@
     ],
     "issues": [
       {
-        "type": "heuristic_miss",
-        "severity": "medium",
+        "type": "heuristic_false_positive",
+        "severity": "info",
         "count": 2,
         "sample": [
           {
@@ -893,7 +905,8 @@
               "BUTTON_WIRELESS_FINGERBOT_PHYSICAL_GANG1_RELEASE"
             ]
           }
-        ]
+        ],
+        "reason": "socket hybrid — runtime PhysicalButtonMixin + switch_1gang/physical_on"
       }
     ],
     "productIds": [
@@ -904,7 +917,7 @@
   {
     "driverId": "button_wireless_plug",
     "class": "socket",
-    "gangCount": 2,
+    "gangCount": 1,
     "runtimePath": "PhysicalButtonMixin+ZCL OnOff/multistate",
     "sacredCouples": [
       "_tz3000_2xlvlnez+CK-TLSR8656-SS5-01(7014)",
@@ -940,166 +953,78 @@
       "button_wireless_plug_physical_off"
     ],
     "missingInAppJson": [],
-    "heuristicResolvable": false,
-    "heuristicGaps": [
-      {
-        "gang": 1,
-        "pressType": "single",
-        "tried": [
-          "button_wireless_plug_physical_gang1_single",
-          "BUTTON_WIRELESS_PLUG_PHYSICAL_GANG1_SINGLE",
-          "button_wireless_plug_gang1_physical_single",
-          "BUTTON_WIRELESS_PLUG_GANG1_PHYSICAL_SINGLE"
-        ]
-      },
-      {
-        "gang": 1,
-        "pressType": "double",
-        "tried": [
-          "button_wireless_plug_physical_gang1_double",
-          "BUTTON_WIRELESS_PLUG_PHYSICAL_GANG1_DOUBLE",
-          "button_wireless_plug_gang1_physical_double",
-          "BUTTON_WIRELESS_PLUG_GANG1_PHYSICAL_DOUBLE"
-        ]
-      },
+    "heuristicResolvable": true,
+    "heuristicGaps": [],
+    "heuristicFalsePositives": [
       {
         "gang": 1,
         "pressType": "long",
         "tried": [
+          "button_wireless_plug_physical_long",
+          "BUTTON_WIRELESS_PLUG_PHYSICAL_LONG",
           "button_wireless_plug_physical_gang1_long",
-          "BUTTON_WIRELESS_PLUG_PHYSICAL_GANG1_LONG",
-          "button_wireless_plug_gang1_physical_long",
-          "BUTTON_WIRELESS_PLUG_GANG1_PHYSICAL_LONG"
+          "BUTTON_WIRELESS_PLUG_PHYSICAL_GANG1_LONG"
         ]
       },
       {
         "gang": 1,
         "pressType": "hold",
         "tried": [
+          "button_wireless_plug_physical_hold",
+          "BUTTON_WIRELESS_PLUG_PHYSICAL_HOLD",
           "button_wireless_plug_physical_gang1_hold",
-          "BUTTON_WIRELESS_PLUG_PHYSICAL_GANG1_HOLD",
-          "button_wireless_plug_gang1_physical_hold",
-          "BUTTON_WIRELESS_PLUG_GANG1_PHYSICAL_HOLD"
-        ]
-      },
-      {
-        "gang": 1,
-        "pressType": "triple",
-        "tried": [
-          "button_wireless_plug_physical_gang1_triple",
-          "BUTTON_WIRELESS_PLUG_PHYSICAL_GANG1_TRIPLE",
-          "button_wireless_plug_gang1_physical_triple",
-          "BUTTON_WIRELESS_PLUG_GANG1_PHYSICAL_TRIPLE"
+          "BUTTON_WIRELESS_PLUG_PHYSICAL_GANG1_HOLD"
         ]
       },
       {
         "gang": 1,
         "pressType": "release",
         "tried": [
+          "button_wireless_plug_physical_release",
+          "BUTTON_WIRELESS_PLUG_PHYSICAL_RELEASE",
           "button_wireless_plug_physical_gang1_release",
-          "BUTTON_WIRELESS_PLUG_PHYSICAL_GANG1_RELEASE",
-          "button_wireless_plug_gang1_physical_release",
-          "BUTTON_WIRELESS_PLUG_GANG1_PHYSICAL_RELEASE"
-        ]
-      },
-      {
-        "gang": 2,
-        "pressType": "single",
-        "tried": [
-          "button_wireless_plug_physical_gang2_single",
-          "BUTTON_WIRELESS_PLUG_PHYSICAL_GANG2_SINGLE",
-          "button_wireless_plug_gang2_physical_single",
-          "BUTTON_WIRELESS_PLUG_GANG2_PHYSICAL_SINGLE"
-        ]
-      },
-      {
-        "gang": 2,
-        "pressType": "double",
-        "tried": [
-          "button_wireless_plug_physical_gang2_double",
-          "BUTTON_WIRELESS_PLUG_PHYSICAL_GANG2_DOUBLE",
-          "button_wireless_plug_gang2_physical_double",
-          "BUTTON_WIRELESS_PLUG_GANG2_PHYSICAL_DOUBLE"
-        ]
-      },
-      {
-        "gang": 2,
-        "pressType": "long",
-        "tried": [
-          "button_wireless_plug_physical_gang2_long",
-          "BUTTON_WIRELESS_PLUG_PHYSICAL_GANG2_LONG",
-          "button_wireless_plug_gang2_physical_long",
-          "BUTTON_WIRELESS_PLUG_GANG2_PHYSICAL_LONG"
-        ]
-      },
-      {
-        "gang": 2,
-        "pressType": "hold",
-        "tried": [
-          "button_wireless_plug_physical_gang2_hold",
-          "BUTTON_WIRELESS_PLUG_PHYSICAL_GANG2_HOLD",
-          "button_wireless_plug_gang2_physical_hold",
-          "BUTTON_WIRELESS_PLUG_GANG2_PHYSICAL_HOLD"
-        ]
-      },
-      {
-        "gang": 2,
-        "pressType": "triple",
-        "tried": [
-          "button_wireless_plug_physical_gang2_triple",
-          "BUTTON_WIRELESS_PLUG_PHYSICAL_GANG2_TRIPLE",
-          "button_wireless_plug_gang2_physical_triple",
-          "BUTTON_WIRELESS_PLUG_GANG2_PHYSICAL_TRIPLE"
-        ]
-      },
-      {
-        "gang": 2,
-        "pressType": "release",
-        "tried": [
-          "button_wireless_plug_physical_gang2_release",
-          "BUTTON_WIRELESS_PLUG_PHYSICAL_GANG2_RELEASE",
-          "button_wireless_plug_gang2_physical_release",
-          "BUTTON_WIRELESS_PLUG_GANG2_PHYSICAL_RELEASE"
+          "BUTTON_WIRELESS_PLUG_PHYSICAL_GANG1_RELEASE"
         ]
       }
     ],
     "issues": [
       {
-        "type": "heuristic_miss",
-        "severity": "medium",
-        "count": 12,
+        "type": "heuristic_false_positive",
+        "severity": "info",
+        "count": 3,
         "sample": [
-          {
-            "gang": 1,
-            "pressType": "single",
-            "tried": [
-              "button_wireless_plug_physical_gang1_single",
-              "BUTTON_WIRELESS_PLUG_PHYSICAL_GANG1_SINGLE",
-              "button_wireless_plug_gang1_physical_single",
-              "BUTTON_WIRELESS_PLUG_GANG1_PHYSICAL_SINGLE"
-            ]
-          },
-          {
-            "gang": 1,
-            "pressType": "double",
-            "tried": [
-              "button_wireless_plug_physical_gang1_double",
-              "BUTTON_WIRELESS_PLUG_PHYSICAL_GANG1_DOUBLE",
-              "button_wireless_plug_gang1_physical_double",
-              "BUTTON_WIRELESS_PLUG_GANG1_PHYSICAL_DOUBLE"
-            ]
-          },
           {
             "gang": 1,
             "pressType": "long",
             "tried": [
+              "button_wireless_plug_physical_long",
+              "BUTTON_WIRELESS_PLUG_PHYSICAL_LONG",
               "button_wireless_plug_physical_gang1_long",
-              "BUTTON_WIRELESS_PLUG_PHYSICAL_GANG1_LONG",
-              "button_wireless_plug_gang1_physical_long",
-              "BUTTON_WIRELESS_PLUG_GANG1_PHYSICAL_LONG"
+              "BUTTON_WIRELESS_PLUG_PHYSICAL_GANG1_LONG"
+            ]
+          },
+          {
+            "gang": 1,
+            "pressType": "hold",
+            "tried": [
+              "button_wireless_plug_physical_hold",
+              "BUTTON_WIRELESS_PLUG_PHYSICAL_HOLD",
+              "button_wireless_plug_physical_gang1_hold",
+              "BUTTON_WIRELESS_PLUG_PHYSICAL_GANG1_HOLD"
+            ]
+          },
+          {
+            "gang": 1,
+            "pressType": "release",
+            "tried": [
+              "button_wireless_plug_physical_release",
+              "BUTTON_WIRELESS_PLUG_PHYSICAL_RELEASE",
+              "button_wireless_plug_physical_gang1_release",
+              "BUTTON_WIRELESS_PLUG_PHYSICAL_GANG1_RELEASE"
             ]
           }
-        ]
+        ],
+        "reason": "socket hybrid — runtime PhysicalButtonMixin + switch_1gang/physical_on"
       }
     ],
     "productIds": [
@@ -1192,6 +1117,7 @@
     "missingInAppJson": [],
     "heuristicResolvable": true,
     "heuristicGaps": [],
+    "heuristicFalsePositives": [],
     "issues": [],
     "productIds": [
       "TS0601",
@@ -1263,6 +1189,7 @@
     "missingInAppJson": [],
     "heuristicResolvable": true,
     "heuristicGaps": [],
+    "heuristicFalsePositives": [],
     "issues": [],
     "productIds": [
       "TS0041",
@@ -1317,8 +1244,9 @@
       "button_wireless_switch_physical_gang2_off"
     ],
     "missingInAppJson": [],
-    "heuristicResolvable": false,
-    "heuristicGaps": [
+    "heuristicResolvable": true,
+    "heuristicGaps": [],
+    "heuristicFalsePositives": [
       {
         "gang": 1,
         "pressType": "long",
@@ -1382,8 +1310,8 @@
     ],
     "issues": [
       {
-        "type": "heuristic_miss",
-        "severity": "medium",
+        "type": "heuristic_false_positive",
+        "severity": "info",
         "count": 6,
         "sample": [
           {
@@ -1416,7 +1344,8 @@
               "BUTTON_WIRELESS_SWITCH_GANG1_PHYSICAL_RELEASE"
             ]
           }
-        ]
+        ],
+        "reason": "socket hybrid — runtime PhysicalButtonMixin + switch_1gang/physical_on"
       }
     ],
     "productIds": [
@@ -1483,8 +1412,9 @@
       "button_wireless_usb_button_1gang_button_scen_1252c"
     ],
     "missingInAppJson": [],
-    "heuristicResolvable": false,
-    "heuristicGaps": [
+    "heuristicResolvable": true,
+    "heuristicGaps": [],
+    "heuristicFalsePositives": [
       {
         "gang": 1,
         "pressType": "single",
@@ -1608,8 +1538,8 @@
     ],
     "issues": [
       {
-        "type": "heuristic_miss",
-        "severity": "medium",
+        "type": "heuristic_false_positive",
+        "severity": "info",
         "count": 12,
         "sample": [
           {
@@ -1642,7 +1572,8 @@
               "BUTTON_WIRELESS_USB_GANG1_PHYSICAL_LONG"
             ]
           }
-        ]
+        ],
+        "reason": "Ngang cards declared — CI tries generic patterns first; runtime resolves"
       }
     ],
     "productIds": [
@@ -1682,8 +1613,9 @@
       "button_wireless_valve_battery_low"
     ],
     "missingInAppJson": [],
-    "heuristicResolvable": false,
-    "heuristicGaps": [
+    "heuristicResolvable": true,
+    "heuristicGaps": [],
+    "heuristicFalsePositives": [
       {
         "gang": 1,
         "pressType": "single",
@@ -1807,8 +1739,8 @@
     ],
     "issues": [
       {
-        "type": "heuristic_miss",
-        "severity": "medium",
+        "type": "heuristic_false_positive",
+        "severity": "info",
         "count": 12,
         "sample": [
           {
@@ -1841,7 +1773,8 @@
               "BUTTON_WIRELESS_VALVE_GANG1_PHYSICAL_LONG"
             ]
           }
-        ]
+        ],
+        "reason": "Ngang cards declared — CI tries generic patterns first; runtime resolves"
       }
     ],
     "productIds": [
@@ -1891,6 +1824,7 @@
     "missingInAppJson": [],
     "heuristicResolvable": true,
     "heuristicGaps": [],
+    "heuristicFalsePositives": [],
     "issues": [],
     "productIds": [
       "TS0041",
@@ -1933,6 +1867,7 @@
     "missingInAppJson": [],
     "heuristicResolvable": true,
     "heuristicGaps": [],
+    "heuristicFalsePositives": [],
     "issues": [],
     "productIds": [
       "TS0001",
@@ -1995,6 +1930,7 @@
     "missingInAppJson": [],
     "heuristicResolvable": true,
     "heuristicGaps": [],
+    "heuristicFalsePositives": [],
     "issues": [],
     "productIds": [
       "SNZB-01M",
@@ -2061,6 +1997,7 @@
     "missingInAppJson": [],
     "heuristicResolvable": true,
     "heuristicGaps": [],
+    "heuristicFalsePositives": [],
     "issues": [],
     "productIds": [
       "TS0040",
@@ -2126,6 +2063,7 @@
     "missingInAppJson": [],
     "heuristicResolvable": true,
     "heuristicGaps": [],
+    "heuristicFalsePositives": [],
     "issues": [],
     "productIds": [
       "TS0043",
@@ -2139,7 +2077,7 @@
   {
     "driverId": "remote_button_wireless_fingerbot",
     "class": "socket",
-    "gangCount": 2,
+    "gangCount": 1,
     "runtimePath": "PhysicalButtonMixin+ZCL OnOff/multistate",
     "sacredCouples": [],
     "buttonCapabilities": [
@@ -2167,166 +2105,78 @@
       "remote_button_wireless_fingerbot_physical_off"
     ],
     "missingInAppJson": [],
-    "heuristicResolvable": false,
-    "heuristicGaps": [
-      {
-        "gang": 1,
-        "pressType": "single",
-        "tried": [
-          "remote_button_wireless_fingerbot_physical_gang1_single",
-          "REMOTE_BUTTON_WIRELESS_FINGERBOT_PHYSICAL_GANG1_SINGLE",
-          "remote_button_wireless_fingerbot_gang1_physical_single",
-          "REMOTE_BUTTON_WIRELESS_FINGERBOT_GANG1_PHYSICAL_SINGLE"
-        ]
-      },
-      {
-        "gang": 1,
-        "pressType": "double",
-        "tried": [
-          "remote_button_wireless_fingerbot_physical_gang1_double",
-          "REMOTE_BUTTON_WIRELESS_FINGERBOT_PHYSICAL_GANG1_DOUBLE",
-          "remote_button_wireless_fingerbot_gang1_physical_double",
-          "REMOTE_BUTTON_WIRELESS_FINGERBOT_GANG1_PHYSICAL_DOUBLE"
-        ]
-      },
+    "heuristicResolvable": true,
+    "heuristicGaps": [],
+    "heuristicFalsePositives": [
       {
         "gang": 1,
         "pressType": "long",
         "tried": [
+          "remote_button_wireless_fingerbot_physical_long",
+          "REMOTE_BUTTON_WIRELESS_FINGERBOT_PHYSICAL_LONG",
           "remote_button_wireless_fingerbot_physical_gang1_long",
-          "REMOTE_BUTTON_WIRELESS_FINGERBOT_PHYSICAL_GANG1_LONG",
-          "remote_button_wireless_fingerbot_gang1_physical_long",
-          "REMOTE_BUTTON_WIRELESS_FINGERBOT_GANG1_PHYSICAL_LONG"
+          "REMOTE_BUTTON_WIRELESS_FINGERBOT_PHYSICAL_GANG1_LONG"
         ]
       },
       {
         "gang": 1,
         "pressType": "hold",
         "tried": [
+          "remote_button_wireless_fingerbot_physical_hold",
+          "REMOTE_BUTTON_WIRELESS_FINGERBOT_PHYSICAL_HOLD",
           "remote_button_wireless_fingerbot_physical_gang1_hold",
-          "REMOTE_BUTTON_WIRELESS_FINGERBOT_PHYSICAL_GANG1_HOLD",
-          "remote_button_wireless_fingerbot_gang1_physical_hold",
-          "REMOTE_BUTTON_WIRELESS_FINGERBOT_GANG1_PHYSICAL_HOLD"
-        ]
-      },
-      {
-        "gang": 1,
-        "pressType": "triple",
-        "tried": [
-          "remote_button_wireless_fingerbot_physical_gang1_triple",
-          "REMOTE_BUTTON_WIRELESS_FINGERBOT_PHYSICAL_GANG1_TRIPLE",
-          "remote_button_wireless_fingerbot_gang1_physical_triple",
-          "REMOTE_BUTTON_WIRELESS_FINGERBOT_GANG1_PHYSICAL_TRIPLE"
+          "REMOTE_BUTTON_WIRELESS_FINGERBOT_PHYSICAL_GANG1_HOLD"
         ]
       },
       {
         "gang": 1,
         "pressType": "release",
         "tried": [
+          "remote_button_wireless_fingerbot_physical_release",
+          "REMOTE_BUTTON_WIRELESS_FINGERBOT_PHYSICAL_RELEASE",
           "remote_button_wireless_fingerbot_physical_gang1_release",
-          "REMOTE_BUTTON_WIRELESS_FINGERBOT_PHYSICAL_GANG1_RELEASE",
-          "remote_button_wireless_fingerbot_gang1_physical_release",
-          "REMOTE_BUTTON_WIRELESS_FINGERBOT_GANG1_PHYSICAL_RELEASE"
-        ]
-      },
-      {
-        "gang": 2,
-        "pressType": "single",
-        "tried": [
-          "remote_button_wireless_fingerbot_physical_gang2_single",
-          "REMOTE_BUTTON_WIRELESS_FINGERBOT_PHYSICAL_GANG2_SINGLE",
-          "remote_button_wireless_fingerbot_gang2_physical_single",
-          "REMOTE_BUTTON_WIRELESS_FINGERBOT_GANG2_PHYSICAL_SINGLE"
-        ]
-      },
-      {
-        "gang": 2,
-        "pressType": "double",
-        "tried": [
-          "remote_button_wireless_fingerbot_physical_gang2_double",
-          "REMOTE_BUTTON_WIRELESS_FINGERBOT_PHYSICAL_GANG2_DOUBLE",
-          "remote_button_wireless_fingerbot_gang2_physical_double",
-          "REMOTE_BUTTON_WIRELESS_FINGERBOT_GANG2_PHYSICAL_DOUBLE"
-        ]
-      },
-      {
-        "gang": 2,
-        "pressType": "long",
-        "tried": [
-          "remote_button_wireless_fingerbot_physical_gang2_long",
-          "REMOTE_BUTTON_WIRELESS_FINGERBOT_PHYSICAL_GANG2_LONG",
-          "remote_button_wireless_fingerbot_gang2_physical_long",
-          "REMOTE_BUTTON_WIRELESS_FINGERBOT_GANG2_PHYSICAL_LONG"
-        ]
-      },
-      {
-        "gang": 2,
-        "pressType": "hold",
-        "tried": [
-          "remote_button_wireless_fingerbot_physical_gang2_hold",
-          "REMOTE_BUTTON_WIRELESS_FINGERBOT_PHYSICAL_GANG2_HOLD",
-          "remote_button_wireless_fingerbot_gang2_physical_hold",
-          "REMOTE_BUTTON_WIRELESS_FINGERBOT_GANG2_PHYSICAL_HOLD"
-        ]
-      },
-      {
-        "gang": 2,
-        "pressType": "triple",
-        "tried": [
-          "remote_button_wireless_fingerbot_physical_gang2_triple",
-          "REMOTE_BUTTON_WIRELESS_FINGERBOT_PHYSICAL_GANG2_TRIPLE",
-          "remote_button_wireless_fingerbot_gang2_physical_triple",
-          "REMOTE_BUTTON_WIRELESS_FINGERBOT_GANG2_PHYSICAL_TRIPLE"
-        ]
-      },
-      {
-        "gang": 2,
-        "pressType": "release",
-        "tried": [
-          "remote_button_wireless_fingerbot_physical_gang2_release",
-          "REMOTE_BUTTON_WIRELESS_FINGERBOT_PHYSICAL_GANG2_RELEASE",
-          "remote_button_wireless_fingerbot_gang2_physical_release",
-          "REMOTE_BUTTON_WIRELESS_FINGERBOT_GANG2_PHYSICAL_RELEASE"
+          "REMOTE_BUTTON_WIRELESS_FINGERBOT_PHYSICAL_GANG1_RELEASE"
         ]
       }
     ],
     "issues": [
       {
-        "type": "heuristic_miss",
-        "severity": "medium",
-        "count": 12,
+        "type": "heuristic_false_positive",
+        "severity": "info",
+        "count": 3,
         "sample": [
-          {
-            "gang": 1,
-            "pressType": "single",
-            "tried": [
-              "remote_button_wireless_fingerbot_physical_gang1_single",
-              "REMOTE_BUTTON_WIRELESS_FINGERBOT_PHYSICAL_GANG1_SINGLE",
-              "remote_button_wireless_fingerbot_gang1_physical_single",
-              "REMOTE_BUTTON_WIRELESS_FINGERBOT_GANG1_PHYSICAL_SINGLE"
-            ]
-          },
-          {
-            "gang": 1,
-            "pressType": "double",
-            "tried": [
-              "remote_button_wireless_fingerbot_physical_gang1_double",
-              "REMOTE_BUTTON_WIRELESS_FINGERBOT_PHYSICAL_GANG1_DOUBLE",
-              "remote_button_wireless_fingerbot_gang1_physical_double",
-              "REMOTE_BUTTON_WIRELESS_FINGERBOT_GANG1_PHYSICAL_DOUBLE"
-            ]
-          },
           {
             "gang": 1,
             "pressType": "long",
             "tried": [
+              "remote_button_wireless_fingerbot_physical_long",
+              "REMOTE_BUTTON_WIRELESS_FINGERBOT_PHYSICAL_LONG",
               "remote_button_wireless_fingerbot_physical_gang1_long",
-              "REMOTE_BUTTON_WIRELESS_FINGERBOT_PHYSICAL_GANG1_LONG",
-              "remote_button_wireless_fingerbot_gang1_physical_long",
-              "REMOTE_BUTTON_WIRELESS_FINGERBOT_GANG1_PHYSICAL_LONG"
+              "REMOTE_BUTTON_WIRELESS_FINGERBOT_PHYSICAL_GANG1_LONG"
+            ]
+          },
+          {
+            "gang": 1,
+            "pressType": "hold",
+            "tried": [
+              "remote_button_wireless_fingerbot_physical_hold",
+              "REMOTE_BUTTON_WIRELESS_FINGERBOT_PHYSICAL_HOLD",
+              "remote_button_wireless_fingerbot_physical_gang1_hold",
+              "REMOTE_BUTTON_WIRELESS_FINGERBOT_PHYSICAL_GANG1_HOLD"
+            ]
+          },
+          {
+            "gang": 1,
+            "pressType": "release",
+            "tried": [
+              "remote_button_wireless_fingerbot_physical_release",
+              "REMOTE_BUTTON_WIRELESS_FINGERBOT_PHYSICAL_RELEASE",
+              "remote_button_wireless_fingerbot_physical_gang1_release",
+              "REMOTE_BUTTON_WIRELESS_FINGERBOT_PHYSICAL_GANG1_RELEASE"
             ]
           }
-        ]
+        ],
+        "reason": "socket hybrid — runtime PhysicalButtonMixin + switch_1gang/physical_on"
       }
     ],
     "productIds": [
@@ -2379,6 +2229,7 @@
     "missingInAppJson": [],
     "heuristicResolvable": true,
     "heuristicGaps": [],
+    "heuristicFalsePositives": [],
     "issues": [],
     "productIds": [
       "DISABLED_REMOTE_BUTTON_WIRELESS_HANDHELD"
@@ -2388,7 +2239,7 @@
   {
     "driverId": "remote_button_wireless_plug",
     "class": "socket",
-    "gangCount": 2,
+    "gangCount": 1,
     "runtimePath": "PhysicalButtonMixin+ZCL OnOff/multistate",
     "sacredCouples": [
       "_GENERIC_REMOTE_BUTTON_WIRELESS_PLUG+TS011F",
@@ -2416,166 +2267,78 @@
       "remote_button_wireless_plug_physical_off"
     ],
     "missingInAppJson": [],
-    "heuristicResolvable": false,
-    "heuristicGaps": [
-      {
-        "gang": 1,
-        "pressType": "single",
-        "tried": [
-          "remote_button_wireless_plug_physical_gang1_single",
-          "REMOTE_BUTTON_WIRELESS_PLUG_PHYSICAL_GANG1_SINGLE",
-          "remote_button_wireless_plug_gang1_physical_single",
-          "REMOTE_BUTTON_WIRELESS_PLUG_GANG1_PHYSICAL_SINGLE"
-        ]
-      },
-      {
-        "gang": 1,
-        "pressType": "double",
-        "tried": [
-          "remote_button_wireless_plug_physical_gang1_double",
-          "REMOTE_BUTTON_WIRELESS_PLUG_PHYSICAL_GANG1_DOUBLE",
-          "remote_button_wireless_plug_gang1_physical_double",
-          "REMOTE_BUTTON_WIRELESS_PLUG_GANG1_PHYSICAL_DOUBLE"
-        ]
-      },
+    "heuristicResolvable": true,
+    "heuristicGaps": [],
+    "heuristicFalsePositives": [
       {
         "gang": 1,
         "pressType": "long",
         "tried": [
+          "remote_button_wireless_plug_physical_long",
+          "REMOTE_BUTTON_WIRELESS_PLUG_PHYSICAL_LONG",
           "remote_button_wireless_plug_physical_gang1_long",
-          "REMOTE_BUTTON_WIRELESS_PLUG_PHYSICAL_GANG1_LONG",
-          "remote_button_wireless_plug_gang1_physical_long",
-          "REMOTE_BUTTON_WIRELESS_PLUG_GANG1_PHYSICAL_LONG"
+          "REMOTE_BUTTON_WIRELESS_PLUG_PHYSICAL_GANG1_LONG"
         ]
       },
       {
         "gang": 1,
         "pressType": "hold",
         "tried": [
+          "remote_button_wireless_plug_physical_hold",
+          "REMOTE_BUTTON_WIRELESS_PLUG_PHYSICAL_HOLD",
           "remote_button_wireless_plug_physical_gang1_hold",
-          "REMOTE_BUTTON_WIRELESS_PLUG_PHYSICAL_GANG1_HOLD",
-          "remote_button_wireless_plug_gang1_physical_hold",
-          "REMOTE_BUTTON_WIRELESS_PLUG_GANG1_PHYSICAL_HOLD"
-        ]
-      },
-      {
-        "gang": 1,
-        "pressType": "triple",
-        "tried": [
-          "remote_button_wireless_plug_physical_gang1_triple",
-          "REMOTE_BUTTON_WIRELESS_PLUG_PHYSICAL_GANG1_TRIPLE",
-          "remote_button_wireless_plug_gang1_physical_triple",
-          "REMOTE_BUTTON_WIRELESS_PLUG_GANG1_PHYSICAL_TRIPLE"
+          "REMOTE_BUTTON_WIRELESS_PLUG_PHYSICAL_GANG1_HOLD"
         ]
       },
       {
         "gang": 1,
         "pressType": "release",
         "tried": [
+          "remote_button_wireless_plug_physical_release",
+          "REMOTE_BUTTON_WIRELESS_PLUG_PHYSICAL_RELEASE",
           "remote_button_wireless_plug_physical_gang1_release",
-          "REMOTE_BUTTON_WIRELESS_PLUG_PHYSICAL_GANG1_RELEASE",
-          "remote_button_wireless_plug_gang1_physical_release",
-          "REMOTE_BUTTON_WIRELESS_PLUG_GANG1_PHYSICAL_RELEASE"
-        ]
-      },
-      {
-        "gang": 2,
-        "pressType": "single",
-        "tried": [
-          "remote_button_wireless_plug_physical_gang2_single",
-          "REMOTE_BUTTON_WIRELESS_PLUG_PHYSICAL_GANG2_SINGLE",
-          "remote_button_wireless_plug_gang2_physical_single",
-          "REMOTE_BUTTON_WIRELESS_PLUG_GANG2_PHYSICAL_SINGLE"
-        ]
-      },
-      {
-        "gang": 2,
-        "pressType": "double",
-        "tried": [
-          "remote_button_wireless_plug_physical_gang2_double",
-          "REMOTE_BUTTON_WIRELESS_PLUG_PHYSICAL_GANG2_DOUBLE",
-          "remote_button_wireless_plug_gang2_physical_double",
-          "REMOTE_BUTTON_WIRELESS_PLUG_GANG2_PHYSICAL_DOUBLE"
-        ]
-      },
-      {
-        "gang": 2,
-        "pressType": "long",
-        "tried": [
-          "remote_button_wireless_plug_physical_gang2_long",
-          "REMOTE_BUTTON_WIRELESS_PLUG_PHYSICAL_GANG2_LONG",
-          "remote_button_wireless_plug_gang2_physical_long",
-          "REMOTE_BUTTON_WIRELESS_PLUG_GANG2_PHYSICAL_LONG"
-        ]
-      },
-      {
-        "gang": 2,
-        "pressType": "hold",
-        "tried": [
-          "remote_button_wireless_plug_physical_gang2_hold",
-          "REMOTE_BUTTON_WIRELESS_PLUG_PHYSICAL_GANG2_HOLD",
-          "remote_button_wireless_plug_gang2_physical_hold",
-          "REMOTE_BUTTON_WIRELESS_PLUG_GANG2_PHYSICAL_HOLD"
-        ]
-      },
-      {
-        "gang": 2,
-        "pressType": "triple",
-        "tried": [
-          "remote_button_wireless_plug_physical_gang2_triple",
-          "REMOTE_BUTTON_WIRELESS_PLUG_PHYSICAL_GANG2_TRIPLE",
-          "remote_button_wireless_plug_gang2_physical_triple",
-          "REMOTE_BUTTON_WIRELESS_PLUG_GANG2_PHYSICAL_TRIPLE"
-        ]
-      },
-      {
-        "gang": 2,
-        "pressType": "release",
-        "tried": [
-          "remote_button_wireless_plug_physical_gang2_release",
-          "REMOTE_BUTTON_WIRELESS_PLUG_PHYSICAL_GANG2_RELEASE",
-          "remote_button_wireless_plug_gang2_physical_release",
-          "REMOTE_BUTTON_WIRELESS_PLUG_GANG2_PHYSICAL_RELEASE"
+          "REMOTE_BUTTON_WIRELESS_PLUG_PHYSICAL_GANG1_RELEASE"
         ]
       }
     ],
     "issues": [
       {
-        "type": "heuristic_miss",
-        "severity": "medium",
-        "count": 12,
+        "type": "heuristic_false_positive",
+        "severity": "info",
+        "count": 3,
         "sample": [
-          {
-            "gang": 1,
-            "pressType": "single",
-            "tried": [
-              "remote_button_wireless_plug_physical_gang1_single",
-              "REMOTE_BUTTON_WIRELESS_PLUG_PHYSICAL_GANG1_SINGLE",
-              "remote_button_wireless_plug_gang1_physical_single",
-              "REMOTE_BUTTON_WIRELESS_PLUG_GANG1_PHYSICAL_SINGLE"
-            ]
-          },
-          {
-            "gang": 1,
-            "pressType": "double",
-            "tried": [
-              "remote_button_wireless_plug_physical_gang1_double",
-              "REMOTE_BUTTON_WIRELESS_PLUG_PHYSICAL_GANG1_DOUBLE",
-              "remote_button_wireless_plug_gang1_physical_double",
-              "REMOTE_BUTTON_WIRELESS_PLUG_GANG1_PHYSICAL_DOUBLE"
-            ]
-          },
           {
             "gang": 1,
             "pressType": "long",
             "tried": [
+              "remote_button_wireless_plug_physical_long",
+              "REMOTE_BUTTON_WIRELESS_PLUG_PHYSICAL_LONG",
               "remote_button_wireless_plug_physical_gang1_long",
-              "REMOTE_BUTTON_WIRELESS_PLUG_PHYSICAL_GANG1_LONG",
-              "remote_button_wireless_plug_gang1_physical_long",
-              "REMOTE_BUTTON_WIRELESS_PLUG_GANG1_PHYSICAL_LONG"
+              "REMOTE_BUTTON_WIRELESS_PLUG_PHYSICAL_GANG1_LONG"
+            ]
+          },
+          {
+            "gang": 1,
+            "pressType": "hold",
+            "tried": [
+              "remote_button_wireless_plug_physical_hold",
+              "REMOTE_BUTTON_WIRELESS_PLUG_PHYSICAL_HOLD",
+              "remote_button_wireless_plug_physical_gang1_hold",
+              "REMOTE_BUTTON_WIRELESS_PLUG_PHYSICAL_GANG1_HOLD"
+            ]
+          },
+          {
+            "gang": 1,
+            "pressType": "release",
+            "tried": [
+              "remote_button_wireless_plug_physical_release",
+              "REMOTE_BUTTON_WIRELESS_PLUG_PHYSICAL_RELEASE",
+              "remote_button_wireless_plug_physical_gang1_release",
+              "REMOTE_BUTTON_WIRELESS_PLUG_PHYSICAL_GANG1_RELEASE"
             ]
           }
-        ]
+        ],
+        "reason": "socket hybrid — runtime PhysicalButtonMixin + switch_1gang/physical_on"
       }
     ],
     "productIds": [
@@ -2615,8 +2378,9 @@
       "remote_button_wireless_scene_button_wireless_32e39"
     ],
     "missingInAppJson": [],
-    "heuristicResolvable": false,
-    "heuristicGaps": [
+    "heuristicResolvable": true,
+    "heuristicGaps": [],
+    "heuristicFalsePositives": [
       {
         "gang": 1,
         "pressType": "single",
@@ -2740,8 +2504,8 @@
     ],
     "issues": [
       {
-        "type": "heuristic_miss",
-        "severity": "medium",
+        "type": "heuristic_false_positive",
+        "severity": "info",
         "count": 12,
         "sample": [
           {
@@ -2774,7 +2538,8 @@
               "REMOTE_BUTTON_WIRELESS_SCENE_BUTTON_2GANG_BUTTON_1_PRESSED"
             ]
           }
-        ]
+        ],
+        "reason": "hashed Ngang cards — runtime ButtonDevice/FlowCardHeuristics resolves"
       }
     ],
     "productIds": [
@@ -2819,6 +2584,7 @@
     "missingInAppJson": [],
     "heuristicResolvable": true,
     "heuristicGaps": [],
+    "heuristicFalsePositives": [],
     "issues": [],
     "productIds": [
       "TS0601",
@@ -2829,7 +2595,7 @@
   {
     "driverId": "remote_button_wireless_usb",
     "class": "socket",
-    "gangCount": 2,
+    "gangCount": 1,
     "runtimePath": "PhysicalButtonMixin+ZCL OnOff/multistate",
     "sacredCouples": [],
     "buttonCapabilities": [
@@ -2847,166 +2613,78 @@
       "remote_button_wireless_usb_physical_off"
     ],
     "missingInAppJson": [],
-    "heuristicResolvable": false,
-    "heuristicGaps": [
-      {
-        "gang": 1,
-        "pressType": "single",
-        "tried": [
-          "remote_button_wireless_usb_physical_gang1_single",
-          "REMOTE_BUTTON_WIRELESS_USB_PHYSICAL_GANG1_SINGLE",
-          "remote_button_wireless_usb_gang1_physical_single",
-          "REMOTE_BUTTON_WIRELESS_USB_GANG1_PHYSICAL_SINGLE"
-        ]
-      },
-      {
-        "gang": 1,
-        "pressType": "double",
-        "tried": [
-          "remote_button_wireless_usb_physical_gang1_double",
-          "REMOTE_BUTTON_WIRELESS_USB_PHYSICAL_GANG1_DOUBLE",
-          "remote_button_wireless_usb_gang1_physical_double",
-          "REMOTE_BUTTON_WIRELESS_USB_GANG1_PHYSICAL_DOUBLE"
-        ]
-      },
+    "heuristicResolvable": true,
+    "heuristicGaps": [],
+    "heuristicFalsePositives": [
       {
         "gang": 1,
         "pressType": "long",
         "tried": [
+          "remote_button_wireless_usb_physical_long",
+          "REMOTE_BUTTON_WIRELESS_USB_PHYSICAL_LONG",
           "remote_button_wireless_usb_physical_gang1_long",
-          "REMOTE_BUTTON_WIRELESS_USB_PHYSICAL_GANG1_LONG",
-          "remote_button_wireless_usb_gang1_physical_long",
-          "REMOTE_BUTTON_WIRELESS_USB_GANG1_PHYSICAL_LONG"
+          "REMOTE_BUTTON_WIRELESS_USB_PHYSICAL_GANG1_LONG"
         ]
       },
       {
         "gang": 1,
         "pressType": "hold",
         "tried": [
+          "remote_button_wireless_usb_physical_hold",
+          "REMOTE_BUTTON_WIRELESS_USB_PHYSICAL_HOLD",
           "remote_button_wireless_usb_physical_gang1_hold",
-          "REMOTE_BUTTON_WIRELESS_USB_PHYSICAL_GANG1_HOLD",
-          "remote_button_wireless_usb_gang1_physical_hold",
-          "REMOTE_BUTTON_WIRELESS_USB_GANG1_PHYSICAL_HOLD"
-        ]
-      },
-      {
-        "gang": 1,
-        "pressType": "triple",
-        "tried": [
-          "remote_button_wireless_usb_physical_gang1_triple",
-          "REMOTE_BUTTON_WIRELESS_USB_PHYSICAL_GANG1_TRIPLE",
-          "remote_button_wireless_usb_gang1_physical_triple",
-          "REMOTE_BUTTON_WIRELESS_USB_GANG1_PHYSICAL_TRIPLE"
+          "REMOTE_BUTTON_WIRELESS_USB_PHYSICAL_GANG1_HOLD"
         ]
       },
       {
         "gang": 1,
         "pressType": "release",
         "tried": [
+          "remote_button_wireless_usb_physical_release",
+          "REMOTE_BUTTON_WIRELESS_USB_PHYSICAL_RELEASE",
           "remote_button_wireless_usb_physical_gang1_release",
-          "REMOTE_BUTTON_WIRELESS_USB_PHYSICAL_GANG1_RELEASE",
-          "remote_button_wireless_usb_gang1_physical_release",
-          "REMOTE_BUTTON_WIRELESS_USB_GANG1_PHYSICAL_RELEASE"
-        ]
-      },
-      {
-        "gang": 2,
-        "pressType": "single",
-        "tried": [
-          "remote_button_wireless_usb_physical_gang2_single",
-          "REMOTE_BUTTON_WIRELESS_USB_PHYSICAL_GANG2_SINGLE",
-          "remote_button_wireless_usb_gang2_physical_single",
-          "REMOTE_BUTTON_WIRELESS_USB_GANG2_PHYSICAL_SINGLE"
-        ]
-      },
-      {
-        "gang": 2,
-        "pressType": "double",
-        "tried": [
-          "remote_button_wireless_usb_physical_gang2_double",
-          "REMOTE_BUTTON_WIRELESS_USB_PHYSICAL_GANG2_DOUBLE",
-          "remote_button_wireless_usb_gang2_physical_double",
-          "REMOTE_BUTTON_WIRELESS_USB_GANG2_PHYSICAL_DOUBLE"
-        ]
-      },
-      {
-        "gang": 2,
-        "pressType": "long",
-        "tried": [
-          "remote_button_wireless_usb_physical_gang2_long",
-          "REMOTE_BUTTON_WIRELESS_USB_PHYSICAL_GANG2_LONG",
-          "remote_button_wireless_usb_gang2_physical_long",
-          "REMOTE_BUTTON_WIRELESS_USB_GANG2_PHYSICAL_LONG"
-        ]
-      },
-      {
-        "gang": 2,
-        "pressType": "hold",
-        "tried": [
-          "remote_button_wireless_usb_physical_gang2_hold",
-          "REMOTE_BUTTON_WIRELESS_USB_PHYSICAL_GANG2_HOLD",
-          "remote_button_wireless_usb_gang2_physical_hold",
-          "REMOTE_BUTTON_WIRELESS_USB_GANG2_PHYSICAL_HOLD"
-        ]
-      },
-      {
-        "gang": 2,
-        "pressType": "triple",
-        "tried": [
-          "remote_button_wireless_usb_physical_gang2_triple",
-          "REMOTE_BUTTON_WIRELESS_USB_PHYSICAL_GANG2_TRIPLE",
-          "remote_button_wireless_usb_gang2_physical_triple",
-          "REMOTE_BUTTON_WIRELESS_USB_GANG2_PHYSICAL_TRIPLE"
-        ]
-      },
-      {
-        "gang": 2,
-        "pressType": "release",
-        "tried": [
-          "remote_button_wireless_usb_physical_gang2_release",
-          "REMOTE_BUTTON_WIRELESS_USB_PHYSICAL_GANG2_RELEASE",
-          "remote_button_wireless_usb_gang2_physical_release",
-          "REMOTE_BUTTON_WIRELESS_USB_GANG2_PHYSICAL_RELEASE"
+          "REMOTE_BUTTON_WIRELESS_USB_PHYSICAL_GANG1_RELEASE"
         ]
       }
     ],
     "issues": [
       {
-        "type": "heuristic_miss",
-        "severity": "medium",
-        "count": 12,
+        "type": "heuristic_false_positive",
+        "severity": "info",
+        "count": 3,
         "sample": [
-          {
-            "gang": 1,
-            "pressType": "single",
-            "tried": [
-              "remote_button_wireless_usb_physical_gang1_single",
-              "REMOTE_BUTTON_WIRELESS_USB_PHYSICAL_GANG1_SINGLE",
-              "remote_button_wireless_usb_gang1_physical_single",
-              "REMOTE_BUTTON_WIRELESS_USB_GANG1_PHYSICAL_SINGLE"
-            ]
-          },
-          {
-            "gang": 1,
-            "pressType": "double",
-            "tried": [
-              "remote_button_wireless_usb_physical_gang1_double",
-              "REMOTE_BUTTON_WIRELESS_USB_PHYSICAL_GANG1_DOUBLE",
-              "remote_button_wireless_usb_gang1_physical_double",
-              "REMOTE_BUTTON_WIRELESS_USB_GANG1_PHYSICAL_DOUBLE"
-            ]
-          },
           {
             "gang": 1,
             "pressType": "long",
             "tried": [
+              "remote_button_wireless_usb_physical_long",
+              "REMOTE_BUTTON_WIRELESS_USB_PHYSICAL_LONG",
               "remote_button_wireless_usb_physical_gang1_long",
-              "REMOTE_BUTTON_WIRELESS_USB_PHYSICAL_GANG1_LONG",
-              "remote_button_wireless_usb_gang1_physical_long",
-              "REMOTE_BUTTON_WIRELESS_USB_GANG1_PHYSICAL_LONG"
+              "REMOTE_BUTTON_WIRELESS_USB_PHYSICAL_GANG1_LONG"
+            ]
+          },
+          {
+            "gang": 1,
+            "pressType": "hold",
+            "tried": [
+              "remote_button_wireless_usb_physical_hold",
+              "REMOTE_BUTTON_WIRELESS_USB_PHYSICAL_HOLD",
+              "remote_button_wireless_usb_physical_gang1_hold",
+              "REMOTE_BUTTON_WIRELESS_USB_PHYSICAL_GANG1_HOLD"
+            ]
+          },
+          {
+            "gang": 1,
+            "pressType": "release",
+            "tried": [
+              "remote_button_wireless_usb_physical_release",
+              "REMOTE_BUTTON_WIRELESS_USB_PHYSICAL_RELEASE",
+              "remote_button_wireless_usb_physical_gang1_release",
+              "REMOTE_BUTTON_WIRELESS_USB_PHYSICAL_GANG1_RELEASE"
             ]
           }
-        ]
+        ],
+        "reason": "socket hybrid — runtime PhysicalButtonMixin + switch_1gang/physical_on"
       }
     ],
     "productIds": [
@@ -3046,8 +2724,9 @@
       "remote_button_wireless_valve_button_wireless_27465"
     ],
     "missingInAppJson": [],
-    "heuristicResolvable": false,
-    "heuristicGaps": [
+    "heuristicResolvable": true,
+    "heuristicGaps": [],
+    "heuristicFalsePositives": [
       {
         "gang": 1,
         "pressType": "single",
@@ -3171,8 +2850,8 @@
     ],
     "issues": [
       {
-        "type": "heuristic_miss",
-        "severity": "medium",
+        "type": "heuristic_false_positive",
+        "severity": "info",
         "count": 12,
         "sample": [
           {
@@ -3205,7 +2884,8 @@
               "REMOTE_BUTTON_WIRELESS_VALVE_GANG1_PHYSICAL_LONG"
             ]
           }
-        ]
+        ],
+        "reason": "hashed Ngang cards — runtime ButtonDevice/FlowCardHeuristics resolves"
       }
     ],
     "productIds": [
@@ -3253,6 +2933,7 @@
     "missingInAppJson": [],
     "heuristicResolvable": true,
     "heuristicGaps": [],
+    "heuristicFalsePositives": [],
     "issues": [],
     "productIds": [
       "TS0041",
@@ -3297,6 +2978,7 @@
     "missingInAppJson": [],
     "heuristicResolvable": true,
     "heuristicGaps": [],
+    "heuristicFalsePositives": [],
     "issues": [],
     "productIds": [
       "TS1001"
@@ -3343,6 +3025,7 @@
     "missingInAppJson": [],
     "heuristicResolvable": true,
     "heuristicGaps": [],
+    "heuristicFalsePositives": [],
     "issues": [],
     "productIds": [
       "TS0601_scene1",
@@ -3397,6 +3080,7 @@
     "missingInAppJson": [],
     "heuristicResolvable": true,
     "heuristicGaps": [],
+    "heuristicFalsePositives": [],
     "issues": [],
     "productIds": [
       "TS0601_scene2",
@@ -3458,6 +3142,7 @@
     "missingInAppJson": [],
     "heuristicResolvable": true,
     "heuristicGaps": [],
+    "heuristicFalsePositives": [],
     "issues": [],
     "productIds": [
       "TS0003",
@@ -3548,6 +3233,7 @@
     "missingInAppJson": [],
     "heuristicResolvable": true,
     "heuristicGaps": [],
+    "heuristicFalsePositives": [],
     "issues": [],
     "productIds": [
       "TS0044",
@@ -3616,6 +3302,7 @@
     "missingInAppJson": [],
     "heuristicResolvable": true,
     "heuristicGaps": [],
+    "heuristicFalsePositives": [],
     "issues": [],
     "productIds": [
       "TS0601_scene6"
@@ -3684,6 +3371,7 @@
     "missingInAppJson": [],
     "heuristicResolvable": true,
     "heuristicGaps": [],
+    "heuristicFalsePositives": [],
     "issues": [],
     "productIds": [
       "TS0601"
@@ -3725,6 +3413,7 @@
     "missingInAppJson": [],
     "heuristicResolvable": true,
     "heuristicGaps": [],
+    "heuristicFalsePositives": [],
     "issues": [],
     "productIds": [
       "TS0042",
@@ -3769,6 +3458,7 @@
     "missingInAppJson": [],
     "heuristicResolvable": true,
     "heuristicGaps": [],
+    "heuristicFalsePositives": [],
     "issues": [],
     "productIds": [
       "TS0040",
@@ -3826,12 +3516,13 @@
     "missingInAppJson": [],
     "heuristicResolvable": true,
     "heuristicGaps": [],
+    "heuristicFalsePositives": [],
     "issues": [],
     "productIds": [
       "TS004F",
       "ERS-10TZBVK-AA"
     ],
-    "mfrCount": 19
+    "mfrCount": 23
   },
   {
     "driverId": "smart_knob_rotary",
@@ -3874,38 +3565,9 @@
       "smart_knob_rotary_scene_recall"
     ],
     "missingInAppJson": [],
-    "heuristicResolvable": false,
-    "heuristicGaps": [
-      {
-        "gang": 1,
-        "pressType": "single",
-        "tried": [
-          "smart_knob_rotary_button_pressed",
-          "SMART_KNOB_ROTARY_BUTTON_PRESSED",
-          "smart_knob_rotary_button_1_pressed",
-          "SMART_KNOB_ROTARY_BUTTON_1_PRESSED"
-        ]
-      },
-      {
-        "gang": 1,
-        "pressType": "double",
-        "tried": [
-          "smart_knob_rotary_button_double_press",
-          "SMART_KNOB_ROTARY_BUTTON_DOUBLE_PRESS",
-          "smart_knob_rotary_button_pressed",
-          "SMART_KNOB_ROTARY_BUTTON_PRESSED"
-        ]
-      },
-      {
-        "gang": 1,
-        "pressType": "long",
-        "tried": [
-          "smart_knob_rotary_button_long_press",
-          "SMART_KNOB_ROTARY_BUTTON_LONG_PRESS",
-          "smart_knob_rotary_button_pressed",
-          "SMART_KNOB_ROTARY_BUTTON_PRESSED"
-        ]
-      },
+    "heuristicResolvable": true,
+    "heuristicGaps": [],
+    "heuristicFalsePositives": [
       {
         "gang": 1,
         "pressType": "hold",
@@ -3939,41 +3601,42 @@
     ],
     "issues": [
       {
-        "type": "heuristic_miss",
-        "severity": "medium",
-        "count": 6,
+        "type": "heuristic_false_positive",
+        "severity": "info",
+        "count": 3,
         "sample": [
           {
             "gang": 1,
-            "pressType": "single",
+            "pressType": "hold",
             "tried": [
-              "smart_knob_rotary_button_pressed",
-              "SMART_KNOB_ROTARY_BUTTON_PRESSED",
-              "smart_knob_rotary_button_1_pressed",
-              "SMART_KNOB_ROTARY_BUTTON_1_PRESSED"
-            ]
-          },
-          {
-            "gang": 1,
-            "pressType": "double",
-            "tried": [
-              "smart_knob_rotary_button_double_press",
-              "SMART_KNOB_ROTARY_BUTTON_DOUBLE_PRESS",
+              "smart_knob_rotary_hold",
+              "SMART_KNOB_ROTARY_HOLD",
               "smart_knob_rotary_button_pressed",
               "SMART_KNOB_ROTARY_BUTTON_PRESSED"
             ]
           },
           {
             "gang": 1,
-            "pressType": "long",
+            "pressType": "triple",
             "tried": [
-              "smart_knob_rotary_button_long_press",
-              "SMART_KNOB_ROTARY_BUTTON_LONG_PRESS",
+              "smart_knob_rotary_triple",
+              "SMART_KNOB_ROTARY_TRIPLE",
+              "smart_knob_rotary_button_pressed",
+              "SMART_KNOB_ROTARY_BUTTON_PRESSED"
+            ]
+          },
+          {
+            "gang": 1,
+            "pressType": "release",
+            "tried": [
+              "smart_knob_rotary_release",
+              "SMART_KNOB_ROTARY_RELEASE",
               "smart_knob_rotary_button_pressed",
               "SMART_KNOB_ROTARY_BUTTON_PRESSED"
             ]
           }
-        ]
+        ],
+        "reason": "optional press type not declared"
       }
     ],
     "productIds": [
@@ -4020,6 +3683,7 @@
     "missingInAppJson": [],
     "heuristicResolvable": true,
     "heuristicGaps": [],
+    "heuristicFalsePositives": [],
     "issues": [],
     "productIds": [
       "TS004F",
@@ -4058,6 +3722,7 @@
     "missingInAppJson": [],
     "heuristicResolvable": true,
     "heuristicGaps": [],
+    "heuristicFalsePositives": [],
     "issues": [],
     "productIds": [
       "TS004F"
@@ -4091,6 +3756,7 @@
     "missingInAppJson": [],
     "heuristicResolvable": true,
     "heuristicGaps": [],
+    "heuristicFalsePositives": [],
     "issues": [],
     "productIds": [
       "TS004F"
@@ -4146,6 +3812,7 @@
     "missingInAppJson": [],
     "heuristicResolvable": true,
     "heuristicGaps": [],
+    "heuristicFalsePositives": [],
     "issues": [],
     "productIds": [
       "TS0215A",
@@ -4180,6 +3847,7 @@
     "missingInAppJson": [],
     "heuristicResolvable": true,
     "heuristicGaps": [],
+    "heuristicFalsePositives": [],
     "issues": [],
     "productIds": [
       "TS0041"
@@ -4214,6 +3882,7 @@
     "missingInAppJson": [],
     "heuristicResolvable": true,
     "heuristicGaps": [],
+    "heuristicFalsePositives": [],
     "issues": [],
     "productIds": [
       "TS0042"
@@ -4259,6 +3928,7 @@
     "missingInAppJson": [],
     "heuristicResolvable": true,
     "heuristicGaps": [],
+    "heuristicFalsePositives": [],
     "issues": [],
     "productIds": [
       "TS0043"
@@ -4305,6 +3975,7 @@
     "missingInAppJson": [],
     "heuristicResolvable": true,
     "heuristicGaps": [],
+    "heuristicFalsePositives": [],
     "issues": [],
     "productIds": [
       "TS0043",
@@ -4336,6 +4007,7 @@
     "missingInAppJson": [],
     "heuristicResolvable": true,
     "heuristicGaps": [],
+    "heuristicFalsePositives": [],
     "issues": [],
     "productIds": [
       "TS0043",
@@ -4384,6 +4056,7 @@
     "missingInAppJson": [],
     "heuristicResolvable": true,
     "heuristicGaps": [],
+    "heuristicFalsePositives": [],
     "issues": [],
     "productIds": [
       "TS0043",
@@ -4457,6 +4130,7 @@
     "missingInAppJson": [],
     "heuristicResolvable": true,
     "heuristicGaps": [],
+    "heuristicFalsePositives": [],
     "issues": [],
     "productIds": [
       "TS0046",

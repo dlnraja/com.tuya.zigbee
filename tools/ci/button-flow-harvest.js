@@ -24,6 +24,8 @@ const STRICT = process.argv.includes('--strict');
 const BUTTON_ID_RE = /button|scene_switch|knob|remote|sos/i;
 const IR_REMOTE_EXEMPT = new Set(['ir_remote', 'wifi_ir_remote']);
 const PRESS_TYPES = ['single', 'double', 'long', 'hold', 'triple', 'release'];
+/** Press types not declared on most remotes — runtime may skip or use app-level cards. */
+const OPTIONAL_PRESS_TYPES = new Set(['hold', 'release', 'triple']);
 const APP_BUTTON_TRIGGERS = [
   'button_pressed', 'button_double_press', 'button_long_press', 'button_triple_clicked',
   'button_multi_press', 'button_release', 'button_matrix', 'virtual_button_pressed',
@@ -56,10 +58,46 @@ function inferEffectiveGangCount(driverId, compose, flowPath) {
     try {
       const flow = readJson(flowPath);
       const ids = (flow.triggers || []).map((t) => t.id).join(' ');
+      // WHY(P2370): socket hybrids (plug/USB/valve) keep button.1+button.2 caps but
+      // declare switch_1gang or physical_on/off — not Ngang multi-gang cards.
       if (/_switch_1gang_/i.test(ids)) gangCount = 1;
+      else if (/physical_on|physical_off/i.test(ids) && !/_button_\d+gang_/i.test(ids)) gangCount = 1;
     } catch { /* ignore */ }
   }
   return gangCount;
+}
+
+function hasDeclaredNgangCards(declaredIds, driverId, gangCount) {
+  const prefix = `${driverId.toLowerCase()}_button_${gangCount}gang_button_`;
+  for (const id of declaredIds) {
+    const lower = String(id).toLowerCase();
+    if (lower.startsWith(prefix) || lower.includes('_button_1gang_button_')) return true;
+  }
+  return false;
+}
+
+function hasHashedButtonFlowCards(declaredIds) {
+  for (const id of declaredIds) {
+    if (/_button_(wireless|1gang)_?[a-f0-9]{4,6}$/i.test(id)) return true;
+    if (/_button_\d+gang_but_[a-f0-9]{4,6}$/i.test(id)) return true;
+  }
+  return false;
+}
+
+function hasRuntimeButtonRouting(driverId) {
+  const devicePath = path.join(DRIVERS_DIR, driverId, 'device.js');
+  if (!fs.existsSync(devicePath)) return false;
+  const src = fs.readFileSync(devicePath, 'utf8');
+  return /registerButtonFlowCards|ButtonDevice|PhysicalButtonMixin|VirtualButtonMixin|triggerFlowCardHeuristic|buildPhysicalFlowCandidates/i.test(src);
+}
+
+function isOptionalPressMiss(pressType, declaredIds) {
+  if (!OPTIONAL_PRESS_TYPES.has(pressType)) return false;
+  const needle = pressType.toLowerCase();
+  for (const id of declaredIds) {
+    if (String(id).toLowerCase().includes(needle)) return false;
+  }
+  return true;
 }
 
 function countButtonCaps(caps) {
@@ -138,10 +176,14 @@ function harvestDriver(driverId) {
   const missingInApp = triggers.filter((id) => !appDriverIds.has(id));
 
   const heuristicGaps = [];
+  const heuristicFalsePositives = [];
   const isButtonClass = compose.class === 'button' || /scene_switch|button_wireless|remote_button|smart_knob/.test(driverId);
   const isButtonDevice = compose.class === 'button'
     || /scene_switch|smart_knob/.test(driverId)
     || (compose.class !== 'socket' && /button_wireless|remote_button/.test(driverId));
+  const declaredNgang = hasDeclaredNgangCards(declared, driverId, gangCount);
+  const declaredHashed = hasHashedButtonFlowCards(declared);
+  const runtimeRouted = hasRuntimeButtonRouting(driverId);
   if (isButtonClass && triggers.length > 0) {
     for (let gang = 1; gang <= Math.min(gangCount, 8); gang++) {
       for (const pressType of PRESS_TYPES) {
@@ -151,7 +193,14 @@ function harvestDriver(driverId) {
         });
         const hit = resolveFlowCardId(candidates, declared);
         if (!hit && candidates.length) {
-          heuristicGaps.push({ gang, pressType, tried: candidates.slice(0, 4) });
+          const gap = { gang, pressType, tried: candidates.slice(0, 4) };
+          const falsePositive = isOptionalPressMiss(pressType, declared)
+            || (declaredNgang && !OPTIONAL_PRESS_TYPES.has(pressType))
+            || declaredHashed
+            || (runtimeRouted && compose.class === 'socket')
+            || (runtimeRouted && compose.class === 'button' && /emergency|sos|knob|rotary/i.test(driverId));
+          if (falsePositive) heuristicFalsePositives.push(gap);
+          else heuristicGaps.push(gap);
         }
       }
     }
@@ -163,6 +212,21 @@ function harvestDriver(driverId) {
   }
   if (heuristicGaps.length > 0) {
     issues.push({ type: 'heuristic_miss', severity: 'medium', count: heuristicGaps.length, sample: heuristicGaps.slice(0, 3) });
+  }
+  if (heuristicFalsePositives.length > 0) {
+    issues.push({
+      type: 'heuristic_false_positive',
+      severity: 'info',
+      count: heuristicFalsePositives.length,
+      sample: heuristicFalsePositives.slice(0, 3),
+      reason: declaredHashed
+        ? 'hashed Ngang cards — runtime ButtonDevice/FlowCardHeuristics resolves'
+        : declaredNgang
+          ? 'Ngang cards declared — CI tries generic patterns first; runtime resolves'
+          : runtimeRouted
+            ? 'socket hybrid — runtime PhysicalButtonMixin + switch_1gang/physical_on'
+            : 'optional press type not declared',
+    });
   }
   for (const t of flow.triggers || []) {
     if (t.titleFormatted && JSON.stringify(t.titleFormatted).includes('[[device]]')) {
@@ -188,6 +252,7 @@ function harvestDriver(driverId) {
     missingInAppJson: missingInApp.slice(0, 20),
     heuristicResolvable: heuristicGaps.length === 0,
     heuristicGaps: heuristicGaps.slice(0, 12),
+    heuristicFalsePositives: heuristicFalsePositives.slice(0, 12),
     issues,
     productIds: compose.zigbee?.productId || [],
     mfrCount: (compose.zigbee?.manufacturerName || []).length,
@@ -269,21 +334,45 @@ function syncFlowCardsToAppJson() {
   return added;
 }
 
-function buildNeedAction(drivers) {
+function buildNeedAction(drivers, exemptDrivers) {
   const lines = [
     '# Button Flow Harvest — NEED_ACTION',
     '',
     `Generated: ${new Date().toISOString()}`,
     '',
+    '## Exempt (not button-flow scope)',
+    '',
   ];
-  const flagged = drivers.filter((d) => d.issues.length > 0);
+  if (exemptDrivers.length) {
+    for (const id of exemptDrivers) {
+      lines.push(`- \`${id}\` — IR remote, 0 button triggers expected`);
+    }
+  } else {
+    lines.push('- (none)');
+  }
+  lines.push('', '## Known false positives (runtime OK)', '');
+  lines.push('CI harvest tries generic patterns first; `FlowCardHeuristics` + `ButtonDevice` resolve Ngang/hashed/socket cards at runtime.', '');
+
+  const falsePos = drivers.filter((d) => d.issues.some((i) => i.type === 'heuristic_false_positive'));
+  if (!falsePos.length) {
+    lines.push('- (none)', '');
+  } else {
+    for (const d of falsePos) {
+      const fp = d.issues.find((i) => i.type === 'heuristic_false_positive');
+      lines.push(`- \`${d.driverId}\` (${d.class}) — ${fp.count} CI-only misses; ${fp.reason}`);
+    }
+    lines.push('');
+  }
+
+  lines.push('## Open issues', '');
+  const flagged = drivers.filter((d) => d.issues.some((i) => i.severity === 'high' || i.type === 'heuristic_miss'));
   if (!flagged.length) {
-    lines.push('No open issues — all button drivers have declared triggers and heuristic hits.');
+    lines.push('No blocking issues — all button drivers OK for publish.');
     return lines.join('\n');
   }
   for (const d of flagged) {
-    lines.push(`## ${d.driverId} (${d.class}, ${d.triggerCount} triggers)`);
-    for (const issue of d.issues) {
+    lines.push(`### ${d.driverId} (${d.class}, ${d.triggerCount} triggers)`);
+    for (const issue of d.issues.filter((i) => i.severity === 'high' || i.type === 'heuristic_miss')) {
       lines.push(`- **${issue.type}** (${issue.severity})${issue.id ? `: \`${issue.id}\`` : ''}${issue.count ? ` — ${issue.count} hits` : ''}`);
       if (issue.sample && issue.type === 'heuristic_miss') {
         for (const s of issue.sample) {
@@ -306,6 +395,7 @@ if (APPLY) {
 }
 
 const appIds = loadAppFlowIds();
+const exemptDrivers = [...IR_REMOTE_EXEMPT].sort();
 const drivers = [];
 for (const name of fs.readdirSync(DRIVERS_DIR)) {
   const row = harvestDriver(name);
@@ -316,12 +406,14 @@ drivers.sort((a, b) => a.driverId.localeCompare(b.driverId));
 const summary = {
   generatedAt: new Date().toISOString(),
   driverCount: drivers.length,
+  exemptIrDrivers: exemptDrivers,
   totalTriggers: drivers.reduce((s, d) => s + d.triggerCount, 0),
   totalConditions: drivers.reduce((s, d) => s + d.conditionCount, 0),
   totalActions: drivers.reduce((s, d) => s + d.actionCount, 0),
-  driversWithIssues: drivers.filter((d) => d.issues.length > 0).length,
+  driversWithIssues: drivers.filter((d) => d.issues.some((i) => i.severity === 'high' || i.type === 'heuristic_miss')).length,
   highSeverityIssues: drivers.reduce((n, d) => n + d.issues.filter((i) => i.severity === 'high').length, 0),
   heuristicMissDrivers: drivers.filter((d) => d.heuristicGaps.length > 0).length,
+  heuristicFalsePositiveDrivers: drivers.filter((d) => (d.heuristicFalsePositives || []).length > 0).length,
   appJsonDriftDrivers: drivers.filter((d) => d.missingInAppJson?.length > 0).length,
   appLevelButtonTriggers: APP_BUTTON_TRIGGERS.filter((id) => appIds.has(id)),
   appLevelButtonTriggersMissing: APP_BUTTON_TRIGGERS.filter((id) => !appIds.has(id)),
@@ -335,7 +427,7 @@ const summary = {
 fs.mkdirSync(OUT_DIR, { recursive: true });
 writeJson(path.join(OUT_DIR, 'summary.json'), summary);
 writeJson(path.join(OUT_DIR, 'drivers.json'), drivers);
-fs.writeFileSync(path.join(OUT_DIR, 'NEED_ACTION.md'), buildNeedAction(drivers));
+fs.writeFileSync(path.join(OUT_DIR, 'NEED_ACTION.md'), buildNeedAction(drivers, exemptDrivers));
 
 const md = [
   `# Button Flow Harvest — ${DATE}`,

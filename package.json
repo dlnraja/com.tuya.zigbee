@@ -272,7 +272,14 @@
     "mfs:harden": "node tools/ci/harden-mfs-db.js",
     "mfs:harden:apply": "node tools/ci/harden-mfs-db.js --apply",
     "check:p2368": "node --test test/critical/p2368-mfs-db-harden.test.js",
-    "harvest:all:apply": "node tools/ci/harvest-all-sources.js --apply"
+    "harvest:all:apply": "node tools/ci/harvest-all-sources.js --apply",
+    "enrich:fleet": "node tools/ci/fleet-intelligent-enrich.js",
+    "enrich:fleet:apply": "node tools/ci/fleet-intelligent-enrich.js --apply --skip-crawl",
+    "enrich:fleet:crawl:apply": "node tools/ci/fleet-intelligent-enrich.js --apply --crawl",
+    "enrich:classes": "node tools/ci/driver-class-fleet-enrich.js",
+    "enrich:classes:apply": "node tools/ci/driver-class-fleet-enrich.js --apply",
+    "scrape:budget": "node tools/ci/free-scrape-budget.js --report",
+    "scrape:budget:preflight": "node tools/ci/free-scrape-budget.js --preflight"
   },
   "keywords": [
     "homey",

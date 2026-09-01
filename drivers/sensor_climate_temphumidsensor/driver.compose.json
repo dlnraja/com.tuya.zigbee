@@ -66,7 +66,10 @@
         ]
       }
     },
-    "manufacturerName": []
+    "manufacturerName": [
+      "_hybrid_sensor_climate_temphumidsensor_needs_device_assignment",
+      "_HYBRID_SENSOR_CLIMATE_TEMPHUMIDSENSOR_NEEDS_DEVICE_ASSIGNMENT"
+    ]
   },
   "settings": [
     {

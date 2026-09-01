@@ -1,0 +1,42 @@
+{
+  "_meta": {
+    "id": "P2372",
+    "updated": "2026-09-01",
+    "policy": "Free-first scrape only. Prefer local cache + direct HTTP. Never burn paid overage. Soft-stop before free-tier lockouts."
+  },
+  "mode": "free_first",
+  "defaults": {
+    "SMART_FETCH_READER_FALLBACK": "1",
+    "AI_PLAN_MODE": "forfait",
+    "AI_ALLOW_PAID": "false",
+    "FIRECRAWL_DAILY_MAX": "3",
+    "FREE_SCRAPE_BROWSER": "0",
+    "preferCacheHours": 6,
+    "globalConcurrencyMax": 4,
+    "softStopPercent": 85
+  },
+  "dailyCaps": {
+    "jina": 80,
+    "microlink": 40,
+    "allorigins": 40,
+    "wayback": 20,
+    "crawl4ai": 100,
+    "firecrawl": 3,
+    "browser": 0,
+    "direct": 2000
+  },
+  "perHost": {
+    "community.homey.app": { "concurrency": 2, "delayMs": 400, "maxPerHour": 120 },
+    "r.jina.ai": { "concurrency": 2, "delayMs": 800, "maxPerHour": 40 },
+    "api.microlink.io": { "concurrency": 1, "delayMs": 1200, "maxPerHour": 20 },
+    "api.allorigins.win": { "concurrency": 1, "delayMs": 1000, "maxPerHour": 20 },
+    "web.archive.org": { "concurrency": 1, "delayMs": 1500, "maxPerHour": 10 },
+    "raw.githubusercontent.com": { "concurrency": 6, "delayMs": 100, "maxPerHour": 400 },
+    "zigbee.blakadder.com": { "concurrency": 2, "delayMs": 600, "maxPerHour": 60 },
+    "www.zigbee2mqtt.io": { "concurrency": 3, "delayMs": 300, "maxPerHour": 100 }
+  },
+  "cooldownOn429Ms": 120000,
+  "cooldownOn403Ms": 300000,
+  "chainOrder": ["cache", "direct", "jina", "microlink", "allorigins", "crawl4ai", "wayback", "firecrawl"],
+  "neverAuto": ["browser", "openai", "deepseek"]
+}

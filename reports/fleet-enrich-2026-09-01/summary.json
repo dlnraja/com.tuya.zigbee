@@ -1,0 +1,199 @@
+{
+  "generatedAt": "2026-09-01T07:51:20.373Z",
+  "mode": "apply",
+  "crawl": false,
+  "phases": [
+    {
+      "name": "cross-ref-all-sources",
+      "label": "cross-ref",
+      "ok": true,
+      "exitCode": 0,
+      "durationMs": 3119,
+      "tail": "42 (driverHint: button_wireless_2)\n  _TZ3000_0zfrhq4i + TS0601 (driverHint: button_wireless_2)\n  _TZ3000_26fmupbb + TS0601 (driverHint: sensor_contact_zigbee)\n  _TZ3000_2mbfxlzr + TS0601 (driverHint: sensor_contact_zigbee)\n  _TZ3000_2putqrmw + TS0601 (driverHint: generic_diy)\n  _TZ3000_303avxxt + TS0601 (driverHint: switch_1gang)\n  _TZ3000_3zofvcaa + TS0601 (driverHint: device_plug_energy)\n  _TZ3000_402vrq2i + TS0601 (driverHint: switch_4_gang_metering)\n  _TZ3000_4ugnzsli + TS0601 (driverHint: sensor_contact_zigbee)\n\nMarket-new (external sources, not in driver.compose): 95\n  _TZ1800_akzvkzqq + TS0211 (mfs_db,z2m)\n  _TZ1800_ladpngdx + TS0211 (mfs_db,z2m)\n  _TZ3000_5af5r192 + TS0049 (mfs_db,z2m)\n  _TZ3000_6dwfra5l + SMD9300 (mfs_db,z2m)\n  _TZ3000_85czd6fy + TS0207 (mfs_db,blakadder)\n  _TZ3000_aaifmpuq + TS0002 (z2m)\n  _TZ3000_an5rjiwd + TS0041 (gmail)\n  _TZ3000_bumeauzp + SMD9300 (mfs_db,z2m)\n  _TZ3000_c8bqthpo + TS0207 (mfs_db,z2m)\n  _TZ3000_fa9mlvja + TS0041 (mfs_db,blakadder,z2m)\n  _TZ3000_hgm6k8ku + TS0207 (mfs_db,z2m)\n  _TZ3000_huvxrx4i + TS0002 (z2m)\n  _TZ3000_irrmjcgi + TS0002 (z2m)\n  _TZ3000_iwtv2jwo + TS0002 (z2m)\n  _TZ3000_j6adk9id + TS0222 (z2m)\n  _TZ3000_ja5osu5g + ZG-101ZE (johan-issue)\n  _TZ3000_ja5osu5g + ZG-103ZL (interview)\n  _TZ3000_jcqs2mrv + SM0001 (mfs_db,z2m)\n  _TZ3000_jyupj3fw + TS0006 (mfs_db,blakadder)\n  _TZ3000_kgxej1dv + TS00002 (johan-issue)\n\nSaved summary to .github/state/mfr-pid-cross-ref.json\nSaved all pairs to .github/state/all-mfr-pid-pairs.json"
+    },
+    {
+      "name": "market-couples-intake",
+      "label": "market-intake",
+      "ok": true,
+      "exitCode": 0,
+      "durationMs": 11573,
+      "tail": "plySafe\": false,\n      \"reason\": \"suggestDriverFromPid count=375\",\n      \"z2mDesc\": \"5-Gang TZExxx Zigbee Touch Switch\",\n      \"needsReview\": true,\n      \"catalogHit\": true,\n      \"blakadderHit\": false,\n      \"z2mHit\": true,\n      \"knowledgeHit\": false,\n      \"agreement\": 1,\n      \"heuristicSoft\": true\n    }\n  ],\n  \"crawlResults\": [],\n  \"crossRef\": {\n    \"ok\": true,\n    \"tail\": \"2m)\\n  _TZ3000_c8bqthpo + TS0207 (mfs_db,z2m)\\n  _TZ3000_fa9mlvja + TS0041 (mfs_db,blakadder,z2m)\\n  _TZ3000_hgm6k8ku + TS0207 (mfs_db,z2m)\\n  _TZ3000_huvxrx4i + TS0002 (z2m)\\n  _TZ3000_irrmjcgi + TS0002 (z2m)\\n  _TZ3000_iwtv2jwo + TS0002 (z2m)\\n  _TZ3000_j6adk9id + TS0222 (z2m)\\n  _TZ3000_ja5osu5g + ZG-101ZE (johan-issue)\\n  _TZ3000_ja5osu5g + ZG-103ZL (interview)\\n  _TZ3000_jcqs2mrv + SM0001 (mfs_db,z2m)\\n  _TZ3000_jyupj3fw + TS0006 (mfs_db,blakadder)\\n  _TZ3000_kgxej1dv + TS00002 (johan-issue)\\n\\nSaved summary to .github/state/mfr-pid-cross-ref.json\\nSaved all pairs to .github/state/all-mfr-pid-pairs.json\"\n  },\n  \"apply\": {\n    \"ok\": true,\n    \"tail\": \"=== apply-market-couples ===\\nMode: APPLY\\nWould/did apply: 4\\nSkipped: 91\\n  _TZ3000_fa9mlvja+TS0041 → button_wireless_1 [multi_catalog_pid] WROTE\\n  _TZ3000_sj7jbgks+TS0043 → button_wireless_3 [multi_catalog_pid] WROTE\\n  _TZ3210_ttkgurpb+TS0504B → bulb_rgbw [multi_catalog_pid] WROTE\\n  _TZ3000_iwtv2jwo+TS0002 → switch_2gang [z2m_desc] WROTE\\nReport: C:\\\\Users\\\\Dell\\\\Documents\\\\homey\\\\master\\\\.github\\\\state\\\\market-couples\\\\apply-report.json\"\n  }\n}"
+    },
+    {
+      "name": "apply-market-couples",
+      "label": "market-apply",
+      "ok": true,
+      "exitCode": 0,
+      "durationMs": 6330,
+      "tail": "=== apply-market-couples ===\nMode: APPLY\nWould/did apply: 0\nSkipped: 91\nReport: C:\\Users\\Dell\\Documents\\homey\\master\\.github\\state\\market-couples\\apply-report.json"
+    },
+    {
+      "name": "enrich-market-colocate",
+      "label": "colocate",
+      "ok": true,
+      "exitCode": 0,
+      "durationMs": 5897,
+      "tail": "or [force_p2319] WROTE (mfr:_TZ3000_kyb656no)\n  + _TZ3000_o005nuxx+TS0115 → usb_outlet_advanced [force_p2319] WROTE (mfr:_TZ3000_o005nuxx)\n  + _TZ3000_pzui3skt+TS0041 → button_wireless_1 [force_p2319] WROTE (mfr:_TZ3000_pzui3skt)\n  + _TZ3000_ww9i3e0y+TS0207 → water_leak_sensor [force_p2319] WROTE (mfr:_TZ3000_ww9i3e0y)\n  + _TZ3210_4zinq6io+TS0501B → bulb_dimmable [force_p2319] WROTE (mfr:_TZ3210_4zinq6io)\n  + _TZ3210_9q49basr+TS0501B → bulb_dimmable [force_p2319] WROTE (mfr:_TZ3210_9q49basr)\n  + _TZ3210_e5t9bfdv+TS0501B → bulb_dimmable [force_p2319] WROTE (mfr:_TZ3210_e5t9bfdv)\n  + _TZ3000_ptjcjise+TS0002 → switch_2gang [pid_default_soft] WROTE (mfr:_TZ3000_ptjcjise)\n  + _TZ3000_an5rjiwd+TS0041 → button_wireless_1 [pid_default_soft] WROTE (mfr:_TZ3000_an5rjiwd)\n  + _TZ3000_rrjr1q0u+TS0043 → button_wireless_3 [force_p2319] WROTE (mfr:_TZ3000_rrjr1q0u)\n  + _TZ3000_yw5tvzsk+TS0043 → button_wireless_3 [force_p2319] WROTE (mfr:_TZ3000_yw5tvzsk)\n  + _TZ3400_key8kk7r+TS0043 → button_wireless_3 [force_p2319] WROTE (mfr:_TZ3400_key8kk7r)\n  + _TZ3000_aaifmpuq+TS0002 → switch_2gang [pid_default_soft] WROTE (mfr:_TZ3000_aaifmpuq)\n  + _TZ3000_huvxrx4i+TS0002 → switch_2gang [pid_default_soft] WROTE (mfr:_TZ3000_huvxrx4i)\n  + _TZ3000_irrmjcgi+TS0002 → switch_2gang [pid_default_soft] WROTE (mfr:_TZ3000_irrmjcgi)\n  + _TZ3000_pxfjrzyj+TS0002 → switch_2gang [pid_default_soft] WROTE (mfr:_TZ3000_pxfjrzyj)\nReport: C:\\Users\\Dell\\Documents\\homey\\master\\reports\\market-colocate-enrich-2026-08-30.json"
+    },
+    {
+      "name": "multi-source-enrich",
+      "label": "multi-source",
+      "ok": true,
+      "exitCode": 0,
+      "durationMs": 136471,
+      "tail": "multi-source] ✓ 1c-silent-enrichment-users (1.5s)\n[multi-source] ▶ 2-forum-ai-paste-gate\n[multi-source] ✓ 2-forum-ai-paste-gate (0.2s)\n[multi-source] ▶ 3-apply-forum-known-routes\n[multi-source] ✓ 3-apply-forum-known-routes (0.9s)\n[multi-source] ▶ 4-sacred-lot2\n[multi-source] ✓ 4-sacred-lot2 (7.3s)\n[multi-source] ▶ 5-sacred-lot3\n[multi-source] ✓ 5-sacred-lot3 (14.7s)\n[multi-source] ▶ 6-blakadder-new\n[multi-source] ✓ 6-blakadder-new (0.3s)\n[multi-source] ▶ 6b-market-couples-intake\n[multi-source] ✓ 6b-market-couples-intake (5.0s)\n[multi-source] ▶ 6c-market-couples-apply\n[multi-source] ✓ 6c-market-couples-apply (2.8s)\n[multi-source] ▶ 7-infer-enrich-dry\n[multi-source] ✓ 7-infer-enrich-dry (6.8s)\n[multi-source] ▶ 8-sacred-couple-dry-gate\n[multi-source] ✓ 8-sacred-couple-dry-gate (39.6s)\n[multi-source] ▶ 9-collision-resolve-dry\n[multi-source] ✓ 9-collision-resolve-dry (4.3s)\n[multi-source] ▶ 10-case-variants\n[multi-source] ✓ 10-case-variants (1.4s)\n[multi-source] ▶ 10b-cross-project-reimpl-gate\n[multi-source] ✓ 10b-cross-project-reimpl-gate (1.2s)\n[multi-source] ▶ 10c-dual-claim-compose-gate\n[multi-source] ✓ 10c-dual-claim-compose-gate (3.3s)\n[multi-source] ▶ 10d-align-mfs-db-intelligent-check\n[multi-source] ✓ 10d-align-mfs-db-intelligent-check (15.4s)\n[multi-source] ▶ 11-coverage-snapshot\n[multi-source] ✓ 11-coverage-snapshot (0.5s)\n[multi-source] Report → C:\\Users\\Dell\\Documents\\homey\\master\\.github\\state\\multi-source\\enrich-report.json\n[multi-source] Mode=apply phases=18 ok=true"
+    },
+    {
+      "name": "infer-enrich-apply",
+      "label": "infer-enrich",
+      "ok": true,
+      "exitCode": 0,
+      "durationMs": 44270,
+      "tail": "gc4rj + ts0601 → sensor_climate_temphumidsensor (95) [mfs_curated]\n  · DID _tz3210_ncw88jfq + ts0601 → sensor_climate_temphumidsensor (95) [mfs_curated]\n  · DID _tz3290_7v1k4vufotpowp9z + ts0601 → ir_remote (95) [mfs_curated]\n  · DID _tze200_8eazvzo6 + ts0601 → climate_sensor (95) [mfs_curated]\n  · DID _tze284_a14rjslz + ts0601 → climate_sensor (95) [mfs_curated]\n  · DID _tz3000_2putqrmw + ts0042 → button_wireless_2 (94) [pid_TS0042_button_2]\n  · DID _tze204_2imwyigp + ts0203 → contact_sensor (92) [pid_TS0203_contact]\n  · DID _tze200_u6x1zyv2 + ts0203 → contact_sensor (92) [pid_TS0203_contact]\n  · DID _tze200_j1xl73iw + TS0302 → curtain_motor (95) [mfs_curated]\n  · DID _TZE200_J1XL73IW + 01MINIZB → curtain_motor (95) [mfs_curated]\n  · DID _TZE200_J1XL73IW + AM02 → curtain_motor (95) [mfs_curated]\n  · DID _TZE200_J1XL73IW + BASICZBR3 → curtain_motor (95) [mfs_curated]\nReview samples:\n  · _tz3000_26fmupbb + TS0601 → sensor_contact_zigbee (95)\n  · _tz3000_2mbfxlzr + TS0601 → sensor_contact_zigbee (95)\n  · _tz3000_2mbfxlzr + AY-101Z → sensor_contact_zigbee (95)\n  · _tz3000_402jjyro + TS0601 → sensor_contact_zigbee (95)\n  · _tz3000_996rpfy6 + TS0601 → sensor_contact_zigbee (95)\n  · _tz3000_996rpfy6 + AY-101Z → sensor_contact_zigbee (95)\n  · _tz3000_bpkijo14 + TS0601 → sensor_contact_zigbee (95)\n  · _tz3000_n2egfsli + TS0601 → sensor_contact_water (95)\nReport: C:\\Users\\Dell\\Documents\\homey\\master\\.github\\state\\infer-enrich-report.json\n═══════════════════════════════════════════════"
+    },
+    {
+      "name": "curtain-couples",
+      "label": "curtain",
+      "ok": true,
+      "exitCode": 0,
+      "durationMs": 1929,
+      "tail": "25 strip_curtain=2\n  + _TZE200_1n2kyphz (ZM25TQ) [live-z2m-crawl]\n  + _TZE200_1vxgqfba (cover) [live-z2m-crawl]\n  + _TZE200_7EUE9VHC (ZM25RX-0.8/30) [live-z2m-crawl]\n  + _TZE200_cxu0jkjk (ZM25RX-08/30) [live-z2m-crawl]\n  + _TZE200_dng9fn0k (cover) [live-z2m-crawl]\n  + _TZE200_eqpaxqdv (TS0601_cover) [verdict-36]\n  + _TZE200_hyhl5y36 (PIMS3028) [live-z2m-crawl]\n  + _TZE200_jfw0a4aa (EPJ-ZB) [live-z2m-crawl]\n  + _TZE200_npj9bug3 (M515EGBZTN) [live-z2m-crawl]\n  + _TZE200_shkxsgis (ZM25TQ) [live-z2m-crawl]\n  + _TZE200_sq6affpe (cover) [live-z2m-crawl]\n  + _TZE200_wrmhp6b3 (M515EGBZTN) [live-z2m-crawl]\n  + _TZE200_wzk0x7fq (EPJ-ZB) [live-z2m-crawl]\n  + _TZE200_yenbr4om (cover) [live-z2m-crawl]\n  + _TZE204_gm8h14wy (ZG-301Z-MOTO) [live-z2m-crawl]\n  + _TZE204_shkxsgis (ZM25TQ) [live-z2m-crawl]\n  + _TZE204_x9usygq1 (GM25TEQ-TYZ-2/25) [live-z2m-crawl]\n  + _TZE204_ycke4deo (TS0601_cover_10) [z2m_herdsman]\n  + _TZE204_zxkwaztm (ADCBZI01) [live-z2m-crawl]\n  + _TZE284_3mzb0sdz (cover) [live-z2m-crawl]\n  + _TZE284_6hrnp30w (ZM16B) [live-z2m-crawl]\n  + _TZE284_ajuasrmx (PIMS3028) [live-z2m-crawl]\n  + _TZE284_ozf4e02o (PIMS3028) [live-z2m-crawl]\n  + _TZE284_r3szw0xr (TS0601_cover_11) [z2m_herdsman]\n  + _TZE284_rlytpmij (FWJZCEH18A001) [live-z2m-crawl]\n[apply-curtain-couples] strip curtain_motor: 2 rows (tilt/module/shutter/forbidden)\n  → curtain_module_2_gang: _TZ3000_j1xl73iw\n  → curtain_module_2_gang: _TZ3000_l6iqph4f\n[apply-curtain-couples] APPLIED +25 mfrs, -2 stripped, curtain total=575"
+    },
+    {
+      "name": "align-mfs-apply",
+      "label": "align-mfs",
+      "ok": true,
+      "exitCode": 0,
+      "durationMs": 13504,
+      "tail": "align-mfs-db-intelligent: changes=1 skipped=36 high=0 (APPLIED)\nbyAction: {\"registry_compose_strip_couple_mfr\":1}\n  [medium] registry_compose_strip_couple_mfr _TZE284_a14rjslz climate_sensor→energy_meter_3phase\nskipped (ambiguous/report-only): 36\n  registry_enrich_only p2317-cvis4qmw-ts0006-6gang  \n  registry_enrich_only p2317-g9chy2ib-ts0003-3gang  \n  registry_enrich_only p2317-etufnltx-ts1002-foria  \n  registry_enrich_only p2347-gabriel-zemismart-cartesian-doc-only  \n  registry_bare_brand_multi_canon hobeian  \n  registry_bare_brand_multi_canon hobeian  \n  registry_bare_brand_multi_canon hobeian  \n  registry_bare_brand_multi_canon hobeian  \n  registry_bare_brand_multi_canon hobeian  \n  registry_bare_brand_multi_canon hobeian  \n  unclaimed_no_compose _tze20x_xxxxxxxx air_purifier \n  unclaimed_no_compose _TZ3210_JLF1NEPW bulb_rgb \n  unclaimed_no_compose _TZ3210_RWMITWJ4 bulb_rgb \n  pair_conflict_ambiguous _TZ3000_dpo1ysak button_wireless_2 plug,smartplug\n  unclaimed_multi _TZ3000_dpo1ysak button_wireless_2 plug,smartplug"
+    },
+    {
+      "name": "sync-compose-mfs",
+      "label": "sync-mfs",
+      "ok": true,
+      "exitCode": 0,
+      "durationMs": 14689,
+      "tail": "sync-compose-to-mfs-db: 8 change(s) (APPLY)\nbyAction: { merge_wrong_prefix: 2, known_correction: 3, prune_modelIds: 3 }\nWritten: C:\\Users\\Dell\\Documents\\homey\\master\\data\\mfs_db.json"
+    },
+    {
+      "name": "harden-mfs-db",
+      "label": "harden-mfs",
+      "ok": true,
+      "exitCode": 0,
+      "durationMs": 31288,
+      "tail": "=== harden-mfs-db (P2368) ===\n  ✓ mfs-db-dedupe\n  ✓ sync-compose-to-mfs-db\n  ✓ enrich-mfs-p2295\n  ✓ align-mfs-db-intelligent\n  ✓ compose-mfsdb-class-guard\n  ✓ p2138-sacred-couple-gate\n  ✓ p2368-mfs-test\nReport: C:\\Users\\Dell\\Documents\\homey\\master\\reports\\mfs-harden-latest.json"
+    },
+    {
+      "name": "harden-unknown-zigbee",
+      "label": "harden-unknown",
+      "ok": true,
+      "exitCode": 0,
+      "durationMs": 2049,
+      "tail": "=== harden-unknown-zigbee (P2366) ===\nMode: APPLY\nCompose changes: 0\nSacred-keep adds: 0\n  ✓ case-variants\n  ✓ sync-appjson-zigbee\n  ✓ p2138-gate\nReport: C:\\Users\\Dell\\Documents\\homey\\master\\reports\\unknown-zigbee-harden-latest.json"
+    },
+    {
+      "name": "enrich-driver-settings",
+      "label": "settings",
+      "ok": true,
+      "exitCode": 0,
+      "durationMs": 157,
+      "tail": "enrich-driver-settings-intelligent: 0 driver(s) to update (apply=true)"
+    },
+    {
+      "name": "button-flow-harvest-apply",
+      "label": "button-harvest",
+      "ok": true,
+      "exitCode": 0,
+      "durationMs": 5949,
+      "tail": "ers\": 0,\n  \"appLevelButtonTriggers\": [\n    \"button_pressed\",\n    \"button_double_press\",\n    \"button_long_press\",\n    \"button_triple_clicked\",\n    \"button_multi_press\",\n    \"button_release\",\n    \"button_matrix\",\n    \"virtual_button_pressed\",\n    \"remote_button_pressed\",\n    \"knob_rotated\"\n  ],\n  \"appLevelButtonTriggersMissing\": [],\n  \"topByTriggers\": [\n    {\n      \"driverId\": \"button_wireless_8\",\n      \"triggers\": 45\n    },\n    {\n      \"driverId\": \"scene_switch_4\",\n      \"triggers\": 45\n    },\n    {\n      \"driverId\": \"scene_switch_6ch\",\n      \"triggers\": 40\n    },\n    {\n      \"driverId\": \"button_wireless_6\",\n      \"triggers\": 35\n    },\n    {\n      \"driverId\": \"scene_switch_6\",\n      \"triggers\": 34\n    },\n    {\n      \"driverId\": \"wall_remote_6_gang\",\n      \"triggers\": 30\n    },\n    {\n      \"driverId\": \"button_wireless_smart\",\n      \"triggers\": 29\n    },\n    {\n      \"driverId\": \"button_wireless_4\",\n      \"triggers\": 28\n    },\n    {\n      \"driverId\": \"button_wireless_4_ts0041\",\n      \"triggers\": 25\n    },\n    {\n      \"driverId\": \"remote_button_wireless_handheld\",\n      \"triggers\": 25\n    },\n    {\n      \"driverId\": \"button_wireless_3\",\n      \"triggers\": 21\n    },\n    {\n      \"driverId\": \"handheld_remote_4_buttons\",\n      \"triggers\": 20\n    },\n    {\n      \"driverId\": \"remote_button_emergency_sos\",\n      \"triggers\": 20\n    },\n    {\n      \"driverId\": \"remote_button_wireless\",\n      \"triggers\": 20\n    },\n    {\n      \"driverId\": \"smart_remote_4_buttons\",\n      \"triggers\": 20\n    }\n  ]\n}"
+    },
+    {
+      "name": "case-variants",
+      "label": "case-variants",
+      "ok": true,
+      "exitCode": 0,
+      "durationMs": 497,
+      "tail": "═══════════════════════════════════════════════\n  Ensure Homey case variants (P99)\n  root: C:\\Users\\Dell\\Documents\\homey\\master\n  mode: APPLY\n═══════════════════════════════════════════════\nDrivers needing variants: 0\nVariants to add: 0\n═══════════════════════════════════════════════"
+    },
+    {
+      "name": "prune-fp-collision",
+      "label": "prune-fp",
+      "ok": true,
+      "exitCode": 0,
+      "durationMs": 2937,
+      "tail": "  [mfs_driverHint] _tz3210_ttkgurpb keep=wall_dimmer_tuya strip=bulb_rgbw (1 keys)\n  [mfs_driverHint] _tz3290_7v1k4vufotpowp9z keep=ir_blaster strip=ir_remote (1 keys)\n  [mfs_driverHint] _tz3400_key8kk7r keep=button_wireless_2 strip=button_wireless_3 (3 keys)\n  [mfs_driverHint] _tze200_1n2kyphz keep=climate_sensor strip=curtain_motor (21 keys)\n  [mfs_driverHint] _tze200_1vxgqfba keep=climate_sensor strip=curtain_motor (21 keys)\n  [mfs_driverHint] _tze200_7eue9vhc keep=device_air_purifier_plug strip=curtain_motor (7 keys)\n  [mfs_driverHint] _tze200_8eazvzo6 keep=switch_wall_6gang strip=climate_sensor (1 keys)\n  [mfs_driverHint] _tze200_cxu0jkjk keep=climate_sensor strip=curtain_motor (21 keys)\n  [mfs_driverHint] _tze200_dng9fn0k keep=climate_sensor strip=curtain_motor (21 keys)\n  [mfs_driverHint] _tze200_eqpaxqdv keep=sensor_gas_presence strip=curtain_motor (2 keys)\n  [mfs_driverHint] _tze200_hyhl5y36 keep=presence_sensor_radar strip=curtain_motor (2 keys)\n  [mfs_driverHint] _tze200_jfw0a4aa keep=vibration_sensor strip=curtain_motor (2 keys)\n  [mfs_driverHint] _tze200_npj9bug3 keep=soil_sensor strip=curtain_motor (7 keys)\n  [registry] _tze200_shkxsgis keep=wall_switch_4_gang_tuya strip=curtain_motor (1 keys)\n  [mfs_driverHint] _tze200_sq6affpe keep=climate_sensor strip=curtain_motor (21 keys)\n  [mfs_driverHint] _tze200_wrmhp6b3 keep=climate_sensor strip=curtain_motor (21 keys)\n  [mfs_driverHint] _tze200_wzk0x7fq keep=vibration_sensor strip=curtain_motor (2 keys)\n  ... +12 more"
+    },
+    {
+      "name": "re-inject-sacred-strips",
+      "label": "re-inject",
+      "ok": true,
+      "exitCode": 0,
+      "durationMs": 780,
+      "tail": "switch_2gang\n  ~ p80-orphan-switch-2-gang: skip _TZ3000_v4l4b0lp — already claimed by switch_3gang\n  ~ p80-orphan-switch-2-gang: skip _TZ3000_f09j9qjb — already claimed by wall_switch_3gang_1way\n  ~ p80-orphan-switch-wireless: skip _TZE200_RJXQSO4A — already claimed by co_sensor\n  ~ p80-orphan-switch-wireless: skip _TZE200_IKVNCLUO — already claimed by presence_sensor_radar\n  ~ p80-orphan-temphumidsensor5: skip _TYZB01_HJSGDKFL — already claimed by lcdtemphumidsensor\n  ~ p80-orphan-valvecontroller: skip _TZ3000_hyarhbyx — already claimed by switch_1gang\n  ~ p80-orphan-valvecontroller: skip _TZ3000_gjrubzje — already claimed by switch_1gang\n  ~ p80-orphan-wall-switch-5-gang-tuya: skip _TZE200_7TDTQGWV — already claimed by switch_1gang\n  ~ p80-orphan-wall-switch-5-gang-tuya: skip _TZ3000_aetquff4 — already claimed by switch_1gang\n  ~ p80-orphan-wall-switch-5-gang-tuya: skip _TZ3000_hafsqare — already claimed by switch_1gang\n  ✅ p98-u6x1zyv2-remove-contact (Keep rain u6x1zyv2 off contact_sensor): +0 / -2 from source 'p98-forum-1610'\n  ✅ p218-2imwyigp-remove-contact (P218 anti-bot: 2imwyigp TS0601 lives on switch_3gang only): +0 / -2 from source 'p218-anti-bot'\n  ✅ p217-wing-climate-zth (P217 Johan #1429/#1422: Wing ZTH11/ZTH13 climate — keep pids at top (combo compact)): +0 / -0 from source 'p217-johan-1429'\n  ✅ p2291-ogkdpgy2-air-quality-add (P2291 Elliot #2204: ogkdpgy2 CO2 lock on air_quality_co2): +0 / -0 from source 'p2291-forum-2204'\n\nApplied: 4/67 manual fixes re-injected"
+    },
+    {
+      "name": "master-automation-fix",
+      "label": "master-auto",
+      "ok": true,
+      "exitCode": 0,
+      "durationMs": 2078,
+      "tail": "MFs\u001b[0m\n\u001b[32m  ✅ FIXÉ: dimmer_dual_channel → 2 MFs\u001b[0m\n\u001b[32m  ✅ FIXÉ: doorwindowsensor → 34 MFs\u001b[0m\n\u001b[32m  ✅ FIXÉ: double_power_point → 2 MFs\u001b[0m\n\u001b[32m  ✅ FIXÉ: outdoor_2_socket → 2 MFs\u001b[0m\n\u001b[32m  ✅ FIXÉ: pirsensor → 21 MFs\u001b[0m\n\u001b[32m  ✅ FIXÉ: radar_sensor_2 → 2 MFs\u001b[0m\n\u001b[32m  ✅ FIXÉ: radar_sensor_ceiling → 2 MFs\u001b[0m\n\u001b[32m  ✅ FIXÉ: relay_board_1_channel → 1 MFs\u001b[0m\n\u001b[32m  ✅ FIXÉ: rgb_bulb_E27 → 3 MFs\u001b[0m\n\u001b[32m  ✅ FIXÉ: sensor_lcdtemphumidsensor_temphumidsensor → 1 MFs\u001b[0m\n\u001b[32m  ✅ FIXÉ: sirentemphumidsensor → 2 MFs\u001b[0m\n\u001b[32m  ✅ FIXÉ: smart_air_detection_box → 2 MFs\u001b[0m\n\u001b[32m  ✅ FIXÉ: smart_rcbo → 1 MFs\u001b[0m\n\u001b[32m  ✅ FIXÉ: smart_switch → 3 MFs\u001b[0m\n\u001b[32m  ✅ FIXÉ: switch_2_gang_metering → 2 MFs\u001b[0m\n\u001b[32m  ✅ FIXÉ: wall_remote_4_gang → 2 MFs\u001b[0m\n\u001b[32m  ✅ app.json mis à jour (19 drivers corrigés)\u001b[0m\n\u001b[1m\u001b[34m\n┌─ PHASE 3 — VALIDATION FINALE\u001b[0m\n\u001b[1m\u001b[34m\n┌─ PHASE 1a — APP.JSON DUAL-LAYER VALIDATION\u001b[0m\n\u001b[32m  ✅ Tous les drivers Zigbee/Hybrid ont des MF statiques (379)\u001b[0m\n\u001b[36m  ℹ️  Zigbee: 379 | WiFi: 51 | Hybrid: 0 | Virtual: 1\u001b[0m\n\u001b[32m  ✅ Validation finale: PASS — Zéro AggregateError\u001b[0m\n\u001b[1m\u001b[34m\n┌─ PHASE 4 — GIT COMMIT & PUSH\u001b[0m\n\u001b[36m  ℹ️  Mode commit désactivé. Utiliser --commit pour activer.\u001b[0m\n\u001b[36m  ℹ️  Rapport sauvegardé: C:\\Users\\Dell\\Documents\\homey\\master\\docs\\reports\\MASTER_AUTOMATION_REPORT.json\u001b[0m\n\u001b[2m  ────────────────────────────────────────────────────────────\u001b[0m\n\u001b[1m\u001b[32m\n  ✅ PIPELINE: SUCCÈS — PRÊT POUR PUBLISH\u001b[0m\n\u001b[32m  431 drivers | 16407 fingerprints\u001b[0m"
+    },
+    {
+      "name": "sync-enrichment-profiles",
+      "label": "profiles",
+      "ok": true,
+      "exitCode": 0,
+      "durationMs": 269,
+      "tail": "{\n  \"dryRun\": false,\n  \"stats\": {\n    \"pruned\": 0,\n    \"processor\": {\n      \"usersTouched\": 0,\n      \"coupleStubs\": 0,\n      \"postsMerged\": 0,\n      \"skippedMegathread\": 1\n    },\n    \"parse\": {\n      \"usersTouched\": 0\n    }\n  }\n}\n[sync-enrichment-profiles] updated C:\\Users\\Dell\\Documents\\homey\\master\\data\\user-impact-catalog.json\n[sync-enrichment-profiles] updated C:\\Users\\Dell\\Documents\\homey\\master\\data\\dp_couple_knowledge.json"
+    },
+    {
+      "name": "sacred-couple-gate",
+      "label": "p2138",
+      "ok": true,
+      "exitCode": 0,
+      "durationMs": 423,
+      "tail": "_tuya\n  ✅ getDriverId(_TZE200_m1cvyneb, TS0601) → wall_dimmer_tuya\n  ✅ DeviceFingerprintDB.lookup(m1cvyneb, TS0601) → wall_dimmer_tuya\n  ✅ DeviceFingerprintDB.lookup(m1cvyneb, TS0201) does not invent dimmer/climate\n  ✅ PRODUCT_ID_DEFAULTS.TS0201.driver === null (no invent)\n  ✅ PRODUCT_ID_DEFAULTS.TS0207.driver === null (water vs repeater vs rain)\n  ✅ PRODUCT_ID_DEFAULTS.TS011F.driver === null (plug vs DIN vs strip)\n  ✅ compound _TZ3000_k4ej3ww2+TS0207 → water_leak_sensor\n  ✅ compound _TZ3000_5k5vh43t+TS0207 → zigbee_repeater\n  ✅ compound _TZ3000_okaz9tjs+TS011F → plug_energy_monitor\n  ✅ compound _TZE284_nt4pquef+TS0601 → soil_sensor\n  ✅ compound _TZE284_6ocnqlhn+TS0601 → din_rail_meter\n  ✅ compound _TZ3000_mrpevh8p+TS0041 → button_wireless_1\n  ✅ compound _TZ3000_zgyzgdua+TS0044 → scene_switch_4\n  ✅ compound _TZ3000_kfu8zapd+TS0044 → button_wireless_4\n  ✅ compound _TZ3000_xabckq1v+TS004F → button_wireless_4\n  ✅ compound _TZ3000_4upl1fcj+TS0041 → button_wireless_1\n  ✅ compound _TZ3000_qeuvnohg+TS011F → din_rail_switch\n  ✅ compound HOBEIAN+3315-S → water_leak_sensor\n  ✅ wall_dimmer_tuya compose lists m1cvyneb\n  ✅ wall_dimmer_tuya productId includes TS0601\n  ✅ TuyaBrightnessScale 0.5 ↔ 500\n  ✅ TuyaBrightnessScale clamps to 0–1000\n  ✅ anti-bot mentions m1cvyneb\n  ✅ anti-bot mentions climate_sensor\n  ✅ anti-bot mentions soil_sensor\n  ✅ anti-bot mentions zigbee_universal\n  ✅ anti-bot mentions wall_dimmer\n  ✅ mfs_db has no m1cvyneb|TS0201 invent\n\nPASS: P2138 sacred-couple matrix gate"
+    },
+    {
+      "name": "anti-bot-gate",
+      "label": "anti-bot",
+      "ok": true,
+      "exitCode": 0,
+      "durationMs": 1831,
+      "tail": "try:p2270-gnpflcoq-4in1-mmwave:zigbee_universal: missing driver zigbee_universal\n  ~ skip registry:p2271-tdg4ckyh-rf-cloner:zigbee_universal: missing driver zigbee_universal\n  ~ skip registry:p2271-kq1l5eu5-moes-curtain:zigbee_universal: missing driver zigbee_universal\n  ~ skip registry:p2272-bjoccxbi-rgb-cct:zigbee_universal: missing driver zigbee_universal\n  ~ skip registry:p2273-guvc7pdy-curtain-not-1gang:zigbee_universal: missing driver zigbee_universal\n  ~ skip registry:p2273-hdml1aav-soil-zs300tf:zigbee_universal: missing driver zigbee_universal\n  ~ skip registry:p2276-rccxox8p-smoke-not-climate:zigbee_universal: missing driver zigbee_universal\n  ~ skip registry:p2277-lpedvtvr-thermostat-not-climate:zigbee_universal: missing driver zigbee_universal\n  ~ skip registry:p2277-xalsoe3m-bht002-not-trv:zigbee_universal: missing driver zigbee_universal\n  ~ skip registry:p2278-ogx8u5z6-trv-cal-tenths:zigbee_universal: missing driver zigbee_universal\n  ~ skip registry:p2279-1fuxihti-cover-not-climate:zigbee_universal: missing driver zigbee_universal\n  ~ skip registry:p2291-ogkdpgy2-co2-not-climate:zigbee_universal: missing driver zigbee_universal\n  ~ skip registry:p2304-moes-zts-eur-c-curtain:zigbee_universal: missing driver zigbee_universal\n  ~ skip registry:p2304-moes-zts-eur-c-curtain:unknown_zigbee_unit: missing driver unknown_zigbee_unit\n  ~ skip registry:p2363-curtain-ef00-hybrid-timeout:zigbee_universal: missing driver zigbee_universal\n  ✅ No known bot regressions detected"
+    },
+    {
+      "name": "fp-collision-check",
+      "label": "fp-check",
+      "ok": true,
+      "exitCode": 0,
+      "durationMs": 1868,
+      "tail": "prune-fp-collision-bleed: new=0 actions=0 dry-run"
+    },
+    {
+      "name": "flow-l99",
+      "label": "flow-l99",
+      "ok": true,
+      "exitCode": 0,
+      "durationMs": 10211,
+      "tail": "{\n  \"generatedAt\": \"2026-09-01T07:56:18.707Z\",\n  \"outDir\": \"C:\\\\Users\\\\Dell\\\\Documents\\\\homey\\\\master\\\\reports\\\\flow-l99-2026-09-01\",\n  \"steps\": [\n    {\n      \"label\": \"flow-dups\",\n      \"ok\": true,\n      \"status\": 0\n    },\n    {\n      \"label\": \"flows-integrity\",\n      \"ok\": true,\n      \"status\": 0\n    },\n    {\n      \"label\": \"flow-coherence\",\n      \"ok\": true,\n      \"status\": 0\n    },\n    {\n      \"label\": \"voice-safety\",\n      \"ok\": true,\n      \"status\": 0\n    },\n    {\n      \"label\": \"dp-cluster-flow-coverage\",\n      \"ok\": true,\n      \"status\": 0\n    },\n    {\n      \"label\": \"button-flow-harvest\",\n      \"ok\": true,\n      \"status\": 0\n    }\n  ],\n  \"failCount\": 0\n}"
+    }
+  ],
+  "ok": true,
+  "baseline": {
+    "driverCount": 431,
+    "mfrEntries": 16211,
+    "pidEntries": 3070
+  },
+  "final": {
+    "driverCount": 431,
+    "mfrEntries": 16211,
+    "pidEntries": 3070
+  },
+  "delta": {
+    "drivers": 0,
+    "mfrs": 0,
+    "pids": 0
+  }
+}

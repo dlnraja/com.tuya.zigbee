@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-01T06:56:27.443Z",
+  "timestamp": "2026-09-01T12:51:49.228Z",
   "version": "9.0.771",
   "phases": {
     "1a": {
@@ -13,7 +13,7 @@
         "hybrid": 0,
         "ok": 379,
         "emptyMF": [],
-        "totalFP": 16293
+        "totalFP": 16407
       }
     },
     "1b": {
@@ -25,7 +25,7 @@
       "total": 862
     },
     "1d": {
-      "collisions": 684,
+      "collisions": 1118,
       "collisionMap": {
         "_DEPRECATED_AIR_PURIFIER_HYBRID_DO_NOT_PAIR|TS0601": [
           "air_purifier_curtain",
@@ -479,6 +479,66 @@
           "bulb_dimmable",
           "wall_dimmer_tuya"
         ],
+        "_TZ3210_4ZINQ6IO|TS0011": [
+          "bulb_dimmable",
+          "wall_dimmer_tuya"
+        ],
+        "_TZ3210_4ZINQ6IO|TS0052": [
+          "bulb_dimmable",
+          "wall_dimmer_tuya"
+        ],
+        "_TZ3210_4ZINQ6IO|TS1101": [
+          "bulb_dimmable",
+          "wall_dimmer_tuya"
+        ],
+        "_TZ3210_4ZINQ6IO|TS110E": [
+          "bulb_dimmable",
+          "wall_dimmer_tuya"
+        ],
+        "_TZ3210_4ZINQ6IO|TS110F": [
+          "bulb_dimmable",
+          "wall_dimmer_tuya"
+        ],
+        "_TZ3210_9Q49BASR|TS0011": [
+          "bulb_dimmable",
+          "wall_dimmer_tuya"
+        ],
+        "_TZ3210_9Q49BASR|TS0052": [
+          "bulb_dimmable",
+          "wall_dimmer_tuya"
+        ],
+        "_TZ3210_9Q49BASR|TS1101": [
+          "bulb_dimmable",
+          "wall_dimmer_tuya"
+        ],
+        "_TZ3210_9Q49BASR|TS110E": [
+          "bulb_dimmable",
+          "wall_dimmer_tuya"
+        ],
+        "_TZ3210_9Q49BASR|TS110F": [
+          "bulb_dimmable",
+          "wall_dimmer_tuya"
+        ],
+        "_TZ3210_E5T9BFDV|TS0011": [
+          "bulb_dimmable",
+          "wall_dimmer_tuya"
+        ],
+        "_TZ3210_E5T9BFDV|TS0052": [
+          "bulb_dimmable",
+          "wall_dimmer_tuya"
+        ],
+        "_TZ3210_E5T9BFDV|TS1101": [
+          "bulb_dimmable",
+          "wall_dimmer_tuya"
+        ],
+        "_TZ3210_E5T9BFDV|TS110E": [
+          "bulb_dimmable",
+          "wall_dimmer_tuya"
+        ],
+        "_TZ3210_E5T9BFDV|TS110F": [
+          "bulb_dimmable",
+          "wall_dimmer_tuya"
+        ],
         "_TZ3000_DBOU1AP4|TS0505A": [
           "bulb_rgb",
           "light_bulb_rgb_rgbw"
@@ -715,6 +775,10 @@
           "bulb_rgb",
           "bulb_rgbw"
         ],
+        "_TZ3210_TTKGURPB|TS0601": [
+          "bulb_rgbw",
+          "wall_dimmer_tuya"
+        ],
         "HOBEIAN|TS0001": [
           "button_wireless_1",
           "soil_sensor"
@@ -740,6 +804,34 @@
           "switch_2gang",
           "vibration_sensor",
           "water_leak_sensor"
+        ],
+        "_TZ3000_FA9MLVJA|TS0215A": [
+          "button_wireless_1",
+          "remote_button_wireless"
+        ],
+        "_TZ3000_FA9MLVJA|TS0601": [
+          "button_wireless_1",
+          "remote_button_wireless"
+        ],
+        "_TZ3000_PZUI3SKT|TS004F": [
+          "button_wireless_1",
+          "smart_knob_rotary"
+        ],
+        "_TZ3000_PZUI3SKT|TS0601": [
+          "button_wireless_1",
+          "smart_knob_rotary"
+        ],
+        "_TZ3000_AN5RJIWD|TS0001": [
+          "button_wireless_1",
+          "button_wireless_4"
+        ],
+        "_TZ3000_AN5RJIWD|TS004F": [
+          "button_wireless_1",
+          "button_wireless_4"
+        ],
+        "_TZ3000_AN5RJIWD|TS0601": [
+          "button_wireless_1",
+          "button_wireless_4"
         ],
         "_TYZB01_PHJERAQQ|TS0001": [
           "button_wireless_2",
@@ -1145,6 +1237,22 @@
           "button_wireless_2",
           "smartPlug_DinRail"
         ],
+        "_TZ3000_O005NUXX|TS0002": [
+          "button_wireless_2",
+          "usb_outlet_advanced"
+        ],
+        "_TZ3000_O005NUXX|TS011F": [
+          "button_wireless_2",
+          "usb_outlet_advanced"
+        ],
+        "_TZ3000_O005NUXX|TS0121": [
+          "button_wireless_2",
+          "usb_outlet_advanced"
+        ],
+        "_TZ3000_O005NUXX|TS0601": [
+          "button_wireless_2",
+          "usb_outlet_advanced"
+        ],
         "_TZ3000_PLYVNUF5|TS0001": [
           "button_wireless_2",
           "plug"
@@ -1164,6 +1272,30 @@
         "_TZ3000_PLYVNUF5|TS0011": [
           "button_wireless_2",
           "plug"
+        ],
+        "_TZ3000_RRJR1Q0U|TS0013": [
+          "button_wireless_2",
+          "button_wireless_3"
+        ],
+        "_TZ3000_RRJR1Q0U|TS0215A": [
+          "button_wireless_2",
+          "button_wireless_3"
+        ],
+        "_TZ3000_RRJR1Q0U|TS0601": [
+          "button_wireless_2",
+          "button_wireless_3"
+        ],
+        "_TZ3000_SJ7JBGKS|TS0013": [
+          "button_wireless_2",
+          "button_wireless_3"
+        ],
+        "_TZ3000_SJ7JBGKS|TS0215A": [
+          "button_wireless_2",
+          "button_wireless_3"
+        ],
+        "_TZ3000_SJ7JBGKS|TS0601": [
+          "button_wireless_2",
+          "button_wireless_3"
         ],
         "_TZ3000_UPJRSXH1|TS0001": [
           "button_wireless_2",
@@ -1189,9 +1321,45 @@
           "button_wireless_2",
           "socket_power_strip"
         ],
+        "_TZ3000_YW5TVZSK|TS0013": [
+          "button_wireless_2",
+          "button_wireless_3"
+        ],
+        "_TZ3000_YW5TVZSK|TS0215A": [
+          "button_wireless_2",
+          "button_wireless_3"
+        ],
+        "_TZ3000_YW5TVZSK|TS0601": [
+          "button_wireless_2",
+          "button_wireless_3"
+        ],
         "_TZE200_ZL1KMJQX|TS0601": [
           "button_wireless_2",
           "lcdtemphumidsensor_3"
+        ],
+        "_TZ3400_KEY8KK7R|TS0013": [
+          "button_wireless_2",
+          "button_wireless_3"
+        ],
+        "_TZ3400_KEY8KK7R|TS0215A": [
+          "button_wireless_2",
+          "button_wireless_3"
+        ],
+        "_TZ3400_KEY8KK7R|TS0601": [
+          "button_wireless_2",
+          "button_wireless_3"
+        ],
+        "_TZ3000_2PUTQRMW|TS011F": [
+          "button_wireless_2",
+          "smartplug"
+        ],
+        "_TZ3000_2PUTQRMW|TS0121": [
+          "button_wireless_2",
+          "smartplug"
+        ],
+        "_TZ3000_2PUTQRMW|TSO121": [
+          "button_wireless_2",
+          "smartplug"
         ],
         "_TZ3000_GBM10JNJ|TS0601": [
           "button_wireless_3",
@@ -1379,9 +1547,993 @@
           "climate_sensor",
           "presence_sensor_radar"
         ],
+        "_TZE200_1N2KYPHZ|01MINIZB": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_1N2KYPHZ|BASICZBR3": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_1N2KYPHZ|S26R2ZB": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_1N2KYPHZ|S31ZB": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_1N2KYPHZ|TS0001_POWER": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_1N2KYPHZ|TS0001_SWITCH": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_1N2KYPHZ|TS0001_SWITCH_MODULE": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_1N2KYPHZ|TS0011": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_1N2KYPHZ|TS0101": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_1N2KYPHZ|TS0726": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_1N2KYPHZ|TS110E": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_1N2KYPHZ|TS4100": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_1N2KYPHZ|ZBM5-1C-120": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_1N2KYPHZ|ZBM5-2C-120": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_1N2KYPHZ|ZBM5-3C-120": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_1N2KYPHZ|ZBMINI": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_1N2KYPHZ|ZBMINIL2": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_1N2KYPHZ|ZBMINIL2-R2": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_1N2KYPHZ|ZBMINIR": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_1N2KYPHZ|ZBMINIR2": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_1N2KYPHZ|ZBMINIR2-R2": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_1N2KYPHZ|TS0601": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_1VXGQFBA|01MINIZB": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_1VXGQFBA|BASICZBR3": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_1VXGQFBA|S26R2ZB": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_1VXGQFBA|S31ZB": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_1VXGQFBA|TS0001_POWER": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_1VXGQFBA|TS0001_SWITCH": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_1VXGQFBA|TS0001_SWITCH_MODULE": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_1VXGQFBA|TS0011": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_1VXGQFBA|TS0101": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_1VXGQFBA|TS0726": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_1VXGQFBA|TS110E": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_1VXGQFBA|TS4100": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_1VXGQFBA|ZBM5-1C-120": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_1VXGQFBA|ZBM5-2C-120": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_1VXGQFBA|ZBM5-3C-120": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_1VXGQFBA|ZBMINI": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_1VXGQFBA|ZBMINIL2": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_1VXGQFBA|ZBMINIL2-R2": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_1VXGQFBA|ZBMINIR": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_1VXGQFBA|ZBMINIR2": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_1VXGQFBA|ZBMINIR2-R2": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_1VXGQFBA|TS0601": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_CXU0JKJK|01MINIZB": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_CXU0JKJK|BASICZBR3": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_CXU0JKJK|S26R2ZB": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_CXU0JKJK|S31ZB": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_CXU0JKJK|TS0001_POWER": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_CXU0JKJK|TS0001_SWITCH": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_CXU0JKJK|TS0001_SWITCH_MODULE": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_CXU0JKJK|TS0011": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_CXU0JKJK|TS0101": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_CXU0JKJK|TS0726": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_CXU0JKJK|TS110E": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_CXU0JKJK|TS4100": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_CXU0JKJK|ZBM5-1C-120": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_CXU0JKJK|ZBM5-2C-120": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_CXU0JKJK|ZBM5-3C-120": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_CXU0JKJK|ZBMINI": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_CXU0JKJK|ZBMINIL2": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_CXU0JKJK|ZBMINIL2-R2": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_CXU0JKJK|ZBMINIR": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_CXU0JKJK|ZBMINIR2": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_CXU0JKJK|ZBMINIR2-R2": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_CXU0JKJK|TS0601": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_DNG9FN0K|01MINIZB": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_DNG9FN0K|BASICZBR3": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_DNG9FN0K|S26R2ZB": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_DNG9FN0K|S31ZB": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_DNG9FN0K|TS0001_POWER": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_DNG9FN0K|TS0001_SWITCH": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_DNG9FN0K|TS0001_SWITCH_MODULE": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_DNG9FN0K|TS0011": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_DNG9FN0K|TS0101": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_DNG9FN0K|TS0726": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_DNG9FN0K|TS110E": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_DNG9FN0K|TS4100": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_DNG9FN0K|ZBM5-1C-120": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_DNG9FN0K|ZBM5-2C-120": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_DNG9FN0K|ZBM5-3C-120": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_DNG9FN0K|ZBMINI": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_DNG9FN0K|ZBMINIL2": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_DNG9FN0K|ZBMINIL2-R2": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_DNG9FN0K|ZBMINIR": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_DNG9FN0K|ZBMINIR2": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_DNG9FN0K|ZBMINIR2-R2": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_DNG9FN0K|TS0601": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_SQ6AFFPE|01MINIZB": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_SQ6AFFPE|BASICZBR3": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_SQ6AFFPE|S26R2ZB": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_SQ6AFFPE|S31ZB": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_SQ6AFFPE|TS0001_POWER": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_SQ6AFFPE|TS0001_SWITCH": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_SQ6AFFPE|TS0001_SWITCH_MODULE": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_SQ6AFFPE|TS0011": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_SQ6AFFPE|TS0101": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_SQ6AFFPE|TS0726": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_SQ6AFFPE|TS110E": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_SQ6AFFPE|TS4100": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_SQ6AFFPE|ZBM5-1C-120": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_SQ6AFFPE|ZBM5-2C-120": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_SQ6AFFPE|ZBM5-3C-120": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_SQ6AFFPE|ZBMINI": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_SQ6AFFPE|ZBMINIL2": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_SQ6AFFPE|ZBMINIL2-R2": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_SQ6AFFPE|ZBMINIR": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_SQ6AFFPE|ZBMINIR2": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_SQ6AFFPE|ZBMINIR2-R2": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_SQ6AFFPE|TS0601": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_WRMHP6B3|01MINIZB": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_WRMHP6B3|BASICZBR3": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_WRMHP6B3|S26R2ZB": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_WRMHP6B3|S31ZB": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_WRMHP6B3|TS0001_POWER": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_WRMHP6B3|TS0001_SWITCH": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_WRMHP6B3|TS0001_SWITCH_MODULE": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_WRMHP6B3|TS0011": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_WRMHP6B3|TS0101": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_WRMHP6B3|TS0726": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_WRMHP6B3|TS110E": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_WRMHP6B3|TS4100": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_WRMHP6B3|ZBM5-1C-120": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_WRMHP6B3|ZBM5-2C-120": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_WRMHP6B3|ZBM5-3C-120": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_WRMHP6B3|ZBMINI": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_WRMHP6B3|ZBMINIL2": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_WRMHP6B3|ZBMINIL2-R2": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_WRMHP6B3|ZBMINIR": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_WRMHP6B3|ZBMINIR2": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_WRMHP6B3|ZBMINIR2-R2": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_WRMHP6B3|TS0601": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_YENBR4OM|01MINIZB": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_YENBR4OM|BASICZBR3": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_YENBR4OM|S26R2ZB": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_YENBR4OM|S31ZB": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_YENBR4OM|TS0001_POWER": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_YENBR4OM|TS0001_SWITCH": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_YENBR4OM|TS0001_SWITCH_MODULE": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_YENBR4OM|TS0011": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_YENBR4OM|TS0101": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_YENBR4OM|TS0726": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_YENBR4OM|TS110E": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_YENBR4OM|TS4100": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_YENBR4OM|ZBM5-1C-120": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_YENBR4OM|ZBM5-2C-120": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_YENBR4OM|ZBM5-3C-120": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_YENBR4OM|ZBMINI": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_YENBR4OM|ZBMINIL2": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_YENBR4OM|ZBMINIL2-R2": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_YENBR4OM|ZBMINIR": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_YENBR4OM|ZBMINIR2": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_YENBR4OM|ZBMINIR2-R2": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_YENBR4OM|TS0601": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE204_X9USYGQ1|01MINIZB": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE204_X9USYGQ1|BASICZBR3": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE204_X9USYGQ1|S26R2ZB": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE204_X9USYGQ1|S31ZB": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE204_X9USYGQ1|TS0001_POWER": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE204_X9USYGQ1|TS0001_SWITCH": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE204_X9USYGQ1|TS0001_SWITCH_MODULE": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE204_X9USYGQ1|TS0011": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE204_X9USYGQ1|TS0101": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE204_X9USYGQ1|TS0726": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE204_X9USYGQ1|TS110E": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE204_X9USYGQ1|TS4100": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE204_X9USYGQ1|ZBM5-1C-120": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE204_X9USYGQ1|ZBM5-2C-120": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE204_X9USYGQ1|ZBM5-3C-120": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE204_X9USYGQ1|ZBMINI": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE204_X9USYGQ1|ZBMINIL2": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE204_X9USYGQ1|ZBMINIL2-R2": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE204_X9USYGQ1|ZBMINIR": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE204_X9USYGQ1|ZBMINIR2": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE204_X9USYGQ1|ZBMINIR2-R2": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE204_X9USYGQ1|TS0601": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE204_ZXKWAZTM|01MINIZB": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE204_ZXKWAZTM|BASICZBR3": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE204_ZXKWAZTM|S26R2ZB": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE204_ZXKWAZTM|S31ZB": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE204_ZXKWAZTM|TS0001_POWER": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE204_ZXKWAZTM|TS0001_SWITCH": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE204_ZXKWAZTM|TS0001_SWITCH_MODULE": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE204_ZXKWAZTM|TS0011": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE204_ZXKWAZTM|TS0101": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE204_ZXKWAZTM|TS0726": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE204_ZXKWAZTM|TS110E": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE204_ZXKWAZTM|TS4100": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE204_ZXKWAZTM|ZBM5-1C-120": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE204_ZXKWAZTM|ZBM5-2C-120": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE204_ZXKWAZTM|ZBM5-3C-120": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE204_ZXKWAZTM|ZBMINI": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE204_ZXKWAZTM|ZBMINIL2": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE204_ZXKWAZTM|ZBMINIL2-R2": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE204_ZXKWAZTM|ZBMINIR": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE204_ZXKWAZTM|ZBMINIR2": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE204_ZXKWAZTM|ZBMINIR2-R2": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE204_ZXKWAZTM|TS0601": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE284_6HRNP30W|01MINIZB": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE284_6HRNP30W|BASICZBR3": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE284_6HRNP30W|S26R2ZB": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE284_6HRNP30W|S31ZB": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE284_6HRNP30W|TS0001_POWER": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE284_6HRNP30W|TS0001_SWITCH": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE284_6HRNP30W|TS0001_SWITCH_MODULE": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE284_6HRNP30W|TS0011": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE284_6HRNP30W|TS0101": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE284_6HRNP30W|TS0726": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE284_6HRNP30W|TS110E": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE284_6HRNP30W|TS4100": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE284_6HRNP30W|ZBM5-1C-120": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE284_6HRNP30W|ZBM5-2C-120": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE284_6HRNP30W|ZBM5-3C-120": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE284_6HRNP30W|ZBMINI": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE284_6HRNP30W|ZBMINIL2": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE284_6HRNP30W|ZBMINIL2-R2": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE284_6HRNP30W|ZBMINIR": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE284_6HRNP30W|ZBMINIR2": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE284_6HRNP30W|ZBMINIR2-R2": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE284_6HRNP30W|TS0601": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE284_AJUASRMX|01MINIZB": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE284_AJUASRMX|BASICZBR3": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE284_AJUASRMX|S26R2ZB": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE284_AJUASRMX|S31ZB": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE284_AJUASRMX|TS0001_POWER": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE284_AJUASRMX|TS0001_SWITCH": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE284_AJUASRMX|TS0001_SWITCH_MODULE": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE284_AJUASRMX|TS0011": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE284_AJUASRMX|TS0101": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE284_AJUASRMX|TS0726": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE284_AJUASRMX|TS110E": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE284_AJUASRMX|TS4100": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE284_AJUASRMX|ZBM5-1C-120": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE284_AJUASRMX|ZBM5-2C-120": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE284_AJUASRMX|ZBM5-3C-120": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE284_AJUASRMX|ZBMINI": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE284_AJUASRMX|ZBMINIL2": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE284_AJUASRMX|ZBMINIL2-R2": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE284_AJUASRMX|ZBMINIR": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE284_AJUASRMX|ZBMINIR2": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE284_AJUASRMX|ZBMINIR2-R2": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE284_AJUASRMX|TS0601": [
+          "climate_sensor",
+          "curtain_motor"
+        ],
+        "_TZE200_8EAZVZO6|TS0726": [
+          "climate_sensor",
+          "switch_wall_6gang"
+        ],
+        "_TZE200_8EAZVZO6|TS0601": [
+          "climate_sensor",
+          "switch_wall_6gang"
+        ],
         "_TZ3000_BPKIJO14|TS0203": [
           "contact_sensor",
           "doorwindowsensor_3"
+        ],
+        "_TZ3000_85CZD6FY|RH3001": [
+          "contact_sensor",
+          "water_leak_sensor"
+        ],
+        "_TZ3000_85CZD6FY|Q9MPFHW": [
+          "contact_sensor",
+          "water_leak_sensor"
         ],
         "TUYATEC-G3GL6CGY|TS0203": [
           "contact_sensor",
@@ -1673,6 +2825,266 @@
         "_TZE200_UJ3F4WR5|TS110E": [
           "curtain_motor",
           "curtain_motor_shutter"
+        ],
+        "_TZE200_7EUE9VHC|BASICZBR3": [
+          "curtain_motor",
+          "device_air_purifier_plug"
+        ],
+        "_TZE200_7EUE9VHC|S26R2ZB": [
+          "curtain_motor",
+          "device_air_purifier_plug"
+        ],
+        "_TZE200_7EUE9VHC|S31ZB": [
+          "curtain_motor",
+          "device_air_purifier_plug"
+        ],
+        "_TZE200_7EUE9VHC|TS011F": [
+          "curtain_motor",
+          "device_air_purifier_plug"
+        ],
+        "_TZE200_7EUE9VHC|TS0601": [
+          "curtain_motor",
+          "device_air_purifier_plug"
+        ],
+        "_TZE200_7EUE9VHC|ZBMINI": [
+          "curtain_motor",
+          "device_air_purifier_plug"
+        ],
+        "_TZE200_7EUE9VHC|ZBMINIL2": [
+          "curtain_motor",
+          "device_air_purifier_plug"
+        ],
+        "_TZE200_EQPAXQDV|TS0301": [
+          "curtain_motor",
+          "sensor_gas_presence"
+        ],
+        "_TZE200_EQPAXQDV|TS0601": [
+          "curtain_motor",
+          "sensor_gas_presence"
+        ],
+        "_TZE200_HYHL5Y36|TS0601": [
+          "curtain_motor",
+          "presence_sensor_radar"
+        ],
+        "_TZE200_HYHL5Y36|TS110E": [
+          "curtain_motor",
+          "presence_sensor_radar"
+        ],
+        "_TZE200_JFW0A4AA|TS011F": [
+          "curtain_motor",
+          "vibration_sensor"
+        ],
+        "_TZE200_JFW0A4AA|TS0601": [
+          "curtain_motor",
+          "vibration_sensor"
+        ],
+        "_TZE200_NPJ9BUG3|BASICZBR3": [
+          "curtain_motor",
+          "soil_sensor"
+        ],
+        "_TZE200_NPJ9BUG3|S26R2ZB": [
+          "curtain_motor",
+          "soil_sensor"
+        ],
+        "_TZE200_NPJ9BUG3|S31ZB": [
+          "curtain_motor",
+          "soil_sensor"
+        ],
+        "_TZE200_NPJ9BUG3|TS0001": [
+          "curtain_motor",
+          "soil_sensor"
+        ],
+        "_TZE200_NPJ9BUG3|TS0601": [
+          "curtain_motor",
+          "soil_sensor"
+        ],
+        "_TZE200_NPJ9BUG3|ZBMINI": [
+          "curtain_motor",
+          "soil_sensor"
+        ],
+        "_TZE200_NPJ9BUG3|ZBMINIL2": [
+          "curtain_motor",
+          "soil_sensor"
+        ],
+        "_TZE200_SHKXSGIS|TS0601": [
+          "curtain_motor",
+          "wall_switch_4_gang_tuya"
+        ],
+        "_TZE200_WZK0X7FQ|TS011F": [
+          "curtain_motor",
+          "vibration_sensor"
+        ],
+        "_TZE200_WZK0X7FQ|TS0601": [
+          "curtain_motor",
+          "vibration_sensor"
+        ],
+        "_TZE204_GM8H14WY|01MINIZB": [
+          "curtain_motor",
+          "switch_1gang"
+        ],
+        "_TZE204_GM8H14WY|BASICZBR3": [
+          "curtain_motor",
+          "switch_1gang"
+        ],
+        "_TZE204_GM8H14WY|S26R2ZB": [
+          "curtain_motor",
+          "switch_1gang"
+        ],
+        "_TZE204_GM8H14WY|S31ZB": [
+          "curtain_motor",
+          "switch_1gang"
+        ],
+        "_TZE204_GM8H14WY|TS0001": [
+          "curtain_motor",
+          "switch_1gang"
+        ],
+        "_TZE204_GM8H14WY|TS0001_POWER": [
+          "curtain_motor",
+          "switch_1gang"
+        ],
+        "_TZE204_GM8H14WY|TS0001_SWITCH": [
+          "curtain_motor",
+          "switch_1gang"
+        ],
+        "_TZE204_GM8H14WY|TS0001_SWITCH_MODULE": [
+          "curtain_motor",
+          "switch_1gang"
+        ],
+        "_TZE204_GM8H14WY|TS000F": [
+          "curtain_motor",
+          "switch_1gang"
+        ],
+        "_TZE204_GM8H14WY|TS0011": [
+          "curtain_motor",
+          "switch_1gang"
+        ],
+        "_TZE204_GM8H14WY|TS0012": [
+          "curtain_motor",
+          "switch_1gang"
+        ],
+        "_TZE204_GM8H14WY|TS0014": [
+          "curtain_motor",
+          "switch_1gang"
+        ],
+        "_TZE204_GM8H14WY|TS0101": [
+          "curtain_motor",
+          "switch_1gang"
+        ],
+        "_TZE204_GM8H14WY|TS0111": [
+          "curtain_motor",
+          "switch_1gang"
+        ],
+        "_TZE204_GM8H14WY|TS011F": [
+          "curtain_motor",
+          "switch_1gang"
+        ],
+        "_TZE204_GM8H14WY|TS0601": [
+          "curtain_motor",
+          "switch_1gang"
+        ],
+        "_TZE204_GM8H14WY|TS0601_GENERIC": [
+          "curtain_motor",
+          "switch_1gang"
+        ],
+        "_TZE204_GM8H14WY|TS0603": [
+          "curtain_motor",
+          "switch_1gang"
+        ],
+        "_TZE204_GM8H14WY|TS0726": [
+          "curtain_motor",
+          "switch_1gang"
+        ],
+        "_TZE204_GM8H14WY|TS110E": [
+          "curtain_motor",
+          "switch_1gang"
+        ],
+        "_TZE204_GM8H14WY|TS130F": [
+          "curtain_motor",
+          "switch_1gang"
+        ],
+        "_TZE204_GM8H14WY|TS4100": [
+          "curtain_motor",
+          "switch_1gang"
+        ],
+        "_TZE204_GM8H14WY|ZBM5-1C-120": [
+          "curtain_motor",
+          "switch_1gang"
+        ],
+        "_TZE204_GM8H14WY|ZBM5-2C-120": [
+          "curtain_motor",
+          "switch_1gang"
+        ],
+        "_TZE204_GM8H14WY|ZBM5-3C-120": [
+          "curtain_motor",
+          "switch_1gang"
+        ],
+        "_TZE204_GM8H14WY|ZBMINI": [
+          "curtain_motor",
+          "switch_1gang"
+        ],
+        "_TZE204_GM8H14WY|ZBMINIL2": [
+          "curtain_motor",
+          "switch_1gang"
+        ],
+        "_TZE204_GM8H14WY|ZBMINIL2-R2": [
+          "curtain_motor",
+          "switch_1gang"
+        ],
+        "_TZE204_GM8H14WY|ZBMINIR": [
+          "curtain_motor",
+          "switch_1gang"
+        ],
+        "_TZE204_GM8H14WY|ZBMINIR2": [
+          "curtain_motor",
+          "switch_1gang"
+        ],
+        "_TZE204_GM8H14WY|ZBMINIR2-R2": [
+          "curtain_motor",
+          "switch_1gang"
+        ],
+        "_TZE204_GM8H14WY|ZG-301Z": [
+          "curtain_motor",
+          "switch_1gang"
+        ],
+        "_TZE204_GM8H14WY|ZG-302Z1": [
+          "curtain_motor",
+          "switch_1gang"
+        ],
+        "_TZE204_SHKXSGIS|TS0601": [
+          "curtain_motor",
+          "wall_switch_4_gang_tuya"
+        ],
+        "_TZE204_YCKE4DEO|TS0601": [
+          "curtain_motor",
+          "presence_sensor_radar"
+        ],
+        "_TZE204_YCKE4DEO|TS110E": [
+          "curtain_motor",
+          "presence_sensor_radar"
+        ],
+        "_TZE284_3MZB0SDZ|TS0601": [
+          "curtain_motor",
+          "ir_blaster"
+        ],
+        "_TZE284_OZF4E02O|TS0601": [
+          "curtain_motor",
+          "presence_sensor_radar"
+        ],
+        "_TZE284_OZF4E02O|TS110E": [
+          "curtain_motor",
+          "presence_sensor_radar"
+        ],
+        "_TZE284_R3SZW0XR|TS0601": [
+          "curtain_motor",
+          "device_radiator_valve"
+        ],
+        "_TZE284_RLYTPMIJ|TS0601": [
+          "curtain_motor",
+          "presence_sensor_radar"
+        ],
+        "_TZE284_RLYTPMIJ|TS110E": [
+          "curtain_motor",
+          "presence_sensor_radar"
         ],
         "_TZE200_7BZTMFM1|TS0601": [
           "device_air_purifier_plug",
@@ -2256,6 +3668,10 @@
           "illuminance_sensor",
           "presence_sensor_radar"
         ],
+        "_TZ3290_7V1K4VUFOTPOWP9Z|TS0601": [
+          "ir_blaster",
+          "ir_remote"
+        ],
         "_TZ3210_HUZKZQYK|TS0601": [
           "lcdtemphumidluxsensor",
           "wall_dimmer_tuya"
@@ -2305,6 +3721,22 @@
           "sensor_climate_temphumidsensor"
         ],
         "_TZ3000_YWAGC4RJ|EXCELLUX": [
+          "lcdtemphumidsensor",
+          "sensor_climate_temphumidsensor"
+        ],
+        "_TZ3210_NCW88JFQ|TS0201": [
+          "lcdtemphumidsensor",
+          "sensor_climate_temphumidsensor"
+        ],
+        "_TZ3210_NCW88JFQ|TS0601": [
+          "lcdtemphumidsensor",
+          "sensor_climate_temphumidsensor"
+        ],
+        "_TZ3210_NCW88JFQ|TY0201": [
+          "lcdtemphumidsensor",
+          "sensor_climate_temphumidsensor"
+        ],
+        "_TZ3210_NCW88JFQ|EXCELLUX": [
           "lcdtemphumidsensor",
           "sensor_climate_temphumidsensor"
         ],
@@ -2664,6 +4096,102 @@
           "smoke_sensor",
           "smoke_sensor3"
         ],
+        "_TZ3000_AAIFMPUQ|TS0003": [
+          "switch_1gang",
+          "switch_2gang"
+        ],
+        "_TZ3000_AAIFMPUQ|TS000F": [
+          "switch_1gang",
+          "switch_2gang"
+        ],
+        "_TZ3000_AAIFMPUQ|TS0012": [
+          "switch_1gang",
+          "switch_2gang"
+        ],
+        "_TZ3000_AAIFMPUQ|TS0726": [
+          "switch_1gang",
+          "switch_2gang"
+        ],
+        "_TZ3000_AAIFMPUQ|TS011F": [
+          "switch_1gang",
+          "switch_2gang"
+        ],
+        "_TZ3000_AAIFMPUQ|TS0601": [
+          "switch_1gang",
+          "switch_2gang"
+        ],
+        "_TZ3000_HUVXRX4I|TS0003": [
+          "switch_1gang",
+          "switch_2gang"
+        ],
+        "_TZ3000_HUVXRX4I|TS000F": [
+          "switch_1gang",
+          "switch_2gang"
+        ],
+        "_TZ3000_HUVXRX4I|TS0012": [
+          "switch_1gang",
+          "switch_2gang"
+        ],
+        "_TZ3000_HUVXRX4I|TS0726": [
+          "switch_1gang",
+          "switch_2gang"
+        ],
+        "_TZ3000_HUVXRX4I|TS011F": [
+          "switch_1gang",
+          "switch_2gang"
+        ],
+        "_TZ3000_HUVXRX4I|TS0601": [
+          "switch_1gang",
+          "switch_2gang"
+        ],
+        "_TZ3000_IRRMJCGI|TS0003": [
+          "switch_1gang",
+          "switch_2gang"
+        ],
+        "_TZ3000_IRRMJCGI|TS000F": [
+          "switch_1gang",
+          "switch_2gang"
+        ],
+        "_TZ3000_IRRMJCGI|TS0012": [
+          "switch_1gang",
+          "switch_2gang"
+        ],
+        "_TZ3000_IRRMJCGI|TS0726": [
+          "switch_1gang",
+          "switch_2gang"
+        ],
+        "_TZ3000_IRRMJCGI|TS011F": [
+          "switch_1gang",
+          "switch_2gang"
+        ],
+        "_TZ3000_IRRMJCGI|TS0601": [
+          "switch_1gang",
+          "switch_2gang"
+        ],
+        "_TZ3000_IWTV2JWO|TS0003": [
+          "switch_1gang",
+          "switch_2gang"
+        ],
+        "_TZ3000_IWTV2JWO|TS000F": [
+          "switch_1gang",
+          "switch_2gang"
+        ],
+        "_TZ3000_IWTV2JWO|TS0012": [
+          "switch_1gang",
+          "switch_2gang"
+        ],
+        "_TZ3000_IWTV2JWO|TS0726": [
+          "switch_1gang",
+          "switch_2gang"
+        ],
+        "_TZ3000_IWTV2JWO|TS011F": [
+          "switch_1gang",
+          "switch_2gang"
+        ],
+        "_TZ3000_IWTV2JWO|TS0601": [
+          "switch_1gang",
+          "switch_2gang"
+        ],
         "_TZ3000_T7UGVA7Q|01MINIZB": [
           "switch_1gang",
           "switch_3gang"
@@ -2792,16 +4320,224 @@
           "switch_1gang",
           "switch_3gang"
         ],
+        "_TZ3000_PTJCJISE|TS0003": [
+          "switch_1gang",
+          "switch_2gang"
+        ],
+        "_TZ3000_PTJCJISE|TS000F": [
+          "switch_1gang",
+          "switch_2gang"
+        ],
+        "_TZ3000_PTJCJISE|TS0012": [
+          "switch_1gang",
+          "switch_2gang"
+        ],
+        "_TZ3000_PTJCJISE|TS0726": [
+          "switch_1gang",
+          "switch_2gang"
+        ],
+        "_TZ3000_PTJCJISE|TS011F": [
+          "switch_1gang",
+          "switch_2gang"
+        ],
+        "_TZ3000_PTJCJISE|TS0601": [
+          "switch_1gang",
+          "switch_2gang"
+        ],
+        "_TZ3000_PXFJRZYJ|TS0003": [
+          "switch_1gang",
+          "switch_2gang"
+        ],
+        "_TZ3000_PXFJRZYJ|TS000F": [
+          "switch_1gang",
+          "switch_2gang"
+        ],
+        "_TZ3000_PXFJRZYJ|TS0012": [
+          "switch_1gang",
+          "switch_2gang"
+        ],
+        "_TZ3000_PXFJRZYJ|TS0726": [
+          "switch_1gang",
+          "switch_2gang"
+        ],
+        "_TZ3000_PXFJRZYJ|TS011F": [
+          "switch_1gang",
+          "switch_2gang"
+        ],
+        "_TZ3000_PXFJRZYJ|TS0601": [
+          "switch_1gang",
+          "switch_2gang"
+        ],
+        "_TZ3210_NUENZETQ|TS0003": [
+          "switch_1gang",
+          "switch_2gang"
+        ],
+        "_TZ3210_NUENZETQ|TS000F": [
+          "switch_1gang",
+          "switch_2gang"
+        ],
+        "_TZ3210_NUENZETQ|TS0012": [
+          "switch_1gang",
+          "switch_2gang"
+        ],
+        "_TZ3210_NUENZETQ|TS0726": [
+          "switch_1gang",
+          "switch_2gang"
+        ],
+        "_TZ3210_NUENZETQ|TS011F": [
+          "switch_1gang",
+          "switch_2gang"
+        ],
+        "_TZ3210_NUENZETQ|TS0601": [
+          "switch_1gang",
+          "switch_2gang"
+        ],
         "HOBEIAN|TS011F": [
           "switch_2gang",
           "vibration_sensor"
+        ],
+        "_TZ3000_KYB656NO|3315-S": [
+          "water_leak_sensor",
+          "water_leak_sensor_tuya"
+        ],
+        "_TZ3000_KYB656NO|3315-SEU": [
+          "water_leak_sensor",
+          "water_leak_sensor_tuya"
+        ],
+        "_TZ3000_KYB656NO|CK-TLSR8656-SS5-01(7019)": [
+          "water_leak_sensor",
+          "water_leak_sensor_tuya"
+        ],
+        "_TZ3000_KYB656NO|HS1WL": [
+          "water_leak_sensor",
+          "water_leak_sensor_tuya"
+        ],
+        "_TZ3000_KYB656NO|LS21001": [
+          "water_leak_sensor",
+          "water_leak_sensor_tuya"
+        ],
+        "_TZ3000_KYB656NO|SJCGQ11LM": [
+          "water_leak_sensor",
+          "water_leak_sensor_tuya"
+        ],
+        "_TZ3000_KYB656NO|SJCGQ12LM": [
+          "water_leak_sensor",
+          "water_leak_sensor_tuya"
+        ],
+        "_TZ3000_KYB656NO|SJCGQ13LM": [
+          "water_leak_sensor",
+          "water_leak_sensor_tuya"
+        ],
+        "_TZ3000_KYB656NO|SNZB-05": [
+          "water_leak_sensor",
+          "water_leak_sensor_tuya"
+        ],
+        "_TZ3000_KYB656NO|SNZB-05P": [
+          "water_leak_sensor",
+          "water_leak_sensor_tuya"
+        ],
+        "_TZ3000_KYB656NO|SQ510A": [
+          "water_leak_sensor",
+          "water_leak_sensor_tuya"
+        ],
+        "_TZ3000_KYB656NO|ZG-222Z": [
+          "water_leak_sensor",
+          "water_leak_sensor_tuya"
+        ],
+        "_TZ3000_KYB656NO|_TZ3000_EIT6L5": [
+          "water_leak_sensor",
+          "water_leak_sensor_tuya"
+        ],
+        "_TZ3000_KYB656NO|_TZ3000_KYB656NO": [
+          "water_leak_sensor",
+          "water_leak_sensor_tuya"
+        ],
+        "_TZ3000_KYB656NO|LUMI.SENSOR_WLEAK.AQ1": [
+          "water_leak_sensor",
+          "water_leak_sensor_tuya"
+        ],
+        "_TZ3000_KYB656NO|Q9MPFHW": [
+          "water_leak_sensor",
+          "water_leak_sensor_tuya"
+        ],
+        "_TZ3000_KYB656NO|TS0601": [
+          "water_leak_sensor",
+          "water_leak_sensor_tuya"
+        ],
+        "_TZ3000_WW9I3E0Y|3315-S": [
+          "water_leak_sensor",
+          "water_leak_sensor_tuya"
+        ],
+        "_TZ3000_WW9I3E0Y|3315-SEU": [
+          "water_leak_sensor",
+          "water_leak_sensor_tuya"
+        ],
+        "_TZ3000_WW9I3E0Y|CK-TLSR8656-SS5-01(7019)": [
+          "water_leak_sensor",
+          "water_leak_sensor_tuya"
+        ],
+        "_TZ3000_WW9I3E0Y|HS1WL": [
+          "water_leak_sensor",
+          "water_leak_sensor_tuya"
+        ],
+        "_TZ3000_WW9I3E0Y|LS21001": [
+          "water_leak_sensor",
+          "water_leak_sensor_tuya"
+        ],
+        "_TZ3000_WW9I3E0Y|SJCGQ11LM": [
+          "water_leak_sensor",
+          "water_leak_sensor_tuya"
+        ],
+        "_TZ3000_WW9I3E0Y|SJCGQ12LM": [
+          "water_leak_sensor",
+          "water_leak_sensor_tuya"
+        ],
+        "_TZ3000_WW9I3E0Y|SJCGQ13LM": [
+          "water_leak_sensor",
+          "water_leak_sensor_tuya"
+        ],
+        "_TZ3000_WW9I3E0Y|SNZB-05": [
+          "water_leak_sensor",
+          "water_leak_sensor_tuya"
+        ],
+        "_TZ3000_WW9I3E0Y|SNZB-05P": [
+          "water_leak_sensor",
+          "water_leak_sensor_tuya"
+        ],
+        "_TZ3000_WW9I3E0Y|SQ510A": [
+          "water_leak_sensor",
+          "water_leak_sensor_tuya"
+        ],
+        "_TZ3000_WW9I3E0Y|ZG-222Z": [
+          "water_leak_sensor",
+          "water_leak_sensor_tuya"
+        ],
+        "_TZ3000_WW9I3E0Y|_TZ3000_EIT6L5": [
+          "water_leak_sensor",
+          "water_leak_sensor_tuya"
+        ],
+        "_TZ3000_WW9I3E0Y|_TZ3000_KYB656NO": [
+          "water_leak_sensor",
+          "water_leak_sensor_tuya"
+        ],
+        "_TZ3000_WW9I3E0Y|LUMI.SENSOR_WLEAK.AQ1": [
+          "water_leak_sensor",
+          "water_leak_sensor_tuya"
+        ],
+        "_TZ3000_WW9I3E0Y|Q9MPFHW": [
+          "water_leak_sensor",
+          "water_leak_sensor_tuya"
+        ],
+        "_TZ3000_WW9I3E0Y|TS0601": [
+          "water_leak_sensor",
+          "water_leak_sensor_tuya"
         ]
       }
     }
   },
   "errors": [],
   "warnings": [
-    "COLLISIONS: 684"
+    "COLLISIONS: 1118"
   ],
   "fixes": [],
   "stats": {
@@ -2812,7 +4548,7 @@
     "hybrid": 0,
     "ok": 379,
     "emptyMF": [],
-    "totalFP": 16293
+    "totalFP": 16407
   },
   "conclusion": "PASS"
 }
