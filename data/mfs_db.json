@@ -32,7 +32,7 @@
       "realMfrsAdded": 5,
       "details": "tmp/synthetic-resolution.json + tmp/pruned21-resolution.json"
     },
-    "lastAlignedAt": "2026-08-31T11:16:31.074Z",
+    "lastAlignedAt": "2026-09-01T01:47:00.505Z",
     "alignTool": "align-mfs-db-intelligent@P169"
   },
   "sources": {
@@ -134328,30 +134328,13 @@
     "modelIdsCount": 18
   },
   "_TZ3000_w0qqde0g": {
-    "driverId": "smartplug",
-    "source": "compose-exclusive",
+    "driverId": "plug_energy_monitor",
+    "source": "registry:p2361-w0qqde0g-ts011f-plug-not-button",
     "modelIds": [
-      "TS0001",
-      "TS0002",
-      "TS0003",
-      "TS000F",
-      "TS0011",
-      "TS0012",
-      "TS0013",
-      "TS0014",
-      "TS0041",
-      "TS0042",
-      "TS0043",
-      "TS0044",
-      "TS0111",
-      "TS011F",
-      "TS0121",
-      "TS0215A",
-      "TS0601",
-      "TSO121"
+      "TS011F"
     ],
-    "pid": "TS0001",
-    "modelIdsCount": 18
+    "pid": "TS011F",
+    "modelIdsCount": 1
   },
   "_TZ3000_typdpdpg": {
     "driverId": "smartplug",
@@ -137515,7 +137498,7 @@
   },
   "_tz3210_w0qqde0g": {
     "driverId": "plug_energy_monitor",
-    "source": "p2362-sacred-couple",
+    "source": "registry:p2361-w0qqde0g-ts011f-plug-not-button",
     "modelIds": [
       "TS011F"
     ],
@@ -327748,7 +327731,7 @@
   },
   "_TZ3000_wkai4ga5": {
     "driverId": "scene_switch_4",
-    "source": "p2353-exact-case",
+    "source": "registry:p2328-wkai4ga5-ts0044-scene",
     "modelIds": [
       "TS0044"
     ],
@@ -327770,7 +327753,7 @@
   },
   "_TZ3000_zgyzgdua": {
     "driverId": "scene_switch_4",
-    "source": "p2353-exact-case",
+    "source": "registry:p2236-zgyzgdua-ts0044-scene",
     "modelIds": [
       "TS0044"
     ],
@@ -327779,7 +327762,7 @@
   },
   "_TZ3000_kfu8zapd": {
     "driverId": "button_wireless_4",
-    "source": "p2353-exact-case",
+    "source": "registry:p2236-kfu8zapd-ts0044f",
     "modelIds": [
       "TS0044",
       "TS004F"
