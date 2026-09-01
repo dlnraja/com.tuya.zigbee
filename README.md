@@ -35,15 +35,13 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 |--------|-------|
 | **App Version** | v9.0.771 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
-| **Unique Fingerprints** | 4,364 |
-| **Pairing Variants** | 16,162 (4 case combos per fingerprint) |
 | **Unique Fingerprints** | 4,383 |
-| **Pairing Variants** | 16,200 (4 case combos per fingerprint) |
+| **Pairing Variants** | 16,205 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 576 |
-| **Flow Cards** | 5,198 |
+| **Flow Cards** | 5,243 |
 | **Unique Capabilities** | 170 |
 | **Native OTA Drivers** | 9 |
-| **Test Suites** | 205 files |
+| **Test Suites** | 210 files |
 | **SVG Icons** | 731 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK / Homey** | 3 / >= 12.2.0 |
@@ -58,7 +56,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | 3 | `presence_sensor_radar` | 731 |
 | 4 | `radiator_valve` | 599 |
 | 5 | `button_wireless_2` | 564 |
-| 6 | `curtain_motor` | 549 |
+| 6 | `curtain_motor` | 550 |
 | 7 | `wall_dimmer_tuya` | 490 |
 | 8 | `generic_tuya` | 415 |
 | 9 | `device_radiator_valve` | 334 |
@@ -71,8 +69,8 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | 16 | `soil_sensor` | 187 |
 | 17 | `sensor_contact_zigbee` | 182 |
 | 18 | `water_leak_sensor_tuya` | 178 |
-| 19 | `usb_dongle_triple` | 164 |
-| 20 | `contact_sensor` | 161 |
+| 19 | `contact_sensor` | 165 |
+| 20 | `usb_dongle_triple` | 164 |
 
 ### Drivers by Device Class
 
