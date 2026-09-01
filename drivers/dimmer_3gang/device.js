@@ -4,6 +4,7 @@ const { safeSetTimeout, safeClearTimeout } = require('../../lib/utils/safe-timer
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 const { safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
+const { toTuyaBrightness } = require('../../lib/tuya/TuyaBrightnessScale');
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 const UnifiedSwitchBase = require('../../lib/devices/UnifiedSwitchBase');
 
@@ -38,7 +39,7 @@ class Dimmer3GangDevice extends UnifiedSwitchBase {
       if (this.hasCapability(item.cap)) {
         this.registerCapabilityListener(item.cap, async (value) => {
           this._markAppCommand();
-          const targetValue = item.type === 'bool' ? value ? 1 : 0 : Math.round(value      * 1000);
+          const targetValue = item.type === 'bool' ? value ? 1 : 0 : toTuyaBrightness(value);
           this.log(`Sending DP${item.dp} = ${targetValue}`);
       });
       }

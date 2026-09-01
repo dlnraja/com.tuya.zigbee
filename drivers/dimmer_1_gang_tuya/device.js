@@ -7,6 +7,7 @@ const TuyaSpecificCluster = require('../../lib/TuyaSpecificCluster');
 const TuyaSpecificClusterDevice = require('../../lib/TuyaSpecificClusterDevice');
 const { getDataValue } = require('../../lib/TuyaHelpers');
 const { V1_SINGLE_GANG_DIMMER_SWITCH_DATA_POINTS } = require('../../lib/TuyaDataPoints');
+const { toTuyaBrightness, fromTuyaBrightness } = require('../../lib/tuya/TuyaBrightnessScale');
 
 Cluster.addCluster(TuyaSpecificCluster);
 
@@ -79,7 +80,8 @@ class dimmer_1_gang_tuya extends TuyaSpecificClusterDevice {
     });
 
     this.registerCapabilityListener('dim', async (value) => {
-      const brightness = Math.floor(value * 1000); // Scale to 0-1000
+      // WHY(P2360): MCU brightness 0–1000 clamp (Z2M #32305) — never raw *1000 overflow
+      const brightness = toTuyaBrightness(value);
       this.log('brightness:', brightness);
       
       try {
@@ -123,7 +125,7 @@ class dimmer_1_gang_tuya extends TuyaSpecificClusterDevice {
 
       case V1_SINGLE_GANG_DIMMER_SWITCH_DATA_POINTS.brightness:
         this.log('Received dim level:', parsedValue);
-        await this['safeSetCapabilityValue']('dim', parsedValue / 1000).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
+        await this['safeSetCapabilityValue']('dim', fromTuyaBrightness(parsedValue)).catch(this._boundError || ((e) => { try { this.error(e); } catch (_) {} }));
         break;
 
       default:
