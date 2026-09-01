@@ -2828,5 +2828,8 @@
   },
   "9.0.763": {
     "en": "Locked TS011F plug fingerprints away from wireless buttons (mfs + case variants)."
+  },
+  "9.0.765": {
+    "en": "Locked TS011F plug fingerprints in mfs_db so bots cannot re-route them to wireless buttons."
   }
 }
