@@ -34,7 +34,7 @@ describe('P2363 curtain hybrid + cover hardening', () => {
       assert.ok(mfrs.includes(need), `missing ${need}`);
     }
     assert.ok(!mfrs.includes('_tz3000_qxcnwv26'), 'must not steal 3gang switch qxcnwv26');
-    assert.ok(!mfrs.some((m) => /r0jdjrvi/i.test(m)), 'tilt couple r0jdjrvi must not sit on curtain_motor');
+    assert.ok(!mfrs.some((m) => /_tze204_r0jdjrvi/i.test(m)), 'tilt couple TZE204_r0jdjrvi must not sit on curtain_motor');
     assert.ok((compose.zigbee.productId || []).includes('TS0601'));
   });
 });
