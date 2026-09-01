@@ -1392,5 +1392,8 @@
   },
   "5.12.115": {
     "en": "Exclusive plug routing for TS011F w0qqde0g fingerprints (energy monitor only)."
+  },
+  "5.12.116": {
+    "en": "Improved curtain motors: EF00 RX hardening, timeout-safe position updates, and more verified cover fingerprints."
   }
 }
