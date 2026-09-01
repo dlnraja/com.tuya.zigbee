@@ -4819,6 +4819,14 @@
       ]
     },
     {
+      "key": "hobeian|TY0201",
+      "drivers": [
+        "climate_sensor",
+        "presence_sensor_radar"
+      ],
+      "reason": "HOBEIAN brand cartesian; runtime routes ZG-227Z climate vs ZG-204Z presence"
+    },
+    {
       "key": "hobeian|TS0726",
       "drivers": [
         "climate_sensor",
