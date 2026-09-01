@@ -43,8 +43,8 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Humidity changed",
-        "fr": "Humidité changée"
+        "en": "Humidity changed ({humidity})",
+        "fr": "Humidité changée ({humidity})"
       }
     },
     {
@@ -66,8 +66,8 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Temperature changed",
-        "fr": "Température changée"
+        "en": "Temperature changed ({temperature})",
+        "fr": "Température changée ({temperature})"
       }
     },
     {
@@ -89,8 +89,8 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Power changed",
-        "fr": "Puissance changée"
+        "en": "Power changed ({power})",
+        "fr": "Puissance changée ({power})"
       }
     },
     {
@@ -195,6 +195,64 @@
         "fr": "Batterie faible",
         "nl": "Batterij laag",
         "de": "Batterie schwach"
+      }
+    },
+    {
+      "id": "device_din_rail_meter_motion_alarm",
+      "title": {
+        "en": "Motion alarm",
+        "fr": "Alarme mouvement"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Motion detected",
+        "fr": "Mouvement détecté"
+      }
+    },
+    {
+      "id": "device_din_rail_meter_voltage_changed",
+      "title": {
+        "en": "Voltage changed",
+        "fr": "Tension changée"
+      },
+      "tokens": [
+        {
+          "name": "voltage",
+          "type": "number",
+          "title": {
+            "en": "Voltage (V)",
+            "fr": "Tension (V)"
+          },
+          "example": 230
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Voltage changed to {voltage} V",
+        "fr": "Tension {voltage} V"
+      }
+    },
+    {
+      "id": "device_din_rail_meter_current_changed",
+      "title": {
+        "en": "Current changed",
+        "fr": "Courant changé"
+      },
+      "tokens": [
+        {
+          "name": "current",
+          "type": "number",
+          "title": {
+            "en": "Current (A)",
+            "fr": "Courant (A)"
+          },
+          "example": 0.5
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Current changed to {current} A",
+        "fr": "Courant {current} A"
       }
     }
   ],

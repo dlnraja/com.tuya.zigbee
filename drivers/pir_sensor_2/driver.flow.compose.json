@@ -47,6 +47,29 @@
         "nl": "Batterij laag",
         "de": "Batterie schwach"
       }
+    },
+    {
+      "id": "pir_sensor_2_voltage_changed",
+      "title": {
+        "en": "Voltage changed",
+        "fr": "Tension changée"
+      },
+      "tokens": [
+        {
+          "name": "voltage",
+          "type": "number",
+          "title": {
+            "en": "Voltage (V)",
+            "fr": "Tension (V)"
+          },
+          "example": 230
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Voltage changed to {voltage} V",
+        "fr": "Tension {voltage} V"
+      }
     }
   ],
   "conditions": [
@@ -66,5 +89,6 @@
         "de": "Bewegung !{{wird|wird nicht}} erkannt"
       }
     }
-  ]
+  ],
+  "actions": []
 }

@@ -34,15 +34,15 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Button pressed",
-        "fr": "Bouton appuyé",
-        "nl": "Knop ingedrukt",
-        "de": "Taste gedrückt",
-        "it": "Pulsante premuto",
-        "sv": "Knapp tryckt",
-        "no": "Knapp trykket",
-        "es": "Botón presionado",
-        "da": "Knap trykket"
+        "en": "Button pressed ({button})",
+        "fr": "Bouton appuyé ({button})",
+        "nl": "Knop ingedrukt ({button})",
+        "de": "Taste gedrückt ({button})",
+        "it": "Pulsante premuto ({button})",
+        "sv": "Knapp tryckt ({button})",
+        "no": "Knapp trykket ({button})",
+        "es": "Botón presionado ({button})",
+        "da": "Knap trykket ({button})"
       }
     },
     {
@@ -78,15 +78,15 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Button double-pressed",
-        "fr": "Bouton double-cliqué",
-        "nl": "Knop dubbel ingedrukt",
-        "de": "Taste doppelt gedrückt",
-        "it": "Pulsante premuto due volte",
-        "sv": "Knapp dubbeltryckt",
-        "no": "Knapp dobbeltrykket",
-        "es": "Botón presionado dos veces",
-        "da": "Knap dobbeltklikket"
+        "en": "Button double-pressed ({button})",
+        "fr": "Bouton double-cliqué ({button})",
+        "nl": "Knop dubbel ingedrukt ({button})",
+        "de": "Taste doppelt gedrückt ({button})",
+        "it": "Pulsante premuto due volte ({button})",
+        "sv": "Knapp dubbeltryckt ({button})",
+        "no": "Knapp dobbeltrykket ({button})",
+        "es": "Botón presionado dos veces ({button})",
+        "da": "Knap dobbeltklikket ({button})"
       }
     },
     {
@@ -122,15 +122,15 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Button long-pressed",
-        "fr": "Bouton pressé longtemps",
-        "nl": "Knop lang ingedrukt",
-        "de": "Taste lange gedrückt",
-        "it": "Pulsante premuto a lungo",
-        "sv": "Knapp långtryckt",
-        "no": "Knapp langttrykket",
-        "es": "Botón presionado largo",
-        "da": "Knap langt trykket"
+        "en": "Button long-pressed ({button})",
+        "fr": "Bouton pressé longtemps ({button})",
+        "nl": "Knop lang ingedrukt ({button})",
+        "de": "Taste lange gedrückt ({button})",
+        "it": "Pulsante premuto a lungo ({button})",
+        "sv": "Knapp långtryckt ({button})",
+        "no": "Knapp langttrykket ({button})",
+        "es": "Botón presionado largo ({button})",
+        "da": "Knap langt trykket ({button})"
       }
     },
     {
@@ -182,15 +182,15 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Button multi-pressed",
-        "fr": "Bouton multi-cliqué",
-        "nl": "Knop meerdere keren ingedrukt",
-        "de": "Taste mehrfach gedrückt",
-        "it": "Pulsante premuto più volte",
-        "sv": "Knapp flertryck",
-        "no": "Knapp flertrykk",
-        "es": "Botón presionado múltiple",
-        "da": "Knap flertrykket"
+        "en": "Button multi-pressed ({button}) ({count})",
+        "fr": "Bouton multi-cliqué ({button}) ({count})",
+        "nl": "Knop meerdere keren ingedrukt ({button}) ({count})",
+        "de": "Taste mehrfach gedrückt ({button}) ({count})",
+        "it": "Pulsante premuto più volte ({button}) ({count})",
+        "sv": "Knapp flertryck ({button}) ({count})",
+        "no": "Knapp flertrykk ({button}) ({count})",
+        "es": "Botón presionado múltiple ({button}) ({count})",
+        "da": "Knap flertrykket ({button}) ({count})"
       }
     },
     {
@@ -515,5 +515,7 @@
         "de": "Batterie schwach"
       }
     }
-  ]
+  ],
+  "conditions": [],
+  "actions": []
 }

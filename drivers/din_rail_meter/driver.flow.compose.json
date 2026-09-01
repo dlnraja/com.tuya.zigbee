@@ -34,8 +34,8 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Voltage changed",
-        "fr": "Tension changée"
+        "en": "Voltage changed ({voltage})",
+        "fr": "Tension changée ({voltage})"
       }
     },
     {
@@ -56,8 +56,8 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Current changed",
-        "fr": "Courant changé"
+        "en": "Current changed ({current})",
+        "fr": "Courant changé ({current})"
       }
     },
     {
@@ -78,8 +78,8 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Energy consumption changed",
-        "fr": "Consommation changée"
+        "en": "Energy consumption changed ({energy})",
+        "fr": "Consommation changée ({energy})"
       }
     }
   ],

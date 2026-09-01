@@ -90,10 +90,10 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Battery level changed",
-        "nl": "Batterijniveau veranderd",
-        "fr": "Niveau batterie changé",
-        "de": "Batteriestand geändert"
+        "en": "Battery level changed ({battery})",
+        "nl": "Batterijniveau veranderd ({battery})",
+        "fr": "Niveau batterie changé ({battery})",
+        "de": "Batteriestand geändert ({battery})"
       }
     },
     {
@@ -147,10 +147,10 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Left open for duration",
-        "nl": "Te lang open gelaten",
-        "fr": "Resté ouvert trop longtemps",
-        "de": "Zu lange offen gelassen"
+        "en": "Left open for duration ({duration})",
+        "nl": "Te lang open gelaten ({duration})",
+        "fr": "Resté ouvert trop longtemps ({duration})",
+        "de": "Zu lange offen gelassen ({duration})"
       }
     },
     {
@@ -183,6 +183,29 @@
         "fr": "Alarme sabotage",
         "nl": "Sabotagealarm",
         "de": "Manipulationsalarm"
+      }
+    },
+    {
+      "id": "contact_sensor_illuminance_changed",
+      "title": {
+        "en": "Illuminance changed",
+        "fr": "Luminosité ambiante changée"
+      },
+      "tokens": [
+        {
+          "name": "lux",
+          "type": "number",
+          "title": {
+            "en": "Lux",
+            "fr": "Lux"
+          },
+          "example": 300
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Illuminance changed to {lux} lux",
+        "fr": "Luminosité {lux} lux"
       }
     }
   ],
@@ -262,5 +285,6 @@
         "de": "Manipulation !{{ist|ist nicht}} aktiv"
       }
     }
-  ]
+  ],
+  "actions": []
 }

@@ -90,10 +90,10 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Battery level changed",
-        "nl": "Batterijniveau veranderd",
-        "fr": "Niveau batterie changé",
-        "de": "Batteriestand geändert"
+        "en": "Battery level changed ({battery})",
+        "nl": "Batterijniveau veranderd ({battery})",
+        "fr": "Niveau batterie changé ({battery})",
+        "de": "Batteriestand geändert ({battery})"
       }
     },
     {

@@ -117,10 +117,10 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Battery level changed",
-        "nl": "Batterijniveau veranderd",
-        "fr": "Niveau batterie changé",
-        "de": "Batteriestand geÃ¤ndert"
+        "en": "Battery level changed ({battery})",
+        "nl": "Batterijniveau veranderd ({battery})",
+        "fr": "Niveau batterie changé ({battery})",
+        "de": "Batteriestand geÃ¤ndert ({battery})"
       }
     },
     {
@@ -169,6 +169,52 @@
         "fr": "Alarme gaz",
         "nl": "Gasalarm",
         "de": "Gasalarm"
+      }
+    },
+    {
+      "id": "climate_sensor_gas_temperature_changed",
+      "title": {
+        "en": "Temperature changed",
+        "fr": "Température changée"
+      },
+      "tokens": [
+        {
+          "name": "temperature",
+          "type": "number",
+          "title": {
+            "en": "Temperature (°C)",
+            "fr": "Température (°C)"
+          },
+          "example": 22.5
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Temperature changed to {temperature}°C",
+        "fr": "Température {temperature}°C"
+      }
+    },
+    {
+      "id": "climate_sensor_gas_humidity_changed",
+      "title": {
+        "en": "Humidity changed",
+        "fr": "Humidité changée"
+      },
+      "tokens": [
+        {
+          "name": "humidity",
+          "type": "number",
+          "title": {
+            "en": "Humidity (%)",
+            "fr": "Humidité (%)"
+          },
+          "example": 55
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Humidity changed to {humidity}%",
+        "fr": "Humidité {humidity}%"
       }
     }
   ],

@@ -19,8 +19,8 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Position changed",
-        "fr": "Position changée"
+        "en": "Position changed ({position})",
+        "fr": "Position changée ({position})"
       }
     },
     {
@@ -85,6 +85,29 @@
         "fr": "Batterie faible",
         "nl": "Batterij laag",
         "de": "Batterie schwach"
+      }
+    },
+    {
+      "id": "shutter_roller_controller_brightness_changed",
+      "title": {
+        "en": "Brightness changed",
+        "fr": "Luminosité changée"
+      },
+      "tokens": [
+        {
+          "name": "brightness",
+          "type": "number",
+          "title": {
+            "en": "Brightness (%)",
+            "fr": "Luminosité (%)"
+          },
+          "example": 80
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Brightness changed to {brightness}%",
+        "fr": "Luminosité {brightness}%"
       }
     }
   ],

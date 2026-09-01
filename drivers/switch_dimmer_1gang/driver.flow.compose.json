@@ -52,10 +52,10 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Brightness changed",
-        "fr": "Luminosité changée",
-        "nl": "Helderheid gewijzigd",
-        "de": "Helligkeit geändert"
+        "en": "Brightness changed ({dim})",
+        "fr": "Luminosité changée ({dim})",
+        "nl": "Helderheid gewijzigd ({dim})",
+        "de": "Helligkeit geändert ({dim})"
       }
     },
     {
@@ -75,7 +75,7 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Brightness increased - physical"
+        "en": "Brightness increased - physical ({brightness})"
       }
     },
     {
@@ -95,7 +95,7 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Brightness decreased - physical"
+        "en": "Brightness decreased - physical ({brightness})"
       }
     },
     {

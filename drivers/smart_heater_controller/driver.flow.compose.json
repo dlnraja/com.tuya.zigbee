@@ -127,6 +127,52 @@
         "nl": "Vermogen gewijzigd",
         "de": "Leistung geändert"
       }
+    },
+    {
+      "id": "smart_heater_controller_target_temperature_changed",
+      "title": {
+        "en": "Target temperature changed",
+        "fr": "Consigne changée"
+      },
+      "tokens": [
+        {
+          "name": "temperature",
+          "type": "number",
+          "title": {
+            "en": "Target (°C)",
+            "fr": "Consigne (°C)"
+          },
+          "example": 21
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Target temperature changed to {temperature}°C",
+        "fr": "Consigne {temperature}°C"
+      }
+    },
+    {
+      "id": "smart_heater_controller_meter_power_changed",
+      "title": {
+        "en": "Energy changed",
+        "fr": "Énergie changée"
+      },
+      "tokens": [
+        {
+          "name": "energy",
+          "type": "number",
+          "title": {
+            "en": "Energy (kWh)",
+            "fr": "Énergie (kWh)"
+          },
+          "example": 1.2
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Energy changed to {energy} kWh",
+        "fr": "Énergie {energy} kWh"
+      }
     }
   ],
   "conditions": [

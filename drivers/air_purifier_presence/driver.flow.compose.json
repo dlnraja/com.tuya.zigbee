@@ -90,10 +90,10 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Illuminance changed",
-        "nl": "Lichtsterkte veranderd",
-        "fr": "Luminosité changée",
-        "de": "Helligkeit geÃ¤ndert"
+        "en": "Illuminance changed ({lux})",
+        "nl": "Lichtsterkte veranderd ({lux})",
+        "fr": "Luminosité changée ({lux})",
+        "de": "Helligkeit geÃ¤ndert ({lux})"
       }
     },
     {
@@ -119,10 +119,10 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Detection distance changed",
-        "nl": "Detectieafstand veranderd",
-        "fr": "Distance de détection changée",
-        "de": "Erkennungsabstand geÃ¤ndert"
+        "en": "Detection distance changed ({distance})",
+        "nl": "Detectieafstand veranderd ({distance})",
+        "fr": "Distance de détection changée ({distance})",
+        "de": "Erkennungsabstand geÃ¤ndert ({distance})"
       }
     },
     {
@@ -155,6 +155,98 @@
         "fr": "Batterie faible",
         "nl": "Batterij laag",
         "de": "Batterie schwach"
+      }
+    },
+    {
+      "id": "air_purifier_presence_temperature_changed",
+      "title": {
+        "en": "Temperature changed",
+        "fr": "Température changée"
+      },
+      "tokens": [
+        {
+          "name": "temperature",
+          "type": "number",
+          "title": {
+            "en": "Temperature (°C)",
+            "fr": "Température (°C)"
+          },
+          "example": 22.5
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Temperature changed to {temperature}°C",
+        "fr": "Température {temperature}°C"
+      }
+    },
+    {
+      "id": "air_purifier_presence_humidity_changed",
+      "title": {
+        "en": "Humidity changed",
+        "fr": "Humidité changée"
+      },
+      "tokens": [
+        {
+          "name": "humidity",
+          "type": "number",
+          "title": {
+            "en": "Humidity (%)",
+            "fr": "Humidité (%)"
+          },
+          "example": 55
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Humidity changed to {humidity}%",
+        "fr": "Humidité {humidity}%"
+      }
+    },
+    {
+      "id": "air_purifier_presence_brightness_changed",
+      "title": {
+        "en": "Brightness changed",
+        "fr": "Luminosité changée"
+      },
+      "tokens": [
+        {
+          "name": "brightness",
+          "type": "number",
+          "title": {
+            "en": "Brightness (%)",
+            "fr": "Luminosité (%)"
+          },
+          "example": 80
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Brightness changed to {brightness}%",
+        "fr": "Luminosité {brightness}%"
+      }
+    },
+    {
+      "id": "air_purifier_presence_pm25_changed",
+      "title": {
+        "en": "PM2.5 changed",
+        "fr": "PM2.5 changé"
+      },
+      "tokens": [
+        {
+          "name": "pm25",
+          "type": "number",
+          "title": {
+            "en": "PM2.5",
+            "fr": "PM2.5"
+          },
+          "example": 12
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "PM2.5 changed to {pm25}",
+        "fr": "PM2.5 {pm25}"
       }
     }
   ],

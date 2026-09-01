@@ -112,10 +112,10 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Power consumption changed",
-        "nl": "Stroomverbruik gewijzigd",
-        "fr": "Consommation changée",
-        "de": "Stromverbrauch geändert"
+        "en": "Power consumption changed ({power}) ({voltage}) ({current})",
+        "nl": "Stroomverbruik gewijzigd ({power}) ({voltage}) ({current})",
+        "fr": "Consommation changée ({power}) ({voltage}) ({current})",
+        "de": "Stromverbrauch geändert ({power}) ({voltage}) ({current})"
       }
     },
     {
@@ -149,10 +149,10 @@
         }
       ],
       "titleFormatted": {
-        "en": "Power exceeds threshold [[threshold]]",
-        "nl": "Vermogen overschrijdt drempel [[threshold]]",
-        "fr": "Puissance dépasse seuil [[threshold]]",
-        "de": "Leistung überschreitet Schwelle [[threshold]]"
+        "en": "Power exceeds threshold [[threshold]] ({power})",
+        "nl": "Vermogen overschrijdt drempel [[threshold]] ({power})",
+        "fr": "Puissance dépasse seuil [[threshold]] ({power})",
+        "de": "Leistung überschreitet Schwelle [[threshold]] ({power})"
       }
     },
     {
@@ -169,6 +169,75 @@
         "fr": "Batterie faible",
         "nl": "Batterij laag",
         "de": "Batterie schwach"
+      }
+    },
+    {
+      "id": "plug_smart_meter_power_changed",
+      "title": {
+        "en": "Energy changed",
+        "fr": "Énergie changée"
+      },
+      "tokens": [
+        {
+          "name": "energy",
+          "type": "number",
+          "title": {
+            "en": "Energy (kWh)",
+            "fr": "Énergie (kWh)"
+          },
+          "example": 1.2
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Energy changed to {energy} kWh",
+        "fr": "Énergie {energy} kWh"
+      }
+    },
+    {
+      "id": "plug_smart_current_changed",
+      "title": {
+        "en": "Current changed",
+        "fr": "Courant changé"
+      },
+      "tokens": [
+        {
+          "name": "current",
+          "type": "number",
+          "title": {
+            "en": "Current (A)",
+            "fr": "Courant (A)"
+          },
+          "example": 0.5
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Current changed to {current} A",
+        "fr": "Courant {current} A"
+      }
+    },
+    {
+      "id": "plug_smart_voltage_changed",
+      "title": {
+        "en": "Voltage changed",
+        "fr": "Tension changée"
+      },
+      "tokens": [
+        {
+          "name": "voltage",
+          "type": "number",
+          "title": {
+            "en": "Voltage (V)",
+            "fr": "Tension (V)"
+          },
+          "example": 230
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Voltage changed to {voltage} V",
+        "fr": "Tension {voltage} V"
       }
     }
   ],
@@ -418,6 +487,30 @@
         "fr": "Définir comportement démarrage [[behavior]]",
         "nl": "Opstart gedrag instellen [[behavior]]",
         "de": "Einschaltverhalten setzen [[behavior]]"
+      }
+    },
+    {
+      "id": "plug_smart_enable_child_lock",
+      "title": {
+        "en": "Enable child lock",
+        "fr": "Activer verrou enfant"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Enable child lock",
+        "fr": "Activer verrou enfant"
+      }
+    },
+    {
+      "id": "plug_smart_disable_child_lock",
+      "title": {
+        "en": "Disable child lock",
+        "fr": "Désactiver verrou enfant"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Disable child lock",
+        "fr": "Désactiver verrou enfant"
       }
     }
   ]

@@ -52,8 +52,8 @@
         }
       ],
       "titleFormatted": {
-        "en": "Scene triggered",
-        "nl": "Scène geactiveerd"
+        "en": "Scene triggered ({action})",
+        "nl": "Scène geactiveerd ({action})"
       }
     },
     {
@@ -121,8 +121,8 @@
         }
       ],
       "titleFormatted": {
-        "nl": "Lange druk",
-        "en": "Long press"
+        "nl": "Lange druk ({duration})",
+        "en": "Long press ({duration})"
       }
     },
     {
@@ -142,8 +142,8 @@
         }
       ],
       "titleFormatted": {
-        "nl": "Drievoudige druk",
-        "en": "Triple press"
+        "nl": "Drievoudige druk ({clicks})",
+        "en": "Triple press ({clicks})"
       }
     },
     {

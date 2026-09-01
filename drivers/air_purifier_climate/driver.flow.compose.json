@@ -52,10 +52,79 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "PM2.5 changed",
-        "fr": "PM2.5 changé",
-        "nl": "PM2.5 gewijzigd",
-        "de": "PM2.5 geÃ¤ndert"
+        "en": "PM2.5 changed ({pm25})",
+        "fr": "PM2.5 changé ({pm25})",
+        "nl": "PM2.5 gewijzigd ({pm25})",
+        "de": "PM2.5 geÃ¤ndert ({pm25})"
+      }
+    },
+    {
+      "id": "air_purifier_climate_brightness_changed",
+      "title": {
+        "en": "Brightness changed",
+        "fr": "Luminosité changée"
+      },
+      "tokens": [
+        {
+          "name": "brightness",
+          "type": "number",
+          "title": {
+            "en": "Brightness (%)",
+            "fr": "Luminosité (%)"
+          },
+          "example": 80
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Brightness changed to {brightness}%",
+        "fr": "Luminosité {brightness}%"
+      }
+    },
+    {
+      "id": "air_purifier_climate_temperature_changed",
+      "title": {
+        "en": "Temperature changed",
+        "fr": "Température changée"
+      },
+      "tokens": [
+        {
+          "name": "temperature",
+          "type": "number",
+          "title": {
+            "en": "Temperature (°C)",
+            "fr": "Température (°C)"
+          },
+          "example": 22.5
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Temperature changed to {temperature}°C",
+        "fr": "Température {temperature}°C"
+      }
+    },
+    {
+      "id": "air_purifier_climate_humidity_changed",
+      "title": {
+        "en": "Humidity changed",
+        "fr": "Humidité changée"
+      },
+      "tokens": [
+        {
+          "name": "humidity",
+          "type": "number",
+          "title": {
+            "en": "Humidity (%)",
+            "fr": "Humidité (%)"
+          },
+          "example": 55
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Humidity changed to {humidity}%",
+        "fr": "Humidité {humidity}%"
       }
     }
   ],

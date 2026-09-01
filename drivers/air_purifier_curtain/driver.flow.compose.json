@@ -15,6 +15,75 @@
         "nl": "Batterij laag",
         "de": "Batterie schwach"
       }
+    },
+    {
+      "id": "air_purifier_curtain_position_changed",
+      "title": {
+        "en": "Position changed",
+        "fr": "Position changée"
+      },
+      "tokens": [
+        {
+          "name": "position",
+          "type": "number",
+          "title": {
+            "en": "Position (%)",
+            "fr": "Position (%)"
+          },
+          "example": 50
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Cover position changed to {position}%",
+        "fr": "Position {position}%"
+      }
+    },
+    {
+      "id": "air_purifier_curtain_brightness_changed",
+      "title": {
+        "en": "Brightness changed",
+        "fr": "Luminosité changée"
+      },
+      "tokens": [
+        {
+          "name": "brightness",
+          "type": "number",
+          "title": {
+            "en": "Brightness (%)",
+            "fr": "Luminosité (%)"
+          },
+          "example": 80
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Brightness changed to {brightness}%",
+        "fr": "Luminosité {brightness}%"
+      }
+    },
+    {
+      "id": "air_purifier_curtain_pm25_changed",
+      "title": {
+        "en": "PM2.5 changed",
+        "fr": "PM2.5 changé"
+      },
+      "tokens": [
+        {
+          "name": "pm25",
+          "type": "number",
+          "title": {
+            "en": "PM2.5",
+            "fr": "PM2.5"
+          },
+          "example": 12
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "PM2.5 changed to {pm25}",
+        "fr": "PM2.5 {pm25}"
+      }
     }
   ],
   "conditions": [],

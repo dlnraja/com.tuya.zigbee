@@ -56,8 +56,8 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Battery level changed",
-        "fr": "Niveau batterie changé"
+        "en": "Battery level changed ({battery})",
+        "fr": "Niveau batterie changé ({battery})"
       }
     },
     {
@@ -132,10 +132,10 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Luminance changed",
-        "fr": "Luminance changée",
-        "nl": "Lichtsterkte veranderd",
-        "de": "Helligkeit geändert"
+        "en": "Luminance changed ({lux}) ({source})",
+        "fr": "Luminance changée ({lux}) ({source})",
+        "nl": "Lichtsterkte veranderd ({lux}) ({source})",
+        "de": "Helligkeit geändert ({lux}) ({source})"
       }
     },
     {
@@ -152,6 +152,52 @@
         "fr": "Alarme sabotage",
         "nl": "Sabotagealarm",
         "de": "Manipulationsalarm"
+      }
+    },
+    {
+      "id": "sensor_contact_motion_temperature_changed",
+      "title": {
+        "en": "Temperature changed",
+        "fr": "Température changée"
+      },
+      "tokens": [
+        {
+          "name": "temperature",
+          "type": "number",
+          "title": {
+            "en": "Temperature (°C)",
+            "fr": "Température (°C)"
+          },
+          "example": 22.5
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Temperature changed to {temperature}°C",
+        "fr": "Température {temperature}°C"
+      }
+    },
+    {
+      "id": "sensor_contact_motion_humidity_changed",
+      "title": {
+        "en": "Humidity changed",
+        "fr": "Humidité changée"
+      },
+      "tokens": [
+        {
+          "name": "humidity",
+          "type": "number",
+          "title": {
+            "en": "Humidity (%)",
+            "fr": "Humidité (%)"
+          },
+          "example": 55
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Humidity changed to {humidity}%",
+        "fr": "Humidité {humidity}%"
       }
     }
   ],

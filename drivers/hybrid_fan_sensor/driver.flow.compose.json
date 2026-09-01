@@ -43,8 +43,8 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Temperature changed",
-        "fr": "Température changée"
+        "en": "Temperature changed ({temperature})",
+        "fr": "Température changée ({temperature})"
       }
     },
     {
@@ -66,8 +66,8 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Humidity changed",
-        "fr": "Humidité changée"
+        "en": "Humidity changed ({humidity})",
+        "fr": "Humidité changée ({humidity})"
       }
     },
     {
@@ -89,8 +89,31 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "PM2.5 changed",
-        "fr": "PM2.5 changée"
+        "en": "PM2.5 changed ({pm25})",
+        "fr": "PM2.5 changée ({pm25})"
+      }
+    },
+    {
+      "id": "hybrid_fan_sensor_brightness_changed",
+      "title": {
+        "en": "Brightness changed",
+        "fr": "Luminosité changée"
+      },
+      "tokens": [
+        {
+          "name": "brightness",
+          "type": "number",
+          "title": {
+            "en": "Brightness (%)",
+            "fr": "Luminosité (%)"
+          },
+          "example": 80
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Brightness changed to {brightness}%",
+        "fr": "Luminosité {brightness}%"
       }
     }
   ],
