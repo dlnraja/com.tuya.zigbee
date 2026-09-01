@@ -33,10 +33,10 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.771 |
+| **App Version** | v9.0.772 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,383 |
-| **Pairing Variants** | 16,205 (4 case combos per fingerprint) |
+| **Pairing Variants** | 16,201 (4 case combos per fingerprint) |
 | **Unique Product IDs** | 576 |
 | **Flow Cards** | 5,243 |
 | **Unique Capabilities** | 170 |
@@ -69,8 +69,8 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | 16 | `soil_sensor` | 187 |
 | 17 | `sensor_contact_zigbee` | 182 |
 | 18 | `water_leak_sensor_tuya` | 178 |
-| 19 | `contact_sensor` | 165 |
-| 20 | `usb_dongle_triple` | 164 |
+| 19 | `usb_dongle_triple` | 164 |
+| 20 | `contact_sensor` | 161 |
 
 ### Drivers by Device Class
 
@@ -102,6 +102,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.772** | Added verified curtain motors from live Z2M harvest; improved cover fingerprint tooling. |
 | **v9.0.771** | Added verified curtain motors from live Z2M harvest; improved cover fingerprint tooling. |
 | **v9.0.770** | Added verified curtain motors from live Z2M harvest; improved cover fingerprint tooling. |
 | **v9.0.769** | Added verified curtain motors from live Z2M harvest; improved cover fingerprint tooling. |
@@ -113,7 +114,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.762** | Stripped leftover plug fingerprint case-variants from wireless buttons; keep TS011F plugs on energy monitor. |
 | **v9.0.761** | Fixed smart plug fingerprint routing so TS011F plugs are not matched as wireless buttons. |
 | **v9.0.760** | Improved MCU time sync and battery cover init; safer dimmer brightness scaling for Tuya devices. |
-| **v9.0.759** | Improved MCU time sync and battery cover init; safer dimmer brightness scaling for Tuya devices. |
 
 <!-- CHANGELOG_END -->
 
