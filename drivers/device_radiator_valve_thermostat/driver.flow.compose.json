@@ -19,8 +19,8 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Target temperature changed",
-        "fr": "Température cible changée"
+        "en": "Target temperature changed ({temperature})",
+        "fr": "Température cible changée ({temperature})"
       }
     },
     {
@@ -42,8 +42,8 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Temperature changed",
-        "fr": "Température changée"
+        "en": "Temperature changed ({temperature})",
+        "fr": "Température changée ({temperature})"
       }
     },
     {
@@ -65,8 +65,8 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Mode changed",
-        "fr": "Mode changé"
+        "en": "Mode changed ({mode})",
+        "fr": "Mode changé ({mode})"
       }
     },
     {

@@ -19,8 +19,8 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Temperature changed",
-        "fr": "Température changée"
+        "en": "Temperature changed ({temperature})",
+        "fr": "Température changée ({temperature})"
       }
     },
     {
@@ -42,8 +42,8 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Target temperature changed",
-        "fr": "Température cible changée"
+        "en": "Target temperature changed ({temperature})",
+        "fr": "Température cible changée ({temperature})"
       }
     },
     {
@@ -178,6 +178,30 @@
         "fr": "Éteindre",
         "nl": "Uitschakelen",
         "de": "Ausschalten"
+      }
+    },
+    {
+      "id": "floor_heating_thermostat_enable_child_lock",
+      "title": {
+        "en": "Enable child lock",
+        "fr": "Activer verrou enfant"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Enable child lock",
+        "fr": "Activer verrou enfant"
+      }
+    },
+    {
+      "id": "floor_heating_thermostat_disable_child_lock",
+      "title": {
+        "en": "Disable child lock",
+        "fr": "Désactiver verrou enfant"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Disable child lock",
+        "fr": "Désactiver verrou enfant"
       }
     }
   ]

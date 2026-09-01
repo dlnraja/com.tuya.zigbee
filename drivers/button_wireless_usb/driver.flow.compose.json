@@ -115,10 +115,79 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Button 1 scene [[scene_id]] recalled",
-        "fr": "Bouton 1 scène [[scene_id]] rappelée",
-        "nl": "Knop 1 scène [[scène_id]] opgeroepen",
-        "de": "Taste 1 Szene [[Szene_id]] aufgerufen"
+        "en": "Button 1 scene [[scene_id]] recalled ({scene_id})",
+        "fr": "Bouton 1 scène [[scene_id]] rappelée ({scene_id})",
+        "nl": "Knop 1 scène [[scène_id]] opgeroepen ({scene_id})",
+        "de": "Taste 1 Szene [[Szene_id]] aufgerufen ({scene_id})"
+      }
+    },
+    {
+      "id": "button_wireless_usb_meter_power_changed",
+      "title": {
+        "en": "Energy changed",
+        "fr": "Énergie changée"
+      },
+      "tokens": [
+        {
+          "name": "energy",
+          "type": "number",
+          "title": {
+            "en": "Energy (kWh)",
+            "fr": "Énergie (kWh)"
+          },
+          "example": 1.2
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Energy changed to {energy} kWh",
+        "fr": "Énergie {energy} kWh"
+      }
+    },
+    {
+      "id": "button_wireless_usb_voltage_changed",
+      "title": {
+        "en": "Voltage changed",
+        "fr": "Tension changée"
+      },
+      "tokens": [
+        {
+          "name": "voltage",
+          "type": "number",
+          "title": {
+            "en": "Voltage (V)",
+            "fr": "Tension (V)"
+          },
+          "example": 230
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Voltage changed to {voltage} V",
+        "fr": "Tension {voltage} V"
+      }
+    },
+    {
+      "id": "button_wireless_usb_current_changed",
+      "title": {
+        "en": "Current changed",
+        "fr": "Courant changé"
+      },
+      "tokens": [
+        {
+          "name": "current",
+          "type": "number",
+          "title": {
+            "en": "Current (A)",
+            "fr": "Courant (A)"
+          },
+          "example": 0.5
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Current changed to {current} A",
+        "fr": "Courant {current} A"
       }
     }
   ],

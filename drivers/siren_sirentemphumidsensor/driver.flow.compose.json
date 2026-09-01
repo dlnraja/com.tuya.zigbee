@@ -1,5 +1,41 @@
 {
-  "triggers": [],
+  "triggers": [
+    {
+      "id": "siren_sirentemphumidsensor_temperature_changed",
+      "title": {
+        "en": "Temperature changed",
+        "fr": "Température changée"
+      },
+      "tokens": [
+        {
+          "name": "temperature",
+          "type": "number",
+          "title": {
+            "en": "Temperature (°C)",
+            "fr": "Température (°C)"
+          },
+          "example": 22.5
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Temperature changed to {temperature}°C",
+        "fr": "Température {temperature}°C"
+      }
+    },
+    {
+      "id": "siren_sirentemphumidsensor_motion_alarm",
+      "title": {
+        "en": "Motion alarm",
+        "fr": "Alarme mouvement"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Motion detected",
+        "fr": "Mouvement détecté"
+      }
+    }
+  ],
   "actions": [],
   "conditions": []
 }

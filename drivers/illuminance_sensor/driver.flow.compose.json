@@ -20,10 +20,10 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Luminance changed",
-        "fr": "Luminance changée",
-        "nl": "Lichtsterkte gewijzigd",
-        "de": "Helligkeit geändert"
+        "en": "Luminance changed ({lux})",
+        "fr": "Luminance changée ({lux})",
+        "nl": "Lichtsterkte gewijzigd ({lux})",
+        "de": "Helligkeit geändert ({lux})"
       }
     },
     {
@@ -70,5 +70,6 @@
         "de": "Helligkeit !{{ist|ist nicht}} über [[threshold]]"
       }
     }
-  ]
+  ],
+  "actions": []
 }

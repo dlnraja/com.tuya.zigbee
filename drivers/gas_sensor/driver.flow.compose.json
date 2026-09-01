@@ -91,10 +91,10 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Gas level changed",
-        "nl": "Gasniveau veranderd",
-        "fr": "Niveau de gaz changé",
-        "de": "Gaswert geändert"
+        "en": "Gas level changed ({level})",
+        "nl": "Gasniveau veranderd ({level})",
+        "fr": "Niveau de gaz changé ({level})",
+        "de": "Gaswert geändert ({level})"
       }
     },
     {
@@ -120,10 +120,10 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Self-test completed",
-        "nl": "Zelftest voltooid",
-        "fr": "Auto-test terminé",
-        "de": "Selbsttest abgeschlossen"
+        "en": "Self-test completed ({result})",
+        "nl": "Zelftest voltooid ({result})",
+        "fr": "Auto-test terminé ({result})",
+        "de": "Selbsttest abgeschlossen ({result})"
       }
     },
     {

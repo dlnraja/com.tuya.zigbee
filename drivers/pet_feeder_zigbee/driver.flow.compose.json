@@ -23,10 +23,10 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Feeding completed",
-        "fr": "Distribution terminée",
-        "nl": "Voeding voltooid",
-        "de": "Fütterung abgeschlossen"
+        "en": "Feeding completed ({amount})",
+        "fr": "Distribution terminée ({amount})",
+        "nl": "Voeding voltooid ({amount})",
+        "de": "Fütterung abgeschlossen ({amount})"
       }
     },
     {

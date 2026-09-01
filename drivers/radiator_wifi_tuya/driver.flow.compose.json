@@ -23,10 +23,10 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Temperature changed",
-        "fr": "Température changée",
-        "nl": "Temperatuur gewijzigd",
-        "de": "Temperatur geändert"
+        "en": "Temperature changed ({temperature})",
+        "fr": "Température changée ({temperature})",
+        "nl": "Temperatuur gewijzigd ({temperature})",
+        "de": "Temperatur geändert ({temperature})"
       }
     },
     {
@@ -52,10 +52,10 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Target temperature changed",
-        "fr": "Température cible changée",
-        "nl": "Doeltemperatuur gewijzigd",
-        "de": "Zieltemperatur geändert"
+        "en": "Target temperature changed ({temperature})",
+        "fr": "Température cible changée ({temperature})",
+        "nl": "Doeltemperatuur gewijzigd ({temperature})",
+        "de": "Zieltemperatur geändert ({temperature})"
       }
     },
     {
@@ -105,6 +105,31 @@
         "nl": "Doeltemperatuur instellen op... [[temperature]]",
         "de": "Zieltemperatur einstellen auf... [[temperature]]"
       }
+    },
+    {
+      "id": "radiator_wifi_tuya_enable_child_lock",
+      "title": {
+        "en": "Enable child lock",
+        "fr": "Activer verrou enfant"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Enable child lock",
+        "fr": "Activer verrou enfant"
+      }
+    },
+    {
+      "id": "radiator_wifi_tuya_disable_child_lock",
+      "title": {
+        "en": "Disable child lock",
+        "fr": "Désactiver verrou enfant"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Disable child lock",
+        "fr": "Désactiver verrou enfant"
+      }
     }
-  ]
+  ],
+  "conditions": []
 }

@@ -19,8 +19,8 @@
         }
       ],
       "titleFormatted": {
-        "en": "Luminance changed",
-        "fr": "Luminance changee"
+        "en": "Luminance changed ({luminance})",
+        "fr": "Luminance changee ({luminance})"
       }
     },
     {
@@ -42,8 +42,8 @@
         }
       ],
       "titleFormatted": {
-        "en": "Temperature changed",
-        "fr": "Temperature changee"
+        "en": "Temperature changed ({temperature})",
+        "fr": "Temperature changee ({temperature})"
       }
     },
     {
@@ -65,8 +65,8 @@
         }
       ],
       "titleFormatted": {
-        "en": "Humidity changed",
-        "fr": "Humidite changee"
+        "en": "Humidity changed ({humidity})",
+        "fr": "Humidite changee ({humidity})"
       }
     },
     {

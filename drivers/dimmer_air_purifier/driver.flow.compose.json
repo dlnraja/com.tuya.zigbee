@@ -37,7 +37,7 @@
         }
       ],
       "titleFormatted": {
-        "en": "Brightness increased - physical"
+        "en": "Brightness increased - physical ({brightness})"
       }
     },
     {
@@ -57,7 +57,7 @@
         }
       ],
       "titleFormatted": {
-        "en": "Brightness decreased - physical"
+        "en": "Brightness decreased - physical ({brightness})"
       }
     },
     {
@@ -103,8 +103,8 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Brightness changed",
-        "fr": "Luminosité changée"
+        "en": "Brightness changed ({dim})",
+        "fr": "Luminosité changée ({dim})"
       }
     },
     {
@@ -153,6 +153,29 @@
         "fr": "Puissance changée",
         "nl": "Vermogen gewijzigd",
         "de": "Leistung geÃ¤ndert"
+      }
+    },
+    {
+      "id": "dimmer_air_purifier_pm25_changed",
+      "title": {
+        "en": "PM2.5 changed",
+        "fr": "PM2.5 changé"
+      },
+      "tokens": [
+        {
+          "name": "pm25",
+          "type": "number",
+          "title": {
+            "en": "PM2.5",
+            "fr": "PM2.5"
+          },
+          "example": 12
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "PM2.5 changed to {pm25}",
+        "fr": "PM2.5 {pm25}"
       }
     }
   ],

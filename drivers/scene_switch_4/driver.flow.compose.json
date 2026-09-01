@@ -413,10 +413,10 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Battery level changed",
-        "fr": "Niveau batterie changé",
-        "nl": "Batterijniveau gewijzigd",
-        "de": "Batteriestand geändert"
+        "en": "Battery level changed ({battery})",
+        "fr": "Niveau batterie changé ({battery})",
+        "nl": "Batterijniveau gewijzigd ({battery})",
+        "de": "Batteriestand geändert ({battery})"
       }
     },
     {
@@ -771,5 +771,7 @@
         "fr": "Bouton 4 appui long"
       }
     }
-  ]
+  ],
+  "conditions": [],
+  "actions": []
 }

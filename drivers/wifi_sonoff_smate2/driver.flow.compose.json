@@ -57,8 +57,8 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Power changed",
-        "fr": "Puissance changée"
+        "en": "Power changed ({power})",
+        "fr": "Puissance changée ({power})"
       }
     },
     {
@@ -79,8 +79,8 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Voltage changed",
-        "fr": "Tension changée"
+        "en": "Voltage changed ({voltage})",
+        "fr": "Tension changée ({voltage})"
       }
     },
     {
@@ -101,8 +101,8 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Current changed",
-        "fr": "Courant changé"
+        "en": "Current changed ({current})",
+        "fr": "Courant changé ({current})"
       }
     }
   ],

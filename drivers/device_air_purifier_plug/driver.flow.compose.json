@@ -43,8 +43,8 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Power changed",
-        "fr": "Puissance changée"
+        "en": "Power changed ({power})",
+        "fr": "Puissance changée ({power})"
       }
     },
     {
@@ -66,8 +66,8 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Voltage changed",
-        "fr": "Tension changée"
+        "en": "Voltage changed ({voltage})",
+        "fr": "Tension changée ({voltage})"
       }
     },
     {
@@ -89,8 +89,8 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Current changed",
-        "fr": "Courant changé"
+        "en": "Current changed ({current})",
+        "fr": "Courant changé ({current})"
       }
     },
     {
@@ -112,8 +112,8 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Energy consumption changed",
-        "fr": "Consommation énergétique changée"
+        "en": "Energy consumption changed ({meter_power})",
+        "fr": "Consommation énergétique changée ({meter_power})"
       }
     },
     {
@@ -146,6 +146,52 @@
         "fr": "Batterie faible",
         "nl": "Batterij laag",
         "de": "Batterie schwach"
+      }
+    },
+    {
+      "id": "device_air_purifier_plug_brightness_changed",
+      "title": {
+        "en": "Brightness changed",
+        "fr": "Luminosité changée"
+      },
+      "tokens": [
+        {
+          "name": "brightness",
+          "type": "number",
+          "title": {
+            "en": "Brightness (%)",
+            "fr": "Luminosité (%)"
+          },
+          "example": 80
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Brightness changed to {brightness}%",
+        "fr": "Luminosité {brightness}%"
+      }
+    },
+    {
+      "id": "device_air_purifier_plug_pm25_changed",
+      "title": {
+        "en": "PM2.5 changed",
+        "fr": "PM2.5 changé"
+      },
+      "tokens": [
+        {
+          "name": "pm25",
+          "type": "number",
+          "title": {
+            "en": "PM2.5",
+            "fr": "PM2.5"
+          },
+          "example": 12
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "PM2.5 changed to {pm25}",
+        "fr": "PM2.5 {pm25}"
       }
     }
   ],

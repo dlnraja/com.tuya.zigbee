@@ -39,10 +39,10 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "IR Learning Started",
-        "nl": "IR Leren Gestart",
-        "de": "IR-Lernen Gestartet",
-        "fr": "IR Learning Started"
+        "en": "IR Learning Started ({protocol}) ({frequency}) ({duration})",
+        "nl": "IR Leren Gestart ({protocol}) ({frequency}) ({duration})",
+        "de": "IR-Lernen Gestartet ({protocol}) ({frequency}) ({duration})",
+        "fr": "IR Learning Started ({protocol}) ({frequency}) ({duration})"
       }
     },
     {
@@ -75,10 +75,10 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "IR Learning State Changed",
-        "nl": "IR Leer Status Gewijzigd",
-        "de": "IR-Lern Status Geändert",
-        "fr": "IR Learning State Changed"
+        "en": "IR Learning State Changed ({state}) ({state_code})",
+        "nl": "IR Leer Status Gewijzigd ({state}) ({state_code})",
+        "de": "IR-Lern Status Geändert ({state}) ({state_code})",
+        "fr": "IR Learning State Changed ({state}) ({state_code})"
       }
     },
     {
@@ -102,10 +102,10 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "IR Code Learned",
-        "nl": "IR Code Geleerd",
-        "de": "IR-Code Gelernt",
-        "fr": "IR Code Learned"
+        "en": "IR Code Learned ({ir_code})",
+        "nl": "IR Code Geleerd ({ir_code})",
+        "de": "IR-Code Gelernt ({ir_code})",
+        "fr": "IR Code Learned ({ir_code})"
       }
     },
     {
@@ -156,10 +156,10 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "IR Code Analyzed",
-        "nl": "IR Code Geanalyseerd",
-        "de": "IR-Code Analysiert",
-        "fr": "IR Code Analyzed"
+        "en": "IR Code Analyzed ({code_name}) ({protocol}) ({frequency}) ({length})",
+        "nl": "IR Code Geanalyseerd ({code_name}) ({protocol}) ({frequency}) ({length})",
+        "de": "IR-Code Analysiert ({code_name}) ({protocol}) ({frequency}) ({length})",
+        "fr": "IR Code Analyzed ({code_name}) ({protocol}) ({frequency}) ({length})"
       }
     },
     {

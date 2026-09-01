@@ -1,3 +1,218 @@
 {
-  "triggers": []
+  "triggers": [
+    {
+      "id": "smart_knob_button_1gang_button_pressed",
+      "title": {
+        "en": "Button pressed",
+        "fr": "Bouton appuyé"
+      },
+      "tokens": [
+        {
+          "name": "button",
+          "type": "string",
+          "title": {
+            "en": "Button",
+            "fr": "Bouton"
+          },
+          "example": "1"
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Button pressed ({button})",
+        "fr": "Bouton appuyé ({button})"
+      }
+    },
+    {
+      "id": "smart_knob_button_1gang_button_double_press",
+      "title": {
+        "en": "Button double-pressed",
+        "fr": "Bouton double-cliqué"
+      },
+      "tokens": [
+        {
+          "name": "button",
+          "type": "string",
+          "title": {
+            "en": "Button",
+            "fr": "Bouton"
+          },
+          "example": "1"
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Button double-pressed ({button})",
+        "fr": "Bouton double-cliqué ({button})"
+      }
+    },
+    {
+      "id": "smart_knob_button_1gang_button_long_press",
+      "title": {
+        "en": "Button long-pressed",
+        "fr": "Bouton pressé longtemps"
+      },
+      "tokens": [
+        {
+          "name": "button",
+          "type": "string",
+          "title": {
+            "en": "Button",
+            "fr": "Bouton"
+          },
+          "example": "1"
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Button long-pressed ({button})",
+        "fr": "Bouton pressé longtemps ({button})"
+      }
+    },
+    {
+      "id": "smart_knob_button_1gang_button_multi_press",
+      "title": {
+        "en": "Button multi-pressed",
+        "fr": "Bouton multi-cliqué"
+      },
+      "tokens": [
+        {
+          "name": "button",
+          "type": "string",
+          "title": {
+            "en": "Button",
+            "fr": "Bouton"
+          },
+          "example": "1"
+        },
+        {
+          "name": "count",
+          "type": "number",
+          "title": {
+            "en": "Press count",
+            "fr": "Nombre de pressions"
+          },
+          "example": 3
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Button multi-pressed ({button}) ({count})",
+        "fr": "Bouton multi-cliqué ({button}) ({count})"
+      }
+    },
+    {
+      "id": "smart_knob_button_1gang_button_1_pressed",
+      "title": {
+        "en": "Button 1 pressed",
+        "fr": "Bouton 1 appuyé"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 1 pressed",
+        "fr": "Bouton 1 appuyé"
+      }
+    },
+    {
+      "id": "smart_knob_button_1gang_button_1_double",
+      "title": {
+        "en": "Button 1 double-pressed",
+        "fr": "Bouton 1 double-cliqué"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 1 double-pressed",
+        "fr": "Bouton 1 double-cliqué"
+      }
+    },
+    {
+      "id": "smart_knob_button_1gang_button_1_long",
+      "title": {
+        "en": "Button 1 long-pressed",
+        "fr": "Bouton 1 pressé longtemps"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 1 long-pressed",
+        "fr": "Bouton 1 pressé longtemps"
+      }
+    },
+    {
+      "id": "smart_knob_button_1gang_button_1_triple",
+      "title": {
+        "en": "Button 1 triple-pressed",
+        "fr": "Bouton 1 triple-cliqué"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 1 triple-pressed",
+        "fr": "Bouton 1 triple-cliqué"
+      }
+    },
+    {
+      "id": "smart_knob_button_1gang_button_1_release",
+      "title": {
+        "en": "Button 1 released - after hold",
+        "fr": "Bouton 1 relâché - après maintien"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 1 released - after hold",
+        "fr": "Bouton 1 relâché - après maintien"
+      }
+    },
+    {
+      "id": "smart_knob_battery_low",
+      "title": {
+        "en": "Battery low",
+        "fr": "Batterie faible",
+        "nl": "Batterij laag",
+        "de": "Batterie schwach"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Battery low",
+        "fr": "Batterie faible",
+        "nl": "Batterij laag",
+        "de": "Batterie schwach"
+      }
+    },
+    {
+      "id": "smart_knob_button_1gang_button_scene_recall",
+      "title": {
+        "en": "Button 1 scene recalled",
+        "fr": "Bouton 1 scène rappelée",
+        "nl": "Knop 1 scène opgeroepen",
+        "de": "Taste 1 Szene aufgerufen"
+      },
+      "hint": {
+        "en": "When button 1 recalls a Zigbee scene (cluster 0x05 — scene mode, P31)",
+        "fr": "Lorsque le bouton 1 rappelle une scène Zigbee (cluster 0x05 — mode scène, P31)",
+        "nl": "Wanneer knop 1 recalls a Zigbee scène (cluster 0x05 — scène mode, P31)",
+        "de": "Wenn Taste 1 recalls a Zigbee Szene (Cluster 0x05 — Szene mode, P31)"
+      },
+      "tokens": [
+        {
+          "name": "scene_id",
+          "type": "number",
+          "title": {
+            "en": "Scene ID",
+            "fr": "ID Scène",
+            "nl": "Scène ID",
+            "de": "Szene ID"
+          },
+          "example": 1
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 1 scene [[scene_id]] recalled ({scene_id})",
+        "fr": "Bouton 1 scène [[scene_id]] rappelée ({scene_id})",
+        "nl": "Knop 1 scène [[scène_id]] opgeroepen ({scene_id})",
+        "de": "Taste 1 Szene [[Szene_id]] aufgerufen ({scene_id})"
+      }
+    }
+  ],
+  "conditions": [],
+  "actions": []
 }

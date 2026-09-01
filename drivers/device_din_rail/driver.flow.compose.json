@@ -60,8 +60,8 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Power consumption changed",
-        "fr": "Consommation changée"
+        "en": "Power consumption changed ({power})",
+        "fr": "Consommation changée ({power})"
       }
     },
     {
@@ -83,8 +83,8 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Voltage changed",
-        "fr": "Tension changée"
+        "en": "Voltage changed ({voltage})",
+        "fr": "Tension changée ({voltage})"
       }
     },
     {
@@ -106,8 +106,43 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Current changed",
-        "fr": "Courant changé"
+        "en": "Current changed ({current})",
+        "fr": "Courant changé ({current})"
+      }
+    },
+    {
+      "id": "device_din_rail_motion_alarm",
+      "title": {
+        "en": "Motion alarm",
+        "fr": "Alarme mouvement"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Motion detected",
+        "fr": "Mouvement détecté"
+      }
+    },
+    {
+      "id": "device_din_rail_meter_power_changed",
+      "title": {
+        "en": "Energy changed",
+        "fr": "Énergie changée"
+      },
+      "tokens": [
+        {
+          "name": "energy",
+          "type": "number",
+          "title": {
+            "en": "Energy (kWh)",
+            "fr": "Énergie (kWh)"
+          },
+          "example": 1.2
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Energy changed to {energy} kWh",
+        "fr": "Énergie {energy} kWh"
       }
     }
   ],

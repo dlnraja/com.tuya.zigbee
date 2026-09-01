@@ -22,10 +22,10 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Heater mode changed",
-        "fr": "Mode chauffage modifié",
-        "nl": "Verwarmingsmodus gewijzigd",
-        "de": "Heizmodus geändert"
+        "en": "Heater mode changed ({mode})",
+        "fr": "Mode chauffage modifié ({mode})",
+        "nl": "Verwarmingsmodus gewijzigd ({mode})",
+        "de": "Heizmodus geändert ({mode})"
       }
     },
     {
@@ -58,6 +58,29 @@
         "fr": "Radiateur éteint",
         "nl": "Verwarming uitgeschakeld",
         "de": "Heizung ausgeschaltet"
+      }
+    },
+    {
+      "id": "wifi_heater_target_temperature_changed",
+      "title": {
+        "en": "Target temperature changed",
+        "fr": "Consigne changée"
+      },
+      "tokens": [
+        {
+          "name": "temperature",
+          "type": "number",
+          "title": {
+            "en": "Target (°C)",
+            "fr": "Consigne (°C)"
+          },
+          "example": 21
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Target temperature changed to {temperature}°C",
+        "fr": "Consigne {temperature}°C"
       }
     }
   ],
@@ -186,6 +209,30 @@
         "fr": "Définir température cible [[temperature]]",
         "nl": "Stel doeltemperatuur in [[temperature]]",
         "de": "Zieltemperatur einstellen [[temperature]]"
+      }
+    },
+    {
+      "id": "wifi_heater_enable_child_lock",
+      "title": {
+        "en": "Enable child lock",
+        "fr": "Activer verrou enfant"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Enable child lock",
+        "fr": "Activer verrou enfant"
+      }
+    },
+    {
+      "id": "wifi_heater_disable_child_lock",
+      "title": {
+        "en": "Disable child lock",
+        "fr": "Désactiver verrou enfant"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Disable child lock",
+        "fr": "Désactiver verrou enfant"
       }
     }
   ]

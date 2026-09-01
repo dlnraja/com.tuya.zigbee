@@ -43,8 +43,31 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Cover position changed",
-        "fr": "Position store changée"
+        "en": "Cover position changed ({position})",
+        "fr": "Position store changée ({position})"
+      }
+    },
+    {
+      "id": "hybrid_light_windowcoverings_brightness_changed",
+      "title": {
+        "en": "Brightness changed",
+        "fr": "Luminosité changée"
+      },
+      "tokens": [
+        {
+          "name": "brightness",
+          "type": "number",
+          "title": {
+            "en": "Brightness (%)",
+            "fr": "Luminosité (%)"
+          },
+          "example": 80
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Brightness changed to {brightness}%",
+        "fr": "Luminosité {brightness}%"
       }
     }
   ],

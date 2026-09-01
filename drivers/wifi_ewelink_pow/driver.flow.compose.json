@@ -37,7 +37,7 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Power changed"
+        "en": "Power changed ({power})"
       }
     },
     {
@@ -57,7 +57,7 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Voltage changed"
+        "en": "Voltage changed ({voltage})"
       }
     },
     {
@@ -77,7 +77,7 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "Current changed"
+        "en": "Current changed ({current})"
       }
     }
   ],

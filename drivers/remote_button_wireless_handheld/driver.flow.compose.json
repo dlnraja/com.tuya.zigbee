@@ -23,8 +23,8 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "A button was pressed",
-        "fr": "Un bouton a été appuyé"
+        "en": "A button was pressed ({button})",
+        "fr": "Un bouton a été appuyé ({button})"
       }
     },
     {
@@ -50,8 +50,8 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "A button was double-pressed",
-        "fr": "Un bouton a été double-cliqué"
+        "en": "A button was double-pressed ({button})",
+        "fr": "Un bouton a été double-cliqué ({button})"
       }
     },
     {
@@ -77,8 +77,8 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "A button was long-pressed",
-        "fr": "Un bouton a été appuyé longtemps"
+        "en": "A button was long-pressed ({button})",
+        "fr": "Un bouton a été appuyé longtemps ({button})"
       }
     },
     {
@@ -113,8 +113,8 @@
       ],
       "args": [],
       "titleFormatted": {
-        "en": "A button was multi-pressed",
-        "fr": "Un bouton a été multi-cliqué"
+        "en": "A button was multi-pressed ({button}) ({count})",
+        "fr": "Un bouton a été multi-cliqué ({button}) ({count})"
       }
     },
     {
@@ -373,5 +373,7 @@
         "de": "Batterie schwach"
       }
     }
-  ]
+  ],
+  "conditions": [],
+  "actions": []
 }
