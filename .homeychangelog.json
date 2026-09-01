@@ -1,4 +1,7 @@
 {
+  "5.12.117": {
+    "en": "Fixed app crash from foreign/flow Invalid Driver ID (Homey class light and third-party Zigbee tokens)."
+  },
   "5.12.100": {
     "en": "Improved wall dimmer control reliability after pairing."
   },
