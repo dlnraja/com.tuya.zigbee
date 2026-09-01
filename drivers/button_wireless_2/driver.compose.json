@@ -85,7 +85,6 @@
       "_TZ3000_E1F2G3H4",
       "_TZ3000_JAK16DLL",
       "_TZ3000_VMPBYGS5",
-      "_TZ3000_a4xycprs",
       "_TZ3000_aezbqpcu",
       "_TZ3000_atp7xmd9",
       "_TZ3000_b28wrpvx",
@@ -103,7 +102,6 @@
       "_TZ3000_fukaa7nc",
       "_TZ3000_fvh3pjaz",
       "_TZ3000_g8n1n7lg",
-      "_TZ3000_gbm10jnj",
       "_TZ3000_gidy6sjs",
       "_TZ3000_h1c2eamp",
       "_TZ3000_hhiodade",
@@ -202,7 +200,6 @@
       "_tz3000_kt7obmnn",
       "_tz3000_qous95zh",
       "_tz3000_xr7itfxq",
-      "_tz3210_w0qqde0g",
       "_tz3400_key8kk7r",
       "_tze204_hkdl5fmv",
       "tuyatec-nzrrvgco",
@@ -253,8 +250,6 @@
       "_tz3000_e1f2g3h4",
       "_tz3000_jak16dll",
       "_tz3000_vmpbygs5",
-      "_TZ3000_A4XYCPRS",
-      "_tz3000_a4xycprs",
       "_TZ3000_AEZBQPCU",
       "_tz3000_aezbqpcu",
       "_TZ3000_ATP7XMD9",
@@ -289,8 +284,6 @@
       "_tz3000_fvh3pjaz",
       "_TZ3000_G8N1N7LG",
       "_tz3000_g8n1n7lg",
-      "_TZ3000_GBM10JNJ",
-      "_tz3000_gbm10jnj",
       "_TZ3000_GIDY6SJS",
       "_tz3000_gidy6sjs",
       "_TZ3000_H1C2EAMP",
@@ -475,7 +468,6 @@
       "_TZ3000_kt7obmnn",
       "_TZ3000_qous95zh",
       "_TZ3000_xr7itfxq",
-      "_TZ3210_w0qqde0g",
       "_TZ3400_key8kk7r",
       "_TZE204_hkdl5fmv",
       "_tyzb01_2ATHZHFR",
@@ -507,7 +499,6 @@
       "_tz3000_E1F2G3H4",
       "_tz3000_JAK16DLL",
       "_tz3000_VMPBYGS5",
-      "_tz3000_A4XYCPRS",
       "_tz3000_AEZBQPCU",
       "_tz3000_ATP7XMD9",
       "_tz3000_B28WRPVX",
@@ -525,7 +516,6 @@
       "_tz3000_FUKAA7NC",
       "_tz3000_FVH3PJAZ",
       "_tz3000_G8N1N7LG",
-      "_tz3000_GBM10JNJ",
       "_tz3000_GIDY6SJS",
       "_tz3000_H1C2EAMP",
       "_tz3000_HHIODADE",
@@ -629,7 +619,9 @@
       "_TZN3000_cfnprab5",
       "_tzn3000_cfnprab5",
       "_TZ3210_2putqrmw",
-      "_tz3210_2putqrmw"
+      "_tz3210_2putqrmw",
+      "_TZ3000_t8hzpgnd",
+      "_tz3000_t8hzpgnd"
     ],
     "productId": [
       "01MINIZB",
@@ -765,7 +757,7 @@
       }
     },
     "learnmode": {
-      "image": "/drivers/button_wireless_2/assets/learnmode.svg",
+      "image": "{{driverAssetsPath}}/icon.svg",
       "instruction": {
         "en": "Press and hold any button for 5 seconds until the LED blinks rapidly",
         "fr": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
@@ -781,8 +773,7 @@
   },
   "images": {
     "small": "/drivers/button_wireless_2/assets/images/small.png",
-    "large": "/drivers/button_wireless_2/assets/images/large.png",
-    "xlarge": "/drivers/button_wireless_2/assets/images/xlarge.png"
+    "large": "/drivers/button_wireless_2/assets/images/large.png"
   },
   "platforms": [
     "local"

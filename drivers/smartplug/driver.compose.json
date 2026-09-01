@@ -34,14 +34,15 @@
     }
   },
   "images": {
-    "large": "/{{driverAssetsPath}}/images/large.png",
-    "small": "/{{driverAssetsPath}}/images/small.png"
+    "small": "/drivers/smartplug/assets/images/small.png",
+    "large": "/drivers/smartplug/assets/images/large.png"
   },
   "version": "1.0.0",
   "zigbee": {
     "productId": [
       "TS0121",
-      "TS011F"
+      "TS011F",
+      "TSO121"
     ],
     "endpoints": {
       "1": {
@@ -66,15 +67,166 @@
       }
     },
     "manufacturerName": [
-      "_GENERIC_SMARTPLUG",
-      "_generic_smartplug"
+      "_TZ3000_3ooaz3ng",
+      "_TYZB01_iuepbmpv",
+      "_TZ3000_g5xawfcq",
+      "_TZ3000_vtscrpmw",
+      "_TZ3000_rdtixbnu",
+      "_TZ3000_8nkb7mof",
+      "_TZ3000_cphmq0q7",
+      "_TZ3000_ew3ldmgx",
+      "_TZ3000_dpo1ysak",
+      "_TZ3000_w0qqde0g",
+      "_TZ3210_w0qqde0g",
+      "_tz3210_w0qqde0g",
+      "_TZ3000_mraovvmm",
+      "_TZ3000_u5u4cakc",
+      "_TZ3000_typdpdpg",
+      "_TZ3000_gjnozsaz",
+      "_TZ3000_amdymr71",
+      "_TZ3000_typdpbpg",
+      "_TZ3000_ksw8qtmt",
+      "_TZ3000_zloso4jk",
+      "_TZ3000_5f43h46b",
+      "_TZ3000_cehuw1lw",
+      "_TZ3000_fqoynhku",
+      "_TZ3000_ynmowqk2",
+      "_TZ3000_kx0pris5",
+      "_TZ3000_hdopuwv6",
+      "_TZ3000_bfn1w0mm",
+      "_TZ3000_0zfrhq4i",
+      "_TZ3000_gznh2xla",
+      "_TZ3000_ss98ec5d",
+      "_TZ3000_gnjozsaz",
+      "_TZ3000_gvn91tmx",
+      "_TZ3000_1h2x4akh",
+      "_TZ3000_r6buo8ba",
+      "_TZ3000_2putqrmw",
+      "_TZ3000_5ity3zyu",
+      "_TZ3000_eyzb8yg3",
+      "_TZ3000_dksbtrzs",
+      "_TZ3000_nkcobies",
+      "_TZ3000_j1v25l17",
+      "_tz3000_3ooaz3ng",
+      "_tyzb01_iuepbmpv",
+      "_tz3000_g5xawfcq",
+      "_tz3000_vtscrpmw",
+      "_tz3000_rdtixbnu",
+      "_tz3000_8nkb7mof",
+      "_tz3000_cphmq0q7",
+      "_tz3000_ew3ldmgx",
+      "_tz3000_dpo1ysak",
+      "_tz3000_w0qqde0g",
+      "_tz3000_mraovvmm",
+      "_tz3000_u5u4cakc",
+      "_tz3000_typdpdpg",
+      "_tz3000_gjnozsaz",
+      "_tz3000_amdymr71",
+      "_tz3000_typdpbpg",
+      "_tz3000_ksw8qtmt",
+      "_tz3000_zloso4jk",
+      "_tz3000_5f43h46b",
+      "_tz3000_cehuw1lw",
+      "_tz3000_fqoynhku",
+      "_tz3000_ynmowqk2",
+      "_tz3000_kx0pris5",
+      "_tz3000_hdopuwv6",
+      "_tz3000_bfn1w0mm",
+      "_tz3000_0zfrhq4i",
+      "_tz3000_gznh2xla",
+      "_tz3000_ss98ec5d",
+      "_tz3000_gnjozsaz",
+      "_tz3000_gvn91tmx",
+      "_tz3000_1h2x4akh",
+      "_tz3000_r6buo8ba",
+      "_tz3000_2putqrmw",
+      "_tz3000_5ity3zyu",
+      "_tz3000_eyzb8yg3",
+      "_tz3000_dksbtrzs",
+      "_tz3000_nkcobies",
+      "_tz3000_j1v25l17"
     ]
   },
-  "_pidConflictNotes": [
-    "// PID-CONFLICT-NOTE TS011F shared with 43 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md",
-    "// PID-CONFLICT-NOTE TS0121 shared with 11 other drivers (cross-class; mfrs distinct (false positive)). Sacred Couple rule applies: mfr+PID pair disambiguates. See: docs/P2_PID_CONFLICT_RESOLUTION_2026-07-12.md"
-  ],
   "ui": {
     "quickAction": "onoff"
+  },
+  "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "Measurement Settings",
+        "fr": "Paramètres de mesure"
+      },
+      "children": [
+        {
+          "id": "power_scale",
+          "type": "dropdown",
+          "label": {
+            "en": "Power Measurement Scale",
+            "fr": "Échelle de puissance"
+          },
+          "value": "1",
+          "values": [
+            {
+              "id": "0.1",
+              "label": {
+                "en": "÷10",
+                "fr": "÷10"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "×1 (Default)",
+                "fr": "×1 (défaut)"
+              }
+            },
+            {
+              "id": "10",
+              "label": {
+                "en": "×10",
+                "fr": "×10"
+              }
+            }
+          ],
+          "hint": {
+            "en": "Use if W/kWh readings are 10× too high or low.",
+            "fr": "Si W/kWh sont ×10 trop hauts ou bas."
+          }
+        }
+      ]
+    }
+  ],
+  "firmwareUpdates": {
+    "updates": [
+      {
+        "changelog": {
+          "en": "OEM Zigbee firmware v82 (Koenkk zigbee-OTA, SHA512-verified). Install via Homey Device Updates (Settings → Device Updates) on Homey ≥13.2 / Mobile ≥9.10.",
+          "fr": "Firmware Zigbee OEM v82 (Koenkk zigbee-OTA, SHA512 vérifié). Installez via Homey Device Updates — Homey ≥13.2 / Mobile ≥9.10."
+        },
+        "device": {
+          "manufacturerName": [
+            "_TZ3000_w0qqde0g",
+            "_TZ3000_dksbtrzs"
+          ],
+          "productId": [
+            "TS011F",
+            "TS0121"
+          ]
+        },
+        "files": [
+          {
+            "fileVersion": 82,
+            "imageType": 54179,
+            "manufacturerCode": 4417,
+            "minHardwareVersion": 27502,
+            "maxHardwareVersion": 20256,
+            "size": 311026,
+            "name": "1730081189-oem_zg_tl8258_plug_OTA_1.1.2.bin",
+            "integrity": "sha256:4c16a0403e1633fa7098f91fcd378ebe4a7a76724f42b4e877a8ad8090213b0e"
+          }
+        ]
+      }
+    ]
   }
 }
