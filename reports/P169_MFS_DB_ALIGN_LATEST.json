@@ -1,196 +1,588 @@
 {
-  "timestamp": "2026-09-01T03:01:33.998Z",
+  "timestamp": "2026-09-01T04:01:48.060Z",
   "gate": "align-mfs-db-intelligent",
   "apply": true,
   "check": false,
-  "changeCount": 7,
-  "skippedCount": 39,
-  "highSeverityCount": 5,
+  "changeCount": 82,
+  "skippedCount": 38,
+  "highSeverityCount": 0,
   "byAction": {
-    "registry_compose_strip_couple_mfr": 2,
-    "registry_force": 5
+    "compose_exclusive": 82
   },
   "changes": [
     {
       "severity": "medium",
-      "action": "registry_compose_strip_couple_mfr",
-      "mfr": "_TZE200_2jwrgrro",
-      "pid": "TS0601",
-      "from": "switch_1gang",
-      "to": "curtain_motor",
-      "removed": 4,
-      "caseId": "p2363-curtain-ef00-hybrid-timeout"
+      "action": "compose_exclusive",
+      "mfr": "_TZE200_eatmkx5j",
+      "from": "button_wireless_2",
+      "to": "curtain_motor"
     },
     {
       "severity": "medium",
-      "action": "registry_compose_strip_couple_mfr",
-      "mfr": "_TZE204_a2jcoyuk",
-      "pid": "TS0601",
+      "action": "compose_exclusive",
+      "mfr": "_TZE200_2ODRMQWQ",
       "from": "climate_sensor",
-      "to": "curtain_motor",
-      "removed": 4,
-      "caseId": "p2363-curtain-ef00-hybrid-timeout"
+      "to": "curtain_motor"
     },
     {
-      "severity": "high",
-      "action": "registry_force",
-      "mfr": "_TZE204_A2JCOYUK",
-      "from": {
-        "driverId": "climate_sensor",
-        "modelIds": [
-          "CK-TLSR8656-SS5-01(7014)",
-          "Excellux",
-          "lumi.sensor_ht",
-          "lumi.sensor_ht.agl02",
-          "lumi.weather",
-          "RH3052",
-          "SM0201",
-          "SNZB-02",
-          "SNZB-02B",
-          "SNZB-02D",
-          "SNZB-02DR2",
-          "SNZB-02LD",
-          "SNZB-02M",
-          "SNZB-02P",
-          "SNZB-02WD",
-          "TH01",
-          "THS317-ET",
-          "TS0201",
-          "TS0202",
-          "TS0222",
-          "TS0601",
-          "TS1201",
-          "TY0201",
-          "WSDCGQ01LM",
-          "WSDCGQ11LM",
-          "WSDCGQ12LM",
-          "ZG-227Z",
-          "ZG-227ZL"
-        ]
-      },
-      "to": {
-        "driverId": "curtain_motor",
-        "modelIds": [
-          "TS0601"
-        ]
-      },
-      "caseId": "p2363-curtain-ef00-hybrid-timeout"
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE200_2VFXWENG",
+      "from": "climate_sensor",
+      "to": "curtain_motor"
     },
     {
-      "severity": "high",
-      "action": "registry_force",
-      "mfr": "_TZE200_libht6ua",
-      "from": {
-        "driverId": "curtain_motor_shutter",
-        "modelIds": [
-          "TS0301",
-          "TS0601",
-          "TS0726"
-        ]
-      },
-      "to": {
-        "driverId": "curtain_motor",
-        "modelIds": [
-          "TS0601"
-        ]
-      },
-      "caseId": "p2363-curtain-ef00-hybrid-timeout"
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE200_7DEQ70B8",
+      "from": "climate_sensor",
+      "to": "curtain_motor"
     },
     {
-      "severity": "high",
-      "action": "registry_force",
-      "mfr": "_TZE284_libht6ua",
-      "from": {
-        "driverId": "curtain_motor_shutter",
-        "modelIds": [
-          "TS0301",
-          "TS0601",
-          "TS0726"
-        ]
-      },
-      "to": {
-        "driverId": "curtain_motor",
-        "modelIds": [
-          "TS0601"
-        ]
-      },
-      "caseId": "p2363-curtain-ef00-hybrid-timeout"
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE200_7SHYDDJ3",
+      "from": "climate_sensor",
+      "to": "curtain_motor"
     },
     {
-      "severity": "high",
-      "action": "registry_force",
-      "mfr": "_TZE200_2jwrgrro",
-      "from": {
-        "driverId": "switch_1gang",
-        "modelIds": [
-          "01MINIZB",
-          "BASICZBR3",
-          "S26R2ZB",
-          "S31ZB",
-          "TS0001",
-          "TS0001_power",
-          "TS0001_switch",
-          "TS0001_switch_module",
-          "TS0002",
-          "TS0003",
-          "TS000F",
-          "TS0011",
-          "TS0012",
-          "TS0014",
-          "TS0041",
-          "TS0101",
-          "TS0111",
-          "TS011F",
-          "TS0601",
-          "TS0726",
-          "TS110E",
-          "TS130F",
-          "TS4100",
-          "ZBM5-1C-120",
-          "ZBM5-2C-120",
-          "ZBM5-3C-120",
-          "ZBMINI",
-          "ZBMINIL2",
-          "ZBMINIL2-R2",
-          "ZBMINIR",
-          "ZBMINIR2",
-          "ZBMINIR2-R2",
-          "ZG-301Z",
-          "ZG-302Z1"
-        ]
-      },
-      "to": {
-        "driverId": "curtain_motor",
-        "modelIds": [
-          "TS0601"
-        ]
-      },
-      "caseId": "p2363-curtain-ef00-hybrid-timeout"
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE200_A8Z0G46U",
+      "from": "climate_sensor",
+      "to": "curtain_motor"
     },
     {
-      "severity": "high",
-      "action": "registry_force",
-      "mfr": "_TZE284_zofmmt9s",
-      "from": {
-        "driverId": "sensor_illuminance_presence",
-        "modelIds": [
-          "CK-BL702-MWS-01(7016)",
-          "TS0004",
-          "TS0222",
-          "TS0225",
-          "TS0601",
-          "TS110E",
-          "ZG-106Z",
-          "ZP-301Z"
-        ]
-      },
-      "to": {
-        "driverId": "curtain_motor",
-        "modelIds": [
-          "TS0601"
-        ]
-      },
-      "caseId": "p2363-curtain-ef00-hybrid-timeout"
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE200_AX8A8AHX",
+      "from": "climate_sensor",
+      "to": "curtain_motor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE200_B2U1DRDV",
+      "from": "climate_sensor",
+      "to": "curtain_motor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE200_BCUSNQT8",
+      "from": "climate_sensor",
+      "to": "curtain_motor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE200_BV1JCQQU",
+      "from": "climate_sensor",
+      "to": "curtain_motor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE200_CLM4GDW4",
+      "from": "climate_sensor",
+      "to": "curtain_motor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE200_EN3WVCBX",
+      "from": "climate_sensor",
+      "to": "curtain_motor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE200_FEOLM6RK",
+      "from": "climate_sensor",
+      "to": "curtain_motor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE200_FODV6BKR",
+      "from": "climate_sensor",
+      "to": "curtain_motor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE200_G5WDNUOW",
+      "from": "climate_sensor",
+      "to": "curtain_motor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE200_G5XQOSU7",
+      "from": "climate_sensor",
+      "to": "curtain_motor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE200_GNW1RRIL",
+      "from": "climate_sensor",
+      "to": "curtain_motor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE200_HOJRYZZD",
+      "from": "climate_sensor",
+      "to": "curtain_motor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE200_JS3MGBJB",
+      "from": "climate_sensor",
+      "to": "curtain_motor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE200_JWSJBXJS",
+      "from": "climate_sensor",
+      "to": "curtain_motor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE200_LEAQTHQQ",
+      "from": "climate_sensor",
+      "to": "curtain_motor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE200_LLM0EPXG",
+      "from": "climate_sensor",
+      "to": "curtain_motor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE200_N1AAUWB4",
+      "from": "climate_sensor",
+      "to": "curtain_motor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE200_ODLLDRXX",
+      "from": "climate_sensor",
+      "to": "curtain_motor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE200_OISQYL4O",
+      "from": "climate_sensor",
+      "to": "curtain_motor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE200_P2QZZAZI",
+      "from": "climate_sensor",
+      "to": "curtain_motor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE200_QHLXVE78",
+      "from": "climate_sensor",
+      "to": "curtain_motor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE200_RSJ5PU8Y",
+      "from": "climate_sensor",
+      "to": "curtain_motor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE200_TVRVDJ6O",
+      "from": "climate_sensor",
+      "to": "curtain_motor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE200_YRUGSPHV",
+      "from": "climate_sensor",
+      "to": "curtain_motor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE200_ZBFMVJ13",
+      "from": "climate_sensor",
+      "to": "curtain_motor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE200_ZUZ7F94Z",
+      "from": "climate_sensor",
+      "to": "curtain_motor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE200_ZVO63CMO",
+      "from": "climate_sensor",
+      "to": "curtain_motor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE200_ZYRDRMNO",
+      "from": "climate_sensor",
+      "to": "curtain_motor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE204_2RVVQJOA",
+      "from": "climate_sensor",
+      "to": "curtain_motor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE204_A8Z0G46U",
+      "from": "climate_sensor",
+      "to": "curtain_motor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE204_DPQSVDBI",
+      "from": "climate_sensor",
+      "to": "curtain_motor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE204_G5XQOSU7",
+      "from": "climate_sensor",
+      "to": "curtain_motor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE204_IC7JTUTB",
+      "from": "climate_sensor",
+      "to": "curtain_motor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE204_M1WL5FVQ",
+      "from": "climate_sensor",
+      "to": "curtain_motor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE204_NLADMFVF",
+      "from": "climate_sensor",
+      "to": "curtain_motor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE204_ODLLDRXX",
+      "from": "climate_sensor",
+      "to": "curtain_motor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE204_PTAQH9TK",
+      "from": "climate_sensor",
+      "to": "curtain_motor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE204_QHLXVE78",
+      "from": "climate_sensor",
+      "to": "curtain_motor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE284_2GI1HY8S",
+      "from": "climate_sensor",
+      "to": "curtain_motor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE284_B7KBNL6Q",
+      "from": "climate_sensor",
+      "to": "curtain_motor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE284_IWYQTCLW",
+      "from": "climate_sensor",
+      "to": "curtain_motor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE284_QHLXVE78",
+      "from": "climate_sensor",
+      "to": "curtain_motor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE284_V9HKZ2YN",
+      "from": "climate_sensor",
+      "to": "curtain_motor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE284_VES1YCWX",
+      "from": "climate_sensor",
+      "to": "curtain_motor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE284_YZR43AYQ",
+      "from": "climate_sensor",
+      "to": "curtain_motor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE284_clm4gdw4",
+      "from": "climate_sensor",
+      "to": "curtain_motor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_tze204_v9hkz2yn",
+      "from": "climate_sensor",
+      "to": "curtain_motor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_tze200_v9hkz2yn",
+      "from": "climate_sensor",
+      "to": "curtain_motor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_tze204_ves1ycwx",
+      "from": "climate_sensor",
+      "to": "curtain_motor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_tze200_ves1ycwx",
+      "from": "climate_sensor",
+      "to": "curtain_motor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE284_65gzcss7",
+      "from": "climate_sensor",
+      "to": "curtain_motor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_tz3210_emqmwtym",
+      "from": "device_din_rail",
+      "to": "curtain_motor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE200_bqcqqjpb",
+      "from": "sensor_contact_zigbee",
+      "to": "curtain_motor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE284_0INTS6WL",
+      "from": "soil_sensor",
+      "to": "curtain_motor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE200_5sbebbzs",
+      "from": "switch_1gang",
+      "to": "curtain_motor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE200_HEWLYDPZ",
+      "from": "switch_1gang",
+      "to": "curtain_motor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE200_fctwhugx",
+      "from": "switch_1gang",
+      "to": "curtain_motor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE200_ol5jlkkr",
+      "from": "switch_1gang",
+      "to": "curtain_motor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE200_zxxfv8wi",
+      "from": "switch_1gang",
+      "to": "curtain_motor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE204_57hjqelq",
+      "from": "switch_1gang",
+      "to": "curtain_motor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE204_F5EFVTBV",
+      "from": "switch_1gang",
+      "to": "curtain_motor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE204_IIK0PQUW",
+      "from": "switch_1gang",
+      "to": "curtain_motor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE204_LBHH5O6Z",
+      "from": "switch_1gang",
+      "to": "curtain_motor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE204_MEXISFIK",
+      "from": "switch_1gang",
+      "to": "curtain_motor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE204_lh3arisb",
+      "from": "switch_1gang",
+      "to": "curtain_motor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE204_vvvtcehj",
+      "from": "switch_1gang",
+      "to": "curtain_motor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE204_yrugsphv",
+      "from": "switch_1gang",
+      "to": "curtain_motor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE204_zuq5xxib",
+      "from": "switch_1gang",
+      "to": "curtain_motor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE284_F5EFVTBV",
+      "from": "switch_1gang",
+      "to": "curtain_motor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE284_LBHH5O6Z",
+      "from": "switch_1gang",
+      "to": "curtain_motor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE284_4vobcgd3",
+      "from": "switch_1gang",
+      "to": "curtain_motor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE284_gaj531w3",
+      "from": "switch_1gang",
+      "to": "curtain_motor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE204_wzre8hu2",
+      "from": "switch_1gang",
+      "to": "curtain_motor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE200_swlgvdlh",
+      "from": "switch_1gang",
+      "to": "curtain_motor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_TZE284_fzo2pocs",
+      "from": "climate_sensor",
+      "to": "curtain_motor"
+    },
+    {
+      "severity": "medium",
+      "action": "compose_exclusive",
+      "mfr": "_tze204_q9xty0ad",
+      "from": "switch_4_gang_metering",
+      "to": "curtain_motor"
     }
   ],
   "skipped": [
@@ -314,11 +706,6 @@
         "plug",
         "smartplug"
       ]
-    },
-    {
-      "reason": "unclaimed_no_compose",
-      "mfr": "_TZE200_r0jdjrvi",
-      "curated": "curtain_motor"
     },
     {
       "reason": "pair_conflict_ambiguous",
@@ -537,11 +924,5 @@
       "curated": "switch_4_gang_metering"
     }
   ],
-  "highSeverity": [
-    "registry drift _TZE204_A2JCOYUK → curtain_motor",
-    "registry drift _TZE200_libht6ua → curtain_motor",
-    "registry drift _TZE284_libht6ua → curtain_motor",
-    "registry drift _TZE200_2jwrgrro → curtain_motor",
-    "registry drift _TZE284_zofmmt9s → curtain_motor"
-  ]
+  "highSeverity": []
 }

@@ -1,0 +1,897 @@
+{
+  "add_to_curtain_motor": [],
+  "add_to_other_driver": [],
+  "forbidden_do_not_add": [
+    {
+      "mfr": "_TZ3000_1dd0d5yi",
+      "pid": "TS130F",
+      "reason": "p191-ts130f-curtain-quartet-not-shutter-catchall: canonical wall_curtain_switch, never curtain_motor_shutter"
+    },
+    {
+      "mfr": "_TZ3000_1dd0d5yi",
+      "pid": "TS130F",
+      "reason": "p191-ts130f-curtain-quartet-not-shutter-catchall: canonical wall_curtain_switch, never curtain_module"
+    },
+    {
+      "mfr": "_TZ3000_bjawzodf",
+      "pid": "TY0201",
+      "reason": "p2266-bjawzodf-ty0201-temu: canonical lcdtemphumidsensor, never lcdtemphumidsensor_3"
+    },
+    {
+      "mfr": "_TZ3000_bjawzodf",
+      "pid": "TY0201",
+      "reason": "p2266-bjawzodf-ty0201-temu: canonical lcdtemphumidsensor, never climate_sensor"
+    },
+    {
+      "mfr": "_TZ3000_bjawzodf",
+      "pid": "TY0201",
+      "reason": "p2266-bjawzodf-ty0201-temu: canonical lcdtemphumidsensor, never curtain_motor_shutter"
+    },
+    {
+      "mfr": "_TZ3000_bjawzodf",
+      "pid": "TY0201",
+      "reason": "p2266-bjawzodf-ty0201-temu: canonical lcdtemphumidsensor, never soil_sensor"
+    },
+    {
+      "mfr": "_TZ3000_bjawzodf",
+      "pid": "TY0201",
+      "reason": "p2266-bjawzodf-ty0201-temu: canonical lcdtemphumidsensor, never lcdtemphumidluxsensor"
+    },
+    {
+      "mfr": "_TZ3000_bjawzodf",
+      "pid": "TY0201",
+      "reason": "p2266-bjawzodf-ty0201-temu: canonical lcdtemphumidsensor, never zigbee_universal"
+    },
+    {
+      "mfr": "_TZ3000_bjawzodf",
+      "pid": "TS0201",
+      "reason": "p2266-bjawzodf-ty0201-temu: canonical lcdtemphumidsensor, never lcdtemphumidsensor_3"
+    },
+    {
+      "mfr": "_TZ3000_bjawzodf",
+      "pid": "TS0201",
+      "reason": "p2266-bjawzodf-ty0201-temu: canonical lcdtemphumidsensor, never climate_sensor"
+    },
+    {
+      "mfr": "_TZ3000_bjawzodf",
+      "pid": "TS0201",
+      "reason": "p2266-bjawzodf-ty0201-temu: canonical lcdtemphumidsensor, never curtain_motor_shutter"
+    },
+    {
+      "mfr": "_TZ3000_bjawzodf",
+      "pid": "TS0201",
+      "reason": "p2266-bjawzodf-ty0201-temu: canonical lcdtemphumidsensor, never soil_sensor"
+    },
+    {
+      "mfr": "_TZ3000_bjawzodf",
+      "pid": "TS0201",
+      "reason": "p2266-bjawzodf-ty0201-temu: canonical lcdtemphumidsensor, never lcdtemphumidluxsensor"
+    },
+    {
+      "mfr": "_TZ3000_bjawzodf",
+      "pid": "TS0201",
+      "reason": "p2266-bjawzodf-ty0201-temu: canonical lcdtemphumidsensor, never zigbee_universal"
+    },
+    {
+      "mfr": "_TZ3000_e3vhyirx",
+      "pid": "TS130F",
+      "reason": "p191-ts130f-curtain-quartet-not-shutter-catchall: canonical wall_curtain_switch, never curtain_motor_shutter"
+    },
+    {
+      "mfr": "_TZ3000_e3vhyirx",
+      "pid": "TS130F",
+      "reason": "p191-ts130f-curtain-quartet-not-shutter-catchall: canonical wall_curtain_switch, never curtain_module"
+    },
+    {
+      "mfr": "_TZ3000_femsaaua",
+      "pid": "TS130F",
+      "reason": "p191-ts130f-curtain-quartet-not-shutter-catchall: canonical wall_curtain_switch, never curtain_motor_shutter"
+    },
+    {
+      "mfr": "_TZ3000_femsaaua",
+      "pid": "TS130F",
+      "reason": "p191-ts130f-curtain-quartet-not-shutter-catchall: canonical wall_curtain_switch, never curtain_module"
+    },
+    {
+      "mfr": "_TZ3000_jwv3cwak",
+      "pid": "TS130F",
+      "reason": "p191-ts130f-curtain-quartet-not-shutter-catchall: canonical wall_curtain_switch, never curtain_motor_shutter"
+    },
+    {
+      "mfr": "_TZ3000_jwv3cwak",
+      "pid": "TS130F",
+      "reason": "p191-ts130f-curtain-quartet-not-shutter-catchall: canonical wall_curtain_switch, never curtain_module"
+    },
+    {
+      "mfr": "_TZ3000_vd43bbfq",
+      "pid": "TS130F",
+      "reason": "p190-ts130f-curtain-vd43bbfq-not-lock: canonical curtain_module, never fingerprint_lock"
+    },
+    {
+      "mfr": "_TZ3210_dwytrmda",
+      "pid": "TS130F",
+      "reason": "p190-ts130f-curtain-not-climate-or-dimmer: canonical wall_curtain_switch, never climate_sensor"
+    },
+    {
+      "mfr": "_TZ3210_dwytrmda",
+      "pid": "TS130F",
+      "reason": "p190-ts130f-curtain-not-climate-or-dimmer: canonical wall_curtain_switch, never dimmer_1_gang"
+    },
+    {
+      "mfr": "_TZ3210_dwytrmda",
+      "pid": "TS130F",
+      "reason": "p190-ts130f-curtain-not-climate-or-dimmer: canonical wall_curtain_switch, never curtain_module"
+    },
+    {
+      "mfr": "_TZ3210_ol1uhvza",
+      "pid": "TS130F",
+      "reason": "p190-ts130f-curtain-not-climate-or-dimmer: canonical wall_curtain_switch, never climate_sensor"
+    },
+    {
+      "mfr": "_TZ3210_ol1uhvza",
+      "pid": "TS130F",
+      "reason": "p190-ts130f-curtain-not-climate-or-dimmer: canonical wall_curtain_switch, never dimmer_1_gang"
+    },
+    {
+      "mfr": "_TZ3210_ol1uhvza",
+      "pid": "TS130F",
+      "reason": "p190-ts130f-curtain-not-climate-or-dimmer: canonical wall_curtain_switch, never curtain_module"
+    },
+    {
+      "mfr": "_TZE200_127x7wnl",
+      "pid": "TS0601",
+      "reason": "p2304-moes-zts-eur-c-curtain: canonical curtain_motor, never device_radiator_valve"
+    },
+    {
+      "mfr": "_TZE200_127x7wnl",
+      "pid": "TS0601",
+      "reason": "p2304-moes-zts-eur-c-curtain: canonical curtain_motor, never radiator_valve"
+    },
+    {
+      "mfr": "_TZE200_127x7wnl",
+      "pid": "TS0601",
+      "reason": "p2304-moes-zts-eur-c-curtain: canonical curtain_motor, never thermostatic_radiator_valve"
+    },
+    {
+      "mfr": "_TZE200_127x7wnl",
+      "pid": "TS0601",
+      "reason": "p2304-moes-zts-eur-c-curtain: canonical curtain_motor, never thermostat_tuya_dp"
+    },
+    {
+      "mfr": "_TZE200_127x7wnl",
+      "pid": "TS0601",
+      "reason": "p2304-moes-zts-eur-c-curtain: canonical curtain_motor, never device_radiator_valve_smart"
+    },
+    {
+      "mfr": "_TZE200_127x7wnl",
+      "pid": "TS0601",
+      "reason": "p2304-moes-zts-eur-c-curtain: canonical curtain_motor, never radiator_valve_zigbee"
+    },
+    {
+      "mfr": "_TZE200_127x7wnl",
+      "pid": "TS0601",
+      "reason": "p2304-moes-zts-eur-c-curtain: canonical curtain_motor, never generic_tuya"
+    },
+    {
+      "mfr": "_TZE200_127x7wnl",
+      "pid": "TS0601",
+      "reason": "p2304-moes-zts-eur-c-curtain: canonical curtain_motor, never zigbee_universal"
+    },
+    {
+      "mfr": "_TZE200_127x7wnl",
+      "pid": "TS0601",
+      "reason": "p2304-moes-zts-eur-c-curtain: canonical curtain_motor, never unknown_zigbee_unit"
+    },
+    {
+      "mfr": "_TZE200_1fuxihti",
+      "pid": "TS0601",
+      "reason": "p2279-1fuxihti-cover-not-climate: canonical curtain_motor, never climate_sensor"
+    },
+    {
+      "mfr": "_TZE200_1fuxihti",
+      "pid": "TS0601",
+      "reason": "p2279-1fuxihti-cover-not-climate: canonical curtain_motor, never wall_curtain_switch"
+    },
+    {
+      "mfr": "_TZE200_1fuxihti",
+      "pid": "TS0601",
+      "reason": "p2279-1fuxihti-cover-not-climate: canonical curtain_motor, never zigbee_universal"
+    },
+    {
+      "mfr": "_TZE200_2jwrgrro",
+      "pid": "TS0601",
+      "reason": "p2363-curtain-ef00-hybrid-timeout: canonical curtain_motor, never climate_sensor"
+    },
+    {
+      "mfr": "_TZE200_2jwrgrro",
+      "pid": "TS0601",
+      "reason": "p2363-curtain-ef00-hybrid-timeout: canonical curtain_motor, never soil_sensor"
+    },
+    {
+      "mfr": "_TZE200_2jwrgrro",
+      "pid": "TS0601",
+      "reason": "p2363-curtain-ef00-hybrid-timeout: canonical curtain_motor, never zigbee_universal"
+    },
+    {
+      "mfr": "_TZE200_2jwrgrro",
+      "pid": "TS0601",
+      "reason": "p2363-curtain-ef00-hybrid-timeout: canonical curtain_motor, never curtain_motor_tilt"
+    },
+    {
+      "mfr": "_TZE200_2jwrgrro",
+      "pid": "TS0601",
+      "reason": "p2363-curtain-ef00-hybrid-timeout: canonical curtain_motor, never wall_curtain_switch"
+    },
+    {
+      "mfr": "_TZE200_2jwrgrro",
+      "pid": "TS0601",
+      "reason": "p2363-curtain-ef00-hybrid-timeout: canonical curtain_motor, never switch_1gang"
+    },
+    {
+      "mfr": "_tze200_68nvbi09",
+      "pid": "TS0601",
+      "reason": "p2295-zemismart-68nvbi09-typo-curtain: canonical curtain_motor, never device_radiator_valve"
+    },
+    {
+      "mfr": "_tze200_68nvbi09",
+      "pid": "TS0601",
+      "reason": "p2295-zemismart-68nvbi09-typo-curtain: canonical curtain_motor, never wall_thermostat"
+    },
+    {
+      "mfr": "_tze200_68nvbi09",
+      "pid": "TS0601",
+      "reason": "p2295-zemismart-68nvbi09-typo-curtain: canonical curtain_motor, never climate_sensor"
+    },
+    {
+      "mfr": "_tze200_68nvbio9",
+      "pid": "TS0601",
+      "reason": "p2293-zemismart-68nvbio9-curtain-not-trv: canonical curtain_motor, never climate_sensor"
+    },
+    {
+      "mfr": "_tze200_68nvbio9",
+      "pid": "TS0601",
+      "reason": "p2293-zemismart-68nvbio9-curtain-not-trv: canonical curtain_motor, never device_radiator_valve"
+    },
+    {
+      "mfr": "_tze200_68nvbio9",
+      "pid": "TS0601",
+      "reason": "p2293-zemismart-68nvbio9-curtain-not-trv: canonical curtain_motor, never wall_thermostat"
+    },
+    {
+      "mfr": "_TZE200_7upwjcca",
+      "pid": "TS0601",
+      "reason": "p2234b-tze200_7upwjcca: canonical curtain_motor, never soil_sensor"
+    },
+    {
+      "mfr": "_TZE200_7upwjcca",
+      "pid": "TS0601",
+      "reason": "p2234b-tze200_7upwjcca: canonical curtain_motor, never climate_sensor"
+    },
+    {
+      "mfr": "_tze200_9p5xmj5r",
+      "pid": "TS0601",
+      "reason": "p2295-zemismart-cover-siblings: canonical curtain_motor, never device_radiator_valve"
+    },
+    {
+      "mfr": "_tze200_9p5xmj5r",
+      "pid": "TS0601",
+      "reason": "p2295-zemismart-cover-siblings: canonical curtain_motor, never wall_thermostat"
+    },
+    {
+      "mfr": "_tze200_9p5xmj5r",
+      "pid": "TS0601",
+      "reason": "p2295-zemismart-cover-siblings: canonical curtain_motor, never climate_sensor"
+    },
+    {
+      "mfr": "_tze200_ba69l9ol",
+      "pid": "TS0601",
+      "reason": "p2295-zemismart-cover-siblings: canonical curtain_motor, never device_radiator_valve"
+    },
+    {
+      "mfr": "_tze200_ba69l9ol",
+      "pid": "TS0601",
+      "reason": "p2295-zemismart-cover-siblings: canonical curtain_motor, never wall_thermostat"
+    },
+    {
+      "mfr": "_tze200_ba69l9ol",
+      "pid": "TS0601",
+      "reason": "p2295-zemismart-cover-siblings: canonical curtain_motor, never climate_sensor"
+    },
+    {
+      "mfr": "_tze200_cf1sl3tj",
+      "pid": "TS0601",
+      "reason": "p2293-zemismart-cf1sl3tj-curtain-not-trv: canonical curtain_motor, never climate_sensor"
+    },
+    {
+      "mfr": "_tze200_cf1sl3tj",
+      "pid": "TS0601",
+      "reason": "p2293-zemismart-cf1sl3tj-curtain-not-trv: canonical curtain_motor, never device_radiator_valve"
+    },
+    {
+      "mfr": "_tze200_cf1sl3tj",
+      "pid": "TS0601",
+      "reason": "p2293-zemismart-cf1sl3tj-curtain-not-trv: canonical curtain_motor, never wall_thermostat"
+    },
+    {
+      "mfr": "_tze200_eevqq1uv",
+      "pid": "TS0601",
+      "reason": "p2295-zemismart-cover-siblings: canonical curtain_motor, never device_radiator_valve"
+    },
+    {
+      "mfr": "_tze200_eevqq1uv",
+      "pid": "TS0601",
+      "reason": "p2295-zemismart-cover-siblings: canonical curtain_motor, never wall_thermostat"
+    },
+    {
+      "mfr": "_tze200_eevqq1uv",
+      "pid": "TS0601",
+      "reason": "p2295-zemismart-cover-siblings: canonical curtain_motor, never climate_sensor"
+    },
+    {
+      "mfr": "_TZE200_guvc7pdy",
+      "pid": "TS0601",
+      "reason": "p2273-guvc7pdy-curtain-not-1gang: canonical curtain_motor, never switch_1gang"
+    },
+    {
+      "mfr": "_TZE200_guvc7pdy",
+      "pid": "TS0601",
+      "reason": "p2273-guvc7pdy-curtain-not-1gang: canonical curtain_motor, never climate_sensor"
+    },
+    {
+      "mfr": "_TZE200_guvc7pdy",
+      "pid": "TS0601",
+      "reason": "p2273-guvc7pdy-curtain-not-1gang: canonical curtain_motor, never zigbee_universal"
+    },
+    {
+      "mfr": "_TZE200_libht6ua",
+      "pid": "TS0601",
+      "reason": "p2363-curtain-ef00-hybrid-timeout: canonical curtain_motor, never climate_sensor"
+    },
+    {
+      "mfr": "_TZE200_libht6ua",
+      "pid": "TS0601",
+      "reason": "p2363-curtain-ef00-hybrid-timeout: canonical curtain_motor, never soil_sensor"
+    },
+    {
+      "mfr": "_TZE200_libht6ua",
+      "pid": "TS0601",
+      "reason": "p2363-curtain-ef00-hybrid-timeout: canonical curtain_motor, never zigbee_universal"
+    },
+    {
+      "mfr": "_TZE200_libht6ua",
+      "pid": "TS0601",
+      "reason": "p2363-curtain-ef00-hybrid-timeout: canonical curtain_motor, never curtain_motor_tilt"
+    },
+    {
+      "mfr": "_TZE200_libht6ua",
+      "pid": "TS0601",
+      "reason": "p2363-curtain-ef00-hybrid-timeout: canonical curtain_motor, never wall_curtain_switch"
+    },
+    {
+      "mfr": "_TZE200_libht6ua",
+      "pid": "TS0601",
+      "reason": "p2363-curtain-ef00-hybrid-timeout: canonical curtain_motor, never switch_1gang"
+    },
+    {
+      "mfr": "_TZE200_m6lwazh9",
+      "pid": "TS0601",
+      "reason": "p2297-m6lwazh9-tze200-ts0601-curtain: canonical curtain_motor, never switch_1gang"
+    },
+    {
+      "mfr": "_TZE200_m6lwazh9",
+      "pid": "TS0601",
+      "reason": "p2297-m6lwazh9-tze200-ts0601-curtain: canonical curtain_motor, never wall_dimmer_tuya"
+    },
+    {
+      "mfr": "_TZE200_m6lwazh9",
+      "pid": "TS0601",
+      "reason": "p2297-m6lwazh9-tze200-ts0601-curtain: canonical curtain_motor, never device_radiator_valve"
+    },
+    {
+      "mfr": "_TZE200_m6lwazh9",
+      "pid": "TS0601",
+      "reason": "p2297-m6lwazh9-tze200-ts0601-curtain: canonical curtain_motor, never wall_thermostat"
+    },
+    {
+      "mfr": "_TZE200_nhyj64w2",
+      "pid": "TS0601",
+      "reason": "p2304-moes-zts-eur-c-curtain: canonical curtain_motor, never device_radiator_valve"
+    },
+    {
+      "mfr": "_TZE200_nhyj64w2",
+      "pid": "TS0601",
+      "reason": "p2304-moes-zts-eur-c-curtain: canonical curtain_motor, never radiator_valve"
+    },
+    {
+      "mfr": "_TZE200_nhyj64w2",
+      "pid": "TS0601",
+      "reason": "p2304-moes-zts-eur-c-curtain: canonical curtain_motor, never thermostatic_radiator_valve"
+    },
+    {
+      "mfr": "_TZE200_nhyj64w2",
+      "pid": "TS0601",
+      "reason": "p2304-moes-zts-eur-c-curtain: canonical curtain_motor, never thermostat_tuya_dp"
+    },
+    {
+      "mfr": "_TZE200_nhyj64w2",
+      "pid": "TS0601",
+      "reason": "p2304-moes-zts-eur-c-curtain: canonical curtain_motor, never device_radiator_valve_smart"
+    },
+    {
+      "mfr": "_TZE200_nhyj64w2",
+      "pid": "TS0601",
+      "reason": "p2304-moes-zts-eur-c-curtain: canonical curtain_motor, never radiator_valve_zigbee"
+    },
+    {
+      "mfr": "_TZE200_nhyj64w2",
+      "pid": "TS0601",
+      "reason": "p2304-moes-zts-eur-c-curtain: canonical curtain_motor, never generic_tuya"
+    },
+    {
+      "mfr": "_TZE200_nhyj64w2",
+      "pid": "TS0601",
+      "reason": "p2304-moes-zts-eur-c-curtain: canonical curtain_motor, never zigbee_universal"
+    },
+    {
+      "mfr": "_TZE200_nhyj64w2",
+      "pid": "TS0601",
+      "reason": "p2304-moes-zts-eur-c-curtain: canonical curtain_motor, never unknown_zigbee_unit"
+    },
+    {
+      "mfr": "_tze200_nw1r9hp6",
+      "pid": "TS0601",
+      "reason": "p2295-zemismart-cover-siblings: canonical curtain_motor, never device_radiator_valve"
+    },
+    {
+      "mfr": "_tze200_nw1r9hp6",
+      "pid": "TS0601",
+      "reason": "p2295-zemismart-cover-siblings: canonical curtain_motor, never wall_thermostat"
+    },
+    {
+      "mfr": "_tze200_nw1r9hp6",
+      "pid": "TS0601",
+      "reason": "p2295-zemismart-cover-siblings: canonical curtain_motor, never climate_sensor"
+    },
+    {
+      "mfr": "_tze200_pw7mji0l",
+      "pid": "TS0601",
+      "reason": "p2295-zemismart-cover-siblings: canonical curtain_motor, never device_radiator_valve"
+    },
+    {
+      "mfr": "_tze200_pw7mji0l",
+      "pid": "TS0601",
+      "reason": "p2295-zemismart-cover-siblings: canonical curtain_motor, never wall_thermostat"
+    },
+    {
+      "mfr": "_tze200_pw7mji0l",
+      "pid": "TS0601",
+      "reason": "p2295-zemismart-cover-siblings: canonical curtain_motor, never climate_sensor"
+    },
+    {
+      "mfr": "_TZE200_r0jdjrvi",
+      "pid": "TS0601",
+      "reason": "curtain-r0jdjrvi-tilt: _TZE200_r0jdjrvi is tilt motor — remove from curtain_motor, keep curtain_motor_tilt only"
+    },
+    {
+      "mfr": "_tze200_sfqyhvpv",
+      "pid": "TS0601",
+      "reason": "p2295-zemismart-cover-siblings: canonical curtain_motor, never device_radiator_valve"
+    },
+    {
+      "mfr": "_tze200_sfqyhvpv",
+      "pid": "TS0601",
+      "reason": "p2295-zemismart-cover-siblings: canonical curtain_motor, never wall_thermostat"
+    },
+    {
+      "mfr": "_tze200_sfqyhvpv",
+      "pid": "TS0601",
+      "reason": "p2295-zemismart-cover-siblings: canonical curtain_motor, never climate_sensor"
+    },
+    {
+      "mfr": "_tze200_vexa5o82",
+      "pid": "TS0601",
+      "reason": "p2295-zemismart-cover-siblings: canonical curtain_motor, never device_radiator_valve"
+    },
+    {
+      "mfr": "_tze200_vexa5o82",
+      "pid": "TS0601",
+      "reason": "p2295-zemismart-cover-siblings: canonical curtain_motor, never wall_thermostat"
+    },
+    {
+      "mfr": "_tze200_vexa5o82",
+      "pid": "TS0601",
+      "reason": "p2295-zemismart-cover-siblings: canonical curtain_motor, never climate_sensor"
+    },
+    {
+      "mfr": "_TZE204_1fuxihti",
+      "pid": "TS0601",
+      "reason": "p2279-1fuxihti-cover-not-climate: canonical curtain_motor, never climate_sensor"
+    },
+    {
+      "mfr": "_TZE204_1fuxihti",
+      "pid": "TS0601",
+      "reason": "p2279-1fuxihti-cover-not-climate: canonical curtain_motor, never wall_curtain_switch"
+    },
+    {
+      "mfr": "_TZE204_1fuxihti",
+      "pid": "TS0601",
+      "reason": "p2279-1fuxihti-cover-not-climate: canonical curtain_motor, never zigbee_universal"
+    },
+    {
+      "mfr": "_TZE204_5slehgeo",
+      "pid": "TS0601",
+      "reason": "p2304-moes-zts-eur-c-curtain: canonical curtain_motor, never device_radiator_valve"
+    },
+    {
+      "mfr": "_TZE204_5slehgeo",
+      "pid": "TS0601",
+      "reason": "p2304-moes-zts-eur-c-curtain: canonical curtain_motor, never radiator_valve"
+    },
+    {
+      "mfr": "_TZE204_5slehgeo",
+      "pid": "TS0601",
+      "reason": "p2304-moes-zts-eur-c-curtain: canonical curtain_motor, never thermostatic_radiator_valve"
+    },
+    {
+      "mfr": "_TZE204_5slehgeo",
+      "pid": "TS0601",
+      "reason": "p2304-moes-zts-eur-c-curtain: canonical curtain_motor, never thermostat_tuya_dp"
+    },
+    {
+      "mfr": "_TZE204_5slehgeo",
+      "pid": "TS0601",
+      "reason": "p2304-moes-zts-eur-c-curtain: canonical curtain_motor, never device_radiator_valve_smart"
+    },
+    {
+      "mfr": "_TZE204_5slehgeo",
+      "pid": "TS0601",
+      "reason": "p2304-moes-zts-eur-c-curtain: canonical curtain_motor, never radiator_valve_zigbee"
+    },
+    {
+      "mfr": "_TZE204_5slehgeo",
+      "pid": "TS0601",
+      "reason": "p2304-moes-zts-eur-c-curtain: canonical curtain_motor, never generic_tuya"
+    },
+    {
+      "mfr": "_TZE204_5slehgeo",
+      "pid": "TS0601",
+      "reason": "p2304-moes-zts-eur-c-curtain: canonical curtain_motor, never zigbee_universal"
+    },
+    {
+      "mfr": "_TZE204_5slehgeo",
+      "pid": "TS0601",
+      "reason": "p2304-moes-zts-eur-c-curtain: canonical curtain_motor, never unknown_zigbee_unit"
+    },
+    {
+      "mfr": "_tze204_68nvbio9",
+      "pid": "TS0601",
+      "reason": "p2293-zemismart-68nvbio9-curtain-not-trv: canonical curtain_motor, never climate_sensor"
+    },
+    {
+      "mfr": "_tze204_68nvbio9",
+      "pid": "TS0601",
+      "reason": "p2293-zemismart-68nvbio9-curtain-not-trv: canonical curtain_motor, never device_radiator_valve"
+    },
+    {
+      "mfr": "_tze204_68nvbio9",
+      "pid": "TS0601",
+      "reason": "p2293-zemismart-68nvbio9-curtain-not-trv: canonical curtain_motor, never wall_thermostat"
+    },
+    {
+      "mfr": "_TZE204_a2jcoyuk",
+      "pid": "TS0601",
+      "reason": "p2363-curtain-ef00-hybrid-timeout: canonical curtain_motor, never climate_sensor"
+    },
+    {
+      "mfr": "_TZE204_a2jcoyuk",
+      "pid": "TS0601",
+      "reason": "p2363-curtain-ef00-hybrid-timeout: canonical curtain_motor, never soil_sensor"
+    },
+    {
+      "mfr": "_TZE204_a2jcoyuk",
+      "pid": "TS0601",
+      "reason": "p2363-curtain-ef00-hybrid-timeout: canonical curtain_motor, never zigbee_universal"
+    },
+    {
+      "mfr": "_TZE204_a2jcoyuk",
+      "pid": "TS0601",
+      "reason": "p2363-curtain-ef00-hybrid-timeout: canonical curtain_motor, never curtain_motor_tilt"
+    },
+    {
+      "mfr": "_TZE204_a2jcoyuk",
+      "pid": "TS0601",
+      "reason": "p2363-curtain-ef00-hybrid-timeout: canonical curtain_motor, never wall_curtain_switch"
+    },
+    {
+      "mfr": "_TZE204_a2jcoyuk",
+      "pid": "TS0601",
+      "reason": "p2363-curtain-ef00-hybrid-timeout: canonical curtain_motor, never switch_1gang"
+    },
+    {
+      "mfr": "_tze204_ejh6owwz",
+      "pid": "TS0601",
+      "reason": "p2295-zemismart-cover-siblings: canonical curtain_motor, never device_radiator_valve"
+    },
+    {
+      "mfr": "_tze204_ejh6owwz",
+      "pid": "TS0601",
+      "reason": "p2295-zemismart-cover-siblings: canonical curtain_motor, never wall_thermostat"
+    },
+    {
+      "mfr": "_tze204_ejh6owwz",
+      "pid": "TS0601",
+      "reason": "p2295-zemismart-cover-siblings: canonical curtain_motor, never climate_sensor"
+    },
+    {
+      "mfr": "_TZE204_guvc7pdy",
+      "pid": "TS0601",
+      "reason": "p2273-guvc7pdy-curtain-not-1gang: canonical curtain_motor, never switch_1gang"
+    },
+    {
+      "mfr": "_TZE204_guvc7pdy",
+      "pid": "TS0601",
+      "reason": "p2273-guvc7pdy-curtain-not-1gang: canonical curtain_motor, never climate_sensor"
+    },
+    {
+      "mfr": "_TZE204_guvc7pdy",
+      "pid": "TS0601",
+      "reason": "p2273-guvc7pdy-curtain-not-1gang: canonical curtain_motor, never zigbee_universal"
+    },
+    {
+      "mfr": "_tze204_pw7mji0l",
+      "pid": "TS0601",
+      "reason": "p2295-zemismart-cover-siblings: canonical curtain_motor, never device_radiator_valve"
+    },
+    {
+      "mfr": "_tze204_pw7mji0l",
+      "pid": "TS0601",
+      "reason": "p2295-zemismart-cover-siblings: canonical curtain_motor, never wall_thermostat"
+    },
+    {
+      "mfr": "_tze204_pw7mji0l",
+      "pid": "TS0601",
+      "reason": "p2295-zemismart-cover-siblings: canonical curtain_motor, never climate_sensor"
+    },
+    {
+      "mfr": "_TZE204_r0jdjrvi",
+      "pid": "TS0601",
+      "reason": "curtain-r0jdjrvi-tilt: canonical curtain_motor_tilt, never plug"
+    },
+    {
+      "mfr": "_TZE204_r0jdjrvi",
+      "pid": "TS0601",
+      "reason": "curtain-r0jdjrvi-tilt: canonical curtain_motor_tilt, never curtain_motor"
+    },
+    {
+      "mfr": "_TZE204_r0jdjrvi",
+      "pid": "TS0601",
+      "reason": "curtain-r0jdjrvi-tilt: canonical curtain_motor_tilt, never switch_1gang"
+    },
+    {
+      "mfr": "_TZE204_r0jdjrvi",
+      "pid": "TS0601_curtain_tilt",
+      "reason": "curtain-r0jdjrvi-tilt: canonical curtain_motor_tilt, never plug"
+    },
+    {
+      "mfr": "_TZE204_r0jdjrvi",
+      "pid": "TS0601_curtain_tilt",
+      "reason": "curtain-r0jdjrvi-tilt: canonical curtain_motor_tilt, never curtain_motor"
+    },
+    {
+      "mfr": "_TZE204_r0jdjrvi",
+      "pid": "TS0601_curtain_tilt",
+      "reason": "curtain-r0jdjrvi-tilt: canonical curtain_motor_tilt, never switch_1gang"
+    },
+    {
+      "mfr": "_TZE210_m6lwazh9",
+      "pid": "TS0301",
+      "reason": "p2297-m6lwazh9-tze210-ts0301-curtain: canonical curtain_motor, never switch_1gang"
+    },
+    {
+      "mfr": "_TZE210_m6lwazh9",
+      "pid": "TS0301",
+      "reason": "p2297-m6lwazh9-tze210-ts0301-curtain: canonical curtain_motor, never wall_dimmer_tuya"
+    },
+    {
+      "mfr": "_TZE210_m6lwazh9",
+      "pid": "TS0301",
+      "reason": "p2297-m6lwazh9-tze210-ts0301-curtain: canonical curtain_motor, never device_radiator_valve"
+    },
+    {
+      "mfr": "_TZE210_m6lwazh9",
+      "pid": "TS0301",
+      "reason": "p2297-m6lwazh9-tze210-ts0301-curtain: canonical curtain_motor, never wall_thermostat"
+    },
+    {
+      "mfr": "_TZE284_1fuxihti",
+      "pid": "TS0601",
+      "reason": "p2279-1fuxihti-cover-not-climate: canonical curtain_motor, never climate_sensor"
+    },
+    {
+      "mfr": "_TZE284_1fuxihti",
+      "pid": "TS0601",
+      "reason": "p2279-1fuxihti-cover-not-climate: canonical curtain_motor, never wall_curtain_switch"
+    },
+    {
+      "mfr": "_TZE284_1fuxihti",
+      "pid": "TS0601",
+      "reason": "p2279-1fuxihti-cover-not-climate: canonical curtain_motor, never zigbee_universal"
+    },
+    {
+      "mfr": "_TZE284_5slehgeo",
+      "pid": "TS0601",
+      "reason": "p2304-moes-zts-eur-c-curtain: canonical curtain_motor, never device_radiator_valve"
+    },
+    {
+      "mfr": "_TZE284_5slehgeo",
+      "pid": "TS0601",
+      "reason": "p2304-moes-zts-eur-c-curtain: canonical curtain_motor, never radiator_valve"
+    },
+    {
+      "mfr": "_TZE284_5slehgeo",
+      "pid": "TS0601",
+      "reason": "p2304-moes-zts-eur-c-curtain: canonical curtain_motor, never thermostatic_radiator_valve"
+    },
+    {
+      "mfr": "_TZE284_5slehgeo",
+      "pid": "TS0601",
+      "reason": "p2304-moes-zts-eur-c-curtain: canonical curtain_motor, never thermostat_tuya_dp"
+    },
+    {
+      "mfr": "_TZE284_5slehgeo",
+      "pid": "TS0601",
+      "reason": "p2304-moes-zts-eur-c-curtain: canonical curtain_motor, never device_radiator_valve_smart"
+    },
+    {
+      "mfr": "_TZE284_5slehgeo",
+      "pid": "TS0601",
+      "reason": "p2304-moes-zts-eur-c-curtain: canonical curtain_motor, never radiator_valve_zigbee"
+    },
+    {
+      "mfr": "_TZE284_5slehgeo",
+      "pid": "TS0601",
+      "reason": "p2304-moes-zts-eur-c-curtain: canonical curtain_motor, never generic_tuya"
+    },
+    {
+      "mfr": "_TZE284_5slehgeo",
+      "pid": "TS0601",
+      "reason": "p2304-moes-zts-eur-c-curtain: canonical curtain_motor, never zigbee_universal"
+    },
+    {
+      "mfr": "_TZE284_5slehgeo",
+      "pid": "TS0601",
+      "reason": "p2304-moes-zts-eur-c-curtain: canonical curtain_motor, never unknown_zigbee_unit"
+    },
+    {
+      "mfr": "_TZE284_kq1l5eu5",
+      "pid": "TS0601",
+      "reason": "p2271-kq1l5eu5-moes-curtain: canonical wall_curtain_switch, never climate_sensor"
+    },
+    {
+      "mfr": "_TZE284_kq1l5eu5",
+      "pid": "TS0601",
+      "reason": "p2271-kq1l5eu5-moes-curtain: canonical wall_curtain_switch, never curtain_motor"
+    },
+    {
+      "mfr": "_TZE284_kq1l5eu5",
+      "pid": "TS0601",
+      "reason": "p2271-kq1l5eu5-moes-curtain: canonical wall_curtain_switch, never zigbee_universal"
+    },
+    {
+      "mfr": "_TZE284_libht6ua",
+      "pid": "TS0601",
+      "reason": "p2363-curtain-ef00-hybrid-timeout: canonical curtain_motor, never climate_sensor"
+    },
+    {
+      "mfr": "_TZE284_libht6ua",
+      "pid": "TS0601",
+      "reason": "p2363-curtain-ef00-hybrid-timeout: canonical curtain_motor, never soil_sensor"
+    },
+    {
+      "mfr": "_TZE284_libht6ua",
+      "pid": "TS0601",
+      "reason": "p2363-curtain-ef00-hybrid-timeout: canonical curtain_motor, never zigbee_universal"
+    },
+    {
+      "mfr": "_TZE284_libht6ua",
+      "pid": "TS0601",
+      "reason": "p2363-curtain-ef00-hybrid-timeout: canonical curtain_motor, never curtain_motor_tilt"
+    },
+    {
+      "mfr": "_TZE284_libht6ua",
+      "pid": "TS0601",
+      "reason": "p2363-curtain-ef00-hybrid-timeout: canonical curtain_motor, never wall_curtain_switch"
+    },
+    {
+      "mfr": "_TZE284_libht6ua",
+      "pid": "TS0601",
+      "reason": "p2363-curtain-ef00-hybrid-timeout: canonical curtain_motor, never switch_1gang"
+    },
+    {
+      "mfr": "_TZE284_upt8lzi0",
+      "pid": "TS0601",
+      "reason": "p2307-moes-star-feather-upt8lzi0: canonical curtain_motor, never switch_1gang"
+    },
+    {
+      "mfr": "_TZE284_upt8lzi0",
+      "pid": "TS0601",
+      "reason": "p2307-moes-star-feather-upt8lzi0: canonical curtain_motor, never switch_2gang"
+    },
+    {
+      "mfr": "_TZE284_upt8lzi0",
+      "pid": "TS0601",
+      "reason": "p2307-moes-star-feather-upt8lzi0: canonical curtain_motor, never device_radiator_valve"
+    },
+    {
+      "mfr": "_TZE284_zofmmt9s",
+      "pid": "TS0601",
+      "reason": "p2363-curtain-ef00-hybrid-timeout: canonical curtain_motor, never climate_sensor"
+    },
+    {
+      "mfr": "_TZE284_zofmmt9s",
+      "pid": "TS0601",
+      "reason": "p2363-curtain-ef00-hybrid-timeout: canonical curtain_motor, never soil_sensor"
+    },
+    {
+      "mfr": "_TZE284_zofmmt9s",
+      "pid": "TS0601",
+      "reason": "p2363-curtain-ef00-hybrid-timeout: canonical curtain_motor, never zigbee_universal"
+    },
+    {
+      "mfr": "_TZE284_zofmmt9s",
+      "pid": "TS0601",
+      "reason": "p2363-curtain-ef00-hybrid-timeout: canonical curtain_motor, never curtain_motor_tilt"
+    },
+    {
+      "mfr": "_TZE284_zofmmt9s",
+      "pid": "TS0601",
+      "reason": "p2363-curtain-ef00-hybrid-timeout: canonical curtain_motor, never wall_curtain_switch"
+    },
+    {
+      "mfr": "_TZE284_zofmmt9s",
+      "pid": "TS0601",
+      "reason": "p2363-curtain-ef00-hybrid-timeout: canonical curtain_motor, never switch_1gang"
+    },
+    {
+      "mfr": "_TZE28C1000000_i8sdouy0",
+      "pid": "TS0601",
+      "reason": "p2307-moes-star-feather-upt8lzi0: canonical curtain_motor, never switch_1gang"
+    },
+    {
+      "mfr": "_TZE28C1000000_i8sdouy0",
+      "pid": "TS0601",
+      "reason": "p2307-moes-star-feather-upt8lzi0: canonical curtain_motor, never switch_2gang"
+    },
+    {
+      "mfr": "_TZE28C1000000_i8sdouy0",
+      "pid": "TS0601",
+      "reason": "p2307-moes-star-feather-upt8lzi0: canonical curtain_motor, never device_radiator_valve"
+    }
+  ],
+  "still_missing_count": {
+    "curtain_motor": 0,
+    "curtain_motor_tilt": 0,
+    "curtain_motor_shutter": 0,
+    "wall_curtain_switch": 0,
+    "curtain_module": 0,
+    "curtain_module_2_gang": 0
+  },
+  "meta": {
+    "verified_couples_total": 147,
+    "already_in_target_drivers": 146,
+    "z2m_cover_mfrs_in_report": 129,
+    "sources_scanned": [
+      "data/z2m_herdsman_cache.json",
+      "data/z2m_cache.json",
+      "lib/data/z2m_devices_full.json",
+      "scripts/data/z2m-data.json",
+      "reports/curtain-z2m-missing-2026-09-01.json",
+      "docs/knowledge/device-truth.json",
+      "data/user-misattribution-registry.json",
+      "scripts/data/zha-data.json",
+      "scripts/data/zha-full-data.json"
+    ],
+    "github_state_note": "No blakadder/zha cover cache under .github/state/ (only diagnostics-report.json)",
+    "generatedAt": "2026-09-01T04:02:46.980Z"
+  }
+}
