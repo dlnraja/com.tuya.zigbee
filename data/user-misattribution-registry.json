@@ -4926,6 +4926,43 @@
           "dynamic": false
         }
       }
+    },
+    {
+      "id": "p2361-w0qqde0g-ts011f-plug-not-button",
+      "mfr": [
+        "_TZ3210_w0qqde0g",
+        "_tz3210_w0qqde0g",
+        "_TZ3000_w0qqde0g",
+        "_tz3000_w0qqde0g"
+      ],
+      "productId": [
+        "TS011F"
+      ],
+      "canonicalDriver": "plug_energy_monitor",
+      "forbiddenDrivers": [
+        "button_wireless_2",
+        "button_wireless_1",
+        "button_wireless_4",
+        "smart_knob_rotary"
+      ],
+      "forbidMode": "couple",
+      "protocol": "zcl",
+      "notes": "WHY(P2361): Gmail L3 harvest couple _TZ3210_w0qqde0g+TS011F. Z2M TS011F_plug_3 family (_TZ3000_w0qqde0g sibling) is mains plug with energy poll — never button_wireless_2. Cartesian TS011F on button drivers steals pairing.",
+      "sources": [
+        "gmail-l3-2026-09-01",
+        "z2m-TS011F_plug_3",
+        "P2361"
+      ],
+      "tracks": {
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": false
+        }
+      }
     }
   ]
 }
