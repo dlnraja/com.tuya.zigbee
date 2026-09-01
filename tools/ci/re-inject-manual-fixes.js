@@ -80,9 +80,25 @@ const MANUAL_FIXES = [
       '_TZ3000_b3mgfu0d', '_tz3000_b3mgfu0d', '_TZ3000_B3MGFU0D', '_tz3000_B3MGFU0D',
       '_TZ3000_abrsvsou', '_tz3000_abrsvsou', '_TZ3000_ABRSVSOU', '_tz3000_ABRSVSOU',
       '_TZ3000_4fjiwweb', '_tz3000_4fjiwweb', '_TZ3000_4FJIWWEB', '_tz3000_4FJIWWEB',
+      // P2270/P2289: dimmer couple must not bleed onto switch_1gang (bot re-inject)
+      '_TZE284_hlx9tnzb', '_tze284_hlx9tnzb', '_TZE204_hlx9tnzb', '_tze204_hlx9tnzb',
+      '_TZE200_hlx9tnzb', '_tze200_hlx9tnzb',
     ],
     addAtTop: false,
     source: 'p129-ts004f-routing',
+  },
+  {
+    id: 'p2270-metering-remove-402vrq2i-knob',
+    file: 'drivers/switch_4_gang_metering/driver.compose.json',
+    description: 'P2270: rotary knob 402vrq2i must not live on switch_4_gang_metering',
+    match: () => true,
+    addIfMissing: [],
+    removeIfPresent: [
+      '_TZ3210_402vrq2i', '_tz3210_402vrq2i', '_TZ3400_402vrq2i', '_tz3400_402vrq2i',
+      '_TZ3000_402vrq2i', '_tz3000_402vrq2i',
+    ],
+    addAtTop: false,
+    source: 'p2270-knob-not-metering',
   },
   {
     id: 'p129-button-wireless-4-ts004f-mfrs',
@@ -374,6 +390,13 @@ const MANUAL_FIXES = [
       '_TZE204_o9gyszw2', '_tze204_o9gyszw2', '_TZE204_O9GYSZW2',
       '_TZE284_o9gyszw2', '_tze284_o9gyszw2',
       '_TZE28C1000000_o9gyszw2', '_tze28c1000000_o9gyszw2',
+      '_TZE204_fjms2pi9', '_tze204_fjms2pi9', '_TZE284_fjms2pi9', '_tze284_fjms2pi9',
+      '_TZE28C1000000_fjms2pi9', '_tze28c1000000_fjms2pi9',
+      // PresentSky / wall 6-gang — must NOT reclaim on climate_sensor
+      '_TZE200_8eazvzo6', '_tze200_8eazvzo6', '_TZE200_8EAZVZO6',
+      '_TZE204_8eazvzo6', '_tze204_8eazvzo6', '_TZE204_8EAZVZO6',
+      // Forum soil SGS02Z — must NOT reclaim on climate_sensor
+      '_TZE284_nt4pquef', '_tze284_nt4pquef', '_TZE284_NT4PQUEF',
     ],
     addAtTop: false,
     source: 'p92.91-issue-514',
@@ -383,8 +406,13 @@ const MANUAL_FIXES = [
     id: 'p94-m1cvyneb-wall-dimmer-tuya',
     file: 'drivers/wall_dimmer_tuya/driver.compose.json',
     description: 'Forum #2133: _TZE284_m1cvyneb TS0601 BSEED dimmer socket',
-    match: (mfrs) => mfrs.includes('_TZE284_m1cvyneb'),
-    addIfMissing: ['_TZE284_m1cvyneb', '_tze284_m1cvyneb'],
+    match: () => true,
+    addIfMissing: [
+      '_TZE284_m1cvyneb', '_tze284_m1cvyneb',
+      '_TZE204_m1cvyneb', '_tze204_m1cvyneb',
+      '_TZE200_m1cvyneb', '_tze200_m1cvyneb',
+    ],
+    addProductIds: ['TS0601'],
     addAtTop: false,
     source: 'p94-forum-2133',
   },
@@ -393,7 +421,7 @@ const MANUAL_FIXES = [
     id: 'p96-jtbgusdc-dimmer-2-gang-tuya',
     file: 'drivers/dimmer_2_gang_tuya/driver.compose.json',
     description: 'Forum #2135: _TZE28C1000000_jtbgusdc / _TZE204_jtbgusdc Avatto ZDMS16-2',
-    match: (mfrs) => mfrs.some((m) => /jtbgusdc|o9gyszw2/i.test(m)),
+    match: (mfrs) => mfrs.some((m) => /jtbgusdc|o9gyszw2|fjms2pi9/i.test(m)),
     addIfMissing: [
       '_TZE204_jtbgusdc', '_tze204_jtbgusdc', '_TZE204_JTBGUSDC',
       '_TZE284_jtbgusdc', '_tze284_jtbgusdc',
@@ -402,6 +430,9 @@ const MANUAL_FIXES = [
       '_TZE204_o9gyszw2', '_tze204_o9gyszw2',
       '_TZE284_o9gyszw2', '_tze284_o9gyszw2',
       '_TZE28C1000000_o9gyszw2', '_tze28c1000000_o9gyszw2',
+      '_TZE204_fjms2pi9', '_tze204_fjms2pi9',
+      '_TZE284_fjms2pi9', '_tze284_fjms2pi9',
+      '_TZE28C1000000_fjms2pi9', '_tze28c1000000_fjms2pi9',
     ],
     addAtTop: false,
     source: 'p96-forum-2135',
@@ -456,7 +487,65 @@ const MANUAL_FIXES = [
     addAtTop: false,
     source: 'p97-forum-soil',
   },
-  // Forum #2106 Beck51 — TRV pcdmj88b
+  {
+    id: 'p98-myd45weu-remove-wall-switch-4',
+    file: 'drivers/wall_switch_4_gang/driver.compose.json',
+    description: 'Z2M TS0601_soil: keep myd45weu off wall_switch_4_gang',
+    match: () => true,
+    addIfMissing: [],
+    removeIfPresent: [
+      '_TZE200_myd45weu', '_tze200_myd45weu', '_TZE200_MYD45WEU', '_tze200_MYD45WEU',
+      '_TZE204_myd45weu', '_tze204_myd45weu', '_TZE284_myd45weu', '_tze284_myd45weu',
+    ],
+    addAtTop: false,
+    source: 'p98-forum-soil',
+  },
+  // Forum #1610 Haadeess — rain sensor u6x1zyv2 (Z2M ZG-223Z)
+  {
+    id: 'p98-u6x1zyv2-rain-sensor',
+    file: 'drivers/rain_sensor/driver.compose.json',
+    description: 'Forum #1610: _TZE200_u6x1zyv2 TS0601 rain sensor',
+    match: (mfrs) => mfrs.some((m) => /u6x1zyv2/i.test(m)),
+    addIfMissing: ['_TZE200_u6x1zyv2', '_tze200_u6x1zyv2', '_TZE204_u6x1zyv2', '_tze204_u6x1zyv2'],
+    addAtTop: false,
+    source: 'p98-forum-1610',
+  },
+  {
+    id: 'p98-u6x1zyv2-remove-contact',
+    file: 'drivers/contact_sensor/driver.compose.json',
+    description: 'Keep rain u6x1zyv2 off contact_sensor',
+    match: () => true,
+    addIfMissing: [],
+    removeIfPresent: [
+      '_TZE200_u6x1zyv2', '_tze200_u6x1zyv2', '_TZE200_U6X1ZYV2', '_tze200_U6X1ZYV2',
+      '_TZE204_u6x1zyv2', '_tze204_u6x1zyv2', '_TZE204_U6X1ZYV2', '_tze204_U6X1ZYV2',
+    ],
+    addAtTop: false,
+    source: 'p98-forum-1610',
+  },
+  {
+    id: 'p218-2imwyigp-remove-contact',
+    file: 'drivers/contact_sensor/driver.compose.json',
+    description: 'P218 anti-bot: 2imwyigp TS0601 lives on switch_3gang only',
+    match: () => true,
+    addIfMissing: [],
+    removeIfPresent: [
+      '_TZE200_2imwyigp', '_tze200_2imwyigp', '_TZE200_2IMWYIGP', '_tze200_2IMWYIGP',
+      '_TZE204_2imwyigp', '_tze204_2imwyigp', '_TZE204_2IMWYIGP', '_tze204_2IMWYIGP',
+    ],
+    addAtTop: false,
+    source: 'p218-anti-bot',
+  },
+  {
+    id: 'p98-pay2byax-remove-soil',
+    file: 'drivers/soil_sensor/driver.compose.json',
+    description: 'ZG-102ZL luminance door sensor is contact, not soil',
+    match: () => true,
+    addIfMissing: [],
+    removeIfPresent: ['_TZE200_pay2byax', '_tze200_pay2byax', '_TZE204_pay2byax', '_tze204_pay2byax'],
+    addAtTop: false,
+    source: 'p98-forum-contact-lux',
+  },
   {
     id: 'p97-pcdmj88b-trv',
     file: 'drivers/thermostatic_radiator_valve/driver.compose.json',
@@ -533,10 +622,13 @@ const MANUAL_FIXES = [
       '_TZE204_jtbgusdc', '_tze204_jtbgusdc', '_TZE284_jtbgusdc', '_tze284_jtbgusdc',
       '_TZE28C1000000_jtbgusdc', '_tze28c1000000_jtbgusdc',
       '_TZE204_o9gyszw2', '_tze204_o9gyszw2', '_TZE28C1000000_o9gyszw2',
+      '_TZE204_fjms2pi9', '_tze204_fjms2pi9', '_TZE284_fjms2pi9', '_tze284_fjms2pi9',
+      '_TZE28C1000000_fjms2pi9', '_tze28c1000000_fjms2pi9',
     ],
     addAtTop: false,
     source: 'p94-forum-collision',
   },
+  // P217: HOBEIAN ZG-305Z must survive conflict resolve (sensor score beats switch).
   {
     id: 'p217-hobeian-zg305z-switch-2gang',
     file: 'drivers/switch_2gang/driver.compose.json',
@@ -605,6 +697,136 @@ const MANUAL_FIXES = [
     addAtTop: true,
     source: 'p217-johan-1439',
   },
+  {
+    id: 'p217-wing-climate-zth',
+    file: 'drivers/climate_sensor/driver.compose.json',
+    description: 'P217 Johan #1429/#1422: Wing ZTH11/ZTH13 climate — keep pids at top (combo compact)',
+    match: (mfrs) => Array.isArray(mfrs) && mfrs.some((m) => String(m).toLowerCase() === 'wing'),
+    addIfMissing: ['Wing', 'wing', 'WING'],
+    addProductIds: ['ZTH11-3.0', 'ZTH13-3.0'],
+    removeProductIds: ['TS0203', 'Excellux'],
+    addAtTop: true,
+    source: 'p217-johan-1429',
+  },
+  {
+    id: 'p2291-ogkdpgy2-air-quality-co2',
+    file: 'drivers/climate_sensor/driver.compose.json',
+    description: 'P2291 Elliot #2204: ogkdpgy2 NDIR CO2 — must NOT reclaim climate_sensor',
+    match: (mfrs) => Array.isArray(mfrs) && mfrs.some((m) => /ogkdpgy2/i.test(String(m))),
+    removeIfPresent: [
+      '_TZE200_ogkdpgy2', '_TZE204_ogkdpgy2', '_TZE200_OGKDPGY2', '_TZE204_OGKDPGY2',
+      '_tze200_ogkdpgy2', '_tze204_ogkdpgy2', '_tze200_OGKDPGY2', '_tze204_OGKDPGY2',
+    ],
+    source: 'p2291-forum-2204',
+  },
+  {
+    id: 'p2291-ogkdpgy2-air-quality-add',
+    file: 'drivers/air_quality_co2/driver.compose.json',
+    description: 'P2291 Elliot #2204: ogkdpgy2 CO2 lock on air_quality_co2',
+    match: (mfrs) => Array.isArray(mfrs) && mfrs.some((m) => /ogkdpgy2/i.test(String(m))),
+    addIfMissing: [
+      '_TZE200_ogkdpgy2', '_TZE204_ogkdpgy2', '_TZE200_OGKDPGY2', '_TZE204_OGKDPGY2',
+      '_tze200_ogkdpgy2', '_tze204_ogkdpgy2',
+    ],
+    addProductIds: ['TS0601'],
+    addAtTop: true,
+    source: 'p2291-forum-2204',
+  },
+  {
+    id: 'p2293-curtain-strip-trv-68nvbio9-cf1sl3tj',
+    file: 'drivers/device_radiator_valve/driver.compose.json',
+    description: 'P2293/P2295 Zemismart covers must not reclaim TRV',
+    match: (mfrs) => Array.isArray(mfrs) && mfrs.some((m) => /68nvbio9|68nvbi09|cf1sl3tj|pw7mji0l|nw1r9hp6|vexa5o82|9p5xmj5r/i.test(String(m))),
+    removeIfPresent: [
+      '_TZE200_68nvbio9', '_tze200_68nvbio9', '_TZE200_68NVBIO9', '_tze200_68NVBIO9',
+      '_TZE200_68nvbi09', '_tze200_68nvbi09', '_TZE200_68NVBI09', '_tze200_68NVBI09',
+      '_TZE200_cf1sl3tj', '_tze200_cf1sl3tj', '_TZE200_CF1SL3TJ', '_tze200_CF1SL3TJ',
+      '_TZE200_pw7mji0l', '_tze200_pw7mji0l', '_TZE204_pw7mji0l', '_tze204_pw7mji0l',
+      '_TZE200_nw1r9hp6', '_tze200_nw1r9hp6',
+      '_TZE200_vexa5o82', '_tze200_vexa5o82',
+      '_TZE200_9p5xmj5r', '_tze200_9p5xmj5r',
+    ],
+    source: 'p2293-forum-154092',
+  },
+  {
+    id: 'p2293-curtain-strip-wall-68nvbio9',
+    file: 'drivers/wall_thermostat/driver.compose.json',
+    description: 'P2293 TZE204_68nvbio9 is cover bleed not thermostat',
+    match: (mfrs) => Array.isArray(mfrs) && mfrs.some((m) => /68nvbio9|68nvbi09|cf1sl3tj|pw7mji0l/i.test(String(m))),
+    removeIfPresent: [
+      '_TZE204_68nvbio9', '_tze204_68nvbio9', '_TZE204_68NVBIO9', '_tze204_68NVBIO9',
+      '_TZE200_68nvbio9', '_tze200_68nvbio9',
+      '_TZE200_cf1sl3tj', '_tze200_cf1sl3tj',
+    ],
+    source: 'p2293-forum-154092',
+  },
+  {
+    id: 'p2293-curtain-keep-curtain-motor',
+    file: 'drivers/curtain_motor/driver.compose.json',
+    description: 'P2293/P2295 keep Zemismart cover couples on curtain_motor',
+    match: () => true,
+    addIfMissing: [
+      '_TZE200_68nvbio9', '_tze200_68nvbio9',
+      '_TZE204_68nvbio9', '_tze204_68nvbio9',
+      '_TZE200_68nvbi09', '_tze200_68nvbi09',
+      '_TZE200_cf1sl3tj', '_tze200_cf1sl3tj',
+      '_TZE200_pw7mji0l', '_tze200_pw7mji0l',
+      '_TZE204_pw7mji0l', '_tze204_pw7mji0l',
+      '_TZE200_nw1r9hp6', '_tze200_nw1r9hp6',
+      '_TZE200_9p5xmj5r', '_tze200_9p5xmj5r',
+      '_TZE200_vexa5o82', '_tze200_vexa5o82',
+    ],
+    addProductIds: ['TS0601'],
+    source: 'p2293-forum-154092',
+  },
+  {
+    id: 'p2297-m6lwazh9-strip-switch',
+    file: 'drivers/switch_1gang/driver.compose.json',
+    description: 'P2297 m6lwazh9 is cover motor not 1-gang switch',
+    match: (mfrs) => Array.isArray(mfrs) && mfrs.some((m) => /m6lwazh9/i.test(String(m))),
+    removeIfPresent: [
+      '_TZE200_m6lwazh9', '_tze200_m6lwazh9', '_TZE200_M6LWAZH9', '_tze200_M6LWAZH9',
+      '_TZE210_m6lwazh9', '_tze210_m6lwazh9', '_TZE210_M6LWAZH9', '_tze210_M6LWAZH9',
+    ],
+    source: 'p2297-forum-154092',
+  },
+  {
+    id: 'p2297-m6lwazh9-keep-curtain',
+    file: 'drivers/curtain_motor/driver.compose.json',
+    description: 'P2297 keep m6lwazh9 TZE200/TZE210 cover couples on curtain_motor',
+    match: () => true,
+    addIfMissing: [
+      '_TZE200_m6lwazh9', '_tze200_m6lwazh9', '_TZE200_M6LWAZH9', '_tze200_M6LWAZH9',
+      '_TZE210_m6lwazh9', '_tze210_m6lwazh9', '_TZE210_M6LWAZH9', '_tze210_M6LWAZH9',
+    ],
+    addProductIds: ['TS0601', 'TS0301'],
+    source: 'p2297-forum-154092',
+  },
+  {
+    id: 'p2295-3ejwxpmu-co2-strip-climate',
+    file: 'drivers/climate_sensor/driver.compose.json',
+    description: 'P2295 3ejwxpmu is CO2 sibling of ogkdpgy2 — not climate',
+    match: (mfrs) => Array.isArray(mfrs) && mfrs.some((m) => /3ejwxpmu|ogkdpgy2/i.test(String(m))),
+    removeIfPresent: [
+      '_TZE200_3ejwxpmu', '_tze200_3ejwxpmu', '_TZE204_3ejwxpmu', '_tze204_3ejwxpmu',
+      '_TZE200_3EJWXPMU', '_TZE204_3EJWXPMU',
+      '_TZE200_ogkdpgy2', '_tze200_ogkdpgy2', '_TZE204_ogkdpgy2', '_tze204_ogkdpgy2',
+      '_TZE200_OGKDPGY2', '_TZE204_OGKDPGY2',
+    ],
+    source: 'p2295-multi-identity',
+  },
+  {
+    id: 'p2295-3ejwxpmu-co2-add',
+    file: 'drivers/air_quality_co2/driver.compose.json',
+    description: 'P2295 keep 3ejwxpmu CO2 sibling on air_quality_co2',
+    match: () => true,
+    addIfMissing: [
+      '_TZE200_3ejwxpmu', '_tze200_3ejwxpmu',
+      '_TZE204_3ejwxpmu', '_tze204_3ejwxpmu',
+    ],
+    addProductIds: ['TS0601'],
+    source: 'p2295-multi-identity',
+  },
 ];
 
 function patchFix(fix) {
@@ -633,14 +855,24 @@ function patchFix(fix) {
     if (before !== j.zigbee.productId.length) changed = true;
   }
 
+  // P217: ensure unique pids survive conflict resolve / combo compact
   if (Array.isArray(fix.addProductIds)) {
     if (!Array.isArray(j.zigbee.productId)) j.zigbee.productId = [];
-    const have = new Set(j.zigbee.productId.map((p) => String(p).toUpperCase()));
+    const list = j.zigbee.productId;
+    const upper = (p) => String(p).toUpperCase();
     for (const pid of fix.addProductIds) {
-      const key = String(pid).toUpperCase();
-      if (have.has(key)) continue;
-      j.zigbee.productId.push(pid);
-      have.add(key);
+      const key = upper(pid);
+      const idx = list.findIndex((p) => upper(p) === key);
+      if (idx >= 0) {
+        if (fix.addAtTop && idx > 0) {
+          const [kept] = list.splice(idx, 1);
+          list.unshift(kept);
+          changed = true;
+        }
+        continue;
+      }
+      if (fix.addAtTop) list.unshift(pid);
+      else list.push(pid);
       added++;
       changed = true;
     }

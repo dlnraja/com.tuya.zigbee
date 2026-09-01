@@ -148,7 +148,11 @@
     "check:p2325": "node --test test/critical/p2325-verify-soft-hang.test.js",
     "check:p2326": "node --test test/critical/p2326-dyn-cap-misroute.test.js",
     "diag:inbox-uuids": "node tools/ci/inbox-diag-uuid-harvest.js",
-    "diag:inbox-uuids:fetch": "node tools/ci/inbox-diag-uuid-harvest.js --fetch --max=6"
+    "diag:inbox-uuids:fetch": "node tools/ci/inbox-diag-uuid-harvest.js --fetch --max=6",
+    "enrich:classes": "node tools/ci/driver-class-fleet-enrich.js",
+    "scrape:budget": "node tools/ci/free-scrape-budget.js --report",
+    "scrape:budget:preflight": "node tools/ci/free-scrape-budget.js --preflight",
+    "check:p2372": "node --test test/critical/p2372-free-scrape-fleet.test.js"
   },
   "keywords": [
     "homey",

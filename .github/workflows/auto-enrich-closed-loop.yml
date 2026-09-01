@@ -307,6 +307,13 @@ jobs:
           if [ -f tools/ci/enrich-driver-settings-intelligent.js ]; then
             node tools/ci/enrich-driver-settings-intelligent.js || echo "settings-enrich plan warn"
           fi
+          # P2372 soft-port: free-scrape budget report (MASTER cron stays on master)
+          if [ -f tools/ci/free-scrape-budget.js ]; then
+            node tools/ci/free-scrape-budget.js --report || true
+          fi
+          if [ -f tools/ci/driver-class-fleet-enrich.js ]; then
+            node tools/ci/driver-class-fleet-enrich.js || echo "driver-class report warn"
+          fi
           if [ -f .github/state/silent-enrichment/last-run.json ]; then
             echo "Silent enrichment state written (SHADOW forum — never POST)"
             node -e "const j=require('./.github/state/silent-enrichment/last-run.json'); console.log(JSON.stringify({ok:j.ok,phases:j.phases.map(p=>p.name)},null,2))"
