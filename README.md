@@ -33,7 +33,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.776 |
+| **App Version** | v9.0.777 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,389 |
 | **Pairing Variants** | 16,225 (4 case combos per fingerprint) |
@@ -102,6 +102,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.777** | Fixed app crash from Invalid Driver ID in flows; restored remote button fingerprint gate. |
 | **v9.0.776** | Fixed app crash from Invalid Driver ID in flows; restored remote button fingerprint gate. |
 | **v9.0.775** | Fixed app crash from Invalid Driver ID in flows; restored remote button fingerprint gate. |
 | **v9.0.774** | Fixed app crash from Invalid Driver ID in flows; restored remote button fingerprint gate. |
@@ -113,7 +114,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.768** | Improved curtain motors: EF00 RX hardening, timeout-safe position updates, and more verified cover fingerprints. |
 | **v9.0.767** | Exclusive plug routing for TS011F w0qqde0g fingerprints (energy monitor only). |
 | **v9.0.766** | Exclusive plug routing for TS011F w0qqde0g fingerprints (energy monitor only). |
-| **v9.0.765** | Locked TS011F plug fingerprints in mfs_db so bots cannot re-route them to wireless buttons. |
 
 <!-- CHANGELOG_END -->
 
