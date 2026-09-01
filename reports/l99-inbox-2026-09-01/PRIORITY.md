@@ -3,14 +3,14 @@
 Silent only. **Never** Homey forum POST / PM / AI paste (T157628).
 Lock **manufacturerName + productId** only. Never invent pid. Dual-app: BOTH | MASTER_ONLY | STABLE_ONLY.
 
-Generated: **2026-09-01T00:57:16.691Z** · Mode: `full`
+Generated: **2026-09-01T08:01:26.050Z** · Mode: `full`
 
 ## Snapshot
 
 | Channel | Count / note |
 |---------|--------------|
-| GitHub open issues | 1 |
-| GitHub open PRs | 0 |
+| GitHub open issues | 2 |
+| GitHub open PRs | 1 |
 | Forum needAction | 50 |
 | Gmail crash state | present |
 | mfs high drift | 0 |
@@ -20,15 +20,17 @@ Generated: **2026-09-01T00:57:16.691Z** · Mode: `full`
 | Score | Dual | Source | ID | Action |
 |------:|------|--------|----|--------|
 | 75 | BOTH | forum | forum-need-action | enrich:investigate + lock mfr+pid only |
+| 70 | BOTH | github-issue | #535 | investigate-code-silent |
 | 70 | BOTH | github-issue | #533 | investigate-code-silent |
+| 50 | MASTER_ONLY | github-pr | PR#534 | review |
 
 ## Phase results
 
 - **guard**: ok (0ms)
-- **github**: ok (537ms)
-- **gmail**: ok (9880ms)
-- **forum**: ok (42950ms)
-- **drivers**: ok (5404ms)
+- **github**: ok (493ms)
+- **gmail**: ok (115ms)
+- **forum**: ok (25359ms)
+- **drivers**: ok (696ms)
 
 ## Doctrine
 
