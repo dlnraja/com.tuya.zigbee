@@ -33,7 +33,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.772 |
+| **App Version** | v9.0.773 |
 | **Drivers** | 431 (381 Zigbee + 50 WiFi) |
 | **Unique Fingerprints** | 4,389 |
 | **Pairing Variants** | 16,225 (4 case combos per fingerprint) |
@@ -102,6 +102,7 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 
 | Version | Changes |
 |---------|---------|
+| **v9.0.773** | Fixed app crash from foreign/flow Invalid Driver ID (Homey class light and third-party Zigbee tokens). |
 | **v9.0.772** | Added verified curtain motors from live Z2M harvest; improved cover fingerprint tooling. |
 | **v9.0.771** | Added verified curtain motors from live Z2M harvest; improved cover fingerprint tooling. |
 | **v9.0.770** | Added verified curtain motors from live Z2M harvest; improved cover fingerprint tooling. |
@@ -113,7 +114,6 @@ Local Zigbee support for Tuya (and white-label) devices on Homey Pro. Switches, 
 | **v9.0.763** | Locked TS011F plug fingerprints away from wireless buttons (mfs + case variants). |
 | **v9.0.762** | Stripped leftover plug fingerprint case-variants from wireless buttons; keep TS011F plugs on energy monitor. |
 | **v9.0.761** | Fixed smart plug fingerprint routing so TS011F plugs are not matched as wireless buttons. |
-| **v9.0.760** | Improved MCU time sync and battery cover init; safer dimmer brightness scaling for Tuya devices. |
 
 <!-- CHANGELOG_END -->
 
