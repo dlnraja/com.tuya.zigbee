@@ -78,6 +78,10 @@
       "tag": "BOTH",
       "note": "Skip MCU 0x10 on battery covers; Formats+seq10+FORCE_UPDATE; brightness 0-1000 clamp — reliability"
     },
+    "p2363_curtain_ef00_hybrid_timeout": {
+      "tag": "BOTH",
+      "note": "Cover EF00 manager soft-create + optimistic windowcoverings + hybrid skip-disable + Z2M cover FPs — reliability (diag 05867379 couple absent)"
+    },
     "p2361_w0qqde0g_plug_not_button": {
       "tag": "BOTH",
       "note": "Gmail L3: _TZ3210_w0qqde0g+TS011F is Z2M plug — strip from button_wireless_2; lock plug_energy_monitor"

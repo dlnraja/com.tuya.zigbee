@@ -58,6 +58,7 @@ Generated 2026-08-19T08:50:15.322Z from registry (54 cases) × compound DB (209 
 - Root cause: publish compact lowercased sacred-keep pins → kept `_TZE204_5SLEHGEO` / `_tze204_5slehgeo` but dropped exact `_TZE204_5slehgeo` (Homey case-sensitive)
 - Fix: preserve exact `pin.mfr` in compact + sacred-keep pins; trim absurd curtain productIds
 - **P2356 (2026-08-31):** post-pair diag `05867379` — position RX + DP3/7/8/10 settings + strip `button.1` (UI errors); `_handleTuyaDP` → `_handleDP`
+- **P2363 (2026-09-01):** same diag still **couple ABSENT** (hybrid RX none) — do not invent mfr+pid. Soft-create `TuyaEF00Manager` on `UnifiedCoverBase`, optimistic `windowcoverings_*` after successful TX, skip hybrid protocol-disable for cover/curtain drivers. Added verified Z2M cover motors (`mfr`+`TS0601` only); stripped tilt `_TZE204_r0jdjrvi` from `curtain_motor`.
 
 ## Cases (1 by 1)
 

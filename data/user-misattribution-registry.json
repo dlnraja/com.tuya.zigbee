@@ -4967,6 +4967,51 @@
           "dynamic": false
         }
       }
+    },
+    {
+      "id": "p2363-curtain-ef00-hybrid-timeout",
+      "mfr": [
+        "_TZE204_a2jcoyuk",
+        "_tze204_a2jcoyuk",
+        "_TZE200_libht6ua",
+        "_tze200_libht6ua",
+        "_TZE284_libht6ua",
+        "_tze284_libht6ua",
+        "_TZE200_2jwrgrro",
+        "_tze200_2jwrgrro",
+        "_TZE284_zofmmt9s",
+        "_tze284_zofmmt9s"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "canonicalDriver": "curtain_motor",
+      "forbiddenDrivers": [
+        "climate_sensor",
+        "soil_sensor",
+        "zigbee_universal",
+        "curtain_motor_tilt",
+        "wall_curtain_switch",
+        "switch_1gang"
+      ],
+      "forbidMode": "couple",
+      "protocol": "tuya_ef00",
+      "notes": "WHY(P2363): diag 05867379 @ 9.0.750 curtain timeout — couple ABSENT in log (do not invent). Soft-create TuyaEF00Manager + optimistic windowcoverings after TX; HybridProtocolManager never disables cover drivers. Harvest Z2M cover motors (mfr+TS0601 only); strip tilt r0jdjrvi from curtain_motor.",
+      "sources": [
+        "diag-05867379",
+        "z2m-herdsman-cover",
+        "P2363"
+      ],
+      "tracks": {
+        "master": {
+          "static": true,
+          "dynamic": true
+        },
+        "stable": {
+          "static": true,
+          "dynamic": true
+        }
+      }
     }
   ]
 }
